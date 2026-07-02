@@ -1,0 +1,7063 @@
+[
+ {
+  "track": "Superstar",
+  "artist": "Carpenters",
+  "artist_key": "The Carpenters",
+  "year": 1971,
+  "label": "A&M",
+  "genres": [
+   "christmas",
+   "adult standards"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.306,
+   "energy": 0.253,
+   "loudness": -11.177,
+   "speechiness": 0.0294,
+   "acousticness": 0.728,
+   "instrumentalness": 4.89e-05,
+   "liveness": 0.138,
+   "valence": 0.171,
+   "tempo": 83.175
+  }
+ },
+ {
+  "track": "Rainy Days And Mondays",
+  "artist": "Carpenters",
+  "artist_key": "The Carpenters",
+  "year": 1971,
+  "label": "A&M",
+  "genres": [
+   "christmas",
+   "adult standards"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.351,
+   "energy": 0.235,
+   "loudness": -11.513,
+   "speechiness": 0.0323,
+   "acousticness": 0.852,
+   "instrumentalness": 0.0,
+   "liveness": 0.0688,
+   "valence": 0.218,
+   "tempo": 74.72
+  }
+ },
+ {
+  "track": "One Less Bell To Answer",
+  "artist": "The 5th Dimension",
+  "artist_key": "The 5th Dimension",
+  "year": 1970,
+  "label": "Arista/Legacy",
+  "genres": [],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.398,
+   "energy": 0.405,
+   "loudness": -6.664,
+   "speechiness": 0.0258,
+   "acousticness": 0.737,
+   "instrumentalness": 4.97e-05,
+   "liveness": 0.131,
+   "valence": 0.443,
+   "tempo": 99.694
+  }
+ },
+ {
+  "track": "How Long",
+  "artist": "Ace",
+  "artist_key": "Ace",
+  "year": 1974,
+  "label": "Cavalcade Records Ltd",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Sheffield",
+  "features": {
+   "danceability": 0.717,
+   "energy": 0.406,
+   "loudness": -13.954,
+   "speechiness": 0.0305,
+   "acousticness": 0.587,
+   "instrumentalness": 0.103,
+   "liveness": 0.0869,
+   "valence": 0.703,
+   "tempo": 123.213
+  }
+ },
+ {
+  "track": "Feel Like Makin' Love",
+  "artist": "Roberta Flack",
+  "artist_key": "Roberta Flack",
+  "year": 1975,
+  "label": "Rhino Atlantic",
+  "genres": [
+   "adult standards",
+   "classic soul"
+  ],
+  "origin_metro": "Washington-Baltimore",
+  "features": {
+   "danceability": 0.681,
+   "energy": 0.264,
+   "loudness": -21.861,
+   "speechiness": 0.0309,
+   "acousticness": 0.833,
+   "instrumentalness": 0.441,
+   "liveness": 0.103,
+   "valence": 0.692,
+   "tempo": 93.809
+  }
+ },
+ {
+  "track": "Help Me",
+  "artist": "Joni Mitchell",
+  "artist_key": "Joni Mitchell",
+  "year": 1974,
+  "label": "Rhino",
+  "genres": [
+   "folk",
+   "folk rock",
+   "singer-songwriter"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.584,
+   "energy": 0.526,
+   "loudness": -10.081,
+   "speechiness": 0.0389,
+   "acousticness": 0.469,
+   "instrumentalness": 6.47e-05,
+   "liveness": 0.0756,
+   "valence": 0.637,
+   "tempo": 82.028
+  }
+ },
+ {
+  "track": "Free Man in Paris",
+  "artist": "Joni Mitchell",
+  "artist_key": "Joni Mitchell",
+  "year": 1974,
+  "label": "Rhino",
+  "genres": [
+   "folk",
+   "folk rock",
+   "singer-songwriter"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.61,
+   "energy": 0.64,
+   "loudness": -7.681,
+   "speechiness": 0.0354,
+   "acousticness": 0.513,
+   "instrumentalness": 0.0,
+   "liveness": 0.0837,
+   "valence": 0.678,
+   "tempo": 81.232
+  }
+ },
+ {
+  "track": "You're No Good",
+  "artist": "Linda Ronstadt",
+  "artist_key": "Linda Ronstadt",
+  "year": 1974,
+  "label": "Capitol Records",
+  "genres": [
+   "country rock",
+   "mariachi"
+  ],
+  "origin_metro": "Tucson",
+  "features": {
+   "danceability": 0.669,
+   "energy": 0.52,
+   "loudness": -10.136,
+   "speechiness": 0.0345,
+   "acousticness": 0.245,
+   "instrumentalness": 0.00535,
+   "liveness": 0.126,
+   "valence": 0.634,
+   "tempo": 104.812
+  }
+ },
+ {
+  "track": "Don't You Worry 'Bout A Thing",
+  "artist": "Stevie Wonder",
+  "artist_key": "Stevie Wonder",
+  "year": 1973,
+  "label": "Motown",
+  "genres": [
+   "motown",
+   "classic soul",
+   "soul"
+  ],
+  "origin_metro": "Detroit",
+  "features": {
+   "danceability": 0.714,
+   "energy": 0.726,
+   "loudness": -9.218,
+   "speechiness": 0.0408,
+   "acousticness": 0.0316,
+   "instrumentalness": 0.0,
+   "liveness": 0.066,
+   "valence": 0.92,
+   "tempo": 124.71
+  }
+ },
+ {
+  "track": "One of These Nights - 2013 Remaster",
+  "artist": "Eagles",
+  "artist_key": "Eagles",
+  "year": 1975,
+  "label": "Rhino/Elektra",
+  "genres": [
+   "classic rock",
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.655,
+   "energy": 0.606,
+   "loudness": -10.385,
+   "speechiness": 0.0285,
+   "acousticness": 0.0603,
+   "instrumentalness": 0.0789,
+   "liveness": 0.0757,
+   "valence": 0.765,
+   "tempo": 110.061
+  }
+ },
+ {
+  "track": "That's the Way of the World",
+  "artist": "Earth, Wind & Fire",
+  "artist_key": "Earth, Wind & Fire",
+  "year": 1975,
+  "label": "Columbia",
+  "genres": [
+   "funk",
+   "disco"
+  ],
+  "origin_metro": "Chicago",
+  "features": {
+   "danceability": 0.586,
+   "energy": 0.552,
+   "loudness": -11.153,
+   "speechiness": 0.0488,
+   "acousticness": 0.593,
+   "instrumentalness": 0.00101,
+   "liveness": 0.31,
+   "valence": 0.732,
+   "tempo": 82.0
+  }
+ },
+ {
+  "track": "Sara Smile",
+  "artist": "Daryl Hall & John Oates",
+  "artist_key": "Hall & Oates",
+  "year": 1975,
+  "label": "Buddha Records",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Philadelphia",
+  "features": {
+   "danceability": 0.592,
+   "energy": 0.398,
+   "loudness": -10.81,
+   "speechiness": 0.0678,
+   "acousticness": 0.357,
+   "instrumentalness": 0.000925,
+   "liveness": 0.119,
+   "valence": 0.204,
+   "tempo": 150.038
+  }
+ },
+ {
+  "track": "Theme From Mahogany (Do You Know Where You're Going To) - Single Version",
+  "artist": "Diana Ross",
+  "artist_key": "Diana Ross",
+  "year": 1976,
+  "label": "UNI/MOTOWN",
+  "genres": [
+   "motown",
+   "disco"
+  ],
+  "origin_metro": "Detroit",
+  "features": {
+   "danceability": 0.328,
+   "energy": 0.42,
+   "loudness": -10.658,
+   "speechiness": 0.0288,
+   "acousticness": 0.553,
+   "instrumentalness": 0.00212,
+   "liveness": 0.096,
+   "valence": 0.283,
+   "tempo": 139.705
+  }
+ },
+ {
+  "track": "Lowdown",
+  "artist": "Boz Scaggs",
+  "artist_key": "Boz Scaggs",
+  "year": 1997,
+  "label": "Columbia/Legacy",
+  "genres": [
+   "yacht rock",
+   "aor"
+  ],
+  "origin_metro": "San Francisco-San Jose",
+  "features": {
+   "danceability": 0.691,
+   "energy": 0.567,
+   "loudness": -11.624,
+   "speechiness": 0.0515,
+   "acousticness": 0.0869,
+   "instrumentalness": 0.15,
+   "liveness": 0.0276,
+   "valence": 0.942,
+   "tempo": 116.705
+  }
+ },
+ {
+  "track": "What Can I Say (2023 Remaster)",
+  "artist": "Boz Scaggs",
+  "artist_key": "Boz Scaggs",
+  "year": 1976,
+  "label": "Columbia/Legacy",
+  "genres": [
+   "yacht rock",
+   "aor"
+  ],
+  "origin_metro": "San Francisco-San Jose",
+  "features": {
+   "danceability": 0.737,
+   "energy": 0.457,
+   "loudness": -11.206,
+   "speechiness": 0.0325,
+   "acousticness": 0.0392,
+   "instrumentalness": 0.00299,
+   "liveness": 0.0813,
+   "valence": 0.824,
+   "tempo": 115.025
+  }
+ },
+ {
+  "track": "Breezin'",
+  "artist": "George Benson",
+  "artist_key": "George Benson",
+  "year": 1976,
+  "label": "Rhino/Warner Records",
+  "genres": [
+   "smooth jazz",
+   "yacht rock",
+   "jazz funk",
+   "soul jazz"
+  ],
+  "origin_metro": "Pittsburgh",
+  "features": {
+   "danceability": 0.682,
+   "energy": 0.752,
+   "loudness": -9.521,
+   "speechiness": 0.0454,
+   "acousticness": 0.476,
+   "instrumentalness": 0.863,
+   "liveness": 0.0768,
+   "valence": 0.964,
+   "tempo": 81.081
+  }
+ },
+ {
+  "track": "Silly Love Songs - 2014 Remaster",
+  "artist": "Wings",
+  "artist_key": "Wings",
+  "year": 1976,
+  "label": "Paul McCartney Catalog",
+  "genres": [],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.742,
+   "energy": 0.471,
+   "loudness": -10.767,
+   "speechiness": 0.0326,
+   "acousticness": 0.134,
+   "instrumentalness": 0.0903,
+   "liveness": 0.284,
+   "valence": 0.815,
+   "tempo": 124.95
+  }
+ },
+ {
+  "track": "As",
+  "artist": "Stevie Wonder",
+  "artist_key": "Stevie Wonder",
+  "year": 1976,
+  "label": "UNI/MOTOWN",
+  "genres": [
+   "motown",
+   "classic soul",
+   "soul"
+  ],
+  "origin_metro": "Detroit",
+  "features": {
+   "danceability": 0.467,
+   "energy": 0.869,
+   "loudness": -10.342,
+   "speechiness": 0.0559,
+   "acousticness": 0.0589,
+   "instrumentalness": 0.0,
+   "liveness": 0.244,
+   "valence": 0.684,
+   "tempo": 102.376
+  }
+ },
+ {
+  "track": "Fly Like An Eagle",
+  "artist": "Steve Miller Band",
+  "artist_key": "Steve Miller Band",
+  "year": 1976,
+  "label": "CAPITOL CATALOG MKT (C92)",
+  "genres": [
+   "classic rock"
+  ],
+  "origin_metro": "San Francisco-San Jose",
+  "features": {
+   "danceability": 0.561,
+   "energy": 0.754,
+   "loudness": -12.769,
+   "speechiness": 0.112,
+   "acousticness": 0.61,
+   "instrumentalness": 0.0194,
+   "liveness": 0.328,
+   "valence": 0.642,
+   "tempo": 100.08
+  }
+ },
+ {
+  "track": "New York State of Mind",
+  "artist": "Billy Joel",
+  "artist_key": "Billy Joel",
+  "year": 1976,
+  "label": "Columbia",
+  "genres": [
+   "soft rock"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.506,
+   "energy": 0.373,
+   "loudness": -9.473,
+   "speechiness": 0.0347,
+   "acousticness": 0.499,
+   "instrumentalness": 4.05e-05,
+   "liveness": 0.323,
+   "valence": 0.194,
+   "tempo": 121.289
+  }
+ },
+ {
+  "track": "Takin' It to the Streets",
+  "artist": "The Doobie Brothers",
+  "artist_key": "The Doobie Brothers",
+  "year": 1976,
+  "label": "Warner Records",
+  "genres": [
+   "yacht rock",
+   "classic rock",
+   "soft rock",
+   "southern rock"
+  ],
+  "origin_metro": "San Francisco-San Jose",
+  "features": {
+   "danceability": 0.637,
+   "energy": 0.697,
+   "loudness": -8.903,
+   "speechiness": 0.0297,
+   "acousticness": 0.171,
+   "instrumentalness": 0.0,
+   "liveness": 0.108,
+   "valence": 0.938,
+   "tempo": 147.103
+  }
+ },
+ {
+  "track": "Deacon Blues",
+  "artist": "Steely Dan",
+  "artist_key": "Steely Dan",
+  "year": 1977,
+  "label": "Geffen",
+  "genres": [
+   "yacht rock",
+   "classic rock"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.74,
+   "energy": 0.46,
+   "loudness": -15.859,
+   "speechiness": 0.0392,
+   "acousticness": 0.64,
+   "instrumentalness": 0.00123,
+   "liveness": 0.0827,
+   "valence": 0.553,
+   "tempo": 115.745
+  }
+ },
+ {
+  "track": "Peg",
+  "artist": "Steely Dan",
+  "artist_key": "Steely Dan",
+  "year": 1977,
+  "label": "Geffen",
+  "genres": [
+   "yacht rock",
+   "classic rock"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.778,
+   "energy": 0.441,
+   "loudness": -15.259,
+   "speechiness": 0.0314,
+   "acousticness": 0.22,
+   "instrumentalness": 0.000652,
+   "liveness": 0.171,
+   "valence": 0.944,
+   "tempo": 116.918
+  }
+ },
+ {
+  "track": "Nobody Does It Better",
+  "artist": "Carly Simon",
+  "artist_key": "Carly Simon",
+  "year": 2004,
+  "label": "Geffen",
+  "genres": [],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.367,
+   "energy": 0.594,
+   "loudness": -7.095,
+   "speechiness": 0.0292,
+   "acousticness": 0.592,
+   "instrumentalness": 1.06e-05,
+   "liveness": 0.258,
+   "valence": 0.295,
+   "tempo": 135.104
+  }
+ },
+ {
+  "track": "Perfect Day",
+  "artist": "Harry Nilsson",
+  "artist_key": "Harry Nilsson",
+  "year": 1977,
+  "label": "RCA/Legacy",
+  "genres": [
+   "baroque pop",
+   "singer-songwriter"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.306,
+   "energy": 0.185,
+   "loudness": -17.318,
+   "speechiness": 0.0292,
+   "acousticness": 0.461,
+   "instrumentalness": 0.0251,
+   "liveness": 0.0972,
+   "valence": 0.0477,
+   "tempo": 86.308
+  }
+ },
+ {
+  "track": "Lovely Day",
+  "artist": "Bill Withers",
+  "artist_key": "Bill Withers",
+  "year": 1977,
+  "label": "Columbia/Legacy",
+  "genres": [
+   "soul"
+  ],
+  "origin_metro": "Beckley",
+  "features": {
+   "danceability": 0.692,
+   "energy": 0.651,
+   "loudness": -8.267,
+   "speechiness": 0.0324,
+   "acousticness": 0.292,
+   "instrumentalness": 0.00241,
+   "liveness": 0.105,
+   "valence": 0.706,
+   "tempo": 97.923
+  }
+ },
+ {
+  "track": "Feel The Fire",
+  "artist": "Peabo Bryson",
+  "artist_key": "Peabo Bryson",
+  "year": 1985,
+  "label": "EMI/EMI Records (USA)",
+  "genres": [
+   "quiet storm"
+  ],
+  "origin_metro": "Greenville-Spartanburg",
+  "features": {
+   "danceability": 0.368,
+   "energy": 0.334,
+   "loudness": -13.654,
+   "speechiness": 0.036,
+   "acousticness": 0.727,
+   "instrumentalness": 0.0,
+   "liveness": 0.0666,
+   "valence": 0.301,
+   "tempo": 124.89
+  }
+ },
+ {
+  "track": "What a Fool Believes",
+  "artist": "The Doobie Brothers",
+  "artist_key": "The Doobie Brothers",
+  "year": 1978,
+  "label": "Rhino/Warner Records",
+  "genres": [
+   "yacht rock",
+   "classic rock",
+   "soft rock",
+   "southern rock"
+  ],
+  "origin_metro": "San Francisco-San Jose",
+  "features": {
+   "danceability": 0.758,
+   "energy": 0.378,
+   "loudness": -15.308,
+   "speechiness": 0.0449,
+   "acousticness": 0.284,
+   "instrumentalness": 0.0,
+   "liveness": 0.049,
+   "valence": 0.985,
+   "tempo": 120.736
+  }
+ },
+ {
+  "track": "Minute by Minute",
+  "artist": "The Doobie Brothers",
+  "artist_key": "The Doobie Brothers",
+  "year": 1978,
+  "label": "Rhino/Warner Records",
+  "genres": [
+   "yacht rock",
+   "classic rock",
+   "soft rock",
+   "southern rock"
+  ],
+  "origin_metro": "San Francisco-San Jose",
+  "features": {
+   "danceability": 0.735,
+   "energy": 0.276,
+   "loudness": -18.071,
+   "speechiness": 0.044,
+   "acousticness": 0.549,
+   "instrumentalness": 0.000201,
+   "liveness": 0.1,
+   "valence": 0.966,
+   "tempo": 142.979
+  }
+ },
+ {
+  "track": "With A Little Luck - Remastered 1993",
+  "artist": "Wings",
+  "artist_key": "Wings",
+  "year": 1978,
+  "label": "Paul McCartney Catalog",
+  "genres": [],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.652,
+   "energy": 0.372,
+   "loudness": -15.445,
+   "speechiness": 0.0321,
+   "acousticness": 0.0682,
+   "instrumentalness": 0.000199,
+   "liveness": 0.0923,
+   "valence": 0.28,
+   "tempo": 111.986
+  }
+ },
+ {
+  "track": "Baker Street",
+  "artist": "Gerry Rafferty",
+  "artist_key": "Gerry Rafferty",
+  "year": 1978,
+  "label": "Parlophone UK",
+  "genres": [
+   "yacht rock"
+  ],
+  "origin_metro": "Glasgow",
+  "features": {
+   "danceability": 0.497,
+   "energy": 0.349,
+   "loudness": -14.0,
+   "speechiness": 0.0297,
+   "acousticness": 0.0929,
+   "instrumentalness": 0.028,
+   "liveness": 0.259,
+   "valence": 0.421,
+   "tempo": 113.762
+  }
+ },
+ {
+  "track": "Right Down the Line",
+  "artist": "Gerry Rafferty",
+  "artist_key": "Gerry Rafferty",
+  "year": 1978,
+  "label": "Parlophone UK",
+  "genres": [
+   "yacht rock"
+  ],
+  "origin_metro": "Glasgow",
+  "features": {
+   "danceability": 0.783,
+   "energy": 0.322,
+   "loudness": -15.091,
+   "speechiness": 0.0343,
+   "acousticness": 0.213,
+   "instrumentalness": 0.00243,
+   "liveness": 0.114,
+   "valence": 0.77,
+   "tempo": 128.226
+  }
+ },
+ {
+  "track": "Ooh Baby Baby - 1999 Remaster",
+  "artist": "Linda Ronstadt",
+  "artist_key": "Linda Ronstadt",
+  "year": 1978,
+  "label": "Rhino/Elektra",
+  "genres": [
+   "country rock",
+   "mariachi"
+  ],
+  "origin_metro": "Tucson",
+  "features": {
+   "danceability": 0.472,
+   "energy": 0.264,
+   "loudness": -9.492,
+   "speechiness": 0.0324,
+   "acousticness": 0.771,
+   "instrumentalness": 9.86e-05,
+   "liveness": 0.0962,
+   "valence": 0.336,
+   "tempo": 166.43
+  }
+ },
+ {
+  "track": "I Just Wanna Stop",
+  "artist": "Gino Vannelli",
+  "artist_key": "Gino Vannelli",
+  "year": 1978,
+  "label": "A&M",
+  "genres": [
+   "yacht rock",
+   "aor"
+  ],
+  "origin_metro": "Montreal",
+  "features": {
+   "danceability": 0.581,
+   "energy": 0.548,
+   "loudness": -13.448,
+   "speechiness": 0.0325,
+   "acousticness": 0.184,
+   "instrumentalness": 0.00165,
+   "liveness": 0.163,
+   "valence": 0.672,
+   "tempo": 139.149
+  }
+ },
+ {
+  "track": "Sailing",
+  "artist": "Christopher Cross",
+  "artist_key": "Christopher Cross",
+  "year": 1979,
+  "label": "Rhino/Warner Records",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "San Antonio",
+  "features": {
+   "danceability": 0.469,
+   "energy": 0.382,
+   "loudness": -13.203,
+   "speechiness": 0.0374,
+   "acousticness": 0.364,
+   "instrumentalness": 0.00025,
+   "liveness": 0.36,
+   "valence": 0.178,
+   "tempo": 149.994
+  }
+ },
+ {
+  "track": "Ride Like The Wind (Yacht House Mix)",
+  "artist": "Christopher Cross",
+  "artist_key": "Christopher Cross",
+  "year": 2026,
+  "label": "Music Is Fun",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "San Antonio",
+  "features": {
+   "danceability": 0.786,
+   "energy": 0.805,
+   "loudness": -5.791,
+   "speechiness": 0.0406,
+   "acousticness": 0.00444,
+   "instrumentalness": 0.0575,
+   "liveness": 0.115,
+   "valence": 0.631,
+   "tempo": 124.993
+  }
+ },
+ {
+  "track": "Arrow Through Me - Remastered 1993",
+  "artist": "Wings",
+  "artist_key": "Wings",
+  "year": 1979,
+  "label": "Paul McCartney Catalog",
+  "genres": [],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.874,
+   "energy": 0.364,
+   "loudness": -12.326,
+   "speechiness": 0.0983,
+   "acousticness": 0.218,
+   "instrumentalness": 0.0263,
+   "liveness": 0.101,
+   "valence": 0.675,
+   "tempo": 86.004
+  }
+ },
+ {
+  "track": "I Can't Tell You Why - 2013 Remaster",
+  "artist": "Eagles",
+  "artist_key": "Eagles",
+  "year": 1979,
+  "label": "Rhino/Elektra",
+  "genres": [
+   "classic rock",
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.707,
+   "energy": 0.346,
+   "loudness": -12.397,
+   "speechiness": 0.0251,
+   "acousticness": 0.69,
+   "instrumentalness": 0.145,
+   "liveness": 0.1,
+   "valence": 0.49,
+   "tempo": 85.094
+  }
+ },
+ {
+  "track": "The Logical Song",
+  "artist": "Supertramp",
+  "artist_key": "Supertramp",
+  "year": 1979,
+  "label": "A&M Records Inc.",
+  "genres": [
+   "progressive rock",
+   "classic rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.623,
+   "energy": 0.575,
+   "loudness": -11.766,
+   "speechiness": 0.0528,
+   "acousticness": 0.569,
+   "instrumentalness": 0.000206,
+   "liveness": 0.148,
+   "valence": 0.714,
+   "tempo": 119.836
+  }
+ },
+ {
+  "track": "Goodbye Stranger - Remastered 2010",
+  "artist": "Supertramp",
+  "artist_key": "Supertramp",
+  "year": 1979,
+  "label": "A&M",
+  "genres": [
+   "progressive rock",
+   "classic rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.42,
+   "energy": 0.668,
+   "loudness": -7.35,
+   "speechiness": 0.0517,
+   "acousticness": 0.607,
+   "instrumentalness": 0.016,
+   "liveness": 0.0585,
+   "valence": 0.338,
+   "tempo": 125.391
+  }
+ },
+ {
+  "track": "Blow Away",
+  "artist": "George Harrison",
+  "artist_key": "George Harrison",
+  "year": 1979,
+  "label": "BMG Rights Management (US) LLC",
+  "genres": [],
+  "origin_metro": "Liverpool",
+  "features": {
+   "danceability": 0.649,
+   "energy": 0.627,
+   "loudness": -9.012,
+   "speechiness": 0.0315,
+   "acousticness": 0.303,
+   "instrumentalness": 0.0,
+   "liveness": 0.118,
+   "valence": 0.249,
+   "tempo": 115.221
+  }
+ },
+ {
+  "track": "Cruisin'",
+  "artist": "Smokey Robinson",
+  "artist_key": "Smokey Robinson",
+  "year": 1979,
+  "label": "UNI/MOTOWN",
+  "genres": [
+   "motown",
+   "quiet storm",
+   "classic soul"
+  ],
+  "origin_metro": "Detroit",
+  "features": {
+   "danceability": 0.498,
+   "energy": 0.63,
+   "loudness": -5.808,
+   "speechiness": 0.0276,
+   "acousticness": 0.416,
+   "instrumentalness": 0.0,
+   "liveness": 0.238,
+   "valence": 0.822,
+   "tempo": 169.115
+  }
+ },
+ {
+  "track": "Too Hot",
+  "artist": "Kool & The Gang",
+  "artist_key": "Kool & the Gang",
+  "year": 1979,
+  "label": "Island Def Jam",
+  "genres": [
+   "disco",
+   "funk"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.717,
+   "energy": 0.253,
+   "loudness": -22.231,
+   "speechiness": 0.161,
+   "acousticness": 0.56,
+   "instrumentalness": 2.85e-05,
+   "liveness": 0.0556,
+   "valence": 0.737,
+   "tempo": 105.289
+  }
+ },
+ {
+  "track": "After the Love Has Gone",
+  "artist": "Earth, Wind & Fire",
+  "artist_key": "Earth, Wind & Fire",
+  "year": 1979,
+  "label": "Columbia/Legacy",
+  "genres": [
+   "funk",
+   "disco"
+  ],
+  "origin_metro": "Chicago",
+  "features": {
+   "danceability": 0.424,
+   "energy": 0.443,
+   "loudness": -13.45,
+   "speechiness": 0.0382,
+   "acousticness": 0.532,
+   "instrumentalness": 0.000389,
+   "liveness": 0.673,
+   "valence": 0.391,
+   "tempo": 131.675
+  }
+ },
+ {
+  "track": "I Wanna Be Your Lover",
+  "artist": "Prince",
+  "artist_key": "Prince",
+  "year": 1979,
+  "label": "Legacy Recordings",
+  "genres": [
+   "funk rock",
+   "funk"
+  ],
+  "origin_metro": "Minneapolis",
+  "features": {
+   "danceability": 0.812,
+   "energy": 0.506,
+   "loudness": -8.825,
+   "speechiness": 0.0453,
+   "acousticness": 0.0399,
+   "instrumentalness": 0.0847,
+   "liveness": 0.0671,
+   "valence": 0.727,
+   "tempo": 114.832
+  }
+ },
+ {
+  "track": "Hey Nineteen",
+  "artist": "Steely Dan",
+  "artist_key": "Steely Dan",
+  "year": 1980,
+  "label": "Geffen",
+  "genres": [
+   "yacht rock",
+   "classic rock"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.936,
+   "energy": 0.249,
+   "loudness": -18.341,
+   "speechiness": 0.0641,
+   "acousticness": 0.0374,
+   "instrumentalness": 0.00452,
+   "liveness": 0.0631,
+   "valence": 0.822,
+   "tempo": 119.986
+  }
+ },
+ {
+  "track": "Give Me the Night",
+  "artist": "George Benson",
+  "artist_key": "George Benson",
+  "year": 2009,
+  "label": "Rhino/Warner Records",
+  "genres": [
+   "smooth jazz",
+   "yacht rock",
+   "jazz funk",
+   "soul jazz"
+  ],
+  "origin_metro": "Pittsburgh",
+  "features": {
+   "danceability": 0.85,
+   "energy": 0.466,
+   "loudness": -15.673,
+   "speechiness": 0.0555,
+   "acousticness": 0.314,
+   "instrumentalness": 0.0234,
+   "liveness": 0.129,
+   "valence": 0.86,
+   "tempo": 109.936
+  }
+ },
+ {
+  "track": "JoJo",
+  "artist": "Boz Scaggs",
+  "artist_key": "Boz Scaggs",
+  "year": 2006,
+  "label": "Columbia/Legacy",
+  "genres": [
+   "yacht rock",
+   "aor"
+  ],
+  "origin_metro": "San Francisco-San Jose",
+  "features": {
+   "danceability": 0.678,
+   "energy": 0.618,
+   "loudness": -7.304,
+   "speechiness": 0.0325,
+   "acousticness": 0.261,
+   "instrumentalness": 0.002,
+   "liveness": 0.12,
+   "valence": 0.887,
+   "tempo": 94.851
+  }
+ },
+ {
+  "track": "Lady",
+  "artist": "Kenny Rogers",
+  "artist_key": "Kenny Rogers",
+  "year": 1993,
+  "label": "Capitol Nashville",
+  "genres": [
+   "country",
+   "classic country"
+  ],
+  "origin_metro": "Houston",
+  "features": {
+   "danceability": 0.324,
+   "energy": 0.183,
+   "loudness": -16.001,
+   "speechiness": 0.0348,
+   "acousticness": 0.861,
+   "instrumentalness": 0.000227,
+   "liveness": 0.0932,
+   "valence": 0.2,
+   "tempo": 136.808
+  }
+ },
+ {
+  "track": "Guilty (feat. Barry Gibb)",
+  "artist": "Barbra Streisand",
+  "artist_key": "Barbra Streisand",
+  "year": 1980,
+  "label": "Columbia",
+  "genres": [
+   "adult standards"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.626,
+   "energy": 0.425,
+   "loudness": -15.656,
+   "speechiness": 0.0356,
+   "acousticness": 0.231,
+   "instrumentalness": 0.0,
+   "liveness": 0.114,
+   "valence": 0.952,
+   "tempo": 150.875
+  }
+ },
+ {
+  "track": "Woman - Remastered 2010",
+  "artist": "John Lennon",
+  "artist_key": "John Lennon",
+  "year": 1980,
+  "label": "BEATLES CATALOG MKT (C91)",
+  "genres": [
+   "christmas"
+  ],
+  "origin_metro": "Liverpool",
+  "features": {
+   "danceability": 0.588,
+   "energy": 0.656,
+   "loudness": -6.373,
+   "speechiness": 0.0224,
+   "acousticness": 0.378,
+   "instrumentalness": 0.00227,
+   "liveness": 0.042,
+   "valence": 0.746,
+   "tempo": 79.701
+  }
+ },
+ {
+  "track": "Time",
+  "artist": "The Alan Parsons Project",
+  "artist_key": "The Alan Parsons Project",
+  "year": 1980,
+  "label": "Arista",
+  "genres": [
+   "progressive rock",
+   "classic rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.346,
+   "energy": 0.278,
+   "loudness": -15.073,
+   "speechiness": 0.0262,
+   "acousticness": 0.23,
+   "instrumentalness": 0.0195,
+   "liveness": 0.14,
+   "valence": 0.0957,
+   "tempo": 148.015
+  }
+ },
+ {
+  "track": "Just the Two of Us (feat. Bill Withers)",
+  "artist": "Grover Washington, Jr.",
+  "artist_key": null,
+  "year": 2008,
+  "label": "Rhino/Elektra",
+  "genres": [
+   "soul jazz",
+   "smooth jazz",
+   "soul"
+  ],
+  "origin_metro": null,
+  "features": {
+   "danceability": 0.749,
+   "energy": 0.497,
+   "loudness": -12.609,
+   "speechiness": 0.105,
+   "acousticness": 0.41,
+   "instrumentalness": 0.0499,
+   "liveness": 0.0504,
+   "valence": 0.585,
+   "tempo": 95.818
+  }
+ },
+ {
+  "track": "Out Here On My Own",
+  "artist": "Irene Cara",
+  "artist_key": "Irene Cara",
+  "year": 1980,
+  "label": "WaterTower Music",
+  "genres": [],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.411,
+   "energy": 0.129,
+   "loudness": -15.07,
+   "speechiness": 0.0358,
+   "acousticness": 0.98,
+   "instrumentalness": 2.52e-05,
+   "liveness": 0.085,
+   "valence": 0.222,
+   "tempo": 136.215
+  }
+ },
+ {
+  "track": "Turn Your Love Around",
+  "artist": "George Benson",
+  "artist_key": "George Benson",
+  "year": 2009,
+  "label": "Rhino/Warner Records",
+  "genres": [
+   "smooth jazz",
+   "yacht rock",
+   "jazz funk",
+   "soul jazz"
+  ],
+  "origin_metro": "Pittsburgh",
+  "features": {
+   "danceability": 0.627,
+   "energy": 0.385,
+   "loudness": -13.655,
+   "speechiness": 0.0537,
+   "acousticness": 0.334,
+   "instrumentalness": 0.0,
+   "liveness": 0.182,
+   "valence": 0.766,
+   "tempo": 205.726
+  }
+ },
+ {
+  "track": "Her Town Too (with J.D. Souther)",
+  "artist": "James Taylor",
+  "artist_key": "James Taylor",
+  "year": 1981,
+  "label": "Columbia",
+  "genres": [
+   "folk rock",
+   "singer-songwriter",
+   "soft rock",
+   "country rock",
+   "yacht rock",
+   "aor"
+  ],
+  "origin_metro": "Boston",
+  "features": {
+   "danceability": 0.706,
+   "energy": 0.403,
+   "loudness": -15.017,
+   "speechiness": 0.0277,
+   "acousticness": 0.18,
+   "instrumentalness": 0.0,
+   "liveness": 0.0975,
+   "valence": 0.56,
+   "tempo": 97.381
+  }
+ },
+ {
+  "track": "We're in This Love Together",
+  "artist": "Al Jarreau",
+  "artist_key": "Al Jarreau",
+  "year": 1981,
+  "label": "Rhino/Warner Records",
+  "genres": [
+   "yacht rock",
+   "smooth jazz",
+   "vocal jazz",
+   "jazz"
+  ],
+  "origin_metro": "Milwaukee",
+  "features": {
+   "danceability": 0.597,
+   "energy": 0.323,
+   "loudness": -15.648,
+   "speechiness": 0.0494,
+   "acousticness": 0.56,
+   "instrumentalness": 2.24e-05,
+   "liveness": 0.628,
+   "valence": 0.628,
+   "tempo": 79.397
+  }
+ },
+ {
+  "track": "What Cha' Gonna Do for Me",
+  "artist": "Chaka Khan",
+  "artist_key": "Chaka Khan",
+  "year": 1981,
+  "label": "Rhino/Warner Records",
+  "genres": [],
+  "origin_metro": "Chicago",
+  "features": {
+   "danceability": 0.684,
+   "energy": 0.64,
+   "loudness": -9.906,
+   "speechiness": 0.0309,
+   "acousticness": 0.221,
+   "instrumentalness": 0.0102,
+   "liveness": 0.179,
+   "valence": 0.776,
+   "tempo": 106.023
+  }
+ },
+ {
+  "track": "Being With You",
+  "artist": "Smokey Robinson",
+  "artist_key": "Smokey Robinson",
+  "year": 1981,
+  "label": "UNI/MOTOWN",
+  "genres": [
+   "motown",
+   "quiet storm",
+   "classic soul"
+  ],
+  "origin_metro": "Detroit",
+  "features": {
+   "danceability": 0.649,
+   "energy": 0.434,
+   "loudness": -9.529,
+   "speechiness": 0.0267,
+   "acousticness": 0.764,
+   "instrumentalness": 2.44e-06,
+   "liveness": 0.0822,
+   "valence": 0.572,
+   "tempo": 108.754
+  }
+ },
+ {
+  "track": "Living Inside Myself",
+  "artist": "Gino Vannelli",
+  "artist_key": "Gino Vannelli",
+  "year": 1981,
+  "label": "Arista",
+  "genres": [
+   "yacht rock",
+   "aor"
+  ],
+  "origin_metro": "Montreal",
+  "features": {
+   "danceability": 0.409,
+   "energy": 0.428,
+   "loudness": -13.195,
+   "speechiness": 0.0412,
+   "acousticness": 0.462,
+   "instrumentalness": 8.22e-05,
+   "liveness": 0.0687,
+   "valence": 0.04,
+   "tempo": 119.941
+  }
+ },
+ {
+  "track": "Endless Love",
+  "artist": "Lionel Richie",
+  "artist_key": "Lionel Richie",
+  "year": 1992,
+  "label": "Motown",
+  "genres": [
+   "motown",
+   "disco"
+  ],
+  "origin_metro": "Montgomery",
+  "features": {
+   "danceability": 0.49,
+   "energy": 0.268,
+   "loudness": -11.809,
+   "speechiness": 0.0257,
+   "acousticness": 0.866,
+   "instrumentalness": 0.0161,
+   "liveness": 0.145,
+   "valence": 0.181,
+   "tempo": 93.352
+  }
+ },
+ {
+  "track": "I.G.Y.",
+  "artist": "Donald Fagen",
+  "artist_key": "Donald Fagen",
+  "year": 1982,
+  "label": "Reprise",
+  "genres": [
+   "yacht rock",
+   "aor"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.834,
+   "energy": 0.559,
+   "loudness": -9.366,
+   "speechiness": 0.0603,
+   "acousticness": 0.614,
+   "instrumentalness": 0.00434,
+   "liveness": 0.0839,
+   "valence": 0.874,
+   "tempo": 119.422
+  }
+ },
+ {
+  "track": "Hard to Say I'm Sorry",
+  "artist": "Chicago",
+  "artist_key": "Chicago",
+  "year": 2012,
+  "label": "Rhino",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Chicago",
+  "features": {
+   "danceability": 0.543,
+   "energy": 0.381,
+   "loudness": -8.565,
+   "speechiness": 0.0248,
+   "acousticness": 0.707,
+   "instrumentalness": 4.42e-06,
+   "liveness": 0.249,
+   "valence": 0.188,
+   "tempo": 72.332
+  }
+ },
+ {
+  "track": "Somebody's Baby",
+  "artist": "Jackson Browne",
+  "artist_key": "Jackson Browne",
+  "year": 2010,
+  "label": "Elektra Records",
+  "genres": [
+   "yacht rock",
+   "folk rock",
+   "soft rock",
+   "singer-songwriter"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.741,
+   "energy": 0.742,
+   "loudness": -7.822,
+   "speechiness": 0.0269,
+   "acousticness": 0.146,
+   "instrumentalness": 1.64e-05,
+   "liveness": 0.106,
+   "valence": 0.889,
+   "tempo": 116.951
+  }
+ },
+ {
+  "track": "Valerie",
+  "artist": "Steve Winwood",
+  "artist_key": "Steve Winwood",
+  "year": 1982,
+  "label": "UMC (Universal Music Catalogue)",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Birmingham",
+  "features": {
+   "danceability": 0.717,
+   "energy": 0.527,
+   "loudness": -10.779,
+   "speechiness": 0.0292,
+   "acousticness": 0.567,
+   "instrumentalness": 0.00668,
+   "liveness": 0.0785,
+   "valence": 0.731,
+   "tempo": 116.288
+  }
+ },
+ {
+  "track": "I Can't Go for That (No Can Do)",
+  "artist": "Daryl Hall & John Oates",
+  "artist_key": "Hall & Oates",
+  "year": 1981,
+  "label": "RCA/BMG Heritage",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Philadelphia",
+  "features": {
+   "danceability": 0.889,
+   "energy": 0.441,
+   "loudness": -9.506,
+   "speechiness": 0.0379,
+   "acousticness": 0.0405,
+   "instrumentalness": 0.000788,
+   "liveness": 0.038,
+   "valence": 0.963,
+   "tempo": 110.565
+  }
+ },
+ {
+  "track": "One On One",
+  "artist": "Daryl Hall & John Oates",
+  "artist_key": "Hall & Oates",
+  "year": 1982,
+  "label": "RCA/Legacy",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Philadelphia",
+  "features": {
+   "danceability": 0.748,
+   "energy": 0.302,
+   "loudness": -15.334,
+   "speechiness": 0.028,
+   "acousticness": 0.835,
+   "instrumentalness": 0.298,
+   "liveness": 0.198,
+   "valence": 0.815,
+   "tempo": 95.614
+  }
+ },
+ {
+  "track": "Human Nature",
+  "artist": "Michael Jackson",
+  "artist_key": "Michael Jackson",
+  "year": 1982,
+  "label": "Epic",
+  "genres": [],
+  "origin_metro": "Chicago",
+  "features": {
+   "danceability": 0.628,
+   "energy": 0.409,
+   "loudness": -14.348,
+   "speechiness": 0.0306,
+   "acousticness": 0.498,
+   "instrumentalness": 0.00565,
+   "liveness": 0.29,
+   "valence": 0.755,
+   "tempo": 93.005
+  }
+ },
+ {
+  "track": "The Look Of Love, Pt.1",
+  "artist": "ABC",
+  "artist_key": "ABC",
+  "year": 1982,
+  "label": "EMI",
+  "genres": [
+   "new wave",
+   "synthpop"
+  ],
+  "origin_metro": "Sheffield",
+  "features": {
+   "danceability": 0.739,
+   "energy": 0.897,
+   "loudness": -4.566,
+   "speechiness": 0.0896,
+   "acousticness": 0.112,
+   "instrumentalness": 0.00103,
+   "liveness": 0.309,
+   "valence": 0.915,
+   "tempo": 121.007
+  }
+ },
+ {
+  "track": "All This Love",
+  "artist": "DeBarge",
+  "artist_key": "DeBarge",
+  "year": 1982,
+  "label": "UNI/MOTOWN",
+  "genres": [
+   "quiet storm"
+  ],
+  "origin_metro": "Grand Rapids",
+  "features": {
+   "danceability": 0.454,
+   "energy": 0.672,
+   "loudness": -5.636,
+   "speechiness": 0.0357,
+   "acousticness": 0.151,
+   "instrumentalness": 1.08e-06,
+   "liveness": 0.094,
+   "valence": 0.428,
+   "tempo": 187.15
+  }
+ },
+ {
+  "track": "Do You Really Want To Hurt Me",
+  "artist": "Culture Club",
+  "artist_key": "Culture Club",
+  "year": 1982,
+  "label": "Virgin Catalogue",
+  "genres": [],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.744,
+   "energy": 0.376,
+   "loudness": -14.996,
+   "speechiness": 0.0366,
+   "acousticness": 0.0815,
+   "instrumentalness": 0.0,
+   "liveness": 0.108,
+   "valence": 0.42,
+   "tempo": 100.78
+  }
+ },
+ {
+  "track": "Steppin' Out",
+  "artist": "Joe Jackson",
+  "artist_key": "Joe Jackson",
+  "year": 1982,
+  "label": "A&M",
+  "genres": [
+   "new wave",
+   "power pop"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.579,
+   "energy": 0.223,
+   "loudness": -20.208,
+   "speechiness": 0.0364,
+   "acousticness": 0.0439,
+   "instrumentalness": 0.00232,
+   "liveness": 0.0613,
+   "valence": 0.532,
+   "tempo": 159.696
+  }
+ },
+ {
+  "track": "Eye In The Sky",
+  "artist": "The Alan Parsons Project",
+  "artist_key": "The Alan Parsons Project",
+  "year": 1982,
+  "label": "Arista/Legacy",
+  "genres": [
+   "progressive rock",
+   "classic rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.823,
+   "energy": 0.417,
+   "loudness": -12.643,
+   "speechiness": 0.032,
+   "acousticness": 0.562,
+   "instrumentalness": 0.00098,
+   "liveness": 0.0765,
+   "valence": 0.522,
+   "tempo": 111.928
+  }
+ },
+ {
+  "track": "All Night Long (All Night)",
+  "artist": "Lionel Richie",
+  "artist_key": "Lionel Richie",
+  "year": 1983,
+  "label": "Motown",
+  "genres": [
+   "motown"
+  ],
+  "origin_metro": "Montgomery",
+  "features": {
+   "danceability": 0.716,
+   "energy": 0.556,
+   "loudness": -13.917,
+   "speechiness": 0.0406,
+   "acousticness": 0.111,
+   "instrumentalness": 0.0076,
+   "liveness": 0.0422,
+   "valence": 0.8,
+   "tempo": 108.828
+  }
+ },
+ {
+  "track": "Stuck On You",
+  "artist": "Lionel Richie",
+  "artist_key": "Lionel Richie",
+  "year": 1983,
+  "label": "Motown",
+  "genres": [
+   "motown"
+  ],
+  "origin_metro": "Montgomery",
+  "features": {
+   "danceability": 0.509,
+   "energy": 0.317,
+   "loudness": -16.063,
+   "speechiness": 0.0305,
+   "acousticness": 0.621,
+   "instrumentalness": 5.28e-05,
+   "liveness": 0.0878,
+   "valence": 0.247,
+   "tempo": 131.783
+  }
+ },
+ {
+  "track": "An Innocent Man",
+  "artist": "Billy Joel",
+  "artist_key": "Billy Joel",
+  "year": 1983,
+  "label": "Columbia",
+  "genres": [
+   "soft rock"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.509,
+   "energy": 0.382,
+   "loudness": -9.441,
+   "speechiness": 0.0351,
+   "acousticness": 0.0466,
+   "instrumentalness": 0.0,
+   "liveness": 0.112,
+   "valence": 0.427,
+   "tempo": 105.764
+  }
+ },
+ {
+  "track": "Let's Dance - 2018 Remaster",
+  "artist": "David Bowie",
+  "artist_key": "David Bowie",
+  "year": 1983,
+  "label": "Parlophone UK",
+  "genres": [
+   "glam rock",
+   "art rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.654,
+   "energy": 0.743,
+   "loudness": -7.44,
+   "speechiness": 0.0605,
+   "acousticness": 0.0125,
+   "instrumentalness": 0.0272,
+   "liveness": 0.153,
+   "valence": 0.632,
+   "tempo": 114.846
+  }
+ },
+ {
+  "track": "China Girl",
+  "artist": "David Bowie",
+  "artist_key": "David Bowie",
+  "year": 1983,
+  "label": "Golden Rain",
+  "genres": [
+   "glam rock",
+   "art rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.365,
+   "energy": 0.818,
+   "loudness": -10.664,
+   "speechiness": 0.0377,
+   "acousticness": 0.0846,
+   "instrumentalness": 0.277,
+   "liveness": 0.958,
+   "valence": 0.598,
+   "tempo": 134.958
+  }
+ },
+ {
+  "track": "Automatic",
+  "artist": "The Pointer Sisters",
+  "artist_key": "The Pointer Sisters",
+  "year": 1983,
+  "label": "RCA/Legacy",
+  "genres": [
+   "disco"
+  ],
+  "origin_metro": "San Francisco-San Jose",
+  "features": {
+   "danceability": 0.803,
+   "energy": 0.656,
+   "loudness": -7.53,
+   "speechiness": 0.0556,
+   "acousticness": 0.0934,
+   "instrumentalness": 0.0,
+   "liveness": 0.324,
+   "valence": 0.926,
+   "tempo": 110.544
+  }
+ },
+ {
+  "track": "Tonight I Celebrate My Love",
+  "artist": "Peabo Bryson",
+  "artist_key": "Peabo Bryson",
+  "year": 1983,
+  "label": "CAPITOL CATALOG MKT (C92)",
+  "genres": [
+   "quiet storm",
+   "adult standards",
+   "classic soul"
+  ],
+  "origin_metro": "Greenville-Spartanburg",
+  "features": {
+   "danceability": 0.482,
+   "energy": 0.211,
+   "loudness": -14.518,
+   "speechiness": 0.0318,
+   "acousticness": 0.803,
+   "instrumentalness": 1.36e-05,
+   "liveness": 0.154,
+   "valence": 0.158,
+   "tempo": 116.902
+  }
+ },
+ {
+  "track": "Time Will Reveal",
+  "artist": "DeBarge",
+  "artist_key": "DeBarge",
+  "year": 1983,
+  "label": "UNI/MOTOWN",
+  "genres": [
+   "quiet storm"
+  ],
+  "origin_metro": "Grand Rapids",
+  "features": {
+   "danceability": 0.711,
+   "energy": 0.259,
+   "loudness": -13.796,
+   "speechiness": 0.0359,
+   "acousticness": 0.528,
+   "instrumentalness": 0.0,
+   "liveness": 0.0582,
+   "valence": 0.433,
+   "tempo": 129.75
+  }
+ },
+ {
+  "track": "Stay With Me",
+  "artist": "DeBarge",
+  "artist_key": "DeBarge",
+  "year": 1983,
+  "label": "UNI/MOTOWN",
+  "genres": [
+   "quiet storm"
+  ],
+  "origin_metro": "Grand Rapids",
+  "features": {
+   "danceability": 0.606,
+   "energy": 0.406,
+   "loudness": -16.478,
+   "speechiness": 0.0413,
+   "acousticness": 0.291,
+   "instrumentalness": 4.09e-05,
+   "liveness": 0.221,
+   "valence": 0.699,
+   "tempo": 89.851
+  }
+ },
+ {
+  "track": "Smooth Operator - Single Version",
+  "artist": "Sade",
+  "artist_key": "Sade",
+  "year": 1994,
+  "label": "Epic",
+  "genres": [],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.734,
+   "energy": 0.58,
+   "loudness": -6.619,
+   "speechiness": 0.0321,
+   "acousticness": 0.238,
+   "instrumentalness": 0.0006,
+   "liveness": 0.0298,
+   "valence": 0.962,
+   "tempo": 119.336
+  }
+ },
+ {
+  "track": "Your Love Is King",
+  "artist": "Sade",
+  "artist_key": "Sade",
+  "year": 1984,
+  "label": "Sony Music CG",
+  "genres": [],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.742,
+   "energy": 0.42,
+   "loudness": -6.797,
+   "speechiness": 0.031,
+   "acousticness": 0.562,
+   "instrumentalness": 4.12e-05,
+   "liveness": 0.0402,
+   "valence": 0.594,
+   "tempo": 134.624
+  }
+ },
+ {
+  "track": "You're the Inspiration",
+  "artist": "Chicago",
+  "artist_key": "Chicago",
+  "year": 2002,
+  "label": "Rhino",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Chicago",
+  "features": {
+   "danceability": 0.604,
+   "energy": 0.579,
+   "loudness": -7.252,
+   "speechiness": 0.0285,
+   "acousticness": 0.369,
+   "instrumentalness": 0.0,
+   "liveness": 0.0876,
+   "valence": 0.377,
+   "tempo": 73.911
+  }
+ },
+ {
+  "track": "The Beautiful Ones",
+  "artist": "Prince",
+  "artist_key": "Prince",
+  "year": 1984,
+  "label": "Warner Records",
+  "genres": [
+   "funk rock",
+   "funk"
+  ],
+  "origin_metro": "Minneapolis",
+  "features": {
+   "danceability": 0.547,
+   "energy": 0.414,
+   "loudness": -12.074,
+   "speechiness": 0.0356,
+   "acousticness": 0.0923,
+   "instrumentalness": 0.0049,
+   "liveness": 0.0809,
+   "valence": 0.514,
+   "tempo": 143.414
+  }
+ },
+ {
+  "track": "Take Me with U",
+  "artist": "Prince",
+  "artist_key": "Prince",
+  "year": 1984,
+  "label": "Warner Records",
+  "genres": [
+   "funk rock",
+   "funk"
+  ],
+  "origin_metro": "Minneapolis",
+  "features": {
+   "danceability": 0.707,
+   "energy": 0.814,
+   "loudness": -10.677,
+   "speechiness": 0.0288,
+   "acousticness": 0.0859,
+   "instrumentalness": 0.00281,
+   "liveness": 0.234,
+   "valence": 0.697,
+   "tempo": 121.918
+  }
+ },
+ {
+  "track": "What's Love Got to Do with It",
+  "artist": "Tina Turner",
+  "artist_key": "Tina Turner",
+  "year": 1993,
+  "label": "Parlophone UK",
+  "genres": [],
+  "origin_metro": "St. Louis",
+  "features": {
+   "danceability": 0.851,
+   "energy": 0.406,
+   "loudness": -11.631,
+   "speechiness": 0.0661,
+   "acousticness": 0.219,
+   "instrumentalness": 6.41e-06,
+   "liveness": 0.0853,
+   "valence": 0.792,
+   "tempo": 97.84
+  }
+ },
+ {
+  "track": "Private Dancer - 2015 Remaster",
+  "artist": "Tina Turner",
+  "artist_key": "Tina Turner",
+  "year": 1984,
+  "label": "Parlophone UK",
+  "genres": [],
+  "origin_metro": "St. Louis",
+  "features": {
+   "danceability": 0.587,
+   "energy": 0.572,
+   "loudness": -9.656,
+   "speechiness": 0.0412,
+   "acousticness": 0.363,
+   "instrumentalness": 0.0883,
+   "liveness": 0.0914,
+   "valence": 0.472,
+   "tempo": 115.464
+  }
+ },
+ {
+  "track": "Against All Odds (Take a Look at Me Now) - 2016 Remaster",
+  "artist": "Phil Collins",
+  "artist_key": "Phil Collins",
+  "year": 2016,
+  "label": "Rhino",
+  "genres": [
+   "soft rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.581,
+   "energy": 0.498,
+   "loudness": -6.9,
+   "speechiness": 0.0276,
+   "acousticness": 0.198,
+   "instrumentalness": 0.0,
+   "liveness": 0.132,
+   "valence": 0.111,
+   "tempo": 116.262
+  }
+ },
+ {
+  "track": "Here Comes the Rain Again - Remastered Version",
+  "artist": "Eurythmics",
+  "artist_key": "Eurythmics",
+  "year": 1983,
+  "label": "RCA Records Label",
+  "genres": [
+   "new wave",
+   "synthpop"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.648,
+   "energy": 0.755,
+   "loudness": -7.901,
+   "speechiness": 0.03,
+   "acousticness": 0.0139,
+   "instrumentalness": 0.000253,
+   "liveness": 0.225,
+   "valence": 0.607,
+   "tempo": 126.341
+  }
+ },
+ {
+  "track": "The Boys Of Summer",
+  "artist": "Don Henley",
+  "artist_key": "Don Henley",
+  "year": 2009,
+  "label": "Geffen",
+  "genres": [
+   "yacht rock"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.516,
+   "energy": 0.776,
+   "loudness": -6.409,
+   "speechiness": 0.0412,
+   "acousticness": 0.399,
+   "instrumentalness": 0.00128,
+   "liveness": 0.21,
+   "valence": 0.859,
+   "tempo": 177.399
+  }
+ },
+ {
+  "track": "Friends",
+  "artist": "Whodini",
+  "artist_key": "Whodini",
+  "year": 2003,
+  "label": "Jive",
+  "genres": [
+   "old school hip hop",
+   "east coast hip hop"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.751,
+   "energy": 0.82,
+   "loudness": -5.189,
+   "speechiness": 0.247,
+   "acousticness": 0.0914,
+   "instrumentalness": 1.07e-06,
+   "liveness": 0.0406,
+   "valence": 0.718,
+   "tempo": 192.026
+  }
+ },
+ {
+  "track": "Tinseltown in the Rain",
+  "artist": "The Blue Nile",
+  "artist_key": "The Blue Nile",
+  "year": 1984,
+  "label": "Epstein Records",
+  "genres": [
+   "art rock",
+   "synthpop"
+  ],
+  "origin_metro": "Glasgow",
+  "features": {
+   "danceability": 0.776,
+   "energy": 0.816,
+   "loudness": -6.698,
+   "speechiness": 0.0346,
+   "acousticness": 0.0575,
+   "instrumentalness": 1.33e-05,
+   "liveness": 0.0782,
+   "valence": 0.908,
+   "tempo": 117.7
+  }
+ },
+ {
+  "track": "Careless Whisper",
+  "artist": "George Michael",
+  "artist_key": "George Michael",
+  "year": 1998,
+  "label": "Epic",
+  "genres": [],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.575,
+   "energy": 0.643,
+   "loudness": -8.854,
+   "speechiness": 0.0331,
+   "acousticness": 0.136,
+   "instrumentalness": 1.65e-06,
+   "liveness": 0.249,
+   "valence": 0.789,
+   "tempo": 152.854
+  }
+ },
+ {
+  "track": "Everything She Wants",
+  "artist": "Wham!",
+  "artist_key": "Wham!",
+  "year": 1984,
+  "label": "Columbia",
+  "genres": [
+   "christmas"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.899,
+   "energy": 0.459,
+   "loudness": -15.557,
+   "speechiness": 0.0366,
+   "acousticness": 0.322,
+   "instrumentalness": 0.00406,
+   "liveness": 0.165,
+   "valence": 0.962,
+   "tempo": 115.09
+  }
+ },
+ {
+  "track": "The Sweetest Taboo",
+  "artist": "Sade",
+  "artist_key": "Sade",
+  "year": 1985,
+  "label": "Sony Music UK",
+  "genres": [],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.752,
+   "energy": 0.823,
+   "loudness": -9.455,
+   "speechiness": 0.0447,
+   "acousticness": 0.128,
+   "instrumentalness": 0.0098,
+   "liveness": 0.303,
+   "valence": 0.962,
+   "tempo": 91.563
+  }
+ },
+ {
+  "track": "Nightshift",
+  "artist": "Commodores",
+  "artist_key": "Commodores",
+  "year": 1985,
+  "label": "UNI/MOTOWN",
+  "genres": [
+   "motown",
+   "classic soul"
+  ],
+  "origin_metro": "Montgomery",
+  "features": {
+   "danceability": 0.727,
+   "energy": 0.559,
+   "loudness": -10.194,
+   "speechiness": 0.0392,
+   "acousticness": 0.62,
+   "instrumentalness": 0.0114,
+   "liveness": 0.0629,
+   "valence": 0.393,
+   "tempo": 105.06
+  }
+ },
+ {
+  "track": "Saving All My Love for You",
+  "artist": "Whitney Houston",
+  "artist_key": "Whitney Houston",
+  "year": 1985,
+  "label": "Arista",
+  "genres": [],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.636,
+   "energy": 0.264,
+   "loudness": -14.567,
+   "speechiness": 0.0263,
+   "acousticness": 0.593,
+   "instrumentalness": 4.22e-05,
+   "liveness": 0.275,
+   "valence": 0.264,
+   "tempo": 99.304
+  }
+ },
+ {
+  "track": "You Give Good Love",
+  "artist": "Whitney Houston",
+  "artist_key": "Whitney Houston",
+  "year": 1985,
+  "label": "Arista",
+  "genres": [],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.559,
+   "energy": 0.365,
+   "loudness": -13.654,
+   "speechiness": 0.0332,
+   "acousticness": 0.686,
+   "instrumentalness": 0.0,
+   "liveness": 0.0771,
+   "valence": 0.534,
+   "tempo": 74.802
+  }
+ },
+ {
+  "track": "Your Latest Trick",
+  "artist": "Dire Straits",
+  "artist_key": "Dire Straits",
+  "year": 1985,
+  "label": "Warner Records",
+  "genres": [
+   "classic rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.704,
+   "energy": 0.408,
+   "loudness": -13.558,
+   "speechiness": 0.0346,
+   "acousticness": 0.721,
+   "instrumentalness": 0.104,
+   "liveness": 0.141,
+   "valence": 0.264,
+   "tempo": 122.544
+  }
+ },
+ {
+  "track": "So Far Away - Remastered 1996",
+  "artist": "Dire Straits",
+  "artist_key": "Dire Straits",
+  "year": 1985,
+  "label": "UMC (Universal Music Catalogue)",
+  "genres": [
+   "classic rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.695,
+   "energy": 0.461,
+   "loudness": -11.731,
+   "speechiness": 0.028,
+   "acousticness": 0.255,
+   "instrumentalness": 0.169,
+   "liveness": 0.0653,
+   "valence": 0.718,
+   "tempo": 114.464
+  }
+ },
+ {
+  "track": "One More Night - 2016 Remaster",
+  "artist": "Phil Collins",
+  "artist_key": "Phil Collins",
+  "year": 1985,
+  "label": "Rhino",
+  "genres": [
+   "soft rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.534,
+   "energy": 0.442,
+   "loudness": -9.442,
+   "speechiness": 0.0308,
+   "acousticness": 0.788,
+   "instrumentalness": 0.000351,
+   "liveness": 0.0986,
+   "valence": 0.343,
+   "tempo": 136.369
+  }
+ },
+ {
+  "track": "If You Love Somebody Set Them Free",
+  "artist": "Sting",
+  "artist_key": "Sting",
+  "year": 1985,
+  "label": "A&M",
+  "genres": [
+   "soft rock"
+  ],
+  "origin_metro": "Newcastle",
+  "features": {
+   "danceability": 0.627,
+   "energy": 0.849,
+   "loudness": -10.61,
+   "speechiness": 0.0309,
+   "acousticness": 0.137,
+   "instrumentalness": 0.0,
+   "liveness": 0.319,
+   "valence": 0.819,
+   "tempo": 125.058
+  }
+ },
+ {
+  "track": "Forever Man - 1999 Remaster",
+  "artist": "Eric Clapton",
+  "artist_key": "Eric Clapton",
+  "year": 1985,
+  "label": "Bushbranch / Surfdog Records",
+  "genres": [
+   "blues",
+   "blues rock",
+   "classic rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.649,
+   "energy": 0.9,
+   "loudness": -6.018,
+   "speechiness": 0.0427,
+   "acousticness": 0.207,
+   "instrumentalness": 0.0105,
+   "liveness": 0.166,
+   "valence": 0.799,
+   "tempo": 111.142
+  }
+ },
+ {
+  "track": "Everybody Wants To Rule The World",
+  "artist": "Tears For Fears",
+  "artist_key": "Tears for Fears",
+  "year": 1985,
+  "label": "UMC (Universal Music Catalogue)",
+  "genres": [
+   "new wave",
+   "synthpop"
+  ],
+  "origin_metro": "Bristol",
+  "features": {
+   "danceability": 0.645,
+   "energy": 0.795,
+   "loudness": -12.095,
+   "speechiness": 0.0527,
+   "acousticness": 0.347,
+   "instrumentalness": 0.00389,
+   "liveness": 0.104,
+   "valence": 0.535,
+   "tempo": 112.067
+  }
+ },
+ {
+  "track": "Head Over Heels",
+  "artist": "Tears For Fears",
+  "artist_key": "Tears for Fears",
+  "year": 1985,
+  "label": "UMC (Universal Music Catalogue)",
+  "genres": [
+   "new wave",
+   "synthpop"
+  ],
+  "origin_metro": "Bristol",
+  "features": {
+   "danceability": 0.298,
+   "energy": 0.704,
+   "loudness": -9.905,
+   "speechiness": 0.0366,
+   "acousticness": 0.188,
+   "instrumentalness": 0.000488,
+   "liveness": 0.777,
+   "valence": 0.655,
+   "tempo": 95.023
+  }
+ },
+ {
+  "track": "Holding Back the Years - 2008 Remaster",
+  "artist": "Simply Red",
+  "artist_key": "Simply Red",
+  "year": 1985,
+  "label": "Rhino/Elektra",
+  "genres": [
+   "soft rock"
+  ],
+  "origin_metro": "Manchester",
+  "features": {
+   "danceability": 0.71,
+   "energy": 0.514,
+   "loudness": -8.885,
+   "speechiness": 0.0278,
+   "acousticness": 0.58,
+   "instrumentalness": 0.000159,
+   "liveness": 0.0953,
+   "valence": 0.517,
+   "tempo": 86.02
+  }
+ },
+ {
+  "track": "You Belong To The City",
+  "artist": "Glenn Frey",
+  "artist_key": "Glenn Frey",
+  "year": 2018,
+  "label": "Geffen",
+  "genres": [],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.669,
+   "energy": 0.703,
+   "loudness": -5.789,
+   "speechiness": 0.0299,
+   "acousticness": 0.06,
+   "instrumentalness": 0.00147,
+   "liveness": 0.0623,
+   "valence": 0.436,
+   "tempo": 109.48
+  }
+ },
+ {
+  "track": "Overjoyed",
+  "artist": "Stevie Wonder",
+  "artist_key": "Stevie Wonder",
+  "year": 1985,
+  "label": "Motown",
+  "genres": [
+   "motown",
+   "classic soul",
+   "soul"
+  ],
+  "origin_metro": "Detroit",
+  "features": {
+   "danceability": 0.221,
+   "energy": 0.264,
+   "loudness": -17.533,
+   "speechiness": 0.0332,
+   "acousticness": 0.541,
+   "instrumentalness": 0.0,
+   "liveness": 0.148,
+   "valence": 0.169,
+   "tempo": 83.128
+  }
+ },
+ {
+  "track": "Something About You",
+  "artist": "Level 42",
+  "artist_key": "Level 42",
+  "year": 1985,
+  "label": "UMC (Universal Music Catalogue)",
+  "genres": [
+   "synthpop"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.713,
+   "energy": 0.792,
+   "loudness": -5.596,
+   "speechiness": 0.0338,
+   "acousticness": 0.0885,
+   "instrumentalness": 0.0115,
+   "liveness": 0.199,
+   "valence": 0.876,
+   "tempo": 104.967
+  }
+ },
+ {
+  "track": "Throwing It All Away - 2007 Remaster",
+  "artist": "Genesis",
+  "artist_key": "Genesis",
+  "year": 1986,
+  "label": "Rhino Atlantic",
+  "genres": [
+   "progressive rock",
+   "art rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.377,
+   "energy": 0.606,
+   "loudness": -7.409,
+   "speechiness": 0.0262,
+   "acousticness": 0.144,
+   "instrumentalness": 0.00877,
+   "liveness": 0.0879,
+   "valence": 0.291,
+   "tempo": 83.972
+  }
+ },
+ {
+  "track": "Glory of Love",
+  "artist": "Peter Cetera",
+  "artist_key": "Peter Cetera",
+  "year": 2019,
+  "label": "Rhino",
+  "genres": [
+   "soft rock"
+  ],
+  "origin_metro": "Chicago",
+  "features": {
+   "danceability": 0.52,
+   "energy": 0.61,
+   "loudness": -7.935,
+   "speechiness": 0.0282,
+   "acousticness": 0.0805,
+   "instrumentalness": 2.95e-06,
+   "liveness": 0.276,
+   "valence": 0.329,
+   "tempo": 144.983
+  }
+ },
+ {
+  "track": "Don't Give Up",
+  "artist": "Peter Gabriel",
+  "artist_key": "Peter Gabriel",
+  "year": 1986,
+  "label": "Real World Productions Ltd.",
+  "genres": [
+   "art rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.671,
+   "energy": 0.283,
+   "loudness": -14.198,
+   "speechiness": 0.0508,
+   "acousticness": 0.831,
+   "instrumentalness": 0.000818,
+   "liveness": 0.0911,
+   "valence": 0.331,
+   "tempo": 80.806
+  }
+ },
+ {
+  "track": "Let's Wait Awhile",
+  "artist": "Janet Jackson",
+  "artist_key": "Janet Jackson",
+  "year": 1986,
+  "label": "A&M",
+  "genres": [
+   "new jack swing"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.592,
+   "energy": 0.2,
+   "loudness": -16.392,
+   "speechiness": 0.0344,
+   "acousticness": 0.823,
+   "instrumentalness": 0.0,
+   "liveness": 0.101,
+   "valence": 0.382,
+   "tempo": 172.647
+  }
+ },
+ {
+  "track": "Higher Love",
+  "artist": "Steve Winwood",
+  "artist_key": "Steve Winwood",
+  "year": 1986,
+  "label": "UMC (Universal Music Catalogue)",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Birmingham",
+  "features": {
+   "danceability": 0.695,
+   "energy": 0.78,
+   "loudness": -12.159,
+   "speechiness": 0.0414,
+   "acousticness": 0.0426,
+   "instrumentalness": 0.146,
+   "liveness": 0.298,
+   "valence": 0.954,
+   "tempo": 98.699
+  }
+ },
+ {
+  "track": "Back In The High Life Again",
+  "artist": "Steve Winwood",
+  "artist_key": "Steve Winwood",
+  "year": 1986,
+  "label": "UMC (Universal Music Catalogue)",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Birmingham",
+  "features": {
+   "danceability": 0.602,
+   "energy": 0.503,
+   "loudness": -14.862,
+   "speechiness": 0.0379,
+   "acousticness": 0.293,
+   "instrumentalness": 0.00125,
+   "liveness": 0.135,
+   "valence": 0.647,
+   "tempo": 168.515
+  }
+ },
+ {
+  "track": "It's in the Way That You Use It",
+  "artist": "Eric Clapton",
+  "artist_key": "Eric Clapton",
+  "year": 1986,
+  "label": "Bushbranch / Surfdog Records",
+  "genres": [
+   "blues",
+   "blues rock",
+   "classic rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.534,
+   "energy": 0.925,
+   "loudness": -5.004,
+   "speechiness": 0.0392,
+   "acousticness": 0.108,
+   "instrumentalness": 0.0303,
+   "liveness": 0.0634,
+   "valence": 0.88,
+   "tempo": 200.75
+  }
+ },
+ {
+  "track": "The Lady In Red",
+  "artist": "Chris de Burgh",
+  "artist_key": "Chris de Burgh",
+  "year": 2004,
+  "label": "A&M",
+  "genres": [
+   "soft rock"
+  ],
+  "origin_metro": "Dublin",
+  "features": {
+   "danceability": 0.545,
+   "energy": 0.501,
+   "loudness": -8.836,
+   "speechiness": 0.0308,
+   "acousticness": 0.443,
+   "instrumentalness": 1.73e-05,
+   "liveness": 0.0321,
+   "valence": 0.475,
+   "tempo": 154.044
+  }
+ },
+ {
+  "track": "With You All The Way",
+  "artist": "New Edition",
+  "artist_key": "New Edition",
+  "year": 1985,
+  "label": "Geffen",
+  "genres": [
+   "new jack swing",
+   "quiet storm"
+  ],
+  "origin_metro": "Boston",
+  "features": {
+   "danceability": 0.579,
+   "energy": 0.29,
+   "loudness": -15.12,
+   "speechiness": 0.0304,
+   "acousticness": 0.491,
+   "instrumentalness": 0.0,
+   "liveness": 0.06,
+   "valence": 0.236,
+   "tempo": 142.185
+  }
+ },
+ {
+  "track": "Shake You Down",
+  "artist": "Gregory Abbott",
+  "artist_key": "Gregory Abbott",
+  "year": 1986,
+  "label": "Columbia/Legacy",
+  "genres": [],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.787,
+   "energy": 0.474,
+   "loudness": -10.384,
+   "speechiness": 0.0265,
+   "acousticness": 0.523,
+   "instrumentalness": 0.0,
+   "liveness": 0.235,
+   "valence": 0.826,
+   "tempo": 94.995
+  }
+ },
+ {
+  "track": "Sweet Love",
+  "artist": "Anita Baker",
+  "artist_key": "Anita Baker",
+  "year": 1986,
+  "label": "Rhino Atlantic",
+  "genres": [
+   "quiet storm",
+   "smooth jazz",
+   "classic soul"
+  ],
+  "origin_metro": "Detroit",
+  "features": {
+   "danceability": 0.504,
+   "energy": 0.728,
+   "loudness": -5.699,
+   "speechiness": 0.0234,
+   "acousticness": 0.36,
+   "instrumentalness": 0.0,
+   "liveness": 0.159,
+   "valence": 0.683,
+   "tempo": 89.255
+  }
+ },
+ {
+  "track": "Caught Up In the Rapture",
+  "artist": "Anita Baker",
+  "artist_key": "Anita Baker",
+  "year": 2017,
+  "label": "Warner Music Group - X5 Music Group",
+  "genres": [
+   "quiet storm",
+   "smooth jazz",
+   "classic soul"
+  ],
+  "origin_metro": "Detroit",
+  "features": {
+   "danceability": 0.593,
+   "energy": 0.506,
+   "loudness": -9.708,
+   "speechiness": 0.0263,
+   "acousticness": 0.412,
+   "instrumentalness": 3.99e-06,
+   "liveness": 0.048,
+   "valence": 0.378,
+   "tempo": 91.273
+  }
+ },
+ {
+  "track": "Stripped",
+  "artist": "Depeche Mode",
+  "artist_key": "Depeche Mode",
+  "year": 1986,
+  "label": "Mute Records",
+  "genres": [
+   "new wave",
+   "synthpop",
+   "darkwave"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.474,
+   "energy": 0.815,
+   "loudness": -8.837,
+   "speechiness": 0.0355,
+   "acousticness": 0.187,
+   "instrumentalness": 0.0996,
+   "liveness": 0.0627,
+   "valence": 0.572,
+   "tempo": 180.626
+  }
+ },
+ {
+  "track": "Lessons In Love",
+  "artist": "Level 42",
+  "artist_key": "Level 42",
+  "year": 1987,
+  "label": "UMC (Universal Music Catalogue)",
+  "genres": [
+   "synthpop"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.709,
+   "energy": 0.839,
+   "loudness": -8.403,
+   "speechiness": 0.0367,
+   "acousticness": 0.159,
+   "instrumentalness": 0.00209,
+   "liveness": 0.301,
+   "valence": 0.864,
+   "tempo": 113.186
+  }
+ },
+ {
+  "track": "Englishman In New York",
+  "artist": "Sting",
+  "artist_key": "Sting",
+  "year": 1987,
+  "label": "A&M",
+  "genres": [
+   "soft rock"
+  ],
+  "origin_metro": "Newcastle",
+  "features": {
+   "danceability": 0.674,
+   "energy": 0.347,
+   "loudness": -17.707,
+   "speechiness": 0.0364,
+   "acousticness": 0.396,
+   "instrumentalness": 1.04e-05,
+   "liveness": 0.0916,
+   "valence": 0.647,
+   "tempo": 102.014
+  }
+ },
+ {
+  "track": "Got My Mind Set on You",
+  "artist": "George Harrison",
+  "artist_key": "George Harrison",
+  "year": 1987,
+  "label": "BMG Rights Management (US) LLC",
+  "genres": [],
+  "origin_metro": "Liverpool",
+  "features": {
+   "danceability": 0.759,
+   "energy": 0.85,
+   "loudness": -7.156,
+   "speechiness": 0.0418,
+   "acousticness": 0.456,
+   "instrumentalness": 1.72e-06,
+   "liveness": 0.488,
+   "valence": 0.963,
+   "tempo": 149.211
+  }
+ },
+ {
+  "track": "One More Try - Remastered",
+  "artist": "George Michael",
+  "artist_key": "George Michael",
+  "year": 1998,
+  "label": "Epic",
+  "genres": [],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.346,
+   "energy": 0.298,
+   "loudness": -12.009,
+   "speechiness": 0.0307,
+   "acousticness": 0.491,
+   "instrumentalness": 0.000122,
+   "liveness": 0.111,
+   "valence": 0.0957,
+   "tempo": 119.013
+  }
+ },
+ {
+  "track": "Kissing a Fool - Remastered",
+  "artist": "George Michael",
+  "artist_key": "George Michael",
+  "year": 1998,
+  "label": "Epic",
+  "genres": [],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.523,
+   "energy": 0.284,
+   "loudness": -14.458,
+   "speechiness": 0.0268,
+   "acousticness": 0.113,
+   "instrumentalness": 1.08e-05,
+   "liveness": 0.0784,
+   "valence": 0.157,
+   "tempo": 77.88
+  }
+ },
+ {
+  "track": "Never Gonna Give You Up",
+  "artist": "Rick Astley",
+  "artist_key": "Rick Astley",
+  "year": 1987,
+  "label": "BMG Rights Management (UK) Ltd.",
+  "genres": [],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.721,
+   "energy": 0.939,
+   "loudness": -11.823,
+   "speechiness": 0.0376,
+   "acousticness": 0.115,
+   "instrumentalness": 3.79e-05,
+   "liveness": 0.108,
+   "valence": 0.914,
+   "tempo": 113.309
+  }
+ },
+ {
+  "track": "Together Forever",
+  "artist": "Rick Astley",
+  "artist_key": "Rick Astley",
+  "year": 1987,
+  "label": "BMG Rights Management (UK) Ltd.",
+  "genres": [],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.702,
+   "energy": 0.933,
+   "loudness": -11.876,
+   "speechiness": 0.0492,
+   "acousticness": 0.0519,
+   "instrumentalness": 0.000128,
+   "liveness": 0.155,
+   "valence": 0.896,
+   "tempo": 115.114
+  }
+ },
+ {
+  "track": "Never Tear Us Apart",
+  "artist": "INXS",
+  "artist_key": "INXS",
+  "year": 1987,
+  "label": "Universal Music Australia Pty. Ltd.",
+  "genres": [],
+  "origin_metro": "Sydney",
+  "features": {
+   "danceability": 0.664,
+   "energy": 0.613,
+   "loudness": -7.56,
+   "speechiness": 0.0273,
+   "acousticness": 0.00294,
+   "instrumentalness": 0.000129,
+   "liveness": 0.175,
+   "valence": 0.193,
+   "tempo": 96.6
+  }
+ },
+ {
+  "track": "Mystify",
+  "artist": "INXS",
+  "artist_key": "INXS",
+  "year": 1987,
+  "label": "Rhino Atlantic",
+  "genres": [],
+  "origin_metro": "Sydney",
+  "features": {
+   "danceability": 0.628,
+   "energy": 0.855,
+   "loudness": -4.245,
+   "speechiness": 0.0356,
+   "acousticness": 0.026,
+   "instrumentalness": 2.94e-05,
+   "liveness": 0.197,
+   "valence": 0.408,
+   "tempo": 129.785
+  }
+ },
+ {
+  "track": "Everywhere",
+  "artist": "Fleetwood Mac",
+  "artist_key": "Fleetwood Mac",
+  "year": 1988,
+  "label": "Warner Records",
+  "genres": [
+   "yacht rock",
+   "classic rock",
+   "soft rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.69,
+   "energy": 0.54,
+   "loudness": -10.516,
+   "speechiness": 0.0317,
+   "acousticness": 0.218,
+   "instrumentalness": 0.00657,
+   "liveness": 0.115,
+   "valence": 0.764,
+   "tempo": 114.846
+  }
+ },
+ {
+  "track": "Little Lies",
+  "artist": "Fleetwood Mac",
+  "artist_key": "Fleetwood Mac",
+  "year": 1988,
+  "label": "Warner Records",
+  "genres": [
+   "yacht rock",
+   "classic rock",
+   "soft rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.63,
+   "energy": 0.688,
+   "loudness": -9.816,
+   "speechiness": 0.0266,
+   "acousticness": 0.124,
+   "instrumentalness": 4.78e-05,
+   "liveness": 0.158,
+   "valence": 0.893,
+   "tempo": 124.825
+  }
+ },
+ {
+  "track": "Liberian Girl - 2012 Remastered Version",
+  "artist": "Michael Jackson",
+  "artist_key": "Michael Jackson",
+  "year": 2012,
+  "label": "Epic/Legacy",
+  "genres": [],
+  "origin_metro": "Chicago",
+  "features": {
+   "danceability": 0.749,
+   "energy": 0.546,
+   "loudness": -7.217,
+   "speechiness": 0.103,
+   "acousticness": 0.464,
+   "instrumentalness": 0.00191,
+   "liveness": 0.126,
+   "valence": 0.454,
+   "tempo": 105.232
+  }
+ },
+ {
+  "track": "I Just Can't Stop Loving You (feat. Siedah Garrett) - 2012 Remaster",
+  "artist": "Michael Jackson",
+  "artist_key": "Michael Jackson",
+  "year": 2012,
+  "label": "Epic/Legacy",
+  "genres": [],
+  "origin_metro": "Chicago",
+  "features": {
+   "danceability": 0.657,
+   "energy": 0.467,
+   "loudness": -8.925,
+   "speechiness": 0.0341,
+   "acousticness": 0.667,
+   "instrumentalness": 1.92e-06,
+   "liveness": 0.0295,
+   "valence": 0.276,
+   "tempo": 100.139
+  }
+ },
+ {
+  "track": "Man in the Mirror - 2012 Remaster",
+  "artist": "Michael Jackson",
+  "artist_key": "Michael Jackson",
+  "year": 2012,
+  "label": "Epic/Legacy",
+  "genres": [],
+  "origin_metro": "Chicago",
+  "features": {
+   "danceability": 0.808,
+   "energy": 0.812,
+   "loudness": -5.012,
+   "speechiness": 0.0381,
+   "acousticness": 0.52,
+   "instrumentalness": 7.91e-05,
+   "liveness": 0.134,
+   "valence": 0.269,
+   "tempo": 100.331
+  }
+ },
+ {
+  "track": "Moonlighting (Theme) - 2009 Remaster",
+  "artist": "Al Jarreau",
+  "artist_key": "Al Jarreau",
+  "year": 2009,
+  "label": "Rhino",
+  "genres": [
+   "yacht rock",
+   "smooth jazz",
+   "vocal jazz",
+   "jazz"
+  ],
+  "origin_metro": "Milwaukee",
+  "features": {
+   "danceability": 0.666,
+   "energy": 0.828,
+   "loudness": -5.276,
+   "speechiness": 0.0303,
+   "acousticness": 0.223,
+   "instrumentalness": 1.86e-05,
+   "liveness": 0.316,
+   "valence": 0.613,
+   "tempo": 101.408
+  }
+ },
+ {
+  "track": "Always",
+  "artist": "Atlantic Starr",
+  "artist_key": "Atlantic Starr",
+  "year": 1987,
+  "label": "Warner Records",
+  "genres": [
+   "quiet storm",
+   "classic soul"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.606,
+   "energy": 0.532,
+   "loudness": -6.759,
+   "speechiness": 0.0256,
+   "acousticness": 0.403,
+   "instrumentalness": 0.000904,
+   "liveness": 0.356,
+   "valence": 0.327,
+   "tempo": 130.945
+  }
+ },
+ {
+  "track": "The Living Years",
+  "artist": "Mike + The Mechanics",
+  "artist_key": "Mike + the Mechanics",
+  "year": 1988,
+  "label": "Rhino Atlantic",
+  "genres": [
+   "soft rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.518,
+   "energy": 0.417,
+   "loudness": -13.268,
+   "speechiness": 0.0325,
+   "acousticness": 0.58,
+   "instrumentalness": 0.0,
+   "liveness": 0.0722,
+   "valence": 0.311,
+   "tempo": 97.63
+  }
+ },
+ {
+  "track": "The End Of The Innocence",
+  "artist": "Don Henley",
+  "artist_key": "Don Henley",
+  "year": 1989,
+  "label": "Geffen",
+  "genres": [
+   "yacht rock"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.623,
+   "energy": 0.425,
+   "loudness": -13.045,
+   "speechiness": 0.0291,
+   "acousticness": 0.306,
+   "instrumentalness": 8.65e-05,
+   "liveness": 0.108,
+   "valence": 0.392,
+   "tempo": 116.593
+  }
+ },
+ {
+  "track": "If You Don't Know Me by Now - 2008 Remaster",
+  "artist": "Simply Red",
+  "artist_key": "Simply Red",
+  "year": 1989,
+  "label": "Rhino/Elektra",
+  "genres": [
+   "soft rock"
+  ],
+  "origin_metro": "Manchester",
+  "features": {
+   "danceability": 0.638,
+   "energy": 0.352,
+   "loudness": -9.266,
+   "speechiness": 0.0268,
+   "acousticness": 0.492,
+   "instrumentalness": 0.0,
+   "liveness": 0.105,
+   "valence": 0.204,
+   "tempo": 94.173
+  }
+ },
+ {
+  "track": "The Downtown Lights",
+  "artist": "The Blue Nile",
+  "artist_key": "The Blue Nile",
+  "year": 1989,
+  "label": "Confetti Records",
+  "genres": [
+   "art rock",
+   "synthpop"
+  ],
+  "origin_metro": "Glasgow",
+  "features": {
+   "danceability": 0.561,
+   "energy": 0.695,
+   "loudness": -6.971,
+   "speechiness": 0.0233,
+   "acousticness": 0.319,
+   "instrumentalness": 0.0015,
+   "liveness": 0.145,
+   "valence": 0.439,
+   "tempo": 98.324
+  }
+ },
+ {
+  "track": "Policy of Truth",
+  "artist": "Depeche Mode",
+  "artist_key": "Depeche Mode",
+  "year": 1990,
+  "label": "Venusnote Ltd.",
+  "genres": [
+   "new wave",
+   "synthpop",
+   "darkwave"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.686,
+   "energy": 0.644,
+   "loudness": -7.286,
+   "speechiness": 0.0276,
+   "acousticness": 0.0121,
+   "instrumentalness": 0.203,
+   "liveness": 0.126,
+   "valence": 0.372,
+   "tempo": 114.203
+  }
+ },
+ {
+  "track": "Just the Way You Are",
+  "artist": "Billy Joel",
+  "artist_key": "Billy Joel",
+  "year": 1977,
+  "label": "Columbia/Legacy",
+  "genres": [
+   "soft rock"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.589,
+   "energy": 0.453,
+   "loudness": -8.912,
+   "speechiness": 0.0397,
+   "acousticness": 0.703,
+   "instrumentalness": 2.54e-05,
+   "liveness": 0.134,
+   "valence": 0.513,
+   "tempo": 139.148
+  }
+ },
+ {
+  "track": "Georgy Porgy",
+  "artist": "TOTO",
+  "artist_key": "Toto",
+  "year": 1978,
+  "label": "Columbia",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.799,
+   "energy": 0.783,
+   "loudness": -7.703,
+   "speechiness": 0.0847,
+   "acousticness": 0.0519,
+   "instrumentalness": 0.0213,
+   "liveness": 0.127,
+   "valence": 0.918,
+   "tempo": 97.207
+  }
+ },
+ {
+  "track": "She's Gone",
+  "artist": "Daryl Hall & John Oates",
+  "artist_key": "Hall & Oates",
+  "year": 1973,
+  "label": "Rhino Atlantic",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Philadelphia",
+  "features": {
+   "danceability": 0.523,
+   "energy": 0.341,
+   "loudness": -14.034,
+   "speechiness": 0.0388,
+   "acousticness": 0.313,
+   "instrumentalness": 0.000114,
+   "liveness": 0.621,
+   "valence": 0.355,
+   "tempo": 77.487
+  }
+ },
+ {
+  "track": "Time (Clock Of The Heart)",
+  "artist": "Culture Club",
+  "artist_key": "Culture Club",
+  "year": 1989,
+  "label": "Virgin Catalogue",
+  "genres": [],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.72,
+   "energy": 0.54,
+   "loudness": -14.025,
+   "speechiness": 0.0361,
+   "acousticness": 0.512,
+   "instrumentalness": 0.0,
+   "liveness": 0.0403,
+   "valence": 0.923,
+   "tempo": 116.956
+  }
+ },
+ {
+  "track": "In Too Deep - 2007 Remaster",
+  "artist": "Genesis",
+  "artist_key": "Genesis",
+  "year": 1986,
+  "label": "Rhino Atlantic",
+  "genres": [
+   "progressive rock",
+   "art rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.67,
+   "energy": 0.419,
+   "loudness": -10.266,
+   "speechiness": 0.0249,
+   "acousticness": 0.503,
+   "instrumentalness": 6.9e-06,
+   "liveness": 0.101,
+   "valence": 0.304,
+   "tempo": 103.538
+  }
+ },
+ {
+  "track": "Love You Inside Out",
+  "artist": "Bee Gees",
+  "artist_key": "Bee Gees",
+  "year": 1979,
+  "label": "Bee Gees Catalog",
+  "genres": [
+   "disco"
+  ],
+  "origin_metro": "Brisbane",
+  "features": {
+   "danceability": 0.706,
+   "energy": 0.516,
+   "loudness": -11.037,
+   "speechiness": 0.0474,
+   "acousticness": 0.354,
+   "instrumentalness": 4.19e-06,
+   "liveness": 0.205,
+   "valence": 0.833,
+   "tempo": 94.713
+  }
+ },
+ {
+  "track": "Private Eyes",
+  "artist": "Daryl Hall & John Oates",
+  "artist_key": "Hall & Oates",
+  "year": 1981,
+  "label": "RCA/BMG Heritage",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Philadelphia",
+  "features": {
+   "danceability": 0.85,
+   "energy": 0.938,
+   "loudness": -6.889,
+   "speechiness": 0.0415,
+   "acousticness": 0.409,
+   "instrumentalness": 0.000346,
+   "liveness": 0.0582,
+   "valence": 0.84,
+   "tempo": 120.826
+  }
+ },
+ {
+  "track": "You Can Do Magic",
+  "artist": "America",
+  "artist_key": "America",
+  "year": 1982,
+  "label": "Capitol Records",
+  "genres": [
+   "yacht rock",
+   "soft rock",
+   "folk rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.859,
+   "energy": 0.568,
+   "loudness": -12.516,
+   "speechiness": 0.0387,
+   "acousticness": 0.29,
+   "instrumentalness": 0.0,
+   "liveness": 0.31,
+   "valence": 0.936,
+   "tempo": 129.72
+  }
+ },
+ {
+  "track": "Summer Breeze",
+  "artist": "Seals and Crofts",
+  "artist_key": "Seals and Crofts",
+  "year": 1972,
+  "label": "Warner Records",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.49,
+   "energy": 0.581,
+   "loudness": -6.566,
+   "speechiness": 0.0388,
+   "acousticness": 0.553,
+   "instrumentalness": 0.0177,
+   "liveness": 0.0764,
+   "valence": 0.318,
+   "tempo": 88.718
+  }
+ },
+ {
+  "track": "You Are",
+  "artist": "Lionel Richie",
+  "artist_key": "Lionel Richie",
+  "year": 1982,
+  "label": "UNI/MOTOWN",
+  "genres": [
+   "motown"
+  ],
+  "origin_metro": "Montgomery",
+  "features": {
+   "danceability": 0.777,
+   "energy": 0.456,
+   "loudness": -12.736,
+   "speechiness": 0.033,
+   "acousticness": 0.196,
+   "instrumentalness": 3.23e-05,
+   "liveness": 0.0473,
+   "valence": 0.727,
+   "tempo": 111.981
+  }
+ },
+ {
+  "track": "Easy",
+  "artist": "Commodores",
+  "artist_key": "Commodores",
+  "year": 1977,
+  "label": "Motown",
+  "genres": [
+   "motown",
+   "classic soul"
+  ],
+  "origin_metro": "Montgomery",
+  "features": {
+   "danceability": 0.591,
+   "energy": 0.387,
+   "loudness": -15.077,
+   "speechiness": 0.0334,
+   "acousticness": 0.111,
+   "instrumentalness": 3.23e-05,
+   "liveness": 0.0596,
+   "valence": 0.358,
+   "tempo": 132.921
+  }
+ },
+ {
+  "track": "Broken Wings",
+  "artist": "Mr. Mister",
+  "artist_key": "Mr. Mister",
+  "year": 1985,
+  "label": "RCA Records Label",
+  "genres": [],
+  "origin_metro": "Phoenix",
+  "features": {
+   "danceability": 0.286,
+   "energy": 0.5,
+   "loudness": -14.281,
+   "speechiness": 0.0357,
+   "acousticness": 0.134,
+   "instrumentalness": 4.57e-05,
+   "liveness": 0.108,
+   "valence": 0.443,
+   "tempo": 99.162
+  }
+ },
+ {
+  "track": "Wrapped Around Your Finger - Remastered 2003",
+  "artist": "The Police",
+  "artist_key": "The Police",
+  "year": 1983,
+  "label": "Polydor Records",
+  "genres": [],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.747,
+   "energy": 0.448,
+   "loudness": -11.522,
+   "speechiness": 0.0345,
+   "acousticness": 0.0904,
+   "instrumentalness": 0.000185,
+   "liveness": 0.0631,
+   "valence": 0.608,
+   "tempo": 127.689
+  }
+ },
+ {
+  "track": "Arthur's Theme (Best That You Can Do)",
+  "artist": "Christopher Cross",
+  "artist_key": "Christopher Cross",
+  "year": 2008,
+  "label": "Rhino/Warner Records",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "San Antonio",
+  "features": {
+   "danceability": 0.526,
+   "energy": 0.515,
+   "loudness": -11.169,
+   "speechiness": 0.0389,
+   "acousticness": 0.169,
+   "instrumentalness": 0.000816,
+   "liveness": 0.181,
+   "valence": 0.518,
+   "tempo": 136.543
+  }
+ },
+ {
+  "track": "Easy Lover",
+  "artist": "Philip Bailey",
+  "artist_key": null,
+  "year": 1984,
+  "label": "Columbia/Legacy",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": null,
+  "features": {
+   "danceability": 0.74,
+   "energy": 0.923,
+   "loudness": -5.082,
+   "speechiness": 0.0369,
+   "acousticness": 0.105,
+   "instrumentalness": 0.000163,
+   "liveness": 0.0825,
+   "valence": 0.93,
+   "tempo": 128.871
+  }
+ },
+ {
+  "track": "Waiting for a Girl like You",
+  "artist": "Foreigner",
+  "artist_key": "Foreigner",
+  "year": 1981,
+  "label": "Rhino Atlantic",
+  "genres": [
+   "aor",
+   "classic rock"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.33,
+   "energy": 0.469,
+   "loudness": -9.286,
+   "speechiness": 0.0335,
+   "acousticness": 0.31,
+   "instrumentalness": 2.3e-06,
+   "liveness": 0.0402,
+   "valence": 0.433,
+   "tempo": 201.327
+  }
+ },
+ {
+  "track": "Mandolin Rain",
+  "artist": "Bruce Hornsby and the Range",
+  "artist_key": "Bruce Hornsby and the Range",
+  "year": 1986,
+  "label": "RCA Records Label",
+  "genres": [],
+  "origin_metro": "Norfolk",
+  "features": {
+   "danceability": 0.563,
+   "energy": 0.421,
+   "loudness": -12.567,
+   "speechiness": 0.0311,
+   "acousticness": 0.822,
+   "instrumentalness": 2.28e-05,
+   "liveness": 0.122,
+   "valence": 0.463,
+   "tempo": 139.374
+  }
+ },
+ {
+  "track": "Come and Get Your Love",
+  "artist": "Redbone",
+  "artist_key": "Redbone",
+  "year": 2003,
+  "label": "Epic/Legacy",
+  "genres": [
+   "native american music"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.674,
+   "energy": 0.785,
+   "loudness": -6.126,
+   "speechiness": 0.0535,
+   "acousticness": 0.127,
+   "instrumentalness": 7.9e-05,
+   "liveness": 0.0764,
+   "valence": 0.853,
+   "tempo": 105.543
+  }
+ },
+ {
+  "track": "I Can Dream About You",
+  "artist": "Dan Hartman",
+  "artist_key": "Dan Hartman",
+  "year": 1984,
+  "label": "Geffen",
+  "genres": [
+   "disco"
+  ],
+  "origin_metro": "Harrisburg",
+  "features": {
+   "danceability": 0.754,
+   "energy": 0.562,
+   "loudness": -11.275,
+   "speechiness": 0.0489,
+   "acousticness": 0.0835,
+   "instrumentalness": 0.0,
+   "liveness": 0.0328,
+   "valence": 0.897,
+   "tempo": 113.019
+  }
+ },
+ {
+  "track": "Shattered Dreams - Remastered 2008",
+  "artist": "Johnny Hates Jazz",
+  "artist_key": "Johnny Hates Jazz",
+  "year": 1988,
+  "label": "Virgin Catalogue",
+  "genres": [
+   "new wave",
+   "synthpop"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.655,
+   "energy": 0.72,
+   "loudness": -9.423,
+   "speechiness": 0.0312,
+   "acousticness": 0.0318,
+   "instrumentalness": 4.71e-05,
+   "liveness": 0.25,
+   "valence": 0.745,
+   "tempo": 121.311
+  }
+ },
+ {
+  "track": "It's My Life - 1997 Remaster",
+  "artist": "Talk Talk",
+  "artist_key": "Talk Talk",
+  "year": 1984,
+  "label": "Parlophone UK",
+  "genres": [
+   "new wave",
+   "synthpop"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.627,
+   "energy": 0.802,
+   "loudness": -8.432,
+   "speechiness": 0.0348,
+   "acousticness": 0.197,
+   "instrumentalness": 0.784,
+   "liveness": 0.404,
+   "valence": 0.867,
+   "tempo": 126.283
+  }
+ },
+ {
+  "track": "True - 2003 Remaster",
+  "artist": "Spandau Ballet",
+  "artist_key": "Spandau Ballet",
+  "year": 1983,
+  "label": "Parlophone UK",
+  "genres": [
+   "new wave",
+   "synthpop"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.777,
+   "energy": 0.521,
+   "loudness": -8.443,
+   "speechiness": 0.0277,
+   "acousticness": 0.359,
+   "instrumentalness": 0.11,
+   "liveness": 0.0594,
+   "valence": 0.335,
+   "tempo": 97.623
+  }
+ },
+ {
+  "track": "Hold Me Now",
+  "artist": "Thompson Twins",
+  "artist_key": "Thompson Twins",
+  "year": 1984,
+  "label": "BMG Rights Management (UK) Ltd.",
+  "genres": [
+   "new wave",
+   "synthpop"
+  ],
+  "origin_metro": "Sheffield",
+  "features": {
+   "danceability": 0.787,
+   "energy": 0.616,
+   "loudness": -9.811,
+   "speechiness": 0.0324,
+   "acousticness": 0.601,
+   "instrumentalness": 1.56e-05,
+   "liveness": 0.0978,
+   "valence": 0.858,
+   "tempo": 108.347
+  }
+ },
+ {
+  "track": "Emotion",
+  "artist": "Samantha Sang",
+  "artist_key": "Samantha Sang",
+  "year": 1977,
+  "label": "Private Stock Records",
+  "genres": [
+   "yacht rock",
+   "disco"
+  ],
+  "origin_metro": "Melbourne",
+  "features": {
+   "danceability": 0.52,
+   "energy": 0.364,
+   "loudness": -9.484,
+   "speechiness": 0.0427,
+   "acousticness": 0.76,
+   "instrumentalness": 1.36e-05,
+   "liveness": 0.251,
+   "valence": 0.716,
+   "tempo": 184.244
+  }
+ },
+ {
+  "track": "How Much I Feel",
+  "artist": "Ambrosia",
+  "artist_key": "Ambrosia",
+  "year": 1978,
+  "label": "RT Industries",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.667,
+   "energy": 0.513,
+   "loudness": -7.96,
+   "speechiness": 0.026,
+   "acousticness": 0.305,
+   "instrumentalness": 0.0,
+   "liveness": 0.0851,
+   "valence": 0.518,
+   "tempo": 95.306
+  }
+ },
+ {
+  "track": "More Than This",
+  "artist": "Roxy Music",
+  "artist_key": "Roxy Music",
+  "year": 1982,
+  "label": "EG Records",
+  "genres": [
+   "glam rock",
+   "art rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.653,
+   "energy": 0.665,
+   "loudness": -7.806,
+   "speechiness": 0.025,
+   "acousticness": 0.0507,
+   "instrumentalness": 0.0461,
+   "liveness": 0.139,
+   "valence": 0.755,
+   "tempo": 128.503
+  }
+ },
+ {
+  "track": "Every Time You Go Away",
+  "artist": "Paul Young",
+  "artist_key": "Paul Young",
+  "year": 1985,
+  "label": "Sony Music UK",
+  "genres": [],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.608,
+   "energy": 0.604,
+   "loudness": -12.285,
+   "speechiness": 0.0433,
+   "acousticness": 0.169,
+   "instrumentalness": 0.000133,
+   "liveness": 0.106,
+   "valence": 0.673,
+   "tempo": 164.254
+  }
+ },
+ {
+  "track": "Lotta Love",
+  "artist": "Nicolette Larson",
+  "artist_key": "Nicolette Larson",
+  "year": 1978,
+  "label": "Rhino/Warner Records",
+  "genres": [
+   "yacht rock",
+   "soft rock",
+   "aor"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.646,
+   "energy": 0.406,
+   "loudness": -15.616,
+   "speechiness": 0.0264,
+   "acousticness": 0.159,
+   "instrumentalness": 0.00114,
+   "liveness": 0.27,
+   "valence": 0.895,
+   "tempo": 113.708
+  }
+ },
+ {
+  "track": "On My Own",
+  "artist": "Patti LaBelle",
+  "artist_key": null,
+  "year": 1986,
+  "label": "Geffen",
+  "genres": [
+   "philly soul",
+   "quiet storm",
+   "classic soul",
+   "yacht rock"
+  ],
+  "origin_metro": null,
+  "features": {
+   "danceability": 0.62,
+   "energy": 0.402,
+   "loudness": -12.964,
+   "speechiness": 0.0264,
+   "acousticness": 0.337,
+   "instrumentalness": 6.13e-05,
+   "liveness": 0.312,
+   "valence": 0.483,
+   "tempo": 92.093
+  }
+ },
+ {
+  "track": "Rhythm Of The Night",
+  "artist": "DeBarge",
+  "artist_key": "DeBarge",
+  "year": 1985,
+  "label": "UNI/MOTOWN",
+  "genres": [
+   "quiet storm"
+  ],
+  "origin_metro": "Grand Rapids",
+  "features": {
+   "danceability": 0.707,
+   "energy": 0.759,
+   "loudness": -12.328,
+   "speechiness": 0.046,
+   "acousticness": 0.0769,
+   "instrumentalness": 2.84e-05,
+   "liveness": 0.0775,
+   "valence": 0.955,
+   "tempo": 115.142
+  }
+ },
+ {
+  "track": "Caribbean Queen (No More Love On the Run)",
+  "artist": "Billy Ocean",
+  "artist_key": "Billy Ocean",
+  "year": 2010,
+  "label": "Sony Music UK",
+  "genres": [
+   "yacht rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.79,
+   "energy": 0.649,
+   "loudness": -7.507,
+   "speechiness": 0.0265,
+   "acousticness": 0.166,
+   "instrumentalness": 8.87e-05,
+   "liveness": 0.092,
+   "valence": 0.954,
+   "tempo": 113.798
+  }
+ },
+ {
+  "track": "Wishing Well",
+  "artist": "Sananda Maitreya",
+  "artist_key": "Terence Trent D'Arby",
+  "year": 1987,
+  "label": "Columbia",
+  "genres": [],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.857,
+   "energy": 0.451,
+   "loudness": -12.831,
+   "speechiness": 0.0595,
+   "acousticness": 0.0925,
+   "instrumentalness": 0.0,
+   "liveness": 0.205,
+   "valence": 0.816,
+   "tempo": 104.963
+  }
+ },
+ {
+  "track": "Slow Hand",
+  "artist": "The Pointer Sisters",
+  "artist_key": "The Pointer Sisters",
+  "year": 1981,
+  "label": "RCA/Legacy",
+  "genres": [
+   "disco"
+  ],
+  "origin_metro": "San Francisco-San Jose",
+  "features": {
+   "danceability": 0.826,
+   "energy": 0.558,
+   "loudness": -7.766,
+   "speechiness": 0.0322,
+   "acousticness": 0.403,
+   "instrumentalness": 1.94e-05,
+   "liveness": 0.0631,
+   "valence": 0.359,
+   "tempo": 110.77
+  }
+ },
+ {
+  "track": "Human",
+  "artist": "The Human League",
+  "artist_key": "The Human League",
+  "year": 1986,
+  "label": "Virgin Catalogue",
+  "genres": [
+   "new wave",
+   "synthpop"
+  ],
+  "origin_metro": "Sheffield",
+  "features": {
+   "danceability": 0.625,
+   "energy": 0.572,
+   "loudness": -9.095,
+   "speechiness": 0.0251,
+   "acousticness": 0.049,
+   "instrumentalness": 0.00151,
+   "liveness": 0.0939,
+   "valence": 0.36,
+   "tempo": 101.355
+  }
+ },
+ {
+  "track": "Human Nature",
+  "artist": "Michael Jackson",
+  "artist_key": "Michael Jackson",
+  "year": 1982,
+  "label": "Epic",
+  "genres": [],
+  "origin_metro": "Chicago",
+  "features": {
+   "danceability": 0.628,
+   "energy": 0.409,
+   "loudness": -14.348,
+   "speechiness": 0.0306,
+   "acousticness": 0.498,
+   "instrumentalness": 0.00565,
+   "liveness": 0.29,
+   "valence": 0.755,
+   "tempo": 93.005
+  }
+ },
+ {
+  "track": "Nights On Broadway",
+  "artist": "Bee Gees",
+  "artist_key": "Bee Gees",
+  "year": 1975,
+  "label": "Bee Gees Catalog",
+  "genres": [
+   "disco"
+  ],
+  "origin_metro": "Brisbane",
+  "features": {
+   "danceability": 0.573,
+   "energy": 0.641,
+   "loudness": -9.196,
+   "speechiness": 0.0443,
+   "acousticness": 0.235,
+   "instrumentalness": 0.00414,
+   "liveness": 0.859,
+   "valence": 0.613,
+   "tempo": 88.862
+  }
+ },
+ {
+  "track": "Joanna - Single Version",
+  "artist": "Kool & The Gang",
+  "artist_key": "Kool & the Gang",
+  "year": 1999,
+  "label": "Mercury Records",
+  "genres": [
+   "disco",
+   "funk"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.857,
+   "energy": 0.602,
+   "loudness": -8.311,
+   "speechiness": 0.029,
+   "acousticness": 0.489,
+   "instrumentalness": 0.0244,
+   "liveness": 0.317,
+   "valence": 0.957,
+   "tempo": 105.157
+  }
+ },
+ {
+  "track": "Borderline",
+  "artist": "Madonna",
+  "artist_key": "Madonna",
+  "year": 1984,
+  "label": "Warner Records",
+  "genres": [],
+  "origin_metro": "Detroit",
+  "features": {
+   "danceability": 0.807,
+   "energy": 0.766,
+   "loudness": -5.185,
+   "speechiness": 0.0313,
+   "acousticness": 0.0808,
+   "instrumentalness": 3.8e-05,
+   "liveness": 0.115,
+   "valence": 0.373,
+   "tempo": 119.867
+  }
+ },
+ {
+  "track": "Fantasy - Single Version",
+  "artist": "Earth, Wind & Fire",
+  "artist_key": "Earth, Wind & Fire",
+  "year": 1978,
+  "label": "Columbia/Legacy",
+  "genres": [
+   "funk",
+   "disco"
+  ],
+  "origin_metro": "Chicago",
+  "features": {
+   "danceability": 0.666,
+   "energy": 0.714,
+   "loudness": -9.448,
+   "speechiness": 0.0617,
+   "acousticness": 0.291,
+   "instrumentalness": 0.0212,
+   "liveness": 0.128,
+   "valence": 0.69,
+   "tempo": 89.018
+  }
+ },
+ {
+  "track": "Forget Me Nots - Remastered",
+  "artist": "Patrice Rushen",
+  "artist_key": "Patrice Rushen",
+  "year": 1982,
+  "label": "Strut",
+  "genres": [
+   "post-disco",
+   "jazz funk",
+   "disco",
+   "funk"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.919,
+   "energy": 0.458,
+   "loudness": -6.963,
+   "speechiness": 0.0429,
+   "acousticness": 0.0797,
+   "instrumentalness": 0.0558,
+   "liveness": 0.0534,
+   "valence": 0.963,
+   "tempo": 113.82
+  }
+ },
+ {
+  "track": "Everything She Wants - Remix",
+  "artist": "Wham!",
+  "artist_key": "Wham!",
+  "year": 1984,
+  "label": "Sony Music CG",
+  "genres": [
+   "christmas"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.874,
+   "energy": 0.68,
+   "loudness": -7.844,
+   "speechiness": 0.0282,
+   "acousticness": 0.391,
+   "instrumentalness": 0.00258,
+   "liveness": 0.241,
+   "valence": 0.915,
+   "tempo": 114.961
+  }
+ },
+ {
+  "track": "Baby Come Back",
+  "artist": "Player",
+  "artist_key": "Player",
+  "year": 1980,
+  "label": "Late Night Tales",
+  "genres": [
+   "yacht rock"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.645,
+   "energy": 0.604,
+   "loudness": -9.904,
+   "speechiness": 0.118,
+   "acousticness": 0.0713,
+   "instrumentalness": 0.0,
+   "liveness": 0.129,
+   "valence": 0.545,
+   "tempo": 156.436
+  }
+ },
+ {
+  "track": "Joanna - Single Version",
+  "artist": "Kool & The Gang",
+  "artist_key": "Kool & the Gang",
+  "year": 1983,
+  "label": "Island Def Jam",
+  "genres": [
+   "disco",
+   "funk"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.876,
+   "energy": 0.348,
+   "loudness": -17.254,
+   "speechiness": 0.0363,
+   "acousticness": 0.479,
+   "instrumentalness": 0.464,
+   "liveness": 0.17,
+   "valence": 0.961,
+   "tempo": 105.593
+  }
+ },
+ {
+  "track": "West End Girls - 2018 Remaster",
+  "artist": "Pet Shop Boys",
+  "artist_key": "Pet Shop Boys",
+  "year": 1986,
+  "label": "Rhino",
+  "genres": [
+   "synthpop",
+   "new wave"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.656,
+   "energy": 0.914,
+   "loudness": -7.471,
+   "speechiness": 0.0394,
+   "acousticness": 0.000943,
+   "instrumentalness": 0.0628,
+   "liveness": 0.159,
+   "valence": 0.576,
+   "tempo": 113.259
+  }
+ },
+ {
+  "track": "Never Too Much",
+  "artist": "Luther Vandross",
+  "artist_key": "Luther Vandross",
+  "year": 1981,
+  "label": "Epic/Legacy",
+  "genres": [
+   "quiet storm",
+   "soul",
+   "classic soul"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.734,
+   "energy": 0.586,
+   "loudness": -11.866,
+   "speechiness": 0.129,
+   "acousticness": 0.125,
+   "instrumentalness": 0.0,
+   "liveness": 0.0367,
+   "valence": 0.762,
+   "tempo": 109.933
+  }
+ },
+ {
+  "track": "Cool Night",
+  "artist": "Paul Davis",
+  "artist_key": null,
+  "year": 1981,
+  "label": "SBCMG",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": null,
+  "features": {
+   "danceability": 0.576,
+   "energy": 0.528,
+   "loudness": -5.236,
+   "speechiness": 0.0258,
+   "acousticness": 0.67,
+   "instrumentalness": 0.0,
+   "liveness": 0.347,
+   "valence": 0.663,
+   "tempo": 107.21
+  }
+ },
+ {
+  "track": "Telephone Line",
+  "artist": "Electric Light Orchestra",
+  "artist_key": "Electric Light Orchestra",
+  "year": 1976,
+  "label": "Epic/Legacy",
+  "genres": [
+   "art rock",
+   "soft rock"
+  ],
+  "origin_metro": "Birmingham",
+  "features": {
+   "danceability": 0.467,
+   "energy": 0.367,
+   "loudness": -8.164,
+   "speechiness": 0.0298,
+   "acousticness": 0.771,
+   "instrumentalness": 2.27e-05,
+   "liveness": 0.0847,
+   "valence": 0.205,
+   "tempo": 70.856
+  }
+ },
+ {
+  "track": "Too Shy",
+  "artist": "Kajagoogoo",
+  "artist_key": "Kajagoogoo",
+  "year": 1983,
+  "label": "Parlophone UK",
+  "genres": [
+   "synthpop",
+   "new wave"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.702,
+   "energy": 0.871,
+   "loudness": -6.728,
+   "speechiness": 0.0926,
+   "acousticness": 0.127,
+   "instrumentalness": 4.18e-05,
+   "liveness": 0.0819,
+   "valence": 0.664,
+   "tempo": 107.982
+  }
+ },
+ {
+  "track": "This Is It",
+  "artist": "Kenny Loggins",
+  "artist_key": "Kenny Loggins",
+  "year": 1979,
+  "label": "Columbia",
+  "genres": [
+   "yacht rock"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.641,
+   "energy": 0.497,
+   "loudness": -12.228,
+   "speechiness": 0.029,
+   "acousticness": 0.254,
+   "instrumentalness": 2.15e-06,
+   "liveness": 0.158,
+   "valence": 0.743,
+   "tempo": 102.274
+  }
+ },
+ {
+  "track": "Something About You - 7\" Version",
+  "artist": "Level 42",
+  "artist_key": "Level 42",
+  "year": 2022,
+  "label": "UMC (Universal Music Catalogue)",
+  "genres": [
+   "synthpop"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.658,
+   "energy": 0.866,
+   "loudness": -6.337,
+   "speechiness": 0.0352,
+   "acousticness": 0.0504,
+   "instrumentalness": 0.0201,
+   "liveness": 0.0394,
+   "valence": 0.848,
+   "tempo": 104.898
+  }
+ },
+ {
+  "track": "Dream Weaver",
+  "artist": "Gary Wright",
+  "artist_key": "Gary Wright",
+  "year": 1975,
+  "label": "Rhino/Warner Records",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.266,
+   "energy": 0.389,
+   "loudness": -13.682,
+   "speechiness": 0.0305,
+   "acousticness": 0.244,
+   "instrumentalness": 1.42e-06,
+   "liveness": 0.0688,
+   "valence": 0.148,
+   "tempo": 140.243
+  }
+ },
+ {
+  "track": "Heart to Heart",
+  "artist": "Kenny Loggins",
+  "artist_key": "Kenny Loggins",
+  "year": 1982,
+  "label": "Columbia",
+  "genres": [
+   "yacht rock"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.698,
+   "energy": 0.456,
+   "loudness": -12.773,
+   "speechiness": 0.039,
+   "acousticness": 0.356,
+   "instrumentalness": 2.96e-05,
+   "liveness": 0.0313,
+   "valence": 0.796,
+   "tempo": 81.66
+  }
+ },
+ {
+  "track": "Sweet Freedom",
+  "artist": "Michael McDonald",
+  "artist_key": "Michael McDonald",
+  "year": 1986,
+  "label": "Geffen",
+  "genres": [
+   "yacht rock"
+  ],
+  "origin_metro": "St. Louis",
+  "features": {
+   "danceability": 0.778,
+   "energy": 0.625,
+   "loudness": -12.031,
+   "speechiness": 0.0402,
+   "acousticness": 0.106,
+   "instrumentalness": 0.0166,
+   "liveness": 0.0678,
+   "valence": 0.962,
+   "tempo": 114.863
+  }
+ },
+ {
+  "track": "The Captain of Her Heart",
+  "artist": "Double",
+  "artist_key": null,
+  "year": 1985,
+  "label": "DoubleCity",
+  "genres": [],
+  "origin_metro": null,
+  "features": {
+   "danceability": 0.671,
+   "energy": 0.641,
+   "loudness": -9.488,
+   "speechiness": 0.0241,
+   "acousticness": 0.648,
+   "instrumentalness": 0.000346,
+   "liveness": 0.118,
+   "valence": 0.385,
+   "tempo": 96.281
+  }
+ },
+ {
+  "track": "Yah Mo B There",
+  "artist": "James Ingram",
+  "artist_key": "James Ingram",
+  "year": 1983,
+  "label": "Qwest Records IGA",
+  "genres": [
+   "yacht rock"
+  ],
+  "origin_metro": "Cleveland",
+  "features": {
+   "danceability": 0.818,
+   "energy": 0.512,
+   "loudness": -12.491,
+   "speechiness": 0.0363,
+   "acousticness": 0.183,
+   "instrumentalness": 4.2e-06,
+   "liveness": 0.0439,
+   "valence": 0.96,
+   "tempo": 117.842
+  }
+ },
+ {
+  "track": "Baby, Come To Me",
+  "artist": "Patti Austin",
+  "artist_key": "Patti Austin",
+  "year": 1981,
+  "label": "Craft Recordings",
+  "genres": [
+   "yacht rock"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.631,
+   "energy": 0.505,
+   "loudness": -12.083,
+   "speechiness": 0.0903,
+   "acousticness": 0.553,
+   "instrumentalness": 0.0,
+   "liveness": 0.137,
+   "valence": 0.687,
+   "tempo": 90.204
+  }
+ },
+ {
+  "track": "Heartbreaker",
+  "artist": "Dionne Warwick",
+  "artist_key": "Dionne Warwick",
+  "year": 1982,
+  "label": "Legacy Recordings",
+  "genres": [],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.671,
+   "energy": 0.514,
+   "loudness": -13.561,
+   "speechiness": 0.0239,
+   "acousticness": 0.0921,
+   "instrumentalness": 1.53e-05,
+   "liveness": 0.137,
+   "valence": 0.803,
+   "tempo": 100.771
+  }
+ },
+ {
+  "track": "He's so Shy",
+  "artist": "The Pointer Sisters",
+  "artist_key": "The Pointer Sisters",
+  "year": 1980,
+  "label": "Legacy Recordings",
+  "genres": [
+   "disco"
+  ],
+  "origin_metro": "San Francisco-San Jose",
+  "features": {
+   "danceability": 0.871,
+   "energy": 0.736,
+   "loudness": -7.896,
+   "speechiness": 0.0675,
+   "acousticness": 0.22,
+   "instrumentalness": 0.000725,
+   "liveness": 0.0894,
+   "valence": 0.967,
+   "tempo": 115.149
+  }
+ },
+ {
+  "track": "Ain't Nobody",
+  "artist": "Rufus",
+  "artist_key": "Rufus",
+  "year": 1983,
+  "label": "Rhino/Warner Records",
+  "genres": [
+   "quiet storm"
+  ],
+  "origin_metro": "Chicago",
+  "features": {
+   "danceability": 0.825,
+   "energy": 0.811,
+   "loudness": -9.226,
+   "speechiness": 0.0524,
+   "acousticness": 0.258,
+   "instrumentalness": 0.000276,
+   "liveness": 0.132,
+   "valence": 0.789,
+   "tempo": 104.28
+  }
+ },
+ {
+  "track": "Breakout",
+  "artist": "Swing Out Sister",
+  "artist_key": "Swing Out Sister",
+  "year": 1987,
+  "label": "UMC (Universal Music Catalogue)",
+  "genres": [
+   "jazz pop"
+  ],
+  "origin_metro": "Manchester",
+  "features": {
+   "danceability": 0.704,
+   "energy": 0.557,
+   "loudness": -12.813,
+   "speechiness": 0.0316,
+   "acousticness": 0.175,
+   "instrumentalness": 0.00231,
+   "liveness": 0.0631,
+   "valence": 0.777,
+   "tempo": 113.194
+  }
+ },
+ {
+  "track": "Fool (If You Think It's Over)",
+  "artist": "Chris Rea",
+  "artist_key": "Chris Rea",
+  "year": 1978,
+  "label": "Rhino",
+  "genres": [
+   "christmas"
+  ],
+  "origin_metro": "Middlesbrough",
+  "features": {
+   "danceability": 0.722,
+   "energy": 0.412,
+   "loudness": -14.3,
+   "speechiness": 0.0267,
+   "acousticness": 0.312,
+   "instrumentalness": 2.5e-05,
+   "liveness": 0.0448,
+   "valence": 0.91,
+   "tempo": 105.927
+  }
+ },
+ {
+  "track": "We Don't Need Another Hero (Thunderdome)",
+  "artist": "Tina Turner",
+  "artist_key": "Tina Turner",
+  "year": 1984,
+  "label": "Parlophone UK",
+  "genres": [],
+  "origin_metro": "St. Louis",
+  "features": {
+   "danceability": 0.69,
+   "energy": 0.674,
+   "loudness": -5.866,
+   "speechiness": 0.0471,
+   "acousticness": 0.201,
+   "instrumentalness": 0.00612,
+   "liveness": 0.114,
+   "valence": 0.713,
+   "tempo": 98.851
+  }
+ },
+ {
+  "track": "Suddenly",
+  "artist": "Billy Ocean",
+  "artist_key": "Billy Ocean",
+  "year": 1984,
+  "label": "Sony Music UK",
+  "genres": [
+   "yacht rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.496,
+   "energy": 0.338,
+   "loudness": -9.512,
+   "speechiness": 0.0316,
+   "acousticness": 0.733,
+   "instrumentalness": 0.0,
+   "liveness": 0.115,
+   "valence": 0.202,
+   "tempo": 129.486
+  }
+ },
+ {
+  "track": "While You See A Chance",
+  "artist": "Steve Winwood",
+  "artist_key": "Steve Winwood",
+  "year": 1980,
+  "label": "UMC (Universal Music Catalogue)",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Birmingham",
+  "features": {
+   "danceability": 0.621,
+   "energy": 0.591,
+   "loudness": -12.243,
+   "speechiness": 0.0286,
+   "acousticness": 0.285,
+   "instrumentalness": 0.00018,
+   "liveness": 0.0574,
+   "valence": 0.394,
+   "tempo": 128.614
+  }
+ },
+ {
+  "track": "Caribbean Queen (No More Love On the Run)",
+  "artist": "Billy Ocean",
+  "artist_key": "Billy Ocean",
+  "year": 1984,
+  "label": "Sony Music UK",
+  "genres": [
+   "yacht rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.805,
+   "energy": 0.672,
+   "loudness": -6.281,
+   "speechiness": 0.0272,
+   "acousticness": 0.132,
+   "instrumentalness": 0.00235,
+   "liveness": 0.0822,
+   "valence": 0.969,
+   "tempo": 113.849
+  }
+ },
+ {
+  "track": "Tempted",
+  "artist": "Squeeze",
+  "artist_key": "Squeeze",
+  "year": 1981,
+  "label": "A&M",
+  "genres": [
+   "power pop",
+   "new wave"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.729,
+   "energy": 0.356,
+   "loudness": -13.743,
+   "speechiness": 0.0347,
+   "acousticness": 0.0916,
+   "instrumentalness": 0.0905,
+   "liveness": 0.052,
+   "valence": 0.392,
+   "tempo": 95.026
+  }
+ },
+ {
+  "track": "Lady Love Me (One More Time)",
+  "artist": "George Benson",
+  "artist_key": "George Benson",
+  "year": 1983,
+  "label": "Warner Records",
+  "genres": [
+   "smooth jazz",
+   "yacht rock",
+   "jazz funk",
+   "soul jazz"
+  ],
+  "origin_metro": "Pittsburgh",
+  "features": {
+   "danceability": 0.673,
+   "energy": 0.722,
+   "loudness": -8.536,
+   "speechiness": 0.0309,
+   "acousticness": 0.107,
+   "instrumentalness": 0.0,
+   "liveness": 0.305,
+   "valence": 0.816,
+   "tempo": 102.695
+  }
+ },
+ {
+  "track": "Father Figure - Remastered",
+  "artist": "George Michael",
+  "artist_key": "George Michael",
+  "year": 1987,
+  "label": "Epic",
+  "genres": [],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.689,
+   "energy": 0.333,
+   "loudness": -13.288,
+   "speechiness": 0.0262,
+   "acousticness": 0.163,
+   "instrumentalness": 3.36e-05,
+   "liveness": 0.0853,
+   "valence": 0.284,
+   "tempo": 101.988
+  }
+ },
+ {
+  "track": "I Wouldn't Want to Be Like You",
+  "artist": "The Alan Parsons Project",
+  "artist_key": "The Alan Parsons Project",
+  "year": 1977,
+  "label": "Arista/Legacy",
+  "genres": [
+   "progressive rock",
+   "classic rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.657,
+   "energy": 0.353,
+   "loudness": -19.724,
+   "speechiness": 0.0643,
+   "acousticness": 0.471,
+   "instrumentalness": 1.57e-05,
+   "liveness": 0.0946,
+   "valence": 0.24,
+   "tempo": 100.824
+  }
+ },
+ {
+  "track": "Games People Play",
+  "artist": "The Alan Parsons Project",
+  "artist_key": "The Alan Parsons Project",
+  "year": 1980,
+  "label": "Arista",
+  "genres": [
+   "progressive rock",
+   "classic rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.709,
+   "energy": 0.561,
+   "loudness": -14.295,
+   "speechiness": 0.0384,
+   "acousticness": 0.229,
+   "instrumentalness": 9.5e-06,
+   "liveness": 0.123,
+   "valence": 0.667,
+   "tempo": 133.034
+  }
+ },
+ {
+  "track": "Life in a Northern Town",
+  "artist": "The Dream Academy",
+  "artist_key": "The Dream Academy",
+  "year": 1985,
+  "label": "Rhino/Warner Records",
+  "genres": [
+   "baroque pop"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.563,
+   "energy": 0.476,
+   "loudness": -13.342,
+   "speechiness": 0.0329,
+   "acousticness": 0.265,
+   "instrumentalness": 0.0,
+   "liveness": 0.494,
+   "valence": 0.432,
+   "tempo": 121.67
+  }
+ },
+ {
+  "track": "Got To Give It Up - Pt. 1",
+  "artist": "Marvin Gaye",
+  "artist_key": "Marvin Gaye",
+  "year": 2026,
+  "label": "UME - Global Clearing House",
+  "genres": [
+   "motown",
+   "classic soul",
+   "soul",
+   "northern soul",
+   "quiet storm"
+  ],
+  "origin_metro": "Detroit",
+  "features": {
+   "danceability": 0.881,
+   "energy": 0.921,
+   "loudness": -5.309,
+   "speechiness": 0.048,
+   "acousticness": 0.2,
+   "instrumentalness": 0.00204,
+   "liveness": 0.342,
+   "valence": 0.916,
+   "tempo": 122.821
+  }
+ },
+ {
+  "track": "Woman In Chains",
+  "artist": "Tears For Fears",
+  "artist_key": "Tears for Fears",
+  "year": 1989,
+  "label": "UMC (Universal Music Catalogue)",
+  "genres": [
+   "new wave",
+   "synthpop"
+  ],
+  "origin_metro": "Bristol",
+  "features": {
+   "danceability": 0.431,
+   "energy": 0.598,
+   "loudness": -8.576,
+   "speechiness": 0.0304,
+   "acousticness": 0.0232,
+   "instrumentalness": 0.0012,
+   "liveness": 0.0487,
+   "valence": 0.373,
+   "tempo": 159.965
+  }
+ },
+ {
+  "track": "One Hundred Ways",
+  "artist": "Quincy Jones",
+  "artist_key": "Quincy Jones",
+  "year": 1981,
+  "label": "A&M",
+  "genres": [
+   "soul jazz",
+   "big band",
+   "quiet storm",
+   "yacht rock"
+  ],
+  "origin_metro": "Chicago",
+  "features": {
+   "danceability": 0.626,
+   "energy": 0.25,
+   "loudness": -17.499,
+   "speechiness": 0.0503,
+   "acousticness": 0.817,
+   "instrumentalness": 4.33e-05,
+   "liveness": 0.0668,
+   "valence": 0.345,
+   "tempo": 90.103
+  }
+ },
+ {
+  "track": "On And On",
+  "artist": "Stephen Bishop",
+  "artist_key": "Stephen Bishop",
+  "year": 1976,
+  "label": "Hip-O Select",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "San Diego",
+  "features": {
+   "danceability": 0.57,
+   "energy": 0.462,
+   "loudness": -10.483,
+   "speechiness": 0.0283,
+   "acousticness": 0.74,
+   "instrumentalness": 0.000223,
+   "liveness": 0.104,
+   "valence": 0.545,
+   "tempo": 102.3
+  }
+ },
+ {
+  "track": "She's Like the Wind (feat. Wendy Fraser) - From \"Dirty Dancing\" Soundtrack",
+  "artist": "Patrick Swayze",
+  "artist_key": "Patrick Swayze",
+  "year": 1987,
+  "label": "RCA Records Label",
+  "genres": [
+   "yacht rock"
+  ],
+  "origin_metro": "Houston",
+  "features": {
+   "danceability": 0.587,
+   "energy": 0.331,
+   "loudness": -14.677,
+   "speechiness": 0.0295,
+   "acousticness": 0.256,
+   "instrumentalness": 1.65e-05,
+   "liveness": 0.18,
+   "valence": 0.224,
+   "tempo": 124.918
+  }
+ },
+ {
+  "track": "I Don't Want to Live Without You",
+  "artist": "Foreigner",
+  "artist_key": "Foreigner",
+  "year": 1987,
+  "label": "Atlantic Records",
+  "genres": [
+   "aor",
+   "classic rock"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.431,
+   "energy": 0.522,
+   "loudness": -8.625,
+   "speechiness": 0.0295,
+   "acousticness": 0.436,
+   "instrumentalness": 1.91e-05,
+   "liveness": 0.109,
+   "valence": 0.233,
+   "tempo": 199.786
+  }
+ },
+ {
+  "track": "Piano In The Dark",
+  "artist": "Brenda Russell",
+  "artist_key": "Brenda Russell",
+  "year": 1988,
+  "label": "A&M",
+  "genres": [
+   "yacht rock",
+   "smooth jazz"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.729,
+   "energy": 0.316,
+   "loudness": -17.054,
+   "speechiness": 0.0248,
+   "acousticness": 0.403,
+   "instrumentalness": 8.55e-05,
+   "liveness": 0.0998,
+   "valence": 0.432,
+   "tempo": 99.729
+  }
+ },
+ {
+  "track": "All I Need",
+  "artist": "Jack Wagner",
+  "artist_key": "Jack Wagner",
+  "year": 1984,
+  "label": "Rhino/Warner Records",
+  "genres": [],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.475,
+   "energy": 0.375,
+   "loudness": -12.023,
+   "speechiness": 0.0282,
+   "acousticness": 0.468,
+   "instrumentalness": 0.0,
+   "liveness": 0.162,
+   "valence": 0.166,
+   "tempo": 140.277
+  }
+ },
+ {
+  "track": "Promises, Promises - US Single Version",
+  "artist": "Naked Eyes",
+  "artist_key": "Naked Eyes",
+  "year": 1983,
+  "label": "Chrysalis Records",
+  "genres": [
+   "new wave",
+   "synthpop"
+  ],
+  "origin_metro": "Bristol",
+  "features": {
+   "danceability": 0.746,
+   "energy": 0.895,
+   "loudness": -5.381,
+   "speechiness": 0.0658,
+   "acousticness": 0.102,
+   "instrumentalness": 0.000242,
+   "liveness": 0.0594,
+   "valence": 0.753,
+   "tempo": 115.693
+  }
+ },
+ {
+  "track": "Toy Soldiers",
+  "artist": "Martika",
+  "artist_key": "Martika",
+  "year": 1988,
+  "label": "Columbia/Legacy",
+  "genres": [],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.513,
+   "energy": 0.591,
+   "loudness": -6.407,
+   "speechiness": 0.0274,
+   "acousticness": 0.405,
+   "instrumentalness": 0.0,
+   "liveness": 0.126,
+   "valence": 0.173,
+   "tempo": 130.167
+  }
+ },
+ {
+  "track": "Sad Eyes",
+  "artist": "Robert John",
+  "artist_key": "Robert John",
+  "year": 1979,
+  "label": "CAPITOL CATALOG MKT (C92)",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.467,
+   "energy": 0.347,
+   "loudness": -11.65,
+   "speechiness": 0.0278,
+   "acousticness": 0.571,
+   "instrumentalness": 0.000205,
+   "liveness": 0.105,
+   "valence": 0.656,
+   "tempo": 107.391
+  }
+ },
+ {
+  "track": "When I Need You - Remastered",
+  "artist": "Leo Sayer",
+  "artist_key": "Leo Sayer",
+  "year": 1976,
+  "label": "Rhino",
+  "genres": [
+   "soft rock",
+   "yacht rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.597,
+   "energy": 0.342,
+   "loudness": -8.167,
+   "speechiness": 0.0299,
+   "acousticness": 0.389,
+   "instrumentalness": 3.04e-05,
+   "liveness": 0.114,
+   "valence": 0.11,
+   "tempo": 109.609
+  }
+ },
+ {
+  "track": "Hope You Love Me Like You Say You Do",
+  "artist": "Huey Lewis & The News",
+  "artist_key": "Huey Lewis and the News",
+  "year": 1982,
+  "label": "Chrysalis\\EMI Records (USA)",
+  "genres": [],
+  "origin_metro": "San Francisco-San Jose",
+  "features": {
+   "danceability": 0.438,
+   "energy": 0.419,
+   "loudness": -12.568,
+   "speechiness": 0.0392,
+   "acousticness": 0.0214,
+   "instrumentalness": 0.0,
+   "liveness": 0.338,
+   "valence": 0.844,
+   "tempo": 98.173
+  }
+ },
+ {
+  "track": "Mornin'",
+  "artist": "Al Jarreau",
+  "artist_key": "Al Jarreau",
+  "year": 1983,
+  "label": "Rhino",
+  "genres": [
+   "yacht rock",
+   "smooth jazz",
+   "vocal jazz",
+   "jazz"
+  ],
+  "origin_metro": "Milwaukee",
+  "features": {
+   "danceability": 0.58,
+   "energy": 0.464,
+   "loudness": -13.252,
+   "speechiness": 0.0339,
+   "acousticness": 0.19,
+   "instrumentalness": 3e-05,
+   "liveness": 0.263,
+   "valence": 0.563,
+   "tempo": 89.775
+  }
+ },
+ {
+  "track": "I'd Really Love to See You Tonight",
+  "artist": "England Dan & John Ford Coley",
+  "artist_key": "England Dan & John Ford Coley",
+  "year": 1976,
+  "label": "Rhino Atlantic",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Dallas",
+  "features": {
+   "danceability": 0.62,
+   "energy": 0.556,
+   "loudness": -12.044,
+   "speechiness": 0.0336,
+   "acousticness": 0.184,
+   "instrumentalness": 0.0,
+   "liveness": 0.301,
+   "valence": 0.592,
+   "tempo": 119.172
+  }
+ },
+ {
+  "track": "Just Once",
+  "artist": "Quincy Jones",
+  "artist_key": "Quincy Jones",
+  "year": 1981,
+  "label": "A&M",
+  "genres": [
+   "soul jazz",
+   "big band",
+   "quiet storm",
+   "yacht rock"
+  ],
+  "origin_metro": "Chicago",
+  "features": {
+   "danceability": 0.543,
+   "energy": 0.241,
+   "loudness": -17.245,
+   "speechiness": 0.0404,
+   "acousticness": 0.733,
+   "instrumentalness": 0.0,
+   "liveness": 0.0944,
+   "valence": 0.326,
+   "tempo": 71.878
+  }
+ },
+ {
+  "track": "Dirty Laundry",
+  "artist": "Don Henley",
+  "artist_key": "Don Henley",
+  "year": 1982,
+  "label": "Rhino",
+  "genres": [
+   "yacht rock"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.756,
+   "energy": 0.772,
+   "loudness": -6.65,
+   "speechiness": 0.0306,
+   "acousticness": 0.0848,
+   "instrumentalness": 0.0026,
+   "liveness": 0.0792,
+   "valence": 0.954,
+   "tempo": 98.382
+  }
+ },
+ {
+  "track": "Just To See Her",
+  "artist": "Smokey Robinson",
+  "artist_key": "Smokey Robinson",
+  "year": 1987,
+  "label": "UNI/MOTOWN",
+  "genres": [
+   "motown",
+   "quiet storm",
+   "classic soul"
+  ],
+  "origin_metro": "Detroit",
+  "features": {
+   "danceability": 0.821,
+   "energy": 0.379,
+   "loudness": -15.489,
+   "speechiness": 0.0334,
+   "acousticness": 0.153,
+   "instrumentalness": 0.0,
+   "liveness": 0.0839,
+   "valence": 0.914,
+   "tempo": 109.123
+  }
+ },
+ {
+  "track": "Hungry Eyes - From \"Dirty Dancing\" Soundtrack",
+  "artist": "Eric Carmen",
+  "artist_key": "Eric Carmen",
+  "year": 1997,
+  "label": "Arista",
+  "genres": [
+   "yacht rock"
+  ],
+  "origin_metro": "Cleveland",
+  "features": {
+   "danceability": 0.712,
+   "energy": 0.549,
+   "loudness": -9.484,
+   "speechiness": 0.0254,
+   "acousticness": 0.011,
+   "instrumentalness": 0.0,
+   "liveness": 0.118,
+   "valence": 0.552,
+   "tempo": 109.882
+  }
+ },
+ {
+  "track": "Don't Dream It's Over",
+  "artist": "Crowded House",
+  "artist_key": "Crowded House",
+  "year": 1986,
+  "label": "Capitol Records",
+  "genres": [],
+  "origin_metro": "Melbourne",
+  "features": {
+   "danceability": 0.439,
+   "energy": 0.421,
+   "loudness": -17.227,
+   "speechiness": 0.0411,
+   "acousticness": 0.0148,
+   "instrumentalness": 4.88e-05,
+   "liveness": 0.0697,
+   "valence": 0.551,
+   "tempo": 81.833
+  }
+ },
+ {
+  "track": "Voices Carry",
+  "artist": "'Til Tuesday",
+  "artist_key": "'Til Tuesday",
+  "year": 1985,
+  "label": "Epic/Legacy",
+  "genres": [
+   "new wave"
+  ],
+  "origin_metro": "Boston",
+  "features": {
+   "danceability": 0.583,
+   "energy": 0.574,
+   "loudness": -9.044,
+   "speechiness": 0.0239,
+   "acousticness": 0.0282,
+   "instrumentalness": 2.14e-06,
+   "liveness": 0.114,
+   "valence": 0.578,
+   "tempo": 104.995
+  }
+ },
+ {
+  "track": "FM",
+  "artist": "Steely Dan",
+  "artist_key": "Steely Dan",
+  "year": 1982,
+  "label": "Geffen*",
+  "genres": [
+   "yacht rock",
+   "classic rock"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.793,
+   "energy": 0.575,
+   "loudness": -11.435,
+   "speechiness": 0.0324,
+   "acousticness": 0.363,
+   "instrumentalness": 0.049,
+   "liveness": 0.0868,
+   "valence": 0.686,
+   "tempo": 110.224
+  }
+ },
+ {
+  "track": "Silent Running",
+  "artist": "Mike + The Mechanics",
+  "artist_key": "Mike + the Mechanics",
+  "year": 1985,
+  "label": "Rhino Atlantic",
+  "genres": [
+   "soft rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.511,
+   "energy": 0.447,
+   "loudness": -13.24,
+   "speechiness": 0.0314,
+   "acousticness": 0.361,
+   "instrumentalness": 0.000251,
+   "liveness": 0.131,
+   "valence": 0.348,
+   "tempo": 130.989
+  }
+ },
+ {
+  "track": "How Deep Is Your Love",
+  "artist": "Bee Gees",
+  "artist_key": "Bee Gees",
+  "year": 1979,
+  "label": "Bee Gees Catalog",
+  "genres": [
+   "disco"
+  ],
+  "origin_metro": "Brisbane",
+  "features": {
+   "danceability": 0.633,
+   "energy": 0.357,
+   "loudness": -9.366,
+   "speechiness": 0.0264,
+   "acousticness": 0.107,
+   "instrumentalness": 0.0,
+   "liveness": 0.133,
+   "valence": 0.672,
+   "tempo": 104.938
+  }
+ },
+ {
+  "track": "Out of Touch",
+  "artist": "Daryl Hall & John Oates",
+  "artist_key": "Hall & Oates",
+  "year": 1984,
+  "label": "RCA/BMG Heritage",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Philadelphia",
+  "features": {
+   "danceability": 0.777,
+   "energy": 0.827,
+   "loudness": -5.464,
+   "speechiness": 0.0316,
+   "acousticness": 0.0657,
+   "instrumentalness": 0.000392,
+   "liveness": 0.0574,
+   "valence": 0.906,
+   "tempo": 114.89
+  }
+ },
+ {
+  "track": "Spooky",
+  "artist": "Atlanta Rhythm Section",
+  "artist_key": "Atlanta Rhythm Section",
+  "year": 1979,
+  "label": "Polydor",
+  "genres": [
+   "southern rock",
+   "yacht rock",
+   "country rock",
+   "soft rock"
+  ],
+  "origin_metro": "Atlanta",
+  "features": {
+   "danceability": 0.695,
+   "energy": 0.386,
+   "loudness": -13.965,
+   "speechiness": 0.0299,
+   "acousticness": 0.233,
+   "instrumentalness": 0.00304,
+   "liveness": 0.115,
+   "valence": 0.921,
+   "tempo": 109.188
+  }
+ },
+ {
+  "track": "So Into You",
+  "artist": "Atlanta Rhythm Section",
+  "artist_key": "Atlanta Rhythm Section",
+  "year": 1976,
+  "label": "Universal Records",
+  "genres": [
+   "southern rock",
+   "yacht rock",
+   "country rock",
+   "soft rock"
+  ],
+  "origin_metro": "Atlanta",
+  "features": {
+   "danceability": 0.622,
+   "energy": 0.409,
+   "loudness": -13.484,
+   "speechiness": 0.0362,
+   "acousticness": 0.65,
+   "instrumentalness": 0.023,
+   "liveness": 0.142,
+   "valence": 0.785,
+   "tempo": 86.173
+  }
+ },
+ {
+  "track": "I'll Be Over You",
+  "artist": "TOTO",
+  "artist_key": "Toto",
+  "year": 1986,
+  "label": "Columbia",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.515,
+   "energy": 0.277,
+   "loudness": -17.85,
+   "speechiness": 0.0255,
+   "acousticness": 0.062,
+   "instrumentalness": 0.0,
+   "liveness": 0.258,
+   "valence": 0.413,
+   "tempo": 82.167
+  }
+ },
+ {
+  "track": "When You're In Love With A Beautiful Woman",
+  "artist": "Dr. Hook",
+  "artist_key": "Dr. Hook",
+  "year": 1978,
+  "label": "Capitol Records",
+  "genres": [
+   "yacht rock"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.679,
+   "energy": 0.728,
+   "loudness": -9.539,
+   "speechiness": 0.0378,
+   "acousticness": 0.405,
+   "instrumentalness": 0.00261,
+   "liveness": 0.0506,
+   "valence": 0.852,
+   "tempo": 109.623
+  }
+ },
+ {
+  "track": "For Your Eyes Only",
+  "artist": "Sheena Easton",
+  "artist_key": "Sheena Easton",
+  "year": 1981,
+  "label": "RT Industries",
+  "genres": [],
+  "origin_metro": "Glasgow",
+  "features": {
+   "danceability": 0.244,
+   "energy": 0.44,
+   "loudness": -7.777,
+   "speechiness": 0.0475,
+   "acousticness": 0.871,
+   "instrumentalness": 8.65e-05,
+   "liveness": 0.372,
+   "valence": 0.113,
+   "tempo": 82.02
+  }
+ },
+ {
+  "track": "Holding Back the Years - Extended Single Mix; 2008 Remaster",
+  "artist": "Simply Red",
+  "artist_key": "Simply Red",
+  "year": 1985,
+  "label": "Rhino/Elektra",
+  "genres": [
+   "soft rock"
+  ],
+  "origin_metro": "Manchester",
+  "features": {
+   "danceability": 0.703,
+   "energy": 0.45,
+   "loudness": -11.634,
+   "speechiness": 0.0266,
+   "acousticness": 0.718,
+   "instrumentalness": 0.00219,
+   "liveness": 0.232,
+   "valence": 0.612,
+   "tempo": 86.211
+  }
+ },
+ {
+  "track": "I Won't Hold You Back",
+  "artist": "TOTO",
+  "artist_key": "Toto",
+  "year": 1982,
+  "label": "Columbia",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.539,
+   "energy": 0.306,
+   "loudness": -15.067,
+   "speechiness": 0.0264,
+   "acousticness": 0.404,
+   "instrumentalness": 0.0,
+   "liveness": 0.0608,
+   "valence": 0.0643,
+   "tempo": 102.245
+  }
+ },
+ {
+  "track": "Method of Modern Love",
+  "artist": "Daryl Hall & John Oates",
+  "artist_key": "Hall & Oates",
+  "year": 1984,
+  "label": "RCA/BMG Heritage",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Philadelphia",
+  "features": {
+   "danceability": 0.714,
+   "energy": 0.726,
+   "loudness": -6.621,
+   "speechiness": 0.0569,
+   "acousticness": 0.0708,
+   "instrumentalness": 2.15e-05,
+   "liveness": 0.093,
+   "valence": 0.753,
+   "tempo": 94.203
+  }
+ },
+ {
+  "track": "Advice For The Young At Heart",
+  "artist": "Tears For Fears",
+  "artist_key": "Tears for Fears",
+  "year": 1989,
+  "label": "UMC (Universal Music Catalogue)",
+  "genres": [
+   "new wave",
+   "synthpop"
+  ],
+  "origin_metro": "Bristol",
+  "features": {
+   "danceability": 0.659,
+   "energy": 0.79,
+   "loudness": -8.77,
+   "speechiness": 0.0327,
+   "acousticness": 0.0788,
+   "instrumentalness": 0.000126,
+   "liveness": 0.267,
+   "valence": 0.359,
+   "tempo": 122.485
+  }
+ },
+ {
+  "track": "Owner of a Lonely Heart",
+  "artist": "Yes",
+  "artist_key": "Yes",
+  "year": 1983,
+  "label": "Rhino Atlantic",
+  "genres": [
+   "progressive rock",
+   "art rock",
+   "aor"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.744,
+   "energy": 0.798,
+   "loudness": -5.981,
+   "speechiness": 0.0364,
+   "acousticness": 0.176,
+   "instrumentalness": 0.0037,
+   "liveness": 0.26,
+   "valence": 0.898,
+   "tempo": 125.059
+  }
+ },
+ {
+  "track": "I Keep Forgettin' (Every Time You're Near)",
+  "artist": "Michael McDonald",
+  "artist_key": "Michael McDonald",
+  "year": 1982,
+  "label": "Reprise",
+  "genres": [
+   "yacht rock"
+  ],
+  "origin_metro": "St. Louis",
+  "features": {
+   "danceability": 0.734,
+   "energy": 0.485,
+   "loudness": -13.865,
+   "speechiness": 0.0465,
+   "acousticness": 0.357,
+   "instrumentalness": 0.00019,
+   "liveness": 0.0401,
+   "valence": 0.933,
+   "tempo": 95.321
+  }
+ },
+ {
+  "track": "Biggest Part of Me",
+  "artist": "Ambrosia",
+  "artist_key": "Ambrosia",
+  "year": 1980,
+  "label": "RT Industries",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.498,
+   "energy": 0.723,
+   "loudness": -8.053,
+   "speechiness": 0.05,
+   "acousticness": 0.238,
+   "instrumentalness": 0.0,
+   "liveness": 0.353,
+   "valence": 0.882,
+   "tempo": 153.227
+  }
+ },
+ {
+  "track": "Drive - 2017 Remaster",
+  "artist": "The Cars",
+  "artist_key": "The Cars",
+  "year": 1984,
+  "label": "Rhino/Elektra",
+  "genres": [
+   "power pop",
+   "new wave",
+   "classic rock"
+  ],
+  "origin_metro": "Boston",
+  "features": {
+   "danceability": 0.261,
+   "energy": 0.703,
+   "loudness": -7.871,
+   "speechiness": 0.0414,
+   "acousticness": 0.115,
+   "instrumentalness": 0.00078,
+   "liveness": 0.102,
+   "valence": 0.405,
+   "tempo": 83.495
+  }
+ },
+ {
+  "track": "Missing You",
+  "artist": "John Waite",
+  "artist_key": "John Waite",
+  "year": 1984,
+  "label": "Capitol Records",
+  "genres": [
+   "arena rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.552,
+   "energy": 0.552,
+   "loudness": -9.736,
+   "speechiness": 0.0364,
+   "acousticness": 0.052,
+   "instrumentalness": 0.0,
+   "liveness": 0.046,
+   "valence": 0.593,
+   "tempo": 208.571
+  }
+ },
+ {
+  "track": "Sara",
+  "artist": "Starship",
+  "artist_key": "Starship",
+  "year": 1985,
+  "label": "Rhino",
+  "genres": [],
+  "origin_metro": "San Francisco-San Jose",
+  "features": {
+   "danceability": 0.642,
+   "energy": 0.805,
+   "loudness": -5.675,
+   "speechiness": 0.0336,
+   "acousticness": 0.352,
+   "instrumentalness": 1.02e-06,
+   "liveness": 0.118,
+   "valence": 0.365,
+   "tempo": 100.273
+  }
+ },
+ {
+  "track": "These Dreams",
+  "artist": "Heart",
+  "artist_key": "Heart",
+  "year": 1985,
+  "label": "CAPITOL CATALOG MKT (C92)",
+  "genres": [
+   "classic rock",
+   "aor",
+   "rock"
+  ],
+  "origin_metro": "Seattle",
+  "features": {
+   "danceability": 0.534,
+   "energy": 0.532,
+   "loudness": -9.865,
+   "speechiness": 0.0292,
+   "acousticness": 0.509,
+   "instrumentalness": 0.0,
+   "liveness": 0.0868,
+   "valence": 0.3,
+   "tempo": 79.103
+  }
+ },
+ {
+  "track": "Say It Isn't So",
+  "artist": "Daryl Hall & John Oates",
+  "artist_key": "Hall & Oates",
+  "year": 1983,
+  "label": "RCA/Legacy",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Philadelphia",
+  "features": {
+   "danceability": 0.774,
+   "energy": 0.788,
+   "loudness": -7.069,
+   "speechiness": 0.0281,
+   "acousticness": 0.118,
+   "instrumentalness": 0.0,
+   "liveness": 0.153,
+   "valence": 0.972,
+   "tempo": 114.152
+  }
+ },
+ {
+  "track": "Year of the Cat",
+  "artist": "Al Stewart",
+  "artist_key": "Al Stewart",
+  "year": 1976,
+  "label": "Rhino",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "Glasgow",
+  "features": {
+   "danceability": 0.54,
+   "energy": 0.634,
+   "loudness": -9.165,
+   "speechiness": 0.0346,
+   "acousticness": 0.016,
+   "instrumentalness": 0.0098,
+   "liveness": 0.118,
+   "valence": 0.546,
+   "tempo": 116.461
+  }
+ },
+ {
+  "track": "Too Much Heaven",
+  "artist": "Bee Gees",
+  "artist_key": "Bee Gees",
+  "year": 1979,
+  "label": "Bee Gees Catalog",
+  "genres": [
+   "disco"
+  ],
+  "origin_metro": "Brisbane",
+  "features": {
+   "danceability": 0.496,
+   "energy": 0.44,
+   "loudness": -13.212,
+   "speechiness": 0.0466,
+   "acousticness": 0.44,
+   "instrumentalness": 9.07e-05,
+   "liveness": 0.725,
+   "valence": 0.353,
+   "tempo": 165.917
+  }
+ },
+ {
+  "track": "Stuck With You",
+  "artist": "Huey Lewis & The News",
+  "artist_key": "Huey Lewis and the News",
+  "year": 1986,
+  "label": "EMI/EMI Records (USA)",
+  "genres": [],
+  "origin_metro": "San Francisco-San Jose",
+  "features": {
+   "danceability": 0.704,
+   "energy": 0.544,
+   "loudness": -11.402,
+   "speechiness": 0.026,
+   "acousticness": 0.0873,
+   "instrumentalness": 1.58e-05,
+   "liveness": 0.041,
+   "valence": 0.627,
+   "tempo": 120.717
+  }
+ },
+ {
+  "track": "Sowing The Seeds Of Love",
+  "artist": "Tears For Fears",
+  "artist_key": "Tears for Fears",
+  "year": 1989,
+  "label": "UMC (Universal Music Catalogue)",
+  "genres": [
+   "new wave",
+   "synthpop"
+  ],
+  "origin_metro": "Bristol",
+  "features": {
+   "danceability": 0.334,
+   "energy": 0.767,
+   "loudness": -7.574,
+   "speechiness": 0.036,
+   "acousticness": 0.00715,
+   "instrumentalness": 8.63e-05,
+   "liveness": 0.338,
+   "valence": 0.644,
+   "tempo": 87.027
+  }
+ },
+ {
+  "track": "Space Age Love Song",
+  "artist": "A Flock Of Seagulls",
+  "artist_key": "A Flock Of Seagulls",
+  "year": 1982,
+  "label": "BMG Rights Management (UK) Ltd.",
+  "genres": [
+   "new wave",
+   "synthpop"
+  ],
+  "origin_metro": "Liverpool",
+  "features": {
+   "danceability": 0.494,
+   "energy": 0.516,
+   "loudness": -13.071,
+   "speechiness": 0.0295,
+   "acousticness": 0.00072,
+   "instrumentalness": 0.228,
+   "liveness": 0.121,
+   "valence": 0.621,
+   "tempo": 139.878
+  }
+ },
+ {
+  "track": "How Can I Fall ?",
+  "artist": "Breathe",
+  "artist_key": "Breathe",
+  "year": 1988,
+  "label": "One Up",
+  "genres": [],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.499,
+   "energy": 0.417,
+   "loudness": -13.982,
+   "speechiness": 0.0286,
+   "acousticness": 0.397,
+   "instrumentalness": 0.0,
+   "liveness": 0.0622,
+   "valence": 0.505,
+   "tempo": 132.195
+  }
+ },
+ {
+  "track": "Hands To Heaven",
+  "artist": "Breathe",
+  "artist_key": "Breathe",
+  "year": 1988,
+  "label": "One Up",
+  "genres": [],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.543,
+   "energy": 0.384,
+   "loudness": -15.018,
+   "speechiness": 0.0307,
+   "acousticness": 0.242,
+   "instrumentalness": 1.16e-06,
+   "liveness": 0.266,
+   "valence": 0.407,
+   "tempo": 128.768
+  }
+ },
+ {
+  "track": "Goodbye Blue Sky",
+  "artist": "Pink Floyd",
+  "artist_key": "Pink Floyd",
+  "year": 1979,
+  "label": "Pink Floyd Records",
+  "genres": [
+   "progressive rock",
+   "psychedelic rock",
+   "classic rock",
+   "art rock",
+   "rock"
+  ],
+  "origin_metro": "Cambridge",
+  "features": {
+   "danceability": 0.638,
+   "energy": 0.0811,
+   "loudness": -22.646,
+   "speechiness": 0.0335,
+   "acousticness": 0.879,
+   "instrumentalness": 0.00313,
+   "liveness": 0.314,
+   "valence": 0.0503,
+   "tempo": 109.154
+  }
+ },
+ {
+  "track": "Dreams - 2004 Remaster",
+  "artist": "Fleetwood Mac",
+  "artist_key": "Fleetwood Mac",
+  "year": 1977,
+  "label": "Rhino/Warner Records",
+  "genres": [
+   "yacht rock",
+   "classic rock",
+   "soft rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.828,
+   "energy": 0.492,
+   "loudness": -9.744,
+   "speechiness": 0.0276,
+   "acousticness": 0.0644,
+   "instrumentalness": 0.00428,
+   "liveness": 0.128,
+   "valence": 0.789,
+   "tempo": 120.151
+  }
+ },
+ {
+  "track": "Down by the Seaside - 1993 Remaster",
+  "artist": "Led Zeppelin",
+  "artist_key": "Led Zeppelin",
+  "year": 1975,
+  "label": "Rhino Atlantic",
+  "genres": [
+   "classic rock",
+   "rock",
+   "hard rock",
+   "rock and roll"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.39,
+   "energy": 0.513,
+   "loudness": -10.406,
+   "speechiness": 0.0279,
+   "acousticness": 0.584,
+   "instrumentalness": 0.282,
+   "liveness": 0.141,
+   "valence": 0.499,
+   "tempo": 92.242
+  }
+ },
+ {
+  "track": "Sea of Love - 2006 Remaster",
+  "artist": "The Honeydrippers",
+  "artist_key": "The Honeydrippers",
+  "year": 1984,
+  "label": "Rhino Atlantic",
+  "genres": [],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.422,
+   "energy": 0.411,
+   "loudness": -9.004,
+   "speechiness": 0.0257,
+   "acousticness": 0.111,
+   "instrumentalness": 0.00113,
+   "liveness": 0.324,
+   "valence": 0.393,
+   "tempo": 82.737
+  }
+ },
+ {
+  "track": "Babylon Sisters",
+  "artist": "Steely Dan",
+  "artist_key": "Steely Dan",
+  "year": 1980,
+  "label": "Geffen",
+  "genres": [
+   "yacht rock",
+   "classic rock"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.668,
+   "energy": 0.3,
+   "loudness": -16.186,
+   "speechiness": 0.0535,
+   "acousticness": 0.458,
+   "instrumentalness": 0.0222,
+   "liveness": 0.0547,
+   "valence": 0.496,
+   "tempo": 60.688
+  }
+ },
+ {
+  "track": "Arthur's Theme (Best That You Can Do)",
+  "artist": "Christopher Cross",
+  "artist_key": "Christopher Cross",
+  "year": 2008,
+  "label": "Rhino/Warner Records",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "San Antonio",
+  "features": {
+   "danceability": 0.526,
+   "energy": 0.515,
+   "loudness": -11.169,
+   "speechiness": 0.0389,
+   "acousticness": 0.169,
+   "instrumentalness": 0.000816,
+   "liveness": 0.181,
+   "valence": 0.518,
+   "tempo": 136.543
+  }
+ },
+ {
+  "track": "To Live And Die In L.A. - From \"To Live And Die In L.A.\" Soundtrack",
+  "artist": "Wang Chung",
+  "artist_key": "Wang Chung",
+  "year": 1985,
+  "label": "Geffen",
+  "genres": [
+   "synthpop",
+   "new wave"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.745,
+   "energy": 0.498,
+   "loudness": -12.887,
+   "speechiness": 0.0322,
+   "acousticness": 0.183,
+   "instrumentalness": 0.16,
+   "liveness": 0.285,
+   "valence": 0.763,
+   "tempo": 106.993
+  }
+ },
+ {
+  "track": "Take My Breath Away - Love Theme from \"Top Gun\"",
+  "artist": "Berlin",
+  "artist_key": "Berlin",
+  "year": 1999,
+  "label": "Columbia/Legacy",
+  "genres": [],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.497,
+   "energy": 0.719,
+   "loudness": -9.397,
+   "speechiness": 0.0266,
+   "acousticness": 0.0613,
+   "instrumentalness": 0.0,
+   "liveness": 0.411,
+   "valence": 0.547,
+   "tempo": 95.769
+  }
+ },
+ {
+  "track": "Time (Clock Of The Heart) - Remastered 2003",
+  "artist": "Culture Club",
+  "artist_key": "Culture Club",
+  "year": 2002,
+  "label": "EMI Marketing",
+  "genres": [],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.716,
+   "energy": 0.773,
+   "loudness": -6.329,
+   "speechiness": 0.0369,
+   "acousticness": 0.471,
+   "instrumentalness": 0.0,
+   "liveness": 0.0493,
+   "valence": 0.916,
+   "tempo": 117.056
+  }
+ },
+ {
+  "track": "Wasted on the Way - 2005 Remaster",
+  "artist": "Crosby, Stills & Nash",
+  "artist_key": "Crosby, Stills & Nash",
+  "year": 1982,
+  "label": "Rhino Atlantic",
+  "genres": [
+   "folk rock",
+   "yacht rock"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.526,
+   "energy": 0.543,
+   "loudness": -12.895,
+   "speechiness": 0.0403,
+   "acousticness": 0.394,
+   "instrumentalness": 2.84e-05,
+   "liveness": 0.234,
+   "valence": 0.744,
+   "tempo": 153.668
+  }
+ },
+ {
+  "track": "Southern Cross",
+  "artist": "Crosby, Stills & Nash",
+  "artist_key": "Crosby, Stills & Nash",
+  "year": 2005,
+  "label": "Rhino",
+  "genres": [
+   "folk rock",
+   "yacht rock"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.669,
+   "energy": 0.437,
+   "loudness": -10.491,
+   "speechiness": 0.032,
+   "acousticness": 0.445,
+   "instrumentalness": 1.66e-06,
+   "liveness": 0.171,
+   "valence": 0.614,
+   "tempo": 81.631
+  }
+ },
+ {
+  "track": "I Want to Know What Love Is - 1999 Remaster",
+  "artist": "Foreigner",
+  "artist_key": "Foreigner",
+  "year": 1984,
+  "label": "Atlantic Records",
+  "genres": [
+   "aor",
+   "classic rock"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.477,
+   "energy": 0.471,
+   "loudness": -10.036,
+   "speechiness": 0.0277,
+   "acousticness": 0.193,
+   "instrumentalness": 1.76e-06,
+   "liveness": 0.131,
+   "valence": 0.423,
+   "tempo": 81.204
+  }
+ },
+ {
+  "track": "The Things We Do For Love",
+  "artist": "10cc",
+  "artist_key": "10cc",
+  "year": 1977,
+  "label": "EMI",
+  "genres": [
+   "yacht rock",
+   "art rock",
+   "glam rock"
+  ],
+  "origin_metro": "Manchester",
+  "features": {
+   "danceability": 0.637,
+   "energy": 0.528,
+   "loudness": -9.837,
+   "speechiness": 0.0394,
+   "acousticness": 0.163,
+   "instrumentalness": 0.0,
+   "liveness": 0.122,
+   "valence": 0.781,
+   "tempo": 106.949
+  }
+ },
+ {
+  "track": "Thunder Island",
+  "artist": "Jay Ferguson",
+  "artist_key": "Jay Ferguson",
+  "year": 1978,
+  "label": "Rhino/Elektra",
+  "genres": [
+   "yacht rock"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.497,
+   "energy": 0.718,
+   "loudness": -7.744,
+   "speechiness": 0.0275,
+   "acousticness": 0.00113,
+   "instrumentalness": 0.0606,
+   "liveness": 0.544,
+   "valence": 0.792,
+   "tempo": 127.79
+  }
+ },
+ {
+  "track": "Caravan of Love",
+  "artist": "Isley, Jasper, Isley",
+  "artist_key": null,
+  "year": 2004,
+  "label": "Epic",
+  "genres": [
+   "quiet storm"
+  ],
+  "origin_metro": null,
+  "features": {
+   "danceability": 0.665,
+   "energy": 0.502,
+   "loudness": -11.045,
+   "speechiness": 0.0258,
+   "acousticness": 0.586,
+   "instrumentalness": 0.0,
+   "liveness": 0.19,
+   "valence": 0.81,
+   "tempo": 88.295
+  }
+ },
+ {
+  "track": "You Are My Lady",
+  "artist": "Freddie Jackson",
+  "artist_key": "Freddie Jackson",
+  "year": 1985,
+  "label": "Capitol Records",
+  "genres": [
+   "quiet storm",
+   "classic soul"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.7,
+   "energy": 0.254,
+   "loudness": -16.019,
+   "speechiness": 0.0429,
+   "acousticness": 0.46,
+   "instrumentalness": 0.0,
+   "liveness": 0.1,
+   "valence": 0.408,
+   "tempo": 91.437
+  }
+ },
+ {
+  "track": "You Should Be Mine (The Woo Woo Song)",
+  "artist": "Jeffrey Osborne",
+  "artist_key": "Jeffrey Osborne",
+  "year": 1986,
+  "label": "Special Products",
+  "genres": [
+   "quiet storm"
+  ],
+  "origin_metro": "Providence",
+  "features": {
+   "danceability": 0.725,
+   "energy": 0.648,
+   "loudness": -10.968,
+   "speechiness": 0.0384,
+   "acousticness": 0.675,
+   "instrumentalness": 0.000463,
+   "liveness": 0.0943,
+   "valence": 0.853,
+   "tempo": 88.907
+  }
+ },
+ {
+  "track": "Rock Wit'cha",
+  "artist": "Bobby Brown",
+  "artist_key": "Bobby Brown",
+  "year": 1988,
+  "label": "Geffen*",
+  "genres": [
+   "new jack swing"
+  ],
+  "origin_metro": "Boston",
+  "features": {
+   "danceability": 0.685,
+   "energy": 0.547,
+   "loudness": -12.417,
+   "speechiness": 0.0487,
+   "acousticness": 0.031,
+   "instrumentalness": 1.1e-05,
+   "liveness": 0.0694,
+   "valence": 0.909,
+   "tempo": 77.509
+  }
+ },
+ {
+  "track": "Minstrel Gigolo (2019 Remaster)",
+  "artist": "Christopher Cross",
+  "artist_key": "Christopher Cross",
+  "year": 1979,
+  "label": "Seeker Music",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "San Antonio",
+  "features": {
+   "danceability": 0.639,
+   "energy": 0.602,
+   "loudness": -6.892,
+   "speechiness": 0.0295,
+   "acousticness": 0.339,
+   "instrumentalness": 0.0151,
+   "liveness": 0.185,
+   "valence": 0.595,
+   "tempo": 114.31
+  }
+ },
+ {
+  "track": "Love Will Find A Way",
+  "artist": "Pablo Cruise",
+  "artist_key": "Pablo Cruise",
+  "year": 1978,
+  "label": "A&M",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "San Francisco-San Jose",
+  "features": {
+   "danceability": 0.78,
+   "energy": 0.491,
+   "loudness": -13.934,
+   "speechiness": 0.0351,
+   "acousticness": 0.00719,
+   "instrumentalness": 1.8e-05,
+   "liveness": 0.0677,
+   "valence": 0.843,
+   "tempo": 124.238
+  }
+ },
+ {
+  "track": "Sweet Love",
+  "artist": "Commodores",
+  "artist_key": "Commodores",
+  "year": 1975,
+  "label": "UNI/MOTOWN",
+  "genres": [
+   "motown",
+   "classic soul"
+  ],
+  "origin_metro": "Montgomery",
+  "features": {
+   "danceability": 0.582,
+   "energy": 0.531,
+   "loudness": -8.344,
+   "speechiness": 0.0367,
+   "acousticness": 0.168,
+   "instrumentalness": 4.23e-05,
+   "liveness": 0.0609,
+   "valence": 0.393,
+   "tempo": 101.131
+  }
+ },
+ {
+  "track": "Just the Two of Us (feat. Bill Withers) - Edit",
+  "artist": "Grover Washington, Jr.",
+  "artist_key": null,
+  "year": 1994,
+  "label": "Legacy Recordings",
+  "genres": [
+   "soul jazz",
+   "smooth jazz",
+   "soul"
+  ],
+  "origin_metro": null,
+  "features": {
+   "danceability": 0.793,
+   "energy": 0.386,
+   "loudness": -13.413,
+   "speechiness": 0.0819,
+   "acousticness": 0.597,
+   "instrumentalness": 0.31,
+   "liveness": 0.0775,
+   "valence": 0.584,
+   "tempo": 95.819
+  }
+ },
+ {
+  "track": "Livin' It Up",
+  "artist": "Bill LaBounty",
+  "artist_key": null,
+  "year": 1982,
+  "label": "Curb Records",
+  "genres": [
+   "yacht rock",
+   "aor",
+   "soft rock"
+  ],
+  "origin_metro": null,
+  "features": {
+   "danceability": 0.62,
+   "energy": 0.355,
+   "loudness": -14.081,
+   "speechiness": 0.0398,
+   "acousticness": 0.402,
+   "instrumentalness": 0.00619,
+   "liveness": 0.0585,
+   "valence": 0.659,
+   "tempo": 84.181
+  }
+ },
+ {
+  "track": "Save It For A Rainy Day",
+  "artist": "Stephen Bishop",
+  "artist_key": "Stephen Bishop",
+  "year": 1976,
+  "label": "Hip-O Select",
+  "genres": [
+   "yacht rock",
+   "soft rock"
+  ],
+  "origin_metro": "San Diego",
+  "features": {
+   "danceability": 0.625,
+   "energy": 0.536,
+   "loudness": -8.962,
+   "speechiness": 0.0354,
+   "acousticness": 0.572,
+   "instrumentalness": 8.03e-05,
+   "liveness": 0.119,
+   "valence": 0.729,
+   "tempo": 129.178
+  }
+ },
+ {
+  "track": "An Eye for an Eye",
+  "artist": "Byrne & Barnes",
+  "artist_key": null,
+  "year": 1981,
+  "label": "Favorite",
+  "genres": [
+   "yacht rock",
+   "aor"
+  ],
+  "origin_metro": null,
+  "features": {
+   "danceability": 0.744,
+   "energy": 0.357,
+   "loudness": -10.079,
+   "speechiness": 0.0367,
+   "acousticness": 0.595,
+   "instrumentalness": 0.0134,
+   "liveness": 0.315,
+   "valence": 0.736,
+   "tempo": 118.439
+  }
+ },
+ {
+  "track": "If You Should Sail",
+  "artist": "Nielsen & Pearson",
+  "artist_key": "Nielsen & Pearson",
+  "year": 2010,
+  "label": "Capitol Records",
+  "genres": [
+   "yacht rock",
+   "aor"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.675,
+   "energy": 0.599,
+   "loudness": -9.218,
+   "speechiness": 0.0394,
+   "acousticness": 0.2,
+   "instrumentalness": 0.00101,
+   "liveness": 0.0782,
+   "valence": 0.895,
+   "tempo": 94.474
+  }
+ },
+ {
+  "track": "You Might Need Somebody",
+  "artist": "Randy Crawford",
+  "artist_key": "Randy Crawford",
+  "year": 1981,
+  "label": "Warner Records",
+  "genres": [
+   "classic soul"
+  ],
+  "origin_metro": "Macon",
+  "features": {
+   "danceability": 0.59,
+   "energy": 0.549,
+   "loudness": -11.384,
+   "speechiness": 0.0316,
+   "acousticness": 0.0621,
+   "instrumentalness": 0.000104,
+   "liveness": 0.113,
+   "valence": 0.564,
+   "tempo": 83.649
+  }
+ },
+ {
+  "track": "Risin' to the Top",
+  "artist": "Keni Burke",
+  "artist_key": "Keni Burke",
+  "year": 2014,
+  "label": "Legacy Recordings",
+  "genres": [
+   "post-disco"
+  ],
+  "origin_metro": "Chicago",
+  "features": {
+   "danceability": 0.729,
+   "energy": 0.54,
+   "loudness": -9.33,
+   "speechiness": 0.0606,
+   "acousticness": 0.189,
+   "instrumentalness": 0.000208,
+   "liveness": 0.14,
+   "valence": 0.815,
+   "tempo": 94.071
+  }
+ },
+ {
+  "track": "A Love Of Your Own",
+  "artist": "Ned Doheny",
+  "artist_key": "Ned Doheny",
+  "year": 1976,
+  "label": "Legacy Recordings",
+  "genres": [
+   "yacht rock",
+   "aor"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.642,
+   "energy": 0.401,
+   "loudness": -13.82,
+   "speechiness": 0.0463,
+   "acousticness": 0.857,
+   "instrumentalness": 0.106,
+   "liveness": 0.0893,
+   "valence": 0.797,
+   "tempo": 134.508
+  }
+ },
+ {
+  "track": "Why I Came to California",
+  "artist": "Leon Ware",
+  "artist_key": "Leon Ware",
+  "year": 1982,
+  "label": "Rhino/Elektra",
+  "genres": [
+   "jazz funk",
+   "post-disco"
+  ],
+  "origin_metro": "Detroit",
+  "features": {
+   "danceability": 0.694,
+   "energy": 0.783,
+   "loudness": -10.188,
+   "speechiness": 0.111,
+   "acousticness": 0.189,
+   "instrumentalness": 0.0,
+   "liveness": 0.111,
+   "valence": 0.741,
+   "tempo": 106.69
+  }
+ },
+ {
+  "track": "Darlin' (I Think About You)",
+  "artist": "Delegation",
+  "artist_key": "Delegation",
+  "year": 2010,
+  "label": "The Saifam Group Digital",
+  "genres": [],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.724,
+   "energy": 0.672,
+   "loudness": -12.94,
+   "speechiness": 0.0297,
+   "acousticness": 0.0491,
+   "instrumentalness": 0.0103,
+   "liveness": 0.0576,
+   "valence": 0.975,
+   "tempo": 114.968
+  }
+ },
+ {
+  "track": "Got to Be Real",
+  "artist": "Cheryl Lynn",
+  "artist_key": "Cheryl Lynn",
+  "year": 1978,
+  "label": "Legacy Recordings",
+  "genres": [
+   "disco",
+   "post-disco"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.836,
+   "energy": 0.626,
+   "loudness": -10.143,
+   "speechiness": 0.0335,
+   "acousticness": 0.0943,
+   "instrumentalness": 0.742,
+   "liveness": 0.153,
+   "valence": 0.898,
+   "tempo": 114.657
+  }
+ },
+ {
+  "track": "Love Come Down",
+  "artist": "Evelyn \"Champagne\" King",
+  "artist_key": "Evelyn \"Champagne\" King",
+  "year": 1993,
+  "label": "RCA Records Label",
+  "genres": [
+   "post-disco",
+   "disco",
+   "funk"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.897,
+   "energy": 0.431,
+   "loudness": -12.234,
+   "speechiness": 0.0481,
+   "acousticness": 0.00206,
+   "instrumentalness": 0.0395,
+   "liveness": 0.0377,
+   "valence": 0.857,
+   "tempo": 115.552
+  }
+ },
+ {
+  "track": "Change of Heart",
+  "artist": "Change",
+  "artist_key": null,
+  "year": 1984,
+  "label": "Rhino Atlantic",
+  "genres": [
+   "post-disco",
+   "disco",
+   "funk"
+  ],
+  "origin_metro": null,
+  "features": {
+   "danceability": 0.771,
+   "energy": 0.886,
+   "loudness": -6.121,
+   "speechiness": 0.0628,
+   "acousticness": 0.0248,
+   "instrumentalness": 0.0043,
+   "liveness": 0.0319,
+   "valence": 0.939,
+   "tempo": 107.389
+  }
+ },
+ {
+  "track": "New Frontier",
+  "artist": "Donald Fagen",
+  "artist_key": "Donald Fagen",
+  "year": 1982,
+  "label": "Reprise",
+  "genres": [
+   "yacht rock",
+   "aor"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.772,
+   "energy": 0.679,
+   "loudness": -10.47,
+   "speechiness": 0.0421,
+   "acousticness": 0.473,
+   "instrumentalness": 0.0215,
+   "liveness": 0.165,
+   "valence": 0.886,
+   "tempo": 123.597
+  }
+ },
+ {
+  "track": "Marina Del Rey",
+  "artist": "Marc Jordan",
+  "artist_key": "Marc Jordan",
+  "year": 1978,
+  "label": "Rhino/Warner Records",
+  "genres": [
+   "yacht rock",
+   "aor",
+   "soft rock"
+  ],
+  "origin_metro": "Toronto",
+  "features": {
+   "danceability": 0.908,
+   "energy": 0.371,
+   "loudness": -14.792,
+   "speechiness": 0.0562,
+   "acousticness": 0.86,
+   "instrumentalness": 0.102,
+   "liveness": 0.102,
+   "valence": 0.761,
+   "tempo": 111.775
+  }
+ },
+ {
+  "track": "Nights Over Egypt",
+  "artist": "The Jones Girls",
+  "artist_key": "The Jones Girls",
+  "year": 1981,
+  "label": "Legacy Recordings",
+  "genres": [
+   "philly soul",
+   "post-disco",
+   "quiet storm",
+   "classic soul"
+  ],
+  "origin_metro": "Detroit",
+  "features": {
+   "danceability": 0.752,
+   "energy": 0.36,
+   "loudness": -14.317,
+   "speechiness": 0.0334,
+   "acousticness": 0.499,
+   "instrumentalness": 0.291,
+   "liveness": 0.106,
+   "valence": 0.636,
+   "tempo": 110.768
+  }
+ },
+ {
+  "track": "Hangin' On A String (Contemplating)",
+  "artist": "Loose Ends",
+  "artist_key": "Loose Ends",
+  "year": 1985,
+  "label": "Virgin Records",
+  "genres": [
+   "post-disco",
+   "new jack swing"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.773,
+   "energy": 0.583,
+   "loudness": -12.162,
+   "speechiness": 0.0561,
+   "acousticness": 0.236,
+   "instrumentalness": 0.00232,
+   "liveness": 0.0568,
+   "valence": 0.961,
+   "tempo": 103.108
+  }
+ },
+ {
+  "track": "When Love Breaks Down",
+  "artist": "Prefab Sprout",
+  "artist_key": "Prefab Sprout",
+  "year": 1985,
+  "label": "Sony Music CG",
+  "genres": [
+   "jangle pop"
+  ],
+  "origin_metro": "Newcastle",
+  "features": {
+   "danceability": 0.463,
+   "energy": 0.596,
+   "loudness": -6.687,
+   "speechiness": 0.0407,
+   "acousticness": 0.314,
+   "instrumentalness": 8.58e-06,
+   "liveness": 0.0306,
+   "valence": 0.341,
+   "tempo": 133.446
+  }
+ },
+ {
+  "track": "Who'll Be the Fool Tonight",
+  "artist": "Larsen/Feiten Band",
+  "artist_key": "Larsen/Feiten Band",
+  "year": 1980,
+  "label": "Rhino/Warner Records",
+  "genres": [
+   "yacht rock",
+   "aor",
+   "soft rock"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.684,
+   "energy": 0.555,
+   "loudness": -13.502,
+   "speechiness": 0.0413,
+   "acousticness": 0.0629,
+   "instrumentalness": 0.00182,
+   "liveness": 0.565,
+   "valence": 0.816,
+   "tempo": 83.172
+  }
+ },
+ {
+  "track": "Feelin' Lucky Lately - Remastered",
+  "artist": "High Fashion",
+  "artist_key": "High Fashion",
+  "year": 1982,
+  "label": "Capitol Records",
+  "genres": [
+   "post-disco",
+   "funk",
+   "boogie"
+  ],
+  "origin_metro": "New York",
+  "features": {
+   "danceability": 0.675,
+   "energy": 0.834,
+   "loudness": -8.499,
+   "speechiness": 0.0644,
+   "acousticness": 0.21,
+   "instrumentalness": 0.000229,
+   "liveness": 0.529,
+   "valence": 0.815,
+   "tempo": 116.931
+  }
+ },
+ {
+  "track": "You Know How to Love Me",
+  "artist": "Phyllis Hyman",
+  "artist_key": "Phyllis Hyman",
+  "year": 1996,
+  "label": "Arista",
+  "genres": [
+   "philly soul",
+   "quiet storm",
+   "classic soul"
+  ],
+  "origin_metro": "Philadelphia",
+  "features": {
+   "danceability": 0.846,
+   "energy": 0.735,
+   "loudness": -8.391,
+   "speechiness": 0.0316,
+   "acousticness": 0.317,
+   "instrumentalness": 0.0153,
+   "liveness": 0.0484,
+   "valence": 0.972,
+   "tempo": 116.404
+  }
+ },
+ {
+  "track": "Mary's Prayer",
+  "artist": "Danny Wilson",
+  "artist_key": "Danny Wilson",
+  "year": 1987,
+  "label": "Virgin Records",
+  "genres": [],
+  "origin_metro": "Glasgow",
+  "features": {
+   "danceability": 0.682,
+   "energy": 0.571,
+   "loudness": -13.139,
+   "speechiness": 0.0367,
+   "acousticness": 0.235,
+   "instrumentalness": 0.0,
+   "liveness": 0.116,
+   "valence": 0.657,
+   "tempo": 135.109
+  }
+ },
+ {
+  "track": "O.C.O.E. (Official Cat Of The Eighties)",
+  "artist": "Pages",
+  "artist_key": "Pages",
+  "year": 1981,
+  "label": "Capitol Records",
+  "genres": [
+   "yacht rock",
+   "aor",
+   "soft rock"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.785,
+   "energy": 0.6,
+   "loudness": -8.261,
+   "speechiness": 0.0686,
+   "acousticness": 0.0724,
+   "instrumentalness": 0.0136,
+   "liveness": 0.149,
+   "valence": 0.746,
+   "tempo": 104.818
+  }
+ },
+ {
+  "track": "I'll Be Good",
+  "artist": "Rene & Angela",
+  "artist_key": "Rene & Angela",
+  "year": 1985,
+  "label": "Mercury Records",
+  "genres": [
+   "quiet storm",
+   "post-disco",
+   "classic soul"
+  ],
+  "origin_metro": "Los Angeles",
+  "features": {
+   "danceability": 0.815,
+   "energy": 0.646,
+   "loudness": -9.784,
+   "speechiness": 0.0546,
+   "acousticness": 0.118,
+   "instrumentalness": 4.8e-05,
+   "liveness": 0.0733,
+   "valence": 0.757,
+   "tempo": 108.392
+  }
+ },
+ {
+  "track": "Lovin' And Losin' You",
+  "artist": "Dwayne Ford",
+  "artist_key": null,
+  "year": 1982,
+  "label": "Sony Music Japan International",
+  "genres": [
+   "yacht rock",
+   "aor",
+   "soft rock"
+  ],
+  "origin_metro": null,
+  "features": {
+   "danceability": 0.717,
+   "energy": 0.655,
+   "loudness": -8.262,
+   "speechiness": 0.0448,
+   "acousticness": 0.0496,
+   "instrumentalness": 0.00014,
+   "liveness": 0.0677,
+   "valence": 0.784,
+   "tempo": 103.775
+  }
+ },
+ {
+  "track": "Digging Your Scene",
+  "artist": "The Blow Monkeys",
+  "artist_key": "The Blow Monkeys",
+  "year": 1986,
+  "label": "RCA Victor",
+  "genres": [],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.567,
+   "energy": 0.791,
+   "loudness": -11.145,
+   "speechiness": 0.0502,
+   "acousticness": 0.117,
+   "instrumentalness": 0.0013,
+   "liveness": 0.062,
+   "valence": 0.651,
+   "tempo": 102.967
+  }
+ },
+ {
+  "track": "Hold Me",
+  "artist": "Menudo",
+  "artist_key": "Menudo",
+  "year": 1998,
+  "label": "RCA Records Label",
+  "genres": [
+   "latin pop"
+  ],
+  "origin_metro": "San Juan",
+  "features": {
+   "danceability": 0.907,
+   "energy": 0.474,
+   "loudness": -9.709,
+   "speechiness": 0.0512,
+   "acousticness": 0.129,
+   "instrumentalness": 5.02e-06,
+   "liveness": 0.0567,
+   "valence": 0.981,
+   "tempo": 118.903
+  }
+ },
+ {
+  "track": "Silent Running",
+  "artist": "Mike + The Mechanics",
+  "artist_key": "Mike + the Mechanics",
+  "year": 1985,
+  "label": "Rhino Atlantic",
+  "genres": [
+   "soft rock"
+  ],
+  "origin_metro": "London",
+  "features": {
+   "danceability": 0.511,
+   "energy": 0.447,
+   "loudness": -13.24,
+   "speechiness": 0.0314,
+   "acousticness": 0.361,
+   "instrumentalness": 0.000251,
+   "liveness": 0.131,
+   "valence": 0.348,
+   "tempo": 130.989
+  }
+ }
+]

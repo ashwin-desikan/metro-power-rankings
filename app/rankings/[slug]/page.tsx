@@ -6,6 +6,8 @@ import { getMetroTitles, getFormerTopFlightForMetro, type FormerTopFlight } from
 import ChampionLogo from "@/app/teams/_shared/ChampionLogo";
 import { competitionHref } from "@/lib/competitionLinks";
 import HubNav from "@/app/teams/HubNav";
+import { getSoundForMetro } from "@/lib/sound";
+import SoundSection from "./SoundSection";
 import { getMayor } from "@/lib/mayors";
 import {
   getAllMetros,
@@ -209,6 +211,7 @@ interface PageProps {
 export default async function MetroDetailPage({ params }: PageProps) {
   const { slug } = await params;
   const detail = getMetroDetail(slug);
+  const sound = getSoundForMetro(slug);
   const mayor = await getMayor(slug);
 
   if (!detail) {
@@ -627,6 +630,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
             ...(((detail.universities && detail.universities.length > 0) || (detail.culture && (((detail.culture["Hospital"]?.length ?? 0) > 0) || ((detail.culture["Research Institution"]?.length ?? 0) > 0)))) ? [{ label: "Education", href: "#education" }] : []),
             ...((detail.culture && infrastructureOrder.some((type) => detail.culture?.[type] && (detail.culture[type]?.length ?? 0) > 0)) ? [{ label: "Infrastructure", href: "#infrastructure" }] : []),
             ...(detail.luxury && detail.luxury.length > 0 ? [{ label: "Luxury", href: "#luxury" }] : []),
+            ...(sound ? [{ label: "Sound", href: "#sound" }] : []),
           ];
           return <HubNav items={navItems} />;
         })()}
@@ -1197,6 +1201,8 @@ export default async function MetroDetailPage({ params }: PageProps) {
             </div>
           </section>
         )}
+
+        <SoundSection sound={sound} slug={slug} />
 
         {/* Education & Research Section (collapsed by default) */}
         {((detail.universities && detail.universities.length > 0) ||

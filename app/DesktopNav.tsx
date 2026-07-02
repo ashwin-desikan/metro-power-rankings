@@ -265,6 +265,22 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
         </div>
       </Dropdown>
 
+      <Dropdown id="sound" label="Sound" openId={openId} setOpenId={setOpenId}>
+        <DropdownItem href="/sound" title="The Sound of the Metros →" />
+        <div className="border-t" style={{ borderColor: "var(--border)" }} />
+        <DropdownItem href="/sound/rankings" title="Rankings" />
+        <DropdownItem href="/sound/artists" title="Artists" />
+        <DropdownItem href="/sound/decades" title="Decades" />
+        <DropdownItem href="/sound/scenes" title="Scenes" />
+        <DropdownItem href="/sound/velvet-rock" title="Velvet Rock" />
+        <div className="border-t" style={{ borderColor: "var(--border)" }} />
+        <DropdownItem href="/sound/number-ones" title="Number-One Machines" />
+        <DropdownItem href="/sound/reigns" title="Longest Reigns" />
+        <DropdownItem href="/sound/disagreements" title="Chart Disagreements" />
+        <DropdownItem href="/sound/transatlantic" title="The Transatlantic Divide" />
+        <DropdownItem href="/sound/christmas" title="UK December #1s" />
+      </Dropdown>
+
       <Dropdown id="articles" label="Deep Dives" openId={openId} setOpenId={setOpenId}>
         <DropdownItem href="/deep-dives" title="All deep dives →" />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />

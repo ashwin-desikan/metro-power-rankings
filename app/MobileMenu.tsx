@@ -115,10 +115,29 @@ function buildSections(): Section[] {
     },
   ];
 
+  const sound: SubGroup[] = [
+    {
+      items: [
+        { href: '/sound', label: 'The Sound of the Metros' },
+        { href: '/sound/rankings', label: 'Rankings' },
+        { href: '/sound/artists', label: 'Artists' },
+        { href: '/sound/decades', label: 'Decades' },
+        { href: '/sound/scenes', label: 'Scenes' },
+        { href: '/sound/velvet-rock', label: 'Velvet Rock' },
+        { href: '/sound/number-ones', label: 'Number-One Machines' },
+        { href: '/sound/reigns', label: 'Longest Reigns' },
+        { href: '/sound/disagreements', label: 'Chart Disagreements' },
+        { href: '/sound/transatlantic', label: 'The Transatlantic Divide' },
+        { href: '/sound/christmas', label: 'UK December #1s' },
+      ],
+    },
+  ];
+
   return [
     { kind: 'link', href: '/#rankings', label: 'Rankings' },
     { kind: 'group', id: 'geography', label: 'Geography', groups: geography },
     { kind: 'group', id: 'sports', label: 'Sports', groups: sports },
+    { kind: 'group', id: 'sound', label: 'Sound', groups: sound },
     { kind: 'group', id: 'deepdives', label: 'Deep Dives', groups: deepDives },
     { kind: 'group', id: 'play', label: 'Play', groups: play },
     { kind: 'group', id: 'about', label: 'About', groups: about },

@@ -1,0 +1,278 @@
+[
+ {
+  "slug": "london",
+  "metro": "London",
+  "vr_tracks": 72,
+  "vr_artists": 42
+ },
+ {
+  "slug": "los-angeles",
+  "metro": "Los Angeles",
+  "vr_tracks": 38,
+  "vr_artists": 28
+ },
+ {
+  "slug": "new-york",
+  "metro": "New York",
+  "vr_tracks": 35,
+  "vr_artists": 23
+ },
+ {
+  "slug": "chicago",
+  "metro": "Chicago",
+  "vr_tracks": 16,
+  "vr_artists": 8
+ },
+ {
+  "slug": "san-francisco-san-jose",
+  "metro": "San Francisco-San Jose",
+  "vr_tracks": 14,
+  "vr_artists": 7
+ },
+ {
+  "slug": "detroit",
+  "metro": "Detroit",
+  "vr_tracks": 13,
+  "vr_artists": 8
+ },
+ {
+  "slug": "philadelphia",
+  "metro": "Philadelphia",
+  "vr_tracks": 9,
+  "vr_artists": 2
+ },
+ {
+  "slug": "glasgow",
+  "metro": "Glasgow",
+  "vr_tracks": 7,
+  "vr_artists": 5
+ },
+ {
+  "slug": "montgomery",
+  "metro": "Montgomery",
+  "vr_tracks": 7,
+  "vr_artists": 2
+ },
+ {
+  "slug": "bristol",
+  "metro": "Bristol",
+  "vr_tracks": 6,
+  "vr_artists": 2
+ },
+ {
+  "slug": "san-antonio",
+  "metro": "San Antonio",
+  "vr_tracks": 5,
+  "vr_artists": 1
+ },
+ {
+  "slug": "boston",
+  "metro": "Boston",
+  "vr_tracks": 5,
+  "vr_artists": 5
+ },
+ {
+  "slug": "birmingham",
+  "metro": "Birmingham",
+  "vr_tracks": 5,
+  "vr_artists": 2
+ },
+ {
+  "slug": "st-louis",
+  "metro": "St. Louis",
+  "vr_tracks": 5,
+  "vr_artists": 2
+ },
+ {
+  "slug": "manchester",
+  "metro": "Manchester",
+  "vr_tracks": 5,
+  "vr_artists": 3
+ },
+ {
+  "slug": "sheffield",
+  "metro": "Sheffield",
+  "vr_tracks": 4,
+  "vr_artists": 4
+ },
+ {
+  "slug": "pittsburgh",
+  "metro": "Pittsburgh",
+  "vr_tracks": 4,
+  "vr_artists": 1
+ },
+ {
+  "slug": "liverpool",
+  "metro": "Liverpool",
+  "vr_tracks": 4,
+  "vr_artists": 3
+ },
+ {
+  "slug": "grand-rapids",
+  "metro": "Grand Rapids",
+  "vr_tracks": 4,
+  "vr_artists": 1
+ },
+ {
+  "slug": "brisbane",
+  "metro": "Brisbane",
+  "vr_tracks": 4,
+  "vr_artists": 1
+ },
+ {
+  "slug": "minneapolis",
+  "metro": "Minneapolis",
+  "vr_tracks": 3,
+  "vr_artists": 1
+ },
+ {
+  "slug": "milwaukee",
+  "metro": "Milwaukee",
+  "vr_tracks": 3,
+  "vr_artists": 1
+ },
+ {
+  "slug": "newcastle",
+  "metro": "Newcastle",
+  "vr_tracks": 3,
+  "vr_artists": 2
+ },
+ {
+  "slug": "tucson",
+  "metro": "Tucson",
+  "vr_tracks": 2,
+  "vr_artists": 1
+ },
+ {
+  "slug": "greenville-spartanburg",
+  "metro": "Greenville-Spartanburg",
+  "vr_tracks": 2,
+  "vr_artists": 1
+ },
+ {
+  "slug": "montreal",
+  "metro": "Montreal",
+  "vr_tracks": 2,
+  "vr_artists": 1
+ },
+ {
+  "slug": "houston",
+  "metro": "Houston",
+  "vr_tracks": 2,
+  "vr_artists": 2
+ },
+ {
+  "slug": "sydney",
+  "metro": "Sydney",
+  "vr_tracks": 2,
+  "vr_artists": 1
+ },
+ {
+  "slug": "melbourne",
+  "metro": "Melbourne",
+  "vr_tracks": 2,
+  "vr_artists": 2
+ },
+ {
+  "slug": "cleveland",
+  "metro": "Cleveland",
+  "vr_tracks": 2,
+  "vr_artists": 2
+ },
+ {
+  "slug": "san-diego",
+  "metro": "San Diego",
+  "vr_tracks": 2,
+  "vr_artists": 1
+ },
+ {
+  "slug": "atlanta",
+  "metro": "Atlanta",
+  "vr_tracks": 2,
+  "vr_artists": 1
+ },
+ {
+  "slug": "washington-baltimore",
+  "metro": "Washington-Baltimore",
+  "vr_tracks": 1,
+  "vr_artists": 1
+ },
+ {
+  "slug": "beckley",
+  "metro": "Beckley",
+  "vr_tracks": 1,
+  "vr_artists": 1
+ },
+ {
+  "slug": "dublin",
+  "metro": "Dublin",
+  "vr_tracks": 1,
+  "vr_artists": 1
+ },
+ {
+  "slug": "phoenix",
+  "metro": "Phoenix",
+  "vr_tracks": 1,
+  "vr_artists": 1
+ },
+ {
+  "slug": "norfolk",
+  "metro": "Norfolk",
+  "vr_tracks": 1,
+  "vr_artists": 1
+ },
+ {
+  "slug": "harrisburg",
+  "metro": "Harrisburg",
+  "vr_tracks": 1,
+  "vr_artists": 1
+ },
+ {
+  "slug": "middlesbrough",
+  "metro": "Middlesbrough",
+  "vr_tracks": 1,
+  "vr_artists": 1
+ },
+ {
+  "slug": "dallas",
+  "metro": "Dallas",
+  "vr_tracks": 1,
+  "vr_artists": 1
+ },
+ {
+  "slug": "seattle",
+  "metro": "Seattle",
+  "vr_tracks": 1,
+  "vr_artists": 1
+ },
+ {
+  "slug": "cambridge",
+  "metro": "Cambridge",
+  "vr_tracks": 1,
+  "vr_artists": 1
+ },
+ {
+  "slug": "providence",
+  "metro": "Providence",
+  "vr_tracks": 1,
+  "vr_artists": 1
+ },
+ {
+  "slug": "macon",
+  "metro": "Macon",
+  "vr_tracks": 1,
+  "vr_artists": 1
+ },
+ {
+  "slug": "toronto",
+  "metro": "Toronto",
+  "vr_tracks": 1,
+  "vr_artists": 1
+ },
+ {
+  "slug": "san-juan",
+  "metro": "San Juan",
+  "vr_tracks": 1,
+  "vr_artists": 1
+ }
+]

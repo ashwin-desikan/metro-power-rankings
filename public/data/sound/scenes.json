@@ -1,0 +1,20 @@
+[
+ {"slug":"motown","name":"Motown","metro":"Detroit","metro_slug":"detroit","era":"1961-1975",
+  "blurb":"The most productive hit factory in American history ran out of a house on West Grand Boulevard. Berry Gordy built an assembly line for pop soul, and for a decade Detroit out-charted cities ten times its size.",
+  "artists":["The Supremes","The Temptations","Four Tops","Stevie Wonder","Marvin Gaye","Smokey Robinson & The Miracles","The Miracles","Martha and the Vandellas","The Marvelettes","Diana Ross","The Jackson 5","Junior Walker & the All Stars","Mary Wells","Jimmy Ruffin"]},
+ {"slug":"merseybeat","name":"Merseybeat","metro":"Liverpool","metro_slug":"liverpool","era":"1963-1966",
+  "blurb":"Guitar bands from the Liverpool docks took the American records arriving off the ships and sent them back louder. For three years a single northern English city rewrote the global pop chart.",
+  "artists":["The Beatles","Gerry and the Pacemakers","The Searchers","Cilla Black","Billy J. Kramer & The Dakotas","The Fourmost","The Swinging Blue Jeans"]},
+ {"slug":"madchester","name":"Madchester","metro":"Manchester","metro_slug":"manchester","era":"1988-1992",
+  "blurb":"Guitars met acid house in a few Manchester clubs and a scene fell out of it. Baggy, loose, and briefly the centre of British music.",
+  "artists":["The Stone Roses","Happy Mondays","James","808 State","The Charlatans"]},
+ {"slug":"philly-soul","name":"The Sound of Philadelphia","metro":"Philadelphia","metro_slug":"philadelphia","era":"1971-1979",
+  "blurb":"Gamble and Huff took Motown's assembly-line idea, added lush strings and social conscience, and made Sigma Sound the smoothest studio in America.",
+  "artists":["The O'Jays","Harold Melvin & the Blue Notes","The Stylistics","Billy Paul","The Three Degrees","The Delfonics","The Tymes","MFSB"]},
+ {"slug":"west-coast","name":"West Coast G-Funk","metro":"Los Angeles","metro_slug":"los-angeles","era":"1992-1998",
+  "blurb":"Dr. Dre slowed the tempo, added the synth whine, and Los Angeles hip-hop took over the charts. Laid-back and menacing at once.",
+  "artists":["Dr. Dre","Snoop Dogg","Warren G","Nate Dogg","2Pac","The Game","Tyga"]},
+ {"slug":"atlanta-rap","name":"The Atlanta Takeover","metro":"Atlanta","metro_slug":"atlanta","era":"2000-present",
+  "blurb":"Trap moved the centre of gravity of American music from the coasts to the South. For two decades the most-streamed sound in the world has come out of Atlanta.",
+  "artists":["Outkast","Usher","Ludacris","T.I.","Gucci Mane","Future","Lil Nas X","21 Savage","Young Thug","Lil Baby","Migos","Playboi Carti"]}
+]

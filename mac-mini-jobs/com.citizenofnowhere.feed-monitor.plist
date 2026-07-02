@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.citizenofnowhere.feed-monitor</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-lc</string>
+    <!-- EDIT this path to where you copied the folder on the mini -->
+    <string>set -a; . "$HOME/metro-mini-jobs/config.env"; set +a; exec "${PYTHON_BIN:-python3}" "$HOME/metro-mini-jobs/feed_shape_monitor.py"</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key><integer>8</integer>
+    <key>Minute</key><integer>0</integer>
+  </dict>
+  <key>StandardOutPath</key>
+  <string>/tmp/con-feed-monitor.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/con-feed-monitor.err.log</string>
+</dict>
+</plist>

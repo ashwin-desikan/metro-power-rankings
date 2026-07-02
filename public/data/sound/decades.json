@@ -1,0 +1,5018 @@
+{
+ "1950s": {
+  "metros": [
+   {
+    "slug": "los-angeles",
+    "metro": "Los Angeles",
+    "us": 38.1,
+    "uk": 14.5,
+    "combined": 128.7,
+    "rank": 1
+   },
+   {
+    "slug": "new-york",
+    "metro": "New York",
+    "us": 34.2,
+    "uk": 24.2,
+    "combined": 127.0,
+    "rank": 2
+   },
+   {
+    "slug": "memphis",
+    "metro": "Memphis",
+    "us": 14.4,
+    "uk": 17.1,
+    "combined": 60.3,
+    "rank": 3
+   },
+   {
+    "slug": "london",
+    "metro": "London",
+    "us": 0.0,
+    "uk": 44.3,
+    "combined": 44.3,
+    "rank": 4
+   },
+   {
+    "slug": "nashville",
+    "metro": "Nashville",
+    "us": 9.4,
+    "uk": 8.0,
+    "combined": 36.3,
+    "rank": 5
+   },
+   {
+    "slug": "detroit",
+    "metro": "Detroit",
+    "us": 9.7,
+    "uk": 0.3,
+    "combined": 29.5,
+    "rank": 6
+   },
+   {
+    "slug": "new-orleans",
+    "metro": "New Orleans",
+    "us": 7.9,
+    "uk": 1.0,
+    "combined": 24.8,
+    "rank": 7
+   },
+   {
+    "slug": "philadelphia",
+    "metro": "Philadelphia",
+    "us": 8.1,
+    "uk": 0.0,
+    "combined": 24.3,
+    "rank": 8
+   },
+   {
+    "slug": "san-francisco-san-jose",
+    "metro": "San Francisco-San Jose",
+    "us": 5.2,
+    "uk": 7.3,
+    "combined": 22.8,
+    "rank": 9
+   },
+   {
+    "slug": "richmond",
+    "metro": "Richmond",
+    "us": 5.2,
+    "uk": 5.7,
+    "combined": 21.2,
+    "rank": 10
+   },
+   {
+    "slug": "ottawa",
+    "metro": "Ottawa",
+    "us": 5.3,
+    "uk": 2.8,
+    "combined": 18.8,
+    "rank": 11
+   },
+   {
+    "slug": "pittsburgh",
+    "metro": "Pittsburgh",
+    "us": 0.0,
+    "uk": 14.7,
+    "combined": 14.7,
+    "rank": 12
+   },
+   {
+    "slug": "bari",
+    "metro": "Bari",
+    "us": 4.7,
+    "uk": 0.2,
+    "combined": 14.3,
+    "rank": 13
+   },
+   {
+    "slug": "seattle",
+    "metro": "Seattle",
+    "us": 4.2,
+    "uk": 0.9,
+    "combined": 13.7,
+    "rank": 14
+   },
+   {
+    "slug": "boston",
+    "metro": "Boston",
+    "us": 2.3,
+    "uk": 5.1,
+    "combined": 12.1,
+    "rank": 15
+   },
+   {
+    "slug": "phoenix",
+    "metro": "Phoenix",
+    "us": 3.6,
+    "uk": 0.9,
+    "combined": 11.7,
+    "rank": 16
+   },
+   {
+    "slug": "havana",
+    "metro": "Havana",
+    "us": 3.3,
+    "uk": 0.0,
+    "combined": 9.9,
+    "rank": 17
+   },
+   {
+    "slug": "baton-rouge",
+    "metro": "Baton Rouge",
+    "us": 3.0,
+    "uk": 0.0,
+    "combined": 8.9,
+    "rank": 18
+   },
+   {
+    "slug": "bristol",
+    "metro": "Bristol",
+    "us": 0.0,
+    "uk": 8.6,
+    "combined": 8.6,
+    "rank": 19
+   },
+   {
+    "slug": "hartford",
+    "metro": "Hartford",
+    "us": 2.8,
+    "uk": 0.0,
+    "combined": 8.3,
+    "rank": 20
+   },
+   {
+    "slug": "pine-bluff",
+    "metro": "Pine Bluff",
+    "us": 2.2,
+    "uk": 1.0,
+    "combined": 7.6,
+    "rank": 21
+   },
+   {
+    "slug": "fresno",
+    "metro": "Fresno",
+    "us": 2.5,
+    "uk": 0.0,
+    "combined": 7.5,
+    "rank": 22
+   },
+   {
+    "slug": "shreveport",
+    "metro": "Shreveport",
+    "us": 2.5,
+    "uk": 0.0,
+    "combined": 7.5,
+    "rank": 23
+   },
+   {
+    "slug": "cardiff",
+    "metro": "Cardiff",
+    "us": 0.0,
+    "uk": 7.4,
+    "combined": 7.4,
+    "rank": 24
+   },
+   {
+    "slug": "columbia",
+    "metro": "Columbia",
+    "us": 2.2,
+    "uk": 0.0,
+    "combined": 6.7,
+    "rank": 25
+   },
+   {
+    "slug": "raleigh-durham",
+    "metro": "Raleigh-Durham",
+    "us": 2.0,
+    "uk": 0.0,
+    "combined": 5.9,
+    "rank": 26
+   },
+   {
+    "slug": "charlotte",
+    "metro": "Charlotte",
+    "us": 2.0,
+    "uk": 0.0,
+    "combined": 5.9,
+    "rank": 27
+   },
+   {
+    "slug": "cleveland",
+    "metro": "Cleveland",
+    "us": 1.0,
+    "uk": 2.3,
+    "combined": 5.4,
+    "rank": 28
+   },
+   {
+    "slug": "beaumont",
+    "metro": "Beaumont",
+    "us": 1.7,
+    "uk": 0.0,
+    "combined": 5.0,
+    "rank": 29
+   },
+   {
+    "slug": "toledo",
+    "metro": "Toledo",
+    "us": 1.0,
+    "uk": 1.9,
+    "combined": 5.0,
+    "rank": 30
+   },
+   {
+    "slug": "lafayette",
+    "metro": "Lafayette",
+    "us": 1.5,
+    "uk": 0.0,
+    "combined": 4.6,
+    "rank": 31
+   },
+   {
+    "slug": "cincinnati",
+    "metro": "Cincinnati",
+    "us": 1.5,
+    "uk": 0.0,
+    "combined": 4.4,
+    "rank": 32
+   },
+   {
+    "slug": "lubbock",
+    "metro": "Lubbock",
+    "us": 0.0,
+    "uk": 2.9,
+    "combined": 2.9,
+    "rank": 33
+   },
+   {
+    "slug": "jacksonville",
+    "metro": "Jacksonville",
+    "us": 0.8,
+    "uk": 0.0,
+    "combined": 2.3,
+    "rank": 34
+   },
+   {
+    "slug": "tulsa",
+    "metro": "Tulsa",
+    "us": 0.0,
+    "uk": 2.3,
+    "combined": 2.3,
+    "rank": 35
+   },
+   {
+    "slug": "chicago",
+    "metro": "Chicago",
+    "us": 0.4,
+    "uk": 0.8,
+    "combined": 1.8,
+    "rank": 36
+   },
+   {
+    "slug": "macon",
+    "metro": "Macon",
+    "us": 0.0,
+    "uk": 1.8,
+    "combined": 1.8,
+    "rank": 37
+   },
+   {
+    "slug": "liverpool",
+    "metro": "Liverpool",
+    "us": 0.0,
+    "uk": 1.2,
+    "combined": 1.2,
+    "rank": 38
+   },
+   {
+    "slug": "belfast",
+    "metro": "Belfast",
+    "us": 0.0,
+    "uk": 0.1,
+    "combined": 0.1,
+    "rank": 39
+   }
+  ],
+  "top_artists": [
+   {
+    "name": "Elvis Presley",
+    "slug": "elvis-presley",
+    "metro": "Memphis",
+    "combined": 39.0
+   },
+   {
+    "name": "The Everly Brothers",
+    "slug": "the-everly-brothers",
+    "metro": "Nashville",
+    "combined": 36.3
+   },
+   {
+    "name": "Bobby Darin",
+    "slug": "bobby-darin",
+    "metro": "New York",
+    "combined": 27.2
+   },
+   {
+    "name": "Ricky Nelson",
+    "slug": "ricky-nelson",
+    "metro": "Los Angeles",
+    "combined": 26.2
+   },
+   {
+    "name": "Conway Twitty",
+    "slug": "conway-twitty",
+    "metro": "Memphis",
+    "combined": 21.3
+   },
+   {
+    "name": "Tommy Edwards",
+    "slug": "tommy-edwards",
+    "metro": "Richmond",
+    "combined": 21.2
+   },
+   {
+    "name": "Connie Francis",
+    "slug": "connie-francis",
+    "metro": "New York",
+    "combined": 20.0
+   },
+   {
+    "name": "Paul Anka",
+    "slug": "paul-anka",
+    "metro": "Ottawa",
+    "combined": 18.8
+   },
+   {
+    "name": "The Kingston Trio",
+    "slug": "the-kingston-trio",
+    "metro": "San Francisco-San Jose",
+    "combined": 18.2
+   },
+   {
+    "name": "Lloyd Price",
+    "slug": "lloyd-price",
+    "metro": "New Orleans",
+    "combined": 17.5
+   },
+   {
+    "name": "The Platters",
+    "slug": "the-platters",
+    "metro": "Los Angeles",
+    "combined": 17.0
+   },
+   {
+    "name": "The Teddy Bears",
+    "slug": "the-teddy-bears",
+    "metro": "Los Angeles",
+    "combined": 16.8
+   },
+   {
+    "name": "Frankie Avalon",
+    "slug": "frankie-avalon",
+    "metro": "Philadelphia",
+    "combined": 16.5
+   },
+   {
+    "name": "Domenico Modugno",
+    "slug": "domenico-modugno",
+    "metro": "Bari",
+    "combined": 14.3
+   },
+   {
+    "name": "The Fleetwoods",
+    "slug": "the-fleetwoods",
+    "metro": "Seattle",
+    "combined": 13.7
+   },
+   {
+    "name": "The Elegants",
+    "slug": "the-elegants",
+    "metro": "New York",
+    "combined": 13.4
+   },
+   {
+    "name": "Bobby Day",
+    "slug": "bobby-day",
+    "metro": "Los Angeles",
+    "combined": 12.7
+   },
+   {
+    "name": "Kalin Twins",
+    "slug": "kalin-twins",
+    "metro": "New York",
+    "combined": 11.9
+   },
+   {
+    "name": "The Coasters",
+    "slug": "the-coasters",
+    "metro": "Los Angeles",
+    "combined": 10.4
+   },
+   {
+    "name": "Jack Scott",
+    "slug": "jack-scott",
+    "metro": "Detroit",
+    "combined": 10.4
+   }
+  ],
+  "top_songs": [
+   {
+    "single": "It's All in the Game",
+    "artist": "Tommy Edwards",
+    "metro": "Richmond",
+    "score": 10.86,
+    "peak": 1,
+    "year": 1958,
+    "chart": "UK / US"
+   },
+   {
+    "single": "It's Only Make Believe",
+    "artist": "Conway Twitty",
+    "metro": "Memphis",
+    "score": 10.66,
+    "peak": 1,
+    "year": 1958,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Bird Dog",
+    "artist": "The Everly Brothers",
+    "metro": "Nashville",
+    "score": 9.33,
+    "peak": 2,
+    "year": 1958,
+    "chart": "UK / US"
+   },
+   {
+    "single": "When",
+    "artist": "Kalin Twins",
+    "metro": "New York",
+    "score": 7.95,
+    "peak": 1,
+    "year": 1958,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Tom Dooley",
+    "artist": "The Kingston Trio",
+    "metro": "San Francisco-San Jose",
+    "score": 7.89,
+    "peak": 1,
+    "year": 1958,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Smoke Gets in Your Eyes",
+    "artist": "The Platters",
+    "metro": "Los Angeles",
+    "score": 7.55,
+    "peak": 1,
+    "year": 1958,
+    "chart": "UK / US"
+   },
+   {
+    "single": "To Know Him Is to Love Him",
+    "artist": "The Teddy Bears",
+    "metro": "Los Angeles",
+    "score": 6.88,
+    "peak": 1,
+    "year": 1958,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Poor Little Fool",
+    "artist": "Ricky Nelson",
+    "metro": "Los Angeles",
+    "score": 6.59,
+    "peak": 1,
+    "year": 1958,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Stupid Cupid",
+    "artist": "Connie Francis",
+    "metro": "New York",
+    "score": 6.19,
+    "peak": 1,
+    "year": 1958,
+    "chart": "UK"
+   },
+   {
+    "single": "Hoots Mon",
+    "artist": "Lord Rockingham's XI",
+    "metro": "London",
+    "score": 6.19,
+    "peak": 1,
+    "year": 1958,
+    "chart": "UK"
+   },
+   {
+    "single": "Mack the Knife",
+    "artist": "Bobby Darin",
+    "metro": "New York",
+    "score": 5.28,
+    "peak": 1,
+    "year": 1959,
+    "chart": "UK / US"
+   },
+   {
+    "single": "The Day the Rains Came",
+    "artist": "Jane Morgan",
+    "metro": "Boston",
+    "score": 5.15,
+    "peak": 1,
+    "year": 1958,
+    "chart": "UK"
+   },
+   {
+    "single": "Return to Me",
+    "artist": "Dean Martin",
+    "metro": "Pittsburgh",
+    "score": 5.12,
+    "peak": 2,
+    "year": 1958,
+    "chart": "UK"
+   },
+   {
+    "single": "One Night",
+    "artist": "Elvis Presley",
+    "metro": "Memphis",
+    "score": 4.96,
+    "peak": 1,
+    "year": 1958,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Nel Blu Dipinto Di Blu (Volare)",
+    "artist": "Domenico Modugno",
+    "metro": "Bari",
+    "score": 4.71,
+    "peak": 1,
+    "year": 1958,
+    "chart": "US"
+   },
+   {
+    "single": "Dream Lover",
+    "artist": "Bobby Darin",
+    "metro": "New York",
+    "score": 4.7,
+    "peak": 1,
+    "year": 1959,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Volare",
+    "artist": "Dean Martin",
+    "metro": "Pittsburgh",
+    "score": 4.63,
+    "peak": 2,
+    "year": 1958,
+    "chart": "UK"
+   },
+   {
+    "single": "Little Star",
+    "artist": "The Elegants",
+    "metro": "New York",
+    "score": 4.47,
+    "peak": 1,
+    "year": 1958,
+    "chart": "US"
+   },
+   {
+    "single": "Problems",
+    "artist": "The Everly Brothers",
+    "metro": "Nashville",
+    "score": 4.4,
+    "peak": 2,
+    "year": 1958,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Move It",
+    "artist": "Cliff Richard & The Drifters",
+    "metro": "London",
+    "score": 4.37,
+    "peak": 2,
+    "year": 1958,
+    "chart": "UK"
+   }
+  ]
+ },
+ "1960s": {
+  "metros": [
+   {
+    "slug": "new-york",
+    "metro": "New York",
+    "us": 159.6,
+    "uk": 59.9,
+    "combined": 538.6,
+    "rank": 1
+   },
+   {
+    "slug": "london",
+    "metro": "London",
+    "us": 58.9,
+    "uk": 324.0,
+    "combined": 500.7,
+    "rank": 2
+   },
+   {
+    "slug": "los-angeles",
+    "metro": "Los Angeles",
+    "us": 117.9,
+    "uk": 58.4,
+    "combined": 412.2,
+    "rank": 3
+   },
+   {
+    "slug": "detroit",
+    "metro": "Detroit",
+    "us": 79.9,
+    "uk": 23.4,
+    "combined": 263.1,
+    "rank": 4
+   },
+   {
+    "slug": "liverpool",
+    "metro": "Liverpool",
+    "us": 44.7,
+    "uk": 92.1,
+    "combined": 226.3,
+    "rank": 5
+   },
+   {
+    "slug": "memphis",
+    "metro": "Memphis",
+    "us": 31.2,
+    "uk": 36.2,
+    "combined": 129.8,
+    "rank": 6
+   },
+   {
+    "slug": "philadelphia",
+    "metro": "Philadelphia",
+    "us": 36.2,
+    "uk": 3.7,
+    "combined": 112.2,
+    "rank": 7
+   },
+   {
+    "slug": "nashville",
+    "metro": "Nashville",
+    "us": 24.5,
+    "uk": 26.5,
+    "combined": 99.8,
+    "rank": 8
+   },
+   {
+    "slug": "atlanta",
+    "metro": "Atlanta",
+    "us": 23.2,
+    "uk": 10.1,
+    "combined": 79.8,
+    "rank": 9
+   },
+   {
+    "slug": "manchester",
+    "metro": "Manchester",
+    "us": 15.3,
+    "uk": 31.1,
+    "combined": 77.1,
+    "rank": 10
+   },
+   {
+    "slug": "pittsburgh",
+    "metro": "Pittsburgh",
+    "us": 20.9,
+    "uk": 6.0,
+    "combined": 68.7,
+    "rank": 11
+   },
+   {
+    "slug": "chicago",
+    "metro": "Chicago",
+    "us": 19.5,
+    "uk": 1.3,
+    "combined": 59.7,
+    "rank": 12
+   },
+   {
+    "slug": "jacksonville",
+    "metro": "Jacksonville",
+    "us": 16.7,
+    "uk": 6.4,
+    "combined": 56.6,
+    "rank": 13
+   },
+   {
+    "slug": "new-orleans",
+    "metro": "New Orleans",
+    "us": 11.0,
+    "uk": 5.9,
+    "combined": 39.0,
+    "rank": 14
+   },
+   {
+    "slug": "odessa",
+    "metro": "Odessa",
+    "us": 8.6,
+    "uk": 12.7,
+    "combined": 38.5,
+    "rank": 15
+   },
+   {
+    "slug": "san-francisco-san-jose",
+    "metro": "San Francisco-San Jose",
+    "us": 11.9,
+    "uk": 2.7,
+    "combined": 38.3,
+    "rank": 16
+   },
+   {
+    "slug": "cardiff",
+    "metro": "Cardiff",
+    "us": 3.8,
+    "uk": 26.1,
+    "combined": 37.6,
+    "rank": 17
+   },
+   {
+    "slug": "glasgow",
+    "metro": "Glasgow",
+    "us": 6.3,
+    "uk": 13.3,
+    "combined": 32.1,
+    "rank": 18
+   },
+   {
+    "slug": "baton-rouge",
+    "metro": "Baton Rouge",
+    "us": 10.7,
+    "uk": 0.0,
+    "combined": 32.0,
+    "rank": 19
+   },
+   {
+    "slug": "dallas",
+    "metro": "Dallas",
+    "us": 9.4,
+    "uk": 3.2,
+    "combined": 31.6,
+    "rank": 20
+   },
+   {
+    "slug": "houston",
+    "metro": "Houston",
+    "us": 7.5,
+    "uk": 6.2,
+    "combined": 28.6,
+    "rank": 21
+   },
+   {
+    "slug": "fargo",
+    "metro": "Fargo",
+    "us": 7.1,
+    "uk": 5.5,
+    "combined": 26.7,
+    "rank": 22
+   },
+   {
+    "slug": "south-bend",
+    "metro": "South Bend",
+    "us": 8.0,
+    "uk": 1.7,
+    "combined": 25.9,
+    "rank": 23
+   },
+   {
+    "slug": "san-diego",
+    "metro": "San Diego",
+    "us": 6.8,
+    "uk": 3.7,
+    "combined": 24.0,
+    "rank": 24
+   },
+   {
+    "slug": "birmingham",
+    "metro": "Birmingham",
+    "us": 0.9,
+    "uk": 18.8,
+    "combined": 21.6,
+    "rank": 25
+   },
+   {
+    "slug": "washington-baltimore",
+    "metro": "Washington-Baltimore",
+    "us": 6.0,
+    "uk": 2.9,
+    "combined": 21.0,
+    "rank": 26
+   },
+   {
+    "slug": "cleveland",
+    "metro": "Cleveland",
+    "us": 6.1,
+    "uk": 0.7,
+    "combined": 19.1,
+    "rank": 27
+   },
+   {
+    "slug": "grand-rapids",
+    "metro": "Grand Rapids",
+    "us": 3.0,
+    "uk": 9.6,
+    "combined": 18.5,
+    "rank": 28
+   },
+   {
+    "slug": "seattle",
+    "metro": "Seattle",
+    "us": 4.7,
+    "uk": 4.1,
+    "combined": 18.3,
+    "rank": 29
+   },
+   {
+    "slug": "lubbock",
+    "metro": "Lubbock",
+    "us": 4.3,
+    "uk": 4.7,
+    "combined": 17.6,
+    "rank": 30
+   },
+   {
+    "slug": "portland",
+    "metro": "Portland",
+    "us": 5.8,
+    "uk": 0.0,
+    "combined": 17.4,
+    "rank": 31
+   },
+   {
+    "slug": "hartford",
+    "metro": "Hartford",
+    "us": 3.0,
+    "uk": 8.1,
+    "combined": 17.1,
+    "rank": 32
+   },
+   {
+    "slug": "columbia",
+    "metro": "Columbia",
+    "us": 5.4,
+    "uk": 0.0,
+    "combined": 16.3,
+    "rank": 33
+   },
+   {
+    "slug": "melbourne",
+    "metro": "Melbourne",
+    "us": 2.7,
+    "uk": 7.7,
+    "combined": 15.9,
+    "rank": 34
+   },
+   {
+    "slug": "phoenix",
+    "metro": "Phoenix",
+    "us": 2.3,
+    "uk": 8.0,
+    "combined": 14.8,
+    "rank": 35
+   },
+   {
+    "slug": "norfolk",
+    "metro": "Norfolk",
+    "us": 4.5,
+    "uk": 0.5,
+    "combined": 14.0,
+    "rank": 36
+   },
+   {
+    "slug": "newcastle",
+    "metro": "Newcastle",
+    "us": 1.9,
+    "uk": 7.4,
+    "combined": 13.3,
+    "rank": 37
+   },
+   {
+    "slug": "cincinnati",
+    "metro": "Cincinnati",
+    "us": 3.3,
+    "uk": 2.9,
+    "combined": 12.9,
+    "rank": 38
+   },
+   {
+    "slug": "sydney",
+    "metro": "Sydney",
+    "us": 0.8,
+    "uk": 10.2,
+    "combined": 12.6,
+    "rank": 39
+   },
+   {
+    "slug": "beaumont",
+    "metro": "Beaumont",
+    "us": 2.7,
+    "uk": 3.8,
+    "combined": 11.9,
+    "rank": 40
+   }
+  ],
+  "top_artists": [
+   {
+    "name": "The Beatles",
+    "slug": "the-beatles",
+    "metro": "Liverpool",
+    "combined": 159.4
+   },
+   {
+    "name": "Elvis Presley",
+    "slug": "elvis-presley",
+    "metro": "Memphis",
+    "combined": 97.5
+   },
+   {
+    "name": "The Supremes",
+    "slug": "the-supremes",
+    "metro": "Detroit",
+    "combined": 79.9
+   },
+   {
+    "name": "The Rolling Stones",
+    "slug": "the-rolling-stones",
+    "metro": "London",
+    "combined": 58.0
+   },
+   {
+    "name": "The Beach Boys",
+    "slug": "the-beach-boys",
+    "metro": "Los Angeles",
+    "combined": 45.9
+   },
+   {
+    "name": "Brenda Lee",
+    "slug": "brenda-lee",
+    "metro": "Atlanta",
+    "combined": 44.7
+   },
+   {
+    "name": "The Four Seasons",
+    "slug": "the-four-seasons",
+    "metro": "New York",
+    "combined": 40.3
+   },
+   {
+    "name": "Roy Orbison",
+    "slug": "roy-orbison",
+    "metro": "Odessa",
+    "combined": 38.5
+   },
+   {
+    "name": "Herman's Hermits",
+    "slug": "herman-s-hermits",
+    "metro": "Manchester",
+    "combined": 36.6
+   },
+   {
+    "name": "Chubby Checker",
+    "slug": "chubby-checker",
+    "metro": "Philadelphia",
+    "combined": 34.7
+   },
+   {
+    "name": "The Monkees",
+    "slug": "the-monkees",
+    "metro": "Los Angeles",
+    "combined": 34.2
+   },
+   {
+    "name": "Connie Francis",
+    "slug": "connie-francis",
+    "metro": "New York",
+    "combined": 33.1
+   },
+   {
+    "name": "Ray Charles",
+    "slug": "ray-charles",
+    "metro": "Jacksonville",
+    "combined": 32.8
+   },
+   {
+    "name": "Bobby Vinton",
+    "slug": "bobby-vinton",
+    "metro": "Pittsburgh",
+    "combined": 29.9
+   },
+   {
+    "name": "Petula Clark",
+    "slug": "petula-clark",
+    "metro": "London",
+    "combined": 28.2
+   },
+   {
+    "name": "The Temptations",
+    "slug": "the-temptations",
+    "metro": "Detroit",
+    "combined": 27.8
+   },
+   {
+    "name": "The Dave Clark Five",
+    "slug": "the-dave-clark-five",
+    "metro": "London",
+    "combined": 27.5
+   },
+   {
+    "name": "The Everly Brothers",
+    "slug": "the-everly-brothers",
+    "metro": "Nashville",
+    "combined": 26.9
+   },
+   {
+    "name": "Bobby Vee",
+    "slug": "bobby-vee",
+    "metro": "Fargo",
+    "combined": 26.7
+   },
+   {
+    "name": "Dion",
+    "slug": "dion",
+    "metro": "New York",
+    "combined": 26.4
+   }
+  ],
+  "top_songs": [
+   {
+    "single": "She Loves You",
+    "artist": "The Beatles",
+    "metro": "Liverpool",
+    "score": 5.18,
+    "peak": 1,
+    "year": 1963,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Telstar",
+    "artist": "The Tornados",
+    "metro": "London",
+    "score": 4.76,
+    "peak": 1,
+    "year": 1962,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Stranger on the Shore",
+    "artist": "Mr. Acker Bilk",
+    "metro": "Bristol",
+    "score": 4.65,
+    "peak": 1,
+    "year": 1961,
+    "chart": "UK / US"
+   },
+   {
+    "single": "I Can't Stop Loving You",
+    "artist": "Ray Charles",
+    "metro": "Jacksonville",
+    "score": 4.6,
+    "peak": 1,
+    "year": 1962,
+    "chart": "UK / US"
+   },
+   {
+    "single": "The Twist",
+    "artist": "Chubby Checker",
+    "metro": "Philadelphia",
+    "score": 4.6,
+    "peak": 1,
+    "year": 1960,
+    "chart": "US"
+   },
+   {
+    "single": "It's Now or Never",
+    "artist": "Elvis Presley",
+    "metro": "Memphis",
+    "score": 4.58,
+    "peak": 1,
+    "year": 1960,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Sugar, Sugar",
+    "artist": "The Archies",
+    "metro": "New York",
+    "score": 4.56,
+    "peak": 1,
+    "year": 1969,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Hey Jude",
+    "artist": "The Beatles",
+    "metro": "Liverpool",
+    "score": 4.47,
+    "peak": 1,
+    "year": 1968,
+    "chart": "UK / US"
+   },
+   {
+    "single": "I Want to Hold Your Hand",
+    "artist": "The Beatles",
+    "metro": "Liverpool",
+    "score": 4.35,
+    "peak": 1,
+    "year": 1963,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Running Bear",
+    "artist": "Johnny Preston",
+    "metro": "Beaumont",
+    "score": 4.27,
+    "peak": 1,
+    "year": 1960,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Cathy's Clown",
+    "artist": "The Everly Brothers",
+    "metro": "Nashville",
+    "score": 4.26,
+    "peak": 1,
+    "year": 1960,
+    "chart": "UK / US"
+   },
+   {
+    "single": "I Heard It Through the Grapevine",
+    "artist": "Marvin Gaye",
+    "metro": "Washington-Baltimore",
+    "score": 4.23,
+    "peak": 1,
+    "year": 1968,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Honky Tonk Women",
+    "artist": "The Rolling Stones",
+    "metro": "London",
+    "score": 4.19,
+    "peak": 1,
+    "year": 1969,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Runaway",
+    "artist": "Del Shannon",
+    "metro": "Grand Rapids",
+    "score": 4.16,
+    "peak": 1,
+    "year": 1961,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Good Luck Charm",
+    "artist": "Elvis Presley",
+    "metro": "Memphis",
+    "score": 4.15,
+    "peak": 1,
+    "year": 1962,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Return to Sender",
+    "artist": "Elvis Presley",
+    "metro": "Memphis",
+    "score": 4.06,
+    "peak": 1,
+    "year": 1962,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Save the Last Dance for Me",
+    "artist": "The Drifters",
+    "metro": "New York",
+    "score": 4.04,
+    "peak": 1,
+    "year": 1960,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Are You Lonesome Tonight?",
+    "artist": "Elvis Presley",
+    "metro": "Memphis",
+    "score": 3.96,
+    "peak": 1,
+    "year": 1960,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Theme from A Summer Place",
+    "artist": "Percy Faith",
+    "metro": "Toronto",
+    "score": 3.94,
+    "peak": 1,
+    "year": 1960,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Do Wah Diddy Diddy",
+    "artist": "Manfred Mann",
+    "metro": "London",
+    "score": 3.88,
+    "peak": 1,
+    "year": 1964,
+    "chart": "UK / US"
+   }
+  ]
+ },
+ "1970s": {
+  "metros": [
+   {
+    "slug": "london",
+    "metro": "London",
+    "us": 100.4,
+    "uk": 296.7,
+    "combined": 598.0,
+    "rank": 1
+   },
+   {
+    "slug": "new-york",
+    "metro": "New York",
+    "us": 135.4,
+    "uk": 86.6,
+    "combined": 492.8,
+    "rank": 2
+   },
+   {
+    "slug": "los-angeles",
+    "metro": "Los Angeles",
+    "us": 146.0,
+    "uk": 29.6,
+    "combined": 467.6,
+    "rank": 3
+   },
+   {
+    "slug": "detroit",
+    "metro": "Detroit",
+    "us": 57.7,
+    "uk": 32.2,
+    "combined": 205.3,
+    "rank": 4
+   },
+   {
+    "slug": "chicago",
+    "metro": "Chicago",
+    "us": 57.6,
+    "uk": 30.7,
+    "combined": 203.3,
+    "rank": 5
+   },
+   {
+    "slug": "brisbane",
+    "metro": "Brisbane",
+    "us": 31.7,
+    "uk": 8.6,
+    "combined": 103.7,
+    "rank": 6
+   },
+   {
+    "slug": "liverpool",
+    "metro": "Liverpool",
+    "us": 24.5,
+    "uk": 18.1,
+    "combined": 91.8,
+    "rank": 7
+   },
+   {
+    "slug": "philadelphia",
+    "metro": "Philadelphia",
+    "us": 23.5,
+    "uk": 15.7,
+    "combined": 86.2,
+    "rank": 8
+   },
+   {
+    "slug": "san-francisco-san-jose",
+    "metro": "San Francisco-San Jose",
+    "us": 26.5,
+    "uk": 3.7,
+    "combined": 83.1,
+    "rank": 9
+   },
+   {
+    "slug": "memphis",
+    "metro": "Memphis",
+    "us": 19.5,
+    "uk": 15.9,
+    "combined": 74.5,
+    "rank": 10
+   },
+   {
+    "slug": "washington-baltimore",
+    "metro": "Washington-Baltimore",
+    "us": 22.7,
+    "uk": 6.1,
+    "combined": 74.2,
+    "rank": 11
+   },
+   {
+    "slug": "melbourne",
+    "metro": "Melbourne",
+    "us": 22.3,
+    "uk": 6.6,
+    "combined": 73.4,
+    "rank": 12
+   },
+   {
+    "slug": "boston",
+    "metro": "Boston",
+    "us": 19.0,
+    "uk": 10.2,
+    "combined": 67.1,
+    "rank": 13
+   },
+   {
+    "slug": "salt-lake-city-provo",
+    "metro": "Salt Lake City-Provo",
+    "us": 11.3,
+    "uk": 20.2,
+    "combined": 54.0,
+    "rank": 14
+   },
+   {
+    "slug": "miami",
+    "metro": "Miami",
+    "us": 15.0,
+    "uk": 3.9,
+    "combined": 49.0,
+    "rank": 15
+   },
+   {
+    "slug": "birmingham",
+    "metro": "Birmingham",
+    "us": 5.3,
+    "uk": 32.8,
+    "combined": 48.8,
+    "rank": 16
+   },
+   {
+    "slug": "atlanta",
+    "metro": "Atlanta",
+    "us": 12.6,
+    "uk": 8.2,
+    "combined": 46.0,
+    "rank": 17
+   },
+   {
+    "slug": "denver",
+    "metro": "Denver",
+    "us": 11.4,
+    "uk": 3.6,
+    "combined": 38.0,
+    "rank": 18
+   },
+   {
+    "slug": "stockholm",
+    "metro": "Stockholm",
+    "us": 5.7,
+    "uk": 19.9,
+    "combined": 37.1,
+    "rank": 19
+   },
+   {
+    "slug": "montgomery",
+    "metro": "Montgomery",
+    "us": 10.8,
+    "uk": 4.4,
+    "combined": 36.9,
+    "rank": 20
+   },
+   {
+    "slug": "houston",
+    "metro": "Houston",
+    "us": 8.8,
+    "uk": 7.1,
+    "combined": 33.5,
+    "rank": 21
+   },
+   {
+    "slug": "nashville",
+    "metro": "Nashville",
+    "us": 8.6,
+    "uk": 6.9,
+    "combined": 32.7,
+    "rank": 22
+   },
+   {
+    "slug": "manchester",
+    "metro": "Manchester",
+    "us": 4.8,
+    "uk": 13.7,
+    "combined": 28.0,
+    "rank": 23
+   },
+   {
+    "slug": "toronto",
+    "metro": "Toronto",
+    "us": 8.1,
+    "uk": 2.7,
+    "combined": 26.9,
+    "rank": 24
+   },
+   {
+    "slug": "glasgow",
+    "metro": "Glasgow",
+    "us": 2.4,
+    "uk": 18.4,
+    "combined": 25.5,
+    "rank": 25
+   },
+   {
+    "slug": "cardiff",
+    "metro": "Cardiff",
+    "us": 3.5,
+    "uk": 11.7,
+    "combined": 22.1,
+    "rank": 26
+   },
+   {
+    "slug": "cleveland",
+    "metro": "Cleveland",
+    "us": 6.7,
+    "uk": 1.8,
+    "combined": 21.9,
+    "rank": 27
+   },
+   {
+    "slug": "pittsburgh",
+    "metro": "Pittsburgh",
+    "us": 5.2,
+    "uk": 3.7,
+    "combined": 19.5,
+    "rank": 28
+   },
+   {
+    "slug": "winnipeg",
+    "metro": "Winnipeg",
+    "us": 6.4,
+    "uk": 0.1,
+    "combined": 19.1,
+    "rank": 29
+   },
+   {
+    "slug": "edinburgh",
+    "metro": "Edinburgh",
+    "us": 2.4,
+    "uk": 11.0,
+    "combined": 18.2,
+    "rank": 30
+   },
+   {
+    "slug": "raleigh-durham",
+    "metro": "Raleigh-Durham",
+    "us": 5.6,
+    "uk": 1.2,
+    "combined": 17.8,
+    "rank": 31
+   },
+   {
+    "slug": "vancouver",
+    "metro": "Vancouver",
+    "us": 5.0,
+    "uk": 2.5,
+    "combined": 17.5,
+    "rank": 32
+   },
+   {
+    "slug": "st-louis",
+    "metro": "St. Louis",
+    "us": 4.1,
+    "uk": 2.8,
+    "combined": 14.9,
+    "rank": 33
+   },
+   {
+    "slug": "flint",
+    "metro": "Flint",
+    "us": 4.7,
+    "uk": 0.0,
+    "combined": 14.2,
+    "rank": 34
+   },
+   {
+    "slug": "little-rock",
+    "metro": "Little Rock",
+    "us": 3.7,
+    "uk": 3.0,
+    "combined": 14.1,
+    "rank": 35
+   },
+   {
+    "slug": "beckley",
+    "metro": "Beckley",
+    "us": 4.3,
+    "uk": 0.4,
+    "combined": 13.3,
+    "rank": 36
+   },
+   {
+    "slug": "swansea",
+    "metro": "Swansea",
+    "us": 3.3,
+    "uk": 3.3,
+    "combined": 13.2,
+    "rank": 37
+   },
+   {
+    "slug": "kingston",
+    "metro": "Kingston",
+    "us": 1.6,
+    "uk": 7.6,
+    "combined": 12.2,
+    "rank": 38
+   },
+   {
+    "slug": "tampa",
+    "metro": "Tampa",
+    "us": 3.3,
+    "uk": 1.5,
+    "combined": 11.5,
+    "rank": 39
+   },
+   {
+    "slug": "leicester",
+    "metro": "Leicester",
+    "us": 0.0,
+    "uk": 11.1,
+    "combined": 11.1,
+    "rank": 40
+   }
+  ],
+  "top_artists": [
+   {
+    "name": "Bee Gees",
+    "slug": "bee-gees",
+    "metro": "Brisbane",
+    "combined": 76.6
+   },
+   {
+    "name": "Elton John",
+    "slug": "elton-john",
+    "metro": "London",
+    "combined": 57.7
+   },
+   {
+    "name": "The Carpenters",
+    "slug": "the-carpenters",
+    "metro": "Los Angeles",
+    "combined": 56.2
+   },
+   {
+    "name": "Donna Summer",
+    "slug": "donna-summer",
+    "metro": "Boston",
+    "combined": 49.7
+   },
+   {
+    "name": "Stevie Wonder",
+    "slug": "stevie-wonder",
+    "metro": "Detroit",
+    "combined": 46.2
+   },
+   {
+    "name": "Wings",
+    "slug": "wings",
+    "metro": "London",
+    "combined": 40.4
+   },
+   {
+    "name": "Rod Stewart",
+    "slug": "rod-stewart",
+    "metro": "London",
+    "combined": 39.9
+   },
+   {
+    "name": "Olivia Newton-John",
+    "slug": "olivia-newton-john",
+    "metro": "Melbourne",
+    "combined": 37.7
+   },
+   {
+    "name": "The Jackson 5",
+    "slug": "the-jackson-5",
+    "metro": "Chicago",
+    "combined": 35.9
+   },
+   {
+    "name": "Eagles",
+    "slug": "eagles",
+    "metro": "Los Angeles",
+    "combined": 35.1
+   },
+   {
+    "name": "KC and the Sunshine Band",
+    "slug": "kc-and-the-sunshine-band",
+    "metro": "Miami",
+    "combined": 33.5
+   },
+   {
+    "name": "Commodores",
+    "slug": "commodores",
+    "metro": "Montgomery",
+    "combined": 32.0
+   },
+   {
+    "name": "Barbra Streisand",
+    "slug": "barbra-streisand",
+    "metro": "New York",
+    "combined": 31.8
+   },
+   {
+    "name": "ABBA",
+    "slug": "abba",
+    "metro": "Stockholm",
+    "combined": 31.8
+   },
+   {
+    "name": "Three Dog Night",
+    "slug": "three-dog-night",
+    "metro": "Los Angeles",
+    "combined": 31.1
+   },
+   {
+    "name": "Chicago",
+    "slug": "chicago",
+    "metro": "Chicago",
+    "combined": 29.6
+   },
+   {
+    "name": "Captain & Tennille",
+    "slug": "captain-and-tennille",
+    "metro": "Los Angeles",
+    "combined": 27.3
+   },
+   {
+    "name": "John Denver",
+    "slug": "john-denver",
+    "metro": "Denver",
+    "combined": 27.1
+   },
+   {
+    "name": "Andy Gibb",
+    "slug": "andy-gibb",
+    "metro": "Brisbane",
+    "combined": 27.1
+   },
+   {
+    "name": "Diana Ross",
+    "slug": "diana-ross",
+    "metro": "Detroit",
+    "combined": 26.6
+   }
+  ],
+  "top_songs": [
+   {
+    "single": "How Deep Is Your Love",
+    "artist": "Bee Gees",
+    "metro": "Brisbane",
+    "score": 4.39,
+    "peak": 1,
+    "year": 1977,
+    "chart": "UK / US"
+   },
+   {
+    "single": "I Will Survive",
+    "artist": "Gloria Gaynor",
+    "metro": "New York",
+    "score": 4.39,
+    "peak": 1,
+    "year": 1979,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Night Fever",
+    "artist": "Bee Gees",
+    "metro": "Brisbane",
+    "score": 4.34,
+    "peak": 1,
+    "year": 1978,
+    "chart": "UK / US"
+   },
+   {
+    "single": "The Most Beautiful Girl",
+    "artist": "Charlie Rich",
+    "metro": "Memphis",
+    "score": 4.22,
+    "peak": 1,
+    "year": 1973,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Bridge over Troubled Water",
+    "artist": "Simon & Garfunkel",
+    "metro": "New York",
+    "score": 4.19,
+    "peak": 1,
+    "year": 1970,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Three Times a Lady",
+    "artist": "Commodores",
+    "metro": "Montgomery",
+    "score": 4.14,
+    "peak": 1,
+    "year": 1978,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Y.M.C.A.",
+    "artist": "Village People",
+    "metro": "New York",
+    "score": 4.11,
+    "peak": 1,
+    "year": 1978,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Da Ya Think I'm Sexy?",
+    "artist": "Rod Stewart",
+    "metro": "London",
+    "score": 4.08,
+    "peak": 1,
+    "year": 1978,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Without You",
+    "artist": "Nilsson",
+    "metro": "New York",
+    "score": 3.91,
+    "peak": 1,
+    "year": 1972,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Evergreen (Love Theme from A Star Is Born)",
+    "artist": "Barbra Streisand",
+    "metro": "New York",
+    "score": 3.87,
+    "peak": 1,
+    "year": 1977,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Ring My Bell",
+    "artist": "Anita Ward",
+    "metro": "Memphis",
+    "score": 3.85,
+    "peak": 1,
+    "year": 1979,
+    "chart": "UK / US"
+   },
+   {
+    "single": "The Tears of a Clown",
+    "artist": "Smokey Robinson & The Miracles",
+    "metro": "Detroit",
+    "score": 3.85,
+    "peak": 1,
+    "year": 1970,
+    "chart": "UK / US"
+   },
+   {
+    "single": "American Pie",
+    "artist": "Don McLean",
+    "metro": "New York",
+    "score": 3.8,
+    "peak": 1,
+    "year": 1971,
+    "chart": "UK / US"
+   },
+   {
+    "single": "If You Leave Me Now",
+    "artist": "Chicago",
+    "metro": "Chicago",
+    "score": 3.77,
+    "peak": 1,
+    "year": 1976,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Dancing Queen",
+    "artist": "ABBA",
+    "metro": "Stockholm",
+    "score": 3.73,
+    "peak": 1,
+    "year": 1976,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Don't Give Up on Us",
+    "artist": "David Soul",
+    "metro": "Chicago",
+    "score": 3.69,
+    "peak": 1,
+    "year": 1977,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Boogie Oogie Oogie",
+    "artist": "A Taste of Honey",
+    "metro": "Los Angeles",
+    "score": 3.69,
+    "peak": 1,
+    "year": 1978,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Tragedy",
+    "artist": "Bee Gees",
+    "metro": "Brisbane",
+    "score": 3.62,
+    "peak": 1,
+    "year": 1979,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Band of Gold",
+    "artist": "Freda Payne",
+    "metro": "Detroit",
+    "score": 3.59,
+    "peak": 1,
+    "year": 1970,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Heart of Glass",
+    "artist": "Blondie",
+    "metro": "New York",
+    "score": 3.59,
+    "peak": 1,
+    "year": 1979,
+    "chart": "UK / US"
+   }
+  ]
+ },
+ "1980s": {
+  "metros": [
+   {
+    "slug": "london",
+    "metro": "London",
+    "us": 158.7,
+    "uk": 353.1,
+    "combined": 829.2,
+    "rank": 1
+   },
+   {
+    "slug": "new-york",
+    "metro": "New York",
+    "us": 136.6,
+    "uk": 65.8,
+    "combined": 475.5,
+    "rank": 2
+   },
+   {
+    "slug": "los-angeles",
+    "metro": "Los Angeles",
+    "us": 109.9,
+    "uk": 37.2,
+    "combined": 366.9,
+    "rank": 3
+   },
+   {
+    "slug": "detroit",
+    "metro": "Detroit",
+    "us": 61.0,
+    "uk": 47.5,
+    "combined": 230.3,
+    "rank": 4
+   },
+   {
+    "slug": "chicago",
+    "metro": "Chicago",
+    "us": 61.4,
+    "uk": 27.8,
+    "combined": 212.1,
+    "rank": 5
+   },
+   {
+    "slug": "san-francisco-san-jose",
+    "metro": "San Francisco-San Jose",
+    "us": 39.7,
+    "uk": 5.0,
+    "combined": 124.2,
+    "rank": 6
+   },
+   {
+    "slug": "melbourne",
+    "metro": "Melbourne",
+    "us": 33.1,
+    "uk": 19.5,
+    "combined": 119.0,
+    "rank": 7
+   },
+   {
+    "slug": "birmingham",
+    "metro": "Birmingham",
+    "us": 23.2,
+    "uk": 31.7,
+    "combined": 101.4,
+    "rank": 8
+   },
+   {
+    "slug": "boston",
+    "metro": "Boston",
+    "us": 29.3,
+    "uk": 8.8,
+    "combined": 96.7,
+    "rank": 9
+   },
+   {
+    "slug": "liverpool",
+    "metro": "Liverpool",
+    "us": 16.6,
+    "uk": 32.1,
+    "combined": 81.9,
+    "rank": 10
+   },
+   {
+    "slug": "minneapolis",
+    "metro": "Minneapolis",
+    "us": 22.4,
+    "uk": 7.5,
+    "combined": 74.8,
+    "rank": 11
+   },
+   {
+    "slug": "philadelphia",
+    "metro": "Philadelphia",
+    "us": 21.2,
+    "uk": 5.3,
+    "combined": 69.0,
+    "rank": 12
+   },
+   {
+    "slug": "montgomery",
+    "metro": "Montgomery",
+    "us": 20.0,
+    "uk": 5.5,
+    "combined": 65.6,
+    "rank": 13
+   },
+   {
+    "slug": "sheffield",
+    "metro": "Sheffield",
+    "us": 12.9,
+    "uk": 20.7,
+    "combined": 59.5,
+    "rank": 14
+   },
+   {
+    "slug": "glasgow",
+    "metro": "Glasgow",
+    "us": 8.5,
+    "uk": 17.7,
+    "combined": 43.3,
+    "rank": 15
+   },
+   {
+    "slug": "miami",
+    "metro": "Miami",
+    "us": 11.5,
+    "uk": 4.8,
+    "combined": 39.3,
+    "rank": 16
+   },
+   {
+    "slug": "sydney",
+    "metro": "Sydney",
+    "us": 11.6,
+    "uk": 0.9,
+    "combined": 35.7,
+    "rank": 17
+   },
+   {
+    "slug": "st-louis",
+    "metro": "St. Louis",
+    "us": 8.9,
+    "uk": 4.6,
+    "combined": 31.2,
+    "rank": 18
+   },
+   {
+    "slug": "houston",
+    "metro": "Houston",
+    "us": 9.6,
+    "uk": 1.7,
+    "combined": 30.5,
+    "rank": 19
+   },
+   {
+    "slug": "dublin",
+    "metro": "Dublin",
+    "us": 5.3,
+    "uk": 14.4,
+    "combined": 30.4,
+    "rank": 20
+   },
+   {
+    "slug": "indianapolis",
+    "metro": "Indianapolis",
+    "us": 9.5,
+    "uk": 0.0,
+    "combined": 28.5,
+    "rank": 21
+   },
+   {
+    "slug": "phoenix",
+    "metro": "Phoenix",
+    "us": 7.5,
+    "uk": 2.0,
+    "combined": 24.4,
+    "rank": 22
+   },
+   {
+    "slug": "bristol",
+    "metro": "Bristol",
+    "us": 6.0,
+    "uk": 6.2,
+    "combined": 24.3,
+    "rank": 23
+   },
+   {
+    "slug": "munich",
+    "metro": "Munich",
+    "us": 6.7,
+    "uk": 3.7,
+    "combined": 23.9,
+    "rank": 24
+   },
+   {
+    "slug": "manchester",
+    "metro": "Manchester",
+    "us": 3.5,
+    "uk": 13.2,
+    "combined": 23.6,
+    "rank": 25
+   },
+   {
+    "slug": "leeds-bradford",
+    "metro": "Leeds-Bradford",
+    "us": 4.4,
+    "uk": 10.3,
+    "combined": 23.6,
+    "rank": 26
+   },
+   {
+    "slug": "san-antonio",
+    "metro": "San Antonio",
+    "us": 6.6,
+    "uk": 0.5,
+    "combined": 20.4,
+    "rank": 27
+   },
+   {
+    "slug": "cleveland",
+    "metro": "Cleveland",
+    "us": 5.4,
+    "uk": 2.8,
+    "combined": 18.9,
+    "rank": 28
+   },
+   {
+    "slug": "seattle",
+    "metro": "Seattle",
+    "us": 5.8,
+    "uk": 1.3,
+    "combined": 18.8,
+    "rank": 29
+   },
+   {
+    "slug": "champaign",
+    "metro": "Champaign",
+    "us": 5.8,
+    "uk": 0.4,
+    "combined": 18.0,
+    "rank": 30
+   },
+   {
+    "slug": "stockholm",
+    "metro": "Stockholm",
+    "us": 3.0,
+    "uk": 7.6,
+    "combined": 16.8,
+    "rank": 31
+   },
+   {
+    "slug": "cardiff",
+    "metro": "Cardiff",
+    "us": 0.0,
+    "uk": 13.8,
+    "combined": 13.8,
+    "rank": 32
+   },
+   {
+    "slug": "montreal",
+    "metro": "Montreal",
+    "us": 4.4,
+    "uk": 0.6,
+    "combined": 13.7,
+    "rank": 33
+   },
+   {
+    "slug": "vancouver",
+    "metro": "Vancouver",
+    "us": 3.7,
+    "uk": 0.0,
+    "combined": 11.1,
+    "rank": 34
+   },
+   {
+    "slug": "knoxville",
+    "metro": "Knoxville",
+    "us": 3.5,
+    "uk": 0.3,
+    "combined": 10.9,
+    "rank": 35
+   },
+   {
+    "slug": "portland",
+    "metro": "Portland",
+    "us": 3.1,
+    "uk": 1.3,
+    "combined": 10.6,
+    "rank": 36
+   },
+   {
+    "slug": "swansea",
+    "metro": "Swansea",
+    "us": 2.5,
+    "uk": 3.0,
+    "combined": 10.4,
+    "rank": 37
+   },
+   {
+    "slug": "oslo",
+    "metro": "Oslo",
+    "us": 1.6,
+    "uk": 5.4,
+    "combined": 10.3,
+    "rank": 38
+   },
+   {
+    "slug": "atlanta",
+    "metro": "Atlanta",
+    "us": 3.4,
+    "uk": 0.0,
+    "combined": 10.1,
+    "rank": 39
+   },
+   {
+    "slug": "norfolk",
+    "metro": "Norfolk",
+    "us": 3.4,
+    "uk": 0.0,
+    "combined": 10.1,
+    "rank": 40
+   }
+  ],
+  "top_artists": [
+   {
+    "name": "Madonna",
+    "slug": "madonna",
+    "metro": "Detroit",
+    "combined": 84.9
+   },
+   {
+    "name": "Michael Jackson",
+    "slug": "michael-jackson",
+    "metro": "Chicago",
+    "combined": 68.5
+   },
+   {
+    "name": "Hall & Oates",
+    "slug": "hall-and-oates",
+    "metro": "Philadelphia",
+    "combined": 57.6
+   },
+   {
+    "name": "Lionel Richie",
+    "slug": "lionel-richie",
+    "metro": "Montgomery",
+    "combined": 56.2
+   },
+   {
+    "name": "Prince",
+    "slug": "prince",
+    "metro": "Minneapolis",
+    "combined": 49.7
+   },
+   {
+    "name": "Phil Collins",
+    "slug": "phil-collins",
+    "metro": "London",
+    "combined": 49.5
+   },
+   {
+    "name": "Whitney Houston",
+    "slug": "whitney-houston",
+    "metro": "New York",
+    "combined": 45.2
+   },
+   {
+    "name": "Duran Duran",
+    "slug": "duran-duran",
+    "metro": "Birmingham",
+    "combined": 44.9
+   },
+   {
+    "name": "Air Supply",
+    "slug": "air-supply",
+    "metro": "Melbourne",
+    "combined": 37.7
+   },
+   {
+    "name": "George Michael",
+    "slug": "george-michael",
+    "metro": "London",
+    "combined": 36.5
+   },
+   {
+    "name": "Stevie Wonder",
+    "slug": "stevie-wonder",
+    "metro": "Detroit",
+    "combined": 32.4
+   },
+   {
+    "name": "Huey Lewis and the News",
+    "slug": "huey-lewis-and-the-news",
+    "metro": "San Francisco-San Jose",
+    "combined": 32.4
+   },
+   {
+    "name": "Culture Club",
+    "slug": "culture-club",
+    "metro": "London",
+    "combined": 31.5
+   },
+   {
+    "name": "Cyndi Lauper",
+    "slug": "cyndi-lauper",
+    "metro": "New York",
+    "combined": 30.7
+   },
+   {
+    "name": "Wham!",
+    "slug": "wham",
+    "metro": "London",
+    "combined": 30.7
+   },
+   {
+    "name": "Billy Joel",
+    "slug": "billy-joel",
+    "metro": "New York",
+    "combined": 29.9
+   },
+   {
+    "name": "Billy Ocean",
+    "slug": "billy-ocean",
+    "metro": "London",
+    "combined": 29.2
+   },
+   {
+    "name": "Janet Jackson",
+    "slug": "janet-jackson",
+    "metro": "Los Angeles",
+    "combined": 28.8
+   },
+   {
+    "name": "Olivia Newton-John",
+    "slug": "olivia-newton-john",
+    "metro": "Melbourne",
+    "combined": 28.6
+   },
+   {
+    "name": "Chicago",
+    "slug": "chicago",
+    "metro": "Chicago",
+    "combined": 27.9
+   }
+  ],
+  "top_songs": [
+   {
+    "single": "Eye of the Tiger",
+    "artist": "Survivor",
+    "metro": "Chicago",
+    "score": 4.7,
+    "peak": 1,
+    "year": 1982,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Don't You Want Me",
+    "artist": "The Human League",
+    "metro": "Sheffield",
+    "score": 4.44,
+    "peak": 1,
+    "year": 1981,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Every Breath You Take",
+    "artist": "The Police",
+    "metro": "London",
+    "score": 4.24,
+    "peak": 1,
+    "year": 1983,
+    "chart": "UK / US"
+   },
+   {
+    "single": "(Just Like) Starting Over",
+    "artist": "John Lennon",
+    "metro": "Liverpool",
+    "score": 4.19,
+    "peak": 1,
+    "year": 1980,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Flashdance... What a Feeling",
+    "artist": "Irene Cara",
+    "metro": "New York",
+    "score": 4.19,
+    "peak": 1,
+    "year": 1983,
+    "chart": "UK / US"
+   },
+   {
+    "single": "I Just Called to Say I Love You",
+    "artist": "Stevie Wonder",
+    "metro": "Detroit",
+    "score": 4.17,
+    "peak": 1,
+    "year": 1984,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Abracadabra",
+    "artist": "Steve Miller Band",
+    "metro": "San Francisco-San Jose",
+    "score": 4.14,
+    "peak": 1,
+    "year": 1982,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Down Under",
+    "artist": "Men at Work",
+    "metro": "Melbourne",
+    "score": 4.09,
+    "peak": 1,
+    "year": 1982,
+    "chart": "UK / US"
+   },
+   {
+    "single": "All Night Long (All Night)",
+    "artist": "Lionel Richie",
+    "metro": "Montgomery",
+    "score": 3.98,
+    "peak": 1,
+    "year": 1983,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Hello",
+    "artist": "Lionel Richie",
+    "metro": "Montgomery",
+    "score": 3.98,
+    "peak": 1,
+    "year": 1984,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Ghostbusters",
+    "artist": "Ray Parker Jr.",
+    "metro": "Detroit",
+    "score": 3.97,
+    "peak": 1,
+    "year": 1984,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Upside Down",
+    "artist": "Diana Ross",
+    "metro": "Detroit",
+    "score": 3.94,
+    "peak": 1,
+    "year": 1980,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Karma Chameleon",
+    "artist": "Culture Club",
+    "metro": "London",
+    "score": 3.92,
+    "peak": 1,
+    "year": 1983,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Billie Jean",
+    "artist": "Michael Jackson",
+    "metro": "Chicago",
+    "score": 3.91,
+    "peak": 1,
+    "year": 1983,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Total Eclipse of the Heart",
+    "artist": "Bonnie Tyler",
+    "metro": "Swansea",
+    "score": 3.91,
+    "peak": 1,
+    "year": 1983,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Let's Dance",
+    "artist": "David Bowie",
+    "metro": "London",
+    "score": 3.91,
+    "peak": 1,
+    "year": 1983,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Woman in Love",
+    "artist": "Barbra Streisand",
+    "metro": "New York",
+    "score": 3.88,
+    "peak": 1,
+    "year": 1980,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Woman",
+    "artist": "John Lennon",
+    "metro": "Liverpool",
+    "score": 3.76,
+    "peak": 1,
+    "year": 1981,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Against All Odds (Take a Look at Me Now)",
+    "artist": "Phil Collins",
+    "metro": "London",
+    "score": 3.71,
+    "peak": 1,
+    "year": 1984,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Centerfold",
+    "artist": "The J. Geils Band",
+    "metro": "Boston",
+    "score": 3.68,
+    "peak": 1,
+    "year": 1982,
+    "chart": "UK / US"
+   }
+  ]
+ },
+ "1990s": {
+  "metros": [
+   {
+    "slug": "new-york",
+    "metro": "New York",
+    "us": 200.7,
+    "uk": 66.5,
+    "combined": 668.7,
+    "rank": 1
+   },
+   {
+    "slug": "london",
+    "metro": "London",
+    "us": 63.5,
+    "uk": 215.9,
+    "combined": 406.4,
+    "rank": 2
+   },
+   {
+    "slug": "los-angeles",
+    "metro": "Los Angeles",
+    "us": 115.0,
+    "uk": 46.0,
+    "combined": 390.9,
+    "rank": 3
+   },
+   {
+    "slug": "atlanta",
+    "metro": "Atlanta",
+    "us": 74.1,
+    "uk": 13.6,
+    "combined": 236.0,
+    "rank": 4
+   },
+   {
+    "slug": "detroit",
+    "metro": "Detroit",
+    "us": 29.6,
+    "uk": 21.9,
+    "combined": 110.6,
+    "rank": 5
+   },
+   {
+    "slug": "chicago",
+    "metro": "Chicago",
+    "us": 28.0,
+    "uk": 22.7,
+    "combined": 106.7,
+    "rank": 6
+   },
+   {
+    "slug": "philadelphia",
+    "metro": "Philadelphia",
+    "us": 31.8,
+    "uk": 9.4,
+    "combined": 104.8,
+    "rank": 7
+   },
+   {
+    "slug": "san-francisco-san-jose",
+    "metro": "San Francisco-San Jose",
+    "us": 26.3,
+    "uk": 10.3,
+    "combined": 89.2,
+    "rank": 8
+   },
+   {
+    "slug": "washington-baltimore",
+    "metro": "Washington-Baltimore",
+    "us": 23.6,
+    "uk": 8.1,
+    "combined": 78.9,
+    "rank": 9
+   },
+   {
+    "slug": "boston",
+    "metro": "Boston",
+    "us": 21.3,
+    "uk": 9.3,
+    "combined": 73.2,
+    "rank": 10
+   },
+   {
+    "slug": "manchester",
+    "metro": "Manchester",
+    "us": 2.3,
+    "uk": 58.5,
+    "combined": 65.5,
+    "rank": 11
+   },
+   {
+    "slug": "dallas",
+    "metro": "Dallas",
+    "us": 19.2,
+    "uk": 7.7,
+    "combined": 65.2,
+    "rank": 12
+   },
+   {
+    "slug": "montreal",
+    "metro": "Montreal",
+    "us": 18.7,
+    "uk": 8.7,
+    "combined": 64.8,
+    "rank": 13
+   },
+   {
+    "slug": "gothenburg",
+    "metro": "Gothenburg",
+    "us": 15.8,
+    "uk": 8.3,
+    "combined": 55.6,
+    "rank": 14
+   },
+   {
+    "slug": "orlando",
+    "metro": "Orlando",
+    "us": 14.2,
+    "uk": 6.3,
+    "combined": 48.9,
+    "rank": 15
+   },
+   {
+    "slug": "minneapolis",
+    "metro": "Minneapolis",
+    "us": 12.8,
+    "uk": 4.5,
+    "combined": 43.0,
+    "rank": 16
+   },
+   {
+    "slug": "dublin",
+    "metro": "Dublin",
+    "us": 2.5,
+    "uk": 30.2,
+    "combined": 37.6,
+    "rank": 17
+   },
+   {
+    "slug": "birmingham",
+    "metro": "Birmingham",
+    "us": 7.2,
+    "uk": 15.3,
+    "combined": 37.1,
+    "rank": 18
+   },
+   {
+    "slug": "toronto",
+    "metro": "Toronto",
+    "us": 10.9,
+    "uk": 3.3,
+    "combined": 35.9,
+    "rank": 19
+   },
+   {
+    "slug": "cleveland",
+    "metro": "Cleveland",
+    "us": 11.3,
+    "uk": 1.1,
+    "combined": 34.9,
+    "rank": 20
+   },
+   {
+    "slug": "vancouver",
+    "metro": "Vancouver",
+    "us": 8.8,
+    "uk": 7.2,
+    "combined": 33.7,
+    "rank": 21
+   },
+   {
+    "slug": "brisbane",
+    "metro": "Brisbane",
+    "us": 9.7,
+    "uk": 4.4,
+    "combined": 33.4,
+    "rank": 22
+   },
+   {
+    "slug": "miami",
+    "metro": "Miami",
+    "us": 9.6,
+    "uk": 2.4,
+    "combined": 31.2,
+    "rank": 23
+   },
+   {
+    "slug": "kingston",
+    "metro": "Kingston",
+    "us": 6.0,
+    "uk": 10.3,
+    "combined": 28.2,
+    "rank": 24
+   },
+   {
+    "slug": "seattle",
+    "metro": "Seattle",
+    "us": 8.6,
+    "uk": 1.8,
+    "combined": 27.6,
+    "rank": 25
+   },
+   {
+    "slug": "charlotte",
+    "metro": "Charlotte",
+    "us": 8.3,
+    "uk": 0.1,
+    "combined": 25.1,
+    "rank": 26
+   },
+   {
+    "slug": "new-haven",
+    "metro": "New Haven",
+    "us": 7.6,
+    "uk": 1.9,
+    "combined": 24.6,
+    "rank": 27
+   },
+   {
+    "slug": "munich",
+    "metro": "Munich",
+    "us": 5.5,
+    "uk": 4.2,
+    "combined": 20.6,
+    "rank": 28
+   },
+   {
+    "slug": "buffalo",
+    "metro": "Buffalo",
+    "us": 6.8,
+    "uk": 0.0,
+    "combined": 20.3,
+    "rank": 29
+   },
+   {
+    "slug": "melbourne",
+    "metro": "Melbourne",
+    "us": 2.4,
+    "uk": 12.9,
+    "combined": 20.1,
+    "rank": 30
+   },
+   {
+    "slug": "oklahoma-city",
+    "metro": "Oklahoma City",
+    "us": 5.7,
+    "uk": 2.4,
+    "combined": 19.5,
+    "rank": 31
+   },
+   {
+    "slug": "timmins",
+    "metro": "Timmins",
+    "us": 5.8,
+    "uk": 2.1,
+    "combined": 19.5,
+    "rank": 32
+   },
+   {
+    "slug": "houston",
+    "metro": "Houston",
+    "us": 5.9,
+    "uk": 0.8,
+    "combined": 18.5,
+    "rank": 33
+   },
+   {
+    "slug": "glasgow",
+    "metro": "Glasgow",
+    "us": 0.0,
+    "uk": 18.3,
+    "combined": 18.3,
+    "rank": 34
+   },
+   {
+    "slug": "berlin",
+    "metro": "Berlin",
+    "us": 5.5,
+    "uk": 0.4,
+    "combined": 16.9,
+    "rank": 35
+   },
+   {
+    "slug": "liverpool",
+    "metro": "Liverpool",
+    "us": 0.6,
+    "uk": 14.3,
+    "combined": 16.2,
+    "rank": 36
+   },
+   {
+    "slug": "kennett-mo",
+    "metro": "Kennett (MO)",
+    "us": 4.9,
+    "uk": 1.2,
+    "combined": 15.9,
+    "rank": 37
+   },
+   {
+    "slug": "anchorage",
+    "metro": "Anchorage",
+    "us": 5.3,
+    "uk": 0.0,
+    "combined": 15.8,
+    "rank": 38
+   },
+   {
+    "slug": "san-juan",
+    "metro": "San Juan",
+    "us": 4.7,
+    "uk": 1.7,
+    "combined": 15.7,
+    "rank": 39
+   },
+   {
+    "slug": "nashville",
+    "metro": "Nashville",
+    "us": 4.4,
+    "uk": 2.1,
+    "combined": 15.3,
+    "rank": 40
+   }
+  ],
+  "top_artists": [
+   {
+    "name": "Mariah Carey",
+    "slug": "mariah-carey",
+    "metro": "New York",
+    "combined": 133.3
+   },
+   {
+    "name": "Janet Jackson",
+    "slug": "janet-jackson",
+    "metro": "Los Angeles",
+    "combined": 88.2
+   },
+   {
+    "name": "Boyz II Men",
+    "slug": "boyz-ii-men",
+    "metro": "Philadelphia",
+    "combined": 83.1
+   },
+   {
+    "name": "Madonna",
+    "slug": "madonna",
+    "metro": "Detroit",
+    "combined": 79.1
+   },
+   {
+    "name": "TLC",
+    "slug": "tlc",
+    "metro": "Atlanta",
+    "combined": 72.7
+   },
+   {
+    "name": "Whitney Houston",
+    "slug": "whitney-houston",
+    "metro": "New York",
+    "combined": 67.3
+   },
+   {
+    "name": "C\u00e9line Dion",
+    "slug": "c-line-dion",
+    "metro": "Montreal",
+    "combined": 64.8
+   },
+   {
+    "name": "Monica",
+    "slug": "monica",
+    "metro": "Atlanta",
+    "combined": 44.4
+   },
+   {
+    "name": "R. Kelly",
+    "slug": "r-kelly",
+    "metro": "Chicago",
+    "combined": 42.7
+   },
+   {
+    "name": "Toni Braxton",
+    "slug": "toni-braxton",
+    "metro": "Washington-Baltimore",
+    "combined": 42.0
+   },
+   {
+    "name": "Michael Jackson",
+    "slug": "michael-jackson",
+    "metro": "Chicago",
+    "combined": 38.8
+   },
+   {
+    "name": "Ace of Base",
+    "slug": "ace-of-base",
+    "metro": "Gothenburg",
+    "combined": 35.0
+   },
+   {
+    "name": "Brandy",
+    "slug": "brandy",
+    "metro": "Los Angeles",
+    "combined": 34.1
+   },
+   {
+    "name": "Bryan Adams",
+    "slug": "bryan-adams",
+    "metro": "Vancouver",
+    "combined": 33.7
+   },
+   {
+    "name": "Spice Girls",
+    "slug": "spice-girls",
+    "metro": "London",
+    "combined": 33.2
+   },
+   {
+    "name": "En Vogue",
+    "slug": "en-vogue",
+    "metro": "San Francisco-San Jose",
+    "combined": 31.8
+   },
+   {
+    "name": "Usher",
+    "slug": "usher",
+    "metro": "Atlanta",
+    "combined": 31.2
+   },
+   {
+    "name": "Savage Garden",
+    "slug": "savage-garden",
+    "metro": "Brisbane",
+    "combined": 31.1
+   },
+   {
+    "name": "Backstreet Boys",
+    "slug": "backstreet-boys",
+    "metro": "Orlando",
+    "combined": 30.7
+   },
+   {
+    "name": "SWV",
+    "slug": "swv",
+    "metro": "New York",
+    "combined": 27.2
+   }
+  ],
+  "top_songs": [
+   {
+    "single": "Un-Break My Heart",
+    "artist": "Toni Braxton",
+    "metro": "Washington-Baltimore",
+    "score": 6.09,
+    "peak": 1,
+    "year": 1996,
+    "chart": "UK / US"
+   },
+   {
+    "single": "The Sign",
+    "artist": "Ace of Base",
+    "metro": "Gothenburg",
+    "score": 5.79,
+    "peak": 1,
+    "year": 1994,
+    "chart": "UK / US"
+   },
+   {
+    "single": "I Swear",
+    "artist": "All-4-One",
+    "metro": "Los Angeles",
+    "score": 5.73,
+    "peak": 1,
+    "year": 1994,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Truly Madly Deeply",
+    "artist": "Savage Garden",
+    "metro": "Brisbane",
+    "score": 5.7,
+    "peak": 1,
+    "year": 1997,
+    "chart": "UK / US"
+   },
+   {
+    "single": "I'd Do Anything for Love (But I Won't Do That)",
+    "artist": "Meat Loaf",
+    "metro": "Dallas",
+    "score": 5.57,
+    "peak": 1,
+    "year": 1993,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Candle in the Wind 1997 / Something About the Way You Look Tonight",
+    "artist": "Elton John",
+    "metro": "London",
+    "score": 5.49,
+    "peak": 1,
+    "year": 1997,
+    "chart": "UK / US"
+   },
+   {
+    "single": "I Will Always Love You",
+    "artist": "Whitney Houston",
+    "metro": "New York",
+    "score": 5.45,
+    "peak": 1,
+    "year": 1992,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Wannabe",
+    "artist": "Spice Girls",
+    "metro": "London",
+    "score": 5.33,
+    "peak": 1,
+    "year": 1996,
+    "chart": "UK / US"
+   },
+   {
+    "single": "End of the Road",
+    "artist": "Boyz II Men",
+    "metro": "Philadelphia",
+    "score": 5.3,
+    "peak": 1,
+    "year": 1992,
+    "chart": "UK / US"
+   },
+   {
+    "single": "All That She Wants",
+    "artist": "Ace of Base",
+    "metro": "Gothenburg",
+    "score": 5.27,
+    "peak": 1,
+    "year": 1993,
+    "chart": "UK / US"
+   },
+   {
+    "single": "How Do I Live",
+    "artist": "LeAnn Rimes",
+    "metro": "Dallas",
+    "score": 5.07,
+    "peak": 2,
+    "year": 1997,
+    "chart": "UK / US"
+   },
+   {
+    "single": "I'll Make Love to You",
+    "artist": "Boyz II Men",
+    "metro": "Philadelphia",
+    "score": 5.06,
+    "peak": 1,
+    "year": 1994,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Return of the Mack",
+    "artist": "Mark Morrison",
+    "metro": "Leicester",
+    "score": 4.98,
+    "peak": 1,
+    "year": 1996,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Believe",
+    "artist": "Cher",
+    "metro": "Los Angeles",
+    "score": 4.97,
+    "peak": 1,
+    "year": 1998,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Waterfalls",
+    "artist": "TLC",
+    "metro": "Atlanta",
+    "score": 4.8,
+    "peak": 1,
+    "year": 1995,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Informer",
+    "artist": "Snow",
+    "metro": "Toronto",
+    "score": 4.79,
+    "peak": 1,
+    "year": 1993,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Here Comes the Hotstepper",
+    "artist": "Ini Kamoze",
+    "metro": "Kingston",
+    "score": 4.79,
+    "peak": 1,
+    "year": 1994,
+    "chart": "UK / US"
+   },
+   {
+    "single": "I Believe I Can Fly",
+    "artist": "R. Kelly",
+    "metro": "Chicago",
+    "score": 4.76,
+    "peak": 1,
+    "year": 1996,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Because You Loved Me",
+    "artist": "C\u00e9line Dion",
+    "metro": "Montreal",
+    "score": 4.76,
+    "peak": 1,
+    "year": 1996,
+    "chart": "UK / US"
+   },
+   {
+    "single": "You Make Me Wanna...",
+    "artist": "Usher",
+    "metro": "Atlanta",
+    "score": 4.71,
+    "peak": 1,
+    "year": 1997,
+    "chart": "UK / US"
+   }
+  ]
+ },
+ "2000s": {
+  "metros": [
+   {
+    "slug": "new-york",
+    "metro": "New York",
+    "us": 175.3,
+    "uk": 69.2,
+    "combined": 595.0,
+    "rank": 1
+   },
+   {
+    "slug": "los-angeles",
+    "metro": "Los Angeles",
+    "us": 97.7,
+    "uk": 44.5,
+    "combined": 337.7,
+    "rank": 2
+   },
+   {
+    "slug": "atlanta",
+    "metro": "Atlanta",
+    "us": 100.1,
+    "uk": 19.9,
+    "combined": 320.2,
+    "rank": 3
+   },
+   {
+    "slug": "london",
+    "metro": "London",
+    "us": 21.4,
+    "uk": 254.7,
+    "combined": 318.8,
+    "rank": 4
+   },
+   {
+    "slug": "houston",
+    "metro": "Houston",
+    "us": 42.0,
+    "uk": 21.0,
+    "combined": 147.1,
+    "rank": 5
+   },
+   {
+    "slug": "detroit",
+    "metro": "Detroit",
+    "us": 30.2,
+    "uk": 29.8,
+    "combined": 120.4,
+    "rank": 6
+   },
+   {
+    "slug": "chicago",
+    "metro": "Chicago",
+    "us": 31.4,
+    "uk": 19.7,
+    "combined": 113.9,
+    "rank": 7
+   },
+   {
+    "slug": "nashville",
+    "metro": "Nashville",
+    "us": 24.6,
+    "uk": 7.6,
+    "combined": 81.5,
+    "rank": 8
+   },
+   {
+    "slug": "new-orleans",
+    "metro": "New Orleans",
+    "us": 22.3,
+    "uk": 13.0,
+    "combined": 79.8,
+    "rank": 9
+   },
+   {
+    "slug": "orlando",
+    "metro": "Orlando",
+    "us": 24.6,
+    "uk": 4.3,
+    "combined": 78.0,
+    "rank": 10
+   },
+   {
+    "slug": "bridgetown",
+    "metro": "Bridgetown",
+    "us": 20.9,
+    "uk": 13.5,
+    "combined": 76.2,
+    "rank": 11
+   },
+   {
+    "slug": "miami",
+    "metro": "Miami",
+    "us": 22.0,
+    "uk": 10.1,
+    "combined": 76.0,
+    "rank": 12
+   },
+   {
+    "slug": "st-louis",
+    "metro": "St. Louis",
+    "us": 23.0,
+    "uk": 5.8,
+    "combined": 74.9,
+    "rank": 13
+   },
+   {
+    "slug": "dallas",
+    "metro": "Dallas",
+    "us": 22.1,
+    "uk": 6.4,
+    "combined": 72.6,
+    "rank": 14
+   },
+   {
+    "slug": "washington-baltimore",
+    "metro": "Washington-Baltimore",
+    "us": 19.3,
+    "uk": 3.9,
+    "combined": 61.7,
+    "rank": 15
+   },
+   {
+    "slug": "memphis",
+    "metro": "Memphis",
+    "us": 13.8,
+    "uk": 16.2,
+    "combined": 57.5,
+    "rank": 16
+   },
+   {
+    "slug": "norfolk",
+    "metro": "Norfolk",
+    "us": 17.1,
+    "uk": 5.9,
+    "combined": 57.1,
+    "rank": 17
+   },
+   {
+    "slug": "kingston",
+    "metro": "Kingston",
+    "us": 16.2,
+    "uk": 6.5,
+    "combined": 55.0,
+    "rank": 18
+   },
+   {
+    "slug": "philadelphia",
+    "metro": "Philadelphia",
+    "us": 14.5,
+    "uk": 10.0,
+    "combined": 53.4,
+    "rank": 19
+   },
+   {
+    "slug": "richmond",
+    "metro": "Richmond",
+    "us": 13.3,
+    "uk": 2.6,
+    "combined": 42.5,
+    "rank": 20
+   },
+   {
+    "slug": "san-francisco-san-jose",
+    "metro": "San Francisco-San Jose",
+    "us": 12.2,
+    "uk": 4.5,
+    "combined": 40.9,
+    "rank": 21
+   },
+   {
+    "slug": "pittsburgh",
+    "metro": "Pittsburgh",
+    "us": 10.7,
+    "uk": 4.6,
+    "combined": 36.8,
+    "rank": 22
+   },
+   {
+    "slug": "las-vegas",
+    "metro": "Las Vegas",
+    "us": 9.3,
+    "uk": 8.3,
+    "combined": 36.1,
+    "rank": 23
+   },
+   {
+    "slug": "manchester",
+    "metro": "Manchester",
+    "us": 0.0,
+    "uk": 34.0,
+    "combined": 34.0,
+    "rank": 24
+   },
+   {
+    "slug": "kingston-on",
+    "metro": "Kingston (ON)",
+    "us": 9.1,
+    "uk": 4.8,
+    "combined": 32.0,
+    "rank": 25
+   },
+   {
+    "slug": "calgary",
+    "metro": "Calgary",
+    "us": 9.4,
+    "uk": 3.5,
+    "combined": 31.7,
+    "rank": 26
+   },
+   {
+    "slug": "tallahassee",
+    "metro": "Tallahassee",
+    "us": 10.1,
+    "uk": 0.9,
+    "combined": 31.2,
+    "rank": 27
+   },
+   {
+    "slug": "dublin",
+    "metro": "Dublin",
+    "us": 2.8,
+    "uk": 20.6,
+    "combined": 28.9,
+    "rank": 28
+   },
+   {
+    "slug": "victoria",
+    "metro": "Victoria",
+    "us": 7.0,
+    "uk": 5.2,
+    "combined": 26.4,
+    "rank": 29
+   },
+   {
+    "slug": "santa-barbara",
+    "metro": "Santa Barbara",
+    "us": 6.4,
+    "uk": 4.1,
+    "combined": 23.2,
+    "rank": 30
+   },
+   {
+    "slug": "boston",
+    "metro": "Boston",
+    "us": 5.6,
+    "uk": 3.3,
+    "combined": 20.1,
+    "rank": 31
+   },
+   {
+    "slug": "biloxi",
+    "metro": "Biloxi",
+    "us": 6.6,
+    "uk": 0.0,
+    "combined": 19.9,
+    "rank": 32
+   },
+   {
+    "slug": "phoenix",
+    "metro": "Phoenix",
+    "us": 5.7,
+    "uk": 0.8,
+    "combined": 18.0,
+    "rank": 33
+   },
+   {
+    "slug": "glasgow",
+    "metro": "Glasgow",
+    "us": 1.8,
+    "uk": 12.6,
+    "combined": 17.9,
+    "rank": 34
+   },
+   {
+    "slug": "denver",
+    "metro": "Denver",
+    "us": 5.0,
+    "uk": 2.1,
+    "combined": 17.0,
+    "rank": 35
+   },
+   {
+    "slug": "cleveland",
+    "metro": "Cleveland",
+    "us": 5.3,
+    "uk": 1.1,
+    "combined": 16.9,
+    "rank": 36
+   },
+   {
+    "slug": "melbourne",
+    "metro": "Melbourne",
+    "us": 0.6,
+    "uk": 14.6,
+    "combined": 16.5,
+    "rank": 37
+   },
+   {
+    "slug": "barranquilla",
+    "metro": "Barranquilla",
+    "us": 3.3,
+    "uk": 5.1,
+    "combined": 15.0,
+    "rank": 38
+   },
+   {
+    "slug": "jackson",
+    "metro": "Jackson",
+    "us": 4.6,
+    "uk": 0.7,
+    "combined": 14.5,
+    "rank": 39
+   },
+   {
+    "slug": "sligo",
+    "metro": "Sligo",
+    "us": 0.0,
+    "uk": 13.9,
+    "combined": 13.9,
+    "rank": 40
+   }
+  ],
+  "top_artists": [
+   {
+    "name": "Usher",
+    "slug": "usher",
+    "metro": "Atlanta",
+    "combined": 75.5
+   },
+   {
+    "name": "Beyonc\u00e9",
+    "slug": "beyonc",
+    "metro": "Houston",
+    "combined": 72.2
+   },
+   {
+    "name": "Rihanna",
+    "slug": "rihanna",
+    "metro": "Bridgetown",
+    "combined": 70.3
+   },
+   {
+    "name": "Alicia Keys",
+    "slug": "alicia-keys",
+    "metro": "New York",
+    "combined": 58.2
+   },
+   {
+    "name": "50 Cent",
+    "slug": "50-cent",
+    "metro": "New York",
+    "combined": 57.6
+   },
+   {
+    "name": "The Black Eyed Peas",
+    "slug": "the-black-eyed-peas",
+    "metro": "Los Angeles",
+    "combined": 55.9
+   },
+   {
+    "name": "Destiny's Child",
+    "slug": "destiny-s-child",
+    "metro": "Houston",
+    "combined": 54.9
+   },
+   {
+    "name": "Eminem",
+    "slug": "eminem",
+    "metro": "Detroit",
+    "combined": 53.0
+   },
+   {
+    "name": "Nelly",
+    "slug": "nelly",
+    "metro": "St. Louis",
+    "combined": 50.9
+   },
+   {
+    "name": "Justin Timberlake",
+    "slug": "justin-timberlake",
+    "metro": "Memphis",
+    "combined": 49.1
+   },
+   {
+    "name": "Akon",
+    "slug": "akon",
+    "metro": "New York",
+    "combined": 48.6
+   },
+   {
+    "name": "Kanye West",
+    "slug": "kanye-west",
+    "metro": "Chicago",
+    "combined": 48.4
+   },
+   {
+    "name": "Mariah Carey",
+    "slug": "mariah-carey",
+    "metro": "New York",
+    "combined": 47.3
+   },
+   {
+    "name": "Kelly Clarkson",
+    "slug": "kelly-clarkson",
+    "metro": "Dallas",
+    "combined": 43.0
+   },
+   {
+    "name": "Lady Gaga",
+    "slug": "lady-gaga",
+    "metro": "New York",
+    "combined": 40.7
+   },
+   {
+    "name": "Britney Spears",
+    "slug": "britney-spears",
+    "metro": "New Orleans",
+    "combined": 39.2
+   },
+   {
+    "name": "Sean Paul",
+    "slug": "sean-paul",
+    "metro": "Kingston",
+    "combined": 38.2
+   },
+   {
+    "name": "Ashanti",
+    "slug": "ashanti",
+    "metro": "New York",
+    "combined": 37.9
+   },
+   {
+    "name": "Chris Brown",
+    "slug": "chris-brown",
+    "metro": "Richmond",
+    "combined": 37.9
+   },
+   {
+    "name": "Pink",
+    "slug": "pink",
+    "metro": "Philadelphia",
+    "combined": 37.2
+   }
+  ],
+  "top_songs": [
+   {
+    "single": "I Gotta Feeling",
+    "artist": "The Black Eyed Peas",
+    "metro": "Los Angeles",
+    "score": 6.38,
+    "peak": 1,
+    "year": 2009,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Bleeding Love",
+    "artist": "Leona Lewis",
+    "metro": "London",
+    "score": 5.75,
+    "peak": 1,
+    "year": 2007,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Poker Face",
+    "artist": "Lady Gaga",
+    "metro": "New York",
+    "score": 5.7,
+    "peak": 1,
+    "year": 2009,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Boom Boom Pow",
+    "artist": "The Black Eyed Peas",
+    "metro": "Los Angeles",
+    "score": 5.44,
+    "peak": 1,
+    "year": 2009,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Lose Yourself",
+    "artist": "Eminem",
+    "metro": "Detroit",
+    "score": 5.36,
+    "peak": 1,
+    "year": 2002,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Big Girls Don't Cry",
+    "artist": "Fergie",
+    "metro": "Los Angeles",
+    "score": 5.35,
+    "peak": 1,
+    "year": 2007,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Take a Bow",
+    "artist": "Rihanna",
+    "metro": "Bridgetown",
+    "score": 5.27,
+    "peak": 1,
+    "year": 2008,
+    "chart": "UK / US"
+   },
+   {
+    "single": "We Belong Together",
+    "artist": "Mariah Carey",
+    "metro": "New York",
+    "score": 5.2,
+    "peak": 1,
+    "year": 2005,
+    "chart": "UK / US"
+   },
+   {
+    "single": "I Kissed a Girl",
+    "artist": "Katy Perry",
+    "metro": "Santa Barbara",
+    "score": 5.15,
+    "peak": 1,
+    "year": 2008,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Bad Romance",
+    "artist": "Lady Gaga",
+    "metro": "New York",
+    "score": 5.08,
+    "peak": 1,
+    "year": 2009,
+    "chart": "UK / US"
+   },
+   {
+    "single": "How You Remind Me",
+    "artist": "Nickelback",
+    "metro": "Calgary",
+    "score": 5.05,
+    "peak": 1,
+    "year": 2001,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Stronger",
+    "artist": "Kanye West",
+    "metro": "Chicago",
+    "score": 5.05,
+    "peak": 1,
+    "year": 2007,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Girlfriend",
+    "artist": "Avril Lavigne",
+    "metro": "Kingston (ON)",
+    "score": 4.98,
+    "peak": 1,
+    "year": 2007,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Crank That (Soulja Boy)",
+    "artist": "Soulja Boy Tell 'Em",
+    "metro": "Atlanta",
+    "score": 4.98,
+    "peak": 1,
+    "year": 2007,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Let Me Love You",
+    "artist": "Mario",
+    "metro": "Washington-Baltimore",
+    "score": 4.96,
+    "peak": 1,
+    "year": 2004,
+    "chart": "UK / US"
+   },
+   {
+    "single": "You're Beautiful",
+    "artist": "James Blunt",
+    "metro": "London",
+    "score": 4.88,
+    "peak": 1,
+    "year": 2005,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Hey There Delilah",
+    "artist": "Plain White T's",
+    "metro": "Chicago",
+    "score": 4.83,
+    "peak": 1,
+    "year": 2007,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Hey Ya!",
+    "artist": "Outkast",
+    "metro": "Atlanta",
+    "score": 4.83,
+    "peak": 1,
+    "year": 2003,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Hot in Herre",
+    "artist": "Nelly",
+    "metro": "St. Louis",
+    "score": 4.77,
+    "peak": 1,
+    "year": 2002,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Burn",
+    "artist": "Usher",
+    "metro": "Atlanta",
+    "score": 4.75,
+    "peak": 1,
+    "year": 2004,
+    "chart": "UK / US"
+   }
+  ]
+ },
+ "2010s": {
+  "metros": [
+   {
+    "slug": "london",
+    "metro": "London",
+    "us": 64.6,
+    "uk": 258.1,
+    "combined": 451.9,
+    "rank": 1
+   },
+   {
+    "slug": "new-york",
+    "metro": "New York",
+    "us": 94.0,
+    "uk": 44.1,
+    "combined": 326.2,
+    "rank": 2
+   },
+   {
+    "slug": "los-angeles",
+    "metro": "Los Angeles",
+    "us": 72.3,
+    "uk": 40.0,
+    "combined": 256.8,
+    "rank": 3
+   },
+   {
+    "slug": "toronto",
+    "metro": "Toronto",
+    "us": 67.2,
+    "uk": 30.4,
+    "combined": 232.1,
+    "rank": 4
+   },
+   {
+    "slug": "miami",
+    "metro": "Miami",
+    "us": 59.1,
+    "uk": 44.5,
+    "combined": 221.8,
+    "rank": 5
+   },
+   {
+    "slug": "nashville",
+    "metro": "Nashville",
+    "us": 54.7,
+    "uk": 18.3,
+    "combined": 182.3,
+    "rank": 6
+   },
+   {
+    "slug": "atlanta",
+    "metro": "Atlanta",
+    "us": 48.4,
+    "uk": 18.7,
+    "combined": 163.9,
+    "rank": 7
+   },
+   {
+    "slug": "honolulu",
+    "metro": "Honolulu",
+    "us": 36.9,
+    "uk": 14.9,
+    "combined": 125.7,
+    "rank": 8
+   },
+   {
+    "slug": "dallas",
+    "metro": "Dallas",
+    "us": 34.5,
+    "uk": 13.9,
+    "combined": 117.3,
+    "rank": 9
+   },
+   {
+    "slug": "bridgetown",
+    "metro": "Bridgetown",
+    "us": 32.4,
+    "uk": 19.4,
+    "combined": 116.6,
+    "rank": 10
+   },
+   {
+    "slug": "kitchener-waterloo",
+    "metro": "Kitchener-Waterloo",
+    "us": 28.0,
+    "uk": 15.9,
+    "combined": 99.8,
+    "rank": 11
+   },
+   {
+    "slug": "santa-barbara",
+    "metro": "Santa Barbara",
+    "us": 27.5,
+    "uk": 8.4,
+    "combined": 90.9,
+    "rank": 12
+   },
+   {
+    "slug": "ipswich",
+    "metro": "Ipswich",
+    "us": 16.5,
+    "uk": 28.1,
+    "combined": 77.7,
+    "rank": 13
+   },
+   {
+    "slug": "philadelphia",
+    "metro": "Philadelphia",
+    "us": 19.1,
+    "uk": 8.6,
+    "combined": 65.8,
+    "rank": 14
+   },
+   {
+    "slug": "detroit",
+    "metro": "Detroit",
+    "us": 14.6,
+    "uk": 11.6,
+    "combined": 55.4,
+    "rank": 15
+   },
+   {
+    "slug": "las-vegas",
+    "metro": "Las Vegas",
+    "us": 14.5,
+    "uk": 3.4,
+    "combined": 46.8,
+    "rank": 16
+   },
+   {
+    "slug": "new-orleans",
+    "metro": "New Orleans",
+    "us": 14.1,
+    "uk": 3.9,
+    "combined": 46.3,
+    "rank": 17
+   },
+   {
+    "slug": "paris",
+    "metro": "Paris",
+    "us": 11.0,
+    "uk": 12.4,
+    "combined": 45.4,
+    "rank": 18
+   },
+   {
+    "slug": "pittsburgh",
+    "metro": "Pittsburgh",
+    "us": 12.8,
+    "uk": 5.5,
+    "combined": 43.8,
+    "rank": 19
+   },
+   {
+    "slug": "stockholm",
+    "metro": "Stockholm",
+    "us": 6.8,
+    "uk": 23.3,
+    "combined": 43.5,
+    "rank": 20
+   },
+   {
+    "slug": "memphis",
+    "metro": "Memphis",
+    "us": 12.5,
+    "uk": 5.3,
+    "combined": 42.9,
+    "rank": 21
+   },
+   {
+    "slug": "chicago",
+    "metro": "Chicago",
+    "us": 11.2,
+    "uk": 5.1,
+    "combined": 38.6,
+    "rank": 22
+   },
+   {
+    "slug": "houston",
+    "metro": "Houston",
+    "us": 10.1,
+    "uk": 4.0,
+    "combined": 34.4,
+    "rank": 23
+   },
+   {
+    "slug": "nantucket",
+    "metro": "Nantucket",
+    "us": 8.9,
+    "uk": 3.6,
+    "combined": 30.4,
+    "rank": 24
+   },
+   {
+    "slug": "dumfries",
+    "metro": "Dumfries",
+    "us": 4.9,
+    "uk": 14.5,
+    "combined": 29.1,
+    "rank": 25
+   },
+   {
+    "slug": "minneapolis",
+    "metro": "Minneapolis",
+    "us": 8.6,
+    "uk": 2.7,
+    "combined": 28.6,
+    "rank": 26
+   },
+   {
+    "slug": "columbus",
+    "metro": "Columbus",
+    "us": 9.1,
+    "uk": 1.2,
+    "combined": 28.4,
+    "rank": 27
+   },
+   {
+    "slug": "seattle",
+    "metro": "Seattle",
+    "us": 7.8,
+    "uk": 3.8,
+    "combined": 27.2,
+    "rank": 28
+   },
+   {
+    "slug": "auckland",
+    "metro": "Auckland",
+    "us": 8.2,
+    "uk": 2.3,
+    "combined": 26.9,
+    "rank": 29
+   },
+   {
+    "slug": "kingston",
+    "metro": "Kingston",
+    "us": 6.3,
+    "uk": 7.8,
+    "combined": 26.8,
+    "rank": 30
+   },
+   {
+    "slug": "norfolk",
+    "metro": "Norfolk",
+    "us": 7.2,
+    "uk": 5.2,
+    "combined": 26.7,
+    "rank": 31
+   },
+   {
+    "slug": "leeds-bradford",
+    "metro": "Leeds-Bradford",
+    "us": 5.4,
+    "uk": 9.3,
+    "combined": 25.5,
+    "rank": 32
+   },
+   {
+    "slug": "glasgow",
+    "metro": "Glasgow",
+    "us": 5.2,
+    "uk": 9.8,
+    "combined": 25.3,
+    "rank": 33
+   },
+   {
+    "slug": "sydney",
+    "metro": "Sydney",
+    "us": 5.7,
+    "uk": 6.3,
+    "combined": 23.4,
+    "rank": 34
+   },
+   {
+    "slug": "copenhagen",
+    "metro": "Copenhagen",
+    "us": 5.2,
+    "uk": 4.3,
+    "combined": 20.0,
+    "rank": 35
+   },
+   {
+    "slug": "san-francisco-san-jose",
+    "metro": "San Francisco-San Jose",
+    "us": 5.6,
+    "uk": 2.1,
+    "combined": 18.8,
+    "rank": 36
+   },
+   {
+    "slug": "melbourne",
+    "metro": "Melbourne",
+    "us": 4.5,
+    "uk": 5.0,
+    "combined": 18.6,
+    "rank": 37
+   },
+   {
+    "slug": "adelaide",
+    "metro": "Adelaide",
+    "us": 4.3,
+    "uk": 5.4,
+    "combined": 18.4,
+    "rank": 38
+   },
+   {
+    "slug": "vancouver",
+    "metro": "Vancouver",
+    "us": 4.7,
+    "uk": 3.5,
+    "combined": 17.6,
+    "rank": 39
+   },
+   {
+    "slug": "dayton",
+    "metro": "Dayton",
+    "us": 4.8,
+    "uk": 3.1,
+    "combined": 17.5,
+    "rank": 40
+   }
+  ],
+  "top_artists": [
+   {
+    "name": "Bruno Mars",
+    "slug": "bruno-mars",
+    "metro": "Honolulu",
+    "combined": 122.7
+   },
+   {
+    "name": "Rihanna",
+    "slug": "rihanna",
+    "metro": "Bridgetown",
+    "combined": 114.9
+   },
+   {
+    "name": "Drake",
+    "slug": "drake",
+    "metro": "Toronto",
+    "combined": 112.5
+   },
+   {
+    "name": "Taylor Swift",
+    "slug": "taylor-swift",
+    "metro": "Nashville",
+    "combined": 102.2
+   },
+   {
+    "name": "Justin Bieber",
+    "slug": "justin-bieber",
+    "metro": "Kitchener-Waterloo",
+    "combined": 99.8
+   },
+   {
+    "name": "Katy Perry",
+    "slug": "katy-perry",
+    "metro": "Santa Barbara",
+    "combined": 90.9
+   },
+   {
+    "name": "Maroon 5",
+    "slug": "maroon-5",
+    "metro": "Los Angeles",
+    "combined": 77.7
+   },
+   {
+    "name": "Ed Sheeran",
+    "slug": "ed-sheeran",
+    "metro": "Ipswich",
+    "combined": 77.7
+   },
+   {
+    "name": "Post Malone",
+    "slug": "post-malone",
+    "metro": "Dallas",
+    "combined": 65.4
+   },
+   {
+    "name": "Ariana Grande",
+    "slug": "ariana-grande",
+    "metro": "Miami",
+    "combined": 65.0
+   },
+   {
+    "name": "The Weeknd",
+    "slug": "the-weeknd",
+    "metro": "Toronto",
+    "combined": 60.1
+   },
+   {
+    "name": "Adele",
+    "slug": "adele",
+    "metro": "London",
+    "combined": 58.4
+   },
+   {
+    "name": "Nicki Minaj",
+    "slug": "nicki-minaj",
+    "metro": "New York",
+    "combined": 43.2
+   },
+   {
+    "name": "Lady Gaga",
+    "slug": "lady-gaga",
+    "metro": "New York",
+    "combined": 42.5
+   },
+   {
+    "name": "Flo Rida",
+    "slug": "flo-rida",
+    "metro": "Miami",
+    "combined": 41.1
+   },
+   {
+    "name": "Sam Smith",
+    "slug": "sam-smith",
+    "metro": "London",
+    "combined": 38.6
+   },
+   {
+    "name": "Shawn Mendes",
+    "slug": "shawn-mendes",
+    "metro": "Toronto",
+    "combined": 36.7
+   },
+   {
+    "name": "Justin Timberlake",
+    "slug": "justin-timberlake",
+    "metro": "Memphis",
+    "combined": 35.9
+   },
+   {
+    "name": "Kesha",
+    "slug": "kesha",
+    "metro": "Nashville",
+    "combined": 35.7
+   },
+   {
+    "name": "Eminem",
+    "slug": "eminem",
+    "metro": "Detroit",
+    "combined": 32.7
+   }
+  ],
+  "top_songs": [
+   {
+    "single": "Someone You Loved",
+    "artist": "Lewis Capaldi",
+    "metro": "Glasgow",
+    "score": 9.09,
+    "peak": 1,
+    "year": 2019,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Shape of You",
+    "artist": "Ed Sheeran",
+    "metro": "Ipswich",
+    "score": 8.7,
+    "peak": 1,
+    "year": 2017,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Circles",
+    "artist": "Post Malone",
+    "metro": "Dallas",
+    "score": 7.98,
+    "peak": 1,
+    "year": 2019,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Bad Guy",
+    "artist": "Billie Eilish",
+    "metro": "Los Angeles",
+    "score": 7.9,
+    "peak": 1,
+    "year": 2019,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Perfect",
+    "artist": "Ed Sheeran",
+    "metro": "Ipswich",
+    "score": 7.78,
+    "peak": 1,
+    "year": 2017,
+    "chart": "UK / US"
+   },
+   {
+    "single": "What Do You Mean?",
+    "artist": "Justin Bieber",
+    "metro": "Kitchener-Waterloo",
+    "score": 7.7,
+    "peak": 1,
+    "year": 2015,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Love Yourself",
+    "artist": "Justin Bieber",
+    "metro": "Kitchener-Waterloo",
+    "score": 7.68,
+    "peak": 1,
+    "year": 2015,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Sorry",
+    "artist": "Justin Bieber",
+    "metro": "Kitchener-Waterloo",
+    "score": 7.42,
+    "peak": 1,
+    "year": 2015,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Hello",
+    "artist": "Adele",
+    "metro": "London",
+    "score": 6.75,
+    "peak": 1,
+    "year": 2015,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Cheerleader",
+    "artist": "Omi",
+    "metro": "Kingston",
+    "score": 6.74,
+    "peak": 1,
+    "year": 2015,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Happy",
+    "artist": "Pharrell Williams",
+    "metro": "Norfolk",
+    "score": 6.73,
+    "peak": 1,
+    "year": 2013,
+    "chart": "UK / US"
+   },
+   {
+    "single": "All I Want for Christmas Is You",
+    "artist": "Mariah Carey",
+    "metro": "New York",
+    "score": 6.72,
+    "peak": 1,
+    "year": 2016,
+    "chart": "UK"
+   },
+   {
+    "single": "God's Plan",
+    "artist": "Drake",
+    "metro": "Toronto",
+    "score": 6.51,
+    "peak": 1,
+    "year": 2018,
+    "chart": "UK / US"
+   },
+   {
+    "single": "All of Me",
+    "artist": "John Legend",
+    "metro": "Dayton",
+    "score": 6.48,
+    "peak": 1,
+    "year": 2014,
+    "chart": "UK / US"
+   },
+   {
+    "single": "All About That Bass",
+    "artist": "Meghan Trainor",
+    "metro": "Nantucket",
+    "score": 6.41,
+    "peak": 1,
+    "year": 2014,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Thinking Out Loud",
+    "artist": "Ed Sheeran",
+    "metro": "Ipswich",
+    "score": 6.35,
+    "peak": 1,
+    "year": 2014,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Without Me",
+    "artist": "Halsey",
+    "metro": "New York",
+    "score": 6.22,
+    "peak": 1,
+    "year": 2018,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Call Me Maybe",
+    "artist": "Carly Rae Jepsen",
+    "metro": "Vancouver",
+    "score": 6.21,
+    "peak": 1,
+    "year": 2012,
+    "chart": "UK / US"
+   },
+   {
+    "single": "7 Years",
+    "artist": "Lukas Graham",
+    "metro": "Copenhagen",
+    "score": 6.17,
+    "peak": 1,
+    "year": 2016,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Shake It Off",
+    "artist": "Taylor Swift",
+    "metro": "Nashville",
+    "score": 6.13,
+    "peak": 1,
+    "year": 2014,
+    "chart": "UK / US"
+   }
+  ]
+ },
+ "2020s": {
+  "metros": [
+   {
+    "slug": "los-angeles",
+    "metro": "Los Angeles",
+    "us": 73.5,
+    "uk": 52.0,
+    "combined": 272.3,
+    "rank": 1
+   },
+   {
+    "slug": "nashville",
+    "metro": "Nashville",
+    "us": 54.4,
+    "uk": 25.8,
+    "combined": 188.9,
+    "rank": 2
+   },
+   {
+    "slug": "london",
+    "metro": "London",
+    "us": 24.1,
+    "uk": 114.2,
+    "combined": 186.4,
+    "rank": 3
+   },
+   {
+    "slug": "toronto",
+    "metro": "Toronto",
+    "us": 48.2,
+    "uk": 19.9,
+    "combined": 164.5,
+    "rank": 4
+   },
+   {
+    "slug": "new-york",
+    "metro": "New York",
+    "us": 38.4,
+    "uk": 33.3,
+    "combined": 148.5,
+    "rank": 5
+   },
+   {
+    "slug": "atlanta",
+    "metro": "Atlanta",
+    "us": 39.5,
+    "uk": 20.2,
+    "combined": 138.8,
+    "rank": 6
+   },
+   {
+    "slug": "miami",
+    "metro": "Miami",
+    "us": 21.7,
+    "uk": 16.6,
+    "combined": 81.6,
+    "rank": 7
+   },
+   {
+    "slug": "knoxville",
+    "metro": "Knoxville",
+    "us": 24.9,
+    "uk": 1.0,
+    "combined": 75.8,
+    "rank": 8
+   },
+   {
+    "slug": "seoul",
+    "metro": "Seoul",
+    "us": 22.0,
+    "uk": 9.1,
+    "combined": 75.0,
+    "rank": 9
+   },
+   {
+    "slug": "philadelphia",
+    "metro": "Philadelphia",
+    "us": 15.0,
+    "uk": 13.6,
+    "combined": 58.6,
+    "rank": 10
+   },
+   {
+    "slug": "manchester",
+    "metro": "Manchester",
+    "us": 13.6,
+    "uk": 15.8,
+    "combined": 56.5,
+    "rank": 11
+   },
+   {
+    "slug": "houston",
+    "metro": "Houston",
+    "us": 15.5,
+    "uk": 8.4,
+    "combined": 54.9,
+    "rank": 12
+   },
+   {
+    "slug": "kitchener-waterloo",
+    "metro": "Kitchener-Waterloo",
+    "us": 13.4,
+    "uk": 7.6,
+    "combined": 47.8,
+    "rank": 13
+   },
+   {
+    "slug": "louisville",
+    "metro": "Louisville",
+    "us": 12.0,
+    "uk": 5.5,
+    "combined": 41.5,
+    "rank": 14
+   },
+   {
+    "slug": "chicago",
+    "metro": "Chicago",
+    "us": 11.0,
+    "uk": 7.8,
+    "combined": 40.9,
+    "rank": 15
+   },
+   {
+    "slug": "ipswich",
+    "metro": "Ipswich",
+    "us": 6.8,
+    "uk": 16.8,
+    "combined": 37.1,
+    "rank": 16
+   },
+   {
+    "slug": "washington-baltimore",
+    "metro": "Washington-Baltimore",
+    "us": 9.6,
+    "uk": 3.4,
+    "combined": 32.1,
+    "rank": 17
+   },
+   {
+    "slug": "dallas",
+    "metro": "Dallas",
+    "us": 8.9,
+    "uk": 4.9,
+    "combined": 31.7,
+    "rank": 18
+   },
+   {
+    "slug": "honolulu",
+    "metro": "Honolulu",
+    "us": 8.3,
+    "uk": 3.4,
+    "combined": 28.2,
+    "rank": 19
+   },
+   {
+    "slug": "springfield-mo",
+    "metro": "Springfield (MO)",
+    "us": 5.4,
+    "uk": 8.8,
+    "combined": 24.9,
+    "rank": 20
+   },
+   {
+    "slug": "calgary",
+    "metro": "Calgary",
+    "us": 5.5,
+    "uk": 7.4,
+    "combined": 23.9,
+    "rank": 21
+   },
+   {
+    "slug": "san-juan",
+    "metro": "San Juan",
+    "us": 7.6,
+    "uk": 0.7,
+    "combined": 23.6,
+    "rank": 22
+   },
+   {
+    "slug": "montgomery",
+    "metro": "Montgomery",
+    "us": 6.4,
+    "uk": 0.1,
+    "combined": 19.3,
+    "rank": 23
+   },
+   {
+    "slug": "seattle",
+    "metro": "Seattle",
+    "us": 4.7,
+    "uk": 4.0,
+    "combined": 18.2,
+    "rank": 24
+   },
+   {
+    "slug": "asheville",
+    "metro": "Asheville",
+    "us": 5.8,
+    "uk": 0.0,
+    "combined": 17.5,
+    "rank": 25
+   },
+   {
+    "slug": "oxford",
+    "metro": "Oxford",
+    "us": 5.4,
+    "uk": 1.3,
+    "combined": 17.4,
+    "rank": 26
+   },
+   {
+    "slug": "sydney",
+    "metro": "Sydney",
+    "us": 4.6,
+    "uk": 2.8,
+    "combined": 16.6,
+    "rank": 27
+   },
+   {
+    "slug": "charlotte",
+    "metro": "Charlotte",
+    "us": 5.0,
+    "uk": 1.3,
+    "combined": 16.3,
+    "rank": 28
+   },
+   {
+    "slug": "dublin",
+    "metro": "Dublin",
+    "us": 3.5,
+    "uk": 5.6,
+    "combined": 16.1,
+    "rank": 29
+   },
+   {
+    "slug": "lagos",
+    "metro": "Lagos",
+    "us": 3.4,
+    "uk": 5.0,
+    "combined": 15.2,
+    "rank": 30
+   },
+   {
+    "slug": "minneapolis",
+    "metro": "Minneapolis",
+    "us": 4.3,
+    "uk": 2.2,
+    "combined": 15.0,
+    "rank": 31
+   },
+   {
+    "slug": "san-francisco-san-jose",
+    "metro": "San Francisco-San Jose",
+    "us": 4.2,
+    "uk": 1.0,
+    "combined": 13.5,
+    "rank": 32
+   },
+   {
+    "slug": "fayetteville",
+    "metro": "Fayetteville",
+    "us": 3.7,
+    "uk": 0.3,
+    "combined": 11.5,
+    "rank": 33
+   },
+   {
+    "slug": "boston",
+    "metro": "Boston",
+    "us": 1.5,
+    "uk": 6.7,
+    "combined": 11.1,
+    "rank": 34
+   },
+   {
+    "slug": "bristol",
+    "metro": "Bristol",
+    "us": 1.9,
+    "uk": 5.5,
+    "combined": 11.1,
+    "rank": 35
+   },
+   {
+    "slug": "busan-ulsan",
+    "metro": "Busan-Ulsan",
+    "us": 2.6,
+    "uk": 2.0,
+    "combined": 9.7,
+    "rank": 36
+   },
+   {
+    "slug": "tulsa",
+    "metro": "Tulsa",
+    "us": 3.0,
+    "uk": 0.0,
+    "combined": 9.1,
+    "rank": 37
+   },
+   {
+    "slug": "detroit",
+    "metro": "Detroit",
+    "us": 1.6,
+    "uk": 4.0,
+    "combined": 8.8,
+    "rank": 38
+   },
+   {
+    "slug": "corpus-christi",
+    "metro": "Corpus Christi",
+    "us": 2.4,
+    "uk": 1.0,
+    "combined": 8.2,
+    "rank": 39
+   },
+   {
+    "slug": "newcastle",
+    "metro": "Newcastle",
+    "us": 0.0,
+    "uk": 8.0,
+    "combined": 8.0,
+    "rank": 40
+   }
+  ],
+  "top_artists": [
+   {
+    "name": "Taylor Swift",
+    "slug": "taylor-swift",
+    "metro": "Nashville",
+    "combined": 150.6
+   },
+   {
+    "name": "Drake",
+    "slug": "drake",
+    "metro": "Toronto",
+    "combined": 116.1
+   },
+   {
+    "name": "Morgan Wallen",
+    "slug": "morgan-wallen",
+    "metro": "Knoxville",
+    "combined": 75.8
+   },
+   {
+    "name": "Olivia Rodrigo",
+    "slug": "olivia-rodrigo",
+    "metro": "Los Angeles",
+    "combined": 68.9
+   },
+   {
+    "name": "Ariana Grande",
+    "slug": "ariana-grande",
+    "metro": "Miami",
+    "combined": 60.4
+   },
+   {
+    "name": "Sabrina Carpenter",
+    "slug": "sabrina-carpenter",
+    "metro": "Philadelphia",
+    "combined": 53.8
+   },
+   {
+    "name": "Harry Styles",
+    "slug": "harry-styles",
+    "metro": "Manchester",
+    "combined": 53.1
+   },
+   {
+    "name": "SZA",
+    "slug": "sza",
+    "metro": "New York",
+    "combined": 49.0
+   },
+   {
+    "name": "Justin Bieber",
+    "slug": "justin-bieber",
+    "metro": "Kitchener-Waterloo",
+    "combined": 47.8
+   },
+   {
+    "name": "Doja Cat",
+    "slug": "doja-cat",
+    "metro": "Los Angeles",
+    "combined": 45.9
+   },
+   {
+    "name": "Kendrick Lamar",
+    "slug": "kendrick-lamar",
+    "metro": "Los Angeles",
+    "combined": 44.2
+   },
+   {
+    "name": "The Weeknd",
+    "slug": "the-weeknd",
+    "metro": "Toronto",
+    "combined": 43.9
+   },
+   {
+    "name": "Jack Harlow",
+    "slug": "jack-harlow",
+    "metro": "Louisville",
+    "combined": 41.5
+   },
+   {
+    "name": "Ed Sheeran",
+    "slug": "ed-sheeran",
+    "metro": "Ipswich",
+    "combined": 37.1
+   },
+   {
+    "name": "BTS",
+    "slug": "bts",
+    "metro": "Seoul",
+    "combined": 37.0
+   },
+   {
+    "name": "Dua Lipa",
+    "slug": "dua-lipa",
+    "metro": "London",
+    "combined": 32.9
+   },
+   {
+    "name": "Billie Eilish",
+    "slug": "billie-eilish",
+    "metro": "Los Angeles",
+    "combined": 30.3
+   },
+   {
+    "name": "Beyonc\u00e9",
+    "slug": "beyonc",
+    "metro": "Houston",
+    "combined": 30.2
+   },
+   {
+    "name": "Bruno Mars",
+    "slug": "bruno-mars",
+    "metro": "Honolulu",
+    "combined": 28.2
+   },
+   {
+    "name": "Teddy Swims",
+    "slug": "teddy-swims",
+    "metro": "Atlanta",
+    "combined": 26.8
+   }
+  ],
+  "top_songs": [
+   {
+    "single": "Last Christmas",
+    "artist": "Wham!",
+    "metro": "London",
+    "score": 12.3,
+    "peak": 1,
+    "year": 2020,
+    "chart": "UK"
+   },
+   {
+    "single": "All I Want for Christmas Is You",
+    "artist": "Mariah Carey",
+    "metro": "New York",
+    "score": 11.5,
+    "peak": 1,
+    "year": 2020,
+    "chart": "UK"
+   },
+   {
+    "single": "Blinding Lights",
+    "artist": "The Weeknd",
+    "metro": "Toronto",
+    "score": 9.9,
+    "peak": 1,
+    "year": 2020,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Lose Control",
+    "artist": "Teddy Swims",
+    "metro": "Atlanta",
+    "score": 9.87,
+    "peak": 1,
+    "year": 2024,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Cruel Summer",
+    "artist": "Taylor Swift",
+    "metro": "Nashville",
+    "score": 9.4,
+    "peak": 1,
+    "year": 2023,
+    "chart": "UK / US"
+   },
+   {
+    "single": "As It Was",
+    "artist": "Harry Styles",
+    "metro": "Manchester",
+    "score": 9.33,
+    "peak": 1,
+    "year": 2022,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Beautiful Things",
+    "artist": "Benson Boone",
+    "metro": "Seattle",
+    "score": 8.75,
+    "peak": 1,
+    "year": 2024,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Ordinary",
+    "artist": "Alex Warren",
+    "metro": "Los Angeles",
+    "score": 8.71,
+    "peak": 1,
+    "year": 2025,
+    "chart": "UK / US"
+   },
+   {
+    "single": "A Bar Song (Tipsy)",
+    "artist": "Shaboozey",
+    "metro": "Washington-Baltimore",
+    "score": 8.56,
+    "peak": 1,
+    "year": 2024,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Flowers",
+    "artist": "Miley Cyrus",
+    "metro": "Nashville",
+    "score": 8.22,
+    "peak": 1,
+    "year": 2023,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Golden",
+    "artist": "Huntrix",
+    "metro": "Seoul",
+    "score": 7.6,
+    "peak": 1,
+    "year": 2025,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Lovin on Me",
+    "artist": "Jack Harlow",
+    "metro": "Louisville",
+    "score": 7.33,
+    "peak": 1,
+    "year": 2023,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Bad Habits",
+    "artist": "Ed Sheeran",
+    "metro": "Ipswich",
+    "score": 7.15,
+    "peak": 1,
+    "year": 2021,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Man I Need",
+    "artist": "Olivia Dean",
+    "metro": "London",
+    "score": 7.13,
+    "peak": 1,
+    "year": 2025,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Anti-Hero",
+    "artist": "Taylor Swift",
+    "metro": "Nashville",
+    "score": 7.09,
+    "peak": 1,
+    "year": 2022,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Espresso",
+    "artist": "Sabrina Carpenter",
+    "metro": "Philadelphia",
+    "score": 7.03,
+    "peak": 1,
+    "year": 2024,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Birds of a Feather",
+    "artist": "Billie Eilish",
+    "metro": "Los Angeles",
+    "score": 6.67,
+    "peak": 2,
+    "year": 2024,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Heat Waves",
+    "artist": "Glass Animals",
+    "metro": "Oxford",
+    "score": 6.63,
+    "peak": 1,
+    "year": 2021,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Easy on Me",
+    "artist": "Adele",
+    "metro": "London",
+    "score": 6.62,
+    "peak": 1,
+    "year": 2021,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Paint the Town Red",
+    "artist": "Doja Cat",
+    "metro": "Los Angeles",
+    "score": 6.54,
+    "peak": 1,
+    "year": 2023,
+    "chart": "UK / US"
+   }
+  ]
+ }
+}

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import {
   getAllBadges,
   getBadge,
@@ -178,6 +178,7 @@ function MetroRow({
 
 export default async function BadgeDetailPage({ params }: Props) {
   const { slug } = await params;
+  if (slug === "velvet-rock-capital") redirect("/sound/velvet-rock");
   const badge = getBadge(slug);
   if (!badge || badge.status !== "live") notFound();
 

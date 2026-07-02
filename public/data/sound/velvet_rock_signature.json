@@ -1,0 +1,42 @@
+{
+ "n_tracks": 314,
+ "signature": {
+  "danceability": {
+   "mean": 0.6382,
+   "sd": 0.1394
+  },
+  "energy": {
+   "mean": 0.5378,
+   "sd": 0.1804
+  },
+  "loudness": {
+   "mean": -10.9075,
+   "sd": 3.4649
+  },
+  "speechiness": {
+   "mean": 0.0399,
+   "sd": 0.0209
+  },
+  "acousticness": {
+   "mean": 0.3189,
+   "sd": 0.2408
+  },
+  "instrumentalness": {
+   "mean": 0.026,
+   "sd": 0.0958
+  },
+  "liveness": {
+   "mean": 0.1542,
+   "sd": 0.1337
+  },
+  "valence": {
+   "mean": 0.6115,
+   "sd": 0.2529
+  },
+  "tempo": {
+   "mean": 113.976,
+   "sd": 24.8147
+  }
+ },
+ "note": "Velvet Rock sonic centroid; score any track's VR-affinity by normalized distance to these means"
+}

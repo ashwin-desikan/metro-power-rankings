@@ -1,0 +1,9 @@
+{
+ "generated": "2026-07-02",
+ "weighting": "combined = 3*US + UK + 0.45*Albums (album_raw = Total EAS in millions, chartmasters.org + estimated supplement)",
+ "metros": 208,
+ "attributed_artists": 2424,
+ "billboard_singles": 5296,
+ "uk_singles_since_1958": 8688,
+ "scoring": "per single raw=(11-peak)*sqrt(weeks); era-normalized to 100 pts/chart-year; collab score split equally among credited artists"
+}

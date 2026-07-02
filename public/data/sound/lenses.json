@@ -1,0 +1,25 @@
+{
+ "lenses": [
+  {
+   "id": "origin",
+   "label": "Origin",
+   "metric": "combined",
+   "source": "Sound of the Metros (chart, US:UK 3:1)",
+   "desc": "Where the artists are from."
+  },
+  {
+   "id": "affinity",
+   "label": "Velvet Rock affinity",
+   "metric": "vr_tracks",
+   "source": "Master Tape joined to origin",
+   "desc": "Which metros lean Velvet Rock."
+  },
+  {
+   "id": "production",
+   "label": "Production",
+   "metric": "index",
+   "source": "Velvet Rock Capital Index (studios)",
+   "desc": "Where the records were made. Includes places with no local artists."
+  }
+ ]
+}

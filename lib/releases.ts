@@ -18,6 +18,15 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-07-02",
+    headline: "The Sound of the Metros: where the hits come from",
+    items: [
+      "A new Sound of the Metros hub ranks cities by their artists' chart success on the US Billboard and UK top ten since 1958, blended with worldwide album sales and tied to every metro on the map.",
+      "It spans three lenses, artist profiles with per-single billing, decade and year filters, scenes, number-one machines, longest reigns, chart disagreements, and the transatlantic divide.",
+      "Metro pages gain a signature era, a distinctiveness and per-artist reading, and recent songs mature over two years so streaming-era staying power no longer eclipses a finished career.",
+    ],
+  },
+  {
     date: "2026-07-01",
     headline: "World Cup results now go live within the half-hour",
     items: [
