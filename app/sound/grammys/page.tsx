@@ -3,7 +3,7 @@ import path from 'path';
 import SoundNav from '../SoundNav';
 import GrammysView, { type Ceremony } from './GrammysView';
 
-export const metadata = { title: 'Grammy Big Four — Sound of the Metros' };
+export const metadata = { title: 'Awards History — Sound of the Metros' };
 
 interface HubData { meta: { note: string; years: string }; ceremonies: Ceremony[] }
 
@@ -15,10 +15,12 @@ export default async function GrammysPage() {
   return (
     <main className="mx-auto max-w-4xl px-4 py-8">
       <SoundNav />
-      <h1 className="text-2xl font-bold tracking-tight">Grammy Big Four</h1>
+      <h1 className="text-2xl font-bold tracking-tight">Awards History</h1>
       <p className="mt-1 mb-5 text-sm" style={muted}>
-        Every Album, Record, and Song of the Year and Best New Artist nominee, {data.meta.years}. Winners in gold; artist
-        names link to their Sound of the Metros profile where we track them. This is the prestige signal behind the{' '}
+        Music-award winners and nominees by year: the Grammy General Field (Album, Record and Song of the Year plus Best
+        New Artist) shown in full, alongside the major-category winners of the BRIT, American Music, MTV Video Music, MTV
+        Europe Music, ARIA and Juno awards. Grammy winners are in gold, other awards shown beneath as a lesser tier.
+        Artist names link to their profile where we track them. This is the prestige signal behind the{' '}
         <a href="/sound/artists" className="underline hover:text-[var(--accent)]">artist rankings</a>.
       </p>
       <GrammysView ceremonies={data.ceremonies} />

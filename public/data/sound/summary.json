@@ -1,9 +1,9 @@
 {
  "generated": "2026-07-02",
- "weighting": "combined = 3*US + UK + 0.45*Albums + 1.0*Grammy prestige (US/UK era-normalized to 100/chart-yr; album_raw = Total EAS millions; prestige = Big Four wins*3 + noms, split among co-credits, BNA*0.8)",
- "metros": 210,
- "attributed_artists": 2461,
+ "weighting": "combined = 3*US + UK + 0.6*Albums + 2.4x Grammy prestige (US/UK era-normalized to 40/chart-yr; album_raw = Total EAS millions; prestige = Big Four wins*3 + noms, split among co-credits; Album/Record of the Year x1.5, Song x1.0, Best New Artist x0.7)",
+ "metros": 215,
+ "attributed_artists": 2577,
  "billboard_singles": 5296,
- "uk_singles_since_1958": 8688,
+ "uk_singles_since_1958": 8687,
  "scoring": "per single raw=(11-peak)*sqrt(weeks); era-normalized to 100 pts/chart-year; collab score split equally among credited artists"
 }

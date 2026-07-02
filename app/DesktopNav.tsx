@@ -268,11 +268,13 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
       <Dropdown id="sound" label="Sound" openId={openId} setOpenId={setOpenId}>
         <DropdownItem href="/sound" title="The Sound of the Metros →" />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
-        <DropdownItem href="/sound/rankings" title="Rankings" />
+        <DropdownItem href="/sound/rankings" title="Rankings by Metro" />
         <DropdownItem href="/sound/artists" title="Artists" />
         <DropdownItem href="/sound/decades" title="Decades" />
         <DropdownItem href="/sound/scenes" title="Scenes" />
         <DropdownItem href="/sound/velvet-rock" title="Velvet Rock" />
+        <DropdownItem href="/sound/grammys" title="Awards History" />
+        <DropdownItem href="/sound/rolling-stone-500" title="RS 500 Greatest Albums" />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
         <DropdownItem href="/sound/number-ones" title="Number-One Machines" />
         <DropdownItem href="/sound/reigns" title="Longest Reigns" />

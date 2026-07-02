@@ -10531,7 +10531,7 @@
  },
  "liverpool": {
   "metro": "Liverpool",
-  "count": 72,
+  "count": 69,
   "number_ones": [
    {
     "single": "Starry Eyed",
@@ -10792,22 +10792,10 @@
     "year": 1973
    },
    {
-    "single": "My Love",
-    "artist": "Paul McCartney",
-    "charts": "US",
-    "year": 1973
-   },
-   {
     "single": "Photograph",
     "artist": "Ringo Starr",
     "charts": "US",
     "year": 1973
-   },
-   {
-    "single": "Band on the Run",
-    "artist": "Paul McCartney",
-    "charts": "US",
-    "year": 1974
    },
    {
     "single": "Whatever Gets You thru the Night",
@@ -10820,12 +10808,6 @@
     "artist": "Ringo Starr",
     "charts": "US",
     "year": 1974
-   },
-   {
-    "single": "Listen to What the Man Said",
-    "artist": "Paul McCartney",
-    "charts": "US",
-    "year": 1975
    },
    {
     "single": "You to Me Are Everything",
@@ -11027,7 +11009,7 @@
    },
    {
     "single": "Call My Name",
-    "artist": "Cheryl",
+    "artist": "Cheryl Cole",
     "charts": "UK",
     "year": 2012
    },
@@ -11051,7 +11033,7 @@
    },
    {
     "single": "I Don't Care",
-    "artist": "Cheryl",
+    "artist": "Cheryl Cole",
     "charts": "UK",
     "year": 2014
    },

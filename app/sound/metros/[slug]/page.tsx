@@ -116,7 +116,7 @@ export default async function MetroProfile({ params }: { params: Promise<{ slug:
             <ol className="space-y-1 text-sm">
               {m.top_artists.slice(0, 15).map((a, i) => (
                 <li key={a.slug + a.name} className="flex justify-between gap-2">
-                  <span className="truncate"><span className="mr-1 text-xs tabular-nums" style={muted}>{i + 1}</span>{a.name}</span>
+                  <span className="truncate"><span className="mr-1 text-xs tabular-nums" style={muted}>{i + 1}</span><Link href={`/sound/artists/${a.slug}`} className="hover:underline">{a.name}</Link></span>
                   <span className="tabular-nums" style={muted}>{a.combined}</span>
                 </li>
               ))}

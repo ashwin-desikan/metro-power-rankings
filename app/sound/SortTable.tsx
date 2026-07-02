@@ -70,7 +70,7 @@ export default function SortTable({
                 else if (c.kind === 'artist') { const sl = (r[c.slugKey || 'slug'] as string) || aslug(String(v)); cell = <a href={`/sound/artists/${sl}`} className="hover:underline">{v as ReactNode}</a>; }
                 else if (c.kind === 'metro') { const ms = r[c.metroSlugKey || 'metro_slug'] as string; cell = v ? (<><a href={`/rankings/${ms}`} className="hover:underline">{v as ReactNode}</a><a href={`/sound/metros/${ms}`} title="Sound profile" className="ml-1 align-middle text-xs" style={muted}>&#9834;</a></>) : ''; }
                 else if (c.kind === 'with') { const arr = (v as string[]) || []; cell = arr.length ? arr.map((n, j) => <span key={j}>{j > 0 ? ', ' : ''}<a href={`/sound/artists/${aslug(n)}`} className="hover:underline">{n}</a></span>) : <span style={muted}>—</span>; }
-                else if (c.kind === 'grammy') { cell = v ? <span style={{ color: '#e8c766' }}>★ {v as ReactNode}</span> : <span style={muted}>—</span>; style = undefined; }
+                else if (c.kind === 'grammy') { const won = !!r['grammy_won']; cell = v ? <span style={{ color: won ? '#e8c766' : 'var(--text-muted)' }}>{won ? '★' : '☆'} {v as ReactNode}</span> : <span style={muted}>—</span>; style = undefined; }
                 return (
                   <td key={c.key} className={`py-1.5 pr-3 ${c.align === 'right' ? 'text-right tabular-nums' : ''} ${c.bold ? 'font-semibold tabular-nums' : ''}`} style={style}>{cell}</td>
                 );

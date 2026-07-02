@@ -34,6 +34,7 @@ export interface ByPeriod {
 
 type SortKey = 'combined' | 'bb_score' | 'uk_score' | 'album_raw' | 'prestige';
 const muted = { color: 'var(--text-muted)' } as const;
+const d1 = (x?: number) => (x ? x.toFixed(2) : '');
 
 export default function ArtistsTable({ artists, byPeriod }: { artists: ArtistRow[]; byPeriod?: ByPeriod }) {
   const [q, setQ] = useSessionState('mpr.sound.art.q', '');
@@ -158,13 +159,13 @@ export default function ArtistsTable({ artists, byPeriod }: { artists: ArtistRow
                 <td className="py-1.5 pr-3" style={muted}>{a.metro_slug ? (<><a href={`/rankings/${a.metro_slug}`} className="hover:underline">{a.metro}</a><a href={`/sound/metros/${a.metro_slug}`} title="Sound profile" className="ml-1 align-middle text-xs" style={{ color: 'var(--text-muted)' }}>&#9834;</a></>) : ''}</td>
                 <td className="py-1.5 pr-3 text-right tabular-nums" style={muted}>{a.bb_no1 || ''}</td>
                 <td className="py-1.5 pr-3 text-right tabular-nums" style={muted}>{a.bb_top10 || ''}</td>
-                <td className="py-1.5 pr-3 text-right tabular-nums">{a.bb_score || ''}</td>
+                <td className="py-1.5 pr-3 text-right tabular-nums">{d1(a.bb_score)}</td>
                 <td className="py-1.5 pr-3 text-right tabular-nums" style={muted}>{a.uk_no1 || ''}</td>
                 <td className="py-1.5 pr-3 text-right tabular-nums" style={muted}>{a.uk_top10 || ''}</td>
-                <td className="py-1.5 pr-3 text-right tabular-nums">{a.uk_score || ''}</td>
-                {!period && <td className="py-1.5 pr-3 text-right tabular-nums" style={muted}>{a.album_raw || ''}</td>}
-                {!period && <td className="py-1.5 pr-3 text-right tabular-nums" style={{ color: a.gram_wins ? '#e8c766' : 'var(--text-muted)' }}>{a.prestige || ''}</td>}
-                <td className="py-1.5 pr-3 text-right tabular-nums font-semibold">{a.combined}</td>
+                <td className="py-1.5 pr-3 text-right tabular-nums">{d1(a.uk_score)}</td>
+                {!period && <td className="py-1.5 pr-3 text-right tabular-nums" style={muted}>{a.album_raw ? `${a.album_raw}M` : ''}</td>}
+                {!period && <td className="py-1.5 pr-3 text-right tabular-nums" style={{ color: a.gram_wins ? '#e8c766' : 'var(--text-muted)' }}>{d1(a.prestige)}</td>}
+                <td className="py-1.5 pr-3 text-right tabular-nums font-semibold">{a.combined.toFixed(2)}</td>
                 {!period && <td className="py-1.5 pr-3" style={muted}>{a.peak_decade}</td>}
               </tr>
             ))}

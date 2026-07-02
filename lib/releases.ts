@@ -24,7 +24,7 @@ export const RELEASES: Release[] = [
       "A new Sound of the Metros hub ranks cities by their artists' chart success on the US Billboard and UK top ten since 1958, blended with worldwide album sales and tied to every metro on the map.",
       "It spans three lenses, artist profiles with per-single billing, decade and year filters, scenes, number-one machines, longest reigns, chart disagreements, and the transatlantic divide.",
       "Metro pages gain a signature era, a distinctiveness and per-artist reading, and recent songs mature over two years so streaming-era staying power no longer eclipses a finished career.",
-      "Artists now carry Grammy prestige: Big Four wins and nominations since 1959 lift the rankings, a new Grammys hub tracks every winner and nominee by year, and gold badges mark each artist's honours.",
+      "Artist rankings now blend Grammy prestige with the BRIT, American Music, MTV Video and Europe, ARIA and Juno awards and Rolling Stone's 500 Greatest Albums, shown in an Awards History hub with per-artist badges.",
     ],
   },
   {

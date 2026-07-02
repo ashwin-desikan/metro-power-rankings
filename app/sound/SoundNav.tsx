@@ -5,11 +5,12 @@ import { usePathname } from 'next/navigation';
 
 const TABS: [string, string][] = [
   ['/sound', 'Hub'],
-  ['/sound/rankings', 'Rankings'],
+  ['/sound/rankings', 'Rankings by Metro'],
   ['/sound/artists', 'Artists'],
-  ['/sound/grammys', 'Grammys'],
+  ['/sound/grammys', 'Awards History'],
   ['/sound/decades', 'Decades'],
   ['/sound/scenes', 'Scenes'],
+  ['/sound/rolling-stone-500', 'RS 500'],
   ['/sound/velvet-rock', 'Velvet Rock'],
 ];
 

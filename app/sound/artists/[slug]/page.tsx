@@ -4,14 +4,17 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import SoundNav from '../../SoundNav';
 import SortTable, { type Col } from '../../SortTable';
-import { GrammyBadges } from '../../GrammyBadges';
+import { BadgeRow } from '../../GrammyBadges';
 
-interface Song { single: string; chart: string; peak: number; year: number; weeks: number; credit?: string; grammy?: string }
+interface Song { single: string; chart: string; peak: number; year: number; weeks: number; credit?: string; grammy?: string; grammy_won?: boolean }
 interface Artist {
   name: string; slug: string; metro: string | null; metro_slug: string | null;
   bb_no1: number; bb_top10: number; uk_no1: number; uk_top10: number;
   combined: number; album_raw?: number; album_est?: boolean; active: string; peak_year?: number; songs: Song[];
-  prestige?: number; gram_wins?: number; gram_noms?: number; gram_awards?: { year: number; award: string; work?: string | null }[];
+  city?: string | null; prestige?: number; gram_wins?: number; gram_noms?: number;
+  gram_awards?: { year: number; award: string; work?: string | null }[]; gram_nom_awards?: { year: number; award: string; work?: string | null }[];
+  other_awards?: { award: string; year: number; category: string; work?: string | null }[];
+  rs_albums?: { rank: number; album: string }[];
 }
 
 async function readAll(): Promise<Record<string, Artist>> {
@@ -53,6 +56,7 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
         {a.metro && (
           <>
             From{' '}
+            {a.city ? <>{a.city}{' · '}</> : null}
             <Link href={`/rankings/${a.metro_slug}`} className="underline hover:text-[var(--accent)]">{a.metro}</Link>{' '}
             <Link href={`/sound/metros/${a.metro_slug}`} title="Sound profile">&#9834;</Link>
             {' · '}
@@ -60,10 +64,10 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
         )}
         active {a.active}{a.peak_year ? ` · peak ${a.peak_year}` : ''}
       </p>
-      <GrammyBadges awards={a.gram_awards} className="mt-3" />
+      <BadgeRow wins={a.gram_awards} noms={a.gram_nom_awards} others={a.other_awards} className="mt-3" />
       <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <div className="rounded-lg border p-3" style={{ borderColor: 'var(--border, #222b36)' }}>
-          <div className="text-xs" style={muted}>Combined</div><div className="text-lg font-bold tabular-nums">{a.combined}</div>
+          <div className="text-xs" style={muted}>Combined</div><div className="text-lg font-bold tabular-nums">{a.combined.toFixed(2)}</div>
         </div>
         <div className="rounded-lg border p-3" style={{ borderColor: 'var(--border, #222b36)' }}>
           <div className="text-xs" style={muted}>US #1 / Top 10</div><div className="text-lg font-bold tabular-nums">{a.bb_no1} / {a.bb_top10}</div>
@@ -73,17 +77,32 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
         </div>
         {a.album_raw ? (
           <div className="rounded-lg border p-3" style={{ borderColor: 'var(--border, #222b36)' }}>
-            <div className="text-xs" style={muted}>Album sales (M){a.album_est ? ' (est.)' : ''}</div><div className="text-lg font-bold tabular-nums">{a.album_raw}</div>
+            <div className="text-xs" style={muted}>Album sales{a.album_est ? ' (est.)' : ''}</div><div className="text-lg font-bold tabular-nums">{a.album_raw}M</div>
           </div>
         ) : null}
         {a.prestige ? (
           <div className="rounded-lg border p-3" style={{ borderColor: 'rgba(212,175,55,0.4)' }}>
-            <div className="text-xs" style={muted}>Grammy prestige</div><div className="text-lg font-bold tabular-nums" style={{ color: '#e8c766' }}>{a.prestige}</div>
+            <div className="text-xs" style={muted}>Grammy prestige</div><div className="text-lg font-bold tabular-nums" style={{ color: '#e8c766' }}>{a.prestige?.toFixed(2)}</div>
           </div>
         ) : null}
       </div>
+      {a.rs_albums && a.rs_albums.length > 0 ? (
+        <section className="mt-8">
+          <h2 className="mb-2 text-sm font-bold uppercase tracking-wide" style={{ color: '#e08a8a' }}>
+            On <a href="/sound/rolling-stone-500" className="hover:underline">Rolling Stone&rsquo;s 500 Greatest Albums</a> ({a.rs_albums.length})
+          </h2>
+          <ol className="space-y-1 text-sm">
+            {a.rs_albums.map((x) => (
+              <li key={x.rank} className="flex gap-3">
+                <span className="tabular-nums font-semibold" style={{ color: '#e08a8a', minWidth: '2.5rem' }}>#{x.rank}</span>
+                <span>{x.album}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ) : null}
       <h2 className="mt-6 mb-2 text-sm font-bold uppercase tracking-wide" style={muted}>Top-ten singles ({a.songs.length})</h2>
-      <SortTable rows={a.songs as unknown as Record<string, unknown>[]} cols={songCols} initialSort="peak" initialDir="asc" />
+      <SortTable rows={a.songs as unknown as Record<string, unknown>[]} cols={songCols} initialSort="year" initialDir="desc" />
     </main>
   );
 }

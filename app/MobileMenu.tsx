@@ -119,11 +119,13 @@ function buildSections(): Section[] {
     {
       items: [
         { href: '/sound', label: 'The Sound of the Metros' },
-        { href: '/sound/rankings', label: 'Rankings' },
+        { href: '/sound/rankings', label: 'Rankings by Metro' },
         { href: '/sound/artists', label: 'Artists' },
         { href: '/sound/decades', label: 'Decades' },
         { href: '/sound/scenes', label: 'Scenes' },
         { href: '/sound/velvet-rock', label: 'Velvet Rock' },
+        { href: '/sound/grammys', label: 'Awards History' },
+        { href: '/sound/rolling-stone-500', label: 'RS 500 Greatest Albums' },
         { href: '/sound/number-ones', label: 'Number-One Machines' },
         { href: '/sound/reigns', label: 'Longest Reigns' },
         { href: '/sound/disagreements', label: 'Chart Disagreements' },
