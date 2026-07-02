@@ -640,9 +640,9 @@
    {
     "slug": "los-angeles",
     "metro": "Los Angeles",
-    "us": 117.9,
-    "uk": 58.4,
-    "combined": 412.2,
+    "us": 118.6,
+    "uk": 59.8,
+    "combined": 415.5,
     "rank": 3
    },
    {
@@ -689,8 +689,8 @@
     "slug": "atlanta",
     "metro": "Atlanta",
     "us": 23.2,
-    "uk": 10.1,
-    "combined": 79.8,
+    "uk": 10.7,
+    "combined": 80.4,
     "rank": 9
    },
    {
@@ -1260,17 +1260,17 @@
    {
     "slug": "new-york",
     "metro": "New York",
-    "us": 135.4,
+    "us": 136.6,
     "uk": 86.6,
-    "combined": 492.8,
+    "combined": 496.3,
     "rank": 2
    },
    {
     "slug": "los-angeles",
     "metro": "Los Angeles",
-    "us": 146.0,
+    "us": 147.2,
     "uk": 29.6,
-    "combined": 467.6,
+    "combined": 471.4,
     "rank": 3
    },
    {
@@ -1913,8 +1913,8 @@
     "slug": "chicago",
     "metro": "Chicago",
     "us": 61.4,
-    "uk": 27.8,
-    "combined": 212.1,
+    "uk": 28.1,
+    "combined": 212.3,
     "rank": 5
    },
    {
@@ -2508,9 +2508,9 @@
    {
     "slug": "new-york",
     "metro": "New York",
-    "us": 200.7,
+    "us": 202.1,
     "uk": 66.5,
-    "combined": 668.7,
+    "combined": 672.7,
     "rank": 1
    },
    {
@@ -2524,9 +2524,9 @@
    {
     "slug": "los-angeles",
     "metro": "Los Angeles",
-    "us": 115.0,
+    "us": 115.9,
     "uk": 46.0,
-    "combined": 390.9,
+    "combined": 393.7,
     "rank": 3
    },
    {
@@ -2580,9 +2580,9 @@
    {
     "slug": "boston",
     "metro": "Boston",
-    "us": 21.3,
+    "us": 21.9,
     "uk": 9.3,
-    "combined": 73.2,
+    "combined": 75.1,
     "rank": 10
    },
    {

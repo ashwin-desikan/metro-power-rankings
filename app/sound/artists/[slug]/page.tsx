@@ -4,12 +4,14 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import SoundNav from '../../SoundNav';
 import SortTable, { type Col } from '../../SortTable';
+import { GrammyBadges } from '../../GrammyBadges';
 
-interface Song { single: string; chart: string; peak: number; year: number; weeks: number; credit?: string }
+interface Song { single: string; chart: string; peak: number; year: number; weeks: number; credit?: string; grammy?: string }
 interface Artist {
   name: string; slug: string; metro: string | null; metro_slug: string | null;
   bb_no1: number; bb_top10: number; uk_no1: number; uk_top10: number;
   combined: number; album_raw?: number; album_est?: boolean; active: string; peak_year?: number; songs: Song[];
+  prestige?: number; gram_wins?: number; gram_noms?: number; gram_awards?: { year: number; award: string; work?: string | null }[];
 }
 
 async function readAll(): Promise<Record<string, Artist>> {
@@ -38,6 +40,8 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
   const { slug } = await params;
   const a = (await readAll())[slug];
   if (!a) notFound();
+  const hasGrammy = a.songs.some((s) => s.grammy);
+  const songCols: Col[] = hasGrammy ? [...SONG_COLS, { key: 'grammy', label: 'Grammy', kind: 'grammy' }] : SONG_COLS;
   return (
     <main className="mx-auto max-w-3xl px-4 py-8">
       <SoundNav />
@@ -56,6 +60,7 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
         )}
         active {a.active}{a.peak_year ? ` · peak ${a.peak_year}` : ''}
       </p>
+      <GrammyBadges awards={a.gram_awards} className="mt-3" />
       <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <div className="rounded-lg border p-3" style={{ borderColor: 'var(--border, #222b36)' }}>
           <div className="text-xs" style={muted}>Combined</div><div className="text-lg font-bold tabular-nums">{a.combined}</div>
@@ -71,9 +76,14 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
             <div className="text-xs" style={muted}>Album sales (M){a.album_est ? ' (est.)' : ''}</div><div className="text-lg font-bold tabular-nums">{a.album_raw}</div>
           </div>
         ) : null}
+        {a.prestige ? (
+          <div className="rounded-lg border p-3" style={{ borderColor: 'rgba(212,175,55,0.4)' }}>
+            <div className="text-xs" style={muted}>Grammy prestige</div><div className="text-lg font-bold tabular-nums" style={{ color: '#e8c766' }}>{a.prestige}</div>
+          </div>
+        ) : null}
       </div>
       <h2 className="mt-6 mb-2 text-sm font-bold uppercase tracking-wide" style={muted}>Top-ten singles ({a.songs.length})</h2>
-      <SortTable rows={a.songs as unknown as Record<string, unknown>[]} cols={SONG_COLS} initialSort="peak" initialDir="asc" />
+      <SortTable rows={a.songs as unknown as Record<string, unknown>[]} cols={songCols} initialSort="peak" initialDir="asc" />
     </main>
   );
 }

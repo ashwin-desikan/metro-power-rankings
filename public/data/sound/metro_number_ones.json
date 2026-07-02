@@ -1315,7 +1315,7 @@
  },
  "new-york": {
   "metro": "New York",
-  "count": 284,
+  "count": 285,
   "number_ones": [
    {
     "single": "Little Star",
@@ -2282,6 +2282,12 @@
     "artist": "Charles & Eddie",
     "charts": "UK",
     "year": 1992
+   },
+   {
+    "single": "A Whole New World (Aladdin's Theme)",
+    "artist": "Regina Belle",
+    "charts": "US",
+    "year": 1993
    },
    {
     "single": "Dreamlover",

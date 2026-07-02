@@ -2,6 +2,7 @@
 
 import { useMemo } from 'react';
 import { useSessionState } from '@/lib/useSessionState';
+import { GrammyChip } from '../GrammyBadges';
 
 export interface ArtistRow {
   name: string;
@@ -19,6 +20,10 @@ export interface ArtistRow {
   uk_no1: number;
   uk_score: number;
   album_raw?: number;
+  prestige?: number;
+  gram_wins?: number;
+  gram_noms?: number;
+  gram_awards?: { year: number; award: string; work?: string | null }[];
   combined: number;
 }
 
@@ -27,7 +32,7 @@ export interface ByPeriod {
   years: Record<string, ArtistRow[]>;
 }
 
-type SortKey = 'combined' | 'bb_score' | 'uk_score' | 'album_raw';
+type SortKey = 'combined' | 'bb_score' | 'uk_score' | 'album_raw' | 'prestige';
 const muted = { color: 'var(--text-muted)' } as const;
 
 export default function ArtistsTable({ artists, byPeriod }: { artists: ArtistRow[]; byPeriod?: ByPeriod }) {
@@ -140,6 +145,7 @@ export default function ArtistsTable({ artists, byPeriod }: { artists: ArtistRow
               <th className="py-2 pr-3 text-right" style={muted}>UK T10</th>
               <Th k="uk_score" label="UK score" />
               {!period && <Th k="album_raw" label="Albums" />}
+              {!period && <Th k="prestige" label="★" />}
               <Th k="combined" label="Combined" />
               {!period && <th className="py-2 pr-3" style={muted}>Peak</th>}
             </tr>
@@ -148,7 +154,7 @@ export default function ArtistsTable({ artists, byPeriod }: { artists: ArtistRow
             {rows.map((a, i) => (
               <tr key={a.slug + a.name} className="border-t" style={{ borderColor: 'var(--border, #1b2330)' }}>
                 <td className="py-1.5 pr-3 text-right tabular-nums" style={muted}>{i + 1}</td>
-                <td className="py-1.5 pr-3"><a href={`/sound/artists/${a.slug}`} className="hover:underline">{a.name}</a></td>
+                <td className="py-1.5 pr-3"><a href={`/sound/artists/${a.slug}`} className="hover:underline">{a.name}</a><GrammyChip wins={a.gram_wins} noms={a.gram_noms} /></td>
                 <td className="py-1.5 pr-3" style={muted}>{a.metro_slug ? (<><a href={`/rankings/${a.metro_slug}`} className="hover:underline">{a.metro}</a><a href={`/sound/metros/${a.metro_slug}`} title="Sound profile" className="ml-1 align-middle text-xs" style={{ color: 'var(--text-muted)' }}>&#9834;</a></>) : ''}</td>
                 <td className="py-1.5 pr-3 text-right tabular-nums" style={muted}>{a.bb_no1 || ''}</td>
                 <td className="py-1.5 pr-3 text-right tabular-nums" style={muted}>{a.bb_top10 || ''}</td>
@@ -157,6 +163,7 @@ export default function ArtistsTable({ artists, byPeriod }: { artists: ArtistRow
                 <td className="py-1.5 pr-3 text-right tabular-nums" style={muted}>{a.uk_top10 || ''}</td>
                 <td className="py-1.5 pr-3 text-right tabular-nums">{a.uk_score || ''}</td>
                 {!period && <td className="py-1.5 pr-3 text-right tabular-nums" style={muted}>{a.album_raw || ''}</td>}
+                {!period && <td className="py-1.5 pr-3 text-right tabular-nums" style={{ color: a.gram_wins ? '#e8c766' : 'var(--text-muted)' }}>{a.prestige || ''}</td>}
                 <td className="py-1.5 pr-3 text-right tabular-nums font-semibold">{a.combined}</td>
                 {!period && <td className="py-1.5 pr-3" style={muted}>{a.peak_decade}</td>}
               </tr>

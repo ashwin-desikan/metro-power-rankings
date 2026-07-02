@@ -7,6 +7,7 @@ const TABS: [string, string][] = [
   ['/sound', 'Hub'],
   ['/sound/rankings', 'Rankings'],
   ['/sound/artists', 'Artists'],
+  ['/sound/grammys', 'Grammys'],
   ['/sound/decades', 'Decades'],
   ['/sound/scenes', 'Scenes'],
   ['/sound/velvet-rock', 'Velvet Rock'],
