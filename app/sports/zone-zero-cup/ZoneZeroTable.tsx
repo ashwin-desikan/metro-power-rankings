@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { flagCdnUrl } from "@/lib/international-display";
 import { Fragment, useMemo, useState } from "react";
 
 // Interactive Zone Zero Cup table. Plain serializable rows come from the server
@@ -356,6 +357,7 @@ export default function ZoneZeroTable({
                   </td>
                   <td className="py-2 px-3 align-top">
                     <div className="font-medium text-sm leading-tight">
+                      {flagCdnUrl(r.slug) ? <img src={flagCdnUrl(r.slug)!} alt="" width={20} height={15} className="inline-block rounded-[2px] mr-1.5 align-[-2px]" style={{ objectFit: "cover" }} /> : null}
                       {r.countrySlug ? (
                         <Link href={`/countries/${r.countrySlug}`} className="hover:text-[var(--accent)] hover:underline">
                           {r.name}

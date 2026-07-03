@@ -12,6 +12,8 @@ export const metadata = {
   description: 'Every attributed artist with hometown metro and per-chart top-ten record, 1958 to 2026.',
 };
 
+import IndexSwitcher from "@/app/IndexSwitcher";
+
 export default async function SoundArtistsPage() {
   const [artists, byPeriod] = await Promise.all([
     j<ArtistRow[]>('artists.json'),
@@ -19,6 +21,7 @@ export default async function SoundArtistsPage() {
   ]);
   return (
     <main className="mx-auto max-w-5xl px-4 py-8">
+      <div className="mb-4"><IndexSwitcher current="artists" /></div>
       <SoundNav />
       <header className="mb-5">
         <h1 className="text-2xl font-bold tracking-tight">Artists</h1>

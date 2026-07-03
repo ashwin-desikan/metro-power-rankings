@@ -9547,6 +9547,46 @@
   "peak_decade": "2000s"
  },
  {
+  "name": "Eurythmics",
+  "slug": "eurythmics",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "London",
+  "confidence": "Review",
+  "bb_top10": 3,
+  "bb_no1": 1,
+  "bb_score": 1.7,
+  "uk_top10": 9,
+  "uk_no1": 1,
+  "uk_score": 2.5,
+  "album_raw": 75.0,
+  "album_est": true,
+  "prestige": 1.2,
+  "gram_wins": 0,
+  "gram_noms": 1,
+  "gram_awards": [],
+  "gram_nom_awards": [
+   {
+    "year": 1984,
+    "award": "Best New Artist",
+    "work": null
+   }
+  ],
+  "other_awards": [
+   {
+    "award": "VMA",
+    "year": 1984,
+    "category": "Best New Artist",
+    "work": null
+   }
+  ],
+  "rs_albums": [],
+  "combined": 55.48,
+  "active": "1983-1986",
+  "peak_decade": "1980s"
+ },
+ {
   "name": "Mary J. Blige",
   "slug": "mary-j-blige",
   "metro": "New York",
@@ -9922,6 +9962,33 @@
   "combined": 54.16,
   "active": "2002-2007",
   "peak_decade": "2000s"
+ },
+ {
+  "name": "Kool & the Gang",
+  "slug": "kool-and-the-gang",
+  "metro": "New York",
+  "metro_slug": "new-york",
+  "country": "USA",
+  "city_of_origin": "Jersey City, NJ",
+  "confidence": "High",
+  "bb_top10": 12,
+  "bb_no1": 1,
+  "bb_score": 3.35,
+  "uk_top10": 9,
+  "uk_no1": 0,
+  "uk_score": 1.89,
+  "album_raw": 70.0,
+  "album_est": true,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 53.92,
+  "active": "1974-2003",
+  "peak_decade": "1980s"
  },
  {
   "name": "Christopher Cross",
@@ -11254,6 +11321,49 @@
   "peak_decade": "2000s"
  },
  {
+  "name": "Don McLean",
+  "slug": "don-mclean",
+  "metro": "New York",
+  "metro_slug": "new-york",
+  "country": "USA",
+  "city_of_origin": "New Rochelle, New York",
+  "confidence": "High",
+  "bb_top10": 2,
+  "bb_no1": 1,
+  "bb_score": 1.34,
+  "uk_top10": 3,
+  "uk_no1": 2,
+  "uk_score": 1.85,
+  "album_raw": 50.0,
+  "album_est": true,
+  "prestige": 4.0,
+  "gram_wins": 0,
+  "gram_noms": 3,
+  "gram_awards": [],
+  "gram_nom_awards": [
+   {
+    "year": 1973,
+    "award": "Album of the Year",
+    "work": "American Pie"
+   },
+   {
+    "year": 1973,
+    "award": "Record of the Year",
+    "work": "American Pie"
+   },
+   {
+    "year": 1973,
+    "award": "Song of the Year",
+    "work": "American Pie"
+   }
+  ],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 45.48,
+  "active": "1971-1981",
+  "peak_decade": "1970s"
+ },
+ {
   "name": "Steely Dan",
   "slug": "steely-dan",
   "metro": "New York",
@@ -11305,6 +11415,33 @@
   "combined": 45.45,
   "active": "1973-1981",
   "peak_decade": "1970s"
+ },
+ {
+  "name": "Taio Cruz",
+  "slug": "taio-cruz",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "London",
+  "confidence": "High",
+  "bb_top10": 2,
+  "bb_no1": 1,
+  "bb_score": 1.94,
+  "uk_top10": 9,
+  "uk_no1": 2,
+  "uk_score": 2.19,
+  "album_raw": 62.0,
+  "album_est": true,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 45.19,
+  "active": "2008-2012",
+  "peak_decade": "2010s"
  },
  {
   "name": "Kelly Clarkson",
@@ -12339,6 +12476,33 @@
   "peak_decade": "1980s"
  },
  {
+  "name": "The Dave Clark Five",
+  "slug": "the-dave-clark-five",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "London",
+  "confidence": "High",
+  "bb_top10": 8,
+  "bb_no1": 1,
+  "bb_score": 2.85,
+  "uk_top10": 8,
+  "uk_no1": 1,
+  "uk_score": 2.74,
+  "album_raw": 50.0,
+  "album_est": true,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 41.28,
+  "active": "1963-1970",
+  "peak_decade": "1960s"
+ },
+ {
   "name": "UB40",
   "slug": "ub40",
   "metro": "Birmingham",
@@ -12635,6 +12799,72 @@
   "rs_albums": [],
   "combined": 40.69,
   "active": "1966-1968",
+  "peak_decade": "1960s"
+ },
+ {
+  "name": "Dion",
+  "slug": "dion",
+  "metro": "New York",
+  "metro_slug": "new-york",
+  "country": "USA",
+  "city_of_origin": "New York, New York",
+  "confidence": "High",
+  "bb_top10": 9,
+  "bb_no1": 1,
+  "bb_score": 3.51,
+  "uk_top10": 1,
+  "uk_no1": 0,
+  "uk_score": 0.03,
+  "album_raw": 50.0,
+  "album_est": true,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 40.56,
+  "active": "1961-1968",
+  "peak_decade": "1960s"
+ },
+ {
+  "name": "Jos\u00e9 Feliciano",
+  "slug": "jos-feliciano",
+  "metro": "New York",
+  "metro_slug": "new-york",
+  "country": "USA",
+  "city_of_origin": "",
+  "confidence": "Review",
+  "bb_top10": 1,
+  "bb_no1": 0,
+  "bb_score": 0.55,
+  "uk_top10": 1,
+  "uk_no1": 0,
+  "uk_score": 0.28,
+  "album_raw": 50.0,
+  "album_est": true,
+  "prestige": 3.6,
+  "gram_wins": 1,
+  "gram_noms": 1,
+  "gram_awards": [
+   {
+    "year": 1969,
+    "award": "Best New Artist",
+    "work": null
+   }
+  ],
+  "gram_nom_awards": [
+   {
+    "year": 1969,
+    "award": "Album of the Year",
+    "work": "Feliciano!"
+   }
+  ],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 40.56,
+  "active": "1968-1968",
   "peak_decade": "1960s"
  },
  {
@@ -13228,6 +13458,39 @@
   "peak_decade": "1960s"
  },
  {
+  "name": "Neil Sedaka",
+  "slug": "neil-sedaka",
+  "metro": "New York",
+  "metro_slug": "new-york",
+  "country": "USA",
+  "city_of_origin": "New York, NY",
+  "confidence": "High",
+  "bb_top10": 9,
+  "bb_no1": 3,
+  "bb_score": 3.12,
+  "uk_top10": 7,
+  "uk_no1": 0,
+  "uk_score": 2.1,
+  "album_raw": 40.0,
+  "album_est": true,
+  "prestige": 1.0,
+  "gram_wins": 0,
+  "gram_noms": 1,
+  "gram_awards": [],
+  "gram_nom_awards": [
+   {
+    "year": 1977,
+    "award": "Song of the Year",
+    "work": "Breaking Up Is Hard to Do"
+   }
+  ],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 37.85,
+  "active": "1959-1976",
+  "peak_decade": "1960s"
+ },
+ {
   "name": "Lil Wayne",
   "slug": "lil-wayne",
   "metro": "New Orleans",
@@ -13308,6 +13571,44 @@
   "combined": 37.76,
   "active": "1982-1998",
   "peak_decade": "1980s"
+ },
+ {
+  "name": "Gilbert O'Sullivan",
+  "slug": "gilbert-o-sullivan",
+  "metro": "Swindon",
+  "metro_slug": "swindon",
+  "country": "UK",
+  "city_of_origin": "Swindon, England",
+  "confidence": "High",
+  "bb_top10": 3,
+  "bb_no1": 1,
+  "bb_score": 1.62,
+  "uk_top10": 7,
+  "uk_no1": 2,
+  "uk_score": 2.59,
+  "album_raw": 40.0,
+  "album_est": true,
+  "prestige": 2.5,
+  "gram_wins": 0,
+  "gram_noms": 2,
+  "gram_awards": [],
+  "gram_nom_awards": [
+   {
+    "year": 1973,
+    "award": "Record of the Year",
+    "work": "Alone Again (Naturally)"
+   },
+   {
+    "year": 1973,
+    "award": "Song of the Year",
+    "work": "Alone Again (Naturally)"
+   }
+  ],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 37.44,
+  "active": "1970-1973",
+  "peak_decade": "1970s"
  },
  {
   "name": "The Four Seasons",
@@ -13474,6 +13775,39 @@
   "peak_decade": "2010s"
  },
  {
+  "name": "SWV",
+  "slug": "swv",
+  "metro": "New York",
+  "metro_slug": "new-york",
+  "country": "USA",
+  "city_of_origin": "New York, NY",
+  "confidence": "High",
+  "bb_top10": 4,
+  "bb_no1": 1,
+  "bb_score": 3.46,
+  "uk_top10": 1,
+  "uk_no1": 0,
+  "uk_score": 0.5,
+  "album_raw": 40.0,
+  "album_est": true,
+  "prestige": 0.7,
+  "gram_wins": 0,
+  "gram_noms": 1,
+  "gram_awards": [],
+  "gram_nom_awards": [
+   {
+    "year": 1994,
+    "award": "Best New Artist",
+    "work": null
+   }
+  ],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 36.55,
+  "active": "1993-1996",
+  "peak_decade": "1990s"
+ },
+ {
   "name": "Electric Light Orchestra",
   "slug": "electric-light-orchestra",
   "metro": "Birmingham",
@@ -13532,6 +13866,67 @@
   "combined": 36.43,
   "active": "1993-1998",
   "peak_decade": "1990s"
+ },
+ {
+  "name": "Peter Gabriel",
+  "slug": "peter-gabriel",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "",
+  "confidence": "Auto",
+  "bb_top10": 2,
+  "bb_no1": 1,
+  "bb_score": 0.77,
+  "uk_top10": 4,
+  "uk_no1": 0,
+  "uk_score": 0.76,
+  "album_raw": 30.0,
+  "album_est": true,
+  "prestige": 6.38,
+  "gram_wins": 0,
+  "gram_noms": 3,
+  "gram_awards": [],
+  "gram_nom_awards": [
+   {
+    "year": 1987,
+    "award": "Album of the Year",
+    "work": "So"
+   },
+   {
+    "year": 1987,
+    "award": "Record of the Year",
+    "work": "Sledgehammer"
+   },
+   {
+    "year": 1987,
+    "award": "Song of the Year",
+    "work": "Sledgehammer"
+   }
+  ],
+  "other_awards": [
+   {
+    "award": "BRIT",
+    "year": 1987,
+    "category": "British Male Solo Artist",
+    "work": null
+   },
+   {
+    "award": "VMA",
+    "year": 1987,
+    "category": "Video of the Year",
+    "work": "Sledgehammer"
+   }
+  ],
+  "rs_albums": [
+   {
+    "rank": 297,
+    "album": "So"
+   }
+  ],
+  "combined": 36.38,
+  "active": "1980-1993",
+  "peak_decade": "1980s"
  },
  {
   "name": "Lady Antebellum",
@@ -14088,6 +14483,39 @@
   "rs_albums": [],
   "combined": 33.07,
   "active": "1980-1983",
+  "peak_decade": "1980s"
+ },
+ {
+  "name": "Rick Astley",
+  "slug": "rick-astley",
+  "metro": "Manchester",
+  "metro_slug": "manchester",
+  "country": "UK",
+  "city_of_origin": "Newton-le-Willows, England",
+  "confidence": "High",
+  "bb_top10": 5,
+  "bb_no1": 2,
+  "bb_score": 1.59,
+  "uk_top10": 8,
+  "uk_no1": 1,
+  "uk_score": 2.38,
+  "album_raw": 40.0,
+  "album_est": true,
+  "prestige": 0.7,
+  "gram_wins": 0,
+  "gram_noms": 1,
+  "gram_awards": [],
+  "gram_nom_awards": [
+   {
+    "year": 1989,
+    "award": "Best New Artist",
+    "work": null
+   }
+  ],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 32.82,
+  "active": "1987-1991",
   "peak_decade": "1980s"
  },
  {
@@ -14673,6 +15101,33 @@
   "peak_decade": "1990s"
  },
  {
+  "name": "Billy Ocean",
+  "slug": "billy-ocean",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "Trinidad / London",
+  "confidence": "Review",
+  "bb_top10": 7,
+  "bb_no1": 3,
+  "bb_score": 3.35,
+  "uk_top10": 6,
+  "uk_no1": 1,
+  "uk_score": 2.69,
+  "album_raw": 30.0,
+  "album_est": true,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 30.73,
+  "active": "1976-1988",
+  "peak_decade": "1980s"
+ },
+ {
   "name": "Mumford & Sons",
   "slug": "mumford-and-sons",
   "metro": "London",
@@ -14887,6 +15342,76 @@
   "combined": 30.2,
   "active": "1967-1976",
   "peak_decade": "1960s"
+ },
+ {
+  "name": "Billy Idol",
+  "slug": "billy-idol",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "London",
+  "confidence": "High",
+  "bb_top10": 4,
+  "bb_no1": 1,
+  "bb_score": 1.87,
+  "uk_top10": 3,
+  "uk_no1": 0,
+  "uk_score": 0.57,
+  "album_raw": 40.0,
+  "album_est": true,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 30.17,
+  "active": "1984-1990",
+  "peak_decade": "1980s"
+ },
+ {
+  "name": "Vanessa Williams",
+  "slug": "vanessa-williams",
+  "metro": "New York",
+  "metro_slug": "new-york",
+  "country": "USA",
+  "city_of_origin": "Millwood, NY",
+  "confidence": "High",
+  "bb_top10": 4,
+  "bb_no1": 1,
+  "bb_score": 2.29,
+  "uk_top10": 1,
+  "uk_no1": 0,
+  "uk_score": 0.39,
+  "album_raw": 25.0,
+  "album_est": true,
+  "prestige": 3.2,
+  "gram_wins": 0,
+  "gram_noms": 3,
+  "gram_awards": [],
+  "gram_nom_awards": [
+   {
+    "year": 1989,
+    "award": "Best New Artist",
+    "work": null
+   },
+   {
+    "year": 1993,
+    "award": "Record of the Year",
+    "work": "Save the Best for Last"
+   },
+   {
+    "year": 1993,
+    "award": "Song of the Year",
+    "work": "Save the Best for Last"
+   }
+  ],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 29.93,
+  "active": "1989-1995",
+  "peak_decade": "1990s"
  },
  {
   "name": "H.E.R.",
@@ -15285,6 +15810,84 @@
   "peak_decade": "1990s"
  },
  {
+  "name": "Gloria Gaynor",
+  "slug": "gloria-gaynor",
+  "metro": "New York",
+  "metro_slug": "new-york",
+  "country": "USA",
+  "city_of_origin": "Newark, New Jersey",
+  "confidence": "High",
+  "bb_top10": 2,
+  "bb_no1": 1,
+  "bb_score": 1.11,
+  "uk_top10": 3,
+  "uk_no1": 1,
+  "uk_score": 1.44,
+  "album_raw": 30.0,
+  "album_est": true,
+  "prestige": 2.5,
+  "gram_wins": 0,
+  "gram_noms": 2,
+  "gram_awards": [],
+  "gram_nom_awards": [
+   {
+    "year": 1980,
+    "award": "Record of the Year",
+    "work": "I Will Survive"
+   },
+   {
+    "year": 1980,
+    "award": "Song of the Year",
+    "work": "I Will Survive"
+   }
+  ],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 28.78,
+  "active": "1975-1993",
+  "peak_decade": "1970s"
+ },
+ {
+  "name": "The Clash",
+  "slug": "the-clash",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "",
+  "confidence": "High",
+  "bb_top10": 1,
+  "bb_no1": 0,
+  "bb_score": 0.2,
+  "uk_top10": 1,
+  "uk_no1": 1,
+  "uk_score": 0.53,
+  "album_raw": 30.0,
+  "album_est": true,
+  "prestige": 3.96,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [
+   {
+    "rank": 16,
+    "album": "London Calling"
+   },
+   {
+    "rank": 102,
+    "album": "The Clash"
+   },
+   {
+    "rank": 323,
+    "album": "Sandinista!"
+   }
+  ],
+  "combined": 28.64,
+  "active": "1983-1991",
+  "peak_decade": "1980s"
+ },
+ {
   "name": "Sean Paul",
   "slug": "sean-paul",
   "metro": "Kingston",
@@ -15668,6 +16271,38 @@
   "peak_decade": "1990s"
  },
  {
+  "name": "Dusty Springfield",
+  "slug": "dusty-springfield",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "",
+  "confidence": "High",
+  "bb_top10": 4,
+  "bb_no1": 0,
+  "bb_score": 0.92,
+  "uk_top10": 11,
+  "uk_no1": 1,
+  "uk_score": 2.68,
+  "album_raw": 30.0,
+  "album_est": true,
+  "prestige": 1.8,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [
+   {
+    "rank": 83,
+    "album": "Dusty in Memphis"
+   }
+  ],
+  "combined": 27.77,
+  "active": "1963-1988",
+  "peak_decade": "1960s"
+ },
+ {
   "name": "James Blunt",
   "slug": "james-blunt",
   "metro": "London",
@@ -15877,6 +16512,45 @@
   "peak_decade": "1980s"
  },
  {
+  "name": "Kate Bush",
+  "slug": "kate-bush",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "London",
+  "confidence": "High",
+  "bb_top10": 1,
+  "bb_no1": 0,
+  "bb_score": 1.05,
+  "uk_top10": 9,
+  "uk_no1": 2,
+  "uk_score": 2.83,
+  "album_raw": 25.0,
+  "album_est": true,
+  "prestige": 2.6,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [
+   {
+    "award": "BRIT",
+    "year": 1987,
+    "category": "British Female Solo Artist",
+    "work": null
+   }
+  ],
+  "rs_albums": [
+   {
+    "rank": 68,
+    "album": "Hounds of Love"
+   }
+  ],
+  "combined": 27.22,
+  "active": "1978-2022",
+  "peak_decade": "1970s"
+ },
+ {
   "name": "Little Mix",
   "slug": "little-mix",
   "metro": "Newcastle",
@@ -15942,6 +16616,46 @@
   "combined": 27.03,
   "active": "1959-1976",
   "peak_decade": "1950s"
+ },
+ {
+  "name": "Mark Ronson",
+  "slug": "mark-ronson",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "London",
+  "confidence": "Review",
+  "bb_top10": 1,
+  "bb_no1": 1,
+  "bb_score": 1.0,
+  "uk_top10": 5,
+  "uk_no1": 1,
+  "uk_score": 1.52,
+  "album_raw": 25.0,
+  "album_est": true,
+  "prestige": 3.05,
+  "gram_wins": 1,
+  "gram_noms": 0,
+  "gram_awards": [
+   {
+    "year": 2016,
+    "award": "Record of the Year",
+    "work": "Uptown Funk"
+   }
+  ],
+  "gram_nom_awards": [],
+  "other_awards": [
+   {
+    "award": "BRIT",
+    "year": 2008,
+    "category": "British Male Solo Artist",
+    "work": null
+   }
+  ],
+  "rs_albums": [],
+  "combined": 26.86,
+  "active": "2007-2018",
+  "peak_decade": "2010s"
  },
  {
   "name": "Akon",
@@ -16722,6 +17436,55 @@
   "peak_decade": "1960s"
  },
  {
+  "name": "John Mayer",
+  "slug": "john-mayer",
+  "metro": "New York",
+  "metro_slug": "new-york",
+  "country": "USA",
+  "city_of_origin": "Fairfield, CT",
+  "confidence": "Medium",
+  "bb_top10": 0,
+  "bb_no1": 0,
+  "bb_score": 0.0,
+  "uk_top10": 0,
+  "uk_no1": 0,
+  "uk_score": 0.0,
+  "album_raw": 20.0,
+  "album_est": true,
+  "prestige": 5.56,
+  "gram_wins": 1,
+  "gram_noms": 2,
+  "gram_awards": [
+   {
+    "year": 2005,
+    "award": "Song of the Year",
+    "work": "Daughters"
+   }
+  ],
+  "gram_nom_awards": [
+   {
+    "year": 2003,
+    "award": "Best New Artist",
+    "work": null
+   },
+   {
+    "year": 2007,
+    "award": "Album of the Year",
+    "work": "Continuum"
+   }
+  ],
+  "other_awards": [],
+  "rs_albums": [
+   {
+    "rank": 486,
+    "album": "Continuum"
+   }
+  ],
+  "combined": 25.34,
+  "active": "2003-2007",
+  "peak_decade": "2000s"
+ },
+ {
   "name": "Jon Batiste",
   "slug": "jon-batiste",
   "metro": "New Orleans",
@@ -16774,6 +17537,45 @@
   "combined": 25.2,
   "active": "2022-2024",
   "peak_decade": "2020s"
+ },
+ {
+  "name": "The Cure",
+  "slug": "the-cure",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "",
+  "confidence": "High",
+  "bb_top10": 1,
+  "bb_no1": 0,
+  "bb_score": 0.42,
+  "uk_top10": 4,
+  "uk_no1": 0,
+  "uk_score": 0.55,
+  "album_raw": 30.0,
+  "album_est": true,
+  "prestige": 2.24,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [
+   {
+    "award": "BRIT",
+    "year": 1991,
+    "category": "British Group",
+    "work": null
+   }
+  ],
+  "rs_albums": [
+   {
+    "rank": 116,
+    "album": "Disintegration"
+   }
+  ],
+  "combined": 25.17,
+  "active": "1983-1992",
+  "peak_decade": "1980s"
  },
  {
   "name": "Ne-Yo",
@@ -17480,6 +18282,72 @@
   "peak_decade": "2000s"
  },
  {
+  "name": "Kim Wilde",
+  "slug": "kim-wilde",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "",
+  "confidence": "Auto",
+  "bb_top10": 1,
+  "bb_no1": 1,
+  "bb_score": 0.57,
+  "uk_top10": 7,
+  "uk_no1": 0,
+  "uk_score": 2.05,
+  "album_raw": 30.0,
+  "album_est": true,
+  "prestige": 0.8,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [
+   {
+    "award": "BRIT",
+    "year": 1983,
+    "category": "British Female Solo Artist",
+    "work": null
+   }
+  ],
+  "rs_albums": [],
+  "combined": 23.68,
+  "active": "1981-1989",
+  "peak_decade": "1980s"
+ },
+ {
+  "name": "LL Cool J",
+  "slug": "ll-cool-j",
+  "metro": "New York",
+  "metro_slug": "new-york",
+  "country": "USA",
+  "city_of_origin": "New York, NY",
+  "confidence": "High",
+  "bb_top10": 7,
+  "bb_no1": 1,
+  "bb_score": 2.64,
+  "uk_top10": 9,
+  "uk_no1": 1,
+  "uk_score": 1.16,
+  "album_raw": 20.0,
+  "album_est": true,
+  "prestige": 1.08,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [
+   {
+    "rank": 246,
+    "album": "Mama Said Knock You Out"
+   }
+  ],
+  "combined": 23.68,
+  "active": "1987-2006",
+  "peak_decade": "1990s"
+ },
+ {
   "name": "Leona Lewis",
   "slug": "leona-lewis",
   "metro": "London",
@@ -17538,6 +18406,73 @@
   "combined": 23.58,
   "active": "2006-2015",
   "peak_decade": "2000s"
+ },
+ {
+  "name": "Hootie & The Blowfish",
+  "slug": "hootie-and-the-blowfish",
+  "metro": "Columbia",
+  "metro_slug": "columbia",
+  "country": "USA",
+  "city_of_origin": "SC",
+  "confidence": "High",
+  "bb_top10": 3,
+  "bb_no1": 0,
+  "bb_score": 0.77,
+  "uk_top10": 0,
+  "uk_no1": 0,
+  "uk_score": 0.0,
+  "album_raw": 25.0,
+  "album_est": true,
+  "prestige": 2.6,
+  "gram_wins": 1,
+  "gram_noms": 0,
+  "gram_awards": [
+   {
+    "year": 1996,
+    "award": "Best New Artist",
+    "work": null
+   }
+  ],
+  "gram_nom_awards": [],
+  "other_awards": [
+   {
+    "award": "VMA",
+    "year": 1995,
+    "category": "Best New Artist",
+    "work": null
+   }
+  ],
+  "rs_albums": [],
+  "combined": 23.56,
+  "active": "1995-1995",
+  "peak_decade": "1990s"
+ },
+ {
+  "name": "Bananarama",
+  "slug": "bananarama",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "London",
+  "confidence": "High",
+  "bb_top10": 3,
+  "bb_no1": 1,
+  "bb_score": 1.11,
+  "uk_top10": 9,
+  "uk_no1": 0,
+  "uk_score": 2.19,
+  "album_raw": 30.0,
+  "album_est": true,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 23.51,
+  "active": "1982-1988",
+  "peak_decade": "1980s"
  },
  {
   "name": "Erasure",
@@ -17781,6 +18716,39 @@
   "combined": 22.59,
   "active": "2014-2024",
   "peak_decade": "2010s"
+ },
+ {
+  "name": "Puff Daddy",
+  "slug": "puff-daddy",
+  "metro": "New York",
+  "metro_slug": "new-york",
+  "country": "USA",
+  "city_of_origin": "Mount Vernon, New York",
+  "confidence": "High",
+  "bb_top10": 8,
+  "bb_no1": 3,
+  "bb_score": 2.8,
+  "uk_top10": 3,
+  "uk_no1": 1,
+  "uk_score": 0.43,
+  "album_raw": 20.0,
+  "album_est": true,
+  "prestige": 0.7,
+  "gram_wins": 0,
+  "gram_noms": 1,
+  "gram_awards": [],
+  "gram_nom_awards": [
+   {
+    "year": 1998,
+    "award": "Best New Artist",
+    "work": null
+   }
+  ],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 22.5,
+  "active": "1997-2000",
+  "peak_decade": "1990s"
  },
  {
   "name": "Nas",
@@ -18124,6 +19092,46 @@
   "peak_decade": "2010s"
  },
  {
+  "name": "Jonas Brothers",
+  "slug": "jonas-brothers",
+  "metro": "New York",
+  "metro_slug": "new-york",
+  "country": "USA",
+  "city_of_origin": "Wyckoff, NJ",
+  "confidence": "High",
+  "bb_top10": 3,
+  "bb_no1": 1,
+  "bb_score": 2.14,
+  "uk_top10": 1,
+  "uk_no1": 0,
+  "uk_score": 0.56,
+  "album_raw": 20.0,
+  "album_est": true,
+  "prestige": 1.2,
+  "gram_wins": 0,
+  "gram_noms": 1,
+  "gram_awards": [],
+  "gram_nom_awards": [
+   {
+    "year": 2009,
+    "award": "Best New Artist",
+    "work": null
+   }
+  ],
+  "other_awards": [
+   {
+    "award": "AMA",
+    "year": 2008,
+    "category": "New Artist of the Year",
+    "work": null
+   }
+  ],
+  "rs_albums": [],
+  "combined": 21.85,
+  "active": "2008-2019",
+  "peak_decade": "2000s"
+ },
+ {
   "name": "Sweet",
   "slug": "sweet",
   "metro": "London",
@@ -18186,6 +19194,38 @@
   ],
   "combined": 21.68,
   "active": "1971-1971",
+  "peak_decade": "1970s"
+ },
+ {
+  "name": "Chic",
+  "slug": "chic",
+  "metro": "New York",
+  "metro_slug": "new-york",
+  "country": "USA",
+  "city_of_origin": "New York, NY",
+  "confidence": "High",
+  "bb_top10": 4,
+  "bb_no1": 2,
+  "bb_score": 2.54,
+  "uk_top10": 5,
+  "uk_no1": 0,
+  "uk_score": 1.13,
+  "album_raw": 20.0,
+  "album_est": true,
+  "prestige": 0.36,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [
+   {
+    "rank": 414,
+    "album": "Risqu\u00e9"
+   }
+  ],
+  "combined": 21.61,
+  "active": "1978-1979",
   "peak_decade": "1970s"
  },
  {
@@ -18270,6 +19310,39 @@
   "combined": 21.51,
   "active": "2013-2024",
   "peak_decade": "2010s"
+ },
+ {
+  "name": "America",
+  "slug": "america",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "London (formed, US servicemen kids)",
+  "confidence": "High",
+  "bb_top10": 7,
+  "bb_no1": 2,
+  "bb_score": 2.35,
+  "uk_top10": 1,
+  "uk_no1": 0,
+  "uk_score": 0.39,
+  "album_raw": 15.0,
+  "album_est": true,
+  "prestige": 2.1,
+  "gram_wins": 1,
+  "gram_noms": 0,
+  "gram_awards": [
+   {
+    "year": 1973,
+    "award": "Best New Artist",
+    "work": null
+   }
+  ],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 21.49,
+  "active": "1972-1982",
+  "peak_decade": "1970s"
  },
  {
   "name": "Shawn Colvin",
@@ -18634,6 +19707,100 @@
   "peak_decade": "1960s"
  },
  {
+  "name": "Blur",
+  "slug": "blur",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "",
+  "confidence": "High",
+  "bb_top10": 0,
+  "bb_no1": 0,
+  "bb_score": 0.0,
+  "uk_top10": 13,
+  "uk_no1": 2,
+  "uk_score": 2.29,
+  "album_raw": 20.0,
+  "album_est": true,
+  "prestige": 2.46,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [
+   {
+    "award": "BRIT",
+    "year": 1995,
+    "category": "British Album of the Year",
+    "work": "Parklife"
+   },
+   {
+    "award": "BRIT",
+    "year": 1995,
+    "category": "British Group",
+    "work": null
+   },
+   {
+    "award": "EMA",
+    "year": 1999,
+    "category": "Best Video",
+    "work": "Coffee & TV"
+   }
+  ],
+  "rs_albums": [
+   {
+    "rank": 438,
+    "album": "Parklife"
+   }
+  ],
+  "combined": 20.19,
+  "active": "1991-2003",
+  "peak_decade": "1990s"
+ },
+ {
+  "name": "Irene Cara",
+  "slug": "irene-cara",
+  "metro": "New York",
+  "metro_slug": "new-york",
+  "country": "USA",
+  "city_of_origin": "Bronx, NY",
+  "confidence": "High",
+  "bb_top10": 3,
+  "bb_no1": 1,
+  "bb_score": 1.75,
+  "uk_top10": 2,
+  "uk_no1": 1,
+  "uk_score": 1.23,
+  "album_raw": 10.0,
+  "album_est": true,
+  "prestige": 3.2,
+  "gram_wins": 0,
+  "gram_noms": 3,
+  "gram_awards": [],
+  "gram_nom_awards": [
+   {
+    "year": 1981,
+    "award": "Best New Artist",
+    "work": null
+   },
+   {
+    "year": 1981,
+    "award": "Song of the Year",
+    "work": "Fame"
+   },
+   {
+    "year": 1984,
+    "award": "Record of the Year",
+    "work": "Flashdance... What a Feeling"
+   }
+  ],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 20.18,
+  "active": "1980-1984",
+  "peak_decade": "1980s"
+ },
+ {
   "name": "Olivia Dean",
   "slug": "olivia-dean",
   "metro": "London",
@@ -18737,6 +19904,52 @@
   "combined": 20.04,
   "active": "",
   "peak_decade": "0s"
+ },
+ {
+  "name": "Paul Young",
+  "slug": "paul-young",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "",
+  "confidence": "Review",
+  "bb_top10": 2,
+  "bb_no1": 1,
+  "bb_score": 0.82,
+  "uk_top10": 7,
+  "uk_no1": 1,
+  "uk_score": 2.26,
+  "album_raw": 15.0,
+  "album_est": true,
+  "prestige": 2.6,
+  "gram_wins": 0,
+  "gram_noms": 1,
+  "gram_awards": [],
+  "gram_nom_awards": [
+   {
+    "year": 1986,
+    "award": "Song of the Year",
+    "work": "Everytime You Go Away"
+   }
+  ],
+  "other_awards": [
+   {
+    "award": "BRIT",
+    "year": 1984,
+    "category": "British Breakthrough",
+    "work": null
+   },
+   {
+    "award": "BRIT",
+    "year": 1985,
+    "category": "British Male Solo Artist",
+    "work": null
+   }
+  ],
+  "rs_albums": [],
+  "combined": 19.95,
+  "active": "1983-1991",
+  "peak_decade": "1980s"
  },
  {
   "name": "Dolly Parton",
@@ -19079,6 +20292,45 @@
   "peak_decade": "0s"
  },
  {
+  "name": "Sammy Davis Jr.",
+  "slug": "sammy-davis-jr",
+  "metro": "New York",
+  "metro_slug": "new-york",
+  "country": "USA",
+  "city_of_origin": "",
+  "confidence": "Auto",
+  "bb_top10": 1,
+  "bb_no1": 1,
+  "bb_score": 0.67,
+  "uk_top10": 0,
+  "uk_no1": 0,
+  "uk_score": 0.0,
+  "album_raw": 10.0,
+  "album_est": true,
+  "prestige": 4.5,
+  "gram_wins": 1,
+  "gram_noms": 1,
+  "gram_awards": [
+   {
+    "year": 1963,
+    "award": "Song of the Year",
+    "work": "What Kind of Fool Am I?"
+   }
+  ],
+  "gram_nom_awards": [
+   {
+    "year": 1963,
+    "award": "Record of the Year",
+    "work": "What Kind of Fool Am I?"
+   }
+  ],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 18.81,
+  "active": "1972-1972",
+  "peak_decade": "1970s"
+ },
+ {
   "name": "Sly and the Family Stone",
   "slug": "sly-and-the-family-stone",
   "metro": "San Francisco-San Jose",
@@ -19222,65 +20474,37 @@
   "peak_decade": "2020s"
  },
  {
-  "name": "Peter Gabriel",
-  "slug": "peter-gabriel",
+  "name": "Peter Frampton",
+  "slug": "peter-frampton",
   "metro": "London",
   "metro_slug": "london",
   "country": "UK",
-  "city_of_origin": "",
-  "confidence": "Auto",
-  "bb_top10": 2,
-  "bb_no1": 1,
-  "bb_score": 0.77,
-  "uk_top10": 4,
+  "city_of_origin": "London",
+  "confidence": "High",
+  "bb_top10": 3,
+  "bb_no1": 0,
+  "bb_score": 0.92,
+  "uk_top10": 1,
   "uk_no1": 0,
-  "uk_score": 0.76,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 6.38,
+  "uk_score": 0.02,
+  "album_raw": 20.0,
+  "album_est": true,
+  "prestige": 1.5,
   "gram_wins": 0,
-  "gram_noms": 3,
+  "gram_noms": 1,
   "gram_awards": [],
   "gram_nom_awards": [
    {
-    "year": 1987,
+    "year": 1977,
     "award": "Album of the Year",
-    "work": "So"
-   },
-   {
-    "year": 1987,
-    "award": "Record of the Year",
-    "work": "Sledgehammer"
-   },
-   {
-    "year": 1987,
-    "award": "Song of the Year",
-    "work": "Sledgehammer"
+    "work": "Frampton Comes Alive!"
    }
   ],
-  "other_awards": [
-   {
-    "award": "BRIT",
-    "year": 1987,
-    "category": "British Male Solo Artist",
-    "work": null
-   },
-   {
-    "award": "VMA",
-    "year": 1987,
-    "category": "Video of the Year",
-    "work": "Sledgehammer"
-   }
-  ],
-  "rs_albums": [
-   {
-    "rank": 297,
-    "album": "So"
-   }
-  ],
-  "combined": 18.38,
-  "active": "1980-1993",
-  "peak_decade": "1980s"
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 18.4,
+  "active": "1976-1977",
+  "peak_decade": "1970s"
  },
  {
   "name": "Tame Impala",
@@ -19420,6 +20644,40 @@
   "combined": 18.19,
   "active": "2020-2025",
   "peak_decade": "2020s"
+ },
+ {
+  "name": "Fetty Wap",
+  "slug": "fetty-wap",
+  "metro": "New York",
+  "metro_slug": "new-york",
+  "country": "USA",
+  "city_of_origin": "Paterson, NJ",
+  "confidence": "High",
+  "bb_top10": 3,
+  "bb_no1": 0,
+  "bb_score": 2.61,
+  "uk_top10": 1,
+  "uk_no1": 0,
+  "uk_score": 0.13,
+  "album_raw": 15.0,
+  "album_est": true,
+  "prestige": 0.5,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [
+   {
+    "award": "VMA",
+    "year": 2015,
+    "category": "Best New Artist",
+    "work": null
+   }
+  ],
+  "rs_albums": [],
+  "combined": 18.17,
+  "active": "2015-2015",
+  "peak_decade": "2010s"
  },
  {
   "name": "Seventeen",
@@ -19799,6 +21057,33 @@
   "peak_decade": "1960s"
  },
  {
+  "name": "Natasha Bedingfield",
+  "slug": "natasha-bedingfield",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "London",
+  "confidence": "High",
+  "bb_top10": 2,
+  "bb_no1": 0,
+  "bb_score": 1.38,
+  "uk_top10": 5,
+  "uk_no1": 1,
+  "uk_score": 1.15,
+  "album_raw": 20.0,
+  "album_est": true,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 17.29,
+  "active": "2004-2008",
+  "peak_decade": "2000s"
+ },
+ {
   "name": "Blackpink",
   "slug": "blackpink",
   "metro": "Seoul",
@@ -20041,6 +21326,46 @@
   "combined": 16.63,
   "active": "1983-1985",
   "peak_decade": "1980s"
+ },
+ {
+  "name": "Bastille",
+  "slug": "bastille",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "",
+  "confidence": "High",
+  "bb_top10": 2,
+  "bb_no1": 0,
+  "bb_score": 1.63,
+  "uk_top10": 4,
+  "uk_no1": 0,
+  "uk_score": 1.49,
+  "album_raw": 11.0,
+  "album_est": true,
+  "prestige": 1.5,
+  "gram_wins": 0,
+  "gram_noms": 1,
+  "gram_awards": [],
+  "gram_nom_awards": [
+   {
+    "year": 2015,
+    "award": "Best New Artist",
+    "work": null
+   }
+  ],
+  "other_awards": [
+   {
+    "award": "BRIT",
+    "year": 2014,
+    "category": "British Breakthrough",
+    "work": null
+   }
+  ],
+  "rs_albums": [],
+  "combined": 16.58,
+  "active": "2013-2018",
+  "peak_decade": "2010s"
  },
  {
   "name": "The Velvet Underground",
@@ -20540,49 +21865,6 @@
   "peak_decade": "1960s"
  },
  {
-  "name": "Don McLean",
-  "slug": "don-mclean",
-  "metro": "New York",
-  "metro_slug": "new-york",
-  "country": "USA",
-  "city_of_origin": "New Rochelle, New York",
-  "confidence": "High",
-  "bb_top10": 2,
-  "bb_no1": 1,
-  "bb_score": 1.34,
-  "uk_top10": 3,
-  "uk_no1": 2,
-  "uk_score": 1.85,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 4.0,
-  "gram_wins": 0,
-  "gram_noms": 3,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 1973,
-    "award": "Album of the Year",
-    "work": "American Pie"
-   },
-   {
-    "year": 1973,
-    "award": "Record of the Year",
-    "work": "American Pie"
-   },
-   {
-    "year": 1973,
-    "award": "Song of the Year",
-    "work": "American Pie"
-   }
-  ],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 15.48,
-  "active": "1971-1981",
-  "peak_decade": "1970s"
- },
- {
   "name": "OneRepublic",
   "slug": "onerepublic",
   "metro": "Colorado Springs",
@@ -20859,6 +22141,44 @@
   "peak_decade": "1960s"
  },
  {
+  "name": "Mike + the Mechanics",
+  "slug": "mike-the-mechanics",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "",
+  "confidence": "Auto",
+  "bb_top10": 3,
+  "bb_no1": 1,
+  "bb_score": 1.09,
+  "uk_top10": 0,
+  "uk_no1": 0,
+  "uk_score": 0.0,
+  "album_raw": 10.0,
+  "album_est": true,
+  "prestige": 2.5,
+  "gram_wins": 0,
+  "gram_noms": 2,
+  "gram_awards": [],
+  "gram_nom_awards": [
+   {
+    "year": 1990,
+    "award": "Record of the Year",
+    "work": "The Living Years"
+   },
+   {
+    "year": 1990,
+    "award": "Song of the Year",
+    "work": "The Living Years"
+   }
+  ],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 15.27,
+  "active": "1986-1989",
+  "peak_decade": "1980s"
+ },
+ {
   "name": "Bill Withers",
   "slug": "bill-withers",
   "metro": "Beckley",
@@ -20959,49 +22279,6 @@
   "peak_decade": "1990s"
  },
  {
-  "name": "Vanessa Williams",
-  "slug": "vanessa-williams",
-  "metro": "New York",
-  "metro_slug": "new-york",
-  "country": "USA",
-  "city_of_origin": "Millwood, NY",
-  "confidence": "High",
-  "bb_top10": 4,
-  "bb_no1": 1,
-  "bb_score": 2.29,
-  "uk_top10": 1,
-  "uk_no1": 0,
-  "uk_score": 0.39,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 3.2,
-  "gram_wins": 0,
-  "gram_noms": 3,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 1989,
-    "award": "Best New Artist",
-    "work": null
-   },
-   {
-    "year": 1993,
-    "award": "Record of the Year",
-    "work": "Save the Best for Last"
-   },
-   {
-    "year": 1993,
-    "award": "Song of the Year",
-    "work": "Save the Best for Last"
-   }
-  ],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 14.93,
-  "active": "1989-1995",
-  "peak_decade": "1990s"
- },
- {
   "name": "21 Savage",
   "slug": "21-savage",
   "metro": "Atlanta",
@@ -21033,6 +22310,33 @@
   "combined": 14.9,
   "active": "2017-2025",
   "peak_decade": "2020s"
+ },
+ {
+  "name": "The Shirelles",
+  "slug": "the-shirelles",
+  "metro": "New York",
+  "metro_slug": "new-york",
+  "country": "USA",
+  "city_of_origin": "Passaic, NJ",
+  "confidence": "High",
+  "bb_top10": 6,
+  "bb_no1": 2,
+  "bb_score": 2.79,
+  "uk_top10": 1,
+  "uk_no1": 0,
+  "uk_score": 0.48,
+  "album_raw": 10.0,
+  "album_est": true,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 14.87,
+  "active": "1961-1963",
+  "peak_decade": "1960s"
  },
  {
   "name": "A Tribe Called Quest",
@@ -21286,6 +22590,46 @@
   ],
   "combined": 14.59,
   "active": "1997-1998",
+  "peak_decade": "1990s"
+ },
+ {
+  "name": "All Saints",
+  "slug": "all-saints",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "",
+  "confidence": "Auto",
+  "bb_top10": 1,
+  "bb_no1": 0,
+  "bb_score": 0.63,
+  "uk_top10": 9,
+  "uk_no1": 5,
+  "uk_score": 3.07,
+  "album_raw": 12.0,
+  "album_est": true,
+  "prestige": 1.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [
+   {
+    "award": "EMA",
+    "year": 1998,
+    "category": "Best New",
+    "work": null
+   },
+   {
+    "award": "EMA",
+    "year": 2000,
+    "category": "Best Pop",
+    "work": null
+   }
+  ],
+  "rs_albums": [],
+  "combined": 14.56,
+  "active": "1997-2006",
   "peak_decade": "1990s"
  },
  {
@@ -21710,47 +23054,38 @@
   "peak_decade": "1990s"
  },
  {
-  "name": "Irene Cara",
-  "slug": "irene-cara",
-  "metro": "New York",
-  "metro_slug": "new-york",
-  "country": "USA",
-  "city_of_origin": "Bronx, NY",
-  "confidence": "High",
-  "bb_top10": 3,
-  "bb_no1": 1,
-  "bb_score": 1.75,
-  "uk_top10": 2,
+  "name": "The KLF",
+  "slug": "the-klf",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "",
+  "confidence": "Review",
+  "bb_top10": 1,
+  "bb_no1": 0,
+  "bb_score": 0.33,
+  "uk_top10": 5,
   "uk_no1": 1,
-  "uk_score": 1.23,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 3.2,
+  "uk_score": 2.03,
+  "album_raw": 15.0,
+  "album_est": true,
+  "prestige": 0.8,
   "gram_wins": 0,
-  "gram_noms": 3,
+  "gram_noms": 0,
   "gram_awards": [],
-  "gram_nom_awards": [
+  "gram_nom_awards": [],
+  "other_awards": [
    {
-    "year": 1981,
-    "award": "Best New Artist",
+    "award": "BRIT",
+    "year": 1992,
+    "category": "British Group",
     "work": null
-   },
-   {
-    "year": 1981,
-    "award": "Song of the Year",
-    "work": "Fame"
-   },
-   {
-    "year": 1984,
-    "award": "Record of the Year",
-    "work": "Flashdance... What a Feeling"
    }
   ],
-  "other_awards": [],
   "rs_albums": [],
-  "combined": 14.18,
-  "active": "1980-1984",
-  "peak_decade": "1980s"
+  "combined": 13.95,
+  "active": "1990-1992",
+  "peak_decade": "1990s"
  },
  {
   "name": "Ringo Starr",
@@ -21778,39 +23113,6 @@
   "combined": 13.87,
   "active": "1971-1975",
   "peak_decade": "1970s"
- },
- {
-  "name": "Neil Sedaka",
-  "slug": "neil-sedaka",
-  "metro": "New York",
-  "metro_slug": "new-york",
-  "country": "USA",
-  "city_of_origin": "New York, NY",
-  "confidence": "High",
-  "bb_top10": 9,
-  "bb_no1": 3,
-  "bb_score": 3.12,
-  "uk_top10": 7,
-  "uk_no1": 0,
-  "uk_score": 2.1,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 1.0,
-  "gram_wins": 0,
-  "gram_noms": 1,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 1977,
-    "award": "Song of the Year",
-    "work": "Breaking Up Is Hard to Do"
-   }
-  ],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 13.85,
-  "active": "1959-1976",
-  "peak_decade": "1960s"
  },
  {
   "name": "Joan Osborne",
@@ -22139,44 +23441,6 @@
   "peak_decade": "1980s"
  },
  {
-  "name": "Gilbert O'Sullivan",
-  "slug": "gilbert-o-sullivan",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "London",
-  "confidence": "Review",
-  "bb_top10": 3,
-  "bb_no1": 1,
-  "bb_score": 1.62,
-  "uk_top10": 7,
-  "uk_no1": 2,
-  "uk_score": 2.59,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 2.5,
-  "gram_wins": 0,
-  "gram_noms": 2,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 1973,
-    "award": "Record of the Year",
-    "work": "Alone Again (Naturally)"
-   },
-   {
-    "year": 1973,
-    "award": "Song of the Year",
-    "work": "Alone Again (Naturally)"
-   }
-  ],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 13.44,
-  "active": "1970-1973",
-  "peak_decade": "1970s"
- },
- {
   "name": "Roddy Ricch",
   "slug": "roddy-ricch",
   "metro": "Los Angeles",
@@ -22262,55 +23526,6 @@
   "combined": 13.34,
   "active": "1998-1998",
   "peak_decade": "1990s"
- },
- {
-  "name": "John Mayer",
-  "slug": "john-mayer",
-  "metro": "New York",
-  "metro_slug": "new-york",
-  "country": "USA",
-  "city_of_origin": "Fairfield, CT",
-  "confidence": "Medium",
-  "bb_top10": 0,
-  "bb_no1": 0,
-  "bb_score": 0.0,
-  "uk_top10": 0,
-  "uk_no1": 0,
-  "uk_score": 0.0,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 5.56,
-  "gram_wins": 1,
-  "gram_noms": 2,
-  "gram_awards": [
-   {
-    "year": 2005,
-    "award": "Song of the Year",
-    "work": "Daughters"
-   }
-  ],
-  "gram_nom_awards": [
-   {
-    "year": 2003,
-    "award": "Best New Artist",
-    "work": null
-   },
-   {
-    "year": 2007,
-    "award": "Album of the Year",
-    "work": "Continuum"
-   }
-  ],
-  "other_awards": [],
-  "rs_albums": [
-   {
-    "rank": 486,
-    "album": "Continuum"
-   }
-  ],
-  "combined": 13.34,
-  "active": "2003-2007",
-  "peak_decade": "2000s"
  },
  {
   "name": "Manfred Mann",
@@ -22682,45 +23897,6 @@
   "peak_decade": "0s"
  },
  {
-  "name": "Sammy Davis Jr.",
-  "slug": "sammy-davis-jr",
-  "metro": "New York",
-  "metro_slug": "new-york",
-  "country": "USA",
-  "city_of_origin": "",
-  "confidence": "Auto",
-  "bb_top10": 1,
-  "bb_no1": 1,
-  "bb_score": 0.67,
-  "uk_top10": 0,
-  "uk_no1": 0,
-  "uk_score": 0.0,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 4.5,
-  "gram_wins": 1,
-  "gram_noms": 1,
-  "gram_awards": [
-   {
-    "year": 1963,
-    "award": "Song of the Year",
-    "work": "What Kind of Fool Am I?"
-   }
-  ],
-  "gram_nom_awards": [
-   {
-    "year": 1963,
-    "award": "Record of the Year",
-    "work": "What Kind of Fool Am I?"
-   }
-  ],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 12.81,
-  "active": "1972-1972",
-  "peak_decade": "1970s"
- },
- {
   "name": "Alessia Cara",
   "slug": "alessia-cara",
   "metro": "Toronto",
@@ -22970,6 +24146,44 @@
   "peak_decade": "1980s"
  },
  {
+  "name": "M.I.A.",
+  "slug": "m-i-a",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "",
+  "confidence": "High",
+  "bb_top10": 2,
+  "bb_no1": 0,
+  "bb_score": 0.76,
+  "uk_top10": 0,
+  "uk_no1": 0,
+  "uk_score": 0.0,
+  "album_raw": 10.0,
+  "album_est": true,
+  "prestige": 1.86,
+  "gram_wins": 0,
+  "gram_noms": 1,
+  "gram_awards": [],
+  "gram_nom_awards": [
+   {
+    "year": 2009,
+    "award": "Record of the Year",
+    "work": "Paper Planes"
+   }
+  ],
+  "other_awards": [],
+  "rs_albums": [
+   {
+    "rank": 421,
+    "album": "Arular"
+   }
+  ],
+  "combined": 12.74,
+  "active": "2008-2012",
+  "peak_decade": "2000s"
+ },
+ {
   "name": "Megan Thee Stallion",
   "slug": "megan-thee-stallion",
   "metro": "Houston",
@@ -23041,33 +24255,6 @@
   "combined": 12.74,
   "active": "1987-2008",
   "peak_decade": "1990s"
- },
- {
-  "name": "Billy Ocean",
-  "slug": "billy-ocean",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "Trinidad / London",
-  "confidence": "Review",
-  "bb_top10": 7,
-  "bb_no1": 3,
-  "bb_score": 3.35,
-  "uk_top10": 6,
-  "uk_no1": 1,
-  "uk_score": 2.69,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.0,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 12.73,
-  "active": "1976-1988",
-  "peak_decade": "1980s"
  },
  {
   "name": "Glass Animals",
@@ -23173,6 +24360,90 @@
   "peak_decade": "1990s"
  },
  {
+  "name": "Raye",
+  "slug": "raye",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "",
+  "confidence": "High",
+  "bb_top10": 0,
+  "bb_no1": 0,
+  "bb_score": 0.0,
+  "uk_top10": 5,
+  "uk_no1": 2,
+  "uk_score": 2.19,
+  "album_raw": 5.0,
+  "album_est": true,
+  "prestige": 3.1,
+  "gram_wins": 0,
+  "gram_noms": 1,
+  "gram_awards": [],
+  "gram_nom_awards": [
+   {
+    "year": 2025,
+    "award": "Best New Artist",
+    "work": null
+   }
+  ],
+  "other_awards": [
+   {
+    "award": "BRIT",
+    "year": 2024,
+    "category": "British Album of the Year",
+    "work": "My 21st Century Blues"
+   },
+   {
+    "award": "BRIT",
+    "year": 2024,
+    "category": "British Artist of the Year",
+    "work": null
+   },
+   {
+    "award": "BRIT",
+    "year": 2024,
+    "category": "British Breakthrough",
+    "work": null
+   }
+  ],
+  "rs_albums": [],
+  "combined": 12.63,
+  "active": "2017-2025",
+  "peak_decade": "2020s"
+ },
+ {
+  "name": "The Zombies",
+  "slug": "the-zombies",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "London",
+  "confidence": "Review",
+  "bb_top10": 3,
+  "bb_no1": 0,
+  "bb_score": 1.34,
+  "uk_top10": 0,
+  "uk_no1": 0,
+  "uk_score": 0.0,
+  "album_raw": 10.0,
+  "album_est": true,
+  "prestige": 1.08,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [
+   {
+    "rank": 243,
+    "album": "Odessey and Oracle"
+   }
+  ],
+  "combined": 12.62,
+  "active": "1964-1969",
+  "peak_decade": "1960s"
+ },
+ {
   "name": "Janelle Monae",
   "slug": "janelle-monae",
   "metro": "Kansas City",
@@ -23222,36 +24493,35 @@
   "peak_decade": "2010s"
  },
  {
-  "name": "SWV",
-  "slug": "swv",
-  "metro": "New York",
-  "metro_slug": "new-york",
+  "name": "Rage Against the Machine",
+  "slug": "rage-against-the-machine",
+  "metro": "Los Angeles",
+  "metro_slug": "los-angeles",
   "country": "USA",
-  "city_of_origin": "New York, NY",
+  "city_of_origin": "",
   "confidence": "High",
-  "bb_top10": 4,
-  "bb_no1": 1,
-  "bb_score": 3.46,
-  "uk_top10": 1,
-  "uk_no1": 0,
-  "uk_score": 0.5,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.7,
+  "bb_top10": 0,
+  "bb_no1": 0,
+  "bb_score": 0.0,
+  "uk_top10": 2,
+  "uk_no1": 1,
+  "uk_score": 0.39,
+  "album_raw": 16.0,
+  "album_est": true,
+  "prestige": 1.08,
   "gram_wins": 0,
-  "gram_noms": 1,
+  "gram_noms": 0,
   "gram_awards": [],
-  "gram_nom_awards": [
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [
    {
-    "year": 1994,
-    "award": "Best New Artist",
-    "work": null
+    "rank": 221,
+    "album": "Rage Against the Machine"
    }
   ],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 12.55,
-  "active": "1993-1996",
+  "combined": 12.59,
+  "active": "1996-2009",
   "peak_decade": "1990s"
  },
  {
@@ -23304,39 +24574,6 @@
   "combined": 12.52,
   "active": "1997-2005",
   "peak_decade": "1990s"
- },
- {
-  "name": "America",
-  "slug": "america",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "London (formed, US servicemen kids)",
-  "confidence": "High",
-  "bb_top10": 7,
-  "bb_no1": 2,
-  "bb_score": 2.35,
-  "uk_top10": 1,
-  "uk_no1": 0,
-  "uk_score": 0.39,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 2.1,
-  "gram_wins": 1,
-  "gram_noms": 0,
-  "gram_awards": [
-   {
-    "year": 1973,
-    "award": "Best New Artist",
-    "work": null
-   }
-  ],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 12.49,
-  "active": "1972-1982",
-  "peak_decade": "1970s"
  },
  {
   "name": "Vaughn Meader",
@@ -23572,45 +24809,6 @@
   "combined": 12.25,
   "active": "2017-2023",
   "peak_decade": "2020s"
- },
- {
-  "name": "Kate Bush",
-  "slug": "kate-bush",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "London",
-  "confidence": "High",
-  "bb_top10": 1,
-  "bb_no1": 0,
-  "bb_score": 1.05,
-  "uk_top10": 9,
-  "uk_no1": 2,
-  "uk_score": 2.83,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 2.6,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [
-   {
-    "award": "BRIT",
-    "year": 1987,
-    "category": "British Female Solo Artist",
-    "work": null
-   }
-  ],
-  "rs_albums": [
-   {
-    "rank": 68,
-    "album": "Hounds of Love"
-   }
-  ],
-  "combined": 12.22,
-  "active": "1978-2022",
-  "peak_decade": "1970s"
  },
  {
   "name": "Train",
@@ -23893,73 +25091,6 @@
   "peak_decade": "1990s"
  },
  {
-  "name": "Kool & the Gang",
-  "slug": "kool-and-the-gang",
-  "metro": "New York",
-  "metro_slug": "new-york",
-  "country": "USA",
-  "city_of_origin": "Jersey City, NJ",
-  "confidence": "High",
-  "bb_top10": 12,
-  "bb_no1": 1,
-  "bb_score": 3.35,
-  "uk_top10": 9,
-  "uk_no1": 0,
-  "uk_score": 1.89,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.0,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 11.92,
-  "active": "1974-2003",
-  "peak_decade": "1980s"
- },
- {
-  "name": "Mark Ronson",
-  "slug": "mark-ronson",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "London",
-  "confidence": "Review",
-  "bb_top10": 1,
-  "bb_no1": 1,
-  "bb_score": 1.0,
-  "uk_top10": 5,
-  "uk_no1": 1,
-  "uk_score": 1.52,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 3.05,
-  "gram_wins": 1,
-  "gram_noms": 0,
-  "gram_awards": [
-   {
-    "year": 2016,
-    "award": "Record of the Year",
-    "work": "Uptown Funk"
-   }
-  ],
-  "gram_nom_awards": [],
-  "other_awards": [
-   {
-    "award": "BRIT",
-    "year": 2008,
-    "category": "British Male Solo Artist",
-    "work": null
-   }
-  ],
-  "rs_albums": [],
-  "combined": 11.86,
-  "active": "2007-2018",
-  "peak_decade": "2010s"
- },
- {
   "name": "Isaac Hayes",
   "slug": "isaac-hayes",
   "metro": "Memphis",
@@ -24094,36 +25225,42 @@
   "peak_decade": "2010s"
  },
  {
-  "name": "LL Cool J",
-  "slug": "ll-cool-j",
+  "name": "Vanessa Carlton",
+  "slug": "vanessa-carlton",
   "metro": "New York",
   "metro_slug": "new-york",
   "country": "USA",
-  "city_of_origin": "New York, NY",
+  "city_of_origin": "Milford, PA",
   "confidence": "High",
-  "bb_top10": 7,
-  "bb_no1": 1,
-  "bb_score": 2.64,
-  "uk_top10": 9,
-  "uk_no1": 1,
-  "uk_score": 1.16,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 1.08,
+  "bb_top10": 1,
+  "bb_no1": 0,
+  "bb_score": 0.86,
+  "uk_top10": 1,
+  "uk_no1": 0,
+  "uk_score": 0.13,
+  "album_raw": 5.0,
+  "album_est": true,
+  "prestige": 2.5,
   "gram_wins": 0,
-  "gram_noms": 0,
+  "gram_noms": 2,
   "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [
+  "gram_nom_awards": [
    {
-    "rank": 246,
-    "album": "Mama Said Knock You Out"
+    "year": 2003,
+    "award": "Record of the Year",
+    "work": "A Thousand Miles"
+   },
+   {
+    "year": 2003,
+    "award": "Song of the Year",
+    "work": "A Thousand Miles"
    }
   ],
-  "combined": 11.68,
-  "active": "1987-2006",
-  "peak_decade": "1990s"
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 11.7,
+  "active": "2002-2002",
+  "peak_decade": "2000s"
  },
  {
   "name": "Helen Reddy",
@@ -24432,6 +25569,49 @@
   "peak_decade": "2010s"
  },
  {
+  "name": "Donald Fagen",
+  "slug": "donald-fagen",
+  "metro": "New York",
+  "metro_slug": "new-york",
+  "country": "USA",
+  "city_of_origin": "",
+  "confidence": "Review",
+  "bb_top10": 0,
+  "bb_no1": 0,
+  "bb_score": 0.0,
+  "uk_top10": 0,
+  "uk_no1": 0,
+  "uk_score": 0.0,
+  "album_raw": 3.0,
+  "album_est": true,
+  "prestige": 4.0,
+  "gram_wins": 0,
+  "gram_noms": 3,
+  "gram_awards": [],
+  "gram_nom_awards": [
+   {
+    "year": 1983,
+    "award": "Album of the Year",
+    "work": "The Nightfly"
+   },
+   {
+    "year": 1983,
+    "award": "Song of the Year",
+    "work": "I.G.Y. (What a Beautiful World)"
+   },
+   {
+    "year": 1994,
+    "award": "Album of the Year",
+    "work": "Kamakiriad"
+   }
+  ],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 11.4,
+  "active": "1983-1994",
+  "peak_decade": "1980s"
+ },
+ {
   "name": "Iggy Azalea",
   "slug": "iggy-azalea",
   "metro": "Sydney",
@@ -24475,33 +25655,6 @@
   "combined": 11.35,
   "active": "2013-2015",
   "peak_decade": "2010s"
- },
- {
-  "name": "The Dave Clark Five",
-  "slug": "the-dave-clark-five",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "London",
-  "confidence": "High",
-  "bb_top10": 8,
-  "bb_no1": 1,
-  "bb_score": 2.85,
-  "uk_top10": 8,
-  "uk_no1": 1,
-  "uk_score": 2.74,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.0,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 11.28,
-  "active": "1963-1970",
-  "peak_decade": "1960s"
  },
  {
   "name": "Peabo Bryson",
@@ -24788,52 +25941,6 @@
   "peak_decade": "1960s"
  },
  {
-  "name": "Paul Young",
-  "slug": "paul-young",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "",
-  "confidence": "Review",
-  "bb_top10": 2,
-  "bb_no1": 1,
-  "bb_score": 0.82,
-  "uk_top10": 7,
-  "uk_no1": 1,
-  "uk_score": 2.26,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 2.6,
-  "gram_wins": 0,
-  "gram_noms": 1,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 1986,
-    "award": "Song of the Year",
-    "work": "Everytime You Go Away"
-   }
-  ],
-  "other_awards": [
-   {
-    "award": "BRIT",
-    "year": 1984,
-    "category": "British Breakthrough",
-    "work": null
-   },
-   {
-    "award": "BRIT",
-    "year": 1985,
-    "category": "British Male Solo Artist",
-    "work": null
-   }
-  ],
-  "rs_albums": [],
-  "combined": 10.95,
-  "active": "1983-1991",
-  "peak_decade": "1980s"
- },
- {
   "name": "Shaggy",
   "slug": "shaggy",
   "metro": "Kingston",
@@ -24900,44 +26007,6 @@
   "combined": 10.8,
   "active": "1986-1989",
   "peak_decade": "1980s"
- },
- {
-  "name": "Gloria Gaynor",
-  "slug": "gloria-gaynor",
-  "metro": "New York",
-  "metro_slug": "new-york",
-  "country": "USA",
-  "city_of_origin": "Newark, New Jersey",
-  "confidence": "High",
-  "bb_top10": 2,
-  "bb_no1": 1,
-  "bb_score": 1.11,
-  "uk_top10": 3,
-  "uk_no1": 1,
-  "uk_score": 1.44,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 2.5,
-  "gram_wins": 0,
-  "gram_noms": 2,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 1980,
-    "award": "Record of the Year",
-    "work": "I Will Survive"
-   },
-   {
-    "year": 1980,
-    "award": "Song of the Year",
-    "work": "I Will Survive"
-   }
-  ],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 10.78,
-  "active": "1975-1993",
-  "peak_decade": "1970s"
  },
  {
   "name": "Styx",
@@ -25084,46 +26153,6 @@
   "peak_decade": "2010s"
  },
  {
-  "name": "The Clash",
-  "slug": "the-clash",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "",
-  "confidence": "High",
-  "bb_top10": 1,
-  "bb_no1": 0,
-  "bb_score": 0.2,
-  "uk_top10": 1,
-  "uk_no1": 1,
-  "uk_score": 0.53,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 3.96,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [
-   {
-    "rank": 16,
-    "album": "London Calling"
-   },
-   {
-    "rank": 102,
-    "album": "The Clash"
-   },
-   {
-    "rank": 323,
-    "album": "Sandinista!"
-   }
-  ],
-  "combined": 10.64,
-  "active": "1983-1991",
-  "peak_decade": "1980s"
- },
- {
   "name": "Karol G",
   "slug": "karol-g",
   "metro": "Medellin",
@@ -25149,72 +26178,6 @@
   "combined": 10.57,
   "active": "",
   "peak_decade": "0s"
- },
- {
-  "name": "Dion",
-  "slug": "dion",
-  "metro": "New York",
-  "metro_slug": "new-york",
-  "country": "USA",
-  "city_of_origin": "New York, New York",
-  "confidence": "High",
-  "bb_top10": 9,
-  "bb_no1": 1,
-  "bb_score": 3.51,
-  "uk_top10": 1,
-  "uk_no1": 0,
-  "uk_score": 0.03,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.0,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 10.56,
-  "active": "1961-1968",
-  "peak_decade": "1960s"
- },
- {
-  "name": "Jos\u00e9 Feliciano",
-  "slug": "jos-feliciano",
-  "metro": "New York",
-  "metro_slug": "new-york",
-  "country": "USA",
-  "city_of_origin": "",
-  "confidence": "Review",
-  "bb_top10": 1,
-  "bb_no1": 0,
-  "bb_score": 0.55,
-  "uk_top10": 1,
-  "uk_no1": 0,
-  "uk_score": 0.28,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 3.6,
-  "gram_wins": 1,
-  "gram_noms": 1,
-  "gram_awards": [
-   {
-    "year": 1969,
-    "award": "Best New Artist",
-    "work": null
-   }
-  ],
-  "gram_nom_awards": [
-   {
-    "year": 1969,
-    "award": "Album of the Year",
-    "work": "Feliciano!"
-   }
-  ],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 10.56,
-  "active": "1968-1968",
-  "peak_decade": "1960s"
  },
  {
   "name": "Corinne Bailey Rae",
@@ -25297,39 +26260,6 @@
   "combined": 10.54,
   "active": "2023-2023",
   "peak_decade": "2020s"
- },
- {
-  "name": "Puff Daddy",
-  "slug": "puff-daddy",
-  "metro": "New York",
-  "metro_slug": "new-york",
-  "country": "USA",
-  "city_of_origin": "Mount Vernon, New York",
-  "confidence": "High",
-  "bb_top10": 8,
-  "bb_no1": 3,
-  "bb_score": 2.8,
-  "uk_top10": 3,
-  "uk_no1": 1,
-  "uk_score": 0.43,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.7,
-  "gram_wins": 0,
-  "gram_noms": 1,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 1998,
-    "award": "Best New Artist",
-    "work": null
-   }
-  ],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 10.5,
-  "active": "1997-2000",
-  "peak_decade": "1990s"
  },
  {
   "name": "Erykah Badu",
@@ -25438,46 +26368,6 @@
   "combined": 10.49,
   "active": "1990-1990",
   "peak_decade": "1990s"
- },
- {
-  "name": "Eurythmics",
-  "slug": "eurythmics",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "London",
-  "confidence": "Review",
-  "bb_top10": 3,
-  "bb_no1": 1,
-  "bb_score": 1.7,
-  "uk_top10": 9,
-  "uk_no1": 1,
-  "uk_score": 2.5,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 1.2,
-  "gram_wins": 0,
-  "gram_noms": 1,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 1984,
-    "award": "Best New Artist",
-    "work": null
-   }
-  ],
-  "other_awards": [
-   {
-    "award": "VMA",
-    "year": 1984,
-    "category": "Best New Artist",
-    "work": null
-   }
-  ],
-  "rs_albums": [],
-  "combined": 10.48,
-  "active": "1983-1986",
-  "peak_decade": "1980s"
  },
  {
   "name": "Steve Lacy",
@@ -26243,46 +27133,6 @@
   "peak_decade": "1960s"
  },
  {
-  "name": "Bastille",
-  "slug": "bastille",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "",
-  "confidence": "High",
-  "bb_top10": 2,
-  "bb_no1": 0,
-  "bb_score": 1.63,
-  "uk_top10": 4,
-  "uk_no1": 0,
-  "uk_score": 1.49,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 1.5,
-  "gram_wins": 0,
-  "gram_noms": 1,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 2015,
-    "award": "Best New Artist",
-    "work": null
-   }
-  ],
-  "other_awards": [
-   {
-    "award": "BRIT",
-    "year": 2014,
-    "category": "British Breakthrough",
-    "work": null
-   }
-  ],
-  "rs_albums": [],
-  "combined": 9.98,
-  "active": "2013-2018",
-  "peak_decade": "2010s"
- },
- {
   "name": "Adam Faith",
   "slug": "adam-faith",
   "metro": "London",
@@ -26374,46 +27224,6 @@
   "combined": 9.85,
   "active": "1970-1975",
   "peak_decade": "1970s"
- },
- {
-  "name": "Jonas Brothers",
-  "slug": "jonas-brothers",
-  "metro": "New York",
-  "metro_slug": "new-york",
-  "country": "USA",
-  "city_of_origin": "Wyckoff, NJ",
-  "confidence": "High",
-  "bb_top10": 3,
-  "bb_no1": 1,
-  "bb_score": 2.14,
-  "uk_top10": 1,
-  "uk_no1": 0,
-  "uk_score": 0.56,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 1.2,
-  "gram_wins": 0,
-  "gram_noms": 1,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 2009,
-    "award": "Best New Artist",
-    "work": null
-   }
-  ],
-  "other_awards": [
-   {
-    "award": "AMA",
-    "year": 2008,
-    "category": "New Artist of the Year",
-    "work": null
-   }
-  ],
-  "rs_albums": [],
-  "combined": 9.85,
-  "active": "2008-2019",
-  "peak_decade": "2000s"
  },
  {
   "name": "Roger Miller",
@@ -26531,38 +27341,6 @@
   "combined": 9.8,
   "active": "1996-2007",
   "peak_decade": "2000s"
- },
- {
-  "name": "Dusty Springfield",
-  "slug": "dusty-springfield",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "",
-  "confidence": "High",
-  "bb_top10": 4,
-  "bb_no1": 0,
-  "bb_score": 0.92,
-  "uk_top10": 11,
-  "uk_no1": 1,
-  "uk_score": 2.68,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 1.8,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [
-   {
-    "rank": 83,
-    "album": "Dusty in Memphis"
-   }
-  ],
-  "combined": 9.77,
-  "active": "1963-1988",
-  "peak_decade": "1960s"
  },
  {
   "name": "Goo Goo Dolls",
@@ -26781,133 +27559,6 @@
   "combined": 9.64,
   "active": "1967-1976",
   "peak_decade": "1970s"
- },
- {
-  "name": "Raye",
-  "slug": "raye",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "",
-  "confidence": "High",
-  "bb_top10": 0,
-  "bb_no1": 0,
-  "bb_score": 0.0,
-  "uk_top10": 5,
-  "uk_no1": 2,
-  "uk_score": 2.19,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 3.1,
-  "gram_wins": 0,
-  "gram_noms": 1,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 2025,
-    "award": "Best New Artist",
-    "work": null
-   }
-  ],
-  "other_awards": [
-   {
-    "award": "BRIT",
-    "year": 2024,
-    "category": "British Album of the Year",
-    "work": "My 21st Century Blues"
-   },
-   {
-    "award": "BRIT",
-    "year": 2024,
-    "category": "British Artist of the Year",
-    "work": null
-   },
-   {
-    "award": "BRIT",
-    "year": 2024,
-    "category": "British Breakthrough",
-    "work": null
-   }
-  ],
-  "rs_albums": [],
-  "combined": 9.63,
-  "active": "2017-2025",
-  "peak_decade": "2020s"
- },
- {
-  "name": "Chic",
-  "slug": "chic",
-  "metro": "New York",
-  "metro_slug": "new-york",
-  "country": "USA",
-  "city_of_origin": "New York, NY",
-  "confidence": "High",
-  "bb_top10": 4,
-  "bb_no1": 2,
-  "bb_score": 2.54,
-  "uk_top10": 5,
-  "uk_no1": 0,
-  "uk_score": 1.13,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.36,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [
-   {
-    "rank": 414,
-    "album": "Risqu\u00e9"
-   }
-  ],
-  "combined": 9.61,
-  "active": "1978-1979",
-  "peak_decade": "1970s"
- },
- {
-  "name": "Donald Fagen",
-  "slug": "donald-fagen",
-  "metro": "New York",
-  "metro_slug": "new-york",
-  "country": "USA",
-  "city_of_origin": "",
-  "confidence": "Review",
-  "bb_top10": 0,
-  "bb_no1": 0,
-  "bb_score": 0.0,
-  "uk_top10": 0,
-  "uk_no1": 0,
-  "uk_score": 0.0,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 4.0,
-  "gram_wins": 0,
-  "gram_noms": 3,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 1983,
-    "award": "Album of the Year",
-    "work": "The Nightfly"
-   },
-   {
-    "year": 1983,
-    "award": "Song of the Year",
-    "work": "I.G.Y. (What a Beautiful World)"
-   },
-   {
-    "year": 1994,
-    "award": "Album of the Year",
-    "work": "Kamakiriad"
-   }
-  ],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 9.6,
-  "active": "1983-1994",
-  "peak_decade": "1980s"
  },
  {
   "name": "DaBaby",
@@ -27306,44 +27957,6 @@
   "peak_decade": "2000s"
  },
  {
-  "name": "Mike + the Mechanics",
-  "slug": "mike-the-mechanics",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "",
-  "confidence": "Auto",
-  "bb_top10": 3,
-  "bb_no1": 1,
-  "bb_score": 1.09,
-  "uk_top10": 0,
-  "uk_no1": 0,
-  "uk_score": 0.0,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 2.5,
-  "gram_wins": 0,
-  "gram_noms": 2,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 1990,
-    "award": "Record of the Year",
-    "work": "The Living Years"
-   },
-   {
-    "year": 1990,
-    "award": "Song of the Year",
-    "work": "The Living Years"
-   }
-  ],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 9.27,
-  "active": "1986-1989",
-  "peak_decade": "1980s"
- },
- {
   "name": "Luke Bryan",
   "slug": "luke-bryan",
   "metro": "Atlanta",
@@ -27526,40 +28139,6 @@
   "combined": 9.2,
   "active": "1992-1993",
   "peak_decade": "1990s"
- },
- {
-  "name": "Fetty Wap",
-  "slug": "fetty-wap",
-  "metro": "New York",
-  "metro_slug": "new-york",
-  "country": "USA",
-  "city_of_origin": "Paterson, NJ",
-  "confidence": "High",
-  "bb_top10": 3,
-  "bb_no1": 0,
-  "bb_score": 2.61,
-  "uk_top10": 1,
-  "uk_no1": 0,
-  "uk_score": 0.13,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.5,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [
-   {
-    "award": "VMA",
-    "year": 2015,
-    "category": "Best New Artist",
-    "work": null
-   }
-  ],
-  "rs_albums": [],
-  "combined": 9.17,
-  "active": "2015-2015",
-  "peak_decade": "2010s"
  },
  {
   "name": "Hikaru Utada",
@@ -27834,6 +28413,38 @@
   "peak_decade": "2020s"
  },
  {
+  "name": "Sex Pistols",
+  "slug": "sex-pistols",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "",
+  "confidence": "High",
+  "bb_top10": 0,
+  "bb_no1": 0,
+  "bb_score": 0.0,
+  "uk_top10": 6,
+  "uk_no1": 0,
+  "uk_score": 1.66,
+  "album_raw": 5.0,
+  "album_est": true,
+  "prestige": 1.8,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [
+   {
+    "rank": 80,
+    "album": "Never Mind the Bollocks, Here's the Sex Pistols"
+   }
+  ],
+  "combined": 8.98,
+  "active": "1977-1979",
+  "peak_decade": "1970s"
+ },
+ {
   "name": "Babyface",
   "slug": "babyface",
   "metro": "Indianapolis",
@@ -27933,33 +28544,6 @@
   "peak_decade": "2000s"
  },
  {
-  "name": "The Shirelles",
-  "slug": "the-shirelles",
-  "metro": "New York",
-  "metro_slug": "new-york",
-  "country": "USA",
-  "city_of_origin": "Passaic, NJ",
-  "confidence": "High",
-  "bb_top10": 6,
-  "bb_no1": 2,
-  "bb_score": 2.79,
-  "uk_top10": 1,
-  "uk_no1": 0,
-  "uk_score": 0.48,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.0,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 8.87,
-  "active": "1961-1963",
-  "peak_decade": "1960s"
- },
- {
   "name": "5 Seconds of Summer",
   "slug": "5-seconds-of-summer",
   "metro": "Sydney",
@@ -28016,39 +28600,6 @@
   "combined": 8.83,
   "active": "2014-2018",
   "peak_decade": "2010s"
- },
- {
-  "name": "Rick Astley",
-  "slug": "rick-astley",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "Newton-le-Willows",
-  "confidence": "High",
-  "bb_top10": 5,
-  "bb_no1": 2,
-  "bb_score": 1.59,
-  "uk_top10": 8,
-  "uk_no1": 1,
-  "uk_score": 2.38,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.7,
-  "gram_wins": 0,
-  "gram_noms": 1,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 1989,
-    "award": "Best New Artist",
-    "work": null
-   }
-  ],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 8.82,
-  "active": "1987-1991",
-  "peak_decade": "1980s"
  },
  {
   "name": "Pixies",
@@ -28202,44 +28753,6 @@
   "rs_albums": [],
   "combined": 8.71,
   "active": "2008-2008",
-  "peak_decade": "2000s"
- },
- {
-  "name": "Vanessa Carlton",
-  "slug": "vanessa-carlton",
-  "metro": "New York",
-  "metro_slug": "new-york",
-  "country": "USA",
-  "city_of_origin": "Milford, PA",
-  "confidence": "High",
-  "bb_top10": 1,
-  "bb_no1": 0,
-  "bb_score": 0.86,
-  "uk_top10": 1,
-  "uk_no1": 0,
-  "uk_score": 0.13,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 2.5,
-  "gram_wins": 0,
-  "gram_noms": 2,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 2003,
-    "award": "Record of the Year",
-    "work": "A Thousand Miles"
-   },
-   {
-    "year": 2003,
-    "award": "Song of the Year",
-    "work": "A Thousand Miles"
-   }
-  ],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 8.7,
-  "active": "2002-2002",
   "peak_decade": "2000s"
  },
  {
@@ -28642,46 +29155,6 @@
   "peak_decade": "2000s"
  },
  {
-  "name": "Hootie & The Blowfish",
-  "slug": "hootie-and-the-blowfish",
-  "metro": "Columbia",
-  "metro_slug": "columbia",
-  "country": "USA",
-  "city_of_origin": "SC",
-  "confidence": "High",
-  "bb_top10": 3,
-  "bb_no1": 0,
-  "bb_score": 0.77,
-  "uk_top10": 0,
-  "uk_no1": 0,
-  "uk_score": 0.0,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 2.6,
-  "gram_wins": 1,
-  "gram_noms": 0,
-  "gram_awards": [
-   {
-    "year": 1996,
-    "award": "Best New Artist",
-    "work": null
-   }
-  ],
-  "gram_nom_awards": [],
-  "other_awards": [
-   {
-    "award": "VMA",
-    "year": 1995,
-    "category": "Best New Artist",
-    "work": null
-   }
-  ],
-  "rs_albums": [],
-  "combined": 8.56,
-  "active": "1995-1995",
-  "peak_decade": "1990s"
- },
- {
   "name": "Peter, Paul and Mary",
   "slug": "peter-paul-and-mary",
   "metro": "New York",
@@ -28892,6 +29365,39 @@
   "combined": 8.42,
   "active": "2017-2017",
   "peak_decade": "2010s"
+ },
+ {
+  "name": "Joe Jackson",
+  "slug": "joe-jackson",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "UK",
+  "city_of_origin": "",
+  "confidence": "Review",
+  "bb_top10": 1,
+  "bb_no1": 0,
+  "bb_score": 0.45,
+  "uk_top10": 2,
+  "uk_no1": 0,
+  "uk_score": 0.44,
+  "album_raw": 5.0,
+  "album_est": true,
+  "prestige": 1.5,
+  "gram_wins": 0,
+  "gram_noms": 1,
+  "gram_awards": [],
+  "gram_nom_awards": [
+   {
+    "year": 1983,
+    "award": "Record of the Year",
+    "work": "Steppin' Out"
+   }
+  ],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 8.4,
+  "active": "1980-1983",
+  "peak_decade": "1980s"
  },
  {
   "name": "Roberto Carlos",
@@ -29119,57 +29625,6 @@
   "peak_decade": "1960s"
  },
  {
-  "name": "Blur",
-  "slug": "blur",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "",
-  "confidence": "High",
-  "bb_top10": 0,
-  "bb_no1": 0,
-  "bb_score": 0.0,
-  "uk_top10": 13,
-  "uk_no1": 2,
-  "uk_score": 2.29,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 2.46,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [
-   {
-    "award": "BRIT",
-    "year": 1995,
-    "category": "British Album of the Year",
-    "work": "Parklife"
-   },
-   {
-    "award": "BRIT",
-    "year": 1995,
-    "category": "British Group",
-    "work": null
-   },
-   {
-    "award": "EMA",
-    "year": 1999,
-    "category": "Best Video",
-    "work": "Coffee & TV"
-   }
-  ],
-  "rs_albums": [
-   {
-    "rank": 438,
-    "album": "Parklife"
-   }
-  ],
-  "combined": 8.19,
-  "active": "1991-2003",
-  "peak_decade": "1990s"
- },
- {
   "name": "The Osmonds",
   "slug": "the-osmonds",
   "metro": "Salt Lake City-Provo",
@@ -29227,6 +29682,33 @@
   "rs_albums": [],
   "combined": 8.14,
   "active": "1968-1975",
+  "peak_decade": "1970s"
+ },
+ {
+  "name": "Average White Band",
+  "slug": "average-white-band",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "United Kingdom",
+  "city_of_origin": "London",
+  "confidence": "High",
+  "bb_top10": 2,
+  "bb_no1": 1,
+  "bb_score": 0.65,
+  "uk_top10": 1,
+  "uk_no1": 0,
+  "uk_score": 0.2,
+  "album_raw": 10.0,
+  "album_est": true,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 8.14,
+  "active": "1975-1975",
   "peak_decade": "1970s"
  },
  {
@@ -29533,33 +30015,6 @@
   "combined": 8.0,
   "active": "1990-1991",
   "peak_decade": "1990s"
- },
- {
-  "name": "Taio Cruz",
-  "slug": "taio-cruz",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "London",
-  "confidence": "High",
-  "bb_top10": 2,
-  "bb_no1": 1,
-  "bb_score": 1.94,
-  "uk_top10": 9,
-  "uk_no1": 2,
-  "uk_score": 2.19,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.0,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 7.99,
-  "active": "2008-2012",
-  "peak_decade": "2010s"
  },
  {
   "name": "Public Enemy",
@@ -30679,46 +31134,6 @@
   "peak_decade": "2000s"
  },
  {
-  "name": "All Saints",
-  "slug": "all-saints",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "",
-  "confidence": "Auto",
-  "bb_top10": 1,
-  "bb_no1": 0,
-  "bb_score": 0.63,
-  "uk_top10": 9,
-  "uk_no1": 5,
-  "uk_score": 3.07,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 1.0,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [
-   {
-    "award": "EMA",
-    "year": 1998,
-    "category": "Best New",
-    "work": null
-   },
-   {
-    "award": "EMA",
-    "year": 2000,
-    "category": "Best Pop",
-    "work": null
-   }
-  ],
-  "rs_albums": [],
-  "combined": 7.36,
-  "active": "1997-2006",
-  "peak_decade": "1990s"
- },
- {
   "name": "Lil Tecca",
   "slug": "lil-tecca",
   "metro": "New York",
@@ -31108,45 +31523,6 @@
   "rs_albums": [],
   "combined": 7.18,
   "active": "1981-1985",
-  "peak_decade": "1980s"
- },
- {
-  "name": "The Cure",
-  "slug": "the-cure",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "",
-  "confidence": "High",
-  "bb_top10": 1,
-  "bb_no1": 0,
-  "bb_score": 0.42,
-  "uk_top10": 4,
-  "uk_no1": 0,
-  "uk_score": 0.55,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 2.24,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [
-   {
-    "award": "BRIT",
-    "year": 1991,
-    "category": "British Group",
-    "work": null
-   }
-  ],
-  "rs_albums": [
-   {
-    "rank": 116,
-    "album": "Disintegration"
-   }
-  ],
-  "combined": 7.17,
-  "active": "1983-1992",
   "peak_decade": "1980s"
  },
  {
@@ -32291,44 +32667,6 @@
   "peak_decade": "1970s"
  },
  {
-  "name": "M.I.A.",
-  "slug": "m-i-a",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "",
-  "confidence": "High",
-  "bb_top10": 2,
-  "bb_no1": 0,
-  "bb_score": 0.76,
-  "uk_top10": 0,
-  "uk_no1": 0,
-  "uk_score": 0.0,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 1.86,
-  "gram_wins": 0,
-  "gram_noms": 1,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 2009,
-    "award": "Record of the Year",
-    "work": "Paper Planes"
-   }
-  ],
-  "other_awards": [],
-  "rs_albums": [
-   {
-    "rank": 421,
-    "album": "Arular"
-   }
-  ],
-  "combined": 6.74,
-  "active": "2008-2012",
-  "peak_decade": "2000s"
- },
- {
   "name": "The Teddy Bears",
   "slug": "the-teddy-bears",
   "metro": "Los Angeles",
@@ -32473,38 +32811,6 @@
   "combined": 6.63,
   "active": "1985-1987",
   "peak_decade": "1980s"
- },
- {
-  "name": "The Zombies",
-  "slug": "the-zombies",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "London",
-  "confidence": "Review",
-  "bb_top10": 3,
-  "bb_no1": 0,
-  "bb_score": 1.34,
-  "uk_top10": 0,
-  "uk_no1": 0,
-  "uk_score": 0.0,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 1.08,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [
-   {
-    "rank": 243,
-    "album": "Odessey and Oracle"
-   }
-  ],
-  "combined": 6.62,
-  "active": "1964-1969",
-  "peak_decade": "1960s"
  },
  {
   "name": "Adam and the Ants",
@@ -33091,39 +33397,6 @@
   "peak_decade": "1960s"
  },
  {
-  "name": "Peter Frampton",
-  "slug": "peter-frampton",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "London",
-  "confidence": "High",
-  "bb_top10": 3,
-  "bb_no1": 0,
-  "bb_score": 0.92,
-  "uk_top10": 1,
-  "uk_no1": 0,
-  "uk_score": 0.02,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 1.5,
-  "gram_wins": 0,
-  "gram_noms": 1,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 1977,
-    "award": "Album of the Year",
-    "work": "Frampton Comes Alive!"
-   }
-  ],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 6.4,
-  "active": "1976-1977",
-  "peak_decade": "1970s"
- },
- {
   "name": "The New Vaudeville Band",
   "slug": "the-new-vaudeville-band",
   "metro": "London",
@@ -33392,39 +33665,6 @@
   "peak_decade": "1990s"
  },
  {
-  "name": "The Tony Rich Project",
-  "slug": "the-tony-rich-project",
-  "metro": "Detroit",
-  "metro_slug": "detroit",
-  "country": "USA",
-  "city_of_origin": "Detroit, Michigan",
-  "confidence": "High",
-  "bb_top10": 1,
-  "bb_no1": 0,
-  "bb_score": 1.52,
-  "uk_top10": 0,
-  "uk_no1": 0,
-  "uk_score": 0.0,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.7,
-  "gram_wins": 0,
-  "gram_noms": 1,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 1997,
-    "award": "Best New Artist",
-    "work": null
-   }
-  ],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 6.24,
-  "active": "1996-1996",
-  "peak_decade": "1990s"
- },
- {
   "name": "Duane Eddy",
   "slug": "duane-eddy",
   "metro": "Phoenix",
@@ -33674,33 +33914,6 @@
   "combined": 6.19,
   "active": "1973-1973",
   "peak_decade": "1970s"
- },
- {
-  "name": "Billy Idol",
-  "slug": "billy-idol",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "London",
-  "confidence": "High",
-  "bb_top10": 4,
-  "bb_no1": 1,
-  "bb_score": 1.87,
-  "uk_top10": 3,
-  "uk_no1": 0,
-  "uk_score": 0.57,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.0,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 6.17,
-  "active": "1984-1990",
-  "peak_decade": "1980s"
  },
  {
   "name": "Gayle",
@@ -34246,38 +34459,6 @@
   "rs_albums": [],
   "combined": 6.01,
   "active": "1976-1980",
-  "peak_decade": "1970s"
- },
- {
-  "name": "Sex Pistols",
-  "slug": "sex-pistols",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "",
-  "confidence": "High",
-  "bb_top10": 0,
-  "bb_no1": 0,
-  "bb_score": 0.0,
-  "uk_top10": 6,
-  "uk_no1": 0,
-  "uk_score": 1.66,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 1.8,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [
-   {
-    "rank": 80,
-    "album": "Never Mind the Bollocks, Here's the Sex Pistols"
-   }
-  ],
-  "combined": 5.98,
-  "active": "1977-1979",
   "peak_decade": "1970s"
  },
  {
@@ -34873,40 +35054,6 @@
   "combined": 5.69,
   "active": "2005-2017",
   "peak_decade": "2010s"
- },
- {
-  "name": "Kim Wilde",
-  "slug": "kim-wilde",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "",
-  "confidence": "Auto",
-  "bb_top10": 1,
-  "bb_no1": 1,
-  "bb_score": 0.57,
-  "uk_top10": 7,
-  "uk_no1": 0,
-  "uk_score": 2.05,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.8,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [
-   {
-    "award": "BRIT",
-    "year": 1983,
-    "category": "British Female Solo Artist",
-    "work": null
-   }
-  ],
-  "rs_albums": [],
-  "combined": 5.68,
-  "active": "1981-1989",
-  "peak_decade": "1980s"
  },
  {
   "name": "Grand Funk Railroad",
@@ -35505,33 +35652,6 @@
   "peak_decade": "0s"
  },
  {
-  "name": "Bananarama",
-  "slug": "bananarama",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "London",
-  "confidence": "High",
-  "bb_top10": 3,
-  "bb_no1": 1,
-  "bb_score": 1.11,
-  "uk_top10": 9,
-  "uk_no1": 0,
-  "uk_score": 2.19,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.0,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 5.51,
-  "active": "1982-1988",
-  "peak_decade": "1980s"
- },
- {
   "name": "Zedd",
   "slug": "zedd",
   "metro": "Berlin",
@@ -35880,39 +36000,6 @@
   "peak_decade": "1980s"
  },
  {
-  "name": "Joe Jackson",
-  "slug": "joe-jackson",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "",
-  "confidence": "Review",
-  "bb_top10": 1,
-  "bb_no1": 0,
-  "bb_score": 0.45,
-  "uk_top10": 2,
-  "uk_no1": 0,
-  "uk_score": 0.44,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 1.5,
-  "gram_wins": 0,
-  "gram_noms": 1,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 1983,
-    "award": "Record of the Year",
-    "work": "Steppin' Out"
-   }
-  ],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 5.4,
-  "active": "1980-1983",
-  "peak_decade": "1980s"
- },
- {
   "name": "The Elegants",
   "slug": "the-elegants",
   "metro": "New York",
@@ -36189,33 +36276,6 @@
   "combined": 5.29,
   "active": "1960-1963",
   "peak_decade": "1960s"
- },
- {
-  "name": "Natasha Bedingfield",
-  "slug": "natasha-bedingfield",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "London",
-  "confidence": "High",
-  "bb_top10": 2,
-  "bb_no1": 0,
-  "bb_score": 1.38,
-  "uk_top10": 5,
-  "uk_no1": 1,
-  "uk_score": 1.15,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.0,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 5.29,
-  "active": "2004-2008",
-  "peak_decade": "2000s"
  },
  {
   "name": "Ike Turner",
@@ -37223,40 +37283,6 @@
   "combined": 4.97,
   "active": "2016-2016",
   "peak_decade": "2010s"
- },
- {
-  "name": "The KLF",
-  "slug": "the-klf",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "UK",
-  "city_of_origin": "",
-  "confidence": "Review",
-  "bb_top10": 1,
-  "bb_no1": 0,
-  "bb_score": 0.33,
-  "uk_top10": 5,
-  "uk_no1": 1,
-  "uk_score": 2.03,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.8,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [
-   {
-    "award": "BRIT",
-    "year": 1992,
-    "category": "British Group",
-    "work": null
-   }
-  ],
-  "rs_albums": [],
-  "combined": 4.95,
-  "active": "1990-1992",
-  "peak_decade": "1990s"
  },
  {
   "name": "Jimmy Clanton",
@@ -38551,6 +38577,33 @@
   "combined": 4.57,
   "active": "1985-1986",
   "peak_decade": "1980s"
+ },
+ {
+  "name": "The Tony Rich Project",
+  "slug": "the-tony-rich-project",
+  "metro": "Detroit",
+  "metro_slug": "detroit",
+  "country": "USA",
+  "city_of_origin": "Detroit, Michigan",
+  "confidence": "High",
+  "bb_top10": 1,
+  "bb_no1": 0,
+  "bb_score": 1.52,
+  "uk_top10": 0,
+  "uk_no1": 0,
+  "uk_score": 0.0,
+  "album_raw": 0.0,
+  "album_est": false,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 4.56,
+  "active": "1996-1996",
+  "peak_decade": "1990s"
  },
  {
   "name": "Jason Mraz",
@@ -47337,38 +47390,6 @@
   "peak_decade": "2010s"
  },
  {
-  "name": "Rage Against the Machine",
-  "slug": "rage-against-the-machine",
-  "metro": "Los Angeles",
-  "metro_slug": "los-angeles",
-  "country": "USA",
-  "city_of_origin": "",
-  "confidence": "High",
-  "bb_top10": 0,
-  "bb_no1": 0,
-  "bb_score": 0.0,
-  "uk_top10": 2,
-  "uk_no1": 1,
-  "uk_score": 0.39,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 1.08,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [
-   {
-    "rank": 221,
-    "album": "Rage Against the Machine"
-   }
-  ],
-  "combined": 2.99,
-  "active": "1996-2009",
-  "peak_decade": "1990s"
- },
- {
   "name": "The Proclaimers",
   "slug": "the-proclaimers",
   "metro": "Edinburgh",
@@ -55129,33 +55150,6 @@
   "combined": 2.14,
   "active": "1963-1963",
   "peak_decade": "1960s"
- },
- {
-  "name": "Average White Band",
-  "slug": "average-white-band",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "United Kingdom",
-  "city_of_origin": "London",
-  "confidence": "High",
-  "bb_top10": 2,
-  "bb_no1": 1,
-  "bb_score": 0.65,
-  "uk_top10": 1,
-  "uk_no1": 0,
-  "uk_score": 0.2,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.0,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 2.14,
-  "active": "1975-1975",
-  "peak_decade": "1970s"
  },
  {
   "name": "Alan O'Day",

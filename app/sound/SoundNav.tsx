@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 
 const TABS: [string, string][] = [
   ['/sound', 'Hub'],
+  ['/sound/charts', 'Live Charts'],
   ['/sound/rankings', 'Rankings by Metro'],
   ['/sound/artists', 'Artists'],
   ['/sound/grammys', 'Awards History'],
@@ -17,7 +18,7 @@ const TABS: [string, string][] = [
 export default function SoundNav() {
   const pathname = usePathname();
   return (
-    <nav className="mb-5 flex gap-1 border-b" style={{ borderColor: 'var(--border, #222b36)' }}>
+    <nav className="mb-5 flex flex-wrap gap-1 border-b" style={{ borderColor: 'var(--border, #222b36)' }}>
       {TABS.map(([href, label]) => {
         const active = href === '/sound' ? pathname === '/sound' : pathname.startsWith(href);
         return (

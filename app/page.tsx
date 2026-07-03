@@ -1,677 +1,582 @@
-import { getAllMetros, getRegions, formatPop, formatMarketCap, regionColors, slugify } from '@/lib/data';
-import RankingsTable from './RankingsTable';
-import HomeSidebar from './HomeSidebar';
-import Link from 'next/link';
+import { getAllMetros } from '@/lib/data';
+import { getSubstackPosts, type SubstackPost } from '@/lib/substack';
+import { getLiveBadges } from '@/lib/badges';
+import { leagueStatusFor, type LeagueStatusTone } from '@/lib/leagueStatus';
+import { FEATURED } from '@/app/sports/games/featured';
+import { flagCdnUrl } from '@/lib/international-display';
+import { datasetJsonLd, serializeJsonLd } from '@/lib/seo';
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { datasetJsonLd, itemListJsonLd, serializeJsonLd } from '@/lib/seo';
-import { getSubstackPosts, type SubstackPost } from '@/lib/substack';
+import Link from 'next/link';
 
-// ISR: regenerate the home page in the background every hour so the live
-// Substack feed (lib/substack fetches it with its own hourly revalidate)
-// refreshes without rebuilding the whole site. This replaces the daily
-// 'daily-substack-refresh' deploy hook, which forced a full production build
-// just to surface new posts.
+// Directory-forward landing page. Surfaces the breadth of the site first —
+// four ranked indices (each with a live top-three preview), a Greatest Games
+// showcase, the full atlas, live sports, the journal, badges, and a site
+// index — and routes the metro rankings table to its own /rankings hub.
+// Server component; the only async work is the hourly Substack ISR fetch.
 export const revalidate = 3600;
 
-// Internal evergreen pieces that should always appear in the Featured Articles
-// strip alongside the latest Substack posts. Order matters: pinned items
-// render first, then RSS items fill remaining slots up to FEATURED_LIMIT.
-type FeaturedCard = {
-  title: string;
-  subtitle: string;
-  status: string;
-  href: string;
-  external: boolean;
-};
+const MONO = { fontFamily: "'JetBrains Mono', monospace" } as const;
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
-const PINNED_FEATURED: FeaturedCard[] = [
-  {
-    title: 'The Last of the Marylebones',
-    subtitle:
-      'A taxonomy of the world’s dense, historic, walkable, elite residential neighborhoods. A small qualifying set out of the full metro corpus.',
-    status: 'Read',
-    href: '/neighborhoods',
-    external: false,
-  },
-  {
-    title: 'The Team That Wins the City',
-    subtitle:
-      'One crest per metro. The single sporting franchise that defines each global metro with a serious civic-identity call, with full rationales for the contested calls.',
-    status: 'Read',
-    href: '/top-teams',
-    external: false,
-  },
-];
+function fmtDate(iso: string): string {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!m) return iso;
+  return `${MONTHS[parseInt(m[2], 10) - 1]} ${parseInt(m[3], 10)}, ${m[1]}`;
+}
 
-const FEATURED_LIMIT = 4;
-
-function buildFeaturedCards(posts: SubstackPost[]): FeaturedCard[] {
-  // Dedupe: if a pinned card points at a Substack URL we also have in the
-  // feed, prefer the pinned copy and drop the duplicate from the RSS slice.
-  const pinnedHrefs = new Set(PINNED_FEATURED.map((c) => c.href));
-  const remaining = FEATURED_LIMIT - PINNED_FEATURED.length;
-  const fromFeed: FeaturedCard[] = posts
-    .filter((p) => !pinnedHrefs.has(p.url))
-    .slice(0, Math.max(0, remaining))
-    .map((p) => ({
-      title: p.title,
-      subtitle: p.description,
-      status: 'Read on Substack',
-      href: p.url,
-      external: true,
-    }));
-  return [...PINNED_FEATURED, ...fromFeed].slice(0, FEATURED_LIMIT);
+function readData<T>(rel: string[], fallback: T): T {
+  try {
+    return JSON.parse(readFileSync(join(/*turbopackIgnore: true*/ process.cwd(), 'public', 'data', ...rel), 'utf-8')) as T;
+  } catch {
+    return fallback;
+  }
 }
 
 function getLastUpdate(): string {
-  try {
-    const raw = readFileSync(
-      join(process.cwd(), 'public', 'data', 'meta.json'),
-      'utf-8',
-    );
-    const meta = JSON.parse(raw) as { lastUpdate?: string };
-    return meta.lastUpdate || new Date().toISOString().slice(0, 10);
-  } catch {
-    return new Date().toISOString().slice(0, 10);
+  const meta = readData<{ lastUpdate?: string }>(['meta.json'], {});
+  return meta.lastUpdate || new Date().toISOString().slice(0, 10);
+}
+
+// Football nation names (incl. historical) -> internal nation slug, used with
+// the site-wide flagCdnUrl helper to render real flag images (emoji flags do
+// not render on Windows browsers, so we use images everywhere).
+const FB_SLUG: Record<string, string> = {
+  'West Germany': 'germany', 'East Germany': 'germany', 'Germany': 'germany', 'Hungary': 'hungary',
+  'England': 'england', 'Scotland': 'scotland', 'Wales': 'wales', 'Argentina': 'argentina', 'France': 'france',
+  'Brazil': 'brazil', 'Italy': 'italy', 'Spain': 'spain', 'Netherlands': 'netherlands', 'Uruguay': 'uruguay',
+  'Portugal': 'portugal', 'Croatia': 'croatia', 'Morocco': 'morocco', 'Mexico': 'mexico', 'USA': 'united-states', 'United States': 'united-states',
+};
+function footballFlagUrls(matchup?: string): string[] {
+  if (!matchup) return [];
+  const m = /^(.+?)\s+\d+\s*[-\u2013]\s*\d+\s+(.+?)$/.exec(matchup);
+  if (!m) return [];
+  return [m[1].trim(), m[2].trim()]
+    .map((nm) => { const sl = FB_SLUG[nm]; return sl ? flagCdnUrl(sl, '20x15') : null; })
+    .filter((u): u is string => !!u);
+}
+
+// ---- Top-three previews for the index cards ----
+type Preview = { name: string; meta: string; sub?: string; flagUrl?: string | null };
+
+function topMetros(): Preview[] {
+  return getAllMetros().slice(0, 3).map((m) => ({ name: m.name, sub: m.country, meta: m.score.toFixed(1) }));
+}
+function topPeople(): Preview[] {
+  const d = readData<{ ranking?: { name: string; metro?: string; power?: number }[] }>(['power-ranking.json'], {});
+  return (d.ranking ?? []).slice(0, 3).map((p) => ({ name: p.name, sub: p.metro, meta: p.power != null ? String(Math.round(p.power)) : '' }));
+}
+function topNations(): Preview[] {
+  const d = readData<{ nations?: { name: string; merit?: number; continent?: string; countrySlug?: string; slug?: string }[] }>(['zone-zero-cup.json'], {});
+  return (d.nations ?? []).slice(0, 3).map((n) => ({
+    name: n.name,
+    sub: n.continent,
+    flagUrl: n.slug ? flagCdnUrl(n.slug, '20x15') : null,
+    meta: n.merit != null ? n.merit.toFixed(0) : '',
+  }));
+}
+function topArtists(): Preview[] {
+  const d = readData<{ name: string; metro?: string; combined?: number }[]>(['sound', 'artists.json'], []);
+  return d.slice(0, 3).map((a) => ({ name: a.name, sub: a.metro, meta: a.combined != null ? a.combined.toFixed(0) : '' }));
+}
+
+// ---- Greatest Games: one marquee game per sport (excluding NHL), pulled
+// from the same curated FEATURED list that powers /sports/games. ----
+const GAME_SPORTS: { tag: string; label: string; emoji: string }[] = [
+  { tag: 'INTFB', label: 'World Football', emoji: '⚽' },
+  { tag: 'NFL', label: 'NFL', emoji: '🏈' },
+  { tag: 'NBA', label: 'NBA', emoji: '🏀' },
+  { tag: 'MLB', label: 'MLB', emoji: '⚾' },
+  { tag: 'CFB', label: 'College Football', emoji: '🏈' },
+  { tag: 'CBB', label: 'College Hoops', emoji: '🏀' },
+];
+type GameEntry = { title: string; matchup?: string; note?: string; flagUrls: string[]; rank?: number };
+type SportGames = { tag: string; label: string; emoji: string; games: GameEntry[] };
+// True all-time Game Score rank for each curated clip, matched against the
+// same ranked source the /sports/games page uses: by game date for the pro
+// leagues, by team pairing for college (its FEATURED clips carry no date).
+type RankRow = { date?: string; team?: string; opp?: string };
+const RANK_SRC: Record<string, { file: string[]; key?: string; by: 'date' | 'teams' }> = {
+  INTFB: { file: ['international', 'top-games-all-time.json'], by: 'date' },
+  NFL: { file: ['nfl', 'top-games-all-time.json'], by: 'date' },
+  NBA: { file: ['nba', 'top-games-all-time.json'], by: 'date' },
+  MLB: { file: ['mlb', 'top-games-all-time.json'], by: 'date' },
+  CFB: { file: ['cfb', 'games.json'], key: 'top_overall', by: 'teams' },
+  CBB: { file: ['cbb', 'games.json'], key: 'top_overall', by: 'teams' },
+};
+function norm(x?: string): string { return (x ?? '').toLowerCase().replace(/[^a-z0-9]/g, ''); }
+function rankByDate(rows: RankRow[], date?: string): number | undefined {
+  if (!date) return undefined;
+  const i = rows.findIndex((r) => r.date === date);
+  return i >= 0 ? i + 1 : undefined;
+}
+function rankByTeams(rows: RankRow[], matchup?: string): number | undefined {
+  if (!matchup) return undefined;
+  const parts = matchup.split(/\s+\d+\s*[-\u2013]\s*\d+\s*(?:\([^)]*\)\s*)?/).map((x) => x.trim()).filter(Boolean);
+  if (parts.length !== 2) return undefined;
+  const key = [norm(parts[0]), norm(parts[1])];
+  const i = rows.findIndex((r) => { const a = norm(r.team), b = norm(r.opp); return (a === key[0] && b === key[1]) || (a === key[1] && b === key[0]); });
+  return i >= 0 ? i + 1 : undefined;
+}
+function marqueeGames(): SportGames[] {
+  const out: SportGames[] = [];
+  for (const s of GAME_SPORTS) {
+    const feats = FEATURED.filter((f) => f.leagueTag === s.tag).slice(0, 2);
+    if (!feats.length) continue;
+    const src = RANK_SRC[s.tag];
+    const rows: RankRow[] = src.key
+      ? (readData<Record<string, RankRow[]>>(src.file, {})[src.key] ?? [])
+      : readData<RankRow[]>(src.file, []);
+    const games: GameEntry[] = feats.map((g) => ({
+      title: g.title,
+      matchup: g.matchup,
+      note: g.note,
+      flagUrls: s.tag === 'INTFB' ? footballFlagUrls(g.matchup) : [],
+      rank: src.by === 'date' ? rankByDate(rows, g.match?.date) : rankByTeams(rows, g.matchup),
+    }));
+    out.push({ tag: s.tag, label: s.label, emoji: s.emoji, games });
   }
+  return out;
+}
+
+type IndexCard = { n: string; title: string; desc: string; stat: string; href: string; emoji?: string; seal?: boolean; isNew?: boolean; preview: Preview[] };
+
+type AtlasCard = { emoji: string; title: string; desc: string; href: string; sub: string; live?: boolean };
+const ATLAS: AtlasCard[] = [
+  { emoji: '🏙️', title: 'Rankings', desc: 'The metro leaderboard, badges, and the compare tool.', href: '/rankings', sub: 'Top 100 · Compare · Badges' },
+  { emoji: '🗺️', title: 'Geography', desc: 'Countries, states, and the expandable world map.', href: '/countries', sub: 'Countries · States · Map · Matchups' },
+  { emoji: '🏟️', title: 'Sports', desc: 'Every league, national team, and cross-sport index.', href: '/sports', sub: 'Leagues · Zone Zero Cup · Rivalries', live: true },
+  { emoji: '🎵', title: 'Sound', desc: 'The music of the metros, by chart and by decade.', href: '/sound', sub: 'Rankings · Artists · Awards · Decades' },
+  { emoji: '👑', title: 'People', desc: 'The powerful, the wealthy, and the elected.', href: '/power', sub: 'Nowhere 100 · Billionaires · Mayors' },
+  { emoji: '✍️', title: 'Essays', desc: 'Long-form deep dives and the Substack archive.', href: '/deep-dives', sub: 'Deep Dives · Substack' },
+  { emoji: '🏅', title: 'Badges', desc: 'The same data reframed through categorical lenses.', href: '/badges', sub: 'Finance · Culture · Rail · Sport' },
+  { emoji: '🎮', title: 'Play', desc: 'Games and learning tools for younger fans.', href: '/play', sub: 'Kids Games · Arcade' },
+];
+
+// Masthead quick-launch: every Atlas section as a badge tile, plus explicit
+// entries for the kids games and the arcade games.
+const MASTHEAD_LAUNCH: { emoji: string; label: string; href: string }[] = [
+  { emoji: '🏙️', label: 'Rankings', href: '/rankings' },
+  { emoji: '🗺️', label: 'Geography', href: '/countries' },
+  { emoji: '🏟️', label: 'Sports', href: '/sports' },
+  { emoji: '🎵', label: 'Sound', href: '/sound' },
+  { emoji: '👑', label: 'People', href: '/power' },
+  { emoji: '✍️', label: 'Essays', href: '/deep-dives' },
+  { emoji: '🏅', label: 'Badges', href: '/badges' },
+  { emoji: '🧸', label: 'Kids Games', href: '/play' },
+  { emoji: '🕹️', label: 'Games', href: '/play/arcade' },
+];
+
+const LEAGUES: { name: string; href: string; emoji?: string }[] = [
+  { name: 'World Cup 2026', href: '/teams/national', emoji: '🏆' },
+  { name: 'NBA', href: '/teams/nba', emoji: '🏀' },
+  { name: 'NHL', href: '/teams/nhl', emoji: '🏒' },
+  { name: 'MLB', href: '/teams/mlb', emoji: '⚾' },
+  { name: 'MLS', href: '/teams/football/leagues/mls', emoji: '⚽' },
+  { name: 'WNBA', href: '/teams/wnba', emoji: '🏀' },
+  { name: "Women's Football", href: '/teams/wfootball', emoji: '⚽' },
+  { name: 'CFL', href: '/teams/cfl', emoji: '🏈' },
+  { name: 'AFL', href: '/teams/afl', emoji: '🏉' },
+  { name: 'NRL', href: '/teams/nrl', emoji: '🏉' },
+];
+
+const TONE_COLOR: Record<LeagueStatusTone, string> = {
+  regular: '#10b981',
+  playoffs: '#f59e0b',
+  worldcup: '#a855f7',
+  champion: '#d4af37',
+  offseason: 'var(--text-dim)',
+};
+
+type IndexColumn = { heading: string; links: { label: string; href: string }[] };
+const SITE_INDEX: IndexColumn[] = [
+  { heading: 'Rankings', links: [
+    { label: 'Metro Power Rankings', href: '/rankings' },
+    { label: 'The Nowhere 100', href: '/power' },
+    { label: 'Zone Zero Cup', href: '/sports/zone-zero-cup' },
+    { label: 'Artist Rankings', href: '/sound/artists' },
+    { label: 'Compare metros', href: '/compare' },
+    { label: 'Badges', href: '/badges' },
+  ]},
+  { heading: 'Geography', links: [
+    { label: 'Countries', href: '/countries' },
+    { label: 'States & Provinces', href: '/states' },
+    { label: 'Expandable Map', href: '/expandable-map' },
+    { label: 'Matchups', href: '/matchups/london-vs-new-york' },
+    { label: 'Neighborhoods', href: '/neighborhoods' },
+    { label: 'Regional champions', href: '/rankings#regions' },
+  ]},
+  { heading: 'Sports', links: [
+    { label: 'Sports Hub', href: '/sports' },
+    { label: 'Zone Zero Cup', href: '/sports/zone-zero-cup' },
+    { label: 'The Greatest Games', href: '/sports/games' },
+    { label: 'Geography of Erasure', href: '/sports/geography-of-erasure' },
+    { label: 'Team Valuations', href: '/sports/valuations' },
+    { label: 'Rivalries', href: '/sports/rivalries' },
+  ]},
+  { heading: 'Sound & People', links: [
+    { label: 'The Sound of the Metros', href: '/sound' },
+    { label: 'Rankings by Metro', href: '/sound/rankings' },
+    { label: 'Artists', href: '/sound/artists' },
+    { label: 'Awards History', href: '/sound/grammys' },
+    { label: 'Billionaires', href: '/billionaires' },
+    { label: 'Mayors of the World', href: '/mayors' },
+  ]},
+  { heading: 'More', links: [
+    { label: 'About', href: '/about' },
+    { label: 'Methodology', href: '/methodology' },
+    { label: 'Deep Dives', href: '/deep-dives' },
+    { label: 'Play', href: '/play' },
+    { label: 'Updates', href: '/updates' },
+    { label: 'Studio', href: '/studio' },
+    { label: 'Random metro', href: '/random' },
+  ]},
+];
+
+const DIMENSIONS = [
+  'Population', 'Market Capitalization', 'Major League Teams & Venues', 'Minor & College Teams',
+  'Cultural & Civic Assets', 'Top-50 Universities', 'Other Research Institutions', 'Metro Transit',
+  'GaWC Global Connectivity', 'Suburban Rail', 'Intercity Train Hubs', 'Skyscrapers',
+  'Airport Score', 'Major Sporting Events', 'Annual Cultural Events', 'Michelin & Luxury Hospitality',
+];
+
+function IndexPreview({ rows }: { rows: Preview[] }) {
+  if (rows.length === 0) return null;
+  return (
+    <div className="mt-3 mb-3 flex flex-col gap-1.5">
+      {rows.map((r, i) => (
+        <div key={r.name} className="flex items-baseline justify-between gap-2">
+          <span className="flex items-baseline gap-2 min-w-0">
+            <span className="text-[11px] flex-shrink-0" style={{ ...MONO, color: 'var(--text-dim)' }}>{i + 1}</span>
+            {r.flagUrl && <img src={r.flagUrl} alt="" width={18} height={13} className="flex-shrink-0 rounded-[2px]" style={{ objectFit: 'cover' }} />}
+            <span className="text-[13px] font-medium truncate">{r.name}</span>
+            {r.sub && <span className="text-[11px] text-[var(--text-dim)] truncate hidden sm:inline">{r.sub}</span>}
+          </span>
+          {r.meta && <span className="text-[11px] flex-shrink-0" style={{ ...MONO, color: 'var(--accent)' }}>{r.meta}</span>}
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default async function Home() {
   const metros = getAllMetros();
-  const regions = getRegions();
   const lastUpdate = getLastUpdate();
-  const substackPosts = await getSubstackPosts();
-  const featuredArticles = buildFeaturedCards(substackPosts);
+  const posts: SubstackPost[] = await getSubstackPosts();
+  const journal = posts.slice(0, 3);
+  const badges = getLiveBadges();
+  const games = marqueeGames();
 
-  const dataset = datasetJsonLd({
-    lastUpdate,
-    metroCount: metros.length,
-  });
-  const top100 = itemListJsonLd(metros.slice(0, 100));
+  const INDICES: IndexCard[] = [
+    { n: '01', title: 'Metro Power Rankings', desc: 'Every metro on Earth, scored across sixteen weighted dimensions.', stat: '4,200+ metros', href: '/rankings', emoji: '🌐', preview: topMetros() },
+    { n: '02', title: 'The Nowhere 100', desc: 'The hundred most powerful people alive, on one Metro Power scale.', stat: '100 people', href: '/power', seal: true, preview: topPeople() },
+    { n: '03', title: 'Zone Zero Cup', desc: 'National sporting merit across fourteen pillars, ten-year half-life.', stat: '200+ nations', href: '/sports/zone-zero-cup', emoji: '🏆', preview: topNations() },
+    { n: '04', title: 'Musical Artist Rankings', desc: 'The biggest artists by chart success and prestige, by home metro.', stat: 'By metro', href: '/sound/artists', emoji: '🎵', isNew: true, preview: topArtists() },
+  ];
 
-  // Calculate score distribution
-  const scoreDistribution = {
-    '100+': metros.filter((m) => m.score >= 100).length,
-    '50-100': metros.filter((m) => m.score >= 50 && m.score < 100).length,
-    '20-50': metros.filter((m) => m.score >= 20 && m.score < 50).length,
-    '10-20': metros.filter((m) => m.score >= 10 && m.score < 20).length,
-    '5-10': metros.filter((m) => m.score >= 5 && m.score < 10).length,
-    '1-5': metros.filter((m) => m.score >= 1 && m.score < 5).length,
-    '<1': metros.filter((m) => m.score < 1).length,
-  };
+  const leagueRows = LEAGUES.map((l) => ({ ...l, status: leagueStatusFor(l.href) }));
+  const liveLeagues = leagueRows.filter((l) => l.status && l.status.tone !== 'offseason');
+
+  const dataset = datasetJsonLd({ lastUpdate, metroCount: metros.length });
 
   return (
     <div style={{ backgroundColor: 'var(--bg)', color: 'var(--text)' }}>
-      {/* Structured data: Dataset registering the ranking corpus and
-          ItemList for the Top 100. Read by LLMs, AI search, and Google. */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: serializeJsonLd(dataset) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: serializeJsonLd(top100) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(dataset) }} />
 
-      {/* Tight hero. Three rendered lines (eyebrow, headline, one-line
-          subhead). No hero search input — RankingsTable below has its own
-          search baked into the filter controls, and the '/' shortcut binds
-          to that input. Goal: rankings table starts within ~160 px of the
-          content area top on a typical 13-inch laptop. */}
-      <section className="pt-16 pb-4 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <p
-            className="text-xs font-semibold tracking-widest mb-1.5 uppercase"
-            style={{
-              color: 'var(--accent)',
-              fontFamily: "'JetBrains Mono', monospace",
-            }}
-          >
-            Citizen of Nowhere
-          </p>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-1.5 leading-tight">
-            Global Metro Power Rankings
-          </h1>
-          <p className="text-base sm:text-lg text-[var(--text-muted)] max-w-3xl">
-            Every populated metropolitan area on Earth, scored across sixteen
-            weighted dimensions.
-          </p>
-        </div>
-      </section>
+      {/* Masthead — headline + live standings/badges + This Week rail. */}
+      <section className="pt-16 pb-14 px-4 sm:px-6 lg:px-8 border-b" style={{ borderColor: 'var(--border)' }}>
+        <div className="max-w-7xl mx-auto grid gap-10 lg:gap-16" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
+          <div>
+            <p className="text-xs uppercase tracking-widest mb-3" style={{ ...MONO, color: 'var(--accent)' }}>
+              rankings.citizenofnowhere.org
+            </p>
+            <h1 className="font-extrabold leading-tight mb-4" style={{ fontSize: 'clamp(28px, 4vw, 40px)' }}>
+              Cities are the unit of civilization.
+            </h1>
+            <p className="text-base text-[var(--text)] max-w-lg mb-3">
+              So we measure them, and the power, sport, and culture they concentrate.
+            </p>
+            <p className="text-[15px] text-[var(--text-muted)] max-w-lg mb-6">
+              Everything ranked in the open, for anyone who would rather settle an argument with data
+              than opinion.
+            </p>
 
-      {/* Rankings + sidebar. At lg+ the rankings table sits in 8 cols
-          and a sticky sidebar (Discover, latest essays, recently shipped,
-          random metro CTA) sits in 4 cols. Below lg the sidebar wraps
-          underneath the table so mobile and tablet readers still see
-          everything in sequence. */}
-      <section
-        id="rankings"
-        className="pt-4 pb-12 px-4 sm:px-6 lg:px-8 border-b"
-        style={{ borderColor: 'var(--border)' }}
-      >
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            <div className="lg:col-span-8 min-w-0">
-              <RankingsTable metros={metros} />
+          </div>
+
+          {/* Explore launcher — quick visual entry to every section + the games. */}
+          <div className="h-fit">
+            <p className="text-[11px] uppercase tracking-widest mb-3" style={{ ...MONO, color: 'var(--text-muted)' }}>Explore the site</p>
+            <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))' }}>
+              {MASTHEAD_LAUNCH.map((t) => (
+                <Link key={t.href + t.label} href={t.href} className="flex items-center gap-2.5 rounded-lg border px-3 py-2.5 transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                  <span className="text-lg leading-none" aria-hidden>{t.emoji}</span>
+                  <span className="text-[13px] font-medium">{t.label}</span>
+                </Link>
+              ))}
             </div>
-            <div className="lg:col-span-4">
-              <HomeSidebar />
+            <Link href="/random" className="inline-flex items-center gap-1.5 mt-3 text-[13px]" style={{ ...MONO, color: 'var(--accent)' }}>
+              🎲 Random metro <span aria-hidden>→</span>
+            </Link>
+            {/* Live now — standings + sport badges (moved here) + live music charts. */}
+            <div className="mt-6 pt-5 border-t" style={{ borderColor: 'var(--border)' }}>
+            {liveLeagues.length > 0 && (
+              <div>
+                <Link href="/sports/standings" className="inline-flex items-center gap-1 text-xs mb-2 hover:opacity-80 transition-opacity" style={{ ...MONO, color: 'var(--accent)' }}>
+                  📊 Live standings <span aria-hidden>→</span>
+                </Link>
+                <div className="flex flex-wrap items-center gap-2">
+                  {liveLeagues.map((l) => {
+                    const isWC = l.href === '/teams/national';
+                    const color = l.status ? TONE_COLOR[l.status.tone] : 'var(--text-dim)';
+                    return (
+                      <Link
+                        key={l.href}
+                        href={l.href}
+                        className="inline-flex items-center gap-1.5 rounded-full transition-colors"
+                        style={
+                          isWC
+                            ? { ...MONO, fontSize: 12, padding: '5px 12px', color: '#F5F4EE', background: 'rgba(168,85,247,0.22)', border: '1px solid #a855f7', fontWeight: 600 }
+                            : { ...MONO, fontSize: 12, padding: '4px 11px', color: 'var(--text)', background: 'var(--bg-card)', border: '1px solid var(--border)' }
+                        }
+                        title={l.status ? `${l.name} — ${l.status.label}` : l.name}
+                      >
+                        <span aria-hidden>{l.emoji}</span>
+                        <span>{isWC ? 'World Cup' : l.name}</span>
+                        {isWC ? (
+                          <span style={{ color: '#c9a4f5' }}>· Final Jul 19</span>
+                        ) : (
+                          <span className="w-1.5 h-1.5 rounded-full" style={{ background: color }} aria-hidden />
+                        )}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+              <Link href="/sound/charts" className="inline-flex items-center gap-1.5 mt-4 text-[13px]" style={{ ...MONO, color: 'var(--accent)' }}>
+                🎵 Live Music Charts <span aria-hidden>→</span>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Score Distribution Section */}
-      <section
-        className="py-20 px-4 sm:px-6 lg:px-8 border-b"
-        style={{ borderColor: 'var(--border)' }}
-      >
-        <div className="max-w-5xl mx-auto">
-          <h2
-            className="text-3xl font-bold mb-12"
-            style={{ color: 'var(--accent)' }}
-          >
-            Score Distribution
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {Object.entries(scoreDistribution).map(([range, count]) => (
-              <div
-                key={range}
-                className="p-6 rounded-lg border"
-                style={{
-                  backgroundColor: 'var(--bg-card)',
-                  borderColor: 'var(--border)',
-                }}
-              >
-                <div
-                  className="text-3xl font-bold"
-                  style={{
-                    color: 'var(--accent)',
-                    fontFamily: "'JetBrains Mono', monospace",
-                  }}
-                >
-                  {count}
+      {/* The Indices — each card previews its live top three, then a Greatest Games showcase. */}
+      <section id="indices" className="py-16 px-4 sm:px-6 lg:px-8 border-b scroll-mt-20" style={{ borderColor: 'var(--border)' }}>
+        <div className="max-w-7xl mx-auto">
+          <p className="text-[11px] uppercase tracking-widest mb-2" style={{ ...MONO, color: 'var(--accent)' }}>The indices</p>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3">The rankings</h2>
+          <p className="text-[15px] text-[var(--text-muted)] max-w-3xl mb-8">
+            Metros, people, countries, and artists. Each index has its own hub, hand-curated, weighted in the open, and inspectable at the row level.
+          </p>
+          <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
+            {INDICES.map((c) => (
+              <Link key={c.n} href={c.href} className="flex flex-col p-6 rounded-lg border transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[11px] uppercase tracking-widest" style={{ ...MONO, color: 'var(--text-muted)' }}>Index / {c.n}</span>
+                  {c.isNew && <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ ...MONO, color: 'var(--accent)', background: 'rgba(78,205,196,0.16)' }}>NEW</span>}
                 </div>
-                <div className="text-sm text-[var(--text-muted)] mt-2">
-                  Score {range}
+                <div className="flex items-center gap-2.5 mb-2">
+                  {c.seal ? (
+                    <img src="/nowhere-100-seal.svg" alt="" width={26} height={26} style={{ flexShrink: 0 }} />
+                  ) : (
+                    <span className="text-2xl leading-none" aria-hidden>{c.emoji}</span>
+                  )}
+                  <h3 className="text-lg font-bold">{c.title}</h3>
                 </div>
+                <p className="text-[13px] text-[var(--text-muted)] leading-relaxed">{c.desc}</p>
+                <IndexPreview rows={c.preview} />
+                <div className="flex items-center justify-between mt-auto pt-3.5 border-t" style={{ borderColor: 'var(--border)' }}>
+                  <span className="text-xs" style={{ ...MONO, color: 'var(--accent)' }}>{c.stat}</span>
+                  <span className="text-[var(--text-dim)]" aria-hidden>See all →</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {/* Greatest Games — the top two games in every sport (NHL excluded for now). */}
+          {games.length > 0 && (
+            <div className="mt-10 pt-8 border-t" style={{ borderColor: 'var(--border)' }}>
+              <div className="flex items-baseline justify-between gap-4 mb-5 flex-wrap">
+                <div><h3 className="text-lg font-bold flex items-center gap-2"><span aria-hidden>🎬</span> The Greatest Games</h3><p className="text-[11px] mt-1" style={{ ...MONO, color: 'var(--text-dim)' }}>Two per sport, with all-time Game Score rank</p></div>
+                <Link href="/sports/games" className="text-xs" style={{ ...MONO, color: 'var(--accent)' }}>The top games in every sport →</Link>
               </div>
+              <div className="grid gap-3" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
+                {games.map((sp) => (
+                  <div key={sp.tag} className="p-4 rounded-lg border" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                    <div className="flex items-center gap-1.5 mb-3 text-[10px] uppercase tracking-widest" style={{ ...MONO, color: 'var(--text-muted)' }}>
+                      <span aria-hidden className="text-base leading-none">{sp.emoji}</span>{sp.label}
+                    </div>
+                    <div className="flex flex-col gap-3">
+                      {sp.games.map((g, idx) => (
+                        <Link key={idx} href="/sports/games" className="block group">
+                          <div className="flex items-baseline gap-2">
+                            <span className="text-[11px] flex-shrink-0 font-semibold" style={{ ...MONO, color: 'var(--accent)' }}>{g.rank ? `#${g.rank}` : `#${idx + 1}`}</span>
+                            <span className="text-sm font-semibold leading-snug group-hover:text-[var(--accent)] transition-colors">{g.title}</span>
+                          </div>
+                          <div className="flex items-center gap-2 mt-0.5 pl-5">
+                            {g.flagUrls.map((u, i) => (
+                              <img key={i} src={u} alt="" width={18} height={13} className="rounded-[2px] flex-shrink-0" style={{ objectFit: 'cover' }} />
+                            ))}
+                            {g.matchup && <span className="text-[12px]" style={{ color: 'var(--accent)' }}>{g.matchup}</span>}
+                          </div>
+                          {g.note && <span className="block text-[11px] text-[var(--text-dim)] leading-snug pl-5 mt-0.5">{g.note}</span>}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* The Atlas */}
+      <section id="atlas" className="py-16 px-4 sm:px-6 lg:px-8 border-b scroll-mt-20" style={{ borderColor: 'var(--border)' }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-baseline justify-between gap-4 mb-8 flex-wrap">
+            <div>
+              <p className="text-[11px] uppercase tracking-widest mb-2" style={{ ...MONO, color: 'var(--accent)' }}>The atlas</p>
+              <h2 className="text-2xl sm:text-3xl font-bold">Everything on the site</h2>
+            </div>
+            <a href="#index" className="text-xs" style={{ ...MONO, color: 'var(--text-muted)' }}>Full site index →</a>
+          </div>
+          <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))' }}>
+            {ATLAS.map((c) => (
+              <Link key={c.title} href={c.href} className="flex flex-col gap-2.5 p-5 rounded-lg border transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                <div className="flex items-center gap-2.5">
+                  <span className="text-2xl leading-none" aria-hidden>{c.emoji}</span>
+                  <h3 className="text-lg font-bold">{c.title}</h3>
+                  {c.live && (
+                    <span className="flex items-center gap-1 ml-auto">
+                      <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#10b981' }} aria-hidden />
+                      <span className="text-[10px]" style={{ ...MONO, color: '#10b981' }}>LIVE</span>
+                    </span>
+                  )}
+                </div>
+                <p className="text-[13px] text-[var(--text-muted)] leading-relaxed">{c.desc}</p>
+                <span className="text-xs mt-1" style={{ ...MONO, color: 'var(--text-dim)' }}>{c.sub}</span>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Regional Champions Section */}
-      <section
-        id="regions"
-        className="py-20 px-4 sm:px-6 lg:px-8 border-b"
-        style={{ borderColor: 'var(--border)' }}
-      >
-        <div className="max-w-7xl mx-auto">
-          <h2
-            className="text-3xl font-bold mb-12"
-            style={{ color: 'var(--accent)' }}
-          >
-            Regional Champions
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {regions.map((region) => (
-              <div
-                key={region.name}
-                id={`region-${slugify(region.name)}`}
-                className="p-6 rounded-lg border transition-all hover:border-[var(--accent)] scroll-mt-24"
-                style={{
-                  backgroundColor: 'var(--bg-card)',
-                  borderColor: 'var(--border)',
-                }}
-              >
-                <div className="flex items-center gap-2 mb-6">
-                  <div
-                    className="w-3 h-3 rounded-full"
-                    style={{
-                      backgroundColor:
-                        regionColors[region.name] || 'var(--text-dim)',
-                    }}
-                  />
-                  <h3 className="text-lg font-bold">{region.name}</h3>
-                </div>
+      {/* Live / Journal / Badges band */}
+      <section id="live" className="py-16 px-4 sm:px-6 lg:px-8 border-b scroll-mt-20" style={{ borderColor: 'var(--border)' }}>
+        <div className="max-w-7xl mx-auto grid gap-10" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
+          {/* In season now */}
+          <div>
+            <p className="text-[11px] uppercase tracking-widest mb-4" style={{ ...MONO, color: 'var(--accent)' }}>🟢 In season now</p>
+            <div>
+              {leagueRows.map((l) => (
+                <a key={l.href} href={l.href} className="flex items-center justify-between gap-3 py-2.5 border-b hover:text-[var(--accent)] transition-colors group" style={{ borderColor: 'var(--border)' }}>
+                  <span className="text-[13px] flex items-center gap-2"><span aria-hidden>{l.emoji}</span>{l.name}</span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full" style={{ background: l.status ? TONE_COLOR[l.status.tone] : 'var(--text-dim)' }} aria-hidden />
+                    <span className="text-[10px] uppercase tracking-wide text-right" style={{ ...MONO, color: 'var(--text-muted)' }}>{l.status ? l.status.label.replace('Live - ', '') : 'Offseason'}</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+            <a href="/sports" className="inline-block mt-3 text-xs" style={{ ...MONO, color: 'var(--text-muted)' }}>Zone Zero Sports Hub →</a>
+          </div>
 
-                {/* Top 3 metros — each row links to its metro detail page */}
-                <div className="space-y-3 mb-6">
-                  {region.top3.map((metro) => (
-                    <Link
-                      key={metro.slug}
-                      href={`/rankings/${metro.slug}`}
-                      className="group flex justify-between items-baseline rounded-md -mx-2 px-2 py-1 transition-colors hover:bg-[var(--bg-card-hover)]"
-                    >
-                      <div className="flex-1">
-                        <div className="text-sm font-semibold group-hover:text-[var(--accent)] transition-colors">
-                          {metro.name}
-                        </div>
-                        <div className="text-xs text-[var(--text-muted)]">
-                          #{metro.rank}
-                        </div>
-                      </div>
-                      <div
-                        style={{
-                          fontFamily: "'JetBrains Mono', monospace",
-                          color: 'var(--accent)',
-                        }}
-                        className="text-sm font-bold"
-                      >
-                        {metro.score.toFixed(1)}
-                      </div>
-                    </Link>
+          {/* From the journal */}
+          <div>
+            <div className="flex items-baseline justify-between mb-4">
+              <p className="text-[11px] uppercase tracking-widest" style={{ ...MONO, color: 'var(--accent)' }}>✍️ From the journal</p>
+              <a href="https://citizenofnowhere.substack.com" target="_blank" rel="noopener noreferrer" className="text-[11px]" style={{ ...MONO, color: 'var(--text-muted)' }}>All essays ↗</a>
+            </div>
+            <div>
+              {journal.map((p) => (
+                <a key={p.url} href={p.url} target="_blank" rel="noopener noreferrer" className="block py-3.5 border-b hover:bg-[var(--bg-card-hover)] -mx-2 px-2 rounded transition-colors group" style={{ borderColor: 'var(--border)' }}>
+                  <div className="text-[11px]" style={{ ...MONO, color: 'var(--text-muted)' }}>{fmtDate(p.pubDate)} · Substack</div>
+                  <div className="text-base font-semibold mt-0.5 group-hover:text-[var(--accent)] transition-colors">{p.title}<span className="text-[var(--text-dim)] ml-1" aria-hidden>↗</span></div>
+                  {p.description && <div className="text-[13px] text-[var(--text-muted)] mt-1 line-clamp-2">{p.description}</div>}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Badges */}
+          <div>
+            <p className="text-[11px] uppercase tracking-widest mb-4" style={{ ...MONO, color: 'var(--accent)' }}>🏅 Badges</p>
+            <p className="text-[13px] text-[var(--text-muted)] mb-4">The same data, reframed through categorical lenses.</p>
+            <div className="flex flex-wrap gap-2 mb-6">
+              {badges.map((b) => (
+                <Link key={b.slug} href={`/badges/${b.slug}`} className="inline-flex items-center gap-1.5 rounded px-2.5 py-1 text-xs transition-colors hover:brightness-125" style={{ ...MONO, color: 'var(--text)', background: 'rgba(78,205,196,0.16)' }}>
+                  <span aria-hidden>{b.emoji}</span>
+                  <span>{b.name}</span>
+                </Link>
+              ))}
+            </div>
+            <div className="rounded-lg border p-4" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+              <p className="text-[13px] text-[var(--text-muted)] mb-2">Not sure where to start?</p>
+              <Link href="/random" className="text-[13px]" style={{ ...MONO, color: 'var(--accent)' }}>🎲 Random metro →</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Site Index */}
+      <section id="index" className="py-16 px-4 sm:px-6 lg:px-8 border-b scroll-mt-20" style={{ borderColor: 'var(--border)' }}>
+        <div className="max-w-7xl mx-auto">
+          <p className="text-[11px] uppercase tracking-widest mb-8" style={{ ...MONO, color: 'var(--accent)' }}>Site index</p>
+          <div className="grid gap-8" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))' }}>
+            {SITE_INDEX.map((col) => (
+              <div key={col.heading}>
+                <div className="text-[11px] uppercase tracking-widest pb-2 mb-3 border-b" style={{ ...MONO, color: 'var(--text-muted)', borderColor: 'var(--border)' }}>{col.heading}</div>
+                <div className="flex flex-col gap-[7px]">
+                  {col.links.map((l) => (
+                    <Link key={l.href} href={l.href} className="text-[13px] text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">{l.label}</Link>
                   ))}
                 </div>
-
-                {/* Region stats */}
-                <div
-                  className="pt-4 border-t"
-                  style={{ borderColor: 'var(--border)' }}
-                >
-                  <div className="grid grid-cols-2 gap-4 text-xs">
-                    <div>
-                      <div
-                        className="text-[var(--accent)] font-bold"
-                        style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                      >
-                        {region.metros}
-                      </div>
-                      <div className="text-[var(--text-muted)]">Total metros</div>
-                    </div>
-                    <div>
-                      <div
-                        className="text-[var(--accent)] font-bold"
-                        style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                      >
-                        {region.above50}
-                      </div>
-                      <div className="text-[var(--text-muted)]">Score 50+</div>
-                    </div>
-                  </div>
-                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Articles Preview Section */}
-      <section
-        className="py-20 px-4 sm:px-6 lg:px-8 border-b"
-        style={{ borderColor: 'var(--border)' }}
-      >
-        <div className="max-w-5xl mx-auto">
-          <h2
-            className="text-3xl font-bold mb-12"
-            style={{ color: 'var(--accent)' }}
-          >
-            Featured Articles
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredArticles.map((article) => {
-              const statusColor = 'var(--accent)';
-              const cardBody = (
-                <>
-                  <div className="mb-4">
-                    <span
-                      className="text-xs font-semibold uppercase tracking-widest"
-                      style={{
-                        color: statusColor,
-                        fontFamily: "'JetBrains Mono', monospace",
-                      }}
-                    >
-                      {article.status}
-                    </span>
-                  </div>
-                  <h3 className="text-lg font-bold mb-3">{article.title}</h3>
-                  <p className="text-sm text-[var(--text-muted)]">
-                    {article.subtitle}
-                  </p>
-                </>
-              );
-              const cardClass =
-                'block p-6 rounded-lg border transition-all hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]';
-              const cardStyle = {
-                backgroundColor: 'var(--bg-card)',
-                borderColor: 'var(--border)',
-              } as const;
-              return article.external ? (
-                <a
-                  key={article.title}
-                  href={article.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={cardClass}
-                  style={cardStyle}
-                >
-                  {cardBody}
-                </a>
-              ) : (
-                <Link
-                  key={article.title}
-                  href={article.href}
-                  className={cardClass}
-                  style={cardStyle}
-                >
-                  {cardBody}
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-b" style={{ borderColor: 'var(--border)' }}>
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            Explore Every Metro on Earth
-          </h2>
-          <p className="text-lg text-[var(--text-muted)] mb-8">
-            Search, filter, and analyze data for every metropolitan area in the corpus. Compare regions,
-            understand global patterns, and discover emerging metros.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              className="px-6 py-3 rounded-lg font-semibold transition-all"
-              style={{
-                backgroundColor: 'var(--accent)',
-                color: 'black',
-              }}
-            >
-              Browse All Metros
-            </button>
-            <a
-              href="#methodology"
-              className="px-6 py-3 rounded-lg font-semibold border transition-all hover:border-[var(--accent)] inline-block"
-              style={{
-                borderColor: 'var(--border)',
-                color: 'var(--text)',
-              }}
-            >
-              View Methodology
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Methodology */}
-      <section
-        id="methodology"
-        className="py-20 px-4 sm:px-6 lg:px-8 border-b scroll-mt-20"
-        style={{ borderColor: 'var(--border)' }}
-      >
-        <div className="max-w-4xl mx-auto">
-          <p
-            className="text-sm font-semibold tracking-widest mb-4 uppercase"
-            style={{
-              color: 'var(--accent)',
-              fontFamily: "'JetBrains Mono', monospace",
-            }}
-          >
-            Methodology
-          </p>
-          <h2 className="text-4xl font-bold mb-6">How the score is built</h2>
-          <p className="text-lg text-[var(--text-muted)] mb-6">
-            The Global Metro Power Rankings measure <em>metro completeness</em>: the
-            breadth and depth of globally-recognized infrastructure, culture, sport,
-            finance, education, and connectivity concentrated in a single place. It
-            is not a livability score, a cost-of-living index, or a popularity
-            contest. It is a composite of what a metro has built.
-          </p>
-
-          <h3 className="text-xl font-semibold mt-10 mb-3">Rankings Within Rankings</h3>
-          <p className="text-[var(--text-muted)] mb-4">
-            Readers sometimes expect a global index to categorize everything. This
-            one does not. I am tracking tens of thousands of individual data points
-            across sixteen dimensions, and each dimension draws its own lines. Poland&apos;s
-            volleyball league is top-ranked in the world, but Ekstraklasa is not
-            among the twenty strongest football leagues, so Polish football clubs
-            do not appear under &quot;major league teams.&quot; That is a feature,
-            not an omission: the index rewards presence on <em>globally</em> ranked
-            lists, and every dimension inherits the cutoffs of its source.
-          </p>
-          <p className="text-[var(--text-muted)] mb-4">
-            Put another way, this is a set of rankings within rankings. Your metro
-            is being measured against what the world has already decided is worth
-            counting. A 2-star Michelin restaurant scores the same in Warsaw as in
-            Paris. A top-50 university carries the same weight in Nairobi as in
-            Boston. What differs is how much of that curated global recognition any
-            one metro has accumulated.
-          </p>
-
-          <h3 className="text-xl font-semibold mt-10 mb-3">The Sixteen Components</h3>
-          <p className="text-[var(--text-muted)] mb-4">
-            The composite is the sum of sixteen weighted terms. The weighting is
-            deliberate: linear for things where volume matters (population, market
-            cap), logarithmic for things with sharp diminishing returns (transit,
-            skyscrapers, Michelin stars), and capped for things where you either
-            have the thing or you do not (major league teams, hosted mega-events).
-          </p>
-          <div className="grid md:grid-cols-2 gap-3 text-sm text-[var(--text-muted)] mb-6">
-            <div className="border rounded-lg p-4" style={{ borderColor: 'var(--border)' }}>
-              <p className="font-semibold text-[var(--text)] mb-1">1. Population</p>
-              <p>Linear, divided by 3 million. A 30M metro earns 10 points.</p>
-            </div>
-            <div className="border rounded-lg p-4" style={{ borderColor: 'var(--border)' }}>
-              <p className="font-semibold text-[var(--text)] mb-1">2. Market Capitalization</p>
-              <p>Sum of corporate HQ value, divided by $700B. NYC ($8.3T) earns ~11.9 points.</p>
-            </div>
-            <div className="border rounded-lg p-4" style={{ borderColor: 'var(--border)' }}>
-              <p className="font-semibold text-[var(--text)] mb-1">3. Major League Teams/Venues</p>
-              <p>NFL, MLB, NBA, NHL, top-flight football, rugby, cricket, plus marquee venues. 1:1, hard cap at 10.</p>
-            </div>
-            <div className="border rounded-lg p-4" style={{ borderColor: 'var(--border)' }}>
-              <p className="font-semibold text-[var(--text)] mb-1">4. Minor &amp; College Teams</p>
-              <p>Lower divisions, college programs. 0.25 points each, capped at 40 teams.</p>
-            </div>
-            <div className="border rounded-lg p-4" style={{ borderColor: 'var(--border)' }}>
-              <p className="font-semibold text-[var(--text)] mb-1">5. Cultural &amp; Civic Assets</p>
-              <p>Museums, landmarks, ports, stock exchanges, IXPs, central banks, data centers. 0.65 points each.</p>
-            </div>
-            <div className="border rounded-lg p-4" style={{ borderColor: 'var(--border)' }}>
-              <p className="font-semibold text-[var(--text)] mb-1">6. Top-50 Universities</p>
-              <p>CWUR top-50. 3.5 points each. Boston (5 top-50) earns ~17.5 points.</p>
-            </div>
-            <div className="border rounded-lg p-4" style={{ borderColor: 'var(--border)' }}>
-              <p className="font-semibold text-[var(--text)] mb-1">7. Other Research Institutions</p>
-              <p>Top-500 universities, top-250 hospitals, research institutes. 2.2 points each.</p>
-            </div>
-            <div className="border rounded-lg p-4" style={{ borderColor: 'var(--border)' }}>
-              <p className="font-semibold text-[var(--text)] mb-1">8. Metro Transit</p>
-              <p>Subway and light rail stations, log-scaled. LOG(500) ≈ 2.7 points.</p>
-            </div>
-            <div className="border rounded-lg p-4" style={{ borderColor: 'var(--border)' }}>
-              <p className="font-semibold text-[var(--text)] mb-1">9. GaWC Global Connectivity</p>
-              <p>Reciprocal of world-city rank. Alpha++ = 12 points, Sufficiency = 1.</p>
-            </div>
-            <div className="border rounded-lg p-4" style={{ borderColor: 'var(--border)' }}>
-              <p className="font-semibold text-[var(--text)] mb-1">10. Suburban Rail</p>
-              <p>Commuter rail stations, log-scaled at half the weight of urban transit.</p>
-            </div>
-            <div className="border rounded-lg p-4" style={{ borderColor: 'var(--border)' }}>
-              <p className="font-semibold text-[var(--text)] mb-1">11. Intercity Train Hubs</p>
-              <p>Stations with 30M+ annual passengers, LOG × 2.0. Tokyo (51) scores 3.42 points.</p>
-            </div>
-            <div className="border rounded-lg p-4" style={{ borderColor: 'var(--border)' }}>
-              <p className="font-semibold text-[var(--text)] mb-1">12. Skyscrapers</p>
-              <p>150m+ buildings, LOG × 5.7. NYC (324) earns ~14.3 points.</p>
-            </div>
-            <div className="border rounded-lg p-4" style={{ borderColor: 'var(--border)' }}>
-              <p className="font-semibold text-[var(--text)] mb-1">13. Airport Score</p>
-              <p>Weighted by tier (Mega Hub = 5, Major = 3, International = 2, Regional = 1).</p>
-            </div>
-            <div className="border rounded-lg p-4" style={{ borderColor: 'var(--border)' }}>
-              <p className="font-semibold text-[var(--text)] mb-1">14. Major Sporting Events</p>
-              <p>Olympics, World Cups, Grand Slams, F1. 0.2 each, capped at 20.</p>
-            </div>
-            <div className="border rounded-lg p-4" style={{ borderColor: 'var(--border)' }}>
-              <p className="font-semibold text-[var(--text)] mb-1">15. Annual Cultural Events</p>
-              <p>Recurring festivals, parades, fairs of global stature. 1 point each.</p>
-            </div>
-            <div className="border rounded-lg p-4" style={{ borderColor: 'var(--border)' }}>
-              <p className="font-semibold text-[var(--text)] mb-1">16. Michelin &amp; Luxury Hospitality</p>
-              <p>Weighted Michelin stars (3★×3, 2★×2), LOG × 3.0. Paris (91) earns 5.88 points.</p>
-            </div>
-          </div>
-
-          <h3 className="text-xl font-semibold mt-10 mb-3">Why These Weights</h3>
-          <p className="text-[var(--text-muted)] mb-4">
-            The design rewards breadth over extreme depth in any one dimension. A
-            metro that has a stock exchange <em>and</em> top-flight universities{' '}
-            <em>and</em> a skyline <em>and</em> major league sports will beat a
-            metro that dominates just one of those.
-          </p>
-          <p className="text-[var(--text-muted)] mb-4">
-            Logarithmic scaling for transit, skyscrapers, and Michelin stars
-            reflects diminishing returns: the jump from zero to one subway line is
-            transformative, but the jump from 10 to 11 is marginal. Reciprocal
-            scaling for GaWC connectivity reflects its power-law distribution, where
-            the gap between Alpha++ and Alpha+ is much larger than the gap between
-            lower tiers. Caps on major league teams prevent London (99 teams) or
-            NYC (74) from dominating the sports dimension; 25 teams is not 2.5
-            times better than 10.
-          </p>
-
-          <h3 className="text-xl font-semibold mt-10 mb-3">Data Sources</h3>
-          <p className="text-[var(--text-muted)] mb-4">
-            The dataset is hand-curated across years: every metropolitan area in the corpus
-            spans the populated world, with every cultural and infrastructural asset
-            individually verified and mapped through a municipality-level geographic
-            hierarchy of hundreds of thousands of administrative units. Primary sources include
-            CWUR (universities), GaWC Research Network (global connectivity), CTBUH
-            Skyscraper Center (150m+ buildings), UEFA (stadium ratings), TEA/AECOM
-            (theme park attendance), UFI (convention centers), the Michelin Guide
-            and Wikipedia&apos;s published lists, and national statistics agencies
-            for population. There is no scraping, no AI-generated fill, and no
-            guessing: if an urban area cannot be matched to a metro through the municipality
-            or county lookup, it is excluded.
-          </p>
-
-          <h3 className="text-xl font-semibold mt-10 mb-3">Known Limitations</h3>
-          <ul className="text-[var(--text-muted)] space-y-3 mb-6 list-disc pl-5">
-            <li>
-              <strong className="text-[var(--text)]">Data availability bias.</strong>{' '}
-              English-language sources are over-represented. The dataset has ~1,080
-              US cultural entries against ~100 for India, despite India having more
-              metros above one million. African and South Asian metros are
-              structurally under-counted.
-            </li>
-            <li>
-              <strong className="text-[var(--text)]">Michelin geographic bias.</strong>{' '}
-              The Michelin Guide only covers parts of Western Europe, Japan, East
-              Asia, and select metros in North and Latin America. Most of Africa,
-              South Asia, and the Middle East score zero on that dimension by
-              construction.
-            </li>
-            <li>
-              <strong className="text-[var(--text)]">No temporal dimension.</strong>{' '}
-              Every score is a current snapshot. The index does not yet capture
-              trajectory: whether a metro is rising, stagnant, or declining.
-            </li>
-            <li>
-              <strong className="text-[var(--text)]">Market cap volatility.</strong>{' '}
-              Corporate HQ value is point-in-time. A market correction shifts the
-              top of the leaderboard noticeably, particularly for San Francisco and
-              New York.
-            </li>
-            <li>
-              <strong className="text-[var(--text)]">Safety, crime, and quality of life are not yet measured.</strong>{' '}
-              These are candidates for a future dimension. If you have a suggested
-              source, let me know.
-            </li>
-          </ul>
-
-          <div
-            className="mt-10 p-6 rounded-lg border"
-            style={{
-              backgroundColor: 'var(--bg-card)',
-              borderColor: 'var(--border)',
-            }}
-          >
-            <p className="text-sm text-[var(--text-muted)] mb-2">Further reading</p>
-            <p className="text-[var(--text)]">
-              The first article in the series, with the top 25, continental
-              champions, and the San Francisco anomaly, is on{' '}
-              <a
-                href="https://citizenofnowhere.substack.com/p/the-global-metro-power-rankings"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-[var(--accent)]"
-                style={{ color: 'var(--accent)' }}
-              >
-                Citizen of Nowhere
-              </a>
-              .
+      {/* Methodology teaser */}
+      <section id="methodology" className="py-16 px-4 sm:px-6 lg:px-8 border-b scroll-mt-20" style={{ borderColor: 'var(--border)' }}>
+        <div className="max-w-7xl mx-auto grid gap-12" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
+          <div>
+            <p className="text-[11px] uppercase tracking-widest mb-2" style={{ ...MONO, color: 'var(--accent)' }}>Methodology</p>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4">How the score is built</h2>
+            <p className="text-base text-[var(--text-muted)] mb-4">
+              The composite measures metro completeness: the breadth and depth of globally-recognized
+              infrastructure, culture, sport, finance, education, and connectivity concentrated in one place.
+              It is not a livability score or a popularity contest. It is a composite of what a metro has built.
             </p>
+            <p className="text-base text-[var(--text-muted)] mb-6">
+              Sixteen weighted terms, each drawing its own lines: linear where volume matters, logarithmic
+              where returns diminish, capped where you either have the thing or you do not.
+            </p>
+            <Link href="/methodology" className="inline-block rounded-lg font-semibold text-sm px-5 py-2.5 transition-opacity hover:opacity-90" style={{ backgroundColor: 'var(--accent)', color: '#08080D' }}>
+              Read the full methodology
+            </Link>
+          </div>
+          <div className="grid gap-x-8 sm:grid-cols-2">
+            {DIMENSIONS.map((d, i) => (
+              <div key={d} className="flex items-baseline gap-3 py-2 border-b" style={{ borderColor: 'var(--border)' }}>
+                <span className="text-xs w-6 flex-shrink-0" style={{ ...MONO, color: 'var(--text-dim)' }}>{String(i + 1).padStart(2, '0')}</span>
+                <span className="text-sm text-[var(--text)]">{d}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer
-        className="py-12 px-4 sm:px-6 lg:px-8 border-t"
-        style={{ borderColor: 'var(--border)' }}
-      >
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <h4 className="font-semibold mb-4">Explore</h4>
-              <ul className="space-y-2 text-sm text-[var(--text-muted)]">
-                <li><a href="#rankings" className="hover:text-[var(--accent)]">All Rankings</a></li>
-                <li><a href="#regions" className="hover:text-[var(--accent)]">By Region</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Learn</h4>
-              <ul className="space-y-2 text-sm text-[var(--text-muted)]">
-                <li><a href="#methodology" className="hover:text-[var(--accent)]">Methodology</a></li>
-                <li><a href="#methodology" className="hover:text-[var(--accent)]">Dimensions</a></li>
-                <li><a href="#methodology" className="hover:text-[var(--accent)]">Data Sources</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Connect</h4>
-              <ul className="space-y-2 text-sm text-[var(--text-muted)]">
-                <li>
-                  <a
-                    href="https://citizenofnowhere.org"
-                    className="hover:text-[var(--accent)]"
-                  >
-                    Citizen of Nowhere
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://citizenofnowhere.substack.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-[var(--accent)]"
-                  >
-                    Substack
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://citizenofnowhere.substack.com/about"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-[var(--accent)]"
-                  >
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div
-            className="border-t pt-8 text-sm text-[var(--text-muted)]"
-            style={{ borderColor: 'var(--border)' }}
-          >
-            <p>&copy; 2026 Global Metro Power Rankings. Hand-curated by Ashwin Desikan.</p>
+      <footer className="py-10 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <p className="text-[13px] text-[var(--text-muted)]">© 2026 Global Metro Power Rankings. Hand-curated by Ashwin Desikan.</p>
+          <div className="flex items-center gap-5 text-[13px]" style={MONO}>
+            <a href="https://citizenofnowhere.org" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">Citizen of Nowhere</a>
+            <a href="https://citizenofnowhere.substack.com" target="_blank" rel="noopener noreferrer" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">Substack ↗</a>
+            <a href="https://citizenofnowhere.substack.com/about" target="_blank" rel="noopener noreferrer" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">Contact</a>
           </div>
         </div>
       </footer>

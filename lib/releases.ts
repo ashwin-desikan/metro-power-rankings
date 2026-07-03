@@ -18,6 +18,15 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-07-03",
+    headline: "Homepage rebuilt as a directory, rankings get their own hub",
+    items: [
+      "The homepage is now a directory-forward landing page: four ranked indices each previewing their live top three, live sport badges, a full atlas of every section, the latest essays, and a complete site index.",
+      "The metro rankings map, search, filters, table, score distribution and regional champions now live on their own hub at /rankings.",
+      "New Live Charts hub at /sound/charts shows Apple Music's most-played songs in the US and UK, refreshed daily, with links to the official Billboard Hot 100 and UK Official Singles Chart.",
+    ],
+  },
+  {
     date: "2026-07-02",
     headline: "The Sound of the Metros: where the hits come from",
     items: [

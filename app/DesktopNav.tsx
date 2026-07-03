@@ -22,9 +22,29 @@ type DropdownProps = {
   setOpenId: (id: string | null) => void;
   children: React.ReactNode;
   minWidth?: number;
+  href?: string;
 };
 
-function Dropdown({ id, label, openId, setOpenId, children, minWidth = 260 }: DropdownProps) {
+function Caret() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="10"
+      height="10"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path
+        fillRule="evenodd"
+        d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.4a.75.75 0 01-1.08 0l-4.25-4.4a.75.75 0 01.02-1.06z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
+
+function Dropdown({ id, label, openId, setOpenId, children, minWidth = 260, href }: DropdownProps) {
   const isOpen = openId === id;
   const wrapRef = useRef<HTMLDivElement | null>(null);
 
@@ -42,30 +62,31 @@ function Dropdown({ id, label, openId, setOpenId, children, minWidth = 260 }: Dr
 
   return (
     <div className="relative" ref={wrapRef}>
-      <button
-        type="button"
-        onClick={() => setOpenId(isOpen ? null : id)}
-        onMouseEnter={() => setOpenId(id)}
-        aria-haspopup="true"
-        aria-expanded={isOpen}
-        className="text-sm hover:text-[var(--accent)] transition-colors flex items-center gap-1 py-1"
-      >
-        {label}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="10"
-          height="10"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          aria-hidden="true"
+      {href ? (
+        // Top-level item that both navigates (click) and reveals its menu (hover).
+        <a
+          href={href}
+          onMouseEnter={() => setOpenId(id)}
+          aria-haspopup="true"
+          aria-expanded={isOpen}
+          className="text-sm hover:text-[var(--accent)] transition-colors flex items-center gap-1 py-1"
         >
-          <path
-            fillRule="evenodd"
-            d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.4a.75.75 0 01-1.08 0l-4.25-4.4a.75.75 0 01.02-1.06z"
-            clipRule="evenodd"
-          />
-        </svg>
-      </button>
+          {label}
+          <Caret />
+        </a>
+      ) : (
+        <button
+          type="button"
+          onClick={() => setOpenId(isOpen ? null : id)}
+          onMouseEnter={() => setOpenId(id)}
+          aria-haspopup="true"
+          aria-expanded={isOpen}
+          className="text-sm hover:text-[var(--accent)] transition-colors flex items-center gap-1 py-1"
+        >
+          {label}
+          <Caret />
+        </button>
+      )}
       {isOpen && (
         <div
           className="absolute right-0 top-full pt-2"
@@ -203,14 +224,11 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
 
   return (
     <div className="hidden md:flex gap-6 items-center">
-      <a href="/#rankings" className="text-sm hover:text-[var(--accent)] transition-colors">
-        Rankings
-      </a>
-
       <Dropdown id="data" label="Geography" openId={openId} setOpenId={setOpenId} minWidth={480}>
         <div className="p-2 grid grid-cols-2 gap-x-4">
           <div>
             <MenuGroupLabel>Places &amp; directories</MenuGroupLabel>
+            <MenuLink href="/rankings" title="Metro Power Rankings" />
             <MenuLink href="/countries" title="Countries" />
             <MenuLink href="/states" title="States &amp; Provinces" />
             <MenuLink href="/expandable-map" title="Expandable Map" />
@@ -234,7 +252,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
         </div>
       </Dropdown>
 
-      <Dropdown id="sports" label="Sports" openId={openId} setOpenId={setOpenId} minWidth={660}>
+      <Dropdown id="sports" label="Sports" href="/sports" openId={openId} setOpenId={setOpenId} minWidth={660}>
         <div className="grid" style={{ gridTemplateColumns: "210px 1fr" }}>
           <div className="p-2 border-r" style={{ borderColor: "var(--border)" }}>
             <a
@@ -268,6 +286,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
       <Dropdown id="sound" label="Sound" openId={openId} setOpenId={setOpenId}>
         <DropdownItem href="/sound" title="The Sound of the Metros →" />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
+        <DropdownItem href="/sound/charts" title="Live Charts" />
         <DropdownItem href="/sound/rankings" title="Rankings by Metro" />
         <DropdownItem href="/sound/artists" title="Artists" />
         <DropdownItem href="/sound/decades" title="Decades" />

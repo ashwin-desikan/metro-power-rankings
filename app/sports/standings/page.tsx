@@ -14,7 +14,7 @@ import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
 import { getLiveCflStandings } from "@/lib/cflStandings";
 import { getLiveF1Standings } from "@/lib/f1Standings";
 import { getNpbStandings } from "@/lib/npbStandings";
-import { getWc2026LiveStandings, mergeWc2026Live, fetchWc2026Bundle } from "@/lib/wc2026Standings";
+import { getWc2026LiveStandings, mergeWc2026Live, fetchWc2026Bundle, getWc2026LiveScores, mergeWc2026Knockout } from "@/lib/wc2026Standings";
 import { getFootyLiveStandings } from "@/lib/_footyStandings";
 import { getLiveGolfMajor } from "@/lib/golfLeaderboard";
 import { getLiveTennisSlam } from "@/lib/tennisDraw";
@@ -368,7 +368,11 @@ async function wc2026Block(): Promise<Block | null> {
   const bundle = await fetchWc2026Bundle(getWorldCup2026());
   if (!bundle) return null;
   const live = await getWc2026LiveStandings();
-  const wc = mergeWc2026Live(bundle, live);
+  const scores = await getWc2026LiveScores();
+  // Overlay the live ESPN scoreboard knockout scores (as /teams/national does)
+  // so in-flight and just-finished knockout results appear here too, not only
+  // the results already committed into the wc2026.json bundle.
+  const wc = mergeWc2026Knockout(mergeWc2026Live(bundle, live), scores);
 
   // Follow the tournament into its active phase: once the bracket is populated
   // (group stage complete), show the knockout rounds rather than the now-final

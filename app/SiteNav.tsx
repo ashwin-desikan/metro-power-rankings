@@ -71,7 +71,7 @@ export default function SiteNav() {
               fontFamily: "'JetBrains Mono', monospace",
             }}
           >
-            METRO POWER RANKINGS
+            Rankings and Reference
           </a>
         </div>
 

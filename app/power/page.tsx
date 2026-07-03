@@ -24,12 +24,15 @@ function formatAsOf(iso?: string): string | null {
   return d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
 }
 
+import IndexSwitcher from "@/app/IndexSwitcher";
+
 export default async function PowerPage() {
   const data = await getPowerRanking();
   const rows = data?.ranking ?? [];
 
   return (
-    <main className="mx-auto max-w-4xl px-4 py-8">
+    <main className="mx-auto max-w-4xl px-4 pb-8 pt-20">
+      <div className="mb-4"><IndexSwitcher current="people" /></div>
       <nav className="text-xs text-[var(--text-muted)] mb-4">
         <Link href="/" className="hover:underline">Home</Link>
         {" / "}

@@ -1252,9 +1252,9 @@
    {
     "slug": "london",
     "metro": "London",
-    "us": 41.8,
-    "uk": 119.1,
-    "combined": 244.3,
+    "us": 40.1,
+    "uk": 116.5,
+    "combined": 236.9,
     "rank": 1
    },
    {
@@ -1482,12 +1482,20 @@
     "rank": 29
    },
    {
+    "slug": "swindon",
+    "metro": "Swindon",
+    "us": 1.6,
+    "uk": 2.6,
+    "combined": 7.4,
+    "rank": 30
+   },
+   {
     "slug": "edinburgh",
     "metro": "Edinburgh",
     "us": 1.0,
     "uk": 4.4,
     "combined": 7.3,
-    "rank": 30
+    "rank": 31
    },
    {
     "slug": "raleigh-durham",
@@ -1495,7 +1503,7 @@
     "us": 2.2,
     "uk": 0.5,
     "combined": 7.1,
-    "rank": 31
+    "rank": 32
    },
    {
     "slug": "vancouver",
@@ -1503,7 +1511,7 @@
     "us": 2.0,
     "uk": 1.0,
     "combined": 7.0,
-    "rank": 32
+    "rank": 33
    },
    {
     "slug": "st-louis",
@@ -1511,7 +1519,7 @@
     "us": 1.6,
     "uk": 1.1,
     "combined": 6.0,
-    "rank": 33
+    "rank": 34
    },
    {
     "slug": "flint",
@@ -1519,7 +1527,7 @@
     "us": 1.9,
     "uk": 0.0,
     "combined": 5.7,
-    "rank": 34
+    "rank": 35
    },
    {
     "slug": "little-rock",
@@ -1527,7 +1535,7 @@
     "us": 1.5,
     "uk": 1.2,
     "combined": 5.6,
-    "rank": 35
+    "rank": 36
    },
    {
     "slug": "swansea",
@@ -1535,7 +1543,7 @@
     "us": 1.3,
     "uk": 1.3,
     "combined": 5.3,
-    "rank": 36
+    "rank": 37
    },
    {
     "slug": "beckley",
@@ -1543,7 +1551,7 @@
     "us": 1.7,
     "uk": 0.2,
     "combined": 5.3,
-    "rank": 37
+    "rank": 38
    },
    {
     "slug": "kingston",
@@ -1551,7 +1559,7 @@
     "us": 0.6,
     "uk": 3.0,
     "combined": 4.9,
-    "rank": 38
+    "rank": 39
    },
    {
     "slug": "tampa",
@@ -1559,14 +1567,6 @@
     "us": 1.3,
     "uk": 0.6,
     "combined": 4.6,
-    "rank": 39
-   },
-   {
-    "slug": "leicester",
-    "metro": "Leicester",
-    "us": 0.0,
-    "uk": 4.4,
-    "combined": 4.4,
     "rank": 40
    }
   ],
@@ -1880,9 +1880,9 @@
    {
     "slug": "london",
     "metro": "London",
-    "us": 63.5,
-    "uk": 141.4,
-    "combined": 331.9,
+    "us": 62.1,
+    "uk": 139.2,
+    "combined": 325.5,
     "rank": 1
    },
    {
@@ -1998,12 +1998,20 @@
     "rank": 15
    },
    {
+    "slug": "manchester",
+    "metro": "Manchester",
+    "us": 2.8,
+    "uk": 7.5,
+    "combined": 15.8,
+    "rank": 16
+   },
+   {
     "slug": "miami",
     "metro": "Miami",
     "us": 4.6,
     "uk": 1.9,
     "combined": 15.7,
-    "rank": 16
+    "rank": 17
    },
    {
     "slug": "sydney",
@@ -2011,7 +2019,7 @@
     "us": 4.6,
     "uk": 0.3,
     "combined": 14.3,
-    "rank": 17
+    "rank": 18
    },
    {
     "slug": "st-louis",
@@ -2019,7 +2027,7 @@
     "us": 3.5,
     "uk": 1.9,
     "combined": 12.5,
-    "rank": 18
+    "rank": 19
    },
    {
     "slug": "dublin",
@@ -2027,7 +2035,7 @@
     "us": 2.1,
     "uk": 5.8,
     "combined": 12.2,
-    "rank": 19
+    "rank": 20
    },
    {
     "slug": "houston",
@@ -2035,7 +2043,7 @@
     "us": 3.8,
     "uk": 0.7,
     "combined": 12.2,
-    "rank": 20
+    "rank": 21
    },
    {
     "slug": "indianapolis",
@@ -2043,7 +2051,7 @@
     "us": 3.8,
     "uk": 0.0,
     "combined": 11.4,
-    "rank": 21
+    "rank": 22
    },
    {
     "slug": "phoenix",
@@ -2051,7 +2059,7 @@
     "us": 3.0,
     "uk": 0.8,
     "combined": 9.8,
-    "rank": 22
+    "rank": 23
    },
    {
     "slug": "bristol",
@@ -2059,7 +2067,7 @@
     "us": 2.4,
     "uk": 2.5,
     "combined": 9.7,
-    "rank": 23
+    "rank": 24
    },
    {
     "slug": "munich",
@@ -2067,14 +2075,6 @@
     "us": 2.7,
     "uk": 1.5,
     "combined": 9.5,
-    "rank": 24
-   },
-   {
-    "slug": "manchester",
-    "metro": "Manchester",
-    "us": 1.4,
-    "uk": 5.3,
-    "combined": 9.4,
     "rank": 25
    },
    {
@@ -2516,9 +2516,9 @@
    {
     "slug": "london",
     "metro": "London",
-    "us": 25.4,
-    "uk": 86.3,
-    "combined": 162.6,
+    "us": 25.2,
+    "uk": 86.2,
+    "combined": 161.8,
     "rank": 2
    },
    {
@@ -2588,9 +2588,9 @@
    {
     "slug": "manchester",
     "metro": "Manchester",
-    "us": 0.9,
-    "uk": 23.4,
-    "combined": 26.2,
+    "us": 1.1,
+    "uk": 23.5,
+    "combined": 26.9,
     "rank": 11
    },
    {

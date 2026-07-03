@@ -6799,7 +6799,7 @@
  },
  "london": {
   "metro": "London",
-  "count": 601,
+  "count": 596,
   "number_ones": [
    {
     "single": "Hoots Mon",
@@ -7402,18 +7402,6 @@
     "year": 1972
    },
    {
-    "single": "Alone Again (Naturally)",
-    "artist": "Gilbert O'Sullivan",
-    "charts": "US",
-    "year": 1972
-   },
-   {
-    "single": "Clair",
-    "artist": "Gilbert O'Sullivan",
-    "charts": "UK",
-    "year": 1972
-   },
-   {
     "single": "I'd Like to Teach the World to Sing (In Perfect Harmony)",
     "artist": "The New Seekers",
     "charts": "UK",
@@ -7464,12 +7452,6 @@
    {
     "single": "Eye Level",
     "artist": "Simon Park Orchestra",
-    "charts": "UK",
-    "year": 1973
-   },
-   {
-    "single": "Get Down",
-    "artist": "Gilbert O'Sullivan",
     "charts": "UK",
     "year": 1973
    },
@@ -8296,12 +8278,6 @@
     "year": 1987
    },
    {
-    "single": "Never Gonna Give You Up",
-    "artist": "Rick Astley",
-    "charts": "UK / US",
-    "year": 1987
-   },
-   {
     "single": "Pump Up the Volume",
     "artist": "M|A|R|R|S",
     "charts": "UK",
@@ -8395,12 +8371,6 @@
     "single": "Theme from S-Express",
     "artist": "S'Express",
     "charts": "UK",
-    "year": 1988
-   },
-   {
-    "single": "Together Forever",
-    "artist": "Rick Astley",
-    "charts": "US",
     "year": 1988
    },
    {
@@ -11065,7 +11035,7 @@
  },
  "manchester": {
   "metro": "Manchester",
-  "count": 60,
+  "count": 62,
   "number_ones": [
    {
     "single": "I'm into Something Good",
@@ -11146,9 +11116,21 @@
     "year": 1986
    },
    {
+    "single": "Never Gonna Give You Up",
+    "artist": "Rick Astley",
+    "charts": "UK / US",
+    "year": 1987
+   },
+   {
     "single": "He Ain't Heavy, He's My Brother",
     "artist": "The Hollies",
     "charts": "UK",
+    "year": 1988
+   },
+   {
+    "single": "Together Forever",
+    "artist": "Rick Astley",
+    "charts": "US",
     "year": 1988
    },
    {
@@ -12488,6 +12470,30 @@
     "artist": "Bill Withers",
     "charts": "US",
     "year": 1972
+   }
+  ]
+ },
+ "swindon": {
+  "metro": "Swindon",
+  "count": 3,
+  "number_ones": [
+   {
+    "single": "Alone Again (Naturally)",
+    "artist": "Gilbert O'Sullivan",
+    "charts": "US",
+    "year": 1972
+   },
+   {
+    "single": "Clair",
+    "artist": "Gilbert O'Sullivan",
+    "charts": "UK",
+    "year": 1972
+   },
+   {
+    "single": "Get Down",
+    "artist": "Gilbert O'Sullivan",
+    "charts": "UK",
+    "year": 1973
    }
   ]
  },

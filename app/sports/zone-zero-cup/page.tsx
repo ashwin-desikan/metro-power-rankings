@@ -4,6 +4,7 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { getZoneZeroNations, getZoneZeroMeta, getZoneZeroRegions } from "@/lib/zoneZeroCup";
 import HubNav from "@/app/teams/HubNav";
 import ZoneZeroTable, { type ZzcRow } from "./ZoneZeroTable";
+import { flagCdnUrl } from "@/lib/international-display";
 
 export const dynamicParams = false;
 
@@ -22,6 +23,8 @@ export const metadata: Metadata = {
 
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const GOLD = "#d4af37";
+
+import IndexSwitcher from "@/app/IndexSwitcher";
 
 export default function ZoneZeroCupPage() {
   const nations = getZoneZeroNations();
@@ -65,6 +68,7 @@ export default function ZoneZeroCupPage() {
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-8 pt-24">
+      <div className="mb-4"><IndexSwitcher current="countries" /></div>
       <nav className="text-xs text-[var(--text-muted)] mb-4">
         <Link href="/" className="hover:underline">Home</Link>
         {" / "}
@@ -115,7 +119,10 @@ export default function ZoneZeroCupPage() {
           const body = (
             <>
               <div className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">#{p.rank}</div>
-              <div className="font-semibold text-sm sm:text-base leading-tight mt-1">{p.name}</div>
+              <div className="flex items-center gap-2 mt-1">
+                {flagCdnUrl(p.slug, "40x30") ? <img src={flagCdnUrl(p.slug, "40x30")!} alt="" width={26} height={19} className="rounded-[2px] flex-shrink-0" style={{ objectFit: "cover" }} /> : null}
+                <span className="font-semibold text-sm sm:text-base leading-tight">{p.name}</span>
+              </div>
               <div className="text-[11px] text-[var(--text-dim)] mt-0.5">{p.continent}</div>
               <div className="text-lg sm:text-xl font-bold tabular-nums mt-2" style={{ ...mono, color: GOLD }}>
                 {p.merit.toFixed(0)}

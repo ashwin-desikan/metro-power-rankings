@@ -36,6 +36,7 @@ function buildSections(): Section[] {
     {
       label: 'Places & directories',
       items: [
+        { href: '/rankings', label: 'Metro Power Rankings' },
         { href: '/countries', label: 'Countries' },
         { href: '/states', label: 'States & Provinces' },
         { href: '/expandable-map', label: 'Expandable Map' },
@@ -119,6 +120,7 @@ function buildSections(): Section[] {
     {
       items: [
         { href: '/sound', label: 'The Sound of the Metros' },
+        { href: '/sound/charts', label: 'Live Charts' },
         { href: '/sound/rankings', label: 'Rankings by Metro' },
         { href: '/sound/artists', label: 'Artists' },
         { href: '/sound/decades', label: 'Decades' },
@@ -136,7 +138,6 @@ function buildSections(): Section[] {
   ];
 
   return [
-    { kind: 'link', href: '/#rankings', label: 'Rankings' },
     { kind: 'group', id: 'geography', label: 'Geography', groups: geography },
     { kind: 'group', id: 'sports', label: 'Sports', groups: sports },
     { kind: 'group', id: 'sound', label: 'Sound', groups: sound },
