@@ -1,0 +1,352 @@
+[
+  {
+    "name": "👑 Abu Bakr",
+    "role": "Caliph",
+    "start": "0632-01-01",
+    "end": "0634-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 Umar",
+    "role": "Caliph",
+    "start": "0634-01-01",
+    "end": "0644-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 Uthman",
+    "role": "Caliph",
+    "start": "0644-01-01",
+    "end": "0656-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 Ali",
+    "role": "Caliph",
+    "start": "0656-01-01",
+    "end": "0661-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 Muawiya I",
+    "role": "Caliph",
+    "start": "0661-01-01",
+    "end": "0680-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 Yazid I",
+    "role": "Caliph",
+    "start": "0680-01-01",
+    "end": "0684-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 Marwan I",
+    "role": "Caliph",
+    "start": "0684-01-01",
+    "end": "0685-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 Abd al-Malik",
+    "role": "Caliph",
+    "start": "0685-01-01",
+    "end": "0705-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 al-Walid I",
+    "role": "Caliph",
+    "start": "0705-01-01",
+    "end": "0715-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 Sulayman",
+    "role": "Caliph",
+    "start": "0715-01-01",
+    "end": "0717-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 Umar II",
+    "role": "Caliph",
+    "start": "0717-01-01",
+    "end": "0720-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 Yazid II",
+    "role": "Caliph",
+    "start": "0720-01-01",
+    "end": "0724-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 Hisham",
+    "role": "Caliph",
+    "start": "0724-01-01",
+    "end": "0743-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 al-Walid II",
+    "role": "Caliph",
+    "start": "0743-01-01",
+    "end": "0744-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 Marwan II",
+    "role": "Caliph",
+    "start": "0744-01-01",
+    "end": "0750-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 as-Saffah",
+    "role": "Caliph",
+    "start": "0750-01-01",
+    "end": "0754-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 al-Mansur",
+    "role": "Caliph",
+    "start": "0754-01-01",
+    "end": "0775-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 al-Mahdi",
+    "role": "Caliph",
+    "start": "0775-01-01",
+    "end": "0785-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 al-Hadi",
+    "role": "Caliph",
+    "start": "0785-01-01",
+    "end": "0786-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 Harun al-Rashid",
+    "role": "Caliph",
+    "start": "0786-01-01",
+    "end": "0809-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 al-Amin",
+    "role": "Caliph",
+    "start": "0809-01-01",
+    "end": "0813-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 al-Ma'mun",
+    "role": "Caliph",
+    "start": "0813-01-01",
+    "end": "0833-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 al-Mu'tasim",
+    "role": "Caliph",
+    "start": "0833-01-01",
+    "end": "0842-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 al-Wathiq",
+    "role": "Caliph",
+    "start": "0842-01-01",
+    "end": "0847-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 al-Mutawakkil",
+    "role": "Caliph",
+    "start": "0847-01-01",
+    "end": "0861-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 al-Muntasir",
+    "role": "Caliph",
+    "start": "0861-01-01",
+    "end": "0862-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 al-Musta'in",
+    "role": "Caliph",
+    "start": "0862-01-01",
+    "end": "0866-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 al-Mu'tazz",
+    "role": "Caliph",
+    "start": "0866-01-01",
+    "end": "0908-01-01",
+    "current": false,
+    "tenure": "42y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 al-Muqtadir",
+    "role": "Caliph",
+    "start": "0908-01-01",
+    "end": "0934-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 al-Radi",
+    "role": "Caliph",
+    "start": "0934-01-01",
+    "end": "0946-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 al-Muti",
+    "role": "Caliph",
+    "start": "0946-01-01",
+    "end": "1031-01-01",
+    "current": false,
+    "tenure": "85y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 al-Qaim",
+    "role": "Caliph",
+    "start": "1031-01-01",
+    "end": "1180-01-01",
+    "current": false,
+    "tenure": "149y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 al-Nasir",
+    "role": "Caliph",
+    "start": "1180-01-01",
+    "end": "1226-01-01",
+    "current": false,
+    "tenure": "46y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 al-Mustansir",
+    "role": "Caliph",
+    "start": "1226-01-01",
+    "end": "1242-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  },
+  {
+    "name": "👑 al-Musta'sim",
+    "role": "Caliph",
+    "start": "1242-01-01",
+    "end": "1258-02-10",
+    "current": false,
+    "tenure": "16y 1m 9d",
+    "party": "year-level backbone",
+    "era": "Caliphate"
+  }
+]

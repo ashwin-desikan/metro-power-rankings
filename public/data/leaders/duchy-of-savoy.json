@@ -1,0 +1,122 @@
+[
+ {
+  "name": "👑 Amadeus VIII",
+  "role": "Duke",
+  "start": "1416-01-01",
+  "end": "1440-01-01",
+  "current": false,
+  "tenure": "24y 0d",
+  "party": "year-level backbone",
+  "era": "Duchy of Savoy"
+ },
+ {
+  "name": "👑 Louis",
+  "role": "Duke",
+  "start": "1440-01-01",
+  "end": "1465-01-01",
+  "current": false,
+  "tenure": "25y 0d",
+  "party": "year-level backbone",
+  "era": "Duchy of Savoy"
+ },
+ {
+  "name": "👑 Amadeus IX",
+  "role": "Duke",
+  "start": "1465-01-01",
+  "end": "1472-01-01",
+  "current": false,
+  "tenure": "7y 0d",
+  "party": "year-level backbone",
+  "era": "Duchy of Savoy"
+ },
+ {
+  "name": "👑 Philibert I",
+  "role": "Duke",
+  "start": "1472-01-01",
+  "end": "1482-01-01",
+  "current": false,
+  "tenure": "10y 0d",
+  "party": "year-level backbone",
+  "era": "Duchy of Savoy"
+ },
+ {
+  "name": "👑 Charles I",
+  "role": "Duke",
+  "start": "1482-01-01",
+  "end": "1490-01-01",
+  "current": false,
+  "tenure": "8y 0d",
+  "party": "year-level backbone",
+  "era": "Duchy of Savoy"
+ },
+ {
+  "name": "👑 Philibert II",
+  "role": "Duke",
+  "start": "1497-01-01",
+  "end": "1504-01-01",
+  "current": false,
+  "tenure": "7y 0d",
+  "party": "year-level backbone",
+  "era": "Duchy of Savoy"
+ },
+ {
+  "name": "👑 Charles III",
+  "role": "Duke",
+  "start": "1504-01-01",
+  "end": "1553-01-01",
+  "current": false,
+  "tenure": "49y 0d",
+  "party": "year-level backbone",
+  "era": "Duchy of Savoy"
+ },
+ {
+  "name": "👑 Emmanuel Philibert",
+  "role": "Duke",
+  "start": "1553-01-01",
+  "end": "1580-01-01",
+  "current": false,
+  "tenure": "27y 0d",
+  "party": "year-level backbone",
+  "era": "Duchy of Savoy"
+ },
+ {
+  "name": "👑 Charles Emmanuel I",
+  "role": "Duke",
+  "start": "1580-01-01",
+  "end": "1630-01-01",
+  "current": false,
+  "tenure": "50y 0d",
+  "party": "year-level backbone",
+  "era": "Duchy of Savoy"
+ },
+ {
+  "name": "👑 Victor Amadeus I",
+  "role": "Duke",
+  "start": "1630-01-01",
+  "end": "1637-01-01",
+  "current": false,
+  "tenure": "7y 0d",
+  "party": "year-level backbone",
+  "era": "Duchy of Savoy"
+ },
+ {
+  "name": "👑 Charles Emmanuel II",
+  "role": "Duke",
+  "start": "1638-01-01",
+  "end": "1675-01-01",
+  "current": false,
+  "tenure": "37y 0d",
+  "party": "year-level backbone",
+  "era": "Duchy of Savoy"
+ },
+ {
+  "name": "👑 Victor Amadeus II",
+  "role": "Duke",
+  "start": "1675-01-01",
+  "end": "1720-01-01",
+  "current": false,
+  "tenure": "45y 0d",
+  "party": "year-level backbone",
+  "era": "Duchy of Savoy"
+ }
+]

@@ -240,6 +240,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
             <MenuLink href="/power" title="The Nowhere 100" />
             <MenuLink href="/billionaires" title="Billionaires" />
             <MenuLink href="/leaders" title="World Leaders" />
+            <MenuLink href="/great-powers" title="The Great Powers" />
             <MenuLink href="/us-political-leadership" title="US Political Leadership" />
             <MenuLink href="/mayors" title="Mayors of the World" />
             <MenuGroupLabel>Geopolitics</MenuGroupLabel>

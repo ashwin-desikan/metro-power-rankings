@@ -1,0 +1,52 @@
+[
+ {
+  "name": "👑 Shaka",
+  "role": "King",
+  "start": "1816-01-01",
+  "end": "1828-01-01",
+  "current": false,
+  "tenure": "12y 0d",
+  "party": "year-level backbone",
+  "era": "Zulu Kingdom"
+ },
+ {
+  "name": "👑 Dingane",
+  "role": "King",
+  "start": "1828-01-01",
+  "end": "1840-01-01",
+  "current": false,
+  "tenure": "12y 0d",
+  "party": "year-level backbone",
+  "era": "Zulu Kingdom"
+ },
+ {
+  "name": "👑 Mpande",
+  "role": "King",
+  "start": "1840-01-01",
+  "end": "1872-01-01",
+  "current": false,
+  "tenure": "32y 0d",
+  "party": "year-level backbone",
+  "era": "Zulu Kingdom"
+ },
+ {
+  "name": "👑 Cetshwayo",
+  "role": "King",
+  "start": "1873-01-01",
+  "end": "1879-01-01",
+  "current": false,
+  "tenure": "6y 0d",
+  "party": "year-level backbone",
+  "era": "Zulu Kingdom"
+ },
+ {
+  "name": "👑 Dinuzulu",
+  "role": "King",
+  "start": "1884-01-01",
+  "end": "1897-01-01",
+  "current": false,
+  "tenure": "13y 0d",
+  "party": "year-level backbone",
+  "era": "Zulu Kingdom"
+ }
+]

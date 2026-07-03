@@ -1,0 +1,122 @@
+[
+ {
+  "name": "👑 Usman dan Fodio",
+  "role": "Caliph",
+  "start": "1804-01-01",
+  "end": "1817-01-01",
+  "current": false,
+  "tenure": "13y 0d",
+  "party": "year-level backbone",
+  "era": "Sokoto Caliphate"
+ },
+ {
+  "name": "👑 Muhammed Bello",
+  "role": "Caliph",
+  "start": "1817-01-01",
+  "end": "1837-01-01",
+  "current": false,
+  "tenure": "20y 0d",
+  "party": "year-level backbone",
+  "era": "Sokoto Caliphate"
+ },
+ {
+  "name": "👑 Abubakar I Atiku",
+  "role": "Caliph",
+  "start": "1837-01-01",
+  "end": "1842-01-01",
+  "current": false,
+  "tenure": "5y 0d",
+  "party": "year-level backbone",
+  "era": "Sokoto Caliphate"
+ },
+ {
+  "name": "👑 Ali Babba bin Bello",
+  "role": "Caliph",
+  "start": "1842-01-01",
+  "end": "1859-01-01",
+  "current": false,
+  "tenure": "17y 0d",
+  "party": "year-level backbone",
+  "era": "Sokoto Caliphate"
+ },
+ {
+  "name": "👑 Ahmadu Atiku",
+  "role": "Caliph",
+  "start": "1859-01-01",
+  "end": "1866-01-01",
+  "current": false,
+  "tenure": "7y 0d",
+  "party": "year-level backbone",
+  "era": "Sokoto Caliphate"
+ },
+ {
+  "name": "👑 Aliyu Karami",
+  "role": "Caliph",
+  "start": "1866-01-01",
+  "end": "1867-01-01",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone",
+  "era": "Sokoto Caliphate"
+ },
+ {
+  "name": "👑 Ahmadu Rufai",
+  "role": "Caliph",
+  "start": "1867-01-01",
+  "end": "1873-01-01",
+  "current": false,
+  "tenure": "6y 0d",
+  "party": "year-level backbone",
+  "era": "Sokoto Caliphate"
+ },
+ {
+  "name": "👑 Abubakar II Atiku na Raba",
+  "role": "Caliph",
+  "start": "1873-01-01",
+  "end": "1877-01-01",
+  "current": false,
+  "tenure": "4y 0d",
+  "party": "year-level backbone",
+  "era": "Sokoto Caliphate"
+ },
+ {
+  "name": "👑 Mu'azu",
+  "role": "Caliph",
+  "start": "1877-01-01",
+  "end": "1881-01-01",
+  "current": false,
+  "tenure": "4y 0d",
+  "party": "year-level backbone",
+  "era": "Sokoto Caliphate"
+ },
+ {
+  "name": "👑 Umaru bin Ali",
+  "role": "Caliph",
+  "start": "1881-01-01",
+  "end": "1891-01-01",
+  "current": false,
+  "tenure": "10y 0d",
+  "party": "year-level backbone",
+  "era": "Sokoto Caliphate"
+ },
+ {
+  "name": "👑 Abd al-Rahman bin Atiku",
+  "role": "Caliph",
+  "start": "1891-01-01",
+  "end": "1902-01-01",
+  "current": false,
+  "tenure": "11y 0d",
+  "party": "year-level backbone",
+  "era": "Sokoto Caliphate"
+ },
+ {
+  "name": "👑 Attahiru I",
+  "role": "Caliph",
+  "start": "1902-01-01",
+  "end": "1903-01-01",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone",
+  "era": "Sokoto Caliphate"
+ }
+]

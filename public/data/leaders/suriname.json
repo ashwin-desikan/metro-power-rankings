@@ -1,22 +1,262 @@
 [
-  {
-    "name": "Jennifer Geerlings-Simons",
-    "role": "Prime Minister",
-    "start": "2025-07-16",
-    "end": null,
-    "current": true,
-    "tenure": "11m 17d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Jennifer Geerlings-Simons",
-    "role": "President",
-    "start": "2025-07-16",
-    "end": null,
-    "current": true,
-    "tenure": "11m 17d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Julius Caesar de Miranda",
+  "role": "Prime Minister",
+  "start": "1949-06-03",
+  "end": "1951-04-02",
+  "current": false,
+  "tenure": "1y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Jan Buiskool",
+  "role": "Prime Minister",
+  "start": "1951-06-04",
+  "end": "1952-09-06",
+  "current": false,
+  "tenure": "1y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Adriaan Alberga",
+  "role": "Prime Minister",
+  "start": "1952-09-06",
+  "end": "1952-12-04",
+  "current": false,
+  "tenure": "0y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Archibald Currie",
+  "role": "Prime Minister",
+  "start": "1952-12-04",
+  "end": "1955-04-16",
+  "current": false,
+  "tenure": "2y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Johan Ferrier",
+  "role": "Prime Minister",
+  "start": "1955-04-16",
+  "end": "1958-06-25",
+  "current": false,
+  "tenure": "3y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Severinus Desiré Emanuels",
+  "role": "Prime Minister",
+  "start": "1958-06-25",
+  "end": "1963-06-30",
+  "current": false,
+  "tenure": "5y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Johan Adolf Pengel",
+  "role": "Prime Minister",
+  "start": "1963-06-30",
+  "end": "1969-03-05",
+  "current": false,
+  "tenure": "5y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Jules Sedney",
+  "role": "Prime Minister",
+  "start": "1969-11-20",
+  "end": "1973-12-24",
+  "current": false,
+  "tenure": "4y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Henck Arron",
+  "role": "Prime Minister",
+  "start": "1973-12-24",
+  "end": "1980-02-25",
+  "current": false,
+  "tenure": "6y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Johan Ferrier",
+  "role": "President",
+  "start": "1975-11-25",
+  "end": "1980-08-13",
+  "current": false,
+  "tenure": "4y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Henk Chin A Sen",
+  "role": "Prime Minister",
+  "start": "1980-03-15",
+  "end": "1982-02-04",
+  "current": false,
+  "tenure": "1y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Henk Chin A Sen",
+  "role": "President",
+  "start": "1980-08-15",
+  "end": "1982-02-04",
+  "current": false,
+  "tenure": "1y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Fred Ramdat Misier",
+  "role": "President",
+  "start": "1982-02-08",
+  "end": "1988-01-25",
+  "current": false,
+  "tenure": "5y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Henry Neijhorst",
+  "role": "Prime Minister",
+  "start": "1982-03-31",
+  "end": "1982-12-09",
+  "current": false,
+  "tenure": "0y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Errol Alibux",
+  "role": "Prime Minister",
+  "start": "1983-02-26",
+  "end": "1984-01-08",
+  "current": false,
+  "tenure": "0y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Wim Udenhout",
+  "role": "Prime Minister",
+  "start": "1984-02-03",
+  "end": "1986-07-17",
+  "current": false,
+  "tenure": "2y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Pretaap Radhakishun",
+  "role": "Prime Minister",
+  "start": "1986-07-17",
+  "end": "1987-04-07",
+  "current": false,
+  "tenure": "0y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Jules Wijdenbosch",
+  "role": "Prime Minister",
+  "start": "1987-04-07",
+  "end": "1988-01-26",
+  "current": false,
+  "tenure": "0y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ramsewak Shankar",
+  "role": "President",
+  "start": "1988-01-25",
+  "end": "1990-12-24",
+  "current": false,
+  "tenure": "2y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Johan Kraag",
+  "role": "President",
+  "start": "1990-12-29",
+  "end": "1991-09-16",
+  "current": false,
+  "tenure": "0y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ronald Venetiaan",
+  "role": "President",
+  "start": "1991-09-16",
+  "end": "1996-09-15",
+  "current": false,
+  "tenure": "4y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Jules Wijdenbosch",
+  "role": "President",
+  "start": "1996-09-15",
+  "end": "2000-08-12",
+  "current": false,
+  "tenure": "3y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ronald Venetiaan",
+  "role": "President",
+  "start": "2000-08-12",
+  "end": "2010-08-12",
+  "current": false,
+  "tenure": "10y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Dési Bouterse",
+  "role": "President",
+  "start": "2010-08-12",
+  "end": "2020-07-16",
+  "current": false,
+  "tenure": "9y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Chan Santokhi",
+  "role": "President",
+  "start": "2020-07-16",
+  "end": "2025-07-16",
+  "current": false,
+  "tenure": "5y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Jennifer Geerlings-Simons",
+  "role": "President",
+  "start": "2025-07-16",
+  "end": null,
+  "current": true,
+  "tenure": "0y 11m",
+  "party": null,
+  "era": null
+ }
 ]

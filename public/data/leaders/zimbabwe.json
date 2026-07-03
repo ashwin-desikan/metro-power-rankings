@@ -1,22 +1,52 @@
 [
-  {
-    "name": "Emmerson Mnangagwa",
-    "role": "Prime Minister",
-    "start": "2017-11-24",
-    "end": null,
-    "current": true,
-    "tenure": "8y 7m 9d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Emmerson Mnangagwa",
-    "role": "President",
-    "start": "2017-11-24",
-    "end": null,
-    "current": true,
-    "tenure": "8y 7m 9d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Canaan Banana",
+  "role": "President",
+  "start": "1980-04-18",
+  "end": "1987-12-31",
+  "current": false,
+  "tenure": "7y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Robert Mugabe",
+  "role": "Prime Minister",
+  "start": "1980-04-18",
+  "end": "1987-12-31",
+  "current": false,
+  "tenure": "7y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Robert Mugabe",
+  "role": "President",
+  "start": "1987-12-31",
+  "end": "2017-11-21",
+  "current": false,
+  "tenure": "29y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Phelekezela Mphoko",
+  "role": "Acting President",
+  "start": "2017-11-21",
+  "end": "2017-11-24",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Emmerson Mnangagwa",
+  "role": "President",
+  "start": "2017-11-24",
+  "end": null,
+  "current": true,
+  "tenure": "8y 7m",
+  "party": null,
+  "era": null
+ }
 ]

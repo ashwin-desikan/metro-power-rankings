@@ -1,42 +1,242 @@
 [
-  {
-    "name": "Mamady Doumbouya",
-    "role": "President",
-    "start": "2021-10-01",
-    "end": "2024-02-27",
-    "current": false,
-    "tenure": "2y 4m 26d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Mamady Doumbouya",
-    "role": "President",
-    "start": "2021-10-01",
-    "end": null,
-    "current": true,
-    "tenure": "4y 9m 2d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Bah Oury",
-    "role": "Prime Minister",
-    "start": "2024-02-27",
-    "end": null,
-    "current": true,
-    "tenure": "2y 4m 6d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Bah Oury",
-    "role": "President",
-    "start": "2024-02-27",
-    "end": null,
-    "current": true,
-    "tenure": null,
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Ahmed Sékou Touré",
+  "role": "President",
+  "start": "1958-10-02",
+  "end": "1984-03-26",
+  "current": false,
+  "tenure": "25y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Louis Lansana Beavogui",
+  "role": "Prime Minister",
+  "start": "1972-04-26",
+  "end": "1984-04-03",
+  "current": false,
+  "tenure": "11y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Louis Lansana Beavogui",
+  "role": "President",
+  "start": "1984-03-26",
+  "end": "1984-04-03",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Lansana Conté",
+  "role": "President",
+  "start": "1984-04-03",
+  "end": "2008-12-22",
+  "current": false,
+  "tenure": "24y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Diarra Traoré",
+  "role": "Prime Minister",
+  "start": "1984-04-05",
+  "end": "1984-12-18",
+  "current": false,
+  "tenure": "0y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Sidya Touré",
+  "role": "Prime Minister",
+  "start": "1996-07-09",
+  "end": "1999-03-08",
+  "current": false,
+  "tenure": "2y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Lamine Sidimé",
+  "role": "Prime Minister",
+  "start": "1999-03-08",
+  "end": "2004-02-23",
+  "current": false,
+  "tenure": "4y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "François Lonseny Fall",
+  "role": "Prime Minister",
+  "start": "2004-02-23",
+  "end": "2004-07-15",
+  "current": false,
+  "tenure": "0y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Cellou Dalein Diallo",
+  "role": "Prime Minister",
+  "start": "2004-12-09",
+  "end": "2006-04-05",
+  "current": false,
+  "tenure": "1y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Eugène Camara",
+  "role": "Prime Minister",
+  "start": "2007-02-09",
+  "end": "2007-03-01",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Lansana Kouyaté",
+  "role": "Prime Minister",
+  "start": "2007-03-01",
+  "end": "2008-05-23",
+  "current": false,
+  "tenure": "1y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ahmed Tidiane Souaré",
+  "role": "Prime Minister",
+  "start": "2008-05-23",
+  "end": "2008-12-24",
+  "current": false,
+  "tenure": "0y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Moussa Dadis Camara",
+  "role": "President",
+  "start": "2008-12-23",
+  "end": "2009-12-03",
+  "current": false,
+  "tenure": "0y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Kabiné Komara",
+  "role": "Prime Minister",
+  "start": "2008-12-30",
+  "end": "2010-01-26",
+  "current": false,
+  "tenure": "1y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Sékouba Konaté",
+  "role": "President",
+  "start": "2009-12-03",
+  "end": "2010-12-21",
+  "current": false,
+  "tenure": "1y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Jean-Marie Doré",
+  "role": "Prime Minister",
+  "start": "2010-01-26",
+  "end": "2010-12-24",
+  "current": false,
+  "tenure": "0y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Alpha Condé",
+  "role": "President",
+  "start": "2010-12-21",
+  "end": "2021-09-05",
+  "current": false,
+  "tenure": "10y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mohamed Said Fofana",
+  "role": "Prime Minister",
+  "start": "2010-12-24",
+  "end": "2015-12-29",
+  "current": false,
+  "tenure": "5y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mamady Youla",
+  "role": "Prime Minister",
+  "start": "2015-12-29",
+  "end": "2018-05-24",
+  "current": false,
+  "tenure": "2y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ibrahima Kassory Fofana",
+  "role": "Prime Minister",
+  "start": "2018-05-24",
+  "end": "2021-09-05",
+  "current": false,
+  "tenure": "3y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mamady Doumbouya",
+  "role": "President",
+  "start": "2021-09-05",
+  "end": null,
+  "current": true,
+  "tenure": "4y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mohamed Béavogui",
+  "role": "Prime Minister",
+  "start": "2021-10-06",
+  "end": "2022-07-17",
+  "current": false,
+  "tenure": "0y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bernard Goumou",
+  "role": "Prime Minister",
+  "start": "2022-07-17",
+  "end": "2024-02-19",
+  "current": false,
+  "tenure": "1y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bah Oury",
+  "role": "Prime Minister",
+  "start": "2024-02-28",
+  "end": null,
+  "current": false,
+  "tenure": "2y 4m",
+  "party": null,
+  "era": null
+ }
 ]

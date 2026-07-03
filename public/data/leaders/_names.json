@@ -1,477 +1,710 @@
 {
-  "russia": [
-    {
-      "name": "Grand Duchy of Moscow",
-      "end": "1547-01-16"
-    },
-    {
-      "name": "Tsardom of Russia",
-      "start": "1547-01-16",
-      "end": "1721-11-02"
-    },
-    {
-      "name": "Russian Empire",
-      "start": "1721-11-02",
-      "end": "1917-11-07"
-    },
-    {
-      "name": "Soviet Union",
-      "start": "1917-11-07",
-      "end": "1991-12-26"
-    },
-    {
-      "name": "Russia",
-      "start": "1991-12-26"
-    }
-  ],
-  "germany": [
-    {
-      "name": "Electorate of Brandenburg",
-      "end": "1701-01-18"
-    },
-    {
-      "name": "Kingdom of Prussia",
-      "start": "1701-01-18",
-      "end": "1871-01-18"
-    },
-    {
-      "name": "German Empire",
-      "start": "1871-01-18",
-      "end": "1918-11-09"
-    },
-    {
-      "name": "Weimar Republic",
-      "start": "1918-11-09",
-      "end": "1933-01-30",
-      "flag": "de"
-    },
-    {
-      "name": "Nazi Germany",
-      "start": "1933-01-30",
-      "end": "1945-05-08"
-    },
-    {
-      "name": "Allied-occupied Germany",
-      "start": "1945-05-08",
-      "end": "1949-05-23"
-    },
-    {
-      "name": "West Germany",
-      "start": "1949-05-23",
-      "end": "1990-10-03",
-      "flag": "de"
-    },
-    {
-      "name": "Germany",
-      "start": "1990-10-03"
-    }
-  ],
-  "czech-republic": [
-    {
-      "name": "Czechoslovakia",
-      "start": "1918-10-28",
-      "end": "1992-12-31",
-      "flag": "cz"
-    },
-    {
-      "name": "Czechia",
-      "start": "1993-01-01"
-    }
-  ],
-  "yemen": [
-    {
-      "name": "North Yemen",
-      "end": "1990-05-22"
-    },
-    {
-      "name": "Yemen",
-      "start": "1990-05-22"
-    }
-  ],
-  "serbia": [
-    {
-      "name": "Yugoslavia",
-      "start": "1918-12-01",
-      "end": "2003-02-04"
-    },
-    {
-      "name": "Serbia and Montenegro",
-      "start": "2003-02-04",
-      "end": "2006-06-05"
-    },
-    {
-      "name": "Serbia",
-      "start": "2006-06-05"
-    }
-  ],
-  "iran": [
-    {
-      "name": "Persia",
-      "end": "1935-03-21"
-    },
-    {
-      "name": "Iran",
-      "start": "1935-03-21"
-    }
-  ],
-  "myanmar": [
-    {
-      "name": "Burma",
-      "end": "1989-06-18"
-    },
-    {
-      "name": "Myanmar",
-      "start": "1989-06-18"
-    }
-  ],
-  "thailand": [
-    {
-      "name": "Siam",
-      "end": "1939-06-23",
-      "flag": "th"
-    },
-    {
-      "name": "Thailand",
-      "start": "1939-06-23"
-    }
-  ],
-  "sri-lanka": [
-    {
-      "name": "Ceylon",
-      "end": "1972-05-22"
-    },
-    {
-      "name": "Sri Lanka",
-      "start": "1972-05-22"
-    }
-  ],
-  "vietnam": [
-    {
-      "name": "North Vietnam",
-      "start": "1954-07-21",
-      "end": "1976-07-02"
-    },
-    {
-      "name": "Vietnam",
-      "start": "1976-07-02"
-    }
-  ],
-  "austria": [
-    {
-      "name": "Habsburg Monarchy",
-      "end": "1804-08-11"
-    },
-    {
-      "name": "Austrian Empire",
-      "start": "1804-08-11",
-      "end": "1867-06-08"
-    },
-    {
-      "name": "Austria",
-      "start": "1867-06-08",
-      "flag": "at"
-    }
-  ],
-  "turkey": [
-    {
-      "name": "Ottoman Empire",
-      "end": "1923-10-29"
-    },
-    {
-      "name": "Turkey",
-      "start": "1923-10-29"
-    }
-  ],
-  "tanzania": [
-    {
-      "name": "Tanganyika",
-      "start": "1961-12-09",
-      "end": "1964-04-26"
-    },
-    {
-      "name": "Tanzania",
-      "start": "1964-04-26",
-      "flag": "tz"
-    }
-  ],
-  "poland": [
-    {
-      "name": "Kingdom of Poland",
-      "end": "1795-10-24"
-    },
-    {
-      "name": "Poland",
-      "start": "1918-11-11",
-      "flag": "pl"
-    }
-  ],
-  "lithuania": [
-    {
-      "name": "Grand Duchy of Lithuania",
-      "end": "1795-10-24"
-    },
-    {
-      "name": "Lithuania",
-      "start": "1918-02-16",
-      "flag": "lt"
-    }
-  ],
-  "vatican-city": [
-    {
-      "name": "Holy See",
-      "end": "0756-01-01"
-    },
-    {
-      "name": "Papal States",
-      "start": "0756-01-01",
-      "end": "1870-09-20"
-    },
-    {
-      "name": "Holy See",
-      "start": "1870-09-20",
-      "end": "1929-02-11"
-    },
-    {
-      "name": "Vatican City",
-      "start": "1929-02-11",
-      "flag": "va"
-    }
-  ],
-  "india": [
-    {
-      "name": "Mughal Empire",
-      "start": "1526-04-21",
-      "end": "1857-09-21"
-    },
-    {
-      "name": "India",
-      "start": "1947-08-15",
-      "flag": "in"
-    }
-  ],
-  "saudi-arabia": [
-    {
-      "name": "Emirate of Diriyah",
-      "end": "1818-01-01"
-    },
-    {
-      "name": "Emirate of Nejd",
-      "start": "1824-01-01",
-      "end": "1921-11-01"
-    },
-    {
-      "name": "Sultanate of Nejd",
-      "start": "1921-11-01",
-      "end": "1926-01-08"
-    },
-    {
-      "name": "Kingdom of Hejaz and Nejd",
-      "start": "1926-01-08",
-      "end": "1932-09-23"
-    },
-    {
-      "name": "Saudi Arabia",
-      "start": "1932-09-23",
-      "flag": "sa"
-    }
-  ],
-  "liberia": [
-    {
-      "name": "Commonwealth of Liberia",
-      "end": "1847-07-26"
-    },
-    {
-      "name": "Liberia",
-      "start": "1847-07-26",
-      "flag": "lr"
-    }
-  ],
-  "italy": [
-    {
-      "name": "Kingdom of Sardinia",
-      "start": "1720-08-19",
-      "end": "1861-03-17"
-    },
-    {
-      "name": "Kingdom of Italy",
-      "start": "1861-03-17",
-      "end": "1946-06-18"
-    },
-    {
-      "name": "Italy",
-      "start": "1946-06-18",
-      "flag": "it"
-    }
-  ],
-  "finland": [
-    {
-      "name": "Grand Duchy of Finland",
-      "start": "1809-03-29",
-      "end": "1917-12-06"
-    },
-    {
-      "name": "Finland",
-      "start": "1917-12-06",
-      "flag": "fi"
-    }
-  ],
-  "iceland": [
-    {
-      "name": "Kingdom of Iceland",
-      "start": "1918-12-01",
-      "end": "1944-06-17",
-      "flag": "is"
-    },
-    {
-      "name": "Iceland",
-      "start": "1944-06-17",
-      "flag": "is"
-    }
-  ],
-  "EU": [
-    {
-      "name": "European Economic Community",
-      "end": "1993-11-01"
-    },
-    {
-      "name": "European Union",
-      "start": "1993-11-01",
-      "flag": "eu"
-    }
-  ],
-  "japan": [
-    {
-      "name": "Tokugawa Japan",
-      "end": "1868-01-03"
-    },
-    {
-      "name": "Empire of Japan",
-      "start": "1868-01-03",
-      "end": "1947-05-03"
-    },
-    {
-      "name": "Japan",
-      "start": "1947-05-03",
-      "flag": "jp"
-    }
-  ],
-  "netherlands": [
-    {
-      "name": "Dutch Republic",
-      "end": "1795-01-19"
-    },
-    {
-      "name": "Batavian Republic",
-      "start": "1795-01-19",
-      "end": "1806-06-05"
-    },
-    {
-      "name": "Kingdom of Holland",
-      "start": "1806-06-05",
-      "end": "1810-07-01"
-    },
-    {
-      "name": "Netherlands",
-      "start": "1813-11-21",
-      "flag": "nl"
-    }
-  ],
-  "france": [
-    {
-      "name": "Kingdom of France",
-      "end": "1792-09-21"
-    },
-    {
-      "name": "French First Republic",
-      "start": "1792-09-21",
-      "end": "1804-05-18",
-      "flag": "fr"
-    },
-    {
-      "name": "First French Empire",
-      "start": "1804-05-18",
-      "end": "1814-04-06",
-      "flag": "fr"
-    },
-    {
-      "name": "Kingdom of France",
-      "start": "1814-04-06",
-      "end": "1848-02-24"
-    },
-    {
-      "name": "French Second Republic",
-      "start": "1848-02-24",
-      "end": "1852-12-02",
-      "flag": "fr"
-    },
-    {
-      "name": "Second French Empire",
-      "start": "1852-12-02",
-      "end": "1870-09-04",
-      "flag": "fr"
-    },
-    {
-      "name": "France",
-      "start": "1870-09-04",
-      "flag": "fr"
-    }
-  ],
-  "china": [
-    {
-      "name": "Qing dynasty",
-      "end": "1912-02-12"
-    },
-    {
-      "name": "China",
-      "start": "1949-10-01",
-      "flag": "cn"
-    }
-  ],
-  "hungary": [
-    {
-      "name": "Kingdom of Hungary",
-      "end": "1946-02-01"
-    },
-    {
-      "name": "Hungarian People's Republic",
-      "start": "1949-08-20",
-      "end": "1989-10-23"
-    },
-    {
-      "name": "Hungary",
-      "start": "1989-10-23",
-      "flag": "hu"
-    }
-  ],
-  "spain": [
-    {
-      "name": "Kingdom of Spain",
-      "end": "1873-02-11"
-    },
-    {
-      "name": "First Spanish Republic",
-      "start": "1873-02-11",
-      "end": "1874-12-29"
-    },
-    {
-      "name": "Kingdom of Spain",
-      "start": "1874-12-29",
-      "end": "1931-04-14"
-    },
-    {
-      "name": "Second Spanish Republic",
-      "start": "1931-04-14",
-      "end": "1939-04-01"
-    },
-    {
-      "name": "Spanish State",
-      "start": "1939-04-01",
-      "end": "1975-11-22"
-    },
-    {
-      "name": "Spain",
-      "start": "1975-11-22",
-      "flag": "es"
-    }
-  ]
+ "russia": [
+  {
+   "name": "Grand Duchy of Moscow",
+   "end": "1547-01-16"
+  },
+  {
+   "name": "Tsardom of Russia",
+   "start": "1547-01-16",
+   "end": "1721-11-02"
+  },
+  {
+   "name": "Russian Empire",
+   "start": "1721-11-02",
+   "end": "1917-11-07"
+  },
+  {
+   "name": "Soviet Union",
+   "start": "1917-11-07",
+   "end": "1991-12-26"
+  },
+  {
+   "name": "Russia",
+   "start": "1991-12-26"
+  }
+ ],
+ "germany": [
+  {
+   "name": "Electorate of Brandenburg",
+   "end": "1701-01-18"
+  },
+  {
+   "name": "Kingdom of Prussia",
+   "start": "1701-01-18",
+   "end": "1871-01-18"
+  },
+  {
+   "name": "German Empire",
+   "start": "1871-01-18",
+   "end": "1918-11-09"
+  },
+  {
+   "name": "Weimar Republic",
+   "start": "1918-11-09",
+   "end": "1933-01-30",
+   "flag": "de"
+  },
+  {
+   "name": "German Reich",
+   "start": "1933-01-30",
+   "end": "1945-05-08"
+  },
+  {
+   "name": "Allied-occupied Germany",
+   "start": "1945-05-08",
+   "end": "1949-05-23"
+  },
+  {
+   "name": "West Germany",
+   "start": "1949-05-23",
+   "end": "1990-10-03",
+   "flag": "de"
+  },
+  {
+   "name": "Germany",
+   "start": "1990-10-03"
+  }
+ ],
+ "czech-republic": [
+  {
+   "name": "Czechoslovakia",
+   "start": "1918-10-28",
+   "end": "1992-12-31",
+   "flag": "cz"
+  },
+  {
+   "name": "Czechia",
+   "start": "1993-01-01"
+  }
+ ],
+ "yemen": [
+  {
+   "name": "North Yemen",
+   "end": "1990-05-22"
+  },
+  {
+   "name": "Yemen",
+   "start": "1990-05-22"
+  }
+ ],
+ "serbia": [
+  {
+   "name": "Yugoslavia",
+   "start": "1918-12-01",
+   "end": "2003-02-04"
+  },
+  {
+   "name": "Serbia and Montenegro",
+   "start": "2003-02-04",
+   "end": "2006-06-05"
+  },
+  {
+   "name": "Serbia",
+   "start": "2006-06-05"
+  }
+ ],
+ "iran": [
+  {
+   "name": "Persia",
+   "end": "1935-03-21"
+  },
+  {
+   "name": "Iran",
+   "start": "1935-03-21"
+  }
+ ],
+ "myanmar": [
+  {
+   "name": "Burma",
+   "end": "1989-06-18"
+  },
+  {
+   "name": "Myanmar",
+   "start": "1989-06-18"
+  }
+ ],
+ "thailand": [
+  {
+   "name": "Siam",
+   "end": "1939-06-23",
+   "flag": "th"
+  },
+  {
+   "name": "Thailand",
+   "start": "1939-06-23"
+  }
+ ],
+ "sri-lanka": [
+  {
+   "name": "Ceylon",
+   "end": "1972-05-22"
+  },
+  {
+   "name": "Sri Lanka",
+   "start": "1972-05-22"
+  }
+ ],
+ "vietnam": [
+  {
+   "name": "North Vietnam",
+   "start": "1954-07-21",
+   "end": "1976-07-02"
+  },
+  {
+   "name": "Vietnam",
+   "start": "1976-07-02"
+  }
+ ],
+ "austria": [
+  {
+   "name": "Habsburg Monarchy",
+   "end": "1804-08-11"
+  },
+  {
+   "name": "Austrian Empire",
+   "start": "1804-08-11",
+   "end": "1867-06-08"
+  },
+  {
+   "name": "Austria-Hungary",
+   "start": "1867-06-08",
+   "end": "1918-11-12"
+  },
+  {
+   "name": "Austria",
+   "start": "1918-11-12",
+   "flag": "at"
+  }
+ ],
+ "turkey": [
+  {
+   "name": "Ottoman Empire",
+   "end": "1923-10-29"
+  },
+  {
+   "name": "Turkey",
+   "start": "1923-10-29"
+  }
+ ],
+ "tanzania": [
+  {
+   "name": "Tanganyika",
+   "start": "1961-12-09",
+   "end": "1964-04-26"
+  },
+  {
+   "name": "Tanzania",
+   "start": "1964-04-26",
+   "flag": "tz"
+  }
+ ],
+ "poland": [
+  {
+   "name": "Kingdom of Poland",
+   "end": "1795-10-24"
+  },
+  {
+   "name": "Poland",
+   "start": "1918-11-11",
+   "flag": "pl"
+  }
+ ],
+ "lithuania": [
+  {
+   "name": "Grand Duchy of Lithuania",
+   "end": "1795-10-24"
+  },
+  {
+   "name": "Lithuania",
+   "start": "1918-02-16",
+   "flag": "lt"
+  }
+ ],
+ "vatican-city": [
+  {
+   "name": "Holy See",
+   "end": "0756-01-01"
+  },
+  {
+   "name": "Papal States",
+   "start": "0756-01-01",
+   "end": "1870-09-20"
+  },
+  {
+   "name": "Holy See",
+   "start": "1870-09-20",
+   "end": "1929-02-11"
+  },
+  {
+   "name": "Vatican City",
+   "start": "1929-02-11",
+   "flag": "va"
+  }
+ ],
+ "india": [
+  {
+   "name": "Mughal Empire",
+   "start": "1526-04-21",
+   "end": "1857-09-21"
+  },
+  {
+   "name": "India",
+   "start": "1947-08-15",
+   "flag": "in"
+  }
+ ],
+ "saudi-arabia": [
+  {
+   "name": "Emirate of Diriyah",
+   "end": "1818-01-01"
+  },
+  {
+   "name": "Emirate of Nejd",
+   "start": "1824-01-01",
+   "end": "1921-11-01"
+  },
+  {
+   "name": "Sultanate of Nejd",
+   "start": "1921-11-01",
+   "end": "1926-01-08"
+  },
+  {
+   "name": "Kingdom of Hejaz and Nejd",
+   "start": "1926-01-08",
+   "end": "1932-09-23"
+  },
+  {
+   "name": "Saudi Arabia",
+   "start": "1932-09-23",
+   "flag": "sa"
+  }
+ ],
+ "liberia": [
+  {
+   "name": "Commonwealth of Liberia",
+   "end": "1847-07-26"
+  },
+  {
+   "name": "Liberia",
+   "start": "1847-07-26",
+   "flag": "lr"
+  }
+ ],
+ "italy": [
+  {
+   "name": "Kingdom of Sardinia",
+   "start": "1720-08-19",
+   "end": "1861-03-17"
+  },
+  {
+   "name": "Kingdom of Italy",
+   "start": "1861-03-17",
+   "end": "1946-06-18"
+  },
+  {
+   "name": "Italy",
+   "start": "1946-06-18",
+   "flag": "it"
+  }
+ ],
+ "finland": [
+  {
+   "name": "Grand Duchy of Finland",
+   "start": "1809-03-29",
+   "end": "1917-12-06"
+  },
+  {
+   "name": "Finland",
+   "start": "1917-12-06",
+   "flag": "fi"
+  }
+ ],
+ "iceland": [
+  {
+   "name": "Kingdom of Iceland",
+   "start": "1918-12-01",
+   "end": "1944-06-17",
+   "flag": "is"
+  },
+  {
+   "name": "Iceland",
+   "start": "1944-06-17",
+   "flag": "is"
+  }
+ ],
+ "EU": [
+  {
+   "name": "European Economic Community",
+   "end": "1993-11-01"
+  },
+  {
+   "name": "European Union",
+   "start": "1993-11-01",
+   "flag": "eu"
+  }
+ ],
+ "japan": [
+  {
+   "name": "Tokugawa Japan",
+   "end": "1868-01-03"
+  },
+  {
+   "name": "Empire of Japan",
+   "start": "1868-01-03",
+   "end": "1947-05-03"
+  },
+  {
+   "name": "Japan",
+   "start": "1947-05-03",
+   "flag": "jp"
+  }
+ ],
+ "netherlands": [
+  {
+   "name": "Dutch Republic",
+   "end": "1795-01-19"
+  },
+  {
+   "name": "Batavian Republic",
+   "start": "1795-01-19",
+   "end": "1806-06-05"
+  },
+  {
+   "name": "Kingdom of Holland",
+   "start": "1806-06-05",
+   "end": "1810-07-01"
+  },
+  {
+   "name": "Netherlands",
+   "start": "1813-11-21",
+   "flag": "nl"
+  }
+ ],
+ "france": [
+  {
+   "name": "Kingdom of France",
+   "end": "1792-09-21"
+  },
+  {
+   "name": "French First Republic",
+   "start": "1792-09-21",
+   "end": "1804-05-18",
+   "flag": "fr"
+  },
+  {
+   "name": "First French Empire",
+   "start": "1804-05-18",
+   "end": "1814-04-06",
+   "flag": "fr"
+  },
+  {
+   "name": "Kingdom of France",
+   "start": "1814-04-06",
+   "end": "1848-02-24"
+  },
+  {
+   "name": "French Second Republic",
+   "start": "1848-02-24",
+   "end": "1852-12-02",
+   "flag": "fr"
+  },
+  {
+   "name": "Second French Empire",
+   "start": "1852-12-02",
+   "end": "1870-09-04",
+   "flag": "fr"
+  },
+  {
+   "name": "France",
+   "start": "1870-09-04",
+   "flag": "fr"
+  }
+ ],
+ "china": [
+  {
+   "name": "Qin dynasty",
+   "start": "-0221-01-01",
+   "end": "-0206-01-01"
+  },
+  {
+   "name": "Han dynasty",
+   "start": "-0206-01-01",
+   "end": "0220-01-01"
+  },
+  {
+   "name": "Sui dynasty",
+   "start": "0581-01-01",
+   "end": "0618-01-01"
+  },
+  {
+   "name": "Tang dynasty",
+   "start": "0618-01-01",
+   "end": "0907-01-01"
+  },
+  {
+   "name": "Song dynasty",
+   "start": "0960-01-01",
+   "end": "1271-01-01"
+  },
+  {
+   "name": "Yuan dynasty",
+   "start": "1271-12-18",
+   "end": "1368-01-23"
+  },
+  {
+   "name": "Ming dynasty",
+   "start": "1368-01-23",
+   "end": "1644-04-25"
+  },
+  {
+   "name": "Qing dynasty",
+   "start": "1644-04-25",
+   "end": "1912-02-12"
+  },
+  {
+   "name": "Republic of China",
+   "start": "1912-02-12",
+   "end": "1949-10-01"
+  },
+  {
+   "name": "China",
+   "start": "1949-10-01",
+   "flag": "cn"
+  }
+ ],
+ "hungary": [
+  {
+   "name": "Kingdom of Hungary",
+   "end": "1946-02-01"
+  },
+  {
+   "name": "Hungarian People's Republic",
+   "start": "1949-08-20",
+   "end": "1989-10-23"
+  },
+  {
+   "name": "Hungary",
+   "start": "1989-10-23",
+   "flag": "hu"
+  }
+ ],
+ "spain": [
+  {
+   "name": "Kingdom of Spain",
+   "end": "1873-02-11"
+  },
+  {
+   "name": "First Spanish Republic",
+   "start": "1873-02-11",
+   "end": "1874-12-29"
+  },
+  {
+   "name": "Kingdom of Spain",
+   "start": "1874-12-29",
+   "end": "1931-04-14"
+  },
+  {
+   "name": "Second Spanish Republic",
+   "start": "1931-04-14",
+   "end": "1939-04-01"
+  },
+  {
+   "name": "Spanish State",
+   "start": "1939-04-01",
+   "end": "1975-11-22"
+  },
+  {
+   "name": "Spain",
+   "start": "1975-11-22",
+   "flag": "es"
+  }
+ ],
+ "African Union": [
+  {
+   "name": "Organisation of African Unity",
+   "end": "2002-07-09"
+  },
+  {
+   "name": "African Union",
+   "start": "2002-07-09"
+  }
+ ],
+ "albania": [
+  {
+   "name": "Kingdom of Albania",
+   "start": "1928-09-01",
+   "end": "1939-04-07"
+  },
+  {
+   "name": "People’s Socialist Republic of Albania",
+   "start": "1946-01-11",
+   "end": "1991-04-30"
+  },
+  {
+   "name": "Albania",
+   "start": "1991-04-30",
+   "flag": "al"
+  }
+ ],
+ "congo-dr": [
+  {
+   "name": "Congo-Léopoldville",
+   "end": "1971-10-27"
+  },
+  {
+   "name": "Zaire",
+   "start": "1971-10-27",
+   "end": "1997-05-17"
+  },
+  {
+   "name": "DR Congo",
+   "start": "1997-05-17",
+   "flag": "cd"
+  }
+ ],
+ "bulgaria": [
+  {
+   "name": "Principality of Bulgaria",
+   "start": "1878-07-13",
+   "end": "1908-10-05"
+  },
+  {
+   "name": "Kingdom of Bulgaria",
+   "start": "1908-10-05",
+   "end": "1946-09-15"
+  },
+  {
+   "name": "People's Republic of Bulgaria",
+   "start": "1946-09-15",
+   "end": "1990-11-15"
+  },
+  {
+   "name": "Bulgaria",
+   "start": "1990-11-15",
+   "flag": "bg"
+  }
+ ],
+ "armenia": [
+  {
+   "name": "First Republic of Armenia",
+   "start": "1918-05-28",
+   "end": "1920-12-02"
+  },
+  {
+   "name": "Armenia",
+   "start": "1991-09-21",
+   "flag": "am"
+  }
+ ],
+ "egypt": [
+  {
+   "name": "Egypt Eyalet",
+   "start": "1805-07-17",
+   "end": "1867-06-08"
+  },
+  {
+   "name": "Khedivate of Egypt",
+   "start": "1867-06-08",
+   "end": "1914-12-19"
+  },
+  {
+   "name": "Sultanate of Egypt",
+   "start": "1914-12-19",
+   "end": "1922-03-15"
+  },
+  {
+   "name": "Kingdom of Egypt",
+   "start": "1922-03-15",
+   "end": "1953-06-18"
+  },
+  {
+   "name": "Republic of Egypt",
+   "start": "1953-06-18",
+   "end": "1958-02-22"
+  },
+  {
+   "name": "United Arab Republic",
+   "start": "1958-02-22",
+   "end": "1971-09-02"
+  },
+  {
+   "name": "Egypt",
+   "start": "1971-09-02",
+   "flag": "eg"
+  }
+ ],
+ "roman-empire": [
+  {
+   "name": "Roman Kingdom",
+   "start": "-0753-01-01",
+   "end": "-0509-01-01"
+  },
+  {
+   "name": "Roman Republic",
+   "start": "-0509-01-01",
+   "end": "-0027-01-01"
+  },
+  {
+   "name": "Roman Empire",
+   "start": "-0027-01-01",
+   "end": "0476-01-01"
+  }
+ ],
+ "afghanistan": [
+  {
+   "name": "Durrani Empire",
+   "start": "1747-07-01",
+   "end": "1823-01-01"
+  },
+  {
+   "name": "Emirate of Afghanistan",
+   "start": "1823-01-01",
+   "end": "1926-06-09"
+  },
+  {
+   "name": "Kingdom of Afghanistan",
+   "start": "1926-06-09",
+   "end": "1973-07-17"
+  },
+  {
+   "name": "Afghanistan",
+   "start": "1973-07-17",
+   "flag": "af"
+  }
+ ],
+ "ethiopia": [
+  {
+   "name": "Ethiopian Empire",
+   "end": "1974-09-12"
+  },
+  {
+   "name": "Ethiopia",
+   "start": "1974-09-12",
+   "flag": "et"
+  }
+ ],
+ "madagascar": [
+  {
+   "name": "Kingdom of Madagascar",
+   "end": "1897-02-28"
+  },
+  {
+   "name": "Madagascar",
+   "start": "1958-10-14",
+   "flag": "mg"
+  }
+ ],
+ "sudan": [
+  {
+   "name": "Mahdist State",
+   "start": "1881-06-29",
+   "end": "1899-01-19"
+  },
+  {
+   "name": "Sudan",
+   "start": "1956-01-01",
+   "flag": "sd"
+  }
+ ]
 }

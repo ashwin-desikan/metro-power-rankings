@@ -1,0 +1,52 @@
+[
+  {
+    "name": "👑 Genghis Khan",
+    "role": "Great Khan",
+    "start": "1206-01-01",
+    "end": "1229-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level backbone",
+    "era": "Mongol Empire"
+  },
+  {
+    "name": "👑 Ögedei Khan",
+    "role": "Great Khan",
+    "start": "1229-01-01",
+    "end": "1246-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone",
+    "era": "Mongol Empire"
+  },
+  {
+    "name": "👑 Güyük Khan",
+    "role": "Great Khan",
+    "start": "1246-01-01",
+    "end": "1251-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Mongol Empire"
+  },
+  {
+    "name": "👑 Möngke Khan",
+    "role": "Great Khan",
+    "start": "1251-01-01",
+    "end": "1260-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Mongol Empire"
+  },
+  {
+    "name": "👑 Kublai Khan",
+    "role": "Great Khan",
+    "start": "1260-01-01",
+    "end": "1294-02-18",
+    "current": false,
+    "tenure": "34y 1m 17d",
+    "party": "year-level backbone",
+    "era": "Mongol Empire"
+  }
+]

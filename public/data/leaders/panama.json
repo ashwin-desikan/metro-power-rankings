@@ -1,82 +1,512 @@
 [
-  {
-    "name": "Guillermo Endara",
-    "role": "President",
-    "start": "1989-12-20",
-    "end": "1994-09-01",
-    "current": false,
-    "tenure": "1989-1994",
-    "party": "Arnulfista Party",
-    "era": "Post-invasion democracy"
-  },
-  {
-    "name": "Ernesto Perez Balladares",
-    "role": "President",
-    "start": "1994-09-01",
-    "end": "1999-09-01",
-    "current": false,
-    "tenure": "1994-1999",
-    "party": "Democratic Revolutionary Party (PRD)",
-    "era": "Post-invasion democracy"
-  },
-  {
-    "name": "Mireya Moscoso",
-    "role": "President",
-    "start": "1999-09-01",
-    "end": "2004-09-01",
-    "current": false,
-    "tenure": "1999-2004",
-    "party": "Arnulfista Party",
-    "era": "Post-invasion democracy"
-  },
-  {
-    "name": "Martin Torrijos",
-    "role": "President",
-    "start": "2004-09-01",
-    "end": "2009-07-01",
-    "current": false,
-    "tenure": "2004-2009",
-    "party": "Democratic Revolutionary Party (PRD)",
-    "era": "Post-invasion democracy"
-  },
-  {
-    "name": "⚠️ Ricardo Martinelli",
-    "role": "President",
-    "start": "2009-07-01",
-    "end": "2014-07-01",
-    "current": false,
-    "tenure": "2009-2014",
-    "party": "Democratic Change (CD)",
-    "era": "Post-invasion democracy"
-  },
-  {
-    "name": "Juan Carlos Varela",
-    "role": "President",
-    "start": "2014-07-01",
-    "end": "2019-07-01",
-    "current": false,
-    "tenure": "2014-2019",
-    "party": "Panamenista Party",
-    "era": "Post-invasion democracy"
-  },
-  {
-    "name": "Laurentino Cortizo",
-    "role": "President",
-    "start": "2019-07-01",
-    "end": "2024-07-01",
-    "current": false,
-    "tenure": "2019-2024",
-    "party": "Democratic Revolutionary Party (PRD)",
-    "era": "Post-invasion democracy"
-  },
-  {
-    "name": "Jose Raul Mulino",
-    "role": "President",
-    "start": "2024-07-01",
-    "end": null,
-    "current": true,
-    "tenure": "2024-present",
-    "party": "Realizing Goals (RM)",
-    "era": "Post-invasion democracy"
-  }
+ {
+  "name": "Manuel Amador Guerrero",
+  "role": "President",
+  "start": "1904-02-20",
+  "end": "1907-06-23",
+  "current": false,
+  "tenure": "3y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "José Domingo de Obaldía",
+  "role": "President",
+  "start": "1907-06-24",
+  "end": "1907-12-27",
+  "current": false,
+  "tenure": "0y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Manuel Amador Guerrero",
+  "role": "President",
+  "start": "1907-12-29",
+  "end": "1908-10-01",
+  "current": false,
+  "tenure": "0y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "José Domingo de Obaldía",
+  "role": "President",
+  "start": "1908-10-01",
+  "end": "1910-03-01",
+  "current": false,
+  "tenure": "1y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Carlos Antonio Mendoza",
+  "role": "President",
+  "start": "1910-03-01",
+  "end": "1910-10-01",
+  "current": false,
+  "tenure": "0y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Pablo Arosemena",
+  "role": "President",
+  "start": "1910-10-05",
+  "end": "1912-10-01",
+  "current": false,
+  "tenure": "1y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Belisario Porras",
+  "role": "President",
+  "start": "1912-10-01",
+  "end": "1916-10-01",
+  "current": false,
+  "tenure": "4y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ramón Maximiliano Valdés",
+  "role": "President",
+  "start": "1916-10-01",
+  "end": "1918-06-03",
+  "current": false,
+  "tenure": "1y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ciro Luis Urriola",
+  "role": "President",
+  "start": "1918-06-03",
+  "end": "1918-10-01",
+  "current": false,
+  "tenure": "0y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Belisario Porras",
+  "role": "President",
+  "start": "1918-10-12",
+  "end": "1920-01-30",
+  "current": false,
+  "tenure": "1y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ernesto Tisdel Lefevre",
+  "role": "President",
+  "start": "1920-01-30",
+  "end": "1920-10-01",
+  "current": false,
+  "tenure": "0y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Belisario Porras",
+  "role": "President",
+  "start": "1920-10-01",
+  "end": "1924-10-01",
+  "current": false,
+  "tenure": "4y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Rodolfo Chiari",
+  "role": "President",
+  "start": "1924-10-01",
+  "end": "1928-10-01",
+  "current": false,
+  "tenure": "4y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Florencio Harmodio Arosemena",
+  "role": "President",
+  "start": "1928-10-01",
+  "end": "1931-01-03",
+  "current": false,
+  "tenure": "2y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Harmodio Arias Madrid",
+  "role": "President",
+  "start": "1931-01-03",
+  "end": "1931-01-16",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ricardo Joaquín Alfaro",
+  "role": "President",
+  "start": "1931-01-16",
+  "end": "1932-06-05",
+  "current": false,
+  "tenure": "1y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Harmodio Arias Madrid",
+  "role": "President",
+  "start": "1932-06-05",
+  "end": "1936-10-01",
+  "current": false,
+  "tenure": "4y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Juan Demóstenes Arosemena",
+  "role": "President",
+  "start": "1936-10-01",
+  "end": "1939-12-16",
+  "current": false,
+  "tenure": "3y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Augusto Samuel Boyd",
+  "role": "President",
+  "start": "1939-12-18",
+  "end": "1940-10-01",
+  "current": false,
+  "tenure": "0y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Arnulfo Arias",
+  "role": "President",
+  "start": "1940-10-01",
+  "end": "1941-10-09",
+  "current": false,
+  "tenure": "1y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ricardo Adolfo de la Guardia",
+  "role": "President",
+  "start": "1941-10-09",
+  "end": "1945-06-15",
+  "current": false,
+  "tenure": "3y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Enrique Adolfo Jiménez",
+  "role": "President",
+  "start": "1945-06-15",
+  "end": "1948-08-07",
+  "current": false,
+  "tenure": "3y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Domingo Díaz Arosemena",
+  "role": "President",
+  "start": "1948-08-07",
+  "end": "1949-07-28",
+  "current": false,
+  "tenure": "0y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Daniel Chanis Pinzón",
+  "role": "President",
+  "start": "1949-07-28",
+  "end": "1949-11-20",
+  "current": false,
+  "tenure": "0y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Roberto Francisco Chiari",
+  "role": "President",
+  "start": "1949-11-20",
+  "end": "1949-11-24",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Arnulfo Arias",
+  "role": "President",
+  "start": "1949-11-24",
+  "end": "1951-05-09",
+  "current": false,
+  "tenure": "1y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Alcibíades Arosemena",
+  "role": "President",
+  "start": "1951-05-09",
+  "end": "1952-10-01",
+  "current": false,
+  "tenure": "1y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "José Antonio Remón Cantera",
+  "role": "President",
+  "start": "1952-10-01",
+  "end": "1955-01-02",
+  "current": false,
+  "tenure": "2y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "José Ramón Guizado",
+  "role": "President",
+  "start": "1955-01-02",
+  "end": "1955-03-29",
+  "current": false,
+  "tenure": "0y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ricardo Arias",
+  "role": "President",
+  "start": "1955-03-29",
+  "end": "1956-10-01",
+  "current": false,
+  "tenure": "1y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ernesto de la Guardia",
+  "role": "President",
+  "start": "1956-10-01",
+  "end": "1960-10-01",
+  "current": false,
+  "tenure": "4y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Roberto Francisco Chiari",
+  "role": "President",
+  "start": "1960-10-01",
+  "end": "1963-03-17",
+  "current": false,
+  "tenure": "2y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Roberto Francisco Chiari",
+  "role": "President",
+  "start": "1963-03-23",
+  "end": "1964-10-01",
+  "current": false,
+  "tenure": "1y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Marco Aurelio Robles",
+  "role": "President",
+  "start": "1964-10-01",
+  "end": "1968-10-01",
+  "current": false,
+  "tenure": "4y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Arnulfo Arias",
+  "role": "President",
+  "start": "1968-10-01",
+  "end": "1968-10-11",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Demetrio B. Lakas",
+  "role": "President",
+  "start": "1969-12-19",
+  "end": "1978-10-11",
+  "current": false,
+  "tenure": "8y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Arístides Royo",
+  "role": "President",
+  "start": "1978-10-11",
+  "end": "1982-07-31",
+  "current": false,
+  "tenure": "3y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ricardo de la Espriella",
+  "role": "President",
+  "start": "1982-07-31",
+  "end": "1984-02-13",
+  "current": false,
+  "tenure": "1y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Jorge Illueca",
+  "role": "President",
+  "start": "1984-02-13",
+  "end": "1984-10-11",
+  "current": false,
+  "tenure": "0y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Nicolás Ardito Barletta",
+  "role": "President",
+  "start": "1984-10-11",
+  "end": "1985-09-28",
+  "current": false,
+  "tenure": "0y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Eric Arturo Delvalle",
+  "role": "President",
+  "start": "1985-09-28",
+  "end": "1988-02-26",
+  "current": false,
+  "tenure": "2y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Manuel Solís Palma",
+  "role": "President",
+  "start": "1988-02-26",
+  "end": "1989-09-01",
+  "current": false,
+  "tenure": "1y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Francisco Rodríguez",
+  "role": "President",
+  "start": "1989-09-01",
+  "end": "1989-12-20",
+  "current": false,
+  "tenure": "0y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Guillermo Endara",
+  "role": "President",
+  "start": "1989-12-20",
+  "end": "1994-09-01",
+  "current": false,
+  "tenure": "4y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ernesto Pérez Balladares",
+  "role": "President",
+  "start": "1994-09-01",
+  "end": "1999-09-01",
+  "current": false,
+  "tenure": "5y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mireya Moscoso",
+  "role": "President",
+  "start": "1999-09-01",
+  "end": "2004-09-01",
+  "current": false,
+  "tenure": "5y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Martín Torrijos",
+  "role": "President",
+  "start": "2004-09-01",
+  "end": "2009-07-01",
+  "current": false,
+  "tenure": "4y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ricardo Martinelli",
+  "role": "President",
+  "start": "2009-07-01",
+  "end": "2014-07-01",
+  "current": false,
+  "tenure": "5y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Juan Carlos Varela",
+  "role": "President",
+  "start": "2014-07-01",
+  "end": "2019-07-01",
+  "current": false,
+  "tenure": "5y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Laurentino Cortizo",
+  "role": "President",
+  "start": "2019-07-01",
+  "end": "2024-07-01",
+  "current": false,
+  "tenure": "5y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "José Raúl Mulino",
+  "role": "President",
+  "start": "2024-07-01",
+  "end": null,
+  "current": true,
+  "tenure": "2y 0m",
+  "party": null,
+  "era": null
+ }
 ]

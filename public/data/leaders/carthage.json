@@ -1,0 +1,82 @@
+[
+ {
+  "name": "👑 Dido (Elissa)",
+  "role": "Queen",
+  "start": "-0814-01-01",
+  "end": "-0814-01-01",
+  "current": false,
+  "tenure": "0y 0d",
+  "party": "year-level backbone",
+  "era": "Carthage"
+ },
+ {
+  "name": "👑 Mago I",
+  "role": "King",
+  "start": "-0550-01-01",
+  "end": "-0530-01-01",
+  "current": false,
+  "tenure": "20y 0d",
+  "party": "year-level backbone",
+  "era": "Carthage"
+ },
+ {
+  "name": "👑 Hamilcar I",
+  "role": "General",
+  "start": "-0510-01-01",
+  "end": "-0480-01-01",
+  "current": false,
+  "tenure": "30y 0d",
+  "party": "year-level backbone",
+  "era": "Carthage"
+ },
+ {
+  "name": "👑 Hanno the Great",
+  "role": "Statesman",
+  "start": "-0450-01-01",
+  "end": "-0440-01-01",
+  "current": false,
+  "tenure": "10y 0d",
+  "party": "year-level backbone",
+  "era": "Carthage"
+ },
+ {
+  "name": "👑 Hamilcar Barca",
+  "role": "General",
+  "start": "-0247-01-01",
+  "end": "-0228-01-01",
+  "current": false,
+  "tenure": "19y 0d",
+  "party": "year-level backbone",
+  "era": "Carthage"
+ },
+ {
+  "name": "👑 Hasdrubal the Fair",
+  "role": "General",
+  "start": "-0228-01-01",
+  "end": "-0221-01-01",
+  "current": false,
+  "tenure": "7y 0d",
+  "party": "year-level backbone",
+  "era": "Carthage"
+ },
+ {
+  "name": "👑 Hannibal",
+  "role": "Suffete & General",
+  "start": "-0221-01-01",
+  "end": "-0202-01-01",
+  "current": false,
+  "tenure": "19y 0d",
+  "party": "year-level backbone",
+  "era": "Carthage"
+ },
+ {
+  "name": "👑 Hasdrubal",
+  "role": "General",
+  "start": "-0149-01-01",
+  "end": "-0146-01-01",
+  "current": false,
+  "tenure": "3y 0d",
+  "party": "year-level backbone",
+  "era": "Carthage"
+ }
+]

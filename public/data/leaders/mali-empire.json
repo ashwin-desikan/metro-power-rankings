@@ -1,0 +1,72 @@
+[
+  {
+    "name": "👑 Sundiata Keita",
+    "role": "Mansa",
+    "start": "1235-01-01",
+    "end": "1255-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "Mali Empire"
+  },
+  {
+    "name": "👑 Mansa Uli",
+    "role": "Mansa",
+    "start": "1255-01-01",
+    "end": "1285-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone",
+    "era": "Mali Empire"
+  },
+  {
+    "name": "👑 Sakura",
+    "role": "Mansa",
+    "start": "1285-01-01",
+    "end": "1312-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level backbone",
+    "era": "Mali Empire"
+  },
+  {
+    "name": "👑 Mansa Musa",
+    "role": "Mansa",
+    "start": "1312-01-01",
+    "end": "1341-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level backbone",
+    "era": "Mali Empire"
+  },
+  {
+    "name": "👑 Mansa Suleyman",
+    "role": "Mansa",
+    "start": "1341-01-01",
+    "end": "1360-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone",
+    "era": "Mali Empire"
+  },
+  {
+    "name": "👑 Mari Djata II",
+    "role": "Mansa",
+    "start": "1360-01-01",
+    "end": "1374-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone",
+    "era": "Mali Empire"
+  },
+  {
+    "name": "👑 Musa II",
+    "role": "Mansa",
+    "start": "1374-01-01",
+    "end": "1600-01-01",
+    "current": false,
+    "tenure": "226y 0d",
+    "party": "year-level backbone",
+    "era": "Mali Empire"
+  }
+]

@@ -1,22 +1,272 @@
 [
-  {
-    "name": "Denis Sassou-Nguesso",
-    "role": "President",
-    "start": "1997-10-25",
-    "end": null,
-    "current": true,
-    "tenure": "28y 8m 8d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Anatole Collinet Makosso",
-    "role": "Prime Minister",
-    "start": "2021-05-12",
-    "end": null,
-    "current": true,
-    "tenure": "5y 1m 21d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Fulbert Youlou",
+  "role": "President",
+  "start": "1960-08-15",
+  "end": "1963-08-15",
+  "current": false,
+  "tenure": "3y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Alphonse Massamba-Débat",
+  "role": "President",
+  "start": "1963-08-16",
+  "end": "1968-09-04",
+  "current": false,
+  "tenure": "5y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Alphonse Massamba-Débat",
+  "role": "Prime Minister",
+  "start": "1963-08-16",
+  "end": "1963-12-19",
+  "current": false,
+  "tenure": "0y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Pascal Lissouba",
+  "role": "Prime Minister",
+  "start": "1963-12-24",
+  "end": "1966-04-15",
+  "current": false,
+  "tenure": "2y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ambroise Noumazalaye",
+  "role": "Prime Minister",
+  "start": "1966-05-06",
+  "end": "1968-01-12",
+  "current": false,
+  "tenure": "1y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Alfred Raoul",
+  "role": "Prime Minister",
+  "start": "1968-08-04",
+  "end": "1969-12-30",
+  "current": false,
+  "tenure": "1y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Alfred Raoul",
+  "role": "President",
+  "start": "1968-09-05",
+  "end": "1969-01-01",
+  "current": false,
+  "tenure": "0y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Marien Ngouabi",
+  "role": "President",
+  "start": "1969-01-01",
+  "end": "1977-03-18",
+  "current": false,
+  "tenure": "8y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Henri Lopes",
+  "role": "Prime Minister",
+  "start": "1973-07-28",
+  "end": "1975-12-18",
+  "current": false,
+  "tenure": "2y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Louis Sylvain Goma",
+  "role": "Prime Minister",
+  "start": "1975-12-18",
+  "end": "1984-08-07",
+  "current": false,
+  "tenure": "8y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Joachim Yhombi-Opango",
+  "role": "President",
+  "start": "1977-04-04",
+  "end": "1979-02-05",
+  "current": false,
+  "tenure": "1y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Denis Sassou Nguesso",
+  "role": "President",
+  "start": "1979-02-08",
+  "end": "1992-08-31",
+  "current": false,
+  "tenure": "13y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ange Édouard Poungui",
+  "role": "Prime Minister",
+  "start": "1984-08-07",
+  "end": "1989-08-07",
+  "current": false,
+  "tenure": "5y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Alphonse Poaty-Souchlaty",
+  "role": "Prime Minister",
+  "start": "1989-08-07",
+  "end": "1990-12-03",
+  "current": false,
+  "tenure": "1y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Pierre Moussa",
+  "role": "Prime Minister",
+  "start": "1990-12-03",
+  "end": "1991-01-08",
+  "current": false,
+  "tenure": "0y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Louis Sylvain Goma",
+  "role": "Prime Minister",
+  "start": "1991-01-08",
+  "end": "1991-06-08",
+  "current": false,
+  "tenure": "0y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "André Milongo",
+  "role": "Prime Minister",
+  "start": "1991-06-08",
+  "end": "1992-09-02",
+  "current": false,
+  "tenure": "1y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Pascal Lissouba",
+  "role": "President",
+  "start": "1992-08-31",
+  "end": "1997-10-25",
+  "current": false,
+  "tenure": "5y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Stéphane Maurice Bongho-Nouarra",
+  "role": "Prime Minister",
+  "start": "1992-09-02",
+  "end": "1992-12-06",
+  "current": false,
+  "tenure": "0y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Claude Antoine Dacosta",
+  "role": "Prime Minister",
+  "start": "1992-12-06",
+  "end": "1993-06-23",
+  "current": false,
+  "tenure": "0y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Joachim Yhombi-Opango",
+  "role": "Prime Minister",
+  "start": "1993-06-23",
+  "end": "1996-08-27",
+  "current": false,
+  "tenure": "3y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Charles David Ganao",
+  "role": "Prime Minister",
+  "start": "1996-08-27",
+  "end": "1997-09-08",
+  "current": false,
+  "tenure": "1y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bernard Kolélas",
+  "role": "Prime Minister",
+  "start": "1997-09-08",
+  "end": "1997-10-15",
+  "current": false,
+  "tenure": "0y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Denis Sassou Nguesso",
+  "role": "President",
+  "start": "1997-10-25",
+  "end": null,
+  "current": false,
+  "tenure": "28y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Isidore Mvouba",
+  "role": "Prime Minister",
+  "start": "2005-01-07",
+  "end": "2009-09-15",
+  "current": false,
+  "tenure": "4y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Clément Mouamba",
+  "role": "Prime Minister",
+  "start": "2016-04-23",
+  "end": "2021-05-12",
+  "current": false,
+  "tenure": "5y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Anatole Collinet Makosso",
+  "role": "Prime Minister",
+  "start": "2021-05-12",
+  "end": null,
+  "current": true,
+  "tenure": "5y 1m",
+  "party": null,
+  "era": null
+ }
 ]

@@ -83,9 +83,9 @@
     "name": "Hage Geingob",
     "role": "President",
     "start": "2012-12-04",
-    "end": "2015-03-21",
+    "end": "2024-02-04",
     "current": false,
-    "tenure": "2y 3m 17d",
+    "tenure": "11y 2m 0d",
     "party": null,
     "era": null
   },
@@ -96,16 +96,6 @@
     "end": "2025-03-21",
     "current": false,
     "tenure": "10y 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Hage Geingob",
-    "role": "President",
-    "start": "2015-03-21",
-    "end": "2024-02-04",
-    "current": false,
-    "tenure": "8y 10m 14d",
     "party": null,
     "era": null
   },

@@ -1,202 +1,212 @@
 [
-  {
-    "name": "👑 Timur Shah Durrani",
-    "role": "Monarch",
-    "start": "1772-01-01",
-    "end": "1793-01-01",
-    "current": false,
-    "tenure": "21y 0d",
-    "party": "year-level dates",
-    "era": "Emirate of Afghanistan"
-  },
-  {
-    "name": "👑 Zaman Shah",
-    "role": "Monarch",
-    "start": "1793-01-01",
-    "end": "1801-01-01",
-    "current": false,
-    "tenure": "8y 0d",
-    "party": "year-level dates",
-    "era": "Emirate of Afghanistan"
-  },
-  {
-    "name": "👑 Mahmud Shah",
-    "role": "Monarch",
-    "start": "1801-01-01",
-    "end": "1803-01-01",
-    "current": false,
-    "tenure": "2y 0d",
-    "party": "year-level dates",
-    "era": "Emirate of Afghanistan"
-  },
-  {
-    "name": "👑 Shah Shuja",
-    "role": "Monarch",
-    "start": "1803-01-01",
-    "end": "1826-01-01",
-    "current": false,
-    "tenure": "23y 0d",
-    "party": "year-level dates",
-    "era": "Emirate of Afghanistan"
-  },
-  {
-    "name": "👑 Dost Mohammad Khan",
-    "role": "Monarch",
-    "start": "1826-01-01",
-    "end": "1863-06-09",
-    "current": false,
-    "tenure": "37y 5m 8d",
-    "party": "year-level dates",
-    "era": "Emirate of Afghanistan"
-  },
-  {
-    "name": "👑 Sher Ali Khan",
-    "role": "Monarch",
-    "start": "1863-06-09",
-    "end": "1880-07-31",
-    "current": false,
-    "tenure": "17y 1m 22d",
-    "party": null,
-    "era": "Emirate of Afghanistan"
-  },
-  {
-    "name": "👑 Abdur Rahman Khan",
-    "role": "Monarch",
-    "start": "1880-07-31",
-    "end": "1901-10-01",
-    "current": false,
-    "tenure": "21y 2m 0d",
-    "party": null,
-    "era": "Emirate of Afghanistan"
-  },
-  {
-    "name": "👑 Habibullah Khan",
-    "role": "Monarch",
-    "start": "1901-10-01",
-    "end": "1919-02-28",
-    "current": false,
-    "tenure": "17y 4m 27d",
-    "party": null,
-    "era": "Emirate of Afghanistan"
-  },
-  {
-    "name": "👑 Amanullah Khan",
-    "role": "Monarch",
-    "start": "1919-02-28",
-    "end": "1926-06-09",
-    "current": false,
-    "tenure": "7y 3m 12d",
-    "party": null,
-    "era": "Emirate of Afghanistan"
-  },
-  {
-    "name": "Amanullah Khan",
-    "role": "President",
-    "start": "1926-06-09",
-    "end": "1929-01-14",
-    "current": false,
-    "tenure": "2y 7m 5d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Inayatullah Khan",
-    "role": "President",
-    "start": "1929-01-14",
-    "end": "1929-01-17",
-    "current": false,
-    "tenure": "3d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Habibullāh Kalakāni",
-    "role": "President",
-    "start": "1929-01-17",
-    "end": "1929-10-16",
-    "current": false,
-    "tenure": "8m 29d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Mohammed Nadir Shah",
-    "role": "President",
-    "start": "1929-10-16",
-    "end": "1929-10-16",
-    "current": false,
-    "tenure": "0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Mohammed Zahir Shah",
-    "role": "President",
-    "start": "1933-11-08",
-    "end": "1973-07-17",
-    "current": false,
-    "tenure": "39y 8m 9d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Mohammed Daoud Khan",
-    "role": "President",
-    "start": "1973-07-17",
-    "end": "1978-04-27",
-    "current": false,
-    "tenure": "4y 9m 10d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Mohammad Najibullah",
-    "role": "President",
-    "start": "1987-11-30",
-    "end": "1992-04-28",
-    "current": false,
-    "tenure": "4y 4m 29d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Burhanuddin Rabbani",
-    "role": "President",
-    "start": "2001-11-16",
-    "end": "2001-12-22",
-    "current": false,
-    "tenure": "1m 6d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Ashraf Ghani",
-    "role": "President",
-    "start": "2014-09-29",
-    "end": "2021-08-15",
-    "current": false,
-    "tenure": "6y 10m 17d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Hibatullah Akhundzada",
-    "role": "President",
-    "start": "2021-08-15",
-    "end": null,
-    "current": true,
-    "tenure": "4y 10m 18d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Mohammad Hasan Akhund",
-    "role": "Prime Minister",
-    "start": "2023-07-17",
-    "end": null,
-    "current": true,
-    "tenure": "2y 11m 16d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "👑 Ahmad Shah Durrani",
+  "role": "King",
+  "start": "1747-07-01",
+  "end": "1772-10-16",
+  "current": false,
+  "tenure": "25y 3m",
+  "party": null,
+  "era": "Durrani Empire"
+ },
+ {
+  "name": "👑 Timur Shah Durrani",
+  "role": "Monarch",
+  "start": "1772-01-01",
+  "end": "1793-01-01",
+  "current": false,
+  "tenure": "21y 0d",
+  "party": "year-level dates",
+  "era": "Emirate of Afghanistan"
+ },
+ {
+  "name": "👑 Zaman Shah",
+  "role": "Monarch",
+  "start": "1793-01-01",
+  "end": "1801-01-01",
+  "current": false,
+  "tenure": "8y 0d",
+  "party": "year-level dates",
+  "era": "Emirate of Afghanistan"
+ },
+ {
+  "name": "👑 Mahmud Shah",
+  "role": "Monarch",
+  "start": "1801-01-01",
+  "end": "1803-01-01",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level dates",
+  "era": "Emirate of Afghanistan"
+ },
+ {
+  "name": "👑 Shah Shuja",
+  "role": "Monarch",
+  "start": "1803-01-01",
+  "end": "1826-01-01",
+  "current": false,
+  "tenure": "23y 0d",
+  "party": "year-level dates",
+  "era": "Emirate of Afghanistan"
+ },
+ {
+  "name": "👑 Dost Mohammad Khan",
+  "role": "Monarch",
+  "start": "1826-01-01",
+  "end": "1863-06-09",
+  "current": false,
+  "tenure": "37y 5m 8d",
+  "party": "year-level dates",
+  "era": "Emirate of Afghanistan"
+ },
+ {
+  "name": "👑 Sher Ali Khan",
+  "role": "Monarch",
+  "start": "1863-06-09",
+  "end": "1880-07-31",
+  "current": false,
+  "tenure": "17y 1m 22d",
+  "party": null,
+  "era": "Emirate of Afghanistan"
+ },
+ {
+  "name": "👑 Abdur Rahman Khan",
+  "role": "Monarch",
+  "start": "1880-07-31",
+  "end": "1901-10-01",
+  "current": false,
+  "tenure": "21y 2m 0d",
+  "party": null,
+  "era": "Emirate of Afghanistan"
+ },
+ {
+  "name": "👑 Habibullah Khan",
+  "role": "Monarch",
+  "start": "1901-10-01",
+  "end": "1919-02-28",
+  "current": false,
+  "tenure": "17y 4m 27d",
+  "party": null,
+  "era": "Emirate of Afghanistan"
+ },
+ {
+  "name": "👑 Amanullah Khan",
+  "role": "Monarch",
+  "start": "1919-02-28",
+  "end": "1926-06-09",
+  "current": false,
+  "tenure": "7y 3m 12d",
+  "party": null,
+  "era": "Emirate of Afghanistan"
+ },
+ {
+  "name": "Amanullah Khan",
+  "role": "President",
+  "start": "1926-06-09",
+  "end": "1929-01-14",
+  "current": false,
+  "tenure": "2y 7m 5d",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Inayatullah Khan",
+  "role": "President",
+  "start": "1929-01-14",
+  "end": "1929-01-17",
+  "current": false,
+  "tenure": "3d",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Habibullāh Kalakāni",
+  "role": "President",
+  "start": "1929-01-17",
+  "end": "1929-10-16",
+  "current": false,
+  "tenure": "8m 29d",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mohammed Nadir Shah",
+  "role": "President",
+  "start": "1929-10-16",
+  "end": "1929-10-16",
+  "current": false,
+  "tenure": "0d",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mohammed Zahir Shah",
+  "role": "President",
+  "start": "1933-11-08",
+  "end": "1973-07-17",
+  "current": false,
+  "tenure": "39y 8m 9d",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mohammed Daoud Khan",
+  "role": "President",
+  "start": "1973-07-17",
+  "end": "1978-04-27",
+  "current": false,
+  "tenure": "4y 9m 10d",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mohammad Najibullah",
+  "role": "President",
+  "start": "1987-11-30",
+  "end": "1992-04-28",
+  "current": false,
+  "tenure": "4y 4m 29d",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Burhanuddin Rabbani",
+  "role": "President",
+  "start": "2001-11-16",
+  "end": "2001-12-22",
+  "current": false,
+  "tenure": "1m 6d",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ashraf Ghani",
+  "role": "President",
+  "start": "2014-09-29",
+  "end": "2021-08-15",
+  "current": false,
+  "tenure": "6y 10m 17d",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Hibatullah Akhundzada",
+  "role": "President",
+  "start": "2021-08-15",
+  "end": null,
+  "current": true,
+  "tenure": "4y 10m 18d",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mohammad Hasan Akhund",
+  "role": "Prime Minister",
+  "start": "2023-07-17",
+  "end": null,
+  "current": true,
+  "tenure": "2y 11m 16d",
+  "party": null,
+  "era": null
+ }
 ]

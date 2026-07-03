@@ -1,22 +1,172 @@
 [
-  {
-    "name": "Kausea Natano",
-    "role": "Prime Minister",
-    "start": "2019-09-19",
-    "end": "2024-02-26",
-    "current": false,
-    "tenure": "4y 5m 7d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Feleti Teo",
-    "role": "Prime Minister",
-    "start": "2024-02-26",
-    "end": null,
-    "current": true,
-    "tenure": "2y 4m 7d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Toaripi Lauti",
+  "role": "Prime Minister",
+  "start": "1978-10-01",
+  "end": "1981-09-08",
+  "current": false,
+  "tenure": "2y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Tomasi Puapua",
+  "role": "Prime Minister",
+  "start": "1981-09-08",
+  "end": "1989-10-16",
+  "current": false,
+  "tenure": "8y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bikenibeu Paeniu",
+  "role": "Prime Minister",
+  "start": "1989-10-16",
+  "end": "1993-12-10",
+  "current": false,
+  "tenure": "4y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Kamuta Latasi",
+  "role": "Prime Minister",
+  "start": "1993-12-10",
+  "end": "1996-12-24",
+  "current": false,
+  "tenure": "3y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bikenibeu Paeniu",
+  "role": "Prime Minister",
+  "start": "1996-12-24",
+  "end": "1999-04-27",
+  "current": false,
+  "tenure": "2y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ionatana Ionatana",
+  "role": "Prime Minister",
+  "start": "1999-04-27",
+  "end": "2000-12-08",
+  "current": false,
+  "tenure": "1y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Lagitupu Tuilimu",
+  "role": "Prime Minister",
+  "start": "2000-12-08",
+  "end": "2001-02-24",
+  "current": false,
+  "tenure": "0y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Faimalaga Luka",
+  "role": "Prime Minister",
+  "start": "2001-02-24",
+  "end": "2001-12-14",
+  "current": false,
+  "tenure": "0y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Koloa Talake",
+  "role": "Prime Minister",
+  "start": "2001-12-14",
+  "end": "2002-08-02",
+  "current": false,
+  "tenure": "0y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Saufatu Sopoanga",
+  "role": "Prime Minister",
+  "start": "2002-08-02",
+  "end": "2004-08-27",
+  "current": false,
+  "tenure": "2y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Maatia Toafa",
+  "role": "Prime Minister",
+  "start": "2004-08-27",
+  "end": "2006-08-14",
+  "current": false,
+  "tenure": "1y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Apisai Ielemia",
+  "role": "Prime Minister",
+  "start": "2006-08-14",
+  "end": "2010-09-29",
+  "current": false,
+  "tenure": "4y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Maatia Toafa",
+  "role": "Prime Minister",
+  "start": "2010-09-29",
+  "end": "2010-12-24",
+  "current": false,
+  "tenure": "0y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Willy Telavi",
+  "role": "Prime Minister",
+  "start": "2010-12-24",
+  "end": "2013-08-01",
+  "current": false,
+  "tenure": "2y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Enele Sopoaga",
+  "role": "Prime Minister",
+  "start": "2013-08-01",
+  "end": "2019-09-19",
+  "current": false,
+  "tenure": "6y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Kausea Natano",
+  "role": "Prime Minister",
+  "start": "2019-09-19",
+  "end": "2024-02-26",
+  "current": false,
+  "tenure": "4y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Feleti Teo",
+  "role": "Prime Minister",
+  "start": "2024-02-26",
+  "end": null,
+  "current": true,
+  "tenure": "2y 4m",
+  "party": null,
+  "era": null
+ }
 ]

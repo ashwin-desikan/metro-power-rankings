@@ -1,0 +1,92 @@
+[
+ {
+  "name": "👑 Ptolemy I Soter",
+  "role": "Pharaoh",
+  "start": "-0305-01-01",
+  "end": "-0282-01-01",
+  "current": false,
+  "tenure": "23y 0d",
+  "party": "year-level backbone",
+  "era": "Ptolemaic Kingdom"
+ },
+ {
+  "name": "👑 Ptolemy II Philadelphus",
+  "role": "Pharaoh",
+  "start": "-0282-01-01",
+  "end": "-0246-01-01",
+  "current": false,
+  "tenure": "36y 0d",
+  "party": "year-level backbone",
+  "era": "Ptolemaic Kingdom"
+ },
+ {
+  "name": "👑 Ptolemy III Euergetes",
+  "role": "Pharaoh",
+  "start": "-0246-01-01",
+  "end": "-0222-01-01",
+  "current": false,
+  "tenure": "24y 0d",
+  "party": "year-level backbone",
+  "era": "Ptolemaic Kingdom"
+ },
+ {
+  "name": "👑 Ptolemy IV Philopator",
+  "role": "Pharaoh",
+  "start": "-0221-01-01",
+  "end": "-0204-01-01",
+  "current": false,
+  "tenure": "17y 0d",
+  "party": "year-level backbone",
+  "era": "Ptolemaic Kingdom"
+ },
+ {
+  "name": "👑 Ptolemy V Epiphanes",
+  "role": "Pharaoh",
+  "start": "-0204-01-01",
+  "end": "-0180-01-01",
+  "current": false,
+  "tenure": "24y 0d",
+  "party": "year-level backbone",
+  "era": "Ptolemaic Kingdom"
+ },
+ {
+  "name": "👑 Ptolemy VI Philometor",
+  "role": "Pharaoh",
+  "start": "-0180-01-01",
+  "end": "-0145-01-01",
+  "current": false,
+  "tenure": "35y 0d",
+  "party": "year-level backbone",
+  "era": "Ptolemaic Kingdom"
+ },
+ {
+  "name": "👑 Ptolemy VIII Physcon",
+  "role": "Pharaoh",
+  "start": "-0145-01-01",
+  "end": "-0116-01-01",
+  "current": false,
+  "tenure": "29y 0d",
+  "party": "year-level backbone",
+  "era": "Ptolemaic Kingdom"
+ },
+ {
+  "name": "👑 Ptolemy XII Auletes",
+  "role": "Pharaoh",
+  "start": "-0080-01-01",
+  "end": "-0051-01-01",
+  "current": false,
+  "tenure": "29y 0d",
+  "party": "year-level backbone",
+  "era": "Ptolemaic Kingdom"
+ },
+ {
+  "name": "👑 Cleopatra VII",
+  "role": "Pharaoh (Queen)",
+  "start": "-0051-01-01",
+  "end": "-0030-01-01",
+  "current": false,
+  "tenure": "21y 0d",
+  "party": "year-level backbone",
+  "era": "Ptolemaic Kingdom"
+ }
+]

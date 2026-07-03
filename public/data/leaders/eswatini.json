@@ -1,12 +1,152 @@
 [
-  {
-    "name": "👑 Mswati III",
-    "role": "Monarch",
-    "start": "1986-04-25",
-    "end": null,
-    "current": true,
-    "tenure": "40y 2m 8d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Makhosini Dlamini",
+  "role": "Prime Minister",
+  "start": "1967-05-16",
+  "end": "1976-03-31",
+  "current": false,
+  "tenure": "8y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "👑 Sobhuza II",
+  "role": "King",
+  "start": "1968-09-06",
+  "end": "1982-08-21",
+  "current": false,
+  "tenure": "13y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Maphevu Dlamini",
+  "role": "Prime Minister",
+  "start": "1976-03-31",
+  "end": "1979-10-25",
+  "current": false,
+  "tenure": "3y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mabandla Dlamini",
+  "role": "Prime Minister",
+  "start": "1979-11-23",
+  "end": "1983-03-25",
+  "current": false,
+  "tenure": "3y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bhekimpi Dlamini",
+  "role": "Prime Minister",
+  "start": "1983-03-25",
+  "end": "1986-10-06",
+  "current": false,
+  "tenure": "3y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "👑 Mswati III",
+  "role": "King",
+  "start": "1986-04-25",
+  "end": null,
+  "current": true,
+  "tenure": "40y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Sotsha Dlamini",
+  "role": "Prime Minister",
+  "start": "1986-10-06",
+  "end": "1989-07-12",
+  "current": false,
+  "tenure": "2y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Obed Dlamini",
+  "role": "Prime Minister",
+  "start": "1989-07-12",
+  "end": "1993-10-25",
+  "current": false,
+  "tenure": "4y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Jameson Mbilini Dlamini",
+  "role": "Prime Minister",
+  "start": "1993-11-04",
+  "end": "1996-05-08",
+  "current": false,
+  "tenure": "2y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Barnabas Sibusiso Dlamini",
+  "role": "Prime Minister",
+  "start": "1996-07-26",
+  "end": "2003-09-29",
+  "current": false,
+  "tenure": "7y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Themba Dlamini",
+  "role": "Prime Minister",
+  "start": "2003-11-06",
+  "end": "2008-09-18",
+  "current": false,
+  "tenure": "4y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Barnabas Sibusiso Dlamini",
+  "role": "Prime Minister",
+  "start": "2008-10-23",
+  "end": "2018-09-05",
+  "current": false,
+  "tenure": "9y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ambrose Mandvulo Dlamini",
+  "role": "Prime Minister",
+  "start": "2018-10-27",
+  "end": "2020-12-13",
+  "current": false,
+  "tenure": "2y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Cleopas Dlamini",
+  "role": "Prime Minister",
+  "start": "2021-07-19",
+  "end": "2023-09-28",
+  "current": false,
+  "tenure": "2y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Russell Dlamini",
+  "role": "Prime Minister",
+  "start": "2023-11-04",
+  "end": null,
+  "current": true,
+  "tenure": "2y 7m",
+  "party": null,
+  "era": null
+ }
 ]

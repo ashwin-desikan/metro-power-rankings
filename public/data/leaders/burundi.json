@@ -1,52 +1,112 @@
 [
-  {
-    "name": "Pascal Nyabenda",
-    "role": "President",
-    "start": "2020-06-10",
-    "end": "2020-06-18",
-    "current": false,
-    "tenure": "8d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Évariste Ndayishimiye",
-    "role": "Prime Minister",
-    "start": "2020-06-18",
-    "end": "2020-06-23",
-    "current": false,
-    "tenure": "5d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Évariste Ndayishimiye",
-    "role": "President",
-    "start": "2020-06-18",
-    "end": "2020-06-23",
-    "current": false,
-    "tenure": "5d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Évariste Ndayishimiye",
-    "role": "President",
-    "start": "2020-06-18",
-    "end": null,
-    "current": true,
-    "tenure": "6y 15d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Gervais Ndirakobuca",
-    "role": "Prime Minister",
-    "start": "2023-09-07",
-    "end": null,
-    "current": true,
-    "tenure": "2y 9m 26d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Michel Micombero",
+  "role": "President",
+  "start": "1966-11-28",
+  "end": "1976-11-01",
+  "current": false,
+  "tenure": "9y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Jean-Baptiste Bagaza",
+  "role": "President",
+  "start": "1976-11-01",
+  "end": "1987-09-03",
+  "current": false,
+  "tenure": "10y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Pierre Buyoya",
+  "role": "President",
+  "start": "1987-09-03",
+  "end": "1993-07-10",
+  "current": false,
+  "tenure": "5y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Melchior Ndadaye",
+  "role": "President",
+  "start": "1993-07-10",
+  "end": "1993-10-21",
+  "current": false,
+  "tenure": "0y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Sylvie Kinigi",
+  "role": "President",
+  "start": "1993-10-27",
+  "end": "1994-02-05",
+  "current": false,
+  "tenure": "0y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Cyprien Ntaryamira",
+  "role": "President",
+  "start": "1994-02-05",
+  "end": "1994-04-06",
+  "current": false,
+  "tenure": "0y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Sylvestre Ntibantunganya",
+  "role": "President",
+  "start": "1994-10-01",
+  "end": "1996-07-25",
+  "current": false,
+  "tenure": "1y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Pierre Buyoya",
+  "role": "President",
+  "start": "1996-07-25",
+  "end": "2003-04-30",
+  "current": false,
+  "tenure": "6y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Domitien Ndayizeye",
+  "role": "President",
+  "start": "2003-04-30",
+  "end": "2005-08-26",
+  "current": false,
+  "tenure": "2y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Pierre Nkurunziza",
+  "role": "President",
+  "start": "2005-08-26",
+  "end": "2020-06-08",
+  "current": false,
+  "tenure": "14y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Évariste Ndayishimiye",
+  "role": "President",
+  "start": "2020-06-18",
+  "end": null,
+  "current": true,
+  "tenure": "6y 0m",
+  "party": null,
+  "era": null
+ }
 ]

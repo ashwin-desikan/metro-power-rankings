@@ -1,62 +1,412 @@
 [
-  {
-    "name": "Manuel Serifo Nhamadjo",
-    "role": "President",
-    "start": "2012-05-11",
-    "end": "2014-06-23",
-    "current": false,
-    "tenure": "2y 1m 12d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "José Mário Vaz",
-    "role": "President",
-    "start": "2014-06-23",
-    "end": "2020-02-27",
-    "current": false,
-    "tenure": "5y 8m 4d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Aristides Gomes",
-    "role": "Prime Minister",
-    "start": "2018-04-16",
-    "end": "2020-02-28",
-    "current": false,
-    "tenure": "1y 10m 12d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Umaro Sissoco Embaló",
-    "role": "President",
-    "start": "2020-02-27",
-    "end": "2025-11-26",
-    "current": false,
-    "tenure": "5y 8m 30d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Nuno Nabiam",
-    "role": "Prime Minister",
-    "start": "2020-02-28",
-    "end": "2023-08-08",
-    "current": false,
-    "tenure": "3y 5m 11d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Rui Duarte de Barros",
-    "role": "Prime Minister",
-    "start": "2023-12-21",
-    "end": null,
-    "current": true,
-    "tenure": "2y 6m 12d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Luís Cabral",
+  "role": "President",
+  "start": "1973-09-24",
+  "end": "1980-11-14",
+  "current": false,
+  "tenure": "7y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Francisco Mendes",
+  "role": "Prime Minister",
+  "start": "1973-09-24",
+  "end": "1978-07-07",
+  "current": false,
+  "tenure": "4y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Constantino Teixeira",
+  "role": "Prime Minister",
+  "start": "1978-07-07",
+  "end": "1978-09-28",
+  "current": false,
+  "tenure": "0y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "João Bernardo Vieira",
+  "role": "Prime Minister",
+  "start": "1978-09-28",
+  "end": "1980-11-14",
+  "current": false,
+  "tenure": "2y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "João Bernardo Vieira",
+  "role": "President",
+  "start": "1980-11-14",
+  "end": "1999-05-10",
+  "current": false,
+  "tenure": "18y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Victor Saúde Maria",
+  "role": "Prime Minister",
+  "start": "1982-05-14",
+  "end": "1984-03-10",
+  "current": false,
+  "tenure": "1y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Carlos Correia",
+  "role": "Prime Minister",
+  "start": "1991-12-27",
+  "end": "1994-10-26",
+  "current": false,
+  "tenure": "2y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Manuel Saturnino da Costa",
+  "role": "Prime Minister",
+  "start": "1994-10-26",
+  "end": "1997-06-06",
+  "current": false,
+  "tenure": "2y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Carlos Correia",
+  "role": "Prime Minister",
+  "start": "1997-06-06",
+  "end": "1998-12-03",
+  "current": false,
+  "tenure": "1y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Francisco Fadul",
+  "role": "Prime Minister",
+  "start": "1998-12-03",
+  "end": "2000-02-19",
+  "current": false,
+  "tenure": "1y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Malam Bacai Sanhá",
+  "role": "President",
+  "start": "1999-05-14",
+  "end": "2000-02-17",
+  "current": false,
+  "tenure": "0y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Kumba Yala",
+  "role": "President",
+  "start": "2000-02-17",
+  "end": "2003-09-14",
+  "current": false,
+  "tenure": "3y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Caetano N'Tchama",
+  "role": "Prime Minister",
+  "start": "2000-02-19",
+  "end": "2001-03-19",
+  "current": false,
+  "tenure": "1y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Faustino Imbali",
+  "role": "Prime Minister",
+  "start": "2001-03-21",
+  "end": "2001-12-09",
+  "current": false,
+  "tenure": "0y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Alamara Nhassé",
+  "role": "Prime Minister",
+  "start": "2001-12-09",
+  "end": "2002-11-17",
+  "current": false,
+  "tenure": "0y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mário Pires",
+  "role": "Prime Minister",
+  "start": "2002-11-17",
+  "end": "2003-09-14",
+  "current": false,
+  "tenure": "0y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Henrique Rosa",
+  "role": "President",
+  "start": "2003-09-28",
+  "end": "2005-10-01",
+  "current": false,
+  "tenure": "2y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Artur Sanhá",
+  "role": "Prime Minister",
+  "start": "2003-09-28",
+  "end": "2004-05-10",
+  "current": false,
+  "tenure": "0y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Carlos Gomes Júnior",
+  "role": "Prime Minister",
+  "start": "2004-05-10",
+  "end": "2005-11-02",
+  "current": false,
+  "tenure": "1y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "João Bernardo Vieira",
+  "role": "President",
+  "start": "2005-10-01",
+  "end": "2009-03-02",
+  "current": false,
+  "tenure": "3y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Aristides Gomes",
+  "role": "Prime Minister",
+  "start": "2005-11-02",
+  "end": "2007-04-13",
+  "current": false,
+  "tenure": "1y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Martinho Ndafa Kabi",
+  "role": "Prime Minister",
+  "start": "2007-04-13",
+  "end": "2008-08-05",
+  "current": false,
+  "tenure": "1y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Carlos Correia",
+  "role": "Prime Minister",
+  "start": "2008-08-05",
+  "end": "2009-01-02",
+  "current": false,
+  "tenure": "0y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Carlos Gomes Júnior",
+  "role": "Prime Minister",
+  "start": "2009-01-02",
+  "end": "2012-02-10",
+  "current": false,
+  "tenure": "3y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Raimundo Pereira",
+  "role": "President",
+  "start": "2009-03-03",
+  "end": "2009-09-08",
+  "current": false,
+  "tenure": "0y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Malam Bacai Sanhá",
+  "role": "President",
+  "start": "2009-09-08",
+  "end": "2012-01-09",
+  "current": false,
+  "tenure": "2y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Manuel Serifo Nhamadjo",
+  "role": "President",
+  "start": "2012-05-11",
+  "end": "2014-06-23",
+  "current": false,
+  "tenure": "2y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Rui Duarte de Barros",
+  "role": "Prime Minister",
+  "start": "2012-05-16",
+  "end": "2014-07-03",
+  "current": false,
+  "tenure": "2y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "José Mário Vaz",
+  "role": "President",
+  "start": "2014-06-23",
+  "end": "2020-02-27",
+  "current": false,
+  "tenure": "5y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Domingos Simões Pereira",
+  "role": "Prime Minister",
+  "start": "2014-07-03",
+  "end": "2015-08-20",
+  "current": false,
+  "tenure": "1y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Baciro Djá",
+  "role": "Prime Minister",
+  "start": "2015-08-20",
+  "end": "2015-09-17",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Carlos Correia",
+  "role": "Prime Minister",
+  "start": "2015-09-17",
+  "end": "2016-05-27",
+  "current": false,
+  "tenure": "0y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Baciro Djá",
+  "role": "Prime Minister",
+  "start": "2016-05-27",
+  "end": "2016-11-18",
+  "current": false,
+  "tenure": "0y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Umaro Sissoco Embaló",
+  "role": "Prime Minister",
+  "start": "2016-11-18",
+  "end": "2018-01-30",
+  "current": false,
+  "tenure": "1y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Artur Silva",
+  "role": "Prime Minister",
+  "start": "2018-01-30",
+  "end": "2018-04-16",
+  "current": false,
+  "tenure": "0y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Aristides Gomes",
+  "role": "Prime Minister",
+  "start": "2018-04-16",
+  "end": "2020-02-28",
+  "current": false,
+  "tenure": "1y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Umaro Sissoco Embaló",
+  "role": "President",
+  "start": "2020-02-27",
+  "end": "2025-11-26",
+  "current": false,
+  "tenure": "5y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Nuno Gomes Nabiam",
+  "role": "Prime Minister",
+  "start": "2020-02-28",
+  "end": "2023-08-08",
+  "current": false,
+  "tenure": "3y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Geraldo Martins",
+  "role": "Prime Minister",
+  "start": "2023-08-08",
+  "end": "2023-12-21",
+  "current": false,
+  "tenure": "0y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Rui Duarte de Barros",
+  "role": "Prime Minister",
+  "start": "2023-12-21",
+  "end": null,
+  "current": true,
+  "tenure": "2y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Horta Inta-A Na Man",
+  "role": "President",
+  "start": "2025-11-27",
+  "end": "2026-01-01",
+  "current": false,
+  "tenure": "0y 1m",
+  "party": null,
+  "era": null
+ }
 ]

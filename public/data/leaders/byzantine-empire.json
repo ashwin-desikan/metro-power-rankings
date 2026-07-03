@@ -1,0 +1,652 @@
+[
+  {
+    "name": "👑 Arcadius",
+    "role": "Emperor",
+    "start": "0395-01-01",
+    "end": "0408-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Theodosius II",
+    "role": "Emperor",
+    "start": "0408-01-01",
+    "end": "0450-01-01",
+    "current": false,
+    "tenure": "42y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Marcian",
+    "role": "Emperor",
+    "start": "0450-01-01",
+    "end": "0457-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Leo I",
+    "role": "Emperor",
+    "start": "0457-01-01",
+    "end": "0474-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Zeno",
+    "role": "Emperor",
+    "start": "0474-01-01",
+    "end": "0491-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Anastasius I",
+    "role": "Emperor",
+    "start": "0491-01-01",
+    "end": "0518-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Justin I",
+    "role": "Emperor",
+    "start": "0518-01-01",
+    "end": "0527-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Justinian I",
+    "role": "Emperor",
+    "start": "0527-01-01",
+    "end": "0565-01-01",
+    "current": false,
+    "tenure": "38y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Justin II",
+    "role": "Emperor",
+    "start": "0565-01-01",
+    "end": "0578-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Tiberius II",
+    "role": "Emperor",
+    "start": "0578-01-01",
+    "end": "0582-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Maurice",
+    "role": "Emperor",
+    "start": "0582-01-01",
+    "end": "0602-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Phocas",
+    "role": "Emperor",
+    "start": "0602-01-01",
+    "end": "0610-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Heraclius",
+    "role": "Emperor",
+    "start": "0610-01-01",
+    "end": "0641-01-01",
+    "current": false,
+    "tenure": "31y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Constans II",
+    "role": "Emperor",
+    "start": "0641-01-01",
+    "end": "0668-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Constantine IV",
+    "role": "Emperor",
+    "start": "0668-01-01",
+    "end": "0685-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Justinian II",
+    "role": "Emperor",
+    "start": "0685-01-01",
+    "end": "0717-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Leo III the Isaurian",
+    "role": "Emperor",
+    "start": "0717-01-01",
+    "end": "0741-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Constantine V",
+    "role": "Emperor",
+    "start": "0741-01-01",
+    "end": "0775-01-01",
+    "current": false,
+    "tenure": "34y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Leo IV",
+    "role": "Emperor",
+    "start": "0775-01-01",
+    "end": "0780-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Constantine VI",
+    "role": "Emperor",
+    "start": "0780-01-01",
+    "end": "0797-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Irene",
+    "role": "Emperor",
+    "start": "0797-01-01",
+    "end": "0802-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Nikephoros I",
+    "role": "Emperor",
+    "start": "0802-01-01",
+    "end": "0811-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Michael I",
+    "role": "Emperor",
+    "start": "0811-01-01",
+    "end": "0813-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Leo V",
+    "role": "Emperor",
+    "start": "0813-01-01",
+    "end": "0820-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Michael II",
+    "role": "Emperor",
+    "start": "0820-01-01",
+    "end": "0829-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Theophilos",
+    "role": "Emperor",
+    "start": "0829-01-01",
+    "end": "0842-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Michael III",
+    "role": "Emperor",
+    "start": "0842-01-01",
+    "end": "0867-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Basil I",
+    "role": "Emperor",
+    "start": "0867-01-01",
+    "end": "0886-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Leo VI the Wise",
+    "role": "Emperor",
+    "start": "0886-01-01",
+    "end": "0913-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Constantine VII",
+    "role": "Emperor",
+    "start": "0913-01-01",
+    "end": "0920-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Romanos I",
+    "role": "Emperor",
+    "start": "0920-01-01",
+    "end": "0959-01-01",
+    "current": false,
+    "tenure": "39y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Romanos II",
+    "role": "Emperor",
+    "start": "0959-01-01",
+    "end": "0963-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Nikephoros II Phokas",
+    "role": "Emperor",
+    "start": "0963-01-01",
+    "end": "0969-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 John I Tzimiskes",
+    "role": "Emperor",
+    "start": "0969-01-01",
+    "end": "0976-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Basil II",
+    "role": "Emperor",
+    "start": "0976-01-01",
+    "end": "1025-01-01",
+    "current": false,
+    "tenure": "49y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Constantine VIII",
+    "role": "Emperor",
+    "start": "1025-01-01",
+    "end": "1028-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Romanos III",
+    "role": "Emperor",
+    "start": "1028-01-01",
+    "end": "1034-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Michael IV",
+    "role": "Emperor",
+    "start": "1034-01-01",
+    "end": "1042-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Constantine IX",
+    "role": "Emperor",
+    "start": "1042-01-01",
+    "end": "1055-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Theodora",
+    "role": "Emperor",
+    "start": "1055-01-01",
+    "end": "1057-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Isaac I Komnenos",
+    "role": "Emperor",
+    "start": "1057-01-01",
+    "end": "1059-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Constantine X",
+    "role": "Emperor",
+    "start": "1059-01-01",
+    "end": "1068-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Romanos IV",
+    "role": "Emperor",
+    "start": "1068-01-01",
+    "end": "1071-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Michael VII",
+    "role": "Emperor",
+    "start": "1071-01-01",
+    "end": "1078-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Nikephoros III",
+    "role": "Emperor",
+    "start": "1078-01-01",
+    "end": "1081-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Alexios I Komnenos",
+    "role": "Emperor",
+    "start": "1081-01-01",
+    "end": "1118-01-01",
+    "current": false,
+    "tenure": "37y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 John II Komnenos",
+    "role": "Emperor",
+    "start": "1118-01-01",
+    "end": "1143-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Manuel I Komnenos",
+    "role": "Emperor",
+    "start": "1143-01-01",
+    "end": "1180-01-01",
+    "current": false,
+    "tenure": "37y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Alexios II",
+    "role": "Emperor",
+    "start": "1180-01-01",
+    "end": "1183-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Andronikos I",
+    "role": "Emperor",
+    "start": "1183-01-01",
+    "end": "1185-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Isaac II Angelos",
+    "role": "Emperor",
+    "start": "1185-01-01",
+    "end": "1195-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Alexios III",
+    "role": "Emperor",
+    "start": "1195-01-01",
+    "end": "1203-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Alexios IV",
+    "role": "Emperor",
+    "start": "1203-01-01",
+    "end": "1204-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Alexios V",
+    "role": "Emperor",
+    "start": "1204-01-01",
+    "end": "1205-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Theodore I Laskaris",
+    "role": "Emperor",
+    "start": "1205-01-01",
+    "end": "1221-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 John III Vatatzes",
+    "role": "Emperor",
+    "start": "1221-01-01",
+    "end": "1254-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Theodore II",
+    "role": "Emperor",
+    "start": "1254-01-01",
+    "end": "1259-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Michael VIII Palaiologos",
+    "role": "Emperor",
+    "start": "1259-01-01",
+    "end": "1282-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Andronikos II",
+    "role": "Emperor",
+    "start": "1282-01-01",
+    "end": "1328-01-01",
+    "current": false,
+    "tenure": "46y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Andronikos III",
+    "role": "Emperor",
+    "start": "1328-01-01",
+    "end": "1341-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 John V Palaiologos",
+    "role": "Emperor",
+    "start": "1341-01-01",
+    "end": "1347-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 John VI Kantakouzenos",
+    "role": "Emperor",
+    "start": "1347-01-01",
+    "end": "1391-01-01",
+    "current": false,
+    "tenure": "44y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Manuel II",
+    "role": "Emperor",
+    "start": "1391-01-01",
+    "end": "1425-01-01",
+    "current": false,
+    "tenure": "34y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 John VIII",
+    "role": "Emperor",
+    "start": "1425-01-01",
+    "end": "1449-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  },
+  {
+    "name": "👑 Constantine XI Palaiologos",
+    "role": "Emperor",
+    "start": "1449-01-01",
+    "end": "1453-05-29",
+    "current": false,
+    "tenure": "4y 4m 28d",
+    "party": "year-level backbone",
+    "era": "Byzantine Empire"
+  }
+]

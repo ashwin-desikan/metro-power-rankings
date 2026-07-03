@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-07-03",
-    headline: "Homepage rebuilt as a directory, rankings get their own hub",
+    headline: "The Great Powers: 235 years of world power, ranked",
     items: [
-      "The homepage is now a directory-forward landing page previewing each ranked index's live top three and latest essays; the metro rankings map, filters, table and regional champions moved to their own hub at /rankings.",
-      "New Live Charts hub at /sound/charts shows Apple Music's most-played songs in the US and UK, refreshed daily, with links to the official Billboard Hot 100 and UK Official Singles Chart.",
-      "New cricket and rugby union Greatest Games rank every international by a Game Score of closeness, stakes and team strength, with a curated classics layer, on each sport's hub, its nation pages and the Greatest Games hub.",
-      "A new Leaders directory at /leaders lists every current head of state and government and the bodies they belong to, with flags on it and the Countries directory, and a time machine for any office by month and year.",
+      "The Great Powers, a new hub at /great-powers, ranks every country's share of world power year by year from 1789 to today, with latent-versus-recognised lenses and a rising-and-fading divergence view.",
+      "Power now runs through the site: the Leaders time machine sorts any year by its share of world power, the Countries directory gains a power column, and every country page charts its latent-versus-recognised arc.",
+      "The Leaders directory goes deep: succession back to each state's founding, defunct empires from Rome and the Ottomans to Prussia and the Soviet Union, plus support for BC dates.",
+      "Also shipped today: cricket and rugby union Greatest Games, a daily Live Charts hub, and a rebuilt directory-forward homepage with the metro rankings now at their own hub, /rankings.",
     ],
   },
   {

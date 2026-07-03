@@ -223,9 +223,9 @@
     "name": "Jan van Zuylen van Nijevelt",
     "role": "Prime Minister",
     "start": "1861-03-14",
-    "end": "1866-06-01",
+    "end": "1868-06-04",
     "current": false,
-    "tenure": "5 years",
+    "tenure": "7y 2m 21d",
     "party": "Conservative",
     "era": "Kingdom of the Netherlands"
   },
@@ -237,16 +237,6 @@
     "current": false,
     "tenure": "4 months",
     "party": "Liberal",
-    "era": "Kingdom of the Netherlands"
-  },
-  {
-    "name": "Jan van Zuylen van Nijevelt",
-    "role": "Prime Minister",
-    "start": "1866-06-01",
-    "end": "1868-06-04",
-    "current": false,
-    "tenure": "2 years",
-    "party": "Conservative",
     "era": "Kingdom of the Netherlands"
   },
   {

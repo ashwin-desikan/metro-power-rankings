@@ -1,0 +1,42 @@
+[
+ {
+  "name": "👑 Philip the Bold",
+  "role": "Duke",
+  "start": "1363-01-01",
+  "end": "1404-01-01",
+  "current": false,
+  "tenure": "41y 0d",
+  "party": "year-level backbone",
+  "era": "Duchy of Burgundy"
+ },
+ {
+  "name": "👑 John the Fearless",
+  "role": "Duke",
+  "start": "1404-01-01",
+  "end": "1419-01-01",
+  "current": false,
+  "tenure": "15y 0d",
+  "party": "year-level backbone",
+  "era": "Duchy of Burgundy"
+ },
+ {
+  "name": "👑 Philip the Good",
+  "role": "Duke",
+  "start": "1419-01-01",
+  "end": "1467-01-01",
+  "current": false,
+  "tenure": "48y 0d",
+  "party": "year-level backbone",
+  "era": "Duchy of Burgundy"
+ },
+ {
+  "name": "👑 Charles the Bold",
+  "role": "Duke",
+  "start": "1467-01-01",
+  "end": "1477-01-01",
+  "current": false,
+  "tenure": "10y 0d",
+  "party": "year-level backbone",
+  "era": "Duchy of Burgundy"
+ }
+]

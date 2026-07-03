@@ -1,1302 +1,1302 @@
 {
-  "afghanistan": {
-    "name": "Hibatullah Akhundzada",
-    "role": "Pres.",
-    "since": "2021-08-15"
-  },
-  "albania": {
-    "name": "Edi Rama",
-    "role": "PM",
-    "second": {
-      "name": "Bajram Begaj",
-      "role": "Pres."
-    }
-  },
-  "algeria": {
-    "name": "Abdelmadjid Tebboune",
-    "role": "Pres.",
-    "since": "2019-12-19"
-  },
-  "american-samoa": {
-    "name": "Pula Nikolao Pula",
-    "role": "Governor",
-    "since": "2025-01-03"
-  },
-  "andorra": {
-    "name": "Xavier Espot Zamora",
-    "role": "PM",
-    "second": {
-      "name": "Emmanuel Macron",
-      "role": "Pres."
-    },
-    "since": "2019-05-16"
-  },
-  "angola": {
-    "name": "João Lourenço",
-    "role": "Pres.",
-    "since": "2017-08-23"
-  },
-  "antigua-barbuda": {
-    "name": "Gaston Browne",
-    "role": "PM",
-    "second": {
-      "name": "👑 Charles III",
-      "role": "Monarch"
-    },
-    "since": "2014-06-13"
-  },
-  "argentina": {
-    "name": "Javier Milei",
-    "role": "Pres.",
-    "since": "2023-12-10"
-  },
-  "armenia": {
-    "name": "Vahagn Khachatryan",
-    "role": "Pres.",
-    "since": "2022-03-13"
-  },
-  "australia": {
-    "name": "Anthony Albanese",
-    "role": "PM",
-    "second": {
-      "name": "👑 Charles III",
-      "role": "Monarch"
-    },
-    "since": "2022-05-23"
-  },
-  "austria": {
-    "name": "Christian Stocker",
-    "role": "Federal Chanc.",
-    "second": {
-      "name": "Alexander Van der Bellen",
-      "role": "Federal Pres."
-    },
-    "since": "2025-03-03"
-  },
-  "azerbaijan": {
-    "name": "Ilham Aliyev",
-    "role": "Pres.",
-    "since": "2003-10-31"
-  },
-  "bahamas": {
-    "name": "Philip Davis",
-    "role": "PM",
-    "second": {
-      "name": "👑 Charles III",
-      "role": "Monarch"
-    },
-    "since": "2021-09-17"
-  },
-  "bahrain": {
-    "name": "Salman bin Hamad Al Khalifa",
-    "role": "PM",
-    "second": {
-      "name": "👑 Hamad bin Isa Al Khalifa",
-      "role": "Monarch"
-    },
-    "since": "2020-11-11"
-  },
-  "bangladesh": {
-    "name": "Muhammad Yunus",
-    "role": "Chief Adviser",
-    "since": "2024-08-08"
-  },
-  "barbados": {
-    "name": "Sandra Mason",
-    "role": "Pres.",
-    "since": "2021-11-30"
-  },
-  "belarus": {
-    "name": "⚠️ Alexander Lukashenko",
-    "role": "Pres.",
-    "since": "1994-07-20"
-  },
-  "belgium": {
-    "name": "Bart De Wever",
-    "role": "PM",
-    "second": {
-      "name": "👑 King Philippe",
-      "role": "Monarch"
-    },
-    "since": "2025-02-03"
-  },
-  "belize": {
-    "name": "Johnny Briceño",
-    "role": "PM",
-    "second": {
-      "name": "👑 Charles III",
-      "role": "Monarch"
-    },
-    "since": "2020-11-12"
-  },
-  "benin": {
-    "name": "Romuald Wadagni",
-    "role": "Pres.",
-    "since": "2026-05-24"
-  },
-  "bhutan": {
-    "name": "Tshering Tobgay",
-    "role": "PM",
-    "second": {
-      "name": "👑 Jigme Khesar Namgyel Wangchuck",
-      "role": "Monarch"
-    },
-    "since": "2024-01-28"
-  },
-  "bolivia": {
-    "name": "Rodrigo Paz",
-    "role": "Pres.",
-    "since": "2025-11-08"
-  },
-  "bosnia-herzegovina": {
-    "name": "Borjana Krišto",
-    "role": "PM",
-    "second": {
-      "name": "Denis Bećirović",
-      "role": "Pres. (Presidency)"
-    },
-    "since": "2023-01-25"
-  },
-  "botswana": {
-    "name": "Duma Boko",
-    "role": "Pres.",
-    "since": "2024-11-01"
-  },
-  "brazil": {
-    "name": "Luiz Inácio Lula da Silva",
-    "role": "Pres.",
-    "since": "2023-01-01"
-  },
-  "brunei": {
-    "name": "👑 Hassanal Bolkiah",
-    "role": "Monarch",
-    "since": "1967-10-05"
-  },
-  "bulgaria": {
-    "name": "Rumen Radev",
-    "role": "PM",
-    "second": {
-      "name": "Iliana Iotova",
-      "role": "Pres."
-    },
-    "since": "2026-05-08"
-  },
-  "burkina-faso": {
-    "name": "Ibrahim Traoré",
-    "role": "Pres.",
-    "since": "2022-10-06"
-  },
-  "burundi": {
-    "name": "Évariste Ndayishimiye",
-    "role": "Pres.",
-    "since": "2020-06-18"
-  },
-  "cambodia": {
-    "name": "Hun Manet",
-    "role": "PM",
-    "second": {
-      "name": "👑 Norodom Sihamoni",
-      "role": "Monarch"
-    },
-    "since": "2023-08-22"
-  },
-  "cameroon": {
-    "name": "Paul Biya",
-    "role": "Pres.",
-    "since": "1982-11-06"
-  },
-  "canada": {
-    "name": "Mark Carney",
-    "role": "PM",
-    "second": {
-      "name": "👑 Charles III",
-      "role": "Monarch"
-    },
-    "since": "2025-03-14"
-  },
-  "cape-verde": {
-    "name": "José Maria Neves",
-    "role": "Pres.",
-    "since": "2021-11-09"
-  },
-  "central-african-republic": {
-    "name": "Faustin-Archange Touadéra",
-    "role": "Pres.",
-    "since": "2016-03-30"
-  },
-  "chad": {
-    "name": "Mahamat Déby",
-    "role": "Pres."
-  },
-  "chile": {
-    "name": "José Antonio Kast",
-    "role": "Pres.",
-    "since": "2026-03-11"
-  },
-  "china": {
-    "name": "Xi Jinping",
-    "role": "Pres. (PRC)",
-    "since": "2013-03-14"
-  },
-  "colombia": {
-    "name": "Gustavo Petro",
-    "role": "Pres.",
-    "since": "2022-08-07"
-  },
-  "comoros": {
-    "name": "Azali Assoumani",
-    "role": "Pres.",
-    "since": "2016-01-01"
-  },
-  "congo": {
-    "name": "Anatole Collinet Makosso",
-    "role": "PM",
-    "second": {
-      "name": "Denis Sassou-Nguesso",
-      "role": "Pres."
-    },
-    "since": "2021-05-12"
-  },
-  "congo-dr": {
-    "name": "Félix Tshisekedi",
-    "role": "Pres.",
-    "since": "2019-01-24"
-  },
-  "costa-rica": {
-    "name": "Laura Fernández Delgado",
-    "role": "Pres.",
-    "since": "2026-05-08"
-  },
-  "cote-divoire": {
-    "name": "Alassane Ouattara",
-    "role": "Pres.",
-    "since": "2010-12-04"
-  },
-  "croatia": {
-    "name": "Andrej Plenković",
-    "role": "PM",
-    "second": {
-      "name": "Zoran Milanović",
-      "role": "Pres."
-    },
-    "since": "2016-10-19"
-  },
-  "cuba": {
-    "name": "Miguel Díaz-Canel",
-    "role": "Gen. Sec. (First Secretary, PCC)",
-    "since": "2021-04-19"
-  },
-  "cyprus": {
-    "name": "Nikos Christodoulides",
-    "role": "Pres.",
-    "since": "2023-02-28"
-  },
-  "czech-republic": {
-    "name": "Andrej Babiš",
-    "role": "PM",
-    "second": {
-      "name": "Petr Pavel",
-      "role": "Pres."
-    },
-    "since": "2025-12-09"
-  },
-  "denmark": {
-    "name": "Mette Frederiksen",
-    "role": "PM",
-    "second": {
-      "name": "👑 Frederik X",
-      "role": "Monarch"
-    },
-    "since": "2019-06-27"
-  },
-  "djibouti": {
-    "name": "Ismail Omar Guelleh",
-    "role": "Pres.",
-    "since": "1999-05-08"
-  },
-  "dominica": {
-    "name": "Sylvanie Burton",
-    "role": "Pres.",
-    "since": "2023-10-02"
-  },
-  "dominican-republic": {
-    "name": "Luis Abinader",
-    "role": "Pres.",
-    "since": "2020-08-16"
-  },
-  "east-timor": {
-    "name": "José Ramos-Horta",
-    "role": "Pres.",
-    "since": "2022-05-20"
-  },
-  "ecuador": {
-    "name": "Daniel Noboa",
-    "role": "Pres.",
-    "since": "2023-11-23"
-  },
-  "egypt": {
-    "name": "⚠️ Abdel Fattah el-Sisi",
-    "role": "Pres.",
-    "since": "2014-06-08"
-  },
-  "el-salvador": {
-    "name": "Nayib Bukele",
-    "role": "Pres.",
-    "since": "2019-06-01"
-  },
-  "england": {
-    "name": "Keir Starmer",
-    "role": "PM",
-    "second": {
-      "name": "👑 King Charles III",
-      "role": "Sovereign"
-    },
-    "since": "2024-07-05"
-  },
-  "equatorial-guinea": {
-    "name": "Teodoro Obiang",
-    "role": "Pres.",
-    "since": "1979-08-03"
-  },
-  "eritrea": {
-    "name": "Isaias Afwerki",
-    "role": "Pres.",
-    "since": "1993-01-01"
-  },
-  "estonia": {
-    "name": "Kaja Kallas",
-    "role": "PM",
-    "second": {
-      "name": "Alar Karis",
-      "role": "Pres."
-    },
-    "since": "2021-01-26"
-  },
-  "eswatini": {
-    "name": "👑 Mswati III",
-    "role": "Monarch",
-    "since": "1986-04-25"
-  },
-  "ethiopia": {
-    "name": "Abiy Ahmed",
-    "role": "PM",
-    "second": {
-      "name": "Taye Atske Selassie",
-      "role": "Pres."
-    },
-    "since": "2018-04-02"
-  },
-  "federated-states-of-micronesia": {
-    "name": "Wesley Simina",
-    "role": "Pres.",
-    "since": "2023-01-01"
-  },
-  "fiji": {
-    "name": "Wiliame Katonivere",
-    "role": "Pres.",
-    "since": "2021-11-12"
-  },
-  "finland": {
-    "name": "Petteri Orpo",
-    "role": "PM",
-    "second": {
-      "name": "Alexander Stubb",
-      "role": "Pres."
-    },
-    "since": "2023-06-20"
-  },
-  "france": {
-    "name": "Emmanuel Macron",
-    "role": "Pres.",
-    "since": "2017-05-14"
-  },
-  "gabon": {
-    "name": "Brice Clotaire Oligui Nguema",
-    "role": "Pres.",
-    "since": "2023-08-30"
-  },
-  "gambia": {
-    "name": "Adama Barrow",
-    "role": "Pres.",
-    "since": "2017-01-21"
-  },
-  "georgia": {
-    "name": "Irakli Kobakhidze",
-    "role": "PM",
-    "second": {
-      "name": "Mikheil Kavelashvili",
-      "role": "Pres."
-    },
-    "since": "2024-02-08"
-  },
-  "germany": {
-    "name": "Friedrich Merz",
-    "role": "Federal Chanc.",
-    "second": {
-      "name": "Frank-Walter Steinmeier",
-      "role": "Pres."
-    },
-    "since": "2025-02-25"
-  },
-  "ghana": {
-    "name": "John Mahama",
-    "role": "Pres.",
-    "since": "2025-01-07"
-  },
-  "greece": {
-    "name": "Kyriakos Mitsotakis",
-    "role": "PM",
-    "second": {
-      "name": "Konstantinos Tasoulas",
-      "role": "Pres."
-    },
-    "since": "2019-07-08"
-  },
-  "grenada": {
-    "name": "Dickon Mitchell",
-    "role": "PM",
-    "second": {
-      "name": "👑 Charles III",
-      "role": "Monarch"
-    },
-    "since": "2022-06-24"
-  },
-  "guam": {
-    "name": "Lou Leon Guerrero",
-    "role": "Governor",
-    "since": "2019-01-07"
-  },
-  "guatemala": {
-    "name": "Bernardo Arévalo de León",
-    "role": "Pres.",
-    "since": "2024-01-15"
-  },
-  "guinea": {
-    "name": "Mamady Doumbouya",
-    "role": "Pres.",
-    "since": "2021-10-01"
-  },
-  "guinea-bissau": {
-    "name": "Rui Duarte de Barros",
-    "role": "PM",
-    "since": "2023-12-21"
-  },
-  "guyana": {
-    "name": "Mark Phillips",
-    "role": "PM",
-    "second": {
-      "name": "Irfaan Ali",
-      "role": "Pres."
-    },
-    "since": "2020-08-02"
-  },
-  "haiti": {
-    "name": "Transitional Presidential Council",
-    "role": "Pres.",
-    "since": "2024-04-25"
-  },
-  "honduras": {
-    "name": "Nasry Asfura",
-    "role": "Pres.",
-    "since": "2026-01-27"
-  },
-  "hungary": {
-    "name": "Péter Magyar",
-    "role": "PM",
-    "second": {
-      "name": "Tamás Sulyok",
-      "role": "Pres."
-    },
-    "since": "2026-05-09"
-  },
-  "iceland": {
-    "name": "Kristrún Mjöll Frostadóttir",
-    "role": "PM",
-    "second": {
-      "name": "Halla Tómasdóttir",
-      "role": "Pres."
-    },
-    "since": "2024-12-21"
-  },
-  "india": {
-    "name": "Narendra Modi",
-    "role": "PM",
-    "since": "2014-05-26"
-  },
-  "indonesia": {
-    "name": "Prabowo Subianto",
-    "role": "Pres.",
-    "since": "2024-10-20"
-  },
-  "iran": {
-    "name": "⚠️ Mojtaba Khamenei",
-    "role": "Sup. Leader",
-    "second": {
-      "name": "Masoud Pezeshkian",
-      "role": "Pres."
-    },
-    "since": "2026-03-08"
-  },
-  "iraq": {
-    "name": "Ali al-Zaidi",
-    "role": "PM",
-    "second": {
-      "name": "Nizar Amedi",
-      "role": "Pres."
-    },
-    "since": "2026-05-14"
-  },
-  "ireland": {
-    "name": "Micheál Martin",
-    "role": "Taoiseach",
-    "since": "2025-01-23"
-  },
-  "israel": {
-    "name": "⚠️ Benjamin Netanyahu",
-    "role": "PM",
-    "since": "2022-12-29"
-  },
-  "italy": {
-    "name": "Giorgia Meloni",
-    "role": "PM",
-    "since": "2022-10-22"
-  },
-  "jamaica": {
-    "name": "Andrew Holness",
-    "role": "PM",
-    "second": {
-      "name": "👑 Charles III",
-      "role": "Monarch"
-    },
-    "since": "2016-03-03"
-  },
-  "japan": {
-    "name": "Sanae Takaichi",
-    "role": "PM",
-    "since": "2024-11-11"
-  },
-  "jordan": {
-    "name": "Jafar Hassan",
-    "role": "PM",
-    "second": {
-      "name": "👑 Abdullah II bin Al-Hussein",
-      "role": "Monarch"
-    },
-    "since": "2024-09-15"
-  },
-  "kazakhstan": {
-    "name": "Kassym-Jomart Tokayev",
-    "role": "Pres.",
-    "since": "2019-03-20"
-  },
-  "kenya": {
-    "name": "William Ruto",
-    "role": "Pres.",
-    "since": "2022-09-13"
-  },
-  "kiribati": {
-    "name": "Taneti Maamau",
-    "role": "Pres.",
-    "since": "2016-03-11"
-  },
-  "kosovo": {
-    "name": "Albin Kurti",
-    "role": "PM",
-    "second": {
-      "name": "Vjosa Osmani",
-      "role": "Pres."
-    },
-    "since": "2021-03-22"
-  },
-  "kuwait": {
-    "name": "Ahmad Abdullah Al-Ahmad Al-Sabah",
-    "role": "PM",
-    "second": {
-      "name": "👑 Meshal Al-Ahmad Al-Jaber Al-Sabah",
-      "role": "Monarch"
-    },
-    "since": "2024-05-15"
-  },
-  "kyrgyzstan": {
-    "name": "Adylbek Kasymaliev",
-    "role": "PM",
-    "second": {
-      "name": "Sadyr Japarov",
-      "role": "Pres."
-    },
-    "since": "2024-12-16"
-  },
-  "laos": {
-    "name": "Thongloun Sisoulith",
-    "role": "Pres."
-  },
-  "latvia": {
-    "name": "Edgars Rinkēvičs",
-    "role": "Pres.",
-    "since": "2023-07-08"
-  },
-  "lebanon": {
-    "name": "Joseph Aoun",
-    "role": "Pres.",
-    "since": "2025-01-09"
-  },
-  "lesotho": {
-    "name": "Sam Matekane",
-    "role": "PM",
-    "second": {
-      "name": "👑 Letsie III of Lesotho",
-      "role": "Monarch"
-    },
-    "since": "2022-10-28"
-  },
-  "liberia": {
-    "name": "Joseph Boakai",
-    "role": "Pres.",
-    "since": "2024-01-01"
-  },
-  "libya": {
-    "name": "Abdul Hamid Dbeibeh",
-    "role": "PM",
-    "second": {
-      "name": "Mohamed al-Menfi",
-      "role": "Head of State"
-    },
-    "since": "2021-03-15"
-  },
-  "liechtenstein": {
-    "name": "Daniel Risch",
-    "role": "PM",
-    "second": {
-      "name": "👑 Hans-Adam II, Prince of Liechtenstein",
-      "role": "Monarch"
-    },
-    "since": "2021-03-25"
-  },
-  "lithuania": {
-    "name": "Inga Ruginienė",
-    "role": "PM",
-    "second": {
-      "name": "Gitanas Nausėda",
-      "role": "Pres."
-    },
-    "since": "2025-08-26"
-  },
-  "luxembourg": {
-    "name": "Luc Frieden",
-    "role": "PM",
-    "second": {
-      "name": "👑 Guillaume",
-      "role": "Monarch"
-    },
-    "since": "2023-11-17"
-  },
-  "madagascar": {
-    "name": "Michael Randrianirina",
-    "role": "Pres.",
-    "since": "2025-10-14"
-  },
-  "malawi": {
-    "name": "Peter Mutharika",
-    "role": "Pres.",
-    "since": "2025-10-04"
-  },
-  "malaysia": {
-    "name": "Anwar Ibrahim",
-    "role": "PM",
-    "second": {
-      "name": "👑 Sultan Ibrahim of Johor",
-      "role": "Monarch (Yang di-Pertuan Agong)"
-    },
-    "since": "2022-11-24"
-  },
-  "maldives": {
-    "name": "Mohamed Muizzu",
-    "role": "Pres.",
-    "since": "2023-11-17"
-  },
-  "mali": {
-    "name": "Assimi Goïta",
-    "role": "Pres.",
-    "since": "2021-05-24"
-  },
-  "malta": {
-    "name": "Robert Abela",
-    "role": "PM",
-    "second": {
-      "name": "Myriam Spiteri Debono",
-      "role": "Pres."
-    },
-    "since": "2020-01-01"
-  },
-  "marshall-islands": {
-    "name": "Hilda Heine",
-    "role": "Pres.",
-    "since": "2024-01-03"
-  },
-  "mauritania": {
-    "name": "Mohamed Ould Ghazouani",
-    "role": "Pres.",
-    "since": "2019-08-01"
-  },
-  "mauritius": {
-    "name": "Pravind Jugnauth",
-    "role": "PM",
-    "second": {
-      "name": "Dharam Gokhool",
-      "role": "Pres."
-    },
-    "since": "2017-01-23"
-  },
-  "mexico": {
-    "name": "Claudia Sheinbaum",
-    "role": "Pres.",
-    "since": "2024-10-01"
-  },
-  "moldova": {
-    "name": "Alexandru Munteanu",
-    "role": "PM",
-    "second": {
-      "name": "Maia Sandu",
-      "role": "Pres."
-    },
-    "since": "2025-11-01"
-  },
-  "monaco": {
-    "name": "👑 Albert II",
-    "role": "Monarch",
-    "since": "2005-04-06"
-  },
-  "mongolia": {
-    "name": "Uchral Nyam-Osor",
-    "role": "PM",
-    "second": {
-      "name": "Khurelsukh Ukhnaa",
-      "role": "Pres."
-    },
-    "since": "2026-03-30"
-  },
-  "montenegro": {
-    "name": "Milojko Spajić",
-    "role": "PM",
-    "second": {
-      "name": "Jakov Milatović",
-      "role": "Pres."
-    },
-    "since": "2023-10-31"
-  },
-  "morocco": {
-    "name": "Aziz Akhannouch",
-    "role": "PM",
-    "second": {
-      "name": "👑 King Mohammed VI",
-      "role": "Monarch"
-    },
-    "since": "2021-10-07"
-  },
-  "mozambique": {
-    "name": "Daniel Chapo",
-    "role": "Pres.",
-    "since": "2025-01-15"
-  },
-  "myanmar": {
-    "name": "⚠️ Min Aung Hlaing",
-    "role": "Pres.",
-    "since": "2026-04-10"
-  },
-  "namibia": {
-    "name": "Netumbo Nandi-Ndaitwah",
-    "role": "Pres.",
-    "since": "2025-03-21"
-  },
-  "nauru": {
-    "name": "David Adeang",
-    "role": "Pres.",
-    "since": "2023-09-30"
-  },
-  "nepal": {
-    "name": "Ram Chandra Poudel",
-    "role": "Pres.",
-    "since": "2023-01-01"
-  },
-  "netherlands": {
-    "name": "Rob Jetten",
-    "role": "PM",
-    "second": {
-      "name": "👑 King Willem-Alexander",
-      "role": "Monarch"
-    },
-    "since": "2026-02-23"
-  },
-  "new-zealand": {
-    "name": "Christopher Luxon",
-    "role": "PM",
-    "second": {
-      "name": "👑 Charles III",
-      "role": "Monarch"
-    },
-    "since": "2023-10-27"
-  },
-  "nicaragua": {
-    "name": "Daniel Ortega",
-    "role": "Pres.",
-    "since": "2007-01-10"
-  },
-  "niger": {
-    "name": "Abdourahamane Tchiani",
-    "role": "Pres.",
-    "since": "2023-07-27"
-  },
-  "nigeria": {
-    "name": "Bola Tinubu",
-    "role": "Pres.",
-    "since": "2023-05-29"
-  },
-  "north-korea": {
-    "name": "⚠️ Kim Jong-un",
-    "role": "Sup. Leader",
-    "since": "2011-12-29"
-  },
-  "north-macedonia": {
-    "name": "Hristijan Mickoski",
-    "role": "PM",
-    "second": {
-      "name": "Gordana Siljanovska-Davkova",
-      "role": "Pres."
-    },
-    "since": "2024-06-23"
-  },
-  "northern-mariana-islands": {
-    "name": "David M. Apatang",
-    "role": "Governor",
-    "since": "2025-07-23"
-  },
-  "norway": {
-    "name": "Jonas Gahr Støre",
-    "role": "PM",
-    "second": {
-      "name": "👑 Harald V",
-      "role": "Monarch"
-    },
-    "since": "2021-10-14"
-  },
-  "oman": {
-    "name": "👑 Haitham bin Tarik Al Said",
-    "role": "Monarch",
-    "since": "2020-01-11"
-  },
-  "pakistan": {
-    "name": "Shehbaz Sharif",
-    "role": "PM",
-    "since": "2024-03-04"
-  },
-  "palau": {
-    "name": "Surangel Whipps Jr.",
-    "role": "Pres.",
-    "since": "2021-01-21"
-  },
-  "palestine": {
-    "name": "Mahmoud Abbas",
-    "role": "Pres.",
-    "second": {
-      "name": "Hussein al-Sheikh",
-      "role": "VP"
-    },
-    "since": "2005-01-15"
-  },
-  "panama": {
-    "name": "Jose Raul Mulino",
-    "role": "Pres.",
-    "since": "2024-07-01"
-  },
-  "papua-new-guinea": {
-    "name": "James Marape",
-    "role": "PM",
-    "second": {
-      "name": "👑 Charles III",
-      "role": "Monarch"
-    },
-    "since": "2019-05-30"
-  },
-  "paraguay": {
-    "name": "Santiago Peña Palacios",
-    "role": "Pres.",
-    "since": "2023-04-30"
-  },
-  "peru": {
-    "name": "José María Balcázar",
-    "role": "Pres.",
-    "since": "2026-02-18"
-  },
-  "philippines": {
-    "name": "Bongbong Marcos (Ferdinand Marcos Jr.)",
-    "role": "Pres.",
-    "since": "2022-06-30"
-  },
-  "poland": {
-    "name": "Donald Tusk",
-    "role": "PM",
-    "second": {
-      "name": "Karol Nawrocki",
-      "role": "Pres."
-    },
-    "since": "2023-12-13"
-  },
-  "portugal": {
-    "name": "Luís Montenegro",
-    "role": "PM",
-    "second": {
-      "name": "António José Seguro",
-      "role": "Pres."
-    },
-    "since": "2024-04-02"
-  },
-  "puerto-rico": {
-    "name": "Jenniffer González-Colón",
-    "role": "Governor",
-    "since": "2025-01-02"
-  },
-  "qatar": {
-    "name": "Mohammed bin Abdulrahman Al Thani",
-    "role": "PM",
-    "second": {
-      "name": "👑 Emir Tamim bin Hamad Al Thani",
-      "role": "Monarch"
-    },
-    "since": "2023-03-07"
-  },
-  "romania": {
-    "name": "Nicușor Dan",
-    "role": "Pres.",
-    "since": "2025-05-26"
-  },
-  "russia": {
-    "name": "⚠️ Vladimir Putin",
-    "role": "Pres.",
-    "since": "2012-05-07"
-  },
-  "rwanda": {
-    "name": "Paul Kagame",
-    "role": "Pres.",
-    "since": "2000-03-24"
-  },
-  "saint-lucia": {
-    "name": "Philip J. Pierre",
-    "role": "PM",
-    "second": {
-      "name": "👑 Charles III",
-      "role": "Monarch"
-    },
-    "since": "2021-07-28"
-  },
-  "samoa": {
-    "name": "Va'aletoa Sualauvi II",
-    "role": "Pres.",
-    "since": "2017-07-21"
-  },
-  "san-marino": {
-    "name": "Luca Beccari",
-    "role": "Sec. of State",
-    "since": "2020-01-08"
-  },
-  "sao-tome-and-principe": {
-    "name": "Carlos Vila Nova",
-    "role": "Pres.",
-    "since": "2021-10-02"
-  },
-  "saudi-arabia": {
-    "name": "⚠️ 👑 Mohammed bin Salman",
-    "role": "Crown Prince & PM",
-    "second": {
-      "name": "👑 King Salman bin Abdulaziz",
-      "role": "King"
-    },
-    "since": "2022-09-27"
-  },
-  "scotland": {
-    "name": "Keir Starmer",
-    "role": "PM",
-    "second": {
-      "name": "👑 King Charles III",
-      "role": "Sovereign"
-    },
-    "since": "2024-07-05"
-  },
-  "senegal": {
-    "name": "Bassirou Diomaye Faye",
-    "role": "Pres.",
-    "since": "2024-04-02"
-  },
-  "serbia": {
-    "name": "Aleksandar Vučić",
-    "role": "Pres.",
-    "since": "2017-05-31"
-  },
-  "seychelles": {
-    "name": "Patrick Herminie",
-    "role": "Pres.",
-    "since": "2025-10-26"
-  },
-  "sierra-leone": {
-    "name": "Julius Maada Bio",
-    "role": "Pres.",
-    "since": "2018-04-04"
-  },
-  "singapore": {
-    "name": "Lawrence Wong",
-    "role": "PM",
-    "since": "2024-05-15"
-  },
-  "slovakia": {
-    "name": "Robert Fico",
-    "role": "PM",
-    "second": {
-      "name": "Peter Pellegrini",
-      "role": "Pres."
-    },
-    "since": "2023-10-25"
-  },
-  "slovenia": {
-    "name": "Janez Janša",
-    "role": "PM",
-    "second": {
-      "name": "Nataša Pirc Musar",
-      "role": "Pres."
-    },
-    "since": "2026-05-22"
-  },
-  "solomon-islands": {
-    "name": "Matthew Wale",
-    "role": "PM",
-    "second": {
-      "name": "👑 Charles III",
-      "role": "Monarch"
-    },
-    "since": "2026-05-15"
-  },
-  "somalia": {
-    "name": "Hassan Sheikh Mohamud",
-    "role": "Pres.",
-    "since": "2022-05-15"
-  },
-  "south-africa": {
-    "name": "Cyril Ramaphosa",
-    "role": "Pres.",
-    "since": "2018-02-15"
-  },
-  "south-korea": {
-    "name": "Lee Jae-myung",
-    "role": "Pres.",
-    "since": "2025-06-04"
-  },
-  "south-sudan": {
-    "name": "Salva Kiir Mayardit",
-    "role": "Pres.",
-    "since": "2011-07-09"
-  },
-  "spain": {
-    "name": "Pedro Sánchez",
-    "role": "PM",
-    "second": {
-      "name": "👑 King Felipe VI",
-      "role": "Monarch"
-    },
-    "since": "2018-06-02"
-  },
-  "sri-lanka": {
-    "name": "Anura Kumara Dissanayake",
-    "role": "Pres.",
-    "since": "2024-09-23"
-  },
-  "st-kitts-nevis": {
-    "name": "Terrance Drew",
-    "role": "PM",
-    "second": {
-      "name": "👑 Charles III",
-      "role": "Monarch"
-    },
-    "since": "2022-08-06"
-  },
-  "st-vincent-the-grenadines": {
-    "name": "Godwin Friday",
-    "role": "PM",
-    "second": {
-      "name": "👑 Charles III",
-      "role": "Monarch"
-    },
-    "since": "2025-11-28"
-  },
-  "sudan": {
-    "name": "⚠️ Abdel Fattah al-Burhan",
-    "role": "Pres. (Sovereignty Council Chairman)",
-    "since": "2019-08-21"
-  },
-  "suriname": {
-    "name": "Jennifer Geerlings-Simons",
-    "role": "Pres.",
-    "since": "2025-07-16"
-  },
-  "sweden": {
-    "name": "Ulf Kristersson",
-    "role": "PM",
-    "second": {
-      "name": "👑 Carl XVI Gustaf",
-      "role": "Monarch"
-    },
-    "since": "2022-10-18"
-  },
-  "switzerland": {
-    "name": "Guy Parmelin",
-    "role": "Pres. of the Swiss Confederation",
-    "since": "2026-01-01"
-  },
-  "syria": {
-    "name": "Ahmed al-Sharaa",
-    "role": "Pres.",
-    "since": "2025-01-29"
-  },
-  "taiwan": {
-    "name": "Lai Ching-te",
-    "role": "Pres.",
-    "since": "2024-05-20"
-  },
-  "tajikistan": {
-    "name": "Emomali Rahmon",
-    "role": "Pres."
-  },
-  "tanzania": {
-    "name": "Samia Suluhu Hassan",
-    "role": "Pres.",
-    "since": "2021-03-19"
-  },
-  "thailand": {
-    "name": "Anutin Charnvirakul",
-    "role": "PM",
-    "second": {
-      "name": "👑 Vajiralongkorn (Rama X)",
-      "role": "Monarch"
-    },
-    "since": "2025-09-05"
-  },
-  "togo": {
-    "name": "Jean-Lucien Savi de Tové",
-    "role": "Pres.",
-    "since": "2025-05-03"
-  },
-  "tonga": {
-    "name": "👑 Tupou VI",
-    "role": "Monarch",
-    "since": "2012-03-18"
-  },
-  "trinidad-tobago": {
-    "name": "Kamla Persad-Bissessar",
-    "role": "PM",
-    "second": {
-      "name": "Christine Kangaloo",
-      "role": "Pres."
-    },
-    "since": "2025-05-01"
-  },
-  "tunisia": {
-    "name": "⚠️ Kais Saied",
-    "role": "Pres.",
-    "since": "2019-10-23"
-  },
-  "turkey": {
-    "name": "⚠️ Recep Tayyip Erdoğan",
-    "role": "Pres.",
-    "since": "2014-08-28"
-  },
-  "turkmenistan": {
-    "name": "Serdar Berdimuhamedow",
-    "role": "Pres.",
-    "since": "2022-03-19"
-  },
-  "tuvalu": {
-    "name": "Feleti Teo",
-    "role": "PM",
-    "second": {
-      "name": "👑 Charles III",
-      "role": "Monarch"
-    },
-    "since": "2024-02-26"
-  },
-  "uganda": {
-    "name": "Yoweri Museveni",
-    "role": "Pres.",
-    "since": "1986-01-29"
-  },
-  "ukraine": {
-    "name": "Volodymyr Zelensky",
-    "role": "Pres.",
-    "since": "2019-05-20"
-  },
-  "united-arab-emirates": {
-    "name": "Mohamed bin Zayed Al Nahyan",
-    "role": "Pres.",
-    "since": "2022-05-14"
-  },
-  "united-kingdom": {
-    "name": "Keir Starmer",
-    "role": "PM",
-    "second": {
-      "name": "👑 Charles III",
-      "role": "Monarch"
-    },
-    "since": "2024-07-05"
-  },
-  "united-states": {
-    "name": "⚠️ Donald Trump",
-    "role": "Pres.",
-    "since": "2025-01-20"
-  },
-  "uruguay": {
-    "name": "Yamandú Orsi",
-    "role": "Pres.",
-    "since": "2025-03-01"
-  },
-  "us-virgin-islands": {
-    "name": "Albert Bryan",
-    "role": "Governor",
-    "since": "2019-01-07"
-  },
-  "uzbekistan": {
-    "name": "Shavkat Mirziyoyev",
-    "role": "Pres.",
-    "since": "2016-12-14"
-  },
-  "vanuatu": {
-    "name": "Nikenike Vurobaravu",
-    "role": "Pres.",
-    "since": "2022-07-23"
-  },
-  "vatican-city": {
-    "name": "✝ Leo XIV",
-    "role": "Pope",
-    "since": "2025-05-08"
-  },
-  "venezuela": {
-    "name": "Delcy Rodriguez",
-    "role": "Acting Pres.",
-    "since": "2026-01-05"
-  },
-  "vietnam": {
-    "name": "To Lam",
-    "role": "Gen. Sec.",
-    "since": "2024-08-03"
-  },
-  "yemen": {
-    "name": "Rashad al-Alimi",
-    "role": "Pres.",
-    "since": "2022-04-07"
-  },
-  "zambia": {
-    "name": "Hakainde Hichilema",
-    "role": "Pres.",
-    "since": "2021-08-24"
-  },
-  "zimbabwe": {
-    "name": "Emmerson Mnangagwa",
-    "role": "Pres.",
-    "since": "2017-11-24"
+ "afghanistan": {
+  "name": "Hibatullah Akhundzada",
+  "role": "Pres.",
+  "since": "2021-08-15"
+ },
+ "albania": {
+  "name": "Edi Rama",
+  "role": "PM",
+  "second": {
+   "name": "Bajram Begaj",
+   "role": "Pres."
   }
+ },
+ "algeria": {
+  "name": "Abdelmadjid Tebboune",
+  "role": "Pres.",
+  "since": "2019-12-19"
+ },
+ "american-samoa": {
+  "name": "Pula Nikolao Pula",
+  "role": "Governor",
+  "since": "2025-01-03"
+ },
+ "andorra": {
+  "name": "Xavier Espot Zamora",
+  "role": "PM",
+  "second": {
+   "name": "Emmanuel Macron",
+   "role": "Pres."
+  },
+  "since": "2019-05-16"
+ },
+ "angola": {
+  "name": "João Lourenço",
+  "role": "Pres.",
+  "since": "2017-08-23"
+ },
+ "antigua-barbuda": {
+  "name": "Gaston Browne",
+  "role": "PM",
+  "second": {
+   "name": "👑 Charles III",
+   "role": "Monarch"
+  },
+  "since": "2014-06-13"
+ },
+ "argentina": {
+  "name": "Javier Milei",
+  "role": "Pres.",
+  "since": "2023-12-10"
+ },
+ "armenia": {
+  "name": "Vahagn Khachatryan",
+  "role": "Pres.",
+  "since": "2022-03-13"
+ },
+ "australia": {
+  "name": "Anthony Albanese",
+  "role": "PM",
+  "second": {
+   "name": "👑 Charles III",
+   "role": "Monarch"
+  },
+  "since": "2022-05-23"
+ },
+ "austria": {
+  "name": "Christian Stocker",
+  "role": "Federal Chanc.",
+  "second": {
+   "name": "Alexander Van der Bellen",
+   "role": "Federal Pres."
+  },
+  "since": "2025-03-03"
+ },
+ "azerbaijan": {
+  "name": "Ilham Aliyev",
+  "role": "Pres.",
+  "since": "2003-10-31"
+ },
+ "bahamas": {
+  "name": "Philip Davis",
+  "role": "PM",
+  "second": {
+   "name": "👑 Charles III",
+   "role": "Monarch"
+  },
+  "since": "2021-09-17"
+ },
+ "bahrain": {
+  "name": "Salman bin Hamad Al Khalifa",
+  "role": "PM",
+  "second": {
+   "name": "👑 Hamad bin Isa Al Khalifa",
+   "role": "Monarch"
+  },
+  "since": "2020-11-11"
+ },
+ "bangladesh": {
+  "name": "Muhammad Yunus",
+  "role": "Chief Adviser",
+  "since": "2024-08-08"
+ },
+ "barbados": {
+  "name": "Sandra Mason",
+  "role": "Pres.",
+  "since": "2021-11-30"
+ },
+ "belarus": {
+  "name": "⚠️ Alexander Lukashenko",
+  "role": "Pres.",
+  "since": "1994-07-20"
+ },
+ "belgium": {
+  "name": "Bart De Wever",
+  "role": "PM",
+  "second": {
+   "name": "👑 King Philippe",
+   "role": "Monarch"
+  },
+  "since": "2025-02-03"
+ },
+ "belize": {
+  "name": "Johnny Briceño",
+  "role": "PM",
+  "second": {
+   "name": "👑 Charles III",
+   "role": "Monarch"
+  },
+  "since": "2020-11-12"
+ },
+ "benin": {
+  "name": "Romuald Wadagni",
+  "role": "Pres.",
+  "since": "2026-05-24"
+ },
+ "bhutan": {
+  "name": "Tshering Tobgay",
+  "role": "PM",
+  "second": {
+   "name": "👑 Jigme Khesar Namgyel Wangchuck",
+   "role": "Monarch"
+  },
+  "since": "2024-01-28"
+ },
+ "bolivia": {
+  "name": "Rodrigo Paz",
+  "role": "Pres.",
+  "since": "2025-11-08"
+ },
+ "bosnia-herzegovina": {
+  "name": "Borjana Krišto",
+  "role": "PM",
+  "second": {
+   "name": "Denis Bećirović",
+   "role": "Pres. (Presidency)"
+  },
+  "since": "2023-01-25"
+ },
+ "botswana": {
+  "name": "Duma Boko",
+  "role": "Pres.",
+  "since": "2024-11-01"
+ },
+ "brazil": {
+  "name": "Luiz Inácio Lula da Silva",
+  "role": "Pres.",
+  "since": "2023-01-01"
+ },
+ "brunei": {
+  "name": "👑 Hassanal Bolkiah",
+  "role": "Monarch",
+  "since": "1967-10-05"
+ },
+ "bulgaria": {
+  "name": "Rumen Radev",
+  "role": "PM",
+  "second": {
+   "name": "Iliana Iotova",
+   "role": "Pres."
+  },
+  "since": "2026-05-08"
+ },
+ "burkina-faso": {
+  "name": "Ibrahim Traoré",
+  "role": "Pres.",
+  "since": "2022-10-06"
+ },
+ "burundi": {
+  "name": "Évariste Ndayishimiye",
+  "role": "Pres.",
+  "since": "2020-06-18"
+ },
+ "cambodia": {
+  "name": "Hun Manet",
+  "role": "PM",
+  "second": {
+   "name": "👑 Norodom Sihamoni",
+   "role": "Monarch"
+  },
+  "since": "2023-08-22"
+ },
+ "cameroon": {
+  "name": "Paul Biya",
+  "role": "Pres.",
+  "since": "1982-11-06"
+ },
+ "canada": {
+  "name": "Mark Carney",
+  "role": "PM",
+  "second": {
+   "name": "👑 Charles III",
+   "role": "Monarch"
+  },
+  "since": "2025-03-14"
+ },
+ "cape-verde": {
+  "name": "José Maria Neves",
+  "role": "Pres.",
+  "since": "2021-11-09"
+ },
+ "central-african-republic": {
+  "name": "Faustin-Archange Touadéra",
+  "role": "Pres.",
+  "since": "2016-03-30"
+ },
+ "chad": {
+  "name": "Mahamat Déby",
+  "role": "Pres."
+ },
+ "chile": {
+  "name": "José Antonio Kast",
+  "role": "Pres.",
+  "since": "2026-03-11"
+ },
+ "china": {
+  "name": "Xi Jinping",
+  "role": "Pres. (PRC)",
+  "since": "2013-03-14"
+ },
+ "colombia": {
+  "name": "Gustavo Petro",
+  "role": "Pres.",
+  "since": "2022-08-07"
+ },
+ "comoros": {
+  "name": "Azali Assoumani",
+  "role": "Pres.",
+  "since": "2016-01-01"
+ },
+ "congo": {
+  "name": "Anatole Collinet Makosso",
+  "role": "PM",
+  "second": {
+   "name": "Denis Sassou-Nguesso",
+   "role": "Pres."
+  },
+  "since": "2021-05-12"
+ },
+ "congo-dr": {
+  "name": "Félix Tshisekedi",
+  "role": "Pres.",
+  "since": "2019-01-24"
+ },
+ "costa-rica": {
+  "name": "Laura Fernández Delgado",
+  "role": "Pres.",
+  "since": "2026-05-08"
+ },
+ "cote-divoire": {
+  "name": "Alassane Ouattara",
+  "role": "Pres.",
+  "since": "2010-12-04"
+ },
+ "croatia": {
+  "name": "Andrej Plenković",
+  "role": "PM",
+  "second": {
+   "name": "Zoran Milanović",
+   "role": "Pres."
+  },
+  "since": "2016-10-19"
+ },
+ "cuba": {
+  "name": "Miguel Díaz-Canel",
+  "role": "Gen. Sec. (First Secretary, PCC)",
+  "since": "2021-04-19"
+ },
+ "cyprus": {
+  "name": "Nikos Christodoulides",
+  "role": "Pres.",
+  "since": "2023-02-28"
+ },
+ "czech-republic": {
+  "name": "Andrej Babiš",
+  "role": "PM",
+  "second": {
+   "name": "Petr Pavel",
+   "role": "Pres."
+  },
+  "since": "2025-12-09"
+ },
+ "denmark": {
+  "name": "Mette Frederiksen",
+  "role": "PM",
+  "second": {
+   "name": "👑 Frederik X",
+   "role": "Monarch"
+  },
+  "since": "2019-06-27"
+ },
+ "djibouti": {
+  "name": "Ismail Omar Guelleh",
+  "role": "Pres.",
+  "since": "1999-05-08"
+ },
+ "dominica": {
+  "name": "Sylvanie Burton",
+  "role": "Pres.",
+  "since": "2023-10-02"
+ },
+ "dominican-republic": {
+  "name": "Luis Abinader",
+  "role": "Pres.",
+  "since": "2020-08-16"
+ },
+ "east-timor": {
+  "name": "José Ramos-Horta",
+  "role": "Pres.",
+  "since": "2022-05-20"
+ },
+ "ecuador": {
+  "name": "Daniel Noboa",
+  "role": "Pres.",
+  "since": "2023-11-23"
+ },
+ "egypt": {
+  "name": "⚠️ Abdel Fattah el-Sisi",
+  "role": "Pres.",
+  "since": "2014-06-08"
+ },
+ "el-salvador": {
+  "name": "Nayib Bukele",
+  "role": "Pres.",
+  "since": "2019-06-01"
+ },
+ "england": {
+  "name": "Keir Starmer",
+  "role": "PM",
+  "second": {
+   "name": "👑 King Charles III",
+   "role": "Sovereign"
+  },
+  "since": "2024-07-05"
+ },
+ "equatorial-guinea": {
+  "name": "Teodoro Obiang",
+  "role": "Pres.",
+  "since": "1979-08-03"
+ },
+ "eritrea": {
+  "name": "Isaias Afwerki",
+  "role": "Pres.",
+  "since": "1993-01-01"
+ },
+ "estonia": {
+  "name": "Kaja Kallas",
+  "role": "PM",
+  "second": {
+   "name": "Alar Karis",
+   "role": "Pres."
+  },
+  "since": "2021-01-26"
+ },
+ "eswatini": {
+  "name": "👑 Mswati III",
+  "role": "Monarch",
+  "since": "1986-04-25"
+ },
+ "ethiopia": {
+  "name": "Abiy Ahmed",
+  "role": "PM",
+  "second": {
+   "name": "Taye Atske Selassie",
+   "role": "Pres."
+  },
+  "since": "2018-04-02"
+ },
+ "federated-states-of-micronesia": {
+  "name": "Wesley Simina",
+  "role": "Pres.",
+  "since": "2023-01-01"
+ },
+ "fiji": {
+  "name": "Naiqama Lalabalavu",
+  "role": "Pres.",
+  "since": "2024-11-12"
+ },
+ "finland": {
+  "name": "Petteri Orpo",
+  "role": "PM",
+  "second": {
+   "name": "Alexander Stubb",
+   "role": "Pres."
+  },
+  "since": "2023-06-20"
+ },
+ "france": {
+  "name": "Emmanuel Macron",
+  "role": "Pres.",
+  "since": "2017-05-14"
+ },
+ "gabon": {
+  "name": "Brice Clotaire Oligui Nguema",
+  "role": "Pres.",
+  "since": "2023-08-30"
+ },
+ "gambia": {
+  "name": "Adama Barrow",
+  "role": "Pres.",
+  "since": "2017-01-21"
+ },
+ "georgia": {
+  "name": "Irakli Kobakhidze",
+  "role": "PM",
+  "second": {
+   "name": "Mikheil Kavelashvili",
+   "role": "Pres."
+  },
+  "since": "2024-02-08"
+ },
+ "germany": {
+  "name": "Friedrich Merz",
+  "role": "Federal Chanc.",
+  "second": {
+   "name": "Frank-Walter Steinmeier",
+   "role": "Pres."
+  },
+  "since": "2025-02-25"
+ },
+ "ghana": {
+  "name": "John Mahama",
+  "role": "Pres.",
+  "since": "2025-01-07"
+ },
+ "greece": {
+  "name": "Kyriakos Mitsotakis",
+  "role": "PM",
+  "second": {
+   "name": "Konstantinos Tasoulas",
+   "role": "Pres."
+  },
+  "since": "2019-07-08"
+ },
+ "grenada": {
+  "name": "Dickon Mitchell",
+  "role": "PM",
+  "second": {
+   "name": "👑 Charles III",
+   "role": "Monarch"
+  },
+  "since": "2022-06-24"
+ },
+ "guam": {
+  "name": "Lou Leon Guerrero",
+  "role": "Governor",
+  "since": "2019-01-07"
+ },
+ "guatemala": {
+  "name": "Bernardo Arévalo de León",
+  "role": "Pres.",
+  "since": "2024-01-15"
+ },
+ "guinea": {
+  "name": "Mamady Doumbouya",
+  "role": "Pres.",
+  "since": "2021-10-01"
+ },
+ "guinea-bissau": {
+  "name": "Rui Duarte de Barros",
+  "role": "PM",
+  "since": "2023-12-21"
+ },
+ "guyana": {
+  "name": "Mark Phillips",
+  "role": "PM",
+  "second": {
+   "name": "Irfaan Ali",
+   "role": "Pres."
+  },
+  "since": "2020-08-02"
+ },
+ "haiti": {
+  "name": "Transitional Presidential Council",
+  "role": "Pres.",
+  "since": "2024-04-25"
+ },
+ "honduras": {
+  "name": "Nasry Asfura",
+  "role": "Pres.",
+  "since": "2026-01-27"
+ },
+ "hungary": {
+  "name": "Péter Magyar",
+  "role": "PM",
+  "second": {
+   "name": "Tamás Sulyok",
+   "role": "Pres."
+  },
+  "since": "2026-05-09"
+ },
+ "iceland": {
+  "name": "Kristrún Mjöll Frostadóttir",
+  "role": "PM",
+  "second": {
+   "name": "Halla Tómasdóttir",
+   "role": "Pres."
+  },
+  "since": "2024-12-21"
+ },
+ "india": {
+  "name": "Narendra Modi",
+  "role": "PM",
+  "since": "2014-05-26"
+ },
+ "indonesia": {
+  "name": "Prabowo Subianto",
+  "role": "Pres.",
+  "since": "2024-10-20"
+ },
+ "iran": {
+  "name": "⚠️ Mojtaba Khamenei",
+  "role": "Sup. Leader",
+  "second": {
+   "name": "Masoud Pezeshkian",
+   "role": "Pres."
+  },
+  "since": "2026-03-08"
+ },
+ "iraq": {
+  "name": "Ali al-Zaidi",
+  "role": "PM",
+  "second": {
+   "name": "Nizar Amedi",
+   "role": "Pres."
+  },
+  "since": "2026-05-14"
+ },
+ "ireland": {
+  "name": "Micheál Martin",
+  "role": "Taoiseach",
+  "since": "2025-01-23"
+ },
+ "israel": {
+  "name": "⚠️ Benjamin Netanyahu",
+  "role": "PM",
+  "since": "2022-12-29"
+ },
+ "italy": {
+  "name": "Giorgia Meloni",
+  "role": "PM",
+  "since": "2022-10-22"
+ },
+ "jamaica": {
+  "name": "Andrew Holness",
+  "role": "PM",
+  "second": {
+   "name": "👑 Charles III",
+   "role": "Monarch"
+  },
+  "since": "2016-03-03"
+ },
+ "japan": {
+  "name": "Sanae Takaichi",
+  "role": "PM",
+  "since": "2024-11-11"
+ },
+ "jordan": {
+  "name": "Jafar Hassan",
+  "role": "PM",
+  "second": {
+   "name": "👑 Abdullah II bin Al-Hussein",
+   "role": "Monarch"
+  },
+  "since": "2024-09-15"
+ },
+ "kazakhstan": {
+  "name": "Kassym-Jomart Tokayev",
+  "role": "Pres.",
+  "since": "2019-03-20"
+ },
+ "kenya": {
+  "name": "William Ruto",
+  "role": "Pres.",
+  "since": "2022-09-13"
+ },
+ "kiribati": {
+  "name": "Taneti Maamau",
+  "role": "Pres.",
+  "since": "2016-03-11"
+ },
+ "kosovo": {
+  "name": "Albin Kurti",
+  "role": "PM",
+  "second": {
+   "name": "Vjosa Osmani",
+   "role": "Pres."
+  },
+  "since": "2021-03-22"
+ },
+ "kuwait": {
+  "name": "Ahmad Abdullah Al-Ahmad Al-Sabah",
+  "role": "PM",
+  "second": {
+   "name": "👑 Meshal Al-Ahmad Al-Jaber Al-Sabah",
+   "role": "Monarch"
+  },
+  "since": "2024-05-15"
+ },
+ "kyrgyzstan": {
+  "name": "Adylbek Kasymaliev",
+  "role": "PM",
+  "second": {
+   "name": "Sadyr Japarov",
+   "role": "Pres."
+  },
+  "since": "2024-12-16"
+ },
+ "laos": {
+  "name": "Thongloun Sisoulith",
+  "role": "Pres."
+ },
+ "latvia": {
+  "name": "Edgars Rinkēvičs",
+  "role": "Pres.",
+  "since": "2023-07-08"
+ },
+ "lebanon": {
+  "name": "Joseph Aoun",
+  "role": "Pres.",
+  "since": "2025-01-09"
+ },
+ "lesotho": {
+  "name": "Sam Matekane",
+  "role": "PM",
+  "second": {
+   "name": "👑 Letsie III of Lesotho",
+   "role": "Monarch"
+  },
+  "since": "2022-10-28"
+ },
+ "liberia": {
+  "name": "Joseph Boakai",
+  "role": "Pres.",
+  "since": "2024-01-01"
+ },
+ "libya": {
+  "name": "Abdul Hamid Dbeibeh",
+  "role": "PM",
+  "second": {
+   "name": "Mohamed al-Menfi",
+   "role": "Head of State"
+  },
+  "since": "2021-03-15"
+ },
+ "liechtenstein": {
+  "name": "Daniel Risch",
+  "role": "PM",
+  "second": {
+   "name": "👑 Hans-Adam II, Prince of Liechtenstein",
+   "role": "Monarch"
+  },
+  "since": "2021-03-25"
+ },
+ "lithuania": {
+  "name": "Inga Ruginienė",
+  "role": "PM",
+  "second": {
+   "name": "Gitanas Nausėda",
+   "role": "Pres."
+  },
+  "since": "2025-08-26"
+ },
+ "luxembourg": {
+  "name": "Luc Frieden",
+  "role": "PM",
+  "second": {
+   "name": "👑 Guillaume",
+   "role": "Monarch"
+  },
+  "since": "2023-11-17"
+ },
+ "madagascar": {
+  "name": "Michael Randrianirina",
+  "role": "Pres.",
+  "since": "2025-10-14"
+ },
+ "malawi": {
+  "name": "Peter Mutharika",
+  "role": "Pres.",
+  "since": "2025-10-04"
+ },
+ "malaysia": {
+  "name": "Anwar Ibrahim",
+  "role": "PM",
+  "second": {
+   "name": "👑 Sultan Ibrahim of Johor",
+   "role": "Monarch (Yang di-Pertuan Agong)"
+  },
+  "since": "2022-11-24"
+ },
+ "maldives": {
+  "name": "Mohamed Muizzu",
+  "role": "Pres.",
+  "since": "2023-11-17"
+ },
+ "mali": {
+  "name": "Assimi Goïta",
+  "role": "Pres.",
+  "since": "2021-05-24"
+ },
+ "malta": {
+  "name": "Robert Abela",
+  "role": "PM",
+  "second": {
+   "name": "Myriam Spiteri Debono",
+   "role": "Pres."
+  },
+  "since": "2020-01-01"
+ },
+ "marshall-islands": {
+  "name": "Hilda Heine",
+  "role": "Pres.",
+  "since": "2024-01-03"
+ },
+ "mauritania": {
+  "name": "Mohamed Ould Ghazouani",
+  "role": "Pres.",
+  "since": "2019-08-01"
+ },
+ "mauritius": {
+  "name": "Pravind Jugnauth",
+  "role": "PM",
+  "second": {
+   "name": "Dharam Gokhool",
+   "role": "Pres."
+  },
+  "since": "2017-01-23"
+ },
+ "mexico": {
+  "name": "Claudia Sheinbaum",
+  "role": "Pres.",
+  "since": "2024-10-01"
+ },
+ "moldova": {
+  "name": "Alexandru Munteanu",
+  "role": "PM",
+  "second": {
+   "name": "Maia Sandu",
+   "role": "Pres."
+  },
+  "since": "2025-11-01"
+ },
+ "monaco": {
+  "name": "👑 Albert II",
+  "role": "Monarch",
+  "since": "2005-04-06"
+ },
+ "mongolia": {
+  "name": "Uchral Nyam-Osor",
+  "role": "PM",
+  "second": {
+   "name": "Khurelsukh Ukhnaa",
+   "role": "Pres."
+  },
+  "since": "2026-03-30"
+ },
+ "montenegro": {
+  "name": "Milojko Spajić",
+  "role": "PM",
+  "second": {
+   "name": "Jakov Milatović",
+   "role": "Pres."
+  },
+  "since": "2023-10-31"
+ },
+ "morocco": {
+  "name": "Aziz Akhannouch",
+  "role": "PM",
+  "second": {
+   "name": "👑 King Mohammed VI",
+   "role": "Monarch"
+  },
+  "since": "2021-10-07"
+ },
+ "mozambique": {
+  "name": "Daniel Chapo",
+  "role": "Pres.",
+  "since": "2025-01-15"
+ },
+ "myanmar": {
+  "name": "⚠️ Min Aung Hlaing",
+  "role": "Pres.",
+  "since": "2026-04-10"
+ },
+ "namibia": {
+  "name": "Netumbo Nandi-Ndaitwah",
+  "role": "Pres.",
+  "since": "2025-03-21"
+ },
+ "nauru": {
+  "name": "David Adeang",
+  "role": "Pres.",
+  "since": "2023-09-30"
+ },
+ "nepal": {
+  "name": "Ram Chandra Poudel",
+  "role": "Pres.",
+  "since": "2023-01-01"
+ },
+ "netherlands": {
+  "name": "Rob Jetten",
+  "role": "PM",
+  "second": {
+   "name": "👑 King Willem-Alexander",
+   "role": "Monarch"
+  },
+  "since": "2026-02-23"
+ },
+ "new-zealand": {
+  "name": "Christopher Luxon",
+  "role": "PM",
+  "second": {
+   "name": "👑 Charles III",
+   "role": "Monarch"
+  },
+  "since": "2023-10-27"
+ },
+ "nicaragua": {
+  "name": "Daniel Ortega",
+  "role": "Pres.",
+  "since": "2007-01-10"
+ },
+ "niger": {
+  "name": "Abdourahamane Tchiani",
+  "role": "Pres.",
+  "since": "2023-07-27"
+ },
+ "nigeria": {
+  "name": "Bola Tinubu",
+  "role": "Pres.",
+  "since": "2023-05-29"
+ },
+ "north-korea": {
+  "name": "⚠️ Kim Jong-un",
+  "role": "Sup. Leader",
+  "since": "2011-12-29"
+ },
+ "north-macedonia": {
+  "name": "Hristijan Mickoski",
+  "role": "PM",
+  "second": {
+   "name": "Gordana Siljanovska-Davkova",
+   "role": "Pres."
+  },
+  "since": "2024-06-23"
+ },
+ "northern-mariana-islands": {
+  "name": "David M. Apatang",
+  "role": "Governor",
+  "since": "2025-07-23"
+ },
+ "norway": {
+  "name": "Jonas Gahr Støre",
+  "role": "PM",
+  "second": {
+   "name": "👑 Harald V",
+   "role": "Monarch"
+  },
+  "since": "2021-10-14"
+ },
+ "oman": {
+  "name": "👑 Haitham bin Tarik Al Said",
+  "role": "Monarch",
+  "since": "2020-01-11"
+ },
+ "pakistan": {
+  "name": "Shehbaz Sharif",
+  "role": "PM",
+  "since": "2024-03-04"
+ },
+ "palau": {
+  "name": "Surangel Whipps Jr.",
+  "role": "Pres.",
+  "since": "2021-01-21"
+ },
+ "palestine": {
+  "name": "Mahmoud Abbas",
+  "role": "Pres.",
+  "second": {
+   "name": "Hussein al-Sheikh",
+   "role": "VP"
+  },
+  "since": "2005-01-15"
+ },
+ "panama": {
+  "name": "Jose Raul Mulino",
+  "role": "Pres.",
+  "since": "2024-07-01"
+ },
+ "papua-new-guinea": {
+  "name": "James Marape",
+  "role": "PM",
+  "second": {
+   "name": "👑 Charles III",
+   "role": "Monarch"
+  },
+  "since": "2019-05-30"
+ },
+ "paraguay": {
+  "name": "Santiago Peña Palacios",
+  "role": "Pres.",
+  "since": "2023-04-30"
+ },
+ "peru": {
+  "name": "José María Balcázar",
+  "role": "Pres.",
+  "since": "2026-02-18"
+ },
+ "philippines": {
+  "name": "Bongbong Marcos (Ferdinand Marcos Jr.)",
+  "role": "Pres.",
+  "since": "2022-06-30"
+ },
+ "poland": {
+  "name": "Donald Tusk",
+  "role": "PM",
+  "second": {
+   "name": "Karol Nawrocki",
+   "role": "Pres."
+  },
+  "since": "2023-12-13"
+ },
+ "portugal": {
+  "name": "Luís Montenegro",
+  "role": "PM",
+  "second": {
+   "name": "António José Seguro",
+   "role": "Pres."
+  },
+  "since": "2024-04-02"
+ },
+ "puerto-rico": {
+  "name": "Jenniffer González-Colón",
+  "role": "Governor",
+  "since": "2025-01-02"
+ },
+ "qatar": {
+  "name": "Mohammed bin Abdulrahman Al Thani",
+  "role": "PM",
+  "second": {
+   "name": "👑 Emir Tamim bin Hamad Al Thani",
+   "role": "Monarch"
+  },
+  "since": "2023-03-07"
+ },
+ "romania": {
+  "name": "Nicușor Dan",
+  "role": "Pres.",
+  "since": "2025-05-26"
+ },
+ "russia": {
+  "name": "⚠️ Vladimir Putin",
+  "role": "Pres.",
+  "since": "2012-05-07"
+ },
+ "rwanda": {
+  "name": "Paul Kagame",
+  "role": "Pres.",
+  "since": "2000-03-24"
+ },
+ "saint-lucia": {
+  "name": "Philip J. Pierre",
+  "role": "PM",
+  "second": {
+   "name": "👑 Charles III",
+   "role": "Monarch"
+  },
+  "since": "2021-07-28"
+ },
+ "samoa": {
+  "name": "Va'aletoa Sualauvi II",
+  "role": "Pres.",
+  "since": "2017-07-21"
+ },
+ "san-marino": {
+  "name": "Luca Beccari",
+  "role": "Sec. of State",
+  "since": "2020-01-08"
+ },
+ "sao-tome-and-principe": {
+  "name": "Carlos Vila Nova",
+  "role": "Pres.",
+  "since": "2021-10-02"
+ },
+ "saudi-arabia": {
+  "name": "⚠️ 👑 Mohammed bin Salman",
+  "role": "Crown Prince & PM",
+  "second": {
+   "name": "👑 King Salman bin Abdulaziz",
+   "role": "King"
+  },
+  "since": "2022-09-27"
+ },
+ "scotland": {
+  "name": "Keir Starmer",
+  "role": "PM",
+  "second": {
+   "name": "👑 King Charles III",
+   "role": "Sovereign"
+  },
+  "since": "2024-07-05"
+ },
+ "senegal": {
+  "name": "Bassirou Diomaye Faye",
+  "role": "Pres.",
+  "since": "2024-04-02"
+ },
+ "serbia": {
+  "name": "Aleksandar Vučić",
+  "role": "Pres.",
+  "since": "2017-05-31"
+ },
+ "seychelles": {
+  "name": "Patrick Herminie",
+  "role": "Pres.",
+  "since": "2025-10-26"
+ },
+ "sierra-leone": {
+  "name": "Julius Maada Bio",
+  "role": "Pres.",
+  "since": "2018-04-04"
+ },
+ "singapore": {
+  "name": "Lawrence Wong",
+  "role": "PM",
+  "since": "2024-05-15"
+ },
+ "slovakia": {
+  "name": "Robert Fico",
+  "role": "PM",
+  "second": {
+   "name": "Peter Pellegrini",
+   "role": "Pres."
+  },
+  "since": "2023-10-25"
+ },
+ "slovenia": {
+  "name": "Janez Janša",
+  "role": "PM",
+  "second": {
+   "name": "Nataša Pirc Musar",
+   "role": "Pres."
+  },
+  "since": "2026-05-22"
+ },
+ "solomon-islands": {
+  "name": "Matthew Wale",
+  "role": "PM",
+  "second": {
+   "name": "👑 Charles III",
+   "role": "Monarch"
+  },
+  "since": "2026-05-15"
+ },
+ "somalia": {
+  "name": "Hassan Sheikh Mohamud",
+  "role": "Pres.",
+  "since": "2022-05-15"
+ },
+ "south-africa": {
+  "name": "Cyril Ramaphosa",
+  "role": "Pres.",
+  "since": "2018-02-15"
+ },
+ "south-korea": {
+  "name": "Lee Jae-myung",
+  "role": "Pres.",
+  "since": "2025-06-04"
+ },
+ "south-sudan": {
+  "name": "Salva Kiir Mayardit",
+  "role": "Pres.",
+  "since": "2011-07-09"
+ },
+ "spain": {
+  "name": "Pedro Sánchez",
+  "role": "PM",
+  "second": {
+   "name": "👑 King Felipe VI",
+   "role": "Monarch"
+  },
+  "since": "2018-06-02"
+ },
+ "sri-lanka": {
+  "name": "Anura Kumara Dissanayake",
+  "role": "Pres.",
+  "since": "2024-09-23"
+ },
+ "st-kitts-nevis": {
+  "name": "Terrance Drew",
+  "role": "PM",
+  "second": {
+   "name": "👑 Charles III",
+   "role": "Monarch"
+  },
+  "since": "2022-08-06"
+ },
+ "st-vincent-the-grenadines": {
+  "name": "Godwin Friday",
+  "role": "PM",
+  "second": {
+   "name": "👑 Charles III",
+   "role": "Monarch"
+  },
+  "since": "2025-11-28"
+ },
+ "sudan": {
+  "name": "⚠️ Abdel Fattah al-Burhan",
+  "role": "Pres. (Sovereignty Council Chairman)",
+  "since": "2019-08-21"
+ },
+ "suriname": {
+  "name": "Jennifer Geerlings-Simons",
+  "role": "Pres.",
+  "since": "2025-07-16"
+ },
+ "sweden": {
+  "name": "Ulf Kristersson",
+  "role": "PM",
+  "second": {
+   "name": "👑 Carl XVI Gustaf",
+   "role": "Monarch"
+  },
+  "since": "2022-10-18"
+ },
+ "switzerland": {
+  "name": "Guy Parmelin",
+  "role": "Pres. of the Swiss Confederation",
+  "since": "2026-01-01"
+ },
+ "syria": {
+  "name": "Ahmed al-Sharaa",
+  "role": "Pres.",
+  "since": "2025-01-29"
+ },
+ "taiwan": {
+  "name": "Lai Ching-te",
+  "role": "Pres.",
+  "since": "2024-05-20"
+ },
+ "tajikistan": {
+  "name": "Emomali Rahmon",
+  "role": "Pres."
+ },
+ "tanzania": {
+  "name": "Samia Suluhu Hassan",
+  "role": "Pres.",
+  "since": "2021-03-19"
+ },
+ "thailand": {
+  "name": "Anutin Charnvirakul",
+  "role": "PM",
+  "second": {
+   "name": "👑 Vajiralongkorn (Rama X)",
+   "role": "Monarch"
+  },
+  "since": "2025-09-05"
+ },
+ "togo": {
+  "name": "Jean-Lucien Savi de Tové",
+  "role": "Pres.",
+  "since": "2025-05-03"
+ },
+ "tonga": {
+  "name": "👑 Tupou VI",
+  "role": "Monarch",
+  "since": "2012-03-18"
+ },
+ "trinidad-tobago": {
+  "name": "Kamla Persad-Bissessar",
+  "role": "PM",
+  "second": {
+   "name": "Christine Kangaloo",
+   "role": "Pres."
+  },
+  "since": "2025-05-01"
+ },
+ "tunisia": {
+  "name": "⚠️ Kais Saied",
+  "role": "Pres.",
+  "since": "2019-10-23"
+ },
+ "turkey": {
+  "name": "⚠️ Recep Tayyip Erdoğan",
+  "role": "Pres.",
+  "since": "2014-08-28"
+ },
+ "turkmenistan": {
+  "name": "Serdar Berdimuhamedow",
+  "role": "Pres.",
+  "since": "2022-03-19"
+ },
+ "tuvalu": {
+  "name": "Feleti Teo",
+  "role": "PM",
+  "second": {
+   "name": "👑 Charles III",
+   "role": "Monarch"
+  },
+  "since": "2024-02-26"
+ },
+ "uganda": {
+  "name": "Yoweri Museveni",
+  "role": "Pres.",
+  "since": "1986-01-29"
+ },
+ "ukraine": {
+  "name": "Volodymyr Zelensky",
+  "role": "Pres.",
+  "since": "2019-05-20"
+ },
+ "united-arab-emirates": {
+  "name": "Mohamed bin Zayed Al Nahyan",
+  "role": "Pres.",
+  "since": "2022-05-14"
+ },
+ "united-kingdom": {
+  "name": "Keir Starmer",
+  "role": "PM",
+  "second": {
+   "name": "👑 Charles III",
+   "role": "Monarch"
+  },
+  "since": "2024-07-05"
+ },
+ "united-states": {
+  "name": "⚠️ Donald Trump",
+  "role": "Pres.",
+  "since": "2025-01-20"
+ },
+ "uruguay": {
+  "name": "Yamandú Orsi",
+  "role": "Pres.",
+  "since": "2025-03-01"
+ },
+ "us-virgin-islands": {
+  "name": "Albert Bryan",
+  "role": "Governor",
+  "since": "2019-01-07"
+ },
+ "uzbekistan": {
+  "name": "Shavkat Mirziyoyev",
+  "role": "Pres.",
+  "since": "2016-12-14"
+ },
+ "vanuatu": {
+  "name": "Nikenike Vurobaravu",
+  "role": "Pres.",
+  "since": "2022-07-23"
+ },
+ "vatican-city": {
+  "name": "✝ Leo XIV",
+  "role": "Pope",
+  "since": "2025-05-08"
+ },
+ "venezuela": {
+  "name": "Delcy Rodriguez",
+  "role": "Acting Pres.",
+  "since": "2026-01-05"
+ },
+ "vietnam": {
+  "name": "To Lam",
+  "role": "Gen. Sec.",
+  "since": "2024-08-03"
+ },
+ "yemen": {
+  "name": "Rashad al-Alimi",
+  "role": "Pres.",
+  "since": "2022-04-07"
+ },
+ "zambia": {
+  "name": "Hakainde Hichilema",
+  "role": "Pres.",
+  "since": "2021-08-24"
+ },
+ "zimbabwe": {
+  "name": "Emmerson Mnangagwa",
+  "role": "Pres.",
+  "since": "2017-11-24"
+ }
 }

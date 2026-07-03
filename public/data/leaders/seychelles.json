@@ -1,32 +1,62 @@
 [
-  {
-    "name": "Danny Faure",
-    "role": "President",
-    "start": "2016-10-16",
-    "end": "2020-10-26",
-    "current": false,
-    "tenure": "4y 10d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Wavel Ramkalawan",
-    "role": "President",
-    "start": "2020-10-26",
-    "end": "2025-10-26",
-    "current": false,
-    "tenure": "5y 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Patrick Herminie",
-    "role": "President",
-    "start": "2025-10-26",
-    "end": null,
-    "current": true,
-    "tenure": "8m 7d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "James Mancham",
+  "role": "President",
+  "start": "1976-06-29",
+  "end": "1977-06-05",
+  "current": false,
+  "tenure": "0y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "France-Albert René",
+  "role": "President",
+  "start": "1977-06-05",
+  "end": "2004-07-14",
+  "current": false,
+  "tenure": "27y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "James Michel",
+  "role": "President",
+  "start": "2004-07-14",
+  "end": "2016-10-16",
+  "current": false,
+  "tenure": "12y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Danny Faure",
+  "role": "President",
+  "start": "2016-10-16",
+  "end": "2020-10-26",
+  "current": false,
+  "tenure": "4y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Wavel Ramkalawan",
+  "role": "President",
+  "start": "2020-10-26",
+  "end": "2025-10-26",
+  "current": false,
+  "tenure": "5y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Patrick Herminie",
+  "role": "President",
+  "start": "2025-10-26",
+  "end": null,
+  "current": true,
+  "tenure": "0y 8m",
+  "party": null,
+  "era": null
+ }
 ]

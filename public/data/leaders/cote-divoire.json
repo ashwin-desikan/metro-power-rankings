@@ -1,62 +1,182 @@
 [
-  {
-    "name": "Laurent Gbagbo",
-    "role": "President",
-    "start": "2000-10-26",
-    "end": "2010-12-04",
-    "current": false,
-    "tenure": "10y 1m 8d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Alassane Ouattara",
-    "role": "President",
-    "start": "2010-12-04",
-    "end": null,
-    "current": true,
-    "tenure": "15y 6m 29d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Amadou Gon Coulibaly",
-    "role": "Prime Minister",
-    "start": "2017-01-10",
-    "end": "2020-07-08",
-    "current": false,
-    "tenure": "3y 5m 28d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Hamed Bakayoko",
-    "role": "Prime Minister",
-    "start": "2020-07-08",
-    "end": "2021-03-08",
-    "current": false,
-    "tenure": "8m 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Patrick Achi",
-    "role": "Prime Minister",
-    "start": "2021-03-08",
-    "end": "2023-10-06",
-    "current": false,
-    "tenure": "2y 6m 28d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Robert Beugré Mambé",
-    "role": "Prime Minister",
-    "start": "2023-10-16",
-    "end": null,
-    "current": true,
-    "tenure": "2y 8m 17d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Félix Houphouët-Boigny",
+  "role": "President",
+  "start": "1960-11-03",
+  "end": "1993-12-07",
+  "current": false,
+  "tenure": "33y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Alassane Ouattara",
+  "role": "Prime Minister",
+  "start": "1990-11-07",
+  "end": "1993-12-09",
+  "current": false,
+  "tenure": "3y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Henri Konan Bédié",
+  "role": "President",
+  "start": "1993-12-07",
+  "end": "1999-12-24",
+  "current": false,
+  "tenure": "6y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Daniel Kablan Duncan",
+  "role": "Prime Minister",
+  "start": "1993-12-10",
+  "end": "2000-01-18",
+  "current": false,
+  "tenure": "6y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Robert Guéï",
+  "role": "President",
+  "start": "1999-12-24",
+  "end": "2000-10-26",
+  "current": false,
+  "tenure": "0y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Seydou Diarra",
+  "role": "Prime Minister",
+  "start": "2000-01-18",
+  "end": "2000-10-26",
+  "current": false,
+  "tenure": "0y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Laurent Gbagbo",
+  "role": "President",
+  "start": "2000-10-26",
+  "end": "2011-04-11",
+  "current": false,
+  "tenure": "10y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Pascal Affi N'Guessan",
+  "role": "Prime Minister",
+  "start": "2000-10-27",
+  "end": "2003-02-10",
+  "current": false,
+  "tenure": "2y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Seydou Diarra",
+  "role": "Prime Minister",
+  "start": "2003-02-10",
+  "end": "2005-12-07",
+  "current": false,
+  "tenure": "2y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Charles Konan Banny",
+  "role": "Prime Minister",
+  "start": "2005-12-07",
+  "end": "2007-04-04",
+  "current": false,
+  "tenure": "1y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Guillaume Soro",
+  "role": "Prime Minister",
+  "start": "2007-04-04",
+  "end": "2012-03-13",
+  "current": false,
+  "tenure": "4y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Alassane Ouattara",
+  "role": "President",
+  "start": "2010-12-04",
+  "end": null,
+  "current": true,
+  "tenure": "15y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Jeannot Ahoussou-Kouadio",
+  "role": "Prime Minister",
+  "start": "2012-03-13",
+  "end": "2012-11-21",
+  "current": false,
+  "tenure": "0y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Daniel Kablan Duncan",
+  "role": "Prime Minister",
+  "start": "2012-11-21",
+  "end": "2017-01-09",
+  "current": false,
+  "tenure": "4y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Amadou Gon Coulibaly",
+  "role": "Prime Minister",
+  "start": "2017-01-11",
+  "end": "2020-07-08",
+  "current": false,
+  "tenure": "3y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Hamed Bakayoko",
+  "role": "Prime Minister",
+  "start": "2020-07-30",
+  "end": "2021-03-10",
+  "current": false,
+  "tenure": "0y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Patrick Achi",
+  "role": "Prime Minister",
+  "start": "2021-03-26",
+  "end": "2023-10-16",
+  "current": false,
+  "tenure": "2y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Robert Beugré Mambé",
+  "role": "Prime Minister",
+  "start": "2023-10-16",
+  "end": null,
+  "current": true,
+  "tenure": "2y 8m",
+  "party": null,
+  "era": null
+ }
 ]

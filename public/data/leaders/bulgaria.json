@@ -1,5 +1,75 @@
 [
   {
+    "name": "👑 Alexander I",
+    "role": "Monarch",
+    "start": "1879-07-05",
+    "end": "1886-09-07",
+    "current": false,
+    "tenure": "7y 2m 2d",
+    "party": null,
+    "era": "Principality of Bulgaria"
+  },
+  {
+    "name": "👑 Ferdinand I",
+    "role": "Monarch",
+    "start": "1887-08-14",
+    "end": "1918-10-03",
+    "current": false,
+    "tenure": "31y 1m 19d",
+    "party": null,
+    "era": "Kingdom of Bulgaria"
+  },
+  {
+    "name": "👑 Boris III",
+    "role": "Monarch",
+    "start": "1918-10-03",
+    "end": "1943-08-28",
+    "current": false,
+    "tenure": "24y 10m 25d",
+    "party": null,
+    "era": "Kingdom of Bulgaria"
+  },
+  {
+    "name": "👑 Simeon II",
+    "role": "Monarch",
+    "start": "1943-08-28",
+    "end": "1946-09-15",
+    "current": false,
+    "tenure": "3y 18d",
+    "party": null,
+    "era": "Kingdom of Bulgaria"
+  },
+  {
+    "name": "Georgi Dimitrov",
+    "role": "Prime Minister",
+    "start": "1946-11-23",
+    "end": "1949-07-02",
+    "current": false,
+    "tenure": "2y 7m 9d",
+    "party": null,
+    "era": "People's Republic of Bulgaria"
+  },
+  {
+    "name": "Vulko Chervenkov",
+    "role": "First Secretary",
+    "start": "1950-01-16",
+    "end": "1954-03-04",
+    "current": false,
+    "tenure": "4y 1m 16d",
+    "party": null,
+    "era": "People's Republic of Bulgaria"
+  },
+  {
+    "name": "⚠️ Todor Zhivkov",
+    "role": "First Secretary",
+    "start": "1954-03-04",
+    "end": "1989-11-10",
+    "current": false,
+    "tenure": "35y 8m 6d",
+    "party": null,
+    "era": "People's Republic of Bulgaria"
+  },
+  {
     "name": "Zhelyu Zhelev",
     "role": "President",
     "start": "1990-08-01",

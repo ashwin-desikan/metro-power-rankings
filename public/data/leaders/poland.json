@@ -173,21 +173,11 @@
     "name": "👑 Sigismund II Augustus",
     "role": "King",
     "start": "1548-01-01",
-    "end": "1569-01-01",
-    "current": false,
-    "tenure": "21y 0d",
-    "party": "medieval; year-level dates",
-    "era": "Kingdom of Poland"
-  },
-  {
-    "name": "👑 Sigismund II Augustus",
-    "role": "King",
-    "start": "1569-01-01",
     "end": "1572-01-01",
     "current": false,
-    "tenure": "3y 0d",
+    "tenure": "24y 0d",
     "party": "medieval; year-level dates",
-    "era": "Polish-Lithuanian Commonwealth"
+    "era": "Kingdom of Poland"
   },
   {
     "name": "👑 Henry de Valois",

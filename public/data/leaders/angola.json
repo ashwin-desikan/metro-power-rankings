@@ -1,22 +1,92 @@
 [
-  {
-    "name": "João Lourenço",
-    "role": "President",
-    "start": "2017-08-23",
-    "end": "2017-09-26",
-    "current": false,
-    "tenure": "1m 3d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "João Lourenço",
-    "role": "President",
-    "start": "2017-09-26",
-    "end": null,
-    "current": true,
-    "tenure": "8y 9m 7d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Agostinho Neto",
+  "role": "President",
+  "start": "1975-11-11",
+  "end": "1979-09-10",
+  "current": false,
+  "tenure": "3y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Lopo do Nascimento",
+  "role": "Prime Minister",
+  "start": "1975-11-11",
+  "end": "1978-12-09",
+  "current": false,
+  "tenure": "3y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "José Eduardo dos Santos",
+  "role": "President",
+  "start": "1979-09-21",
+  "end": "2017-09-26",
+  "current": false,
+  "tenure": "38y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Fernando José de França Dias Van-Dúnem",
+  "role": "Prime Minister",
+  "start": "1991-07-19",
+  "end": "1992-12-02",
+  "current": false,
+  "tenure": "1y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Marcolino Moco",
+  "role": "Prime Minister",
+  "start": "1992-12-02",
+  "end": "1996-06-03",
+  "current": false,
+  "tenure": "3y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Fernando José de França Dias Van-Dúnem",
+  "role": "Prime Minister",
+  "start": "1996-06-03",
+  "end": "1999-01-29",
+  "current": false,
+  "tenure": "2y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Fernando da Piedade Dias dos Santos",
+  "role": "Prime Minister",
+  "start": "2002-12-06",
+  "end": "2008-09-30",
+  "current": false,
+  "tenure": "5y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Paulo Kassoma",
+  "role": "Prime Minister",
+  "start": "2008-09-30",
+  "end": "2010-02-04",
+  "current": false,
+  "tenure": "1y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "João Lourenço",
+  "role": "President",
+  "start": "2017-09-26",
+  "end": null,
+  "current": true,
+  "tenure": "8y 9m",
+  "party": null,
+  "era": null
+ }
 ]

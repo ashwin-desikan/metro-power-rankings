@@ -22,6 +22,8 @@ import { sportIcon } from "@/lib/sportLabels";
 import ChampionLogo from "@/app/teams/_shared/ChampionLogo";
 import { getLeagueHubsForCountry } from "@/lib/leagueHubs";
 import LeadersSection from "./LeadersSection";
+import PowerSection from "./PowerSection";
+import { getCountryPowerSeries } from "@/lib/powerHistory";
 import { countryHasLeaders, getLeaders } from "@/lib/leaders";
 import OrgsSection from "./OrgsSection";
 import ConflictsSection from "./ConflictsSection";
@@ -432,6 +434,8 @@ export default async function CountryDetailPage({ params }: Props) {
           <OrgsSection countrySlug={slug} />
 
           <LeadersSection countrySlug={slug} />
+
+          <PowerSection series={getCountryPowerSeries(slug)} name={country.name} />
           <ConflictsSection wars={conflictWars} />
           <BillionairesSection list={billionaires} />
 

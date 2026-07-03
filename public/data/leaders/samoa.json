@@ -1,52 +1,172 @@
 [
-  {
-    "name": "Tuilaʻepa Saʻilele Malielegaoi",
-    "role": "Prime Minister",
-    "start": "1998-11-23",
-    "end": "2021-05-24",
-    "current": false,
-    "tenure": "22y 6m 1d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Tuilaʻepa Saʻilele Malielegaoi",
-    "role": "President",
-    "start": "1998-11-23",
-    "end": "2007-06-16",
-    "current": false,
-    "tenure": "8y 6m 24d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Tufuga Efi",
-    "role": "President",
-    "start": "2007-06-16",
-    "end": "2017-07-21",
-    "current": false,
-    "tenure": "10y 1m 5d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Va'aletoa Sualauvi II",
-    "role": "President",
-    "start": "2017-07-21",
-    "end": null,
-    "current": true,
-    "tenure": "8y 11m 12d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Fiamē Naomi Mataʻafa",
-    "role": "Prime Minister",
-    "start": "2021-05-24",
-    "end": null,
-    "current": true,
-    "tenure": "5y 1m 9d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Tupua Tamasese Mea'ole",
+  "role": "Head of State",
+  "start": "1962-01-01",
+  "end": "1963-04-05",
+  "current": false,
+  "tenure": "1y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Malietoa Tanumafili II",
+  "role": "Head of State",
+  "start": "1962-01-01",
+  "end": "2007-05-11",
+  "current": false,
+  "tenure": "45y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Fiamē Mataʻafa Faumuina Mulinuʻu II",
+  "role": "Prime Minister",
+  "start": "1962-01-01",
+  "end": "1970-02-24",
+  "current": false,
+  "tenure": "8y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Tupua Tamasese Lealofi IV",
+  "role": "Prime Minister",
+  "start": "1970-02-24",
+  "end": "1973-03-20",
+  "current": false,
+  "tenure": "3y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Fiamē Mataʻafa Faumuina Mulinuʻu II",
+  "role": "Prime Minister",
+  "start": "1973-03-20",
+  "end": "1975-05-20",
+  "current": false,
+  "tenure": "2y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Tupua Tamasese Lealofi IV",
+  "role": "Prime Minister",
+  "start": "1975-05-20",
+  "end": "1976-03-24",
+  "current": false,
+  "tenure": "0y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Tui Ātua Tupua Tamasese Efi",
+  "role": "Prime Minister",
+  "start": "1976-03-24",
+  "end": "1982-04-13",
+  "current": false,
+  "tenure": "6y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Va'ai Kolone",
+  "role": "Prime Minister",
+  "start": "1982-04-13",
+  "end": "1982-09-18",
+  "current": false,
+  "tenure": "0y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Tui Ātua Tupua Tamasese Efi",
+  "role": "Prime Minister",
+  "start": "1982-09-18",
+  "end": "1982-12-31",
+  "current": false,
+  "tenure": "0y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Tofilau Eti Alesana",
+  "role": "Prime Minister",
+  "start": "1982-12-31",
+  "end": "1985-12-31",
+  "current": false,
+  "tenure": "3y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Va'ai Kolone",
+  "role": "Prime Minister",
+  "start": "1985-12-31",
+  "end": "1988-04-07",
+  "current": false,
+  "tenure": "2y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Tofilau Eti Alesana",
+  "role": "Prime Minister",
+  "start": "1988-04-07",
+  "end": "1998-11-23",
+  "current": false,
+  "tenure": "10y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Tuilaʻepa Saʻilele Malielegaoi",
+  "role": "Prime Minister",
+  "start": "1998-11-23",
+  "end": "2021-07-24",
+  "current": false,
+  "tenure": "22y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Tui Ātua Tupua Tamasese Efi",
+  "role": "Head of State",
+  "start": "2007-06-20",
+  "end": "2017-07-21",
+  "current": false,
+  "tenure": "10y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Tuimalealiʻifano Vaʻaletoʻa Sualauvi II",
+  "role": "Head of State",
+  "start": "2017-07-21",
+  "end": null,
+  "current": true,
+  "tenure": "8y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Fiamē Naomi Mataʻafa",
+  "role": "Prime Minister",
+  "start": "2021-07-24",
+  "end": "2025-09-16",
+  "current": false,
+  "tenure": "4y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Laʻauli Leuatea Schmidt",
+  "role": "Prime Minister",
+  "start": "2025-09-16",
+  "end": null,
+  "current": true,
+  "tenure": "0y 9m",
+  "party": null,
+  "era": null
+ }
 ]

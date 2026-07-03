@@ -1,32 +1,22 @@
 [
-  {
-    "name": "Ismail Omar Guelleh",
-    "role": "President",
-    "start": "1999-05-08",
-    "end": null,
-    "current": true,
-    "tenure": "27y 1m 25d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Dileita Mohamed Dileita",
-    "role": "Prime Minister",
-    "start": "2001-03-07",
-    "end": "2013-04-01",
-    "current": false,
-    "tenure": "12y 25d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Abdoulkader Kamil Mohamed",
-    "role": "Prime Minister",
-    "start": "2013-04-01",
-    "end": null,
-    "current": true,
-    "tenure": "13y 3m 2d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Hassan Gouled Aptidon",
+  "role": "President",
+  "start": "1977-06-27",
+  "end": "1999-05-08",
+  "current": false,
+  "tenure": "21y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ismail Omar Guelleh",
+  "role": "President",
+  "start": "1999-05-08",
+  "end": null,
+  "current": true,
+  "tenure": "27y 1m",
+  "party": null,
+  "era": null
+ }
 ]

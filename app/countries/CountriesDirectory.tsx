@@ -20,10 +20,11 @@ export type DirectoryCountry = {
   capital: string | null;
   disputed?: boolean;
   currentLeader: { name: string; role: string; since?: string; second?: { name: string; role: string } } | null;
+  power: { share: number | null; rank: number; tier: string } | null;
   children: DirectoryCountry[];
 };
 
-type SortKey = "pop" | "metroCount" | "scoreTotal" | "name" | "since";
+type SortKey = "pop" | "metroCount" | "scoreTotal" | "power" | "name" | "since";
 type SortDir = "asc" | "desc";
 
 const CONTINENTS = [
@@ -46,6 +47,19 @@ function fmtPop(n: number | null): string {
 function fmtScore(n: number | null): string {
   if (n == null) return "—";
   return n.toFixed(1);
+}
+
+const TIER_COLOR: Record<string, string> = {
+  "Superpower": "#f5c518", "Great Power": "#e8833a", "Middle Power": "#4a9edb", "Regional": "#7a8a99", "Minor": "#464659",
+};
+function PowerCell({ power, small }: { power: DirectoryCountry["power"]; small?: boolean }) {
+  if (!power || power.share == null) return <span className="text-[var(--text-dim)]">—</span>;
+  return (
+    <span className="inline-flex items-center gap-1.5 justify-end" title={`${power.tier} · world rank #${power.rank}`}>
+      <span className="inline-block w-2 h-2 rounded-sm" style={{ background: TIER_COLOR[power.tier] }} />
+      <span style={{ color: small ? "var(--text-muted)" : "var(--accent)" }}>{(power.share * 100).toFixed(1)}%</span>
+    </span>
+  );
 }
 
 // Flag image for a country/constituent slug. Images (not emoji) because Windows
@@ -118,6 +132,7 @@ export default function CountriesDirectory({
       else if (sortKey === "pop") { av = a.pop; bv = b.pop; }
       else if (sortKey === "metroCount") { av = a.metroCount; bv = b.metroCount; }
       else if (sortKey === "scoreTotal") { av = a.scoreTotal; bv = b.scoreTotal; }
+      else if (sortKey === "power") { av = a.power?.share ?? null; bv = b.power?.share ?? null; }
       else if (sortKey === "since") { av = a.currentLeader?.since ?? null; bv = b.currentLeader?.since ?? null; }
       if (av == null && bv == null) return 0;
       if (av == null) return 1;
@@ -177,6 +192,7 @@ export default function CountriesDirectory({
               <th className="px-2 sm:px-4 py-3 text-right font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }} onClick={() => toggleSort("pop")}>Population{arrow("pop")}</th>
               <th className="hidden sm:table-cell px-4 py-3 text-right font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }} onClick={() => toggleSort("metroCount")}>Metros{arrow("metroCount")}</th>
               <th className="hidden sm:table-cell px-4 py-3 text-right font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }} onClick={() => toggleSort("scoreTotal")}>Score{arrow("scoreTotal")}</th>
+              <th className="px-2 sm:px-4 py-3 text-right font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }} onClick={() => toggleSort("power")} title="Share of world power today (see The Great Powers)">Power{arrow("power")}</th>
             </tr>
           </thead>
           <tbody>
@@ -273,15 +289,20 @@ function CountryRows({
         <td className="px-2 sm:px-4 py-3 text-right text-[var(--text)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{fmtPop(country.pop)}</td>
         <td className="hidden sm:table-cell px-4 py-3 text-right text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{country.metroCount}</td>
         <td className="hidden sm:table-cell px-4 py-3 text-right font-semibold" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>{fmtScore(country.scoreTotal)}</td>
+        <td className="px-2 sm:px-4 py-3 text-right" style={{ fontFamily: "'JetBrains Mono', monospace" }}><PowerCell power={country.power} /></td>
       </tr>
       {isOpen ? (
         <tr className="sm:hidden border-b border-[var(--border)]" style={{ backgroundColor: "rgba(255,255,255,0.025)" }}>
           <td />
-          <td colSpan={7} className="px-2 py-3">
+          <td colSpan={8} className="px-2 py-3">
             <dl className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs">
               <div className="flex justify-between gap-2">
                 <dt className="text-[var(--text-dim)]">Score</dt>
                 <dd className="font-semibold" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>{fmtScore(country.scoreTotal)}</dd>
+              </div>
+              <div className="flex justify-between gap-2">
+                <dt className="text-[var(--text-dim)]">Power</dt>
+                <dd style={{ fontFamily: "'JetBrains Mono', monospace" }}><PowerCell power={country.power} /></dd>
               </div>
               <div className="flex justify-between gap-2">
                 <dt className="text-[var(--text-dim)]">Metros</dt>
@@ -338,6 +359,7 @@ function CountryRows({
               <td className="px-2 sm:px-4 py-2 text-right text-[var(--text-muted)] text-xs" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{fmtPop(child.pop)}</td>
               <td className="hidden sm:table-cell px-4 py-2 text-right text-[var(--text-dim)] text-xs" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{child.metroCount}</td>
               <td className="hidden sm:table-cell px-4 py-2 text-right text-[var(--text-muted)] text-xs" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{fmtScore(child.scoreTotal)}</td>
+              <td className="px-2 sm:px-4 py-2 text-right text-xs" style={{ fontFamily: "'JetBrains Mono', monospace" }}><PowerCell power={child.power} small /></td>
             </tr>
           ))
         : null}

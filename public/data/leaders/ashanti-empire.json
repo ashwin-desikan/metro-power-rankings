@@ -1,0 +1,122 @@
+[
+ {
+  "name": "👑 Osei Tutu I",
+  "role": "Asantehene",
+  "start": "1701-01-01",
+  "end": "1717-01-01",
+  "current": false,
+  "tenure": "16y 0d",
+  "party": "year-level backbone",
+  "era": "Ashanti Empire"
+ },
+ {
+  "name": "👑 Opoku Ware I",
+  "role": "Asantehene",
+  "start": "1720-01-01",
+  "end": "1750-01-01",
+  "current": false,
+  "tenure": "30y 0d",
+  "party": "year-level backbone",
+  "era": "Ashanti Empire"
+ },
+ {
+  "name": "👑 Kusi Oboadum",
+  "role": "Asantehene",
+  "start": "1750-01-01",
+  "end": "1764-01-01",
+  "current": false,
+  "tenure": "14y 0d",
+  "party": "year-level backbone",
+  "era": "Ashanti Empire"
+ },
+ {
+  "name": "👑 Osei Kwadwo",
+  "role": "Asantehene",
+  "start": "1764-01-01",
+  "end": "1777-01-01",
+  "current": false,
+  "tenure": "13y 0d",
+  "party": "year-level backbone",
+  "era": "Ashanti Empire"
+ },
+ {
+  "name": "👑 Osei Kwame Panyin",
+  "role": "Asantehene",
+  "start": "1777-01-01",
+  "end": "1803-01-01",
+  "current": false,
+  "tenure": "26y 0d",
+  "party": "year-level backbone",
+  "era": "Ashanti Empire"
+ },
+ {
+  "name": "👑 Opoku Fofie",
+  "role": "Asantehene",
+  "start": "1803-01-01",
+  "end": "1804-01-01",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone",
+  "era": "Ashanti Empire"
+ },
+ {
+  "name": "👑 Osei Bonsu",
+  "role": "Asantehene",
+  "start": "1804-01-01",
+  "end": "1824-01-01",
+  "current": false,
+  "tenure": "20y 0d",
+  "party": "year-level backbone",
+  "era": "Ashanti Empire"
+ },
+ {
+  "name": "👑 Osei Yaw Akoto",
+  "role": "Asantehene",
+  "start": "1824-01-01",
+  "end": "1834-01-01",
+  "current": false,
+  "tenure": "10y 0d",
+  "party": "year-level backbone",
+  "era": "Ashanti Empire"
+ },
+ {
+  "name": "👑 Kwaku Dua I",
+  "role": "Asantehene",
+  "start": "1834-01-01",
+  "end": "1867-01-01",
+  "current": false,
+  "tenure": "33y 0d",
+  "party": "year-level backbone",
+  "era": "Ashanti Empire"
+ },
+ {
+  "name": "👑 Kofi Karikari",
+  "role": "Asantehene",
+  "start": "1867-01-01",
+  "end": "1874-01-01",
+  "current": false,
+  "tenure": "7y 0d",
+  "party": "year-level backbone",
+  "era": "Ashanti Empire"
+ },
+ {
+  "name": "👑 Mensa Bonsu",
+  "role": "Asantehene",
+  "start": "1874-01-01",
+  "end": "1883-01-01",
+  "current": false,
+  "tenure": "9y 0d",
+  "party": "year-level backbone",
+  "era": "Ashanti Empire"
+ },
+ {
+  "name": "👑 Prempeh I",
+  "role": "Asantehene",
+  "start": "1888-01-01",
+  "end": "1896-01-01",
+  "current": false,
+  "tenure": "8y 0d",
+  "party": "year-level backbone",
+  "era": "Ashanti Empire"
+ }
+]

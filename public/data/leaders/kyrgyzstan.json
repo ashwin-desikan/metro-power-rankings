@@ -1,5 +1,15 @@
 [
   {
+    "name": "Askar Akayev",
+    "role": "President",
+    "start": "1991-10-28",
+    "end": "2005-03-24",
+    "current": false,
+    "tenure": "13y 4m 24d",
+    "party": null,
+    "era": "Republic of Kyrgyzstan"
+  },
+  {
     "name": "Kurmanbek Bakiyev",
     "role": "President",
     "start": "2005-07-10",
@@ -133,19 +143,9 @@
     "name": "Ulukbek Maripov",
     "role": "Prime Minister",
     "start": "2021-02-03",
-    "end": "2021-05-05",
-    "current": false,
-    "tenure": "3m 2d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Ulukbek Maripov",
-    "role": "Prime Minister",
-    "start": "2021-05-05",
     "end": "2021-10-12",
     "current": false,
-    "tenure": "5m 7d",
+    "tenure": "8m 9d",
     "party": null,
     "era": null
   },

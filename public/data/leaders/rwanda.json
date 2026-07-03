@@ -1,42 +1,182 @@
 [
-  {
-    "name": "Paul Kagame",
-    "role": "President",
-    "start": "2000-03-24",
-    "end": null,
-    "current": true,
-    "tenure": "26y 3m 9d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Anastase Murekezi",
-    "role": "Prime Minister",
-    "start": "2014-07-24",
-    "end": "2017-08-30",
-    "current": false,
-    "tenure": "3y 1m 6d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Édouard Ngirente",
-    "role": "Prime Minister",
-    "start": "2017-08-30",
-    "end": "2025-07-25",
-    "current": false,
-    "tenure": "7y 10m 25d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Justin Nsengiyumva",
-    "role": "Prime Minister",
-    "start": "2025-07-25",
-    "end": null,
-    "current": true,
-    "tenure": "11m 8d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Dominique Mbonyumutwa",
+  "role": "President",
+  "start": "1961-01-28",
+  "end": "1961-10-26",
+  "current": false,
+  "tenure": "0y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Grégoire Kayibanda",
+  "role": "Prime Minister",
+  "start": "1961-01-28",
+  "end": "1962-07-01",
+  "current": false,
+  "tenure": "1y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Grégoire Kayibanda",
+  "role": "President",
+  "start": "1961-10-26",
+  "end": "1973-07-05",
+  "current": false,
+  "tenure": "11y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Juvénal Habyarimana",
+  "role": "President",
+  "start": "1973-07-05",
+  "end": "1994-04-06",
+  "current": false,
+  "tenure": "20y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Sylvestre Nsanzimana",
+  "role": "Prime Minister",
+  "start": "1991-10-12",
+  "end": "1992-04-02",
+  "current": false,
+  "tenure": "0y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Dismas Nsengiyaremye",
+  "role": "Prime Minister",
+  "start": "1992-04-02",
+  "end": "1993-07-18",
+  "current": false,
+  "tenure": "1y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Agathe Uwilingiyimana",
+  "role": "Prime Minister",
+  "start": "1993-07-18",
+  "end": "1994-04-07",
+  "current": false,
+  "tenure": "0y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Théodore Sindikubwabo",
+  "role": "President",
+  "start": "1994-04-09",
+  "end": "1994-07-19",
+  "current": false,
+  "tenure": "0y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Jean Kambanda",
+  "role": "Prime Minister",
+  "start": "1994-04-09",
+  "end": "1994-07-19",
+  "current": false,
+  "tenure": "0y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Pasteur Bizimungu",
+  "role": "President",
+  "start": "1994-07-19",
+  "end": "2000-03-23",
+  "current": false,
+  "tenure": "5y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Faustin Twagiramungu",
+  "role": "Prime Minister",
+  "start": "1994-07-19",
+  "end": "1995-08-31",
+  "current": false,
+  "tenure": "1y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Pierre-Célestin Rwigema",
+  "role": "Prime Minister",
+  "start": "1995-08-31",
+  "end": "2000-03-08",
+  "current": false,
+  "tenure": "4y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bernard Makuza",
+  "role": "Prime Minister",
+  "start": "2000-03-08",
+  "end": "2011-10-07",
+  "current": false,
+  "tenure": "11y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Paul Kagame",
+  "role": "President",
+  "start": "2000-04-22",
+  "end": null,
+  "current": true,
+  "tenure": "26y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Pierre Habumuremyi",
+  "role": "Prime Minister",
+  "start": "2011-10-07",
+  "end": "2014-07-24",
+  "current": false,
+  "tenure": "2y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Anastase Murekezi",
+  "role": "Prime Minister",
+  "start": "2014-07-24",
+  "end": "2017-08-30",
+  "current": false,
+  "tenure": "3y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Édouard Ngirente",
+  "role": "Prime Minister",
+  "start": "2017-08-30",
+  "end": "2025-07-25",
+  "current": false,
+  "tenure": "7y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Justin Nsengiyumva",
+  "role": "Prime Minister",
+  "start": "2025-07-25",
+  "end": null,
+  "current": false,
+  "tenure": "0y 11m",
+  "party": null,
+  "era": null
+ }
 ]

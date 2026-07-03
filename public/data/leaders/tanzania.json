@@ -13,21 +13,11 @@
     "name": "Julius Nyerere",
     "role": "President",
     "start": "1962-12-09",
-    "end": "1964-04-26",
-    "current": false,
-    "tenure": "1y 4m 17d",
-    "party": "TANU",
-    "era": "Tanganyika"
-  },
-  {
-    "name": "Julius Nyerere",
-    "role": "President",
-    "start": "1964-04-26",
     "end": "1985-11-05",
     "current": false,
-    "tenure": "1964-1985",
-    "party": "TANU / CCM",
-    "era": "Union & Ujamaa"
+    "tenure": "22y 10m 27d",
+    "party": "TANU",
+    "era": "Tanganyika"
   },
   {
     "name": "Ali Hassan Mwinyi",

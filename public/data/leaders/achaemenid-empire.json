@@ -1,0 +1,92 @@
+[
+ {
+  "name": "👑 Cyrus the Great",
+  "role": "King of Kings",
+  "start": "-0559-01-01",
+  "end": "-0530-01-01",
+  "current": false,
+  "tenure": "29y 0d",
+  "party": "year-level backbone",
+  "era": "Achaemenid Empire"
+ },
+ {
+  "name": "👑 Cambyses II",
+  "role": "King of Kings",
+  "start": "-0530-01-01",
+  "end": "-0522-01-01",
+  "current": false,
+  "tenure": "8y 0d",
+  "party": "year-level backbone",
+  "era": "Achaemenid Empire"
+ },
+ {
+  "name": "👑 Darius I",
+  "role": "King of Kings",
+  "start": "-0522-01-01",
+  "end": "-0486-01-01",
+  "current": false,
+  "tenure": "36y 0d",
+  "party": "year-level backbone",
+  "era": "Achaemenid Empire"
+ },
+ {
+  "name": "👑 Xerxes I",
+  "role": "King of Kings",
+  "start": "-0486-01-01",
+  "end": "-0465-01-01",
+  "current": false,
+  "tenure": "21y 0d",
+  "party": "year-level backbone",
+  "era": "Achaemenid Empire"
+ },
+ {
+  "name": "👑 Artaxerxes I",
+  "role": "King of Kings",
+  "start": "-0465-01-01",
+  "end": "-0424-01-01",
+  "current": false,
+  "tenure": "41y 0d",
+  "party": "year-level backbone",
+  "era": "Achaemenid Empire"
+ },
+ {
+  "name": "👑 Darius II",
+  "role": "King of Kings",
+  "start": "-0423-01-01",
+  "end": "-0404-01-01",
+  "current": false,
+  "tenure": "19y 0d",
+  "party": "year-level backbone",
+  "era": "Achaemenid Empire"
+ },
+ {
+  "name": "👑 Artaxerxes II",
+  "role": "King of Kings",
+  "start": "-0404-01-01",
+  "end": "-0358-01-01",
+  "current": false,
+  "tenure": "46y 0d",
+  "party": "year-level backbone",
+  "era": "Achaemenid Empire"
+ },
+ {
+  "name": "👑 Artaxerxes III",
+  "role": "King of Kings",
+  "start": "-0358-01-01",
+  "end": "-0338-01-01",
+  "current": false,
+  "tenure": "20y 0d",
+  "party": "year-level backbone",
+  "era": "Achaemenid Empire"
+ },
+ {
+  "name": "👑 Darius III",
+  "role": "King of Kings",
+  "start": "-0336-01-01",
+  "end": "-0330-01-01",
+  "current": false,
+  "tenure": "6y 0d",
+  "party": "year-level backbone",
+  "era": "Achaemenid Empire"
+ }
+]

@@ -1,5 +1,15 @@
 [
   {
+    "name": "George Borg Olivier",
+    "role": "Prime Minister",
+    "start": "1964-09-21",
+    "end": "1971-06-21",
+    "current": false,
+    "tenure": "6y 9m 0d",
+    "party": null,
+    "era": "State of Malta"
+  },
+  {
     "name": "Dom Mintoff",
     "role": "Prime Minister",
     "start": "1971-01-01",

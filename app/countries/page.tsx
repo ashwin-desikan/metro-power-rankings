@@ -18,6 +18,7 @@ import {
 import CountriesDirectory, {
   type DirectoryCountry,
 } from "./CountriesDirectory";
+import { getCurrentPowerBySlug } from "@/lib/powerHistory";
 
 export const dynamicParams = false;
 
@@ -122,7 +123,7 @@ function pickCurrentLeader(
 
 type LeaderOverlay = Record<string, { name: string; role: string; since?: string; second?: { name: string; role: string } }>;
 
-function toDirectoryRow(c: ReturnType<typeof getAllCountries>[number], overlay: LeaderOverlay): DirectoryCountry {
+function toDirectoryRow(c: ReturnType<typeof getAllCountries>[number], overlay: LeaderOverlay, power: Record<string, { share: number | null; rank: number; tier: string }>): DirectoryCountry {
   const children = getChildrenOf(c.name).map((child) => ({
     slug: child.slug,
     name: child.name,
@@ -135,6 +136,7 @@ function toDirectoryRow(c: ReturnType<typeof getAllCountries>[number], overlay: 
     capital: child.capital,
     disputed: child.disputed,
     currentLeader: overlay[child.slug] ?? pickCurrentLeader(child.slug),
+    power: power[child.slug] ?? null,
     children: [],
   }));
   return {
@@ -149,6 +151,7 @@ function toDirectoryRow(c: ReturnType<typeof getAllCountries>[number], overlay: 
     capital: c.capital,
     disputed: c.disputed,
     currentLeader: overlay[c.slug] ?? pickCurrentLeader(c.slug),
+    power: power[c.slug] ?? null,
     children,
   };
 }
@@ -156,7 +159,8 @@ function toDirectoryRow(c: ReturnType<typeof getAllCountries>[number], overlay: 
 export default async function CountriesIndexPage() {
   const overlay = await getCurrentLeaderOverlay();
   const tops = getTopLevelCountries();
-  const directory: DirectoryCountry[] = tops.map((c) => toDirectoryRow(c, overlay));
+  const power = getCurrentPowerBySlug();
+  const directory: DirectoryCountry[] = tops.map((c) => toDirectoryRow(c, overlay, power));
 
   const collectionLd = {
     "@context": "https://schema.org",

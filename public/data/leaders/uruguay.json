@@ -43,19 +43,9 @@
     "name": "José Batlle y Ordóñez",
     "role": "President",
     "start": "1903-01-01",
-    "end": "1911-01-01",
-    "current": false,
-    "tenure": "8y 0d",
-    "party": "backbone; year-level dates",
-    "era": "Oriental Republic of Uruguay"
-  },
-  {
-    "name": "José Batlle y Ordóñez",
-    "role": "President",
-    "start": "1911-01-01",
     "end": "1931-01-01",
     "current": false,
-    "tenure": "20y 0d",
+    "tenure": "28y 0d",
     "party": "backbone; year-level dates",
     "era": "Oriental Republic of Uruguay"
   },

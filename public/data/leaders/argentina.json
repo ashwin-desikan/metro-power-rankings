@@ -283,20 +283,10 @@
     "name": "Juan Perón",
     "role": "President",
     "start": "1946-06-04",
-    "end": "1952-06-04",
-    "current": false,
-    "tenure": "First term",
-    "party": "Labour Party",
-    "era": "Peronist Era"
-  },
-  {
-    "name": "Juan Perón",
-    "role": "President",
-    "start": "1952-06-04",
     "end": "1955-09-21",
     "current": false,
-    "tenure": "Second term; ousted by coup",
-    "party": "Peronist Party",
+    "tenure": "9y 3m 17d",
+    "party": "Labour Party",
     "era": "Peronist Era"
   },
   {

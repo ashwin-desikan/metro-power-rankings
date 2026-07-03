@@ -1,0 +1,102 @@
+[
+  {
+    "name": "👑 Batu Khan",
+    "role": "Khan",
+    "start": "1242-01-01",
+    "end": "1257-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone",
+    "era": "Golden Horde"
+  },
+  {
+    "name": "👑 Berke",
+    "role": "Khan",
+    "start": "1257-01-01",
+    "end": "1266-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Golden Horde"
+  },
+  {
+    "name": "👑 Mengu-Timur",
+    "role": "Khan",
+    "start": "1266-01-01",
+    "end": "1291-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone",
+    "era": "Golden Horde"
+  },
+  {
+    "name": "👑 Toqta",
+    "role": "Khan",
+    "start": "1291-01-01",
+    "end": "1313-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level backbone",
+    "era": "Golden Horde"
+  },
+  {
+    "name": "👑 Öz Beg Khan",
+    "role": "Khan",
+    "start": "1313-01-01",
+    "end": "1342-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level backbone",
+    "era": "Golden Horde"
+  },
+  {
+    "name": "👑 Jani Beg",
+    "role": "Khan",
+    "start": "1342-01-01",
+    "end": "1380-01-01",
+    "current": false,
+    "tenure": "38y 0d",
+    "party": "year-level backbone",
+    "era": "Golden Horde"
+  },
+  {
+    "name": "👑 Tokhtamysh",
+    "role": "Khan",
+    "start": "1380-01-01",
+    "end": "1419-01-01",
+    "current": false,
+    "tenure": "39y 0d",
+    "party": "year-level backbone",
+    "era": "Golden Horde"
+  },
+  {
+    "name": "👑 Ulugh Muhammad",
+    "role": "Khan",
+    "start": "1419-01-01",
+    "end": "1435-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone",
+    "era": "Golden Horde"
+  },
+  {
+    "name": "👑 Küchük Muhammad",
+    "role": "Khan",
+    "start": "1435-01-01",
+    "end": "1465-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone",
+    "era": "Golden Horde"
+  },
+  {
+    "name": "👑 Ahmed Khan",
+    "role": "Khan",
+    "start": "1465-01-01",
+    "end": "1502-01-01",
+    "current": false,
+    "tenure": "37y 0d",
+    "party": "year-level backbone",
+    "era": "Golden Horde"
+  }
+]

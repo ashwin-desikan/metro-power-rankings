@@ -1,5 +1,185 @@
 [
   {
+    "name": "Ismail Qemali",
+    "role": "Chairman",
+    "start": "1912-12-04",
+    "end": "1914-01-22",
+    "current": false,
+    "tenure": "1y 1m 18d",
+    "party": null,
+    "era": "Provisional Government"
+  },
+  {
+    "name": "👑 Wilhelm of Wied",
+    "role": "Prince",
+    "start": "1914-03-07",
+    "end": "1914-09-03",
+    "current": false,
+    "tenure": "5m 27d",
+    "party": null,
+    "era": "Principality of Albania"
+  },
+  {
+    "name": "Ahmet Zogu",
+    "role": "President",
+    "start": "1925-01-31",
+    "end": "1928-09-01",
+    "current": false,
+    "tenure": "3y 7m 1d",
+    "party": null,
+    "era": "Albanian Republic"
+  },
+  {
+    "name": "👑 Zog I",
+    "role": "Monarch",
+    "start": "1928-09-01",
+    "end": "1939-04-07",
+    "current": false,
+    "tenure": "10y 7m 6d",
+    "party": null,
+    "era": "Kingdom of Albania"
+  },
+  {
+    "name": "⚠️ Enver Hoxha",
+    "role": "First Secretary",
+    "start": "1944-11-29",
+    "end": "1985-04-11",
+    "current": false,
+    "tenure": "40y 4m 13d",
+    "party": null,
+    "era": "People’s Socialist Republic of Albania"
+  },
+  {
+    "name": "Ramiz Alia",
+    "role": "First Secretary",
+    "start": "1985-04-13",
+    "end": "1991-04-30",
+    "current": false,
+    "tenure": "6y 17d",
+    "party": null,
+    "era": "People’s Socialist Republic of Albania"
+  },
+  {
+    "name": "Ramiz Alia",
+    "role": "President",
+    "start": "1991-04-30",
+    "end": "1992-04-09",
+    "current": false,
+    "tenure": "11m 10d",
+    "party": null,
+    "era": "Republic of Albania"
+  },
+  {
+    "name": "Sali Berisha",
+    "role": "President",
+    "start": "1992-04-09",
+    "end": "1997-07-24",
+    "current": false,
+    "tenure": "5y 3m 15d",
+    "party": null,
+    "era": "Republic of Albania"
+  },
+  {
+    "name": "Aleksandër Meksi",
+    "role": "Prime Minister",
+    "start": "1992-04-13",
+    "end": "1997-07-11",
+    "current": false,
+    "tenure": "5y 2m 28d",
+    "party": null,
+    "era": "Republic of Albania"
+  },
+  {
+    "name": "Rexhep Meidani",
+    "role": "President",
+    "start": "1997-07-24",
+    "end": "2002-07-24",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": "Republic of Albania"
+  },
+  {
+    "name": "Fatos Nano",
+    "role": "Prime Minister",
+    "start": "1997-07-24",
+    "end": "1998-10-02",
+    "current": false,
+    "tenure": "1y 2m 8d",
+    "party": null,
+    "era": "Republic of Albania"
+  },
+  {
+    "name": "Ilir Meta",
+    "role": "Prime Minister",
+    "start": "1999-10-29",
+    "end": "2002-01-29",
+    "current": false,
+    "tenure": "2y 3m 0d",
+    "party": null,
+    "era": "Republic of Albania"
+  },
+  {
+    "name": "Alfred Moisiu",
+    "role": "President",
+    "start": "2002-07-24",
+    "end": "2007-07-24",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": "Republic of Albania"
+  },
+  {
+    "name": "Fatos Nano",
+    "role": "Prime Minister",
+    "start": "2002-07-31",
+    "end": "2005-09-11",
+    "current": false,
+    "tenure": "3y 1m 11d",
+    "party": null,
+    "era": "Republic of Albania"
+  },
+  {
+    "name": "Sali Berisha",
+    "role": "Prime Minister",
+    "start": "2005-09-11",
+    "end": "2013-09-15",
+    "current": false,
+    "tenure": "8y 4d",
+    "party": null,
+    "era": "Republic of Albania"
+  },
+  {
+    "name": "Bamir Topi",
+    "role": "President",
+    "start": "2007-07-24",
+    "end": "2012-07-24",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": "Republic of Albania"
+  },
+  {
+    "name": "Bujar Nishani",
+    "role": "President",
+    "start": "2012-07-24",
+    "end": "2017-07-24",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": "Republic of Albania"
+  },
+  {
+    "name": "Edi Rama",
+    "role": "Prime Minister",
+    "start": "2013-09-15",
+    "end": null,
+    "current": true,
+    "tenure": "12y 9m 18d",
+    "party": null,
+    "era": "Republic of Albania"
+  },
+  {
     "name": "Ilir Meta",
     "role": "President",
     "start": "2017-07-24",

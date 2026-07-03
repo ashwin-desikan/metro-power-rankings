@@ -1,0 +1,52 @@
+[
+ {
+  "name": "👑 Ranjit Singh",
+  "role": "Maharaja",
+  "start": "1801-01-01",
+  "end": "1839-01-01",
+  "current": false,
+  "tenure": "38y 0d",
+  "party": "year-level backbone",
+  "era": "Sikh Empire"
+ },
+ {
+  "name": "👑 Kharak Singh",
+  "role": "Maharaja",
+  "start": "1839-01-01",
+  "end": "1840-01-01",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone",
+  "era": "Sikh Empire"
+ },
+ {
+  "name": "👑 Nau Nihal Singh",
+  "role": "Maharaja",
+  "start": "1840-01-01",
+  "end": "1840-01-01",
+  "current": false,
+  "tenure": "0y 0d",
+  "party": "year-level backbone",
+  "era": "Sikh Empire"
+ },
+ {
+  "name": "👑 Sher Singh",
+  "role": "Maharaja",
+  "start": "1841-01-01",
+  "end": "1843-01-01",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone",
+  "era": "Sikh Empire"
+ },
+ {
+  "name": "👑 Duleep Singh",
+  "role": "Maharaja",
+  "start": "1843-01-01",
+  "end": "1849-01-01",
+  "current": false,
+  "tenure": "6y 0d",
+  "party": "year-level backbone",
+  "era": "Sikh Empire"
+ }
+]

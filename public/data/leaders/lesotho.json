@@ -1,42 +1,132 @@
 [
-  {
-    "name": "👑 Letsie III",
-    "role": "Monarch",
-    "start": "1990-01-01",
-    "end": "1995-01-01",
-    "current": false,
-    "tenure": "5y 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "👑 Letsie III",
-    "role": "Monarch",
-    "start": "1996-02-07",
-    "end": null,
-    "current": true,
-    "tenure": "30y 4m 26d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Moeketsi Majoro",
-    "role": "Prime Minister",
-    "start": "2020-05-20",
-    "end": "2022-10-28",
-    "current": false,
-    "tenure": "2y 5m 8d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Sam Matekane",
-    "role": "Prime Minister",
-    "start": "2022-10-28",
-    "end": null,
-    "current": true,
-    "tenure": "3y 8m 5d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Sekhonyana Nehemia Maseribane",
+  "role": "Prime Minister",
+  "start": "1965-05-06",
+  "end": "1965-07-07",
+  "current": false,
+  "tenure": "0y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Leabua Jonathan",
+  "role": "Prime Minister",
+  "start": "1965-07-07",
+  "end": "1986-01-20",
+  "current": false,
+  "tenure": "20y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "👑 Moshoeshoe II",
+  "role": "King",
+  "start": "1966-10-04",
+  "end": "1990-11-12",
+  "current": false,
+  "tenure": "24y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "👑 Letsie III",
+  "role": "King",
+  "start": "1990-11-12",
+  "end": "1995-01-25",
+  "current": false,
+  "tenure": "4y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ntsu Mokhehle",
+  "role": "Prime Minister",
+  "start": "1993-04-02",
+  "end": "1998-05-29",
+  "current": false,
+  "tenure": "5y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "👑 Moshoeshoe II",
+  "role": "King",
+  "start": "1995-01-25",
+  "end": "1996-01-15",
+  "current": false,
+  "tenure": "0y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "👑 Letsie III",
+  "role": "King",
+  "start": "1996-02-07",
+  "end": null,
+  "current": false,
+  "tenure": "30y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Pakalitha Mosisili",
+  "role": "Prime Minister",
+  "start": "1998-05-29",
+  "end": "2012-06-08",
+  "current": false,
+  "tenure": "14y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Tom Thabane",
+  "role": "Prime Minister",
+  "start": "2012-06-08",
+  "end": "2015-03-17",
+  "current": false,
+  "tenure": "2y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Pakalitha Mosisili",
+  "role": "Prime Minister",
+  "start": "2015-03-17",
+  "end": "2017-06-16",
+  "current": false,
+  "tenure": "2y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Tom Thabane",
+  "role": "Prime Minister",
+  "start": "2017-06-16",
+  "end": "2020-05-20",
+  "current": false,
+  "tenure": "2y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Moeketsi Majoro",
+  "role": "Prime Minister",
+  "start": "2020-05-20",
+  "end": "2022-10-28",
+  "current": false,
+  "tenure": "2y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Sam Matekane",
+  "role": "Prime Minister",
+  "start": "2022-10-28",
+  "end": null,
+  "current": true,
+  "tenure": "3y 8m",
+  "party": null,
+  "era": null
+ }
 ]

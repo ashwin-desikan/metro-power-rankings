@@ -123,21 +123,11 @@
     "name": "👑 Sigismund II Augustus",
     "role": "Grand Duke",
     "start": "1544-01-01",
-    "end": "1569-01-01",
-    "current": false,
-    "tenure": "25y 0d",
-    "party": "medieval; year-level dates",
-    "era": "Grand Duchy of Lithuania"
-  },
-  {
-    "name": "👑 Sigismund II Augustus",
-    "role": "Grand Duke",
-    "start": "1569-01-01",
     "end": "1572-01-01",
     "current": false,
-    "tenure": "3y 0d",
+    "tenure": "28y 0d",
     "party": "medieval; year-level dates",
-    "era": "Polish-Lithuanian Commonwealth"
+    "era": "Grand Duchy of Lithuania"
   },
   {
     "name": "👑 Henry de Valois",

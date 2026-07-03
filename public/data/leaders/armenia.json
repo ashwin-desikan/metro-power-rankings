@@ -1,5 +1,65 @@
 [
   {
+    "name": "Hovhannes Kachaznuni",
+    "role": "Prime Minister",
+    "start": "1918-06-30",
+    "end": "1919-05-28",
+    "current": false,
+    "tenure": "10m 28d",
+    "party": null,
+    "era": "First Republic of Armenia"
+  },
+  {
+    "name": "Alexander Khatisian",
+    "role": "Prime Minister",
+    "start": "1919-05-28",
+    "end": "1920-05-05",
+    "current": false,
+    "tenure": "11m 7d",
+    "party": null,
+    "era": "First Republic of Armenia"
+  },
+  {
+    "name": "Hamo Ohanjanyan",
+    "role": "Prime Minister",
+    "start": "1920-05-05",
+    "end": "1920-11-25",
+    "current": false,
+    "tenure": "6m 20d",
+    "party": null,
+    "era": "First Republic of Armenia"
+  },
+  {
+    "name": "Levon Ter-Petrosyan",
+    "role": "President",
+    "start": "1991-10-16",
+    "end": "1998-02-03",
+    "current": false,
+    "tenure": "6y 3m 18d",
+    "party": null,
+    "era": "Republic of Armenia"
+  },
+  {
+    "name": "Robert Kocharyan",
+    "role": "President",
+    "start": "1998-02-03",
+    "end": "2008-04-09",
+    "current": false,
+    "tenure": "10y 2m 6d",
+    "party": null,
+    "era": "Republic of Armenia"
+  },
+  {
+    "name": "Serzh Sargsyan",
+    "role": "President",
+    "start": "2008-04-09",
+    "end": "2018-04-09",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": null,
+    "era": "Republic of Armenia"
+  },
+  {
     "name": "Armen Sarkissian",
     "role": "President",
     "start": "2018-04-09",

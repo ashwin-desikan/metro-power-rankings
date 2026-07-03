@@ -1,0 +1,1582 @@
+[
+ {
+  "name": "👑 Narmer",
+  "role": "Pharaoh",
+  "start": "-3100-01-01",
+  "end": "-3050-01-01",
+  "current": false,
+  "tenure": "50y 0d",
+  "party": "year-level backbone",
+  "era": "Early Dynastic Period — 1st Dynasty"
+ },
+ {
+  "name": "👑 Aha",
+  "role": "Pharaoh",
+  "start": "-3050-01-01",
+  "end": "-3040-01-01",
+  "current": false,
+  "tenure": "10y 0d",
+  "party": "year-level backbone",
+  "era": "Early Dynastic Period — 1st Dynasty"
+ },
+ {
+  "name": "👑 Djer",
+  "role": "Pharaoh",
+  "start": "-3040-01-01",
+  "end": "-2990-01-01",
+  "current": false,
+  "tenure": "50y 0d",
+  "party": "year-level backbone",
+  "era": "Early Dynastic Period — 1st Dynasty"
+ },
+ {
+  "name": "👑 Djet",
+  "role": "Pharaoh",
+  "start": "-2990-01-01",
+  "end": "-2970-01-01",
+  "current": false,
+  "tenure": "20y 0d",
+  "party": "year-level backbone",
+  "era": "Early Dynastic Period — 1st Dynasty"
+ },
+ {
+  "name": "👑 Den",
+  "role": "Pharaoh",
+  "start": "-2970-01-01",
+  "end": "-2920-01-01",
+  "current": false,
+  "tenure": "50y 0d",
+  "party": "year-level backbone",
+  "era": "Early Dynastic Period — 1st Dynasty"
+ },
+ {
+  "name": "👑 Anedjib",
+  "role": "Pharaoh",
+  "start": "-2920-01-01",
+  "end": "-2910-01-01",
+  "current": false,
+  "tenure": "10y 0d",
+  "party": "year-level backbone",
+  "era": "Early Dynastic Period — 1st Dynasty"
+ },
+ {
+  "name": "👑 Semerkhet",
+  "role": "Pharaoh",
+  "start": "-2910-01-01",
+  "end": "-2900-01-01",
+  "current": false,
+  "tenure": "10y 0d",
+  "party": "year-level backbone",
+  "era": "Early Dynastic Period — 1st Dynasty"
+ },
+ {
+  "name": "👑 Qa'a",
+  "role": "Pharaoh",
+  "start": "-2900-01-01",
+  "end": "-2890-01-01",
+  "current": false,
+  "tenure": "10y 0d",
+  "party": "year-level backbone",
+  "era": "Early Dynastic Period — 1st Dynasty"
+ },
+ {
+  "name": "👑 Hotepsekhemwy",
+  "role": "Pharaoh",
+  "start": "-2890-01-01",
+  "end": "-2860-01-01",
+  "current": false,
+  "tenure": "30y 0d",
+  "party": "year-level backbone",
+  "era": "Early Dynastic Period — 2nd Dynasty"
+ },
+ {
+  "name": "👑 Nebra",
+  "role": "Pharaoh",
+  "start": "-2860-01-01",
+  "end": "-2830-01-01",
+  "current": false,
+  "tenure": "30y 0d",
+  "party": "year-level backbone",
+  "era": "Early Dynastic Period — 2nd Dynasty"
+ },
+ {
+  "name": "👑 Nynetjer",
+  "role": "Pharaoh",
+  "start": "-2830-01-01",
+  "end": "-2790-01-01",
+  "current": false,
+  "tenure": "40y 0d",
+  "party": "year-level backbone",
+  "era": "Early Dynastic Period — 2nd Dynasty"
+ },
+ {
+  "name": "👑 Peribsen",
+  "role": "Pharaoh",
+  "start": "-2790-01-01",
+  "end": "-2760-01-01",
+  "current": false,
+  "tenure": "30y 0d",
+  "party": "year-level backbone",
+  "era": "Early Dynastic Period — 2nd Dynasty"
+ },
+ {
+  "name": "👑 Khasekhemwy",
+  "role": "Pharaoh",
+  "start": "-2760-01-01",
+  "end": "-2686-01-01",
+  "current": false,
+  "tenure": "74y 0d",
+  "party": "year-level backbone",
+  "era": "Early Dynastic Period — 2nd Dynasty"
+ },
+ {
+  "name": "👑 Djoser",
+  "role": "Pharaoh",
+  "start": "-2686-01-01",
+  "end": "-2648-01-01",
+  "current": false,
+  "tenure": "38y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 3rd Dynasty"
+ },
+ {
+  "name": "👑 Sekhemkhet",
+  "role": "Pharaoh",
+  "start": "-2648-01-01",
+  "end": "-2640-01-01",
+  "current": false,
+  "tenure": "8y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 3rd Dynasty"
+ },
+ {
+  "name": "👑 Khaba",
+  "role": "Pharaoh",
+  "start": "-2640-01-01",
+  "end": "-2637-01-01",
+  "current": false,
+  "tenure": "3y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 3rd Dynasty"
+ },
+ {
+  "name": "👑 Huni",
+  "role": "Pharaoh",
+  "start": "-2637-01-01",
+  "end": "-2613-01-01",
+  "current": false,
+  "tenure": "24y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 3rd Dynasty"
+ },
+ {
+  "name": "👑 Sneferu",
+  "role": "Pharaoh",
+  "start": "-2613-01-01",
+  "end": "-2589-01-01",
+  "current": false,
+  "tenure": "24y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 4th Dynasty"
+ },
+ {
+  "name": "👑 Khufu",
+  "role": "Pharaoh",
+  "start": "-2589-01-01",
+  "end": "-2566-01-01",
+  "current": false,
+  "tenure": "23y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 4th Dynasty"
+ },
+ {
+  "name": "👑 Djedefre",
+  "role": "Pharaoh",
+  "start": "-2566-01-01",
+  "end": "-2558-01-01",
+  "current": false,
+  "tenure": "8y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 4th Dynasty"
+ },
+ {
+  "name": "👑 Khafre",
+  "role": "Pharaoh",
+  "start": "-2558-01-01",
+  "end": "-2532-01-01",
+  "current": false,
+  "tenure": "26y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 4th Dynasty"
+ },
+ {
+  "name": "👑 Menkaure",
+  "role": "Pharaoh",
+  "start": "-2532-01-01",
+  "end": "-2503-01-01",
+  "current": false,
+  "tenure": "29y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 4th Dynasty"
+ },
+ {
+  "name": "👑 Shepseskaf",
+  "role": "Pharaoh",
+  "start": "-2503-01-01",
+  "end": "-2498-01-01",
+  "current": false,
+  "tenure": "5y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 4th Dynasty"
+ },
+ {
+  "name": "👑 Userkaf",
+  "role": "Pharaoh",
+  "start": "-2494-01-01",
+  "end": "-2487-01-01",
+  "current": false,
+  "tenure": "7y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 5th Dynasty"
+ },
+ {
+  "name": "👑 Sahure",
+  "role": "Pharaoh",
+  "start": "-2487-01-01",
+  "end": "-2475-01-01",
+  "current": false,
+  "tenure": "12y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 5th Dynasty"
+ },
+ {
+  "name": "👑 Neferirkare Kakai",
+  "role": "Pharaoh",
+  "start": "-2475-01-01",
+  "end": "-2455-01-01",
+  "current": false,
+  "tenure": "20y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 5th Dynasty"
+ },
+ {
+  "name": "👑 Shepseskare",
+  "role": "Pharaoh",
+  "start": "-2455-01-01",
+  "end": "-2448-01-01",
+  "current": false,
+  "tenure": "7y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 5th Dynasty"
+ },
+ {
+  "name": "👑 Neferefre",
+  "role": "Pharaoh",
+  "start": "-2448-01-01",
+  "end": "-2445-01-01",
+  "current": false,
+  "tenure": "3y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 5th Dynasty"
+ },
+ {
+  "name": "👑 Nyuserre Ini",
+  "role": "Pharaoh",
+  "start": "-2445-01-01",
+  "end": "-2421-01-01",
+  "current": false,
+  "tenure": "24y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 5th Dynasty"
+ },
+ {
+  "name": "👑 Menkauhor Kaiu",
+  "role": "Pharaoh",
+  "start": "-2421-01-01",
+  "end": "-2414-01-01",
+  "current": false,
+  "tenure": "7y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 5th Dynasty"
+ },
+ {
+  "name": "👑 Djedkare Isesi",
+  "role": "Pharaoh",
+  "start": "-2414-01-01",
+  "end": "-2375-01-01",
+  "current": false,
+  "tenure": "39y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 5th Dynasty"
+ },
+ {
+  "name": "👑 Unas",
+  "role": "Pharaoh",
+  "start": "-2375-01-01",
+  "end": "-2345-01-01",
+  "current": false,
+  "tenure": "30y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 5th Dynasty"
+ },
+ {
+  "name": "👑 Teti",
+  "role": "Pharaoh",
+  "start": "-2345-01-01",
+  "end": "-2333-01-01",
+  "current": false,
+  "tenure": "12y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 6th Dynasty"
+ },
+ {
+  "name": "👑 Userkare",
+  "role": "Pharaoh",
+  "start": "-2333-01-01",
+  "end": "-2332-01-01",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 6th Dynasty"
+ },
+ {
+  "name": "👑 Pepi I Meryre",
+  "role": "Pharaoh",
+  "start": "-2332-01-01",
+  "end": "-2283-01-01",
+  "current": false,
+  "tenure": "49y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 6th Dynasty"
+ },
+ {
+  "name": "👑 Merenre Nemtyemsaf I",
+  "role": "Pharaoh",
+  "start": "-2283-01-01",
+  "end": "-2278-01-01",
+  "current": false,
+  "tenure": "5y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 6th Dynasty"
+ },
+ {
+  "name": "👑 Pepi II Neferkare",
+  "role": "Pharaoh",
+  "start": "-2278-01-01",
+  "end": "-2184-01-01",
+  "current": false,
+  "tenure": "94y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 6th Dynasty"
+ },
+ {
+  "name": "👑 Merenre Nemtyemsaf II",
+  "role": "Pharaoh",
+  "start": "-2184-01-01",
+  "end": "-2183-01-01",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone",
+  "era": "Old Kingdom — 6th Dynasty"
+ },
+ {
+  "name": "👑 Netjerkare Siptah",
+  "role": "Pharaoh",
+  "start": "-2181-01-01",
+  "end": "-2180-01-01",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone",
+  "era": "First Intermediate Period — 7th/8th Dynasty"
+ },
+ {
+  "name": "👑 Qakare Ibi",
+  "role": "Pharaoh",
+  "start": "-2175-01-01",
+  "end": "-2171-01-01",
+  "current": false,
+  "tenure": "4y 0d",
+  "party": "year-level backbone",
+  "era": "First Intermediate Period — 7th/8th Dynasty"
+ },
+ {
+  "name": "👑 Neferkauhor",
+  "role": "Pharaoh",
+  "start": "-2170-01-01",
+  "end": "-2168-01-01",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone",
+  "era": "First Intermediate Period — 7th/8th Dynasty"
+ },
+ {
+  "name": "👑 Meryibre Khety",
+  "role": "Pharaoh",
+  "start": "-2160-01-01",
+  "end": "-2130-01-01",
+  "current": false,
+  "tenure": "30y 0d",
+  "party": "year-level backbone",
+  "era": "First Intermediate Period — 9th/10th Dynasty"
+ },
+ {
+  "name": "👑 Merykare",
+  "role": "Pharaoh",
+  "start": "-2075-01-01",
+  "end": "-2040-01-01",
+  "current": false,
+  "tenure": "35y 0d",
+  "party": "year-level backbone",
+  "era": "First Intermediate Period — 9th/10th Dynasty"
+ },
+ {
+  "name": "👑 Intef I",
+  "role": "Pharaoh",
+  "start": "-2134-01-01",
+  "end": "-2118-01-01",
+  "current": false,
+  "tenure": "16y 0d",
+  "party": "year-level backbone",
+  "era": "First Intermediate Period — 11th Dynasty"
+ },
+ {
+  "name": "👑 Intef II",
+  "role": "Pharaoh",
+  "start": "-2118-01-01",
+  "end": "-2069-01-01",
+  "current": false,
+  "tenure": "49y 0d",
+  "party": "year-level backbone",
+  "era": "First Intermediate Period — 11th Dynasty"
+ },
+ {
+  "name": "👑 Intef III",
+  "role": "Pharaoh",
+  "start": "-2069-01-01",
+  "end": "-2061-01-01",
+  "current": false,
+  "tenure": "8y 0d",
+  "party": "year-level backbone",
+  "era": "First Intermediate Period — 11th Dynasty"
+ },
+ {
+  "name": "👑 Mentuhotep II",
+  "role": "Pharaoh",
+  "start": "-2061-01-01",
+  "end": "-2010-01-01",
+  "current": false,
+  "tenure": "51y 0d",
+  "party": "year-level backbone",
+  "era": "Middle Kingdom — 11th Dynasty"
+ },
+ {
+  "name": "👑 Mentuhotep III",
+  "role": "Pharaoh",
+  "start": "-2010-01-01",
+  "end": "-1998-01-01",
+  "current": false,
+  "tenure": "12y 0d",
+  "party": "year-level backbone",
+  "era": "Middle Kingdom — 11th Dynasty"
+ },
+ {
+  "name": "👑 Mentuhotep IV",
+  "role": "Pharaoh",
+  "start": "-1998-01-01",
+  "end": "-1991-01-01",
+  "current": false,
+  "tenure": "7y 0d",
+  "party": "year-level backbone",
+  "era": "Middle Kingdom — 11th Dynasty"
+ },
+ {
+  "name": "👑 Amenemhat I",
+  "role": "Pharaoh",
+  "start": "-1991-01-01",
+  "end": "-1962-01-01",
+  "current": false,
+  "tenure": "29y 0d",
+  "party": "year-level backbone",
+  "era": "Middle Kingdom — 12th Dynasty"
+ },
+ {
+  "name": "👑 Senusret I",
+  "role": "Pharaoh",
+  "start": "-1971-01-01",
+  "end": "-1926-01-01",
+  "current": false,
+  "tenure": "45y 0d",
+  "party": "year-level backbone",
+  "era": "Middle Kingdom — 12th Dynasty"
+ },
+ {
+  "name": "👑 Amenemhat II",
+  "role": "Pharaoh",
+  "start": "-1929-01-01",
+  "end": "-1895-01-01",
+  "current": false,
+  "tenure": "34y 0d",
+  "party": "year-level backbone",
+  "era": "Middle Kingdom — 12th Dynasty"
+ },
+ {
+  "name": "👑 Senusret II",
+  "role": "Pharaoh",
+  "start": "-1897-01-01",
+  "end": "-1878-01-01",
+  "current": false,
+  "tenure": "19y 0d",
+  "party": "year-level backbone",
+  "era": "Middle Kingdom — 12th Dynasty"
+ },
+ {
+  "name": "👑 Senusret III",
+  "role": "Pharaoh",
+  "start": "-1878-01-01",
+  "end": "-1839-01-01",
+  "current": false,
+  "tenure": "39y 0d",
+  "party": "year-level backbone",
+  "era": "Middle Kingdom — 12th Dynasty"
+ },
+ {
+  "name": "👑 Amenemhat III",
+  "role": "Pharaoh",
+  "start": "-1860-01-01",
+  "end": "-1814-01-01",
+  "current": false,
+  "tenure": "46y 0d",
+  "party": "year-level backbone",
+  "era": "Middle Kingdom — 12th Dynasty"
+ },
+ {
+  "name": "👑 Amenemhat IV",
+  "role": "Pharaoh",
+  "start": "-1815-01-01",
+  "end": "-1806-01-01",
+  "current": false,
+  "tenure": "9y 0d",
+  "party": "year-level backbone",
+  "era": "Middle Kingdom — 12th Dynasty"
+ },
+ {
+  "name": "👑 Sobekneferu",
+  "role": "Queen (Pharaoh)",
+  "start": "-1806-01-01",
+  "end": "-1802-01-01",
+  "current": false,
+  "tenure": "4y 0d",
+  "party": "year-level backbone",
+  "era": "Middle Kingdom — 12th Dynasty"
+ },
+ {
+  "name": "👑 Wegaf",
+  "role": "Pharaoh",
+  "start": "-1802-01-01",
+  "end": "-1800-01-01",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone",
+  "era": "Second Intermediate Period — 13th Dynasty"
+ },
+ {
+  "name": "👑 Sobekhotep II",
+  "role": "Pharaoh",
+  "start": "-1780-01-01",
+  "end": "-1777-01-01",
+  "current": false,
+  "tenure": "3y 0d",
+  "party": "year-level backbone",
+  "era": "Second Intermediate Period — 13th Dynasty"
+ },
+ {
+  "name": "👑 Khendjer",
+  "role": "Pharaoh",
+  "start": "-1765-01-01",
+  "end": "-1760-01-01",
+  "current": false,
+  "tenure": "5y 0d",
+  "party": "year-level backbone",
+  "era": "Second Intermediate Period — 13th Dynasty"
+ },
+ {
+  "name": "👑 Sobekhotep III",
+  "role": "Pharaoh",
+  "start": "-1755-01-01",
+  "end": "-1751-01-01",
+  "current": false,
+  "tenure": "4y 0d",
+  "party": "year-level backbone",
+  "era": "Second Intermediate Period — 13th Dynasty"
+ },
+ {
+  "name": "👑 Neferhotep I",
+  "role": "Pharaoh",
+  "start": "-1751-01-01",
+  "end": "-1740-01-01",
+  "current": false,
+  "tenure": "11y 0d",
+  "party": "year-level backbone",
+  "era": "Second Intermediate Period — 13th Dynasty"
+ },
+ {
+  "name": "👑 Sobekhotep IV",
+  "role": "Pharaoh",
+  "start": "-1740-01-01",
+  "end": "-1730-01-01",
+  "current": false,
+  "tenure": "10y 0d",
+  "party": "year-level backbone",
+  "era": "Second Intermediate Period — 13th Dynasty"
+ },
+ {
+  "name": "👑 Merneferre Ay",
+  "role": "Pharaoh",
+  "start": "-1701-01-01",
+  "end": "-1677-01-01",
+  "current": false,
+  "tenure": "24y 0d",
+  "party": "year-level backbone",
+  "era": "Second Intermediate Period — 13th Dynasty"
+ },
+ {
+  "name": "👑 Nehesy",
+  "role": "Pharaoh",
+  "start": "-1705-01-01",
+  "end": "-1700-01-01",
+  "current": false,
+  "tenure": "5y 0d",
+  "party": "year-level backbone",
+  "era": "Second Intermediate Period — 14th Dynasty"
+ },
+ {
+  "name": "👑 Salitis",
+  "role": "Pharaoh",
+  "start": "-1650-01-01",
+  "end": "-1620-01-01",
+  "current": false,
+  "tenure": "30y 0d",
+  "party": "year-level backbone",
+  "era": "Second Intermediate Period — 15th Dynasty (Hyksos)"
+ },
+ {
+  "name": "👑 Khyan",
+  "role": "Pharaoh",
+  "start": "-1610-01-01",
+  "end": "-1580-01-01",
+  "current": false,
+  "tenure": "30y 0d",
+  "party": "year-level backbone",
+  "era": "Second Intermediate Period — 15th Dynasty (Hyksos)"
+ },
+ {
+  "name": "👑 Apepi",
+  "role": "Pharaoh",
+  "start": "-1580-01-01",
+  "end": "-1540-01-01",
+  "current": false,
+  "tenure": "40y 0d",
+  "party": "year-level backbone",
+  "era": "Second Intermediate Period — 15th Dynasty (Hyksos)"
+ },
+ {
+  "name": "👑 Khamudi",
+  "role": "Pharaoh",
+  "start": "-1540-01-01",
+  "end": "-1530-01-01",
+  "current": false,
+  "tenure": "10y 0d",
+  "party": "year-level backbone",
+  "era": "Second Intermediate Period — 15th Dynasty (Hyksos)"
+ },
+ {
+  "name": "👑 Nebiryraw I",
+  "role": "Pharaoh",
+  "start": "-1627-01-01",
+  "end": "-1601-01-01",
+  "current": false,
+  "tenure": "26y 0d",
+  "party": "year-level backbone",
+  "era": "Second Intermediate Period — 16th Dynasty"
+ },
+ {
+  "name": "👑 Rahotep",
+  "role": "Pharaoh",
+  "start": "-1620-01-01",
+  "end": "-1590-01-01",
+  "current": false,
+  "tenure": "30y 0d",
+  "party": "year-level backbone",
+  "era": "Second Intermediate Period — 17th Dynasty"
+ },
+ {
+  "name": "👑 Sobekemsaf I",
+  "role": "Pharaoh",
+  "start": "-1590-01-01",
+  "end": "-1573-01-01",
+  "current": false,
+  "tenure": "17y 0d",
+  "party": "year-level backbone",
+  "era": "Second Intermediate Period — 17th Dynasty"
+ },
+ {
+  "name": "👑 Intef VII",
+  "role": "Pharaoh",
+  "start": "-1571-01-01",
+  "end": "-1565-01-01",
+  "current": false,
+  "tenure": "6y 0d",
+  "party": "year-level backbone",
+  "era": "Second Intermediate Period — 17th Dynasty"
+ },
+ {
+  "name": "👑 Sobekemsaf II",
+  "role": "Pharaoh",
+  "start": "-1565-01-01",
+  "end": "-1558-01-01",
+  "current": false,
+  "tenure": "7y 0d",
+  "party": "year-level backbone",
+  "era": "Second Intermediate Period — 17th Dynasty"
+ },
+ {
+  "name": "👑 Senakhtenre Ahmose",
+  "role": "Pharaoh",
+  "start": "-1558-01-01",
+  "end": "-1554-01-01",
+  "current": false,
+  "tenure": "4y 0d",
+  "party": "year-level backbone",
+  "era": "Second Intermediate Period — 17th Dynasty"
+ },
+ {
+  "name": "👑 Seqenenre Tao",
+  "role": "Pharaoh",
+  "start": "-1558-01-01",
+  "end": "-1554-01-01",
+  "current": false,
+  "tenure": "4y 0d",
+  "party": "year-level backbone",
+  "era": "Second Intermediate Period — 17th Dynasty"
+ },
+ {
+  "name": "👑 Kamose",
+  "role": "Pharaoh",
+  "start": "-1554-01-01",
+  "end": "-1549-01-01",
+  "current": false,
+  "tenure": "5y 0d",
+  "party": "year-level backbone",
+  "era": "Second Intermediate Period — 17th Dynasty"
+ },
+ {
+  "name": "👑 Ahmose I",
+  "role": "Pharaoh",
+  "start": "-1549-01-01",
+  "end": "-1524-01-01",
+  "current": false,
+  "tenure": "25y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 18th Dynasty"
+ },
+ {
+  "name": "👑 Amenhotep I",
+  "role": "Pharaoh",
+  "start": "-1524-01-01",
+  "end": "-1503-01-01",
+  "current": false,
+  "tenure": "21y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 18th Dynasty"
+ },
+ {
+  "name": "👑 Thutmose I",
+  "role": "Pharaoh",
+  "start": "-1503-01-01",
+  "end": "-1493-01-01",
+  "current": false,
+  "tenure": "10y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 18th Dynasty"
+ },
+ {
+  "name": "👑 Thutmose II",
+  "role": "Pharaoh",
+  "start": "-1493-01-01",
+  "end": "-1479-01-01",
+  "current": false,
+  "tenure": "14y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 18th Dynasty"
+ },
+ {
+  "name": "👑 Hatshepsut",
+  "role": "Queen (Pharaoh)",
+  "start": "-1479-01-01",
+  "end": "-1458-01-01",
+  "current": false,
+  "tenure": "21y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 18th Dynasty"
+ },
+ {
+  "name": "👑 Thutmose III",
+  "role": "Pharaoh",
+  "start": "-1479-01-01",
+  "end": "-1425-01-01",
+  "current": false,
+  "tenure": "54y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 18th Dynasty"
+ },
+ {
+  "name": "👑 Amenhotep II",
+  "role": "Pharaoh",
+  "start": "-1427-01-01",
+  "end": "-1400-01-01",
+  "current": false,
+  "tenure": "27y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 18th Dynasty"
+ },
+ {
+  "name": "👑 Thutmose IV",
+  "role": "Pharaoh",
+  "start": "-1400-01-01",
+  "end": "-1390-01-01",
+  "current": false,
+  "tenure": "10y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 18th Dynasty"
+ },
+ {
+  "name": "👑 Amenhotep III",
+  "role": "Pharaoh",
+  "start": "-1390-01-01",
+  "end": "-1352-01-01",
+  "current": false,
+  "tenure": "38y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 18th Dynasty"
+ },
+ {
+  "name": "👑 Akhenaten",
+  "role": "Pharaoh",
+  "start": "-1352-01-01",
+  "end": "-1336-01-01",
+  "current": false,
+  "tenure": "16y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 18th Dynasty"
+ },
+ {
+  "name": "👑 Smenkhkare",
+  "role": "Pharaoh",
+  "start": "-1338-01-01",
+  "end": "-1334-01-01",
+  "current": false,
+  "tenure": "4y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 18th Dynasty"
+ },
+ {
+  "name": "👑 Tutankhamun",
+  "role": "Pharaoh",
+  "start": "-1332-01-01",
+  "end": "-1323-01-01",
+  "current": false,
+  "tenure": "9y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 18th Dynasty"
+ },
+ {
+  "name": "👑 Ay",
+  "role": "Pharaoh",
+  "start": "-1323-01-01",
+  "end": "-1319-01-01",
+  "current": false,
+  "tenure": "4y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 18th Dynasty"
+ },
+ {
+  "name": "👑 Horemheb",
+  "role": "Pharaoh",
+  "start": "-1319-01-01",
+  "end": "-1292-01-01",
+  "current": false,
+  "tenure": "27y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 18th Dynasty"
+ },
+ {
+  "name": "👑 Ramesses I",
+  "role": "Pharaoh",
+  "start": "-1292-01-01",
+  "end": "-1290-01-01",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 19th Dynasty"
+ },
+ {
+  "name": "👑 Seti I",
+  "role": "Pharaoh",
+  "start": "-1290-01-01",
+  "end": "-1279-01-01",
+  "current": false,
+  "tenure": "11y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 19th Dynasty"
+ },
+ {
+  "name": "👑 Ramesses II",
+  "role": "Pharaoh",
+  "start": "-1279-01-01",
+  "end": "-1213-01-01",
+  "current": false,
+  "tenure": "66y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 19th Dynasty"
+ },
+ {
+  "name": "👑 Merneptah",
+  "role": "Pharaoh",
+  "start": "-1213-01-01",
+  "end": "-1203-01-01",
+  "current": false,
+  "tenure": "10y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 19th Dynasty"
+ },
+ {
+  "name": "👑 Amenmesse",
+  "role": "Pharaoh",
+  "start": "-1203-01-01",
+  "end": "-1200-01-01",
+  "current": false,
+  "tenure": "3y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 19th Dynasty"
+ },
+ {
+  "name": "👑 Seti II",
+  "role": "Pharaoh",
+  "start": "-1200-01-01",
+  "end": "-1194-01-01",
+  "current": false,
+  "tenure": "6y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 19th Dynasty"
+ },
+ {
+  "name": "👑 Siptah",
+  "role": "Pharaoh",
+  "start": "-1194-01-01",
+  "end": "-1188-01-01",
+  "current": false,
+  "tenure": "6y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 19th Dynasty"
+ },
+ {
+  "name": "👑 Twosret",
+  "role": "Queen (Pharaoh)",
+  "start": "-1188-01-01",
+  "end": "-1186-01-01",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 19th Dynasty"
+ },
+ {
+  "name": "👑 Setnakhte",
+  "role": "Pharaoh",
+  "start": "-1186-01-01",
+  "end": "-1184-01-01",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 20th Dynasty"
+ },
+ {
+  "name": "👑 Ramesses III",
+  "role": "Pharaoh",
+  "start": "-1184-01-01",
+  "end": "-1153-01-01",
+  "current": false,
+  "tenure": "31y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 20th Dynasty"
+ },
+ {
+  "name": "👑 Ramesses IV",
+  "role": "Pharaoh",
+  "start": "-1153-01-01",
+  "end": "-1147-01-01",
+  "current": false,
+  "tenure": "6y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 20th Dynasty"
+ },
+ {
+  "name": "👑 Ramesses V",
+  "role": "Pharaoh",
+  "start": "-1147-01-01",
+  "end": "-1143-01-01",
+  "current": false,
+  "tenure": "4y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 20th Dynasty"
+ },
+ {
+  "name": "👑 Ramesses VI",
+  "role": "Pharaoh",
+  "start": "-1143-01-01",
+  "end": "-1136-01-01",
+  "current": false,
+  "tenure": "7y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 20th Dynasty"
+ },
+ {
+  "name": "👑 Ramesses VII",
+  "role": "Pharaoh",
+  "start": "-1136-01-01",
+  "end": "-1129-01-01",
+  "current": false,
+  "tenure": "7y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 20th Dynasty"
+ },
+ {
+  "name": "👑 Ramesses VIII",
+  "role": "Pharaoh",
+  "start": "-1129-01-01",
+  "end": "-1126-01-01",
+  "current": false,
+  "tenure": "3y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 20th Dynasty"
+ },
+ {
+  "name": "👑 Ramesses IX",
+  "role": "Pharaoh",
+  "start": "-1126-01-01",
+  "end": "-1108-01-01",
+  "current": false,
+  "tenure": "18y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 20th Dynasty"
+ },
+ {
+  "name": "👑 Ramesses X",
+  "role": "Pharaoh",
+  "start": "-1108-01-01",
+  "end": "-1104-01-01",
+  "current": false,
+  "tenure": "4y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 20th Dynasty"
+ },
+ {
+  "name": "👑 Ramesses XI",
+  "role": "Pharaoh",
+  "start": "-1104-01-01",
+  "end": "-1077-01-01",
+  "current": false,
+  "tenure": "27y 0d",
+  "party": "year-level backbone",
+  "era": "New Kingdom — 20th Dynasty"
+ },
+ {
+  "name": "👑 Smendes I",
+  "role": "Pharaoh",
+  "start": "-1077-01-01",
+  "end": "-1051-01-01",
+  "current": false,
+  "tenure": "26y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 21st Dynasty"
+ },
+ {
+  "name": "👑 Amenemnisu",
+  "role": "Pharaoh",
+  "start": "-1051-01-01",
+  "end": "-1047-01-01",
+  "current": false,
+  "tenure": "4y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 21st Dynasty"
+ },
+ {
+  "name": "👑 Psusennes I",
+  "role": "Pharaoh",
+  "start": "-1047-01-01",
+  "end": "-1001-01-01",
+  "current": false,
+  "tenure": "46y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 21st Dynasty"
+ },
+ {
+  "name": "👑 Amenemope",
+  "role": "Pharaoh",
+  "start": "-1001-01-01",
+  "end": "-0992-01-01",
+  "current": false,
+  "tenure": "9y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 21st Dynasty"
+ },
+ {
+  "name": "👑 Osorkon the Elder",
+  "role": "Pharaoh",
+  "start": "-0992-01-01",
+  "end": "-0986-01-01",
+  "current": false,
+  "tenure": "6y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 21st Dynasty"
+ },
+ {
+  "name": "👑 Siamun",
+  "role": "Pharaoh",
+  "start": "-0986-01-01",
+  "end": "-0967-01-01",
+  "current": false,
+  "tenure": "19y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 21st Dynasty"
+ },
+ {
+  "name": "👑 Psusennes II",
+  "role": "Pharaoh",
+  "start": "-0967-01-01",
+  "end": "-0943-01-01",
+  "current": false,
+  "tenure": "24y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 21st Dynasty"
+ },
+ {
+  "name": "👑 Shoshenq I",
+  "role": "Pharaoh",
+  "start": "-0943-01-01",
+  "end": "-0922-01-01",
+  "current": false,
+  "tenure": "21y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 22nd Dynasty"
+ },
+ {
+  "name": "👑 Osorkon I",
+  "role": "Pharaoh",
+  "start": "-0922-01-01",
+  "end": "-0887-01-01",
+  "current": false,
+  "tenure": "35y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 22nd Dynasty"
+ },
+ {
+  "name": "👑 Takelot I",
+  "role": "Pharaoh",
+  "start": "-0887-01-01",
+  "end": "-0874-01-01",
+  "current": false,
+  "tenure": "13y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 22nd Dynasty"
+ },
+ {
+  "name": "👑 Osorkon II",
+  "role": "Pharaoh",
+  "start": "-0874-01-01",
+  "end": "-0837-01-01",
+  "current": false,
+  "tenure": "37y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 22nd Dynasty"
+ },
+ {
+  "name": "👑 Shoshenq III",
+  "role": "Pharaoh",
+  "start": "-0837-01-01",
+  "end": "-0798-01-01",
+  "current": false,
+  "tenure": "39y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 22nd Dynasty"
+ },
+ {
+  "name": "👑 Shoshenq IV",
+  "role": "Pharaoh",
+  "start": "-0798-01-01",
+  "end": "-0785-01-01",
+  "current": false,
+  "tenure": "13y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 22nd Dynasty"
+ },
+ {
+  "name": "👑 Pami",
+  "role": "Pharaoh",
+  "start": "-0785-01-01",
+  "end": "-0778-01-01",
+  "current": false,
+  "tenure": "7y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 22nd Dynasty"
+ },
+ {
+  "name": "👑 Shoshenq V",
+  "role": "Pharaoh",
+  "start": "-0778-01-01",
+  "end": "-0740-01-01",
+  "current": false,
+  "tenure": "38y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 22nd Dynasty"
+ },
+ {
+  "name": "👑 Osorkon IV",
+  "role": "Pharaoh",
+  "start": "-0740-01-01",
+  "end": "-0720-01-01",
+  "current": false,
+  "tenure": "20y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 22nd Dynasty"
+ },
+ {
+  "name": "👑 Takelot II",
+  "role": "Pharaoh",
+  "start": "-0840-01-01",
+  "end": "-0815-01-01",
+  "current": false,
+  "tenure": "25y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 23rd Dynasty"
+ },
+ {
+  "name": "👑 Pedubast I",
+  "role": "Pharaoh",
+  "start": "-0829-01-01",
+  "end": "-0804-01-01",
+  "current": false,
+  "tenure": "25y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 23rd Dynasty"
+ },
+ {
+  "name": "👑 Osorkon III",
+  "role": "Pharaoh",
+  "start": "-0795-01-01",
+  "end": "-0767-01-01",
+  "current": false,
+  "tenure": "28y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 23rd Dynasty"
+ },
+ {
+  "name": "👑 Takelot III",
+  "role": "Pharaoh",
+  "start": "-0774-01-01",
+  "end": "-0759-01-01",
+  "current": false,
+  "tenure": "15y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 23rd Dynasty"
+ },
+ {
+  "name": "👑 Rudamun",
+  "role": "Pharaoh",
+  "start": "-0759-01-01",
+  "end": "-0755-01-01",
+  "current": false,
+  "tenure": "4y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 23rd Dynasty"
+ },
+ {
+  "name": "👑 Tefnakht",
+  "role": "Pharaoh",
+  "start": "-0732-01-01",
+  "end": "-0725-01-01",
+  "current": false,
+  "tenure": "7y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 24th Dynasty"
+ },
+ {
+  "name": "👑 Bakenranef",
+  "role": "Pharaoh",
+  "start": "-0725-01-01",
+  "end": "-0720-01-01",
+  "current": false,
+  "tenure": "5y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 24th Dynasty"
+ },
+ {
+  "name": "👑 Piye",
+  "role": "Pharaoh",
+  "start": "-0744-01-01",
+  "end": "-0714-01-01",
+  "current": false,
+  "tenure": "30y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 25th Dynasty (Kushite)"
+ },
+ {
+  "name": "👑 Shabaka",
+  "role": "Pharaoh",
+  "start": "-0714-01-01",
+  "end": "-0705-01-01",
+  "current": false,
+  "tenure": "9y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 25th Dynasty (Kushite)"
+ },
+ {
+  "name": "👑 Shabitku",
+  "role": "Pharaoh",
+  "start": "-0705-01-01",
+  "end": "-0690-01-01",
+  "current": false,
+  "tenure": "15y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 25th Dynasty (Kushite)"
+ },
+ {
+  "name": "👑 Taharqa",
+  "role": "Pharaoh",
+  "start": "-0690-01-01",
+  "end": "-0664-01-01",
+  "current": false,
+  "tenure": "26y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 25th Dynasty (Kushite)"
+ },
+ {
+  "name": "👑 Tanutamun",
+  "role": "Pharaoh",
+  "start": "-0664-01-01",
+  "end": "-0656-01-01",
+  "current": false,
+  "tenure": "8y 0d",
+  "party": "year-level backbone",
+  "era": "Third Intermediate Period — 25th Dynasty (Kushite)"
+ },
+ {
+  "name": "👑 Psamtik I",
+  "role": "Pharaoh",
+  "start": "-0664-01-01",
+  "end": "-0610-01-01",
+  "current": false,
+  "tenure": "54y 0d",
+  "party": "year-level backbone",
+  "era": "Late Period — 26th Dynasty (Saite)"
+ },
+ {
+  "name": "👑 Necho II",
+  "role": "Pharaoh",
+  "start": "-0610-01-01",
+  "end": "-0595-01-01",
+  "current": false,
+  "tenure": "15y 0d",
+  "party": "year-level backbone",
+  "era": "Late Period — 26th Dynasty (Saite)"
+ },
+ {
+  "name": "👑 Psamtik II",
+  "role": "Pharaoh",
+  "start": "-0595-01-01",
+  "end": "-0589-01-01",
+  "current": false,
+  "tenure": "6y 0d",
+  "party": "year-level backbone",
+  "era": "Late Period — 26th Dynasty (Saite)"
+ },
+ {
+  "name": "👑 Apries",
+  "role": "Pharaoh",
+  "start": "-0589-01-01",
+  "end": "-0570-01-01",
+  "current": false,
+  "tenure": "19y 0d",
+  "party": "year-level backbone",
+  "era": "Late Period — 26th Dynasty (Saite)"
+ },
+ {
+  "name": "👑 Amasis II",
+  "role": "Pharaoh",
+  "start": "-0570-01-01",
+  "end": "-0526-01-01",
+  "current": false,
+  "tenure": "44y 0d",
+  "party": "year-level backbone",
+  "era": "Late Period — 26th Dynasty (Saite)"
+ },
+ {
+  "name": "👑 Psamtik III",
+  "role": "Pharaoh",
+  "start": "-0526-01-01",
+  "end": "-0525-01-01",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone",
+  "era": "Late Period — 26th Dynasty (Saite)"
+ },
+ {
+  "name": "👑 Cambyses II",
+  "role": "Pharaoh",
+  "start": "-0525-01-01",
+  "end": "-0522-01-01",
+  "current": false,
+  "tenure": "3y 0d",
+  "party": "year-level backbone",
+  "era": "Late Period — 27th Dynasty (First Persian)"
+ },
+ {
+  "name": "👑 Darius I",
+  "role": "Pharaoh",
+  "start": "-0522-01-01",
+  "end": "-0486-01-01",
+  "current": false,
+  "tenure": "36y 0d",
+  "party": "year-level backbone",
+  "era": "Late Period — 27th Dynasty (First Persian)"
+ },
+ {
+  "name": "👑 Xerxes I",
+  "role": "Pharaoh",
+  "start": "-0486-01-01",
+  "end": "-0465-01-01",
+  "current": false,
+  "tenure": "21y 0d",
+  "party": "year-level backbone",
+  "era": "Late Period — 27th Dynasty (First Persian)"
+ },
+ {
+  "name": "👑 Artaxerxes I",
+  "role": "Pharaoh",
+  "start": "-0465-01-01",
+  "end": "-0424-01-01",
+  "current": false,
+  "tenure": "41y 0d",
+  "party": "year-level backbone",
+  "era": "Late Period — 27th Dynasty (First Persian)"
+ },
+ {
+  "name": "👑 Darius II",
+  "role": "Pharaoh",
+  "start": "-0424-01-01",
+  "end": "-0404-01-01",
+  "current": false,
+  "tenure": "20y 0d",
+  "party": "year-level backbone",
+  "era": "Late Period — 27th Dynasty (First Persian)"
+ },
+ {
+  "name": "👑 Amyrtaeus",
+  "role": "Pharaoh",
+  "start": "-0404-01-01",
+  "end": "-0398-01-01",
+  "current": false,
+  "tenure": "6y 0d",
+  "party": "year-level backbone",
+  "era": "Late Period — 28th Dynasty"
+ },
+ {
+  "name": "👑 Nepherites I",
+  "role": "Pharaoh",
+  "start": "-0398-01-01",
+  "end": "-0393-01-01",
+  "current": false,
+  "tenure": "5y 0d",
+  "party": "year-level backbone",
+  "era": "Late Period — 29th Dynasty"
+ },
+ {
+  "name": "👑 Hakor",
+  "role": "Pharaoh",
+  "start": "-0393-01-01",
+  "end": "-0380-01-01",
+  "current": false,
+  "tenure": "13y 0d",
+  "party": "year-level backbone",
+  "era": "Late Period — 29th Dynasty"
+ },
+ {
+  "name": "👑 Nepherites II",
+  "role": "Pharaoh",
+  "start": "-0380-01-01",
+  "end": "-0380-01-01",
+  "current": false,
+  "tenure": "0y 0d",
+  "party": "year-level backbone",
+  "era": "Late Period — 29th Dynasty"
+ },
+ {
+  "name": "👑 Nectanebo I",
+  "role": "Pharaoh",
+  "start": "-0380-01-01",
+  "end": "-0362-01-01",
+  "current": false,
+  "tenure": "18y 0d",
+  "party": "year-level backbone",
+  "era": "Late Period — 30th Dynasty"
+ },
+ {
+  "name": "👑 Teos",
+  "role": "Pharaoh",
+  "start": "-0362-01-01",
+  "end": "-0360-01-01",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone",
+  "era": "Late Period — 30th Dynasty"
+ },
+ {
+  "name": "👑 Nectanebo II",
+  "role": "Pharaoh",
+  "start": "-0360-01-01",
+  "end": "-0342-01-01",
+  "current": false,
+  "tenure": "18y 0d",
+  "party": "year-level backbone",
+  "era": "Late Period — 30th Dynasty"
+ },
+ {
+  "name": "👑 Artaxerxes III",
+  "role": "Pharaoh",
+  "start": "-0342-01-01",
+  "end": "-0338-01-01",
+  "current": false,
+  "tenure": "4y 0d",
+  "party": "year-level backbone",
+  "era": "Late Period — 31st Dynasty (Second Persian)"
+ },
+ {
+  "name": "👑 Arses",
+  "role": "Pharaoh",
+  "start": "-0338-01-01",
+  "end": "-0336-01-01",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone",
+  "era": "Late Period — 31st Dynasty (Second Persian)"
+ },
+ {
+  "name": "👑 Darius III",
+  "role": "Pharaoh",
+  "start": "-0336-01-01",
+  "end": "-0332-01-01",
+  "current": false,
+  "tenure": "4y 0d",
+  "party": "year-level backbone",
+  "era": "Late Period — 31st Dynasty (Second Persian)"
+ }
+]

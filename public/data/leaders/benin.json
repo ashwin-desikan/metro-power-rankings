@@ -1,82 +1,172 @@
 [
-  {
-    "name": "Mathieu Kérékou",
-    "role": "President",
-    "start": "1990-03-01",
-    "end": "1991-04-04",
-    "current": false,
-    "tenure": "1y 1m 3d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Nicéphore Soglo",
-    "role": "President",
-    "start": "1991-04-04",
-    "end": "1996-04-04",
-    "current": false,
-    "tenure": "5y 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Mathieu Kérékou",
-    "role": "President",
-    "start": "1996-04-04",
-    "end": "2006-04-06",
-    "current": false,
-    "tenure": "10y 2d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Thomas Boni Yayi",
-    "role": "President",
-    "start": "2006-04-06",
-    "end": "2016-04-06",
-    "current": false,
-    "tenure": "10y 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Pascal Koupaki",
-    "role": "Prime Minister",
-    "start": "2011-05-28",
-    "end": "2013-08-08",
-    "current": false,
-    "tenure": "2y 2m 11d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Lionel Zinsou",
-    "role": "Prime Minister",
-    "start": "2015-06-18",
-    "end": "2016-04-06",
-    "current": false,
-    "tenure": "9m 19d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Patrice Talon",
-    "role": "President",
-    "start": "2016-04-06",
-    "end": "2026-05-24",
-    "current": false,
-    "tenure": "10y 1m 18d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Romuald Wadagni",
-    "role": "President",
-    "start": "2026-05-24",
-    "end": null,
-    "current": true,
-    "tenure": "1m 9d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Hubert Maga",
+  "role": "President",
+  "start": "1960-08-01",
+  "end": "1963-10-28",
+  "current": false,
+  "tenure": "3y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Christophe Soglo",
+  "role": "President",
+  "start": "1963-10-28",
+  "end": "1964-01-25",
+  "current": false,
+  "tenure": "0y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Sourou-Migan Apithy",
+  "role": "President",
+  "start": "1964-01-25",
+  "end": "1965-11-27",
+  "current": false,
+  "tenure": "1y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Justin Ahomadégbé-Tomêtin",
+  "role": "President",
+  "start": "1965-11-27",
+  "end": "1965-11-29",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Tahirou Congacou",
+  "role": "President",
+  "start": "1965-11-29",
+  "end": "1965-12-22",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Christophe Soglo",
+  "role": "President",
+  "start": "1965-12-22",
+  "end": "1967-12-17",
+  "current": false,
+  "tenure": "1y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Alphonse Alley",
+  "role": "President",
+  "start": "1967-12-21",
+  "end": "1968-07-17",
+  "current": false,
+  "tenure": "0y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Émile Derlin Zinsou",
+  "role": "President",
+  "start": "1968-07-17",
+  "end": "1969-12-10",
+  "current": false,
+  "tenure": "1y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Paul-Émile de Souza",
+  "role": "President",
+  "start": "1969-12-13",
+  "end": "1970-05-07",
+  "current": false,
+  "tenure": "0y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Hubert Maga",
+  "role": "President",
+  "start": "1970-05-07",
+  "end": "1972-05-07",
+  "current": false,
+  "tenure": "2y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Justin Ahomadégbé-Tomêtin",
+  "role": "President",
+  "start": "1972-05-07",
+  "end": "1972-10-26",
+  "current": false,
+  "tenure": "0y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mathieu Kérékou",
+  "role": "President",
+  "start": "1972-10-26",
+  "end": "1991-04-04",
+  "current": false,
+  "tenure": "18y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Nicéphore Soglo",
+  "role": "President",
+  "start": "1991-04-04",
+  "end": "1996-04-04",
+  "current": false,
+  "tenure": "5y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mathieu Kérékou",
+  "role": "President",
+  "start": "1996-04-04",
+  "end": "2006-04-06",
+  "current": false,
+  "tenure": "10y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Thomas Boni Yayi",
+  "role": "President",
+  "start": "2006-04-06",
+  "end": "2016-04-06",
+  "current": false,
+  "tenure": "10y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Patrice Talon",
+  "role": "President",
+  "start": "2016-04-06",
+  "end": "2026-01-01",
+  "current": false,
+  "tenure": "9y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Romuald Wadagni",
+  "role": "President",
+  "start": "2026-01-01",
+  "end": null,
+  "current": true,
+  "tenure": "0y 6m",
+  "party": null,
+  "era": null
+ }
 ]

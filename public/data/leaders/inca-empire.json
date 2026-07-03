@@ -1,0 +1,52 @@
+[
+  {
+    "name": "👑 Pachacuti",
+    "role": "Sapa Inca",
+    "start": "1438-01-01",
+    "end": "1471-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "year-level backbone",
+    "era": "Inca Empire"
+  },
+  {
+    "name": "👑 Túpac Inca Yupanqui",
+    "role": "Sapa Inca",
+    "start": "1471-01-01",
+    "end": "1493-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level backbone",
+    "era": "Inca Empire"
+  },
+  {
+    "name": "👑 Huayna Capac",
+    "role": "Sapa Inca",
+    "start": "1493-01-01",
+    "end": "1527-01-01",
+    "current": false,
+    "tenure": "34y 0d",
+    "party": "year-level backbone",
+    "era": "Inca Empire"
+  },
+  {
+    "name": "👑 Huáscar",
+    "role": "Sapa Inca",
+    "start": "1527-01-01",
+    "end": "1532-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Inca Empire"
+  },
+  {
+    "name": "👑 Atahualpa",
+    "role": "Sapa Inca",
+    "start": "1532-01-01",
+    "end": "1533-07-26",
+    "current": false,
+    "tenure": "1y 6m 25d",
+    "party": "year-level backbone",
+    "era": "Inca Empire"
+  }
+]

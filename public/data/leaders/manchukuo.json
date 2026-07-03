@@ -1,0 +1,22 @@
+[
+ {
+  "name": "👑 Puyi",
+  "role": "Chief Executive",
+  "start": "1932-01-01",
+  "end": "1934-01-01",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone",
+  "era": "Manchukuo"
+ },
+ {
+  "name": "👑 Puyi",
+  "role": "Emperor",
+  "start": "1934-01-01",
+  "end": "1945-01-01",
+  "current": false,
+  "tenure": "11y 0d",
+  "party": "year-level backbone",
+  "era": "Manchukuo"
+ }
+]

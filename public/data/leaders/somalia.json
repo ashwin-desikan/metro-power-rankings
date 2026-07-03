@@ -1,52 +1,402 @@
 [
-  {
-    "name": "Mohamed Abdullahi Mohamed",
-    "role": "President",
-    "start": "2017-02-08",
-    "end": "2022-05-15",
-    "current": false,
-    "tenure": "5y 3m 7d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Hassan Ali Khayre",
-    "role": "Prime Minister",
-    "start": "2017-03-01",
-    "end": "2020-07-25",
-    "current": false,
-    "tenure": "3y 4m 24d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Mahdi Mohammed Gulaid",
-    "role": "Prime Minister",
-    "start": "2020-07-25",
-    "end": "2020-09-23",
-    "current": false,
-    "tenure": "1m 29d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Mohamed Hussein Roble",
-    "role": "Prime Minister",
-    "start": "2020-09-23",
-    "end": null,
-    "current": true,
-    "tenure": "5y 9m 10d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Hassan Sheikh Mohamud",
-    "role": "President",
-    "start": "2022-05-15",
-    "end": null,
-    "current": true,
-    "tenure": "4y 1m 18d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Abdullahi Issa",
+  "role": "Prime Minister",
+  "start": "1956-02-29",
+  "end": "1960-07-01",
+  "current": false,
+  "tenure": "4y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Aden Abdullah Osman Daar",
+  "role": "President",
+  "start": "1960-07-01",
+  "end": "1967-07-06",
+  "current": false,
+  "tenure": "7y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Muhammad Haji Ibrahim Egal",
+  "role": "Prime Minister",
+  "start": "1960-07-01",
+  "end": "1960-07-12",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Abdirashid Ali Shermarke",
+  "role": "Prime Minister",
+  "start": "1960-07-12",
+  "end": "1964-06-14",
+  "current": false,
+  "tenure": "3y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Abdirizak Haji Hussein",
+  "role": "Prime Minister",
+  "start": "1964-06-14",
+  "end": "1967-07-15",
+  "current": false,
+  "tenure": "3y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Abdirashid Ali Shermarke",
+  "role": "President",
+  "start": "1967-07-06",
+  "end": "1969-10-15",
+  "current": false,
+  "tenure": "2y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Muhammad Haji Ibrahim Egal",
+  "role": "Prime Minister",
+  "start": "1967-07-15",
+  "end": "1969-10-21",
+  "current": false,
+  "tenure": "2y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Sheikh Mukhtar Mohamed Hussein",
+  "role": "Acting President",
+  "start": "1969-10-15",
+  "end": "1969-10-21",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mohamed Siad Barre",
+  "role": "Chairman",
+  "start": "1969-10-21",
+  "end": "1976-07-01",
+  "current": false,
+  "tenure": "6y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mohamed Siad Barre",
+  "role": "President",
+  "start": "1976-07-01",
+  "end": "1991-01-26",
+  "current": false,
+  "tenure": "14y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mohammad Ali Samatar",
+  "role": "Prime Minister",
+  "start": "1987-02-01",
+  "end": "1990-09-03",
+  "current": false,
+  "tenure": "3y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Muhammad Hawadle Madar",
+  "role": "Prime Minister",
+  "start": "1990-09-03",
+  "end": "1991-01-24",
+  "current": false,
+  "tenure": "0y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Umar Arteh Ghalib",
+  "role": "Prime Minister",
+  "start": "1991-01-24",
+  "end": "1997-01-03",
+  "current": false,
+  "tenure": "5y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ali Mahdi Mohamed",
+  "role": "President",
+  "start": "1991-01-26",
+  "end": "2000-08-27",
+  "current": false,
+  "tenure": "9y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Abdiqasim Salad Hassan",
+  "role": "President",
+  "start": "2000-08-27",
+  "end": "2004-10-14",
+  "current": false,
+  "tenure": "4y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ali Khalif Galaydh",
+  "role": "Prime Minister",
+  "start": "2000-10-08",
+  "end": "2001-10-28",
+  "current": false,
+  "tenure": "1y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Osman Jama Ali",
+  "role": "Acting Prime Minister",
+  "start": "2001-10-28",
+  "end": "2001-11-12",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Hassan Abshir Farah",
+  "role": "Prime Minister",
+  "start": "2001-11-12",
+  "end": "2003-12-08",
+  "current": false,
+  "tenure": "2y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Muhammad Abdi Yusuf",
+  "role": "Prime Minister",
+  "start": "2003-12-08",
+  "end": "2004-12-23",
+  "current": false,
+  "tenure": "1y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Abdullahi Yusuf Ahmed",
+  "role": "President",
+  "start": "2004-10-14",
+  "end": "2008-12-29",
+  "current": false,
+  "tenure": "4y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ali Mohammed Ghedi",
+  "role": "Prime Minister",
+  "start": "2004-12-23",
+  "end": "2007-10-30",
+  "current": false,
+  "tenure": "2y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Salim Aliyow Ibrow",
+  "role": "Acting Prime Minister",
+  "start": "2007-10-30",
+  "end": "2007-11-24",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Nur Hassan Hussein",
+  "role": "Prime Minister",
+  "start": "2007-11-24",
+  "end": "2009-02-14",
+  "current": false,
+  "tenure": "1y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Aden Mohamed Nur Madobe",
+  "role": "Acting President",
+  "start": "2008-12-29",
+  "end": "2009-01-31",
+  "current": false,
+  "tenure": "0y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Sharif Sheikh Ahmed",
+  "role": "President",
+  "start": "2009-01-31",
+  "end": "2012-08-20",
+  "current": false,
+  "tenure": "3y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Omar Abdirashid Ali Sharmarke",
+  "role": "Prime Minister",
+  "start": "2009-02-14",
+  "end": "2010-09-24",
+  "current": false,
+  "tenure": "1y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Abdiwahid Elmi Gonjeh",
+  "role": "Acting Prime Minister",
+  "start": "2010-09-24",
+  "end": "2010-11-01",
+  "current": false,
+  "tenure": "0y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mohamed Abdullahi Mohamed",
+  "role": "Prime Minister",
+  "start": "2010-11-01",
+  "end": "2011-06-19",
+  "current": false,
+  "tenure": "0y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Abdiweli Mohamed Ali",
+  "role": "Prime Minister",
+  "start": "2011-06-19",
+  "end": "2012-10-17",
+  "current": false,
+  "tenure": "1y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Muse Hassan Sheikh Sayid Abdulle",
+  "role": "Acting President",
+  "start": "2012-08-20",
+  "end": "2012-08-28",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Hassan Sheikh Mohamud",
+  "role": "President",
+  "start": "2012-09-16",
+  "end": "2017-02-16",
+  "current": false,
+  "tenure": "4y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Abdi Farah Shirdon",
+  "role": "Prime Minister",
+  "start": "2012-10-17",
+  "end": "2013-12-21",
+  "current": false,
+  "tenure": "1y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Abdiweli Sheikh Ahmed",
+  "role": "Prime Minister",
+  "start": "2013-12-21",
+  "end": "2014-12-24",
+  "current": false,
+  "tenure": "1y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Omar Abdirashid Ali Sharmarke",
+  "role": "Prime Minister",
+  "start": "2014-12-24",
+  "end": "2017-03-01",
+  "current": false,
+  "tenure": "2y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mohamed Abdullahi Mohamed",
+  "role": "President",
+  "start": "2017-02-16",
+  "end": "2022-05-23",
+  "current": false,
+  "tenure": "5y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Hassan Ali Khaire",
+  "role": "Prime Minister",
+  "start": "2017-03-01",
+  "end": "2020-07-25",
+  "current": false,
+  "tenure": "3y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mahdi Mohammed Gulaid",
+  "role": "Acting Prime Minister",
+  "start": "2020-07-25",
+  "end": "2020-09-23",
+  "current": false,
+  "tenure": "0y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mohamed Hussein Roble",
+  "role": "Prime Minister",
+  "start": "2020-09-23",
+  "end": "2022-06-26",
+  "current": false,
+  "tenure": "1y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Hassan Sheikh Mohamud",
+  "role": "President",
+  "start": "2022-05-23",
+  "end": null,
+  "current": true,
+  "tenure": "4y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Hamza Abdi Barre",
+  "role": "Prime Minister",
+  "start": "2022-06-26",
+  "end": null,
+  "current": false,
+  "tenure": "4y 0m",
+  "party": null,
+  "era": null
+ }
 ]

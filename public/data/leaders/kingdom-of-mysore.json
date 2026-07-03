@@ -1,0 +1,122 @@
+[
+ {
+  "name": "👑 Yaduraya Wodeyar",
+  "role": "Maharaja",
+  "start": "1399-01-01",
+  "end": "1423-01-01",
+  "current": false,
+  "tenure": "24y 0m",
+  "party": null,
+  "era": "Kingdom of Mysore"
+ },
+ {
+  "name": "👑 Timmaraja Wodeyar II",
+  "role": "Maharaja",
+  "start": "1572-01-01",
+  "end": "1576-01-01",
+  "current": false,
+  "tenure": "4y 0m",
+  "party": null,
+  "era": "Kingdom of Mysore"
+ },
+ {
+  "name": "👑 Raja Wodeyar I",
+  "role": "Maharaja",
+  "start": "1578-01-01",
+  "end": "1617-01-01",
+  "current": false,
+  "tenure": "39y 0m",
+  "party": null,
+  "era": "Kingdom of Mysore"
+ },
+ {
+  "name": "👑 Kanthirava Narasaraja I",
+  "role": "Maharaja",
+  "start": "1638-01-01",
+  "end": "1659-01-01",
+  "current": false,
+  "tenure": "21y 0m",
+  "party": null,
+  "era": "Kingdom of Mysore"
+ },
+ {
+  "name": "👑 Chikka Devaraja Wodeyar",
+  "role": "Maharaja",
+  "start": "1673-01-01",
+  "end": "1704-01-01",
+  "current": false,
+  "tenure": "31y 0m",
+  "party": null,
+  "era": "Kingdom of Mysore"
+ },
+ {
+  "name": "👑 Krishnaraja Wodeyar II",
+  "role": "Maharaja",
+  "start": "1734-01-01",
+  "end": "1766-01-01",
+  "current": false,
+  "tenure": "32y 0m",
+  "party": null,
+  "era": "Kingdom of Mysore"
+ },
+ {
+  "name": "👑 Hyder Ali",
+  "role": "Sultan (de facto ruler)",
+  "start": "1761-01-01",
+  "end": "1782-12-07",
+  "current": false,
+  "tenure": "21y 11m",
+  "party": null,
+  "era": "Kingdom of Mysore"
+ },
+ {
+  "name": "👑 Tipu Sultan",
+  "role": "Sultan",
+  "start": "1782-12-07",
+  "end": "1799-05-04",
+  "current": false,
+  "tenure": "16y 4m",
+  "party": null,
+  "era": "Kingdom of Mysore"
+ },
+ {
+  "name": "👑 Krishnaraja Wodeyar III",
+  "role": "Maharaja",
+  "start": "1799-06-30",
+  "end": "1868-03-27",
+  "current": false,
+  "tenure": "68y 8m",
+  "party": null,
+  "era": "Kingdom of Mysore"
+ },
+ {
+  "name": "👑 Chamaraja Wodeyar X",
+  "role": "Maharaja",
+  "start": "1868-03-27",
+  "end": "1894-12-28",
+  "current": false,
+  "tenure": "26y 9m",
+  "party": null,
+  "era": "Kingdom of Mysore"
+ },
+ {
+  "name": "👑 Krishnaraja Wodeyar IV",
+  "role": "Maharaja",
+  "start": "1894-12-28",
+  "end": "1940-08-03",
+  "current": false,
+  "tenure": "45y 7m",
+  "party": null,
+  "era": "Kingdom of Mysore"
+ },
+ {
+  "name": "👑 Jayachamarajendra Wodeyar",
+  "role": "Maharaja",
+  "start": "1940-09-08",
+  "end": "1947-08-15",
+  "current": false,
+  "tenure": "6y 11m",
+  "party": null,
+  "era": "Kingdom of Mysore"
+ }
+]

@@ -133,21 +133,11 @@
     "name": "Gamal Abdel Nasser",
     "role": "President",
     "start": "1954-11-14",
-    "end": "1958-02-22",
-    "current": false,
-    "tenure": "3y 3m 8d",
-    "party": "Arab Socialist Union",
-    "era": "Republic"
-  },
-  {
-    "name": "Gamal Abdel Nasser",
-    "role": "President",
-    "start": "1958-02-22",
     "end": "1970-09-28",
     "current": false,
-    "tenure": "12y 7m 6d",
+    "tenure": "15y 10m 14d",
     "party": "Arab Socialist Union",
-    "era": "United Arab Republic"
+    "era": "Republic"
   },
   {
     "name": "Anwar Sadat",

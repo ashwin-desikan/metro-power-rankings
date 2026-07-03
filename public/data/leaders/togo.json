@@ -1,42 +1,92 @@
 [
-  {
-    "name": "Faure Essozimna Gnassingbé",
-    "role": "President",
-    "start": "2005-05-04",
-    "end": "2025-05-03",
-    "current": false,
-    "tenure": "19y 11m 29d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Faure Essozimna Gnassingbé",
-    "role": "Prime Minister",
-    "start": "2025-05-03",
-    "end": null,
-    "current": true,
-    "tenure": "1y 2m 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Faure Essozimna Gnassingbé",
-    "role": "President",
-    "start": "2025-05-03",
-    "end": "2025-05-03",
-    "current": false,
-    "tenure": "0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Jean-Lucien Savi de Tové",
-    "role": "President",
-    "start": "2025-05-03",
-    "end": null,
-    "current": true,
-    "tenure": "1y 2m 0d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Sylvanus Olympio",
+  "role": "President",
+  "start": "1961-04-15",
+  "end": "1963-01-13",
+  "current": false,
+  "tenure": "1y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Emmanuel Bodjollé",
+  "role": "President",
+  "start": "1963-01-13",
+  "end": "1963-01-16",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Nicolas Grunitzky",
+  "role": "President",
+  "start": "1963-01-16",
+  "end": "1967-01-13",
+  "current": false,
+  "tenure": "3y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Kléber Dadjo",
+  "role": "President",
+  "start": "1967-01-14",
+  "end": "1967-04-14",
+  "current": false,
+  "tenure": "0y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Gnassingbé Eyadéma",
+  "role": "President",
+  "start": "1967-04-14",
+  "end": "2005-02-05",
+  "current": false,
+  "tenure": "37y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Faure Gnassingbé",
+  "role": "President",
+  "start": "2005-02-05",
+  "end": "2005-02-25",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bonfoh Abass",
+  "role": "President",
+  "start": "2005-02-25",
+  "end": "2005-05-04",
+  "current": false,
+  "tenure": "0y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Faure Gnassingbé",
+  "role": "President",
+  "start": "2005-05-04",
+  "end": "2025-05-03",
+  "current": false,
+  "tenure": "19y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Jean-Lucien Savi de Tové",
+  "role": "President",
+  "start": "2025-05-03",
+  "end": null,
+  "current": true,
+  "tenure": "1y 2m",
+  "party": null,
+  "era": null
+ }
 ]

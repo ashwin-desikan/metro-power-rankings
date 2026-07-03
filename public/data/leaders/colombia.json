@@ -103,21 +103,11 @@
     "name": "Mariano Ospina Rodríguez",
     "role": "President",
     "start": "1857-04-01",
-    "end": "1858-05-22",
-    "current": false,
-    "tenure": "1857–1858",
-    "party": "Conservative",
-    "era": "Republic of New Granada"
-  },
-  {
-    "name": "Mariano Ospina Rodríguez",
-    "role": "President",
-    "start": "1858-05-22",
     "end": "1861-04-01",
     "current": false,
-    "tenure": "1858–1861",
+    "tenure": "4y 0d",
     "party": "Conservative",
-    "era": "Granadine Confederation"
+    "era": "Republic of New Granada"
   },
   {
     "name": "Bartolomé Calvo",
@@ -273,21 +263,11 @@
     "name": "Rafael Núñez",
     "role": "President",
     "start": "1884-04-01",
-    "end": "1886-08-06",
-    "current": false,
-    "tenure": "1884–1886",
-    "party": "National",
-    "era": "United States of Colombia"
-  },
-  {
-    "name": "Rafael Núñez",
-    "role": "President",
-    "start": "1886-08-06",
     "end": "1894-09-18",
     "current": false,
-    "tenure": "1886–1894",
+    "tenure": "10y 5m 17d",
     "party": "National",
-    "era": "Republic of Colombia"
+    "era": "United States of Colombia"
   },
   {
     "name": "Miguel Antonio Caro",

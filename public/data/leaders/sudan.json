@@ -1,122 +1,142 @@
 [
-  {
-    "name": "Ismail al-Azhari",
-    "role": "Prime Minister",
-    "start": "1956-01-01",
-    "end": "1956-07-05",
-    "current": false,
-    "tenure": "1956",
-    "party": "National Unionist Party",
-    "era": "Independence & parliamentary era"
-  },
-  {
-    "name": "Abdallah Khalil",
-    "role": "Prime Minister",
-    "start": "1956-07-05",
-    "end": "1958-11-17",
-    "current": false,
-    "tenure": "1956-1958",
-    "party": "Umma Party",
-    "era": "Independence & parliamentary era"
-  },
-  {
-    "name": "Ibrahim Abboud",
-    "role": "President (military, Supreme Council Chairman)",
-    "start": "1958-11-17",
-    "end": "1964-11-15",
-    "current": false,
-    "tenure": "1958-1964",
-    "party": "Military",
-    "era": "First military rule"
-  },
-  {
-    "name": "Ismail al-Azhari",
-    "role": "President (Supreme Council Chairman)",
-    "start": "1965-06-10",
-    "end": "1969-05-25",
-    "current": false,
-    "tenure": "1965-1969",
-    "party": "National Unionist Party",
-    "era": "Second parliamentary era"
-  },
-  {
-    "name": "Jaafar Nimeiry",
-    "role": "President",
-    "start": "1969-05-25",
-    "end": "1985-04-06",
-    "current": false,
-    "tenure": "1969-1985 (overthrown)",
-    "party": "Sudanese Socialist Union",
-    "era": "Nimeiry era"
-  },
-  {
-    "name": "Abdel Rahman Swar al-Dahab",
-    "role": "President (Transitional Military Council Chairman)",
-    "start": "1985-04-06",
-    "end": "1986-05-06",
-    "current": false,
-    "tenure": "1985-1986",
-    "party": "Military",
-    "era": "Transitional military rule"
-  },
-  {
-    "name": "Ahmed al-Mirghani",
-    "role": "President (Supreme Council Chairman)",
-    "start": "1986-05-06",
-    "end": "1989-06-30",
-    "current": false,
-    "tenure": "1986-1989",
-    "party": "DUP",
-    "era": "Third parliamentary era"
-  },
-  {
-    "name": "⚠️ Omar al-Bashir",
-    "role": "President",
-    "start": "1989-06-30",
-    "end": "2019-04-11",
-    "current": false,
-    "tenure": "1989-2019 (coup; ICC genocide charges, Darfur; ousted)",
-    "party": "National Congress Party",
-    "era": "Bashir era"
-  },
-  {
-    "name": "Ahmed Awad Ibn Auf",
-    "role": "President (Transitional Military Council Chairman)",
-    "start": "2019-04-11",
-    "end": "2019-04-12",
-    "current": false,
-    "tenure": "2019 (1 day)",
-    "party": "Military",
-    "era": "2019 transition"
-  },
-  {
-    "name": "Abdel Fattah al-Burhan",
-    "role": "President (Transitional Military Council Chairman)",
-    "start": "2019-04-12",
-    "end": "2019-08-21",
-    "current": false,
-    "tenure": "2019 (TMC)",
-    "party": "Military",
-    "era": "2019 transition"
-  },
-  {
-    "name": "⚠️ Abdel Fattah al-Burhan",
-    "role": "President (Sovereignty Council Chairman)",
-    "start": "2019-08-21",
-    "end": null,
-    "current": true,
-    "tenure": "2019-present (de facto head of state; 2021 coup; 2023- civil war)",
-    "party": "Military",
-    "era": "Sovereignty Council / civil war"
-  },
-  {
-    "name": "Kamil Idris",
-    "role": "Prime Minister",
-    "start": "2025-05-31",
-    "end": null,
-    "current": true,
-    "tenure": "2025-present",
-    "party": "Independent",
-    "era": "Sovereignty Council / civil war"
-  }
+ {
+  "name": "Muhammad Ahmad (the Mahdi)",
+  "role": "Mahdi",
+  "start": "1881-06-29",
+  "end": "1885-06-22",
+  "current": false,
+  "tenure": "3y 11m",
+  "party": null,
+  "era": "Mahdist State"
+ },
+ {
+  "name": "Abdallahi ibn Muhammad (the Khalifa)",
+  "role": "Khalifa",
+  "start": "1885-06-22",
+  "end": "1898-09-02",
+  "current": false,
+  "tenure": "13y 2m",
+  "party": null,
+  "era": "Mahdist State"
+ },
+ {
+  "name": "Ismail al-Azhari",
+  "role": "Prime Minister",
+  "start": "1956-01-01",
+  "end": "1956-07-05",
+  "current": false,
+  "tenure": "1956",
+  "party": "National Unionist Party",
+  "era": "Independence & parliamentary era"
+ },
+ {
+  "name": "Abdallah Khalil",
+  "role": "Prime Minister",
+  "start": "1956-07-05",
+  "end": "1958-11-17",
+  "current": false,
+  "tenure": "1956-1958",
+  "party": "Umma Party",
+  "era": "Independence & parliamentary era"
+ },
+ {
+  "name": "Ibrahim Abboud",
+  "role": "President (military, Supreme Council Chairman)",
+  "start": "1958-11-17",
+  "end": "1964-11-15",
+  "current": false,
+  "tenure": "1958-1964",
+  "party": "Military",
+  "era": "First military rule"
+ },
+ {
+  "name": "Ismail al-Azhari",
+  "role": "President (Supreme Council Chairman)",
+  "start": "1965-06-10",
+  "end": "1969-05-25",
+  "current": false,
+  "tenure": "1965-1969",
+  "party": "National Unionist Party",
+  "era": "Second parliamentary era"
+ },
+ {
+  "name": "Jaafar Nimeiry",
+  "role": "President",
+  "start": "1969-05-25",
+  "end": "1985-04-06",
+  "current": false,
+  "tenure": "1969-1985 (overthrown)",
+  "party": "Sudanese Socialist Union",
+  "era": "Nimeiry era"
+ },
+ {
+  "name": "Abdel Rahman Swar al-Dahab",
+  "role": "President (Transitional Military Council Chairman)",
+  "start": "1985-04-06",
+  "end": "1986-05-06",
+  "current": false,
+  "tenure": "1985-1986",
+  "party": "Military",
+  "era": "Transitional military rule"
+ },
+ {
+  "name": "Ahmed al-Mirghani",
+  "role": "President (Supreme Council Chairman)",
+  "start": "1986-05-06",
+  "end": "1989-06-30",
+  "current": false,
+  "tenure": "1986-1989",
+  "party": "DUP",
+  "era": "Third parliamentary era"
+ },
+ {
+  "name": "⚠️ Omar al-Bashir",
+  "role": "President",
+  "start": "1989-06-30",
+  "end": "2019-04-11",
+  "current": false,
+  "tenure": "1989-2019 (coup; ICC genocide charges, Darfur; ousted)",
+  "party": "National Congress Party",
+  "era": "Bashir era"
+ },
+ {
+  "name": "Ahmed Awad Ibn Auf",
+  "role": "President (Transitional Military Council Chairman)",
+  "start": "2019-04-11",
+  "end": "2019-04-12",
+  "current": false,
+  "tenure": "2019 (1 day)",
+  "party": "Military",
+  "era": "2019 transition"
+ },
+ {
+  "name": "Abdel Fattah al-Burhan",
+  "role": "President (Transitional Military Council Chairman)",
+  "start": "2019-04-12",
+  "end": "2019-08-21",
+  "current": false,
+  "tenure": "2019 (TMC)",
+  "party": "Military",
+  "era": "2019 transition"
+ },
+ {
+  "name": "⚠️ Abdel Fattah al-Burhan",
+  "role": "President (Sovereignty Council Chairman)",
+  "start": "2019-08-21",
+  "end": null,
+  "current": true,
+  "tenure": "2019-present (de facto head of state; 2021 coup; 2023- civil war)",
+  "party": "Military",
+  "era": "Sovereignty Council / civil war"
+ },
+ {
+  "name": "Kamil Idris",
+  "role": "Prime Minister",
+  "start": "2025-05-31",
+  "end": null,
+  "current": true,
+  "tenure": "2025-present",
+  "party": "Independent",
+  "era": "Sovereignty Council / civil war"
+ }
 ]

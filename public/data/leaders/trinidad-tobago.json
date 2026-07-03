@@ -1,42 +1,172 @@
 [
-  {
-    "name": "Kamla Persad-Bissessar",
-    "role": "Prime Minister",
-    "start": "2010-05-26",
-    "end": "2015-09-09",
-    "current": false,
-    "tenure": "5y 3m 14d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Keith Rowley",
-    "role": "Prime Minister",
-    "start": "2015-09-09",
-    "end": "2025-03-17",
-    "current": false,
-    "tenure": "9y 6m 8d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Christine Kangaloo",
-    "role": "President",
-    "start": "2023-03-20",
-    "end": null,
-    "current": true,
-    "tenure": "3y 3m 13d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Kamla Persad-Bissessar",
-    "role": "Prime Minister",
-    "start": "2025-05-01",
-    "end": null,
-    "current": true,
-    "tenure": "1y 2m 2d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Eric Williams",
+  "role": "Prime Minister",
+  "start": "1962-08-31",
+  "end": "1981-03-29",
+  "current": false,
+  "tenure": "18y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ellis Clarke",
+  "role": "President",
+  "start": "1976-08-01",
+  "end": "1987-03-19",
+  "current": false,
+  "tenure": "10y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "George Chambers",
+  "role": "Prime Minister",
+  "start": "1981-03-30",
+  "end": "1986-12-18",
+  "current": false,
+  "tenure": "5y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "A. N. R. Robinson",
+  "role": "Prime Minister",
+  "start": "1986-12-19",
+  "end": "1991-12-17",
+  "current": false,
+  "tenure": "4y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Noor Hassanali",
+  "role": "President",
+  "start": "1987-03-19",
+  "end": "1997-03-18",
+  "current": false,
+  "tenure": "9y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Patrick Manning",
+  "role": "Prime Minister",
+  "start": "1991-12-17",
+  "end": "1995-11-09",
+  "current": false,
+  "tenure": "3y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Basdeo Panday",
+  "role": "Prime Minister",
+  "start": "1995-11-09",
+  "end": "2001-12-24",
+  "current": false,
+  "tenure": "6y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "A. N. R. Robinson",
+  "role": "President",
+  "start": "1997-03-19",
+  "end": "2003-03-17",
+  "current": false,
+  "tenure": "5y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Patrick Manning",
+  "role": "Prime Minister",
+  "start": "2001-12-24",
+  "end": "2010-05-26",
+  "current": false,
+  "tenure": "8y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "George Maxwell Richards",
+  "role": "President",
+  "start": "2003-03-17",
+  "end": "2013-03-18",
+  "current": false,
+  "tenure": "10y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Kamla Persad-Bissessar",
+  "role": "Prime Minister",
+  "start": "2010-05-26",
+  "end": "2015-09-09",
+  "current": false,
+  "tenure": "5y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Anthony Carmona",
+  "role": "President",
+  "start": "2013-03-18",
+  "end": "2018-03-19",
+  "current": false,
+  "tenure": "5y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Keith Rowley",
+  "role": "Prime Minister",
+  "start": "2015-09-09",
+  "end": "2025-03-17",
+  "current": false,
+  "tenure": "9y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Paula-Mae Weekes",
+  "role": "President",
+  "start": "2018-03-19",
+  "end": "2023-03-20",
+  "current": false,
+  "tenure": "5y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Christine Kangaloo",
+  "role": "President",
+  "start": "2023-03-20",
+  "end": null,
+  "current": true,
+  "tenure": "3y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Stuart Young",
+  "role": "Prime Minister",
+  "start": "2025-03-17",
+  "end": "2025-05-01",
+  "current": false,
+  "tenure": "0y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Kamla Persad-Bissessar",
+  "role": "Prime Minister",
+  "start": "2025-05-01",
+  "end": null,
+  "current": true,
+  "tenure": "1y 2m",
+  "party": null,
+  "era": null
+ }
 ]

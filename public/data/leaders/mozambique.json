@@ -1,122 +1,142 @@
 [
-  {
-    "name": "Mário da Graça Machungo",
-    "role": "Prime Minister",
-    "start": "1990-12-01",
-    "end": "1994-12-16",
-    "current": false,
-    "tenure": "4y 15d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Joaquim Chissano",
-    "role": "President",
-    "start": "1990-12-01",
-    "end": "2005-02-02",
-    "current": false,
-    "tenure": "14y 2m 1d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Pascoal Mocumbi",
-    "role": "Prime Minister",
-    "start": "1994-12-16",
-    "end": "2004-02-17",
-    "current": false,
-    "tenure": "9y 2m 1d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Luísa Diogo",
-    "role": "Prime Minister",
-    "start": "2004-02-17",
-    "end": "2010-01-16",
-    "current": false,
-    "tenure": "5y 10m 30d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Armando Guebuza",
-    "role": "President",
-    "start": "2005-02-02",
-    "end": "2015-01-15",
-    "current": false,
-    "tenure": "9y 11m 13d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Aires Ali",
-    "role": "Prime Minister",
-    "start": "2010-01-16",
-    "end": "2012-10-08",
-    "current": false,
-    "tenure": "2y 8m 22d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Alberto Vaquina",
-    "role": "Prime Minister",
-    "start": "2012-10-08",
-    "end": "2015-01-17",
-    "current": false,
-    "tenure": "2y 3m 9d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Filipe Nyusi",
-    "role": "President",
-    "start": "2015-01-15",
-    "end": "2025-01-15",
-    "current": false,
-    "tenure": "10y 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Carlos Agostinho do Rosário",
-    "role": "Prime Minister",
-    "start": "2015-01-17",
-    "end": "2022-03-03",
-    "current": false,
-    "tenure": "7y 1m 14d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Adriano Maleiane",
-    "role": "Prime Minister",
-    "start": "2022-03-03",
-    "end": "2025-01-15",
-    "current": false,
-    "tenure": "2y 10m 12d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Maria Benvinda Levy",
-    "role": "Prime Minister",
-    "start": "2025-01-15",
-    "end": null,
-    "current": true,
-    "tenure": "1y 5m 18d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Daniel Chapo",
-    "role": "President",
-    "start": "2025-01-15",
-    "end": null,
-    "current": true,
-    "tenure": "1y 5m 18d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Joaquim Chissano",
+  "role": "Prime Minister",
+  "start": "1974-09-20",
+  "end": "1975-06-25",
+  "current": false,
+  "tenure": "0y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Samora Machel",
+  "role": "President",
+  "start": "1975-06-25",
+  "end": "1986-10-19",
+  "current": false,
+  "tenure": "11y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mário da Graça Machungo",
+  "role": "Prime Minister",
+  "start": "1986-07-17",
+  "end": "1994-12-16",
+  "current": false,
+  "tenure": "8y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Joaquim Chissano",
+  "role": "President",
+  "start": "1986-11-06",
+  "end": "2005-02-02",
+  "current": false,
+  "tenure": "18y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Pascoal Mocumbi",
+  "role": "Prime Minister",
+  "start": "1994-12-16",
+  "end": "2004-02-17",
+  "current": false,
+  "tenure": "9y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Luísa Diogo",
+  "role": "Prime Minister",
+  "start": "2004-02-17",
+  "end": "2010-01-16",
+  "current": false,
+  "tenure": "5y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Armando Guebuza",
+  "role": "President",
+  "start": "2005-02-02",
+  "end": "2015-01-15",
+  "current": false,
+  "tenure": "9y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Aires Ali",
+  "role": "Prime Minister",
+  "start": "2010-01-16",
+  "end": "2012-10-08",
+  "current": false,
+  "tenure": "2y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Alberto Vaquina",
+  "role": "Prime Minister",
+  "start": "2012-10-08",
+  "end": "2015-01-17",
+  "current": false,
+  "tenure": "2y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Filipe Nyusi",
+  "role": "President",
+  "start": "2015-01-15",
+  "end": "2025-01-15",
+  "current": false,
+  "tenure": "10y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Carlos Agostinho do Rosário",
+  "role": "Prime Minister",
+  "start": "2015-01-17",
+  "end": "2022-03-03",
+  "current": false,
+  "tenure": "7y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Adriano Maleiane",
+  "role": "Prime Minister",
+  "start": "2022-03-03",
+  "end": "2025-01-15",
+  "current": false,
+  "tenure": "2y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Daniel Chapo",
+  "role": "President",
+  "start": "2025-01-15",
+  "end": null,
+  "current": true,
+  "tenure": "1y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Maria Benvinda Levy",
+  "role": "Prime Minister",
+  "start": "2025-01-15",
+  "end": null,
+  "current": true,
+  "tenure": "1y 5m",
+  "party": null,
+  "era": null
+ }
 ]

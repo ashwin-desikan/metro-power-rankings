@@ -1,72 +1,212 @@
 [
-  {
-    "name": "Donald Ramotar",
-    "role": "President",
-    "start": "2011-12-01",
-    "end": "2015-05-01",
-    "current": false,
-    "tenure": "3y 5m 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "David A. Granger",
-    "role": "President",
-    "start": "2015-05-01",
-    "end": "2015-05-20",
-    "current": false,
-    "tenure": "19d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Moses Nagamootoo",
-    "role": "Prime Minister",
-    "start": "2015-05-20",
-    "end": "2020-08-02",
-    "current": false,
-    "tenure": "5y 2m 13d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Moses Nagamootoo",
-    "role": "President",
-    "start": "2015-05-20",
-    "end": "2020-08-02",
-    "current": false,
-    "tenure": "5y 2m 13d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Mark Phillips",
-    "role": "Prime Minister",
-    "start": "2020-08-02",
-    "end": null,
-    "current": true,
-    "tenure": "5y 11m 1d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Mark Phillips",
-    "role": "President",
-    "start": "2020-08-02",
-    "end": "2020-08-02",
-    "current": false,
-    "tenure": "0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Irfaan Ali",
-    "role": "President",
-    "start": "2020-08-02",
-    "end": null,
-    "current": true,
-    "tenure": "5y 11m 1d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Forbes Burnham",
+  "role": "Prime Minister",
+  "start": "1966-05-26",
+  "end": "1980-10-06",
+  "current": false,
+  "tenure": "14y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Arthur Chung",
+  "role": "President",
+  "start": "1970-03-17",
+  "end": "1980-10-06",
+  "current": false,
+  "tenure": "10y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Forbes Burnham",
+  "role": "President",
+  "start": "1980-10-06",
+  "end": "1985-08-06",
+  "current": false,
+  "tenure": "4y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ptolemy Reid",
+  "role": "Prime Minister",
+  "start": "1980-10-06",
+  "end": "1984-08-16",
+  "current": false,
+  "tenure": "3y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Desmond Hoyte",
+  "role": "Prime Minister",
+  "start": "1984-08-16",
+  "end": "1985-08-06",
+  "current": false,
+  "tenure": "0y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Desmond Hoyte",
+  "role": "President",
+  "start": "1985-08-06",
+  "end": "1992-10-09",
+  "current": false,
+  "tenure": "7y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Hamilton Green",
+  "role": "Prime Minister",
+  "start": "1985-08-06",
+  "end": "1992-10-09",
+  "current": false,
+  "tenure": "7y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Cheddi Jagan",
+  "role": "President",
+  "start": "1992-10-09",
+  "end": "1997-03-06",
+  "current": false,
+  "tenure": "4y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Samuel Hinds",
+  "role": "Prime Minister",
+  "start": "1992-10-09",
+  "end": "1997-03-17",
+  "current": false,
+  "tenure": "4y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Samuel Hinds",
+  "role": "President",
+  "start": "1997-03-06",
+  "end": "1997-12-19",
+  "current": false,
+  "tenure": "0y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Janet Jagan",
+  "role": "Prime Minister",
+  "start": "1997-03-17",
+  "end": "1997-12-19",
+  "current": false,
+  "tenure": "0y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Janet Jagan",
+  "role": "President",
+  "start": "1997-12-19",
+  "end": "1999-08-11",
+  "current": false,
+  "tenure": "1y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Samuel Hinds",
+  "role": "Prime Minister",
+  "start": "1997-12-19",
+  "end": "1999-08-09",
+  "current": false,
+  "tenure": "1y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bharrat Jagdeo",
+  "role": "Prime Minister",
+  "start": "1999-08-09",
+  "end": "1999-08-11",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bharrat Jagdeo",
+  "role": "President",
+  "start": "1999-08-11",
+  "end": "2011-12-03",
+  "current": false,
+  "tenure": "12y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Samuel Hinds",
+  "role": "Prime Minister",
+  "start": "1999-08-11",
+  "end": "2015-05-20",
+  "current": false,
+  "tenure": "15y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Donald Ramotar",
+  "role": "President",
+  "start": "2011-12-03",
+  "end": "2015-05-20",
+  "current": false,
+  "tenure": "3y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "David Granger",
+  "role": "President",
+  "start": "2015-05-20",
+  "end": "2020-08-02",
+  "current": false,
+  "tenure": "5y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Moses Nagamootoo",
+  "role": "Prime Minister",
+  "start": "2015-05-20",
+  "end": "2020-08-02",
+  "current": false,
+  "tenure": "5y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Irfaan Ali",
+  "role": "President",
+  "start": "2020-08-02",
+  "end": null,
+  "current": true,
+  "tenure": "5y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mark Phillips",
+  "role": "Prime Minister",
+  "start": "2020-08-02",
+  "end": null,
+  "current": true,
+  "tenure": "5y 11m",
+  "party": null,
+  "era": null
+ }
 ]

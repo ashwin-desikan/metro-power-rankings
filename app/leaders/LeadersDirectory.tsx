@@ -10,9 +10,9 @@
 //   All-time    — every leader in an entity's history, one row per term.
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { flagUrl, flagSrcSet, flagUrlByCode, flagSrcSetByCode } from "@/lib/flags";
-import { activeIn, resolveWindow, shortRole, type HistRow } from "@/lib/leaderRules";
+import { activeIn, dkey, resolveWindow, shortRole, type HistRow } from "@/lib/leaderRules";
 import type { LeaderEntity } from "@/lib/leadersAll";
 
 const CONTINENTS = [
@@ -80,7 +80,7 @@ function resolveAsOf(
 function nameAt(e: LeaderEntity, dateISO: string): string {
   if (!e.nameHistory) return e.name;
   const p = e.nameHistory.find(
-    (x) => (x.start == null || x.start <= dateISO) && (x.end == null || x.end >= dateISO),
+    (x) => (x.start == null || dkey(x.start) <= dkey(dateISO)) && (x.end == null || dkey(x.end) >= dkey(dateISO)),
   );
   return p ? p.name : e.name;
 }
@@ -93,7 +93,7 @@ type FlagView = { url: string; srcSet?: string } | "hourglass" | null;
 function flagFor(e: LeaderEntity, dateISO: string | null): FlagView {
   if (dateISO && e.nameHistory) {
     const p = e.nameHistory.find(
-      (x) => (x.start == null || x.start <= dateISO) && (x.end == null || x.end >= dateISO),
+      (x) => (x.start == null || dkey(x.start) <= dkey(dateISO)) && (x.end == null || dkey(x.end) >= dkey(dateISO)),
     );
     if (p) {
       if (p.flag) return { url: flagUrlByCode(p.flag), srcSet: flagSrcSetByCode(p.flag) };
@@ -140,24 +140,58 @@ export default function LeadersDirectory({
 }) {
   const [mode, setMode] = useState<Mode>("current");
   const [yearStr, setYearStr] = useState<string>(String(CUR_YEAR));
+  const [era, setEra] = useState<"CE" | "BC">("CE");
   const [month, setMonth] = useState<number>(CUR_MONTH);
   const [continent, setContinent] = useState<string>("All");
   const [type, setType] = useState<string>("all");
   const [org, setOrg] = useState<string>("All");
   const [entitySlug, setEntitySlug] = useState<string>("all");
   const [search, setSearch] = useState<string>("");
-  const [sortKey, setSortKey] = useState<"score" | "name" | "since">("score");
+  const [sortKey, setSortKey] = useState<"score" | "power" | "name" | "since">("score");
   const [sortDir, setSortDir] = useState<"asc" | "desc">("desc");
 
   // Free-typed year; only coerced when we build the query window, so the field
   // never fights the user mid-keystroke.
   const yearNum = (() => {
     const n = parseInt(yearStr, 10);
-    return Number.isFinite(n) && n >= 1 && n <= CUR_YEAR ? n : CUR_YEAR;
+    return Number.isFinite(n) && n >= 1 && n <= (era === "BC" ? 9999 : CUR_YEAR) ? n : CUR_YEAR;
   })();
-  const ms = `${pad4(yearNum)}-${String(month).padStart(2, "0")}-01`;
-  const me = `${pad4(yearNum)}-${String(month).padStart(2, "0")}-${String(lastDay(yearNum, month)).padStart(2, "0")}`;
-  const midMonth = `${pad4(yearNum)}-${String(month).padStart(2, "0")}-15`;
+  const sign = era === "BC" ? "-" : "";
+  const ms = `${sign}${pad4(yearNum)}-${String(month).padStart(2, "0")}-01`;
+  const me = `${sign}${pad4(yearNum)}-${String(month).padStart(2, "0")}-${String(lastDay(yearNum, month)).padStart(2, "0")}`;
+  const midMonth = `${sign}${pad4(yearNum)}-${String(month).padStart(2, "0")}-15`;
+
+  // Great-powers share of world power, lazy-loaded from the /great-powers dataset.
+  const [powerMap, setPowerMap] = useState<Record<string, Record<string, number>> | null>(null);
+  useEffect(() => {
+    let alive = true;
+    fetch("/data/power-history.json")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (!alive || !d?.byYear) return;
+        const m: Record<string, Record<string, number>> = {};
+        for (const [yr, arr] of Object.entries(d.byYear as Record<string, Array<{ slug: string; share: number | null }>>)) {
+          const row: Record<string, number> = {};
+          for (const r of arr) if (r.share != null) row[r.slug] = r.share;
+          m[yr] = row;
+        }
+        setPowerMap(m);
+      })
+      .catch(() => {});
+    return () => { alive = false; };
+  }, []);
+  const POWER_MAX_YEAR = 2026;
+  const relYear = mode === "asof"
+    ? (era === "CE" && yearNum >= 1789 && yearNum <= POWER_MAX_YEAR ? yearNum : null)
+    : POWER_MAX_YEAR;
+  const powerShare = (slug: string): number | null =>
+    relYear && powerMap ? (powerMap[String(relYear)]?.[slug] ?? null) : null;
+  const fmtPct = (n: number | null): string => (n == null ? "—" : `${(n * 100).toFixed(1)}%`);
+  // Sensible default sort per mode: power in the time machine, metro score when current.
+  useEffect(() => {
+    if (mode === "asof") setSortKey("power");
+    else if (mode === "current") setSortKey("score");
+  }, [mode]);
 
   const orgOptions = useMemo(() => {
     const s = new Set<string>();
@@ -165,18 +199,40 @@ export default function LeadersDirectory({
     return ["All", ...Array.from(s).sort()];
   }, [entities]);
 
-  const entityOptions = useMemo(
-    () => [...entities].sort((a, b) => a.name.localeCompare(b.name)),
-    [entities],
-  );
+  // Dropdown order: live countries (by score), then defunct (most recent first), then orgs.
+  const entityOptions = useMemo(() => {
+    const rank = (e: LeaderEntity) => (e.type === "org" ? 2 : e.current ? 0 : 1);
+    const endYear = (e: LeaderEntity) => {
+      const m = e.yearRange?.match(/(\d+)(\s*BC)?\s*$/);
+      if (!m) return 0;
+      const y = parseInt(m[1], 10);
+      return m[2] ? -y : y;
+    };
+    return [...entities].sort((a, b) => {
+      const ra = rank(a), rb = rank(b);
+      if (ra !== rb) return ra - rb;
+      if (ra === 0) {
+        const av = a.scoreTotal, bv = b.scoreTotal;
+        if (av == null && bv == null) return a.name.localeCompare(b.name);
+        if (av == null) return 1;
+        if (bv == null) return -1;
+        return bv !== av ? bv - av : a.name.localeCompare(b.name);
+      }
+      if (ra === 1) {
+        const d = endYear(b) - endYear(a);
+        return d !== 0 ? d : a.name.localeCompare(b.name);
+      }
+      return a.name.localeCompare(b.name);
+    });
+  }, [entities]);
 
   const historyCount = useMemo(() => entities.filter((e) => e.hasHistory).length, [entities]);
 
-  function toggleSort(key: "score" | "name" | "since") {
+  function toggleSort(key: "score" | "power" | "name" | "since") {
     if (sortKey === key) setSortDir(sortDir === "asc" ? "desc" : "asc");
     else { setSortKey(key); setSortDir(key === "name" ? "asc" : "desc"); }
   }
-  function arrow(key: "score" | "name" | "since") {
+  function arrow(key: "score" | "power" | "name" | "since") {
     if (sortKey !== key) return "";
     return sortDir === "desc" ? " ↓" : " ↑";
   }
@@ -187,6 +243,15 @@ export default function LeadersDirectory({
     if (type !== "all" && e.type !== type) return false;
     if (org !== "All" && !e.orgs.includes(org)) return false;
     return true;
+  }
+
+  function cmpPower(a: LeaderEntity, b: LeaderEntity): number {
+    const av = powerShare(a.slug), bv = powerShare(b.slug);
+    if (av == null && bv == null) return a.name.localeCompare(b.name);
+    if (av == null) return 1;
+    if (bv == null) return -1;
+    if (av === bv) return a.name.localeCompare(b.name);
+    return sortDir === "asc" ? av - bv : bv - av;
   }
 
   function cmpScore(a: LeaderEntity, b: LeaderEntity): number {
@@ -218,23 +283,24 @@ export default function LeadersDirectory({
     list.sort((a, b) => {
       const ao = a.e.type === "org" ? 1 : 0, bo = b.e.type === "org" ? 1 : 0;
       if (ao !== bo) return ao - bo;
+      if (sortKey === "power") return cmpPower(a.e, b.e);
       if (sortKey === "score") return cmpScore(a.e, b.e);
       if (sortKey === "name") {
         const c = a.e.name.localeCompare(b.e.name);
         return sortDir === "asc" ? c : -c;
       }
       // since
-      const av = (mode === "asof" ? a.r?.primaries[0]?.start : a.e.current?.since) ?? "";
-      const bv = (mode === "asof" ? b.r?.primaries[0]?.start : b.e.current?.since) ?? "";
+      const av = dkey((mode === "asof" ? a.r?.primaries[0]?.start : a.e.current?.since) ?? null);
+      const bv = dkey((mode === "asof" ? b.r?.primaries[0]?.start : b.e.current?.since) ?? null);
       if (av === bv) return a.e.name.localeCompare(b.e.name);
-      return sortDir === "asc" ? (av < bv ? -1 : 1) : (av < bv ? 1 : -1);
+      return sortDir === "asc" ? av - bv : bv - av;
     });
     return list;
-  }, [entities, mode, ms, me, monarchTimeline, continent, type, org, entitySlug, search, sortKey, sortDir]);
+  }, [entities, mode, ms, me, monarchTimeline, continent, type, org, entitySlug, search, sortKey, sortDir, powerMap, relYear]);
 
   // ── All-time rows (one per historical term) ───────────────────────────────
   const allTimeRows = useMemo(() => {
-    if (mode !== "alltime") return [];
+    if (mode !== "alltime" || (entitySlug === "all" && !search.trim())) return [];
     const q = search.trim().toLowerCase();
     type Row = { e: LeaderEntity; n: string; r: string; s: string | null; en: string | null };
     const rows: Row[] = [];
@@ -253,7 +319,7 @@ export default function LeadersDirectory({
       const sc = cmpScore(a.e, b.e);
       if (sc !== 0) return sc;
       // within an entity, newest term first
-      return (b.s ?? "").localeCompare(a.s ?? "");
+      return dkey(b.s) - dkey(a.s);
     });
     return filtered;
   }, [entities, mode, continent, type, org, entitySlug, search, sortDir]);
@@ -291,6 +357,12 @@ export default function LeadersDirectory({
               className={`${selectCls} w-24`}
               style={{ fontFamily: "'JetBrains Mono', monospace" }}
             />
+            <button
+              type="button"
+              onClick={() => setEra(era === "CE" ? "BC" : "CE")}
+              className={selectCls}
+              title="Toggle BC / CE"
+            >{era === "BC" ? "BC" : "CE"}</button>
           </div>
         ) : null}
       </div>
@@ -305,7 +377,7 @@ export default function LeadersDirectory({
       ) : null}
       {mode === "alltime" && entitySlug === "all" ? (
         <p className="text-xs text-[var(--text-dim)] leading-relaxed">
-          Listing every recorded term across all entities. Pick a country below to focus on one lineage.
+          Pick a country or organisation from the dropdown below, or search by name, to see its full leader history.
         </p>
       ) : null}
 
@@ -314,7 +386,21 @@ export default function LeadersDirectory({
         <div className="flex flex-wrap items-center gap-3">
           <select value={entitySlug} onChange={(e) => setEntitySlug(e.target.value)} className={`${selectCls} max-w-[16rem]`}>
             <option value="all">All countries &amp; orgs</option>
-            {entityOptions.map((e) => <option key={`${e.type}:${e.slug}`} value={e.slug}>{e.name}</option>)}
+            <optgroup label="Countries">
+              {entityOptions.filter((e) => e.type !== "org" && e.current).map((e) => (
+                <option key={`${e.type}:${e.slug}`} value={e.slug}>{e.name}{e.yearRange ? ` (${e.yearRange})` : ""}</option>
+              ))}
+            </optgroup>
+            <optgroup label="Defunct states">
+              {entityOptions.filter((e) => e.type !== "org" && !e.current).map((e) => (
+                <option key={`${e.type}:${e.slug}`} value={e.slug}>{e.name}{e.yearRange ? ` (${e.yearRange})` : ""}</option>
+              ))}
+            </optgroup>
+            <optgroup label="Organisations">
+              {entityOptions.filter((e) => e.type === "org").map((e) => (
+                <option key={`${e.type}:${e.slug}`} value={e.slug}>{e.name}{e.yearRange ? ` (${e.yearRange})` : ""}</option>
+              ))}
+            </optgroup>
           </select>
           <select value={org} onChange={(e) => setOrg(e.target.value)} className={selectCls} style={{ fontFamily: "'JetBrains Mono', monospace" }}>
             {orgOptions.map((o) => <option key={o} value={o}>{o === "All" ? "Any membership" : o}</option>)}
@@ -366,10 +452,10 @@ export default function LeadersDirectory({
               {allTimeRows.map((x, i) => (
                 <tr key={`${x.e.type}:${x.e.slug}:${i}`} className="border-b border-[var(--border)] hover:bg-[var(--bg-card-hover)] transition-colors">
                   <td className="px-2 sm:px-4 py-2">
-                    <FlagView view={flagFor(x.e, x.s ?? null)} />
+                    <FlagView view={flagFor(x.e, x.en ?? null)} />
                     {x.e.href ? (
-                      <Link href={x.e.href} className="hover:text-[var(--accent)] transition-colors">{nameAt(x.e, x.s ?? "9999")}</Link>
-                    ) : <span>{nameAt(x.e, x.s ?? "9999")}</span>}
+                      <Link href={x.e.href} className="hover:text-[var(--accent)] transition-colors">{nameAt(x.e, x.en ?? "9999")}</Link>
+                    ) : <span>{nameAt(x.e, x.en ?? "9999")}</span>}
                     {x.e.yearRange ? <span className="ml-1 text-[10px] text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{x.e.yearRange}</span> : null}
                   </td>
                   <td className="hidden sm:table-cell px-4 py-2 text-right font-semibold" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>{fmtScore(x.e.scoreTotal)}</td>
@@ -387,7 +473,10 @@ export default function LeadersDirectory({
               <tr className="border-b border-[var(--border)]" style={{ backgroundColor: "var(--bg-card)" }}>
                 <th className="px-2 sm:px-4 py-3 text-left font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" onClick={() => toggleSort("name")}>Country / Org{arrow("name")}</th>
                 <th className="hidden md:table-cell px-4 py-3 text-left font-semibold text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Region</th>
-                <th className="px-2 sm:px-4 py-3 text-right font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }} onClick={() => toggleSort("score")}>Score{arrow("score")}</th>
+                <th className="px-2 sm:px-4 py-3 text-right font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }} onClick={() => toggleSort("power")} title={relYear ? `Share of world power, ${relYear}` : "Power ranking available 1789 onward"}>Power{arrow("power")}</th>
+                {mode === "current" && (
+                  <th className="hidden sm:table-cell px-2 sm:px-4 py-3 text-right font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }} onClick={() => toggleSort("score")} title="Metro-based country score">Score{arrow("score")}</th>
+                )}
                 <th className="px-2 sm:px-4 py-3 text-left font-semibold text-[var(--text-muted)]">Leader</th>
                 <th className="hidden sm:table-cell px-4 py-3 text-left font-semibold text-[var(--text-muted)]">Role</th>
                 <th className="hidden lg:table-cell px-4 py-3 text-left font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }} onClick={() => toggleSort("since")}>Since{arrow("since")}</th>
@@ -409,7 +498,10 @@ export default function LeadersDirectory({
                       {e.yearRange ? <span className="ml-1 text-xs text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{e.yearRange}</span> : null}
                     </td>
                     <td className="hidden md:table-cell px-4 py-3 text-[var(--text-muted)] text-xs">{regionLabel(e)}</td>
-                    <td className="px-2 sm:px-4 py-3 text-right font-semibold" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>{fmtScore(e.scoreTotal)}</td>
+                    <td className="px-2 sm:px-4 py-3 text-right font-semibold" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>{fmtPct(powerShare(e.slug))}</td>
+                    {mode === "current" && (
+                      <td className="hidden sm:table-cell px-2 sm:px-4 py-3 text-right font-semibold" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--text-muted)" }}>{fmtScore(e.scoreTotal)}</td>
+                    )}
                     <td className="px-2 sm:px-4 py-3">
                       {primaries.length ? (
                         <span className="text-[var(--text)]">
@@ -438,13 +530,15 @@ export default function LeadersDirectory({
 
       {(mode === "alltime" ? allTimeRows.length : entityRows.length) === 0 ? (
         <div className="text-center py-12 text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-          No leaders match your filters.
+          {mode === "alltime" && entitySlug === "all"
+            ? "Select a country or organisation above, or search by name, to view its full leader history."
+            : "No leaders match your filters."}
         </div>
       ) : (
         <p className="text-xs text-[var(--text-dim)] mt-2">
           {mode === "alltime"
             ? `${allTimeRows.length} terms shown.`
-            : `${entityRows.length} ${entityRows.length === 1 ? "office" : "offices"} shown${mode === "asof" ? ` as of ${MONTHS[month - 1]} ${yearNum}` : " (current)"}.`}
+            : `${entityRows.length} ${entityRows.length === 1 ? "office" : "offices"} shown${mode === "asof" ? ` as of ${MONTHS[month - 1]} ${yearNum}${era === "BC" ? " BC" : ""}` : " (current)"}.`}
         </p>
       )}
     </div>

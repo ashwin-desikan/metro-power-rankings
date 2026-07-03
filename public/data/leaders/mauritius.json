@@ -1,52 +1,182 @@
 [
-  {
-    "name": "Ameenah Gurib-Fakim",
-    "role": "President",
-    "start": "2015-06-05",
-    "end": "2018-03-23",
-    "current": false,
-    "tenure": "2y 9m 18d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Pravind Jugnauth",
-    "role": "Prime Minister",
-    "start": "2017-01-23",
-    "end": null,
-    "current": true,
-    "tenure": "9y 5m 10d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Barlen Vyapoory",
-    "role": "President",
-    "start": "2018-03-24",
-    "end": "2019-11-26",
-    "current": false,
-    "tenure": "1y 8m 2d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Prithvirajsing Roopun",
-    "role": "President",
-    "start": "2019-12-02",
-    "end": "2024-12-06",
-    "current": false,
-    "tenure": "5y 4d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Dharam Gokhool",
-    "role": "President",
-    "start": "2024-12-06",
-    "end": null,
-    "current": true,
-    "tenure": "1y 6m 27d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Seewoosagur Ramgoolam",
+  "role": "Prime Minister",
+  "start": "1968-03-12",
+  "end": "1982-06-15",
+  "current": false,
+  "tenure": "14y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Anerood Jugnauth",
+  "role": "Prime Minister",
+  "start": "1982-06-15",
+  "end": "1995-12-22",
+  "current": false,
+  "tenure": "13y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "France-Albert René",
+  "role": "President",
+  "start": "1992-06-30",
+  "end": "1992-07-01",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Cassam Uteem",
+  "role": "President",
+  "start": "1992-07-01",
+  "end": "2002-02-15",
+  "current": false,
+  "tenure": "9y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Navin Ramgoolam",
+  "role": "Prime Minister",
+  "start": "1995-12-27",
+  "end": "2000-09-16",
+  "current": false,
+  "tenure": "4y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Anerood Jugnauth",
+  "role": "Prime Minister",
+  "start": "2000-09-16",
+  "end": "2003-09-30",
+  "current": false,
+  "tenure": "3y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Karl Offmann",
+  "role": "President",
+  "start": "2002-02-25",
+  "end": "2003-10-01",
+  "current": false,
+  "tenure": "1y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Paul Bérenger",
+  "role": "Prime Minister",
+  "start": "2003-09-30",
+  "end": "2005-07-05",
+  "current": false,
+  "tenure": "1y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Anerood Jugnauth",
+  "role": "President",
+  "start": "2003-10-07",
+  "end": "2012-03-31",
+  "current": false,
+  "tenure": "8y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Navin Ramgoolam",
+  "role": "Prime Minister",
+  "start": "2005-07-05",
+  "end": "2014-12-13",
+  "current": false,
+  "tenure": "9y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Kailash Purryag",
+  "role": "President",
+  "start": "2012-07-21",
+  "end": "2015-05-29",
+  "current": false,
+  "tenure": "2y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Anerood Jugnauth",
+  "role": "Prime Minister",
+  "start": "2014-12-13",
+  "end": "2017-01-23",
+  "current": false,
+  "tenure": "2y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ameenah Gurib-Fakim",
+  "role": "President",
+  "start": "2015-06-05",
+  "end": "2018-03-23",
+  "current": false,
+  "tenure": "2y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Pravind Jugnauth",
+  "role": "Prime Minister",
+  "start": "2017-01-23",
+  "end": "2024-11-12",
+  "current": false,
+  "tenure": "7y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Paramasivum Pillay Vyapoory",
+  "role": "President",
+  "start": "2018-03-23",
+  "end": "2019-12-02",
+  "current": false,
+  "tenure": "1y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Prithvirajsing Roopun",
+  "role": "President",
+  "start": "2019-12-02",
+  "end": "2024-12-06",
+  "current": false,
+  "tenure": "5y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Navin Ramgoolam",
+  "role": "Prime Minister",
+  "start": "2024-11-12",
+  "end": null,
+  "current": true,
+  "tenure": "1y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Dharam Gokhool",
+  "role": "President",
+  "start": "2024-12-07",
+  "end": null,
+  "current": true,
+  "tenure": "1y 6m",
+  "party": null,
+  "era": null
+ }
 ]

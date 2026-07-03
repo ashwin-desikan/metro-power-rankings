@@ -1,52 +1,202 @@
 [
-  {
-    "name": "Macky Sall",
-    "role": "President",
-    "start": "2012-04-01",
-    "end": "2019-05-14",
-    "current": false,
-    "tenure": "7y 1m 13d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Mahammed Dionne",
-    "role": "Prime Minister",
-    "start": "2014-07-06",
-    "end": "2019-05-14",
-    "current": false,
-    "tenure": "4y 10m 8d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Macky Sall",
-    "role": "Prime Minister",
-    "start": "2019-05-14",
-    "end": "2024-04-02",
-    "current": false,
-    "tenure": "4y 10m 19d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Macky Sall",
-    "role": "President",
-    "start": "2019-05-14",
-    "end": "2024-04-02",
-    "current": false,
-    "tenure": "4y 10m 19d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Bassirou Diomaye Faye",
-    "role": "President",
-    "start": "2024-04-02",
-    "end": null,
-    "current": true,
-    "tenure": "2y 3m 1d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Mamadou Dia",
+  "role": "Prime Minister",
+  "start": "1957-04-19",
+  "end": "1962-12-17",
+  "current": false,
+  "tenure": "5y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Léopold Sédar Senghor",
+  "role": "President",
+  "start": "1960-09-06",
+  "end": "1980-12-31",
+  "current": false,
+  "tenure": "20y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Abdou Diouf",
+  "role": "Prime Minister",
+  "start": "1970-02-26",
+  "end": "1980-12-31",
+  "current": false,
+  "tenure": "10y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Abdou Diouf",
+  "role": "President",
+  "start": "1981-01-01",
+  "end": "2000-04-01",
+  "current": false,
+  "tenure": "19y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Habib Thiam",
+  "role": "Prime Minister",
+  "start": "1981-01-01",
+  "end": "1983-04-03",
+  "current": false,
+  "tenure": "2y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Habib Thiam",
+  "role": "Prime Minister",
+  "start": "1991-04-07",
+  "end": "1998-07-03",
+  "current": false,
+  "tenure": "7y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mamadou Lamine Loum",
+  "role": "Prime Minister",
+  "start": "1998-07-03",
+  "end": "2000-04-05",
+  "current": false,
+  "tenure": "1y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Abdoulaye Wade",
+  "role": "President",
+  "start": "2000-04-01",
+  "end": "2012-04-02",
+  "current": false,
+  "tenure": "12y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Moustapha Niasse",
+  "role": "Prime Minister",
+  "start": "2000-04-05",
+  "end": "2001-03-03",
+  "current": false,
+  "tenure": "0y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mame Madior Boye",
+  "role": "Prime Minister",
+  "start": "2001-03-03",
+  "end": "2002-11-04",
+  "current": false,
+  "tenure": "1y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Idrissa Seck",
+  "role": "Prime Minister",
+  "start": "2002-11-04",
+  "end": "2004-04-21",
+  "current": false,
+  "tenure": "1y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Macky Sall",
+  "role": "Prime Minister",
+  "start": "2004-04-21",
+  "end": "2007-06-19",
+  "current": false,
+  "tenure": "3y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Cheikh Hadjibou Soumaré",
+  "role": "Prime Minister",
+  "start": "2007-06-19",
+  "end": "2009-04-30",
+  "current": false,
+  "tenure": "1y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Souleymane Ndéné Ndiaye",
+  "role": "Prime Minister",
+  "start": "2009-04-30",
+  "end": "2012-04-05",
+  "current": false,
+  "tenure": "2y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Macky Sall",
+  "role": "President",
+  "start": "2012-04-02",
+  "end": "2024-04-02",
+  "current": false,
+  "tenure": "12y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Abdoul Mbaye",
+  "role": "Prime Minister",
+  "start": "2012-04-05",
+  "end": "2013-09-01",
+  "current": false,
+  "tenure": "1y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Aminata Touré",
+  "role": "Prime Minister",
+  "start": "2013-09-01",
+  "end": "2014-07-06",
+  "current": false,
+  "tenure": "0y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mahammed Boun Abdallah Dionne",
+  "role": "Prime Minister",
+  "start": "2014-07-06",
+  "end": "2019-04-06",
+  "current": false,
+  "tenure": "4y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bassirou Diomaye Faye",
+  "role": "President",
+  "start": "2024-04-02",
+  "end": null,
+  "current": true,
+  "tenure": "2y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ousmane Sonko",
+  "role": "Prime Minister",
+  "start": "2024-04-03",
+  "end": null,
+  "current": false,
+  "tenure": "2y 3m",
+  "party": null,
+  "era": null
+ }
 ]

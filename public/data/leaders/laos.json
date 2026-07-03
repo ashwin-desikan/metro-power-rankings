@@ -1,62 +1,192 @@
 [
-  {
-    "name": "Thongloun Sisoulith",
-    "role": "Prime Minister",
-    "start": "2016-04-20",
-    "end": "2021-03-22",
-    "current": false,
-    "tenure": "4y 11m 2d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Thongloun Sisoulith",
-    "role": "President",
-    "start": "2016-04-20",
-    "end": "2021-03-22",
-    "current": false,
-    "tenure": "4y 11m 2d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Phankham Viphavan",
-    "role": "Prime Minister",
-    "start": "2021-03-22",
-    "end": "2022-12-30",
-    "current": false,
-    "tenure": "1y 9m 8d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Phankham Viphavan",
-    "role": "President",
-    "start": "2021-03-22",
-    "end": "2022-12-30",
-    "current": false,
-    "tenure": "1y 9m 8d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Thongloun Sisoulith",
-    "role": "President",
-    "start": "2021-03-22",
-    "end": null,
-    "current": true,
-    "tenure": "5y 3m 11d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Sonexay Siphandone",
-    "role": "Prime Minister",
-    "start": "2022-12-30",
-    "end": null,
-    "current": true,
-    "tenure": "3y 6m 3d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "👑 Sisavang Vong",
+  "role": "King",
+  "start": "1953-10-22",
+  "end": "1959-10-29",
+  "current": false,
+  "tenure": "6y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "👑 Sisavang Vatthana",
+  "role": "King",
+  "start": "1959-10-29",
+  "end": "1975-12-02",
+  "current": false,
+  "tenure": "16y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Souphanouvong",
+  "role": "President",
+  "start": "1975-12-02",
+  "end": "1986-10-29",
+  "current": false,
+  "tenure": "10y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Kaysone Phomvihane",
+  "role": "Prime Minister",
+  "start": "1975-12-08",
+  "end": "1991-08-15",
+  "current": false,
+  "tenure": "15y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Phoumi Vongvichit",
+  "role": "President",
+  "start": "1986-10-29",
+  "end": "1991-08-15",
+  "current": false,
+  "tenure": "4y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Kaysone Phomvihane",
+  "role": "President",
+  "start": "1991-08-15",
+  "end": "1992-11-21",
+  "current": false,
+  "tenure": "1y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Khamtai Siphandone",
+  "role": "Prime Minister",
+  "start": "1991-08-15",
+  "end": "1998-02-16",
+  "current": false,
+  "tenure": "6y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Nouhak Phoumsavanh",
+  "role": "President",
+  "start": "1992-11-25",
+  "end": "1998-02-24",
+  "current": false,
+  "tenure": "5y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Sisavath Keobounphanh",
+  "role": "Prime Minister",
+  "start": "1998-02-16",
+  "end": "2001-03-27",
+  "current": false,
+  "tenure": "3y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Khamtai Siphandone",
+  "role": "President",
+  "start": "1998-02-24",
+  "end": "2006-06-08",
+  "current": false,
+  "tenure": "8y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bounnhang Vorachit",
+  "role": "Prime Minister",
+  "start": "2001-03-27",
+  "end": "2006-06-08",
+  "current": false,
+  "tenure": "5y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Choummaly Sayasone",
+  "role": "President",
+  "start": "2006-06-08",
+  "end": "2016-04-20",
+  "current": false,
+  "tenure": "9y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bouasone Bouphavanh",
+  "role": "Prime Minister",
+  "start": "2006-06-08",
+  "end": "2010-12-23",
+  "current": false,
+  "tenure": "4y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Thongsing Thammavong",
+  "role": "Prime Minister",
+  "start": "2010-12-23",
+  "end": "2016-04-20",
+  "current": false,
+  "tenure": "5y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bounnhang Vorachit",
+  "role": "President",
+  "start": "2016-04-20",
+  "end": "2021-03-22",
+  "current": false,
+  "tenure": "4y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Thongloun Sisoulith",
+  "role": "Prime Minister",
+  "start": "2016-04-20",
+  "end": "2021-03-22",
+  "current": false,
+  "tenure": "4y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Thongloun Sisoulith",
+  "role": "President",
+  "start": "2021-03-22",
+  "end": null,
+  "current": true,
+  "tenure": "5y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Phankham Viphavanh",
+  "role": "Prime Minister",
+  "start": "2021-03-22",
+  "end": "2022-12-30",
+  "current": false,
+  "tenure": "1y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Sonexay Siphandone",
+  "role": "Prime Minister",
+  "start": "2022-12-30",
+  "end": null,
+  "current": true,
+  "tenure": "3y 6m",
+  "party": null,
+  "era": null
+ }
 ]

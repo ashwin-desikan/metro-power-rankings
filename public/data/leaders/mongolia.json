@@ -1,92 +1,392 @@
 [
-  {
-    "name": "Tsakhiagiin Elbegdorj",
-    "role": "President",
-    "start": "2009-06-18",
-    "end": "2017-07-07",
-    "current": false,
-    "tenure": "8y 19d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Jargaltulga Erdenebat",
-    "role": "Prime Minister",
-    "start": "2016-06-08",
-    "end": "2017-10-04",
-    "current": false,
-    "tenure": "1y 3m 26d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Khaltmaagiin Battulga",
-    "role": "President",
-    "start": "2017-07-10",
-    "end": "2017-10-04",
-    "current": false,
-    "tenure": "2m 24d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Khurelsukh Ukhnaa",
-    "role": "Prime Minister",
-    "start": "2017-10-04",
-    "end": "2021-01-27",
-    "current": false,
-    "tenure": "3y 3m 23d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Khurelsukh Ukhnaa",
-    "role": "President",
-    "start": "2017-10-04",
-    "end": "2021-01-27",
-    "current": false,
-    "tenure": "3y 3m 23d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Luvsannamsrain Oyun-Erdene",
-    "role": "Prime Minister",
-    "start": "2021-01-27",
-    "end": "2025-06-13",
-    "current": false,
-    "tenure": "4y 4m 17d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Khurelsukh Ukhnaa",
-    "role": "President",
-    "start": "2021-06-25",
-    "end": null,
-    "current": true,
-    "tenure": "5y 8d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Gombojavyn Zandanshatar",
-    "role": "Prime Minister",
-    "start": "2025-06-13",
-    "end": "2026-03-30",
-    "current": false,
-    "tenure": "9m 17d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Uchral Nyam-Osor",
-    "role": "Prime Minister",
-    "start": "2026-03-30",
-    "end": null,
-    "current": true,
-    "tenure": "3m 3d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Tögs-Ochiryn Namnansüren",
+  "role": "Prime Minister",
+  "start": "1912-11-01",
+  "end": "1919-04-01",
+  "current": false,
+  "tenure": "6y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Gonchigjalzangiin Badamdorj",
+  "role": "Prime Minister",
+  "start": "1919-04-09",
+  "end": "1920-01-02",
+  "current": false,
+  "tenure": "0y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Jalkhanz Khutagt Sodnomyn Damdinbazar",
+  "role": "Prime Minister",
+  "start": "1921-02-22",
+  "end": "1921-05-01",
+  "current": false,
+  "tenure": "0y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Dogsomyn Bodoo",
+  "role": "Prime Minister",
+  "start": "1921-04-16",
+  "end": "1922-01-07",
+  "current": false,
+  "tenure": "0y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Jalkhanz Khutagt Sodnomyn Damdinbazar",
+  "role": "Prime Minister",
+  "start": "1922-03-03",
+  "end": "1923-06-23",
+  "current": false,
+  "tenure": "1y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Balingiin Tserendorj",
+  "role": "Prime Minister",
+  "start": "1923-06-23",
+  "end": "1928-02-13",
+  "current": false,
+  "tenure": "4y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Anandyn Amar",
+  "role": "Prime Minister",
+  "start": "1928-02-21",
+  "end": "1930-04-27",
+  "current": false,
+  "tenure": "2y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Tsengeltiin Jigjidjav",
+  "role": "Prime Minister",
+  "start": "1930-04-27",
+  "end": "1932-07-02",
+  "current": false,
+  "tenure": "2y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Peljidiin Genden",
+  "role": "Prime Minister",
+  "start": "1932-07-02",
+  "end": "1936-03-02",
+  "current": false,
+  "tenure": "3y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Anandyn Amar",
+  "role": "Prime Minister",
+  "start": "1936-03-22",
+  "end": "1939-03-07",
+  "current": false,
+  "tenure": "2y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Khorloogiin Choibalsan",
+  "role": "Prime Minister",
+  "start": "1939-03-24",
+  "end": "1952-01-26",
+  "current": false,
+  "tenure": "12y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Yumjaagiin Tsedenbal",
+  "role": "Prime Minister",
+  "start": "1952-01-26",
+  "end": "1974-06-11",
+  "current": false,
+  "tenure": "22y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Jambyn Batmönkh",
+  "role": "Prime Minister",
+  "start": "1974-06-11",
+  "end": "1984-12-12",
+  "current": false,
+  "tenure": "10y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Dumaagiin Sodnom",
+  "role": "Prime Minister",
+  "start": "1984-12-12",
+  "end": "1990-03-21",
+  "current": false,
+  "tenure": "5y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Punsalmaagiin Ochirbat",
+  "role": "President",
+  "start": "1990-03-21",
+  "end": "1997-06-20",
+  "current": false,
+  "tenure": "7y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Sharavyn Gungaadorj",
+  "role": "Prime Minister",
+  "start": "1990-03-21",
+  "end": "1990-09-11",
+  "current": false,
+  "tenure": "0y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Dashiin Byambasüren",
+  "role": "Prime Minister",
+  "start": "1990-09-11",
+  "end": "1992-07-21",
+  "current": false,
+  "tenure": "1y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Puntsagiin Jasrai",
+  "role": "Prime Minister",
+  "start": "1992-07-21",
+  "end": "1996-07-19",
+  "current": false,
+  "tenure": "3y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Mendsaikhany Enkhsaikhan",
+  "role": "Prime Minister",
+  "start": "1996-07-19",
+  "end": "1998-04-23",
+  "current": false,
+  "tenure": "1y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Natsagiin Bagabandi",
+  "role": "President",
+  "start": "1997-06-20",
+  "end": "2005-06-24",
+  "current": false,
+  "tenure": "8y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Tsakhiagiin Elbegdorj",
+  "role": "Prime Minister",
+  "start": "1998-04-23",
+  "end": "1998-12-09",
+  "current": false,
+  "tenure": "0y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Janlavyn Narantsatsralt",
+  "role": "Prime Minister",
+  "start": "1998-12-09",
+  "end": "1999-07-22",
+  "current": false,
+  "tenure": "0y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Rinchinnyamyn Amarjargal",
+  "role": "Prime Minister",
+  "start": "1999-07-30",
+  "end": "2000-07-26",
+  "current": false,
+  "tenure": "0y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Nambaryn Enkhbayar",
+  "role": "Prime Minister",
+  "start": "2000-07-26",
+  "end": "2004-08-20",
+  "current": false,
+  "tenure": "4y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Tsakhiagiin Elbegdorj",
+  "role": "Prime Minister",
+  "start": "2004-08-20",
+  "end": "2006-01-13",
+  "current": false,
+  "tenure": "1y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Nambaryn Enkhbayar",
+  "role": "President",
+  "start": "2005-06-24",
+  "end": "2009-06-18",
+  "current": false,
+  "tenure": "3y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Miyeegombyn Enkhbold",
+  "role": "Prime Minister",
+  "start": "2006-01-25",
+  "end": "2007-11-22",
+  "current": false,
+  "tenure": "1y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Sanjiin Bayar",
+  "role": "Prime Minister",
+  "start": "2007-11-22",
+  "end": "2009-10-29",
+  "current": false,
+  "tenure": "1y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Tsakhiagiin Elbegdorj",
+  "role": "President",
+  "start": "2009-06-18",
+  "end": "2017-07-10",
+  "current": false,
+  "tenure": "8y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Sükhbaataryn Batbold",
+  "role": "Prime Minister",
+  "start": "2009-10-29",
+  "end": "2012-08-10",
+  "current": false,
+  "tenure": "2y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Norovyn Altankhuyag",
+  "role": "Prime Minister",
+  "start": "2012-08-10",
+  "end": "2014-11-05",
+  "current": false,
+  "tenure": "2y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Chimediin Saikhanbileg",
+  "role": "Prime Minister",
+  "start": "2014-11-21",
+  "end": "2016-07-07",
+  "current": false,
+  "tenure": "1y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Jargaltulgyn Erdenebat",
+  "role": "Prime Minister",
+  "start": "2016-07-07",
+  "end": "2017-10-04",
+  "current": false,
+  "tenure": "1y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Khaltmaagiin Battulga",
+  "role": "President",
+  "start": "2017-07-10",
+  "end": "2021-06-25",
+  "current": false,
+  "tenure": "3y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ukhnaagiin Khürelsükh",
+  "role": "Prime Minister",
+  "start": "2017-10-04",
+  "end": "2021-01-27",
+  "current": false,
+  "tenure": "3y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Luvsannamsrain Oyun-Erdene",
+  "role": "Prime Minister",
+  "start": "2021-01-27",
+  "end": "2025-06-13",
+  "current": false,
+  "tenure": "4y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ukhnaagiin Khürelsükh",
+  "role": "President",
+  "start": "2021-06-25",
+  "end": null,
+  "current": true,
+  "tenure": "5y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Gombojavyn Zandanshatar",
+  "role": "Prime Minister",
+  "start": "2025-06-13",
+  "end": "2026-03-30",
+  "current": false,
+  "tenure": "0y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Nyam-Osoryn Uchral",
+  "role": "Prime Minister",
+  "start": "2026-03-30",
+  "end": null,
+  "current": true,
+  "tenure": "0y 3m",
+  "party": null,
+  "era": null
+ }
 ]

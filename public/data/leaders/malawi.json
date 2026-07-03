@@ -1,22 +1,72 @@
 [
-  {
-    "name": "Lazarus Chakwera",
-    "role": "President",
-    "start": "2020-06-28",
-    "end": "2025-10-04",
-    "current": false,
-    "tenure": "5y 3m 6d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Peter Mutharika",
-    "role": "President",
-    "start": "2025-10-04",
-    "end": null,
-    "current": true,
-    "tenure": "8m 29d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Hastings Banda",
+  "role": "President",
+  "start": "1966-07-06",
+  "end": "1994-05-24",
+  "current": false,
+  "tenure": "27y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bakili Muluzi",
+  "role": "President",
+  "start": "1994-05-24",
+  "end": "2004-05-24",
+  "current": false,
+  "tenure": "10y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bingu wa Mutharika",
+  "role": "President",
+  "start": "2004-05-24",
+  "end": "2012-04-05",
+  "current": false,
+  "tenure": "7y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Joyce Banda",
+  "role": "President",
+  "start": "2012-04-07",
+  "end": "2014-05-31",
+  "current": false,
+  "tenure": "2y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Peter Mutharika",
+  "role": "President",
+  "start": "2014-05-31",
+  "end": "2020-06-28",
+  "current": false,
+  "tenure": "6y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Lazarus Chakwera",
+  "role": "President",
+  "start": "2020-06-28",
+  "end": "2025-10-04",
+  "current": false,
+  "tenure": "5y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Peter Mutharika",
+  "role": "President",
+  "start": "2025-10-04",
+  "end": null,
+  "current": true,
+  "tenure": "0y 8m",
+  "party": null,
+  "era": null
+ }
 ]

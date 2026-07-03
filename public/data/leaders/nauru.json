@@ -1,302 +1,332 @@
 [
-  {
-    "name": "Bernard Dowiyogo",
-    "role": "Prime Minister",
-    "start": "1989-01-01",
-    "end": "1995-01-01",
-    "current": false,
-    "tenure": "6y 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Bernard Dowiyogo",
-    "role": "President",
-    "start": "1989-01-01",
-    "end": "1995-01-01",
-    "current": false,
-    "tenure": "6y 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Ruben Kun",
-    "role": "President",
-    "start": "1996-12-19",
-    "end": "1997-02-01",
-    "current": false,
-    "tenure": "1m 13d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Kinza Clodumar",
-    "role": "Prime Minister",
-    "start": "1997-02-01",
-    "end": "1998-06-01",
-    "current": false,
-    "tenure": "1y 4m 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Kinza Clodumar",
-    "role": "President",
-    "start": "1997-02-01",
-    "end": "1998-06-01",
-    "current": false,
-    "tenure": "1y 4m 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "René Harris",
-    "role": "Prime Minister",
-    "start": "2001-01-01",
-    "end": "2003-01-01",
-    "current": false,
-    "tenure": "2y 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "René Harris",
-    "role": "President",
-    "start": "2001-01-01",
-    "end": "2003-01-01",
-    "current": false,
-    "tenure": "2y 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "René Harris",
-    "role": "Prime Minister",
-    "start": "2003-01-01",
-    "end": "2003-01-01",
-    "current": false,
-    "tenure": "0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Bernard Dowiyogo",
-    "role": "Prime Minister",
-    "start": "2003-01-01",
-    "end": "2003-01-01",
-    "current": false,
-    "tenure": "0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "René Harris",
-    "role": "President",
-    "start": "2003-01-01",
-    "end": "2003-01-01",
-    "current": false,
-    "tenure": "0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Bernard Dowiyogo",
-    "role": "President",
-    "start": "2003-01-01",
-    "end": "2003-01-01",
-    "current": false,
-    "tenure": "0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Derog Gioura",
-    "role": "President",
-    "start": "2003-01-01",
-    "end": "2004-06-01",
-    "current": false,
-    "tenure": "1y 5m 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Ludwig Scotty",
-    "role": "Prime Minister",
-    "start": "2004-06-01",
-    "end": "2007-01-01",
-    "current": false,
-    "tenure": "2y 7m 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Ludwig Scotty",
-    "role": "President",
-    "start": "2004-06-01",
-    "end": "2007-01-01",
-    "current": false,
-    "tenure": "2y 7m 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Marcus Stephen",
-    "role": "Prime Minister",
-    "start": "2007-01-01",
-    "end": "2011-01-01",
-    "current": false,
-    "tenure": "4y 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Marcus Stephen",
-    "role": "President",
-    "start": "2007-01-01",
-    "end": "2011-01-01",
-    "current": false,
-    "tenure": "4y 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Frederick Pitcher",
-    "role": "Prime Minister",
-    "start": "2011-11-01",
-    "end": "2011-11-01",
-    "current": false,
-    "tenure": "0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Sprent Dabwido",
-    "role": "President",
-    "start": "2011-11-01",
-    "end": "2011-11-01",
-    "current": false,
-    "tenure": "0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Frederick Pitcher",
-    "role": "President",
-    "start": "2011-11-01",
-    "end": "2011-11-01",
-    "current": false,
-    "tenure": "0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Sprent Dabwido",
-    "role": "President",
-    "start": "2011-11-15",
-    "end": "2013-01-01",
-    "current": false,
-    "tenure": "1y 1m 17d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Baron Waqa",
-    "role": "President",
-    "start": "2013-01-01",
-    "end": "2013-06-11",
-    "current": false,
-    "tenure": "5m 10d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Baron Waqa",
-    "role": "President",
-    "start": "2013-06-11",
-    "end": "2019-08-27",
-    "current": false,
-    "tenure": "6y 2m 16d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Lionel Aingimea",
-    "role": "Prime Minister",
-    "start": "2019-08-27",
-    "end": "2022-09-28",
-    "current": false,
-    "tenure": "3y 1m 1d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Lionel Aingimea",
-    "role": "President",
-    "start": "2019-08-27",
-    "end": "2022-09-28",
-    "current": false,
-    "tenure": "3y 1m 1d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Russ J Kun",
-    "role": "Prime Minister",
-    "start": "2022-09-28",
-    "end": "2023-10-30",
-    "current": false,
-    "tenure": "1y 1m 2d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Russ J Kun",
-    "role": "President",
-    "start": "2022-09-28",
-    "end": "2022-09-29",
-    "current": false,
-    "tenure": "1d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Russ J Kun",
-    "role": "President",
-    "start": "2022-09-29",
-    "end": "2023-09-30",
-    "current": false,
-    "tenure": "1y 1d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "David Adeang",
-    "role": "President",
-    "start": "2023-09-30",
-    "end": "2023-10-30",
-    "current": false,
-    "tenure": "1m 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "David Adeang",
-    "role": "Prime Minister",
-    "start": "2023-10-30",
-    "end": null,
-    "current": true,
-    "tenure": "2y 8m 3d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "David Adeang",
-    "role": "President",
-    "start": "2023-10-30",
-    "end": null,
-    "current": true,
-    "tenure": "2y 8m 3d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Hammer DeRoburt",
+  "role": "President",
+  "start": "1968-05-17",
+  "end": "1976-12-22",
+  "current": false,
+  "tenure": "8y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bernard Dowiyogo",
+  "role": "President",
+  "start": "1976-12-22",
+  "end": "1978-04-19",
+  "current": false,
+  "tenure": "1y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Lagumot Harris",
+  "role": "President",
+  "start": "1978-04-19",
+  "end": "1978-05-15",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Hammer DeRoburt",
+  "role": "President",
+  "start": "1978-05-15",
+  "end": "1986-09-17",
+  "current": false,
+  "tenure": "8y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Kennan Adeang",
+  "role": "President",
+  "start": "1986-09-17",
+  "end": "1986-10-01",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Hammer DeRoburt",
+  "role": "President",
+  "start": "1986-10-01",
+  "end": "1986-12-12",
+  "current": false,
+  "tenure": "0y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Kennan Adeang",
+  "role": "President",
+  "start": "1986-12-12",
+  "end": "1986-12-22",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Hammer DeRoburt",
+  "role": "President",
+  "start": "1986-12-22",
+  "end": "1989-08-17",
+  "current": false,
+  "tenure": "2y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Kenas Aroi",
+  "role": "President",
+  "start": "1989-08-17",
+  "end": "1989-12-12",
+  "current": false,
+  "tenure": "0y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bernard Dowiyogo",
+  "role": "President",
+  "start": "1989-12-12",
+  "end": "1995-11-22",
+  "current": false,
+  "tenure": "5y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Lagumot Harris",
+  "role": "President",
+  "start": "1995-11-22",
+  "end": "1996-11-11",
+  "current": false,
+  "tenure": "0y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bernard Dowiyogo",
+  "role": "President",
+  "start": "1996-11-11",
+  "end": "1996-11-26",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Kennan Adeang",
+  "role": "President",
+  "start": "1996-11-26",
+  "end": "1996-12-19",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ruben Kun",
+  "role": "President",
+  "start": "1996-12-19",
+  "end": "1997-02-13",
+  "current": false,
+  "tenure": "0y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Kinza Clodumar",
+  "role": "President",
+  "start": "1997-02-13",
+  "end": "1998-06-18",
+  "current": false,
+  "tenure": "1y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bernard Dowiyogo",
+  "role": "President",
+  "start": "1998-06-18",
+  "end": "1999-04-27",
+  "current": false,
+  "tenure": "0y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "René Harris",
+  "role": "President",
+  "start": "1999-04-27",
+  "end": "2000-04-20",
+  "current": false,
+  "tenure": "0y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bernard Dowiyogo",
+  "role": "President",
+  "start": "2000-04-20",
+  "end": "2001-03-30",
+  "current": false,
+  "tenure": "0y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "René Harris",
+  "role": "President",
+  "start": "2001-03-30",
+  "end": "2003-01-09",
+  "current": false,
+  "tenure": "1y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bernard Dowiyogo",
+  "role": "President",
+  "start": "2003-01-09",
+  "end": "2003-01-17",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "René Harris",
+  "role": "President",
+  "start": "2003-01-17",
+  "end": "2003-01-18",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bernard Dowiyogo",
+  "role": "President",
+  "start": "2003-01-18",
+  "end": "2003-03-09",
+  "current": false,
+  "tenure": "0y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Derog Gioura",
+  "role": "President",
+  "start": "2003-03-10",
+  "end": "2003-05-29",
+  "current": false,
+  "tenure": "0y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ludwig Scotty",
+  "role": "President",
+  "start": "2003-05-29",
+  "end": "2003-08-08",
+  "current": false,
+  "tenure": "0y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "René Harris",
+  "role": "President",
+  "start": "2003-08-08",
+  "end": "2004-06-22",
+  "current": false,
+  "tenure": "0y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ludwig Scotty",
+  "role": "President",
+  "start": "2004-06-22",
+  "end": "2007-12-19",
+  "current": false,
+  "tenure": "3y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Marcus Stephen",
+  "role": "President",
+  "start": "2007-12-19",
+  "end": "2011-11-10",
+  "current": false,
+  "tenure": "3y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Freddie Pitcher",
+  "role": "President",
+  "start": "2011-11-10",
+  "end": "2011-11-15",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Sprent Dabwido",
+  "role": "President",
+  "start": "2011-11-15",
+  "end": "2013-06-11",
+  "current": false,
+  "tenure": "1y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Baron Waqa",
+  "role": "President",
+  "start": "2013-06-11",
+  "end": "2019-08-27",
+  "current": false,
+  "tenure": "6y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Lionel Aingimea",
+  "role": "President",
+  "start": "2019-08-27",
+  "end": "2022-09-29",
+  "current": false,
+  "tenure": "3y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Russ Kun",
+  "role": "President",
+  "start": "2022-09-29",
+  "end": "2023-10-30",
+  "current": false,
+  "tenure": "1y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "David Adeang",
+  "role": "President",
+  "start": "2023-10-30",
+  "end": null,
+  "current": true,
+  "tenure": "2y 8m",
+  "party": null,
+  "era": null
+ }
 ]

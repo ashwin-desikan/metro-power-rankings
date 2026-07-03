@@ -33,19 +33,9 @@
     "name": "Ramón Castilla",
     "role": "President",
     "start": "1845-01-01",
-    "end": "1855-01-01",
-    "current": false,
-    "tenure": "10y 0d",
-    "party": "backbone; year-level dates",
-    "era": "Republic of Peru"
-  },
-  {
-    "name": "Ramón Castilla",
-    "role": "President",
-    "start": "1855-01-01",
     "end": "1872-01-01",
     "current": false,
-    "tenure": "17y 0d",
+    "tenure": "27y 0d",
     "party": "backbone; year-level dates",
     "era": "Republic of Peru"
   },
@@ -73,19 +63,9 @@
     "name": "Augusto B. Leguía",
     "role": "President",
     "start": "1908-01-01",
-    "end": "1919-01-01",
-    "current": false,
-    "tenure": "11y 0d",
-    "party": "backbone; year-level dates",
-    "era": "Republic of Peru"
-  },
-  {
-    "name": "Augusto B. Leguía",
-    "role": "President",
-    "start": "1919-01-01",
     "end": "1933-01-01",
     "current": false,
-    "tenure": "14y 0d",
+    "tenure": "25y 0d",
     "party": "backbone; year-level dates",
     "era": "Republic of Peru"
   },

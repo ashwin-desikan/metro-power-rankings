@@ -1,5 +1,25 @@
 [
   {
+    "name": "⚠️ Saparmurat Niyazov",
+    "role": "President",
+    "start": "1991-11-02",
+    "end": "2006-12-21",
+    "current": false,
+    "tenure": "15y 1m 19d",
+    "party": null,
+    "era": "Republic of Turkmenistan"
+  },
+  {
+    "name": "⚠️ Gurbanguly Berdimuhamedow",
+    "role": "President",
+    "start": "2007-02-14",
+    "end": "2022-03-19",
+    "current": false,
+    "tenure": "15y 1m 5d",
+    "party": null,
+    "era": "Republic of Turkmenistan"
+  },
+  {
     "name": "Serdar Berdimuhamedow",
     "role": "Prime Minister",
     "start": "2022-03-19",

@@ -1,52 +1,112 @@
 [
-  {
-    "name": "Ernest Bai Koroma",
-    "role": "President",
-    "start": "2007-09-17",
-    "end": "2018-04-04",
-    "current": false,
-    "tenure": "10y 6m 18d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Julius Maada Bio",
-    "role": "President",
-    "start": "2018-04-04",
-    "end": null,
-    "current": true,
-    "tenure": "8y 2m 29d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "David J. Francis",
-    "role": "Prime Minister",
-    "start": "2018-05-08",
-    "end": "2021-01-01",
-    "current": false,
-    "tenure": "2y 7m 24d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Jacob Jusu Saffa",
-    "role": "Prime Minister",
-    "start": "2021-01-01",
-    "end": "2023-01-01",
-    "current": false,
-    "tenure": "2y 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "David Sengeh",
-    "role": "Prime Minister",
-    "start": "2023-01-01",
-    "end": null,
-    "current": true,
-    "tenure": "3y 6m 2d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "👑 Elizabeth II",
+  "role": "King",
+  "start": "1961-04-27",
+  "end": "1971-04-19",
+  "current": false,
+  "tenure": "9y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Christopher Okoro Cole",
+  "role": "President",
+  "start": "1971-04-19",
+  "end": "1971-04-21",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Siaka Stevens",
+  "role": "President",
+  "start": "1971-04-21",
+  "end": "1985-11-28",
+  "current": false,
+  "tenure": "14y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Joseph Saidu Momoh",
+  "role": "President",
+  "start": "1985-11-28",
+  "end": "1992-04-29",
+  "current": false,
+  "tenure": "6y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Valentine Strasser",
+  "role": "Chairman",
+  "start": "1992-05-01",
+  "end": "1996-01-16",
+  "current": false,
+  "tenure": "3y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Julius Maada Bio",
+  "role": "Chairman",
+  "start": "1996-01-16",
+  "end": "1996-03-29",
+  "current": false,
+  "tenure": "0y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ahmad Tejan Kabbah",
+  "role": "President",
+  "start": "1996-03-29",
+  "end": "1997-05-25",
+  "current": false,
+  "tenure": "1y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Johnny Paul Koroma",
+  "role": "Chairman",
+  "start": "1997-05-25",
+  "end": "1998-02-12",
+  "current": false,
+  "tenure": "0y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ahmad Tejan Kabbah",
+  "role": "President",
+  "start": "1998-02-13",
+  "end": "2007-09-17",
+  "current": false,
+  "tenure": "9y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ernest Bai Koroma",
+  "role": "President",
+  "start": "2007-09-17",
+  "end": "2018-04-04",
+  "current": false,
+  "tenure": "10y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Julius Maada Bio",
+  "role": "President",
+  "start": "2018-04-04",
+  "end": null,
+  "current": true,
+  "tenure": "8y 2m",
+  "party": null,
+  "era": null
+ }
 ]

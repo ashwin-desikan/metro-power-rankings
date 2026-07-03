@@ -1,0 +1,922 @@
+[
+ {
+  "name": "👑 Romulus",
+  "role": "King",
+  "start": "-0753-01-01",
+  "end": "-0716-01-01",
+  "current": false,
+  "tenure": "37y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Kingdom"
+ },
+ {
+  "name": "👑 Numa Pompilius",
+  "role": "King",
+  "start": "-0715-01-01",
+  "end": "-0673-01-01",
+  "current": false,
+  "tenure": "42y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Kingdom"
+ },
+ {
+  "name": "👑 Tullus Hostilius",
+  "role": "King",
+  "start": "-0673-01-01",
+  "end": "-0642-01-01",
+  "current": false,
+  "tenure": "31y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Kingdom"
+ },
+ {
+  "name": "👑 Ancus Marcius",
+  "role": "King",
+  "start": "-0642-01-01",
+  "end": "-0617-01-01",
+  "current": false,
+  "tenure": "25y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Kingdom"
+ },
+ {
+  "name": "👑 Tarquinius Priscus",
+  "role": "King",
+  "start": "-0616-01-01",
+  "end": "-0579-01-01",
+  "current": false,
+  "tenure": "37y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Kingdom"
+ },
+ {
+  "name": "👑 Servius Tullius",
+  "role": "King",
+  "start": "-0578-01-01",
+  "end": "-0535-01-01",
+  "current": false,
+  "tenure": "43y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Kingdom"
+ },
+ {
+  "name": "👑 Tarquinius Superbus",
+  "role": "King",
+  "start": "-0535-01-01",
+  "end": "-0509-01-01",
+  "current": false,
+  "tenure": "26y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Kingdom"
+ },
+ {
+  "name": "Lucius Junius Brutus",
+  "role": "Consul",
+  "start": "-0509-01-01",
+  "end": "-0509-01-01",
+  "current": false,
+  "tenure": "0y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Republic"
+ },
+ {
+  "name": "Cincinnatus",
+  "role": "Dictator",
+  "start": "-0458-01-01",
+  "end": "-0458-01-01",
+  "current": false,
+  "tenure": "0y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Republic"
+ },
+ {
+  "name": "Marcus Furius Camillus",
+  "role": "Dictator",
+  "start": "-0396-01-01",
+  "end": "-0396-01-01",
+  "current": false,
+  "tenure": "0y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Republic"
+ },
+ {
+  "name": "Scipio Africanus",
+  "role": "Consul",
+  "start": "-0205-01-01",
+  "end": "-0205-01-01",
+  "current": false,
+  "tenure": "0y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Republic"
+ },
+ {
+  "name": "Sulla",
+  "role": "Dictator",
+  "start": "-0082-01-01",
+  "end": "-0079-01-01",
+  "current": false,
+  "tenure": "3y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Republic"
+ },
+ {
+  "name": "Pompey",
+  "role": "Consul",
+  "start": "-0070-01-01",
+  "end": "-0070-01-01",
+  "current": false,
+  "tenure": "0y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Republic"
+ },
+ {
+  "name": "Julius Caesar",
+  "role": "Dictator",
+  "start": "-0049-01-01",
+  "end": "-0044-01-01",
+  "current": false,
+  "tenure": "5y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Republic"
+ },
+ {
+  "name": "👑 Augustus",
+  "role": "Emperor",
+  "start": "-0027-01-01",
+  "end": "0014-01-01",
+  "current": false,
+  "tenure": "41y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Tiberius",
+  "role": "Emperor",
+  "start": "0014-01-01",
+  "end": "0037-01-01",
+  "current": false,
+  "tenure": "23y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Caligula",
+  "role": "Emperor",
+  "start": "0037-01-01",
+  "end": "0041-01-01",
+  "current": false,
+  "tenure": "4y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Claudius",
+  "role": "Emperor",
+  "start": "0041-01-01",
+  "end": "0054-01-01",
+  "current": false,
+  "tenure": "13y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Nero",
+  "role": "Emperor",
+  "start": "0054-01-01",
+  "end": "0068-01-01",
+  "current": false,
+  "tenure": "14y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Galba",
+  "role": "Emperor",
+  "start": "0068-01-01",
+  "end": "0069-01-01",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Otho",
+  "role": "Emperor",
+  "start": "0069-01-01",
+  "end": "0069-01-01",
+  "current": false,
+  "tenure": "0y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Vitellius",
+  "role": "Emperor",
+  "start": "0069-01-01",
+  "end": "0069-01-01",
+  "current": false,
+  "tenure": "0y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Vespasian",
+  "role": "Emperor",
+  "start": "0069-01-01",
+  "end": "0079-01-01",
+  "current": false,
+  "tenure": "10y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Titus",
+  "role": "Emperor",
+  "start": "0079-01-01",
+  "end": "0081-01-01",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Domitian",
+  "role": "Emperor",
+  "start": "0081-01-01",
+  "end": "0096-01-01",
+  "current": false,
+  "tenure": "15y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Nerva",
+  "role": "Emperor",
+  "start": "0096-01-01",
+  "end": "0098-01-01",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Trajan",
+  "role": "Emperor",
+  "start": "0098-01-01",
+  "end": "0117-01-01",
+  "current": false,
+  "tenure": "19y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Hadrian",
+  "role": "Emperor",
+  "start": "0117-01-01",
+  "end": "0138-01-01",
+  "current": false,
+  "tenure": "21y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Antoninus Pius",
+  "role": "Emperor",
+  "start": "0138-01-01",
+  "end": "0161-01-01",
+  "current": false,
+  "tenure": "23y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Lucius Verus",
+  "role": "Emperor",
+  "start": "0161-01-01",
+  "end": "0169-01-01",
+  "current": false,
+  "tenure": "8y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Marcus Aurelius",
+  "role": "Emperor",
+  "start": "0161-01-01",
+  "end": "0180-01-01",
+  "current": false,
+  "tenure": "19y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Commodus",
+  "role": "Emperor",
+  "start": "0180-01-01",
+  "end": "0192-01-01",
+  "current": false,
+  "tenure": "12y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Pertinax",
+  "role": "Emperor",
+  "start": "0193-01-01",
+  "end": "0193-01-01",
+  "current": false,
+  "tenure": "0y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Didius Julianus",
+  "role": "Emperor",
+  "start": "0193-01-01",
+  "end": "0193-01-01",
+  "current": false,
+  "tenure": "0y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Septimius Severus",
+  "role": "Emperor",
+  "start": "0193-01-01",
+  "end": "0211-01-01",
+  "current": false,
+  "tenure": "18y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Geta",
+  "role": "Emperor",
+  "start": "0209-01-01",
+  "end": "0211-01-01",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Caracalla",
+  "role": "Emperor",
+  "start": "0198-01-01",
+  "end": "0217-01-01",
+  "current": false,
+  "tenure": "19y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Macrinus",
+  "role": "Emperor",
+  "start": "0217-01-01",
+  "end": "0218-01-01",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Elagabalus",
+  "role": "Emperor",
+  "start": "0218-01-01",
+  "end": "0222-01-01",
+  "current": false,
+  "tenure": "4y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Severus Alexander",
+  "role": "Emperor",
+  "start": "0222-01-01",
+  "end": "0235-01-01",
+  "current": false,
+  "tenure": "13y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Maximinus Thrax",
+  "role": "Emperor",
+  "start": "0235-01-01",
+  "end": "0238-01-01",
+  "current": false,
+  "tenure": "3y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Gordian I",
+  "role": "Emperor",
+  "start": "0238-01-01",
+  "end": "0238-01-01",
+  "current": false,
+  "tenure": "0y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Gordian II",
+  "role": "Emperor",
+  "start": "0238-01-01",
+  "end": "0238-01-01",
+  "current": false,
+  "tenure": "0y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Pupienus",
+  "role": "Emperor",
+  "start": "0238-01-01",
+  "end": "0238-01-01",
+  "current": false,
+  "tenure": "0y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Balbinus",
+  "role": "Emperor",
+  "start": "0238-01-01",
+  "end": "0238-01-01",
+  "current": false,
+  "tenure": "0y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Gordian III",
+  "role": "Emperor",
+  "start": "0238-01-01",
+  "end": "0244-01-01",
+  "current": false,
+  "tenure": "6y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Philip the Arab",
+  "role": "Emperor",
+  "start": "0244-01-01",
+  "end": "0249-01-01",
+  "current": false,
+  "tenure": "5y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Decius",
+  "role": "Emperor",
+  "start": "0249-01-01",
+  "end": "0251-01-01",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Hostilian",
+  "role": "Emperor",
+  "start": "0251-01-01",
+  "end": "0251-01-01",
+  "current": false,
+  "tenure": "0y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Trebonianus Gallus",
+  "role": "Emperor",
+  "start": "0251-01-01",
+  "end": "0253-01-01",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Aemilianus",
+  "role": "Emperor",
+  "start": "0253-01-01",
+  "end": "0253-01-01",
+  "current": false,
+  "tenure": "0y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Valerian",
+  "role": "Emperor",
+  "start": "0253-01-01",
+  "end": "0260-01-01",
+  "current": false,
+  "tenure": "7y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Gallienus",
+  "role": "Emperor",
+  "start": "0253-01-01",
+  "end": "0268-01-01",
+  "current": false,
+  "tenure": "15y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Claudius Gothicus",
+  "role": "Emperor",
+  "start": "0268-01-01",
+  "end": "0270-01-01",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Quintillus",
+  "role": "Emperor",
+  "start": "0270-01-01",
+  "end": "0270-01-01",
+  "current": false,
+  "tenure": "0y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Aurelian",
+  "role": "Emperor",
+  "start": "0270-01-01",
+  "end": "0275-01-01",
+  "current": false,
+  "tenure": "5y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Tacitus",
+  "role": "Emperor",
+  "start": "0275-01-01",
+  "end": "0276-01-01",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Florianus",
+  "role": "Emperor",
+  "start": "0276-01-01",
+  "end": "0276-01-01",
+  "current": false,
+  "tenure": "0y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Probus",
+  "role": "Emperor",
+  "start": "0276-01-01",
+  "end": "0282-01-01",
+  "current": false,
+  "tenure": "6y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Carus",
+  "role": "Emperor",
+  "start": "0282-01-01",
+  "end": "0283-01-01",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Numerian",
+  "role": "Emperor",
+  "start": "0283-01-01",
+  "end": "0284-01-01",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Carinus",
+  "role": "Emperor",
+  "start": "0283-01-01",
+  "end": "0285-01-01",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Diocletian",
+  "role": "Emperor",
+  "start": "0284-01-01",
+  "end": "0305-01-01",
+  "current": false,
+  "tenure": "21y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Maximian",
+  "role": "Emperor",
+  "start": "0286-01-01",
+  "end": "0305-01-01",
+  "current": false,
+  "tenure": "19y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Constantius I",
+  "role": "Emperor",
+  "start": "0305-01-01",
+  "end": "0306-01-01",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Galerius",
+  "role": "Emperor",
+  "start": "0305-01-01",
+  "end": "0311-01-01",
+  "current": false,
+  "tenure": "6y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Severus II",
+  "role": "Emperor",
+  "start": "0306-01-01",
+  "end": "0307-01-01",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Maxentius",
+  "role": "Emperor",
+  "start": "0306-01-01",
+  "end": "0312-01-01",
+  "current": false,
+  "tenure": "6y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Licinius",
+  "role": "Emperor",
+  "start": "0308-01-01",
+  "end": "0324-01-01",
+  "current": false,
+  "tenure": "16y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Constantine I",
+  "role": "Emperor",
+  "start": "0306-01-01",
+  "end": "0337-01-01",
+  "current": false,
+  "tenure": "31y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Constantine II",
+  "role": "Emperor",
+  "start": "0337-01-01",
+  "end": "0340-01-01",
+  "current": false,
+  "tenure": "3y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Constans I",
+  "role": "Emperor",
+  "start": "0337-01-01",
+  "end": "0350-01-01",
+  "current": false,
+  "tenure": "13y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Constantius II",
+  "role": "Emperor",
+  "start": "0337-01-01",
+  "end": "0361-01-01",
+  "current": false,
+  "tenure": "24y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Julian",
+  "role": "Emperor",
+  "start": "0361-01-01",
+  "end": "0363-01-01",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Jovian",
+  "role": "Emperor",
+  "start": "0363-01-01",
+  "end": "0364-01-01",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Valentinian I",
+  "role": "Emperor",
+  "start": "0364-01-01",
+  "end": "0375-01-01",
+  "current": false,
+  "tenure": "11y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Valens",
+  "role": "Emperor",
+  "start": "0364-01-01",
+  "end": "0378-01-01",
+  "current": false,
+  "tenure": "14y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Gratian",
+  "role": "Emperor",
+  "start": "0367-01-01",
+  "end": "0383-01-01",
+  "current": false,
+  "tenure": "16y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Valentinian II",
+  "role": "Emperor",
+  "start": "0375-01-01",
+  "end": "0392-01-01",
+  "current": false,
+  "tenure": "17y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Theodosius I",
+  "role": "Emperor",
+  "start": "0379-01-01",
+  "end": "0395-01-01",
+  "current": false,
+  "tenure": "16y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Honorius",
+  "role": "Emperor",
+  "start": "0393-01-01",
+  "end": "0423-01-01",
+  "current": false,
+  "tenure": "30y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Constantius III",
+  "role": "Emperor",
+  "start": "0421-01-01",
+  "end": "0421-01-01",
+  "current": false,
+  "tenure": "0y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Valentinian III",
+  "role": "Emperor",
+  "start": "0425-01-01",
+  "end": "0455-01-01",
+  "current": false,
+  "tenure": "30y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Petronius Maximus",
+  "role": "Emperor",
+  "start": "0455-01-01",
+  "end": "0455-01-01",
+  "current": false,
+  "tenure": "0y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Avitus",
+  "role": "Emperor",
+  "start": "0455-01-01",
+  "end": "0456-01-01",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Majorian",
+  "role": "Emperor",
+  "start": "0457-01-01",
+  "end": "0461-01-01",
+  "current": false,
+  "tenure": "4y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Libius Severus",
+  "role": "Emperor",
+  "start": "0461-01-01",
+  "end": "0465-01-01",
+  "current": false,
+  "tenure": "4y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Anthemius",
+  "role": "Emperor",
+  "start": "0467-01-01",
+  "end": "0472-01-01",
+  "current": false,
+  "tenure": "5y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Olybrius",
+  "role": "Emperor",
+  "start": "0472-01-01",
+  "end": "0472-01-01",
+  "current": false,
+  "tenure": "0y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Glycerius",
+  "role": "Emperor",
+  "start": "0473-01-01",
+  "end": "0474-01-01",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Julius Nepos",
+  "role": "Emperor",
+  "start": "0474-01-01",
+  "end": "0475-01-01",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Romulus Augustulus",
+  "role": "Emperor",
+  "start": "0475-01-01",
+  "end": "0476-01-01",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ }
+]

@@ -1,0 +1,112 @@
+[
+ {
+  "name": "👑 Shivaji",
+  "role": "Chhatrapati",
+  "start": "1674-06-06",
+  "end": "1680-04-03",
+  "current": false,
+  "tenure": "5y 9m",
+  "party": null,
+  "era": "Maratha Empire"
+ },
+ {
+  "name": "👑 Sambhaji",
+  "role": "Chhatrapati",
+  "start": "1681-01-16",
+  "end": "1689-03-11",
+  "current": false,
+  "tenure": "8y 1m",
+  "party": null,
+  "era": "Maratha Empire"
+ },
+ {
+  "name": "👑 Shahu I",
+  "role": "Chhatrapati",
+  "start": "1708-01-12",
+  "end": "1749-12-15",
+  "current": false,
+  "tenure": "41y 11m",
+  "party": null,
+  "era": "Maratha Empire"
+ },
+ {
+  "name": "Balaji Vishwanath",
+  "role": "Peshwa",
+  "start": "1713-01-01",
+  "end": "1720-04-02",
+  "current": false,
+  "tenure": "7y 3m",
+  "party": null,
+  "era": "Maratha Empire"
+ },
+ {
+  "name": "Baji Rao I",
+  "role": "Peshwa",
+  "start": "1720-04-17",
+  "end": "1740-04-28",
+  "current": false,
+  "tenure": "20y 0m",
+  "party": null,
+  "era": "Maratha Empire"
+ },
+ {
+  "name": "Balaji Baji Rao (Nana Saheb)",
+  "role": "Peshwa",
+  "start": "1740-07-04",
+  "end": "1761-06-23",
+  "current": false,
+  "tenure": "20y 11m",
+  "party": null,
+  "era": "Maratha Empire"
+ },
+ {
+  "name": "Madhavrao I",
+  "role": "Peshwa",
+  "start": "1761-07-01",
+  "end": "1772-11-18",
+  "current": false,
+  "tenure": "11y 4m",
+  "party": null,
+  "era": "Maratha Empire"
+ },
+ {
+  "name": "Narayanrao",
+  "role": "Peshwa",
+  "start": "1772-12-13",
+  "end": "1773-08-30",
+  "current": false,
+  "tenure": "0y 8m",
+  "party": null,
+  "era": "Maratha Empire"
+ },
+ {
+  "name": "Raghunathrao",
+  "role": "Peshwa",
+  "start": "1773-12-05",
+  "end": "1774-01-01",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": "Maratha Empire"
+ },
+ {
+  "name": "Madhavrao II (Sawai Madhavrao)",
+  "role": "Peshwa",
+  "start": "1774-04-18",
+  "end": "1795-10-27",
+  "current": false,
+  "tenure": "21y 6m",
+  "party": null,
+  "era": "Maratha Empire"
+ },
+ {
+  "name": "Baji Rao II",
+  "role": "Peshwa",
+  "start": "1795-12-06",
+  "end": "1818-06-03",
+  "current": false,
+  "tenure": "22y 5m",
+  "party": null,
+  "era": "Maratha Empire"
+ }
+]

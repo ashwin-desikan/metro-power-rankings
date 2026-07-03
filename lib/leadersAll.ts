@@ -59,6 +59,12 @@ function readJSON<T>(p: string): T | null {
   try { return JSON.parse(fs.readFileSync(p, "utf-8")) as T; } catch { return null; }
 }
 
+function fmtDefunctYear(v: string): string {
+  const neg = v.startsWith("-");
+  const y = parseInt(neg ? v.slice(1) : v, 10);
+  return neg ? `${y} BC` : String(y);
+}
+
 function compact(rows: Array<{ name: string; role: string; start: string | null; end: string | null }>): HistRow[] {
   return rows
     .map((r) => ({ n: r.name, r: r.role ?? "", s: r.start ?? null, e: r.end ?? null }))
@@ -119,9 +125,15 @@ export async function getLeadersMaster(): Promise<LeaderEntity[]> {
           .sort()
       : [];
     let yearRange: string | null = null;
-    if (isFormer && history.length) {
-      const first = history.reduce((m, h) => (h.s && h.s < m ? h.s : m), history[0].s!);
-      yearRange = `${parseInt(first.slice(0, 4), 10)}–1707`;
+    if (history.length) {
+      const starts = history.map((h) => h.s).filter(Boolean) as string[];
+      if (starts.length) {
+        const earliest = Math.min(
+          ...starts.map((d) => (d.startsWith("-") ? -parseInt(d.slice(1, 5), 10) : parseInt(d.slice(0, 4), 10))),
+        );
+        // Current countries show "<earliest>–" (open-ended); former sovereigns keep their end year.
+        yearRange = isFormer ? `${earliest}–1707` : `${earliest < 0 ? `${-earliest} BC` : earliest}–`;
+      }
     }
     out.push({
       slug,
@@ -147,6 +159,22 @@ export async function getLeadersMaster(): Promise<LeaderEntity[]> {
     const cur = o.current
       ? { name: o.current.name, role: o.current.role, ...(o.current.since ? { since: o.current.since } : {}) }
       : null;
+    // Defunct orgs (no current holder) get a year range from their history span.
+    let orgYearRange: string | null = null;
+    if (Array.isArray(o.history) && o.history.length) {
+      const starts = o.history.map((h) => h.start).filter(Boolean) as string[];
+      const ends = o.history.map((h) => h.end).filter(Boolean) as string[];
+      if (starts.length) {
+        const s0 = Math.min(...starts.map((x) => parseInt(x.slice(0, 4), 10)));
+        if (cur) {
+          // Current orgs: earliest year, open-ended.
+          orgYearRange = `${s0}–`;
+        } else {
+          const e0 = ends.length ? Math.max(...ends.map((x) => parseInt(x.slice(0, 4), 10))) : null;
+          orgYearRange = `${s0}–${e0 ?? "present"}`;
+        }
+      }
+    }
     out.push({
       slug: key,
       name: ORG_LABEL[key] ?? key,
@@ -155,7 +183,7 @@ export async function getLeadersMaster(): Promise<LeaderEntity[]> {
       parentName: null,
       scoreTotal: null,
       realm: false,
-      yearRange: null,
+      yearRange: orgYearRange,
       orgs: [],
       country: o.current?.country ?? null,
       href: null,
@@ -181,7 +209,7 @@ export async function getLeadersMaster(): Promise<LeaderEntity[]> {
       parentName: null,
       scoreTotal: null,
       realm: false,
-      yearRange: `${meta.start}–${meta.end}`,
+      yearRange: `${fmtDefunctYear(meta.start)}–${fmtDefunctYear(meta.end)}`,
       nameHistory: normNames(names[slug]),
       orgs: [],
       country: null,

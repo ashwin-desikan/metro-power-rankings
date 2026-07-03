@@ -1,0 +1,82 @@
+[
+  {
+    "name": "👑 Itzcoatl",
+    "role": "Huey Tlatoani",
+    "start": "1427-01-01",
+    "end": "1440-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Aztec Empire"
+  },
+  {
+    "name": "👑 Moctezuma I",
+    "role": "Huey Tlatoani",
+    "start": "1440-01-01",
+    "end": "1469-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level backbone",
+    "era": "Aztec Empire"
+  },
+  {
+    "name": "👑 Axayacatl",
+    "role": "Huey Tlatoani",
+    "start": "1469-01-01",
+    "end": "1481-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone",
+    "era": "Aztec Empire"
+  },
+  {
+    "name": "👑 Tizoc",
+    "role": "Huey Tlatoani",
+    "start": "1481-01-01",
+    "end": "1486-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Aztec Empire"
+  },
+  {
+    "name": "👑 Ahuitzotl",
+    "role": "Huey Tlatoani",
+    "start": "1486-01-01",
+    "end": "1502-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone",
+    "era": "Aztec Empire"
+  },
+  {
+    "name": "👑 Moctezuma II",
+    "role": "Huey Tlatoani",
+    "start": "1502-01-01",
+    "end": "1520-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone",
+    "era": "Aztec Empire"
+  },
+  {
+    "name": "👑 Cuitláhuac",
+    "role": "Huey Tlatoani",
+    "start": "1520-01-01",
+    "end": "1521-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Aztec Empire"
+  },
+  {
+    "name": "👑 Cuauhtémoc",
+    "role": "Huey Tlatoani",
+    "start": "1521-01-01",
+    "end": "1521-08-13",
+    "current": false,
+    "tenure": "7m 12d",
+    "party": "year-level backbone",
+    "era": "Aztec Empire"
+  }
+]

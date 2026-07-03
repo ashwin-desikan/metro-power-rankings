@@ -1,22 +1,202 @@
 [
-  {
-    "name": "Jeremiah Manele",
-    "role": "Prime Minister",
-    "start": "2024-05-02",
-    "end": "2026-05-15",
-    "current": false,
-    "tenure": "2y 13d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Matthew Wale",
-    "role": "Prime Minister",
-    "start": "2026-05-15",
-    "end": null,
-    "current": true,
-    "tenure": "1m 18d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Peter Kenilorea",
+  "role": "Prime Minister",
+  "start": "1978-07-07",
+  "end": "1981-08-31",
+  "current": false,
+  "tenure": "3y 1m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Solomon Mamaloni",
+  "role": "Prime Minister",
+  "start": "1981-08-31",
+  "end": "1984-11-19",
+  "current": false,
+  "tenure": "3y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Peter Kenilorea",
+  "role": "Prime Minister",
+  "start": "1984-11-19",
+  "end": "1986-12-01",
+  "current": false,
+  "tenure": "2y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Ezekiel Alebua",
+  "role": "Prime Minister",
+  "start": "1986-12-01",
+  "end": "1989-03-28",
+  "current": false,
+  "tenure": "2y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Solomon Mamaloni",
+  "role": "Prime Minister",
+  "start": "1989-03-28",
+  "end": "1993-06-18",
+  "current": false,
+  "tenure": "4y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Francis Billy Hilly",
+  "role": "Prime Minister",
+  "start": "1993-06-18",
+  "end": "1994-11-07",
+  "current": false,
+  "tenure": "1y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Solomon Mamaloni",
+  "role": "Prime Minister",
+  "start": "1994-11-07",
+  "end": "1997-08-27",
+  "current": false,
+  "tenure": "2y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bartholomew Ulufa'alu",
+  "role": "Prime Minister",
+  "start": "1997-08-27",
+  "end": "2000-06-30",
+  "current": false,
+  "tenure": "2y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Manasseh Sogavare",
+  "role": "Prime Minister",
+  "start": "2000-06-30",
+  "end": "2001-12-17",
+  "current": false,
+  "tenure": "1y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Allan Kemakeza",
+  "role": "Prime Minister",
+  "start": "2001-12-17",
+  "end": "2006-04-20",
+  "current": false,
+  "tenure": "4y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Snyder Rini",
+  "role": "Prime Minister",
+  "start": "2006-04-20",
+  "end": "2006-05-04",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Manasseh Sogavare",
+  "role": "Prime Minister",
+  "start": "2006-05-04",
+  "end": "2007-12-20",
+  "current": false,
+  "tenure": "1y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Derek Sikua",
+  "role": "Prime Minister",
+  "start": "2007-12-20",
+  "end": "2010-08-25",
+  "current": false,
+  "tenure": "2y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Danny Philip",
+  "role": "Prime Minister",
+  "start": "2010-08-25",
+  "end": "2011-11-16",
+  "current": false,
+  "tenure": "1y 2m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Gordon Darcy Lilo",
+  "role": "Prime Minister",
+  "start": "2011-11-16",
+  "end": "2014-12-09",
+  "current": false,
+  "tenure": "3y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Manasseh Sogavare",
+  "role": "Prime Minister",
+  "start": "2014-12-09",
+  "end": "2017-11-15",
+  "current": false,
+  "tenure": "2y 11m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Rick Houenipwela",
+  "role": "Prime Minister",
+  "start": "2017-11-15",
+  "end": "2019-04-24",
+  "current": false,
+  "tenure": "1y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Manasseh Sogavare",
+  "role": "Prime Minister",
+  "start": "2019-04-24",
+  "end": "2024-05-02",
+  "current": false,
+  "tenure": "5y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Jeremiah Manele",
+  "role": "Prime Minister",
+  "start": "2024-05-02",
+  "end": "2026-05-15",
+  "current": false,
+  "tenure": "2y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Matthew Wale",
+  "role": "Prime Minister",
+  "start": "2026-05-15",
+  "end": null,
+  "current": true,
+  "tenure": "0y 1m",
+  "party": null,
+  "era": null
+ }
 ]

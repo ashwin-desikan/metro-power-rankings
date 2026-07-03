@@ -1,5 +1,75 @@
 [
   {
+    "name": "👑 William I",
+    "role": "Monarch",
+    "start": "1815-03-16",
+    "end": "1840-10-07",
+    "current": false,
+    "tenure": "25y 6m 21d",
+    "party": null,
+    "era": "Grand Duchy of Luxembourg"
+  },
+  {
+    "name": "👑 William II",
+    "role": "Monarch",
+    "start": "1840-10-07",
+    "end": "1849-03-17",
+    "current": false,
+    "tenure": "8y 5m 10d",
+    "party": null,
+    "era": "Grand Duchy of Luxembourg"
+  },
+  {
+    "name": "👑 William III",
+    "role": "Monarch",
+    "start": "1849-03-17",
+    "end": "1890-11-23",
+    "current": false,
+    "tenure": "41y 8m 6d",
+    "party": null,
+    "era": "Grand Duchy of Luxembourg"
+  },
+  {
+    "name": "👑 Adolphe",
+    "role": "Monarch",
+    "start": "1890-11-23",
+    "end": "1905-11-17",
+    "current": false,
+    "tenure": "14y 11m 25d",
+    "party": null,
+    "era": "Grand Duchy of Luxembourg"
+  },
+  {
+    "name": "👑 William IV",
+    "role": "Monarch",
+    "start": "1905-11-17",
+    "end": "1912-02-25",
+    "current": false,
+    "tenure": "6y 3m 8d",
+    "party": null,
+    "era": "Grand Duchy of Luxembourg"
+  },
+  {
+    "name": "👑 Marie-Adélaïde",
+    "role": "Monarch",
+    "start": "1912-02-25",
+    "end": "1919-01-14",
+    "current": false,
+    "tenure": "6y 10m 20d",
+    "party": null,
+    "era": "Grand Duchy of Luxembourg"
+  },
+  {
+    "name": "👑 Charlotte",
+    "role": "Monarch",
+    "start": "1919-01-14",
+    "end": "1964-11-12",
+    "current": false,
+    "tenure": "45y 9m 29d",
+    "party": null,
+    "era": "Grand Duchy of Luxembourg"
+  },
+  {
     "name": "👑 Jean",
     "role": "Monarch",
     "start": "1964-11-12",

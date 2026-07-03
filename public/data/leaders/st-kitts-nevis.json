@@ -1,22 +1,42 @@
 [
-  {
-    "name": "Timothy Harris",
-    "role": "Prime Minister",
-    "start": "2015-02-18",
-    "end": "2022-01-01",
-    "current": false,
-    "tenure": "6y 10m 14d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Terrance Drew",
-    "role": "Prime Minister",
-    "start": "2022-01-01",
-    "end": null,
-    "current": true,
-    "tenure": "4y 6m 2d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Kennedy Simmonds",
+  "role": "Prime Minister",
+  "start": "1983-09-19",
+  "end": "1995-07-07",
+  "current": false,
+  "tenure": "11y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Denzil Douglas",
+  "role": "Prime Minister",
+  "start": "1995-07-07",
+  "end": "2015-02-18",
+  "current": false,
+  "tenure": "19y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Timothy Harris",
+  "role": "Prime Minister",
+  "start": "2015-02-18",
+  "end": "2022-08-06",
+  "current": false,
+  "tenure": "7y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Terrance Drew",
+  "role": "Prime Minister",
+  "start": "2022-08-06",
+  "end": null,
+  "current": true,
+  "tenure": "3y 10m",
+  "party": null,
+  "era": null
+ }
 ]

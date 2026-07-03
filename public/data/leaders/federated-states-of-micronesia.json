@@ -1,62 +1,102 @@
 [
-  {
-    "name": "Peter M. Christian",
-    "role": "Prime Minister",
-    "start": "2015-05-11",
-    "end": "2019-05-11",
-    "current": false,
-    "tenure": "4y 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Peter M. Christian",
-    "role": "President",
-    "start": "2015-05-11",
-    "end": "2019-05-11",
-    "current": false,
-    "tenure": "4y 0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "David W. Panuelo",
-    "role": "Prime Minister",
-    "start": "2019-05-11",
-    "end": "2023-01-01",
-    "current": false,
-    "tenure": "3y 7m 21d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "David W. Panuelo",
-    "role": "President",
-    "start": "2019-05-11",
-    "end": "2023-01-01",
-    "current": false,
-    "tenure": "3y 7m 21d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Wesley Simina",
-    "role": "Prime Minister",
-    "start": "2023-01-01",
-    "end": null,
-    "current": true,
-    "tenure": "3y 6m 2d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Wesley Simina",
-    "role": "President",
-    "start": "2023-01-01",
-    "end": null,
-    "current": true,
-    "tenure": "3y 6m 2d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "Tosiwo Nakayama",
+  "role": "President",
+  "start": "1979-05-11",
+  "end": "1987-05-11",
+  "current": false,
+  "tenure": "8y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "John Haglelgam",
+  "role": "President",
+  "start": "1987-05-11",
+  "end": "1991-05-11",
+  "current": false,
+  "tenure": "4y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Bailey Olter",
+  "role": "President",
+  "start": "1991-05-11",
+  "end": "1996-11-08",
+  "current": false,
+  "tenure": "5y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Jacob Nena",
+  "role": "President",
+  "start": "1996-11-08",
+  "end": "1999-05-11",
+  "current": false,
+  "tenure": "2y 6m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Leo Falcam",
+  "role": "President",
+  "start": "1999-05-11",
+  "end": "2003-05-11",
+  "current": false,
+  "tenure": "4y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Joseph Urusemal",
+  "role": "President",
+  "start": "2003-05-11",
+  "end": "2007-05-11",
+  "current": false,
+  "tenure": "4y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Manny Mori",
+  "role": "President",
+  "start": "2007-05-11",
+  "end": "2015-05-11",
+  "current": false,
+  "tenure": "8y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Peter M. Christian",
+  "role": "President",
+  "start": "2015-05-11",
+  "end": "2019-05-11",
+  "current": false,
+  "tenure": "4y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "David Panuelo",
+  "role": "President",
+  "start": "2019-05-11",
+  "end": "2023-05-11",
+  "current": false,
+  "tenure": "4y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Wesley Simina",
+  "role": "President",
+  "start": "2023-05-11",
+  "end": null,
+  "current": true,
+  "tenure": "3y 1m",
+  "party": null,
+  "era": null
+ }
 ]

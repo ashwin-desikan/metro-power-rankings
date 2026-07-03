@@ -1,62 +1,202 @@
 [
-  {
-    "name": "Andry Rajoelina",
-    "role": "President",
-    "start": "2009-03-17",
-    "end": "2014-01-25",
-    "current": false,
-    "tenure": "4y 10m 8d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Hery Rajaonarimampianina",
-    "role": "President",
-    "start": "2014-01-25",
-    "end": "2019-01-19",
-    "current": false,
-    "tenure": "4y 11m 25d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Andry Rajoelina",
-    "role": "President",
-    "start": "2019-01-19",
-    "end": "2025-10-14",
-    "current": false,
-    "tenure": "6y 8m 25d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Ruphin Zafisambo",
-    "role": "Prime Minister",
-    "start": "2025-10-06",
-    "end": null,
-    "current": true,
-    "tenure": "8m 27d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Andry Rajoelina",
-    "role": "President",
-    "start": "2025-10-14",
-    "end": "2025-10-14",
-    "current": false,
-    "tenure": "0d",
-    "party": null,
-    "era": null
-  },
-  {
-    "name": "Michael Randrianirina",
-    "role": "President",
-    "start": "2025-10-14",
-    "end": null,
-    "current": true,
-    "tenure": "8m 19d",
-    "party": null,
-    "era": null
-  }
+ {
+  "name": "👑 Andrianampoinimerina",
+  "role": "King",
+  "start": "1787-01-01",
+  "end": "1810-01-01",
+  "current": false,
+  "tenure": "23y 0m",
+  "party": null,
+  "era": "Kingdom of Madagascar"
+ },
+ {
+  "name": "👑 Radama I",
+  "role": "King",
+  "start": "1810-01-01",
+  "end": "1828-07-27",
+  "current": false,
+  "tenure": "18y 6m",
+  "party": null,
+  "era": "Kingdom of Madagascar"
+ },
+ {
+  "name": "👑 Ranavalona I",
+  "role": "Queen",
+  "start": "1828-08-01",
+  "end": "1861-08-16",
+  "current": false,
+  "tenure": "33y 0m",
+  "party": null,
+  "era": "Kingdom of Madagascar"
+ },
+ {
+  "name": "👑 Radama II",
+  "role": "King",
+  "start": "1861-08-16",
+  "end": "1863-05-12",
+  "current": false,
+  "tenure": "1y 8m",
+  "party": null,
+  "era": "Kingdom of Madagascar"
+ },
+ {
+  "name": "👑 Rasoherina",
+  "role": "Queen",
+  "start": "1863-05-13",
+  "end": "1868-04-01",
+  "current": false,
+  "tenure": "4y 10m",
+  "party": null,
+  "era": "Kingdom of Madagascar"
+ },
+ {
+  "name": "👑 Ranavalona II",
+  "role": "Queen",
+  "start": "1868-09-02",
+  "end": "1883-07-13",
+  "current": false,
+  "tenure": "14y 10m",
+  "party": null,
+  "era": "Kingdom of Madagascar"
+ },
+ {
+  "name": "👑 Ranavalona III",
+  "role": "Queen",
+  "start": "1883-07-30",
+  "end": "1897-02-28",
+  "current": false,
+  "tenure": "13y 6m",
+  "party": null,
+  "era": "Kingdom of Madagascar"
+ },
+ {
+  "name": "Philibert Tsiranana",
+  "role": "President",
+  "start": "1959-05-01",
+  "end": "1972-10-11",
+  "current": false,
+  "tenure": "13y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Gabriel Ramanantsoa",
+  "role": "President",
+  "start": "1972-10-11",
+  "end": "1975-02-05",
+  "current": false,
+  "tenure": "2y 3m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Richard Ratsimandrava",
+  "role": "President",
+  "start": "1975-02-05",
+  "end": "1975-02-11",
+  "current": false,
+  "tenure": "0y 0m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Gilles Andriamahazo",
+  "role": "President",
+  "start": "1975-02-12",
+  "end": "1975-06-15",
+  "current": false,
+  "tenure": "0y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Didier Ratsiraka",
+  "role": "President",
+  "start": "1975-06-15",
+  "end": "1993-03-27",
+  "current": false,
+  "tenure": "17y 9m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Albert Zafy",
+  "role": "President",
+  "start": "1993-03-27",
+  "end": "1996-09-05",
+  "current": false,
+  "tenure": "3y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Norbert Ratsirahonana",
+  "role": "President",
+  "start": "1996-09-05",
+  "end": "1997-02-09",
+  "current": false,
+  "tenure": "0y 5m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Didier Ratsiraka",
+  "role": "President",
+  "start": "1997-02-09",
+  "end": "2002-07-05",
+  "current": false,
+  "tenure": "5y 4m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Marc Ravalomanana",
+  "role": "President",
+  "start": "2002-07-05",
+  "end": "2009-03-17",
+  "current": false,
+  "tenure": "6y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Andry Rajoelina",
+  "role": "President",
+  "start": "2009-03-17",
+  "end": "2014-01-25",
+  "current": false,
+  "tenure": "4y 10m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Hery Rajaonarimampianina",
+  "role": "President",
+  "start": "2014-01-25",
+  "end": "2018-09-07",
+  "current": false,
+  "tenure": "4y 7m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Andry Rajoelina",
+  "role": "President",
+  "start": "2019-01-19",
+  "end": "2025-10-14",
+  "current": false,
+  "tenure": "6y 8m",
+  "party": null,
+  "era": null
+ },
+ {
+  "name": "Michael Randrianirina",
+  "role": "President",
+  "start": "2025-10-17",
+  "end": null,
+  "current": true,
+  "tenure": "0y 8m",
+  "party": null,
+  "era": null
+ }
 ]
