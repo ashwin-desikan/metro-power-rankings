@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Joan Enric Vives Sicília",
+    "role": "President",
+    "start": "2003-01-01",
+    "end": "2005-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Nicolas Sarkozy",
+    "role": "President",
+    "start": "2005-01-01",
+    "end": "2012-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Antoni Martí",
+    "role": "Prime Minister",
+    "start": "2011-05-12",
+    "end": "2019-05-16",
+    "current": false,
+    "tenure": "8y 4d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "François Hollande",
+    "role": "President",
+    "start": "2012-01-01",
+    "end": "2017-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Emmanuel Macron",
+    "role": "President",
+    "start": "2017-05-01",
+    "end": "2025-01-01",
+    "current": false,
+    "tenure": "7y 8m 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Xavier Espot Zamora",
+    "role": "Prime Minister",
+    "start": "2019-05-16",
+    "end": null,
+    "current": true,
+    "tenure": "7y 1m 17d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Josep-Lluís Serrano Pentinat",
+    "role": "President",
+    "start": "2025-01-01",
+    "end": null,
+    "current": true,
+    "tenure": "1y 6m 2d",
+    "party": null,
+    "era": null
+  }
+]

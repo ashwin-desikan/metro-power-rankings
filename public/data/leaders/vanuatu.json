@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Charlot Salwai",
+    "role": "Prime Minister",
+    "start": "2016-02-11",
+    "end": "2020-04-20",
+    "current": false,
+    "tenure": "4y 2m 9d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Esmon Saimon",
+    "role": "President",
+    "start": "2017-06-17",
+    "end": "2017-07-06",
+    "current": false,
+    "tenure": "19d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Tallis Obed Moses",
+    "role": "President",
+    "start": "2017-07-06",
+    "end": "2022-07-06",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Bob Loughman",
+    "role": "Prime Minister",
+    "start": "2020-04-20",
+    "end": null,
+    "current": true,
+    "tenure": "6y 2m 13d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Nikenike Vurobaravu",
+    "role": "President",
+    "start": "2022-07-23",
+    "end": null,
+    "current": true,
+    "tenure": "3y 11m 10d",
+    "party": null,
+    "era": null
+  }
+]

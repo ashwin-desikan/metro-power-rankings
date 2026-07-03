@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Taur Matan Ruak",
+    "role": "Prime Minister",
+    "start": "2018-01-01",
+    "end": "2023-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Taur Matan Ruak",
+    "role": "President",
+    "start": "2018-01-01",
+    "end": "2022-05-20",
+    "current": false,
+    "tenure": "4y 4m 19d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "José Ramos-Horta",
+    "role": "President",
+    "start": "2022-05-20",
+    "end": "2023-01-01",
+    "current": false,
+    "tenure": "7m 12d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "José Ramos-Horta",
+    "role": "President",
+    "start": "2022-05-20",
+    "end": null,
+    "current": true,
+    "tenure": "4y 1m 13d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Xanana Gusmão",
+    "role": "Prime Minister",
+    "start": "2023-01-01",
+    "end": null,
+    "current": true,
+    "tenure": "3y 6m 2d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Xanana Gusmão",
+    "role": "President",
+    "start": "2023-01-01",
+    "end": "2022-05-20",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": null
+  }
+]

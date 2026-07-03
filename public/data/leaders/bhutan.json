@@ -1,0 +1,32 @@
+[
+  {
+    "name": "👑 Jigme Singye Wangchuck",
+    "role": "Monarch",
+    "start": "1972-07-01",
+    "end": "2008-11-06",
+    "current": false,
+    "tenure": "36y 4m 5d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "👑 Jigme Khesar Namgyel Wangchuck",
+    "role": "Monarch",
+    "start": "2008-11-06",
+    "end": null,
+    "current": true,
+    "tenure": "17y 7m 27d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Tshering Tobgay",
+    "role": "Prime Minister",
+    "start": "2024-01-28",
+    "end": null,
+    "current": true,
+    "tenure": "2y 5m 5d",
+    "party": null,
+    "era": null
+  }
+]

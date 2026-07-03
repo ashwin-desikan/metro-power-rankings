@@ -6,6 +6,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useSessionState } from "@/lib/useSessionState";
+import { flagUrl, flagSrcSet } from "@/lib/flags";
 
 export type DirectoryCountry = {
   slug: string;
@@ -45,6 +46,27 @@ function fmtPop(n: number | null): string {
 function fmtScore(n: number | null): string {
   if (n == null) return "—";
   return n.toFixed(1);
+}
+
+// Flag image for a country/constituent slug. Images (not emoji) because Windows
+// browsers render flag emoji as bare letter pairs. Renders nothing when we have
+// no code for the slug (e.g. a handful of de-facto states).
+function Flag({ slug }: { slug: string }) {
+  const url = flagUrl(slug);
+  if (!url) return null;
+  const srcSet = flagSrcSet(slug) ?? undefined;
+  return (
+    <img
+      src={url}
+      srcSet={srcSet}
+      alt=""
+      aria-hidden="true"
+      width={20}
+      height={15}
+      loading="lazy"
+      className="inline-block mr-2 rounded-sm ring-1 ring-white/10 align-[-2px] shrink-0"
+    />
+  );
 }
 
 export default function CountriesDirectory({
@@ -220,6 +242,7 @@ function CountryRows({
           >{isOpen ? "−" : "+"}</button>
         </td>
         <td className="px-2 sm:px-4 py-3">
+          <Flag slug={country.slug} />
           <Link href={`/countries/${country.slug}`} className="font-semibold hover:text-[var(--accent)] transition-colors">
             {country.name}
           </Link>
@@ -297,6 +320,7 @@ function CountryRows({
             <tr key={child.slug} className="border-b border-[var(--border)] hover:bg-[var(--bg-card-hover)] transition-colors" style={{ backgroundColor: "rgba(255,255,255,0.015)" }}>
               <td className="px-2 sm:px-4 py-2 align-top" />
               <td className="px-2 sm:px-4 py-2 pl-8 sm:pl-12">
+                <Flag slug={child.slug} />
                 <Link href={`/countries/${child.slug}`} className="text-sm hover:text-[var(--accent)] transition-colors" style={{ color: "var(--text-muted)" }}>{child.name}</Link>
                 {child.disputed ? (
                   <span className="ml-2 text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded italic"

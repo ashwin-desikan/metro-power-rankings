@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Peter O'Neill",
+    "role": "Prime Minister",
+    "start": "2011-08-03",
+    "end": "2019-05-29",
+    "current": false,
+    "tenure": "7y 9m 26d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "James Marape",
+    "role": "Prime Minister",
+    "start": "2019-05-30",
+    "end": null,
+    "current": true,
+    "tenure": "7y 1m 3d",
+    "party": null,
+    "era": null
+  }
+]

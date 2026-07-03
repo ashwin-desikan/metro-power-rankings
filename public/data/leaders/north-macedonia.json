@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Kiro Gligorov",
+    "role": "President",
+    "start": "1991-09-18",
+    "end": "1995-10-04",
+    "current": false,
+    "tenure": "4y 16d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Stojan Andov",
+    "role": "President",
+    "start": "1995-10-04",
+    "end": "1995-11-17",
+    "current": false,
+    "tenure": "1m 13d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Kiro Gligorov",
+    "role": "President",
+    "start": "1995-11-17",
+    "end": "1999-11-19",
+    "current": false,
+    "tenure": "4y 2d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Savo Klimovski",
+    "role": "President",
+    "start": "1999-11-19",
+    "end": "1999-12-15",
+    "current": false,
+    "tenure": "26d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Boris Trajkovski",
+    "role": "President",
+    "start": "1999-12-15",
+    "end": "2004-02-26",
+    "current": false,
+    "tenure": "4y 2m 11d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Ljupčo Jordanovski",
+    "role": "President",
+    "start": "2004-02-26",
+    "end": "2004-05-12",
+    "current": false,
+    "tenure": "2m 16d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Branko Crvenkovski",
+    "role": "President",
+    "start": "2004-05-12",
+    "end": "2009-05-12",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Gjorge Ivanov",
+    "role": "President",
+    "start": "2009-05-12",
+    "end": "2019-05-12",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Stevo Pendarovski",
+    "role": "President",
+    "start": "2019-05-12",
+    "end": "2024-01-28",
+    "current": false,
+    "tenure": "4y 8m 16d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Dimitar Kovačevski",
+    "role": "Prime Minister",
+    "start": "2022-01-16",
+    "end": "2024-01-28",
+    "current": false,
+    "tenure": "2y 12d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Talat Xhaferi",
+    "role": "Prime Minister",
+    "start": "2024-01-28",
+    "end": "2024-06-23",
+    "current": false,
+    "tenure": "4m 26d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Talat Xhaferi",
+    "role": "President",
+    "start": "2024-01-28",
+    "end": "2024-05-12",
+    "current": false,
+    "tenure": "3m 14d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Gordana Siljanovska-Davkova",
+    "role": "President",
+    "start": "2024-05-12",
+    "end": null,
+    "current": true,
+    "tenure": "2y 1m 21d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Hristijan Mickoski",
+    "role": "Prime Minister",
+    "start": "2024-06-23",
+    "end": null,
+    "current": true,
+    "tenure": "2y 10d",
+    "party": null,
+    "era": null
+  }
+]

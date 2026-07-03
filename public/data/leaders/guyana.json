@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Donald Ramotar",
+    "role": "President",
+    "start": "2011-12-01",
+    "end": "2015-05-01",
+    "current": false,
+    "tenure": "3y 5m 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "David A. Granger",
+    "role": "President",
+    "start": "2015-05-01",
+    "end": "2015-05-20",
+    "current": false,
+    "tenure": "19d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Moses Nagamootoo",
+    "role": "Prime Minister",
+    "start": "2015-05-20",
+    "end": "2020-08-02",
+    "current": false,
+    "tenure": "5y 2m 13d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Moses Nagamootoo",
+    "role": "President",
+    "start": "2015-05-20",
+    "end": "2020-08-02",
+    "current": false,
+    "tenure": "5y 2m 13d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mark Phillips",
+    "role": "Prime Minister",
+    "start": "2020-08-02",
+    "end": null,
+    "current": true,
+    "tenure": "5y 11m 1d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mark Phillips",
+    "role": "President",
+    "start": "2020-08-02",
+    "end": "2020-08-02",
+    "current": false,
+    "tenure": "0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Irfaan Ali",
+    "role": "President",
+    "start": "2020-08-02",
+    "end": null,
+    "current": true,
+    "tenure": "5y 11m 1d",
+    "party": null,
+    "era": null
+  }
+]

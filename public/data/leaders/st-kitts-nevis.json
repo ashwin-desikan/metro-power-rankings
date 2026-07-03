@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Timothy Harris",
+    "role": "Prime Minister",
+    "start": "2015-02-18",
+    "end": "2022-01-01",
+    "current": false,
+    "tenure": "6y 10m 14d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Terrance Drew",
+    "role": "Prime Minister",
+    "start": "2022-01-01",
+    "end": null,
+    "current": true,
+    "tenure": "4y 6m 2d",
+    "party": null,
+    "era": null
+  }
+]

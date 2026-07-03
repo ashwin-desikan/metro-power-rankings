@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Manuel Serifo Nhamadjo",
+    "role": "President",
+    "start": "2012-05-11",
+    "end": "2014-06-23",
+    "current": false,
+    "tenure": "2y 1m 12d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "José Mário Vaz",
+    "role": "President",
+    "start": "2014-06-23",
+    "end": "2020-02-27",
+    "current": false,
+    "tenure": "5y 8m 4d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Aristides Gomes",
+    "role": "Prime Minister",
+    "start": "2018-04-16",
+    "end": "2020-02-28",
+    "current": false,
+    "tenure": "1y 10m 12d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Umaro Sissoco Embaló",
+    "role": "President",
+    "start": "2020-02-27",
+    "end": "2025-11-26",
+    "current": false,
+    "tenure": "5y 8m 30d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Nuno Nabiam",
+    "role": "Prime Minister",
+    "start": "2020-02-28",
+    "end": "2023-08-08",
+    "current": false,
+    "tenure": "3y 5m 11d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Rui Duarte de Barros",
+    "role": "Prime Minister",
+    "start": "2023-12-21",
+    "end": null,
+    "current": true,
+    "tenure": "2y 6m 12d",
+    "party": null,
+    "era": null
+  }
+]

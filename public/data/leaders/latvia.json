@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Andris Bērziņš",
+    "role": "President",
+    "start": "2011-07-08",
+    "end": "2015-07-07",
+    "current": false,
+    "tenure": "3y 11m 29d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Laimdota Straujuma",
+    "role": "Prime Minister",
+    "start": "2014-01-22",
+    "end": "2016-02-11",
+    "current": false,
+    "tenure": "2y 20d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Raimonds Vējonis",
+    "role": "President",
+    "start": "2015-07-08",
+    "end": "2019-07-07",
+    "current": false,
+    "tenure": "3y 11m 29d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Māris Kučinskis",
+    "role": "Prime Minister",
+    "start": "2016-02-11",
+    "end": "2019-01-23",
+    "current": false,
+    "tenure": "2y 11m 12d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Krišjānis Kariņš",
+    "role": "Prime Minister",
+    "start": "2019-01-23",
+    "end": "2023-09-15",
+    "current": false,
+    "tenure": "4y 7m 23d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Egils Levits",
+    "role": "President",
+    "start": "2019-07-08",
+    "end": "2023-07-07",
+    "current": false,
+    "tenure": "3y 11m 29d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Edgars Rinkēvičs",
+    "role": "President",
+    "start": "2023-07-08",
+    "end": null,
+    "current": true,
+    "tenure": "2y 11m 25d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Evika Siliņa",
+    "role": "Prime Minister",
+    "start": "2023-09-15",
+    "end": null,
+    "current": true,
+    "tenure": "2y 9m 18d",
+    "party": null,
+    "era": null
+  }
+]

@@ -21,10 +21,10 @@ export const RELEASES: Release[] = [
     date: "2026-07-03",
     headline: "Homepage rebuilt as a directory, rankings get their own hub",
     items: [
-      "The homepage is now a directory-forward landing page: four ranked indices each previewing their live top three, live sport badges, a full atlas of every section, the latest essays, and a complete site index.",
-      "The metro rankings map, search, filters, table, score distribution and regional champions now live on their own hub at /rankings.",
+      "The homepage is now a directory-forward landing page previewing each ranked index's live top three and latest essays; the metro rankings map, filters, table and regional champions moved to their own hub at /rankings.",
       "New Live Charts hub at /sound/charts shows Apple Music's most-played songs in the US and UK, refreshed daily, with links to the official Billboard Hot 100 and UK Official Singles Chart.",
       "New cricket and rugby union Greatest Games rank every international by a Game Score of closeness, stakes and team strength, with a curated classics layer, on each sport's hub, its nation pages and the Greatest Games hub.",
+      "A new Leaders directory at /leaders lists every current head of state and government and the bodies they belong to, with flags on it and the Countries directory, and a time machine for any office by month and year.",
     ],
   },
   {

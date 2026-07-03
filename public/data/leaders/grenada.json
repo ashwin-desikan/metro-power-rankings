@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Keith Mitchell",
+    "role": "Prime Minister",
+    "start": "2013-01-01",
+    "end": "2022-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Dickon Mitchell",
+    "role": "Prime Minister",
+    "start": "2022-01-01",
+    "end": null,
+    "current": true,
+    "tenure": "4y 6m 2d",
+    "party": null,
+    "era": null
+  }
+]

@@ -1,0 +1,212 @@
+[
+  {
+    "name": "Mircea Snegur",
+    "role": "President",
+    "start": "1990-01-01",
+    "end": "1997-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Petru Lucinschi",
+    "role": "President",
+    "start": "1997-01-01",
+    "end": "2001-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Vladimir Voronin",
+    "role": "President",
+    "start": "2001-01-01",
+    "end": "2009-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Vlad Filat",
+    "role": "Prime Minister",
+    "start": "2009-09-25",
+    "end": "2013-03-25",
+    "current": false,
+    "tenure": "3y 6m 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Vlad Filat",
+    "role": "President",
+    "start": "2009-09-25",
+    "end": "2012-03-23",
+    "current": false,
+    "tenure": "2y 5m 27d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Nicolae Timofti",
+    "role": "President",
+    "start": "2012-03-23",
+    "end": "2016-12-23",
+    "current": false,
+    "tenure": "4y 9m 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Iurie Leancă",
+    "role": "Prime Minister",
+    "start": "2013-05-30",
+    "end": "2015-02-18",
+    "current": false,
+    "tenure": "1y 8m 19d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Chiril Gaburici",
+    "role": "Prime Minister",
+    "start": "2015-02-18",
+    "end": "2015-06-22",
+    "current": false,
+    "tenure": "4m 4d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Natalia Gherman",
+    "role": "Prime Minister",
+    "start": "2015-06-22",
+    "end": "2015-07-30",
+    "current": false,
+    "tenure": "1m 8d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Valeriu Streleț",
+    "role": "Prime Minister",
+    "start": "2015-07-30",
+    "end": "2015-10-30",
+    "current": false,
+    "tenure": "3m 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Gheorghe Brega",
+    "role": "Prime Minister",
+    "start": "2015-10-30",
+    "end": "2016-01-20",
+    "current": false,
+    "tenure": "2m 21d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Pavel Filip",
+    "role": "Prime Minister",
+    "start": "2016-01-20",
+    "end": "2019-06-08",
+    "current": false,
+    "tenure": "3y 4m 19d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Igor Dodon",
+    "role": "President",
+    "start": "2016-12-23",
+    "end": "2019-06-08",
+    "current": false,
+    "tenure": "2y 5m 16d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Maia Sandu",
+    "role": "Prime Minister",
+    "start": "2019-06-08",
+    "end": "2019-11-14",
+    "current": false,
+    "tenure": "5m 6d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Maia Sandu",
+    "role": "President",
+    "start": "2019-06-08",
+    "end": "2019-11-14",
+    "current": false,
+    "tenure": "5m 6d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Ion Chicu",
+    "role": "Prime Minister",
+    "start": "2019-11-14",
+    "end": "2020-12-31",
+    "current": false,
+    "tenure": "1y 1m 17d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Maia Sandu",
+    "role": "President",
+    "start": "2020-12-24",
+    "end": null,
+    "current": true,
+    "tenure": "5y 6m 9d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Aureliu Ciocoi",
+    "role": "Prime Minister",
+    "start": "2020-12-31",
+    "end": "2021-08-06",
+    "current": false,
+    "tenure": "7m 6d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Natalia Gavrilița",
+    "role": "Prime Minister",
+    "start": "2021-08-06",
+    "end": "2023-02-16",
+    "current": false,
+    "tenure": "1y 6m 10d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Dorin Recean",
+    "role": "Prime Minister",
+    "start": "2023-02-16",
+    "end": "2025-11-01",
+    "current": false,
+    "tenure": "2y 8m 16d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Alexandru Munteanu",
+    "role": "Prime Minister",
+    "start": "2025-11-01",
+    "end": null,
+    "current": true,
+    "tenure": "8m 2d",
+    "party": null,
+    "era": null
+  }
+]

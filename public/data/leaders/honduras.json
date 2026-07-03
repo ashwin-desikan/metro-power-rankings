@@ -1,0 +1,132 @@
+[
+  {
+    "name": "Carlos Roberto Flores",
+    "role": "Prime Minister",
+    "start": "1998-01-27",
+    "end": "2002-01-27",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Carlos Roberto Flores",
+    "role": "President",
+    "start": "1998-01-27",
+    "end": "2002-01-27",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Ricardo Maduro",
+    "role": "President",
+    "start": "2002-01-27",
+    "end": "2006-01-27",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Manuel Zelaya",
+    "role": "Prime Minister",
+    "start": "2006-01-27",
+    "end": "2009-06-28",
+    "current": false,
+    "tenure": "3y 5m 1d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Manuel Zelaya",
+    "role": "President",
+    "start": "2006-01-27",
+    "end": "2009-06-28",
+    "current": false,
+    "tenure": "3y 5m 1d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Roberto Micheletti",
+    "role": "President",
+    "start": "2009-06-28",
+    "end": "2010-01-27",
+    "current": false,
+    "tenure": "6m 30d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Porfirio Lobo Sosa",
+    "role": "Prime Minister",
+    "start": "2010-01-27",
+    "end": "2014-01-27",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Porfirio Lobo Sosa",
+    "role": "President",
+    "start": "2010-01-27",
+    "end": "2014-01-27",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Juan Orlando Hernández",
+    "role": "President",
+    "start": "2014-01-27",
+    "end": "2022-01-27",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Xiomara Castro",
+    "role": "Prime Minister",
+    "start": "2022-01-27",
+    "end": "2026-01-27",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Xiomara Castro",
+    "role": "President",
+    "start": "2022-01-27",
+    "end": "2026-01-27",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Nasry Asfura",
+    "role": "Prime Minister",
+    "start": "2026-01-27",
+    "end": null,
+    "current": true,
+    "tenure": "5m 6d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Nasry Asfura",
+    "role": "President",
+    "start": "2026-01-27",
+    "end": null,
+    "current": true,
+    "tenure": "5m 6d",
+    "party": null,
+    "era": null
+  }
+]

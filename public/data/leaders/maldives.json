@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Mohamed Amin Didi",
+    "role": "President",
+    "start": "1953-01-01",
+    "end": "1953-09-02",
+    "current": false,
+    "tenure": "8m 1d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Ibrahim Nasir",
+    "role": "Prime Minister",
+    "start": "1968-11-11",
+    "end": "1978-11-11",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Ibrahim Nasir",
+    "role": "President",
+    "start": "1968-11-11",
+    "end": "1978-11-11",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Maumoon Abdul Gayoom",
+    "role": "President",
+    "start": "1978-11-11",
+    "end": "2008-11-11",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mohamed Nasheed",
+    "role": "Prime Minister",
+    "start": "2008-11-11",
+    "end": "2012-02-07",
+    "current": false,
+    "tenure": "3y 2m 27d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mohamed Nasheed",
+    "role": "President",
+    "start": "2008-11-11",
+    "end": "2012-02-07",
+    "current": false,
+    "tenure": "3y 2m 27d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mohamed Waheed Hassan",
+    "role": "President",
+    "start": "2012-02-07",
+    "end": "2013-11-17",
+    "current": false,
+    "tenure": "1y 9m 10d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Abdulla Yameen",
+    "role": "President",
+    "start": "2013-11-17",
+    "end": "2018-11-17",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Ibrahim Mohamed Solih",
+    "role": "Prime Minister",
+    "start": "2018-11-17",
+    "end": "2023-11-17",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Ibrahim Mohamed Solih",
+    "role": "President",
+    "start": "2018-11-17",
+    "end": "2023-11-17",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mohamed Muizzu",
+    "role": "Prime Minister",
+    "start": "2023-11-17",
+    "end": null,
+    "current": true,
+    "tenure": "2y 7m 16d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mohamed Muizzu",
+    "role": "President",
+    "start": "2023-11-17",
+    "end": null,
+    "current": true,
+    "tenure": "2y 7m 16d",
+    "party": null,
+    "era": null
+  }
+]

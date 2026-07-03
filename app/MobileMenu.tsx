@@ -49,6 +49,7 @@ function buildSections(): Section[] {
       items: [
         { href: '/power', label: 'The Nowhere 100' },
         { href: '/billionaires', label: 'Billionaires' },
+        { href: '/leaders', label: 'World Leaders' },
         { href: '/us-political-leadership', label: 'US Political Leadership' },
         { href: '/mayors', label: 'Mayors of the World' },
       ],

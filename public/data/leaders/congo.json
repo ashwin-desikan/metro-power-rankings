@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Denis Sassou-Nguesso",
+    "role": "President",
+    "start": "1997-10-25",
+    "end": null,
+    "current": true,
+    "tenure": "28y 8m 8d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Anatole Collinet Makosso",
+    "role": "Prime Minister",
+    "start": "2021-05-12",
+    "end": null,
+    "current": true,
+    "tenure": "5y 1m 21d",
+    "party": null,
+    "era": null
+  }
+]

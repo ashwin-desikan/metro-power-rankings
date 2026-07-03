@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Ibrahim Boubacar Keïta",
+    "role": "President",
+    "start": "2013-09-04",
+    "end": "2020-08-18",
+    "current": false,
+    "tenure": "6y 11m 14d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Abdoulaye Idrissa Maïga",
+    "role": "Prime Minister",
+    "start": "2017-04-10",
+    "end": "2017-12-29",
+    "current": false,
+    "tenure": "8m 19d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Soumeylou Boubèye Maïga",
+    "role": "Prime Minister",
+    "start": "2017-12-30",
+    "end": "2019-04-18",
+    "current": false,
+    "tenure": "1y 3m 19d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Boubou Cisse",
+    "role": "Prime Minister",
+    "start": "2019-04-23",
+    "end": "2020-08-18",
+    "current": false,
+    "tenure": "1y 3m 26d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Bah Ndaw",
+    "role": "President",
+    "start": "2020-09-25",
+    "end": "2021-05-24",
+    "current": false,
+    "tenure": "7m 29d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Moctar Ouane",
+    "role": "Prime Minister",
+    "start": "2020-09-27",
+    "end": "2021-05-24",
+    "current": false,
+    "tenure": "7m 27d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Assimi Goïta",
+    "role": "President",
+    "start": "2021-05-24",
+    "end": null,
+    "current": true,
+    "tenure": "5y 1m 9d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Choguel Kokalla Maïga",
+    "role": "Prime Minister",
+    "start": "2021-06-06",
+    "end": "2022-08-21",
+    "current": false,
+    "tenure": "1y 2m 15d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Abdoulaye Maïga",
+    "role": "Prime Minister",
+    "start": "2022-08-21",
+    "end": null,
+    "current": true,
+    "tenure": "3y 10m 12d",
+    "party": null,
+    "era": null
+  }
+]

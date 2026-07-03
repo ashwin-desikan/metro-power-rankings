@@ -1,0 +1,172 @@
+[
+  {
+    "name": "Patrick John",
+    "role": "Prime Minister",
+    "start": "1978-11-03",
+    "end": "1978-11-03",
+    "current": false,
+    "tenure": "0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Patrick John",
+    "role": "Premier",
+    "start": "1978-11-03",
+    "end": "1979-06-21",
+    "current": false,
+    "tenure": "7m 18d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Fred Degazon",
+    "role": "President",
+    "start": "1979-01-16",
+    "end": "1980-01-29",
+    "current": false,
+    "tenure": "1y 13d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Aurelius Marie",
+    "role": "President",
+    "start": "1980-02-25",
+    "end": "1983-12-19",
+    "current": false,
+    "tenure": "3y 9m 24d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Eugenia Charles",
+    "role": "Prime Minister",
+    "start": "1980-07-21",
+    "end": "1995-06-14",
+    "current": false,
+    "tenure": "14y 10m 24d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Clarence Seignoret",
+    "role": "President",
+    "start": "1983-12-19",
+    "end": "1993-10-25",
+    "current": false,
+    "tenure": "9y 10m 6d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Crispin Sorhaindo",
+    "role": "President",
+    "start": "1993-10-25",
+    "end": "1998-10-05",
+    "current": false,
+    "tenure": "4y 11m 10d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Edison James",
+    "role": "Prime Minister",
+    "start": "1995-06-14",
+    "end": "2000-02-03",
+    "current": false,
+    "tenure": "4y 7m 20d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Vernon Shaw",
+    "role": "President",
+    "start": "1998-10-06",
+    "end": "2003-10-01",
+    "current": false,
+    "tenure": "4y 11m 25d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Rosie Douglas",
+    "role": "Prime Minister",
+    "start": "2000-02-03",
+    "end": "2000-10-01",
+    "current": false,
+    "tenure": "7m 28d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Pierre Charles",
+    "role": "Prime Minister",
+    "start": "2000-10-03",
+    "end": "2004-01-06",
+    "current": false,
+    "tenure": "3y 3m 3d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Nicholas Liverpool",
+    "role": "President",
+    "start": "2003-10-02",
+    "end": "2004-01-08",
+    "current": false,
+    "tenure": "3m 6d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Roosevelt Skerrit",
+    "role": "Prime Minister",
+    "start": "2004-01-08",
+    "end": null,
+    "current": true,
+    "tenure": "22y 5m 25d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Roosevelt Skerrit",
+    "role": "President",
+    "start": "2004-01-08",
+    "end": "2012-09-17",
+    "current": false,
+    "tenure": "8y 8m 9d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Eliud Williams",
+    "role": "President",
+    "start": "2012-09-17",
+    "end": "2013-10-02",
+    "current": false,
+    "tenure": "1y 15d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Charles Savarin",
+    "role": "President",
+    "start": "2013-10-02",
+    "end": "2023-10-02",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Sylvanie Burton",
+    "role": "President",
+    "start": "2023-10-02",
+    "end": null,
+    "current": true,
+    "tenure": "2y 9m 1d",
+    "party": null,
+    "era": null
+  }
+]

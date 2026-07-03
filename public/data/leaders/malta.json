@@ -1,0 +1,132 @@
+[
+  {
+    "name": "Dom Mintoff",
+    "role": "Prime Minister",
+    "start": "1971-01-01",
+    "end": "1984-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Karmenu Mifsud Bonnici",
+    "role": "Prime Minister",
+    "start": "1984-01-01",
+    "end": "1987-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Eddie Fenech Adami",
+    "role": "Prime Minister",
+    "start": "1987-01-01",
+    "end": "1996-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Eddie Fenech Adami",
+    "role": "President",
+    "start": "1987-01-01",
+    "end": "1996-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Alfred Sant",
+    "role": "Prime Minister",
+    "start": "1996-01-01",
+    "end": "1998-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Eddie Fenech Adami",
+    "role": "Prime Minister",
+    "start": "1998-01-01",
+    "end": "2004-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Eddie Fenech Adami",
+    "role": "President",
+    "start": "1998-01-01",
+    "end": "2004-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Lawrence Gonzi",
+    "role": "Prime Minister",
+    "start": "2004-01-01",
+    "end": "2013-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Joseph Muscat",
+    "role": "Prime Minister",
+    "start": "2013-01-01",
+    "end": "2020-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Marie-Louise Coleiro Preca",
+    "role": "President",
+    "start": "2014-04-04",
+    "end": "2019-04-04",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "George William Vella",
+    "role": "President",
+    "start": "2019-04-04",
+    "end": "2024-04-04",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Robert Abela",
+    "role": "Prime Minister",
+    "start": "2020-01-01",
+    "end": null,
+    "current": true,
+    "tenure": "6y 6m 2d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Myriam Spiteri Debono",
+    "role": "President",
+    "start": "2024-04-04",
+    "end": null,
+    "current": true,
+    "tenure": "2y 2m 29d",
+    "party": null,
+    "era": null
+  }
+]

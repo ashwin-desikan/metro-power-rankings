@@ -1,0 +1,32 @@
+[
+  {
+    "name": "George Weah",
+    "role": "Prime Minister",
+    "start": "2018-01-01",
+    "end": "2024-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "George Weah",
+    "role": "President",
+    "start": "2018-01-01",
+    "end": "2024-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Joseph Boakai",
+    "role": "President",
+    "start": "2024-01-01",
+    "end": null,
+    "current": true,
+    "tenure": "2y 6m 2d",
+    "party": null,
+    "era": null
+  }
+]

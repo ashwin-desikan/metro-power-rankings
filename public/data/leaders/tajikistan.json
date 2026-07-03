@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Emomali Rahmon",
+    "role": "President",
+    "start": "1994-11-06",
+    "end": null,
+    "current": true,
+    "tenure": "31y 7m 27d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Oqil Oqilov",
+    "role": "Prime Minister",
+    "start": "1999-12-20",
+    "end": "2013-11-23",
+    "current": false,
+    "tenure": "13y 11m 3d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Kokhir Rasulzoda",
+    "role": "Prime Minister",
+    "start": "2013-11-23",
+    "end": null,
+    "current": true,
+    "tenure": "12y 7m 10d",
+    "party": null,
+    "era": null
+  }
+]

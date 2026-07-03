@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Yahya Jammeh",
+    "role": "President",
+    "start": "1994-07-22",
+    "end": "2017-01-21",
+    "current": false,
+    "tenure": "22y 5m 30d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Adama Barrow",
+    "role": "President",
+    "start": "2017-01-21",
+    "end": null,
+    "current": true,
+    "tenure": "9y 5m 12d",
+    "party": null,
+    "era": null
+  }
+]

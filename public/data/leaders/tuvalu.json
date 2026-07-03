@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Kausea Natano",
+    "role": "Prime Minister",
+    "start": "2019-09-19",
+    "end": "2024-02-26",
+    "current": false,
+    "tenure": "4y 5m 7d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Feleti Teo",
+    "role": "Prime Minister",
+    "start": "2024-02-26",
+    "end": null,
+    "current": true,
+    "tenure": "2y 4m 7d",
+    "party": null,
+    "era": null
+  }
+]

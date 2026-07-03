@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Ram Baran Yadav",
+    "role": "President",
+    "start": "2008-07-23",
+    "end": "2015-10-29",
+    "current": false,
+    "tenure": "7y 3m 6d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Baburam Bhattarai",
+    "role": "Prime Minister",
+    "start": "2011-08-29",
+    "end": "2013-03-14",
+    "current": false,
+    "tenure": "1y 6m 13d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Sushil Koirala",
+    "role": "Prime Minister",
+    "start": "2014-02-11",
+    "end": "2015-10-10",
+    "current": false,
+    "tenure": "1y 7m 29d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Khadga Prasad Sharma Oli",
+    "role": "Prime Minister",
+    "start": "2015-10-12",
+    "end": "2016-08-03",
+    "current": false,
+    "tenure": "9m 22d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Bidya Devi Bhandari",
+    "role": "President",
+    "start": "2015-10-29",
+    "end": "2023-01-01",
+    "current": false,
+    "tenure": "7y 2m 3d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Pushpa Kamal Dahal",
+    "role": "Prime Minister",
+    "start": "2016-08-03",
+    "end": "2017-06-07",
+    "current": false,
+    "tenure": "10m 4d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Sher Bahadur Deuba",
+    "role": "Prime Minister",
+    "start": "2017-06-07",
+    "end": "2018-02-15",
+    "current": false,
+    "tenure": "8m 8d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Khadga Prasad Sharma Oli",
+    "role": "Prime Minister",
+    "start": "2018-02-15",
+    "end": "2022-12-26",
+    "current": false,
+    "tenure": "4y 10m 11d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Pushpa Kamal Dahal",
+    "role": "Prime Minister",
+    "start": "2022-12-26",
+    "end": null,
+    "current": true,
+    "tenure": "3y 6m 7d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Ram Chandra Poudel",
+    "role": "President",
+    "start": "2023-01-01",
+    "end": null,
+    "current": true,
+    "tenure": "3y 6m 2d",
+    "party": null,
+    "era": null
+  }
+]

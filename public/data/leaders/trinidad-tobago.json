@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Kamla Persad-Bissessar",
+    "role": "Prime Minister",
+    "start": "2010-05-26",
+    "end": "2015-09-09",
+    "current": false,
+    "tenure": "5y 3m 14d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Keith Rowley",
+    "role": "Prime Minister",
+    "start": "2015-09-09",
+    "end": "2025-03-17",
+    "current": false,
+    "tenure": "9y 6m 8d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Christine Kangaloo",
+    "role": "President",
+    "start": "2023-03-20",
+    "end": null,
+    "current": true,
+    "tenure": "3y 3m 13d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Kamla Persad-Bissessar",
+    "role": "Prime Minister",
+    "start": "2025-05-01",
+    "end": null,
+    "current": true,
+    "tenure": "1y 2m 2d",
+    "party": null,
+    "era": null
+  }
+]

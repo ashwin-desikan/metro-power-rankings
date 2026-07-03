@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Ernest Bai Koroma",
+    "role": "President",
+    "start": "2007-09-17",
+    "end": "2018-04-04",
+    "current": false,
+    "tenure": "10y 6m 18d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Julius Maada Bio",
+    "role": "President",
+    "start": "2018-04-04",
+    "end": null,
+    "current": true,
+    "tenure": "8y 2m 29d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "David J. Francis",
+    "role": "Prime Minister",
+    "start": "2018-05-08",
+    "end": "2021-01-01",
+    "current": false,
+    "tenure": "2y 7m 24d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Jacob Jusu Saffa",
+    "role": "Prime Minister",
+    "start": "2021-01-01",
+    "end": "2023-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "David Sengeh",
+    "role": "Prime Minister",
+    "start": "2023-01-01",
+    "end": null,
+    "current": true,
+    "tenure": "3y 6m 2d",
+    "party": null,
+    "era": null
+  }
+]

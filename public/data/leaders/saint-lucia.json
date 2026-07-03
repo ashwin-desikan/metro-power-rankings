@@ -1,0 +1,42 @@
+[
+  {
+    "name": "👑 Elizabeth II",
+    "role": "Monarch",
+    "start": "1979-02-22",
+    "end": "2022-01-01",
+    "current": false,
+    "tenure": "42y 10m 10d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Allen Chastanet",
+    "role": "Prime Minister",
+    "start": "2016-06-07",
+    "end": "2021-07-28",
+    "current": false,
+    "tenure": "5y 1m 21d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Philip J. Pierre",
+    "role": "Prime Minister",
+    "start": "2021-07-28",
+    "end": null,
+    "current": true,
+    "tenure": "4y 11m 5d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "👑 Charles III",
+    "role": "Monarch",
+    "start": "2022-09-08",
+    "end": null,
+    "current": true,
+    "tenure": "3y 9m 25d",
+    "party": null,
+    "era": null
+  }
+]

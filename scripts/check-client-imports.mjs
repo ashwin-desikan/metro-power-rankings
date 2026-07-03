@@ -78,6 +78,7 @@ const SERVER_ONLY_MODULES = [
   "@/lib/rugbyLeagueIntl",
   "@/lib/wintl",
   "@/lib/domesticHonours",
+  "@/lib/leadersAll",
 ];
 
 const SCAN_DIRS = ["app", "components"];

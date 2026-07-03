@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Idriss Déby",
+    "role": "President",
+    "start": "1990-12-02",
+    "end": "2018-05-04",
+    "current": false,
+    "tenure": "27y 5m 2d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Albert Pahimi Padacké",
+    "role": "Prime Minister",
+    "start": "2016-02-13",
+    "end": "2018-05-04",
+    "current": false,
+    "tenure": "2y 2m 21d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Idriss Déby",
+    "role": "Prime Minister",
+    "start": "2018-05-04",
+    "end": "2021-04-20",
+    "current": false,
+    "tenure": "2y 11m 16d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Idriss Déby",
+    "role": "President",
+    "start": "2018-05-04",
+    "end": "2021-04-20",
+    "current": false,
+    "tenure": "2y 11m 16d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mahamat Déby",
+    "role": "President",
+    "start": "2021-04-20",
+    "end": null,
+    "current": true,
+    "tenure": "5y 2m 13d",
+    "party": null,
+    "era": null
+  }
+]

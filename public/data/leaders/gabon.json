@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Léon M'ba",
+    "role": "President",
+    "start": "1961-02-12",
+    "end": "1967-11-27",
+    "current": false,
+    "tenure": "6y 9m 15d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Omar Bongo",
+    "role": "President",
+    "start": "1967-12-02",
+    "end": "2009-06-08",
+    "current": false,
+    "tenure": "41y 6m 6d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Rose Francine Rogombe",
+    "role": "President",
+    "start": "2009-06-10",
+    "end": "2009-10-16",
+    "current": false,
+    "tenure": "4m 6d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Ali Bongo Ondimba",
+    "role": "President",
+    "start": "2009-10-16",
+    "end": "2023-08-30",
+    "current": false,
+    "tenure": "13y 10m 14d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Brice Clotaire Oligui Nguema",
+    "role": "President",
+    "start": "2023-08-30",
+    "end": null,
+    "current": true,
+    "tenure": "2y 10m 3d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Raymond Ndong Sima",
+    "role": "Prime Minister",
+    "start": "2023-09-07",
+    "end": null,
+    "current": true,
+    "tenure": "2y 9m 26d",
+    "party": null,
+    "era": null
+  }
+]

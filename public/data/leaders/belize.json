@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Manuel Esquivel",
+    "role": "Prime Minister",
+    "start": "1984-12-17",
+    "end": "1989-11-07",
+    "current": false,
+    "tenure": "4y 10m 21d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "George Cadle Price",
+    "role": "Prime Minister",
+    "start": "1989-11-07",
+    "end": "1989-11-07",
+    "current": false,
+    "tenure": "0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "George Cadle Price",
+    "role": "Premier",
+    "start": "1989-11-07",
+    "end": "1993-07-03",
+    "current": false,
+    "tenure": "3y 7m 26d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Manuel Esquivel",
+    "role": "Prime Minister",
+    "start": "1993-07-03",
+    "end": "1998-08-28",
+    "current": false,
+    "tenure": "5y 1m 25d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Said Musa",
+    "role": "Prime Minister",
+    "start": "1998-08-28",
+    "end": "2008-02-08",
+    "current": false,
+    "tenure": "9y 5m 11d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Dean Barrow",
+    "role": "Prime Minister",
+    "start": "2008-02-08",
+    "end": "2020-11-12",
+    "current": false,
+    "tenure": "12y 9m 4d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Johnny Briceño",
+    "role": "Prime Minister",
+    "start": "2020-11-12",
+    "end": null,
+    "current": true,
+    "tenure": "5y 7m 21d",
+    "party": null,
+    "era": null
+  }
+]

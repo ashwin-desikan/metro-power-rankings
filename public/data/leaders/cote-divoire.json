@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Laurent Gbagbo",
+    "role": "President",
+    "start": "2000-10-26",
+    "end": "2010-12-04",
+    "current": false,
+    "tenure": "10y 1m 8d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Alassane Ouattara",
+    "role": "President",
+    "start": "2010-12-04",
+    "end": null,
+    "current": true,
+    "tenure": "15y 6m 29d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Amadou Gon Coulibaly",
+    "role": "Prime Minister",
+    "start": "2017-01-10",
+    "end": "2020-07-08",
+    "current": false,
+    "tenure": "3y 5m 28d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Hamed Bakayoko",
+    "role": "Prime Minister",
+    "start": "2020-07-08",
+    "end": "2021-03-08",
+    "current": false,
+    "tenure": "8m 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Patrick Achi",
+    "role": "Prime Minister",
+    "start": "2021-03-08",
+    "end": "2023-10-06",
+    "current": false,
+    "tenure": "2y 6m 28d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Robert Beugré Mambé",
+    "role": "Prime Minister",
+    "start": "2023-10-16",
+    "end": null,
+    "current": true,
+    "tenure": "2y 8m 17d",
+    "party": null,
+    "era": null
+  }
+]

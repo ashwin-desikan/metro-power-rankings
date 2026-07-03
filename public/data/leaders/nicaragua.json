@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Violeta Chamorro",
+    "role": "President",
+    "start": "1990-04-25",
+    "end": "1997-01-10",
+    "current": false,
+    "tenure": "6y 8m 16d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Arnoldo Alemán",
+    "role": "President",
+    "start": "1997-01-10",
+    "end": "2002-01-10",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Enrique Bolaños",
+    "role": "President",
+    "start": "2002-01-10",
+    "end": "2007-01-10",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Daniel Ortega",
+    "role": "President",
+    "start": "2007-01-10",
+    "end": null,
+    "current": true,
+    "tenure": "19y 5m 23d",
+    "party": null,
+    "era": null
+  }
+]

@@ -1,0 +1,172 @@
+[
+  {
+    "name": "René Préval",
+    "role": "President",
+    "start": "1996-02-07",
+    "end": "2001-02-07",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Jean-Bertrand Aristide",
+    "role": "President",
+    "start": "2001-02-07",
+    "end": "2004-02-29",
+    "current": false,
+    "tenure": "3y 22d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Boniface Alexandre",
+    "role": "President",
+    "start": "2004-02-29",
+    "end": "2006-05-14",
+    "current": false,
+    "tenure": "2y 2m 15d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "René Préval",
+    "role": "President",
+    "start": "2006-05-14",
+    "end": "2011-05-14",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Joseph Michel Martelly",
+    "role": "President",
+    "start": "2011-05-14",
+    "end": "2016-02-07",
+    "current": false,
+    "tenure": "4y 8m 24d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Jocelerme Privert",
+    "role": "President",
+    "start": "2016-02-14",
+    "end": "2017-02-07",
+    "current": false,
+    "tenure": "11m 24d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Jovenel Moïse",
+    "role": "President",
+    "start": "2017-02-07",
+    "end": "2021-07-07",
+    "current": false,
+    "tenure": "4y 5m 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Jack Guy Lafontant",
+    "role": "Prime Minister",
+    "start": "2017-03-21",
+    "end": "2018-09-17",
+    "current": false,
+    "tenure": "1y 5m 27d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Jean-Henry Céant",
+    "role": "Prime Minister",
+    "start": "2018-09-17",
+    "end": "2019-03-21",
+    "current": false,
+    "tenure": "6m 4d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Jean-Michel Lapin",
+    "role": "Prime Minister",
+    "start": "2019-03-21",
+    "end": "2020-03-04",
+    "current": false,
+    "tenure": "11m 12d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Joseph Jouthe",
+    "role": "Prime Minister",
+    "start": "2020-03-04",
+    "end": "2021-04-14",
+    "current": false,
+    "tenure": "1y 1m 10d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Claude Joseph",
+    "role": "Prime Minister",
+    "start": "2021-04-14",
+    "end": "2021-07-20",
+    "current": false,
+    "tenure": "3m 6d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Ariel Henry",
+    "role": "Prime Minister",
+    "start": "2021-07-20",
+    "end": "2024-04-24",
+    "current": false,
+    "tenure": "2y 9m 4d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Ariel Henry",
+    "role": "President",
+    "start": "2021-07-20",
+    "end": "2024-04-24",
+    "current": false,
+    "tenure": "2y 9m 4d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Transitional Presidential Council",
+    "role": "President",
+    "start": "2024-04-25",
+    "end": null,
+    "current": true,
+    "tenure": "2y 2m 8d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Garry Conille",
+    "role": "Prime Minister",
+    "start": "2024-06-03",
+    "end": "2024-11-11",
+    "current": false,
+    "tenure": "5m 8d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Alix Didier Fils-Aimé",
+    "role": "Prime Minister",
+    "start": "2024-11-11",
+    "end": null,
+    "current": true,
+    "tenure": "1y 7m 22d",
+    "party": null,
+    "era": null
+  }
+]

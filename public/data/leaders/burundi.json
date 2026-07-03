@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Pascal Nyabenda",
+    "role": "President",
+    "start": "2020-06-10",
+    "end": "2020-06-18",
+    "current": false,
+    "tenure": "8d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Évariste Ndayishimiye",
+    "role": "Prime Minister",
+    "start": "2020-06-18",
+    "end": "2020-06-23",
+    "current": false,
+    "tenure": "5d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Évariste Ndayishimiye",
+    "role": "President",
+    "start": "2020-06-18",
+    "end": "2020-06-23",
+    "current": false,
+    "tenure": "5d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Évariste Ndayishimiye",
+    "role": "President",
+    "start": "2020-06-18",
+    "end": null,
+    "current": true,
+    "tenure": "6y 15d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Gervais Ndirakobuca",
+    "role": "Prime Minister",
+    "start": "2023-09-07",
+    "end": null,
+    "current": true,
+    "tenure": "2y 9m 26d",
+    "party": null,
+    "era": null
+  }
+]

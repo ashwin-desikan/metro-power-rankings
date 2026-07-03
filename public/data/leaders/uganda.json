@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Yoweri Museveni",
+    "role": "President",
+    "start": "1986-01-29",
+    "end": null,
+    "current": true,
+    "tenure": "40y 5m 4d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Robinah Nabbanja",
+    "role": "Prime Minister",
+    "start": "2021-06-01",
+    "end": null,
+    "current": true,
+    "tenure": "5y 1m 2d",
+    "party": null,
+    "era": null
+  }
+]

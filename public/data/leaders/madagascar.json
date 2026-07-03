@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Andry Rajoelina",
+    "role": "President",
+    "start": "2009-03-17",
+    "end": "2014-01-25",
+    "current": false,
+    "tenure": "4y 10m 8d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Hery Rajaonarimampianina",
+    "role": "President",
+    "start": "2014-01-25",
+    "end": "2019-01-19",
+    "current": false,
+    "tenure": "4y 11m 25d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Andry Rajoelina",
+    "role": "President",
+    "start": "2019-01-19",
+    "end": "2025-10-14",
+    "current": false,
+    "tenure": "6y 8m 25d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Ruphin Zafisambo",
+    "role": "Prime Minister",
+    "start": "2025-10-06",
+    "end": null,
+    "current": true,
+    "tenure": "8m 27d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Andry Rajoelina",
+    "role": "President",
+    "start": "2025-10-14",
+    "end": "2025-10-14",
+    "current": false,
+    "tenure": "0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Michael Randrianirina",
+    "role": "President",
+    "start": "2025-10-14",
+    "end": null,
+    "current": true,
+    "tenure": "8m 19d",
+    "party": null,
+    "era": null
+  }
+]

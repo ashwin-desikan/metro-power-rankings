@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Paul Kagame",
+    "role": "President",
+    "start": "2000-03-24",
+    "end": null,
+    "current": true,
+    "tenure": "26y 3m 9d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Anastase Murekezi",
+    "role": "Prime Minister",
+    "start": "2014-07-24",
+    "end": "2017-08-30",
+    "current": false,
+    "tenure": "3y 1m 6d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Édouard Ngirente",
+    "role": "Prime Minister",
+    "start": "2017-08-30",
+    "end": "2025-07-25",
+    "current": false,
+    "tenure": "7y 10m 25d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Justin Nsengiyumva",
+    "role": "Prime Minister",
+    "start": "2025-07-25",
+    "end": null,
+    "current": true,
+    "tenure": "11m 8d",
+    "party": null,
+    "era": null
+  }
+]

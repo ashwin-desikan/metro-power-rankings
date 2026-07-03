@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Elizabeth II",
+    "role": "President",
+    "start": "1966-11-30",
+    "end": "2021-11-30",
+    "current": false,
+    "tenure": "55y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Owen Arthur",
+    "role": "Prime Minister",
+    "start": "1994-09-06",
+    "end": "2008-01-15",
+    "current": false,
+    "tenure": "13y 4m 9d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "David Thompson",
+    "role": "Prime Minister",
+    "start": "2008-01-16",
+    "end": "2010-10-23",
+    "current": false,
+    "tenure": "2y 9m 7d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Freundel Stuart",
+    "role": "Prime Minister",
+    "start": "2010-10-23",
+    "end": "2018-05-25",
+    "current": false,
+    "tenure": "7y 7m 2d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mia Mottley",
+    "role": "Prime Minister",
+    "start": "2018-05-25",
+    "end": null,
+    "current": true,
+    "tenure": "8y 1m 8d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Sandra Mason",
+    "role": "President",
+    "start": "2021-11-30",
+    "end": null,
+    "current": true,
+    "tenure": "4y 7m 3d",
+    "party": null,
+    "era": null
+  }
+]

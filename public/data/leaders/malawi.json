@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Lazarus Chakwera",
+    "role": "President",
+    "start": "2020-06-28",
+    "end": "2025-10-04",
+    "current": false,
+    "tenure": "5y 3m 6d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Peter Mutharika",
+    "role": "President",
+    "start": "2025-10-04",
+    "end": null,
+    "current": true,
+    "tenure": "8m 29d",
+    "party": null,
+    "era": null
+  }
+]

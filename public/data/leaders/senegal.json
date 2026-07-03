@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Macky Sall",
+    "role": "President",
+    "start": "2012-04-01",
+    "end": "2019-05-14",
+    "current": false,
+    "tenure": "7y 1m 13d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mahammed Dionne",
+    "role": "Prime Minister",
+    "start": "2014-07-06",
+    "end": "2019-05-14",
+    "current": false,
+    "tenure": "4y 10m 8d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Macky Sall",
+    "role": "Prime Minister",
+    "start": "2019-05-14",
+    "end": "2024-04-02",
+    "current": false,
+    "tenure": "4y 10m 19d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Macky Sall",
+    "role": "President",
+    "start": "2019-05-14",
+    "end": "2024-04-02",
+    "current": false,
+    "tenure": "4y 10m 19d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Bassirou Diomaye Faye",
+    "role": "President",
+    "start": "2024-04-02",
+    "end": null,
+    "current": true,
+    "tenure": "2y 3m 1d",
+    "party": null,
+    "era": null
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "name": "Konstantin Päts",
+    "role": "President",
+    "start": "1938-04-24",
+    "end": "1940-07-23",
+    "current": false,
+    "tenure": "2y 2m 29d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Lennart Meri",
+    "role": "President",
+    "start": "1992-10-06",
+    "end": "2001-10-08",
+    "current": false,
+    "tenure": "9y 2d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mart Laar",
+    "role": "Prime Minister",
+    "start": "1992-11-21",
+    "end": "1994-11-08",
+    "current": false,
+    "tenure": "1y 11m 18d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mart Laar",
+    "role": "Prime Minister",
+    "start": "1999-03-25",
+    "end": "2002-01-28",
+    "current": false,
+    "tenure": "2y 10m 3d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Arnold Rüütel",
+    "role": "President",
+    "start": "2001-10-08",
+    "end": "2006-10-09",
+    "current": false,
+    "tenure": "5y 1d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Siim Kallas",
+    "role": "Prime Minister",
+    "start": "2002-01-28",
+    "end": "2003-04-10",
+    "current": false,
+    "tenure": "1y 2m 13d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Juhan Parts",
+    "role": "Prime Minister",
+    "start": "2003-04-10",
+    "end": "2005-04-12",
+    "current": false,
+    "tenure": "2y 2d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Andrus Ansip",
+    "role": "Prime Minister",
+    "start": "2005-04-12",
+    "end": "2014-03-26",
+    "current": false,
+    "tenure": "8y 11m 14d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Toomas Hendrik Ilves",
+    "role": "President",
+    "start": "2006-10-09",
+    "end": "2016-10-09",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Taavi Rõivas",
+    "role": "Prime Minister",
+    "start": "2014-03-26",
+    "end": "2016-11-23",
+    "current": false,
+    "tenure": "2y 7m 28d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Kersti Kaljulaid",
+    "role": "President",
+    "start": "2016-10-10",
+    "end": "2016-11-23",
+    "current": false,
+    "tenure": "1m 13d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Jüri Ratas",
+    "role": "Prime Minister",
+    "start": "2016-11-23",
+    "end": "2021-01-13",
+    "current": false,
+    "tenure": "4y 1m 21d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Jüri Ratas",
+    "role": "President",
+    "start": "2016-11-23",
+    "end": "2021-01-13",
+    "current": false,
+    "tenure": "4y 1m 21d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Kaja Kallas",
+    "role": "Prime Minister",
+    "start": "2021-01-26",
+    "end": "2024-07-23",
+    "current": false,
+    "tenure": "3y 5m 27d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Alar Karis",
+    "role": "President",
+    "start": "2021-10-11",
+    "end": null,
+    "current": true,
+    "tenure": "4y 8m 22d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Kristen Michal",
+    "role": "Prime Minister",
+    "start": "2024-07-23",
+    "end": null,
+    "current": true,
+    "tenure": "1y 11m 10d",
+    "party": null,
+    "era": null
+  }
+]

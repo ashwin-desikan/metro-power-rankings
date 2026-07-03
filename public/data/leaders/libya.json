@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Aguila Saleh Issa",
+    "role": "President",
+    "start": "2014-08-05",
+    "end": "2021-03-15",
+    "current": false,
+    "tenure": "6y 7m 10d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Abd al-Hamid Dbeibeh",
+    "role": "Prime Minister",
+    "start": "2021-02-05",
+    "end": null,
+    "current": true,
+    "tenure": "5y 4m 28d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mohamed al-Menfi",
+    "role": "President",
+    "start": "2021-03-15",
+    "end": null,
+    "current": true,
+    "tenure": "5y 3m 18d",
+    "party": null,
+    "era": null
+  }
+]

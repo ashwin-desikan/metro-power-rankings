@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Faure Essozimna Gnassingbé",
+    "role": "President",
+    "start": "2005-05-04",
+    "end": "2025-05-03",
+    "current": false,
+    "tenure": "19y 11m 29d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Faure Essozimna Gnassingbé",
+    "role": "Prime Minister",
+    "start": "2025-05-03",
+    "end": null,
+    "current": true,
+    "tenure": "1y 2m 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Faure Essozimna Gnassingbé",
+    "role": "President",
+    "start": "2025-05-03",
+    "end": "2025-05-03",
+    "current": false,
+    "tenure": "0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Jean-Lucien Savi de Tové",
+    "role": "President",
+    "start": "2025-05-03",
+    "end": null,
+    "current": true,
+    "tenure": "1y 2m 0d",
+    "party": null,
+    "era": null
+  }
+]

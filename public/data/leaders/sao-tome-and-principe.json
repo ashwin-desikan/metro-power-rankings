@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Carlos Vila Nova",
+    "role": "President",
+    "start": "2021-10-02",
+    "end": null,
+    "current": true,
+    "tenure": "4y 9m 1d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Patrice Trovoada",
+    "role": "Prime Minister",
+    "start": "2022-11-10",
+    "end": "2025-01-06",
+    "current": false,
+    "tenure": "2y 1m 27d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Américo Ramos",
+    "role": "Prime Minister",
+    "start": "2025-01-12",
+    "end": null,
+    "current": true,
+    "tenure": "1y 5m 21d",
+    "party": null,
+    "era": null
+  }
+]

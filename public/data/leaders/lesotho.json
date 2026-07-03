@@ -1,0 +1,42 @@
+[
+  {
+    "name": "👑 Letsie III",
+    "role": "Monarch",
+    "start": "1990-01-01",
+    "end": "1995-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "👑 Letsie III",
+    "role": "Monarch",
+    "start": "1996-02-07",
+    "end": null,
+    "current": true,
+    "tenure": "30y 4m 26d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Moeketsi Majoro",
+    "role": "Prime Minister",
+    "start": "2020-05-20",
+    "end": "2022-10-28",
+    "current": false,
+    "tenure": "2y 5m 8d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Sam Matekane",
+    "role": "Prime Minister",
+    "start": "2022-10-28",
+    "end": null,
+    "current": true,
+    "tenure": "3y 8m 5d",
+    "party": null,
+    "era": null
+  }
+]

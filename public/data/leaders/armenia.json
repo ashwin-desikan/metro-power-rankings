@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Armen Sarkissian",
+    "role": "President",
+    "start": "2018-04-09",
+    "end": "2022-02-01",
+    "current": false,
+    "tenure": "3y 9m 23d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Nikol Pashinyan",
+    "role": "Prime Minister",
+    "start": "2018-05-08",
+    "end": null,
+    "current": true,
+    "tenure": "8y 1m 25d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Vahagn Khachatryan",
+    "role": "President",
+    "start": "2022-03-13",
+    "end": null,
+    "current": true,
+    "tenure": "4y 3m 20d",
+    "party": null,
+    "era": null
+  }
+]

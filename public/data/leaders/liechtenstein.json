@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Carl von In der Maur",
+    "role": "Prime Minister",
+    "start": "1884-09-23",
+    "end": "1892-09-05",
+    "current": false,
+    "tenure": "7y 11m 13d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Josef Ospelt",
+    "role": "Prime Minister",
+    "start": "1921-03-02",
+    "end": "1922-04-05",
+    "current": false,
+    "tenure": "1y 1m 3d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Gustav Schädler",
+    "role": "Prime Minister",
+    "start": "1922-06-06",
+    "end": "1928-06-28",
+    "current": false,
+    "tenure": "6y 22d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "👑 Hans-Adam II, Prince",
+    "role": "Monarch",
+    "start": "1989-11-13",
+    "end": null,
+    "current": true,
+    "tenure": "36y 7m 20d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Otmar Hasler",
+    "role": "Prime Minister",
+    "start": "2001-04-05",
+    "end": "2009-03-25",
+    "current": false,
+    "tenure": "7y 11m 20d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Klaus Tschütscher",
+    "role": "Prime Minister",
+    "start": "2009-03-25",
+    "end": "2013-03-27",
+    "current": false,
+    "tenure": "4y 2d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Adrian Hasler",
+    "role": "Prime Minister",
+    "start": "2013-03-27",
+    "end": "2021-03-25",
+    "current": false,
+    "tenure": "7y 11m 26d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Daniel Risch",
+    "role": "Prime Minister",
+    "start": "2021-03-25",
+    "end": null,
+    "current": true,
+    "tenure": "5y 3m 8d",
+    "party": null,
+    "era": null
+  }
+]

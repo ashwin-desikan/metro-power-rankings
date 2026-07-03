@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Christopher Loeak",
+    "role": "President",
+    "start": "2012-01-10",
+    "end": "2016-01-11",
+    "current": false,
+    "tenure": "4y 1d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Casten Nemra",
+    "role": "President",
+    "start": "2016-01-11",
+    "end": "2016-01-28",
+    "current": false,
+    "tenure": "17d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Hilda Heine",
+    "role": "President",
+    "start": "2024-01-03",
+    "end": null,
+    "current": true,
+    "tenure": "2y 6m 0d",
+    "party": null,
+    "era": null
+  }
+]

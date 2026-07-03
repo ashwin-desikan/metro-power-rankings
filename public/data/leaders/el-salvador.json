@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Francisco Flores",
+    "role": "President",
+    "start": "1999-06-01",
+    "end": "2004-06-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Antonio Saca",
+    "role": "President",
+    "start": "2004-06-01",
+    "end": "2009-06-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mauricio Funes",
+    "role": "President",
+    "start": "2009-06-01",
+    "end": "2014-06-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Salvador Sánchez Cerén",
+    "role": "President",
+    "start": "2014-06-01",
+    "end": "2019-06-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Nayib Bukele",
+    "role": "Prime Minister",
+    "start": "2019-06-01",
+    "end": null,
+    "current": true,
+    "tenure": "7y 1m 2d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Nayib Bukele",
+    "role": "President",
+    "start": "2019-06-01",
+    "end": null,
+    "current": true,
+    "tenure": "7y 1m 2d",
+    "party": null,
+    "era": null
+  }
+]

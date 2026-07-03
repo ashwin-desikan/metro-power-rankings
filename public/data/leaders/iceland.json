@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Ólafur Ragnar Grímsson",
+    "role": "President",
+    "start": "1996-08-01",
+    "end": "2016-07-31",
+    "current": false,
+    "tenure": "19y 11m 30d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Sigmundur Davíð Gunnlaugsson",
+    "role": "Prime Minister",
+    "start": "2013-05-01",
+    "end": "2017-01-11",
+    "current": false,
+    "tenure": "3y 8m 10d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Guðni Jóhannesson",
+    "role": "President",
+    "start": "2016-08-01",
+    "end": "2024-07-31",
+    "current": false,
+    "tenure": "7y 11m 30d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Bjarni Benediktsson",
+    "role": "Prime Minister",
+    "start": "2017-01-11",
+    "end": "2017-11-30",
+    "current": false,
+    "tenure": "10m 19d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Katrín Jakobsdóttir",
+    "role": "Prime Minister",
+    "start": "2017-11-30",
+    "end": "2024-04-09",
+    "current": false,
+    "tenure": "6y 4m 10d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Bjarni Benediktsson",
+    "role": "Prime Minister",
+    "start": "2024-04-09",
+    "end": "2024-12-21",
+    "current": false,
+    "tenure": "8m 12d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Halla Tómasdóttir",
+    "role": "President",
+    "start": "2024-08-01",
+    "end": null,
+    "current": true,
+    "tenure": "1y 11m 2d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Kristrún Mjöll Frostadóttir",
+    "role": "Prime Minister",
+    "start": "2024-12-21",
+    "end": null,
+    "current": true,
+    "tenure": "1y 6m 12d",
+    "party": null,
+    "era": null
+  }
+]

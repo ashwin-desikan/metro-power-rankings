@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Tsakhiagiin Elbegdorj",
+    "role": "President",
+    "start": "2009-06-18",
+    "end": "2017-07-07",
+    "current": false,
+    "tenure": "8y 19d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Jargaltulga Erdenebat",
+    "role": "Prime Minister",
+    "start": "2016-06-08",
+    "end": "2017-10-04",
+    "current": false,
+    "tenure": "1y 3m 26d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Khaltmaagiin Battulga",
+    "role": "President",
+    "start": "2017-07-10",
+    "end": "2017-10-04",
+    "current": false,
+    "tenure": "2m 24d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Khurelsukh Ukhnaa",
+    "role": "Prime Minister",
+    "start": "2017-10-04",
+    "end": "2021-01-27",
+    "current": false,
+    "tenure": "3y 3m 23d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Khurelsukh Ukhnaa",
+    "role": "President",
+    "start": "2017-10-04",
+    "end": "2021-01-27",
+    "current": false,
+    "tenure": "3y 3m 23d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Luvsannamsrain Oyun-Erdene",
+    "role": "Prime Minister",
+    "start": "2021-01-27",
+    "end": "2025-06-13",
+    "current": false,
+    "tenure": "4y 4m 17d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Khurelsukh Ukhnaa",
+    "role": "President",
+    "start": "2021-06-25",
+    "end": null,
+    "current": true,
+    "tenure": "5y 8d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Gombojavyn Zandanshatar",
+    "role": "Prime Minister",
+    "start": "2025-06-13",
+    "end": "2026-03-30",
+    "current": false,
+    "tenure": "9m 17d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Uchral Nyam-Osor",
+    "role": "Prime Minister",
+    "start": "2026-03-30",
+    "end": null,
+    "current": true,
+    "tenure": "3m 3d",
+    "party": null,
+    "era": null
+  }
+]

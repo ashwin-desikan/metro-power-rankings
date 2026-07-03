@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Jeremiah Manele",
+    "role": "Prime Minister",
+    "start": "2024-05-02",
+    "end": "2026-05-15",
+    "current": false,
+    "tenure": "2y 13d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Matthew Wale",
+    "role": "Prime Minister",
+    "start": "2026-05-15",
+    "end": null,
+    "current": true,
+    "tenure": "1m 18d",
+    "party": null,
+    "era": null
+  }
+]

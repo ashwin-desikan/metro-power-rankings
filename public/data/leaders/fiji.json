@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Frank Bainimarama",
+    "role": "Prime Minister",
+    "start": "2007-01-05",
+    "end": "2022-12-24",
+    "current": false,
+    "tenure": "15y 11m 19d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Frank Bainimarama",
+    "role": "President",
+    "start": "2007-01-05",
+    "end": "2021-11-12",
+    "current": false,
+    "tenure": "14y 10m 7d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Wiliame Katonivere",
+    "role": "President",
+    "start": "2021-11-12",
+    "end": null,
+    "current": true,
+    "tenure": "4y 7m 21d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Sitiveni Rabuka",
+    "role": "Prime Minister",
+    "start": "2022-12-24",
+    "end": null,
+    "current": true,
+    "tenure": "3y 6m 9d",
+    "party": null,
+    "era": null
+  }
+]

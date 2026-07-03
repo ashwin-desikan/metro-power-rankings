@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Thomas Remengesau Jr.",
+    "role": "President",
+    "start": "2001-01-01",
+    "end": "2009-01-15",
+    "current": false,
+    "tenure": "8y 14d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Thomas Remengesau Jr.",
+    "role": "President",
+    "start": "2013-01-17",
+    "end": "2021-01-17",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Surangel Whipps Jr.",
+    "role": "President",
+    "start": "2021-01-21",
+    "end": null,
+    "current": true,
+    "tenure": "5y 5m 12d",
+    "party": null,
+    "era": null
+  }
+]

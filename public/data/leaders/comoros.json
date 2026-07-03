@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Azali Assoumani",
+    "role": "President",
+    "start": "2016-01-01",
+    "end": "2016-05-26",
+    "current": false,
+    "tenure": "4m 25d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Azali Assoumani",
+    "role": "Prime Minister",
+    "start": "2016-05-26",
+    "end": null,
+    "current": true,
+    "tenure": "10y 1m 7d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Azali Assoumani",
+    "role": "President",
+    "start": "2016-05-26",
+    "end": null,
+    "current": true,
+    "tenure": "10y 1m 7d",
+    "party": null,
+    "era": null
+  }
+]

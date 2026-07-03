@@ -1,0 +1,32 @@
+[
+  {
+    "name": "👑 Tupou VI",
+    "role": "Monarch",
+    "start": "2012-03-18",
+    "end": null,
+    "current": true,
+    "tenure": "14y 3m 15d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "ʻAisake Eke",
+    "role": "Prime Minister",
+    "start": "2025-01-22",
+    "end": "2025-12-18",
+    "current": false,
+    "tenure": "10m 26d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Fatafehi Fakafānua, 8th Lord Fakafānua",
+    "role": "Prime Minister",
+    "start": "2025-12-18",
+    "end": null,
+    "current": true,
+    "tenure": "6m 15d",
+    "party": null,
+    "era": null
+  }
+]

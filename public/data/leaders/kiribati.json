@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Ieremia Tabai",
+    "role": "President",
+    "start": "1979-07-12",
+    "end": "1991-07-04",
+    "current": false,
+    "tenure": "11y 11m 22d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Teatao Teannaki",
+    "role": "President",
+    "start": "1991-07-04",
+    "end": "1994-05-24",
+    "current": false,
+    "tenure": "2y 10m 20d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Teburoro Tito",
+    "role": "President",
+    "start": "1994-10-01",
+    "end": "2003-01-01",
+    "current": false,
+    "tenure": "8y 3m 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Anote Tong",
+    "role": "President",
+    "start": "2003-01-01",
+    "end": "2003-03-28",
+    "current": false,
+    "tenure": "2m 27d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Tion Otang",
+    "role": "President",
+    "start": "2003-03-28",
+    "end": "2003-07-10",
+    "current": false,
+    "tenure": "3m 12d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Anote Tong",
+    "role": "President",
+    "start": "2003-07-10",
+    "end": "2016-03-11",
+    "current": false,
+    "tenure": "12y 8m 1d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Taneti Maamau",
+    "role": "Prime Minister",
+    "start": "2016-03-11",
+    "end": null,
+    "current": true,
+    "tenure": "10y 3m 22d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Taneti Maamau",
+    "role": "President",
+    "start": "2016-03-11",
+    "end": null,
+    "current": true,
+    "tenure": "10y 3m 22d",
+    "party": null,
+    "era": null
+  }
+]

@@ -1,0 +1,362 @@
+[
+  {
+    "name": "Moktar Ould Daddah",
+    "role": "Prime Minister",
+    "start": "1960-11-28",
+    "end": "1961-08-20",
+    "current": false,
+    "tenure": "8m 23d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Moktar Ould Daddah",
+    "role": "President",
+    "start": "1960-11-28",
+    "end": "1961-08-20",
+    "current": false,
+    "tenure": "8m 23d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mustafa Ould Salek",
+    "role": "President",
+    "start": "1978-07-10",
+    "end": "1979-05-31",
+    "current": false,
+    "tenure": "10m 21d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Ahmed Ould Bouceif",
+    "role": "Prime Minister",
+    "start": "1979-04-06",
+    "end": "1979-05-27",
+    "current": false,
+    "tenure": "1m 21d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Ahmad Salim uld Sidi",
+    "role": "Prime Minister",
+    "start": "1979-05-28",
+    "end": "1979-05-31",
+    "current": false,
+    "tenure": "3d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mohamed Khouna Ould Haidalla",
+    "role": "Prime Minister",
+    "start": "1979-05-31",
+    "end": "1980-12-12",
+    "current": false,
+    "tenure": "1y 6m 11d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mohamed Khouna Ould Haidalla",
+    "role": "President",
+    "start": "1979-05-31",
+    "end": "1979-06-03",
+    "current": false,
+    "tenure": "3d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mohamed Mahmoud Ould Louly",
+    "role": "President",
+    "start": "1979-06-03",
+    "end": "1980-01-04",
+    "current": false,
+    "tenure": "7m 1d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mohamed Khouna Ould Haidalla",
+    "role": "President",
+    "start": "1980-01-04",
+    "end": "1981-04-25",
+    "current": false,
+    "tenure": "1y 3m 21d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Sid Ahmed Ould Bneijara",
+    "role": "Prime Minister",
+    "start": "1980-12-12",
+    "end": "1981-04-25",
+    "current": false,
+    "tenure": "4m 13d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Maaouya Ould Sid'Ahmed Taya",
+    "role": "Prime Minister",
+    "start": "1981-04-25",
+    "end": "1984-03-08",
+    "current": false,
+    "tenure": "2y 10m 12d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Maaouya Ould Sid'Ahmed Taya",
+    "role": "President",
+    "start": "1981-04-25",
+    "end": "1984-03-08",
+    "current": false,
+    "tenure": "2y 10m 12d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mohamed Khouna Ould Haidalla",
+    "role": "Prime Minister",
+    "start": "1984-03-08",
+    "end": "1984-12-12",
+    "current": false,
+    "tenure": "9m 4d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mohamed Khouna Ould Haidalla",
+    "role": "President",
+    "start": "1984-03-08",
+    "end": "1984-12-12",
+    "current": false,
+    "tenure": "9m 4d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Maaouya Ould Sid'Ahmed Taya",
+    "role": "Prime Minister",
+    "start": "1984-12-12",
+    "end": "1992-04-18",
+    "current": false,
+    "tenure": "7y 4m 6d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Maaouya Ould Sid'Ahmed Taya",
+    "role": "President",
+    "start": "1984-12-12",
+    "end": "1992-04-18",
+    "current": false,
+    "tenure": "7y 4m 6d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Sidi Mohamed Ould Boubacar",
+    "role": "Prime Minister",
+    "start": "1992-04-18",
+    "end": "1996-01-02",
+    "current": false,
+    "tenure": "3y 8m 15d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Cheikh El Avia Ould Mohamed Khouna",
+    "role": "Prime Minister",
+    "start": "1996-01-02",
+    "end": "1997-12-18",
+    "current": false,
+    "tenure": "1y 11m 16d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mohamed Lemine Ould Guig",
+    "role": "Prime Minister",
+    "start": "1997-12-18",
+    "end": "1998-11-16",
+    "current": false,
+    "tenure": "10m 29d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Cheikh El Avia Ould Mohamed Khouna",
+    "role": "Prime Minister",
+    "start": "1998-11-16",
+    "end": "2003-07-06",
+    "current": false,
+    "tenure": "4y 7m 20d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Sghair Ould M'Bareck",
+    "role": "Prime Minister",
+    "start": "2003-07-06",
+    "end": "2005-08-07",
+    "current": false,
+    "tenure": "2y 1m 1d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Ely Ould Mohamed Vall",
+    "role": "President",
+    "start": "2005-08-03",
+    "end": "2007-04-19",
+    "current": false,
+    "tenure": "1y 8m 16d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Sidi Mohamed Ould Boubacar",
+    "role": "Prime Minister",
+    "start": "2005-08-07",
+    "end": "2007-04-20",
+    "current": false,
+    "tenure": "1y 8m 13d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Sidi Ould Cheikh Abdallahi",
+    "role": "President",
+    "start": "2007-04-19",
+    "end": "2008-08-06",
+    "current": false,
+    "tenure": "1y 3m 18d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Zeine Ould Zeidane",
+    "role": "Prime Minister",
+    "start": "2007-04-20",
+    "end": "2008-05-06",
+    "current": false,
+    "tenure": "1y 16d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Yahya Ould Ahmed El Waghef",
+    "role": "Prime Minister",
+    "start": "2008-05-06",
+    "end": "2008-08-06",
+    "current": false,
+    "tenure": "3m 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mohamed Ould Abdel Aziz",
+    "role": "President",
+    "start": "2008-08-06",
+    "end": "2009-04-15",
+    "current": false,
+    "tenure": "8m 9d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Moulaye Ould Mohamed Laghdaf",
+    "role": "Prime Minister",
+    "start": "2008-08-14",
+    "end": "2014-08-20",
+    "current": false,
+    "tenure": "6y 6d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Ba Mamadou Mbaré",
+    "role": "President",
+    "start": "2009-04-15",
+    "end": "2009-08-05",
+    "current": false,
+    "tenure": "3m 21d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mohamed Ould Abdel Aziz",
+    "role": "President",
+    "start": "2009-08-05",
+    "end": "2019-08-01",
+    "current": false,
+    "tenure": "9y 11m 27d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Yahya Ould Hademine",
+    "role": "Prime Minister",
+    "start": "2014-08-20",
+    "end": "2018-10-29",
+    "current": false,
+    "tenure": "4y 2m 9d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mohamed Salem Ould Béchir",
+    "role": "Prime Minister",
+    "start": "2018-10-29",
+    "end": "2019-08-05",
+    "current": false,
+    "tenure": "9m 7d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mohamed Ould Ghazouani",
+    "role": "President",
+    "start": "2019-08-01",
+    "end": null,
+    "current": true,
+    "tenure": "6y 11m 2d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Ismail Ould Bedde Ould Cheikh Sidiya",
+    "role": "Prime Minister",
+    "start": "2019-08-05",
+    "end": "2020-08-06",
+    "current": false,
+    "tenure": "1y 1d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mohamed Ould Bilal",
+    "role": "Prime Minister",
+    "start": "2020-08-06",
+    "end": "2024-08-02",
+    "current": false,
+    "tenure": "3y 11m 27d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Moctar Ould Djay",
+    "role": "Prime Minister",
+    "start": "2024-08-02",
+    "end": null,
+    "current": true,
+    "tenure": "1y 11m 1d",
+    "party": null,
+    "era": null
+  }
+]

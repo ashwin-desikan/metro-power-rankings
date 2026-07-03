@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Ilir Meta",
+    "role": "President",
+    "start": "2017-07-24",
+    "end": "2022-07-24",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Bajram Begaj",
+    "role": "President",
+    "start": "2022-07-24",
+    "end": null,
+    "current": true,
+    "tenure": "3y 11m 9d",
+    "party": null,
+    "era": null
+  }
+]

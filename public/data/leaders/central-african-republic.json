@@ -1,0 +1,112 @@
+[
+  {
+    "name": "David Dacko",
+    "role": "President",
+    "start": "1960-08-14",
+    "end": "1966-01-01",
+    "current": false,
+    "tenure": "5y 4m 18d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Jean-Bedel Bokassa",
+    "role": "President",
+    "start": "1966-01-01",
+    "end": "1976-12-04",
+    "current": false,
+    "tenure": "10y 11m 3d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "David Dacko",
+    "role": "President",
+    "start": "1979-09-21",
+    "end": "1981-09-01",
+    "current": false,
+    "tenure": "1y 11m 11d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Catherine Samba-Panza",
+    "role": "President",
+    "start": "2014-01-23",
+    "end": "2016-03-30",
+    "current": false,
+    "tenure": "2y 2m 7d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Faustin-Archange Touadéra",
+    "role": "President",
+    "start": "2016-03-30",
+    "end": "2016-04-02",
+    "current": false,
+    "tenure": "3d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Faustin-Archange Touadéra",
+    "role": "President",
+    "start": "2016-03-30",
+    "end": null,
+    "current": true,
+    "tenure": "10y 3m 3d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Simplice Sarandji",
+    "role": "Prime Minister",
+    "start": "2016-04-02",
+    "end": "2019-02-27",
+    "current": false,
+    "tenure": "2y 10m 25d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Simplice Sarandji",
+    "role": "President",
+    "start": "2016-04-02",
+    "end": "2019-02-27",
+    "current": false,
+    "tenure": "2y 10m 25d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Firmin Ngrébada",
+    "role": "Prime Minister",
+    "start": "2019-02-27",
+    "end": "2021-06-15",
+    "current": false,
+    "tenure": "2y 3m 19d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Henri-Marie Dondra",
+    "role": "Prime Minister",
+    "start": "2021-06-15",
+    "end": "2022-02-07",
+    "current": false,
+    "tenure": "7m 23d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Félix Moloua",
+    "role": "Prime Minister",
+    "start": "2022-02-07",
+    "end": null,
+    "current": true,
+    "tenure": "4y 4m 26d",
+    "party": null,
+    "era": null
+  }
+]

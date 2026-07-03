@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Tuilaʻepa Saʻilele Malielegaoi",
+    "role": "Prime Minister",
+    "start": "1998-11-23",
+    "end": "2021-05-24",
+    "current": false,
+    "tenure": "22y 6m 1d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Tuilaʻepa Saʻilele Malielegaoi",
+    "role": "President",
+    "start": "1998-11-23",
+    "end": "2007-06-16",
+    "current": false,
+    "tenure": "8y 6m 24d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Tufuga Efi",
+    "role": "President",
+    "start": "2007-06-16",
+    "end": "2017-07-21",
+    "current": false,
+    "tenure": "10y 1m 5d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Va'aletoa Sualauvi II",
+    "role": "President",
+    "start": "2017-07-21",
+    "end": null,
+    "current": true,
+    "tenure": "8y 11m 12d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Fiamē Naomi Mataʻafa",
+    "role": "Prime Minister",
+    "start": "2021-05-24",
+    "end": null,
+    "current": true,
+    "tenure": "5y 1m 9d",
+    "party": null,
+    "era": null
+  }
+]

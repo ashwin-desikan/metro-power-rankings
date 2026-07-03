@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Mamady Doumbouya",
+    "role": "President",
+    "start": "2021-10-01",
+    "end": "2024-02-27",
+    "current": false,
+    "tenure": "2y 4m 26d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mamady Doumbouya",
+    "role": "President",
+    "start": "2021-10-01",
+    "end": null,
+    "current": true,
+    "tenure": "4y 9m 2d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Bah Oury",
+    "role": "Prime Minister",
+    "start": "2024-02-27",
+    "end": null,
+    "current": true,
+    "tenure": "2y 4m 6d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Bah Oury",
+    "role": "President",
+    "start": "2024-02-27",
+    "end": "2021-10-01",
+    "current": false,
+    "tenure": null,
+    "party": null,
+    "era": null
+  }
+]
