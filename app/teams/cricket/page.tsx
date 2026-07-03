@@ -9,6 +9,8 @@ import {
 } from "@/lib/cricket";
 import { flagCdnUrl } from "@/lib/international-display";
 import { getWtcStandings } from "@/lib/wtcStandings";
+import { getCricketGames } from "@/lib/cricketGames";
+import CricketGreatestGames from "./CricketGreatestGames";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -46,6 +48,7 @@ function fmtSpan(first: string | null, last: string | null): string {
 
 export default async function CricketHubPage() {
   const hub = getCricketHub();
+  const cg = getCricketGames();
   const teams = getAllCricketTeams();
   const wtc = await getWtcStandings();
   const hasWtc = !!wtc && wtc.rows.length > 0;
@@ -118,6 +121,7 @@ export default async function CricketHubPage() {
           { label: "Rankings", href: "#rankings" },
           { label: "No. 1 Reigns", href: "#number-ones" },
           { label: "Honours", href: "#honours" },
+          { label: "Greatest Games", href: "#greatest-games" },
           { label: "Series Trophies", href: "#series-trophies" },
           { label: "Full Members", href: "#full-members" },
           { label: "Associates", href: "#associates" },
@@ -325,6 +329,18 @@ export default async function CricketHubPage() {
         {hub.honours_note ? (
           <p className="text-xs text-[var(--text-dim)] mt-2">{hub.honours_note}</p>
         ) : null}
+      </section>
+
+      {/* ---------------- Greatest Games ---------------- */}
+      <section id="greatest-games" className="mb-12 scroll-mt-24">
+        <h2 className="text-lg font-semibold mb-1">The Greatest Games</h2>
+        <p className="text-[var(--text-muted)] text-sm mb-4 max-w-3xl">
+          Every men&apos;s international ranked by a Game Score that blends how close the finish was, what
+          was at stake, and how strong both sides were on the day, from the recomputed rankings. A &#9733;
+          marks the hand-picked all-time classics whose greatness is historical rather than in the margin.
+          Switch formats, or read them on one scale under All formats.
+        </p>
+        <CricketGreatestGames test={cg.Test} odi={cg.ODI} t20i={cg.T20I} combined={cg.combined} decades={cg.by_decade} limit={50} />
       </section>
 
       {/* ---------------- Series trophies ---------------- */}

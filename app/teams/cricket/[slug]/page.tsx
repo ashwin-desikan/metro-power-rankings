@@ -16,6 +16,8 @@ import {
   type FormatRecord,
 } from "@/lib/cricket";
 import { flagCdnUrl } from "@/lib/international-display";
+import { getCricketGamesForTeam } from "@/lib/cricketGames";
+import CricketGreatestGames from "../CricketGreatestGames";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -72,6 +74,7 @@ export default async function CricketTeamPage(
   const { slug } = await params;
   const team = getCricketTeamBySlug(slug);
   const detail = getCricketTeamDetail(slug);
+  const teamGames = getCricketGamesForTeam(slug);
   const hub = getCricketHub();
   if (!team || !detail) notFound();
 
@@ -210,6 +213,18 @@ export default async function CricketTeamPage(
               );
             })}
           </div>
+        </section>
+      ) : null}
+
+      {/* ---------------- Greatest Games ---------------- */}
+      {teamGames.length > 0 ? (
+        <section className="mb-10">
+          <h2 className="text-lg font-semibold mb-1">Greatest games</h2>
+          <p className="text-[var(--text-muted)] text-sm mb-4 max-w-2xl">
+            {team.name}&apos;s most storied internationals across all three formats, by Game Score
+            (closeness, stakes and the strength of both sides), with a &#9733; for the all-time classics.
+          </p>
+          <CricketGreatestGames games={teamGames} teamSlug={slug} />
         </section>
       ) : null}
 

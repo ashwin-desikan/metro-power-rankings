@@ -32,6 +32,10 @@ import { getCfbTopGames, getCfbGamesByDecade, getAllCfbSlugs } from "@/lib/cfb";
 import CfbGames from "@/app/teams/cfb/CfbGames";
 import { getCbbTopGames, getCbbGamesByDecade, getAllCbbSlugs } from "@/lib/cbb";
 import CbbGames from "@/app/teams/cbb/CbbGames";
+import { getCricketGames } from "@/lib/cricketGames";
+import CricketGreatestGames from "@/app/teams/cricket/CricketGreatestGames";
+import { getRugbyGames } from "@/lib/rugbyGames";
+import RugbyGreatestGames from "@/app/teams/rugby-union/RugbyGreatestGames";
 import {
   getTopGamesAllTime as intlTopAll,
   getTopGamesByDecade as intlTopDec,
@@ -184,6 +188,18 @@ export default function GamesHubPage() {
   const cfbCards = FEATURED.filter((g) => g.leagueTag === "CFB").sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity));
   const cbbTop = getCbbTopGames();
   const cbbByDecade = getCbbGamesByDecade();
+  const cricketGames = getCricketGames();
+  const rugbyGames = getRugbyGames();
+  const cricketFeatured: FeaturedGame[] = [
+    { videoId: "pQ5xEiZ-5IE", title: "2019 World Cup Final", leagueTag: "ODI", matchup: "New Zealand tie England", note: "Tied, then the super over tied; decided on boundary count.", clipLabel: "Highlights", rank: 1 },
+    { videoId: "QiNvL3FfrT8", title: "2005 Ashes, Edgbaston", leagueTag: "TEST", matchup: "England beat Australia by 2 runs", note: "The closest Ashes Test of all time.", clipLabel: "Highlights", rank: 2 },
+    { videoId: "vG4ydr_iEwo", title: "2007 T20 World Cup Final", leagueTag: "T20I", matchup: "India beat Pakistan by 5 runs", note: "India's first ICC title in 24 years; lit the T20 fuse.", clipLabel: "Highlights", rank: 3 },
+  ];
+  const rugbyFeatured: FeaturedGame[] = [
+    { videoId: "ETlUWCT2nxo", title: "2023 World Cup Final", leagueTag: "RWC", matchup: "South Africa beat New Zealand 12-11", note: "A record fourth title, won by a single point, with New Zealand a man down after a red card.", clipLabel: "Highlights", rank: 1 },
+    { videoId: "ceD7U4JP5Fo", title: "1995 World Cup Final", leagueTag: "RWC", matchup: "South Africa beat New Zealand 15-12 (a.e.t.)", note: "Mandela in the number six jersey; Stransky's drop goal settled extra time.", clipLabel: "Highlights", rank: 2 },
+    { videoId: "iLncU_JxyQk", title: "2011 World Cup Final", leagueTag: "RWC", matchup: "New Zealand beat France 8-7", note: "The hosts edged France by a point to end a 24-year wait at home.", clipLabel: "Highlights", rank: 3 },
+  ];
   const cbbSlugs = getAllCbbSlugs();
   const cbbCards = FEATURED.filter((g) => g.leagueTag === "CBB").sort((a, b) => (a.rank ?? Infinity) - (b.rank ?? Infinity));
   const intlAllTime = attachVideos("INTFB", intlTopAll().map((r) => ({ ...r, winner_canonical: r.winner_name })));
@@ -244,6 +260,8 @@ export default function GamesHubPage() {
           { label: "NHL", href: "#nhl" },
           { label: "College Football", href: "#cfb" },
           { label: "College Basketball", href: "#cbb" },
+          { label: "Cricket", href: "#cricket" },
+          { label: "Rugby Union", href: "#rugby-union" },
           { label: "What's next", href: "#whats-next" },
         ]}
       />
@@ -331,6 +349,43 @@ export default function GamesHubPage() {
         </div>
         <FeaturedClips games={cbbCards} />
         <CbbGames topOverall={cbbTop} byDecade={cbbByDecade} linkSlugs={cbbSlugs} />
+      </section>
+
+      {/* Cricket */}
+      <section id="cricket" className="mb-12 scroll-mt-24">
+        <div className="flex items-baseline justify-between gap-3 mb-1 flex-wrap">
+          <h2 className="text-xl font-bold tracking-tight">Cricket</h2>
+          <Link href="/teams/cricket#greatest-games" className="text-xs" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>Full cricket hub &rarr;</Link>
+        </div>
+        <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-4">
+          Tests, ODIs and T20Is ranked by a Game Score of closeness, stakes and both sides&apos; strength
+          from the recomputed rankings, on one scale under All formats. A &#9733; marks the curated
+          all-time classics.
+        </p>
+        <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] font-semibold mb-2">Featured games</p>
+        <FeaturedGames games={cricketFeatured} />
+        <div className="mt-6">
+          <CricketGreatestGames test={cricketGames.Test} odi={cricketGames.ODI} t20i={cricketGames.T20I} combined={cricketGames.combined} decades={cricketGames.by_decade} limit={12} />
+        </div>
+      </section>
+
+      {/* Rugby Union */}
+      <section id="rugby-union" className="mb-12 scroll-mt-24">
+        <div className="flex items-baseline justify-between gap-3 mb-1 flex-wrap">
+          <h2 className="text-xl font-bold tracking-tight">Rugby Union</h2>
+          <Link href="/teams/rugby-union#greatest-games" className="text-xs" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>Full rugby hub &rarr;</Link>
+        </div>
+        <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-4">
+          Every men&apos;s international since 1871 ranked by a Game Score of closeness, stakes and both
+          sides&apos; strength on the day, with team strength from a continuous Elo rating running the whole
+          history so eras before the modern rankings are scored on the same scale. A &#9733; marks the
+          curated all-time classics.
+        </p>
+        <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] font-semibold mb-2">Featured games</p>
+        <FeaturedGames games={rugbyFeatured} />
+        <div className="mt-6">
+          <RugbyGreatestGames top={rugbyGames.top} decades={rugbyGames.by_decade} limit={12} />
+        </div>
       </section>
 
       {/* What's next */}

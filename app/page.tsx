@@ -139,6 +139,60 @@ function marqueeGames(): SportGames[] {
   return out;
 }
 
+type CricEntry = { date: string; fmt: string; team: string; teamSlug: string; opp: string; oppSlug: string; winner: string; detail?: string; major?: string | null; round?: string | null; city?: string | null };
+type RugEntry = { date: string; team: string; teamSlug: string; opp: string; oppSlug: string; winner: string; pf: number; pa: number; draw: boolean; competition: string; stage: string; city?: string | null };
+
+// Cricket and Rugby Union carry their own Game Score boards (public/data/*/top-games.json),
+// not the FEATURED clip list, so their top-two marquee cards are built straight from the data.
+function ballGames(): SportGames[] {
+  const out: SportGames[] = [];
+  const cric = readData<{ combined: CricEntry[] }>(['cricket', 'top-games.json'], { combined: [] }).combined.slice(0, 2);
+  if (cric.length) {
+    out.push({
+      tag: 'CRICKET', label: 'Cricket', emoji: '\u{1F3CF}',
+      games: cric.map((e, i) => {
+        const winner = e.winner || e.team;
+        const loser = e.winner ? (e.winner === e.team ? e.opp : e.team) : e.opp;
+        const wSlug = e.winner ? (e.winner === e.team ? e.teamSlug : e.oppSlug) : e.teamSlug;
+        const lSlug = e.winner ? (e.winner === e.team ? e.oppSlug : e.teamSlug) : e.oppSlug;
+        const yr = e.date.slice(0, 4);
+        const isAshes = e.fmt === 'Test' && ((e.team === 'England' && e.opp === 'Australia') || (e.team === 'Australia' && e.opp === 'England'));
+        const title = e.major ? [yr, e.major, e.round || ''].filter(Boolean).join(' ') : `${yr} ${isAshes ? 'Ashes' : e.fmt}`;
+        return {
+          title,
+          matchup: e.winner ? `${winner} beat ${loser}` : `${e.team} tied ${e.opp}`,
+          note: [e.detail, e.city].filter(Boolean).join(' \u00B7 ') || undefined,
+          flagUrls: [flagCdnUrl(wSlug, '20x15'), flagCdnUrl(lSlug, '20x15')].filter(Boolean) as string[],
+          rank: i + 1,
+        };
+      }),
+    });
+  }
+  const rug = readData<{ top: RugEntry[] }>(['rugby-union', 'top-games.json'], { top: [] }).top.slice(0, 2);
+  if (rug.length) {
+    out.push({
+      tag: 'RUGBYU', label: 'Rugby Union', emoji: '\u{1F3C9}',
+      games: rug.map((e, i) => {
+        const winner = e.winner || e.team;
+        const loser = e.winner ? (e.winner === e.team ? e.opp : e.team) : e.opp;
+        const wSlug = e.winner ? (e.winner === e.team ? e.teamSlug : e.oppSlug) : e.teamSlug;
+        const lSlug = e.winner ? (e.winner === e.team ? e.oppSlug : e.teamSlug) : e.oppSlug;
+        const wp = e.winner === e.opp ? e.pa : e.pf;
+        const lp = e.winner === e.opp ? e.pf : e.pa;
+        const title = [e.competition, e.stage && e.stage !== 'Pool' ? e.stage : ''].filter(Boolean).join(' ');
+        return {
+          title,
+          matchup: e.draw ? `${e.team} drew ${e.opp} ${e.pf}-${e.pa}` : `${winner} beat ${loser} ${wp}-${lp}`,
+          note: e.city || undefined,
+          flagUrls: [flagCdnUrl(wSlug, '20x15'), flagCdnUrl(lSlug, '20x15')].filter(Boolean) as string[],
+          rank: i + 1,
+        };
+      }),
+    });
+  }
+  return out;
+}
+
 type IndexCard = { n: string; title: string; desc: string; stat: string; href: string; emoji?: string; seal?: boolean; isNew?: boolean; preview: Preview[] };
 
 type AtlasCard = { emoji: string; title: string; desc: string; href: string; sub: string; live?: boolean };
@@ -265,7 +319,7 @@ export default async function Home() {
   const posts: SubstackPost[] = await getSubstackPosts();
   const journal = posts.slice(0, 3);
   const badges = getLiveBadges();
-  const games = marqueeGames();
+  const games = [...marqueeGames(), ...ballGames()];
 
   const INDICES: IndexCard[] = [
     { n: '01', title: 'Metro Power Rankings', desc: 'Every metro on Earth, scored across sixteen weighted dimensions.', stat: '4,200+ metros', href: '/rankings', emoji: '🌐', preview: topMetros() },

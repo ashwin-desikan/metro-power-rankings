@@ -3,6 +3,7 @@ import ChampionBadge from "@/app/teams/ChampionBadge";
 import { getCurrentChampionships } from "@/lib/champions";
 import { getRivalries } from "@/lib/rivalries";
 import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
+import RugbyGreatestGames from "@/app/teams/rugby-union/RugbyGreatestGames";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -12,6 +13,7 @@ import {
   getRugbyTeamDetail,
   rugbyWinPct,
 } from "@/lib/rugbyUnion";
+import { getRugbyGamesForTeam } from "@/lib/rugbyGames";
 import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
@@ -68,6 +70,7 @@ export default async function RugbyTeamPage(
   const c = team.championships;
   const w = team.rwc;
   const h2hEntries = Object.entries(detail.h2h);
+  const teamGames = getRugbyGamesForTeam(slug);
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
@@ -203,6 +206,19 @@ export default async function RugbyTeamPage(
               ) : null}
             </div>
           </div>
+        </section>
+      ) : null}
+
+      {/* ---------------- Greatest tests ---------------- */}
+      {teamGames.length > 0 ? (
+        <section className="mb-10">
+          <h2 className="text-lg font-semibold mb-1">{team.name}&apos;s greatest tests</h2>
+          <p className="text-xs text-[var(--text-muted)] mb-3">
+            This nation&apos;s highest-rated internationals by Game Score, drawn from the all-time
+            ranking on the{" "}
+            <Link href="/teams/rugby-union#greatest-games" className="underline hover:text-[var(--accent)]">hub</Link>.
+          </p>
+          <RugbyGreatestGames games={teamGames} teamSlug={slug} />
         </section>
       ) : null}
 

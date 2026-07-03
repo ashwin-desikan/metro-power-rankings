@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
+import RugbyGreatestGames from "@/app/teams/rugby-union/RugbyGreatestGames";
 import { getAllRugbyTeams, getRugbyHub, rugbyWinPct } from "@/lib/rugbyUnion";
+import { getRugbyGames } from "@/lib/rugbyGames";
 import { getRugbyClubRolls } from "@/lib/rugbyClubs";
 import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
@@ -31,6 +33,7 @@ function spanStr(first: string | null, last: string | null): string {
 export default function RugbyUnionHubPage() {
   const hub = getRugbyHub();
   const teams = getAllRugbyTeams();
+  const rg = getRugbyGames();
   if (!hub) return null;
 
   const slugByName = new Map(teams.map((t) => [t.name, t.slug]));
@@ -78,6 +81,7 @@ export default function RugbyUnionHubPage() {
           { label: "Six Nations", href: "#six-nations" },
           { label: "Rugby Championship", href: "#rugby-championship" },
           { label: "World Cup", href: "#world-cup" },
+          { label: "Greatest Games", href: "#greatest-games" },
           { label: "Teams", href: "#teams" },
           { label: "Methodology", href: "#methodology" },
         ]}
@@ -266,6 +270,18 @@ export default function RugbyUnionHubPage() {
             </tbody>
           </table>
         </div>
+      </section>
+
+      {/* ---------------- Greatest Games ---------------- */}
+      <section className="mb-10">
+        <h2 id="greatest-games" className="text-lg font-semibold mb-1">The greatest tests</h2>
+        <p className="text-xs text-[var(--text-muted)] mb-3">
+          Every men&apos;s international since 1871 ranked by a computed Game Score: how close the match
+          was, what was at stake, and how strong both sides were on the day, with team strength measured
+          by a continuous Elo rating spanning the whole history. A star marks a curated all-time classic.
+          Filter by decade; hover a score for its components.
+        </p>
+        <RugbyGreatestGames top={rg.top} decades={rg.by_decade} limit={50} />
       </section>
 
       {/* ---------------- Teams ---------------- */}
