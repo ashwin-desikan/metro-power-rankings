@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Milton Cato",
+    "role": "Prime Minister",
+    "start": "1979-10-27",
+    "end": "1984-07-30",
+    "current": false,
+    "tenure": "4y 9m 3d",
+    "party": "SVLP; independence PM",
+    "era": null
+  },
+  {
+    "name": "James Fitz-Allen Mitchell",
+    "role": "Prime Minister",
+    "start": "1984-07-30",
+    "end": "2000-10-27",
+    "current": false,
+    "tenure": "16y 2m 27d",
+    "party": "NDP",
+    "era": null
+  },
+  {
+    "name": "Arnhim Eustace",
+    "role": "Prime Minister",
+    "start": "2000-10-27",
+    "end": "2001-03-29",
+    "current": false,
+    "tenure": "5m 2d",
+    "party": "NDP",
+    "era": null
+  },
+  {
+    "name": "Ralph Gonsalves",
+    "role": "Prime Minister",
+    "start": "2001-03-29",
+    "end": "2025-11-28",
+    "current": false,
+    "tenure": "24y 7m 30d",
+    "party": "ULP",
+    "era": null
+  },
+  {
+    "name": "Godwin Friday",
+    "role": "Prime Minister",
+    "start": "2025-11-28",
+    "end": null,
+    "current": true,
+    "tenure": "7m 5d",
+    "party": "NDP",
+    "era": null
+  }
+]

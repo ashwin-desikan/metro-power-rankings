@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Vere Bird",
+    "role": "Prime Minister",
+    "start": "1981-11-01",
+    "end": "1994-03-08",
+    "current": false,
+    "tenure": "12y 4m 7d",
+    "party": "ALP; independence PM",
+    "era": null
+  },
+  {
+    "name": "Lester Bird",
+    "role": "Prime Minister",
+    "start": "1994-03-08",
+    "end": "2004-03-24",
+    "current": false,
+    "tenure": "10y 16d",
+    "party": "ALP",
+    "era": null
+  },
+  {
+    "name": "Baldwin Spencer",
+    "role": "Prime Minister",
+    "start": "2004-03-24",
+    "end": "2014-06-13",
+    "current": false,
+    "tenure": "10y 2m 20d",
+    "party": "UPP",
+    "era": null
+  },
+  {
+    "name": "Gaston Browne",
+    "role": "Prime Minister",
+    "start": "2014-06-13",
+    "end": null,
+    "current": true,
+    "tenure": "12y 20d",
+    "party": "ABLP",
+    "era": null
+  }
+]

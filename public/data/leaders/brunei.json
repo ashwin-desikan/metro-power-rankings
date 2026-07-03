@@ -1,0 +1,22 @@
+[
+  {
+    "name": "👑 Omar Ali Saifuddien III",
+    "role": "Monarch",
+    "start": "1950-06-04",
+    "end": "1967-10-04",
+    "current": false,
+    "tenure": "17y 4m 0d",
+    "party": "abdicated",
+    "era": null
+  },
+  {
+    "name": "👑 Hassanal Bolkiah",
+    "role": "Monarch",
+    "start": "1967-10-05",
+    "end": null,
+    "current": true,
+    "tenure": "58y 8m 28d",
+    "party": null,
+    "era": null
+  }
+]

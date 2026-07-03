@@ -655,9 +655,13 @@
     "since": "2024-01-01"
   },
   "libya": {
-    "name": "Aguila Saleh Issa",
-    "role": "Pres.",
-    "since": "2014-08-05"
+    "name": "Abdul Hamid Dbeibeh",
+    "role": "PM",
+    "second": {
+      "name": "Mohamed al-Menfi",
+      "role": "Head of State"
+    },
+    "since": "2021-03-15"
   },
   "liechtenstein": {
     "name": "Daniel Risch",
@@ -990,9 +994,9 @@
     "since": "2017-07-21"
   },
   "san-marino": {
-    "name": "Maria Luisa Berti",
-    "role": "Pres.",
-    "since": "2024-10-01"
+    "name": "Luca Beccari",
+    "role": "Sec. of State",
+    "since": "2020-01-08"
   },
   "sao-tome-and-principe": {
     "name": "Carlos Vila Nova",
@@ -1118,7 +1122,8 @@
     "second": {
       "name": "👑 Charles III",
       "role": "Monarch"
-    }
+    },
+    "since": "2025-11-28"
   },
   "sudan": {
     "name": "⚠️ Abdel Fattah al-Burhan",
