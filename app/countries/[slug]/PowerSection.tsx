@@ -14,7 +14,7 @@ export default function PowerSection({ series, name }: { series: PowerPoint[]; n
   const [hoverYear, setHoverYear] = useState<number | null>(null);
   // material sub-indices exist only where CINC does (through 2016)
   const pts = useMemo(
-    () => series.filter((p) => p.lat != null && p.rec != null && p.year <= 2016) as Array<Required<PowerPoint>>,
+    () => series.filter((p) => p.lat != null && p.rec != null && p.year <= 2016) as Array<PowerPoint & { lat: number; rec: number }>,
     [series],
   );
   if (!series.length) return null;

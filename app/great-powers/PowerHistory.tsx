@@ -113,7 +113,7 @@ export default function PowerHistory({ data }: { data: Data }) {
 
   // divergence (latent vs recognised) for the selected year
   const div = useMemo(() => {
-    const raw = (byYear[String(year)] ?? []).filter((r) => r.lat != null && r.rec != null) as Array<Required<Row>>;
+    const raw = (byYear[String(year)] ?? []).filter((r) => r.lat != null && r.rec != null) as Array<Row & { lat: number; rec: number }>;
     if (raw.length < 4) return null;
     const latRank = new Map([...raw].sort((a, b) => b.lat - a.lat).map((r, i) => [r.slug, i + 1] as const));
     const recRank = new Map([...raw].sort((a, b) => b.rec - a.rec).map((r, i) => [r.slug, i + 1] as const));
