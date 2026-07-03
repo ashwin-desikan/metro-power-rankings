@@ -1,6 +1,6 @@
 {
  "source": "API-Football (api-sports.io) league=1 season=2026",
- "as_of": "2026-07-02T10:12:05Z",
+ "as_of": "2026-07-03T10:07:08Z",
  "events": {
   "apisports-1489369": {
    "round": "Group",
@@ -738,6 +738,33 @@
    "b_slug": "bosnia-herzegovina",
    "b_score": 0,
    "winner_slug": "united-states",
+   "completed": true
+  },
+  "apisports-1567311": {
+   "round": "Round of 32",
+   "a_slug": "spain",
+   "a_score": 3,
+   "b_slug": "austria",
+   "b_score": 0,
+   "winner_slug": "spain",
+   "completed": true
+  },
+  "apisports-1567309": {
+   "round": "Round of 32",
+   "a_slug": "portugal",
+   "a_score": 2,
+   "b_slug": "croatia",
+   "b_score": 1,
+   "winner_slug": "portugal",
+   "completed": true
+  },
+  "apisports-1567312": {
+   "round": "Round of 32",
+   "a_slug": "switzerland",
+   "a_score": 2,
+   "b_slug": "algeria",
+   "b_score": 0,
+   "winner_slug": "switzerland",
    "completed": true
   }
  }
