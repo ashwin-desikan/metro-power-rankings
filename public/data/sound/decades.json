@@ -632,9 +632,9 @@
    {
     "slug": "london",
     "metro": "London",
-    "us": 23.6,
-    "uk": 129.6,
-    "combined": 200.3,
+    "us": 23.2,
+    "uk": 125.1,
+    "combined": 194.6,
     "rank": 2
    },
    {
@@ -902,12 +902,20 @@
     "rank": 35
    },
    {
+    "slug": "leicester",
+    "metro": "Leicester",
+    "us": 0.4,
+    "uk": 4.5,
+    "combined": 5.7,
+    "rank": 36
+   },
+   {
     "slug": "norfolk",
     "metro": "Norfolk",
     "us": 1.8,
     "uk": 0.2,
     "combined": 5.6,
-    "rank": 36
+    "rank": 37
    },
    {
     "slug": "newcastle",
@@ -915,7 +923,7 @@
     "us": 0.8,
     "uk": 3.0,
     "combined": 5.3,
-    "rank": 37
+    "rank": 38
    },
    {
     "slug": "cincinnati",
@@ -923,7 +931,7 @@
     "us": 1.3,
     "uk": 1.1,
     "combined": 5.2,
-    "rank": 38
+    "rank": 39
    },
    {
     "slug": "sydney",
@@ -931,14 +939,6 @@
     "us": 0.3,
     "uk": 4.1,
     "combined": 5.0,
-    "rank": 39
-   },
-   {
-    "slug": "beaumont",
-    "metro": "Beaumont",
-    "us": 1.1,
-    "uk": 1.5,
-    "combined": 4.8,
     "rank": 40
    }
   ],
@@ -1252,9 +1252,9 @@
    {
     "slug": "london",
     "metro": "London",
-    "us": 40.1,
-    "uk": 116.5,
-    "combined": 236.9,
+    "us": 37.8,
+    "uk": 113.1,
+    "combined": 226.5,
     "rank": 1
    },
    {
@@ -1474,12 +1474,20 @@
     "rank": 28
    },
    {
+    "slug": "brighton-hove",
+    "metro": "Brighton & Hove",
+    "us": 1.5,
+    "uk": 3.1,
+    "combined": 7.7,
+    "rank": 29
+   },
+   {
     "slug": "winnipeg",
     "metro": "Winnipeg",
     "us": 2.5,
     "uk": 0.0,
     "combined": 7.6,
-    "rank": 29
+    "rank": 30
    },
    {
     "slug": "swindon",
@@ -1487,7 +1495,7 @@
     "us": 1.6,
     "uk": 2.6,
     "combined": 7.4,
-    "rank": 30
+    "rank": 31
    },
    {
     "slug": "edinburgh",
@@ -1495,7 +1503,7 @@
     "us": 1.0,
     "uk": 4.4,
     "combined": 7.3,
-    "rank": 31
+    "rank": 32
    },
    {
     "slug": "raleigh-durham",
@@ -1503,7 +1511,7 @@
     "us": 2.2,
     "uk": 0.5,
     "combined": 7.1,
-    "rank": 32
+    "rank": 33
    },
    {
     "slug": "vancouver",
@@ -1511,7 +1519,7 @@
     "us": 2.0,
     "uk": 1.0,
     "combined": 7.0,
-    "rank": 33
+    "rank": 34
    },
    {
     "slug": "st-louis",
@@ -1519,7 +1527,7 @@
     "us": 1.6,
     "uk": 1.1,
     "combined": 6.0,
-    "rank": 34
+    "rank": 35
    },
    {
     "slug": "flint",
@@ -1527,7 +1535,7 @@
     "us": 1.9,
     "uk": 0.0,
     "combined": 5.7,
-    "rank": 35
+    "rank": 36
    },
    {
     "slug": "little-rock",
@@ -1535,7 +1543,7 @@
     "us": 1.5,
     "uk": 1.2,
     "combined": 5.6,
-    "rank": 36
+    "rank": 37
    },
    {
     "slug": "swansea",
@@ -1543,7 +1551,7 @@
     "us": 1.3,
     "uk": 1.3,
     "combined": 5.3,
-    "rank": 37
+    "rank": 38
    },
    {
     "slug": "beckley",
@@ -1551,22 +1559,14 @@
     "us": 1.7,
     "uk": 0.2,
     "combined": 5.3,
-    "rank": 38
-   },
-   {
-    "slug": "kingston",
-    "metro": "Kingston",
-    "us": 0.6,
-    "uk": 3.0,
-    "combined": 4.9,
     "rank": 39
    },
    {
-    "slug": "tampa",
-    "metro": "Tampa",
-    "us": 1.3,
-    "uk": 0.6,
-    "combined": 4.6,
+    "slug": "leicester",
+    "metro": "Leicester",
+    "us": 0.2,
+    "uk": 4.4,
+    "combined": 5.0,
     "rank": 40
    }
   ],
@@ -1880,9 +1880,9 @@
    {
     "slug": "london",
     "metro": "London",
-    "us": 62.1,
-    "uk": 139.2,
-    "combined": 325.5,
+    "us": 60.9,
+    "uk": 138.3,
+    "combined": 320.8,
     "rank": 1
    },
    {
@@ -1942,19 +1942,19 @@
     "rank": 8
    },
    {
+    "slug": "liverpool",
+    "metro": "Liverpool",
+    "us": 8.0,
+    "uk": 15.1,
+    "combined": 39.2,
+    "rank": 9
+   },
+   {
     "slug": "boston",
     "metro": "Boston",
     "us": 11.7,
     "uk": 3.5,
     "combined": 38.7,
-    "rank": 9
-   },
-   {
-    "slug": "liverpool",
-    "metro": "Liverpool",
-    "us": 6.6,
-    "uk": 12.8,
-    "combined": 32.8,
     "rank": 10
    },
    {
@@ -1998,20 +1998,12 @@
     "rank": 15
    },
    {
-    "slug": "manchester",
-    "metro": "Manchester",
-    "us": 2.8,
-    "uk": 7.5,
-    "combined": 15.8,
-    "rank": 16
-   },
-   {
     "slug": "miami",
     "metro": "Miami",
     "us": 4.6,
     "uk": 1.9,
     "combined": 15.7,
-    "rank": 17
+    "rank": 16
    },
    {
     "slug": "sydney",
@@ -2019,7 +2011,7 @@
     "us": 4.6,
     "uk": 0.3,
     "combined": 14.3,
-    "rank": 18
+    "rank": 17
    },
    {
     "slug": "st-louis",
@@ -2027,7 +2019,7 @@
     "us": 3.5,
     "uk": 1.9,
     "combined": 12.5,
-    "rank": 19
+    "rank": 18
    },
    {
     "slug": "dublin",
@@ -2035,7 +2027,7 @@
     "us": 2.1,
     "uk": 5.8,
     "combined": 12.2,
-    "rank": 20
+    "rank": 19
    },
    {
     "slug": "houston",
@@ -2043,7 +2035,7 @@
     "us": 3.8,
     "uk": 0.7,
     "combined": 12.2,
-    "rank": 21
+    "rank": 20
    },
    {
     "slug": "indianapolis",
@@ -2051,7 +2043,7 @@
     "us": 3.8,
     "uk": 0.0,
     "combined": 11.4,
-    "rank": 22
+    "rank": 21
    },
    {
     "slug": "phoenix",
@@ -2059,7 +2051,7 @@
     "us": 3.0,
     "uk": 0.8,
     "combined": 9.8,
-    "rank": 23
+    "rank": 22
    },
    {
     "slug": "bristol",
@@ -2067,7 +2059,7 @@
     "us": 2.4,
     "uk": 2.5,
     "combined": 9.7,
-    "rank": 24
+    "rank": 23
    },
    {
     "slug": "munich",
@@ -2075,6 +2067,14 @@
     "us": 2.7,
     "uk": 1.5,
     "combined": 9.5,
+    "rank": 24
+   },
+   {
+    "slug": "manchester",
+    "metro": "Manchester",
+    "us": 1.4,
+    "uk": 5.3,
+    "combined": 9.4,
     "rank": 25
    },
    {
@@ -2588,9 +2588,9 @@
    {
     "slug": "manchester",
     "metro": "Manchester",
-    "us": 1.1,
-    "uk": 23.5,
-    "combined": 26.9,
+    "us": 0.9,
+    "uk": 23.4,
+    "combined": 26.2,
     "rank": 11
    },
    {
@@ -2778,19 +2778,19 @@
     "rank": 34
    },
    {
+    "slug": "liverpool",
+    "metro": "Liverpool",
+    "us": 0.4,
+    "uk": 5.9,
+    "combined": 7.2,
+    "rank": 35
+   },
+   {
     "slug": "berlin",
     "metro": "Berlin",
     "us": 2.2,
     "uk": 0.2,
     "combined": 6.7,
-    "rank": 35
-   },
-   {
-    "slug": "liverpool",
-    "metro": "Liverpool",
-    "us": 0.3,
-    "uk": 5.7,
-    "combined": 6.5,
     "rank": 36
    },
    {
@@ -3161,8 +3161,8 @@
     "slug": "london",
     "metro": "London",
     "us": 8.5,
-    "uk": 102.0,
-    "combined": 127.6,
+    "uk": 101.7,
+    "combined": 127.4,
     "rank": 4
    },
    {
@@ -3764,9 +3764,9 @@
    {
     "slug": "london",
     "metro": "London",
-    "us": 25.8,
-    "uk": 103.3,
-    "combined": 180.8,
+    "us": 23.3,
+    "uk": 96.6,
+    "combined": 166.4,
     "rank": 1
    },
    {
@@ -3962,12 +3962,20 @@
     "rank": 25
    },
    {
+    "slug": "hereford",
+    "metro": "Hereford",
+    "us": 2.5,
+    "uk": 4.0,
+    "combined": 11.6,
+    "rank": 26
+   },
+   {
     "slug": "minneapolis",
     "metro": "Minneapolis",
     "us": 3.4,
     "uk": 1.1,
     "combined": 11.4,
-    "rank": 26
+    "rank": 27
    },
    {
     "slug": "columbus",
@@ -3975,7 +3983,7 @@
     "us": 3.6,
     "uk": 0.5,
     "combined": 11.4,
-    "rank": 27
+    "rank": 28
    },
    {
     "slug": "seattle",
@@ -3983,7 +3991,7 @@
     "us": 3.1,
     "uk": 1.5,
     "combined": 10.9,
-    "rank": 28
+    "rank": 29
    },
    {
     "slug": "norfolk",
@@ -3991,7 +3999,7 @@
     "us": 2.9,
     "uk": 2.1,
     "combined": 10.7,
-    "rank": 29
+    "rank": 30
    },
    {
     "slug": "kingston",
@@ -3999,7 +4007,7 @@
     "us": 2.5,
     "uk": 3.1,
     "combined": 10.7,
-    "rank": 30
+    "rank": 31
    },
    {
     "slug": "auckland",
@@ -4007,7 +4015,7 @@
     "us": 3.3,
     "uk": 0.9,
     "combined": 10.7,
-    "rank": 31
+    "rank": 32
    },
    {
     "slug": "leeds-bradford",
@@ -4015,7 +4023,7 @@
     "us": 2.2,
     "uk": 3.7,
     "combined": 10.2,
-    "rank": 32
+    "rank": 33
    },
    {
     "slug": "glasgow",
@@ -4023,7 +4031,7 @@
     "us": 2.1,
     "uk": 3.9,
     "combined": 10.1,
-    "rank": 33
+    "rank": 34
    },
    {
     "slug": "sydney",
@@ -4031,7 +4039,7 @@
     "us": 2.3,
     "uk": 2.5,
     "combined": 9.3,
-    "rank": 34
+    "rank": 35
    },
    {
     "slug": "copenhagen",
@@ -4039,7 +4047,7 @@
     "us": 2.1,
     "uk": 1.7,
     "combined": 8.0,
-    "rank": 35
+    "rank": 36
    },
    {
     "slug": "san-francisco-san-jose",
@@ -4047,7 +4055,7 @@
     "us": 2.2,
     "uk": 0.8,
     "combined": 7.5,
-    "rank": 36
+    "rank": 37
    },
    {
     "slug": "melbourne",
@@ -4055,7 +4063,7 @@
     "us": 1.8,
     "uk": 2.0,
     "combined": 7.4,
-    "rank": 37
+    "rank": 38
    },
    {
     "slug": "adelaide",
@@ -4063,7 +4071,7 @@
     "us": 1.7,
     "uk": 2.1,
     "combined": 7.4,
-    "rank": 38
+    "rank": 39
    },
    {
     "slug": "vancouver",
@@ -4071,14 +4079,6 @@
     "us": 1.9,
     "uk": 1.4,
     "combined": 7.1,
-    "rank": 39
-   },
-   {
-    "slug": "dayton",
-    "metro": "Dayton",
-    "us": 1.9,
-    "uk": 1.2,
-    "combined": 7.0,
     "rank": 40
    }
   ],
@@ -4409,8 +4409,8 @@
     "slug": "london",
     "metro": "London",
     "us": 9.6,
-    "uk": 45.7,
-    "combined": 74.6,
+    "uk": 45.1,
+    "combined": 74.0,
     "rank": 3
    },
    {

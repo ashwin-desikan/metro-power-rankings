@@ -6799,7 +6799,7 @@
  },
  "london": {
   "metro": "London",
-  "count": 596,
+  "count": 582,
   "number_ones": [
    {
     "single": "Hoots Mon",
@@ -7210,12 +7210,6 @@
     "year": 1967
    },
    {
-    "single": "Release Me",
-    "artist": "Engelbert Humperdinck",
-    "charts": "UK",
-    "year": 1967
-   },
-   {
     "single": "Ruby Tuesday",
     "artist": "The Rolling Stones",
     "charts": "US",
@@ -7224,12 +7218,6 @@
    {
     "single": "Silence Is Golden",
     "artist": "The Tremeloes",
-    "charts": "UK",
-    "year": 1967
-   },
-   {
-    "single": "The Last Waltz",
-    "artist": "Engelbert Humperdinck",
     "charts": "UK",
     "year": 1967
    },
@@ -7606,12 +7594,6 @@
     "year": 1975
    },
    {
-    "single": "Pick Up the Pieces",
-    "artist": "Average White Band",
-    "charts": "US",
-    "year": 1975
-   },
-   {
     "single": "Sailing",
     "artist": "Rod Stewart",
     "charts": "UK",
@@ -7666,12 +7648,6 @@
     "year": 1976
    },
    {
-    "single": "You Make Me Feel Like Dancing",
-    "artist": "Leo Sayer",
-    "charts": "US",
-    "year": 1976
-   },
-   {
     "single": "Angelo",
     "artist": "Brotherhood of Man",
     "charts": "UK",
@@ -7711,12 +7687,6 @@
     "single": "So You Win Again",
     "artist": "Hot Chocolate",
     "charts": "UK",
-    "year": 1977
-   },
-   {
-    "single": "When I Need You",
-    "artist": "Leo Sayer",
-    "charts": "UK / US",
     "year": 1977
    },
    {
@@ -9280,12 +9250,6 @@
     "year": 2006
    },
    {
-    "single": "Thunder in My Heart Again",
-    "artist": "Leo Sayer",
-    "charts": "UK",
-    "year": 2006
-   },
-   {
     "single": "About You Now",
     "artist": "Sugababes",
     "charts": "UK",
@@ -9832,12 +9796,6 @@
     "year": 2012
    },
    {
-    "single": "Burn",
-    "artist": "Ellie Goulding",
-    "charts": "UK",
-    "year": 2013
-   },
-   {
     "single": "I Love It",
     "artist": "Charli XCX",
     "charts": "UK",
@@ -9965,12 +9923,6 @@
    },
    {
     "single": "Rather Be",
-    "artist": "Clean Bandit",
-    "charts": "UK",
-    "year": 2014
-   },
-   {
-    "single": "Rather Be",
     "artist": "Jess Glynne",
     "charts": "UK",
     "year": 2014
@@ -10060,12 +10012,6 @@
     "year": 2015
    },
    {
-    "single": "Love Me like You Do",
-    "artist": "Ellie Goulding",
-    "charts": "UK",
-    "year": 2015
-   },
-   {
     "single": "Not Letting Go",
     "artist": "Tinie Tempah",
     "charts": "UK",
@@ -10103,12 +10049,6 @@
    },
    {
     "single": "Rockabye",
-    "artist": "Clean Bandit",
-    "charts": "UK",
-    "year": 2016
-   },
-   {
-    "single": "Rockabye",
     "artist": "Anne-Marie",
     "charts": "UK",
     "year": 2016
@@ -10122,12 +10062,6 @@
    {
     "single": "New Rules",
     "artist": "Dua Lipa",
-    "charts": "UK",
-    "year": 2017
-   },
-   {
-    "single": "Symphony",
-    "artist": "Clean Bandit",
     "charts": "UK",
     "year": 2017
    },
@@ -10168,12 +10102,6 @@
     "year": 2018
    },
    {
-    "single": "Solo",
-    "artist": "Clean Bandit",
-    "charts": "UK",
-    "year": 2018
-   },
-   {
     "single": "These Days",
     "artist": "Rudimental",
     "charts": "UK",
@@ -10194,12 +10122,6 @@
    {
     "single": "Own It",
     "artist": "Stormzy",
-    "charts": "UK",
-    "year": 2019
-   },
-   {
-    "single": "River",
-    "artist": "Ellie Goulding",
     "charts": "UK",
     "year": 2019
    },
@@ -10302,12 +10224,6 @@
    {
     "single": "Dance the Night",
     "artist": "Dua Lipa",
-    "charts": "UK",
-    "year": 2023
-   },
-   {
-    "single": "Miracle",
-    "artist": "Ellie Goulding",
     "charts": "UK",
     "year": 2023
    },
@@ -10501,7 +10417,7 @@
  },
  "liverpool": {
   "metro": "Liverpool",
-  "count": 69,
+  "count": 71,
   "number_ones": [
    {
     "single": "Starry Eyed",
@@ -10852,6 +10768,18 @@
     "year": 1987
    },
    {
+    "single": "Never Gonna Give You Up",
+    "artist": "Rick Astley",
+    "charts": "UK / US",
+    "year": 1987
+   },
+   {
+    "single": "Together Forever",
+    "artist": "Rick Astley",
+    "charts": "US",
+    "year": 1988
+   },
+   {
     "single": "Ferry Cross the Mersey",
     "artist": "The Christians, Holly Johnson, Paul McCartney, Gerry Marsden & Stock Aitken Waterman",
     "charts": "UK",
@@ -11035,7 +10963,7 @@
  },
  "manchester": {
   "metro": "Manchester",
-  "count": 62,
+  "count": 60,
   "number_ones": [
    {
     "single": "I'm into Something Good",
@@ -11116,21 +11044,9 @@
     "year": 1986
    },
    {
-    "single": "Never Gonna Give You Up",
-    "artist": "Rick Astley",
-    "charts": "UK / US",
-    "year": 1987
-   },
-   {
     "single": "He Ain't Heavy, He's My Brother",
     "artist": "The Hollies",
     "charts": "UK",
-    "year": 1988
-   },
-   {
-    "single": "Together Forever",
-    "artist": "Rick Astley",
-    "charts": "US",
     "year": 1988
    },
    {
@@ -13595,6 +13511,18 @@
    }
   ]
  },
+ "dundee": {
+  "metro": "Dundee",
+  "count": 1,
+  "number_ones": [
+   {
+    "single": "Pick Up the Pieces",
+    "artist": "Average White Band",
+    "charts": "US",
+    "year": 1975
+   }
+  ]
+ },
  "little-rock": {
   "metro": "Little Rock",
   "count": 3,
@@ -13835,6 +13763,48 @@
    }
   ]
  },
+ "brighton-hove": {
+  "metro": "Brighton & Hove",
+  "count": 6,
+  "number_ones": [
+   {
+    "single": "You Make Me Feel Like Dancing",
+    "artist": "Leo Sayer",
+    "charts": "US",
+    "year": 1976
+   },
+   {
+    "single": "When I Need You",
+    "artist": "Leo Sayer",
+    "charts": "UK / US",
+    "year": 1977
+   },
+   {
+    "single": "Dub Be Good to Me",
+    "artist": "Beats International",
+    "charts": "UK",
+    "year": 1990
+   },
+   {
+    "single": "Praise You",
+    "artist": "Fatboy Slim",
+    "charts": "UK",
+    "year": 1999
+   },
+   {
+    "single": "Thunder in My Heart Again",
+    "artist": "Leo Sayer",
+    "charts": "UK",
+    "year": 2006
+   },
+   {
+    "single": "Heart Skips a Beat",
+    "artist": "Rizzle Kicks",
+    "charts": "UK",
+    "year": 2011
+   }
+  ]
+ },
  "providence": {
   "metro": "Providence",
   "count": 2,
@@ -14023,7 +13993,7 @@
  },
  "cambridge": {
   "metro": "Cambridge",
-  "count": 2,
+  "count": 6,
   "number_ones": [
    {
     "single": "Another Brick in the Wall (Part 2)",
@@ -14036,6 +14006,30 @@
     "artist": "Pink Floyd",
     "charts": "US",
     "year": 1980
+   },
+   {
+    "single": "Rather Be",
+    "artist": "Clean Bandit",
+    "charts": "UK",
+    "year": 2014
+   },
+   {
+    "single": "Rockabye",
+    "artist": "Clean Bandit",
+    "charts": "UK",
+    "year": 2016
+   },
+   {
+    "single": "Symphony",
+    "artist": "Clean Bandit",
+    "charts": "UK",
+    "year": 2017
+   },
+   {
+    "single": "Solo",
+    "artist": "Clean Bandit",
+    "charts": "UK",
+    "year": 2018
    }
   ]
  },
@@ -16085,6 +16079,36 @@
    }
   ]
  },
+ "leicester": {
+  "metro": "Leicester",
+  "count": 4,
+  "number_ones": [
+   {
+    "single": "Release Me",
+    "artist": "Engelbert Humperdinck",
+    "charts": "UK",
+    "year": 1967
+   },
+   {
+    "single": "The Last Waltz",
+    "artist": "Engelbert Humperdinck",
+    "charts": "UK",
+    "year": 1967
+   },
+   {
+    "single": "Under the Moon of Love",
+    "artist": "Showaddywaddy",
+    "charts": "UK",
+    "year": 1976
+   },
+   {
+    "single": "Return of the Mack",
+    "artist": "Mark Morrison",
+    "charts": "UK",
+    "year": 1996
+   }
+  ]
+ },
  "san-diego": {
   "metro": "San Diego",
   "count": 1,
@@ -16181,24 +16205,6 @@
    }
   ]
  },
- "leicester": {
-  "metro": "Leicester",
-  "count": 2,
-  "number_ones": [
-   {
-    "single": "Under the Moon of Love",
-    "artist": "Showaddywaddy",
-    "charts": "UK",
-    "year": 1976
-   },
-   {
-    "single": "Return of the Mack",
-    "artist": "Mark Morrison",
-    "charts": "UK",
-    "year": 1996
-   }
-  ]
- },
  "berlin": {
   "metro": "Berlin",
   "count": 3,
@@ -16292,30 +16298,6 @@
     "artist": "Black Box",
     "charts": "UK",
     "year": 1989
-   }
-  ]
- },
- "brighton-hove": {
-  "metro": "Brighton & Hove",
-  "count": 3,
-  "number_ones": [
-   {
-    "single": "Dub Be Good to Me",
-    "artist": "Beats International",
-    "charts": "UK",
-    "year": 1990
-   },
-   {
-    "single": "Praise You",
-    "artist": "Fatboy Slim",
-    "charts": "UK",
-    "year": 1999
-   },
-   {
-    "single": "Heart Skips a Beat",
-    "artist": "Rizzle Kicks",
-    "charts": "UK",
-    "year": 2011
    }
   ]
  },
@@ -16586,6 +16568,36 @@
     "artist": "Iyaz",
     "charts": "UK",
     "year": 2010
+   }
+  ]
+ },
+ "hereford": {
+  "metro": "Hereford",
+  "count": 4,
+  "number_ones": [
+   {
+    "single": "Burn",
+    "artist": "Ellie Goulding",
+    "charts": "UK",
+    "year": 2013
+   },
+   {
+    "single": "Love Me like You Do",
+    "artist": "Ellie Goulding",
+    "charts": "UK",
+    "year": 2015
+   },
+   {
+    "single": "River",
+    "artist": "Ellie Goulding",
+    "charts": "UK",
+    "year": 2019
+   },
+   {
+    "single": "Miracle",
+    "artist": "Ellie Goulding",
+    "charts": "UK",
+    "year": 2023
    }
   ]
  },

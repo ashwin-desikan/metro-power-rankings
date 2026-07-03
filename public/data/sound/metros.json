@@ -4,12 +4,12 @@
   "metro": "London",
   "country": "United Kingdom",
   "state": "Greater London",
-  "us_score": 195.0,
-  "uk_score": 740.1,
-  "album_score": 4423.6,
-  "prestige_score": 388.8,
-  "combined": 4912.4,
-  "artist_count": 598,
+  "us_score": 188.5,
+  "uk_score": 723.8,
+  "album_score": 4319.7,
+  "prestige_score": 385.0,
+  "combined": 4805.1,
+  "artist_count": 591,
   "by_decade": {
    "1950s": {
     "us": 0.0,
@@ -17,19 +17,19 @@
     "combined": 17.7
    },
    "1960s": {
-    "us": 23.6,
-    "uk": 129.6,
-    "combined": 200.3
+    "us": 23.2,
+    "uk": 125.1,
+    "combined": 194.6
    },
    "1970s": {
-    "us": 40.1,
-    "uk": 116.5,
-    "combined": 236.9
+    "us": 37.8,
+    "uk": 113.1,
+    "combined": 226.5
    },
    "1980s": {
-    "us": 62.1,
-    "uk": 139.2,
-    "combined": 325.5
+    "us": 60.9,
+    "uk": 138.3,
+    "combined": 320.8
    },
    "1990s": {
     "us": 25.2,
@@ -38,18 +38,18 @@
    },
    "2000s": {
     "us": 8.5,
-    "uk": 102.0,
-    "combined": 127.6
+    "uk": 101.7,
+    "combined": 127.4
    },
    "2010s": {
-    "us": 25.8,
-    "uk": 103.3,
-    "combined": 180.8
+    "us": 23.3,
+    "uk": 96.6,
+    "combined": 166.4
    },
    "2020s": {
     "us": 9.6,
-    "uk": 45.7,
-    "combined": 74.6
+    "uk": 45.1,
+    "combined": 74.0
    }
   },
   "top_artists": [
@@ -235,14 +235,6 @@
     "chart": "UK / US"
    },
    {
-    "single": "Love Me like You Do",
-    "artist": "Ellie Goulding",
-    "score": 2.04,
-    "peak": 1,
-    "year": 2015,
-    "chart": "UK / US"
-   },
-   {
     "single": "Fairytale of New York",
     "artist": "Kirsty MacColl",
     "score": 2.021,
@@ -329,11 +321,19 @@
     "peak": 1,
     "year": 1969,
     "chart": "UK / US"
+   },
+   {
+    "single": "Tom Dooley",
+    "artist": "Lonnie Donegan",
+    "score": 1.648,
+    "peak": 3,
+    "year": 1958,
+    "chart": "UK"
    }
   ],
   "signature_decade": "1980s",
-  "distinctiveness": 1.64,
-  "score_per_artist": 8.2,
+  "distinctiveness": 1.66,
+  "score_per_artist": 8.1,
   "rank": 1
  },
  {
@@ -1018,8 +1018,8 @@
   "us_score": 113.7,
   "uk_score": 68.4,
   "album_score": 691.6,
-  "prestige_score": 74.8,
-  "combined": 1004.0,
+  "prestige_score": 75.5,
+  "combined": 1005.6,
   "artist_count": 64,
   "by_decade": {
    "1950s": {
@@ -1135,8 +1135,8 @@
     "combined": 8.6
    },
    {
-    "name": "Jack Scott",
-    "slug": "jack-scott",
+    "name": "The Stooges",
+    "slug": "the-stooges",
     "combined": 7.0
    }
   ],
@@ -1467,13 +1467,13 @@
     "combined": 10.3
    },
    {
-    "name": "Jody Watley",
-    "slug": "jody-watley",
+    "name": "Survivor",
+    "slug": "survivor",
     "combined": 10.3
    },
    {
-    "name": "Survivor",
-    "slug": "survivor",
+    "name": "Jody Watley",
+    "slug": "jody-watley",
     "combined": 10.3
    }
   ],
@@ -2695,12 +2695,12 @@
   "metro": "Liverpool",
   "country": "United Kingdom",
   "state": "Merseyside",
-  "us_score": 33.5,
-  "uk_score": 68.9,
-  "album_score": 550.3,
-  "prestige_score": 61.3,
-  "combined": 646.6,
-  "artist_count": 39,
+  "us_score": 35.1,
+  "uk_score": 71.3,
+  "album_score": 590.3,
+  "prestige_score": 62.0,
+  "combined": 679.5,
+  "artist_count": 40,
   "by_decade": {
    "1950s": {
     "us": 0.0,
@@ -2718,14 +2718,14 @@
     "combined": 31.6
    },
    "1980s": {
-    "us": 6.6,
-    "uk": 12.8,
-    "combined": 32.8
+    "us": 8.0,
+    "uk": 15.1,
+    "combined": 39.2
    },
    "1990s": {
-    "us": 0.3,
-    "uk": 5.7,
-    "combined": 6.5
+    "us": 0.4,
+    "uk": 5.9,
+    "combined": 7.2
    },
    "2000s": {
     "us": 0.0,
@@ -2758,6 +2758,11 @@
     "name": "Paul McCartney",
     "slug": "paul-mccartney",
     "combined": 43.1
+   },
+   {
+    "name": "Rick Astley",
+    "slug": "rick-astley",
+    "combined": 32.8
    },
    {
     "name": "George Harrison",
@@ -2813,11 +2818,6 @@
     "name": "Billy J. Kramer & The Dakotas",
     "slug": "billy-j-kramer-and-the-dakotas",
     "combined": 2.3
-   },
-   {
-    "name": "Ken Dodd",
-    "slug": "ken-dodd",
-    "combined": 1.9
    }
   ],
   "top_songs": [
@@ -2934,6 +2934,14 @@
     "chart": "UK / US"
    },
    {
+    "single": "Never Gonna Give You Up",
+    "artist": "Rick Astley",
+    "score": 1.296,
+    "peak": 1,
+    "year": 1987,
+    "chart": "UK / US"
+   },
+   {
     "single": "Three Lions",
     "artist": "Baddiel, Skinner & The Lightning Seeds",
     "score": 1.269,
@@ -3012,19 +3020,11 @@
     "peak": 1,
     "year": 1965,
     "chart": "UK"
-   },
-   {
-    "single": "Day Tripper",
-    "artist": "The Beatles",
-    "score": 0.966,
-    "peak": 1,
-    "year": 1965,
-    "chart": "UK / US"
    }
   ],
   "signature_decade": "1960s",
-  "distinctiveness": 3.74,
-  "score_per_artist": 16.6,
+  "distinctiveness": 3.59,
+  "score_per_artist": 17.0,
   "rank": 9
  },
  {
@@ -3132,23 +3132,23 @@
     "combined": 5.1
    },
    {
-    "name": "Magic!",
-    "slug": "magic",
-    "combined": 5.0
-   },
-   {
     "name": "Glass Tiger",
     "slug": "glass-tiger",
     "combined": 5.0
    },
    {
-    "name": "Snow",
-    "slug": "snow",
-    "combined": 4.4
+    "name": "Magic!",
+    "slug": "magic",
+    "combined": 5.0
    },
    {
     "name": "Deborah Cox",
     "slug": "deborah-cox",
+    "combined": 4.4
+   },
+   {
+    "name": "Snow",
+    "slug": "snow",
     "combined": 4.4
    }
   ],
@@ -4802,13 +4802,13 @@
     "combined": 5.6
    },
    {
-    "name": "Freddy Cannon",
-    "slug": "freddy-cannon",
+    "name": "New Edition",
+    "slug": "new-edition",
     "combined": 5.1
    },
    {
-    "name": "New Edition",
-    "slug": "new-edition",
+    "name": "Freddy Cannon",
+    "slug": "freddy-cannon",
     "combined": 5.1
    },
    {
@@ -5028,338 +5028,6 @@
   "distinctiveness": 2.16,
   "score_per_artist": 12.3,
   "rank": 15
- },
- {
-  "slug": "manchester",
-  "metro": "Manchester",
-  "country": "United Kingdom",
-  "state": "Greater Manchester",
-  "us_score": 17.6,
-  "uk_score": 74.5,
-  "album_score": 248.1,
-  "prestige_score": 32.9,
-  "combined": 355.2,
-  "artist_count": 64,
-  "by_decade": {
-   "1960s": {
-    "us": 6.1,
-    "uk": 12.4,
-    "combined": 30.8
-   },
-   "1970s": {
-    "us": 1.9,
-    "uk": 5.5,
-    "combined": 11.2
-   },
-   "1980s": {
-    "us": 2.8,
-    "uk": 7.5,
-    "combined": 15.8
-   },
-   "1990s": {
-    "us": 1.1,
-    "uk": 23.5,
-    "combined": 26.9
-   },
-   "2000s": {
-    "us": 0.0,
-    "uk": 13.6,
-    "combined": 13.6
-   },
-   "2010s": {
-    "us": 0.3,
-    "uk": 5.6,
-    "combined": 6.4
-   },
-   "2020s": {
-    "us": 5.4,
-    "uk": 6.3,
-    "combined": 22.6
-   }
-  },
-  "top_artists": [
-   {
-    "name": "Harry Styles",
-    "slug": "harry-styles",
-    "combined": 68.8
-   },
-   {
-    "name": "Oasis",
-    "slug": "oasis",
-    "combined": 50.5
-   },
-   {
-    "name": "Simply Red",
-    "slug": "simply-red",
-    "combined": 41.2
-   },
-   {
-    "name": "Rick Astley",
-    "slug": "rick-astley",
-    "combined": 32.8
-   },
-   {
-    "name": "Take That",
-    "slug": "take-that",
-    "combined": 27.8
-   },
-   {
-    "name": "Herman's Hermits",
-    "slug": "herman-s-hermits",
-    "combined": 25.5
-   },
-   {
-    "name": "The Hollies",
-    "slug": "the-hollies",
-    "combined": 17.4
-   },
-   {
-    "name": "10cc",
-    "slug": "10cc",
-    "combined": 13.3
-   },
-   {
-    "name": "Lisa Stansfield",
-    "slug": "lisa-stansfield",
-    "combined": 10.1
-   },
-   {
-    "name": "Joy Division",
-    "slug": "joy-division",
-    "combined": 6.1
-   },
-   {
-    "name": "The Verve",
-    "slug": "the-verve",
-    "combined": 5.0
-   },
-   {
-    "name": "The Mindbenders",
-    "slug": "the-mindbenders",
-    "combined": 4.5
-   },
-   {
-    "name": "New Order",
-    "slug": "new-order",
-    "combined": 3.8
-   },
-   {
-    "name": "Buzzcocks",
-    "slug": "buzzcocks",
-    "combined": 3.8
-   },
-   {
-    "name": "Freddie and the Dreamers",
-    "slug": "freddie-and-the-dreamers",
-    "combined": 3.7
-   }
-  ],
-  "top_songs": [
-   {
-    "single": "As It Was",
-    "artist": "Harry Styles",
-    "score": 3.73,
-    "peak": 1,
-    "year": 2022,
-    "chart": "UK / US"
-   },
-   {
-    "single": "Watermelon Sugar",
-    "artist": "Harry Styles",
-    "score": 1.962,
-    "peak": 1,
-    "year": 2020,
-    "chart": "UK / US"
-   },
-   {
-    "single": "Late Night Talking",
-    "artist": "Harry Styles",
-    "score": 1.405,
-    "peak": 2,
-    "year": 2022,
-    "chart": "UK / US"
-   },
-   {
-    "single": "Never Gonna Give You Up",
-    "artist": "Rick Astley",
-    "score": 1.296,
-    "peak": 1,
-    "year": 1987,
-    "chart": "UK / US"
-   },
-   {
-    "single": "He Ain't Heavy, He's My Brother",
-    "artist": "The Hollies",
-    "score": 1.206,
-    "peak": 1,
-    "year": 1969,
-    "chart": "UK / US"
-   },
-   {
-    "single": "I'm Telling You Now",
-    "artist": "Freddie and the Dreamers",
-    "score": 1.146,
-    "peak": 1,
-    "year": 1963,
-    "chart": "UK / US"
-   },
-   {
-    "single": "All Around the World",
-    "artist": "Lisa Stansfield",
-    "score": 1.088,
-    "peak": 1,
-    "year": 1989,
-    "chart": "UK / US"
-   },
-   {
-    "single": "I'm Not in Love",
-    "artist": "10cc",
-    "score": 1.085,
-    "peak": 1,
-    "year": 1975,
-    "chart": "UK / US"
-   },
-   {
-    "single": "A Groovy Kind of Love",
-    "artist": "The Mindbenders",
-    "score": 1.046,
-    "peak": 2,
-    "year": 1966,
-    "chart": "UK / US"
-   },
-   {
-    "single": "Sign of the Times",
-    "artist": "Harry Styles",
-    "score": 1.044,
-    "peak": 1,
-    "year": 2017,
-    "chart": "UK / US"
-   },
-   {
-    "single": "Holding Back the Years",
-    "artist": "Simply Red",
-    "score": 1.04,
-    "peak": 1,
-    "year": 1986,
-    "chart": "UK / US"
-   },
-   {
-    "single": "Aperture",
-    "artist": "Harry Styles",
-    "score": 0.973,
-    "peak": 1,
-    "year": 2026,
-    "chart": "UK / US"
-   },
-   {
-    "single": "Together Forever",
-    "artist": "Rick Astley",
-    "score": 0.954,
-    "peak": 1,
-    "year": 1988,
-    "chart": "UK / US"
-   },
-   {
-    "single": "American Girls",
-    "artist": "Harry Styles",
-    "score": 0.89,
-    "peak": 1,
-    "year": 2026,
-    "chart": "UK / US"
-   },
-   {
-    "single": "Wonderwall",
-    "artist": "Oasis",
-    "score": 0.833,
-    "peak": 2,
-    "year": 1995,
-    "chart": "UK / US"
-   },
-   {
-    "single": "Silhouettes",
-    "artist": "Herman's Hermits",
-    "score": 0.814,
-    "peak": 3,
-    "year": 1965,
-    "chart": "UK / US"
-   },
-   {
-    "single": "The Air That I Breathe",
-    "artist": "The Hollies",
-    "score": 0.799,
-    "peak": 2,
-    "year": 1974,
-    "chart": "UK / US"
-   },
-   {
-    "single": "Matchstalk Men and Matchstalk Cats and Dogs",
-    "artist": "Brian and Michael",
-    "score": 0.766,
-    "peak": 1,
-    "year": 1978,
-    "chart": "UK"
-   },
-   {
-    "single": "Taste (Make It Shake)",
-    "artist": "Aitch",
-    "score": 0.764,
-    "peak": 2,
-    "year": 2019,
-    "chart": "UK"
-   },
-   {
-    "single": "Just You and I",
-    "artist": "Tom Walker",
-    "score": 0.751,
-    "peak": 3,
-    "year": 2019,
-    "chart": "UK"
-   },
-   {
-    "single": "Rule the World",
-    "artist": "Take That",
-    "score": 0.743,
-    "peak": 2,
-    "year": 2007,
-    "chart": "UK"
-   },
-   {
-    "single": "I'm Alive",
-    "artist": "The Hollies",
-    "score": 0.726,
-    "peak": 1,
-    "year": 1965,
-    "chart": "UK"
-   },
-   {
-    "single": "I'm into Something Good",
-    "artist": "Herman's Hermits",
-    "score": 0.717,
-    "peak": 1,
-    "year": 1964,
-    "chart": "UK"
-   },
-   {
-    "single": "Adore You",
-    "artist": "Harry Styles",
-    "score": 0.715,
-    "peak": 6,
-    "year": 2020,
-    "chart": "UK / US"
-   },
-   {
-    "single": "Patience",
-    "artist": "Take That",
-    "score": 0.707,
-    "peak": 1,
-    "year": 2006,
-    "chart": "UK"
-   }
-  ],
-  "signature_decade": "2020s",
-  "distinctiveness": 1.97,
-  "score_per_artist": 5.5,
-  "rank": 16
  },
  {
   "slug": "dublin",
@@ -5691,7 +5359,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 1.79,
   "score_per_artist": 15.9,
-  "rank": 17
+  "rank": 16
  },
  {
   "slug": "dallas",
@@ -5813,8 +5481,8 @@
     "combined": 3.1
    },
    {
-    "name": "Demi Lovato",
-    "slug": "demi-lovato",
+    "name": "Bruce Channel",
+    "slug": "bruce-channel",
     "combined": 2.9
    }
   ],
@@ -6023,6 +5691,338 @@
   "signature_decade": "2010s",
   "distinctiveness": 2.41,
   "score_per_artist": 13.7,
+  "rank": 17
+ },
+ {
+  "slug": "manchester",
+  "metro": "Manchester",
+  "country": "United Kingdom",
+  "state": "Greater Manchester",
+  "us_score": 16.0,
+  "uk_score": 72.1,
+  "album_score": 208.1,
+  "prestige_score": 32.2,
+  "combined": 322.4,
+  "artist_count": 63,
+  "by_decade": {
+   "1960s": {
+    "us": 6.1,
+    "uk": 12.4,
+    "combined": 30.8
+   },
+   "1970s": {
+    "us": 1.9,
+    "uk": 5.5,
+    "combined": 11.2
+   },
+   "1980s": {
+    "us": 1.4,
+    "uk": 5.3,
+    "combined": 9.4
+   },
+   "1990s": {
+    "us": 0.9,
+    "uk": 23.4,
+    "combined": 26.2
+   },
+   "2000s": {
+    "us": 0.0,
+    "uk": 13.6,
+    "combined": 13.6
+   },
+   "2010s": {
+    "us": 0.3,
+    "uk": 5.6,
+    "combined": 6.4
+   },
+   "2020s": {
+    "us": 5.4,
+    "uk": 6.3,
+    "combined": 22.6
+   }
+  },
+  "top_artists": [
+   {
+    "name": "Harry Styles",
+    "slug": "harry-styles",
+    "combined": 68.8
+   },
+   {
+    "name": "Oasis",
+    "slug": "oasis",
+    "combined": 50.5
+   },
+   {
+    "name": "Simply Red",
+    "slug": "simply-red",
+    "combined": 41.2
+   },
+   {
+    "name": "Take That",
+    "slug": "take-that",
+    "combined": 27.8
+   },
+   {
+    "name": "Herman's Hermits",
+    "slug": "herman-s-hermits",
+    "combined": 25.5
+   },
+   {
+    "name": "The Hollies",
+    "slug": "the-hollies",
+    "combined": 17.4
+   },
+   {
+    "name": "10cc",
+    "slug": "10cc",
+    "combined": 13.3
+   },
+   {
+    "name": "Lisa Stansfield",
+    "slug": "lisa-stansfield",
+    "combined": 10.1
+   },
+   {
+    "name": "Joy Division",
+    "slug": "joy-division",
+    "combined": 6.1
+   },
+   {
+    "name": "The Verve",
+    "slug": "the-verve",
+    "combined": 5.0
+   },
+   {
+    "name": "The Mindbenders",
+    "slug": "the-mindbenders",
+    "combined": 4.5
+   },
+   {
+    "name": "Buzzcocks",
+    "slug": "buzzcocks",
+    "combined": 3.8
+   },
+   {
+    "name": "New Order",
+    "slug": "new-order",
+    "combined": 3.8
+   },
+   {
+    "name": "Freddie and the Dreamers",
+    "slug": "freddie-and-the-dreamers",
+    "combined": 3.7
+   },
+   {
+    "name": "The Smiths",
+    "slug": "the-smiths",
+    "combined": 3.6
+   }
+  ],
+  "top_songs": [
+   {
+    "single": "As It Was",
+    "artist": "Harry Styles",
+    "score": 3.73,
+    "peak": 1,
+    "year": 2022,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Watermelon Sugar",
+    "artist": "Harry Styles",
+    "score": 1.962,
+    "peak": 1,
+    "year": 2020,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Late Night Talking",
+    "artist": "Harry Styles",
+    "score": 1.405,
+    "peak": 2,
+    "year": 2022,
+    "chart": "UK / US"
+   },
+   {
+    "single": "He Ain't Heavy, He's My Brother",
+    "artist": "The Hollies",
+    "score": 1.206,
+    "peak": 1,
+    "year": 1969,
+    "chart": "UK / US"
+   },
+   {
+    "single": "I'm Telling You Now",
+    "artist": "Freddie and the Dreamers",
+    "score": 1.146,
+    "peak": 1,
+    "year": 1963,
+    "chart": "UK / US"
+   },
+   {
+    "single": "All Around the World",
+    "artist": "Lisa Stansfield",
+    "score": 1.088,
+    "peak": 1,
+    "year": 1989,
+    "chart": "UK / US"
+   },
+   {
+    "single": "I'm Not in Love",
+    "artist": "10cc",
+    "score": 1.085,
+    "peak": 1,
+    "year": 1975,
+    "chart": "UK / US"
+   },
+   {
+    "single": "A Groovy Kind of Love",
+    "artist": "The Mindbenders",
+    "score": 1.046,
+    "peak": 2,
+    "year": 1966,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Sign of the Times",
+    "artist": "Harry Styles",
+    "score": 1.044,
+    "peak": 1,
+    "year": 2017,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Holding Back the Years",
+    "artist": "Simply Red",
+    "score": 1.04,
+    "peak": 1,
+    "year": 1986,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Aperture",
+    "artist": "Harry Styles",
+    "score": 0.973,
+    "peak": 1,
+    "year": 2026,
+    "chart": "UK / US"
+   },
+   {
+    "single": "American Girls",
+    "artist": "Harry Styles",
+    "score": 0.89,
+    "peak": 1,
+    "year": 2026,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Wonderwall",
+    "artist": "Oasis",
+    "score": 0.833,
+    "peak": 2,
+    "year": 1995,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Silhouettes",
+    "artist": "Herman's Hermits",
+    "score": 0.814,
+    "peak": 3,
+    "year": 1965,
+    "chart": "UK / US"
+   },
+   {
+    "single": "The Air That I Breathe",
+    "artist": "The Hollies",
+    "score": 0.799,
+    "peak": 2,
+    "year": 1974,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Matchstalk Men and Matchstalk Cats and Dogs",
+    "artist": "Brian and Michael",
+    "score": 0.766,
+    "peak": 1,
+    "year": 1978,
+    "chart": "UK"
+   },
+   {
+    "single": "Taste (Make It Shake)",
+    "artist": "Aitch",
+    "score": 0.764,
+    "peak": 2,
+    "year": 2019,
+    "chart": "UK"
+   },
+   {
+    "single": "Just You and I",
+    "artist": "Tom Walker",
+    "score": 0.751,
+    "peak": 3,
+    "year": 2019,
+    "chart": "UK"
+   },
+   {
+    "single": "Rule the World",
+    "artist": "Take That",
+    "score": 0.743,
+    "peak": 2,
+    "year": 2007,
+    "chart": "UK"
+   },
+   {
+    "single": "I'm Alive",
+    "artist": "The Hollies",
+    "score": 0.726,
+    "peak": 1,
+    "year": 1965,
+    "chart": "UK"
+   },
+   {
+    "single": "I'm into Something Good",
+    "artist": "Herman's Hermits",
+    "score": 0.717,
+    "peak": 1,
+    "year": 1964,
+    "chart": "UK"
+   },
+   {
+    "single": "Adore You",
+    "artist": "Harry Styles",
+    "score": 0.715,
+    "peak": 6,
+    "year": 2020,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Patience",
+    "artist": "Take That",
+    "score": 0.707,
+    "peak": 1,
+    "year": 2006,
+    "chart": "UK"
+   },
+   {
+    "single": "Dreadlock Holiday",
+    "artist": "10cc",
+    "score": 0.675,
+    "peak": 1,
+    "year": 1978,
+    "chart": "UK"
+   },
+   {
+    "single": "Mrs. Brown, You've Got a Lovely Daughter",
+    "artist": "Herman's Hermits",
+    "score": 0.671,
+    "peak": 1,
+    "year": 1965,
+    "chart": "US"
+   }
+  ],
+  "signature_decade": "2020s",
+  "distinctiveness": 2.09,
+  "score_per_artist": 5.1,
   "rank": 18
  },
  {
@@ -6789,13 +6789,13 @@
     "combined": 7.0
    },
    {
-    "name": "Aaron Neville",
-    "slug": "aaron-neville",
+    "name": "Dr. John",
+    "slug": "dr-john",
     "combined": 4.4
    },
    {
-    "name": "Dr. John",
-    "slug": "dr-john",
+    "name": "Aaron Neville",
+    "slug": "aaron-neville",
     "combined": 4.4
    },
    {
@@ -6814,13 +6814,13 @@
     "combined": 2.1
    },
    {
-    "name": "Ernie K-Doe",
-    "slug": "ernie-k-doe",
+    "name": "The Dixie Cups",
+    "slug": "the-dixie-cups",
     "combined": 2.1
    },
    {
-    "name": "The Dixie Cups",
-    "slug": "the-dixie-cups",
+    "name": "Ernie K-Doe",
+    "slug": "ernie-k-doe",
     "combined": 2.1
    }
   ],
@@ -7755,13 +7755,13 @@
     "combined": 5.6
    },
    {
-    "name": "Kid Cudi",
-    "slug": "kid-cudi",
+    "name": "Eric Carmen",
+    "slug": "eric-carmen",
     "combined": 4.1
    },
    {
-    "name": "Eric Carmen",
-    "slug": "eric-carmen",
+    "name": "Kid Cudi",
+    "slug": "kid-cudi",
     "combined": 4.1
    },
    {
@@ -10528,19 +10528,14 @@
     "combined": 2.1
    },
    {
-    "name": "Eagle-Eye Cherry",
-    "slug": "eagle-eye-cherry",
-    "combined": 1.5
-   },
-   {
     "name": "Galantis",
     "slug": "galantis",
     "combined": 1.5
    },
    {
-    "name": "John Martin",
-    "slug": "john-martin",
-    "combined": 1.2
+    "name": "Eagle-Eye Cherry",
+    "slug": "eagle-eye-cherry",
+    "combined": 1.5
    },
    {
     "name": "Swedish House Mafia",
@@ -10553,13 +10548,18 @@
     "combined": 1.2
    },
    {
-    "name": "Icona Pop",
-    "slug": "icona-pop",
-    "combined": 0.9
+    "name": "John Martin",
+    "slug": "john-martin",
+    "combined": 1.2
    },
    {
     "name": "Basshunter",
     "slug": "basshunter",
+    "combined": 0.9
+   },
+   {
+    "name": "Icona Pop",
+    "slug": "icona-pop",
     "combined": 0.9
    }
   ],
@@ -10855,13 +10855,13 @@
     "combined": 5.3
    },
    {
-    "name": "J-Kwon",
-    "slug": "j-kwon",
+    "name": "Michael McDonald",
+    "slug": "michael-mcdonald",
     "combined": 3.5
    },
    {
-    "name": "Michael McDonald",
-    "slug": "michael-mcdonald",
+    "name": "J-Kwon",
+    "slug": "j-kwon",
     "combined": 3.5
    },
    {
@@ -11870,6 +11870,180 @@
   "rank": 37
  },
  {
+  "slug": "cambridge",
+  "metro": "Cambridge",
+  "country": "United Kingdom",
+  "state": "Cambridgeshire",
+  "us_score": 1.1,
+  "uk_score": 3.9,
+  "album_score": 229.7,
+  "prestige_score": 7.6,
+  "combined": 163.4,
+  "artist_count": 3,
+  "by_decade": {
+   "1960s": {
+    "us": 0.0,
+    "uk": 0.3,
+    "combined": 0.3
+   },
+   "1970s": {
+    "us": 0.0,
+    "uk": 0.7,
+    "combined": 0.7
+   },
+   "1980s": {
+    "us": 1.1,
+    "uk": 0.1,
+    "combined": 3.4
+   },
+   "1990s": {
+    "us": 0.0,
+    "uk": 0.2,
+    "combined": 0.2
+   },
+   "2010s": {
+    "us": 0.1,
+    "uk": 2.7,
+    "combined": 2.8
+   }
+  },
+  "top_artists": [
+   {
+    "name": "Pink Floyd",
+    "slug": "pink-floyd",
+    "combined": 153.6
+   },
+   {
+    "name": "Clean Bandit",
+    "slug": "clean-bandit",
+    "combined": 7.5
+   },
+   {
+    "name": "Katrina and the Waves",
+    "slug": "katrina-and-the-waves",
+    "combined": 2.3
+   }
+  ],
+  "top_songs": [
+   {
+    "single": "Another Brick in the Wall",
+    "artist": "Pink Floyd",
+    "score": 1.001,
+    "peak": 1,
+    "year": 1980,
+    "chart": "US"
+   },
+   {
+    "single": "Another Brick in the Wall (Part 2)",
+    "artist": "Pink Floyd",
+    "score": 0.667,
+    "peak": 1,
+    "year": 1979,
+    "chart": "UK"
+   },
+   {
+    "single": "Symphony",
+    "artist": "Clean Bandit",
+    "score": 0.517,
+    "peak": 1,
+    "year": 2017,
+    "chart": "UK"
+   },
+   {
+    "single": "Rockabye",
+    "artist": "Clean Bandit",
+    "score": 0.435,
+    "peak": 1,
+    "year": 2016,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Rather Be",
+    "artist": "Clean Bandit",
+    "score": 0.399,
+    "peak": 1,
+    "year": 2014,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Solo",
+    "artist": "Clean Bandit",
+    "score": 0.393,
+    "peak": 1,
+    "year": 2018,
+    "chart": "UK"
+   },
+   {
+    "single": "See Emily Play",
+    "artist": "Pink Floyd",
+    "score": 0.28,
+    "peak": 6,
+    "year": 1967,
+    "chart": "UK"
+   },
+   {
+    "single": "I Miss You",
+    "artist": "Clean Bandit",
+    "score": 0.276,
+    "peak": 4,
+    "year": 2017,
+    "chart": "UK"
+   },
+   {
+    "single": "Tears",
+    "artist": "Clean Bandit",
+    "score": 0.263,
+    "peak": 5,
+    "year": 2016,
+    "chart": "UK"
+   },
+   {
+    "single": "Love Shine a Light",
+    "artist": "Katrina and the Waves",
+    "score": 0.228,
+    "peak": 3,
+    "year": 1997,
+    "chart": "UK"
+   },
+   {
+    "single": "Real Love",
+    "artist": "Clean Bandit",
+    "score": 0.198,
+    "peak": 2,
+    "year": 2014,
+    "chart": "UK"
+   },
+   {
+    "single": "Walking on Sunshine",
+    "artist": "Katrina and the Waves",
+    "score": 0.186,
+    "peak": 8,
+    "year": 1985,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Stronger",
+    "artist": "Clean Bandit",
+    "score": 0.174,
+    "peak": 4,
+    "year": 2015,
+    "chart": "UK"
+   },
+   {
+    "single": "Extraordinary",
+    "artist": "Clean Bandit",
+    "score": 0.066,
+    "peak": 5,
+    "year": 2014,
+    "chart": "UK"
+   }
+  ],
+  "signature_decade": "1980s",
+  "distinctiveness": 3.07,
+  "score_per_artist": 54.5,
+  "rank": 38
+ },
+ {
   "slug": "kingston",
   "metro": "Kingston",
   "country": "Jamaica",
@@ -11934,13 +12108,13 @@
     "combined": 6.0
    },
    {
-    "name": "Ini Kamoze",
-    "slug": "ini-kamoze",
+    "name": "Toots and the Maytals",
+    "slug": "toots-and-the-maytals",
     "combined": 4.7
    },
    {
-    "name": "Toots and the Maytals",
-    "slug": "toots-and-the-maytals",
+    "name": "Ini Kamoze",
+    "slug": "ini-kamoze",
     "combined": 4.7
    },
    {
@@ -11974,8 +12148,8 @@
     "combined": 0.9
    },
    {
-    "name": "Althea & Donna",
-    "slug": "althea-and-donna",
+    "name": "Ken Boothe",
+    "slug": "ken-boothe",
     "combined": 0.6
    },
    {
@@ -11984,8 +12158,8 @@
     "combined": 0.6
    },
    {
-    "name": "Ken Boothe",
-    "slug": "ken-boothe",
+    "name": "Althea & Donna",
+    "slug": "althea-and-donna",
     "combined": 0.6
    }
   ],
@@ -12194,99 +12368,249 @@
   "signature_decade": "2000s",
   "distinctiveness": 2.89,
   "score_per_artist": 8.1,
-  "rank": 38
+  "rank": 39
  },
  {
-  "slug": "cambridge",
-  "metro": "Cambridge",
+  "slug": "ipswich",
+  "metro": "Ipswich",
   "country": "United Kingdom",
-  "state": "Cambridgeshire",
-  "us_score": 1.1,
-  "uk_score": 1.3,
-  "album_score": 221.8,
-  "prestige_score": 7.6,
-  "combined": 155.9,
+  "state": "Suffolk",
+  "us_score": 9.3,
+  "uk_score": 18.0,
+  "album_score": 120.4,
+  "prestige_score": 14.3,
+  "combined": 152.6,
   "artist_count": 2,
   "by_decade": {
-   "1960s": {
-    "us": 0.0,
-    "uk": 0.3,
-    "combined": 0.3
+   "2010s": {
+    "us": 6.6,
+    "uk": 11.3,
+    "combined": 31.1
    },
-   "1970s": {
-    "us": 0.0,
-    "uk": 0.7,
-    "combined": 0.7
-   },
-   "1980s": {
-    "us": 1.1,
-    "uk": 0.1,
-    "combined": 3.4
-   },
-   "1990s": {
-    "us": 0.0,
-    "uk": 0.2,
-    "combined": 0.2
+   "2020s": {
+    "us": 2.7,
+    "uk": 6.7,
+    "combined": 14.8
    }
   },
   "top_artists": [
    {
-    "name": "Pink Floyd",
-    "slug": "pink-floyd",
-    "combined": 153.6
+    "name": "Ed Sheeran",
+    "slug": "ed-sheeran",
+    "combined": 143.1
    },
    {
-    "name": "Katrina and the Waves",
-    "slug": "katrina-and-the-waves",
-    "combined": 2.3
+    "name": "Brian Eno",
+    "slug": "brian-eno",
+    "combined": 9.5
    }
   ],
   "top_songs": [
    {
-    "single": "Another Brick in the Wall",
-    "artist": "Pink Floyd",
-    "score": 1.001,
+    "single": "Shape of You",
+    "artist": "Ed Sheeran",
+    "score": 3.481,
     "peak": 1,
-    "year": 1980,
-    "chart": "US"
-   },
-   {
-    "single": "Another Brick in the Wall (Part 2)",
-    "artist": "Pink Floyd",
-    "score": 0.667,
-    "peak": 1,
-    "year": 1979,
-    "chart": "UK"
-   },
-   {
-    "single": "See Emily Play",
-    "artist": "Pink Floyd",
-    "score": 0.28,
-    "peak": 6,
-    "year": 1967,
-    "chart": "UK"
-   },
-   {
-    "single": "Love Shine a Light",
-    "artist": "Katrina and the Waves",
-    "score": 0.228,
-    "peak": 3,
-    "year": 1997,
-    "chart": "UK"
-   },
-   {
-    "single": "Walking on Sunshine",
-    "artist": "Katrina and the Waves",
-    "score": 0.186,
-    "peak": 8,
-    "year": 1985,
+    "year": 2017,
     "chart": "UK / US"
+   },
+   {
+    "single": "Perfect",
+    "artist": "Ed Sheeran",
+    "score": 3.113,
+    "peak": 1,
+    "year": 2017,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Bad Habits",
+    "artist": "Ed Sheeran",
+    "score": 2.861,
+    "peak": 1,
+    "year": 2021,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Thinking Out Loud",
+    "artist": "Ed Sheeran",
+    "score": 2.541,
+    "peak": 1,
+    "year": 2014,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Shivers",
+    "artist": "Ed Sheeran",
+    "score": 1.993,
+    "peak": 1,
+    "year": 2021,
+    "chart": "UK / US"
+   },
+   {
+    "single": "I Don't Care",
+    "artist": "Ed Sheeran",
+    "score": 1.226,
+    "peak": 1,
+    "year": 2019,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Castle on the Hill",
+    "artist": "Ed Sheeran",
+    "score": 1.186,
+    "peak": 2,
+    "year": 2017,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Eyes Closed",
+    "artist": "Ed Sheeran",
+    "score": 0.955,
+    "peak": 1,
+    "year": 2023,
+    "chart": "UK"
+   },
+   {
+    "single": "Galway Girl",
+    "artist": "Ed Sheeran",
+    "score": 0.891,
+    "peak": 2,
+    "year": 2017,
+    "chart": "UK"
+   },
+   {
+    "single": "Merry Christmas",
+    "artist": "Ed Sheeran",
+    "score": 0.806,
+    "peak": 1,
+    "year": 2021,
+    "chart": "UK"
+   },
+   {
+    "single": "The A Team",
+    "artist": "Ed Sheeran",
+    "score": 0.657,
+    "peak": 3,
+    "year": 2011,
+    "chart": "UK"
+   },
+   {
+    "single": "Sing",
+    "artist": "Ed Sheeran",
+    "score": 0.622,
+    "peak": 1,
+    "year": 2014,
+    "chart": "UK"
+   },
+   {
+    "single": "Azizam",
+    "artist": "Ed Sheeran",
+    "score": 0.553,
+    "peak": 3,
+    "year": 2025,
+    "chart": "UK"
+   },
+   {
+    "single": "Afterglow",
+    "artist": "Ed Sheeran",
+    "score": 0.531,
+    "peak": 2,
+    "year": 2021,
+    "chart": "UK"
+   },
+   {
+    "single": "River",
+    "artist": "Ed Sheeran",
+    "score": 0.448,
+    "peak": 1,
+    "year": 2017,
+    "chart": "UK"
+   },
+   {
+    "single": "Beautiful People",
+    "artist": "Ed Sheeran",
+    "score": 0.424,
+    "peak": 1,
+    "year": 2019,
+    "chart": "UK"
+   },
+   {
+    "single": "Overpass Graffiti",
+    "artist": "Ed Sheeran",
+    "score": 0.413,
+    "peak": 4,
+    "year": 2021,
+    "chart": "UK"
+   },
+   {
+    "single": "Sapphire",
+    "artist": "Ed Sheeran",
+    "score": 0.394,
+    "peak": 5,
+    "year": 2025,
+    "chart": "UK"
+   },
+   {
+    "single": "Lego House",
+    "artist": "Ed Sheeran",
+    "score": 0.386,
+    "peak": 5,
+    "year": 2011,
+    "chart": "UK"
+   },
+   {
+    "single": "Take Me Back to London",
+    "artist": "Ed Sheeran",
+    "score": 0.374,
+    "peak": 1,
+    "year": 2019,
+    "chart": "UK"
+   },
+   {
+    "single": "Cross Me",
+    "artist": "Ed Sheeran",
+    "score": 0.313,
+    "peak": 4,
+    "year": 2019,
+    "chart": "UK"
+   },
+   {
+    "single": "Own It",
+    "artist": "Ed Sheeran",
+    "score": 0.298,
+    "peak": 1,
+    "year": 2019,
+    "chart": "UK"
+   },
+   {
+    "single": "How Would You Feel (Paean)",
+    "artist": "Ed Sheeran",
+    "score": 0.269,
+    "peak": 2,
+    "year": 2017,
+    "chart": "UK"
+   },
+   {
+    "single": "New Man",
+    "artist": "Ed Sheeran",
+    "score": 0.253,
+    "peak": 5,
+    "year": 2017,
+    "chart": "UK"
+   },
+   {
+    "single": "The Joker and the Queen",
+    "artist": "Ed Sheeran",
+    "score": 0.243,
+    "peak": 2,
+    "year": 2022,
+    "chart": "UK"
    }
   ],
-  "signature_decade": "1980s",
-  "distinctiveness": 4.94,
-  "score_per_artist": 78.0,
-  "rank": 39
+  "signature_decade": "2010s",
+  "distinctiveness": 4.54,
+  "score_per_artist": 76.3,
+  "rank": 40
  },
  {
   "slug": "montgomery",
@@ -12563,7 +12887,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 3.47,
   "score_per_artist": 25.3,
-  "rank": 40
+  "rank": 41
  },
  {
   "slug": "kitchener-waterloo",
@@ -12800,243 +13124,6 @@
   "signature_decade": "2010s",
   "distinctiveness": 4.53,
   "score_per_artist": 150.9,
-  "rank": 41
- },
- {
-  "slug": "ipswich",
-  "metro": "Ipswich",
-  "country": "United Kingdom",
-  "state": "Suffolk",
-  "us_score": 9.3,
-  "uk_score": 18.0,
-  "album_score": 110.4,
-  "prestige_score": 12.9,
-  "combined": 143.1,
-  "artist_count": 1,
-  "by_decade": {
-   "2010s": {
-    "us": 6.6,
-    "uk": 11.3,
-    "combined": 31.1
-   },
-   "2020s": {
-    "us": 2.7,
-    "uk": 6.7,
-    "combined": 14.8
-   }
-  },
-  "top_artists": [
-   {
-    "name": "Ed Sheeran",
-    "slug": "ed-sheeran",
-    "combined": 143.1
-   }
-  ],
-  "top_songs": [
-   {
-    "single": "Shape of You",
-    "artist": "Ed Sheeran",
-    "score": 3.481,
-    "peak": 1,
-    "year": 2017,
-    "chart": "UK / US"
-   },
-   {
-    "single": "Perfect",
-    "artist": "Ed Sheeran",
-    "score": 3.113,
-    "peak": 1,
-    "year": 2017,
-    "chart": "UK / US"
-   },
-   {
-    "single": "Bad Habits",
-    "artist": "Ed Sheeran",
-    "score": 2.861,
-    "peak": 1,
-    "year": 2021,
-    "chart": "UK / US"
-   },
-   {
-    "single": "Thinking Out Loud",
-    "artist": "Ed Sheeran",
-    "score": 2.541,
-    "peak": 1,
-    "year": 2014,
-    "chart": "UK / US"
-   },
-   {
-    "single": "Shivers",
-    "artist": "Ed Sheeran",
-    "score": 1.993,
-    "peak": 1,
-    "year": 2021,
-    "chart": "UK / US"
-   },
-   {
-    "single": "I Don't Care",
-    "artist": "Ed Sheeran",
-    "score": 1.226,
-    "peak": 1,
-    "year": 2019,
-    "chart": "UK / US"
-   },
-   {
-    "single": "Castle on the Hill",
-    "artist": "Ed Sheeran",
-    "score": 1.186,
-    "peak": 2,
-    "year": 2017,
-    "chart": "UK / US"
-   },
-   {
-    "single": "Eyes Closed",
-    "artist": "Ed Sheeran",
-    "score": 0.955,
-    "peak": 1,
-    "year": 2023,
-    "chart": "UK"
-   },
-   {
-    "single": "Galway Girl",
-    "artist": "Ed Sheeran",
-    "score": 0.891,
-    "peak": 2,
-    "year": 2017,
-    "chart": "UK"
-   },
-   {
-    "single": "Merry Christmas",
-    "artist": "Ed Sheeran",
-    "score": 0.806,
-    "peak": 1,
-    "year": 2021,
-    "chart": "UK"
-   },
-   {
-    "single": "The A Team",
-    "artist": "Ed Sheeran",
-    "score": 0.657,
-    "peak": 3,
-    "year": 2011,
-    "chart": "UK"
-   },
-   {
-    "single": "Sing",
-    "artist": "Ed Sheeran",
-    "score": 0.622,
-    "peak": 1,
-    "year": 2014,
-    "chart": "UK"
-   },
-   {
-    "single": "Azizam",
-    "artist": "Ed Sheeran",
-    "score": 0.553,
-    "peak": 3,
-    "year": 2025,
-    "chart": "UK"
-   },
-   {
-    "single": "Afterglow",
-    "artist": "Ed Sheeran",
-    "score": 0.531,
-    "peak": 2,
-    "year": 2021,
-    "chart": "UK"
-   },
-   {
-    "single": "River",
-    "artist": "Ed Sheeran",
-    "score": 0.448,
-    "peak": 1,
-    "year": 2017,
-    "chart": "UK"
-   },
-   {
-    "single": "Beautiful People",
-    "artist": "Ed Sheeran",
-    "score": 0.424,
-    "peak": 1,
-    "year": 2019,
-    "chart": "UK"
-   },
-   {
-    "single": "Overpass Graffiti",
-    "artist": "Ed Sheeran",
-    "score": 0.413,
-    "peak": 4,
-    "year": 2021,
-    "chart": "UK"
-   },
-   {
-    "single": "Sapphire",
-    "artist": "Ed Sheeran",
-    "score": 0.394,
-    "peak": 5,
-    "year": 2025,
-    "chart": "UK"
-   },
-   {
-    "single": "Lego House",
-    "artist": "Ed Sheeran",
-    "score": 0.386,
-    "peak": 5,
-    "year": 2011,
-    "chart": "UK"
-   },
-   {
-    "single": "Take Me Back to London",
-    "artist": "Ed Sheeran",
-    "score": 0.374,
-    "peak": 1,
-    "year": 2019,
-    "chart": "UK"
-   },
-   {
-    "single": "Cross Me",
-    "artist": "Ed Sheeran",
-    "score": 0.313,
-    "peak": 4,
-    "year": 2019,
-    "chart": "UK"
-   },
-   {
-    "single": "Own It",
-    "artist": "Ed Sheeran",
-    "score": 0.298,
-    "peak": 1,
-    "year": 2019,
-    "chart": "UK"
-   },
-   {
-    "single": "How Would You Feel (Paean)",
-    "artist": "Ed Sheeran",
-    "score": 0.269,
-    "peak": 2,
-    "year": 2017,
-    "chart": "UK"
-   },
-   {
-    "single": "New Man",
-    "artist": "Ed Sheeran",
-    "score": 0.253,
-    "peak": 5,
-    "year": 2017,
-    "chart": "UK"
-   },
-   {
-    "single": "The Joker and the Queen",
-    "artist": "Ed Sheeran",
-    "score": 0.243,
-    "peak": 2,
-    "year": 2022,
-    "chart": "UK"
-   }
-  ],
-  "signature_decade": "2010s",
-  "distinctiveness": 4.54,
-  "score_per_artist": 143.1,
   "rank": 42
  },
  {
@@ -13124,13 +13211,13 @@
     "combined": 1.9
    },
    {
-    "name": "Heaven 17",
-    "slug": "heaven-17",
+    "name": "Ace",
+    "slug": "ace",
     "combined": 1.1
    },
    {
-    "name": "Ace",
-    "slug": "ace",
+    "name": "Heaven 17",
+    "slug": "heaven-17",
     "combined": 1.1
    },
    {
@@ -14032,8 +14119,8 @@
     "combined": 0.4
    },
    {
-    "name": "Ant & Dec",
-    "slug": "ant-and-dec",
+    "name": "Hank Marvin",
+    "slug": "hank-marvin",
     "combined": 0.3
    }
   ],
@@ -15368,13 +15455,13 @@
     "combined": 0.5
    },
    {
-    "name": "Mr. Oizo",
-    "slug": "mr-oizo",
+    "name": "Modjo",
+    "slug": "modjo",
     "combined": 0.4
    },
    {
-    "name": "Modjo",
-    "slug": "modjo",
+    "name": "Mr. Oizo",
+    "slug": "mr-oizo",
     "combined": 0.4
    },
    {
@@ -17345,13 +17432,13 @@
     "combined": 4.1
    },
    {
-    "name": "Mr. Acker Bilk",
-    "slug": "mr-acker-bilk",
+    "name": "Russ Conway",
+    "slug": "russ-conway",
     "combined": 3.6
    },
    {
-    "name": "Russ Conway",
-    "slug": "russ-conway",
+    "name": "Mr. Acker Bilk",
+    "slug": "mr-acker-bilk",
     "combined": 3.6
    },
    {
@@ -17697,13 +17784,13 @@
     "combined": 1.4
    },
    {
-    "name": "Sigma",
-    "slug": "sigma",
+    "name": "Marc Almond",
+    "slug": "marc-almond",
     "combined": 1.0
    },
    {
-    "name": "Marc Almond",
-    "slug": "marc-almond",
+    "name": "Sigma",
+    "slug": "sigma",
     "combined": 1.0
    },
    {
@@ -18719,6 +18806,268 @@
   "rank": 71
  },
  {
+  "slug": "leicester",
+  "metro": "Leicester",
+  "country": "United Kingdom",
+  "state": "Leicestershire",
+  "us_score": 1.8,
+  "uk_score": 10.6,
+  "album_score": 48.0,
+  "prestige_score": 0.8,
+  "combined": 46.8,
+  "artist_count": 4,
+  "by_decade": {
+   "1960s": {
+    "us": 0.4,
+    "uk": 4.5,
+    "combined": 5.7
+   },
+   "1970s": {
+    "us": 0.2,
+    "uk": 4.4,
+    "combined": 5.0
+   },
+   "1990s": {
+    "us": 1.2,
+    "uk": 1.3,
+    "combined": 5.0
+   },
+   "2000s": {
+    "us": 0.0,
+    "uk": 0.4,
+    "combined": 0.4
+   }
+  },
+  "top_artists": [
+   {
+    "name": "Engelbert Humperdinck",
+    "slug": "engelbert-humperdinck",
+    "combined": 30.2
+   },
+   {
+    "name": "Showaddywaddy",
+    "slug": "showaddywaddy",
+    "combined": 9.2
+   },
+   {
+    "name": "Mark Morrison",
+    "slug": "mark-morrison",
+    "combined": 5.0
+   },
+   {
+    "name": "Kasabian",
+    "slug": "kasabian",
+    "combined": 2.3
+   }
+  ],
+  "top_songs": [
+   {
+    "single": "Return of the Mack",
+    "artist": "Mark Morrison",
+    "score": 1.992,
+    "peak": 1,
+    "year": 1996,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Release Me",
+    "artist": "Engelbert Humperdinck",
+    "score": 1.232,
+    "peak": 1,
+    "year": 1967,
+    "chart": "UK / US"
+   },
+   {
+    "single": "The Last Waltz",
+    "artist": "Engelbert Humperdinck",
+    "score": 0.936,
+    "peak": 1,
+    "year": 1967,
+    "chart": "UK"
+   },
+   {
+    "single": "Under the Moon of Love",
+    "artist": "Showaddywaddy",
+    "score": 0.727,
+    "peak": 1,
+    "year": 1976,
+    "chart": "UK"
+   },
+   {
+    "single": "There Goes My Everything",
+    "artist": "Engelbert Humperdinck",
+    "score": 0.676,
+    "peak": 2,
+    "year": 1967,
+    "chart": "UK"
+   },
+   {
+    "single": "A Man Without Love",
+    "artist": "Engelbert Humperdinck",
+    "score": 0.628,
+    "peak": 2,
+    "year": 1968,
+    "chart": "UK"
+   },
+   {
+    "single": "Hey Rock and Roll",
+    "artist": "Showaddywaddy",
+    "score": 0.537,
+    "peak": 2,
+    "year": 1974,
+    "chart": "UK"
+   },
+   {
+    "single": "Three Steps to Heaven",
+    "artist": "Showaddywaddy",
+    "score": 0.516,
+    "peak": 2,
+    "year": 1975,
+    "chart": "UK"
+   },
+   {
+    "single": "I Wonder Why",
+    "artist": "Showaddywaddy",
+    "score": 0.514,
+    "peak": 2,
+    "year": 1978,
+    "chart": "UK"
+   },
+   {
+    "single": "You Got What It Takes",
+    "artist": "Showaddywaddy",
+    "score": 0.511,
+    "peak": 2,
+    "year": 1977,
+    "chart": "UK"
+   },
+   {
+    "single": "When",
+    "artist": "Showaddywaddy",
+    "score": 0.498,
+    "peak": 3,
+    "year": 1977,
+    "chart": "UK"
+   },
+   {
+    "single": "Am I That Easy to Forget",
+    "artist": "Engelbert Humperdinck",
+    "score": 0.484,
+    "peak": 3,
+    "year": 1968,
+    "chart": "UK"
+   },
+   {
+    "single": "The Way It Used to Be",
+    "artist": "Engelbert Humperdinck",
+    "score": 0.456,
+    "peak": 3,
+    "year": 1969,
+    "chart": "UK"
+   },
+   {
+    "single": "Dancin' Party",
+    "artist": "Showaddywaddy",
+    "score": 0.398,
+    "peak": 4,
+    "year": 1977,
+    "chart": "UK"
+   },
+   {
+    "single": "A Little Bit of Soap",
+    "artist": "Showaddywaddy",
+    "score": 0.306,
+    "peak": 5,
+    "year": 1978,
+    "chart": "UK"
+   },
+   {
+    "single": "Pretty Little Angel Eyes",
+    "artist": "Showaddywaddy",
+    "score": 0.265,
+    "peak": 5,
+    "year": 1978,
+    "chart": "UK"
+   },
+   {
+    "single": "Fire",
+    "artist": "Kasabian",
+    "score": 0.263,
+    "peak": 3,
+    "year": 2009,
+    "chart": "UK"
+   },
+   {
+    "single": "Horny",
+    "artist": "Mark Morrison",
+    "score": 0.259,
+    "peak": 5,
+    "year": 1996,
+    "chart": "UK"
+   },
+   {
+    "single": "Les Bicyclettes de Belsize",
+    "artist": "Engelbert Humperdinck",
+    "score": 0.257,
+    "peak": 5,
+    "year": 1968,
+    "chart": "UK"
+   },
+   {
+    "single": "Winter World of Love",
+    "artist": "Engelbert Humperdinck",
+    "score": 0.204,
+    "peak": 7,
+    "year": 1969,
+    "chart": "UK"
+   },
+   {
+    "single": "After the Lovin'",
+    "artist": "Engelbert Humperdinck",
+    "score": 0.175,
+    "peak": 8,
+    "year": 1976,
+    "chart": "US"
+   },
+   {
+    "single": "Heartbeat",
+    "artist": "Showaddywaddy",
+    "score": 0.162,
+    "peak": 7,
+    "year": 1975,
+    "chart": "UK"
+   },
+   {
+    "single": "Crazy",
+    "artist": "Mark Morrison",
+    "score": 0.153,
+    "peak": 6,
+    "year": 1996,
+    "chart": "UK"
+   },
+   {
+    "single": "Moan and Groan",
+    "artist": "Mark Morrison",
+    "score": 0.081,
+    "peak": 7,
+    "year": 1997,
+    "chart": "UK"
+   },
+   {
+    "single": "Trippin'",
+    "artist": "Mark Morrison",
+    "score": 0.065,
+    "peak": 8,
+    "year": 1996,
+    "chart": "UK"
+   }
+  ],
+  "signature_decade": "1960s",
+  "distinctiveness": 2.48,
+  "score_per_artist": 11.7,
+  "rank": 72
+ },
+ {
   "slug": "hannover-brunswick",
   "metro": "Hannover-Brunswick",
   "country": "Germany",
@@ -18756,7 +19105,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 6.82,
   "score_per_artist": 46.7,
-  "rank": 72
+  "rank": 73
  },
  {
   "slug": "tulsa",
@@ -18945,7 +19294,7 @@
   "signature_decade": "2020s",
   "distinctiveness": 3.05,
   "score_per_artist": 7.6,
-  "rank": 73
+  "rank": 74
  },
  {
   "slug": "augusta-ga",
@@ -19038,7 +19387,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 5.09,
   "score_per_artist": 44.6,
-  "rank": 74
+  "rank": 75
  },
  {
   "slug": "tokyo",
@@ -19127,7 +19476,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 6.2,
   "score_per_artist": 10.9,
-  "rank": 75
+  "rank": 76
  },
  {
   "slug": "phoenix",
@@ -19439,7 +19788,7 @@
   "signature_decade": "1950s",
   "distinctiveness": 4.57,
   "score_per_artist": 3.8,
-  "rank": 76
+  "rank": 77
  },
  {
   "slug": "louisville",
@@ -19573,7 +19922,7 @@
   "signature_decade": "2020s",
   "distinctiveness": 8.09,
   "score_per_artist": 10.0,
-  "rank": 77
+  "rank": 78
  },
  {
   "slug": "salt-lake-city-provo",
@@ -19830,7 +20179,7 @@
   "signature_decade": "1970s",
   "distinctiveness": 6.4,
   "score_per_artist": 10.0,
-  "rank": 78
+  "rank": 79
  },
  {
   "slug": "oklahoma-city",
@@ -19927,7 +20276,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 3.97,
   "score_per_artist": 9.8,
-  "rank": 79
+  "rank": 80
  },
  {
   "slug": "denver",
@@ -20172,7 +20521,319 @@
   "signature_decade": "1970s",
   "distinctiveness": 4.02,
   "score_per_artist": 5.5,
-  "rank": 80
+  "rank": 81
+ },
+ {
+  "slug": "brighton-hove",
+  "metro": "Brighton & Hove",
+  "country": "United Kingdom",
+  "state": "East Sussex",
+  "us_score": 3.0,
+  "uk_score": 12.3,
+  "album_score": 25.0,
+  "prestige_score": 0.8,
+  "combined": 38.3,
+  "artist_count": 12,
+  "by_decade": {
+   "1970s": {
+    "us": 1.5,
+    "uk": 3.1,
+    "combined": 7.7
+   },
+   "1980s": {
+    "us": 0.8,
+    "uk": 0.5,
+    "combined": 2.8
+   },
+   "1990s": {
+    "us": 0.0,
+    "uk": 1.9,
+    "combined": 1.9
+   },
+   "2000s": {
+    "us": 0.0,
+    "uk": 1.6,
+    "combined": 1.6
+   },
+   "2010s": {
+    "us": 0.7,
+    "uk": 4.4,
+    "combined": 6.6
+   },
+   "2020s": {
+    "us": 0.0,
+    "uk": 0.8,
+    "combined": 0.8
+   }
+  },
+  "top_artists": [
+   {
+    "name": "Leo Sayer",
+    "slug": "leo-sayer",
+    "combined": 25.8
+   },
+   {
+    "name": "Rag'n'Bone Man",
+    "slug": "rag-n-bone-man",
+    "combined": 3.4
+   },
+   {
+    "name": "Passenger",
+    "slug": "passenger",
+    "combined": 3.0
+   },
+   {
+    "name": "Rizzle Kicks",
+    "slug": "rizzle-kicks",
+    "combined": 1.2
+   },
+   {
+    "name": "Fatboy Slim",
+    "slug": "fatboy-slim",
+    "combined": 1.0
+   },
+   {
+    "name": "Conor Maynard",
+    "slug": "conor-maynard",
+    "combined": 0.9
+   },
+   {
+    "name": "The Kooks",
+    "slug": "the-kooks",
+    "combined": 0.7
+   },
+   {
+    "name": "ArrDee",
+    "slug": "arrdee",
+    "combined": 0.7
+   },
+   {
+    "name": "The Ordinary Boys",
+    "slug": "the-ordinary-boys",
+    "combined": 0.6
+   },
+   {
+    "name": "Phats & Small",
+    "slug": "phats-and-small",
+    "combined": 0.5
+   },
+   {
+    "name": "Beats International",
+    "slug": "beats-international",
+    "combined": 0.4
+   },
+   {
+    "name": "Tom Odell",
+    "slug": "tom-odell",
+    "combined": 0.1
+   }
+  ],
+  "top_songs": [
+   {
+    "single": "Let Her Go",
+    "artist": "Passenger",
+    "score": 1.496,
+    "peak": 2,
+    "year": 2013,
+    "chart": "UK / US"
+   },
+   {
+    "single": "When I Need You",
+    "artist": "Leo Sayer",
+    "score": 1.387,
+    "peak": 1,
+    "year": 1977,
+    "chart": "UK / US"
+   },
+   {
+    "single": "You Make Me Feel Like Dancing",
+    "artist": "Leo Sayer",
+    "score": 1.272,
+    "peak": 1,
+    "year": 1976,
+    "chart": "UK / US"
+   },
+   {
+    "single": "More Than I Can Say",
+    "artist": "Leo Sayer",
+    "score": 1.232,
+    "peak": 2,
+    "year": 1980,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Human",
+    "artist": "Rag'n'Bone Man",
+    "score": 1.007,
+    "peak": 2,
+    "year": 2016,
+    "chart": "UK"
+   },
+   {
+    "single": "The Show Must Go On",
+    "artist": "Leo Sayer",
+    "score": 0.671,
+    "peak": 2,
+    "year": 1973,
+    "chart": "UK"
+   },
+   {
+    "single": "Mama Do the Hump",
+    "artist": "Rizzle Kicks",
+    "score": 0.514,
+    "peak": 2,
+    "year": 2012,
+    "chart": "UK"
+   },
+   {
+    "single": "Giant",
+    "artist": "Rag'n'Bone Man",
+    "score": 0.476,
+    "peak": 2,
+    "year": 2019,
+    "chart": "UK"
+   },
+   {
+    "single": "Turn Around",
+    "artist": "Phats & Small",
+    "score": 0.453,
+    "peak": 2,
+    "year": 1999,
+    "chart": "UK"
+   },
+   {
+    "single": "Moonlighting",
+    "artist": "Leo Sayer",
+    "score": 0.421,
+    "peak": 2,
+    "year": 1975,
+    "chart": "UK"
+   },
+   {
+    "single": "Flowers (Say My Name)",
+    "artist": "ArrDee",
+    "score": 0.419,
+    "peak": 5,
+    "year": 2021,
+    "chart": "UK"
+   },
+   {
+    "single": "Long Tall Glasses (I Can Dance)",
+    "artist": "Leo Sayer",
+    "score": 0.406,
+    "peak": 4,
+    "year": 1974,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Boys Will Be Boys",
+    "artist": "The Ordinary Boys",
+    "score": 0.381,
+    "peak": 3,
+    "year": 2006,
+    "chart": "UK"
+   },
+   {
+    "single": "Always Where I Need to Be",
+    "artist": "The Kooks",
+    "score": 0.333,
+    "peak": 3,
+    "year": 2008,
+    "chart": "UK"
+   },
+   {
+    "single": "Praise You",
+    "artist": "Fatboy Slim",
+    "score": 0.329,
+    "peak": 1,
+    "year": 1999,
+    "chart": "UK"
+   },
+   {
+    "single": "Dub Be Good to Me",
+    "artist": "Beats International",
+    "score": 0.328,
+    "peak": 1,
+    "year": 1990,
+    "chart": "UK"
+   },
+   {
+    "single": "Right Here, Right Now",
+    "artist": "Fatboy Slim",
+    "score": 0.296,
+    "peak": 2,
+    "year": 1999,
+    "chart": "UK"
+   },
+   {
+    "single": "Na\u00efve",
+    "artist": "The Kooks",
+    "score": 0.286,
+    "peak": 5,
+    "year": 2006,
+    "chart": "UK"
+   },
+   {
+    "single": "Heart Skips a Beat",
+    "artist": "Rizzle Kicks",
+    "score": 0.279,
+    "peak": 1,
+    "year": 2011,
+    "chart": "UK"
+   },
+   {
+    "single": "Can't Say No",
+    "artist": "Conor Maynard",
+    "score": 0.275,
+    "peak": 2,
+    "year": 2012,
+    "chart": "UK"
+   },
+   {
+    "single": "Oliver Twist",
+    "artist": "ArrDee",
+    "score": 0.264,
+    "peak": 6,
+    "year": 2021,
+    "chart": "UK"
+   },
+   {
+    "single": "Thunder in My Heart Again",
+    "artist": "Leo Sayer",
+    "score": 0.261,
+    "peak": 1,
+    "year": 2006,
+    "chart": "UK"
+   },
+   {
+    "single": "I Can't Stop Loving You (Though I Try)",
+    "artist": "Leo Sayer",
+    "score": 0.255,
+    "peak": 6,
+    "year": 1978,
+    "chart": "UK"
+   },
+   {
+    "single": "Gangster Trippin",
+    "artist": "Fatboy Slim",
+    "score": 0.226,
+    "peak": 3,
+    "year": 1998,
+    "chart": "UK"
+   },
+   {
+    "single": "R U Crazy",
+    "artist": "Conor Maynard",
+    "score": 0.221,
+    "peak": 4,
+    "year": 2013,
+    "chart": "UK"
+   }
+  ],
+  "signature_decade": "1970s",
+  "distinctiveness": 2.47,
+  "score_per_artist": 3.2,
+  "rank": 82
  },
  {
   "slug": "swindon",
@@ -20260,7 +20921,7 @@
   "signature_decade": "1970s",
   "distinctiveness": 6.88,
   "score_per_artist": 37.4,
-  "rank": 81
+  "rank": 83
  },
  {
   "slug": "gainesville",
@@ -20326,7 +20987,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 4.83,
   "score_per_artist": 18.6,
-  "rank": 82
+  "rank": 84
  },
  {
   "slug": "berlin",
@@ -20532,7 +21193,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 3.05,
   "score_per_artist": 9.2,
-  "rank": 83
+  "rank": 85
  },
  {
   "slug": "mexico-city",
@@ -20557,7 +21218,7 @@
   "signature_decade": null,
   "distinctiveness": null,
   "score_per_artist": 36.0,
-  "rank": 84
+  "rank": 86
  },
  {
   "slug": "springfield-mo",
@@ -20629,7 +21290,7 @@
   "signature_decade": "2020s",
   "distinctiveness": 11.11,
   "score_per_artist": 35.9,
-  "rank": 85
+  "rank": 87
  },
  {
   "slug": "jackson",
@@ -20781,7 +21442,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 2.92,
   "score_per_artist": 7.2,
-  "rank": 86
+  "rank": 88
  },
  {
   "slug": "columbia",
@@ -20960,7 +21621,7 @@
   "signature_decade": "1950s",
   "distinctiveness": 6.89,
   "score_per_artist": 8.6,
-  "rank": 87
+  "rank": 89
  },
  {
   "slug": "limerick-city",
@@ -21018,7 +21679,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 6.1,
   "score_per_artist": 17.2,
-  "rank": 88
+  "rank": 90
  },
  {
   "slug": "odessa",
@@ -21188,7 +21849,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 6.67,
   "score_per_artist": 34.1,
-  "rank": 89
+  "rank": 91
  },
  {
   "slug": "halifax-ns",
@@ -21291,7 +21952,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 3.8,
   "score_per_artist": 16.9,
-  "rank": 90
+  "rank": 92
  },
  {
   "slug": "nantucket",
@@ -21376,7 +22037,7 @@
   "signature_decade": "2010s",
   "distinctiveness": 6.33,
   "score_per_artist": 31.7,
-  "rank": 91
+  "rank": 93
  },
  {
   "slug": "edinburgh",
@@ -21634,7 +22295,7 @@
   "signature_decade": "1970s",
   "distinctiveness": 4.15,
   "score_per_artist": 4.5,
-  "rank": 92
+  "rank": 94
  },
  {
   "slug": "sligo",
@@ -21876,7 +22537,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 5.36,
   "score_per_artist": 31.1,
-  "rank": 93
+  "rank": 95
  },
  {
   "slug": "portland",
@@ -21923,13 +22584,13 @@
     "combined": 5.0
    },
    {
-    "name": "Paul Revere & the Raiders",
-    "slug": "paul-revere-and-the-raiders",
+    "name": "Elliott Smith",
+    "slug": "elliott-smith",
     "combined": 3.8
    },
    {
-    "name": "Elliott Smith",
-    "slug": "elliott-smith",
+    "name": "Paul Revere & the Raiders",
+    "slug": "paul-revere-and-the-raiders",
     "combined": 3.8
    },
    {
@@ -22056,7 +22717,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 2.39,
   "score_per_artist": 3.4,
-  "rank": 94
+  "rank": 96
  },
  {
   "slug": "beaumont",
@@ -22153,7 +22814,7 @@
   "signature_decade": "1950s",
   "distinctiveness": 6.12,
   "score_per_artist": 7.6,
-  "rank": 95
+  "rank": 97
  },
  {
   "slug": "aberdeen",
@@ -22391,7 +23052,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 3.57,
   "score_per_artist": 7.3,
-  "rank": 96
+  "rank": 98
  },
  {
   "slug": "bari",
@@ -22439,7 +23100,7 @@
   "signature_decade": "1950s",
   "distinctiveness": 33.96,
   "score_per_artist": 28.5,
-  "rank": 97
+  "rank": 99
  },
  {
   "slug": "oslo",
@@ -22566,7 +23227,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 3.7,
   "score_per_artist": 14.2,
-  "rank": 98
+  "rank": 100
  },
  {
   "slug": "el-paso",
@@ -22643,7 +23304,7 @@
   "signature_decade": "2010s",
   "distinctiveness": 6.7,
   "score_per_artist": 14.0,
-  "rank": 99
+  "rank": 101
  },
  {
   "slug": "indianapolis",
@@ -22883,7 +23544,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 3.66,
   "score_per_artist": 4.6,
-  "rank": 100
+  "rank": 102
  },
  {
   "slug": "columbus",
@@ -22981,7 +23642,7 @@
   "signature_decade": "2010s",
   "distinctiveness": 5.42,
   "score_per_artist": 13.6,
-  "rank": 101
+  "rank": 103
  },
  {
   "slug": "victoria",
@@ -23077,7 +23738,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 25.9,
-  "rank": 102
+  "rank": 104
  },
  {
   "slug": "dumfries",
@@ -23319,7 +23980,7 @@
   "signature_decade": "2010s",
   "distinctiveness": 5.4,
   "score_per_artist": 23.9,
-  "rank": 103
+  "rank": 105
  },
  {
   "slug": "adelaide",
@@ -23444,7 +24105,7 @@
   "signature_decade": "2010s",
   "distinctiveness": 6.7,
   "score_per_artist": 23.8,
-  "rank": 104
+  "rank": 106
  },
  {
   "slug": "charlotte",
@@ -23604,7 +24265,7 @@
   "signature_decade": "1950s",
   "distinctiveness": 3.87,
   "score_per_artist": 3.8,
-  "rank": 105
+  "rank": 107
  },
  {
   "slug": "eau-claire",
@@ -23644,7 +24305,7 @@
   "signature_decade": "2020s",
   "distinctiveness": 11.11,
   "score_per_artist": 22.4,
-  "rank": 106
+  "rank": 108
  },
  {
   "slug": "reykjavik",
@@ -23700,7 +24361,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 6.82,
   "score_per_artist": 22.3,
-  "rank": 107
+  "rank": 109
  },
  {
   "slug": "omaha-lincoln",
@@ -23730,7 +24391,7 @@
   "signature_decade": null,
   "distinctiveness": null,
   "score_per_artist": 11.1,
-  "rank": 108
+  "rank": 110
  },
  {
   "slug": "kansas-city",
@@ -23845,7 +24506,7 @@
   "signature_decade": "2010s",
   "distinctiveness": 2.14,
   "score_per_artist": 4.4,
-  "rank": 109
+  "rank": 111
  },
  {
   "slug": "dayton",
@@ -23953,7 +24614,7 @@
   "signature_decade": "2010s",
   "distinctiveness": 4.38,
   "score_per_artist": 7.3,
-  "rank": 110
+  "rank": 112
  },
  {
   "slug": "munich",
@@ -24111,7 +24772,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 2.91,
   "score_per_artist": 4.4,
-  "rank": 111
+  "rank": 113
  },
  {
   "slug": "tallahassee",
@@ -24315,7 +24976,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 5.0,
   "score_per_artist": 10.8,
-  "rank": 112
+  "rank": 114
  },
  {
   "slug": "perth",
@@ -24433,7 +25094,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 5.08,
   "score_per_artist": 7.2,
-  "rank": 113
+  "rank": 115
  },
  {
   "slug": "macon",
@@ -24566,7 +25227,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 2.63,
   "score_per_artist": 4.2,
-  "rank": 114
+  "rank": 116
  },
  {
   "slug": "lubbock",
@@ -24708,7 +25369,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 4.59,
   "score_per_artist": 4.0,
-  "rank": 115
+  "rank": 117
  },
  {
   "slug": "san-diego",
@@ -24868,7 +25529,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 4.37,
   "score_per_artist": 3.2,
-  "rank": 116
+  "rank": 118
  },
  {
   "slug": "asheville",
@@ -24924,7 +25585,7 @@
   "signature_decade": "2020s",
   "distinctiveness": 11.11,
   "score_per_artist": 19.4,
-  "rank": 117
+  "rank": 119
  },
  {
   "slug": "anchorage",
@@ -24980,7 +25641,148 @@
   "signature_decade": "1990s",
   "distinctiveness": 6.82,
   "score_per_artist": 17.7,
-  "rank": 118
+  "rank": 120
+ },
+ {
+  "slug": "hereford",
+  "metro": "Hereford",
+  "country": "United Kingdom",
+  "state": "Herefordshire",
+  "us_score": 2.5,
+  "uk_score": 4.6,
+  "album_score": 6.1,
+  "prestige_score": 0.8,
+  "combined": 17.7,
+  "artist_count": 1,
+  "by_decade": {
+   "2010s": {
+    "us": 2.5,
+    "uk": 4.0,
+    "combined": 11.6
+   },
+   "2020s": {
+    "us": 0.0,
+    "uk": 0.6,
+    "combined": 0.6
+   }
+  },
+  "top_artists": [
+   {
+    "name": "Ellie Goulding",
+    "slug": "ellie-goulding",
+    "combined": 17.7
+   }
+  ],
+  "top_songs": [
+   {
+    "single": "Love Me like You Do",
+    "artist": "Ellie Goulding",
+    "score": 2.04,
+    "peak": 1,
+    "year": 2015,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Lights",
+    "artist": "Ellie Goulding",
+    "score": 1.22,
+    "peak": 2,
+    "year": 2012,
+    "chart": "US"
+   },
+   {
+    "single": "Miracle",
+    "artist": "Ellie Goulding",
+    "score": 0.623,
+    "peak": 1,
+    "year": 2023,
+    "chart": "UK"
+   },
+   {
+    "single": "Burn",
+    "artist": "Ellie Goulding",
+    "score": 0.591,
+    "peak": 1,
+    "year": 2013,
+    "chart": "UK"
+   },
+   {
+    "single": "How Long Will I Love You?",
+    "artist": "Ellie Goulding",
+    "score": 0.565,
+    "peak": 3,
+    "year": 2013,
+    "chart": "UK"
+   },
+   {
+    "single": "Your Song",
+    "artist": "Ellie Goulding",
+    "score": 0.519,
+    "peak": 2,
+    "year": 2010,
+    "chart": "UK"
+   },
+   {
+    "single": "River",
+    "artist": "Ellie Goulding",
+    "score": 0.4,
+    "peak": 1,
+    "year": 2019,
+    "chart": "UK"
+   },
+   {
+    "single": "Starry Eyed",
+    "artist": "Ellie Goulding",
+    "score": 0.341,
+    "peak": 4,
+    "year": 2010,
+    "chart": "UK"
+   },
+   {
+    "single": "On My Mind",
+    "artist": "Ellie Goulding",
+    "score": 0.333,
+    "peak": 5,
+    "year": 2015,
+    "chart": "UK"
+   },
+   {
+    "single": "Anything Could Happen",
+    "artist": "Ellie Goulding",
+    "score": 0.183,
+    "peak": 5,
+    "year": 2012,
+    "chart": "UK"
+   },
+   {
+    "single": "I Need Your Love",
+    "artist": "Ellie Goulding",
+    "score": 0.156,
+    "peak": 4,
+    "year": 2013,
+    "chart": "UK"
+   },
+   {
+    "single": "Outside",
+    "artist": "Ellie Goulding",
+    "score": 0.145,
+    "peak": 6,
+    "year": 2014,
+    "chart": "UK"
+   },
+   {
+    "single": "Beating Heart",
+    "artist": "Ellie Goulding",
+    "score": 0.044,
+    "peak": 9,
+    "year": 2014,
+    "chart": "UK"
+   }
+  ],
+  "signature_decade": "2010s",
+  "distinctiveness": 6.37,
+  "score_per_artist": 17.7,
+  "rank": 121
  },
  {
   "slug": "fayetteville",
@@ -25113,7 +25915,7 @@
   "signature_decade": "2020s",
   "distinctiveness": 5.87,
   "score_per_artist": 17.7,
-  "rank": 119
+  "rank": 122
  },
  {
   "slug": "bakersfield",
@@ -25138,7 +25940,7 @@
   "signature_decade": null,
   "distinctiveness": null,
   "score_per_artist": 17.6,
-  "rank": 120
+  "rank": 123
  },
  {
   "slug": "baton-rouge",
@@ -25307,7 +26109,7 @@
   "signature_decade": "1950s",
   "distinctiveness": 6.87,
   "score_per_artist": 4.3,
-  "rank": 121
+  "rank": 124
  },
  {
   "slug": "copenhagen",
@@ -25436,7 +26238,7 @@
   "signature_decade": "2010s",
   "distinctiveness": 4.74,
   "score_per_artist": 5.8,
-  "rank": 122
+  "rank": 125
  },
  {
   "slug": "cincinnati",
@@ -25609,7 +26411,7 @@
   "signature_decade": "1950s",
   "distinctiveness": 3.75,
   "score_per_artist": 2.9,
-  "rank": 123
+  "rank": 126
  },
  {
   "slug": "grand-rapids",
@@ -25757,211 +26559,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 3.87,
   "score_per_artist": 5.7,
-  "rank": 124
- },
- {
-  "slug": "leicester",
-  "metro": "Leicester",
-  "country": "United Kingdom",
-  "state": "Leicestershire",
-  "us_score": 1.2,
-  "uk_score": 6.1,
-  "album_score": 8.0,
-  "prestige_score": 0.8,
-  "combined": 16.6,
-  "artist_count": 3,
-  "by_decade": {
-   "1970s": {
-    "us": 0.0,
-    "uk": 4.4,
-    "combined": 4.4
-   },
-   "1990s": {
-    "us": 1.2,
-    "uk": 1.3,
-    "combined": 5.0
-   },
-   "2000s": {
-    "us": 0.0,
-    "uk": 0.4,
-    "combined": 0.4
-   }
-  },
-  "top_artists": [
-   {
-    "name": "Showaddywaddy",
-    "slug": "showaddywaddy",
-    "combined": 9.2
-   },
-   {
-    "name": "Mark Morrison",
-    "slug": "mark-morrison",
-    "combined": 5.0
-   },
-   {
-    "name": "Kasabian",
-    "slug": "kasabian",
-    "combined": 2.3
-   }
-  ],
-  "top_songs": [
-   {
-    "single": "Return of the Mack",
-    "artist": "Mark Morrison",
-    "score": 1.992,
-    "peak": 1,
-    "year": 1996,
-    "chart": "UK / US"
-   },
-   {
-    "single": "Under the Moon of Love",
-    "artist": "Showaddywaddy",
-    "score": 0.727,
-    "peak": 1,
-    "year": 1976,
-    "chart": "UK"
-   },
-   {
-    "single": "Hey Rock and Roll",
-    "artist": "Showaddywaddy",
-    "score": 0.537,
-    "peak": 2,
-    "year": 1974,
-    "chart": "UK"
-   },
-   {
-    "single": "Three Steps to Heaven",
-    "artist": "Showaddywaddy",
-    "score": 0.516,
-    "peak": 2,
-    "year": 1975,
-    "chart": "UK"
-   },
-   {
-    "single": "I Wonder Why",
-    "artist": "Showaddywaddy",
-    "score": 0.514,
-    "peak": 2,
-    "year": 1978,
-    "chart": "UK"
-   },
-   {
-    "single": "You Got What It Takes",
-    "artist": "Showaddywaddy",
-    "score": 0.511,
-    "peak": 2,
-    "year": 1977,
-    "chart": "UK"
-   },
-   {
-    "single": "When",
-    "artist": "Showaddywaddy",
-    "score": 0.498,
-    "peak": 3,
-    "year": 1977,
-    "chart": "UK"
-   },
-   {
-    "single": "Dancin' Party",
-    "artist": "Showaddywaddy",
-    "score": 0.398,
-    "peak": 4,
-    "year": 1977,
-    "chart": "UK"
-   },
-   {
-    "single": "A Little Bit of Soap",
-    "artist": "Showaddywaddy",
-    "score": 0.306,
-    "peak": 5,
-    "year": 1978,
-    "chart": "UK"
-   },
-   {
-    "single": "Pretty Little Angel Eyes",
-    "artist": "Showaddywaddy",
-    "score": 0.265,
-    "peak": 5,
-    "year": 1978,
-    "chart": "UK"
-   },
-   {
-    "single": "Fire",
-    "artist": "Kasabian",
-    "score": 0.263,
-    "peak": 3,
-    "year": 2009,
-    "chart": "UK"
-   },
-   {
-    "single": "Horny",
-    "artist": "Mark Morrison",
-    "score": 0.259,
-    "peak": 5,
-    "year": 1996,
-    "chart": "UK"
-   },
-   {
-    "single": "Heartbeat",
-    "artist": "Showaddywaddy",
-    "score": 0.162,
-    "peak": 7,
-    "year": 1975,
-    "chart": "UK"
-   },
-   {
-    "single": "Crazy",
-    "artist": "Mark Morrison",
-    "score": 0.153,
-    "peak": 6,
-    "year": 1996,
-    "chart": "UK"
-   },
-   {
-    "single": "Moan and Groan",
-    "artist": "Mark Morrison",
-    "score": 0.081,
-    "peak": 7,
-    "year": 1997,
-    "chart": "UK"
-   },
-   {
-    "single": "Trippin'",
-    "artist": "Mark Morrison",
-    "score": 0.065,
-    "peak": 8,
-    "year": 1996,
-    "chart": "UK"
-   },
-   {
-    "single": "Empire",
-    "artist": "Kasabian",
-    "score": 0.06,
-    "peak": 9,
-    "year": 2006,
-    "chart": "UK"
-   },
-   {
-    "single": "Cutt Off",
-    "artist": "Kasabian",
-    "score": 0.057,
-    "peak": 8,
-    "year": 2005,
-    "chart": "UK"
-   },
-   {
-    "single": "L.S.F.",
-    "artist": "Kasabian",
-    "score": 0.02,
-    "peak": 10,
-    "year": 2004,
-    "chart": "UK"
-   }
-  ],
-  "signature_decade": "1990s",
-  "distinctiveness": 3.48,
-  "score_per_artist": 5.5,
-  "rank": 125
+  "rank": 127
  },
  {
   "slug": "buffalo",
@@ -26061,7 +26659,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 5.36,
   "score_per_artist": 5.4,
-  "rank": 126
+  "rank": 128
  },
  {
   "slug": "spokane",
@@ -26122,7 +26720,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 4.46,
   "score_per_artist": 16.2,
-  "rank": 127
+  "rank": 129
  },
  {
   "slug": "rio-de-janeiro",
@@ -26203,7 +26801,7 @@
   "signature_decade": "1970s",
   "distinctiveness": 3.35,
   "score_per_artist": 4.0,
-  "rank": 128
+  "rank": 130
  },
  {
   "slug": "colorado-springs",
@@ -26301,7 +26899,7 @@
   "signature_decade": "2010s",
   "distinctiveness": 3.8,
   "score_per_artist": 15.5,
-  "rank": 129
+  "rank": 131
  },
  {
   "slug": "tampa",
@@ -26363,13 +26961,13 @@
     "combined": 1.7
    },
    {
-    "name": "Aaron Carter",
-    "slug": "aaron-carter",
+    "name": "Donna Allen",
+    "slug": "donna-allen",
     "combined": 0.1
    },
    {
-    "name": "Donna Allen",
-    "slug": "donna-allen",
+    "name": "Aaron Carter",
+    "slug": "aaron-carter",
     "combined": 0.1
    }
   ],
@@ -26466,7 +27064,7 @@
   "signature_decade": "1970s",
   "distinctiveness": 4.22,
   "score_per_artist": 2.5,
-  "rank": 130
+  "rank": 132
  },
  {
   "slug": "beckley",
@@ -26551,7 +27149,7 @@
   "signature_decade": "1970s",
   "distinctiveness": 5.28,
   "score_per_artist": 15.1,
-  "rank": 131
+  "rank": 133
  },
  {
   "slug": "charleston-wv",
@@ -26604,7 +27202,7 @@
   "signature_decade": "2010s",
   "distinctiveness": 3.65,
   "score_per_artist": 15.1,
-  "rank": 132
+  "rank": 134
  },
  {
   "slug": "brussels",
@@ -26730,7 +27328,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 2.2,
   "score_per_artist": 4.7,
-  "rank": 133
+  "rank": 135
  },
  {
   "slug": "belfast",
@@ -27003,7 +27601,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 2.67,
   "score_per_artist": 1.6,
-  "rank": 134
+  "rank": 136
  },
  {
   "slug": "lagos",
@@ -27137,7 +27735,7 @@
   "signature_decade": "2020s",
   "distinctiveness": 7.61,
   "score_per_artist": 2.3,
-  "rank": 135
+  "rank": 137
  },
  {
   "slug": "shreveport",
@@ -27198,7 +27796,7 @@
   "signature_decade": "1950s",
   "distinctiveness": 16.17,
   "score_per_artist": 13.5,
-  "rank": 136
+  "rank": 138
  },
  {
   "slug": "greenville-spartanburg",
@@ -27280,7 +27878,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 6.16,
   "score_per_artist": 6.6,
-  "rank": 137
+  "rank": 139
  },
  {
   "slug": "amsterdam",
@@ -27332,13 +27930,13 @@
     "combined": 0.7
    },
    {
-    "name": "Sam Feldt",
-    "slug": "sam-feldt",
+    "name": "Eva Simons",
+    "slug": "eva-simons",
     "combined": 0.2
    },
    {
-    "name": "Eva Simons",
-    "slug": "eva-simons",
+    "name": "Sam Feldt",
+    "slug": "sam-feldt",
     "combined": 0.2
    }
   ],
@@ -27435,304 +28033,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 3.15,
   "score_per_artist": 2.1,
-  "rank": 138
- },
- {
-  "slug": "brighton-hove",
-  "metro": "Brighton & Hove",
-  "country": "United Kingdom",
-  "state": "East Sussex",
-  "us_score": 0.7,
-  "uk_score": 8.4,
-  "album_score": 0.0,
-  "prestige_score": 0.8,
-  "combined": 12.6,
-  "artist_count": 11,
-  "by_decade": {
-   "1990s": {
-    "us": 0.0,
-    "uk": 1.9,
-    "combined": 1.9
-   },
-   "2000s": {
-    "us": 0.0,
-    "uk": 1.4,
-    "combined": 1.4
-   },
-   "2010s": {
-    "us": 0.7,
-    "uk": 4.4,
-    "combined": 6.6
-   },
-   "2020s": {
-    "us": 0.0,
-    "uk": 0.8,
-    "combined": 0.8
-   }
-  },
-  "top_artists": [
-   {
-    "name": "Rag'n'Bone Man",
-    "slug": "rag-n-bone-man",
-    "combined": 3.4
-   },
-   {
-    "name": "Passenger",
-    "slug": "passenger",
-    "combined": 3.0
-   },
-   {
-    "name": "Rizzle Kicks",
-    "slug": "rizzle-kicks",
-    "combined": 1.2
-   },
-   {
-    "name": "Fatboy Slim",
-    "slug": "fatboy-slim",
-    "combined": 1.0
-   },
-   {
-    "name": "Conor Maynard",
-    "slug": "conor-maynard",
-    "combined": 0.9
-   },
-   {
-    "name": "ArrDee",
-    "slug": "arrdee",
-    "combined": 0.7
-   },
-   {
-    "name": "The Kooks",
-    "slug": "the-kooks",
-    "combined": 0.7
-   },
-   {
-    "name": "The Ordinary Boys",
-    "slug": "the-ordinary-boys",
-    "combined": 0.6
-   },
-   {
-    "name": "Phats & Small",
-    "slug": "phats-and-small",
-    "combined": 0.5
-   },
-   {
-    "name": "Beats International",
-    "slug": "beats-international",
-    "combined": 0.4
-   },
-   {
-    "name": "Tom Odell",
-    "slug": "tom-odell",
-    "combined": 0.1
-   }
-  ],
-  "top_songs": [
-   {
-    "single": "Let Her Go",
-    "artist": "Passenger",
-    "score": 1.496,
-    "peak": 2,
-    "year": 2013,
-    "chart": "UK / US"
-   },
-   {
-    "single": "Human",
-    "artist": "Rag'n'Bone Man",
-    "score": 1.007,
-    "peak": 2,
-    "year": 2016,
-    "chart": "UK"
-   },
-   {
-    "single": "Mama Do the Hump",
-    "artist": "Rizzle Kicks",
-    "score": 0.514,
-    "peak": 2,
-    "year": 2012,
-    "chart": "UK"
-   },
-   {
-    "single": "Giant",
-    "artist": "Rag'n'Bone Man",
-    "score": 0.476,
-    "peak": 2,
-    "year": 2019,
-    "chart": "UK"
-   },
-   {
-    "single": "Turn Around",
-    "artist": "Phats & Small",
-    "score": 0.453,
-    "peak": 2,
-    "year": 1999,
-    "chart": "UK"
-   },
-   {
-    "single": "Flowers (Say My Name)",
-    "artist": "ArrDee",
-    "score": 0.419,
-    "peak": 5,
-    "year": 2021,
-    "chart": "UK"
-   },
-   {
-    "single": "Boys Will Be Boys",
-    "artist": "The Ordinary Boys",
-    "score": 0.381,
-    "peak": 3,
-    "year": 2006,
-    "chart": "UK"
-   },
-   {
-    "single": "Always Where I Need to Be",
-    "artist": "The Kooks",
-    "score": 0.333,
-    "peak": 3,
-    "year": 2008,
-    "chart": "UK"
-   },
-   {
-    "single": "Praise You",
-    "artist": "Fatboy Slim",
-    "score": 0.329,
-    "peak": 1,
-    "year": 1999,
-    "chart": "UK"
-   },
-   {
-    "single": "Dub Be Good to Me",
-    "artist": "Beats International",
-    "score": 0.328,
-    "peak": 1,
-    "year": 1990,
-    "chart": "UK"
-   },
-   {
-    "single": "Right Here, Right Now",
-    "artist": "Fatboy Slim",
-    "score": 0.296,
-    "peak": 2,
-    "year": 1999,
-    "chart": "UK"
-   },
-   {
-    "single": "Na\u00efve",
-    "artist": "The Kooks",
-    "score": 0.286,
-    "peak": 5,
-    "year": 2006,
-    "chart": "UK"
-   },
-   {
-    "single": "Heart Skips a Beat",
-    "artist": "Rizzle Kicks",
-    "score": 0.279,
-    "peak": 1,
-    "year": 2011,
-    "chart": "UK"
-   },
-   {
-    "single": "Can't Say No",
-    "artist": "Conor Maynard",
-    "score": 0.275,
-    "peak": 2,
-    "year": 2012,
-    "chart": "UK"
-   },
-   {
-    "single": "Oliver Twist",
-    "artist": "ArrDee",
-    "score": 0.264,
-    "peak": 6,
-    "year": 2021,
-    "chart": "UK"
-   },
-   {
-    "single": "Gangster Trippin",
-    "artist": "Fatboy Slim",
-    "score": 0.226,
-    "peak": 3,
-    "year": 1998,
-    "chart": "UK"
-   },
-   {
-    "single": "R U Crazy",
-    "artist": "Conor Maynard",
-    "score": 0.221,
-    "peak": 4,
-    "year": 2013,
-    "chart": "UK"
-   },
-   {
-    "single": "Vegas Girl",
-    "artist": "Conor Maynard",
-    "score": 0.214,
-    "peak": 4,
-    "year": 2012,
-    "chart": "UK"
-   },
-   {
-    "single": "Lost Generation",
-    "artist": "Rizzle Kicks",
-    "score": 0.158,
-    "peak": 6,
-    "year": 2013,
-    "chart": "UK"
-   },
-   {
-    "single": "Down with the Trumpets",
-    "artist": "Rizzle Kicks",
-    "score": 0.137,
-    "peak": 8,
-    "year": 2011,
-    "chart": "UK"
-   },
-   {
-    "single": "I Luv U",
-    "artist": "The Ordinary Boys",
-    "score": 0.135,
-    "peak": 7,
-    "year": 2007,
-    "chart": "UK"
-   },
-   {
-    "single": "She Moves in Her Own Way",
-    "artist": "The Kooks",
-    "score": 0.121,
-    "peak": 7,
-    "year": 2006,
-    "chart": "UK"
-   },
-   {
-    "single": "The Rockafeller Skank",
-    "artist": "Fatboy Slim",
-    "score": 0.1,
-    "peak": 6,
-    "year": 1998,
-    "chart": "UK"
-   },
-   {
-    "single": "Real Love",
-    "artist": "Tom Odell",
-    "score": 0.088,
-    "peak": 7,
-    "year": 2014,
-    "chart": "UK"
-   },
-   {
-    "single": "Animal",
-    "artist": "Conor Maynard",
-    "score": 0.079,
-    "peak": 6,
-    "year": 2013,
-    "chart": "UK"
-   }
-  ],
-  "signature_decade": "2010s",
-  "distinctiveness": 4.13,
-  "score_per_artist": 1.1,
-  "rank": 139
+  "rank": 140
  },
  {
   "slug": "medellin",
@@ -27762,7 +28063,7 @@
   "signature_decade": null,
   "distinctiveness": null,
   "score_per_artist": 6.2,
-  "rank": 140
+  "rank": 141
  },
  {
   "slug": "busan-ulsan",
@@ -27847,7 +28148,7 @@
   "signature_decade": "2020s",
   "distinctiveness": 11.11,
   "score_per_artist": 6.0,
-  "rank": 141
+  "rank": 142
  },
  {
   "slug": "providence",
@@ -27992,7 +28293,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 2.46,
   "score_per_artist": 2.9,
-  "rank": 142
+  "rank": 143
  },
  {
   "slug": "sacramento",
@@ -28063,7 +28364,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 5.4,
   "score_per_artist": 3.7,
-  "rank": 143
+  "rank": 144
  },
  {
   "slug": "fargo",
@@ -28167,7 +28468,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 7.01,
   "score_per_artist": 10.7,
-  "rank": 144
+  "rank": 145
  },
  {
   "slug": "hartford",
@@ -28326,7 +28627,7 @@
   "signature_decade": "1950s",
   "distinctiveness": 10.67,
   "score_per_artist": 5.2,
-  "rank": 145
+  "rank": 146
  },
  {
   "slug": "south-bend",
@@ -28414,7 +28715,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 7.01,
   "score_per_artist": 10.3,
-  "rank": 146
+  "rank": 147
  },
  {
   "slug": "barcelona",
@@ -28439,7 +28740,7 @@
   "signature_decade": null,
   "distinctiveness": null,
   "score_per_artist": 10.1,
-  "rank": 147
+  "rank": 148
  },
  {
   "slug": "new-haven",
@@ -28535,7 +28836,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 6.82,
   "score_per_artist": 9.8,
-  "rank": 148
+  "rank": 149
  },
  {
   "slug": "swansea",
@@ -28641,7 +28942,7 @@
   "signature_decade": "1970s",
   "distinctiveness": 3.84,
   "score_per_artist": 4.8,
-  "rank": 149
+  "rank": 150
  },
  {
   "slug": "eureka",
@@ -28681,7 +28982,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 9.4,
-  "rank": 150
+  "rank": 151
  },
  {
   "slug": "milwaukee",
@@ -28739,7 +29040,7 @@
   "signature_decade": "2010s",
   "distinctiveness": 6.18,
   "score_per_artist": 4.6,
-  "rank": 151
+  "rank": 152
  },
  {
   "slug": "rhine-ruhr",
@@ -28897,7 +29198,7 @@
   "signature_decade": "2020s",
   "distinctiveness": 5.98,
   "score_per_artist": 2.3,
-  "rank": 152
+  "rank": 153
  },
  {
   "slug": "middlesbrough",
@@ -29034,7 +29335,7 @@
   "signature_decade": "2010s",
   "distinctiveness": 5.81,
   "score_per_artist": 3.0,
-  "rank": 153
+  "rank": 154
  },
  {
   "slug": "fresno",
@@ -29100,7 +29401,7 @@
   "signature_decade": "1950s",
   "distinctiveness": 19.59,
   "score_per_artist": 4.4,
-  "rank": 154
+  "rank": 155
  },
  {
   "slug": "rotterdam-the-hague",
@@ -29309,7 +29610,103 @@
   "signature_decade": "1990s",
   "distinctiveness": 3.97,
   "score_per_artist": 2.1,
-  "rank": 155
+  "rank": 156
+ },
+ {
+  "slug": "portsmouth",
+  "metro": "Portsmouth",
+  "country": "United Kingdom",
+  "state": "Hampshire",
+  "us_score": 0.5,
+  "uk_score": 0.4,
+  "album_score": 5.0,
+  "prestige_score": 1.5,
+  "combined": 8.4,
+  "artist_count": 1,
+  "by_decade": {
+   "1980s": {
+    "us": 0.5,
+    "uk": 0.4,
+    "combined": 1.8
+   }
+  },
+  "top_artists": [
+   {
+    "name": "Joe Jackson",
+    "slug": "joe-jackson",
+    "combined": 8.4
+   }
+  ],
+  "top_songs": [
+   {
+    "single": "Steppin' Out",
+    "artist": "Joe Jackson",
+    "score": 0.657,
+    "peak": 6,
+    "year": 1982,
+    "chart": "UK / US"
+   },
+   {
+    "single": "It's Different for Girls",
+    "artist": "Joe Jackson",
+    "score": 0.233,
+    "peak": 5,
+    "year": 1980,
+    "chart": "UK"
+   }
+  ],
+  "signature_decade": "1980s",
+  "distinctiveness": 6.68,
+  "score_per_artist": 8.4,
+  "rank": 157
+ },
+ {
+  "slug": "dundee",
+  "metro": "Dundee",
+  "country": "United Kingdom",
+  "state": "Dundee City",
+  "us_score": 0.6,
+  "uk_score": 0.2,
+  "album_score": 10.0,
+  "prestige_score": 0.0,
+  "combined": 8.1,
+  "artist_count": 1,
+  "by_decade": {
+   "1970s": {
+    "us": 0.6,
+    "uk": 0.2,
+    "combined": 2.1
+   }
+  },
+  "top_artists": [
+   {
+    "name": "Average White Band",
+    "slug": "average-white-band",
+    "combined": 8.1
+   }
+  ],
+  "top_songs": [
+   {
+    "single": "Pick Up the Pieces",
+    "artist": "Average White Band",
+    "score": 0.816,
+    "peak": 1,
+    "year": 1975,
+    "chart": "UK / US"
+   },
+   {
+    "single": "Cut the Cake",
+    "artist": "Average White Band",
+    "score": 0.033,
+    "peak": 10,
+    "year": 1975,
+    "chart": "US"
+   }
+  ],
+  "signature_decade": "1970s",
+  "distinctiveness": 6.88,
+  "score_per_artist": 8.1,
+  "rank": 158
  },
  {
   "slug": "longview",
@@ -29334,7 +29731,7 @@
   "signature_decade": null,
   "distinctiveness": null,
   "score_per_artist": 8.1,
-  "rank": 156
+  "rank": 159
  },
  {
   "slug": "biloxi",
@@ -29390,7 +29787,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 8.0,
-  "rank": 157
+  "rank": 160
  },
  {
   "slug": "mumbai",
@@ -29415,7 +29812,7 @@
   "signature_decade": null,
   "distinctiveness": null,
   "score_per_artist": 8.0,
-  "rank": 158
+  "rank": 161
  },
  {
   "slug": "athens",
@@ -29489,7 +29886,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 4.51,
   "score_per_artist": 4.0,
-  "rank": 159
+  "rank": 162
  },
  {
   "slug": "rochester",
@@ -29626,7 +30023,7 @@
   "signature_decade": "2010s",
   "distinctiveness": 3.15,
   "score_per_artist": 2.6,
-  "rank": 160
+  "rank": 163
  },
  {
   "slug": "flint",
@@ -29716,7 +30113,7 @@
   "signature_decade": "1970s",
   "distinctiveness": 5.16,
   "score_per_artist": 3.8,
-  "rank": 161
+  "rank": 164
  },
  {
   "slug": "pine-bluff",
@@ -29769,7 +30166,7 @@
   "signature_decade": "1950s",
   "distinctiveness": 26.81,
   "score_per_artist": 7.5,
-  "rank": 162
+  "rank": 165
  },
  {
   "slug": "guadalajara",
@@ -29809,7 +30206,7 @@
   "signature_decade": "2020s",
   "distinctiveness": 11.11,
   "score_per_artist": 7.4,
-  "rank": 163
+  "rank": 166
  },
  {
   "slug": "hull",
@@ -30007,7 +30404,7 @@
   "signature_decade": "2010s",
   "distinctiveness": 2.56,
   "score_per_artist": 1.8,
-  "rank": 164
+  "rank": 167
  },
  {
   "slug": "champaign",
@@ -30071,7 +30468,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 6.68,
   "score_per_artist": 7.2,
-  "rank": 165
+  "rank": 168
  },
  {
   "slug": "lake-charles",
@@ -30096,7 +30493,7 @@
   "signature_decade": null,
   "distinctiveness": null,
   "score_per_artist": 7.0,
-  "rank": 166
+  "rank": 169
  },
  {
   "slug": "madison",
@@ -30181,7 +30578,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 5.12,
   "score_per_artist": 6.9,
-  "rank": 167
+  "rank": 170
  },
  {
   "slug": "harrisburg",
@@ -30292,7 +30689,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 3.65,
   "score_per_artist": 3.3,
-  "rank": 168
+  "rank": 171
  },
  {
   "slug": "taipei",
@@ -30317,7 +30714,7 @@
   "signature_decade": null,
   "distinctiveness": null,
   "score_per_artist": 6.5,
-  "rank": 169
+  "rank": 172
  },
  {
   "slug": "frankfurt",
@@ -30421,7 +30818,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 6.82,
   "score_per_artist": 6.1,
-  "rank": 170
+  "rank": 173
  },
  {
   "slug": "greensboro-winston-salem",
@@ -30482,7 +30879,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 2.9,
-  "rank": 171
+  "rank": 174
  },
  {
   "slug": "seville",
@@ -30530,7 +30927,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 6.82,
   "score_per_artist": 5.6,
-  "rank": 172
+  "rank": 175
  },
  {
   "slug": "tupelo",
@@ -30583,7 +30980,7 @@
   "signature_decade": "2010s",
   "distinctiveness": 6.7,
   "score_per_artist": 2.4,
-  "rank": 173
+  "rank": 176
  },
  {
   "slug": "bergen",
@@ -30623,7 +31020,7 @@
   "signature_decade": "2010s",
   "distinctiveness": 6.7,
   "score_per_artist": 4.8,
-  "rank": 174
+  "rank": 177
  },
  {
   "slug": "nottingham",
@@ -30752,7 +31149,7 @@
   "signature_decade": "1970s",
   "distinctiveness": 3.8,
   "score_per_artist": 1.6,
-  "rank": 175
+  "rank": 178
  },
  {
   "slug": "stillwater",
@@ -30808,7 +31205,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 4.7,
-  "rank": 176
+  "rank": 179
  },
  {
   "slug": "coventry",
@@ -30845,13 +31242,13 @@
     "combined": 1.9
    },
    {
-    "name": "King",
-    "slug": "king",
+    "name": "Lieutenant Pigeon",
+    "slug": "lieutenant-pigeon",
     "combined": 0.7
    },
    {
-    "name": "Lieutenant Pigeon",
-    "slug": "lieutenant-pigeon",
+    "name": "King",
+    "slug": "king",
     "combined": 0.7
    },
    {
@@ -31027,7 +31424,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 4.97,
   "score_per_artist": 0.7,
-  "rank": 177
+  "rank": 180
  },
  {
   "slug": "florence-al",
@@ -31077,7 +31474,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 5.66,
   "score_per_artist": 2.1,
-  "rank": 178
+  "rank": 181
  },
  {
   "slug": "birmingham-al",
@@ -31193,7 +31590,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 5.06,
   "score_per_artist": 1.4,
-  "rank": 179
+  "rank": 182
  },
  {
   "slug": "road-town",
@@ -31246,7 +31643,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 5.51,
   "score_per_artist": 4.2,
-  "rank": 180
+  "rank": 183
  },
  {
   "slug": "waco",
@@ -31302,7 +31699,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 6.82,
   "score_per_artist": 4.1,
-  "rank": 181
+  "rank": 184
  },
  {
   "slug": "mcallen",
@@ -31327,7 +31724,7 @@
   "signature_decade": null,
   "distinctiveness": null,
   "score_per_artist": 4.1,
-  "rank": 182
+  "rank": 185
  },
  {
   "slug": "havana",
@@ -31367,7 +31764,7 @@
   "signature_decade": "1950s",
   "distinctiveness": 33.96,
   "score_per_artist": 3.9,
-  "rank": 183
+  "rank": 186
  },
  {
   "slug": "southampton",
@@ -31568,7 +31965,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 4.12,
   "score_per_artist": 1.2,
-  "rank": 184
+  "rank": 187
  },
  {
   "slug": "rockford",
@@ -31629,7 +32026,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 5.2,
   "score_per_artist": 3.5,
-  "rank": 185
+  "rank": 188
  },
  {
   "slug": "peoria",
@@ -31693,7 +32090,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 6.68,
   "score_per_artist": 3.4,
-  "rank": 186
+  "rank": 189
  },
  {
   "slug": "greenville-nc",
@@ -31741,7 +32138,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 3.4,
-  "rank": 187
+  "rank": 190
  },
  {
   "slug": "hamburg",
@@ -31807,7 +32204,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 5.48,
   "score_per_artist": 1.6,
-  "rank": 188
+  "rank": 191
  },
  {
   "slug": "corpus-christi",
@@ -31847,7 +32244,7 @@
   "signature_decade": "2020s",
   "distinctiveness": 11.11,
   "score_per_artist": 3.3,
-  "rank": 189
+  "rank": 192
  },
  {
   "slug": "lexington",
@@ -31887,7 +32284,7 @@
   "signature_decade": "1970s",
   "distinctiveness": 6.88,
   "score_per_artist": 3.2,
-  "rank": 190
+  "rank": 193
  },
  {
   "slug": "new-london",
@@ -31927,7 +32324,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 3.2,
-  "rank": 191
+  "rank": 194
  },
  {
   "slug": "johannesburg",
@@ -31993,7 +32390,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 5.14,
   "score_per_artist": 1.6,
-  "rank": 192
+  "rank": 195
  },
  {
   "slug": "toledo",
@@ -32062,7 +32459,7 @@
   "signature_decade": "1950s",
   "distinctiveness": 23.42,
   "score_per_artist": 2.9,
-  "rank": 193
+  "rank": 196
  },
  {
   "slug": "lincoln",
@@ -32110,7 +32507,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 7.01,
   "score_per_artist": 2.9,
-  "rank": 194
+  "rank": 197
  },
  {
   "slug": "fort-wayne",
@@ -32158,7 +32555,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 7.01,
   "score_per_artist": 2.8,
-  "rank": 195
+  "rank": 198
  },
  {
   "slug": "prague",
@@ -32206,7 +32603,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 6.68,
   "score_per_artist": 2.7,
-  "rank": 196
+  "rank": 199
  },
  {
   "slug": "vienna",
@@ -32254,7 +32651,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 6.68,
   "score_per_artist": 2.6,
-  "rank": 197
+  "rank": 200
  },
  {
   "slug": "rome",
@@ -32302,7 +32699,7 @@
   "signature_decade": "2020s",
   "distinctiveness": 11.11,
   "score_per_artist": 2.5,
-  "rank": 198
+  "rank": 201
  },
  {
   "slug": "shrewsbury",
@@ -32358,7 +32755,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 6.68,
   "score_per_artist": 2.2,
-  "rank": 199
+  "rank": 202
  },
  {
   "slug": "reggio-emilia",
@@ -32435,7 +32832,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 4.34,
   "score_per_artist": 2.2,
-  "rank": 200
+  "rank": 203
  },
  {
   "slug": "waterford",
@@ -32507,7 +32904,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 7.01,
   "score_per_artist": 2.2,
-  "rank": 201
+  "rank": 204
  },
  {
   "slug": "saginaw",
@@ -32547,7 +32944,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 7.01,
   "score_per_artist": 2.1,
-  "rank": 202
+  "rank": 205
  },
  {
   "slug": "durham",
@@ -32587,7 +32984,7 @@
   "signature_decade": "2020s",
   "distinctiveness": 11.11,
   "score_per_artist": 2.1,
-  "rank": 203
+  "rank": 206
  },
  {
   "slug": "gold-coast",
@@ -32696,7 +33093,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 4.87,
   "score_per_artist": 2.1,
-  "rank": 204
+  "rank": 207
  },
  {
   "slug": "sao-paulo",
@@ -32744,7 +33141,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 7.01,
   "score_per_artist": 1.9,
-  "rank": 205
+  "rank": 208
  },
  {
   "slug": "monroe",
@@ -32769,7 +33166,7 @@
   "signature_decade": null,
   "distinctiveness": null,
   "score_per_artist": 1.9,
-  "rank": 206
+  "rank": 209
  },
  {
   "slug": "lafayette",
@@ -32809,7 +33206,7 @@
   "signature_decade": "1950s",
   "distinctiveness": 33.96,
   "score_per_artist": 1.8,
-  "rank": 207
+  "rank": 210
  },
  {
   "slug": "turin",
@@ -32862,7 +33259,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 4.8,
   "score_per_artist": 1.7,
-  "rank": 208
+  "rank": 211
  },
  {
   "slug": "florence",
@@ -32887,7 +33284,7 @@
   "signature_decade": null,
   "distinctiveness": null,
   "score_per_artist": 1.7,
-  "rank": 209
+  "rank": 212
  },
  {
   "slug": "bournemouth",
@@ -32935,7 +33332,7 @@
   "signature_decade": "1970s",
   "distinctiveness": 6.88,
   "score_per_artist": 1.0,
-  "rank": 210
+  "rank": 213
  },
  {
   "slug": "fort-myers",
@@ -32983,7 +33380,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 0.6,
-  "rank": 211
+  "rank": 214
  },
  {
   "slug": "nassau-bah",
@@ -33023,7 +33420,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 0.6,
-  "rank": 212
+  "rank": 215
  },
  {
   "slug": "moscow",
@@ -33079,7 +33476,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 0.6,
-  "rank": 213
+  "rank": 216
  },
  {
   "slug": "modena",
@@ -33127,7 +33524,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 6.82,
   "score_per_artist": 0.5,
-  "rank": 214
+  "rank": 217
  },
  {
   "slug": "lisbon",
@@ -33167,7 +33564,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 0.2,
-  "rank": 215
+  "rank": 218
  },
  {
   "slug": "helsinki",
@@ -33215,6 +33612,6 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 0.1,
-  "rank": 216
+  "rank": 219
  }
 ]
