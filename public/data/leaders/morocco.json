@@ -1,5 +1,95 @@
 [
   {
+    "name": "👑 Yazid",
+    "role": "Monarch",
+    "start": "1790-04-11",
+    "end": "1792-06-12",
+    "current": false,
+    "tenure": "2y 2m 1d",
+    "party": null,
+    "era": "Alaouite dynasty"
+  },
+  {
+    "name": "👑 Slimane",
+    "role": "Monarch",
+    "start": "1792-06-12",
+    "end": "1822-11-28",
+    "current": false,
+    "tenure": "30y 5m 16d",
+    "party": null,
+    "era": "Alaouite dynasty"
+  },
+  {
+    "name": "👑 Abd al-Rahman",
+    "role": "Monarch",
+    "start": "1822-11-28",
+    "end": "1859-08-28",
+    "current": false,
+    "tenure": "36y 9m 0d",
+    "party": null,
+    "era": "Alaouite dynasty"
+  },
+  {
+    "name": "👑 Mohammed IV",
+    "role": "Monarch",
+    "start": "1859-08-28",
+    "end": "1873-09-12",
+    "current": false,
+    "tenure": "14y 15d",
+    "party": null,
+    "era": "Alaouite dynasty"
+  },
+  {
+    "name": "👑 Hassan I",
+    "role": "Monarch",
+    "start": "1873-09-12",
+    "end": "1894-06-07",
+    "current": false,
+    "tenure": "20y 8m 26d",
+    "party": null,
+    "era": "Alaouite dynasty"
+  },
+  {
+    "name": "👑 Abd al-Aziz",
+    "role": "Monarch",
+    "start": "1894-06-07",
+    "end": "1908-01-04",
+    "current": false,
+    "tenure": "13y 6m 28d",
+    "party": null,
+    "era": "Alaouite dynasty"
+  },
+  {
+    "name": "👑 Abd al-Hafid",
+    "role": "Monarch",
+    "start": "1908-01-04",
+    "end": "1912-08-13",
+    "current": false,
+    "tenure": "4y 7m 9d",
+    "party": null,
+    "era": "Alaouite dynasty"
+  },
+  {
+    "name": "👑 Yusef",
+    "role": "Monarch",
+    "start": "1912-08-13",
+    "end": "1927-11-18",
+    "current": false,
+    "tenure": "15y 3m 5d",
+    "party": null,
+    "era": "Alaouite dynasty"
+  },
+  {
+    "name": "👑 Mohammed V",
+    "role": "Monarch",
+    "start": "1927-11-18",
+    "end": "1961-02-26",
+    "current": false,
+    "tenure": "33y 3m 8d",
+    "party": null,
+    "era": "Alaouite dynasty"
+  },
+  {
     "name": "M'barek Bekkai",
     "role": "Prime Minister",
     "start": "1955-12-07",
@@ -38,6 +128,16 @@
     "tenure": "1 year",
     "party": "UNFP",
     "era": "Independent Morocco"
+  },
+  {
+    "name": "👑 Hassan II",
+    "role": "Monarch",
+    "start": "1961-02-26",
+    "end": "1999-07-23",
+    "current": false,
+    "tenure": "38y 4m 27d",
+    "party": null,
+    "era": "Alaouite dynasty"
   },
   {
     "name": "👑 King Hassan II",
@@ -158,6 +258,16 @@
     "tenure": "4 years",
     "party": "USFP",
     "era": "Independent Morocco"
+  },
+  {
+    "name": "👑 Mohammed VI",
+    "role": "Monarch",
+    "start": "1999-07-23",
+    "end": null,
+    "current": true,
+    "tenure": "26y 11m 10d",
+    "party": null,
+    "era": "Alaouite dynasty"
   },
   {
     "name": "👑 King Mohammed VI",

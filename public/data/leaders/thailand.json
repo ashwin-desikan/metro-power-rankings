@@ -1,5 +1,65 @@
 [
   {
+    "name": "👑 Rama I (Phutthayotfa)",
+    "role": "Monarch",
+    "start": "1782-04-06",
+    "end": "1809-09-07",
+    "current": false,
+    "tenure": "27y 5m 1d",
+    "party": null,
+    "era": "Chakri dynasty"
+  },
+  {
+    "name": "👑 Rama II",
+    "role": "Monarch",
+    "start": "1809-09-07",
+    "end": "1824-07-21",
+    "current": false,
+    "tenure": "14y 10m 14d",
+    "party": null,
+    "era": "Chakri dynasty"
+  },
+  {
+    "name": "👑 Rama III",
+    "role": "Monarch",
+    "start": "1824-07-21",
+    "end": "1851-04-03",
+    "current": false,
+    "tenure": "26y 8m 13d",
+    "party": null,
+    "era": "Chakri dynasty"
+  },
+  {
+    "name": "👑 Rama IV (Mongkut)",
+    "role": "Monarch",
+    "start": "1851-04-03",
+    "end": "1868-10-01",
+    "current": false,
+    "tenure": "17y 5m 28d",
+    "party": null,
+    "era": "Chakri dynasty"
+  },
+  {
+    "name": "👑 Rama V (Chulalongkorn)",
+    "role": "Monarch",
+    "start": "1868-10-01",
+    "end": "1910-10-23",
+    "current": false,
+    "tenure": "42y 22d",
+    "party": null,
+    "era": "Chakri dynasty"
+  },
+  {
+    "name": "👑 Rama VI (Vajiravudh)",
+    "role": "Monarch",
+    "start": "1910-10-23",
+    "end": "1925-11-26",
+    "current": false,
+    "tenure": "15y 1m 3d",
+    "party": null,
+    "era": "Chakri dynasty"
+  },
+  {
     "name": "👑 Prajadhipok (Rama VII)",
     "role": "Monarch",
     "start": "1925-11-26",

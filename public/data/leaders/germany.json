@@ -1,5 +1,195 @@
 [
   {
+    "name": "👑 Frederick I",
+    "role": "Elector of Brandenburg",
+    "start": "1415-01-01",
+    "end": "1440-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level dates",
+    "era": "Electorate of Brandenburg"
+  },
+  {
+    "name": "👑 Frederick II Irontooth",
+    "role": "Elector of Brandenburg",
+    "start": "1440-01-01",
+    "end": "1470-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level dates",
+    "era": "Electorate of Brandenburg"
+  },
+  {
+    "name": "👑 Albert III Achilles",
+    "role": "Elector of Brandenburg",
+    "start": "1470-01-01",
+    "end": "1486-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level dates",
+    "era": "Electorate of Brandenburg"
+  },
+  {
+    "name": "👑 John Cicero",
+    "role": "Elector of Brandenburg",
+    "start": "1486-01-01",
+    "end": "1499-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level dates",
+    "era": "Electorate of Brandenburg"
+  },
+  {
+    "name": "👑 Joachim I Nestor",
+    "role": "Elector of Brandenburg",
+    "start": "1499-01-01",
+    "end": "1535-01-01",
+    "current": false,
+    "tenure": "36y 0d",
+    "party": "year-level dates",
+    "era": "Electorate of Brandenburg"
+  },
+  {
+    "name": "👑 Joachim II Hector",
+    "role": "Elector of Brandenburg",
+    "start": "1535-01-01",
+    "end": "1571-01-01",
+    "current": false,
+    "tenure": "36y 0d",
+    "party": "year-level dates",
+    "era": "Electorate of Brandenburg"
+  },
+  {
+    "name": "👑 John George",
+    "role": "Elector of Brandenburg",
+    "start": "1571-01-01",
+    "end": "1598-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level dates",
+    "era": "Electorate of Brandenburg"
+  },
+  {
+    "name": "👑 Joachim Frederick",
+    "role": "Elector of Brandenburg",
+    "start": "1598-01-01",
+    "end": "1608-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level dates",
+    "era": "Electorate of Brandenburg"
+  },
+  {
+    "name": "👑 John Sigismund",
+    "role": "Elector of Brandenburg",
+    "start": "1608-01-01",
+    "end": "1619-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level dates",
+    "era": "Electorate of Brandenburg"
+  },
+  {
+    "name": "👑 George William",
+    "role": "Elector of Brandenburg",
+    "start": "1619-01-01",
+    "end": "1640-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level dates",
+    "era": "Electorate of Brandenburg"
+  },
+  {
+    "name": "👑 Frederick William (the Great Elector)",
+    "role": "Elector of Brandenburg",
+    "start": "1640-01-01",
+    "end": "1688-01-01",
+    "current": false,
+    "tenure": "48y 0d",
+    "party": "year-level dates",
+    "era": "Electorate of Brandenburg"
+  },
+  {
+    "name": "👑 Frederick III",
+    "role": "Elector of Brandenburg",
+    "start": "1688-01-01",
+    "end": "1701-01-18",
+    "current": false,
+    "tenure": "13y 17d",
+    "party": "year-level dates",
+    "era": "Electorate of Brandenburg"
+  },
+  {
+    "name": "👑 Frederick I",
+    "role": "King of Prussia",
+    "start": "1701-01-18",
+    "end": "1713-02-25",
+    "current": false,
+    "tenure": "12y 1m 7d",
+    "party": null,
+    "era": "Kingdom of Prussia"
+  },
+  {
+    "name": "👑 Frederick William I",
+    "role": "King of Prussia",
+    "start": "1713-02-25",
+    "end": "1740-05-31",
+    "current": false,
+    "tenure": "27y 3m 6d",
+    "party": null,
+    "era": "Kingdom of Prussia"
+  },
+  {
+    "name": "👑 Frederick II the Great",
+    "role": "King of Prussia",
+    "start": "1740-05-31",
+    "end": "1786-08-17",
+    "current": false,
+    "tenure": "46y 2m 17d",
+    "party": null,
+    "era": "Kingdom of Prussia"
+  },
+  {
+    "name": "👑 Frederick William II",
+    "role": "King of Prussia",
+    "start": "1786-08-17",
+    "end": "1797-11-16",
+    "current": false,
+    "tenure": "11y 2m 30d",
+    "party": null,
+    "era": "Kingdom of Prussia"
+  },
+  {
+    "name": "👑 Frederick William III",
+    "role": "King of Prussia",
+    "start": "1797-11-16",
+    "end": "1840-06-07",
+    "current": false,
+    "tenure": "42y 6m 22d",
+    "party": null,
+    "era": "Kingdom of Prussia"
+  },
+  {
+    "name": "👑 Frederick William IV",
+    "role": "King of Prussia",
+    "start": "1840-06-07",
+    "end": "1861-01-02",
+    "current": false,
+    "tenure": "20y 6m 26d",
+    "party": null,
+    "era": "Kingdom of Prussia"
+  },
+  {
+    "name": "👑 Wilhelm I",
+    "role": "King of Prussia",
+    "start": "1861-01-02",
+    "end": "1871-01-18",
+    "current": false,
+    "tenure": "10y 16d",
+    "party": null,
+    "era": "Kingdom of Prussia"
+  },
+  {
     "name": "👑 Kaiser Wilhelm I",
     "role": "Monarch",
     "start": "1871-01-18",

@@ -1,5 +1,125 @@
 [
   {
+    "name": "👑 Prithvi Narayan Shah",
+    "role": "Monarch",
+    "start": "1768-01-01",
+    "end": "1775-01-15",
+    "current": false,
+    "tenure": "7y 14d",
+    "party": null,
+    "era": "Kingdom of Nepal"
+  },
+  {
+    "name": "👑 Pratap Singh Shah",
+    "role": "Monarch",
+    "start": "1775-01-15",
+    "end": "1777-11-17",
+    "current": false,
+    "tenure": "2y 10m 2d",
+    "party": null,
+    "era": "Kingdom of Nepal"
+  },
+  {
+    "name": "👑 Rana Bahadur Shah",
+    "role": "Monarch",
+    "start": "1777-11-17",
+    "end": "1799-03-08",
+    "current": false,
+    "tenure": "21y 3m 19d",
+    "party": null,
+    "era": "Kingdom of Nepal"
+  },
+  {
+    "name": "👑 Girvan Yuddha Bikram Shah",
+    "role": "Monarch",
+    "start": "1799-03-08",
+    "end": "1816-11-20",
+    "current": false,
+    "tenure": "17y 8m 12d",
+    "party": null,
+    "era": "Kingdom of Nepal"
+  },
+  {
+    "name": "👑 Rajendra Bikram Shah",
+    "role": "Monarch",
+    "start": "1816-11-20",
+    "end": "1847-05-12",
+    "current": false,
+    "tenure": "30y 5m 22d",
+    "party": null,
+    "era": "Kingdom of Nepal"
+  },
+  {
+    "name": "👑 Surendra Bikram Shah",
+    "role": "Monarch",
+    "start": "1847-05-12",
+    "end": "1881-05-17",
+    "current": false,
+    "tenure": "34y 5d",
+    "party": null,
+    "era": "Kingdom of Nepal"
+  },
+  {
+    "name": "👑 Prithvi Bir Bikram Shah",
+    "role": "Monarch",
+    "start": "1881-05-17",
+    "end": "1911-12-11",
+    "current": false,
+    "tenure": "30y 6m 24d",
+    "party": null,
+    "era": "Kingdom of Nepal"
+  },
+  {
+    "name": "👑 Tribhuvan",
+    "role": "Monarch",
+    "start": "1911-12-11",
+    "end": "1955-03-14",
+    "current": false,
+    "tenure": "43y 3m 3d",
+    "party": null,
+    "era": "Kingdom of Nepal"
+  },
+  {
+    "name": "👑 Mahendra",
+    "role": "Monarch",
+    "start": "1955-03-14",
+    "end": "1972-01-31",
+    "current": false,
+    "tenure": "16y 10m 17d",
+    "party": null,
+    "era": "Kingdom of Nepal"
+  },
+  {
+    "name": "👑 Birendra",
+    "role": "Monarch",
+    "start": "1972-01-31",
+    "end": "2001-06-01",
+    "current": false,
+    "tenure": "29y 4m 1d",
+    "party": null,
+    "era": "Kingdom of Nepal"
+  },
+  {
+    "name": "👑 Dipendra",
+    "role": "Monarch",
+    "start": "2001-06-01",
+    "end": "2001-06-04",
+    "current": false,
+    "tenure": "3d",
+    "party": null,
+    "era": "Kingdom of Nepal"
+  },
+  {
+    "name": "👑 Gyanendra",
+    "role": "Monarch",
+    "start": "2001-06-04",
+    "end": "2008-05-28",
+    "current": false,
+    "tenure": "6y 11m 24d",
+    "party": null,
+    "era": "Kingdom of Nepal"
+  },
+  {
     "name": "Ram Baran Yadav",
     "role": "President",
     "start": "2008-07-23",

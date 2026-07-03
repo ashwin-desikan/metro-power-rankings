@@ -1,0 +1,92 @@
+[
+  {
+    "name": "👑 Gian Galeazzo Visconti",
+    "role": "Duke",
+    "start": "1395-01-01",
+    "end": "1402-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Milan"
+  },
+  {
+    "name": "👑 Gian Maria Visconti",
+    "role": "Duke",
+    "start": "1402-01-01",
+    "end": "1412-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Milan"
+  },
+  {
+    "name": "👑 Filippo Maria Visconti",
+    "role": "Duke",
+    "start": "1412-01-01",
+    "end": "1450-01-01",
+    "current": false,
+    "tenure": "38y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Milan"
+  },
+  {
+    "name": "👑 Francesco I Sforza",
+    "role": "Duke",
+    "start": "1450-01-01",
+    "end": "1466-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Milan"
+  },
+  {
+    "name": "👑 Galeazzo Maria Sforza",
+    "role": "Duke",
+    "start": "1466-01-01",
+    "end": "1476-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Milan"
+  },
+  {
+    "name": "👑 Gian Galeazzo Sforza",
+    "role": "Duke",
+    "start": "1476-01-01",
+    "end": "1494-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Milan"
+  },
+  {
+    "name": "👑 Ludovico Sforza (il Moro)",
+    "role": "Duke",
+    "start": "1494-01-01",
+    "end": "1512-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Milan"
+  },
+  {
+    "name": "👑 Massimiliano Sforza",
+    "role": "Duke",
+    "start": "1512-01-01",
+    "end": "1521-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Milan"
+  },
+  {
+    "name": "👑 Francesco II Sforza",
+    "role": "Duke",
+    "start": "1521-01-01",
+    "end": "1535-11-01",
+    "current": false,
+    "tenure": "14y 10m 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Milan"
+  }
+]

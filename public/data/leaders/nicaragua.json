@@ -1,5 +1,65 @@
 [
   {
+    "name": "Fruto Chamorro",
+    "role": "President",
+    "start": "1853-01-01",
+    "end": "1893-01-01",
+    "current": false,
+    "tenure": "40y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Nicaragua"
+  },
+  {
+    "name": "⚠️ José Santos Zelaya",
+    "role": "President",
+    "start": "1893-01-01",
+    "end": "1937-01-01",
+    "current": false,
+    "tenure": "44y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Nicaragua"
+  },
+  {
+    "name": "⚠️ Anastasio Somoza García",
+    "role": "President",
+    "start": "1937-01-01",
+    "end": "1956-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Nicaragua"
+  },
+  {
+    "name": "⚠️ Luis Somoza Debayle",
+    "role": "President",
+    "start": "1956-01-01",
+    "end": "1967-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Nicaragua"
+  },
+  {
+    "name": "⚠️ Anastasio Somoza Debayle",
+    "role": "President",
+    "start": "1967-01-01",
+    "end": "1985-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Nicaragua"
+  },
+  {
+    "name": "⚠️ Daniel Ortega",
+    "role": "President",
+    "start": "1985-01-01",
+    "end": "1990-04-25",
+    "current": false,
+    "tenure": "5y 3m 24d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Nicaragua"
+  },
+  {
     "name": "Violeta Chamorro",
     "role": "President",
     "start": "1990-04-25",

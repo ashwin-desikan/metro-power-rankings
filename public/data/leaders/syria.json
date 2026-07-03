@@ -1,5 +1,15 @@
 [
   {
+    "name": "Gamal Abdel Nasser",
+    "role": "President",
+    "start": "1958-02-22",
+    "end": "1961-09-28",
+    "current": false,
+    "tenure": "3y 7m 6d",
+    "party": "union with Egypt",
+    "era": "United Arab Republic"
+  },
+  {
     "name": "Ahmed al-Sharaa",
     "role": "President",
     "start": "2025-01-29",

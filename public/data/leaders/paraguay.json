@@ -1,5 +1,135 @@
 [
   {
+    "name": "José Gaspar Rodríguez de Francia",
+    "role": "Supreme Dictator",
+    "start": "1814-01-01",
+    "end": "1844-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Paraguay"
+  },
+  {
+    "name": "Carlos Antonio López",
+    "role": "President",
+    "start": "1844-01-01",
+    "end": "1862-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Paraguay"
+  },
+  {
+    "name": "⚠️ Francisco Solano López",
+    "role": "President",
+    "start": "1862-01-01",
+    "end": "1880-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Paraguay"
+  },
+  {
+    "name": "Bernardino Caballero",
+    "role": "President",
+    "start": "1880-01-01",
+    "end": "1932-01-01",
+    "current": false,
+    "tenure": "52y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Paraguay"
+  },
+  {
+    "name": "Eusebio Ayala",
+    "role": "President",
+    "start": "1932-01-01",
+    "end": "1940-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Paraguay"
+  },
+  {
+    "name": "⚠️ Higinio Morínigo",
+    "role": "President",
+    "start": "1940-01-01",
+    "end": "1954-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Paraguay"
+  },
+  {
+    "name": "⚠️ Alfredo Stroessner",
+    "role": "President",
+    "start": "1954-01-01",
+    "end": "1989-01-01",
+    "current": false,
+    "tenure": "35y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Paraguay"
+  },
+  {
+    "name": "Andrés Rodríguez",
+    "role": "President",
+    "start": "1989-01-01",
+    "end": "1993-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Paraguay"
+  },
+  {
+    "name": "Juan Carlos Wasmosy",
+    "role": "President",
+    "start": "1993-01-01",
+    "end": "2003-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Paraguay"
+  },
+  {
+    "name": "Nicanor Duarte",
+    "role": "President",
+    "start": "2003-01-01",
+    "end": "2008-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Paraguay"
+  },
+  {
+    "name": "Fernando Lugo",
+    "role": "President",
+    "start": "2008-01-01",
+    "end": "2013-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Paraguay"
+  },
+  {
+    "name": "Horacio Cartes",
+    "role": "President",
+    "start": "2013-01-01",
+    "end": "2018-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Paraguay"
+  },
+  {
+    "name": "Mario Abdo Benítez",
+    "role": "President",
+    "start": "2018-01-01",
+    "end": "2023-04-30",
+    "current": false,
+    "tenure": "5y 3m 29d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Paraguay"
+  },
+  {
     "name": "Santiago Peña Palacios",
     "role": "President",
     "start": "2023-04-30",

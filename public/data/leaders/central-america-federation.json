@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Manuel José Arce",
+    "role": "President",
+    "start": "1825-04-29",
+    "end": "1829-04-13",
+    "current": false,
+    "tenure": "3y 11m 15d",
+    "party": "Liberal",
+    "era": "Federal Republic of Central America"
+  },
+  {
+    "name": "Francisco Morazán",
+    "role": "President",
+    "start": "1830-09-16",
+    "end": "1839-02-01",
+    "current": false,
+    "tenure": "8y 4m 16d",
+    "party": "Liberal; federation dissolved",
+    "era": "Federal Republic of Central America"
+  }
+]

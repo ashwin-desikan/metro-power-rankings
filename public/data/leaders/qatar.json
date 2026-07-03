@@ -1,5 +1,55 @@
 [
   {
+    "name": "👑 Mohammed bin Thani",
+    "role": "Monarch",
+    "start": "1868-09-12",
+    "end": "1878-12-18",
+    "current": false,
+    "tenure": "10y 3m 6d",
+    "party": null,
+    "era": "Al Thani dynasty"
+  },
+  {
+    "name": "👑 Jassim bin Mohammed",
+    "role": "Monarch",
+    "start": "1878-12-18",
+    "end": "1913-07-17",
+    "current": false,
+    "tenure": "34y 6m 29d",
+    "party": null,
+    "era": "Al Thani dynasty"
+  },
+  {
+    "name": "👑 Abdullah bin Jassim",
+    "role": "Monarch",
+    "start": "1913-07-17",
+    "end": "1949-08-20",
+    "current": false,
+    "tenure": "36y 1m 3d",
+    "party": null,
+    "era": "Al Thani dynasty"
+  },
+  {
+    "name": "👑 Ali bin Abdullah",
+    "role": "Monarch",
+    "start": "1949-08-20",
+    "end": "1960-10-24",
+    "current": false,
+    "tenure": "11y 2m 4d",
+    "party": null,
+    "era": "Al Thani dynasty"
+  },
+  {
+    "name": "👑 Ahmad bin Ali",
+    "role": "Monarch",
+    "start": "1960-10-24",
+    "end": "1971-09-03",
+    "current": false,
+    "tenure": "10y 10m 10d",
+    "party": null,
+    "era": "Al Thani dynasty"
+  },
+  {
     "name": "👑 Emir Ahmad bin Ali Al Thani",
     "role": "Monarch",
     "start": "1971-09-03",

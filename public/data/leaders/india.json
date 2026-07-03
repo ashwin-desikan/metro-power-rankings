@@ -1,5 +1,165 @@
 [
   {
+    "name": "👑 Babur",
+    "role": "Emperor",
+    "start": "1526-04-21",
+    "end": "1530-12-26",
+    "current": false,
+    "tenure": "4y 8m 5d",
+    "party": "Mughal dynasty",
+    "era": "Mughal Empire"
+  },
+  {
+    "name": "👑 Humayun",
+    "role": "Emperor",
+    "start": "1530-12-26",
+    "end": "1540-05-17",
+    "current": false,
+    "tenure": "9y 4m 21d",
+    "party": "lost to the Sur dynasty",
+    "era": "Mughal Empire"
+  },
+  {
+    "name": "👑 Humayun",
+    "role": "Emperor",
+    "start": "1555-07-22",
+    "end": "1556-01-27",
+    "current": false,
+    "tenure": "6m 5d",
+    "party": "restored",
+    "era": "Mughal Empire"
+  },
+  {
+    "name": "👑 Akbar the Great",
+    "role": "Emperor",
+    "start": "1556-02-14",
+    "end": "1605-10-27",
+    "current": false,
+    "tenure": "49y 8m 13d",
+    "party": "Mughal dynasty",
+    "era": "Mughal Empire"
+  },
+  {
+    "name": "👑 Jahangir",
+    "role": "Emperor",
+    "start": "1605-11-03",
+    "end": "1627-10-28",
+    "current": false,
+    "tenure": "21y 11m 25d",
+    "party": "Mughal dynasty",
+    "era": "Mughal Empire"
+  },
+  {
+    "name": "👑 Shah Jahan",
+    "role": "Emperor",
+    "start": "1628-01-19",
+    "end": "1658-07-31",
+    "current": false,
+    "tenure": "30y 6m 12d",
+    "party": "Mughal dynasty",
+    "era": "Mughal Empire"
+  },
+  {
+    "name": "👑 Aurangzeb (Alamgir I)",
+    "role": "Emperor",
+    "start": "1658-07-31",
+    "end": "1707-03-03",
+    "current": false,
+    "tenure": "48y 7m 0d",
+    "party": "Mughal dynasty",
+    "era": "Mughal Empire"
+  },
+  {
+    "name": "👑 Bahadur Shah I",
+    "role": "Emperor",
+    "start": "1707-06-19",
+    "end": "1712-02-27",
+    "current": false,
+    "tenure": "4y 8m 8d",
+    "party": "Mughal dynasty",
+    "era": "Mughal Empire"
+  },
+  {
+    "name": "👑 Jahandar Shah",
+    "role": "Emperor",
+    "start": "1712-03-29",
+    "end": "1713-02-11",
+    "current": false,
+    "tenure": "10m 13d",
+    "party": "Mughal dynasty",
+    "era": "Mughal Empire"
+  },
+  {
+    "name": "👑 Farrukhsiyar",
+    "role": "Emperor",
+    "start": "1713-01-11",
+    "end": "1719-02-28",
+    "current": false,
+    "tenure": "6y 1m 17d",
+    "party": "Mughal dynasty",
+    "era": "Mughal Empire"
+  },
+  {
+    "name": "👑 Muhammad Shah",
+    "role": "Emperor",
+    "start": "1719-09-27",
+    "end": "1748-04-26",
+    "current": false,
+    "tenure": "28y 6m 30d",
+    "party": "Mughal dynasty",
+    "era": "Mughal Empire"
+  },
+  {
+    "name": "👑 Ahmad Shah Bahadur",
+    "role": "Emperor",
+    "start": "1748-04-29",
+    "end": "1754-06-02",
+    "current": false,
+    "tenure": "6y 1m 4d",
+    "party": "Mughal dynasty",
+    "era": "Mughal Empire"
+  },
+  {
+    "name": "👑 Alamgir II",
+    "role": "Emperor",
+    "start": "1754-06-03",
+    "end": "1759-11-29",
+    "current": false,
+    "tenure": "5y 5m 26d",
+    "party": "Mughal dynasty",
+    "era": "Mughal Empire"
+  },
+  {
+    "name": "👑 Shah Alam II",
+    "role": "Emperor",
+    "start": "1760-10-10",
+    "end": "1806-11-19",
+    "current": false,
+    "tenure": "46y 1m 9d",
+    "party": "nominal under Maratha/British",
+    "era": "Mughal Empire"
+  },
+  {
+    "name": "👑 Akbar Shah II",
+    "role": "Emperor",
+    "start": "1806-11-19",
+    "end": "1837-09-28",
+    "current": false,
+    "tenure": "30y 10m 9d",
+    "party": "nominal under British",
+    "era": "Mughal Empire"
+  },
+  {
+    "name": "👑 Bahadur Shah II (Zafar)",
+    "role": "Emperor",
+    "start": "1837-09-28",
+    "end": "1857-09-21",
+    "current": false,
+    "tenure": "19y 11m 24d",
+    "party": "last emperor; deposed after the 1857 rebellion",
+    "era": "Mughal Empire"
+  },
+  {
     "name": "Jawaharlal Nehru",
     "role": "Prime Minister",
     "start": "1947-08-15",

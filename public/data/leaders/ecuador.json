@@ -1,5 +1,95 @@
 [
   {
+    "name": "Juan José Flores",
+    "role": "President",
+    "start": "1830-01-01",
+    "end": "1835-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Ecuador"
+  },
+  {
+    "name": "Vicente Rocafuerte",
+    "role": "President",
+    "start": "1835-01-01",
+    "end": "1861-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Ecuador"
+  },
+  {
+    "name": "Gabriel García Moreno",
+    "role": "President",
+    "start": "1861-01-01",
+    "end": "1876-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Ecuador"
+  },
+  {
+    "name": "Ignacio de Veintimilla",
+    "role": "President",
+    "start": "1876-01-01",
+    "end": "1895-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Ecuador"
+  },
+  {
+    "name": "Eloy Alfaro",
+    "role": "President",
+    "start": "1895-01-01",
+    "end": "1901-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Ecuador"
+  },
+  {
+    "name": "Leónidas Plaza",
+    "role": "President",
+    "start": "1901-01-01",
+    "end": "1934-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Ecuador"
+  },
+  {
+    "name": "José María Velasco Ibarra",
+    "role": "President",
+    "start": "1934-01-01",
+    "end": "1948-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Ecuador"
+  },
+  {
+    "name": "Galo Plaza",
+    "role": "President",
+    "start": "1948-01-01",
+    "end": "1968-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Ecuador"
+  },
+  {
+    "name": "José María Velasco Ibarra",
+    "role": "President",
+    "start": "1968-01-01",
+    "end": "2007-01-15",
+    "current": false,
+    "tenure": "39y 14d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Ecuador"
+  },
+  {
     "name": "Rafael Correa",
     "role": "President",
     "start": "2007-01-15",

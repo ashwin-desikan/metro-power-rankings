@@ -1,5 +1,295 @@
 [
   {
+    "name": "👑 Mieszko I",
+    "role": "Duke",
+    "start": "0960-01-01",
+    "end": "0992-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Kingdom of Poland"
+  },
+  {
+    "name": "👑 Bolesław I the Brave",
+    "role": "King",
+    "start": "0992-01-01",
+    "end": "1025-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Kingdom of Poland"
+  },
+  {
+    "name": "👑 Mieszko II Lambert",
+    "role": "King",
+    "start": "1025-01-01",
+    "end": "1031-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Kingdom of Poland"
+  },
+  {
+    "name": "👑 Casimir I the Restorer",
+    "role": "Duke",
+    "start": "1039-01-01",
+    "end": "1058-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Kingdom of Poland"
+  },
+  {
+    "name": "👑 Bolesław II the Generous",
+    "role": "King",
+    "start": "1058-01-01",
+    "end": "1079-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Kingdom of Poland"
+  },
+  {
+    "name": "👑 Władysław I Herman",
+    "role": "Duke",
+    "start": "1079-01-01",
+    "end": "1102-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Kingdom of Poland"
+  },
+  {
+    "name": "👑 Bolesław III Wrymouth",
+    "role": "Duke",
+    "start": "1107-01-01",
+    "end": "1138-01-01",
+    "current": false,
+    "tenure": "31y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Kingdom of Poland"
+  },
+  {
+    "name": "👑 Władysław I the Elbow-high",
+    "role": "King",
+    "start": "1320-01-01",
+    "end": "1333-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Kingdom of Poland"
+  },
+  {
+    "name": "👑 Casimir III the Great",
+    "role": "King",
+    "start": "1333-01-01",
+    "end": "1370-01-01",
+    "current": false,
+    "tenure": "37y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Kingdom of Poland"
+  },
+  {
+    "name": "👑 Louis I",
+    "role": "King",
+    "start": "1370-01-01",
+    "end": "1382-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Kingdom of Poland"
+  },
+  {
+    "name": "👑 Jadwiga",
+    "role": "Queen",
+    "start": "1384-01-01",
+    "end": "1399-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Kingdom of Poland"
+  },
+  {
+    "name": "👑 Władysław II Jagiełło",
+    "role": "King",
+    "start": "1386-01-01",
+    "end": "1434-01-01",
+    "current": false,
+    "tenure": "48y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Kingdom of Poland"
+  },
+  {
+    "name": "👑 Władysław III",
+    "role": "King",
+    "start": "1434-01-01",
+    "end": "1444-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Kingdom of Poland"
+  },
+  {
+    "name": "👑 Casimir IV Jagiellon",
+    "role": "King",
+    "start": "1447-01-01",
+    "end": "1492-01-01",
+    "current": false,
+    "tenure": "45y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Kingdom of Poland"
+  },
+  {
+    "name": "👑 John I Albert",
+    "role": "King",
+    "start": "1492-01-01",
+    "end": "1501-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Kingdom of Poland"
+  },
+  {
+    "name": "👑 Alexander Jagiellon",
+    "role": "King",
+    "start": "1501-01-01",
+    "end": "1506-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Kingdom of Poland"
+  },
+  {
+    "name": "👑 Sigismund I the Old",
+    "role": "King",
+    "start": "1506-01-01",
+    "end": "1548-01-01",
+    "current": false,
+    "tenure": "42y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Kingdom of Poland"
+  },
+  {
+    "name": "👑 Sigismund II Augustus",
+    "role": "King",
+    "start": "1548-01-01",
+    "end": "1569-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Kingdom of Poland"
+  },
+  {
+    "name": "👑 Sigismund II Augustus",
+    "role": "King",
+    "start": "1569-01-01",
+    "end": "1572-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Polish-Lithuanian Commonwealth"
+  },
+  {
+    "name": "👑 Henry de Valois",
+    "role": "King",
+    "start": "1573-01-01",
+    "end": "1575-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Polish-Lithuanian Commonwealth"
+  },
+  {
+    "name": "👑 Stephen Báthory",
+    "role": "King",
+    "start": "1576-01-01",
+    "end": "1586-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Polish-Lithuanian Commonwealth"
+  },
+  {
+    "name": "👑 Sigismund III Vasa",
+    "role": "King",
+    "start": "1587-01-01",
+    "end": "1632-01-01",
+    "current": false,
+    "tenure": "45y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Polish-Lithuanian Commonwealth"
+  },
+  {
+    "name": "👑 Władysław IV Vasa",
+    "role": "King",
+    "start": "1632-01-01",
+    "end": "1648-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Polish-Lithuanian Commonwealth"
+  },
+  {
+    "name": "👑 John II Casimir Vasa",
+    "role": "King",
+    "start": "1648-01-01",
+    "end": "1668-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Polish-Lithuanian Commonwealth"
+  },
+  {
+    "name": "👑 Michael Korybut Wiśniowiecki",
+    "role": "King",
+    "start": "1669-01-01",
+    "end": "1673-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Polish-Lithuanian Commonwealth"
+  },
+  {
+    "name": "👑 John III Sobieski",
+    "role": "King",
+    "start": "1674-01-01",
+    "end": "1696-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Polish-Lithuanian Commonwealth"
+  },
+  {
+    "name": "👑 Augustus II the Strong",
+    "role": "King",
+    "start": "1697-01-01",
+    "end": "1733-01-01",
+    "current": false,
+    "tenure": "36y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Polish-Lithuanian Commonwealth"
+  },
+  {
+    "name": "👑 Augustus III",
+    "role": "King",
+    "start": "1733-01-01",
+    "end": "1763-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Polish-Lithuanian Commonwealth"
+  },
+  {
+    "name": "👑 Stanisław II August Poniatowski",
+    "role": "King",
+    "start": "1764-01-01",
+    "end": "1795-11-25",
+    "current": false,
+    "tenure": "31y 10m 24d",
+    "party": "medieval; year-level dates",
+    "era": "Polish-Lithuanian Commonwealth"
+  },
+  {
     "name": "Józef Piłsudski",
     "role": "President (Chief of State)",
     "start": "1918-11-14",

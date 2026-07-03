@@ -1,5 +1,125 @@
 [
   {
+    "name": "👑 Alexander I",
+    "role": "Grand Duke",
+    "start": "1809-03-29",
+    "end": "1825-12-01",
+    "current": false,
+    "tenure": "16y 8m 2d",
+    "party": null,
+    "era": "Grand Duchy of Finland"
+  },
+  {
+    "name": "👑 Nicholas I",
+    "role": "Grand Duke",
+    "start": "1825-12-01",
+    "end": "1855-03-02",
+    "current": false,
+    "tenure": "29y 3m 1d",
+    "party": null,
+    "era": "Grand Duchy of Finland"
+  },
+  {
+    "name": "👑 Alexander II",
+    "role": "Grand Duke",
+    "start": "1855-03-02",
+    "end": "1881-03-13",
+    "current": false,
+    "tenure": "26y 11d",
+    "party": null,
+    "era": "Grand Duchy of Finland"
+  },
+  {
+    "name": "👑 Alexander III",
+    "role": "Grand Duke",
+    "start": "1881-03-13",
+    "end": "1894-11-01",
+    "current": false,
+    "tenure": "13y 7m 19d",
+    "party": null,
+    "era": "Grand Duchy of Finland"
+  },
+  {
+    "name": "👑 Nicholas II",
+    "role": "Grand Duke",
+    "start": "1894-11-01",
+    "end": "1917-12-06",
+    "current": false,
+    "tenure": "23y 1m 5d",
+    "party": null,
+    "era": "Grand Duchy of Finland"
+  },
+  {
+    "name": "Pehr Evind Svinhufvud",
+    "role": "Regent",
+    "start": "1918-05-18",
+    "end": "1918-12-12",
+    "current": false,
+    "tenure": "6m 24d",
+    "party": null,
+    "era": "Finland"
+  },
+  {
+    "name": "C. G. E. Mannerheim",
+    "role": "Regent",
+    "start": "1918-12-12",
+    "end": "1919-07-27",
+    "current": false,
+    "tenure": "7m 15d",
+    "party": null,
+    "era": "Finland"
+  },
+  {
+    "name": "Kaarlo Juho Ståhlberg",
+    "role": "President",
+    "start": "1919-07-27",
+    "end": "1925-03-02",
+    "current": false,
+    "tenure": "5y 7m 3d",
+    "party": null,
+    "era": "Finland"
+  },
+  {
+    "name": "Lauri Kristian Relander",
+    "role": "President",
+    "start": "1925-03-02",
+    "end": "1931-03-02",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": null,
+    "era": "Finland"
+  },
+  {
+    "name": "Pehr Evind Svinhufvud",
+    "role": "President",
+    "start": "1931-03-02",
+    "end": "1937-03-01",
+    "current": false,
+    "tenure": "5y 11m 27d",
+    "party": null,
+    "era": "Finland"
+  },
+  {
+    "name": "Kyösti Kallio",
+    "role": "President",
+    "start": "1937-03-01",
+    "end": "1940-12-19",
+    "current": false,
+    "tenure": "3y 9m 18d",
+    "party": null,
+    "era": "Finland"
+  },
+  {
+    "name": "Risto Ryti",
+    "role": "President",
+    "start": "1940-12-19",
+    "end": "1944-08-04",
+    "current": false,
+    "tenure": "3y 7m 16d",
+    "party": null,
+    "era": "Finland"
+  },
+  {
     "name": "Carl Gustaf Emil Mannerheim",
     "role": "President",
     "start": "1944-08-04",

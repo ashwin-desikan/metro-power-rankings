@@ -1,0 +1,72 @@
+[
+  {
+    "name": "👑 Jeongjo",
+    "role": "King",
+    "start": "1776-03-10",
+    "end": "1800-08-18",
+    "current": false,
+    "tenure": "24y 5m 8d",
+    "party": null,
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Sunjo",
+    "role": "King",
+    "start": "1800-08-18",
+    "end": "1834-12-13",
+    "current": false,
+    "tenure": "34y 3m 25d",
+    "party": null,
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Heonjong",
+    "role": "King",
+    "start": "1834-12-13",
+    "end": "1849-07-25",
+    "current": false,
+    "tenure": "14y 7m 12d",
+    "party": null,
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Cheoljong",
+    "role": "King",
+    "start": "1849-07-25",
+    "end": "1864-01-21",
+    "current": false,
+    "tenure": "14y 5m 27d",
+    "party": null,
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Gojong",
+    "role": "King",
+    "start": "1864-01-21",
+    "end": "1897-10-12",
+    "current": false,
+    "tenure": "33y 8m 21d",
+    "party": null,
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Gojong",
+    "role": "Emperor",
+    "start": "1897-10-12",
+    "end": "1907-07-19",
+    "current": false,
+    "tenure": "9y 9m 7d",
+    "party": null,
+    "era": "Korean Empire"
+  },
+  {
+    "name": "👑 Sunjong",
+    "role": "Emperor",
+    "start": "1907-07-19",
+    "end": "1910-08-29",
+    "current": false,
+    "tenure": "3y 1m 10d",
+    "party": null,
+    "era": "Korean Empire"
+  }
+]

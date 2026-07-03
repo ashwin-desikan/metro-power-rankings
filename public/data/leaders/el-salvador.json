@@ -1,5 +1,65 @@
 [
   {
+    "name": "Juan Lindo",
+    "role": "President",
+    "start": "1841-01-01",
+    "end": "1859-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of El Salvador"
+  },
+  {
+    "name": "Gerardo Barrios",
+    "role": "President",
+    "start": "1859-01-01",
+    "end": "1876-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of El Salvador"
+  },
+  {
+    "name": "Rafael Zaldívar",
+    "role": "President",
+    "start": "1876-01-01",
+    "end": "1931-01-01",
+    "current": false,
+    "tenure": "55y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of El Salvador"
+  },
+  {
+    "name": "⚠️ Maximiliano Hernández Martínez",
+    "role": "President",
+    "start": "1931-01-01",
+    "end": "1950-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of El Salvador"
+  },
+  {
+    "name": "Óscar Osorio",
+    "role": "President",
+    "start": "1950-01-01",
+    "end": "1984-01-01",
+    "current": false,
+    "tenure": "34y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of El Salvador"
+  },
+  {
+    "name": "José Napoleón Duarte",
+    "role": "President",
+    "start": "1984-01-01",
+    "end": "1999-06-01",
+    "current": false,
+    "tenure": "15y 5m 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of El Salvador"
+  },
+  {
     "name": "Francisco Flores",
     "role": "President",
     "start": "1999-06-01",

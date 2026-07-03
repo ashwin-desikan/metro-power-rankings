@@ -1,0 +1,152 @@
+[
+  {
+    "name": "👑 Pier Luigi Farnese",
+    "role": "Duke",
+    "start": "1545-01-01",
+    "end": "1547-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Parma"
+  },
+  {
+    "name": "👑 Ottavio Farnese",
+    "role": "Duke",
+    "start": "1547-01-01",
+    "end": "1586-01-01",
+    "current": false,
+    "tenure": "39y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Parma"
+  },
+  {
+    "name": "👑 Alessandro Farnese",
+    "role": "Duke",
+    "start": "1586-01-01",
+    "end": "1592-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Parma"
+  },
+  {
+    "name": "👑 Ranuccio I Farnese",
+    "role": "Duke",
+    "start": "1592-01-01",
+    "end": "1622-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Parma"
+  },
+  {
+    "name": "👑 Odoardo Farnese",
+    "role": "Duke",
+    "start": "1622-01-01",
+    "end": "1646-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Parma"
+  },
+  {
+    "name": "👑 Ranuccio II Farnese",
+    "role": "Duke",
+    "start": "1646-01-01",
+    "end": "1694-01-01",
+    "current": false,
+    "tenure": "48y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Parma"
+  },
+  {
+    "name": "👑 Francesco Farnese",
+    "role": "Duke",
+    "start": "1694-01-01",
+    "end": "1727-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Parma"
+  },
+  {
+    "name": "👑 Antonio Farnese",
+    "role": "Duke",
+    "start": "1727-01-01",
+    "end": "1731-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Parma"
+  },
+  {
+    "name": "👑 Charles I (of Bourbon)",
+    "role": "Duke",
+    "start": "1731-01-01",
+    "end": "1748-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Parma"
+  },
+  {
+    "name": "👑 Philip",
+    "role": "Duke",
+    "start": "1748-01-01",
+    "end": "1765-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Parma"
+  },
+  {
+    "name": "👑 Ferdinand",
+    "role": "Duke",
+    "start": "1765-01-01",
+    "end": "1814-01-01",
+    "current": false,
+    "tenure": "49y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Parma"
+  },
+  {
+    "name": "👑 Marie Louise",
+    "role": "Duke",
+    "start": "1814-01-01",
+    "end": "1847-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Parma"
+  },
+  {
+    "name": "👑 Charles II",
+    "role": "Duke",
+    "start": "1847-01-01",
+    "end": "1849-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Parma"
+  },
+  {
+    "name": "👑 Charles III",
+    "role": "Duke",
+    "start": "1849-01-01",
+    "end": "1854-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Parma"
+  },
+  {
+    "name": "👑 Robert I",
+    "role": "Duke",
+    "start": "1854-01-01",
+    "end": "1859-06-09",
+    "current": false,
+    "tenure": "5y 5m 8d",
+    "party": "year-level dates",
+    "era": "Duchy of Parma"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "name": "👑 Charles VI",
+    "role": "Sovereign",
+    "start": "1714-01-01",
+    "end": "1740-10-20",
+    "current": false,
+    "tenure": "26y 9m 19d",
+    "party": null,
+    "era": "Austrian Netherlands"
+  },
+  {
+    "name": "👑 Maria Theresa",
+    "role": "Sovereign",
+    "start": "1740-10-20",
+    "end": "1780-11-29",
+    "current": false,
+    "tenure": "40y 1m 9d",
+    "party": null,
+    "era": "Austrian Netherlands"
+  },
+  {
+    "name": "👑 Joseph II",
+    "role": "Sovereign",
+    "start": "1780-11-29",
+    "end": "1790-02-20",
+    "current": false,
+    "tenure": "9y 2m 22d",
+    "party": null,
+    "era": "Austrian Netherlands"
+  },
+  {
+    "name": "👑 Leopold II",
+    "role": "Sovereign",
+    "start": "1790-02-20",
+    "end": "1792-03-01",
+    "current": false,
+    "tenure": "2y 10d",
+    "party": null,
+    "era": "Austrian Netherlands"
+  },
+  {
+    "name": "👑 Francis II",
+    "role": "Sovereign",
+    "start": "1792-03-01",
+    "end": "1794-06-26",
+    "current": false,
+    "tenure": "2y 3m 25d",
+    "party": null,
+    "era": "Austrian Netherlands"
+  }
+]

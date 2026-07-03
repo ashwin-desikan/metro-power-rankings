@@ -1,0 +1,219 @@
+{
+  "east-germany": {
+    "name": "East Germany",
+    "continent": "Europe",
+    "start": "1949",
+    "end": "1990",
+    "href": "https://en.wikipedia.org/wiki/East_Germany"
+  },
+  "south-vietnam": {
+    "name": "South Vietnam",
+    "continent": "Asia",
+    "start": "1955",
+    "end": "1975",
+    "href": "https://en.wikipedia.org/wiki/South_Vietnam"
+  },
+  "hatay": {
+    "name": "Republic of Hatay",
+    "continent": "Asia",
+    "start": "1938",
+    "end": "1939",
+    "href": "https://en.wikipedia.org/wiki/Hatay_State"
+  },
+  "saar": {
+    "name": "Saar Protectorate",
+    "continent": "Europe",
+    "start": "1947",
+    "end": "1957",
+    "href": "https://en.wikipedia.org/wiki/Saar_Protectorate"
+  },
+  "confederate-states": {
+    "name": "Confederate States",
+    "continent": "North America",
+    "start": "1861",
+    "end": "1865",
+    "href": "https://en.wikipedia.org/wiki/Confederate_States_of_America"
+  },
+  "rhodesia": {
+    "name": "Rhodesia",
+    "continent": "Africa",
+    "start": "1965",
+    "end": "1979",
+    "href": "https://en.wikipedia.org/wiki/Rhodesia"
+  },
+  "central-america-federation": {
+    "name": "Federal Republic of Central America",
+    "continent": "North America",
+    "start": "1823",
+    "end": "1841",
+    "href": "https://en.wikipedia.org/wiki/Federal_Republic_of_Central_America"
+  },
+  "south-yemen": {
+    "name": "South Yemen",
+    "continent": "Asia",
+    "start": "1967",
+    "end": "1990",
+    "href": "https://en.wikipedia.org/wiki/South_Yemen"
+  },
+  "west-indies-federation": {
+    "name": "West Indies Federation",
+    "continent": "North America",
+    "start": "1958",
+    "end": "1962",
+    "href": "https://en.wikipedia.org/wiki/West_Indies_Federation"
+  },
+  "tibet": {
+    "name": "Tibet",
+    "continent": "Asia",
+    "start": "1912",
+    "end": "1951",
+    "href": "https://en.wikipedia.org/wiki/Tibet_(1912%E2%80%931951)"
+  },
+  "zanzibar": {
+    "name": "Zanzibar",
+    "continent": "Africa",
+    "start": "1963",
+    "end": "1964",
+    "href": "https://en.wikipedia.org/wiki/People%27s_Republic_of_Zanzibar"
+  },
+  "holy-roman-empire": {
+    "name": "Holy Roman Empire",
+    "continent": "Europe",
+    "start": "962",
+    "end": "1806",
+    "href": "https://en.wikipedia.org/wiki/Holy_Roman_Empire"
+  },
+  "bavaria": {
+    "name": "Bavaria",
+    "continent": "Europe",
+    "start": "1806",
+    "end": "1918",
+    "href": "https://en.wikipedia.org/wiki/Kingdom_of_Bavaria"
+  },
+  "two-sicilies": {
+    "name": "Kingdom of the Two Sicilies",
+    "continent": "Europe",
+    "start": "1816",
+    "end": "1861",
+    "href": "https://en.wikipedia.org/wiki/Kingdom_of_the_Two_Sicilies"
+  },
+  "tuscany": {
+    "name": "Grand Duchy of Tuscany",
+    "continent": "Europe",
+    "start": "1737",
+    "end": "1859",
+    "href": "https://en.wikipedia.org/wiki/Grand_Duchy_of_Tuscany"
+  },
+  "duchy-of-milan": {
+    "name": "Duchy of Milan",
+    "continent": "Europe",
+    "start": "1395",
+    "end": "1797",
+    "href": "https://en.wikipedia.org/wiki/Duchy_of_Milan"
+  },
+  "republic-of-venice": {
+    "name": "Republic of Venice",
+    "continent": "Europe",
+    "start": "697",
+    "end": "1797",
+    "href": "https://en.wikipedia.org/wiki/Republic_of_Venice"
+  },
+  "lombardy-venetia": {
+    "name": "Lombardy-Venetia",
+    "continent": "Europe",
+    "start": "1815",
+    "end": "1866",
+    "href": "https://en.wikipedia.org/wiki/Kingdom_of_Lombardy%E2%80%93Venetia"
+  },
+  "duchy-of-parma": {
+    "name": "Duchy of Parma",
+    "continent": "Europe",
+    "start": "1545",
+    "end": "1859",
+    "href": "https://en.wikipedia.org/wiki/Duchy_of_Parma"
+  },
+  "duchy-of-modena": {
+    "name": "Duchy of Modena",
+    "continent": "Europe",
+    "start": "1452",
+    "end": "1859",
+    "href": "https://en.wikipedia.org/wiki/Duchy_of_Modena_and_Reggio"
+  },
+  "joseon-korea": {
+    "name": "Korea (Joseon & Empire)",
+    "continent": "Asia",
+    "start": "1392",
+    "end": "1910",
+    "href": "https://en.wikipedia.org/wiki/Korean_Empire"
+  },
+  "gran-colombia": {
+    "name": "Gran Colombia",
+    "continent": "South America",
+    "start": "1819",
+    "end": "1831",
+    "href": "https://en.wikipedia.org/wiki/Gran_Colombia"
+  },
+  "kingdom-of-hawaii": {
+    "name": "Hawaii",
+    "continent": "Oceania",
+    "start": "1795",
+    "end": "1898",
+    "href": "https://en.wikipedia.org/wiki/Kingdom_of_Hawaii"
+  },
+  "republic-of-texas": {
+    "name": "Republic of Texas",
+    "continent": "North America",
+    "start": "1836",
+    "end": "1846",
+    "href": "https://en.wikipedia.org/wiki/Republic_of_Texas"
+  },
+  "transvaal": {
+    "name": "South African Republic (Transvaal)",
+    "continent": "Africa",
+    "start": "1852",
+    "end": "1902",
+    "href": "https://en.wikipedia.org/wiki/South_African_Republic"
+  },
+  "orange-free-state": {
+    "name": "Orange Free State",
+    "continent": "Africa",
+    "start": "1854",
+    "end": "1902",
+    "href": "https://en.wikipedia.org/wiki/Orange_Free_State"
+  },
+  "saxony": {
+    "name": "Kingdom of Saxony",
+    "continent": "Europe",
+    "start": "1806",
+    "end": "1918",
+    "href": "https://en.wikipedia.org/wiki/Kingdom_of_Saxony"
+  },
+  "hanover": {
+    "name": "Kingdom of Hanover",
+    "continent": "Europe",
+    "start": "1814",
+    "end": "1866",
+    "href": "https://en.wikipedia.org/wiki/Kingdom_of_Hanover"
+  },
+  "wurttemberg": {
+    "name": "Kingdom of Württemberg",
+    "continent": "Europe",
+    "start": "1806",
+    "end": "1918",
+    "href": "https://en.wikipedia.org/wiki/Kingdom_of_W%C3%BCrttemberg"
+  },
+  "baden": {
+    "name": "Grand Duchy of Baden",
+    "continent": "Europe",
+    "start": "1806",
+    "end": "1918",
+    "href": "https://en.wikipedia.org/wiki/Grand_Duchy_of_Baden"
+  },
+  "austrian-netherlands": {
+    "name": "Austrian Netherlands",
+    "continent": "Europe",
+    "start": "1714",
+    "end": "1795",
+    "href": "https://en.wikipedia.org/wiki/Austrian_Netherlands"
+  }
+}

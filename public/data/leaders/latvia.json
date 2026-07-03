@@ -1,5 +1,45 @@
 [
   {
+    "name": "Jānis Čakste",
+    "role": "President",
+    "start": "1918-11-18",
+    "end": "1927-03-14",
+    "current": false,
+    "tenure": "8y 3m 24d",
+    "party": "head of state from independence; died in office",
+    "era": "First Republic"
+  },
+  {
+    "name": "Gustavs Zemgals",
+    "role": "President",
+    "start": "1927-04-08",
+    "end": "1930-04-09",
+    "current": false,
+    "tenure": "3y 1d",
+    "party": null,
+    "era": "First Republic"
+  },
+  {
+    "name": "Alberts Kviesis",
+    "role": "President",
+    "start": "1930-04-09",
+    "end": "1936-04-11",
+    "current": false,
+    "tenure": "6y 2d",
+    "party": "Farmers Union",
+    "era": "First Republic"
+  },
+  {
+    "name": "Kārlis Ulmanis",
+    "role": "President",
+    "start": "1936-04-11",
+    "end": "1940-07-21",
+    "current": false,
+    "tenure": "4y 3m 10d",
+    "party": "authoritarian (1934 coup); Soviet occupation",
+    "era": "First Republic"
+  },
+  {
     "name": "Andris Bērziņš",
     "role": "President",
     "start": "2011-07-08",

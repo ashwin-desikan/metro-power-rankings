@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Simón Bolívar",
+    "role": "President",
+    "start": "1819-12-17",
+    "end": "1830-05-04",
+    "current": false,
+    "tenure": "10y 4m 17d",
+    "party": null,
+    "era": "Gran Colombia"
+  },
+  {
+    "name": "Joaquín Mosquera",
+    "role": "President",
+    "start": "1830-05-04",
+    "end": "1830-09-05",
+    "current": false,
+    "tenure": "4m 1d",
+    "party": null,
+    "era": "Gran Colombia"
+  },
+  {
+    "name": "Rafael Urdaneta",
+    "role": "President",
+    "start": "1830-09-05",
+    "end": "1831-04-28",
+    "current": false,
+    "tenure": "7m 23d",
+    "party": null,
+    "era": "Gran Colombia"
+  },
+  {
+    "name": "Domingo Caycedo",
+    "role": "President",
+    "start": "1831-04-28",
+    "end": "1831-11-21",
+    "current": false,
+    "tenure": "6m 24d",
+    "party": null,
+    "era": "Gran Colombia"
+  }
+]

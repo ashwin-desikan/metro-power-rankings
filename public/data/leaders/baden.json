@@ -1,0 +1,72 @@
+[
+  {
+    "name": "👑 Charles Frederick",
+    "role": "President",
+    "start": "1806-01-01",
+    "end": "1811-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level dates",
+    "era": "Grand Duchy of Baden"
+  },
+  {
+    "name": "👑 Charles",
+    "role": "President",
+    "start": "1811-01-01",
+    "end": "1818-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level dates",
+    "era": "Grand Duchy of Baden"
+  },
+  {
+    "name": "👑 Louis I",
+    "role": "President",
+    "start": "1818-01-01",
+    "end": "1830-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level dates",
+    "era": "Grand Duchy of Baden"
+  },
+  {
+    "name": "👑 Leopold",
+    "role": "President",
+    "start": "1830-01-01",
+    "end": "1852-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level dates",
+    "era": "Grand Duchy of Baden"
+  },
+  {
+    "name": "👑 Louis II",
+    "role": "President",
+    "start": "1852-01-01",
+    "end": "1858-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level dates",
+    "era": "Grand Duchy of Baden"
+  },
+  {
+    "name": "👑 Frederick I",
+    "role": "President",
+    "start": "1858-01-01",
+    "end": "1907-01-01",
+    "current": false,
+    "tenure": "49y 0d",
+    "party": "year-level dates",
+    "era": "Grand Duchy of Baden"
+  },
+  {
+    "name": "👑 Frederick II",
+    "role": "President",
+    "start": "1907-01-01",
+    "end": "1918-11-22",
+    "current": false,
+    "tenure": "11y 10m 21d",
+    "party": "year-level dates",
+    "era": "Grand Duchy of Baden"
+  }
+]

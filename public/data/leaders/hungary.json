@@ -1,5 +1,515 @@
 [
   {
+    "name": "👑 Stephen I (Saint Stephen)",
+    "role": "King",
+    "start": "1000-01-01",
+    "end": "1038-01-01",
+    "current": false,
+    "tenure": "38y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Árpád dynasty"
+  },
+  {
+    "name": "👑 Peter Orseolo",
+    "role": "King",
+    "start": "1038-01-01",
+    "end": "1041-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Árpád dynasty"
+  },
+  {
+    "name": "👑 Samuel Aba",
+    "role": "King",
+    "start": "1041-01-01",
+    "end": "1044-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Árpád dynasty"
+  },
+  {
+    "name": "👑 Peter Orseolo",
+    "role": "King",
+    "start": "1044-01-01",
+    "end": "1046-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Árpád dynasty"
+  },
+  {
+    "name": "👑 Andrew I",
+    "role": "King",
+    "start": "1046-01-01",
+    "end": "1060-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Árpád dynasty"
+  },
+  {
+    "name": "👑 Béla I",
+    "role": "King",
+    "start": "1060-01-01",
+    "end": "1063-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Árpád dynasty"
+  },
+  {
+    "name": "👑 Solomon",
+    "role": "King",
+    "start": "1063-01-01",
+    "end": "1074-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Árpád dynasty"
+  },
+  {
+    "name": "👑 Géza I",
+    "role": "King",
+    "start": "1074-01-01",
+    "end": "1077-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Árpád dynasty"
+  },
+  {
+    "name": "👑 Ladislaus I (Saint Ladislaus)",
+    "role": "King",
+    "start": "1077-01-01",
+    "end": "1095-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Árpád dynasty"
+  },
+  {
+    "name": "👑 Coloman",
+    "role": "King",
+    "start": "1095-01-01",
+    "end": "1116-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Árpád dynasty"
+  },
+  {
+    "name": "👑 Stephen II",
+    "role": "King",
+    "start": "1116-01-01",
+    "end": "1131-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Árpád dynasty"
+  },
+  {
+    "name": "👑 Béla II the Blind",
+    "role": "King",
+    "start": "1131-01-01",
+    "end": "1141-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Árpád dynasty"
+  },
+  {
+    "name": "👑 Géza II",
+    "role": "King",
+    "start": "1141-01-01",
+    "end": "1162-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Árpád dynasty"
+  },
+  {
+    "name": "👑 Stephen III",
+    "role": "King",
+    "start": "1162-01-01",
+    "end": "1172-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Árpád dynasty"
+  },
+  {
+    "name": "👑 Béla III",
+    "role": "King",
+    "start": "1172-01-01",
+    "end": "1196-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Árpád dynasty"
+  },
+  {
+    "name": "👑 Emeric",
+    "role": "King",
+    "start": "1196-01-01",
+    "end": "1204-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Árpád dynasty"
+  },
+  {
+    "name": "👑 Ladislaus III",
+    "role": "King",
+    "start": "1204-01-01",
+    "end": "1205-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Árpád dynasty"
+  },
+  {
+    "name": "👑 Andrew II",
+    "role": "King",
+    "start": "1205-01-01",
+    "end": "1235-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Árpád dynasty"
+  },
+  {
+    "name": "👑 Béla IV",
+    "role": "King",
+    "start": "1235-01-01",
+    "end": "1270-01-01",
+    "current": false,
+    "tenure": "35y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Árpád dynasty"
+  },
+  {
+    "name": "👑 Stephen V",
+    "role": "King",
+    "start": "1270-01-01",
+    "end": "1272-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Árpád dynasty"
+  },
+  {
+    "name": "👑 Ladislaus IV the Cuman",
+    "role": "King",
+    "start": "1272-01-01",
+    "end": "1290-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Árpád dynasty"
+  },
+  {
+    "name": "👑 Andrew III",
+    "role": "King",
+    "start": "1290-01-01",
+    "end": "1301-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Árpád dynasty"
+  },
+  {
+    "name": "👑 Wenceslaus",
+    "role": "King",
+    "start": "1301-01-01",
+    "end": "1305-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Interregnum"
+  },
+  {
+    "name": "👑 Otto",
+    "role": "King",
+    "start": "1305-01-01",
+    "end": "1308-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Interregnum"
+  },
+  {
+    "name": "👑 Charles I",
+    "role": "King",
+    "start": "1308-01-01",
+    "end": "1342-01-01",
+    "current": false,
+    "tenure": "34y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Angevin dynasty"
+  },
+  {
+    "name": "👑 Louis I the Great",
+    "role": "King",
+    "start": "1342-01-01",
+    "end": "1382-01-01",
+    "current": false,
+    "tenure": "40y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Angevin dynasty"
+  },
+  {
+    "name": "👑 Mary",
+    "role": "Queen",
+    "start": "1382-01-01",
+    "end": "1387-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Angevin dynasty"
+  },
+  {
+    "name": "👑 Sigismund",
+    "role": "King",
+    "start": "1387-01-01",
+    "end": "1437-01-01",
+    "current": false,
+    "tenure": "50y 0d",
+    "party": "medieval; year-level dates",
+    "era": "House of Luxembourg"
+  },
+  {
+    "name": "👑 Albert",
+    "role": "King",
+    "start": "1437-01-01",
+    "end": "1440-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Habsburg"
+  },
+  {
+    "name": "👑 Vladislaus I",
+    "role": "King",
+    "start": "1440-01-01",
+    "end": "1446-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Jagiellon dynasty"
+  },
+  {
+    "name": "John Hunyadi",
+    "role": "Regent",
+    "start": "1446-01-01",
+    "end": "1453-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Hunyadi"
+  },
+  {
+    "name": "👑 Ladislaus V the Posthumous",
+    "role": "King",
+    "start": "1453-01-01",
+    "end": "1458-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Habsburg"
+  },
+  {
+    "name": "👑 Matthias Corvinus",
+    "role": "King",
+    "start": "1458-01-01",
+    "end": "1490-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Hunyadi"
+  },
+  {
+    "name": "👑 Vladislaus II",
+    "role": "King",
+    "start": "1490-01-01",
+    "end": "1516-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Jagiellon dynasty"
+  },
+  {
+    "name": "👑 Louis II",
+    "role": "King",
+    "start": "1516-01-01",
+    "end": "1526-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "medieval; year-level dates",
+    "era": "Jagiellon dynasty"
+  },
+  {
+    "name": "👑 Ferdinand I",
+    "role": "Monarch",
+    "start": "1526-01-01",
+    "end": "1564-07-25",
+    "current": false,
+    "tenure": "1526-1564",
+    "party": "House of Habsburg; founder of the central-European Habsburg monarchy",
+    "era": "Kingdom of Hungary (Habsburg)"
+  },
+  {
+    "name": "👑 Maximilian II",
+    "role": "Monarch",
+    "start": "1564-07-25",
+    "end": "1576-10-12",
+    "current": false,
+    "tenure": "1564-1576",
+    "party": "House of Habsburg",
+    "era": "Kingdom of Hungary (Habsburg)"
+  },
+  {
+    "name": "👑 Rudolf II",
+    "role": "Monarch",
+    "start": "1576-10-12",
+    "end": "1612-01-20",
+    "current": false,
+    "tenure": "1576-1612",
+    "party": "House of Habsburg",
+    "era": "Kingdom of Hungary (Habsburg)"
+  },
+  {
+    "name": "👑 Matthias",
+    "role": "Monarch",
+    "start": "1612-01-20",
+    "end": "1619-03-20",
+    "current": false,
+    "tenure": "1612-1619",
+    "party": "House of Habsburg",
+    "era": "Kingdom of Hungary (Habsburg)"
+  },
+  {
+    "name": "👑 Ferdinand II",
+    "role": "Monarch",
+    "start": "1619-03-20",
+    "end": "1637-02-15",
+    "current": false,
+    "tenure": "1619-1637",
+    "party": "House of Habsburg; Counter-Reformation, Thirty Years' War",
+    "era": "Kingdom of Hungary (Habsburg)"
+  },
+  {
+    "name": "👑 Ferdinand III",
+    "role": "Monarch",
+    "start": "1637-02-15",
+    "end": "1657-04-02",
+    "current": false,
+    "tenure": "1637-1657",
+    "party": "House of Habsburg",
+    "era": "Kingdom of Hungary (Habsburg)"
+  },
+  {
+    "name": "👑 Leopold I",
+    "role": "Monarch",
+    "start": "1657-04-02",
+    "end": "1705-05-05",
+    "current": false,
+    "tenure": "1657-1705",
+    "party": "House of Habsburg",
+    "era": "Kingdom of Hungary (Habsburg)"
+  },
+  {
+    "name": "👑 Joseph I",
+    "role": "Monarch",
+    "start": "1705-05-05",
+    "end": "1711-04-17",
+    "current": false,
+    "tenure": "1705-1711",
+    "party": "House of Habsburg",
+    "era": "Kingdom of Hungary (Habsburg)"
+  },
+  {
+    "name": "👑 Charles VI",
+    "role": "Monarch",
+    "start": "1711-04-17",
+    "end": "1740-10-20",
+    "current": false,
+    "tenure": "1711-1740",
+    "party": "House of Habsburg; Pragmatic Sanction",
+    "era": "Kingdom of Hungary (Habsburg)"
+  },
+  {
+    "name": "👑 Maria Theresa",
+    "role": "Monarch",
+    "start": "1740-10-20",
+    "end": "1780-11-29",
+    "current": false,
+    "tenure": "1740-1780",
+    "party": "House of Habsburg; sole female ruler; founder of Habsburg-Lorraine",
+    "era": "Kingdom of Hungary (Habsburg)"
+  },
+  {
+    "name": "👑 Joseph II",
+    "role": "Monarch",
+    "start": "1780-11-29",
+    "end": "1790-02-20",
+    "current": false,
+    "tenure": "1780-1790",
+    "party": "House of Habsburg-Lorraine; enlightened absolutism",
+    "era": "Kingdom of Hungary (Habsburg)"
+  },
+  {
+    "name": "👑 Leopold II",
+    "role": "Monarch",
+    "start": "1790-02-20",
+    "end": "1792-03-01",
+    "current": false,
+    "tenure": "1790-1792",
+    "party": "House of Habsburg-Lorraine",
+    "era": "Kingdom of Hungary (Habsburg)"
+  },
+  {
+    "name": "👑 Francis I",
+    "role": "Monarch",
+    "start": "1792-03-01",
+    "end": "1835-03-02",
+    "current": false,
+    "tenure": "1792-1835",
+    "party": "Holy Roman Emperor Francis II from 1792; proclaimed first Emperor of Austria 1804",
+    "era": "Kingdom of Hungary (Habsburg)"
+  },
+  {
+    "name": "👑 Ferdinand I",
+    "role": "Monarch",
+    "start": "1835-03-02",
+    "end": "1848-12-02",
+    "current": false,
+    "tenure": "1835-1848",
+    "party": "House of Habsburg-Lorraine; abdicated in the 1848 revolutions",
+    "era": "Kingdom of Hungary (Habsburg)"
+  },
+  {
+    "name": "👑 Franz Joseph I",
+    "role": "Monarch",
+    "start": "1848-12-02",
+    "end": "1916-11-21",
+    "current": false,
+    "tenure": "67y 11m 19d",
+    "party": "Habsburg",
+    "era": "Austria-Hungary"
+  },
+  {
+    "name": "👑 Karl I (Karl IV)",
+    "role": "Monarch",
+    "start": "1916-11-21",
+    "end": "1918-11-16",
+    "current": false,
+    "tenure": "1y 11m 26d",
+    "party": "Habsburg",
+    "era": "Austria-Hungary"
+  },
+  {
     "name": "⚠️ Miklós Horthy",
     "role": "President (Regent, head of state)",
     "start": "1920-03-01",

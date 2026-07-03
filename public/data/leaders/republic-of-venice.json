@@ -1,0 +1,562 @@
+[
+  {
+    "name": "👑 Michele Steno",
+    "role": "Doge",
+    "start": "1400-01-01",
+    "end": "1414-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Tommaso Mocenigo",
+    "role": "Doge",
+    "start": "1414-01-01",
+    "end": "1423-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Francesco Foscari",
+    "role": "Doge",
+    "start": "1423-01-01",
+    "end": "1457-01-01",
+    "current": false,
+    "tenure": "34y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Pasquale Malipiero",
+    "role": "Doge",
+    "start": "1457-01-01",
+    "end": "1462-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Cristoforo Moro",
+    "role": "Doge",
+    "start": "1462-01-01",
+    "end": "1471-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Nicolò Tron",
+    "role": "Doge",
+    "start": "1471-01-01",
+    "end": "1473-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Nicolò Marcello",
+    "role": "Doge",
+    "start": "1473-01-01",
+    "end": "1474-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Pietro Mocenigo",
+    "role": "Doge",
+    "start": "1474-01-01",
+    "end": "1476-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Andrea Vendramin",
+    "role": "Doge",
+    "start": "1476-01-01",
+    "end": "1478-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Giovanni Mocenigo",
+    "role": "Doge",
+    "start": "1478-01-01",
+    "end": "1485-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Marco Barbarigo",
+    "role": "Doge",
+    "start": "1485-01-01",
+    "end": "1486-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Agostino Barbarigo",
+    "role": "Doge",
+    "start": "1486-01-01",
+    "end": "1501-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Leonardo Loredan",
+    "role": "Doge",
+    "start": "1501-01-01",
+    "end": "1521-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Antonio Grimani",
+    "role": "Doge",
+    "start": "1521-01-01",
+    "end": "1523-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Andrea Gritti",
+    "role": "Doge",
+    "start": "1523-01-01",
+    "end": "1539-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Pietro Lando",
+    "role": "Doge",
+    "start": "1539-01-01",
+    "end": "1545-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Francesco Donato",
+    "role": "Doge",
+    "start": "1545-01-01",
+    "end": "1553-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Marcantonio Trevisan",
+    "role": "Doge",
+    "start": "1553-01-01",
+    "end": "1554-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Francesco Venier",
+    "role": "Doge",
+    "start": "1554-01-01",
+    "end": "1556-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Lorenzo Priuli",
+    "role": "Doge",
+    "start": "1556-01-01",
+    "end": "1559-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Girolamo Priuli",
+    "role": "Doge",
+    "start": "1559-01-01",
+    "end": "1567-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Pietro Loredan",
+    "role": "Doge",
+    "start": "1567-01-01",
+    "end": "1570-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Alvise I Mocenigo",
+    "role": "Doge",
+    "start": "1570-01-01",
+    "end": "1577-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Sebastiano Venier",
+    "role": "Doge",
+    "start": "1577-01-01",
+    "end": "1578-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Nicolò da Ponte",
+    "role": "Doge",
+    "start": "1578-01-01",
+    "end": "1585-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Pasquale Cicogna",
+    "role": "Doge",
+    "start": "1585-01-01",
+    "end": "1595-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Marino Grimani",
+    "role": "Doge",
+    "start": "1595-01-01",
+    "end": "1606-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Leonardo Donato",
+    "role": "Doge",
+    "start": "1606-01-01",
+    "end": "1612-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Marcantonio Memmo",
+    "role": "Doge",
+    "start": "1612-01-01",
+    "end": "1615-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Giovanni Bembo",
+    "role": "Doge",
+    "start": "1615-01-01",
+    "end": "1618-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Antonio Priuli",
+    "role": "Doge",
+    "start": "1618-01-01",
+    "end": "1623-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Francesco Contarini",
+    "role": "Doge",
+    "start": "1623-01-01",
+    "end": "1625-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Giovanni I Cornaro",
+    "role": "Doge",
+    "start": "1625-01-01",
+    "end": "1630-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Nicolò Contarini",
+    "role": "Doge",
+    "start": "1630-01-01",
+    "end": "1631-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Francesco Erizzo",
+    "role": "Doge",
+    "start": "1631-01-01",
+    "end": "1646-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Francesco Molin",
+    "role": "Doge",
+    "start": "1646-01-01",
+    "end": "1655-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Carlo Contarini",
+    "role": "Doge",
+    "start": "1655-01-01",
+    "end": "1656-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Bertuccio Valier",
+    "role": "Doge",
+    "start": "1656-01-01",
+    "end": "1658-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Giovanni Pesaro",
+    "role": "Doge",
+    "start": "1658-01-01",
+    "end": "1659-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Domenico II Contarini",
+    "role": "Doge",
+    "start": "1659-01-01",
+    "end": "1675-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Nicolò Sagredo",
+    "role": "Doge",
+    "start": "1675-01-01",
+    "end": "1676-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Alvise Contarini",
+    "role": "Doge",
+    "start": "1676-01-01",
+    "end": "1684-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Marcantonio Giustinian",
+    "role": "Doge",
+    "start": "1684-01-01",
+    "end": "1688-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Francesco Morosini",
+    "role": "Doge",
+    "start": "1688-01-01",
+    "end": "1694-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Silvestro Valier",
+    "role": "Doge",
+    "start": "1694-01-01",
+    "end": "1700-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Alvise II Mocenigo",
+    "role": "Doge",
+    "start": "1700-01-01",
+    "end": "1709-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Giovanni II Cornaro",
+    "role": "Doge",
+    "start": "1709-01-01",
+    "end": "1722-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Alvise III Mocenigo",
+    "role": "Doge",
+    "start": "1722-01-01",
+    "end": "1732-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Carlo Ruzzini",
+    "role": "Doge",
+    "start": "1732-01-01",
+    "end": "1735-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Alvise Pisani",
+    "role": "Doge",
+    "start": "1735-01-01",
+    "end": "1741-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Pietro Grimani",
+    "role": "Doge",
+    "start": "1741-01-01",
+    "end": "1752-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Francesco Loredan",
+    "role": "Doge",
+    "start": "1752-01-01",
+    "end": "1762-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Marco Foscarini",
+    "role": "Doge",
+    "start": "1762-01-01",
+    "end": "1763-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Alvise IV Mocenigo",
+    "role": "Doge",
+    "start": "1763-01-01",
+    "end": "1779-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Paolo Renier",
+    "role": "Doge",
+    "start": "1779-01-01",
+    "end": "1789-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Ludovico Manin",
+    "role": "Doge",
+    "start": "1789-01-01",
+    "end": "1797-05-12",
+    "current": false,
+    "tenure": "8y 4m 11d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  }
+]

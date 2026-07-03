@@ -1,0 +1,52 @@
+[
+  {
+    "name": "David G. Burnet",
+    "role": "President",
+    "start": "1836-03-16",
+    "end": "1836-10-22",
+    "current": false,
+    "tenure": "7m 6d",
+    "party": null,
+    "era": "Republic of Texas"
+  },
+  {
+    "name": "Sam Houston",
+    "role": "President",
+    "start": "1836-10-22",
+    "end": "1838-12-10",
+    "current": false,
+    "tenure": "2y 1m 18d",
+    "party": null,
+    "era": "Republic of Texas"
+  },
+  {
+    "name": "Mirabeau B. Lamar",
+    "role": "President",
+    "start": "1838-12-10",
+    "end": "1841-12-13",
+    "current": false,
+    "tenure": "3y 3d",
+    "party": null,
+    "era": "Republic of Texas"
+  },
+  {
+    "name": "Sam Houston",
+    "role": "President",
+    "start": "1841-12-13",
+    "end": "1844-12-09",
+    "current": false,
+    "tenure": "2y 11m 26d",
+    "party": null,
+    "era": "Republic of Texas"
+  },
+  {
+    "name": "Anson Jones",
+    "role": "President",
+    "start": "1844-12-09",
+    "end": "1846-02-19",
+    "current": false,
+    "tenure": "1y 2m 10d",
+    "party": null,
+    "era": "Republic of Texas"
+  }
+]

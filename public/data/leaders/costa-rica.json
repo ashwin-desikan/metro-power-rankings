@@ -1,5 +1,65 @@
 [
   {
+    "name": "Braulio Carrillo",
+    "role": "President",
+    "start": "1838-01-01",
+    "end": "1849-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Costa Rica"
+  },
+  {
+    "name": "Juan Rafael Mora Porras",
+    "role": "President",
+    "start": "1849-01-01",
+    "end": "1870-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Costa Rica"
+  },
+  {
+    "name": "⚠️ Tomás Guardia",
+    "role": "President",
+    "start": "1870-01-01",
+    "end": "1906-01-01",
+    "current": false,
+    "tenure": "36y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Costa Rica"
+  },
+  {
+    "name": "Cleto González Víquez",
+    "role": "President",
+    "start": "1906-01-01",
+    "end": "1910-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Costa Rica"
+  },
+  {
+    "name": "Ricardo Jiménez",
+    "role": "President",
+    "start": "1910-01-01",
+    "end": "1940-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Costa Rica"
+  },
+  {
+    "name": "Rafael Ángel Calderón Guardia",
+    "role": "President",
+    "start": "1940-01-01",
+    "end": "1948-05-08",
+    "current": false,
+    "tenure": "8y 4m 7d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Costa Rica"
+  },
+  {
     "name": "José Figueres Ferrer",
     "role": "President (Founding Junta of the Second Republic)",
     "start": "1948-05-08",

@@ -1,5 +1,95 @@
 [
   {
+    "name": "👑 Victor Amadeus II",
+    "role": "King of Sardinia",
+    "start": "1720-08-19",
+    "end": "1730-09-03",
+    "current": false,
+    "tenure": "10y 15d",
+    "party": null,
+    "era": "Kingdom of Sardinia"
+  },
+  {
+    "name": "👑 Charles Emmanuel III",
+    "role": "King of Sardinia",
+    "start": "1730-09-03",
+    "end": "1773-02-20",
+    "current": false,
+    "tenure": "42y 5m 17d",
+    "party": null,
+    "era": "Kingdom of Sardinia"
+  },
+  {
+    "name": "👑 Victor Amadeus III",
+    "role": "King of Sardinia",
+    "start": "1773-02-20",
+    "end": "1796-10-16",
+    "current": false,
+    "tenure": "23y 7m 26d",
+    "party": null,
+    "era": "Kingdom of Sardinia"
+  },
+  {
+    "name": "👑 Charles Emmanuel IV",
+    "role": "King of Sardinia",
+    "start": "1796-10-16",
+    "end": "1802-06-04",
+    "current": false,
+    "tenure": "5y 7m 19d",
+    "party": null,
+    "era": "Kingdom of Sardinia"
+  },
+  {
+    "name": "👑 Victor Emmanuel I",
+    "role": "King of Sardinia",
+    "start": "1802-06-04",
+    "end": "1821-03-13",
+    "current": false,
+    "tenure": "18y 9m 9d",
+    "party": null,
+    "era": "Kingdom of Sardinia"
+  },
+  {
+    "name": "👑 Charles Felix",
+    "role": "King of Sardinia",
+    "start": "1821-03-13",
+    "end": "1831-04-27",
+    "current": false,
+    "tenure": "10y 1m 14d",
+    "party": null,
+    "era": "Kingdom of Sardinia"
+  },
+  {
+    "name": "👑 Charles Albert",
+    "role": "King of Sardinia",
+    "start": "1831-04-27",
+    "end": "1849-03-23",
+    "current": false,
+    "tenure": "17y 10m 24d",
+    "party": null,
+    "era": "Kingdom of Sardinia"
+  },
+  {
+    "name": "👑 Victor Emmanuel II",
+    "role": "King of Sardinia",
+    "start": "1849-03-23",
+    "end": "1861-03-17",
+    "current": false,
+    "tenure": "11y 11m 22d",
+    "party": null,
+    "era": "Kingdom of Sardinia"
+  },
+  {
+    "name": "👑 Victor Emmanuel II",
+    "role": "King of Italy",
+    "start": "1861-03-17",
+    "end": "1878-01-09",
+    "current": false,
+    "tenure": "16y 9m 23d",
+    "party": null,
+    "era": "Kingdom of Italy"
+  },
+  {
     "name": "Camillo di Cavour",
     "role": "Prime Minister",
     "start": "1861-03-23",
@@ -130,6 +220,16 @@
     "era": null
   },
   {
+    "name": "👑 Umberto I",
+    "role": "King of Italy",
+    "start": "1878-01-09",
+    "end": "1900-07-29",
+    "current": false,
+    "tenure": "22y 6m 20d",
+    "party": null,
+    "era": "Kingdom of Italy"
+  },
+  {
     "name": "Agostino Depretis",
     "role": "Prime Minister",
     "start": "1878-01-24",
@@ -248,6 +348,16 @@
     "tenure": "7m",
     "party": "Historical Left",
     "era": null
+  },
+  {
+    "name": "👑 Victor Emmanuel III",
+    "role": "King of Italy",
+    "start": "1900-07-29",
+    "end": "1946-05-09",
+    "current": false,
+    "tenure": "45y 9m 10d",
+    "party": null,
+    "era": "Kingdom of Italy"
   },
   {
     "name": "Giuseppe Zanardelli",
@@ -448,6 +558,16 @@
     "tenure": "7y 8m",
     "party": "DC; multiple govts",
     "era": null
+  },
+  {
+    "name": "👑 Umberto II",
+    "role": "King of Italy",
+    "start": "1946-05-09",
+    "end": "1946-06-18",
+    "current": false,
+    "tenure": "1m 9d",
+    "party": null,
+    "era": "Kingdom of Italy"
   },
   {
     "name": "Giuseppe Pella",

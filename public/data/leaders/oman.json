@@ -1,5 +1,125 @@
 [
   {
+    "name": "👑 Ahmad bin Said",
+    "role": "Monarch",
+    "start": "1744-01-01",
+    "end": "1783-01-01",
+    "current": false,
+    "tenure": "39y 0d",
+    "party": null,
+    "era": "Al Said dynasty"
+  },
+  {
+    "name": "👑 Said bin Ahmad",
+    "role": "Monarch",
+    "start": "1783-01-01",
+    "end": "1792-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": null,
+    "era": "Al Said dynasty"
+  },
+  {
+    "name": "👑 Sultan bin Ahmad",
+    "role": "Monarch",
+    "start": "1792-01-01",
+    "end": "1804-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": null,
+    "era": "Al Said dynasty"
+  },
+  {
+    "name": "👑 Said bin Sultan",
+    "role": "Monarch",
+    "start": "1804-01-01",
+    "end": "1856-01-01",
+    "current": false,
+    "tenure": "52y 0d",
+    "party": null,
+    "era": "Al Said dynasty"
+  },
+  {
+    "name": "👑 Thuwaini bin Said",
+    "role": "Monarch",
+    "start": "1856-01-01",
+    "end": "1866-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": null,
+    "era": "Al Said dynasty"
+  },
+  {
+    "name": "👑 Salim bin Thuwaini",
+    "role": "Monarch",
+    "start": "1866-01-01",
+    "end": "1868-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": null,
+    "era": "Al Said dynasty"
+  },
+  {
+    "name": "👑 Azzan bin Qais",
+    "role": "Monarch",
+    "start": "1868-01-01",
+    "end": "1871-01-30",
+    "current": false,
+    "tenure": "3y 29d",
+    "party": null,
+    "era": "Al Said dynasty"
+  },
+  {
+    "name": "👑 Turki bin Said",
+    "role": "Monarch",
+    "start": "1871-01-30",
+    "end": "1888-06-04",
+    "current": false,
+    "tenure": "17y 4m 5d",
+    "party": null,
+    "era": "Al Said dynasty"
+  },
+  {
+    "name": "👑 Faisal bin Turki",
+    "role": "Monarch",
+    "start": "1888-06-04",
+    "end": "1913-10-05",
+    "current": false,
+    "tenure": "25y 4m 1d",
+    "party": null,
+    "era": "Al Said dynasty"
+  },
+  {
+    "name": "👑 Taimur bin Faisal",
+    "role": "Monarch",
+    "start": "1913-10-05",
+    "end": "1932-02-10",
+    "current": false,
+    "tenure": "18y 4m 5d",
+    "party": null,
+    "era": "Al Said dynasty"
+  },
+  {
+    "name": "👑 Said bin Taimur",
+    "role": "Monarch",
+    "start": "1932-02-10",
+    "end": "1970-07-23",
+    "current": false,
+    "tenure": "38y 5m 13d",
+    "party": null,
+    "era": "Al Said dynasty"
+  },
+  {
+    "name": "👑 Qaboos bin Said",
+    "role": "Monarch",
+    "start": "1970-07-23",
+    "end": "2020-01-11",
+    "current": false,
+    "tenure": "49y 5m 19d",
+    "party": null,
+    "era": "Al Said dynasty"
+  },
+  {
     "name": "👑 Haitham bin Tarik Al Said",
     "role": "Monarch",
     "start": "2020-01-11",

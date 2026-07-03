@@ -1,6 +1,26 @@
 [
   {
     "name": "Julius Nyerere",
+    "role": "Prime Minister",
+    "start": "1961-12-09",
+    "end": "1962-12-09",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "TANU; independence",
+    "era": "Tanganyika"
+  },
+  {
+    "name": "Julius Nyerere",
+    "role": "President",
+    "start": "1962-12-09",
+    "end": "1964-04-26",
+    "current": false,
+    "tenure": "1y 4m 17d",
+    "party": "TANU",
+    "era": "Tanganyika"
+  },
+  {
+    "name": "Julius Nyerere",
     "role": "President",
     "start": "1964-04-26",
     "end": "1985-11-05",

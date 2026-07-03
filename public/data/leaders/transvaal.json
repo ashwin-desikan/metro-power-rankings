@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Marthinus Wessel Pretorius",
+    "role": "President",
+    "start": "1857-01-01",
+    "end": "1872-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level dates",
+    "era": "South African Republic (Transvaal)"
+  },
+  {
+    "name": "Thomas François Burgers",
+    "role": "President",
+    "start": "1872-01-01",
+    "end": "1883-05-09",
+    "current": false,
+    "tenure": "11y 4m 8d",
+    "party": "year-level dates",
+    "era": "South African Republic (Transvaal)"
+  },
+  {
+    "name": "Paul Kruger",
+    "role": "President",
+    "start": "1883-05-09",
+    "end": "1902-05-31",
+    "current": false,
+    "tenure": "19y 22d",
+    "party": null,
+    "era": "South African Republic (Transvaal)"
+  }
+]

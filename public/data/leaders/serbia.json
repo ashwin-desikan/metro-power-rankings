@@ -1,5 +1,45 @@
 [
   {
+    "name": "👑 Peter I",
+    "role": "King",
+    "start": "1918-12-01",
+    "end": "1921-08-16",
+    "current": false,
+    "tenure": "2y 8m 15d",
+    "party": "Karađorđević",
+    "era": "Kingdom of Yugoslavia"
+  },
+  {
+    "name": "👑 Alexander I",
+    "role": "King",
+    "start": "1921-08-16",
+    "end": "1934-10-09",
+    "current": false,
+    "tenure": "13y 1m 23d",
+    "party": "assassinated",
+    "era": "Kingdom of Yugoslavia"
+  },
+  {
+    "name": "👑 Peter II",
+    "role": "King",
+    "start": "1934-10-09",
+    "end": "1945-11-29",
+    "current": false,
+    "tenure": "11y 1m 20d",
+    "party": "monarchy abolished (regency 1934–41)",
+    "era": "Kingdom of Yugoslavia"
+  },
+  {
+    "name": "Josip Broz Tito",
+    "role": "President",
+    "start": "1945-03-07",
+    "end": "1980-05-04",
+    "current": false,
+    "tenure": "35y 1m 27d",
+    "party": "de facto leader; SFR Yugoslavia",
+    "era": "SFR Yugoslavia"
+  },
+  {
     "name": "⚠️ Slobodan Milošević",
     "role": "President",
     "start": "1991-01-09",

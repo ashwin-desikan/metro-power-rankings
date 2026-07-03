@@ -1,5 +1,95 @@
 [
   {
+    "name": "👑 Muhammad Ali",
+    "role": "Monarch",
+    "start": "1805-07-17",
+    "end": "1848-07-20",
+    "current": false,
+    "tenure": "43y 3d",
+    "party": null,
+    "era": "Muhammad Ali dynasty"
+  },
+  {
+    "name": "👑 Ibrahim Pasha",
+    "role": "Monarch",
+    "start": "1848-07-20",
+    "end": "1848-11-10",
+    "current": false,
+    "tenure": "3m 21d",
+    "party": null,
+    "era": "Muhammad Ali dynasty"
+  },
+  {
+    "name": "👑 Abbas I",
+    "role": "Monarch",
+    "start": "1848-11-10",
+    "end": "1854-07-14",
+    "current": false,
+    "tenure": "5y 8m 4d",
+    "party": null,
+    "era": "Muhammad Ali dynasty"
+  },
+  {
+    "name": "👑 Said",
+    "role": "Monarch",
+    "start": "1854-07-14",
+    "end": "1863-01-18",
+    "current": false,
+    "tenure": "8y 6m 4d",
+    "party": null,
+    "era": "Muhammad Ali dynasty"
+  },
+  {
+    "name": "👑 Isma'il",
+    "role": "Monarch",
+    "start": "1863-01-18",
+    "end": "1879-06-26",
+    "current": false,
+    "tenure": "16y 5m 8d",
+    "party": null,
+    "era": "Muhammad Ali dynasty"
+  },
+  {
+    "name": "👑 Tewfik",
+    "role": "Monarch",
+    "start": "1879-06-26",
+    "end": "1892-01-08",
+    "current": false,
+    "tenure": "12y 6m 13d",
+    "party": null,
+    "era": "Muhammad Ali dynasty"
+  },
+  {
+    "name": "👑 Abbas II",
+    "role": "Monarch",
+    "start": "1892-01-08",
+    "end": "1914-12-19",
+    "current": false,
+    "tenure": "22y 11m 11d",
+    "party": null,
+    "era": "Muhammad Ali dynasty"
+  },
+  {
+    "name": "👑 Hussein Kamel",
+    "role": "Monarch",
+    "start": "1914-12-19",
+    "end": "1917-10-09",
+    "current": false,
+    "tenure": "2y 9m 20d",
+    "party": null,
+    "era": "Muhammad Ali dynasty"
+  },
+  {
+    "name": "👑 Fuad I (Sultan)",
+    "role": "Monarch",
+    "start": "1917-10-09",
+    "end": "1922-03-15",
+    "current": false,
+    "tenure": "4y 5m 6d",
+    "party": null,
+    "era": "Muhammad Ali dynasty"
+  },
+  {
     "name": "👑 King Fuad I",
     "role": "Monarch",
     "start": "1922-03-15",
@@ -43,11 +133,21 @@
     "name": "Gamal Abdel Nasser",
     "role": "President",
     "start": "1954-11-14",
-    "end": "1970-09-28",
+    "end": "1958-02-22",
     "current": false,
-    "tenure": "15 years",
+    "tenure": "3y 3m 8d",
     "party": "Arab Socialist Union",
     "era": "Republic"
+  },
+  {
+    "name": "Gamal Abdel Nasser",
+    "role": "President",
+    "start": "1958-02-22",
+    "end": "1970-09-28",
+    "current": false,
+    "tenure": "12y 7m 6d",
+    "party": "Arab Socialist Union",
+    "era": "United Arab Republic"
   },
   {
     "name": "Anwar Sadat",

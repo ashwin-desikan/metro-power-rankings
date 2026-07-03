@@ -1,5 +1,75 @@
 [
   {
+    "name": "Rafael Carrera",
+    "role": "President",
+    "start": "1844-01-01",
+    "end": "1873-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Guatemala"
+  },
+  {
+    "name": "Justo Rufino Barrios",
+    "role": "President",
+    "start": "1873-01-01",
+    "end": "1898-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Guatemala"
+  },
+  {
+    "name": "⚠️ Manuel Estrada Cabrera",
+    "role": "President",
+    "start": "1898-01-01",
+    "end": "1931-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Guatemala"
+  },
+  {
+    "name": "⚠️ Jorge Ubico",
+    "role": "President",
+    "start": "1931-01-01",
+    "end": "1945-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Guatemala"
+  },
+  {
+    "name": "Juan José Arévalo",
+    "role": "President",
+    "start": "1945-01-01",
+    "end": "1951-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Guatemala"
+  },
+  {
+    "name": "Jacobo Árbenz",
+    "role": "President",
+    "start": "1951-01-01",
+    "end": "1954-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Guatemala"
+  },
+  {
+    "name": "⚠️ Carlos Castillo Armas",
+    "role": "President",
+    "start": "1954-01-01",
+    "end": "1996-01-14",
+    "current": false,
+    "tenure": "42y 13d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Guatemala"
+  },
+  {
     "name": "Álvaro Enrique Arzú Irigoyen",
     "role": "Prime Minister",
     "start": "1996-01-14",

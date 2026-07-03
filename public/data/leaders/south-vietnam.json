@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Ngô Đình Diệm",
+    "role": "President",
+    "start": "1955-10-26",
+    "end": "1963-11-02",
+    "current": false,
+    "tenure": "8y 7d",
+    "party": "assassinated in coup",
+    "era": "Republic of Vietnam"
+  },
+  {
+    "name": "Dương Văn Minh",
+    "role": "Chairman",
+    "start": "1963-11-02",
+    "end": "1964-01-30",
+    "current": false,
+    "tenure": "2m 28d",
+    "party": "military junta",
+    "era": "Republic of Vietnam"
+  },
+  {
+    "name": "Nguyễn Khánh",
+    "role": "Chairman",
+    "start": "1964-01-30",
+    "end": "1965-06-19",
+    "current": false,
+    "tenure": "1y 4m 20d",
+    "party": "military junta",
+    "era": "Republic of Vietnam"
+  },
+  {
+    "name": "Nguyễn Cao Kỳ",
+    "role": "Prime Minister",
+    "start": "1965-06-19",
+    "end": "1967-09-03",
+    "current": false,
+    "tenure": "2y 2m 15d",
+    "party": "military junta",
+    "era": "Republic of Vietnam"
+  },
+  {
+    "name": "Nguyễn Văn Thiệu",
+    "role": "President",
+    "start": "1967-09-03",
+    "end": "1975-04-21",
+    "current": false,
+    "tenure": "7y 7m 18d",
+    "party": "resigned",
+    "era": "Republic of Vietnam"
+  },
+  {
+    "name": "Trần Văn Hương",
+    "role": "President",
+    "start": "1975-04-21",
+    "end": "1975-04-28",
+    "current": false,
+    "tenure": "7d",
+    "party": null,
+    "era": "Republic of Vietnam"
+  },
+  {
+    "name": "Dương Văn Minh",
+    "role": "President",
+    "start": "1975-04-28",
+    "end": "1975-04-30",
+    "current": false,
+    "tenure": "2d",
+    "party": "surrendered to the North",
+    "era": "Republic of Vietnam"
+  }
+]

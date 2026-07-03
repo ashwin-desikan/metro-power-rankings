@@ -8,6 +8,8 @@
 // intentionally render no flag.
 
 export const FLAG_CODE: Record<string, string> = {
+  "EU": "eu",
+  "UN": "un",
   "afghanistan": "af",
   "albania": "al",
   "algeria": "dz",
@@ -263,4 +265,13 @@ export function flagUrl(slug: string): string | null {
 export function flagSrcSet(slug: string): string | null {
   const code = FLAG_CODE[slug];
   return code ? `https://flagcdn.com/40x30/${code}.png 2x` : null;
+}
+
+// Build a flagcdn URL from a raw code (used for historical eras whose flag
+// equals a current country's, e.g. West Germany → "de", Czechoslovakia → "cz").
+export function flagUrlByCode(code: string): string {
+  return `https://flagcdn.com/20x15/${code}.png`;
+}
+export function flagSrcSetByCode(code: string): string {
+  return `https://flagcdn.com/40x30/${code}.png 2x`;
 }

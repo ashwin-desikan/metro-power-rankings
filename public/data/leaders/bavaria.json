@@ -1,0 +1,62 @@
+[
+  {
+    "name": "👑 Maximilian I Joseph",
+    "role": "King",
+    "start": "1806-01-01",
+    "end": "1825-10-13",
+    "current": false,
+    "tenure": "19y 9m 12d",
+    "party": "year-level dates",
+    "era": "Kingdom of Bavaria"
+  },
+  {
+    "name": "👑 Ludwig I",
+    "role": "King",
+    "start": "1825-10-13",
+    "end": "1848-03-20",
+    "current": false,
+    "tenure": "22y 5m 7d",
+    "party": null,
+    "era": "Kingdom of Bavaria"
+  },
+  {
+    "name": "👑 Maximilian II",
+    "role": "King",
+    "start": "1848-03-20",
+    "end": "1864-03-10",
+    "current": false,
+    "tenure": "15y 11m 19d",
+    "party": null,
+    "era": "Kingdom of Bavaria"
+  },
+  {
+    "name": "👑 Ludwig II",
+    "role": "King",
+    "start": "1864-03-10",
+    "end": "1886-06-13",
+    "current": false,
+    "tenure": "22y 3m 3d",
+    "party": null,
+    "era": "Kingdom of Bavaria"
+  },
+  {
+    "name": "👑 Otto",
+    "role": "King",
+    "start": "1886-06-13",
+    "end": "1913-11-05",
+    "current": false,
+    "tenure": "27y 4m 23d",
+    "party": null,
+    "era": "Kingdom of Bavaria"
+  },
+  {
+    "name": "👑 Ludwig III",
+    "role": "King",
+    "start": "1913-11-05",
+    "end": "1918-11-13",
+    "current": false,
+    "tenure": "5y 8d",
+    "party": null,
+    "era": "Kingdom of Bavaria"
+  }
+]

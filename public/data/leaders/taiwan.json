@@ -1,5 +1,173 @@
 [
   {
+    "name": "Sun Yat-sen",
+    "role": "President",
+    "start": "1912-01-01",
+    "end": "1912-03-10",
+    "current": false,
+    "tenure": "2m 9d",
+    "party": "Kuomintang; Provisional",
+    "era": "Republic of China",
+    "metros": [
+      {
+        "name": "Guangzhou",
+        "slug": "guangzhou"
+      }
+    ]
+  },
+  {
+    "name": "Yuan Shikai",
+    "role": "President",
+    "start": "1912-03-10",
+    "end": "1916-06-06",
+    "current": false,
+    "tenure": "4y 2m 29d",
+    "party": "Independent; died in office",
+    "era": "Republic of China",
+    "metros": [
+      {
+        "name": "Beijing",
+        "slug": "beijing"
+      }
+    ]
+  },
+  {
+    "name": "Li Yuanhong",
+    "role": "President",
+    "start": "1916-06-06",
+    "end": "1917-07-12",
+    "current": false,
+    "tenure": "1y 1m 6d",
+    "party": "Independent; 1st term",
+    "era": "Republic of China",
+    "metros": [
+      {
+        "name": "Wuhan",
+        "slug": "wuhan"
+      }
+    ]
+  },
+  {
+    "name": "Feng Guozhang",
+    "role": "President",
+    "start": "1917-07-12",
+    "end": "1918-10-10",
+    "current": false,
+    "tenure": "1y 3m",
+    "party": "Independent",
+    "era": "Republic of China",
+    "metros": [
+      {
+        "name": "Beijing",
+        "slug": "beijing"
+      }
+    ]
+  },
+  {
+    "name": "Xu Shichang",
+    "role": "President",
+    "start": "1918-10-10",
+    "end": "1922-06-02",
+    "current": false,
+    "tenure": "3y 7m 26d",
+    "party": "Independent",
+    "era": "Republic of China",
+    "metros": [
+      {
+        "name": "Tianjin",
+        "slug": "tianjin"
+      }
+    ]
+  },
+  {
+    "name": "Li Yuanhong",
+    "role": "President",
+    "start": "1922-06-02",
+    "end": "1923-06-13",
+    "current": false,
+    "tenure": "1y 11d",
+    "party": "Independent; 2nd term",
+    "era": "Republic of China",
+    "metros": [
+      {
+        "name": "Wuhan",
+        "slug": "wuhan"
+      }
+    ]
+  },
+  {
+    "name": "Cao Kun",
+    "role": "President",
+    "start": "1923-10-10",
+    "end": "1924-11-02",
+    "current": false,
+    "tenure": "1y 24d",
+    "party": "Independent",
+    "era": "Republic of China",
+    "metros": [
+      {
+        "name": "Tianjin",
+        "slug": "tianjin"
+      }
+    ]
+  },
+  {
+    "name": "⚠️ Chiang Kai-shek",
+    "role": "President",
+    "start": "1928-02-10",
+    "end": "1931-01-15",
+    "current": false,
+    "tenure": "2y 11m 10d",
+    "party": "Kuomintang; 1st term",
+    "era": "Republic of China",
+    "metros": [
+      {
+        "name": "Nanjing",
+        "slug": "nanjing"
+      },
+      {
+        "name": "Shanghai",
+        "slug": "shanghai"
+      }
+    ]
+  },
+  {
+    "name": "Lin Sen",
+    "role": "President",
+    "start": "1931-12-20",
+    "end": "1943-08-01",
+    "current": false,
+    "tenure": "11y 7m 17d",
+    "party": "Kuomintang",
+    "era": "Republic of China",
+    "metros": [
+      {
+        "name": "Fuzhou",
+        "slug": "fuzhou"
+      }
+    ]
+  },
+  {
+    "name": "⚠️ Chiang Kai-shek",
+    "role": "President",
+    "start": "1943-09-23",
+    "end": "1949-01-21",
+    "current": false,
+    "tenure": "5y 4m 2d",
+    "party": "Kuomintang; 2nd term",
+    "era": "Republic of China",
+    "metros": [
+      {
+        "name": "Nanjing",
+        "slug": "nanjing"
+      },
+      {
+        "name": "Shanghai",
+        "slug": "shanghai"
+      }
+    ]
+  },
+  {
     "name": "⚠️ Chiang Kai-shek",
     "role": "President",
     "start": "1948-05-20",
@@ -8,6 +176,22 @@
     "tenure": "1948–1949 (first term)",
     "party": "Kuomintang",
     "era": "Republic of China (Taiwan)"
+  },
+  {
+    "name": "Li Zongren",
+    "role": "President",
+    "start": "1949-01-21",
+    "end": "1950-03-01",
+    "current": false,
+    "tenure": "1y 1m 9d",
+    "party": "Kuomintang; Acting",
+    "era": "Republic of China",
+    "metros": [
+      {
+        "name": "Guilin",
+        "slug": "guilin"
+      }
+    ]
   },
   {
     "name": "Li Tsung-jen",

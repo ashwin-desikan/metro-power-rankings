@@ -1,0 +1,32 @@
+[
+  {
+    "name": "👑 Francis I",
+    "role": "King",
+    "start": "1815-01-01",
+    "end": "1835-03-02",
+    "current": false,
+    "tenure": "20y 2m 1d",
+    "party": null,
+    "era": "Lombardy-Venetia"
+  },
+  {
+    "name": "👑 Ferdinand I",
+    "role": "King",
+    "start": "1835-03-02",
+    "end": "1848-12-02",
+    "current": false,
+    "tenure": "13y 9m 0d",
+    "party": null,
+    "era": "Lombardy-Venetia"
+  },
+  {
+    "name": "👑 Franz Joseph I",
+    "role": "King",
+    "start": "1848-12-02",
+    "end": "1866-10-19",
+    "current": false,
+    "tenure": "17y 10m 17d",
+    "party": null,
+    "era": "Lombardy-Venetia"
+  }
+]

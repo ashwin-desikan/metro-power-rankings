@@ -1,5 +1,95 @@
 [
   {
+    "name": "👑 Ahmed al-Fateh",
+    "role": "Monarch",
+    "start": "1783-01-01",
+    "end": "1796-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level dates",
+    "era": "Al Khalifa dynasty"
+  },
+  {
+    "name": "👑 Salman I",
+    "role": "Monarch",
+    "start": "1796-01-01",
+    "end": "1825-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level dates",
+    "era": "Al Khalifa dynasty"
+  },
+  {
+    "name": "👑 Khalifa ibn Salman",
+    "role": "Monarch",
+    "start": "1825-01-01",
+    "end": "1834-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level dates",
+    "era": "Al Khalifa dynasty"
+  },
+  {
+    "name": "👑 Muhammad ibn Khalifa",
+    "role": "Monarch",
+    "start": "1834-01-01",
+    "end": "1868-01-01",
+    "current": false,
+    "tenure": "34y 0d",
+    "party": "year-level dates",
+    "era": "Al Khalifa dynasty"
+  },
+  {
+    "name": "👑 Ali ibn Khalifa",
+    "role": "Monarch",
+    "start": "1868-01-01",
+    "end": "1869-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level dates",
+    "era": "Al Khalifa dynasty"
+  },
+  {
+    "name": "👑 Isa ibn Ali",
+    "role": "Monarch",
+    "start": "1869-01-01",
+    "end": "1932-01-01",
+    "current": false,
+    "tenure": "63y 0d",
+    "party": "year-level dates",
+    "era": "Al Khalifa dynasty"
+  },
+  {
+    "name": "👑 Hamad ibn Isa",
+    "role": "Monarch",
+    "start": "1932-01-01",
+    "end": "1942-02-09",
+    "current": false,
+    "tenure": "10y 1m 8d",
+    "party": "year-level dates",
+    "era": "Al Khalifa dynasty"
+  },
+  {
+    "name": "👑 Salman ibn Hamad",
+    "role": "Monarch",
+    "start": "1942-02-09",
+    "end": "1961-11-02",
+    "current": false,
+    "tenure": "19y 8m 24d",
+    "party": null,
+    "era": "Al Khalifa dynasty"
+  },
+  {
+    "name": "👑 Isa ibn Salman",
+    "role": "Monarch",
+    "start": "1961-11-02",
+    "end": "1971-08-15",
+    "current": false,
+    "tenure": "9y 9m 13d",
+    "party": null,
+    "era": "Al Khalifa dynasty"
+  },
+  {
     "name": "👑 Isa bin Salman Al Khalifa",
     "role": "Monarch",
     "start": "1971-08-15",

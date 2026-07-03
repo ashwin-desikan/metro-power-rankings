@@ -1,5 +1,125 @@
 [
   {
+    "name": "👑 William the Silent",
+    "role": "Stadtholder",
+    "start": "1581-07-26",
+    "end": "1584-07-10",
+    "current": false,
+    "tenure": "2y 11m 14d",
+    "party": null,
+    "era": "Dutch Republic"
+  },
+  {
+    "name": "👑 Maurice of Nassau",
+    "role": "Stadtholder",
+    "start": "1585-11-01",
+    "end": "1625-04-23",
+    "current": false,
+    "tenure": "39y 5m 22d",
+    "party": null,
+    "era": "Dutch Republic"
+  },
+  {
+    "name": "👑 Frederick Henry",
+    "role": "Stadtholder",
+    "start": "1625-04-23",
+    "end": "1647-03-14",
+    "current": false,
+    "tenure": "21y 10m 19d",
+    "party": null,
+    "era": "Dutch Republic"
+  },
+  {
+    "name": "👑 William II",
+    "role": "Stadtholder",
+    "start": "1647-03-14",
+    "end": "1650-11-06",
+    "current": false,
+    "tenure": "3y 7m 23d",
+    "party": null,
+    "era": "Dutch Republic"
+  },
+  {
+    "name": "Johan de Witt",
+    "role": "Grand Pensionary",
+    "start": "1653-07-23",
+    "end": "1672-08-04",
+    "current": false,
+    "tenure": "19y 12d",
+    "party": null,
+    "era": "Dutch Republic"
+  },
+  {
+    "name": "👑 William III",
+    "role": "Stadtholder",
+    "start": "1672-07-04",
+    "end": "1702-03-08",
+    "current": false,
+    "tenure": "29y 8m 4d",
+    "party": null,
+    "era": "Dutch Republic"
+  },
+  {
+    "name": "Anthonie Heinsius",
+    "role": "Grand Pensionary",
+    "start": "1702-03-08",
+    "end": "1720-08-03",
+    "current": false,
+    "tenure": "18y 4m 26d",
+    "party": null,
+    "era": "Dutch Republic"
+  },
+  {
+    "name": "👑 William IV",
+    "role": "Stadtholder",
+    "start": "1747-05-04",
+    "end": "1751-10-22",
+    "current": false,
+    "tenure": "4y 5m 18d",
+    "party": null,
+    "era": "Dutch Republic"
+  },
+  {
+    "name": "👑 William V",
+    "role": "Stadtholder",
+    "start": "1751-10-22",
+    "end": "1795-01-19",
+    "current": false,
+    "tenure": "43y 2m 28d",
+    "party": null,
+    "era": "Dutch Republic"
+  },
+  {
+    "name": "Rutger Jan Schimmelpenninck",
+    "role": "Grand Pensionary",
+    "start": "1805-04-29",
+    "end": "1806-06-05",
+    "current": false,
+    "tenure": "1y 1m 7d",
+    "party": null,
+    "era": "Batavian Republic"
+  },
+  {
+    "name": "👑 Louis Bonaparte",
+    "role": "King",
+    "start": "1806-06-05",
+    "end": "1810-07-01",
+    "current": false,
+    "tenure": "4y 26d",
+    "party": null,
+    "era": "Kingdom of Holland"
+  },
+  {
+    "name": "👑 William I",
+    "role": "Sovereign Prince",
+    "start": "1813-11-21",
+    "end": "1815-03-16",
+    "current": false,
+    "tenure": "1y 3m 23d",
+    "party": null,
+    "era": "Sovereign Principality"
+  },
+  {
     "name": "👑 King William I",
     "role": "Monarch",
     "start": "1815-03-16",
@@ -16,66 +136,6 @@
     "end": "1849-03-17",
     "current": false,
     "tenure": "8 years",
-    "party": null,
-    "era": "Kingdom of the Netherlands"
-  },
-  {
-    "name": "👑 King William III",
-    "role": "Monarch",
-    "start": "1849-03-17",
-    "end": "1890-11-23",
-    "current": false,
-    "tenure": "41 years",
-    "party": null,
-    "era": "Kingdom of the Netherlands"
-  },
-  {
-    "name": "👑 Queen Emma (Regent)",
-    "role": "Regent",
-    "start": "1890-11-23",
-    "end": "1898-08-31",
-    "current": false,
-    "tenure": "7 years",
-    "party": null,
-    "era": "Kingdom of the Netherlands"
-  },
-  {
-    "name": "👑 Queen Wilhelmina",
-    "role": "Monarch",
-    "start": "1890-11-23",
-    "end": "1948-09-04",
-    "current": false,
-    "tenure": "57 years",
-    "party": null,
-    "era": "Kingdom of the Netherlands"
-  },
-  {
-    "name": "👑 Queen Juliana",
-    "role": "Monarch",
-    "start": "1948-09-04",
-    "end": "1980-04-30",
-    "current": false,
-    "tenure": "31 years",
-    "party": null,
-    "era": "Kingdom of the Netherlands"
-  },
-  {
-    "name": "👑 Queen Beatrix",
-    "role": "Monarch",
-    "start": "1980-04-30",
-    "end": "2013-04-30",
-    "current": false,
-    "tenure": "33 years",
-    "party": null,
-    "era": "Kingdom of the Netherlands"
-  },
-  {
-    "name": "👑 King Willem-Alexander",
-    "role": "Monarch",
-    "start": "2013-04-30",
-    "end": null,
-    "current": true,
-    "tenure": null,
     "party": null,
     "era": "Kingdom of the Netherlands"
   },
@@ -97,6 +157,16 @@
     "current": false,
     "tenure": "11 months",
     "party": "Liberal",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "👑 King William III",
+    "role": "Monarch",
+    "start": "1849-03-17",
+    "end": "1890-11-23",
+    "current": false,
+    "tenure": "41 years",
+    "party": null,
     "era": "Kingdom of the Netherlands"
   },
   {
@@ -257,6 +327,26 @@
     "current": false,
     "tenure": "3 years",
     "party": "Anti-Revolutionary",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "👑 Queen Emma (Regent)",
+    "role": "Regent",
+    "start": "1890-11-23",
+    "end": "1898-08-31",
+    "current": false,
+    "tenure": "7 years",
+    "party": null,
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "👑 Queen Wilhelmina",
+    "role": "Monarch",
+    "start": "1890-11-23",
+    "end": "1948-09-04",
+    "current": false,
+    "tenure": "57 years",
+    "party": null,
     "era": "Kingdom of the Netherlands"
   },
   {
@@ -430,6 +520,16 @@
     "era": "Kingdom of the Netherlands"
   },
   {
+    "name": "👑 Queen Juliana",
+    "role": "Monarch",
+    "start": "1948-09-04",
+    "end": "1980-04-30",
+    "current": false,
+    "tenure": "31 years",
+    "party": null,
+    "era": "Kingdom of the Netherlands"
+  },
+  {
     "name": "Louis Beel",
     "role": "Prime Minister",
     "start": "1958-12-22",
@@ -520,6 +620,16 @@
     "era": "Kingdom of the Netherlands"
   },
   {
+    "name": "👑 Queen Beatrix",
+    "role": "Monarch",
+    "start": "1980-04-30",
+    "end": "2013-04-30",
+    "current": false,
+    "tenure": "33 years",
+    "party": null,
+    "era": "Kingdom of the Netherlands"
+  },
+  {
     "name": "Ruud Lubbers",
     "role": "Prime Minister",
     "start": "1982-11-04",
@@ -557,6 +667,16 @@
     "current": false,
     "tenure": "13 years",
     "party": "Liberal (VVD)",
+    "era": "Kingdom of the Netherlands"
+  },
+  {
+    "name": "👑 King Willem-Alexander",
+    "role": "Monarch",
+    "start": "2013-04-30",
+    "end": null,
+    "current": true,
+    "tenure": null,
+    "party": null,
     "era": "Kingdom of the Netherlands"
   },
   {

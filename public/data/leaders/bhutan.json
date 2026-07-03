@@ -1,5 +1,35 @@
 [
   {
+    "name": "👑 Ugyen Wangchuck",
+    "role": "Monarch",
+    "start": "1907-12-17",
+    "end": "1926-08-21",
+    "current": false,
+    "tenure": "18y 8m 4d",
+    "party": null,
+    "era": "Kingdom of Bhutan"
+  },
+  {
+    "name": "👑 Jigme Wangchuck",
+    "role": "Monarch",
+    "start": "1926-08-21",
+    "end": "1952-03-30",
+    "current": false,
+    "tenure": "25y 7m 9d",
+    "party": null,
+    "era": "Kingdom of Bhutan"
+  },
+  {
+    "name": "👑 Jigme Dorji Wangchuck",
+    "role": "Monarch",
+    "start": "1952-03-30",
+    "end": "1972-07-24",
+    "current": false,
+    "tenure": "20y 3m 24d",
+    "party": null,
+    "era": "Kingdom of Bhutan"
+  },
+  {
     "name": "👑 Jigme Singye Wangchuck",
     "role": "Monarch",
     "start": "1972-07-01",

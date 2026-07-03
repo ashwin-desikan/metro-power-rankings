@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Johannes Hoffmann",
+    "role": "Minister-President",
+    "start": "1947-12-20",
+    "end": "1955-10-29",
+    "current": false,
+    "tenure": "7y 10m 9d",
+    "party": "CVP",
+    "era": "Saar Protectorate"
+  },
+  {
+    "name": "Heinrich Welsch",
+    "role": "Minister-President",
+    "start": "1955-10-29",
+    "end": "1956-06-04",
+    "current": false,
+    "tenure": "7m 6d",
+    "party": "independent",
+    "era": "Saar Protectorate"
+  },
+  {
+    "name": "Hubert Ney",
+    "role": "Minister-President",
+    "start": "1956-06-04",
+    "end": "1957-01-01",
+    "current": false,
+    "tenure": "6m 28d",
+    "party": "CDU; acceded to West Germany",
+    "era": "Saar Protectorate"
+  }
+]

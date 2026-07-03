@@ -1,5 +1,65 @@
 [
   {
+    "name": "Francisco Ferrera",
+    "role": "President",
+    "start": "1841-01-01",
+    "end": "1876-01-01",
+    "current": false,
+    "tenure": "35y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Honduras"
+  },
+  {
+    "name": "Marco Aurelio Soto",
+    "role": "President",
+    "start": "1876-01-01",
+    "end": "1933-01-01",
+    "current": false,
+    "tenure": "57y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Honduras"
+  },
+  {
+    "name": "⚠️ Tiburcio Carías Andino",
+    "role": "President",
+    "start": "1933-01-01",
+    "end": "1957-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Honduras"
+  },
+  {
+    "name": "Ramón Villeda Morales",
+    "role": "President",
+    "start": "1957-01-01",
+    "end": "1963-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Honduras"
+  },
+  {
+    "name": "⚠️ Oswaldo López Arellano",
+    "role": "President",
+    "start": "1963-01-01",
+    "end": "1982-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Honduras"
+  },
+  {
+    "name": "Roberto Suazo Córdova",
+    "role": "President",
+    "start": "1982-01-01",
+    "end": "1998-01-27",
+    "current": false,
+    "tenure": "16y 26d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Honduras"
+  },
+  {
     "name": "Carlos Roberto Flores",
     "role": "Prime Minister",
     "start": "1998-01-27",

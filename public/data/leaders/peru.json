@@ -1,5 +1,185 @@
 [
   {
+    "name": "José de San Martín",
+    "role": "Protector",
+    "start": "1821-01-01",
+    "end": "1824-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Peru"
+  },
+  {
+    "name": "Simón Bolívar",
+    "role": "Dictator",
+    "start": "1824-01-01",
+    "end": "1829-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Peru"
+  },
+  {
+    "name": "Agustín Gamarra",
+    "role": "President",
+    "start": "1829-01-01",
+    "end": "1845-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Peru"
+  },
+  {
+    "name": "Ramón Castilla",
+    "role": "President",
+    "start": "1845-01-01",
+    "end": "1855-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Peru"
+  },
+  {
+    "name": "Ramón Castilla",
+    "role": "President",
+    "start": "1855-01-01",
+    "end": "1872-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Peru"
+  },
+  {
+    "name": "Manuel Pardo",
+    "role": "President",
+    "start": "1872-01-01",
+    "end": "1895-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Peru"
+  },
+  {
+    "name": "Nicolás de Piérola",
+    "role": "President",
+    "start": "1895-01-01",
+    "end": "1908-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Peru"
+  },
+  {
+    "name": "Augusto B. Leguía",
+    "role": "President",
+    "start": "1908-01-01",
+    "end": "1919-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Peru"
+  },
+  {
+    "name": "Augusto B. Leguía",
+    "role": "President",
+    "start": "1919-01-01",
+    "end": "1933-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Peru"
+  },
+  {
+    "name": "Óscar R. Benavides",
+    "role": "President",
+    "start": "1933-01-01",
+    "end": "1939-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Peru"
+  },
+  {
+    "name": "Manuel Prado",
+    "role": "President",
+    "start": "1939-01-01",
+    "end": "1948-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Peru"
+  },
+  {
+    "name": "⚠️ Manuel A. Odría",
+    "role": "President",
+    "start": "1948-01-01",
+    "end": "1956-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Peru"
+  },
+  {
+    "name": "Manuel Prado",
+    "role": "President",
+    "start": "1956-01-01",
+    "end": "1963-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Peru"
+  },
+  {
+    "name": "Fernando Belaúnde",
+    "role": "President",
+    "start": "1963-01-01",
+    "end": "1968-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Peru"
+  },
+  {
+    "name": "⚠️ Juan Velasco Alvarado",
+    "role": "President",
+    "start": "1968-01-01",
+    "end": "1975-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Peru"
+  },
+  {
+    "name": "Francisco Morales Bermúdez",
+    "role": "President",
+    "start": "1975-01-01",
+    "end": "1980-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Peru"
+  },
+  {
+    "name": "Fernando Belaúnde",
+    "role": "President",
+    "start": "1980-01-01",
+    "end": "1985-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Peru"
+  },
+  {
+    "name": "Alan García",
+    "role": "President",
+    "start": "1985-01-01",
+    "end": "1990-07-28",
+    "current": false,
+    "tenure": "5y 6m 27d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Peru"
+  },
+  {
     "name": "⚠️ Alberto Fujimori",
     "role": "President",
     "start": "1990-07-28",

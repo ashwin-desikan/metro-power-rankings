@@ -1,0 +1,42 @@
+[
+  {
+    "name": "👑 Frederick I",
+    "role": "President",
+    "start": "1806-01-01",
+    "end": "1816-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Württemberg"
+  },
+  {
+    "name": "👑 William I",
+    "role": "President",
+    "start": "1816-01-01",
+    "end": "1864-01-01",
+    "current": false,
+    "tenure": "48y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Württemberg"
+  },
+  {
+    "name": "👑 Charles",
+    "role": "President",
+    "start": "1864-01-01",
+    "end": "1891-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Württemberg"
+  },
+  {
+    "name": "👑 William II",
+    "role": "President",
+    "start": "1891-01-01",
+    "end": "1918-11-30",
+    "current": false,
+    "tenure": "27y 10m 29d",
+    "party": "year-level dates",
+    "era": "Kingdom of Württemberg"
+  }
+]

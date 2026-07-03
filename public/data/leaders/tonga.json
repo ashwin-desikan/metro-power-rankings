@@ -1,5 +1,55 @@
 [
   {
+    "name": "👑 George Tupou I",
+    "role": "Monarch",
+    "start": "1845-12-04",
+    "end": "1893-02-18",
+    "current": false,
+    "tenure": "47y 2m 14d",
+    "party": null,
+    "era": "Kingdom of Tonga"
+  },
+  {
+    "name": "👑 George Tupou II",
+    "role": "Monarch",
+    "start": "1893-02-18",
+    "end": "1918-04-05",
+    "current": false,
+    "tenure": "25y 1m 18d",
+    "party": null,
+    "era": "Kingdom of Tonga"
+  },
+  {
+    "name": "👑 Salote Tupou III",
+    "role": "Monarch",
+    "start": "1918-04-05",
+    "end": "1965-12-16",
+    "current": false,
+    "tenure": "47y 8m 11d",
+    "party": null,
+    "era": "Kingdom of Tonga"
+  },
+  {
+    "name": "👑 Taufa'ahau Tupou IV",
+    "role": "Monarch",
+    "start": "1965-12-16",
+    "end": "2006-09-11",
+    "current": false,
+    "tenure": "40y 8m 26d",
+    "party": null,
+    "era": "Kingdom of Tonga"
+  },
+  {
+    "name": "👑 George Tupou V",
+    "role": "Monarch",
+    "start": "2006-09-11",
+    "end": "2012-03-18",
+    "current": false,
+    "tenure": "5y 6m 7d",
+    "party": null,
+    "era": "Kingdom of Tonga"
+  },
+  {
     "name": "👑 Tupou VI",
     "role": "Monarch",
     "start": "2012-03-18",

@@ -1,8 +1,9 @@
 // lib/leadersAll.ts
-// Server-side assembler for the /leaders directory. Produces one master list of
-// every current leader we track (sovereign states, constituents/territories, and
-// intergovernmental organisations) plus compact per-office history so the client
-// can answer "who held this office in month/year X?".
+// Server-side assembler for the /leaders directory: sovereign states,
+// constituents, intergovernmental organisations, and defunct historical states,
+// each with compact per-office history for the time machine. Also carries a
+// per-entity historical-name timeline (Russia→Soviet Union, Germany→Nazi
+// Germany, ...) resolved by date on the client.
 import "server-only";
 import fs from "fs";
 import path from "path";
@@ -13,36 +14,45 @@ import type { HistRow } from "./leaderRules";
 
 const LEADERS_DIR = path.join(process.cwd(), "public", "data", "leaders");
 
-// Commonwealth realms share the British monarch as head of state. Their own
-// history files carry only prime ministers (or nothing yet), so the sovereign
-// is resolved from a single shared timeline instead — see getMonarchTimeline().
 export const REALM_SLUGS = new Set<string>([
   "united-kingdom", "canada", "australia", "new-zealand", "jamaica", "bahamas",
   "belize", "grenada", "papua-new-guinea", "solomon-islands", "tuvalu",
   "antigua-barbuda", "st-kitts-nevis", "st-lucia", "st-vincent-the-grenadines",
 ]);
 
-export type EntityType = "sovereign" | "territory" | "org";
+// Non-sovereign, governor-led dependencies: excluded from the leaders directory
+// (we track sovereign heads of state/government, not appointed governors).
+const GOVERNOR_TERRITORIES = new Set<string>([
+  "puerto-rico", "guam", "american-samoa", "us-virgin-islands", "northern-mariana-islands",
+]);
+// Formerly sovereign kingdoms that merged away (into Great Britain in 1707):
+// shown for their sovereign era only, with no current leader.
+const FORMER_SOVEREIGN = new Set<string>(["england", "scotland"]);
+
+export type EntityType = "sovereign" | "territory" | "org" | "defunct";
 export type CurrentLeader = {
   name: string;
   role: string;
   since?: string;
   second?: { name: string; role: string };
 };
+export type NamePeriod = { name: string; start: string | null; end: string | null; flag: string | null };
 export type LeaderEntity = {
-  slug: string;            // country slug or org key
-  name: string;            // display name
+  slug: string;
+  name: string;
   type: EntityType;
-  continent: string | null; // countries: continent; orgs: "Intergovernmental"
-  parentName: string | null; // territory's parent, else null
-  scoreTotal: number | null; // composite country score (orgs: null)
-  realm: boolean;          // shares the British monarch as head of state
-  orgs: string[];          // org-membership abbreviations (countries only)
-  country: string | null;  // org leader's nationality (orgs only)
-  href: string | null;     // link target
-  hasHistory: boolean;     // can we time-travel this entity?
+  continent: string | null;
+  parentName: string | null;
+  scoreTotal: number | null;
+  realm: boolean;
+  yearRange: string | null;
+  nameHistory: NamePeriod[] | null;
+  orgs: string[];
+  country: string | null;
+  href: string | null;
+  hasHistory: boolean;
   current: CurrentLeader | null;
-  history: HistRow[];      // compact {n,r,s,e}
+  history: HistRow[];
 };
 
 function readJSON<T>(p: string): T | null {
@@ -51,7 +61,7 @@ function readJSON<T>(p: string): T | null {
 
 function compact(rows: Array<{ name: string; role: string; start: string | null; end: string | null }>): HistRow[] {
   return rows
-    .map((r) => ({ n: r.name, r: r.role, s: r.start ?? null, e: r.end ?? null }))
+    .map((r) => ({ n: r.name, r: r.role ?? "", s: r.start ?? null, e: r.end ?? null }))
     .filter((h) => h.s != null);
 }
 
@@ -59,13 +69,19 @@ const ORG_LABEL: Record<string, string> = Object.fromEntries(
   ORG_DEFS.map((o) => [o.key, o.label]),
 );
 
-// The British monarch succession, lifted from the UK history file, applied to
-// every Commonwealth realm so the sovereign changes correctly through time.
 export function getMonarchTimeline(): HistRow[] {
   const uk = readJSON<Array<{ name: string; role: string; start: string | null; end: string | null }>>(
     path.join(LEADERS_DIR, "united-kingdom.json"),
   ) ?? [];
   return compact(uk.filter((r) => /Sovereign|Monarch/.test(r.role)));
+}
+
+type DefunctMeta = { name: string; continent: string | null; start: string; end: string; href?: string };
+type RawNamePeriod = { name: string; start?: string; end?: string; flag?: string };
+
+function normNames(list: RawNamePeriod[] | undefined): NamePeriod[] | null {
+  if (!Array.isArray(list) || !list.length) return null;
+  return list.map((n) => ({ name: n.name, start: n.start ?? null, end: n.end ?? null, flag: n.flag ?? null }));
 }
 
 export async function getLeadersMaster(): Promise<LeaderEntity[]> {
@@ -81,23 +97,32 @@ export async function getLeadersMaster(): Promise<LeaderEntity[]> {
     readJSON<Record<string, { office: string; current?: { name: string; role: string; since?: string; country?: string }; history?: Array<{ name: string; role: string; start: string | null; end: string | null }> }>>(
       path.join(process.cwd(), "public", "data", "org-leaders.json"),
     ) ?? {};
+  const defunct = readJSON<Record<string, DefunctMeta>>(path.join(LEADERS_DIR, "_defunct.json")) ?? {};
+  const names = readJSON<Record<string, RawNamePeriod[]>>(path.join(LEADERS_DIR, "_names.json")) ?? {};
 
   const out: LeaderEntity[] = [];
 
-  // Countries + territories, keyed off the current-leader snapshot.
   for (const slug of Object.keys(localCurrent)) {
+    if (GOVERNOR_TERRITORIES.has(slug)) continue; // appointed governors, not sovereign
     const c = getCountry(slug);
     const histRows =
       readJSON<Array<{ name: string; role: string; start: string | null; end: string | null }>>(
         path.join(LEADERS_DIR, `${slug}.json`),
       );
     const hasHistory = Array.isArray(histRows) && histRows.length > 0;
+    const history = hasHistory ? compact(histRows!) : [];
+    const isFormer = FORMER_SOVEREIGN.has(slug);
     const membership = orgsMap[slug]
       ? Object.entries(orgsMap[slug])
           .filter(([, status]) => status === "Member")
           .map(([k]) => k)
           .sort()
       : [];
+    let yearRange: string | null = null;
+    if (isFormer && history.length) {
+      const first = history.reduce((m, h) => (h.s && h.s < m ? h.s : m), history[0].s!);
+      yearRange = `${parseInt(first.slice(0, 4), 10)}–1707`;
+    }
     out.push({
       slug,
       name: c?.name ?? slug,
@@ -106,24 +131,21 @@ export async function getLeadersMaster(): Promise<LeaderEntity[]> {
       parentName: c?.parent ?? null,
       scoreTotal: c?.scoreTotal ?? null,
       realm: REALM_SLUGS.has(slug),
+      yearRange,
+      nameHistory: normNames(names[slug]),
       orgs: membership,
       country: null,
       href: `/countries/${slug}`,
       hasHistory,
-      current: overlay[slug] ?? localCurrent[slug] ?? null,
-      history: hasHistory ? compact(histRows!) : [],
+      current: isFormer ? null : (overlay[slug] ?? localCurrent[slug] ?? null),
+      history,
     });
   }
 
-  // Intergovernmental organisations.
   for (const key of Object.keys(orgLeaders)) {
     const o = orgLeaders[key];
     const cur = o.current
-      ? {
-          name: o.current.name,
-          role: o.current.role,
-          ...(o.current.since ? { since: o.current.since } : {}),
-        }
+      ? { name: o.current.name, role: o.current.role, ...(o.current.since ? { since: o.current.since } : {}) }
       : null;
     out.push({
       slug: key,
@@ -133,12 +155,40 @@ export async function getLeadersMaster(): Promise<LeaderEntity[]> {
       parentName: null,
       scoreTotal: null,
       realm: false,
+      yearRange: null,
       orgs: [],
       country: o.current?.country ?? null,
       href: null,
+      nameHistory: normNames(names[key]),
       hasHistory: Array.isArray(o.history) && o.history.length > 0,
       current: cur,
       history: Array.isArray(o.history) ? compact(o.history) : [],
+    });
+  }
+
+  for (const slug of Object.keys(defunct)) {
+    const meta = defunct[slug];
+    const histRows =
+      readJSON<Array<{ name: string; role: string; start: string | null; end: string | null }>>(
+        path.join(LEADERS_DIR, `${slug}.json`),
+      );
+    if (!Array.isArray(histRows) || !histRows.length) continue;
+    out.push({
+      slug,
+      name: meta.name,
+      type: "defunct",
+      continent: meta.continent,
+      parentName: null,
+      scoreTotal: null,
+      realm: false,
+      yearRange: `${meta.start}–${meta.end}`,
+      nameHistory: normNames(names[slug]),
+      orgs: [],
+      country: null,
+      href: null,
+      hasHistory: true,
+      current: null,
+      history: compact(histRows),
     });
   }
 

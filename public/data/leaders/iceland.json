@@ -1,5 +1,55 @@
 [
   {
+    "name": "👑 Christian X",
+    "role": "King",
+    "start": "1918-12-01",
+    "end": "1944-06-17",
+    "current": false,
+    "tenure": "25y 6m 16d",
+    "party": null,
+    "era": "Kingdom of Iceland"
+  },
+  {
+    "name": "Sveinn Björnsson",
+    "role": "President",
+    "start": "1944-06-17",
+    "end": "1952-01-25",
+    "current": false,
+    "tenure": "7y 7m 8d",
+    "party": null,
+    "era": "Iceland"
+  },
+  {
+    "name": "Ásgeir Ásgeirsson",
+    "role": "President",
+    "start": "1952-08-01",
+    "end": "1968-08-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": null,
+    "era": "Iceland"
+  },
+  {
+    "name": "Kristján Eldjárn",
+    "role": "President",
+    "start": "1968-08-01",
+    "end": "1980-08-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": null,
+    "era": "Iceland"
+  },
+  {
+    "name": "Vigdís Finnbogadóttir",
+    "role": "President",
+    "start": "1980-08-01",
+    "end": "1996-08-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": null,
+    "era": "Iceland"
+  },
+  {
     "name": "Ólafur Ragnar Grímsson",
     "role": "President",
     "start": "1996-08-01",

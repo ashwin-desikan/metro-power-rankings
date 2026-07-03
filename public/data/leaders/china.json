@@ -1,203 +1,103 @@
 [
   {
-    "name": "Sun Yat-sen",
-    "role": "President (ROC)",
-    "start": "1912-01-01",
-    "end": "1912-03-10",
+    "name": "👑 Shunzhi Emperor",
+    "role": "Emperor",
+    "start": "1644-10-30",
+    "end": "1661-02-05",
     "current": false,
-    "tenure": "2m 9d",
-    "party": "Kuomintang; Provisional",
-    "era": "Republic of China (ROC)",
-    "metros": [
-      {
-        "name": "Guangzhou",
-        "slug": "guangzhou"
-      }
-    ]
+    "tenure": "16y 3m 6d",
+    "party": "Qing dynasty",
+    "era": "Qing dynasty"
   },
   {
-    "name": "Yuan Shikai",
-    "role": "President (ROC)",
-    "start": "1912-03-10",
-    "end": "1916-06-06",
+    "name": "👑 Kangxi Emperor",
+    "role": "Emperor",
+    "start": "1661-02-05",
+    "end": "1722-12-20",
     "current": false,
-    "tenure": "4y 2m 29d",
-    "party": "Independent; died in office",
-    "era": "Republic of China (ROC)",
-    "metros": [
-      {
-        "name": "Beijing",
-        "slug": "beijing"
-      }
-    ]
+    "tenure": "61y 10m 15d",
+    "party": "Qing dynasty",
+    "era": "Qing dynasty"
   },
   {
-    "name": "Li Yuanhong",
-    "role": "President (ROC)",
-    "start": "1916-06-06",
-    "end": "1917-07-12",
+    "name": "👑 Yongzheng Emperor",
+    "role": "Emperor",
+    "start": "1722-12-27",
+    "end": "1735-10-08",
     "current": false,
-    "tenure": "1y 1m 6d",
-    "party": "Independent; 1st term",
-    "era": "Republic of China (ROC)",
-    "metros": [
-      {
-        "name": "Wuhan",
-        "slug": "wuhan"
-      }
-    ]
+    "tenure": "12y 9m 11d",
+    "party": "Qing dynasty",
+    "era": "Qing dynasty"
   },
   {
-    "name": "Feng Guozhang",
-    "role": "President (ROC)",
-    "start": "1917-07-12",
-    "end": "1918-10-10",
+    "name": "👑 Qianlong Emperor",
+    "role": "Emperor",
+    "start": "1735-10-18",
+    "end": "1796-02-09",
     "current": false,
-    "tenure": "1y 3m",
-    "party": "Independent",
-    "era": "Republic of China (ROC)",
-    "metros": [
-      {
-        "name": "Beijing",
-        "slug": "beijing"
-      }
-    ]
+    "tenure": "60y 3m 22d",
+    "party": "Qing dynasty",
+    "era": "Qing dynasty"
   },
   {
-    "name": "Xu Shichang",
-    "role": "President (ROC)",
-    "start": "1918-10-10",
-    "end": "1922-06-02",
+    "name": "👑 Jiaqing Emperor",
+    "role": "Emperor",
+    "start": "1796-02-09",
+    "end": "1820-09-02",
     "current": false,
-    "tenure": "3y 7m 26d",
-    "party": "Independent",
-    "era": "Republic of China (ROC)",
-    "metros": [
-      {
-        "name": "Tianjin",
-        "slug": "tianjin"
-      }
-    ]
+    "tenure": "24y 6m 24d",
+    "party": "Qing dynasty",
+    "era": "Qing dynasty"
   },
   {
-    "name": "Li Yuanhong",
-    "role": "President (ROC)",
-    "start": "1922-06-02",
-    "end": "1923-06-13",
+    "name": "👑 Daoguang Emperor",
+    "role": "Emperor",
+    "start": "1820-10-03",
+    "end": "1850-02-25",
     "current": false,
-    "tenure": "1y 11d",
-    "party": "Independent; 2nd term",
-    "era": "Republic of China (ROC)",
-    "metros": [
-      {
-        "name": "Wuhan",
-        "slug": "wuhan"
-      }
-    ]
+    "tenure": "29y 4m 22d",
+    "party": "Qing dynasty",
+    "era": "Qing dynasty"
   },
   {
-    "name": "Cao Kun",
-    "role": "President (ROC)",
-    "start": "1923-10-10",
-    "end": "1924-11-02",
+    "name": "👑 Xianfeng Emperor",
+    "role": "Emperor",
+    "start": "1850-03-09",
+    "end": "1861-08-22",
     "current": false,
-    "tenure": "1y 24d",
-    "party": "Independent",
-    "era": "Republic of China (ROC)",
-    "metros": [
-      {
-        "name": "Tianjin",
-        "slug": "tianjin"
-      }
-    ]
+    "tenure": "11y 5m 13d",
+    "party": "Qing dynasty",
+    "era": "Qing dynasty"
   },
   {
-    "name": "⚠️ Chiang Kai-shek",
-    "role": "President (ROC)",
-    "start": "1928-02-10",
-    "end": "1931-01-15",
+    "name": "👑 Tongzhi Emperor",
+    "role": "Emperor",
+    "start": "1861-11-11",
+    "end": "1875-01-12",
     "current": false,
-    "tenure": "2y 11m 10d",
-    "party": "Kuomintang; 1st term",
-    "era": "Republic of China (ROC)",
-    "metros": [
-      {
-        "name": "Nanjing",
-        "slug": "nanjing"
-      },
-      {
-        "name": "Shanghai",
-        "slug": "shanghai"
-      }
-    ]
+    "tenure": "13y 2m 1d",
+    "party": "Qing dynasty",
+    "era": "Qing dynasty"
   },
   {
-    "name": "Lin Sen",
-    "role": "President (ROC)",
-    "start": "1931-12-20",
-    "end": "1943-08-01",
+    "name": "👑 Guangxu Emperor",
+    "role": "Emperor",
+    "start": "1875-02-25",
+    "end": "1908-11-14",
     "current": false,
-    "tenure": "11y 7m 17d",
-    "party": "Kuomintang",
-    "era": "Republic of China (ROC)",
-    "metros": [
-      {
-        "name": "Fuzhou",
-        "slug": "fuzhou"
-      }
-    ]
+    "tenure": "33y 8m 20d",
+    "party": "Qing dynasty",
+    "era": "Qing dynasty"
   },
   {
-    "name": "⚠️ Chiang Kai-shek",
-    "role": "President (ROC)",
-    "start": "1943-09-23",
-    "end": "1949-01-21",
+    "name": "👑 Xuantong Emperor (Puyi)",
+    "role": "Emperor",
+    "start": "1908-12-02",
+    "end": "1912-02-12",
     "current": false,
-    "tenure": "5y 4m 2d",
-    "party": "Kuomintang; 2nd term",
-    "era": "Republic of China (ROC)",
-    "metros": [
-      {
-        "name": "Nanjing",
-        "slug": "nanjing"
-      },
-      {
-        "name": "Shanghai",
-        "slug": "shanghai"
-      }
-    ]
-  },
-  {
-    "name": "Li Zongren",
-    "role": "President (ROC)",
-    "start": "1949-01-21",
-    "end": "1950-03-01",
-    "current": false,
-    "tenure": "1y 1m 9d",
-    "party": "Kuomintang; Acting",
-    "era": "Republic of China (ROC)",
-    "metros": [
-      {
-        "name": "Guilin",
-        "slug": "guilin"
-      }
-    ]
-  },
-  {
-    "name": "⚠️ Chiang Kai-shek",
-    "role": "President (ROC/Taiwan)",
-    "start": "1950-03-01",
-    "end": "1975-04-05",
-    "current": false,
-    "tenure": "25y 1m 11d",
-    "party": "Kuomintang; died in office",
-    "era": "Republic of China (ROC)",
-    "metros": [
-      {
-        "name": "Taipei",
-        "slug": "taipei"
-      }
-    ]
+    "tenure": "3y 2m 10d",
+    "party": "Qing dynasty",
+    "era": "Qing dynasty"
   },
   {
     "name": "⚠️ Mao Zedong",

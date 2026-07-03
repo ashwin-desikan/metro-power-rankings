@@ -1,5 +1,95 @@
 [
   {
+    "name": "Fructuoso Rivera",
+    "role": "President",
+    "start": "1830-01-01",
+    "end": "1835-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Oriental Republic of Uruguay"
+  },
+  {
+    "name": "Manuel Oribe",
+    "role": "President",
+    "start": "1835-01-01",
+    "end": "1865-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Oriental Republic of Uruguay"
+  },
+  {
+    "name": "Venancio Flores",
+    "role": "President",
+    "start": "1865-01-01",
+    "end": "1876-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Oriental Republic of Uruguay"
+  },
+  {
+    "name": "Lorenzo Latorre",
+    "role": "President",
+    "start": "1876-01-01",
+    "end": "1903-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Oriental Republic of Uruguay"
+  },
+  {
+    "name": "José Batlle y Ordóñez",
+    "role": "President",
+    "start": "1903-01-01",
+    "end": "1911-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Oriental Republic of Uruguay"
+  },
+  {
+    "name": "José Batlle y Ordóñez",
+    "role": "President",
+    "start": "1911-01-01",
+    "end": "1931-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Oriental Republic of Uruguay"
+  },
+  {
+    "name": "Gabriel Terra",
+    "role": "President",
+    "start": "1931-01-01",
+    "end": "1947-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Oriental Republic of Uruguay"
+  },
+  {
+    "name": "Luis Batlle Berres",
+    "role": "President",
+    "start": "1947-01-01",
+    "end": "1972-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Oriental Republic of Uruguay"
+  },
+  {
+    "name": "⚠️ Juan María Bordaberry",
+    "role": "President",
+    "start": "1972-01-01",
+    "end": "1985-03-01",
+    "current": false,
+    "tenure": "13y 2m 0d",
+    "party": "backbone; year-level dates",
+    "era": "Oriental Republic of Uruguay"
+  },
+  {
     "name": "Julio María Sanguinetti",
     "role": "President",
     "start": "1985-03-01",

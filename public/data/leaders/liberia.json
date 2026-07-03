@@ -1,5 +1,285 @@
 [
   {
+    "name": "Thomas Buchanan",
+    "role": "Governor",
+    "start": "1839-04-01",
+    "end": "1841-09-03",
+    "current": false,
+    "tenure": "2y 5m 2d",
+    "party": null,
+    "era": "Commonwealth of Liberia"
+  },
+  {
+    "name": "Joseph Jenkins Roberts",
+    "role": "Governor",
+    "start": "1842-01-01",
+    "end": "1848-01-03",
+    "current": false,
+    "tenure": "6y 2d",
+    "party": null,
+    "era": "Commonwealth of Liberia"
+  },
+  {
+    "name": "Joseph Jenkins Roberts",
+    "role": "President",
+    "start": "1848-01-03",
+    "end": "1856-01-07",
+    "current": false,
+    "tenure": "8y 4d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
+    "name": "Stephen Allen Benson",
+    "role": "President",
+    "start": "1856-01-07",
+    "end": "1864-01-04",
+    "current": false,
+    "tenure": "7y 11m 28d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
+    "name": "Daniel Bashiel Warner",
+    "role": "President",
+    "start": "1864-01-04",
+    "end": "1868-01-06",
+    "current": false,
+    "tenure": "4y 2d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
+    "name": "James Spriggs Payne",
+    "role": "President",
+    "start": "1868-01-06",
+    "end": "1870-01-03",
+    "current": false,
+    "tenure": "1y 11m 28d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
+    "name": "Edward James Roye",
+    "role": "President",
+    "start": "1870-01-03",
+    "end": "1871-10-26",
+    "current": false,
+    "tenure": "1y 9m 23d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
+    "name": "James Skivring Smith",
+    "role": "President",
+    "start": "1871-11-04",
+    "end": "1872-01-01",
+    "current": false,
+    "tenure": "1m 28d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
+    "name": "Joseph Jenkins Roberts",
+    "role": "President",
+    "start": "1872-01-01",
+    "end": "1876-01-03",
+    "current": false,
+    "tenure": "4y 2d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
+    "name": "James Spriggs Payne",
+    "role": "President",
+    "start": "1876-01-03",
+    "end": "1878-01-07",
+    "current": false,
+    "tenure": "2y 4d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
+    "name": "Anthony W. Gardiner",
+    "role": "President",
+    "start": "1878-01-07",
+    "end": "1883-01-20",
+    "current": false,
+    "tenure": "5y 13d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
+    "name": "Alfred Francis Russell",
+    "role": "President",
+    "start": "1883-01-20",
+    "end": "1884-01-07",
+    "current": false,
+    "tenure": "11m 18d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
+    "name": "Hilary R. W. Johnson",
+    "role": "President",
+    "start": "1884-01-07",
+    "end": "1892-01-04",
+    "current": false,
+    "tenure": "7y 11m 28d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
+    "name": "Joseph James Cheeseman",
+    "role": "President",
+    "start": "1892-01-04",
+    "end": "1896-11-12",
+    "current": false,
+    "tenure": "4y 10m 8d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
+    "name": "William D. Coleman",
+    "role": "President",
+    "start": "1896-11-12",
+    "end": "1900-12-11",
+    "current": false,
+    "tenure": "4y 29d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
+    "name": "Garretson W. Gibson",
+    "role": "President",
+    "start": "1900-12-11",
+    "end": "1904-01-04",
+    "current": false,
+    "tenure": "3y 24d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
+    "name": "Arthur Barclay",
+    "role": "President",
+    "start": "1904-01-04",
+    "end": "1912-01-01",
+    "current": false,
+    "tenure": "7y 11m 28d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
+    "name": "Daniel Edward Howard",
+    "role": "President",
+    "start": "1912-01-01",
+    "end": "1920-01-05",
+    "current": false,
+    "tenure": "8y 4d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
+    "name": "Charles D. B. King",
+    "role": "President",
+    "start": "1920-01-05",
+    "end": "1930-12-03",
+    "current": false,
+    "tenure": "10y 10m 28d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
+    "name": "Edwin Barclay",
+    "role": "President",
+    "start": "1930-12-03",
+    "end": "1944-01-03",
+    "current": false,
+    "tenure": "13y 1m 0d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
+    "name": "William Tubman",
+    "role": "President",
+    "start": "1944-01-03",
+    "end": "1971-07-23",
+    "current": false,
+    "tenure": "27y 6m 20d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
+    "name": "William Tolbert",
+    "role": "President",
+    "start": "1971-07-23",
+    "end": "1980-04-12",
+    "current": false,
+    "tenure": "8y 8m 20d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
+    "name": "⚠️ Samuel Doe",
+    "role": "President",
+    "start": "1980-04-12",
+    "end": "1990-09-09",
+    "current": false,
+    "tenure": "10y 4m 28d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
+    "name": "Amos Sawyer",
+    "role": "President",
+    "start": "1990-11-22",
+    "end": "1994-09-01",
+    "current": false,
+    "tenure": "3y 9m 10d",
+    "party": null,
+    "era": "interim government"
+  },
+  {
+    "name": "⚠️ Charles Taylor",
+    "role": "President",
+    "start": "1997-08-02",
+    "end": "2003-08-11",
+    "current": false,
+    "tenure": "6y 9d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
+    "name": "Moses Blah",
+    "role": "President",
+    "start": "2003-08-11",
+    "end": "2003-10-14",
+    "current": false,
+    "tenure": "2m 3d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
+    "name": "Gyude Bryant",
+    "role": "Chairman",
+    "start": "2003-10-14",
+    "end": "2006-01-16",
+    "current": false,
+    "tenure": "2y 3m 2d",
+    "party": null,
+    "era": "transitional government"
+  },
+  {
+    "name": "Ellen Johnson Sirleaf",
+    "role": "President",
+    "start": "2006-01-16",
+    "end": "2018-01-22",
+    "current": false,
+    "tenure": "12y 6d",
+    "party": null,
+    "era": "Republic of Liberia"
+  },
+  {
     "name": "George Weah",
     "role": "Prime Minister",
     "start": "2018-01-01",

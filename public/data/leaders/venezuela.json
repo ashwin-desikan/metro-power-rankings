@@ -1,5 +1,95 @@
 [
   {
+    "name": "José Antonio Páez",
+    "role": "President",
+    "start": "1830-01-01",
+    "end": "1847-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Venezuela"
+  },
+  {
+    "name": "José Tadeo Monagas",
+    "role": "President",
+    "start": "1847-01-01",
+    "end": "1870-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Venezuela"
+  },
+  {
+    "name": "Antonio Guzmán Blanco",
+    "role": "President",
+    "start": "1870-01-01",
+    "end": "1899-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Venezuela"
+  },
+  {
+    "name": "Cipriano Castro",
+    "role": "President",
+    "start": "1899-01-01",
+    "end": "1908-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Venezuela"
+  },
+  {
+    "name": "⚠️ Juan Vicente Gómez",
+    "role": "President",
+    "start": "1908-01-01",
+    "end": "1935-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Venezuela"
+  },
+  {
+    "name": "Eleazar López Contreras",
+    "role": "President",
+    "start": "1935-01-01",
+    "end": "1941-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Venezuela"
+  },
+  {
+    "name": "Isaías Medina Angarita",
+    "role": "President",
+    "start": "1941-01-01",
+    "end": "1948-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Venezuela"
+  },
+  {
+    "name": "Rómulo Gallegos",
+    "role": "President",
+    "start": "1948-01-01",
+    "end": "1952-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Venezuela"
+  },
+  {
+    "name": "⚠️ Marcos Pérez Jiménez",
+    "role": "President",
+    "start": "1952-01-01",
+    "end": "1959-02-13",
+    "current": false,
+    "tenure": "7y 1m 12d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Venezuela"
+  },
+  {
     "name": "Romulo Betancourt",
     "role": "President",
     "start": "1959-02-13",

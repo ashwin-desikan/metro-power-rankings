@@ -1,0 +1,72 @@
+[
+  {
+    "name": "👑 Frederick Augustus I",
+    "role": "President",
+    "start": "1806-01-01",
+    "end": "1827-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Saxony"
+  },
+  {
+    "name": "👑 Anton",
+    "role": "President",
+    "start": "1827-01-01",
+    "end": "1836-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Saxony"
+  },
+  {
+    "name": "👑 Frederick Augustus II",
+    "role": "President",
+    "start": "1836-01-01",
+    "end": "1854-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Saxony"
+  },
+  {
+    "name": "👑 John",
+    "role": "President",
+    "start": "1854-01-01",
+    "end": "1873-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Saxony"
+  },
+  {
+    "name": "👑 Albert",
+    "role": "President",
+    "start": "1873-01-01",
+    "end": "1902-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Saxony"
+  },
+  {
+    "name": "👑 George",
+    "role": "President",
+    "start": "1902-01-01",
+    "end": "1904-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Saxony"
+  },
+  {
+    "name": "👑 Frederick Augustus III",
+    "role": "President",
+    "start": "1904-01-01",
+    "end": "1918-11-13",
+    "current": false,
+    "tenure": "14y 10m 12d",
+    "party": "year-level dates",
+    "era": "Kingdom of Saxony"
+  }
+]

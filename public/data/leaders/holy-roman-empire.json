@@ -1,0 +1,402 @@
+[
+  {
+    "name": "👑 Otto I",
+    "role": "Emperor",
+    "start": "0962-01-01",
+    "end": "0973-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Otto II",
+    "role": "Emperor",
+    "start": "0973-01-01",
+    "end": "0983-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Otto III",
+    "role": "Emperor",
+    "start": "0983-01-01",
+    "end": "1002-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Henry II",
+    "role": "Emperor",
+    "start": "1002-01-01",
+    "end": "1024-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Conrad II",
+    "role": "Emperor",
+    "start": "1024-01-01",
+    "end": "1039-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Henry III",
+    "role": "Emperor",
+    "start": "1039-01-01",
+    "end": "1056-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Henry IV",
+    "role": "Emperor",
+    "start": "1056-01-01",
+    "end": "1106-01-01",
+    "current": false,
+    "tenure": "50y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Henry V",
+    "role": "Emperor",
+    "start": "1106-01-01",
+    "end": "1125-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Lothair III",
+    "role": "Emperor",
+    "start": "1125-01-01",
+    "end": "1138-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Conrad III",
+    "role": "Emperor",
+    "start": "1138-01-01",
+    "end": "1152-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Frederick I Barbarossa",
+    "role": "Emperor",
+    "start": "1152-01-01",
+    "end": "1191-01-01",
+    "current": false,
+    "tenure": "39y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Henry VI",
+    "role": "Emperor",
+    "start": "1191-01-01",
+    "end": "1209-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Otto IV",
+    "role": "Emperor",
+    "start": "1209-01-01",
+    "end": "1220-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Frederick II",
+    "role": "Emperor",
+    "start": "1220-01-01",
+    "end": "1273-01-01",
+    "current": false,
+    "tenure": "53y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Rudolf I",
+    "role": "Emperor",
+    "start": "1273-01-01",
+    "end": "1292-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Adolf of Nassau",
+    "role": "Emperor",
+    "start": "1292-01-01",
+    "end": "1298-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Albert I",
+    "role": "Emperor",
+    "start": "1298-01-01",
+    "end": "1312-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Henry VII",
+    "role": "Emperor",
+    "start": "1312-01-01",
+    "end": "1328-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Louis IV",
+    "role": "Emperor",
+    "start": "1328-01-01",
+    "end": "1355-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Charles IV",
+    "role": "Emperor",
+    "start": "1355-01-01",
+    "end": "1378-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Wenceslaus",
+    "role": "Emperor",
+    "start": "1378-01-01",
+    "end": "1433-01-01",
+    "current": false,
+    "tenure": "55y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Sigismund",
+    "role": "Emperor",
+    "start": "1433-01-01",
+    "end": "1438-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Albert II",
+    "role": "Emperor",
+    "start": "1438-01-01",
+    "end": "1452-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Frederick III",
+    "role": "Emperor",
+    "start": "1452-01-01",
+    "end": "1508-01-01",
+    "current": false,
+    "tenure": "56y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Maximilian I",
+    "role": "Emperor",
+    "start": "1508-01-01",
+    "end": "1519-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Charles V",
+    "role": "Emperor",
+    "start": "1519-01-01",
+    "end": "1558-01-01",
+    "current": false,
+    "tenure": "39y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Ferdinand I",
+    "role": "Emperor",
+    "start": "1558-01-01",
+    "end": "1564-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Maximilian II",
+    "role": "Emperor",
+    "start": "1564-01-01",
+    "end": "1576-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Rudolf II",
+    "role": "Emperor",
+    "start": "1576-01-01",
+    "end": "1612-01-01",
+    "current": false,
+    "tenure": "36y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Matthias",
+    "role": "Emperor",
+    "start": "1612-01-01",
+    "end": "1619-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Ferdinand II",
+    "role": "Emperor",
+    "start": "1619-01-01",
+    "end": "1637-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Ferdinand III",
+    "role": "Emperor",
+    "start": "1637-01-01",
+    "end": "1658-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Leopold I",
+    "role": "Emperor",
+    "start": "1658-01-01",
+    "end": "1705-01-01",
+    "current": false,
+    "tenure": "47y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Joseph I",
+    "role": "Emperor",
+    "start": "1705-01-01",
+    "end": "1711-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Charles VI",
+    "role": "Emperor",
+    "start": "1711-01-01",
+    "end": "1742-01-01",
+    "current": false,
+    "tenure": "31y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Charles VII",
+    "role": "Emperor",
+    "start": "1742-01-01",
+    "end": "1745-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Francis I",
+    "role": "Emperor",
+    "start": "1745-01-01",
+    "end": "1765-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Joseph II",
+    "role": "Emperor",
+    "start": "1765-01-01",
+    "end": "1790-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Leopold II",
+    "role": "Emperor",
+    "start": "1790-01-01",
+    "end": "1792-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  },
+  {
+    "name": "👑 Francis II",
+    "role": "Emperor",
+    "start": "1792-01-01",
+    "end": "1806-08-06",
+    "current": false,
+    "tenure": "14y 7m 5d",
+    "party": "year-level dates",
+    "era": "Holy Roman Empire"
+  }
+]

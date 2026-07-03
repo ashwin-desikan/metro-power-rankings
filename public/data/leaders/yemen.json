@@ -1,5 +1,85 @@
 [
   {
+    "name": "👑 Yahya Muhammad Hamid ed-Din",
+    "role": "Imam",
+    "start": "1918-11-01",
+    "end": "1948-02-17",
+    "current": false,
+    "tenure": "29y 3m 16d",
+    "party": "assassinated",
+    "era": "Mutawakkilite Kingdom"
+  },
+  {
+    "name": "👑 Ahmad bin Yahya",
+    "role": "Imam",
+    "start": "1948-03-14",
+    "end": "1962-09-19",
+    "current": false,
+    "tenure": "14y 6m 5d",
+    "party": "died",
+    "era": "Mutawakkilite Kingdom"
+  },
+  {
+    "name": "👑 Muhammad al-Badr",
+    "role": "Imam",
+    "start": "1962-09-19",
+    "end": "1962-09-26",
+    "current": false,
+    "tenure": "7d",
+    "party": "deposed in coup",
+    "era": "Mutawakkilite Kingdom"
+  },
+  {
+    "name": "Abdullah as-Sallal",
+    "role": "President",
+    "start": "1962-09-26",
+    "end": "1967-11-05",
+    "current": false,
+    "tenure": "5y 1m 10d",
+    "party": null,
+    "era": "Yemen Arab Republic"
+  },
+  {
+    "name": "Abdul Rahman al-Iryani",
+    "role": "President",
+    "start": "1967-11-05",
+    "end": "1974-06-13",
+    "current": false,
+    "tenure": "6y 7m 8d",
+    "party": null,
+    "era": "Yemen Arab Republic"
+  },
+  {
+    "name": "Ibrahim al-Hamdi",
+    "role": "President",
+    "start": "1974-06-13",
+    "end": "1977-10-11",
+    "current": false,
+    "tenure": "3y 3m 28d",
+    "party": "assassinated",
+    "era": "Yemen Arab Republic"
+  },
+  {
+    "name": "Ahmad al-Ghashmi",
+    "role": "President",
+    "start": "1977-10-11",
+    "end": "1978-06-24",
+    "current": false,
+    "tenure": "8m 13d",
+    "party": "assassinated",
+    "era": "Yemen Arab Republic"
+  },
+  {
+    "name": "Ali Abdullah Saleh",
+    "role": "President",
+    "start": "1978-07-18",
+    "end": "1990-05-22",
+    "current": false,
+    "tenure": "11y 10m 4d",
+    "party": "North Yemen; led unification",
+    "era": "Yemen Arab Republic"
+  },
+  {
     "name": "Ali Abdullah Saleh",
     "role": "President",
     "start": "1990-01-01",

@@ -1,5 +1,25 @@
 [
   {
+    "name": "👑 Maria I",
+    "role": "Queen",
+    "start": "1815-12-16",
+    "end": "1816-03-20",
+    "current": false,
+    "tenure": "3m 4d",
+    "party": null,
+    "era": "United Kingdom of Portugal, Brazil and the Algarves"
+  },
+  {
+    "name": "👑 João VI",
+    "role": "King",
+    "start": "1816-03-20",
+    "end": "1822-09-07",
+    "current": false,
+    "tenure": "6y 5m 18d",
+    "party": null,
+    "era": "United Kingdom of Portugal, Brazil and the Algarves"
+  },
+  {
     "name": "👑 Emperor Pedro I",
     "role": "Emperor",
     "start": "1822-09-07",
@@ -8,6 +28,36 @@
     "tenure": "8 years",
     "party": null,
     "era": "Empire of Brazil"
+  },
+  {
+    "name": "Trinal Regency",
+    "role": "Regency",
+    "start": "1831-04-07",
+    "end": "1835-10-12",
+    "current": false,
+    "tenure": "4y 6m 5d",
+    "party": null,
+    "era": "Regency of Brazil"
+  },
+  {
+    "name": "Diogo Antônio Feijó",
+    "role": "Regent",
+    "start": "1835-10-12",
+    "end": "1837-09-19",
+    "current": false,
+    "tenure": "1y 11m 7d",
+    "party": null,
+    "era": "Regency of Brazil"
+  },
+  {
+    "name": "Pedro de Araújo Lima",
+    "role": "Regent",
+    "start": "1837-09-19",
+    "end": "1841-07-18",
+    "current": false,
+    "tenure": "3y 9m 29d",
+    "party": null,
+    "era": "Regency of Brazil"
   },
   {
     "name": "👑 Emperor Pedro II",

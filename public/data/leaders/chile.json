@@ -1,5 +1,255 @@
 [
   {
+    "name": "Bernardo O'Higgins",
+    "role": "Supreme Director",
+    "start": "1817-01-01",
+    "end": "1823-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "Ramón Freire",
+    "role": "Supreme Director",
+    "start": "1823-01-01",
+    "end": "1831-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "José Joaquín Prieto",
+    "role": "President",
+    "start": "1831-01-01",
+    "end": "1841-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "Manuel Bulnes",
+    "role": "President",
+    "start": "1841-01-01",
+    "end": "1851-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "Manuel Montt",
+    "role": "President",
+    "start": "1851-01-01",
+    "end": "1861-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "José Joaquín Pérez",
+    "role": "President",
+    "start": "1861-01-01",
+    "end": "1871-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "Federico Errázuriz Zañartu",
+    "role": "President",
+    "start": "1871-01-01",
+    "end": "1876-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "Aníbal Pinto",
+    "role": "President",
+    "start": "1876-01-01",
+    "end": "1881-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "Domingo Santa María",
+    "role": "President",
+    "start": "1881-01-01",
+    "end": "1886-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "José Manuel Balmaceda",
+    "role": "President",
+    "start": "1886-01-01",
+    "end": "1891-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "Jorge Montt",
+    "role": "President",
+    "start": "1891-01-01",
+    "end": "1896-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "Federico Errázuriz Echaurren",
+    "role": "President",
+    "start": "1896-01-01",
+    "end": "1901-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "Germán Riesco",
+    "role": "President",
+    "start": "1901-01-01",
+    "end": "1906-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "Pedro Montt",
+    "role": "President",
+    "start": "1906-01-01",
+    "end": "1910-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "Ramón Barros Luco",
+    "role": "President",
+    "start": "1910-01-01",
+    "end": "1915-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "Juan Luis Sanfuentes",
+    "role": "President",
+    "start": "1915-01-01",
+    "end": "1920-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "Arturo Alessandri",
+    "role": "President",
+    "start": "1920-01-01",
+    "end": "1925-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "Emiliano Figueroa",
+    "role": "President",
+    "start": "1925-01-01",
+    "end": "1927-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "Carlos Ibáñez del Campo",
+    "role": "President",
+    "start": "1927-01-01",
+    "end": "1932-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "Arturo Alessandri",
+    "role": "President",
+    "start": "1932-01-01",
+    "end": "1938-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "Pedro Aguirre Cerda",
+    "role": "President",
+    "start": "1938-01-01",
+    "end": "1942-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "Juan Antonio Ríos",
+    "role": "President",
+    "start": "1942-01-01",
+    "end": "1946-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "Gabriel González Videla",
+    "role": "President",
+    "start": "1946-01-01",
+    "end": "1952-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "Carlos Ibáñez del Campo",
+    "role": "President",
+    "start": "1952-01-01",
+    "end": "1958-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
+    "name": "Jorge Alessandri",
+    "role": "President",
+    "start": "1958-01-01",
+    "end": "1964-11-03",
+    "current": false,
+    "tenure": "6y 10m 2d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Chile"
+  },
+  {
     "name": "Eduardo Frei Montalva",
     "role": "President",
     "start": "1964-11-03",

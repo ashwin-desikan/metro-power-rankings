@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Ian Smith",
+    "role": "Prime Minister",
+    "start": "1965-11-11",
+    "end": "1979-06-01",
+    "current": false,
+    "tenure": "13y 6m 21d",
+    "party": "Rhodesian Front; declared UDI 1965",
+    "era": "Rhodesia"
+  }
+]

@@ -1,5 +1,95 @@
 [
   {
+    "name": "👑 Agha Mohammad Khan",
+    "role": "Shah",
+    "start": "1789-03-21",
+    "end": "1797-06-17",
+    "current": false,
+    "tenure": "8y 2m 27d",
+    "party": null,
+    "era": "Qajar dynasty"
+  },
+  {
+    "name": "👑 Fath-Ali Shah",
+    "role": "Shah",
+    "start": "1797-06-17",
+    "end": "1834-10-23",
+    "current": false,
+    "tenure": "37y 4m 6d",
+    "party": null,
+    "era": "Qajar dynasty"
+  },
+  {
+    "name": "👑 Mohammad Shah",
+    "role": "Shah",
+    "start": "1834-10-23",
+    "end": "1848-09-05",
+    "current": false,
+    "tenure": "13y 10m 13d",
+    "party": null,
+    "era": "Qajar dynasty"
+  },
+  {
+    "name": "👑 Naser al-Din Shah",
+    "role": "Shah",
+    "start": "1848-09-05",
+    "end": "1896-05-01",
+    "current": false,
+    "tenure": "47y 7m 26d",
+    "party": null,
+    "era": "Qajar dynasty"
+  },
+  {
+    "name": "👑 Mozaffar ad-Din Shah",
+    "role": "Shah",
+    "start": "1896-05-01",
+    "end": "1907-01-08",
+    "current": false,
+    "tenure": "10y 8m 7d",
+    "party": null,
+    "era": "Qajar dynasty"
+  },
+  {
+    "name": "👑 Mohammad Ali Shah",
+    "role": "Shah",
+    "start": "1907-01-08",
+    "end": "1909-07-16",
+    "current": false,
+    "tenure": "2y 6m 8d",
+    "party": null,
+    "era": "Qajar dynasty"
+  },
+  {
+    "name": "👑 Ahmad Shah Qajar",
+    "role": "Shah",
+    "start": "1909-07-16",
+    "end": "1925-10-31",
+    "current": false,
+    "tenure": "16y 3m 15d",
+    "party": "Qajar; deposed",
+    "era": "Qajar dynasty"
+  },
+  {
+    "name": "👑 Reza Shah Pahlavi",
+    "role": "Shah",
+    "start": "1925-12-15",
+    "end": "1941-09-16",
+    "current": false,
+    "tenure": "15y 9m 1d",
+    "party": "Pahlavi; abdicated",
+    "era": "Pahlavi dynasty"
+  },
+  {
+    "name": "👑 Mohammad Reza Pahlavi",
+    "role": "Shah",
+    "start": "1941-09-16",
+    "end": "1979-02-11",
+    "current": false,
+    "tenure": "37y 4m 26d",
+    "party": "Pahlavi; overthrown",
+    "era": "Pahlavi dynasty"
+  },
+  {
     "name": "⚠️ Ruhollah Khomeini",
     "role": "Supreme Leader",
     "start": "1979-02-11",

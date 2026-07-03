@@ -1,5 +1,65 @@
 [
   {
+    "name": "👑 Tewodros II",
+    "role": "Monarch",
+    "start": "1855-02-11",
+    "end": "1868-06-01",
+    "current": false,
+    "tenure": "13y 3m 21d",
+    "party": null,
+    "era": "Ethiopian Empire"
+  },
+  {
+    "name": "👑 Tekle Giorgis II",
+    "role": "Monarch",
+    "start": "1868-06-01",
+    "end": "1872-01-21",
+    "current": false,
+    "tenure": "3y 7m 20d",
+    "party": null,
+    "era": "Ethiopian Empire"
+  },
+  {
+    "name": "👑 Yohannes IV",
+    "role": "Monarch",
+    "start": "1872-01-21",
+    "end": "1889-11-03",
+    "current": false,
+    "tenure": "17y 9m 13d",
+    "party": null,
+    "era": "Ethiopian Empire"
+  },
+  {
+    "name": "👑 Menelik II",
+    "role": "Monarch",
+    "start": "1889-11-03",
+    "end": "1913-12-12",
+    "current": false,
+    "tenure": "24y 1m 9d",
+    "party": null,
+    "era": "Ethiopian Empire"
+  },
+  {
+    "name": "👑 Iyasu V",
+    "role": "Monarch",
+    "start": "1913-12-12",
+    "end": "1916-09-27",
+    "current": false,
+    "tenure": "2y 9m 15d",
+    "party": null,
+    "era": "Ethiopian Empire"
+  },
+  {
+    "name": "👑 Zewditu",
+    "role": "Monarch",
+    "start": "1916-09-27",
+    "end": "1930-04-02",
+    "current": false,
+    "tenure": "13y 6m 6d",
+    "party": null,
+    "era": "Ethiopian Empire"
+  },
+  {
     "name": "👑 Haile Selassie I",
     "role": "Monarch",
     "start": "1930-04-02",

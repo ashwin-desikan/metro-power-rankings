@@ -1,5 +1,95 @@
 [
   {
+    "name": "Antonio José de Sucre",
+    "role": "President",
+    "start": "1825-01-01",
+    "end": "1829-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Bolivia"
+  },
+  {
+    "name": "Andrés de Santa Cruz",
+    "role": "President",
+    "start": "1829-01-01",
+    "end": "1848-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Bolivia"
+  },
+  {
+    "name": "Manuel Isidoro Belzu",
+    "role": "President",
+    "start": "1848-01-01",
+    "end": "1864-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Bolivia"
+  },
+  {
+    "name": "⚠️ Mariano Melgarejo",
+    "role": "President",
+    "start": "1864-01-01",
+    "end": "1880-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Bolivia"
+  },
+  {
+    "name": "Narciso Campero",
+    "role": "President",
+    "start": "1880-01-01",
+    "end": "1904-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Bolivia"
+  },
+  {
+    "name": "Ismael Montes",
+    "role": "President",
+    "start": "1904-01-01",
+    "end": "1921-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Bolivia"
+  },
+  {
+    "name": "Bautista Saavedra",
+    "role": "President",
+    "start": "1921-01-01",
+    "end": "1937-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Bolivia"
+  },
+  {
+    "name": "Germán Busch",
+    "role": "President",
+    "start": "1937-01-01",
+    "end": "1943-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Bolivia"
+  },
+  {
+    "name": "⚠️ Gualberto Villarroel",
+    "role": "President",
+    "start": "1943-01-01",
+    "end": "1952-04-15",
+    "current": false,
+    "tenure": "9y 3m 14d",
+    "party": "backbone; year-level dates",
+    "era": "Republic of Bolivia"
+  },
+  {
     "name": "Víctor Paz Estenssoro",
     "role": "President",
     "start": "1952-04-15",

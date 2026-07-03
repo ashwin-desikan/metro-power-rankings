@@ -1,5 +1,65 @@
 [
   {
+    "name": "👑 Christian VII",
+    "role": "Monarch",
+    "start": "1766-01-14",
+    "end": "1808-03-13",
+    "current": false,
+    "tenure": "42y 1m 28d",
+    "party": null,
+    "era": "Kingdom of Denmark"
+  },
+  {
+    "name": "👑 Frederik VI",
+    "role": "Monarch",
+    "start": "1808-03-13",
+    "end": "1839-12-03",
+    "current": false,
+    "tenure": "31y 8m 20d",
+    "party": null,
+    "era": "Kingdom of Denmark"
+  },
+  {
+    "name": "👑 Christian VIII",
+    "role": "Monarch",
+    "start": "1839-12-03",
+    "end": "1848-01-20",
+    "current": false,
+    "tenure": "8y 1m 17d",
+    "party": null,
+    "era": "Kingdom of Denmark"
+  },
+  {
+    "name": "👑 Frederik VII",
+    "role": "Monarch",
+    "start": "1848-01-20",
+    "end": "1863-11-15",
+    "current": false,
+    "tenure": "15y 9m 26d",
+    "party": null,
+    "era": "Kingdom of Denmark"
+  },
+  {
+    "name": "👑 Christian IX",
+    "role": "Monarch",
+    "start": "1863-11-15",
+    "end": "1906-01-29",
+    "current": false,
+    "tenure": "42y 2m 14d",
+    "party": null,
+    "era": "Kingdom of Denmark"
+  },
+  {
+    "name": "👑 Frederik VIII",
+    "role": "Monarch",
+    "start": "1906-01-29",
+    "end": "1912-05-14",
+    "current": false,
+    "tenure": "6y 3m 15d",
+    "party": null,
+    "era": "Kingdom of Denmark"
+  },
+  {
     "name": "👑 Christian X",
     "role": "Monarch",
     "start": "1912-05-14",

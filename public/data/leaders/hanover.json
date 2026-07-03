@@ -1,0 +1,52 @@
+[
+  {
+    "name": "👑 George III",
+    "role": "President",
+    "start": "1814-01-01",
+    "end": "1820-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Hanover"
+  },
+  {
+    "name": "👑 George IV",
+    "role": "President",
+    "start": "1820-01-01",
+    "end": "1830-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Hanover"
+  },
+  {
+    "name": "👑 William IV",
+    "role": "President",
+    "start": "1830-01-01",
+    "end": "1837-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Hanover"
+  },
+  {
+    "name": "👑 Ernest Augustus",
+    "role": "President",
+    "start": "1837-01-01",
+    "end": "1851-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Hanover"
+  },
+  {
+    "name": "👑 George V",
+    "role": "President",
+    "start": "1851-01-01",
+    "end": "1866-09-20",
+    "current": false,
+    "tenure": "15y 8m 19d",
+    "party": "year-level dates",
+    "era": "Kingdom of Hanover"
+  }
+]

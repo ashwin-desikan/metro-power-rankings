@@ -103,8 +103,8 @@
     "name": "Ulisses Correia e Silva",
     "role": "Prime Minister",
     "start": "2016-04-22",
-    "end": "0202-06-19",
-    "current": false,
+    "end": null,
+    "current": true,
     "tenure": null,
     "party": null,
     "era": null

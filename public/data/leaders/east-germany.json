@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Walter Ulbricht",
+    "role": "General Secretary",
+    "start": "1950-07-25",
+    "end": "1971-05-03",
+    "current": false,
+    "tenure": "20y 9m 8d",
+    "party": "SED",
+    "era": "German Democratic Republic"
+  },
+  {
+    "name": "Erich Honecker",
+    "role": "General Secretary",
+    "start": "1971-05-03",
+    "end": "1989-10-18",
+    "current": false,
+    "tenure": "18y 5m 15d",
+    "party": "SED",
+    "era": "German Democratic Republic"
+  },
+  {
+    "name": "Egon Krenz",
+    "role": "General Secretary",
+    "start": "1989-10-18",
+    "end": "1989-12-06",
+    "current": false,
+    "tenure": "1m 18d",
+    "party": "SED",
+    "era": "German Democratic Republic"
+  },
+  {
+    "name": "Lothar de Maizière",
+    "role": "Prime Minister",
+    "start": "1990-04-12",
+    "end": "1990-10-03",
+    "current": false,
+    "tenure": "5m 21d",
+    "party": "CDU; first free election",
+    "era": "German Democratic Republic"
+  }
+]

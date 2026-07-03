@@ -1,5 +1,75 @@
 [
   {
+    "name": "👑 Gustav III",
+    "role": "Monarch",
+    "start": "1771-02-12",
+    "end": "1792-03-29",
+    "current": false,
+    "tenure": "21y 1m 17d",
+    "party": null,
+    "era": "Kingdom of Sweden"
+  },
+  {
+    "name": "👑 Gustav IV Adolf",
+    "role": "Monarch",
+    "start": "1792-03-29",
+    "end": "1809-03-29",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": null,
+    "era": "Kingdom of Sweden"
+  },
+  {
+    "name": "👑 Charles XIII",
+    "role": "Monarch",
+    "start": "1809-06-06",
+    "end": "1818-02-05",
+    "current": false,
+    "tenure": "8y 7m 30d",
+    "party": null,
+    "era": "Kingdom of Sweden"
+  },
+  {
+    "name": "👑 Charles XIV John",
+    "role": "Monarch",
+    "start": "1818-02-05",
+    "end": "1844-03-08",
+    "current": false,
+    "tenure": "26y 1m 3d",
+    "party": null,
+    "era": "Kingdom of Sweden"
+  },
+  {
+    "name": "👑 Oscar I",
+    "role": "Monarch",
+    "start": "1844-03-08",
+    "end": "1859-07-08",
+    "current": false,
+    "tenure": "15y 4m 0d",
+    "party": null,
+    "era": "Kingdom of Sweden"
+  },
+  {
+    "name": "👑 Charles XV",
+    "role": "Monarch",
+    "start": "1859-07-08",
+    "end": "1872-09-18",
+    "current": false,
+    "tenure": "13y 2m 10d",
+    "party": null,
+    "era": "Kingdom of Sweden"
+  },
+  {
+    "name": "👑 Oscar II",
+    "role": "Monarch",
+    "start": "1872-09-18",
+    "end": "1907-12-08",
+    "current": false,
+    "tenure": "35y 2m 20d",
+    "party": null,
+    "era": "Kingdom of Sweden"
+  },
+  {
     "name": "👑 Gustaf V",
     "role": "Monarch",
     "start": "1907-12-08",

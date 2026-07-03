@@ -1,5 +1,65 @@
 [
   {
+    "name": "👑 Ang Chan II",
+    "role": "Monarch",
+    "start": "1806-01-01",
+    "end": "1835-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Cambodia"
+  },
+  {
+    "name": "👑 Ang Mey",
+    "role": "Monarch",
+    "start": "1835-01-01",
+    "end": "1841-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Cambodia"
+  },
+  {
+    "name": "👑 Ang Duong",
+    "role": "Monarch",
+    "start": "1841-01-01",
+    "end": "1860-10-19",
+    "current": false,
+    "tenure": "19y 9m 18d",
+    "party": "year-level dates",
+    "era": "Kingdom of Cambodia"
+  },
+  {
+    "name": "👑 Norodom",
+    "role": "Monarch",
+    "start": "1860-10-19",
+    "end": "1904-04-24",
+    "current": false,
+    "tenure": "43y 6m 5d",
+    "party": null,
+    "era": "Kingdom of Cambodia"
+  },
+  {
+    "name": "👑 Sisowath",
+    "role": "Monarch",
+    "start": "1904-04-24",
+    "end": "1927-08-09",
+    "current": false,
+    "tenure": "23y 3m 16d",
+    "party": null,
+    "era": "Kingdom of Cambodia"
+  },
+  {
+    "name": "👑 Sisowath Monivong",
+    "role": "Monarch",
+    "start": "1927-08-09",
+    "end": "1941-04-25",
+    "current": false,
+    "tenure": "13y 8m 16d",
+    "party": null,
+    "era": "Kingdom of Cambodia"
+  },
+  {
     "name": "👑 Norodom Sihanouk",
     "role": "Monarch",
     "start": "1941-04-25",

@@ -1,0 +1,42 @@
+[
+  {
+    "name": "13th Dalai Lama (Thubten Gyatso)",
+    "role": "Dalai Lama",
+    "start": "1912-01-01",
+    "end": "1933-12-17",
+    "current": false,
+    "tenure": "21y 11m 16d",
+    "party": "declared independence 1913",
+    "era": "Tibet"
+  },
+  {
+    "name": "Reting Rinpoche",
+    "role": "Regent",
+    "start": "1934-01-24",
+    "end": "1941-01-01",
+    "current": false,
+    "tenure": "6y 11m 8d",
+    "party": null,
+    "era": "Tibet"
+  },
+  {
+    "name": "Taktra Rinpoche",
+    "role": "Regent",
+    "start": "1941-01-01",
+    "end": "1950-11-17",
+    "current": false,
+    "tenure": "9y 10m 16d",
+    "party": null,
+    "era": "Tibet"
+  },
+  {
+    "name": "14th Dalai Lama (Tenzin Gyatso)",
+    "role": "Dalai Lama",
+    "start": "1950-11-17",
+    "end": "1951-05-23",
+    "current": false,
+    "tenure": "6m 6d",
+    "party": "annexed by China",
+    "era": "Tibet"
+  }
+]

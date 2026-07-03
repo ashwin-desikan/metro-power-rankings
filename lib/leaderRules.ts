@@ -6,11 +6,11 @@
 export type HistRow = { n: string; r: string; s: string | null; e: string | null };
 
 const ROLE_PRIORITY = [
-  "Supreme Leader", "General Secretary", "President", "Chancellor",
+  "Supreme Leader", "General Secretary", "Shogun", "President", "Chancellor",
   "Prime Minister", "Taoiseach", "Premier", "Monarch",
 ];
 const HEAD_OF_GOV_PRIORITY = [
-  "Supreme Leader", "General Secretary", "Chancellor", "Prime Minister",
+  "Supreme Leader", "General Secretary", "Shogun", "Chancellor", "Prime Minister",
   "Taoiseach", "Premier", "President", "Monarch",
 ];
 export const PM_LED_COUNTRIES = new Set<string>([
@@ -19,7 +19,7 @@ export const PM_LED_COUNTRIES = new Set<string>([
   "bosnia-herzegovina", "montenegro", "slovenia", "slovakia", "lithuania",
 ]);
 const GOV_ROLES = [
-  "Supreme Leader", "General Secretary", "Chancellor",
+  "Supreme Leader", "General Secretary", "Shogun", "Chancellor",
   "Prime Minister", "Taoiseach", "Premier",
 ];
 const HEAD_OF_STATE_TOKENS = [
@@ -52,9 +52,9 @@ export function resolveWindow(
   const order = PM_LED_COUNTRIES.has(slug) ? HEAD_OF_GOV_PRIORITY : ROLE_PRIORITY;
   let token: string | null = null;
   for (const role of order) {
-    if (active.some((a) => a.r.includes(role))) { token = role; break; }
+    if (active.some((a) => (a.r ?? "").includes(role))) { token = role; break; }
   }
-  let primaries = token ? active.filter((a) => a.r.includes(token!)) : active.slice();
+  let primaries = token ? active.filter((a) => (a.r ?? "").includes(token!)) : active.slice();
   const seen = new Set<string>();
   primaries = primaries.filter((p) => (seen.has(p.n) ? false : (seen.add(p.n), true)));
 
@@ -62,7 +62,7 @@ export function resolveWindow(
   const primaryIsGov = token != null && GOV_ROLES.some((r) => token!.includes(r));
   if (primaryIsGov) {
     for (const tok of HEAD_OF_STATE_TOKENS) {
-      const hs = active.filter((a) => a.r.includes(tok) && !primaries.some((p) => p.n === a.n));
+      const hs = active.filter((a) => (a.r ?? "").includes(tok) && !primaries.some((p) => p.n === a.n));
       if (hs.length) { seconds = hs; break; }
     }
   }

@@ -1,5 +1,395 @@
 [
   {
+    "name": "👑 Osman I",
+    "role": "Sultan",
+    "start": "1299-01-01",
+    "end": "1323-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Orhan",
+    "role": "Sultan",
+    "start": "1323-01-01",
+    "end": "1362-03-01",
+    "current": false,
+    "tenure": "39y 2m 0d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Murad I",
+    "role": "Sultan",
+    "start": "1362-03-01",
+    "end": "1389-06-15",
+    "current": false,
+    "tenure": "27y 3m 14d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Bayezid I",
+    "role": "Sultan",
+    "start": "1389-06-15",
+    "end": "1402-07-20",
+    "current": false,
+    "tenure": "13y 1m 5d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Mehmed I",
+    "role": "Sultan",
+    "start": "1413-07-05",
+    "end": "1421-05-26",
+    "current": false,
+    "tenure": "7y 10m 21d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Murad II",
+    "role": "Sultan",
+    "start": "1421-06-25",
+    "end": "1444-08-01",
+    "current": false,
+    "tenure": "23y 1m 7d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Mehmed II",
+    "role": "Sultan",
+    "start": "1444-08-01",
+    "end": "1446-09-01",
+    "current": false,
+    "tenure": "2y 1m 0d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Murad II",
+    "role": "Sultan",
+    "start": "1446-09-01",
+    "end": "1451-02-03",
+    "current": false,
+    "tenure": "4y 5m 2d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Mehmed II",
+    "role": "Sultan",
+    "start": "1451-02-03",
+    "end": "1481-05-03",
+    "current": false,
+    "tenure": "30y 3m 0d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Bayezid II",
+    "role": "Sultan",
+    "start": "1481-05-19",
+    "end": "1512-04-25",
+    "current": false,
+    "tenure": "30y 11m 6d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Selim I",
+    "role": "Sultan",
+    "start": "1512-04-25",
+    "end": "1520-09-21",
+    "current": false,
+    "tenure": "8y 4m 27d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Suleiman I",
+    "role": "Sultan",
+    "start": "1520-09-30",
+    "end": "1566-09-06",
+    "current": false,
+    "tenure": "45y 11m 7d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Selim II",
+    "role": "Sultan",
+    "start": "1566-09-07",
+    "end": "1574-12-15",
+    "current": false,
+    "tenure": "8y 3m 8d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Murad III",
+    "role": "Sultan",
+    "start": "1574-12-22",
+    "end": "1595-01-16",
+    "current": false,
+    "tenure": "20y 25d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Mehmed III",
+    "role": "Sultan",
+    "start": "1595-01-27",
+    "end": "1603-12-21",
+    "current": false,
+    "tenure": "8y 10m 24d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Ahmed I",
+    "role": "Sultan",
+    "start": "1603-12-21",
+    "end": "1617-11-22",
+    "current": false,
+    "tenure": "13y 11m 1d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Mustafa I",
+    "role": "Sultan",
+    "start": "1617-11-22",
+    "end": "1618-02-26",
+    "current": false,
+    "tenure": "3m 4d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Osman II",
+    "role": "Sultan",
+    "start": "1618-02-26",
+    "end": "1622-05-20",
+    "current": false,
+    "tenure": "4y 2m 24d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Mustafa I",
+    "role": "Sultan",
+    "start": "1622-05-20",
+    "end": "1623-09-10",
+    "current": false,
+    "tenure": "1y 3m 21d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Murad IV",
+    "role": "Sultan",
+    "start": "1623-09-10",
+    "end": "1640-02-08",
+    "current": false,
+    "tenure": "16y 4m 29d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Ibrahim",
+    "role": "Sultan",
+    "start": "1640-02-09",
+    "end": "1648-08-08",
+    "current": false,
+    "tenure": "8y 5m 30d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Mehmed IV",
+    "role": "Sultan",
+    "start": "1648-08-08",
+    "end": "1687-11-08",
+    "current": false,
+    "tenure": "39y 3m 0d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Suleiman II",
+    "role": "Sultan",
+    "start": "1687-11-08",
+    "end": "1691-06-22",
+    "current": false,
+    "tenure": "3y 7m 14d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Ahmed II",
+    "role": "Sultan",
+    "start": "1691-06-22",
+    "end": "1695-02-06",
+    "current": false,
+    "tenure": "3y 7m 15d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Mustafa II",
+    "role": "Sultan",
+    "start": "1695-02-06",
+    "end": "1703-08-22",
+    "current": false,
+    "tenure": "8y 6m 16d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Ahmed III",
+    "role": "Sultan",
+    "start": "1703-08-22",
+    "end": "1730-10-01",
+    "current": false,
+    "tenure": "27y 1m 9d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Mahmud I",
+    "role": "Sultan",
+    "start": "1730-10-02",
+    "end": "1754-12-13",
+    "current": false,
+    "tenure": "24y 2m 11d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Osman III",
+    "role": "Sultan",
+    "start": "1754-12-13",
+    "end": "1757-10-30",
+    "current": false,
+    "tenure": "2y 10m 17d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Mustafa III",
+    "role": "Sultan",
+    "start": "1757-10-30",
+    "end": "1774-01-21",
+    "current": false,
+    "tenure": "16y 2m 22d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Abdul Hamid I",
+    "role": "Sultan",
+    "start": "1774-01-21",
+    "end": "1789-04-07",
+    "current": false,
+    "tenure": "15y 2m 17d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Selim III",
+    "role": "Sultan",
+    "start": "1789-04-07",
+    "end": "1807-05-29",
+    "current": false,
+    "tenure": "18y 1m 22d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Mustafa IV",
+    "role": "Sultan",
+    "start": "1807-05-29",
+    "end": "1808-07-28",
+    "current": false,
+    "tenure": "1y 1m 29d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Mahmud II",
+    "role": "Sultan",
+    "start": "1808-07-28",
+    "end": "1839-07-01",
+    "current": false,
+    "tenure": "30y 11m 3d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Abdulmejid I",
+    "role": "Sultan",
+    "start": "1839-07-01",
+    "end": "1861-06-25",
+    "current": false,
+    "tenure": "21y 11m 24d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Abdulaziz",
+    "role": "Sultan",
+    "start": "1861-06-25",
+    "end": "1876-05-30",
+    "current": false,
+    "tenure": "14y 11m 5d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Murad V",
+    "role": "Sultan",
+    "start": "1876-05-30",
+    "end": "1876-08-31",
+    "current": false,
+    "tenure": "3m 1d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Abdul Hamid II",
+    "role": "Sultan",
+    "start": "1876-08-31",
+    "end": "1909-04-27",
+    "current": false,
+    "tenure": "32y 7m 27d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Mehmed V",
+    "role": "Sultan",
+    "start": "1909-04-27",
+    "end": "1918-07-03",
+    "current": false,
+    "tenure": "9y 2m 6d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
+    "name": "👑 Mehmed VI",
+    "role": "Sultan",
+    "start": "1918-07-04",
+    "end": "1922-11-01",
+    "current": false,
+    "tenure": "4y 3m 28d",
+    "party": null,
+    "era": "Ottoman Empire"
+  },
+  {
     "name": "Mustafa Kemal Atatürk",
     "role": "President",
     "start": "1923-10-29",

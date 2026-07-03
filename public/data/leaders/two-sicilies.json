@@ -1,0 +1,42 @@
+[
+  {
+    "name": "👑 Ferdinand I",
+    "role": "King",
+    "start": "1816-12-12",
+    "end": "1825-01-04",
+    "current": false,
+    "tenure": "8y 23d",
+    "party": null,
+    "era": "Kingdom of the Two Sicilies"
+  },
+  {
+    "name": "👑 Francis I",
+    "role": "King",
+    "start": "1825-01-04",
+    "end": "1830-11-08",
+    "current": false,
+    "tenure": "5y 10m 4d",
+    "party": null,
+    "era": "Kingdom of the Two Sicilies"
+  },
+  {
+    "name": "👑 Ferdinand II",
+    "role": "King",
+    "start": "1830-11-08",
+    "end": "1859-05-22",
+    "current": false,
+    "tenure": "28y 6m 14d",
+    "party": null,
+    "era": "Kingdom of the Two Sicilies"
+  },
+  {
+    "name": "👑 Francis II",
+    "role": "King",
+    "start": "1859-05-22",
+    "end": "1861-02-13",
+    "current": false,
+    "tenure": "1y 8m 22d",
+    "party": null,
+    "era": "Kingdom of the Two Sicilies"
+  }
+]

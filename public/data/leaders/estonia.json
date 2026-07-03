@@ -1,6 +1,116 @@
 [
   {
     "name": "Konstantin Päts",
+    "role": "Chairman (Provisional Government)",
+    "start": "1918-02-24",
+    "end": "1918-11-12",
+    "current": false,
+    "tenure": "8m 19d",
+    "party": "founding of the republic",
+    "era": "First Republic"
+  },
+  {
+    "name": "Konstantin Päts",
+    "role": "Prime Minister",
+    "start": "1918-11-12",
+    "end": "1919-05-08",
+    "current": false,
+    "tenure": "5m 26d",
+    "party": null,
+    "era": "First Republic"
+  },
+  {
+    "name": "Jaan Tõnisson",
+    "role": "State Elder",
+    "start": "1919-05-08",
+    "end": "1920-07-30",
+    "current": false,
+    "tenure": "1y 2m 22d",
+    "party": "approx.",
+    "era": "First Republic"
+  },
+  {
+    "name": "Konstantin Päts",
+    "role": "State Elder",
+    "start": "1921-01-25",
+    "end": "1922-11-21",
+    "current": false,
+    "tenure": "1y 9m 27d",
+    "party": null,
+    "era": "First Republic"
+  },
+  {
+    "name": "Konstantin Päts",
+    "role": "State Elder",
+    "start": "1923-08-02",
+    "end": "1924-03-26",
+    "current": false,
+    "tenure": "7m 24d",
+    "party": null,
+    "era": "First Republic"
+  },
+  {
+    "name": "Jaan Teemant",
+    "role": "State Elder",
+    "start": "1925-12-15",
+    "end": "1927-12-09",
+    "current": false,
+    "tenure": "1y 11m 24d",
+    "party": "approx.",
+    "era": "First Republic"
+  },
+  {
+    "name": "Jaan Tõnisson",
+    "role": "State Elder",
+    "start": "1927-12-09",
+    "end": "1928-12-04",
+    "current": false,
+    "tenure": "11m 25d",
+    "party": "approx.",
+    "era": "First Republic"
+  },
+  {
+    "name": "Konstantin Päts",
+    "role": "State Elder",
+    "start": "1931-02-12",
+    "end": "1932-02-19",
+    "current": false,
+    "tenure": "1y 7d",
+    "party": null,
+    "era": "First Republic"
+  },
+  {
+    "name": "Konstantin Päts",
+    "role": "State Elder",
+    "start": "1932-11-01",
+    "end": "1933-05-18",
+    "current": false,
+    "tenure": "6m 17d",
+    "party": null,
+    "era": "First Republic"
+  },
+  {
+    "name": "Konstantin Päts",
+    "role": "State Elder",
+    "start": "1933-10-21",
+    "end": "1934-01-24",
+    "current": false,
+    "tenure": "3m 3d",
+    "party": null,
+    "era": "First Republic"
+  },
+  {
+    "name": "Konstantin Päts",
+    "role": "State Elder",
+    "start": "1934-03-12",
+    "end": "1938-04-24",
+    "current": false,
+    "tenure": "4y 1m 12d",
+    "party": "authoritarian rule after 1934 coup",
+    "era": "First Republic"
+  },
+  {
+    "name": "Konstantin Päts",
     "role": "President",
     "start": "1938-04-24",
     "end": "1940-07-23",

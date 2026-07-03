@@ -1,5 +1,95 @@
 [
   {
+    "name": "👑 Kōkaku",
+    "role": "Emperor",
+    "start": "1780-01-01",
+    "end": "1817-05-07",
+    "current": false,
+    "tenure": "37y 4m 6d",
+    "party": "year-level dates",
+    "era": "Empire of Japan"
+  },
+  {
+    "name": "Tokugawa Ienari",
+    "role": "Shogun",
+    "start": "1787-01-01",
+    "end": "1837-05-08",
+    "current": false,
+    "tenure": "50y 4m 7d",
+    "party": "year-level dates",
+    "era": "Tokugawa shogunate"
+  },
+  {
+    "name": "👑 Ninkō",
+    "role": "Emperor",
+    "start": "1817-05-07",
+    "end": "1846-02-21",
+    "current": false,
+    "tenure": "28y 9m 14d",
+    "party": null,
+    "era": "Empire of Japan"
+  },
+  {
+    "name": "Tokugawa Ieyoshi",
+    "role": "Shogun",
+    "start": "1837-05-08",
+    "end": "1853-07-27",
+    "current": false,
+    "tenure": "16y 2m 19d",
+    "party": null,
+    "era": "Tokugawa shogunate"
+  },
+  {
+    "name": "👑 Kōmei",
+    "role": "Emperor",
+    "start": "1846-02-21",
+    "end": "1867-01-30",
+    "current": false,
+    "tenure": "20y 11m 9d",
+    "party": null,
+    "era": "Empire of Japan"
+  },
+  {
+    "name": "Tokugawa Iesada",
+    "role": "Shogun",
+    "start": "1853-07-27",
+    "end": "1858-08-14",
+    "current": false,
+    "tenure": "5y 18d",
+    "party": null,
+    "era": "Tokugawa shogunate"
+  },
+  {
+    "name": "Tokugawa Iemochi",
+    "role": "Shogun",
+    "start": "1858-08-14",
+    "end": "1866-08-29",
+    "current": false,
+    "tenure": "8y 15d",
+    "party": null,
+    "era": "Tokugawa shogunate"
+  },
+  {
+    "name": "Tokugawa Yoshinobu",
+    "role": "Shogun",
+    "start": "1866-08-29",
+    "end": "1868-01-03",
+    "current": false,
+    "tenure": "1y 4m 5d",
+    "party": null,
+    "era": "Tokugawa shogunate"
+  },
+  {
+    "name": "👑 Meiji",
+    "role": "Emperor",
+    "start": "1867-01-30",
+    "end": "1912-07-30",
+    "current": false,
+    "tenure": "45y 6m 0d",
+    "party": null,
+    "era": "Empire of Japan"
+  },
+  {
     "name": "Ito Hirobumi",
     "role": "Prime Minister",
     "start": "1885-12-22",
@@ -130,6 +220,16 @@
     "era": null
   },
   {
+    "name": "👑 Taishō",
+    "role": "Emperor",
+    "start": "1912-07-30",
+    "end": "1926-12-25",
+    "current": false,
+    "tenure": "14y 4m 25d",
+    "party": null,
+    "era": "Empire of Japan"
+  },
+  {
     "name": "Katsura Taro",
     "role": "Prime Minister",
     "start": "1912-12-21",
@@ -238,6 +338,16 @@
     "tenure": "1y 2m",
     "party": "Rikken Minseito; 1st term",
     "era": null
+  },
+  {
+    "name": "👑 Shōwa (Hirohito)",
+    "role": "Emperor",
+    "start": "1926-12-25",
+    "end": "1989-01-07",
+    "current": false,
+    "tenure": "62y 13d",
+    "party": null,
+    "era": "Empire of Japan"
   },
   {
     "name": "Tanaka Giichi",
@@ -580,6 +690,16 @@
     "era": null
   },
   {
+    "name": "👑 Akihito",
+    "role": "Emperor",
+    "start": "1989-01-07",
+    "end": "2019-05-01",
+    "current": false,
+    "tenure": "30y 3m 24d",
+    "party": null,
+    "era": "Empire of Japan"
+  },
+  {
     "name": "Uno Sosuke",
     "role": "Prime Minister",
     "start": "1989-06-03",
@@ -748,6 +868,16 @@
     "tenure": "7y 8m",
     "party": "LDP; 2nd-4th terms",
     "era": null
+  },
+  {
+    "name": "👑 Naruhito",
+    "role": "Emperor",
+    "start": "2019-05-01",
+    "end": null,
+    "current": true,
+    "tenure": "7y 2m 2d",
+    "party": null,
+    "era": "Empire of Japan"
   },
   {
     "name": "Suga Yoshihide",

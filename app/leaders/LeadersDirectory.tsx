@@ -11,7 +11,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { flagUrl, flagSrcSet } from "@/lib/flags";
+import { flagUrl, flagSrcSet, flagUrlByCode, flagSrcSetByCode } from "@/lib/flags";
 import { activeIn, resolveWindow, shortRole, type HistRow } from "@/lib/leaderRules";
 import type { LeaderEntity } from "@/lib/leadersAll";
 
@@ -24,6 +24,7 @@ const TYPES: { key: string; label: string }[] = [
   { key: "sovereign", label: "Sovereign" },
   { key: "territory", label: "Territory" },
   { key: "org", label: "Organisation" },
+  { key: "defunct", label: "Defunct" },
 ];
 const MONTHS = [
   "January", "February", "March", "April", "May", "June",
@@ -74,14 +75,48 @@ function resolveAsOf(
   return base;
 }
 
-function Flag({ slug }: { slug: string }) {
-  const url = flagUrl(slug);
-  if (!url) return null;
-  const srcSet = flagSrcSet(slug) ?? undefined;
+// Historical name of an entity at a date (Russia→Soviet Union, Germany→Nazi
+// Germany, ...). Falls back to the entity's present-day name.
+function nameAt(e: LeaderEntity, dateISO: string): string {
+  if (!e.nameHistory) return e.name;
+  const p = e.nameHistory.find(
+    (x) => (x.start == null || x.start <= dateISO) && (x.end == null || x.end >= dateISO),
+  );
+  return p ? p.name : e.name;
+}
+
+type FlagView = { url: string; srcSet?: string } | "hourglass" | null;
+
+// Flag to show for an entity at a date. Renamed entities use their era flag
+// when it matches a usable current flag (West Germany → German flag), otherwise
+// an hourglass marks a bygone state; defunct states always get the hourglass.
+function flagFor(e: LeaderEntity, dateISO: string | null): FlagView {
+  if (dateISO && e.nameHistory) {
+    const p = e.nameHistory.find(
+      (x) => (x.start == null || x.start <= dateISO) && (x.end == null || x.end >= dateISO),
+    );
+    if (p) {
+      if (p.flag) return { url: flagUrlByCode(p.flag), srcSet: flagSrcSetByCode(p.flag) };
+      if (p.end == null) {
+        const u = flagUrl(e.slug);
+        return u ? { url: u, srcSet: flagSrcSet(e.slug) ?? undefined } : null;
+      }
+      return "hourglass";
+    }
+  }
+  const u = flagUrl(e.slug);
+  if (u) return { url: u, srcSet: flagSrcSet(e.slug) ?? undefined };
+  return e.type === "defunct" ? "hourglass" : null;
+}
+
+function FlagView({ view }: { view: FlagView }) {
+  if (view === "hourglass")
+    return <span className="inline-block mr-2 align-[-2px] text-xs" aria-hidden="true">⌛</span>;
+  if (!view) return null;
   return (
     <img
-      src={url}
-      srcSet={srcSet}
+      src={view.url}
+      srcSet={view.srcSet}
       alt=""
       aria-hidden="true"
       width={20}
@@ -122,6 +157,7 @@ export default function LeadersDirectory({
   })();
   const ms = `${pad4(yearNum)}-${String(month).padStart(2, "0")}-01`;
   const me = `${pad4(yearNum)}-${String(month).padStart(2, "0")}-${String(lastDay(yearNum, month)).padStart(2, "0")}`;
+  const midMonth = `${pad4(yearNum)}-${String(month).padStart(2, "0")}-15`;
 
   const orgOptions = useMemo(() => {
     const s = new Set<string>();
@@ -169,6 +205,7 @@ export default function LeadersDirectory({
       .filter(passesFilters)
       .map((e) => ({ e, r: mode === "asof" ? resolveAsOf(e, ms, me, monarchTimeline) : null }))
       .filter(({ e, r }) => {
+        if (mode === "current" && !e.current) return false;
         if (mode === "asof" && !r) return false;
         if (q) {
           const names = mode === "asof" && r
@@ -179,6 +216,8 @@ export default function LeadersDirectory({
         return true;
       });
     list.sort((a, b) => {
+      const ao = a.e.type === "org" ? 1 : 0, bo = b.e.type === "org" ? 1 : 0;
+      if (ao !== bo) return ao - bo;
       if (sortKey === "score") return cmpScore(a.e, b.e);
       if (sortKey === "name") {
         const c = a.e.name.localeCompare(b.e.name);
@@ -209,6 +248,8 @@ export default function LeadersDirectory({
     }
     const filtered = q ? rows.filter((x) => `${x.e.name} ${x.n}`.toLowerCase().includes(q)) : rows;
     filtered.sort((a, b) => {
+      const ao = a.e.type === "org" ? 1 : 0, bo = b.e.type === "org" ? 1 : 0;
+      if (ao !== bo) return ao - bo;
       const sc = cmpScore(a.e, b.e);
       if (sc !== 0) return sc;
       // within an entity, newest term first
@@ -325,10 +366,11 @@ export default function LeadersDirectory({
               {allTimeRows.map((x, i) => (
                 <tr key={`${x.e.type}:${x.e.slug}:${i}`} className="border-b border-[var(--border)] hover:bg-[var(--bg-card-hover)] transition-colors">
                   <td className="px-2 sm:px-4 py-2">
-                    <Flag slug={x.e.slug} />
+                    <FlagView view={flagFor(x.e, x.s ?? null)} />
                     {x.e.href ? (
-                      <Link href={x.e.href} className="hover:text-[var(--accent)] transition-colors">{x.e.name}</Link>
-                    ) : <span>{x.e.name}</span>}
+                      <Link href={x.e.href} className="hover:text-[var(--accent)] transition-colors">{nameAt(x.e, x.s ?? "9999")}</Link>
+                    ) : <span>{nameAt(x.e, x.s ?? "9999")}</span>}
+                    {x.e.yearRange ? <span className="ml-1 text-[10px] text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{x.e.yearRange}</span> : null}
                   </td>
                   <td className="hidden sm:table-cell px-4 py-2 text-right font-semibold" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>{fmtScore(x.e.scoreTotal)}</td>
                   <td className="px-2 sm:px-4 py-2 text-[var(--text)]">{x.n}<span className="sm:hidden text-xs text-[var(--text-dim)] ml-1">({shortRole(x.r)})</span></td>
@@ -356,13 +398,15 @@ export default function LeadersDirectory({
                 const primaries = mode === "asof" ? (r?.primaries ?? []) : (e.current ? [{ name: e.current.name, role: e.current.role, start: e.current.since ?? null }] : []);
                 const seconds = mode === "asof" ? (r?.seconds ?? []) : (e.current?.second ? [{ name: e.current.second.name, role: e.current.second.role }] : []);
                 const sinceVal = primaries[0]?.start ?? "";
+                const displayName = mode === "asof" ? nameAt(e, midMonth) : e.name;
                 return (
                   <tr key={`${e.type}:${e.slug}`} className="border-b border-[var(--border)] hover:bg-[var(--bg-card-hover)] transition-colors">
                     <td className="px-2 sm:px-4 py-3">
-                      <Flag slug={e.slug} />
+                      <FlagView view={flagFor(e, mode === "asof" ? midMonth : null)} />
                       {e.href ? (
-                        <Link href={e.href} className="font-semibold hover:text-[var(--accent)] transition-colors">{e.name}</Link>
-                      ) : <span className="font-semibold">{e.name}</span>}
+                        <Link href={e.href} className="font-semibold hover:text-[var(--accent)] transition-colors">{displayName}</Link>
+                      ) : <span className="font-semibold">{displayName}</span>}
+                      {e.yearRange ? <span className="ml-1 text-xs text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{e.yearRange}</span> : null}
                     </td>
                     <td className="hidden md:table-cell px-4 py-3 text-[var(--text-muted)] text-xs">{regionLabel(e)}</td>
                     <td className="px-2 sm:px-4 py-3 text-right font-semibold" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>{fmtScore(e.scoreTotal)}</td>

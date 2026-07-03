@@ -1,0 +1,42 @@
+[
+  {
+    "name": "👑 Francis Stephen",
+    "role": "Grand Duke",
+    "start": "1737-07-09",
+    "end": "1765-08-18",
+    "current": false,
+    "tenure": "28y 1m 9d",
+    "party": null,
+    "era": "Grand Duchy of Tuscany"
+  },
+  {
+    "name": "👑 Peter Leopold",
+    "role": "Grand Duke",
+    "start": "1765-08-18",
+    "end": "1790-07-22",
+    "current": false,
+    "tenure": "24y 11m 4d",
+    "party": null,
+    "era": "Grand Duchy of Tuscany"
+  },
+  {
+    "name": "👑 Ferdinand III",
+    "role": "Grand Duke",
+    "start": "1790-07-22",
+    "end": "1824-06-18",
+    "current": false,
+    "tenure": "33y 10m 27d",
+    "party": null,
+    "era": "Grand Duchy of Tuscany"
+  },
+  {
+    "name": "👑 Leopold II",
+    "role": "Grand Duke",
+    "start": "1824-06-18",
+    "end": "1859-04-27",
+    "current": false,
+    "tenure": "34y 10m 9d",
+    "party": null,
+    "era": "Grand Duchy of Tuscany"
+  }
+]

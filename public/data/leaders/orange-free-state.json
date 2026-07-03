@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Josias Philip Hoffman",
+    "role": "President",
+    "start": "1854-01-01",
+    "end": "1855-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level dates",
+    "era": "Orange Free State"
+  },
+  {
+    "name": "Jacobus Boshof",
+    "role": "President",
+    "start": "1855-01-01",
+    "end": "1859-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level dates",
+    "era": "Orange Free State"
+  },
+  {
+    "name": "Marthinus Wessel Pretorius",
+    "role": "President",
+    "start": "1859-01-01",
+    "end": "1864-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level dates",
+    "era": "Orange Free State"
+  },
+  {
+    "name": "Jan Brand",
+    "role": "President",
+    "start": "1864-01-01",
+    "end": "1889-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level dates",
+    "era": "Orange Free State"
+  },
+  {
+    "name": "Francis William Reitz",
+    "role": "President",
+    "start": "1889-01-01",
+    "end": "1896-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level dates",
+    "era": "Orange Free State"
+  },
+  {
+    "name": "Marthinus Theunis Steyn",
+    "role": "President",
+    "start": "1896-01-01",
+    "end": "1902-05-31",
+    "current": false,
+    "tenure": "6y 4m 30d",
+    "party": "year-level dates",
+    "era": "Orange Free State"
+  }
+]

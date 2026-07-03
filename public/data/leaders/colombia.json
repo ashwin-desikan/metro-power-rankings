@@ -1,65 +1,5 @@
 [
   {
-    "name": "Simón Bolívar",
-    "role": "President",
-    "start": "1819-12-17",
-    "end": "1830-05-04",
-    "current": false,
-    "tenure": "1819–1830",
-    "party": "Independent",
-    "era": "Gran Colombia"
-  },
-  {
-    "name": "Francisco de Paula Santander",
-    "role": "President",
-    "start": "1821-10-03",
-    "end": "1827-01-01",
-    "current": false,
-    "tenure": "1821–1827",
-    "party": "Independent",
-    "era": "Gran Colombia"
-  },
-  {
-    "name": "Joaquín de Mosquera",
-    "role": "President",
-    "start": "1830-05-04",
-    "end": "1830-09-04",
-    "current": false,
-    "tenure": "1830–1830",
-    "party": "Independent",
-    "era": "Gran Colombia"
-  },
-  {
-    "name": "Domingo Caicedo",
-    "role": "President",
-    "start": "1830-09-04",
-    "end": "1830-09-04",
-    "current": false,
-    "tenure": "1830–1830",
-    "party": "Independent",
-    "era": "Gran Colombia"
-  },
-  {
-    "name": "Rafael Urdaneta",
-    "role": "President",
-    "start": "1830-09-05",
-    "end": "1831-04-30",
-    "current": false,
-    "tenure": "1830–1831",
-    "party": "Independent",
-    "era": "Gran Colombia"
-  },
-  {
-    "name": "Domingo Caicedo",
-    "role": "President",
-    "start": "1831-04-30",
-    "end": "1831-11-21",
-    "current": false,
-    "tenure": "1831–1831",
-    "party": "Independent",
-    "era": "Gran Colombia"
-  },
-  {
     "name": "José María Obando",
     "role": "President",
     "start": "1831-11-21",
@@ -67,7 +7,7 @@
     "current": false,
     "tenure": "1831–1832",
     "party": "Liberal",
-    "era": "Gran Colombia"
+    "era": "Republic of New Granada"
   },
   {
     "name": "Francisco de Paula Santander",

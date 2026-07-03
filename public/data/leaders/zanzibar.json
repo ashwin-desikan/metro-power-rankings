@@ -1,0 +1,22 @@
+[
+  {
+    "name": "👑 Jamshid bin Abdullah",
+    "role": "Sultan",
+    "start": "1963-07-01",
+    "end": "1964-01-12",
+    "current": false,
+    "tenure": "6m 11d",
+    "party": "overthrown in revolution",
+    "era": "Sultanate of Zanzibar"
+  },
+  {
+    "name": "Abeid Karume",
+    "role": "President",
+    "start": "1964-01-12",
+    "end": "1964-04-26",
+    "current": false,
+    "tenure": "3m 14d",
+    "party": "ASP; united with Tanganyika",
+    "era": "People’s Republic of Zanzibar"
+  }
+]

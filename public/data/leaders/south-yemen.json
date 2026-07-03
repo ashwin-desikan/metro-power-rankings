@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Qahtan al-Shaabi",
+    "role": "President",
+    "start": "1967-11-30",
+    "end": "1969-06-22",
+    "current": false,
+    "tenure": "1y 6m 23d",
+    "party": "NLF",
+    "era": "People’s Democratic Republic of Yemen"
+  },
+  {
+    "name": "Salim Rubai Ali",
+    "role": "Chairman",
+    "start": "1969-06-24",
+    "end": "1978-06-26",
+    "current": false,
+    "tenure": "9y 2d",
+    "party": "executed",
+    "era": "People’s Democratic Republic of Yemen"
+  },
+  {
+    "name": "Abdul Fattah Ismail",
+    "role": "General Secretary",
+    "start": "1978-12-27",
+    "end": "1980-04-21",
+    "current": false,
+    "tenure": "1y 3m 25d",
+    "party": "YSP",
+    "era": "People’s Democratic Republic of Yemen"
+  },
+  {
+    "name": "Ali Nasir Muhammad",
+    "role": "Chairman",
+    "start": "1980-04-21",
+    "end": "1986-01-24",
+    "current": false,
+    "tenure": "5y 9m 3d",
+    "party": "YSP",
+    "era": "People’s Democratic Republic of Yemen"
+  },
+  {
+    "name": "Haidar Abu Bakr al-Attas",
+    "role": "President",
+    "start": "1986-02-08",
+    "end": "1990-05-22",
+    "current": false,
+    "tenure": "4y 3m 14d",
+    "party": "YSP; unified with the North",
+    "era": "People’s Democratic Republic of Yemen"
+  }
+]

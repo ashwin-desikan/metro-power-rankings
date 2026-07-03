@@ -1,0 +1,152 @@
+[
+  {
+    "name": "👑 Borso d'Este",
+    "role": "Duke",
+    "start": "1452-01-01",
+    "end": "1471-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Modena"
+  },
+  {
+    "name": "👑 Ercole I d'Este",
+    "role": "Duke",
+    "start": "1471-01-01",
+    "end": "1505-01-01",
+    "current": false,
+    "tenure": "34y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Modena"
+  },
+  {
+    "name": "👑 Alfonso I d'Este",
+    "role": "Duke",
+    "start": "1505-01-01",
+    "end": "1534-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Modena"
+  },
+  {
+    "name": "👑 Ercole II d'Este",
+    "role": "Duke",
+    "start": "1534-01-01",
+    "end": "1559-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Modena"
+  },
+  {
+    "name": "👑 Alfonso II d'Este",
+    "role": "Duke",
+    "start": "1559-01-01",
+    "end": "1597-01-01",
+    "current": false,
+    "tenure": "38y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Modena"
+  },
+  {
+    "name": "👑 Cesare d'Este",
+    "role": "Duke",
+    "start": "1597-01-01",
+    "end": "1628-01-01",
+    "current": false,
+    "tenure": "31y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Modena"
+  },
+  {
+    "name": "👑 Alfonso III d'Este",
+    "role": "Duke",
+    "start": "1628-01-01",
+    "end": "1629-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Modena"
+  },
+  {
+    "name": "👑 Francesco I d'Este",
+    "role": "Duke",
+    "start": "1629-01-01",
+    "end": "1658-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Modena"
+  },
+  {
+    "name": "👑 Alfonso IV d'Este",
+    "role": "Duke",
+    "start": "1658-01-01",
+    "end": "1662-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Modena"
+  },
+  {
+    "name": "👑 Francesco II d'Este",
+    "role": "Duke",
+    "start": "1662-01-01",
+    "end": "1694-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Modena"
+  },
+  {
+    "name": "👑 Rinaldo d'Este",
+    "role": "Duke",
+    "start": "1694-01-01",
+    "end": "1737-01-01",
+    "current": false,
+    "tenure": "43y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Modena"
+  },
+  {
+    "name": "👑 Francesco III d'Este",
+    "role": "Duke",
+    "start": "1737-01-01",
+    "end": "1780-01-01",
+    "current": false,
+    "tenure": "43y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Modena"
+  },
+  {
+    "name": "👑 Ercole III d'Este",
+    "role": "Duke",
+    "start": "1780-01-01",
+    "end": "1814-01-01",
+    "current": false,
+    "tenure": "34y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Modena"
+  },
+  {
+    "name": "👑 Francis IV (Austria-Este)",
+    "role": "Duke",
+    "start": "1814-01-01",
+    "end": "1846-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "year-level dates",
+    "era": "Duchy of Modena"
+  },
+  {
+    "name": "👑 Francis V",
+    "role": "Duke",
+    "start": "1846-01-01",
+    "end": "1859-06-20",
+    "current": false,
+    "tenure": "13y 5m 19d",
+    "party": "year-level dates",
+    "era": "Duchy of Modena"
+  }
+]

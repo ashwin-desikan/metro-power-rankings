@@ -432,5 +432,40 @@
       "country": "Kuwait"
     },
     "history": []
+  },
+  "League of Nations": {
+    "office": "Secretary-General",
+    "history": [
+      {
+        "name": "Eric Drummond",
+        "role": "Secretary-General",
+        "start": "1920-01-10",
+        "end": "1933-06-30",
+        "current": false,
+        "tenure": null,
+        "party": "United Kingdom",
+        "era": null
+      },
+      {
+        "name": "Joseph Avenol",
+        "role": "Secretary-General",
+        "start": "1933-07-03",
+        "end": "1940-08-31",
+        "current": false,
+        "tenure": null,
+        "party": "France",
+        "era": null
+      },
+      {
+        "name": "Seán Lester",
+        "role": "Secretary-General",
+        "start": "1940-08-31",
+        "end": "1946-04-18",
+        "current": false,
+        "tenure": null,
+        "party": "Ireland",
+        "era": null
+      }
+    ]
   }
 }
