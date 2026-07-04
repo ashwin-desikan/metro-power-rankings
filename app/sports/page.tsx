@@ -5,9 +5,10 @@ import Link from "next/link";
 import { AUTHOR, BASE_URL, PUBLISHER, SITE_NAME, serializeJsonLd } from "@/lib/seo";
 import HubNav from "@/app/teams/HubNav";
 import SportsMapToggle from "./SportsMapToggle";
+import SportsLiveBoard from "./SportsLiveBoard";
 import { type TeamMarker } from "./SportsExplorer";
-import { leagueStatusFor, clubFootballStatus, LeagueStatusTag, type LeagueStatus } from "@/lib/leagueStatus";
-import { catalogByFamily, type CatalogEntry, type SportFamily } from "@/lib/sportsCatalog";
+import { leagueStatusFor, clubFootballStatus } from "@/lib/leagueStatus";
+import { catalogByFamily } from "@/lib/sportsCatalog";
 
 const PAGE_PATH = "/sports";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
@@ -30,12 +31,6 @@ function loadJson<T>(rel: string): T {
 
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 
-const FAMILY_EMOJI: Record<SportFamily, string> = {
-  Olympics: "🏅", Football: "⚽", Motorsport: "🏎️", Golf: "⛳", Tennis: "🎾", Gridiron: "🏈",
-  Basketball: "🏀", Baseball: "⚾", Hockey: "🏒", Cricket: "🏏", "Rugby Union": "🏉",
-  "Rugby League": "🏉", "Aussie Rules": "🏉", Handball: "🤾", Volleyball: "🏐",
-};
-
 type Feature = { emoji: string; title: string; href: string; desc: string };
 const FEATURES: Feature[] = [
   { emoji: "📊", title: "Live Standings", href: "/sports/standings", desc: "Every in-season league table on Earth, refreshed live and grouped by sport." },
@@ -47,22 +42,16 @@ const FEATURES: Feature[] = [
   { emoji: "🏙️", title: "The Team That Wins the City", href: "/top-teams", desc: "One defining club per metro — the one whose loss would change what the metro is." },
 ];
 
-const LIVE_TONES = new Set(["regular", "playoffs", "worldcup"]);
-function statusOf(e: CatalogEntry): LeagueStatus | null {
-  return e.href === "/teams/football" ? clubFootballStatus() : leagueStatusFor(e.href);
-}
-
 export default function SportsPage() {
   const teams = loadJson<TeamMarker[]>("all-teams.json");
   const summary = loadJson<Summary>("league-summary.json");
-  const groups = catalogByFamily(true);
-  const entries = groups.flatMap((g) => g.entries);
-  const countByHref = new Map<string, number>();
-  for (const c of summary.league_cards) if (c.page) countByHref.set(c.page, c.team_count);
-
-  const live = entries
-    .map((e) => ({ e, s: statusOf(e) }))
-    .filter((x) => x.s && LIVE_TONES.has(x.s.tone));
+  const allGroups = catalogByFamily(true);
+  const sportCount = allGroups.length;
+  const hubCount = allGroups.flatMap((g) => g.entries).length;
+  const liveCount = catalogByFamily(false)
+    .flatMap((g) => g.entries)
+    .filter((e) => { const s = e.href === "/teams/football" ? clubFootballStatus() : leagueStatusFor(e.href); return !!s && s.tone !== "offseason"; })
+    .length;
 
   const ld = {
     "@context": "https://schema.org", "@type": "CollectionPage",
@@ -94,41 +83,28 @@ export default function SportsPage() {
             trophy cabinet. One hub for the whole world of sport, from the Zone Zero Cup to tonight&rsquo;s standings.
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-[var(--text-muted)] mt-5" style={mono}>
-            <div><strong className="text-[var(--text)]">{groups.length}</strong> sports</div>
-            <div><strong className="text-[var(--text)]">{entries.length}</strong> league &amp; nation hubs</div>
-            <div><strong style={{ color: "#10b981" }}>{live.length}</strong> live right now</div>
+            <div><strong className="text-[var(--text)]">{sportCount}</strong> sports</div>
+            <div><strong className="text-[var(--text)]">{hubCount}</strong> league &amp; nation hubs</div>
+            <div><strong style={{ color: "#10b981" }}>{liveCount}</strong> live right now</div>
             <Link href="/sports/about" className="hover:text-[var(--accent)] transition-colors">What Zone Zero is &rarr;</Link>
           </div>
         </header>
 
         <HubNav items={[
-          { label: "Live right now", href: "#live" },
+          { label: "The live board", href: "#live" },
           { label: "Indices & features", href: "#indices" },
-          { label: "All sports", href: "#sports" },
           { label: "The map", href: "#map" },
         ]} />
 
-        {/* Live right now */}
-        {live.length > 0 && (
-          <section id="live" className="mb-12 scroll-mt-24">
-            <div className="flex items-baseline justify-between flex-wrap gap-2 mb-4">
-              <div>
-                <p className="text-[11px] uppercase tracking-widest mb-1" style={{ ...mono, color: "#10b981" }}>🟢 Live right now</p>
-                <h2 className="text-2xl font-bold">In season this week</h2>
-              </div>
-              <Link href="/sports/standings" className="text-xs hover:text-[var(--accent)] transition-colors" style={{ ...mono, color: "var(--accent)" }}>Open live standings &rarr;</Link>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {live.map(({ e, s }) => (
-                <Link key={e.href} href={e.href} className="inline-flex items-center gap-2 rounded-lg border px-3 py-2 transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
-                  <span aria-hidden>{FAMILY_EMOJI[e.family]}</span>
-                  <span className="text-sm font-medium">{e.label}</span>
-                  {s && <LeagueStatusTag status={s} />}
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
+        {/* The Live Hub — every league, live status at a glance */}
+        <section id="live" className="mb-12 scroll-mt-24">
+          <div className="mb-4">
+            <p className="text-[11px] uppercase tracking-widest mb-2" style={{ ...mono, color: "#10b981" }}>🟢 The live board</p>
+            <h2 className="text-2xl font-bold mb-2">Every league, live at a glance</h2>
+            <p className="text-[15px] text-[var(--text-muted)] max-w-3xl">The full directory of league and national-team hubs, colour-coded by season. Green is in season, amber is playoffs, purple is the World Cup.</p>
+          </div>
+          <SportsLiveBoard />
+        </section>
 
         {/* Indices & features */}
         <section id="indices" className="mb-12 scroll-mt-24">
@@ -159,52 +135,6 @@ export default function SportsPage() {
                 </div>
                 <p className="text-[13px] text-[var(--text-muted)] leading-relaxed">{f.desc}</p>
               </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* All sports — the full league directory */}
-        <section id="sports" className="mb-12 scroll-mt-24">
-          <div className="mb-5">
-            <p className="text-[11px] uppercase tracking-widest mb-2" style={{ ...mono, color: "var(--accent)" }}>All sports</p>
-            <h2 className="text-2xl font-bold mb-2">Every league &amp; nation hub</h2>
-            <p className="text-[15px] text-[var(--text-muted)] max-w-3xl">The complete directory, sport by sport. A green dot means in season now; a star marks the marquee hubs.</p>
-          </div>
-          <div className="space-y-7">
-            {groups.map((g) => (
-              <div key={g.family}>
-                <div className="flex items-center gap-2 mb-2.5">
-                  <span className="text-lg leading-none" aria-hidden>{FAMILY_EMOJI[g.family]}</span>
-                  <h3 className="text-sm font-semibold uppercase tracking-wider" style={{ ...mono, color: "var(--text-muted)" }}>{g.family}</h3>
-                </div>
-                <div className="grid gap-2" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(215px, 1fr))" }}>
-                  {g.entries.map((e) => {
-                    const s = statusOf(e);
-                    const isLive = !!s && LIVE_TONES.has(s.tone);
-                    const count = countByHref.get(e.href);
-                    const coming = e.status === "coming";
-                    const inner = (
-                      <>
-                        <div className="flex items-center gap-1.5 min-w-0">
-                          {isLive && <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: "#10b981" }} aria-hidden />}
-                          {e.marquee && <span className="text-[10px] flex-shrink-0" style={{ color: "#d4af37" }} aria-hidden>★</span>}
-                          <span className="text-sm font-medium truncate">{e.label}</span>
-                        </div>
-                        <div className="flex items-center gap-2 mt-0.5">
-                          <span className="text-[11px] text-[var(--text-dim)] truncate">{e.sport}</span>
-                          {count ? <span className="text-[10px] text-[var(--text-dim)] ml-auto flex-shrink-0" style={mono}>{count}</span> : null}
-                          {coming ? <span className="text-[10px] text-[var(--text-dim)] ml-auto flex-shrink-0" style={mono}>soon</span> : null}
-                        </div>
-                      </>
-                    );
-                    return coming ? (
-                      <div key={e.href} className="rounded-lg border px-3 py-2 opacity-60" style={{ borderColor: "var(--border)", background: "var(--bg-card)" }}>{inner}</div>
-                    ) : (
-                      <Link key={e.href} href={e.href} className="rounded-lg border px-3 py-2 transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]" style={{ borderColor: "var(--border)", background: "var(--bg-card)" }}>{inner}</Link>
-                    );
-                  })}
-                </div>
-              </div>
             ))}
           </div>
         </section>
