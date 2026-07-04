@@ -219,16 +219,16 @@ const ATLAS: AtlasCard[] = [
 
 // Masthead quick-launch: every Atlas section as a badge tile, plus explicit
 // entries for the kids games and the arcade games.
-const MASTHEAD_LAUNCH: { emoji: string; label: string; href: string }[] = [
-  { emoji: '🏙️', label: 'Rankings', href: '/rankings' },
-  { emoji: '🗺️', label: 'Geography', href: '/geography' },
-  { emoji: '🏟️', label: 'Sports', href: '/sports' },
-  { emoji: '🎵', label: 'Sound', href: '/sound' },
-  { emoji: '👑', label: 'People', href: '/power' },
-  { emoji: '✍️', label: 'Essays', href: '/deep-dives' },
-  { emoji: '🏅', label: 'Badges', href: '/badges' },
-  { emoji: '🧸', label: 'Kids Games', href: '/play' },
-  { emoji: '🕹️', label: 'Games', href: '/play/arcade' },
+const MASTHEAD_LAUNCH: { emoji: string; label: string; href: string; blurb: string; tip: string }[] = [
+  { emoji: '🏙️', label: 'Rankings', href: '/rankings', blurb: 'Metros, scored', tip: 'The Global Metro Power Rankings: every major urban area scored across power, sport, and culture.' },
+  { emoji: '🗺️', label: 'Geography', href: '/geography', blurb: 'Atlas of places', tip: "Maps and atlases of the world's places, from metro boundaries to the geography of power." },
+  { emoji: '🏟️', label: 'Sports', href: '/sports', blurb: 'Teams, live scores', tip: 'The Zone Zero sports hub: leagues, teams, live standings, champions, and cross-sport rankings.' },
+  { emoji: '🎵', label: 'Sound', href: '/sound', blurb: 'Where hits come from', tip: "The Sound of the Metros: cities ranked by their artists' chart success since 1958." },
+  { emoji: '👑', label: 'People', href: '/power', blurb: 'The Nowhere 100', tip: 'The most powerful people on the planet, ranked and tied to their home metro and jurisdiction.' },
+  { emoji: '✍️', label: 'Essays', href: '/deep-dives', blurb: 'Long-form dives', tip: 'Deep dives and essays on cities, power, and the ideas behind the rankings.' },
+  { emoji: '🏅', label: 'Badges', href: '/badges', blurb: 'Ranked, reframed', tip: 'Categorical lenses on the same data, from Finance Capitals to Greying Power.' },
+  { emoji: '🧸', label: 'Kids Games', href: '/play', blurb: 'Learn by playing', tip: 'Geography and sports games for kids, including Be-the-Ref and find-the-teams.' },
+  { emoji: '🕹️', label: 'Games', href: '/play/arcade', blurb: 'Test your knowledge', tip: 'The arcade: daily and practice games that test how well you know the world.' },
 ];
 
 const LEAGUES: { name: string; href: string; emoji?: string }[] = [
@@ -350,7 +350,7 @@ export default async function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(dataset) }} />
 
       {/* Masthead — headline + live standings/badges + This Week rail. */}
-      <section className="pt-16 pb-14 px-4 sm:px-6 lg:px-8 border-b" style={{ borderColor: 'var(--border)' }}>
+      <section className="pt-24 sm:pt-20 pb-14 px-4 sm:px-6 lg:px-8 border-b" style={{ borderColor: 'var(--border)' }}>
         <div className="max-w-7xl mx-auto grid gap-10 lg:gap-16" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
           <div>
             <p className="text-xs uppercase tracking-widest mb-3" style={{ ...MONO, color: 'var(--accent)' }}>
@@ -372,11 +372,14 @@ export default async function Home() {
           {/* Explore launcher — quick visual entry to every section + the games. */}
           <div className="h-fit">
             <p className="text-[11px] uppercase tracking-widest mb-3" style={{ ...MONO, color: 'var(--text-muted)' }}>Explore the site</p>
-            <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))' }}>
+            <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))' }}>
               {MASTHEAD_LAUNCH.map((t) => (
-                <Link key={t.href + t.label} href={t.href} className="flex items-center gap-2.5 rounded-lg border px-3 py-2.5 transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
-                  <span className="text-lg leading-none" aria-hidden>{t.emoji}</span>
-                  <span className="text-[13px] font-medium">{t.label}</span>
+                <Link key={t.href + t.label} href={t.href} title={t.tip} className="flex items-start gap-2.5 rounded-lg border px-3 py-2.5 transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                  <span className="text-lg leading-none mt-0.5" aria-hidden>{t.emoji}</span>
+                  <span className="min-w-0">
+                    <span className="block text-[13px] font-medium leading-tight">{t.label}</span>
+                    <span className="block text-[11px] mt-0.5 leading-snug" style={{ color: 'var(--text-muted)' }}>{t.blurb}</span>
+                  </span>
                 </Link>
               ))}
             </div>
@@ -419,9 +422,11 @@ export default async function Home() {
                 </div>
               </div>
             )}
-              <Link href="/sound/charts" className="inline-flex items-center gap-1.5 mt-4 text-[13px]" style={{ ...MONO, color: 'var(--accent)' }}>
-                🎵 Live Music Charts <span aria-hidden>→</span>
-              </Link>
+              <div className="mt-4 pt-4 border-t" style={{ borderColor: 'var(--border)' }}>
+                <Link href="/sound/charts" className="inline-flex items-center gap-1.5 text-[13px]" style={{ ...MONO, color: 'var(--accent)' }}>
+                  🎵 Live Music Charts <span aria-hidden>→</span>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

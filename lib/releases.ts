@@ -18,6 +18,13 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-07-04",
+    headline: "Homepage polish: clearer intro and roomier layout",
+    items: [
+      "The homepage masthead now clears the navigation with room to breathe on mobile, each Explore shortcut gains a one-line description with a fuller tooltip, and the live sports and live music links are cleanly separated.",
+    ],
+  },
+  {
     date: "2026-07-03",
     headline: "The Power Atlas: 235 years of world power, ranked",
     items: [
