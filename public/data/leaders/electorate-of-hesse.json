@@ -1,0 +1,32 @@
+[
+ {
+  "name": "👑 William I",
+  "role": "Elector",
+  "start": "1803-01-01",
+  "end": "1821-02-27",
+  "current": false,
+  "tenure": "18y 0m",
+  "party": "year-level backbone",
+  "era": "Electorate of Hesse"
+ },
+ {
+  "name": "👑 William II",
+  "role": "Elector",
+  "start": "1821-02-27",
+  "end": "1847-11-20",
+  "current": false,
+  "tenure": "26y 0m",
+  "party": "year-level backbone",
+  "era": "Electorate of Hesse"
+ },
+ {
+  "name": "👑 Frederick William",
+  "role": "Elector",
+  "start": "1847-11-20",
+  "end": "1866-06-20",
+  "current": false,
+  "tenure": "19y 0m",
+  "party": "year-level backbone",
+  "era": "Electorate of Hesse"
+ }
+]

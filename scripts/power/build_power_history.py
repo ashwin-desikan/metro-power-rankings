@@ -182,24 +182,55 @@ def main():
     1800:{'Great Power':['france','united-kingdom','russia','austria','china'],'Middle Power':['germany','spain','turkey','united-states','india'],'Regional':['netherlands','portugal','sweden','two-sicilies','denmark','iran']},
     1812:{'Superpower':['france'],'Great Power':['united-kingdom','russia','austria','china'],'Middle Power':['germany','turkey','spain','united-states','india'],'Regional':['netherlands','portugal','sweden','two-sicilies','denmark','iran']},
     }
+    # Presence: every entity we have ruler dates for, to list all present states
+    # each year even without a CINC score. age = earliest ruler start (nation age).
+    import glob
+    def dkey(v):
+        if not v: return None
+        neg = v[0] == '-'; t = v[1:] if neg else v
+        pp = t.split('-'); val = int(pp[0]) * 10000 + int(pp[1]) * 100 + int(pp[2])
+        return -val if neg else val
+    DROP_P = {'england','scotland','wales','northern-ireland','puerto-rico','guam','american-samoa','us-virgin-islands','northern-mariana-islands','hong-kong','greenland','_current','_names','_defunct'}
+    spans = {}; age = {}
+    for f in glob.glob(os.path.join(CDIR, 'leaders', '*.json')):
+        slug = os.path.basename(f)[:-5]
+        if slug in DROP_P: continue
+        try: rows = json.load(open(f))
+        except Exception: continue
+        if not isinstance(rows, list): continue
+        sp = []
+        for r in rows:
+            st = r.get('start'); sdk = dkey(st) if st else None
+            if sdk is None: continue
+            en = r.get('end'); edk = dkey(en) if en else 10**18
+            sp.append((sdk, edk))
+        if sp: spans[slug] = sp; age[slug] = min(x for x, _ in sp)
+
     byYear={}
     for year in range(1789,2027):
         if year<1816:
             arr=[]; kf=PRE[max(y for y in PRE if y<=year)]
             for tname,slugs in kf.items():
                 for s in slugs: arr.append({"slug":s,"share":None,"rank":None,"tier":tname,"lat":None,"rec":None})
-            byYear[year]=arr; continue
-        comp=headline(year); lat=latent(min(year,2016)); rec=recognized(min(year,2016))
-        b=max(0.0,min(1.0,(year-1990)/(2026-1990)))
-        slugs=set(comp)|(set(CS) if b>0 else set())
-        blend={s:(1-b)*comp.get(s,0)+b*CS.get(s,0) for s in slugs}
-        tt=sum(blend.values()) or 1; sh={s:v/tt for s,v in blend.items() if v>0}
-        rank=sorted(sh.items(),key=lambda x:-x[1]); leader=rank[0][1] if rank else 0
-        arr=[]
-        for i,(s,v) in enumerate(rank,1):
-            arr.append({"slug":s,"share":round(v,5),"rank":i,"tier":tier(v,leader),
-                        "lat":(round(lat[s],5) if s in lat else None),
-                        "rec":(round(rec[s],5) if s in rec else None)})
+        else:
+            comp=headline(year); lat=latent(min(year,2016)); rec=recognized(min(year,2016))
+            b=max(0.0,min(1.0,(year-1990)/(2026-1990)))
+            slugs=set(comp)|(set(CS) if b>0 else set())
+            blend={s:(1-b)*comp.get(s,0)+b*CS.get(s,0) for s in slugs}
+            tt=sum(blend.values()) or 1; sh={s:v/tt for s,v in blend.items() if v>0}
+            rank=sorted(sh.items(),key=lambda x:-x[1]); leader=rank[0][1] if rank else 0
+            arr=[]
+            for i,(s,v) in enumerate(rank,1):
+                arr.append({"slug":s,"share":round(v,5),"rank":i,"tier":tier(v,leader),
+                            "lat":(round(lat[s],5) if s in lat else None),
+                            "rec":(round(rec[s],5) if s in rec else None)})
+        # Append every other entity present that year (ruler dates), unscored, oldest first.
+        existing={r["slug"] for r in arr}
+        ys=year*10000+101; ye=year*10000+1231
+        present=[slug for slug,sp in spans.items() if slug not in existing and any(x<=ye and e>=ys for (x,e) in sp)]
+        present.sort(key=lambda s: age[s])
+        for slug in present:
+            arr.append({"slug":slug,"share":None,"rank":None,"tier":None,"lat":None,"rec":None})
         byYear[year]=arr
     out={"meta":{"generated":str(date.today()),
         "method":"Hegemony-aware CINC v6 + Maddison 2023 + reach; 1990-2026 blended into the country score (exact 2026). LATENT = material mass; RECOGNIZED = spending + productive economy + reach + curated status (P5 seat, nuclear, Concert recognition, bloc leadership).",

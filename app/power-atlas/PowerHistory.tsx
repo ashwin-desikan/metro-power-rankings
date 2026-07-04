@@ -82,6 +82,8 @@ export default function PowerHistory({ data }: { data: Data }) {
     return scored.map((x, i) => ({ slug: x.slug, share: x.v, rank: i + 1, tier: tier(x.v, leader) }));
   }, [byYear, year, lens, metricOf]);
   const materialUnavailable = lens !== "power" && displayRows.length === 0;
+  // Entities active this year with no measured score (unscored present states), oldest first.
+  const presentUnranked = useMemo(() => (lens === "power" ? displayRows.filter((r) => r.tier == null) : []), [displayRows, lens]);
 
   const grouped = useMemo(() => {
     const g: Record<string, typeof displayRows> = {};
@@ -218,6 +220,32 @@ export default function PowerHistory({ data }: { data: Data }) {
               </div>
             );
           })}
+          {presentUnranked.length > 0 && (
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ background: "var(--text-dim)" }} />
+                <h3 className="text-sm font-semibold tracking-wide uppercase" style={{ color: "var(--text-dim)", fontFamily: "'JetBrains Mono', monospace" }}>Also present</h3>
+                <span className="text-xs text-[var(--text-dim)]">{presentUnranked.length}</span>
+              </div>
+              <p className="text-xs text-[var(--text-dim)] mb-2">States active this year with no measured power score, oldest nation first.</p>
+              <div className="flex flex-wrap gap-1.5">
+                {presentUnranked.map((r) => {
+                  const l = labels[r.slug];
+                  const nm = label(r.slug);
+                  const modern = l && nm === l.base;
+                  return (
+                    <span key={r.slug} className="inline-flex items-center gap-1.5 rounded px-2 py-1 border text-xs" style={{ borderColor: "var(--border)", background: "var(--bg-card)" }}>
+                      {l?.flag && modern
+                        ? <img src={l.flag} alt="" width={16} height={12} className="rounded-sm flex-shrink-0" style={{ objectFit: "cover" }} />
+                        : <span className="text-[var(--text-dim)]" aria-hidden>{modern ? "" : "⌛"}</span>}
+                      {l?.href ? <a href={l.href} className="hover:text-[var(--accent)] transition-colors">{nm}</a> : <span>{nm}</span>}
+                      <span className="text-[var(--text-dim)]">—</span>
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </div>
       )}
 

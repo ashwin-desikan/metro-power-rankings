@@ -1,0 +1,52 @@
+[
+ {
+  "name": "👑 Friedrich Franz I",
+  "role": "Grand Duke",
+  "start": "1815-01-01",
+  "end": "1837-02-01",
+  "current": false,
+  "tenure": "22y 0m",
+  "party": "year-level backbone",
+  "era": "Mecklenburg-Schwerin"
+ },
+ {
+  "name": "👑 Paul Friedrich",
+  "role": "Grand Duke",
+  "start": "1837-02-01",
+  "end": "1842-03-07",
+  "current": false,
+  "tenure": "5y 0m",
+  "party": "year-level backbone",
+  "era": "Mecklenburg-Schwerin"
+ },
+ {
+  "name": "👑 Friedrich Franz II",
+  "role": "Grand Duke",
+  "start": "1842-03-07",
+  "end": "1883-04-15",
+  "current": false,
+  "tenure": "41y 0m",
+  "party": "year-level backbone",
+  "era": "Mecklenburg-Schwerin"
+ },
+ {
+  "name": "👑 Friedrich Franz III",
+  "role": "Grand Duke",
+  "start": "1883-04-15",
+  "end": "1897-04-10",
+  "current": false,
+  "tenure": "14y 0m",
+  "party": "year-level backbone",
+  "era": "Mecklenburg-Schwerin"
+ },
+ {
+  "name": "👑 Friedrich Franz IV",
+  "role": "Grand Duke",
+  "start": "1897-04-10",
+  "end": "1918-11-14",
+  "current": false,
+  "tenure": "21y 0m",
+  "party": "year-level backbone",
+  "era": "Mecklenburg-Schwerin"
+ }
+]

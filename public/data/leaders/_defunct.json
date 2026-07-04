@@ -383,5 +383,26 @@
   "start": "1358",
   "end": "1808",
   "href": "https://en.wikipedia.org/wiki/Republic_of_Ragusa"
+ },
+ "electorate-of-hesse": {
+  "name": "Electorate of Hesse",
+  "continent": "Europe",
+  "start": "1803",
+  "end": "1866",
+  "href": "https://en.wikipedia.org/wiki/Electorate_of_Hesse"
+ },
+ "grand-duchy-of-hesse": {
+  "name": "Grand Duchy of Hesse",
+  "continent": "Europe",
+  "start": "1806",
+  "end": "1918",
+  "href": "https://en.wikipedia.org/wiki/Grand_Duchy_of_Hesse"
+ },
+ "mecklenburg-schwerin": {
+  "name": "Mecklenburg-Schwerin",
+  "continent": "Europe",
+  "start": "1815",
+  "end": "1918",
+  "href": "https://en.wikipedia.org/wiki/List_of_rulers_of_Mecklenburg"
  }
 }

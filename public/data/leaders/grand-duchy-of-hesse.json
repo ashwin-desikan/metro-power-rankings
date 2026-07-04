@@ -1,0 +1,52 @@
+[
+ {
+  "name": "👑 Ludwig I",
+  "role": "Grand Duke",
+  "start": "1806-08-14",
+  "end": "1830-04-06",
+  "current": false,
+  "tenure": "24y 0m",
+  "party": "year-level backbone",
+  "era": "Grand Duchy of Hesse"
+ },
+ {
+  "name": "👑 Ludwig II",
+  "role": "Grand Duke",
+  "start": "1830-04-06",
+  "end": "1848-06-16",
+  "current": false,
+  "tenure": "18y 0m",
+  "party": "year-level backbone",
+  "era": "Grand Duchy of Hesse"
+ },
+ {
+  "name": "👑 Ludwig III",
+  "role": "Grand Duke",
+  "start": "1848-03-05",
+  "end": "1877-06-13",
+  "current": false,
+  "tenure": "29y 0m",
+  "party": "year-level backbone",
+  "era": "Grand Duchy of Hesse"
+ },
+ {
+  "name": "👑 Ludwig IV",
+  "role": "Grand Duke",
+  "start": "1877-06-13",
+  "end": "1892-03-13",
+  "current": false,
+  "tenure": "15y 0m",
+  "party": "year-level backbone",
+  "era": "Grand Duchy of Hesse"
+ },
+ {
+  "name": "👑 Ernst Ludwig",
+  "role": "Grand Duke",
+  "start": "1892-03-13",
+  "end": "1918-11-09",
+  "current": false,
+  "tenure": "26y 0m",
+  "party": "year-level backbone",
+  "era": "Grand Duchy of Hesse"
+ }
+]
