@@ -808,45 +808,45 @@
         "team_slug": "argentina",
         "opp_cur_name": "Cape Verde",
         "opp_slug": "cape-verde",
-        "team_score": null,
-        "opp_score": null,
+        "team_score": 3,
+        "opp_score": 2,
         "penalty_kicks": null,
-        "result": null,
+        "result": "W",
         "stadium": "Hard Rock Stadium",
         "stad_country": "United States",
         "stad_metro": "Miami",
         "date": "2026-07-03",
-        "played": false
+        "played": true
       },
       {
         "team_cur_name": "Colombia",
         "team_slug": "colombia",
         "opp_cur_name": "Ghana",
         "opp_slug": "ghana",
-        "team_score": null,
-        "opp_score": null,
+        "team_score": 1,
+        "opp_score": 0,
         "penalty_kicks": null,
-        "result": null,
+        "result": "W",
         "stadium": "Arrowhead Stadium",
         "stad_country": "United States",
         "stad_metro": "Kansas City",
         "date": "2026-07-03",
-        "played": false
+        "played": true
       },
       {
         "team_cur_name": "Egypt",
         "team_slug": "egypt",
         "opp_cur_name": "Australia",
         "opp_slug": "australia",
-        "team_score": null,
-        "opp_score": null,
+        "team_score": 1,
+        "opp_score": 1,
         "penalty_kicks": null,
-        "result": null,
+        "result": "L",
         "stadium": "AT&T Stadium",
         "stad_country": "United States",
         "stad_metro": "Dallas",
         "date": "2026-07-03",
-        "played": false
+        "played": true
       }
     ],
     "Round of 16": [
