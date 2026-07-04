@@ -40,8 +40,8 @@ export default function PowerSection({ series, name }: { series: PowerPoint[]; n
     <section className="mb-12" id="power">
       <div className="flex items-baseline justify-between mb-3 flex-wrap gap-2">
         <h2 className="text-2xl font-bold tracking-tight">Power over time</h2>
-        <Link href="/great-powers" className="text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-          The Great Powers &rarr;
+        <Link href="/power-atlas" className="text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+          The Power Atlas &rarr;
         </Link>
       </div>
 

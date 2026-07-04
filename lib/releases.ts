@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-07-03",
-    headline: "The Great Powers: 235 years of world power, ranked",
+    headline: "The Power Atlas: 235 years of world power, ranked",
     items: [
-      "The Great Powers, a new hub at /great-powers, ranks every country's share of world power year by year from 1789 to today, with latent-versus-recognised lenses and a rising-and-fading divergence view.",
+      "The Power Atlas, a new hub at /power-atlas, ranks every country's share of world power year by year from 1789 to today, with latent-versus-recognised lenses and a rising-and-fading divergence view.",
       "Power now runs through the site: the Leaders time machine sorts any year by its share of world power, the Countries directory gains a power column, and every country page charts its latent-versus-recognised arc.",
       "The Leaders directory goes deep: succession back to each state's founding, defunct empires from Rome and the Ottomans to Prussia and the Soviet Union, plus support for BC dates.",
-      "Also shipped today: cricket and rugby union Greatest Games, a daily Live Charts hub, and a rebuilt directory-forward homepage with the metro rankings now at their own hub, /rankings.",
+      "Also shipped: cricket and rugby union Greatest Games, a daily Live Charts hub, a new Geography hub at /geography, and a rebuilt directory-forward homepage with the metro rankings now at /rankings.",
     ],
   },
   {

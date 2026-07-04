@@ -401,7 +401,148 @@
       "since": "2025-02-15",
       "country": "Djibouti"
     },
-    "history": []
+    "history": [
+      {
+        "name": "Kifle Wodajo",
+        "role": "Secretary-General",
+        "start": "1963-07-21",
+        "end": "1964-07-21",
+        "current": false,
+        "tenure": "1y 0d",
+        "party": "Ethiopia",
+        "era": "Organisation of African Unity"
+      },
+      {
+        "name": "Diallo Telli",
+        "role": "Secretary-General",
+        "start": "1964-07-21",
+        "end": "1972-06-15",
+        "current": false,
+        "tenure": "7y 10m 25d",
+        "party": "Guinea",
+        "era": "Organisation of African Unity"
+      },
+      {
+        "name": "Nzo Ekangaki",
+        "role": "Secretary-General",
+        "start": "1972-06-15",
+        "end": "1974-06-01",
+        "current": false,
+        "tenure": "1y 11m 17d",
+        "party": "Cameroon",
+        "era": "Organisation of African Unity"
+      },
+      {
+        "name": "William Eteki",
+        "role": "Secretary-General",
+        "start": "1974-06-01",
+        "end": "1978-07-21",
+        "current": false,
+        "tenure": "4y 1m 20d",
+        "party": "Cameroon",
+        "era": "Organisation of African Unity"
+      },
+      {
+        "name": "Edem Kodjo",
+        "role": "Secretary-General",
+        "start": "1978-07-21",
+        "end": "1983-06-01",
+        "current": false,
+        "tenure": "4y 10m 11d",
+        "party": "Togo",
+        "era": "Organisation of African Unity"
+      },
+      {
+        "name": "Peter Onu",
+        "role": "Secretary-General",
+        "start": "1983-06-01",
+        "end": "1985-07-01",
+        "current": false,
+        "tenure": "2y 1m 0d",
+        "party": "Nigeria",
+        "era": "Organisation of African Unity"
+      },
+      {
+        "name": "Ide Oumarou",
+        "role": "Secretary-General",
+        "start": "1985-07-01",
+        "end": "1989-09-01",
+        "current": false,
+        "tenure": "4y 2m 0d",
+        "party": "Niger",
+        "era": "Organisation of African Unity"
+      },
+      {
+        "name": "Salim Ahmed Salim",
+        "role": "Secretary-General",
+        "start": "1989-09-01",
+        "end": "2001-09-17",
+        "current": false,
+        "tenure": "12y 16d",
+        "party": "Tanzania",
+        "era": "Organisation of African Unity"
+      },
+      {
+        "name": "Amara Essy",
+        "role": "Secretary-General",
+        "start": "2001-09-17",
+        "end": "2003-09-16",
+        "current": false,
+        "tenure": "1y 11m 30d",
+        "party": "Côte d’Ivoire",
+        "era": "Organisation of African Unity"
+      },
+      {
+        "name": "Alpha Oumar Konaré",
+        "role": "Commission Chairperson",
+        "start": "2003-09-16",
+        "end": "2008-04-28",
+        "current": false,
+        "tenure": "4y 7m 12d",
+        "party": "Mali",
+        "era": "African Union"
+      },
+      {
+        "name": "Jean Ping",
+        "role": "Commission Chairperson",
+        "start": "2008-04-28",
+        "end": "2012-10-15",
+        "current": false,
+        "tenure": "4y 5m 17d",
+        "party": "Gabon",
+        "era": "African Union"
+      },
+      {
+        "name": "Nkosazana Dlamini-Zuma",
+        "role": "Commission Chairperson",
+        "start": "2012-10-15",
+        "end": "2017-03-14",
+        "current": false,
+        "tenure": "4y 4m 27d",
+        "party": "South Africa",
+        "era": "African Union"
+      },
+      {
+        "name": "Moussa Faki",
+        "role": "Commission Chairperson",
+        "start": "2017-03-14",
+        "end": "2025-02-15",
+        "current": false,
+        "tenure": "7y 11m 1d",
+        "party": "Chad",
+        "era": "African Union"
+      },
+      {
+        "name": "Mahmoud Ali Youssouf",
+        "role": "Commission Chairperson",
+        "start": "2025-02-15",
+        "end": null,
+        "current": true,
+        "tenure": "1y 4m 18d",
+        "party": "Djibouti",
+        "era": "African Union"
+      }
+    ]
   },
   "ASEAN": {
     "office": "Secretary-General",
@@ -411,17 +552,249 @@
       "since": "2023-01-01",
       "country": "Cambodia"
     },
-    "history": []
+    "history": [
+      {
+        "name": "Hartono Dharsono",
+        "role": "Secretary-General",
+        "start": "1976-06-07",
+        "end": "1978-02-19",
+        "current": false,
+        "tenure": "1y 8m 12d",
+        "party": "Indonesia",
+        "era": null
+      },
+      {
+        "name": "Umarjadi Notowijono",
+        "role": "Secretary-General",
+        "start": "1978-02-19",
+        "end": "1978-07-10",
+        "current": false,
+        "tenure": "4m 21d",
+        "party": "Indonesia",
+        "era": null
+      },
+      {
+        "name": "Datuk Ali bin Abdullah",
+        "role": "Secretary-General",
+        "start": "1978-07-10",
+        "end": "1980-07-01",
+        "current": false,
+        "tenure": "1y 11m 21d",
+        "party": "Malaysia",
+        "era": null
+      },
+      {
+        "name": "Narciso Reyes",
+        "role": "Secretary-General",
+        "start": "1980-07-01",
+        "end": "1982-07-18",
+        "current": false,
+        "tenure": "2y 17d",
+        "party": "Philippines",
+        "era": null
+      },
+      {
+        "name": "Chan Kai Yau",
+        "role": "Secretary-General",
+        "start": "1982-07-18",
+        "end": "1984-07-16",
+        "current": false,
+        "tenure": "1y 11m 28d",
+        "party": "Singapore",
+        "era": null
+      },
+      {
+        "name": "Phan Wannamethee",
+        "role": "Secretary-General",
+        "start": "1984-07-16",
+        "end": "1986-07-16",
+        "current": false,
+        "tenure": "2y 0d",
+        "party": "Thailand",
+        "era": null
+      },
+      {
+        "name": "Roderick Yong",
+        "role": "Secretary-General",
+        "start": "1986-07-16",
+        "end": "1989-07-16",
+        "current": false,
+        "tenure": "3y 0d",
+        "party": "Brunei",
+        "era": null
+      },
+      {
+        "name": "Rusli Noor",
+        "role": "Secretary-General",
+        "start": "1989-07-16",
+        "end": "1993-01-01",
+        "current": false,
+        "tenure": "3y 5m 16d",
+        "party": "Indonesia",
+        "era": null
+      },
+      {
+        "name": "Ajit Singh",
+        "role": "Secretary-General",
+        "start": "1993-01-01",
+        "end": "1998-01-01",
+        "current": false,
+        "tenure": "5y 0d",
+        "party": "Malaysia",
+        "era": null
+      },
+      {
+        "name": "Rodolfo Severino",
+        "role": "Secretary-General",
+        "start": "1998-01-01",
+        "end": "2003-01-01",
+        "current": false,
+        "tenure": "5y 0d",
+        "party": "Philippines",
+        "era": null
+      },
+      {
+        "name": "Ong Keng Yong",
+        "role": "Secretary-General",
+        "start": "2003-01-01",
+        "end": "2008-01-07",
+        "current": false,
+        "tenure": "5y 6d",
+        "party": "Singapore",
+        "era": null
+      },
+      {
+        "name": "Surin Pitsuwan",
+        "role": "Secretary-General",
+        "start": "2008-01-07",
+        "end": "2013-01-07",
+        "current": false,
+        "tenure": "5y 0d",
+        "party": "Thailand",
+        "era": null
+      },
+      {
+        "name": "Le Luong Minh",
+        "role": "Secretary-General",
+        "start": "2013-01-07",
+        "end": "2018-01-07",
+        "current": false,
+        "tenure": "5y 0d",
+        "party": "Vietnam",
+        "era": null
+      },
+      {
+        "name": "Lim Jock Hoi",
+        "role": "Secretary-General",
+        "start": "2018-01-07",
+        "end": "2023-01-07",
+        "current": false,
+        "tenure": "5y 0d",
+        "party": "Brunei",
+        "era": null
+      },
+      {
+        "name": "Kao Kim Hourn",
+        "role": "Secretary-General",
+        "start": "2023-01-07",
+        "end": null,
+        "current": true,
+        "tenure": "3y 5m 26d",
+        "party": "Cambodia",
+        "era": null
+      }
+    ]
   },
   "Arab League": {
     "office": "Secretary-General",
     "current": {
-      "name": "Nabil Fahmy",
+      "name": "Ahmed Aboul Gheit",
       "role": "Secretary-General",
-      "since": "2026-07-01",
+      "since": "2016-07-03",
       "country": "Egypt"
     },
-    "history": []
+    "history": [
+      {
+        "name": "Abdul Rahman Azzam",
+        "role": "Secretary-General",
+        "start": "1945-03-22",
+        "end": "1952-09-01",
+        "current": false,
+        "tenure": "7y 5m 10d",
+        "party": "Egypt",
+        "era": null
+      },
+      {
+        "name": "Abdul Khalek Hassouna",
+        "role": "Secretary-General",
+        "start": "1952-09-01",
+        "end": "1972-06-01",
+        "current": false,
+        "tenure": "19y 9m 0d",
+        "party": "Egypt",
+        "era": null
+      },
+      {
+        "name": "Mahmoud Riad",
+        "role": "Secretary-General",
+        "start": "1972-06-01",
+        "end": "1979-03-01",
+        "current": false,
+        "tenure": "6y 9m 0d",
+        "party": "Egypt",
+        "era": null
+      },
+      {
+        "name": "Chedli Klibi",
+        "role": "Secretary-General",
+        "start": "1979-03-01",
+        "end": "1991-05-15",
+        "current": false,
+        "tenure": "12y 2m 14d",
+        "party": "Tunisia",
+        "era": null
+      },
+      {
+        "name": "Ahmed Esmat Abdel Meguid",
+        "role": "Secretary-General",
+        "start": "1991-05-15",
+        "end": "2001-05-15",
+        "current": false,
+        "tenure": "10y 0d",
+        "party": "Egypt",
+        "era": null
+      },
+      {
+        "name": "Amr Moussa",
+        "role": "Secretary-General",
+        "start": "2001-05-15",
+        "end": "2011-07-01",
+        "current": false,
+        "tenure": "10y 1m 16d",
+        "party": "Egypt",
+        "era": null
+      },
+      {
+        "name": "Nabil El Araby",
+        "role": "Secretary-General",
+        "start": "2011-07-01",
+        "end": "2016-07-03",
+        "current": false,
+        "tenure": "5y 2d",
+        "party": "Egypt",
+        "era": null
+      },
+      {
+        "name": "Ahmed Aboul Gheit",
+        "role": "Secretary-General",
+        "start": "2016-07-03",
+        "end": null,
+        "current": true,
+        "tenure": "10y 0d",
+        "party": "Egypt",
+        "era": null
+      }
+    ]
   },
   "GCC": {
     "office": "Secretary-General",
@@ -431,7 +804,78 @@
       "since": "2023-02-01",
       "country": "Kuwait"
     },
-    "history": []
+    "history": [
+      {
+        "name": "Abdullah Bishara",
+        "role": "Secretary-General",
+        "start": "1981-05-25",
+        "end": "1993-04-01",
+        "current": false,
+        "tenure": "11y 10m 7d",
+        "party": "Kuwait",
+        "era": null
+      },
+      {
+        "name": "Fahim bin Sultan Al Qasimi",
+        "role": "Secretary-General",
+        "start": "1993-04-01",
+        "end": "1996-04-01",
+        "current": false,
+        "tenure": "3y 0d",
+        "party": "United Arab Emirates",
+        "era": null
+      },
+      {
+        "name": "Jamil Ibrahim Hejailan",
+        "role": "Secretary-General",
+        "start": "1996-04-01",
+        "end": "2002-04-01",
+        "current": false,
+        "tenure": "6y 0d",
+        "party": "Saudi Arabia",
+        "era": null
+      },
+      {
+        "name": "Abdulrahman bin Hamad Al Attiyah",
+        "role": "Secretary-General",
+        "start": "2002-04-01",
+        "end": "2011-04-01",
+        "current": false,
+        "tenure": "9y 0d",
+        "party": "Qatar",
+        "era": null
+      },
+      {
+        "name": "Abdullatif bin Rashid Al Zayani",
+        "role": "Secretary-General",
+        "start": "2011-04-01",
+        "end": "2020-02-01",
+        "current": false,
+        "tenure": "8y 10m 0d",
+        "party": "Bahrain",
+        "era": null
+      },
+      {
+        "name": "Nayef Falah Al-Hajraf",
+        "role": "Secretary-General",
+        "start": "2020-02-01",
+        "end": "2023-01-29",
+        "current": false,
+        "tenure": "2y 11m 28d",
+        "party": "Kuwait",
+        "era": null
+      },
+      {
+        "name": "Jasem Mohamed AlBudaiwi",
+        "role": "Secretary-General",
+        "start": "2023-01-29",
+        "end": null,
+        "current": true,
+        "tenure": "3y 5m 4d",
+        "party": "Kuwait",
+        "era": null
+      }
+    ]
   },
   "League of Nations": {
     "office": "Secretary-General",

@@ -36,6 +36,7 @@ function buildSections(): Section[] {
     {
       label: 'Places & directories',
       items: [
+        { href: '/geography', label: 'Geography Hub' },
         { href: '/rankings', label: 'Metro Power Rankings' },
         { href: '/countries', label: 'Countries' },
         { href: '/states', label: 'States & Provinces' },
@@ -50,7 +51,7 @@ function buildSections(): Section[] {
         { href: '/power', label: 'The Nowhere 100' },
         { href: '/billionaires', label: 'Billionaires' },
         { href: '/leaders', label: 'World Leaders' },
-        { href: '/great-powers', label: 'The Great Powers' },
+        { href: '/power-atlas', label: 'The Power Atlas' },
         { href: '/us-political-leadership', label: 'US Political Leadership' },
         { href: '/mayors', label: 'Mayors of the World' },
       ],

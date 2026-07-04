@@ -19,6 +19,12 @@ const nextConfig: NextConfig = {
         destination: "/us-political-leadership",
         permanent: true,
       },
+      // Historical power ranking renamed from "The Great Powers" to "The Power Atlas".
+      {
+        source: "/great-powers",
+        destination: "/power-atlas",
+        permanent: true,
+      },
     ];
   },
 };

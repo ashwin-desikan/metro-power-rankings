@@ -161,7 +161,7 @@ export default function LeadersDirectory({
   const me = `${sign}${pad4(yearNum)}-${String(month).padStart(2, "0")}-${String(lastDay(yearNum, month)).padStart(2, "0")}`;
   const midMonth = `${sign}${pad4(yearNum)}-${String(month).padStart(2, "0")}-15`;
 
-  // Great-powers share of world power, lazy-loaded from the /great-powers dataset.
+  // Share of world power, lazy-loaded from the Power Atlas dataset (/power-atlas).
   const [powerMap, setPowerMap] = useState<Record<string, Record<string, number>> | null>(null);
   useEffect(() => {
     let alive = true;

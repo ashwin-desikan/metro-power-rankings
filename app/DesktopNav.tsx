@@ -224,7 +224,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
 
   return (
     <div className="hidden md:flex gap-6 items-center">
-      <Dropdown id="data" label="Geography" openId={openId} setOpenId={setOpenId} minWidth={480}>
+      <Dropdown id="data" label="Geography" href="/geography" openId={openId} setOpenId={setOpenId} minWidth={480}>
         <div className="p-2 grid grid-cols-2 gap-x-4">
           <div>
             <MenuGroupLabel>Places &amp; directories</MenuGroupLabel>
@@ -240,7 +240,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
             <MenuLink href="/power" title="The Nowhere 100" />
             <MenuLink href="/billionaires" title="Billionaires" />
             <MenuLink href="/leaders" title="World Leaders" />
-            <MenuLink href="/great-powers" title="The Great Powers" />
+            <MenuLink href="/power-atlas" title="The Power Atlas" />
             <MenuLink href="/us-political-leadership" title="US Political Leadership" />
             <MenuLink href="/mayors" title="Mayors of the World" />
             <MenuGroupLabel>Geopolitics</MenuGroupLabel>

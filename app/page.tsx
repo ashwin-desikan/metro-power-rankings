@@ -4,6 +4,7 @@ import { getLiveBadges } from '@/lib/badges';
 import { leagueStatusFor, type LeagueStatusTone } from '@/lib/leagueStatus';
 import { FEATURED } from '@/app/sports/games/featured';
 import { flagCdnUrl } from '@/lib/international-display';
+import { getCountry } from '@/lib/countries';
 import { datasetJsonLd, serializeJsonLd } from '@/lib/seo';
 import { readFileSync } from 'fs';
 import { join } from 'path';
@@ -78,6 +79,15 @@ function topNations(): Preview[] {
 function topArtists(): Preview[] {
   const d = readData<{ name: string; metro?: string; combined?: number }[]>(['sound', 'artists.json'], []);
   return d.slice(0, 3).map((a) => ({ name: a.name, sub: a.metro, meta: a.combined != null ? a.combined.toFixed(0) : '' }));
+}
+function topPowers(): Preview[] {
+  const d = readData<{ byYear?: Record<string, { slug: string; share: number | null }[]> }>(['power-history.json'], {});
+  const cur = d.byYear?.['2026'] ?? [];
+  return cur.slice(0, 3).map((r) => ({
+    name: getCountry(r.slug)?.name ?? r.slug,
+    flagUrl: flagCdnUrl(r.slug, '20x15'),
+    meta: r.share != null ? `${(r.share * 100).toFixed(1)}%` : '',
+  }));
 }
 
 // ---- Greatest Games: one marquee game per sport (excluding NHL), pulled
@@ -198,7 +208,7 @@ type IndexCard = { n: string; title: string; desc: string; stat: string; href: s
 type AtlasCard = { emoji: string; title: string; desc: string; href: string; sub: string; live?: boolean };
 const ATLAS: AtlasCard[] = [
   { emoji: '🏙️', title: 'Rankings', desc: 'The metro leaderboard, badges, and the compare tool.', href: '/rankings', sub: 'Top 100 · Compare · Badges' },
-  { emoji: '🗺️', title: 'Geography', desc: 'Countries, states, and the expandable world map.', href: '/countries', sub: 'Countries · States · Map · Matchups' },
+  { emoji: '🗺️', title: 'Geography', desc: 'Countries, states, leaders, the power atlas, and the world map.', href: '/geography', sub: 'Countries · States · Map · Power Atlas' },
   { emoji: '🏟️', title: 'Sports', desc: 'Every league, national team, and cross-sport index.', href: '/sports', sub: 'Leagues · Zone Zero Cup · Rivalries', live: true },
   { emoji: '🎵', title: 'Sound', desc: 'The music of the metros, by chart and by decade.', href: '/sound', sub: 'Rankings · Artists · Awards · Decades' },
   { emoji: '👑', title: 'People', desc: 'The powerful, the wealthy, and the elected.', href: '/power', sub: 'Nowhere 100 · Billionaires · Mayors' },
@@ -211,7 +221,7 @@ const ATLAS: AtlasCard[] = [
 // entries for the kids games and the arcade games.
 const MASTHEAD_LAUNCH: { emoji: string; label: string; href: string }[] = [
   { emoji: '🏙️', label: 'Rankings', href: '/rankings' },
-  { emoji: '🗺️', label: 'Geography', href: '/countries' },
+  { emoji: '🗺️', label: 'Geography', href: '/geography' },
   { emoji: '🏟️', label: 'Sports', href: '/sports' },
   { emoji: '🎵', label: 'Sound', href: '/sound' },
   { emoji: '👑', label: 'People', href: '/power' },
@@ -242,17 +252,18 @@ const TONE_COLOR: Record<LeagueStatusTone, string> = {
   offseason: 'var(--text-dim)',
 };
 
-type IndexColumn = { heading: string; links: { label: string; href: string }[] };
+type IndexColumn = { heading: string; href?: string; links: { label: string; href: string }[] };
 const SITE_INDEX: IndexColumn[] = [
   { heading: 'Rankings', links: [
     { label: 'Metro Power Rankings', href: '/rankings' },
     { label: 'The Nowhere 100', href: '/power' },
     { label: 'Zone Zero Cup', href: '/sports/zone-zero-cup' },
+    { label: 'The Power Atlas', href: '/power-atlas' },
     { label: 'Artist Rankings', href: '/sound/artists' },
     { label: 'Compare metros', href: '/compare' },
     { label: 'Badges', href: '/badges' },
   ]},
-  { heading: 'Geography', links: [
+  { heading: 'Geography', href: '/geography', links: [
     { label: 'Countries', href: '/countries' },
     { label: 'States & Provinces', href: '/states' },
     { label: 'Expandable Map', href: '/expandable-map' },
@@ -325,7 +336,8 @@ export default async function Home() {
     { n: '01', title: 'Metro Power Rankings', desc: 'Every metro on Earth, scored across sixteen weighted dimensions.', stat: '4,200+ metros', href: '/rankings', emoji: '🌐', preview: topMetros() },
     { n: '02', title: 'The Nowhere 100', desc: 'The hundred most powerful people alive, on one Metro Power scale.', stat: '100 people', href: '/power', seal: true, preview: topPeople() },
     { n: '03', title: 'Zone Zero Cup', desc: 'National sporting merit across fourteen pillars, ten-year half-life.', stat: '200+ nations', href: '/sports/zone-zero-cup', emoji: '🏆', preview: topNations() },
-    { n: '04', title: 'Musical Artist Rankings', desc: 'The biggest artists by chart success and prestige, by home metro.', stat: 'By metro', href: '/sound/artists', emoji: '🎵', isNew: true, preview: topArtists() },
+    { n: '04', title: 'Musical Artist Rankings', desc: 'The biggest artists by chart success and prestige, by home metro.', stat: 'By metro', href: '/sound/artists', emoji: '🎵', preview: topArtists() },
+    { n: '05', title: 'The Power Atlas', desc: 'National power ranked year by year, from Pax Britannica to today.', stat: '235 years · 1789–now', href: '/power-atlas', emoji: '🏛️', isNew: true, preview: topPowers() },
   ];
 
   const leagueRows = LEAGUES.map((l) => ({ ...l, status: leagueStatusFor(l.href) }));
@@ -421,7 +433,7 @@ export default async function Home() {
           <p className="text-[11px] uppercase tracking-widest mb-2" style={{ ...MONO, color: 'var(--accent)' }}>The indices</p>
           <h2 className="text-2xl sm:text-3xl font-bold mb-3">The rankings</h2>
           <p className="text-[15px] text-[var(--text-muted)] max-w-3xl mb-8">
-            Metros, people, countries, and artists. Each index has its own hub, hand-curated, weighted in the open, and inspectable at the row level.
+            Metros, people, countries, artists, and the 235-year sweep of world power. Each index has its own hub, hand-curated, weighted in the open, and inspectable at the row level.
           </p>
           <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
             {INDICES.map((c) => (
@@ -581,7 +593,7 @@ export default async function Home() {
           <div className="grid gap-8" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))' }}>
             {SITE_INDEX.map((col) => (
               <div key={col.heading}>
-                <div className="text-[11px] uppercase tracking-widest pb-2 mb-3 border-b" style={{ ...MONO, color: 'var(--text-muted)', borderColor: 'var(--border)' }}>{col.heading}</div>
+                <div className="text-[11px] uppercase tracking-widest pb-2 mb-3 border-b" style={{ ...MONO, color: 'var(--text-muted)', borderColor: 'var(--border)' }}>{col.href ? <Link href={col.href} className="hover:text-[var(--accent)] transition-colors">{col.heading}</Link> : col.heading}</div>
                 <div className="flex flex-col gap-[7px]">
                   {col.links.map((l) => (
                     <Link key={l.href} href={l.href} className="text-[13px] text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">{l.label}</Link>

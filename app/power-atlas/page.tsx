@@ -4,9 +4,9 @@ import { getPowerHistory } from "@/lib/powerHistory";
 import { AUTHOR, BASE_URL, PUBLISHER, SITE_NAME, serializeJsonLd } from "@/lib/seo";
 import PowerHistory from "./PowerHistory";
 
-const PAGE_PATH = "/great-powers";
+const PAGE_PATH = "/power-atlas";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
-const PAGE_TITLE = "The Great Powers";
+const PAGE_TITLE = "The Power Atlas";
 const PAGE_DESCRIPTION =
   "A year-by-year ranking of national power from 1789 to the present. Slide through 235 years and watch empires rise and fall, from Pax Britannica to the bipolar Cold War to today, with every state ranked against its rivals.";
 
@@ -40,7 +40,7 @@ export default function GreatPowersPage() {
             <Link href="/countries" className="text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Countries directory &rarr;</Link>
           </nav>
           <header className="mb-8 border-b border-[var(--border)] pb-8">
-            <p className="text-xs tracking-widest text-[var(--text-muted)] mb-3" style={{ fontFamily: "'JetBrains Mono', monospace" }}>THE GREAT POWERS</p>
+            <p className="text-xs tracking-widest text-[var(--text-muted)] mb-3" style={{ fontFamily: "'JetBrains Mono', monospace" }}>THE POWER ATLAS</p>
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">Who ruled the world, year by year.</h1>
             <p className="text-lg text-[var(--text-muted)] leading-relaxed max-w-3xl">
               A single index of national power, computed for every state from 1789 to today and ranked against its
