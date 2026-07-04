@@ -50,7 +50,7 @@ export async function getLiveTennisSlam(tour: "atp" | "wta"): Promise<TennisDraw
   try {
     const res = await fetch(URL[tour], {
       headers: { "User-Agent": "Mozilla/5.0 (compatible; CitizenOfNowhere/1.0)", Accept: "application/json" },
-      next: { revalidate: 900 },
+      next: { revalidate: 120 },
       signal: AbortSignal.timeout(8000),
     });
     if (!res.ok) return null;
@@ -68,10 +68,22 @@ export async function getLiveTennisSlam(tour: "atp" | "wta"): Promise<TennisDraw
     // collect started main-draw singles matches across the singles grouping(s)
     type M = { c: AnyObj; round: number; roundName: string };
     const started: M[] = [];
-    for (const gRaw of asArr(ev.groupings)) {
-      const g = asObj(gRaw);
-      const gd = asStr(asObj(g?.grouping)?.displayName);
-      if (!/singles/i.test(gd) || /doubles|mixed/i.test(gd)) continue;
+    // Gender-tag each singles grouping. During a combined Slam ESPN returns both
+    // the men's and women's singles under each tour endpoint, so match only this
+    // tour's draw — otherwise Men's and Women's Singles render identical rows.
+    const singlesGroups = asArr(ev.groupings)
+      .map((gRaw) => {
+        const g = asObj(gRaw);
+        const gdl = asStr(asObj(g?.grouping)?.displayName).toLowerCase();
+        if (!gdl.includes("singles") || gdl.includes("doubles") || gdl.includes("mixed")) return null;
+        const gender: "w" | "m" | "?" = /women|ladies/.test(gdl) ? "w" : /gentlemen|men/.test(gdl) ? "m" : "?";
+        return { g, gender };
+      })
+      .filter((x): x is { g: AnyObj | null; gender: "w" | "m" | "?" } => x !== null);
+    const want: "w" | "m" = tour === "wta" ? "w" : "m";
+    const hasGendered = singlesGroups.some((x) => x.gender !== "?");
+    const chosen = hasGendered ? singlesGroups.filter((x) => x.gender === want) : singlesGroups;
+    for (const { g } of chosen) {
       for (const cRaw of asArr(g?.competitions)) {
         const c = asObj(cRaw);
         if (!c) continue;

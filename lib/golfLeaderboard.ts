@@ -26,7 +26,7 @@ export async function getLiveGolfMajor(): Promise<GolfMajor | null> {
   try {
     const res = await fetch(URL, {
       headers: { "User-Agent": "Mozilla/5.0 (compatible; CitizenOfNowhere/1.0)", Accept: "application/json" },
-      next: { revalidate: 900 },
+      next: { revalidate: 120 },
       signal: AbortSignal.timeout(8000),
     });
     if (!res.ok) return null;

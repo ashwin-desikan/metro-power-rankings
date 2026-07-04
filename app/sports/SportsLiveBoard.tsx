@@ -67,21 +67,32 @@ export default function SportsLiveBoard() {
 
   return (
     <div className="rounded-lg border p-3.5" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
-      <div className="flex items-center justify-between mb-2.5">
-        <div className="flex flex-wrap gap-x-3 gap-y-1 text-[10px]" style={{ color: "var(--text-dim)" }}>
-          <Legend color={DOT.regular} label="In season" />
-          <Legend color={DOT.playoffs} label="Playoffs" />
-          <Legend color={DOT.worldcup} label="World Cup" />
-          <Legend color={DOT.offseason} label="Offseason" />
-        </div>
-        <Link
-          href="/sports/standings"
-          className="inline-flex items-center gap-1.5 text-[11px] rounded-full border px-2.5 py-1 transition-colors hover:border-[var(--accent)]"
-          style={{ borderColor: "rgba(16,185,129,0.4)", background: "rgba(16,185,129,0.08)", color: "#10b981", ...mono }}
-        >
-          <span className="inline-block rounded-full" style={{ width: 6, height: 6, background: "#10b981" }} aria-hidden="true" />
-          {liveCount} live &middot; standings &rarr;
+      {/* Quick links — the Live Hub shortcuts (standings, champions, the Cup). */}
+      <div className="flex flex-col gap-1.5 mb-3">
+        <Link href="/sports/standings" className="flex items-center gap-2 rounded-md border px-2.5 py-2 transition-colors hover:bg-[var(--bg-card-hover)]" style={{ borderColor: "rgba(16,185,129,0.4)", background: "rgba(16,185,129,0.08)" }}>
+          <span aria-hidden className="inline-block rounded-full flex-shrink-0" style={{ width: 9, height: 9, background: "#10b981" }} />
+          <span className="text-[12px] font-semibold" style={{ color: "#10b981" }}>Live Standings</span>
+          <span className="text-[10px]" style={{ color: "var(--text-dim)" }}>{liveCount} live now</span>
+          <span aria-hidden className="ml-auto text-[var(--text-dim)]">&rarr;</span>
         </Link>
+        <Link href="/sports/champions" className="flex items-center gap-2 rounded-md border px-2.5 py-2 transition-colors hover:bg-[var(--bg-card-hover)]" style={{ borderColor: "rgba(212,175,55,0.4)", background: "rgba(212,175,55,0.08)" }}>
+          <span aria-hidden className="text-sm leading-none">&#128081;</span>
+          <span className="text-[12px] font-semibold" style={{ color: "#d4af37" }}>Champions</span>
+          <span className="text-[10px]" style={{ color: "var(--text-dim)" }}>current &amp; all-time</span>
+          <span aria-hidden className="ml-auto text-[var(--text-dim)]">&rarr;</span>
+        </Link>
+        <Link href="/sports/zone-zero-cup" className="flex items-center gap-2 rounded-md border px-2.5 py-2 transition-colors hover:bg-[var(--bg-card-hover)]" style={{ borderColor: "rgba(212,175,55,0.4)", background: "rgba(212,175,55,0.08)" }}>
+          <span aria-hidden className="text-sm leading-none">&#127942;</span>
+          <span className="text-[12px] font-semibold" style={{ color: "#d4af37" }}>Zone Zero Cup</span>
+          <span className="text-[10px]" style={{ color: "var(--text-dim)" }}>national merit</span>
+          <span aria-hidden className="ml-auto text-[var(--text-dim)]">&rarr;</span>
+        </Link>
+      </div>
+      <div className="flex flex-wrap gap-x-3 gap-y-1 mb-2.5 text-[10px]" style={{ color: "var(--text-dim)" }}>
+        <Legend color={DOT.regular} label="In season" />
+        <Legend color={DOT.playoffs} label="Playoffs" />
+        <Legend color={DOT.worldcup} label="World Cup" />
+        <Legend color={DOT.offseason} label="Offseason" />
       </div>
 
       <div>
@@ -89,7 +100,7 @@ export default function SportsLiveBoard() {
           const isSelf = g.entries.length === 1 && boardLabelFor(g.entries[0]) === g.family;
           return (
             <div key={g.family} className="flex items-start gap-2.5 py-1.5 border-t" style={{ borderColor: "var(--border)" }}>
-              <div className="flex-none text-[10px] tracking-widest uppercase pt-1.5" style={{ width: 92, color: "var(--text-dim)", ...mono }}>
+              <div className="flex-none text-[10px] tracking-widest uppercase pt-1.5" style={{ width: 80, color: "var(--text-dim)", ...mono }}>
                 {isSelf ? "" : g.family}
               </div>
               <div className="flex flex-wrap gap-1.5 flex-1 min-w-0">
@@ -107,7 +118,7 @@ export default function SportsLiveBoard() {
           if (gt.length === 0) return null;
           return (
             <div className="flex items-start gap-2.5 py-1.5 border-t" style={{ borderColor: "var(--border)" }}>
-              <div className="flex-none pt-1.5" style={{ width: 92 }} aria-hidden />
+              <div className="flex-none pt-1.5" style={{ width: 80 }} aria-hidden />
               <div className="flex flex-wrap gap-1.5 flex-1 min-w-0">
                 {gt.map((e) => <Chip key={e.href} entry={e} text={e.label} />)}
               </div>

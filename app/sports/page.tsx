@@ -7,7 +7,7 @@ import HubNav from "@/app/teams/HubNav";
 import SportsMapToggle from "./SportsMapToggle";
 import SportsLiveBoard from "./SportsLiveBoard";
 import { type TeamMarker } from "./SportsExplorer";
-import { leagueStatusFor, clubFootballStatus } from "@/lib/leagueStatus";
+import { leagueStatusFor, clubFootballStatus, CLUB_FOOTBALL_CHILDREN } from "@/lib/leagueStatus";
 import { catalogByFamily } from "@/lib/sportsCatalog";
 
 const PAGE_PATH = "/sports";
@@ -53,6 +53,18 @@ export default function SportsPage() {
     .filter((e) => { const s = e.href === "/teams/football" ? clubFootballStatus() : leagueStatusFor(e.href); return !!s && s.tone !== "offseason"; })
     .length;
 
+  // Full directory: every sport family + its hubs, the club-football sub-hubs, and the cross-sport indices.
+  const indexBlocks: { heading: string; links: { label: string; href: string }[] }[] = [];
+  for (const g of allGroups) {
+    indexBlocks.push({ heading: g.family, links: g.entries.map((e) => ({ label: e.label, href: e.href })) });
+    if (g.family === "Football") {
+      indexBlocks.push({ heading: "Football · Leagues", links: CLUB_FOOTBALL_CHILDREN.filter((c) => c.section === "Leagues").map((c) => ({ label: c.label, href: c.href })) });
+      indexBlocks.push({ heading: "Football · Cups", links: CLUB_FOOTBALL_CHILDREN.filter((c) => c.section === "Competitions").map((c) => ({ label: c.label, href: c.href })) });
+    }
+  }
+  indexBlocks.push({ heading: "Cross-sport indices", links: [{ label: "The Zone Zero Cup", href: "/sports/zone-zero-cup" }, ...FEATURES.map((f) => ({ label: f.title, href: f.href }))] });
+  indexBlocks.push({ heading: "About & method", links: [{ label: "About Zone Zero", href: "/sports/about" }, { label: "Methodology", href: "/methodology" }, { label: "Updates", href: "/updates" }] });
+
   const ld = {
     "@context": "https://schema.org", "@type": "CollectionPage",
     name: PAGE_TITLE, description: PAGE_DESCRIPTION, url: PAGE_URL,
@@ -62,7 +74,7 @@ export default function SportsPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(ld) }} />
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
         <nav className="mb-8 flex flex-wrap gap-x-4 gap-y-1">
           <Link href="/" className="text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors" style={mono}>&larr; Back to rankings</Link>
           <Link href="/geography" className="text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors" style={mono}>Geography hub &rarr;</Link>
@@ -91,65 +103,91 @@ export default function SportsPage() {
         </header>
 
         <HubNav items={[
-          { label: "The live board", href: "#live" },
           { label: "Indices & features", href: "#indices" },
+          { label: "The live board", href: "#live" },
           { label: "The map", href: "#map" },
+          { label: "Full index", href: "#index" },
         ]} />
 
-        {/* The Live Hub — every league, live status at a glance */}
-        <section id="live" className="mb-12 scroll-mt-24">
-          <div className="mb-4">
-            <p className="text-[11px] uppercase tracking-widest mb-2" style={{ ...mono, color: "#10b981" }}>🟢 The live board</p>
-            <h2 className="text-2xl font-bold mb-2">Every league, live at a glance</h2>
-            <p className="text-[15px] text-[var(--text-muted)] max-w-3xl">The full directory of league and national-team hubs, colour-coded by season. Green is in season, amber is playoffs, purple is the World Cup.</p>
-          </div>
-          <SportsLiveBoard />
-        </section>
+        {/* Two columns: features/map (main) + sticky Live Board rail (right). */}
+        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_336px] lg:gap-8 lg:items-start">
+          <div className="space-y-12 min-w-0">
+            {/* Indices & features */}
+            <section id="indices" className="scroll-mt-24">
+              <div className="mb-5">
+                <p className="text-[11px] uppercase tracking-widest mb-2" style={{ ...mono, color: "var(--accent)" }}>Indices & features</p>
+                <h2 className="text-2xl font-bold mb-2">The cross-sport lenses</h2>
+                <p className="text-[15px] text-[var(--text-muted)] max-w-3xl">The rankings and deep dives that cut across every sport at once.</p>
+              </div>
 
-        {/* Indices & features */}
-        <section id="indices" className="mb-12 scroll-mt-24">
-          <div className="mb-5">
-            <p className="text-[11px] uppercase tracking-widest mb-2" style={{ ...mono, color: "var(--accent)" }}>Indices & features</p>
-            <h2 className="text-2xl font-bold mb-2">The cross-sport lenses</h2>
-            <p className="text-[15px] text-[var(--text-muted)] max-w-3xl">The rankings and deep dives that cut across every sport at once.</p>
-          </div>
-
-          <Link href="/sports/zone-zero-cup" className="group block rounded-xl border p-6 mb-4 transition-colors hover:bg-[var(--bg-card-hover)]" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", borderLeftWidth: "4px", borderLeftColor: "#d4af37" }}>
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-[10px] uppercase tracking-widest px-1.5 py-0.5 rounded" style={{ ...mono, color: "#d4af37", background: "rgba(212,175,55,0.16)" }}>The flagship index</span>
-            </div>
-            <h3 className="text-2xl font-bold mb-1 flex items-center gap-2"><span aria-hidden>🏆</span> The Zone Zero Cup</h3>
-            <p className="text-[15px] text-[var(--text-muted)] max-w-3xl">
-              National sporting merit across fourteen pillars and every sport, on one index, with a ten-year half-life so
-              recent glory counts most. Two hundred nations, ranked head to head.
-            </p>
-            <span className="inline-flex items-center gap-1 mt-3 text-xs" style={{ ...mono, color: "var(--accent)" }}>Open the Cup <span aria-hidden>→</span></span>
-          </Link>
-
-          <div className="grid gap-4" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))" }}>
-            {FEATURES.map((f) => (
-              <Link key={f.href} href={f.href} className="flex flex-col gap-2 p-5 rounded-lg border transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
-                <div className="flex items-center gap-2.5">
-                  <span className="text-2xl leading-none" aria-hidden>{f.emoji}</span>
-                  <h3 className="text-base font-bold">{f.title}</h3>
+              <Link href="/sports/zone-zero-cup" className="group block rounded-xl border p-6 mb-4 transition-colors hover:bg-[var(--bg-card-hover)]" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", borderLeftWidth: "4px", borderLeftColor: "#d4af37" }}>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-[10px] uppercase tracking-widest px-1.5 py-0.5 rounded" style={{ ...mono, color: "#d4af37", background: "rgba(212,175,55,0.16)" }}>The flagship index</span>
                 </div>
-                <p className="text-[13px] text-[var(--text-muted)] leading-relaxed">{f.desc}</p>
+                <h3 className="text-2xl font-bold mb-1 flex items-center gap-2"><span aria-hidden>🏆</span> The Zone Zero Cup</h3>
+                <p className="text-[15px] text-[var(--text-muted)] max-w-3xl">
+                  National sporting merit across fourteen pillars and every sport, on one index, with a ten-year half-life
+                  so recent glory counts most. Two hundred nations, ranked head to head.
+                </p>
+                <span className="inline-flex items-center gap-1 mt-3 text-xs" style={{ ...mono, color: "var(--accent)" }}>Open the Cup <span aria-hidden>→</span></span>
               </Link>
+
+              <div className="grid gap-4" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))" }}>
+                {FEATURES.map((f) => (
+                  <Link key={f.href} href={f.href} className="flex flex-col gap-2 p-5 rounded-lg border transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
+                    <div className="flex items-center gap-2.5">
+                      <span className="text-2xl leading-none" aria-hidden>{f.emoji}</span>
+                      <h3 className="text-base font-bold">{f.title}</h3>
+                    </div>
+                    <p className="text-[13px] text-[var(--text-muted)] leading-relaxed">{f.desc}</p>
+                  </Link>
+                ))}
+              </div>
+            </section>
+
+            {/* The map — collapsed by default */}
+            <section id="map" className="scroll-mt-24">
+              <div className="mb-4">
+                <p className="text-[11px] uppercase tracking-widest mb-2" style={{ ...mono, color: "var(--accent)" }}>The map</p>
+                <h2 className="text-2xl font-bold mb-2">Every top-flight team on Earth</h2>
+                <p className="text-[15px] text-[var(--text-muted)] max-w-3xl">The whole world of sport as one interactive map. Open it when you want to explore geographically.</p>
+              </div>
+              <SportsMapToggle teams={teams} majorCount={summary.major_markers} otherCount={summary.other_markers} />
+            </section>
+          </div>
+
+          {/* Live board — sticky right-hand rail on desktop; stacks under the content on mobile. */}
+          <aside id="live" className="mt-10 lg:mt-0 lg:sticky lg:top-24 scroll-mt-24">
+            <div className="flex items-center justify-between mb-2">
+              <p className="text-[10px] uppercase tracking-widest" style={{ ...mono, color: "var(--text-muted)" }}>The live board</p>
+              <span className="text-[10px]" style={{ ...mono, color: "var(--text-dim)" }}>every league</span>
+            </div>
+            <SportsLiveBoard />
+          </aside>
+        </div>
+
+        {/* Full sports index — every hub and sub-hub in one dense directory. */}
+        <section id="index" className="mt-14 pt-10 border-t border-[var(--border)] scroll-mt-24">
+          <div className="mb-6">
+            <p className="text-[11px] uppercase tracking-widest mb-2" style={{ ...mono, color: "var(--accent)" }}>The full index</p>
+            <h2 className="text-2xl font-bold mb-2">Every hub, and every hub inside it</h2>
+            <p className="text-[15px] text-[var(--text-muted)] max-w-3xl">The complete sports directory: every sport, every league and national-team hub, the club-football leagues and cups within, and every cross-sport index.</p>
+          </div>
+          <div style={{ columnWidth: "190px", columnGap: "1.75rem" }}>
+            {indexBlocks.map((b) => (
+              <div key={b.heading} className="break-inside-avoid mb-5">
+                <div className="text-[11px] uppercase tracking-widest pb-1.5 mb-2 border-b" style={{ ...mono, color: "var(--text-muted)", borderColor: "var(--border)" }}>{b.heading}</div>
+                <div className="flex flex-col gap-[5px]">
+                  {b.links.map((l) => (
+                    <Link key={l.href} href={l.href} className="text-[13px] text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">{l.label}</Link>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </section>
 
-        {/* The map — collapsed by default */}
-        <section id="map" className="mb-8 scroll-mt-24">
-          <div className="mb-4">
-            <p className="text-[11px] uppercase tracking-widest mb-2" style={{ ...mono, color: "var(--accent)" }}>The map</p>
-            <h2 className="text-2xl font-bold mb-2">Every top-flight team on Earth</h2>
-            <p className="text-[15px] text-[var(--text-muted)] max-w-3xl">The whole world of sport as one interactive map. Open it when you want to explore geographically.</p>
-          </div>
-          <SportsMapToggle teams={teams} majorCount={summary.major_markers} otherCount={summary.other_markers} />
-        </section>
-
-        <p className="text-xs text-[var(--text-dim)] leading-relaxed max-w-3xl">
+        <p className="text-xs text-[var(--text-dim)] leading-relaxed max-w-3xl mt-12">
           Every team is placed on the metro behind it and ranked against that metro&rsquo;s Power Score, not its trophy
           count. <Link href="/methodology" className="underline hover:text-[var(--accent)]">How the scores are built &rarr;</Link>
         </p>

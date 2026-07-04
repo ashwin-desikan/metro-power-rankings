@@ -36,7 +36,7 @@ const strip = (s: string) =>
 
 async function fetchHtml(url: string): Promise<string | null> {
   try {
-    const res = await fetch(url, { headers: UA, next: { revalidate: 3600 } });
+    const res = await fetch(url, { headers: UA, next: { revalidate: 300 } });
     if (!res.ok) return null;
     return await res.text();
   } catch {

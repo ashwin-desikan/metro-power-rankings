@@ -47,7 +47,7 @@ function statVal(entry: EspnEntry, name: string): number | null {
 
 export async function getFootyLiveStandings(league: "afl" | "nrl"): Promise<FootyStandingsView> {
   try {
-    const res = await fetch(ESPN[league], { next: { revalidate: 3600 } });
+    const res = await fetch(ESPN[league], { next: { revalidate: 600 } });
     if (!res.ok) return null;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const data: any = await res.json();

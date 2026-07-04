@@ -51,7 +51,7 @@ export async function getLiveCflStandings(year: number): Promise<CflStandingsVie
   try {
     const res = await fetch(`https://www.cfl.ca/standings/${year}/`, {
       headers: { "user-agent": "Mozilla/5.0 (compatible; MetroPowerRankings/1.0; +https://rankings.citizenofnowhere.org)" },
-      next: { revalidate: 3600 },
+      next: { revalidate: 600 },
     });
     if (!res.ok) return null;
     const html = await res.text();

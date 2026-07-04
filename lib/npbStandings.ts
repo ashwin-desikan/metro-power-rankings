@@ -71,7 +71,7 @@ async function fetchLeague(
         "User-Agent": "Mozilla/5.0 (compatible; CitizenOfNowhere/1.0; +https://rankings.citizenofnowhere.org)",
         Accept: "application/json",
       },
-      next: { revalidate: 3600 },
+      next: { revalidate: 600 },
       signal: AbortSignal.timeout(8000),
     });
     if (!res.ok) return null;

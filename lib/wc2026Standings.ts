@@ -73,7 +73,7 @@ function norm(s: string): string {
 
 export async function getWc2026LiveStandings(): Promise<Wc2026LiveStandings> {
   try {
-    const res = await fetch(ESPN_URL, { next: { revalidate: 1800 } });
+    const res = await fetch(ESPN_URL, { next: { revalidate: 120 } });
     if (!res.ok) return null;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const data: any = await res.json();
@@ -213,7 +213,7 @@ export type Wc2026LiveScores = { source: "espn"; matches: Wc2026LiveMatch[] } | 
 
 export async function getWc2026LiveScores(): Promise<Wc2026LiveScores> {
   try {
-    const res = await fetch(`${SCOREBOARD_URL}?dates=${KO_DATE_RANGE}`, { next: { revalidate: 1800 } });
+    const res = await fetch(`${SCOREBOARD_URL}?dates=${KO_DATE_RANGE}`, { next: { revalidate: 120 } });
     if (!res.ok) return null;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const data: any = await res.json();

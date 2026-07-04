@@ -1,6 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  experimental: {
+    // Shorter client-side Router Cache so revisiting a live page (e.g.
+    // /sports/standings) shows current data without a hard refresh instead of a
+    // minutes-old cached view held from a prior visit.
+    staleTimes: { dynamic: 30, static: 30 },
+  },
   images: {
     unoptimized: true,
   },

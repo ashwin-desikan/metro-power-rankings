@@ -41,7 +41,7 @@ export async function getWtcStandings(): Promise<WtcStandings | null> {
   try {
     const res = await fetch(API, {
       headers: { "User-Agent": "Mozilla/5.0 (compatible; CitizenOfNowhere/1.0)", Accept: "application/json" },
-      next: { revalidate: 3600 },
+      next: { revalidate: 600 },
       signal: AbortSignal.timeout(8000),
     });
     if (!res.ok) return null;

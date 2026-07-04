@@ -33,7 +33,7 @@ import { getFootballClubByName } from "@/lib/football";
 import { getWorldCup2026 } from "@/lib/international";
 import { flagCdnUrl, displayNameForTeam } from "@/lib/international-display";
 
-export const revalidate = 1800;
+export const revalidate = 120;
 
 const PATH = "/sports/standings";
 const TITLE = "Live Standings";
