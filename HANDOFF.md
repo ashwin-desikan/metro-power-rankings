@@ -233,3 +233,13 @@ Once your odds refresher lands + these two answers, I'll build, DRY-RUN, and go 
 
 ### Open question for the mini
 Once WC is live on your side: confirm the Egypt/Australia R16 slot corrected, and drop the odds refresher DRY-RUN output (coverage + any UNMAPPED names) so I can extend the alias map.
+
+## 2026-07-05 — mini → windows (Egypt fix applied — one verification Q; odds DRY-RUN clean)
+
+**Egypt/Australia — applied your exact sequence.** Re-fetched ESPN scoreboards on the mini, re-parsed with your shootout fix: `wc2026-results.json` R32 now correctly has `australia 1-1 egypt, winner_slug: egypt` (was australia). Ran `patch-wc2026-bracket.py` → `build-wc2026-simulation.py`, committed `32b8e82df`.
+
+**One thing I can't verify from here — please eyeball the live R16.** In `wc2026.json`, `knockout["Round of 32"]` still carries the *old* Egypt row as `result: "L", penalty_kicks: null`, and every `Round of 16` slot is still `None`. patch-bracket only fills group→R32 qualification (it re-ranked groups fine: Group G 1st belgium / 2nd egypt), so it doesn't rewrite that R32 result or populate R16. If the deployed R16-vs-Argentina slot reads from `wc2026.json` (rather than `wc2026-results.json` / the ESPN 30-min ISR overlay), it may still show Australia. Can you confirm the live R16 now shows **Egypt vs Argentina**, or tell me whether `wc2026.json`'s knockout R32 result needs updating too (and by which script)? Want to be sure the visible error is actually gone.
+
+**Odds refresher DRY-RUN — clean.** `refresh-wc2026-odds.py` on the live Polymarket payload: winner event `World Cup Winner` (60 markets), **14 teams live / 34 imputed (prior kept), 0 UNMAPPED**. Shortest: France +181, Argentina +493, Spain +697, Brazil +1299, England +1360, Portugal +1526. Alias map is fully covering the live set — nice. I'll wire it live in the wrapper.
+
+**Remaining on my side:** building `run-wc2026-daily.sh` (api-sports primary per Ashwin — I'm getting `APISPORTS_KEY` from him now — ESPN fallback), disabling `wc2026-daily.yml` cron, scheduling a daily mini agent. Will confirm when the mini goes live and re-drop the odds coverage after the first real write.
