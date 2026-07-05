@@ -1,6 +1,6 @@
 {
- "source": "API-Football (api-sports.io) league=1 season=2026",
- "as_of": "2026-07-05T09:43:56Z",
+ "source": "ESPN fifa.world scoreboard",
+ "as_of": "2026-07-05T10:13:22Z",
  "events": {
   "apisports-1489369": {
    "round": "Group",
@@ -804,6 +804,816 @@
    "completed": true
   },
   "apisports-1569870": {
+   "round": "Round of 16",
+   "a_slug": "paraguay",
+   "a_score": 0,
+   "b_slug": "france",
+   "b_score": 1,
+   "winner_slug": "france",
+   "completed": true
+  },
+  "760415": {
+   "round": "Group",
+   "a_slug": "mexico",
+   "a_score": 2,
+   "b_slug": "south-africa",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760414": {
+   "round": "Group",
+   "a_slug": "south-korea",
+   "a_score": 2,
+   "b_slug": "czech-republic",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760416": {
+   "round": "Group",
+   "a_slug": "canada",
+   "a_score": 1,
+   "b_slug": "bosnia-herzegovina",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760417": {
+   "round": "Group",
+   "a_slug": "united-states",
+   "a_score": 4,
+   "b_slug": "paraguay",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760420": {
+   "round": "Group",
+   "a_slug": "qatar",
+   "a_score": 1,
+   "b_slug": "switzerland",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760419": {
+   "round": "Group",
+   "a_slug": "brazil",
+   "a_score": 1,
+   "b_slug": "morocco",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760418": {
+   "round": "Group",
+   "a_slug": "haiti",
+   "a_score": 0,
+   "b_slug": "scotland",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760421": {
+   "round": "Group",
+   "a_slug": "australia",
+   "a_score": 2,
+   "b_slug": "turkey",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760422": {
+   "round": "Group",
+   "a_slug": "germany",
+   "a_score": 7,
+   "b_slug": "curacao",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760425": {
+   "round": "Group",
+   "a_slug": "netherlands",
+   "a_score": 2,
+   "b_slug": "japan",
+   "b_score": 2,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760423": {
+   "round": "Group",
+   "a_slug": "cote-d-ivoire",
+   "a_score": 1,
+   "b_slug": "ecuador",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760424": {
+   "round": "Group",
+   "a_slug": "sweden",
+   "a_score": 5,
+   "b_slug": "tunisia",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760428": {
+   "round": "Group",
+   "a_slug": "spain",
+   "a_score": 0,
+   "b_slug": "cape-verde",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760426": {
+   "round": "Group",
+   "a_slug": "belgium",
+   "a_score": 1,
+   "b_slug": "egypt",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760429": {
+   "round": "Group",
+   "a_slug": "saudi-arabia",
+   "a_score": 1,
+   "b_slug": "uruguay",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760427": {
+   "round": "Group",
+   "a_slug": "iran",
+   "a_score": 2,
+   "b_slug": "new-zealand",
+   "b_score": 2,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760432": {
+   "round": "Group",
+   "a_slug": "france",
+   "a_score": 3,
+   "b_slug": "senegal",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760430": {
+   "round": "Group",
+   "a_slug": "iraq",
+   "a_score": 1,
+   "b_slug": "norway",
+   "b_score": 4,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760433": {
+   "round": "Group",
+   "a_slug": "argentina",
+   "a_score": 3,
+   "b_slug": "algeria",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760431": {
+   "round": "Group",
+   "a_slug": "austria",
+   "a_score": 3,
+   "b_slug": "jordan",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760435": {
+   "round": "Group",
+   "a_slug": "portugal",
+   "a_score": 1,
+   "b_slug": "congo-dr",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760437": {
+   "round": "Group",
+   "a_slug": "england",
+   "a_score": 4,
+   "b_slug": "croatia",
+   "b_score": 2,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760434": {
+   "round": "Group",
+   "a_slug": "ghana",
+   "a_score": 1,
+   "b_slug": "panama",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760436": {
+   "round": "Group",
+   "a_slug": "uzbekistan",
+   "a_score": 1,
+   "b_slug": "colombia",
+   "b_score": 3,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760438": {
+   "round": "Group",
+   "a_slug": "czech-republic",
+   "a_score": 1,
+   "b_slug": "south-africa",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760439": {
+   "round": "Group",
+   "a_slug": "switzerland",
+   "a_score": 4,
+   "b_slug": "bosnia-herzegovina",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760440": {
+   "round": "Group",
+   "a_slug": "canada",
+   "a_score": 6,
+   "b_slug": "qatar",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760441": {
+   "round": "Group",
+   "a_slug": "mexico",
+   "a_score": 1,
+   "b_slug": "south-korea",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760442": {
+   "round": "Group",
+   "a_slug": "united-states",
+   "a_score": 2,
+   "b_slug": "australia",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760445": {
+   "round": "Group",
+   "a_slug": "scotland",
+   "a_score": 0,
+   "b_slug": "morocco",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760444": {
+   "round": "Group",
+   "a_slug": "brazil",
+   "a_score": 3,
+   "b_slug": "haiti",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760443": {
+   "round": "Group",
+   "a_slug": "turkey",
+   "a_score": 0,
+   "b_slug": "paraguay",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760447": {
+   "round": "Group",
+   "a_slug": "netherlands",
+   "a_score": 5,
+   "b_slug": "sweden",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760448": {
+   "round": "Group",
+   "a_slug": "germany",
+   "a_score": 2,
+   "b_slug": "cote-d-ivoire",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760446": {
+   "round": "Group",
+   "a_slug": "ecuador",
+   "a_score": 0,
+   "b_slug": "curacao",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760449": {
+   "round": "Group",
+   "a_slug": "tunisia",
+   "a_score": 0,
+   "b_slug": "japan",
+   "b_score": 4,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760453": {
+   "round": "Group",
+   "a_slug": "spain",
+   "a_score": 4,
+   "b_slug": "saudi-arabia",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760451": {
+   "round": "Group",
+   "a_slug": "belgium",
+   "a_score": 0,
+   "b_slug": "iran",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760450": {
+   "round": "Group",
+   "a_slug": "uruguay",
+   "a_score": 2,
+   "b_slug": "cape-verde",
+   "b_score": 2,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760452": {
+   "round": "Group",
+   "a_slug": "new-zealand",
+   "a_score": 1,
+   "b_slug": "egypt",
+   "b_score": 3,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760456": {
+   "round": "Group",
+   "a_slug": "argentina",
+   "a_score": 2,
+   "b_slug": "austria",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760457": {
+   "round": "Group",
+   "a_slug": "france",
+   "a_score": 3,
+   "b_slug": "iraq",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760454": {
+   "round": "Group",
+   "a_slug": "norway",
+   "a_score": 3,
+   "b_slug": "senegal",
+   "b_score": 2,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760455": {
+   "round": "Group",
+   "a_slug": "jordan",
+   "a_score": 1,
+   "b_slug": "algeria",
+   "b_score": 2,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760461": {
+   "round": "Group",
+   "a_slug": "portugal",
+   "a_score": 5,
+   "b_slug": "uzbekistan",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760458": {
+   "round": "Group",
+   "a_slug": "england",
+   "a_score": 0,
+   "b_slug": "ghana",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760460": {
+   "round": "Group",
+   "a_slug": "panama",
+   "a_score": 0,
+   "b_slug": "croatia",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760459": {
+   "round": "Group",
+   "a_slug": "colombia",
+   "a_score": 1,
+   "b_slug": "congo-dr",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760462": {
+   "round": "Group",
+   "a_slug": "bosnia-herzegovina",
+   "a_score": 3,
+   "b_slug": "qatar",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760463": {
+   "round": "Group",
+   "a_slug": "switzerland",
+   "a_score": 2,
+   "b_slug": "canada",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760464": {
+   "round": "Group",
+   "a_slug": "morocco",
+   "a_score": 4,
+   "b_slug": "haiti",
+   "b_score": 2,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760465": {
+   "round": "Group",
+   "a_slug": "scotland",
+   "a_score": 0,
+   "b_slug": "brazil",
+   "b_score": 3,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760467": {
+   "round": "Group",
+   "a_slug": "czech-republic",
+   "a_score": 0,
+   "b_slug": "mexico",
+   "b_score": 3,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760466": {
+   "round": "Group",
+   "a_slug": "south-africa",
+   "a_score": 1,
+   "b_slug": "south-korea",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760473": {
+   "round": "Group",
+   "a_slug": "curacao",
+   "a_score": 0,
+   "b_slug": "cote-d-ivoire",
+   "b_score": 2,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760468": {
+   "round": "Group",
+   "a_slug": "ecuador",
+   "a_score": 2,
+   "b_slug": "germany",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760471": {
+   "round": "Group",
+   "a_slug": "japan",
+   "a_score": 1,
+   "b_slug": "sweden",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760472": {
+   "round": "Group",
+   "a_slug": "tunisia",
+   "a_score": 1,
+   "b_slug": "netherlands",
+   "b_score": 3,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760469": {
+   "round": "Group",
+   "a_slug": "paraguay",
+   "a_score": 0,
+   "b_slug": "australia",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760470": {
+   "round": "Group",
+   "a_slug": "turkey",
+   "a_score": 3,
+   "b_slug": "united-states",
+   "b_score": 2,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760475": {
+   "round": "Group",
+   "a_slug": "norway",
+   "a_score": 1,
+   "b_slug": "france",
+   "b_score": 4,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760474": {
+   "round": "Group",
+   "a_slug": "senegal",
+   "a_score": 5,
+   "b_slug": "iraq",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760478": {
+   "round": "Group",
+   "a_slug": "cape-verde",
+   "a_score": 0,
+   "b_slug": "saudi-arabia",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760479": {
+   "round": "Group",
+   "a_slug": "uruguay",
+   "a_score": 0,
+   "b_slug": "spain",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760476": {
+   "round": "Group",
+   "a_slug": "egypt",
+   "a_score": 1,
+   "b_slug": "iran",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760477": {
+   "round": "Group",
+   "a_slug": "new-zealand",
+   "a_score": 1,
+   "b_slug": "belgium",
+   "b_score": 5,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760480": {
+   "round": "Group",
+   "a_slug": "croatia",
+   "a_score": 2,
+   "b_slug": "ghana",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760485": {
+   "round": "Group",
+   "a_slug": "panama",
+   "a_score": 0,
+   "b_slug": "england",
+   "b_score": 2,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760481": {
+   "round": "Group",
+   "a_slug": "colombia",
+   "a_score": 0,
+   "b_slug": "portugal",
+   "b_score": 0,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760482": {
+   "round": "Group",
+   "a_slug": "congo-dr",
+   "a_score": 3,
+   "b_slug": "uzbekistan",
+   "b_score": 1,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760484": {
+   "round": "Round of 32",
+   "a_slug": "algeria",
+   "a_score": 3,
+   "b_slug": "austria",
+   "b_score": 3,
+   "winner_slug": null,
+   "completed": true
+  },
+  "760483": {
+   "round": "Round of 32",
+   "a_slug": "jordan",
+   "a_score": 1,
+   "b_slug": "argentina",
+   "b_score": 3,
+   "winner_slug": "argentina",
+   "completed": true
+  },
+  "760486": {
+   "round": "Round of 32",
+   "a_slug": "south-africa",
+   "a_score": 0,
+   "b_slug": "canada",
+   "b_score": 1,
+   "winner_slug": "canada",
+   "completed": true
+  },
+  "760487": {
+   "round": "Round of 32",
+   "a_slug": "brazil",
+   "a_score": 2,
+   "b_slug": "japan",
+   "b_score": 1,
+   "winner_slug": "brazil",
+   "completed": true
+  },
+  "760489": {
+   "round": "Round of 32",
+   "a_slug": "germany",
+   "a_score": 1,
+   "b_slug": "paraguay",
+   "b_score": 1,
+   "winner_slug": "paraguay",
+   "completed": true
+  },
+  "760488": {
+   "round": "Round of 32",
+   "a_slug": "netherlands",
+   "a_score": 1,
+   "b_slug": "morocco",
+   "b_score": 1,
+   "winner_slug": "morocco",
+   "completed": true
+  },
+  "760490": {
+   "round": "Round of 32",
+   "a_slug": "cote-d-ivoire",
+   "a_score": 1,
+   "b_slug": "norway",
+   "b_score": 2,
+   "winner_slug": "norway",
+   "completed": true
+  },
+  "760492": {
+   "round": "Round of 32",
+   "a_slug": "france",
+   "a_score": 3,
+   "b_slug": "sweden",
+   "b_score": 0,
+   "winner_slug": "france",
+   "completed": true
+  },
+  "760491": {
+   "round": "Round of 32",
+   "a_slug": "mexico",
+   "a_score": 2,
+   "b_slug": "ecuador",
+   "b_score": 0,
+   "winner_slug": "mexico",
+   "completed": true
+  },
+  "760495": {
+   "round": "Round of 32",
+   "a_slug": "england",
+   "a_score": 2,
+   "b_slug": "congo-dr",
+   "b_score": 1,
+   "winner_slug": "england",
+   "completed": true
+  },
+  "760493": {
+   "round": "Round of 32",
+   "a_slug": "belgium",
+   "a_score": 3,
+   "b_slug": "senegal",
+   "b_score": 2,
+   "winner_slug": "belgium",
+   "completed": true
+  },
+  "760494": {
+   "round": "Round of 32",
+   "a_slug": "united-states",
+   "a_score": 2,
+   "b_slug": "bosnia-herzegovina",
+   "b_score": 0,
+   "winner_slug": "united-states",
+   "completed": true
+  },
+  "760497": {
+   "round": "Round of 32",
+   "a_slug": "spain",
+   "a_score": 3,
+   "b_slug": "austria",
+   "b_score": 0,
+   "winner_slug": "spain",
+   "completed": true
+  },
+  "760496": {
+   "round": "Round of 32",
+   "a_slug": "portugal",
+   "a_score": 2,
+   "b_slug": "croatia",
+   "b_score": 1,
+   "winner_slug": "portugal",
+   "completed": true
+  },
+  "760498": {
+   "round": "Round of 32",
+   "a_slug": "switzerland",
+   "a_score": 2,
+   "b_slug": "algeria",
+   "b_score": 0,
+   "winner_slug": "switzerland",
+   "completed": true
+  },
+  "760499": {
+   "round": "Round of 32",
+   "a_slug": "australia",
+   "a_score": 1,
+   "b_slug": "egypt",
+   "b_score": 1,
+   "winner_slug": "egypt",
+   "completed": true
+  },
+  "760500": {
+   "round": "Round of 32",
+   "a_slug": "argentina",
+   "a_score": 3,
+   "b_slug": "cape-verde",
+   "b_score": 2,
+   "winner_slug": "argentina",
+   "completed": true
+  },
+  "760501": {
+   "round": "Round of 16",
+   "a_slug": "colombia",
+   "a_score": 1,
+   "b_slug": "ghana",
+   "b_score": 0,
+   "winner_slug": "colombia",
+   "completed": true
+  },
+  "760502": {
+   "round": "Round of 16",
+   "a_slug": "canada",
+   "a_score": 0,
+   "b_slug": "morocco",
+   "b_score": 3,
+   "winner_slug": "morocco",
+   "completed": true
+  },
+  "760503": {
    "round": "Round of 16",
    "a_slug": "paraguay",
    "a_score": 0,
