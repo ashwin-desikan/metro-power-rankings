@@ -261,6 +261,12 @@ def main():
         ko_winner[key] = e.get("winner_slug")
         ko_scores[key] = {e["a_slug"]: e["a_score"], e["b_slug"]: e["b_score"]}
 
+    # Curated shootout-winner corrections: a drawn knockout the feed left with no
+    # published winner flag (so winner_slug came through null). Keyed by the
+    # unordered slug pair. Egypt beat Australia on penalties, R32, 2026-07-03 Dallas.
+    for _pair, _w in {frozenset(("egypt", "australia")): "egypt"}.items():
+        ko_winner[_pair] = _w
+
     # Propagate: what slug came out of each match slot
     resolved = {}  # match_id -> winning_slug
     if groups_complete:

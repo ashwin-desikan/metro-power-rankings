@@ -1,7 +1,7 @@
 {
  "meta": {
   "tournament": "FIFA World Cup 2026",
-  "generated_at": "2026-07-05T10:31:53Z",
+  "generated_at": "2026-07-05T10:46:43Z",
   "sims": 40000,
   "model": "Blended Elo + market odds, Poisson goals, Monte Carlo",
   "blend_market_weight": 0.45,
@@ -199,7 +199,7 @@
    },
    {
     "slug": "cote-d-ivoire",
-    "name": "C\u00f4te d'Ivoire",
+    "name": "C\u00c3\u00b4te d'Ivoire",
     "group": "E",
     "exp_points": 6.0,
     "p_advance": 100.0,
@@ -219,7 +219,7 @@
    },
    {
     "slug": "curacao",
-    "name": "Cura\u00e7ao",
+    "name": "Cura\u00c3\u00a7ao",
     "group": "E",
     "exp_points": 1.0,
     "p_advance": 0.0,
@@ -768,7 +768,7 @@
   },
   {
    "slug": "curacao",
-   "name": "Cura\u00e7ao",
+   "name": "Cura\u00c3\u00a7ao",
    "group": "E",
    "p_r16": 0.0,
    "p_qf": 0.0,
