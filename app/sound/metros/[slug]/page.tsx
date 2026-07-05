@@ -3,6 +3,7 @@ import path from 'path';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import SoundNav from '../../SoundNav';
+import NumberOnesTable from './NumberOnesTable';
 
 interface DecadeVal { us: number; uk: number; combined: number }
 interface Metro {
@@ -40,15 +41,17 @@ const DECS = ['1950s', '1960s', '1970s', '1980s', '1990s', '2000s', '2010s', '20
 
 export default async function MetroProfile({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const [metros, vr] = await Promise.all([
+  const [metros, vr, no1map] = await Promise.all([
     readJSON<Metro[]>('metros_unified.json'),
     readJSON<VRTrack[]>('velvet_rock_tracks.json'),
+    readJSON<Record<string, { number_ones: { single: string; artist: string; charts: string; year: number }[] }>>('metro_number_ones.json'),
   ]);
   const m = metros.find((x) => x.slug === slug);
   if (!m) notFound();
 
   const vrTracks = vr.filter((t) => t.origin_metro === m.metro);
   const maxDec = Math.max(1, ...DECS.map((d) => m.by_decade[d]?.combined ?? 0));
+  const numberOnes = no1map[m.slug]?.number_ones ?? [];
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-8">
@@ -137,6 +140,13 @@ export default async function MetroProfile({ params }: { params: Promise<{ slug:
           </section>
         )}
       </div>
+
+      {numberOnes.length > 0 && (
+        <section className="mt-8">
+          <h2 className="mb-2 text-sm font-bold uppercase tracking-wide" style={muted}>Chart-topping #1 singles</h2>
+          <NumberOnesTable rows={numberOnes} />
+        </section>
+      )}
 
       {(m.lenses.production || vrTracks.length > 0) && (
         <section className="mt-8 rounded-lg border p-4" style={{ borderColor: '#5a4a1e' }}>

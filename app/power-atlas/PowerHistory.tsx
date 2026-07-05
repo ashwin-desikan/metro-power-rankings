@@ -164,7 +164,11 @@ export default function PowerHistory({ data }: { data: Data }) {
       {/* year control */}
       <div className="rounded-lg border p-5" style={{ borderColor: "var(--border)", background: "var(--bg-card)" }}>
         <div className="flex items-baseline justify-between mb-3">
-          <div className="text-5xl font-bold tracking-tight" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{year}</div>
+          <div className="flex items-center gap-2">
+            <button type="button" onClick={() => setYear((y) => Math.max(minY, y - 1))} disabled={year <= minY} aria-label="Previous year" className="text-lg leading-none px-2 py-1 rounded border transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)] disabled:opacity-30 disabled:pointer-events-none" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>&#9664;</button>
+            <div className="text-5xl font-bold tracking-tight tabular-nums" style={{ fontFamily: "'JetBrains Mono', monospace", minWidth: "4ch", textAlign: "center" }}>{year}</div>
+            <button type="button" onClick={() => setYear((y) => Math.min(maxY, y + 1))} disabled={year >= maxY} aria-label="Next year" className="text-lg leading-none px-2 py-1 rounded border transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)] disabled:opacity-30 disabled:pointer-events-none" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>&#9654;</button>
+          </div>
           <div className="text-xs text-[var(--text-muted)]">{year < 1816 ? "Curated tiers (pre-CINC era)" : `${LENS_LABEL[lens]} index`}</div>
         </div>
         <input type="range" min={minY} max={maxY} value={year} step={1} onChange={(e) => setYear(parseInt(e.target.value, 10))} className="w-full accent-[var(--accent)]" aria-label="Year" />

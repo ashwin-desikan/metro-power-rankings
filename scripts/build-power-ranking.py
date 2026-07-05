@@ -258,7 +258,7 @@ def juris_href(e):
 for e in top:
     e["jurisdictionHref"]=juris_href(e)
     e["transition"]=inp.get("transitions",{}).get(_bare(e["name"]),"")
-json.dump({"weights":W,"asOf":datetime.date.today().isoformat(),"ranking":top}, open("public/data/power-ranking.json","w"), indent=2, ensure_ascii=False)
+json.dump({"weights":W,"asOf":datetime.date.today().isoformat(),"ranking":top}, open("public/data/power-ranking.json","w",encoding="utf-8"), indent=2, ensure_ascii=False)
 print(f"{'#':>3} {'POWER':>7}  {'METRO':22} {'SLUG':22} NAME")
 for i,e in enumerate(top,1):
     print(f"{i:>3} {e['power']:>7.0f}  {str(e.get('metro','')):22} {str(e.get('metroSlug','')):22} {e['name']}")

@@ -18,6 +18,15 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-07-05",
+    headline: "Sortable #1 singles per metro, plus Power Atlas year steps",
+    items: [
+      "Every metro's Sound page now lists its chart-topping #1 singles as a sortable table, newest first by default, with click-to-sort by year, single, artist, or chart.",
+      "The Power Atlas year selector gains previous and next arrows, so you can step through history one year at a time alongside the slider.",
+      "Privacy now sits in the About menu for easy access.",
+    ],
+  },
+  {
     date: "2026-07-04",
     headline: "Homepage polish: clearer intro and roomier layout",
     items: [

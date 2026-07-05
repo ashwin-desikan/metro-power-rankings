@@ -325,6 +325,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
       <Dropdown id="about" label="About" openId={openId} setOpenId={setOpenId}>
         <DropdownItem href="/about" title="About" hint="The project, the author, and the why" />
         <DropdownItem href="/methodology" title="Methodology" hint="How the rankings are built" />
+        <DropdownItem href="/privacy" title="Privacy" hint="How your data is handled" />
       </Dropdown>
       <Link href="/studio" className="text-sm hover:text-[var(--accent)] transition-colors">
         Studio

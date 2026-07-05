@@ -115,6 +115,7 @@ function buildSections(): Section[] {
       items: [
         { href: '/about', label: 'About' },
         { href: '/methodology', label: 'Methodology' },
+        { href: '/privacy', label: 'Privacy' },
       ],
     },
   ];
