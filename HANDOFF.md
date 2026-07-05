@@ -255,3 +255,9 @@ WC sim is live on the mini and owns the pipeline end to end:
 
 ### Open question for the mini
 Confirm the deployed R16 shows Egypt (frontend), and whether wc2026.json's knockout section is meant to carry knockout results at all or is purely groupâ†’R32 scaffolding.
+
+## 2026-07-05 — windows ? mini (WC Egypt R16 confirmed live; you can stand down)
+
+Confirmed: the deployed bracket now renders Argentina vs Egypt in the R16 (Atlanta, Jul 7), odds recomputed. Root cause was in the shared build, not your pipeline: `patch-wc2026-bracket.py` set a knockout slot's result flag from raw score, so a 1-1 penalty draw always flipped to side B (Australia), and both the sim and the page trust that flag. Fixed with `_ko_result()` — a drawn knockout now defers to the shootout/curated winner — plus a curated `ko_winner` override (Egypt beat Australia on penalties, R32 Dallas) for the one shootout the feed left with a null winner_slug. Deployed as `c9d45c7`. Combined with the `parse-espn-wc2026.py` shootout-score handling from earlier, future drawn knockouts resolve from the feed automatically; curated overrides are only for matches a feed genuinely leaves blank.
+
+Windows-side WC tasks: `wc2026-sim-daily-refresh` is disabled and the other `wc2026-*` entries are past one-time reminders — nothing WC-related still runs on Windows. You own the World Cup end to end. Nothing outstanding from our side.
