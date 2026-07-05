@@ -62,17 +62,17 @@ export const TOP_TEAMS: TopTeamPick[] = [
   },
   {
     rank: 7,
-    metro: "Seoul",
-    sport: "Baseball",
-    team: "LG Twins",
-    rationale: "2023 Korean Series champions, breaking a 29-year title drought. 3 KBO Korean Series titles total (1990, 1994, 2023). Largest fanbase in KBO and Seoul's flagship baseball franchise. Plays at Jamsil Stadium. FC Seoul (6 K League 1 titles, largest average attendance in Korean football) is the cross-code alternative.",
-  },
-  {
-    rank: 8,
     metro: "Los Angeles",
     sport: "Basketball / Baseball",
     team: "Los Angeles Lakers / Los Angeles Dodgers",
     rationale: "Los Angeles's two iconic franchises, kept co-equal. Lakers: one of the NBA's most decorated clubs with a tied-record 17 titles and a lineage of dynasties from Magic and Kareem to Shaq, Kobe, and LeBron, a global brand rivaling any in sport. Dodgers: one of baseball's flagship franchises with multiple World Series titles, deep history, and worldwide reach. Either is a defensible choice as LA's top team.",
+  },
+  {
+    rank: 8,
+    metro: "Seoul",
+    sport: "Baseball",
+    team: "LG Twins",
+    rationale: "2023 Korean Series champions, breaking a 29-year title drought. 3 KBO Korean Series titles total (1990, 1994, 2023). Largest fanbase in KBO and Seoul's flagship baseball franchise. Plays at Jamsil Stadium. FC Seoul (6 K League 1 titles, largest average attendance in Korean football) is the cross-code alternative.",
   },
   {
     rank: 9,
@@ -167,17 +167,17 @@ export const TOP_TEAMS: TopTeamPick[] = [
   },
   {
     rank: 22,
-    metro: "Istanbul",
-    sport: "Football",
-    team: "Galatasaray SK / Fenerbahçe SK",
-    rationale: "Galatasaray: 25 Süper Lig titles (most ever in Turkish football), 2000 UEFA Cup and 2000 UEFA Super Cup , the only Turkish club to win a major European trophy. Fenerbahçe: 19 Süper Lig titles, Turkey's oldest club (founded 1907), consistent European participant and currently challenging Gala for the national title. Genuinely co-equal , Galatasaray edges on trophies (25 vs 19) and the lone European trophy, Fenerbahçe on history and fanbase scale. The Kıtalar Arası Derbi (Intercontinental Derby) is one of world football's fiercest rivalries. Beşiktaş JK (16 titles) is the historic third side.",
-  },
-  {
-    rank: 23,
     metro: "Rhine-Ruhr",
     sport: "Football",
     team: "Borussia Dortmund",
     rationale: "8 Bundesliga titles, 1997 UCL champions, cult Yellow Wall at Westfalenstadion , one of Europe's most atmospheric clubs. Schalke 04 is the historic rival.",
+  },
+  {
+    rank: 23,
+    metro: "Istanbul",
+    sport: "Football",
+    team: "Galatasaray SK / Fenerbahçe SK",
+    rationale: "Galatasaray: 25 Süper Lig titles (most ever in Turkish football), 2000 UEFA Cup and 2000 UEFA Super Cup , the only Turkish club to win a major European trophy. Fenerbahçe: 19 Süper Lig titles, Turkey's oldest club (founded 1907), consistent European participant and currently challenging Gala for the national title. Genuinely co-equal , Galatasaray edges on trophies (25 vs 19) and the lone European trophy, Fenerbahçe on history and fanbase scale. The Kıtalar Arası Derbi (Intercontinental Derby) is one of world football's fiercest rivalries. Beşiktaş JK (16 titles) is the historic third side.",
   },
   {
     rank: 24,
@@ -216,17 +216,17 @@ export const TOP_TEAMS: TopTeamPick[] = [
   },
   {
     rank: 29,
-    metro: "Berlin",
-    sport: "Basketball",
-    team: "Alba Berlin",
-    rationale: "11 EuroLeague Final Four appearances and 11 German BBL championships (most ever), Germany's dominant basketball franchise. Hertha BSC and Union Berlin trail in football; 1. FC Union's 2022-23 Champions League run was a high point but no top-flight titles.",
-  },
-  {
-    rank: 30,
     metro: "Philadelphia",
     sport: "American Football",
     team: "Philadelphia Eagles",
     rationale: "2 Super Bowl titles (2017, 2024), one of the NFL's strongest recent forces and the city's defining team. 76ers (3 titles, 1983 last), Phillies (2 WS), Flyers (2 Cups) all historic. Eagles are the city's soul.",
+  },
+  {
+    rank: 30,
+    metro: "Berlin",
+    sport: "Basketball",
+    team: "Alba Berlin",
+    rationale: "11 EuroLeague Final Four appearances and 11 German BBL championships (most ever), Germany's dominant basketball franchise. Hertha BSC and Union Berlin trail in football; 1. FC Union's 2022-23 Champions League run was a high point but no top-flight titles.",
   },
   {
     rank: 31,
@@ -286,17 +286,17 @@ export const TOP_TEAMS: TopTeamPick[] = [
   },
   {
     rank: 39,
-    metro: "Brussels",
-    sport: "Football",
-    team: "RSC Anderlecht",
-    rationale: "34 Belgian league titles (most ever), 2 UEFA Cup Winners' Cups, 1 UEFA Cup. Historically Belgium's flagship club; Club Brugge has recently overtaken nationally but Anderlecht remains Brussels' icon.",
-  },
-  {
-    rank: 40,
     metro: "Amsterdam",
     sport: "Football",
     team: "Ajax",
     rationale: "36 Eredivisie titles (most ever), 4 UEFA Champions League / European Cup titles including the 1971-73 three-peat, and 1995 Champions League , one of football's most storied academies and clubs globally.",
+  },
+  {
+    rank: 40,
+    metro: "Brussels",
+    sport: "Football",
+    team: "RSC Anderlecht",
+    rationale: "34 Belgian league titles (most ever), 2 UEFA Cup Winners' Cups, 1 UEFA Cup. Historically Belgium's flagship club; Club Brugge has recently overtaken nationally but Anderlecht remains Brussels' icon.",
   },
   {
     rank: 41,
@@ -566,17 +566,17 @@ export const TOP_TEAMS: TopTeamPick[] = [
   },
   {
     rank: 79,
-    metro: "Tel-Aviv",
-    sport: "Basketball",
-    team: "Maccabi Tel Aviv BC",
-    rationale: "6 Euroleague titles (most by any non-Spanish/Russian club), Israel's most successful sports franchise. In football, Maccabi Tel Aviv FC has 26 Israeli titles.",
-  },
-  {
-    rank: 80,
     metro: "Busan-Ulsan",
     sport: "Football",
     team: "Ulsan Hyundai Horang-i",
     rationale: "5 K League titles including the 2022-2024 three-peat. 2 AFC Champions League titles (2012, 2020). Korea's current dominant football club.",
+  },
+  {
+    rank: 80,
+    metro: "Tel-Aviv",
+    sport: "Basketball",
+    team: "Maccabi Tel Aviv BC",
+    rationale: "6 Euroleague titles (most by any non-Spanish/Russian club), Israel's most successful sports franchise. In football, Maccabi Tel Aviv FC has 26 Israeli titles.",
   },
   {
     rank: 81,
@@ -888,17 +888,17 @@ export const TOP_TEAMS: TopTeamPick[] = [
   },
   {
     rank: 125,
-    metro: "Liverpool",
-    sport: "Football",
-    team: "Liverpool",
-    rationale: "20 English top-flight titles (tied-most with Man United), 6 UEFA Champions League titles (most of any English club). Everton (9 English titles) is the historic cross-town rival.",
-  },
-  {
-    rank: 126,
     metro: "Porto",
     sport: "Football",
     team: "FC Porto",
     rationale: "30 Primeira Liga titles, 2 UEFA Champions League titles (1987, 2004), 2 UEFA Cup/Europa League titles (2003, 2011) , Mourinho's launchpad. Portugal's 2nd most decorated club.",
+  },
+  {
+    rank: 126,
+    metro: "Liverpool",
+    sport: "Football",
+    team: "Liverpool",
+    rationale: "20 English top-flight titles (tied-most with Man United), 6 UEFA Champions League titles (most of any English club). Everton (9 English titles) is the historic cross-town rival.",
   },
   {
     rank: 127,
@@ -1154,17 +1154,17 @@ export const TOP_TEAMS: TopTeamPick[] = [
   },
   {
     rank: 163,
-    metro: "Bilbao",
-    sport: "Football",
-    team: "Athletic Bilbao",
-    rationale: "8 La Liga titles, 24 Copa del Rey titles (2nd-most, including 2024 after a 40-year drought). Famous Basque-only recruitment policy , unique in modern football.",
-  },
-  {
-    rank: 164,
     metro: "Jacksonville",
     sport: "American Football",
     team: "Jacksonville Jaguars",
     rationale: "No Super Bowl appearances but 3 AFC Championship appearances. Only major-league franchise in metro.",
+  },
+  {
+    rank: 164,
+    metro: "Bilbao",
+    sport: "Football",
+    team: "Athletic Bilbao",
+    rationale: "8 La Liga titles, 24 Copa del Rey titles (2nd-most, including 2024 after a 40-year drought). Famous Basque-only recruitment policy , unique in modern football.",
   },
   {
     rank: 165,
@@ -1217,17 +1217,17 @@ export const TOP_TEAMS: TopTeamPick[] = [
   },
   {
     rank: 172,
-    metro: "Taichung",
-    sport: "Baseball",
-    team: "CTBC Brothers",
-    rationale: "11 Taiwan Series titles (most ever in CPBL). Metro's dominant franchise , baseball is the dominant sport in Taichung.",
-  },
-  {
-    rank: 173,
     metro: "Omaha-Lincoln",
     sport: "American Football (NCAA)",
     team: "Nebraska",
     rationale: "5 national championships in college football (1970, 1971, 1994, 1995, 1997). Memorial Stadium sellout streak since 1962. No major-league pro teams in metro.",
+  },
+  {
+    rank: 173,
+    metro: "Taichung",
+    sport: "Baseball",
+    team: "CTBC Brothers",
+    rationale: "11 Taiwan Series titles (most ever in CPBL). Metro's dominant franchise , baseball is the dominant sport in Taichung.",
   },
   {
     rank: 174,
@@ -1399,17 +1399,17 @@ export const TOP_TEAMS: TopTeamPick[] = [
   },
   {
     rank: 198,
-    metro: "Dammam",
-    sport: "Football",
-    team: "Al-Ettifaq",
-    rationale: "2 Saudi Pro League titles (1983, 1987). Home of the Henderson/Firmino 2023 Saudi boom signings.",
-  },
-  {
-    rank: 199,
     metro: "Daejeon",
     sport: "Baseball",
     team: "Hanwha Eagles",
     rationale: "1999 Korean Series champions. Daejeon Hana Citizen (K League 1) is the football side. Neither nationally dominant.",
+  },
+  {
+    rank: 199,
+    metro: "Dammam",
+    sport: "Football",
+    team: "Al-Ettifaq",
+    rationale: "2 Saudi Pro League titles (1983, 1987). Home of the Henderson/Firmino 2023 Saudi boom signings.",
   },
   {
     rank: 200,
@@ -1504,17 +1504,17 @@ export const TOP_TEAMS: TopTeamPick[] = [
   },
   {
     rank: 213,
-    metro: "Canberra",
-    sport: "Rugby League",
-    team: "Canberra Raiders",
-    rationale: "3 NRL premierships (1989, 1990, 1994) , the Mal Meninga / Ricky Stuart era dynasty. ACT's flagship pro franchise. Canberra Brumbies (Super Rugby, 2 titles 2001, 2004) is the rugby union counterpart.",
-  },
-  {
-    rank: 214,
     metro: "Hartford",
     sport: "Basketball (NCAA)",
     team: "Connecticut / Connecticut (W)",
     rationale: "UConn basketball is a true dynasty across both men's and women's programs. Men: 6 NCAA championships (1999, 2004, 2011, 2014, 2023, 2024 , including back-to-back titles 2023-24 under Dan Hurley, only program to repeat in modern era). Women: 11 NCAA championships (most ever in W basketball, 1995-2025 across the Geno Auriemma era), 23 Final Fours, four undefeated seasons. Connecticut Sun (WNBA) play in the area too. Hartford lost the Whalers to Carolina in 1997; UConn has been the state's defining athletic identity since.",
+  },
+  {
+    rank: 214,
+    metro: "Canberra",
+    sport: "Rugby League",
+    team: "Canberra Raiders",
+    rationale: "3 NRL premierships (1989, 1990, 1994) , the Mal Meninga / Ricky Stuart era dynasty. ACT's flagship pro franchise. Canberra Brumbies (Super Rugby, 2 titles 2001, 2004) is the rugby union counterpart.",
   },
   {
     rank: 215,
@@ -1609,17 +1609,17 @@ export const TOP_TEAMS: TopTeamPick[] = [
   },
   {
     rank: 228,
-    metro: "Newcastle",
-    sport: "Football",
-    team: "Newcastle United",
-    rationale: "4 English league titles (all pre-1928), 6 FA Cups, 1969 Inter-Cities Fairs Cup. PIF takeover 2021 pushed Magpies back to UCL contention , won 2025 EFL Cup ending 56-year domestic trophy drought.",
-  },
-  {
-    rank: 229,
     metro: "Ahmedabad",
     sport: "T20 Cricket",
     team: "Gujarat Titans",
     rationale: "2022 Indian Premier League champions in their inaugural season , only IPL franchise to win the title in debut year. 2023 finalists. Narendra Modi Stadium (world's largest cricket ground) is their home.",
+  },
+  {
+    rank: 229,
+    metro: "Newcastle",
+    sport: "Football",
+    team: "Newcastle United",
+    rationale: "4 English league titles (all pre-1928), 6 FA Cups, 1969 Inter-Cities Fairs Cup. PIF takeover 2021 pushed Magpies back to UCL contention , won 2025 EFL Cup ending 56-year domestic trophy drought.",
   },
   {
     rank: 230,
@@ -1651,17 +1651,17 @@ export const TOP_TEAMS: TopTeamPick[] = [
   },
   {
     rank: 234,
-    metro: "Wenzhou",
-    sport: "",
-    team: "-",
-    rationale: "No CBA franchise based in Wenzhou specifically , Zhejiang Golden Bulls (CBA, 1 title 2025) and Zhejiang Lions (CBA, 2024 finalists) both play in Hangzhou which is the Zhejiang province capital. Wenzhou's pro sports profile is thin , manufacturing-driven city without a flagship franchise.",
-  },
-  {
-    rank: 235,
     metro: "Nottingham",
     sport: "Football",
     team: "Nottingham Forest",
     rationale: "1 English league title (1978), 2 European Cups (1979, 1980 , back-to-back under Brian Clough). One of only six English clubs to win Europe's top trophy. Currently mid-table Premier League. Notts County (oldest league club in world football, founded 1862) is the cross-town rival.",
+  },
+  {
+    rank: 235,
+    metro: "Wenzhou",
+    sport: "",
+    team: "-",
+    rationale: "No CBA franchise based in Wenzhou specifically , Zhejiang Golden Bulls (CBA, 1 title 2025) and Zhejiang Lions (CBA, 2024 finalists) both play in Hangzhou which is the Zhejiang province capital. Wenzhou's pro sports profile is thin , manufacturing-driven city without a flagship franchise.",
   },
   {
     rank: 236,
@@ -1693,24 +1693,24 @@ export const TOP_TEAMS: TopTeamPick[] = [
   },
   {
     rank: 240,
+    metro: "Pune",
+    sport: "",
+    team: "-",
+    rationale: "No long-term IPL franchise , Pune Warriors and Rising Pune Supergiant both folded. Maharashtra Cricket Association Stadium (40K+ capacity) is a major IPL/international venue but the city lacks a resident top-tier team across all major sports.",
+  },
+  {
+    rank: 241,
     metro: "Nantes",
     sport: "Football",
     team: "FC Nantes",
     rationale: "8 French Ligue 1 titles, 2022 Coupe de France winners, 1996 UCL semifinalists. The 'Canaris' are one of France's most historic clubs with the Suaudeau/Coco/Loko 'jeu à la nantaise' tradition.",
   },
   {
-    rank: 241,
+    rank: 242,
     metro: "Dar es Salaam",
     sport: "Football",
     team: "Young Africans / Simba SC",
     rationale: "Young Africans (Yanga): 30+ Tanzanian Premier League titles. Simba SC: 22+ Premier League titles. The Kariakoo derby is one of East Africa's biggest sporting fixtures , co-equal historic rivals.",
-  },
-  {
-    rank: 242,
-    metro: "Pune",
-    sport: "",
-    team: "-",
-    rationale: "No long-term IPL franchise , Pune Warriors and Rising Pune Supergiant both folded. Maharashtra Cricket Association Stadium (40K+ capacity) is a major IPL/international venue but the city lacks a resident top-tier team across all major sports.",
   },
   {
     rank: 243,
@@ -1902,7 +1902,7 @@ export const TOP_TEAMS: TopTeamPick[] = [
     rationale: "KHL franchise, regular playoff team. Russian Urals' main pro hockey side. FC Ural plays in Russian football.",
   },
   {
-    rank: 273,
+    rank: 272,
     metro: "Utrecht",
     sport: "Football",
     team: "FC Utrecht",
@@ -1916,7 +1916,7 @@ export const TOP_TEAMS: TopTeamPick[] = [
     rationale: "5 Danish Superliga titles, 9 Danish Cups. Denmark's second city's flagship club. Aarhus 1900 (athletics) and Bakken Bears (basketball) are alternatives.",
   },
   {
-    rank: 276,
+    rank: 275,
     metro: "Tunis",
     sport: "Football",
     team: "Espérance",
@@ -2098,7 +2098,7 @@ export const TOP_TEAMS: TopTeamPick[] = [
     rationale: "1981 UEFA Cup Winners' Cup champions (only Georgian/Soviet Georgian club to win a major European trophy), 14 Soviet era + 19 Georgian league titles.",
   },
   {
-    rank: 379,
+    rank: 380,
     metro: "Accra",
     sport: "Football",
     team: "Hearts of Oak / Asante Kotoko",
@@ -2119,7 +2119,7 @@ export const TOP_TEAMS: TopTeamPick[] = [
     rationale: "3 national championships (1993, 1999, 2013), Bobby Bowden's 377 wins. Doak Campbell Stadium and the Seminole tomahawk chop.",
   },
   {
-    rank: 393,
+    rank: 394,
     metro: "Minho (Braga)",
     sport: "Football",
     team: "Sporting Braga",
@@ -2154,14 +2154,14 @@ export const TOP_TEAMS: TopTeamPick[] = [
     rationale: "2 national championships (1982, 1986), Joe Paterno's 409 wins, 107,000-seat Beaver Stadium 'White Out' , one of college sports' most iconic atmospheres.",
   },
   {
-    rank: 430,
+    rank: 429,
     metro: "Christchurch",
     sport: "Rugby Union",
     team: "Crusaders",
     rationale: "14 Super Rugby titles (most ever, by a large margin) , the most decorated franchise in southern-hemisphere rugby. Genuine global rugby name.",
   },
   {
-    rank: 432,
+    rank: 431,
     metro: "Bratislava",
     sport: "Football",
     team: "ŠK Slovan Bratislava",
