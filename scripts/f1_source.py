@@ -317,15 +317,37 @@ def _fetch_supabase(cfg):
 
 def _replace_supabase(cfg, header_ordered_rows):
     sb = _client(); cols = cfg["cols"]; table = cfg["table"]
-    sb.table(table).delete().gte("row_num", 0).execute()
+    # Build the payload BEFORE deleting anything, so a build error can't leave
+    # the table wiped.
     payload = []
     for i, row in enumerate(header_ordered_rows, start=1):
         rec = {"row_num": i}
         for c, v in zip(cols, row):
             rec[c] = v
         payload.append(rec)
+    new_n = len(payload)
+    # SAFETY GUARD: never wipe a table to empty or a drastic shrink. Supabase is
+    # the single source of truth, and delete+reinsert has no transaction, so a
+    # transient empty/partial upstream read must not be allowed to nuke good data.
+    cur = sb.table(table).select("row_num", count="exact").limit(1).execute().count or 0
+    if cur > 0 and new_n == 0:
+        raise RuntimeError(
+            f"_replace_supabase({table}): refusing to replace {cur} rows with 0 "
+            f"(upstream read likely failed)")
+    if cur > 0 and new_n < cur * 0.5:
+        raise RuntimeError(
+            f"_replace_supabase({table}): refusing suspicious shrink "
+            f"{cur} -> {new_n} rows (<50%); investigate before overwriting")
+    sb.table(table).delete().gte("row_num", 0).execute()
     for j in range(0, len(payload), 500):
         sb.table(table).insert(payload[j:j + 500]).execute()
+    # Verify the insert landed fully; a partial insert must fail loudly, not
+    # silently leave a truncated table behind.
+    final = sb.table(table).select("row_num", count="exact").limit(1).execute().count or 0
+    if final != new_n:
+        raise RuntimeError(
+            f"_replace_supabase({table}): verify failed — expected {new_n} rows, "
+            f"table now has {final}")
     return len(payload)
 
 
