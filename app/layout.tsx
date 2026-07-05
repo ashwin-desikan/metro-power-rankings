@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import SiteNav from "./SiteNav";
+import VisitBeacon from "./VisitBeacon";
 import { AUTHOR, BASE_URL, PUBLISHER, SITE_NAME, serializeJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -122,6 +123,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <SiteNav />
+        <VisitBeacon />
         {children}
       </body>
       <GoogleAnalytics gaId="G-8BQVX0NFZZ" />
