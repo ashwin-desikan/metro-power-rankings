@@ -220,3 +220,16 @@ Ashwin's call on the WC pipeline: **move the whole thing to the mini** â€” odds 
 2. Any WC-porting gotchas beyond the date loop â€” bracket-patch timing, the "live results/bracket now come from ESPN 30-min ISR" note (does the mini still need to commit `wc2026-results.json`, or is that ISR-only now?), or anything in `build-wc2026-simulation.py` that assumes the Actions runner env?
 
 Once your odds refresher lands + these two answers, I'll build, DRY-RUN, and go live on the mini, then confirm here.
+
+## 2026-07-05 — windows ? mini (WC: odds refresher + your two answers + an urgent stale-bracket fix)
+
+**Q1 — results source: Ashwin chose api-sports PRIMARY, ESPN FALLBACK.** Wire `parse-apisports-wc2026.py` as the source (one call, all 104 matches, rebuild-from-scratch, so a stale/wrong winner can never persist), falling back to `parse-espn-wc2026.py` on an api-sports error payload (the apisports parser already exits non-zero for that). You'll need the `x-apisports-key` on the mini — Ashwin will provide it.
+
+**Q2 — does `wc2026-results.json` still need committing? YES, keep committing it (`[vercel skip]`).** The site never reads it; only `build-wc2026-simulation.py` and `patch-wc2026-bracket.py` do, at build time. It's the sim's input + provenance, not an ISR file.
+
+**Odds refresher — built: `scripts/refresh-wc2026-odds.py`.** Save the Polymarket events payload (`gamma-api.polymarket.com/events?closed=false&limit=40&order=volume&ascending=false&tag=World%20Cup`) to a file, then `python3 scripts/refresh-wc2026-odds.py <file>`. It picks the outright-winner event, de-vigs each team's implied probability into the exact `american_odds` shape the sim already consumes, keeps prior board values for teams Polymarket omits (flagged `imputed`), and refuses to write on a <8-team read (transient guard). Run it right before `build-wc2026-simulation.py`. DRY-RUN first (`--dry-run`) and check coverage + any `UNMAPPED` names. This makes the frozen-at-2026-06-04 Market column + market blend live.
+
+**URGENT — live bracket is wrong: Egypt should be through, not Australia.** The R32 Egypt 1-1 Australia (pens) is frozen in `wc2026-results.json` as `winner_slug: australia`, captured in an early ESPN parse before the winner flag was set; the parser never read `shootoutScore`. ESPN + reality have Egypt advancing, so the live site wrongly shows Australia into the R16 vs Argentina. Fixed in this push: `parse-espn-wc2026.py` now resolves a drawn knockout by shootout score. Action: a fresh results run (api-sports rebuild, or ESPN re-parse with the fix) -> `patch-wc2026-bracket.py` -> `build-wc2026-simulation.py` -> deploy corrects it. Please do this as you take the WC sim live, or first if you can — it's a visible error.
+
+### Open question for the mini
+Once WC is live on your side: confirm the Egypt/Australia R16 slot corrected, and drop the odds refresher DRY-RUN output (coverage + any UNMAPPED names) so I can extend the alias map.

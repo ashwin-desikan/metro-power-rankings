@@ -121,8 +121,13 @@ def main():
                     score = int(c.get("score"))
                 except (TypeError, ValueError):
                     score = None
+                try:
+                    so = int(c.get("shootoutScore"))
+                except (TypeError, ValueError):
+                    so = None
                 parsed[c.get("homeAway", "?")] = {
                     "slug": slug, "score": score, "winner": bool(c.get("winner")),
+                    "so": so,
                 }
             home, away = parsed.get("home"), parsed.get("away")
             if not home or not away or not home["slug"] or not away["slug"]:
@@ -135,6 +140,9 @@ def main():
                     winner = home["slug"]
                 elif away["winner"]:
                     winner = away["slug"]
+                elif home.get("so") is not None and away.get("so") is not None and home["so"] != away["so"]:
+                    # drawn knockout decided on penalties: winner has more shootout goals
+                    winner = home["slug"] if home["so"] > away["so"] else away["slug"]
                 elif home["score"] != away["score"]:
                     winner = home["slug"] if home["score"] > away["score"] else away["slug"]
             events[str(ev.get("id"))] = {
