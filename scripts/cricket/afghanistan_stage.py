@@ -25,6 +25,7 @@ Usage:
 import argparse, csv, datetime, json, re, sys, urllib.parse, urllib.request
 
 import openpyxl
+from cricket_source import open_source
 
 API = "https://en.wikipedia.org/w/api.php"
 UA = {"User-Agent": "MetroPowerRankings-AFG-stager/1.0 (cricket portal maintenance)"}
@@ -215,7 +216,7 @@ def is_played(m):
     return bool(m["result"].strip() or m["score1"].strip() or m["score2"].strip())
 
 def load_workbook_index(path):
-    wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
+    wb = open_source(path)
     ws = wb["Matches"]
     H = [c.value for c in next(ws.iter_rows(min_row=1, max_row=1))]
     ix = {n: H.index(n) for n in ["Format","Start Date","Team","Opponent",
@@ -281,7 +282,9 @@ def emit_rows(m, idx):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--workbook", required=True)
-    ap.add_argument("--out", required=True)
+    ap.add_argument("--out")
+    ap.add_argument("--to-supabase", action="store_true",
+                    help="insert staged rows straight into cricket_matches instead of writing a CSV")
     ap.add_argument("--since", default=None, help="YYYY-MM-DD; default = day after last AFG match")
     args = ap.parse_args()
 
@@ -311,10 +314,18 @@ def main():
         staged.append((m, rows))
         if flags: flagged.append((m, flags))
 
-    with open(args.out, "w", newline="", encoding="utf-8-sig") as f:
-        w = csv.writer(f); w.writerow(HEADER)
-        for _, rows in staged:
-            for row in rows: w.writerow(row)
+    if args.to_supabase:
+        import cricket_store
+        flat = [row for _, rows in staged for row in rows]
+        n = cricket_store.append_matches(flat)
+        print(f"Inserted {n} rows into cricket_matches (Supabase)")
+    elif args.out:
+        with open(args.out, "w", newline="", encoding="utf-8-sig") as f:
+            w = csv.writer(f); w.writerow(HEADER)
+            for _, rows in staged:
+                for row in rows: w.writerow(row)
+    else:
+        sys.exit("provide --out <csv> or --to-supabase")
 
     print(f"\nStaged {len(staged)} new Afghanistan internationals -> {len(staged)*2} rows")
     for m, _ in staged:

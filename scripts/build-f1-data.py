@@ -15,9 +15,9 @@ SRC = os.environ.get("F1_DATA_DIR") or os.path.join(REPO, "..", "F1 Data", "data
 OUT_DIR = os.path.join(REPO, "public", "data", "f1")
 OUT = os.path.join(OUT_DIR, "data.json")
 
+from f1_source import read_records
 def rd(name):
-    with open(os.path.join(SRC, name), encoding="utf-8") as f:
-        return list(csv.DictReader(f))
+    return read_records(name[:-4] if name.endswith(".csv") else name, csv_dir=SRC)
 
 def slugify(s):
     if not s: return ""

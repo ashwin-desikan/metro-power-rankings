@@ -72,3 +72,66 @@ Fuller write-up will land at `mac-mini-jobs/mini-migration-analysis.md` when tha
 
 ### Open question for the mini
 Once F1 Data is copied over and your first cron run merges a round cleanly, confirm here and I will retire the Windows `f1-weekly-refresh` Cowork task.
+
+## 2026-07-05 — windows → mini (cricket: workbook fully retired, Supabase source of truth, weekly + monthly cadence)
+
+Ashwin's decision: the InternationalCricket.xlsx monthly workflow moves fully to Supabase (project `nmprqkmymrdknffwnuur`, eu-central-2). The workbook becomes a historical backup he never edits. **Runs on the mini** (real internet + egress ownership). Publish = JSON-to-git `[vercel skip]` + ISR, no paid build.
+
+**Changed in `scripts/cricket/` (staged, uncommitted — I do not commit):**
+- `cricket_source.py` — adapter `open_source(spec)`: `*.xlsx` | `'supabase'` | `'local:<json>'`; presents original sheet headers + openpyxl-compatible `iter_rows`.
+- `cricket_store.py` — append-only write helpers; needs `SUPABASE_URL` + `SUPABASE_SERVICE_KEY` (service role bypasses RLS).
+- `cricsheet_stage.py` / `afghanistan_stage.py` — `--to-supabase` + `--workbook supabase` (dedupe vs DB, insert into `cricket_matches`; CSV path preserved).
+- `build_icc_rankings.py` — `--workbook supabase --write` appends the new month(s) into the ranking tables (validation gate intact, append-only).
+- `build_cricket_portal_data.py` and `build_cricket_top_games.py` — both read `supabase`; each proven byte-identical to the live JSON.
+
+**Cricket is now 100% workbook-free for the recurring pipeline.** (`build_national_*` and `build_alltime_cricket.py` are one-off spine builders that read prior-session Kaggle/Cricsheet dumps, NOT the workbook — out of scope, not recurring.)
+
+**WEEKLY job — every Tuesday (matches fresh; Tests finish Mon):** from `scripts/cricket/`
+1. Fetch the latest Cricsheet `recently_added_*_male_json.zip`.
+2. `python cricsheet_stage.py --zip <zip> --workbook supabase --to-supabase`
+3. `python afghanistan_stage.py --workbook supabase --to-supabase`
+4. `python build_cricket_portal_data.py supabase ../../public/data/cricket`
+5. `python build_cricket_top_games.py --workbook supabase`
+6. Commit `public/data/cricket/*` with `[vercel skip]`; ISR serves it. No build.
+
+**MONTHLY job — 1st of month (rankings; ICC publishes monthly):**
+1. `python build_icc_rankings.py --workbook supabase --write`  (append-only; only completed months not already stored — a no-op mid-month, safe to over-run)
+2. then re-run weekly steps 4–6 (rankings feed hub.json/teams.json).
+
+Idempotent throughout: dedupe drops overlaps, so the 30-day rolling Cricsheet zip + weekly cadence auto-catches Cricsheet's own publish lag. Cheap: each run is native compute + one `[vercel skip]` commit, no paid build — so weekly (or even more often) is essentially free.
+
+**Env / deps:** `pip install supabase openpyxl`; `SUPABASE_URL=https://nmprqkmymrdknffwnuur.supabase.co`, `SUPABASE_SERVICE_KEY=<service_role>` (Ashwin copies the key over).
+
+**Exceptions:** stagers print a "REVIEW" block for any unresolved team spelling / venue; rows still insert with blanks — ntfy those lines so Ashwin fixes the few via the Supabase connector. No workbook.
+
+Everything was parity-tested locally (portal + top-games byte-identical; rankings validation gate reproduces 2026-06) and the append was round-trip-tested against the live `cricket_matches` table. First real weekly + monthly cycles run on your side.
+
+### Open question for the mini
+After the first weekly run: confirm new matches inserted + `public/data/cricket` rebuilt clean. After the first monthly run: confirm the ranking month appended. Drop results here.
+
+## 2026-07-05 — windows → mini (F1: CSV store → Supabase, supersedes the earlier f1-weekly-refresh handoff)
+
+Update to the earlier F1 migration note (which Ashwin never actioned): F1's durable store moves to Supabase too, same project `nmprqkmymrdknffwnuur`. This **removes the need to copy the "F1 Data" folder to the mini and the two-diverging-copies risk** — Supabase is the single store for both machines and the site.
+
+**Architecture reminder:** F1's source of truth was the CSVs in `F1 Data/data/` (the workbook is a generated view). So the migration mirrors the 10 CSVs as Supabase tables (`f1_*`), and the same scripts now read/write Supabase behind one adapter.
+
+**Files (staged, uncommitted):**
+- In the `F1 Data` project: `f1_source.py` (adapter: read_records/read_df/write_df over CSV | Supabase | local-mirror; stores each cell verbatim so round-trips are exact), `f1_update.py` (Jolpica merge — now writes Supabase under `F1_SUPABASE=1`), `f1_build.py` (regenerates the workbook from Supabase, optional), `load_f1_to_supabase.py` (one-time seed from CSVs).
+- In the Metro repo `scripts/`: `build-f1-data.py` (reads Supabase under `F1_SUPABASE=1`; 4-line change) + a copy of `f1_source.py` for import.
+
+**Parity proven (locally):** `build-f1-data.py` produces byte-identical `data.json` from CSV vs Supabase-mirror (only the `generated` date differs); `f1_update.py` run against the mirror reproduces the CSV-mode result across all 10 tables (results, standings, spine, refs); live insert/delete round-trip on `f1_circuits` OK.
+
+**Seed once (Ashwin, on Windows where the CSVs live):**
+`pip install supabase pandas`; `SUPABASE_URL`, `SUPABASE_SERVICE_KEY`; then `python load_f1_to_supabase.py` from `F1 Data/`. ~36k rows across 10 tables. After that the mini needs only the scripts + a `data/_incoming/` dir + creds — **no CSV copy**.
+
+**Weekly F1 job on the mini (day after each race; F1 races Sunday, so ~Monday):**
+1. `web_fetch` the five literal Jolpica URLs (`current/last/results.json`, `current/last/qualifying.json`, `current/last/sprint.json`, `current/driverStandings.json`, `current/constructorStandings.json`) into `F1 Data/data/_incoming/`.
+2. `F1_SUPABASE=1 python f1_update.py`   (idempotent merge into Supabase; re-pulling the whole season is safe)
+3. `F1_SUPABASE=1 python scripts/build-f1-data.py` (from the Metro repo) → rebuild `public/data/f1/data.json`
+4. optional `F1_SUPABASE=1 python f1_build.py` only if you want the refreshed `.xlsx` artifact (site doesn't need it)
+5. commit `public/data/f1/data.json` with `[vercel skip]`.
+
+`data/schedule_2026.csv` (included) can drive the day-after-race fire time if you keep the self-rescheduling pattern; otherwise a weekly Monday cron catches every race. The separate per-race ESPN/Jolpica ISR refresh (`refresh-f1-current-season.py` + `f1-refresh.yml`) is unaffected and stays.
+
+### Open question for the mini
+After the first F1 weekly run: confirm `f1_update` merged into Supabase and `data.json` rebuilt clean (diff vs previous). Drop the result here.

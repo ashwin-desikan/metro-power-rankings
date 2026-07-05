@@ -24,6 +24,7 @@ import sys
 import zipfile
 
 import openpyxl
+from cricket_source import open_source
 
 HEADER = [
     "Format", "Start Date", "End Date", "Match #", "Team", "T1", "Opponent", "T2",
@@ -95,7 +96,7 @@ def resolve_outcome(outcome, spell):
 
 
 def load_workbook_context(path):
-    wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
+    wb = open_source(path)
     ws = wb["Matches"]
     it = ws.iter_rows(values_only=True)
     next(it)  # header
@@ -160,7 +161,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--zip", required=True)
     ap.add_argument("--workbook", required=True)
-    ap.add_argument("--out", required=True)
+    ap.add_argument("--out")
+    ap.add_argument("--to-supabase", action="store_true",
+                    help="insert staged rows straight into cricket_matches instead of writing a CSV")
     args = ap.parse_args()
 
     ctx = load_workbook_context(args.workbook)
@@ -259,10 +262,17 @@ def main():
                 "Yes",
             ])
 
-    with open(args.out, "w", newline="", encoding="utf-8-sig") as f:
-        w = csv.writer(f)
-        w.writerow(HEADER)
-        w.writerows(rows)
+    if args.to_supabase:
+        import cricket_store
+        n = cricket_store.append_matches(rows)
+        print(f"Inserted {n} rows into cricket_matches (Supabase)")
+    elif args.out:
+        with open(args.out, "w", newline="", encoding="utf-8-sig") as f:
+            w = csv.writer(f)
+            w.writerow(HEADER)
+            w.writerows(rows)
+    else:
+        sys.exit("provide --out <csv> or --to-supabase")
 
     print(f"Staged {len(staged)} new internationals ({dict(counts)}) -> {len(rows)} rows")
     if staged:

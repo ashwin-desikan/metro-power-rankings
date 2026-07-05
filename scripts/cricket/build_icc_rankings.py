@@ -26,6 +26,7 @@ import openpyxl
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import icc_engine as E
+from cricket_source import open_source
 
 MASTER = r"C:\Users\ashwi\OneDrive\Excel Files\InternationalCricket.xlsx"
 FMT_SHEET = {"Test": "Test Rankings", "ODI": "ODI Rankings", "T20I": "T20I Rankings"}
@@ -51,7 +52,7 @@ def next_month(ym):
     return f"{y+1}-01" if m == 12 else f"{y}-{m+1:02d}"
 
 def load_matches(path):
-    wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
+    wb = open_source(path)
     ws = wb["Matches"]
     H = [c.value for c in next(ws.iter_rows(min_row=1, max_row=1))]
     ix = {n: H.index(n) for n in ["Format","Start Date","Team","Opponent","Winner","Result","Tournament / Series"]}
@@ -185,7 +186,7 @@ def main():
     L = compute(matches)
 
     # read-only pass for structure
-    wbro = openpyxl.load_workbook(args.workbook, read_only=True, data_only=True)
+    wbro = open_source(args.workbook)
     problems = validate(L, wbro)
     if problems:
         print("VALIDATION FAILED (connected Test/ODI teams diverge beyond tol):")
@@ -226,6 +227,19 @@ def main():
 
     if not args.write:
         print("\nDry-run only. Re-run with --write to append.")
+        return 0
+
+    # ---- Supabase append (append-only inserts; no workbook, no backup dance) ----
+    if str(args.workbook) == "supabase":
+        import cricket_store
+        for s_name, rr in all_fmt.items():
+            if rr:
+                got = cricket_store.append_sheet_rows(s_name, rr)
+                print(f"  appended {got} rows -> {s_name}")
+        if all_no:
+            got = cricket_store.append_sheet_rows("Number Ones", all_no)
+            print(f"  appended {got} rows -> Number Ones")
+        print("OK_DONE (Supabase)")
         return 0
 
     # ---- write: backup, append, verify others unchanged, overwrite ----

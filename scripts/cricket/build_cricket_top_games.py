@@ -15,18 +15,27 @@ Native monthly run, like build_icc_rankings.py:
 """
 import os, sys, re, json, datetime, collections, argparse
 import openpyxl
+from cricket_source import open_source
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import icc_engine as E
 
 MASTER = r"C:\Users\ashwi\OneDrive\Excel Files\InternationalCricket.xlsx"
-DEST = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+DEST = os.environ.get("TOPGAMES_DEST") or os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                      "..", "..", "public", "data", "cricket", "top-games.json"))
 CANON = {"United States of America": "United States"}
 def canon(t): return CANON.get(t, t)
 def slug(t): return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", t.lower())).strip("-")
 
+def _to_date(v):
+    if hasattr(v, "date"): return v.date()
+    s = str(v).strip()
+    if "-" in s:
+        y, m, d = s[:10].split("-"); return datetime.date(int(y), int(m), int(d))
+    return datetime.date(1899, 12, 30) + datetime.timedelta(days=int(float(s)))
+
+
 def load_matches(path):
-    wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
+    wb = open_source(path)
     ws = wb["Matches"]
     H = [c.value for c in next(ws.iter_rows(min_row=1, max_row=1))]
     ix = {n: H.index(n) for n in ["Format", "Start Date", "End Date", "Team", "Opponent", "Winner",
@@ -38,9 +47,9 @@ def load_matches(path):
         if fmt not in ("Test", "ODI", "T20I"): continue
         v = r[ix["Start Date"]]
         if v is None: continue
-        sd = v.date() if hasattr(v, "date") else datetime.date(1899, 12, 30) + datetime.timedelta(days=int(v))
+        sd = _to_date(v)
         v2 = r[ix["End Date"]]
-        ed = (v2.date() if hasattr(v2, "date") else datetime.date(1899, 12, 30) + datetime.timedelta(days=int(v2))) if v2 is not None else sd
+        ed = _to_date(v2) if v2 is not None else sd
         team, opp = r[ix["Team"]], r[ix["Opponent"]]
         if not team or not opp: continue
         team, opp = canon(str(team)), canon(str(opp))

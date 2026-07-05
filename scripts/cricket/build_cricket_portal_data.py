@@ -20,7 +20,7 @@ import sys
 import unicodedata
 from collections import defaultdict
 from datetime import date, datetime
-from openpyxl import load_workbook
+from cricket_source import open_source
 
 FORMATS = ["Test", "ODI", "T20I"]
 COMPOSITES = {"ICC World XI", "Asia XI", "Africa XI", "East Africa"}
@@ -116,7 +116,7 @@ def years_in(text):
 def main(wb_path, out_dir):
     import os
 
-    wb = load_workbook(wb_path, read_only=True, data_only=True)
+    wb = open_source(wb_path)
 
     # ---------------- Matches (team-perspective rows) ----------------
     ws = wb["Matches"]
