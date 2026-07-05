@@ -1523,8 +1523,10 @@ def main():
     dump("slug-lookup.json", slug_lookup)
     dump("honors-leaderboard.json", leaderboard_payload)
     dump("similar-teams.json", similar)
-    if wc2026:
+    if wc2026 and os.environ.get("WRITE_WC2026") == "1":
         dump("wc2026.json", wc2026)
+    elif wc2026:
+        print("  Skipping wc2026.json (live WC simulator owns it; set WRITE_WC2026=1 to regenerate the draw)")
 
     print("\nDone.")
 
