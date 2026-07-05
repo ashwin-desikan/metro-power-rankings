@@ -172,6 +172,20 @@ def rank_group(group_letter, teams, events):
     return final, pts, gd, gf
 
 
+def _ko_result(scores, a_slug, b_slug, winner):
+    """Result flag for a knockout slot. On a draw, defer to the curated/feed
+    shootout winner instead of guessing by score (which always favours side B)."""
+    a_sc = scores.get(a_slug, 0) or 0
+    b_sc = scores.get(b_slug, 0) or 0
+    if a_sc != b_sc:
+        return "W" if a_sc > b_sc else "L"
+    if winner == a_slug:
+        return "W"
+    if winner == b_slug:
+        return "L"
+    return "D"
+
+
 def main():
     wc  = json.load(open(WC_JSON))
     res = json.load(open(RES_JSON)) if os.path.exists(RES_JSON) else {"events": {}}
@@ -318,7 +332,7 @@ def main():
                     slot["team_score"] = scores.get(a_slug)
                     slot["opp_score"]  = scores.get(b_slug)
                     slot["played"] = True
-                    slot["result"] = "W" if scores.get(a_slug, 0) > scores.get(b_slug, 0) else "L"
+                    slot["result"] = _ko_result(scores, a_slug, b_slug, ko_winner.get(key))
         elif rnd_name in ("Round of 16", "Quarterfinals", "Semifinals", "Final"):
             # Match by finding pairs of resolved match winners
             rnd_mids = {mid for mid, _ in WIN.items() if round_of(mid) == rnd_name}
@@ -333,7 +347,7 @@ def main():
                     slot["team_score"] = scores.get(t)
                     slot["opp_score"]  = scores.get(o)
                     slot["played"] = True
-                    slot["result"] = "W" if scores.get(t, 0) > scores.get(o, 0) else "L"
+                    slot["result"] = _ko_result(scores, t, o, ko_winner.get(key))
 
     # Write back
     import tempfile
