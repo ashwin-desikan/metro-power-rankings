@@ -45,6 +45,54 @@ function Section({
   );
 }
 
+function AuthBar() {
+  const { user, signInWithGoogle, signOut, authEnabled, ready } = useFollowing();
+  if (!authEnabled) return null;
+  return (
+    <div
+      className="flex items-center justify-between gap-3 rounded-lg border px-4 py-3 mb-8"
+      style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+    >
+      {user ? (
+        <>
+          <div className="flex items-center gap-3 min-w-0">
+            {user.avatar && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={user.avatar} alt="" width={28} height={28} className="rounded-full" />
+            )}
+            <div className="min-w-0">
+              <div className="text-[13px] font-medium truncate">{user.name || user.email}</div>
+              <div className="text-[11px] text-[var(--text-muted)]">Synced to your account across devices</div>
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={() => signOut()}
+            className="shrink-0 text-[12px] rounded-full border px-3 py-1.5 hover:border-[var(--accent)] transition-colors"
+            style={{ borderColor: "var(--border)" }}
+          >
+            Sign out
+          </button>
+        </>
+      ) : (
+        <>
+          <div className="text-[13px] text-[var(--text-muted)]">
+            {ready ? "Sign in to sync your follows across every device." : " "}
+          </div>
+          <button
+            type="button"
+            onClick={() => signInWithGoogle()}
+            className="shrink-0 inline-flex items-center gap-2 rounded-full font-medium text-[13px] px-4 py-2 transition-opacity hover:opacity-90"
+            style={{ background: "var(--accent)", color: "#08080D" }}
+          >
+            <span aria-hidden>G</span> Sign in with Google
+          </button>
+        </>
+      )}
+    </div>
+  );
+}
+
 export default function MePage() {
   const { items, ready, remove } = useFollowing();
   const metros = items.filter((i) => i.type === "metro");
@@ -52,12 +100,14 @@ export default function MePage() {
 
   return (
     <div style={{ backgroundColor: "var(--bg)", color: "var(--text)", minHeight: "100vh" }}>
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-20 pb-16">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16">
         <h1 className="text-3xl font-bold mb-2">Following</h1>
         <p className="text-[15px] text-[var(--text-muted)] mb-8 max-w-xl">
-          Metros and teams you follow, saved in this browser. Nothing leaves your device, and there is
-          no account.
+          Metros and teams you follow. Signed out, they live only in this browser; sign in with Google to
+          sync them across your devices.
         </p>
+
+        <AuthBar />
 
         {ready && items.length === 0 && (
           <div className="rounded-lg border p-6 text-[var(--text-muted)]" style={{ borderColor: "var(--border)" }}>
