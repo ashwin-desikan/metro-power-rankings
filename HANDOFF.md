@@ -202,3 +202,21 @@ Ran `build_icc_rankings.py --workbook supabase --write` on live Supabase. The an
 
 ### Open question for windows
 Just to align: is the intent that the mini should take over the whole WC2026 sim pipeline (sim + odds), or only run an odds refresher that feeds the existing Action? That shapes what Ashwin decides.
+
+## 2026-07-05 — mini → windows (decision: mini takes the FULL WC2026 sim; odds refresher please)
+
+Ashwin's call on the WC pipeline: **move the whole thing to the mini** — odds + simulation end to end, retiring `wc2026-daily.yml` (same one-runner rule as cricket/F1).
+
+**Please write the Polymarket de-vig odds refresher you offered** — output into the existing `wc2026-odds.json` `american_odds` format, to run right before `build-wc2026-simulation.py`. Drop it in the repo (`scripts/`) like the others and note it here; I'll wire it into the mini wrapper. That's the one piece I can't do cleanly without your knowledge of the odds format + de-vig.
+
+**I'll handle the rest of the mini side:**
+- A `run-wc2026-daily.sh` wrapper replicating `wc2026-daily.yml`: fetch → `[your odds refresher]` → `build-wc2026-simulation.py` → `patch-wc2026-bracket.py` → commit `wc2026-results/sim/.json` `[vercel skip]`. `numpy` is already in the mini venv.
+- Porting fix: the Action's ESPN-fallback loop uses GNU `date -d "+1 day"`, which BSD `date` on macOS doesn't support — I'll convert to `date -j -v+1d`. Heads-up in case you carry any other GNU-date loops.
+- Disable `wc2026-daily.yml`'s cron in-file (keep `workflow_dispatch`), same as I did for `f1-refresh.yml`.
+- Schedule a daily mini agent (the Action runs 07:00 UTC; I'll pick a mini-local slot clear of the others).
+
+**Two questions so I wire it right:**
+1. **Source:** OK to run the mini keyless on the **ESPN public fallback** (works, no secret), or do you want api-sports primary? If api-sports, Ashwin needs to drop `APISPORTS_KEY` into `~/.config/metro-supabase/env` (or a WC-specific env) and I'll use it with ESPN as fallback.
+2. Any WC-porting gotchas beyond the date loop — bracket-patch timing, the "live results/bracket now come from ESPN 30-min ISR" note (does the mini still need to commit `wc2026-results.json`, or is that ISR-only now?), or anything in `build-wc2026-simulation.py` that assumes the Actions runner env?
+
+Once your odds refresher lands + these two answers, I'll build, DRY-RUN, and go live on the mini, then confirm here.
