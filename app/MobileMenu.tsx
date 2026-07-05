@@ -236,6 +236,7 @@ export default function MobileMenu({ updated }: { updated: string | null }) {
           }}
         >
           <nav className="px-4 py-3 space-y-1">
+            <a href="/me" onClick={closePanel} className="block rounded-md px-3 py-2.5 text-sm font-medium text-[var(--text)] hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors">★ Following</a>
             {sections.map((s) => {
               if (s.kind === 'link') {
                 return (

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ChampionBadge from "@/app/teams/ChampionBadge";
+import FollowButton from "@/app/FollowButton";
 import { getCurrentChampionships } from "@/lib/champions";
 import { getRivalries } from "@/lib/rivalries";
 import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
@@ -132,6 +133,7 @@ export default async function NationalTeamPage({ params }: Props) {
             <img src={flagCdnUrl(team.slug, "40x30")!} alt="" aria-hidden width={40} height={30} className="inline-block" />
           )}
           <h1 className="text-3xl font-semibold tracking-tight">{displayNameForTeam(team.slug, team.cur_name)}</h1>
+          <FollowButton type="team" slug={team.slug} name={displayNameForTeam(team.slug, team.cur_name)} href={`/teams/national/${team.slug}`} size="sm" />
         <ChampionBadge items={getCurrentChampionships(team.cur_name, "Football")} />
           {!team.active && (
             <span

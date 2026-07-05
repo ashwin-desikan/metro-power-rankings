@@ -329,6 +329,9 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
       <Link href="/studio" className="text-sm hover:text-[var(--accent)] transition-colors">
         Studio
       </Link>
+      <Link href="/me" className="text-sm hover:text-[var(--accent)] transition-colors flex items-center gap-1" title="Metros and teams you follow">
+        <span aria-hidden>★</span> Following
+      </Link>
 
       {updated && (
         <a

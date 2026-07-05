@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { olympicEditionSlugFromName } from "@/lib/olympics";
 import { getMetroTitles, getFormerTopFlightForMetro, type FormerTopFlight } from "@/lib/championsHistory";
 import ChampionLogo from "@/app/teams/_shared/ChampionLogo";
+import FollowButton from "@/app/FollowButton";
 import { competitionHref } from "@/lib/competitionLinks";
 import HubNav from "@/app/teams/HubNav";
 import { getSoundForMetro } from "@/lib/sound";
@@ -364,6 +365,9 @@ export default async function MetroDetailPage({ params }: PageProps) {
             <h1 className="text-5xl font-bold mb-4" style={{ color: regionColors[metro.region] || "var(--accent)" }}>
               {metro.name}
             </h1>
+            <div className="mb-4">
+              <FollowButton type="metro" slug={slug} name={metro.name} href={`/rankings/${slug}`} />
+            </div>
             <div className="space-y-2 text-[var(--text-muted)]">
               <p className="text-lg">
                 {(metro.sovereignSlug ?? metro.countrySlug) ? (

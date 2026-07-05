@@ -9,6 +9,7 @@ import { datasetJsonLd, serializeJsonLd } from '@/lib/seo';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import Link from 'next/link';
+import FollowingRail from './FollowingRail';
 
 // Directory-forward landing page. Surfaces the breadth of the site first —
 // four ranked indices (each with a live top-three preview), a Greatest Games
@@ -428,6 +429,7 @@ export default async function Home() {
                 </Link>
               </div>
             </div>
+            <FollowingRail />
           </div>
         </div>
       </section>
