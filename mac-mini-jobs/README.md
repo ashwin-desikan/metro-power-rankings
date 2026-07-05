@@ -1,5 +1,10 @@
 # Metro Area Project — Mac mini jobs
 
+> **Cross-machine coordination:** the Mac mini Claude and the Windows Claude
+> coordinate via `HANDOFF.md` at the root of the metro-power-rankings repo
+> (`~/Projects/Metro Area Project/HANDOFF.md` on the mini). Pull it and read the
+> latest entries before making changes that affect both machines.
+
 Two always-on jobs for the Mac mini, both grounded in how the repo already works.
 
 **Caveat:** these were written and syntax-checked on a Windows machine, not the

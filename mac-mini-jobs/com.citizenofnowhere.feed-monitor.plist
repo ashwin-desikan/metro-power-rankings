@@ -14,7 +14,7 @@
   <key>StartCalendarInterval</key>
   <dict>
     <key>Hour</key><integer>8</integer>
-    <key>Minute</key><integer>0</integer>
+    <key>Minute</key><integer>20</integer>
   </dict>
   <key>StandardOutPath</key>
   <string>/tmp/con-feed-monitor.out.log</string>

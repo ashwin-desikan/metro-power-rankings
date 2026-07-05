@@ -30,6 +30,7 @@ GIT_REMOTE="${GIT_REMOTE:-origin}"
 GIT_BRANCH="${GIT_BRANCH:-main}"
 PY="${PYTHON_BIN:-python3}"
 DRY_RUN="${DRY_RUN:-0}"
+STEP_TIMEOUT="${STEP_TIMEOUT:-300}"   # seconds; caps any single refresh step (e.g. a Wikidata outage)
 
 note() { echo "[$(date '+%F %T')] $*"; }
 alert() { "$PY" "$DIR/notify.py" "CoN mini refresh" "$1" 1 || true; }
@@ -58,9 +59,26 @@ note "running self-tests"
 STEP_FAILS=""
 run_step() {  # run_step "label" cmd...
   local label="$1"; shift
-  note "step: $label"
-  if ! "$@"; then
-    note "  step FAILED: $label"
+  note "step: $label (timeout ${STEP_TIMEOUT}s)"
+  # Run the step in the background; a watchdog kills it if it exceeds STEP_TIMEOUT.
+  # macOS ships no `timeout` binary, so this is a portable pure-bash equivalent.
+  "$@" &
+  local pid=$!
+  ( sleep "$STEP_TIMEOUT"
+    if kill -0 "$pid" 2>/dev/null; then
+      kill -TERM "$pid" 2>/dev/null; sleep 3; kill -KILL "$pid" 2>/dev/null
+    fi ) &
+  local watcher=$!
+  if wait "$pid" 2>/dev/null; then
+    kill "$watcher" 2>/dev/null; wait "$watcher" 2>/dev/null
+  else
+    local rc=$?
+    kill "$watcher" 2>/dev/null; wait "$watcher" 2>/dev/null
+    if [ "$rc" -ge 124 ] || [ "$rc" -eq 143 ] || [ "$rc" -eq 137 ]; then
+      note "  step TIMED OUT after ${STEP_TIMEOUT}s: $label"
+    else
+      note "  step FAILED (rc=$rc): $label"
+    fi
     STEP_FAILS="${STEP_FAILS}\n- ${label}"
   fi
 }

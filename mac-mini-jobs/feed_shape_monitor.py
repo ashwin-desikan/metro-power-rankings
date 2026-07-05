@@ -87,6 +87,29 @@ def check_espn_scoreboard(doc):
     return "ok", f"{len(events)} events"
 
 
+def check_espn_tennis_scoreboard(doc):
+    # Tennis scoreboards differ from team-sport ones: an event is a whole
+    # tournament, and the matches live under events[].groupings[].competitions
+    # (see lib/tennisDraw.ts), NOT directly on the event. A tournament with no
+    # draw posted yet / between events is a soft note, not a failure.
+    if not isinstance(doc, dict) or "events" not in doc:
+        return "FAIL", "missing top-level 'events'"
+    events = doc.get("events")
+    if not isinstance(events, list):
+        return "FAIL", "'events' is not a list"
+    if not events:
+        return "empty", "no tournament in progress (between events)"
+    ev = events[0]
+    if "groupings" not in ev:
+        return "FAIL", "tennis event missing 'groupings' (ESPN shape change?)"
+    groupings = ev.get("groupings") or []
+    if not groupings:
+        return "empty", f"{ev.get('name','tournament')}: no groupings yet (draw not posted)"
+    if "competitions" not in (groupings[0] or {}):
+        return "FAIL", "tennis grouping missing 'competitions' (ESPN shape change?)"
+    return "ok", f"{ev.get('name','?')}: {len(groupings)} groupings"
+
+
 def check_spaia_npb(doc):
     if not isinstance(doc, list):
         return "FAIL", "expected a top-level JSON array"
@@ -154,7 +177,7 @@ FEEDS = [
      check_espn_scoreboard),
     ("ESPN ATP scoreboard",
      "https://site.api.espn.com/apis/site/v2/sports/tennis/atp/scoreboard",
-     check_espn_scoreboard),
+     check_espn_tennis_scoreboard),
     ("ESPN AFL standings",
      "https://site.api.espn.com/apis/v2/sports/australian-football/afl/standings",
      check_espn_standings),
