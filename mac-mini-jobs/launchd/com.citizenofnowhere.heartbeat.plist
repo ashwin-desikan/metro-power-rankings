@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>Label</key><string>com.citizenofnowhere.heartbeat</string>
+<key>ProgramArguments</key><array>
+<string>/bin/bash</string><string>/Users/ashwindesikan/metro-mini-jobs/run-heartbeat.sh</string></array>
+<key>StartInterval</key><integer>900</integer>
+<key>RunAtLoad</key><true/>
+<key>StandardOutPath</key><string>/Users/ashwindesikan/metro-mini-jobs/logs/launchd-heartbeat.out</string>
+<key>StandardErrorPath</key><string>/Users/ashwindesikan/metro-mini-jobs/logs/launchd-heartbeat.err</string>
+</dict></plist>
