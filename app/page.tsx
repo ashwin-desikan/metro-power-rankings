@@ -351,7 +351,7 @@ export default async function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(dataset) }} />
 
       {/* Masthead — headline + live standings/badges + This Week rail. */}
-      <section className="pt-24 sm:pt-20 pb-14 px-4 sm:px-6 lg:px-8 border-b" style={{ borderColor: 'var(--border)' }}>
+      <section className="pt-28 pb-14 px-4 sm:px-6 lg:px-8 border-b" style={{ borderColor: 'var(--border)' }}>
         <div className="max-w-7xl mx-auto grid gap-10 lg:gap-16" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
           <div>
             <p className="text-xs uppercase tracking-widest mb-3" style={{ ...MONO, color: 'var(--accent)' }}>
