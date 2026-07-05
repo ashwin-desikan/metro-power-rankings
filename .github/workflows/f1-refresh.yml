@@ -12,9 +12,13 @@ name: F1 hub refresh (per-race, no deploy)
 # re-runs produce no diff and therefore no commit.
 
 on:
-  schedule:
-    - cron: "0 22 * * 0"   # Sunday 22:00 UTC -- after most Grands Prix finish
-    - cron: "0 10 * * 1"   # Monday 10:00 UTC -- late/Americas races + post-race classification changes
+  # schedule DISABLED 2026-07-05: the Mac mini now owns public/data/f1/data.json,
+  # rebuilding the whole file from Supabase weekly (run-f1-weekly.sh). Kept
+  # manual-only to avoid a double-writer race with the mini. Re-enable the cron
+  # below only if the mini stops owning F1.
+  # schedule:
+  #   - cron: "0 22 * * 0"   # Sunday 22:00 UTC -- after most Grands Prix finish
+  #   - cron: "0 10 * * 1"   # Monday 10:00 UTC -- late/Americas races + post-race classification changes
   workflow_dispatch: {}
 
 permissions:
