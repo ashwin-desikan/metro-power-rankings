@@ -647,6 +647,7 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <p className="text-[13px] text-[var(--text-muted)]">© 2026 Global Metro Power Rankings. Hand-curated by Ashwin Desikan.</p>
           <div className="flex items-center gap-5 text-[13px]" style={MONO}>
+            <a href="/privacy" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">Privacy</a>
             <a href="https://citizenofnowhere.org" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">Citizen of Nowhere</a>
             <a href="https://citizenofnowhere.substack.com" target="_blank" rel="noopener noreferrer" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">Substack ↗</a>
             <a href="https://citizenofnowhere.substack.com/about" target="_blank" rel="noopener noreferrer" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">Contact</a>
