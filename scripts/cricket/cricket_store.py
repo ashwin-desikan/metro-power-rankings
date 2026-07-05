@@ -41,6 +41,16 @@ def append_sheet_rows(sheet, rows, sb=None, batch=500):
     return len(payload)
 
 
+def replace_month(sheet, ym, rows, sb=None):
+    """Re-baseline one month: delete that month's rows in the sheet's table, then
+    re-insert the recomputed rows (row_num continues from max). Used by the ICC
+    rankings engine when late in-period matches change an already-stored month."""
+    sb = sb or make_client()
+    table, _cols = SHEET_TABLES[sheet]
+    sb.table(table).delete().eq("month", ym).execute()
+    return append_sheet_rows(sheet, rows, sb=sb)
+
+
 def append_matches(rows, sb=None):
     """rows: sequences in the Matches header order (Format..Ball-by-Ball)."""
     return append_sheet_rows("Matches", rows, sb=sb)

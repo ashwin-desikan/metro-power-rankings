@@ -138,21 +138,29 @@ def main_set_from_sheet(ws):
             mains.add(canon(str(r[2]).strip()))
     return mains, lm
 
-def validate(L, wb, tol=0.35):
-    """Recompute the last existing month; check connected Test/ODI teams match."""
-    problems = []
+def stored_months(wb):
+    """Sorted distinct months present in the Test Rankings sheet."""
+    ms = set()
+    for r in wb[FMT_SHEET["Test"]].iter_rows(min_row=2, values_only=True):
+        if r[0]:
+            ms.add(str(r[0]))
+    return sorted(ms)
+
+
+def month_diverges(L, wb, ym, tol=0.35):
+    """Return the list of connected Test/ODI teams whose recompute of month ym
+    differs from the stored snapshot beyond tol. Empty list == reproduces."""
+    diffs = []
     for fmt in ("Test", "ODI"):
         ws = wb[FMT_SHEET[fmt]]
-        lm = last_month(ws)
-        tgt = {}
-        for r in ws.iter_rows(min_row=2, values_only=True):
-            if r[0] and str(r[0]) == lm:
-                tgt[canon(str(r[2]))] = float(r[3])
-        got = {t: rt for t, rt, n in table(L, fmt, lm)}
-        big = [(t, got[t], tgt[t]) for t in got if t in tgt and abs(got[t]-tgt[t]) > tol]
-        if big:
-            problems.append((fmt, lm, big))
-    return problems
+        tgt = {canon(str(r[2])): float(r[3])
+               for r in ws.iter_rows(min_row=2, values_only=True)
+               if r[0] and str(r[0]) == ym}
+        got = {t: rt for t, rt, n in table(L, fmt, ym)}
+        for t in got:
+            if t in tgt and abs(got[t] - tgt[t]) > tol:
+                diffs.append((fmt, ym, t, got[t], tgt[t]))
+    return diffs
 
 def build_month_rows(L, ym, main_set):
     """Return {sheet: [rows]} for the month, plus the Number Ones row."""
@@ -187,17 +195,36 @@ def main():
 
     # read-only pass for structure
     wbro = open_source(args.workbook)
-    problems = validate(L, wbro)
-    if problems:
-        print("VALIDATION FAILED (connected Test/ODI teams diverge beyond tol):")
-        for fmt, lm, big in problems:
-            for t, g, x in big: print(f"  {fmt} {lm} {t}: got {g} stored {x}")
-        print("Aborting; no write."); return 2
-    print("Validation OK: connected Test/ODI teams reproduce within tolerance.")
+    months = stored_months(wbro)
+    lm = months[-1] if months else None
+
+    # Drift guard: a SETTLED anchor month (3 before the last) must still
+    # reproduce. If it diverges, something systemic changed (engine/data bug),
+    # so abort rather than corrupt history.
+    anchor = months[-4] if len(months) >= 4 else None
+    if anchor:
+        drift = month_diverges(L, wbro, anchor)
+        if drift:
+            print("VALIDATION FAILED (systemic drift at settled anchor month "
+                  f"{anchor}):")
+            for fmt, ym, t, g, x in drift:
+                print(f"  {fmt} {ym} {t}: got {round(g,1)} stored {round(x,1)}")
+            print("Aborting; no write."); return 2
+
+    # Re-baseline decision: if the LAST stored month diverges, late in-period
+    # matches arrived after it was published. Per policy (2026-07-05) we
+    # re-baseline that month rather than freeze a now-incomplete snapshot.
+    rebaseline = bool(lm and month_diverges(L, wbro, lm))
+    if rebaseline:
+        print(f"Last stored month {lm} diverges from stored snapshot "
+              "(late in-period matches) -> RE-BASELINE:")
+        for fmt, ym, t, g, x in month_diverges(L, wbro, lm):
+            print(f"  {fmt} {ym} {t}: got {round(g,1)} stored {round(x,1)}")
+    else:
+        print("Validation OK: last stored month reproduces within tolerance.")
 
     ws_t20 = wbro[FMT_SHEET["T20I"]]
     main_set, lm_t20 = main_set_from_sheet(ws_t20)
-    lm = last_month(wbro["Number Ones"])
     # months to append: from next(lm) through last complete month
     today = datetime.date.today()
     last_complete = month_end(today.year, today.month) if False else None
@@ -208,8 +235,8 @@ def main():
     while cur <= last_complete:
         todo.append(cur); cur = next_month(cur)
     print(f"Last existing month: {lm}. Appending: {todo or 'none'}")
-    if not todo:
-        print("Nothing to append."); return 0
+    if not todo and not rebaseline:
+        print("Nothing to append or re-baseline."); return 0
 
     all_no = []
     all_fmt = {s: [] for s in FMT_SHEET.values()}
@@ -232,6 +259,13 @@ def main():
     # ---- Supabase append (append-only inserts; no workbook, no backup dance) ----
     if str(args.workbook) == "supabase":
         import cricket_store
+        if rebaseline:
+            rb, no_rb = build_month_rows(L, lm, main_set)
+            for s_name, rr in rb.items():
+                got = cricket_store.replace_month(s_name, lm, rr)
+                print(f"  re-baselined {got} rows -> {s_name} ({lm})")
+            cricket_store.replace_month("Number Ones", lm, [no_rb])
+            print(f"  re-baselined Number Ones ({lm})")
         for s_name, rr in all_fmt.items():
             if rr:
                 got = cricket_store.append_sheet_rows(s_name, rr)

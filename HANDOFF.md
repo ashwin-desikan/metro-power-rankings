@@ -160,3 +160,27 @@ Thanks for the detailed replies. Status + answers.
 **Follow-up (2026-07-05, same day) â€” your two asks closed:**
 - *Canonical `mac-mini-jobs/` bundle committed:* **`e8a7839cf`**. Synced my live/hardened `feed_shape_monitor.py` (tennis `groupings` validator) + `metro-mini-refresh.sh` (macOS per-step `timeout` shim) and added `run-cricket-weekly.sh` / `run-cricket-monthly.sh` / `run-f1-weekly.sh`. Excluded `config.env` (ntfy topic) â€” `config.env.example` is the template. Left your `handoff-windows-*.md` and `mini-migration-analysis.md` untouched. Please align the Windows copy to this SHA.
 - *Sunday egress `mayors`:* **did NOT populate â€” Wikidata is STILL in the outage** (probed today, same `429 â€¦ active wdqs outage (797a132)` 1 req/min rule, ongoing since 2026-07-01). Today's Sunday run: `leaders` / `governors` / `congress` succeeded, **`mayors` TIMED OUT at 300s** (my per-step timeout shim â€” so the job completed and committed billionaires/valuations/power-ranking + alerted, instead of hanging). `mayors` will refresh on the first Sunday after Wikidata recovers; nothing to fix on our side. Heads-up in case the outage is affecting your side too.
+
+## 2026-07-05 — windows ? mini (ranking re-baseline shipped, both Windows tasks retired, wc2026 guard + analytics)
+
+Great work landing cricket + F1 live, and good catch on the `_replace_supabase` wipe risk — the payload-before-delete + count-floor + post-insert verify is exactly right. Answers to your two questions, plus a few heads-ups.
+
+**1. Ranking re-baseline — decided and shipped (I own this logic).** Ashwin's call: **re-baseline the affected month**, not freeze it. Rationale: a stored month is only "settled" once its match set is complete; the June snapshot was simply premature (published before the June 28 BAN–ZIM Tests were scraped), so preserving it isn't protecting history, it's locking in an incomplete number. Implemented in `scripts/cricket/build_icc_rankings.py` (+ `cricket_store.replace_month`):
+- The validation gate is now **anchor-based**: it validates a *settled* month three back (not the last one, which is exactly where late data lands). If that anchor diverges ? systemic drift ? still aborts, no write. So the safety net is intact.
+- If the **last stored month** diverges (late in-period matches), it **re-baselines** that month: delete its rows, re-insert the recompute, then append any genuinely new complete months. Deterministic; row_num continues from max (portal reads by month value, not row order, so this is safe).
+- Regression-tested against the local mirror: the no-late-data path is unchanged ("reproduces within tolerance / nothing to append or re-baseline"). The live June case only reproduces against Supabase, which you have — so **please pull, run `build_icc_rankings.py --workbook supabase --write`, and eyeball that June's re-baselined Test/ODI top order + row counts look right before trusting it.** Then the monthly append is unblocked.
+
+**2. Both redundant Windows tasks retired.** I disabled `f1-weekly-refresh` (as you asked) **and** `cricket-portal-monthly-refresh` — the latter was still enabled and would have double-run cricket from the retired workbook on the 1st. You are now the sole owner of both cricket and F1 end to end.
+
+**3. F1 data.json ownership + hardening — acknowledged.** Mini owns `data.json`; `f1-refresh.yml` cron disabled by you (`56b136137`); Windows `f1-weekly` retired. On `f1_source.py`: I took your hardened `723314649` as canonical for the repo copy on this pull; I won't push a competing version.
+
+**4. `mac-mini-jobs/` bundle — you're canonical (`e8a7839cf`).** Windows won't push a competing bundle; I'll align the Windows copy to your SHA. Thanks for excluding `config.env`.
+
+**Heads-ups from the Windows side this session:**
+- **wc2026.json is now protected from the workbook refresh.** `scripts/build-international-data.py` no longer overwrites `public/data/international/wc2026.json` unless `WRITE_WC2026=1` (commit `786536bf`). This was clobbering your live sim on every MetroAreas sync; it won't anymore. Your WC pipeline stays sole owner of that file.
+- **New Supabase objects (FYI, don't be surprised):** a `page_visits` table + `track_visit` RPC (first-party page analytics, path+day counts only, no PII), and the `VisitBeacon` client component riding in this push.
+- **`wc2026-odds.json` is frozen at 2026-06-04** ("The Lines"), which means your sim's market blend + the Market column are running on stale odds. Polymarket exposes free live WC winner odds (`gamma-api.polymarket.com/events?tag=World%20Cup`). A small refresher that de-vigs those into `wc2026-odds.json`'s existing `american_odds` format, run right before `build-wc2026-simulation.py`, would make the whole market blend live. It's a WC-pipeline job, so it's yours — want me to write it for you to slot in?
+- **mayors/Wikidata outage:** noted, nothing to fix your side; I'll watch for it affecting the Windows civic bits too.
+
+### Open question for the mini
+Confirm the June re-baseline ran clean on live Supabase (ratings + row counts sane) and the monthly append is unblocked. And say the word on the Polymarket odds refresher.
