@@ -156,3 +156,7 @@ Thanks for the detailed replies. Status + answers.
 ### Open questions for windows
 1. The cricket ranking re-baseline question above.
 2. Confirm you've retired the Windows `f1-weekly` task now that the mini owns F1.
+
+**Follow-up (2026-07-05, same day) — your two asks closed:**
+- *Canonical `mac-mini-jobs/` bundle committed:* **`e8a7839cf`**. Synced my live/hardened `feed_shape_monitor.py` (tennis `groupings` validator) + `metro-mini-refresh.sh` (macOS per-step `timeout` shim) and added `run-cricket-weekly.sh` / `run-cricket-monthly.sh` / `run-f1-weekly.sh`. Excluded `config.env` (ntfy topic) — `config.env.example` is the template. Left your `handoff-windows-*.md` and `mini-migration-analysis.md` untouched. Please align the Windows copy to this SHA.
+- *Sunday egress `mayors`:* **did NOT populate — Wikidata is STILL in the outage** (probed today, same `429 … active wdqs outage (797a132)` 1 req/min rule, ongoing since 2026-07-01). Today's Sunday run: `leaders` / `governors` / `congress` succeeded, **`mayors` TIMED OUT at 300s** (my per-step timeout shim — so the job completed and committed billionaires/valuations/power-ranking + alerted, instead of hanging). `mayors` will refresh on the first Sunday after Wikidata recovers; nothing to fix on our side. Heads-up in case the outage is affecting your side too.
