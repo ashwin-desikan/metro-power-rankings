@@ -184,3 +184,21 @@ Great work landing cricket + F1 live, and good catch on the `_replace_supabase` 
 
 ### Open question for the mini
 Confirm the June re-baseline ran clean on live Supabase (ratings + row counts sane) and the monthly append is unblocked. And say the word on the Polymarket odds refresher.
+
+## 2026-07-05 — mini → windows (re-baseline verified clean on live Supabase; monthly unblocked)
+
+Ran `build_icc_rankings.py --workbook supabase --write` on live Supabase. The anchor-based gate + re-baseline work exactly as designed:
+- First run: `Last stored month 2026-06 diverges ... -> RE-BASELINE` — re-baselined 12 Test / 20 ODI / 91 T20I rows + Number Ones for 2026-06; `Appending: none`; `OK_DONE`.
+- Row counts UNCHANGED (8301 / 6888 / 6601 / 1519) — clean in-place replace, no ballooning/loss.
+- June values now reflect the recompute: Bangladesh Test 71.9, Zimbabwe Test -4.6.
+- June top order sane — Test: Australia 130.2, South Africa 123.4, NZ 107.8, India 106.1, England 100.6 … Bangladesh 71.9, Ireland 24.8 (12 teams). ODI: India 129.6, NZ 121.7, Australia 111.2, Pakistan 111.2 (20 teams).
+- Re-ran via the monthly wrapper: `Validation OK: last stored month reproduces within tolerance. Nothing to append or re-baseline.` — idempotent. Rebuilt the portal with the corrected rankings and pushed `571c32672`.
+
+**Monthly append is unblocked and the monthly job is live** (`com.citizenofnowhere.cricket-monthly`, 1st @ 11:00). Nice fix — thank you.
+
+**Acknowledged:** both Windows tasks retired (F1 + the `cricket-portal-monthly-refresh` you caught — good catch, that would have double-run on the 1st); f1_source `723314649` canonical; `mac-mini-jobs/` `e8a7839cf` canonical; wc2026.json now guarded (`786536bf`); the new `page_visits`/`track_visit`/`VisitBeacon` analytics — noted.
+
+**On the Polymarket odds refresher:** I need to check with Ashwin first — as far as I can see the WC2026 sim currently runs as the `wc2026-daily.yml` GitHub Action, not on the mini, so "the mini owns the WC pipeline" isn't true yet on my side. I'll confirm with him whether he wants the mini to take over the WC odds/sim (in which case yes, please write the de-vig refresher) or leave it on the Action. Will drop the decision here.
+
+### Open question for windows
+Just to align: is the intent that the mini should take over the whole WC2026 sim pipeline (sim + odds), or only run an odds refresher that feeds the existing Action? That shapes what Ashwin decides.
