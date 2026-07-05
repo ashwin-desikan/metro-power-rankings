@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-29",
+  "generated": "2026-07-05",
   "source": "Forbes real-time billionaires via komed3/rtb-api (MIT)",
   "count": 3381,
   "billionaires": [
@@ -41924,9 +41924,9 @@
       "name": "Brendan Blumer",
       "uri": "brendan-blumer",
       "networth": 1674.154,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "HK",
+      "countrySlug": "hong-kong",
+      "countryName": "Hong Kong",
       "industries": [
         "Finance & Investments"
       ],
@@ -46780,9 +46780,9 @@
       "name": "Yang Xuegang",
       "uri": "yang-xuegang",
       "networth": 1424.76,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Manufacturing"
       ],
@@ -46814,9 +46814,9 @@
       "name": "Cao Yuhua & family",
       "uri": "cao-yuhua",
       "networth": 1423.484,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "CN",
+      "countrySlug": "china",
+      "countryName": "China",
       "industries": [
         "Automotive"
       ],
@@ -47052,9 +47052,9 @@
       "name": "Peter Salanki",
       "uri": "peter-salanki",
       "networth": 1414.475,
-      "countryCode": "SE",
-      "countrySlug": "sweden",
-      "countryName": "Sweden",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Technology"
       ],
@@ -47224,9 +47224,9 @@
       "name": "Suh Kyung-bae",
       "uri": "suh-kyung-bae",
       "networth": 1409.007,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "KR",
+      "countrySlug": "south-korea",
+      "countryName": "South Korea",
       "industries": [
         "Fashion & Retail"
       ],
@@ -50440,9 +50440,9 @@
       "name": "Qian Ying",
       "uri": "qian-ying",
       "networth": 1283.871,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "CN",
+      "countrySlug": "china",
+      "countryName": "China",
       "industries": [
         "Food & Beverage"
       ],
@@ -50525,9 +50525,9 @@
       "name": "Michelle Xia",
       "uri": "michelle-xia",
       "networth": 1281.968,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "US",
+      "countrySlug": "united-states",
+      "countryName": "United States",
       "industries": [
         "Healthcare"
       ],
@@ -50730,9 +50730,9 @@
       "name": "Cheng Lili",
       "uri": "cheng-lili",
       "networth": 1269.968,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "CN",
+      "countrySlug": "china",
+      "countryName": "China",
       "industries": [
         "Food & Beverage"
       ],
@@ -50867,9 +50867,9 @@
       "name": "Xiong Wu",
       "uri": "xiong-wu",
       "networth": 1257.991,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "CN",
+      "countrySlug": "china",
+      "countryName": "China",
       "industries": [
         "Technology"
       ],
@@ -51517,9 +51517,9 @@
       "name": "Ali Erdemoglu",
       "uri": "ali-erdemoglu",
       "networth": 1234.042,
-      "countryCode": "TR",
-      "countrySlug": "turkey",
-      "countryName": "Turkey",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Manufacturing"
       ],
@@ -51959,9 +51959,9 @@
       "name": "Zhao Dongping",
       "uri": "zhao-dongping",
       "networth": 1215.39,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Technology"
       ],
@@ -52181,9 +52181,9 @@
       "name": "Gao Yi & family",
       "uri": "gao-yi",
       "networth": 1206.219,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "CN",
+      "countrySlug": "china",
+      "countryName": "China",
       "industries": [
         "Healthcare"
       ],
@@ -52692,9 +52692,9 @@
       "name": "Sung Kyu-dong",
       "uri": "sung-kyu-dong",
       "networth": 1191.146,
-      "countryCode": "KR",
-      "countrySlug": "south-korea",
-      "countryName": "South Korea",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Technology"
       ],
@@ -52864,9 +52864,9 @@
       "name": "Shen Jinhua",
       "uri": "shen-jinhua",
       "networth": 1184.675,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "CN",
+      "countrySlug": "china",
+      "countryName": "China",
       "industries": [
         "Fashion & Retail"
       ],
@@ -53000,9 +53000,9 @@
       "name": "Yu De-Chao",
       "uri": "yu-de-chao",
       "networth": 1179.311,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "US",
+      "countrySlug": "united-states",
+      "countryName": "United States",
       "industries": [
         "Healthcare"
       ],
@@ -53188,9 +53188,9 @@
       "name": "He Yamin & family",
       "uri": "he-yamin",
       "networth": 1170.475,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "CN",
+      "countrySlug": "china",
+      "countryName": "China",
       "industries": [
         "Manufacturing"
       ],
@@ -53341,9 +53341,9 @@
       "name": "Ceyda Lale Tara",
       "uri": "ceyda-lale-tara",
       "networth": 1165.603,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "TR",
+      "countrySlug": "turkey",
+      "countryName": "Turkey",
       "industries": [
         "Construction & Engineering"
       ],
@@ -54333,9 +54333,9 @@
       "name": "Caspar Callerström",
       "uri": "caspar-callerstrom",
       "networth": 1135.687,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "SE",
+      "countrySlug": "sweden",
+      "countryName": "Sweden",
       "industries": [
         "Finance & Investments"
       ],
@@ -54589,9 +54589,9 @@
       "name": "Xu Jiangnan",
       "uri": "xu-jiangnan",
       "networth": 1125.161,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "CN",
+      "countrySlug": "china",
+      "countryName": "China",
       "industries": [
         "Healthcare"
       ],
@@ -55373,9 +55373,9 @@
       "name": "Shyam Sankar",
       "uri": "shyam-sankar",
       "networth": 1099.266,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "US",
+      "countrySlug": "united-states",
+      "countryName": "United States",
       "industries": [
         "Technology"
       ],
@@ -56330,9 +56330,9 @@
       "name": "Takaya Awata",
       "uri": "takaya-awata",
       "networth": 1066.041,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "JP",
+      "countrySlug": "japan",
+      "countryName": "Japan",
       "industries": [
         "Food & Beverage"
       ],
@@ -56656,9 +56656,9 @@
       "name": "Shintaro Yamada",
       "uri": "shintaro-yamada",
       "networth": 1043.979,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "JP",
+      "countrySlug": "japan",
+      "countryName": "Japan",
       "industries": [
         "Technology"
       ],
@@ -57016,9 +57016,9 @@
       "name": "Zachary Stern",
       "uri": "zachary-stern",
       "networth": 1029.711,
-      "countryCode": "US",
-      "countrySlug": "united-states",
-      "countryName": "United States",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Food & Beverage"
       ],
@@ -57033,9 +57033,9 @@
       "name": "Kristina Hollweg",
       "uri": "kristina-hollweg",
       "networth": 1029.654,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "DE",
+      "countrySlug": "germany",
+      "countryName": "Germany",
       "industries": [
         "Manufacturing"
       ],
@@ -57173,9 +57173,9 @@
       "name": "Stephen Fredette",
       "uri": "stephen-fredette",
       "networth": 1024.399,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "US",
+      "countrySlug": "united-states",
+      "countryName": "United States",
       "industries": [
         "Technology"
       ],

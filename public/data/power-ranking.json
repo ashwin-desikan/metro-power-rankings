@@ -21,7 +21,7 @@
     "commissioner_factor": 0.44,
     "judiciary": 0.09
   },
-  "asOf": "2026-07-01",
+  "asOf": "2026-07-05",
   "ranking": [
     {
       "name": "⚠️ Donald Trump",
@@ -719,9 +719,9 @@
       "jurisdiction": "New York",
       "metro": "New York",
       "metroSlug": "new-york",
-      "jscore": 181.7,
+      "jscore": 182.2,
       "weight": 0.72,
-      "power": 130.8,
+      "power": 131.2,
       "jurisdictionHref": "/rankings/new-york",
       "transition": ""
     },
@@ -732,9 +732,9 @@
       "jurisdiction": "London",
       "metro": "London",
       "metroSlug": "london",
-      "jscore": 180.2,
+      "jscore": 180.3,
       "weight": 0.72,
-      "power": 129.7,
+      "power": 129.8,
       "jurisdictionHref": "/rankings/london",
       "transition": ""
     },
@@ -888,9 +888,9 @@
       "jurisdiction": "Paris",
       "metro": "Paris",
       "metroSlug": "paris",
-      "jscore": 143.4,
+      "jscore": 143.5,
       "weight": 0.72,
-      "power": 103.2,
+      "power": 103.3,
       "jurisdictionHref": "/rankings/paris",
       "transition": ""
     },
@@ -992,9 +992,9 @@
       "jurisdiction": "Tokyo",
       "metro": "Tokyo",
       "metroSlug": "tokyo",
-      "jscore": 132.5,
+      "jscore": 132.8,
       "weight": 0.72,
-      "power": 95.4,
+      "power": 95.6,
       "jurisdictionHref": "/rankings/tokyo",
       "transition": ""
     },
@@ -1070,9 +1070,9 @@
       "jurisdiction": "San Francisco",
       "metro": "San Francisco-San Jose",
       "metroSlug": "san-francisco-san-jose",
-      "jscore": 122.6,
+      "jscore": 123.9,
       "weight": 0.72,
-      "power": 88.3,
+      "power": 89.2,
       "jurisdictionHref": "/rankings/san-francisco-san-jose",
       "transition": ""
     },
@@ -1246,30 +1246,30 @@
       "transition": ""
     },
     {
-      "name": "Oh Se-hoon",
-      "role": "Mayor of Seoul",
-      "category": "Mayor",
-      "jurisdiction": "Seoul",
-      "metro": "Seoul",
-      "metroSlug": "seoul",
-      "jscore": 108.6,
-      "weight": 0.72,
-      "power": 78.2,
-      "jurisdictionHref": "/rankings/seoul",
-      "transition": ""
-    },
-    {
       "name": "Karen Bass",
       "role": "Mayor of Los Angeles",
       "category": "Mayor",
       "jurisdiction": "Los Angeles",
       "metro": "Los Angeles",
       "metroSlug": "los-angeles",
-      "jscore": 108.4,
+      "jscore": 108.5,
       "weight": 0.72,
-      "power": 78.0,
+      "power": 78.1,
       "jurisdictionHref": "/rankings/los-angeles",
       "transition": "In a runoff for re-election; LA mayoral election, 3 Nov 2026"
+    },
+    {
+      "name": "Oh Se-hoon",
+      "role": "Mayor of Seoul",
+      "category": "Mayor",
+      "jurisdiction": "Seoul",
+      "metro": "Seoul",
+      "metroSlug": "seoul",
+      "jscore": 108.3,
+      "weight": 0.72,
+      "power": 78.0,
+      "jurisdictionHref": "/rankings/seoul",
+      "transition": ""
     },
     {
       "name": "Gong Zheng",
@@ -1278,9 +1278,9 @@
       "jurisdiction": "Shanghai",
       "metro": "Shanghai",
       "metroSlug": "shanghai",
-      "jscore": 107.8,
+      "jscore": 107.9,
       "weight": 0.72,
-      "power": 77.6,
+      "power": 77.7,
       "jurisdictionHref": "/rankings/shanghai",
       "transition": ""
     },
