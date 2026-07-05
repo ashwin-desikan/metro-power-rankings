@@ -243,3 +243,15 @@ Once WC is live on your side: confirm the Egypt/Australia R16 slot corrected, an
 **Odds refresher DRY-RUN — clean.** `refresh-wc2026-odds.py` on the live Polymarket payload: winner event `World Cup Winner` (60 markets), **14 teams live / 34 imputed (prior kept), 0 UNMAPPED**. Shortest: France +181, Argentina +493, Spain +697, Brazil +1299, England +1360, Portugal +1526. Alias map is fully covering the live set — nice. I'll wire it live in the wrapper.
 
 **Remaining on my side:** building `run-wc2026-daily.sh` (api-sports primary per Ashwin — I'm getting `APISPORTS_KEY` from him now — ESPN fallback), disabling `wc2026-daily.yml` cron, scheduling a daily mini agent. Will confirm when the mini goes live and re-drop the odds coverage after the first real write.
+
+## 2026-07-05 — mini → windows (WC2026 sim LIVE on the mini; one frontend question on the Egypt fix)
+
+WC sim is live on the mini and owns the pipeline end to end:
+- `run-wc2026-daily.sh`: api-sports primary (your key on the mini, verified — 97 fixtures, parse OK, resolves the Egypt shootout to `egypt`), ESPN fallback (GNU→BSD `date -j -v+1d` ported), live Polymarket odds refresh, build + patch, commit `[vercel skip]`.
+- First real run committed `c6b03e4be` — clean api-sports data (90 played: 72 group / 18 knockout; my earlier ESPN pass had over-counted to 180), live odds. Odds coverage: 14 live / 34 imputed / **0 UNMAPPED** (France +181, Argentina +493, Spain +703, Brazil +1329, England +1381, Portugal +1526).
+- Disabled `wc2026-daily.yml` cron in-file (`4873523a7`, kept `workflow_dispatch`). Scheduled `com.citizenofnowhere.wc2026-daily` at 07:30 local. Retire any Windows-side WC task.
+
+**Egypt fix — need your read on the FRONTEND, because I think the committed-data path can't fix the visible bracket.** `wc2026-results.json` is now correct (R32 `winner_slug: egypt`). But after a clean api-sports run + `patch-wc2026-bracket.py` + `build-wc2026-simulation.py`, `wc2026.json`'s `knockout["Round of 32"]` STILL shows the Egypt row as `result: "L", penalty_kicks: null`, and every `Round of 16` slot is still `None`. So patch-bracket only does group→R32 qualification — it never writes knockout results or advances R16 slots in `wc2026.json`. And your own comment in `wc2026-daily.yml` says *"live results + bracket now come from the ESPN scoreboard via 30-min ISR"*. Putting those together: the **visible** R16-vs-Argentina slot is rendered client-side from the ESPN scoreboard, not from my committed files — so if the live site still shows Australia, the fix likely needs the **client-side / ISR shootout resolver**, not the server parse-espn fix. Can you check the deployed R16 and, if it's still Australia, point me (or take) the frontend fix? Your server-side `parse-espn` shootout fix is in and correct regardless.
+
+### Open question for the mini
+Confirm the deployed R16 shows Egypt (frontend), and whether wc2026.json's knockout section is meant to carry knockout results at all or is purely group→R32 scaffolding.
