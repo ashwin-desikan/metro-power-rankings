@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0"><dict>
-<key>Label</key><string>com.citizenofnowhere.cricket-monthly</string>
-<key>ProgramArguments</key><array>
-<string>/bin/bash</string><string>/Users/ashwindesikan/metro-mini-jobs/run-cricket-monthly.sh</string></array>
-<key>StartCalendarInterval</key><dict>
-<key>Day</key><integer>1</integer><key>Hour</key><integer>11</integer><key>Minute</key><integer>0</integer></dict>
-<key>StandardOutPath</key><string>/Users/ashwindesikan/metro-mini-jobs/logs/launchd-cricket-monthly.out</string>
-<key>StandardErrorPath</key><string>/Users/ashwindesikan/metro-mini-jobs/logs/launchd-cricket-monthly.err</string>
-</dict></plist>
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.citizenofnowhere.cricket-monthly</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/bash</string>
+		<string>/Users/ashwindesikan/metro-mini-jobs/hc-run.sh</string>
+		<string>cricket-monthly</string>
+		<string>/bin/bash</string>
+		<string>/Users/ashwindesikan/metro-mini-jobs/run-cricket-monthly.sh</string>
+	</array>
+	<key>StandardErrorPath</key>
+	<string>/Users/ashwindesikan/metro-mini-jobs/logs/launchd-cricket-monthly.err</string>
+	<key>StandardOutPath</key>
+	<string>/Users/ashwindesikan/metro-mini-jobs/logs/launchd-cricket-monthly.out</string>
+	<key>StartCalendarInterval</key>
+	<dict>
+		<key>Day</key>
+		<integer>1</integer>
+		<key>Hour</key>
+		<integer>11</integer>
+		<key>Minute</key>
+		<integer>0</integer>
+	</dict>
+</dict>
+</plist>

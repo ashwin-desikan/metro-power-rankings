@@ -2,24 +2,29 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <key>Label</key>
-  <string>com.citizenofnowhere.egress-refresh</string>
-  <key>ProgramArguments</key>
-  <array>
-    <string>/bin/bash</string>
-    <string>-lc</string>
-    <!-- EDIT this path to where you copied the folder on the mini -->
-    <string>exec "$HOME/metro-mini-jobs/metro-mini-refresh.sh"</string>
-  </array>
-  <key>StartCalendarInterval</key>
-  <dict>
-    <key>Weekday</key><integer>0</integer>
-    <key>Hour</key><integer>10</integer>
-    <key>Minute</key><integer>0</integer>
-  </dict>
-  <key>StandardOutPath</key>
-  <string>/tmp/con-egress-refresh.out.log</string>
-  <key>StandardErrorPath</key>
-  <string>/tmp/con-egress-refresh.err.log</string>
+	<key>Label</key>
+	<string>com.citizenofnowhere.egress-refresh</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/bash</string>
+		<string>/Users/ashwindesikan/metro-mini-jobs/hc-run.sh</string>
+		<string>egress-refresh</string>
+		<string>/bin/bash</string>
+		<string>-lc</string>
+		<string>exec "$HOME/metro-mini-jobs/metro-mini-refresh.sh"</string>
+	</array>
+	<key>StandardErrorPath</key>
+	<string>/tmp/con-egress-refresh.err.log</string>
+	<key>StandardOutPath</key>
+	<string>/tmp/con-egress-refresh.out.log</string>
+	<key>StartCalendarInterval</key>
+	<dict>
+		<key>Hour</key>
+		<integer>10</integer>
+		<key>Minute</key>
+		<integer>0</integer>
+		<key>Weekday</key>
+		<integer>0</integer>
+	</dict>
 </dict>
 </plist>

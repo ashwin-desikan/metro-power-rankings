@@ -3,27 +3,27 @@
 <plist version="1.0">
 <dict>
 	<key>Label</key>
-	<string>com.citizenofnowhere.cricket-weekly</string>
+	<string>com.newsletter.weekly</string>
 	<key>ProgramArguments</key>
 	<array>
 		<string>/bin/bash</string>
 		<string>/Users/ashwindesikan/metro-mini-jobs/hc-run.sh</string>
-		<string>cricket-weekly</string>
+		<string>newsletter-weekly</string>
 		<string>/bin/bash</string>
-		<string>/Users/ashwindesikan/metro-mini-jobs/run-cricket-weekly.sh</string>
+		<string>/Users/ashwindesikan/newsletter-podcast/run-weekly.sh</string>
 	</array>
 	<key>StandardErrorPath</key>
-	<string>/Users/ashwindesikan/metro-mini-jobs/logs/launchd-cricket-weekly.err</string>
+	<string>/Users/ashwindesikan/newsletter-podcast/logs/launchd-weekly.err</string>
 	<key>StandardOutPath</key>
-	<string>/Users/ashwindesikan/metro-mini-jobs/logs/launchd-cricket-weekly.out</string>
+	<string>/Users/ashwindesikan/newsletter-podcast/logs/launchd-weekly.out</string>
 	<key>StartCalendarInterval</key>
 	<dict>
 		<key>Hour</key>
-		<integer>10</integer>
+		<integer>9</integer>
 		<key>Minute</key>
 		<integer>0</integer>
 		<key>Weekday</key>
-		<integer>2</integer>
+		<integer>0</integer>
 	</dict>
 </dict>
 </plist>
