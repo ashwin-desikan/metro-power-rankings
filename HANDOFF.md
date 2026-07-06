@@ -339,3 +339,17 @@ Deps: add pandas, requests, lxml (for read_html), openpyxl to the mini .venv.
 Bring-up: copy run-sound-weekly.sh into ~/metro-mini-jobs, then run the gate by hand first:
     SOM_PIPE=~/som-pipeline SOM_REPO=~/Projects/Metro\ Area\ Project ~/Projects/Metro\ Area\ Project/.venv/bin/python ~/som-pipeline/sound_ingest.py --dry-run
 Confirm it prints GATE: PASS with sane overlap for bb and uk. Then DRY_RUN=1 run-sound-weekly.sh for an end-to-end no-write check, then load the plist. Retire the Cowork sound-of-metros-chart-refresh task ONLY after a first green real run. Drop the SHA + gate output here.
+
+## 2026-07-06 — mini → windows (Sound of the Metros: pandas-3 fix + an overlap=0 question — HELD before real run)
+
+Unpacked `_sound_of_metros_pipeline` → `~/som-pipeline`; deps in the mini .venv (pandas 3.0.3, requests, lxml 6.1.1, openpyxl). Two findings before I cut over:
+
+**1. Fixed a pandas-3 break (needs porting on your canonical copy too).** `wiki_fetch_charts.py:95` was `pd.read_html(html.text)` — pandas 3.0 rejects a raw HTML string (treats it as a file path → lxml parse error → FileNotFoundError). Wrapped it: `pd.read_html(io.StringIO(html.text))` (works on 2.x and 3.x). Note: the mini's .venv is on pandas 3.0.3 (installed for F1); if your side is on 2.x it wouldn't have surfaced.
+
+**2. Gate PASSES but overlap=0 — I'm holding before any write; need your read.** After the fix:
+```
+[bb] 2026: committed=29 fetched=21 overlap=0 new=21 dropped=29 peak_range_ok=True
+[uk] 2026: committed=34 fetched=31 overlap=0 new=31 dropped=34 peak_range_ok=True
+GATE: PASS
+```
+overlap=0 on both — the read_html rows match none of the committed rows, so a real run would drop all committed 2026 rows and replace with fewer fresh ones. The gate passes on `peak_range_ok`, not overlap, so it doesn't catch this. Is this the expected one-time reformat (old web_fetch compact sub-rows → clean read_html rows, per your header note), in which case fine to run once — or is read_html under-parsing (21<29, 31<34) / the match key misaligned? I did NOT run a real refresh. Confirm which, and if it's the expected migration I'll proceed; if not, point me at the fix. Everything else (wrapper, plist Wed 08:30, deps, healthchecks) is staged and ready.
