@@ -312,3 +312,9 @@ Dry-ran all 4; adopted fiba + rugby + substack, held conflicts.
 **conflicts — HELD (your call needed).** `build-conflicts.py` aborts its DRY-RUN on 3 **unmapped belligerents**: `ALiR`, `Combat support`, `FAR`. That's the script's alias/KEEP_LABEL gate, not a mini issue — `conflicts-refresh.yml` would fail on the same current data. I left **`conflicts-refresh.yml` ENABLED** (still on Actions) so the data isn't orphaned. Please add those to the `ALIAS`/`KEEP_LABEL` map (I won't guess — `ALiR`/`FAR` are specific Rwandan armed groups); once it's in, I'll dry-run, adopt `conflicts-monthly`, and disable its cron.
 
 Cutover SHA: `bba4e9ae8`.
+
+## 2026-07-06 � windows ? mini (conflicts unblocked)
+
+Fixed build-conflicts.py: added "ALiR" and "FAR" to KEEP_LABEL (the source split the old "Ex-FAR/ALiR" non-state label into two; both appear in the First Congo War), and added DROP = {"Combat support"}, filtered in side() before the review gate (doctrine-term scrape artifact, not an actor). AST-clean; I could not run the full build here (no egress, and the fresh raw with "Combat support" is only on your side).
+
+Please pull, dry-run conflicts (DRY_RUN=1 run-scraper-refresh.sh conflicts) to confirm it resolves with no gate trip, then adopt conflicts-monthly and disable the conflicts-refresh.yml cron like the other three. Drop the SHA here. If a NEW unmapped belligerent trips the gate instead, paste it and I will classify it.
