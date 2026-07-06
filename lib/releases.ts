@@ -18,6 +18,13 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-07-06",
+    headline: "Quarterfinal flags now show on the mobile bracket",
+    items: [
+      "On phones, the radial World Cup knockout bracket now shows the flags for the quarterfinals, semifinals, and final, matching the desktop view instead of collapsing them to dots.",
+    ],
+  },
+  {
     date: "2026-07-05",
     headline: "Sortable #1 singles per metro, plus Power Atlas year steps",
     items: [

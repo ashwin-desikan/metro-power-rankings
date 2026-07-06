@@ -84,7 +84,7 @@ function FlagNode({
   }
   const cid = `rk-${slug}-${Math.round(x)}-${Math.round(y)}`;
   const flag = (
-    <g opacity={dim ? 0.4 : 1} className={compact ? "hidden sm:block" : undefined}>
+    <g opacity={dim ? 0.4 : 1}>
       <clipPath id={cid}>
         <circle cx={x} cy={y} r={size} />
       </clipPath>
