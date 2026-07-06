@@ -19,12 +19,12 @@
 	<string>/Users/ashwindesikan/metro-mini-jobs/logs/launchd-conflicts-monthly.out</string>
 	<key>StartCalendarInterval</key>
 	<dict>
+		<key>Day</key>
+		<integer>1</integer>
 		<key>Hour</key>
 		<integer>8</integer>
 		<key>Minute</key>
-		<integer>0</integer>
-		<key>Day</key>
-		<integer>1</integer>
+		<integer>15</integer>
 	</dict>
 </dict>
 </plist>

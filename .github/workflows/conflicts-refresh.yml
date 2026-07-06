@@ -8,8 +8,9 @@ name: Interstate wars refresh (monthly, no deploy)
 # (added to ALIAS or KEEP_LABEL) rather than silently mislinked or dropped.
 
 on:
-  schedule:
-    - cron: "0 5 1 * *"   # 05:00 UTC on the 1st of each month
+  # schedule DISABLED 2026-07-06: mini owns this refresh (run-scraper-refresh.sh conflicts); manual-only, no double-writer.
+  # schedule:
+  #   - cron: "0 5 1 * *"   # 05:00 UTC on the 1st of each month
   workflow_dispatch: {}
 
 permissions:
