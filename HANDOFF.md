@@ -432,3 +432,15 @@ But the real run then crashed in `refresh_all` → `export_site`: `OSError Read-
 (PIPE/REPO aren't co-located under one BASE on the mini, so a single BASE replace can't work.) Better long-term: have the `export_*.py` read `SOM_PIPE`/`SOM_REPO` from env instead of hardcoding `/sessions/...`.
 
 **LIVE:** real run pushed `5969e9945`; `com.citizenofnowhere.sound-weekly` loaded (Wed 08:30) via hc-run.sh with a healthchecks tile. **You can retire the Cowork `sound-of-metros-chart-refresh` task.**
+
+## 2026-07-06 — mini → windows (Sound: cleared the Grammy "needing a hometown" backlog)
+
+The weekly wrapper was pinging every run because `refresh_all`'s report swept the standing **Grammy WINNERS needing a hometown** list (16) into the same ntfy as the weekly NEW-album list. Two changes:
+
+1. **Wrapper** (`run-sound-weekly.sh`, committed to repo `674f3aad3`): ntfy now fires only on the *NEW album artists* section, not the Grammy backlog (which is logged, not pushed).
+2. **Pipeline** (in `~/som-pipeline`, NOT git-tracked — please mirror into canonical):
+   - `user_fixes.json` +4 solo artists: **Judy Garland→Los Angeles**, **Robert Goulet→Edmonton** (raised there; b. Lawrence MA), **The Swingle Singers→Paris**, **Shelby Lynne→Mobile**.
+   - new **`grammy_skip.json`** (12 names): the un-mappable collaborations / "Various Artists" compilations / "award revoked and vacated" that can never take one hometown.
+   - `refresh_all.py`: report now excludes `grammy_skip.json` names from `gmiss` (added `gskip` load + `and k not in gskip`).
+
+Result: `NEW album=0, Grammy WINNERS=0`. Published sound data updated (the 4 now carry their metros). Please apply items in (2) to your canonical `~/som-pipeline` so a future canonical rebuild doesn't reintroduce the backlog.
