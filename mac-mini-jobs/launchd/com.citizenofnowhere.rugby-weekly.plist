@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.citizenofnowhere.rugby-weekly</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/bash</string>
+		<string>/Users/ashwindesikan/metro-mini-jobs/hc-run.sh</string>
+		<string>rugby-weekly</string>
+		<string>/bin/bash</string>
+		<string>/Users/ashwindesikan/metro-mini-jobs/run-scraper-refresh.sh</string>
+		<string>rugby</string>
+	</array>
+	<key>StandardErrorPath</key>
+	<string>/Users/ashwindesikan/metro-mini-jobs/logs/launchd-rugby-weekly.err</string>
+	<key>StandardOutPath</key>
+	<string>/Users/ashwindesikan/metro-mini-jobs/logs/launchd-rugby-weekly.out</string>
+	<key>StartCalendarInterval</key>
+	<dict>
+		<key>Hour</key>
+		<integer>8</integer>
+		<key>Minute</key>
+		<integer>0</integer>
+		<key>Weekday</key>
+		<integer>2</integer>
+	</dict>
+</dict>
+</plist>
