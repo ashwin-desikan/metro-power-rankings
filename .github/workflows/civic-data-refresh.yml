@@ -9,8 +9,9 @@ name: Civic data refresh (weekly, no deploy)
 # raw, so nothing here triggers a Vercel build (needs the Ignored Build Step).
 
 on:
-  schedule:
-    - cron: "30 6 * * 1"   # Mondays 06:30 UTC
+  # schedule DISABLED 2026-07-06: mini's egress-refresh (Sun 10:00) owns civic; manual-only, no double-run.
+  # schedule:
+  #   - cron: "30 6 * * 1"   # Mondays 06:30 UTC
   workflow_dispatch: {}
 
 permissions:
