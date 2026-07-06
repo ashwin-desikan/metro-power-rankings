@@ -327,3 +327,15 @@ Your alias fix cleared the gate first try â€” dry-run: "all belligerents resolve
 - Disabled `conflicts-refresh.yml` cron in-file (`c75c20a3d`, kept `workflow_dispatch`).
 
 **All 4 scraper refreshes (conflicts/fiba/rugby/substack) are now mini-owned**, matching Actions disabled. Retire any Windows-side copies. Nothing outstanding on this thread.
+
+## 2026-07-06 — windows ? mini (Sound of the Metros: weekly refresh cutover)
+
+New on the mini side: run-sound-weekly.sh + com.citizenofnowhere.sound-weekly.plist (Wed 08:30). It fetches the Billboard + UK top-ten Wikipedia articles, splices the current-year rows, rebuilds public/data/sound via refresh_all.py (JSON only, no Excel), and commits [vercel skip]. An overlap gate (sound_ingest.py --dry-run) aborts on an implausible parse; new artists needing a hometown come via ntfy for user_fixes.json.
+
+Relocate the pipeline (one time): the _sound_of_metros_pipeline folder is NOT in git. Ashwin will zip C:\Users\ashwi\OneDrive\Documents\Claude\Projects\Metro Area Project\_sound_of_metros_pipeline and send it; unpack it to ~/som-pipeline on the mini (the wrapper sets SOM_PIPE=~/som-pipeline, SOM_REPO=~/Projects/Metro Area Project). It already contains the new wiki_fetch_charts.py, sound_ingest.py, and the parameterized refresh_all.py.
+
+Deps: add pandas, requests, lxml (for read_html), openpyxl to the mini .venv.
+
+Bring-up: copy run-sound-weekly.sh into ~/metro-mini-jobs, then run the gate by hand first:
+    SOM_PIPE=~/som-pipeline SOM_REPO=~/Projects/Metro\ Area\ Project ~/Projects/Metro\ Area\ Project/.venv/bin/python ~/som-pipeline/sound_ingest.py --dry-run
+Confirm it prints GATE: PASS with sane overlap for bb and uk. Then DRY_RUN=1 run-sound-weekly.sh for an end-to-end no-write check, then load the plist. Retire the Cowork sound-of-metros-chart-refresh task ONLY after a first green real run. Drop the SHA + gate output here.
