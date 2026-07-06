@@ -4393,16 +4393,16 @@
     "slug": "los-angeles",
     "metro": "Los Angeles",
     "us": 29.4,
-    "uk": 20.8,
-    "combined": 108.9,
+    "uk": 20.9,
+    "combined": 109.0,
     "rank": 1
    },
    {
     "slug": "nashville",
     "metro": "Nashville",
     "us": 21.7,
-    "uk": 10.3,
-    "combined": 75.5,
+    "uk": 10.4,
+    "combined": 75.6,
     "rank": 2
    },
    {
@@ -4417,7 +4417,7 @@
     "slug": "toronto",
     "metro": "Toronto",
     "us": 19.3,
-    "uk": 8.0,
+    "uk": 7.9,
     "combined": 65.8,
     "rank": 4
    },
@@ -4441,7 +4441,7 @@
     "slug": "miami",
     "metro": "Miami",
     "us": 8.7,
-    "uk": 6.6,
+    "uk": 6.7,
     "combined": 32.7,
     "rank": 7
    },
@@ -4569,7 +4569,7 @@
     "slug": "montgomery",
     "metro": "Montgomery",
     "us": 2.6,
-    "uk": 0.0,
+    "uk": 0.1,
     "combined": 7.7,
     "rank": 23
    },
@@ -4715,7 +4715,7 @@
     "name": "Taylor Swift",
     "slug": "taylor-swift",
     "metro": "Nashville",
-    "combined": 60.2
+    "combined": 60.3
    },
    {
     "name": "Drake",
@@ -4733,7 +4733,7 @@
     "name": "Olivia Rodrigo",
     "slug": "olivia-rodrigo",
     "metro": "Los Angeles",
-    "combined": 27.6
+    "combined": 27.7
    },
    {
     "name": "Ariana Grande",
