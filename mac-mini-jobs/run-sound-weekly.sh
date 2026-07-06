@@ -44,7 +44,13 @@ else
   log "committed + pushed sound data"
 fi
 
-NEW="$(echo "$REPORT" | sed -n '/needing a hometown/,/DONE/p' | grep -E '^[[:space:]]+[0-9]' | head -30 || true)"
+# Only alert on genuinely NEW album artists (weekly-actionable). The "Grammy WINNERS
+# needing a hometown" list is a standing backlog dominated by collaborations / "Various
+# Artists" that can't take a single metro, so it's logged but never pushed (it would
+# otherwise fire the same alert every week). Curate those into user_fixes.json manually.
+NEW="$(echo "$REPORT" | sed -n '/NEW album artists needing a hometown/,/Grammy WINNERS/p' | grep -E '^[[:space:]]+[0-9]' | head -30 || true)"
 [ -n "$NEW" ] && push "Sound weekly: new artists need a metro -- $DATE" default warning "Add to user_fixes.json:
 $NEW"
+GBACKLOG="$(echo "$REPORT" | sed -n 's/^Grammy WINNERS needing a hometown: //p')"
+log "Grammy-winner backlog (not pushed): ${GBACKLOG:-?} entries"
 log "=== Sound weekly done ==="
