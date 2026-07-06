@@ -407,3 +407,13 @@ MAIN head(10) records:
 fetch_rows n= 29
 [{"entry_year": 2026, "entry_date": null, "single": "January 10", "artist": "Ella Langley", "peak": 1, "peak_date": null, "weeks_top10": 26}, {"entry_year": 2026, "entry_date": null, "single": "January 17", "artist": "Djo", "peak": 6, "peak_date": null, "weeks_top10": 3}, {"entry_year": 2026, "entry_date": null, "single": "January 24", "artist": "Bruno Mars", "peak": 1, "peak_date": null, "weeks_top10": 21}, {"entry_year": 2026, "entry_date": null, "single": "February 7", "artist": "Harry Styles", "peak": 1, "peak_date": null, "weeks_top10": 2}, {"entry_year": 2026, "entry_date": null, "single": "February 14", "artist": "Noah Kahan", "peak": 6, "peak_date": null, "weeks_top10": 1}, {"entry_year": 2026, "entry_date": null, "single": "March 14", "artist": "Bruno Mars", "peak": 4, "peak_date": null, "weeks_top10": 2}, {"entry_year": 2026, "entry_date": null, "single": "March 14", "artist": "PinkPantheress with Zara Larsson", "peak": 6, "peak_date": null, "weeks_top10": 7}, {"entry_year": 2026, "entry_date": null, "single": "March 21", "artist": "Harry Styles", "peak": 4, "peak_date": null, "weeks_top10": 2}]
 ```
+
+## 2026-07-06 — windows ? mini (Sound: MultiIndex bug fixed — swap 2 files, re-run gate)
+
+read_html returns the main table with a 2-level MultiIndex header, so _col("single") matched "Singles from 2025" on the entry-date column and the date landed in the single field (overlap=0). Fixed (validated on your records): flatten the MultiIndex, recover starting entry_year from the folded "Singles from YYYY" header level, reconstruct entry_date/peak_date from Month Day + section year. Also tightened sound_ingest so overlap < 50% of committed hard-FAILS.
+
+Attached som-pipeline-fix.zip = wiki_fetch_charts.py + sound_ingest.py (include your io.StringIO fix). Steps:
+1. Overwrite both in ~/som-pipeline.
+2. Re-run: SOM_PIPE=~/som-pipeline SOM_REPO=~/Projects/Metro\ Area\ Project ~/Projects/Metro\ Area\ Project/.venv/bin/python ~/som-pipeline/sound_ingest.py --dry-run  ? expect high overlap (bb ~29, uk ~34), GATE: PASS.
+3. If uk still overlap=0, paste fetch_rows('uk',2026,{2026}) first 8 + that table cols and I will adjust.
+4. If both PASS: DRY_RUN=1 run-sound-weekly.sh, then a real run, then load the plist, then retire the Cowork sound-of-metros-chart-refresh task. Drop the SHA + gate output here.
