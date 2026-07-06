@@ -731,9 +731,9 @@
   "us_score": 310.2,
   "uk_score": 130.3,
   "album_score": 2301.5,
-  "prestige_score": 373.5,
-  "combined": 3338.2,
-  "artist_count": 243,
+  "prestige_score": 378.0,
+  "combined": 3349.0,
+  "artist_count": 244,
   "by_decade": {
    "1950s": {
     "us": 15.2,
@@ -1065,8 +1065,8 @@
    "origin": {
     "us": 310.2,
     "uk": 130.3,
-    "combined": 3338.2,
-    "artists": 243,
+    "combined": 3349.0,
+    "artists": 244,
     "signature_decade": "1970s",
     "distinctiveness": 1.22,
     "score_per_artist": 13.7,
@@ -1093,8 +1093,8 @@
   "us_score": 113.7,
   "uk_score": 68.4,
   "album_score": 691.6,
-  "prestige_score": 75.5,
-  "combined": 1005.6,
+  "prestige_score": 74.8,
+  "combined": 1004.0,
   "artist_count": 64,
   "by_decade": {
    "1950s": {
@@ -1210,8 +1210,8 @@
     "combined": 8.6
    },
    {
-    "name": "Jack Scott",
-    "slug": "jack-scott",
+    "name": "The Stooges",
+    "slug": "the-stooges",
     "combined": 7.0
    }
   ],
@@ -1427,7 +1427,7 @@
    "origin": {
     "us": 113.7,
     "uk": 68.4,
-    "combined": 1005.6,
+    "combined": 1004.0,
     "artists": 64,
     "signature_decade": "1960s",
     "distinctiveness": 1.8,
@@ -3336,13 +3336,13 @@
     "combined": 5.0
    },
    {
-    "name": "Deborah Cox",
-    "slug": "deborah-cox",
+    "name": "Snow",
+    "slug": "snow",
     "combined": 4.4
    },
    {
-    "name": "Snow",
-    "slug": "snow",
+    "name": "Deborah Cox",
+    "slug": "deborah-cox",
     "combined": 4.4
    }
   ],
@@ -4030,13 +4030,13 @@
     "combined": 6.5
    },
    {
-    "name": "Expos\u00e9",
-    "slug": "expos",
+    "name": "Fifth Harmony",
+    "slug": "fifth-harmony",
     "combined": 5.2
    },
    {
-    "name": "Fifth Harmony",
-    "slug": "fifth-harmony",
+    "name": "Expos\u00e9",
+    "slug": "expos",
     "combined": 5.2
    },
    {
@@ -5079,13 +5079,13 @@
     "combined": 12.5
    },
    {
-    "name": "Noah Kahan",
-    "slug": "noah-kahan",
+    "name": "The Cars",
+    "slug": "the-cars",
     "combined": 10.4
    },
    {
-    "name": "The Cars",
-    "slug": "the-cars",
+    "name": "Noah Kahan",
+    "slug": "noah-kahan",
     "combined": 10.4
    },
    {
@@ -5818,8 +5818,8 @@
     "combined": 3.1
    },
    {
-    "name": "Demi Lovato",
-    "slug": "demi-lovato",
+    "name": "Bruce Channel",
+    "slug": "bruce-channel",
     "combined": 2.9
    }
   ],
@@ -6155,13 +6155,13 @@
     "combined": 4.5
    },
    {
-    "name": "Buzzcocks",
-    "slug": "buzzcocks",
+    "name": "New Order",
+    "slug": "new-order",
     "combined": 3.8
    },
    {
-    "name": "New Order",
-    "slug": "new-order",
+    "name": "Buzzcocks",
+    "slug": "buzzcocks",
     "combined": 3.8
    },
    {
@@ -6507,13 +6507,13 @@
     "combined": 4.1
    },
    {
-    "name": "The Ventures",
-    "slug": "the-ventures",
+    "name": "The Brothers Four",
+    "slug": "the-brothers-four",
     "combined": 3.9
    },
    {
-    "name": "The Brothers Four",
-    "slug": "the-brothers-four",
+    "name": "The Ventures",
+    "slug": "the-ventures",
     "combined": 3.9
    },
    {
@@ -7226,11 +7226,6 @@
     "combined": 2.6
    },
    {
-    "name": "Jean Knight",
-    "slug": "jean-knight",
-    "combined": 2.1
-   },
-   {
     "name": "The Dixie Cups",
     "slug": "the-dixie-cups",
     "combined": 2.1
@@ -7238,6 +7233,11 @@
    {
     "name": "Ernie K-Doe",
     "slug": "ernie-k-doe",
+    "combined": 2.1
+   },
+   {
+    "name": "Jean Knight",
+    "slug": "jean-knight",
     "combined": 2.1
    }
   ],
@@ -10277,8 +10277,8 @@
     "combined": 0.4
    },
    {
-    "name": "Feeder",
-    "slug": "feeder",
+    "name": "Sian Evans",
+    "slug": "sian-evans",
     "combined": 0.3
    }
   ],
@@ -11191,6 +11191,11 @@
     "combined": 1.5
    },
    {
+    "name": "Swedish House Mafia",
+    "slug": "swedish-house-mafia",
+    "combined": 1.2
+   },
+   {
     "name": "John Martin",
     "slug": "john-martin",
     "combined": 1.2
@@ -11198,11 +11203,6 @@
    {
     "name": "Eric Prydz",
     "slug": "eric-prydz",
-    "combined": 1.2
-   },
-   {
-    "name": "Swedish House Mafia",
-    "slug": "swedish-house-mafia",
     "combined": 1.2
    },
    {
@@ -11532,13 +11532,13 @@
     "combined": 5.3
    },
    {
-    "name": "J-Kwon",
-    "slug": "j-kwon",
+    "name": "Michael McDonald",
+    "slug": "michael-mcdonald",
     "combined": 3.5
    },
    {
-    "name": "Michael McDonald",
-    "slug": "michael-mcdonald",
+    "name": "J-Kwon",
+    "slug": "j-kwon",
     "combined": 3.5
    },
    {
@@ -11849,13 +11849,13 @@
     "combined": 4.1
    },
    {
-    "name": "Enhypen",
-    "slug": "enhypen",
+    "name": "NewJeans",
+    "slug": "newjeans",
     "combined": 3.5
    },
    {
-    "name": "NewJeans",
-    "slug": "newjeans",
+    "name": "Enhypen",
+    "slug": "enhypen",
     "combined": 3.5
    },
    {
@@ -12882,13 +12882,13 @@
     "combined": 6.0
    },
    {
-    "name": "Ini Kamoze",
-    "slug": "ini-kamoze",
+    "name": "Toots and the Maytals",
+    "slug": "toots-and-the-maytals",
     "combined": 4.7
    },
    {
-    "name": "Toots and the Maytals",
-    "slug": "toots-and-the-maytals",
+    "name": "Ini Kamoze",
+    "slug": "ini-kamoze",
     "combined": 4.7
    },
    {
@@ -15010,13 +15010,13 @@
     "combined": 0.6
    },
    {
-    "name": "Gerry Monroe",
-    "slug": "gerry-monroe",
+    "name": "Joe McElderry",
+    "slug": "joe-mcelderry",
     "combined": 0.5
    },
    {
-    "name": "Joe McElderry",
-    "slug": "joe-mcelderry",
+    "name": "Gerry Monroe",
+    "slug": "gerry-monroe",
     "combined": 0.5
    },
    {
@@ -15030,8 +15030,8 @@
     "combined": 0.4
    },
    {
-    "name": "Dave Stewart",
-    "slug": "dave-stewart",
+    "name": "Hank Marvin",
+    "slug": "hank-marvin",
     "combined": 0.3
    }
   ],
@@ -16394,9 +16394,9 @@
   "us_score": 6.0,
   "uk_score": 9.1,
   "album_score": 44.0,
-  "prestige_score": 10.1,
-  "combined": 77.7,
-  "artist_count": 12,
+  "prestige_score": 12.2,
+  "combined": 82.8,
+  "artist_count": 13,
   "by_decade": {
    "1960s": {
     "us": 0.9,
@@ -16451,6 +16451,11 @@
     "combined": 6.9
    },
    {
+    "name": "The Swingle Singers",
+    "slug": "the-swingle-singers",
+    "combined": 5.0
+   },
+   {
     "name": "DJ Snake",
     "slug": "dj-snake",
     "combined": 4.8
@@ -16481,13 +16486,13 @@
     "combined": 0.5
    },
    {
-    "name": "Mr. Oizo",
-    "slug": "mr-oizo",
+    "name": "Modjo",
+    "slug": "modjo",
     "combined": 0.4
    },
    {
-    "name": "Modjo",
-    "slug": "modjo",
+    "name": "Mr. Oizo",
+    "slug": "mr-oizo",
     "combined": 0.4
    },
    {
@@ -16700,7 +16705,7 @@
   ],
   "signature_decade": "2010s",
   "distinctiveness": 4.44,
-  "score_per_artist": 6.5,
+  "score_per_artist": 6.4,
   "rank": 52,
   "lat": 48.8566,
   "lon": 2.3522,
@@ -16708,11 +16713,11 @@
    "origin": {
     "us": 6.0,
     "uk": 9.1,
-    "combined": 77.7,
-    "artists": 12,
+    "combined": 82.8,
+    "artists": 13,
     "signature_decade": "2010s",
     "distinctiveness": 4.44,
-    "score_per_artist": 6.5,
+    "score_per_artist": 6.4,
     "rank": 52
    },
    "affinity": {
@@ -18668,23 +18673,23 @@
     "combined": 4.1
    },
    {
-    "name": "Mr. Acker Bilk",
-    "slug": "mr-acker-bilk",
-    "combined": 3.6
-   },
-   {
     "name": "Russ Conway",
     "slug": "russ-conway",
     "combined": 3.6
    },
    {
-    "name": "Racey",
-    "slug": "racey",
-    "combined": 1.0
+    "name": "Mr. Acker Bilk",
+    "slug": "mr-acker-bilk",
+    "combined": 3.6
    },
    {
     "name": "The Wurzels",
     "slug": "the-wurzels",
+    "combined": 1.0
+   },
+   {
+    "name": "Racey",
+    "slug": "racey",
     "combined": 1.0
    },
    {
@@ -19010,13 +19015,13 @@
     "combined": 2.6
    },
    {
-    "name": "Chumbawamba",
-    "slug": "chumbawamba",
+    "name": "Tasmin Archer",
+    "slug": "tasmin-archer",
     "combined": 2.5
    },
    {
-    "name": "Tasmin Archer",
-    "slug": "tasmin-archer",
+    "name": "Chumbawamba",
+    "slug": "chumbawamba",
     "combined": 2.5
    },
    {
@@ -21057,13 +21062,13 @@
     "combined": 4.0
    },
    {
-    "name": "Nate Ruess",
-    "slug": "nate-ruess",
+    "name": "Alec Benjamin",
+    "slug": "alec-benjamin",
     "combined": 3.6
    },
    {
-    "name": "Alec Benjamin",
-    "slug": "alec-benjamin",
+    "name": "Nate Ruess",
+    "slug": "nate-ruess",
     "combined": 3.6
    },
    {
@@ -24450,13 +24455,13 @@
     "combined": 5.0
    },
    {
-    "name": "Paul Revere & the Raiders",
-    "slug": "paul-revere-and-the-raiders",
+    "name": "Elliott Smith",
+    "slug": "elliott-smith",
     "combined": 3.8
    },
    {
-    "name": "Elliott Smith",
-    "slug": "elliott-smith",
+    "name": "Paul Revere & the Raiders",
+    "slug": "paul-revere-and-the-raiders",
     "combined": 3.8
    },
    {
@@ -24480,13 +24485,13 @@
     "combined": 3.2
    },
    {
-    "name": "The Raiders",
-    "slug": "the-raiders",
+    "name": "Quarterflash",
+    "slug": "quarterflash",
     "combined": 2.5
    },
    {
-    "name": "Quarterflash",
-    "slug": "quarterflash",
+    "name": "The Raiders",
+    "slug": "the-raiders",
     "combined": 2.5
    }
   ],
@@ -24644,13 +24649,13 @@
     "combined": 4.8
    },
    {
-    "name": "The Big Bopper",
-    "slug": "the-big-bopper",
+    "name": "The Edgar Winter Group",
+    "slug": "the-edgar-winter-group",
     "combined": 2.0
    },
    {
-    "name": "The Edgar Winter Group",
-    "slug": "the-edgar-winter-group",
+    "name": "The Big Bopper",
+    "slug": "the-big-bopper",
     "combined": 2.0
    }
   ],
@@ -29277,13 +29282,13 @@
     "combined": 3.9
    },
    {
-    "name": "S\u00e9rgio Mendes",
-    "slug": "s-rgio-mendes",
+    "name": "Deodato",
+    "slug": "deodato",
     "combined": 1.8
    },
    {
-    "name": "Deodato",
-    "slug": "deodato",
+    "name": "S\u00e9rgio Mendes",
+    "slug": "s-rgio-mendes",
     "combined": 1.8
    }
   ],
@@ -34325,6 +34330,94 @@
   }
  },
  {
+  "slug": "edmonton",
+  "metro": "Edmonton",
+  "country": "Canada",
+  "state": "Alberta",
+  "us_score": 0.0,
+  "uk_score": 0.0,
+  "album_score": 0.0,
+  "prestige_score": 2.1,
+  "combined": 5.0,
+  "artist_count": 1,
+  "by_decade": {},
+  "top_artists": [
+   {
+    "name": "Robert Goulet",
+    "slug": "robert-goulet",
+    "combined": 5.0
+   }
+  ],
+  "top_songs": [],
+  "signature_decade": null,
+  "distinctiveness": null,
+  "score_per_artist": 5.0,
+  "rank": 176,
+  "lat": 53.5344,
+  "lon": -113.4903,
+  "lenses": {
+   "origin": {
+    "us": 0.0,
+    "uk": 0.0,
+    "combined": 5.0,
+    "artists": 1,
+    "signature_decade": null,
+    "distinctiveness": null,
+    "score_per_artist": 5.0,
+    "rank": 176
+   },
+   "affinity": {
+    "vr_tracks": 0,
+    "vr_artists": 0
+   },
+   "production": null
+  }
+ },
+ {
+  "slug": "mobile",
+  "metro": "Mobile",
+  "country": "United States",
+  "state": "Alabama",
+  "us_score": 0.0,
+  "uk_score": 0.0,
+  "album_score": 0.0,
+  "prestige_score": 2.1,
+  "combined": 5.0,
+  "artist_count": 1,
+  "by_decade": {},
+  "top_artists": [
+   {
+    "name": "Shelby Lynne",
+    "slug": "shelby-lynne",
+    "combined": 5.0
+   }
+  ],
+  "top_songs": [],
+  "signature_decade": null,
+  "distinctiveness": null,
+  "score_per_artist": 5.0,
+  "rank": 177,
+  "lat": 30.6954,
+  "lon": -88.0399,
+  "lenses": {
+   "origin": {
+    "us": 0.0,
+    "uk": 0.0,
+    "combined": 5.0,
+    "artists": 1,
+    "signature_decade": null,
+    "distinctiveness": null,
+    "score_per_artist": 5.0,
+    "rank": 177
+   },
+   "affinity": {
+    "vr_tracks": 0,
+    "vr_artists": 0
+   },
+   "production": null
+  }
+ },
+ {
   "slug": "tupelo",
   "metro": "Tupelo",
   "country": "United States",
@@ -34375,7 +34468,7 @@
   "signature_decade": "2010s",
   "distinctiveness": 6.7,
   "score_per_artist": 2.4,
-  "rank": 176,
+  "rank": 178,
   "lat": 34.2576,
   "lon": -88.7034,
   "lenses": {
@@ -34387,7 +34480,7 @@
     "signature_decade": "2010s",
     "distinctiveness": 6.7,
     "score_per_artist": 2.4,
-    "rank": 176
+    "rank": 178
    },
    "affinity": {
     "vr_tracks": 0,
@@ -34434,7 +34527,7 @@
   "signature_decade": "2010s",
   "distinctiveness": 6.7,
   "score_per_artist": 4.8,
-  "rank": 177,
+  "rank": 179,
   "lat": 60.3925,
   "lon": 5.3233,
   "lenses": {
@@ -34446,7 +34539,7 @@
     "signature_decade": "2010s",
     "distinctiveness": 6.7,
     "score_per_artist": 4.8,
-    "rank": 177
+    "rank": 179
    },
    "affinity": {
     "vr_tracks": 0,
@@ -34582,7 +34675,7 @@
   "signature_decade": "1970s",
   "distinctiveness": 3.8,
   "score_per_artist": 1.6,
-  "rank": 178,
+  "rank": 180,
   "lat": 52.9533,
   "lon": -1.15,
   "lenses": {
@@ -34594,7 +34687,7 @@
     "signature_decade": "1970s",
     "distinctiveness": 3.8,
     "score_per_artist": 1.6,
-    "rank": 178
+    "rank": 180
    },
    "affinity": {
     "vr_tracks": 0,
@@ -34657,7 +34750,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 4.7,
-  "rank": 179,
+  "rank": 181,
   "lat": 36.1316,
   "lon": -97.074,
   "lenses": {
@@ -34669,7 +34762,7 @@
     "signature_decade": "2000s",
     "distinctiveness": 6.8,
     "score_per_artist": 4.7,
-    "rank": 179
+    "rank": 181
    },
    "affinity": {
     "vr_tracks": 0,
@@ -34895,7 +34988,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 4.97,
   "score_per_artist": 0.7,
-  "rank": 180,
+  "rank": 182,
   "lat": 52.4081,
   "lon": -1.5106,
   "lenses": {
@@ -34907,7 +35000,7 @@
     "signature_decade": "1980s",
     "distinctiveness": 4.97,
     "score_per_artist": 0.7,
-    "rank": 180
+    "rank": 182
    },
    "affinity": {
     "vr_tracks": 0,
@@ -34964,7 +35057,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 5.66,
   "score_per_artist": 2.1,
-  "rank": 181,
+  "rank": 183,
   "lat": 34.7998,
   "lon": -87.6773,
   "lenses": {
@@ -34976,7 +35069,7 @@
     "signature_decade": "1960s",
     "distinctiveness": 5.66,
     "score_per_artist": 2.1,
-    "rank": 181
+    "rank": 183
    },
    "affinity": {
     "vr_tracks": 0,
@@ -35099,7 +35192,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 5.06,
   "score_per_artist": 1.4,
-  "rank": 182,
+  "rank": 184,
   "lat": 33.5277,
   "lon": -86.7987,
   "lenses": {
@@ -35111,7 +35204,7 @@
     "signature_decade": "2000s",
     "distinctiveness": 5.06,
     "score_per_artist": 1.4,
-    "rank": 182
+    "rank": 184
    },
    "affinity": {
     "vr_tracks": 0,
@@ -35171,7 +35264,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 5.51,
   "score_per_artist": 4.2,
-  "rank": 183,
+  "rank": 185,
   "lat": 18.4207,
   "lon": -64.6399,
   "lenses": {
@@ -35183,7 +35276,7 @@
     "signature_decade": "2000s",
     "distinctiveness": 5.51,
     "score_per_artist": 4.2,
-    "rank": 183
+    "rank": 185
    },
    "affinity": {
     "vr_tracks": 0,
@@ -35246,7 +35339,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 6.82,
   "score_per_artist": 4.1,
-  "rank": 184,
+  "rank": 186,
   "lat": 31.5598,
   "lon": -97.1881,
   "lenses": {
@@ -35258,7 +35351,7 @@
     "signature_decade": "1990s",
     "distinctiveness": 6.82,
     "score_per_artist": 4.1,
-    "rank": 184
+    "rank": 186
    },
    "affinity": {
     "vr_tracks": 0,
@@ -35290,7 +35383,7 @@
   "signature_decade": null,
   "distinctiveness": null,
   "score_per_artist": 4.1,
-  "rank": 185,
+  "rank": 187,
   "lat": 26.2034,
   "lon": -98.23,
   "lenses": {
@@ -35302,7 +35395,7 @@
     "signature_decade": null,
     "distinctiveness": null,
     "score_per_artist": 4.1,
-    "rank": 185
+    "rank": 187
    },
    "affinity": {
     "vr_tracks": 0,
@@ -35349,7 +35442,7 @@
   "signature_decade": "1950s",
   "distinctiveness": 33.96,
   "score_per_artist": 3.9,
-  "rank": 186,
+  "rank": 188,
   "lat": 23.1136,
   "lon": -82.3666,
   "lenses": {
@@ -35361,7 +35454,7 @@
     "signature_decade": "1950s",
     "distinctiveness": 33.96,
     "score_per_artist": 3.9,
-    "rank": 186
+    "rank": 188
    },
    "affinity": {
     "vr_tracks": 0,
@@ -35569,7 +35662,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 4.12,
   "score_per_artist": 1.2,
-  "rank": 187,
+  "rank": 189,
   "lat": 50.9025,
   "lon": -1.4042,
   "lenses": {
@@ -35581,7 +35674,7 @@
     "signature_decade": "2000s",
     "distinctiveness": 4.12,
     "score_per_artist": 1.2,
-    "rank": 187
+    "rank": 189
    },
    "affinity": {
     "vr_tracks": 0,
@@ -35649,7 +35742,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 5.2,
   "score_per_artist": 3.5,
-  "rank": 188,
+  "rank": 190,
   "lat": 42.2711,
   "lon": -89.094,
   "lenses": {
@@ -35661,7 +35754,7 @@
     "signature_decade": "1980s",
     "distinctiveness": 5.2,
     "score_per_artist": 3.5,
-    "rank": 188
+    "rank": 190
    },
    "affinity": {
     "vr_tracks": 0,
@@ -35732,7 +35825,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 6.68,
   "score_per_artist": 3.4,
-  "rank": 189,
+  "rank": 191,
   "lat": 40.6936,
   "lon": -89.589,
   "lenses": {
@@ -35744,7 +35837,7 @@
     "signature_decade": "1980s",
     "distinctiveness": 6.68,
     "score_per_artist": 3.4,
-    "rank": 189
+    "rank": 191
    },
    "affinity": {
     "vr_tracks": 0,
@@ -35799,7 +35892,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 3.4,
-  "rank": 190,
+  "rank": 192,
   "lat": 35.6127,
   "lon": -77.3664,
   "lenses": {
@@ -35811,7 +35904,7 @@
     "signature_decade": "2000s",
     "distinctiveness": 6.8,
     "score_per_artist": 3.4,
-    "rank": 190
+    "rank": 192
    },
    "affinity": {
     "vr_tracks": 0,
@@ -35884,7 +35977,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 5.48,
   "score_per_artist": 1.6,
-  "rank": 191,
+  "rank": 193,
   "lat": 53.5511,
   "lon": 9.9937,
   "lenses": {
@@ -35896,7 +35989,7 @@
     "signature_decade": "1960s",
     "distinctiveness": 5.48,
     "score_per_artist": 1.6,
-    "rank": 191
+    "rank": 193
    },
    "affinity": {
     "vr_tracks": 0,
@@ -35943,7 +36036,7 @@
   "signature_decade": "2020s",
   "distinctiveness": 11.11,
   "score_per_artist": 3.3,
-  "rank": 192,
+  "rank": 194,
   "lat": 27.8006,
   "lon": -97.3964,
   "lenses": {
@@ -35955,7 +36048,7 @@
     "signature_decade": "2020s",
     "distinctiveness": 11.11,
     "score_per_artist": 3.3,
-    "rank": 192
+    "rank": 194
    },
    "affinity": {
     "vr_tracks": 0,
@@ -36002,7 +36095,7 @@
   "signature_decade": "1970s",
   "distinctiveness": 6.88,
   "score_per_artist": 3.2,
-  "rank": 193,
+  "rank": 195,
   "lat": 38.0423,
   "lon": -84.4587,
   "lenses": {
@@ -36014,7 +36107,7 @@
     "signature_decade": "1970s",
     "distinctiveness": 6.88,
     "score_per_artist": 3.2,
-    "rank": 193
+    "rank": 195
    },
    "affinity": {
     "vr_tracks": 0,
@@ -36061,7 +36154,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 3.2,
-  "rank": 194,
+  "rank": 196,
   "lat": 41.3557,
   "lon": -72.0995,
   "lenses": {
@@ -36073,7 +36166,7 @@
     "signature_decade": "2000s",
     "distinctiveness": 6.8,
     "score_per_artist": 3.2,
-    "rank": 194
+    "rank": 196
    },
    "affinity": {
     "vr_tracks": 0,
@@ -36146,7 +36239,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 5.14,
   "score_per_artist": 1.6,
-  "rank": 195,
+  "rank": 197,
   "lat": -26.2041,
   "lon": 28.0473,
   "lenses": {
@@ -36158,7 +36251,7 @@
     "signature_decade": "1960s",
     "distinctiveness": 5.14,
     "score_per_artist": 1.6,
-    "rank": 195
+    "rank": 197
    },
    "affinity": {
     "vr_tracks": 0,
@@ -36234,7 +36327,7 @@
   "signature_decade": "1950s",
   "distinctiveness": 23.42,
   "score_per_artist": 2.9,
-  "rank": 196,
+  "rank": 198,
   "lat": 41.6639,
   "lon": -83.5822,
   "lenses": {
@@ -36246,7 +36339,7 @@
     "signature_decade": "1950s",
     "distinctiveness": 23.42,
     "score_per_artist": 2.9,
-    "rank": 196
+    "rank": 198
    },
    "affinity": {
     "vr_tracks": 0,
@@ -36301,7 +36394,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 7.01,
   "score_per_artist": 2.9,
-  "rank": 197,
+  "rank": 199,
   "lat": 53.2307,
   "lon": -0.5406,
   "lenses": {
@@ -36313,7 +36406,7 @@
     "signature_decade": "1960s",
     "distinctiveness": 7.01,
     "score_per_artist": 2.9,
-    "rank": 197
+    "rank": 199
    },
    "affinity": {
     "vr_tracks": 0,
@@ -36368,7 +36461,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 7.01,
   "score_per_artist": 2.8,
-  "rank": 198,
+  "rank": 200,
   "lat": 41.0793,
   "lon": -85.1394,
   "lenses": {
@@ -36380,7 +36473,7 @@
     "signature_decade": "1960s",
     "distinctiveness": 7.01,
     "score_per_artist": 2.8,
-    "rank": 198
+    "rank": 200
    },
    "affinity": {
     "vr_tracks": 0,
@@ -36435,7 +36528,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 6.68,
   "score_per_artist": 2.7,
-  "rank": 199,
+  "rank": 201,
   "lat": 50.0755,
   "lon": 14.4378,
   "lenses": {
@@ -36447,7 +36540,7 @@
     "signature_decade": "1980s",
     "distinctiveness": 6.68,
     "score_per_artist": 2.7,
-    "rank": 199
+    "rank": 201
    },
    "affinity": {
     "vr_tracks": 0,
@@ -36502,7 +36595,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 6.68,
   "score_per_artist": 2.6,
-  "rank": 200,
+  "rank": 202,
   "lat": 48.2082,
   "lon": 16.3738,
   "lenses": {
@@ -36514,7 +36607,7 @@
     "signature_decade": "1980s",
     "distinctiveness": 6.68,
     "score_per_artist": 2.6,
-    "rank": 200
+    "rank": 202
    },
    "affinity": {
     "vr_tracks": 0,
@@ -36569,7 +36662,7 @@
   "signature_decade": "2020s",
   "distinctiveness": 11.11,
   "score_per_artist": 2.5,
-  "rank": 201,
+  "rank": 203,
   "lat": 41.9028,
   "lon": 12.4964,
   "lenses": {
@@ -36581,7 +36674,7 @@
     "signature_decade": "2020s",
     "distinctiveness": 11.11,
     "score_per_artist": 2.5,
-    "rank": 201
+    "rank": 203
    },
    "affinity": {
     "vr_tracks": 0,
@@ -36644,7 +36737,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 6.68,
   "score_per_artist": 2.2,
-  "rank": 202,
+  "rank": 204,
   "lat": 52.7077,
   "lon": -2.7531,
   "lenses": {
@@ -36656,7 +36749,7 @@
     "signature_decade": "1980s",
     "distinctiveness": 6.68,
     "score_per_artist": 2.2,
-    "rank": 202
+    "rank": 204
    },
    "affinity": {
     "vr_tracks": 0,
@@ -36740,7 +36833,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 4.34,
   "score_per_artist": 2.2,
-  "rank": 203,
+  "rank": 205,
   "lat": 44.6989,
   "lon": 10.6297,
   "lenses": {
@@ -36752,7 +36845,7 @@
     "signature_decade": "1990s",
     "distinctiveness": 4.34,
     "score_per_artist": 2.2,
-    "rank": 203
+    "rank": 205
    },
    "affinity": {
     "vr_tracks": 0,
@@ -36831,7 +36924,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 7.01,
   "score_per_artist": 2.2,
-  "rank": 204,
+  "rank": 206,
   "lat": 52.2583,
   "lon": -7.1119,
   "lenses": {
@@ -36843,7 +36936,7 @@
     "signature_decade": "1960s",
     "distinctiveness": 7.01,
     "score_per_artist": 2.2,
-    "rank": 204
+    "rank": 206
    },
    "affinity": {
     "vr_tracks": 0,
@@ -36890,7 +36983,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 7.01,
   "score_per_artist": 2.1,
-  "rank": 205,
+  "rank": 207,
   "lat": 43.4195,
   "lon": -83.9508,
   "lenses": {
@@ -36902,7 +36995,7 @@
     "signature_decade": "1960s",
     "distinctiveness": 7.01,
     "score_per_artist": 2.1,
-    "rank": 205
+    "rank": 207
    },
    "affinity": {
     "vr_tracks": 0,
@@ -36949,7 +37042,7 @@
   "signature_decade": "2020s",
   "distinctiveness": 11.11,
   "score_per_artist": 2.1,
-  "rank": 206,
+  "rank": 208,
   "lat": 54.7761,
   "lon": -1.5733,
   "lenses": {
@@ -36961,7 +37054,7 @@
     "signature_decade": "2020s",
     "distinctiveness": 11.11,
     "score_per_artist": 2.1,
-    "rank": 206
+    "rank": 208
    },
    "affinity": {
     "vr_tracks": 0,
@@ -37077,7 +37170,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 4.87,
   "score_per_artist": 2.1,
-  "rank": 207,
+  "rank": 209,
   "lat": -28.0167,
   "lon": 153.4,
   "lenses": {
@@ -37089,7 +37182,7 @@
     "signature_decade": "1990s",
     "distinctiveness": 4.87,
     "score_per_artist": 2.1,
-    "rank": 207
+    "rank": 209
    },
    "affinity": {
     "vr_tracks": 0,
@@ -37144,7 +37237,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 7.01,
   "score_per_artist": 1.9,
-  "rank": 208,
+  "rank": 210,
   "lat": -23.5505,
   "lon": -46.6333,
   "lenses": {
@@ -37156,7 +37249,7 @@
     "signature_decade": "1960s",
     "distinctiveness": 7.01,
     "score_per_artist": 1.9,
-    "rank": 208
+    "rank": 210
    },
    "affinity": {
     "vr_tracks": 0,
@@ -37188,7 +37281,7 @@
   "signature_decade": null,
   "distinctiveness": null,
   "score_per_artist": 1.9,
-  "rank": 209,
+  "rank": 211,
   "lat": 32.5093,
   "lon": -92.1193,
   "lenses": {
@@ -37200,7 +37293,7 @@
     "signature_decade": null,
     "distinctiveness": null,
     "score_per_artist": 1.9,
-    "rank": 209
+    "rank": 211
    },
    "affinity": {
     "vr_tracks": 0,
@@ -37247,7 +37340,7 @@
   "signature_decade": "1950s",
   "distinctiveness": 33.96,
   "score_per_artist": 1.8,
-  "rank": 210,
+  "rank": 212,
   "lat": 30.2241,
   "lon": -92.0198,
   "lenses": {
@@ -37259,7 +37352,7 @@
     "signature_decade": "1950s",
     "distinctiveness": 33.96,
     "score_per_artist": 1.8,
-    "rank": 210
+    "rank": 212
    },
    "affinity": {
     "vr_tracks": 0,
@@ -37319,7 +37412,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 4.8,
   "score_per_artist": 1.7,
-  "rank": 211,
+  "rank": 213,
   "lat": 45.0703,
   "lon": 7.6869,
   "lenses": {
@@ -37331,7 +37424,7 @@
     "signature_decade": "2000s",
     "distinctiveness": 4.8,
     "score_per_artist": 1.7,
-    "rank": 211
+    "rank": 213
    },
    "affinity": {
     "vr_tracks": 0,
@@ -37363,7 +37456,7 @@
   "signature_decade": null,
   "distinctiveness": null,
   "score_per_artist": 1.7,
-  "rank": 212,
+  "rank": 214,
   "lat": 43.7714,
   "lon": 11.2542,
   "lenses": {
@@ -37375,7 +37468,7 @@
     "signature_decade": null,
     "distinctiveness": null,
     "score_per_artist": 1.7,
-    "rank": 212
+    "rank": 214
    },
    "affinity": {
     "vr_tracks": 0,
@@ -37430,7 +37523,7 @@
   "signature_decade": "1970s",
   "distinctiveness": 6.88,
   "score_per_artist": 1.0,
-  "rank": 213,
+  "rank": 215,
   "lat": 50.7192,
   "lon": -1.8808,
   "lenses": {
@@ -37442,7 +37535,7 @@
     "signature_decade": "1970s",
     "distinctiveness": 6.88,
     "score_per_artist": 1.0,
-    "rank": 213
+    "rank": 215
    },
    "affinity": {
     "vr_tracks": 0,
@@ -37497,7 +37590,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 0.6,
-  "rank": 214,
+  "rank": 216,
   "lat": 26.6406,
   "lon": -81.8723,
   "lenses": {
@@ -37509,7 +37602,7 @@
     "signature_decade": "2000s",
     "distinctiveness": 6.8,
     "score_per_artist": 0.6,
-    "rank": 214
+    "rank": 216
    },
    "affinity": {
     "vr_tracks": 0,
@@ -37556,7 +37649,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 0.6,
-  "rank": 215,
+  "rank": 217,
   "lat": 25.0443,
   "lon": -77.3504,
   "lenses": {
@@ -37568,7 +37661,7 @@
     "signature_decade": "2000s",
     "distinctiveness": 6.8,
     "score_per_artist": 0.6,
-    "rank": 215
+    "rank": 217
    },
    "affinity": {
     "vr_tracks": 0,
@@ -37636,7 +37729,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 0.6,
-  "rank": 216,
+  "rank": 218,
   "lat": 55.7558,
   "lon": 37.6173,
   "lenses": {
@@ -37648,7 +37741,7 @@
     "signature_decade": "2000s",
     "distinctiveness": 6.8,
     "score_per_artist": 0.6,
-    "rank": 216
+    "rank": 218
    },
    "affinity": {
     "vr_tracks": 0,
@@ -37703,7 +37796,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 6.82,
   "score_per_artist": 0.5,
-  "rank": 217,
+  "rank": 219,
   "lat": 44.6471,
   "lon": 10.9252,
   "lenses": {
@@ -37715,7 +37808,7 @@
     "signature_decade": "1990s",
     "distinctiveness": 6.82,
     "score_per_artist": 0.5,
-    "rank": 217
+    "rank": 219
    },
    "affinity": {
     "vr_tracks": 0,
@@ -37762,7 +37855,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 0.2,
-  "rank": 218,
+  "rank": 220,
   "lat": 38.7223,
   "lon": -9.1393,
   "lenses": {
@@ -37774,7 +37867,7 @@
     "signature_decade": "2000s",
     "distinctiveness": 6.8,
     "score_per_artist": 0.2,
-    "rank": 218
+    "rank": 220
    },
    "affinity": {
     "vr_tracks": 0,
@@ -37829,7 +37922,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 0.1,
-  "rank": 219,
+  "rank": 221,
   "lat": 60.1699,
   "lon": 24.9384,
   "lenses": {
@@ -37841,7 +37934,7 @@
     "signature_decade": "2000s",
     "distinctiveness": 6.8,
     "score_per_artist": 0.1,
-    "rank": 219
+    "rank": 221
    },
    "affinity": {
     "vr_tracks": 0,

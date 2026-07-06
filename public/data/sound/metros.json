@@ -681,9 +681,9 @@
   "us_score": 310.2,
   "uk_score": 130.3,
   "album_score": 2301.5,
-  "prestige_score": 373.5,
-  "combined": 3338.2,
-  "artist_count": 243,
+  "prestige_score": 378.0,
+  "combined": 3349.0,
+  "artist_count": 244,
   "by_decade": {
    "1950s": {
     "us": 15.2,
@@ -1018,8 +1018,8 @@
   "us_score": 113.7,
   "uk_score": 68.4,
   "album_score": 691.6,
-  "prestige_score": 75.5,
-  "combined": 1005.6,
+  "prestige_score": 74.8,
+  "combined": 1004.0,
   "artist_count": 64,
   "by_decade": {
    "1950s": {
@@ -1135,8 +1135,8 @@
     "combined": 8.6
    },
    {
-    "name": "Jack Scott",
-    "slug": "jack-scott",
+    "name": "The Stooges",
+    "slug": "the-stooges",
     "combined": 7.0
    }
   ],
@@ -3142,13 +3142,13 @@
     "combined": 5.0
    },
    {
-    "name": "Deborah Cox",
-    "slug": "deborah-cox",
+    "name": "Snow",
+    "slug": "snow",
     "combined": 4.4
    },
    {
-    "name": "Snow",
-    "slug": "snow",
+    "name": "Deborah Cox",
+    "slug": "deborah-cox",
     "combined": 4.4
    }
   ],
@@ -3796,13 +3796,13 @@
     "combined": 6.5
    },
    {
-    "name": "Expos\u00e9",
-    "slug": "expos",
+    "name": "Fifth Harmony",
+    "slug": "fifth-harmony",
     "combined": 5.2
    },
    {
-    "name": "Fifth Harmony",
-    "slug": "fifth-harmony",
+    "name": "Expos\u00e9",
+    "slug": "expos",
     "combined": 5.2
    },
    {
@@ -4782,13 +4782,13 @@
     "combined": 12.5
    },
    {
-    "name": "Noah Kahan",
-    "slug": "noah-kahan",
+    "name": "The Cars",
+    "slug": "the-cars",
     "combined": 10.4
    },
    {
-    "name": "The Cars",
-    "slug": "the-cars",
+    "name": "Noah Kahan",
+    "slug": "noah-kahan",
     "combined": 10.4
    },
    {
@@ -5481,8 +5481,8 @@
     "combined": 3.1
    },
    {
-    "name": "Demi Lovato",
-    "slug": "demi-lovato",
+    "name": "Bruce Channel",
+    "slug": "bruce-channel",
     "combined": 2.9
    }
   ],
@@ -5798,13 +5798,13 @@
     "combined": 4.5
    },
    {
-    "name": "Buzzcocks",
-    "slug": "buzzcocks",
+    "name": "New Order",
+    "slug": "new-order",
     "combined": 3.8
    },
    {
-    "name": "New Order",
-    "slug": "new-order",
+    "name": "Buzzcocks",
+    "slug": "buzzcocks",
     "combined": 3.8
    },
    {
@@ -6130,13 +6130,13 @@
     "combined": 4.1
    },
    {
-    "name": "The Ventures",
-    "slug": "the-ventures",
+    "name": "The Brothers Four",
+    "slug": "the-brothers-four",
     "combined": 3.9
    },
    {
-    "name": "The Brothers Four",
-    "slug": "the-brothers-four",
+    "name": "The Ventures",
+    "slug": "the-ventures",
     "combined": 3.9
    },
    {
@@ -6809,11 +6809,6 @@
     "combined": 2.6
    },
    {
-    "name": "Jean Knight",
-    "slug": "jean-knight",
-    "combined": 2.1
-   },
-   {
     "name": "The Dixie Cups",
     "slug": "the-dixie-cups",
     "combined": 2.1
@@ -6821,6 +6816,11 @@
    {
     "name": "Ernie K-Doe",
     "slug": "ernie-k-doe",
+    "combined": 2.1
+   },
+   {
+    "name": "Jean Knight",
+    "slug": "jean-knight",
     "combined": 2.1
    }
   ],
@@ -9682,8 +9682,8 @@
     "combined": 0.4
    },
    {
-    "name": "Feeder",
-    "slug": "feeder",
+    "name": "Sian Evans",
+    "slug": "sian-evans",
     "combined": 0.3
    }
   ],
@@ -10538,6 +10538,11 @@
     "combined": 1.5
    },
    {
+    "name": "Swedish House Mafia",
+    "slug": "swedish-house-mafia",
+    "combined": 1.2
+   },
+   {
     "name": "John Martin",
     "slug": "john-martin",
     "combined": 1.2
@@ -10545,11 +10550,6 @@
    {
     "name": "Eric Prydz",
     "slug": "eric-prydz",
-    "combined": 1.2
-   },
-   {
-    "name": "Swedish House Mafia",
-    "slug": "swedish-house-mafia",
     "combined": 1.2
    },
    {
@@ -10855,13 +10855,13 @@
     "combined": 5.3
    },
    {
-    "name": "J-Kwon",
-    "slug": "j-kwon",
+    "name": "Michael McDonald",
+    "slug": "michael-mcdonald",
     "combined": 3.5
    },
    {
-    "name": "Michael McDonald",
-    "slug": "michael-mcdonald",
+    "name": "J-Kwon",
+    "slug": "j-kwon",
     "combined": 3.5
    },
    {
@@ -11152,13 +11152,13 @@
     "combined": 4.1
    },
    {
-    "name": "Enhypen",
-    "slug": "enhypen",
+    "name": "NewJeans",
+    "slug": "newjeans",
     "combined": 3.5
    },
    {
-    "name": "NewJeans",
-    "slug": "newjeans",
+    "name": "Enhypen",
+    "slug": "enhypen",
     "combined": 3.5
    },
    {
@@ -12108,13 +12108,13 @@
     "combined": 6.0
    },
    {
-    "name": "Ini Kamoze",
-    "slug": "ini-kamoze",
+    "name": "Toots and the Maytals",
+    "slug": "toots-and-the-maytals",
     "combined": 4.7
    },
    {
-    "name": "Toots and the Maytals",
-    "slug": "toots-and-the-maytals",
+    "name": "Ini Kamoze",
+    "slug": "ini-kamoze",
     "combined": 4.7
    },
    {
@@ -14099,13 +14099,13 @@
     "combined": 0.6
    },
    {
-    "name": "Gerry Monroe",
-    "slug": "gerry-monroe",
+    "name": "Joe McElderry",
+    "slug": "joe-mcelderry",
     "combined": 0.5
    },
    {
-    "name": "Joe McElderry",
-    "slug": "joe-mcelderry",
+    "name": "Gerry Monroe",
+    "slug": "gerry-monroe",
     "combined": 0.5
    },
    {
@@ -14119,8 +14119,8 @@
     "combined": 0.4
    },
    {
-    "name": "Dave Stewart",
-    "slug": "dave-stewart",
+    "name": "Hank Marvin",
+    "slug": "hank-marvin",
     "combined": 0.3
    }
   ],
@@ -15368,9 +15368,9 @@
   "us_score": 6.0,
   "uk_score": 9.1,
   "album_score": 44.0,
-  "prestige_score": 10.1,
-  "combined": 77.7,
-  "artist_count": 12,
+  "prestige_score": 12.2,
+  "combined": 82.8,
+  "artist_count": 13,
   "by_decade": {
    "1960s": {
     "us": 0.9,
@@ -15425,6 +15425,11 @@
     "combined": 6.9
    },
    {
+    "name": "The Swingle Singers",
+    "slug": "the-swingle-singers",
+    "combined": 5.0
+   },
+   {
     "name": "DJ Snake",
     "slug": "dj-snake",
     "combined": 4.8
@@ -15455,13 +15460,13 @@
     "combined": 0.5
    },
    {
-    "name": "Mr. Oizo",
-    "slug": "mr-oizo",
+    "name": "Modjo",
+    "slug": "modjo",
     "combined": 0.4
    },
    {
-    "name": "Modjo",
-    "slug": "modjo",
+    "name": "Mr. Oizo",
+    "slug": "mr-oizo",
     "combined": 0.4
    },
    {
@@ -15674,7 +15679,7 @@
   ],
   "signature_decade": "2010s",
   "distinctiveness": 4.44,
-  "score_per_artist": 6.5,
+  "score_per_artist": 6.4,
   "rank": 52
  },
  {
@@ -17432,23 +17437,23 @@
     "combined": 4.1
    },
    {
-    "name": "Mr. Acker Bilk",
-    "slug": "mr-acker-bilk",
-    "combined": 3.6
-   },
-   {
     "name": "Russ Conway",
     "slug": "russ-conway",
     "combined": 3.6
    },
    {
-    "name": "Racey",
-    "slug": "racey",
-    "combined": 1.0
+    "name": "Mr. Acker Bilk",
+    "slug": "mr-acker-bilk",
+    "combined": 3.6
    },
    {
     "name": "The Wurzels",
     "slug": "the-wurzels",
+    "combined": 1.0
+   },
+   {
+    "name": "Racey",
+    "slug": "racey",
     "combined": 1.0
    },
    {
@@ -17754,13 +17759,13 @@
     "combined": 2.6
    },
    {
-    "name": "Chumbawamba",
-    "slug": "chumbawamba",
+    "name": "Tasmin Archer",
+    "slug": "tasmin-archer",
     "combined": 2.5
    },
    {
-    "name": "Tasmin Archer",
-    "slug": "tasmin-archer",
+    "name": "Chumbawamba",
+    "slug": "chumbawamba",
     "combined": 2.5
    },
    {
@@ -19553,13 +19558,13 @@
     "combined": 4.0
    },
    {
-    "name": "Nate Ruess",
-    "slug": "nate-ruess",
+    "name": "Alec Benjamin",
+    "slug": "alec-benjamin",
     "combined": 3.6
    },
    {
-    "name": "Alec Benjamin",
-    "slug": "alec-benjamin",
+    "name": "Nate Ruess",
+    "slug": "nate-ruess",
     "combined": 3.6
    },
    {
@@ -22584,13 +22589,13 @@
     "combined": 5.0
    },
    {
-    "name": "Paul Revere & the Raiders",
-    "slug": "paul-revere-and-the-raiders",
+    "name": "Elliott Smith",
+    "slug": "elliott-smith",
     "combined": 3.8
    },
    {
-    "name": "Elliott Smith",
-    "slug": "elliott-smith",
+    "name": "Paul Revere & the Raiders",
+    "slug": "paul-revere-and-the-raiders",
     "combined": 3.8
    },
    {
@@ -22614,13 +22619,13 @@
     "combined": 3.2
    },
    {
-    "name": "The Raiders",
-    "slug": "the-raiders",
+    "name": "Quarterflash",
+    "slug": "quarterflash",
     "combined": 2.5
    },
    {
-    "name": "Quarterflash",
-    "slug": "quarterflash",
+    "name": "The Raiders",
+    "slug": "the-raiders",
     "combined": 2.5
    }
   ],
@@ -22759,13 +22764,13 @@
     "combined": 4.8
    },
    {
-    "name": "The Big Bopper",
-    "slug": "the-big-bopper",
+    "name": "The Edgar Winter Group",
+    "slug": "the-edgar-winter-group",
     "combined": 2.0
    },
    {
-    "name": "The Edgar Winter Group",
-    "slug": "the-edgar-winter-group",
+    "name": "The Big Bopper",
+    "slug": "the-big-bopper",
     "combined": 2.0
    }
   ],
@@ -26762,13 +26767,13 @@
     "combined": 3.9
    },
    {
-    "name": "S\u00e9rgio Mendes",
-    "slug": "s-rgio-mendes",
+    "name": "Deodato",
+    "slug": "deodato",
     "combined": 1.8
    },
    {
-    "name": "Deodato",
-    "slug": "deodato",
+    "name": "S\u00e9rgio Mendes",
+    "slug": "s-rgio-mendes",
     "combined": 1.8
    }
   ],
@@ -30930,6 +30935,56 @@
   "rank": 175
  },
  {
+  "slug": "edmonton",
+  "metro": "Edmonton",
+  "country": "Canada",
+  "state": "Alberta",
+  "us_score": 0.0,
+  "uk_score": 0.0,
+  "album_score": 0.0,
+  "prestige_score": 2.1,
+  "combined": 5.0,
+  "artist_count": 1,
+  "by_decade": {},
+  "top_artists": [
+   {
+    "name": "Robert Goulet",
+    "slug": "robert-goulet",
+    "combined": 5.0
+   }
+  ],
+  "top_songs": [],
+  "signature_decade": null,
+  "distinctiveness": null,
+  "score_per_artist": 5.0,
+  "rank": 176
+ },
+ {
+  "slug": "mobile",
+  "metro": "Mobile",
+  "country": "United States",
+  "state": "Alabama",
+  "us_score": 0.0,
+  "uk_score": 0.0,
+  "album_score": 0.0,
+  "prestige_score": 2.1,
+  "combined": 5.0,
+  "artist_count": 1,
+  "by_decade": {},
+  "top_artists": [
+   {
+    "name": "Shelby Lynne",
+    "slug": "shelby-lynne",
+    "combined": 5.0
+   }
+  ],
+  "top_songs": [],
+  "signature_decade": null,
+  "distinctiveness": null,
+  "score_per_artist": 5.0,
+  "rank": 177
+ },
+ {
   "slug": "tupelo",
   "metro": "Tupelo",
   "country": "United States",
@@ -30980,7 +31035,7 @@
   "signature_decade": "2010s",
   "distinctiveness": 6.7,
   "score_per_artist": 2.4,
-  "rank": 176
+  "rank": 178
  },
  {
   "slug": "bergen",
@@ -31020,7 +31075,7 @@
   "signature_decade": "2010s",
   "distinctiveness": 6.7,
   "score_per_artist": 4.8,
-  "rank": 177
+  "rank": 179
  },
  {
   "slug": "nottingham",
@@ -31149,7 +31204,7 @@
   "signature_decade": "1970s",
   "distinctiveness": 3.8,
   "score_per_artist": 1.6,
-  "rank": 178
+  "rank": 180
  },
  {
   "slug": "stillwater",
@@ -31205,7 +31260,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 4.7,
-  "rank": 179
+  "rank": 181
  },
  {
   "slug": "coventry",
@@ -31424,7 +31479,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 4.97,
   "score_per_artist": 0.7,
-  "rank": 180
+  "rank": 182
  },
  {
   "slug": "florence-al",
@@ -31474,7 +31529,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 5.66,
   "score_per_artist": 2.1,
-  "rank": 181
+  "rank": 183
  },
  {
   "slug": "birmingham-al",
@@ -31590,7 +31645,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 5.06,
   "score_per_artist": 1.4,
-  "rank": 182
+  "rank": 184
  },
  {
   "slug": "road-town",
@@ -31643,7 +31698,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 5.51,
   "score_per_artist": 4.2,
-  "rank": 183
+  "rank": 185
  },
  {
   "slug": "waco",
@@ -31699,7 +31754,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 6.82,
   "score_per_artist": 4.1,
-  "rank": 184
+  "rank": 186
  },
  {
   "slug": "mcallen",
@@ -31724,7 +31779,7 @@
   "signature_decade": null,
   "distinctiveness": null,
   "score_per_artist": 4.1,
-  "rank": 185
+  "rank": 187
  },
  {
   "slug": "havana",
@@ -31764,7 +31819,7 @@
   "signature_decade": "1950s",
   "distinctiveness": 33.96,
   "score_per_artist": 3.9,
-  "rank": 186
+  "rank": 188
  },
  {
   "slug": "southampton",
@@ -31965,7 +32020,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 4.12,
   "score_per_artist": 1.2,
-  "rank": 187
+  "rank": 189
  },
  {
   "slug": "rockford",
@@ -32026,7 +32081,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 5.2,
   "score_per_artist": 3.5,
-  "rank": 188
+  "rank": 190
  },
  {
   "slug": "peoria",
@@ -32090,7 +32145,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 6.68,
   "score_per_artist": 3.4,
-  "rank": 189
+  "rank": 191
  },
  {
   "slug": "greenville-nc",
@@ -32138,7 +32193,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 3.4,
-  "rank": 190
+  "rank": 192
  },
  {
   "slug": "hamburg",
@@ -32204,7 +32259,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 5.48,
   "score_per_artist": 1.6,
-  "rank": 191
+  "rank": 193
  },
  {
   "slug": "corpus-christi",
@@ -32244,7 +32299,7 @@
   "signature_decade": "2020s",
   "distinctiveness": 11.11,
   "score_per_artist": 3.3,
-  "rank": 192
+  "rank": 194
  },
  {
   "slug": "lexington",
@@ -32284,7 +32339,7 @@
   "signature_decade": "1970s",
   "distinctiveness": 6.88,
   "score_per_artist": 3.2,
-  "rank": 193
+  "rank": 195
  },
  {
   "slug": "new-london",
@@ -32324,7 +32379,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 3.2,
-  "rank": 194
+  "rank": 196
  },
  {
   "slug": "johannesburg",
@@ -32390,7 +32445,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 5.14,
   "score_per_artist": 1.6,
-  "rank": 195
+  "rank": 197
  },
  {
   "slug": "toledo",
@@ -32459,7 +32514,7 @@
   "signature_decade": "1950s",
   "distinctiveness": 23.42,
   "score_per_artist": 2.9,
-  "rank": 196
+  "rank": 198
  },
  {
   "slug": "lincoln",
@@ -32507,7 +32562,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 7.01,
   "score_per_artist": 2.9,
-  "rank": 197
+  "rank": 199
  },
  {
   "slug": "fort-wayne",
@@ -32555,7 +32610,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 7.01,
   "score_per_artist": 2.8,
-  "rank": 198
+  "rank": 200
  },
  {
   "slug": "prague",
@@ -32603,7 +32658,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 6.68,
   "score_per_artist": 2.7,
-  "rank": 199
+  "rank": 201
  },
  {
   "slug": "vienna",
@@ -32651,7 +32706,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 6.68,
   "score_per_artist": 2.6,
-  "rank": 200
+  "rank": 202
  },
  {
   "slug": "rome",
@@ -32699,7 +32754,7 @@
   "signature_decade": "2020s",
   "distinctiveness": 11.11,
   "score_per_artist": 2.5,
-  "rank": 201
+  "rank": 203
  },
  {
   "slug": "shrewsbury",
@@ -32755,7 +32810,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 6.68,
   "score_per_artist": 2.2,
-  "rank": 202
+  "rank": 204
  },
  {
   "slug": "reggio-emilia",
@@ -32832,7 +32887,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 4.34,
   "score_per_artist": 2.2,
-  "rank": 203
+  "rank": 205
  },
  {
   "slug": "waterford",
@@ -32904,7 +32959,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 7.01,
   "score_per_artist": 2.2,
-  "rank": 204
+  "rank": 206
  },
  {
   "slug": "saginaw",
@@ -32944,7 +32999,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 7.01,
   "score_per_artist": 2.1,
-  "rank": 205
+  "rank": 207
  },
  {
   "slug": "durham",
@@ -32984,7 +33039,7 @@
   "signature_decade": "2020s",
   "distinctiveness": 11.11,
   "score_per_artist": 2.1,
-  "rank": 206
+  "rank": 208
  },
  {
   "slug": "gold-coast",
@@ -33093,7 +33148,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 4.87,
   "score_per_artist": 2.1,
-  "rank": 207
+  "rank": 209
  },
  {
   "slug": "sao-paulo",
@@ -33141,7 +33196,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 7.01,
   "score_per_artist": 1.9,
-  "rank": 208
+  "rank": 210
  },
  {
   "slug": "monroe",
@@ -33166,7 +33221,7 @@
   "signature_decade": null,
   "distinctiveness": null,
   "score_per_artist": 1.9,
-  "rank": 209
+  "rank": 211
  },
  {
   "slug": "lafayette",
@@ -33206,7 +33261,7 @@
   "signature_decade": "1950s",
   "distinctiveness": 33.96,
   "score_per_artist": 1.8,
-  "rank": 210
+  "rank": 212
  },
  {
   "slug": "turin",
@@ -33259,7 +33314,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 4.8,
   "score_per_artist": 1.7,
-  "rank": 211
+  "rank": 213
  },
  {
   "slug": "florence",
@@ -33284,7 +33339,7 @@
   "signature_decade": null,
   "distinctiveness": null,
   "score_per_artist": 1.7,
-  "rank": 212
+  "rank": 214
  },
  {
   "slug": "bournemouth",
@@ -33332,7 +33387,7 @@
   "signature_decade": "1970s",
   "distinctiveness": 6.88,
   "score_per_artist": 1.0,
-  "rank": 213
+  "rank": 215
  },
  {
   "slug": "fort-myers",
@@ -33380,7 +33435,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 0.6,
-  "rank": 214
+  "rank": 216
  },
  {
   "slug": "nassau-bah",
@@ -33420,7 +33475,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 0.6,
-  "rank": 215
+  "rank": 217
  },
  {
   "slug": "moscow",
@@ -33476,7 +33531,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 0.6,
-  "rank": 216
+  "rank": 218
  },
  {
   "slug": "modena",
@@ -33524,7 +33579,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 6.82,
   "score_per_artist": 0.5,
-  "rank": 217
+  "rank": 219
  },
  {
   "slug": "lisbon",
@@ -33564,7 +33619,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 0.2,
-  "rank": 218
+  "rank": 220
  },
  {
   "slug": "helsinki",
@@ -33612,6 +33667,6 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 0.1,
-  "rank": 219
+  "rank": 221
  }
 ]

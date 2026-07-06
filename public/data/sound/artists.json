@@ -26009,6 +26009,39 @@
   "peak_decade": "1980s"
  },
  {
+  "name": "Judy Garland",
+  "slug": "judy-garland",
+  "metro": "Los Angeles",
+  "metro_slug": "los-angeles",
+  "country": "USA",
+  "city_of_origin": "Los Angeles, CA (career; b. Grand Rapids, MN)",
+  "confidence": "High",
+  "bb_top10": 0,
+  "bb_no1": 0,
+  "bb_score": 0.0,
+  "uk_top10": 0,
+  "uk_no1": 0,
+  "uk_score": 0.0,
+  "album_raw": 0.0,
+  "album_est": false,
+  "prestige": 4.5,
+  "gram_wins": 1,
+  "gram_noms": 0,
+  "gram_awards": [
+   {
+    "year": 1962,
+    "award": "Album of the Year",
+    "work": "Judy at Carnegie Hall"
+   }
+  ],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 10.8,
+  "active": "1962-1962",
+  "peak_decade": "1960s"
+ },
+ {
   "name": "Styx",
   "slug": "styx",
   "metro": "Chicago",
@@ -33665,39 +33698,6 @@
   "peak_decade": "1990s"
  },
  {
-  "name": "The Tony Rich Project",
-  "slug": "the-tony-rich-project",
-  "metro": "Detroit",
-  "metro_slug": "detroit",
-  "country": "USA",
-  "city_of_origin": "Detroit, Michigan",
-  "confidence": "High",
-  "bb_top10": 1,
-  "bb_no1": 0,
-  "bb_score": 1.52,
-  "uk_top10": 0,
-  "uk_no1": 0,
-  "uk_score": 0.0,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.7,
-  "gram_wins": 0,
-  "gram_noms": 1,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 1997,
-    "award": "Best New Artist",
-    "work": null
-   }
-  ],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 6.24,
-  "active": "1996-1996",
-  "peak_decade": "1990s"
- },
- {
   "name": "Duane Eddy",
   "slug": "duane-eddy",
   "metro": "Phoenix",
@@ -37006,6 +37006,105 @@
   "peak_decade": "1960s"
  },
  {
+  "name": "Robert Goulet",
+  "slug": "robert-goulet",
+  "metro": "Edmonton",
+  "metro_slug": "edmonton",
+  "country": "Canada",
+  "city_of_origin": "Edmonton, AB (raised; b. Lawrence, MA)",
+  "confidence": "High",
+  "bb_top10": 0,
+  "bb_no1": 0,
+  "bb_score": 0.0,
+  "uk_top10": 0,
+  "uk_no1": 0,
+  "uk_score": 0.0,
+  "album_raw": 0.0,
+  "album_est": false,
+  "prestige": 2.1,
+  "gram_wins": 1,
+  "gram_noms": 0,
+  "gram_awards": [
+   {
+    "year": 1963,
+    "award": "Best New Artist",
+    "work": null
+   }
+  ],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 5.04,
+  "active": "1963-1963",
+  "peak_decade": "1960s"
+ },
+ {
+  "name": "The Swingle Singers",
+  "slug": "the-swingle-singers",
+  "metro": "Paris",
+  "metro_slug": "paris",
+  "country": "France",
+  "city_of_origin": "Paris (vocal group formed)",
+  "confidence": "High",
+  "bb_top10": 0,
+  "bb_no1": 0,
+  "bb_score": 0.0,
+  "uk_top10": 0,
+  "uk_no1": 0,
+  "uk_score": 0.0,
+  "album_raw": 0.0,
+  "album_est": false,
+  "prestige": 2.1,
+  "gram_wins": 1,
+  "gram_noms": 0,
+  "gram_awards": [
+   {
+    "year": 1964,
+    "award": "Best New Artist",
+    "work": null
+   }
+  ],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 5.04,
+  "active": "1964-1964",
+  "peak_decade": "1960s"
+ },
+ {
+  "name": "Shelby Lynne",
+  "slug": "shelby-lynne",
+  "metro": "Mobile",
+  "metro_slug": "mobile",
+  "country": "USA",
+  "city_of_origin": "Jackson, AL (raised)",
+  "confidence": "High",
+  "bb_top10": 0,
+  "bb_no1": 0,
+  "bb_score": 0.0,
+  "uk_top10": 0,
+  "uk_no1": 0,
+  "uk_score": 0.0,
+  "album_raw": 0.0,
+  "album_est": false,
+  "prestige": 2.1,
+  "gram_wins": 1,
+  "gram_noms": 0,
+  "gram_awards": [
+   {
+    "year": 2001,
+    "award": "Best New Artist",
+    "work": null
+   }
+  ],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 5.04,
+  "active": "2001-2001",
+  "peak_decade": "2000s"
+ },
+ {
   "name": "Zac Brown Band",
   "slug": "zac-brown-band",
   "metro": "Atlanta",
@@ -38610,6 +38709,33 @@
   "combined": 4.57,
   "active": "1985-1986",
   "peak_decade": "1980s"
+ },
+ {
+  "name": "The Tony Rich Project",
+  "slug": "the-tony-rich-project",
+  "metro": "Detroit",
+  "metro_slug": "detroit",
+  "country": "USA",
+  "city_of_origin": "Detroit, Michigan",
+  "confidence": "High",
+  "bb_top10": 1,
+  "bb_no1": 0,
+  "bb_score": 1.52,
+  "uk_top10": 0,
+  "uk_no1": 0,
+  "uk_score": 0.0,
+  "album_raw": 0.0,
+  "album_est": false,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 4.56,
+  "active": "1996-1996",
+  "peak_decade": "1990s"
  },
  {
   "name": "Jason Mraz",
