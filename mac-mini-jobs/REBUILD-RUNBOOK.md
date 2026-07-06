@@ -23,7 +23,7 @@ restores the *worker*: the scheduler, scripts, venv, and credentials. Budget ~30
 | com.citizenofnowhere.egress-refresh | metro-mini-refresh.sh | Sun 10:00 |
 | com.citizenofnowhere.cricket-weekly | run-cricket-weekly.sh | Tue 10:00 |
 | com.citizenofnowhere.cricket-monthly | run-cricket-monthly.sh | 1st @ 11:00 |
-| com.citizenofnowhere.f1-weekly | run-f1-weekly.sh | Mon 10:30 |
+| com.citizenofnowhere.f1-weekly | run-f1-weekly.sh | hourly (round-gated; syncs ~1h post-race) |
 | com.citizenofnowhere.wc2026-daily | run-wc2026-daily.sh | 07:30 daily |
 | com.citizenofnowhere.heartbeat | run-heartbeat.sh | every 15 min |
 

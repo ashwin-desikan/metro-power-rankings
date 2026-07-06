@@ -1,81 +1,91 @@
 #!/bin/bash
-# F1 weekly refresh (Supabase source of truth). Day after races (~Monday).
-# Fetches the 5 Jolpica JSONs, merges the current season into Supabase (idempotent,
-# hardened against wipe), rebuilds public/data/f1/data.json, sanity-gates it,
-# commits [vercel skip].
-#
-# LIVE 2026-07-05: the mini is the sole owner of public/data/f1/data.json. The
-# GitHub Action f1-refresh.yml has had its schedule disabled (manual-dispatch
-# only), so there is no double-writer. If that Action's cron is ever re-enabled,
-# set DRY_RUN=1 here again to avoid a race.
+# F1 sync — round-gated poller (runs hourly via launchd; wrapped by hc-run.sh so
+# every run pings the "f1-weekly" healthchecks check = poller-alive signal).
+# Logic: fetch Jolpica's last race; compare its round to the max stored round for
+# that season in Supabase.
+#   delta <= 0  -> IDLE (already synced)   exit 0
+#   delta == 1  -> SYNC the new race        exit 0 on success
+#   delta  > 1  -> GAP: ntfy for manual full-season catch-up, do NOT half-sync   exit 1
+# So results land within ~1h of Jolpica publishing them, and a missed race
+# self-catches-up whenever the mini is back online. Mini owns public/data/f1/data.json.
 set -uo pipefail
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 F1DIR="$HOME/Projects/F1 Data"; INCOMING="$F1DIR/data/_incoming"
-REPO="$HOME/Projects/Metro Area Project"; PY="$REPO/.venv/bin/python"
-DATE="$(date +%F)"; LOGDIR="$HOME/metro-mini-jobs/logs"; mkdir -p "$LOGDIR"; LOG="$LOGDIR/f1-weekly-$DATE.log"
+REPO="$HOME/Projects/Metro Area Project"; PY="$REPO/.venv/bin/python"; SC="$REPO/scripts"
+DATE="$(date +%F)"; LOGDIR="$HOME/metro-mini-jobs/logs"; mkdir -p "$LOGDIR"; LOG="$LOGDIR/f1-$DATE.log"
 log(){ echo "$(date +%T) $*" | tee -a "$LOG"; }
-DRY_RUN="${DRY_RUN:-0}"   # live: mini owns data.json (f1-refresh.yml cron disabled)
+DRY_RUN="${DRY_RUN:-0}"
 [ -f "$HOME/.config/metro-supabase/env" ] && { set -a; source "$HOME/.config/metro-supabase/env"; set +a; }
 export F1_SUPABASE=1
 push(){ [ -n "${NTFY_TOPIC:-}" ] || return 0; curl -s -o /dev/null -H "Title: $1" -H "Priority: $2" -H "Tags: $3" -d "$4" "https://ntfy.sh/$NTFY_TOPIC" || true; }
-fail(){ log "ERROR: $1"; push "[ALERT] F1 weekly FAILED -- $DATE" urgent rotating_light "$1"; exit 1; }
-
-log "=== F1 weekly start ($DATE, DRY_RUN=$DRY_RUN) ==="
+fail(){ log "ERROR: $1"; push "[ALERT] F1 sync FAILED -- $DATE" urgent rotating_light "$1"; exit 1; }
 [ -n "${SUPABASE_SERVICE_KEY:-}" ] || fail "SUPABASE_SERVICE_KEY not set"
+
+# 1. fetch just the last-race results and decide
+mkdir -p "$INCOMING"; rm -f "$INCOMING"/*.json
+curl -fsSL "https://api.jolpi.ca/ergast/f1/current/last/results.json" -o "$INCOMING/results.json" || fail "jolpica fetch failed"
+DECISION="$("$PY" - "$INCOMING/results.json" <<'PYEOF'
+import sys, json, os
+from supabase import create_client
+try:
+    races=json.load(open(sys.argv[1]))["MRData"]["RaceTable"]["Races"]
+    if not races: print("IDLE 0 0 none"); sys.exit()
+    season=int(races[0]["season"]); rnd=int(races[0]["round"]); name=races[0]["raceName"]
+    sb=create_client(os.environ["SUPABASE_URL"],os.environ["SUPABASE_SERVICE_KEY"])
+    rows=sb.table("f1_results").select("round").eq("season",season).execute().data
+    stored=max((int(x["round"]) for x in rows), default=0)
+    d=rnd-stored
+    kind="IDLE" if d<=0 else "SYNC" if d==1 else "GAP"
+    print(f"{kind} {season} {rnd} {stored} {name}")
+except Exception as e:
+    print(f"ERR 0 0 0 {e}")
+PYEOF
+)"
+kind=$(echo "$DECISION" | awk '{print $1}')
+season=$(echo "$DECISION" | awk '{print $2}'); jrnd=$(echo "$DECISION" | awk '{print $3}'); stored=$(echo "$DECISION" | awk '{print $4}')
+racename=$(echo "$DECISION" | cut -d' ' -f5-)
+
+case "$kind" in
+  IDLE) log "idle: $season R$jrnd already synced (stored R$stored)."; rm -f "$INCOMING"/*.json; exit 0 ;;
+  ERR)  fail "round check failed: $racename" ;;
+  GAP)  rm -f "$INCOMING"/*.json
+        push "F1: manual catch-up needed -- $DATE" urgent rotating_light "Jolpica is at $season R$jrnd but Supabase has only R$stored (gap > 1). Not auto-syncing — run a full-season catch-up by hand."
+        fail "round gap: Jolpica R$jrnd vs stored R$stored" ;;
+esac
+
+# 2. SYNC: new race ($season R$jrnd, "$racename")
+log "=== F1 sync: new race $season R$jrnd ($racename) ==="
 cd "$REPO" || fail "repo not found"
 git fetch origin main --quiet || fail "git fetch failed"
-git merge --ff-only origin/main --quiet || fail "cannot fast-forward (repo diverged)"
-
-# 1. fetch the 5 Jolpica feeds, validate each is JSON
+git merge --ff-only origin/main --quiet || fail "cannot fast-forward"
 BASE="https://api.jolpi.ca/ergast/f1"
-mkdir -p "$INCOMING"; rm -f "$INCOMING"/*.json
-fetch(){ # $1=filename $2=path
-  curl -fsSL "$BASE/$2" -o "$INCOMING/$1" || fail "fetch $1 failed"
-  "$PY" -c "import json;json.load(open('$INCOMING/$1'))" 2>/dev/null || fail "$1 is not valid JSON"
-  log "  fetched $1 ($(stat -f%z "$INCOMING/$1") bytes)"
-}
-fetch results.json              current/last/results.json
+fetch(){ curl -fsSL "$BASE/$2" -o "$INCOMING/$1" || fail "fetch $1 failed"; "$PY" -c "import json;json.load(open('$INCOMING/$1'))" 2>/dev/null || fail "$1 not JSON"; }
 fetch qualifying.json           current/last/qualifying.json
 fetch sprint.json               current/last/sprint.json
 fetch driverStandings.json      current/driverStandings.json
 fetch constructorStandings.json current/constructorStandings.json
 
-# 2. merge current season into Supabase (idempotent; _replace_supabase is hardened
-#    to refuse a wipe-to-empty / suspicious shrink and to verify the row count)
 cd "$F1DIR"
 log "merging into Supabase (f1_update.py)"
 "$PY" f1_update.py 2>&1 | tee -a "$LOG" || fail "f1_update failed"
+log "rebuilding data.json"
+"$PY" "$SC/build-f1-data.py" 2>&1 | tee -a "$LOG" || fail "build-f1-data failed"
+rm -f "$INCOMING"/*.json
 
-# 3. rebuild data.json from Supabase
-log "rebuilding public/data/f1/data.json from Supabase"
-"$PY" "$REPO/scripts/build-f1-data.py" 2>&1 | tee -a "$LOG" || fail "build-f1-data failed"
-
-# 4. data.json sanity gate (defence-in-depth vs a table wipe slipping past the DB guards)
-DJ="$REPO/public/data/f1/data.json"
-[ -f "$DJ" ] || fail "data.json not produced"
-new_size=$(stat -f%z "$DJ")
-old_size=$(git -C "$REPO" show HEAD:public/data/f1/data.json 2>/dev/null | wc -c | tr -d ' ')
-log "data.json size: new=$new_size prev=${old_size:-0}"
+DJ="$REPO/public/data/f1/data.json"; [ -f "$DJ" ] || fail "data.json not produced"
+new_size=$(stat -f%z "$DJ"); old_size=$(git -C "$REPO" show HEAD:public/data/f1/data.json 2>/dev/null | wc -c | tr -d ' ')
 if [ "${old_size:-0}" -gt 0 ] && [ "$new_size" -lt $(( old_size / 2 )) ]; then
-  git -C "$REPO" checkout -- public/data/f1/data.json
-  fail "data.json sanity gate: new $new_size < 50% of prev $old_size — refusing to commit (possible table wipe). Reverted."
+  git -C "$REPO" checkout -- public/data/f1/data.json; fail "sanity gate: data.json $new_size < 50% of $old_size — refusing"
 fi
-
-# 5. commit (HELD unless DRY_RUN=0 AND the f1-refresh.yml Action is disabled)
 cd "$REPO"
-if git diff --quiet -- public/data/f1/data.json; then
-  log "no data.json change this run"
-elif [ "$DRY_RUN" = "1" ]; then
-  log "DRY_RUN=1: data.json changed — NOT committing (double-writer hold). Diff stat:"
-  git --no-pager diff --stat -- public/data/f1/data.json | tee -a "$LOG"
-  git checkout -- public/data/f1/data.json
+if [ "$DRY_RUN" = "1" ]; then
+  log "DRY_RUN=1: not committing."; git --no-pager diff --stat -- public/data/f1/data.json | tee -a "$LOG"; git checkout -- public/data/f1/data.json
 else
   git config user.name "mac-mini[claude]"; git config user.email "mac-mini-claude@users.noreply.github.com"
   git add public/data/f1/data.json
-  git commit -m "data: f1 weekly refresh [vercel skip]" --quiet || fail "git commit failed"
+  git commit -m "data: f1 sync — $season R$jrnd $racename [vercel skip]" --quiet || fail "git commit failed"
   git push origin HEAD:main || fail "git push failed"
-  log "committed + pushed f1 data.json"
+  push "F1 synced -- $DATE" default checkered_flag "$season R$jrnd $racename is live."
+  log "committed + pushed."
 fi
-
-rm -f "$INCOMING"/*.json
-log "=== F1 weekly done ==="
+log "=== F1 sync done ==="

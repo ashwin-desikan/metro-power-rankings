@@ -16,14 +16,7 @@
 	<string>/Users/ashwindesikan/metro-mini-jobs/logs/launchd-f1-weekly.err</string>
 	<key>StandardOutPath</key>
 	<string>/Users/ashwindesikan/metro-mini-jobs/logs/launchd-f1-weekly.out</string>
-	<key>StartCalendarInterval</key>
-	<dict>
-		<key>Hour</key>
-		<integer>10</integer>
-		<key>Minute</key>
-		<integer>30</integer>
-		<key>Weekday</key>
-		<integer>1</integer>
-	</dict>
+	<key>StartInterval</key>
+	<integer>3600</integer>
 </dict>
 </plist>
