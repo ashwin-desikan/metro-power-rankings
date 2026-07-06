@@ -8,11 +8,8 @@
     "side_a": [
       "Iran"
     ],
-    "side_b": [
-      "Azerbaijan People's Government",
-      "Republic of Mahabad"
-    ],
-    "deaths_min": 2000,
+    "side_b": [],
+    "deaths_min": null,
     "deaths_max": null
   },
   {
@@ -32,7 +29,7 @@
   },
   {
     "name": "1948 Arab–Israeli War",
-    "wiki": "1948_Arab–Israeli_War",
+    "wiki": "1948_Arab%E2%80%93Israeli_War",
     "start": "1948-05-14",
     "end": "1949-03-10",
     "ongoing": false,
@@ -53,7 +50,7 @@
   },
   {
     "name": "Operation Polo",
-    "wiki": "Operation_Polo",
+    "wiki": "Hyderabad_Police_Action",
     "start": "1948-09-13",
     "end": "1948-09-18",
     "ongoing": false,
@@ -67,7 +64,7 @@
     "deaths_max": 202190
   },
   {
-    "name": "Korean War",
+    "name": "Korean War [ 9 ]",
     "wiki": "Korean_War",
     "start": "1950-06-25",
     "end": "1953-07-27",
@@ -102,7 +99,7 @@
   },
   {
     "name": "Chinese invasion of Tibet",
-    "wiki": "Chinese_invasion_of_Tibet",
+    "wiki": "Battle_of_Chamdo",
     "start": "1950-10-06",
     "end": "1950-10-24",
     "ongoing": false,
@@ -150,7 +147,7 @@
   },
   {
     "name": "Soviet invasion of Hungary",
-    "wiki": "Soviet_invasion_of_Hungary",
+    "wiki": "Hungarian_Revolution_of_1956#Soviet_invasion",
     "start": "1956-11-01",
     "end": "1956-11-04",
     "ongoing": false,
@@ -258,7 +255,7 @@
   },
   {
     "name": "Indonesia–Malaysia confrontation",
-    "wiki": "Indonesia–Malaysia_confrontation",
+    "wiki": "Indonesia%E2%80%93Malaysia_confrontation",
     "start": "1963-01-20",
     "end": "1966-08-11",
     "ongoing": false,
@@ -292,7 +289,7 @@
   },
   {
     "name": "1964 Ethiopian–Somali Border War",
-    "wiki": "1964_Ethiopian–Somali_Border_War",
+    "wiki": "1964_Ethiopian%E2%80%93Somali_Border_War",
     "start": "1964-02-26",
     "end": "1964-04-06",
     "ongoing": false,
@@ -471,6 +468,7 @@
     "side_b": [
       "Egypt",
       "Syria",
+      "Combat support",
       "Iraq",
       "Jordan",
       "Algeria",
@@ -498,7 +496,7 @@
   },
   {
     "name": "1974–75 Shatt al-Arab conflict",
-    "wiki": "1974–75_Shatt_al-Arab_conflict",
+    "wiki": "1974%E2%80%9375_Shatt_al-Arab_conflict",
     "start": "1974-04-01",
     "end": "1975-03-01",
     "ongoing": false,
@@ -564,7 +562,7 @@
   },
   {
     "name": "Egyptian–Libyan War",
-    "wiki": "Egyptian–Libyan_War",
+    "wiki": "Egyptian%E2%80%93Libyan_War",
     "start": "1977-07-21",
     "end": "1977-07-24",
     "ongoing": false,
@@ -579,7 +577,7 @@
   },
   {
     "name": "Chadian–Libyan War",
-    "wiki": "Chadian–Libyan_War",
+    "wiki": "Chadian%E2%80%93Libyan_War",
     "start": "1978-01-29",
     "end": "1987-09-11",
     "ongoing": false,
@@ -595,7 +593,7 @@
   },
   {
     "name": "Uganda–Tanzania War",
-    "wiki": "Uganda–Tanzania_War",
+    "wiki": "Uganda%E2%80%93Tanzania_War",
     "start": "1978-10-09",
     "end": "1979-06-03",
     "ongoing": false,
@@ -612,7 +610,7 @@
   },
   {
     "name": "Cambodian–Vietnamese War",
-    "wiki": "Cambodian–Vietnamese_War",
+    "wiki": "Cambodian%E2%80%93Vietnamese_War",
     "start": "1978-12-21",
     "end": "1989-09-26",
     "ongoing": false,
@@ -659,7 +657,7 @@
   },
   {
     "name": "Sino-Vietnamese conflicts (1979–1991)",
-    "wiki": "Sino-Vietnamese_conflicts_(1979–1991)",
+    "wiki": "Sino-Vietnamese_conflicts_(1979%E2%80%931991)",
     "start": "1979-03-16",
     "end": "1991-11-01",
     "ongoing": false,
@@ -674,7 +672,7 @@
   },
   {
     "name": "Soviet–Afghan War",
-    "wiki": "Soviet–Afghan_War",
+    "wiki": "Soviet%E2%80%93Afghan_War",
     "start": "1979-12-24",
     "end": "1989-02-15",
     "ongoing": false,
@@ -692,7 +690,7 @@
   },
   {
     "name": "Iran–Iraq War",
-    "wiki": "Iran–Iraq_War",
+    "wiki": "Iran%E2%80%93Iraq_War",
     "start": "1980-09-22",
     "end": "1988-08-20",
     "ongoing": false,
@@ -723,7 +721,7 @@
   },
   {
     "name": "1982 Ethiopian–Somali Border War",
-    "wiki": "1982_Ethiopian–Somali_Border_War",
+    "wiki": "1982_Ethiopian%E2%80%93Somali_Border_War",
     "start": "1982-06-01",
     "end": "1982-08-01",
     "ongoing": false,
@@ -738,7 +736,7 @@
   },
   {
     "name": "Chadian–Nigerian War",
-    "wiki": "Chadian–Nigerian_War",
+    "wiki": "Chadian%E2%80%93Nigerian_War",
     "start": "1983-04-18",
     "end": "1983-04-01",
     "ongoing": false,
@@ -806,7 +804,7 @@
   },
   {
     "name": "Mauritania–Senegal Border War",
-    "wiki": "Mauritania–Senegal_Border_War",
+    "wiki": "Mauritania%E2%80%93Senegal_Border_War",
     "start": "1989-04-09",
     "end": "1991-07-18",
     "ongoing": false,
@@ -853,11 +851,9 @@
       "Syria",
       "Qatar"
     ],
-    "side_b": [
-      "Iraq"
-    ],
-    "deaths_min": 29231,
-    "deaths_max": 59231
+    "side_b": [],
+    "deaths_min": null,
+    "deaths_max": null
   },
   {
     "name": "Transnistria War",
@@ -877,7 +873,7 @@
   },
   {
     "name": "South Ossetia war (1991–1992)",
-    "wiki": "1991–1992_South_Ossetia_war",
+    "wiki": "South_Ossetia_war_(1991%E2%80%931992)",
     "start": "1991-01-05",
     "end": "1992-06-24",
     "ongoing": false,
@@ -893,7 +889,7 @@
   },
   {
     "name": "Croatian War of Independence",
-    "wiki": "Croatian_War_of_Independence",
+    "wiki": "1991_Yugoslav_campaign_in_Croatia",
     "start": "1991-09-20",
     "end": "1992-01-03",
     "ongoing": false,
@@ -907,7 +903,7 @@
     "deaths_max": 7279
   },
   {
-    "name": "Bosnian War",
+    "name": "Bosnian War [ 23 ]",
     "wiki": "Bosnian_War",
     "start": "1992-04-06",
     "end": "1992-05-19",
@@ -925,7 +921,7 @@
   },
   {
     "name": "War in Abkhazia (1992–1993)",
-    "wiki": "War_in_Abkhazia_(1992–1993)",
+    "wiki": "War_in_Abkhazia_(1992%E2%80%931993)",
     "start": "1992-08-14",
     "end": "1993-09-27",
     "ongoing": false,
@@ -973,7 +969,8 @@
       "Zaire",
       "Sudan",
       "Chad",
-      "Ex-FAR/ALiR",
+      "FAR",
+      "ALiR",
       "Interahamwe",
       "CNDD-FDD",
       "UNITA",
@@ -1001,7 +998,7 @@
   },
   {
     "name": "Eritrean–Ethiopian War",
-    "wiki": "Eritrean–Ethiopian_War",
+    "wiki": "Eritrean%E2%80%93Ethiopian_War",
     "start": "1998-05-03",
     "end": "2000-06-18",
     "ongoing": false,
@@ -1099,7 +1096,7 @@
   },
   {
     "name": "Gaza–Israel conflict",
-    "wiki": "Gaza–Israel_conflict",
+    "wiki": "Gaza%E2%80%93Israel_conflict",
     "start": "2006-06-28",
     "end": null,
     "ongoing": true,
@@ -1163,7 +1160,7 @@
     "deaths_max": 1485
   },
   {
-    "name": "Russo-Ukrainian War",
+    "name": "Russo-Ukrainian War (outline)",
     "wiki": "Russo-Ukrainian_War",
     "start": "2014-02-20",
     "end": null,
@@ -1198,7 +1195,7 @@
   },
   {
     "name": "Democratic Republic of the Congo–Rwanda conflict (2022–present)",
-    "wiki": "Democratic_Republic_of_the_Congo–Rwanda_conflict_(2022–present)",
+    "wiki": "Democratic_Republic_of_the_Congo%E2%80%93Rwanda_conflict_(2022%E2%80%93present)",
     "start": "2022-03-27",
     "end": "2025-06-27",
     "ongoing": false,
@@ -1214,7 +1211,7 @@
   },
   {
     "name": "2025 India–Pakistan conflict",
-    "wiki": "2025_India–Pakistan_conflict",
+    "wiki": "2025_India%E2%80%93Pakistan_conflict",
     "start": "2025-05-07",
     "end": "2025-05-10",
     "ongoing": false,
@@ -1246,7 +1243,7 @@
   },
   {
     "name": "2026 Afghanistan–Pakistan war",
-    "wiki": "2026_Afghanistan–Pakistan_war",
+    "wiki": "2026_Afghanistan%E2%80%93Pakistan_war",
     "start": "2026-02-21",
     "end": null,
     "ongoing": true,
@@ -1261,7 +1258,7 @@
   },
   {
     "name": "Iran War",
-    "wiki": "Iran_War",
+    "wiki": "2026_Iran_war",
     "start": "2026-02-28",
     "end": null,
     "ongoing": true,
