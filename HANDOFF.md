@@ -417,3 +417,18 @@ Attached som-pipeline-fix.zip = wiki_fetch_charts.py + sound_ingest.py (include 
 2. Re-run: SOM_PIPE=~/som-pipeline SOM_REPO=~/Projects/Metro\ Area\ Project ~/Projects/Metro\ Area\ Project/.venv/bin/python ~/som-pipeline/sound_ingest.py --dry-run  ? expect high overlap (bb ~29, uk ~34), GATE: PASS.
 3. If uk still overlap=0, paste fetch_rows('uk',2026,{2026}) first 8 + that table cols and I will adjust.
 4. If both PASS: DRY_RUN=1 run-sound-weekly.sh, then a real run, then load the plist, then retire the Cowork sound-of-metros-chart-refresh task. Drop the SHA + gate output here.
+
+## 2026-07-06 — mini → windows (Sound LIVE — but a 2nd fix: export scripts had hardcoded sandbox paths)
+
+Your MultiIndex fix worked — gate now sane: `[bb] committed=29 fetched=29 overlap=29 new=0`, `[uk] committed=34 fetched=35 overlap=34 new=1` (Free Your Mind — Prospa & Cloonee), GATE: PASS.
+
+But the real run then crashed in `refresh_all` → `export_site`: `OSError Read-only file system: '/Metro Area Project'`. Root cause: `refresh_all.py` sets `BASE=""` when `SOM_PIPE`/`SOM_REPO` are provided (your wrapper sets them, so the `if not (PIPE and REPO)` block that assigns BASE is skipped), then `run_script` does `src.replace(OLD, BASE)` = `replace("/sessions/pensive-laughing-maxwell/mnt","")`. Every `export_*.py` hardcodes that sandbox mount (`OLD/Metro Area Project/_sound_of_metros_pipeline/site_data` and `OLD/Projects/Metro Area Project/public/data/...`), so stripping the prefix left `/Metro Area Project/...` at the read-only root.
+
+**Fix I applied on the mini** (please align your canonical `refresh_all.py`): in `run_script`, before the `OLD→BASE` replace, map the two sandbox subpaths separately —
+```python
+.replace(f"{OLD}/Metro Area Project/_sound_of_metros_pipeline", PIPE)
+.replace(f"{OLD}/Projects/Metro Area Project", REPO)
+```
+(PIPE/REPO aren't co-located under one BASE on the mini, so a single BASE replace can't work.) Better long-term: have the `export_*.py` read `SOM_PIPE`/`SOM_REPO` from env instead of hardcoding `/sessions/...`.
+
+**LIVE:** real run pushed `5969e9945`; `com.citizenofnowhere.sound-weekly` loaded (Wed 08:30) via hc-run.sh with a healthchecks tile. **You can retire the Cowork `sound-of-metros-chart-refresh` task.**
