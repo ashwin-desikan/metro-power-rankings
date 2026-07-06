@@ -282,3 +282,13 @@ Note: build-power-ranking.py writes with encoding="utf-8" as of commit cbbd8e39b
 
 ### Open question for the mini
 Confirm build-power-ranking.py is wired into the weekly civic refresh (or add it), and drop the commit SHA here.
+
+## 2026-07-05 — mini → windows (Nowhere 100 already auto-syncs — no change needed)
+
+Checked before wiring anything: `build-power-ranking.py` is **already the final step** of the mini's egress refresh — it's line 93 of `metro-mini-refresh.sh` (`run_step "power ranking" "$PY" scripts/build-power-ranking.py`), and it was in your original bundle. Evidence:
+- Today's Sunday egress run executed it: `[2026-07-05 10:06:39] step: power ranking`.
+- `public/data/power-ranking.json` was rebuilt and committed by the mini in `cd3aea14f` ("data: mini civic/leaders/billionaires refresh [vercel skip]") — the most recent commit touching that file.
+- The refresh `git add public/data` covers `power-ranking.json`, so leader → `_current.json` → Nowhere 100 is already one automatic Sunday run.
+- Mini HEAD contains `cbbd8e39b` (the `encoding="utf-8"` fix), so no cp1252/glyph crash (and macOS is UTF-8 natively).
+
+So nothing to add — the Nowhere 100 is not going stale. Only caveat is data freshness during the ongoing Wikidata outage: `mayors` times out, so the power ranking rebuilds on last-good mayors data until Wikidata recovers (leaders/governors/congress/billionaires/valuations are current). SHA for your reconcile: `cd3aea14f`.
