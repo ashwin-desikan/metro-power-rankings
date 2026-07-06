@@ -21,8 +21,9 @@
 name: Daily Substack snapshot refresh
 
 on:
-  schedule:
-    - cron: "0 8 * * *"
+  # schedule DISABLED 2026-07-06: mini owns this refresh (run-scraper-refresh.sh); manual-only, no double-writer.
+  # schedule:
+  #   - cron: "0 8 * * *"
   workflow_dispatch: {}
 
 concurrency:

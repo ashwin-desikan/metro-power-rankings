@@ -8,8 +8,9 @@ name: FIBA ranking weekly refresh
 # date drives everything; no fetch timestamp is written).
 
 on:
-  schedule:
-    - cron: "0 7 * * 3"   # 07:00 UTC Wednesdays
+  # schedule DISABLED 2026-07-06: mini owns this refresh (run-scraper-refresh.sh); manual-only, no double-writer.
+  # schedule:
+  #   - cron: "0 7 * * 3"   # 07:00 UTC Wednesdays
   workflow_dispatch: {}    # allow manual "Run workflow" from the Actions tab
 
 permissions:

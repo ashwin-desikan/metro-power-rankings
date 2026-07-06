@@ -7,8 +7,9 @@ name: Rugby rankings weekly refresh
 # (the ETL is deterministic: as_of derives from the rankings date).
 
 on:
-  schedule:
-    - cron: "0 6 * * 2"   # 06:00 UTC Tuesdays, after Monday's ranking release
+  # schedule DISABLED 2026-07-06: mini owns this refresh (run-scraper-refresh.sh); manual-only, no double-writer.
+  # schedule:
+  #   - cron: "0 6 * * 2"   # 06:00 UTC Tuesdays, after Monday's ranking release
   workflow_dispatch: {}    # allow manual "Run workflow" from the Actions tab
 
 permissions:
