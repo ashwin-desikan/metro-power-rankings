@@ -1,7 +1,56 @@
 {
   "_comment": "Cached fallback snapshot for lib/substack.ts. The live RSS feed at https://citizenofnowhere.substack.com/feed is the source of truth at runtime; this file is used when fetch fails (e.g., sandbox egress blocked, Substack 5xx) so the home page can always render. Refresh by running scripts/refresh-substack-feed.ts or by editing manually after publishing a new post.",
-  "fetchedAt": "2026-05-20",
+  "fetchedAt": "2026-07-06",
   "posts": [
+    {
+      "title": "The Nowhere 100",
+      "url": "https://citizenofnowhere.substack.com/p/the-nowhere-100",
+      "pubDate": "2026-07-01",
+      "description": "Who Actually Runs the World, and Where That Power Sits",
+      "slug": "the-nowhere-100"
+    },
+    {
+      "title": "Every Champion Has a Hometown",
+      "url": "https://citizenofnowhere.substack.com/p/every-champion-has-a-hometown",
+      "pubDate": "2026-06-21",
+      "description": "What we have built since mid-June: a full sports atlas, mapped to the metros that host it.",
+      "slug": "every-champion-has-a-hometown"
+    },
+    {
+      "title": "The Velvet Rock Manifesto",
+      "url": "https://citizenofnowhere.substack.com/p/the-velvet-rock-manifesto",
+      "pubDate": "2026-06-15",
+      "description": "The Architecture of Universal Order, and the Philosophy Beneath the Map",
+      "slug": "the-velvet-rock-manifesto"
+    },
+    {
+      "title": "Introducing Zone Zero: A Sports Club for the Center of the Network",
+      "url": "https://citizenofnowhere.substack.com/p/introducing-zone-zero-a-sports-club",
+      "pubDate": "2026-06-14",
+      "description": "Citizen of Nowhere now has a sports identity. It belongs to the network, not the nation, and it begins by taking a name back.",
+      "slug": "introducing-zone-zero-a-sports-club"
+    },
+    {
+      "title": "The Geography of Erasure",
+      "url": "https://citizenofnowhere.substack.com/p/the-geography-of-erasure",
+      "pubDate": "2026-06-05",
+      "description": "Sport sells itself as a meritocracy. It is closer to a real estate game. Here are the champions the map forgot.",
+      "slug": "the-geography-of-erasure"
+    },
+    {
+      "title": "Every Metro Keeps Score: The Sports Layer Is Now Live",
+      "url": "https://citizenofnowhere.substack.com/p/every-metro-keeps-score-the-sports",
+      "pubDate": "2026-06-04",
+      "description": "From one essay about which team owns a Metro’s identity to a full atlas of who plays where, who won, and who left.",
+      "slug": "every-metro-keeps-score-the-sports"
+    },
+    {
+      "title": "One Week, Two Cities, No Contest",
+      "url": "https://citizenofnowhere.substack.com/p/one-week-two-cities-no-contest",
+      "pubDate": "2026-05-25",
+      "description": "Arsenal are Premier League champions. The Knicks are one win from the Finals. The dataset has always known why both cities deserve this moment.",
+      "slug": "one-week-two-cities-no-contest"
+    },
     {
       "title": "Velvet Rock: The Map Yacht Rock Erased",
       "url": "https://citizenofnowhere.substack.com/p/velvet-rock-the-map-yacht-rock-erased",
@@ -92,20 +141,6 @@
       "pubDate": "2025-07-30",
       "description": "In this episode of the Sports Roundup, Ashwin and Sophon discuss a variety of sports topics, including the recent successes of the England women's football team, the latest in MLB, cricket updates, rugby highlights, and",
       "slug": "sports-roundup-28-july-2025-04e"
-    },
-    {
-      "title": "Sports Roundup - 11 July 2025",
-      "url": "https://citizenofnowhere.substack.com/p/sports-roundup-11-july-2025-12c",
-      "pubDate": "2025-07-11",
-      "description": "We're covering the Club World Cup, Women’s Euros, Wimbledon, Rugby/Cricket, and more...",
-      "slug": "sports-roundup-11-july-2025-12c"
-    },
-    {
-      "title": "Thoughts and Rants from Nowhere-land",
-      "url": "https://citizenofnowhere.substack.com/p/coming-soon",
-      "pubDate": "2020-05-01",
-      "description": "Welcome to Citizen of Nowhere by me, Ashwin Desikan.",
-      "slug": "coming-soon"
     }
   ]
 }
