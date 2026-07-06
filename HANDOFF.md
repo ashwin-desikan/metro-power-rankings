@@ -373,3 +373,37 @@ print("\nMAIN head(10) records:")
 for rec in main.head(10).to_dict("records"): print(rec)
 r=w.fetch_rows("bb",2026,{2026}); print("\nfetch_rows n=",len(r)); print(json.dumps(r[:8],ensure_ascii=False))
 PY
+
+## 2026-07-06 — mini → windows (Sound parser diagnostic — MultiIndex header shifts the single column)
+
+Ran your diagnostic on the live Billboard 2026 page. Root cause looks like the MultiIndex header + a mid-table section split:
+- read_html returns **7 tables**; `is_main_table` matches **4** of them (0,1,2,3) and the code takes only table 0.
+- Table 0 has a **2-level MultiIndex** header (`('Single','Singles from 2025')` etc.) and a separator row where every cell = 'Singles from 2026' (the 2025→2026 divider).
+- **The bug:** `fetch_rows` puts the **entry-date into the `single` field** and leaves entry_date/peak_date null — so `(single, artist)` never matches committed → overlap=0. Artist/peak/weeks come out correct; only the single-title column is mis-picked (MultiIndex not flattened).
+
+Full output:
+```
+TABLES: 7
+0 shape (38, 7) cols ["('Top ten entry date', 'Singles from 2025')", "('Single', 'Singles from 2025')", "('Artist(s)', 'Singles from 2025')", "('Peak', 'Singles from 2025')", "('Peak date', 'Singles from 2025')", "('Weeks in top ten', 'Singles from 2025')", "('Ref.', 'Singles from 2025')"] <<MAIN
+1 shape (1, 7) cols ['Top ten entry date', 'Single', 'Artist(s)', 'Peak', 'Peak date', 'Weeks in top ten', 'Ref.'] <<MAIN
+2 shape (5, 7) cols ['Top ten entry date', 'Single', 'Artist(s)', 'Peak', 'Peak date', 'Weeks in top ten', 'Ref.'] <<MAIN
+3 shape (11, 7) cols ['Top ten entry date', 'Single', 'Artist(s)', 'Peak', 'Peak date', 'Weeks in top ten', 'Ref.'] <<MAIN
+4 shape (10, 2) cols ['Artist', 'Numbers of songs'] 
+5 shape (9, 2) cols ['vteLists of Billboard Hot 100 top-ten singles', 'vteLists of Billboard Hot 100 top-ten singles.1'] 
+6 shape (4, 2) cols ['vteBillboard', 'vteBillboard.1'] 
+
+MAIN head(10) records:
+{('Top ten entry date', 'Singles from 2025'): 'January 25', ('Single', 'Singles from 2025'): '"DTMF"[C]', ('Artist(s)', 'Singles from 2025'): 'Bad Bunny', ('Peak', 'Singles from 2025'): '1', ('Peak date', 'Singles from 2025'): 'February 21', ('Weeks in top ten', 'Singles from 2025'): '7', ('Ref.', 'Singles from 2025'): '[2][3]'}
+{('Top ten entry date', 'Singles from 2025'): 'January 25', ('Single', 'Singles from 2025'): '"Baile Inolvidable"[D]', ('Artist(s)', 'Singles from 2025'): 'Bad Bunny', ('Peak', 'Singles from 2025'): '2', ('Peak date', 'Singles from 2025'): 'February 21', ('Weeks in top ten', 'Singles from 2025'): '4', ('Ref.', 'Singles from 2025'): '[2][3]'}
+{('Top ten entry date', 'Singles from 2025'): 'January 25', ('Single', 'Singles from 2025'): '"Nuevayol"[D]', ('Artist(s)', 'Singles from 2025'): 'Bad Bunny', ('Peak', 'Singles from 2025'): '5', ('Peak date', 'Singles from 2025'): 'February 21', ('Weeks in top ten', 'Singles from 2025'): '2', ('Ref.', 'Singles from 2025'): '[2][3]'}
+{('Top ten entry date', 'Singles from 2025'): 'October 18', ('Single', 'Singles from 2025'): '"Opalite"[B][D] ↑', ('Artist(s)', 'Singles from 2025'): 'Taylor Swift', ('Peak', 'Singles from 2025'): '1', ('Peak date', 'Singles from 2025'): 'February 28', ('Weeks in top ten', 'Singles from 2025'): '19', ('Ref.', 'Singles from 2025'): '[4][5]'}
+{('Top ten entry date', 'Singles from 2025'): 'November 1', ('Single', 'Singles from 2025'): '"Man I Need"[B][K]', ('Artist(s)', 'Singles from 2025'): 'Olivia Dean', ('Peak', 'Singles from 2025'): '2', ('Peak date', 'Singles from 2025'): 'January 31', ('Weeks in top ten', 'Singles from 2025'): '31*', ('Ref.', 'Singles from 2025'): '[6][7]'}
+{('Top ten entry date', 'Singles from 2025'): 'November 8', ('Single', 'Singles from 2025'): '"Folded"[B][F][H]', ('Artist(s)', 'Singles from 2025'): 'Kehlani', ('Peak', 'Singles from 2025'): '6', ('Peak date', 'Singles from 2025'): 'January 10', ('Weeks in top ten', 'Singles from 2025'): '19', ('Ref.', 'Singles from 2025'): '[8][9]'}
+{('Top ten entry date', 'Singles from 2025'): 'November 22', ('Single', 'Singles from 2025'): '"Back to Friends"[B][F]', ('Artist(s)', 'Singles from 2025'): 'Sombr', ('Peak', 'Singles from 2025'): '7', ('Peak date', 'Singles from 2025'): 'January 10', ('Weeks in top ten', 'Singles from 2025'): '9', ('Ref.', 'Singles from 2025'): '[10][9]'}
+{('Top ten entry date', 'Singles from 2025'): 'Singles from 2026', ('Single', 'Singles from 2025'): 'Singles from 2026', ('Artist(s)', 'Singles from 2025'): 'Singles from 2026', ('Peak', 'Singles from 2025'): 'Singles from 2026', ('Peak date', 'Singles from 2025'): 'Singles from 2026', ('Weeks in top ten', 'Singles from 2025'): 'Singles from 2026', ('Ref.', 'Singles from 2025'): 'Singles from 2026'}
+{('Top ten entry date', 'Singles from 2025'): 'January 10', ('Single', 'Singles from 2025'): '"Choosin\' Texas"', ('Artist(s)', 'Singles from 2025'): 'Ella Langley', ('Peak', 'Singles from 2025'): '1', ('Peak date', 'Singles from 2025'): 'February 14', ('Weeks in top ten', 'Singles from 2025'): '26*', ('Ref.', 'Singles from 2025'): '[9][11]'}
+{('Top ten entry date', 'Singles from 2025'): 'January 17', ('Single', 'Singles from 2025'): '"End of Beginning"', ('Artist(s)', 'Singles from 2025'): 'Djo', ('Peak', 'Singles from 2025'): '6', ('Peak date', 'Singles from 2025'): 'January 17', ('Weeks in top ten', 'Singles from 2025'): '3', ('Ref.', 'Singles from 2025'): '[12]'}
+
+fetch_rows n= 29
+[{"entry_year": 2026, "entry_date": null, "single": "January 10", "artist": "Ella Langley", "peak": 1, "peak_date": null, "weeks_top10": 26}, {"entry_year": 2026, "entry_date": null, "single": "January 17", "artist": "Djo", "peak": 6, "peak_date": null, "weeks_top10": 3}, {"entry_year": 2026, "entry_date": null, "single": "January 24", "artist": "Bruno Mars", "peak": 1, "peak_date": null, "weeks_top10": 21}, {"entry_year": 2026, "entry_date": null, "single": "February 7", "artist": "Harry Styles", "peak": 1, "peak_date": null, "weeks_top10": 2}, {"entry_year": 2026, "entry_date": null, "single": "February 14", "artist": "Noah Kahan", "peak": 6, "peak_date": null, "weeks_top10": 1}, {"entry_year": 2026, "entry_date": null, "single": "March 14", "artist": "Bruno Mars", "peak": 4, "peak_date": null, "weeks_top10": 2}, {"entry_year": 2026, "entry_date": null, "single": "March 14", "artist": "PinkPantheress with Zara Larsson", "peak": 6, "peak_date": null, "weeks_top10": 7}, {"entry_year": 2026, "entry_date": null, "single": "March 21", "artist": "Harry Styles", "peak": 4, "peak_date": null, "weeks_top10": 2}]
+```
