@@ -20976,10 +20976,14 @@
     "rank": 76
    },
    "affinity": {
-    "vr_tracks": 0,
-    "vr_artists": 0
+    "vr_tracks": 17,
+    "vr_artists": 11
    },
-   "production": null
+   "production": {
+    "index": 73,
+    "tier": "Primary",
+    "note": "Onkio Haus (Ginza, 1974), CBS/Sony Roppongi, Alfa; For You, Variety (Plastic Love), Timely!!; Tatsuro Yamashita and the Sugar Babe session core, bubble-era budgets"
+   }
   }
  },
  {

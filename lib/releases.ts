@@ -19,8 +19,9 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-07-06",
-    headline: "Quarterfinal flags now show on the mobile bracket",
+    headline: "Velvet Rock goes trans-Pacific with Tokyo and city pop",
     items: [
+      "Velvet Rock is rewritten as a trans-Pacific story: Tokyo joins Los Angeles, New York, and London as a fourth primary capital, and Japanese city pop enters the Master Tape, reshaping the affinity table.",
       "On phones, the radial World Cup knockout bracket now shows the flags for the quarterfinals, semifinals, and final, matching the desktop view instead of collapsing them to dots.",
     ],
   },

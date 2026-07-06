@@ -15,7 +15,7 @@ const gold = '#ffb64f';
 
 export const metadata = {
   title: 'Velvet Rock — The Sound of the Metros',
-  description: 'The transatlantic, producer-driven adult-pop economy of 1974 to 1989, read as a map of studios rather than a genre.',
+  description: 'The producer-driven, studio-luxe adult-pop economy of 1974 to 1989, read as a map of studios from Los Angeles to Tokyo rather than a genre.',
 };
 
 export default async function VelvetRockPage() {
@@ -33,30 +33,56 @@ export default async function VelvetRockPage() {
       <SoundNav />
       <header className="mb-5">
         <h1 className="text-2xl font-bold tracking-tight">Velvet Rock</h1>
-        <p className="mt-1 text-sm" style={muted}>The producer's map, 1974 to 1989.</p>
+        <p className="mt-1 text-sm" style={muted}>The producer's map, 1974 to 1989. Los Angeles to Tokyo.</p>
       </header>
 
       <div className="max-w-2xl space-y-4 text-[15px] leading-relaxed">
         <p>
           Velvet Rock is a name for the studio-luxe, mid-tempo, harmonically rich pop that
           &ldquo;yacht rock&rdquo; flattened into a Southern California beach cliché. The better frame
-          is not a sound but a map: eight places where the records were actually made.
+          is not a sound but a map: the places where the records were actually made. And that map is
+          not an Atlantic one. It is a Pacific rim.
         </p>
         <p>
-          Three primary capitals carried the tracking and mixing: Los Angeles, New York, London.
-          Three specialists supplied the edges: the country-house studios of Bath and Somerset
-          (the Wool Hall, Ashcombe House), Philadelphia&rsquo;s Sigma Sound for R&amp;B and quiet storm,
-          and Stockholm&rsquo;s Polar Studios, which a decade later became the Cheiron pop factory. Two
-          island outposts punched far above their size: Compass Point in Nassau (Chris Blackwell, 1977)
-          and AIR Montserrat at Salem (George Martin, 1979).
+          Four primary capitals carried the tracking and mixing: Los Angeles, New York, London, and
+          Tokyo. The first three are the familiar story. The fourth is the one the Anglo-American
+          telling leaves out, and it belongs on equal footing. Through the back half of the 1970s and
+          deep into the bubble-economy 1980s, Tokyo built the same machine, elite rooms, a closed guild
+          of session players, and label budgets that rivalled anything in Burbank, and aimed it at the
+          same reference records.
         </p>
         <p>
-          The era has a hard end. On 17 September 1989 Hurricane Hugo destroyed the Montserrat studio,
-          and within five years the digital sampler, New Jack Swing, and the home project studio had
-          dissolved the economics that paid for all of it.
+          That is not a coincidence of taste. In 1976 POPEYE magazine sold Japanese youth a Californian
+          daydream, and its soundtrack was AOR: Boz Scaggs, Ned Doheny, the jazz-schooled soft rock of
+          Steely Dan and the Doobie Brothers. A generation of Tokyo musicians absorbed the
+          major-seventh harmony and the flawless-take discipline and handed it back sharper. Sugar
+          Babe&rsquo;s &ldquo;SONGS&rdquo; (1975) lit the fuse; Tatsuro Yamashita became the scene&rsquo;s
+          Quincy Jones, producing and arranging across it; and the canon that followed, his own
+          &ldquo;For You,&rdquo; Mariya Takeuchi&rsquo;s &ldquo;Variety,&rdquo; Anri&rsquo;s
+          &ldquo;Timely!!,&rdquo; is Velvet Rock in every particular but language. The loop even closed
+          physically: &ldquo;Variety&rdquo; was tracked partly at A&amp;M in Los Angeles, in the same
+          rooms as the Atlantic capitals.
+        </p>
+        <p>
+          Around the four poles sat the specialists and the outposts. Three specialists supplied the
+          edges: the country-house studios of Bath and Somerset (the Wool Hall, Ashcombe House),
+          Philadelphia&rsquo;s Sigma Sound for R&amp;B and quiet storm, and Stockholm&rsquo;s Polar
+          Studios, which a decade later became the Cheiron pop factory. Two island studios punched far
+          above their size: Compass Point in Nassau (Chris Blackwell, 1977) and AIR Montserrat at Salem
+          (George Martin, 1979).
+        </p>
+        <p>
+          The Atlantic story has a hard end. On 17 September 1989 Hurricane Hugo destroyed the
+          Montserrat studio, and within five years the digital sampler, New Jack Swing, and the home
+          project studio dissolved the economics that paid for all of it. The Pacific pole faded too,
+          and then, uniquely, came back. In 2017 the YouTube algorithm began pushing a fan upload of
+          Takeuchi&rsquo;s &ldquo;Plastic Love&rdquo; to millions who had never heard the phrase city
+          pop, and the genre became raw material for vaporwave and future funk. Velvet Rock&rsquo;s
+          Atlantic half died at Hugo. Its Pacific half got a second life.
         </p>
         <p style={{ color: gold }}>
-          Yacht rock, sophisti-pop, and quiet storm were never separate genres. They were one geography.
+          Yacht rock, sophisti-pop, quiet storm, and city pop were never separate genres. They were one
+          geography, and it ringed the Pacific as surely as the Atlantic.
         </p>
       </div>
 
@@ -109,7 +135,7 @@ export default async function VelvetRockPage() {
         {/* Sonic signature */}
         <section>
           <h2 className="mb-2 text-sm font-bold uppercase tracking-wide" style={muted}>The sonic signature</h2>
-          <p className="mb-2 text-xs" style={muted}>Centroid of {sig.n_tracks} Master Tape tracks (Spotify audio features).</p>
+          <p className="mb-2 text-xs" style={muted}>Centroid of the {sig.n_tracks} Master Tape tracks with available audio features.</p>
           <ul className="space-y-1 text-sm">
             {[['Tempo', `${feat('tempo').toFixed(0)} BPM`], ['Valence (warmth)', feat('valence').toFixed(2)],
               ['Danceability', feat('danceability').toFixed(2)], ['Energy', feat('energy').toFixed(2)],

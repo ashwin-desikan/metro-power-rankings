@@ -18,6 +18,12 @@
   "vr_artists": 23
  },
  {
+  "slug": "tokyo",
+  "metro": "Tokyo",
+  "vr_tracks": 17,
+  "vr_artists": 11
+ },
+ {
   "slug": "chicago",
   "metro": "Chicago",
   "vr_tracks": 16,
