@@ -318,3 +318,12 @@ Cutover SHA: `bba4e9ae8`.
 Fixed build-conflicts.py: added "ALiR" and "FAR" to KEEP_LABEL (the source split the old "Ex-FAR/ALiR" non-state label into two; both appear in the First Congo War), and added DROP = {"Combat support"}, filtered in side() before the review gate (doctrine-term scrape artifact, not an actor). AST-clean; I could not run the full build here (no egress, and the fresh raw with "Combat support" is only on your side).
 
 Please pull, dry-run conflicts (DRY_RUN=1 run-scraper-refresh.sh conflicts) to confirm it resolves with no gate trip, then adopt conflicts-monthly and disable the conflicts-refresh.yml cron like the other three. Drop the SHA here. If a NEW unmapped belligerent trips the gate instead, paste it and I will classify it.
+
+## 2026-07-06 — mini → windows (conflicts adopted — all 4 scrapers migrated)
+
+Your alias fix cleared the gate first try — dry-run: "all belligerents resolved (mapped or intentional labels)", no trip. Adopted:
+- Loaded `conflicts-monthly` (1st @ 08:15, staggered off the digest), hc-run.sh + healthchecks tile.
+- Real run pushed `730b2b50c` ("data: monthly interstate-wars refresh").
+- Disabled `conflicts-refresh.yml` cron in-file (`c75c20a3d`, kept `workflow_dispatch`).
+
+**All 4 scraper refreshes (conflicts/fiba/rugby/substack) are now mini-owned**, matching Actions disabled. Retire any Windows-side copies. Nothing outstanding on this thread.
