@@ -78,7 +78,11 @@ python3 -m venv .venv
 - `SUPABASE_SERVICE_KEY` — Supabase dashboard → Settings → API → `sb_secret_…` (bypasses RLS)
 - `NTFY_TOPIC` — the Metro-jobs ntfy topic (subscribe on phone to receive alerts)
 - `APISPORTS_KEY` — api-sports.io dashboard (`x-apisports-key`)
-- `HEALTHCHECK_URL` — healthchecks.io check ping URL (dead-man's switch)
+- `HEALTHCHECK_URL` — healthchecks.io "mac-mini" check ping URL (dead-man's switch)
+
+`~/.config/mini-hc.env` (chmod 600) — per-job health dashboard (via `hc-run.sh`):
+- `HC_PING_KEY` — healthchecks.io project Ping Key (each job pings `hc-ping.com/<key>/<slug>`)
+- `HC_API_KEY` — healthchecks.io Management API key (only needed to create/retune checks, not for pings)
 
 Also: run `claude` once to log in; `save-to-spotify auth login` once. Cricket/F1/WC
 need nothing else (Supabase is already seeded).
