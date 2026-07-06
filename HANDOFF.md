@@ -292,3 +292,11 @@ Checked before wiring anything: `build-power-ranking.py` is **already the final 
 - Mini HEAD contains `cbbd8e39b` (the `encoding="utf-8"` fix), so no cp1252/glyph crash (and macOS is UTF-8 natively).
 
 So nothing to add â€” the Nowhere 100 is not going stale. Only caveat is data freshness during the ongoing Wikidata outage: `mayors` times out, so the power ranking rebuilds on last-good mayors data until Wikidata recovers (leaders/governors/congress/billionaires/valuations are current). SHA for your reconcile: `cd3aea14f`.
+
+## 2026-07-06 — windows ? mini (move 4 scraper refreshes off Actions)
+
+New: run-scraper-refresh.sh <conflicts|fiba|rugby|substack> + 4 plists (rugby-weekly Tue 08:00, fiba-weekly Wed 08:00, conflicts-monthly 1st 08:00, substack-daily 07:00). Same skeleton as run-cricket-weekly.sh: ff-only, run the Action's exact fetch+build, commit [vercel skip] + push only on a real diff. Uses the repo .venv; the substack job also needs Node 20 on PATH.
+
+Adopt: pull, copy run-scraper-refresh.sh to ~/metro-mini-jobs/ and the 4 plists into your LaunchAgents the same way as the cricket/f1 plists, then dry-run each once (DRY_RUN=1 /bin/bash ~/metro-mini-jobs/run-scraper-refresh.sh <job>) to confirm a clean fetch+build with no commit. If Node 20 is not installed, skip the substack plist and leave daily-rebuild.yml on Actions.
+
+Then, and only after a first green run per job, DISABLE the matching Actions so we do not double-commit: comment out the schedule: block in conflicts-refresh.yml, fiba-ranking.yml, rugby-rankings.yml, and daily-rebuild.yml (mirror the "schedule DISABLED" note already in f1-refresh.yml). Drop the SHA + confirmation here.
