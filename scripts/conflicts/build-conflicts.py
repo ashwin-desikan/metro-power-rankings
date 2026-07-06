@@ -45,7 +45,12 @@ KEEP_LABEL = {
     "Khmer Rouge", "Khmer Issarak", "Pathet Lao", "FNL",
     "AFDL", "SPLA", "UNITA", "ADF", "FLNC", "Interahamwe", "CNDD-FDD", "Ex-FAR/ALiR",
     "DRF", "Azerbaijan People's Government", "Republic of Mahabad", "March 23 Movement",
+    "ALiR", "FAR",  # non-state Rwandan Hutu armed groups; source split the old "Ex-FAR/ALiR" label
 }
+
+# Scrape noise: generic military-doctrine terms or infobox artifacts that leak into
+# the belligerent lists but are not actors. Filtered out before the review gate.
+DROP = {"Combat support"}
 
 def load_countries():
     rows = json.loads(COUNTRIES.read_text(encoding="utf-8"))
@@ -69,7 +74,7 @@ def main():
         return {"name": name, "slug": None}
 
     def side(lst):
-        out = [resolve(n) for n in lst]
+        out = [resolve(n) for n in lst if n not in DROP]
         pi = next((i for i, e in enumerate(out) if e["slug"]), 0 if out else None)
         for i, e in enumerate(out): e["principal"] = (i == pi)
         return out
