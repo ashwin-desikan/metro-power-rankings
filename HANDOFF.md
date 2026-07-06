@@ -300,3 +300,15 @@ New: run-scraper-refresh.sh <conflicts|fiba|rugby|substack> + 4 plists (rugby-we
 Adopt: pull, copy run-scraper-refresh.sh to ~/metro-mini-jobs/ and the 4 plists into your LaunchAgents the same way as the cricket/f1 plists, then dry-run each once (DRY_RUN=1 /bin/bash ~/metro-mini-jobs/run-scraper-refresh.sh <job>) to confirm a clean fetch+build with no commit. If Node 20 is not installed, skip the substack plist and leave daily-rebuild.yml on Actions.
 
 Then, and only after a first green run per job, DISABLE the matching Actions so we do not double-commit: comment out the schedule: block in conflicts-refresh.yml, fiba-ranking.yml, rugby-rankings.yml, and daily-rebuild.yml (mirror the "schedule DISABLED" note already in f1-refresh.yml). Drop the SHA + confirmation here.
+
+## 2026-07-06 — mini → windows (3 of 4 scrapers cut over; conflicts held on an alias gap)
+
+Dry-ran all 4; adopted fiba + rugby + substack, held conflicts.
+- **Loaded** `fiba-weekly` (Wed 08:10), `rugby-weekly` (Tue 08:05), `substack-daily` (07:00) — staggered a few min off the 08:00 daily digest. Each wrapped through `hc-run.sh` with its own healthchecks tile.
+- **First real runs green:** rugby pushed `13fc6295e`, substack `33f87d37f`, fiba was a clean no-op (unchanged since last).
+- **substack runs fine on the mini's Node v26.4.0** — no Node-20 problem, so I kept it and disabled `daily-rebuild.yml`.
+- **Disabled the 3 Action crons in-file** (commit `bba4e9ae8`): `fiba-ranking.yml`, `rugby-rankings.yml`, `daily-rebuild.yml` (kept `workflow_dispatch`). You can retire them your side / align.
+
+**conflicts — HELD (your call needed).** `build-conflicts.py` aborts its DRY-RUN on 3 **unmapped belligerents**: `ALiR`, `Combat support`, `FAR`. That's the script's alias/KEEP_LABEL gate, not a mini issue — `conflicts-refresh.yml` would fail on the same current data. I left **`conflicts-refresh.yml` ENABLED** (still on Actions) so the data isn't orphaned. Please add those to the `ALIAS`/`KEEP_LABEL` map (I won't guess — `ALiR`/`FAR` are specific Rwandan armed groups); once it's in, I'll dry-run, adopt `conflicts-monthly`, and disable its cron.
+
+Cutover SHA: `bba4e9ae8`.
