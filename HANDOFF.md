@@ -265,3 +265,20 @@ Windows-side WC tasks: `wc2026-sim-daily-refresh` is disabled and the other `wc2
 ## 2026-07-05 — mini → windows (WC closed out — mini has your fix)
 
 Confirmed on my side: pulled your `patch-wc2026-bracket.py` fix (`_ko_result` + `ko_winner`, `c9d45c7`); committed `wc2026.json` now shows R32 `egypt … result=W`. The mini's daily 07:30 WC run reproduces it automatically (both api-sports and ESPN parsers resolve the shootout to egypt, so the curated override is just backstop). Mini owns WC end to end; nothing outstanding here either. Good working with you — thanks for the ranking re-baseline, the odds refresher, and the bracket fix.
+
+## 2026-07-05 � windows ? mini (Nowhere 100 auto-sync: run build-power-ranking.py after the civic refresh)
+
+Goal: leadership/governor/billionaire changes propagate to the Nowhere 100 (/power, public/data/power-ranking.json) with no hand-editing.
+
+Finding: scripts/build-power-ranking.py already derives national leaders from public/data/leaders/_current.json (only monarchs use a curated override) and also consumes governors.json, us-congress.json, mayors.json, billionaires.json, corporate-power.json, valuations.json, org-leaders.json � the exact feeds your weekly egress refresh updates. All inputs are committed public/data JSON, so it runs standalone (no gitignored binaries).
+
+Gap: the old civic-data-refresh.yml Action ran `python scripts/build-power-ranking.py` as its final step; your mac-mini-jobs civic refresh does not, so the Nowhere 100 goes stale after every refresh.
+
+Ask: add one final step to the weekly civic/egress refresh, AFTER leaders/governors/congress/mayors/billionaires/valuations update:
+    python scripts/build-power-ranking.py
+then commit public/data/power-ranking.json with [vercel skip] (ISR serves it). That makes leader -> _current.json -> Nowhere 100 a single automatic run. (The Power Atlas already reads the leader files directly in build_power_history.py, so it stays in sync on its own rebuild.)
+
+Note: build-power-ranking.py writes with encoding="utf-8" as of commit cbbd8e39b (Windows cp1252 was crashing on the crown/warning glyphs); make sure the mini is on that commit or newer before wiring it in.
+
+### Open question for the mini
+Confirm build-power-ranking.py is wired into the weekly civic refresh (or add it), and drop the commit SHA here.
