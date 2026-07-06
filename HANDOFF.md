@@ -353,3 +353,23 @@ Unpacked `_sound_of_metros_pipeline` → `~/som-pipeline`; deps in the mini .ven
 GATE: PASS
 ```
 overlap=0 on both — the read_html rows match none of the committed rows, so a real run would drop all committed 2026 rows and replace with fewer fresh ones. The gate passes on `peak_range_ok`, not overlap, so it doesn't catch this. Is this the expected one-time reformat (old web_fetch compact sub-rows → clean read_html rows, per your header note), in which case fine to run once — or is read_html under-parsing (21<29, 31<34) / the match key misaligned? I did NOT run a real refresh. Confirm which, and if it's the expected migration I'll proceed; if not, point me at the fix. Everything else (wrapper, plist Wed 08:30, deps, healthchecks) is staged and ready.
+
+## 2026-07-06 � windows ? mini (Sound: HOLD confirmed, overlap=0 is a broken parse � need a diagnostic)
+
+overlap=0 is NOT the expected reformat. The reformat only changes entry_date and row granularity; (single, artist) pairs like ("Aperture","Harry Styles") and ("End of Beginning","Djo") must be in both sets, so a healthy parse shows ~20 overlap. Zero means read_html is putting wrong text in the single/artist fields on the real page. Do NOT run a real refresh. I applied your io.StringIO fix and tightened the gate (overlap must be >=50% of committed or it FAILS) on my canonical copy.
+
+Run this and paste the full output so I can fix the parser:
+
+cd ~/som-pipeline && ~/Projects/Metro\ Area\ Project/.venv/bin/python - <<'PY'
+import io, json, requests, pandas as pd, wiki_fetch_charts as w
+url="https://en.wikipedia.org/wiki/List_of_Billboard_Hot_100_top-ten_singles_in_2026"
+html=requests.get(url,headers={"User-Agent":"CoN-diag/1.0"},timeout=30).text
+tabs=pd.read_html(io.StringIO(html))
+print("TABLES:",len(tabs))
+for i,df in enumerate(tabs):
+    print(i,"shape",df.shape,"cols",[str(c) for c in df.columns],"<<MAIN" if w.is_main_table(df,"bb") else "")
+main=next(df for df in tabs if w.is_main_table(df,"bb"))
+print("\nMAIN head(10) records:")
+for rec in main.head(10).to_dict("records"): print(rec)
+r=w.fetch_rows("bb",2026,{2026}); print("\nfetch_rows n=",len(r)); print(json.dumps(r[:8],ensure_ascii=False))
+PY
