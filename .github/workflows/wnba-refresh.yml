@@ -7,8 +7,9 @@ name: WNBA season refresh
 # from GitHub raw, so the live season updates without a deploy. Quiet days (no
 # standings change) produce no commit.
 #
-# REQUIRES repo secret SUPABASE_WRITE_KEY: a Supabase key (new key system) with
-# insert+update on wnba_seasons. Without it the ingest step exits and fails loud.
+# REQUIRES repo secret SUPABASE_WRITE_KEY: a Supabase secret key (sb_secret_...,
+# new key system) with insert+update on wnba_seasons. Without it the ingest step
+# exits and fails loud.
 
 on:
   schedule:
@@ -27,10 +28,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
