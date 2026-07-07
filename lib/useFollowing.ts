@@ -146,7 +146,7 @@ export function useFollowing() {
 
   const signInWithGoogle = useCallback(() => {
     if (!sb) return;
-    sb.auth.signInWithOAuth({ provider: "google", options: { redirectTo: window.location.href } });
+    sb.auth.signInWithOAuth({ provider: "google", options: { redirectTo: window.location.origin + window.location.pathname } });
   }, [sb]);
 
   const signOut = useCallback(async () => {

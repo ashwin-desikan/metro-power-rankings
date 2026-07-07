@@ -18,6 +18,13 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-07-07",
+    headline: "Google sign-in now returns you to the right page",
+    items: [
+      "Signing in with Google now keeps you logged in and returns you to the page you were on, instead of bouncing back with an error.",
+    ],
+  },
+  {
     date: "2026-07-06",
     headline: "Velvet Rock goes trans-Pacific with Tokyo and city pop",
     items: [
