@@ -1,12 +1,24 @@
 import { NextResponse } from "next/server";
 
 // Same-origin page-view beacon relay. The browser posts here (first-party, so
-// content blockers and privacy browsers don't treat it as a third-party
-// tracker the way a direct *.supabase.co call gets dropped), and we forward
+// content blockers don't treat it as a third-party tracker), and we forward
 // server-side to the Supabase track_visit RPC. No PII: just the path.
-// Always answers 204 so analytics can never surface an error to the page.
-const SB_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const SB_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+//
+// NOTE: NEXT_PUBLIC_* vars are inlined into the CLIENT bundle only; under
+// Turbopack they are NOT reliably present in a route handler's runtime
+// process.env, so reading them here yields undefined and the relay silently
+// no-ops. These are the PUBLIC anon URL + key (already shipped in every
+// browser via the client bundle), so embedding them as a fallback is safe.
+// Prefer real env if a server-side var is ever set; if the anon key is
+// rotated, update the fallback or set SUPABASE_URL / SUPABASE_ANON_KEY.
+const SB_URL =
+  process.env.SUPABASE_URL ||
+  process.env.NEXT_PUBLIC_SUPABASE_URL ||
+  "https://nmprqkmymrdknffwnuur.supabase.co";
+const SB_KEY =
+  process.env.SUPABASE_ANON_KEY ||
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5tcHJxa215bXJka25mZndudXVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyMDkzNDMsImV4cCI6MjA5ODc4NTM0M30.4RXU3mQ-Yl81ZqC2_a10aizKGu_87B4vt8OK5Pi_-sM";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
