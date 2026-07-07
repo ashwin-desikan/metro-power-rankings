@@ -1,40 +1,19 @@
-"use client";
-
-import { useEffect } from "react";
-import { usePathname } from "next/navigation";
-
-// First-party page counter. Writes the current path straight to Supabase's
-// track_visit RPC from the browser. We tried a same-origin /api/v relay to
-// dodge content blockers, but a Vercel route handler's server-side fetch to
-// Supabase never landed (confirmed: zero server-origin calls in Supabase's
-// API log), whereas the direct browser call is proven to write. These are the
-// PUBLIC anon URL + key (already inlined in the client bundle), with hardcoded
-// fallbacks so a missing NEXT_PUBLIC at build can't silently disable it.
-const SB_URL =
-  process.env.NEXT_PUBLIC_SUPABASE_URL ||
-  "https://nmprqkmymrdknffwnuur.supabase.co";
-const SB_KEY =
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5tcHJxa215bXJka25mZndudXVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyMDkzNDMsImV4cCI6MjA5ODc4NTM0M30.4RXU3mQ-Yl81ZqC2_a10aizKGu_87B4vt8OK5Pi_-sM";
-
+// First-party page-view beacon. Emitted as a raw inline script in the
+// server-rendered HTML so it runs on page load WITHOUT waiting for React
+// hydration or a useEffect (which did not fire reliably in production), and
+// re-fires on client-side navigations by hooking history.pushState + popstate.
+// Writes straight to Supabase's track_visit RPC — the browser-direct path is
+// proven to persist. Public anon URL + key (already shipped in the client
+// bundle), so inlining is safe. No PII: path only.
 export default function VisitBeacon() {
-  const pathname = usePathname();
-  useEffect(() => {
-    if (!pathname) return;
-    try {
-      fetch(`${SB_URL}/rest/v1/rpc/track_visit`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          apikey: SB_KEY,
-          Authorization: `Bearer ${SB_KEY}`,
-        },
-        body: JSON.stringify({ p_path: pathname.slice(0, 512) }),
-        keepalive: true,
-      }).catch(() => {});
-    } catch {
-      /* never let analytics break a page render */
-    }
-  }, [pathname]);
-  return null;
+  const js =
+    '(function(){' +
+    'var U="https://nmprqkmymrdknffwnuur.supabase.co";' +
+    'var K="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5tcHJxa215bXJka25mZndudXVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyMDkzNDMsImV4cCI6MjA5ODc4NTM0M30.4RXU3mQ-Yl81ZqC2_a10aizKGu_87B4vt8OK5Pi_-sM";' +
+    'function h(){try{fetch(U+"/rest/v1/rpc/track_visit",{method:"POST",headers:{"Content-Type":"application/json",apikey:K,Authorization:"Bearer "+K},body:JSON.stringify({p_path:String(location.pathname).slice(0,512)}),keepalive:true}).catch(function(){});}catch(e){}}' +
+    'h();' +
+    'var _p=history.pushState;history.pushState=function(){_p.apply(this,arguments);h();};' +
+    'addEventListener("popstate",h);' +
+    '})();';
+  return <script dangerouslySetInnerHTML={{ __html: js }} />;
 }
