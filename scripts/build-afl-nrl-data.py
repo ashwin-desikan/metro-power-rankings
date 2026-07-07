@@ -12,9 +12,33 @@ canonical Name. Output shape mirrors lib/cfl.ts's CflData.
 
 Usage: build_afl_nrl_data.py <OtherLeagues.xlsx> <MetroAreas.xlsx> <out_dir>
 """
-import json, re, sys, unicodedata
+import json, os, re, sys, unicodedata
 from collections import defaultdict
 import openpyxl
+import time, urllib.request, urllib.parse
+
+SB_URL = (os.environ.get("SUPABASE_URL") or os.environ.get("NEXT_PUBLIC_SUPABASE_URL")
+          or "https://nmprqkmymrdknffwnuur.supabase.co").rstrip("/")
+SB_KEY = (os.environ.get("SUPABASE_ANON_KEY") or os.environ.get("NEXT_PUBLIC_SUPABASE_ANON_KEY")
+          or "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5tcHJxa215bXJka25mZndudXVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyMDkzNDMsImV4cCI6MjA5ODc4NTM0M30.4RXU3mQ-Yl81ZqC2_a10aizKGu_87B4vt8OK5Pi_-sM")
+
+def _sb(table, select, order="id"):
+    out, step, off = [], 1000, 0
+    while True:
+        q = urllib.parse.urlencode({"select": select, "order": order, "limit": step, "offset": off})
+        req = urllib.request.Request(f"{SB_URL}/rest/v1/{table}?{q}",
+                                     headers={"apikey": SB_KEY, "Authorization": f"Bearer {SB_KEY}"})
+        for _try in range(4):
+            try:
+                with urllib.request.urlopen(req, timeout=30) as rr:
+                    batch = json.load(rr); break
+            except Exception:
+                if _try == 3: raise
+                time.sleep(2)
+        out += batch
+        if len(batch) < step:
+            return out
+        off += step
 
 def slugify(s):
     s = unicodedata.normalize("NFKD", str(s).lower())
@@ -93,14 +117,23 @@ def load_team_list(path):
 def main():
     other, metro_xlsx, outdir = sys.argv[1], sys.argv[2], sys.argv[3]
     team_list = load_team_list(metro_xlsx)
-    wb = openpyxl.load_workbook(other, read_only=True, data_only=True)
+    # OtherLeagues sheets now sourced from Supabase (workbook retired)
 
-    # ---- Ladders ----
-    ws = wb["AFL-NRL Ladders"]
-    hdr = [c.value for c in next(ws.iter_rows(min_row=1, max_row=1))]
-    ix = {h: i for i, h in enumerate(hdr)}
+    # ---- Ladders (from Supabase) ----
+    _L_HDR = ["Sport","Name","Team","Season","League","Rank","Played","Wins","Draws","Losses","PremiershipPoints","PointsFor","PointsAgainst","Minor Prem","Finals","Grand Final App","Premiership","Metro Area","State"]
+    _L_KEY = {"Sport":"sport","Name":"name","Team":"team","Season":"season","League":"league","Rank":"rank","Played":"played","Wins":"wins","Draws":"draws","Losses":"losses","PremiershipPoints":"premiership_points","PointsFor":"points_for","PointsAgainst":"points_against","Minor Prem":"minor_prem","Finals":"finals","Grand Final App":"grand_final_app","Premiership":"premiership","Metro Area":"metro_area","State":"state"}
+    _L_BOOL = {"Minor Prem","Finals","Grand Final App","Premiership"}
+    ix = {h: i for i, h in enumerate(_L_HDR)}
     seasons = defaultdict(list)   # (lg, canon) -> [season dict]
-    for r in ws.iter_rows(min_row=2, values_only=True):
+    _lad_rows = []
+    for _d in _sb("afl_nrl_ladders", ",".join(_L_KEY[h] for h in _L_HDR)):
+        _row = []
+        for h in _L_HDR:
+            v = _d[_L_KEY[h]]
+            if h in _L_BOOL: v = "Y" if v else ""
+            _row.append(v)
+        _lad_rows.append(_row)
+    for r in _lad_rows:
         sport = S(r[ix["Sport"]])
         lg = SPORT_TO_LEAGUE.get(sport)
         if not lg: continue
@@ -119,12 +152,21 @@ def main():
             "state": S(r[ix["State"]]) or None,
         })
 
-    # ---- Grand Finals ----
-    ws = wb["AFL-NRL Grand Finals"]
-    hdr = [c.value for c in next(ws.iter_rows(min_row=1, max_row=1))]
-    gx = {h: i for i, h in enumerate(hdr)}
+    # ---- Grand Finals (from Supabase) ----
+    _G_HDR = ["Sport","Name","Team","Year  ","Date (YYYYMMDD)","W/L","Opp Team","Opponent","For","Ag","Stadium","Metro Area","State","Premiership won"]
+    _G_KEY = {"Sport":"sport","Name":"name","Team":"team","Year  ":"year","Date (YYYYMMDD)":"date","W/L":"wl","Opp Team":"opp_team","Opponent":"opponent","For":"pf","Ag":"pa","Stadium":"stadium","Metro Area":"metro_area","State":"state","Premiership won":"premiership_won"}
+    _G_BOOL = {"Premiership won"}
+    gx = {h: i for i, h in enumerate(_G_HDR)}
     gfs = defaultdict(list)  # (lg, canon) -> [gf dict]
-    for r in ws.iter_rows(min_row=2, values_only=True):
+    _gf_rows = []
+    for _d in _sb("afl_nrl_grand_finals", ",".join(_G_KEY[h] for h in _G_HDR)):
+        _row = []
+        for h in _G_HDR:
+            v = _d[_G_KEY[h]]
+            if h in _G_BOOL: v = "Y" if v else ""
+            _row.append(v)
+        _gf_rows.append(_row)
+    for r in _gf_rows:
         sport = S(r[gx["Sport"]])
         lg = SPORT_TO_LEAGUE.get(sport)
         if not lg: continue

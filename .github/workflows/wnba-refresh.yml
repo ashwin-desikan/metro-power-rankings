@@ -1,0 +1,64 @@
+name: WNBA season refresh
+
+# Nightly in-season: pull the current WNBA standings from ESPN's public API,
+# upsert the in-progress season into Supabase (public.wnba_seasons, source of
+# truth, idempotent on season+team), rebuild the hub JSON from Supabase, and
+# commit with [vercel skip]. The site fetches public/data/wnba/data.json via ISR
+# from GitHub raw, so the live season updates without a deploy. Quiet days (no
+# standings change) produce no commit.
+#
+# REQUIRES repo secret SUPABASE_WRITE_KEY: a Supabase key (new key system) with
+# insert+update on wnba_seasons. Without it the ingest step exits and fails loud.
+
+on:
+  schedule:
+    - cron: "0 8 * * *"     # 08:00 UTC daily (after night games); ingest is a no-op in the offseason
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wnba-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install openpyxl
+
+      - name: Ingest ESPN standings -> Supabase
+        env:
+          SUPABASE_WRITE_KEY: ${{ secrets.SUPABASE_WRITE_KEY }}
+        run: python3 scripts/ingest/wnba_ingest.py
+
+      - name: Rebuild hub JSON from Supabase
+        run: python3 scripts/build-wnba-data.py
+
+      - name: Commit and push only if the data changed
+        run: |
+          if git diff --quiet -- public/data/wnba/data.json; then
+            echo "No change in WNBA data; nothing to deploy."
+            exit 0
+          fi
+          git config user.name "wnba-refresh-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/wnba/data.json
+          git commit -m "Auto: refresh WNBA live season from ESPN [vercel skip]"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "Pushed on attempt $attempt."; exit 0
+            fi
+            echo "Push race on attempt $attempt; retrying..."; sleep $((attempt * 5))
+          done
+          echo "Failed to push after retries." >&2; exit 1

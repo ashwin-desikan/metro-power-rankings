@@ -30,6 +30,30 @@ import unicodedata
 from collections import defaultdict
 
 import openpyxl
+import time, urllib.request, urllib.parse
+
+SB_URL = (os.environ.get("SUPABASE_URL") or os.environ.get("NEXT_PUBLIC_SUPABASE_URL")
+          or "https://nmprqkmymrdknffwnuur.supabase.co").rstrip("/")
+SB_KEY = (os.environ.get("SUPABASE_ANON_KEY") or os.environ.get("NEXT_PUBLIC_SUPABASE_ANON_KEY")
+          or "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5tcHJxa215bXJka25mZndudXVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyMDkzNDMsImV4cCI6MjA5ODc4NTM0M30.4RXU3mQ-Yl81ZqC2_a10aizKGu_87B4vt8OK5Pi_-sM")
+
+def _sb(table, select, order="id"):
+    out, step, off = [], 1000, 0
+    while True:
+        q = urllib.parse.urlencode({"select": select, "order": order, "limit": step, "offset": off})
+        req = urllib.request.Request(f"{SB_URL}/rest/v1/{table}?{q}",
+                                     headers={"apikey": SB_KEY, "Authorization": f"Bearer {SB_KEY}"})
+        for _t in range(4):
+            try:
+                with urllib.request.urlopen(req, timeout=30) as rr:
+                    batch = json.load(rr); break
+            except Exception:
+                if _t == 3: raise
+                time.sleep(2)
+        out += batch
+        if len(batch) < step:
+            return out
+        off += step
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "OtherLeagues.xlsx")
@@ -167,22 +191,20 @@ def current_rosters():
 # ---- load source ------------------------------------------------------------
 
 def load_rows():
-    wb = openpyxl.load_workbook(SRC, read_only=True, data_only=True)
-    ws = wb[SHEET]
     out = []
-    for r in ws.iter_rows(min_row=2, values_only=True):
-        comp = safe_str(r[0])
+    for r in _sb("womens_club_football", "competition,country,year,winner_disp,score,runner_disp,winner_canon,runner_canon"):
+        comp = safe_str(r["competition"])
         if not comp:
             continue
         out.append({
             "competition": comp,
-            "country": safe_str(r[1]),
-            "year": r[2],
-            "winner_disp": safe_str(r[3]),
-            "score": safe_str(r[4]),
-            "runner_disp": safe_str(r[5]),
-            "winner": safe_str(r[6]) or safe_str(r[3]),
-            "runner": safe_str(r[7]) or safe_str(r[5]),
+            "country": safe_str(r["country"]),
+            "year": r["year"],
+            "winner_disp": safe_str(r["winner_disp"]),
+            "score": safe_str(r["score"]),
+            "runner_disp": safe_str(r["runner_disp"]),
+            "winner": safe_str(r["winner_canon"]) or safe_str(r["winner_disp"]),
+            "runner": safe_str(r["runner_canon"]) or safe_str(r["runner_disp"]),
         })
     return out
 

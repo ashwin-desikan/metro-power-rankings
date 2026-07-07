@@ -12,23 +12,33 @@ franchise's Cup count includes pre-1945 titles its standings rows don't cover).
 """
 import json, os, re, sys, unicodedata
 from collections import defaultdict
-try:
-    import openpyxl
-except ImportError:
-    sys.exit("openpyxl required (pip install openpyxl)")
+import time, urllib.request, urllib.parse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT  = os.path.join(ROOT, "public", "data", "cfl", "data.json")
 
-def find_wb():
-    cands = [os.environ.get("CFL_XLSX"),
-             sys.argv[1] if len(sys.argv) > 1 else None,
-             os.path.expanduser("~/OneDrive/Excel Files/OtherLeagues.xlsx"),
-             os.path.join(ROOT, "OtherLeagues.xlsx")]
-    for c in cands:
-        if c and os.path.exists(c):
-            return c
-    sys.exit("OtherLeagues.xlsx not found (set CFL_XLSX)")
+SB_URL = (os.environ.get("SUPABASE_URL") or os.environ.get("NEXT_PUBLIC_SUPABASE_URL")
+          or "https://nmprqkmymrdknffwnuur.supabase.co").rstrip("/")
+SB_KEY = (os.environ.get("SUPABASE_ANON_KEY") or os.environ.get("NEXT_PUBLIC_SUPABASE_ANON_KEY")
+          or "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5tcHJxa215bXJka25mZndudXVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyMDkzNDMsImV4cCI6MjA5ODc4NTM0M30.4RXU3mQ-Yl81ZqC2_a10aizKGu_87B4vt8OK5Pi_-sM")
+
+def _sb(table, select, order="id"):
+    out, step, off = [], 1000, 0
+    while True:
+        q = urllib.parse.urlencode({"select": select, "order": order, "limit": step, "offset": off})
+        req = urllib.request.Request(f"{SB_URL}/rest/v1/{table}?{q}",
+                                     headers={"apikey": SB_KEY, "Authorization": f"Bearer {SB_KEY}"})
+        for _try in range(4):
+            try:
+                with urllib.request.urlopen(req, timeout=30) as rr:
+                    batch = json.load(rr); break
+            except Exception:
+                if _try == 3: raise
+                time.sleep(2)
+        out += batch
+        if len(batch) < step:
+            return out
+        off += step
 
 def slugify(s):
     s = unicodedata.normalize("NFKD", str(s).lower())
@@ -55,10 +65,17 @@ CFL_METRO = {
  "Montreal Hornets":"montreal",
 }
 
-wb = openpyxl.load_workbook(find_wb(), read_only=True, data_only=True)
+# ── data sourced from Supabase (workbook retired) ──
 
 # ── 1. Standings → per-canonical seasons ──────────────────────────────────────
-st_rows = list(wb["CFL Standings"].iter_rows(values_only=True))[1:]
+st_rows = []
+for _d in _sb("cfl_standings", "year,division,team,w,l,t,pct,pf,pa,play_app,gc_final,grey_cup,playoff_result,canonical"):
+    _r = [None]*15
+    _r[0]=_d["year"]; _r[2]=_d["division"]; _r[3]=_d["team"]
+    _r[4]=_d["w"]; _r[5]=_d["l"]; _r[6]=_d["t"]; _r[7]=_d["pct"]; _r[8]=_d["pf"]; _r[9]=_d["pa"]
+    _r[10]="Y" if _d["play_app"] else ""; _r[11]="Y" if _d["gc_final"] else ""; _r[12]="Y" if _d["grey_cup"] else ""
+    _r[13]=_d["playoff_result"]; _r[14]=_d["canonical"]
+    st_rows.append(_r)
 seasons = defaultdict(list)          # canonical -> [season dict]
 era_names = defaultdict(set)         # canonical -> {team era names}
 for r in st_rows:
@@ -89,7 +106,13 @@ for canon in seasons:
         name2slug[e.lower()] = sl
 
 # ── 2. Grey Cup Finals → per-team final appearances + honor roll ──────────────
-gc_rows = list(wb["CFL Grey Cup Finals"].iter_rows(values_only=True))[1:]
+gc_rows = []
+for _d in _sb("cfl_grey_cup_finals", "game,year,result,pf,pa,ot,venue,city,attendance,name,opponent"):
+    _r = [None]*14
+    _r[0]=_d["game"]; _r[1]=_d["year"]; _r[3]=_d["result"]; _r[4]=_d["pf"]; _r[5]=_d["pa"]
+    _r[6]="Y" if _d["ot"] else ""; _r[8]=_d["venue"]; _r[9]=_d["city"]; _r[11]=_d["attendance"]
+    _r[12]=_d["name"]; _r[13]=_d["opponent"]
+    gc_rows.append(_r)
 gc_finals = defaultdict(list)        # slug -> [final dict]
 honor = {}                           # game-year -> honor-roll entry (winner row)
 unresolved = set()

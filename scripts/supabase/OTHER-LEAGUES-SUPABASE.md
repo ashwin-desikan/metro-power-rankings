@@ -41,3 +41,36 @@ the Cowork bash sandbox has none; the Supabase MCP does).
   ```
   Then: `python scripts/build-cws-data.py` and commit `public/data/baseball/cws.json`.
   (Automatable later via an NCAA results scraper on the mini with the approved alert-gate.)
+
+## Load mechanism (IMPORTANT — this project's service_role key is rejected)
+Writes with a `service_role` key 401 ("Invalid API key"): this project is on
+Supabase's newer key system and the legacy service key is disabled. Working load
+path: (a) create table + anon read policy (MCP); (b) add a TEMPORARY anon
+insert+update policy (MCP); (c) run the loader natively — it forces the public
+anon key: `python scripts/supabase/load_other_leagues.py <key>`; (d) drop the
+temp policy (MCP). Tiny tables (<~25 rows) are inserted directly via MCP
+`execute_sql` (privileged, bypasses RLS — no policy or loader needed). Build read
+path uses the public anon key + the RLS read policy.
+
+## Phase 2 — Basketball — DONE
+- `euroleague_seasons` (1047 rows); `scripts/basketball/build_intl_basketball.py`
+  `parse_euroleague()` rewired; euroleague/nations/hub.json byte-identical.
+  Order by `id` preserves sheet order so title_years stay identical.
+- `wnba_seasons` (365) + `wnba_franchises` (20, current/defunct classification);
+  `scripts/build-wnba-data.py` rewired; wnba/data.json byte-identical. Two tables
+  because the WNBA sheet also holds current/defunct franchise side-lists (so
+  expansion sides appear before results). Numeric care: games-back is int-or-float
+  per row — store float8, coerce int-if-whole in the build (`_N`).
+
+## Phase 3 — IPL (cricket) — DONE
+- `ipl_standings` (166) + `ipl_playoff_matches` (74, unique(season,round)); loader `ipl` key
+  loads both sheets. NO committed builder existed for the IPL sheets, so
+  `scripts/build-ipl-data.py` was written from scratch to reproduce the committed
+  `public/data/ipl/data.json` byte-for-byte. Curated franchise metadata (slug,
+  abbr, colours, city/state/metro, and DISPLAY ORDER) is a fixed list in the
+  builder (carried over from the committed file); all stats computed from
+  `ipl_standings`. Read by `lib/ipl.ts`.
+- LESSON for pretty-printed (`indent=2`) outputs: on Windows `open(...,"w")`
+  translates \n -> \r\n. Pin `newline="\n"` AND add a trailing `\n` (the committed
+  file ends with one) or the byte-diff is off by CRLFs + one byte. Compact
+  (`separators`) builders don't hit this because they emit a single line.

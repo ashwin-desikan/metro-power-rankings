@@ -14,7 +14,30 @@ shared resolveTeamLink() stays the single source of truth.
 Usage: python scripts/build-valuations-data.py [SOURCE_XLSX]
 """
 import json, os, sys, datetime
-import openpyxl
+import time, urllib.request, urllib.parse
+
+SB_URL = (os.environ.get("SUPABASE_URL") or os.environ.get("NEXT_PUBLIC_SUPABASE_URL")
+          or "https://nmprqkmymrdknffwnuur.supabase.co").rstrip("/")
+SB_KEY = (os.environ.get("SUPABASE_ANON_KEY") or os.environ.get("NEXT_PUBLIC_SUPABASE_ANON_KEY")
+          or "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5tcHJxa215bXJka25mZndudXVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyMDkzNDMsImV4cCI6MjA5ODc4NTM0M30.4RXU3mQ-Yl81ZqC2_a10aizKGu_87B4vt8OK5Pi_-sM")
+
+def _sb(table, select, order="id"):
+    out, step, off = [], 1000, 0
+    while True:
+        q = urllib.parse.urlencode({"select": select, "order": order, "limit": step, "offset": off})
+        req = urllib.request.Request(f"{SB_URL}/rest/v1/{table}?{q}",
+                                     headers={"apikey": SB_KEY, "Authorization": f"Bearer {SB_KEY}"})
+        for _t in range(4):
+            try:
+                with urllib.request.urlopen(req, timeout=30) as rr:
+                    batch = json.load(rr); break
+            except Exception:
+                if _t == 3: raise
+                time.sleep(2)
+        out += batch
+        if len(batch) < step:
+            return out
+        off += step
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, "OtherLeagues.xlsx")
@@ -22,28 +45,18 @@ OUT = os.path.join(ROOT, "public", "data", "valuations", "valuations.json")
 SHEET = "Team Valuations"
 
 def main():
-    wb = openpyxl.load_workbook(SRC, read_only=True, data_only=True)
-    if SHEET not in wb.sheetnames:
-        sys.exit(f"FAIL: sheet '{SHEET}' not found in {SRC}")
-    ws = wb[SHEET]
-    rows = list(ws.iter_rows(values_only=True))
-    header = [str(c).strip() if c is not None else "" for c in rows[0]]
-    idx = {name: i for i, name in enumerate(header)}
-    for req in ("Year", "Team", "League", "Value ($M)", "Source"):
-        if req not in idx:
-            sys.exit(f"FAIL: missing column '{req}' (have {header})")
     out = []
-    for r in rows[1:]:
-        team = r[idx["Team"]]
-        val = r[idx["Value ($M)"]]
+    for r in _sb("team_valuations", "year,team,league,value_m,source"):
+        team = r["team"]
+        val = r["value_m"]
         if team is None or val is None:
             continue
         out.append({
-            "year": int(r[idx["Year"]]) if r[idx["Year"]] is not None else None,
+            "year": int(r["year"]) if r["year"] is not None else None,
             "team": str(team).strip(),
-            "league": str(r[idx["League"]]).strip() if r[idx["League"]] is not None else "",
+            "league": str(r["league"]).strip() if r["league"] is not None else "",
             "value_m": float(val),
-            "source": str(r[idx["Source"]]).strip() if r[idx["Source"]] is not None else "",
+            "source": str(r["source"]).strip() if r["source"] is not None else "",
         })
     out.sort(key=lambda x: x["value_m"], reverse=True)
     os.makedirs(os.path.dirname(OUT), exist_ok=True)

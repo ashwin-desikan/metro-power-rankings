@@ -16,13 +16,34 @@ Editorial model (confirmed with the data owner):
     "stints" so each metro page shows the club under its local name with
     the titles won while it played there.
 """
-import openpyxl, json, os
+import json, os, time, urllib.request, urllib.parse
 from collections import defaultdict
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) \
     if os.path.basename(os.path.dirname(os.path.abspath(__file__))) == "scripts" \
     else os.environ.get("REPO_ROOT", os.getcwd())
-SRC = os.path.join(ROOT, "OtherLeagues.xlsx")
+SB_URL = (os.environ.get("SUPABASE_URL") or os.environ.get("NEXT_PUBLIC_SUPABASE_URL")
+          or "https://nmprqkmymrdknffwnuur.supabase.co").rstrip("/")
+SB_KEY = (os.environ.get("SUPABASE_ANON_KEY") or os.environ.get("NEXT_PUBLIC_SUPABASE_ANON_KEY")
+          or "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5tcHJxa215bXJka25mZndudXVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyMDkzNDMsImV4cCI6MjA5ODc4NTM0M30.4RXU3mQ-Yl81ZqC2_a10aizKGu_87B4vt8OK5Pi_-sM")
+
+def _sb(table, select, order="id"):
+    out, step, off = [], 1000, 0
+    while True:
+        q = urllib.parse.urlencode({"select": select, "order": order, "limit": step, "offset": off})
+        req = urllib.request.Request(f"{SB_URL}/rest/v1/{table}?{q}",
+                                     headers={"apikey": SB_KEY, "Authorization": f"Bearer {SB_KEY}"})
+        for _try in range(4):
+            try:
+                with urllib.request.urlopen(req, timeout=30) as rr:
+                    batch = json.load(rr); break
+            except Exception:
+                if _try == 3: raise
+                time.sleep(2)
+        out += batch
+        if len(batch) < step:
+            return out
+        off += step
 OUT = os.path.join(ROOT, "public", "data", "nfl", "europe.json")
 METROS = os.path.join(ROOT, "public", "data", "metros.json")
 
@@ -31,9 +52,8 @@ metro_slug = {}
 for m in json.load(open(METROS, encoding="utf-8")):
     metro_slug[m["name"]] = m["slug"]
 
-wb = openpyxl.load_workbook(SRC, read_only=True, data_only=True)
-ws = wb["NFL Europe"]
-rows = [list(r) for r in ws.iter_rows(values_only=True)]
+_wb_rows = _sb("nfl_europe_worldbowls", "season,game,date,venue,city,champion,runner_up,score")
+_std_rows = _sb("nfl_europe_standings", "season,division,pos,team,w,l,t,pct,pf,pa,playoff,wb_app,wb_champ,canonical,metro")
 
 def cell(r, i):
     return r[i] if i < len(r) else None
@@ -45,51 +65,37 @@ def clean(v):
         return v.strftime("%Y-%m-%d")
     return str(v).strip() if isinstance(v, str) else v
 
-# ---- locate the two sections ----
-wb_hdr = std_hdr = None
-for idx, r in enumerate(rows):
-    if cell(r, 0) == "Season" and cell(r, 1) == "Game":
-        wb_hdr = idx
-    if cell(r, 0) == "Season" and cell(r, 1) == "Division":
-        std_hdr = idx
+# ---- World Bowl championship games (from Supabase) ----
+world_bowls = [{
+    "season": r["season"],
+    "game": r["game"],
+    "date": r["date"],
+    "venue": r["venue"],
+    "city": r["city"],
+    "champion": r["champion"],
+    "runner_up": r["runner_up"],
+    "score": r["score"],
+} for r in _wb_rows]
 
-# ---- World Bowl championship games ----
-world_bowls = []
-for r in rows[wb_hdr + 1:]:
-    if not isinstance(cell(r, 0), int):
-        break
-    world_bowls.append({
-        "season": cell(r, 0),
-        "game": clean(cell(r, 1)),
-        "date": clean(cell(r, 2)),
-        "venue": clean(cell(r, 5)),
-        "city": clean(cell(r, 9)),
-        "champion": clean(cell(r, 13)),
-        "runner_up": clean(cell(r, 15)),
-        "score": clean(cell(r, 17)),
-    })
-
-# ---- Season standings ----
+# ---- Season standings (from Supabase) ----
 standings = []
-for r in rows[std_hdr + 1:]:
-    if not isinstance(cell(r, 0), int):
-        continue
-    team = clean(cell(r, 3))
-    name = clean(cell(r, 13))
-    metro = clean(cell(r, 14))
+for r in _std_rows:
+    team = r["team"]
+    name = r["canonical"]
+    metro = r["metro"]
     if not team or not name:
         continue
     standings.append({
-        "season": cell(r, 0),
-        "division": clean(cell(r, 1)),
-        "pos": cell(r, 2),
+        "season": r["season"],
+        "division": r["division"],
+        "pos": r["pos"],
         "team": team,
-        "w": cell(r, 4) or 0, "l": cell(r, 5) or 0, "t": cell(r, 6) or 0,
-        "pct": cell(r, 7),
-        "pf": cell(r, 8), "pa": cell(r, 9),
-        "playoff": cell(r, 10) == "Y",
-        "wb_app": cell(r, 11) == "Y",
-        "wb_champ": cell(r, 12) == "Y",
+        "w": r["w"] or 0, "l": r["l"] or 0, "t": r["t"] or 0,
+        "pct": r["pct"],
+        "pf": r["pf"], "pa": r["pa"],
+        "playoff": bool(r["playoff"]),
+        "wb_app": bool(r["wb_app"]),
+        "wb_champ": bool(r["wb_champ"]),
         "canonical": name,
         "metro": metro,
         "metro_slug": metro_slug.get(metro),
@@ -164,7 +170,7 @@ out = {
 }
 
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
-json.dump(out, open(OUT, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+json.dump(out, open(OUT, "w", encoding="utf-8", newline="\n"), ensure_ascii=False, indent=2)
 print(f"Wrote {OUT}")
 print(f"  {len(world_bowls)} World Bowls, {len(franchises)} franchises, {len(standings)} season rows")
 print("  Franchises (titles | metros):")

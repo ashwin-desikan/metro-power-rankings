@@ -21,7 +21,30 @@ import sys
 import unicodedata
 from collections import defaultdict
 from datetime import date
-from openpyxl import load_workbook
+import os, time, urllib.request, urllib.parse
+
+SB_URL = (os.environ.get("SUPABASE_URL") or os.environ.get("NEXT_PUBLIC_SUPABASE_URL")
+          or "https://nmprqkmymrdknffwnuur.supabase.co").rstrip("/")
+SB_KEY = (os.environ.get("SUPABASE_ANON_KEY") or os.environ.get("NEXT_PUBLIC_SUPABASE_ANON_KEY")
+          or "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5tcHJxa215bXJka25mZndudXVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyMDkzNDMsImV4cCI6MjA5ODc4NTM0M30.4RXU3mQ-Yl81ZqC2_a10aizKGu_87B4vt8OK5Pi_-sM")
+
+def _sb(table, select, order="id"):
+    out, step, off = [], 1000, 0
+    while True:
+        q = urllib.parse.urlencode({"select": select, "order": order, "limit": step, "offset": off})
+        req = urllib.request.Request(f"{SB_URL}/rest/v1/{table}?{q}",
+                                     headers={"apikey": SB_KEY, "Authorization": f"Bearer {SB_KEY}"})
+        for _try in range(4):
+            try:
+                with urllib.request.urlopen(req, timeout=30) as rr:
+                    batch = json.load(rr); break
+            except Exception:
+                if _try == 3: raise
+                time.sleep(2)
+        out += batch
+        if len(batch) < step:
+            return out
+        off += step
 
 SIX_NATIONS = {"England", "France", "Ireland", "Italy", "Scotland", "Wales"}
 SANZAAR = {"New Zealand", "Australia", "South Africa", "Argentina"}
@@ -76,11 +99,17 @@ def comp_family(comp):
 def main(xlsx_path, rank_path, out_dir):
     import os
 
-    wb = load_workbook(xlsx_path, read_only=True, data_only=True)
+    # OtherLeagues rugby sheets now sourced from Supabase (workbook retired)
 
     # ---------------- Results ----------------
-    ws = wb["Rugby Union - Intl Results"]
-    rrows = list(ws.iter_rows(values_only=True))[1:]
+    _R_COLS = ["date","team","wld","opp","pf","pa","comp","stage","stadium","city","country"]
+    _R_POS  = [0,1,2,3,4,5,7,8,10,11,12]
+    rrows = []
+    for _d in _sb("rugby_results", ",".join(_R_COLS)):
+        _r = [None]*13
+        for _c,_p in zip(_R_COLS,_R_POS):
+            _r[_p] = _d[_c]
+        rrows.append(_r)
     rec = defaultdict(lambda: {"m": 0, "w": 0, "l": 0, "d": 0, "pf": 0, "pa": 0,
                                "first": None, "last": None})
     h2h = defaultdict(lambda: defaultdict(lambda: {"m": 0, "w": 0, "l": 0, "d": 0}))
@@ -128,8 +157,17 @@ def main(xlsx_path, rank_path, out_dir):
             }
 
     # ---------------- Tables (standings + flags) ----------------
-    ws = wb["Rugby Union - Intl Tables"]
-    trows = list(ws.iter_rows(values_only=True))[1:]
+    _T_COLS = ["season","comp","pool","place","team","rwc_qf","rwc_sf","rwc_f","trophy","triple_crown","grand_slam"]
+    _T_POS  = [0,1,2,3,4,17,18,19,20,21,22]
+    _T_BOOL = {"rwc_qf","rwc_sf","rwc_f","trophy","triple_crown","grand_slam"}
+    trows = []
+    for _d in _sb("rugby_tables", ",".join(_T_COLS)):
+        _r = [None]*23
+        for _c,_p in zip(_T_COLS,_T_POS):
+            _v = _d[_c]
+            if _c in _T_BOOL: _v = "Y" if _v else ""
+            _r[_p] = _v
+        trows.append(_r)
     seasons_by_team = defaultdict(list)
     champ = defaultdict(lambda: {"5N6N_titles": 0, "5N6N_years": [], "grand_slams": 0,
                                  "triple_crowns": 0, "trc_titles": 0, "trc_years": []})

@@ -21,6 +21,33 @@ METROS = os.path.join(ROOT, "public", "data", "metros.json")
 
 import openpyxl
 
+_SB_URL = (os.environ.get("SUPABASE_URL") or os.environ.get("NEXT_PUBLIC_SUPABASE_URL")
+           or "https://nmprqkmymrdknffwnuur.supabase.co").rstrip("/")
+_SB_KEY = (os.environ.get("SUPABASE_ANON_KEY") or os.environ.get("NEXT_PUBLIC_SUPABASE_ANON_KEY")
+           or "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5tcHJxa215bXJka25mZndudXVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyMDkzNDMsImV4cCI6MjA5ODc4NTM0M30.4RXU3mQ-Yl81ZqC2_a10aizKGu_87B4vt8OK5Pi_-sM")
+
+def _sb_fetch(table, select, order="id"):
+    import urllib.request, urllib.parse, urllib.error, time
+    out, step, off = [], 1000, 0
+    while True:
+        q = urllib.parse.urlencode({"select": select, "order": order, "limit": step, "offset": off})
+        req = urllib.request.Request(f"{_SB_URL}/rest/v1/{table}?{q}",
+                                     headers={"apikey": _SB_KEY, "Authorization": f"Bearer {_SB_KEY}"})
+        batch = None
+        for attempt in range(5):
+            try:
+                with urllib.request.urlopen(req, timeout=30) as resp:
+                    batch = json.load(resp)
+                break
+            except (urllib.error.HTTPError, urllib.error.URLError):
+                if attempt == 4:
+                    raise
+                time.sleep(2 * (attempt + 1))
+        out += batch
+        if len(batch) < step:
+            return out
+        off += step
+
 # Curated franchise metadata keyed by canonical name.
 # (abbr, city, state, metro_slug, color)
 FR = {
@@ -80,15 +107,26 @@ def num(v):
     return v if isinstance(v, (int, float)) else None
 
 def main():
-    wb = openpyxl.load_workbook(SRC, read_only=True, data_only=True)
-    if "WNBA" not in wb.sheetnames:
-        sys.exit(f"WNBA sheet not found in {SRC}")
-    ws = wb["WNBA"]
-    rows = list(ws.iter_rows(values_only=True))
-    # row0 = labels, row1 = header, data from row2
-    data = [r for r in rows[2:] if isinstance(r[0], int)]
-    current = [r[24] for r in rows[1:] if r[24] and r[24] != "Current Teams"]
-    defunct = [r[26] for r in rows[1:] if r[26] and r[26] != "Defunct Teams"]
+    seasons_rows = _sb_fetch("wnba_seasons",
+        "season,team,conference,w,l,win_pct,gb,ps_g,pf_g,playoffs,div_title,"
+        "best_rec,p_wins,p_losses,sf_app,champ_app,champ,canonical_name", order="id")
+    fr = _sb_fetch("wnba_franchises", "name,status", order="id")
+
+    def _Y(v): return "Y" if v else None
+    def _N(v):
+        if v is None or v == "": return None
+        f = float(v)
+        return int(f) if f == int(f) else f
+
+    data = [(
+        int(x["season"]), x["team"], x["conference"], _N(x["w"]), _N(x["l"]),
+        _N(x["win_pct"]), _N(x["gb"]), _N(x["ps_g"]), _N(x["pf_g"]),
+        _Y(x["playoffs"]), _Y(x["div_title"]), _Y(x["best_rec"]),
+        _N(x["p_wins"]), _N(x["p_losses"]),
+        _Y(x["sf_app"]), _Y(x["champ_app"]), _Y(x["champ"]), x["canonical_name"],
+    ) for x in seasons_rows]
+    current = [f["name"] for f in fr if f["status"] == "current"]
+    defunct = [f["name"] for f in fr if f["status"] == "defunct"]
     current_set, defunct_set = set(current), set(defunct)
     vmetros = valid_metros()
     at_metros = wbasketball_metros()

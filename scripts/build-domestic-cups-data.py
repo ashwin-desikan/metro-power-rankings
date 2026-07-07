@@ -16,7 +16,30 @@ Run after editing the sheet:  python3 scripts/build-domestic-cups-data.py
 """
 import json, os, re, datetime
 from collections import defaultdict
-import openpyxl
+import time, urllib.request, urllib.parse
+
+SB_URL = (os.environ.get("SUPABASE_URL") or os.environ.get("NEXT_PUBLIC_SUPABASE_URL")
+          or "https://nmprqkmymrdknffwnuur.supabase.co").rstrip("/")
+SB_KEY = (os.environ.get("SUPABASE_ANON_KEY") or os.environ.get("NEXT_PUBLIC_SUPABASE_ANON_KEY")
+          or "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5tcHJxa215bXJka25mZndudXVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyMDkzNDMsImV4cCI6MjA5ODc4NTM0M30.4RXU3mQ-Yl81ZqC2_a10aizKGu_87B4vt8OK5Pi_-sM")
+
+def _sb(table, select, order="id"):
+    out, step, off = [], 1000, 0
+    while True:
+        q = urllib.parse.urlencode({"select": select, "order": order, "limit": step, "offset": off})
+        req = urllib.request.Request(f"{SB_URL}/rest/v1/{table}?{q}",
+                                     headers={"apikey": SB_KEY, "Authorization": f"Bearer {SB_KEY}"})
+        for _t in range(4):
+            try:
+                with urllib.request.urlopen(req, timeout=30) as rr:
+                    batch = json.load(rr); break
+            except Exception:
+                if _t == 3: raise
+                time.sleep(2)
+        out += batch
+        if len(batch) < step:
+            return out
+        off += step
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, "OtherLeagues.xlsx")
@@ -65,9 +88,11 @@ def main():
     seasons_keys = set(json.load(open(os.path.join(OUT_DIR,"seasons.json"), encoding="utf-8")).keys())
     existing_slugs = seasons_keys | set(v for v in slug_lookup.values() if v)
 
-    wb = openpyxl.load_workbook(SRC, read_only=True, data_only=True)
-    ws = wb[SHEET]
-    rows = list(ws.iter_rows(values_only=True))
+    _HDR = ["Team","Leag/Comp.","Year","Season","Comp. Rnd","Cur. Name","Opp. Name","W/D/L","Trophy Won","Cup Final","Metro Area","County","Country","Continent","YYYYMMDD","Date","For","Ag","Comp Leg","Stadium","Stad. Metro Area"]
+    _KEY = {"Team":"team","Leag/Comp.":"leag_comp","Year":"year","Season":"season","Comp. Rnd":"comp_rnd","Cur. Name":"cur_name","Opp. Name":"opp_name","W/D/L":"wdl","Trophy Won":"trophy_won","Cup Final":"cup_final","Metro Area":"metro_area","County":"county","Country":"country","Continent":"continent","YYYYMMDD":"yyyymmdd","Date":"date_str","For":"for_val","Ag":"ag_val","Comp Leg":"comp_leg","Stadium":"stadium","Stad. Metro Area":"stad_metro_area"}
+    rows = [tuple(_HDR)]
+    for _d in _sb("domestic_cups", ",".join(_KEY[h] for h in _HDR)):
+        rows.append(tuple(_d[_KEY[h]] for h in _HDR))
     hdr = rows[0]; I = {h:i for i,h in enumerate(hdr)}
     def g(r, name):
         i = I.get(name); return r[i] if i is not None and i < len(r) else None

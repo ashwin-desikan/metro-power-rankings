@@ -25,6 +25,36 @@ from collections import defaultdict
 
 from openpyxl import load_workbook
 
+# --- Supabase source of truth for the EuroLeague table (migrated 2026-07 from
+# OtherLeagues.xlsx). Read-only anon key; order by id to preserve sheet order so
+# order-dependent output (e.g. title_years) stays byte-identical.
+_SB_URL = (os.environ.get("SUPABASE_URL") or os.environ.get("NEXT_PUBLIC_SUPABASE_URL")
+           or "https://nmprqkmymrdknffwnuur.supabase.co").rstrip("/")
+_SB_KEY = (os.environ.get("SUPABASE_ANON_KEY") or os.environ.get("NEXT_PUBLIC_SUPABASE_ANON_KEY")
+           or "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5tcHJxa215bXJka25mZndudXVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyMDkzNDMsImV4cCI6MjA5ODc4NTM0M30.4RXU3mQ-Yl81ZqC2_a10aizKGu_87B4vt8OK5Pi_-sM")
+
+def _sb_fetch(table, select, order="id"):
+    import urllib.request, urllib.parse, urllib.error, time
+    out, step, off = [], 1000, 0
+    while True:
+        q = urllib.parse.urlencode({"select": select, "order": order, "limit": step, "offset": off})
+        req = urllib.request.Request(f"{_SB_URL}/rest/v1/{table}?{q}",
+                                     headers={"apikey": _SB_KEY, "Authorization": f"Bearer {_SB_KEY}"})
+        batch = None
+        for attempt in range(5):
+            try:
+                with urllib.request.urlopen(req, timeout=30) as resp:
+                    batch = json.load(resp)
+                break
+            except (urllib.error.HTTPError, urllib.error.URLError):
+                if attempt == 4:
+                    raise
+                time.sleep(2 * (attempt + 1))
+        out += batch
+        if len(batch) < step:
+            return out
+        off += step
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
 WC = os.path.join(HERE, "basketballwc.txt")
@@ -162,19 +192,21 @@ def parse_oly():
 
 
 def parse_euroleague():
-    wb = load_workbook(XLSX, read_only=True, data_only=True)
-    ws = wb["Euroleague Table"]
-    rows = list(ws.iter_rows(values_only=True))[1:]
+    rows = _sb_fetch("euroleague_seasons",
+                     "season,competition,team,canonical_name,country,w,l,"
+                     "playoffs,qf_app,final_four_app,final_app,champion", order="id")
     out = []
     for r in rows:
-        if not r[0] or not r[2]:
+        if not r.get("season") or not r.get("team"):
             continue
         out.append({
-            "season": str(r[0]), "comp": str(r[1] or ""),
-            "team": str(r[20] or r[2]).strip(), "country": str(r[3] or ""),
-            "w": int(r[8] or 0), "l": int(r[9] or 0),
-            "playoffs": r[11] == "Y", "qf": r[12] == "Y", "f4": r[13] == "Y",
-            "final": r[14] == "Y", "champs": r[15] == "Y",
+            "season": str(r["season"]), "comp": str(r.get("competition") or ""),
+            "team": str(r.get("canonical_name") or r["team"]).strip(),
+            "country": str(r.get("country") or ""),
+            "w": int(r.get("w") or 0), "l": int(r.get("l") or 0),
+            "playoffs": bool(r.get("playoffs")), "qf": bool(r.get("qf_app")),
+            "f4": bool(r.get("final_four_app")), "final": bool(r.get("final_app")),
+            "champs": bool(r.get("champion")),
         })
     return out
 
