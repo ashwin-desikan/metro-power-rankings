@@ -1,0 +1,58 @@
+name: CFL season refresh
+
+# Daily in-season: scrape the current CFL standings from cfl.ca (ESPN has no live
+# CFL feed), upsert the in-progress season into Supabase (public.cfl_standings,
+# idempotent on year+team), rebuild the CFL hub JSON from Supabase, and commit
+# with [vercel skip]. Quiet days produce no commit.
+#
+# REQUIRES repo secret SUPABASE_WRITE_KEY (sb_secret_..., new key system).
+
+on:
+  schedule:
+    - cron: "0 12 * * *"     # 12:00 UTC daily; ingest is a no-op in the offseason
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cfl-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Ingest cfl.ca standings -> Supabase
+        env:
+          SUPABASE_WRITE_KEY: ${{ secrets.SUPABASE_WRITE_KEY }}
+        run: python3 scripts/ingest/cfl_ingest.py
+
+      - name: Rebuild CFL hub JSON from Supabase
+        run: python3 scripts/build-cfl-data.py
+
+      - name: Commit and push only if the data changed
+        run: |
+          if git diff --quiet -- public/data/cfl/data.json; then
+            echo "No change in CFL data; nothing to deploy."
+            exit 0
+          fi
+          git config user.name "cfl-refresh-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/cfl/data.json
+          git commit -m "Auto: refresh CFL live season from cfl.ca [vercel skip]"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "Pushed on attempt $attempt."; exit 0
+            fi
+            echo "Push race on attempt $attempt; retrying..."; sleep $((attempt * 5))
+          done
+          echo "Failed to push after retries." >&2; exit 1
