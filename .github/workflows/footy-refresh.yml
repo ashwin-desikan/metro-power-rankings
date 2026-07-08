@@ -1,23 +1,26 @@
-name: AFL season refresh
+name: AFL + NRL season refresh
 
-# Daily in-season: pull the current AFL ladder from ESPN, upsert the in-progress
-# season into Supabase (public.afl_nrl_ladders, sport='Aussie Rules', idempotent
-# on sport+season+team), rebuild the AFL/NRL hub JSON from Supabase, and commit
-# with [vercel skip]. The build's Team List falls back to the committed
-# all-teams.json, so no workbook is needed in CI. Quiet days produce no commit.
+# Daily in-season: pull the current AFL ladder and NRL ladder from ESPN, upsert
+# each in-progress season into Supabase (public.afl_nrl_ladders, idempotent on
+# sport+season+team), rebuild the AFL/NRL hub JSON from Supabase, and commit with
+# [vercel skip]. The build's Team List falls back to the committed all-teams.json,
+# so no workbook is needed in CI. Quiet days produce no commit.
+#
+# AFL uses ESPN australian-football/afl; NRL uses rugby-league/3 (league id 3,
+# nickname displayNames, gamesWon/gamesLost/gamesDrawn) per lib/_footyStandings.ts.
 #
 # REQUIRES repo secret SUPABASE_WRITE_KEY (sb_secret_..., new key system).
 
 on:
   schedule:
-    - cron: "0 22 * * *"     # 22:00 UTC daily; ingest is a no-op in the offseason
+    - cron: "0 22 * * *"     # 22:00 UTC daily; ingests are a no-op in the offseason
   workflow_dispatch: {}
 
 permissions:
   contents: write
 
 concurrency:
-  group: afl-refresh
+  group: footy-refresh
   cancel-in-progress: false
 
 jobs:
@@ -40,6 +43,11 @@ jobs:
           SUPABASE_WRITE_KEY: ${{ secrets.SUPABASE_WRITE_KEY }}
         run: python3 scripts/ingest/afl_ingest.py
 
+      - name: Ingest ESPN NRL ladder -> Supabase
+        env:
+          SUPABASE_WRITE_KEY: ${{ secrets.SUPABASE_WRITE_KEY }}
+        run: python3 scripts/ingest/nrl_ingest.py
+
       - name: Rebuild AFL/NRL hub JSON from Supabase
         run: python3 scripts/build-afl-nrl-data.py OtherLeagues.xlsx MetroAreas.xlsx public/data
 
@@ -49,10 +57,10 @@ jobs:
             echo "No change in AFL/NRL data; nothing to deploy."
             exit 0
           fi
-          git config user.name "afl-refresh-bot"
+          git config user.name "footy-refresh-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add public/data/afl/data.json public/data/nrl/data.json
-          git commit -m "Auto: refresh AFL live season from ESPN [vercel skip]"
+          git commit -m "Auto: refresh AFL+NRL live seasons from ESPN [vercel skip]"
           for attempt in 1 2 3 4 5; do
             if git pull --rebase --autostash origin main && git push; then
               echo "Pushed on attempt $attempt."; exit 0
