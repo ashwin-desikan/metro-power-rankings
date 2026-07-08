@@ -1,0 +1,62 @@
+name: AFL season refresh
+
+# Daily in-season: pull the current AFL ladder from ESPN, upsert the in-progress
+# season into Supabase (public.afl_nrl_ladders, sport='Aussie Rules', idempotent
+# on sport+season+team), rebuild the AFL/NRL hub JSON from Supabase, and commit
+# with [vercel skip]. The build's Team List falls back to the committed
+# all-teams.json, so no workbook is needed in CI. Quiet days produce no commit.
+#
+# REQUIRES repo secret SUPABASE_WRITE_KEY (sb_secret_..., new key system).
+
+on:
+  schedule:
+    - cron: "0 22 * * *"     # 22:00 UTC daily; ingest is a no-op in the offseason
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: afl-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install openpyxl
+
+      - name: Ingest ESPN AFL ladder -> Supabase
+        env:
+          SUPABASE_WRITE_KEY: ${{ secrets.SUPABASE_WRITE_KEY }}
+        run: python3 scripts/ingest/afl_ingest.py
+
+      - name: Rebuild AFL/NRL hub JSON from Supabase
+        run: python3 scripts/build-afl-nrl-data.py OtherLeagues.xlsx MetroAreas.xlsx public/data
+
+      - name: Commit and push only if the data changed
+        run: |
+          if git diff --quiet -- public/data/afl/data.json public/data/nrl/data.json; then
+            echo "No change in AFL/NRL data; nothing to deploy."
+            exit 0
+          fi
+          git config user.name "afl-refresh-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/afl/data.json public/data/nrl/data.json
+          git commit -m "Auto: refresh AFL live season from ESPN [vercel skip]"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "Pushed on attempt $attempt."; exit 0
+            fi
+            echo "Push race on attempt $attempt; retrying..."; sleep $((attempt * 5))
+          done
+          echo "Failed to push after retries." >&2; exit 1

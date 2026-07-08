@@ -104,14 +104,31 @@ SPORT_TO_LEAGUE = {"Aussie Rules":"afl","Rugby League":"nrl"}
 STRIPPED = {("nrl", "Melbourne Storm", 2007), ("nrl", "Melbourne Storm", 2009)}
 
 def load_team_list(path):
-    wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
-    ws = wb["Team List"]
-    cur = {}  # (league, name) -> {metro, state}
-    for r in ws.iter_rows(min_row=2, values_only=True):
-        lg = S(r[1])
-        if lg in ("AFL","NRL"):
-            cur[(lg, S(r[2]))] = {"metro": slugify(S(r[6])), "metro_name": S(r[6]),
-                                  "state": S(r[7]), "qid": S(r[16]) or None}
+    # Local runs read the workbook Team List. In CI the 36MB MetroAreas.xlsx is
+    # not in git, so fall back to the committed all-teams.json, which carries the
+    # same AFL/NRL metro/state/QID (verified identical on every shared key).
+    if path and os.path.exists(path):
+        wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
+        ws = wb["Team List"]
+        cur = {}  # (league, name) -> {metro, state}
+        for r in ws.iter_rows(min_row=2, values_only=True):
+            lg = S(r[1])
+            if lg in ("AFL","NRL"):
+                cur[(lg, S(r[2]))] = {"metro": slugify(S(r[6])), "metro_name": S(r[6]),
+                                      "state": S(r[7]), "qid": S(r[16]) or None}
+        return cur
+    import json as _json
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    d = _json.load(open(os.path.join(root, "public", "data", "sports", "all-teams.json"), encoding="utf-8"))
+    rows = d if isinstance(d, list) else d.get("teams", d)
+    s2l = {"Aussie Rules": "AFL", "Rugby League": "NRL"}
+    cur = {}
+    for r in rows:
+        lg = s2l.get(r.get("sport"))
+        if not lg:
+            continue
+        cur[(lg, S(r.get("team")))] = {"metro": S(r.get("metro_slug")), "metro_name": S(r.get("metro")),
+                                       "state": S(r.get("state")), "qid": (S(r.get("wikidata_qid")) or None)}
     return cur
 
 def main():
