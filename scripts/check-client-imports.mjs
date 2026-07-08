@@ -54,6 +54,8 @@ const SERVER_ONLY_MODULES = [
   "@/lib/nwsl-standings",
   "@/lib/mls-standings",
   "@/lib/standings",
+  "@/lib/rugbyFixtures",
+  "@/lib/cricketFixtures",
   "@/lib/mlb-standings",
   "@/lib/nba-standings",
   "@/lib/nhl",

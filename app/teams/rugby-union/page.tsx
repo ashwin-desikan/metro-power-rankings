@@ -5,6 +5,8 @@ import RugbyGreatestGames from "@/app/teams/rugby-union/RugbyGreatestGames";
 import { getAllRugbyTeams, getRugbyHub, rugbyWinPct } from "@/lib/rugbyUnion";
 import { getRugbyGames } from "@/lib/rugbyGames";
 import { getRugbyClubRolls } from "@/lib/rugbyClubs";
+import { getRugbyFixtures } from "@/lib/rugbyFixtures";
+import RugbyFixtures from "@/app/teams/rugby-union/RugbyFixtures";
 import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
@@ -30,10 +32,11 @@ function spanStr(first: string | null, last: string | null): string {
   return `${first.slice(0, 4)}–${last.slice(0, 4)}`;
 }
 
-export default function RugbyUnionHubPage() {
+export default async function RugbyUnionHubPage() {
   const hub = getRugbyHub();
   const teams = getAllRugbyTeams();
   const rg = getRugbyGames();
+  const fixtures = await getRugbyFixtures();
   if (!hub) return null;
 
   const slugByName = new Map(teams.map((t) => [t.name, t.slug]));
@@ -74,6 +77,8 @@ export default function RugbyUnionHubPage() {
           since 2003 — with a page for every test nation on file.
         </p>
       </header>
+
+      {fixtures ? <RugbyFixtures data={fixtures} /> : null}
 
       <HubNav
         items={[

@@ -40,9 +40,11 @@ case "$JOB" in
     MSG="Auto: refresh FIBA World Ranking [vercel skip]" ;;
   rugby)
     "$PY" scripts/rugby/fetch_wru_rankings.py scripts/rugby/wrurankings.txt 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "fetch_wru_rankings failed"
+    "$PY" scripts/ingest/rugby_results_ingest.py 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "rugby_results_ingest failed"
     "$PY" scripts/rugby/build_rugby_union_data.py OtherLeagues.xlsx scripts/rugby/wrurankings.txt public/data/rugby-union 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "build_rugby_union_data failed"
+    "$PY" scripts/rugby/build_rugby_top_games.py 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "build_rugby_top_games failed"
     ADD=( public/data/rugby-union scripts/rugby/wrurankings.txt )
-    MSG="Auto: refresh World Rugby rankings [vercel skip]" ;;
+    MSG="Auto: refresh World Rugby rankings + results [vercel skip]" ;;
   substack)
     node scripts/refresh-substack-feed.mjs 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "refresh-substack-feed failed"
     ADD=( public/data/substack-feed.json )

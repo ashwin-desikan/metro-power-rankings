@@ -11,6 +11,8 @@ import { flagCdnUrl } from "@/lib/international-display";
 import { getWtcStandings } from "@/lib/wtcStandings";
 import { getCricketGames } from "@/lib/cricketGames";
 import CricketGreatestGames from "./CricketGreatestGames";
+import { getCricketFixtures } from "@/lib/cricketFixtures";
+import CricketFixtures from "@/app/teams/cricket/CricketFixtures";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -51,6 +53,7 @@ export default async function CricketHubPage() {
   const cg = getCricketGames();
   const teams = getAllCricketTeams();
   const wtc = await getWtcStandings();
+  const fixtures = await getCricketFixtures();
   const hasWtc = !!wtc && wtc.rows.length > 0;
   if (!hub) return null;
 
@@ -113,6 +116,8 @@ export default async function CricketHubPage() {
           named series trophies from the Ashes on down.
         </p>
       </header>
+
+      {fixtures ? <CricketFixtures data={fixtures} /> : null}
 
       <HubNav
         items={[
