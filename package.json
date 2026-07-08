@@ -11,7 +11,9 @@
     "typecheck": "tsc --noEmit",
     "check:client-imports": "node scripts/check-client-imports.mjs",
     "check:public-data": "node scripts/check-public-data.mjs",
-    "verify": "npm run typecheck && npm run check:client-imports && npm run check:public-data && next build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "verify": "npm run typecheck && npm run check:client-imports && npm run check:public-data && npm run test && next build",
     "deploy-status": "node scripts/deploy-status.mjs"
   },
   "dependencies": {
@@ -31,6 +33,7 @@
     "typescript": "^6.0.2"
   },
   "devDependencies": {
-    "@types/leaflet": "^1.9.21"
+    "@types/leaflet": "^1.9.21",
+    "vitest": "^4.1.10"
   }
 }

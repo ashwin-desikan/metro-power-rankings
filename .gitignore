@@ -119,6 +119,7 @@ CBB.xlsx
 # Ignore all Python bytecode caches (was only scripts/__pycache__/ before)
 __pycache__/
 *.pyc
+.pytest_cache/
 
 # NPB source workbook (214KB ChatGPT extract); generated JSON is committed
 scripts/npb/npb_source.xlsx
