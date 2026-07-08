@@ -448,7 +448,7 @@ export default async function CountryDetailPage({ params }: Props) {
                 Every major championship won by {country.name}&apos;s national teams, newest first. {champTitles.length} in total.
               </p>
               <div className="border rounded-lg overflow-hidden" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
-                <div className="max-h-[32rem] overflow-y-auto">
+                <div className="max-h-[32rem] overflow-y-auto overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead className="sticky top-0 border-b" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
                       <tr className="text-left text-[10px] uppercase tracking-widest text-[var(--text-dim)]">

@@ -917,7 +917,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                 competition&apos;s full honour roll.
               </p>
               <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden">
-                <div className="max-h-[32rem] overflow-y-auto">
+                <div className="max-h-[32rem] overflow-y-auto overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead className="sticky top-0 bg-[var(--bg-card)] border-b border-[var(--border)]">
                       <tr className="text-left text-[10px] uppercase tracking-widest text-[var(--text-dim)]">

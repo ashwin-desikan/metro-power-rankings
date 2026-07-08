@@ -471,7 +471,7 @@ export default async function FranchisePage({ params }: Props) {
       <div className="grid gap-4 lg:grid-cols-2 mt-4">
         {/* All-time record */}
         <Block title="All-time record" deck={null}>
-          <table className="w-full text-sm">
+          <table className="w-full text-sm" data-no-scroll-check>
             <tbody>
               <Row k="Regular-season W-L" v={`${f.all_time_w}-${f.all_time_l}`} />
               <Row k="Win pct" v={f.win_pct.toFixed(3)} />
@@ -857,7 +857,7 @@ function DefunctFranchisePage({ h, slug }: { h: HistoricalFranchise; slug: strin
 
       {/* All-time record */}
       <Block title="All-time record" deck={null}>
-        <table className="w-full text-sm">
+        <table className="w-full text-sm" data-no-scroll-check>
           <tbody>
             <Row k="Regular-season W-L" v={`${h.w}-${h.l}${h.t ? `-${h.t}` : ""}`} />
             <Row k="Win pct" v={h.win_pct.toFixed(3)} />

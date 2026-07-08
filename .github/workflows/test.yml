@@ -2,7 +2,9 @@ name: Test
 
 # Runs the unit test suites on every push/PR: Vitest for lib/ ranking and
 # tier logic, pytest for the pure helpers in scripts/ (extract, sync,
-# staging). Does not touch public/data or push anything; read-only checks.
+# staging), and the table-scroll AST guard that catches tables silently
+# losing mobile scroll/sticky behavior. Does not touch public/data or push
+# anything; read-only checks.
 
 on:
   push:
@@ -29,6 +31,9 @@ jobs:
 
       - name: Run Vitest suite
         run: npm test
+
+      - name: Check table scroll wrapping
+        run: npm run check:table-scroll
 
       - name: Set up Python
         uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6

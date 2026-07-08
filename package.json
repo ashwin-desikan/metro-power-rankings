@@ -11,9 +11,10 @@
     "typecheck": "tsc --noEmit",
     "check:client-imports": "node scripts/check-client-imports.mjs",
     "check:public-data": "node scripts/check-public-data.mjs",
+    "check:table-scroll": "node scripts/check-table-scroll.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
-    "verify": "npm run typecheck && npm run check:client-imports && npm run check:public-data && npm run test && next build",
+    "verify": "npm run typecheck && npm run check:client-imports && npm run check:public-data && npm run check:table-scroll && npm run test && next build",
     "deploy-status": "node scripts/deploy-status.mjs"
   },
   "dependencies": {

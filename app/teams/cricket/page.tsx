@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
+import { TableScroll } from "@/app/_shared/TableScroll";
 import {
   CRICKET_FORMATS,
   getAllCricketTeams,
@@ -225,6 +226,7 @@ export default async function CricketHubPage() {
           {CRICKET_FORMATS.map((fmt) => (
             <div key={fmt} className="rounded-xl border p-4" style={card}>
               <div className="font-semibold mb-2">{fmt}</div>
+              <TableScroll>
               <table className="w-full text-sm">
                 <thead>
                   <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -243,6 +245,7 @@ export default async function CricketHubPage() {
                   ))}
                 </tbody>
               </table>
+              </TableScroll>
             </div>
           ))}
         </div>
@@ -258,6 +261,7 @@ export default async function CricketHubPage() {
           {CRICKET_FORMATS.map((fmt) => (
             <div key={fmt} className="rounded-xl border p-4" style={card}>
               <div className="font-semibold mb-2">{fmt}</div>
+              <TableScroll>
               <table className="w-full text-sm">
                 <thead>
                   <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -278,6 +282,7 @@ export default async function CricketHubPage() {
                   ))}
                 </tbody>
               </table>
+              </TableScroll>
             </div>
           ))}
         </div>

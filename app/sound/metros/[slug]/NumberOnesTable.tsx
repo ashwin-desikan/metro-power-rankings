@@ -39,8 +39,8 @@ export default function NumberOnesTable({ rows }: { rows: N1[] }) {
   const arrow = (k: Key) => (k === sort ? (dir === 'asc' ? ' ▲' : ' ▼') : '');
 
   return (
-    <div className="overflow-x-auto rounded-lg border" style={{ borderColor: 'var(--border, #222b36)' }}>
-      <div className="max-h-[480px] overflow-y-auto">
+    <div className="rounded-lg border" style={{ borderColor: 'var(--border, #222b36)' }}>
+      <div className="max-h-[480px] overflow-y-auto overflow-x-auto">
         <table className="w-full text-sm">
           <thead className="sticky top-0 z-10" style={{ background: 'var(--bg-card, #0f151c)' }}>
             <tr>

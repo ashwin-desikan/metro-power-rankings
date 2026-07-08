@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
+import { TableScroll } from "@/app/_shared/TableScroll";
 import RugbyGreatestGames from "@/app/teams/rugby-union/RugbyGreatestGames";
 import { getAllRugbyTeams, getRugbyHub, rugbyWinPct } from "@/lib/rugbyUnion";
 import { getRugbyGames } from "@/lib/rugbyGames";
@@ -133,6 +134,7 @@ export default async function RugbyUnionHubPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div className="rounded-xl border p-4" style={card}>
             <div className="font-semibold mb-2">Current top 15</div>
+            <TableScroll>
             <table className="w-full text-sm">
               <thead>
                 <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -149,9 +151,11 @@ export default async function RugbyUnionHubPage() {
                 ))}
               </tbody>
             </table>
+            </TableScroll>
           </div>
           <div className="rounded-xl border p-4" style={card}>
             <div className="font-semibold mb-2">Weeks at number one</div>
+            <TableScroll>
             <table className="w-full text-sm">
               <thead>
                 <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -172,6 +176,7 @@ export default async function RugbyUnionHubPage() {
                 ))}
               </tbody>
             </table>
+            </TableScroll>
           </div>
         </div>
       </section>
