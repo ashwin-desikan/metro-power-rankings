@@ -1,0 +1,92 @@
+[
+  {
+    "name": "👑 Qara Yuluk Osman",
+    "role": "Bey",
+    "start": "1378-01-01",
+    "end": "1435-01-01",
+    "current": false,
+    "tenure": "57y 0d",
+    "party": "year-level backbone; founder of the confederation; rulers Ali Beg and Hamza (1435-1444) omitted, dates not grounded",
+    "era": "Aq Qoyunlu"
+  },
+  {
+    "name": "👑 Jahangir",
+    "role": "Bey",
+    "start": "1444-01-01",
+    "end": "1454-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone; contested from 1452 by his brother Uzun Hasan",
+    "era": "Aq Qoyunlu"
+  },
+  {
+    "name": "👑 Uzun Hasan",
+    "role": "Sultan",
+    "start": "1452-01-01",
+    "end": "1478-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone; peak; defeated Kara Koyunlu's Jahan Shah at Chapakchur 1467, defeated by Mehmed II at Otlukbeli 1473",
+    "era": "Aq Qoyunlu"
+  },
+  {
+    "name": "👑 Sultan Khalil",
+    "role": "Sultan",
+    "start": "1478-01-01",
+    "end": "1478-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone; ruled a few months; defeated at Khoy",
+    "era": "Aq Qoyunlu"
+  },
+  {
+    "name": "👑 Ya'qub",
+    "role": "Sultan",
+    "start": "1478-01-01",
+    "end": "1490-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone",
+    "era": "Aq Qoyunlu"
+  },
+  {
+    "name": "👑 Baysunghur",
+    "role": "Sultan",
+    "start": "1490-01-01",
+    "end": "1493-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone; civil war; dethroned 1491, killed 1493",
+    "era": "Aq Qoyunlu"
+  },
+  {
+    "name": "👑 Rustam",
+    "role": "Sultan",
+    "start": "1493-01-01",
+    "end": "1496-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Aq Qoyunlu"
+  },
+  {
+    "name": "👑 Ahmad Govde",
+    "role": "Sultan",
+    "start": "1497-01-01",
+    "end": "1497-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone; died December 1497; state split between rival princes (Alvand in the west, Murad in Iraq)",
+    "era": "Aq Qoyunlu"
+  },
+  {
+    "name": "👑 Sultan Murad",
+    "role": "Sultan",
+    "start": "1497-01-01",
+    "end": "1508-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone; last ruler; driven from Iraq by Safavid Ismail I, 1508",
+    "era": "Aq Qoyunlu"
+  }
+]

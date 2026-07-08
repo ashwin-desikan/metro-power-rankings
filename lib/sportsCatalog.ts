@@ -111,8 +111,8 @@ export const SPORTS_CATALOG: CatalogEntry[] = [
   { href: "/teams/rugby-union/clubs", label: "Domestic Rugby", boardLabel: "Domestic", sport: "Rugby Union", family: "Rugby Union", scope: "club", hint: "Club rugby's honours boards: the Champions Cup, the Top 14 back to 1892, the Premiership, the URC, Super Rugby, the Currie Cup, and Japan's League One" },
 
   // Rugby League
-  { href: "/teams/rugby-league", label: "International Rugby League", boardLabel: "International", sport: "Rugby League", family: "Rugby League", scope: "international", hint: "The Rugby League World Cup since 1954: 16 editions, every final, and the all-time national honour table." },
   { href: "/teams/nrl", label: "NRL", sport: "Rugby League", family: "Rugby League", scope: "club", hint: "Every NSWRL/NRL club since 1908, premierships, ladders, and the full Grand Final roll" },
+  { href: "/teams/rugby-league", label: "International Rugby League", boardLabel: "International", sport: "Rugby League", family: "Rugby League", scope: "international", hint: "The Rugby League World Cup since 1954: 16 editions, every final, and the all-time national honour table." },
 
   // Aussie Rules
   { href: "/teams/afl", label: "AFL", sport: "Aussie Rules", family: "Aussie Rules", scope: "club", hint: "Every VFL/AFL club since 1897, premierships, ladders, and the full Grand Final roll" },

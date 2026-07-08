@@ -1,0 +1,132 @@
+[
+  {
+    "name": "👑 Raden Wijaya (Kertarajasa)",
+    "role": "King",
+    "start": "1293-01-01",
+    "end": "1309-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone",
+    "era": "Majapahit"
+  },
+  {
+    "name": "👑 Jayanegara",
+    "role": "King",
+    "start": "1309-01-01",
+    "end": "1328-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone",
+    "era": "Majapahit"
+  },
+  {
+    "name": "👑 Tribhuwana Wijayatunggadewi",
+    "role": "Queen",
+    "start": "1328-01-01",
+    "end": "1350-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level backbone",
+    "era": "Majapahit"
+  },
+  {
+    "name": "👑 Hayam Wuruk",
+    "role": "King",
+    "start": "1350-01-01",
+    "end": "1389-01-01",
+    "current": false,
+    "tenure": "39y 0d",
+    "party": "year-level backbone",
+    "era": "Majapahit"
+  },
+  {
+    "name": "👑 Wikramawardhana",
+    "role": "King",
+    "start": "1389-01-01",
+    "end": "1429-01-01",
+    "current": false,
+    "tenure": "40y 0d",
+    "party": "year-level backbone",
+    "era": "Majapahit"
+  },
+  {
+    "name": "👑 Suhita",
+    "role": "Queen",
+    "start": "1429-01-01",
+    "end": "1447-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone",
+    "era": "Majapahit"
+  },
+  {
+    "name": "👑 Kertawijaya",
+    "role": "King",
+    "start": "1447-01-01",
+    "end": "1451-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Majapahit"
+  },
+  {
+    "name": "👑 Rajasawardhana",
+    "role": "King",
+    "start": "1451-01-01",
+    "end": "1453-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Majapahit"
+  },
+  {
+    "name": "👑 Girisawardhana",
+    "role": "King",
+    "start": "1456-01-01",
+    "end": "1466-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Majapahit"
+  },
+  {
+    "name": "👑 Singhawikramawardhana",
+    "role": "King",
+    "start": "1466-01-01",
+    "end": "1468-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Majapahit"
+  },
+  {
+    "name": "👑 Bhre Kertabhumi",
+    "role": "King",
+    "start": "1468-01-01",
+    "end": "1478-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Majapahit"
+  },
+  {
+    "name": "👑 Girindrawardhana (Ranawijaya)",
+    "role": "King",
+    "start": "1474-01-01",
+    "end": "1498-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone",
+    "era": "Majapahit"
+  },
+  {
+    "name": "👑 Udara",
+    "role": "King",
+    "start": "1498-01-01",
+    "end": "1527-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level backbone",
+    "era": "Majapahit"
+  }
+]

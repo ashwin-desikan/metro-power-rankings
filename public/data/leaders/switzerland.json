@@ -1,5 +1,145 @@
 [
   {
+    "name": "Alois von Reding",
+    "role": "First Landammann of the Helvetic Republic",
+    "start": "1801-11-22",
+    "end": "1802-04-20",
+    "current": false,
+    "tenure": "5 months",
+    "party": "Schwyz",
+    "era": "Helvetic Republic"
+  },
+  {
+    "name": "Vinzenz Rüttimann",
+    "role": "Statthalter of the Helvetic Republic (acting head)",
+    "start": "1802-04-20",
+    "end": "1802-07-05",
+    "current": false,
+    "tenure": "2 months",
+    "party": "Lucerne",
+    "era": "Helvetic Republic"
+  },
+  {
+    "name": "Johann Rudolf Dolder",
+    "role": "Landammann of the Helvetic Republic",
+    "start": "1802-07-05",
+    "end": "1803-02-19",
+    "current": false,
+    "tenure": "7 months",
+    "party": "Aargau",
+    "era": "Helvetic Republic"
+  },
+  {
+    "name": "Louis d'Affry",
+    "role": "Landammann of Switzerland",
+    "start": "1803-02-19",
+    "end": "1804-01-01",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Fribourg",
+    "era": "Act of Mediation"
+  },
+  {
+    "name": "Niklaus Rudolf von Wattenwyl",
+    "role": "Landammann of Switzerland",
+    "start": "1804-01-01",
+    "end": "1805-01-01",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Bern",
+    "era": "Act of Mediation"
+  },
+  {
+    "name": "Peter Glutz-Ruchti",
+    "role": "Landammann of Switzerland",
+    "start": "1805-01-01",
+    "end": "1806-01-01",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Solothurn",
+    "era": "Act of Mediation"
+  },
+  {
+    "name": "Andreas Merian",
+    "role": "Landammann of Switzerland",
+    "start": "1806-01-01",
+    "end": "1807-01-01",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Basel",
+    "era": "Act of Mediation"
+  },
+  {
+    "name": "Hans von Reinhard",
+    "role": "Landammann of Switzerland",
+    "start": "1807-01-01",
+    "end": "1808-01-01",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Zurich",
+    "era": "Act of Mediation"
+  },
+  {
+    "name": "Vinzenz Rüttimann",
+    "role": "Landammann of Switzerland",
+    "start": "1808-01-01",
+    "end": "1809-01-01",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Lucerne",
+    "era": "Act of Mediation"
+  },
+  {
+    "name": "Louis d'Affry",
+    "role": "Landammann of Switzerland",
+    "start": "1809-01-01",
+    "end": "1810-01-01",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Fribourg",
+    "era": "Act of Mediation"
+  },
+  {
+    "name": "Niklaus Rudolf von Wattenwyl",
+    "role": "Landammann of Switzerland",
+    "start": "1810-01-01",
+    "end": "1811-01-01",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Bern",
+    "era": "Act of Mediation"
+  },
+  {
+    "name": "Heinrich Grimm von Wartenfels",
+    "role": "Landammann of Switzerland",
+    "start": "1811-01-01",
+    "end": "1812-01-01",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Solothurn",
+    "era": "Act of Mediation"
+  },
+  {
+    "name": "Peter Burckhardt",
+    "role": "Landammann of Switzerland",
+    "start": "1812-01-01",
+    "end": "1813-01-01",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Basel",
+    "era": "Act of Mediation"
+  },
+  {
+    "name": "Hans von Reinhard",
+    "role": "Landammann of Switzerland",
+    "start": "1813-01-01",
+    "end": "1813-12-29",
+    "current": false,
+    "tenure": "1 year",
+    "party": "Zurich",
+    "era": "Act of Mediation"
+  },
+  {
     "name": "Jonas Furrer",
     "role": "President of the Swiss Confederation",
     "start": "1848-01-01",

@@ -1,0 +1,282 @@
+[
+  {
+    "name": "👑 Amyntas I",
+    "role": "King",
+    "start": "-0512-01-01",
+    "end": "-0498-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone",
+    "era": "Argead dynasty"
+  },
+  {
+    "name": "👑 Alexander I",
+    "role": "King",
+    "start": "-0498-01-01",
+    "end": "-0454-01-01",
+    "current": false,
+    "tenure": "44y 0d",
+    "party": "year-level backbone",
+    "era": "Argead dynasty"
+  },
+  {
+    "name": "👑 Perdiccas II",
+    "role": "King",
+    "start": "-0454-01-01",
+    "end": "-0413-01-01",
+    "current": false,
+    "tenure": "41y 0d",
+    "party": "year-level backbone",
+    "era": "Argead dynasty"
+  },
+  {
+    "name": "👑 Archelaus",
+    "role": "King",
+    "start": "-0413-01-01",
+    "end": "-0399-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone",
+    "era": "Argead dynasty"
+  },
+  {
+    "name": "👑 Aeropus II",
+    "role": "King",
+    "start": "-0398-01-01",
+    "end": "-0395-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Argead dynasty"
+  },
+  {
+    "name": "👑 Amyntas III",
+    "role": "King",
+    "start": "-0393-01-01",
+    "end": "-0369-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone",
+    "era": "Argead dynasty"
+  },
+  {
+    "name": "👑 Alexander II",
+    "role": "King",
+    "start": "-0369-01-01",
+    "end": "-0368-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Argead dynasty"
+  },
+  {
+    "name": "👑 Ptolemy of Aloros",
+    "role": "Regent",
+    "start": "-0368-01-01",
+    "end": "-0365-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Argead dynasty"
+  },
+  {
+    "name": "👑 Perdiccas III",
+    "role": "King",
+    "start": "-0365-01-01",
+    "end": "-0359-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Argead dynasty"
+  },
+  {
+    "name": "👑 Philip II",
+    "role": "King",
+    "start": "-0359-01-01",
+    "end": "-0336-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level backbone",
+    "era": "Argead dynasty"
+  },
+  {
+    "name": "👑 Alexander the Great",
+    "role": "King",
+    "start": "-0336-01-01",
+    "end": "-0323-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Argead dynasty"
+  },
+  {
+    "name": "👑 Philip III Arrhidaeus",
+    "role": "King",
+    "start": "-0323-01-01",
+    "end": "-0317-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Argead dynasty"
+  },
+  {
+    "name": "👑 Alexander IV",
+    "role": "King",
+    "start": "-0323-01-01",
+    "end": "-0310-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Argead dynasty"
+  },
+  {
+    "name": "👑 Cassander",
+    "role": "King",
+    "start": "-0310-01-01",
+    "end": "-0297-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Wars of the Diadochi"
+  },
+  {
+    "name": "👑 Antipater I",
+    "role": "King",
+    "start": "-0297-01-01",
+    "end": "-0294-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Wars of the Diadochi"
+  },
+  {
+    "name": "👑 Alexander V",
+    "role": "King",
+    "start": "-0297-01-01",
+    "end": "-0294-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Wars of the Diadochi"
+  },
+  {
+    "name": "👑 Demetrius I Poliorcetes",
+    "role": "King",
+    "start": "-0294-01-01",
+    "end": "-0288-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Wars of the Diadochi"
+  },
+  {
+    "name": "👑 Pyrrhus of Epirus",
+    "role": "King",
+    "start": "-0288-01-01",
+    "end": "-0284-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Wars of the Diadochi"
+  },
+  {
+    "name": "👑 Lysimachus",
+    "role": "King",
+    "start": "-0287-01-01",
+    "end": "-0281-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Wars of the Diadochi"
+  },
+  {
+    "name": "👑 Ptolemy Ceraunus",
+    "role": "King",
+    "start": "-0281-01-01",
+    "end": "-0279-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Wars of the Diadochi"
+  },
+  {
+    "name": "👑 Sosthenes",
+    "role": "Strategos",
+    "start": "-0279-01-01",
+    "end": "-0277-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Wars of the Diadochi"
+  },
+  {
+    "name": "👑 Antigonus II Gonatas",
+    "role": "King",
+    "start": "-0277-01-01",
+    "end": "-0274-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Wars of the Diadochi"
+  },
+  {
+    "name": "👑 Pyrrhus of Epirus",
+    "role": "King",
+    "start": "-0274-01-01",
+    "end": "-0272-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Wars of the Diadochi"
+  },
+  {
+    "name": "👑 Antigonus II Gonatas",
+    "role": "King",
+    "start": "-0272-01-01",
+    "end": "-0239-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "year-level backbone",
+    "era": "Antigonid dynasty"
+  },
+  {
+    "name": "👑 Demetrius II",
+    "role": "King",
+    "start": "-0239-01-01",
+    "end": "-0229-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Antigonid dynasty"
+  },
+  {
+    "name": "👑 Antigonus III Doson",
+    "role": "King",
+    "start": "-0229-01-01",
+    "end": "-0221-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "Antigonid dynasty"
+  },
+  {
+    "name": "👑 Philip V",
+    "role": "King",
+    "start": "-0221-01-01",
+    "end": "-0179-01-01",
+    "current": false,
+    "tenure": "42y 0d",
+    "party": "year-level backbone",
+    "era": "Antigonid dynasty"
+  },
+  {
+    "name": "👑 Perseus",
+    "role": "King",
+    "start": "-0179-01-01",
+    "end": "-0168-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "Antigonid dynasty"
+  }
+]

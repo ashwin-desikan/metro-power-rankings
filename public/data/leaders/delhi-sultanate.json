@@ -1,0 +1,302 @@
+[
+  {
+    "name": "👑 Qutb ud-Din Aibak",
+    "role": "Sultan",
+    "start": "1206-01-01",
+    "end": "1210-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Mamluk dynasty"
+  },
+  {
+    "name": "👑 Aram Shah",
+    "role": "Sultan",
+    "start": "1210-01-01",
+    "end": "1211-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Mamluk dynasty"
+  },
+  {
+    "name": "👑 Iltutmish",
+    "role": "Sultan",
+    "start": "1211-01-01",
+    "end": "1236-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone",
+    "era": "Mamluk dynasty"
+  },
+  {
+    "name": "👑 Rukn ud-Din Firuz",
+    "role": "Sultan",
+    "start": "1236-01-01",
+    "end": "1236-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone",
+    "era": "Mamluk dynasty"
+  },
+  {
+    "name": "👑 Razia Sultana",
+    "role": "Sultan",
+    "start": "1236-01-01",
+    "end": "1240-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Mamluk dynasty"
+  },
+  {
+    "name": "👑 Muiz ud-Din Bahram",
+    "role": "Sultan",
+    "start": "1240-01-01",
+    "end": "1242-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Mamluk dynasty"
+  },
+  {
+    "name": "👑 Ala ud-Din Masud",
+    "role": "Sultan",
+    "start": "1242-01-01",
+    "end": "1246-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Mamluk dynasty"
+  },
+  {
+    "name": "👑 Nasir ud-Din Mahmud",
+    "role": "Sultan",
+    "start": "1246-01-01",
+    "end": "1266-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "Mamluk dynasty"
+  },
+  {
+    "name": "👑 Ghiyas ud-Din Balban",
+    "role": "Sultan",
+    "start": "1266-01-01",
+    "end": "1287-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone",
+    "era": "Mamluk dynasty"
+  },
+  {
+    "name": "👑 Muiz ud-Din Qaiqabad",
+    "role": "Sultan",
+    "start": "1287-01-01",
+    "end": "1290-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Mamluk dynasty"
+  },
+  {
+    "name": "👑 Shams ud-Din Kayumars",
+    "role": "Sultan",
+    "start": "1290-01-01",
+    "end": "1290-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone",
+    "era": "Mamluk dynasty"
+  },
+  {
+    "name": "👑 Jalal ud-Din Khalji",
+    "role": "Sultan",
+    "start": "1290-01-01",
+    "end": "1296-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Khalji dynasty"
+  },
+  {
+    "name": "👑 Alauddin Khalji",
+    "role": "Sultan",
+    "start": "1296-01-01",
+    "end": "1316-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "Khalji dynasty"
+  },
+  {
+    "name": "👑 Shihab ud-Din Omar",
+    "role": "Sultan",
+    "start": "1316-01-01",
+    "end": "1316-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone",
+    "era": "Khalji dynasty"
+  },
+  {
+    "name": "👑 Qutb ud-Din Mubarak Shah",
+    "role": "Sultan",
+    "start": "1316-01-01",
+    "end": "1320-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Khalji dynasty"
+  },
+  {
+    "name": "👑 Ghiyas ud-Din Tughlaq",
+    "role": "Sultan",
+    "start": "1320-01-01",
+    "end": "1325-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Tughlaq dynasty"
+  },
+  {
+    "name": "👑 Muhammad bin Tughlaq",
+    "role": "Sultan",
+    "start": "1325-01-01",
+    "end": "1351-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone",
+    "era": "Tughlaq dynasty"
+  },
+  {
+    "name": "👑 Firuz Shah Tughlaq",
+    "role": "Sultan",
+    "start": "1351-01-01",
+    "end": "1388-01-01",
+    "current": false,
+    "tenure": "37y 0d",
+    "party": "year-level backbone",
+    "era": "Tughlaq dynasty"
+  },
+  {
+    "name": "👑 Ghiyas ud-Din Tughlaq II",
+    "role": "Sultan",
+    "start": "1388-01-01",
+    "end": "1389-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Tughlaq dynasty"
+  },
+  {
+    "name": "👑 Abu Bakr Shah",
+    "role": "Sultan",
+    "start": "1389-01-01",
+    "end": "1390-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Tughlaq dynasty"
+  },
+  {
+    "name": "👑 Nasir ud-Din Muhammad Shah III",
+    "role": "Sultan",
+    "start": "1390-01-01",
+    "end": "1394-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Tughlaq dynasty"
+  },
+  {
+    "name": "👑 Ala ud-Din Sikandar Shah",
+    "role": "Sultan",
+    "start": "1394-01-01",
+    "end": "1394-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone",
+    "era": "Tughlaq dynasty"
+  },
+  {
+    "name": "👑 Nasir ud-Din Mahmud Shah II",
+    "role": "Sultan",
+    "start": "1394-01-01",
+    "end": "1413-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone",
+    "era": "Tughlaq dynasty"
+  },
+  {
+    "name": "👑 Khizr Khan",
+    "role": "Sultan",
+    "start": "1414-01-01",
+    "end": "1421-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Sayyid dynasty"
+  },
+  {
+    "name": "👑 Mubarak Shah",
+    "role": "Sultan",
+    "start": "1421-01-01",
+    "end": "1434-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Sayyid dynasty"
+  },
+  {
+    "name": "👑 Muhammad Shah",
+    "role": "Sultan",
+    "start": "1434-01-01",
+    "end": "1445-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "Sayyid dynasty"
+  },
+  {
+    "name": "👑 Alam Shah",
+    "role": "Sultan",
+    "start": "1445-01-01",
+    "end": "1451-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Sayyid dynasty"
+  },
+  {
+    "name": "👑 Bahlul Lodi",
+    "role": "Sultan",
+    "start": "1451-01-01",
+    "end": "1489-01-01",
+    "current": false,
+    "tenure": "38y 0d",
+    "party": "year-level backbone",
+    "era": "Lodi dynasty"
+  },
+  {
+    "name": "👑 Sikandar Lodi",
+    "role": "Sultan",
+    "start": "1489-01-01",
+    "end": "1517-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level backbone",
+    "era": "Lodi dynasty"
+  },
+  {
+    "name": "👑 Ibrahim Lodi",
+    "role": "Sultan",
+    "start": "1517-01-01",
+    "end": "1526-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Lodi dynasty"
+  }
+]

@@ -1,8 +1,13 @@
 {
  "russia": [
   {
+   "name": "Kievan Rus'",
+   "end": "1283-01-01"
+  },
+  {
    "name": "Grand Duchy of Moscow",
-   "end": "1547-01-16"
+   "end": "1547-01-16",
+   "start": "1283-01-01"
   },
   {
    "name": "Tsardom of Russia",
@@ -68,6 +73,15 @@
  ],
  "czech-republic": [
   {
+   "name": "Duchy of Bohemia",
+   "end": "1198-01-01"
+  },
+  {
+   "name": "Kingdom of Bohemia",
+   "start": "1198-01-01",
+   "end": "1918-10-28"
+  },
+  {
    "name": "Czechoslovakia",
    "start": "1918-10-28",
    "end": "1992-12-31",
@@ -89,6 +103,11 @@
   }
  ],
  "serbia": [
+  {
+   "name": "Serbian Empire",
+   "start": "1346-01-01",
+   "end": "1371-12-04"
+  },
   {
    "name": "Yugoslavia",
    "start": "1918-12-01",
@@ -126,9 +145,14 @@
  ],
  "thailand": [
   {
+   "name": "Ayutthaya Kingdom",
+   "end": "1767-01-01"
+  },
+  {
    "name": "Siam",
    "end": "1939-06-23",
-   "flag": "th"
+   "flag": "th",
+   "start": "1767-01-01"
   },
   {
    "name": "Thailand",
@@ -347,7 +371,8 @@
  "japan": [
   {
    "name": "Tokugawa Japan",
-   "end": "1868-01-03"
+   "end": "1868-01-03",
+   "start": "1603-01-01"
   },
   {
    "name": "Empire of Japan",
@@ -565,6 +590,15 @@
  ],
  "bulgaria": [
   {
+   "name": "First Bulgarian Empire",
+   "end": "1018-01-01"
+  },
+  {
+   "name": "Second Bulgarian Empire",
+   "start": "1185-01-01",
+   "end": "1396-01-01"
+  },
+  {
    "name": "Principality of Bulgaria",
    "start": "1878-07-13",
    "end": "1908-10-05"
@@ -705,6 +739,54 @@
    "name": "Sudan",
    "start": "1956-01-01",
    "flag": "sd"
+  }
+ ],
+ "caliphate": [
+  {
+   "name": "Rashidun Caliphate",
+   "end": "0661-01-01"
+  },
+  {
+   "name": "Umayyad Caliphate",
+   "start": "0661-01-01",
+   "end": "0750-01-01"
+  },
+  {
+   "name": "Abbasid Caliphate",
+   "start": "0750-01-01"
+  }
+ ],
+ "cambodia": [
+  {
+   "name": "Khmer Republic",
+   "start": "1970-10-09",
+   "end": "1975-04-17"
+  },
+  {
+   "name": "Democratic Kampuchea",
+   "start": "1975-04-17",
+   "end": "1979-01-08"
+  },
+  {
+   "name": "People's Republic of Kampuchea",
+   "start": "1979-01-08",
+   "end": "1989-04-30"
+  },
+  {
+   "name": "State of Cambodia",
+   "start": "1989-04-30",
+   "end": "1993-09-24"
+  }
+ ],
+ "switzerland": [
+  {
+   "name": "Old Swiss Confederacy",
+   "end": "1798-04-12"
+  },
+  {
+   "name": "Helvetic Republic",
+   "start": "1798-04-12",
+   "end": "1803-02-19"
   }
  ]
 }

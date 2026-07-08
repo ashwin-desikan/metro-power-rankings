@@ -1,0 +1,42 @@
+[
+  {
+    "name": "👑 Odaenathus",
+    "role": "King",
+    "start": "0260-01-01",
+    "end": "0267-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "declared king after Edessa 260; defeated Sasanian Persia on Rome's behalf; assassinated 267"
+  },
+  {
+    "name": "👑 Vaballathus",
+    "role": "King",
+    "start": "0267-01-01",
+    "end": "0272-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "ten-year-old child king under his mother Zenobia's regency; took the title Augustus late 271"
+  },
+  {
+    "name": "👑 Zenobia",
+    "role": "Queen (regent)",
+    "start": "0267-01-01",
+    "end": "0272-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "de facto ruler co-regent with Vaballathus; conquered Egypt 270; captured by Aurelian, Palmyra fell 272"
+  },
+  {
+    "name": "👑 Antiochus",
+    "role": "King (usurper)",
+    "start": "0273-01-01",
+    "end": "0273-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone",
+    "era": "relative of Zenobia declared Augustus in the 273 revolt; Aurelian razed Palmyra"
+  }
+]

@@ -1,0 +1,202 @@
+[
+  {
+    "name": "👑 Sumu-abum",
+    "role": "King",
+    "start": "-1894-01-01",
+    "end": "-1880-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Old Babylonian Empire — Amorite dynasty"
+  },
+  {
+    "name": "👑 Sumu-la-El",
+    "role": "King",
+    "start": "-1880-01-01",
+    "end": "-1844-01-01",
+    "current": false,
+    "tenure": "36y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Old Babylonian Empire — Amorite dynasty"
+  },
+  {
+    "name": "👑 Sabium",
+    "role": "King",
+    "start": "-1844-01-01",
+    "end": "-1830-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Old Babylonian Empire — Amorite dynasty"
+  },
+  {
+    "name": "👑 Apil-Sin",
+    "role": "King",
+    "start": "-1830-01-01",
+    "end": "-1812-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Old Babylonian Empire — Amorite dynasty"
+  },
+  {
+    "name": "👑 Sin-Muballit",
+    "role": "King",
+    "start": "-1812-01-01",
+    "end": "-1792-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Old Babylonian Empire — Amorite dynasty"
+  },
+  {
+    "name": "👑 Hammurabi",
+    "role": "King",
+    "start": "-1792-01-01",
+    "end": "-1749-01-01",
+    "current": false,
+    "tenure": "43y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Old Babylonian Empire — Amorite dynasty"
+  },
+  {
+    "name": "👑 Samsu-iluna",
+    "role": "King",
+    "start": "-1749-01-01",
+    "end": "-1711-01-01",
+    "current": false,
+    "tenure": "38y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Old Babylonian Empire — Amorite dynasty"
+  },
+  {
+    "name": "👑 Abi-Eshuh",
+    "role": "King",
+    "start": "-1711-01-01",
+    "end": "-1683-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Old Babylonian Empire — Amorite dynasty"
+  },
+  {
+    "name": "👑 Ammi-Ditana",
+    "role": "King",
+    "start": "-1683-01-01",
+    "end": "-1646-01-01",
+    "current": false,
+    "tenure": "37y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Old Babylonian Empire — Amorite dynasty"
+  },
+  {
+    "name": "👑 Ammi-Saduqa",
+    "role": "King",
+    "start": "-1646-01-01",
+    "end": "-1625-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Old Babylonian Empire — Amorite dynasty"
+  },
+  {
+    "name": "👑 Samsu-Ditana",
+    "role": "King",
+    "start": "-1625-01-01",
+    "end": "-1595-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Old Babylonian Empire — Amorite dynasty"
+  },
+  {
+    "name": "👑 Burna-Buriash II",
+    "role": "King",
+    "start": "-1359-01-01",
+    "end": "-1333-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Kassite dynasty"
+  },
+  {
+    "name": "👑 Kurigalzu II",
+    "role": "King",
+    "start": "-1332-01-01",
+    "end": "-1308-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Kassite dynasty"
+  },
+  {
+    "name": "👑 Meli-Shipak",
+    "role": "King",
+    "start": "-1186-01-01",
+    "end": "-1172-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Kassite dynasty"
+  },
+  {
+    "name": "👑 Nabopolassar",
+    "role": "King",
+    "start": "-0626-01-01",
+    "end": "-0605-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Babylonian Empire"
+  },
+  {
+    "name": "👑 Nebuchadnezzar II",
+    "role": "King",
+    "start": "-0605-01-01",
+    "end": "-0562-01-01",
+    "current": false,
+    "tenure": "43y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Babylonian Empire"
+  },
+  {
+    "name": "👑 Amel-Marduk",
+    "role": "King",
+    "start": "-0562-01-01",
+    "end": "-0560-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Babylonian Empire"
+  },
+  {
+    "name": "👑 Neriglissar",
+    "role": "King",
+    "start": "-0560-01-01",
+    "end": "-0556-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Babylonian Empire"
+  },
+  {
+    "name": "👑 Labashi-Marduk",
+    "role": "King",
+    "start": "-0556-01-01",
+    "end": "-0556-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Babylonian Empire"
+  },
+  {
+    "name": "👑 Nabonidus",
+    "role": "King",
+    "start": "-0556-01-01",
+    "end": "-0539-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Babylonian Empire"
+  }
+]

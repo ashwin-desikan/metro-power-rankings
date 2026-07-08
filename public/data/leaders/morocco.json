@@ -1,5 +1,435 @@
 [
   {
+    "name": "👑 Abu Bakr ibn Umar",
+    "role": "Monarch",
+    "start": "1056-01-01",
+    "end": "1072-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone",
+    "era": "Almoravid dynasty"
+  },
+  {
+    "name": "👑 Yusuf ibn Tashfin",
+    "role": "Monarch",
+    "start": "1072-01-01",
+    "end": "1106-01-01",
+    "current": false,
+    "tenure": "34y 0d",
+    "party": "year-level backbone",
+    "era": "Almoravid dynasty"
+  },
+  {
+    "name": "👑 Ali ibn Yusuf",
+    "role": "Monarch",
+    "start": "1106-01-01",
+    "end": "1143-01-01",
+    "current": false,
+    "tenure": "37y 0d",
+    "party": "year-level backbone",
+    "era": "Almoravid dynasty"
+  },
+  {
+    "name": "👑 Abd al-Mu'min",
+    "role": "Monarch",
+    "start": "1133-01-01",
+    "end": "1163-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone",
+    "era": "Almohad Caliphate"
+  },
+  {
+    "name": "👑 Abu Yaqub Yusuf",
+    "role": "Monarch",
+    "start": "1163-01-01",
+    "end": "1184-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone",
+    "era": "Almohad Caliphate"
+  },
+  {
+    "name": "👑 Ya'qub al-Mansur",
+    "role": "Monarch",
+    "start": "1184-01-01",
+    "end": "1199-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone",
+    "era": "Almohad Caliphate"
+  },
+  {
+    "name": "👑 Muhammad al-Nasir",
+    "role": "Monarch",
+    "start": "1199-01-01",
+    "end": "1213-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone",
+    "era": "Almohad Caliphate"
+  },
+  {
+    "name": "👑 Yusuf II",
+    "role": "Monarch",
+    "start": "1213-01-01",
+    "end": "1224-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "Almohad Caliphate"
+  },
+  {
+    "name": "👑 Abdallah al-Adil",
+    "role": "Monarch",
+    "start": "1224-01-01",
+    "end": "1227-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Almohad Caliphate"
+  },
+  {
+    "name": "👑 Yahya al-Mu'tasim",
+    "role": "Monarch",
+    "start": "1227-01-01",
+    "end": "1229-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Almohad Caliphate"
+  },
+  {
+    "name": "👑 Idris al-Ma'mun",
+    "role": "Monarch",
+    "start": "1229-01-01",
+    "end": "1232-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Almohad Caliphate"
+  },
+  {
+    "name": "👑 Abd al-Wahid II",
+    "role": "Monarch",
+    "start": "1232-01-01",
+    "end": "1242-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Almohad Caliphate"
+  },
+  {
+    "name": "👑 Abu al-Hasan as-Said",
+    "role": "Monarch",
+    "start": "1242-01-01",
+    "end": "1248-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Almohad Caliphate"
+  },
+  {
+    "name": "👑 Umar al-Murtada",
+    "role": "Monarch",
+    "start": "1248-01-01",
+    "end": "1266-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone",
+    "era": "Almohad Caliphate"
+  },
+  {
+    "name": "👑 Abu Yusuf Yaqub ibn Abd al-Haqq",
+    "role": "Monarch",
+    "start": "1258-01-01",
+    "end": "1286-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level backbone",
+    "era": "Marinid dynasty"
+  },
+  {
+    "name": "👑 Abu Yaqub Yusuf an-Nasr",
+    "role": "Monarch",
+    "start": "1286-01-01",
+    "end": "1307-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone",
+    "era": "Marinid dynasty"
+  },
+  {
+    "name": "👑 Abu Thabit Amir",
+    "role": "Monarch",
+    "start": "1307-01-01",
+    "end": "1308-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Marinid dynasty"
+  },
+  {
+    "name": "👑 Abu al-Rabi Sulayman",
+    "role": "Monarch",
+    "start": "1308-01-01",
+    "end": "1310-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Marinid dynasty"
+  },
+  {
+    "name": "👑 Abu Sa'id Uthman II",
+    "role": "Monarch",
+    "start": "1310-01-01",
+    "end": "1331-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone",
+    "era": "Marinid dynasty"
+  },
+  {
+    "name": "👑 Abu al-Hasan Ali",
+    "role": "Monarch",
+    "start": "1331-01-01",
+    "end": "1348-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone",
+    "era": "Marinid dynasty"
+  },
+  {
+    "name": "👑 Abu Inan Faris",
+    "role": "Monarch",
+    "start": "1348-01-01",
+    "end": "1358-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Marinid dynasty"
+  },
+  {
+    "name": "👑 Abu Faris Abd al-Aziz I",
+    "role": "Monarch",
+    "start": "1366-01-01",
+    "end": "1372-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Marinid dynasty"
+  },
+  {
+    "name": "👑 Abu al-Abbas Ahmad al-Mustansir",
+    "role": "Monarch",
+    "start": "1374-01-01",
+    "end": "1393-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone",
+    "era": "Marinid dynasty"
+  },
+  {
+    "name": "👑 Abu Said Uthman III",
+    "role": "Monarch",
+    "start": "1398-01-01",
+    "end": "1420-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level backbone",
+    "era": "Marinid dynasty"
+  },
+  {
+    "name": "👑 Abd al-Haqq II",
+    "role": "Monarch",
+    "start": "1420-01-01",
+    "end": "1465-01-01",
+    "current": false,
+    "tenure": "45y 0d",
+    "party": "year-level backbone",
+    "era": "Marinid dynasty"
+  },
+  {
+    "name": "👑 Muhammad ibn Yahya al-Sheikh",
+    "role": "Monarch",
+    "start": "1472-01-01",
+    "end": "1504-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "year-level backbone",
+    "era": "Wattasid dynasty"
+  },
+  {
+    "name": "👑 Muhammad al-Burtuqali",
+    "role": "Monarch",
+    "start": "1504-01-01",
+    "end": "1526-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level backbone",
+    "era": "Wattasid dynasty"
+  },
+  {
+    "name": "👑 Ahmad al-Wattasi",
+    "role": "Monarch",
+    "start": "1526-01-01",
+    "end": "1545-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone",
+    "era": "Wattasid dynasty"
+  },
+  {
+    "name": "👑 Mohammed al-Sheikh",
+    "role": "Monarch",
+    "start": "1544-01-01",
+    "end": "1557-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Saadi dynasty"
+  },
+  {
+    "name": "👑 Abdallah al-Ghalib",
+    "role": "Monarch",
+    "start": "1557-01-01",
+    "end": "1574-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone",
+    "era": "Saadi dynasty"
+  },
+  {
+    "name": "👑 Abu Abdallah Mohammed II",
+    "role": "Monarch",
+    "start": "1574-01-01",
+    "end": "1576-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Saadi dynasty"
+  },
+  {
+    "name": "👑 Abd al-Malik I",
+    "role": "Monarch",
+    "start": "1576-01-01",
+    "end": "1578-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Saadi dynasty"
+  },
+  {
+    "name": "👑 Ahmad al-Mansur",
+    "role": "Monarch",
+    "start": "1578-01-01",
+    "end": "1603-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone",
+    "era": "Saadi dynasty"
+  },
+  {
+    "name": "👑 Zidan al-Nasir",
+    "role": "Monarch",
+    "start": "1603-01-01",
+    "end": "1627-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone",
+    "era": "Saadi dynasty"
+  },
+  {
+    "name": "👑 Abu Marwan Abd al-Malik II",
+    "role": "Monarch",
+    "start": "1627-01-01",
+    "end": "1631-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Saadi dynasty"
+  },
+  {
+    "name": "👑 Al-Walid ibn Zidan",
+    "role": "Monarch",
+    "start": "1631-01-01",
+    "end": "1636-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Saadi dynasty"
+  },
+  {
+    "name": "👑 Mohammed esh-Sheikh es-Seghir",
+    "role": "Monarch",
+    "start": "1636-01-01",
+    "end": "1655-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone",
+    "era": "Saadi dynasty"
+  },
+  {
+    "name": "👑 Ahmad al-Abbas",
+    "role": "Monarch",
+    "start": "1655-01-01",
+    "end": "1659-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Saadi dynasty"
+  },
+  {
+    "name": "👑 Al-Rashid",
+    "role": "Monarch",
+    "start": "1666-01-01",
+    "end": "1672-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Alaouite dynasty"
+  },
+  {
+    "name": "👑 Ismail ibn Sharif",
+    "role": "Monarch",
+    "start": "1672-01-01",
+    "end": "1727-01-01",
+    "current": false,
+    "tenure": "55y 0d",
+    "party": "year-level backbone",
+    "era": "Alaouite dynasty"
+  },
+  {
+    "name": "👑 Ahmad ibn Ismail",
+    "role": "Monarch",
+    "start": "1727-01-01",
+    "end": "1729-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone; two reigns (interrupted 1728)",
+    "era": "Alaouite dynasty"
+  },
+  {
+    "name": "👑 Abdallah ibn Ismail",
+    "role": "Monarch",
+    "start": "1729-01-01",
+    "end": "1757-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level backbone; multiple interrupted reigns",
+    "era": "Alaouite dynasty"
+  },
+  {
+    "name": "👑 Mohammed III",
+    "role": "Monarch",
+    "start": "1757-01-01",
+    "end": "1790-04-11",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "year-level backbone",
+    "era": "Alaouite dynasty"
+  },
+  {
     "name": "👑 Yazid",
     "role": "Monarch",
     "start": "1790-04-11",

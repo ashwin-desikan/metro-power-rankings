@@ -1,0 +1,242 @@
+[
+  {
+    "name": "👑 Shajar al-Durr",
+    "role": "Sultana",
+    "start": "1250-01-01",
+    "end": "1250-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone",
+    "era": "Bahri dynasty"
+  },
+  {
+    "name": "👑 Aybak",
+    "role": "Sultan",
+    "start": "1250-01-01",
+    "end": "1257-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Bahri dynasty"
+  },
+  {
+    "name": "👑 Qutuz",
+    "role": "Sultan",
+    "start": "1259-01-01",
+    "end": "1260-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Bahri dynasty"
+  },
+  {
+    "name": "👑 Baybars",
+    "role": "Sultan",
+    "start": "1260-01-01",
+    "end": "1277-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone",
+    "era": "Bahri dynasty"
+  },
+  {
+    "name": "👑 Qalawun",
+    "role": "Sultan",
+    "start": "1279-01-01",
+    "end": "1290-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "Bahri dynasty"
+  },
+  {
+    "name": "👑 al-Ashraf Khalil",
+    "role": "Sultan",
+    "start": "1290-01-01",
+    "end": "1293-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Bahri dynasty"
+  },
+  {
+    "name": "👑 al-Nasir Muhammad",
+    "role": "Sultan",
+    "start": "1293-01-01",
+    "end": "1294-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Bahri dynasty"
+  },
+  {
+    "name": "👑 al-Nasir Muhammad (2nd reign)",
+    "role": "Sultan",
+    "start": "1299-01-01",
+    "end": "1309-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Bahri dynasty"
+  },
+  {
+    "name": "👑 al-Nasir Muhammad (3rd reign)",
+    "role": "Sultan",
+    "start": "1310-01-01",
+    "end": "1341-01-01",
+    "current": false,
+    "tenure": "31y 0d",
+    "party": "year-level backbone",
+    "era": "Bahri dynasty"
+  },
+  {
+    "name": "👑 an-Nasir Hasan",
+    "role": "Sultan",
+    "start": "1347-01-01",
+    "end": "1351-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Bahri dynasty"
+  },
+  {
+    "name": "👑 an-Nasir Hasan (2nd reign)",
+    "role": "Sultan",
+    "start": "1354-01-01",
+    "end": "1361-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Bahri dynasty"
+  },
+  {
+    "name": "👑 al-Ashraf Sha'ban",
+    "role": "Sultan",
+    "start": "1363-01-01",
+    "end": "1377-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone",
+    "era": "Bahri dynasty"
+  },
+  {
+    "name": "👑 Barquq",
+    "role": "Sultan",
+    "start": "1382-01-01",
+    "end": "1389-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Burji dynasty"
+  },
+  {
+    "name": "👑 Barquq (2nd reign)",
+    "role": "Sultan",
+    "start": "1390-01-01",
+    "end": "1399-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Burji dynasty"
+  },
+  {
+    "name": "👑 an-Nasir Faraj",
+    "role": "Sultan",
+    "start": "1399-01-01",
+    "end": "1405-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Burji dynasty"
+  },
+  {
+    "name": "👑 an-Nasir Faraj (2nd reign)",
+    "role": "Sultan",
+    "start": "1405-01-01",
+    "end": "1412-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Burji dynasty"
+  },
+  {
+    "name": "👑 al-Mu'ayyad Shaykh",
+    "role": "Sultan",
+    "start": "1412-01-01",
+    "end": "1421-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Burji dynasty"
+  },
+  {
+    "name": "👑 Barsbay",
+    "role": "Sultan",
+    "start": "1422-01-01",
+    "end": "1438-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone",
+    "era": "Burji dynasty"
+  },
+  {
+    "name": "👑 Jaqmaq",
+    "role": "Sultan",
+    "start": "1438-01-01",
+    "end": "1453-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone",
+    "era": "Burji dynasty"
+  },
+  {
+    "name": "👑 Inal",
+    "role": "Sultan",
+    "start": "1453-01-01",
+    "end": "1461-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "Burji dynasty"
+  },
+  {
+    "name": "👑 Khushqadam",
+    "role": "Sultan",
+    "start": "1461-01-01",
+    "end": "1467-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Burji dynasty"
+  },
+  {
+    "name": "👑 Qaitbay",
+    "role": "Sultan",
+    "start": "1468-01-01",
+    "end": "1496-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level backbone",
+    "era": "Burji dynasty"
+  },
+  {
+    "name": "👑 Qansuh al-Ghuri",
+    "role": "Sultan",
+    "start": "1501-01-01",
+    "end": "1516-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone",
+    "era": "Burji dynasty"
+  },
+  {
+    "name": "👑 Tuman Bay II",
+    "role": "Sultan",
+    "start": "1516-01-01",
+    "end": "1517-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Burji dynasty"
+  }
+]

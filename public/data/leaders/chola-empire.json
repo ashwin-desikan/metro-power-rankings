@@ -1,0 +1,192 @@
+[
+  {
+    "name": "👑 Vijayalaya",
+    "role": "Emperor",
+    "start": "0848-01-01",
+    "end": "0871-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level backbone",
+    "era": "Medieval Cholas"
+  },
+  {
+    "name": "👑 Aditya I",
+    "role": "Emperor",
+    "start": "0871-01-01",
+    "end": "0907-01-01",
+    "current": false,
+    "tenure": "36y 0d",
+    "party": "year-level backbone",
+    "era": "Medieval Cholas"
+  },
+  {
+    "name": "👑 Parantaka I",
+    "role": "Emperor",
+    "start": "0907-01-01",
+    "end": "0954-01-01",
+    "current": false,
+    "tenure": "47y 0d",
+    "party": "year-level backbone",
+    "era": "Medieval Cholas"
+  },
+  {
+    "name": "👑 Gandaraditya",
+    "role": "Emperor",
+    "start": "0954-01-01",
+    "end": "0957-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Medieval Cholas"
+  },
+  {
+    "name": "👑 Sundara Chola",
+    "role": "Emperor",
+    "start": "0957-01-01",
+    "end": "0970-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Medieval Cholas"
+  },
+  {
+    "name": "👑 Uttama Chola",
+    "role": "Emperor",
+    "start": "0970-01-01",
+    "end": "0985-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone",
+    "era": "Medieval Cholas"
+  },
+  {
+    "name": "👑 Rajaraja I",
+    "role": "Emperor",
+    "start": "0985-01-01",
+    "end": "1014-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level backbone",
+    "era": "Medieval Cholas"
+  },
+  {
+    "name": "👑 Rajendra I",
+    "role": "Emperor",
+    "start": "1014-01-01",
+    "end": "1044-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone",
+    "era": "Medieval Cholas"
+  },
+  {
+    "name": "👑 Rajadhiraja I",
+    "role": "Emperor",
+    "start": "1044-01-01",
+    "end": "1054-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Medieval Cholas"
+  },
+  {
+    "name": "👑 Rajendra II",
+    "role": "Emperor",
+    "start": "1054-01-01",
+    "end": "1063-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Medieval Cholas"
+  },
+  {
+    "name": "👑 Virarajendra",
+    "role": "Emperor",
+    "start": "1063-01-01",
+    "end": "1070-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Medieval Cholas"
+  },
+  {
+    "name": "👑 Kulottunga I",
+    "role": "Emperor",
+    "start": "1070-01-01",
+    "end": "1122-01-01",
+    "current": false,
+    "tenure": "52y 0d",
+    "party": "year-level backbone",
+    "era": "Later Cholas"
+  },
+  {
+    "name": "👑 Vikrama Chola",
+    "role": "Emperor",
+    "start": "1122-01-01",
+    "end": "1133-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "Later Cholas"
+  },
+  {
+    "name": "👑 Kulottunga II",
+    "role": "Emperor",
+    "start": "1133-01-01",
+    "end": "1150-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone",
+    "era": "Later Cholas"
+  },
+  {
+    "name": "👑 Rajaraja II",
+    "role": "Emperor",
+    "start": "1150-01-01",
+    "end": "1173-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level backbone",
+    "era": "Later Cholas"
+  },
+  {
+    "name": "👑 Rajadhiraja II",
+    "role": "Emperor",
+    "start": "1173-01-01",
+    "end": "1178-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Later Cholas"
+  },
+  {
+    "name": "👑 Kulottunga III",
+    "role": "Emperor",
+    "start": "1178-01-01",
+    "end": "1218-01-01",
+    "current": false,
+    "tenure": "40y 0d",
+    "party": "year-level backbone",
+    "era": "Later Cholas"
+  },
+  {
+    "name": "👑 Rajaraja III",
+    "role": "Emperor",
+    "start": "1218-01-01",
+    "end": "1246-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level backbone",
+    "era": "Later Cholas"
+  },
+  {
+    "name": "👑 Rajendra III",
+    "role": "Emperor",
+    "start": "1246-01-01",
+    "end": "1279-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "year-level backbone",
+    "era": "Later Cholas"
+  }
+]

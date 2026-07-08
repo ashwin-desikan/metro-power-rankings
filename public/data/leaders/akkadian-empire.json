@@ -1,0 +1,72 @@
+[
+  {
+    "name": "👑 Sargon",
+    "role": "King",
+    "start": "-2334-01-01",
+    "end": "-2279-01-01",
+    "current": false,
+    "tenure": "55y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Akkadian Empire"
+  },
+  {
+    "name": "👑 Rimush",
+    "role": "King",
+    "start": "-2279-01-01",
+    "end": "-2270-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Akkadian Empire"
+  },
+  {
+    "name": "👑 Manishtushu",
+    "role": "King",
+    "start": "-2270-01-01",
+    "end": "-2255-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Akkadian Empire"
+  },
+  {
+    "name": "👑 Naram-Sin",
+    "role": "King",
+    "start": "-2255-01-01",
+    "end": "-2218-01-01",
+    "current": false,
+    "tenure": "37y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Akkadian Empire"
+  },
+  {
+    "name": "👑 Shar-Kali-Sharri",
+    "role": "King",
+    "start": "-2218-01-01",
+    "end": "-2193-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Akkadian Empire"
+  },
+  {
+    "name": "👑 Dudu",
+    "role": "King",
+    "start": "-2189-01-01",
+    "end": "-2168-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Akkadian Empire"
+  },
+  {
+    "name": "👑 Shu-turul",
+    "role": "King",
+    "start": "-2168-01-01",
+    "end": "-2154-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Akkadian Empire"
+  }
+]

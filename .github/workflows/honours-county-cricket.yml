@@ -1,0 +1,53 @@
+name: County Championship winner (annual)
+
+# Each October (after the County Championship finishes in September) this reads
+# the Wikipedia list, appends the newest season's champion to
+# public/data/honours/cricket-county.json if it isn't already there, and commits.
+# The honour-roll page bakes this JSON at build, so the commit triggers a normal
+# Vercel deploy (once a year). Idempotent: a year already present commits nothing.
+# Runner-up is not on the source table, so auto-added rows carry no runner-up.
+
+on:
+  schedule:
+    - cron: "0 6 5 10 *"   # 05 Oct, 06:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: honours-county-cricket
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
+        with:
+          python-version: "3.12"
+
+      - name: Append the new champion if any
+        run: python3 scripts/update-county-champion.py
+
+      - name: Commit if the roll changed
+        run: |
+          git add public/data/honours/cricket-county.json
+          if git diff --cached --quiet; then
+            echo "No new champion; nothing to deploy."
+            exit 0
+          fi
+          git config user.name "honours-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "Auto: add the latest County Championship winner"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "Pushed on attempt $attempt."; exit 0
+            fi
+            sleep $((attempt * 5))
+          done
+          echo "Failed to push after retries." >&2; exit 1

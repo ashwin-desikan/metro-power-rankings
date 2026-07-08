@@ -1,5 +1,245 @@
 [
   {
+    "name": "👑 Mara Takla Haymanot",
+    "role": "Monarch",
+    "start": "1137-01-01",
+    "end": "1150-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Zagwe dynasty"
+  },
+  {
+    "name": "👑 Gebre Mesqel Lalibela",
+    "role": "Monarch",
+    "start": "1181-01-01",
+    "end": "1221-01-01",
+    "current": false,
+    "tenure": "40y 0d",
+    "party": "year-level backbone",
+    "era": "Zagwe dynasty"
+  },
+  {
+    "name": "👑 Yetbarak",
+    "role": "Monarch",
+    "start": "1261-01-01",
+    "end": "1270-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Zagwe dynasty"
+  },
+  {
+    "name": "👑 Yekuno Amlak",
+    "role": "Monarch",
+    "start": "1270-01-01",
+    "end": "1285-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone",
+    "era": "Solomonic dynasty — Ethiopian Empire"
+  },
+  {
+    "name": "👑 Amda Seyon I",
+    "role": "Monarch",
+    "start": "1314-01-01",
+    "end": "1344-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone",
+    "era": "Solomonic dynasty — Ethiopian Empire"
+  },
+  {
+    "name": "👑 Zara Yaqob",
+    "role": "Monarch",
+    "start": "1434-01-01",
+    "end": "1468-01-01",
+    "current": false,
+    "tenure": "34y 0d",
+    "party": "year-level backbone",
+    "era": "Solomonic dynasty — Ethiopian Empire"
+  },
+  {
+    "name": "👑 Dawit II (Lebna Dengel)",
+    "role": "Monarch",
+    "start": "1508-01-01",
+    "end": "1540-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "year-level backbone",
+    "era": "Solomonic dynasty — Ethiopian Empire"
+  },
+  {
+    "name": "👑 Gelawdewos",
+    "role": "Monarch",
+    "start": "1540-01-01",
+    "end": "1559-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone",
+    "era": "Solomonic dynasty — Ethiopian Empire"
+  },
+  {
+    "name": "👑 Sarsa Dengel",
+    "role": "Monarch",
+    "start": "1563-01-01",
+    "end": "1597-01-01",
+    "current": false,
+    "tenure": "34y 0d",
+    "party": "year-level backbone",
+    "era": "Solomonic dynasty — Ethiopian Empire"
+  },
+  {
+    "name": "👑 Susenyos I",
+    "role": "Monarch",
+    "start": "1606-01-01",
+    "end": "1632-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone",
+    "era": "Solomonic dynasty — Ethiopian Empire"
+  },
+  {
+    "name": "👑 Fasilides",
+    "role": "Monarch",
+    "start": "1632-01-01",
+    "end": "1667-01-01",
+    "current": false,
+    "tenure": "35y 0d",
+    "party": "year-level backbone",
+    "era": "Solomonic dynasty — Ethiopian Empire"
+  },
+  {
+    "name": "👑 Yohannes I",
+    "role": "Monarch",
+    "start": "1667-01-01",
+    "end": "1682-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone",
+    "era": "Solomonic dynasty — Ethiopian Empire"
+  },
+  {
+    "name": "👑 Iyasu I",
+    "role": "Monarch",
+    "start": "1682-01-01",
+    "end": "1706-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone",
+    "era": "Solomonic dynasty — Ethiopian Empire"
+  },
+  {
+    "name": "👑 Bakaffa",
+    "role": "Monarch",
+    "start": "1721-01-01",
+    "end": "1730-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Solomonic dynasty — Ethiopian Empire"
+  },
+  {
+    "name": "👑 Iyasu II",
+    "role": "Monarch",
+    "start": "1730-01-01",
+    "end": "1755-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone",
+    "era": "Solomonic dynasty — Ethiopian Empire"
+  },
+  {
+    "name": "👑 Iyoas I",
+    "role": "Monarch",
+    "start": "1755-01-01",
+    "end": "1769-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone",
+    "era": "Solomonic dynasty — Ethiopian Empire"
+  },
+  {
+    "name": "👑 Tekle Haymanot II",
+    "role": "Monarch",
+    "start": "1769-01-01",
+    "end": "1777-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "figurehead during Zemene Mesafint",
+    "era": "Solomonic dynasty — Ethiopian Empire"
+  },
+  {
+    "name": "👑 Salomon II",
+    "role": "Monarch",
+    "start": "1777-01-01",
+    "end": "1779-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "figurehead during Zemene Mesafint",
+    "era": "Solomonic dynasty — Ethiopian Empire"
+  },
+  {
+    "name": "👑 Tekle Giyorgis I",
+    "role": "Monarch",
+    "start": "1779-01-01",
+    "end": "1784-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "figurehead during Zemene Mesafint; first of six reigns (first reign shown)",
+    "era": "Solomonic dynasty — Ethiopian Empire"
+  },
+  {
+    "name": "👑 Egwale Seyon",
+    "role": "Monarch",
+    "start": "1801-01-01",
+    "end": "1818-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "figurehead during Zemene Mesafint",
+    "era": "Solomonic dynasty — Ethiopian Empire"
+  },
+  {
+    "name": "👑 Iyoas II",
+    "role": "Monarch",
+    "start": "1818-01-01",
+    "end": "1821-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "figurehead during Zemene Mesafint",
+    "era": "Solomonic dynasty — Ethiopian Empire"
+  },
+  {
+    "name": "👑 Gigar",
+    "role": "Monarch",
+    "start": "1821-01-01",
+    "end": "1830-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "figurehead during Zemene Mesafint",
+    "era": "Solomonic dynasty — Ethiopian Empire"
+  },
+  {
+    "name": "👑 Iyasu IV",
+    "role": "Monarch",
+    "start": "1830-01-01",
+    "end": "1832-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "figurehead during Zemene Mesafint",
+    "era": "Solomonic dynasty — Ethiopian Empire"
+  },
+  {
+    "name": "👑 Sahle Dengel",
+    "role": "Monarch",
+    "start": "1832-01-01",
+    "end": "1855-02-11",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "figurehead during Zemene Mesafint; multiple interrupted reigns",
+    "era": "Solomonic dynasty — Ethiopian Empire"
+  },
+  {
     "name": "👑 Tewodros II",
     "role": "Monarch",
     "start": "1855-02-11",

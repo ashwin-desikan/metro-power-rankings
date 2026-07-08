@@ -1,0 +1,112 @@
+[
+  {
+    "name": "👑 Tughril",
+    "role": "Sultan",
+    "start": "1037-01-01",
+    "end": "1063-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone",
+    "era": "Great Seljuk Empire"
+  },
+  {
+    "name": "👑 Alp Arslan",
+    "role": "Sultan",
+    "start": "1063-01-01",
+    "end": "1072-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Great Seljuk Empire"
+  },
+  {
+    "name": "👑 Malik-Shah I",
+    "role": "Sultan",
+    "start": "1072-01-01",
+    "end": "1092-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "Great Seljuk Empire"
+  },
+  {
+    "name": "👑 Mahmud I",
+    "role": "Sultan",
+    "start": "1092-01-01",
+    "end": "1094-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Great Seljuk Empire"
+  },
+  {
+    "name": "👑 Barkiyaruq",
+    "role": "Sultan",
+    "start": "1094-01-01",
+    "end": "1105-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "Great Seljuk Empire"
+  },
+  {
+    "name": "👑 Muhammad I Tapar",
+    "role": "Sultan",
+    "start": "1105-01-01",
+    "end": "1118-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Great Seljuk Empire"
+  },
+  {
+    "name": "👑 Ahmad Sanjar",
+    "role": "Sultan",
+    "start": "1118-01-01",
+    "end": "1153-01-01",
+    "current": false,
+    "tenure": "35y 0d",
+    "party": "year-level backbone",
+    "era": "Great Seljuk Empire"
+  },
+  {
+    "name": "👑 Muhammad II",
+    "role": "Sultan",
+    "start": "1153-01-01",
+    "end": "1159-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Great Seljuk Empire"
+  },
+  {
+    "name": "👑 Suleiman-Shah",
+    "role": "Sultan",
+    "start": "1159-01-01",
+    "end": "1161-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Great Seljuk Empire"
+  },
+  {
+    "name": "👑 Arslan-Shah",
+    "role": "Sultan",
+    "start": "1161-01-01",
+    "end": "1177-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone",
+    "era": "Great Seljuk Empire"
+  },
+  {
+    "name": "👑 Tughril III",
+    "role": "Sultan",
+    "start": "1177-01-01",
+    "end": "1194-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone",
+    "era": "Great Seljuk Empire"
+  }
+]

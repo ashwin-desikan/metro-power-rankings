@@ -157,6 +157,24 @@ export default function LeadersDirectory({
     return Number.isFinite(n) && n >= 1 && n <= (era === "BC" ? 9999 : CUR_YEAR) ? n : CUR_YEAR;
   })();
   const sign = era === "BC" ? "-" : "";
+  // Step the Time machine one year forward/back in TIME (BC counts down going forward;
+  // 1 BC steps forward to AD 1 and flips the era).
+  const stepYear = (dir: 1 | -1) => {
+    let y = yearNum;
+    let e = era;
+    if (e === "BC") {
+      y -= dir; // forward in time = smaller BC year
+      if (y < 1) { e = "CE"; y = 1; }
+    } else {
+      y += dir;
+      if (y < 1) { e = "BC"; y = 1; }
+      if (y > CUR_YEAR) y = CUR_YEAR;
+    }
+    if (y > 9999) y = 9999;
+    setEra(e);
+    setYearStr(String(y));
+  };
+
   const ms = `${sign}${pad4(yearNum)}-${String(month).padStart(2, "0")}-01`;
   const me = `${sign}${pad4(yearNum)}-${String(month).padStart(2, "0")}-${String(lastDay(yearNum, month)).padStart(2, "0")}`;
   const midMonth = `${sign}${pad4(yearNum)}-${String(month).padStart(2, "0")}-15`;
@@ -182,7 +200,7 @@ export default function LeadersDirectory({
   }, []);
   const POWER_MAX_YEAR = 2026;
   const relYear = mode === "asof"
-    ? (era === "CE" && yearNum >= 1789 && yearNum <= POWER_MAX_YEAR ? yearNum : null)
+    ? (era === "CE" && yearNum >= 1500 && yearNum <= POWER_MAX_YEAR ? yearNum : null)
     : POWER_MAX_YEAR;
   const powerShare = (slug: string): number | null =>
     relYear && powerMap ? (powerMap[String(relYear)]?.[slug] ?? null) : null;
@@ -195,9 +213,12 @@ export default function LeadersDirectory({
 
   const orgOptions = useMemo(() => {
     const s = new Set<string>();
-    for (const e of entities) for (const o of e.orgs) s.add(o);
+    for (const e of entities) {
+      for (const o of e.orgs) s.add(o);
+      if (mode !== "current") for (const o of Object.keys(e.orgSpans ?? {})) s.add(o);
+    }
     return ["All", ...Array.from(s).sort()];
-  }, [entities]);
+  }, [entities, mode]);
 
   // Dropdown order: live countries (by score), then defunct (most recent first), then orgs.
   const entityOptions = useMemo(() => {
@@ -241,7 +262,13 @@ export default function LeadersDirectory({
     if (entitySlug !== "all") return e.slug === entitySlug;
     if (continent !== "All" && e.continent !== continent) return false;
     if (type !== "all" && e.type !== type) return false;
-    if (org !== "All" && !e.orgs.includes(org)) return false;
+    if (org !== "All") {
+      const span = e.orgSpans?.[org];
+      if (mode === "asof" && span) {
+        if (span.s != null && dkey(span.s) > dkey(me)) return false;
+        if (span.e != null && dkey(span.e) < dkey(ms)) return false;
+      } else if (!e.orgs.includes(org)) return false;
+    }
     return true;
   }
 
@@ -357,6 +384,22 @@ export default function LeadersDirectory({
               className={`${selectCls} w-24`}
               style={{ fontFamily: "'JetBrains Mono', monospace" }}
             />
+            <div className="inline-flex flex-col rounded-md border border-[var(--border)] overflow-hidden">
+              <button
+                type="button"
+                onClick={() => stepYear(1)}
+                className="px-1.5 leading-none text-[10px] py-[3px] bg-[var(--bg-card)] text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
+                title="One year later"
+                aria-label="One year later"
+              >&#9650;</button>
+              <button
+                type="button"
+                onClick={() => stepYear(-1)}
+                className="px-1.5 leading-none text-[10px] py-[3px] bg-[var(--bg-card)] text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors border-t border-[var(--border)]"
+                title="One year earlier"
+                aria-label="One year earlier"
+              >&#9660;</button>
+            </div>
             <button
               type="button"
               onClick={() => setEra(era === "CE" ? "BC" : "CE")}
@@ -441,7 +484,6 @@ export default function LeadersDirectory({
             <thead>
               <tr className="border-b border-[var(--border)]" style={{ backgroundColor: "var(--bg-card)" }}>
                 <th className="px-2 sm:px-4 py-3 text-left font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" onClick={() => toggleSort("name")}>Country / Org{arrow("name")}</th>
-                <th className="hidden sm:table-cell px-4 py-3 text-right font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }} onClick={() => toggleSort("score")}>Score{arrow("score")}</th>
                 <th className="px-2 sm:px-4 py-3 text-left font-semibold text-[var(--text-muted)]">Leader</th>
                 <th className="hidden sm:table-cell px-4 py-3 text-left font-semibold text-[var(--text-muted)]">Role</th>
                 <th className="px-2 sm:px-4 py-3 text-left font-semibold text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Start</th>
@@ -458,7 +500,6 @@ export default function LeadersDirectory({
                     ) : <span>{nameAt(x.e, x.en ?? "9999")}</span>}
                     {x.e.yearRange ? <span className="ml-1 text-[10px] text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{x.e.yearRange}</span> : null}
                   </td>
-                  <td className="hidden sm:table-cell px-4 py-2 text-right font-semibold" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>{fmtScore(x.e.scoreTotal)}</td>
                   <td className="px-2 sm:px-4 py-2 text-[var(--text)]">{x.n}<span className="sm:hidden text-xs text-[var(--text-dim)] ml-1">({shortRole(x.r)})</span></td>
                   <td className="hidden sm:table-cell px-4 py-2 text-[var(--text-muted)] text-xs">{x.r}</td>
                   <td className="px-2 sm:px-4 py-2 text-xs text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{x.s ?? ""}</td>
@@ -473,7 +514,7 @@ export default function LeadersDirectory({
               <tr className="border-b border-[var(--border)]" style={{ backgroundColor: "var(--bg-card)" }}>
                 <th className="px-2 sm:px-4 py-3 text-left font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" onClick={() => toggleSort("name")}>Country / Org{arrow("name")}</th>
                 <th className="hidden md:table-cell px-4 py-3 text-left font-semibold text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Region</th>
-                <th className="px-2 sm:px-4 py-3 text-right font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }} onClick={() => toggleSort("power")} title={relYear ? `Share of world power, ${relYear}` : "Power ranking available 1789 onward"}>Power{arrow("power")}</th>
+                <th className="px-2 sm:px-4 py-3 text-right font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }} onClick={() => toggleSort("power")} title={relYear ? `Share of world power, ${relYear}` : "Power ranking available 1500 onward"}>Power{arrow("power")}</th>
                 {mode === "current" && (
                   <th className="hidden sm:table-cell px-2 sm:px-4 py-3 text-right font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }} onClick={() => toggleSort("score")} title="Metro-based country score">Score{arrow("score")}</th>
                 )}

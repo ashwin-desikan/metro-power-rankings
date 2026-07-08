@@ -1,0 +1,82 @@
+[
+  {
+    "name": "👑 Uldin",
+    "role": "King",
+    "start": "0400-01-01",
+    "end": "0409-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "first Hun ruler known by name in contemporary sources (c. 400)"
+  },
+  {
+    "name": "👑 Charaton",
+    "role": "King",
+    "start": "0412-01-01",
+    "end": "0420-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "attested 412/413 by Olympiodorus; dates uncertain"
+  },
+  {
+    "name": "👑 Octar",
+    "role": "King",
+    "start": "0420-01-01",
+    "end": "0430-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "co-ruled with his brother Rugila; d. 430 (start c. 420s)"
+  },
+  {
+    "name": "👑 Rugila",
+    "role": "King",
+    "start": "0420-01-01",
+    "end": "0434-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone",
+    "era": "uncle of Attila and Bleda; d. 434 (start c. 420s)"
+  },
+  {
+    "name": "👑 Bleda",
+    "role": "King",
+    "start": "0434-01-01",
+    "end": "0445-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "joint kingship with Attila from 434"
+  },
+  {
+    "name": "👑 Attila",
+    "role": "King",
+    "start": "0434-01-01",
+    "end": "0453-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone",
+    "era": "co-ruler 434–445, sole ruler 445–453; 'Scourge of God' peak; halted at the Catalaunian Plains, 451"
+  },
+  {
+    "name": "👑 Ellac",
+    "role": "King",
+    "start": "0453-01-01",
+    "end": "0454-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "eldest son of Attila; killed at the Battle of Nedao, 454"
+  },
+  {
+    "name": "👑 Dengizich",
+    "role": "King",
+    "start": "0453-01-01",
+    "end": "0469-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone",
+    "era": "co-ruled with brothers after Attila's death; defeated and killed 469 — end of the Hunnic Empire"
+  }
+]

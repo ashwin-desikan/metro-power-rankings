@@ -1,5 +1,215 @@
 [
   {
+    "name": "👑 Taejo",
+    "role": "King",
+    "start": "1392-01-01",
+    "end": "1398-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Jeongjong",
+    "role": "King",
+    "start": "1398-01-01",
+    "end": "1400-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Taejong",
+    "role": "King",
+    "start": "1400-01-01",
+    "end": "1418-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone",
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Sejong",
+    "role": "King",
+    "start": "1418-01-01",
+    "end": "1450-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "year-level backbone",
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Munjong",
+    "role": "King",
+    "start": "1450-01-01",
+    "end": "1452-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Danjong",
+    "role": "King",
+    "start": "1452-01-01",
+    "end": "1455-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Sejo",
+    "role": "King",
+    "start": "1455-01-01",
+    "end": "1468-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Yejong",
+    "role": "King",
+    "start": "1468-01-01",
+    "end": "1469-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Seongjong",
+    "role": "King",
+    "start": "1469-01-01",
+    "end": "1494-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone",
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Yeonsangun",
+    "role": "King",
+    "start": "1494-01-01",
+    "end": "1506-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone",
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Jungjong",
+    "role": "King",
+    "start": "1506-01-01",
+    "end": "1544-01-01",
+    "current": false,
+    "tenure": "38y 0d",
+    "party": "year-level backbone",
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Injong",
+    "role": "King",
+    "start": "1544-01-01",
+    "end": "1545-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Myeongjong",
+    "role": "King",
+    "start": "1545-01-01",
+    "end": "1567-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level backbone",
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Seonjo",
+    "role": "King",
+    "start": "1567-01-01",
+    "end": "1608-01-01",
+    "current": false,
+    "tenure": "41y 0d",
+    "party": "year-level backbone",
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Gwanghaegun",
+    "role": "King",
+    "start": "1608-01-01",
+    "end": "1623-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone",
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Injo",
+    "role": "King",
+    "start": "1623-01-01",
+    "end": "1649-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone",
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Hyojong",
+    "role": "King",
+    "start": "1649-01-01",
+    "end": "1659-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Hyeonjong",
+    "role": "King",
+    "start": "1659-01-01",
+    "end": "1674-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone",
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Sukjong",
+    "role": "King",
+    "start": "1674-01-01",
+    "end": "1720-01-01",
+    "current": false,
+    "tenure": "46y 0d",
+    "party": "year-level backbone",
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Gyeongjong",
+    "role": "King",
+    "start": "1720-01-01",
+    "end": "1724-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Joseon"
+  },
+  {
+    "name": "👑 Yeongjo",
+    "role": "King",
+    "start": "1724-01-01",
+    "end": "1776-03-10",
+    "current": false,
+    "tenure": "52y 0d",
+    "party": "year-level backbone",
+    "era": "Joseon"
+  },
+  {
     "name": "👑 Jeongjo",
     "role": "King",
     "start": "1776-03-10",

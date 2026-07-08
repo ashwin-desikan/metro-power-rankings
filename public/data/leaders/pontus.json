@@ -1,0 +1,82 @@
+[
+  {
+    "name": "👑 Mithridates I Ktistes",
+    "role": "King",
+    "start": "-0281-01-01",
+    "end": "-0266-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone — 'Ktistes' = Founder; proclaimed the kingdom in 281 BC",
+    "era": "Mithridatic dynasty"
+  },
+  {
+    "name": "👑 Ariobarzanes",
+    "role": "King",
+    "start": "-0266-01-01",
+    "end": "-0250-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone",
+    "era": "Mithridatic dynasty"
+  },
+  {
+    "name": "👑 Mithridates II",
+    "role": "King",
+    "start": "-0250-01-01",
+    "end": "-0220-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone — c. dates",
+    "era": "Mithridatic dynasty"
+  },
+  {
+    "name": "👑 Mithridates III",
+    "role": "King",
+    "start": "-0220-01-01",
+    "end": "-0185-01-01",
+    "current": false,
+    "tenure": "35y 0d",
+    "party": "year-level backbone — c. dates",
+    "era": "Mithridatic dynasty"
+  },
+  {
+    "name": "👑 Pharnaces I",
+    "role": "King",
+    "start": "-0185-01-01",
+    "end": "-0170-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone — c. dates; took Sinope, made it the capital",
+    "era": "Mithridatic dynasty"
+  },
+  {
+    "name": "👑 Mithridates IV Philopator Philadelphus",
+    "role": "King",
+    "start": "-0170-01-01",
+    "end": "-0150-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone — c. dates; co-ruled with his sister-wife Laodice",
+    "era": "Mithridatic dynasty"
+  },
+  {
+    "name": "👑 Mithridates V Euergetes",
+    "role": "King",
+    "start": "-0150-01-01",
+    "end": "-0120-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone — c. dates; Roman ally, assassinated 120 BC",
+    "era": "Mithridatic dynasty"
+  },
+  {
+    "name": "👑 Mithridates VI Eupator",
+    "role": "King",
+    "start": "-0120-01-01",
+    "end": "-0063-01-01",
+    "current": false,
+    "tenure": "57y 0d",
+    "party": "year-level backbone — fought Rome in the three Mithridatic Wars; kingdom conquered by Pompey, died 63 BC — his son Pharnaces II (63–47 BC) kept only the Bosporan realm as a Roman client",
+    "era": "Mithridatic dynasty"
+  }
+]

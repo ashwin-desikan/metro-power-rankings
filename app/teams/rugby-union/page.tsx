@@ -83,10 +83,10 @@ export default async function RugbyUnionHubPage() {
       <HubNav
         items={[
           { label: "World Rankings", href: "#rankings" },
-          { label: "Six Nations", href: "#six-nations" },
-          { label: "Rugby Championship", href: "#rugby-championship" },
+          { label: "Championships", href: "#six-nations" },
           { label: "World Cup", href: "#world-cup" },
           { label: "Greatest Games", href: "#greatest-games" },
+          { label: "Invitational Teams", href: "/teams/rugby-union/invitational" },
           { label: "Teams", href: "#teams" },
           { label: "Methodology", href: "#methodology" },
         ]}
@@ -176,76 +176,61 @@ export default async function RugbyUnionHubPage() {
         </div>
       </section>
 
-      {/* ---------------- Six Nations ---------------- */}
-      <section className="mb-10">
-        <h2 id="six-nations" className="text-lg font-semibold mb-1">
-          Home, Five &amp; Six Nations roll of honour
-        </h2>
-        <p className="text-xs text-[var(--text-muted)] mb-3">
-          Every championship since 1883; shared titles list all champions. GS marks a
-          Grand Slam, TC a Triple Crown.
-        </p>
-        <div className="rounded-xl border overflow-x-auto max-h-[480px] overflow-y-auto" style={card}>
-          <table className="w-full text-sm min-w-[560px]">
-            <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
-              <tr className="text-left text-xs text-[var(--text-muted)]">
-                <th className="py-2 px-3 font-medium">Season</th>
-                <th className="py-2 px-3 font-medium">Champions</th>
-                <th className="py-2 px-3 font-medium">Grand Slam</th>
-                <th className="py-2 px-3 font-medium">Triple Crown</th>
-              </tr>
-            </thead>
-            <tbody>
-              {hub.six_nations_roll.map((r) => (
-                <tr key={r.season} className="border-t" style={{ borderColor: "var(--border)" }}>
-                  <td className="py-1.5 px-3 tabular-nums" style={mono}>{r.season}</td>
-                  <td className="py-1.5 px-3 font-medium">
-                    {r.champions.length > 0
-                      ? r.champions.map((c, i) => (
-                          <span key={c}>{i > 0 ? " / " : ""}{teamLink(c)}</span>
-                        ))
-                      : <span className="text-xs text-[var(--text-dim)]">—</span>}
-                  </td>
-                  <td className="py-1.5 px-3 text-xs">{r.grand_slam ?? ""}</td>
-                  <td className="py-1.5 px-3 text-xs">{r.triple_crown ?? ""}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
+      {/* ---------------- Championship rolls of honour (combined, per year) ---------------- */}
+      {(() => {
+        const yearOf = (s: unknown) => (String(s).match(/\d{4}/)?.[0] ?? String(s));
+        type Merged = { year: string; nh?: (typeof hub.six_nations_roll)[number]; sh?: (typeof hub.trc_roll)[number] };
+        const byYear = new Map<string, Merged>();
+        for (const r of hub.six_nations_roll) { const y = yearOf(r.season); byYear.set(y, { ...(byYear.get(y) ?? { year: y }), nh: r }); }
+        for (const r of hub.trc_roll) { const y = yearOf(r.season); byYear.set(y, { ...(byYear.get(y) ?? { year: y }), sh: r }); }
+        const rows = [...byYear.values()].sort((a, b) => b.year.localeCompare(a.year));
+        return (
+          <section id="six-nations" className="mb-10">
+            <h2 className="text-lg font-semibold mb-1">Championship rolls of honour</h2>
+            <p className="text-xs text-[var(--text-muted)] mb-3">
+              Northern hemisphere (Home, Five &amp; Six Nations since 1883) and southern hemisphere
+              (Tri Nations &amp; Rugby Championship since 1996), side by side per year. GS Grand Slam, TC Triple Crown.
+            </p>
+            <div className="rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto" style={card}>
+              <table className="w-full text-sm min-w-[560px]">
+                <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
+                  <tr className="text-left text-xs text-[var(--text-muted)]">
+                    <th className="py-2 px-3 font-medium">Season</th>
+                    <th className="py-2 px-3 font-medium">Six Nations</th>
+                    <th className="py-2 px-3 font-medium">Rugby Championship</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {rows.map((r) => (
+                    <tr key={r.year} className="border-t" style={{ borderColor: "var(--border)" }}>
+                      <td className="py-1.5 px-3 tabular-nums align-top" style={mono}>{r.year}</td>
+                      <td className="py-1.5 px-3 align-top">
+                        {r.nh && r.nh.champions.length > 0 ? (
+                          <span className="font-medium">
+                            {r.nh.champions.map((c, i) => <span key={c}>{i > 0 ? " / " : ""}{teamLink(c)}</span>)}
+                            {r.nh.grand_slam ? <sup className="text-[9px] text-[var(--text-dim)] ml-0.5">GS</sup> : null}
+                            {r.nh.triple_crown
+                              ? (r.nh.champions.includes(r.nh.triple_crown)
+                                  ? <sup className="text-[9px] text-[var(--text-dim)] ml-0.5">TC</sup>
+                                  : <span className="text-[10px] text-[var(--text-dim)] ml-1">TC {r.nh.triple_crown}</span>)
+                              : null}
+                          </span>
+                        ) : <span className="text-[var(--text-dim)]">—</span>}
+                      </td>
+                      <td className="py-1.5 px-3 align-top font-medium">
+                        {r.sh && r.sh.champions.length > 0
+                          ? r.sh.champions.map((c, i) => <span key={c}>{i > 0 ? " / " : ""}{teamLink(c)}</span>)
+                          : <span className="text-[var(--text-dim)] font-normal">—</span>}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        );
+      })()}
 
-      {/* ---------------- Rugby Championship ---------------- */}
-      <section className="mb-10">
-        <h2 id="rugby-championship" className="text-lg font-semibold mb-1">
-          Tri Nations &amp; Rugby Championship roll of honour
-        </h2>
-        <p className="text-xs text-[var(--text-muted)] mb-3">Southern-hemisphere championship since 1996.</p>
-        <div className="rounded-xl border overflow-x-auto max-h-[420px] overflow-y-auto" style={card}>
-          <table className="w-full text-sm min-w-[420px]">
-            <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
-              <tr className="text-left text-xs text-[var(--text-muted)]">
-                <th className="py-2 px-3 font-medium">Season</th>
-                <th className="py-2 px-3 font-medium">Competition</th>
-                <th className="py-2 px-3 font-medium">Champions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {hub.trc_roll.map((r) => (
-                <tr key={r.season} className="border-t" style={{ borderColor: "var(--border)" }}>
-                  <td className="py-1.5 px-3 tabular-nums" style={mono}>{r.season}</td>
-                  <td className="py-1.5 px-3 text-xs text-[var(--text-muted)]">{r.comp.replace(/^\d{4}\s*/, "")}</td>
-                  <td className="py-1.5 px-3 font-medium">
-                    {r.champions.map((c, i) => (
-                      <span key={c}>{i > 0 ? " / " : ""}{teamLink(c)}</span>
-                    ))}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
 
       {/* ---------------- World Cup ---------------- */}
       <section className="mb-10">
@@ -287,6 +272,13 @@ export default async function RugbyUnionHubPage() {
           Filter by decade; hover a score for its components.
         </p>
         <RugbyGreatestGames top={rg.top} decades={rg.by_decade} limit={50} />
+      </section>
+
+      <section className="mb-10">
+        <Link href="/teams/rugby-union/invitational" className="block rounded-xl border p-4 hover:border-[var(--accent)] transition" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+          <div className="text-lg font-semibold">Invitational Teams →</div>
+          <div className="text-sm text-[var(--text-muted)] mt-0.5">The British &amp; Irish Lions and the Barbarians: representative and invitational sides that play the Test nations.</div>
+        </Link>
       </section>
 
       {/* ---------------- Teams ---------------- */}

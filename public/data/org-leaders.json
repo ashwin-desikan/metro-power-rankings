@@ -911,5 +911,60 @@
         "era": null
       }
     ]
+  },
+  "Warsaw Pact": {
+    "office": "Supreme Commander of the Unified Armed Forces",
+    "history": [
+      {
+        "name": "Ivan Konev",
+        "role": "Supreme Commander",
+        "start": "1955-05-14",
+        "end": "1960-04-01",
+        "current": false,
+        "tenure": null,
+        "party": "Soviet Union",
+        "era": null
+      },
+      {
+        "name": "Andrei Grechko",
+        "role": "Supreme Commander",
+        "start": "1960-04-01",
+        "end": "1967-04-12",
+        "current": false,
+        "tenure": null,
+        "party": "Soviet Union",
+        "era": null
+      },
+      {
+        "name": "Ivan Yakubovsky",
+        "role": "Supreme Commander",
+        "start": "1967-07-01",
+        "end": "1976-11-30",
+        "current": false,
+        "tenure": null,
+        "party": "Soviet Union",
+        "era": null
+      },
+      {
+        "name": "Viktor Kulikov",
+        "role": "Supreme Commander",
+        "start": "1977-01-01",
+        "end": "1989-02-01",
+        "current": false,
+        "tenure": null,
+        "party": "Soviet Union",
+        "era": null
+      },
+      {
+        "name": "Pyotr Lushev",
+        "role": "Supreme Commander",
+        "start": "1989-02-01",
+        "end": "1991-07-01",
+        "current": false,
+        "tenure": null,
+        "party": "Soviet Union",
+        "era": null
+      }
+    ]
   }
 }

@@ -94,7 +94,7 @@ export default function PowerHistory({ data }: { data: Data }) {
 
   // chart (lens metric) for the majors
   const cw = 860, chH = 240, padL = 40, padR = 96, padT = 12, padB = 26;
-  const cx0 = 1816, cx1 = maxY;
+  const cx0 = lens === "power" ? minY : 1816, cx1 = maxY;
   const maxShare = lens === "power" ? 0.5 : 0.55;
   const px = (y: number) => padL + ((y - cx0) / (cx1 - cx0)) * (cw - padL - padR);
   const py = (s: number) => padT + (1 - s / maxShare) * (chH - padT - padB);
@@ -103,13 +103,15 @@ export default function PowerHistory({ data }: { data: Data }) {
       const pts: Array<[number, number]> = [];
       for (const y of years) {
         if (y < cx0) continue;
-        const r = (byYear[String(y)] ?? []).find((x) => x.slug === slug);
+        const rows = byYear[String(y)] ?? [];
+        let r = rows.find((x) => x.slug === slug);
+        if (!r && slug === "united-kingdom") r = rows.find((x) => x.slug === "england");
         if (!r) continue;
         const v = metricOf(r);
         if (v != null) pts.push([y, v]);
       }
       return { slug, pts };
-    }), [years, byYear, metricOf]);
+    }), [years, byYear, metricOf, cx0]);
   const linePath = (pts: Array<[number, number]>) =>
     pts.map((p, i) => `${i === 0 ? "M" : "L"}${px(p[0]).toFixed(1)},${py(p[1]).toFixed(1)}`).join(" ");
 
@@ -169,11 +171,11 @@ export default function PowerHistory({ data }: { data: Data }) {
             <div className="text-5xl font-bold tracking-tight tabular-nums" style={{ fontFamily: "'JetBrains Mono', monospace", minWidth: "4ch", textAlign: "center" }}>{year}</div>
             <button type="button" onClick={() => setYear((y) => Math.min(maxY, y + 1))} disabled={year >= maxY} aria-label="Next year" className="text-lg leading-none px-2 py-1 rounded border transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)] disabled:opacity-30 disabled:pointer-events-none" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>&#9654;</button>
           </div>
-          <div className="text-xs text-[var(--text-muted)]">{year < 1816 ? "Curated tiers (pre-CINC era)" : `${LENS_LABEL[lens]} index`}</div>
+          <div className="text-xs text-[var(--text-muted)]">{year < 1816 ? "Benchmark estimate (pre-industrial data)" : `${LENS_LABEL[lens]} index`}</div>
         </div>
         <input type="range" min={minY} max={maxY} value={year} step={1} onChange={(e) => setYear(parseInt(e.target.value, 10))} className="w-full accent-[var(--accent)]" aria-label="Year" />
         <div className="flex flex-wrap gap-1.5 mt-3">
-          {[1789, 1815, 1830, 1871, 1900, 1914, 1938, 1945, 1975, 1991, 2000, maxY].map((y) => (
+          {[1500, 1600, 1700, 1789, 1830, 1871, 1914, 1945, 1975, 1991, 2000, maxY].map((y) => (
             <button key={y} type="button" onClick={() => setYear(y)}
               className="text-[11px] px-2 py-0.5 rounded border transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
               style={{ borderColor: year === y ? "var(--accent)" : "var(--border)", color: year === y ? "var(--accent)" : "var(--text-muted)", fontFamily: "'JetBrains Mono', monospace" }}>{y}</button>
@@ -183,7 +185,7 @@ export default function PowerHistory({ data }: { data: Data }) {
 
       {materialUnavailable ? (
         <div className="rounded-lg border p-6 text-center text-sm text-[var(--text-muted)]" style={{ borderColor: "var(--border)", background: "var(--bg-card)" }}>
-          The {LENS_LABEL[lens].toLowerCase()} lens is computed from material data that begins in 1816. Pick a later year, or switch to the Power lens for the curated pre-1816 tiers.
+          The {LENS_LABEL[lens].toLowerCase()} lens is computed from material data that begins in 1816. Pick a later year, or switch to the Power lens for the benchmark-based pre-1816 estimates.
         </div>
       ) : (
         <div className="space-y-5">
@@ -257,7 +259,7 @@ export default function PowerHistory({ data }: { data: Data }) {
       <div className="rounded-lg border p-4 overflow-x-auto" style={{ borderColor: "var(--border)", background: "var(--bg-card)" }}>
         <div className="flex items-center justify-between mb-2">
           <h3 className="text-sm font-semibold">{LENS_LABEL[lens]} share of world power, the major players</h3>
-          <span className="text-xs text-[var(--text-dim)]">1816 – {maxY}</span>
+          <span className="text-xs text-[var(--text-dim)]">{cx0} – {maxY}</span>
         </div>
         <svg viewBox={`0 0 ${cw} ${chH}`} className="w-full" style={{ minWidth: 640 }} role="img" aria-label="Share of world power over time">
           {[0.1, 0.2, 0.3, 0.4, 0.5].map((g) => (
@@ -266,7 +268,7 @@ export default function PowerHistory({ data }: { data: Data }) {
               <text x={padL - 5} y={py(g) + 3} textAnchor="end" fontSize={9} fill="var(--text-dim)">{(g * 100).toFixed(0)}%</text>
             </g>
           ))}
-          {[1850, 1900, 1950, 2000].map((y) => (
+          {(cx0 < 1816 ? [1600, 1700, 1800, 1900, 2000] : [1850, 1900, 1950, 2000]).map((y) => (
             <text key={y} x={px(y)} y={chH - 8} textAnchor="middle" fontSize={9} fill="var(--text-dim)">{y}</text>
           ))}
           <line x1={px(year < cx0 ? cx0 : year)} y1={padT} x2={px(year < cx0 ? cx0 : year)} y2={chH - padB} stroke="var(--accent)" strokeWidth={1} strokeDasharray="3 3" opacity={0.7} />
@@ -342,7 +344,7 @@ export default function PowerHistory({ data }: { data: Data }) {
 
       <p className="text-xs text-[var(--text-dim)] leading-relaxed max-w-3xl">
         {data.meta.method} Tiers are relative to each year&rsquo;s leader. Latent and recognised sub-indices are computed
-        from 1816; pre-1816 figures are curated estimates shown as tiers only under the Power lens.
+        from 1816; the Power lens runs from 1500 on benchmark-interpolated estimates with wide error bars.
       </p>
     </div>
   );

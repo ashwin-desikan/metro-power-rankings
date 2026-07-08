@@ -1,0 +1,122 @@
+[
+  {
+    "name": "👑 Alara",
+    "role": "King",
+    "start": "-0780-01-01",
+    "end": "-0760-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone — c. dates; traditional founder of the Napatan royal line",
+    "era": "Napatan era"
+  },
+  {
+    "name": "👑 Kashta",
+    "role": "King",
+    "start": "-0760-01-01",
+    "end": "-0747-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone — c. dates; extended Kushite power into Upper Egypt",
+    "era": "Napatan era"
+  },
+  {
+    "name": "👑 Piye",
+    "role": "King",
+    "start": "-0747-01-01",
+    "end": "-0716-01-01",
+    "current": false,
+    "tenure": "31y 0d",
+    "party": "year-level backbone — conquered Egypt — founder of Egypt's 25th (Kushite) Dynasty; shared crown with the ancient-egypt entity",
+    "era": "Napatan era"
+  },
+  {
+    "name": "👑 Shebitku",
+    "role": "King",
+    "start": "-0716-01-01",
+    "end": "-0702-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone — 25th-Dynasty pharaoh of Egypt (revised chronology places him before Shabaka); Egypt overlap",
+    "era": "Napatan era"
+  },
+  {
+    "name": "👑 Shabaka",
+    "role": "King",
+    "start": "-0702-01-01",
+    "end": "-0690-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone — 25th-Dynasty pharaoh of Egypt; Egypt overlap",
+    "era": "Napatan era"
+  },
+  {
+    "name": "👑 Taharqa",
+    "role": "King",
+    "start": "-0690-01-01",
+    "end": "-0664-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone — greatest 25th-Dynasty pharaoh; driven from Egypt by Assyria; Egypt overlap",
+    "era": "Napatan era"
+  },
+  {
+    "name": "👑 Tantamani",
+    "role": "King",
+    "start": "-0664-01-01",
+    "end": "-0656-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone — last Kushite pharaoh of Egypt — lost Egypt to Assyria; ruled in Kush until after 656 BC",
+    "era": "Napatan era"
+  },
+  {
+    "name": "👑 Aspelta",
+    "role": "King",
+    "start": "-0600-01-01",
+    "end": "-0580-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone — c. dates; gap c. 656–600 BC (Atlanersa, Senkamanisken, Anlamani — reigns only broadly datable); Napata sacked by Psamtik II 592, court shifted toward Meroë",
+    "era": "Napatan era"
+  },
+  {
+    "name": "👑 Arakamani",
+    "role": "King",
+    "start": "-0270-01-01",
+    "end": "-0250-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone — c. 270 BC–mid-3rd century (end year approximate); gap c. 580–270 BC — sparse Napatan record; first ruler buried at Meroë",
+    "era": "Meroitic era"
+  },
+  {
+    "name": "👑 Amanirenas",
+    "role": "Kandake (Queen)",
+    "start": "-0040-01-01",
+    "end": "-0010-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone — c. dates; gap c. 250–40 BC; kandake who fought Rome in the war of 25–22 BC and won favourable terms from Augustus",
+    "era": "Meroitic era"
+  },
+  {
+    "name": "👑 Amanitore",
+    "role": "Kandake (Queen)",
+    "start": "0040-01-01",
+    "end": "0060-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone — dates approximate — source says only 'middle 1st century CE'; co-ruled with King Natakamani, great builders of Meroë; gap c. 10 BC–40 CE (Amanishakheto et al. only broadly datable)",
+    "era": "Meroitic era"
+  },
+  {
+    "name": "👑 Amanipilade",
+    "role": "Kandake (Queen)",
+    "start": "0340-01-01",
+    "end": "0350-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone — dates approximate — 'middle 4th century CE'; last attested ruler before the kingdom's fall to Aksum c. 350 CE; gap c. 60–340 CE — late Meroitic rulers only broadly datable",
+    "era": "Meroitic era"
+  }
+]

@@ -1,5 +1,405 @@
 [
   {
+    "name": "👑 Harald Fairhair",
+    "role": "Monarch",
+    "start": "0872-01-01",
+    "end": "0932-01-01",
+    "current": false,
+    "tenure": "60y 0d",
+    "party": "year-level backbone — Fairhair dynasty; dates traditional (c. 872–932)",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Eric Bloodaxe",
+    "role": "Monarch",
+    "start": "0932-01-01",
+    "end": "0934-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone — Fairhair dynasty; dates approximate",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Haakon the Good",
+    "role": "Monarch",
+    "start": "0934-01-01",
+    "end": "0960-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone — Fairhair dynasty; dates approximate",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Harald Greycloak",
+    "role": "Monarch",
+    "start": "0961-01-01",
+    "end": "0970-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone — Fairhair dynasty; dates approximate",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Olaf Tryggvason",
+    "role": "Monarch",
+    "start": "0995-01-01",
+    "end": "1000-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Olaf II (St. Olaf)",
+    "role": "Monarch",
+    "start": "1015-01-01",
+    "end": "1028-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone — driven out by Cnut the Great, 1028; canonized patron saint of Norway",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Cnut the Great",
+    "role": "Monarch",
+    "start": "1028-01-01",
+    "end": "1035-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone — also King of Denmark and England",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Magnus the Good",
+    "role": "Monarch",
+    "start": "1035-01-01",
+    "end": "1047-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone — also King of Denmark from 1042; Harald Hardrada co-king from 1046",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Harald Hardrada",
+    "role": "Monarch",
+    "start": "1047-01-01",
+    "end": "1066-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone — co-king from 1046; killed at Stamford Bridge, 1066",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Magnus II",
+    "role": "Monarch",
+    "start": "1066-01-01",
+    "end": "1069-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Olaf III Kyrre",
+    "role": "Monarch",
+    "start": "1069-01-01",
+    "end": "1093-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone — co-king with Magnus II from 1067",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Magnus Barefoot",
+    "role": "Monarch",
+    "start": "1093-01-01",
+    "end": "1103-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Sigurd the Crusader",
+    "role": "Monarch",
+    "start": "1103-01-01",
+    "end": "1130-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Harald Gille",
+    "role": "Monarch",
+    "start": "1130-01-01",
+    "end": "1136-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone — civil war era",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Magnus V Erlingsson",
+    "role": "Monarch",
+    "start": "1161-01-01",
+    "end": "1184-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level backbone — civil war era",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Sverre Sigurdsson",
+    "role": "Monarch",
+    "start": "1184-01-01",
+    "end": "1202-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone — House of Sverre",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Haakon III Sverresson",
+    "role": "Monarch",
+    "start": "1202-01-01",
+    "end": "1204-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone — House of Sverre",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Inge II (Bårdsson)",
+    "role": "Monarch",
+    "start": "1204-01-01",
+    "end": "1217-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone — House of Sverre",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Haakon IV (the Old)",
+    "role": "Monarch",
+    "start": "1217-01-01",
+    "end": "1263-01-01",
+    "current": false,
+    "tenure": "46y 0d",
+    "party": "year-level backbone — House of Sverre",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Magnus VI the Lawmender",
+    "role": "Monarch",
+    "start": "1263-01-01",
+    "end": "1280-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone — co-king with his father Haakon IV from 1257",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Eric II Magnusson",
+    "role": "Monarch",
+    "start": "1280-01-01",
+    "end": "1299-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone — co-king with his father from 1273",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Haakon V Magnusson",
+    "role": "Monarch",
+    "start": "1299-01-01",
+    "end": "1319-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Magnus VII Eriksson",
+    "role": "Monarch",
+    "start": "1319-01-01",
+    "end": "1343-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone — also King of Sweden (as Magnus IV); retained parts of Norway until 1355 after his son became king in 1343",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Haakon VI Magnusson",
+    "role": "Monarch",
+    "start": "1343-01-01",
+    "end": "1380-01-01",
+    "current": false,
+    "tenure": "37y 0d",
+    "party": "year-level backbone — co-king with his father Magnus VII until 1355",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Olaf IV Haakonsson",
+    "role": "Monarch",
+    "start": "1380-01-01",
+    "end": "1387-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone — also King of Denmark (as Olaf II) from 1376; his mother Margaret governed as regent",
+    "era": "Kingdom of Norway"
+  },
+  {
+    "name": "👑 Margaret I",
+    "role": "Monarch",
+    "start": "1388-01-01",
+    "end": "1412-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone — Queen of Denmark, Norway and Sweden; regent from Olaf IV's death 1387, hailed as ruler 1388; Eric of Pomerania co-sovereign from 1389",
+    "era": "Kalmar Union"
+  },
+  {
+    "name": "👑 Eric of Pomerania",
+    "role": "Monarch",
+    "start": "1412-01-01",
+    "end": "1442-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone — King of Norway from 1389 as Margaret's co-sovereign; deposed in Norway 1442",
+    "era": "Kalmar Union"
+  },
+  {
+    "name": "👑 Christopher (of Bavaria)",
+    "role": "Monarch",
+    "start": "1442-01-01",
+    "end": "1448-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Kalmar Union"
+  },
+  {
+    "name": "👑 Christian I",
+    "role": "Monarch",
+    "start": "1450-01-01",
+    "end": "1481-01-01",
+    "current": false,
+    "tenure": "31y 0d",
+    "party": "year-level backbone — House of Oldenburg; King of Denmark from 1448; acceded in Norway 1450 after the 1448–1450 interregnum",
+    "era": "Kalmar Union"
+  },
+  {
+    "name": "👑 Hans (John)",
+    "role": "Monarch",
+    "start": "1483-01-01",
+    "end": "1513-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone — also King of Denmark and (1497–1501) of Sweden",
+    "era": "Kalmar Union"
+  },
+  {
+    "name": "👑 Christian II",
+    "role": "Monarch",
+    "start": "1513-01-01",
+    "end": "1523-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone — deposed 1523",
+    "era": "Kalmar Union"
+  },
+  {
+    "name": "👑 Frederick I",
+    "role": "Monarch",
+    "start": "1524-01-01",
+    "end": "1533-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone — King of Denmark from 1523; accepted in Norway 1524",
+    "era": "Denmark-Norway"
+  },
+  {
+    "name": "👑 Christian III",
+    "role": "Monarch",
+    "start": "1537-01-01",
+    "end": "1559-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level backbone — King of Denmark from 1534; rule established in Norway 1537",
+    "era": "Denmark-Norway"
+  },
+  {
+    "name": "👑 Frederick II",
+    "role": "Monarch",
+    "start": "1559-01-01",
+    "end": "1588-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level backbone",
+    "era": "Denmark-Norway"
+  },
+  {
+    "name": "👑 Christian IV",
+    "role": "Monarch",
+    "start": "1588-01-01",
+    "end": "1648-01-01",
+    "current": false,
+    "tenure": "60y 0d",
+    "party": "year-level backbone",
+    "era": "Denmark-Norway"
+  },
+  {
+    "name": "👑 Frederick III",
+    "role": "Monarch",
+    "start": "1648-01-01",
+    "end": "1670-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level backbone — introduced hereditary absolute monarchy, 1660",
+    "era": "Denmark-Norway"
+  },
+  {
+    "name": "👑 Christian V",
+    "role": "Monarch",
+    "start": "1670-01-01",
+    "end": "1699-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level backbone",
+    "era": "Denmark-Norway"
+  },
+  {
+    "name": "👑 Frederick IV",
+    "role": "Monarch",
+    "start": "1699-01-01",
+    "end": "1730-01-01",
+    "current": false,
+    "tenure": "31y 0d",
+    "party": "year-level backbone",
+    "era": "Denmark-Norway"
+  },
+  {
+    "name": "👑 Christian VI",
+    "role": "Monarch",
+    "start": "1730-01-01",
+    "end": "1746-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone",
+    "era": "Denmark-Norway"
+  },
+  {
+    "name": "👑 Frederick V",
+    "role": "Monarch",
+    "start": "1746-01-01",
+    "end": "1766-01-14",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone — died 14 January 1766",
+    "era": "Denmark-Norway"
+  },
+  {
     "name": "👑 Christian VII",
     "role": "Monarch",
     "start": "1766-01-14",

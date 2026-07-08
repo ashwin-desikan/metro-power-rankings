@@ -1,0 +1,172 @@
+[
+  {
+    "name": "👑 Modu Chanyu",
+    "role": "Chanyu",
+    "start": "-0209-01-01",
+    "end": "-0174-01-01",
+    "current": false,
+    "tenure": "35y 0d",
+    "party": "year-level backbone",
+    "era": "founded the Xiongnu steppe empire, 209 BC"
+  },
+  {
+    "name": "👑 Laoshang Chanyu",
+    "role": "Chanyu",
+    "start": "-0174-01-01",
+    "end": "-0161-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "crushed the Yuezhi; heqin treaties with Han"
+  },
+  {
+    "name": "👑 Junchen Chanyu",
+    "role": "Chanyu",
+    "start": "-0161-01-01",
+    "end": "-0126-01-01",
+    "current": false,
+    "tenure": "35y 0d",
+    "party": "year-level backbone",
+    "era": "last decades of Xiongnu ascendancy"
+  },
+  {
+    "name": "👑 Yizhixie Chanyu",
+    "role": "Chanyu",
+    "start": "-0126-01-01",
+    "end": "-0114-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone",
+    "era": "Han–Xiongnu War against Emperor Wu of Han"
+  },
+  {
+    "name": "👑 Wuwei Chanyu",
+    "role": "Chanyu",
+    "start": "-0114-01-01",
+    "end": "-0105-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "continuing war with Han"
+  },
+  {
+    "name": "👑 Hulugu Chanyu",
+    "role": "Chanyu",
+    "start": "-0096-01-01",
+    "end": "-0085-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "mid-period; short-lived predecessors omitted (contested dates)"
+  },
+  {
+    "name": "👑 Huyandi Chanyu",
+    "role": "Chanyu",
+    "start": "-0085-01-01",
+    "end": "-0068-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone",
+    "era": "Xiongnu decline begins"
+  },
+  {
+    "name": "👑 Xulüquanqu Chanyu",
+    "role": "Chanyu",
+    "start": "-0068-01-01",
+    "end": "-0060-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "Xiongnu decline"
+  },
+  {
+    "name": "👑 Woyanqudi Chanyu",
+    "role": "Chanyu",
+    "start": "-0060-01-01",
+    "end": "-0058-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "succession crisis"
+  },
+  {
+    "name": "👑 Huhanye Chanyu",
+    "role": "Chanyu",
+    "start": "-0058-01-01",
+    "end": "-0031-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level backbone",
+    "era": "civil war of rival chanyus; submitted to Han in 51 BC"
+  },
+  {
+    "name": "👑 Fuzhulei Ruodi Chanyu",
+    "role": "Chanyu",
+    "start": "-0031-01-01",
+    "end": "-0020-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "Han tributary peace"
+  },
+  {
+    "name": "👑 Souxie Chanyu",
+    "role": "Chanyu",
+    "start": "-0020-01-01",
+    "end": "-0012-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "Han tributary peace"
+  },
+  {
+    "name": "👑 Juya Chanyu",
+    "role": "Chanyu",
+    "start": "-0012-01-01",
+    "end": "-0008-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Han tributary peace"
+  },
+  {
+    "name": "👑 Wuzhuliu Chanyu",
+    "role": "Chanyu",
+    "start": "-0008-01-01",
+    "end": "0013-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "relations with Han break down under Wang Mang"
+  },
+  {
+    "name": "👑 Wulei Chanyu",
+    "role": "Chanyu",
+    "start": "0013-01-01",
+    "end": "0018-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "renewed hostilities"
+  },
+  {
+    "name": "👑 Huduershidaogao Chanyu",
+    "role": "Chanyu",
+    "start": "0018-01-01",
+    "end": "0046-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level backbone",
+    "era": "after his death the empire split north/south (48 CE); southern vassals out of scope"
+  },
+  {
+    "name": "👑 Northern Chanyu",
+    "role": "Chanyu",
+    "start": "0088-01-01",
+    "end": "0091-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Northern Xiongnu destroyed by Han, 91 CE; chanyu fled west"
+  }
+]

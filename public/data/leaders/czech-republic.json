@@ -1,5 +1,655 @@
 [
   {
+    "name": "👑 Bořivoj I",
+    "role": "Duke",
+    "start": "0870-01-01",
+    "end": "0889-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone — first documented Přemyslid duke (c. 870); reign interrupted by Strojmir 883–885",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Spytihněv I",
+    "role": "Duke",
+    "start": "0894-01-01",
+    "end": "0915-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Vratislaus I",
+    "role": "Duke",
+    "start": "0915-01-01",
+    "end": "0921-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Wenceslaus I",
+    "role": "Duke",
+    "start": "0921-01-01",
+    "end": "0935-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone — St. Wenceslaus, patron saint of Bohemia; murdered 935 (traditionally also dated 929)",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Boleslaus I",
+    "role": "Duke",
+    "start": "0935-01-01",
+    "end": "0972-01-01",
+    "current": false,
+    "tenure": "37y 0d",
+    "party": "year-level backbone",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Boleslaus II",
+    "role": "Duke",
+    "start": "0972-01-01",
+    "end": "0999-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level backbone",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Boleslaus III",
+    "role": "Duke",
+    "start": "0999-01-01",
+    "end": "1002-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone — deposed 1002; the usurper Vladivoj (1002–1003) and Boleslaus III's brief 1003 return omitted",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Jaromír",
+    "role": "Duke",
+    "start": "1004-01-01",
+    "end": "1012-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Ulrich",
+    "role": "Duke",
+    "start": "1012-01-01",
+    "end": "1034-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level backbone",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Bretislaus I",
+    "role": "Duke",
+    "start": "1034-01-01",
+    "end": "1055-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Spytihněv II",
+    "role": "Duke",
+    "start": "1055-01-01",
+    "end": "1061-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Vratislaus II",
+    "role": "Duke",
+    "start": "1061-01-01",
+    "end": "1092-01-01",
+    "current": false,
+    "tenure": "31y 0d",
+    "party": "year-level backbone — granted a personal, non-hereditary royal title (King of Bohemia) in 1085",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Bretislaus II",
+    "role": "Duke",
+    "start": "1092-01-01",
+    "end": "1100-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Bořivoj II",
+    "role": "Duke",
+    "start": "1100-01-01",
+    "end": "1107-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Svatopluk",
+    "role": "Duke",
+    "start": "1107-01-01",
+    "end": "1109-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Vladislaus I",
+    "role": "Duke",
+    "start": "1109-01-01",
+    "end": "1117-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Bořivoj II",
+    "role": "Duke",
+    "start": "1117-01-01",
+    "end": "1120-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone — second reign",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Vladislaus I",
+    "role": "Duke",
+    "start": "1120-01-01",
+    "end": "1125-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone — second reign",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Sobeslaus I",
+    "role": "Duke",
+    "start": "1125-01-01",
+    "end": "1140-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Vladislaus II",
+    "role": "Duke",
+    "start": "1140-01-01",
+    "end": "1172-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "year-level backbone — granted a personal royal title (King of Bohemia) in 1158",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Frederick",
+    "role": "Duke",
+    "start": "1172-01-01",
+    "end": "1173-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Sobeslaus II",
+    "role": "Duke",
+    "start": "1173-01-01",
+    "end": "1178-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Frederick",
+    "role": "Duke",
+    "start": "1178-01-01",
+    "end": "1189-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone — second reign",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Conrad III Otto",
+    "role": "Duke",
+    "start": "1189-01-01",
+    "end": "1191-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Wenceslaus II",
+    "role": "Duke",
+    "start": "1191-01-01",
+    "end": "1192-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone — duke 1191–1192; not the later King Wenceslaus II",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Ottokar I",
+    "role": "Duke",
+    "start": "1192-01-01",
+    "end": "1193-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Bretislaus III",
+    "role": "Duke",
+    "start": "1193-01-01",
+    "end": "1197-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Vladislaus III Henry",
+    "role": "Duke",
+    "start": "1197-01-01",
+    "end": "1197-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone — abdicated in favor of his brother Ottokar I after months in 1197",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Ottokar I",
+    "role": "Duke",
+    "start": "1197-01-01",
+    "end": "1198-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Duchy of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Ottokar I",
+    "role": "King",
+    "start": "1198-01-01",
+    "end": "1230-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "year-level backbone — obtained the hereditary royal title in 1198 (confirmed by the Golden Bull of Sicily, 1212)",
+    "era": "Kingdom of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Wenceslaus I",
+    "role": "King",
+    "start": "1230-01-01",
+    "end": "1253-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Ottokar II",
+    "role": "King",
+    "start": "1253-01-01",
+    "end": "1278-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Wenceslaus II",
+    "role": "King",
+    "start": "1278-01-01",
+    "end": "1305-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Wenceslaus III",
+    "role": "King",
+    "start": "1305-01-01",
+    "end": "1306-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone — assassinated 1306; last Přemyslid king",
+    "era": "Kingdom of Bohemia — Přemyslid dynasty"
+  },
+  {
+    "name": "👑 Rudolf I",
+    "role": "King",
+    "start": "1306-01-01",
+    "end": "1307-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone — Habsburg claimant during the disputed succession",
+    "era": "Kingdom of Bohemia — disputed succession"
+  },
+  {
+    "name": "👑 Henry of Carinthia",
+    "role": "King",
+    "start": "1307-01-01",
+    "end": "1310-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone — rule disputed; deposed on John of Luxembourg's accession in 1310",
+    "era": "Kingdom of Bohemia — disputed succession"
+  },
+  {
+    "name": "👑 John of Bohemia",
+    "role": "King",
+    "start": "1310-01-01",
+    "end": "1346-01-01",
+    "current": false,
+    "tenure": "36y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Bohemia — Luxembourg dynasty"
+  },
+  {
+    "name": "👑 Charles IV",
+    "role": "King",
+    "start": "1346-01-01",
+    "end": "1378-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Bohemia — Luxembourg dynasty"
+  },
+  {
+    "name": "👑 Wenceslaus IV",
+    "role": "King",
+    "start": "1378-01-01",
+    "end": "1419-01-01",
+    "current": false,
+    "tenure": "41y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Bohemia — Luxembourg dynasty"
+  },
+  {
+    "name": "👑 Sigismund",
+    "role": "King",
+    "start": "1419-01-01",
+    "end": "1437-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone — rule contested for most of the Hussite Wars",
+    "era": "Kingdom of Bohemia — Luxembourg dynasty"
+  },
+  {
+    "name": "👑 Albert",
+    "role": "King",
+    "start": "1437-01-01",
+    "end": "1439-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Bohemia — House of Habsburg"
+  },
+  {
+    "name": "👑 Ladislaus the Posthumous",
+    "role": "King",
+    "start": "1453-01-01",
+    "end": "1457-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Bohemia — House of Habsburg"
+  },
+  {
+    "name": "👑 George of Poděbrady",
+    "role": "King",
+    "start": "1458-01-01",
+    "end": "1471-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone — the 'Hussite King', elected by the Bohemian estates after the 1440–1453 interregnum",
+    "era": "Kingdom of Bohemia — Hussite era"
+  },
+  {
+    "name": "👑 Vladislaus II",
+    "role": "King",
+    "start": "1471-01-01",
+    "end": "1516-01-01",
+    "current": false,
+    "tenure": "45y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Bohemia — Jagiellonian dynasty"
+  },
+  {
+    "name": "👑 Louis II",
+    "role": "King",
+    "start": "1516-01-01",
+    "end": "1526-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone — killed at the Battle of Mohács, 1526",
+    "era": "Kingdom of Bohemia — Jagiellonian dynasty"
+  },
+  {
+    "name": "👑 Ferdinand I",
+    "role": "King",
+    "start": "1526-01-01",
+    "end": "1564-01-01",
+    "current": false,
+    "tenure": "38y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Bohemia — House of Habsburg"
+  },
+  {
+    "name": "👑 Maximilian II",
+    "role": "King",
+    "start": "1564-01-01",
+    "end": "1576-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Bohemia — House of Habsburg"
+  },
+  {
+    "name": "👑 Rudolf II",
+    "role": "King",
+    "start": "1576-01-01",
+    "end": "1612-01-01",
+    "current": false,
+    "tenure": "36y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Bohemia — House of Habsburg"
+  },
+  {
+    "name": "👑 Matthias",
+    "role": "King",
+    "start": "1612-01-01",
+    "end": "1615-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Bohemia — House of Habsburg"
+  },
+  {
+    "name": "👑 Ferdinand II",
+    "role": "King",
+    "start": "1615-01-01",
+    "end": "1619-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Bohemia — House of Habsburg"
+  },
+  {
+    "name": "👑 Frederick I",
+    "role": "King",
+    "start": "1619-01-01",
+    "end": "1620-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone — the 'Winter King', elected by the rebellious Bohemian estates",
+    "era": "Kingdom of Bohemia — House of Wittelsbach"
+  },
+  {
+    "name": "👑 Ferdinand II",
+    "role": "King",
+    "start": "1620-01-01",
+    "end": "1637-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone — restored after the Battle of White Mountain (1620)",
+    "era": "Kingdom of Bohemia — House of Habsburg"
+  },
+  {
+    "name": "👑 Ferdinand III",
+    "role": "King",
+    "start": "1637-01-01",
+    "end": "1657-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Bohemia — House of Habsburg"
+  },
+  {
+    "name": "👑 Leopold I",
+    "role": "King",
+    "start": "1657-01-01",
+    "end": "1705-01-01",
+    "current": false,
+    "tenure": "48y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Bohemia — House of Habsburg"
+  },
+  {
+    "name": "👑 Joseph I",
+    "role": "King",
+    "start": "1705-01-01",
+    "end": "1711-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Bohemia — House of Habsburg"
+  },
+  {
+    "name": "👑 Charles VI",
+    "role": "King",
+    "start": "1711-01-01",
+    "end": "1740-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level backbone — as King of Bohemia styled Charles II",
+    "era": "Kingdom of Bohemia — House of Habsburg"
+  },
+  {
+    "name": "👑 Maria Theresa",
+    "role": "Queen",
+    "start": "1740-01-01",
+    "end": "1741-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Bohemia — House of Habsburg"
+  },
+  {
+    "name": "👑 Charles Albert",
+    "role": "King",
+    "start": "1741-01-01",
+    "end": "1743-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone — Charles Albert of Bavaria (Emperor Charles VII), rival king in the War of the Austrian Succession",
+    "era": "Kingdom of Bohemia — House of Wittelsbach"
+  },
+  {
+    "name": "👑 Maria Theresa",
+    "role": "Queen",
+    "start": "1743-01-01",
+    "end": "1780-01-01",
+    "current": false,
+    "tenure": "37y 0d",
+    "party": "year-level backbone — restored 1743",
+    "era": "Kingdom of Bohemia — House of Habsburg"
+  },
+  {
+    "name": "👑 Joseph II",
+    "role": "King",
+    "start": "1780-01-01",
+    "end": "1790-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Bohemia — House of Habsburg"
+  },
+  {
+    "name": "👑 Leopold II",
+    "role": "King",
+    "start": "1790-01-01",
+    "end": "1792-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Bohemia — House of Habsburg"
+  },
+  {
+    "name": "👑 Francis I",
+    "role": "King",
+    "start": "1792-01-01",
+    "end": "1835-01-01",
+    "current": false,
+    "tenure": "43y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Bohemia — House of Habsburg"
+  },
+  {
+    "name": "👑 Ferdinand V",
+    "role": "King",
+    "start": "1835-01-01",
+    "end": "1848-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone — as Emperor of Austria styled Ferdinand I",
+    "era": "Kingdom of Bohemia — House of Habsburg"
+  },
+  {
+    "name": "👑 Francis Joseph I",
+    "role": "King",
+    "start": "1848-01-01",
+    "end": "1916-01-01",
+    "current": false,
+    "tenure": "68y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Bohemia — House of Habsburg"
+  },
+  {
+    "name": "👑 Charles I",
+    "role": "King",
+    "start": "1916-01-01",
+    "end": "1918-10-28",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": null,
+    "era": "Kingdom of Bohemia — House of Habsburg"
+  },
+  {
     "name": "Tomáš Garrigue Masaryk",
     "role": "President",
     "start": "1918-11-14",

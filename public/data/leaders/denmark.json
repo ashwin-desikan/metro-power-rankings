@@ -1,5 +1,445 @@
 [
   {
+    "name": "👑 Gorm the Old",
+    "role": "Monarch",
+    "start": "0936-01-01",
+    "end": "0958-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level backbone — Jelling dynasty; reign start traditional (c. 936), died c. 958/964",
+    "era": "House of Gorm"
+  },
+  {
+    "name": "👑 Harald Bluetooth",
+    "role": "Monarch",
+    "start": "0958-01-01",
+    "end": "0986-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level backbone — Jelling dynasty; died 985/986",
+    "era": "House of Gorm"
+  },
+  {
+    "name": "👑 Sweyn I Forkbeard",
+    "role": "Monarch",
+    "start": "0986-01-01",
+    "end": "1014-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level backbone — Jelling dynasty",
+    "era": "House of Gorm"
+  },
+  {
+    "name": "👑 Harald II",
+    "role": "Monarch",
+    "start": "1014-01-01",
+    "end": "1018-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone — Jelling dynasty",
+    "era": "House of Gorm"
+  },
+  {
+    "name": "👑 Cnut the Great",
+    "role": "Monarch",
+    "start": "1019-01-01",
+    "end": "1035-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone — Jelling dynasty; also King of England, and of Norway from 1028",
+    "era": "House of Gorm"
+  },
+  {
+    "name": "👑 Harthacnut",
+    "role": "Monarch",
+    "start": "1035-01-01",
+    "end": "1042-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone — Jelling dynasty; also King of England 1040–1042",
+    "era": "House of Gorm"
+  },
+  {
+    "name": "👑 Magnus the Good",
+    "role": "Monarch",
+    "start": "1042-01-01",
+    "end": "1047-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone — Norwegian king (not of the Jelling line) who also ruled Denmark 1042–1047",
+    "era": "House of Gorm"
+  },
+  {
+    "name": "👑 Sweyn II Estridsen",
+    "role": "Monarch",
+    "start": "1047-01-01",
+    "end": "1076-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level backbone",
+    "era": "House of Estridsen"
+  },
+  {
+    "name": "👑 Harald III",
+    "role": "Monarch",
+    "start": "1076-01-01",
+    "end": "1080-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "House of Estridsen"
+  },
+  {
+    "name": "👑 Canute IV (the Holy)",
+    "role": "Monarch",
+    "start": "1080-01-01",
+    "end": "1086-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "House of Estridsen"
+  },
+  {
+    "name": "👑 Olaf I Hunger",
+    "role": "Monarch",
+    "start": "1086-01-01",
+    "end": "1095-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "House of Estridsen"
+  },
+  {
+    "name": "👑 Erik I Evergood",
+    "role": "Monarch",
+    "start": "1095-01-01",
+    "end": "1103-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "House of Estridsen"
+  },
+  {
+    "name": "👑 Niels",
+    "role": "Monarch",
+    "start": "1104-01-01",
+    "end": "1134-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone",
+    "era": "House of Estridsen"
+  },
+  {
+    "name": "👑 Erik II (the Memorable)",
+    "role": "Monarch",
+    "start": "1134-01-01",
+    "end": "1137-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "House of Estridsen"
+  },
+  {
+    "name": "👑 Erik III (the Lame)",
+    "role": "Monarch",
+    "start": "1137-01-01",
+    "end": "1146-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone — abdicated 1146",
+    "era": "House of Estridsen"
+  },
+  {
+    "name": "👑 Sweyn III Grathe",
+    "role": "Monarch",
+    "start": "1146-01-01",
+    "end": "1157-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone — contested reign; Canute V co-king 1146–1157",
+    "era": "House of Estridsen"
+  },
+  {
+    "name": "👑 Valdemar I (the Great)",
+    "role": "Monarch",
+    "start": "1157-01-01",
+    "end": "1182-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone — sole king from 1157 (king in part of the realm from 1154)",
+    "era": "Valdemarian era"
+  },
+  {
+    "name": "👑 Canute VI",
+    "role": "Monarch",
+    "start": "1182-01-01",
+    "end": "1202-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone — crowned co-king 1170",
+    "era": "Valdemarian era"
+  },
+  {
+    "name": "👑 Valdemar II (the Conqueror)",
+    "role": "Monarch",
+    "start": "1202-01-01",
+    "end": "1241-01-01",
+    "current": false,
+    "tenure": "39y 0d",
+    "party": "year-level backbone",
+    "era": "Valdemarian era"
+  },
+  {
+    "name": "👑 Erik IV Plowpenny",
+    "role": "Monarch",
+    "start": "1241-01-01",
+    "end": "1250-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone — co-king from 1232",
+    "era": "House of Estridsen"
+  },
+  {
+    "name": "👑 Abel",
+    "role": "Monarch",
+    "start": "1250-01-01",
+    "end": "1252-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "House of Estridsen"
+  },
+  {
+    "name": "👑 Christopher I",
+    "role": "Monarch",
+    "start": "1252-01-01",
+    "end": "1259-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "House of Estridsen"
+  },
+  {
+    "name": "👑 Erik V Klipping",
+    "role": "Monarch",
+    "start": "1259-01-01",
+    "end": "1286-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level backbone",
+    "era": "House of Estridsen"
+  },
+  {
+    "name": "👑 Erik VI Menved",
+    "role": "Monarch",
+    "start": "1286-01-01",
+    "end": "1319-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "year-level backbone",
+    "era": "House of Estridsen"
+  },
+  {
+    "name": "👑 Christopher II",
+    "role": "Monarch",
+    "start": "1320-01-01",
+    "end": "1326-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone — deposed 1326",
+    "era": "House of Estridsen"
+  },
+  {
+    "name": "👑 Valdemar III",
+    "role": "Monarch",
+    "start": "1326-01-01",
+    "end": "1329-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone — deposed 1329",
+    "era": "House of Estridsen"
+  },
+  {
+    "name": "👑 Christopher II",
+    "role": "Monarch",
+    "start": "1329-01-01",
+    "end": "1332-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone — restored; died 1332",
+    "era": "House of Estridsen"
+  },
+  {
+    "name": "👑 Valdemar IV Atterdag",
+    "role": "Monarch",
+    "start": "1340-01-01",
+    "end": "1375-01-01",
+    "current": false,
+    "tenure": "35y 0d",
+    "party": "year-level backbone — acceded 1340 after the 1332–1340 interregnum",
+    "era": "House of Estridsen"
+  },
+  {
+    "name": "👑 Olaf II",
+    "role": "Monarch",
+    "start": "1376-01-01",
+    "end": "1387-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone — also King of Norway (as Olaf IV) from 1380; his mother Margaret governed as regent",
+    "era": "House of Estridsen"
+  },
+  {
+    "name": "👑 Margaret I",
+    "role": "Monarch",
+    "start": "1387-01-01",
+    "end": "1412-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone — Queen of Denmark, Norway and Sweden; Eric of Pomerania co-sovereign from 1396",
+    "era": "Kalmar Union"
+  },
+  {
+    "name": "👑 Eric of Pomerania",
+    "role": "Monarch",
+    "start": "1412-01-01",
+    "end": "1439-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level backbone — King of Denmark from 1396 as Margaret's co-sovereign; deposed 1439",
+    "era": "Kalmar Union"
+  },
+  {
+    "name": "👑 Christopher of Bavaria",
+    "role": "Monarch",
+    "start": "1440-01-01",
+    "end": "1448-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "Kalmar Union"
+  },
+  {
+    "name": "👑 Christian I",
+    "role": "Monarch",
+    "start": "1448-01-01",
+    "end": "1481-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "year-level backbone — also King of Norway from 1450 and of Sweden 1457–1464",
+    "era": "House of Oldenburg"
+  },
+  {
+    "name": "👑 Hans (John)",
+    "role": "Monarch",
+    "start": "1481-01-01",
+    "end": "1513-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "year-level backbone — also King of Norway and (1497–1501) of Sweden",
+    "era": "House of Oldenburg"
+  },
+  {
+    "name": "👑 Christian II",
+    "role": "Monarch",
+    "start": "1513-01-01",
+    "end": "1523-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone — deposed 1523",
+    "era": "House of Oldenburg"
+  },
+  {
+    "name": "👑 Frederick I",
+    "role": "Monarch",
+    "start": "1523-01-01",
+    "end": "1533-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "House of Oldenburg"
+  },
+  {
+    "name": "👑 Christian III",
+    "role": "Monarch",
+    "start": "1534-01-01",
+    "end": "1559-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone — acceded 1534 after the Count's Feud interregnum",
+    "era": "House of Oldenburg"
+  },
+  {
+    "name": "👑 Frederick II",
+    "role": "Monarch",
+    "start": "1559-01-01",
+    "end": "1588-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level backbone",
+    "era": "House of Oldenburg"
+  },
+  {
+    "name": "👑 Christian IV",
+    "role": "Monarch",
+    "start": "1588-01-01",
+    "end": "1648-01-01",
+    "current": false,
+    "tenure": "60y 0d",
+    "party": "year-level backbone",
+    "era": "House of Oldenburg"
+  },
+  {
+    "name": "👑 Frederick III",
+    "role": "Monarch",
+    "start": "1648-01-01",
+    "end": "1670-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level backbone — introduced hereditary absolute monarchy, 1660",
+    "era": "House of Oldenburg"
+  },
+  {
+    "name": "👑 Christian V",
+    "role": "Monarch",
+    "start": "1670-01-01",
+    "end": "1699-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level backbone",
+    "era": "House of Oldenburg"
+  },
+  {
+    "name": "👑 Frederick IV",
+    "role": "Monarch",
+    "start": "1699-01-01",
+    "end": "1730-01-01",
+    "current": false,
+    "tenure": "31y 0d",
+    "party": "year-level backbone",
+    "era": "House of Oldenburg"
+  },
+  {
+    "name": "👑 Christian VI",
+    "role": "Monarch",
+    "start": "1730-01-01",
+    "end": "1746-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone",
+    "era": "House of Oldenburg"
+  },
+  {
+    "name": "👑 Frederick V",
+    "role": "Monarch",
+    "start": "1746-01-01",
+    "end": "1766-01-14",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone — died 14 January 1766",
+    "era": "House of Oldenburg"
+  },
+  {
     "name": "👑 Christian VII",
     "role": "Monarch",
     "start": "1766-01-14",

@@ -1,5 +1,355 @@
 [
   {
+    "name": "👑 Afonso I",
+    "role": "Monarch",
+    "start": "1139-07-25",
+    "end": "1185-12-06",
+    "current": false,
+    "tenure": "1139–1185",
+    "party": "Founder; Kingdom proclaimed after Ourique",
+    "era": "Kingdom of Portugal — House of Burgundy"
+  },
+  {
+    "name": "👑 Sancho I",
+    "role": "Monarch",
+    "start": "1185-12-06",
+    "end": "1211-03-26",
+    "current": false,
+    "tenure": "1185–1211",
+    "party": null,
+    "era": "Kingdom of Portugal — House of Burgundy"
+  },
+  {
+    "name": "👑 Afonso II",
+    "role": "Monarch",
+    "start": "1211-03-26",
+    "end": "1223-03-25",
+    "current": false,
+    "tenure": "1211–1223",
+    "party": null,
+    "era": "Kingdom of Portugal — House of Burgundy"
+  },
+  {
+    "name": "👑 Sancho II",
+    "role": "Monarch",
+    "start": "1223-03-25",
+    "end": "1247-12-04",
+    "current": false,
+    "tenure": "1223–1247",
+    "party": "Deposed",
+    "era": "Kingdom of Portugal — House of Burgundy"
+  },
+  {
+    "name": "👑 Afonso III",
+    "role": "Monarch",
+    "start": "1248-01-04",
+    "end": "1279-02-16",
+    "current": false,
+    "tenure": "1248–1279",
+    "party": null,
+    "era": "Kingdom of Portugal — House of Burgundy"
+  },
+  {
+    "name": "👑 Dinis",
+    "role": "Monarch",
+    "start": "1279-02-16",
+    "end": "1325-01-07",
+    "current": false,
+    "tenure": "1279–1325",
+    "party": null,
+    "era": "Kingdom of Portugal — House of Burgundy"
+  },
+  {
+    "name": "👑 Afonso IV",
+    "role": "Monarch",
+    "start": "1325-01-07",
+    "end": "1357-05-28",
+    "current": false,
+    "tenure": "1325–1357",
+    "party": null,
+    "era": "Kingdom of Portugal — House of Burgundy"
+  },
+  {
+    "name": "👑 Pedro I",
+    "role": "Monarch",
+    "start": "1357-05-28",
+    "end": "1367-01-18",
+    "current": false,
+    "tenure": "1357–1367",
+    "party": null,
+    "era": "Kingdom of Portugal — House of Burgundy"
+  },
+  {
+    "name": "👑 Fernando I",
+    "role": "Monarch",
+    "start": "1367-01-18",
+    "end": "1383-10-22",
+    "current": false,
+    "tenure": "1367–1383",
+    "party": "1383–85 interregnum followed",
+    "era": "Kingdom of Portugal — House of Burgundy"
+  },
+  {
+    "name": "👑 João I",
+    "role": "Monarch",
+    "start": "1385-04-06",
+    "end": "1433-08-14",
+    "current": false,
+    "tenure": "1385–1433",
+    "party": "Elected after the 1383–85 crisis",
+    "era": "Kingdom of Portugal — House of Aviz"
+  },
+  {
+    "name": "👑 Duarte",
+    "role": "Monarch",
+    "start": "1433-08-14",
+    "end": "1438-09-09",
+    "current": false,
+    "tenure": "1433–1438",
+    "party": null,
+    "era": "Kingdom of Portugal — House of Aviz"
+  },
+  {
+    "name": "👑 Afonso V",
+    "role": "Monarch",
+    "start": "1438-09-13",
+    "end": "1481-08-28",
+    "current": false,
+    "tenure": "1438–1481",
+    "party": null,
+    "era": "Kingdom of Portugal — House of Aviz"
+  },
+  {
+    "name": "👑 João II",
+    "role": "Monarch",
+    "start": "1481-08-28",
+    "end": "1495-10-25",
+    "current": false,
+    "tenure": "1481–1495",
+    "party": null,
+    "era": "Kingdom of Portugal — House of Aviz"
+  },
+  {
+    "name": "👑 Manuel I",
+    "role": "Monarch",
+    "start": "1495-10-25",
+    "end": "1521-12-13",
+    "current": false,
+    "tenure": "1495–1521",
+    "party": null,
+    "era": "Kingdom of Portugal — House of Aviz"
+  },
+  {
+    "name": "👑 João III",
+    "role": "Monarch",
+    "start": "1521-12-13",
+    "end": "1557-06-11",
+    "current": false,
+    "tenure": "1521–1557",
+    "party": null,
+    "era": "Kingdom of Portugal — House of Aviz"
+  },
+  {
+    "name": "👑 Sebastião",
+    "role": "Monarch",
+    "start": "1557-06-11",
+    "end": "1578-08-04",
+    "current": false,
+    "tenure": "1557–1578",
+    "party": "Lost at Alcácer Quibir",
+    "era": "Kingdom of Portugal — House of Aviz"
+  },
+  {
+    "name": "👑 Henrique",
+    "role": "Monarch",
+    "start": "1578-08-04",
+    "end": "1580-01-31",
+    "current": false,
+    "tenure": "1578–1580",
+    "party": null,
+    "era": "Kingdom of Portugal — House of Aviz"
+  },
+  {
+    "name": "👑 Filipe I",
+    "role": "Monarch",
+    "start": "1580-09-12",
+    "end": "1598-09-13",
+    "current": false,
+    "tenure": "1580–1598",
+    "party": "Philip II of Spain",
+    "era": "Kingdom of Portugal — Philippine Dynasty (Iberian Union)"
+  },
+  {
+    "name": "👑 Filipe II",
+    "role": "Monarch",
+    "start": "1598-09-13",
+    "end": "1621-03-31",
+    "current": false,
+    "tenure": "1598–1621",
+    "party": "Philip III of Spain",
+    "era": "Kingdom of Portugal — Philippine Dynasty (Iberian Union)"
+  },
+  {
+    "name": "👑 Filipe III",
+    "role": "Monarch",
+    "start": "1621-03-31",
+    "end": "1640-12-01",
+    "current": false,
+    "tenure": "1621–1640",
+    "party": "Philip IV of Spain",
+    "era": "Kingdom of Portugal — Philippine Dynasty (Iberian Union)"
+  },
+  {
+    "name": "👑 João IV",
+    "role": "Monarch",
+    "start": "1640-12-01",
+    "end": "1656-11-06",
+    "current": false,
+    "tenure": "1640–1656",
+    "party": "Restoration of independence",
+    "era": "Kingdom of Portugal — House of Braganza"
+  },
+  {
+    "name": "👑 Afonso VI",
+    "role": "Monarch",
+    "start": "1656-11-06",
+    "end": "1683-09-12",
+    "current": false,
+    "tenure": "1656–1683",
+    "party": null,
+    "era": "Kingdom of Portugal — House of Braganza"
+  },
+  {
+    "name": "👑 Pedro II",
+    "role": "Monarch",
+    "start": "1683-09-12",
+    "end": "1706-12-09",
+    "current": false,
+    "tenure": "1683–1706",
+    "party": "Regent from 1668",
+    "era": "Kingdom of Portugal — House of Braganza"
+  },
+  {
+    "name": "👑 João V",
+    "role": "Monarch",
+    "start": "1706-12-09",
+    "end": "1750-07-31",
+    "current": false,
+    "tenure": "1706–1750",
+    "party": null,
+    "era": "Kingdom of Portugal — House of Braganza"
+  },
+  {
+    "name": "👑 José I",
+    "role": "Monarch",
+    "start": "1750-07-31",
+    "end": "1777-02-24",
+    "current": false,
+    "tenure": "1750–1777",
+    "party": null,
+    "era": "Kingdom of Portugal — House of Braganza"
+  },
+  {
+    "name": "👑 Maria I",
+    "role": "Monarch",
+    "start": "1777-02-24",
+    "end": "1816-03-20",
+    "current": false,
+    "tenure": "1777–1816",
+    "party": "Queen of the United Kingdom of Portugal, Brazil and the Algarves from 1815",
+    "era": "Kingdom of Portugal — House of Braganza"
+  },
+  {
+    "name": "👑 Pedro III",
+    "role": "Monarch",
+    "start": "1777-02-24",
+    "end": "1786-05-25",
+    "current": false,
+    "tenure": "1777–1786",
+    "party": "King jure uxoris, co-monarch with Maria I",
+    "era": "Kingdom of Portugal — House of Braganza"
+  },
+  {
+    "name": "👑 João VI",
+    "role": "Monarch",
+    "start": "1816-03-20",
+    "end": "1826-03-10",
+    "current": false,
+    "tenure": "1816–1826",
+    "party": "Ruled from Rio de Janeiro until 1821",
+    "era": "United Kingdom of Portugal, Brazil and the Algarves"
+  },
+  {
+    "name": "👑 Pedro IV",
+    "role": "Monarch",
+    "start": "1826-03-10",
+    "end": "1826-05-02",
+    "current": false,
+    "tenure": "1826",
+    "party": "Also Emperor Pedro I of Brazil; abdicated to Maria II",
+    "era": "Kingdom of Portugal — House of Braganza"
+  },
+  {
+    "name": "👑 Maria II",
+    "role": "Monarch",
+    "start": "1826-05-02",
+    "end": "1828-06-23",
+    "current": false,
+    "tenure": "1826–1828",
+    "party": "First reign, deposed by Miguel I",
+    "era": "Kingdom of Portugal — House of Braganza"
+  },
+  {
+    "name": "👑 Miguel I",
+    "role": "Monarch",
+    "start": "1828-02-26",
+    "end": "1834-05-06",
+    "current": false,
+    "tenure": "1828–1834",
+    "party": "Usurped the throne; Liberal Wars",
+    "era": "Kingdom of Portugal — House of Braganza"
+  },
+  {
+    "name": "👑 Maria II",
+    "role": "Monarch",
+    "start": "1834-05-26",
+    "end": "1853-11-15",
+    "current": false,
+    "tenure": "1834–1853",
+    "party": "Second reign, restored",
+    "era": "Kingdom of Portugal — House of Braganza"
+  },
+  {
+    "name": "👑 Fernando II",
+    "role": "Monarch",
+    "start": "1837-09-16",
+    "end": "1853-11-15",
+    "current": false,
+    "tenure": "1837–1853",
+    "party": "King jure uxoris, co-monarch with Maria II",
+    "era": "Kingdom of Portugal — House of Braganza"
+  },
+  {
+    "name": "👑 Pedro V",
+    "role": "Monarch",
+    "start": "1853-11-15",
+    "end": "1861-11-11",
+    "current": false,
+    "tenure": "1853–1861",
+    "party": null,
+    "era": "Kingdom of Portugal — House of Braganza"
+  },
+  {
+    "name": "👑 Luís I",
+    "role": "Monarch",
+    "start": "1861-11-11",
+    "end": "1889-10-19",
+    "current": false,
+    "tenure": "1861–1889",
+    "party": null,
+    "era": "Kingdom of Portugal — House of Braganza"
+  },
+  {
     "name": "👑 Carlos I",
     "role": "Monarch",
     "start": "1889-10-19",

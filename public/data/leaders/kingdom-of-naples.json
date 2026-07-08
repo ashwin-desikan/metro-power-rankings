@@ -1,0 +1,332 @@
+[
+  {
+    "name": "👑 Roger II",
+    "role": "King",
+    "start": "1130-01-01",
+    "end": "1154-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Sicily — Norman dynasty"
+  },
+  {
+    "name": "👑 William I",
+    "role": "King",
+    "start": "1154-01-01",
+    "end": "1166-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Sicily — Norman dynasty"
+  },
+  {
+    "name": "👑 William II",
+    "role": "King",
+    "start": "1166-01-01",
+    "end": "1189-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Sicily — Norman dynasty"
+  },
+  {
+    "name": "👑 Tancred",
+    "role": "King",
+    "start": "1189-01-01",
+    "end": "1194-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Sicily — Norman dynasty"
+  },
+  {
+    "name": "👑 Henry VI",
+    "role": "King",
+    "start": "1194-01-01",
+    "end": "1197-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level dates; also Holy Roman Emperor",
+    "era": "Kingdom of Sicily — Hohenstaufen"
+  },
+  {
+    "name": "👑 Frederick II",
+    "role": "King",
+    "start": "1198-01-01",
+    "end": "1250-01-01",
+    "current": false,
+    "tenure": "52y 0d",
+    "party": "year-level dates; also Holy Roman Emperor from 1220",
+    "era": "Kingdom of Sicily — Hohenstaufen"
+  },
+  {
+    "name": "👑 Conrad",
+    "role": "King",
+    "start": "1250-01-01",
+    "end": "1254-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level dates; Conrad IV of Germany, Conrad I of Sicily",
+    "era": "Kingdom of Sicily — Hohenstaufen"
+  },
+  {
+    "name": "👑 Conradin",
+    "role": "King",
+    "start": "1254-01-01",
+    "end": "1258-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level dates; nominal boy-king; crown assumed by Manfred in 1258",
+    "era": "Kingdom of Sicily — Hohenstaufen"
+  },
+  {
+    "name": "👑 Manfred",
+    "role": "King",
+    "start": "1258-01-01",
+    "end": "1266-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level dates; killed at the Battle of Benevento 1266",
+    "era": "Kingdom of Sicily — Hohenstaufen"
+  },
+  {
+    "name": "👑 Charles I",
+    "role": "King",
+    "start": "1266-01-01",
+    "end": "1285-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level dates; after the 1282 Sicilian Vespers this Angevin line ruled the mainland Kingdom of Naples only",
+    "era": "Kingdom of Naples — House of Anjou"
+  },
+  {
+    "name": "👑 Charles II",
+    "role": "King",
+    "start": "1285-01-01",
+    "end": "1309-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Naples — House of Anjou"
+  },
+  {
+    "name": "👑 Robert the Wise",
+    "role": "King",
+    "start": "1309-01-01",
+    "end": "1343-01-01",
+    "current": false,
+    "tenure": "34y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Naples — House of Anjou"
+  },
+  {
+    "name": "👑 Joanna I",
+    "role": "Queen",
+    "start": "1343-01-01",
+    "end": "1381-01-01",
+    "current": false,
+    "tenure": "38y 0d",
+    "party": "year-level dates; deposed 1381, murdered 1382",
+    "era": "Kingdom of Naples — House of Anjou"
+  },
+  {
+    "name": "👑 Charles III",
+    "role": "King",
+    "start": "1382-01-01",
+    "end": "1386-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level dates; Anjou-Durazzo line",
+    "era": "Kingdom of Naples — House of Anjou"
+  },
+  {
+    "name": "👑 Ladislaus",
+    "role": "King",
+    "start": "1386-01-01",
+    "end": "1414-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level dates; rival Louis II of Anjou held Naples 1389-1399",
+    "era": "Kingdom of Naples — House of Anjou"
+  },
+  {
+    "name": "👑 Joanna II",
+    "role": "Queen",
+    "start": "1414-01-01",
+    "end": "1435-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Naples — House of Anjou"
+  },
+  {
+    "name": "👑 René of Anjou",
+    "role": "King",
+    "start": "1435-01-01",
+    "end": "1442-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level dates; House of Valois-Anjou; ousted by Alfonso V of Aragon",
+    "era": "Kingdom of Naples — House of Anjou"
+  },
+  {
+    "name": "👑 Alfonso I the Magnanimous",
+    "role": "King",
+    "start": "1442-01-01",
+    "end": "1458-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level dates; Alfonso V of Aragon; conquered Naples 1442",
+    "era": "Kingdom of Naples — House of Trastámara"
+  },
+  {
+    "name": "👑 Ferdinand I (Ferrante)",
+    "role": "King",
+    "start": "1458-01-01",
+    "end": "1494-01-01",
+    "current": false,
+    "tenure": "36y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Naples — House of Trastámara"
+  },
+  {
+    "name": "👑 Alfonso II",
+    "role": "King",
+    "start": "1494-01-01",
+    "end": "1495-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level dates; abdicated before the invasion of Charles VIII of France",
+    "era": "Kingdom of Naples — House of Trastámara"
+  },
+  {
+    "name": "👑 Ferdinand II (Ferrandino)",
+    "role": "King",
+    "start": "1495-01-01",
+    "end": "1496-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level dates",
+    "era": "Kingdom of Naples — House of Trastámara"
+  },
+  {
+    "name": "👑 Frederick",
+    "role": "King",
+    "start": "1496-01-01",
+    "end": "1501-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level dates; deposed when Naples fell to France 1501",
+    "era": "Kingdom of Naples — House of Trastámara"
+  },
+  {
+    "name": "👑 Louis XII",
+    "role": "King",
+    "start": "1501-01-01",
+    "end": "1504-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level dates; King of France; French occupation of Naples",
+    "era": "Kingdom of Naples — French crown"
+  },
+  {
+    "name": "👑 Ferdinand the Catholic",
+    "role": "King",
+    "start": "1504-01-01",
+    "end": "1516-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level dates; Ferdinand II of Aragon, Ferdinand III of Naples; ruled through viceroys from 1504",
+    "era": "Kingdom of Naples — House of Trastámara"
+  },
+  {
+    "name": "👑 Charles V",
+    "role": "King",
+    "start": "1516-01-01",
+    "end": "1554-01-01",
+    "current": false,
+    "tenure": "38y 0d",
+    "party": "year-level dates; ruled through viceroys; also Holy Roman Emperor",
+    "era": "Kingdom of Naples — Spanish Habsburg crown"
+  },
+  {
+    "name": "👑 Philip II",
+    "role": "King",
+    "start": "1554-01-01",
+    "end": "1598-01-01",
+    "current": false,
+    "tenure": "44y 0d",
+    "party": "year-level dates; ruled through viceroys; King of Spain from 1556",
+    "era": "Kingdom of Naples — Spanish Habsburg crown"
+  },
+  {
+    "name": "👑 Philip III",
+    "role": "King",
+    "start": "1598-01-01",
+    "end": "1621-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level dates; ruled through viceroys",
+    "era": "Kingdom of Naples — Spanish Habsburg crown"
+  },
+  {
+    "name": "👑 Philip IV",
+    "role": "King",
+    "start": "1621-01-01",
+    "end": "1665-01-01",
+    "current": false,
+    "tenure": "44y 0d",
+    "party": "year-level dates; ruled through viceroys",
+    "era": "Kingdom of Naples — Spanish Habsburg crown"
+  },
+  {
+    "name": "👑 Charles II",
+    "role": "King",
+    "start": "1665-01-01",
+    "end": "1700-01-01",
+    "current": false,
+    "tenure": "35y 0d",
+    "party": "year-level dates; ruled through viceroys",
+    "era": "Kingdom of Naples — Spanish Habsburg crown"
+  },
+  {
+    "name": "👑 Philip V",
+    "role": "King",
+    "start": "1700-01-01",
+    "end": "1707-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level dates; ruled through viceroys; lost Naples to Austria 1707 (ceded de jure by the treaties of Utrecht/Rastatt 1713-14)",
+    "era": "Kingdom of Naples — Spanish Bourbon crown"
+  },
+  {
+    "name": "👑 Charles VI",
+    "role": "King",
+    "start": "1707-01-01",
+    "end": "1734-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level dates; ruled through viceroys; Austrian rule 1707-1734",
+    "era": "Kingdom of Naples — Austrian Habsburg crown"
+  },
+  {
+    "name": "👑 Charles VII",
+    "role": "King",
+    "start": "1734-01-01",
+    "end": "1759-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level dates; conquered Naples 1734, crowned 1735; later Charles III of Spain",
+    "era": "Kingdom of Naples — House of Bourbon"
+  },
+  {
+    "name": "👑 Ferdinand IV",
+    "role": "King",
+    "start": "1759-01-01",
+    "end": "1816-12-12",
+    "current": false,
+    "tenure": "57y 0d",
+    "party": "year-level dates; deposed 1806-1815 during Napoleonic rule (Joseph Bonaparte, then Joachim Murat); restored 1815; became Ferdinand I of the Two Sicilies when Naples merged into the Kingdom of the Two Sicilies on 12 December 1816",
+    "era": "Kingdom of Naples — House of Bourbon"
+  }
+]

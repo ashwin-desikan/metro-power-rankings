@@ -10,6 +10,16 @@
   "era": "Carthage"
  },
  {
+  "name": "👑 Malchus",
+  "role": "General",
+  "start": "-0575-01-01",
+  "end": "-0550-01-01",
+  "current": false,
+  "tenure": "25y 0d",
+  "party": "year-level backbone — commander in Sicily, Libya and Sardinia; attested dates approximate",
+  "era": "Carthage"
+ },
+ {
   "name": "👑 Mago I",
   "role": "King",
   "start": "-0550-01-01",
@@ -17,6 +27,16 @@
   "current": false,
   "tenure": "20y 0d",
   "party": "year-level backbone",
+  "era": "Carthage"
+ },
+ {
+  "name": "👑 Hasdrubal I",
+  "role": "King",
+  "start": "-0530-01-01",
+  "end": "-0510-01-01",
+  "current": false,
+  "tenure": "20y 0d",
+  "party": "year-level backbone — Magonid, elected 'king' eleven times",
   "era": "Carthage"
  },
  {
@@ -30,6 +50,16 @@
   "era": "Carthage"
  },
  {
+  "name": "👑 Hanno the Navigator",
+  "role": "King",
+  "start": "-0465-01-01",
+  "end": "-0460-01-01",
+  "current": false,
+  "tenure": "5y 0d",
+  "party": "year-level backbone — Magonid explorer of the West African coast, styled basileus; attested dates approximate (fl. 5th c. BC)",
+  "era": "Carthage"
+ },
+ {
   "name": "👑 Hanno the Great",
   "role": "Statesman",
   "start": "-0450-01-01",
@@ -37,6 +67,46 @@
   "current": false,
   "tenure": "10y 0d",
   "party": "year-level backbone",
+  "era": "Carthage"
+ },
+ {
+  "name": "👑 Himilco",
+  "role": "General",
+  "start": "-0406-01-01",
+  "end": "-0396-01-01",
+  "current": false,
+  "tenure": "10y 0d",
+  "party": "year-level backbone — Magonid commander in the Sicilian wars vs Dionysius I, elected 'king' c. 398 BC",
+  "era": "Carthage"
+ },
+ {
+  "name": "👑 Mago II",
+  "role": "Suffete",
+  "start": "-0396-01-01",
+  "end": "-0375-01-01",
+  "current": false,
+  "tenure": "21y 0d",
+  "party": "year-level backbone — shofet of Carthage, fell at the Battle of Cabala 375 BC",
+  "era": "Carthage"
+ },
+ {
+  "name": "👑 Hanno I the Great",
+  "role": "Statesman",
+  "start": "-0367-01-01",
+  "end": "-0345-01-01",
+  "current": false,
+  "tenure": "22y 0d",
+  "party": "year-level backbone — princeps Carthaginiensium, naval victor 367 BC, executed in the 340s; attested dates approximate",
+  "era": "Carthage"
+ },
+ {
+  "name": "👑 Bomilcar",
+  "role": "General",
+  "start": "-0310-01-01",
+  "end": "-0308-01-01",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone — commander vs Agathocles' invasion, executed after failed coup 308 BC",
   "era": "Carthage"
  },
  {

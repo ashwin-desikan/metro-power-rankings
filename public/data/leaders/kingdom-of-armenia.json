@@ -1,0 +1,182 @@
+[
+  {
+    "name": "👑 Orontes III",
+    "role": "King",
+    "start": "-0317-01-01",
+    "end": "-0260-01-01",
+    "current": false,
+    "tenure": "57y 0d",
+    "party": "year-level backbone — first Orontid king of the era; preceded by the satrap Mihran (321–317 BC) after Alexander's empire fragmented; dates approximate",
+    "era": "Orontid dynasty"
+  },
+  {
+    "name": "👑 Arsames I",
+    "role": "King",
+    "start": "-0260-01-01",
+    "end": "-0228-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "year-level backbone — ruled Armenia, Sophene and Commagene; Sames held Armenia and Sophene c. 260 BC",
+    "era": "Orontid dynasty"
+  },
+  {
+    "name": "👑 Orontes IV",
+    "role": "King",
+    "start": "-0228-01-01",
+    "end": "-0200-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level backbone — last Orontid king of Armenia; Xerxes ruled Sophene/Commagene concurrently 228–212 BC",
+    "era": "Orontid dynasty"
+  },
+  {
+    "name": "👑 Artaxias I",
+    "role": "King",
+    "start": "-0190-01-01",
+    "end": "-0159-01-01",
+    "current": false,
+    "tenure": "31y 0d",
+    "party": "year-level backbone — gap 200–190 BC (Seleucid control; Artaxias as satrap); founded the Artaxiad dynasty, king from c. 190 BC after Rome broke Seleucid power at Magnesia",
+    "era": "Artaxiad dynasty"
+  },
+  {
+    "name": "👑 Tigranes II the Great",
+    "role": "King",
+    "start": "-0095-01-01",
+    "end": "-0055-01-01",
+    "current": false,
+    "tenure": "40y 0d",
+    "party": "year-level backbone — gap 159–95 BC (Artavasdes I, Tigranes I — dates unattested in source); empire at its greatest extent, 'King of Kings'",
+    "era": "Artaxiad dynasty"
+  },
+  {
+    "name": "👑 Artavasdes II",
+    "role": "King",
+    "start": "-0055-01-01",
+    "end": "-0034-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone — captured by Mark Antony, 34 BC",
+    "era": "Artaxiad dynasty"
+  },
+  {
+    "name": "👑 Artaxias II",
+    "role": "King",
+    "start": "-0030-01-01",
+    "end": "-0020-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone — c. dates; gap 34–30 BC (Roman/Parthian interregnum)",
+    "era": "Artaxiad dynasty"
+  },
+  {
+    "name": "👑 Tigranes III",
+    "role": "King",
+    "start": "-0020-01-01",
+    "end": "-0008-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone",
+    "era": "Artaxiad dynasty"
+  },
+  {
+    "name": "👑 Tigranes IV",
+    "role": "King",
+    "start": "-0008-01-01",
+    "end": "-0005-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Artaxiad dynasty"
+  },
+  {
+    "name": "👑 Artavasdes III",
+    "role": "King",
+    "start": "-0005-01-01",
+    "end": "-0002-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Artaxiad dynasty"
+  },
+  {
+    "name": "👑 Tigranes IV and Erato",
+    "role": "King",
+    "start": "-0002-01-01",
+    "end": "0001-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone — co-rule; Erato reigned alone 1–2 AD",
+    "era": "Artaxiad dynasty"
+  },
+  {
+    "name": "👑 Tigranes V and Erato",
+    "role": "King",
+    "start": "0006-01-01",
+    "end": "0012-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone — c. dates; last Artaxiads — dynasty ended 12 AD; gap 2–6 AD (Roman appointees)",
+    "era": "Artaxiad dynasty"
+  },
+  {
+    "name": "👑 Tiridates I",
+    "role": "King",
+    "start": "0052-01-01",
+    "end": "0088-01-01",
+    "current": false,
+    "tenure": "36y 0d",
+    "party": "year-level backbone — founder of the Arsacid line; first reign 52–58, restored 62, crowned by Nero in Rome in 66; reign interrupted 58–62",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Tiridates III",
+    "role": "King",
+    "start": "0298-01-01",
+    "end": "0330-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "year-level backbone — gap 88–298 (intervening Arsacid kings only partially attested at year level); made Christianity Armenia's state religion, traditionally in 301 — first Christian state",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Arshak II",
+    "role": "King",
+    "start": "0350-01-01",
+    "end": "0368-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone — gap 330–350 (Khosrov III, Tiran); caught between Rome and Sasanian Persia",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Pap",
+    "role": "King",
+    "start": "0368-01-01",
+    "end": "0374-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone — assassinated at Roman instigation",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Vramshapuh",
+    "role": "King",
+    "start": "0389-01-01",
+    "end": "0414-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone — gap 374–389 (Varazdat, Arshak III/Khosrov IV); under him Mesrop Mashtots devised the Armenian alphabet",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Artaxias IV",
+    "role": "King",
+    "start": "0422-01-01",
+    "end": "0428-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone — gap 414–422 (Shapur, then direct Sasanian rule 417–422); deposed by Bahram V of Persia in 428 — monarchy abolished, Armenia placed under marzbans",
+    "era": "Arsacid dynasty"
+  }
+]

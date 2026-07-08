@@ -1,0 +1,112 @@
+[
+  {
+    "name": "👑 Chandragupta I",
+    "role": "Emperor",
+    "start": "0320-01-01",
+    "end": "0335-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone (Maharajadhiraja)",
+    "era": "Gupta dynasty"
+  },
+  {
+    "name": "👑 Samudragupta",
+    "role": "Emperor",
+    "start": "0335-01-01",
+    "end": "0375-01-01",
+    "current": false,
+    "tenure": "40y 0d",
+    "party": "year-level backbone (Maharajadhiraja)",
+    "era": "Gupta dynasty"
+  },
+  {
+    "name": "👑 Chandragupta II",
+    "role": "Emperor",
+    "start": "0375-01-01",
+    "end": "0415-01-01",
+    "current": false,
+    "tenure": "40y 0d",
+    "party": "year-level backbone (Maharajadhiraja)",
+    "era": "Gupta dynasty"
+  },
+  {
+    "name": "👑 Kumaragupta I",
+    "role": "Emperor",
+    "start": "0415-01-01",
+    "end": "0455-01-01",
+    "current": false,
+    "tenure": "40y 0d",
+    "party": "year-level backbone (Maharajadhiraja)",
+    "era": "Gupta dynasty"
+  },
+  {
+    "name": "👑 Skandagupta",
+    "role": "Emperor",
+    "start": "0455-01-01",
+    "end": "0467-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone (Maharajadhiraja)",
+    "era": "Gupta dynasty"
+  },
+  {
+    "name": "👑 Purugupta",
+    "role": "Emperor",
+    "start": "0467-01-01",
+    "end": "0473-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone (Maharajadhiraja)",
+    "era": "Gupta dynasty"
+  },
+  {
+    "name": "👑 Kumaragupta II",
+    "role": "Emperor",
+    "start": "0473-01-01",
+    "end": "0476-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone (Maharajadhiraja)",
+    "era": "Gupta dynasty"
+  },
+  {
+    "name": "👑 Budhagupta",
+    "role": "Emperor",
+    "start": "0476-01-01",
+    "end": "0495-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone (Maharajadhiraja)",
+    "era": "Gupta dynasty"
+  },
+  {
+    "name": "👑 Narasimhagupta",
+    "role": "Emperor",
+    "start": "0495-01-01",
+    "end": "0530-01-01",
+    "current": false,
+    "tenure": "35y 0d",
+    "party": "year-level backbone (Maharajadhiraja)",
+    "era": "Gupta dynasty"
+  },
+  {
+    "name": "👑 Kumaragupta III",
+    "role": "Emperor",
+    "start": "0530-01-01",
+    "end": "0540-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone (Maharajadhiraja)",
+    "era": "Gupta dynasty"
+  },
+  {
+    "name": "👑 Vishnugupta",
+    "role": "Emperor",
+    "start": "0540-01-01",
+    "end": "0550-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone (Maharajadhiraja)",
+    "era": "Gupta dynasty"
+  }
+]

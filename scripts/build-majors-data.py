@@ -49,7 +49,9 @@ def _champ(r, gender=None):
     if gender:
         out["gender"] = gender
     if r.get("metro_slug"):
-        out["metroSlug"] = r["metro_slug"]; out["metroName"] = r.get("metro_name"); out["venue"] = r.get("venue")
+        out["metroSlug"] = r["metro_slug"]; out["metroName"] = r.get("metro_name")
+    if r.get("venue"):
+        out["venue"] = r["venue"]
     return out
 
 GOLF_SEL = "year,tournament,champion,nation,career_no,career_total,note,venue,metro_slug,metro_name"

@@ -1,0 +1,302 @@
+[
+  {
+    "name": "👑 Arsaces I",
+    "role": "King of Kings",
+    "start": "-0247-01-01",
+    "end": "-0217-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Arsaces II",
+    "role": "King of Kings",
+    "start": "-0217-01-01",
+    "end": "-0191-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Priapatius",
+    "role": "King of Kings",
+    "start": "-0191-01-01",
+    "end": "-0176-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Phraates I",
+    "role": "King of Kings",
+    "start": "-0176-01-01",
+    "end": "-0171-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Mithridates I",
+    "role": "King of Kings",
+    "start": "-0171-01-01",
+    "end": "-0132-01-01",
+    "current": false,
+    "tenure": "39y 0d",
+    "party": "year-level backbone",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Phraates II",
+    "role": "King of Kings",
+    "start": "-0132-01-01",
+    "end": "-0127-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Artabanus I",
+    "role": "King of Kings",
+    "start": "-0127-01-01",
+    "end": "-0123-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Mithridates II",
+    "role": "King of Kings",
+    "start": "-0123-01-01",
+    "end": "-0091-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "year-level backbone",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Gotarzes I",
+    "role": "King of Kings",
+    "start": "-0091-01-01",
+    "end": "-0087-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone; disputed sequence",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Orodes I",
+    "role": "King of Kings",
+    "start": "-0087-01-01",
+    "end": "-0079-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone; disputed sequence",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Sinatruces",
+    "role": "King of Kings",
+    "start": "-0078-01-01",
+    "end": "-0070-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone; disputed sequence",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Phraates III",
+    "role": "King of Kings",
+    "start": "-0070-01-01",
+    "end": "-0057-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Orodes II",
+    "role": "King of Kings",
+    "start": "-0057-01-01",
+    "end": "-0037-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone; disputed sequence",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Phraates IV",
+    "role": "King of Kings",
+    "start": "-0037-01-01",
+    "end": "-0002-01-01",
+    "current": false,
+    "tenure": "35y 0d",
+    "party": "year-level backbone; disputed sequence",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Phraates V",
+    "role": "King of Kings",
+    "start": "-0002-01-01",
+    "end": "0004-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Orodes III",
+    "role": "King of Kings",
+    "start": "0004-01-01",
+    "end": "0006-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Vonones I",
+    "role": "King of Kings",
+    "start": "0006-01-01",
+    "end": "0012-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Artabanus II",
+    "role": "King of Kings",
+    "start": "0012-01-01",
+    "end": "0038-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Gotarzes II",
+    "role": "King of Kings",
+    "start": "0038-01-01",
+    "end": "0051-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone; disputed sequence",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Vonones II",
+    "role": "King of Kings",
+    "start": "0051-01-01",
+    "end": "0051-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Vologases I",
+    "role": "King of Kings",
+    "start": "0051-01-01",
+    "end": "0078-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level backbone",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Pacorus II",
+    "role": "King of Kings",
+    "start": "0078-01-01",
+    "end": "0115-01-01",
+    "current": false,
+    "tenure": "37y 0d",
+    "party": "year-level backbone; disputed sequence",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Vologases II",
+    "role": "King of Kings",
+    "start": "0115-01-01",
+    "end": "0116-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Parthamaspates",
+    "role": "King of Kings",
+    "start": "0116-01-01",
+    "end": "0117-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone; disputed sequence",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Osroes I",
+    "role": "King of Kings",
+    "start": "0117-01-01",
+    "end": "0128-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Mithridates IV",
+    "role": "King of Kings",
+    "start": "0128-01-01",
+    "end": "0148-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Vologases III",
+    "role": "King of Kings",
+    "start": "0148-01-01",
+    "end": "0191-01-01",
+    "current": false,
+    "tenure": "43y 0d",
+    "party": "year-level backbone",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Vologases IV",
+    "role": "King of Kings",
+    "start": "0191-01-01",
+    "end": "0207-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Vologases V",
+    "role": "King of Kings",
+    "start": "0207-01-01",
+    "end": "0213-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Arsacid dynasty"
+  },
+  {
+    "name": "👑 Artabanus IV",
+    "role": "King of Kings",
+    "start": "0213-01-01",
+    "end": "0224-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "Arsacid dynasty"
+  }
+]

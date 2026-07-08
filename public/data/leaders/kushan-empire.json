@@ -1,0 +1,132 @@
+[
+  {
+    "name": "👑 Kujula Kadphises",
+    "role": "Emperor",
+    "start": "0030-01-01",
+    "end": "0080-01-01",
+    "current": false,
+    "tenure": "50y 0d",
+    "party": "year-level backbone",
+    "era": "founder; united the Yuezhi tribes — chronology contested, dates per Kanishka-era-127 back-reckoning"
+  },
+  {
+    "name": "👑 Vima Takto",
+    "role": "Emperor",
+    "start": "0090-01-01",
+    "end": "0113-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level backbone",
+    "era": "'Soter Megas'; approximate dates, chronology contested"
+  },
+  {
+    "name": "👑 Vima Kadphises",
+    "role": "Emperor",
+    "start": "0113-01-01",
+    "end": "0127-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone",
+    "era": "father of Kanishka; first Kushan gold coinage era"
+  },
+  {
+    "name": "👑 Kanishka I",
+    "role": "Emperor",
+    "start": "0127-01-01",
+    "end": "0151-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone",
+    "era": "Kanishka the Great; accession 127 CE fixes the now-standard Kushan chronology"
+  },
+  {
+    "name": "👑 Huvishka",
+    "role": "Emperor",
+    "start": "0151-01-01",
+    "end": "0190-01-01",
+    "current": false,
+    "tenure": "39y 0d",
+    "party": "year-level backbone",
+    "era": "consolidation at the empire's height"
+  },
+  {
+    "name": "👑 Vasudeva I",
+    "role": "Emperor",
+    "start": "0190-01-01",
+    "end": "0230-01-01",
+    "current": false,
+    "tenure": "40y 0d",
+    "party": "year-level backbone",
+    "era": "last great Kushan emperor"
+  },
+  {
+    "name": "👑 Kanishka II",
+    "role": "Emperor",
+    "start": "0230-01-01",
+    "end": "0247-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone",
+    "era": "later Kushans; losses to the Sasanians, dates approximate"
+  },
+  {
+    "name": "👑 Vashishka",
+    "role": "Emperor",
+    "start": "0247-01-01",
+    "end": "0267-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "later Kushans; dates approximate"
+  },
+  {
+    "name": "👑 Kanishka III",
+    "role": "Emperor",
+    "start": "0267-01-01",
+    "end": "0270-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Little Kushans; dates approximate"
+  },
+  {
+    "name": "👑 Vasudeva II",
+    "role": "Emperor",
+    "start": "0270-01-01",
+    "end": "0300-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone",
+    "era": "Little Kushans; dates approximate"
+  },
+  {
+    "name": "👑 Mahi",
+    "role": "Emperor",
+    "start": "0300-01-01",
+    "end": "0305-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Little Kushans; dates approximate"
+  },
+  {
+    "name": "👑 Shaka",
+    "role": "Emperor",
+    "start": "0305-01-01",
+    "end": "0335-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone",
+    "era": "Little Kushans; dates approximate"
+  },
+  {
+    "name": "👑 Kipunada",
+    "role": "Emperor",
+    "start": "0335-01-01",
+    "end": "0350-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone",
+    "era": "last documented Kushan ruler; residual realm absorbed by c. 375"
+  }
+]

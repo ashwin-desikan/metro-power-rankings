@@ -1,0 +1,122 @@
+[
+  {
+    "name": "👑 Imad al-Dawla",
+    "role": "Amir al-umara",
+    "start": "0934-01-01",
+    "end": "0949-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone; founder; Fars branch; brothers Rukn al-Dawla (Ray) and Mu'izz al-Dawla (Iraq, took Baghdad 945) ruled parallel branches",
+    "era": "Buyid dynasty"
+  },
+  {
+    "name": "👑 Rukn al-Dawla",
+    "role": "Amir al-umara",
+    "start": "0949-01-01",
+    "end": "0976-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level backbone; senior amir from Imad al-Dawla's death; had ruled Ray/Jibal since 935",
+    "era": "Buyid dynasty"
+  },
+  {
+    "name": "👑 'Adud al-Dawla",
+    "role": "Amir al-umara",
+    "start": "0976-01-01",
+    "end": "0983-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone; peak of the dynasty; ruled Fars from 949, took Baghdad as amir al-umara 978",
+    "era": "Buyid dynasty"
+  },
+  {
+    "name": "👑 Samsam al-Dawla",
+    "role": "Amir al-umara",
+    "start": "0983-01-01",
+    "end": "0987-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone; senior line reckoned by Baghdad; later ruled Fars 989-998",
+    "era": "Buyid dynasty"
+  },
+  {
+    "name": "👑 Sharaf al-Dawla",
+    "role": "Amir al-umara",
+    "start": "0987-01-01",
+    "end": "0989-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone; held Fars from 983 before taking Baghdad",
+    "era": "Buyid dynasty"
+  },
+  {
+    "name": "👑 Baha al-Dawla",
+    "role": "Amir al-umara",
+    "start": "0989-01-01",
+    "end": "1012-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level backbone; reunited Iraq and Fars",
+    "era": "Buyid dynasty"
+  },
+  {
+    "name": "👑 Sultan al-Dawla",
+    "role": "Amir al-umara",
+    "start": "1012-01-01",
+    "end": "1021-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone; kept Fars until 1024; Iraq line continues the senior mainline",
+    "era": "Buyid dynasty"
+  },
+  {
+    "name": "👑 Musharrif al-Dawla",
+    "role": "Amir al-umara",
+    "start": "1021-01-01",
+    "end": "1025-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone; Iraq branch",
+    "era": "Buyid dynasty"
+  },
+  {
+    "name": "👑 Jalal al-Dawla",
+    "role": "Amir al-umara",
+    "start": "1025-01-01",
+    "end": "1044-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone; Iraq branch; rivalry with Abu Kalijar of Fars",
+    "era": "Buyid dynasty"
+  },
+  {
+    "name": "👑 Abu Kalijar",
+    "role": "Amir al-umara",
+    "start": "1044-01-01",
+    "end": "1048-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone; ruled Fars from 1024; senior amir uniting Iraq and Fars from 1044",
+    "era": "Buyid dynasty"
+  },
+  {
+    "name": "👑 Al-Malik al-Rahim",
+    "role": "Amir al-umara",
+    "start": "1048-01-01",
+    "end": "1055-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone; Iraq branch; deposed when Seljuk Tughril took Baghdad 1055",
+    "era": "Buyid dynasty"
+  },
+  {
+    "name": "👑 Abu Mansur Fulad Sutun",
+    "role": "Emir",
+    "start": "1048-01-01",
+    "end": "1062-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone; Fars branch, parallel to al-Malik al-Rahim; last Buyid ruler",
+    "era": "Buyid dynasty"
+  }
+]

@@ -1,5 +1,335 @@
 [
   {
+    "name": "👑 Asparuh",
+    "role": "Khan",
+    "start": "0681-01-01",
+    "end": "0700-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone — founder of Danubian Bulgaria, recognized by Byzantium in 681",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Tervel",
+    "role": "Khan",
+    "start": "0700-01-01",
+    "end": "0721-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Kormisosh",
+    "role": "Khan",
+    "start": "0721-01-01",
+    "end": "0738-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Sevar",
+    "role": "Khan",
+    "start": "0738-01-01",
+    "end": "0754-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Vinekh",
+    "role": "Khan",
+    "start": "0754-01-01",
+    "end": "0760-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Telets",
+    "role": "Khan",
+    "start": "0760-01-01",
+    "end": "0763-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Sabin",
+    "role": "Khan",
+    "start": "0763-01-01",
+    "end": "0766-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Umor",
+    "role": "Khan",
+    "start": "0766-01-01",
+    "end": "0766-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Toktu",
+    "role": "Khan",
+    "start": "0766-01-01",
+    "end": "0767-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Pagan",
+    "role": "Khan",
+    "start": "0767-01-01",
+    "end": "0768-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Telerig",
+    "role": "Khan",
+    "start": "0768-01-01",
+    "end": "0777-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Kardam",
+    "role": "Khan",
+    "start": "0777-01-01",
+    "end": "0803-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Krum",
+    "role": "Khan",
+    "start": "0803-01-01",
+    "end": "0814-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Omurtag",
+    "role": "Khan",
+    "start": "0814-01-01",
+    "end": "0831-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Malamir",
+    "role": "Khan",
+    "start": "0831-01-01",
+    "end": "0836-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Presian I",
+    "role": "Khan",
+    "start": "0836-01-01",
+    "end": "0852-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Boris I",
+    "role": "Knyaz",
+    "start": "0852-01-01",
+    "end": "0889-01-01",
+    "current": false,
+    "tenure": "37y 0d",
+    "party": "year-level backbone — Khan until 864; converted Bulgaria to Christianity in 864 and took the Slavic title Knyaz",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Vladimir",
+    "role": "Knyaz",
+    "start": "0889-01-01",
+    "end": "0893-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Simeon I the Great",
+    "role": "Knyaz",
+    "start": "0893-01-01",
+    "end": "0913-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Simeon I the Great",
+    "role": "Emperor",
+    "start": "0913-01-01",
+    "end": "0927-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone — recognized as Emperor (Tsar) from 913; golden age of Bulgarian culture",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Peter I",
+    "role": "Emperor",
+    "start": "0927-01-01",
+    "end": "0969-01-01",
+    "current": false,
+    "tenure": "42y 0d",
+    "party": "year-level backbone",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Boris II",
+    "role": "Emperor",
+    "start": "0969-01-01",
+    "end": "0977-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Roman",
+    "role": "Emperor",
+    "start": "0977-01-01",
+    "end": "0997-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Samuel",
+    "role": "Emperor",
+    "start": "0997-01-01",
+    "end": "1014-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Gavril Radomir",
+    "role": "Emperor",
+    "start": "1014-01-01",
+    "end": "1015-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Ivan Vladislav",
+    "role": "Emperor",
+    "start": "1015-01-01",
+    "end": "1018-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone — First Empire conquered by Byzantium in 1018",
+    "era": "First Bulgarian Empire"
+  },
+  {
+    "name": "👑 Peter II",
+    "role": "Emperor",
+    "start": "1185-01-01",
+    "end": "1197-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone — led the anti-Byzantine uprising of 1185 with his brother Ivan Asen I; co-ruled",
+    "era": "Second Bulgarian Empire"
+  },
+  {
+    "name": "👑 Ivan Asen I",
+    "role": "Emperor",
+    "start": "1188-01-01",
+    "end": "1196-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone — co-ruled with his brother Peter II",
+    "era": "Second Bulgarian Empire"
+  },
+  {
+    "name": "👑 Kaloyan",
+    "role": "Emperor",
+    "start": "1196-01-01",
+    "end": "1207-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "Second Bulgarian Empire"
+  },
+  {
+    "name": "👑 Boril",
+    "role": "Emperor",
+    "start": "1207-01-01",
+    "end": "1218-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "Second Bulgarian Empire"
+  },
+  {
+    "name": "👑 Ivan Asen II",
+    "role": "Emperor",
+    "start": "1218-01-01",
+    "end": "1241-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level backbone — apogee of the Second Empire; successors 1241–1331 omitted (backbone), not an interregnum",
+    "era": "Second Bulgarian Empire"
+  },
+  {
+    "name": "👑 Ivan Alexander",
+    "role": "Emperor",
+    "start": "1331-01-01",
+    "end": "1371-01-01",
+    "current": false,
+    "tenure": "40y 0d",
+    "party": "year-level backbone",
+    "era": "Second Bulgarian Empire"
+  },
+  {
+    "name": "👑 Ivan Shishman",
+    "role": "Emperor",
+    "start": "1371-01-01",
+    "end": "1395-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone — Tarnovo fell to the Ottomans in 1393; killed 1395 (Vidin under Ivan Sratsimir fell 1396)",
+    "era": "Second Bulgarian Empire"
+  },
+  {
     "name": "👑 Alexander I",
     "role": "Monarch",
     "start": "1879-07-05",

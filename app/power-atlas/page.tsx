@@ -8,7 +8,7 @@ const PAGE_PATH = "/power-atlas";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
 const PAGE_TITLE = "The Power Atlas";
 const PAGE_DESCRIPTION =
-  "A year-by-year ranking of national power from 1789 to the present. Slide through 235 years and watch empires rise and fall, from Pax Britannica to the bipolar Cold War to today, with every state ranked against its rivals.";
+  "A year-by-year ranking of national power from 1500 to the present. Slide through five centuries and watch empires rise and fall, from Ming China and the Habsburgs through Pax Britannica and the Cold War to today, with every state ranked against its rivals.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -43,7 +43,7 @@ export default function GreatPowersPage() {
             <p className="text-xs tracking-widest text-[var(--text-muted)] mb-3" style={{ fontFamily: "'JetBrains Mono', monospace" }}>THE POWER ATLAS</p>
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">Who ruled the world, year by year.</h1>
             <p className="text-lg text-[var(--text-muted)] leading-relaxed max-w-3xl">
-              A single index of national power, computed for every state from 1789 to today and ranked against its
+              A single index of national power, computed for every state from 1500 to today and ranked against its
               contemporaries. Drag the slider and watch the tiers shift: Britain alone atop the 19th century, the
               crowded great-power table of 1900, the US and USSR splitting the Cold War world, and the present day.
             </p>

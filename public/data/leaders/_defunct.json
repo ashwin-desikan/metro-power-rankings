@@ -404,5 +404,299 @@
   "start": "1815",
   "end": "1918",
   "href": "https://en.wikipedia.org/wiki/List_of_rulers_of_Mecklenburg"
+ },
+ "akkadian-empire": {
+  "name": "Akkadian Empire",
+  "continent": "Asia",
+  "start": "-2334",
+  "end": "-2154",
+  "href": "https://en.wikipedia.org/wiki/List_of_kings_of_Akkad"
+ },
+ "aksumite-empire": {
+  "name": "Kingdom of Aksum",
+  "continent": "Africa",
+  "start": "0100-01-01",
+  "end": "0940-01-01",
+  "href": "https://en.wikipedia.org/wiki/Kingdom_of_Aksum"
+ },
+ "assyria": {
+  "name": "Assyria",
+  "continent": "Asia",
+  "start": "-1808",
+  "end": "-0609",
+  "href": "https://en.wikipedia.org/wiki/List_of_Assyrian_kings"
+ },
+ "ayyubid-sultanate": {
+  "name": "Ayyubid Sultanate",
+  "continent": "Africa",
+  "start": "1171-01-01",
+  "end": "1250-01-01",
+  "href": "https://en.wikipedia.org/wiki/Ayyubid_dynasty"
+ },
+ "babylon": {
+  "name": "Babylonia",
+  "continent": "Asia",
+  "start": "-1894",
+  "end": "-0539",
+  "href": "https://en.wikipedia.org/wiki/List_of_kings_of_Babylon"
+ },
+ "chola-empire": {
+  "name": "Chola Empire",
+  "continent": "Asia",
+  "start": "848",
+  "end": "1279",
+  "href": "https://en.wikipedia.org/wiki/Chola_dynasty"
+ },
+ "crimean-khanate": {
+  "name": "Crimean Khanate",
+  "continent": "Europe",
+  "start": "1441-01-01",
+  "end": "1783-01-01",
+  "href": "https://en.wikipedia.org/wiki/List_of_Crimean_khans"
+ },
+ "delhi-sultanate": {
+  "name": "Delhi Sultanate",
+  "continent": "Asia",
+  "start": "1206",
+  "end": "1526",
+  "href": "https://en.wikipedia.org/wiki/List_of_sultans_of_Delhi"
+ },
+ "fatimid-caliphate": {
+  "name": "Fatimid Caliphate",
+  "continent": "Africa",
+  "start": "0909-01-01",
+  "end": "1171-01-01",
+  "href": "https://en.wikipedia.org/wiki/List_of_Fatimid_caliphs"
+ },
+ "gupta-empire": {
+  "name": "Gupta Empire",
+  "continent": "Asia",
+  "start": "320",
+  "end": "550",
+  "href": "https://en.wikipedia.org/wiki/Gupta_Empire"
+ },
+ "hittite-empire": {
+  "name": "Hittite Empire",
+  "continent": "Asia",
+  "start": "-1650",
+  "end": "-1178",
+  "href": "https://en.wikipedia.org/wiki/List_of_Hittite_kings"
+ },
+ "ilkhanate": {
+  "name": "Ilkhanate",
+  "continent": "Asia",
+  "start": "1256-01-01",
+  "end": "1335-01-01",
+  "href": "https://en.wikipedia.org/wiki/Ilkhanate"
+ },
+ "khmer-empire": {
+  "name": "Khmer Empire",
+  "continent": "Asia",
+  "start": "0802-01-01",
+  "end": "1431-01-01",
+  "href": "https://en.wikipedia.org/wiki/Khmer_Empire"
+ },
+ "kingdom-of-naples": {
+  "name": "Kingdom of Naples",
+  "continent": "Europe",
+  "start": "1130",
+  "end": "1816",
+  "href": "https://en.wikipedia.org/wiki/Kingdom_of_Naples"
+ },
+ "macedon": {
+  "name": "Macedon",
+  "continent": "Europe",
+  "start": "-0512",
+  "end": "-0168",
+  "href": "https://en.wikipedia.org/wiki/Macedonia_(ancient_kingdom)"
+ },
+ "majapahit": {
+  "name": "Majapahit",
+  "continent": "Asia",
+  "start": "1293-01-01",
+  "end": "1527-01-01",
+  "href": "https://en.wikipedia.org/wiki/Majapahit"
+ },
+ "mamluk-sultanate": {
+  "name": "Mamluk Sultanate",
+  "continent": "Africa",
+  "start": "1250-01-01",
+  "end": "1517-01-01",
+  "href": "https://en.wikipedia.org/wiki/List_of_Mamluk_sultans"
+ },
+ "maurya-empire": {
+  "name": "Maurya Empire",
+  "continent": "Asia",
+  "start": "-0322",
+  "end": "-0185",
+  "href": "https://en.wikipedia.org/wiki/Maurya_Empire"
+ },
+ "parthian-empire": {
+  "name": "Parthian Empire",
+  "continent": "Asia",
+  "start": "-0247",
+  "end": "224",
+  "href": "https://en.wikipedia.org/wiki/List_of_monarchs_of_the_Parthian_Empire"
+ },
+ "sasanian-empire": {
+  "name": "Sasanian Empire",
+  "continent": "Asia",
+  "start": "224",
+  "end": "651",
+  "href": "https://en.wikipedia.org/wiki/List_of_monarchs_of_the_Sasanian_Empire"
+ },
+ "seleucid-empire": {
+  "name": "Seleucid Empire",
+  "continent": "Asia",
+  "start": "-0312",
+  "end": "-0063",
+  "href": "https://en.wikipedia.org/wiki/Seleucid_Empire"
+ },
+ "seljuk-empire": {
+  "name": "Seljuk Empire",
+  "continent": "Asia",
+  "start": "1037-01-01",
+  "end": "1194-01-01",
+  "href": "https://en.wikipedia.org/wiki/Seljuk_Empire"
+ },
+ "songhai-empire": {
+  "name": "Songhai Empire",
+  "continent": "Africa",
+  "start": "1464-01-01",
+  "end": "1591-01-01",
+  "href": "https://en.wikipedia.org/wiki/Songhai_Empire"
+ },
+ "timurid-empire": {
+  "name": "Timurid Empire",
+  "continent": "Asia",
+  "start": "1370-01-01",
+  "end": "1507-01-01",
+  "href": "https://en.wikipedia.org/wiki/Timurid_dynasty"
+ },
+ "umayyad-cordoba": {
+  "name": "Umayyad Córdoba",
+  "continent": "Europe",
+  "start": "0756-01-01",
+  "end": "1031-01-01",
+  "href": "https://en.wikipedia.org/wiki/Caliphate_of_C%C3%B3rdoba"
+ },
+ "vijayanagara-empire": {
+  "name": "Vijayanagara Empire",
+  "continent": "Asia",
+  "start": "1336",
+  "end": "1646",
+  "href": "https://en.wikipedia.org/wiki/Vijayanagara_Empire"
+ },
+ "aq-qoyunlu": {
+  "name": "Aq Qoyunlu",
+  "continent": "Asia",
+  "start": "1378",
+  "end": "1508",
+  "href": "https://en.wikipedia.org/wiki/Aq_Qoyunlu"
+ },
+ "buyid-dynasty": {
+  "name": "Buyid Dynasty",
+  "continent": "Asia",
+  "start": "934",
+  "end": "1062",
+  "href": "https://en.wikipedia.org/wiki/Buyid_dynasty"
+ },
+ "ghaznavid-empire": {
+  "name": "Ghaznavid Empire",
+  "continent": "Asia",
+  "start": "977",
+  "end": "1186",
+  "href": "https://en.wikipedia.org/wiki/Ghaznavids"
+ },
+ "khwarazmian-empire": {
+  "name": "Khwarazmian Empire",
+  "continent": "Asia",
+  "start": "1077",
+  "end": "1231",
+  "href": "https://en.wikipedia.org/wiki/Khwarazmian_Empire"
+ },
+ "saffarid-dynasty": {
+  "name": "Saffarid Dynasty",
+  "continent": "Asia",
+  "start": "861",
+  "end": "1002",
+  "href": "https://en.wikipedia.org/wiki/Saffarid_dynasty"
+ },
+ "samanid-empire": {
+  "name": "Samanid Empire",
+  "continent": "Asia",
+  "start": "819",
+  "end": "999",
+  "href": "https://en.wikipedia.org/wiki/Samanid_Empire"
+ },
+ "goguryeo": {
+  "name": "Goguryeo",
+  "continent": "Asia",
+  "start": "-0037",
+  "end": "668",
+  "href": "https://en.wikipedia.org/wiki/Goguryeo"
+ },
+ "hunnic-empire": {
+  "name": "Hunnic Empire",
+  "continent": "Europe",
+  "start": "370",
+  "end": "469",
+  "href": "https://en.wikipedia.org/wiki/Huns"
+ },
+ "kingdom-of-armenia": {
+  "name": "Kingdom of Armenia",
+  "continent": "Asia",
+  "start": "-0321",
+  "end": "428",
+  "href": "https://en.wikipedia.org/wiki/List_of_Armenian_kings"
+ },
+ "kingdom-of-judah": {
+  "name": "Kingdom of Judah",
+  "continent": "Asia",
+  "start": "-1008",
+  "end": "-0586",
+  "href": "https://en.wikipedia.org/wiki/Kings_of_Judah"
+ },
+ "kingdom-of-kush": {
+  "name": "Kingdom of Kush",
+  "continent": "Africa",
+  "start": "-0780",
+  "end": "350",
+  "href": "https://en.wikipedia.org/wiki/List_of_monarchs_of_Kush"
+ },
+ "kushan-empire": {
+  "name": "Kushan Empire",
+  "continent": "Asia",
+  "start": "30",
+  "end": "375",
+  "href": "https://en.wikipedia.org/wiki/Kushan_Empire"
+ },
+ "palmyra": {
+  "name": "Palmyrene Empire",
+  "continent": "Asia",
+  "start": "260",
+  "end": "273",
+  "href": "https://en.wikipedia.org/wiki/Palmyrene_Empire"
+ },
+ "pontus": {
+  "name": "Kingdom of Pontus",
+  "continent": "Asia",
+  "start": "-0281",
+  "end": "-0063",
+  "href": "https://en.wikipedia.org/wiki/Kingdom_of_Pontus"
+ },
+ "sparta": {
+  "name": "Sparta",
+  "continent": "Europe",
+  "start": "-0560",
+  "end": "-0192",
+  "href": "https://en.wikipedia.org/wiki/List_of_kings_of_Sparta"
+ },
+ "xiongnu": {
+  "name": "Xiongnu Empire",
+  "continent": "Asia",
+  "start": "-0209",
+  "end": "91",
+  "href": "https://en.wikipedia.org/wiki/Xiongnu"
  }
 }

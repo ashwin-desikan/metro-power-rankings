@@ -1,5 +1,385 @@
 [
   {
+    "name": "👑 Ramathibodi I (U Thong)",
+    "role": "Monarch",
+    "start": "1351-01-01",
+    "end": "1369-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone - Uthong dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Ramesuan",
+    "role": "Monarch",
+    "start": "1369-01-01",
+    "end": "1370-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone - Uthong dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Borommarachathirat I",
+    "role": "Monarch",
+    "start": "1370-01-01",
+    "end": "1388-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone - Suphannaphum dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Thong Lan",
+    "role": "Monarch",
+    "start": "1388-01-01",
+    "end": "1388-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone - Suphannaphum dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Ramesuan",
+    "role": "Monarch",
+    "start": "1388-01-01",
+    "end": "1395-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone - Uthong dynasty - 2nd reign",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Ramracha",
+    "role": "Monarch",
+    "start": "1395-01-01",
+    "end": "1409-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone - Uthong dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Intharacha",
+    "role": "Monarch",
+    "start": "1409-01-01",
+    "end": "1424-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone - Suphannaphum dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Borommarachathirat II",
+    "role": "Monarch",
+    "start": "1424-01-01",
+    "end": "1448-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone - Suphannaphum dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Borommatrailokkanat",
+    "role": "Monarch",
+    "start": "1448-01-01",
+    "end": "1488-01-01",
+    "current": false,
+    "tenure": "40y 0d",
+    "party": "year-level backbone - Suphannaphum dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Borommarachathirat III",
+    "role": "Monarch",
+    "start": "1488-01-01",
+    "end": "1491-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone - Suphannaphum dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Ramathibodi II",
+    "role": "Monarch",
+    "start": "1491-01-01",
+    "end": "1529-01-01",
+    "current": false,
+    "tenure": "38y 0d",
+    "party": "year-level backbone - Suphannaphum dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Borommarachathirat IV",
+    "role": "Monarch",
+    "start": "1529-01-01",
+    "end": "1533-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone - Suphannaphum dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Ratsadathirat",
+    "role": "Monarch",
+    "start": "1533-01-01",
+    "end": "1534-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone - Suphannaphum dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Chairachathirat",
+    "role": "Monarch",
+    "start": "1534-01-01",
+    "end": "1546-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone - Suphannaphum dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Yotfa",
+    "role": "Monarch",
+    "start": "1546-01-01",
+    "end": "1548-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone - Suphannaphum dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Khun Worawongsathirat",
+    "role": "Monarch",
+    "start": "1548-01-01",
+    "end": "1548-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone - usurper - kingship disputed",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Maha Chakkraphat",
+    "role": "Monarch",
+    "start": "1548-01-01",
+    "end": "1564-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone - Suphannaphum dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Mahinthrathirat",
+    "role": "Monarch",
+    "start": "1564-01-01",
+    "end": "1568-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone - Suphannaphum dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Maha Chakkraphat",
+    "role": "Monarch",
+    "start": "1568-01-01",
+    "end": "1569-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone - Suphannaphum dynasty - 2nd reign",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Mahinthrathirat",
+    "role": "Monarch",
+    "start": "1569-01-01",
+    "end": "1569-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone - Suphannaphum dynasty - 2nd reign",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Maha Thammarachathirat",
+    "role": "Monarch",
+    "start": "1569-01-01",
+    "end": "1590-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone - Sukhothai dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Naresuan",
+    "role": "Monarch",
+    "start": "1590-01-01",
+    "end": "1605-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone - Sukhothai dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Ekathotsarot",
+    "role": "Monarch",
+    "start": "1605-01-01",
+    "end": "1610-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone - Sukhothai dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Si Saowaphak",
+    "role": "Monarch",
+    "start": "1610-01-01",
+    "end": "1611-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone - Sukhothai dynasty - reign disputed",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Songtham",
+    "role": "Monarch",
+    "start": "1611-01-01",
+    "end": "1628-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone - Sukhothai dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Chetthathirat",
+    "role": "Monarch",
+    "start": "1628-01-01",
+    "end": "1629-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone - Sukhothai dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Athittayawong",
+    "role": "Monarch",
+    "start": "1629-01-01",
+    "end": "1629-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone - Sukhothai dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Prasat Thong",
+    "role": "Monarch",
+    "start": "1629-01-01",
+    "end": "1655-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone - Prasat Thong dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Chai",
+    "role": "Monarch",
+    "start": "1655-01-01",
+    "end": "1656-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone - Prasat Thong dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Si Suthammaracha",
+    "role": "Monarch",
+    "start": "1656-01-01",
+    "end": "1656-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone - Prasat Thong dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Narai",
+    "role": "Monarch",
+    "start": "1656-01-01",
+    "end": "1688-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "year-level backbone - Prasat Thong dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Phetracha",
+    "role": "Monarch",
+    "start": "1688-01-01",
+    "end": "1703-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone - Ban Phlu Luang dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Suriyenthrathibodi (Suea)",
+    "role": "Monarch",
+    "start": "1703-01-01",
+    "end": "1709-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone - Ban Phlu Luang dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Phumintharacha (Thai Sa)",
+    "role": "Monarch",
+    "start": "1709-01-01",
+    "end": "1733-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone - Ban Phlu Luang dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Borommakot",
+    "role": "Monarch",
+    "start": "1733-01-01",
+    "end": "1758-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone - Ban Phlu Luang dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Uthumphon",
+    "role": "Monarch",
+    "start": "1758-01-01",
+    "end": "1758-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone - Ban Phlu Luang dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Ekkathat",
+    "role": "Monarch",
+    "start": "1758-01-01",
+    "end": "1767-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone - Ban Phlu Luang dynasty",
+    "era": "Ayutthaya Kingdom"
+  },
+  {
+    "name": "👑 Taksin",
+    "role": "Monarch",
+    "start": "1767-01-01",
+    "end": "1782-04-06",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone - Thonburi dynasty",
+    "era": "Thonburi Kingdom"
+  },
+  {
     "name": "👑 Rama I (Phutthayotfa)",
     "role": "Monarch",
     "start": "1782-04-06",

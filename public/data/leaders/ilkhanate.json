@@ -1,0 +1,92 @@
+[
+  {
+    "name": "👑 Hulagu",
+    "role": "Ilkhan",
+    "start": "1256-01-01",
+    "end": "1265-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Ilkhanate"
+  },
+  {
+    "name": "👑 Abaqa",
+    "role": "Ilkhan",
+    "start": "1265-01-01",
+    "end": "1282-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone",
+    "era": "Ilkhanate"
+  },
+  {
+    "name": "👑 Ahmad Tegüder",
+    "role": "Ilkhan",
+    "start": "1282-01-01",
+    "end": "1284-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Ilkhanate"
+  },
+  {
+    "name": "👑 Arghun",
+    "role": "Ilkhan",
+    "start": "1284-01-01",
+    "end": "1291-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Ilkhanate"
+  },
+  {
+    "name": "👑 Gaykhatu",
+    "role": "Ilkhan",
+    "start": "1291-01-01",
+    "end": "1295-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Ilkhanate"
+  },
+  {
+    "name": "👑 Baydu",
+    "role": "Ilkhan",
+    "start": "1295-01-01",
+    "end": "1295-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone; brief reign within 1295",
+    "era": "Ilkhanate"
+  },
+  {
+    "name": "👑 Ghazan",
+    "role": "Ilkhan",
+    "start": "1295-01-01",
+    "end": "1304-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Ilkhanate"
+  },
+  {
+    "name": "👑 Öljaitü",
+    "role": "Ilkhan",
+    "start": "1304-01-01",
+    "end": "1316-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone",
+    "era": "Ilkhanate"
+  },
+  {
+    "name": "👑 Abu Sa'id",
+    "role": "Ilkhan",
+    "start": "1316-01-01",
+    "end": "1335-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone; last effective Ilkhan; after 1335 the Ilkhanate fragmented among rival claimants and regional successor states (Jalayirids, Chupanids et al.) until 1357",
+    "era": "Ilkhanate"
+  }
+]

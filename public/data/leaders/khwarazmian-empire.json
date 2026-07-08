@@ -1,0 +1,72 @@
+[
+  {
+    "name": "👑 Anushtegin Gharchai",
+    "role": "Khwarazmshah",
+    "start": "1077-01-01",
+    "end": "1097-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone; Seljuk-appointed governor of Khwarazm, founder of the line",
+    "era": "Anushtegin dynasty"
+  },
+  {
+    "name": "👑 Qutb ad-Din Muhammad",
+    "role": "Khwarazmshah",
+    "start": "1097-01-01",
+    "end": "1127-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone",
+    "era": "Anushtegin dynasty"
+  },
+  {
+    "name": "👑 Atsiz",
+    "role": "Khwarazmshah",
+    "start": "1127-01-01",
+    "end": "1156-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level backbone",
+    "era": "Anushtegin dynasty"
+  },
+  {
+    "name": "👑 Il-Arslan",
+    "role": "Khwarazmshah",
+    "start": "1156-01-01",
+    "end": "1172-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone",
+    "era": "Anushtegin dynasty"
+  },
+  {
+    "name": "👑 Tekish",
+    "role": "Khwarazmshah",
+    "start": "1172-01-01",
+    "end": "1200-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level backbone; prevailed over rival brother Sultan Shah",
+    "era": "Anushtegin dynasty"
+  },
+  {
+    "name": "👑 Muhammad II",
+    "role": "Khwarazmshah",
+    "start": "1200-01-01",
+    "end": "1220-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone; empire destroyed by Genghis Khan's Mongol invasion 1219-1220",
+    "era": "Anushtegin dynasty"
+  },
+  {
+    "name": "👑 Jalal al-Din Mangburni",
+    "role": "Khwarazmshah",
+    "start": "1220-01-01",
+    "end": "1231-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone; last Khwarazmshah, resisted the Mongols until 1231",
+    "era": "Anushtegin dynasty"
+  }
+]

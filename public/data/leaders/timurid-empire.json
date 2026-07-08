@@ -1,0 +1,82 @@
+[
+  {
+    "name": "👑 Timur",
+    "role": "Emir",
+    "start": "1370-01-01",
+    "end": "1405-01-01",
+    "current": false,
+    "tenure": "35y 0d",
+    "party": "year-level backbone",
+    "era": "Timurid dynasty"
+  },
+  {
+    "name": "👑 Shah Rukh",
+    "role": "Sultan",
+    "start": "1405-01-01",
+    "end": "1447-01-01",
+    "current": false,
+    "tenure": "42y 0d",
+    "party": "year-level backbone; succession contested 1405-1409 by Pir Muhammad and Khalil Sultan before Shah Rukh consolidated the empire from Herat",
+    "era": "Timurid dynasty"
+  },
+  {
+    "name": "👑 Ulugh Beg",
+    "role": "Sultan",
+    "start": "1447-01-01",
+    "end": "1449-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Timurid dynasty"
+  },
+  {
+    "name": "👑 Abd al-Latif Mirza",
+    "role": "Sultan",
+    "start": "1449-01-01",
+    "end": "1450-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Timurid dynasty"
+  },
+  {
+    "name": "👑 Abdullah Mirza",
+    "role": "Sultan",
+    "start": "1450-01-01",
+    "end": "1451-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Timurid dynasty"
+  },
+  {
+    "name": "👑 Abu Sa'id Mirza",
+    "role": "Sultan",
+    "start": "1451-01-01",
+    "end": "1469-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone; took Samarkand 1451 and Herat 1459, re-uniting most of the empire",
+    "era": "Timurid dynasty"
+  },
+  {
+    "name": "👑 Husayn Bayqara",
+    "role": "Sultan",
+    "start": "1469-01-01",
+    "end": "1506-01-01",
+    "current": false,
+    "tenure": "37y 0d",
+    "party": "year-level backbone; empire split after 1469: mainline follows Herat/Khurasan; Samarkand held separately by Sultan Ahmad Mirza (1469-1494), Sultan Mahmud Mirza and Babur",
+    "era": "Timurid dynasty"
+  },
+  {
+    "name": "👑 Badi' al-Zaman Mirza",
+    "role": "Sultan",
+    "start": "1506-01-01",
+    "end": "1507-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone; last Timurid ruler of Herat; city lost to Muhammad Shaybani's Uzbeks in 1507",
+    "era": "Timurid dynasty"
+  }
+]

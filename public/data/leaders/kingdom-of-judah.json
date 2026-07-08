@@ -1,0 +1,222 @@
+[
+  {
+    "name": "👑 David",
+    "role": "King",
+    "start": "-1008-01-01",
+    "end": "-0970-01-01",
+    "current": false,
+    "tenure": "38y 0d",
+    "party": "year-level backbone — traditional chronology (c. 1008–970 BC); dates conventional, not archaeologically fixed",
+    "era": "United Monarchy"
+  },
+  {
+    "name": "👑 Solomon",
+    "role": "King",
+    "start": "-0970-01-01",
+    "end": "-0931-01-01",
+    "current": false,
+    "tenure": "39y 0d",
+    "party": "year-level backbone — traditional chronology; kingdom divided at his death, 931 BC (Thiele)",
+    "era": "United Monarchy"
+  },
+  {
+    "name": "👑 Rehoboam",
+    "role": "King",
+    "start": "-0931-01-01",
+    "end": "-0913-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone — Thiele chronology; kingdom split at his accession — Jeroboam I led the ten northern tribes away to form the Kingdom of Israel",
+    "era": "Kingdom of Judah"
+  },
+  {
+    "name": "👑 Abijah",
+    "role": "King",
+    "start": "-0913-01-01",
+    "end": "-0911-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone — Thiele chronology",
+    "era": "Kingdom of Judah"
+  },
+  {
+    "name": "👑 Asa",
+    "role": "King",
+    "start": "-0911-01-01",
+    "end": "-0870-01-01",
+    "current": false,
+    "tenure": "41y 0d",
+    "party": "year-level backbone — Thiele chronology",
+    "era": "Kingdom of Judah"
+  },
+  {
+    "name": "👑 Jehoshaphat",
+    "role": "King",
+    "start": "-0870-01-01",
+    "end": "-0848-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level backbone — Thiele chronology",
+    "era": "Kingdom of Judah"
+  },
+  {
+    "name": "👑 Jehoram",
+    "role": "King",
+    "start": "-0848-01-01",
+    "end": "-0841-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone — Thiele chronology",
+    "era": "Kingdom of Judah"
+  },
+  {
+    "name": "👑 Ahaziah",
+    "role": "King",
+    "start": "-0841-01-01",
+    "end": "-0841-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone — Thiele chronology; reigned under one year",
+    "era": "Kingdom of Judah"
+  },
+  {
+    "name": "👑 Athaliah",
+    "role": "Queen",
+    "start": "-0841-01-01",
+    "end": "-0835-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone — Thiele chronology; usurper queen, only non-Davidic ruler",
+    "era": "Kingdom of Judah"
+  },
+  {
+    "name": "👑 Jehoash",
+    "role": "King",
+    "start": "-0835-01-01",
+    "end": "-0796-01-01",
+    "current": false,
+    "tenure": "39y 0d",
+    "party": "year-level backbone — Thiele chronology",
+    "era": "Kingdom of Judah"
+  },
+  {
+    "name": "👑 Amaziah",
+    "role": "King",
+    "start": "-0796-01-01",
+    "end": "-0767-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level backbone — Thiele chronology",
+    "era": "Kingdom of Judah"
+  },
+  {
+    "name": "👑 Uzziah",
+    "role": "King",
+    "start": "-0767-01-01",
+    "end": "-0740-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level backbone — Thiele chronology",
+    "era": "Kingdom of Judah"
+  },
+  {
+    "name": "👑 Jotham",
+    "role": "King",
+    "start": "-0740-01-01",
+    "end": "-0732-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone — Thiele chronology",
+    "era": "Kingdom of Judah"
+  },
+  {
+    "name": "👑 Ahaz",
+    "role": "King",
+    "start": "-0732-01-01",
+    "end": "-0716-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone — Thiele chronology",
+    "era": "Kingdom of Judah"
+  },
+  {
+    "name": "👑 Hezekiah",
+    "role": "King",
+    "start": "-0716-01-01",
+    "end": "-0687-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level backbone — Thiele chronology; withstood Sennacherib's siege of Jerusalem",
+    "era": "Kingdom of Judah"
+  },
+  {
+    "name": "👑 Manasseh",
+    "role": "King",
+    "start": "-0687-01-01",
+    "end": "-0643-01-01",
+    "current": false,
+    "tenure": "44y 0d",
+    "party": "year-level backbone — Thiele chronology",
+    "era": "Kingdom of Judah"
+  },
+  {
+    "name": "👑 Amon",
+    "role": "King",
+    "start": "-0643-01-01",
+    "end": "-0641-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone — Thiele chronology",
+    "era": "Kingdom of Judah"
+  },
+  {
+    "name": "👑 Josiah",
+    "role": "King",
+    "start": "-0641-01-01",
+    "end": "-0609-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "year-level backbone — Thiele chronology; religious reformer, killed at Megiddo 609 BC",
+    "era": "Kingdom of Judah"
+  },
+  {
+    "name": "👑 Jehoahaz",
+    "role": "King",
+    "start": "-0609-01-01",
+    "end": "-0609-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone — Thiele chronology; three months, deposed by Egypt",
+    "era": "Kingdom of Judah"
+  },
+  {
+    "name": "👑 Jehoiakim",
+    "role": "King",
+    "start": "-0609-01-01",
+    "end": "-0598-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone — Thiele chronology",
+    "era": "Kingdom of Judah"
+  },
+  {
+    "name": "👑 Jehoiachin",
+    "role": "King",
+    "start": "-0598-01-01",
+    "end": "-0597-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone — Thiele chronology; three months, deported to Babylon 597 BC",
+    "era": "Kingdom of Judah"
+  },
+  {
+    "name": "👑 Zedekiah",
+    "role": "King",
+    "start": "-0597-01-01",
+    "end": "-0586-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone — Thiele chronology; fall of Jerusalem to Nebuchadnezzar II, 586 BC — kingdom destroyed",
+    "era": "Kingdom of Judah"
+  }
+]

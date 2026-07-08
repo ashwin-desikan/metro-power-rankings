@@ -1,5 +1,195 @@
 [
   {
+    "name": "👑 Stefan Nemanja",
+    "role": "Grand Prince",
+    "start": "1166-01-01",
+    "end": "1196-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone",
+    "era": "Grand Principality of Serbia — Nemanjić dynasty"
+  },
+  {
+    "name": "👑 Stefan the First-Crowned",
+    "role": "Grand Prince",
+    "start": "1196-01-01",
+    "end": "1217-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone",
+    "era": "Grand Principality of Serbia — Nemanjić dynasty"
+  },
+  {
+    "name": "👑 Stefan the First-Crowned",
+    "role": "King",
+    "start": "1217-01-01",
+    "end": "1228-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone — crowned first King of Serbia in 1217",
+    "era": "Kingdom of Serbia — Nemanjić dynasty"
+  },
+  {
+    "name": "👑 Stefan Radoslav",
+    "role": "King",
+    "start": "1228-01-01",
+    "end": "1234-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Serbia — Nemanjić dynasty"
+  },
+  {
+    "name": "👑 Stefan Vladislav",
+    "role": "King",
+    "start": "1234-01-01",
+    "end": "1243-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Serbia — Nemanjić dynasty"
+  },
+  {
+    "name": "👑 Stefan Uroš I",
+    "role": "King",
+    "start": "1243-01-01",
+    "end": "1276-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Serbia — Nemanjić dynasty"
+  },
+  {
+    "name": "👑 Stefan Dragutin",
+    "role": "King",
+    "start": "1276-01-01",
+    "end": "1282-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Serbia — Nemanjić dynasty"
+  },
+  {
+    "name": "👑 Stefan Milutin",
+    "role": "King",
+    "start": "1282-01-01",
+    "end": "1321-01-01",
+    "current": false,
+    "tenure": "39y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Serbia — Nemanjić dynasty"
+  },
+  {
+    "name": "👑 Stefan Dečanski",
+    "role": "King",
+    "start": "1321-01-01",
+    "end": "1331-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Serbia — Nemanjić dynasty"
+  },
+  {
+    "name": "👑 Stefan Dušan",
+    "role": "King",
+    "start": "1331-01-01",
+    "end": "1346-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone",
+    "era": "Kingdom of Serbia — Nemanjić dynasty"
+  },
+  {
+    "name": "👑 Stefan Dušan",
+    "role": "Emperor",
+    "start": "1346-01-01",
+    "end": "1355-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone — crowned Emperor (Tsar) of the Serbs and Greeks in 1346",
+    "era": "Serbian Empire"
+  },
+  {
+    "name": "👑 Stefan Uroš V",
+    "role": "Emperor",
+    "start": "1355-01-01",
+    "end": "1371-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone — last Nemanjić ruler; empire fragmented after his death",
+    "era": "Serbian Empire"
+  },
+  {
+    "name": "👑 Lazar",
+    "role": "Prince",
+    "start": "1371-01-01",
+    "end": "1389-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone — ruler of Moravian Serbia; killed at the Battle of Kosovo, 1389",
+    "era": "Serbian Despotate"
+  },
+  {
+    "name": "👑 Stefan Lazarević",
+    "role": "Prince",
+    "start": "1389-01-01",
+    "end": "1402-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Serbian Despotate"
+  },
+  {
+    "name": "👑 Stefan Lazarević",
+    "role": "Despot",
+    "start": "1402-01-01",
+    "end": "1427-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone — granted the title of Despot by the Byzantine emperor in 1402",
+    "era": "Serbian Despotate"
+  },
+  {
+    "name": "👑 Đurađ Branković",
+    "role": "Despot",
+    "start": "1427-01-01",
+    "end": "1456-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level backbone",
+    "era": "Serbian Despotate"
+  },
+  {
+    "name": "👑 Lazar Branković",
+    "role": "Despot",
+    "start": "1456-01-01",
+    "end": "1458-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Serbian Despotate"
+  },
+  {
+    "name": "👑 Stefan Branković",
+    "role": "Despot",
+    "start": "1458-01-01",
+    "end": "1459-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Serbian Despotate"
+  },
+  {
+    "name": "👑 Stephen Tomašević",
+    "role": "Despot",
+    "start": "1459-01-01",
+    "end": "1459-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone — ruled April–June 1459; Smederevo fell to the Ottomans, ending the Despotate",
+    "era": "Serbian Despotate"
+  },
+  {
     "name": "👑 Peter I",
     "role": "King",
     "start": "1918-12-01",

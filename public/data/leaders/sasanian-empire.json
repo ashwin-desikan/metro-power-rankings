@@ -1,0 +1,332 @@
+[
+  {
+    "name": "👑 Ardashir I",
+    "role": "King of Kings",
+    "start": "0224-01-01",
+    "end": "0242-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Shapur I",
+    "role": "King of Kings",
+    "start": "0240-01-01",
+    "end": "0270-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Hormizd I",
+    "role": "King of Kings",
+    "start": "0270-01-01",
+    "end": "0271-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Bahram I",
+    "role": "King of Kings",
+    "start": "0271-01-01",
+    "end": "0274-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Bahram II",
+    "role": "King of Kings",
+    "start": "0274-01-01",
+    "end": "0293-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Bahram III",
+    "role": "King of Kings",
+    "start": "0293-01-01",
+    "end": "0293-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone; disputed sequence",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Narseh",
+    "role": "King of Kings",
+    "start": "0293-01-01",
+    "end": "0302-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Hormizd II",
+    "role": "King of Kings",
+    "start": "0302-01-01",
+    "end": "0309-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Adur Narseh",
+    "role": "King of Kings",
+    "start": "0309-01-01",
+    "end": "0309-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Shapur II",
+    "role": "King of Kings",
+    "start": "0309-01-01",
+    "end": "0379-01-01",
+    "current": false,
+    "tenure": "70y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Ardashir II",
+    "role": "King of Kings",
+    "start": "0379-01-01",
+    "end": "0383-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Shapur III",
+    "role": "King of Kings",
+    "start": "0383-01-01",
+    "end": "0388-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Bahram IV",
+    "role": "King of Kings",
+    "start": "0388-01-01",
+    "end": "0399-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Yazdegerd I",
+    "role": "King of Kings",
+    "start": "0399-01-01",
+    "end": "0420-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Shapur IV",
+    "role": "King of Kings",
+    "start": "0420-01-01",
+    "end": "0420-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone; disputed sequence",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Bahram V",
+    "role": "King of Kings",
+    "start": "0420-01-01",
+    "end": "0438-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Yazdegerd II",
+    "role": "King of Kings",
+    "start": "0438-01-01",
+    "end": "0457-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Hormizd III",
+    "role": "King of Kings",
+    "start": "0457-01-01",
+    "end": "0459-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone; disputed sequence",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Peroz I",
+    "role": "King of Kings",
+    "start": "0457-01-01",
+    "end": "0484-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level backbone; disputed sequence",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Balash",
+    "role": "King of Kings",
+    "start": "0484-01-01",
+    "end": "0488-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Kavad I",
+    "role": "King of Kings",
+    "start": "0488-01-01",
+    "end": "0496-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Jamasp",
+    "role": "King of Kings",
+    "start": "0496-01-01",
+    "end": "0498-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Kavad I",
+    "role": "King of Kings",
+    "start": "0498-01-01",
+    "end": "0531-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Khosrow I",
+    "role": "King of Kings",
+    "start": "0531-01-01",
+    "end": "0579-01-01",
+    "current": false,
+    "tenure": "48y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Hormizd IV",
+    "role": "King of Kings",
+    "start": "0579-01-01",
+    "end": "0590-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Khosrow II",
+    "role": "King of Kings",
+    "start": "0590-01-01",
+    "end": "0628-01-01",
+    "current": false,
+    "tenure": "38y 0d",
+    "party": "year-level backbone; disputed sequence",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Kavad II",
+    "role": "King of Kings",
+    "start": "0628-01-01",
+    "end": "0628-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Ardashir III",
+    "role": "King of Kings",
+    "start": "0628-01-01",
+    "end": "0630-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Shahrbaraz",
+    "role": "King of Kings",
+    "start": "0630-01-01",
+    "end": "0630-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone; disputed sequence",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Boran",
+    "role": "King of Kings",
+    "start": "0630-01-01",
+    "end": "0630-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone; disputed sequence",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Azarmidokht",
+    "role": "King of Kings",
+    "start": "0630-01-01",
+    "end": "0631-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone; disputed sequence",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Boran",
+    "role": "King of Kings",
+    "start": "0631-01-01",
+    "end": "0632-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone; disputed sequence",
+    "era": "House of Sasan"
+  },
+  {
+    "name": "👑 Yazdegerd III",
+    "role": "King of Kings",
+    "start": "0632-01-01",
+    "end": "0651-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone",
+    "era": "House of Sasan"
+  }
+]

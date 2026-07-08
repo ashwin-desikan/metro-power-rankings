@@ -8,7 +8,7 @@ Three indices per entity per year:
                 projection reach, and a curated status layer: P5 seat, recognised nuclear
                 status, Concert-of-powers recognition, Cold-War bloc leadership).
   POWER       = the headline hegemony-aware blend (unchanged); 1990-2026 glides into the
-                site country score, exact at 2026. 1789-1815 are curated tiers.
+                site country score, exact at 2026. 1500-1815 are benchmark-interpolated shares.
 
 The gap between LATENT and RECOGNIZED is the point: rising powers score latent > recognised
 (China 1980, the US in the 1880s), fading ones recognised > latent (France/Britain mid-C20).
@@ -177,10 +177,22 @@ def main():
         stat={s:status_points(s,year) for s in ents}; st=sum(stat.values()) or 1
         rec={s:0.30*(e['milex']/tot['milex'])+0.34*(econq[s]/eqt)+0.16*(rch.get(s,0)/rt)+0.20*(stat[s]/st) for s,e in ents.items()}
         return norm(rec)
-    PRE={
-    1789:{'Great Power':['united-kingdom','france','russia','austria','china'],'Middle Power':['spain','turkey','germany','india','netherlands'],'Regional':['portugal','sweden','two-sicilies','united-states','denmark','italy','poland','iran']},
-    1800:{'Great Power':['france','united-kingdom','russia','austria','china'],'Middle Power':['germany','spain','turkey','united-states','india'],'Regional':['netherlands','portugal','sweden','two-sicilies','denmark','iran']},
-    1812:{'Superpower':['france'],'Great Power':['united-kingdom','russia','austria','china'],'Middle Power':['germany','turkey','spain','united-states','india'],'Regional':['netherlands','portugal','sweden','two-sicilies','denmark','iran']},
+    # ---- Pre-CINC benchmark shares (1500-1815, interpolated between benchmarks). ----
+    # Derived by scripts/power/derive_pre1789_benchmarks.py from Maddison 2023 benchmark
+    # population/GDP + curated military & reach overlays + curated entity allocation
+    # (colonial GDP to the imperial ruler, Iberian Union 1580-1640, HRE/Prussia carve,
+    # Ottoman & Habsburg population adders, Napoleonic keyframes 1800/1812/1815 with
+    # era-correct annexations). Wide error bars; latent/recognised stays 1816+ (CINC).
+    PREB={
+    1500:{'china':0.24386,'vijayanagara-empire':0.09252,'delhi-sultanate':0.07766,'spain':0.07571,'france':0.0747,'turkey':0.07085,'holy-roman-empire':0.06807,'portugal':0.05209,'republic-of-venice':0.04384,'japan':0.03909,'england':0.03118,'russia':0.02753,'poland':0.0202,'mamluk-sultanate':0.01802,'republic-of-genoa':0.01107,'hungary':0.0102,'kingdom-of-naples':0.01,'aztec-empire':0.00995,'inca-empire':0.0054,'denmark':0.00416,'duchy-of-milan':0.004,'vatican-city':0.004,'tuscany':0.00333,'sweden':0.00174,'netherlands':0.00081},
+    1600:{'china':0.23573,'india':0.19688,'spain':0.12442,'turkey':0.07323,'france':0.05983,'japan':0.04895,'england':0.04271,'holy-roman-empire':0.03881,'netherlands':0.03541,'russia':0.02976,'republic-of-venice':0.02525,'poland':0.02485,'iran':0.01903,'austria':0.01052,'sweden':0.00964,'kingdom-of-naples':0.00883,'denmark':0.00628,'vatican-city':0.00415,'tuscany':0.00312,'republic-of-genoa':0.0026},
+    1650:{'china':0.21564,'india':0.20976,'france':0.07767,'spain':0.06958,'netherlands':0.06922,'turkey':0.05904,'england':0.05415,'japan':0.03949,'russia':0.03214,'austria':0.02756,'portugal':0.02287,'holy-roman-empire':0.0214,'sweden':0.02107,'republic-of-venice':0.01793,'poland':0.01674,'iran':0.01621,'denmark':0.01198,'kingdom-of-naples':0.00829,'vatican-city':0.0039,'tuscany':0.00293,'republic-of-genoa':0.00244},
+    1700:{'india':0.21203,'china':0.20769,'france':0.09735,'england':0.07628,'spain':0.05831,'netherlands':0.05373,'turkey':0.05001,'russia':0.04367,'japan':0.03977,'austria':0.03748,'portugal':0.01945,'sweden':0.01934,'holy-roman-empire':0.01612,'poland':0.01456,'iran':0.01332,'denmark':0.01091,'republic-of-venice':0.01062,'kingdom-of-naples':0.0078,'vatican-city':0.00367,'germany':0.00284,'tuscany':0.00275,'republic-of-genoa':0.00229},
+    1750:{'china':0.23036,'united-kingdom':0.10607,'india':0.09553,'france':0.09375,'maratha-empire':0.08314,'russia':0.05743,'spain':0.04953,'austria':0.04649,'turkey':0.04054,'netherlands':0.0313,'japan':0.0312,'germany':0.02776,'portugal':0.01875,'holy-roman-empire':0.01661,'iran':0.01294,'poland':0.01234,'denmark':0.01229,'sweden':0.01124,'kingdom-of-naples':0.00773,'republic-of-venice':0.00545,'italy':0.00273,'vatican-city':0.00273,'tuscany':0.00227,'republic-of-genoa':0.00182},
+    1789:{'china':0.24214,'united-kingdom':0.11519,'maratha-empire':0.10988,'france':0.08968,'russia':0.06746,'austria':0.04906,'spain':0.04818,'india':0.04667,'turkey':0.03699,'germany':0.03274,'japan':0.03145,'netherlands':0.02344,'portugal':0.01557,'united-states':0.01497,'holy-roman-empire':0.01463,'denmark':0.01255,'poland':0.01201,'sweden':0.01155,'kingdom-of-naples':0.00746,'republic-of-venice':0.00526,'iran':0.0039,'italy':0.00263,'vatican-city':0.00263,'tuscany':0.00219,'republic-of-genoa':0.00175},
+    1800:{'china':0.25036,'united-kingdom':0.12499,'maratha-empire':0.11851,'france':0.11731,'russia':0.07102,'spain':0.04453,'india':0.03746,'austria':0.03536,'japan':0.03284,'germany':0.02985,'turkey':0.0283,'united-states':0.02061,'netherlands':0.01687,'portugal':0.01561,'holy-roman-empire':0.01533,'denmark':0.01152,'sweden':0.00877,'kingdom-of-naples':0.00862,'iran':0.00396,'italy':0.00318,'vatican-city':0.00272,'tuscany':0.00227},
+    1812:{'china':0.25339,'france':0.15521,'united-kingdom':0.13414,'maratha-empire':0.11223,'russia':0.07463,'spain':0.03808,'india':0.03641,'japan':0.03251,'turkey':0.02492,'austria':0.02479,'germany':0.02357,'united-states':0.02352,'portugal':0.01389,'kingdom-of-naples':0.00994,'sweden':0.00875,'duchy-of-warsaw':0.00874,'denmark':0.00702,'bavaria':0.00459,'iran':0.00396,'netherlands':0.00395,'saxony':0.00344,'italy':0.00231},
+    1815:{'china':0.25402,'united-kingdom':0.14067,'maratha-empire':0.10773,'russia':0.08765,'france':0.07285,'austria':0.04482,'germany':0.04092,'spain':0.03778,'india':0.03591,'japan':0.03277,'turkey':0.02922,'united-states':0.02742,'netherlands':0.02295,'portugal':0.01433,'sweden':0.00926,'kingdom-of-naples':0.00775,'denmark':0.00723,'bavaria':0.00419,'iran':0.00391,'italy':0.00365,'vatican-city':0.00319,'tuscany':0.00319,'saxony':0.00302,'wurttemberg':0.00279,'baden':0.00279},
     }
     # Presence: every entity we have ruler dates for, to list all present states
     # each year even without a CINC score. age = earliest ruler start (nation age).
@@ -206,18 +218,42 @@ def main():
             sp.append((sdk, edk))
         if sp: spans[slug] = sp; age[slug] = min(x for x, _ in sp)
 
+    # ---- 1816-1859 sovereign-state injection: CINC lacks China/Japan until 1860 and
+    # Persia until 1855, which used to make Qing China fall off a cliff at the 1816 seam.
+    # Glide each from its 1815 benchmark share to its first real CINC-era share; the
+    # Marathas glide to zero at the 1818 conquest, the Mughal remnant to zero at 1858.
+    # CINC-scored shares are rescaled by (1-F) so each year still sums to 1.
+    SH1855=headline(1855); SH1860=headline(1860); P15=PREB[1815]
+    INJ=[('china',P15.get('china',0),SH1860.get('china',0),1860),
+         ('japan',P15.get('japan',0),SH1860.get('japan',0),1860),
+         ('iran',P15.get('iran',0),SH1855.get('iran',0),1855),
+         ('india',P15.get('india',0),0.0,1858),
+         ('maratha-empire',P15.get('maratha-empire',0),0.0,1818)]
+    def inj_shares(y):
+        out={}
+        for sl,a,bt,E in INJ:
+            if y<E and a>0:
+                f=a+(bt-a)*(y-1815)/(E-1815)
+                if f>0.0004: out[sl]=f
+        return out
+
     byYear={}
-    for year in range(1789,2027):
+    for year in range(1500,2027):
         if year<1816:
-            arr=[]; kf=PRE[max(y for y in PRE if y<=year)]
-            for tname,slugs in kf.items():
-                for s in slugs: arr.append({"slug":s,"share":None,"rank":None,"tier":tname,"lat":None,"rec":None})
+            sh=interp_kf(PREB,year)
+            rank=sorted(sh.items(),key=lambda x:-x[1]); leader=rank[0][1] if rank else 0
+            arr=[{"slug":sl,"share":round(v,5),"rank":i,"tier":tier(v,leader),"lat":None,"rec":None}
+                 for i,(sl,v) in enumerate(rank,1) if v>0.0004]
         else:
             comp=headline(year); lat=latent(min(year,2016)); rec=recognized(min(year,2016))
             b=max(0.0,min(1.0,(year-1990)/(2026-1990)))
             slugs=set(comp)|(set(CS) if b>0 else set())
             blend={s:(1-b)*comp.get(s,0)+b*CS.get(s,0) for s in slugs}
             tt=sum(blend.values()) or 1; sh={s:v/tt for s,v in blend.items() if v>0}
+            if year<1860:
+                inj=inj_shares(year); F=sum(inj.values())
+                if F>0:
+                    sh={s:v*(1-F) for s,v in sh.items()}; sh.update(inj)
             rank=sorted(sh.items(),key=lambda x:-x[1]); leader=rank[0][1] if rank else 0
             arr=[]
             for i,(s,v) in enumerate(rank,1):
@@ -233,10 +269,10 @@ def main():
             arr.append({"slug":slug,"share":None,"rank":None,"tier":None,"lat":None,"rec":None})
         byYear[year]=arr
     out={"meta":{"generated":str(date.today()),
-        "method":"Hegemony-aware CINC v6 + Maddison 2023 + reach; 1990-2026 blended into the country score (exact 2026). LATENT = material mass; RECOGNIZED = spending + productive economy + reach + curated status (P5 seat, nuclear, Concert recognition, bloc leadership).",
+        "method":"Hegemony-aware CINC v6 + Maddison 2023 + reach; 1500-1815 benchmark-interpolated (Maddison benchmarks + curated military/reach overlays incl. Napoleonic keyframes, wide error bars); 1816-1859 sovereign non-CINC states (Qing, Japan, Persia, fading Maratha/Mughal) glide-injected into the CINC pool; 1990-2026 blended into the country score (exact 2026). LATENT = material mass; RECOGNIZED = spending + productive economy + reach + curated status (P5 seat, nuclear, Concert recognition, bloc leadership).",
         "sources":["Correlates of War National Material Capabilities v6.0","Maddison Project Database 2023","site country score","curated status layer"],
         "tiers":["Superpower","Great Power","Middle Power","Regional","Minor"]},
-        "years":list(range(1789,2027)),"byYear":{str(y):byYear[y] for y in byYear}}
+        "years":list(range(1500,2027)),"byYear":{str(y):byYear[y] for y in byYear}}
     json.dump(out, open(OUT,"w"), separators=(",",":"))
     print("wrote", OUT, os.path.getsize(OUT)//1024, "KB")
 if __name__=="__main__": main()

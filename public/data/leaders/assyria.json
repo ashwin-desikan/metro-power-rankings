@@ -1,0 +1,222 @@
+[
+  {
+    "name": "👑 Shamshi-Adad I",
+    "role": "King",
+    "start": "-1808-01-01",
+    "end": "-1776-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Old Assyrian period"
+  },
+  {
+    "name": "👑 Ashur-uballit I",
+    "role": "King",
+    "start": "-1363-01-01",
+    "end": "-1328-01-01",
+    "current": false,
+    "tenure": "35y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Middle Assyrian Empire"
+  },
+  {
+    "name": "👑 Tukulti-Ninurta I",
+    "role": "King",
+    "start": "-1243-01-01",
+    "end": "-1207-01-01",
+    "current": false,
+    "tenure": "36y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Middle Assyrian Empire"
+  },
+  {
+    "name": "👑 Tiglath-Pileser I",
+    "role": "King",
+    "start": "-1114-01-01",
+    "end": "-1076-01-01",
+    "current": false,
+    "tenure": "38y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Middle Assyrian Empire"
+  },
+  {
+    "name": "👑 Adad-nirari II",
+    "role": "King",
+    "start": "-0911-01-01",
+    "end": "-0891-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Assyrian Empire"
+  },
+  {
+    "name": "👑 Tukulti-Ninurta II",
+    "role": "King",
+    "start": "-0891-01-01",
+    "end": "-0884-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Assyrian Empire"
+  },
+  {
+    "name": "👑 Ashurnasirpal II",
+    "role": "King",
+    "start": "-0884-01-01",
+    "end": "-0859-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Assyrian Empire"
+  },
+  {
+    "name": "👑 Shalmaneser III",
+    "role": "King",
+    "start": "-0859-01-01",
+    "end": "-0824-01-01",
+    "current": false,
+    "tenure": "35y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Assyrian Empire"
+  },
+  {
+    "name": "👑 Shamshi-Adad V",
+    "role": "King",
+    "start": "-0824-01-01",
+    "end": "-0811-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Assyrian Empire"
+  },
+  {
+    "name": "👑 Adad-nirari III",
+    "role": "King",
+    "start": "-0811-01-01",
+    "end": "-0783-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Assyrian Empire"
+  },
+  {
+    "name": "👑 Shalmaneser IV",
+    "role": "King",
+    "start": "-0783-01-01",
+    "end": "-0773-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Assyrian Empire"
+  },
+  {
+    "name": "👑 Ashur-dan III",
+    "role": "King",
+    "start": "-0773-01-01",
+    "end": "-0755-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Assyrian Empire"
+  },
+  {
+    "name": "👑 Ashur-nirari V",
+    "role": "King",
+    "start": "-0755-01-01",
+    "end": "-0745-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Assyrian Empire"
+  },
+  {
+    "name": "👑 Tiglath-Pileser III",
+    "role": "King",
+    "start": "-0745-01-01",
+    "end": "-0727-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Assyrian Empire"
+  },
+  {
+    "name": "👑 Shalmaneser V",
+    "role": "King",
+    "start": "-0727-01-01",
+    "end": "-0722-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Assyrian Empire"
+  },
+  {
+    "name": "👑 Sargon II",
+    "role": "King",
+    "start": "-0722-01-01",
+    "end": "-0705-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Assyrian Empire"
+  },
+  {
+    "name": "👑 Sennacherib",
+    "role": "King",
+    "start": "-0705-01-01",
+    "end": "-0681-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Assyrian Empire"
+  },
+  {
+    "name": "👑 Esarhaddon",
+    "role": "King",
+    "start": "-0681-01-01",
+    "end": "-0669-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Assyrian Empire"
+  },
+  {
+    "name": "👑 Ashurbanipal",
+    "role": "King",
+    "start": "-0669-01-01",
+    "end": "-0631-01-01",
+    "current": false,
+    "tenure": "38y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Assyrian Empire"
+  },
+  {
+    "name": "👑 Ashur-etil-ilani",
+    "role": "King",
+    "start": "-0631-01-01",
+    "end": "-0627-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Assyrian Empire"
+  },
+  {
+    "name": "👑 Sin-shar-ishkun",
+    "role": "King",
+    "start": "-0627-01-01",
+    "end": "-0612-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Assyrian Empire"
+  },
+  {
+    "name": "👑 Ashur-uballit II",
+    "role": "King",
+    "start": "-0612-01-01",
+    "end": "-0609-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Neo-Assyrian Empire"
+  }
+]

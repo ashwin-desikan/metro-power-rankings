@@ -1,5 +1,315 @@
 [
   {
+    "name": "👑 Ngô Quyền",
+    "role": "King",
+    "start": "0939-02-01",
+    "end": "0944-02-14",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": "Ngô dynasty"
+  },
+  {
+    "name": "👑 Đinh Bộ Lĩnh",
+    "role": "Emperor",
+    "start": "0968-01-01",
+    "end": "0979-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "Đinh dynasty"
+  },
+  {
+    "name": "👑 Lê Hoàn",
+    "role": "Emperor",
+    "start": "0980-01-01",
+    "end": "1005-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone",
+    "era": "Early Lê dynasty"
+  },
+  {
+    "name": "👑 Lý Thái Tổ",
+    "role": "Emperor",
+    "start": "1009-11-20",
+    "end": "1028-03-31",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": null,
+    "era": "Lý dynasty"
+  },
+  {
+    "name": "👑 Lý Thánh Tông",
+    "role": "Emperor",
+    "start": "1054-11-03",
+    "end": "1072-02-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": null,
+    "era": "Lý dynasty"
+  },
+  {
+    "name": "👑 Lý Nhân Tông",
+    "role": "Emperor",
+    "start": "1072-02-03",
+    "end": "1128-01-15",
+    "current": false,
+    "tenure": "55y 0d",
+    "party": null,
+    "era": "Lý dynasty"
+  },
+  {
+    "name": "👑 Trần Thái Tông",
+    "role": "Emperor",
+    "start": "1226-01-11",
+    "end": "1258-01-30",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": null,
+    "era": "Trần dynasty"
+  },
+  {
+    "name": "👑 Trần Nhân Tông",
+    "role": "Emperor",
+    "start": "1278-11-08",
+    "end": "1293-03-03",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": null,
+    "era": "Trần dynasty"
+  },
+  {
+    "name": "👑 Hồ Quý Ly",
+    "role": "Emperor",
+    "start": "1400-01-01",
+    "end": "1401-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Hồ dynasty"
+  },
+  {
+    "name": "👑 Hồ Hán Thương",
+    "role": "Emperor",
+    "start": "1401-01-01",
+    "end": "1407-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Hồ dynasty"
+  },
+  {
+    "name": "👑 Lê Thái Tổ",
+    "role": "Emperor",
+    "start": "1428-04-29",
+    "end": "1433-10-05",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": null,
+    "era": "Later Lê dynasty"
+  },
+  {
+    "name": "👑 Lê Thánh Tông",
+    "role": "Emperor",
+    "start": "1460-06-13",
+    "end": "1497-03-13",
+    "current": false,
+    "tenure": "36y 0d",
+    "party": null,
+    "era": "Later Lê dynasty"
+  },
+  {
+    "name": "👑 Mạc Đăng Dung",
+    "role": "Emperor",
+    "start": "1527-06-15",
+    "end": "1529-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Mạc dynasty"
+  },
+  {
+    "name": "👑 Lê Trang Tông",
+    "role": "Emperor",
+    "start": "1533-01-01",
+    "end": "1548-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "figurehead under Trịnh lords",
+    "era": "Later Lê dynasty"
+  },
+  {
+    "name": "👑 Lê Thần Tông",
+    "role": "Emperor",
+    "start": "1619-01-01",
+    "end": "1643-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "figurehead under Trịnh lords",
+    "era": "Later Lê dynasty"
+  },
+  {
+    "name": "👑 Lê Hiển Tông",
+    "role": "Emperor",
+    "start": "1740-01-01",
+    "end": "1786-01-01",
+    "current": false,
+    "tenure": "46y 0d",
+    "party": "figurehead under Trịnh lords",
+    "era": "Later Lê dynasty"
+  },
+  {
+    "name": "👑 Lê Chiêu Thống",
+    "role": "Emperor",
+    "start": "1786-01-01",
+    "end": "1789-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "figurehead under Trịnh lords",
+    "era": "Later Lê dynasty"
+  },
+  {
+    "name": "👑 Quang Trung",
+    "role": "Emperor",
+    "start": "1788-12-22",
+    "end": "1792-09-16",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": null,
+    "era": "Tây Sơn dynasty"
+  },
+  {
+    "name": "👑 Gia Long",
+    "role": "Emperor",
+    "start": "1802-06-01",
+    "end": "1820-02-03",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": null,
+    "era": "Nguyễn dynasty"
+  },
+  {
+    "name": "👑 Minh Mạng",
+    "role": "Emperor",
+    "start": "1820-02-14",
+    "end": "1841-01-20",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": null,
+    "era": "Nguyễn dynasty"
+  },
+  {
+    "name": "👑 Thiệu Trị",
+    "role": "Emperor",
+    "start": "1841-02-11",
+    "end": "1847-11-04",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": null,
+    "era": "Nguyễn dynasty"
+  },
+  {
+    "name": "👑 Tự Đức",
+    "role": "Emperor",
+    "start": "1847-11-05",
+    "end": "1883-07-19",
+    "current": false,
+    "tenure": "35y 0d",
+    "party": null,
+    "era": "Nguyễn dynasty"
+  },
+  {
+    "name": "👑 Dục Đức",
+    "role": "Emperor",
+    "start": "1883-07-20",
+    "end": "1883-07-23",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": null,
+    "era": "Nguyễn dynasty"
+  },
+  {
+    "name": "👑 Hiệp Hòa",
+    "role": "Emperor",
+    "start": "1883-07-30",
+    "end": "1883-11-29",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": null,
+    "era": "Nguyễn dynasty"
+  },
+  {
+    "name": "👑 Kiến Phúc",
+    "role": "Emperor",
+    "start": "1883-12-02",
+    "end": "1884-07-31",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": null,
+    "era": "Nguyễn dynasty"
+  },
+  {
+    "name": "👑 Hàm Nghi",
+    "role": "Emperor",
+    "start": "1884-08-02",
+    "end": "1885-09-19",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": null,
+    "era": "Nguyễn dynasty"
+  },
+  {
+    "name": "👑 Đồng Khánh",
+    "role": "Emperor",
+    "start": "1885-09-19",
+    "end": "1889-01-28",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": null,
+    "era": "Nguyễn dynasty"
+  },
+  {
+    "name": "👑 Thành Thái",
+    "role": "Emperor",
+    "start": "1889-02-02",
+    "end": "1907-09-03",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": null,
+    "era": "Nguyễn dynasty"
+  },
+  {
+    "name": "👑 Duy Tân",
+    "role": "Emperor",
+    "start": "1907-09-05",
+    "end": "1916-05-06",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": null,
+    "era": "Nguyễn dynasty"
+  },
+  {
+    "name": "👑 Khải Định",
+    "role": "Emperor",
+    "start": "1916-05-18",
+    "end": "1925-11-06",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": null,
+    "era": "Nguyễn dynasty"
+  },
+  {
+    "name": "👑 Bảo Đại",
+    "role": "Emperor",
+    "start": "1926-01-08",
+    "end": "1945-08-30",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": null,
+    "era": "Nguyễn dynasty"
+  },
+  {
     "name": "Truong Chinh",
     "role": "General Secretary",
     "start": "1941-05-19",

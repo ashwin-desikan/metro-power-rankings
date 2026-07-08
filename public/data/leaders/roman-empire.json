@@ -80,6 +80,16 @@
   "era": "Roman Republic"
  },
  {
+  "name": "👑 Publius Valerius Publicola",
+  "role": "Consul",
+  "start": "-0508-01-01",
+  "end": "-0504-12-31",
+  "current": false,
+  "tenure": "5y 0d",
+  "party": "year-level backbone — four-time consul (509, 508, 507, 504 BC), co-founder of the Republic",
+  "era": "Roman Republic"
+ },
+ {
   "name": "Cincinnatus",
   "role": "Dictator",
   "start": "-0458-01-01",
@@ -87,6 +97,26 @@
   "current": false,
   "tenure": "0y 0d",
   "party": "year-level backbone",
+  "era": "Roman Republic"
+ },
+ {
+  "name": "👑 Appius Claudius Crassus",
+  "role": "Decemvir",
+  "start": "-0451-01-01",
+  "end": "-0450-12-31",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone — led the decemvirate that codified the Twelve Tables, Rome's first written law",
+  "era": "Roman Republic"
+ },
+ {
+  "name": "👑 Aulus Cornelius Cossus",
+  "role": "Consul",
+  "start": "-0428-01-01",
+  "end": "-0428-12-31",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone — consul; won the spolia opima for killing King Lars Tolumnius of Veii",
   "era": "Roman Republic"
  },
  {
@@ -100,6 +130,56 @@
   "era": "Roman Republic"
  },
  {
+  "name": "👑 Marcus Valerius Corvus",
+  "role": "Consul",
+  "start": "-0348-01-01",
+  "end": "-0348-12-31",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone — first of six consulships; victories in the First Samnite War, twice dictator",
+  "era": "Roman Republic"
+ },
+ {
+  "name": "👑 Appius Claudius Caecus",
+  "role": "Consul",
+  "start": "-0307-01-01",
+  "end": "-0307-12-31",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone — consul 307 and 296 BC; as censor 312 built the Appian Way and Rome's first aqueduct",
+  "era": "Roman Republic"
+ },
+ {
+  "name": "👑 Manius Curius Dentatus",
+  "role": "Consul",
+  "start": "-0290-01-01",
+  "end": "-0290-12-31",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone — consul who ended the Samnite Wars; later drove Pyrrhus from Italy at Beneventum (275 BC)",
+  "era": "Roman Republic"
+ },
+ {
+  "name": "👑 Gaius Duilius",
+  "role": "Consul",
+  "start": "-0260-01-01",
+  "end": "-0260-12-31",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone — consul who won Rome's first naval victory, at Mylae in the First Punic War",
+  "era": "Roman Republic"
+ },
+ {
+  "name": "👑 Quintus Fabius Maximus Verrucosus",
+  "role": "Dictator",
+  "start": "-0217-01-01",
+  "end": "-0217-12-31",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone — the Cunctator; dictator whose delaying strategy checked Hannibal in the Second Punic War",
+  "era": "Roman Republic"
+ },
+ {
   "name": "Scipio Africanus",
   "role": "Consul",
   "start": "-0205-01-01",
@@ -107,6 +187,46 @@
   "current": false,
   "tenure": "0y 0d",
   "party": "year-level backbone",
+  "era": "Roman Republic"
+ },
+ {
+  "name": "👑 Lucius Aemilius Paullus Macedonicus",
+  "role": "Consul",
+  "start": "-0168-01-01",
+  "end": "-0168-12-31",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone — consul who won the Battle of Pydna, ending the Third Macedonian War",
+  "era": "Roman Republic"
+ },
+ {
+  "name": "👑 Scipio Aemilianus",
+  "role": "Consul",
+  "start": "-0147-01-01",
+  "end": "-0146-12-31",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone — consul who took and razed Carthage (146 BC), ending the Third Punic War",
+  "era": "Roman Republic"
+ },
+ {
+  "name": "👑 Gaius Marius",
+  "role": "Consul",
+  "start": "-0107-01-01",
+  "end": "-0100-12-31",
+  "current": false,
+  "tenure": "8y 0d",
+  "party": "year-level backbone — seven consulships (107, 104-100, 86 BC); victor of the Jugurthine and Cimbric wars",
+  "era": "Roman Republic"
+ },
+ {
+  "name": "👑 Lucius Cornelius Cinna",
+  "role": "Consul",
+  "start": "-0087-01-01",
+  "end": "-0084-12-31",
+  "current": false,
+  "tenure": "4y 0d",
+  "party": "year-level backbone — consul four years running, dominated Rome in opposition to Sulla",
   "era": "Roman Republic"
  },
  {
@@ -130,6 +250,26 @@
   "era": "Roman Republic"
  },
  {
+  "name": "👑 Cicero",
+  "role": "Consul",
+  "start": "-0063-01-01",
+  "end": "-0063-12-31",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone — consul who suppressed the Catilinarian conspiracy; hailed pater patriae",
+  "era": "Roman Republic"
+ },
+ {
+  "name": "👑 Marcus Licinius Crassus",
+  "role": "Consul",
+  "start": "-0055-01-01",
+  "end": "-0055-12-31",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone — second consulship with Pompey; First Triumvirate partner, died at Carrhae (53 BC)",
+  "era": "Roman Republic"
+ },
+ {
   "name": "Julius Caesar",
   "role": "Dictator",
   "start": "-0049-01-01",
@@ -137,6 +277,26 @@
   "current": false,
   "tenure": "5y 0d",
   "party": "year-level backbone",
+  "era": "Roman Republic"
+ },
+ {
+  "name": "👑 Mark Antony",
+  "role": "Triumvir",
+  "start": "-0043-01-01",
+  "end": "-0033-12-31",
+  "current": false,
+  "tenure": "11y 0d",
+  "party": "year-level backbone — Second Triumvirate with Octavian and Lepidus under the lex Titia (43 BC)",
+  "era": "Roman Republic"
+ },
+ {
+  "name": "👑 Octavian",
+  "role": "Triumvir",
+  "start": "-0043-01-01",
+  "end": "-0033-12-31",
+  "current": false,
+  "tenure": "11y 0d",
+  "party": "year-level backbone — Second Triumvirate; emerged sole ruler and became Augustus in 27 BC",
   "era": "Roman Republic"
  },
  {
@@ -350,22 +510,22 @@
   "era": "Roman Empire"
  },
  {
-  "name": "👑 Geta",
-  "role": "Emperor",
-  "start": "0209-01-01",
-  "end": "0211-01-01",
-  "current": false,
-  "tenure": "2y 0d",
-  "party": "year-level backbone",
-  "era": "Roman Empire"
- },
- {
   "name": "👑 Caracalla",
   "role": "Emperor",
   "start": "0198-01-01",
   "end": "0217-01-01",
   "current": false,
   "tenure": "19y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Geta",
+  "role": "Emperor",
+  "start": "0209-01-01",
+  "end": "0211-01-01",
+  "current": false,
+  "tenure": "2y 0d",
   "party": "year-level backbone",
   "era": "Roman Empire"
  },
@@ -680,22 +840,22 @@
   "era": "Roman Empire"
  },
  {
-  "name": "👑 Licinius",
-  "role": "Emperor",
-  "start": "0308-01-01",
-  "end": "0324-01-01",
-  "current": false,
-  "tenure": "16y 0d",
-  "party": "year-level backbone",
-  "era": "Roman Empire"
- },
- {
   "name": "👑 Constantine I",
   "role": "Emperor",
   "start": "0306-01-01",
   "end": "0337-01-01",
   "current": false,
   "tenure": "31y 0d",
+  "party": "year-level backbone",
+  "era": "Roman Empire"
+ },
+ {
+  "name": "👑 Licinius",
+  "role": "Emperor",
+  "start": "0308-01-01",
+  "end": "0324-01-01",
+  "current": false,
+  "tenure": "16y 0d",
   "party": "year-level backbone",
   "era": "Roman Empire"
  },

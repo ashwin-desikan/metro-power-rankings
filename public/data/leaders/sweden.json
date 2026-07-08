@@ -1,5 +1,385 @@
 [
   {
+    "name": "👑 Eric the Victorious",
+    "role": "Monarch",
+    "start": "0970-01-01",
+    "end": "0995-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone — dates approximate (c. 970 – c. 995), House of Munsö",
+    "era": "Early Swedish kings"
+  },
+  {
+    "name": "👑 Olof Skötkonung",
+    "role": "Monarch",
+    "start": "0995-01-01",
+    "end": "1022-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level backbone — dates approximate (c. 995 – c. 1022), House of Munsö",
+    "era": "Early Swedish kings"
+  },
+  {
+    "name": "👑 Anund Jacob",
+    "role": "Monarch",
+    "start": "1022-01-01",
+    "end": "1050-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level backbone — dates approximate, House of Munsö",
+    "era": "Early Swedish kings"
+  },
+  {
+    "name": "👑 Emund the Old",
+    "role": "Monarch",
+    "start": "1050-01-01",
+    "end": "1060-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone — dates approximate, House of Munsö",
+    "era": "Early Swedish kings"
+  },
+  {
+    "name": "👑 Stenkil",
+    "role": "Monarch",
+    "start": "1060-01-01",
+    "end": "1066-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone — dates approximate, House of Stenkil",
+    "era": "Early Swedish kings"
+  },
+  {
+    "name": "👑 Eric IX (the Holy)",
+    "role": "Monarch",
+    "start": "1156-01-01",
+    "end": "1160-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone — start approximate (c. 1156); died 18 May 1160",
+    "era": "Early Swedish kings"
+  },
+  {
+    "name": "👑 Valdemar Birgersson",
+    "role": "Monarch",
+    "start": "1250-01-01",
+    "end": "1275-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone — House of Bjelbo; son of Birger Jarl, who governed as de facto ruler until 1266",
+    "era": "Early Swedish kings"
+  },
+  {
+    "name": "👑 Magnus III Ladulås",
+    "role": "Monarch",
+    "start": "1275-01-01",
+    "end": "1290-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone — House of Bjelbo",
+    "era": "Early Swedish kings"
+  },
+  {
+    "name": "👑 Birger Magnusson",
+    "role": "Monarch",
+    "start": "1290-01-01",
+    "end": "1318-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level backbone — House of Bjelbo; deposed 1318",
+    "era": "Early Swedish kings"
+  },
+  {
+    "name": "👑 Magnus IV Eriksson",
+    "role": "Monarch",
+    "start": "1319-01-01",
+    "end": "1364-01-01",
+    "current": false,
+    "tenure": "45y 0d",
+    "party": "year-level backbone — House of Bjelbo; also King of Norway (as Magnus VII) 1319–1355; deposed 1364",
+    "era": "Early Swedish kings"
+  },
+  {
+    "name": "👑 Albert of Mecklenburg",
+    "role": "Monarch",
+    "start": "1364-01-01",
+    "end": "1389-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone — deposed after the Battle of Åsle, 1389",
+    "era": "Early Swedish kings"
+  },
+  {
+    "name": "👑 Margaret I",
+    "role": "Monarch",
+    "start": "1389-01-01",
+    "end": "1412-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level backbone — Queen of Denmark, Norway and Sweden; Eric of Pomerania co-sovereign from 1396",
+    "era": "Kalmar Union"
+  },
+  {
+    "name": "👑 Eric of Pomerania",
+    "role": "Monarch",
+    "start": "1412-01-01",
+    "end": "1439-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level backbone — King of Sweden from 1396 as Margaret's co-sovereign; deposed by Sweden 1434–36 and definitively 1439",
+    "era": "Kalmar Union"
+  },
+  {
+    "name": "👑 Christopher of Bavaria",
+    "role": "Monarch",
+    "start": "1441-01-01",
+    "end": "1448-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Kalmar Union"
+  },
+  {
+    "name": "👑 Charles VIII (Karl Knutsson Bonde)",
+    "role": "Monarch",
+    "start": "1448-01-01",
+    "end": "1457-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone — native Swedish king, House of Bonde; first reign",
+    "era": "Kalmar Union"
+  },
+  {
+    "name": "👑 Christian I",
+    "role": "Monarch",
+    "start": "1457-01-01",
+    "end": "1464-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone — House of Oldenburg; also King of Denmark and Norway",
+    "era": "Kalmar Union"
+  },
+  {
+    "name": "👑 Charles VIII (Karl Knutsson Bonde)",
+    "role": "Monarch",
+    "start": "1464-01-01",
+    "end": "1465-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone — second reign",
+    "era": "Kalmar Union"
+  },
+  {
+    "name": "👑 Charles VIII (Karl Knutsson Bonde)",
+    "role": "Monarch",
+    "start": "1467-01-01",
+    "end": "1470-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone — third reign",
+    "era": "Kalmar Union"
+  },
+  {
+    "name": "👑 Sten Sture the Elder",
+    "role": "Regent",
+    "start": "1470-01-01",
+    "end": "1497-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level backbone — Regent (riksföreståndare) of Sweden, first term",
+    "era": "Kalmar Union"
+  },
+  {
+    "name": "👑 Hans (John II)",
+    "role": "Monarch",
+    "start": "1497-01-01",
+    "end": "1501-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone — also King of Denmark and Norway",
+    "era": "Kalmar Union"
+  },
+  {
+    "name": "👑 Sten Sture the Elder",
+    "role": "Regent",
+    "start": "1501-01-01",
+    "end": "1503-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone — Regent (riksföreståndare) of Sweden, second term",
+    "era": "Kalmar Union"
+  },
+  {
+    "name": "👑 Svante Nilsson (Sture)",
+    "role": "Regent",
+    "start": "1503-01-01",
+    "end": "1512-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone — Regent (riksföreståndare) of Sweden; died in office 1512",
+    "era": "Kalmar Union"
+  },
+  {
+    "name": "👑 Sten Sture the Younger",
+    "role": "Regent",
+    "start": "1512-01-01",
+    "end": "1520-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone — Regent (riksföreståndare) of Sweden; died February 1520",
+    "era": "Kalmar Union"
+  },
+  {
+    "name": "👑 Christian II",
+    "role": "Monarch",
+    "start": "1520-01-01",
+    "end": "1521-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone — also King of Denmark and Norway; deposed in Sweden 1521 after the Stockholm Bloodbath",
+    "era": "Kalmar Union"
+  },
+  {
+    "name": "👑 Gustav Vasa",
+    "role": "Regent",
+    "start": "1521-01-01",
+    "end": "1523-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone — Regent — Protector of the Realm during the Swedish War of Liberation; elected king 6 June 1523",
+    "era": "House of Vasa"
+  },
+  {
+    "name": "👑 Gustav Vasa",
+    "role": "Monarch",
+    "start": "1523-01-01",
+    "end": "1560-01-01",
+    "current": false,
+    "tenure": "37y 0d",
+    "party": "year-level backbone — elected king 6 June 1523; ended the Kalmar Union",
+    "era": "House of Vasa"
+  },
+  {
+    "name": "👑 Eric XIV",
+    "role": "Monarch",
+    "start": "1560-01-01",
+    "end": "1568-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone — deposed 1568",
+    "era": "House of Vasa"
+  },
+  {
+    "name": "👑 John III",
+    "role": "Monarch",
+    "start": "1568-01-01",
+    "end": "1592-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone",
+    "era": "House of Vasa"
+  },
+  {
+    "name": "👑 Sigismund",
+    "role": "Monarch",
+    "start": "1592-01-01",
+    "end": "1599-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone — also King of Poland; deposed in Sweden 1599",
+    "era": "House of Vasa"
+  },
+  {
+    "name": "👑 Charles IX",
+    "role": "Monarch",
+    "start": "1599-01-01",
+    "end": "1611-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone — regent 1599–1604, king from 1604",
+    "era": "House of Vasa"
+  },
+  {
+    "name": "👑 Gustav II Adolf (Gustavus Adolphus)",
+    "role": "Monarch",
+    "start": "1611-01-01",
+    "end": "1632-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone — killed at the Battle of Lützen, 1632",
+    "era": "House of Vasa"
+  },
+  {
+    "name": "👑 Christina",
+    "role": "Monarch",
+    "start": "1632-01-01",
+    "end": "1654-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level backbone — abdicated 1654",
+    "era": "House of Vasa"
+  },
+  {
+    "name": "👑 Charles X Gustav",
+    "role": "Monarch",
+    "start": "1654-01-01",
+    "end": "1660-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "House of Palatinate-Zweibrücken"
+  },
+  {
+    "name": "👑 Charles XI",
+    "role": "Monarch",
+    "start": "1660-01-01",
+    "end": "1697-01-01",
+    "current": false,
+    "tenure": "37y 0d",
+    "party": "year-level backbone",
+    "era": "House of Palatinate-Zweibrücken"
+  },
+  {
+    "name": "👑 Charles XII",
+    "role": "Monarch",
+    "start": "1697-01-01",
+    "end": "1718-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone — killed at Fredriksten, 1718",
+    "era": "House of Palatinate-Zweibrücken"
+  },
+  {
+    "name": "👑 Ulrika Eleonora",
+    "role": "Monarch",
+    "start": "1718-01-01",
+    "end": "1720-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone — abdicated in favour of her husband Frederick I, 1720",
+    "era": "Age of Liberty — House of Hesse/Holstein-Gottorp"
+  },
+  {
+    "name": "👑 Frederick I",
+    "role": "Monarch",
+    "start": "1720-01-01",
+    "end": "1751-01-01",
+    "current": false,
+    "tenure": "31y 0d",
+    "party": "year-level backbone — House of Hesse",
+    "era": "Age of Liberty — House of Hesse/Holstein-Gottorp"
+  },
+  {
+    "name": "👑 Adolf Frederick",
+    "role": "Monarch",
+    "start": "1751-01-01",
+    "end": "1771-02-12",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone — House of Holstein-Gottorp; died 12 February 1771",
+    "era": "Age of Liberty — House of Hesse/Holstein-Gottorp"
+  },
+  {
     "name": "👑 Gustav III",
     "role": "Monarch",
     "start": "1771-02-12",

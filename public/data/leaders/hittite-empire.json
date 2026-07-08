@@ -1,0 +1,172 @@
+[
+  {
+    "name": "👑 Hattusili I",
+    "role": "King",
+    "start": "-1650-01-01",
+    "end": "-1620-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Hittite Old Kingdom"
+  },
+  {
+    "name": "👑 Mursili I",
+    "role": "King",
+    "start": "-1620-01-01",
+    "end": "-1590-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Hittite Old Kingdom"
+  },
+  {
+    "name": "👑 Hantili I",
+    "role": "King",
+    "start": "-1590-01-01",
+    "end": "-1560-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Hittite Old Kingdom"
+  },
+  {
+    "name": "👑 Zidanta I",
+    "role": "King",
+    "start": "-1560-01-01",
+    "end": "-1550-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Hittite Old Kingdom"
+  },
+  {
+    "name": "👑 Ammuna",
+    "role": "King",
+    "start": "-1550-01-01",
+    "end": "-1530-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Hittite Old Kingdom"
+  },
+  {
+    "name": "👑 Huzziya I",
+    "role": "King",
+    "start": "-1530-01-01",
+    "end": "-1525-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Hittite Old Kingdom"
+  },
+  {
+    "name": "👑 Telipinu",
+    "role": "King",
+    "start": "-1525-01-01",
+    "end": "-1500-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Hittite Old Kingdom"
+  },
+  {
+    "name": "👑 Tudhaliya I",
+    "role": "Great King",
+    "start": "-1430-01-01",
+    "end": "-1400-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Hittite New Kingdom"
+  },
+  {
+    "name": "👑 Suppiluliuma I",
+    "role": "Great King",
+    "start": "-1344-01-01",
+    "end": "-1322-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Hittite New Kingdom"
+  },
+  {
+    "name": "👑 Arnuwanda II",
+    "role": "Great King",
+    "start": "-1322-01-01",
+    "end": "-1321-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Hittite New Kingdom"
+  },
+  {
+    "name": "👑 Mursili II",
+    "role": "Great King",
+    "start": "-1321-01-01",
+    "end": "-1295-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Hittite New Kingdom"
+  },
+  {
+    "name": "👑 Muwatalli II",
+    "role": "Great King",
+    "start": "-1295-01-01",
+    "end": "-1272-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Hittite New Kingdom"
+  },
+  {
+    "name": "👑 Mursili III",
+    "role": "Great King",
+    "start": "-1272-01-01",
+    "end": "-1264-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Hittite New Kingdom"
+  },
+  {
+    "name": "👑 Hattusili III",
+    "role": "Great King",
+    "start": "-1264-01-01",
+    "end": "-1239-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Hittite New Kingdom"
+  },
+  {
+    "name": "👑 Tudhaliya IV",
+    "role": "Great King",
+    "start": "-1239-01-01",
+    "end": "-1209-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Hittite New Kingdom"
+  },
+  {
+    "name": "👑 Arnuwanda III",
+    "role": "Great King",
+    "start": "-1209-01-01",
+    "end": "-1205-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Hittite New Kingdom"
+  },
+  {
+    "name": "👑 Suppiluliuma II",
+    "role": "Great King",
+    "start": "-1205-01-01",
+    "end": "-1178-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level backbone; Middle Chronology",
+    "era": "Hittite New Kingdom"
+  }
+]

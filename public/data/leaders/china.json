@@ -30,6 +30,36 @@
   "era": "Han dynasty"
  },
  {
+  "name": "👑 Emperor Hui of Han",
+  "role": "Emperor",
+  "start": "-0195-01-01",
+  "end": "-0188-01-01",
+  "current": false,
+  "tenure": "7y 0d",
+  "party": "year-level backbone",
+  "era": "Han dynasty"
+ },
+ {
+  "name": "👑 Emperor Wen of Han",
+  "role": "Emperor",
+  "start": "-0180-01-01",
+  "end": "-0157-01-01",
+  "current": false,
+  "tenure": "23y 0d",
+  "party": "year-level backbone",
+  "era": "Han dynasty"
+ },
+ {
+  "name": "👑 Emperor Jing of Han",
+  "role": "Emperor",
+  "start": "-0157-01-01",
+  "end": "-0141-01-01",
+  "current": false,
+  "tenure": "16y 0d",
+  "party": "year-level backbone",
+  "era": "Han dynasty"
+ },
+ {
   "name": "👑 Emperor Wu of Han",
   "role": "Emperor",
   "start": "-0141-01-01",
@@ -38,6 +68,76 @@
   "tenure": "54y 0d",
   "party": "year-level backbone",
   "era": "Han dynasty"
+ },
+ {
+  "name": "👑 Emperor Zhao of Han",
+  "role": "Emperor",
+  "start": "-0087-01-01",
+  "end": "-0074-01-01",
+  "current": false,
+  "tenure": "13y 0d",
+  "party": "year-level backbone",
+  "era": "Han dynasty"
+ },
+ {
+  "name": "👑 Emperor Xuan of Han",
+  "role": "Emperor",
+  "start": "-0074-01-01",
+  "end": "-0048-01-01",
+  "current": false,
+  "tenure": "26y 0d",
+  "party": "year-level backbone",
+  "era": "Han dynasty"
+ },
+ {
+  "name": "👑 Emperor Yuan of Han",
+  "role": "Emperor",
+  "start": "-0048-01-01",
+  "end": "-0033-01-01",
+  "current": false,
+  "tenure": "15y 0d",
+  "party": "year-level backbone",
+  "era": "Han dynasty"
+ },
+ {
+  "name": "👑 Emperor Cheng of Han",
+  "role": "Emperor",
+  "start": "-0033-01-01",
+  "end": "-0007-01-01",
+  "current": false,
+  "tenure": "26y 0d",
+  "party": "year-level backbone",
+  "era": "Han dynasty"
+ },
+ {
+  "name": "👑 Emperor Ai of Han",
+  "role": "Emperor",
+  "start": "-0007-01-01",
+  "end": "-0001-01-01",
+  "current": false,
+  "tenure": "6y 0d",
+  "party": "year-level backbone",
+  "era": "Han dynasty"
+ },
+ {
+  "name": "👑 Emperor Ping of Han",
+  "role": "Emperor",
+  "start": "-0001-01-01",
+  "end": "0006-01-01",
+  "current": false,
+  "tenure": "6y 0d",
+  "party": "year-level backbone",
+  "era": "Han dynasty"
+ },
+ {
+  "name": "👑 Wang Mang",
+  "role": "Emperor",
+  "start": "0009-01-01",
+  "end": "0023-01-01",
+  "current": false,
+  "tenure": "14y 0d",
+  "party": "year-level backbone; usurper; interregnum between Western and Eastern Han",
+  "era": "Xin dynasty"
  },
  {
   "name": "👑 Emperor Guangwu",
@@ -50,6 +150,306 @@
   "era": "Han dynasty"
  },
  {
+  "name": "👑 Emperor Ming of Han",
+  "role": "Emperor",
+  "start": "0057-01-01",
+  "end": "0075-01-01",
+  "current": false,
+  "tenure": "18y 0d",
+  "party": "year-level backbone",
+  "era": "Han dynasty"
+ },
+ {
+  "name": "👑 Emperor Zhang of Han",
+  "role": "Emperor",
+  "start": "0075-01-01",
+  "end": "0088-01-01",
+  "current": false,
+  "tenure": "13y 0d",
+  "party": "year-level backbone",
+  "era": "Han dynasty"
+ },
+ {
+  "name": "👑 Emperor He of Han",
+  "role": "Emperor",
+  "start": "0088-01-01",
+  "end": "0106-01-01",
+  "current": false,
+  "tenure": "18y 0d",
+  "party": "year-level backbone",
+  "era": "Han dynasty"
+ },
+ {
+  "name": "👑 Emperor An of Han",
+  "role": "Emperor",
+  "start": "0106-01-01",
+  "end": "0125-01-01",
+  "current": false,
+  "tenure": "19y 0d",
+  "party": "year-level backbone; child-emperor era backbone (brief infant reigns skipped)",
+  "era": "Han dynasty"
+ },
+ {
+  "name": "👑 Emperor Shun of Han",
+  "role": "Emperor",
+  "start": "0125-01-01",
+  "end": "0144-01-01",
+  "current": false,
+  "tenure": "19y 0d",
+  "party": "year-level backbone; child-emperor era backbone (brief infant reigns skipped)",
+  "era": "Han dynasty"
+ },
+ {
+  "name": "👑 Emperor Huan of Han",
+  "role": "Emperor",
+  "start": "0146-01-01",
+  "end": "0168-01-01",
+  "current": false,
+  "tenure": "22y 0d",
+  "party": "year-level backbone; child-emperor era backbone (brief infant reigns skipped)",
+  "era": "Han dynasty"
+ },
+ {
+  "name": "👑 Emperor Ling of Han",
+  "role": "Emperor",
+  "start": "0168-01-01",
+  "end": "0189-01-01",
+  "current": false,
+  "tenure": "21y 0d",
+  "party": "year-level backbone",
+  "era": "Han dynasty"
+ },
+ {
+  "name": "👑 Emperor Xian of Han",
+  "role": "Emperor",
+  "start": "0189-01-01",
+  "end": "0220-01-01",
+  "current": false,
+  "tenure": "31y 0d",
+  "party": "year-level backbone; puppet of Dong Zhuo then Cao Cao",
+  "era": "Han dynasty"
+ },
+ {
+  "name": "👑 Cao Pi (Emperor Wen of Wei)",
+  "role": "Emperor",
+  "start": "0220-01-01",
+  "end": "0226-01-01",
+  "current": false,
+  "tenure": "6y 0d",
+  "party": "year-level backbone; Wei mainline per site convention; Shu Han (Liu Bei) and Eastern Wu (Sun Quan) reigned concurrently",
+  "era": "Three Kingdoms — Cao Wei mainline"
+ },
+ {
+  "name": "👑 Cao Rui (Emperor Ming of Wei)",
+  "role": "Emperor",
+  "start": "0226-01-01",
+  "end": "0239-01-01",
+  "current": false,
+  "tenure": "13y 0d",
+  "party": "year-level backbone; Shu Han and Eastern Wu reigned concurrently",
+  "era": "Three Kingdoms — Cao Wei mainline"
+ },
+ {
+  "name": "👑 Cao Fang",
+  "role": "Emperor",
+  "start": "0239-01-01",
+  "end": "0254-01-01",
+  "current": false,
+  "tenure": "15y 0d",
+  "party": "year-level backbone; Shu Han and Eastern Wu reigned concurrently",
+  "era": "Three Kingdoms — Cao Wei mainline"
+ },
+ {
+  "name": "👑 Cao Mao",
+  "role": "Emperor",
+  "start": "0254-01-01",
+  "end": "0260-01-01",
+  "current": false,
+  "tenure": "6y 0d",
+  "party": "year-level backbone; Shu Han and Eastern Wu reigned concurrently",
+  "era": "Three Kingdoms — Cao Wei mainline"
+ },
+ {
+  "name": "👑 Cao Huan (Emperor Yuan of Wei)",
+  "role": "Emperor",
+  "start": "0260-01-01",
+  "end": "0266-01-01",
+  "current": false,
+  "tenure": "6y 0d",
+  "party": "year-level backbone; Eastern Wu reigned concurrently (Shu Han fell 263)",
+  "era": "Three Kingdoms — Cao Wei mainline"
+ },
+ {
+  "name": "👑 Emperor Wu of Jin (Sima Yan)",
+  "role": "Emperor",
+  "start": "0266-01-01",
+  "end": "0290-01-01",
+  "current": false,
+  "tenure": "24y 0d",
+  "party": "year-level backbone; Eastern Wu concurrent until 280",
+  "era": "Jin dynasty"
+ },
+ {
+  "name": "👑 Emperor Hui of Jin",
+  "role": "Emperor",
+  "start": "0290-01-01",
+  "end": "0307-01-01",
+  "current": false,
+  "tenure": "17y 0d",
+  "party": "year-level backbone; War of the Eight Princes",
+  "era": "Jin dynasty"
+ },
+ {
+  "name": "👑 Emperor Huai of Jin",
+  "role": "Emperor",
+  "start": "0307-01-01",
+  "end": "0311-01-01",
+  "current": false,
+  "tenure": "4y 0d",
+  "party": "year-level backbone",
+  "era": "Jin dynasty"
+ },
+ {
+  "name": "👑 Emperor Min of Jin",
+  "role": "Emperor",
+  "start": "0313-01-01",
+  "end": "0316-01-01",
+  "current": false,
+  "tenure": "3y 0d",
+  "party": "year-level backbone; fall of Western Jin",
+  "era": "Jin dynasty"
+ },
+ {
+  "name": "👑 Emperor Yuan of Jin",
+  "role": "Emperor",
+  "start": "0317-01-01",
+  "end": "0323-01-01",
+  "current": false,
+  "tenure": "6y 0d",
+  "party": "year-level backbone; Eastern Jin southern line at Jiankang; north fragmented (Sixteen Kingdoms)",
+  "era": "Jin dynasty"
+ },
+ {
+  "name": "👑 Emperor Ming of Jin",
+  "role": "Emperor",
+  "start": "0323-01-01",
+  "end": "0325-01-01",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone",
+  "era": "Jin dynasty"
+ },
+ {
+  "name": "👑 Emperor Cheng of Jin",
+  "role": "Emperor",
+  "start": "0325-01-01",
+  "end": "0342-01-01",
+  "current": false,
+  "tenure": "17y 0d",
+  "party": "year-level backbone",
+  "era": "Jin dynasty"
+ },
+ {
+  "name": "👑 Emperor Mu of Jin",
+  "role": "Emperor",
+  "start": "0344-01-01",
+  "end": "0361-01-01",
+  "current": false,
+  "tenure": "17y 0d",
+  "party": "year-level backbone",
+  "era": "Jin dynasty"
+ },
+ {
+  "name": "👑 Emperor Xiaowu of Jin",
+  "role": "Emperor",
+  "start": "0372-01-01",
+  "end": "0396-01-01",
+  "current": false,
+  "tenure": "24y 0d",
+  "party": "year-level backbone",
+  "era": "Jin dynasty"
+ },
+ {
+  "name": "👑 Emperor An of Jin",
+  "role": "Emperor",
+  "start": "0396-01-01",
+  "end": "0419-01-01",
+  "current": false,
+  "tenure": "23y 0d",
+  "party": "year-level backbone",
+  "era": "Jin dynasty"
+ },
+ {
+  "name": "👑 Emperor Gong of Jin",
+  "role": "Emperor",
+  "start": "0419-01-01",
+  "end": "0420-01-01",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone; last Jin emperor; yielded to Liu Yu",
+  "era": "Jin dynasty"
+ },
+ {
+  "name": "👑 Emperor Wu of Song (Liu Yu)",
+  "role": "Emperor",
+  "start": "0420-01-01",
+  "end": "0422-01-01",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone; southern mainline per site convention; Northern Wei ruled the north concurrently",
+  "era": "Southern dynasties — Liu Song"
+ },
+ {
+  "name": "👑 Emperor Wen of Song",
+  "role": "Emperor",
+  "start": "0424-01-01",
+  "end": "0453-01-01",
+  "current": false,
+  "tenure": "29y 0d",
+  "party": "year-level backbone; Northern Wei ruled the north concurrently",
+  "era": "Southern dynasties — Liu Song"
+ },
+ {
+  "name": "👑 Emperor Wu of Southern Qi",
+  "role": "Emperor",
+  "start": "0482-01-01",
+  "end": "0493-01-01",
+  "current": false,
+  "tenure": "11y 0d",
+  "party": "year-level backbone; Northern Wei ruled the north concurrently",
+  "era": "Southern dynasties — Southern Qi"
+ },
+ {
+  "name": "👑 Emperor Wu of Liang",
+  "role": "Emperor",
+  "start": "0502-01-01",
+  "end": "0549-01-01",
+  "current": false,
+  "tenure": "47y 0d",
+  "party": "year-level backbone; long reign; north under Northern Wei, then Eastern/Western Wei after 534",
+  "era": "Southern dynasties — Liang"
+ },
+ {
+  "name": "👑 Emperor Yuan of Liang",
+  "role": "Emperor",
+  "start": "0552-01-01",
+  "end": "0555-01-01",
+  "current": false,
+  "tenure": "3y 0d",
+  "party": "year-level backbone; killed when Western Wei sacked Jiangling in 555",
+  "era": "Southern dynasties — Liang"
+ },
+ {
+  "name": "👑 Emperor Wu of Chen (Chen Baxian)",
+  "role": "Emperor",
+  "start": "0557-01-01",
+  "end": "0559-01-01",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone; north split between Northern Zhou and Northern Qi",
+  "era": "Southern dynasties — Chen"
+ },
+ {
   "name": "👑 Emperor Wen of Sui",
   "role": "Emperor",
   "start": "0581-01-01",
@@ -58,6 +458,16 @@
   "tenure": "23y 0d",
   "party": "year-level backbone",
   "era": "Sui dynasty"
+ },
+ {
+  "name": "👑 Chen Shubao (Houzhu of Chen)",
+  "role": "Emperor",
+  "start": "0582-01-01",
+  "end": "0589-01-01",
+  "current": false,
+  "tenure": "7y 0d",
+  "party": "year-level backbone; conquered by Sui 589; Sui proclaimed 581",
+  "era": "Southern dynasties — Chen"
  },
  {
   "name": "👑 Emperor Taizong of Tang",
@@ -100,6 +510,66 @@
   "era": "Song dynasty"
  },
  {
+  "name": "👑 Emperor Gaozong of Song",
+  "role": "Emperor",
+  "start": "1127-01-01",
+  "end": "1162-01-01",
+  "current": false,
+  "tenure": "35y 0d",
+  "party": "year-level backbone; Qinzong's brief 1126-27 reign omitted",
+  "era": "Southern Song dynasty"
+ },
+ {
+  "name": "👑 Emperor Xiaozong of Song",
+  "role": "Emperor",
+  "start": "1162-01-01",
+  "end": "1189-01-01",
+  "current": false,
+  "tenure": "27y 0d",
+  "party": "year-level backbone",
+  "era": "Southern Song dynasty"
+ },
+ {
+  "name": "👑 Emperor Guangzong of Song",
+  "role": "Emperor",
+  "start": "1189-01-01",
+  "end": "1194-01-01",
+  "current": false,
+  "tenure": "5y 0d",
+  "party": "year-level backbone",
+  "era": "Southern Song dynasty"
+ },
+ {
+  "name": "👑 Emperor Ningzong of Song",
+  "role": "Emperor",
+  "start": "1194-01-01",
+  "end": "1224-01-01",
+  "current": false,
+  "tenure": "30y 0d",
+  "party": "year-level backbone",
+  "era": "Southern Song dynasty"
+ },
+ {
+  "name": "👑 Emperor Lizong of Song",
+  "role": "Emperor",
+  "start": "1224-01-01",
+  "end": "1264-01-01",
+  "current": false,
+  "tenure": "40y 0d",
+  "party": "year-level backbone",
+  "era": "Southern Song dynasty"
+ },
+ {
+  "name": "👑 Emperor Duzong of Song",
+  "role": "Emperor",
+  "start": "1264-01-01",
+  "end": "1274-01-01",
+  "current": false,
+  "tenure": "10y 0d",
+  "party": "year-level backbone",
+  "era": "Southern Song dynasty"
+ },
+ {
   "name": "👑 Kublai Khan (Shizu)",
   "role": "Emperor",
   "start": "1271-12-18",
@@ -108,6 +578,36 @@
   "tenure": "22y 4m 22d",
   "party": null,
   "era": "Yuan dynasty"
+ },
+ {
+  "name": "👑 Emperor Gong of Song",
+  "role": "Emperor",
+  "start": "1275-01-01",
+  "end": "1276-01-01",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone",
+  "era": "Southern Song dynasty"
+ },
+ {
+  "name": "👑 Emperor Duanzong of Song",
+  "role": "Emperor",
+  "start": "1276-01-01",
+  "end": "1278-01-01",
+  "current": false,
+  "tenure": "2y 0d",
+  "party": "year-level backbone",
+  "era": "Southern Song dynasty"
+ },
+ {
+  "name": "👑 Zhao Bing (Emperor Bing)",
+  "role": "Emperor",
+  "start": "1278-01-01",
+  "end": "1279-03-19",
+  "current": false,
+  "tenure": "1y 0d",
+  "party": "year-level backbone; died at the Battle of Yamen, ending the Song",
+  "era": "Southern Song dynasty"
  },
  {
   "name": "👑 Temür (Chengzong)",

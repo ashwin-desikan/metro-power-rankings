@@ -1,0 +1,352 @@
+[
+  {
+    "name": "👑 Hacı I Giray",
+    "role": "Khan",
+    "start": "1441-01-01",
+    "end": "1466-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone; founder; reigns 1441-1456 and 1456-1466 merged across Haydar's brief 1456 usurpation",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Meñli I Giray",
+    "role": "Khan",
+    "start": "1468-01-01",
+    "end": "1474-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone; first reign; interrupted by Nur Devlet restorations (1474-1475, 1477) and a brief second reign 1475-1476 omitted",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Meñli I Giray",
+    "role": "Khan",
+    "start": "1478-01-01",
+    "end": "1514-01-01",
+    "current": false,
+    "tenure": "36y 0d",
+    "party": "year-level backbone; third reign",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Mehmed I Giray",
+    "role": "Khan",
+    "start": "1514-01-01",
+    "end": "1523-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Saadet I Giray",
+    "role": "Khan",
+    "start": "1524-01-01",
+    "end": "1532-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Sahib I Giray",
+    "role": "Khan",
+    "start": "1532-01-01",
+    "end": "1551-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Devlet I Giray",
+    "role": "Khan",
+    "start": "1551-01-01",
+    "end": "1577-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Mehmed II Giray",
+    "role": "Khan",
+    "start": "1577-01-01",
+    "end": "1584-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 İslâm II Giray",
+    "role": "Khan",
+    "start": "1584-01-01",
+    "end": "1588-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Ğazı II Giray",
+    "role": "Khan",
+    "start": "1588-01-01",
+    "end": "1607-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone; reigns 1588-1596 and 1596-1607 merged across Fetih I Giray's brief 1596 reign",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Canibek Giray",
+    "role": "Khan",
+    "start": "1610-01-01",
+    "end": "1623-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone; first reign",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Mehmed III Giray",
+    "role": "Khan",
+    "start": "1623-01-01",
+    "end": "1628-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Canibek Giray",
+    "role": "Khan",
+    "start": "1628-01-01",
+    "end": "1635-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone; second reign",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Bahadır I Giray",
+    "role": "Khan",
+    "start": "1637-01-01",
+    "end": "1641-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Mehmed IV Giray",
+    "role": "Khan",
+    "start": "1641-01-01",
+    "end": "1644-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone; first reign",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 İslâm III Giray",
+    "role": "Khan",
+    "start": "1644-01-01",
+    "end": "1654-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Mehmed IV Giray",
+    "role": "Khan",
+    "start": "1654-01-01",
+    "end": "1666-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone; second reign",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Adil Giray",
+    "role": "Khan",
+    "start": "1666-01-01",
+    "end": "1671-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Selim I Giray",
+    "role": "Khan",
+    "start": "1671-01-01",
+    "end": "1678-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone; first of four reigns; brief fourth reign 1702-1704 omitted",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Murad Giray",
+    "role": "Khan",
+    "start": "1678-01-01",
+    "end": "1683-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Selim I Giray",
+    "role": "Khan",
+    "start": "1684-01-01",
+    "end": "1691-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone; second reign",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Selim I Giray",
+    "role": "Khan",
+    "start": "1692-01-01",
+    "end": "1699-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone; third reign",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Devlet II Giray",
+    "role": "Khan",
+    "start": "1699-01-01",
+    "end": "1702-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone; first reign",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Ğazı III Giray",
+    "role": "Khan",
+    "start": "1704-01-01",
+    "end": "1707-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Devlet II Giray",
+    "role": "Khan",
+    "start": "1709-01-01",
+    "end": "1713-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone; second reign",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Saadet IV Giray",
+    "role": "Khan",
+    "start": "1717-01-01",
+    "end": "1724-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Meñli II Giray",
+    "role": "Khan",
+    "start": "1724-01-01",
+    "end": "1730-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone; first reign",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Qaplan I Giray",
+    "role": "Khan",
+    "start": "1730-01-01",
+    "end": "1736-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone; third reign; earlier short reigns 1707-1708 and 1713-1715 omitted",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Meñli II Giray",
+    "role": "Khan",
+    "start": "1737-01-01",
+    "end": "1740-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone; second reign",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Selâmet II Giray",
+    "role": "Khan",
+    "start": "1740-01-01",
+    "end": "1743-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Selim II Giray",
+    "role": "Khan",
+    "start": "1743-01-01",
+    "end": "1748-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Arslan Giray",
+    "role": "Khan",
+    "start": "1748-01-01",
+    "end": "1756-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone; first reign; brief 1767 restoration omitted",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Qırım Giray",
+    "role": "Khan",
+    "start": "1758-01-01",
+    "end": "1764-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone; first reign; brief 1768-1769 restoration omitted",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Sahib II Giray",
+    "role": "Khan",
+    "start": "1771-01-01",
+    "end": "1775-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Giray dynasty"
+  },
+  {
+    "name": "👑 Şahin Giray",
+    "role": "Khan",
+    "start": "1777-01-01",
+    "end": "1783-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone; last khan; reigns 1777-1782 and 1782-1783 merged across Bahadır II Giray's brief 1782 reign; khanate annexed by Russia 1783",
+    "era": "Giray dynasty"
+  }
+]

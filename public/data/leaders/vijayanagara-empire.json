@@ -1,0 +1,202 @@
+[
+  {
+    "name": "👑 Harihara I",
+    "role": "Emperor",
+    "start": "1336-01-01",
+    "end": "1356-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "Sangama dynasty"
+  },
+  {
+    "name": "👑 Bukka Raya I",
+    "role": "Emperor",
+    "start": "1356-01-01",
+    "end": "1377-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone",
+    "era": "Sangama dynasty"
+  },
+  {
+    "name": "👑 Harihara II",
+    "role": "Emperor",
+    "start": "1377-01-01",
+    "end": "1404-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level backbone",
+    "era": "Sangama dynasty"
+  },
+  {
+    "name": "👑 Bukka Raya II",
+    "role": "Emperor",
+    "start": "1404-01-01",
+    "end": "1406-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Sangama dynasty"
+  },
+  {
+    "name": "👑 Deva Raya I",
+    "role": "Emperor",
+    "start": "1406-01-01",
+    "end": "1423-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone",
+    "era": "Sangama dynasty"
+  },
+  {
+    "name": "👑 Deva Raya II",
+    "role": "Emperor",
+    "start": "1423-01-01",
+    "end": "1446-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level backbone",
+    "era": "Sangama dynasty"
+  },
+  {
+    "name": "👑 Mallikarjuna Raya",
+    "role": "Emperor",
+    "start": "1446-01-01",
+    "end": "1465-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone",
+    "era": "Sangama dynasty"
+  },
+  {
+    "name": "👑 Virupaksha Raya II",
+    "role": "Emperor",
+    "start": "1465-01-01",
+    "end": "1485-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "Sangama dynasty"
+  },
+  {
+    "name": "👑 Saluva Narasimha Deva Raya",
+    "role": "Emperor",
+    "start": "1485-01-01",
+    "end": "1491-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Saluva dynasty"
+  },
+  {
+    "name": "👑 Narasimha Raya II",
+    "role": "Emperor",
+    "start": "1491-01-01",
+    "end": "1505-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone",
+    "era": "Saluva dynasty"
+  },
+  {
+    "name": "👑 Viranarasimha Raya",
+    "role": "Emperor",
+    "start": "1505-01-01",
+    "end": "1509-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Tuluva dynasty"
+  },
+  {
+    "name": "👑 Krishnadevaraya",
+    "role": "Emperor",
+    "start": "1509-01-01",
+    "end": "1529-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "Tuluva dynasty"
+  },
+  {
+    "name": "👑 Achyuta Deva Raya",
+    "role": "Emperor",
+    "start": "1529-01-01",
+    "end": "1542-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Tuluva dynasty"
+  },
+  {
+    "name": "👑 Aliya Rama Raya",
+    "role": "Emperor",
+    "start": "1542-01-01",
+    "end": "1565-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level backbone",
+    "era": "Aravidu dynasty"
+  },
+  {
+    "name": "👑 Tirumala Deva Raya",
+    "role": "Emperor",
+    "start": "1565-01-01",
+    "end": "1572-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Aravidu dynasty"
+  },
+  {
+    "name": "👑 Sriranga I",
+    "role": "Emperor",
+    "start": "1572-01-01",
+    "end": "1586-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone",
+    "era": "Aravidu dynasty"
+  },
+  {
+    "name": "👑 Venkata II",
+    "role": "Emperor",
+    "start": "1586-01-01",
+    "end": "1614-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level backbone",
+    "era": "Aravidu dynasty"
+  },
+  {
+    "name": "👑 Rama Deva Raya",
+    "role": "Emperor",
+    "start": "1617-01-01",
+    "end": "1632-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone",
+    "era": "Aravidu dynasty"
+  },
+  {
+    "name": "👑 Venkata III",
+    "role": "Emperor",
+    "start": "1632-01-01",
+    "end": "1642-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Aravidu dynasty"
+  },
+  {
+    "name": "👑 Sriranga III",
+    "role": "Emperor",
+    "start": "1642-01-01",
+    "end": "1646-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Aravidu dynasty"
+  }
+]

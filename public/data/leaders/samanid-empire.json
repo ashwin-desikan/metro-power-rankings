@@ -1,0 +1,112 @@
+[
+  {
+    "name": "👑 Ahmad ibn Asad",
+    "role": "Emir",
+    "start": "0819-01-01",
+    "end": "0864-01-01",
+    "current": false,
+    "tenure": "45y 0d",
+    "party": "year-level backbone; conventional 819 start of Samanid rule",
+    "era": "Samanid Empire"
+  },
+  {
+    "name": "👑 Nasr I",
+    "role": "Emir",
+    "start": "0864-01-01",
+    "end": "0892-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level backbone",
+    "era": "Samanid Empire"
+  },
+  {
+    "name": "👑 Isma'il ibn Ahmad",
+    "role": "Emir",
+    "start": "0892-01-01",
+    "end": "0907-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone; effective founder of the empire",
+    "era": "Samanid Empire"
+  },
+  {
+    "name": "👑 Ahmad ibn Isma'il",
+    "role": "Emir",
+    "start": "0907-01-01",
+    "end": "0914-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Samanid Empire"
+  },
+  {
+    "name": "👑 Nasr II",
+    "role": "Emir",
+    "start": "0914-01-01",
+    "end": "0943-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level backbone",
+    "era": "Samanid Empire"
+  },
+  {
+    "name": "👑 Nuh I",
+    "role": "Emir",
+    "start": "0943-01-01",
+    "end": "0954-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "Samanid Empire"
+  },
+  {
+    "name": "👑 Abd al-Malik I",
+    "role": "Emir",
+    "start": "0954-01-01",
+    "end": "0961-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Samanid Empire"
+  },
+  {
+    "name": "👑 Mansur I",
+    "role": "Emir",
+    "start": "0961-01-01",
+    "end": "0976-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone",
+    "era": "Samanid Empire"
+  },
+  {
+    "name": "👑 Nuh II",
+    "role": "Emir",
+    "start": "0976-01-01",
+    "end": "0997-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone",
+    "era": "Samanid Empire"
+  },
+  {
+    "name": "👑 Mansur II",
+    "role": "Emir",
+    "start": "0997-01-01",
+    "end": "0999-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Samanid Empire"
+  },
+  {
+    "name": "👑 Abd al-Malik II",
+    "role": "Emir",
+    "start": "0999-01-01",
+    "end": "0999-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone; Karakhanids and Ghaznavids partitioned the state 999; Isma'il Muntasir resisted until his death in 1005",
+    "era": "Samanid Empire"
+  }
+]

@@ -1,0 +1,232 @@
+[
+  {
+    "name": "👑 Abd al-Rahman I",
+    "role": "Emir",
+    "start": "0756-01-01",
+    "end": "0788-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "year-level backbone",
+    "era": "Emirate of Córdoba"
+  },
+  {
+    "name": "👑 Hisham I",
+    "role": "Emir",
+    "start": "0788-01-01",
+    "end": "0796-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "Emirate of Córdoba"
+  },
+  {
+    "name": "👑 al-Hakam I",
+    "role": "Emir",
+    "start": "0796-01-01",
+    "end": "0822-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone",
+    "era": "Emirate of Córdoba"
+  },
+  {
+    "name": "👑 Abd al-Rahman II",
+    "role": "Emir",
+    "start": "0822-01-01",
+    "end": "0852-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone",
+    "era": "Emirate of Córdoba"
+  },
+  {
+    "name": "👑 Muhammad I",
+    "role": "Emir",
+    "start": "0852-01-01",
+    "end": "0886-01-01",
+    "current": false,
+    "tenure": "34y 0d",
+    "party": "year-level backbone",
+    "era": "Emirate of Córdoba"
+  },
+  {
+    "name": "👑 al-Mundhir",
+    "role": "Emir",
+    "start": "0886-01-01",
+    "end": "0888-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Emirate of Córdoba"
+  },
+  {
+    "name": "👑 Abdallah ibn Muhammad",
+    "role": "Emir",
+    "start": "0888-01-01",
+    "end": "0912-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone",
+    "era": "Emirate of Córdoba"
+  },
+  {
+    "name": "👑 Abd al-Rahman III",
+    "role": "Emir",
+    "start": "0912-01-01",
+    "end": "0929-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone",
+    "era": "Emirate of Córdoba"
+  },
+  {
+    "name": "👑 Abd al-Rahman III",
+    "role": "Caliph",
+    "start": "0929-01-01",
+    "end": "0961-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate of Córdoba"
+  },
+  {
+    "name": "👑 al-Hakam II",
+    "role": "Caliph",
+    "start": "0961-01-01",
+    "end": "0976-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate of Córdoba"
+  },
+  {
+    "name": "👑 Hisham II",
+    "role": "Caliph",
+    "start": "0976-01-01",
+    "end": "1009-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate of Córdoba"
+  },
+  {
+    "name": "👑 Muhammad II",
+    "role": "Caliph",
+    "start": "1009-01-01",
+    "end": "1010-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate of Córdoba"
+  },
+  {
+    "name": "👑 Hisham II (restored)",
+    "role": "Caliph",
+    "start": "1010-01-01",
+    "end": "1013-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate of Córdoba"
+  },
+  {
+    "name": "👑 Sulayman al-Musta'in",
+    "role": "Caliph",
+    "start": "1013-01-01",
+    "end": "1016-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate of Córdoba"
+  },
+  {
+    "name": "👑 Ali ibn Hammud",
+    "role": "Caliph",
+    "start": "1016-01-01",
+    "end": "1018-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate of Córdoba"
+  },
+  {
+    "name": "👑 Abd al-Rahman IV",
+    "role": "Caliph",
+    "start": "1018-01-01",
+    "end": "1018-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate of Córdoba"
+  },
+  {
+    "name": "👑 al-Qasim ibn Hammud",
+    "role": "Caliph",
+    "start": "1018-01-01",
+    "end": "1021-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate of Córdoba"
+  },
+  {
+    "name": "👑 Yahya ibn Ali",
+    "role": "Caliph",
+    "start": "1021-01-01",
+    "end": "1023-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate of Córdoba"
+  },
+  {
+    "name": "👑 al-Qasim ibn Hammud (restored)",
+    "role": "Caliph",
+    "start": "1023-01-01",
+    "end": "1023-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate of Córdoba"
+  },
+  {
+    "name": "👑 Abd al-Rahman V",
+    "role": "Caliph",
+    "start": "1023-01-01",
+    "end": "1024-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate of Córdoba"
+  },
+  {
+    "name": "👑 Muhammad III",
+    "role": "Caliph",
+    "start": "1024-01-01",
+    "end": "1025-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate of Córdoba"
+  },
+  {
+    "name": "👑 Yahya ibn Ali (restored)",
+    "role": "Caliph",
+    "start": "1025-01-01",
+    "end": "1026-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate of Córdoba"
+  },
+  {
+    "name": "👑 Hisham III",
+    "role": "Caliph",
+    "start": "1026-01-01",
+    "end": "1031-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Caliphate of Córdoba"
+  }
+]

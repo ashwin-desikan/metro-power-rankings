@@ -48,6 +48,8 @@ export type LeaderEntity = {
   yearRange: string | null;
   nameHistory: NamePeriod[] | null;
   orgs: string[];
+  /** Dated membership spans (incl. former members) for the time machine; null when undated. */
+  orgSpans: Record<string, { s: string | null; e: string | null }> | null;
   country: string | null;
   href: string | null;
   hasHistory: boolean;
@@ -96,7 +98,7 @@ export async function getLeadersMaster(): Promise<LeaderEntity[]> {
   let overlay: Record<string, CurrentLeader> = {};
   try { overlay = await getCurrentLeaderOverlay(); } catch { overlay = {}; }
   const orgsMap =
-    readJSON<Record<string, Record<string, string>>>(
+    readJSON<Record<string, Record<string, string | { status: string; start?: string; end?: string }>>>(
       path.join(process.cwd(), "data", "country-orgs.json"),
     ) ?? {};
   const orgLeaders =
@@ -118,12 +120,21 @@ export async function getLeadersMaster(): Promise<LeaderEntity[]> {
     const hasHistory = Array.isArray(histRows) && histRows.length > 0;
     const history = hasHistory ? compact(histRows!) : [];
     const isFormer = FORMER_SOVEREIGN.has(slug);
-    const membership = orgsMap[slug]
-      ? Object.entries(orgsMap[slug])
-          .filter(([, status]) => status === "Member")
-          .map(([k]) => k)
-          .sort()
-      : [];
+    const membership: string[] = [];
+    const orgSpans: Record<string, { s: string | null; e: string | null }> = {};
+    for (const [k, v] of Object.entries(orgsMap[slug] ?? {})) {
+      if (typeof v === "string") {
+        if (v === "Member") membership.push(k);
+        continue;
+      }
+      if (v.status === "Member") {
+        membership.push(k);
+        orgSpans[k] = { s: v.start ?? null, e: v.end ?? null };
+      } else if (v.status === "Former") {
+        orgSpans[k] = { s: v.start ?? null, e: v.end ?? null };
+      }
+    }
+    membership.sort();
     let yearRange: string | null = null;
     if (history.length) {
       const starts = history.map((h) => h.s).filter(Boolean) as string[];
@@ -146,6 +157,7 @@ export async function getLeadersMaster(): Promise<LeaderEntity[]> {
       yearRange,
       nameHistory: normNames(names[slug]),
       orgs: membership,
+      orgSpans: Object.keys(orgSpans).length ? orgSpans : null,
       country: null,
       href: `/countries/${slug}`,
       hasHistory,
@@ -185,6 +197,7 @@ export async function getLeadersMaster(): Promise<LeaderEntity[]> {
       realm: false,
       yearRange: orgYearRange,
       orgs: [],
+      orgSpans: null,
       country: o.current?.country ?? null,
       href: null,
       nameHistory: normNames(names[key]),
@@ -201,6 +214,12 @@ export async function getLeadersMaster(): Promise<LeaderEntity[]> {
         path.join(LEADERS_DIR, `${slug}.json`),
       );
     if (!Array.isArray(histRows) || !histRows.length) continue;
+    const dSpans: Record<string, { s: string | null; e: string | null }> = {};
+    for (const [k, v] of Object.entries(orgsMap[slug] ?? {})) {
+      if (typeof v !== "string" && (v.status === "Former" || v.status === "Member")) {
+        dSpans[k] = { s: v.start ?? null, e: v.end ?? null };
+      }
+    }
     out.push({
       slug,
       name: meta.name,
@@ -212,6 +231,7 @@ export async function getLeadersMaster(): Promise<LeaderEntity[]> {
       yearRange: `${fmtDefunctYear(meta.start)}–${fmtDefunctYear(meta.end)}`,
       nameHistory: normNames(names[slug]),
       orgs: [],
+      orgSpans: Object.keys(dSpans).length ? dSpans : null,
       country: null,
       href: null,
       hasHistory: true,

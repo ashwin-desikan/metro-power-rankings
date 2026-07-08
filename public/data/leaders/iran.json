@@ -1,5 +1,215 @@
 [
   {
+    "name": "👑 Ismail I",
+    "role": "Shah",
+    "start": "1501-01-01",
+    "end": "1524-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level backbone",
+    "era": "Safavid dynasty"
+  },
+  {
+    "name": "👑 Tahmasp I",
+    "role": "Shah",
+    "start": "1524-01-01",
+    "end": "1576-01-01",
+    "current": false,
+    "tenure": "52y 0d",
+    "party": "year-level backbone",
+    "era": "Safavid dynasty"
+  },
+  {
+    "name": "👑 Ismail II",
+    "role": "Shah",
+    "start": "1576-01-01",
+    "end": "1578-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Safavid dynasty"
+  },
+  {
+    "name": "👑 Mohammad Khodabanda",
+    "role": "Shah",
+    "start": "1578-01-01",
+    "end": "1587-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Safavid dynasty"
+  },
+  {
+    "name": "👑 Abbas I the Great",
+    "role": "Shah",
+    "start": "1587-01-01",
+    "end": "1629-01-01",
+    "current": false,
+    "tenure": "42y 0d",
+    "party": "year-level backbone",
+    "era": "Safavid dynasty"
+  },
+  {
+    "name": "👑 Safi I",
+    "role": "Shah",
+    "start": "1629-01-01",
+    "end": "1642-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Safavid dynasty"
+  },
+  {
+    "name": "👑 Abbas II",
+    "role": "Shah",
+    "start": "1642-01-01",
+    "end": "1666-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone",
+    "era": "Safavid dynasty"
+  },
+  {
+    "name": "👑 Suleiman I",
+    "role": "Shah",
+    "start": "1666-01-01",
+    "end": "1694-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level backbone; also crowned as Safi II in 1666",
+    "era": "Safavid dynasty"
+  },
+  {
+    "name": "👑 Sultan Husayn",
+    "role": "Shah",
+    "start": "1694-01-01",
+    "end": "1722-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level backbone",
+    "era": "Safavid dynasty"
+  },
+  {
+    "name": "👑 Tahmasp II",
+    "role": "Shah",
+    "start": "1722-01-01",
+    "end": "1732-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone; reigned amid Hotaki Afghan occupation to 1729",
+    "era": "Safavid dynasty"
+  },
+  {
+    "name": "👑 Abbas III",
+    "role": "Shah",
+    "start": "1732-01-01",
+    "end": "1736-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone; last Safavid shah, deposed by Nader Shah",
+    "era": "Safavid dynasty"
+  },
+  {
+    "name": "👑 Nader Shah",
+    "role": "Shah",
+    "start": "1736-01-01",
+    "end": "1747-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "Afsharid dynasty"
+  },
+  {
+    "name": "👑 Adel Shah",
+    "role": "Shah",
+    "start": "1747-01-01",
+    "end": "1748-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Afsharid dynasty"
+  },
+  {
+    "name": "👑 Shahrokh Shah",
+    "role": "Shah",
+    "start": "1748-01-01",
+    "end": "1789-01-01",
+    "current": false,
+    "tenure": "41y 0d",
+    "party": "year-level backbone; rump state in Khorasan from 1750, truncated here (actually ruled to 1796)",
+    "era": "Afsharid dynasty"
+  },
+  {
+    "name": "👑 Karim Khan Zand",
+    "role": "Shah",
+    "start": "1751-01-01",
+    "end": "1779-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level backbone; Vakil ol-Ra'aya (regent), de facto ruler",
+    "era": "Zand dynasty"
+  },
+  {
+    "name": "👑 Mohammad Ali Khan Zand",
+    "role": "Shah",
+    "start": "1779-01-01",
+    "end": "1779-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone; brief co-ruler Mar-Jun 1779",
+    "era": "Zand dynasty"
+  },
+  {
+    "name": "👑 Abol-Fath Khan Zand",
+    "role": "Shah",
+    "start": "1779-01-01",
+    "end": "1779-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone; brief co-ruler Mar-Aug 1779",
+    "era": "Zand dynasty"
+  },
+  {
+    "name": "👑 Sadeq Khan Zand",
+    "role": "Shah",
+    "start": "1779-01-01",
+    "end": "1781-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Zand dynasty"
+  },
+  {
+    "name": "👑 Ali Morad Khan Zand",
+    "role": "Shah",
+    "start": "1781-01-01",
+    "end": "1785-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Zand dynasty"
+  },
+  {
+    "name": "👑 Jafar Khan Zand",
+    "role": "Shah",
+    "start": "1785-01-01",
+    "end": "1789-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Zand dynasty"
+  },
+  {
+    "name": "👑 Lotf Ali Khan Zand",
+    "role": "Shah",
+    "start": "1789-01-01",
+    "end": "1789-03-21",
+    "current": false,
+    "tenure": "0y 2m 20d",
+    "party": "year-level backbone; Zand rule collapsed to the Qajars 1789-1794; Sayed Morad Khan's brief early-1789 reign absorbed",
+    "era": "Zand dynasty"
+  },
+  {
     "name": "👑 Agha Mohammad Khan",
     "role": "Shah",
     "start": "1789-03-21",

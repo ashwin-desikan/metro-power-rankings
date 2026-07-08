@@ -1,0 +1,62 @@
+[
+  {
+    "name": "👑 Ya'qub ibn al-Layth al-Saffar",
+    "role": "Emir",
+    "start": "0861-01-01",
+    "end": "0879-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone; founder, from Sistan",
+    "era": "Saffarid dynasty"
+  },
+  {
+    "name": "👑 Amr ibn al-Layth",
+    "role": "Emir",
+    "start": "0879-01-01",
+    "end": "0901-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level backbone",
+    "era": "Saffarid dynasty"
+  },
+  {
+    "name": "👑 Tahir ibn Muhammad ibn Amr",
+    "role": "Emir",
+    "start": "0901-01-01",
+    "end": "0908-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Saffarid dynasty"
+  },
+  {
+    "name": "👑 Al-Layth ibn Ali",
+    "role": "Emir",
+    "start": "0908-01-01",
+    "end": "0910-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone; ephemeral emirs 910-913 and Samanid interregnum omitted",
+    "era": "Saffarid dynasty"
+  },
+  {
+    "name": "👑 Ahmad ibn Muhammad ibn Khalaf",
+    "role": "Emir",
+    "start": "0922-01-01",
+    "end": "0963-01-01",
+    "current": false,
+    "tenure": "41y 0d",
+    "party": "year-level backbone; restored Saffarid line in Sistan",
+    "era": "Saffarid dynasty"
+  },
+  {
+    "name": "👑 Khalaf ibn Ahmad",
+    "role": "Emir",
+    "start": "0963-01-01",
+    "end": "1002-01-01",
+    "current": false,
+    "tenure": "39y 0d",
+    "party": "year-level backbone; deposed by Mahmud of Ghazni December 1002; died 1009",
+    "era": "Saffarid dynasty"
+  }
+]

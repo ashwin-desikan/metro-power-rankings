@@ -1,0 +1,92 @@
+[
+  {
+    "name": "👑 Zoskales",
+    "role": "King",
+    "start": "0100-01-01",
+    "end": "0100-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone; attested regnal dates approximate",
+    "era": "Kingdom of Aksum"
+  },
+  {
+    "name": "👑 GDRT",
+    "role": "King",
+    "start": "0200-01-01",
+    "end": "0200-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone; attested regnal dates approximate",
+    "era": "Kingdom of Aksum"
+  },
+  {
+    "name": "👑 Endubis",
+    "role": "King",
+    "start": "0295-01-01",
+    "end": "0310-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone; attested regnal dates approximate",
+    "era": "Kingdom of Aksum"
+  },
+  {
+    "name": "👑 Aphilas",
+    "role": "King",
+    "start": "0310-01-01",
+    "end": "0320-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone; attested regnal dates approximate",
+    "era": "Kingdom of Aksum"
+  },
+  {
+    "name": "👑 Ousanas",
+    "role": "King",
+    "start": "0320-01-01",
+    "end": "0345-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone; attested regnal dates approximate",
+    "era": "Kingdom of Aksum"
+  },
+  {
+    "name": "👑 Ezana",
+    "role": "King",
+    "start": "0345-01-01",
+    "end": "0380-01-01",
+    "current": false,
+    "tenure": "35y 0d",
+    "party": "year-level backbone; attested regnal dates approximate; converted Aksum to Christianity",
+    "era": "Kingdom of Aksum"
+  },
+  {
+    "name": "👑 Ouazebas",
+    "role": "King",
+    "start": "0390-01-01",
+    "end": "0390-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone; attested regnal dates approximate",
+    "era": "Kingdom of Aksum"
+  },
+  {
+    "name": "👑 Kaleb",
+    "role": "King",
+    "start": "0510-01-01",
+    "end": "0535-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone; attested regnal dates approximate",
+    "era": "Kingdom of Aksum"
+  },
+  {
+    "name": "👑 Armah (Najashi)",
+    "role": "King",
+    "start": "0614-01-01",
+    "end": "0630-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone; attested regnal dates approximate",
+    "era": "Kingdom of Aksum"
+  }
+]

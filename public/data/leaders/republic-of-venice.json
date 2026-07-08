@@ -1,5 +1,625 @@
 [
   {
+    "name": "👑 Paolo Lucio Anafesto",
+    "role": "Doge",
+    "start": "0697-01-01",
+    "end": "0717-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level dates; traditional/semi-legendary first doge",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Marcello Tegalliano",
+    "role": "Doge",
+    "start": "0717-01-01",
+    "end": "0726-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level dates; traditional/semi-legendary",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Orso Ipato",
+    "role": "Doge",
+    "start": "0726-01-01",
+    "end": "0737-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Teodato Ipato",
+    "role": "Doge",
+    "start": "0742-01-01",
+    "end": "0755-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level dates; dogeship restored after 737-742 interregnum (Byzantine magistri militum)",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Galla Gaulo",
+    "role": "Doge",
+    "start": "0755-01-01",
+    "end": "0756-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Domenico Monegario",
+    "role": "Doge",
+    "start": "0756-01-01",
+    "end": "0764-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Maurizio Galbaio",
+    "role": "Doge",
+    "start": "0764-01-01",
+    "end": "0787-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Giovanni Galbaio",
+    "role": "Doge",
+    "start": "0787-01-01",
+    "end": "0804-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Obelerio degli Antenori",
+    "role": "Doge",
+    "start": "0804-01-01",
+    "end": "0811-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Agnello Participazio",
+    "role": "Doge",
+    "start": "0811-01-01",
+    "end": "0827-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Giustiniano Participazio",
+    "role": "Doge",
+    "start": "0827-01-01",
+    "end": "0829-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Giovanni I Participazio",
+    "role": "Doge",
+    "start": "0829-01-01",
+    "end": "0836-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Pietro Tradonico",
+    "role": "Doge",
+    "start": "0836-01-01",
+    "end": "0864-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Orso I Participazio",
+    "role": "Doge",
+    "start": "0864-01-01",
+    "end": "0881-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Giovanni II Participazio",
+    "role": "Doge",
+    "start": "0881-01-01",
+    "end": "0887-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Pietro I Candiano",
+    "role": "Doge",
+    "start": "0887-01-01",
+    "end": "0887-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Pietro Tribuno",
+    "role": "Doge",
+    "start": "0887-01-01",
+    "end": "0912-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Orso II Participazio",
+    "role": "Doge",
+    "start": "0912-01-01",
+    "end": "0932-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Pietro II Candiano",
+    "role": "Doge",
+    "start": "0932-01-01",
+    "end": "0939-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Pietro Participazio",
+    "role": "Doge",
+    "start": "0939-01-01",
+    "end": "0942-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Pietro III Candiano",
+    "role": "Doge",
+    "start": "0942-01-01",
+    "end": "0959-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Pietro IV Candiano",
+    "role": "Doge",
+    "start": "0959-01-01",
+    "end": "0976-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Pietro I Orseolo",
+    "role": "Doge",
+    "start": "0976-01-01",
+    "end": "0978-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Vitale Candiano",
+    "role": "Doge",
+    "start": "0978-01-01",
+    "end": "0979-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Tribuno Memmo",
+    "role": "Doge",
+    "start": "0979-01-01",
+    "end": "0991-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Pietro II Orseolo",
+    "role": "Doge",
+    "start": "0991-01-01",
+    "end": "1009-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Otto Orseolo",
+    "role": "Doge",
+    "start": "1008-01-01",
+    "end": "1026-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level dates; co-doge with his father Pietro II from 1008",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Pietro Barbolano",
+    "role": "Doge",
+    "start": "1026-01-01",
+    "end": "1032-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Domenico Flabanico",
+    "role": "Doge",
+    "start": "1032-01-01",
+    "end": "1043-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Domenico I Contarini",
+    "role": "Doge",
+    "start": "1043-01-01",
+    "end": "1071-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Domenico Selvo",
+    "role": "Doge",
+    "start": "1071-01-01",
+    "end": "1084-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Vitale Faliero",
+    "role": "Doge",
+    "start": "1084-01-01",
+    "end": "1095-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Vitale I Michiel",
+    "role": "Doge",
+    "start": "1095-01-01",
+    "end": "1102-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Ordelafo Faliero",
+    "role": "Doge",
+    "start": "1102-01-01",
+    "end": "1117-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Domenico Michiel",
+    "role": "Doge",
+    "start": "1117-01-01",
+    "end": "1130-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Pietro Polani",
+    "role": "Doge",
+    "start": "1130-01-01",
+    "end": "1148-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Domenico Morosini",
+    "role": "Doge",
+    "start": "1148-01-01",
+    "end": "1156-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Vitale II Michiel",
+    "role": "Doge",
+    "start": "1156-01-01",
+    "end": "1172-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Sebastiano Ziani",
+    "role": "Doge",
+    "start": "1172-01-01",
+    "end": "1178-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Orio Mastropiero",
+    "role": "Doge",
+    "start": "1178-01-01",
+    "end": "1192-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Enrico Dandolo",
+    "role": "Doge",
+    "start": "1192-01-01",
+    "end": "1205-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level dates; led the Fourth Crusade",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Pietro Ziani",
+    "role": "Doge",
+    "start": "1205-01-01",
+    "end": "1229-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Jacopo Tiepolo",
+    "role": "Doge",
+    "start": "1229-01-01",
+    "end": "1249-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Marino Morosini",
+    "role": "Doge",
+    "start": "1249-01-01",
+    "end": "1253-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Reniero Zeno",
+    "role": "Doge",
+    "start": "1253-01-01",
+    "end": "1268-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Lorenzo Tiepolo",
+    "role": "Doge",
+    "start": "1268-01-01",
+    "end": "1275-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Jacopo Contarini",
+    "role": "Doge",
+    "start": "1275-01-01",
+    "end": "1280-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Giovanni Dandolo",
+    "role": "Doge",
+    "start": "1280-01-01",
+    "end": "1289-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Pietro Gradenigo",
+    "role": "Doge",
+    "start": "1289-01-01",
+    "end": "1311-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Marino Zorzi",
+    "role": "Doge",
+    "start": "1311-01-01",
+    "end": "1312-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Giovanni Soranzo",
+    "role": "Doge",
+    "start": "1312-01-01",
+    "end": "1328-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Francesco Dandolo",
+    "role": "Doge",
+    "start": "1329-01-01",
+    "end": "1339-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Bartolomeo Gradenigo",
+    "role": "Doge",
+    "start": "1339-01-01",
+    "end": "1342-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Andrea Dandolo",
+    "role": "Doge",
+    "start": "1343-01-01",
+    "end": "1354-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Marino Faliero",
+    "role": "Doge",
+    "start": "1354-01-01",
+    "end": "1355-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level dates; convicted of treason and executed 1355",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Giovanni Gradenigo",
+    "role": "Doge",
+    "start": "1355-01-01",
+    "end": "1356-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Giovanni Dolfin",
+    "role": "Doge",
+    "start": "1356-01-01",
+    "end": "1361-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Lorenzo Celsi",
+    "role": "Doge",
+    "start": "1361-01-01",
+    "end": "1365-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Marco Cornaro",
+    "role": "Doge",
+    "start": "1365-01-01",
+    "end": "1368-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Andrea Contarini",
+    "role": "Doge",
+    "start": "1367-01-01",
+    "end": "1382-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level dates; start 1367 per Wikipedia (elected January 1368, Venetian-style 1367)",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Michele Morosini",
+    "role": "Doge",
+    "start": "1382-01-01",
+    "end": "1382-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
+    "name": "👑 Antonio Venier",
+    "role": "Doge",
+    "start": "1382-01-01",
+    "end": "1400-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level dates",
+    "era": "Republic of Venice"
+  },
+  {
     "name": "👑 Michele Steno",
     "role": "Doge",
     "start": "1400-01-01",

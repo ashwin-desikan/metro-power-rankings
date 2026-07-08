@@ -1,0 +1,182 @@
+[
+  {
+    "name": "👑 Sabuktigin",
+    "role": "Emir",
+    "start": "0977-01-01",
+    "end": "0997-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone; founder",
+    "era": "Ghaznavid Empire"
+  },
+  {
+    "name": "👑 Ismail",
+    "role": "Emir",
+    "start": "0997-01-01",
+    "end": "0998-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Ghaznavid Empire"
+  },
+  {
+    "name": "👑 Mahmud of Ghazni",
+    "role": "Sultan",
+    "start": "0998-01-01",
+    "end": "1030-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "year-level backbone; first to bear the title Sultan; ended the Saffarids and Samanid remnants",
+    "era": "Ghaznavid Empire"
+  },
+  {
+    "name": "👑 Muhammad",
+    "role": "Sultan",
+    "start": "1030-01-01",
+    "end": "1030-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone; first reign; briefly restored 1041",
+    "era": "Ghaznavid Empire"
+  },
+  {
+    "name": "👑 Mas'ud I",
+    "role": "Sultan",
+    "start": "1030-01-01",
+    "end": "1041-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "Ghaznavid Empire"
+  },
+  {
+    "name": "👑 Mawdud",
+    "role": "Sultan",
+    "start": "1041-01-01",
+    "end": "1048-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Ghaznavid Empire"
+  },
+  {
+    "name": "👑 Mas'ud II",
+    "role": "Sultan",
+    "start": "1048-01-01",
+    "end": "1048-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone",
+    "era": "Ghaznavid Empire"
+  },
+  {
+    "name": "👑 Ali",
+    "role": "Sultan",
+    "start": "1048-01-01",
+    "end": "1049-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Ghaznavid Empire"
+  },
+  {
+    "name": "👑 Abd al-Rashid",
+    "role": "Sultan",
+    "start": "1049-01-01",
+    "end": "1052-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Ghaznavid Empire"
+  },
+  {
+    "name": "👑 Toghrul",
+    "role": "Sultan",
+    "start": "1052-01-01",
+    "end": "1053-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone; usurper, not of the dynasty",
+    "era": "Ghaznavid Empire"
+  },
+  {
+    "name": "👑 Farrukh-Zad",
+    "role": "Sultan",
+    "start": "1053-01-01",
+    "end": "1059-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Ghaznavid Empire"
+  },
+  {
+    "name": "👑 Ibrahim",
+    "role": "Sultan",
+    "start": "1059-01-01",
+    "end": "1099-01-01",
+    "current": false,
+    "tenure": "40y 0d",
+    "party": "year-level backbone",
+    "era": "Ghaznavid Empire"
+  },
+  {
+    "name": "👑 Mas'ud III",
+    "role": "Sultan",
+    "start": "1099-01-01",
+    "end": "1115-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone",
+    "era": "Ghaznavid Empire"
+  },
+  {
+    "name": "👑 Shir-Zad",
+    "role": "Sultan",
+    "start": "1115-01-01",
+    "end": "1116-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Ghaznavid Empire"
+  },
+  {
+    "name": "👑 Arslan-Shah",
+    "role": "Sultan",
+    "start": "1116-01-01",
+    "end": "1117-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Ghaznavid Empire"
+  },
+  {
+    "name": "👑 Bahram-Shah",
+    "role": "Sultan",
+    "start": "1117-01-01",
+    "end": "1157-01-01",
+    "current": false,
+    "tenure": "40y 0d",
+    "party": "year-level backbone",
+    "era": "Ghaznavid Empire"
+  },
+  {
+    "name": "👑 Khusrau Shah",
+    "role": "Sultan",
+    "start": "1157-01-01",
+    "end": "1160-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Ghaznavid Empire"
+  },
+  {
+    "name": "👑 Khusrau Malik",
+    "role": "Sultan",
+    "start": "1160-01-01",
+    "end": "1186-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone; last ruler; Lahore conquered by Muhammad of Ghor 1186",
+    "era": "Ghaznavid Empire"
+  }
+]

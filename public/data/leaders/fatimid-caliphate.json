@@ -1,0 +1,142 @@
+[
+  {
+    "name": "👑 al-Mahdi",
+    "role": "Caliph",
+    "start": "0909-01-01",
+    "end": "0934-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone",
+    "era": "Fatimid Caliphate"
+  },
+  {
+    "name": "👑 al-Qa'im",
+    "role": "Caliph",
+    "start": "0934-01-01",
+    "end": "0946-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone",
+    "era": "Fatimid Caliphate"
+  },
+  {
+    "name": "👑 al-Mansur",
+    "role": "Caliph",
+    "start": "0946-01-01",
+    "end": "0953-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Fatimid Caliphate"
+  },
+  {
+    "name": "👑 al-Mu'izz",
+    "role": "Caliph",
+    "start": "0953-01-01",
+    "end": "0975-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level backbone",
+    "era": "Fatimid Caliphate"
+  },
+  {
+    "name": "👑 al-Aziz",
+    "role": "Caliph",
+    "start": "0975-01-01",
+    "end": "0996-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone",
+    "era": "Fatimid Caliphate"
+  },
+  {
+    "name": "👑 al-Hakim",
+    "role": "Caliph",
+    "start": "0996-01-01",
+    "end": "1021-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone",
+    "era": "Fatimid Caliphate"
+  },
+  {
+    "name": "👑 al-Zahir",
+    "role": "Caliph",
+    "start": "1021-01-01",
+    "end": "1036-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone",
+    "era": "Fatimid Caliphate"
+  },
+  {
+    "name": "👑 al-Mustansir",
+    "role": "Caliph",
+    "start": "1036-01-01",
+    "end": "1094-01-01",
+    "current": false,
+    "tenure": "58y 0d",
+    "party": "year-level backbone",
+    "era": "Fatimid Caliphate"
+  },
+  {
+    "name": "👑 al-Musta'li",
+    "role": "Caliph",
+    "start": "1094-01-01",
+    "end": "1101-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Fatimid Caliphate"
+  },
+  {
+    "name": "👑 al-Amir",
+    "role": "Caliph",
+    "start": "1101-01-01",
+    "end": "1130-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level backbone",
+    "era": "Fatimid Caliphate"
+  },
+  {
+    "name": "👑 al-Hafiz",
+    "role": "Caliph",
+    "start": "1132-01-01",
+    "end": "1149-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone",
+    "era": "Fatimid Caliphate"
+  },
+  {
+    "name": "👑 al-Zafir",
+    "role": "Caliph",
+    "start": "1149-01-01",
+    "end": "1154-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Fatimid Caliphate"
+  },
+  {
+    "name": "👑 al-Fa'iz",
+    "role": "Caliph",
+    "start": "1154-01-01",
+    "end": "1160-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Fatimid Caliphate"
+  },
+  {
+    "name": "👑 al-Adid",
+    "role": "Caliph",
+    "start": "1160-01-01",
+    "end": "1171-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "Fatimid Caliphate"
+  }
+]

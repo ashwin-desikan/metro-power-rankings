@@ -1,0 +1,82 @@
+[
+  {
+    "name": "👑 Saladin",
+    "role": "Sultan",
+    "start": "1171-01-01",
+    "end": "1193-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level backbone",
+    "era": "Ayyubid dynasty"
+  },
+  {
+    "name": "👑 al-Aziz Uthman",
+    "role": "Sultan",
+    "start": "1193-01-01",
+    "end": "1198-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Ayyubid dynasty"
+  },
+  {
+    "name": "👑 al-Mansur Muhammad",
+    "role": "Sultan",
+    "start": "1198-01-01",
+    "end": "1200-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Ayyubid dynasty"
+  },
+  {
+    "name": "👑 al-Adil I",
+    "role": "Sultan",
+    "start": "1200-01-01",
+    "end": "1218-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone",
+    "era": "Ayyubid dynasty"
+  },
+  {
+    "name": "👑 al-Kamil",
+    "role": "Sultan",
+    "start": "1218-01-01",
+    "end": "1238-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "Ayyubid dynasty"
+  },
+  {
+    "name": "👑 al-Adil II",
+    "role": "Sultan",
+    "start": "1238-01-01",
+    "end": "1240-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Ayyubid dynasty"
+  },
+  {
+    "name": "👑 as-Salih Ayyub",
+    "role": "Sultan",
+    "start": "1240-01-01",
+    "end": "1249-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Ayyubid dynasty"
+  },
+  {
+    "name": "👑 Turanshah",
+    "role": "Sultan",
+    "start": "1249-01-01",
+    "end": "1250-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Ayyubid dynasty"
+  }
+]

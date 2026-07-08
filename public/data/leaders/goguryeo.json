@@ -1,0 +1,92 @@
+[
+  {
+    "name": "👑 Jumong (Dongmyeong)",
+    "role": "King",
+    "start": "-0037-01-01",
+    "end": "-0019-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone",
+    "era": "founder Chumo; traditional founding date 37 BC"
+  },
+  {
+    "name": "👑 Taejo",
+    "role": "King",
+    "start": "0053-01-01",
+    "end": "0146-01-01",
+    "current": false,
+    "tenure": "93y 0d",
+    "party": "year-level backbone",
+    "era": "early consolidation; traditional 93-year reign"
+  },
+  {
+    "name": "👑 Gogukcheon",
+    "role": "King",
+    "start": "0179-01-01",
+    "end": "0197-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone",
+    "era": "early kingdom"
+  },
+  {
+    "name": "👑 Micheon",
+    "role": "King",
+    "start": "0300-01-01",
+    "end": "0331-01-01",
+    "current": false,
+    "tenure": "31y 0d",
+    "party": "year-level backbone",
+    "era": "expansion into the old Chinese commanderies"
+  },
+  {
+    "name": "👑 Gwanggaeto the Great",
+    "role": "King",
+    "start": "0391-01-01",
+    "end": "0413-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level backbone",
+    "era": "greatest territorial expansion in Korean history"
+  },
+  {
+    "name": "👑 Jangsu",
+    "role": "King",
+    "start": "0413-01-01",
+    "end": "0491-01-01",
+    "current": false,
+    "tenure": "78y 0d",
+    "party": "year-level backbone",
+    "era": "78-year reign; zenith of Goguryeo power"
+  },
+  {
+    "name": "👑 Yeongyang",
+    "role": "King",
+    "start": "0590-01-01",
+    "end": "0618-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level backbone",
+    "era": "late kingdom"
+  },
+  {
+    "name": "👑 Yeongnyu",
+    "role": "King",
+    "start": "0618-01-01",
+    "end": "0642-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone",
+    "era": "late kingdom"
+  },
+  {
+    "name": "👑 Bojang",
+    "role": "King",
+    "start": "0642-01-01",
+    "end": "0668-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone",
+    "era": "last king; Goguryeo fell to the Tang–Silla alliance, 668"
+  }
+]

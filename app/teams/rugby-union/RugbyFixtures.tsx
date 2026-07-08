@@ -24,7 +24,7 @@ function Row({ m }: { m: RugbyMatch }) {
   const bWin = m.scoreA !== null && m.scoreB !== null && m.scoreB > m.scoreA;
   const day = new Date(m.date + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
   return (
-    <div className="flex items-center justify-between gap-3 py-2 border-b last:border-0" style={{ borderColor: "var(--border)" }}>
+    <div className="flex items-center justify-between gap-3 py-1 border-b last:border-0" style={{ borderColor: "var(--border)" }}>
       <div className="flex items-center gap-2.5 text-sm flex-wrap">
         <Team name={m.teamA} score={m.scoreA} win={aWin} />
         <span className="text-[var(--text-dim)]">v</span>
@@ -38,26 +38,30 @@ function Row({ m }: { m: RugbyMatch }) {
   );
 }
 
-function Section({ title, items }: { title: string; items: RugbyMatch[] }) {
+function Section({ title, items, limit }: { title: string; items: RugbyMatch[]; limit?: number }) {
   if (!items.length) return null;
+  const shown = limit ? items.slice(0, limit) : items;
+  const extra = items.length - shown.length;
   return (
-    <div className="mb-3 last:mb-0">
-      <div className="text-[10px] uppercase tracking-wider mb-1" style={{ color: "var(--text-dim)", ...mono }}>{title}</div>
-      {items.map((m, i) => <Row key={`${m.date}-${m.teamA}-${i}`} m={m} />)}
+    <div className="mb-2.5 last:mb-0">
+      <div className="text-[10px] uppercase tracking-wider mb-0.5" style={{ color: "var(--text-dim)", ...mono }}>
+        {title}{extra > 0 ? <span className="normal-case"> · {shown.length} of {items.length}</span> : null}
+      </div>
+      {shown.map((m, i) => <Row key={`${m.date}-${m.teamA}-${i}`} m={m} />)}
     </div>
   );
 }
 
 export default function RugbyFixtures({ data }: { data: RF }) {
   return (
-    <section className="rounded-xl border p-4 mb-8" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
-      <div className="flex items-center justify-between mb-2">
-        <h2 className="text-base font-semibold">International Fixtures &amp; Results</h2>
+    <section className="rounded-xl border p-3 mb-6" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
+      <div className="flex items-center justify-between mb-1.5">
+        <h2 className="text-sm font-semibold">International Fixtures &amp; Results</h2>
         <span className="text-[10px] text-[var(--text-dim)]" style={mono}>World Rugby</span>
       </div>
       <Section title="Live" items={data.live} />
-      <Section title="Upcoming" items={data.upcoming} />
-      <Section title="Recent results" items={data.recent} />
+      <Section title="Upcoming" items={data.upcoming} limit={5} />
+      <Section title="Recent results" items={data.recent} limit={5} />
     </section>
   );
 }

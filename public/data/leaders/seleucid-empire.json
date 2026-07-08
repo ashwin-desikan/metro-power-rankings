@@ -1,0 +1,282 @@
+[
+  {
+    "name": "👑 Seleucus I Nicator",
+    "role": "King",
+    "start": "-0305-01-01",
+    "end": "-0281-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Antiochus I Soter",
+    "role": "King",
+    "start": "-0281-01-01",
+    "end": "-0261-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Antiochus II Theos",
+    "role": "King",
+    "start": "-0261-01-01",
+    "end": "-0246-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Seleucus II Callinicus",
+    "role": "King",
+    "start": "-0246-01-01",
+    "end": "-0225-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Seleucus III Ceraunus",
+    "role": "King",
+    "start": "-0225-01-01",
+    "end": "-0223-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Antiochus III the Great",
+    "role": "King",
+    "start": "-0222-01-01",
+    "end": "-0187-01-01",
+    "current": false,
+    "tenure": "35y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Seleucus IV Philopator",
+    "role": "King",
+    "start": "-0187-01-01",
+    "end": "-0175-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Antiochus IV Epiphanes",
+    "role": "King",
+    "start": "-0175-01-01",
+    "end": "-0164-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Antiochus V Eupator",
+    "role": "King",
+    "start": "-0164-01-01",
+    "end": "-0161-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Demetrius I Soter",
+    "role": "King",
+    "start": "-0161-01-01",
+    "end": "-0150-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Alexander I Balas",
+    "role": "King",
+    "start": "-0150-01-01",
+    "end": "-0146-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Demetrius II Nicator",
+    "role": "King",
+    "start": "-0145-01-01",
+    "end": "-0138-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Antiochus VI Dionysus",
+    "role": "King",
+    "start": "-0144-01-01",
+    "end": "-0142-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Diodotus Tryphon",
+    "role": "King",
+    "start": "-0142-01-01",
+    "end": "-0138-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Antiochus VII Sidetes",
+    "role": "King",
+    "start": "-0138-01-01",
+    "end": "-0129-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Demetrius II Nicator",
+    "role": "King",
+    "start": "-0129-01-01",
+    "end": "-0125-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Alexander II Zabinas",
+    "role": "King",
+    "start": "-0128-01-01",
+    "end": "-0123-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Cleopatra Thea",
+    "role": "Queen",
+    "start": "-0126-01-01",
+    "end": "-0121-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Antiochus VIII Grypus",
+    "role": "King",
+    "start": "-0125-01-01",
+    "end": "-0096-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Antiochus IX Cyzicenus",
+    "role": "King",
+    "start": "-0116-01-01",
+    "end": "-0096-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Seleucus VI Epiphanes",
+    "role": "King",
+    "start": "-0096-01-01",
+    "end": "-0094-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Demetrius III Eucaerus",
+    "role": "King",
+    "start": "-0096-01-01",
+    "end": "-0087-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Antiochus X Eusebes",
+    "role": "King",
+    "start": "-0095-01-01",
+    "end": "-0092-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Philip I Philadelphus",
+    "role": "King",
+    "start": "-0094-01-01",
+    "end": "-0083-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Antiochus XII Dionysus",
+    "role": "King",
+    "start": "-0087-01-01",
+    "end": "-0082-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Tigranes II of Armenia",
+    "role": "King",
+    "start": "-0083-01-01",
+    "end": "-0069-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Antiochus XIII Asiaticus",
+    "role": "King",
+    "start": "-0069-01-01",
+    "end": "-0064-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  },
+  {
+    "name": "👑 Philip II Philoromaeus",
+    "role": "King",
+    "start": "-0065-01-01",
+    "end": "-0064-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Seleucid dynasty"
+  }
+]

@@ -1,0 +1,342 @@
+[
+  {
+    "name": "👑 Jayavarman II",
+    "role": "King",
+    "start": "0802-01-01",
+    "end": "0835-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Jayavarman III",
+    "role": "King",
+    "start": "0835-01-01",
+    "end": "0877-01-01",
+    "current": false,
+    "tenure": "42y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Indravarman I",
+    "role": "King",
+    "start": "0877-01-01",
+    "end": "0889-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Yasovarman I",
+    "role": "King",
+    "start": "0889-01-01",
+    "end": "0910-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Harshavarman I",
+    "role": "King",
+    "start": "0910-01-01",
+    "end": "0923-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Ishanavarman II",
+    "role": "King",
+    "start": "0923-01-01",
+    "end": "0928-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Jayavarman IV",
+    "role": "King",
+    "start": "0928-01-01",
+    "end": "0941-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Harshavarman II",
+    "role": "King",
+    "start": "0941-01-01",
+    "end": "0944-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Rajendravarman II",
+    "role": "King",
+    "start": "0944-01-01",
+    "end": "0968-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Jayavarman V",
+    "role": "King",
+    "start": "0968-01-01",
+    "end": "1001-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Suryavarman I",
+    "role": "King",
+    "start": "1006-01-01",
+    "end": "1050-01-01",
+    "current": false,
+    "tenure": "44y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Udayadityavarman II",
+    "role": "King",
+    "start": "1050-01-01",
+    "end": "1066-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Harshavarman III",
+    "role": "King",
+    "start": "1066-01-01",
+    "end": "1080-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Jayavarman VI",
+    "role": "King",
+    "start": "1090-01-01",
+    "end": "1107-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Dharanindravarman I",
+    "role": "King",
+    "start": "1107-01-01",
+    "end": "1113-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Suryavarman II",
+    "role": "King",
+    "start": "1113-01-01",
+    "end": "1145-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Dharanindravarman II",
+    "role": "King",
+    "start": "1150-01-01",
+    "end": "1160-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Yasovarman II",
+    "role": "King",
+    "start": "1160-01-01",
+    "end": "1167-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Tribhuvanadityavarman",
+    "role": "King",
+    "start": "1167-01-01",
+    "end": "1177-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Jayavarman VII",
+    "role": "King",
+    "start": "1181-01-01",
+    "end": "1218-01-01",
+    "current": false,
+    "tenure": "37y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Indravarman II",
+    "role": "King",
+    "start": "1219-01-01",
+    "end": "1243-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Jayavarman VIII",
+    "role": "King",
+    "start": "1243-01-01",
+    "end": "1295-01-01",
+    "current": false,
+    "tenure": "52y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Indravarman III",
+    "role": "King",
+    "start": "1295-01-01",
+    "end": "1308-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Indrajayavarman",
+    "role": "King",
+    "start": "1308-01-01",
+    "end": "1327-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Jayavarman IX",
+    "role": "King",
+    "start": "1327-01-01",
+    "end": "1336-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Trasak Paem",
+    "role": "King",
+    "start": "1336-01-01",
+    "end": "1340-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Nippean Bat",
+    "role": "King",
+    "start": "1340-01-01",
+    "end": "1346-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Sithean Reachea",
+    "role": "King",
+    "start": "1346-01-01",
+    "end": "1347-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Lompong Reachea",
+    "role": "King",
+    "start": "1347-01-01",
+    "end": "1352-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Soryavong",
+    "role": "King",
+    "start": "1357-01-01",
+    "end": "1363-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Borom Reachea I",
+    "role": "King",
+    "start": "1363-01-01",
+    "end": "1373-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Thomma Saok",
+    "role": "King",
+    "start": "1373-01-01",
+    "end": "1393-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 In Reachea",
+    "role": "King",
+    "start": "1394-01-01",
+    "end": "1421-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  },
+  {
+    "name": "👑 Barom Reachea II",
+    "role": "King",
+    "start": "1405-01-01",
+    "end": "1431-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone",
+    "era": "Khmer Empire"
+  }
+]

@@ -1,0 +1,112 @@
+[
+  {
+    "name": "👑 Sonni Ali",
+    "role": "Emperor",
+    "start": "1464-01-01",
+    "end": "1492-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level backbone",
+    "era": "Sonni dynasty"
+  },
+  {
+    "name": "👑 Sonni Baru",
+    "role": "Emperor",
+    "start": "1492-01-01",
+    "end": "1493-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Sonni dynasty"
+  },
+  {
+    "name": "👑 Askia Muhammad I",
+    "role": "Emperor",
+    "start": "1493-01-01",
+    "end": "1528-01-01",
+    "current": false,
+    "tenure": "35y 0d",
+    "party": "year-level backbone; royal title Askia",
+    "era": "Askia dynasty"
+  },
+  {
+    "name": "👑 Askia Musa",
+    "role": "Emperor",
+    "start": "1528-01-01",
+    "end": "1531-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone; royal title Askia",
+    "era": "Askia dynasty"
+  },
+  {
+    "name": "👑 Askia Mohammad Benkan",
+    "role": "Emperor",
+    "start": "1531-01-01",
+    "end": "1537-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone; royal title Askia",
+    "era": "Askia dynasty"
+  },
+  {
+    "name": "👑 Askia Ismail",
+    "role": "Emperor",
+    "start": "1537-01-01",
+    "end": "1539-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone; royal title Askia",
+    "era": "Askia dynasty"
+  },
+  {
+    "name": "👑 Askia Ishaq I",
+    "role": "Emperor",
+    "start": "1539-01-01",
+    "end": "1549-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone; royal title Askia",
+    "era": "Askia dynasty"
+  },
+  {
+    "name": "👑 Askia Daoud",
+    "role": "Emperor",
+    "start": "1549-01-01",
+    "end": "1582-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "year-level backbone; royal title Askia",
+    "era": "Askia dynasty"
+  },
+  {
+    "name": "👑 Askia Al-Hajj",
+    "role": "Emperor",
+    "start": "1582-01-01",
+    "end": "1586-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone; royal title Askia",
+    "era": "Askia dynasty"
+  },
+  {
+    "name": "👑 Askia Muhammad Bani",
+    "role": "Emperor",
+    "start": "1586-01-01",
+    "end": "1588-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone; royal title Askia",
+    "era": "Askia dynasty"
+  },
+  {
+    "name": "👑 Askia Ishaq II",
+    "role": "Emperor",
+    "start": "1588-01-01",
+    "end": "1591-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone; royal title Askia",
+    "era": "Askia dynasty"
+  }
+]

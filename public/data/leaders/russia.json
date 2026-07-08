@@ -1,5 +1,195 @@
 [
   {
+    "name": "👑 Rurik",
+    "role": "Monarch",
+    "start": "0862-01-01",
+    "end": "0879-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone — title: Prince of Novgorod; dates traditional (c. 862–879)",
+    "era": "Kievan Rus'"
+  },
+  {
+    "name": "👑 Oleg (the Seer)",
+    "role": "Monarch",
+    "start": "0879-01-01",
+    "end": "0912-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "year-level backbone — title: Prince of Kiev; dates approximate (c. 879–912)",
+    "era": "Kievan Rus'"
+  },
+  {
+    "name": "👑 Igor",
+    "role": "Monarch",
+    "start": "0912-01-01",
+    "end": "0945-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "year-level backbone — title: Prince of Kiev",
+    "era": "Kievan Rus'"
+  },
+  {
+    "name": "👑 Olga of Kiev",
+    "role": "Regent",
+    "start": "0945-01-01",
+    "end": "0957-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone — regent of Kiev for her son Sviatoslav I",
+    "era": "Kievan Rus'"
+  },
+  {
+    "name": "👑 Sviatoslav I",
+    "role": "Monarch",
+    "start": "0957-01-01",
+    "end": "0972-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone — title: Prince of Kiev; nominal ruler from 945 under Olga's regency",
+    "era": "Kievan Rus'"
+  },
+  {
+    "name": "👑 Vladimir I (the Great)",
+    "role": "Monarch",
+    "start": "0980-01-01",
+    "end": "1015-01-01",
+    "current": false,
+    "tenure": "35y 0d",
+    "party": "year-level backbone — title: Prince of Kiev",
+    "era": "Kievan Rus'"
+  },
+  {
+    "name": "👑 Yaroslav (the Wise)",
+    "role": "Monarch",
+    "start": "1016-01-01",
+    "end": "1054-01-01",
+    "current": false,
+    "tenure": "38y 0d",
+    "party": "year-level backbone — title: Grand Prince of Kiev",
+    "era": "Kievan Rus'"
+  },
+  {
+    "name": "👑 Vladimir II Monomakh",
+    "role": "Monarch",
+    "start": "1113-01-01",
+    "end": "1125-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone — title: Grand Prince of Kiev",
+    "era": "Kievan Rus'"
+  },
+  {
+    "name": "👑 Yuri Dolgorukiy",
+    "role": "Monarch",
+    "start": "1149-01-01",
+    "end": "1157-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone — title: Grand Prince of Kiev; prince of Rostov-Suzdal — three contested Kievan reigns between 1149 and 1157",
+    "era": "Vladimir-Suzdal"
+  },
+  {
+    "name": "👑 Andrei Bogolyubsky",
+    "role": "Monarch",
+    "start": "1157-01-01",
+    "end": "1174-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone — title: Grand Prince of Vladimir",
+    "era": "Vladimir-Suzdal"
+  },
+  {
+    "name": "👑 Alexander Nevsky",
+    "role": "Monarch",
+    "start": "1252-01-01",
+    "end": "1263-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone — title: Grand Prince of Vladimir",
+    "era": "Vladimir-Suzdal"
+  },
+  {
+    "name": "👑 Daniel of Moscow",
+    "role": "Monarch",
+    "start": "1283-01-01",
+    "end": "1303-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone — title: Prince of Moscow",
+    "era": "Grand Duchy of Moscow"
+  },
+  {
+    "name": "👑 Yury of Moscow",
+    "role": "Monarch",
+    "start": "1303-01-01",
+    "end": "1325-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level backbone — title: Prince of Moscow; Grand Prince of Vladimir 1318–1322",
+    "era": "Grand Duchy of Moscow"
+  },
+  {
+    "name": "👑 Ivan I Kalita",
+    "role": "Monarch",
+    "start": "1325-01-01",
+    "end": "1340-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone — title: Prince of Moscow; Grand Prince of Vladimir from 1331",
+    "era": "Grand Duchy of Moscow"
+  },
+  {
+    "name": "👑 Simeon (the Proud)",
+    "role": "Monarch",
+    "start": "1340-01-01",
+    "end": "1353-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone — title: Grand Prince of Moscow and Vladimir",
+    "era": "Grand Duchy of Moscow"
+  },
+  {
+    "name": "👑 Ivan II (the Fair)",
+    "role": "Monarch",
+    "start": "1353-01-01",
+    "end": "1359-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone — title: Grand Prince of Moscow; Grand Prince of Vladimir from 1354",
+    "era": "Grand Duchy of Moscow"
+  },
+  {
+    "name": "👑 Dmitry Donskoy",
+    "role": "Monarch",
+    "start": "1359-01-01",
+    "end": "1389-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "year-level backbone — title: Prince of Moscow from 1359; Grand Prince of Vladimir from 1363",
+    "era": "Grand Duchy of Moscow"
+  },
+  {
+    "name": "👑 Vasily I",
+    "role": "Monarch",
+    "start": "1389-01-01",
+    "end": "1425-01-01",
+    "current": false,
+    "tenure": "36y 0d",
+    "party": "year-level backbone — title: Grand Prince of Moscow",
+    "era": "Grand Duchy of Moscow"
+  },
+  {
+    "name": "👑 Vasily II (the Dark)",
+    "role": "Monarch",
+    "start": "1425-01-01",
+    "end": "1462-01-01",
+    "current": false,
+    "tenure": "37y 0d",
+    "party": "year-level backbone — title: Grand Prince of Moscow; reign interrupted 1433–1447 by Yuri of Zvenigorod, Vasily the Squint and Dmitry Shemyaka",
+    "era": "Grand Duchy of Moscow"
+  },
+  {
     "name": "👑 Ivan III (the Great)",
     "role": "Monarch",
     "start": "1462-01-01",

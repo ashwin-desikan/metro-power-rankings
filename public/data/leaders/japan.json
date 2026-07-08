@@ -1,5 +1,1255 @@
 [
   {
+    "name": "👑 Kinmei",
+    "role": "Emperor",
+    "start": "0539-01-01",
+    "end": "0572-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "year-level backbone",
+    "era": "Asuka period"
+  },
+  {
+    "name": "👑 Bidatsu",
+    "role": "Emperor",
+    "start": "0572-01-01",
+    "end": "0586-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone",
+    "era": "Asuka period"
+  },
+  {
+    "name": "👑 Yōmei",
+    "role": "Emperor",
+    "start": "0586-01-01",
+    "end": "0587-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Asuka period"
+  },
+  {
+    "name": "👑 Sushun",
+    "role": "Emperor",
+    "start": "0587-01-01",
+    "end": "0593-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Asuka period"
+  },
+  {
+    "name": "👑 Suiko",
+    "role": "Empress",
+    "start": "0593-01-01",
+    "end": "0629-01-01",
+    "current": false,
+    "tenure": "36y 0d",
+    "party": "year-level backbone",
+    "era": "Asuka period"
+  },
+  {
+    "name": "👑 Jomei",
+    "role": "Emperor",
+    "start": "0629-01-01",
+    "end": "0642-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Asuka period"
+  },
+  {
+    "name": "👑 Kōgyoku",
+    "role": "Empress",
+    "start": "0642-01-01",
+    "end": "0645-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Asuka period"
+  },
+  {
+    "name": "👑 Kōtoku",
+    "role": "Emperor",
+    "start": "0645-01-01",
+    "end": "0655-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Asuka period"
+  },
+  {
+    "name": "👑 Saimei",
+    "role": "Empress",
+    "start": "0655-01-01",
+    "end": "0662-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Asuka period"
+  },
+  {
+    "name": "👑 Tenji",
+    "role": "Emperor",
+    "start": "0662-01-01",
+    "end": "0672-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Asuka period"
+  },
+  {
+    "name": "👑 Kōbun",
+    "role": "Emperor",
+    "start": "0672-01-01",
+    "end": "0673-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Asuka period"
+  },
+  {
+    "name": "👑 Tenmu",
+    "role": "Emperor",
+    "start": "0673-01-01",
+    "end": "0687-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone",
+    "era": "Asuka period"
+  },
+  {
+    "name": "👑 Jitō",
+    "role": "Empress",
+    "start": "0687-01-01",
+    "end": "0697-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Asuka period"
+  },
+  {
+    "name": "👑 Monmu",
+    "role": "Emperor",
+    "start": "0697-01-01",
+    "end": "0707-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Asuka period"
+  },
+  {
+    "name": "👑 Genmei",
+    "role": "Empress",
+    "start": "0707-01-01",
+    "end": "0715-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "Nara period"
+  },
+  {
+    "name": "👑 Genshō",
+    "role": "Empress",
+    "start": "0715-01-01",
+    "end": "0724-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Nara period"
+  },
+  {
+    "name": "👑 Shōmu",
+    "role": "Emperor",
+    "start": "0724-01-01",
+    "end": "0749-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone",
+    "era": "Nara period"
+  },
+  {
+    "name": "👑 Kōken",
+    "role": "Empress",
+    "start": "0749-01-01",
+    "end": "0758-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Nara period"
+  },
+  {
+    "name": "👑 Junnin",
+    "role": "Emperor",
+    "start": "0758-01-01",
+    "end": "0764-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Nara period"
+  },
+  {
+    "name": "👑 Shōtoku",
+    "role": "Empress",
+    "start": "0764-01-01",
+    "end": "0770-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Nara period"
+  },
+  {
+    "name": "👑 Kōnin",
+    "role": "Emperor",
+    "start": "0770-01-01",
+    "end": "0781-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "Nara period"
+  },
+  {
+    "name": "👑 Kanmu",
+    "role": "Emperor",
+    "start": "0781-01-01",
+    "end": "0806-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Heizei",
+    "role": "Emperor",
+    "start": "0806-01-01",
+    "end": "0809-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Saga",
+    "role": "Emperor",
+    "start": "0809-01-01",
+    "end": "0823-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Junna",
+    "role": "Emperor",
+    "start": "0823-01-01",
+    "end": "0833-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Ninmyō",
+    "role": "Emperor",
+    "start": "0833-01-01",
+    "end": "0850-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Montoku",
+    "role": "Emperor",
+    "start": "0850-01-01",
+    "end": "0858-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Seiwa",
+    "role": "Emperor",
+    "start": "0858-01-01",
+    "end": "0876-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Yōzei",
+    "role": "Emperor",
+    "start": "0876-01-01",
+    "end": "0884-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Kōkō",
+    "role": "Emperor",
+    "start": "0884-01-01",
+    "end": "0887-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Uda",
+    "role": "Emperor",
+    "start": "0887-01-01",
+    "end": "0897-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Daigo",
+    "role": "Emperor",
+    "start": "0897-01-01",
+    "end": "0930-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Suzaku",
+    "role": "Emperor",
+    "start": "0930-01-01",
+    "end": "0946-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Murakami",
+    "role": "Emperor",
+    "start": "0946-01-01",
+    "end": "0967-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Reizei",
+    "role": "Emperor",
+    "start": "0967-01-01",
+    "end": "0969-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 En'yū",
+    "role": "Emperor",
+    "start": "0969-01-01",
+    "end": "0984-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Kazan",
+    "role": "Emperor",
+    "start": "0984-01-01",
+    "end": "0986-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Ichijō",
+    "role": "Emperor",
+    "start": "0986-01-01",
+    "end": "1011-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Sanjō",
+    "role": "Emperor",
+    "start": "1011-01-01",
+    "end": "1016-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Go-Ichijō",
+    "role": "Emperor",
+    "start": "1016-01-01",
+    "end": "1036-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Go-Suzaku",
+    "role": "Emperor",
+    "start": "1036-01-01",
+    "end": "1045-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Go-Reizei",
+    "role": "Emperor",
+    "start": "1045-01-01",
+    "end": "1068-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Go-Sanjō",
+    "role": "Emperor",
+    "start": "1068-01-01",
+    "end": "1073-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Shirakawa",
+    "role": "Emperor",
+    "start": "1073-01-01",
+    "end": "1087-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Horikawa",
+    "role": "Emperor",
+    "start": "1087-01-01",
+    "end": "1107-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Toba",
+    "role": "Emperor",
+    "start": "1107-01-01",
+    "end": "1123-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Sutoku",
+    "role": "Emperor",
+    "start": "1123-01-01",
+    "end": "1142-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Konoe",
+    "role": "Emperor",
+    "start": "1142-01-01",
+    "end": "1155-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Go-Shirakawa",
+    "role": "Emperor",
+    "start": "1155-01-01",
+    "end": "1158-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Nijō",
+    "role": "Emperor",
+    "start": "1158-01-01",
+    "end": "1165-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Rokujō",
+    "role": "Emperor",
+    "start": "1165-01-01",
+    "end": "1168-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Takakura",
+    "role": "Emperor",
+    "start": "1168-01-01",
+    "end": "1180-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Antoku",
+    "role": "Emperor",
+    "start": "1180-01-01",
+    "end": "1183-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone; reigned to 1185 per source (overlap with Go-Toba trimmed)",
+    "era": "Heian period"
+  },
+  {
+    "name": "👑 Go-Toba",
+    "role": "Emperor",
+    "start": "1183-01-01",
+    "end": "1198-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone",
+    "era": "Kamakura period"
+  },
+  {
+    "name": "Minamoto no Yoritomo",
+    "role": "Shogun",
+    "start": "1192-01-01",
+    "end": "1202-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Kamakura shogunate"
+  },
+  {
+    "name": "👑 Tsuchimikado",
+    "role": "Emperor",
+    "start": "1198-01-01",
+    "end": "1210-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone",
+    "era": "Kamakura period"
+  },
+  {
+    "name": "Minamoto no Yoriie",
+    "role": "Shogun",
+    "start": "1202-01-01",
+    "end": "1203-01-01",
+    "current": false,
+    "tenure": "1y 0d",
+    "party": "year-level backbone",
+    "era": "Kamakura shogunate"
+  },
+  {
+    "name": "Minamoto no Sanetomo",
+    "role": "Shogun",
+    "start": "1203-01-01",
+    "end": "1226-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level backbone",
+    "era": "Kamakura shogunate"
+  },
+  {
+    "name": "👑 Juntoku",
+    "role": "Emperor",
+    "start": "1210-01-01",
+    "end": "1221-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "Kamakura period"
+  },
+  {
+    "name": "👑 Chūkyō",
+    "role": "Emperor",
+    "start": "1221-01-01",
+    "end": "1221-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone",
+    "era": "Kamakura period"
+  },
+  {
+    "name": "👑 Go-Horikawa",
+    "role": "Emperor",
+    "start": "1221-01-01",
+    "end": "1232-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "Kamakura period"
+  },
+  {
+    "name": "Kujō Yoritsune",
+    "role": "Shogun",
+    "start": "1226-01-01",
+    "end": "1244-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone",
+    "era": "Kamakura shogunate"
+  },
+  {
+    "name": "👑 Shijō",
+    "role": "Emperor",
+    "start": "1232-01-01",
+    "end": "1242-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Kamakura period"
+  },
+  {
+    "name": "👑 Go-Saga",
+    "role": "Emperor",
+    "start": "1242-01-01",
+    "end": "1246-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Kamakura period"
+  },
+  {
+    "name": "Kujō Yoritsugu",
+    "role": "Shogun",
+    "start": "1244-01-01",
+    "end": "1252-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "Kamakura shogunate"
+  },
+  {
+    "name": "👑 Go-Fukakusa",
+    "role": "Emperor",
+    "start": "1246-01-01",
+    "end": "1260-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone",
+    "era": "Kamakura period"
+  },
+  {
+    "name": "Prince Munetaka",
+    "role": "Shogun",
+    "start": "1252-01-01",
+    "end": "1266-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone",
+    "era": "Kamakura shogunate"
+  },
+  {
+    "name": "👑 Kameyama",
+    "role": "Emperor",
+    "start": "1260-01-01",
+    "end": "1274-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone",
+    "era": "Kamakura period"
+  },
+  {
+    "name": "Prince Koreyasu",
+    "role": "Shogun",
+    "start": "1266-01-01",
+    "end": "1289-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level backbone",
+    "era": "Kamakura shogunate"
+  },
+  {
+    "name": "👑 Go-Uda",
+    "role": "Emperor",
+    "start": "1274-01-01",
+    "end": "1287-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Kamakura period"
+  },
+  {
+    "name": "👑 Fushimi",
+    "role": "Emperor",
+    "start": "1287-01-01",
+    "end": "1298-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "year-level backbone",
+    "era": "Kamakura period"
+  },
+  {
+    "name": "Prince Hisaaki",
+    "role": "Shogun",
+    "start": "1289-01-01",
+    "end": "1308-01-01",
+    "current": false,
+    "tenure": "19y 0d",
+    "party": "year-level backbone",
+    "era": "Kamakura shogunate"
+  },
+  {
+    "name": "👑 Go-Fushimi",
+    "role": "Emperor",
+    "start": "1298-01-01",
+    "end": "1301-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Kamakura period"
+  },
+  {
+    "name": "👑 Go-Nijō",
+    "role": "Emperor",
+    "start": "1301-01-01",
+    "end": "1308-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Kamakura period"
+  },
+  {
+    "name": "👑 Hanazono",
+    "role": "Emperor",
+    "start": "1308-01-01",
+    "end": "1318-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Kamakura period"
+  },
+  {
+    "name": "Prince Morikuni",
+    "role": "Shogun",
+    "start": "1308-01-01",
+    "end": "1333-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone",
+    "era": "Kamakura shogunate"
+  },
+  {
+    "name": "👑 Go-Daigo",
+    "role": "Emperor",
+    "start": "1318-01-01",
+    "end": "1339-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone; rival Northern claimants: Kōgon 1331–1333, Kōmyō 1336–1348",
+    "era": "Kamakura period"
+  },
+  {
+    "name": "Ashikaga Takauji",
+    "role": "Shogun",
+    "start": "1338-01-01",
+    "end": "1359-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone",
+    "era": "Ashikaga shogunate"
+  },
+  {
+    "name": "👑 Go-Murakami",
+    "role": "Emperor",
+    "start": "1339-01-01",
+    "end": "1368-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level backbone; rival Northern claimants: Kōmyō 1336–1348, Sukō 1348–1351, Go-Kōgon 1352–1371",
+    "era": "Muromachi period"
+  },
+  {
+    "name": "Ashikaga Yoshiakira",
+    "role": "Shogun",
+    "start": "1359-01-01",
+    "end": "1369-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Ashikaga shogunate"
+  },
+  {
+    "name": "👑 Chōkei",
+    "role": "Emperor",
+    "start": "1368-01-01",
+    "end": "1383-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone; rival Northern claimants: Go-Kōgon 1352–1371, Go-En'yū 1371–1382",
+    "era": "Muromachi period"
+  },
+  {
+    "name": "Ashikaga Yoshimitsu",
+    "role": "Shogun",
+    "start": "1369-01-01",
+    "end": "1395-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone",
+    "era": "Ashikaga shogunate"
+  },
+  {
+    "name": "👑 Go-Kameyama",
+    "role": "Emperor",
+    "start": "1383-01-01",
+    "end": "1392-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone; rival Northern claimants: Go-En'yū 1371–1382, Go-Komatsu 1382–1392",
+    "era": "Muromachi period"
+  },
+  {
+    "name": "👑 Go-Komatsu",
+    "role": "Emperor",
+    "start": "1392-01-01",
+    "end": "1412-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone; Northern claimant 1382–1392, sole emperor after 1392 reunification",
+    "era": "Muromachi period"
+  },
+  {
+    "name": "Ashikaga Yoshimochi",
+    "role": "Shogun",
+    "start": "1395-01-01",
+    "end": "1423-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level backbone",
+    "era": "Ashikaga shogunate"
+  },
+  {
+    "name": "👑 Shōkō",
+    "role": "Emperor",
+    "start": "1412-01-01",
+    "end": "1428-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone",
+    "era": "Muromachi period"
+  },
+  {
+    "name": "Ashikaga Yoshikazu",
+    "role": "Shogun",
+    "start": "1423-01-01",
+    "end": "1429-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Ashikaga shogunate"
+  },
+  {
+    "name": "👑 Go-Hanazono",
+    "role": "Emperor",
+    "start": "1428-01-01",
+    "end": "1464-01-01",
+    "current": false,
+    "tenure": "36y 0d",
+    "party": "year-level backbone",
+    "era": "Muromachi period"
+  },
+  {
+    "name": "Ashikaga Yoshinori",
+    "role": "Shogun",
+    "start": "1429-01-01",
+    "end": "1442-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Ashikaga shogunate"
+  },
+  {
+    "name": "Ashikaga Yoshikatsu",
+    "role": "Shogun",
+    "start": "1442-01-01",
+    "end": "1449-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Ashikaga shogunate"
+  },
+  {
+    "name": "Ashikaga Yoshimasa",
+    "role": "Shogun",
+    "start": "1449-01-01",
+    "end": "1474-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone",
+    "era": "Ashikaga shogunate"
+  },
+  {
+    "name": "👑 Go-Tsuchimikado",
+    "role": "Emperor",
+    "start": "1464-01-01",
+    "end": "1500-01-01",
+    "current": false,
+    "tenure": "36y 0d",
+    "party": "year-level backbone",
+    "era": "Muromachi period"
+  },
+  {
+    "name": "Ashikaga Yoshihisa",
+    "role": "Shogun",
+    "start": "1474-01-01",
+    "end": "1490-01-01",
+    "current": false,
+    "tenure": "16y 0d",
+    "party": "year-level backbone",
+    "era": "Ashikaga shogunate"
+  },
+  {
+    "name": "Ashikaga Yoshitane",
+    "role": "Shogun",
+    "start": "1490-01-01",
+    "end": "1495-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone; 1st term (deposed 1493)",
+    "era": "Ashikaga shogunate"
+  },
+  {
+    "name": "Ashikaga Yoshizumi",
+    "role": "Shogun",
+    "start": "1495-01-01",
+    "end": "1508-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Ashikaga shogunate"
+  },
+  {
+    "name": "👑 Go-Kashiwabara",
+    "role": "Emperor",
+    "start": "1500-01-01",
+    "end": "1526-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone",
+    "era": "Muromachi period"
+  },
+  {
+    "name": "Ashikaga Yoshitane",
+    "role": "Shogun",
+    "start": "1508-01-01",
+    "end": "1522-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone; restored, 2nd term (1508–1522)",
+    "era": "Ashikaga shogunate"
+  },
+  {
+    "name": "Ashikaga Yoshiharu",
+    "role": "Shogun",
+    "start": "1522-01-01",
+    "end": "1547-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone",
+    "era": "Ashikaga shogunate"
+  },
+  {
+    "name": "👑 Go-Nara",
+    "role": "Emperor",
+    "start": "1526-01-01",
+    "end": "1557-01-01",
+    "current": false,
+    "tenure": "31y 0d",
+    "party": "year-level backbone",
+    "era": "Muromachi period"
+  },
+  {
+    "name": "Ashikaga Yoshiteru",
+    "role": "Shogun",
+    "start": "1547-01-01",
+    "end": "1568-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "year-level backbone",
+    "era": "Ashikaga shogunate"
+  },
+  {
+    "name": "👑 Ōgimachi",
+    "role": "Emperor",
+    "start": "1557-01-01",
+    "end": "1586-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level backbone",
+    "era": "Muromachi period"
+  },
+  {
+    "name": "Ashikaga Yoshihide",
+    "role": "Shogun",
+    "start": "1568-01-01",
+    "end": "1568-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "year-level backbone",
+    "era": "Ashikaga shogunate"
+  },
+  {
+    "name": "Ashikaga Yoshiaki",
+    "role": "Shogun",
+    "start": "1568-01-01",
+    "end": "1573-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Ashikaga shogunate"
+  },
+  {
+    "name": "👑 Go-Yōzei",
+    "role": "Emperor",
+    "start": "1586-01-01",
+    "end": "1611-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone",
+    "era": "Azuchi-Momoyama period"
+  },
+  {
+    "name": "Tokugawa Ieyasu",
+    "role": "Shogun",
+    "start": "1603-01-01",
+    "end": "1605-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Tokugawa shogunate"
+  },
+  {
+    "name": "Tokugawa Hidetada",
+    "role": "Shogun",
+    "start": "1605-01-01",
+    "end": "1623-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone",
+    "era": "Tokugawa shogunate"
+  },
+  {
+    "name": "👑 Go-Mizunoo",
+    "role": "Emperor",
+    "start": "1611-01-01",
+    "end": "1629-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "year-level backbone",
+    "era": "Edo period"
+  },
+  {
+    "name": "Tokugawa Iemitsu",
+    "role": "Shogun",
+    "start": "1623-01-01",
+    "end": "1651-01-01",
+    "current": false,
+    "tenure": "28y 0d",
+    "party": "year-level backbone",
+    "era": "Tokugawa shogunate"
+  },
+  {
+    "name": "👑 Meishō",
+    "role": "Empress",
+    "start": "1629-01-01",
+    "end": "1643-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone",
+    "era": "Edo period"
+  },
+  {
+    "name": "👑 Go-Kōmyō",
+    "role": "Emperor",
+    "start": "1643-01-01",
+    "end": "1655-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone",
+    "era": "Edo period"
+  },
+  {
+    "name": "Tokugawa Ietsuna",
+    "role": "Shogun",
+    "start": "1651-01-01",
+    "end": "1680-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level backbone",
+    "era": "Tokugawa shogunate"
+  },
+  {
+    "name": "👑 Go-Sai",
+    "role": "Emperor",
+    "start": "1655-01-01",
+    "end": "1663-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "Edo period"
+  },
+  {
+    "name": "👑 Reigen",
+    "role": "Emperor",
+    "start": "1663-01-01",
+    "end": "1687-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone",
+    "era": "Edo period"
+  },
+  {
+    "name": "Tokugawa Tsunayoshi",
+    "role": "Shogun",
+    "start": "1680-01-01",
+    "end": "1709-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level backbone",
+    "era": "Tokugawa shogunate"
+  },
+  {
+    "name": "👑 Higashiyama",
+    "role": "Emperor",
+    "start": "1687-01-01",
+    "end": "1709-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level backbone",
+    "era": "Edo period"
+  },
+  {
+    "name": "👑 Nakamikado",
+    "role": "Emperor",
+    "start": "1709-01-01",
+    "end": "1735-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone",
+    "era": "Edo period"
+  },
+  {
+    "name": "Tokugawa Ienobu",
+    "role": "Shogun",
+    "start": "1709-01-01",
+    "end": "1713-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Tokugawa shogunate"
+  },
+  {
+    "name": "Tokugawa Ietsugu",
+    "role": "Shogun",
+    "start": "1713-01-01",
+    "end": "1716-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Tokugawa shogunate"
+  },
+  {
+    "name": "Tokugawa Yoshimune",
+    "role": "Shogun",
+    "start": "1716-01-01",
+    "end": "1745-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "year-level backbone",
+    "era": "Tokugawa shogunate"
+  },
+  {
+    "name": "👑 Sakuramachi",
+    "role": "Emperor",
+    "start": "1735-01-01",
+    "end": "1747-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "year-level backbone",
+    "era": "Edo period"
+  },
+  {
+    "name": "Tokugawa Ieshige",
+    "role": "Shogun",
+    "start": "1745-01-01",
+    "end": "1760-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone",
+    "era": "Tokugawa shogunate"
+  },
+  {
+    "name": "👑 Momozono",
+    "role": "Emperor",
+    "start": "1747-01-01",
+    "end": "1762-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "year-level backbone",
+    "era": "Edo period"
+  },
+  {
+    "name": "Tokugawa Ieharu",
+    "role": "Shogun",
+    "start": "1760-01-01",
+    "end": "1787-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "year-level backbone",
+    "era": "Tokugawa shogunate"
+  },
+  {
+    "name": "👑 Go-Sakuramachi",
+    "role": "Empress",
+    "start": "1762-01-01",
+    "end": "1771-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Edo period"
+  },
+  {
+    "name": "👑 Go-Momozono",
+    "role": "Emperor",
+    "start": "1771-01-01",
+    "end": "1780-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Edo period"
+  },
+  {
     "name": "👑 Kōkaku",
     "role": "Emperor",
     "start": "1780-01-01",

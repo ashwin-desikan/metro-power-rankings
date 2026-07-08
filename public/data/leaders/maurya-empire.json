@@ -1,0 +1,92 @@
+[
+  {
+    "name": "👑 Chandragupta Maurya",
+    "role": "Emperor",
+    "start": "-0321-01-01",
+    "end": "-0298-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level backbone",
+    "era": "Maurya dynasty"
+  },
+  {
+    "name": "👑 Bindusara",
+    "role": "Emperor",
+    "start": "-0298-01-01",
+    "end": "-0272-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone",
+    "era": "Maurya dynasty"
+  },
+  {
+    "name": "👑 Ashoka",
+    "role": "Emperor",
+    "start": "-0268-01-01",
+    "end": "-0232-01-01",
+    "current": false,
+    "tenure": "36y 0d",
+    "party": "year-level backbone",
+    "era": "Maurya dynasty"
+  },
+  {
+    "name": "👑 Dasharatha",
+    "role": "Emperor",
+    "start": "-0232-01-01",
+    "end": "-0224-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "Maurya dynasty"
+  },
+  {
+    "name": "👑 Samprati",
+    "role": "Emperor",
+    "start": "-0224-01-01",
+    "end": "-0215-01-01",
+    "current": false,
+    "tenure": "9y 0d",
+    "party": "year-level backbone",
+    "era": "Maurya dynasty"
+  },
+  {
+    "name": "👑 Shalishuka",
+    "role": "Emperor",
+    "start": "-0215-01-01",
+    "end": "-0202-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Maurya dynasty"
+  },
+  {
+    "name": "👑 Devavarman",
+    "role": "Emperor",
+    "start": "-0202-01-01",
+    "end": "-0195-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Maurya dynasty"
+  },
+  {
+    "name": "👑 Shatadhanvan",
+    "role": "Emperor",
+    "start": "-0195-01-01",
+    "end": "-0187-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "Maurya dynasty"
+  },
+  {
+    "name": "👑 Brihadratha",
+    "role": "Emperor",
+    "start": "-0187-01-01",
+    "end": "-0185-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Maurya dynasty"
+  }
+]

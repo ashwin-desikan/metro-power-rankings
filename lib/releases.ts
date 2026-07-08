@@ -21,9 +21,10 @@ export const RELEASES: Release[] = [
     date: "2026-07-08",
     headline: "European club competitions join Live Standings, football tidied",
     items: [
-      "Champions League, Europa League, and Conference League fixtures and results now show on their tournament pages and on Live Standings.",
-      "Live Standings groups football into two columns: internationals and European cups on the left, domestic leagues on the right.",
+      "Champions League, Europa League, and Conference League fixtures now show on their tournament pages and on Live Standings, which lays football out as internationals and European cups beside the domestic leagues.",
       "In-season competitions keep a green live marker even when collapsed, so you can tell at a glance what is currently running.",
+      "Golf's majors now list the missing Open venues, with Royal Portrush and Turnberry joined to their metros, and Portugal's leadership history runs back to Afonso I in 1139.",
+      "The Leaders time machine now spans antiquity with 42 new historical powers, and the Power Atlas extends to 1500: benchmark-based shares for the age of Ming China, the Mughals, the Ottomans and the Habsburgs.",
     ],
   },
   {
