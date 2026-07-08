@@ -16,7 +16,30 @@ Run natively (openpyxl cannot read this workbook inside the Cowork sandbox):
 Optional args: <OtherLeagues.xlsx> <out_json>
 """
 import json, re, sys, unicodedata, collections, datetime
-from openpyxl import load_workbook
+import os, time, urllib.request, urllib.parse
+
+_SB_URL = (os.environ.get("SUPABASE_URL") or os.environ.get("NEXT_PUBLIC_SUPABASE_URL")
+           or "https://nmprqkmymrdknffwnuur.supabase.co").rstrip("/")
+_SB_KEY = (os.environ.get("SUPABASE_ANON_KEY") or os.environ.get("NEXT_PUBLIC_SUPABASE_ANON_KEY")
+           or "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5tcHJxa215bXJka25mZndudXVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyMDkzNDMsImV4cCI6MjA5ODc4NTM0M30.4RXU3mQ-Yl81ZqC2_a10aizKGu_87B4vt8OK5Pi_-sM")
+
+def _sb(table, select, order="id"):
+    out, step, off = [], 1000, 0
+    while True:
+        q = urllib.parse.urlencode({"select": select, "order": order, "limit": step, "offset": off})
+        req = urllib.request.Request(f"{_SB_URL}/rest/v1/{table}?{q}",
+                                     headers={"apikey": _SB_KEY, "Authorization": f"Bearer {_SB_KEY}"})
+        for _t in range(4):
+            try:
+                with urllib.request.urlopen(req, timeout=30) as rr:
+                    batch = json.load(rr); break
+            except Exception:
+                if _t == 3: raise
+                time.sleep(2)
+        out += batch
+        if len(batch) < step:
+            return out
+        off += step
 
 HERE = __file__
 REPO = re.sub(r"[\\/]scripts[\\/]rugby[\\/].*$", "", HERE.replace("\\", "/"))
@@ -33,32 +56,29 @@ def slug(t):
 MERGE = {"Western Samoa": "Samoa", "Ivory Coast": "Côte d'Ivoire"}
 
 def load_matches():
-    wb = load_workbook(WB, read_only=True, data_only=True)
-    ws = wb[SHEET]
-    rows = ws.iter_rows(values_only=True)
-    H = list(next(rows)); ix = {h: i for i, h in enumerate(H)}
-    def g(r, k): return r[ix[k]]
     seen, M = set(), []
-    for r in rows:
-        t, o = g(r, "Team"), g(r, "Opp Team")
+    for r in _sb("rugby_results",
+                 "date,team,wld,opp,pf,pa,comp,stage,city,country,home_away,"
+                 "rugby_world_cup,home_five_six_nations,tri_nations_rugby_champ,nations_championship"):
+        t, o = r["team"], r["opp"]
         if not t or not o: continue
         t = MERGE.get(str(t), str(t)); o = MERGE.get(str(o), str(o))
-        ds = str(g(r, "date (YYYYMMDD)"))
+        ds = str(r["date"])
         if len(ds) != 8: continue
         d = datetime.date(int(ds[:4]), int(ds[4:6]), int(ds[6:8]))
         if d > TODAY: continue
-        wld = str(g(r, "W/L/D") or "")
-        pf = int(g(r, "PF") or 0); pa = int(g(r, "PA") or 0)
+        wld = str(r["wld"] or "")
+        pf = int(r["pf"] or 0); pa = int(r["pa"] or 0)
         if wld not in ("W", "L", "D") or (pf == 0 and pa == 0): continue
         key = (d, frozenset((t, o)))
         if key in seen: continue
         seen.add(key)
         M.append(dict(d=d, team=t, opp=o, wld=wld, pf=pf, pa=pa, margin=abs(pf - pa),
-            comp=str(g(r, "competition") or ""), stage=str(g(r, "Stage") or ""),
-            rwc=bool(g(r, "Rugby World Cup")), six=bool(g(r, "Home/Five/Six Nations")),
-            tri=bool(g(r, "Tri Nations/Rugby Champ")), nc=bool(g(r, "Nations Championship")),
-            home=str(g(r, "Home/Away") or ""), city=str(g(r, "city") or ""),
-            country=str(g(r, "country") or "")))
+            comp=str(r["comp"] or ""), stage=str(r["stage"] or ""),
+            rwc=bool(r["rugby_world_cup"]), six=bool(r["home_five_six_nations"]),
+            tri=bool(r["tri_nations_rugby_champ"]), nc=bool(r["nations_championship"]),
+            home=str(r["home_away"] or ""), city=str(r["city"] or ""),
+            country=str(r["country"] or "")))
     M.sort(key=lambda m: m["d"])
     return M
 

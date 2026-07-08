@@ -100,7 +100,10 @@ def extract_rugby(wb):
     for r in list(wb["Rugby Union - Intl Results"].iter_rows(values_only=True))[1:]:
         res.append({"date": T(r[0]), "team": T(r[1]), "wld": T(r[2]), "opp": T(r[3]),
                     "pf": Iv(r[4]), "pa": Iv(r[5]), "comp": T(r[7]), "stage": T(r[8]),
-                    "stadium": T(r[10]), "city": T(r[11]), "country": T(r[12])})
+                    "stadium": T(r[10]), "city": T(r[11]), "country": T(r[12]),
+                    "home_away": T(r[13]),
+                    "home_five_six_nations": bool(r[14]), "tri_nations_rugby_champ": bool(r[15]),
+                    "nations_championship": bool(r[16]), "rugby_world_cup": bool(r[17])})
     tab = []
     for r in list(wb["Rugby Union - Intl Tables"].iter_rows(values_only=True))[1:]:
         tab.append({"season": T(r[0]), "comp": T(r[1]), "pool": T(r[2]), "place": T(r[3]),
