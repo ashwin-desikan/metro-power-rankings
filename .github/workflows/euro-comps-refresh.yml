@@ -44,13 +44,16 @@ jobs:
 
       - name: Commit and push only if anything changed
         run: |
-          if git diff --quiet -- public/data/football/euro-comps.json; then
+          # Stage first: `git diff` alone ignores an untracked new file, so on the
+          # first run (file not yet in the repo) it would falsely report no change
+          # and never commit. `git add` + `git diff --cached` detects new + modified.
+          git add public/data/football/euro-comps.json
+          if git diff --cached --quiet -- public/data/football/euro-comps.json; then
             echo "No change in euro-comps output; nothing to deploy."
             exit 0
           fi
           git config user.name "euro-comps-refresh-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/data/football/euro-comps.json
           git commit -m "Auto: refresh UEFA club competition fixtures [vercel skip]"
           for attempt in 1 2 3 4 5; do
             if git pull --rebase --autostash origin main && git push; then
