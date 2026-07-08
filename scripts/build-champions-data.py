@@ -71,6 +71,7 @@ def build_from_history(src):
     iDate     = col("Date Awarded", "Date")  # "Date" is used post-merge
     iNext     = col("Next Awarded Date")
     iTier     = col("Tier")
+    iGuide    = col("TierGuide", "Tier Guide")
     iCurrent  = col("Is Current")
     iIntl     = col("International"); iCont = col("Continental"); iDom = col("Domestic")
 
@@ -133,6 +134,11 @@ def build_from_history(src):
             tier = int(tier_raw) if tier_raw is not None else None
         except (TypeError, ValueError):
             tier = None
+        guide_raw = g(iGuide) if iGuide is not None else None
+        try:
+            tier_guide = float(guide_raw) if guide_raw not in (None, "") else None
+        except (TypeError, ValueError):
+            tier_guide = None
 
         out.append({
             "sport":           cell(g(iSport)),
@@ -145,6 +151,7 @@ def build_from_history(src):
             "nextAwarded":     to_year(next_val) if next_val else None,
             "nextAwardedDate": next_val,
             "tier":            tier,
+            "tierGuide":       tier_guide,
         })
 
     return out

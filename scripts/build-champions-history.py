@@ -113,7 +113,7 @@ def main():
     hdr = [str(c).strip() if c is not None else "" for c in rows[0]]
     REQUIRED = ["Sport", "Competition", "Era Name", "Season", "Year", "Champion",
                 "Champion (Canonical)", "Metro", "Metro Slug", "Date", "Scope Type"]
-    OPTIONAL = ["Tier", "Is Current", "Date Awarded", "Next Awarded Date"]
+    OPTIONAL = ["Tier", "TierGuide", "Is Current", "Date Awarded", "Next Awarded Date"]
     ix = {n: hdr.index(n) for n in REQUIRED}
     for n in OPTIONAL:
         if n in hdr:
@@ -137,6 +137,11 @@ def main():
             tier = int(float(tier_raw)) if tier_raw not in (None, "") else None
         except (TypeError, ValueError):
             tier = None
+        guide_raw = opt("TierGuide")
+        try:
+            tier_guide = float(guide_raw) if guide_raw not in (None, "") else None
+        except (TypeError, ValueError):
+            tier_guide = None
         out.append({
             "sport": cell(r[ix["Sport"]]),
             "competition": comp,
@@ -151,6 +156,7 @@ def main():
             "date": date,
             "scopeType": cell(r[ix["Scope Type"]]),
             "tier":            tier,
+            "tierGuide":       tier_guide,
             "isCurrent":       opt("Is Current") == "Y",
             "dateAwarded":     _norm_date(opt("Date Awarded")) or date or None,  # fallback to Date col
             "nextAwardedDate": _norm_date(opt("Next Awarded Date")) or None,

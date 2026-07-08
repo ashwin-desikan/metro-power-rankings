@@ -21,6 +21,7 @@ export type Championship = {
   nextAwarded: number | null;
   nextAwardedDate: string | null;
   tier: number | null;
+  tierGuide: number | null;
 };
 
 let _data: Championship[] | null = null;

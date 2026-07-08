@@ -58,6 +58,7 @@ export default function ChampionsHubPage() {
     .sort(
       (a, b) =>
         (a.tier ?? 99) - (b.tier ?? 99) ||
+        (a.tierGuide ?? 999) - (b.tierGuide ?? 999) ||
         sportRank(a.sport) - sportRank(b.sport) ||
         a.competition.localeCompare(b.competition),
     )
@@ -76,6 +77,7 @@ export default function ChampionsHubPage() {
       nextAwarded: c.nextAwarded,
       nextAwardedDate: c.nextAwardedDate,
       tier: c.tier,
+      tierGuide: c.tierGuide,
       gold: c.gold,
     }));
 

@@ -25,6 +25,7 @@ export type ChampHistoryRow = {
   metroSlug: string;
   date: string;
   scopeType: string;
+  tierGuide: number | null;
 };
 
 let _data: ChampHistoryRow[] | null = null;
@@ -70,6 +71,7 @@ export type CompIndexEntry = {
   geo: string;
   region: string;
   tier: number | null;
+  tierGuide: number | null;
   count: number;
   firstYear: number | null;
   lastYear: number | null;
@@ -98,6 +100,7 @@ export function getCompetitionIndex(): CompIndexEntry[] {
       geo: m.geo,
       region: m.region,
       tier: m.tier,
+      tierGuide: top.tierGuide ?? null,
       count: rows.length,
       firstYear: years.length ? Math.min(...years) : null,
       lastYear: years.length ? Math.max(...years) : null,
@@ -109,6 +112,7 @@ export function getCompetitionIndex(): CompIndexEntry[] {
   out.sort(
     (a, b) =>
       (a.tier ?? 99) - (b.tier ?? 99) ||
+      (a.tierGuide ?? 999) - (b.tierGuide ?? 999) ||
       a.sport.localeCompare(b.sport) ||
       a.competition.localeCompare(b.competition),
   );

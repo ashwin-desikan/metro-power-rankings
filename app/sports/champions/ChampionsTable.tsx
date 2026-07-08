@@ -27,6 +27,7 @@ export type ChampRow = {
   nextAwarded: number | null;
   nextAwardedDate: string | null;
   tier: number | null;
+  tierGuide: number | null;
   gold: boolean;
 };
 
@@ -175,7 +176,7 @@ export default function ChampionsTable({ rows }: { rows: ChampRow[] }) {
     out.sort((a, b) => {
       let cmp = 0;
       if (sortKey === "tier") {
-        cmp = (a.tier ?? 99) - (b.tier ?? 99);
+        cmp = (a.tier ?? 99) - (b.tier ?? 99) || (a.tierGuide ?? 999) - (b.tierGuide ?? 999);
       } else if (sortKey === "year") {
         cmp = (a.dateAwarded ?? "").localeCompare(b.dateAwarded ?? "") || (a.year ?? 0) - (b.year ?? 0);
       } else if (sortKey === "next") {
