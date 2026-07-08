@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
-import { getGolfMajors, byTournament, latestByTournament, nationSlug, type Champion, type Leader } from "@/lib/majors";
+import { getGolfMajors, latestByTournament, nationSlug, golfMajorMonths, type Champion, type Leader } from "@/lib/majors";
 import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import GolfChampionsTable, { type GolfRow } from "./GolfChampionsTable";
 
 export const dynamicParams = false;
 const PATH = "/teams/golf";
 const TITLE = "Golf's Majors";
 const DESC =
-  "Every men's major champion — The Open, U.S. Open, PGA Championship and the Masters — plus the Ryder Cup, all-time leaders, and the metros that have hosted them.";
+  "Every men's major champion at The Open, U.S. Open, PGA Championship, and the Masters, read greatness-first: the all-time leaders, the reigning champions, one filterable ledger of every winner, plus the Ryder Cup and the metros that host them.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -30,9 +31,19 @@ const TOUR_META: Record<string, { id: string; short: string }> = {
   "Masters Tournament": { id: "masters", short: "Masters" },
 };
 
+// Former states folded into the modern country for the by-nation tally, matching
+// the site's flag convention. Golf keeps the home nations (Scotland, England,
+// Wales, Northern Ireland) separate by tradition; only true duplicates merge.
+const NATION_CANON: Record<string, string> = {
+  "West Germany": "Germany",
+  "Republic of Ireland": "Ireland",
+};
+const canonNation = (n: string) => NATION_CANON[n] ?? n;
+
 function Flag({ nation }: { nation: string | null }) {
   const url = flagCdnUrl(nationSlug(nation) ?? "");
   if (!url) return null;
+  // eslint-disable-next-line @next/next/no-img-element
   return <img src={url} alt="" aria-hidden width={18} height={13} className="inline-block mr-1.5 align-[-2px]" />;
 }
 
@@ -45,52 +56,56 @@ function MetroCell({ c }: { c: Champion }) {
   );
 }
 
-function ChampTable({ rows }: { rows: Champion[] }) {
-  return (
-    <div className="rounded-xl border overflow-x-auto max-h-[460px] overflow-y-auto" style={card}>
-      <table className="w-full text-sm min-w-[620px]">
-        <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
-          <tr className="text-left text-xs text-[var(--text-muted)]">
-            <th className="py-2 px-3 font-medium">Year</th>
-            <th className="py-2 px-3 font-medium">Champion</th>
-            <th className="py-2 px-3 font-medium">Nation</th>
-            <th className="py-2 px-3 font-medium">Host venue &amp; metro</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((c, i) => (
-            <tr key={`${c.year}-${i}`} className="border-t" style={{ borderColor: "var(--border)" }}>
-              <td className="py-1.5 px-3 tabular-nums" style={mono}>{c.year}</td>
-              <td className="py-1.5 px-3 font-medium">{c.champion}{c.note === "dual" ? " *" : ""}</td>
-              <td className="py-1.5 px-3 text-[var(--text-muted)]"><Flag nation={c.nation} />{c.nation ?? "—"}</td>
-              <td className="py-1.5 px-3 text-[var(--text-muted)]"><MetroCell c={c} /></td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
+// Fallback month each major was played, used only when the real date is not in
+// champions-history.json. The PGA closed the season (roughly August) through
+// 2018 and moved to May in 2019; it opened the 1971 season in February. The
+// others have held their slots: Masters in April, U.S. Open in June, The Open in July.
+function majorMonth(tournament: string, year: number): number {
+  switch (tournament) {
+    case "Masters Tournament": return 4;
+    case "U.S. Open": return 6;
+    case "The Open Championship": return 7;
+    case "PGA Championship": return year >= 2019 ? 5 : year === 1971 ? 2 : 8;
+    default: return 0;
+  }
 }
 
-function LeaderTable({ leaders, tours }: { leaders: Leader[]; tours: string[] }) {
+// First and last major-winning year per player, from the champions list.
+function majorSpans(champions: Champion[]): Map<string, { first: number; last: number }> {
+  const m = new Map<string, { first: number; last: number }>();
+  for (const c of champions) {
+    const e = m.get(c.champion);
+    if (!e) m.set(c.champion, { first: c.year, last: c.year });
+    else { e.first = Math.min(e.first, c.year); e.last = Math.max(e.last, c.year); }
+  }
+  return m;
+}
+
+function LeaderTable({ leaders, tours, spans }: { leaders: Leader[]; tours: string[]; spans: Map<string, { first: number; last: number }> }) {
   return (
     <div className="rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto" style={card}>
-      <table className="w-full text-sm min-w-[640px]">
+      <table className="w-full text-sm min-w-[700px]">
         <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
           <tr className="text-left text-xs text-[var(--text-muted)]">
             <th className="py-2 px-3 font-medium">Player</th>
+            <th className="py-2 px-3 text-right font-medium">Span</th>
             <th className="py-2 px-3 text-right font-medium" style={{ color: GOLD }}>Majors</th>
             {tours.map((t) => <th key={t} className="py-2 px-3 text-right font-medium">{TOUR_META[t]?.short ?? t}</th>)}
           </tr>
         </thead>
         <tbody>
-          {leaders.filter((l) => l.total >= 2).map((l) => (
-            <tr key={l.player} className="border-t" style={{ borderColor: "var(--border)" }}>
-              <td className="py-1.5 px-3 font-medium"><Flag nation={l.nation} />{l.player}</td>
-              <td className="py-1.5 px-3 text-right tabular-nums font-semibold" style={{ ...mono, color: GOLD }}>{l.total}</td>
-              {tours.map((t) => <td key={t} className="py-1.5 px-3 text-right tabular-nums text-[var(--text-muted)]" style={mono}>{l.byTour[t] ?? ""}</td>)}
-            </tr>
-          ))}
+          {leaders.filter((l) => l.total >= 2).map((l) => {
+            const s = spans.get(l.player);
+            const span = s ? (s.first === s.last ? `${s.first}` : `${s.first}–${s.last}`) : "";
+            return (
+              <tr key={l.player} className="border-t" style={{ borderColor: "var(--border)" }}>
+                <td className="py-1.5 px-3 font-medium"><Flag nation={l.nation} />{l.player}</td>
+                <td className="py-1.5 px-3 text-right tabular-nums text-[var(--text-muted)]" style={mono}>{span}</td>
+                <td className="py-1.5 px-3 text-right tabular-nums font-semibold" style={{ ...mono, color: GOLD }}>{l.total}</td>
+                {tours.map((t) => <td key={t} className="py-1.5 px-3 text-right tabular-nums text-[var(--text-muted)]" style={mono}>{l.byTour[t] ?? ""}</td>)}
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
@@ -100,9 +115,36 @@ function LeaderTable({ leaders, tours }: { leaders: Leader[]; tours: string[] })
 export default function GolfHubPage() {
   const data = getGolfMajors();
   if (!data) return null;
-  const grouped = byTournament(data.champions);
   const latest = latestByTournament(data.champions);
   const ryderTally = data.ryderTally;
+  const months = golfMajorMonths(); // real month per (year, major) from the championship record
+
+  // By-nation, consolidated: true duplicates fold into the modern country.
+  const nationMap = new Map<string, { nation: string; titles: number }>();
+  for (const n of data.byNation) {
+    const key = canonNation(n.nation);
+    const e = nationMap.get(key) ?? { nation: key, titles: 0 };
+    e.titles += n.titles; nationMap.set(key, e);
+  }
+  const nations = [...nationMap.values()].sort((a, b) => b.titles - a.titles);
+
+  // One combined, filterable ledger: one row per champion, flags precomputed
+  // here so the client table stays server-only-free.
+  const editions: GolfRow[] = data.champions.map((c) => {
+    const slug = nationSlug(c.nation);
+    return {
+      year: c.year,
+      tournament: c.tournament,
+      seasonMonth: months[`${c.year}|${c.tournament}`] ?? majorMonth(c.tournament, c.year),
+      champion: c.champion,
+      flagUrl: (slug ? flagCdnUrl(slug) : "") || null,
+      nation: c.nation,
+      dual: c.note === "dual",
+      venue: c.venue ?? null,
+      metroSlug: c.metroSlug ?? null,
+      metroName: c.metroName ?? null,
+    };
+  });
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
@@ -115,18 +157,16 @@ export default function GolfHubPage() {
       <header className="mb-8">
         <h1 className="text-3xl font-semibold tracking-tight">Golf&apos;s Majors</h1>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
-          The four men&apos;s majors since 1860, the Ryder Cup, and the all-time
-          leaders — read through the lens this project cares about: the places that
-          host them. Every champion links to the metro that staged the win.
+          The four men&apos;s majors since 1860, read through the lens this project cares about:
+          the all-time leaders, the reigning champions, and one filterable ledger of every winner,
+          each linked to the metro that staged it.
         </p>
       </header>
 
       <HubNav
         items={[
-          { label: "The Open", href: "#the-open" },
-          { label: "U.S. Open", href: "#us-open" },
-          { label: "PGA", href: "#pga" },
-          { label: "Masters", href: "#masters" },
+          { label: "Reigning champions", href: "#now" },
+          { label: "All champions", href: "#champions" },
           { label: "All-time leaders", href: "#leaders" },
           { label: "By nation", href: "#by-nation" },
           { label: "Ryder Cup", href: "#ryder-cup" },
@@ -135,40 +175,44 @@ export default function GolfHubPage() {
         ]}
       />
 
-      {/* recent winners */}
-      <section className="mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-        {data.tournaments.map((t) => {
-          const c = latest.get(t);
-          if (!c) return null;
-          return (
-            <div key={t} className="rounded-xl border p-4" style={card}>
-              <div className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">{TOUR_META[t]?.short ?? t} · {c.year}</div>
-              <div className="mt-1 font-semibold"><Flag nation={c.nation} />{c.champion}</div>
-              <div className="mt-1 text-xs text-[var(--text-muted)]"><MetroCell c={c} /></div>
-            </div>
-          );
-        })}
+      {/* reigning champions */}
+      <section id="now" className="mb-12">
+        <h2 className="text-lg font-semibold mb-3">Reigning champions</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          {data.tournaments.map((t) => {
+            const c = latest.get(t);
+            if (!c) return null;
+            return (
+              <div key={t} className="rounded-xl border p-4" style={card}>
+                <div className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">{TOUR_META[t]?.short ?? t} · {c.year}</div>
+                <div className="mt-1 font-semibold"><Flag nation={c.nation} />{c.champion}</div>
+                <div className="mt-1 text-xs text-[var(--text-muted)]"><MetroCell c={c} /></div>
+              </div>
+            );
+          })}
+        </div>
       </section>
 
-      {/* per-major champion tables */}
-      {data.tournaments.map((t) => (
-        <section key={t} className="mb-10">
-          <h2 id={TOUR_META[t]?.id ?? t} className="text-lg font-semibold mb-1">{t}</h2>
-          <p className="text-xs text-[var(--text-muted)] mb-3">Every champion, most recent first.</p>
-          <ChampTable rows={grouped.get(t) ?? []} />
-        </section>
-      ))}
+      {/* one combined, filterable champions ledger */}
+      <section className="mb-12">
+        <h2 id="champions" className="text-lg font-semibold mb-1">Every major champion</h2>
+        <p className="text-xs text-[var(--text-muted)] mb-3">
+          All four majors in one ledger, most recent first. Filter by major or year.
+        </p>
+        <GolfChampionsTable rows={editions} tournaments={data.tournaments} />
+      </section>
 
-      {/* leaders */}
-      <section className="mb-10">
+      {/* all-time leaders (the summit) */}
+      <section className="mb-12">
         <h2 id="leaders" className="text-lg font-semibold mb-1">All-time leaders</h2>
-        <p className="text-xs text-[var(--text-muted)] mb-3">Players with two or more majors, by total.</p>
-        <LeaderTable leaders={data.leaders} tours={data.tournaments} />
+        <p className="text-xs text-[var(--text-muted)] mb-3">Players with two or more majors, by total, with the span of their major wins.</p>
+        <LeaderTable leaders={data.leaders} tours={data.tournaments} spans={majorSpans(data.champions)} />
       </section>
 
       {/* by nation */}
-      <section className="mb-10">
-        <h2 id="by-nation" className="text-lg font-semibold mb-3">By nation</h2>
+      <section className="mb-12">
+        <h2 id="by-nation" className="text-lg font-semibold mb-1">By nation</h2>
+        <p className="text-xs text-[var(--text-muted)] mb-3">Men&apos;s majors by country, true duplicates folded into the modern nation.</p>
         <div className="rounded-xl border overflow-x-auto max-h-[440px] overflow-y-auto" style={card}>
           <table className="w-full text-sm min-w-[320px]">
             <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
@@ -178,7 +222,7 @@ export default function GolfHubPage() {
               </tr>
             </thead>
             <tbody>
-              {data.byNation.map((n) => (
+              {nations.map((n) => (
                 <tr key={n.nation} className="border-t" style={{ borderColor: "var(--border)" }}>
                   <td className="py-1.5 px-3"><Flag nation={n.nation} />{n.nation}</td>
                   <td className="py-1.5 px-3 text-right tabular-nums font-semibold" style={{ ...mono, color: GOLD }}>{n.titles}</td>
@@ -190,7 +234,7 @@ export default function GolfHubPage() {
       </section>
 
       {/* Ryder Cup */}
-      <section className="mb-10">
+      <section className="mb-12">
         <h2 id="ryder-cup" className="text-lg font-semibold mb-1">Ryder Cup</h2>
         <p className="text-xs text-[var(--text-muted)] mb-3" style={mono}>
           United States {ryderTally["United States"] ?? 0} · Europe {ryderTally["Europe"] ?? 0} · Great Britain {ryderTally["Great Britain"] ?? 0} · Tied {ryderTally["Tied"] ?? 0}
@@ -224,7 +268,7 @@ export default function GolfHubPage() {
       </section>
 
       {/* venues & metros */}
-      <section className="mb-10">
+      <section className="mb-12">
         <h2 id="venues" className="text-lg font-semibold mb-1">Venues &amp; metros</h2>
         <p className="text-xs text-[var(--text-muted)] mb-3">
           Metros that have hosted a men&apos;s major, by number of majors staged. Each links to its page.
@@ -247,9 +291,13 @@ export default function GolfHubPage() {
           PGA Championship from 1916 and the Masters from 1934, through the current
           season. Career totals use the running count of professional majors. Players
           marked with an asterisk held dual nationality; the primary nation is shown.
-          This hub tracks the men&apos;s majors only; an LPGA and women&apos;s-majors
-          layer is a known gap. Host metros are joined to each champion through the
-          venue that staged the event, so every winner links to the place it happened.
+          Within a year the ledger orders the majors by the actual date each was played,
+          newest first, so the PGA Championship closes the season through 2018 and sits in
+          May from 2019. In the by-nation tally, West Germany is
+          folded into Germany; the home nations of Scotland, England, Wales, and Northern
+          Ireland are kept separate by tradition. This hub tracks the men&apos;s majors
+          only; an LPGA and women&apos;s-majors layer is a known gap. Host metros are
+          joined to each champion through the venue that staged the event.
         </p>
       </section>
     </main>

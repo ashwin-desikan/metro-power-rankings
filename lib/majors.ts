@@ -72,6 +72,33 @@ export function getTennisMajors(): TennisData | null {
   return _tennis;
 }
 
+// Real month each golf major was played, keyed `${year}|${golf.json tournament}`.
+// Sourced from champions-history.json (built from Champions_History.xlsx, which
+// carries a date for every major); Majors.xlsx has no dates. Used to order the
+// golf ledger by the actual calendar of each season (e.g. the PGA closing the
+// year through 2018, then May from 2019). Falls back gracefully when a row is
+// missing a date.
+const GOLF_HISTORY_NAME: Record<string, string> = {
+  "US Open Championship": "U.S. Open",
+  "Masters Tournament": "Masters Tournament",
+  "PGA Championship": "PGA Championship",
+  "The Open Championship": "The Open Championship",
+};
+let _golfMonths: Record<string, number> | null = null;
+export function golfMajorMonths(): Record<string, number> {
+  if (_golfMonths) return _golfMonths;
+  const rows = loadJson<Array<{ competition?: string; year?: number; date?: string }>>("../champions-history.json") ?? [];
+  const out: Record<string, number> = {};
+  for (const r of rows) {
+    const g = r.competition ? GOLF_HISTORY_NAME[r.competition] : undefined;
+    if (!g || !r.year || !r.date) continue;
+    const m = Number(String(r.date).slice(5, 7));
+    if (m >= 1 && m <= 12) out[`${r.year}|${g}`] = m;
+  }
+  _golfMonths = out;
+  return out;
+}
+
 // Group a flat champions list by tournament, each sorted most-recent first.
 export function byTournament(champs: Champion[], gender?: "M" | "W"): Map<string, Champion[]> {
   const m = new Map<string, Champion[]>();

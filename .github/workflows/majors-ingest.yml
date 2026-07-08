@@ -1,0 +1,67 @@
+name: Majors auto-update (ESPN -> Supabase -> site)
+
+# Fully automatic, no human step. Daily it reads ESPN's golf and tennis feeds and,
+# when a major shows final, records the new champion straight into the live
+# golf_majors / tennis_majors Supabase tables (host metro auto-resolved from a
+# prior edition of the same venue/tournament), then rebuilds the majors JSON from
+# Supabase and commits it. The golf/tennis hubs bake this JSON at build time
+# (readFileSync), so the commit intentionally triggers a normal Vercel deploy to
+# publish the champion — only ~8 majors a year, so a build each is cheap.
+# Idempotent: already-recorded champions are skipped and quiet days commit nothing.
+#
+# Needs the SUPABASE_WRITE_KEY repo secret (Supabase key with insert/update on the
+# majors tables). Without it the detect step runs dry and nothing is written.
+
+on:
+  schedule:
+    - cron: "30 5 * * *"   # daily 05:30 UTC (finals finish the prior day)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: majors-ingest
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
+        with:
+          python-version: "3.12"
+
+      - name: Detect and record new major champions
+        env:
+          SUPABASE_WRITE_KEY: ${{ secrets.SUPABASE_WRITE_KEY }}
+        run: |
+          if [ -z "$SUPABASE_WRITE_KEY" ]; then
+            echo "SUPABASE_WRITE_KEY not set; detect-only dry run (nothing written)."
+          fi
+          python3 scripts/ingest/majors_ingest.py
+
+      - name: Rebuild majors JSON from Supabase
+        run: python3 scripts/build-majors-data.py
+
+      - name: Commit refreshed JSON if anything changed
+        run: |
+          git add public/data/majors/golf.json public/data/majors/tennis.json public/data/majors/zzc-titles.json
+          if git diff --cached --quiet; then
+            echo "No change in majors output; nothing to publish."
+            exit 0
+          fi
+          git config user.name "majors-update-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "Auto: record new major champion(s)"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "Pushed on attempt $attempt."; exit 0
+            fi
+            echo "Push race on attempt $attempt; retrying..."; sleep $((attempt * 5))
+          done
+          echo "Failed to push after retries." >&2; exit 1

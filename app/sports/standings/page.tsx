@@ -369,7 +369,26 @@ function wc2026KnockoutSubTables(wc: ReturnType<typeof mergeWc2026Live>): SubTab
       : dt.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" });
   };
   const ROUND_ORDER = ["Round of 32", "Round of 16", "Quarterfinals", "Semifinals", "Third Place Game", "Final"];
-  return ROUND_ORDER.map((rn): SubTable | null => {
+  // Show only a rolling two-round window: the last completed round and the
+  // current round. Rounds two-or-more completed rounds ago (e.g. the Round of 32
+  // once the Quarterfinals are up) drop off so the block stays current.
+  const populatedRounds = ROUND_ORDER.filter((rn) => (ko[rn] ?? []).some((m) => m.team_slug && m.opp_slug));
+  const roundComplete = (rn: string): boolean => {
+    const ms = (ko[rn] ?? []).filter((m) => m.team_slug && m.opp_slug);
+    return ms.length > 0 && ms.every((m) => m.played && m.team_score !== null && m.opp_score !== null);
+  };
+  const currentIdx = populatedRounds.findIndex((rn) => !roundComplete(rn));
+  const keepRounds = new Set<string>(
+    (currentIdx === -1
+      ? populatedRounds.slice(-1) // between rounds / tournament over: just the latest completed round
+      : [populatedRounds[currentIdx - 1], populatedRounds[currentIdx]].filter(Boolean) as string[]),
+  );
+  // Third Place Game and the Final are one concluding stage — never split them.
+  if (keepRounds.has("Third Place Game") || keepRounds.has("Final")) {
+    keepRounds.add("Third Place Game");
+    keepRounds.add("Final");
+  }
+  return ROUND_ORDER.filter((rn) => keepRounds.has(rn)).map((rn): SubTable | null => {
     const matches = (ko[rn] ?? []).filter((m) => m.team_slug && m.opp_slug);
     if (matches.length === 0) return null;
     const rows = matches.map((m): SRow => {
