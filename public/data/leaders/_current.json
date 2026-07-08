@@ -9,8 +9,10 @@
     "role": "PM",
     "second": {
       "name": "Bajram Begaj",
-      "role": "Pres."
-    }
+      "role": "Pres.",
+      "since": "2022-07-24"
+    },
+    "since": "2013-09-15"
   },
   "algeria": {
     "name": "Abdelmadjid Tebboune",
@@ -226,7 +228,8 @@
   },
   "chad": {
     "name": "Mahamat Déby",
-    "role": "Pres."
+    "role": "Pres.",
+    "since": "2024-05-23"
   },
   "chile": {
     "name": "José Antonio Kast",
@@ -628,7 +631,8 @@
   },
   "laos": {
     "name": "Thongloun Sisoulith",
-    "role": "Pres."
+    "role": "Pres.",
+    "since": "2021-03-22"
   },
   "latvia": {
     "name": "Edgars Rinkēvičs",
@@ -1161,7 +1165,8 @@
   },
   "tajikistan": {
     "name": "Emomali Rahmon",
-    "role": "Pres."
+    "role": "Pres.",
+    "since": "1994-11-06"
   },
   "tanzania": {
     "name": "Samia Suluhu Hassan",

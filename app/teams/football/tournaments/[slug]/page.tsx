@@ -11,6 +11,8 @@ import {
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import MostDecoratedTable from "./MostDecoratedTable";
 import ContinentalTable from "./ContinentalTable";
+import EuroCompFixtures from "./EuroCompFixtures";
+import { getEuroCompFixtures } from "@/lib/euroComps";
 import HubNav from "@/app/teams/HubNav";
 
 export const dynamicParams = false;
@@ -52,8 +54,10 @@ export default async function ClubTournamentHubPage({ params }: Props) {
   }
 
   const hasCurrent = hub.active && hub.current_entries.length > 0;
+  const euroFix = hub.active ? await getEuroCompFixtures(slug) : null;
 
   const navItems = [
+    ...(euroFix ? [{ label: "Fixtures", href: "#fixtures" }] : []),
     ...(hasCurrent ? [{ label: "Current Season", href: "#current" }] : []),
     { label: "All-Time Finals", href: "#finals" },
     ...(hub.most_decorated.length > 0 ? [{ label: "Most Decorated", href: "#most-decorated" }] : []),
@@ -109,6 +113,8 @@ export default async function ClubTournamentHubPage({ params }: Props) {
       </header>
 
       {navItems.length > 1 && <HubNav items={navItems} />}
+
+      {euroFix && <EuroCompFixtures data={euroFix} />}
 
       {hasCurrent && (
         <div id="current">

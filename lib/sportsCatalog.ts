@@ -173,6 +173,7 @@ export type SportsFeature = {
 
 export const SPORTS_FEATURES: SportsFeature[] = [
   { href: "/sports/standings", label: "Live Standings", hint: "Every in-season league table in one place", live: true },
+  { href: "/sports/champions", label: "Champions", hint: "Every current and all-time champion across sports" },
   { href: "/sports/zone-zero-cup", label: "Zone Zero Cup", hint: "National sporting-merit index across all sports" },
   { href: "/sports/games", label: "The Greatest Games", hint: "Top games of all time by Game Score" },
   { href: "/sports/rivalries", label: "Sports Rivalries", hint: "Cross-sport derbies, classics and grudge matches" },

@@ -20,6 +20,9 @@ import { getLiveGolfMajor } from "@/lib/golfLeaderboard";
 import { getLiveTennisSlam } from "@/lib/tennisDraw";
 import { f1ConstructorCrestName } from "@/lib/f1Crest";
 import { getWtcStandings } from "@/lib/wtcStandings";
+import { getRugbyFixtures, type RugbyMatch } from "@/lib/rugbyFixtures";
+import { getCricketFixtures, type CricketMatch } from "@/lib/cricketFixtures";
+import { getEuroCompFixtures, type EuroMatch } from "@/lib/euroComps";
 
 import { getAllFranchises as nflFranchises, logoUrlFor as nflLogo, monogramFor as nflMono } from "@/lib/nfl";
 import { getAllFranchises as nbaFranchises, logoUrlFor as nbaLogo, monogramFor as nbaMono } from "@/lib/nba";
@@ -56,8 +59,31 @@ type Cell = string | number;
 type Mono = { text: string; bg: string; fg: string };
 type SRow = { rank: number | string | null; name: string; href?: string | null; logoUrl?: string | null; flagUrl?: string | null; crestName?: string | null; monogram?: Mono | null; cells: Cell[] };
 type SubTable = { title: string | null; columns: string[]; rows: SRow[] };
-type Block = { league: string; href: string | null; note: string | null; open: boolean; subTables: SubTable[]; cols?: boolean };
-type SportGroup = { sport: string; blocks: Block[] };
+type Block = { league: string; href: string | null; note: string | null; open: boolean; subTables: SubTable[]; cols?: boolean; live?: boolean };
+type SportGroup = { sport: string; blocks: Block[]; columns?: [Block[], Block[]] };
+
+// The Football section on Live Standings renders as two columns: the LEFT column
+// holds international + European competitions, the RIGHT column holds domestic
+// leagues, each in the order below. When a NEW football table is added, place it
+// in the correct column at the correct rank (ask which column + slot if unsure);
+// anything not listed appends to the end of the right column.
+const FOOTBALL_LEFT = [
+  "FIFA World Cup 2026",
+  "Champions League",
+  "Europa League",
+  "Conference League",
+];
+const FOOTBALL_RIGHT = [
+  "Premier League", "La Liga", "Bundesliga", "Serie A", "Ligue 1",
+  "Championship", "League One", "League Two", "National League",
+  "Eredivisie", "Primeira Liga", "Scottish Premiership",
+  "MLS", "WSL", "NWSL",
+];
+const orderBy = (list: string[]) => (a: Block, b: Block): number => {
+  const ia = list.indexOf(a.league);
+  const ib = list.indexOf(b.league);
+  return (ia === -1 ? list.length : ia) - (ib === -1 ? list.length : ib);
+};
 
 const DASH = "—";
 const slugId = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");
@@ -117,7 +143,12 @@ function LeagueAccordion({ block }: { block: Block }) {
   return (
     <details open={block.open} className="rounded-xl border overflow-hidden" style={cardStyle}>
       <summary className="cursor-pointer select-none px-4 py-2.5 flex items-center justify-between gap-2">
-        <span className="font-semibold text-sm">{block.league}</span>
+        <span className="font-semibold text-sm flex items-center gap-1.5">
+          {block.live && (
+            <span className="inline-block w-2 h-2 rounded-full bg-[#22c55e] animate-pulse flex-shrink-0" aria-label="In season" title="Currently in season" />
+          )}
+          {block.league}
+        </span>
         <span className="flex items-center gap-2">
           {block.note && <span className="text-[10px] text-[var(--text-dim)]">{block.note}</span>}
           {block.href && (
@@ -480,18 +511,90 @@ async function tennisBlock(): Promise<Block | null> {
   return { league: `Tennis — ${tournament}`, href: "/teams/tennis", note: "live", open: true, subTables };
 }
 
+const _slugName = (n: string) => n.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+const _ruOverride: Record<string, string> = { "Ivory Coast": "ivory-coast", "Western Samoa": "samoa" };
+const _ruFlag = (n: string) => flagCdnUrl(_ruOverride[n] ?? _slugName(n));
+const _crFlag = (n: string) => flagCdnUrl(_slugName(n));
+
+async function rugbyFixturesBlock(): Promise<Block | null> {
+  const f = await getRugbyFixtures();
+  if (!f) return null;
+  const dt = (d: string) => new Date(d + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
+  const mk = (title: string, items: RugbyMatch[], score: boolean): SubTable | null =>
+    items.length ? {
+      title, columns: [score ? "Score" : "Date"],
+      rows: items.map((m): SRow => ({ rank: null, name: `${m.teamA} v ${m.teamB}`, flagUrl: _ruFlag(m.teamA),
+        cells: [score && m.scoreA != null && m.scoreB != null ? `${m.scoreA}\u2013${m.scoreB}` : dt(m.date)] })),
+    } : null;
+  const subTables = [mk("Live", f.live, true), mk("Upcoming", f.upcoming, false), mk("Recent", f.recent, true)]
+    .filter((st): st is SubTable => st !== null);
+  if (subTables.length === 0) return null;
+  return { league: "Internationals", href: "/teams/rugby-union", note: f.live.length ? "live" : "fixtures", open: true, subTables };
+}
+
+async function cricketFixturesBlock(): Promise<Block | null> {
+  const f = await getCricketFixtures();
+  if (!f) return null;
+  const dt = (d: string) => (d ? new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" }) : "");
+  const info = (m: CricketMatch, score: boolean) =>
+    score && (m.scoreA || m.scoreB) ? `${m.scoreA ?? ""} / ${m.scoreB ?? ""}`.trim() : dt(m.date);
+  const mk = (title: string, items: CricketMatch[], score: boolean): SubTable | null =>
+    items.length ? {
+      title, columns: [score ? "Score" : "Date"],
+      rows: items.map((m): SRow => ({ rank: null, name: `${m.format} \u00b7 ${m.teamA} v ${m.teamB}`, flagUrl: _crFlag(m.teamA), cells: [info(m, score)] })),
+    } : null;
+  const subTables = [mk("Live", f.live, true), mk("Upcoming", f.upcoming, false), mk("Recent", f.recent, true)]
+    .filter((st): st is SubTable => st !== null);
+  if (subTables.length === 0) return null;
+  return { league: "Internationals", href: "/teams/cricket", note: f.live.length ? "live" : "fixtures", open: true, subTables };
+}
+
+async function euroFixturesBlocks(): Promise<Block[]> {
+  const comps: Array<[string, string]> = [
+    ["champions-league", "Champions League"],
+    ["europa-league", "Europa League"],
+    ["conference-league", "Conference League"],
+  ];
+  const dt = (d: string) => (d ? new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" }) : "");
+  const data = await Promise.all(comps.map(([s]) => getEuroCompFixtures(s)));
+  const blocks: Block[] = [];
+  comps.forEach(([slug, label], i) => {
+    const c = data[i];
+    if (!c) return;
+    const mk = (title: string, items: EuroMatch[], score: boolean): SubTable | null =>
+      items.length ? {
+        title, columns: [score ? "Score" : "Date"],
+        rows: items.map((m): SRow => ({ rank: null, name: `${m.home} v ${m.away}`,
+          cells: [score && m.homeGoals != null && m.awayGoals != null ? `${m.homeGoals}–${m.awayGoals}` : dt(m.date)] })),
+      } : null;
+    const subTables = [mk("Live", c.live, true), mk("Upcoming", c.upcoming, false), mk("Recent", c.recent, true)]
+      .filter((st): st is SubTable => st !== null);
+    if (!subTables.length) return;
+    blocks.push({ league: label, href: `/teams/football/tournaments/${slug}`, note: c.live.length ? "live" : "fixtures", open: true, subTables });
+  });
+  return blocks;
+}
+
 export default async function LiveStandingsPage() {
-  const [nfl, nba, wnba, nhl, mlb, npb, mls, nwsl, wc, cfl, afl, nrl, f1, golf, tennis, wtc] = await Promise.all([
+  const [nfl, nba, wnba, nhl, mlb, npb, mls, nwsl, wc, cfl, afl, nrl, f1, golf, tennis, wtc, rugbyFix, cricketFix, euro] = await Promise.all([
     nflBlock(), nbaBlock(), wnbaBlock(), nhlBlock(), mlbBlock(), npbBlock(),
     mlsBlock(), nwslBlock(), wc2026Block(), cflBlock(), footyBlock("afl"), footyBlock("nrl"), f1Block(),
-    golfBlock(), tennisBlock(), wtcBlock(),
+    golfBlock(), tennisBlock(), wtcBlock(), rugbyFixturesBlock(), cricketFixturesBlock(), euroFixturesBlocks(),
   ]);
+
+  // Collapse a block so the user opens it on demand (keeps a busy section tidy),
+  // but preserve its in-season state as `live` so the green dot still shows.
+  const collapse = (b: Block | null): Block | null => (b ? { ...b, live: b.open, open: false } : b);
 
   // Ordered to match the League Hubs (lib/sportsCatalog FAMILY_ORDER), with
   // Football first for the World Cup. Olympics/Cricket/Rugby Union/Handball/
   // Volleyball have no live feed here, so they are simply absent.
   const groups: SportGroup[] = [
-    { sport: "Football", blocks: [wc, mls, nwsl] },
+    // Keep the World Cup open by default; collapse the club competitions
+    // (European comps + MLS + NWSL) so the Football section doesn't overwhelm.
+    // Order is enforced by footballRank in the normalization step below, so the
+    // top-ranked tables fill the top row of the 2-column grid.
+    { sport: "Football", blocks: [wc, ...euro.map(collapse), collapse(mls), collapse(nwsl)] },
     { sport: "Motorsport", blocks: [f1] },
     { sport: "Golf", blocks: [golf] },
     { sport: "Tennis", blocks: [tennis] },
@@ -499,11 +602,24 @@ export default async function LiveStandingsPage() {
     { sport: "Basketball", blocks: [nba, wnba] },
     { sport: "Baseball", blocks: [mlb, npb] },
     { sport: "Hockey", blocks: [nhl] },
-    { sport: "Cricket", blocks: [wtc] },
+    { sport: "Cricket", blocks: [wtc, cricketFix] },
+    { sport: "Rugby Union", blocks: [rugbyFix] },
     { sport: "Rugby League", blocks: [nrl] },
     { sport: "Aussie Rules", blocks: [afl] },
   ]
-    .map((g) => ({ sport: g.sport, blocks: g.blocks.filter((b): b is Block => b !== null && b.subTables.length > 0) }))
+    .map((g) => {
+      let blocks = g.blocks
+        .filter((b): b is Block => b !== null && b.subTables.length > 0)
+        .map((b) => ({ ...b, live: b.live ?? b.open }));
+      if (g.sport === "Football") {
+        const known = new Set([...FOOTBALL_LEFT, ...FOOTBALL_RIGHT]);
+        const left = blocks.filter((b) => FOOTBALL_LEFT.includes(b.league)).sort(orderBy(FOOTBALL_LEFT));
+        const right = blocks.filter((b) => FOOTBALL_RIGHT.includes(b.league)).sort(orderBy(FOOTBALL_RIGHT));
+        const other = blocks.filter((b) => !known.has(b.league)); // unlisted: park at end of right, ask where it belongs
+        return { sport: g.sport, blocks, columns: [left, [...right, ...other]] as [Block[], Block[]] };
+      }
+      return { sport: g.sport, blocks };
+    })
     .filter((g) => g.blocks.length > 0);
 
   return (
@@ -542,13 +658,24 @@ export default async function LiveStandingsPage() {
           {groups.map((g) => (
             <section key={g.sport} id={slugId(g.sport)} className="scroll-mt-24">
               <h2 className="text-lg font-semibold mb-3">{g.sport}</h2>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 items-start">
-                {g.blocks.map((b) => (
-                  <div key={b.league} className={b.cols ? "lg:col-span-2" : undefined}>
-                    <LeagueAccordion block={b} />
+              {g.columns ? (
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 items-start">
+                  <div className="space-y-3">
+                    {g.columns[0].map((b) => <LeagueAccordion key={b.league} block={b} />)}
                   </div>
-                ))}
-              </div>
+                  <div className="space-y-3">
+                    {g.columns[1].map((b) => <LeagueAccordion key={b.league} block={b} />)}
+                  </div>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 items-start">
+                  {g.blocks.map((b) => (
+                    <div key={b.league} className={b.cols ? "lg:col-span-2" : undefined}>
+                      <LeagueAccordion block={b} />
+                    </div>
+                  ))}
+                </div>
+              )}
             </section>
           ))}
         </div>

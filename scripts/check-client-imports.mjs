@@ -63,6 +63,7 @@ const SERVER_ONLY_MODULES = [
   "@/lib/cricket",
   "@/lib/rugbyUnion",
   "@/lib/wc2026Standings",
+  "@/lib/euroComps",
   "@/lib/baseball",
   "@/lib/olympics",
   "@/lib/rugbyClubs",

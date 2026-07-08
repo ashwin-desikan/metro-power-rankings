@@ -1,15 +1,16 @@
 import "server-only";
 
-// Live/upcoming international rugby, from the World Rugby Pulselive feed (the
-// same API scripts/ingest/rugby_results_ingest.py uses). Runtime ISR, fail-soft
+// Live/upcoming international rugby, from the World Rugby Pulselive feed (the same
+// API scripts/ingest/rugby_results_ingest.py uses). Runtime ISR, fail-soft
 // (returns null on any error) so the hub falls back to its static content. The
-// block only surfaces when there are internationals in the window, so it appears
-// during test windows (summer tours, autumn internationals, Six Nations, the
-// Rugby Championship, World Cups) and hides otherwise.
+// block only surfaces when there are internationals in the window.
 //
-// Server-only: listed in scripts/check-client-imports.mjs. Pulselive sport=mru
-// returns club rugby too, so we keep only matches between tracked test nations
-// and in tracked competitions (mirrors the ingest's filters).
+// Pulselive sport=mru returns club rugby too, so we keep only matches between
+// tracked test nations. Unlike the archival ingest we do NOT apply the
+// competition-scope filter here: this is a live board, so it shows every test
+// between tracked nations (including the World Rugby Nations Cup). Pulselive
+// rejects a combined states= param, so we query U/L/C separately and merge.
+// Server-only: listed in scripts/check-client-imports.mjs.
 
 const API = "https://api.wr-rims-prod.pulselive.com/rugby/v3/match";
 const UA = "MetroPowerRankingsBot/1.0 (+https://rankings.citizenofnowhere.org)";
@@ -24,10 +25,6 @@ const TRACKED = new Set([
 const ALIASES: Record<string, string> = {
   "USA": "United States", "United States of America": "United States", "Cote d'Ivoire": "Ivory Coast",
 };
-const IN_SCOPE = [
-  "six nations","five nations","home nations","rugby championship","tri nations","rugby world cup",
-  "nations championship","men's internationals","autumn","summer","end-of-year","tour of","greatest rivalry",
-];
 
 export type RugbyMatch = {
   date: string;           // ISO yyyy-mm-dd
@@ -44,12 +41,11 @@ const asArr = (v: unknown): unknown[] => (Array.isArray(v) ? v : []);
 const asStr = (v: unknown): string => (typeof v === "string" ? v : "");
 const canon = (n: string) => ALIASES[n.trim()] ?? n.trim();
 const iso = (ymd: string) => (ymd.length === 8 ? `${ymd.slice(0,4)}-${ymd.slice(4,6)}-${ymd.slice(6,8)}` : ymd);
-const inScope = (label: string) => { const l = label.toLowerCase(); return IN_SCOPE.some((p) => l.includes(p)); };
 
-async function fetchWindow(states: string, start: string, end: string): Promise<AnyObj[]> {
+async function fetchState(state: string, start: string, end: string): Promise<AnyObj[]> {
   const out: AnyObj[] = [];
-  for (let page = 0; page < 6; page++) {
-    const url = `${API}?states=${encodeURIComponent(states)}&sport=mru&startDate=${start}&endDate=${end}&page=${page}&pageSize=100&sort=asc`;
+  for (let page = 0; page < 4; page++) {
+    const url = `${API}?states=${state}&sport=mru&startDate=${start}&endDate=${end}&page=${page}&pageSize=100&sort=asc`;
     let root: AnyObj | null;
     try {
       const res = await fetch(url, { headers: { "User-Agent": UA, Accept: "application/json" },
@@ -68,15 +64,14 @@ async function fetchWindow(states: string, start: string, end: string): Promise<
 function shape(m: AnyObj): RugbyMatch | null {
   const teams = asArr(m.teams).map((t) => canon(asStr(asObj(t)?.name)));
   if (teams.length !== 2 || !teams[0] || !teams[1]) return null;
-  if (!TRACKED.has(teams[0]) || !TRACKED.has(teams[1])) return null;
-  const label = asStr(m.competition) || asArr(m.events).map((e) => asStr(asObj(e)?.label)).join(";");
-  if (!inScope(label)) return null;
+  if (!TRACKED.has(teams[0]) || !TRACKED.has(teams[1])) return null;   // internationals only
   const millis = Number(asObj(m.time)?.millis ?? 0);
   if (!millis) return null;
   const d = new Date(millis);
   const ymd = `${d.getUTCFullYear()}${String(d.getUTCMonth()+1).padStart(2,"0")}${String(d.getUTCDate()).padStart(2,"0")}`;
   const st = asStr(m.status).toUpperCase();
   const status: RugbyMatch["status"] = st === "L" ? "live" : st === "C" ? "recent" : "upcoming";
+  const label = asStr(m.competition) || asArr(m.events).map((e) => asStr(asObj(e)?.label)).join("; ");
   const scores = asArr(m.scores);
   const sA = typeof scores[0] === "number" ? (scores[0] as number) : null;
   const sB = typeof scores[1] === "number" ? (scores[1] as number) : null;
@@ -91,8 +86,17 @@ function shape(m: AnyObj): RugbyMatch | null {
 export async function getRugbyFixtures(): Promise<RugbyFixtures | null> {
   const now = Date.now();
   const fmt = (t: number) => new Date(t).toISOString().slice(0, 10);
-  const raw = await fetchWindow("U|L|C", fmt(now - 16 * DAY), fmt(now + 45 * DAY));
+  let raw: AnyObj[] = [];
+  try {
+    const [u, l, c] = await Promise.all([
+      fetchState("U", fmt(now), fmt(now + 45 * DAY)),
+      fetchState("L", fmt(now - 2 * DAY), fmt(now + 2 * DAY)),
+      fetchState("C", fmt(now - 16 * DAY), fmt(now)),
+    ]);
+    raw = [...u, ...l, ...c];
+  } catch { return null; }
   if (!raw.length) return null;
+
   const seen = new Set<string>();
   const live: RugbyMatch[] = [], upcoming: RugbyMatch[] = [], recent: RugbyMatch[] = [];
   for (const m of raw) {

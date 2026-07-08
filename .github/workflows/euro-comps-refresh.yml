@@ -1,0 +1,61 @@
+name: UEFA club comps fixtures refresh
+
+# Pulls the latest Champions League / Europa League / Conference League fixtures
+# and results from API-Football (api-sports.io) and commits the refreshed
+# public/data/football/euro-comps.json with [vercel skip]. The tournament hub
+# pages fetch it at runtime via ISR (revalidate 1800) from GitHub raw
+# (lib/euroComps.ts), so qualifying results and fixtures update without a
+# deploy. Quiet days (no fixture change) produce no commit.
+
+on:
+  schedule:
+    - cron: "35 6 * * *"   # once each morning (06:35 UTC)
+  workflow_dispatch: {}    # allow manual "Run workflow" from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: euro-comps-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
+        with:
+          python-version: "3.12"
+
+      - name: Build euro-comps.json (API-Football)
+        env:
+          APISPORTS_KEY: ${{ secrets.APISPORTS_KEY }}
+        run: |
+          set -e
+          if [ -z "$APISPORTS_KEY" ]; then
+            echo "APISPORTS_KEY not set; skipping refresh." >&2
+            exit 0
+          fi
+          python3 scripts/football/build-euro-comps.py
+
+      - name: Commit and push only if anything changed
+        run: |
+          if git diff --quiet -- public/data/football/euro-comps.json; then
+            echo "No change in euro-comps output; nothing to deploy."
+            exit 0
+          fi
+          git config user.name "euro-comps-refresh-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/football/euro-comps.json
+          git commit -m "Auto: refresh UEFA club competition fixtures [vercel skip]"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "Pushed on attempt $attempt."; exit 0
+            fi
+            echo "Push race on attempt $attempt; retrying after fetch/rebase..."; sleep $((attempt * 5))
+          done
+          echo "Failed to push after retries." >&2; exit 1

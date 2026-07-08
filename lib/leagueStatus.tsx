@@ -16,39 +16,15 @@ export type LeagueStatus = { label: string; tone: LeagueStatusTone };
 const WORLD_CUP_END = Date.UTC(2026, 6, 19, 23, 59, 59);
 
 const STATUS_BY_PAGE: Record<string, LeagueStatus> = {
-  "/teams/mlb":        { label: "Live - Regular Season", tone: "regular" },
-  "/teams/wnba":       { label: "Live - Regular Season", tone: "regular" },
   "/teams/wfootball":  { label: "Live - Regular Season", tone: "regular" },
-  "/teams/nba":        { label: "Live - Playoffs", tone: "playoffs" },
-  "/teams/nhl":        { label: "Live - Playoffs", tone: "playoffs" },
-  "/teams/nfl":        { label: "Offseason", tone: "offseason" },
-  "/teams/cfb":        { label: "Starts late Aug", tone: "offseason" },
   "/teams/football":   { label: "Offseason", tone: "offseason" },
-  "/teams/ipl":        { label: "Offseason", tone: "offseason" },
-  "/teams/cfl":        { label: "Live - Regular Season", tone: "regular" },
-  "/teams/afl":        { label: "Live - Regular Season", tone: "regular" },
-  "/teams/nrl":        { label: "Live - Regular Season", tone: "regular" },
   "/teams/cricket":    { label: "Year-round", tone: "regular" },
-  "/teams/rugby-union": { label: "July tests ahead", tone: "offseason" },
   "/teams/baseball":   { label: "Next WBC 2029", tone: "offseason" },
   "/teams/olympics":   { label: "Next: LA 2028", tone: "offseason" },
   "/teams/basketball": { label: "Next WC 2027", tone: "offseason" },
   // Club football competitions (seasonal - update each year)
-  "/teams/football/tournaments/champions-league":  { label: "Offseason", tone: "offseason" },
-  "/teams/football/tournaments/europa-league":     { label: "Offseason", tone: "offseason" },
-  "/teams/football/tournaments/conference-league": { label: "Offseason", tone: "offseason" },
   "/teams/football/tournaments/club-world-cup":    { label: "Offseason", tone: "offseason" },
-  "/teams/football/tournaments/copa-libertadores": { label: "R16 in Aug", tone: "offseason" },
   // Club football domestic leagues (seasonal)
-  "/teams/football/leagues/premier-league":        { label: "Offseason", tone: "offseason" },
-  "/teams/football/leagues/la-liga":               { label: "Offseason", tone: "offseason" },
-  "/teams/football/leagues/serie-a":               { label: "Offseason", tone: "offseason" },
-  "/teams/football/leagues/bundesliga":            { label: "Offseason", tone: "offseason" },
-  "/teams/football/leagues/ligue-1":               { label: "Offseason", tone: "offseason" },
-  "/teams/football/leagues/eredivisie":            { label: "Offseason", tone: "offseason" },
-  "/teams/football/leagues/primeira-liga":         { label: "Offseason", tone: "offseason" },
-  "/teams/football/leagues/scottish-premiership":  { label: "Offseason", tone: "offseason" },
-  "/teams/football/leagues/mls":                   { label: "Live - Regular Season", tone: "regular" },
 };
 
 // Golf and tennis light green while a major is in play. 2026 windows (UTC);
@@ -66,6 +42,50 @@ const TENNIS_SLAMS_2026: MajorWindow[] = [
   { label: "Live - Wimbledon", start: Date.UTC(2026, 5, 29), end: Date.UTC(2026, 6, 12, 23, 59, 59) },
   { label: "Live - US Open", start: Date.UTC(2026, 7, 25), end: Date.UTC(2026, 8, 7, 23, 59, 59) },
 ];
+// Any sport listed here auto-lights green during its date windows (evaluated
+// client-side with Date.now(), so it flips without a deploy) and shows
+// "Next: ..." otherwise. Add a sport here to make its status self-updating.
+const SEASON_WINDOWS: Record<string, MajorWindow[]> = {
+  "/teams/golf": GOLF_MAJORS_2026,
+  "/teams/tennis": TENNIS_SLAMS_2026,
+};
+
+// Recurring per-league season calendar (month-based, UTC). The in-season /
+// playoff / offseason tone flips automatically every year with no manual edit
+// (evaluated client-side via Date.now, so no deploy is needed to change state).
+// Months are 1-12; the first window that includes the current month wins.
+type MonthWindow = { label: string; tone: LeagueStatusTone; months: number[] };
+const LEAGUE_SEASONS: Record<string, MonthWindow[]> = {
+  "/teams/nfl":  [{ label: "Live - Regular Season", tone: "regular", months: [9, 10, 11, 12] }, { label: "Live - Playoffs", tone: "playoffs", months: [1, 2] }],
+  "/teams/nba":  [{ label: "Live - Regular Season", tone: "regular", months: [10, 11, 12, 1, 2, 3] }, { label: "Live - Playoffs", tone: "playoffs", months: [4, 5, 6] }],
+  "/teams/nhl":  [{ label: "Live - Regular Season", tone: "regular", months: [10, 11, 12, 1, 2, 3] }, { label: "Live - Playoffs", tone: "playoffs", months: [4, 5, 6] }],
+  "/teams/mlb":  [{ label: "Live - Regular Season", tone: "regular", months: [3, 4, 5, 6, 7, 8, 9] }, { label: "Live - Postseason", tone: "playoffs", months: [10] }],
+  "/teams/wnba": [{ label: "Live - Regular Season", tone: "regular", months: [5, 6, 7, 8] }, { label: "Live - Playoffs", tone: "playoffs", months: [9, 10] }],
+  "/teams/cfl":  [{ label: "Live - Regular Season", tone: "regular", months: [6, 7, 8, 9, 10] }, { label: "Live - Grey Cup", tone: "playoffs", months: [11] }],
+  "/teams/afl":  [{ label: "Live - Regular Season", tone: "regular", months: [3, 4, 5, 6, 7, 8] }, { label: "Live - Finals", tone: "playoffs", months: [9] }],
+  "/teams/nrl":  [{ label: "Live - Regular Season", tone: "regular", months: [3, 4, 5, 6, 7, 8] }, { label: "Live - Finals", tone: "playoffs", months: [9, 10] }],
+  "/teams/cfb":  [{ label: "Live - Season", tone: "regular", months: [8, 9, 10, 11] }, { label: "Live - Bowls & Playoff", tone: "playoffs", months: [12, 1] }],
+  "/teams/ipl":  [{ label: "Live - IPL", tone: "regular", months: [3, 4, 5] }],
+  "/teams/football/leagues/mls": [{ label: "Live - Regular Season", tone: "regular", months: [2, 3, 4, 5, 6, 7, 8, 9, 10] }, { label: "Live - Playoffs", tone: "playoffs", months: [11, 12] }],
+  "/teams/football/leagues/premier-league": [{ label: "Live - Regular Season", tone: "regular", months: [8, 9, 10, 11, 12, 1, 2, 3, 4, 5] }],
+  "/teams/football/leagues/la-liga": [{ label: "Live - Regular Season", tone: "regular", months: [8, 9, 10, 11, 12, 1, 2, 3, 4, 5] }],
+  "/teams/football/leagues/serie-a": [{ label: "Live - Regular Season", tone: "regular", months: [8, 9, 10, 11, 12, 1, 2, 3, 4, 5] }],
+  "/teams/football/leagues/bundesliga": [{ label: "Live - Regular Season", tone: "regular", months: [8, 9, 10, 11, 12, 1, 2, 3, 4, 5] }],
+  "/teams/football/leagues/ligue-1": [{ label: "Live - Regular Season", tone: "regular", months: [8, 9, 10, 11, 12, 1, 2, 3, 4, 5] }],
+  "/teams/football/leagues/eredivisie": [{ label: "Live - Regular Season", tone: "regular", months: [8, 9, 10, 11, 12, 1, 2, 3, 4, 5] }],
+  "/teams/football/leagues/primeira-liga": [{ label: "Live - Regular Season", tone: "regular", months: [8, 9, 10, 11, 12, 1, 2, 3, 4, 5] }],
+  "/teams/football/leagues/scottish-premiership": [{ label: "Live - Regular Season", tone: "regular", months: [8, 9, 10, 11, 12, 1, 2, 3, 4, 5] }],
+  "/teams/rugby-union": [{ label: "Live - Six Nations", tone: "regular", months: [2, 3] }, { label: "Live - Internationals", tone: "regular", months: [6, 7, 8, 9, 10] }, { label: "Live - Autumn Internationals", tone: "regular", months: [11] }],
+  "/teams/football/tournaments/champions-league": [{ label: "Live - Qualifying", tone: "regular", months: [7, 8] }, { label: "Live - League Phase", tone: "regular", months: [9, 10, 11, 12, 1] }, { label: "Live - Knockouts", tone: "playoffs", months: [2, 3, 4, 5] }],
+  "/teams/football/tournaments/europa-league": [{ label: "Live - Qualifying", tone: "regular", months: [7, 8] }, { label: "Live - League Phase", tone: "regular", months: [9, 10, 11, 12, 1] }, { label: "Live - Knockouts", tone: "playoffs", months: [2, 3, 4, 5] }],
+  "/teams/football/tournaments/conference-league": [{ label: "Live - Qualifying", tone: "regular", months: [7, 8] }, { label: "Live - League Phase", tone: "regular", months: [9, 10, 11, 12, 1] }, { label: "Live - Knockouts", tone: "playoffs", months: [2, 3, 4, 5] }],
+  "/teams/football/tournaments/copa-libertadores": [{ label: "Live - Group Stage", tone: "regular", months: [4, 5, 6, 7, 8] }, { label: "Live - Knockouts", tone: "playoffs", months: [9, 10, 11] }],
+};
+function monthSeasonStatus(windows: MonthWindow[]): LeagueStatus {
+  const m = new Date().getUTCMonth() + 1;
+  for (const w of windows) if (w.months.includes(m)) return { label: w.label, tone: w.tone };
+  return { label: "Offseason", tone: "offseason" };
+}
 function majorsSeasonStatus(windows: MajorWindow[]): LeagueStatus {
   const now = Date.now();
   for (const w of windows) {
@@ -92,8 +112,10 @@ export function leagueStatusFor(page: string | null | undefined): LeagueStatus |
       ? { label: "Live - World Cup", tone: "worldcup" }
       : { label: "Offseason", tone: "offseason" };
   }
-  if (page === "/teams/golf") return majorsSeasonStatus(GOLF_MAJORS_2026);
-  if (page === "/teams/tennis") return majorsSeasonStatus(TENNIS_SLAMS_2026);
+  const seasonWindows = SEASON_WINDOWS[page];
+  if (seasonWindows) return majorsSeasonStatus(seasonWindows);
+  const leagueSeason = LEAGUE_SEASONS[page];
+  if (leagueSeason) return monthSeasonStatus(leagueSeason);
   return STATUS_BY_PAGE[page] ?? null;
 }
 

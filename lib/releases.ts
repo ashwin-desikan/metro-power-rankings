@@ -18,6 +18,15 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-07-08",
+    headline: "European club competitions join Live Standings, football tidied",
+    items: [
+      "Champions League, Europa League, and Conference League fixtures and results now show on their tournament pages and on Live Standings.",
+      "Live Standings groups football into two columns: internationals and European cups on the left, domestic leagues on the right.",
+      "In-season competitions keep a green live marker even when collapsed, so you can tell at a glance what is currently running.",
+    ],
+  },
+  {
     date: "2026-07-07",
     headline: "Google sign-in now returns you to the right page",
     items: [

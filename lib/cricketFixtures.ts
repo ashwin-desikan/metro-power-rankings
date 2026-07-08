@@ -1,11 +1,13 @@
 import "server-only";
 
 // Live/upcoming international cricket, from ESPN's (Cricinfo) public cricket
-// header feed. Cricket has no single global scoreboard; the header endpoint
-// lists the currently-active series (leagues) with their events embedded, which
-// is enough for a "what's on now and soon" block. We keep only men's
-// internationals (class Test / ODI / T20I). Runtime ISR, fail-soft (null on any
-// error) so the cricket hub falls back to its static content. Server-only.
+// header feed, which lists the currently-active series with their events
+// embedded. We keep only men's internationals (class Test / ODI / T20I, or both
+// sides flagged isNational). Runtime ISR, fail-soft (null on any error) so the
+// cricket hub falls back to static content. Server-only.
+//
+// Header-event shape (flatter than the per-league scoreboard): teams, class,
+// status, location live DIRECTLY on the event (no competitions[0] layer).
 
 const HEADER = "https://site.web.api.espn.com/apis/v2/scoreboard/header?sport=cricket";
 const UA = "MetroPowerRankingsBot/1.0 (+https://rankings.citizenofnowhere.org)";
@@ -28,28 +30,27 @@ const asArr = (v: unknown): unknown[] => (Array.isArray(v) ? v : []);
 const asStr = (v: unknown): string => (typeof v === "string" ? v : "");
 
 function shape(ev: AnyObj, leagueName: string): CricketMatch | null {
-  const comp = asObj(asArr(ev.competitions)[0]);
-  if (!comp) return null;
-  const cls = asObj(comp.class) || {};
+  const cls = asObj(ev.class) || {};
   const format = asStr(cls.generalClassCard);
   const clsName = asStr(cls.name);
-  const isIntl = INTL.has(format) || /international/i.test(clsName);
-  if (!isIntl) return null;
-  const cs = asArr(comp.competitors).map(asObj).filter((c): c is AnyObj => !!c);
+  const cs = asArr(ev.competitors).map(asObj).filter((c): c is AnyObj => !!c);
   if (cs.length !== 2) return null;
-  const nameOf = (c: AnyObj) => asStr(asObj(c.team)?.displayName) || asStr(asObj(c.team)?.abbreviation);
-  const a = cs[0], b = cs[1];
-  if (!nameOf(a) || !nameOf(b)) return null;
-  const state = asStr(asObj(asObj(ev.status)?.type)?.state) || asStr(asObj(asObj(comp.status)?.type)?.state);
+  const isIntl = INTL.has(format) || /international/i.test(clsName) || cs.every((c) => c.isNational === true);
+  if (!isIntl) return null;
+  const nameOf = (c: AnyObj) => asStr(c.displayName) || asStr(c.name) || asStr(c.abbreviation);
+  if (!nameOf(cs[0]) || !nameOf(cs[1])) return null;
+  const state = asStr(ev.status) || asStr(asObj(asObj(ev.fullStatus)?.type)?.state);
   const status: CricketMatch["status"] = state === "in" ? "live" : state === "post" ? "recent" : "upcoming";
-  const v = asObj(comp.venue) || {};
-  const addr = asObj(v.address) || {};
-  const scoreOrNull = (c: AnyObj) => { const s = asStr(c.score); return s ? s : null; };
+  const loc = asStr(ev.location);
+  const li = loc.lastIndexOf(",");
+  const venue = li > 0 ? loc.slice(0, li).trim() : loc;
+  const city = li > 0 ? loc.slice(li + 1).trim() : "";
+  const scoreOf = (c: AnyObj) => { const s = asStr(c.score); return s ? s : null; };
   return {
-    date: asStr(ev.date) || asStr(comp.startDate), status, format: format || (clsName || "Intl"),
-    teamA: nameOf(a), teamB: nameOf(b),
-    scoreA: status === "upcoming" ? null : scoreOrNull(a), scoreB: status === "upcoming" ? null : scoreOrNull(b),
-    competition: leagueName || asStr(ev.name), venue: asStr(v.fullName), city: asStr(addr.city),
+    date: asStr(ev.date), status, format: format || clsName || "Intl",
+    teamA: nameOf(cs[0]), teamB: nameOf(cs[1]),
+    scoreA: status === "upcoming" ? null : scoreOf(cs[0]), scoreB: status === "upcoming" ? null : scoreOf(cs[1]),
+    competition: leagueName || asStr(ev.name), venue, city,
   };
 }
 
@@ -63,8 +64,7 @@ export async function getCricketFixtures(): Promise<CricketFixtures | null> {
   } catch { return null; }
   if (!root) return null;
 
-  const leagues = asArr(asObj(asArr(root.sports)[0])?.leagues).length
-    ? asArr(asObj(asArr(root.sports)[0])?.leagues) : asArr(root.leagues);
+  const leagues = asArr(asObj(asArr(root.sports)[0])?.leagues);
   const live: CricketMatch[] = [], upcoming: CricketMatch[] = [], recent: CricketMatch[] = [];
   const seen = new Set<string>();
   for (const lgRaw of leagues) {
