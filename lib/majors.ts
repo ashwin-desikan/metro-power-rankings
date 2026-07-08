@@ -1,9 +1,8 @@
 import "server-only";
 
 // Tennis & golf majors data layer (/teams/golf and /teams/tennis).
-// Source: scripts/build-majors-data.py — reads Majors.xlsx (winners) and joins
-// each champion to its host metro via the Golf-Tennis-F1 venue events embedded
-// in public/data/details/*.json, on (sport, tournament, year). Emits
+// Source: scripts/build-majors-data.py reads Supabase (golf_majors, tennis_majors,
+// golf_ryder_cup, tennis_davis_cup, the source of record) and emits
 // public/data/majors/{golf,tennis}.json. Server-only.
 // Listed in scripts/check-client-imports.mjs SERVER_ONLY_MODULES.
 
