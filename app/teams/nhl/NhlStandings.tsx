@@ -123,6 +123,7 @@ export default async function NhlStandings() {
           <span>{b.division}</span>
           <span className="text-[10px] normal-case tracking-normal text-[var(--text-dim)]">{b.teams.length} teams</span>
         </h3>
+        <div className="overflow-x-auto">
         <table className="w-full text-xs tabular-nums">
           <thead className="text-[var(--text-muted)]">
             <tr className="border-b" style={{ borderColor: "var(--border)" }}>
@@ -174,6 +175,7 @@ export default async function NhlStandings() {
             })}
           </tbody>
         </table>
+        </div>
       </div>
     );
   }

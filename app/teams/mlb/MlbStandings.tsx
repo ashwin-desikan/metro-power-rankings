@@ -173,6 +173,7 @@ export default async function MlbStandings() {
                 <span>{pretty}</span>
                 <span className="text-[10px] normal-case tracking-normal text-[var(--text-dim)]">{b.teams.length} teams</span>
               </h3>
+              <div className="overflow-x-auto">
               <table className="w-full text-xs tabular-nums">
                 <thead className="text-[var(--text-muted)]">
                   <tr className="border-b" style={{ borderColor: "var(--border)" }}>
@@ -223,6 +224,7 @@ export default async function MlbStandings() {
                   })}
                 </tbody>
               </table>
+              </div>
             </div>
           );
         })}

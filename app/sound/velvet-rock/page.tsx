@@ -89,7 +89,8 @@ export default async function VelvetRockPage() {
       {/* Capital Index */}
       <section className="mt-8">
         <h2 className="mb-2 text-sm font-bold uppercase tracking-wide" style={muted}>The Velvet Rock Capital Index</h2>
-        <table className="w-full border-collapse text-sm">
+        <div className="overflow-x-auto">
+        <table className="w-full border-collapse text-sm min-w-[560px]">
           <thead>
             <tr className="text-left" style={muted}>
               <th className="py-2 pr-3 text-right">Index</th>
@@ -109,6 +110,7 @@ export default async function VelvetRockPage() {
             ))}
           </tbody>
         </table>
+        </div>
         <p className="mt-2 text-xs" style={muted}>
           Scored 0 to 100 on studio infrastructure, anchor records, producer and session-musician
           concentration, and capital disproportion, meaning how much a place&rsquo;s claim rests on this one

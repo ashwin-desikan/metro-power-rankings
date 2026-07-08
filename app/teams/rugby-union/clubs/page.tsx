@@ -86,7 +86,7 @@ export default function DomesticRugbyPage() {
                 </span>
               ))}
             </div>
-            <div className="overflow-y-auto max-h-[300px]">
+            <div className="overflow-y-auto" style={{ overflowX: "auto", maxHeight: 300 }}>
               <table className="w-full text-xs">
                 <tbody>
                   {clubs.rolls[k].map((r, i) => (

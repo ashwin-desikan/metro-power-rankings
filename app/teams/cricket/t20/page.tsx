@@ -94,7 +94,7 @@ export default function DomesticT20Page() {
                 </span>
               ))}
             </div>
-            <div className="overflow-y-auto max-h-[260px]">
+            <div className="overflow-y-auto" style={{ overflowX: "auto", maxHeight: 260 }}>
               <table className="w-full text-xs">
                 <tbody>
                   {data.rolls[k].map((r, i) => (

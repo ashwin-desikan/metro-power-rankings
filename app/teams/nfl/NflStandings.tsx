@@ -78,6 +78,7 @@ export default async function NflStandings() {
           return (
             <div key={divName} className="rounded-xl border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
               <h3 className="text-[11px] uppercase tracking-widest font-semibold text-[var(--text-muted)] mb-2">{divName}</h3>
+              <div className="overflow-x-auto">
               <table className="w-full text-xs tabular-nums">
                 <thead className="text-[var(--text-muted)]">
                   <tr className="border-b" style={{ borderColor: "var(--border)" }}>
@@ -115,6 +116,7 @@ export default async function NflStandings() {
                   })}
                 </tbody>
               </table>
+              </div>
             </div>
           );
         })}

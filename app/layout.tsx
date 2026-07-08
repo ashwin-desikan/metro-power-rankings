@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import SiteNav from "./SiteNav";
@@ -59,6 +59,11 @@ export const metadata: Metadata = {
     },
   },
   category: "Urban Analytics",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 // Site-wide identity graph. Emitted once in the root layout so every page

@@ -49,7 +49,7 @@ export default function HonourRolls({
               </span>
             ))}
           </div>
-          <div className="overflow-y-auto max-h-[340px]">
+          <div className="overflow-y-auto" style={{ overflowX: "auto", maxHeight: 340 }}>
             <table className="w-full text-xs">
               <tbody>
                 {/* Rolls are stored oldest-first in the ETL; render newest-first
