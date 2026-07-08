@@ -80,15 +80,20 @@ def build_from_history(src):
         print("WARNING: 'Is Current' column not found -- run merge-champions-sources.py first.")
         print("         Falling back to most-recent-year-per-comp logic.")
 
-    if missing_current_col:
-        comp_max = {}
-        for r in rows[1:]:
-            def gv(i): return r[i] if i is not None and i < len(r) else None
-            comp = cell(gv(iComp))
-            yr   = to_year(gv(iYear))
-            if comp and yr:
-                if comp not in comp_max or yr > comp_max[comp]:
-                    comp_max[comp] = yr
+    # Competitions whose reigning champion belongs on the Current board but whose
+    # "Is Current" flag is not maintained in Champions_History.xlsx (they dropped
+    # off the board when it became the single source). Their latest-year row is
+    # treated as current regardless of the flag.
+    ALWAYS_CURRENT = {"Champions League", "Club World Cup", "SuperLega",
+                      "Europa League", "Europa Conference League"}
+
+    # Latest year per competition (used by the fallback and by ALWAYS_CURRENT).
+    comp_max = {}
+    for r in rows[1:]:
+        def gv(i): return r[i] if i is not None and i < len(r) else None
+        c = cell(gv(iComp)); y = to_year(gv(iYear))
+        if c and y and (c not in comp_max or y > comp_max[c]):
+            comp_max[c] = y
 
     for r in rows[1:]:
         def g(i): return r[i] if i is not None and i < len(r) else None
@@ -98,11 +103,12 @@ def build_from_history(src):
             continue
 
         if not missing_current_col:
-            if str(cell(g(iCurrent))).strip().upper() != "Y":
+            is_cur = str(cell(g(iCurrent))).strip().upper() == "Y"
+            latest_always = comp in ALWAYS_CURRENT and to_year(g(iYear)) == comp_max.get(comp)
+            if not (is_cur or latest_always):
                 continue
         else:
-            yr = to_year(g(iYear))
-            if comp_max.get(comp) != yr:
+            if comp_max.get(comp) != to_year(g(iYear)):
                 continue
 
         canon = cell(g(iCanon)) if iCanon is not None else ""

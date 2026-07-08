@@ -313,6 +313,30 @@
 },
 {
 "sport": "Football",
+"competition": "Champions League",
+"team": "Paris Saint-Germain",
+"year": 2026,
+"dateAwarded": "2026-05-30",
+"scope": "",
+"scopeType": "Continental",
+"nextAwarded": null,
+"nextAwardedDate": null,
+"tier": 0
+},
+{
+"sport": "Football",
+"competition": "Club World Cup",
+"team": "Paris Saint-Germain",
+"year": 2025,
+"dateAwarded": "2025-12-17",
+"scope": "",
+"scopeType": "Continental",
+"nextAwarded": null,
+"nextAwardedDate": null,
+"tier": 3
+},
+{
+"sport": "Football",
 "competition": "CONCACAF Champions Cup",
 "team": "CD Toluca",
 "year": 2026,
@@ -370,6 +394,30 @@
 "nextAwarded": 2027,
 "nextAwardedDate": "2027-04-01",
 "tier": 4
+},
+{
+"sport": "Football",
+"competition": "Europa Conference League",
+"team": "Crystal Palace",
+"year": 2026,
+"dateAwarded": "2026-05-27",
+"scope": "",
+"scopeType": "International",
+"nextAwarded": null,
+"nextAwardedDate": null,
+"tier": 4
+},
+{
+"sport": "Football",
+"competition": "Europa League",
+"team": "Aston Villa",
+"year": 2026,
+"dateAwarded": "2026-05-20",
+"scope": "",
+"scopeType": "International",
+"nextAwarded": null,
+"nextAwardedDate": null,
+"tier": 3
 },
 {
 "sport": "Football",
