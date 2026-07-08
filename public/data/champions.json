@@ -20,8 +20,8 @@
 "dateAwarded": "2026-05-30",
 "scope": "",
 "scopeType": "Continental",
-"nextAwarded": null,
-"nextAwardedDate": null,
+"nextAwarded": 2027,
+"nextAwardedDate": "2027-06-05",
 "tier": 0,
 "tierGuide": 2.0
 },
@@ -270,7 +270,7 @@
 "nextAwarded": 2027,
 "nextAwardedDate": "2027-04-01",
 "tier": 2,
-"tierGuide": 3.0
+"tierGuide": 2.5
 },
 {
 "sport": "Tennis",
@@ -561,13 +561,26 @@
 {
 "sport": "Football",
 "competition": "Club World Cup",
+"team": "Chelsea",
+"year": 2025,
+"dateAwarded": "2025-07-13",
+"scope": "",
+"scopeType": "Continental",
+"nextAwarded": 2029,
+"nextAwardedDate": "2029-07-13",
+"tier": 3,
+"tierGuide": null
+},
+{
+"sport": "Football",
+"competition": "Intercontinental Cup",
 "team": "Paris Saint-Germain",
 "year": 2025,
 "dateAwarded": "2025-12-17",
 "scope": "",
 "scopeType": "Continental",
-"nextAwarded": null,
-"nextAwardedDate": null,
+"nextAwarded": 2026,
+"nextAwardedDate": "2026-12-16",
 "tier": 3,
 "tierGuide": null
 },
@@ -592,8 +605,21 @@
 "dateAwarded": "2026-05-20",
 "scope": "",
 "scopeType": "International",
-"nextAwarded": null,
-"nextAwardedDate": null,
+"nextAwarded": 2027,
+"nextAwardedDate": "2027-05-27",
+"tier": 3,
+"tierGuide": null
+},
+{
+"sport": "Football",
+"competition": "FA Cup",
+"team": "Manchester City",
+"year": 2026,
+"dateAwarded": "2026-05-16",
+"scope": "",
+"scopeType": "Domestic",
+"nextAwarded": 2027,
+"nextAwardedDate": "2027-05-22",
 "tier": 3,
 "tierGuide": null
 },
@@ -620,6 +646,19 @@
 "scopeType": "Domestic",
 "nextAwarded": 2027,
 "nextAwardedDate": "2027-05-20",
+"tier": 3,
+"tierGuide": null
+},
+{
+"sport": "Golf",
+"competition": "PGA Championship",
+"team": "Aaron Rai",
+"year": 2026,
+"dateAwarded": "2026-05-17",
+"scope": "",
+"scopeType": "International",
+"nextAwarded": 2027,
+"nextAwardedDate": "2027-05-16",
 "tier": 3,
 "tierGuide": null
 },
@@ -672,19 +711,6 @@
 "scopeType": "International",
 "nextAwarded": 2030,
 "nextAwardedDate": "2030-02-22",
-"tier": 3,
-"tierGuide": null
-},
-{
-"sport": "Hockey",
-"competition": "World Cup of Hockey",
-"team": "Canada",
-"year": 2016,
-"dateAwarded": "2016-09-29",
-"scope": "",
-"scopeType": "International",
-"nextAwarded": 2027,
-"nextAwardedDate": "2027-09-01",
 "tier": 3,
 "tierGuide": null
 },
@@ -806,19 +832,6 @@
 "tierGuide": null
 },
 {
-"sport": "Baseball",
-"competition": "College World Series",
-"team": "Oklahoma",
-"year": 2026,
-"dateAwarded": "2026-06-22",
-"scope": "",
-"scopeType": "Domestic",
-"nextAwarded": 2027,
-"nextAwardedDate": "2027-06-21",
-"tier": 4,
-"tierGuide": null
-},
-{
 "sport": "Basketball",
 "competition": "CBA",
 "team": "Shanghai Sharks",
@@ -904,8 +917,8 @@
 "dateAwarded": "2026-05-27",
 "scope": "",
 "scopeType": "International",
-"nextAwarded": null,
-"nextAwardedDate": null,
+"nextAwarded": 2027,
+"nextAwardedDate": "2027-05-26",
 "tier": 4,
 "tierGuide": null
 },
@@ -919,32 +932,6 @@
 "scopeType": "Domestic",
 "nextAwarded": 2026,
 "nextAwardedDate": "2026-12-15",
-"tier": 4,
-"tierGuide": null
-},
-{
-"sport": "Football",
-"competition": "OFC Champions League",
-"team": "Auckland City",
-"year": 2025,
-"dateAwarded": "2025-04-12",
-"scope": "",
-"scopeType": "International",
-"nextAwarded": 2026,
-"nextAwardedDate": "2026-08-22",
-"tier": 4,
-"tierGuide": null
-},
-{
-"sport": "Football",
-"competition": "OFC Nations Cup",
-"team": "New Zealand",
-"year": 2024,
-"dateAwarded": "2024-06-30",
-"scope": "",
-"scopeType": "International",
-"nextAwarded": 2028,
-"nextAwardedDate": "2028-06-30",
 "tier": 4,
 "tierGuide": null
 },
@@ -971,19 +958,6 @@
 "scopeType": "Domestic",
 "nextAwarded": 2027,
 "nextAwardedDate": "2027-05-30",
-"tier": 4,
-"tierGuide": null
-},
-{
-"sport": "Golf",
-"competition": "PGA Championship",
-"team": "Aaron Rai",
-"year": 2026,
-"dateAwarded": "2026-05-17",
-"scope": "",
-"scopeType": "International",
-"nextAwarded": 2027,
-"nextAwardedDate": "2027-05-16",
 "tier": 4,
 "tierGuide": null
 },
@@ -1015,19 +989,6 @@
 },
 {
 "sport": "Hockey",
-"competition": "Frozen Four",
-"team": "Denver",
-"year": 2026,
-"dateAwarded": "2026-04-11",
-"scope": "",
-"scopeType": "Domestic",
-"nextAwarded": 2027,
-"nextAwardedDate": "2027-04-01",
-"tier": 4,
-"tierGuide": null
-},
-{
-"sport": "Hockey",
 "competition": "KHL",
 "team": "Lokomotiv Yaroslavl",
 "year": 2026,
@@ -1036,6 +997,19 @@
 "scopeType": "Domestic",
 "nextAwarded": 2027,
 "nextAwardedDate": "2027-05-20",
+"tier": 4,
+"tierGuide": null
+},
+{
+"sport": "Hockey",
+"competition": "World Cup of Hockey",
+"team": "Canada",
+"year": 2016,
+"dateAwarded": "2016-09-29",
+"scope": "",
+"scopeType": "International",
+"nextAwarded": 2027,
+"nextAwardedDate": "2027-09-01",
 "tier": 4,
 "tierGuide": null
 },
@@ -1141,6 +1115,58 @@
 "nextAwarded": 2027,
 "nextAwardedDate": "2027-05-01",
 "tier": 4,
+"tierGuide": null
+},
+{
+"sport": "Baseball",
+"competition": "College World Series",
+"team": "Oklahoma",
+"year": 2026,
+"dateAwarded": "2026-06-22",
+"scope": "",
+"scopeType": "Domestic",
+"nextAwarded": 2027,
+"nextAwardedDate": "2027-06-21",
+"tier": 5,
+"tierGuide": null
+},
+{
+"sport": "Football",
+"competition": "OFC Champions League",
+"team": "Auckland City",
+"year": 2025,
+"dateAwarded": "2025-04-12",
+"scope": "",
+"scopeType": "International",
+"nextAwarded": 2026,
+"nextAwardedDate": "2026-08-22",
+"tier": 5,
+"tierGuide": null
+},
+{
+"sport": "Football",
+"competition": "OFC Nations Cup",
+"team": "New Zealand",
+"year": 2024,
+"dateAwarded": "2024-06-30",
+"scope": "",
+"scopeType": "International",
+"nextAwarded": 2028,
+"nextAwardedDate": "2028-06-30",
+"tier": 5,
+"tierGuide": null
+},
+{
+"sport": "Hockey",
+"competition": "Frozen Four",
+"team": "Denver",
+"year": 2026,
+"dateAwarded": "2026-04-11",
+"scope": "",
+"scopeType": "Domestic",
+"nextAwarded": 2027,
+"nextAwardedDate": "2027-04-01",
+"tier": 5,
 "tierGuide": null
 }
 ]
