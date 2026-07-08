@@ -69,7 +69,7 @@ function Dropdown({ id, label, openId, setOpenId, children, minWidth = 260, href
           onMouseEnter={() => setOpenId(id)}
           aria-haspopup="true"
           aria-expanded={isOpen}
-          className="text-sm hover:text-[var(--accent)] transition-colors flex items-center gap-1 py-1"
+          className="text-sm hover:text-[var(--accent)] transition-colors flex items-center gap-1 py-1 whitespace-nowrap"
         >
           {label}
           <Caret />
@@ -81,7 +81,7 @@ function Dropdown({ id, label, openId, setOpenId, children, minWidth = 260, href
           onMouseEnter={() => setOpenId(id)}
           aria-haspopup="true"
           aria-expanded={isOpen}
-          className="text-sm hover:text-[var(--accent)] transition-colors flex items-center gap-1 py-1"
+          className="text-sm hover:text-[var(--accent)] transition-colors flex items-center gap-1 py-1 whitespace-nowrap"
         >
           {label}
           <Caret />
@@ -223,7 +223,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
   }, [openId]);
 
   return (
-    <div className="hidden md:flex gap-6 items-center">
+    <div className="hidden md:flex gap-4 lg:gap-5 items-center">
       <Dropdown id="data" label="Geography" href="/geography" openId={openId} setOpenId={setOpenId} minWidth={480}>
         <div className="p-2 grid grid-cols-2 gap-x-4">
           <div>
@@ -330,14 +330,14 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
       <Link href="/studio" className="text-sm hover:text-[var(--accent)] transition-colors">
         Studio
       </Link>
-      <Link href="/me" className="text-sm hover:text-[var(--accent)] transition-colors flex items-center gap-1" title="Metros and teams you follow">
+      <Link href="/me" className="text-sm hover:text-[var(--accent)] transition-colors flex items-center gap-1 whitespace-nowrap" title="Metros and teams you follow">
         <span aria-hidden>★</span> Following
       </Link>
 
       {updated && (
         <a
           href="/updates"
-          className="hidden lg:inline-block text-xs text-[var(--text-muted)] hover:text-[var(--accent)] border rounded px-2 py-1 whitespace-nowrap transition-colors hover:border-[var(--accent)]"
+          className="hidden xl:inline-block text-xs text-[var(--text-muted)] hover:text-[var(--accent)] border rounded px-2 py-1 whitespace-nowrap transition-colors hover:border-[var(--accent)]"
           style={{ borderColor: "var(--border)", fontFamily: "'JetBrains Mono', monospace" }}
           title={`Source data last updated ${updated}. Click for full release notes.`}
         >

@@ -52,7 +52,7 @@ export default function SiteNav() {
         borderColor: "var(--border)",
       }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-4">
+      <div className="max-w-[88rem] mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-4 lg:gap-6">
         <div className="flex items-center gap-4 min-w-0">
           <a
             href="https://citizenofnowhere.org"
