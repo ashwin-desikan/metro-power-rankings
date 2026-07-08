@@ -77,6 +77,41 @@ export const ROLL_CROSS_LINKS: Record<string, Record<string, string>> = {
 // NOTE: the Team List entry (was "Valsa Group Modena") is being renamed by the
 // user to "Modena Volley", the canonical used here.
 export const ROLL_TO_TEAMLIST_ALIASES: Record<string, Record<string, string>> = {
+  // British rugby league: the honour roll keeps short historical names; these
+  // map each to the canonical Team List club so its titles land on the right
+  // metro card. Names whose canonical club is NOT a tracked British RL club
+  // (Bradford Park Avenue is a football club; Broughton Rangers, Manningham and
+  // Featherstone Rovers are defunct) are mapped too, so the authoritative-alias
+  // rule in domesticHonours drops them here instead of miscrediting a live club.
+  // Their titles surface via lib/britishRugbyLeague (defunct cards + the
+  // cross-sport chip on Bradford Park Avenue).
+  "rugby-league": {
+    "Wigan": "Wigan Warriors",
+    "St. Helens": "St Helens",
+    "Leeds": "Leeds Rhinos",
+    "Warrington": "Warrington Wolves",
+    "Huddersfield": "Huddersfield Giants",
+    "Salford": "Salford Red Devils",
+    "Hull F.C.": "Hull FC",
+    "Hull Kingston Rovers": "Hull Kingston Rovers",
+    "Halifax": "Halifax Panthers",
+    "Oldham": "Oldham RLFC",
+    "Swinton": "Swinton Lions",
+    "Widnes": "Widnes Vikings",
+    "Hunslet": "Hunslet RLFC",
+    "Wakefield Trinity": "Wakefield Trinity",
+    "Workington Town": "Workington Town",
+    "Batley": "Batley Bulldogs",
+    "Dewsbury": "Dewsbury Rams",
+    "Leigh": "Leigh Leopards",
+    "Bradford": "Bradford Bulls",
+    "Bradford Northern": "Bradford Bulls",
+    // Out-of-scope canonical clubs -> resolve to null (not credited here):
+    "Bradford F.C.": "Bradford Park Avenue",
+    "Broughton": "Broughton Rangers",
+    "Manningham": "Manningham",
+    "Featherstone Rovers": "Featherstone Rovers",
+  },
   "handball-domestic": {
     "Grün-Weiß Dankersen": "GWD Minden",
   },

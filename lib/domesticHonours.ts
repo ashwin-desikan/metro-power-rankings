@@ -100,10 +100,16 @@ function eligibleFor(sport: string, cfg: RollCfg): Club[] {
 
 function resolveAmong(eligible: Club[], winner: string, portalKey: string): string | null {
   const byNorm = new Map(eligible.map((c) => [c.norm, c]));
+  // An alias is AUTHORITATIVE: when the user has mapped a roll name to a
+  // canonical club, use it exclusively. If that club is out of this roll's
+  // scope (a different sport or a defunct club not in the Team List), return
+  // null rather than falling through to fuzzy matching — otherwise e.g. the
+  // rugby-league winner "Bradford F.C." (the football club Bradford Park
+  // Avenue) would token-match and miscredit Bradford Bulls.
   const aliasName = ROLL_TO_TEAMLIST_ALIASES[portalKey]?.[winner];
-  if (aliasName) {
+  if (aliasName !== undefined) {
     const an = norm(aliasName);
-    if (byNorm.has(an)) return an;
+    return byNorm.has(an) ? an : null;
   }
   const nw = norm(winner);
   if (byNorm.has(nw)) return nw; // exact match wins

@@ -1168,5 +1168,18 @@
 "nextAwardedDate": "2027-04-01",
 "tier": 5,
 "tierGuide": null
+},
+{
+"sport": "Rugby League",
+"competition": "Super League",
+"team": "Hull Kingston Rovers",
+"year": 2025,
+"dateAwarded": "2025-10-11",
+"scope": "England",
+"scopeType": "Domestic",
+"nextAwarded": 2026,
+"nextAwardedDate": "2026-10-10",
+"tier": 4,
+"tierGuide": null
 }
 ]

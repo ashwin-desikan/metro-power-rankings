@@ -54,6 +54,7 @@ import { getNhlFranchiseByTeamName } from "@/lib/nhl";
 import { getIplFranchiseByTeamName } from "@/lib/ipl";
 import { getFootballClubByName, getClTitlesForClub } from "@/lib/football";
 import { getDomesticClubByName, getDefunctNaslForMetro } from "@/lib/domesticFootball";
+import { getDefunctBritishRLForMetro, getBritishRLTitlesForClub, type DefunctRLClub } from "@/lib/britishRugbyLeague";
 import { getWnbaFranchiseByTeamName } from "@/lib/wnba";
 import { getCflFranchiseByTeamName } from "@/lib/cfl";
 import { getF1RaceResultByName } from "@/lib/f1";
@@ -627,7 +628,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
             { label: "Map", href: "#map" },
             { label: "Dimensions", href: "#stats" },
             ...((getSimilarMetrosForMetro(slug)?.neighbors?.length ?? 0) > 0 ? [{ label: "Similar Metros", href: "#similar" }] : []),
-            ...(((detail.teams && detail.teams.length > 0) || (detail.events && detail.events.length > 0) || (detail.culture && detail.culture[sportsEventType]) || getRelocationsForMetro(slug).length > 0 || getFormerTopFlightForMetro(slug).length > 0 || getFormerMajorCfbForMetro(slug).length > 0 || getFormerMajorCbbForMetro(slug).length > 0 || getFormerWcbbForMetro(slug).length > 0) ? [{ label: "Sports", href: "#sports" }] : []),
+            ...(((detail.teams && detail.teams.length > 0) || (detail.events && detail.events.length > 0) || (detail.culture && detail.culture[sportsEventType]) || getRelocationsForMetro(slug).length > 0 || getFormerTopFlightForMetro(slug).length > 0 || getFormerMajorCfbForMetro(slug).length > 0 || getFormerMajorCbbForMetro(slug).length > 0 || getFormerWcbbForMetro(slug).length > 0 || getDefunctBritishRLForMetro(slug).length > 0) ? [{ label: "Sports", href: "#sports" }] : []),
             ...(getMetroTitles(slug).length > 0 ? [{ label: "Championships", href: "#championships" }] : []),
             ...(detail.marketCap && detail.marketCap.top12 && detail.marketCap.top12.length > 0 ? [{ label: "Companies", href: "#companies" }] : []),
             ...(((detail.culture && culturalAssetOrder.some((type) => detail.culture?.[type] && (detail.culture[type]?.length ?? 0) > 0)) || (detail.supertallStructures && detail.supertallStructures.length > 0)) ? [{ label: "Culture", href: "#culture" }] : []),
@@ -861,7 +862,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
         })()}
 
         {/* Sports Section */}
-        {((detail.teams && detail.teams.length > 0) || (detail.events && detail.events.length > 0) || (detail.culture && detail.culture[sportsEventType]) || getRelocationsForMetro(slug).length > 0 || getFormerTopFlightForMetro(slug).length > 0 || getFormerMajorCfbForMetro(slug).length > 0 || getFormerMajorCbbForMetro(slug).length > 0 || getFormerWcbbForMetro(slug).length > 0) && (() => {
+        {((detail.teams && detail.teams.length > 0) || (detail.events && detail.events.length > 0) || (detail.culture && detail.culture[sportsEventType]) || getRelocationsForMetro(slug).length > 0 || getFormerTopFlightForMetro(slug).length > 0 || getFormerMajorCfbForMetro(slug).length > 0 || getFormerMajorCbbForMetro(slug).length > 0 || getFormerWcbbForMetro(slug).length > 0 || getDefunctBritishRLForMetro(slug).length > 0) && (() => {
           // Teams flagged Annual=Y in Team List (F1 Grands Prix, NASCAR races,
           // Sailing regattas, Powerboat races) are recurring events, not
           // standing team entries. Lift them out of detail.teams and inject
@@ -893,8 +894,8 @@ export default async function MetroDetailPage({ params }: PageProps) {
           return (
             <section>
               <h2 id="sports" className="text-2xl font-bold mb-6">Sports</h2>
-              {((detail.teams && detail.teams.length > 0) || getRelocationsForMetro(slug).length > 0 || getFormerTopFlightForMetro(slug).length > 0 || getFormerMajorCfbForMetro(slug).length > 0 || getFormerMajorCbbForMetro(slug).length > 0 || getFormerWcbbForMetro(slug).length > 0) && (
-                <TeamsSection teams={detail.teams || []} metroName={metro.name} topTeamPick={topTeamPick} relocations={getRelocationsForMetro(slug)} formerCfb={getFormerMajorCfbForMetro(slug)} formerCbb={getFormerMajorCbbForMetro(slug)} wcbb={getWcbbForMetro(slug)} collegeHockey={getCollegeHockeyForMetro(slug)} formerWcbb={getFormerWcbbForMetro(slug)} formerRugby={getFormerTopFlightForMetro(slug)} />
+              {((detail.teams && detail.teams.length > 0) || getRelocationsForMetro(slug).length > 0 || getFormerTopFlightForMetro(slug).length > 0 || getFormerMajorCfbForMetro(slug).length > 0 || getFormerMajorCbbForMetro(slug).length > 0 || getFormerWcbbForMetro(slug).length > 0 || getDefunctBritishRLForMetro(slug).length > 0) && (
+                <TeamsSection teams={detail.teams || []} metroName={metro.name} topTeamPick={topTeamPick} relocations={getRelocationsForMetro(slug)} formerCfb={getFormerMajorCfbForMetro(slug)} formerCbb={getFormerMajorCbbForMetro(slug)} wcbb={getWcbbForMetro(slug)} collegeHockey={getCollegeHockeyForMetro(slug)} formerWcbb={getFormerWcbbForMetro(slug)} formerRugby={getFormerTopFlightForMetro(slug)} defunctRL={getDefunctBritishRLForMetro(slug)} />
               )}
               {((detail.events && detail.events.length > 0) || mergedSportingEvents.length > 0) && (
                 <EventsSection events={detail.events || []} sportingEvents={mergedSportingEvents} />
@@ -1414,6 +1415,7 @@ function TeamsSection({
   collegeHockey = { major: [], other: [] },
   formerWcbb = [],
   formerRugby = [],
+  defunctRL = [],
 }: {
   teams: Array<{
     sport: string;
@@ -1433,6 +1435,7 @@ function TeamsSection({
   collegeHockey?: { major: CollegeHockeyCard[]; other: CollegeHockeyCard[] };
   formerWcbb?: FormerWcbbCard[];
   formerRugby?: FormerTopFlight[];
+  defunctRL?: DefunctRLClub[];
 }) {
   // Teams flagged Annual=Y in Team List (col O) are recurring-event entries
   // (F1 Grands Prix, NASCAR races, Sailing regattas, Powerboat races). They
@@ -1960,7 +1963,7 @@ function TeamsSection({
           })()}
         </div>
       )}
-      {(otherFootball.length > 0 || otherCollege.length > 0 || otherCollegeCards.length > 0 || wcbb.other.length > 0 || collegeHockey.other.length > 0 || otherMen.length > 0 || otherWomen.length > 0 || relocations.length > 0 || formerCfb.length > 0 || formerCbb.length > 0 || formerWcbb.length > 0 || defunctNasl.length > 0 || nflEurope.length > 0 || formerRugby.length > 0) && (
+      {(otherFootball.length > 0 || otherCollege.length > 0 || otherCollegeCards.length > 0 || wcbb.other.length > 0 || collegeHockey.other.length > 0 || otherMen.length > 0 || otherWomen.length > 0 || relocations.length > 0 || formerCfb.length > 0 || formerCbb.length > 0 || formerWcbb.length > 0 || defunctNasl.length > 0 || nflEurope.length > 0 || formerRugby.length > 0 || defunctRL.length > 0) && (
         <div>
           <h3 className="text-lg font-semibold text-[var(--text-muted)] mb-4">
             Other Teams
@@ -1985,12 +1988,12 @@ function TeamsSection({
                 </div>
               </details>
             )}
-            {(relocations.length > 0 || formerCfb.length > 0 || formerCbb.length > 0 || formerWcbb.length > 0 || defunctNasl.length > 0 || nflEurope.length > 0 || formerRugby.length > 0) && (
+            {(relocations.length > 0 || formerCfb.length > 0 || formerCbb.length > 0 || formerWcbb.length > 0 || defunctNasl.length > 0 || nflEurope.length > 0 || formerRugby.length > 0 || defunctRL.length > 0) && (
               <details className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden group">
                 <summary className="flex items-center justify-between px-4 py-3 cursor-pointer hover:bg-[var(--bg-card-hover)] transition select-none">
                   <span className="font-semibold text-[var(--text)]">Defunct/Relocated Teams</span>
                   <span className="text-sm text-[var(--text-muted)]">
-                    {relocations.length + formerCfb.length + formerCbb.length + formerWcbb.length + defunctNasl.length + nflEurope.length + formerRugby.length} team{relocations.length + formerCfb.length + formerCbb.length + formerWcbb.length + defunctNasl.length + nflEurope.length + formerRugby.length !== 1 ? "s" : ""}
+                    {relocations.length + formerCfb.length + formerCbb.length + formerWcbb.length + defunctNasl.length + nflEurope.length + formerRugby.length + defunctRL.length} team{relocations.length + formerCfb.length + formerCbb.length + formerWcbb.length + defunctNasl.length + nflEurope.length + formerRugby.length + defunctRL.length !== 1 ? "s" : ""}
                   </span>
                 </summary>
                 <div className={`border-t border-[var(--border)] px-4 py-3 ${gridClass}`}>
@@ -2279,6 +2282,16 @@ function TeamsSection({
                         <div key={"nasl-" + idx} className="border rounded-lg p-4 bg-[var(--bg-card)] border-[var(--border)]">{body}</div>
                       );
                     })() })),
+                    ...defunctRL.map((d) => ({ y: d.lastYear ?? 0, el: (
+                      <div key={`drl-${d.club}`} className="border rounded-lg p-4 bg-[var(--bg-card)] border-[var(--border)]">
+                        <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">🏉</span>Rugby League &bull; British &bull; Defunct</p>
+                        <p className="font-semibold text-[var(--text)]">{d.club}</p>
+                        <p className="text-xs text-[var(--text-dim)]">{d.years.length === 1 ? `Champions ${d.years[0]}` : `Champions ${d.years.join(", ")}`}</p>
+                        <div className="flex gap-1.5 mt-2 flex-wrap">
+                          <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide" style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }} title={`British RL titles: ${d.years.join(", ")}`}>{d.titles === 1 ? "1 title" : `${d.titles} titles`}</span>
+                        </div>
+                      </div>
+                    ) })),
                     ...nflEurope.map((n, idx) => ({ y: n.lastYear, el: (
                     <Link key={"nfle-" + idx} href={`/teams/nfl/international#${n.slug}`} className="border rounded-lg p-4 hover:border-[var(--accent)] transition bg-[var(--bg-card)] border-[var(--border)] block">
                       <p className="text-xs text-[var(--text-muted)] mb-1"><span aria-hidden className="mr-1">{"\uD83C\uDFC8"}</span>American Football &bull; NFL Europe &bull; Defunct</p>
@@ -2424,6 +2437,9 @@ function TeamCard({
   // Domestic winners-roll honours for rugby league / volleyball / handball /
   // KHL hockey / CBA / county cricket clubs (lib/domesticHonours).
   const domesticHonours = getDomesticHonours(team.sport, team.team);
+  // Cross-sport British RL title for a club tracked under another sport
+  // (Bradford Park Avenue won the 1903-04 title as a football club).
+  const crossRL = getBritishRLTitlesForClub(team.team);
 
   // Reigning-champion pill (lib/champions). Matched on team name: champion club
   // names are unique across the ledger, so this avoids the workbook's sport-label
@@ -2496,6 +2512,16 @@ function TeamCard({
               {h.count > 0 ? `${h.count}× ${h.label}` : `No ${h.label} titles`}
             </Link>
           ))}
+        </div>
+      )}
+      {crossRL && (
+        <div className="flex gap-1.5 mb-1.5 flex-wrap">
+          <Link href={crossRL.href}
+                className="text-[10px] px-1.5 py-0.5 rounded font-semibold tracking-wide hover:opacity-80 transition-opacity"
+                style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }}
+                title={`British rugby league titles: ${crossRL.years.join(", ")}`}>
+            {crossRL.count}× British RL
+          </Link>
         </div>
       )}
       {cwsRec && (cwsRec.titles > 0 || cwsRec.apps > 0) && (
