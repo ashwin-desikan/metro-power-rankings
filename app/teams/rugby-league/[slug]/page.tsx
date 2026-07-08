@@ -91,7 +91,7 @@ export default async function RlNationPage({ params }: { params: Promise<{ slug:
         </p>
       </header>
 
-      <div className="grid grid-cols-3 gap-3 mb-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
         {[
           { label: "Titles", value: t.titles, gold: true },
           { label: "Runners-up", value: t.runner_ups },

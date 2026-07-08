@@ -363,7 +363,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
         {/* Hero Section */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           <div className="lg:col-span-2">
-            <h1 className="text-5xl font-bold mb-4" style={{ color: regionColors[metro.region] || "var(--accent)" }}>
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4" style={{ color: regionColors[metro.region] || "var(--accent)" }}>
               {metro.name}
             </h1>
             <div className="mb-4">
@@ -659,7 +659,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                 <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0">
                   <span className="text-amber-400 text-lg" aria-hidden="true">&#9812;</span>
                 </div>
-                <div className="flex-1 min-w-[240px]">
+                <div className="flex-1 min-w-[160px]">
                   <p className="text-sm font-semibold text-amber-400">Top Team</p>
                   <p className="text-xs text-[var(--text-muted)] mb-3">
                     The single sporting franchise this metro is identified with.
@@ -716,7 +716,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                 <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
                   <span className="text-emerald-400 text-lg" aria-hidden="true">&#9873;</span>
                 </div>
-                <div className="flex-1 min-w-[240px]">
+                <div className="flex-1 min-w-[160px]">
                   <p className="text-sm font-semibold text-emerald-400">Walkable Elite Quarters</p>
                   <p className="text-xs text-[var(--text-muted)] mb-3">
                     Neighborhoods that clear the dense, historic, walkable, elite residential test.
