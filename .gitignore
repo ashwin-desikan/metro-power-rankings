@@ -141,3 +141,7 @@ design_handoff_homepage_revamp/
 # Historical power ranking: large regenerable source binaries (keep out of git)
 data/power-history/_incoming/
 data/power-history/maddison_gdp.json
+
+pull-history-log.txt
+
+OtherLeagues.xlsx
