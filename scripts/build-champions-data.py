@@ -67,6 +67,7 @@ def build_from_history(src):
     iCanon    = col("Champion (Canonical)", "Canonical", "Champion")
     iEra      = col("Champion", "Era Name")
     iScope    = col("Scope Type")
+    iGeo      = col("Scope")
     iYear     = col("Year")
     iDate     = col("Date Awarded", "Date")  # "Date" is used post-merge
     iNext     = col("Next Awarded Date")
@@ -119,8 +120,8 @@ def build_from_history(src):
             continue
 
         scope_type  = cell(g(iScope)) if iScope is not None else ""
-        scope_label = ""
-        if iIntl is not None and g(iIntl):
+        scope_label = cell(g(iGeo)) if iGeo is not None else ""
+        if not scope_label and iIntl is not None and g(iIntl):
             scope_label = cell(g(iIntl)); scope_type = scope_type or "International"
         elif iCont is not None and g(iCont):
             scope_label = cell(g(iCont)); scope_type = scope_type or "Continental"

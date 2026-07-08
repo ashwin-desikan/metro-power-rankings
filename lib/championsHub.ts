@@ -178,6 +178,7 @@ function geoFor(c: Championship): string {
   const comp = c.competition.toLowerCase();
   if (comp.includes("world") || comp.includes("olympic")) return "World";
   if (comp.includes("uefa") || comp.includes("europ")) return "Europe";
+  if (c.scope && c.scope.trim()) return c.scope.trim(); // workbook Scope column (England, World, Europe, ...)
   return c.scopeType === "International" ? "World" : "—";
 }
 
@@ -213,6 +214,13 @@ const COUNTRY_CONTINENT: Record<string, string> = {
   France: "Europe",
   Netherlands: "Europe",
   Portugal: "Europe",
+  Bangladesh: "Asia",
+  "Sri Lanka": "Asia",
+  Pakistan: "Asia",
+  "United Arab Emirates": "Asia",
+  "South Africa": "Africa",
+  "New Zealand": "Oceania",
+  "West Indies": "North America",
 };
 
 function regionFor(geo: string): string {
