@@ -1181,5 +1181,18 @@
 "nextAwardedDate": "2026-10-10",
 "tier": 4,
 "tierGuide": null
+},
+{
+"sport": "Cycling",
+"competition": "Tour de France",
+"team": "Tadej Pogačar",
+"year": 2025,
+"dateAwarded": "2025-07-27",
+"scope": "World",
+"scopeType": "International",
+"nextAwarded": 2026,
+"nextAwardedDate": "2026-07-26",
+"tier": 3,
+"tierGuide": null
 }
 ]

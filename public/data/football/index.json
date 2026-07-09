@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-05",
+  "generated_at": "2026-07-09",
   "source": "Champions League-201516.xlsx",
   "scope": {
     "countries": [
@@ -5882,7 +5882,7 @@
         5
       ],
       "first_year": 2018,
-      "last_year": 2025,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 5,
       "league_seasons": 5,
@@ -5968,7 +5968,7 @@
         5
       ],
       "first_year": 2010,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 17,
       "league_seasons": 17,
@@ -6271,7 +6271,7 @@
         5
       ],
       "first_year": 2004,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 23,
       "league_seasons": 23,
@@ -6493,7 +6493,7 @@
         5
       ],
       "first_year": 2004,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 23,
       "league_seasons": 23,
@@ -6615,7 +6615,7 @@
         5
       ],
       "first_year": 1980,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 33,
       "league_seasons": 33,
@@ -7419,7 +7419,7 @@
         5
       ],
       "first_year": 1980,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 47,
       "league_seasons": 47,
@@ -7550,7 +7550,7 @@
         4
       ],
       "first_year": 1899,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 1,
       "lower_tier_seasons": 117,
       "league_seasons": 118,
@@ -7822,7 +7822,7 @@
         5
       ],
       "first_year": 1922,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 71,
       "league_seasons": 71,
@@ -8070,7 +8070,7 @@
         3
       ],
       "first_year": 1893,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 57,
       "lower_tier_seasons": 67,
       "league_seasons": 124,
@@ -8354,7 +8354,7 @@
         3
       ],
       "first_year": 1889,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 72,
       "lower_tier_seasons": 55,
       "league_seasons": 127,
@@ -8645,7 +8645,7 @@
         4
       ],
       "first_year": 1897,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 28,
       "lower_tier_seasons": 90,
       "league_seasons": 118,
@@ -8918,7 +8918,7 @@
         4
       ],
       "first_year": 1889,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 73,
       "lower_tier_seasons": 54,
       "league_seasons": 127,
@@ -9242,7 +9242,7 @@
         5
       ],
       "first_year": 2016,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 10,
       "league_seasons": 10,
@@ -9297,7 +9297,7 @@
         5
       ],
       "first_year": 1980,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 23,
       "league_seasons": 23,
@@ -9416,7 +9416,7 @@
         4
       ],
       "first_year": 1904,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 12,
       "lower_tier_seasons": 101,
       "league_seasons": 113,
@@ -10348,7 +10348,7 @@
         4
       ],
       "first_year": 1902,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 9,
       "lower_tier_seasons": 106,
       "league_seasons": 115,
@@ -10615,7 +10615,7 @@
         5
       ],
       "first_year": 1921,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 100,
       "league_seasons": 100,
@@ -10846,11 +10846,12 @@
       "lat": 51.41974,
       "lng": 0.11005,
       "tiers": [
+        3,
         4,
         5
       ],
       "first_year": 2016,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 11,
       "league_seasons": 11,
@@ -10955,7 +10956,7 @@
         4
       ],
       "first_year": 1889,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 61,
       "lower_tier_seasons": 67,
       "league_seasons": 128,
@@ -11248,7 +11249,7 @@
         5
       ],
       "first_year": 2003,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 24,
       "league_seasons": 24,
@@ -11740,7 +11741,7 @@
         5
       ],
       "first_year": 1971,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 56,
       "league_seasons": 56,
@@ -11927,7 +11928,7 @@
         4
       ],
       "first_year": 1921,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 17,
       "lower_tier_seasons": 83,
       "league_seasons": 100,
@@ -12165,7 +12166,7 @@
         5
       ],
       "first_year": 1929,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 1,
       "lower_tier_seasons": 91,
       "league_seasons": 92,
@@ -12385,7 +12386,7 @@
         3
       ],
       "first_year": 1922,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 26,
       "lower_tier_seasons": 72,
       "league_seasons": 98,
@@ -12875,7 +12876,7 @@
         5
       ],
       "first_year": 1986,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 36,
       "league_seasons": 36,
@@ -13210,7 +13211,7 @@
         5
       ],
       "first_year": 1900,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 109,
       "league_seasons": 109,
@@ -13505,7 +13506,7 @@
         5
       ],
       "first_year": 1951,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 76,
       "league_seasons": 76,
@@ -13932,7 +13933,7 @@
         5
       ],
       "first_year": 2005,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 22,
       "league_seasons": 22,
@@ -14012,7 +14013,7 @@
         4
       ],
       "first_year": 1893,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 103,
       "league_seasons": 103,
@@ -14941,7 +14942,7 @@
         3
       ],
       "first_year": 1889,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 65,
       "lower_tier_seasons": 62,
       "league_seasons": 127,
@@ -15232,7 +15233,7 @@
         5
       ],
       "first_year": 1902,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 100,
       "league_seasons": 100,
@@ -15696,7 +15697,7 @@
         5
       ],
       "first_year": 2015,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 12,
       "league_seasons": 12,
@@ -16167,7 +16168,7 @@
         5
       ],
       "first_year": 1921,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 100,
       "league_seasons": 100,
@@ -16401,7 +16402,7 @@
         5
       ],
       "first_year": 2016,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 10,
       "league_seasons": 10,
@@ -16593,7 +16594,7 @@
         5
       ],
       "first_year": 2011,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 16,
       "league_seasons": 16,
@@ -16661,7 +16662,7 @@
         5
       ],
       "first_year": 1999,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 28,
       "league_seasons": 28,
@@ -17122,7 +17123,7 @@
         5
       ],
       "first_year": 1984,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 25,
       "league_seasons": 25,
@@ -17314,7 +17315,7 @@
         4
       ],
       "first_year": 1921,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 94,
       "league_seasons": 94,
@@ -17689,7 +17690,7 @@
         5
       ],
       "first_year": 1893,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 12,
       "lower_tier_seasons": 110,
       "league_seasons": 122,
@@ -18210,7 +18211,7 @@
         5
       ],
       "first_year": 2019,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 8,
       "league_seasons": 8,
@@ -18262,7 +18263,7 @@
         5
       ],
       "first_year": 1922,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 99,
       "league_seasons": 99,
@@ -18811,6 +18812,38 @@
       }
     },
     {
+      "slug": "hornchurch",
+      "cur_name": "Hornchurch",
+      "country": "England",
+      "federation_country": null,
+      "city": "London",
+      "metro": "London",
+      "county": "Greater London",
+      "continent": "Europe",
+      "lat": 51.5615,
+      "lng": 0.2161,
+      "tiers": [
+        5
+      ],
+      "first_year": 2027,
+      "last_year": 2027,
+      "top_flight_seasons": 0,
+      "lower_tier_seasons": 0,
+      "league_seasons": 0,
+      "playoff_appearances": 0,
+      "totals": {
+        "titles": 0,
+        "last_title": 0,
+        "league_finals": 0,
+        "league_t4": 0,
+        "major_cups": 0,
+        "minor_cups": 0,
+        "last_trophy": 0
+      },
+      "tier_by_year": {},
+      "country_by_year": {}
+    },
+    {
       "slug": "huddersfield-town",
       "cur_name": "Huddersfield Town",
       "country": "England",
@@ -18828,7 +18861,7 @@
         4
       ],
       "first_year": 1911,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 32,
       "lower_tier_seasons": 73,
       "league_seasons": 105,
@@ -19658,7 +19691,7 @@
         5
       ],
       "first_year": 1984,
-      "last_year": 2024,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 34,
       "league_seasons": 34,
@@ -20168,7 +20201,7 @@
         3
       ],
       "first_year": 1895,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 56,
       "lower_tier_seasons": 66,
       "league_seasons": 122,
@@ -20530,7 +20563,7 @@
         5
       ],
       "first_year": 1906,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 1,
       "lower_tier_seasons": 110,
       "league_seasons": 111,
@@ -20789,7 +20822,7 @@
         5
       ],
       "first_year": 1893,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 121,
       "league_seasons": 121,
@@ -21395,7 +21428,7 @@
         5
       ],
       "first_year": 1898,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 17,
       "lower_tier_seasons": 86,
       "league_seasons": 103,
@@ -22432,7 +22465,7 @@
         5
       ],
       "first_year": 1932,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 89,
       "league_seasons": 89,
@@ -22786,7 +22819,7 @@
         3
       ],
       "first_year": 1900,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 61,
       "lower_tier_seasons": 55,
       "league_seasons": 116,
@@ -23091,7 +23124,7 @@
         4
       ],
       "first_year": 1921,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 2,
       "lower_tier_seasons": 98,
       "league_seasons": 100,
@@ -23328,7 +23361,7 @@
         4
       ],
       "first_year": 1978,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 14,
       "lower_tier_seasons": 35,
       "league_seasons": 49,
@@ -24017,7 +24050,7 @@
         5
       ],
       "first_year": 1921,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 77,
       "league_seasons": 77,
@@ -24244,7 +24277,7 @@
         4
       ],
       "first_year": 1921,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 1,
       "lower_tier_seasons": 99,
       "league_seasons": 100,
@@ -24577,7 +24610,7 @@
         3
       ],
       "first_year": 1921,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 27,
       "lower_tier_seasons": 73,
       "league_seasons": 100,
@@ -25102,7 +25135,7 @@
         5
       ],
       "first_year": 1889,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 30,
       "lower_tier_seasons": 98,
       "league_seasons": 128,
@@ -25458,7 +25491,7 @@
         5
       ],
       "first_year": 1908,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 12,
       "lower_tier_seasons": 97,
       "league_seasons": 109,
@@ -25750,7 +25783,7 @@
         5
       ],
       "first_year": 1963,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 3,
       "lower_tier_seasons": 61,
       "league_seasons": 64,
@@ -25914,7 +25947,7 @@
         4
       ],
       "first_year": 1961,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 66,
       "league_seasons": 66,
@@ -26082,7 +26115,7 @@
         4
       ],
       "first_year": 1921,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 100,
       "league_seasons": 100,
@@ -26318,7 +26351,7 @@
         4
       ],
       "first_year": 1893,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 114,
       "league_seasons": 114,
@@ -26583,7 +26616,7 @@
         4
       ],
       "first_year": 1921,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 33,
       "lower_tier_seasons": 66,
       "league_seasons": 99,
@@ -26818,7 +26851,7 @@
         4
       ],
       "first_year": 1889,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 46,
       "lower_tier_seasons": 81,
       "league_seasons": 127,
@@ -27108,7 +27141,7 @@
         3
       ],
       "first_year": 1921,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 23,
       "lower_tier_seasons": 77,
       "league_seasons": 100,
@@ -27345,7 +27378,7 @@
         4
       ],
       "first_year": 1921,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 3,
       "lower_tier_seasons": 97,
       "league_seasons": 100,
@@ -27617,7 +27650,7 @@
         5
       ],
       "first_year": 1922,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 99,
       "league_seasons": 99,
@@ -27851,7 +27884,7 @@
         4
       ],
       "first_year": 1894,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 104,
       "league_seasons": 104,
@@ -28224,7 +28257,7 @@
         5
       ],
       "first_year": 2019,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 8,
       "league_seasons": 8,
@@ -28408,7 +28441,7 @@
         5
       ],
       "first_year": 1951,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 74,
       "league_seasons": 74,
@@ -28593,7 +28626,7 @@
         4
       ],
       "first_year": 1893,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 63,
       "lower_tier_seasons": 60,
       "league_seasons": 123,
@@ -28875,7 +28908,7 @@
         3
       ],
       "first_year": 1893,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 66,
       "lower_tier_seasons": 58,
       "league_seasons": 124,
@@ -29160,7 +29193,7 @@
         5
       ],
       "first_year": 1951,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 76,
       "league_seasons": 76,
@@ -29394,7 +29427,7 @@
         5
       ],
       "first_year": 2017,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 10,
       "league_seasons": 10,
@@ -29450,7 +29483,7 @@
         3
       ],
       "first_year": 1921,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 47,
       "lower_tier_seasons": 53,
       "league_seasons": 100,
@@ -29687,7 +29720,7 @@
         5
       ],
       "first_year": 1921,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 100,
       "league_seasons": 100,
@@ -30254,7 +30287,7 @@
         5
       ],
       "first_year": 1995,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 32,
       "league_seasons": 32,
@@ -30355,7 +30388,7 @@
         5
       ],
       "first_year": 1901,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 109,
       "league_seasons": 109,
@@ -30609,7 +30642,7 @@
         3
       ],
       "first_year": 1889,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 62,
       "lower_tier_seasons": 57,
       "league_seasons": 119,
@@ -31170,7 +31203,7 @@
         5
       ],
       "first_year": 1987,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 16,
       "league_seasons": 16,
@@ -31239,7 +31272,7 @@
         4
       ],
       "first_year": 1921,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 9,
       "lower_tier_seasons": 91,
       "league_seasons": 100,
@@ -31476,7 +31509,7 @@
         4
       ],
       "first_year": 1921,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 1,
       "lower_tier_seasons": 99,
       "league_seasons": 100,
@@ -31710,7 +31743,7 @@
         5
       ],
       "first_year": 2004,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 11,
       "league_seasons": 11,
@@ -32358,7 +32391,7 @@
         5
       ],
       "first_year": 1922,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 99,
       "league_seasons": 99,
@@ -32668,7 +32701,7 @@
         4
       ],
       "first_year": 1893,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 107,
       "league_seasons": 107,
@@ -32919,7 +32952,7 @@
         4
       ],
       "first_year": 1921,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 14,
       "lower_tier_seasons": 86,
       "league_seasons": 100,
@@ -33153,7 +33186,7 @@
         5
       ],
       "first_year": 1980,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 14,
       "league_seasons": 14,
@@ -33285,7 +33318,7 @@
         3
       ],
       "first_year": 1889,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 81,
       "lower_tier_seasons": 47,
       "league_seasons": 128,
@@ -33578,7 +33611,7 @@
         2
       ],
       "first_year": 1920,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 68,
       "lower_tier_seasons": 33,
       "league_seasons": 101,
@@ -33881,7 +33914,7 @@
         4
       ],
       "first_year": 1979,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 8,
       "lower_tier_seasons": 40,
       "league_seasons": 48,
@@ -34105,7 +34138,7 @@
         5
       ],
       "first_year": 1993,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 30,
       "league_seasons": 30,
@@ -34204,7 +34237,7 @@
         4
       ],
       "first_year": 1889,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 71,
       "lower_tier_seasons": 56,
       "league_seasons": 127,
@@ -34611,6 +34644,38 @@
       }
     },
     {
+      "slug": "worthing-fc",
+      "cur_name": "Worthing FC",
+      "country": "England",
+      "federation_country": null,
+      "city": "Worthing",
+      "metro": "Brighton & Hove",
+      "county": "West Sussex",
+      "continent": "Europe",
+      "lat": 50.820336,
+      "lng": -0.38373,
+      "tiers": [
+        5
+      ],
+      "first_year": 2027,
+      "last_year": 2027,
+      "top_flight_seasons": 0,
+      "lower_tier_seasons": 0,
+      "league_seasons": 0,
+      "playoff_appearances": 0,
+      "totals": {
+        "titles": 0,
+        "last_title": 0,
+        "league_finals": 0,
+        "league_t4": 0,
+        "major_cups": 0,
+        "minor_cups": 0,
+        "last_trophy": 0
+      },
+      "tier_by_year": {},
+      "country_by_year": {}
+    },
+    {
       "slug": "wrexham",
       "cur_name": "Wrexham",
       "country": "England",
@@ -34628,7 +34693,7 @@
         5
       ],
       "first_year": 1922,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 99,
       "league_seasons": 99,
@@ -34863,7 +34928,7 @@
         5
       ],
       "first_year": 1986,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 40,
       "league_seasons": 40,
@@ -34980,7 +35045,7 @@
         5
       ],
       "first_year": 1980,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 41,
       "league_seasons": 41,
@@ -35099,7 +35164,7 @@
         5
       ],
       "first_year": 1930,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 86,
       "league_seasons": 86,
@@ -79218,7 +79283,7 @@
         3
       ],
       "first_year": 1994,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 33,
       "league_seasons": 33,
@@ -79612,7 +79677,7 @@
         4
       ],
       "first_year": 1922,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 1,
       "lower_tier_seasons": 97,
       "league_seasons": 98,
@@ -79881,7 +79946,7 @@
         4
       ],
       "first_year": 2009,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 18,
       "league_seasons": 18,
@@ -79954,7 +80019,7 @@
         4
       ],
       "first_year": 1922,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 9,
       "lower_tier_seasons": 89,
       "league_seasons": 98,
@@ -80459,7 +80524,7 @@
         3
       ],
       "first_year": 1911,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 35,
       "lower_tier_seasons": 74,
       "league_seasons": 109,
@@ -81776,7 +81841,7 @@
         4
       ],
       "first_year": 1892,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 63,
       "lower_tier_seasons": 65,
       "league_seasons": 128,
@@ -82252,7 +82317,7 @@
         4
       ],
       "first_year": 2020,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 7,
       "league_seasons": 7,
@@ -82620,7 +82685,7 @@
         4
       ],
       "first_year": 1891,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 19,
       "lower_tier_seasons": 101,
       "league_seasons": 120,
@@ -83630,7 +83695,7 @@
         3
       ],
       "first_year": 1913,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 38,
       "lower_tier_seasons": 63,
       "league_seasons": 101,
@@ -83957,7 +84022,7 @@
         4
       ],
       "first_year": 1922,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 14,
       "lower_tier_seasons": 84,
       "league_seasons": 98,
@@ -84232,10 +84297,11 @@
       "lat": 55.7644,
       "lng": -4.1769,
       "tiers": [
+        3,
         4
       ],
       "first_year": 2026,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 1,
       "league_seasons": 1,
@@ -84514,7 +84580,7 @@
         4
       ],
       "first_year": 1932,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 21,
       "league_seasons": 21,
@@ -84590,7 +84656,7 @@
         4
       ],
       "first_year": 2001,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 26,
       "league_seasons": 26,
@@ -84996,7 +85062,7 @@
         4
       ],
       "first_year": 1922,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 98,
       "league_seasons": 98,
@@ -85305,7 +85371,7 @@
         4
       ],
       "first_year": 1894,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 54,
       "lower_tier_seasons": 72,
       "league_seasons": 126,
@@ -85643,7 +85709,7 @@
         4
       ],
       "first_year": 1898,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 48,
       "lower_tier_seasons": 74,
       "league_seasons": 122,
@@ -86682,7 +86748,7 @@
         4
       ],
       "first_year": 1995,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 12,
       "lower_tier_seasons": 20,
       "league_seasons": 32,
@@ -86834,7 +86900,7 @@
         4
       ],
       "first_year": 2022,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 5,
       "league_seasons": 5,
@@ -87495,7 +87561,7 @@
         4
       ],
       "first_year": 1996,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 12,
       "lower_tier_seasons": 19,
       "league_seasons": 31,
@@ -87757,7 +87823,7 @@
         4
       ],
       "first_year": 1924,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 93,
       "league_seasons": 93,
@@ -88435,7 +88501,7 @@
         3
       ],
       "first_year": 1894,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 85,
       "lower_tier_seasons": 41,
       "league_seasons": 126,
@@ -88808,7 +88874,7 @@
         4
       ],
       "first_year": 2001,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 26,
       "league_seasons": 26,
@@ -88967,7 +89033,7 @@
         3
       ],
       "first_year": 1924,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 20,
       "lower_tier_seasons": 76,
       "league_seasons": 96,
@@ -89242,7 +89308,7 @@
         4
       ],
       "first_year": 1901,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 42,
       "lower_tier_seasons": 77,
       "league_seasons": 119,
@@ -89564,7 +89630,7 @@
         3
       ],
       "first_year": 1903,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 37,
       "lower_tier_seasons": 78,
       "league_seasons": 115,
@@ -90271,7 +90337,7 @@
         4
       ],
       "first_year": 1995,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 12,
       "lower_tier_seasons": 20,
       "league_seasons": 32,
@@ -90501,7 +90567,7 @@
         4
       ],
       "first_year": 2024,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 3,
       "league_seasons": 3,
@@ -91285,7 +91351,7 @@
         4
       ],
       "first_year": 1922,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 98,
       "league_seasons": 98,
@@ -91518,7 +91584,7 @@
         4
       ],
       "first_year": 1933,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 12,
       "lower_tier_seasons": 69,
       "league_seasons": 81,
@@ -91760,7 +91826,7 @@
         4
       ],
       "first_year": 1950,
-      "last_year": 2026,
+      "last_year": 2027,
       "top_flight_seasons": 0,
       "lower_tier_seasons": 77,
       "league_seasons": 77,

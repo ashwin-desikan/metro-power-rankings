@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-07-09",
-    headline: "Mobile tables, Origin 2026, sign-in sync, and new kids learning games",
+    headline: "Mobile tables, kids games, Origin 2026, and Tour de France in Champions",
     items: [
       "Every ranking and stats table across the site now has a phone-friendly card view, with sticky sort controls and screen-reader support, so data reads and sorts on mobile instead of overflowing sideways.",
-      "New South Wales win the 2026 State of Origin series 2-1, taking the decider at Suncorp Stadium to reclaim the shield. The series table on the NRL hub now runs through 2026.",
-      "Signing in with Google on the Following page now stays signed in and syncs the metros and teams you follow across every device, instead of the session dropping after a short while.",
+      "New South Wales win the 2026 State of Origin series 2-1 at Suncorp Stadium, and Google sign-in on the Following page now stays signed in and syncs your followed metros and teams across every device.",
       "A new Play & Learn section adds curriculum-aligned games for ages 5 to 10: find the oceans and continents, match world capitals, place ancient empires on the map, and more, built from the site's own data.",
+      "The Tour de France joins Champions with its full honour roll of winners back to 1903 and the reigning champion, and the Leaders time machine adds India's Shunga and Satavahana dynasties.",
     ],
   },
   {
