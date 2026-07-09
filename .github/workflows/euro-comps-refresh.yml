@@ -8,8 +8,8 @@ name: UEFA club comps fixtures refresh
 # deploy. Quiet days (no fixture change) produce no commit.
 
 on:
-  schedule:
-    - cron: "35 6 * * *"   # once each morning (06:35 UTC)
+ # schedule:
+  #  - cron: "35 6 * * *"   # once each morning (06:35 UTC)
   workflow_dispatch: {}    # allow manual "Run workflow" from the Actions tab
 
 permissions:
