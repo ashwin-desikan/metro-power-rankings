@@ -50,6 +50,7 @@ const SERIES: Series[] = [
   { year: 2023, winner: "QLD", w: 2, l: 1, d: 0, shield: "QLD" },
   { year: 2024, winner: "NSW", w: 2, l: 1, d: 0, shield: "NSW" },
   { year: 2025, winner: "QLD", w: 2, l: 1, d: 0, shield: "QLD" },
+  { year: 2026, winner: "NSW", w: 2, l: 1, d: 0, shield: "NSW" },
 ];
 
 const TEAMS = {
