@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Big Rivals — Play &amp; Learn</title>
+<style>
+  :root{--ink:#16324f;--accent:#1f9e82;--gold:#f6b93b;--red:#ff6b6b;--paper:#eef6fc;--card:#fff}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;height:100%}
+  body{font-family:"Baloo 2","Segoe UI",system-ui,sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden}
+  header{display:flex;align-items:center;justify-content:space-between;padding:10px 16px}
+  .logo{font-size:1.35rem;font-weight:900}
+  .snd{border:none;background:#fff;border-radius:14px;font-size:1.3rem;padding:6px 12px;box-shadow:0 4px 0 #cfe0ee;cursor:pointer}
+  main{max-width:720px;margin:0 auto;padding:0 16px 20px;text-align:center}
+  .team{background:var(--card);border-radius:24px;padding:22px 18px;box-shadow:0 8px 0 #d6e6f2}
+  .team .em{font-size:3rem}
+  .team .nm{font-size:2rem;font-weight:900;margin-top:2px}
+  .say{border:none;background:var(--gold);color:#5a3d00;border-radius:16px;font-size:1.3rem;padding:8px 14px;box-shadow:0 5px 0 #cf9526;cursor:pointer;margin-top:10px}
+  .ask{font-size:1.2rem;font-weight:800;margin:14px 0}
+  .opts{display:grid;gap:12px}
+  .opt{border:none;border-radius:18px;background:var(--card);box-shadow:0 6px 0 #d6e6f2;padding:16px;font-family:inherit;font-weight:800;font-size:1.2rem;color:var(--ink);cursor:pointer;transition:transform .1s}
+  .opt:active{transform:scale(.97)}
+  .opt.good{box-shadow:0 0 0 4px var(--accent),0 6px 0 #15705d}
+  .opt.bad{animation:shake .35s}
+  .opt.dim{opacity:.4}
+  @keyframes shake{25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+  .reveal{min-height:1.4em;font-size:1.1rem;font-weight:800;color:var(--accent);margin:12px 0}
+  .next{border:none;border-radius:16px;font-weight:900;font-size:1.05rem;padding:12px 22px;cursor:pointer;background:var(--accent);color:#fff;box-shadow:0 6px 0 #15705d}
+  .next:disabled{opacity:.4;box-shadow:none}
+  .pass{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+  .stamp{width:34px;height:34px;border-radius:10px;background:#fff;box-shadow:inset 0 0 0 3px #dcebf6;display:flex;align-items:center;justify-content:center;font-size:1.05rem;opacity:.4;filter:grayscale(1)}
+  .stamp.on{opacity:1;filter:none;box-shadow:inset 0 0 0 3px var(--gold);animation:pop .4s}
+  @keyframes pop{50%{transform:scale(1.3) rotate(-6deg)}}
+  .toast{position:fixed;left:50%;top:12%;transform:translateX(-50%);background:var(--ink);color:#fff;font-weight:900;font-size:1.15rem;padding:11px 18px;border-radius:16px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:9}
+  .toast.show{opacity:1}
+  .conf{position:fixed;top:-10px;font-size:1.3rem;pointer-events:none;z-index:15;animation:fall linear forwards}
+  @keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+  .finale{position:fixed;inset:0;background:#fffef7;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:20}
+  .finale.show{display:flex}
+</style>
+</head>
+<body>
+<header><div class="logo">🔥 Big Rivals</div><button class="snd" id="snd">🔊</button></header>
+<main>
+  <div class="team"><div class="em" id="em">⚽</div><div class="nm" id="team">—</div><button class="say" id="say">📣 Say it</button></div>
+  <div class="ask">Who are their <b>big rivals</b>?</div>
+  <div class="opts" id="opts"></div>
+  <div class="reveal" id="reveal"></div>
+  <button class="next" id="next" disabled>Next ▶</button>
+  <div class="pass" id="pass"></div>
+</main>
+<div class="toast" id="toast"></div>
+<div class="finale" id="finale">
+  <h1 style="font-size:2.2rem">🏆 Rivalry Master!</h1>
+  <p style="font-size:1.15rem;font-weight:800">You know every great sporting rivalry.</p>
+  <button class="next" style="margin-top:16px" onclick="location.reload()">Play again 🔁</button>
+</div>
+<script>
+const EMO={"Football":"⚽","Baseball":"⚾","Basketball":"🏀","American Football":"🏈","Cricket":"🏏","Aussie Rules":"🏉","Canadian Football":"🏈","Ice Hockey":"🏒"};
+const R=[{"t":"Navy","r":"Army","s":"American Football","note":"a huge rivalry!"},{"t":"Bears","r":"Packers","s":"American Football","note":"a huge rivalry!"},{"t":"Chiefs","r":"Raiders","s":"American Football","note":"a huge rivalry!"},{"t":"Commanders","r":"Cowboys","s":"American Football","note":"a huge rivalry!"},{"t":"Cowboys","r":"Eagles","s":"American Football","note":"a huge rivalry!"},{"t":"Alabama","r":"Auburn","s":"American Football","note":"the Iron Bowl!"},{"t":"Ohio State","r":"Michigan","s":"American Football","note":"they call it The Game!"},{"t":"Packers","r":"Vikings","s":"American Football","note":"a huge rivalry!"},{"t":"Ravens","r":"Steelers","s":"American Football","note":"a huge rivalry!"},{"t":"Oklahoma","r":"Texas","s":"American Football","note":"a huge rivalry!"},{"t":"Collingwood","r":"Carlton","s":"Aussie Rules","note":"a huge Aussie Rules rivalry!"},{"t":"West Coast","r":"Fremantle","s":"Aussie Rules","note":"a huge rivalry!"},{"t":"Dodgers","r":"Giants","s":"Baseball","note":"the oldest in baseball!"},{"t":"Cubs","r":"Cardinals","s":"Baseball","note":"a huge rivalry!"},{"t":"Yankees","r":"Red Sox","s":"Baseball","note":"the fiercest in baseball!"},{"t":"Celtics","r":"76ers","s":"Basketball","note":"a huge rivalry!"},{"t":"Celtics","r":"Lakers","s":"Basketball","note":"the greatest in the NBA!"},{"t":"Kentucky","r":"Louisville","s":"Basketball","note":"a bluegrass battle!"},{"t":"New York Liberty","r":"Las Vegas Aces","s":"Basketball","note":"a huge rivalry!"},{"t":"North Carolina","r":"Duke","s":"Basketball","note":"Tobacco Road!"},{"t":"Saskatchewan Roughriders","r":"Winnipeg Blue Bombers","s":"Canadian Football","note":"a huge rivalry!"},{"t":"India","r":"Australia","s":"Cricket","note":"a huge rivalry!"},{"t":"India","r":"Pakistan","s":"Cricket","note":"the biggest in cricket!"},{"t":"Australia","r":"England","s":"Cricket","note":"the Ashes!"},{"t":"Brazil","r":"Argentina","s":"Football","note":"the biggest game in South America!"},{"t":"Ajax","r":"Feyenoord","s":"Football","note":"De Klassieker!"},{"t":"Internazionale","r":"Juventus","s":"Football","note":"a huge rivalry!"},{"t":"Lazio","r":"AS Roma","s":"Football","note":"the Rome derby!"},{"t":"AC Milan","r":"Internazionale","s":"Football","note":"the Milan derby!"},{"t":"FC Barcelona","r":"Real Madrid","s":"Football","note":"El Clásico!"},{"t":"England","r":"Germany","s":"Football","note":"an old football rivalry!"},{"t":"Flamengo","r":"Fluminense","s":"Football","note":"the Fla-Flu!"},{"t":"Borussia Dortmund","r":"Bayern Munich","s":"Football","note":"Der Klassiker!"},{"t":"Everton","r":"Liverpool","s":"Football","note":"the Merseyside derby!"},{"t":"Tottenham Hotspur","r":"Arsenal","s":"Football","note":"the North London derby!"},{"t":"Manchester United","r":"Liverpool","s":"Football","note":"the North West derby!"},{"t":"FC Porto","r":"Benfica","s":"Football","note":"O Clássico!"},{"t":"Rangers","r":"Celtic","s":"Football","note":"the Old Firm!"},{"t":"Boca Juniors","r":"River Plate","s":"Football","note":"the Superclásico!"},{"t":"Peñarol","r":"Nacional","s":"Football","note":"the Uruguayan derby!"},{"t":"Newcastle United","r":"Sunderland","s":"Football","note":"a huge rivalry!"},{"t":"United States","r":"Mexico","s":"Football","note":"a huge rivalry!"}];
+const $=id=>document.getElementById(id);
+let sound=true, order=[], idx=0, solved=0;
+const ALL=[...new Set(R.flatMap(x=>[x.t,x.r]))];
+const SPORTOF={}; R.forEach(x=>{SPORTOF[x.t]=x.s;SPORTOF[x.r]=x.s;});
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function speak(t){if(!sound)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.rate=.95;u.pitch=1.05;speechSynthesis.speak(u);}catch(e){}}
+function pick(a){return a[Math.floor(Math.random()*a.length)];}
+function buildPass(){const el=$("pass");el.innerHTML="";order.forEach((_,i)=>{const d=document.createElement("div");d.className="stamp"+(i<solved?" on":"");d.textContent="🔥";el.appendChild(d);});}
+
+function render(){
+ const q=order[idx];
+ $("em").textContent=EMO[q.s]||"🏆"; $("team").textContent=q.t;
+ $("reveal").textContent=""; $("next").disabled=true;
+ let same=shuffle(ALL.filter(n=>n!==q.t&&n!==q.r&&SPORTOF[n]===q.s));
+ let dis=same.slice(0,2);
+ if(dis.length<2){dis=dis.concat(shuffle(ALL.filter(n=>n!==q.t&&n!==q.r&&!dis.includes(n))).slice(0,2-dis.length));}
+ const opts=shuffle([q.r,...dis]);
+ const box=$("opts"); box.innerHTML="";
+ opts.forEach(n=>{const b=document.createElement("button");b.className="opt";b.textContent=n;b.onclick=()=>choose(n,b,q);box.appendChild(b);});
+ speak("Who are the big rivals of "+q.t+"?");
+ buildPass();
+}
+function choose(n,b,q){
+ if($("next").disabled===false)return;
+ if(n===q.r){
+   [...$("opts").children].forEach(x=>{if(x.textContent===q.r)x.classList.add("good");else x.classList.add("dim");});
+   $("reveal").textContent="✅ "+q.t+" vs "+q.r+": "+q.note;
+   $("next").disabled=false; solved=Math.max(solved,idx+1);
+   toast(pick(["Yes! 🔥","Rivals! ⚔️","Nailed it! 🙌"])); speak("Yes! "+q.t+" versus "+q.r+". "+q.note);
+   confetti(8); buildPass();
+ } else {
+   b.classList.add("bad"); setTimeout(()=>b.classList.remove("bad"),400);
+   toast("Try again 🤔"); speak("Not their rival.");
+ }
+}
+let tT;function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(tT);tT=setTimeout(()=>e.classList.remove("show"),1200);}
+function confetti(n){const em=["🔥","⚔️","⭐","🏆"];for(let i=0;i<n;i++){const s=document.createElement("div");s.className="conf";s.textContent=em[i%em.length];s.style.left=Math.random()*100+"vw";s.style.animationDuration=(1.5+Math.random())+"s";document.body.appendChild(s);setTimeout(()=>s.remove(),2600);}}
+function finale(){$("finale").classList.add("show");speak("Amazing! You are a Rivalry Master!");confetti(20);}
+$("next").onclick=()=>{ if(idx<order.length-1){idx++;render();} else {finale();} };
+$("say").onclick=()=>speak("Who are the big rivals of "+order[idx].t+"?");
+$("snd").onclick=()=>{sound=!sound;$("snd").textContent=sound?"🔊":"🔇";if(!sound)speechSynthesis.cancel();};
+order=shuffle(R).slice(0,10); render();
+</script>
+</body>
+</html>

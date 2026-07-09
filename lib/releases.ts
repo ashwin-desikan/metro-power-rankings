@@ -19,11 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-07-09",
-    headline: "Site-wide mobile tables; Origin 2026 recorded; Following sign-in syncs",
+    headline: "Mobile tables, Origin 2026, sign-in sync, and new kids learning games",
     items: [
       "Every ranking and stats table across the site now has a phone-friendly card view, with sticky sort controls and screen-reader support, so data reads and sorts on mobile instead of overflowing sideways.",
       "New South Wales win the 2026 State of Origin series 2-1, taking the decider at Suncorp Stadium to reclaim the shield. The series table on the NRL hub now runs through 2026.",
       "Signing in with Google on the Following page now stays signed in and syncs the metros and teams you follow across every device, instead of the session dropping after a short while.",
+      "A new Play & Learn section adds curriculum-aligned games for ages 5 to 10: find the oceans and continents, match world capitals, place ancient empires on the map, and more, built from the site's own data.",
     ],
   },
   {

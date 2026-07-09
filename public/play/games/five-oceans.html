@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Five Oceans — Play &amp; Learn</title>
+<style>
+  :root{--ink:#16324f;--sea:#bfe3ff;--sea2:#a9d7fb;--land:#8fd6a9;--accent:#1f9e82;--gold:#f6b93b}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;height:100%}
+  body{font-family:"Baloo 2","Segoe UI",system-ui,sans-serif;background:#eef6fc;color:var(--ink);overflow-x:hidden}
+  header{display:flex;align-items:center;justify-content:space-between;padding:10px 16px}
+  .logo{font-size:1.35rem;font-weight:900}
+  .snd{border:none;background:#fff;border-radius:14px;font-size:1.3rem;padding:6px 12px;box-shadow:0 4px 0 #cfe0ee;cursor:pointer}
+  main{max-width:1000px;margin:0 auto;padding:0 14px 16px}
+  .prompt{display:flex;align-items:center;gap:12px;background:#fff;border-radius:22px;padding:12px 16px;box-shadow:0 8px 0 #d6e6f2;margin-bottom:10px}
+  .wave{font-size:2.2rem}
+  .prompt .big{font-size:1.5rem;font-weight:900}
+  .say{margin-left:auto;border:none;background:var(--gold);color:#5a3d00;border-radius:16px;font-size:1.4rem;padding:8px 14px;box-shadow:0 5px 0 #cf9526;cursor:pointer}
+  .mapwrap{position:relative;width:100%;aspect-ratio:2/1;background:linear-gradient(180deg,var(--sea),var(--sea2));border-radius:26px;box-shadow:inset 0 0 0 5px #fff,0 10px 0 #cbdff0;overflow:hidden}
+  svg.map{position:absolute;inset:0;width:100%;height:100%}
+  .land{fill:var(--land);stroke:#5fb783;stroke-width:2}
+  .marker{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:2px;border:none;background:#ffffffcc;border-radius:12px;padding:4px 8px;cursor:pointer;transition:transform .12s;box-shadow:0 3px 0 #9fc3e0}
+  .marker:active{transform:translate(-50%,-50%) scale(.93)}
+  .marker .w{font-size:1.5rem;line-height:1}
+  .marker .nm{font-size:.78rem;font-weight:800;white-space:nowrap}
+  .marker.good{box-shadow:0 0 0 4px var(--accent),0 0 22px 6px #1f9e8288;background:#e8fbf4}
+  .marker.bad{animation:shake .4s}
+  .marker.dim{opacity:.35}
+  @keyframes shake{25%{transform:translate(-50%,-50%) rotate(-8deg)}75%{transform:translate(-50%,-50%) rotate(8deg)}}
+  .halo{position:absolute;transform:translate(-50%,-50%);border-radius:50%;background:#ffd86b55;border:3px dashed #f0a72e;pointer-events:none;opacity:0;transition:opacity .3s;width:90px;height:90px}
+  .reveal{min-height:1.4em;font-size:1.1rem;font-weight:800;color:var(--accent);text-align:center;margin:10px 0}
+  .row{display:flex;justify-content:flex-end;margin-top:4px}
+  .next{border:none;border-radius:16px;font-weight:900;font-size:1.05rem;padding:12px 22px;cursor:pointer;background:var(--accent);color:#fff;box-shadow:0 6px 0 #15705d}
+  .next:disabled{opacity:.4;box-shadow:none}
+  .pass{display:flex;gap:6px;justify-content:center;margin-top:12px}
+  .stamp{width:40px;height:40px;border-radius:12px;background:#fff;box-shadow:inset 0 0 0 3px #dcebf6;display:flex;align-items:center;justify-content:center;font-size:1.3rem;opacity:.4;filter:grayscale(1)}
+  .stamp.on{opacity:1;filter:none;box-shadow:inset 0 0 0 3px var(--gold);animation:pop .4s}
+  @keyframes pop{50%{transform:scale(1.35) rotate(-8deg)}}
+  .toast{position:fixed;left:50%;top:14%;transform:translateX(-50%);background:var(--ink);color:#fff;font-weight:900;font-size:1.15rem;padding:11px 18px;border-radius:16px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:9}
+  .toast.show{opacity:1}
+  .conf{position:fixed;top:-10px;font-size:1.3rem;pointer-events:none;z-index:15;animation:fall linear forwards}
+  @keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+  .finale{position:fixed;inset:0;background:#f2fbff;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:20}
+  .finale.show{display:flex}
+</style>
+</head>
+<body>
+<header><div class="logo">🌊 Five Oceans</div><button class="snd" id="snd">🔊</button></header>
+<main>
+  <div class="prompt"><div class="wave">🌊</div><div class="big" id="ask">Find the ocean!</div><button class="say" id="say">📣</button></div>
+  <div class="mapwrap" id="mapwrap">
+    <svg class="map" viewBox="0 0 1000 500" preserveAspectRatio="none" aria-hidden="true">
+      <path class="land" d="M60,120 q40,-60 150,-45 q70,8 95,55 q10,60 -40,70 q-30,55 -95,40 q-70,-6 -95,-55 q-30,-40 -20,-65z"/>
+      <path class="land" d="M250,300 q35,-30 70,-10 q35,25 30,80 q-6,70 -45,95 q-40,18 -60,-25 q-22,-70 -5,-120 q4,-15 10,-20z"/>
+      <path class="land" d="M470,175 q40,-30 95,-15 q55,20 60,85 q8,75 -40,120 q-45,35 -80,-5 q-40,-55 -45,-125 q-2,-40 10,-60z"/>
+      <path class="land" d="M470,120 q40,-40 95,-30 q40,8 40,42 q-4,34 -55,40 q-55,4 -80,-20 q-14,-20 0,-32z"/>
+      <path class="land" d="M600,110 q90,-55 220,-30 q95,20 110,80 q6,55 -70,70 q-60,50 -170,35 q-110,-8 -150,-70 q-30,-55 -10,-100 q25,-30 60,-55z"/>
+      <path class="land" d="M812,360 q45,-24 90,-6 q30,18 20,52 q-14,38 -70,40 q-52,0 -66,-40 q-8,-30 26,-46z"/>
+    </svg>
+    <div class="halo" id="halo"></div>
+    <div id="markers"></div>
+  </div>
+  <div class="reveal" id="reveal"></div>
+  <div class="row"><button class="next" id="next" disabled>Next ▶</button></div>
+  <div class="pass" id="pass"></div>
+</main>
+<div class="toast" id="toast"></div>
+<div class="finale" id="finale">
+  <h1 style="font-size:2.2rem">🏆 Ocean Explorer!</h1>
+  <p style="font-size:1.15rem;font-weight:800">Five oceans found! With the seven continents, that is our whole world. 🌍</p>
+  <button class="next" style="margin-top:16px" onclick="location.reload()">Play again 🔁</button>
+</div>
+<script>
+const OCEANS=[
+ {n:"Pacific Ocean",x:13,y:49,fact:"the biggest ocean of all!"},
+ {n:"Atlantic Ocean",x:42,y:42,fact:"between the Americas, Europe and Africa."},
+ {n:"Indian Ocean",x:71,y:63,fact:"warm water south of Asia."},
+ {n:"Southern Ocean",x:52,y:90,fact:"icy water all around Antarctica."},
+ {n:"Arctic Ocean",x:50,y:6,fact:"the smallest, at the frozen far North."}
+];
+const $=id=>document.getElementById(id);
+let sound=true, order=[], idx=0, solved=0;
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function speak(t){if(!sound)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.rate=.95;u.pitch=1.1;speechSynthesis.speak(u);}catch(e){}}
+function pick(a){return a[Math.floor(Math.random()*a.length)];}
+function buildPass(){const el=$("pass");el.innerHTML="";OCEANS.forEach((_,i)=>{const d=document.createElement("div");d.className="stamp"+(i<solved?" on":"");d.textContent="🌊";el.appendChild(d);});}
+function drawMarkers(){
+ const M=$("markers"); M.innerHTML="";
+ OCEANS.forEach(o=>{const b=document.createElement("button");b.className="marker";b.style.left=o.x+"%";b.style.top=o.y+"%";
+   b.innerHTML='<span class="w">🌊</span><span class="nm">'+o.n.replace(" Ocean","")+'</span>';
+   b.dataset.n=o.n; b.onclick=()=>choose(o,b); M.appendChild(b);});
+}
+function render(){
+ const q=order[idx];
+ $("ask").textContent="Find the "+q.n+"!"; $("reveal").textContent=""; $("next").disabled=true; $("halo").style.opacity=0;
+ [...$("markers").children].forEach(m=>{m.classList.remove("good","dim","bad");});
+ speak("Find the "+q.n+"!"); buildPass();
+}
+function choose(o,b){
+ const q=order[idx];
+ if($("next").disabled===false)return;
+ if(o.n===q.n){
+   [...$("markers").children].forEach(m=>{ if(m.dataset.n===q.n)m.classList.add("good"); else m.classList.add("dim"); });
+   $("reveal").textContent="✅ The "+q.n+" is "+q.fact;
+   $("next").disabled=false; solved=Math.max(solved,idx+1);
+   toast(pick(["Yes! 🌊","Found it! ⭐","Nice! 🙌"])); speak("Yes! The "+q.n+" is "+q.fact); confetti(8); buildPass();
+   if(solved===OCEANS.length) setTimeout(finale,900);
+ } else {
+   b.classList.add("bad"); setTimeout(()=>b.classList.remove("bad"),400);
+   toast("Try again 🤔"); speak("That is the "+o.n+". Try again.");
+   const h=$("halo"); h.style.left=q.x+"%"; h.style.top=q.y+"%"; h.style.opacity=1; setTimeout(()=>h.style.opacity=0,1300);
+ }
+}
+let tT;function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(tT);tT=setTimeout(()=>e.classList.remove("show"),1200);}
+function confetti(n){const em=["🌊","⭐","🎉","🐬"];for(let i=0;i<n;i++){const s=document.createElement("div");s.className="conf";s.textContent=em[i%em.length];s.style.left=Math.random()*100+"vw";s.style.animationDuration=(1.5+Math.random())+"s";document.body.appendChild(s);setTimeout(()=>s.remove(),2600);}}
+function finale(){$("finale").classList.add("show");speak("Amazing! Five oceans found. You are an Ocean Explorer!");confetti(20);}
+$("next").onclick=()=>{ if(idx<order.length-1){idx++;render();} else {finale();} };
+$("say").onclick=()=>speak("Find the "+order[idx].n+"!");
+$("snd").onclick=()=>{sound=!sound;$("snd").textContent=sound?"🔊":"🔇";if(!sound)speechSynthesis.cancel();};
+order=shuffle(OCEANS); drawMarkers(); render();
+</script>
+</body>
+</html>
