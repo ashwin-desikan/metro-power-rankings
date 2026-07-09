@@ -54,7 +54,47 @@ export default function FootyAllTimeTable({ franchises, league }: { franchises: 
         <Toggle value="current" label="Current clubs" />
         <Toggle value="all" label="Current + defunct" />
       </div>
-      <div className="rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+      {/* Mobile: one card per club instead of an 8-column table forcing
+          sideways scroll. Same `rows` array, card presentation only. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {rows.map((f) => (
+          <div key={`${f.slug}-card`} className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: f.premierships > 0 ? "rgba(212,175,55,0.3)" : "var(--border)" }}>
+            <div className="flex items-center gap-2 min-w-0">
+              <TeamCrest name={f.name} size={20} fallback={<Badge r={f} />} />
+              <Link href={`/teams/${league}/${f.slug}`} className="hover:text-[var(--accent)] transition-colors font-medium text-sm truncate">{f.name}</Link>
+              {!f.active && <span className="text-[9px] uppercase tracking-wide px-1 py-0.5 rounded flex-shrink-0" style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-dim)" }}>defunct</span>}
+            </div>
+            <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Premierships</div>
+                <div className="tabular-nums font-semibold" style={{ color: f.premierships > 0 ? "#d4af37" : "var(--text-dim)" }}>{f.premierships}{f.title_years.length > 0 ? ` (last ${last(f.title_years)})` : ""}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Minor</div>
+                <div className="tabular-nums text-[var(--text-muted)]">{f.minor_premierships}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">GFs</div>
+                <div className="tabular-nums text-[var(--text-muted)]">{f.gf_apps}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Seasons</div>
+                <div className="tabular-nums text-[var(--text-muted)]">{f.seasons}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Record</div>
+                <div className="tabular-nums text-[var(--text-muted)]">{league === "afl" ? `${f.w}-${f.l}-${f.d}` : `${f.w}-${f.d}-${f.l}`}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Win%</div>
+                <div className="tabular-nums">{f.win_pct.toFixed(3)}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
         <table className="w-full text-sm tabular-nums min-w-[640px]">
           <thead>
             <tr className="border-b text-[11px]" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>

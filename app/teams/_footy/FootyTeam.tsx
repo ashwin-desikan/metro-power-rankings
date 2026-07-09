@@ -111,7 +111,54 @@ export default function FootyTeam({ copy, f, seasons, grandFinals, live, liveYea
       {seasons.length > 0 && (
         <section className="mt-8">
           <h2 className="text-lg font-semibold mb-3">Season-by-season</h2>
-          <div className="rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+
+          {/* Mobile: one card per season instead of an 11-column table
+              forcing sideways scroll. Same rows, card presentation only. */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {live && liveYear != null && !seasons.some((s) => s.year === liveYear) && (
+              <div className="rounded-lg border p-3" style={{ background: "rgba(34,197,94,0.06)", borderColor: "var(--border)" }}>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-sm font-semibold" style={{ fontStyle: "italic" }}>{liveYear} · {f.name}</span>
+                  <span className="inline-flex items-center gap-1 text-[10px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wide" style={{ background: "rgba(34,197,94,0.14)", color: "rgb(34,197,94)" }}>
+                    <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "rgb(34,197,94)" }} />Live
+                  </span>
+                </div>
+                <div className="mt-1.5 grid grid-cols-4 gap-x-3 gap-y-1 text-xs">
+                  <div><div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Pos</div><div className="text-[var(--text-muted)]">{live.rank ?? "—"}</div></div>
+                  <div><div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">P</div><div className="text-[var(--text-muted)]">{live.played ?? "—"}</div></div>
+                  <div><div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">W</div><div>{live.w ?? "—"}</div></div>
+                  <div><div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Pts</div><div>{live.pts ?? "—"}</div></div>
+                </div>
+              </div>
+            )}
+            {seasons.map((s) => {
+              const b = seasonBadge(s, copy);
+              return (
+                <div key={`${s.year}-${s.team}-card`} className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: s.prem ? "rgba(212,175,55,0.3)" : "var(--border)" }}>
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-sm" style={{ fontWeight: s.prem ? 600 : undefined, color: s.prem ? "#d4af37" : undefined }}>
+                      {s.year}{s.minor && <span className="text-yellow-500 ml-1" title={copy.minorWord}>◆</span>}
+                    </span>
+                    {b ? <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wide" style={{ background: b.bg, color: b.color }}>{b.label}</span>
+                      : <span className="text-[var(--text-dim)] text-xs">—</span>}
+                  </div>
+                  <div className="text-xs text-[var(--text-muted)] mt-0.5">{s.team}{s.league ? ` · ${s.league}` : ""}</div>
+                  <div className="mt-1.5 grid grid-cols-4 gap-x-3 gap-y-1 text-xs">
+                    <div><div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Pos</div><div className="tabular-nums text-[var(--text-muted)]">{s.rank ?? "—"}</div></div>
+                    <div><div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">P</div><div className="tabular-nums text-[var(--text-muted)]">{s.played ?? "—"}</div></div>
+                    <div><div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">W</div><div className="tabular-nums">{s.w ?? "—"}</div></div>
+                    <div><div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{lg === "afl" ? "L" : "D"}</div><div className="tabular-nums text-[var(--text-muted)]">{(lg === "afl" ? s.l : s.d) ?? "—"}</div></div>
+                    <div><div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{lg === "afl" ? "D" : "L"}</div><div className="tabular-nums text-[var(--text-muted)]">{(lg === "afl" ? s.d : s.l) ?? "—"}</div></div>
+                    <div><div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Pts</div><div className="tabular-nums">{s.pts ?? "—"}</div></div>
+                    <div><div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">For</div><div className="tabular-nums text-[var(--text-dim)]">{s.pf ?? "—"}</div></div>
+                    <div><div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Agst</div><div className="tabular-nums text-[var(--text-dim)]">{s.pa ?? "—"}</div></div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
             <table className="w-full text-sm tabular-nums min-w-[680px]">
               <thead>
                 <tr className="border-b text-[11px]" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
@@ -179,7 +226,32 @@ export default function FootyTeam({ copy, f, seasons, grandFinals, live, liveYea
       {grandFinals.length > 0 && (
         <section className="mt-8">
           <h2 className="text-lg font-semibold mb-3">Grand Final Appearances</h2>
-          <div className="rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+
+          {/* Mobile: one card per Grand Final instead of a 6-column table
+              forcing sideways scroll. Same grandFinals array, cards only. */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {grandFinals.map((g, i) => {
+              const won = g.result === "W", drew = g.result === "D";
+              return (
+                <div key={`${g.year}-${i}-card`} className="rounded-lg border p-3" style={{ background: won ? "rgba(212,175,55,0.07)" : "var(--bg-card)", borderColor: "var(--border)" }}>
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="font-medium text-sm">{g.year}</span>
+                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide" style={{ background: won ? "#d4af37" : drew ? "#6b7280" : "#475569", color: won ? "#1a1408" : "#fff" }}>
+                      {won ? "Won" : drew ? "Drawn" : "Lost"}
+                    </span>
+                  </div>
+                  <div className="text-xs text-[var(--text-muted)] mt-0.5">{g.team}</div>
+                  <div className="mt-1.5 flex items-center justify-between gap-2 text-xs">
+                    <span className="text-[var(--text-muted)]">vs {g.opp_team || g.opponent}</span>
+                    <span className="tabular-nums">{g.pf}–{g.pa}</span>
+                  </div>
+                  {g.stadium && <div className="text-[10px] text-[var(--text-dim)] mt-1">{g.stadium}</div>}
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
             <table className="w-full text-sm tabular-nums min-w-[560px]">
               <thead>
                 <tr className="border-b text-[11px]" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>

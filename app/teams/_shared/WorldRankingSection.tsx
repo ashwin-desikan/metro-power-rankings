@@ -43,7 +43,21 @@ export default function WorldRankingSection({
         {blurb ? `${blurb} ` : ""}
         {_meta.source}, as of {_meta.asOf}.
       </p>
-      <div className="rounded-xl border overflow-x-auto max-h-[460px] overflow-y-auto" style={card}>
+      {/* Mobile: one row-card per nation instead of a 3-column table forcing
+          sideways scroll. Same `rows` array, card presentation only. */}
+      <div className="grid grid-cols-1 gap-1.5 sm:hidden">
+        {rows.map((r) => (
+          <div key={`${r.rank}-${r.name}-card`} className="flex items-center justify-between gap-3 rounded-lg border px-3 py-2" style={card}>
+            <span className="flex items-center gap-2 min-w-0">
+              <span className="tabular-nums text-[var(--text-dim)] text-sm flex-shrink-0" style={mono}>{r.rank}</span>
+              <span className="font-medium text-sm truncate"><NationCell name={r.name} slug={r.slug} /></span>
+            </span>
+            <span className="tabular-nums text-sm flex-shrink-0" style={mono}>{r.points.toLocaleString()}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="rounded-xl border overflow-x-auto max-h-[460px] overflow-y-auto hidden sm:block" style={card}>
         <table className="w-full text-sm min-w-[420px]">
           <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
             <tr className="text-left text-xs text-[var(--text-muted)]">

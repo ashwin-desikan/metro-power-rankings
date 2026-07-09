@@ -49,7 +49,32 @@ export default function HonourRolls({
               </span>
             ))}
           </div>
-          <div className="overflow-y-auto" style={{ overflowX: "auto", maxHeight: 340 }}>
+          {/* Mobile: one row-card per season instead of a table that hides
+              the runner-up entirely below sm. Same reversed rolls array. */}
+          <div className="sm:hidden overflow-y-auto space-y-1" style={{ maxHeight: 340 }}>
+            {[...portal.rolls[k]].reverse().map((r, i) => (
+              <div key={`${r.season}-${i}-card`} className="flex items-start justify-between gap-2 py-1 border-t text-xs" style={{ borderColor: "var(--border)" }}>
+                <span className="tabular-nums whitespace-nowrap text-[var(--text-dim)] flex-shrink-0" style={mono}>{r.season}</span>
+                <span className="flex-1 min-w-0 text-right">
+                  <span className="inline-flex items-center gap-1.5 font-medium justify-end">
+                    <CrestIcon name={r.winner} size={16} />
+                    {links?.[r.winner] ? (
+                      <Link href={links[r.winner]} className="hover:text-[var(--accent)] hover:underline">{r.winner}</Link>
+                    ) : r.winner}
+                  </span>
+                  {r.ru && (
+                    <span className="block text-[10px] text-[var(--text-dim)] mt-0.5">
+                      vs {links?.[r.ru] ? (
+                        <Link href={links[r.ru]} className="hover:text-[var(--accent)] hover:underline">{r.ru}</Link>
+                      ) : r.ru}
+                    </span>
+                  )}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <div className="hidden sm:block overflow-y-auto" style={{ overflowX: "auto", maxHeight: 340 }}>
             <table className="w-full text-xs">
               <tbody>
                 {/* Rolls are stored oldest-first in the ETL; render newest-first

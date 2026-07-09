@@ -355,12 +355,71 @@ export default function RankingsTable({ metros, showMap = true }: RankingsTableP
         </div>
       </div>
 
-      {/* Table — responsive treatment:
-          - Population column hides below sm: most expendable cut so rank,
-            name, region dot, and score all fit on a phone.
-          - Score bar viz hides below sm: only the numeric score remains.
-          - Padding tightens to px-2 on mobile, px-4 on sm+ */}
-      <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
+      {/* Mobile: one card per metro instead of a 7-column table forcing
+          sideways scroll. Same `filtered` array, card presentation only. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {filtered.map((metro) => (
+          <a
+            key={`${metro.slug}-card`}
+            href={`/rankings/${metro.slug}`}
+            className="block rounded-lg border border-[var(--border)] p-3 hover:bg-[var(--bg-card-hover)] transition-colors"
+          >
+            <div className="flex items-start justify-between gap-2">
+              <div className="flex items-center gap-2 min-w-0">
+                <span
+                  className="text-sm font-semibold flex-shrink-0"
+                  style={{ fontFamily: "'JetBrains Mono', monospace", color: 'var(--accent)' }}
+                >
+                  #{metro.rank}
+                </span>
+                <div
+                  className="w-2 h-2 rounded-full flex-shrink-0"
+                  style={{ backgroundColor: regionColors[metro.region] || 'var(--text-dim)' }}
+                />
+                <span className="font-semibold text-[var(--text)] truncate">{metro.name}</span>
+              </div>
+              <span
+                className="text-sm font-semibold flex-shrink-0"
+                style={{ fontFamily: "'JetBrains Mono', monospace", color: 'var(--accent)' }}
+              >
+                {metro.score.toFixed(1)}
+              </span>
+            </div>
+            <div className="mt-1 text-xs text-[var(--text-muted)]">
+              {(metro.sovereignSlug ?? metro.countrySlug) ? (
+                <Link
+                  href={`/countries/${metro.sovereignSlug ?? metro.countrySlug}`}
+                  className="hover:text-[var(--accent)]"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {metro.country}
+                </Link>
+              ) : (
+                metro.country
+              )}
+            </div>
+            <div className="mt-1.5 grid grid-cols-3 gap-x-3 gap-y-1 text-xs">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">City</div>
+                <div className="text-[var(--text)]">{metro.primaryCity || '—'}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">State</div>
+                <div className="text-[var(--text)]">{metro.primaryState || '—'}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Population</div>
+                <div className="text-[var(--text)] tabular-nums" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{formatPop(metro.pop)}</div>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      {/* Desktop: full table. Population/City/State progressively hide on
+          narrower desktop widths (md/sm) since the mobile card above
+          already covers the phone breakpoint. */}
+      <div className="hidden sm:block overflow-x-auto rounded-lg border border-[var(--border)]">
         <table className="w-full">
           <thead>
             <tr

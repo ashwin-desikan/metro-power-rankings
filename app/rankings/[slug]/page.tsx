@@ -971,7 +971,50 @@ export default async function MetroDetailPage({ params }: PageProps) {
         {detail.marketCap && detail.marketCap.top12 && detail.marketCap.top12.length > 0 && (
           <section>
             <h2 id="companies" className="text-2xl font-bold mb-6">Top Companies</h2>
-            <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden">
+
+            {/* Mobile: one card per company instead of a 4-column table.
+                Same detail.marketCap.top12 array, card presentation only. */}
+            <div className="grid grid-cols-1 gap-2 sm:hidden">
+              {detail.marketCap.top12.map((company, idx) => {
+                const val = typeof company === "number" ? company : company.valuation;
+                const name = typeof company === "number" ? "" : company.name || "";
+                const source = typeof company === "number" ? "" : company.source || "";
+                const sourceColor =
+                  source === "Unicorn"
+                    ? "text-purple-400"
+                    : source === "Private"
+                    ? "text-amber-400"
+                    : "text-[var(--text-muted)]";
+                return (
+                  <div
+                    key={`${idx}-card`}
+                    className="rounded-lg border p-3 flex items-center justify-between gap-3"
+                    style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+                  >
+                    <div className="flex items-center gap-2 min-w-0">
+                      <span
+                        className="text-[var(--text-muted)] font-mono text-sm flex-shrink-0"
+                        style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                      >
+                        {idx + 1}
+                      </span>
+                      <span className="font-medium text-sm truncate">{name}</span>
+                    </div>
+                    <div className="text-right flex-shrink-0">
+                      <div
+                        className="text-[var(--accent)] font-mono text-sm"
+                        style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                      >
+                        {formatMarketCap(val)}
+                      </div>
+                      {source && <div className={`text-xs ${sourceColor}`}>{source}</div>}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden hidden sm:block">
               <table className="w-full text-sm">
                 <thead className="border-b border-[var(--border)]">
                   <tr className="bg-[var(--bg-card-hover)]">
