@@ -19,9 +19,10 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-07-09",
-    headline: "State of Origin 2026 result recorded",
+    headline: "Origin 2026 recorded; Following sign-in now syncs across devices",
     items: [
       "New South Wales win the 2026 State of Origin series 2-1, taking the decider at Suncorp Stadium to reclaim the shield. The series table on the NRL hub now runs through 2026.",
+      "Signing in with Google on the Following page now stays signed in and syncs the metros and teams you follow across every device, instead of the session dropping after a short while.",
     ],
   },
   {
