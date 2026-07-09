@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.citizenofnowhere.euro-comps</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/bash</string>
+		<string>/Users/ashwindesikan/metro-mini-jobs/hc-run.sh</string>
+		<string>euro-comps</string>
+		<string>/bin/bash</string>
+		<string>/Users/ashwindesikan/metro-mini-jobs/run-euro-comps.sh</string>
+	</array>
+	<key>StandardErrorPath</key>
+	<string>/Users/ashwindesikan/metro-mini-jobs/logs/launchd-euro-comps.err</string>
+	<key>StandardOutPath</key>
+	<string>/Users/ashwindesikan/metro-mini-jobs/logs/launchd-euro-comps.out</string>
+	<key>StartCalendarInterval</key>
+	<array>
+		<dict>
+			<key>Hour</key>
+			<integer>4</integer>
+			<key>Minute</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>Hour</key>
+			<integer>5</integer>
+			<key>Minute</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+</dict>
+</plist>
