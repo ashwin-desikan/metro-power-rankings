@@ -20,9 +20,23 @@ interface Artist {
 async function readAll(): Promise<Record<string, Artist>> {
   return JSON.parse(await fs.readFile(path.join(process.cwd(), 'public', 'data', 'sound', 'artists_detail.json'), 'utf8'));
 }
+
+// Pre-generate only the ~300 most notable artists by prestige score, not all
+// 2,579 - the long tail is still reachable: dynamicParams=true renders it on
+// first request and the long revalidate caches the result, same pattern as
+// app/states/[slug]/page.tsx and app/teams/football/[slug]/page.tsx. This was
+// the single largest static route in the whole site and a major contributor
+// to Vercel build/deploy time on every single deploy.
+export const dynamicParams = true;
+export const revalidate = 31536000; // 1 year — effectively static
+
 export async function generateStaticParams() {
-  const a = JSON.parse(await fs.readFile(path.join(process.cwd(), 'public', 'data', 'sound', 'artists.json'), 'utf8')) as { slug: string }[];
-  return a.map((x) => ({ slug: x.slug }));
+  const a = JSON.parse(await fs.readFile(path.join(process.cwd(), 'public', 'data', 'sound', 'artists.json'), 'utf8')) as { slug: string; prestige?: number }[];
+  return a
+    .slice()
+    .sort((x, y) => (y.prestige ?? 0) - (x.prestige ?? 0))
+    .slice(0, 300)
+    .map((x) => ({ slug: x.slug }));
 }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

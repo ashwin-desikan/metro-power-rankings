@@ -10,6 +10,7 @@ import TopTeamChip from "@/app/teams/TopTeamChip";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import { notFound } from "next/navigation";
 import {
+  getAllClubs,
   getAllClubSlugs,
   getClubBySlug,
   getSeasonsForClub,
@@ -33,12 +34,29 @@ import { slugify } from "@/lib/shared";
 import { getCurrentMlsStandings } from "@/lib/mls-standings";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
-export const dynamicParams = false;
+// Pre-generate only clubs that have ever played top-flight (Level 1) football,
+// plus the cup-only entries getAllClubSlugs adds on top of the main roster
+// (a separate, already-small curated list) - about 610 of 1,460 total club
+// pages. The rest (historical lower-tier-only entries) are still reachable:
+// dynamicParams=true renders them on first request and the long revalidate
+// caches the result, same pattern as app/states/[slug]/page.tsx. Building
+// all 1,460 pages eagerly on every deploy was a major contributor to Vercel
+// build/deploy time regardless of what actually changed.
+export const dynamicParams = true;
+export const revalidate = 31536000; // 1 year — effectively static
 
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
-  return getAllClubSlugs().map((slug) => ({ slug }));
+  const rosterSlugs = new Set(getAllClubs().map((c) => c.slug));
+  const notable = new Set(
+    getAllClubs()
+      .filter((c) => (c.top_flight_seasons ?? 0) > 0)
+      .map((c) => c.slug)
+  );
+  return getAllClubSlugs()
+    .filter((slug) => notable.has(slug) || !rosterSlugs.has(slug))
+    .map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

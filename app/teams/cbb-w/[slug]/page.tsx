@@ -4,13 +4,18 @@ import { getCurrentChampionships } from "@/lib/champions";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
-import { getAllWcbbSlugs, getWcbbTeamBySlug, getWcbbTournament, wcbbMonogram, type WcbbTourYear } from "@/lib/wcbb";
+import { getAllWcbbTeams, getWcbbTeamBySlug, getWcbbTournament, wcbbMonogram, type WcbbTourYear } from "@/lib/wcbb";
 import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
 import { getRivalries } from "@/lib/rivalries";
 
-export const dynamicParams = false;
+// Pre-generate only current D1 programs (363 of 384 total). Historical/
+// non-D1 programs are still reachable: dynamicParams=true renders them on
+// first request and the long revalidate caches the result, same pattern as
+// app/states/[slug]/page.tsx.
+export const dynamicParams = true;
+export const revalidate = 31536000; // 1 year — effectively static
 export function generateStaticParams() {
-  return getAllWcbbSlugs().map((slug) => ({ slug }));
+  return getAllWcbbTeams().filter((t) => t.current_d1).map((t) => ({ slug: t.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {

@@ -8,11 +8,18 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import TopTeamChip from "@/app/teams/TopTeamChip";
-import { getAllCbbSlugs, getCbbTeamBySlug, getCbbSeasons, getCbbAwards, getCbbNba, getCbbTeamGames, cbbMonogram } from "@/lib/cbb";
+import { getAllCbbSlugs, getAllCbbTeams, getCbbTeamBySlug, getCbbSeasons, getCbbAwards, getCbbNba, getCbbTeamGames, cbbMonogram } from "@/lib/cbb";
 import CbbGamesTable from "../CbbGamesTable";
 
-export const dynamicParams = false;
-export function generateStaticParams() { return getAllCbbSlugs().map((slug) => ({ slug })); }
+// Pre-generate only current D1 programs (365 of 498 total). Historical/
+// non-D1 programs are still reachable: dynamicParams=true renders them on
+// first request and the long revalidate caches the result, same pattern as
+// app/states/[slug]/page.tsx.
+export const dynamicParams = true;
+export const revalidate = 31536000; // 1 year — effectively static
+export function generateStaticParams() {
+  return getAllCbbTeams().filter((t) => t.current_d1).map((t) => ({ slug: t.slug }));
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;

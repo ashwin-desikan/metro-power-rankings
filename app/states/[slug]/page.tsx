@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import {
   getMetrosForState,
   getState,
-  getStateSlugsWithMetros,
+  getTopStateSlugsForStaticParams,
 } from "@/lib/states";
 import { getCountry, getCountryByName } from "@/lib/countries";
 import StateMap from "./StateMap";
@@ -19,19 +19,19 @@ import {
   serializeJsonLd,
 } from "@/lib/seo";
 
-// Pre-generate only states that have at least one metro (~1,830 pages).
-// Empty states (~1,650 pages) are still reachable: dynamicParams=true
-// lets Next.js render them on first request, and the long revalidate
-// caches the result so the second request is fast. Without this filter,
-// all 3,480 pages were being rendered at build time, doubling the
-// Vercel build duration.
+// Pre-generate only the top 500 states by score (see
+// getTopStateSlugsForStaticParams). Every other state - including the
+// ~1,650 with zero metros and the ~1,687 lower-scoring states that do have
+// one - is still reachable: dynamicParams=true lets Next.js render it on
+// first request, and the long revalidate caches the result so the second
+// request is fast.
 export const dynamicParams = true;
 export const revalidate = 31536000; // 1 year — effectively static
 
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
-  return getStateSlugsWithMetros().map((slug) => ({ slug }));
+  return getTopStateSlugsForStaticParams().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

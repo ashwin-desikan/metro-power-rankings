@@ -6,11 +6,18 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import TopTeamChip from "@/app/teams/TopTeamChip";
-import { getAllCfbSlugs, getCfbTeamBySlug, getCfbSeasons, getCfbAwards, getCfbRivalries, getCfbTeamGames, cfbMonogram } from "@/lib/cfb";
+import { getAllCfbSlugs, getAllCfbTeams, getCfbTeamBySlug, getCfbSeasons, getCfbAwards, getCfbRivalries, getCfbTeamGames, cfbMonogram } from "@/lib/cfb";
 import CfbGamesTable from "../CfbGamesTable";
 
-export const dynamicParams = false;
-export function generateStaticParams() { return getAllCfbSlugs().map((slug) => ({ slug })); }
+// Pre-generate only current FBS programs (138 of 306 total). Historical/
+// non-FBS programs are still reachable: dynamicParams=true renders them on
+// first request and the long revalidate caches the result, same pattern as
+// app/states/[slug]/page.tsx.
+export const dynamicParams = true;
+export const revalidate = 31536000; // 1 year — effectively static
+export function generateStaticParams() {
+  return getAllCfbTeams().filter((t) => t.current_fbs).map((t) => ({ slug: t.slug }));
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
