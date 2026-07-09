@@ -167,7 +167,50 @@ export default async function CflTeamPage({ params }: { params: Promise<{ slug: 
       {allSeasons.length > 0 && (
         <section className="mt-8">
           <h2 className="text-lg font-semibold mb-3">Season-by-season</h2>
-          <div className="rounded-xl border overflow-hidden" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+          {/* Mobile: one stacked card per season instead of a 10-column table. */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {allSeasons.map((s) => {
+              const b = seasonBadge(s);
+              return (
+                <div
+                  key={`${s.year}-${s.is_live ? "live" : "wb"}-card`}
+                  className="rounded-lg border p-3"
+                  style={{
+                    borderColor: "var(--border)",
+                    backgroundColor: s.grey_cup ? "rgba(212,175,55,0.07)" : s.is_live ? "rgba(34,197,94,0.06)" : "var(--bg-card)",
+                    fontStyle: s.is_live ? "italic" : undefined,
+                  }}
+                >
+                  <div className="flex items-center justify-between gap-2 flex-wrap">
+                    <span className="font-semibold text-sm" style={{ color: s.grey_cup ? "#d4af37" : undefined }}>
+                      {s.year} <span className="font-normal text-[var(--text-dim)] text-xs">· {s.division} Division</span>
+                    </span>
+                    {s.is_live
+                      ? <span className="inline-flex items-center gap-1 text-[10px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wide flex-shrink-0" style={{ background: "rgba(34,197,94,0.14)", color: "rgb(34,197,94)" }}><span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "rgb(34,197,94)" }} />In progress</span>
+                      : b ? <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded uppercase tracking-wide flex-shrink-0" style={{ background: b.bg, color: b.color }}>{b.label}</span>
+                      : null}
+                  </div>
+                  <div className="text-xs text-[var(--text-muted)] mt-0.5">{s.team}</div>
+                  <div className="grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs tabular-nums mt-2">
+                    <div>
+                      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Record</div>
+                      <div>{s.w}-{s.l}-{s.t}</div>
+                    </div>
+                    <div>
+                      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Pct</div>
+                      <div>{s.pct.toFixed(3)}</div>
+                    </div>
+                    <div>
+                      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">PF-PA</div>
+                      <div className="text-[var(--text-dim)]">{s.pf}-{s.pa}</div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="rounded-xl border overflow-hidden hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
             <table className="w-full text-sm tabular-nums">
               <thead>
                 <tr className="border-b text-[11px]" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
@@ -226,7 +269,43 @@ export default async function CflTeamPage({ params }: { params: Promise<{ slug: 
       {finals.length > 0 && (
         <section className="mt-8">
           <h2 className="text-lg font-semibold mb-3">Grey Cup Final Appearances</h2>
-          <div className="rounded-xl border overflow-hidden" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+          {/* Mobile: one stacked card per final instead of a 6-column table. */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {finals.map((g, i) => {
+              const won = g.result === "W";
+              return (
+                <div
+                  key={`${g.year}-${i}-card`}
+                  className="rounded-lg border p-3"
+                  style={{ borderColor: "var(--border)", backgroundColor: won ? "rgba(212,175,55,0.07)" : "var(--bg-card)" }}
+                >
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="font-medium text-sm">{g.year} <span className="font-normal text-[var(--text-dim)] text-xs">· {g.game}</span></span>
+                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide flex-shrink-0" style={{ background: won ? "#d4af37" : "#475569", color: won ? "#1a1408" : "#fff" }}>
+                      {won ? "Won" : "Lost"}
+                    </span>
+                  </div>
+                  <div className="text-xs text-[var(--text-muted)] mt-1.5">
+                    vs {g.opponent_slug ? <Link href={`/teams/cfl/${g.opponent_slug}`} className="hover:text-[var(--accent)] transition-colors">{g.opponent}</Link> : g.opponent}
+                  </div>
+                  <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs tabular-nums mt-2">
+                    <div>
+                      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Score</div>
+                      <div>{g.pf}–{g.pa}{g.ot ? " (OT)" : ""}</div>
+                    </div>
+                    {(g.venue || g.city) && (
+                      <div>
+                        <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Venue</div>
+                        <div className="text-[var(--text-dim)]">{g.venue}{g.city ? `, ${g.city}` : ""}</div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="rounded-xl border overflow-hidden hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
             <table className="w-full text-sm tabular-nums">
               <thead>
                 <tr className="border-b text-[11px]" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>

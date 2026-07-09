@@ -145,7 +145,34 @@ export default function BaseballHubPage() {
       <section className="mb-10">
         <h2 id="champions" className="text-lg font-semibold mb-1">World Baseball Classic finals</h2>
         <p className="text-xs text-[var(--text-muted)] mb-3">Every championship game since 2006.</p>
-        <div className="rounded-xl border overflow-x-auto" style={card}>
+
+        {/* Mobile: one card per final, same data as the table below */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {hub.finals.slice().reverse().map((f) => (
+            <div key={f.year} className="rounded-lg border p-3" style={card}>
+              <div className="flex items-start justify-between gap-2">
+                <span className="font-semibold text-sm">{teamLink(f.champion)}</span>
+                <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0" style={mono}>{f.year}</span>
+              </div>
+              <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Score</div>
+                  <div className="tabular-nums" style={mono}>{f.score}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Runner-up</div>
+                  <div>{teamLink(f.runner_up)}</div>
+                </div>
+                <div className="col-span-2">
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Venue</div>
+                  <div className="text-[var(--text-muted)]">{f.venue}{f.city ? `, ${f.city}` : ""}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[640px]">
             <thead>
               <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -179,7 +206,51 @@ export default function BaseballHubPage() {
         <p className="text-xs text-[var(--text-muted)] mb-3">
           Every WBC game counted, ordered by titles then wins.
         </p>
-        <div className="rounded-xl border overflow-x-auto" style={card}>
+
+        {/* Mobile: one card per nation, same data as the table below */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {allTime.map((t) => (
+            <div key={t.slug} className="rounded-lg border p-3" style={card}>
+              <div className="flex items-center justify-between gap-2">
+                <span className="font-medium text-sm">{teamLink(t.name)}</span>
+                <span
+                  className="text-xs tabular-nums font-semibold flex-shrink-0"
+                  style={{ ...mono, color: t.titles > 0 ? "#d4af37" : "var(--text-dim)" }}
+                >
+                  {t.titles} title{t.titles === 1 ? "" : "s"}
+                </span>
+              </div>
+              <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Apps</div>
+                  <div className="tabular-nums" style={mono}>{t.apps}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Pld</div>
+                  <div className="tabular-nums" style={mono}>{t.pld}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">W-L</div>
+                  <div className="tabular-nums" style={mono}>{t.w}-{t.l}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">RF</div>
+                  <div className="tabular-nums" style={mono}>{t.rf}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">RA</div>
+                  <div className="tabular-nums" style={mono}>{t.ra}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Best finish</div>
+                  <div className="text-[var(--text-muted)]">{t.best_finish ?? "—"}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[680px]">
             <thead>
               <tr className="text-left text-xs text-[var(--text-muted)]">

@@ -78,7 +78,32 @@ export default function BillionairesTable({ data }: { data: B[] }) {
           <option value="inherited">Inherited</option>
         </select>
       </div>
-      <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
+      {/* Mobile: stacked cards, same sorted/filtered/limited data as the table */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {shown.map((b) => (
+          <div key={`${b.uri}-card`} className="rounded-lg border p-3" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+            <div className="flex items-start justify-between gap-2">
+              <a href={`https://www.forbes.com/profile/${b.uri}/`} target="_blank" rel="noopener noreferrer" className="font-medium text-sm text-[var(--text)] hover:text-[var(--accent)] hover:underline">
+                {b.rank ? <span className="text-[var(--text-dim)] tabular-nums mr-1.5">#{b.rank}</span> : null}
+                {b.name}
+                {b.selfMade === false ? <span className="ml-1.5 text-[10px] text-[var(--text-dim)]">inherited</span> : null}
+              </a>
+              <span className="flex-shrink-0 tabular-nums font-semibold text-sm text-[var(--text)]">{worth(b.networth)}</span>
+            </div>
+            <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[var(--text-muted)]">
+              {b.countrySlug ? <Link href={`/countries/${b.countrySlug}`} className="hover:text-[var(--accent)] hover:underline">{b.countryName}</Link> : <span className="text-[var(--text-dim)]">{b.countryName ?? "—"}</span>}
+              {b.age != null && <span className="tabular-nums text-[var(--text-dim)]">Age {b.age}</span>}
+            </div>
+            {(b.industries.length > 0 || b.source.length > 0) && (
+              <div className="mt-1 flex flex-wrap gap-x-3 text-xs text-[var(--text-dim)]">
+                {b.industries.length > 0 && <span>{b.industries.join(", ")}</span>}
+                {b.source.length > 0 && <span>{b.source.join(", ")}</span>}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+      <div className="hidden sm:block overflow-x-auto rounded-lg border border-[var(--border)]">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-[var(--border)]" style={{ backgroundColor: "var(--bg-card)" }}>

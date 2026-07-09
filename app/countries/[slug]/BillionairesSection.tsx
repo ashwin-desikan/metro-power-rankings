@@ -19,7 +19,28 @@ export default function BillionairesSection({ list }: { list: Billionaire[] }) {
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </summary>
-        <div className="overflow-x-auto mt-2">
+        {/* Mobile: stacked cards */}
+        <div className="mt-2 grid grid-cols-1 gap-2 sm:hidden">
+          {list.map((b) => (
+            <div key={b.uri} className="rounded-lg border p-3 border-gray-100 dark:border-gray-800" style={{ backgroundColor: "var(--bg-card)" }}>
+              <div className="flex items-start justify-between gap-2">
+                <a href={forbesUrl(b.uri)} target="_blank" rel="noopener noreferrer"
+                   className="font-medium text-sm text-[var(--text)] hover:text-[var(--accent)] hover:underline">
+                  {b.rank ? <span className="text-[var(--text-dim)] tabular-nums mr-1.5">#{b.rank}</span> : null}
+                  {b.name}
+                  {b.selfMade === false ? <span className="ml-1.5 text-[10px] text-[var(--text-dim)]" title="Inherited">(inherited)</span> : null}
+                </a>
+                <span className="flex-shrink-0 tabular-nums font-semibold text-sm text-[var(--text)]">{fmtWorth(b.networth)}</span>
+              </div>
+              <div className="mt-1.5 flex flex-wrap gap-x-3 text-xs text-[var(--text-muted)]">
+                <span>{b.industries.join(", ")}</span>
+                {b.source.length > 0 && <span className="text-[var(--text-dim)]">{b.source.join(", ")}</span>}
+              </div>
+            </div>
+          ))}
+        </div>
+        {/* Desktop: table */}
+        <div className="hidden sm:block overflow-x-auto mt-2">
           <table className="w-full text-left border-collapse text-sm">
             <thead>
               <tr className="border-b border-gray-200 dark:border-gray-700 text-xs text-[var(--text-muted)]">

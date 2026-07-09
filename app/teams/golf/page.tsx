@@ -82,32 +82,64 @@ function majorSpans(champions: Champion[]): Map<string, { first: number; last: n
 }
 
 function LeaderTable({ leaders, tours, spans }: { leaders: Leader[]; tours: string[]; spans: Map<string, { first: number; last: number }> }) {
+  const filtered = leaders.filter((l) => l.total >= 2);
   return (
-    <div className="rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto" style={card}>
-      <table className="w-full text-sm min-w-[700px]">
-        <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
-          <tr className="text-left text-xs text-[var(--text-muted)]">
-            <th className="py-2 px-3 font-medium">Player</th>
-            <th className="py-2 px-3 text-right font-medium">Span</th>
-            <th className="py-2 px-3 text-right font-medium" style={{ color: GOLD }}>Majors</th>
-            {tours.map((t) => <th key={t} className="py-2 px-3 text-right font-medium">{TOUR_META[t]?.short ?? t}</th>)}
-          </tr>
-        </thead>
-        <tbody>
-          {leaders.filter((l) => l.total >= 2).map((l) => {
-            const s = spans.get(l.player);
-            const span = s ? (s.first === s.last ? `${s.first}` : `${s.first}–${s.last}`) : "";
-            return (
-              <tr key={l.player} className="border-t" style={{ borderColor: "var(--border)" }}>
-                <td className="py-1.5 px-3 font-medium"><Flag nation={l.nation} />{l.player}</td>
-                <td className="py-1.5 px-3 text-right tabular-nums text-[var(--text-muted)]" style={mono}>{span}</td>
-                <td className="py-1.5 px-3 text-right tabular-nums font-semibold" style={{ ...mono, color: GOLD }}>{l.total}</td>
-                {tours.map((t) => <td key={t} className="py-1.5 px-3 text-right tabular-nums text-[var(--text-muted)]" style={mono}>{l.byTour[t] ?? ""}</td>)}
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+    <div>
+      {/* Mobile: one card per player instead of a table that grows a column
+          per major (up to 7 columns) and forces sideways scrolling. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[520px] overflow-y-auto">
+        {filtered.map((l) => {
+          const s = spans.get(l.player);
+          const span = s ? (s.first === s.last ? `${s.first}` : `${s.first}–${s.last}`) : "";
+          return (
+            <div key={`${l.player}-card`} className="rounded-lg border p-3" style={card}>
+              <div className="flex items-start justify-between gap-2">
+                <div className="leading-tight font-medium text-sm flex items-center gap-1.5 flex-wrap">
+                  <Flag nation={l.nation} />
+                  <span>{l.player}</span>
+                </div>
+                <span className="flex-shrink-0 text-sm tabular-nums font-semibold" style={{ ...mono, color: GOLD }}>{l.total}</span>
+              </div>
+              <div className="text-[11px] text-[var(--text-dim)] mb-2">Span {span}</div>
+              <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                {tours.map((t) => (
+                  <div key={t}>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{TOUR_META[t]?.short ?? t}</div>
+                    <div className="tabular-nums text-[var(--text-muted)]" style={mono}>{l.byTour[t] ?? "—"}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto hidden sm:block" style={card}>
+        <table className="w-full text-sm min-w-[700px]">
+          <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
+            <tr className="text-left text-xs text-[var(--text-muted)]">
+              <th className="py-2 px-3 font-medium">Player</th>
+              <th className="py-2 px-3 text-right font-medium">Span</th>
+              <th className="py-2 px-3 text-right font-medium" style={{ color: GOLD }}>Majors</th>
+              {tours.map((t) => <th key={t} className="py-2 px-3 text-right font-medium">{TOUR_META[t]?.short ?? t}</th>)}
+            </tr>
+          </thead>
+          <tbody>
+            {filtered.map((l) => {
+              const s = spans.get(l.player);
+              const span = s ? (s.first === s.last ? `${s.first}` : `${s.first}–${s.last}`) : "";
+              return (
+                <tr key={l.player} className="border-t" style={{ borderColor: "var(--border)" }}>
+                  <td className="py-1.5 px-3 font-medium"><Flag nation={l.nation} />{l.player}</td>
+                  <td className="py-1.5 px-3 text-right tabular-nums text-[var(--text-muted)]" style={mono}>{span}</td>
+                  <td className="py-1.5 px-3 text-right tabular-nums font-semibold" style={{ ...mono, color: GOLD }}>{l.total}</td>
+                  {tours.map((t) => <td key={t} className="py-1.5 px-3 text-right tabular-nums text-[var(--text-muted)]" style={mono}>{l.byTour[t] ?? ""}</td>)}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
@@ -213,7 +245,22 @@ export default function GolfHubPage() {
       <section className="mb-12">
         <h2 id="by-nation" className="text-lg font-semibold mb-1">By nation</h2>
         <p className="text-xs text-[var(--text-muted)] mb-3">Men&apos;s majors by country, true duplicates folded into the modern nation.</p>
-        <div className="rounded-xl border overflow-x-auto max-h-[440px] overflow-y-auto" style={card}>
+
+        {/* Mobile: stacked rows in card form. Only two columns, but the
+            mandate is no exceptions — every table gets a true card view. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[440px] overflow-y-auto">
+          {nations.map((n) => (
+            <div key={`${n.nation}-card`} className="rounded-lg border px-3 py-2 flex items-center justify-between gap-2" style={card}>
+              <div className="text-sm flex items-center gap-1.5 flex-wrap">
+                <Flag nation={n.nation} />
+                <span>{n.nation}</span>
+              </div>
+              <span className="flex-shrink-0 text-sm tabular-nums font-semibold" style={{ ...mono, color: GOLD }}>{n.titles}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto max-h-[440px] overflow-y-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[320px]">
             <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
               <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -239,7 +286,33 @@ export default function GolfHubPage() {
         <p className="text-xs text-[var(--text-muted)] mb-3" style={mono}>
           United States {ryderTally["United States"] ?? 0} · Europe {ryderTally["Europe"] ?? 0} · Great Britain {ryderTally["Great Britain"] ?? 0} · Tied {ryderTally["Tied"] ?? 0}
         </p>
-        <div className="rounded-xl border overflow-x-auto max-h-[460px] overflow-y-auto" style={card}>
+        {/* Mobile: one card per edition instead of a 4-column table. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[460px] overflow-y-auto">
+          {data.ryder.map((r) => (
+            <div key={`${r.edition}-card`} className="rounded-lg border p-3" style={card}>
+              <div className="flex items-start justify-between gap-2">
+                <div className="leading-tight font-medium text-sm">{r.winner}</div>
+                <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]" style={mono}>{r.year}</span>
+              </div>
+              <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs mt-1.5">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Score</div>
+                  <div className="tabular-nums text-[var(--text-muted)]" style={mono}>{r.score}</div>
+                </div>
+                <div className="col-span-2">
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Host venue &amp; metro</div>
+                  <div className="text-[var(--text-muted)]">
+                    {r.metroSlug
+                      ? <Link href={`/rankings/${r.metroSlug}#sports`} className="hover:text-[var(--accent)]">{r.venue}, {r.metroName}</Link>
+                      : <span>{r.venue}, {r.host}</span>}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto max-h-[460px] overflow-y-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[680px]">
             <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
               <tr className="text-left text-xs text-[var(--text-muted)]">

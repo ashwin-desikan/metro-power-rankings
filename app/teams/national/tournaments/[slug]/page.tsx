@@ -161,7 +161,80 @@ function ChampionsList({ hub }: { hub: TournamentHub }) {
           multiple distinct events.</>
         )}
       </p>
-      <div className="mt-4 overflow-x-auto">
+      {/* Mobile: one card per edition instead of a 3-4 column table that
+          forces sideways scrolling at phone widths. Same `hub.champions`
+          data as the desktop table below - only the presentation differs. */}
+      <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
+        {hub.champions.map((c, i) => {
+          const finalists = finalistByKey.get(finalistKey(c.year, c.tournament_label)) ?? [];
+          return (
+            <div
+              key={i}
+              className="rounded-lg border p-3"
+              style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-start justify-between gap-2">
+                <div className="leading-tight flex items-center gap-1.5 flex-wrap font-medium text-sm">
+                  <span
+                    className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-semibold tracking-wide"
+                    style={{ background: "rgba(212,175,55,0.22)", color: "#d4af37" }}
+                    title={`${hub.label} ${c.year} champion`}
+                  >
+                    <span aria-hidden>★</span>
+                  </span>
+                  {c.champion_slug && flagCdnUrl(c.champion_slug) && (
+                    <img src={flagCdnUrl(c.champion_slug)!} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" loading="lazy" decoding="async" />
+                  )}
+                  {c.champion_slug ? (
+                    <Link href={`/teams/national/${c.champion_slug}`} className="hover:text-[var(--accent)] hover:underline">
+                      {displayNameForTeam(c.champion_slug, c.champion_cur_name)}
+                    </Link>
+                  ) : (
+                    <span>{c.champion_cur_name}</span>
+                  )}
+                  {c.champion_as && (
+                    <span className="text-[var(--text-muted)] text-xs">(as {c.champion_as})</span>
+                  )}
+                </div>
+                <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]">{c.year}</span>
+              </div>
+              {showTournamentColumn && (
+                <div className="text-[11px] text-[var(--text-dim)] mt-0.5">
+                  {c.tournament_label ?? "—"}
+                </div>
+              )}
+              <div className="grid grid-cols-1 gap-1.5 text-xs mt-2">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Runner(s)-up</div>
+                  <div className="text-[var(--text-muted)]">
+                    {finalists.length === 0 ? (
+                      <span className="text-[var(--text-dim)]">—</span>
+                    ) : (
+                      finalists.map((f, fi) => (
+                        <span key={fi}>
+                          {fi > 0 && ", "}
+                          {f.slug && flagCdnUrl(f.slug) && (
+                            <img src={flagCdnUrl(f.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block mr-1" loading="lazy" decoding="async" />
+                          )}
+                          {f.slug ? (
+                            <Link href={`/teams/national/${f.slug}`} className="hover:underline">
+                              {displayNameForTeam(f.slug, f.cur_name)}
+                            </Link>
+                          ) : (
+                            f.cur_name
+                          )}
+                        </span>
+                      ))
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="mt-4 overflow-x-auto hidden sm:block">
         <table className="w-full text-sm">
           <thead>
             <tr

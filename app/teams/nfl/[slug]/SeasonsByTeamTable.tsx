@@ -100,7 +100,110 @@ export default function SeasonsByTeamTable({ rows, sourceLabel, week }: Props) {
 
   return (
     <>
-      <div className="overflow-x-auto">
+      {/* Mobile: one card per season instead of an 11-column table nobody
+          can read at 375px without scrolling sideways. Same displayRows
+          data, driven by the same sort state as the desktop table below. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {displayRows.map((s) => {
+          const isLive = s.is_live === true;
+          const isSb = s.year >= 1966;
+          const champColor = s.champ ? (isSb ? TITLE_GOLD : PRE_SB_BRONZE) : undefined;
+          return (
+            <div
+              key={`${s.year}-${s.team}${isLive ? "-live" : ""}-card`}
+              className="rounded-lg border p-3"
+              style={{
+                backgroundColor: "var(--bg-card)",
+                borderColor: "var(--border)",
+                background: s.champ
+                  ? "rgba(212,175,55,0.07)"
+                  : isLive
+                  ? "rgba(78,205,196,0.06)"
+                  : undefined,
+                fontStyle: isLive ? "italic" : undefined,
+              }}
+            >
+              <div className="flex items-baseline justify-between gap-2">
+                <div className="flex items-baseline gap-2 min-w-0">
+                  <span
+                    className="text-sm tabular-nums flex-shrink-0"
+                    style={{
+                      color: champColor,
+                      fontWeight: s.champ || isLive ? 600 : undefined,
+                    }}
+                  >
+                    {isLive ? (
+                      <span title={`${s.year} season in progress`}>{s.year}</span>
+                    ) : (
+                      <a
+                        href={pfrYearUrl(s.year, s.league)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline decoration-dotted underline-offset-2"
+                        title={`${s.year} season on Pro Football Reference`}
+                      >
+                        {s.year}
+                      </a>
+                    )}
+                  </span>
+                  <span className="text-xs text-[var(--text-muted)] truncate">{s.city} {s.team}</span>
+                </div>
+                {isLive && (
+                  <span
+                    className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-semibold uppercase tracking-wider border flex-shrink-0"
+                    style={{ borderColor: "var(--border)", color: "var(--text-muted)", background: "var(--bg-card)" }}
+                    title={`Live record from ESPN${week ? ` · Week ${week}` : ""}`}
+                  >
+                    <span aria-hidden className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "rgb(34,197,94)" }} />
+                    Live
+                  </span>
+                )}
+              </div>
+              <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Record</div>
+                  <div className="tabular-nums">{s.w}-{s.l}-{s.t}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Win%</div>
+                  <div className="tabular-nums">{s.win_pct.toFixed(3)}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Finish</div>
+                  <div className="text-[var(--text-muted)]">{s.place || "—"}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">PF</div>
+                  <div className="tabular-nums">{s.pf}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">PA</div>
+                  <div className="tabular-nums">{s.pa}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Division</div>
+                  <div className="text-[var(--text-muted)] truncate">{s.division || "—"}</div>
+                </div>
+              </div>
+              {!isLive && (
+                <div className="mt-2">
+                  <SeasonBadges
+                    playoff={s.playoff}
+                    divTitle={s.div_title}
+                    confFinal={s.conf_final}
+                    champApp={s.champ_app}
+                    champ={s.champ}
+                    stolen={s.stolen === true}
+                    year={s.year}
+                  />
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="overflow-x-auto hidden sm:block">
         <table className="w-full min-w-[680px] text-xs tabular-nums">
           <thead>
             <tr className="text-[var(--text-muted)]">
@@ -243,7 +346,7 @@ function Th({
   const isActive = cur === k;
   return (
     <th
-      className={`font-medium py-2 uppercase tracking-wider text-[10px] cursor-pointer select-none hover:text-[var(--text)] ${align === "right" ? "text-right" : "text-left"} ${className ?? ""}`}
+      className={`font-medium py-3 uppercase tracking-wider text-[10px] cursor-pointer select-none hover:text-[var(--text)] ${align === "right" ? "text-right" : "text-left"} ${className ?? ""}`}
       onClick={() => onClick(k)}
       style={{ color: isActive ? "var(--text)" : undefined }}
     >

@@ -134,7 +134,18 @@ export default async function RugbyUnionHubPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div className="rounded-xl border p-4" style={card}>
             <div className="font-semibold mb-2">Current top 15</div>
-            <TableScroll>
+            {/* Mobile: stacked rank list, same data as the desktop table. */}
+            <div className="sm:hidden divide-y" style={{ borderColor: "var(--border)" }}>
+              {hub.world_rankings.slice(0, 15).map((r) => (
+                <div key={r.team} className="flex items-center gap-3 py-2 text-sm">
+                  <span className="w-7 text-right tabular-nums text-[var(--text-dim)] flex-shrink-0" style={mono}>
+                    {r.rank}
+                  </span>
+                  <span className="flex-1 min-w-0">{teamLink(r.team)}</span>
+                </div>
+              ))}
+            </div>
+            <TableScroll className="hidden sm:block">
             <table className="w-full text-sm">
               <thead>
                 <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -155,7 +166,20 @@ export default async function RugbyUnionHubPage() {
           </div>
           <div className="rounded-xl border p-4" style={card}>
             <div className="font-semibold mb-2">Weeks at number one</div>
-            <TableScroll>
+            {/* Mobile: stacked cards, same data as the desktop table. */}
+            <div className="sm:hidden divide-y" style={{ borderColor: "var(--border)" }}>
+              {hub.number_ones.map((r) => (
+                <div key={r.team} className="py-2 text-sm">
+                  <div className="font-medium">{teamLink(r.team)}</div>
+                  <div className="mt-1 flex flex-wrap gap-x-3 gap-y-0.5 text-xs tabular-nums text-[var(--text-muted)]" style={mono}>
+                    <span>Weeks {r.weeks}</span>
+                    <span>Longest {r.longest}</span>
+                    <span>Last {r.last}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <TableScroll className="hidden sm:block">
             <table className="w-full text-sm">
               <thead>
                 <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -189,6 +213,28 @@ export default async function RugbyUnionHubPage() {
         for (const r of hub.six_nations_roll) { const y = yearOf(r.season); byYear.set(y, { ...(byYear.get(y) ?? { year: y }), nh: r }); }
         for (const r of hub.trc_roll) { const y = yearOf(r.season); byYear.set(y, { ...(byYear.get(y) ?? { year: y }), sh: r }); }
         const rows = [...byYear.values()].sort((a, b) => b.year.localeCompare(a.year));
+
+        // Shared cell renderers so the mobile cards and the desktop table
+        // render the exact same champion/badge markup from one place.
+        function nhCell(nh: Merged["nh"]) {
+          if (!(nh && nh.champions.length > 0)) return <span className="text-[var(--text-dim)]">—</span>;
+          return (
+            <span className="font-medium">
+              {nh.champions.map((c, i) => <span key={c}>{i > 0 ? " / " : ""}{teamLink(c)}</span>)}
+              {nh.grand_slam ? <sup className="text-[9px] text-[var(--text-dim)] ml-0.5">GS</sup> : null}
+              {nh.triple_crown
+                ? (nh.champions.includes(nh.triple_crown)
+                    ? <sup className="text-[9px] text-[var(--text-dim)] ml-0.5">TC</sup>
+                    : <span className="text-[10px] text-[var(--text-dim)] ml-1">TC {nh.triple_crown}</span>)
+                : null}
+            </span>
+          );
+        }
+        function shCell(sh: Merged["sh"]) {
+          if (!(sh && sh.champions.length > 0)) return <span className="text-[var(--text-dim)]">—</span>;
+          return <span className="font-medium">{sh.champions.map((c, i) => <span key={c}>{i > 0 ? " / " : ""}{teamLink(c)}</span>)}</span>;
+        }
+
         return (
           <section id="six-nations" className="mb-10">
             <h2 className="text-lg font-semibold mb-1">Championship rolls of honour</h2>
@@ -196,7 +242,29 @@ export default async function RugbyUnionHubPage() {
               Northern hemisphere (Home, Five &amp; Six Nations since 1883) and southern hemisphere
               (Tri Nations &amp; Rugby Championship since 1996), side by side per year. GS Grand Slam, TC Triple Crown.
             </p>
-            <div className="rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto" style={card}>
+
+            {/* Mobile: stacked cards, same `rows` as the desktop table. */}
+            <div className="sm:hidden rounded-xl border p-3 max-h-[520px] overflow-y-auto" style={card}>
+              <div className="divide-y" style={{ borderColor: "var(--border)" }}>
+                {rows.map((r) => (
+                  <div key={r.year} className="py-2 text-sm">
+                    <div className="tabular-nums text-xs text-[var(--text-dim)] mb-1" style={mono}>{r.year}</div>
+                    <div className="grid grid-cols-1 gap-1">
+                      <div>
+                        <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Six Nations</div>
+                        <div>{nhCell(r.nh)}</div>
+                      </div>
+                      <div>
+                        <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Rugby Championship</div>
+                        <div>{shCell(r.sh)}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="hidden sm:block rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto" style={card}>
               <table className="w-full text-sm min-w-[560px]">
                 <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
                   <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -209,24 +277,8 @@ export default async function RugbyUnionHubPage() {
                   {rows.map((r) => (
                     <tr key={r.year} className="border-t" style={{ borderColor: "var(--border)" }}>
                       <td className="py-1.5 px-3 tabular-nums align-top" style={mono}>{r.year}</td>
-                      <td className="py-1.5 px-3 align-top">
-                        {r.nh && r.nh.champions.length > 0 ? (
-                          <span className="font-medium">
-                            {r.nh.champions.map((c, i) => <span key={c}>{i > 0 ? " / " : ""}{teamLink(c)}</span>)}
-                            {r.nh.grand_slam ? <sup className="text-[9px] text-[var(--text-dim)] ml-0.5">GS</sup> : null}
-                            {r.nh.triple_crown
-                              ? (r.nh.champions.includes(r.nh.triple_crown)
-                                  ? <sup className="text-[9px] text-[var(--text-dim)] ml-0.5">TC</sup>
-                                  : <span className="text-[10px] text-[var(--text-dim)] ml-1">TC {r.nh.triple_crown}</span>)
-                              : null}
-                          </span>
-                        ) : <span className="text-[var(--text-dim)]">—</span>}
-                      </td>
-                      <td className="py-1.5 px-3 align-top font-medium">
-                        {r.sh && r.sh.champions.length > 0
-                          ? r.sh.champions.map((c, i) => <span key={c}>{i > 0 ? " / " : ""}{teamLink(c)}</span>)
-                          : <span className="text-[var(--text-dim)] font-normal">—</span>}
-                      </td>
+                      <td className="py-1.5 px-3 align-top">{nhCell(r.nh)}</td>
+                      <td className="py-1.5 px-3 align-top">{shCell(r.sh)}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -241,7 +293,34 @@ export default async function RugbyUnionHubPage() {
       <section className="mb-10">
         <h2 id="world-cup" className="text-lg font-semibold mb-1">Rugby World Cup finals</h2>
         <p className="text-xs text-[var(--text-muted)] mb-3">Every final since the inaugural tournament in 1987.</p>
-        <div className="rounded-xl border overflow-x-auto" style={card}>
+
+        {/* Mobile: stacked cards, same reversed rows as the desktop table. */}
+        <div className="sm:hidden grid grid-cols-1 gap-2">
+          {hub.rwc_finals.slice().reverse().map((f) => (
+            <div key={f.year} className="rounded-lg border p-3" style={card}>
+              <div className="flex items-center justify-between gap-2">
+                <span className="font-semibold">{teamLink(f.winner)}</span>
+                <span className="tabular-nums text-xs text-[var(--text-dim)] flex-shrink-0" style={mono}>{f.year}</span>
+              </div>
+              <div className="mt-1.5 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Score</div>
+                  <div className="tabular-nums" style={mono}>{f.score}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Runner-up</div>
+                  <div>{f.runner_up ? teamLink(f.runner_up) : "—"}</div>
+                </div>
+                <div className="col-span-2">
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Venue</div>
+                  <div className="text-[var(--text-muted)]">{f.venue}{f.city ? `, ${f.city}` : ""}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="hidden sm:block rounded-xl border overflow-x-auto" style={card}>
           <table className="w-full text-sm min-w-[620px]">
             <thead>
               <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -329,7 +408,50 @@ export default async function RugbyUnionHubPage() {
             );
           })}
         </div>
-        <div className="rounded-xl border overflow-x-auto" style={card}>
+        {/* Mobile: stacked cards, same `rest` array as the desktop table. */}
+        <div className="sm:hidden grid grid-cols-1 gap-2">
+          {rest.map((t) => {
+            const r = t.record;
+            if (!r) return null;
+            const pct = rugbyWinPct(r);
+            return (
+              <div key={t.slug} className="rounded-lg border p-3" style={card}>
+                <Link href={`/teams/rugby-union/${t.slug}`} className="hover:text-[var(--accent)] font-medium inline-flex items-center gap-1.5">
+                  {flagCdnUrl(t.slug) ? <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={18} height={13} className="inline-block flex-shrink-0" loading="lazy" decoding="async" /> : null}
+                  {t.name}
+                </Link>
+                <div className="mt-1.5 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Span</div>
+                    <div className="tabular-nums" style={mono}>{spanStr(r.first, r.last)}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Tests</div>
+                    <div className="tabular-nums" style={mono}>{r.m}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Win %</div>
+                    <div className="tabular-nums" style={mono}>{pct !== null ? pct : "—"}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">W</div>
+                    <div className="tabular-nums" style={mono}>{r.w}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">L</div>
+                    <div className="tabular-nums" style={mono}>{r.l}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">D</div>
+                    <div className="tabular-nums" style={mono}>{r.d}</div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="hidden sm:block rounded-xl border overflow-x-auto" style={card}>
           <table className="w-full text-sm min-w-[560px]">
             <thead>
               <tr className="text-left text-xs text-[var(--text-muted)]">

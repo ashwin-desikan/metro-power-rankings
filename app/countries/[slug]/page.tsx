@@ -448,7 +448,31 @@ export default async function CountryDetailPage({ params }: Props) {
                 Every major championship won by {country.name}&apos;s national teams, newest first. {champTitles.length} in total.
               </p>
               <div className="border rounded-lg overflow-hidden" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
-                <div className="max-h-[32rem] overflow-y-auto overflow-x-auto">
+                {/* Mobile: one card per title, same data as the desktop table */}
+                <div className="sm:hidden divide-y divide-[var(--border)] max-h-[32rem] overflow-y-auto">
+                  {champTitles.map((t, i) => (
+                    <div key={`${t.compSlug}-${t.year}-${t.champion}-${i}-card`} className="px-4 py-3">
+                      <div className="flex items-center gap-1.5">
+                        <ChampionLogo name={t.champion} canonical={t.canonical} size={t.tier != null && t.tier <= 2 ? 22 : 16} />
+                        {t.teamHref ? (
+                          <Link href={t.teamHref} className={`hover:text-[var(--accent)] hover:underline text-[var(--text)] ${t.tier != null && t.tier <= 2 ? "font-bold text-base" : "font-medium text-sm"}`}>{t.champion}</Link>
+                        ) : (
+                          <span className={`text-[var(--text)] ${t.tier != null && t.tier <= 2 ? "font-bold text-base" : "font-medium text-sm"}`}>{t.champion}</span>
+                        )}
+                      </div>
+                      <div className="mt-1 flex flex-wrap items-center gap-x-2 text-xs tabular-nums text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                        <span>{t.year ?? "\u2014"}</span>
+                        {t.date ? <span>{"\u00b7"} {t.date}</span> : null}
+                      </div>
+                      <div className="mt-1 text-xs">
+                        {sportIcon(t.sport) ? <span aria-hidden className="mr-1">{sportIcon(t.sport)}</span> : null}
+                        <Link href={competitionHref(t.compSlug)} className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline">{t.eraName || t.competition}</Link>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                {/* Desktop: full table */}
+                <div className="hidden sm:block max-h-[32rem] overflow-y-auto overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead className="sticky top-0 border-b" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
                       <tr className="text-left text-[10px] uppercase tracking-widest text-[var(--text-dim)]">
@@ -574,7 +598,60 @@ export default async function CountryDetailPage({ params }: Props) {
               {metros.length > 0 ? `${metros.length} tracked ${metros.length === 1 ? "metro" : "metros"}` : "No metros tracked yet"}
             </h2>
             {metros.length > 0 ? (
-              <div className="border rounded-lg overflow-x-auto" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
+              <div className="border rounded-lg overflow-hidden" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
+                {/* Mobile: stacked cards */}
+                <div className="sm:hidden divide-y divide-[var(--border)]">
+                  {metros.map((m) => {
+                    const tier = computeTier(m.score);
+                    const state2Slug = m.state2Slug;
+                    const state3Slug = m.state3Slug;
+                    const extraStates = [
+                      m.state2 ? { name: m.state2, slug: state2Slug } : null,
+                      m.state3 ? { name: m.state3, slug: state3Slug } : null,
+                      ...(m.additionalStates ?? []),
+                    ].filter((s): s is { name: string; slug?: string } => s !== null);
+                    return (
+                      <div key={`${m.slug}-card`} className="px-4 py-3">
+                        <div className="flex items-start justify-between gap-2">
+                          <div className="min-w-0">
+                            <span className="text-xs text-[var(--text-dim)] tabular-nums mr-1.5" style={{ fontFamily: "'JetBrains Mono', monospace" }}>#{m.rank}</span>
+                            <Link href={`/rankings/${m.slug}`} className="font-semibold hover:text-[var(--accent)]">{m.name}</Link>
+                            {isCapital(m.name) ? <CapitalBadge /> : null}
+                            {isLargest(m.name) ? <LargestBadge /> : null}
+                          </div>
+                          <span className="flex-shrink-0 font-bold tabular-nums" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>{m.score.toFixed(1)}</span>
+                        </div>
+                        <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[var(--text-muted)]">
+                          <span className="tabular-nums" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{formatPop(m.pop)}</span>
+                          <Link href={`/methodology${tierAnchor(m.score)}`} className="hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{tier.name}</Link>
+                        </div>
+                        {(m.primaryState || extraStates.length > 0) ? (
+                          <div className="mt-1 text-xs text-[var(--text-dim)]">
+                            {m.primaryState ? (
+                              m.stateSlug ? (
+                                <Link href={`/states/${m.stateSlug}`} className="text-[var(--text-muted)] hover:text-[var(--accent)]">{m.primaryState}</Link>
+                              ) : (
+                                <span className="text-[var(--text-muted)]">{m.primaryState}</span>
+                              )
+                            ) : null}
+                            {extraStates.map((s, idx) => (
+                              <span key={`${s.name}-${idx}`}>
+                                {(m.primaryState || idx > 0) ? " · " : ""}
+                                {s.slug ? (
+                                  <Link href={`/states/${s.slug}`} className="hover:text-[var(--accent)]">{s.name}</Link>
+                                ) : (
+                                  <span>{s.name}</span>
+                                )}
+                              </span>
+                            ))}
+                          </div>
+                        ) : null}
+                      </div>
+                    );
+                  })}
+                </div>
+                {/* Desktop: table */}
+                <div className="hidden sm:block overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="text-left text-xs text-[var(--text-dim)] uppercase tracking-wider"
@@ -648,6 +725,7 @@ export default async function CountryDetailPage({ params }: Props) {
                     })}
                   </tbody>
                 </table>
+                </div>
               </div>
             ) : (
               <div className="border rounded-lg p-8 text-center" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>

@@ -306,6 +306,18 @@ function Stat({ label, value }: { label: string; value: string }) {
   );
 }
 
+// Small labeled stat block used inside sm:hidden mobile cards for every
+// table on this page, so the desktop <table> can stay untouched while a
+// stacked card view carries the same data on narrow screens.
+function MiniStat({ label, value }: { label: string; value: string | number }) {
+  return (
+    <div>
+      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{label}</div>
+      <div className="tabular-nums">{value}</div>
+    </div>
+  );
+}
+
 // Subtle highlight tint for the Pos + Pts columns.
 const POS_HIGHLIGHT = { background: "rgba(78,205,196,0.07)" } as const;
 const PTS_HIGHLIGHT = { background: "rgba(245,215,110,0.07)" } as const;
@@ -352,6 +364,35 @@ const DOMESTIC_CUP_FULL_NAMES: Record<string, { major: string; minor: string }> 
 };
 
 
+// Finish-column badge, shared by the desktop table cell and the mobile
+// card so the live/Shield/playoff-round treatment stays in one place.
+function mlsFinishStyle(f: string): { bg: string; color: string } {
+  if (f === "MLS Cup") return { bg: "rgba(245,215,110,0.18)", color: "#b58900" };
+  if (f === "MLS Cup Final") return { bg: "rgba(245,215,110,0.10)", color: "#b58900" };
+  if (f === "Conf Final") return { bg: "rgba(99,102,241,0.12)", color: "#818cf8" };
+  if (f === "Playoffs") return { bg: "transparent", color: "var(--text-muted)" };
+  return { bg: "transparent", color: "var(--text-dim)" };
+}
+
+function MlsFinish({ s }: { s: MlsClubSeason }) {
+  const isLive = s.is_live === true;
+  if (isLive) {
+    return (
+      <span className="inline-flex items-center gap-1 text-[10px] px-1.5 py-0.5 rounded-full font-semibold border not-italic" style={{ borderColor: "var(--border)", color: "var(--text-muted)", background: "var(--bg-card)" }} title="Live record from ESPN, refreshed hourly">
+        <span aria-hidden className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "rgb(34,197,94)" }} />
+        In progress &middot; ESPN
+      </span>
+    );
+  }
+  const fs = mlsFinishStyle(s.finish);
+  return (
+    <span className="inline-flex flex-wrap items-center gap-1">
+      {s.supporters_shield && <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold" style={{ background: "rgba(245,215,110,0.18)", color: "#b58900" }} title="Supporters' Shield (best regular-season record)">&#9733; Shield</span>}
+      {s.finish !== "Missed playoffs" && <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold" style={{ background: fs.bg, color: fs.color }}>{s.finish}</span>}
+    </span>
+  );
+}
+
 function MlsClubSeasonsTable({ seasons }: { seasons: MlsClubSeason[] }) {
   if (seasons.length === 0) {
     return (
@@ -361,18 +402,44 @@ function MlsClubSeasonsTable({ seasons }: { seasons: MlsClubSeason[] }) {
       </section>
     );
   }
-  const finishStyle = (f: string): { bg: string; color: string } => {
-    if (f === "MLS Cup") return { bg: "rgba(245,215,110,0.18)", color: "#b58900" };
-    if (f === "MLS Cup Final") return { bg: "rgba(245,215,110,0.10)", color: "#b58900" };
-    if (f === "Conf Final") return { bg: "rgba(99,102,241,0.12)", color: "#818cf8" };
-    if (f === "Playoffs") return { bg: "transparent", color: "var(--text-muted)" };
-    return { bg: "transparent", color: "var(--text-dim)" };
-  };
   return (
     <section className="rounded-xl border p-5 mb-6" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
       <h2 className="text-base font-semibold">Season-by-season</h2>
       <p className="mt-1 text-xs text-[var(--text-muted)]">Major League Soccer. No promotion or relegation; the Supporters&apos; Shield (&#9733;) marks the best regular-season record and the MLS Cup is the playoff title.</p>
-      <div className="mt-4 overflow-x-auto">
+
+      {/* Mobile: one card per season instead of a 10-column table. Same
+          `seasons` array, same MlsFinish badge logic as the desktop table. */}
+      <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
+        {seasons.map((s) => {
+          const isLive = s.is_live === true;
+          return (
+            <div
+              key={`${s.year}-${s.conference}${isLive ? "-live" : ""}-card`}
+              className="rounded-lg border p-3"
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-start justify-between gap-2">
+                <div>
+                  <div className="text-base font-semibold tabular-nums">{s.year}</div>
+                  <div className="text-xs text-[var(--text-muted)] mt-0.5">{s.conference ?? "—"}</div>
+                </div>
+                <div className="flex-shrink-0 text-right">
+                  <MlsFinish s={s} />
+                </div>
+              </div>
+              <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+                <MiniStat label="Pos" value={s.overall_pos ?? "—"} />
+                <MiniStat label="Conf Pos" value={s.conf_pos ?? "—"} />
+                <MiniStat label="W-D-L" value={`${s.w}-${s.d}-${s.l}`} />
+                <MiniStat label="Pts" value={s.pts ?? "—"} />
+                <MiniStat label="GD" value={s.gd > 0 ? `+${s.gd}` : s.gd} />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="mt-4 overflow-x-auto hidden sm:block">
         <table className="w-full text-sm tabular-nums min-w-[560px]">
           <thead>
             <tr className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b" style={{ borderColor: "var(--border)" }}>
@@ -390,7 +457,6 @@ function MlsClubSeasonsTable({ seasons }: { seasons: MlsClubSeason[] }) {
           </thead>
           <tbody>
             {seasons.map((s) => {
-              const fs = finishStyle(s.finish);
               const isLive = s.is_live === true;
               return (
                 <tr key={`${s.year}-${s.conference}${isLive ? "-live" : ""}`} className="border-b" style={{ borderColor: "var(--border)", background: s.supporters_shield ? "rgba(245,215,110,0.06)" : isLive ? "rgba(78,205,196,0.06)" : undefined, fontStyle: isLive ? "italic" : undefined }}>
@@ -403,7 +469,7 @@ function MlsClubSeasonsTable({ seasons }: { seasons: MlsClubSeason[] }) {
                   <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{s.l}</td>
                   <td className="py-1.5 px-2 text-right font-semibold">{s.pts ?? "—"}</td>
                   <td className="py-1.5 px-2 text-right text-[var(--text-muted)] hidden sm:table-cell">{s.gd > 0 ? `+${s.gd}` : s.gd}</td>
-                  <td className="py-1.5 px-2">{isLive ? (<span className="inline-flex items-center gap-1 text-[10px] px-1.5 py-0.5 rounded-full font-semibold border not-italic" style={{ borderColor: "var(--border)", color: "var(--text-muted)", background: "var(--bg-card)" }} title="Live record from ESPN, refreshed hourly"><span aria-hidden className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "rgb(34,197,94)" }} />In progress &middot; ESPN</span>) : (<span className="inline-flex flex-wrap items-center gap-1">{s.supporters_shield && <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold" style={{ background: "rgba(245,215,110,0.18)", color: "#b58900" }} title="Supporters' Shield (best regular-season record)">&#9733; Shield</span>}{s.finish !== "Missed playoffs" && <span className="text-[10px] px-1.5 py-0.5 rounded font-semibold" style={{ background: fs.bg, color: fs.color }}>{s.finish}</span>}</span>)}</td>
+                  <td className="py-1.5 px-2"><MlsFinish s={s} /></td>
                 </tr>
               );
             })}
@@ -413,6 +479,209 @@ function MlsClubSeasonsTable({ seasons }: { seasons: MlsClubSeason[] }) {
     </section>
   );
 }
+// Notes badges (national playoff / champion / promoted / relegated /
+// playoffs), shared by the desktop "Notes" column and the mobile card so
+// the pill styling only lives in one place.
+function SeasonNotesBadges({ s }: { s: FootballSeason }) {
+  const isChamp = s.champion === true;
+  return (
+    <span className="inline-flex flex-wrap gap-1">
+      {s.format === "playoff" && (
+        <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide"
+              style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-muted)" }}>
+          national playoff
+        </span>
+      )}
+      {isChamp && (
+        <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide"
+              style={{ background: "rgba(245,215,110,0.18)", color: "#b58900" }}>
+          champion
+        </span>
+      )}
+      {s.promoted && (
+        <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide"
+              style={{ background: "rgba(34,197,94,0.16)", color: "#22c55e" }}>
+          {s.playoffs ? "promoted (PO)" : "promoted"}
+        </span>
+      )}
+      {s.relegated && (
+        <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide"
+              style={{ background: "rgba(220,38,38,0.16)", color: "#dc2626" }}>
+          {s.playoffs ? "relegated (PO)" : "relegated"}
+        </span>
+      )}
+      {s.playoffs && !s.promoted && !s.relegated && (
+        <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide"
+              style={{ background: "rgba(251,191,36,0.16)", color: "#d97706" }}>
+          {s.playoff_final ? "Not Promoted (PO)" : "Playoffs"}
+        </span>
+      )}
+    </span>
+  );
+}
+
+// Domestic Cup badges (final result + semifinal-only markers) for a single
+// season row, shared by the desktop "Domestic Cup" column and the mobile
+// card.
+function SeasonDomesticCupBadges({
+  s, cupsByYear, sfByYear, cupShortLabels, cupFullNames,
+}: {
+  s: FootballSeason;
+  cupsByYear: Map<number, FootballCupFinal[]>;
+  sfByYear: Map<number, Set<"major" | "minor">>;
+  cupShortLabels: { major: string; minor: string };
+  cupFullNames?: { major: string; minor: string };
+}) {
+  const entries = (s.year !== null ? cupsByYear.get(s.year) : null) ?? [];
+  const sfKinds = (s.year !== null ? sfByYear.get(s.year) : null) ?? new Set<"major" | "minor">();
+  const finalKinds = new Set(entries.map((e) => e.kind));
+  const sfOnly = Array.from(sfKinds).filter((k) => !finalKinds.has(k));
+  if (entries.length === 0 && sfOnly.length === 0) return null;
+  return (
+    <span className="inline-flex flex-wrap gap-1">
+      {entries.map((c, ci) => {
+        const isWin = c.result === "won";
+        const isLost = c.result === "lost";
+        const isScheduled = c.result === "scheduled";
+        const shortLabel = c.kind === "major"
+          ? cupShortLabels.major
+          : (cupShortLabels.minor ?? "Cup");
+        const fullName = cupFullNames
+          ? (c.kind === "major" ? cupFullNames.major : cupFullNames.minor)
+          : "Domestic cup";
+        const resultText = c.result === "won" ? "won" : c.result === "lost" ? "runner-up" : "scheduled";
+        const title = `${fullName}: ${resultText}`;
+        // Visual states: filled gold + ★ for winners,
+        // outlined grey + ☆ for runners-up (reached final,
+        // lost), light italic for scheduled.
+        const bg = isWin
+          ? "rgba(245,215,110,0.18)"
+          : isLost
+            ? "transparent"
+            : "rgba(120,120,140,0.10)";
+        const fg = isWin ? "#b58900" : "var(--text-muted)";
+        const boxShadow = isLost
+          ? "inset 0 0 0 1px rgba(120,120,140,0.45)"
+          : undefined;
+        return (
+          <span
+            key={ci}
+            className={"inline-block rounded px-1.5 py-0.5 font-semibold tracking-wide" + (isScheduled ? " italic" : "")}
+            style={{ background: bg, color: fg, boxShadow }}
+            title={title}
+          >
+            {isWin && (
+              <span aria-hidden className="mr-0.5">★</span>
+            )}
+            {isLost && (
+              <span aria-hidden className="mr-0.5">☆</span>
+            )}
+            {shortLabel}
+          </span>
+        );
+      })}
+      {sfOnly.map((k, ki) => {
+        const label = k === "major" ? cupShortLabels.major : (cupShortLabels.minor ?? "Cup");
+        const full = cupFullNames ? (k === "major" ? cupFullNames.major : cupFullNames.minor) : "Domestic cup";
+        return (
+          <span
+            key={"sf" + ki}
+            className="inline-block rounded px-1.5 py-0.5 font-semibold tracking-wide"
+            style={{ background: "transparent", color: "var(--text-dim)", boxShadow: "inset 0 0 0 1px rgba(120,120,140,0.30)" }}
+            title={`${full}: reached the semifinal`}
+          >
+            {label} SF
+          </span>
+        );
+      })}
+    </span>
+  );
+}
+
+// European competition badges for a single season row, shared by the
+// desktop "Eur Comp" column and the mobile card.
+function SeasonEuropeBadges({ s, europeByYear }: { s: FootballSeason; europeByYear: Map<number, FootballEuropeEntry[]> }) {
+  const entries = (s.year !== null ? europeByYear.get(s.year) : null) ?? [];
+  if (entries.length === 0) return null;
+  return (
+    <span className="inline-flex flex-wrap gap-1">
+      {entries.map((e, ei) => {
+        const isWinner = e.trophy_won;
+        const isUcl = !!(e.code && GOLD_TROPHY_CODES.has(e.code));
+        // Reached the final but did not win it. Only
+        // surfaced when we have a numeric deepest_rnd —
+        // a missing value is treated as "did not reach
+        // final" rather than guessing from result_label.
+        const isFinalistLost = !isWinner && e.deepest_rnd === 1;
+        // Five visual states. Filled fills with a star
+        // for winners; outlined fills with an open star
+        // for finals reached and lost; plain grey with
+        // no symbol for participation that exited
+        // before the final.
+        let bg: string;
+        let fg: string;
+        let boxShadow: string | undefined;
+        let symbol: string | null = null;
+        if (isWinner && isUcl) {
+          bg = "rgba(212,175,55,0.22)";
+          fg = "#d4af37";
+          symbol = "★";
+        } else if (isWinner) {
+          bg = "rgba(192,192,192,0.20)";
+          fg = "#c0c0c0";
+          symbol = "★";
+        } else if (isFinalistLost && isUcl) {
+          bg = "transparent";
+          fg = "#d4af37";
+          boxShadow = "inset 0 0 0 1px rgba(212,175,55,0.55)";
+          symbol = "☆";
+        } else if (isFinalistLost) {
+          bg = "transparent";
+          fg = "#c0c0c0";
+          boxShadow = "inset 0 0 0 1px rgba(192,192,192,0.55)";
+          symbol = "☆";
+        } else {
+          bg = "rgba(120,120,140,0.16)";
+          fg = "var(--text-muted)";
+        }
+        const title = isWinner
+          ? `${e.competition} winner this season`
+          : isFinalistLost
+            ? `${e.competition}: reached final, lost`
+            : `${e.competition}: ${e.result_label}`;
+        return (
+          <span
+            key={ei}
+            className="inline-block rounded px-1.5 py-0.5 font-semibold tracking-wide"
+            style={{ background: bg, color: fg, boxShadow }}
+            title={title}
+          >
+            {symbol && (
+              <span aria-hidden className="mr-0.5">{symbol}</span>
+            )}
+            {europeanCompDisplayCode(e.code, e.year)}
+          </span>
+        );
+      })}
+    </span>
+  );
+}
+
+// Eur Qual (next season) badge, shared by the desktop column and the
+// mobile card.
+function SeasonEurQualBadge({ s }: { s: FootballSeason }) {
+  if (!s.eur_qual) return null;
+  return (
+    <span
+      className="inline-block rounded px-1.5 py-0.5 font-semibold tracking-wide"
+      style={{ background: "rgba(59,130,246,0.18)", color: "#3b82f6" }}
+      title="Qualified for this European competition next season"
+    >
+      {europeanCompDisplayCode(s.eur_qual, s.year === null ? null : s.year + 1)}
+    </span>
+  );
+}
+
 function SeasonsTable({
   seasons,
   tierLabels,
@@ -492,7 +761,83 @@ function SeasonsTable({
         Rows tagged "national playoff" are pre-modern formats where the workbook records only
         playoff participants, not round-robin standings.
       </p>
-      <div className="mt-4 overflow-x-auto">
+
+      {/* Mobile: one card per season instead of a 16-column table. Same
+          `seasons` array and the same badge-rendering components as the
+          desktop table below, so no data or behavior forks between them. */}
+      <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
+        {seasons.map((s, i) => {
+          const leagueLabel = s.league || "-";
+          const cupEntries = (s.year !== null ? cupsByYear.get(s.year) : null) ?? [];
+          const sfKinds = (s.year !== null ? sfByYear.get(s.year) : null) ?? new Set<"major" | "minor">();
+          const finalKinds = new Set(cupEntries.map((e) => e.kind));
+          const sfOnly = Array.from(sfKinds).filter((k) => !finalKinds.has(k));
+          const hasCup = cupEntries.length > 0 || sfOnly.length > 0;
+          const europeEntries = (s.year !== null ? europeByYear.get(s.year) : null) ?? [];
+          return (
+            <div
+              key={`${s.year}-${s.level}-${i}-card`}
+              className="rounded-lg border p-3"
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-start justify-between gap-2">
+                <div className="leading-tight min-w-0">
+                  <div className="font-medium text-sm">
+                    {leagueLabel}
+                    {s.level && (
+                      <span className="text-[var(--text-muted)] ml-1 tabular-nums">({s.level})</span>
+                    )}
+                  </div>
+                  <div className="text-xs text-[var(--text-muted)] mt-0.5 truncate">{s.team || s.cur_name}</div>
+                </div>
+                <div className="flex-shrink-0 text-right">
+                  <div className="text-sm font-semibold tabular-nums">{s.year ?? "-"}</div>
+                  <div className="text-xs text-[var(--text-muted)]">Pos {s.place ?? "-"}</div>
+                </div>
+              </div>
+              <div className="mt-1.5">
+                <SeasonNotesBadges s={s} />
+              </div>
+              {s.format === "league" ? (
+                <div className="mt-2 grid grid-cols-4 gap-x-3 gap-y-1.5 text-xs">
+                  <MiniStat label="P" value={s.matches ?? "-"} />
+                  <MiniStat label="W" value={s.w ?? "-"} />
+                  <MiniStat label="D" value={s.d ?? "-"} />
+                  <MiniStat label="L" value={s.l ?? "-"} />
+                  <MiniStat label="Pts" value={s.pts ?? "-"} />
+                  <MiniStat label="GF" value={s.gf ?? "-"} />
+                  <MiniStat label="GA" value={s.ga ?? "-"} />
+                  <MiniStat label="GD" value={s.gd ?? "-"} />
+                </div>
+              ) : (
+                <div className="mt-2 text-xs italic text-[var(--text-muted)]">
+                  knockout-format championship; per-match data not recorded
+                </div>
+              )}
+              {hasCup && (
+                <div className="mt-2 text-xs">
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] mb-0.5">Domestic Cup</div>
+                  <SeasonDomesticCupBadges s={s} cupsByYear={cupsByYear} sfByYear={sfByYear} cupShortLabels={cupShortLabels} cupFullNames={cupFullNames} />
+                </div>
+              )}
+              {europeEntries.length > 0 && (
+                <div className="mt-2 text-xs">
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] mb-0.5">Eur Comp</div>
+                  <SeasonEuropeBadges s={s} europeByYear={europeByYear} />
+                </div>
+              )}
+              {s.eur_qual && (
+                <div className="mt-2 text-xs">
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] mb-0.5">Eur Qual (next yr)</div>
+                  <SeasonEurQualBadge s={s} />
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="mt-4 overflow-x-auto hidden sm:block">
         <table className="w-full text-sm">
           <thead>
             <tr
@@ -529,8 +874,6 @@ function SeasonsTable({
               // with the level as a numeric suffix in parens. tierLabels
               // table is no longer consulted here per editorial spec.
               const leagueLabel = s.league || "-";
-              // Champion pill = workbook BX (Champions) flag.
-              const isChamp = s.champion === true;
               return (
                 <tr
                   key={`${s.year}-${s.level}-${i}`}
@@ -551,174 +894,13 @@ function SeasonsTable({
                     {s.place ?? "-"}
                   </td>
                   <td className="py-1.5">
-                    <span className="inline-flex flex-wrap gap-1">
-                      {s.format === "playoff" && (
-                        <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide"
-                              style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-muted)" }}>
-                          national playoff
-                        </span>
-                      )}
-                      {isChamp && (
-                        <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide"
-                              style={{ background: "rgba(245,215,110,0.18)", color: "#b58900" }}>
-                          champion
-                        </span>
-                      )}
-                      {s.promoted && (
-                        <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide"
-                              style={{ background: "rgba(34,197,94,0.16)", color: "#22c55e" }}>
-                          {s.playoffs ? "promoted (PO)" : "promoted"}
-                        </span>
-                      )}
-                      {s.relegated && (
-                        <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide"
-                              style={{ background: "rgba(220,38,38,0.16)", color: "#dc2626" }}>
-                          {s.playoffs ? "relegated (PO)" : "relegated"}
-                        </span>
-                      )}
-                      {s.playoffs && !s.promoted && !s.relegated && (
-                        <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide"
-                              style={{ background: "rgba(251,191,36,0.16)", color: "#d97706" }}>
-                          {s.playoff_final ? "Not Promoted (PO)" : "Playoffs"}
-                        </span>
-                      )}
-                    </span>
+                    <SeasonNotesBadges s={s} />
                   </td>
                   <td className="py-1.5 text-xs">
-                    {(() => {
-                      const entries = (s.year !== null ? cupsByYear.get(s.year) : null) ?? [];
-                      const sfKinds = (s.year !== null ? sfByYear.get(s.year) : null) ?? new Set<"major" | "minor">();
-                      const finalKinds = new Set(entries.map((e) => e.kind));
-                      const sfOnly = Array.from(sfKinds).filter((k) => !finalKinds.has(k));
-                      if (entries.length === 0 && sfOnly.length === 0) return null;
-                      return (
-                        <span className="inline-flex flex-wrap gap-1">
-                          {entries.map((c, ci) => {
-                            const isWin = c.result === "won";
-                            const isLost = c.result === "lost";
-                            const isScheduled = c.result === "scheduled";
-                            const shortLabel = c.kind === "major"
-                              ? cupShortLabels.major
-                              : (cupShortLabels.minor ?? "Cup");
-                            const fullName = cupFullNames
-                              ? (c.kind === "major" ? cupFullNames.major : cupFullNames.minor)
-                              : "Domestic cup";
-                            const resultText = c.result === "won" ? "won" : c.result === "lost" ? "runner-up" : "scheduled";
-                            const title = `${fullName}: ${resultText}`;
-                            // Visual states: filled gold + ★ for winners,
-                            // outlined grey + ☆ for runners-up (reached final,
-                            // lost), light italic for scheduled.
-                            const bg = isWin
-                              ? "rgba(245,215,110,0.18)"
-                              : isLost
-                                ? "transparent"
-                                : "rgba(120,120,140,0.10)";
-                            const fg = isWin ? "#b58900" : "var(--text-muted)";
-                            const boxShadow = isLost
-                              ? "inset 0 0 0 1px rgba(120,120,140,0.45)"
-                              : undefined;
-                            return (
-                              <span
-                                key={ci}
-                                className={"inline-block rounded px-1.5 py-0.5 font-semibold tracking-wide" + (isScheduled ? " italic" : "")}
-                                style={{ background: bg, color: fg, boxShadow }}
-                                title={title}
-                              >
-                                {isWin && (
-                                  <span aria-hidden className="mr-0.5">★</span>
-                                )}
-                                {isLost && (
-                                  <span aria-hidden className="mr-0.5">☆</span>
-                                )}
-                                {shortLabel}
-                              </span>
-                            );
-                          })}
-                          {sfOnly.map((k, ki) => {
-                            const label = k === "major" ? cupShortLabels.major : (cupShortLabels.minor ?? "Cup");
-                            const full = cupFullNames ? (k === "major" ? cupFullNames.major : cupFullNames.minor) : "Domestic cup";
-                            return (
-                              <span
-                                key={"sf" + ki}
-                                className="inline-block rounded px-1.5 py-0.5 font-semibold tracking-wide"
-                                style={{ background: "transparent", color: "var(--text-dim)", boxShadow: "inset 0 0 0 1px rgba(120,120,140,0.30)" }}
-                                title={`${full}: reached the semifinal`}
-                              >
-                                {label} SF
-                              </span>
-                            );
-                          })}
-                        </span>
-                      );
-                    })()}
+                    <SeasonDomesticCupBadges s={s} cupsByYear={cupsByYear} sfByYear={sfByYear} cupShortLabels={cupShortLabels} cupFullNames={cupFullNames} />
                   </td>
                   <td className="py-1.5 text-xs">
-                    {(() => {
-                      const entries = (s.year !== null ? europeByYear.get(s.year) : null) ?? [];
-                      if (entries.length === 0) return null;
-                      return (
-                        <span className="inline-flex flex-wrap gap-1">
-                          {entries.map((e, ei) => {
-                            const isWinner = e.trophy_won;
-                            const isUcl = !!(e.code && GOLD_TROPHY_CODES.has(e.code));
-                            // Reached the final but did not win it. Only
-                            // surfaced when we have a numeric deepest_rnd —
-                            // a missing value is treated as "did not reach
-                            // final" rather than guessing from result_label.
-                            const isFinalistLost = !isWinner && e.deepest_rnd === 1;
-                            // Five visual states. Filled fills with a star
-                            // for winners; outlined fills with an open star
-                            // for finals reached and lost; plain grey with
-                            // no symbol for participation that exited
-                            // before the final.
-                            let bg: string;
-                            let fg: string;
-                            let boxShadow: string | undefined;
-                            let symbol: string | null = null;
-                            if (isWinner && isUcl) {
-                              bg = "rgba(212,175,55,0.22)";
-                              fg = "#d4af37";
-                              symbol = "★";
-                            } else if (isWinner) {
-                              bg = "rgba(192,192,192,0.20)";
-                              fg = "#c0c0c0";
-                              symbol = "★";
-                            } else if (isFinalistLost && isUcl) {
-                              bg = "transparent";
-                              fg = "#d4af37";
-                              boxShadow = "inset 0 0 0 1px rgba(212,175,55,0.55)";
-                              symbol = "☆";
-                            } else if (isFinalistLost) {
-                              bg = "transparent";
-                              fg = "#c0c0c0";
-                              boxShadow = "inset 0 0 0 1px rgba(192,192,192,0.55)";
-                              symbol = "☆";
-                            } else {
-                              bg = "rgba(120,120,140,0.16)";
-                              fg = "var(--text-muted)";
-                            }
-                            const title = isWinner
-                              ? `${e.competition} winner this season`
-                              : isFinalistLost
-                                ? `${e.competition}: reached final, lost`
-                                : `${e.competition}: ${e.result_label}`;
-                            return (
-                              <span
-                                key={ei}
-                                className="inline-block rounded px-1.5 py-0.5 font-semibold tracking-wide"
-                                style={{ background: bg, color: fg, boxShadow }}
-                                title={title}
-                              >
-                                {symbol && (
-                                  <span aria-hidden className="mr-0.5">{symbol}</span>
-                                )}
-                                {europeanCompDisplayCode(e.code, e.year)}
-                              </span>
-                            );
-                          })}
-                        </span>
-                      );
-                    })()}
+                    <SeasonEuropeBadges s={s} europeByYear={europeByYear} />
                   </td>
                   {s.format === "league" ? (
                     <>
@@ -737,15 +919,7 @@ function SeasonsTable({
                     </td>
                   )}
                   <td className="py-1.5 pl-3 text-xs whitespace-nowrap">
-                    {s.eur_qual && (
-                      <span
-                        className="inline-block rounded px-1.5 py-0.5 font-semibold tracking-wide"
-                        style={{ background: "rgba(59,130,246,0.18)", color: "#3b82f6" }}
-                        title="Qualified for this European competition next season"
-                      >
-                        {europeanCompDisplayCode(s.eur_qual, s.year === null ? null : s.year + 1)}
-                      </span>
-                    )}
+                    <SeasonEurQualBadge s={s} />
                   </td>
                 </tr>
               );
@@ -755,6 +929,14 @@ function SeasonsTable({
       </div>
     </section>
   );
+}
+
+// Result label, shared by the desktop "Result" column and the mobile card.
+function CupFinalResult({ result }: { result: FootballCupFinal["result"] }) {
+  if (result === "won") return <span className="font-medium" style={{ color: "#b58900" }}>Won</span>;
+  if (result === "lost") return <span className="text-[var(--text-muted)]">Runner-up</span>;
+  if (result === "scheduled") return <span className="text-[var(--text-muted)] italic">Scheduled</span>;
+  return null;
 }
 
 function CupsBlock({ cups, country }: { cups: FootballCupFinal[]; country: string }) {
@@ -782,7 +964,25 @@ function CupsBlock({ cups, country }: { cups: FootballCupFinal[]; country: strin
       <p className="mt-1 text-xs text-[var(--text-muted)]">
         Most recent first. Every domestic cup final the club has played, including losses. Scheduled finals (date not yet passed) are flagged.
       </p>
-      <div className="mt-4 overflow-x-auto">
+
+      {/* Mobile: one card per final instead of a 3-column table. */}
+      <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
+        {sorted.map((c, i) => (
+          <div
+            key={`${i}-card`}
+            className="rounded-lg border p-3 flex items-center justify-between gap-3"
+            style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+          >
+            <div>
+              <div className="text-sm font-medium">{names[c.kind]}</div>
+              <div className="text-xs text-[var(--text-muted)] tabular-nums mt-0.5">{c.year ?? "-"}</div>
+            </div>
+            <CupFinalResult result={c.result} />
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-4 overflow-x-auto hidden sm:block">
         <table className="w-full text-sm">
           <thead>
             <tr
@@ -800,15 +1000,7 @@ function CupsBlock({ cups, country }: { cups: FootballCupFinal[]; country: strin
                 <td className="py-1.5 tabular-nums">{c.year ?? "-"}</td>
                 <td className="py-1.5">{names[c.kind]}</td>
                 <td className="py-1.5">
-                  {c.result === "won" && (
-                    <span className="font-medium" style={{ color: "#b58900" }}>Won</span>
-                  )}
-                  {c.result === "lost" && (
-                    <span className="text-[var(--text-muted)]">Runner-up</span>
-                  )}
-                  {c.result === "scheduled" && (
-                    <span className="text-[var(--text-muted)] italic">Scheduled</span>
-                  )}
+                  <CupFinalResult result={c.result} />
                 </td>
               </tr>
             ))}
@@ -816,6 +1008,25 @@ function CupsBlock({ cups, country }: { cups: FootballCupFinal[]; country: strin
         </table>
       </div>
     </section>
+  );
+}
+
+// Result cell (Cup Winner badge or plain result label), shared by the
+// desktop "Result" column and the mobile card.
+function EuropeAppearanceResult({ e, isUcl }: { e: FootballEuropeEntry; isUcl: boolean }) {
+  if (!e.trophy_won) return <span>{e.result_label}</span>;
+  return (
+    <span
+      className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-semibold tracking-wide"
+      style={
+        isUcl
+          ? { background: "rgba(212,175,55,0.18)", color: "#d4af37" }
+          : { background: "rgba(192,192,192,0.16)", color: "#c0c0c0" }
+      }
+      title={isUcl ? "European Cup / Champions League winner" : "European trophy winner"}
+    >
+      Cup Winner
+    </span>
   );
 }
 
@@ -830,7 +1041,37 @@ function EuropeBlock({ entries }: { entries: FootballEuropeEntry[] }) {
       <p className="mt-1 text-xs text-[var(--text-muted)]">
         Most recent first. One row per entry showing the deepest round reached. A Cup Winner badge marks tournaments the club won: gold for the European Cup / Champions League, silver for every other UEFA or Intercontinental trophy.
       </p>
-      <div className="mt-4 overflow-x-auto">
+
+      {/* Mobile: one card per appearance instead of a 3-column table. */}
+      <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
+        {entries.map((e, i) => {
+          const isUcl = e.code === "CL" || e.code === "CLB";
+          return (
+            <div
+              key={`${i}-card`}
+              className="rounded-lg border p-3"
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-start justify-between gap-2">
+                <div className="min-w-0">
+                  <div className="text-sm font-medium">
+                    {e.competition}
+                    {e.code && EUROPEAN_COMP_NAMES[e.code] && e.code !== "OTHC" && (
+                      <span className="ml-1.5 text-[var(--text-muted)] text-xs">({europeanCompDisplayCode(e.code, e.year)})</span>
+                    )}
+                  </div>
+                  <div className="text-xs text-[var(--text-muted)] tabular-nums mt-0.5">{e.season ?? e.year ?? "-"}</div>
+                </div>
+              </div>
+              <div className="mt-1.5 text-xs">
+                <EuropeAppearanceResult e={e} isUcl={isUcl} />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="mt-4 overflow-x-auto hidden sm:block">
         <table className="w-full text-sm">
           <thead>
             <tr
@@ -855,21 +1096,7 @@ function EuropeBlock({ entries }: { entries: FootballEuropeEntry[] }) {
                     )}
                   </td>
                   <td className="py-1.5">
-                    {e.trophy_won ? (
-                      <span
-                        className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-semibold tracking-wide"
-                        style={
-                          isUcl
-                            ? { background: "rgba(212,175,55,0.18)", color: "#d4af37" }
-                            : { background: "rgba(192,192,192,0.16)", color: "#c0c0c0" }
-                        }
-                        title={isUcl ? "European Cup / Champions League winner" : "European trophy winner"}
-                      >
-                        Cup Winner
-                      </span>
-                    ) : (
-                      <span>{e.result_label}</span>
-                    )}
+                    <EuropeAppearanceResult e={e} isUcl={isUcl} />
                   </td>
                 </tr>
               );

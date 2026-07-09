@@ -74,7 +74,53 @@ export default function CbbHubPage() {
         <section id="champions" className="mb-12 scroll-mt-20">
           <h2 className="text-lg font-semibold mb-1">National champions</h2>
           <p className="text-xs text-[var(--text-muted)] mb-4">NCAA tournament champions from 1939, with the retroactive pre-tournament selections (Helms, Premo-Porretta) labeled. Each row also shows the title-game runner-up and the other two Final Four teams. Tap a school to open its program page.</p>
-          <div className="max-h-[70vh] overflow-auto rounded-lg border" style={{ borderColor: "var(--border)" }}>
+
+          {/* Mobile: one card per tournament year. Same `natChamps` data as
+              the desktop table, with champion/runner-up/Final Four stacked. */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {natChamps.map((nc) => (
+              <div key={`${nc.year}-card`} className="rounded-lg border p-3" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
+                <div className="flex items-center gap-2 mb-1.5">
+                  <a href={`https://www.sports-reference.com/cbb/seasons/men/${nc.year}.html`} target="_blank" rel="noopener noreferrer" className="text-xs tabular-nums text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline" title={`${nc.year} season on Sports Reference`}>{nc.year}</a>
+                </div>
+                <div className="text-sm font-medium">
+                  {nc.champs.map((c, i) => (
+                    <span key={i}>
+                      {i > 0 ? <span className="text-[var(--text-dim)]">, </span> : null}
+                      <CrestIcon name={c.name} size={14} className="mr-1 align-[-2px]" />{c.slug ? <Link href={`/teams/cbb/${c.slug}`} className="hover:text-[var(--accent)]">{c.name}</Link> : <span>{c.name}</span>}
+                      {c.sel ? <span className="text-[10px] text-[var(--text-dim)]"> ({c.sel})</span> : null}
+                    </span>
+                  ))}
+                </div>
+                <div className="mt-2 grid grid-cols-1 gap-1.5 text-xs">
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Runner-up</div>
+                    <div>
+                      {(nc.runner_up ?? []).length === 0 ? <span className="text-[var(--text-dim)]">&mdash;</span> : (nc.runner_up ?? []).map((r, i) => (
+                        <span key={i}>
+                          {i > 0 ? <span className="text-[var(--text-dim)]">, </span> : null}
+                          <CrestIcon name={r.name} size={13} className="mr-1 align-[-2px]" />{r.slug ? <Link href={`/teams/cbb/${r.slug}`} className="hover:text-[var(--accent)]">{r.name}</Link> : <span>{r.name}</span>}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Final Four</div>
+                    <div className="text-[var(--text-muted)]">
+                      {(nc.final_four ?? []).length === 0 ? <span className="text-[var(--text-dim)]">&mdash;</span> : (nc.final_four ?? []).map((f, i) => (
+                        <span key={i}>
+                          {i > 0 ? <span className="text-[var(--text-dim)]">, </span> : null}
+                          <CrestIcon name={f.name} size={13} className="mr-1 align-[-2px]" />{f.slug ? <Link href={`/teams/cbb/${f.slug}`} className="hover:text-[var(--accent)]">{f.name}</Link> : <span>{f.name}</span>}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="max-h-[70vh] overflow-auto rounded-lg border hidden sm:block" style={{ borderColor: "var(--border)" }}>
             <table className="w-full text-sm [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:z-10 [&_thead_th]:bg-[var(--bg-card)]">
               <thead>
                 <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)] border-b" style={{ borderColor: "var(--border)" }}>

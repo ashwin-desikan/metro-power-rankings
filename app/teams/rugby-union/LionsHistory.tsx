@@ -46,7 +46,33 @@ export default function LionsHistory({ data }: { data: LionsData }) {
       </div>
 
       <h3 className="text-xs uppercase tracking-wide font-semibold text-[var(--text-muted)] mb-1.5">Test series</h3>
-      <div className="rounded-xl border overflow-x-auto max-h-[420px] overflow-y-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+
+      {/* Mobile: stacked cards, one per tour/series. */}
+      <div className="sm:hidden max-h-[420px] overflow-y-auto rounded-xl border p-2" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+        <div className="grid grid-cols-1 gap-2">
+          {data.series.map((s) => (
+            <div
+              key={`${s.year}-${s.opponent}-card`}
+              className="rounded-lg border p-3"
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-1.5 min-w-0 text-sm font-medium">
+                  <Flag nation={s.opponent} />
+                  <span className="truncate">{s.opponent}</span>
+                </div>
+                <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0" style={mono}>{s.year}</span>
+              </div>
+              <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
+                <span className="tabular-nums font-semibold" style={mono}>{s.w}-{s.l}{s.d ? `-${s.d}` : ""} Tests</span>
+                <span className="font-medium" style={{ color: seriesColor(s.series) }}>Series {seriesLabel(s.series)}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="hidden sm:block rounded-xl border overflow-x-auto max-h-[420px] overflow-y-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
         <table className="w-full text-sm min-w-[360px]">
           <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
             <tr className="text-left text-xs text-[var(--text-muted)]">

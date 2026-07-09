@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import ChampionBadge from "@/app/teams/ChampionBadge";
 import { getCurrentChampionships } from "@/lib/champions";
@@ -52,6 +53,15 @@ function Stat({ k, v }: { k: string; v: string | number }) {
     <div className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
       <div className="text-2xl font-bold tracking-tight tabular-nums">{v}</div>
       <div className="text-[11px] uppercase tracking-wider text-[var(--text-dim)] mt-0.5">{k}</div>
+    </div>
+  );
+}
+// Labeled stat block for mobile-card mini-grids (season-by-season, etc.).
+function StatCell({ label, value, valueStyle }: { label: string; value: string | number; valueStyle?: CSSProperties }) {
+  return (
+    <div>
+      <div className="text-[9px] uppercase tracking-wide text-[var(--text-dim)]">{label}</div>
+      <div className="text-[var(--text-muted)]" style={valueStyle}>{value}</div>
     </div>
   );
 }
@@ -137,7 +147,50 @@ export default async function CfbTeamPage({ params }: { params: Promise<{ slug: 
 
       <section className="mb-10">
         <h2 className="text-lg font-semibold mb-3">Season by season <span className="text-xs font-normal text-[var(--text-dim)]">(major seasons)</span></h2>
-        <div className="max-h-[70vh] overflow-auto rounded-lg border" style={{ borderColor: "var(--border)" }}>
+
+        {/* Mobile: one card per season. Same `seasons` array/order that
+            drives the desktop table below - every column reappears here. */}
+        <div className="grid grid-cols-1 gap-2 md:hidden max-h-[70vh] overflow-auto rounded-lg border p-2" style={{ borderColor: "var(--border)" }}>
+          {seasons.map((sn) => {
+            const confRecord = sn.conf_w || sn.conf_l || sn.conf_t ? `${sn.conf_w}-${sn.conf_l}${sn.conf_t ? `-${sn.conf_t}` : ""}` : "—";
+            return (
+              <div key={sn.year} className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <a href={`https://www.sports-reference.com/cfb/years/${sn.year}.html`} target="_blank" rel="noopener noreferrer" className="font-medium text-sm hover:text-[var(--accent)] hover:underline" title={`${sn.year} college football season on Sports Reference`}>{sn.year}</a>
+                  <span className="text-sm tabular-nums font-medium">{sn.w}-{sn.l}{sn.t ? `-${sn.t}` : ""}</span>
+                </div>
+                <div className="text-xs text-[var(--text-muted)] mb-2">
+                  {sn.school}{sn.conference ? ` · ${sn.conference}` : ""}{sn.division ? ` (${sn.division})` : ""}
+                </div>
+                {sn.nat_champ && (
+                  <span className="inline-block mb-1.5 text-[9px] uppercase tracking-wide px-1.5 py-0.5 rounded font-semibold" style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }}>National champion</span>
+                )}
+                <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs tabular-nums">
+                  <StatCell label="Conf record" value={confRecord} />
+                  <StatCell label="AP final" value={sn.fin_ap ? `#${sn.fin_ap}` : "—"} />
+                  <StatCell label="Coach final" value={sn.fin_coach ? `#${sn.fin_coach}` : "—"} />
+                  <StatCell label="AP high" value={sn.high_ap ? `#${sn.high_ap}` : "—"} />
+                  <StatCell label="Champ game" value={sn.champ_app ? "✓" : "—"} />
+                  <StatCell label="Conf champ" value={sn.conf_champ ? "★" : "—"} valueStyle={sn.conf_champ ? { color: "var(--accent)" } : undefined} />
+                </div>
+                {(sn.bowl || sn.major_bowl) && (
+                  <div className="mt-2 pt-2 border-t text-xs" style={{ borderColor: "var(--border)" }}>
+                    <div className="text-[9px] uppercase tracking-wide text-[var(--text-dim)] mb-0.5">Bowl</div>
+                    <span className="inline-flex items-center gap-1.5 flex-wrap">
+                      {sn.bowl
+                        ? <span className="text-[var(--text-muted)]">{sn.bowl}{sn.bowl_res ? ` (${sn.bowl_res})` : ""}</span>
+                        : <span className="text-[var(--accent)]" title="Made a bowl game">✓</span>}
+                      {sn.major_bowl && <span className="text-[9px] uppercase tracking-wide px-1 py-0.5 rounded" style={{ background: "rgba(110,138,166,0.18)", color: "#a9b8cc" }}>Major</span>}
+                      {sn.major_bowl && bowlEra(sn.year) && <span className="text-[9px] uppercase tracking-wide px-1 py-0.5 rounded font-semibold" style={{ background: "rgba(123,104,238,0.18)", color: "#a99bff" }} title={bowlEraName(sn.year)}>{bowlEra(sn.year)}</span>}
+                    </span>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="hidden md:block max-h-[70vh] overflow-auto rounded-lg border" style={{ borderColor: "var(--border)" }}>
           <table className="w-full text-xs sm:text-sm tabular-nums whitespace-nowrap [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:z-10 [&_thead_th]:bg-[var(--bg-card)]">
             <thead>
               <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)] border-b" style={{ borderColor: "var(--border)" }}>
@@ -185,7 +238,31 @@ export default async function CfbTeamPage({ params }: { params: Promise<{ slug: 
         <section className="mb-6">
           <h2 className="text-lg font-semibold mb-1">Award winners</h2>
           <p className="text-xs text-[var(--text-muted)] mb-3">{awards.length} major award winners and consensus All-Americans.</p>
-          <div className="max-h-[70vh] overflow-auto rounded-lg border" style={{ borderColor: "var(--border)" }}>
+
+          {/* Mobile: one card per award. Same `awards` array/order that
+              drives the desktop table below. */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[70vh] overflow-auto rounded-lg border p-2" style={{ borderColor: "var(--border)" }}>
+            {awards.map((a, i) => {
+              const isHeisman = /^\s*heisman trophy\s*$/i.test(a.award);
+              return (
+                <div key={i} className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+                  <div className="flex items-start justify-between gap-2">
+                    <span className="font-medium text-sm">{a.player}</span>
+                    <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0">{a.year}</span>
+                  </div>
+                  <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs">
+                    <span className="text-[var(--text-muted)]">
+                      {a.award}
+                      {isHeisman && <span className="ml-1" style={{ color: "#d4af37" }} title="Heisman winner">★</span>}
+                    </span>
+                    {a.pos && <span className="text-[10px] uppercase tracking-wide px-1.5 py-0.5 rounded border text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }}>{a.pos}</span>}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="hidden sm:block max-h-[70vh] overflow-auto rounded-lg border" style={{ borderColor: "var(--border)" }}>
             <table className="w-full text-sm [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:z-10 [&_thead_th]:bg-[var(--bg-card)]">
               <thead>
                 <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)] border-b" style={{ borderColor: "var(--border)" }}>

@@ -74,35 +74,66 @@ export default function ContinentalTable({ sections }: { sections: ContinentalSe
   }
 
   const Th = ({ k, label, className }: { k: SortKey; label: string; className?: string }) => (
-    <th className={`py-2 px-3 text-left font-medium cursor-pointer select-none hover:text-[var(--text)] ${className ?? ""}`} onClick={() => toggle(k)} style={{ color: sortKey === k ? "var(--text)" : undefined }}>
+    <th className={`py-3 px-3 text-left font-medium cursor-pointer select-none hover:text-[var(--text)] ${className ?? ""}`} onClick={() => toggle(k)} style={{ color: sortKey === k ? "var(--text)" : undefined }}>
       <span className="inline-flex items-center gap-1">{label}{sortKey === k && <span aria-hidden style={{ color: "var(--accent)" }}>{sortDir === "asc" ? "▲" : "▼"}</span>}</span>
     </th>
   );
 
   return (
-    <div className="rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
-      <table className="w-full text-sm tabular-nums min-w-[640px]">
-        <thead>
-          <tr className="border-b text-[11px] uppercase tracking-wide" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
-            <Th k="year" label="Year" className="w-16" />
-            <Th k="continent" label="Continent" />
-            <Th k="tournament" label="Tournament" />
-            <th className="py-2 px-3 text-left font-medium">Champion</th>
-            <th className="py-2 px-3 text-left font-medium">Runner-up</th>
-          </tr>
-        </thead>
-        <tbody>
-          {sorted.map((r, i) => (
-            <tr key={`${r.year}-${r.continent}-${r.tournament}-${i}`} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
-              <td className="py-1.5 px-3 text-[var(--text-muted)]">{r.year ?? "—"}</td>
-              <td className="py-1.5 px-3 text-[var(--text-muted)] whitespace-nowrap">{r.continent}</td>
-              <td className="py-1.5 px-3 text-[var(--text-muted)] text-xs whitespace-nowrap">{r.tournament ?? "—"}</td>
-              <td className="py-1.5 px-3"><ClubCell name={r.champion} slug={r.champion_slug} /></td>
-              <td className="py-1.5 px-3 text-[var(--text-muted)]"><ClubCell name={r.runner_up} slug={r.runner_up_slug} /></td>
+    <div>
+      {/* Mobile: one stacked card per final instead of a 5-column table. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {sorted.map((r, i) => (
+          <div
+            key={`${r.year}-${r.continent}-${r.tournament}-${i}-card`}
+            className="rounded-lg border p-3"
+            style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+          >
+            <div className="flex items-start justify-between gap-2">
+              <div className="min-w-0">
+                <div className="text-sm font-medium truncate">{r.tournament ?? "—"}</div>
+                <div className="text-xs text-[var(--text-muted)]">{r.continent}</div>
+              </div>
+              <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]">{r.year ?? "—"}</span>
+            </div>
+            <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Champion</div>
+                <ClubCell name={r.champion} slug={r.champion_slug} />
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Runner-up</div>
+                <ClubCell name={r.runner_up} slug={r.runner_up_slug} />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+        <table className="w-full text-sm tabular-nums min-w-[640px]">
+          <thead>
+            <tr className="border-b text-[11px] uppercase tracking-wide" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
+              <Th k="year" label="Year" className="w-16" />
+              <Th k="continent" label="Continent" />
+              <Th k="tournament" label="Tournament" />
+              <th className="py-3 px-3 text-left font-medium">Champion</th>
+              <th className="py-3 px-3 text-left font-medium">Runner-up</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {sorted.map((r, i) => (
+              <tr key={`${r.year}-${r.continent}-${r.tournament}-${i}`} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
+                <td className="py-1.5 px-3 text-[var(--text-muted)]">{r.year ?? "—"}</td>
+                <td className="py-1.5 px-3 text-[var(--text-muted)] whitespace-nowrap">{r.continent}</td>
+                <td className="py-1.5 px-3 text-[var(--text-muted)] text-xs whitespace-nowrap">{r.tournament ?? "—"}</td>
+                <td className="py-1.5 px-3"><ClubCell name={r.champion} slug={r.champion_slug} /></td>
+                <td className="py-1.5 px-3 text-[var(--text-muted)]"><ClubCell name={r.runner_up} slug={r.runner_up_slug} /></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

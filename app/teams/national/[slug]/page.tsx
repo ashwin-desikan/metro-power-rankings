@@ -380,7 +380,49 @@ function AppearancesTable({
         what the team was called at the time of that appearance (Soviet Union, Yugoslavia,
         Czechoslovakia, etc. on rows played under a predecessor identity).
       </p>
-      <div className="mt-4 overflow-x-auto">
+      {/* Mobile: one card per appearance instead of a 4-column table forced
+          into horizontal scroll. Same `sorted` array as the desktop table. */}
+      <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
+        {sorted.map((a, i) => {
+          const style = CATEGORY_PILL_STYLE[a.category];
+          const shortLabel = CATEGORY_SHORT_LABEL[a.category];
+          const nameAtTime = a.team_as ?? team.cur_name;
+          return (
+            <div
+              key={i}
+              className="rounded-lg border p-3"
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-start justify-between gap-2 flex-wrap">
+                <div className="flex items-center gap-1.5 flex-wrap">
+                  <span className="font-semibold tabular-nums text-base">{a.year}</span>
+                  <span
+                    className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
+                    style={{ background: style.bg, color: style.fg }}
+                    title={a.tournament_label}
+                  >
+                    {shortLabel}
+                  </span>
+                </div>
+                <AppearanceRoundBadge appearance={a} wc2026Stage={wc2026Stage} />
+              </div>
+              <div className="mt-1.5 text-sm">{a.tournament_label}</div>
+              <div className="mt-1 text-xs">
+                {a.team_as ? (
+                  <span className="inline-flex items-center gap-1 text-[var(--text)]">
+                    <span aria-hidden title="Historical identity">{HISTORICAL_FLAG}</span>
+                    <span>{nameAtTime}</span>
+                  </span>
+                ) : (
+                  <span className="text-[var(--text-muted)]">{nameAtTime}</span>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="mt-4 overflow-x-auto hidden sm:block">
         <table className="w-full text-sm">
           <thead>
             <tr
@@ -424,42 +466,7 @@ function AppearancesTable({
                     </span>
                   </td>
                   <td className="py-1.5">
-                    {a.year === 2026 && a.category === "WC" && wc2026Stage ? (
-                      <Link
-                        href="/teams/national#wc2026"
-                        className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-semibold tracking-wide hover:underline"
-                        style={{
-                          background: "rgba(59,130,246,0.18)",
-                          color: "#3b82f6",
-                        }}
-                        title="Live 2026 World Cup standings and bracket on the International Football home page"
-                      >
-                        {wc2026Stage}
-                        <span className="text-[9px] opacity-70" aria-hidden>→ live</span>
-                      </Link>
-                    ) : a.champion ? (
-                      <span
-                        className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-semibold tracking-wide"
-                        style={{ background: "rgba(212,175,55,0.22)", color: "#d4af37" }}
-                        title="Won this tournament"
-                      >
-                        <span aria-hidden>★</span> Champion
-                      </span>
-                    ) : a.round_reached === "Final" ? (
-                      <span
-                        className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-semibold tracking-wide"
-                        style={{
-                          background: "transparent",
-                          color: "var(--text-muted)",
-                          boxShadow: "inset 0 0 0 1px rgba(120,120,140,0.45)",
-                        }}
-                        title="Reached final, lost"
-                      >
-                        <span aria-hidden>☆</span> Final
-                      </span>
-                    ) : (
-                      <span className="text-[var(--text-muted)]">{a.round_reached}</span>
-                    )}
+                    <AppearanceRoundBadge appearance={a} wc2026Stage={wc2026Stage} />
                   </td>
                 </tr>
               );
@@ -469,6 +476,60 @@ function AppearancesTable({
       </div>
     </section>
   );
+}
+
+// Round-reached indicator, shared by the mobile card and desktop table cell
+// so the live-link / champion / final / plain-text branches stay in one place.
+function AppearanceRoundBadge({
+  appearance: a,
+  wc2026Stage,
+}: {
+  appearance: NationalTeamAppearance;
+  wc2026Stage: string | null;
+}) {
+  if (a.year === 2026 && a.category === "WC" && wc2026Stage) {
+    return (
+      <Link
+        href="/teams/national#wc2026"
+        className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-semibold tracking-wide hover:underline"
+        style={{
+          background: "rgba(59,130,246,0.18)",
+          color: "#3b82f6",
+        }}
+        title="Live 2026 World Cup standings and bracket on the International Football home page"
+      >
+        {wc2026Stage}
+        <span className="text-[9px] opacity-70" aria-hidden>→ live</span>
+      </Link>
+    );
+  }
+  if (a.champion) {
+    return (
+      <span
+        className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-semibold tracking-wide"
+        style={{ background: "rgba(212,175,55,0.22)", color: "#d4af37" }}
+        title="Won this tournament"
+      >
+        <span aria-hidden>★</span> Champion
+      </span>
+    );
+  }
+  if (a.round_reached === "Final") {
+    return (
+      <span
+        className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-semibold tracking-wide"
+        style={{
+          background: "transparent",
+          color: "var(--text-muted)",
+          boxShadow: "inset 0 0 0 1px rgba(120,120,140,0.45)",
+        }}
+        title="Reached final, lost"
+      >
+        <span aria-hidden>☆</span> Final
+      </span>
+    );
+  }
+  return <span className="text-[var(--text-muted)]">{a.round_reached}</span>;
 }
 
 function FinalsTable({ finals }: { finals: NationalTeamFinal[] }) {
@@ -482,7 +543,61 @@ function FinalsTable({ finals }: { finals: NationalTeamFinal[] }) {
         Every senior-tournament final this team has played. Wins highlighted in gold; losses muted.
         Penalty shootouts shown as &quot;PKs&quot; alongside the regulation score.
       </p>
-      <div className="mt-4 overflow-x-auto">
+      {/* Mobile: one card per final instead of a 6-column table that had to
+          drop the Venue column just to fit. Same `finals` array, every column
+          preserved (Venue now shown in the stat grid instead of hidden). */}
+      <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
+        {finals.map((f, i) => {
+          const scoreText = f.for_goals != null && f.against_goals != null
+            ? `${f.for_goals}-${f.against_goals}`
+            : "-";
+          const pkText = f.penalty_kicks ? ` (PKs ${f.penalty_kicks})` : "";
+          const venueText = [f.stadium, f.stad_country].filter(Boolean).join(", ");
+          return (
+            <div
+              key={i}
+              className="rounded-lg border p-3"
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-start justify-between gap-2 flex-wrap">
+                <span className="font-semibold tabular-nums text-base">{f.year}</span>
+                <FinalResultBadge result={f.result} />
+              </div>
+              <div className="mt-1 text-sm">{f.competition}</div>
+              <div className="mt-1.5 flex items-center flex-wrap text-sm">
+                {f.opp_slug && flagCdnUrl(f.opp_slug) && (
+                  <img src={flagCdnUrl(f.opp_slug)!} alt="" aria-hidden width={20} height={15} className="inline-block mr-1.5" loading="lazy" decoding="async" />
+                )}
+                {f.opp_slug ? (
+                  <Link href={`/teams/national/${f.opp_slug}`} className="hover:underline">
+                    {displayNameForTeam(f.opp_slug, f.opp_cur_name ?? "-")}
+                  </Link>
+                ) : (
+                  <span>{f.opp_cur_name ?? "-"}</span>
+                )}
+                {f.opp_team_as && (
+                  <span className="text-[var(--text-muted)] text-xs ml-1">(as {f.opp_team_as})</span>
+                )}
+              </div>
+              <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Score</div>
+                  <div className="tabular-nums">
+                    {scoreText}
+                    {pkText && <span className="text-[var(--text-muted)]"> {pkText}</span>}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Venue</div>
+                  <div className="text-[var(--text-muted)]">{venueText || "—"}</div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="mt-4 overflow-x-auto hidden sm:block">
         <table className="w-full text-sm">
           <thead>
             <tr
@@ -494,12 +609,11 @@ function FinalsTable({ finals }: { finals: NationalTeamFinal[] }) {
               <th className="py-2 text-left font-medium">Opponent</th>
               <th className="py-2 px-2 text-right font-medium">Score</th>
               <th className="py-2 text-left font-medium">Result</th>
-              <th className="py-2 text-left font-medium hidden sm:table-cell">Venue</th>
+              <th className="py-2 text-left font-medium">Venue</th>
             </tr>
           </thead>
           <tbody>
             {finals.map((f, i) => {
-              const isWin = f.result === "W";
               const scoreText = f.for_goals != null && f.against_goals != null
                 ? `${f.for_goals}-${f.against_goals}`
                 : "-";
@@ -528,29 +642,9 @@ function FinalsTable({ finals }: { finals: NationalTeamFinal[] }) {
                     {pkText && <span className="text-[var(--text-muted)] text-xs"> {pkText}</span>}
                   </td>
                   <td className="py-1.5">
-                    {isWin ? (
-                      <span
-                        className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-semibold tracking-wide"
-                        style={{ background: "rgba(212,175,55,0.22)", color: "#d4af37" }}
-                      >
-                        <span aria-hidden>★</span> Won
-                      </span>
-                    ) : f.result === "L" ? (
-                      <span
-                        className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-semibold tracking-wide"
-                        style={{
-                          background: "transparent",
-                          color: "var(--text-muted)",
-                          boxShadow: "inset 0 0 0 1px rgba(120,120,140,0.45)",
-                        }}
-                      >
-                        <span aria-hidden>☆</span> Lost
-                      </span>
-                    ) : (
-                      <span className="text-[var(--text-muted)]">{f.result ?? "-"}</span>
-                    )}
+                    <FinalResultBadge result={f.result} />
                   </td>
-                  <td className="py-1.5 text-xs text-[var(--text-muted)] hidden sm:table-cell">
+                  <td className="py-1.5 text-xs text-[var(--text-muted)]">
                     {f.stadium && <>{f.stadium}</>}
                     {f.stad_country && <span>{f.stadium ? ", " : ""}{f.stad_country}</span>}
                   </td>
@@ -562,6 +656,36 @@ function FinalsTable({ finals }: { finals: NationalTeamFinal[] }) {
       </div>
     </section>
   );
+}
+
+// Win/Loss/other result badge, shared by the mobile card and desktop table
+// cell so the styling can't drift between the two layouts.
+function FinalResultBadge({ result }: { result: string | null }) {
+  if (result === "W") {
+    return (
+      <span
+        className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-semibold tracking-wide"
+        style={{ background: "rgba(212,175,55,0.22)", color: "#d4af37" }}
+      >
+        <span aria-hidden>★</span> Won
+      </span>
+    );
+  }
+  if (result === "L") {
+    return (
+      <span
+        className="inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[11px] font-semibold tracking-wide"
+        style={{
+          background: "transparent",
+          color: "var(--text-muted)",
+          boxShadow: "inset 0 0 0 1px rgba(120,120,140,0.45)",
+        }}
+      >
+        <span aria-hidden>☆</span> Lost
+      </span>
+    );
+  }
+  return <span className="text-[var(--text-muted)]">{result ?? "-"}</span>;
 }
 
 const BHC_SLUGS = ["england", "scotland", "wales", "northern-ireland"] as const;

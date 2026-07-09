@@ -64,6 +64,9 @@ export default async function F1Page() {
   // fallback snapshot so the Team column (and its crest) renders in both modes.
   const fallbackDriverTeam = new Map(live.standings.drivers.map((d) => [d.driver, d.team]));
   const isLive = standings.source === "espn";
+  const driverTeam = (d: (typeof standings.drivers)[number]) =>
+    d.team ?? fallbackDriverTeam.get(d.driver) ?? null;
+  const championsHistory = [...champions].reverse();
 
   const td = "px-3 py-1.5 text-sm";
   const th = "px-3 py-2 text-left text-[11px] uppercase tracking-wider";
@@ -111,48 +114,122 @@ export default async function F1Page() {
         )}
       </div>
       <div className="grid md:grid-cols-2 gap-6">
-        <div className="rounded-lg overflow-hidden" style={{ border: "1px solid var(--border)" }}>
-          <table className="w-full border-collapse">
-            <thead><tr style={headStyle}>
-              <th className={th}>#</th><th className={th}>Driver</th><th className={th}>Team</th>
-              <th className={th + " text-right"}>Pts</th>
-            </tr></thead>
-            <tbody>
-              {standings.drivers.map((d, i) => (
-                <tr key={`${d.driver}-${i}`} style={rowBorder}>
-                  <td className={td} style={{ color: "var(--text-dim)" }}>{d.pos ?? i + 1}</td>
-                  <td className={td} style={{ color: "var(--text)" }}>{d.driver}</td>
-                  <td className={td} style={{ color: "var(--text-muted)" }}>{(() => {
-                    const team = d.team ?? fallbackDriverTeam.get(d.driver) ?? null;
-                    return team ? <span className="inline-flex items-center gap-1.5"><CrestIcon name={f1ConstructorCrestName(team)} />{team}</span> : "—";
-                  })()}</td>
-                  <td className={td + " text-right font-semibold"} style={{ color: "var(--text)" }}>{d.points ?? 0}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div>
+          {/* Mobile: stacked cards instead of a 4-column table */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {standings.drivers.map((d, i) => {
+              const team = driverTeam(d);
+              return (
+                <div key={`${d.driver}-${i}-card`} className="rounded-lg p-3" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <span className="text-xs tabular-nums" style={{ color: "var(--text-dim)" }}>{d.pos ?? i + 1}</span>
+                      <span className="font-medium text-sm truncate" style={{ color: "var(--text)" }}>{d.driver}</span>
+                    </div>
+                    <span className="text-sm font-semibold tabular-nums flex-shrink-0" style={{ color: "var(--text)" }}>{d.points ?? 0} pts</span>
+                  </div>
+                  <div className="mt-1.5 text-xs flex items-center gap-1.5" style={{ color: "var(--text-muted)" }}>
+                    {team ? <><CrestIcon name={f1ConstructorCrestName(team)} />{team}</> : "—"}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="rounded-lg overflow-hidden hidden sm:block" style={{ border: "1px solid var(--border)" }}>
+            <table className="w-full border-collapse">
+              <thead><tr style={headStyle}>
+                <th className={th}>#</th><th className={th}>Driver</th><th className={th}>Team</th>
+                <th className={th + " text-right"}>Pts</th>
+              </tr></thead>
+              <tbody>
+                {standings.drivers.map((d, i) => (
+                  <tr key={`${d.driver}-${i}`} style={rowBorder}>
+                    <td className={td} style={{ color: "var(--text-dim)" }}>{d.pos ?? i + 1}</td>
+                    <td className={td} style={{ color: "var(--text)" }}>{d.driver}</td>
+                    <td className={td} style={{ color: "var(--text-muted)" }}>{(() => {
+                      const team = driverTeam(d);
+                      return team ? <span className="inline-flex items-center gap-1.5"><CrestIcon name={f1ConstructorCrestName(team)} />{team}</span> : "—";
+                    })()}</td>
+                    <td className={td + " text-right font-semibold"} style={{ color: "var(--text)" }}>{d.points ?? 0}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div className="rounded-lg overflow-hidden self-start" style={{ border: "1px solid var(--border)" }}>
-          <table className="w-full border-collapse">
-            <thead><tr style={headStyle}>
-              <th className={th}>#</th><th className={th}>Constructor</th><th className={th + " text-right"}>Pts</th>
-            </tr></thead>
-            <tbody>
-              {standings.constructors.map((c, i) => (
-                <tr key={`${c.constructor}-${i}`} style={rowBorder}>
-                  <td className={td} style={{ color: "var(--text-dim)" }}>{c.pos ?? i + 1}</td>
-                  <td className={td} style={{ color: "var(--text)" }}><span className="inline-flex items-center gap-1.5"><CrestIcon name={f1ConstructorCrestName(c.constructor)} />{c.constructor}</span></td>
-                  <td className={td + " text-right font-semibold"} style={{ color: "var(--text)" }}>{c.points ?? 0}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div>
+          {/* Mobile: stacked cards instead of a 3-column table */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {standings.constructors.map((c, i) => (
+              <div key={`${c.constructor}-${i}-card`} className="rounded-lg p-3" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-1.5 min-w-0">
+                    <span className="text-xs tabular-nums" style={{ color: "var(--text-dim)" }}>{c.pos ?? i + 1}</span>
+                    <CrestIcon name={f1ConstructorCrestName(c.constructor)} />
+                    <span className="font-medium text-sm truncate" style={{ color: "var(--text)" }}>{c.constructor}</span>
+                  </div>
+                  <span className="text-sm font-semibold tabular-nums flex-shrink-0" style={{ color: "var(--text)" }}>{c.points ?? 0} pts</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="rounded-lg overflow-hidden self-start hidden sm:block" style={{ border: "1px solid var(--border)" }}>
+            <table className="w-full border-collapse">
+              <thead><tr style={headStyle}>
+                <th className={th}>#</th><th className={th}>Constructor</th><th className={th + " text-right"}>Pts</th>
+              </tr></thead>
+              <tbody>
+                {standings.constructors.map((c, i) => (
+                  <tr key={`${c.constructor}-${i}`} style={rowBorder}>
+                    <td className={td} style={{ color: "var(--text-dim)" }}>{c.pos ?? i + 1}</td>
+                    <td className={td} style={{ color: "var(--text)" }}><span className="inline-flex items-center gap-1.5"><CrestIcon name={f1ConstructorCrestName(c.constructor)} />{c.constructor}</span></td>
+                    <td className={td + " text-right font-semibold"} style={{ color: "var(--text)" }}>{c.points ?? 0}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
 
       {/* This Season */}
       <SectionHeading id="season">This Season ({meta.latest_season})</SectionHeading>
-      <div className="rounded-lg overflow-hidden" style={{ border: "1px solid var(--border)" }}>
+      {/* Mobile: stacked cards instead of a 6-column table */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {season.map((r) => (
+          <div key={`${r.round}-card`} className="rounded-lg p-3" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
+            <div className="text-xs tabular-nums" style={{ color: "var(--text-dim)" }}>Rd {r.round}</div>
+            <div className="text-sm font-medium mt-0.5">
+              <Link href={`/teams/f1/${r.circuit_id}`} className="hover:underline" style={{ color: "var(--text)" }}>{r.race_name}</Link>
+            </div>
+            <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs mt-2">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide" style={{ color: "var(--text-dim)" }}>Circuit</div>
+                <div style={{ color: "var(--text-muted)" }}>{r.circuit}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide" style={{ color: "var(--text-dim)" }}>Metro</div>
+                <div>
+                  {r.metro_resolved
+                    ? <Link href={`/rankings/${r.metro_slug}`} className="hover:underline" style={{ color: "var(--accent)" }}>{r.metro}</Link>
+                    : <span style={{ color: "var(--text-muted)" }}>{r.metro}</span>}
+                </div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide" style={{ color: "var(--text-dim)" }}>Winner</div>
+                <div style={{ color: r.winner ? "var(--text)" : "var(--text-dim)" }}>{r.winner ?? fmtRaceDate(r.date)}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide" style={{ color: "var(--text-dim)" }}>Team</div>
+                <div className="flex items-center gap-1.5" style={{ color: "var(--text-muted)" }}>
+                  {r.winner_constructor ? <><CrestIcon name={f1ConstructorCrestName(r.winner_constructor)} />{r.winner_constructor}</> : "—"}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="rounded-lg overflow-hidden hidden sm:block" style={{ border: "1px solid var(--border)" }}>
         <table className="w-full border-collapse">
           <thead><tr style={headStyle}>
             <th className={th}>Rd</th><th className={th}>Grand Prix</th><th className={th}>Circuit</th>
@@ -185,7 +262,42 @@ export default async function F1Page() {
         Every metro that has staged a World Championship Grand Prix, ranked by races held. The view F1 rarely takes:
         the sport as a map of cities.
       </p>
-      <div className="rounded-lg overflow-hidden" style={{ border: "1px solid var(--border)" }}>
+      {/* Mobile: stacked cards instead of a 6-column table */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {hostMetros.map((h) => (
+          <div key={`${h.metro_slug}-card`} className="rounded-lg p-3" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
+            <div className="flex items-baseline justify-between gap-2">
+              <div className="text-sm font-medium">
+                {h.metro_resolved
+                  ? <Link href={`/rankings/${h.metro_slug}`} className="hover:underline" style={{ color: "var(--accent)" }}>{h.metro}</Link>
+                  : <span style={{ color: "var(--text)" }}>{h.metro}</span>}
+              </div>
+              <span className="text-sm font-semibold tabular-nums flex-shrink-0" style={{ color: "var(--text)" }}>{h.races} races</span>
+            </div>
+            <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs mt-2">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide" style={{ color: "var(--text-dim)" }}>Country</div>
+                <div style={{ color: "var(--text-muted)" }}>{h.country}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide" style={{ color: "var(--text-dim)" }}>Circuits</div>
+                <div style={{ color: "var(--text-muted)" }}>{h.circuit_count}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide" style={{ color: "var(--text-dim)" }}>Span</div>
+                <div className="tabular-nums" style={{ color: "var(--text-dim)" }}>{h.first_year}&ndash;{h.last_year}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide" style={{ color: "var(--text-dim)" }}>Latest winner</div>
+                <div style={{ color: "var(--text-muted)" }}>
+                  {h.last_gp.winner ? `${h.last_gp.winner} (${h.last_gp.season})` : "—"}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="rounded-lg overflow-hidden hidden sm:block" style={{ border: "1px solid var(--border)" }}>
         <table className="w-full border-collapse">
           <thead><tr style={headStyle}>
             <th className={th}>Metro</th><th className={th}>Country</th><th className={th + " text-right"}>Races</th>
@@ -215,23 +327,39 @@ export default async function F1Page() {
       {/* Champions */}
       <SectionHeading id="champions">World Champions</SectionHeading>
       <div className="grid lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2 rounded-lg overflow-hidden" style={{ border: "1px solid var(--border)" }}>
-          <table className="w-full border-collapse">
-            <thead><tr style={headStyle}>
-              <th className={th}>Season</th><th className={th}>Drivers&rsquo; Champion</th><th className={th}>Constructors&rsquo; Champion</th>
-            </tr></thead>
-            <tbody>
-              {[...champions].reverse().map((c) => (
-                <tr key={c.season} style={rowBorder}>
-                  <td className={td} style={{ color: "var(--text-dim)" }}>{c.season}</td>
-                  <td className={td} style={{ color: "var(--text)" }}>
-                    {c.driver ?? "—"}{c.driver_nat ? <span style={{ color: "var(--text-dim)" }}> · {c.driver_nat}</span> : null}
-                  </td>
-                  <td className={td} style={{ color: "var(--text-muted)" }}><span className="inline-flex items-center gap-1.5"><CrestIcon name={f1ConstructorCrestName(c.constructor)} />{c.constructor ?? "—"}</span></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="lg:col-span-2">
+          {/* Mobile: stacked cards instead of a 3-column table */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {championsHistory.map((c) => (
+              <div key={`${c.season}-card`} className="rounded-lg p-3" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
+                <div className="text-xs tabular-nums" style={{ color: "var(--text-dim)" }}>{c.season}</div>
+                <div className="text-sm font-medium mt-0.5" style={{ color: "var(--text)" }}>
+                  {c.driver ?? "—"}{c.driver_nat ? <span style={{ color: "var(--text-dim)" }}> · {c.driver_nat}</span> : null}
+                </div>
+                <div className="mt-1.5 text-xs flex items-center gap-1.5" style={{ color: "var(--text-muted)" }}>
+                  <CrestIcon name={f1ConstructorCrestName(c.constructor)} />{c.constructor ?? "—"}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="rounded-lg overflow-hidden hidden sm:block" style={{ border: "1px solid var(--border)" }}>
+            <table className="w-full border-collapse">
+              <thead><tr style={headStyle}>
+                <th className={th}>Season</th><th className={th}>Drivers&rsquo; Champion</th><th className={th}>Constructors&rsquo; Champion</th>
+              </tr></thead>
+              <tbody>
+                {championsHistory.map((c) => (
+                  <tr key={c.season} style={rowBorder}>
+                    <td className={td} style={{ color: "var(--text-dim)" }}>{c.season}</td>
+                    <td className={td} style={{ color: "var(--text)" }}>
+                      {c.driver ?? "—"}{c.driver_nat ? <span style={{ color: "var(--text-dim)" }}> · {c.driver_nat}</span> : null}
+                    </td>
+                    <td className={td} style={{ color: "var(--text-muted)" }}><span className="inline-flex items-center gap-1.5"><CrestIcon name={f1ConstructorCrestName(c.constructor)} />{c.constructor ?? "—"}</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
         <div className="space-y-6">
           <div>
@@ -260,33 +388,62 @@ export default async function F1Page() {
       {/* All-Time Wins */}
       <SectionHeading id="all-time">All-Time Wins</SectionHeading>
       <div className="grid md:grid-cols-2 gap-6">
-        <div className="rounded-lg overflow-hidden" style={{ border: "1px solid var(--border)" }}>
-          <table className="w-full border-collapse">
-            <thead><tr style={headStyle}><th className={th}>#</th><th className={th}>Driver</th><th className={th + " text-right"}>Wins</th></tr></thead>
-            <tbody>
-              {driverWins.slice(0, 20).map((d, i) => (
-                <tr key={d.driver} style={rowBorder}>
-                  <td className={td} style={{ color: "var(--text-dim)" }}>{i + 1}</td>
-                  <td className={td} style={{ color: "var(--text)" }}>{d.driver}</td>
-                  <td className={td + " text-right font-semibold"} style={{ color: "var(--text)" }}>{d.wins}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div>
+          {/* Mobile: stacked cards instead of a 3-column table */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {driverWins.slice(0, 20).map((d, i) => (
+              <div key={`${d.driver}-card`} className="rounded-lg p-3 flex items-center justify-between gap-2" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
+                <div className="flex items-center gap-2 min-w-0">
+                  <span className="text-xs tabular-nums" style={{ color: "var(--text-dim)" }}>{i + 1}</span>
+                  <span className="font-medium text-sm truncate" style={{ color: "var(--text)" }}>{d.driver}</span>
+                </div>
+                <span className="text-sm font-semibold tabular-nums flex-shrink-0" style={{ color: "var(--text)" }}>{d.wins} wins</span>
+              </div>
+            ))}
+          </div>
+          <div className="rounded-lg overflow-hidden hidden sm:block" style={{ border: "1px solid var(--border)" }}>
+            <table className="w-full border-collapse">
+              <thead><tr style={headStyle}><th className={th}>#</th><th className={th}>Driver</th><th className={th + " text-right"}>Wins</th></tr></thead>
+              <tbody>
+                {driverWins.slice(0, 20).map((d, i) => (
+                  <tr key={d.driver} style={rowBorder}>
+                    <td className={td} style={{ color: "var(--text-dim)" }}>{i + 1}</td>
+                    <td className={td} style={{ color: "var(--text)" }}>{d.driver}</td>
+                    <td className={td + " text-right font-semibold"} style={{ color: "var(--text)" }}>{d.wins}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div className="rounded-lg overflow-hidden self-start" style={{ border: "1px solid var(--border)" }}>
-          <table className="w-full border-collapse">
-            <thead><tr style={headStyle}><th className={th}>#</th><th className={th}>Constructor</th><th className={th + " text-right"}>Wins</th></tr></thead>
-            <tbody>
-              {constructorWins.slice(0, 15).map((c, i) => (
-                <tr key={c.constructor} style={rowBorder}>
-                  <td className={td} style={{ color: "var(--text-dim)" }}>{i + 1}</td>
-                  <td className={td} style={{ color: "var(--text)" }}><span className="inline-flex items-center gap-1.5"><CrestIcon name={f1ConstructorCrestName(c.constructor)} />{c.constructor}</span></td>
-                  <td className={td + " text-right font-semibold"} style={{ color: "var(--text)" }}>{c.wins}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div>
+          {/* Mobile: stacked cards instead of a 3-column table */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {constructorWins.slice(0, 15).map((c, i) => (
+              <div key={`${c.constructor}-card`} className="rounded-lg p-3 flex items-center justify-between gap-2" style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}>
+                <div className="flex items-center gap-1.5 min-w-0">
+                  <span className="text-xs tabular-nums" style={{ color: "var(--text-dim)" }}>{i + 1}</span>
+                  <CrestIcon name={f1ConstructorCrestName(c.constructor)} />
+                  <span className="font-medium text-sm truncate" style={{ color: "var(--text)" }}>{c.constructor}</span>
+                </div>
+                <span className="text-sm font-semibold tabular-nums flex-shrink-0" style={{ color: "var(--text)" }}>{c.wins} wins</span>
+              </div>
+            ))}
+          </div>
+          <div className="rounded-lg overflow-hidden self-start hidden sm:block" style={{ border: "1px solid var(--border)" }}>
+            <table className="w-full border-collapse">
+              <thead><tr style={headStyle}><th className={th}>#</th><th className={th}>Constructor</th><th className={th + " text-right"}>Wins</th></tr></thead>
+              <tbody>
+                {constructorWins.slice(0, 15).map((c, i) => (
+                  <tr key={c.constructor} style={rowBorder}>
+                    <td className={td} style={{ color: "var(--text-dim)" }}>{i + 1}</td>
+                    <td className={td} style={{ color: "var(--text)" }}><span className="inline-flex items-center gap-1.5"><CrestIcon name={f1ConstructorCrestName(c.constructor)} />{c.constructor}</span></td>
+                    <td className={td + " text-right font-semibold"} style={{ color: "var(--text)" }}>{c.wins}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
 

@@ -91,53 +91,103 @@ function HistoricalSection({
   if (rows.length === 0) return null;
   return (
     <section
-      className="rounded-xl border overflow-x-auto mb-6"
+      className="rounded-xl border overflow-hidden mb-6"
       style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
     >
       <div className="px-5 pt-4 pb-2">
         <h2 className="text-base font-semibold">{title}</h2>
         <p className="text-xs text-[var(--text-muted)] mt-1 mb-3">{deck}</p>
       </div>
-      <table className="w-full text-xs sm:text-sm tabular-nums">
-        <thead>
-          <tr className="text-left text-[var(--text-muted)] border-b border-t" style={{ borderColor: "var(--border)" }}>
-            <th className="py-2 pl-5 pr-3 font-medium uppercase tracking-wider text-[10px]">Franchise</th>
-            <th className="py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">Years</th>
-            <th className="py-2 pr-3 font-medium uppercase tracking-wider text-[10px] text-right">Seasons</th>
-            <th className="py-2 pr-3 font-medium uppercase tracking-wider text-[10px] text-right">Titles</th>
-            <th className="py-2 pr-3 font-medium uppercase tracking-wider text-[10px] text-right">Finals</th>
-            <th className="py-2 pr-3 font-medium uppercase tracking-wider text-[10px] text-right">All-time</th>
-            <th className="py-2 pr-5 font-medium uppercase tracking-wider text-[10px] text-right">Win%</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((r) => (
-            <tr key={r.slug} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
-              <td className="py-2 pl-5 pr-3">
-                <span className="font-semibold">{r.display_name}</span>
-                {showAbaCol && (
-                  <span className="ml-2 inline-block rounded px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide"
-                    style={{ background: "#6e8aa6", color: "#0c1320" }}>
-                    ABA
-                  </span>
-                )}
-              </td>
-              <td className="py-2 pr-3 text-[var(--text-muted)]">
-                {r.first_year && r.last_year
-                  ? `${seasonLabel(r.first_year)} – ${seasonLabel(r.last_year)}`
-                  : "—"}
-              </td>
-              <td className="py-2 pr-3 text-right text-[var(--text-muted)]">{r.seasons || ""}</td>
-              <td className="py-2 pr-3 text-right font-semibold">{r.championships || ""}</td>
-              <td className="py-2 pr-3 text-right text-[var(--text-muted)]">{r.championship_appearances || ""}</td>
-              <td className="py-2 pr-3 text-right text-[var(--text-muted)]">{r.all_time_w}-{r.all_time_l}</td>
-              <td className="py-2 pr-5 text-right text-[var(--text-muted)]">
-                {r.win_pct ? r.win_pct.toFixed(3).replace(/^0/, "") : "—"}
-              </td>
+
+      {/* Mobile: one card per franchise instead of a 7-column table forcing
+          horizontal scroll at phone widths. Same `rows` data as the table below. */}
+      <div className="grid grid-cols-1 gap-2 px-4 pb-4 sm:hidden">
+        {rows.map((r) => (
+          <div
+            key={r.slug}
+            className="rounded-lg border p-3"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+          >
+            <div className="flex items-center justify-between gap-2">
+              <span className="font-semibold text-sm truncate">{r.display_name}</span>
+              {showAbaCol && (
+                <span
+                  className="flex-shrink-0 inline-block rounded px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide"
+                  style={{ background: "#6e8aa6", color: "#0c1320" }}
+                >
+                  ABA
+                </span>
+              )}
+            </div>
+            <div className="text-xs text-[var(--text-muted)] mt-0.5">
+              {r.first_year && r.last_year
+                ? `${seasonLabel(r.first_year)} – ${seasonLabel(r.last_year)}`
+                : "—"}
+            </div>
+            <div className="mt-2.5 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+              <StatChip label="Seasons" value={r.seasons || "—"} />
+              <StatChip label="Titles" value={r.championships || "—"} />
+              <StatChip label="Finals" value={r.championship_appearances || "—"} />
+              <StatChip label="All-time" value={`${r.all_time_w}-${r.all_time_l}`} />
+              <StatChip label="Win%" value={r.win_pct ? r.win_pct.toFixed(3).replace(/^0/, "") : "—"} />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="hidden sm:block overflow-x-auto">
+        <table className="w-full text-xs sm:text-sm tabular-nums">
+          <thead>
+            <tr className="text-left text-[var(--text-muted)] border-b border-t" style={{ borderColor: "var(--border)" }}>
+              <th className="py-2 pl-5 pr-3 font-medium uppercase tracking-wider text-[10px]">Franchise</th>
+              <th className="py-2 pr-3 font-medium uppercase tracking-wider text-[10px]">Years</th>
+              <th className="py-2 pr-3 font-medium uppercase tracking-wider text-[10px] text-right">Seasons</th>
+              <th className="py-2 pr-3 font-medium uppercase tracking-wider text-[10px] text-right">Titles</th>
+              <th className="py-2 pr-3 font-medium uppercase tracking-wider text-[10px] text-right">Finals</th>
+              <th className="py-2 pr-3 font-medium uppercase tracking-wider text-[10px] text-right">All-time</th>
+              <th className="py-2 pr-5 font-medium uppercase tracking-wider text-[10px] text-right">Win%</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr key={r.slug} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
+                <td className="py-2 pl-5 pr-3">
+                  <span className="font-semibold">{r.display_name}</span>
+                  {showAbaCol && (
+                    <span className="ml-2 inline-block rounded px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide"
+                      style={{ background: "#6e8aa6", color: "#0c1320" }}>
+                      ABA
+                    </span>
+                  )}
+                </td>
+                <td className="py-2 pr-3 text-[var(--text-muted)]">
+                  {r.first_year && r.last_year
+                    ? `${seasonLabel(r.first_year)} – ${seasonLabel(r.last_year)}`
+                    : "—"}
+                </td>
+                <td className="py-2 pr-3 text-right text-[var(--text-muted)]">{r.seasons || ""}</td>
+                <td className="py-2 pr-3 text-right font-semibold">{r.championships || ""}</td>
+                <td className="py-2 pr-3 text-right text-[var(--text-muted)]">{r.championship_appearances || ""}</td>
+                <td className="py-2 pr-3 text-right text-[var(--text-muted)]">{r.all_time_w}-{r.all_time_l}</td>
+                <td className="py-2 pr-5 text-right text-[var(--text-muted)]">
+                  {r.win_pct ? r.win_pct.toFixed(3).replace(/^0/, "") : "—"}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </section>
+  );
+}
+
+// Compact labeled stat chip for mobile cards: small uppercase label above a
+// value, matching the mini-grid pattern used elsewhere (e.g. ChampionsTable).
+function StatChip({ label, value }: { label: string; value: string | number }) {
+  return (
+    <div>
+      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{label}</div>
+      <div className="text-[var(--text-muted)]">{value}</div>
+    </div>
   );
 }

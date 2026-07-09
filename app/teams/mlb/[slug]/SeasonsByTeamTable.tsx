@@ -122,7 +122,124 @@ export default function SeasonsByTeamTable({ rows, sourceLabel, fetchedAt }: Pro
 
   return (
     <>
-      <div className="overflow-x-auto">
+      {/* Mobile: one card per season instead of a 10-column table that would
+          need sideways scrolling to read Win%, RS/RA, division, and
+          postseason status together. Same `displayRows` drives both this
+          list and the desktop table below. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {displayRows.map((s) => {
+          const isLive = s.is_live === true;
+          const champColor = s.champ
+            ? (s.year >= 1903 ? TITLE_GOLD : PRE_WS_SLATE)
+            : undefined;
+          return (
+            <div
+              key={`${s.year}-${s.team}${isLive ? "-live" : ""}-card`}
+              className="rounded-lg border p-3"
+              style={{
+                borderColor: "var(--border)",
+                background: s.champ
+                  ? "rgba(212,175,55,0.07)"
+                  : isLive
+                  ? "rgba(78,205,196,0.06)"
+                  : "var(--bg-card)",
+                fontStyle: isLive ? "italic" : undefined,
+              }}
+            >
+              <div className="flex items-baseline justify-between gap-2">
+                <span
+                  className="text-sm"
+                  style={{
+                    color: champColor,
+                    fontWeight: s.champ || isLive ? 600 : undefined,
+                  }}
+                >
+                  {isLive ? (
+                    <span title={`${s.year} season in progress`}>{s.year}</span>
+                  ) : (
+                    <a
+                      href={brefYearUrl(s.year, s.league)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline decoration-dotted underline-offset-2"
+                      title={`${s.year} season on Baseball-Reference`}
+                    >
+                      {s.year}
+                    </a>
+                  )}
+                </span>
+                <span className="text-xs text-[var(--text-muted)] not-italic">
+                  {[s.city, s.team].filter(Boolean).join(" ")}
+                </span>
+              </div>
+              {isLive && asOfDate ? (
+                <div
+                  className="text-[9px] mt-0.5 not-italic"
+                  style={{ color: "var(--text-dim)", fontFamily: "'JetBrains Mono', monospace" }}
+                  title={`Live record from ESPN, fetched ${fetchedAt}`}
+                >
+                  as of {asOfDate}
+                </div>
+              ) : null}
+              <div className="mt-2 grid grid-cols-4 gap-1.5 text-xs tabular-nums text-center">
+                <div>
+                  <div className="text-[9px] uppercase tracking-wide text-[var(--text-dim)]">W-L</div>
+                  <div className="font-semibold">{s.w}-{s.l}</div>
+                </div>
+                <div>
+                  <div className="text-[9px] uppercase tracking-wide text-[var(--text-dim)]">Win%</div>
+                  <div>{s.win_pct.toFixed(3)}</div>
+                </div>
+                <div>
+                  <div className="text-[9px] uppercase tracking-wide text-[var(--text-dim)]">RS</div>
+                  <div>{s.rs}</div>
+                </div>
+                <div>
+                  <div className="text-[9px] uppercase tracking-wide text-[var(--text-dim)]">RA</div>
+                  <div>{s.ra}</div>
+                </div>
+              </div>
+              <div className="mt-1.5 text-[11px] text-[var(--text-muted)] not-italic">
+                {s.division}{s.division && s.place ? " · " : ""}{s.place}
+              </div>
+              <div className="mt-1.5 not-italic">
+                {isLive ? (
+                  <span
+                    className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full text-[9px] font-semibold uppercase tracking-wider border"
+                    style={{
+                      borderColor: "var(--border)",
+                      color: "var(--text-muted)",
+                      background: "var(--bg-card)",
+                    }}
+                    title={`Live record from ESPN`}
+                  >
+                    <span
+                      aria-hidden
+                      className="inline-block w-1.5 h-1.5 rounded-full"
+                      style={{ background: "rgb(34,197,94)" }}
+                    />
+                    In progress · ESPN
+                  </span>
+                ) : (
+                  <SeasonBadges
+                    playoff={s.playoff}
+                    divTitle={s.div_title}
+                    lcsApp={s.lcs_app}
+                    wsApp={s.ws_app}
+                    champ={s.champ}
+                    otherCupApp={s.oth_chmp_app}
+                    otherCupWon={s.oth_chmp}
+                    tiebreaker={s.tiebreaker === true}
+                    year={s.year}
+                  />
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="overflow-x-auto hidden sm:block">
         <table className="w-full min-w-[680px] text-xs tabular-nums">
           <thead>
             <tr className="text-[var(--text-muted)]">

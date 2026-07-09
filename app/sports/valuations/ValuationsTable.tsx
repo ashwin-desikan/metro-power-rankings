@@ -96,7 +96,47 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
         />
       </div>
 
-      <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
+      {/* Mobile: stacked cards, same filtered/sorted rows as the desktop table */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {filtered.map((r, i) => {
+          const hot = highlight === r.anchor;
+          return (
+            <div
+              key={r.anchor + i}
+              id={r.anchor}
+              className="rounded-lg border p-3 transition-colors"
+              style={{
+                borderColor: "var(--border)",
+                background: hot ? "var(--bg-card-hover)" : "var(--bg-card)",
+                boxShadow: hot ? "inset 3px 0 0 var(--accent)" : undefined,
+                scrollMarginTop: "96px",
+              }}
+            >
+              <div className="flex items-start justify-between gap-2">
+                <span className="inline-flex items-center min-w-0 text-sm">
+                  <CrestIcon name={r.team} size={18} className="mr-1.5 align-middle flex-shrink-0" />
+                  {r.href ? (
+                    <Link href={r.href} className="font-medium hover:text-[var(--accent)] hover:underline truncate">{r.displayName}</Link>
+                  ) : (
+                    <span className="font-medium truncate" title="No team page yet">{r.displayName}</span>
+                  )}
+                </span>
+                <span className="text-xs tabular-nums text-[var(--text-dim)] flex-shrink-0">#{i + 1}</span>
+              </div>
+              <div className="mt-1 text-xs">
+                <Link href={r.leagueHref} className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline">{r.league}</Link>
+                {r.sport === "Football" && <span className="ml-1.5 text-[10px] uppercase tracking-widest text-[var(--text-dim)]">Football</span>}
+              </div>
+              <div className="mt-2 flex items-baseline gap-4 text-sm">
+                <span className="font-semibold tabular-nums">{r.valueLabel}</span>
+                <span className="text-xs tabular-nums text-[var(--text-muted)]">{r.year ?? "—"}</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="overflow-x-auto rounded-xl border hidden sm:block" style={{ borderColor: "var(--border)" }}>
         <table className="w-full text-sm border-collapse">
           <thead>
             <tr className="border-b text-xs uppercase tracking-wider" style={{ borderColor: "var(--border)", background: "var(--bg-card)" }}>

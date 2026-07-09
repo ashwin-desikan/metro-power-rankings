@@ -77,7 +77,35 @@ export default function InternationalRugbyLeaguePage() {
       <section className="mb-10">
         <h2 id="champions" className="text-lg font-semibold mb-1">World Cup finals</h2>
         <p className="text-xs text-[var(--text-muted)] mb-3">Every Rugby League World Cup decider since 1954.</p>
-        <div className="rounded-xl border overflow-x-auto" style={card}>
+
+        {/* Mobile: one card per final instead of a 5-column table that only
+            fits at 640px+. Same `hub.finals` (reversed) array as desktop. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {hub.finals.slice().reverse().map((f) => (
+            <div key={`${f.year}-card`} className="rounded-lg border p-3" style={card}>
+              <div className="flex items-center justify-between gap-2 mb-1.5">
+                <span className="font-semibold text-sm" style={{ color: "#d4af37" }}>{teamLink(f.champion)}</span>
+                <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0" style={mono}>{f.year}</span>
+              </div>
+              <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Score</div>
+                  <div className="tabular-nums" style={mono}>{f.score}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Runner-up</div>
+                  <div>{teamLink(f.runner_up)}</div>
+                </div>
+                <div className="col-span-2">
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Host</div>
+                  <div className="text-[var(--text-muted)]">{f.host}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[640px]">
             <thead>
               <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -109,7 +137,46 @@ export default function InternationalRugbyLeaguePage() {
         <p className="text-xs text-[var(--text-muted)] mb-3">
           Final-four finishes only (the source records the semi-finalists of each edition), ordered by titles.
         </p>
-        <div className="rounded-xl border overflow-x-auto" style={card}>
+        {/* Mobile: one card per nation instead of a 6-column honour table.
+            Same `teams` array as the desktop table below. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {teams.map((t) => (
+            <div key={`${t.slug}-card`} className="rounded-lg border p-3" style={card}>
+              <div className="flex items-center gap-1.5 font-medium text-sm mb-1.5">
+                {flagCdnUrl(t.slug) && (
+                  <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" loading="lazy" decoding="async" />
+                )}
+                {teamLink(t.name)}
+              </div>
+              <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Titles</div>
+                  <div className="tabular-nums font-semibold" style={{ ...mono, color: t.titles > 0 ? "#d4af37" : "var(--text-dim)" }}>
+                    {t.titles}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Runners-up</div>
+                  <div className="tabular-nums" style={mono}>{t.runner_ups}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Semis</div>
+                  <div className="tabular-nums" style={mono}>{t.semis}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Span</div>
+                  <div className="tabular-nums text-[var(--text-muted)]" style={mono}>{t.first}–{t.last}</div>
+                </div>
+                <div className="col-span-2">
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Best finish</div>
+                  <div>{t.best_finish}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[620px]">
             <thead>
               <tr className="text-left text-xs text-[var(--text-muted)]">

@@ -130,8 +130,8 @@ function AggregateTable({ rows }: { rows: DomesticCupAggregateRow[] }) {
     b[sort] - a[sort] || b.cups - a.cups || b.f - a.f || a.cur_name.localeCompare(b.cur_name));
 
   const SortTh = ({ k, label, lead = false }: { k: SortKey; label: string; lead?: boolean }) => (
-    <th className={"py-1.5 px-2 text-right font-medium " + (lead ? "border-l" : "")} style={lead ? { borderColor: "var(--border)" } : undefined}>
-      <button onClick={() => setSort(k)} className={"hover:text-[var(--text)] " + (sort === k ? "text-[var(--accent)] font-semibold" : "")}>
+    <th className={"p-0 text-right font-medium " + (lead ? "border-l" : "")} style={lead ? { borderColor: "var(--border)" } : undefined}>
+      <button onClick={() => setSort(k)} className={"w-full py-2.5 px-2 hover:text-[var(--text)] " + (sort === k ? "text-[var(--accent)] font-semibold" : "")}>
         {label}{sort === k ? " ↓" : ""}
       </button>
     </th>
@@ -158,7 +158,47 @@ function AggregateTable({ rows }: { rows: DomesticCupAggregateRow[] }) {
         Semifinals reached (SF), finals reached (F) and cups won (Cup) for each competition, then the two combined.
         The year in parentheses is the most recent time each was achieved. Click any column to sort.
       </p>
-      <div className="rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+      {/* Mobile: one card per club instead of a 10-column table. Same
+          `sorted` array (and sort state) drives both presentations. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {sorted.map((r) => {
+          const groups: { label: string; v: number; last: number | null; strong?: boolean }[] = [
+            { label: "FA Cup SF", v: r.fa_sf, last: r.fa_sf_last },
+            { label: "FA Cup F", v: r.fa_f, last: r.fa_f_last },
+            { label: "FA Cup Won", v: r.fa_cups, last: r.fa_cups_last, strong: true },
+            { label: "Lg Cup SF", v: r.lg_sf, last: r.lg_sf_last },
+            { label: "Lg Cup F", v: r.lg_f, last: r.lg_f_last },
+            { label: "Lg Cup Won", v: r.lg_cups, last: r.lg_cups_last, strong: true },
+            { label: "Total SF", v: r.sf, last: r.sf_last },
+            { label: "Total F", v: r.f, last: r.f_last },
+            { label: "Total Cups", v: r.cups, last: r.cups_last, strong: true },
+          ];
+          return (
+            <div key={r.slug} className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+              <div className="text-sm font-medium mb-2"><ClubName name={r.cur_name} slug={r.slug} /></div>
+              <div className="grid grid-cols-3 gap-x-2 gap-y-2 text-xs">
+                {groups.map((s) => (
+                  <div key={s.label}>
+                    <div className="text-[9px] uppercase tracking-wide text-[var(--text-dim)]">{s.label}</div>
+                    <div className="tabular-nums">
+                      {s.v ? (
+                        <>
+                          <span className={s.strong ? "font-semibold" : "text-[var(--text-muted)]"}>{s.v}</span>
+                          {s.last ? <span className="ml-1 text-[9px] text-[var(--text-dim)]">({s.last})</span> : null}
+                        </>
+                      ) : (
+                        <span className="text-[var(--text-dim)]">·</span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
         <table className="w-full text-sm min-w-[920px]">
           <thead>
             <tr className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] border-b" style={{ borderColor: "var(--border)" }}>

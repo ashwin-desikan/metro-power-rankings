@@ -30,6 +30,7 @@ export default async function F1CircuitPage({ params }: { params: Promise<{ slug
   const data = getF1CircuitBySlug(slug);
   if (!data) notFound();
   const { circuit, races } = data;
+  const raceHistory = [...races].reverse();
 
   const td = "px-3 py-1.5 text-sm";
   const th = "px-3 py-2 text-left text-[11px] uppercase tracking-wider";
@@ -71,14 +72,44 @@ export default async function F1CircuitPage({ params }: { params: Promise<{ slug
       </div>
 
       <h2 className="text-xl font-bold mb-4" style={{ color: "var(--text)" }}>Race History</h2>
-      <div className="rounded-lg overflow-hidden" style={{ border: "1px solid var(--border)" }}>
+
+      {/* Mobile: one card per race instead of a 5-column table that would
+          otherwise force horizontal scrolling. Same reversed race list. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {raceHistory.map((r) => (
+          <div
+            key={`${r.season}-${r.round}-card`}
+            className="rounded-lg p-3"
+            style={{ background: "var(--bg-card)", border: "1px solid var(--border)" }}
+          >
+            <div className="text-sm font-bold tabular-nums" style={{ color: "var(--text)" }}>{r.season}</div>
+            <div className="text-sm mt-0.5" style={{ color: "var(--text-muted)" }}>{r.race_name}</div>
+            <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs mt-2">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide" style={{ color: "var(--text-dim)" }}>Winner</div>
+                <div style={{ color: "var(--text)" }}>{r.winner ?? "—"}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide" style={{ color: "var(--text-dim)" }}>Constructor</div>
+                <div style={{ color: "var(--text-muted)" }}>{r.winner_constructor ?? "—"}</div>
+              </div>
+              <div className="col-span-2">
+                <div className="text-[10px] uppercase tracking-wide" style={{ color: "var(--text-dim)" }}>Pole</div>
+                <div style={{ color: "var(--text-muted)" }}>{r.pole ?? "—"}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="rounded-lg overflow-hidden hidden sm:block" style={{ border: "1px solid var(--border)" }}>
         <table className="w-full border-collapse">
           <thead><tr style={headStyle}>
             <th className={th}>Season</th><th className={th}>Grand Prix</th><th className={th}>Winner</th>
             <th className={th}>Constructor</th><th className={th}>Pole</th>
           </tr></thead>
           <tbody>
-            {[...races].reverse().map((r) => (
+            {raceHistory.map((r) => (
               <tr key={`${r.season}-${r.round}`} style={rowBorder}>
                 <td className={td} style={{ color: "var(--text-dim)" }}>{r.season}</td>
                 <td className={td} style={{ color: "var(--text-muted)" }}>{r.race_name}</td>

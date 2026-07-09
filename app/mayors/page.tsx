@@ -44,7 +44,32 @@ export default async function MayorsPage() {
         <p className="text-sm text-[var(--text-dim)] mt-2">{rows.length} of the top 100 metros covered.</p>
       </header>
 
-      <div className="rounded-xl border overflow-x-auto" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+      {/* Mobile: stacked cards */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {rows.map((r) => (
+          <div key={`${r.slug}-card`} className="rounded-lg border p-3" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+            <div className="flex items-start justify-between gap-2">
+              <div className="min-w-0">
+                <span className="text-xs text-[var(--text-dim)] tabular-nums mr-1.5">#{r.rank}</span>
+                <Link href={`/rankings/${r.slug}`} className="font-medium text-[var(--text)] hover:text-[var(--accent)]">{r.metro}</Link>
+              </div>
+              <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]">Since {yr(r.since)}</span>
+            </div>
+            <div className="mt-1.5 text-sm text-[var(--text)]">
+              {r.mayor}
+              {r.second ? (
+                <span className="block text-xs text-[var(--text-muted)]">{r.second.name} ({r.second.role})</span>
+              ) : null}
+            </div>
+            <div className="mt-1.5 flex flex-wrap gap-x-3 text-xs text-[var(--text-muted)]">
+              <span>{r.city}</span>
+              <span>{r.country}</span>
+              {r.party && <span>{r.party}</span>}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="hidden sm:block rounded-xl border overflow-x-auto" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
         <table className="w-full text-left text-sm">
           <thead>
             <tr className="border-b text-xs uppercase tracking-wider text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }}>

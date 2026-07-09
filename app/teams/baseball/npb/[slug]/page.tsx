@@ -128,7 +128,61 @@ export default async function NpbTeamPage(
       {detail.seasons.length > 0 ? (
         <section className="mb-10">
           <h2 className="text-lg font-semibold mb-3">Season by season</h2>
-          <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto" style={card}>
+
+          {/* Mobile: one card per season instead of a 9-column table nobody
+              can read at 375px without scrolling sideways. Same
+              `detail.seasons` data as the desktop table below. */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[560px] overflow-y-auto pr-0.5">
+            {detail.seasons.map((s) => {
+              const champ = team.js_title_years.includes(s.year);
+              const pennant = String(s.pos).trim() === "1";
+              return (
+                <div
+                  key={s.year + "-card"}
+                  className="rounded-lg border p-3"
+                  style={card}
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="font-medium text-sm tabular-nums" style={mono}>
+                      {s.year}
+                      {champ ? <span title="Japan Series champion" style={{ color: GOLD }}> ★</span> : null}
+                    </div>
+                    <div
+                      className="text-xs whitespace-nowrap"
+                      style={s.team && s.team !== team.name ? { color: "var(--accent)" } : { color: "var(--text-muted)" }}
+                      title={s.team && s.team !== team.name ? "Former franchise name" : undefined}
+                    >
+                      {s.team || team.name}
+                    </div>
+                  </div>
+                  <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                    <div>
+                      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">League</div>
+                      <div className="text-[var(--text-muted)]">{s.league}</div>
+                    </div>
+                    <div>
+                      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Pos</div>
+                      <div className="tabular-nums" style={{ ...mono, color: pennant ? GOLD : undefined, fontWeight: pennant ? 600 : undefined }}>{s.pos}</div>
+                    </div>
+                    <div>
+                      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">W–L–T</div>
+                      <div className="tabular-nums" style={mono}>{s.w}–{s.l}–{s.t}</div>
+                    </div>
+                    <div>
+                      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Pct</div>
+                      <div className="tabular-nums" style={mono}>{s.pct ?? ""}</div>
+                    </div>
+                    <div>
+                      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">GB</div>
+                      <div className="tabular-nums text-[var(--text-dim)]" style={mono}>{s.gb ?? ""}</div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="hidden sm:block rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto" style={card}>
             <table className="w-full text-sm min-w-[520px]">
               <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
                 <tr className="text-left text-xs text-[var(--text-muted)]">

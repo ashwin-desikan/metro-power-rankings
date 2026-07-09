@@ -129,7 +129,19 @@ export default async function VolleyballTeamPage(
       {detail.oly.length > 0 ? (
         <section className="mb-10">
           <h2 className="text-lg font-semibold mb-3">Olympic medals</h2>
-          <div className="rounded-xl border overflow-x-auto" style={card}>
+
+          {/* Mobile: one card per medal instead of a table, for consistency
+              with every other table on the site. Same `detail.oly` rows. */}
+          <div className="grid grid-cols-2 gap-2 sm:hidden">
+            {detail.oly.map((m) => (
+              <div key={`${m.year}-${m.medal}-card`} className="rounded-lg border p-3 flex items-center justify-between gap-2" style={card}>
+                <span className="tabular-nums text-sm" style={mono}>{m.year}</span>
+                <span className="font-medium text-sm" style={{ color: m.medal === "Gold" ? GOLD : undefined }}>{m.medal}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
             <table className="w-full text-sm min-w-[320px]">
               <thead>
                 <tr className="text-left text-xs text-[var(--text-muted)]">

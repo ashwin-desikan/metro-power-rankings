@@ -87,24 +87,74 @@ function Row({ g, rank, highlight }: { g: CricketGame; rank: number; highlight?:
   );
 }
 
+// Mobile: one stacked card per game instead of a cramped 3-column table.
+// Same game data and highlight/winner logic as the desktop <Row>, just laid
+// out top-to-bottom so nothing needs horizontal scrolling at 375px.
+function Card({ g, rank, highlight }: { g: CricketGame; rank: number; highlight?: string }) {
+  const f = FMT[g.fmt];
+  const isTie = !g.winner;
+  const winSlug = isTie ? null : g.winner === g.team ? g.teamSlug : g.oppSlug;
+  const order = !isTie && g.winner === g.opp
+    ? [{ n: g.opp, s: g.oppSlug }, { n: g.team, s: g.teamSlug }]
+    : [{ n: g.team, s: g.teamSlug }, { n: g.opp, s: g.oppSlug }];
+  const isBold = (sl: string) => (highlight ? sl === highlight : winSlug ? sl === winSlug : false);
+  const ctx = [g.detail, g.major || g.tournament, g.round, g.city].filter(Boolean).join(" · ");
+  const clip = clipFor(g);
+  return (
+    <div className="rounded-lg border p-3" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
+      <div className="flex items-center justify-between gap-2 mb-1.5">
+        <div className="flex items-center gap-1.5 flex-wrap">
+          <span className="text-[9px] px-1 py-0.5 rounded flex-shrink-0" style={{ ...MONO, color: f.color, background: f.bg, letterSpacing: "0.04em" }}>{f.label}</span>
+          {g.editorPick && <span title="All-time classic (curated pick)" style={{ color: "#e0a83e" }}>★</span>}
+        </div>
+        <div className="flex items-center gap-2 flex-shrink-0">
+          <span className="text-[10px] text-[var(--text-dim)] tabular-nums" style={MONO}>#{rank}</span>
+          <span className="tabular-nums font-semibold text-sm" style={{ ...MONO, color: "var(--accent)" }} title={`Closeness ${g.cl} · Stakes ${g.st} · Quality ${g.q}`}>{g.norm.toFixed(0)}</span>
+        </div>
+      </div>
+      <div className="text-sm leading-tight flex items-center flex-wrap gap-x-1">
+        <Flag slug={order[0].s} /><Team name={order[0].n} slug={order[0].s} bold={isBold(order[0].s)} />
+        <span className="text-[var(--text-dim)]">v</span>
+        <Flag slug={order[1].s} /><Team name={order[1].n} slug={order[1].s} bold={isBold(order[1].s)} />
+      </div>
+      <div className="text-[11px] text-[var(--text-dim)] mt-1"><span style={MONO}>{dateLabel(g)}</span>{ctx ? ` · ${ctx}` : ""}</div>
+      {clip && (
+        <a href={clip} target="_blank" rel="noopener noreferrer" className="inline-block mt-1.5 text-[11px] hover:underline" style={{ color: "var(--accent)" }}>
+          &#9654; Watch
+        </a>
+      )}
+    </div>
+  );
+}
+
 function Table({ games, highlight }: { games: CricketGame[]; highlight?: string }) {
   return (
-    <div className="max-h-[70vh] overflow-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
-      <table className="w-full text-xs [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:z-10 [&_thead_th]:bg-[var(--bg-card)]">
-        <thead>
-          <tr className="text-[var(--text-muted)]">
-            <th className="text-left font-medium py-2 pl-3 pr-2 uppercase tracking-wider text-[10px]">#</th>
-            <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px]">Match</th>
-            <th className="text-right font-medium py-2 pr-3 uppercase tracking-wider text-[10px]">Score</th>
-          </tr>
-        </thead>
-        <tbody>
+    <>
+      <div className="max-h-[70vh] overflow-auto sm:hidden">
+        <div className="grid grid-cols-1 gap-2">
           {games.map((g, i) => (
-            <Row key={`${g.date}-${g.teamSlug}-${g.oppSlug}`} g={g} rank={i + 1} highlight={highlight} />
+            <Card key={`${g.date}-${g.teamSlug}-${g.oppSlug}-card`} g={g} rank={i + 1} highlight={highlight} />
           ))}
-        </tbody>
-      </table>
-    </div>
+        </div>
+      </div>
+
+      <div className="max-h-[70vh] overflow-auto rounded-xl border hidden sm:block" style={{ borderColor: "var(--border)" }}>
+        <table className="w-full text-xs [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:z-10 [&_thead_th]:bg-[var(--bg-card)]">
+          <thead>
+            <tr className="text-[var(--text-muted)]">
+              <th className="text-left font-medium py-2 pl-3 pr-2 uppercase tracking-wider text-[10px]">#</th>
+              <th className="text-left font-medium py-2 uppercase tracking-wider text-[10px]">Match</th>
+              <th className="text-right font-medium py-2 pr-3 uppercase tracking-wider text-[10px]">Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            {games.map((g, i) => (
+              <Row key={`${g.date}-${g.teamSlug}-${g.oppSlug}`} g={g} rank={i + 1} highlight={highlight} />
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 }
 

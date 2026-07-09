@@ -196,7 +196,60 @@ export default function AllTimeTable({ rows }: { rows: AllTimeRow[] }) {
         {!bd && <span className="text-xs text-[var(--text-dim)]">loading filters…</span>}
       </div>
 
-      <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto" style={card}>
+      {/* Mobile: one card per team instead of a horizontally scrolling
+          table. Same `visible` array (post filter/scope) as the desktop
+          table below, so filtering/sorting never forks between the two. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {visible.map(({ row, v }, i) => (
+          <Link
+            key={row.slug}
+            href={`/teams/olympics/${row.slug}`}
+            className="block rounded-lg border p-3 hover:border-[var(--accent)] transition-colors"
+            style={card}
+          >
+            <div className="flex items-start justify-between gap-2">
+              <div className="flex items-center gap-1.5 min-w-0">
+                <span className="text-[10px] text-[var(--text-dim)] tabular-nums flex-shrink-0" style={mono}>#{i + 1}</span>
+                {flagCdnUrl(row.slug) && (
+                  <img src={flagCdnUrl(row.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" loading="lazy" decoding="async" />
+                )}
+                <span className="font-medium truncate">{row.name}</span>
+                {row.special && (
+                  <span className="text-[var(--text-dim)] flex-shrink-0" style={mono}
+                        title="Dissolved state kept whole, or a combined/neutral team">‡</span>
+                )}
+              </div>
+              <span className="text-xs text-[var(--text-muted)] tabular-nums flex-shrink-0" style={mono}>
+                {v.first && v.last ? `${v.first}–${v.last}` : ""}
+              </span>
+            </div>
+            <div className="mt-2 grid grid-cols-5 gap-x-2 gap-y-1 text-xs tabular-nums">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide" style={{ color: GOLD }}>Gold</div>
+                <div className="font-semibold" style={{ ...mono, color: v.g > 0 ? GOLD : "var(--text-dim)" }}>{v.g.toLocaleString()}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Silver</div>
+                <div style={mono}>{v.s.toLocaleString()}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Bronze</div>
+                <div style={mono}>{v.b.toLocaleString()}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Total</div>
+                <div className="font-semibold" style={mono}>{v.total.toLocaleString()}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Games</div>
+                <div style={mono}>{v.apps}</div>
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto hidden sm:block" style={card}>
         <table className="w-full text-sm min-w-[680px]">
           <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
             <tr className="text-left text-xs text-[var(--text-muted)]">

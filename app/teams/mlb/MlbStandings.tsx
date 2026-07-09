@@ -173,58 +173,102 @@ export default async function MlbStandings() {
                 <span>{pretty}</span>
                 <span className="text-[10px] normal-case tracking-normal text-[var(--text-dim)]">{b.teams.length} teams</span>
               </h3>
-              <div className="overflow-x-auto">
-              <table className="w-full text-xs tabular-nums">
-                <thead className="text-[var(--text-muted)]">
-                  <tr className="border-b" style={{ borderColor: "var(--border)" }}>
-                    <th className="text-left py-1 pr-1 font-medium text-[9px] uppercase tracking-wider">Team</th>
-                    <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider">W</th>
-                    <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider">L</th>
-                    <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider">Pct</th>
-                    <th className="text-right py-1 pl-1 font-medium text-[9px] uppercase tracking-wider">GB</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {b.teams.map((t) => {
-                    const slug = slugByCanonical.get(t.canonical);
-                    const fr = slug ? bySlug.get(slug) : null;
-                    const logo = slug ? logoUrlFor(slug) : null;
-                    const mono = slug ? monogramFor(slug) : null;
-                    const displayShort = fr?.name ?? t.canonical ?? t.display_name;
-                    const gb = gamesBack(t, leader);
-                    return (
-                      <tr key={t.canonical} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
-                        <td className="py-2 pr-1">
-                          {slug ? (
-                            <Link href={`/teams/mlb/${slug}`} className="flex items-center gap-1.5 hover:text-[var(--accent)] transition-colors">
-                              {logo ? (
-                                // eslint-disable-next-line @next/next/no-img-element
-                                <img src={logo} alt="" className="w-4 h-4 flex-shrink-0 object-contain" loading="lazy" decoding="async" />
-                              ) : (
-                                <span
-                                  className="inline-grid place-items-center rounded-full flex-shrink-0"
-                                  style={{ background: mono?.bg, color: mono?.fg, width: 16, height: 16, fontSize: 7, fontWeight: 700 }}
-                                  aria-hidden
-                                >
-                                  {mono?.mono}
-                                </span>
-                              )}
-                              <span className="truncate">{displayShort}</span>
-                            </Link>
-                          ) : (
-                            <span className="text-[var(--text-dim)]">{displayShort}</span>
-                          )}
-                        </td>
-                        <td className="py-1 px-1 text-right">{t.wins}</td>
-                        <td className="py-1 px-1 text-right">{t.losses}</td>
-                        <td className="py-1 px-1 text-right text-[var(--text-muted)]">{t.win_pct ? t.win_pct.toFixed(3).replace(/^0/, "") : "—"}</td>
-                        <td className="py-1 pl-1 text-right text-[var(--text-muted)]">{gb === null ? "—" : gb % 1 === 0 ? gb.toFixed(0) : gb.toFixed(1)}</td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-              </div>
+              {(() => {
+                const rowsData = b.teams.map((t) => {
+                  const slug = slugByCanonical.get(t.canonical);
+                  const fr = slug ? bySlug.get(slug) : null;
+                  const logo = slug ? logoUrlFor(slug) : null;
+                  const mono = slug ? monogramFor(slug) : null;
+                  const displayShort = fr?.name ?? t.canonical ?? t.display_name;
+                  const gb = gamesBack(t, leader);
+                  const pct = t.win_pct ? t.win_pct.toFixed(3).replace(/^0/, "") : "—";
+                  const gbLabel = gb === null ? "—" : gb % 1 === 0 ? gb.toFixed(0) : gb.toFixed(1);
+                  return { t, slug, logo, mono, displayShort, pct, gbLabel };
+                });
+
+                const TeamIdentity = ({ slug, logo, mono, displayShort }: (typeof rowsData)[number]) => (
+                  slug ? (
+                    <Link href={`/teams/mlb/${slug}`} className="flex items-center gap-1.5 min-w-0 hover:text-[var(--accent)] transition-colors">
+                      {logo ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img src={logo} alt="" className="w-4 h-4 flex-shrink-0 object-contain" loading="lazy" decoding="async" />
+                      ) : (
+                        <span
+                          className="inline-grid place-items-center rounded-full flex-shrink-0"
+                          style={{ background: mono?.bg, color: mono?.fg, width: 16, height: 16, fontSize: 7, fontWeight: 700 }}
+                          aria-hidden
+                        >
+                          {mono?.mono}
+                        </span>
+                      )}
+                      <span className="truncate">{displayShort}</span>
+                    </Link>
+                  ) : (
+                    <span className="text-[var(--text-dim)] truncate">{displayShort}</span>
+                  )
+                );
+
+                return (
+                  <>
+                    {/* Mobile: one compact card per team instead of a horizontally
+                        scrolling 5-column table inside an already-narrow division box. */}
+                    <div className="sm:hidden divide-y" style={{ borderColor: "var(--border)" }}>
+                      {rowsData.map((row) => (
+                        <div key={row.t.canonical} className="py-2 flex items-center justify-between gap-2">
+                          <div className="min-w-0 flex-1 text-xs">
+                            <TeamIdentity {...row} />
+                          </div>
+                          <div className="flex items-center gap-2.5 text-[10px] tabular-nums flex-shrink-0">
+                            <span className="text-center w-5">
+                              <span className="block text-[8px] uppercase tracking-wide text-[var(--text-dim)]">W</span>
+                              <span className="block font-semibold">{row.t.wins}</span>
+                            </span>
+                            <span className="text-center w-5">
+                              <span className="block text-[8px] uppercase tracking-wide text-[var(--text-dim)]">L</span>
+                              <span className="block font-semibold">{row.t.losses}</span>
+                            </span>
+                            <span className="text-center w-8">
+                              <span className="block text-[8px] uppercase tracking-wide text-[var(--text-dim)]">Pct</span>
+                              <span className="block text-[var(--text-muted)]">{row.pct}</span>
+                            </span>
+                            <span className="text-center w-6">
+                              <span className="block text-[8px] uppercase tracking-wide text-[var(--text-dim)]">GB</span>
+                              <span className="block text-[var(--text-muted)]">{row.gbLabel}</span>
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="overflow-x-auto hidden sm:block">
+                      <table className="w-full text-xs tabular-nums">
+                        <thead className="text-[var(--text-muted)]">
+                          <tr className="border-b" style={{ borderColor: "var(--border)" }}>
+                            <th className="text-left py-1 pr-1 font-medium text-[9px] uppercase tracking-wider">Team</th>
+                            <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider">W</th>
+                            <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider">L</th>
+                            <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider">Pct</th>
+                            <th className="text-right py-1 pl-1 font-medium text-[9px] uppercase tracking-wider">GB</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {rowsData.map((row) => (
+                            <tr key={row.t.canonical} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
+                              <td className="py-2 pr-1">
+                                <TeamIdentity {...row} />
+                              </td>
+                              <td className="py-1 px-1 text-right">{row.t.wins}</td>
+                              <td className="py-1 px-1 text-right">{row.t.losses}</td>
+                              <td className="py-1 px-1 text-right text-[var(--text-muted)]">{row.pct}</td>
+                              <td className="py-1 pl-1 text-right text-[var(--text-muted)]">{row.gbLabel}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </>
+                );
+              })()}
             </div>
           );
         })}

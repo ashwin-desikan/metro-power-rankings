@@ -53,7 +53,43 @@ export default function WWCHubPage() {
       <section className="rounded-xl border p-5 mb-6" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
         <h2 className="text-base font-semibold">Finals</h2>
         <p className="mt-1 text-xs text-[var(--text-muted)]">Most recent first. Nation links open each team&apos;s Women&apos;s World Cup page.</p>
-        <div className="mt-4 overflow-x-auto">
+
+        {/* Mobile: one card per edition instead of a 6-column table nobody
+            can read at 375px without scrolling sideways or losing columns. */}
+        <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
+          {editions.map((e) => (
+            <div
+              key={`${e.year}-card`}
+              className="rounded-lg border p-3"
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-center justify-between gap-2">
+                <span className="font-semibold tabular-nums">{e.year}</span>
+                <span className="text-xs text-[var(--text-muted)] whitespace-nowrap">{e.host ?? "—"}</span>
+              </div>
+              <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                <div className="col-span-2">
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Champion</div>
+                  <div>{natLink(e.champion, e.champion_slug, { star: true })}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Runner-up</div>
+                  <div className="text-[var(--text-muted)]">{natLink(e.runner_up, e.runner_up_slug)}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Score</div>
+                  <div className="tabular-nums text-[var(--text-muted)]">{e.final_score ?? "—"}</div>
+                </div>
+                <div className="col-span-2">
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Third</div>
+                  <div className="text-[var(--text-muted)]">{natLink(e.third, e.third_slug)}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-4 overflow-x-auto hidden sm:block">
           <table className="w-full text-sm">
             <thead>
               <tr className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b" style={{ borderColor: "var(--border)" }}>

@@ -63,13 +63,68 @@ export default function CbbAllTimeTable({ teams }: { teams: CbbTeam[] }) {
         </select>
         <span className="text-xs text-[var(--text-muted)] tabular-nums">{rows.length} programs</span>
       </div>
-      <div className="max-h-[70vh] overflow-auto rounded-lg border" style={{ borderColor: "var(--border)" }}>
+      {/* Mobile: one card per program instead of a 12-column table. Same
+          `rows` data (already sorted/filtered above) drives both views. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {rows.map((t) => (
+          <div key={`${t.slug}-card`} className="rounded-lg border p-3" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
+            <div className="flex items-start justify-between gap-2">
+              <div className="flex items-center gap-1.5 min-w-0">
+                <TeamCrest name={t.name} size={18} fallback={<span className="inline-block w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ background: t.color }} aria-hidden />} />
+                <Link href={`/teams/cbb/${t.slug}`} className="font-medium text-sm hover:text-[var(--accent)] truncate">{t.name}</Link>
+                {!t.current_d1 && <span className="flex-shrink-0 text-[9px] uppercase text-[var(--text-dim)]">former</span>}
+              </div>
+            </div>
+            {t.conference && <div className="text-[11px] text-[var(--text-dim)] mb-2">{t.conference}</div>}
+            <div className="grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">W-L</div>
+                <div className="tabular-nums text-[var(--text-muted)]">{t.w}-{t.l}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Pct</div>
+                <div className="tabular-nums text-[var(--text-muted)]">{t.pct.toFixed(3)}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Titles</div>
+                <div className="tabular-nums font-semibold" style={{ color: t.titles ? "var(--accent)" : "var(--text-dim)" }}>{t.titles || 0}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Tourney apps</div>
+                <div className="tabular-nums text-[var(--text-muted)]">{t.tour_app || 0}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Final Fours</div>
+                <div className="tabular-nums text-[var(--text-muted)]">{t.final4 || 0}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Elite 8</div>
+                <div className="tabular-nums text-[var(--text-muted)]">{t.elite8 || 0}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Sweet 16</div>
+                <div className="tabular-nums text-[var(--text-muted)]">{t.sweet16 || 0}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">#1 seeds</div>
+                <div className="tabular-nums text-[var(--text-muted)]">{t.seed1 || 0}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Wks #1</div>
+                <div className="tabular-nums text-[var(--text-muted)]">{t.weeks_at_1 || 0}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="max-h-[70vh] overflow-auto rounded-lg border hidden sm:block" style={{ borderColor: "var(--border)" }}>
         <table className="w-full text-xs sm:text-sm tabular-nums whitespace-nowrap [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:z-10 [&_thead_th]:bg-[var(--bg-card)]">
           <thead>
             <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)] border-b" style={{ borderColor: "var(--border)" }}>
               {COLS.map((c) => (
                 <th key={c.key}
-                  className={`px-2 py-2 cursor-pointer select-none hover:text-[var(--accent)] ${c.key === "name" || c.key === "conf" ? "text-left" : "text-right"} ${c.hide ?? ""}`}
+                  className={`px-2 py-3 cursor-pointer select-none hover:text-[var(--accent)] ${c.key === "name" || c.key === "conf" ? "text-left" : "text-right"} ${c.hide ?? ""}`}
                   onClick={() => { if (sort === c.key) setAsc(!asc); else { setSort(c.key); setAsc(false); } }}>
                   {c.label}{sort === c.key ? (asc ? " ↑" : " ↓") : ""}
                 </th>

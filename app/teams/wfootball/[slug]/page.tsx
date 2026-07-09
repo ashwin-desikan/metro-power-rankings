@@ -93,7 +93,43 @@ export default async function WCompetitionPage({ params }: Props) {
       <section className="rounded-xl border p-5 mb-6" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
         <h2 className="text-base font-semibold">{c.kind === "cup" ? "All-time finals" : "All-time champions"}</h2>
         <p className="mt-1 text-xs text-[var(--text-muted)]">Most recent first. Club links open the club&apos;s honors page.</p>
-        <div className="mt-4 overflow-x-auto">
+
+        {/* Mobile: one card per season instead of a scroll-only table. Same
+            c.champions data as the desktop table below. */}
+        <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
+          {c.champions.map((ch, i) => (
+            <div
+              key={`${ch.year}-${i}-card`}
+              className="rounded-lg border p-3"
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-center justify-between gap-2">
+                <span className="text-xs tabular-nums text-[var(--text-dim)]">{ch.year}</span>
+                {hasScore && ch.score && (
+                  <span className="text-xs tabular-nums text-[var(--text-muted)]">{ch.score}</span>
+                )}
+              </div>
+              <div className="mt-1 flex items-center gap-1.5">
+                <span aria-hidden style={{ color: "#d4af37" }}>★</span>
+                <Link href={`/teams/wfootball/clubs/${ch.slug}`} className="font-semibold hover:underline">{ch.cur_name}</Link>
+              </div>
+              <div className="mt-1.5 text-xs text-[var(--text-muted)]">
+                <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Runner-up </span>
+                {ch.runner_up ? (
+                  ch.runner_up_slug ? (
+                    <Link href={`/teams/wfootball/clubs/${ch.runner_up_slug}`} className="hover:underline">{ch.runner_up}</Link>
+                  ) : (
+                    ch.runner_up
+                  )
+                ) : (
+                  <span className="text-[var(--text-dim)]">—</span>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-4 overflow-x-auto hidden sm:block">
           <table className="w-full text-sm">
             <thead>
               <tr className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b" style={{ borderColor: "var(--border)" }}>
@@ -138,7 +174,41 @@ export default async function WCompetitionPage({ params }: Props) {
         <section className="rounded-xl border p-5" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
           <h2 className="text-base font-semibold">Most decorated</h2>
           <p className="mt-1 text-xs text-[var(--text-muted)]">Ranked by titles won. Finals counts total final appearances; trailing clubs reached a final without winning.</p>
-          <div className="mt-4 overflow-x-auto">
+
+          {/* Mobile: one card per club instead of a scroll-only table. Same
+              c.most_decorated data as the desktop table below. */}
+          <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
+            {c.most_decorated.map((d, i) => (
+              <div
+                key={d.slug}
+                className="rounded-lg border p-3"
+                style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-2 min-w-0">
+                    <span className="text-xs tabular-nums text-[var(--text-dim)] w-5 flex-shrink-0">{i + 1}</span>
+                    <Link href={`/teams/wfootball/clubs/${d.slug}`} className="font-medium truncate hover:underline">{d.cur_name}</Link>
+                  </div>
+                  <div className="text-right flex-shrink-0">
+                    <div className="text-lg font-semibold tabular-nums">{d.champion_count > 0 ? d.champion_count : <span className="text-[var(--text-dim)] font-normal">—</span>}</div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Titles</div>
+                  </div>
+                </div>
+                <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Finals</div>
+                    <div className="tabular-nums">{d.finals_count}{d.finals_lost > 0 && <span className="text-[var(--text-muted)]"> ({d.finals_lost} L)</span>}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Last won</div>
+                    <div className="tabular-nums text-[var(--text-muted)]">{d.last_won ?? <span className="text-[var(--text-dim)]">—</span>}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-4 overflow-x-auto hidden sm:block">
             <table className="w-full text-sm">
               <thead>
                 <tr className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b" style={{ borderColor: "var(--border)" }}>

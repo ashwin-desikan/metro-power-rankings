@@ -73,7 +73,51 @@ export default async function ChampionRollPage(
         </div>
       </header>
 
-      <div className="overflow-x-auto border border-[var(--border)] rounded-lg">
+      {/* Mobile: stacked cards instead of a 4-5 column table */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {rows.map((r, i) => (
+          <div key={`${r.season}-${r.champion}-${i}-card`} className="rounded-lg border p-3" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+            <div className="flex items-start justify-between gap-2">
+              <div className="min-w-0 leading-tight flex items-center gap-1.5 flex-wrap font-medium text-sm">
+                <ChampionLogo name={r.champion} canonical={r.canonical} size={16} />
+                {r.teamHref ? (
+                  <Link href={r.teamHref} className="text-[var(--text)] hover:text-[var(--accent)] hover:underline">{r.champion}</Link>
+                ) : (
+                  <span className="text-[var(--text)]">{r.champion}</span>
+                )}
+              </div>
+              <div className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0" style={mono}>{r.season || r.year || "—"}</div>
+            </div>
+            {r.canonical && r.canonical !== r.champion && (
+              <div className="text-[11px] text-[var(--text-dim)] mt-0.5">{r.canonical}</div>
+            )}
+            <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+              {hasEra && r.eraName && r.eraName !== competition && (
+                <div className="col-span-2">
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Competition</div>
+                  <div className="text-[var(--text-muted)]">{r.eraName}</div>
+                </div>
+              )}
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Metro</div>
+                <div>
+                  {r.metroSlug ? (
+                    <Link href={`/rankings/${r.metroSlug}`} className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline">{r.metro}</Link>
+                  ) : (
+                    <span className="text-[var(--text-dim)]">{r.metro || "—"}</span>
+                  )}
+                </div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Date</div>
+                <div className="tabular-nums text-[var(--text-muted)]" style={mono}>{r.date || "—"}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="overflow-x-auto border border-[var(--border)] rounded-lg hidden sm:block">
         <table className="w-full text-sm">
           <thead>
             <tr className="text-left text-[10px] uppercase tracking-widest text-[var(--text-dim)] border-b border-[var(--border)]">

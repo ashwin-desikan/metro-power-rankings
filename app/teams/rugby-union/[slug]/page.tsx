@@ -12,6 +12,7 @@ import {
   getRugbyTeamBySlug,
   getRugbyTeamDetail,
   rugbyWinPct,
+  type RugbySeasonRow,
 } from "@/lib/rugbyUnion";
 import { getRugbyGamesForTeam } from "@/lib/rugbyGames";
 import { flagCdnUrl } from "@/lib/international-display";
@@ -54,6 +55,20 @@ function Chip({ children }: { children: React.ReactNode }) {
 
 function yearsStr(years: number[]): string {
   return years.join(", ");
+}
+
+// Shared between the desktop "Season by season" table and the mobile card
+// list so the trophy/Grand Slam/Triple Crown/RWC-knockout abbreviations
+// never drift between the two presentations.
+function seasonNotes(s: RugbySeasonRow): string[] {
+  const notes: string[] = [];
+  if (s.trophy) notes.push("W");
+  if (s.grand_slam) notes.push("GS");
+  if (s.triple_crown) notes.push("TC");
+  if (s.rwc_f) notes.push("Final");
+  else if (s.rwc_sf) notes.push("SF");
+  else if (s.rwc_qf) notes.push("QF");
+  return notes;
 }
 
 export default async function RugbyTeamPage(
@@ -230,7 +245,31 @@ export default async function RugbyTeamPage(
             Championship and World Cup campaigns on file; W marks a title, GS a Grand Slam,
             TC a Triple Crown.
           </p>
-          <div className="rounded-xl border overflow-x-auto max-h-[480px] overflow-y-auto" style={card}>
+          {/* Mobile: stacked cards, one per season. */}
+          <div className="sm:hidden max-h-[480px] overflow-y-auto rounded-xl border p-2" style={card}>
+            <div className="grid grid-cols-1 gap-2">
+              {detail.seasons.map((s, i) => {
+                const notes = seasonNotes(s);
+                return (
+                  <div key={i} className="rounded-lg border p-3" style={card}>
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="text-sm font-medium truncate">
+                        {s.comp.replace(/^\d{4}(-\d{2})?\s*/, "")}
+                        {s.pool ? <span className="text-xs text-[var(--text-dim)]"> · {s.pool}</span> : null}
+                      </div>
+                      <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0" style={mono}>{s.season}</span>
+                    </div>
+                    <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
+                      <span className="text-[var(--text-muted)]">Place <span className="tabular-nums text-[var(--text)]" style={mono}>{s.place !== null ? s.place : "—"}</span></span>
+                      {notes.length > 0 && <span className="font-medium" style={mono}>{notes.join(" · ")}</span>}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="hidden sm:block rounded-xl border overflow-x-auto max-h-[480px] overflow-y-auto" style={card}>
             <table className="w-full text-sm min-w-[560px]">
               <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
                 <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -242,13 +281,7 @@ export default async function RugbyTeamPage(
               </thead>
               <tbody>
                 {detail.seasons.map((s, i) => {
-                  const notes: string[] = [];
-                  if (s.trophy) notes.push("W");
-                  if (s.grand_slam) notes.push("GS");
-                  if (s.triple_crown) notes.push("TC");
-                  if (s.rwc_f) notes.push("Final");
-                  else if (s.rwc_sf) notes.push("SF");
-                  else if (s.rwc_qf) notes.push("QF");
+                  const notes = seasonNotes(s);
                   return (
                     <tr key={i} className="border-t" style={{ borderColor: "var(--border)" }}>
                       <td className="py-1.5 px-3 tabular-nums" style={mono}>{s.season}</td>
@@ -273,7 +306,33 @@ export default async function RugbyTeamPage(
       {h2hEntries.length > 0 ? (
         <section className="mb-10">
           <h2 className="text-lg font-semibold mb-3">Head-to-head</h2>
-          <div className="rounded-xl border overflow-x-auto" style={card}>
+          {/* Mobile: stacked cards, one per opponent. */}
+          <div className="sm:hidden grid grid-cols-1 gap-2">
+            {h2hEntries.map(([opp, r]) => (
+              <div key={opp} className="rounded-lg border p-3" style={card}>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-sm font-medium truncate">{opp}</span>
+                  <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0" style={mono}>{r.m} tests</span>
+                </div>
+                <div className="mt-1.5 grid grid-cols-3 gap-x-3 gap-y-1 text-xs">
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">W</div>
+                    <div className="tabular-nums" style={mono}>{r.w}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">L</div>
+                    <div className="tabular-nums" style={mono}>{r.l}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">D</div>
+                    <div className="tabular-nums" style={mono}>{r.d}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="hidden sm:block rounded-xl border overflow-x-auto" style={card}>
             <table className="w-full text-sm min-w-[480px]">
               <thead>
                 <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -304,7 +363,26 @@ export default async function RugbyTeamPage(
       {detail.recent.length > 0 ? (
         <section className="mb-10">
           <h2 className="text-lg font-semibold mb-3">Recent tests</h2>
-          <div className="rounded-xl border overflow-x-auto" style={card}>
+          {/* Mobile: stacked cards, one per match. */}
+          <div className="sm:hidden grid grid-cols-1 gap-2">
+            {detail.recent.map((m, i) => (
+              <div key={i} className="rounded-lg border p-3" style={card}>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-sm font-medium truncate">{m.opp}</span>
+                  <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0 whitespace-nowrap" style={mono}>{m.date}</span>
+                </div>
+                <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
+                  <span className={`tabular-nums ${m.result === "W" ? "font-semibold" : "text-[var(--text-muted)]"}`} style={mono}>
+                    {m.result} {m.score}
+                  </span>
+                  <span className="text-[var(--text-muted)]">{m.comp}</span>
+                  <span className="text-[var(--text-muted)]">{m.venue}{m.city ? `, ${m.city}` : ""}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="hidden sm:block rounded-xl border overflow-x-auto" style={card}>
             <table className="w-full text-sm min-w-[640px]">
               <thead>
                 <tr className="text-left text-xs text-[var(--text-muted)]">

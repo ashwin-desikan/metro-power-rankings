@@ -180,7 +180,31 @@ export default function CountriesDirectory({
         />
       </div>
 
-      <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
+      {/* Mobile: true stacked cards. All stats visible up front (no hidden
+          columns behind a tap) — the only interaction retained is expanding
+          a country's constituents/territories, which is a distinct
+          parent/child hierarchy, not hidden data. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {filtered.map((c) => {
+          const visibleChildren = continent === "All"
+            ? c.children
+            : c.children.filter((k) => k.continent === continent);
+          const hasChildren = visibleChildren.length > 0;
+          const isOpen = expanded.has(c.slug);
+          return (
+            <CountryCard
+              key={`${c.slug}-card`}
+              country={c}
+              visibleChildren={visibleChildren}
+              isOpen={isOpen}
+              hasChildren={hasChildren}
+              onToggle={() => toggleExpand(c.slug)}
+            />
+          );
+        })}
+      </div>
+
+      <div className="hidden sm:block overflow-x-auto rounded-lg border border-[var(--border)]">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-[var(--border)]" style={{ backgroundColor: "var(--bg-card)" }}>
@@ -364,5 +388,132 @@ function CountryRows({
           ))
         : null}
     </>
+  );
+}
+
+function LeaderLine({ leader, small }: { leader: NonNullable<DirectoryCountry["currentLeader"]>; small?: boolean }) {
+  return (
+    <div className={small ? "text-[11px]" : "text-xs"}>
+      <span className="text-[var(--text)]">{leader.name}</span>
+      <span className="ml-1 text-[var(--text-dim)]">({leader.role})</span>
+      {leader.second ? (
+        <div className="text-[var(--text-dim)]">{leader.second.name} ({leader.second.role})</div>
+      ) : null}
+    </div>
+  );
+}
+
+// Compact card for a single constituent/territory, shown nested under its
+// parent's card once expanded.
+function ChildCountryCard({ child }: { child: DirectoryCountry }) {
+  return (
+    <div className="rounded-md border px-3 py-2" style={{ borderColor: "var(--border)" }}>
+      <div className="flex items-start justify-between gap-2">
+        <div className="flex items-center min-w-0">
+          <Flag slug={child.slug} />
+          <Link href={`/countries/${child.slug}`} className="text-sm hover:text-[var(--accent)] transition-colors truncate" style={{ color: "var(--text-muted)" }}>
+            {child.name}
+          </Link>
+          {child.disputed ? (
+            <span className="ml-2 text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded italic flex-shrink-0"
+                  style={{ color: "var(--text-dim)", border: "1px solid var(--border)", fontFamily: "'JetBrains Mono', monospace" }}
+                  title="Internationally disputed">disputed</span>
+          ) : null}
+        </div>
+        <span className="flex-shrink-0 text-xs tabular-nums" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--text-muted)" }}>
+          {fmtScore(child.scoreTotal)}
+        </span>
+      </div>
+      <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+        <span>{fmtPop(child.pop)}</span>
+        {child.metroCount > 0 && <span>{child.metroCount} metros</span>}
+        {child.continent && <span className="font-sans">{child.continent}</span>}
+        <PowerCell power={child.power} small />
+      </div>
+      {child.currentLeader ? <div className="mt-1"><LeaderLine leader={child.currentLeader} small /></div> : null}
+    </div>
+  );
+}
+
+// Full-data mobile card. Population, metros, score, power and leader are all
+// visible without interaction — only the constituents/territories list (a
+// genuine parent/child hierarchy) sits behind an expand toggle.
+function CountryCard({
+  country,
+  visibleChildren,
+  isOpen,
+  hasChildren,
+  onToggle,
+}: {
+  country: DirectoryCountry;
+  visibleChildren: DirectoryCountry[];
+  isOpen: boolean;
+  hasChildren: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <div className="rounded-lg border p-3" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
+      <div className="flex items-start justify-between gap-2">
+        <div className="flex items-center min-w-0 flex-wrap gap-y-1">
+          <Flag slug={country.slug} />
+          <Link href={`/countries/${country.slug}`} className="font-semibold hover:text-[var(--accent)] transition-colors">
+            {country.name}
+          </Link>
+          {country.disputed ? (
+            <span className="ml-2 text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded italic"
+                  style={{ color: "var(--text-dim)", border: "1px solid var(--border)", fontFamily: "'JetBrains Mono', monospace" }}
+                  title="Internationally disputed">disputed</span>
+          ) : null}
+        </div>
+        <span className="flex-shrink-0 font-semibold text-sm" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>
+          {fmtScore(country.scoreTotal)}
+        </span>
+      </div>
+      <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+        <div>
+          <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Population</div>
+          <div className="tabular-nums" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{fmtPop(country.pop)}</div>
+        </div>
+        <div>
+          <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Metros</div>
+          <div className="tabular-nums text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{country.metroCount}</div>
+        </div>
+        <div>
+          <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Continent</div>
+          <div className="text-[var(--text-muted)]">{country.continent ?? "—"}</div>
+        </div>
+        <div>
+          <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Power</div>
+          <div style={{ fontFamily: "'JetBrains Mono', monospace" }}><PowerCell power={country.power} /></div>
+        </div>
+      </div>
+      {country.currentLeader ? (
+        <div className="mt-2 pt-2 border-t" style={{ borderColor: "var(--border)" }}>
+          <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] mb-0.5">Leader</div>
+          <LeaderLine leader={country.currentLeader} />
+          {country.currentLeader.since ? (
+            <div className="text-[11px] text-[var(--text-dim)] mt-0.5" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+              since {country.currentLeader.since}
+            </div>
+          ) : null}
+        </div>
+      ) : null}
+      {hasChildren ? (
+        <button
+          type="button"
+          onClick={onToggle}
+          className="mt-2.5 text-xs font-medium text-[var(--accent)] hover:underline"
+        >
+          {isOpen ? "Hide" : "Show"} {visibleChildren.length} constituent{visibleChildren.length !== 1 ? "s" : ""}/territories
+        </button>
+      ) : null}
+      {isOpen && hasChildren ? (
+        <div className="mt-2 pl-3 border-l space-y-2" style={{ borderColor: "var(--border)" }}>
+          {visibleChildren.map((child) => (
+            <ChildCountryCard key={child.slug} child={child} />
+          ))}
+        </div>
+      ) : null}
+    </div>
   );
 }

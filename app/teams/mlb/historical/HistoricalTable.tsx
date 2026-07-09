@@ -160,7 +160,7 @@ export default function HistoricalTable({ rows, histSeasons }: Props) {
               className="group border-b last:border-b-0"
               style={{ borderColor: "var(--border)" }}
             >
-              <summary className="flex items-center gap-3 cursor-pointer select-none px-4 py-3 hover:bg-[var(--bg-card-hover)] transition-colors">
+              <summary className="flex items-start gap-3 cursor-pointer select-none px-4 py-3 hover:bg-[var(--bg-card-hover)] transition-colors">
                 <span
                   className="inline-grid place-items-center rounded-full flex-shrink-0 text-xs font-bold transition-transform"
                   style={{
@@ -168,14 +168,47 @@ export default function HistoricalTable({ rows, histSeasons }: Props) {
                     color: "var(--text-muted)",
                     border: "1px solid var(--border)",
                     width: 22, height: 22, fontSize: 14, lineHeight: 1,
+                    marginTop: 4,
                   }}
                   aria-hidden
                 >
                   <span className="group-open:hidden">+</span>
                   <span className="hidden group-open:inline">−</span>
                 </span>
+
+                {/* Mobile: stacked card, no horizontal scrolling needed */}
+                <div className="flex-1 min-w-0 md:hidden">
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <span
+                      className="inline-grid place-items-center rounded-full flex-shrink-0"
+                      style={{
+                        background: mono.bg, color: mono.fg,
+                        width: 28, height: 28, fontSize: 10, fontWeight: 700, letterSpacing: "-0.02em",
+                      }}
+                      aria-hidden
+                    >
+                      {mono.mono}
+                    </span>
+                    <span className="truncate text-sm font-medium">{r.display_name ?? r.name}</span>
+                  </div>
+                  <div className="mt-1 text-xs text-[var(--text-muted)]">
+                    {r.city} · {r.league} · {r.first_year ?? "—"}–{r.last_year ?? "—"}
+                  </div>
+                  <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs tabular-nums">
+                    <span className="font-medium">{r.w}-{r.l}</span>
+                    <span className="text-[var(--text-muted)]">Win% {r.win_pct.toFixed(3)}</span>
+                    <span className="text-[var(--text-muted)]">{r.seasons} seasons</span>
+                  </div>
+                  {champSeasons.length > 0 && (
+                    <div className="mt-1.5 flex flex-wrap gap-1">
+                      <TitleBadges seasons={champSeasons} />
+                    </div>
+                  )}
+                </div>
+
+                {/* Desktop: aligned grid matching the header strip */}
                 <div
-                  className="flex-1 grid items-center gap-3 text-xs sm:text-sm"
+                  className="hidden md:grid flex-1 items-center gap-3 text-sm"
                   style={{ gridTemplateColumns: GRID }}
                 >
                   <div className="flex items-center gap-2.5 min-w-0">
@@ -204,24 +237,7 @@ export default function HistoricalTable({ rows, histSeasons }: Props) {
                       <span className="text-[var(--text-dim)]">—</span>
                     ) : (
                       <span className="flex flex-wrap gap-1">
-                        {champSeasons.map((c) => {
-                          const won = c.champ || c.oth_chmp;
-                          const ws = c.year >= 1903;
-                          const color = ws ? TITLE_COLORS.ws : TITLE_COLORS.pre_ws;
-                          return (
-                            <span
-                              key={c.year}
-                              className="text-xs font-semibold px-2 py-0.5 rounded"
-                              style={won
-                                ? { background: color.bg, color: color.text }
-                                : { border: `1px solid ${color.bg}`, color: color.bg }
-                              }
-                              title={won ? `${c.year} ${ws ? "World Series" : "pre-1903 cup / NL pennant"}` : `${c.year} appearance, lost`}
-                            >
-                              {c.year}
-                            </span>
-                          );
-                        })}
+                        <TitleBadges seasons={champSeasons} />
                       </span>
                     )}
                   </div>
@@ -311,6 +327,33 @@ export default function HistoricalTable({ rows, histSeasons }: Props) {
           );
         })}
       </section>
+    </>
+  );
+}
+
+// Championship-year badges, shared by the mobile card and desktop grid
+// layouts so the won/appeared styling stays in one place.
+function TitleBadges({ seasons }: { seasons: Season[] }) {
+  return (
+    <>
+      {seasons.map((c) => {
+        const won = c.champ || c.oth_chmp;
+        const ws = c.year >= 1903;
+        const color = ws ? TITLE_COLORS.ws : TITLE_COLORS.pre_ws;
+        return (
+          <span
+            key={c.year}
+            className="text-xs font-semibold px-2 py-0.5 rounded"
+            style={won
+              ? { background: color.bg, color: color.text }
+              : { border: `1px solid ${color.bg}`, color: color.bg }
+            }
+            title={won ? `${c.year} ${ws ? "World Series" : "pre-1903 cup / NL pennant"}` : `${c.year} appearance, lost`}
+          >
+            {c.year}
+          </span>
+        );
+      })}
     </>
   );
 }

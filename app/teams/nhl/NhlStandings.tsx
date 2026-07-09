@@ -123,7 +123,50 @@ export default async function NhlStandings() {
           <span>{b.division}</span>
           <span className="text-[10px] normal-case tracking-normal text-[var(--text-dim)]">{b.teams.length} teams</span>
         </h3>
-        <div className="overflow-x-auto">
+        {/* Mobile: one stacked row-card per team instead of a squeezed 6-column table. */}
+        <div className="grid grid-cols-1 gap-1.5 sm:hidden">
+          {b.teams.map(t => {
+            const slug = slugByCanonical.get(t.canonical);
+            const fr = slug ? bySlug.get(slug) : null;
+            const logo = slug ? logoUrlFor(slug) : null;
+            const mono = slug ? monogramFor(slug) : null;
+            const displayShort = fr?.name ?? t.canonical ?? t.display_name;
+            return (
+              <div
+                key={`${t.canonical}-card`}
+                className="rounded-lg border px-2.5 py-2 flex items-center justify-between gap-2"
+                style={{ borderColor: "var(--border)" }}
+              >
+                {slug ? (
+                  <Link href={`/teams/nhl/${slug}`} className="flex items-center gap-1.5 min-w-0 hover:text-[var(--accent)] transition-colors">
+                    {logo ? (
+                      /* eslint-disable-next-line @next/next/no-img-element */
+                      <img src={logo} alt="" className="w-5 h-5 flex-shrink-0 object-contain" loading="lazy" decoding="async" />
+                    ) : (
+                      <span
+                        className="inline-grid place-items-center rounded-full flex-shrink-0"
+                        style={{ background: mono?.bg, color: mono?.fg, width: 20, height: 20, fontSize: 8, fontWeight: 700 }}
+                        aria-hidden
+                      >
+                        {mono?.mono}
+                      </span>
+                    )}
+                    <span className="truncate text-xs">{displayShort}</span>
+                  </Link>
+                ) : (
+                  <span className="text-[var(--text-dim)] text-xs truncate">{displayShort}</span>
+                )}
+                <div className="flex items-center gap-2.5 text-[10px] tabular-nums flex-shrink-0">
+                  <span className="text-[var(--text-muted)]">{t.games_played} GP</span>
+                  <span className="text-[var(--text-muted)]">{t.wins}-{t.losses}-{t.ot_losses}</span>
+                  <span className="font-semibold text-xs">{t.points} Pts</span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="overflow-x-auto hidden sm:block">
         <table className="w-full text-xs tabular-nums">
           <thead className="text-[var(--text-muted)]">
             <tr className="border-b" style={{ borderColor: "var(--border)" }}>

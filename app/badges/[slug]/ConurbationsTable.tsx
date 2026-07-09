@@ -199,6 +199,132 @@ function ConurbationRowView({
   );
 }
 
+// Mobile card equivalent of ConurbationRowView — same fields and the same
+// map-toggle state, stacked instead of a wide table row.
+function ConurbationCardView({
+  row,
+  position,
+  isOpen,
+  onToggle,
+}: {
+  row: EnrichedConurbationRow;
+  position: number;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
+  const tier = computeTier(row.score);
+  const rankLabel =
+    row.tier === 'D' ? `M#${row.rank}` : `#${position}`;
+
+  return (
+    <div className="p-3" style={{ borderBottom: '1px solid var(--border)' }}>
+      <div className="flex items-start justify-between gap-2">
+        <div className="min-w-0">
+          <span
+            className="text-[10px] text-[var(--text-dim)] mr-1.5"
+            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+          >
+            {rankLabel}
+          </span>
+          <Link
+            href={`/rankings/${row.slug}`}
+            className="font-semibold hover:text-[var(--accent)]"
+          >
+            {row.name}
+          </Link>
+          <span className="text-xs text-[var(--text-muted)] ml-1.5">
+            {(row.sovereignSlug ?? row.countrySlug) ? (
+              <Link
+                href={`/countries/${row.sovereignSlug ?? row.countrySlug}`}
+                className="hover:text-[var(--accent)]"
+              >
+                {row.country}
+              </Link>
+            ) : (
+              row.country
+            )}
+          </span>
+        </div>
+        <div
+          className="text-right flex-shrink-0 font-bold"
+          style={{ fontFamily: "'JetBrains Mono', monospace", color: 'var(--accent)' }}
+        >
+          {formatContext(row.contextValue)}
+        </div>
+      </div>
+      {row.cluster?.componentMetro ? (
+        <div className="text-xs text-[var(--text-dim)] mt-0.5">
+          <span>anchor: </span>
+          <Link
+            href={`/rankings/${row.cluster.componentMetro.slug}`}
+            className="hover:text-[var(--accent)] underline-offset-2"
+          >
+            {row.cluster.componentMetro.name}
+          </Link>
+          <span> (#{row.cluster.componentMetro.rank})</span>
+        </div>
+      ) : null}
+      {row.cluster && row.cluster.otherSlugs.length > 0 ? (
+        <div className="text-xs text-[var(--text-muted)] mt-0.5">
+          <span aria-hidden="true">↔ </span>
+          {row.cluster.otherSlugs.map((s, i) => (
+            <span key={s}>
+              <Link href={`/rankings/${s}`} className="hover:text-[var(--accent)]">
+                {row.cluster!.otherNames[i] ?? s}
+              </Link>
+              {i < row.cluster!.otherSlugs.length - 1 ? <span>, </span> : null}
+            </span>
+          ))}
+          <span className="text-[var(--text-dim)]">
+            {' '}({row.cluster.size} metros, {row.cluster.diameterKm.toFixed(0)} km, {formatPop(row.cluster.populationSum)} pop)
+          </span>
+        </div>
+      ) : row.cluster && row.cluster.otherNames.length > 0 ? (
+        <div className="text-xs text-[var(--text-muted)] mt-0.5">
+          <span aria-hidden="true">↔ </span>
+          <span>{row.cluster.otherNames.join(', ')}</span>
+          <span className="text-[var(--text-dim)]">
+            {' '}({row.cluster.size} areas, {formatPop(row.cluster.populationSum)} pop)
+          </span>
+        </div>
+      ) : null}
+      <div className="mt-1.5 flex items-center justify-between gap-2 text-xs">
+        <Link
+          href={`/methodology${tierAnchor(row.score)}`}
+          className="hover:text-[var(--accent)] text-[var(--text-muted)]"
+        >
+          {tier.name}
+        </Link>
+        {hasMappableMembers(row) ? (
+          <button
+            type="button"
+            onClick={onToggle}
+            className="px-2 py-1 rounded border hover:border-[var(--accent)] hover:text-[var(--accent)] transition-colors"
+            style={{
+              borderColor: 'var(--border)',
+              color: 'var(--text-muted)',
+              fontFamily: "'JetBrains Mono', monospace",
+            }}
+            aria-expanded={isOpen}
+          >
+            {isOpen ? 'Hide map' : 'Show map'}
+          </button>
+        ) : null}
+      </div>
+      {isOpen && hasMappableMembers(row) ? (
+        <div className="mt-2">
+          <MetroMap
+            points={row.members
+              .filter((m) => m.lat !== 0 || m.lon !== 0)
+              .map((m) => ({ slug: m.slug, name: m.name, lat: m.lat, lon: m.lon }))}
+            height={280}
+          />
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
 // A cluster is mappable if it has 2+ members with non-zero coordinates.
 // Single-metro override rows render with one workbook member and are
 // excluded; the map of a single dot has no editorial value.
@@ -382,8 +508,27 @@ export default function ConurbationsTable({
                 {t.description}
               </p>
             </header>
+            {/* Mobile: stacked cards instead of a 4-column table */}
             <div
-              className="border rounded-lg overflow-x-auto"
+              className="border rounded-lg overflow-hidden sm:hidden"
+              style={{
+                backgroundColor: 'var(--bg-card)',
+                borderColor: 'var(--border)',
+              }}
+            >
+              {group.map((r) => (
+                <ConurbationCardView
+                  key={`${r.slug}-card`}
+                  row={r}
+                  position={positionBySlug.get(r.slug) ?? r.rank}
+                  isOpen={openSlug === r.slug}
+                  onToggle={() => setOpenSlug(openSlug === r.slug ? null : r.slug)}
+                />
+              ))}
+            </div>
+
+            <div
+              className="border rounded-lg overflow-x-auto hidden sm:block"
               style={{
                 backgroundColor: 'var(--bg-card)',
                 borderColor: 'var(--border)',

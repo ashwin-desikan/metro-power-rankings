@@ -58,33 +58,62 @@ export default function SenatorsTable({ rows }: { rows: SenRow[] }) {
     );
   }
   return (
-    <div className="rounded-xl border overflow-x-auto" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
-      <table className="w-full text-left text-sm">
-        <thead>
-          <tr className="border-b text-xs uppercase tracking-wider text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }}>
-            <Th k="state" label="State" />
-            <Th k="name" label="Senator" />
-            <Th k="party" label="Party" />
-            <Th k="cls" label="Class" right hideOnMobile />
-            <Th k="score" label="Metro score" right />
-          </tr>
-        </thead>
-        <tbody>
-          {sorted.map((r, i) => (
-            <tr key={`${r.stateSlug}-${r.name}-${i}`} className="border-b last:border-0" style={{ borderColor: "var(--border)" }}>
-              <td className="py-2 px-4">
-                <Link href={`/states/${r.stateSlug}`} className="text-[var(--text)] hover:text-[var(--accent)]">
+    <div>
+      {/* Mobile: stacked cards instead of hiding the Class column */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {sorted.map((r, i) => (
+          <div key={`${r.stateSlug}-${r.name}-${i}-card`} className="rounded-lg border p-3" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+            <div className="flex items-start justify-between gap-2">
+              <div className="min-w-0">
+                <div className="font-medium text-sm text-[var(--text)]">{r.name}</div>
+                <Link href={`/states/${r.stateSlug}`} className="text-xs text-[var(--text-muted)] hover:text-[var(--accent)]">
                   {r.state}
                 </Link>
-              </td>
-              <td className="py-2 px-4 font-medium text-[var(--text)]">{r.name}</td>
-              <td className={`py-2 px-4 font-medium ${partyClass(r.party)}`}>{r.party}</td>
-              <td className="py-2 px-4 text-right tabular-nums text-[var(--text-muted)] hidden sm:table-cell">{r.cls}</td>
-              <td className="py-2 px-4 text-right tabular-nums text-[var(--text)]">{r.score > 0 ? r.score.toFixed(1) : "—"}</td>
+              </div>
+              <span className={`text-xs font-medium flex-shrink-0 ${partyClass(r.party)}`}>{r.party}</span>
+            </div>
+            <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Class</div>
+                <div className="tabular-nums text-[var(--text-muted)]">{r.cls}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Metro score</div>
+                <div className="tabular-nums text-[var(--text)] font-semibold">{r.score > 0 ? r.score.toFixed(1) : "—"}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+        <table className="w-full text-left text-sm">
+          <thead>
+            <tr className="border-b text-xs uppercase tracking-wider text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }}>
+              <Th k="state" label="State" />
+              <Th k="name" label="Senator" />
+              <Th k="party" label="Party" />
+              <Th k="cls" label="Class" right />
+              <Th k="score" label="Metro score" right />
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {sorted.map((r, i) => (
+              <tr key={`${r.stateSlug}-${r.name}-${i}`} className="border-b last:border-0" style={{ borderColor: "var(--border)" }}>
+                <td className="py-2 px-4">
+                  <Link href={`/states/${r.stateSlug}`} className="text-[var(--text)] hover:text-[var(--accent)]">
+                    {r.state}
+                  </Link>
+                </td>
+                <td className="py-2 px-4 font-medium text-[var(--text)]">{r.name}</td>
+                <td className={`py-2 px-4 font-medium ${partyClass(r.party)}`}>{r.party}</td>
+                <td className="py-2 px-4 text-right tabular-nums text-[var(--text-muted)]">{r.cls}</td>
+                <td className="py-2 px-4 text-right tabular-nums text-[var(--text)]">{r.score > 0 ? r.score.toFixed(1) : "—"}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

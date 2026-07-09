@@ -114,7 +114,92 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
         ))}
       </div>
 
-      <div className="max-h-[70vh] overflow-auto">
+      {/* Mobile: one card per game instead of a 5-column table whose "Match"
+          cell already packs two teams, scores, arena, and a watch button —
+          far too dense to read after a sideways scroll on a phone. Same
+          `rows` (decade-filtered) data as the desktop table below. */}
+      <div className="max-h-[70vh] overflow-y-auto sm:hidden">
+        {rows.map((g, i) => (
+          <div
+            key={`${g.year}-${g.winner_canonical}-${g.loser_canonical}-${i}-card`}
+            className="border-t py-3 first:border-t-0"
+            style={{ borderColor: "var(--border)" }}
+          >
+            <div className="flex items-start justify-between gap-2">
+              <div className="text-xs text-[var(--text-muted)] min-w-0">
+                <span className="tabular-nums font-semibold text-[var(--text)]">#{i + 1}</span>
+                <span className="mx-1.5">·</span>
+                <span className="whitespace-nowrap">{g.date ?? g.year}</span>
+              </div>
+              <div className="text-right flex-shrink-0">
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Game Score</div>
+                <div className="text-sm font-semibold tabular-nums">
+                  {g.game_score != null ? g.game_score.toFixed(3) : "—"}
+                </div>
+              </div>
+            </div>
+            <div className="text-[11px] text-[var(--text-muted)] mt-0.5">
+              {g.year}
+              {g.round ? ` · ${roundLabel(g.round, g.game_num)}` : ""}
+              {otLabel(g.ot, g.ot_count)}
+            </div>
+            <div className="mt-2 text-sm leading-snug">
+              <div className="flex items-center gap-1.5">
+                <CrestIcon name={`${g.winner_city} ${g.winner_team}`} size={16} className="flex-shrink-0" />
+                {g.winner_slug ? (
+                  <Link
+                    href={`/teams/nba/${g.winner_slug}`}
+                    className="font-semibold hover:text-[var(--accent)] hover:underline decoration-dotted underline-offset-2 truncate"
+                  >
+                    {g.winner_city} {g.winner_team}
+                  </Link>
+                ) : (
+                  <span className="font-semibold truncate">{g.winner_city} {g.winner_team}</span>
+                )}
+                <span className="ml-auto flex-shrink-0 tabular-nums font-semibold" style={{ color: "var(--accent)" }}>
+                  {g.winner_pts}
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5 mt-1">
+                <CrestIcon name={`${g.loser_city} ${g.loser_team}`} size={16} className="flex-shrink-0" />
+                {g.loser_slug ? (
+                  <Link
+                    href={`/teams/nba/${g.loser_slug}`}
+                    className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline decoration-dotted underline-offset-2 truncate"
+                  >
+                    {g.loser_city} {g.loser_team}
+                  </Link>
+                ) : (
+                  <span className="text-[var(--text-muted)] truncate">{g.loser_city} {g.loser_team}</span>
+                )}
+                <span className="ml-auto flex-shrink-0 tabular-nums text-[var(--text-muted)]">{g.loser_pts}</span>
+              </div>
+            </div>
+            {(g.arena_as_of || g.arena_canonical) && (
+              <div
+                className="text-[10px] mt-1.5 font-medium tracking-wide"
+                style={{ color: "var(--text-dim)", fontFamily: "'JetBrains Mono', monospace" }}
+              >
+                {g.arena_as_of || g.arena_canonical}
+                {g.arena_metro ? (
+                  <span className="ml-1 opacity-80">
+                    · {g.arena_metro}
+                    {g.arena_state ? `, ${abbrevState(g.arena_state)}` : ""}
+                  </span>
+                ) : null}
+              </div>
+            )}
+            {g.video ? <div className="mt-1.5"><WatchButton video={g.video} /></div> : null}
+          </div>
+        ))}
+        {rows.length === 0 && (
+          <p className="py-6 text-center text-[var(--text-dim)] italic text-sm">
+            No games recorded for this period.
+          </p>
+        )}
+      </div>
+
+      <div className="hidden sm:block max-h-[70vh] overflow-auto">
         <table className="w-full text-xs tabular-nums [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:z-10 [&_thead_th]:bg-[var(--bg)]">
           <thead>
             <tr className="text-[var(--text-muted)]">

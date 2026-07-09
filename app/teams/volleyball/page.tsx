@@ -50,28 +50,54 @@ export default function VolleyballHubPage() {
   };
 
   const podiumTable = (rows: { year: number; gold: string; silver: string; bronze: string }[]) => (
-    <div className="rounded-xl border overflow-x-auto max-h-[460px] overflow-y-auto" style={card}>
-      <table className="w-full text-sm min-w-[520px]">
-        <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
-          <tr className="text-left text-xs text-[var(--text-muted)]">
-            <th className="py-2 px-3 font-medium">Year</th>
-            <th className="py-2 px-3 font-medium" style={{ color: GOLD }}>Gold</th>
-            <th className="py-2 px-3 font-medium">Silver</th>
-            <th className="py-2 px-3 font-medium">Bronze</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((p) => (
-            <tr key={p.year} className="border-t" style={{ borderColor: "var(--border)" }}>
-              <td className="py-1.5 px-3 tabular-nums" style={mono}>{p.year}</td>
-              <td className="py-1.5 px-3 font-semibold" style={{ color: GOLD }}>{teamLink(p.gold)}</td>
-              <td className="py-1.5 px-3">{teamLink(p.silver)}</td>
-              <td className="py-1.5 px-3">{teamLink(p.bronze)}</td>
+    <>
+      {/* Mobile: one card per edition instead of a 4-column table that would
+          force sideways scrolling. Same rows, card presentation only. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {rows.map((p) => (
+          <div key={`${p.year}-card`} className="rounded-lg border p-3" style={card}>
+            <div className="text-sm font-semibold tabular-nums mb-2" style={mono}>{p.year}</div>
+            <div className="grid grid-cols-1 gap-y-1.5 text-xs">
+              <div className="flex items-center justify-between gap-2">
+                <span className="text-[10px] uppercase tracking-wide flex-shrink-0" style={{ color: GOLD }}>Gold</span>
+                <span className="font-semibold text-right" style={{ color: GOLD }}>{teamLink(p.gold)}</span>
+              </div>
+              <div className="flex items-center justify-between gap-2">
+                <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Silver</span>
+                <span className="text-right">{teamLink(p.silver)}</span>
+              </div>
+              <div className="flex items-center justify-between gap-2">
+                <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Bronze</span>
+                <span className="text-right">{teamLink(p.bronze)}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="rounded-xl border overflow-x-auto max-h-[460px] overflow-y-auto hidden sm:block" style={card}>
+        <table className="w-full text-sm min-w-[520px]">
+          <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
+            <tr className="text-left text-xs text-[var(--text-muted)]">
+              <th className="py-2 px-3 font-medium">Year</th>
+              <th className="py-2 px-3 font-medium" style={{ color: GOLD }}>Gold</th>
+              <th className="py-2 px-3 font-medium">Silver</th>
+              <th className="py-2 px-3 font-medium">Bronze</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {rows.map((p) => (
+              <tr key={p.year} className="border-t" style={{ borderColor: "var(--border)" }}>
+                <td className="py-1.5 px-3 tabular-nums" style={mono}>{p.year}</td>
+                <td className="py-1.5 px-3 font-semibold" style={{ color: GOLD }}>{teamLink(p.gold)}</td>
+                <td className="py-1.5 px-3">{teamLink(p.silver)}</td>
+                <td className="py-1.5 px-3">{teamLink(p.bronze)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 
   return (
@@ -141,7 +167,39 @@ export default function VolleyballHubPage() {
 
       <section className="mb-10">
         <h2 id="nations" className="text-lg font-semibold mb-3">Nations</h2>
-        <div className="rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto" style={card}>
+
+        {/* Mobile: one card per nation instead of a 5-column table. Same
+            `nations` array, card presentation only. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {nations.map((t) => (
+            <div key={`${t.slug}-card`} className="rounded-lg border p-3" style={card}>
+              <div className="flex items-center gap-1.5 font-medium text-sm mb-2">
+                {flagCdnUrl(t.slug) ? <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" loading="lazy" decoding="async" /> : null}
+                <Link href={`/teams/volleyball/${t.slug}`} className="hover:text-[var(--accent)]">{t.name}</Link>
+              </div>
+              <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide" style={{ color: GOLD }}>Oly Gold</div>
+                  <div className="tabular-nums font-semibold" style={{ ...mono, color: t.oly_gold > 0 ? GOLD : "var(--text-dim)" }}>{t.oly_gold}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Oly Medals</div>
+                  <div className="tabular-nums" style={mono}>{t.oly_medals}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide" style={{ color: GOLD }}>Worlds Gold</div>
+                  <div className="tabular-nums" style={mono}>{t.worlds_gold}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Worlds Medals</div>
+                  <div className="tabular-nums" style={mono}>{t.worlds_medals}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[620px]">
             <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
               <tr className="text-left text-xs text-[var(--text-muted)]">

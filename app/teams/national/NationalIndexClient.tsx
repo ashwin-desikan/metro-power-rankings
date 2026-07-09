@@ -75,7 +75,7 @@ function SortableTh({
       <button
         type="button"
         onClick={onClick}
-        className="inline-flex flex-col items-end gap-0.5 hover:text-[var(--accent)] transition"
+        className="inline-flex flex-col items-end gap-0.5 py-1.5 hover:text-[var(--accent)] transition"
         style={{
           color: active ? "var(--accent)" : "inherit",
           fontWeight: "inherit",
@@ -260,7 +260,96 @@ export default function NationalIndexClient({ teams, snapshots }: Props) {
       </section>
 
       <section>
-        <div className="overflow-x-auto">
+        {/* Mobile: one card per national team instead of a 6-column table.
+            Same `ranked` array (filters + sort state above) drives both. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {ranked.map((t) => {
+            const flagUrl = flagCdnUrl(t.slug);
+            return (
+              <div
+                key={t.slug}
+                className="rounded-lg border p-3"
+                style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <div className="leading-tight flex items-center gap-1.5 flex-wrap font-medium text-sm min-w-0">
+                    <span
+                      className="inline-block w-2 h-2 rounded-full flex-shrink-0"
+                      style={{ background: CONTINENT_COLORS[t.continent] ?? "#525252" }}
+                      aria-hidden
+                    />
+                    {flagUrl && (
+                      <img src={flagUrl} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" loading="lazy" decoding="async" />
+                    )}
+                    <Link href={`/teams/national/${t.slug}`} className="hover:text-[var(--accent)] hover:underline truncate">
+                      {displayNameForTeam(t.slug, t.cur_name)}
+                    </Link>
+                    {!t.active && (
+                      <span
+                        className="inline-block rounded px-1.5 py-0.5 text-[9px] uppercase tracking-wide font-semibold flex-shrink-0"
+                        style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-muted)" }}
+                      >
+                        Defunct
+                      </span>
+                    )}
+                  </div>
+                </div>
+                {t.federation && (
+                  <div className="text-[11px] text-[var(--text-dim)] mb-2">{t.federation}</div>
+                )}
+                <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs mt-2">
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">ELO rank</div>
+                    <div className="tabular-nums font-semibold">{t.elo_rank ?? <span className="text-[var(--text-dim)] font-normal">—</span>}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">FIFA rank</div>
+                    <div className="tabular-nums">{t.fifa_rank ?? <span className="text-[var(--text-dim)]">—</span>}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Trophies</div>
+                    <div className="tabular-nums">
+                      {t.trophies > 0 ? (
+                        <span>
+                          {t.trophies}
+                          {t.last_trophy && <span className="text-[var(--text-muted)]"> ({t.last_trophy})</span>}
+                        </span>
+                      ) : (
+                        <span className="text-[var(--text-dim)]">—</span>
+                      )}
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Major trophies</div>
+                    <div className="tabular-nums">
+                      {t.major_trophies > 0 ? (
+                        <span>
+                          {t.major_trophies}
+                          {t.last_major_trophy && <span className="text-[var(--text-muted)]"> ({t.last_major_trophy})</span>}
+                        </span>
+                      ) : (
+                        <span className="text-[var(--text-dim)]">—</span>
+                      )}
+                    </div>
+                  </div>
+                  {t.has_country_page && t.country_page_slug && (
+                    <div className="col-span-2">
+                      <Link
+                        href={`/countries/${t.country_page_slug}`}
+                        className="text-[var(--accent)] hover:underline"
+                        title={`Open ${t.cur_name} country page`}
+                      >
+                        /countries →
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="overflow-x-auto hidden sm:block">
           <table className="w-full text-sm">
             <thead>
               <tr

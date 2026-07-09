@@ -43,7 +43,33 @@ export default function BarbariansHistory({ data }: { data: BarbariansData }) {
         </div>
       )}
 
-      <div className="rounded-xl border overflow-x-auto max-h-[460px] overflow-y-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+      {/* Mobile: stacked cards, one per match, instead of a 5-column table. */}
+      <div className="sm:hidden max-h-[460px] overflow-y-auto rounded-xl border p-2" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+        <div className="grid grid-cols-1 gap-2">
+          {data.matches.map((m, i) => (
+            <div
+              key={`${m.date}-${m.opponent}-${i}-card`}
+              className="rounded-lg border p-3"
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-1.5 min-w-0 text-sm font-medium">
+                  <Flag opponent={m.opponent} />
+                  <span className="truncate">{m.opponent}</span>
+                </div>
+                <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0" style={mono}>{m.year ?? ""}</span>
+              </div>
+              <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
+                <span className="tabular-nums font-semibold" style={mono}>{m.for}-{m.against}</span>
+                <span className="font-medium" style={{ color: rColor(m.result) }}>{rLabel(m.result)}</span>
+                {m.city && <span className="text-[var(--text-muted)] truncate">{m.city}</span>}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="hidden sm:block rounded-xl border overflow-x-auto max-h-[460px] overflow-y-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
         <table className="w-full text-sm min-w-[480px]">
           <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
             <tr className="text-left text-xs text-[var(--text-muted)]">

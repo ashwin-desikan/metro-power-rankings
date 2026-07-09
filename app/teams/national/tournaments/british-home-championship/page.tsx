@@ -148,7 +148,41 @@ export default function BritishHomeChampionshipPage() {
       {/* British Home Championship table */}
       <section className="mb-10">
         <h2 className="text-lg font-semibold mb-3">British Home Championship (1884–1984)</h2>
-        <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
+
+        {/* Mobile: one card per edition instead of a 5-column table that
+            forces sideways scrolling at phone widths. Same `bhc` data as
+            the desktop table below - only the presentation differs. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {[...bhc].reverse().map((e) => (
+            <div
+              key={e.year}
+              className="rounded-lg border p-3"
+              style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="tabular-nums font-semibold text-sm mb-2">{e.year}</div>
+              <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">1st</div>
+                  <TeamCell slugs={e.first} />
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">2nd</div>
+                  <TeamCell slugs={e.second} />
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">3rd</div>
+                  <TeamCell slugs={e.third} />
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">4th</div>
+                  <TeamCell slugs={e.fourth} />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="overflow-x-auto rounded-xl border hidden sm:block" style={{ borderColor: "var(--border)" }}>
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b text-left text-xs text-[var(--text-muted)] uppercase tracking-wider" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
@@ -188,7 +222,35 @@ export default function BritishHomeChampionshipPage() {
           <p className="text-sm text-[var(--text-muted)] mb-3">
             Small invitational replacing the BHC. England and Scotland were joined by rotating guests.
           </p>
-          <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
+
+          {/* Mobile: one card per edition instead of a 4-column table. */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {[...rous].reverse().map((e) => (
+              <div
+                key={e.year}
+                className="rounded-lg border p-3"
+                style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+              >
+                <div className="tabular-nums font-semibold text-sm mb-2">{e.year}</div>
+                <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">1st</div>
+                    <TeamCell slugs={e.first} />
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">2nd</div>
+                    <TeamCell slugs={e.second} />
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">3rd</div>
+                    <TeamCell slugs={e.third} />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="overflow-x-auto rounded-xl border hidden sm:block" style={{ borderColor: "var(--border)" }}>
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b text-left text-xs text-[var(--text-muted)] uppercase tracking-wider" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>

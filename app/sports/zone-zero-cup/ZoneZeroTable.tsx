@@ -314,7 +314,84 @@ export default function ZoneZeroTable({
         § currently suspended from international competition; ‡ defunct or composite state.
       </p>
 
-      <div className="rounded-xl border overflow-x-auto" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
+      {/* Mobile: stacked cards, same sorted/filtered rows and expand state as the desktop table */}
+      <div className="rounded-xl border overflow-hidden sm:hidden" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
+        {sorted.map((r, i) => {
+          const rk = sportMode ? sportPos.get(r.slug) : rowRank(r, view);
+          const mt = sportMode ? r.sportMerit[sport] : rowMerit(r, view);
+          const wr = sportMode ? r.sportRank[sport] : r.bestRank;
+          const wrSport = sportMode ? sport : r.bestRankSport;
+          const isOpen = expanded.has(r.slug);
+          const strongest = !sportMode
+            ? [...r.topSports, ...r.nationalSports].sort((a, b) => b.pts - a.pts).slice(0, 4).map((s) => s.sport).join(", ")
+            : "";
+          return (
+            <div key={`${r.slug}-card`} className="border-t first:border-t-0" style={{ borderColor: "var(--border)" }}>
+              <div className="flex items-start gap-2 px-3 py-2.5">
+                <button
+                  type="button"
+                  onClick={() => toggleExpand(r.slug)}
+                  aria-expanded={isOpen}
+                  aria-label={`${isOpen ? "Hide" : "Show"} ${r.name} sport breakdown`}
+                  className="leading-none text-[var(--text-dim)] hover:text-[var(--accent)] tabular-nums flex-shrink-0 mt-0.5 py-1"
+                  style={mono}
+                >
+                  {isOpen ? "−" : "+"}
+                </button>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="min-w-0">
+                      <div className="font-medium text-sm leading-tight">
+                        {flagCdnUrl(r.slug) ? <img src={flagCdnUrl(r.slug)!} alt="" width={20} height={15} className="inline-block rounded-[2px] mr-1.5 align-[-2px]" style={{ objectFit: "cover" }} loading="lazy" decoding="async" /> : null}
+                        {r.countrySlug ? (
+                          <Link href={`/countries/${r.countrySlug}`} className="hover:text-[var(--accent)] hover:underline">
+                            {r.name}
+                          </Link>
+                        ) : (
+                          <span>{r.name}</span>
+                        )}
+                        {r.suspended && (
+                          <span title="Currently suspended from international competition" className="ml-1 cursor-default text-[var(--text-dim)]">§</span>
+                        )}
+                        {r.defunct && (
+                          <span title="Defunct or composite state" className="ml-1 cursor-default text-[var(--text-dim)]">‡</span>
+                        )}
+                      </div>
+                      {r.continent && <div className="text-[11px] text-[var(--text-dim)]">{r.continent}</div>}
+                    </div>
+                    <div className="text-xs tabular-nums text-[var(--text-dim)] flex-shrink-0" style={mono}>#{rk ?? i + 1}</div>
+                  </div>
+                  <div className="mt-1.5 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-xs">
+                    <span className="tabular-nums font-semibold" style={{ ...mono, color: GOLD }}>
+                      {meritLabel}: {mt == null ? "—" : view === "percapita" && !sportMode ? mt.toFixed(2) : view === "pergdp" && !sportMode ? mt.toFixed(1) : mt.toFixed(sportMode ? 1 : 0)}
+                    </span>
+                    <span className="text-[var(--text-muted)]">
+                      {wr ? (
+                        <>
+                          <span className="tabular-nums" style={mono}>#{wr}</span>
+                          {!sportMode && wrSport ? <span className="text-[11px] text-[var(--text-dim)]"> {wrSport}</span> : null}
+                        </>
+                      ) : (
+                        <span className="text-[var(--text-dim)]">—</span>
+                      )}
+                    </span>
+                  </div>
+                  {strongest && (
+                    <div className="mt-1 text-[11px] text-[var(--text-muted)]">{strongest}</div>
+                  )}
+                </div>
+              </div>
+              {isOpen && (
+                <div className="px-3 pb-3 pt-1" style={{ backgroundColor: "var(--bg)" }}>
+                  <Breakdown row={r} cap={CAP} />
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
         <table className="w-full text-sm">
           <thead>
             <tr className="text-xs">

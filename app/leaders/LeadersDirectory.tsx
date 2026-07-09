@@ -478,96 +478,170 @@ export default function LeadersDirectory({
       </div>
 
       {/* Table */}
-      <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
-        {mode === "alltime" ? (
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-[var(--border)]" style={{ backgroundColor: "var(--bg-card)" }}>
-                <th className="px-2 sm:px-4 py-3 text-left font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" onClick={() => toggleSort("name")}>Country / Org{arrow("name")}</th>
-                <th className="px-2 sm:px-4 py-3 text-left font-semibold text-[var(--text-muted)]">Leader</th>
-                <th className="hidden sm:table-cell px-4 py-3 text-left font-semibold text-[var(--text-muted)]">Role</th>
-                <th className="px-2 sm:px-4 py-3 text-left font-semibold text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Start</th>
-                <th className="hidden md:table-cell px-4 py-3 text-left font-semibold text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>End</th>
-              </tr>
-            </thead>
-            <tbody>
-              {allTimeRows.map((x, i) => (
-                <tr key={`${x.e.type}:${x.e.slug}:${i}`} className="border-b border-[var(--border)] hover:bg-[var(--bg-card-hover)] transition-colors">
-                  <td className="px-2 sm:px-4 py-2">
-                    <FlagView view={flagFor(x.e, x.en ?? null)} />
-                    {x.e.href ? (
-                      <Link href={x.e.href} className="hover:text-[var(--accent)] transition-colors">{nameAt(x.e, x.en ?? "9999")}</Link>
-                    ) : <span>{nameAt(x.e, x.en ?? "9999")}</span>}
-                    {x.e.yearRange ? <span className="ml-1 text-[10px] text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{x.e.yearRange}</span> : null}
-                  </td>
-                  <td className="px-2 sm:px-4 py-2 text-[var(--text)]">{x.n}<span className="sm:hidden text-xs text-[var(--text-dim)] ml-1">({shortRole(x.r)})</span></td>
-                  <td className="hidden sm:table-cell px-4 py-2 text-[var(--text-muted)] text-xs">{x.r}</td>
-                  <td className="px-2 sm:px-4 py-2 text-xs text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{x.s ?? ""}</td>
-                  <td className="hidden md:table-cell px-4 py-2 text-xs text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{x.en ?? "present"}</td>
+      {mode === "alltime" ? (
+        <>
+          {/* Mobile: stacked cards */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {allTimeRows.map((x, i) => (
+              <div key={`${x.e.type}:${x.e.slug}:${i}-card`} className="rounded-lg border p-3" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+                <div className="flex items-center gap-1.5 flex-wrap">
+                  <FlagView view={flagFor(x.e, x.en ?? null)} />
+                  {x.e.href ? (
+                    <Link href={x.e.href} className="font-semibold hover:text-[var(--accent)] transition-colors">{nameAt(x.e, x.en ?? "9999")}</Link>
+                  ) : <span className="font-semibold">{nameAt(x.e, x.en ?? "9999")}</span>}
+                  {x.e.yearRange ? <span className="text-[10px] text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{x.e.yearRange}</span> : null}
+                </div>
+                <div className="mt-1 text-sm text-[var(--text)]">
+                  {x.n} <span className="text-xs text-[var(--text-dim)]">({x.r})</span>
+                </div>
+                <div className="mt-1 text-xs text-[var(--text-dim)] tabular-nums" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                  {x.s ?? "—"} – {x.en ?? "present"}
+                </div>
+              </div>
+            ))}
+          </div>
+          {/* Desktop: table */}
+          <div className="hidden sm:block overflow-x-auto rounded-lg border border-[var(--border)]">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-[var(--border)]" style={{ backgroundColor: "var(--bg-card)" }}>
+                  <th className="px-2 sm:px-4 py-3 text-left font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" onClick={() => toggleSort("name")}>Country / Org{arrow("name")}</th>
+                  <th className="px-2 sm:px-4 py-3 text-left font-semibold text-[var(--text-muted)]">Leader</th>
+                  <th className="hidden sm:table-cell px-4 py-3 text-left font-semibold text-[var(--text-muted)]">Role</th>
+                  <th className="px-2 sm:px-4 py-3 text-left font-semibold text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Start</th>
+                  <th className="hidden md:table-cell px-4 py-3 text-left font-semibold text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>End</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        ) : (
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-[var(--border)]" style={{ backgroundColor: "var(--bg-card)" }}>
-                <th className="px-2 sm:px-4 py-3 text-left font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" onClick={() => toggleSort("name")}>Country / Org{arrow("name")}</th>
-                <th className="hidden md:table-cell px-4 py-3 text-left font-semibold text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Region</th>
-                <th className="px-2 sm:px-4 py-3 text-right font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }} onClick={() => toggleSort("power")} title={relYear ? `Share of world power, ${relYear}` : "Power ranking available 1500 onward"}>Power{arrow("power")}</th>
-                {mode === "current" && (
-                  <th className="hidden sm:table-cell px-2 sm:px-4 py-3 text-right font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }} onClick={() => toggleSort("score")} title="Metro-based country score">Score{arrow("score")}</th>
-                )}
-                <th className="px-2 sm:px-4 py-3 text-left font-semibold text-[var(--text-muted)]">Leader</th>
-                <th className="hidden sm:table-cell px-4 py-3 text-left font-semibold text-[var(--text-muted)]">Role</th>
-                <th className="hidden lg:table-cell px-4 py-3 text-left font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }} onClick={() => toggleSort("since")}>Since{arrow("since")}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {entityRows.map(({ e, r }) => {
-                const primaries = mode === "asof" ? (r?.primaries ?? []) : (e.current ? [{ name: e.current.name, role: e.current.role, start: e.current.since ?? null }] : []);
-                const seconds = mode === "asof" ? (r?.seconds ?? []) : (e.current?.second ? [{ name: e.current.second.name, role: e.current.second.role }] : []);
-                const sinceVal = primaries[0]?.start ?? "";
-                const displayName = mode === "asof" ? nameAt(e, midMonth) : e.name;
-                return (
-                  <tr key={`${e.type}:${e.slug}`} className="border-b border-[var(--border)] hover:bg-[var(--bg-card-hover)] transition-colors">
-                    <td className="px-2 sm:px-4 py-3">
+              </thead>
+              <tbody>
+                {allTimeRows.map((x, i) => (
+                  <tr key={`${x.e.type}:${x.e.slug}:${i}`} className="border-b border-[var(--border)] hover:bg-[var(--bg-card-hover)] transition-colors">
+                    <td className="px-2 sm:px-4 py-2">
+                      <FlagView view={flagFor(x.e, x.en ?? null)} />
+                      {x.e.href ? (
+                        <Link href={x.e.href} className="hover:text-[var(--accent)] transition-colors">{nameAt(x.e, x.en ?? "9999")}</Link>
+                      ) : <span>{nameAt(x.e, x.en ?? "9999")}</span>}
+                      {x.e.yearRange ? <span className="ml-1 text-[10px] text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{x.e.yearRange}</span> : null}
+                    </td>
+                    <td className="px-2 sm:px-4 py-2 text-[var(--text)]">{x.n}<span className="sm:hidden text-xs text-[var(--text-dim)] ml-1">({shortRole(x.r)})</span></td>
+                    <td className="hidden sm:table-cell px-4 py-2 text-[var(--text-muted)] text-xs">{x.r}</td>
+                    <td className="px-2 sm:px-4 py-2 text-xs text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{x.s ?? ""}</td>
+                    <td className="hidden md:table-cell px-4 py-2 text-xs text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{x.en ?? "present"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
+      ) : (
+        <>
+          {/* Mobile: stacked cards */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {entityRows.map(({ e, r }) => {
+              const primaries = mode === "asof" ? (r?.primaries ?? []) : (e.current ? [{ name: e.current.name, role: e.current.role, start: e.current.since ?? null }] : []);
+              const seconds = mode === "asof" ? (r?.seconds ?? []) : (e.current?.second ? [{ name: e.current.second.name, role: e.current.second.role }] : []);
+              const sinceVal = primaries[0]?.start ?? "";
+              const displayName = mode === "asof" ? nameAt(e, midMonth) : e.name;
+              return (
+                <div key={`${e.type}:${e.slug}-card`} className="rounded-lg border p-3" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="min-w-0 flex items-center flex-wrap gap-y-1">
                       <FlagView view={flagFor(e, mode === "asof" ? midMonth : null)} />
                       {e.href ? (
                         <Link href={e.href} className="font-semibold hover:text-[var(--accent)] transition-colors">{displayName}</Link>
                       ) : <span className="font-semibold">{displayName}</span>}
                       {e.yearRange ? <span className="ml-1 text-xs text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{e.yearRange}</span> : null}
-                    </td>
-                    <td className="hidden md:table-cell px-4 py-3 text-[var(--text-muted)] text-xs">{regionLabel(e)}</td>
-                    <td className="px-2 sm:px-4 py-3 text-right font-semibold" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>{fmtPct(powerShare(e.slug))}</td>
-                    {mode === "current" && (
-                      <td className="hidden sm:table-cell px-2 sm:px-4 py-3 text-right font-semibold" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--text-muted)" }}>{fmtScore(e.scoreTotal)}</td>
+                    </div>
+                    <span className="flex-shrink-0 font-semibold tabular-nums" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>{fmtPct(powerShare(e.slug))}</span>
+                  </div>
+                  <div className="mt-1.5">
+                    {primaries.length ? (
+                      <div className="text-sm text-[var(--text)]">
+                        {primaries.map((p, i) => (
+                          <div key={i}>
+                            {p.name}
+                            {(p as Line).currentOnly ? <span className="ml-1 text-[10px] uppercase tracking-wider text-[var(--text-dim)]">now</span> : null}
+                            <span className="text-xs text-[var(--text-dim)] ml-1">({p.role})</span>
+                          </div>
+                        ))}
+                        {seconds.map((s, i) => (
+                          <div key={`s${i}`} className="text-xs text-[var(--text-dim)]">{s.name} ({s.role})</div>
+                        ))}
+                      </div>
+                    ) : <span className="text-sm text-[var(--text-dim)]">—</span>}
+                  </div>
+                  <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[var(--text-muted)]">
+                    {regionLabel(e) && <span>{regionLabel(e)}</span>}
+                    {mode === "current" && e.scoreTotal != null && (
+                      <span style={{ fontFamily: "'JetBrains Mono', monospace" }}>Score {fmtScore(e.scoreTotal)}</span>
                     )}
-                    <td className="px-2 sm:px-4 py-3">
-                      {primaries.length ? (
-                        <span className="text-[var(--text)]">
-                          {primaries.map((p, i) => (
-                            <span key={i} className="block">
-                              {p.name}
-                              {(p as Line).currentOnly ? <span className="ml-1 text-[10px] uppercase tracking-wider text-[var(--text-dim)]">now</span> : null}
-                              <span className="sm:hidden text-xs text-[var(--text-dim)] ml-1">({p.role})</span>
-                            </span>
-                          ))}
-                          {seconds.map((s, i) => (
-                            <span key={`s${i}`} className="block text-xs text-[var(--text-dim)]">{s.name} ({s.role})</span>
-                          ))}
-                        </span>
-                      ) : <span className="text-[var(--text-dim)]">—</span>}
-                    </td>
-                    <td className="hidden sm:table-cell px-4 py-3 text-[var(--text-muted)] text-xs">{primaries.map((p) => p.role).join(", ")}</td>
-                    <td className="hidden lg:table-cell px-4 py-3 text-xs text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{sinceVal}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        )}
-      </div>
+                    {sinceVal && <span className="tabular-nums" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Since {sinceVal}</span>}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          {/* Desktop: table */}
+          <div className="hidden sm:block overflow-x-auto rounded-lg border border-[var(--border)]">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-[var(--border)]" style={{ backgroundColor: "var(--bg-card)" }}>
+                  <th className="px-2 sm:px-4 py-3 text-left font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" onClick={() => toggleSort("name")}>Country / Org{arrow("name")}</th>
+                  <th className="hidden md:table-cell px-4 py-3 text-left font-semibold text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Region</th>
+                  <th className="px-2 sm:px-4 py-3 text-right font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }} onClick={() => toggleSort("power")} title={relYear ? `Share of world power, ${relYear}` : "Power ranking available 1500 onward"}>Power{arrow("power")}</th>
+                  {mode === "current" && (
+                    <th className="hidden sm:table-cell px-2 sm:px-4 py-3 text-right font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }} onClick={() => toggleSort("score")} title="Metro-based country score">Score{arrow("score")}</th>
+                  )}
+                  <th className="px-2 sm:px-4 py-3 text-left font-semibold text-[var(--text-muted)]">Leader</th>
+                  <th className="hidden sm:table-cell px-4 py-3 text-left font-semibold text-[var(--text-muted)]">Role</th>
+                  <th className="hidden lg:table-cell px-4 py-3 text-left font-semibold text-[var(--text-muted)] cursor-pointer hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }} onClick={() => toggleSort("since")}>Since{arrow("since")}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {entityRows.map(({ e, r }) => {
+                  const primaries = mode === "asof" ? (r?.primaries ?? []) : (e.current ? [{ name: e.current.name, role: e.current.role, start: e.current.since ?? null }] : []);
+                  const seconds = mode === "asof" ? (r?.seconds ?? []) : (e.current?.second ? [{ name: e.current.second.name, role: e.current.second.role }] : []);
+                  const sinceVal = primaries[0]?.start ?? "";
+                  const displayName = mode === "asof" ? nameAt(e, midMonth) : e.name;
+                  return (
+                    <tr key={`${e.type}:${e.slug}`} className="border-b border-[var(--border)] hover:bg-[var(--bg-card-hover)] transition-colors">
+                      <td className="px-2 sm:px-4 py-3">
+                        <FlagView view={flagFor(e, mode === "asof" ? midMonth : null)} />
+                        {e.href ? (
+                          <Link href={e.href} className="font-semibold hover:text-[var(--accent)] transition-colors">{displayName}</Link>
+                        ) : <span className="font-semibold">{displayName}</span>}
+                        {e.yearRange ? <span className="ml-1 text-xs text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{e.yearRange}</span> : null}
+                      </td>
+                      <td className="hidden md:table-cell px-4 py-3 text-[var(--text-muted)] text-xs">{regionLabel(e)}</td>
+                      <td className="px-2 sm:px-4 py-3 text-right font-semibold" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>{fmtPct(powerShare(e.slug))}</td>
+                      {mode === "current" && (
+                        <td className="hidden sm:table-cell px-2 sm:px-4 py-3 text-right font-semibold" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--text-muted)" }}>{fmtScore(e.scoreTotal)}</td>
+                      )}
+                      <td className="px-2 sm:px-4 py-3">
+                        {primaries.length ? (
+                          <span className="text-[var(--text)]">
+                            {primaries.map((p, i) => (
+                              <span key={i} className="block">
+                                {p.name}
+                                {(p as Line).currentOnly ? <span className="ml-1 text-[10px] uppercase tracking-wider text-[var(--text-dim)]">now</span> : null}
+                                <span className="sm:hidden text-xs text-[var(--text-dim)] ml-1">({p.role})</span>
+                              </span>
+                            ))}
+                            {seconds.map((s, i) => (
+                              <span key={`s${i}`} className="block text-xs text-[var(--text-dim)]">{s.name} ({s.role})</span>
+                            ))}
+                          </span>
+                        ) : <span className="text-[var(--text-dim)]">—</span>}
+                      </td>
+                      <td className="hidden sm:table-cell px-4 py-3 text-[var(--text-muted)] text-xs">{primaries.map((p) => p.role).join(", ")}</td>
+                      <td className="hidden lg:table-cell px-4 py-3 text-xs text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{sinceVal}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        </>
+      )}
 
       {(mode === "alltime" ? allTimeRows.length : entityRows.length) === 0 ? (
         <div className="text-center py-12 text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>

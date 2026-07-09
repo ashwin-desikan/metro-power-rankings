@@ -40,34 +40,68 @@ function StandingsTable({
 }) {
   if (rows.length === 0) return null;
   return (
-    <div className="rounded-xl border overflow-x-auto" style={card}>
+    <div className="rounded-xl border overflow-hidden" style={card}>
       <div className="px-3 pt-3 pb-1 text-xs font-semibold text-[var(--text-muted)]">{title}</div>
-      <table className="w-full text-sm min-w-[360px]">
-        <thead>
-          <tr className="text-left text-xs text-[var(--text-muted)]">
-            <th className="py-2 px-3 font-medium">#</th>
-            <th className="py-2 px-3 font-medium">Club</th>
-            <th className="py-2 px-2 font-medium text-right">W</th>
-            <th className="py-2 px-2 font-medium text-right">L</th>
-            <th className="py-2 px-2 font-medium text-right">T</th>
-            <th className="py-2 px-2 font-medium text-right">PCT</th>
-            <th className="py-2 px-3 font-medium text-right">GB</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((r) => (
-            <tr key={r.slug ?? r.name} className="border-t" style={{ borderColor: "var(--border)" }}>
-              <td className="py-1.5 px-3 tabular-nums text-[var(--text-dim)]" style={mono}>{r.rank}</td>
-              <td className="py-1.5 px-3 font-medium">{teamLink(r.name)}</td>
-              <td className="py-1.5 px-2 tabular-nums text-right" style={mono}>{r.win}</td>
-              <td className="py-1.5 px-2 tabular-nums text-right" style={mono}>{r.lose}</td>
-              <td className="py-1.5 px-2 tabular-nums text-right" style={mono}>{r.draw}</td>
-              <td className="py-1.5 px-2 tabular-nums text-right" style={mono}>{r.pct}</td>
-              <td className="py-1.5 px-3 tabular-nums text-right text-[var(--text-muted)]" style={mono}>{r.gamesBehind}</td>
+
+      {/* Mobile: one card per club instead of a 7-column table. Same `rows`
+          data as the desktop table below. */}
+      <div className="grid grid-cols-1 gap-2 p-3 sm:hidden">
+        {rows.map((r) => (
+          <div
+            key={(r.slug ?? r.name) + "-card"}
+            className="rounded-lg border p-3"
+            style={{ backgroundColor: "var(--bg)", borderColor: "var(--border)" }}
+          >
+            <div className="flex items-start justify-between gap-2">
+              <div className="font-medium text-sm">{teamLink(r.name)}</div>
+              <span className="text-xs tabular-nums text-[var(--text-dim)] flex-shrink-0" style={mono}>#{r.rank}</span>
+            </div>
+            <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">W–L–T</div>
+                <div className="tabular-nums" style={mono}>{r.win}–{r.lose}–{r.draw}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">PCT</div>
+                <div className="tabular-nums" style={mono}>{r.pct}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">GB</div>
+                <div className="tabular-nums text-[var(--text-muted)]" style={mono}>{r.gamesBehind}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="hidden sm:block overflow-x-auto">
+        <table className="w-full text-sm min-w-[360px]">
+          <thead>
+            <tr className="text-left text-xs text-[var(--text-muted)]">
+              <th className="py-2 px-3 font-medium">#</th>
+              <th className="py-2 px-3 font-medium">Club</th>
+              <th className="py-2 px-2 font-medium text-right">W</th>
+              <th className="py-2 px-2 font-medium text-right">L</th>
+              <th className="py-2 px-2 font-medium text-right">T</th>
+              <th className="py-2 px-2 font-medium text-right">PCT</th>
+              <th className="py-2 px-3 font-medium text-right">GB</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr key={r.slug ?? r.name} className="border-t" style={{ borderColor: "var(--border)" }}>
+                <td className="py-1.5 px-3 tabular-nums text-[var(--text-dim)]" style={mono}>{r.rank}</td>
+                <td className="py-1.5 px-3 font-medium">{teamLink(r.name)}</td>
+                <td className="py-1.5 px-2 tabular-nums text-right" style={mono}>{r.win}</td>
+                <td className="py-1.5 px-2 tabular-nums text-right" style={mono}>{r.lose}</td>
+                <td className="py-1.5 px-2 tabular-nums text-right" style={mono}>{r.draw}</td>
+                <td className="py-1.5 px-2 tabular-nums text-right" style={mono}>{r.pct}</td>
+                <td className="py-1.5 px-3 tabular-nums text-right text-[var(--text-muted)]" style={mono}>{r.gamesBehind}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
@@ -157,7 +191,28 @@ export default async function NpbHubPage() {
           The championship: a best-of-seven between the Central and Pacific pennant winners
           (the Climax Series winners since 2007). {hub.totals.js_editions} editions.
         </p>
-        <div className="rounded-xl border overflow-x-auto max-h-[460px] overflow-y-auto" style={card}>
+        {/* Mobile: one card per Japan Series instead of a 3-column table.
+            Same `hub.japan_series` data as the desktop table below. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[460px] overflow-y-auto pr-0.5">
+          {hub.japan_series.map((s) => (
+            <div
+              key={s.year + "-card"}
+              className="rounded-lg border p-3"
+              style={card}
+            >
+              <div className="flex items-start justify-between gap-2">
+                <div className="font-semibold text-sm">{teamLink(s.champion)}</div>
+                <span className="text-xs tabular-nums text-[var(--text-dim)] flex-shrink-0" style={mono}>{s.year}</span>
+              </div>
+              <div className="mt-2 text-xs">
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Runner-up</div>
+                <div className="text-[var(--text-muted)]">{teamLink(s.runner_up)}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="hidden sm:block rounded-xl border overflow-x-auto max-h-[460px] overflow-y-auto" style={card}>
           <table className="w-full text-sm min-w-[420px]">
             <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
               <tr className="text-left text-xs text-[var(--text-muted)]">
