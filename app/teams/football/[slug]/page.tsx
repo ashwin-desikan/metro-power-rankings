@@ -156,7 +156,7 @@ export default async function FootballClubPage({ params }: Props) {
       </nav>
 
       <header className="mb-6">
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           <TeamCrest name={club.cur_name} size={40} fallback={<ColorBall slug={club.slug} name={club.cur_name} size={40} fontSize={14} />} />
           <h1 className="text-3xl font-semibold tracking-tight">{club.cur_name}</h1>
         <ChampionBadge items={getCurrentChampionships(club.cur_name, "Football")} />

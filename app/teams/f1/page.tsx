@@ -101,7 +101,7 @@ export default async function F1Page() {
       ]} />
 
       {/* Standings */}
-      <div className="flex items-center gap-3">
+      <div className="flex flex-wrap items-center gap-3">
         <SectionHeading id="standings">{standings.season} Standings</SectionHeading>
         <span className="mt-6 text-[10px] px-2 py-0.5 rounded-full font-semibold"
           style={isLive
