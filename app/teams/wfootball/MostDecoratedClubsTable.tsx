@@ -99,6 +99,38 @@ export default function MostDecoratedClubsTable({
       <h2 className="text-base font-semibold">{title}</h2>
       {caption && <p className="mt-1 text-xs text-[var(--text-muted)]">{caption}</p>}
 
+      {/* Mobile sort control: the desktop SortableTh buttons (onClick={() =>
+          onSort(k)}) live only in the table below, hidden below sm, so cards
+          need their own way to drive the same sortKey/sortDir state. */}
+      <div className="mt-4 flex items-center gap-2 mb-3 sm:hidden">
+        <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
+          <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
+          <select
+            value={sortKey}
+            onChange={(e) => onSort(e.target.value as SortKey)}
+            className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+          >
+            <option value="total" disabled>Total (default)</option>
+            <option value="club">Club</option>
+            <option value="country">Country</option>
+            <option value="metro">Metro</option>
+            {columns.map((col) => (
+              <option key={col.field} value={col.field}>{col.label}</option>
+            ))}
+          </select>
+        </label>
+        <button
+          type="button"
+          onClick={() => onSort(sortKey)}
+          aria-label={sortDir === "asc" ? "Sort ascending" : "Sort descending"}
+          className="rounded-lg border px-3 py-2 text-sm flex-shrink-0"
+          style={{ borderColor: "var(--border)", color: "var(--text)" }}
+        >
+          {sortDir === "asc" ? "↑" : "↓"}
+        </button>
+      </div>
+
       {/* Mobile: one stacked card per club instead of a wide, configurable-column
           table that would force sideways scrolling. Same `sorted` data and sort
           state as the desktop table below; every configured stat column is

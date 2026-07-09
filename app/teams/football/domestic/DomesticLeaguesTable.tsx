@@ -129,6 +129,40 @@ export default function DomesticLeaguesTable({
         </p>
       )}
 
+      {/* Mobile sort control: the desktop header cells (onClick={() => sortBy(k)})
+          are hidden along with the table below sm, so cards need their own way
+          to drive the same sortKey/asc state - a Sort-by select (reuses sortBy,
+          which already sets each column's sensible default direction) plus a
+          direction flip button. */}
+      <div className="flex items-center gap-2 mb-3 sm:hidden">
+        <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
+          <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
+          <select
+            value={sortKey}
+            onChange={(e) => sortBy(e.target.value as SortKey)}
+            className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+          >
+            <option value="name">Club</option>
+            <option value="country">Country</option>
+            <option value="titles">Titles</option>
+            <option value="majorTrophies">Major</option>
+            <option value="cups">Cups</option>
+            <option value="contTitles">Cont.</option>
+            <option value="clTitles">CL</option>
+          </select>
+        </label>
+        <button
+          type="button"
+          onClick={() => sortBy(sortKey)}
+          aria-label={asc ? "Sort ascending" : "Sort descending"}
+          className="rounded-lg border px-3 py-2 text-sm flex-shrink-0"
+          style={{ borderColor: "var(--border)", color: "var(--text)" }}
+        >
+          {asc ? "▲" : "▼"}
+        </button>
+      </div>
+
       {/* Mobile: one card per club instead of an 8-column table. Same
           `view` array (filters + sort state above) drives both. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">

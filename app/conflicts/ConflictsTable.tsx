@@ -91,6 +91,35 @@ export default function ConflictsTable({ wars }: { wars: War[] }) {
       <input type="text" placeholder="Search a war or a country (e.g. Vietnam, India, Six-Day)…"
         value={q} onChange={(e) => setQ(e.target.value)}
         className="w-full px-4 py-2 bg-[var(--bg-card)] border border-[var(--border)] rounded-lg text-[var(--text)] placeholder-[var(--text-dim)] focus:outline-none focus:border-[var(--accent)]" />
+      {/* Mobile sort control: the desktop header cells (onClick={() => toggle(k)})
+          are hidden along with the table below sm, so cards need their own way
+          to drive the same sortKey/dir state - a Sort-by select (reuses toggle,
+          which already sets each column's sensible default direction) plus a
+          direction flip button. */}
+      <div className="flex items-center gap-2 mb-3 sm:hidden">
+        <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
+          <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
+          <select
+            value={sortKey}
+            onChange={(e) => toggle(e.target.value as SortKey)}
+            className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+          >
+            <option value="start">Years</option>
+            <option value="deaths">Combat deaths</option>
+          </select>
+        </label>
+        <button
+          type="button"
+          onClick={() => toggle(sortKey)}
+          aria-label={dir === "asc" ? "Sort ascending" : "Sort descending"}
+          className="rounded-lg border px-3 py-2 text-sm flex-shrink-0"
+          style={{ borderColor: "var(--border)", color: "var(--text)" }}
+        >
+          {dir === "asc" ? "▲" : "▼"}
+        </button>
+      </div>
+
       {/* Mobile: stacked cards, same sorted/filtered data as the table */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
         {rows.map((w) => (

@@ -146,6 +146,43 @@ export default function HistoricalTable({ rows, histSeasons }: Props) {
         <Th k="championships" label="Cups/Pen" cur={sortKey} dir={sortDir} onClick={toggle} />
       </div>
 
+      {/* Mobile sort control: the desktop header strip above (Th buttons
+          calling onClick={() => toggle(k)}) is hidden below md, so cards
+          need their own way to drive the same sortKey/sortDir state. */}
+      <div className="flex items-center gap-2 mb-3 md:hidden">
+        <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
+          <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
+          <select
+            value={sortKey ?? ""}
+            onChange={(e) => toggle(e.target.value as SortKey)}
+            className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+          >
+            <option value="" disabled>Choose…</option>
+            <option value="name">Franchise</option>
+            <option value="city">City</option>
+            <option value="league">League</option>
+            <option value="first_year">First</option>
+            <option value="last_year">Last</option>
+            <option value="seasons">Sea</option>
+            <option value="w">W</option>
+            <option value="l">L</option>
+            <option value="win_pct">Win%</option>
+            <option value="championships">Cups/Pen</option>
+          </select>
+        </label>
+        <button
+          type="button"
+          onClick={() => sortKey && toggle(sortKey)}
+          disabled={!sortKey}
+          aria-label={sortDir === "asc" ? "Sort ascending" : "Sort descending"}
+          className="rounded-lg border px-3 py-2 text-sm flex-shrink-0 disabled:opacity-40"
+          style={{ borderColor: "var(--border)", color: "var(--text)" }}
+        >
+          {sortDir === "asc" ? "▲" : "▼"}
+        </button>
+      </div>
+
       <section
         className="rounded-xl border overflow-hidden"
         style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}

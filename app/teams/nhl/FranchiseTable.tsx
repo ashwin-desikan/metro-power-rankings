@@ -102,6 +102,42 @@ export default function FranchiseTable({ franchises, historical, logoMap, monoMa
         <h2 className="text-lg font-bold tracking-tight">All-time table</h2>
         <ViewToggle view={view} setView={setView} defunctCount={historical.length} />
       </header>
+
+      {/* Mobile sort control: the desktop header cells (onClick={() => toggle(k)})
+          are hidden along with the table below sm, so cards need their own way
+          to drive the same sortKey/sortDir state. */}
+      <div className="flex items-center gap-2 mb-3 sm:hidden">
+        <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
+          <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
+          <select
+            value={sortKey}
+            onChange={(e) => toggle(e.target.value as SortKey)}
+            className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+          >
+            <option value="name">Franchise</option>
+            <option value="metro">Metro</option>
+            <option value="main_div">Division</option>
+            <option value="founded">Founded</option>
+            <option value="championships">Cups</option>
+            <option value="champ_apps">Finals</option>
+            <option value="presidents">Pres.</option>
+            <option value="playoff_apps">Playoff app</option>
+            <option value="pts_pct">Pts %</option>
+            <option value="last_cup">Last Cup</option>
+          </select>
+        </label>
+        <button
+          type="button"
+          onClick={() => toggle(sortKey)}
+          aria-label={sortDir === "asc" ? "Sort ascending" : "Sort descending"}
+          className="rounded-lg border px-3 py-2 text-sm flex-shrink-0"
+          style={{ borderColor: "var(--border)", color: "var(--text)" }}
+        >
+          {sortDir === "asc" ? "▲" : "▼"}
+        </button>
+      </div>
+
       {/* Mobile: one stacked card per franchise instead of a 10-column table. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
         {sorted.map((r) => {

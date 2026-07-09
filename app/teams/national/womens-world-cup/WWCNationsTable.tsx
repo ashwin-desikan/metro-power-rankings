@@ -81,6 +81,39 @@ export default function WWCNationsTable({ nations }: { nations: WWCNation[] }) {
       <h2 className="text-base font-semibold">All nations</h2>
       <p className="mt-1 text-xs text-[var(--text-muted)]">Every nation to reach a Women&apos;s World Cup, by honors. Click any column to sort.</p>
 
+      {/* Mobile sort control: the desktop Th buttons (onClick={() => onSort(k)})
+          live only in the table below, hidden below sm, so cards need their own
+          way to drive the same sortKey/sortDir state. */}
+      <div className="mt-4 flex items-center gap-2 mb-3 sm:hidden">
+        <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
+          <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
+          <select
+            value={sortKey}
+            onChange={(e) => onSort(e.target.value as SortKey)}
+            className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+          >
+            <option value="default" disabled>Honors (default)</option>
+            <option value="nation">Nation</option>
+            <option value="continent">Confed.</option>
+            <option value="apps">Apps</option>
+            <option value="titles">Titles</option>
+            <option value="finals">Finals</option>
+            <option value="best">Best</option>
+            <option value="last">Last</option>
+          </select>
+        </label>
+        <button
+          type="button"
+          onClick={() => onSort(sortKey)}
+          aria-label={sortDir === "asc" ? "Sort ascending" : "Sort descending"}
+          className="rounded-lg border px-3 py-2 text-sm flex-shrink-0"
+          style={{ borderColor: "var(--border)", color: "var(--text)" }}
+        >
+          {sortDir === "asc" ? "↑" : "↓"}
+        </button>
+      </div>
+
       {/* Mobile: one card per nation instead of an 8-column table that would
           otherwise need horizontal scrolling or silently hidden columns.
           Same `sorted` data/state as the desktop table below. */}
