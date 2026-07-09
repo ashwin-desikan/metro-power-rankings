@@ -75,6 +75,37 @@ export default function StatesDirectory({ rows, governors }: { rows: Row[]; gove
         </select>
         <span className="text-xs text-[var(--text-dim)]">{view.length} of {rows.length}</span>
       </div>
+      {/* Mobile sort control: the desktop header cells (onClick={() => toggle(k)})
+          are hidden along with the table below sm, so cards need their own way
+          to drive the same sortKey/dir state. */}
+      <div className="flex items-center gap-2 mb-3 sm:hidden">
+        <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
+          <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
+          <select
+            value={sortKey}
+            onChange={(e) => toggle(e.target.value as SortKey)}
+            className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+          >
+            <option value="name">State</option>
+            <option value="rank">Rank</option>
+            <option value="country">Country</option>
+            <option value="pop">Population</option>
+            <option value="metroCount">Metros</option>
+            <option value="score">Score</option>
+          </select>
+        </label>
+        <button
+          type="button"
+          onClick={() => toggle(sortKey)}
+          aria-label={dir === 1 ? "Sort ascending" : "Sort descending"}
+          className="rounded-lg border px-3 py-2 text-sm flex-shrink-0"
+          style={{ borderColor: "var(--border)", color: "var(--text)" }}
+        >
+          {dir === 1 ? "▲" : "▼"}
+        </button>
+      </div>
+
       {/* Mobile: stacked cards, same sorted/filtered data as the table */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
         {view.map((r) => {

@@ -180,6 +180,39 @@ export default function CountriesDirectory({
         />
       </div>
 
+      {/* Mobile sort control: the desktop header cells (onClick={() => toggleSort(k)})
+          are hidden along with the table below sm, so cards need their own way
+          to drive the same sortKey/sortDir state - a Sort-by select (reuses
+          toggleSort, which already sets each column's sensible default
+          direction) plus a direction flip button. */}
+      <div className="flex items-center gap-2 mb-3 sm:hidden">
+        <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
+          <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
+          <select
+            value={sortKey}
+            onChange={(e) => toggleSort(e.target.value as SortKey)}
+            className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+          >
+            <option value="name">Country</option>
+            <option value="since">Since</option>
+            <option value="pop">Population</option>
+            <option value="metroCount">Metros</option>
+            <option value="scoreTotal">Score</option>
+            <option value="power">Power</option>
+          </select>
+        </label>
+        <button
+          type="button"
+          onClick={() => toggleSort(sortKey)}
+          aria-label={sortDir === "asc" ? "Sort ascending" : "Sort descending"}
+          className="rounded-lg border px-3 py-2 text-sm flex-shrink-0"
+          style={{ borderColor: "var(--border)", color: "var(--text)" }}
+        >
+          {sortDir === "asc" ? "▲" : "▼"}
+        </button>
+      </div>
+
       {/* Mobile: true stacked cards. All stats visible up front (no hidden
           columns behind a tap) — the only interaction retained is expanding
           a country's constituents/territories, which is a distinct

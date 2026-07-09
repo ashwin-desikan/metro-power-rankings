@@ -283,6 +283,42 @@ export default function ChampionsTable({ rows }: { rows: ChampRow[] }) {
         </div>
       </div>
 
+      {/* Mobile sort control: the desktop header cells (onClick={() => toggle(k)})
+          are hidden along with the table below sm, so cards need their own way
+          to drive the same sortKey/dir state - a Sort-by select (reuses toggle,
+          which already sets each column's sensible default direction) plus a
+          direction flip button. */}
+      <div className="flex items-center gap-2 mb-3 sm:hidden">
+        <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
+          <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
+          <select
+            value={sortKey ?? ""}
+            onChange={(e) => toggle(e.target.value as SortKey)}
+            className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+          >
+            <option value="" disabled>Choose…</option>
+            <option value="tier">Tier</option>
+            <option value="team">Champion</option>
+            <option value="competition">Competition</option>
+            <option value="scope">Scope</option>
+            <option value="geo">Region</option>
+            <option value="year">Since</option>
+            <option value="next">Next title</option>
+          </select>
+        </label>
+        <button
+          type="button"
+          onClick={() => sortKey && toggle(sortKey)}
+          disabled={!sortKey}
+          aria-label={dir === 1 ? "Sort ascending" : "Sort descending"}
+          className="rounded-lg border px-3 py-2 text-sm flex-shrink-0 disabled:opacity-40"
+          style={{ borderColor: "var(--border)", color: "var(--text)" }}
+        >
+          {dir === 1 ? "▲" : "▼"}
+        </button>
+      </div>
+
       {/* Mobile: one card per champion instead of a 7-column table nobody
           can read at 375px without scrolling sideways. Same `sorted` data,
           same filters/sort state above - only the presentation differs. */}

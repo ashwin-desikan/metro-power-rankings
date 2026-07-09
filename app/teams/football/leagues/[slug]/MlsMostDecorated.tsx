@@ -53,6 +53,31 @@ export default function MlsMostDecorated({ rows }: { rows: Row[] }) {
       </header>
       <p className="text-xs text-[var(--text-muted)] mb-3">All MLS franchises by honors. Switch to All to include defunct clubs. Tap a column to sort.</p>
 
+      {/* Mobile sort control: the desktop header buttons (onClick={() => setSortKey(k)})
+          are hidden along with the table below sm, so cards need their own way
+          to drive the same `sortKey` state. This table's sort is always
+          descending with no direction toggle (the desktop buttons only ever
+          call setSortKey(k), never flip a direction), so the mobile control
+          is a Sort-by select alone - no flip button, matching the desktop
+          behavior exactly. */}
+      <div className="flex items-center gap-2 mb-3 sm:hidden">
+        <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
+          <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
+          <select
+            value={sortKey}
+            onChange={(e) => setSortKey(e.target.value as SortKey)}
+            className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+          >
+            <option value="mls_cups">MLS Cups</option>
+            <option value="supporters_shields">Shields</option>
+            <option value="finals">Cup Finals</option>
+            <option value="playoffs">Playoffs</option>
+            <option value="seasons">Seasons</option>
+          </select>
+        </label>
+      </div>
+
       {/* Mobile: one card per club instead of a 7-column table. Same
           `sorted` array drives both presentations. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">

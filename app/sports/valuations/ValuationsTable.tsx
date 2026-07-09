@@ -96,6 +96,35 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
         />
       </div>
 
+      {/* Mobile sort control: the desktop header cells (onClick={() => toggleSort(k)})
+          are hidden along with the table below sm, so cards need their own way
+          to drive the same sortKey/asc state. */}
+      <div className="flex items-center gap-2 mb-3 sm:hidden">
+        <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
+          <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
+          <select
+            value={sortKey}
+            onChange={(e) => toggleSort(e.target.value as SortKey)}
+            className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+          >
+            <option value="team">Team</option>
+            <option value="league">League / Country</option>
+            <option value="value">Valuation</option>
+            <option value="year">Year</option>
+          </select>
+        </label>
+        <button
+          type="button"
+          onClick={() => toggleSort(sortKey)}
+          aria-label={asc ? "Sort ascending" : "Sort descending"}
+          className="rounded-lg border px-3 py-2 text-sm flex-shrink-0"
+          style={{ borderColor: "var(--border)", color: "var(--text)" }}
+        >
+          {asc ? "↑" : "↓"}
+        </button>
+      </div>
+
       {/* Mobile: stacked cards, same filtered/sorted rows as the desktop table */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
         {filtered.map((r, i) => {

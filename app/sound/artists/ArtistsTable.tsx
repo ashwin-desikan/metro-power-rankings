@@ -132,6 +132,29 @@ export default function ArtistsTable({ artists, byPeriod }: { artists: ArtistRow
         </p>
       )}
 
+      {/* Mobile sort control: the desktop header cells (onClick={() => setSort(k)})
+          are hidden along with the table below sm, so cards need their own way
+          to drive the same `sort` state. This table has no separate direction
+          state (rows are always ranked highest-first by the chosen column), so
+          there's no flip button to wire up — just the same Sort-by select. */}
+      <div className="mb-3 sm:hidden">
+        <label className="flex items-center gap-2 text-xs">
+          <span className="uppercase tracking-wide flex-shrink-0" style={muted}>Sort</span>
+          <select
+            value={sort}
+            onChange={(e) => setSort(e.target.value as SortKey)}
+            className="flex-1 min-w-0 rounded-md border bg-transparent px-3 py-2 text-sm"
+            style={{ borderColor: 'var(--border, #222b36)', color: 'var(--text, #e6edf3)' }}
+          >
+            <option value="bb_score">BB score</option>
+            <option value="uk_score">UK score</option>
+            {!period && <option value="album_raw">Albums</option>}
+            {!period && <option value="prestige">★ Prestige</option>}
+            <option value="combined">Combined</option>
+          </select>
+        </label>
+      </div>
+
       {/* Mobile: stacked cards, same rows/sort/filter state as the desktop table */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
         {rows.map((a, i) => (

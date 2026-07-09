@@ -175,6 +175,40 @@ export default function RivalriesTable({ rows }: { rows: RivalryRow[] }) {
         <span className="text-xs text-[var(--text-muted)] tabular-nums ml-auto">{sorted.length} shown</span>
       </div>
 
+      {/* Mobile sort control: the desktop header cells (onClick={() => clickSort(k)})
+          are hidden along with the table below sm, so cards need their own way
+          to drive the same sortKey/sortDir state. */}
+      <div className="flex items-center gap-2 mb-3 sm:hidden">
+        <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
+          <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
+          <select
+            value={sortKey ?? ""}
+            onChange={(e) => clickSort(e.target.value as SortKey)}
+            className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+          >
+            <option value="" disabled>Choose…</option>
+            <option value="rivalry">Rivalry</option>
+            <option value="league">League</option>
+            <option value="team">Team</option>
+            <option value="rival">Rival Team</option>
+            <option value="country">Country</option>
+            <option value="direction">Direction</option>
+            <option value="top">Note</option>
+          </select>
+        </label>
+        <button
+          type="button"
+          onClick={() => sortKey && clickSort(sortKey)}
+          disabled={!sortKey}
+          aria-label={sortDir === "asc" ? "Sort ascending" : "Sort descending"}
+          className="rounded-lg border px-3 py-2 text-sm flex-shrink-0 disabled:opacity-40"
+          style={{ borderColor: "var(--border)", color: "var(--text)" }}
+        >
+          {sortDir === "asc" ? "▲" : "▼"}
+        </button>
+      </div>
+
       {/* Mobile: stacked cards, same sorted/filtered rows as the desktop table */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">
         {sorted.map((r, i) => {

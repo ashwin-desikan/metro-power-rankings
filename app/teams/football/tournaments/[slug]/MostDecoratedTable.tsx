@@ -133,6 +133,38 @@ export default function MostDecoratedTable({ rows }: Props) {
         appearances; clubs at the bottom with zero Cups are programs that reached the final but
         never lifted the trophy. Click any column header to sort.
       </p>
+      {/* Mobile sort control: the desktop header buttons (onClick={() => toggleSort(k)})
+          are hidden along with the table below sm, so cards need their own way
+          to drive the same sortKey/sortDir state - a Sort-by select (reuses
+          toggleSort, which already sets each column's sensible default
+          direction) plus a direction flip button. */}
+      <div className="flex items-center gap-2 mb-3 sm:hidden">
+        <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
+          <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
+          <select
+            value={sortKey}
+            onChange={(e) => toggleSort(e.target.value as SortKey)}
+            className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+          >
+            <option value="club">Club</option>
+            <option value="cups">Cups</option>
+            <option value="finals">Finals</option>
+            <option value="last_won">Last won</option>
+            <option value="last_final">Last final</option>
+          </select>
+        </label>
+        <button
+          type="button"
+          onClick={() => toggleSort(sortKey)}
+          aria-label={sortDir === "asc" ? "Sort ascending" : "Sort descending"}
+          className="rounded-lg border px-3 py-2 text-sm flex-shrink-0"
+          style={{ borderColor: "var(--border)", color: "var(--text)" }}
+        >
+          {sortDir === "asc" ? "▲" : "▼"}
+        </button>
+      </div>
+
       {/* Mobile: one stacked card per club instead of a 5-column table that
           forces sideways scrolling at phone widths. Same `sorted` data and
           sort state as the desktop table below. */}

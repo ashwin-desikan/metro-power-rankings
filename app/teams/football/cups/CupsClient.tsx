@@ -158,6 +158,35 @@ function AggregateTable({ rows }: { rows: DomesticCupAggregateRow[] }) {
         Semifinals reached (SF), finals reached (F) and cups won (Cup) for each competition, then the two combined.
         The year in parentheses is the most recent time each was achieved. Click any column to sort.
       </p>
+      {/* Mobile sort control: the desktop header buttons (onClick={() => setSort(k)})
+          are hidden along with the table below sm, so cards need their own way
+          to drive the same `sort` state. This table's sort is always
+          descending with no direction toggle (the desktop buttons only ever
+          call setSort(k), never flip a direction), so the mobile control is
+          a Sort-by select alone - no flip button, matching the desktop
+          behavior exactly. */}
+      <div className="flex items-center gap-2 mb-3 sm:hidden">
+        <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
+          <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
+          <select
+            value={sort}
+            onChange={(e) => setSort(e.target.value as SortKey)}
+            className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+          >
+            <option value="fa_sf">FA Cup SF</option>
+            <option value="fa_f">FA Cup F</option>
+            <option value="fa_cups">FA Cup Won</option>
+            <option value="lg_sf">Lg Cup SF</option>
+            <option value="lg_f">Lg Cup F</option>
+            <option value="lg_cups">Lg Cup Won</option>
+            <option value="sf">Total SF</option>
+            <option value="f">Total F</option>
+            <option value="cups">Total Cups</option>
+          </select>
+        </label>
+      </div>
+
       {/* Mobile: one card per club instead of a 10-column table. Same
           `sorted` array (and sort state) drives both presentations. */}
       <div className="grid grid-cols-1 gap-2 sm:hidden">

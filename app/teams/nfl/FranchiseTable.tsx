@@ -135,6 +135,41 @@ export default function FranchiseTable({ franchises, historical, logoMap, monoMa
         <ViewToggle view={view} setView={setView} defunctCount={historical.length} />
       </header>
 
+      {/* Mobile sort control: the desktop header cells (onClick={() => toggle(k)})
+          are hidden along with the table below sm, so cards need their own way
+          to drive the same sortKey/sortDir state. */}
+      <div className="flex items-center gap-2 mb-3 sm:hidden">
+        <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
+          <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
+          <select
+            value={sortKey}
+            onChange={(e) => toggle(e.target.value as SortKey)}
+            className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+          >
+            <option value="name">Franchise</option>
+            <option value="metro">Metro</option>
+            <option value="division">Division</option>
+            <option value="founded">Founded</option>
+            <option value="championships">Titles</option>
+            <option value="champ_app">Champ App</option>
+            <option value="division_titles">Div</option>
+            <option value="playoff_appearances">Playoffs</option>
+            <option value="record">All-time</option>
+            <option value="win_pct">Win%</option>
+          </select>
+        </label>
+        <button
+          type="button"
+          onClick={() => toggle(sortKey)}
+          aria-label={sortDir === "asc" ? "Sort ascending" : "Sort descending"}
+          className="rounded-lg border px-3 py-2 text-sm flex-shrink-0"
+          style={{ borderColor: "var(--border)", color: "var(--text)" }}
+        >
+          {sortDir === "asc" ? "▲" : "▼"}
+        </button>
+      </div>
+
       {/* Mobile: one card per franchise instead of a 10-column table nobody
           can read at 375px without scrolling sideways. Same `sorted` data,
           same sort state as the desktop table below. */}
