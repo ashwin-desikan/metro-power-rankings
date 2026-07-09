@@ -196,6 +196,14 @@ function ChampionsTable({ hub }: { hub: NonNullable<ReturnType<typeof getEuropea
     list.push(f);
     runnersUpByKey.set(key, list);
   }
+  // Precompute the champion/runner-up pairing once so both the mobile card
+  // list and the desktop table render from the exact same rows (the shift()
+  // above is stateful, so it can only run a single pass over hub.champions).
+  const finalRows = hub.champions.map((c, i) => {
+    const ruList = runnersUpByKey.get(`${c.year}|${c.competition ?? ""}`);
+    const runnerUp = ruList && ruList.length > 0 ? ruList.shift()! : null;
+    return { c, i, runnerUp };
+  });
   return (
     <section
       className="rounded-xl border p-5 mb-6"
@@ -205,7 +213,59 @@ function ChampionsTable({ hub }: { hub: NonNullable<ReturnType<typeof getEuropea
       <p className="mt-1 text-xs text-[var(--text-muted)]">
         Most recent first. Club links open the canonical Club Football page where one is available.
       </p>
-      <div className="mt-4 overflow-x-auto">
+
+      {/* Mobile: one card per final instead of a 4-column table. Same
+          finalRows pairing as the desktop table below. */}
+      <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
+        {finalRows.map(({ c, i, runnerUp }) => (
+          <div
+            key={`${c.year}-${i}-card`}
+            className="rounded-lg border p-3"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+          >
+            <div className="flex items-center justify-between gap-2">
+              <span className="text-xs font-medium tabular-nums">{hub.calendar_year ? c.year : (c.season ?? c.year)}</span>
+              {c.competition && (
+                <span className="text-[10px] text-[var(--text-dim)] truncate">{c.competition}</span>
+              )}
+            </div>
+            <div className="mt-2 grid grid-cols-1 gap-1.5 text-xs">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Champion</div>
+                <span className="inline-flex items-center gap-1.5">
+                  <TeamCrest name={c.cur_name} size={18} fallback={<ColorBall slug={c.slug} name={c.cur_name} />} />
+                  {c.slug ? (
+                    <Link href={`/teams/football/${c.slug}`} className="hover:underline font-medium">
+                      {c.cur_name}
+                    </Link>
+                  ) : (
+                    <span className="font-medium">{c.cur_name}</span>
+                  )}
+                </span>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Runner-up</div>
+                {runnerUp ? (
+                  <span className="inline-flex items-center gap-1.5 text-[var(--text-muted)]">
+                    <TeamCrest name={runnerUp.cur_name} size={18} fallback={<ColorBall slug={runnerUp.slug} name={runnerUp.cur_name} />} />
+                    {runnerUp.slug ? (
+                      <Link href={`/teams/football/${runnerUp.slug}`} className="hover:underline">
+                        {runnerUp.cur_name}
+                      </Link>
+                    ) : (
+                      <span>{runnerUp.cur_name}</span>
+                    )}
+                  </span>
+                ) : (
+                  <span className="text-[var(--text-dim)]">—</span>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-4 overflow-x-auto hidden sm:block">
         <table className="w-full text-sm">
           <thead>
             <tr
@@ -213,50 +273,46 @@ function ChampionsTable({ hub }: { hub: NonNullable<ReturnType<typeof getEuropea
               style={{ borderColor: "var(--border)" }}
             >
               <th className="py-2 pr-3 text-left font-medium whitespace-nowrap">{hub.calendar_year ? "Year" : "Season"}</th>
-              <th className="py-2 px-2 text-left font-medium hidden sm:table-cell">Competition</th>
+              <th className="py-2 px-2 text-left font-medium">Competition</th>
               <th className="py-2 px-2 text-left font-medium">Champion</th>
               <th className="py-2 px-2 text-left font-medium">Runner-up</th>
             </tr>
           </thead>
           <tbody>
-            {hub.champions.map((c, i) => {
-              const ruList = runnersUpByKey.get(`${c.year}|${c.competition ?? ""}`);
-              const runnerUp = ruList && ruList.length > 0 ? ruList.shift()! : null;
-              return (
-                <tr key={`${c.year}-${i}`} className="border-b" style={{ borderColor: "var(--border)" }}>
-                  <td className="py-1.5 pr-3 tabular-nums whitespace-nowrap">{hub.calendar_year ? c.year : (c.season ?? c.year)}</td>
-                  <td className="py-1.5 px-2 text-xs text-[var(--text-muted)] hidden sm:table-cell whitespace-nowrap">{c.competition ?? "—"}</td>
-                  <td className="py-1.5 px-2">
-                    <span className="inline-flex items-center gap-1.5">
-                      <TeamCrest name={c.cur_name} size={18} fallback={<ColorBall slug={c.slug} name={c.cur_name} />} />
-                      {c.slug ? (
-                        <Link href={`/teams/football/${c.slug}`} className="hover:underline font-medium">
-                          {c.cur_name}
-                        </Link>
-                      ) : (
-                        <span className="font-medium">{c.cur_name}</span>
-                      )}
-                    </span>
-                  </td>
-                  <td className="py-1.5 px-2 text-[var(--text-muted)]">
-                    {runnerUp ? (
-                      <span className="inline-flex items-center gap-1.5">
-                      <TeamCrest name={runnerUp.cur_name} size={18} fallback={<ColorBall slug={runnerUp.slug} name={runnerUp.cur_name} />} />
-                      {runnerUp.slug ? (
-                        <Link href={`/teams/football/${runnerUp.slug}`} className="hover:underline">
-                          {runnerUp.cur_name}
-                        </Link>
-                      ) : (
-                        <span>{runnerUp.cur_name}</span>
-                      )}
-                      </span>
+            {finalRows.map(({ c, i, runnerUp }) => (
+              <tr key={`${c.year}-${i}`} className="border-b" style={{ borderColor: "var(--border)" }}>
+                <td className="py-1.5 pr-3 tabular-nums whitespace-nowrap">{hub.calendar_year ? c.year : (c.season ?? c.year)}</td>
+                <td className="py-1.5 px-2 text-xs text-[var(--text-muted)] whitespace-nowrap">{c.competition ?? "—"}</td>
+                <td className="py-1.5 px-2">
+                  <span className="inline-flex items-center gap-1.5">
+                    <TeamCrest name={c.cur_name} size={18} fallback={<ColorBall slug={c.slug} name={c.cur_name} />} />
+                    {c.slug ? (
+                      <Link href={`/teams/football/${c.slug}`} className="hover:underline font-medium">
+                        {c.cur_name}
+                      </Link>
                     ) : (
-                      <span className="text-[var(--text-dim)]">—</span>
+                      <span className="font-medium">{c.cur_name}</span>
                     )}
-                  </td>
-                </tr>
-              );
-            })}
+                  </span>
+                </td>
+                <td className="py-1.5 px-2 text-[var(--text-muted)]">
+                  {runnerUp ? (
+                    <span className="inline-flex items-center gap-1.5">
+                    <TeamCrest name={runnerUp.cur_name} size={18} fallback={<ColorBall slug={runnerUp.slug} name={runnerUp.cur_name} />} />
+                    {runnerUp.slug ? (
+                      <Link href={`/teams/football/${runnerUp.slug}`} className="hover:underline">
+                        {runnerUp.cur_name}
+                      </Link>
+                    ) : (
+                      <span>{runnerUp.cur_name}</span>
+                    )}
+                    </span>
+                  ) : (
+                    <span className="text-[var(--text-dim)]">—</span>
+                  )}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

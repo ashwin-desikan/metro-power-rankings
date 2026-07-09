@@ -166,7 +166,32 @@ function LeagueAccordion({ block }: { block: Block }) {
         {block.subTables.map((st, si) => (
           <div key={si}>
             {st.title && <div className="text-[11px] font-semibold text-[var(--text-muted)] mb-1">{st.title}</div>}
-            <div className="overflow-x-auto">
+
+            {/* Mobile: stacked cards instead of a table forced wide by min-w */}
+            <div className="grid grid-cols-1 gap-1.5 sm:hidden">
+              {st.rows.map((r, i) => (
+                <div key={`${r.name}-${i}-card`} className="rounded-md border px-2.5 py-2" style={{ borderColor: "var(--border)" }}>
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-1.5 min-w-0 text-xs font-medium">
+                      <span className="tabular-nums text-[var(--text-dim)] flex-shrink-0" style={mono}>{r.rank ?? i + 1}</span>
+                      <span className="truncate"><NameCell r={r} /></span>
+                    </div>
+                  </div>
+                  {st.columns.length > 0 && (
+                    <div className="mt-1 flex flex-wrap gap-x-3 gap-y-0.5 text-[11px]">
+                      {st.columns.map((c, j) => (
+                        <span key={c} className="inline-flex items-baseline gap-1">
+                          <span className="text-[var(--text-dim)]">{c}</span>
+                          <span className="tabular-nums" style={mono}>{r.cells[j]}</span>
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="overflow-x-auto hidden sm:block">
               <table className="w-full text-xs min-w-[320px]">
                 <thead>
                   <tr className="text-left text-[var(--text-muted)]">

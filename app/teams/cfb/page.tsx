@@ -74,7 +74,33 @@ export default function CfbHubPage() {
         <section id="champions" className="mb-12 scroll-mt-20">
           <h2 className="text-lg font-semibold mb-1">National champions</h2>
           <p className="text-xs text-[var(--text-muted)] mb-4">Recognized national champions by season, with the selectors in parentheses and the Heisman winner. Tap a school to open its program page.</p>
-          <div className="max-h-[70vh] overflow-auto rounded-lg border" style={{ borderColor: "var(--border)" }}>
+
+          {/* Mobile: one card per season. Same `natChamps` array/order that
+              drives the desktop table below. */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[70vh] overflow-auto rounded-lg border p-2" style={{ borderColor: "var(--border)" }}>
+            {natChamps.map((nc) => (
+              <div key={nc.year} className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+                <a href={`https://www.sports-reference.com/cfb/years/${nc.year}.html`} target="_blank" rel="noopener noreferrer" className="text-sm font-medium tabular-nums hover:text-[var(--accent)] hover:underline" title={`${nc.year} season on Sports Reference`}>{nc.year}</a>
+                <div className="mt-1 text-sm">
+                  {nc.champs.map((c, i) => (
+                    <span key={i}>
+                      {i > 0 ? <span className="text-[var(--text-dim)]">, </span> : null}
+                      <CrestIcon name={c.name} size={14} className="mr-1 align-[-2px]" />{c.slug ? <Link href={`/teams/cfb/${c.slug}`} className="font-medium hover:text-[var(--accent)]">{c.name}</Link> : <span className="font-medium">{c.name}</span>}
+                      {c.sel ? <span className="text-[10px] text-[var(--text-dim)]"> ({c.sel})</span> : null}
+                    </span>
+                  ))}
+                </div>
+                {nc.heisman && (
+                  <div className="mt-1.5 text-xs text-[var(--text-muted)]">
+                    <span className="text-[9px] uppercase tracking-wide text-[var(--text-dim)] mr-1">Heisman</span>
+                    {nc.heisman}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="hidden sm:block max-h-[70vh] overflow-auto rounded-lg border" style={{ borderColor: "var(--border)" }}>
             <table className="w-full text-sm [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:z-10 [&_thead_th]:bg-[var(--bg-card)]">
               <thead>
                 <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)] border-b" style={{ borderColor: "var(--border)" }}>

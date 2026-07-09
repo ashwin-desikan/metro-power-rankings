@@ -40,7 +40,36 @@ export default function NumberOnesTable({ rows }: { rows: N1[] }) {
 
   return (
     <div className="rounded-lg border" style={{ borderColor: 'var(--border, #222b36)' }}>
-      <div className="max-h-[480px] overflow-y-auto overflow-x-auto">
+      {/* Mobile: stacked cards, no horizontal scrolling */}
+      <div className="max-h-[480px] overflow-y-auto sm:hidden divide-y" style={{ borderColor: 'var(--border, #222b36)' }}>
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 px-3 py-2 text-[11px] font-semibold uppercase tracking-wide sticky top-0 z-10" style={{ background: 'var(--bg-card, #0f151c)', borderBottom: '1px solid var(--border, #222b36)' }}>
+          {cols.map((c, i) => (
+            <span key={c.key} className="inline-flex items-center gap-2">
+              {i > 0 && <span aria-hidden style={muted}>&middot;</span>}
+              <button
+                type="button"
+                onClick={() => onSort(c.key)}
+                className="hover:text-[var(--accent)]"
+                style={{ color: c.key === sort ? 'var(--accent)' : 'var(--text-muted)' }}
+              >
+                {c.label}{arrow(c.key)}
+              </button>
+            </span>
+          ))}
+        </div>
+        {visible.map((r, i) => (
+          <div key={r.single + r.artist + r.year + i} className="px-3 py-2.5">
+            <div className="flex items-start justify-between gap-2">
+              <div className="font-medium text-sm leading-tight">&ldquo;{r.single}&rdquo;</div>
+              <div className="text-xs tabular-nums flex-shrink-0" style={muted}>{r.year}</div>
+            </div>
+            <div className="mt-0.5 text-sm">{r.artist}</div>
+            <div className="mt-0.5 text-xs" style={muted}>{r.charts}</div>
+          </div>
+        ))}
+      </div>
+
+      <div className="max-h-[480px] overflow-y-auto overflow-x-auto hidden sm:block">
         <table className="w-full text-sm">
           <thead className="sticky top-0 z-10" style={{ background: 'var(--bg-card, #0f151c)' }}>
             <tr>

@@ -114,7 +114,64 @@ export default function IplPage() {
 
           {/* Standings */}
           <div className="lg:col-span-3">
-            <div className="rounded-xl border overflow-hidden" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+            {/* Mobile: one card per team instead of an 8-column standings table */}
+            <div className="grid grid-cols-1 gap-2 sm:hidden">
+              {latest.standings.map((st, idx) => {
+                const fr = bySlug.get(st.slug);
+                const isCutoff = idx === 3;
+                return (
+                  <div
+                    key={st.slug + idx + "-card"}
+                    className="rounded-lg border p-3"
+                    style={{
+                      background: st.champion ? "rgba(251,191,36,0.07)" : "var(--bg-card)",
+                      borderColor: isCutoff ? "var(--accent)" : "var(--border)",
+                    }}
+                  >
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="flex items-center gap-2 min-w-0">
+                        <span className="text-[var(--text-dim)] text-xs tabular-nums w-4 flex-shrink-0">{st.pos}</span>
+                        {fr && <TeamCrest name={st.name} size={22} fallback={<Monogram abbr={fr.abbr} color={fr.color} size="xs" />} />}
+                        <Link href={`/teams/ipl/${st.slug}`} className={`hover:text-[var(--accent)] transition-colors truncate ${st.champion ? "font-semibold" : "font-medium"}`}>
+                          {st.name}
+                        </Link>
+                        {st.champion  && <span className="text-yellow-400 text-xs leading-none flex-shrink-0">★</span>}
+                        {st.finalist && !st.champion && <span className="text-[var(--text-dim)] text-[10px] leading-none flex-shrink-0">F</span>}
+                      </div>
+                      <span className="font-semibold tabular-nums flex-shrink-0">{st.pts} pts</span>
+                    </div>
+                    <div className="grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs mt-2">
+                      <div>
+                        <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">M</div>
+                        <div className="text-[var(--text-muted)] tabular-nums">{st.m}</div>
+                      </div>
+                      <div>
+                        <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">W</div>
+                        <div className="tabular-nums">{st.w}</div>
+                      </div>
+                      <div>
+                        <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">L</div>
+                        <div className="text-[var(--text-muted)] tabular-nums">{st.l}</div>
+                      </div>
+                      <div>
+                        <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">NR</div>
+                        <div className="text-[var(--text-dim)] tabular-nums">{st.nr || "—"}</div>
+                      </div>
+                      <div>
+                        <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">NRR</div>
+                        <div className="tabular-nums">{st.nrr >= 0 ? "+" : ""}{st.nrr.toFixed(3)}</div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+              <div className="px-1 pt-1 flex flex-wrap gap-x-4 gap-y-1 text-[10px] text-[var(--text-dim)]">
+                <span>Top 4 advance to playoffs · NRR = Net Run Rate</span>
+                <span>★ Champion · F Runner-up</span>
+              </div>
+            </div>
+
+            <div className="rounded-xl border overflow-hidden hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
               <table className="w-full text-sm tabular-nums">
                 <thead>
                   <tr className="border-b text-[11px]" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
@@ -207,7 +264,54 @@ export default function IplPage() {
       {/* ── All-time champions ─────────────────────────────────────────── */}
       <section className="mb-10">
         <h2 id="champions" className="text-xl font-bold mb-4">All-Time Champions</h2>
-        <div className="rounded-xl border overflow-hidden" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+
+        {/* Mobile: one card per franchise instead of a 6-column table */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {champTable.map(f => (
+            <div key={f.slug + "-card"} className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+              <Link href={`/teams/ipl/${f.slug}`} className="flex items-center gap-2.5 hover:text-[var(--accent)] transition-colors">
+                <TeamCrest name={f.name} size={26} fallback={<Monogram abbr={f.abbr} color={f.color} />} />
+                <div className="min-w-0">
+                  <div className="font-medium leading-tight flex items-center gap-1.5 flex-wrap">
+                    {f.name}
+                    {!f.active && <span className="text-[9px] uppercase tracking-wider text-[var(--text-dim)] border rounded px-1 py-0.5 font-normal" style={{ borderColor: "var(--border)" }}>Defunct</span>}
+                  </div>
+                  <div className="text-[11px] text-[var(--text-dim)]">{f.city}</div>
+                </div>
+              </Link>
+              <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs mt-2.5">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Titles</div>
+                  <div>
+                    {f.titles > 0
+                      ? <span className="font-bold text-yellow-400 text-base">{f.titles}</span>
+                      : <span className="text-[var(--text-dim)]">—</span>}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Finals</div>
+                  <div className="text-[var(--text-muted)]">{f.finals || "—"}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Playoffs</div>
+                  <div className="text-[var(--text-dim)]">{f.playoff_appearances}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Seasons</div>
+                  <div className="text-[var(--text-dim)]">{f.seasons}</div>
+                </div>
+                {f.title_years.length > 0 && (
+                  <div className="col-span-2">
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Title Years</div>
+                    <div className="text-[var(--text-muted)]">{f.title_years.join(", ")}</div>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-hidden hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b text-[11px]" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
@@ -257,7 +361,40 @@ export default function IplPage() {
       {/* ── Finals History ─────────────────────────────────────────────── */}
       <section className="mb-10">
         <h2 id="finals" className="text-xl font-bold mb-4">Finals History</h2>
-        <div className="rounded-xl border overflow-hidden" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+
+        {/* Mobile: one card per final instead of a 4-column table */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {history.map(h => {
+            const cf = bySlug.get(h.champion_slug ?? "");
+            const rf = bySlug.get(h.runner_up_slug ?? "");
+            return (
+              <div key={h.year + "-card"} className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+                <div className="flex items-center justify-between gap-2 mb-2">
+                  <span className="font-semibold text-sm">{h.year}</span>
+                  {h.final_result && <span className="text-[10px] text-[var(--text-dim)] text-right">{h.final_result}</span>}
+                </div>
+                <div className="grid grid-cols-1 gap-1.5 text-xs">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] w-16 flex-shrink-0">Champion</span>
+                    {cf && <TeamCrest name={h.champion} size={16} fallback={<Monogram abbr={cf.abbr} color={cf.color} size="xs" />} />}
+                    {h.champion_slug
+                      ? <Link href={`/teams/ipl/${h.champion_slug}`} className="font-medium hover:text-[var(--accent)] transition-colors">{h.champion}</Link>
+                      : <span className="font-medium">{h.champion}</span>}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] w-16 flex-shrink-0">Runner-up</span>
+                    {rf && <TeamCrest name={h.runner_up} size={16} fallback={<Monogram abbr={rf.abbr} color={rf.color} size="xs" />} />}
+                    {h.runner_up_slug
+                      ? <Link href={`/teams/ipl/${h.runner_up_slug}`} className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">{h.runner_up}</Link>
+                      : <span className="text-[var(--text-muted)]">{h.runner_up ?? "—"}</span>}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="rounded-xl border overflow-hidden hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
           <table className="w-full text-sm tabular-nums">
             <thead>
               <tr className="border-b text-[11px]" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>

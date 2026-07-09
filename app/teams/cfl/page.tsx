@@ -105,49 +105,94 @@ export default async function CflPage() {
             : <>Final regular-season standings for {standings.year}, by division. ★ Grey Cup champion · ⊳ reached the Grey Cup · • clinched playoffs.</>}
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {standings.divisions.map(div => (
-            <div key={div.division} className="rounded-xl border overflow-hidden" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
-              <div className="px-3 py-2 text-[11px] uppercase tracking-widest font-semibold text-[var(--text-muted)] border-b" style={{ borderColor: "var(--border)" }}>
-                {div.division} Division
-              </div>
-              <table className="w-full text-sm tabular-nums">
-                <thead>
-                  <tr className="border-b text-[11px]" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
-                    <th className="text-left py-2 px-3 font-medium">Team</th>
-                    <th className="text-right py-2 px-2 font-medium">GP</th>
-                    <th className="text-right py-2 px-2 font-medium">W</th>
-                    <th className="text-right py-2 px-2 font-medium">L</th>
-                    <th className="text-right py-2 px-2 font-medium">T</th>
-                    <th className="text-right py-2 px-2 font-medium">PTS</th>
-                    <th className="text-right py-2 px-2 font-medium hidden sm:table-cell">PF</th>
-                    <th className="text-right py-2 px-3 font-medium hidden sm:table-cell">PA</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[...div.rows].sort((a, b) => b.pts - a.pts || b.pct - a.pct).map(r => (
-                    <tr key={r.slug} className="border-b last:border-b-0" style={{ borderColor: "var(--border)", background: r.grey_cup ? "rgba(212,175,55,0.07)" : undefined }}>
-                      <td className="py-2 px-3">
-                        <div className="flex items-center gap-2">
-                          <TeamCrest name={bySlug.get(r.slug)?.name ?? r.team} size={22} fallback={<Monogram f={bySlug.get(r.slug) ?? { slug: r.slug, name: r.team }} />} />
-                          <Link href={`/teams/cfl/${r.slug}`} className={`hover:text-[var(--accent)] transition-colors ${r.grey_cup ? "font-semibold" : ""}`}>{bySlug.get(r.slug)?.name ?? r.team}</Link>
-                          {r.grey_cup ? <span className="text-yellow-400 text-xs leading-none" title="Grey Cup champion">★</span>
-                            : r.gc_final ? <span className="text-[var(--text-dim)] text-[11px] leading-none" title="Reached the Grey Cup">⊳</span>
-                            : r.play_app ? <span className="text-[var(--text-dim)] text-[10px] leading-none" title="Clinched playoffs">•</span> : null}
+          {standings.divisions.map(div => {
+            const sortedRows = [...div.rows].sort((a, b) => b.pts - a.pts || b.pct - a.pct);
+            return (
+              <div key={div.division} className="rounded-xl border overflow-hidden" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+                <div className="px-3 py-2 text-[11px] uppercase tracking-widest font-semibold text-[var(--text-muted)] border-b" style={{ borderColor: "var(--border)" }}>
+                  {div.division} Division
+                </div>
+
+                {/* Mobile: one stacked card per team instead of an 8-column table. */}
+                <div className="grid grid-cols-1 gap-2 p-2 sm:hidden">
+                  {sortedRows.map(r => (
+                    <div
+                      key={`${r.slug}-card`}
+                      className="rounded-lg border p-3"
+                      style={{ borderColor: "var(--border)", backgroundColor: r.grey_cup ? "rgba(212,175,55,0.07)" : "var(--bg-card)" }}
+                    >
+                      <div className="flex items-center gap-2 min-w-0">
+                        <TeamCrest name={bySlug.get(r.slug)?.name ?? r.team} size={22} fallback={<Monogram f={bySlug.get(r.slug) ?? { slug: r.slug, name: r.team }} />} />
+                        <Link href={`/teams/cfl/${r.slug}`} className={`truncate hover:text-[var(--accent)] transition-colors ${r.grey_cup ? "font-semibold" : "font-medium text-sm"}`}>{bySlug.get(r.slug)?.name ?? r.team}</Link>
+                        {r.grey_cup ? <span className="text-yellow-400 text-xs leading-none flex-shrink-0" title="Grey Cup champion">★</span>
+                          : r.gc_final ? <span className="text-[var(--text-dim)] text-[11px] leading-none flex-shrink-0" title="Reached the Grey Cup">⊳</span>
+                          : r.play_app ? <span className="text-[var(--text-dim)] text-[10px] leading-none flex-shrink-0" title="Clinched playoffs">•</span> : null}
+                      </div>
+                      <div className="grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs tabular-nums mt-2">
+                        <div>
+                          <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Record</div>
+                          <div>{r.w}-{r.l}-{r.t}</div>
                         </div>
-                      </td>
-                      <td className="py-2 px-2 text-right text-[var(--text-muted)]">{r.gp}</td>
-                      <td className="py-2 px-2 text-right">{r.w}</td>
-                      <td className="py-2 px-2 text-right text-[var(--text-muted)]">{r.l}</td>
-                      <td className="py-2 px-2 text-right text-[var(--text-muted)]">{r.t}</td>
-                      <td className="py-2 px-2 text-right font-semibold">{r.pts}</td>
-                      <td className="py-2 px-2 text-right text-[var(--text-dim)] text-xs hidden sm:table-cell">{r.pf}</td>
-                      <td className="py-2 px-3 text-right text-[var(--text-dim)] text-xs hidden sm:table-cell">{r.pa}</td>
-                    </tr>
+                        <div>
+                          <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">PTS</div>
+                          <div className="font-semibold">{r.pts}</div>
+                        </div>
+                        <div>
+                          <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">GP</div>
+                          <div className="text-[var(--text-muted)]">{r.gp}</div>
+                        </div>
+                        <div>
+                          <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">PF</div>
+                          <div className="text-[var(--text-dim)]">{r.pf}</div>
+                        </div>
+                        <div>
+                          <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">PA</div>
+                          <div className="text-[var(--text-dim)]">{r.pa}</div>
+                        </div>
+                      </div>
+                    </div>
                   ))}
-                </tbody>
-              </table>
-            </div>
-          ))}
+                </div>
+
+                <table className="w-full text-sm tabular-nums hidden sm:table">
+                  <thead>
+                    <tr className="border-b text-[11px]" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
+                      <th className="text-left py-2 px-3 font-medium">Team</th>
+                      <th className="text-right py-2 px-2 font-medium">GP</th>
+                      <th className="text-right py-2 px-2 font-medium">W</th>
+                      <th className="text-right py-2 px-2 font-medium">L</th>
+                      <th className="text-right py-2 px-2 font-medium">T</th>
+                      <th className="text-right py-2 px-2 font-medium">PTS</th>
+                      <th className="text-right py-2 px-2 font-medium hidden sm:table-cell">PF</th>
+                      <th className="text-right py-2 px-3 font-medium hidden sm:table-cell">PA</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {sortedRows.map(r => (
+                      <tr key={r.slug} className="border-b last:border-b-0" style={{ borderColor: "var(--border)", background: r.grey_cup ? "rgba(212,175,55,0.07)" : undefined }}>
+                        <td className="py-2 px-3">
+                          <div className="flex items-center gap-2">
+                            <TeamCrest name={bySlug.get(r.slug)?.name ?? r.team} size={22} fallback={<Monogram f={bySlug.get(r.slug) ?? { slug: r.slug, name: r.team }} />} />
+                            <Link href={`/teams/cfl/${r.slug}`} className={`hover:text-[var(--accent)] transition-colors ${r.grey_cup ? "font-semibold" : ""}`}>{bySlug.get(r.slug)?.name ?? r.team}</Link>
+                            {r.grey_cup ? <span className="text-yellow-400 text-xs leading-none" title="Grey Cup champion">★</span>
+                              : r.gc_final ? <span className="text-[var(--text-dim)] text-[11px] leading-none" title="Reached the Grey Cup">⊳</span>
+                              : r.play_app ? <span className="text-[var(--text-dim)] text-[10px] leading-none" title="Clinched playoffs">•</span> : null}
+                          </div>
+                        </td>
+                        <td className="py-2 px-2 text-right text-[var(--text-muted)]">{r.gp}</td>
+                        <td className="py-2 px-2 text-right">{r.w}</td>
+                        <td className="py-2 px-2 text-right text-[var(--text-muted)]">{r.l}</td>
+                        <td className="py-2 px-2 text-right text-[var(--text-muted)]">{r.t}</td>
+                        <td className="py-2 px-2 text-right font-semibold">{r.pts}</td>
+                        <td className="py-2 px-2 text-right text-[var(--text-dim)] text-xs hidden sm:table-cell">{r.pf}</td>
+                        <td className="py-2 px-3 text-right text-[var(--text-dim)] text-xs hidden sm:table-cell">{r.pa}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            );
+          })}
         </div>
         <p className="text-[10px] text-[var(--text-dim)] mt-2">
           {isLive
@@ -165,7 +210,33 @@ export default async function CflPage() {
       {/* ── Grey Cup honor roll ──────────────────────────────────────────── */}
       <section className="mb-8">
         <h2 id="finals" className="text-xl font-bold mb-4">Grey Cup Finals</h2>
-        <div className="rounded-xl border overflow-hidden" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+        {/* Mobile: one stacked card per final instead of a 5-column table. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {history.map(g => (
+            <div
+              key={`${g.year}-${g.game}-card`}
+              className="rounded-lg border p-3"
+              style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-center justify-between gap-2">
+                <span className="text-xs text-[var(--text-dim)]">{g.year}</span>
+                <span className="text-xs tabular-nums">{g.score}{g.ot ? " (OT)" : ""}</span>
+              </div>
+              <div className="mt-1.5 flex items-center gap-1.5 text-sm font-medium">
+                <CrestIcon name={g.champion} size={16} className="flex-shrink-0" />
+                {g.champion_slug ? <Link href={`/teams/cfl/${g.champion_slug}`} className="hover:text-[var(--accent)] transition-colors">{g.champion}</Link> : g.champion}
+              </div>
+              <div className="mt-1 flex items-center gap-1.5 text-xs text-[var(--text-muted)]">
+                <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">vs</span>
+                <CrestIcon name={g.runner_up} size={14} className="flex-shrink-0" />
+                {g.runner_up_slug ? <Link href={`/teams/cfl/${g.runner_up_slug}`} className="hover:text-[var(--accent)] transition-colors">{g.runner_up}</Link> : g.runner_up}
+              </div>
+              {g.city && <div className="text-[10px] text-[var(--text-dim)] mt-1.5">{g.city}</div>}
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-hidden hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
           <table className="w-full text-sm tabular-nums">
             <thead>
               <tr className="border-b text-[11px]" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>

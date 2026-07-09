@@ -78,7 +78,40 @@ export default async function NflStandings() {
           return (
             <div key={divName} className="rounded-xl border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
               <h3 className="text-[11px] uppercase tracking-widest font-semibold text-[var(--text-muted)] mb-2">{divName}</h3>
-              <div className="overflow-x-auto">
+
+              {/* Mobile: compact stacked rows instead of a cramped 5-column
+                  table. Same rows/order as the desktop table below. */}
+              <div className="sm:hidden divide-y" style={{ borderColor: "var(--border)" }}>
+                {rows.map(({ f, t }) => {
+                  const logo = logoUrlFor(f.slug);
+                  const mono = monogramFor(f.slug);
+                  const showRec = hasLive && t != null && t.games_played > 0;
+                  return (
+                    <Link
+                      key={f.slug}
+                      href={`/teams/nfl/${f.slug}`}
+                      className="flex items-center gap-2 py-2 hover:text-[var(--accent)] transition-colors"
+                      style={{ borderColor: "var(--border)" }}
+                    >
+                      {logo ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img src={logo} alt="" className="w-4 h-4 flex-shrink-0 object-contain" loading="lazy" decoding="async" />
+                      ) : (
+                        <span className="inline-grid place-items-center rounded-full flex-shrink-0" style={{ background: mono.bg, color: mono.fg, width: 16, height: 16, fontSize: 7, fontWeight: 700 }} aria-hidden>{mono.mono}</span>
+                      )}
+                      <span className="truncate text-xs flex-1 min-w-0">{f.name}</span>
+                      <span className="tabular-nums text-xs flex-shrink-0" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                        {showRec ? `${t!.wins}-${t!.losses}${t!.ties ? `-${t!.ties}` : ""}` : "—"}
+                      </span>
+                      <span className="tabular-nums text-xs text-[var(--text-muted)] flex-shrink-0 w-10 text-right">
+                        {showRec ? fmtPct(t!.win_pct) : "—"}
+                      </span>
+                    </Link>
+                  );
+                })}
+              </div>
+
+              <div className="overflow-x-auto hidden sm:block">
               <table className="w-full text-xs tabular-nums">
                 <thead className="text-[var(--text-muted)]">
                   <tr className="border-b" style={{ borderColor: "var(--border)" }}>

@@ -76,7 +76,76 @@ export default function CupPresentationTable({ allTime, byDecade }: Props) {
         </button>
       </div>
 
-      <div className="max-h-[70vh] overflow-auto">
+      {/* Mobile: one stacked card per presentation instead of a cramped 4-column table. */}
+      <div className="max-h-[70vh] overflow-y-auto sm:hidden">
+        <div className="grid grid-cols-1 gap-2">
+          {rows.map((g, i) => {
+            const winner = `${g.winner_city} ${g.winner_team}`.trim();
+            const loser = `${g.loser_city} ${g.loser_team}`.trim();
+            const loc = [g.arena_city, g.arena_state ? abbrev(g.arena_state) : ""].filter(Boolean).join(", ");
+            return (
+              <div
+                key={`${g.au}-${g.winner_canonical}-${i}-card`}
+                className="rounded-lg border p-3"
+                style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+              >
+                <div className="flex items-center justify-between text-[10px] uppercase tracking-wider text-[var(--text-dim)]">
+                  <span>#{i + 1}</span>
+                  <span className="whitespace-nowrap">{g.date ?? g.year}</span>
+                </div>
+                <div className="text-[11px] text-[var(--text-muted)] whitespace-nowrap">
+                  {g.year}
+                  {g.round ? ` · ${roundLabel(g.round)}` : ""}
+                  {g.game_num ? ` · Game ${g.game_num}` : ""}
+                  {g.ot ? " · OT" : ""}
+                </div>
+                <div className="leading-tight mt-1.5 text-sm">
+                  {g.winner_slug ? (
+                    <Link href={`/teams/nhl/${g.winner_slug}`} className="font-semibold hover:text-[var(--accent)] hover:underline decoration-dotted underline-offset-2">{winner}</Link>
+                  ) : (
+                    <span className="font-semibold">{winner}</span>
+                  )}
+                  {g.league_winner ? (
+                    <span className="ml-1.5 text-[var(--text-muted)] italic">League Winner</span>
+                  ) : (
+                    <>
+                      {g.winner_score != null && g.loser_score != null ? (
+                        <>
+                          {" "}
+                          <span className="tabular-nums font-semibold" style={{ color: "var(--accent)" }}>{g.winner_score}</span>
+                          <span className="mx-1 text-[var(--text-dim)]">–</span>
+                          <span className="tabular-nums text-[var(--text-muted)]">{g.loser_score}</span>{" "}
+                        </>
+                      ) : (
+                        <span className="mx-1 text-[var(--text-dim)]">def.</span>
+                      )}
+                      {(g.loser_city || g.loser_team) &&
+                        (g.loser_slug ? (
+                          <Link href={`/teams/nhl/${g.loser_slug}`} className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline decoration-dotted underline-offset-2">{loser}</Link>
+                        ) : (
+                          <span className="text-[var(--text-muted)]">{loser}</span>
+                        ))}
+                    </>
+                  )}
+                </div>
+                {g.arena ? (
+                  <div className="text-[10px] mt-1 truncate font-medium tracking-wide"
+                    style={{ color: "var(--text-dim)", fontFamily: "'JetBrains Mono', monospace" }}
+                    title={[g.arena, g.arena_city, g.arena_state].filter(Boolean).join(" — ")}>
+                    {g.arena}
+                    {loc ? <span className="opacity-80"> · {loc}</span> : null}
+                  </div>
+                ) : null}
+              </div>
+            );
+          })}
+          {rows.length === 0 && (
+            <div className="py-6 text-center text-[var(--text-dim)] italic text-sm">No Cup presentations recorded for this period.</div>
+          )}
+        </div>
+      </div>
+
+      <div className="max-h-[70vh] overflow-auto hidden sm:block">
         <table className="w-full text-xs tabular-nums [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:z-10 [&_thead_th]:bg-[var(--bg)]">
           <thead>
             <tr className="text-[var(--text-muted)]">

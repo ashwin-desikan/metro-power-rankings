@@ -143,7 +143,21 @@ export default async function USPoliticalLeadershipPage() {
             <OfficialCard label="Vice President" name={congress.executive.vicePresident.name} sub={`${congress.executive.vicePresident.party ?? ""} · since ${congress.executive.vicePresident.since?.slice(0, 4) ?? ""}`} />
           </div>
           <h3 className="text-sm font-semibold text-[var(--text-muted)] mb-2">The Cabinet</h3>
-          <div className="rounded-xl border overflow-x-auto" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+          {/* Mobile: stacked cards */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {congress.executive.cabinet.map((c) => (
+              <div key={`${c.office}-card`} className="rounded-lg border p-3" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+                <div className="flex items-start justify-between gap-2">
+                  <div className="min-w-0">
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{c.office}</div>
+                    <div className="font-medium text-sm text-[var(--text)]">{c.name}</div>
+                  </div>
+                  <div className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0">{c.since?.slice(0, 4) ?? "—"}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <table className="w-full text-left text-sm">
               <thead>
                 <tr className="border-b text-xs uppercase tracking-wider text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }}>
@@ -196,7 +210,21 @@ export default async function USPoliticalLeadershipPage() {
           <h2 className="text-xl font-bold mb-2 text-[var(--text)]">House of Representatives</h2>
           <PartySplitBar split={congress.house.partySplit} />
           <h3 className="text-sm font-semibold text-[var(--text-muted)] mb-2">Leadership</h3>
-          <div className="rounded-xl border overflow-x-auto" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+          {/* Mobile: stacked cards */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {congress.house.leadership.map((l) => (
+              <div key={`${l.office}-card`} className="rounded-lg border p-3" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+                <div className="flex items-start justify-between gap-2">
+                  <div className="min-w-0">
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{l.office}</div>
+                    <div className="font-medium text-sm text-[var(--text)]">{l.name}</div>
+                  </div>
+                  <span className={`text-xs font-medium flex-shrink-0 ${partyTextClass(l.party)}`}>{l.party}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
             <table className="w-full text-left text-sm">
               <thead>
                 <tr className="border-b text-xs uppercase tracking-wider text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }}>

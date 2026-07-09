@@ -88,7 +88,43 @@ export default function OlympicsHubPage() {
           Medal leaders per edition; the two 1956 Summer hostings (Melbourne and
           Stockholm) are combined.
         </p>
-        <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto" style={card}>
+        {/* Mobile: one card per Games edition instead of a horizontally
+            scrolling table. Same hub.editions data as the desktop table. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {hub.editions.slice().reverse().map((e) => (
+            <Link
+              key={`${e.year}-${e.season}-card`}
+              href={`/teams/olympics/games/${e.season.toLowerCase()}-${e.year}`}
+              className="block rounded-lg border p-3 hover:border-[var(--accent)] transition-colors"
+              style={card}
+            >
+              <div className="flex items-start justify-between gap-2">
+                <div>
+                  <span className="tabular-nums font-medium text-base" style={mono}>{e.year}</span>
+                  <span className="text-xs text-[var(--text-muted)]"> {e.season}</span>
+                </div>
+                <div className="text-right text-xs tabular-nums flex-shrink-0" style={mono}>
+                  <div className="text-[var(--text-muted)]">{e.nations} nations</div>
+                  <div className="text-[var(--text-dim)]">{e.medals.toLocaleString()} medals</div>
+                </div>
+              </div>
+              <div className="mt-1.5 text-xs">
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Top of the table</div>
+                <div>
+                  {e.top.map((tp, i) => (
+                    <span key={tp.name}>
+                      {i > 0 ? " · " : ""}
+                      {teamLink(tp.name, i === 0 ? "font-semibold" : "")}
+                      <span className="text-[var(--text-dim)]" style={mono}> {tp.g}G</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[640px]">
             <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
               <tr className="text-left text-xs text-[var(--text-muted)]">

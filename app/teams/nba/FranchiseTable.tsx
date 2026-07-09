@@ -133,7 +133,97 @@ export default function FranchiseTable({ franchises, historical, playoffState, l
         <h2 className="text-lg font-bold tracking-tight">All-time table</h2>
         <ViewToggle view={view} setView={setView} defunctCount={historical.length} />
       </header>
-      <div className="rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+      {/* Mobile: one card per franchise instead of a 12-column table forcing
+          horizontal scroll at phone widths. Same `sorted` data, driven by the
+          same sort/view state, as the desktop table below. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {sorted.map((r) => {
+          const logo = r.slug ? logoMap[r.slug] : null;
+          const mono = r.slug ? monoMap[r.slug] : null;
+          const ps = playoffState[r.canonical];
+          const psStyle = ps ? PLAYOFF_STATE_COLORS[ps.state] : null;
+          return (
+            <div
+              key={r.key}
+              className="rounded-lg border p-3"
+              style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-start justify-between gap-2">
+                <div className="flex items-center gap-2.5 min-w-0">
+                  {logo ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={logo} alt="" className="w-7 h-7 flex-shrink-0 object-contain" loading="lazy" decoding="async" />
+                  ) : (
+                    <span
+                      className="inline-grid place-items-center rounded-full flex-shrink-0"
+                      style={{ background: mono?.bg ?? "#2a2a36", color: mono?.fg ?? "#9d9db0", width: 28, height: 28, fontSize: 10, fontWeight: 700, letterSpacing: "-0.02em" }}
+                      aria-hidden
+                    >
+                      {mono?.mono ?? "—"}
+                    </span>
+                  )}
+                  <div className="min-w-0">
+                    {r.slug ? (
+                      <Link href={`/teams/nba/${r.slug}`} className="font-semibold text-sm hover:text-[var(--accent)] transition-colors truncate block">
+                        {r.name}
+                      </Link>
+                    ) : (
+                      <span className="font-semibold text-sm text-[var(--text-muted)] truncate block">{r.name}</span>
+                    )}
+                    <div className="text-xs text-[var(--text-muted)] truncate">
+                      {r.metroSlug ? (
+                        <Link href={`/rankings/${r.metroSlug}`} className="hover:text-[var(--accent)] transition-colors">{r.metroLabel}</Link>
+                      ) : (
+                        r.metroLabel || dash
+                      )}
+                      {r.conf ? ` · ${r.conf}` : ""}
+                    </div>
+                  </div>
+                </div>
+                {r.defunct && (
+                  <span
+                    className="flex-shrink-0 text-[9px] uppercase tracking-wide font-semibold px-1.5 py-0.5 rounded"
+                    style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-dim)" }}
+                  >
+                    Defunct
+                  </span>
+                )}
+              </div>
+              <div className="mt-2.5 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+                <StatChip label="Founded" value={r.founded ?? "—"} />
+                <StatChip label="Titles" value={r.championships || "—"} accent={r.championships > 0} />
+                <StatChip label="Oth Titles" value={r.abaTitles || "—"} />
+                <StatChip label="Finals" value={r.champApps ?? "—"} />
+                <StatChip label="CF" value={r.cfApps ?? "—"} />
+                <StatChip label="Playoffs" value={r.playoffApps ?? "—"} />
+                <StatChip label="All-Stars" value={r.allStars ?? "—"} />
+                <StatChip label="All-time" value={r.wlt} />
+                <StatChip label="Win%" value={r.winPct ? r.winPct.toFixed(3).replace(/^0/, "") : "—"} />
+              </div>
+              {showPostseason && (
+                <div className="mt-2.5">
+                  {psStyle && ps ? (
+                    <a
+                      href={`https://en.wikipedia.org/wiki/${ps.year}_NBA_playoffs`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-block rounded px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide hover:opacity-80 transition-opacity"
+                      style={{ background: psStyle.bg, color: psStyle.text }}
+                      title={`${ps.year} NBA playoffs · ${ps.last_round} (Wikipedia)`}
+                    >
+                      {psStyle.label}
+                    </a>
+                  ) : (
+                    <span className="text-[var(--text-dim)] text-[10px]">No live postseason data</span>
+                  )}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="hidden sm:block rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
         <table className="w-full text-xs sm:text-sm tabular-nums">
           <thead>
             <tr className="text-left text-[var(--text-muted)] border-b" style={{ borderColor: "var(--border)" }}>
@@ -242,8 +332,21 @@ function Th({ label, k, cur, dir, onClick, align = "left", className = "" }: {
   const active = cur === k;
   const arrow = active ? (dir === "asc" ? "↑" : "↓") : "";
   return (
-    <th className={`py-2 pr-3 font-medium uppercase tracking-wider text-[10px] cursor-pointer select-none hover:text-[var(--text)] ${align === "right" ? "text-right" : ""} ${className}`} onClick={() => onClick(k)}>
+    <th className={`py-3 pr-3 font-medium uppercase tracking-wider text-[10px] cursor-pointer select-none hover:text-[var(--text)] ${align === "right" ? "text-right" : ""} ${className}`} onClick={() => onClick(k)}>
       {label}{arrow && <span className="ml-1 text-[var(--accent)]">{arrow}</span>}
     </th>
+  );
+}
+
+// Compact labeled stat chip for mobile cards: small uppercase label above a
+// value, matching the mini-grid pattern used elsewhere (e.g. ChampionsTable).
+function StatChip({ label, value, accent }: { label: string; value: string | number; accent?: boolean }) {
+  return (
+    <div>
+      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{label}</div>
+      <div className={accent ? "font-bold" : "text-[var(--text-muted)]"} style={accent ? { color: "#d4af37" } : undefined}>
+        {value}
+      </div>
+    </div>
   );
 }

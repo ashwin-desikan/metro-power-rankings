@@ -108,7 +108,29 @@ export default async function RlNationPage({ params }: { params: Promise<{ slug:
 
       <section>
         <h2 className="text-lg font-semibold mb-3">World Cup record</h2>
-        <div className="rounded-xl border overflow-x-auto" style={card}>
+
+        {/* Mobile: one card per World Cup appearance instead of a cramped
+            3-column table. Same `detail.results` array as the desktop table. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {(detail?.results ?? []).map((r) => (
+            <div
+              key={`${r.year}-card`}
+              className="rounded-lg border px-3 py-2.5 flex items-center justify-between gap-3"
+              style={card}
+            >
+              <span className="tabular-nums font-semibold text-sm" style={mono}>{r.year}</span>
+              <span
+                className="text-sm font-medium text-right"
+                style={{ color: FINISH_COLOR[r.finish] ?? "var(--text)" }}
+              >
+                {r.finish}
+              </span>
+              <span className="text-xs text-[var(--text-muted)] text-right flex-shrink-0">{r.host}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
           <table className="w-full text-sm">
             <thead>
               <tr className="text-left text-xs text-[var(--text-muted)]">

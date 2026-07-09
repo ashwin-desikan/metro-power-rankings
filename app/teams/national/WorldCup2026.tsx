@@ -214,7 +214,75 @@ function GroupStage({
                 <span>Group {key}</span>
                 <span className="text-[10px] normal-case tracking-normal text-[var(--text-dim)]">{teams.length} teams</span>
               </h4>
-              <div className="overflow-x-auto">
+              {/* Mobile: one card per team instead of an 8-column table.
+                  Same `teams` array (sorted above) drives both. */}
+              <div className="grid grid-cols-1 gap-2 sm:hidden">
+                {teams.map((t, i) => {
+                  const s = t.slug ? by[t.slug] : undefined;
+                  const gamesPlayed = (t.w ?? 0) + (t.d ?? 0) + (t.l ?? 0);
+                  const maxFinalPts = t.pts + 3 * Math.max(0, 3 - gamesPlayed);
+                  const xpts = s
+                    ? Math.min(Math.max(s.exp_points, t.pts), maxFinalPts)
+                    : null;
+                  return (
+                    <div
+                      key={t.cur_name}
+                      className="rounded-lg border p-2.5"
+                      style={{
+                        backgroundColor: "var(--bg-card)",
+                        borderColor: "var(--border)",
+                        borderLeft: i < 2 ? "3px solid var(--accent)" : "3px solid var(--border)",
+                      }}
+                    >
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="inline-flex items-center gap-1.5 text-xs font-medium min-w-0">
+                          {t.slug && flagCdnUrl(t.slug) && (
+                            <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" loading="lazy" decoding="async" />
+                          )}
+                          {t.slug ? (
+                            <Link href={`/teams/national/${t.slug}`} className="hover:text-[var(--accent)] transition-colors truncate">
+                              {displayNameForTeam(t.slug, t.cur_name)}
+                            </Link>
+                          ) : (
+                            <span className="truncate">{t.cur_name}</span>
+                          )}
+                        </span>
+                        <span className="flex-shrink-0 text-xs tabular-nums font-semibold" style={{ color: s ? "var(--accent)" : "var(--text-dim)" }}>
+                          {s ? `${s.p_advance.toFixed(0)}% Adv` : "—"}
+                        </span>
+                      </div>
+                      <div className="grid grid-cols-3 gap-x-2 gap-y-1 text-[11px] tabular-nums mt-1.5">
+                        <div>
+                          <span className="text-[9px] uppercase tracking-wide text-[var(--text-dim)] mr-1">W</span>
+                          {t.w}
+                        </div>
+                        <div>
+                          <span className="text-[9px] uppercase tracking-wide text-[var(--text-dim)] mr-1">D</span>
+                          {t.d}
+                        </div>
+                        <div>
+                          <span className="text-[9px] uppercase tracking-wide text-[var(--text-dim)] mr-1">L</span>
+                          {t.l}
+                        </div>
+                        <div>
+                          <span className="text-[9px] uppercase tracking-wide text-[var(--text-dim)] mr-1">GD</span>
+                          {t.gd > 0 ? `+${t.gd}` : t.gd}
+                        </div>
+                        <div>
+                          <span className="text-[9px] uppercase tracking-wide text-[var(--text-dim)] mr-1">Pts</span>
+                          <span className="font-semibold">{t.pts}</span>
+                        </div>
+                        <div>
+                          <span className="text-[9px] uppercase tracking-wide text-[var(--text-dim)] mr-1">xPts</span>
+                          <span className="text-[var(--text-muted)]">{xpts !== null ? xpts.toFixed(1) : "—"}</span>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="overflow-x-auto hidden sm:block">
                 <table className="w-full text-xs tabular-nums">
                   <thead className="text-[var(--text-muted)]">
                     <tr className="border-b" style={{ borderColor: "var(--border)" }}>
@@ -328,7 +396,51 @@ function TitleOdds({ sim, alive }: { sim: WorldCup2026Sim; alive: Set<string> })
   return (
     <div className="mb-6">
       <h3 className="text-sm font-semibold mb-3 text-[var(--text-muted)] uppercase tracking-wider">Title odds</h3>
-      <div className="rounded-xl border overflow-hidden" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+      {/* Mobile: one card per team instead of a 7-column table. Same `rows`
+          array (sorted by title odds above) drives both. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {rows.map((r, i) => (
+          <div
+            key={`${r.slug}-card`}
+            className="rounded-lg border p-3"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+          >
+            <div className="flex items-start justify-between gap-2">
+              <div className="leading-tight flex items-center gap-1.5 flex-wrap font-medium text-sm min-w-0">
+                <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-dim)]">{i + 1}.</span>
+                {flagCdnUrl(r.slug) ? (
+                  <img src={flagCdnUrl(r.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" loading="lazy" decoding="async" />
+                ) : (
+                  <span aria-hidden>{flagForTeam(r.slug)}</span>
+                )}
+                <Link href={`/teams/national/${r.slug}`} className="hover:text-[var(--accent)] transition-colors truncate">
+                  {displayNameForTeam(r.slug, r.name)}
+                </Link>
+              </div>
+              <span className="flex-shrink-0 text-sm tabular-nums font-semibold" style={{ color: "var(--accent)" }}>
+                {r.p_title.toFixed(1)}% Win
+              </span>
+            </div>
+            <div className="text-[11px] text-[var(--text-dim)] mb-2">Group {r.group}</div>
+            <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Semifinal</div>
+                <div className="tabular-nums text-[var(--text-muted)]">{r.p_sf.toFixed(1)}%</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Final</div>
+                <div className="tabular-nums text-[var(--text-muted)]">{r.p_final.toFixed(1)}%</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Market</div>
+                <div className="tabular-nums text-[var(--text-dim)]">{r.market_prob.toFixed(1)}%</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="rounded-xl border overflow-hidden hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
         <div className="overflow-x-auto">
           <table className="w-full text-xs tabular-nums">
             <thead className="text-[var(--text-muted)]">

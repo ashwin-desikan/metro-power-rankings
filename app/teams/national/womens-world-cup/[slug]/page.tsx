@@ -100,7 +100,45 @@ export default async function WWCNationPage({ params }: Props) {
       <section className="rounded-xl border p-5" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
         <h2 className="text-base font-semibold">Tournament by tournament</h2>
         <p className="mt-1 text-xs text-[var(--text-muted)]">Every edition this nation reached the finals, most recent first.</p>
-        <div className="mt-4 overflow-x-auto">
+
+        {/* Mobile: one card per edition instead of a 5-column table that
+            would otherwise hide the Host/Final columns entirely. */}
+        <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
+          {[...n.results].reverse().map((r) => {
+            const fs = finishStyle(r.rank);
+            return (
+              <div
+                key={`${r.year}-card`}
+                className="rounded-lg border p-3"
+                style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <span className="font-semibold tabular-nums">{r.year}</span>
+                  <span className="inline-flex items-center gap-1.5" style={{ color: fs.color }}>
+                    {fs.star && <span aria-hidden>★</span>}
+                    <span className="font-medium">{r.finish}</span>
+                  </span>
+                </div>
+                <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                  <div className="col-span-2">
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Tournament</div>
+                    <div><Link href="/teams/national/womens-world-cup" className="hover:underline">{tournament}</Link></div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Host</div>
+                    <div className="text-[var(--text-muted)] whitespace-nowrap">{r.host ?? "—"}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Final</div>
+                    <div className="tabular-nums text-[var(--text-muted)] whitespace-nowrap">{r.final_score ?? "—"}</div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="mt-4 overflow-x-auto hidden sm:block">
           <table className="w-full text-sm">
             <thead>
               <tr className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b" style={{ borderColor: "var(--border)" }}>

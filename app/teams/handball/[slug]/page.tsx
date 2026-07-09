@@ -129,7 +129,24 @@ export default async function HandballTeamPage(
       {detail.oly.length > 0 ? (
         <section className="mb-10">
           <h2 className="text-lg font-semibold mb-3">Olympic medals</h2>
-          <div className="rounded-xl border overflow-x-auto" style={card}>
+
+          {/* Mobile: compact chip cards instead of a scroll-gated table.
+              Only two columns, so a flex-wrap row of chips reads better
+              than full-width stacked cards. Same `detail.oly` array. */}
+          <div className="flex flex-wrap gap-2 sm:hidden">
+            {detail.oly.map((m) => (
+              <div
+                key={`${m.year}-${m.medal}-card`}
+                className="rounded-lg border px-3 py-2 flex items-center gap-2 text-sm"
+                style={card}
+              >
+                <span className="tabular-nums font-medium" style={mono}>{m.year}</span>
+                <span className="font-medium" style={{ color: m.medal === "Gold" ? GOLD : undefined }}>{m.medal}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
             <table className="w-full text-sm min-w-[320px]">
               <thead>
                 <tr className="text-left text-xs text-[var(--text-muted)]">

@@ -62,8 +62,55 @@ export default function NhlHistoricalPage() {
         </div>
       </header>
 
+      {/* Mobile: one stacked card per franchise instead of an 8-column table. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {historical.map((h) => (
+          <div
+            key={`${h.slug}-card`}
+            className="rounded-lg border p-3"
+            style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+          >
+            <div className="flex items-start justify-between gap-2">
+              <div className="min-w-0">
+                <div className="font-medium text-sm">{h.canonical}</div>
+                <div className="text-xs text-[var(--text-muted)] truncate">
+                  {h.display_name || `${h.last_city} ${h.last_team}`}
+                </div>
+                <div className="text-[11px] text-[var(--text-dim)]">{h.league_history}</div>
+              </div>
+              {h.championships > 0 ? (
+                <span
+                  className="flex-shrink-0 inline-flex items-center justify-center font-semibold px-1.5 rounded text-xs"
+                  style={{ background: TITLE_COLORS.stanley.bg, color: TITLE_COLORS.stanley.text }}
+                >
+                  {h.championships} Cup{h.championships === 1 ? "" : "s"}
+                </span>
+              ) : null}
+            </div>
+            <div className="mt-2.5 grid grid-cols-4 gap-x-3 gap-y-2 text-xs">
+              <div>
+                <div className="text-[9px] uppercase tracking-wide text-[var(--text-dim)]">Final apps</div>
+                <div className="tabular-nums font-medium">{h.champ_appearances}</div>
+              </div>
+              <div>
+                <div className="text-[9px] uppercase tracking-wide text-[var(--text-dim)]">Seasons</div>
+                <div className="tabular-nums font-medium text-[var(--text-muted)]">{h.seasons}</div>
+              </div>
+              <div>
+                <div className="text-[9px] uppercase tracking-wide text-[var(--text-dim)]">From</div>
+                <div className="tabular-nums font-medium text-[var(--text-muted)]">{seasonLabel(h.founded || 0)}</div>
+              </div>
+              <div>
+                <div className="text-[9px] uppercase tracking-wide text-[var(--text-dim)]">To</div>
+                <div className="tabular-nums font-medium text-[var(--text-muted)]">{seasonLabel(h.ended || 0)}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
       <section
-        className="rounded-xl border overflow-x-auto"
+        className="rounded-xl border overflow-x-auto hidden sm:block"
         style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
       >
         <table className="w-full text-xs sm:text-sm tabular-nums">

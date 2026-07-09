@@ -7,6 +7,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import type { WWCNation } from "@/lib/wnational";
+import { flagCdnUrl } from "@/lib/international-display";
 
 type SortKey = "default" | "nation" | "continent" | "apps" | "titles" | "finals" | "best" | "last";
 type SortDir = "asc" | "desc";
@@ -18,10 +19,30 @@ function Th({ label, k, active, dir, align, onSort, className }: {
   const arrow = active ? (dir === "asc" ? "↑" : "↓") : "↕";
   return (
     <th className={`py-2 px-2 font-medium whitespace-nowrap align-bottom ${align === "right" ? "text-right" : "text-left"} ${className ?? ""}`}>
-      <button type="button" onClick={() => onSort(k)} className="inline-flex items-center gap-1 hover:text-[var(--accent)] transition" style={{ color: active ? "var(--accent)" : "inherit", fontWeight: "inherit" }} title={`Sort by ${label}`}>
+      <button type="button" onClick={() => onSort(k)} className="inline-flex items-center gap-1 py-1.5 hover:text-[var(--accent)] transition" style={{ color: active ? "var(--accent)" : "inherit", fontWeight: "inherit" }} title={`Sort by ${label}`}>
         <span>{label}</span><span className="text-[10px] opacity-70" aria-hidden>{arrow}</span>
       </button>
     </th>
+  );
+}
+
+// National-team flag, shared by the mobile card and desktop table so the
+// flagcdn lookup and fallback (no image for unmapped slugs) stay in one place.
+function NationFlag({ slug }: { slug: string }) {
+  const url = flagCdnUrl(slug);
+  if (!url) return null;
+  // eslint-disable-next-line @next/next/no-img-element
+  return (
+    <img
+      src={url}
+      alt=""
+      aria-hidden
+      width={18}
+      height={13}
+      className="inline-block rounded-sm object-contain flex-shrink-0 align-middle"
+      loading="lazy"
+      decoding="async"
+    />
   );
 }
 
@@ -59,7 +80,56 @@ export default function WWCNationsTable({ nations }: { nations: WWCNation[] }) {
     <section className="rounded-xl border p-5" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
       <h2 className="text-base font-semibold">All nations</h2>
       <p className="mt-1 text-xs text-[var(--text-muted)]">Every nation to reach a Women&apos;s World Cup, by honors. Click any column to sort.</p>
-      <div className="mt-4 overflow-x-auto">
+
+      {/* Mobile: one card per nation instead of an 8-column table that would
+          otherwise need horizontal scrolling or silently hidden columns.
+          Same `sorted` data/state as the desktop table below. */}
+      <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
+        {sorted.map((n, i) => (
+          <div
+            key={`${n.slug}-card`}
+            className="rounded-lg border p-3"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+          >
+            <div className="flex items-start justify-between gap-2">
+              <div className="flex items-center gap-1.5 min-w-0">
+                <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0">{i + 1}</span>
+                <NationFlag slug={n.slug} />
+                <Link href={`/teams/national/womens-world-cup/${n.slug}`} className="font-medium hover:underline truncate">
+                  {n.name}
+                </Link>
+              </div>
+              {n.continent && (
+                <span className="flex-shrink-0 text-[10px] text-[var(--text-muted)]">{n.continent}</span>
+              )}
+            </div>
+            <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Apps</div>
+                <div className="tabular-nums">{n.appearances}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Titles</div>
+                <div className="tabular-nums font-semibold">{num(n.titles)}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Finals</div>
+                <div className="tabular-nums">{num(n.finals)}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Best</div>
+                <div className="whitespace-nowrap">{n.best_finish ?? "—"}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Last</div>
+                <div className="tabular-nums">{n.last_appearance ?? <span className="text-[var(--text-dim)]">—</span>}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-4 overflow-x-auto hidden sm:block">
         <table className="w-full text-sm">
           <thead>
             <tr className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b" style={{ borderColor: "var(--border)" }}>
@@ -77,7 +147,12 @@ export default function WWCNationsTable({ nations }: { nations: WWCNation[] }) {
             {sorted.map((n, i) => (
               <tr key={n.slug} className="border-b" style={{ borderColor: "var(--border)" }}>
                 <td className="py-1.5 pr-2 text-right tabular-nums text-[var(--text-muted)]">{i + 1}</td>
-                <td className="py-1.5 px-2"><Link href={`/teams/national/womens-world-cup/${n.slug}`} className="hover:underline font-medium">{n.name}</Link></td>
+                <td className="py-1.5 px-2">
+                  <span className="inline-flex items-center gap-1.5">
+                    <NationFlag slug={n.slug} />
+                    <Link href={`/teams/national/womens-world-cup/${n.slug}`} className="hover:underline font-medium">{n.name}</Link>
+                  </span>
+                </td>
                 <td className="py-1.5 px-2 hidden md:table-cell text-[var(--text-muted)]">{n.continent ?? <span className="text-[var(--text-dim)]">—</span>}</td>
                 <td className="py-1.5 px-2 text-right tabular-nums">{n.appearances}</td>
                 <td className="py-1.5 px-2 text-right tabular-nums font-semibold">{num(n.titles)}</td>

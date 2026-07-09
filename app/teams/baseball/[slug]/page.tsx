@@ -129,7 +129,35 @@ export default async function BaseballTeamPage(
       {/* ---------------- Campaigns ---------------- */}
       <section className="mb-10">
         <h2 className="text-lg font-semibold mb-3">Tournament by tournament</h2>
-        <div className="rounded-xl border overflow-x-auto" style={card}>
+
+        {/* Mobile: one card per tournament, same data as the table below */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {detail.campaigns.map((c) => (
+            <div key={c.year} className="rounded-lg border p-3" style={card}>
+              <div className="flex items-center justify-between gap-2">
+                <span className="font-semibold text-base tabular-nums" style={mono}>{c.year}</span>
+                <span
+                  className={c.finish === "Champions" ? "font-semibold text-sm" : "text-sm text-[var(--text-muted)]"}
+                  style={c.finish === "Champions" ? { color: "#d4af37" } : undefined}
+                >
+                  {c.finish}
+                </span>
+              </div>
+              <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">W</div>
+                  <div className="tabular-nums" style={mono}>{c.w}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">L</div>
+                  <div className="tabular-nums" style={mono}>{c.l}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[420px]">
             <thead>
               <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -161,7 +189,39 @@ export default async function BaseballTeamPage(
       {/* ---------------- Games ---------------- */}
       <section className="mb-10">
         <h2 className="text-lg font-semibold mb-3">Every WBC game</h2>
-        <div className="rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto" style={card}>
+
+        {/* Mobile: one card per game, same reversed order as the table below */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[520px] overflow-y-auto">
+          {detail.games.slice().reverse().map((g, i) => (
+            <div key={i} className="rounded-lg border p-3" style={card}>
+              <div className="flex items-start justify-between gap-2">
+                <span className="font-medium text-sm">{g.opp}</span>
+                <span
+                  className={`text-sm font-semibold tabular-nums flex-shrink-0 ${g.result === "W" ? "" : "text-[var(--text-muted)]"}`}
+                  style={mono}
+                >
+                  {g.result} {g.score}
+                </span>
+              </div>
+              <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Year</div>
+                  <div className="tabular-nums" style={mono}>{g.year}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Round</div>
+                  <div className="text-[var(--text-muted)]">{g.round}{g.pool ? ` · ${g.pool}` : ""}</div>
+                </div>
+                <div className="col-span-2">
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Venue</div>
+                  <div className="text-[var(--text-muted)]">{g.venue}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[640px]">
             <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
               <tr className="text-left text-xs text-[var(--text-muted)]">

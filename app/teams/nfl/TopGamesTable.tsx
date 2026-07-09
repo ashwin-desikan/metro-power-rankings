@@ -118,7 +118,67 @@ export default function TopGamesTable({ allTime, byDecade }: Props) {
         ))}
       </div>
 
-      <div className="max-h-[70vh] overflow-auto">
+      {/* Mobile: one card per game instead of a 5-column table with a
+          dense matchup cell that forces sideways scrolling. Same `rows`
+          data/order as the desktop table below. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[70vh] overflow-y-auto">
+        {rows.map((g, i) => (
+          <div
+            key={`${g.year}-${g.winner_canonical}-${g.loser_canonical}-${i}-card`}
+            className="rounded-lg border p-3"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+          >
+            <div className="flex items-baseline justify-between gap-2 text-xs text-[var(--text-muted)]">
+              <span className="tabular-nums">#{i + 1} · {g.date ?? g.year}</span>
+              <span className="tabular-nums font-semibold text-[var(--text)]">{g.du.toFixed(3)}</span>
+            </div>
+            <div className="text-[11px] text-[var(--text-dim)] mt-0.5">
+              {g.year}{g.round ? ` ${roundLabel(g.year, g.round)}` : ""}{g.ot ? " · OT" : ""}
+            </div>
+            <div className="leading-tight mt-1.5 text-sm">
+              <CrestIcon name={`${g.winner_city} ${g.winner_team}`} size={18} className="mr-1.5 align-middle" />
+              {g.winner_slug ? (
+                <Link href={`/teams/nfl/${g.winner_slug}`} className="font-semibold hover:text-[var(--accent)] hover:underline decoration-dotted underline-offset-2">
+                  {g.winner_city} {g.winner_team}
+                </Link>
+              ) : (
+                <span className="font-semibold">{g.winner_city} {g.winner_team}</span>
+              )}{" "}
+              <span className="tabular-nums font-semibold" style={{ color: "var(--accent)" }}>{g.winner_score}</span>
+              <span className="mx-1 text-[var(--text-dim)]">{g.is_tie ? "=" : "-"}</span>
+              <span className="tabular-nums text-[var(--text-muted)]">{g.loser_score}</span>{" "}
+              <CrestIcon name={`${g.loser_city} ${g.loser_team}`} size={18} className="mr-1.5 align-middle" />
+              {g.loser_slug ? (
+                <Link href={`/teams/nfl/${g.loser_slug}`} className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline decoration-dotted underline-offset-2">
+                  {g.loser_city} {g.loser_team}
+                </Link>
+              ) : (
+                <span className="text-[var(--text-muted)]">{g.loser_city} {g.loser_team}</span>
+              )}
+            </div>
+            {g.stadium ? (
+              <div
+                className="text-[10px] mt-1 truncate font-medium tracking-wide"
+                style={{ color: "var(--text-dim)", fontFamily: "'JetBrains Mono', monospace" }}
+                title={[g.stadium, g.stadium_city, g.stadium_state].filter(Boolean).join(" — ")}
+              >
+                {g.stadium}
+                {g.stadium_city ? (
+                  <span className="ml-1 opacity-80">
+                    · {g.stadium_city}{g.stadium_state ? `, ${abbrevState(g.stadium_state)}` : ""}
+                  </span>
+                ) : null}
+              </div>
+            ) : null}
+            {g.video ? <div className="mt-1.5"><WatchButton video={g.video} /></div> : null}
+          </div>
+        ))}
+        {rows.length === 0 && (
+          <p className="py-6 text-center text-[var(--text-dim)] italic text-sm">No games in this bucket.</p>
+        )}
+      </div>
+
+      <div className="max-h-[70vh] overflow-auto hidden sm:block">
         <table className="w-full text-xs tabular-nums [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:z-10 [&_thead_th]:bg-[var(--bg)]">
           <thead>
             <tr className="text-[var(--text-muted)]">

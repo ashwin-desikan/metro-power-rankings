@@ -72,7 +72,45 @@ export default function WcbbHubPage() {
           Current Division I programs, ordered by national titles, then Final Fours,
           then tournament appearances.
         </p>
-        <div className="rounded-xl border overflow-x-auto max-h-[600px] overflow-y-auto" style={card}>
+        {/* Mobile: one card per program. Same `ranked` data as the desktop
+            table below, with every column shown as a labeled stat. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {ranked.map((t, i) => (
+            <div key={`${t.slug}-card`} className="rounded-lg border p-3" style={card}>
+              <div className="flex items-start justify-between gap-2">
+                <div className="flex items-center gap-1.5 min-w-0">
+                  <span className="text-[11px] tabular-nums text-[var(--text-dim)] flex-shrink-0" style={mono}>{i + 1}</span>
+                  {link(t.slug, t.name)}
+                </div>
+              </div>
+              {t.conference && <div className="text-[11px] text-[var(--text-dim)] mb-2 ml-6">{t.conference}</div>}
+              <div className="grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Titles</div>
+                  <div className="tabular-nums font-semibold" style={{ ...mono, color: t.titles > 0 ? GOLD : "var(--text-dim)" }}>{t.titles}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Final Fours</div>
+                  <div className="tabular-nums text-[var(--text-muted)]" style={mono}>{t.final4}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Tour apps</div>
+                  <div className="tabular-nums text-[var(--text-muted)]" style={mono}>{t.tour_app}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">W-L</div>
+                  <div className="tabular-nums text-[var(--text-muted)]" style={mono}>{t.w}-{t.l}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Win%</div>
+                  <div className="tabular-nums text-[var(--text-muted)]" style={mono}>{t.pct.toFixed(3)}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto max-h-[600px] overflow-y-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[640px]">
             <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
               <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -108,7 +146,31 @@ export default function WcbbHubPage() {
       <section className="mb-10">
         <h2 id="champions" className="text-lg font-semibold mb-1">National champions</h2>
         <p className="text-xs text-[var(--text-muted)] mb-3">Every NCAA women's champion since 1982, with the runner-up and the rest of the Final Four.</p>
-        <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto" style={card}>
+
+        {/* Mobile: one card per tournament year. Same `champs` data as the
+            desktop table. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {champs.map((c) => (
+            <div key={`${c.year}-card`} className="rounded-lg border p-3" style={card}>
+              <div className="text-xs tabular-nums text-[var(--text-dim)] mb-1" style={mono}>{c.year}</div>
+              <div className="text-sm font-semibold" style={{ color: GOLD }}>
+                {c.champs.map((x, i) => (<span key={x.name}>{i > 0 ? ", " : ""}{x.slug ? link(x.slug, x.name) : x.name}</span>))}
+              </div>
+              <div className="mt-2 grid grid-cols-1 gap-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Runner-up</div>
+                  <div>{c.runner_up.map((x, i) => (<span key={x.name}>{i > 0 ? ", " : ""}{x.slug ? link(x.slug, x.name) : x.name}</span>))}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Final Four</div>
+                  <div className="text-[var(--text-muted)]">{c.final_four.map((x, i) => (<span key={x.name}>{i > 0 ? ", " : ""}{x.slug ? link(x.slug, x.name) : x.name}</span>))}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[640px]">
             <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
               <tr className="text-left text-xs text-[var(--text-muted)]">

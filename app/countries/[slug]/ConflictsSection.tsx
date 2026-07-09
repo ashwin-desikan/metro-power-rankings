@@ -43,7 +43,25 @@ export default function ConflictsSection({ wars }: { wars: CountryWar[] }) {
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
           </svg>
         </summary>
-        <div className="overflow-x-auto mt-2">
+        {/* Mobile: stacked cards */}
+        <div className="mt-2 grid grid-cols-1 gap-2 sm:hidden">
+          {wars.map(({ war, opponents }) => (
+            <div key={war.name} className="rounded-lg border p-3 border-gray-100 dark:border-gray-800" style={{ backgroundColor: "var(--bg-card)" }}>
+              <div className="flex items-start justify-between gap-2">
+                <a href={war.url} target="_blank" rel="noopener noreferrer"
+                   className="font-medium text-sm text-[var(--text)] hover:text-[var(--accent)] hover:underline">
+                  {war.name}
+                  {war.major ? <span className="ml-1.5 text-[10px] text-red-500" title="10,000+ combat deaths">●</span> : null}
+                </a>
+                <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]">{warYears(war)}</span>
+              </div>
+              <div className="mt-1.5 text-xs text-[var(--text-muted)]"><Opponents list={opponents} /></div>
+              <div className="mt-1.5 text-xs text-[var(--text-dim)]">Combat deaths: {fmtDeaths(war)}</div>
+            </div>
+          ))}
+        </div>
+        {/* Desktop: table */}
+        <div className="hidden sm:block overflow-x-auto mt-2">
           <table className="w-full text-left border-collapse text-sm">
             <thead>
               <tr className="border-b border-gray-200 dark:border-gray-700 text-xs text-[var(--text-muted)]">

@@ -103,7 +103,32 @@ export default function StateOfOrigin() {
         </div>
       </div>
 
-      <div className="rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+      {/* Mobile: one card per series instead of a 4-column table that needs
+          horizontal scrolling below 440px. Same `rows` (reversed SERIES). */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {rows.map((s) => (
+          <div
+            key={`${s.year}-card`}
+            className="rounded-lg border px-3 py-2.5"
+            style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+          >
+            <div className="flex items-center justify-between gap-2">
+              <span className="font-medium text-sm">
+                {s.winner === "Draw" ? <span className="text-[var(--text-dim)]">Drawn series</span> : <StateLink code={s.winner} />}
+              </span>
+              <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0">{s.year}</span>
+            </div>
+            <div className="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs tabular-nums">
+              <span className="text-[var(--text-muted)]">Result {s.w}-{s.l}{s.d ? `-${s.d}` : ""}</span>
+              <span className="inline-flex items-center gap-1 text-[var(--text-muted)]">
+                Shield: <StateLink code={s.shield} short />
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
         <table className="w-full text-sm tabular-nums min-w-[440px]">
           <thead>
             <tr className="border-b text-[11px]" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>

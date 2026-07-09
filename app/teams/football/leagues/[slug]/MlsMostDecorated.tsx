@@ -28,9 +28,15 @@ export default function MlsMostDecorated({ rows }: { rows: Row[] }) {
   const visible = view === "all" ? rows : rows.filter((r) => !r.defunct);
   const sorted = [...visible].sort((a, b) => (b[sortKey] - a[sortKey]) || (b.mls_cups - a.mls_cups) || (b.supporters_shields - a.supporters_shields) || a.cur_name.localeCompare(b.cur_name));
   const Th = ({ k, label }: { k: SortKey; label: string }) => (
-    <th className="py-2 px-2 text-right font-medium cursor-pointer select-none hover:text-[var(--text)]" onClick={() => setSortKey(k)} style={{ color: sortKey === k ? "var(--text)" : undefined }}>
+    <th className="py-3 px-2 text-right font-medium cursor-pointer select-none hover:text-[var(--text)]" onClick={() => setSortKey(k)} style={{ color: sortKey === k ? "var(--text)" : undefined }}>
       <span className="inline-flex items-center gap-1 justify-end">{label}{sortKey === k && <span aria-hidden style={{ color: "var(--accent)" }}>▼</span>}</span>
     </th>
+  );
+  const Stat = ({ label, v, strong }: { label: string; v: number; strong?: boolean }) => (
+    <div>
+      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{label}</div>
+      <div className={`tabular-nums ${strong ? "font-semibold" : "text-[var(--text-muted)]"}`}>{v || "—"}</div>
+    </div>
   );
   return (
     <section className="mb-8">
@@ -46,7 +52,38 @@ export default function MlsMostDecorated({ rows }: { rows: Row[] }) {
         </div>
       </header>
       <p className="text-xs text-[var(--text-muted)] mb-3">All MLS franchises by honors. Switch to All to include defunct clubs. Tap a column to sort.</p>
-      <div className="rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+
+      {/* Mobile: one card per club instead of a 7-column table. Same
+          `sorted` array drives both presentations. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {sorted.map((r) => (
+          <div key={r.cur_name} className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+            <div className="flex items-center justify-between gap-2">
+              <span className="inline-flex items-center gap-1.5 min-w-0">
+                <TeamCrest name={r.cur_name} size={20} fallback={<ColorBall slug={r.slug} name={r.cur_name} />} />
+                {r.slug ? (
+                  <Link href={`/teams/football/${r.slug}`} className="hover:underline font-medium truncate">{r.cur_name}</Link>
+                ) : (
+                  <span className="font-medium truncate">{r.cur_name}</span>
+                )}
+              </span>
+              {r.defunct && (
+                <span className="flex-shrink-0 text-[9px] uppercase tracking-wide font-semibold px-1.5 py-0.5 rounded" style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-dim)" }}>Defunct</span>
+              )}
+            </div>
+            <div className="mt-0.5 text-xs text-[var(--text-muted)]">{r.metro || "—"}</div>
+            <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+              <Stat label="MLS Cups" v={r.mls_cups} strong />
+              <Stat label="Shields" v={r.supporters_shields} />
+              <Stat label="Cup Finals" v={r.finals} />
+              <Stat label="Playoffs" v={r.playoffs} />
+              <Stat label="Seasons" v={r.seasons} />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
         <table className="w-full text-sm tabular-nums min-w-[640px]">
           <thead>
             <tr className="border-b text-[11px] uppercase tracking-wide" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>

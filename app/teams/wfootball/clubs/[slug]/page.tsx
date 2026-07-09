@@ -103,7 +103,36 @@ export default async function WClubPage({ params }: Props) {
         {club.honors.length === 0 ? (
           <p className="mt-2 text-sm text-[var(--text-muted)]">No major honors recorded yet.</p>
         ) : (
-        <div className="mt-4 overflow-x-auto">
+        <>
+        {/* Mobile: one card per competition instead of a scroll-only table.
+            Same club.honors data as the desktop table below. */}
+        <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
+          {club.honors.map((h) => (
+            <div
+              key={h.competition_slug}
+              className="rounded-lg border p-3"
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <Link href={`/teams/wfootball/${h.competition_slug}`} className="font-medium hover:underline">{h.competition_label}</Link>
+              <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Titles</div>
+                  <div className="tabular-nums font-semibold">{h.titles > 0 ? h.titles : <span className="text-[var(--text-dim)] font-normal">—</span>}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Runner-up</div>
+                  <div className="tabular-nums">{h.runner_ups > 0 ? h.runner_ups : <span className="text-[var(--text-dim)]">—</span>}</div>
+                </div>
+                <div className="col-span-2">
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Won in</div>
+                  <div className="tabular-nums text-[var(--text-muted)]">{yearsLabel(h.title_years)}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-4 overflow-x-auto hidden sm:block">
           <table className="w-full text-sm">
             <thead>
               <tr className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b" style={{ borderColor: "var(--border)" }}>
@@ -125,6 +154,7 @@ export default async function WClubPage({ params }: Props) {
             </tbody>
           </table>
         </div>
+        </>
         )}
       </section>
     </main>

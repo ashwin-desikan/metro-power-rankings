@@ -86,7 +86,38 @@ export default function DomesticRugbyPage() {
                 </span>
               ))}
             </div>
-            <div className="overflow-y-auto" style={{ overflowX: "auto", maxHeight: 300 }}>
+            {/* Mobile: stacked cards, same rows as the desktop table below.
+                Runner-up (hidden on the desktop table at narrow widths) is
+                shown explicitly here so no column is silently dropped. */}
+            <div className="sm:hidden overflow-y-auto" style={{ maxHeight: 300 }}>
+              {clubs.rolls[k].map((r, i) => (
+                <div
+                  key={i}
+                  className="border-b last:border-b-0 py-1.5 text-xs"
+                  style={{ borderColor: "var(--border)" }}
+                >
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="font-medium min-w-0 truncate">
+                      <CrestIcon name={r.team ?? r.winner} size={16} className="mr-1.5 align-middle" />
+                      {r.metro_slug ? (
+                        <Link href={`/rankings/${r.metro_slug}`} className="hover:text-[var(--accent)]">
+                          {r.winner}
+                        </Link>
+                      ) : (
+                        r.winner
+                      )}
+                      {r.shared ? <span className="text-[var(--text-dim)]"> (shared)</span> : null}
+                    </span>
+                    <span className="tabular-nums text-[var(--text-dim)] flex-shrink-0" style={mono}>
+                      {r.season}
+                    </span>
+                  </div>
+                  <div className="mt-0.5 text-[var(--text-dim)]">Runner-up: {r.ru || "—"}</div>
+                </div>
+              ))}
+            </div>
+
+            <div className="hidden sm:block overflow-y-auto" style={{ overflowX: "auto", maxHeight: 300 }}>
               <table className="w-full text-xs">
                 <tbody>
                   {clubs.rolls[k].map((r, i) => (
@@ -103,7 +134,7 @@ export default function DomesticRugbyPage() {
                         )}
                         {r.shared ? <span className="text-[var(--text-dim)]"> (shared)</span> : null}
                       </td>
-                      <td className="py-1 text-[var(--text-dim)] hidden sm:table-cell">{r.ru}</td>
+                      <td className="py-1 text-[var(--text-dim)]">{r.ru}</td>
                     </tr>
                   ))}
                 </tbody>

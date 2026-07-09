@@ -175,7 +175,7 @@ export default function HistoricalTable({ rows, histChamps, histSeasons }: Props
                 background: hasStolen ? "rgba(94, 20, 20, 0.08)" : undefined,
               }}
             >
-              <summary className="flex items-center gap-3 cursor-pointer select-none px-4 py-3 hover:bg-[var(--bg-card-hover)] transition-colors">
+              <summary className="flex items-start gap-3 cursor-pointer select-none px-4 py-3 hover:bg-[var(--bg-card-hover)] transition-colors">
                 <span
                   className="inline-grid place-items-center rounded-full flex-shrink-0 text-xs font-bold transition-transform"
                   style={{
@@ -183,14 +183,47 @@ export default function HistoricalTable({ rows, histChamps, histSeasons }: Props
                     color: "var(--text-muted)",
                     border: "1px solid var(--border)",
                     width: 22, height: 22, fontSize: 14, lineHeight: 1,
+                    marginTop: 4,
                   }}
                   aria-hidden
                 >
                   <span className="group-open:hidden">+</span>
                   <span className="hidden group-open:inline">−</span>
                 </span>
+
+                {/* Mobile: stacked card, no horizontal scrolling needed */}
+                <div className="flex-1 min-w-0 md:hidden">
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <span
+                      className="inline-grid place-items-center rounded-full flex-shrink-0"
+                      style={{
+                        background: mono.bg, color: mono.fg,
+                        width: 28, height: 28, fontSize: 10, fontWeight: 700, letterSpacing: "-0.02em",
+                      }}
+                      aria-hidden
+                    >
+                      {mono.mono}
+                    </span>
+                    <span className="truncate text-sm font-medium">{r.display_name ?? r.name}</span>
+                  </div>
+                  <div className="mt-1 text-xs text-[var(--text-muted)]">
+                    {r.city} · {r.league} · {r.first_year ?? "—"}–{r.last_year ?? "—"}
+                  </div>
+                  <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs tabular-nums">
+                    <span className="font-medium">{r.w}-{r.l}-{r.t}</span>
+                    <span className="text-[var(--text-muted)]">Win% {r.win_pct.toFixed(3)}</span>
+                    <span className="text-[var(--text-muted)]">{r.seasons} seasons</span>
+                  </div>
+                  {titleEntries.length > 0 && (
+                    <div className="mt-1.5 flex flex-wrap gap-1">
+                      <TitleBadges entries={titleEntries} />
+                    </div>
+                  )}
+                </div>
+
+                {/* Desktop: aligned grid matching the header strip */}
                 <div
-                  className="flex-1 grid items-center gap-3 text-xs sm:text-sm"
+                  className="hidden md:grid flex-1 items-center gap-3 text-sm"
                   style={{ gridTemplateColumns: GRID }}
                 >
                   <div className="flex items-center gap-2.5 min-w-0">
@@ -220,48 +253,7 @@ export default function HistoricalTable({ rows, histChamps, histSeasons }: Props
                       <span className="text-[var(--text-dim)]">—</span>
                     ) : (
                       <span className="flex flex-wrap gap-1">
-                        {titleEntries.map((c) => {
-                          if (c.stolen) {
-                            return (
-                              <span
-                                key={c.year}
-                                title={c.stolen_note}
-                                className="inline-flex items-center text-xs font-semibold pr-4 pl-2 py-0.5 rounded relative"
-                                style={{
-                                  background:
-                                    "repeating-linear-gradient(45deg, #5e1414 0, #5e1414 5px, #d4af37 5px, #d4af37 10px)",
-                                  color: "#fff",
-                                  border: "1px solid #d4af37",
-                                  textShadow: "0 1px 0 rgba(0,0,0,0.6)",
-                                }}
-                              >
-                                {c.year}
-                                <span
-                                  className="absolute right-1 top-1/2"
-                                  style={{
-                                    transform: "translateY(-50%)",
-                                    color: "#d4af37",
-                                    textShadow: "0 1px 0 rgba(0,0,0,0.8)",
-                                    fontSize: "10px",
-                                  }}
-                                  aria-hidden
-                                >
-                                  ★
-                                </span>
-                              </span>
-                            );
-                          }
-                          return (
-                            <span
-                              key={c.year}
-                              className="text-xs font-semibold px-2 py-0.5 rounded"
-                              style={{ background: TITLE_COLORS.pre_sb.bg, color: TITLE_COLORS.pre_sb.text }}
-                              title={c.season_team ? `${c.season_city ?? ""} ${c.season_team}` : undefined}
-                            >
-                              {c.year}
-                            </span>
-                          );
-                        })}
+                        <TitleBadges entries={titleEntries} />
                       </span>
                     )}
                   </div>
@@ -332,6 +324,57 @@ export default function HistoricalTable({ rows, histChamps, histSeasons }: Props
           );
         })}
       </section>
+    </>
+  );
+}
+
+// Championship-year badges, shared by the mobile card and desktop grid
+// layouts so the striped "stolen title" treatment stays in one place.
+function TitleBadges({ entries }: { entries: Championship[] }) {
+  return (
+    <>
+      {entries.map((c) => {
+        if (c.stolen) {
+          return (
+            <span
+              key={c.year}
+              title={c.stolen_note}
+              className="inline-flex items-center text-xs font-semibold pr-4 pl-2 py-0.5 rounded relative"
+              style={{
+                background:
+                  "repeating-linear-gradient(45deg, #5e1414 0, #5e1414 5px, #d4af37 5px, #d4af37 10px)",
+                color: "#fff",
+                border: "1px solid #d4af37",
+                textShadow: "0 1px 0 rgba(0,0,0,0.6)",
+              }}
+            >
+              {c.year}
+              <span
+                className="absolute right-1 top-1/2"
+                style={{
+                  transform: "translateY(-50%)",
+                  color: "#d4af37",
+                  textShadow: "0 1px 0 rgba(0,0,0,0.8)",
+                  fontSize: "10px",
+                }}
+                aria-hidden
+              >
+                ★
+              </span>
+            </span>
+          );
+        }
+        return (
+          <span
+            key={c.year}
+            className="text-xs font-semibold px-2 py-0.5 rounded"
+            style={{ background: TITLE_COLORS.pre_sb.bg, color: TITLE_COLORS.pre_sb.text }}
+            title={c.season_team ? `${c.season_city ?? ""} ${c.season_team}` : undefined}
+          >
+            {c.year}
+          </span>
+        );
+      })}
     </>
   );
 }

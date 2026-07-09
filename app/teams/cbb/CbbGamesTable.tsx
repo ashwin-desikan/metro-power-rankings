@@ -33,51 +33,99 @@ export default function CbbGamesTable({ games, linkSlugs = [] }: { games: CbbGam
     );
   };
   return (
-    <div className="max-h-[70vh] overflow-auto rounded-lg border" style={{ borderColor: "var(--border)" }}>
-      <table className="w-full text-xs sm:text-sm tabular-nums [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:z-10 [&_thead_th]:bg-[var(--bg-card)]">
-        <thead>
-          <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)] border-b" style={{ borderColor: "var(--border)" }}>
-            <th className="px-2 py-2 w-8">#</th>
-            <th className="px-2 py-2 whitespace-nowrap hidden sm:table-cell">Date</th>
-            <th className="px-2 py-2 w-14">Season</th>
-            <th className="px-2 py-2 hidden md:table-cell">Round</th>
-            <th className="px-2 py-2">Match</th>
-            <th className="px-2 py-2 text-right w-16">Game Score</th>
-          </tr>
-        </thead>
-        <tbody>
-          {games.map((g, i) => {
-            const loc = [g.arena, g.metro, g.state].filter(Boolean).join(", ");
-            const t = tags(g);
-            const ot = g.ot && String(g.ot).trim() && String(g.ot).trim() !== "0";
-            return (
-              <tr key={`${g.season}-${g.team}-${g.opp}-${i}`} className="border-b last:border-0 hover:bg-[var(--bg-card-hover)] align-top" style={{ borderColor: "var(--border)" }}>
-                <td className="px-2 py-2 text-[var(--text-dim)]">{i + 1}</td>
-                <td className="px-2 py-2 text-[var(--text-muted)] whitespace-nowrap hidden sm:table-cell">{fmtDate(g.date) ?? ""}</td>
-                <td className="px-2 py-2 text-[var(--text-muted)]">{g.season}</td>
-                <td className="px-2 py-2 text-[var(--text-muted)] hidden md:table-cell">{g.round || ""}</td>
-                <td className="px-2 py-2">
-                  <div className="leading-tight">
-                    {g.rank ? <span className="text-[var(--text-dim)]">#{g.rank} </span> : null}
-                    {name(g.team, g.team_slug, true)}
-                    <span className="text-[var(--text-muted)]"> {g.pf}-{g.pa} </span>
-                    {g.opp_rank ? <span className="text-[var(--text-dim)]">#{g.opp_rank} </span> : null}
-                    {name(g.opp, g.opp_slug, false)}
-                    {ot ? <span className="text-[10px] text-[var(--text-dim)]"> ({String(g.ot)})</span> : null}
-                  </div>
-                  {loc && <div className="mt-0.5 text-[10px] text-[var(--text-dim)] leading-tight">{loc}</div>}
-                  {t.length > 0 && (
-                    <div className="mt-0.5 flex flex-wrap gap-x-2 text-[10px] uppercase tracking-wide">
-                      {t.map((x) => <span key={x.label} className={x.cls}>{x.label}</span>)}
+    <>
+      {/* Mobile: one card per game. Same `games` array as the desktop table. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {games.map((g, i) => {
+          const loc = [g.arena, g.metro, g.state].filter(Boolean).join(", ");
+          const t = tags(g);
+          const ot = g.ot && String(g.ot).trim() && String(g.ot).trim() !== "0";
+          const d = fmtDate(g.date);
+          return (
+            <div key={`${g.season}-${g.team}-${g.opp}-${i}-card`} className="rounded-lg border p-3" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
+              <div className="flex items-start justify-between gap-2">
+                <div className="text-[10px] text-[var(--text-dim)] tabular-nums">#{i + 1}</div>
+                <div className="text-right text-sm font-medium text-[var(--accent)] tabular-nums">{g.gs.toFixed(2)}</div>
+              </div>
+              <div className="leading-tight text-sm mt-1">
+                {g.rank ? <span className="text-[var(--text-dim)]">#{g.rank} </span> : null}
+                {name(g.team, g.team_slug, true)}
+                <span className="text-[var(--text-muted)]"> {g.pf}-{g.pa} </span>
+                {g.opp_rank ? <span className="text-[var(--text-dim)]">#{g.opp_rank} </span> : null}
+                {name(g.opp, g.opp_slug, false)}
+                {ot ? <span className="text-[10px] text-[var(--text-dim)]"> ({String(g.ot)})</span> : null}
+              </div>
+              {loc && <div className="mt-0.5 text-[10px] text-[var(--text-dim)] leading-tight">{loc}</div>}
+              {t.length > 0 && (
+                <div className="mt-1 flex flex-wrap gap-x-2 text-[10px] uppercase tracking-wide">
+                  {t.map((x) => <span key={x.label} className={x.cls}>{x.label}</span>)}
+                </div>
+              )}
+              <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Season</div>
+                  <div className="tabular-nums text-[var(--text-muted)]">{g.season}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Date</div>
+                  <div className="tabular-nums text-[var(--text-muted)]">{d ?? "—"}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Round</div>
+                  <div className="text-[var(--text-muted)]">{g.round || "—"}</div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="max-h-[70vh] overflow-auto rounded-lg border hidden sm:block" style={{ borderColor: "var(--border)" }}>
+        <table className="w-full text-xs sm:text-sm tabular-nums [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:z-10 [&_thead_th]:bg-[var(--bg-card)]">
+          <thead>
+            <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)] border-b" style={{ borderColor: "var(--border)" }}>
+              <th className="px-2 py-2 w-8">#</th>
+              <th className="px-2 py-2 whitespace-nowrap hidden sm:table-cell">Date</th>
+              <th className="px-2 py-2 w-14">Season</th>
+              <th className="px-2 py-2 hidden md:table-cell">Round</th>
+              <th className="px-2 py-2">Match</th>
+              <th className="px-2 py-2 text-right w-16">Game Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            {games.map((g, i) => {
+              const loc = [g.arena, g.metro, g.state].filter(Boolean).join(", ");
+              const t = tags(g);
+              const ot = g.ot && String(g.ot).trim() && String(g.ot).trim() !== "0";
+              return (
+                <tr key={`${g.season}-${g.team}-${g.opp}-${i}`} className="border-b last:border-0 hover:bg-[var(--bg-card-hover)] align-top" style={{ borderColor: "var(--border)" }}>
+                  <td className="px-2 py-2 text-[var(--text-dim)]">{i + 1}</td>
+                  <td className="px-2 py-2 text-[var(--text-muted)] whitespace-nowrap hidden sm:table-cell">{fmtDate(g.date) ?? ""}</td>
+                  <td className="px-2 py-2 text-[var(--text-muted)]">{g.season}</td>
+                  <td className="px-2 py-2 text-[var(--text-muted)] hidden md:table-cell">{g.round || ""}</td>
+                  <td className="px-2 py-2">
+                    <div className="leading-tight">
+                      {g.rank ? <span className="text-[var(--text-dim)]">#{g.rank} </span> : null}
+                      {name(g.team, g.team_slug, true)}
+                      <span className="text-[var(--text-muted)]"> {g.pf}-{g.pa} </span>
+                      {g.opp_rank ? <span className="text-[var(--text-dim)]">#{g.opp_rank} </span> : null}
+                      {name(g.opp, g.opp_slug, false)}
+                      {ot ? <span className="text-[10px] text-[var(--text-dim)]"> ({String(g.ot)})</span> : null}
                     </div>
-                  )}
-                </td>
-                <td className="px-2 py-2 text-right text-[var(--accent)] font-medium">{g.gs.toFixed(2)}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
+                    {loc && <div className="mt-0.5 text-[10px] text-[var(--text-dim)] leading-tight">{loc}</div>}
+                    {t.length > 0 && (
+                      <div className="mt-0.5 flex flex-wrap gap-x-2 text-[10px] uppercase tracking-wide">
+                        {t.map((x) => <span key={x.label} className={x.cls}>{x.label}</span>)}
+                      </div>
+                    )}
+                  </td>
+                  <td className="px-2 py-2 text-right text-[var(--accent)] font-medium">{g.gs.toFixed(2)}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 }

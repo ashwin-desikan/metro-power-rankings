@@ -91,7 +91,27 @@ export default function ConflictsTable({ wars }: { wars: War[] }) {
       <input type="text" placeholder="Search a war or a country (e.g. Vietnam, India, Six-Day)…"
         value={q} onChange={(e) => setQ(e.target.value)}
         className="w-full px-4 py-2 bg-[var(--bg-card)] border border-[var(--border)] rounded-lg text-[var(--text)] placeholder-[var(--text-dim)] focus:outline-none focus:border-[var(--accent)]" />
-      <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
+      {/* Mobile: stacked cards, same sorted/filtered data as the table */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {rows.map((w) => (
+          <div key={w.name + w.start} className="rounded-lg border p-3" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+            <div className="flex items-start justify-between gap-2">
+              <a href={w.url} target="_blank" rel="noopener noreferrer" className="font-medium text-sm text-[var(--text)] hover:text-[var(--accent)] hover:underline">
+                {w.name}
+                {w.major ? <span className="ml-1.5 text-[10px] text-red-500" title="10,000+ combat deaths">●</span> : null}
+              </a>
+              <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]">{years(w)}</span>
+            </div>
+            <div className="mt-1.5 flex flex-col gap-0.5 text-xs text-[var(--text-muted)]">
+              <Side list={w.sideA} />
+              <span className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">vs</span>
+              <Side list={w.sideB} />
+            </div>
+            <div className="mt-1.5 text-xs text-[var(--text-dim)]">Combat deaths: {deaths(w)}</div>
+          </div>
+        ))}
+      </div>
+      <div className="hidden sm:block overflow-x-auto rounded-lg border border-[var(--border)]">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-[var(--border)]" style={{ backgroundColor: "var(--bg-card)" }}>

@@ -60,7 +60,43 @@ export default function PowerTable({ rows }: { rows: PowerEntry[] }) {
         </span>
       </div>
 
-      <div className="rounded-xl border overflow-x-auto" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+      {/* Mobile: stacked cards, same view-filtered rows as the desktop table */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {shown.map((r, i) => (
+          <div key={`${r.name}-${i}-card`} className="rounded-lg border p-3" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+            <div className="flex items-start justify-between gap-2">
+              <div className="min-w-0">
+                <div className="font-medium text-sm text-[var(--text)]">{stripWarn(r.name)}</div>
+                <div className="text-xs text-[var(--text-muted)]">{r.role}</div>
+              </div>
+              <div className="text-right flex-shrink-0">
+                <div className="tabular-nums font-bold text-[var(--text-dim)] text-xs">#{i + 1}</div>
+                <div className="tabular-nums font-semibold text-[var(--text)]">{Math.round(r.power)}</div>
+              </div>
+            </div>
+            {r.transition ? (
+              <div className="mt-1.5">
+                <span className="text-[10px] px-1.5 py-0.5 rounded bg-sky-500/10 text-sky-700 dark:text-sky-300 whitespace-normal">⏳ {r.transition}</span>
+              </div>
+            ) : null}
+            <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs">
+              <span className={`text-[10px] px-1.5 py-0.5 rounded ${CAT[r.category] ?? "text-[var(--text-muted)]"}`}>{r.category}</span>
+              {r.metroSlug ? (
+                <a href={`/rankings/${r.metroSlug}`} className="text-[var(--accent)] hover:underline">{r.metro}</a>
+              ) : (
+                <span className="text-[var(--text-muted)]">{r.metro}</span>
+              )}
+              <span className="text-[var(--text-muted)]">
+                {r.jurisdictionHref ? (
+                  <a href={r.jurisdictionHref} className="hover:text-[var(--accent)] hover:underline">{r.jurisdiction}</a>
+                ) : r.jurisdiction}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
         <table className="w-full text-left text-sm">
           <thead>
             <tr className="border-b text-xs uppercase tracking-wider text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }}>

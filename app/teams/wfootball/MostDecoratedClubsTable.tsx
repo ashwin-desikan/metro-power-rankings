@@ -40,7 +40,7 @@ function SortableTh({
       <button
         type="button"
         onClick={() => onSort(sortKey)}
-        className="inline-flex items-center gap-1 hover:text-[var(--accent)] transition"
+        className="inline-flex items-center gap-1 py-2 hover:text-[var(--accent)] transition"
         style={{ color: active ? "var(--accent)" : "inherit", fontWeight: "inherit" }}
         title={`Sort by ${label}`}
       >
@@ -98,7 +98,55 @@ export default function MostDecoratedClubsTable({
     <section className="rounded-xl border p-5" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
       <h2 className="text-base font-semibold">{title}</h2>
       {caption && <p className="mt-1 text-xs text-[var(--text-muted)]">{caption}</p>}
-      <div className="mt-4 overflow-x-auto">
+
+      {/* Mobile: one stacked card per club instead of a wide, configurable-column
+          table that would force sideways scrolling. Same `sorted` data and sort
+          state as the desktop table below; every configured stat column is
+          rendered as a labeled chip so nothing is dropped. */}
+      <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
+        {sorted.map((c, i) => (
+          <div
+            key={`${c.slug}-card`}
+            className="rounded-lg border p-3"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+          >
+            <div className="flex items-center gap-2 min-w-0">
+              <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]">{i + 1}</span>
+              <CrestIcon name={c.name} size={18} />
+              <Link href={`/teams/wfootball/clubs/${c.slug}`} className="font-medium hover:underline truncate">
+                {c.name}
+              </Link>
+            </div>
+            <div className="mt-1 text-xs text-[var(--text-muted)]">
+              {c.country ?? "—"}
+              {c.metro && (
+                <>
+                  {" · "}
+                  {c.metro_slug ? (
+                    <Link href={`/rankings/${c.metro_slug}`} className="hover:underline">{c.metro}</Link>
+                  ) : (
+                    c.metro
+                  )}
+                </>
+              )}
+            </div>
+            <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Total</div>
+                <div className="font-semibold tabular-nums">{num(c.total_titles)}</div>
+              </div>
+              {columns.map((col) => (
+                <div key={col.field}>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{col.label}</div>
+                  <div className="tabular-nums">{num(c[col.field] as number)}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-4 overflow-x-auto hidden sm:block">
         <table className="w-full text-sm">
           <thead>
             <tr className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b" style={{ borderColor: "var(--border)" }}>

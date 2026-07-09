@@ -151,7 +151,37 @@ export default async function BasketballNationPage(
           <p className="text-xs text-[var(--text-muted)] mb-3">
             Editions on file only; W–L across all games played.
           </p>
-          <div className="rounded-xl border overflow-x-auto" style={card}>
+          {/* Mobile: one card per campaign year instead of a scroll-only table */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {detail.campaigns.map((c) => (
+              <div key={c.year} className="rounded-lg border p-3" style={card}>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-medium text-sm tabular-nums" style={mono}>{c.year}</span>
+                  <div>
+                    {c.finish ? (
+                      <span className={c.finish === "Champions" ? "font-semibold text-sm" : "text-sm"}
+                            style={c.finish === "Champions" ? { color: GOLD } : undefined}>
+                        {c.finish}
+                      </span>
+                    ) : <span className="text-sm text-[var(--text-dim)]">—</span>}
+                  </div>
+                </div>
+                {c.as ? <div className="text-xs text-[var(--text-dim)] mt-0.5">as {c.as}</div> : null}
+                <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">W</div>
+                    <div className="tabular-nums" style={mono}>{c.w}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">L</div>
+                    <div className="tabular-nums" style={mono}>{c.l}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
             <table className="w-full text-sm min-w-[420px]">
               <thead>
                 <tr className="text-left text-xs text-[var(--text-muted)]">

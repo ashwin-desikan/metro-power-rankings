@@ -110,7 +110,36 @@ export default async function WnbaPage() {
           {groups.map(({ conference, rows }) => (
             <div key={conference} className="rounded-xl border overflow-hidden" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
               <div className="px-3 py-2 border-b text-[11px] uppercase tracking-widest font-semibold text-[var(--text-muted)]" style={{ borderColor: "var(--border)" }}>{conference}</div>
-              <table className="w-full text-sm tabular-nums">
+
+              {/* Mobile: one card per team instead of a scroll-only table */}
+              <div className="grid grid-cols-1 gap-2 p-2 sm:hidden">
+                {rows.map((st, i) => (
+                  <div
+                    key={(st.slug ?? st.team) + i + "-card"}
+                    className="rounded-lg border p-2.5"
+                    style={{ borderColor: "var(--border)", background: st.champion ? "rgba(251,191,36,0.07)" : "var(--bg-card)" }}
+                  >
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="flex items-center gap-2 min-w-0">
+                        <TeamCrest name={st.team} size={20} fallback={st.abbr && st.color ? <Mono abbr={st.abbr} color={st.color} /> : null} />
+                        {st.slug ? (
+                          <Link href={`/teams/wnba/${st.slug}`} className={`hover:text-[var(--accent)] transition-colors truncate ${st.champion ? "font-semibold" : ""}`}>{st.team}</Link>
+                        ) : (
+                          <span className="truncate">{st.team}</span>
+                        )}
+                        {st.champion && <span className="text-yellow-400 text-xs flex-shrink-0">★</span>}
+                        {st.finals && !st.champion && <span className="text-[var(--text-dim)] text-[10px] flex-shrink-0">F</span>}
+                      </span>
+                      <span className="flex items-baseline gap-2 text-xs tabular-nums flex-shrink-0">
+                        <span>{st.w}-{st.l}</span>
+                        <span className="text-[var(--text-muted)]">{fmtPct(st.win_pct)}</span>
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <table className="w-full text-sm tabular-nums hidden sm:table">
                 <thead>
                   <tr className="border-b text-[11px]" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
                     <th className="text-left py-2 px-3 font-medium">Team</th>
@@ -157,7 +186,22 @@ export default async function WnbaPage() {
 
       <section className="mb-10">
         <h2 id="champions" className="text-xl font-bold mb-4">Champions</h2>
-        <div className="rounded-xl border overflow-hidden" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+
+        {/* Mobile: one card per title year */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {champions.map((h) => {
+            const cf = bySlug.get(h.champion_slug);
+            return (
+              <div key={h.year + "-card"} className="rounded-lg border p-2.5 flex items-center gap-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+                <span className="font-bold tabular-nums w-12 flex-shrink-0" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{h.year}</span>
+                <TeamCrest name={h.champion} size={20} fallback={cf ? <Mono abbr={cf.abbr} color={cf.color} /> : null} />
+                <Link href={`/teams/wnba/${h.champion_slug}`} className="font-medium hover:text-[var(--accent)] transition-colors truncate">{h.champion}</Link>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="rounded-xl border overflow-hidden hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
           <table className="w-full text-sm tabular-nums">
             <thead>
               <tr className="border-b text-[11px]" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>

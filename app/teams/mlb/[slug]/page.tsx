@@ -586,7 +586,90 @@ export default async function FranchisePage({ params }: Props) {
         {topGamesWithOppSlug.length === 0 ? (
           <p className="text-sm text-[var(--text-muted)] italic">No postseason games scored.</p>
         ) : (
-          <div className="overflow-x-auto">
+          <>
+            {/* Mobile: one card per game instead of a 6-column table that would
+                need sideways scrolling to read the matchup. Same
+                `topGamesWithOppSlug` array drives both this list and the
+                desktop table below. */}
+            <div className="grid grid-cols-1 gap-2 sm:hidden">
+              {topGamesWithOppSlug.map((g, i) => {
+                const isLoss = g.result === "L";
+                const isTie = g.result === "T";
+                const teamSide = { city: g.team_city, team: g.team, slug: f.slug, score: g.rf };
+                const oppSide = { city: g.opp_city, team: g.opp_team, slug: g.opp_slug, score: g.ra };
+                const left = isLoss ? oppSide : teamSide;
+                const right = isLoss ? teamSide : oppSide;
+                const renderName = (side: { city: string; team: string; slug: string | null | undefined }, bold: boolean) => {
+                  const label = `${side.city} ${side.team}`;
+                  const cls = bold ? "font-semibold" : "text-[var(--text-muted)]";
+                  if (side.slug) {
+                    return (
+                      <Link href={`/teams/mlb/${side.slug}`} className={`${cls} hover:text-[var(--accent)] hover:underline decoration-dotted underline-offset-2`}>
+                        {label}
+                      </Link>
+                    );
+                  }
+                  return <span className={cls}>{label}</span>;
+                };
+                return (
+                  <div
+                    key={`${g.year}-${g.opp_canonical}-${g.game_num ?? ""}-${i}-card`}
+                    className="rounded-lg border p-3"
+                    style={{
+                      borderColor: "var(--border)",
+                      background: isLoss ? "rgba(239,68,68,0.04)" : "var(--bg-card)",
+                    }}
+                  >
+                    <div className="flex items-center justify-between gap-2 text-[11px] text-[var(--text-muted)]">
+                      <span className="tabular-nums">#{i + 1} · {g.date ?? g.year}</span>
+                      <span className="font-semibold tabular-nums" style={{ color: "var(--text)" }}>{g.game_score.toFixed(3)}</span>
+                    </div>
+                    <div className="flex items-center justify-between gap-2 mt-0.5">
+                      <span className="text-[10px] text-[var(--text-dim)]">
+                        {g.year}{g.round ? ` ${g.round}` : ""}{g.game_num ? ` G${g.game_num}` : ""}{g.extra_innings ? " · Extras" : ""}
+                      </span>
+                      <span
+                        className="inline-block text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide flex-shrink-0"
+                        style={
+                          g.result === "W"
+                            ? { background: "rgba(78,205,196,0.18)", color: "var(--accent)" }
+                            : g.result === "L"
+                            ? { background: "rgba(239,68,68,0.18)", color: "#fca5a5" }
+                            : { background: "rgba(255,255,255,0.06)", color: "var(--text-muted)" }
+                        }
+                      >
+                        {isTie ? "T" : g.result}
+                      </span>
+                    </div>
+                    <div className="mt-2 leading-tight text-sm">
+                      {renderName(left, !isTie)}{" "}
+                      <span className="tabular-nums font-semibold" style={{ color: isTie ? "var(--text-muted)" : "var(--accent)" }}>{left.score}</span>
+                      <span className="mx-1 text-[var(--text-dim)]">{isTie ? "=" : "-"}</span>
+                      <span className="tabular-nums text-[var(--text-muted)]">{right.score}</span>{" "}
+                      {renderName(right, false)}
+                    </div>
+                    {g.stadium ? (() => {
+                      const locParts = [g.stadium_city, g.stadium_state].filter(Boolean).join(", ");
+                      const title = g.stadium_canonical && g.stadium_canonical !== g.stadium
+                        ? `${g.stadium} (now ${g.stadium_canonical})${locParts ? " — " + locParts : ""}`
+                        : `${g.stadium}${locParts ? " — " + locParts : ""}`;
+                      return (
+                        <div
+                          className="text-[10px] mt-1 truncate font-medium tracking-wide"
+                          style={{ color: "var(--text-dim)", fontFamily: "'JetBrains Mono', monospace" }}
+                          title={title}
+                        >
+                          {g.stadium}
+                          {locParts ? <span className="ml-1 opacity-80">· {locParts}</span> : null}
+                        </div>
+                      );
+                    })() : null}
+                  </div>
+                );
+              })}
+            </div>
+
+          <div className="overflow-x-auto hidden sm:block">
             <table className="w-full text-xs tabular-nums">
               <thead>
                 <tr className="text-[var(--text-muted)]">
@@ -678,6 +761,7 @@ export default async function FranchisePage({ params }: Props) {
               </tbody>
             </table>
           </div>
+          </>
         )}
       </Block>
 

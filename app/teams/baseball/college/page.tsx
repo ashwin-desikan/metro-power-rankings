@@ -78,7 +78,26 @@ export default function CollegeBaseballPage() {
       <section className="mb-10">
         <h2 id="champions" className="text-lg font-semibold mb-1">Champions</h2>
         <p className="text-xs text-[var(--text-muted)] mb-3">Every College World Series final, newest first.</p>
-        <div className="rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto" style={card}>
+
+        {/* Mobile: one card per final, same data as the table below */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[520px] overflow-y-auto">
+          {champs.map((c) => (
+            <div key={c.year} className="rounded-lg border p-3" style={card}>
+              <div className="flex items-start justify-between gap-2">
+                <span className="font-semibold text-sm" style={{ color: GOLD }}>
+                  <School name={c.champion} />
+                </span>
+                <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0" style={mono}>{c.year}</span>
+              </div>
+              <div className="mt-2 text-xs">
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Runner-up</div>
+                <div className="text-[var(--text-muted)]"><School name={c.runner_up} /></div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[460px]">
             <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
               <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -107,7 +126,38 @@ export default function CollegeBaseballPage() {
           Ranked by national titles, then by total appearances. &quot;Finals&quot; counts trips to the championship
           series (since 1947); &quot;Omaha&quot; is total College World Series appearances.
         </p>
-        <div className="rounded-xl border overflow-x-auto" style={card}>
+
+        {/* Mobile: one card per program, same data as the table below */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {teams.map((t, i) => (
+            <div key={t.name} className="rounded-lg border p-3" style={card}>
+              <div className="flex items-center justify-between gap-2">
+                <span className="font-medium text-sm"><School name={t.name} /></span>
+                <span className="text-xs tabular-nums text-[var(--text-dim)] flex-shrink-0" style={mono}>#{i + 1}</span>
+              </div>
+              <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Titles</div>
+                  <div className="tabular-nums font-semibold" style={{ ...mono, color: t.titles > 0 ? GOLD : "var(--text-dim)" }}>{t.titles}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Finals</div>
+                  <div className="tabular-nums" style={mono}>{t.finals}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Omaha</div>
+                  <div className="tabular-nums" style={mono}>{t.apps}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Last title</div>
+                  <div className="tabular-nums text-[var(--text-muted)]" style={mono}>{t.last_title ?? "—"}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[520px]">
             <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
               <tr className="text-left text-xs text-[var(--text-muted)]">

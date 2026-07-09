@@ -64,7 +64,61 @@ export default function CflAllTimeTable({ franchises }: { franchises: Row[] }) {
         <Toggle value="current" label="Current franchises" />
         <Toggle value="all" label="Current + defunct" />
       </div>
-      <div className="rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+      {/* Mobile: one stacked card per franchise instead of an 8-column table.
+          Same `rows` array (already filtered/sorted above) drives both this
+          and the desktop table below. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {rows.map(f => {
+          const m = monogram(f.name, f.slug);
+          const lc = last(f.title_years);
+          const lf = last(f.gc_final_years);
+          return (
+            <div
+              key={`${f.slug}-card`}
+              className="rounded-lg border p-3"
+              style={{ backgroundColor: f.grey_cups > 0 ? "rgba(212,175,55,0.05)" : "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-center gap-2 min-w-0">
+                <TeamCrest name={f.name} size={22} fallback={<span className="inline-flex items-center justify-center font-bold rounded flex-shrink-0" style={{ background: m.bg, color: m.fg, width: 26, height: 16, fontSize: m.mono.length > 2 ? 9 : 11, letterSpacing: "0.02em" }}>{m.mono}</span>} />
+                <Link href={`/teams/cfl/${f.slug}`} className="font-medium text-sm truncate hover:text-[var(--accent)] transition-colors">{f.name}</Link>
+                {!f.active && <span className="text-[9px] uppercase tracking-wide px-1 py-0.5 rounded flex-shrink-0" style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-dim)" }}>defunct</span>}
+              </div>
+              <div className="grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs tabular-nums mt-2.5">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Grey Cups</div>
+                  <div className="font-semibold" style={{ color: f.grey_cups > 0 ? "#d4af37" : "var(--text-dim)" }}>{f.grey_cups}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Last Cup</div>
+                  <div className="text-[var(--text-muted)]">{lc ?? "—"}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Finals</div>
+                  <div className="text-[var(--text-muted)]">{f.gc_finals}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Last Final</div>
+                  <div className="text-[var(--text-muted)]">{lf ?? "—"}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Playoffs</div>
+                  <div className="text-[var(--text-muted)]">{f.playoff_apps}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Win%</div>
+                  <div>{f.win_pct.toFixed(3)}</div>
+                </div>
+                <div className="col-span-3">
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Record</div>
+                  <div className="text-[var(--text-muted)]">{f.w}-{f.l}-{f.t}</div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
         <table className="w-full text-sm tabular-nums min-w-[640px]">
           <thead>
             <tr className="border-b text-[11px]" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>

@@ -180,7 +180,49 @@ export default async function CricketHubPage() {
           <p className="text-xs text-[var(--text-muted)] mb-3">
             The current cycle&apos;s table, live from the ICC, ranked by percentage of points won (PCT).
           </p>
-          <div className="rounded-xl border overflow-x-auto" style={card}>
+          {/* Mobile: one card per team instead of an 8-column table. */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {wtc!.rows.map((r) => (
+              <div key={r.name} className="rounded-lg border p-3" style={card}>
+                <div className="flex items-center justify-between gap-2">
+                  <div className="font-medium text-sm flex items-center gap-1.5 min-w-0">
+                    <span className="text-xs tabular-nums text-[var(--text-dim)] flex-shrink-0" style={mono}>#{r.position}</span>
+                    <span className="truncate">{teamLink(r.name)}</span>
+                  </div>
+                  <div className="text-right flex-shrink-0">
+                    <span className="text-sm font-semibold tabular-nums" style={mono}>{r.pct}</span>
+                    <span className="text-[10px] text-[var(--text-dim)]"> PCT</span>
+                  </div>
+                </div>
+                <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">P</div>
+                    <div className="tabular-nums" style={mono}>{r.played}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">W</div>
+                    <div className="tabular-nums" style={mono}>{r.won}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">L</div>
+                    <div className="tabular-nums" style={mono}>{r.lost}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">D</div>
+                    <div className="tabular-nums" style={mono}>{r.drawn}</div>
+                  </div>
+                  <div className="col-span-2">
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Pts</div>
+                    <div className="tabular-nums" style={mono}>
+                      {r.points}{r.penalty > 0 ? <span className="text-[var(--text-dim)]"> (&minus;{r.penalty})</span> : null}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
             <table className="w-full text-sm min-w-[480px]">
               <thead>
                 <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -226,7 +268,23 @@ export default async function CricketHubPage() {
           {CRICKET_FORMATS.map((fmt) => (
             <div key={fmt} className="rounded-xl border p-4" style={card}>
               <div className="font-semibold mb-2">{fmt}</div>
-              <TableScroll>
+              {/* Mobile: compact stacked rows instead of a 3-col table. */}
+              <div className="grid grid-cols-1 gap-1.5 sm:hidden">
+                {hub.current_rankings[fmt].rows.map((r) => (
+                  <div
+                    key={r.team}
+                    className="rounded-lg border px-3 py-2 flex items-center justify-between gap-2"
+                    style={card}
+                  >
+                    <div className="flex items-center gap-2 min-w-0">
+                      <span className="text-xs tabular-nums text-[var(--text-dim)] flex-shrink-0" style={mono}>#{r.rank}</span>
+                      <span className="truncate text-sm">{teamLink(r.team)}</span>
+                    </div>
+                    <span className="text-sm font-semibold tabular-nums flex-shrink-0" style={mono}>{r.rating.toFixed(1)}</span>
+                  </div>
+                ))}
+              </div>
+              <TableScroll className="hidden sm:block">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -261,7 +319,29 @@ export default async function CricketHubPage() {
           {CRICKET_FORMATS.map((fmt) => (
             <div key={fmt} className="rounded-xl border p-4" style={card}>
               <div className="font-semibold mb-2">{fmt}</div>
-              <TableScroll>
+              {/* Mobile: stacked cards instead of a 4-col table. */}
+              <div className="grid grid-cols-1 gap-1.5 sm:hidden">
+                {hub.number_ones[fmt].slice(0, 8).map((r) => (
+                  <div key={r.team} className="rounded-lg border p-2.5" style={card}>
+                    <div className="text-sm font-medium mb-1.5">{teamLink(r.team)}</div>
+                    <div className="grid grid-cols-3 gap-x-3 gap-y-1 text-xs">
+                      <div>
+                        <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Months</div>
+                        <div className="tabular-nums" style={mono}>{r.months}</div>
+                      </div>
+                      <div>
+                        <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Longest</div>
+                        <div className="tabular-nums" style={mono}>{r.longest}</div>
+                      </div>
+                      <div>
+                        <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Last</div>
+                        <div className="tabular-nums" style={mono}>{r.last}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <TableScroll className="hidden sm:block">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -294,7 +374,38 @@ export default async function CricketHubPage() {
         <p className="text-xs text-[var(--text-muted)] mb-3">
           Titles and runner-up finishes across the five majors, editions through the most recent.
         </p>
-        <div className="rounded-xl border overflow-x-auto" style={card}>
+        {/* Mobile: one card per team, honours as a labeled mini-grid. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {hub.honours.map((h) => (
+            <div key={h.team} className="rounded-lg border p-3" style={card}>
+              <div className="font-medium text-sm mb-2">{teamLink(h.team)}</div>
+              <div className="grid grid-cols-2 gap-x-3 gap-y-2 text-xs">
+                {HONOUR_COLS.map((c) => {
+                  const line = h[c.key];
+                  return (
+                    <div key={c.key}>
+                      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{c.label}</div>
+                      {line.titles > 0 ? (
+                        <div>
+                          <span className="font-semibold tabular-nums" style={mono}>{line.titles}</span>
+                          <span className="text-[var(--text-muted)]"> ({line.title_years})</span>
+                        </div>
+                      ) : null}
+                      {line.ru > 0 ? (
+                        <div className="text-[var(--text-dim)]">RU {line.ru} ({line.ru_years})</div>
+                      ) : null}
+                      {line.titles === 0 && line.ru === 0 ? (
+                        <div className="text-[var(--text-dim)]">—</div>
+                      ) : null}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[760px]">
             <thead>
               <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -359,7 +470,35 @@ export default async function CricketHubPage() {
         <p className="text-xs text-[var(--text-muted)] mb-3">
           Bilateral trophies with the full series ledger behind each; holder as of the most recent series.
         </p>
-        <div className="rounded-xl border overflow-x-auto" style={card}>
+        {/* Mobile: one card per trophy instead of a 6-col table. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {hub.series_trophies.map((t) => (
+            <div key={t.trophy} className="rounded-lg border p-3" style={card}>
+              <div className="font-medium text-sm">{t.trophy}</div>
+              <div className="text-xs text-[var(--text-muted)] mt-0.5">{contestedBy(t.contested_by)}</div>
+              <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Format</div>
+                  <div>{t.format}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Span</div>
+                  <div className="tabular-nums" style={mono}>{t.first}–{t.last}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Series</div>
+                  <div className="tabular-nums" style={mono}>{t.series}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Holder</div>
+                  <div>{t.holder ? teamLink(t.holder) : "—"}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[700px]">
             <thead>
               <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -434,7 +573,44 @@ export default async function CricketHubPage() {
         <p className="text-xs text-[var(--text-muted)] mb-3">
           Every other nation with men&apos;s internationals on file, T20I era included.
         </p>
-        <div className="rounded-xl border overflow-x-auto" style={card}>
+        {/* Mobile: one card per nation instead of a 6-col table. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {associates.map((t) => {
+            const pct = winPct(t.overall);
+            return (
+              <div key={t.slug} className="rounded-lg border p-3" style={card}>
+                <Link href={`/teams/cricket/${t.slug}`} className="hover:text-[var(--accent)] font-medium text-sm inline-flex items-center gap-1.5">
+                  {flagCdnUrl(t.slug) ? <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={18} height={13} className="inline-block flex-shrink-0" loading="lazy" decoding="async" /> : null}
+                  {t.name}
+                </Link>
+                <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+                  <div className="col-span-3">
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Span</div>
+                    <div className="tabular-nums" style={mono}>{fmtSpan(t.overall.first, t.overall.last)}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">M</div>
+                    <div className="tabular-nums" style={mono}>{t.overall.m}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">W</div>
+                    <div className="tabular-nums" style={mono}>{t.overall.w}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">L</div>
+                    <div className="tabular-nums" style={mono}>{t.overall.l}</div>
+                  </div>
+                  <div className="col-span-3">
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Win %</div>
+                    <div className="tabular-nums" style={mono}>{pct !== null ? `${pct}%` : "—"}</div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[560px]">
             <thead>
               <tr className="text-left text-xs text-[var(--text-muted)]">

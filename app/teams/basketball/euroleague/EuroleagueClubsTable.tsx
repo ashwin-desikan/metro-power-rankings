@@ -48,7 +48,69 @@ export default function EuroleagueClubsTable({ clubs }: { clubs: Club[] }) {
         )}
       </div>
 
-      <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto" style={card}>
+      {/* Mobile: one card per club instead of a cramped 8-column table.
+          Same sorted/filtered `rows` array drives both views. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[560px] overflow-y-auto">
+        {rows.map((c) => {
+          const col = euroleagueClubColor(c.name);
+          return (
+            <div key={c.name} className="rounded-lg border p-3" style={card}>
+              <div className="flex items-center gap-2 min-w-0">
+                <TeamCrest
+                  name={c.name}
+                  size={22}
+                  fallback={
+                    col.known ? (
+                      <span
+                        className="inline-grid place-items-center rounded-full flex-shrink-0"
+                        style={{ background: col.bg, color: col.fg, width: 22, height: 22, fontSize: 9, fontWeight: 700 }}
+                        aria-hidden
+                      >
+                        {euroleagueMonogram(c.name)}
+                      </span>
+                    ) : (
+                      <span className="inline-block flex-shrink-0" style={{ width: 22 }} aria-hidden />
+                    )
+                  }
+                />
+                <span className="truncate font-medium text-sm">{c.name}</span>
+                {!c.in_team_list && c.titles > 0 ? (
+                  <span className="text-[10px] text-[var(--text-dim)] flex-shrink-0">· historic</span>
+                ) : null}
+              </div>
+              <div className="text-[11px] text-[var(--text-dim)] mt-0.5">
+                {c.country}
+                {c.metro_slug ? (
+                  <>
+                    {" · "}
+                    <Link href={`/rankings/${c.metro_slug}`} className="hover:text-[var(--accent)]">{c.metro}</Link>
+                  </>
+                ) : null}
+              </div>
+              <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Seasons</div>
+                  <div className="tabular-nums" style={mono}>{c.seasons}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">W&ndash;L</div>
+                  <div className="tabular-nums" style={mono}>{c.w}&ndash;{c.l}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">F4s</div>
+                  <div className="tabular-nums" style={mono}>{c.f4}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Titles</div>
+                  <div className="tabular-nums font-semibold" style={{ ...mono, color: c.titles > 0 ? GOLD : "var(--text-dim)" }}>{c.titles}</div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto hidden sm:block" style={card}>
         <table className="w-full text-sm min-w-[700px]">
           <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
             <tr className="text-left text-xs text-[var(--text-muted)]">

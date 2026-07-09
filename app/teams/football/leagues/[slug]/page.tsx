@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import HubNav from "@/app/teams/HubNav";
 import Link from "next/link";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
@@ -212,7 +213,42 @@ async function MlsHubView({ hub }: { hub: MlsLeagueHub }) {
       <section id="honors" className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
         <div>
           <h2 className="text-lg font-semibold mb-3">MLS Cup champions</h2>
-          <div className="rounded-xl border overflow-hidden" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+
+          {/* Mobile: one stacked card per final instead of a 3-column table. */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {finals.map((c) => (
+              <div
+                key={`${c.year}-${c.champion}-card`}
+                className="rounded-lg border p-3"
+                style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <span className="inline-flex items-center gap-1.5 min-w-0">
+                    <TeamCrest name={c.champion} size={22} fallback={<ColorBall slug={c.champion_slug ?? ""} name={c.champion} />} />
+                    {c.champion_slug ? (
+                      <Link href={`/teams/football/${c.champion_slug}`} className="hover:underline font-medium truncate">{c.champion}</Link>
+                    ) : (
+                      <span className="font-medium truncate">{c.champion}</span>
+                    )}
+                  </span>
+                  <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]">{c.year}</span>
+                </div>
+                <div className="mt-1.5 text-xs">
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Runner-up</div>
+                  {c.runner_up ? (
+                    <span className="inline-flex items-center gap-1.5 mt-0.5">
+                      <TeamCrest name={c.runner_up} size={18} fallback={<ColorBall slug={c.runner_up_slug ?? ""} name={c.runner_up} />} />
+                      {c.runner_up_slug ? <Link href={`/teams/football/${c.runner_up_slug}`} className="hover:underline">{c.runner_up}</Link> : <span>{c.runner_up}</span>}
+                    </span>
+                  ) : (
+                    <span className="text-[var(--text-dim)]">—</span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-xl border overflow-hidden hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b text-[11px] uppercase tracking-wide" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
@@ -235,7 +271,26 @@ async function MlsHubView({ hub }: { hub: MlsLeagueHub }) {
         </div>
         <div>
           <h2 className="text-lg font-semibold mb-3">Supporters&apos; Shield winners</h2>
-          <div className="rounded-xl border overflow-hidden" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+
+          {/* Mobile: stacked cards instead of a 2-column table. */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {shields.map((s) => (
+              <div
+                key={`${s.year}-${s.winner}-card`}
+                className="rounded-lg border p-3 flex items-center justify-between gap-2"
+                style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+              >
+                {s.winner_slug ? (
+                  <Link href={`/teams/football/${s.winner_slug}`} className="hover:underline font-medium truncate">{s.winner}</Link>
+                ) : (
+                  <span className="font-medium truncate">{s.winner}</span>
+                )}
+                <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]">{s.year}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-xl border overflow-hidden hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
             <table className="w-full text-sm">
               <tbody>
                 {shields.map((s) => (
@@ -274,6 +329,16 @@ function ColorBall({ slug, name }: { slug: string; name: string }) {
   );
 }
 
+// Small labeled stat block used inside mobile standings/table cards.
+function Stat({ label, value }: { label: string; value: React.ReactNode }) {
+  return (
+    <div>
+      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{label}</div>
+      <div className="tabular-nums">{value}</div>
+    </div>
+  );
+}
+
 function CurrentStandings({
   hub,
   cupsBySlug,
@@ -294,7 +359,132 @@ function CurrentStandings({
       <h2 className="text-base font-semibold">
         Current standings <span className="text-[var(--text-muted)] font-normal text-sm tabular-nums">({hub.current_year ? `season ending ${hub.current_year}` : "latest"})</span>
       </h2>
-      <div className="mt-4 overflow-x-auto">
+
+      {/* Mobile: one stacked card per club instead of a 13-column table. */}
+      <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
+        {hub.current_standings.map((s) => {
+          const isChamp = s.champion === true || s.place === 1;
+          const cups = cupsBySlug.get(s.slug) ?? [];
+          const euros = europeBySlug.get(s.slug) ?? [];
+          return (
+            <div
+              key={`${s.slug}-card`}
+              className="rounded-lg border p-3"
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-start justify-between gap-2">
+                <div className="flex items-center gap-2 min-w-0">
+                  <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0 w-4">{s.place ?? "-"}</span>
+                  <TeamCrest name={s.cur_name} size={22} fallback={<ColorBall slug={s.slug} name={s.cur_name} />} />
+                  <Link href={`/teams/football/${s.slug}`} className="font-medium truncate hover:underline">
+                    {s.cur_name}
+                  </Link>
+                </div>
+                <span className="flex-shrink-0 text-sm font-semibold tabular-nums">{s.pts ?? "-"} pts</span>
+              </div>
+
+              <div className="mt-1.5 flex flex-wrap gap-1">
+                {isChamp && (
+                  <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
+                        style={{ background: "rgba(245,215,110,0.18)", color: "#b58900" }}>Champion</span>
+                )}
+                {s.promoted && (
+                  <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
+                        style={{ background: "rgba(34,197,94,0.16)", color: "#22c55e" }}>
+                    {s.playoffs ? "Promoted (PO)" : "Promoted"}
+                  </span>
+                )}
+                {s.relegated && (
+                  <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
+                        style={{ background: "rgba(220,38,38,0.16)", color: "#dc2626" }}>
+                    {s.playoffs ? "Relegated (PO)" : "Relegated"}
+                  </span>
+                )}
+                {s.playoffs && !s.promoted && !s.relegated && (
+                  <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
+                        style={{ background: "rgba(251,191,36,0.16)", color: "#d97706" }}>
+                    {s.playoff_final ? "Not Promoted (PO)" : "Playoffs"}
+                  </span>
+                )}
+              </div>
+
+              <div className="mt-2 grid grid-cols-4 gap-x-3 gap-y-1.5 text-xs">
+                <Stat label="P" value={s.matches ?? "-"} />
+                <Stat label="W" value={s.w ?? "-"} />
+                <Stat label="D" value={s.d ?? "-"} />
+                <Stat label="L" value={s.l ?? "-"} />
+                <Stat label="GF" value={s.gf ?? "-"} />
+                <Stat label="GA" value={s.ga ?? "-"} />
+                <Stat label="GD" value={s.gd ?? "-"} />
+              </div>
+
+              {cups.length > 0 && (
+                <div className="mt-2">
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Domestic cup</div>
+                  <div className="mt-0.5 flex flex-wrap gap-1">
+                    {cups.map((c, ci) => {
+                      const isWin = c.result === "won";
+                      const shortLabel = c.kind === "major" ? "Cup" : "Lg Cup";
+                      return (
+                        <span key={ci} className="inline-block rounded px-1.5 py-0.5 text-xs font-semibold"
+                              style={{ background: isWin ? "rgba(245,215,110,0.18)" : "transparent", color: isWin ? "#b58900" : "var(--text-muted)", boxShadow: isWin ? undefined : "inset 0 0 0 1px rgba(120,120,140,0.45)" }}>
+                          {isWin ? "★ " : "☆ "}{shortLabel}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {euros.length > 0 && (
+                <div className="mt-2">
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">European competition</div>
+                  <div className="mt-0.5 flex flex-wrap gap-1">
+                    {euros.map((e, ei) => {
+                      const isWinner = e.trophy_won;
+                      const isUcl = !!(e.code && (e.code === "CL" || e.code === "CLB"));
+                      const isFinalistLost = !isWinner && e.deepest_rnd === 1;
+                      let bg: string, fg: string, boxShadow: string | undefined, symbol: string | null = null;
+                      if (isWinner && isUcl)        { bg = "rgba(212,175,55,0.22)"; fg = "#d4af37"; symbol = "★"; }
+                      else if (isWinner)             { bg = "rgba(192,192,192,0.20)"; fg = "#c0c0c0"; symbol = "★"; }
+                      else if (isFinalistLost && isUcl) { bg = "transparent"; fg = "#d4af37"; boxShadow = "inset 0 0 0 1px rgba(212,175,55,0.55)"; symbol = "☆"; }
+                      else if (isFinalistLost)        { bg = "transparent"; fg = "#c0c0c0"; boxShadow = "inset 0 0 0 1px rgba(192,192,192,0.55)"; symbol = "☆"; }
+                      else                            { bg = "rgba(120,120,140,0.16)"; fg = "var(--text-muted)"; }
+                      const title = isWinner
+                        ? `${e.competition} winner this season`
+                        : isFinalistLost
+                          ? `${e.competition}: reached final, lost`
+                          : `${e.competition}: ${e.result_label}`;
+                      return (
+                        <span key={ei} className="inline-block rounded px-1.5 py-0.5 text-xs font-semibold tracking-wide"
+                              style={{ background: bg, color: fg, boxShadow }} title={title}>
+                          {symbol && <span aria-hidden className="mr-0.5">{symbol}</span>}
+                          {europeanCompDisplayCode(e.code, s.year ?? null)}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {s.eur_qual && (
+                <div className="mt-2">
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Eur qual (next yr)</div>
+                  <span
+                    className="inline-block mt-0.5 rounded px-1.5 py-0.5 text-xs font-semibold tracking-wide"
+                    style={{ background: "rgba(59,130,246,0.18)", color: "#3b82f6" }}
+                    title="Qualified for this European competition next season"
+                  >
+                    {europeanCompDisplayCode(s.eur_qual, s.year === null ? null : s.year + 1)}
+                  </span>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="mt-4 overflow-x-auto hidden sm:block">
         <table className="w-full text-sm">
           <thead>
             <tr
@@ -458,6 +648,7 @@ function AllTimeChampions({ hub }: { hub: FootballLeagueHub }) {
     "ligue-1": 1933,
   };
   const breakYear = eraBreakYear[hub.slug];
+  const sortedChamps = [...hub.all_time_champions].sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
 
   return (
     <section
@@ -502,7 +693,49 @@ function AllTimeChampions({ hub }: { hub: FootballLeagueHub }) {
 
       <div className="mt-6">
         <h3 className="text-sm font-semibold mb-2">Chronological (most recent first)</h3>
-        <div className="overflow-x-auto">
+
+        {/* Mobile: one stacked card per title instead of a 3-column table. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {sortedChamps.map((ch, i, arr) => {
+            const showBreak = breakYear && ch.year === breakYear &&
+              (i === 0 || arr[i - 1].year !== breakYear);
+            return (
+              <Fragment key={`${ch.year}-${i}-card`}>
+                {showBreak && (
+                  <div className="py-2 text-center text-xs uppercase tracking-wider text-[var(--text-muted)]"
+                       style={{ borderTop: "2px solid var(--border)" }}>
+                    {hub.league} era begins
+                  </div>
+                )}
+                <div
+                  className="rounded-lg border p-3"
+                  style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <TeamCrest name={ch.champion} size={22} fallback={<ColorBall slug={ch.champion_slug} name={ch.champion} />} />
+                      <div className="min-w-0">
+                        <Link href={`/teams/football/${ch.champion_slug}`} className="hover:underline font-medium truncate block">
+                          {ch.champion}
+                        </Link>
+                        {ch.champion_team && ch.champion_team !== ch.champion && (
+                          <span className="text-[var(--text-muted)] text-xs">as {ch.champion_team}</span>
+                        )}
+                      </div>
+                    </div>
+                    <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]">{ch.year ?? "-"}</span>
+                  </div>
+                  <div className="mt-1.5 text-xs text-[var(--text-muted)]">
+                    {ch.league_name}
+                    {ch.format === "playoff" && <span className="ml-1 italic">(playoff)</span>}
+                  </div>
+                </div>
+              </Fragment>
+            );
+          })}
+        </div>
+
+        <div className="overflow-x-auto hidden sm:block">
           <table className="w-full text-sm">
             <thead>
               <tr
@@ -515,13 +748,13 @@ function AllTimeChampions({ hub }: { hub: FootballLeagueHub }) {
               </tr>
             </thead>
             <tbody>
-              {[...hub.all_time_champions].sort((a, b) => (b.year ?? 0) - (a.year ?? 0)).map((ch, i, arr) => {
+              {sortedChamps.map((ch, i, arr) => {
                 // Era break marker fires at the boundary between modern
                 // and legacy league names, regardless of sort direction.
                 const showBreak = breakYear && ch.year === breakYear &&
                   (i === 0 || arr[i - 1].year !== breakYear);
                 return (
-                  <>
+                  <Fragment key={`${ch.year}-${i}`}>
                     {showBreak && (
                       <tr key={`break-${ch.year}`} >
                         <td colSpan={3} className="py-3 text-center text-xs uppercase tracking-wider text-[var(--text-muted)]"
@@ -530,7 +763,7 @@ function AllTimeChampions({ hub }: { hub: FootballLeagueHub }) {
                         </td>
                       </tr>
                     )}
-                    <tr key={`${ch.year}-${i}`} className="border-b" style={{ borderColor: "var(--border)" }}>
+                    <tr className="border-b" style={{ borderColor: "var(--border)" }}>
                       <td className="py-1.5 tabular-nums">{ch.year ?? "-"}</td>
                       <td className="py-1.5">
                         <span className="inline-flex items-center gap-2">
@@ -548,7 +781,7 @@ function AllTimeChampions({ hub }: { hub: FootballLeagueHub }) {
                         {ch.format === "playoff" && <span className="ml-2 italic">(playoff)</span>}
                       </td>
                     </tr>
-                  </>
+                  </Fragment>
                 );
               })}
             </tbody>

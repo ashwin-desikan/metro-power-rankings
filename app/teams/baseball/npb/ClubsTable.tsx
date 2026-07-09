@@ -86,8 +86,81 @@ export default function ClubsTable({
         {btn(`Current (${active.length})`, !showAll, () => setShowAll(false))}
         {btn(`All (${allRows.length})`, showAll, () => setShowAll(true))}
       </div>
+      {/* Mobile: one card per club instead of a 9-column table nobody can
+          read at 375px without scrolling sideways. Same `rows` data as the
+          desktop table below - only the presentation differs. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {rows.map((r) => (
+          <div
+            key={r.key + "-card"}
+            className="rounded-lg border p-3"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+          >
+            <div className="font-medium text-sm flex items-center gap-1.5 flex-wrap">
+              <CrestIcon name={r.name} size={18} className="align-middle" />
+              {r.slug ? (
+                <Link href={`/teams/baseball/npb/${r.slug}`} className="hover:text-[var(--accent)]">{r.name}</Link>
+              ) : (
+                <span className="text-[var(--text-muted)]">{r.name}</span>
+              )}
+            </div>
+            {r.defunct && (
+              <div className="mt-1">
+                <span
+                  className="text-[10px] px-1.5 py-0.5 rounded border text-[var(--text-dim)]"
+                  style={{ borderColor: "var(--border)" }}
+                  title={r.successor ?? "Defunct franchise"}
+                >
+                  Defunct · {r.years}
+                </span>
+              </div>
+            )}
+            <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">League</div>
+                <div className="text-[var(--text-muted)]">{r.division}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">City</div>
+                <div>{r.city ?? <span className="text-[var(--text-dim)]">—</span>}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Metro</div>
+                <div>
+                  {r.metro_slug ? (
+                    <Link href={`/rankings/${r.metro_slug}`} className="hover:text-[var(--accent)]">{r.metro}</Link>
+                  ) : (
+                    <span className="text-[var(--text-dim)]">—</span>
+                  )}
+                </div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]" style={{ color: r.js_titles > 0 ? GOLD : undefined }}>Japan Series</div>
+                <div className="tabular-nums font-semibold" style={{ ...mono, color: r.js_titles > 0 ? GOLD : "var(--text-dim)" }}>{r.js_titles}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Pennants</div>
+                <div className="tabular-nums" style={mono}>{r.pennants}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Seasons</div>
+                <div className="tabular-nums" style={mono}>{r.seasons}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">W–L–T</div>
+                <div className="tabular-nums" style={mono}>{r.w}–{r.l}–{r.t}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Win %</div>
+                <div className="tabular-nums" style={mono}>{r.win_pct.toFixed(3)}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
       <div
-        className="rounded-xl border overflow-x-auto"
+        className="hidden sm:block rounded-xl border overflow-x-auto"
         style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
       >
         <table className="w-full text-sm min-w-[700px]">

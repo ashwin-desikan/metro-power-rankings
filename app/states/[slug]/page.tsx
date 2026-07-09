@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import {
   getMetrosForState,
   getState,
-  getStateSlugsWithMetros,
+  getTopStateSlugsForStaticParams,
 } from "@/lib/states";
 import { getCountry, getCountryByName } from "@/lib/countries";
 import StateMap from "./StateMap";
@@ -19,19 +19,19 @@ import {
   serializeJsonLd,
 } from "@/lib/seo";
 
-// Pre-generate only states that have at least one metro (~1,830 pages).
-// Empty states (~1,650 pages) are still reachable: dynamicParams=true
-// lets Next.js render them on first request, and the long revalidate
-// caches the result so the second request is fast. Without this filter,
-// all 3,480 pages were being rendered at build time, doubling the
-// Vercel build duration.
+// Pre-generate only the top 500 states by score (see
+// getTopStateSlugsForStaticParams). Every other state - including the
+// ~1,650 with zero metros and the ~1,687 lower-scoring states that do have
+// one - is still reachable: dynamicParams=true lets Next.js render it on
+// first request, and the long revalidate caches the result so the second
+// request is fast.
 export const dynamicParams = true;
 export const revalidate = 31536000; // 1 year — effectively static
 
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
-  return getStateSlugsWithMetros().map((slug) => ({ slug }));
+  return getTopStateSlugsForStaticParams().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -306,12 +306,51 @@ export default async function StateDetailPage({ params }: Props) {
             </h2>
             {metros.length > 0 ? (
               <div
-                className="border rounded-lg overflow-x-auto"
+                className="border rounded-lg overflow-hidden"
                 style={{
                   backgroundColor: "var(--bg-card)",
                   borderColor: "var(--border)",
                 }}
               >
+                {/* Mobile: stacked cards */}
+                <div className="sm:hidden divide-y divide-[var(--border)]">
+                  {metros.map((m) => {
+                    const tier = computeTier(m.score);
+                    const isCapital =
+                      state.capital != null && m.name === state.capital;
+                    return (
+                      <div key={`${m.slug}-card`} className="px-4 py-3">
+                        <div className="flex items-start justify-between gap-2">
+                          <div className="min-w-0">
+                            <span className="text-xs text-[var(--text-dim)] tabular-nums mr-1.5" style={{ fontFamily: "'JetBrains Mono', monospace" }}>#{m.rank}</span>
+                            <Link
+                              href={`/rankings/${m.slug}`}
+                              className="font-semibold hover:text-[var(--accent)]"
+                            >
+                              {m.name}
+                            </Link>
+                            {isCapital ? <CapitalBadge /> : null}
+                          </div>
+                          <span className="flex-shrink-0 font-bold tabular-nums" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>
+                            {m.score.toFixed(1)}
+                          </span>
+                        </div>
+                        <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[var(--text-muted)]">
+                          <span className="tabular-nums" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{formatPop(m.pop)}</span>
+                          <Link
+                            href={`/methodology${tierAnchor(m.score)}`}
+                            className="hover:text-[var(--accent)]"
+                            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                          >
+                            {tier.name}
+                          </Link>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+                {/* Desktop: table */}
+                <div className="hidden sm:block overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
                     <tr
@@ -386,6 +425,7 @@ export default async function StateDetailPage({ params }: Props) {
                     })}
                   </tbody>
                 </table>
+                </div>
               </div>
             ) : (
               <div

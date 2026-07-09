@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import type { CfbTeam } from "@/lib/cfbShared";
@@ -54,24 +55,58 @@ export default function CfbAllTimeTable({ teams }: { teams: CfbTeam[] }) {
       <div className="flex flex-wrap items-center gap-2 mb-3">
         <div className="inline-flex rounded-md border overflow-hidden text-xs" style={{ borderColor: "var(--border)" }}>
           {(["fbs", "all"] as const).map((s) => (
-            <button key={s} onClick={() => { setScope(s); setConf("All"); }} className="px-3 py-1"
+            <button key={s} onClick={() => { setScope(s); setConf("All"); }} className="px-3 py-2"
               style={s === scope ? { background: "var(--accent)", color: "var(--bg)" } : { color: "var(--text-muted)" }}>
               {s === "fbs" ? "Current FBS" : "All major programs"}
             </button>
           ))}
         </div>
-        <select value={conf} onChange={(e) => setConf(e.target.value)} className="text-xs rounded-md border bg-transparent px-2 py-1 focus:outline-none focus:border-[var(--accent)]" style={{ borderColor: "var(--border)", color: "var(--text)" }}>
+        <select value={conf} onChange={(e) => setConf(e.target.value)} className="text-xs rounded-md border bg-transparent px-2 py-2 focus:outline-none focus:border-[var(--accent)]" style={{ borderColor: "var(--border)", color: "var(--text)" }}>
           {conferences.map((c) => <option key={c} value={c} style={{ background: "var(--bg-card)" }}>{c}</option>)}
         </select>
         <span className="text-xs text-[var(--text-muted)] tabular-nums">{rows.length} programs</span>
       </div>
-      <div className="max-h-[70vh] overflow-auto rounded-lg border" style={{ borderColor: "var(--border)" }}>
+
+      {/* Mobile: one card per program. Same sorted/filtered `rows` array that
+          drives the desktop table below - only the presentation differs, so
+          the scope/conference/sort state stays a single source of truth. */}
+      <div className="grid grid-cols-1 gap-2 md:hidden max-h-[70vh] overflow-auto rounded-lg border p-2" style={{ borderColor: "var(--border)" }}>
+        {rows.map((t) => (
+          <div key={t.slug} className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+            <div className="flex items-center gap-2 mb-1 min-w-0">
+              <TeamCrest name={t.name} size={22} fallback={<span className="inline-block w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ background: t.color }} aria-hidden />} />
+              <Link href={`/teams/cfb/${t.slug}`} className="font-medium text-sm truncate hover:text-[var(--accent)]">{t.name}</Link>
+              {!t.current_fbs && <span className="flex-shrink-0 text-[9px] uppercase text-[var(--text-dim)]">{t.fbs_fcs || "former"}</span>}
+            </div>
+            <div className="text-xs text-[var(--text-muted)] mb-2 truncate">{t.conference || "—"}</div>
+            <div className="grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs tabular-nums">
+              <StatCell label="Record" value={`${t.w}-${t.l}${t.tie ? `-${t.tie}` : ""}`} />
+              <StatCell label="Pct" value={t.pct.toFixed(3)} />
+              <StatCell label="Games" value={t.games} />
+              <StatCell label="Maj Seas" value={t.maj_seasons} />
+              <StatCell label="Conf App" value={t.conf_champ_app} />
+              <StatCell label="Conf Title" value={t.maj_conf_champ} />
+              <StatCell label="Bowls" value={t.bowl_app} />
+              <StatCell label="Maj Bowl" value={t.maj_bowl} />
+              <StatCell label="Playoff" value={t.playoff_app} />
+              <StatCell
+                label="Natl"
+                value={t.nat_champ_years.length}
+                valueStyle={{ color: t.nat_champ_years.length ? "var(--accent)" : "var(--text-dim)" }}
+                bold
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="hidden md:block max-h-[70vh] overflow-auto rounded-lg border" style={{ borderColor: "var(--border)" }}>
         <table className="w-full text-xs sm:text-sm tabular-nums whitespace-nowrap [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:z-10 [&_thead_th]:bg-[var(--bg-card)]">
           <thead>
             <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)] border-b" style={{ borderColor: "var(--border)" }}>
               {COLS.map((c) => (
                 <th key={c.key}
-                  className={`px-2 py-2 cursor-pointer select-none hover:text-[var(--accent)] ${c.key === "name" || c.key === "conf" ? "text-left" : "text-right"} ${c.hide ?? ""}`}
+                  className={`px-2 py-2.5 cursor-pointer select-none hover:text-[var(--accent)] ${c.key === "name" || c.key === "conf" ? "text-left" : "text-right"} ${c.hide ?? ""}`}
                   onClick={() => { if (sort === c.key) setAsc(!asc); else { setSort(c.key); setAsc(false); } }}>
                   {c.label}{sort === c.key ? (asc ? " ↑" : " ↓") : ""}
                 </th>
@@ -96,6 +131,26 @@ export default function CfbAllTimeTable({ teams }: { teams: CfbTeam[] }) {
             ))}
           </tbody>
         </table>
+      </div>
+    </div>
+  );
+}
+
+// Labeled stat block for the mobile card grid, shared shape for every
+// numeric/derived column so the card mini-grid stays visually consistent.
+function StatCell({
+  label, value, valueStyle, bold,
+}: {
+  label: string;
+  value: string | number;
+  valueStyle?: CSSProperties;
+  bold?: boolean;
+}) {
+  return (
+    <div>
+      <div className="text-[9px] uppercase tracking-wide text-[var(--text-dim)]">{label}</div>
+      <div className={bold ? "font-semibold" : "text-[var(--text-muted)]"} style={valueStyle}>
+        {value === "" ? "—" : value}
       </div>
     </div>
   );

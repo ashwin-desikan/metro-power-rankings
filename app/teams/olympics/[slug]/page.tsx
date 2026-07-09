@@ -154,7 +154,44 @@ export default async function OlympicTeamPage(
           Every appearance with a medal table rank; rows note the name the team
           competed under at the time.
         </p>
-        <div className="rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto" style={card}>
+        {/* Mobile: one card per Games appearance instead of a horizontally
+            scrolling table. Same detail.editions data as the desktop table. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {detail.editions.map((e, i) => (
+            <div key={i} className="rounded-lg border p-3" style={card}>
+              <div className="flex items-start justify-between gap-2">
+                <div>
+                  <span className="tabular-nums font-medium text-base" style={mono}>{e.year}</span>
+                  <span className="text-xs text-[var(--text-muted)]"> {e.season}</span>
+                  {e.as ? <div className="text-xs text-[var(--text-muted)] mt-0.5">{e.as}</div> : null}
+                </div>
+                <span className="tabular-nums text-sm flex-shrink-0" style={mono}>
+                  {e.rank === 1 ? <span style={{ color: GOLD }}>#1</span> : `#${e.rank}`}
+                </span>
+              </div>
+              <div className="mt-2 grid grid-cols-4 gap-x-2 gap-y-1 text-xs tabular-nums">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]" style={{ color: GOLD }}>Gold</div>
+                  <div className="font-semibold" style={{ ...mono, color: e.g > 0 ? GOLD : "var(--text-dim)" }}>{e.g}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Silver</div>
+                  <div style={mono}>{e.s}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Bronze</div>
+                  <div style={mono}>{e.b}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Total</div>
+                  <div className="font-semibold" style={mono}>{e.total}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[600px]">
             <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
               <tr className="text-left text-xs text-[var(--text-muted)]">

@@ -107,7 +107,86 @@ export default function FranchiseTable({ franchises, historical, logoMap, monoMa
         <h2 className="text-lg font-bold tracking-tight">All-time table</h2>
         <ViewToggle view={view} setView={setView} defunctCount={historical.length} />
       </header>
-      <div className="rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+      {/* Mobile: one card per franchise instead of a 9-column table nobody
+          can read at 375px without scrolling sideways. Same `sorted` data
+          drives both this list and the desktop table below. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {sorted.map((r) => {
+          const logo = r.slug ? logoMap[r.slug] : null;
+          const mono = r.slug ? monoMap[r.slug] : null;
+          return (
+            <div
+              key={r.key}
+              className="rounded-lg border p-3"
+              style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-center justify-between gap-2">
+                {r.defunct ? (
+                  <span className="flex items-center gap-2 min-w-0">
+                    {r.slug ? (
+                      <Link href={`/teams/mlb/${r.slug}`} className="font-semibold text-sm truncate hover:text-[var(--accent)] transition-colors">{r.name}</Link>
+                    ) : (
+                      <span className="font-semibold text-sm text-[var(--text-muted)] truncate">{r.name}</span>
+                    )}
+                    <span className="flex-shrink-0 text-[9px] uppercase tracking-wide font-semibold px-1.5 py-0.5 rounded" style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-dim)" }}>Defunct</span>
+                  </span>
+                ) : (
+                  <Link href={`/teams/mlb/${r.slug}`} className="flex items-center gap-2.5 min-w-0 hover:text-[var(--accent)] transition-colors">
+                    {logo ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={logo} alt="" className="w-7 h-7 flex-shrink-0 object-contain" loading="lazy" decoding="async" />
+                    ) : (
+                      <span className="inline-grid place-items-center rounded-full flex-shrink-0" style={{ background: mono?.bg, color: mono?.fg, width: 24, height: 24, fontSize: 9, fontWeight: 700, letterSpacing: "-0.02em" }} aria-hidden>{mono?.mono}</span>
+                    )}
+                    <span className="font-semibold text-sm truncate">{r.name}</span>
+                  </Link>
+                )}
+                <span
+                  className="flex-shrink-0 text-[11px] font-semibold px-1.5 py-0.5 rounded"
+                  style={{ background: r.championships > 0 ? "rgba(212,175,55,0.16)" : "rgba(85,85,106,0.16)", color: r.championships > 0 ? TITLE_GOLD : "var(--text-dim)" }}
+                  title={r.wsTitle}
+                >
+                  {r.championships} WS
+                </span>
+              </div>
+              <div className="mt-2.5 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Metro</div>
+                  <div className="text-[var(--text-muted)]">
+                    {r.metroSlug ? (<Link href={`/rankings/${r.metroSlug}`} className="hover:text-[var(--accent)] transition-colors">{r.metroLabel}</Link>) : (r.metroLabel || dash)}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Division</div>
+                  <div className="text-[var(--text-muted)]">{r.division || dash}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Founded</div>
+                  <div className="text-[var(--text-muted)] tabular-nums" title={r.defunct && r.founded && r.ended ? `${r.founded}-${r.ended}` : undefined}>{r.founded ?? dash}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Pennants</div>
+                  <div className="tabular-nums">{r.pennants ?? dash}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Playoffs</div>
+                  <div className="tabular-nums">{r.playoffApps ?? dash}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">All-time</div>
+                  <div className="tabular-nums">{r.wlt}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Win%</div>
+                  <div className="tabular-nums">{r.winPct.toFixed(3)}</div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
         <table className="w-full text-xs sm:text-sm tabular-nums">
           <thead>
             <tr className="text-left text-[var(--text-muted)] border-b" style={{ borderColor: "var(--border)" }}>

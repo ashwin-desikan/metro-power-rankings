@@ -89,8 +89,27 @@ export default async function VelvetRockPage() {
       {/* Capital Index */}
       <section className="mt-8">
         <h2 className="mb-2 text-sm font-bold uppercase tracking-wide" style={muted}>The Velvet Rock Capital Index</h2>
-        <div className="overflow-x-auto">
-        <table className="w-full border-collapse text-sm min-w-[560px]">
+        {/* Mobile: stacked cards instead of a 4-column table forced wide by min-w */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {capitals.map((m) => (
+            <div key={m.slug} className="rounded-lg border p-3" style={{ borderColor: 'var(--border, #1b2330)' }}>
+              <div className="flex items-start justify-between gap-2">
+                <div>
+                  <div className="text-sm font-medium leading-tight">{m.metro}</div>
+                  <div className="text-xs" style={muted}>{m.country}</div>
+                </div>
+                <div className="text-right flex-shrink-0">
+                  <div className="font-semibold tabular-nums" style={{ color: gold }}>{m.lenses.production!.index}</div>
+                  <div className="text-[11px]" style={muted}>{m.lenses.production!.tier}</div>
+                </div>
+              </div>
+              <div className="mt-1.5 text-xs" style={muted}>{m.lenses.production!.note}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className="overflow-x-auto hidden sm:block">
+        <table className="w-full border-collapse text-sm">
           <thead>
             <tr className="text-left" style={muted}>
               <th className="py-2 pr-3 text-right">Index</th>

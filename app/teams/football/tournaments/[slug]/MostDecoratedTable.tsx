@@ -46,7 +46,7 @@ function SortableTh({
       <button
         type="button"
         onClick={onClick}
-        className="inline-flex items-center gap-1 hover:text-[var(--accent)] transition"
+        className="inline-flex items-center gap-1 py-2 hover:text-[var(--accent)] transition"
         style={{
           color: active ? "var(--accent)" : "inherit",
           fontWeight: "inherit",
@@ -133,7 +133,56 @@ export default function MostDecoratedTable({ rows }: Props) {
         appearances; clubs at the bottom with zero Cups are programs that reached the final but
         never lifted the trophy. Click any column header to sort.
       </p>
-      <div className="mt-4 overflow-x-auto">
+      {/* Mobile: one stacked card per club instead of a 5-column table that
+          forces sideways scrolling at phone widths. Same `sorted` data and
+          sort state as the desktop table below. */}
+      <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
+        {sorted.map((d, i) => (
+          <div
+            key={`${d.cur_name}-card`}
+            className="rounded-lg border p-3"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+          >
+            <div className="flex items-center gap-2 min-w-0">
+              <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]">{i + 1}</span>
+              {d.slug ? (
+                <Link href={`/teams/football/${d.slug}`} className="font-medium hover:underline truncate">
+                  {d.cur_name}
+                </Link>
+              ) : (
+                <span className="font-medium truncate">{d.cur_name}</span>
+              )}
+            </div>
+            <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Cups</div>
+                <div className="font-semibold tabular-nums">
+                  {d.champion_count > 0 ? d.champion_count : <span className="text-[var(--text-dim)] font-normal">—</span>}
+                </div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Finals</div>
+                <div className="tabular-nums">
+                  {(d.finals_count ?? d.champion_count)}
+                  {(d.finals_lost ?? 0) > 0 && (
+                    <span className="text-[var(--text-muted)]"> ({d.finals_lost} L)</span>
+                  )}
+                </div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Last won</div>
+                <div className="tabular-nums">{d.last_won ?? <span className="text-[var(--text-dim)]">—</span>}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Last final</div>
+                <div className="tabular-nums">{d.last_final ?? <span className="text-[var(--text-dim)]">—</span>}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-4 overflow-x-auto hidden sm:block">
         <table className="w-full text-sm">
           <thead>
             <tr

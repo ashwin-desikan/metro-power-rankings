@@ -93,7 +93,50 @@ export default function TennisChampionsTable({
         <span className="text-xs text-[var(--text-dim)] ml-auto tabular-nums">{filtered.length} editions</span>
       </div>
 
-      <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto" style={card}>
+      {/* Mobile: one card per edition instead of a 5-column table nobody
+          can read at 375px without scrolling sideways. Same `filtered`
+          data as the desktop table below - only the presentation differs. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {filtered.map((r) => (
+          <div
+            key={`${r.year}-${r.tournament}-card`}
+            className="rounded-lg border p-3"
+            style={card}
+          >
+            <div className="flex items-start justify-between gap-2">
+              <div className="font-medium text-sm">{r.tournament}</div>
+              <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]" style={mono}>{r.year}</span>
+            </div>
+            <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Men&apos;s singles</div>
+                <div><ChampSpan c={r.men} /></div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Women&apos;s singles</div>
+                <div><ChampSpan c={r.women} /></div>
+              </div>
+              <div className="col-span-2">
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Host metro</div>
+                <div className="text-[var(--text-muted)]">
+                  {r.metroSlug ? (
+                    <Link href={`/rankings/${r.metroSlug}#sports`} className="hover:text-[var(--accent)]">{r.metroName}</Link>
+                  ) : (
+                    <span className="text-[var(--text-dim)]">—</span>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+        {filtered.length === 0 && (
+          <div className="rounded-lg border p-4 text-center text-sm text-[var(--text-dim)]" style={card}>
+            No editions match those filters.
+          </div>
+        )}
+      </div>
+
+      <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto hidden sm:block" style={card}>
         <table className="w-full text-sm min-w-[660px]">
           <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
             <tr className="text-left text-xs text-[var(--text-muted)]">

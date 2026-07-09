@@ -61,7 +61,38 @@ export default function FootyHub({ copy, meta, ladder, franchises, gfHistory, li
             </span>
           </div>
           <p className="text-xs text-[var(--text-dim)] mb-4">Live {live.year} ladder from ESPN, refreshed hourly.</p>
-          <div className="rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+
+          {/* Mobile: one card per club instead of a 9-column table forcing
+              sideways scroll. Same `live.rows` array, card presentation only. */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {live.rows.map((r, i) => {
+              const lf = r.slug ? bySlug.get(r.slug) : undefined;
+              return (
+                <div key={r.slug ?? r.name ?? i} className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <span className="tabular-nums text-[var(--text-muted)] text-sm flex-shrink-0">{r.rank ?? i + 1}</span>
+                      {lf && <TeamCrest name={lf.name} size={20} fallback={<Badge color={lf.color} color2={lf.color2} abbr={lf.abbr} />} />}
+                      <span className="font-medium text-sm truncate">
+                        {lf ? <Link href={`/teams/${lg}/${lf.slug}`} className="hover:text-[var(--accent)] transition-colors">{lf.name}</Link> : r.name}
+                      </span>
+                    </div>
+                    <span className="font-semibold text-sm flex-shrink-0">{r.pts} pts</span>
+                  </div>
+                  <div className="mt-2 grid grid-cols-4 gap-x-3 gap-y-1 text-xs">
+                    <div><div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">P</div><div className="tabular-nums text-[var(--text-muted)]">{r.played}</div></div>
+                    <div><div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">W</div><div className="tabular-nums">{r.w}</div></div>
+                    <div><div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{lg === "afl" ? "L" : "D"}</div><div className="tabular-nums text-[var(--text-muted)]">{lg === "afl" ? r.l : r.d}</div></div>
+                    <div><div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{lg === "afl" ? "D" : "L"}</div><div className="tabular-nums text-[var(--text-muted)]">{lg === "afl" ? r.d : r.l}</div></div>
+                    <div><div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">For</div><div className="tabular-nums text-[var(--text-dim)]">{r.pf}</div></div>
+                    <div><div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Agst</div><div className="tabular-nums text-[var(--text-dim)]">{r.pa}</div></div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
             <table className="w-full text-sm tabular-nums min-w-[520px]">
               <thead>
                 <tr className="border-b text-[11px]" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
@@ -117,7 +148,45 @@ export default function FootyHub({ copy, meta, ladder, franchises, gfHistory, li
       {/* ── Grand Final honor roll ───────────────────────────────────────── */}
       <section className="mb-8">
         <h2 id="finals" className="text-xl font-bold mb-4">Grand Finals</h2>
-        <div className="rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+
+        {/* Mobile: one card per Grand Final instead of a 5-column table
+            forcing sideways scroll. Same `gfHistory` array, cards only. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {gfHistory.map((g) => (
+            <div key={`${g.year}-card`} className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+              <div className="flex items-center justify-between gap-2">
+                <span className="tabular-nums text-sm text-[var(--text-muted)]">{g.year}</span>
+                <span className="text-xs">{g.drawn ? "drawn" : `${g.pf}–${g.pa}`}</span>
+              </div>
+              <div className="mt-1.5 grid grid-cols-1 gap-y-1 text-xs">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">{copy.premiersWord}</span>
+                  <span className="font-medium text-right">
+                    {g.stripped ? (
+                      <span className="text-[var(--text-muted)]"><span className="line-through">{g.champion}</span> <span className="text-[10px] uppercase tracking-wide">stripped</span></span>
+                    ) : (
+                      <Link href={`/teams/${lg}/${g.champion_slug}`} className="hover:text-[var(--accent)] transition-colors">{g.champion}</Link>
+                    )}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Runner-up</span>
+                  <span className="text-right text-[var(--text-muted)]">
+                    {g.runner_up_slug ? <Link href={`/teams/${lg}/${g.runner_up_slug}`} className="hover:text-[var(--accent)] transition-colors">{g.runner_up}</Link> : g.runner_up}
+                  </span>
+                </div>
+                {g.stadium && (
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Venue</span>
+                    <span className="text-right text-[var(--text-dim)]">{g.stadium}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
           <table className="w-full text-sm tabular-nums min-w-[560px]">
             <thead>
               <tr className="border-b text-[11px]" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>

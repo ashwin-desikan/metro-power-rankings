@@ -81,7 +81,31 @@ export default function EuroleaguePage() {
           runner-up shown here. Final Four data begins with the 1987&ndash;88 season; earlier
           seasons were decided without a Final Four.
         </p>
-        <div className="rounded-xl border overflow-x-auto max-h-[480px] overflow-y-auto" style={card}>
+        {/* Mobile: one card per season instead of a cramped 4-column table */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[480px] overflow-y-auto">
+          {el.roll.map((r) => (
+            <div key={r.season} className="rounded-lg border p-3" style={card}>
+              <div className="flex items-center justify-between gap-2">
+                <span className="font-semibold text-sm">{r.champion}</span>
+                <span className="text-xs tabular-nums text-[var(--text-dim)] flex-shrink-0" style={mono}>{r.season}</span>
+              </div>
+              <div className="mt-2 grid grid-cols-1 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Runner-up</div>
+                  <div className="text-[var(--text-muted)]">{r.ru}</div>
+                </div>
+                {r.f4_others.length > 0 && (
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Final Four</div>
+                    <div className="text-[var(--text-dim)]">{r.f4_others.join(", ")}</div>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto max-h-[480px] overflow-y-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[480px]">
             <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
               <tr className="text-left text-xs text-[var(--text-muted)]">

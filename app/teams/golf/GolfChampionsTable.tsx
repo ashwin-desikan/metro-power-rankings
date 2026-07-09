@@ -79,7 +79,55 @@ export default function GolfChampionsTable({
         <span className="text-xs text-[var(--text-dim)] ml-auto tabular-nums">{filtered.length} championships</span>
       </div>
 
-      <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto" style={card}>
+      {/* Mobile: one card per championship instead of a 5-column table that
+          forces sideways scrolling at 375px. Same `filtered` data as the
+          desktop table below. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[560px] overflow-y-auto">
+        {filtered.map((r) => (
+          <div
+            key={`${r.year}-${r.tournament}-card`}
+            className="rounded-lg border p-3"
+            style={card}
+          >
+            <div className="flex items-start justify-between gap-2">
+              <div className="leading-tight font-medium text-sm flex items-center gap-1.5 flex-wrap">
+                {r.flagUrl ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={r.flagUrl} alt="" aria-hidden width={18} height={13} className="inline-block rounded-sm object-contain flex-shrink-0 align-middle" loading="lazy" decoding="async" />
+                ) : null}
+                <span>{r.champion}{r.dual ? " *" : ""}</span>
+              </div>
+              <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]" style={mono}>{r.year}</span>
+            </div>
+            <div className="text-[11px] text-[var(--text-dim)] mb-2">{r.tournament}</div>
+            <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Nation</div>
+                <div className="text-[var(--text-muted)]">{r.nation ?? "—"}</div>
+              </div>
+              <div className="col-span-2">
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Host venue &amp; metro</div>
+                <div className="text-[var(--text-muted)]">
+                  {r.metroSlug ? (
+                    <Link href={`/rankings/${r.metroSlug}#sports`} className="hover:text-[var(--accent)]">
+                      {r.venue ? `${r.venue}, ` : ""}{r.metroName}
+                    </Link>
+                  ) : (
+                    <span>{r.venue ?? "—"}</span>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+        {filtered.length === 0 && (
+          <div className="py-6 px-3 text-center text-sm text-[var(--text-dim)] rounded-lg border" style={card}>
+            No championships match those filters.
+          </div>
+        )}
+      </div>
+
+      <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto hidden sm:block" style={card}>
         <table className="w-full text-sm min-w-[680px]">
           <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
             <tr className="text-left text-xs text-[var(--text-muted)]">

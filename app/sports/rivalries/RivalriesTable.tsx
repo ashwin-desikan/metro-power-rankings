@@ -175,7 +175,38 @@ export default function RivalriesTable({ rows }: { rows: RivalryRow[] }) {
         <span className="text-xs text-[var(--text-muted)] tabular-nums ml-auto">{sorted.length} shown</span>
       </div>
 
-      <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
+      {/* Mobile: stacked cards, same sorted/filtered rows as the desktop table */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {sorted.map((r, i) => {
+          const national = !!(nationalSlug(r.teamHref) || nationalSlug(r.rivalHref));
+          return (
+            <div key={`${r.sport}-${r.rivalry}-${r.teamName}-${i}-card`} className="rounded-lg border p-3" style={{ borderColor: "var(--border)" }}>
+              <div className="flex items-start justify-between gap-2">
+                <div className="font-medium text-sm leading-tight">{r.rivalry || "—"}</div>
+                {r.top && (
+                  <span className="text-[10px] uppercase tracking-wide font-semibold flex-shrink-0" style={{ color: "#d4af37" }}>★ Top</span>
+                )}
+              </div>
+              <div className="mt-1.5 flex items-center gap-2 text-sm flex-wrap">
+                <Side name={r.teamName} href={r.teamHref} national={national} />
+                <span className="text-[var(--text-dim)]" aria-hidden>vs</span>
+                <Side name={r.rivalName} href={r.rivalHref} national={national} />
+              </div>
+              <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs text-[var(--text-muted)]">
+                <span>{leagueOf(r)}</span>
+                {r.country && <span>{r.country}</span>}
+                <span>
+                  {r.twoWay
+                    ? <span className="text-[var(--text-muted)]">Two-way</span>
+                    : <span style={{ color: "#b58900" }}>One-way</span>}
+                </span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="overflow-x-auto rounded-xl border hidden sm:block" style={{ borderColor: "var(--border)" }}>
         <table className="w-full text-sm">
           <thead>
             <tr className="text-left text-[var(--text-muted)] border-b" style={{ borderColor: "var(--border)" }}>

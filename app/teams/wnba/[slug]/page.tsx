@@ -164,7 +164,58 @@ export default async function WnbaFranchisePage({ params }: Props) {
       {displayRows.length > 0 ? (
         <section>
           <h2 className="text-lg font-bold mb-4">Season by Season</h2>
-          <div className="rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+
+          {/* Mobile: one card per season instead of a horizontally-scrolling
+              table. Same displayRows data as the desktop table below. */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {displayRows.map((s) => {
+              const isLive = (s as { is_live?: boolean }).is_live === true;
+              return (
+                <div
+                  key={`${s.year}${isLive ? "-live" : ""}-card`}
+                  className="rounded-lg border p-3"
+                  style={{ borderColor: "var(--border)", background: s.champion ? "rgba(251,191,36,0.06)" : isLive ? "rgba(78,205,196,0.06)" : "var(--bg-card)" }}
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="min-w-0">
+                      <div className="flex items-baseline gap-1.5">
+                        <span className="font-bold text-base tabular-nums" style={{ fontWeight: isLive ? 600 : undefined }}>{s.year}</span>
+                        {s.champion && <span className="text-yellow-400 text-xs">★</span>}
+                      </div>
+                      <div className="text-xs text-[var(--text-muted)] leading-tight mt-0.5">{s.team}</div>
+                      {isLive && asOfDate ? <div className="text-[9px] mt-0.5 text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>as of {asOfDate}</div> : null}
+                    </div>
+                    <div className="flex-shrink-0">
+                      {isLive ? (
+                        <span className="inline-flex items-center gap-1 rounded-full px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wider border whitespace-nowrap" style={{ borderColor: "var(--border)", color: "var(--text-muted)", background: "var(--bg-card)" }} title="Live record from ESPN, refreshed hourly">
+                          <span aria-hidden className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "rgb(34,197,94)" }} />
+                          Live
+                        </span>
+                      ) : (
+                        <FinishChip finish={s.finish} />
+                      )}
+                    </div>
+                  </div>
+                  <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-1 text-xs tabular-nums">
+                    <div>
+                      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Conf</div>
+                      <div className="text-[var(--text-muted)]">{s.conference ?? "—"}</div>
+                    </div>
+                    <div>
+                      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">W-L</div>
+                      <div>{s.w}-{s.l}</div>
+                    </div>
+                    <div>
+                      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Win%</div>
+                      <div>{s.win_pct != null ? s.win_pct.toFixed(3).replace(/^0/, "") : "—"}</div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
             <table className="w-full text-sm tabular-nums">
               <thead>
                 <tr className="border-b text-[11px] uppercase tracking-wide" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>

@@ -8,11 +8,18 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import TopTeamChip from "@/app/teams/TopTeamChip";
-import { getAllCbbSlugs, getCbbTeamBySlug, getCbbSeasons, getCbbAwards, getCbbNba, getCbbTeamGames, cbbMonogram } from "@/lib/cbb";
+import { getAllCbbSlugs, getAllCbbTeams, getCbbTeamBySlug, getCbbSeasons, getCbbAwards, getCbbNba, getCbbTeamGames, cbbMonogram } from "@/lib/cbb";
 import CbbGamesTable from "../CbbGamesTable";
 
-export const dynamicParams = false;
-export function generateStaticParams() { return getAllCbbSlugs().map((slug) => ({ slug })); }
+// Pre-generate only current D1 programs (365 of 498 total). Historical/
+// non-D1 programs are still reachable: dynamicParams=true renders them on
+// first request and the long revalidate caches the result, same pattern as
+// app/states/[slug]/page.tsx.
+export const dynamicParams = true;
+export const revalidate = 31536000; // 1 year — effectively static
+export function generateStaticParams() {
+  return getAllCbbTeams().filter((t) => t.current_d1).map((t) => ({ slug: t.slug }));
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
@@ -103,7 +110,63 @@ export default async function CbbTeamPage({ params }: { params: Promise<{ slug: 
 
       <section className="mb-10">
         <h2 className="text-lg font-semibold mb-3">Season by season</h2>
-        <div className="max-h-[70vh] overflow-auto rounded-lg border" style={{ borderColor: "var(--border)" }}>
+
+        {/* Mobile: one card per season. Every column from the desktop table
+            (including the ones hidden at sm/md/lg below) appears here. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {seasons.map((sn) => {
+            const result = sn.champ ? "Champion" : sn.final4 ? "Final Four" : sn.elite8 ? "Elite Eight" : sn.sweet16 ? "Sweet 16" : sn.ncaa ? "NCAA tournament" : sn.nit ? "NIT" : "";
+            return (
+              <div key={`${sn.year}-card`} className="rounded-lg border p-3" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
+                <div className="flex items-start justify-between gap-2">
+                  <div className="leading-tight text-sm font-medium">
+                    <a href={`https://www.sports-reference.com/cbb/seasons/men/${sn.year}.html`} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent)] hover:underline" title={`${sn.year} season on Sports Reference`}>{sn.year}</a>
+                    <span className="text-[var(--text-muted)] font-normal"> · {sn.school}</span>
+                  </div>
+                  {sn.champ && (
+                    <span className="flex-shrink-0 text-[9px] uppercase tracking-wide px-1.5 py-0.5 rounded font-semibold" style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }}>National</span>
+                  )}
+                </div>
+                <div className="text-[11px] text-[var(--text-dim)] mb-2">
+                  {sn.conference}
+                  {sn.reg_champ ? <span className="text-[var(--accent)]" title="Regular-season conference champion"> ★</span> : ""}
+                  {sn.conf_tour_champ ? <span className="text-[var(--text-muted)]" title="Conference tournament champion"> ◆</span> : ""}
+                </div>
+                <div className="grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Record</div>
+                    <div className="tabular-nums">{sn.w}-{sn.l}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Conf record</div>
+                    <div className="tabular-nums text-[var(--text-muted)]">{sn.conf_w || sn.conf_l ? `${sn.conf_w}-${sn.conf_l}` : "—"}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">AP</div>
+                    <div className="tabular-nums text-[var(--text-muted)]">{sn.ap_final ? `#${sn.ap_final}` : "—"}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">SRS</div>
+                    <div className="tabular-nums text-[var(--text-dim)]">{sn.srs_rank ? `#${sn.srs_rank}` : "—"}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Seed</div>
+                    <div className="tabular-nums text-[var(--text-muted)]">{sn.seed ? sn.seed : "—"}</div>
+                  </div>
+                  <div className="col-span-1">
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Tournament</div>
+                    <div>
+                      {result ? <span className={sn.champ ? "text-[var(--accent)] font-medium" : sn.final4 ? "text-amber-300" : "text-[var(--text-muted)]"}>{result}</span> : <span className="text-[var(--text-dim)]">—</span>}
+                      {sn.vacated ? <span className="ml-1 text-[9px] uppercase text-[var(--text-dim)]" title="Vacated">vac</span> : ""}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="max-h-[70vh] overflow-auto rounded-lg border hidden sm:block" style={{ borderColor: "var(--border)" }}>
           <table className="w-full text-xs sm:text-sm tabular-nums whitespace-nowrap [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:z-10 [&_thead_th]:bg-[var(--bg-card)]">
             <thead>
               <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)] border-b" style={{ borderColor: "var(--border)" }}>
@@ -140,7 +203,18 @@ export default async function CbbTeamPage({ params }: { params: Promise<{ slug: 
         <section className="mb-10">
           <h2 className="text-lg font-semibold mb-1">Consensus All-Americans</h2>
           <p className="text-xs text-[var(--text-muted)] mb-3">{awards.length} AP All-American selections.</p>
-          <div className="max-h-[60vh] overflow-auto rounded-lg border" style={{ borderColor: "var(--border)" }}>
+
+          {/* Mobile: simple stacked cards for this 2-column table. */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {awards.map((a, i) => (
+              <div key={`${i}-card`} className="rounded-lg border px-3 py-2 flex items-center justify-between gap-2" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
+                <span className="text-sm font-medium">{a.player}</span>
+                <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0">{a.year}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="max-h-[60vh] overflow-auto rounded-lg border hidden sm:block" style={{ borderColor: "var(--border)" }}>
             <table className="w-full text-sm [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:z-10 [&_thead_th]:bg-[var(--bg-card)]">
               <thead>
                 <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)] border-b" style={{ borderColor: "var(--border)" }}>
@@ -164,7 +238,22 @@ export default async function CbbTeamPage({ params }: { params: Promise<{ slug: 
         <section className="mb-6">
           <h2 className="text-lg font-semibold mb-1">NBA first-round picks</h2>
           <p className="text-xs text-[var(--text-muted)] mb-3">{nba.length} first-round NBA draft selections from this program.</p>
-          <div className="max-h-[60vh] overflow-auto rounded-lg border" style={{ borderColor: "var(--border)" }}>
+
+          {/* Mobile: stacked cards, including the "Last college yr" column
+              that's hidden at this width in the desktop table below. */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {nba.map((p, i) => (
+              <div key={`${i}-card`} className="rounded-lg border px-3 py-2" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-sm font-medium">{p.player}</span>
+                  <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0">{p.draft_year ?? "—"}</span>
+                </div>
+                <div className="text-[11px] text-[var(--text-dim)] mt-0.5">Last college yr: {p.year || "—"}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="max-h-[60vh] overflow-auto rounded-lg border hidden sm:block" style={{ borderColor: "var(--border)" }}>
             <table className="w-full text-sm [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:z-10 [&_thead_th]:bg-[var(--bg-card)]">
               <thead>
                 <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)] border-b" style={{ borderColor: "var(--border)" }}>

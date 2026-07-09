@@ -129,14 +129,33 @@ export function getAllStateSlugs(): string[] {
   return getAllStates().map((s) => s.slug);
 }
 
-// Slugs that are worth pre-generating at build time. States with zero
-// metros (~1,650 of the 3,480 rows in the sheet) still get a route — see
-// dynamicParams=true on the state page — but they render on first request
-// rather than during the static-params pass, which keeps Vercel build
-// time roughly halved.
+// All indexable state slugs (~2,187 of the 3,482 rows in the sheet have at
+// least one metro). Used by the sitemap, which should list every real page
+// regardless of whether it was pre-rendered at build time — see
+// getTopStateSlugsForStaticParams for the smaller build-time subset.
 export function getStateSlugsWithMetros(): string[] {
   return getAllStates()
     .filter((s) => s.metroCount > 0)
+    .map((s) => s.slug);
+}
+
+// Slugs that are worth pre-generating at build time: the top 500 states by
+// scoreTotal among the ~2,187 that have at least one metro. The rest still
+// get a route — see dynamicParams=true on the state page — but render on
+// first request rather than during the static-params pass. scoreTotal, not
+// metroCount, is the notability signal: many of the most important
+// single-metro entries (e.g. Île-de-France/Paris, Beijing, Greater London,
+// DC) would be wrongly excluded by a metro-count-only filter despite being
+// world-significant, so a metroCount>0-but-low-scoreTotal state (a province
+// with one small metro) is what actually gets deferred to on-demand
+// rendering here.
+const STATE_STATIC_PARAMS_TOP_N = 500;
+
+export function getTopStateSlugsForStaticParams(): string[] {
+  return getAllStates()
+    .filter((s) => s.metroCount > 0)
+    .sort((a, b) => b.scoreTotal - a.scoreTotal)
+    .slice(0, STATE_STATIC_PARAMS_TOP_N)
     .map((s) => s.slug);
 }
 

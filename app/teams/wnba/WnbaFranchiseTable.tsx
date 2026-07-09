@@ -18,7 +18,7 @@ function Th({ label, k, active, dir, align, onSort, className }: {
   const arrow = active ? (dir === "asc" ? "↑" : "↓") : "↕";
   return (
     <th className={`py-2 px-3 font-medium whitespace-nowrap align-bottom ${align === "right" ? "text-right" : "text-left"} ${className ?? ""}`}>
-      <button type="button" onClick={() => onSort(k)} className="inline-flex items-center gap-1 hover:text-[var(--accent)] transition" style={{ color: active ? "var(--accent)" : "inherit", fontWeight: "inherit" }} title={`Sort by ${label}`}>
+      <button type="button" onClick={() => onSort(k)} className="inline-flex items-center gap-1 py-2 -my-2 hover:text-[var(--accent)] transition" style={{ color: active ? "var(--accent)" : "inherit", fontWeight: "inherit" }} title={`Sort by ${label}`}>
         <span>{label}</span><span className="text-[10px] opacity-70" aria-hidden>{arrow}</span>
       </button>
     </th>
@@ -50,7 +50,68 @@ export default function WnbaFranchiseTable({ franchises }: { franchises: WnbaFra
   }, [franchises, sortKey, sortDir]);
 
   return (
-    <div className="rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+    <div>
+      {/* Mobile: one card per franchise. Same `sorted` array as the desktop
+          table below, driven by the same sort state. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {sorted.map((f, i) => (
+          <Link
+            key={f.slug}
+            href={`/teams/wnba/${f.slug}`}
+            className="block rounded-lg border p-3 hover:border-[var(--accent)] transition-colors"
+            style={{ borderColor: "var(--border)", background: f.titles > 0 ? "rgba(251,191,36,0.04)" : "var(--bg-card)" }}
+          >
+            <div className="flex items-start justify-between gap-2">
+              <div className="flex items-center gap-2.5 min-w-0">
+                <TeamCrest name={f.name} size={26} fallback={<span className="inline-flex items-center justify-center font-bold rounded flex-shrink-0" style={{ background: f.color, color: "#fff", width: 30, height: 19, fontSize: f.abbr.length > 3 ? 8 : 10, opacity: f.defunct ? 0.6 : 1 }} aria-hidden>{f.abbr}</span>} />
+                <div className="min-w-0">
+                  <div className="font-medium leading-tight flex items-center gap-1.5 flex-wrap">
+                    <span className="truncate">{f.name}</span>
+                    {f.defunct && <span className="text-[9px] uppercase tracking-wider text-[var(--text-dim)] border rounded px-1 py-0.5 font-normal flex-shrink-0" style={{ borderColor: "var(--border)" }}>Defunct</span>}
+                    {f.seasons === 0 && <span className="text-[9px] uppercase tracking-wider text-[var(--text-dim)] border rounded px-1 py-0.5 font-normal flex-shrink-0" style={{ borderColor: "var(--border)" }}>Expansion</span>}
+                  </div>
+                  {f.city && <div className="text-[11px] text-[var(--text-dim)]">{f.city}</div>}
+                </div>
+              </div>
+              <span className="text-[10px] text-[var(--text-dim)] tabular-nums flex-shrink-0">#{i + 1}</span>
+            </div>
+            <div className="mt-2 grid grid-cols-3 gap-x-2 gap-y-1.5 text-xs">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Titles</div>
+                <div className="tabular-nums">{f.titles > 0 ? <span className="font-bold text-yellow-400">{f.titles}</span> : <span className="text-[var(--text-dim)]">—</span>}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Finals</div>
+                <div className="tabular-nums text-[var(--text-muted)]">{f.finals || "—"}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Playoffs</div>
+                <div className="tabular-nums text-[var(--text-dim)]">{f.playoff_appearances || "—"}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">W-L</div>
+                <div className="tabular-nums">{f.w}-{f.l}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Win%</div>
+                <div className="tabular-nums text-[var(--text-muted)]">{f.win_pct != null ? f.win_pct.toFixed(3).replace(/^0/, "") : "—"}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Seasons</div>
+                <div className="tabular-nums text-[var(--text-dim)]">{f.seasons || "—"}</div>
+              </div>
+              {f.title_years.length > 0 && (
+                <div className="col-span-3">
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Title years</div>
+                  <div className="text-[var(--text-muted)]">{f.title_years.join(", ")}</div>
+                </div>
+              )}
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b text-[11px] uppercase tracking-wide" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
@@ -95,6 +156,7 @@ export default function WnbaFranchiseTable({ franchises }: { franchises: WnbaFra
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   );
 }

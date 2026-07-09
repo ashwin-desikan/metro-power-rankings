@@ -556,7 +556,94 @@ export default async function FranchisePage({ params }: Props) {
         {topGames.length === 0 ? (
           <p className="text-sm text-[var(--text-muted)] italic">No scored games in the dataset.</p>
         ) : (
-          <div className="overflow-x-auto">
+          <>
+          {/* Mobile: one card per game instead of a 6-column table with a
+              dense matchup cell that forces sideways scrolling. Same
+              topGames data/order as the desktop table below. */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {topGames.map((g, i) => {
+              const isLoss = g.result === "L";
+              const isTie = g.result === "T";
+              const oppF = getFranchiseByCanonical(g.opp_canonical);
+              const teamSide = { city: g.team_city, team: g.team, slug: f.slug, score: g.pf };
+              const oppSide = { city: g.opp_city, team: g.opp_team, slug: oppF?.slug, score: g.pa };
+              const left = isLoss ? oppSide : teamSide;
+              const right = isLoss ? teamSide : oppSide;
+              const renderName = (side: { city: string; team: string; slug: string | undefined }, bold: boolean) => {
+                const label = `${side.city} ${side.team}`;
+                const cls = bold ? "font-semibold" : "text-[var(--text-muted)]";
+                if (side.slug) {
+                  return (
+                    <Link href={`/teams/nfl/${side.slug}`} className={`${cls} hover:text-[var(--accent)] hover:underline decoration-dotted underline-offset-2`}>
+                      {label}
+                    </Link>
+                  );
+                }
+                return <span className={cls}>{label}</span>;
+              };
+              return (
+                <div
+                  key={`${g.year}-${g.opp_canonical}-${i}-card`}
+                  className="rounded-lg border p-3"
+                  style={{
+                    backgroundColor: "var(--bg-card)",
+                    borderColor: "var(--border)",
+                    background: isLoss ? "rgba(239,68,68,0.04)" : undefined,
+                  }}
+                >
+                  <div className="flex items-baseline justify-between gap-2 text-xs text-[var(--text-muted)]">
+                    <span className="tabular-nums">#{i + 1} · {g.date ?? g.year}</span>
+                    <span className="tabular-nums font-semibold text-[var(--text)]">{g.du.toFixed(3)}</span>
+                  </div>
+                  <div className="flex items-center gap-2 mt-1">
+                    <span
+                      className="inline-block text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wide"
+                      style={
+                        g.result === "W"
+                          ? { background: "rgba(78,205,196,0.18)", color: "var(--accent)" }
+                          : g.result === "L"
+                          ? { background: "rgba(239,68,68,0.18)", color: "#fca5a5" }
+                          : { background: "rgba(255,255,255,0.06)", color: "var(--text-muted)" }
+                      }
+                    >
+                      {isTie ? "T" : g.result}
+                      {g.ot ? " · OT" : ""}
+                    </span>
+                    <span className="text-[11px] text-[var(--text-muted)]">
+                      {g.year}{g.round ? ` ${roundLabel(g.year, g.round)}` : ""}{g.week ? ` · Wk ${g.week}` : ""}
+                    </span>
+                  </div>
+                  <div className="leading-tight mt-1.5 text-sm">
+                    {renderName(left, !isTie)}{" "}
+                    <span className="tabular-nums font-semibold" style={{ color: isTie ? "var(--text-muted)" : "var(--accent)" }}>{left.score}</span>
+                    <span className="mx-1 text-[var(--text-dim)]">{isTie ? "=" : "-"}</span>
+                    <span className="tabular-nums text-[var(--text-muted)]">{right.score}</span>{" "}
+                    {renderName(right, false)}
+                  </div>
+                  {g.stadium ? (() => {
+                    const loc = lookupStadiumLocation(g.stadium);
+                    const subtitle = loc
+                      ? `${g.stadium} · ${loc.city}${loc.state ? ", " + abbreviateState(loc.state) : ""}`
+                      : g.stadium;
+                    return (
+                      <div
+                        className="text-[10px] mt-1 truncate font-medium tracking-wide"
+                        style={{ color: "var(--text-dim)", fontFamily: "'JetBrains Mono', monospace" }}
+                        title={subtitle}
+                      >
+                        {g.stadium}
+                        {loc ? (
+                          <span className="ml-1 opacity-80">· {loc.city}{loc.state ? `, ${abbreviateState(loc.state)}` : ""}</span>
+                        ) : null}
+                      </div>
+                    );
+                  })() : null}
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="overflow-x-auto hidden sm:block">
             <table className="w-full text-xs tabular-nums">
               <thead>
                 <tr className="text-[var(--text-muted)]">
@@ -671,6 +758,7 @@ export default async function FranchisePage({ params }: Props) {
               </tbody>
             </table>
           </div>
+          </>
         )}
       </Block>
 

@@ -6,6 +6,7 @@
 // rows, OTL absorbs shootout losses for post-2005 rows (workbook
 // convention). Full history is shown (no row cap), matching the other leagues.
 
+import type { ReactNode } from "react";
 import { useMemo } from "react";
 import type { Season } from "@/lib/nhl";
 
@@ -56,6 +57,15 @@ function postseasonChip(s: Season): { label: string; color?: string; bg?: string
   return null;
 }
 
+function Stat({ label, value, bold, muted }: { label: string; value: ReactNode; bold?: boolean; muted?: boolean }) {
+  return (
+    <div>
+      <div className="text-[9px] uppercase tracking-wide text-[var(--text-dim)]">{label}</div>
+      <div className={`tabular-nums ${bold ? "font-semibold" : "font-medium"} ${muted ? "text-[var(--text-muted)]" : ""}`}>{value}</div>
+    </div>
+  );
+}
+
 export default function SeasonsByTeamTable({ seasons, liveRow }: Props) {
   // Reverse-chronological for display.
   const sorted = useMemo(() => [...seasons].sort((a, b) => b.year - a.year), [seasons]);
@@ -65,7 +75,78 @@ export default function SeasonsByTeamTable({ seasons, liveRow }: Props) {
   const showOtl = sorted.some(s => s.otl > 0 || s.year >= 1999) || !!liveRow;
 
   return (
-    <div className="rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+    <div>
+      {/* Mobile: one stacked card per season instead of a 13-column table. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {liveRow && (
+          <div
+            className="rounded-lg border p-3 italic"
+            style={{ background: "rgba(212, 175, 55, 0.05)", borderColor: "var(--border)" }}
+          >
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <div className="not-italic font-semibold text-sm">{seasonLabel(liveRow.year)}</div>
+                <div className="text-[10px] not-italic text-[var(--text-dim)]">In progress · ESPN · As of {liveRow.asOf}</div>
+              </div>
+              <div className="text-xs not-italic text-[var(--text-muted)] text-right flex-shrink-0">NHL<br />{liveRow.gp} GP</div>
+            </div>
+            <div className="mt-2.5 grid grid-cols-4 gap-x-3 gap-y-2 text-xs not-italic">
+              <Stat label="W" value={liveRow.w} />
+              <Stat label="L" value={liveRow.l} />
+              {showOtl && <Stat label="OTL" value={liveRow.otl} />}
+              <Stat label="Pts" value={liveRow.pts} bold />
+              <Stat label="Pts%" value={liveRow.pts_pct.toFixed(3).replace(/^0/, "")} muted />
+              <Stat label="GF" value={liveRow.gf} />
+              <Stat label="GA" value={liveRow.ga} />
+            </div>
+          </div>
+        )}
+        {sorted.map((s) => {
+          const chip = postseasonChip(s);
+          return (
+            <div
+              key={`${s.year}-card`}
+              className="rounded-lg border p-3"
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-start justify-between gap-2">
+                <div className="min-w-0">
+                  <div className="font-medium text-sm">{seasonLabel(s.year)}</div>
+                  <div className="text-xs text-[var(--text-muted)] truncate">{s.league} · {s.city} {s.team}</div>
+                </div>
+                {chip ? (
+                  <span
+                    className="flex-shrink-0 inline-flex items-center text-[9px] uppercase tracking-widest font-semibold px-1.5 py-0.5 rounded whitespace-nowrap"
+                    style={{ background: chip.bg, color: chip.color }}
+                  >
+                    {s.best_rec_leag && !s.champ ? "Pres · " : ""}{chip.label}
+                  </span>
+                ) : s.best_rec_leag ? (
+                  <span
+                    className="flex-shrink-0 inline-flex items-center text-[9px] uppercase tracking-widest font-semibold px-1.5 py-0.5 rounded"
+                    style={{ background: "#c0c0c0", color: "#1a1a1a" }}
+                  >
+                    Pres
+                  </span>
+                ) : null}
+              </div>
+              <div className="mt-2.5 grid grid-cols-4 gap-x-3 gap-y-2 text-xs">
+                <Stat label="W" value={s.w} />
+                <Stat label="L" value={s.l} />
+                {showT && <Stat label="T" value={s.t || 0} />}
+                {showOtl && <Stat label="OTL" value={s.otl || 0} />}
+                <Stat label="Pts" value={s.pts} bold />
+                <Stat label="Pts%" value={s.pts_pct ? s.pts_pct.toFixed(3).replace(/^0/, "") : "—"} muted />
+                <Stat label="GF" value={s.gf} />
+                <Stat label="GA" value={s.ga} />
+                <Stat label="Place" value={s.place || "—"} muted />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
       <table className="w-full text-xs sm:text-sm tabular-nums">
         <thead>
           <tr className="text-left text-[var(--text-muted)] border-b" style={{ borderColor: "var(--border)" }}>
@@ -150,6 +231,7 @@ export default function SeasonsByTeamTable({ seasons, liveRow }: Props) {
           })}
         </tbody>
       </table>
+      </div>
     </div>
   );
 }

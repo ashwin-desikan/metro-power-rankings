@@ -902,7 +902,31 @@ export default async function MetroDetailPage({ params }: PageProps) {
                 competition&apos;s full honour roll.
               </p>
               <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden">
-                <div className="max-h-[32rem] overflow-y-auto overflow-x-auto">
+                {/* Mobile: one card per title, same data as the desktop table */}
+                <div className="sm:hidden divide-y divide-[var(--border)] max-h-[32rem] overflow-y-auto">
+                  {titles.map((t, i) => (
+                    <div key={`${t.compSlug}-${t.year}-${i}-card`} className="px-4 py-3">
+                      <div className="flex items-center gap-1.5">
+                        <ChampionLogo name={t.champion} canonical={t.canonical} size={t.tier != null && t.tier <= 2 ? 22 : 16} />
+                        {t.teamHref ? (
+                          <Link href={t.teamHref} className={`hover:text-[var(--accent)] hover:underline text-[var(--text)] ${t.tier != null && t.tier <= 2 ? "font-bold text-base" : "font-medium text-sm"}`}>{t.champion}</Link>
+                        ) : (
+                          <span className={`text-[var(--text)] ${t.tier != null && t.tier <= 2 ? "font-bold text-base" : "font-medium text-sm"}`}>{t.champion}</span>
+                        )}
+                      </div>
+                      <div className="mt-1 flex flex-wrap items-center gap-x-2 text-xs tabular-nums text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                        <span>{t.year ?? "\u2014"}</span>
+                        {t.date ? <span>{"\u00b7"} {t.date}</span> : null}
+                      </div>
+                      <div className="mt-1 text-xs">
+                        {sportIcon(t.sport) ? <span aria-hidden className="mr-1">{sportIcon(t.sport)}</span> : null}
+                        <Link href={competitionHref(t.compSlug)} className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline">{t.eraName || t.competition}</Link>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                {/* Desktop: full table */}
+                <div className="hidden sm:block max-h-[32rem] overflow-y-auto overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead className="sticky top-0 bg-[var(--bg-card)] border-b border-[var(--border)]">
                       <tr className="text-left text-[10px] uppercase tracking-widest text-[var(--text-dim)]">
@@ -947,7 +971,50 @@ export default async function MetroDetailPage({ params }: PageProps) {
         {detail.marketCap && detail.marketCap.top12 && detail.marketCap.top12.length > 0 && (
           <section>
             <h2 id="companies" className="text-2xl font-bold mb-6">Top Companies</h2>
-            <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden">
+
+            {/* Mobile: one card per company instead of a 4-column table.
+                Same detail.marketCap.top12 array, card presentation only. */}
+            <div className="grid grid-cols-1 gap-2 sm:hidden">
+              {detail.marketCap.top12.map((company, idx) => {
+                const val = typeof company === "number" ? company : company.valuation;
+                const name = typeof company === "number" ? "" : company.name || "";
+                const source = typeof company === "number" ? "" : company.source || "";
+                const sourceColor =
+                  source === "Unicorn"
+                    ? "text-purple-400"
+                    : source === "Private"
+                    ? "text-amber-400"
+                    : "text-[var(--text-muted)]";
+                return (
+                  <div
+                    key={`${idx}-card`}
+                    className="rounded-lg border p-3 flex items-center justify-between gap-3"
+                    style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+                  >
+                    <div className="flex items-center gap-2 min-w-0">
+                      <span
+                        className="text-[var(--text-muted)] font-mono text-sm flex-shrink-0"
+                        style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                      >
+                        {idx + 1}
+                      </span>
+                      <span className="font-medium text-sm truncate">{name}</span>
+                    </div>
+                    <div className="text-right flex-shrink-0">
+                      <div
+                        className="text-[var(--accent)] font-mono text-sm"
+                        style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                      >
+                        {formatMarketCap(val)}
+                      </div>
+                      {source && <div className={`text-xs ${sourceColor}`}>{source}</div>}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden hidden sm:block">
               <table className="w-full text-sm">
                 <thead className="border-b border-[var(--border)]">
                   <tr className="bg-[var(--bg-card-hover)]">
@@ -1154,31 +1221,47 @@ export default async function MetroDetailPage({ params }: PageProps) {
                                 {towers.length} {towers.length === 1 ? "structure" : "structures"}
                               </span>
                             </summary>
-                            <div className="border-t border-[var(--border)] overflow-x-auto">
-                              <table className="w-full text-sm">
-                                <thead className="bg-[var(--bg-card)] text-[var(--text-muted)]">
-                                  <tr>
-                                    <th className="text-left font-medium px-4 py-2">Building</th>
-                                    <th className="text-left font-medium px-4 py-2">City</th>
-                                    <th className="text-right font-medium px-4 py-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Height (m)</th>
-                                    <th className="text-right font-medium px-4 py-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Year</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  {towers.map((t, idx) => (
-                                    <tr key={idx} className="border-t border-[var(--border)]">
-                                      <td className="px-4 py-2 font-medium text-[var(--text)]">{t.name}</td>
-                                      <td className="px-4 py-2 text-[var(--text-muted)]">{t.city}</td>
-                                      <td className="px-4 py-2 text-right text-[var(--text)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-                                        {t.heightM.toLocaleString(undefined, { maximumFractionDigits: 1 })}
-                                      </td>
-                                      <td className="px-4 py-2 text-right text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-                                        {t.yearBuilt ?? "\u2014"}
-                                      </td>
+                            <div className="border-t border-[var(--border)]">
+                              {/* Mobile: stacked cards */}
+                              <div className="sm:hidden divide-y divide-[var(--border)]">
+                                {towers.map((t, idx) => (
+                                  <div key={idx} className="px-4 py-2.5">
+                                    <p className="font-medium text-[var(--text)]">{t.name}</p>
+                                    <div className="mt-0.5 flex flex-wrap items-center gap-x-3 text-xs text-[var(--text-muted)] tabular-nums" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                                      <span className="font-sans">{t.city}</span>
+                                      <span>{t.heightM.toLocaleString(undefined, { maximumFractionDigits: 1 })} m</span>
+                                      <span>{t.yearBuilt ?? "\u2014"}</span>
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                              {/* Desktop: table */}
+                              <div className="hidden sm:block overflow-x-auto">
+                                <table className="w-full text-sm">
+                                  <thead className="bg-[var(--bg-card)] text-[var(--text-muted)]">
+                                    <tr>
+                                      <th className="text-left font-medium px-4 py-2">Building</th>
+                                      <th className="text-left font-medium px-4 py-2">City</th>
+                                      <th className="text-right font-medium px-4 py-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Height (m)</th>
+                                      <th className="text-right font-medium px-4 py-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Year</th>
                                     </tr>
-                                  ))}
-                                </tbody>
-                              </table>
+                                  </thead>
+                                  <tbody>
+                                    {towers.map((t, idx) => (
+                                      <tr key={idx} className="border-t border-[var(--border)]">
+                                        <td className="px-4 py-2 font-medium text-[var(--text)]">{t.name}</td>
+                                        <td className="px-4 py-2 text-[var(--text-muted)]">{t.city}</td>
+                                        <td className="px-4 py-2 text-right text-[var(--text)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                                          {t.heightM.toLocaleString(undefined, { maximumFractionDigits: 1 })}
+                                        </td>
+                                        <td className="px-4 py-2 text-right text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                                          {t.yearBuilt ?? "\u2014"}
+                                        </td>
+                                      </tr>
+                                    ))}
+                                  </tbody>
+                                </table>
+                              </div>
                             </div>
                           </details>
                         )}

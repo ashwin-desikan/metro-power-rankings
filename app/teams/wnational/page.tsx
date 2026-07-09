@@ -134,7 +134,34 @@ export default function WomensInternationalPage() {
         <p className="text-xs text-[var(--text-muted)] mb-3">
           Every final since {wwcMeta.year_min}. Click a nation for its full World Cup record.
         </p>
-        <div className="rounded-xl border overflow-x-auto" style={card}>
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {wwcEditions.slice().reverse().map((e) => (
+            <div key={`${e.year}-card`} className="rounded-lg border p-3" style={card}>
+              <div className="flex items-center justify-between gap-2">
+                <span className="tabular-nums text-sm text-[var(--text-muted)]" style={mono}>{e.year}</span>
+                {e.final_score && <span className="tabular-nums text-xs" style={mono}>{e.final_score}</span>}
+              </div>
+              <div className="mt-1.5 grid grid-cols-1 gap-y-1 text-xs">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Champion</span>
+                  <span className="font-semibold text-right" style={{ color: "#d4af37" }}>{nationLink(e.champion)}</span>
+                </div>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Runner-up</span>
+                  <span className="text-right">{nationLink(e.runner_up)}</span>
+                </div>
+                {e.host && (
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Host</span>
+                    <span className="text-right text-[var(--text-muted)]">{e.host}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[640px]">
             <thead>
               <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -174,7 +201,44 @@ export default function WomensInternationalPage() {
         <p className="text-xs text-[var(--text-muted)] mb-3">
           Every nation across all four competitions. Each tournament cell shows titles / finals reached; WC Apps is World Cup appearances. Sorted by total titles, then finals.
         </p>
-        <div className="rounded-xl border overflow-x-auto" style={card}>
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {allTime.map((r) => (
+            <div key={`${r.name}-card`} className="rounded-lg border p-3" style={card}>
+              <div className="flex items-center justify-between gap-2">
+                <span className="font-medium text-sm truncate">{nationLink(r.name)}</span>
+                <span className="tabular-nums text-sm font-semibold flex-shrink-0" style={{ ...mono, color: r.titles > 0 ? "#d4af37" : "var(--text-dim)" }}>{r.titles || "—"} titles</span>
+              </div>
+              <div className="mt-1.5 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">WC Apps</div>
+                  <div className="tabular-nums text-[var(--text-muted)]" style={mono}>{r.wwcApps || "—"}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">World Cup</div>
+                  <div className="tabular-nums" style={mono}>{tf(r.wwcT, r.wwcF)}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Olympics</div>
+                  <div className="tabular-nums" style={mono}>{tf(r.olyT, r.olyF)}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Euros</div>
+                  <div className="tabular-nums" style={mono}>{tf(r.euroT, r.euroF)}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Finalissima</div>
+                  <div className="tabular-nums" style={mono}>{tf(r.finaT, r.finaF)}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Finals</div>
+                  <div className="tabular-nums" style={mono}>{r.finals || "—"}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[760px]">
             <thead>
               <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -213,7 +277,29 @@ export default function WomensInternationalPage() {
         <section id="olympics" className="mb-10 scroll-mt-20">
           <h2 className="text-lg font-semibold mb-1">Olympic women&apos;s football</h2>
           <p className="text-xs text-[var(--text-muted)] mb-3">Every final since {oly.meta.year_min}.</p>
-          <div className="rounded-xl border overflow-x-auto" style={card}>
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {oly.editions.slice().reverse().map((e) => (
+              <div key={`${e.year}-card`} className="rounded-lg border p-3" style={card}>
+                <div className="tabular-nums text-sm text-[var(--text-muted)] mb-1.5" style={mono}>{e.year}{e.host ? ` · ${e.host}` : ""}</div>
+                <div className="grid grid-cols-1 gap-y-1 text-xs">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-[10px] uppercase tracking-wide" style={{ color: "#d4af37" }}>Gold</span>
+                    <span className="font-semibold text-right" style={{ color: "#d4af37" }}>{nationLink(e.gold)}</span>
+                  </div>
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Silver</span>
+                    <span className="text-right">{nationLink(e.silver)}</span>
+                  </div>
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Bronze</span>
+                    <span className="text-right text-[var(--text-muted)]">{nationLink(e.bronze)}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
             <table className="w-full text-sm min-w-[560px]">
               <thead>
                 <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -247,7 +333,34 @@ export default function WomensInternationalPage() {
           <p className="text-xs text-[var(--text-muted)] mb-3">
             {euros.meta.editions} editions, {euros.meta.year_min}–{euros.meta.year_max}. West Germany&apos;s 1989 title is carried under Germany.
           </p>
-          <div className="rounded-xl border overflow-x-auto" style={card}>
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {euros.finals.slice().reverse().map((f) => (
+              <div key={`${f.year}-card`} className="rounded-lg border p-3" style={card}>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="tabular-nums text-sm text-[var(--text-muted)]" style={mono}>{f.year}</span>
+                  {f.score && <span className="tabular-nums text-xs" style={mono}>{f.score}</span>}
+                </div>
+                <div className="mt-1.5 grid grid-cols-1 gap-y-1 text-xs">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Champion</span>
+                    <span className="font-semibold text-right" style={{ color: "#d4af37" }}>{nationLink(f.champion)}</span>
+                  </div>
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Runner-up</span>
+                    <span className="text-right">{nationLink(f.runner_up)}</span>
+                  </div>
+                  {f.host && (
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Host</span>
+                      <span className="text-right text-[var(--text-muted)]">{f.host}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
             <table className="w-full text-sm min-w-[560px]">
               <thead>
                 <tr className="text-left text-xs text-[var(--text-muted)]">

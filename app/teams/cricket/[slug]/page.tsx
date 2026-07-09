@@ -68,6 +68,31 @@ function Chip({ children }: { children: React.ReactNode }) {
   );
 }
 
+// Mobile card mini-stat: a small labeled value used inside the stacked
+// card-view tables below (see house pattern in ChampionsTable.tsx).
+function Stat({ label, value }: { label: string; value: React.ReactNode }) {
+  return (
+    <div>
+      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{label}</div>
+      <div className="tabular-nums" style={mono}>{value}</div>
+    </div>
+  );
+}
+
+// Opponent names in the finals/h2h/recent tables are plain strings with no
+// slug field, so derive a best-effort flag slug the same way
+// RugbyFixtures.tsx does for its opponent column.
+function slugifyName(s: string): string {
+  return s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+}
+function OppFlag({ name }: { name: string | null }) {
+  if (!name) return null;
+  const url = flagCdnUrl(slugifyName(name));
+  if (!url) return null;
+  // eslint-disable-next-line @next/next/no-img-element
+  return <img src={url} alt="" aria-hidden width={16} height={12} className="inline-block rounded-[1px] flex-shrink-0" style={{ objectFit: "cover" }} loading="lazy" decoding="async" />;
+}
+
 export default async function CricketTeamPage(
   { params }: { params: Promise<{ slug: string }> },
 ) {
@@ -133,7 +158,51 @@ export default async function CricketTeamPage(
       {/* ---------------- Records by format ---------------- */}
       <section className="mb-10">
         <h2 className="text-lg font-semibold mb-3">All-time record</h2>
-        <div className="rounded-xl border overflow-x-auto" style={card}>
+
+        {/* Mobile: one card per format instead of a 9-column table. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {CRICKET_FORMATS.map((f) => {
+            const rec = team.formats[f];
+            if (!rec) return null;
+            const pct = winPct(rec);
+            return (
+              <div key={f} className="rounded-xl border p-3" style={card}>
+                <div className="flex items-baseline justify-between gap-2">
+                  <span className="font-semibold">{f}</span>
+                  <span className="text-xs text-[var(--text-muted)] tabular-nums" style={mono}>{span(rec)}</span>
+                </div>
+                <div className="grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs mt-2">
+                  <Stat label="M" value={rec.m} />
+                  <Stat label="W" value={rec.w} />
+                  <Stat label="L" value={rec.l} />
+                  <Stat label="D" value={rec.d} />
+                  <Stat label="T" value={rec.t} />
+                  <Stat label="NR" value={rec.nr} />
+                  <Stat label="Win %" value={pct !== null ? pct : "—"} />
+                </div>
+              </div>
+            );
+          })}
+          {team.other_internationals ? (
+            <div className="rounded-xl border p-3" style={card}>
+              <div className="flex items-baseline justify-between gap-2">
+                <span className="font-semibold text-[var(--text-muted)]">Other internationals</span>
+                <span className="text-xs text-[var(--text-muted)] tabular-nums" style={mono}>{span(team.other_internationals)}</span>
+              </div>
+              <div className="grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs mt-2">
+                <Stat label="M" value={team.other_internationals.m} />
+                <Stat label="W" value={team.other_internationals.w} />
+                <Stat label="L" value={team.other_internationals.l} />
+                <Stat label="D" value={team.other_internationals.d} />
+                <Stat label="T" value={team.other_internationals.t} />
+                <Stat label="NR" value={team.other_internationals.nr} />
+                <Stat label="Win %" value="—" />
+              </div>
+            </div>
+          ) : null}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[640px]">
             <thead>
               <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -266,7 +335,29 @@ export default async function CricketTeamPage(
       {detail.finals.length > 0 ? (
         <section className="mb-10">
           <h2 className="text-lg font-semibold mb-3">Major-tournament finals</h2>
-          <div className="rounded-xl border overflow-x-auto" style={card}>
+
+          {/* Mobile: one card per final instead of a 4-column table. */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {detail.finals.slice().reverse().map((f, i) => (
+              <div key={i} className="rounded-xl border p-3" style={card}>
+                <div className="flex items-baseline justify-between gap-2">
+                  <span className="font-semibold tabular-nums" style={mono}>{f.year ?? "—"}</span>
+                  <span className={f.outcome === "Won" || f.outcome === "Shared" ? "font-semibold text-xs" : "text-xs text-[var(--text-muted)]"}>
+                    {f.outcome}
+                  </span>
+                </div>
+                <div className="text-sm mt-1">{f.major}</div>
+                {f.opp ? (
+                  <div className="text-xs text-[var(--text-muted)] mt-1 flex items-center gap-1">
+                    vs <OppFlag name={f.opp} />{f.opp}
+                  </div>
+                ) : null}
+                <div className="text-xs text-[var(--text-dim)] mt-1">{f.detail}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
             <table className="w-full text-sm min-w-[640px]">
               <thead>
                 <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -324,7 +415,38 @@ export default async function CricketTeamPage(
       {h2hEntries.length > 0 ? (
         <section className="mb-10">
           <h2 className="text-lg font-semibold mb-3">Head-to-head</h2>
-          <div className="rounded-xl border overflow-x-auto" style={card}>
+
+          {/* Mobile: one card per opponent instead of a many-column table. */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {h2hEntries.map(([opp, recs]) => {
+              const total = CRICKET_FORMATS.reduce((acc, f) => {
+                const r = recs[f];
+                return acc + (r ? r.m : 0);
+              }, 0);
+              return (
+                <div key={opp} className="rounded-xl border p-3" style={card}>
+                  <div className="flex items-baseline justify-between gap-2">
+                    <span className="font-medium flex items-center gap-1"><OppFlag name={opp} />{opp}</span>
+                    <span className="text-xs text-[var(--text-muted)] tabular-nums" style={mono}>{total} matches</span>
+                  </div>
+                  <div className="grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs mt-2">
+                    {CRICKET_FORMATS.map((f) => {
+                      const r = recs[f];
+                      return (
+                        <Stat
+                          key={f}
+                          label={f}
+                          value={r ? `${r.w}–${r.l}${r.d > 0 ? ` (${r.d}D)` : ""}` : "—"}
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
             <table className="w-full text-sm min-w-[700px]">
               <thead>
                 <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -366,7 +488,32 @@ export default async function CricketTeamPage(
       {detail.recent.length > 0 ? (
         <section className="mb-10">
           <h2 className="text-lg font-semibold mb-3">Recent internationals</h2>
-          <div className="rounded-xl border overflow-x-auto" style={card}>
+
+          {/* Mobile: one card per match instead of a 5-column table. */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {detail.recent.map((m, i) => (
+              <div key={i} className="rounded-xl border p-3" style={card}>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-xs tabular-nums text-[var(--text-muted)]" style={mono}>{m.date}</span>
+                  <span className="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ ...mono, background: "var(--bg-card)", border: "1px solid var(--border)" }}>{m.format}</span>
+                </div>
+                <div className="text-sm mt-1 flex items-center gap-1">
+                  vs <OppFlag name={m.opp} />{m.opp}
+                </div>
+                <div className="text-xs mt-1">
+                  <span className={m.result === "W" ? "font-semibold" : "text-[var(--text-muted)]"} style={mono}>
+                    {m.result}
+                  </span>
+                  <span className="text-[var(--text-dim)]"> {m.detail}</span>
+                </div>
+                <div className="text-xs text-[var(--text-muted)] mt-1">
+                  {m.venue}{m.city ? `, ${m.city}` : ""}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
             <table className="w-full text-sm min-w-[700px]">
               <thead>
                 <tr className="text-left text-xs text-[var(--text-muted)]">

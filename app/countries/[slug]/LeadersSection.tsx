@@ -88,29 +88,71 @@ function MetroLinks({ metros }: { metros: Leader["metros"] }) {
   );
 }
 
+function LeaderCard({ l, showMetros }: { l: Leader; showMetros: boolean }) {
+  const startY = formatYear(l.start);
+  const endY = l.current ? "Present" : formatYear(l.end);
+  return (
+    <div className="rounded-lg border p-3 border-gray-100 dark:border-gray-800" style={{ backgroundColor: "var(--bg-card)" }}>
+      <div className="flex items-start justify-between gap-2">
+        <p className="font-medium text-sm text-gray-900 dark:text-gray-100">
+          {l.name}
+          {l.current && (
+            <span className="ml-2 text-xs font-semibold text-green-600 dark:text-green-400">
+              ✦ Current
+            </span>
+          )}
+        </p>
+        <span className="flex-shrink-0 text-xs tabular-nums text-gray-500 dark:text-gray-400">
+          {startY}–{endY}
+        </span>
+      </div>
+      <p className="text-sm text-gray-600 dark:text-gray-300 mt-0.5">{l.role}</p>
+      <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
+        {l.tenure && <span className="text-gray-500 dark:text-gray-400">Tenure: {l.tenure}</span>}
+        <PartyBadge party={l.party} />
+      </div>
+      {showMetros && l.metros?.length ? (
+        <div className="mt-1.5 text-xs">
+          <span className="text-gray-500 dark:text-gray-400">Home metro: </span>
+          <MetroLinks metros={l.metros} />
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
 function LeaderTable({ leaders, showMetros }: { leaders: Leader[]; showMetros: boolean }) {
   return (
-    <div className="overflow-x-auto">
-      <table className="w-full text-left border-collapse">
-        <thead>
-          <tr className="border-b border-gray-200 dark:border-gray-700">
-            <th className="pb-2 text-xs font-semibold text-gray-500 dark:text-gray-400 pr-4">Name</th>
-            <th className="pb-2 text-xs font-semibold text-gray-500 dark:text-gray-400 pr-4">Role</th>
-            <th className="pb-2 text-xs font-semibold text-gray-500 dark:text-gray-400 pr-4">Years</th>
-            <th className="pb-2 text-xs font-semibold text-gray-500 dark:text-gray-400 pr-4 hidden sm:table-cell">Tenure</th>
-            <th className="pb-2 text-xs font-semibold text-gray-500 dark:text-gray-400 hidden md:table-cell">Party</th>
-            {showMetros && (
-              <th className="pb-2 text-xs font-semibold text-gray-500 dark:text-gray-400 hidden lg:table-cell pl-4">Home Metro</th>
-            )}
-          </tr>
-        </thead>
-        <tbody>
-          {leaders.map((l, i) => (
-            <LeaderRow key={`${l.name}-${l.start ?? i}`} l={l} showMetros={showMetros} />
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <>
+      {/* Mobile: stacked cards */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {leaders.map((l, i) => (
+          <LeaderCard key={`${l.name}-${l.start ?? i}-card`} l={l} showMetros={showMetros} />
+        ))}
+      </div>
+      {/* Desktop: table */}
+      <div className="hidden sm:block overflow-x-auto">
+        <table className="w-full text-left border-collapse">
+          <thead>
+            <tr className="border-b border-gray-200 dark:border-gray-700">
+              <th className="pb-2 text-xs font-semibold text-gray-500 dark:text-gray-400 pr-4">Name</th>
+              <th className="pb-2 text-xs font-semibold text-gray-500 dark:text-gray-400 pr-4">Role</th>
+              <th className="pb-2 text-xs font-semibold text-gray-500 dark:text-gray-400 pr-4">Years</th>
+              <th className="pb-2 text-xs font-semibold text-gray-500 dark:text-gray-400 pr-4 hidden sm:table-cell">Tenure</th>
+              <th className="pb-2 text-xs font-semibold text-gray-500 dark:text-gray-400 hidden md:table-cell">Party</th>
+              {showMetros && (
+                <th className="pb-2 text-xs font-semibold text-gray-500 dark:text-gray-400 hidden lg:table-cell pl-4">Home Metro</th>
+              )}
+            </tr>
+          </thead>
+          <tbody>
+            {leaders.map((l, i) => (
+              <LeaderRow key={`${l.name}-${l.start ?? i}`} l={l} showMetros={showMetros} />
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 }
 

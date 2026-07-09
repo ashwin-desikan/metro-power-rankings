@@ -176,6 +176,121 @@ function MetroRow({
   );
 }
 
+// Mobile card equivalent of MetroRow — same fields, stacked layout so no
+// column has to be hidden or scrolled to at 375px.
+function MetroCard({
+  metro,
+  badgeSlug,
+  showTier = false,
+  position,
+}: {
+  metro: QualifyingMetro;
+  badgeSlug: string;
+  showTier?: boolean;
+  position?: number;
+}) {
+  const tier = computeTier(metro.score);
+  const rankLabel =
+    badgeSlug === "conurbations"
+      ? metro.tier === "D"
+        ? `M#${metro.rank}`
+        : `#${position ?? metro.rank}`
+      : `#${metro.rank}`;
+  return (
+    <div
+      className="p-3"
+      style={{ borderBottom: "1px solid var(--border)" }}
+    >
+      <div className="flex items-start justify-between gap-2">
+        <div className="min-w-0">
+          <span
+            className="text-[10px] text-[var(--text-dim)] mr-1.5"
+            style={{ fontFamily: "'JetBrains Mono', monospace" }}
+          >
+            {rankLabel}
+          </span>
+          <Link
+            href={`/rankings/${metro.slug}`}
+            className="font-semibold hover:text-[var(--accent)]"
+          >
+            {metro.name}
+          </Link>
+          <span className="text-xs text-[var(--text-muted)] ml-1.5">
+            {metro.country}
+          </span>
+        </div>
+        <div className="text-right flex-shrink-0">
+          <div
+            className="font-bold"
+            style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}
+          >
+            {formatContextValue(badgeSlug, metro.contextValue)}
+          </div>
+          {showTier && metro.tier ? (
+            <div className="text-[10px] text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+              Tier {metro.tier}
+            </div>
+          ) : null}
+        </div>
+      </div>
+      {metro.cluster?.componentMetro ? (
+        <div className="text-xs text-[var(--text-dim)] mt-0.5">
+          <span>anchor: </span>
+          <Link
+            href={`/rankings/${metro.cluster.componentMetro.slug}`}
+            className="hover:text-[var(--accent)] underline-offset-2"
+          >
+            {metro.cluster.componentMetro.name}
+          </Link>
+          <span> (#{metro.cluster.componentMetro.rank})</span>
+        </div>
+      ) : null}
+      {metro.cluster && metro.cluster.otherSlugs.length > 0 ? (
+        <div className="text-xs text-[var(--text-muted)] mt-0.5">
+          <span aria-hidden="true">↔ </span>
+          {metro.cluster.otherSlugs.map((s, i) => (
+            <span key={s}>
+              <Link href={`/rankings/${s}`} className="hover:text-[var(--accent)]">
+                {metro.cluster!.otherNames[i] ?? s}
+              </Link>
+              {i < metro.cluster!.otherSlugs.length - 1 ? <span>, </span> : null}
+            </span>
+          ))}
+          <span className="text-[var(--text-dim)]"> ({metro.cluster.size} metros, {metro.cluster.diameterKm.toFixed(0)} km, {formatPop(metro.cluster.populationSum)} pop)</span>
+        </div>
+      ) : metro.cluster && metro.cluster.otherNames.length > 0 ? (
+        <div className="text-xs text-[var(--text-muted)] mt-0.5">
+          <span aria-hidden="true">↔ </span>
+          <span>{metro.cluster.otherNames.join(", ")}</span>
+          <span className="text-[var(--text-dim)]"> ({metro.cluster.size} areas, {formatPop(metro.cluster.populationSum)} pop)</span>
+        </div>
+      ) : metro.peerName && metro.peerSlug ? (
+        <div className="text-xs text-[var(--text-muted)] mt-0.5">
+          <span aria-hidden="true">nearest peer: </span>
+          <Link
+            href={`/rankings/${metro.peerSlug}`}
+            className="hover:text-[var(--accent)]"
+          >
+            {metro.peerName}
+          </Link>
+          {metro.peerRank ? <span className="text-[var(--text-dim)]"> (#{metro.peerRank})</span> : null}
+          {metro.peerCountry && metro.peerCountry !== metro.country ? (
+            <span className="text-[var(--text-dim)]"> ({metro.peerCountry})</span>
+          ) : null}
+        </div>
+      ) : null}
+      <div className="mt-1.5 text-xs">
+        <Link
+          href={`/methodology${tierAnchor(metro.score)}`}
+          className="hover:text-[var(--accent)] text-[var(--text-muted)]"
+        >
+          {tier.name}
+        </Link>
+      </div>
+    </div>
+  );
+}
+
 export default async function BadgeDetailPage({ params }: Props) {
   const { slug } = await params;
   if (slug === "velvet-rock-capital") redirect("/sound/velvet-rock");
@@ -350,8 +465,27 @@ export default async function BadgeDetailPage({ params }: Props) {
                       {t.description}
                     </p>
                   </header>
+                  {/* Mobile: stacked cards instead of a 4-column table */}
                   <div
-                    className="border rounded-lg overflow-x-auto"
+                    className="border rounded-lg overflow-hidden sm:hidden"
+                    style={{
+                      backgroundColor: "var(--bg-card)",
+                      borderColor: "var(--border)",
+                    }}
+                  >
+                    {group.map((m) => (
+                      <MetroCard
+                        key={`${m.slug}-card`}
+                        metro={m}
+                        badgeSlug={badge.slug}
+                        showTier={false}
+                        position={positionBySlug.get(m.slug)}
+                      />
+                    ))}
+                  </div>
+
+                  <div
+                    className="border rounded-lg overflow-x-auto hidden sm:block"
                     style={{
                       backgroundColor: "var(--bg-card)",
                       borderColor: "var(--border)",
@@ -392,8 +526,27 @@ export default async function BadgeDetailPage({ params }: Props) {
             })
           ) : badge.slug === "conurbations" ? null : (
             <section className="mb-12">
+              {/* Mobile: stacked cards instead of a 4-column table */}
               <div
-                className="border rounded-lg overflow-x-auto"
+                className="border rounded-lg overflow-hidden sm:hidden"
+                style={{
+                  backgroundColor: "var(--bg-card)",
+                  borderColor: "var(--border)",
+                }}
+              >
+                {metros.map((m, i) => (
+                  <MetroCard
+                    key={`${m.slug}-card`}
+                    metro={m}
+                    badgeSlug={badge.slug}
+                    showTier={showTierColumn}
+                    position={i + 1}
+                  />
+                ))}
+              </div>
+
+              <div
+                className="border rounded-lg overflow-x-auto hidden sm:block"
                 style={{
                   backgroundColor: "var(--bg-card)",
                   borderColor: "var(--border)",

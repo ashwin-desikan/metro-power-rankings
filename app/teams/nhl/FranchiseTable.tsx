@@ -102,7 +102,78 @@ export default function FranchiseTable({ franchises, historical, logoMap, monoMa
         <h2 className="text-lg font-bold tracking-tight">All-time table</h2>
         <ViewToggle view={view} setView={setView} defunctCount={historical.length} />
       </header>
-      <div className="rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+      {/* Mobile: one stacked card per franchise instead of a 10-column table. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {sorted.map((r) => {
+          const logo = r.slug ? logoMap[r.slug] : null;
+          const mono = r.slug ? monoMap[r.slug] : null;
+          return (
+            <Link
+              key={`${r.key}-card`}
+              href={`/teams/nhl/${r.slug}`}
+              className="block rounded-lg border p-3 hover:border-[var(--accent)] transition-colors"
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-center gap-2 min-w-0">
+                {r.defunct ? null : logo ? (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img src={logo} alt="" className="w-6 h-6 flex-shrink-0 object-contain" loading="lazy" decoding="async" />
+                ) : mono ? (
+                  <span className="inline-grid place-items-center rounded-full flex-shrink-0" style={{ background: mono.bg, color: mono.fg, width: 24, height: 24, fontSize: 9, fontWeight: 700 }} aria-hidden>{mono.mono}</span>
+                ) : null}
+                <span className="font-medium text-sm truncate">{r.name}</span>
+                {r.defunct && (
+                  <span className="flex-shrink-0 text-[8px] uppercase tracking-widest font-semibold px-1.5 py-0.5 rounded" style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-dim)" }}>Defunct</span>
+                )}
+                {r.isO6 && (
+                  <span title="Original Six (1942-1967)" className="flex-shrink-0 text-[8px] uppercase tracking-widest font-semibold px-1.5 py-0.5 rounded" style={{ background: "#3a2e1a", color: "#d4af37" }}>O6</span>
+                )}
+              </div>
+              <div className="text-xs text-[var(--text-muted)] mt-0.5 truncate">
+                {r.metroLabel || "—"}{r.division ? ` · ${r.division}` : ""}
+              </div>
+              <div className="mt-2.5 grid grid-cols-3 gap-x-3 gap-y-2 text-xs">
+                <div>
+                  <div className="text-[9px] uppercase tracking-wide text-[var(--text-dim)]">Founded</div>
+                  <div className="tabular-nums font-medium">{r.founded ?? dash}</div>
+                </div>
+                <div>
+                  <div className="text-[9px] uppercase tracking-wide text-[var(--text-dim)]">Cups</div>
+                  <div className="tabular-nums font-medium">
+                    {r.championships > 0 ? (
+                      <span className="inline-flex items-center justify-center font-semibold px-1.5 rounded" style={{ background: "#3a2e1a", color: "#d4af37" }}>{r.championships}</span>
+                    ) : (
+                      <span className="text-[var(--text-dim)]">0</span>
+                    )}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[9px] uppercase tracking-wide text-[var(--text-dim)]">Finals</div>
+                  <div className="tabular-nums font-medium">{r.champApps}</div>
+                </div>
+                <div>
+                  <div className="text-[9px] uppercase tracking-wide text-[var(--text-dim)]">Pres.</div>
+                  <div className="tabular-nums font-medium text-[var(--text-muted)]">{r.presidents ?? dash}</div>
+                </div>
+                <div>
+                  <div className="text-[9px] uppercase tracking-wide text-[var(--text-dim)]">Playoff app</div>
+                  <div className="tabular-nums font-medium text-[var(--text-muted)]">{r.playoffApps ?? dash}</div>
+                </div>
+                <div>
+                  <div className="text-[9px] uppercase tracking-wide text-[var(--text-dim)]">Pts %</div>
+                  <div className="tabular-nums font-medium text-[var(--text-muted)]">{r.ptsPct != null ? r.ptsPct.toFixed(3).replace(/^0/, "") : dash}</div>
+                </div>
+                <div>
+                  <div className="text-[9px] uppercase tracking-wide text-[var(--text-dim)]">Last Cup</div>
+                  <div className="tabular-nums font-medium text-[var(--text-muted)]">{r.lastCup ?? dash}</div>
+                </div>
+              </div>
+            </Link>
+          );
+        })}
+      </div>
+
+      <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
         <table className="w-full text-xs sm:text-sm tabular-nums">
           <thead>
             <tr className="text-left text-[var(--text-muted)] border-b" style={{ borderColor: "var(--border)" }}>
@@ -185,7 +256,7 @@ function Th({ label, k, cur, dir, onClick, align = "left", className = "" }: {
   const active = k === cur;
   const arrow = active ? (dir === "asc" ? " ▲" : " ▼") : "";
   return (
-    <th className={`py-2 px-2 font-medium text-[10px] uppercase tracking-wider whitespace-nowrap select-none cursor-pointer ${align === "right" ? "text-right" : "text-left"} ${className}`} onClick={() => onClick(k)}>
+    <th className={`py-3 px-2 font-medium text-[10px] uppercase tracking-wider whitespace-nowrap select-none cursor-pointer ${align === "right" ? "text-right" : "text-left"} ${className}`} onClick={() => onClick(k)}>
       <span className={active ? "text-[var(--text)]" : ""}>{label}</span><span className="text-[var(--text-dim)]">{arrow}</span>
     </th>
   );

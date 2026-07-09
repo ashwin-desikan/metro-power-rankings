@@ -90,56 +90,96 @@ export default function GovernorsTable({
   }
 
   return (
-    <div
-      className="rounded-xl border overflow-x-auto"
-      style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
-    >
-      <table className="w-full text-left text-sm">
-        <thead>
-          <tr
-            className="border-b text-xs uppercase tracking-wider text-[var(--text-dim)]"
-            style={{ borderColor: "var(--border)" }}
+    <div>
+      {/* Mobile: stacked cards instead of hiding the Since/Metros columns */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {sorted.map((r) => (
+          <div
+            key={`${r.slug}-card`}
+            className="rounded-lg border p-3"
+            style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
           >
-            <Th k="name" label={nameHeader} />
-            <Th k="gov" label="Governor" />
-            <Th k="party" label="Party" />
-            <Th k="since" label="Since" right hideOnMobile />
-            <Th k="metros" label="Metros" right hideOnMobile />
-            <Th k="score" label="Metro score" right />
-          </tr>
-        </thead>
-        <tbody>
-          {sorted.map((r) => (
-            <tr
-              key={r.slug}
-              className="border-b last:border-0"
-              style={{ borderColor: "var(--border)" }}
-            >
-              <td className="py-2 px-4">
+            <div className="flex items-start justify-between gap-2">
+              <div className="min-w-0">
                 <Link
                   href={r.href}
-                  className="font-medium text-[var(--text)] hover:text-[var(--accent)]"
+                  className="font-medium text-sm text-[var(--text)] hover:text-[var(--accent)]"
                 >
                   {r.name}
                 </Link>
-              </td>
-              <td className="py-2 px-4 text-[var(--text)]">{r.gov}</td>
-              <td className={`py-2 px-4 font-medium ${partyClass(r.party)}`}>
-                {r.party}
-              </td>
-              <td className="py-2 px-4 text-right tabular-nums text-[var(--text-muted)] hidden sm:table-cell">
-                {yr(r.since)}
-              </td>
-              <td className="py-2 px-4 text-right tabular-nums text-[var(--text-muted)] hidden sm:table-cell">
-                {r.metros || "—"}
-              </td>
-              <td className="py-2 px-4 text-right tabular-nums text-[var(--text)]">
-                {r.score > 0 ? r.score.toFixed(1) : "—"}
-              </td>
+                <div className="text-xs text-[var(--text)] mt-0.5">{r.gov}</div>
+              </div>
+              <span className={`text-xs font-medium flex-shrink-0 ${partyClass(r.party)}`}>{r.party}</span>
+            </div>
+            <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Since</div>
+                <div className="tabular-nums text-[var(--text-muted)]">{yr(r.since)}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Metros</div>
+                <div className="tabular-nums text-[var(--text-muted)]">{r.metros || "—"}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Metro score</div>
+                <div className="tabular-nums text-[var(--text)] font-semibold">{r.score > 0 ? r.score.toFixed(1) : "—"}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div
+        className="rounded-xl border overflow-x-auto hidden sm:block"
+        style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
+      >
+        <table className="w-full text-left text-sm">
+          <thead>
+            <tr
+              className="border-b text-xs uppercase tracking-wider text-[var(--text-dim)]"
+              style={{ borderColor: "var(--border)" }}
+            >
+              <Th k="name" label={nameHeader} />
+              <Th k="gov" label="Governor" />
+              <Th k="party" label="Party" />
+              <Th k="since" label="Since" right />
+              <Th k="metros" label="Metros" right />
+              <Th k="score" label="Metro score" right />
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {sorted.map((r) => (
+              <tr
+                key={r.slug}
+                className="border-b last:border-0"
+                style={{ borderColor: "var(--border)" }}
+              >
+                <td className="py-2 px-4">
+                  <Link
+                    href={r.href}
+                    className="font-medium text-[var(--text)] hover:text-[var(--accent)]"
+                  >
+                    {r.name}
+                  </Link>
+                </td>
+                <td className="py-2 px-4 text-[var(--text)]">{r.gov}</td>
+                <td className={`py-2 px-4 font-medium ${partyClass(r.party)}`}>
+                  {r.party}
+                </td>
+                <td className="py-2 px-4 text-right tabular-nums text-[var(--text-muted)]">
+                  {yr(r.since)}
+                </td>
+                <td className="py-2 px-4 text-right tabular-nums text-[var(--text-muted)]">
+                  {r.metros || "—"}
+                </td>
+                <td className="py-2 px-4 text-right tabular-nums text-[var(--text)]">
+                  {r.score > 0 ? r.score.toFixed(1) : "—"}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

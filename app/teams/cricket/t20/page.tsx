@@ -94,14 +94,39 @@ export default function DomesticT20Page() {
                 </span>
               ))}
             </div>
-            <div className="overflow-y-auto" style={{ overflowX: "auto", maxHeight: 260 }}>
+            {/* Mobile: stacked rows (season / winner / runner-up) instead of a
+                table where the runner-up column used to be dropped below sm. */}
+            <div className="grid grid-cols-1 gap-1 sm:hidden overflow-y-auto" style={{ maxHeight: 260 }}>
+              {data.rolls[k].map((r, i) => (
+                <div
+                  key={i}
+                  className="rounded-md border px-2.5 py-1.5 text-xs"
+                  style={{ borderColor: "var(--border)" }}
+                >
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="tabular-nums text-[var(--text-dim)] flex-shrink-0" style={mono}>{r.season}</span>
+                    <span className="font-medium inline-flex items-center gap-1.5 min-w-0 truncate">
+                      <CrestIcon name={r.winner} size={14} />{r.winner}
+                    </span>
+                  </div>
+                  <div className="mt-0.5 flex items-center justify-end gap-1.5 text-[var(--text-dim)]">
+                    <span className="text-[10px] uppercase tracking-wide">RU</span>
+                    <span className="inline-flex items-center gap-1.5 min-w-0 truncate">
+                      <CrestIcon name={r.ru} size={14} />{r.ru}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="overflow-y-auto hidden sm:block" style={{ overflowX: "auto", maxHeight: 260 }}>
               <table className="w-full text-xs">
                 <tbody>
                   {data.rolls[k].map((r, i) => (
                     <tr key={i} className="border-t" style={{ borderColor: "var(--border)" }}>
                       <td className="py-1 pr-2 tabular-nums whitespace-nowrap" style={mono}>{r.season}</td>
                       <td className="py-1 font-medium"><span className="inline-flex items-center gap-1.5"><CrestIcon name={r.winner} size={16} />{r.winner}</span></td>
-                      <td className="py-1 text-[var(--text-dim)] hidden sm:table-cell"><span className="inline-flex items-center gap-1.5"><CrestIcon name={r.ru} size={16} />{r.ru}</span></td>
+                      <td className="py-1 text-[var(--text-dim)]"><span className="inline-flex items-center gap-1.5"><CrestIcon name={r.ru} size={16} />{r.ru}</span></td>
                     </tr>
                   ))}
                 </tbody>

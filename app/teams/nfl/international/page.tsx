@@ -102,7 +102,45 @@ export default function NflInternationalPage() {
           <h2 className="text-2xl font-bold tracking-tight">International Series</h2>
           <span className="text-xs text-[var(--text-dim)]">{intl.meta.count} games · {intl.meta.countries.length} countries · {intl.meta.first_season}&ndash;{intl.meta.last_season} · home team listed second</span>
         </div>
-        <div className="overflow-x-auto border border-[var(--border)] rounded-lg">
+        {/* Mobile: one card per game instead of a 5-column table. Same
+            intl.games data/order as the desktop table below. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {intl.games.map((g, i) => (
+            <div
+              key={`${i}-card`}
+              className="rounded-lg border p-3"
+              style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-center justify-between gap-2 text-xs text-[var(--text-muted)]">
+                <span>{g.date_display}</span>
+                {g.date > todayIso && (
+                  <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ background: "rgba(78,205,196,0.12)", color: "var(--accent)" }}>upcoming</span>
+                )}
+              </div>
+              <div className="text-sm mt-1">
+                <TeamLink team={g.visitor} />
+                <span className="text-[var(--text-dim)] mx-1.5">at</span>
+                <TeamLink team={g.home} />
+              </div>
+              <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                <div className="col-span-2">
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Stadium</div>
+                  <div className="text-[var(--text-muted)]">{g.stadium}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Metro</div>
+                  <div><MetroLink name={g.metro.name} slug={g.metro.slug} /></div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Country</div>
+                  <div><CountryLink name={g.country.name} slug={g.country.slug} /></div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="overflow-x-auto border border-[var(--border)] rounded-lg hidden sm:block">
           <table className="w-full text-sm">
             <thead>
               <tr className="text-left text-[var(--text-dim)] text-xs uppercase tracking-wide border-b border-[var(--border)]">
@@ -141,7 +179,31 @@ export default function NflInternationalPage() {
       {/* ---------- World Bowls ---------- */}
       <section id="world-bowls" className="mb-12">
         <h2 className="text-2xl font-bold tracking-tight mb-3">World Bowl champions</h2>
-        <div className="overflow-x-auto border border-[var(--border)] rounded-lg">
+        {/* Mobile: one card per World Bowl instead of a 6-column table.
+            Same worldBowls data/order as the desktop table below. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {worldBowls.map((g) => (
+            <div
+              key={g.season}
+              className="rounded-lg border p-3"
+              style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-center justify-between gap-2 text-xs text-[var(--text-muted)]">
+                <span className="tabular-nums">{g.season}</span>
+                <span>{g.game}</span>
+              </div>
+              <div className="text-sm font-semibold text-[var(--text)] mt-1">
+                <span aria-hidden className="mr-1.5" style={{ color: "#d4af37" }}>●</span>{g.champion}
+              </div>
+              <div className="text-xs text-[var(--text-muted)] mt-1">
+                def. {g.runner_up} <span className="tabular-nums">{g.score}</span>
+              </div>
+              <div className="text-[10px] text-[var(--text-dim)] mt-1">{g.city}{g.venue ? ` · ${g.venue}` : ""}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className="overflow-x-auto border border-[var(--border)] rounded-lg hidden sm:block">
           <table className="w-full text-sm">
             <thead>
               <tr className="text-left text-[var(--text-dim)] text-xs uppercase tracking-wide border-b border-[var(--border)]">
@@ -177,7 +239,63 @@ export default function NflInternationalPage() {
           <h2 className="text-2xl font-bold tracking-tight">Franchises</h2>
           <span className="text-xs text-[var(--text-dim)]">{franchises.length} clubs · relocations show under both metros</span>
         </div>
-        <div className="overflow-x-auto border border-[var(--border)] rounded-lg">
+        {/* Mobile: one card per franchise instead of a 6-column table.
+            Same franchises data/order as the desktop table below. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {franchises.map((f) => (
+            <div
+              key={f.canonical}
+              id={nflEuropeFranchiseSlug(f.canonical)}
+              className="rounded-lg border p-3 scroll-mt-24"
+              style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="font-semibold text-sm text-[var(--text)]">
+                {f.canonical}
+                {f.wb_titles > 0 && (
+                  <span className="ml-2 text-[10px] px-1.5 py-0.5 rounded font-semibold align-middle" style={{ background: "rgba(212,175,55,0.16)", color: "#d4af37" }}>
+                    {f.wb_titles}×
+                  </span>
+                )}
+              </div>
+              <div className="text-xs mt-1 space-y-0.5">
+                {f.metros.map((m, i) => (
+                  <div key={m.metro} className={i > 0 ? "text-[var(--text-dim)]" : ""}>
+                    <MetroLink name={m.metro} slug={m.metro_slug} />
+                    {f.relocated && (
+                      <span className="text-[var(--text-dim)]"> ({m.team}, {m.first_year}&ndash;{m.last_year})</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+              <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Years</div>
+                  <div className="tabular-nums text-[var(--text-muted)]">
+                    {f.first_year === f.last_year ? f.first_year : `${f.first_year}–${f.last_year}`}
+                    <div className="text-[var(--text-dim)]">{f.seasons} seas.</div>
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Record</div>
+                  <div className="tabular-nums">{rec(f.w, f.l, f.t)}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Win%</div>
+                  <div className="tabular-nums text-[var(--text-muted)]">{f.win_pct.toFixed(3)}</div>
+                </div>
+                <div className="col-span-3">
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">World Bowls</div>
+                  <div className="tabular-nums">
+                    <span className="text-[var(--text)] font-semibold">{f.wb_titles}</span>
+                    <span className="text-[var(--text-dim)]"> / {f.wb_apps} app{f.wb_apps === 1 ? "" : "s"}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="overflow-x-auto border border-[var(--border)] rounded-lg hidden sm:block">
           <table className="w-full text-sm">
             <thead>
               <tr className="text-left text-[var(--text-dim)] text-xs uppercase tracking-wide border-b border-[var(--border)]">
@@ -191,7 +309,7 @@ export default function NflInternationalPage() {
             </thead>
             <tbody>
               {franchises.map((f) => (
-                <tr key={f.canonical} id={nflEuropeFranchiseSlug(f.canonical)} className="border-b border-[var(--border)] last:border-0 hover:bg-[var(--bg-card-hover)] scroll-mt-24 align-top">
+                <tr key={f.canonical} id={`${nflEuropeFranchiseSlug(f.canonical)}-desktop`} className="border-b border-[var(--border)] last:border-0 hover:bg-[var(--bg-card-hover)] scroll-mt-24 align-top">
                   <td className="px-3 py-2 font-semibold text-[var(--text)] whitespace-nowrap">
                     {f.canonical}
                     {f.wb_titles > 0 && (
@@ -237,7 +355,48 @@ export default function NflInternationalPage() {
                 <span className="font-semibold text-[var(--text)]">{year}</span>
                 <span className="text-xs text-[var(--text-dim)]">{rows.length} teams</span>
               </summary>
-              <div className="border-t border-[var(--border)] overflow-x-auto">
+              {/* Mobile: one card per team instead of a 7-column table.
+                  Same rows data/order as the desktop table below. */}
+              <div className="border-t border-[var(--border)] p-2 grid grid-cols-1 gap-2 sm:hidden">
+                {rows.map((s, i) => (
+                  <div
+                    key={i}
+                    className="rounded-lg border p-3"
+                    style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+                  >
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="min-w-0">
+                        <div className="text-sm font-medium text-[var(--text)] flex items-center gap-1.5">
+                          <span className="text-[var(--text-dim)] tabular-nums text-xs">#{s.pos}</span>
+                          {s.team}
+                        </div>
+                        <div className="text-xs mt-0.5"><MetroLink name={s.metro ?? ""} slug={s.metro_slug} /></div>
+                      </div>
+                      {(s.wb_champ || s.wb_app || s.playoff) && (
+                        <span className="text-[10px] whitespace-nowrap flex-shrink-0" style={s.wb_champ ? { color: "#d4af37", fontWeight: 600 } : { color: s.wb_app ? "var(--text-muted)" : "var(--text-dim)" }}>
+                          {s.wb_champ ? "WB champion" : s.wb_app ? "World Bowl" : "Playoff"}
+                        </span>
+                      )}
+                    </div>
+                    <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+                      <div>
+                        <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">W-L-T</div>
+                        <div className="tabular-nums">{rec(s.w, s.l, s.t)}</div>
+                      </div>
+                      <div>
+                        <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">PF</div>
+                        <div className="tabular-nums text-[var(--text-muted)]">{s.pf}</div>
+                      </div>
+                      <div>
+                        <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">PA</div>
+                        <div className="tabular-nums text-[var(--text-muted)]">{s.pa}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="border-t border-[var(--border)] overflow-x-auto hidden sm:block">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="text-left text-[var(--text-dim)] text-xs uppercase tracking-wide border-b border-[var(--border)]">

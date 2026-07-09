@@ -53,7 +53,49 @@ export default function FibaRankingTable({ ranking }: { ranking: FibaRanking }) 
         })}
       </div>
 
-      <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto" style={card}>
+      {/* Mobile: one card per nation instead of a cramped 5-column table.
+          Same `rows` data (already zone-filtered) drives both views. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[560px] overflow-y-auto">
+        {rows.map((t) => (
+          <div
+            key={t.rank}
+            className="rounded-lg border p-3"
+            style={card}
+          >
+            <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center gap-1.5 min-w-0 font-medium text-sm">
+                <span className="text-[var(--text-dim)] tabular-nums flex-shrink-0" style={mono}>#{t.rank}</span>
+                {flagCdnUrl(t.country_slug ?? t.slug ?? "") ? (
+                  <img src={flagCdnUrl(t.country_slug ?? t.slug ?? "")!} alt="" aria-hidden width={18} height={13} className="inline-block flex-shrink-0" loading="lazy" decoding="async" />
+                ) : null}
+                <span className="truncate">
+                  {t.slug
+                    ? <Link href={`/teams/basketball/${t.slug}`} className="hover:text-[var(--accent)]">{t.country}</Link>
+                    : t.country_slug
+                      ? <Link href={`/countries/${t.country_slug}`} className="hover:text-[var(--accent)]">{t.country}</Link>
+                      : t.country}
+                </span>
+              </div>
+            </div>
+            <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{zone === "World" ? "Zone" : "Zone #"}</div>
+                <div className="tabular-nums text-[var(--text-muted)]" style={mono}>{zone === "World" ? (t.zone ?? "") : t.zoneRank}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Points</div>
+                <div className="tabular-nums font-semibold" style={mono}>{t.pts.toFixed(1)}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">+/&ndash;</div>
+                <div className="tabular-nums" style={mono}><Delta d={t.delta} /></div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto hidden sm:block" style={card}>
         <table className="w-full text-sm min-w-[520px]">
           <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
             <tr className="text-left text-xs text-[var(--text-muted)]">

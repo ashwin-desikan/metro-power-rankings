@@ -42,7 +42,20 @@ export default function RS500View({ albums }: { albums: RSAlbum[] }) {
         />
         <span className="text-xs" style={muted}>{rows.length} of {albums.length}</span>
       </div>
-      <div className="overflow-x-auto">
+      {/* Mobile: stacked cards instead of a 3-column table */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {rows.map((a) => (
+          <div key={a.rank} className="rounded-lg border p-3" style={{ borderColor: 'var(--border, #1b2330)' }}>
+            <div className="flex items-start justify-between gap-3">
+              <div className="font-medium text-sm leading-tight">{a.album}</div>
+              <div className="text-sm font-semibold tabular-nums flex-shrink-0" style={{ color: CRIMSON }}>#{a.rank}</div>
+            </div>
+            <div className="mt-1 text-sm" style={muted}><Artists links={a.links} artist={a.artist} /></div>
+          </div>
+        ))}
+      </div>
+
+      <div className="overflow-x-auto hidden sm:block">
         <table className="w-full border-collapse text-sm">
           <thead>
             <tr className="text-left">

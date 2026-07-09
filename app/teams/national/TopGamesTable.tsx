@@ -45,7 +45,65 @@ export default function TopGamesTable({ allTime, byDecade, allTimeLabel = "All-t
         ))}
       </div>
 
-      <div className="max-h-[70vh] overflow-auto">
+      {/* Mobile: one card per game instead of a 5-column table. Same `rows`
+          array (bucket-filtered above) drives both this block and the
+          desktop table below. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[70vh] overflow-auto">
+        {rows.map((g, i) => (
+          <div
+            key={`${g.year}-${g.winner_name}-${g.loser_name}-${i}-card`}
+            className="rounded-lg border p-3"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+          >
+            <div className="flex items-start justify-between gap-2">
+              <div className="text-sm leading-tight min-w-0">
+                {g.winner_slug ? (
+                  <Link href={`/teams/national/${g.winner_slug}`} className="font-semibold hover:text-[var(--accent)] hover:underline decoration-dotted underline-offset-2">{g.winner_name}</Link>
+                ) : (
+                  <span className="font-semibold">{g.winner_name}</span>
+                )}{" "}
+                <span className="tabular-nums font-semibold" style={{ color: "var(--accent)" }}>{g.winner_score}</span>
+                <span className="mx-1 text-[var(--text-dim)]">{g.is_draw ? "=" : "-"}</span>
+                <span className="tabular-nums text-[var(--text-muted)]">{g.loser_score}</span>{" "}
+                {g.loser_slug ? (
+                  <Link href={`/teams/national/${g.loser_slug}`} className="text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline decoration-dotted underline-offset-2">{g.loser_name}</Link>
+                ) : (
+                  <span className="text-[var(--text-muted)]">{g.loser_name}</span>
+                )}
+                {g.pens ? <span className="ml-1 text-[10px] text-[var(--text-dim)]">(pens {g.pens})</span> : null}
+              </div>
+              <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]">
+                #{i + 1}
+              </span>
+            </div>
+            {g.stadium ? (
+              <div className="text-[10px] mt-1 font-medium tracking-wide" style={{ color: "var(--text-dim)", fontFamily: "'JetBrains Mono', monospace" }}>
+                {g.stadium}{g.stadium_metro ? <span className="ml-1 opacity-80">· {g.stadium_metro}{g.stadium_country ? `, ${g.stadium_country}` : ""}</span> : null}
+              </div>
+            ) : null}
+            {g.video ? <div className="mt-1"><WatchButton video={g.video} /></div> : null}
+            <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs mt-2">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Date</div>
+                <div className="tabular-nums">{g.date ?? g.year}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Stage</div>
+                <div className="text-[var(--text-muted)]">{g.competition}{g.round ? ` · ${g.round}` : ""}</div>
+              </div>
+              <div className="col-span-2">
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Game Score</div>
+                <div className="tabular-nums font-semibold">{g.game_score.toFixed(3)}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+        {rows.length === 0 && (
+          <p className="py-6 text-center text-xs text-[var(--text-dim)] italic">No games in this bucket.</p>
+        )}
+      </div>
+
+      <div className="max-h-[70vh] overflow-auto hidden sm:block">
         <table className="w-full text-xs tabular-nums [&_thead_th]:sticky [&_thead_th]:top-0 [&_thead_th]:z-10 [&_thead_th]:bg-[var(--bg)]">
           <thead>
             <tr className="text-[var(--text-muted)]">

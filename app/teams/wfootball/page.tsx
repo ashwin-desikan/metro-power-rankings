@@ -127,7 +127,66 @@ export default async function WFootballHubPage() {
             <span className="inline-flex items-center rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold" style={{ background: "rgba(16,185,129,0.16)", color: "#10b981" }}>Live · ESPN</span>
           </div>
           <p className="text-xs text-[var(--text-muted)] mb-3">Current as of {nwslAsOf}, via ESPN (refreshed hourly).</p>
-          <div className="rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+
+          {/* Mobile: one card per club instead of a 10-column table. Same
+              nwslRows data as the desktop table below - presentation only. */}
+          <div className="grid grid-cols-1 gap-2 sm:hidden">
+            {nwslRows.map((r, i) => (
+              <div
+                key={(r.slug ?? r.name) + i + "-card"}
+                className="rounded-lg border p-3"
+                style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-2 min-w-0">
+                    <span className="text-xs tabular-nums text-[var(--text-dim)] w-4 flex-shrink-0">{i + 1}</span>
+                    <CrestIcon name={r.name} size={20} />
+                    {r.slug ? (
+                      <Link href={`/teams/wfootball/clubs/${r.slug}`} className="font-medium truncate hover:underline">{r.name}</Link>
+                    ) : (
+                      <span className="font-medium truncate">{r.name}</span>
+                    )}
+                  </div>
+                  <div className="text-right flex-shrink-0">
+                    <div className="text-lg font-semibold tabular-nums">{r.points}</div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Pts</div>
+                  </div>
+                </div>
+                <div className="mt-2 grid grid-cols-4 gap-x-2 gap-y-1.5 text-xs">
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">P</div>
+                    <div className="tabular-nums text-[var(--text-muted)]">{r.played}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">W</div>
+                    <div className="tabular-nums">{r.wins}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">D</div>
+                    <div className="tabular-nums text-[var(--text-muted)]">{r.draws}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">L</div>
+                    <div className="tabular-nums text-[var(--text-muted)]">{r.losses}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">GF</div>
+                    <div className="tabular-nums text-[var(--text-muted)]">{r.gf}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">GA</div>
+                    <div className="tabular-nums text-[var(--text-muted)]">{r.ga}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">GD</div>
+                    <div className="tabular-nums text-[var(--text-muted)]">{r.gd > 0 ? "+" : ""}{r.gd}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
             <table className="w-full text-sm tabular-nums">
               <thead>
                 <tr className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b" style={{ borderColor: "var(--border)" }}>

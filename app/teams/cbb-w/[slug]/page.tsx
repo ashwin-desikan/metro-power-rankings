@@ -4,13 +4,18 @@ import { getCurrentChampionships } from "@/lib/champions";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
-import { getAllWcbbSlugs, getWcbbTeamBySlug, getWcbbTournament, wcbbMonogram, type WcbbTourYear } from "@/lib/wcbb";
+import { getAllWcbbTeams, getWcbbTeamBySlug, getWcbbTournament, wcbbMonogram, type WcbbTourYear } from "@/lib/wcbb";
 import RivalriesSection from "@/app/teams/_shared/RivalriesSection";
 import { getRivalries } from "@/lib/rivalries";
 
-export const dynamicParams = false;
+// Pre-generate only current D1 programs (363 of 384 total). Historical/
+// non-D1 programs are still reachable: dynamicParams=true renders them on
+// first request and the long revalidate caches the result, same pattern as
+// app/states/[slug]/page.tsx.
+export const dynamicParams = true;
+export const revalidate = 31536000; // 1 year — effectively static
 export function generateStaticParams() {
-  return getAllWcbbSlugs().map((slug) => ({ slug }));
+  return getAllWcbbTeams().filter((t) => t.current_d1).map((t) => ({ slug: t.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -102,28 +107,47 @@ export default async function WcbbTeamPage({ params }: { params: Promise<{ slug:
         {tour.length === 0 ? (
           <p className="text-sm text-[var(--text-muted)]">No NCAA tournament appearances on record.</p>
         ) : (
-          <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto" style={card}>
-            <table className="w-full text-sm min-w-[420px]">
-              <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
-                <tr className="text-left text-xs text-[var(--text-muted)]">
-                  <th className="py-2 px-3 font-medium">Year</th>
-                  <th className="py-2 px-3 text-right font-medium">Seed</th>
-                  <th className="py-2 px-3 text-right font-medium">W-L</th>
-                  <th className="py-2 px-3 font-medium">Finish</th>
-                </tr>
-              </thead>
-              <tbody>
-                {tour.map((y) => (
-                  <tr key={y.year} className="border-t" style={{ borderColor: "var(--border)" }}>
-                    <td className="py-1.5 px-3 tabular-nums font-medium" style={mono}>{y.year}</td>
-                    <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{y.seed ?? ""}</td>
-                    <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{y.w}-{y.l}</td>
-                    <td className="py-1.5 px-3 text-xs" style={{ color: y.champ ? GOLD : "var(--text-muted)" }}>{finish(y)}</td>
+          <>
+            {/* Mobile: one card per tournament year. Same `tour` data as the
+                desktop table. */}
+            <div className="grid grid-cols-1 gap-2 sm:hidden">
+              {tour.map((y) => (
+                <div key={`${y.year}-card`} className="rounded-lg border p-3" style={card}>
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-sm font-medium tabular-nums" style={mono}>{y.year}</span>
+                    <span className="text-xs" style={{ color: y.champ ? GOLD : "var(--text-muted)" }}>{finish(y)}</span>
+                  </div>
+                  <div className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1 text-xs tabular-nums">
+                    <span className="text-[var(--text-muted)]">Seed {y.seed ?? "—"}</span>
+                    <span className="text-[var(--text-muted)]">{y.w}-{y.l}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="rounded-xl border overflow-x-auto max-h-[560px] overflow-y-auto hidden sm:block" style={card}>
+              <table className="w-full text-sm min-w-[420px]">
+                <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
+                  <tr className="text-left text-xs text-[var(--text-muted)]">
+                    <th className="py-2 px-3 font-medium">Year</th>
+                    <th className="py-2 px-3 text-right font-medium">Seed</th>
+                    <th className="py-2 px-3 text-right font-medium">W-L</th>
+                    <th className="py-2 px-3 font-medium">Finish</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                </thead>
+                <tbody>
+                  {tour.map((y) => (
+                    <tr key={y.year} className="border-t" style={{ borderColor: "var(--border)" }}>
+                      <td className="py-1.5 px-3 tabular-nums font-medium" style={mono}>{y.year}</td>
+                      <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{y.seed ?? ""}</td>
+                      <td className="py-1.5 px-3 text-right tabular-nums" style={mono}>{y.w}-{y.l}</td>
+                      <td className="py-1.5 px-3 text-xs" style={{ color: y.champ ? GOLD : "var(--text-muted)" }}>{finish(y)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </>
         )}
       </section>
 

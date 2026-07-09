@@ -56,7 +56,88 @@ export default function RankingsLens({ metros }: { metros: RankMetro[] }) {
         })}
       </div>
 
-      <div className="overflow-x-auto">
+      {/* Mobile: stacked cards, same rows/lens state as the desktop table */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {rows.map((m, i) => (
+          <div key={m.slug} className="rounded-lg border p-3" style={{ borderColor: 'var(--border, #1b2330)' }}>
+            <div className="flex items-start justify-between gap-2">
+              <div className="min-w-0">
+                <div className="text-sm font-medium leading-tight">
+                  <a href={`/rankings/${m.slug}`} className="hover:underline">{m.metro}</a>
+                  <a href={`/sound/metros/${m.slug}`} title={`${m.metro} \u2014 sound profile`} aria-label={`${m.metro} sound profile`} className="ml-1.5 inline-flex items-center rounded px-1 py-0.5 align-middle hover:bg-[var(--bg-card-hover)] transition-colors" style={{ color: 'var(--accent)' }}>&#9835;</a>
+                  {m.lenses.origin === null && (
+                    <span title="Production-only" style={{ color: COLOR.production }}> &#9670;</span>
+                  )}
+                </div>
+                <div className="text-xs" style={muted}>{m.country}</div>
+              </div>
+              <div className="text-xs tabular-nums flex-shrink-0" style={muted}>#{i + 1}</div>
+            </div>
+
+            {lens === 'origin' && (
+              <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide" style={muted}>Combined</div>
+                  <div className="tabular-nums font-semibold">{m.combined}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide" style={muted}>US</div>
+                  <div className="tabular-nums" style={muted}>{m.us_score}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide" style={muted}>UK</div>
+                  <div className="tabular-nums" style={muted}>{m.uk_score}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide" style={muted}>Artists</div>
+                  <div className="tabular-nums" style={muted}>{m.artist_count}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide" style={muted}>Signature</div>
+                  <div style={muted}>{m.signature_decade ?? '-'}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide" style={muted}>Distinct.</div>
+                  <div className="tabular-nums" style={muted}>{m.distinctiveness ?? '-'}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide" style={muted}>Per-artist</div>
+                  <div className="tabular-nums" style={muted}>{m.score_per_artist ?? '-'}</div>
+                </div>
+              </div>
+            )}
+            {lens === 'affinity' && (
+              <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide" style={muted}>VR tracks</div>
+                  <div className="tabular-nums font-semibold">{m.lenses.affinity.vr_tracks}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide" style={muted}>VR artists</div>
+                  <div className="tabular-nums" style={muted}>{m.lenses.affinity.vr_artists}</div>
+                </div>
+              </div>
+            )}
+            {lens === 'production' && m.lenses.production && (
+              <div className="mt-2 text-xs">
+                <div className="flex items-center gap-3">
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide" style={muted}>Index</div>
+                    <div className="tabular-nums font-semibold">{m.lenses.production.index}</div>
+                  </div>
+                  <div>
+                    <div className="text-[10px] uppercase tracking-wide" style={muted}>Tier</div>
+                    <div>{m.lenses.production.tier}</div>
+                  </div>
+                </div>
+                <div className="mt-1.5" style={muted}>{m.lenses.production.note}</div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <div className="overflow-x-auto hidden sm:block">
         <table className="w-full border-collapse text-sm">
           <thead>
             <tr style={muted} className="text-left">

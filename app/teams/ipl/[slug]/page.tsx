@@ -231,7 +231,52 @@ export default async function IplFranchisePage({ params }: Props) {
         <h2 className="text-base font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-3">
           Season History
         </h2>
-        <div className="rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+        {/* Mobile: one card per season instead of a 9-column table */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {seasons.map(s => (
+            <div
+              key={s.year + "-card"}
+              className="rounded-lg border p-3"
+              style={{ background: s.champion ? "rgba(251,191,36,0.05)" : "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-center justify-between gap-2">
+                <div className="min-w-0">
+                  <span className="font-semibold">{s.year}</span>
+                  <span className="text-[var(--text-muted)] text-xs ml-2">{s.team}</span>
+                </div>
+                <ResultChip result={s.playoff_result} />
+              </div>
+              <div className="grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs mt-2">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Pos</div>
+                  <div className="text-[var(--text-muted)] tabular-nums">{s.pos}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">W</div>
+                  <div className="tabular-nums">{s.w}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">L</div>
+                  <div className="text-[var(--text-muted)] tabular-nums">{s.l}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">NR</div>
+                  <div className="text-[var(--text-dim)] tabular-nums">{s.nr || "—"}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Pts</div>
+                  <div className="font-semibold tabular-nums">{s.pts}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">NRR</div>
+                  <div className="tabular-nums">{s.nrr >= 0 ? "+" : ""}{s.nrr.toFixed(3)}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
           <table className="w-full text-sm tabular-nums">
             <thead>
               <tr className="border-b text-[11px]" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>

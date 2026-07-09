@@ -84,11 +84,17 @@ export default function DomesticLeaguesTable({
   const Th = ({ k, label, right }: { k: SortKey; label: string; right?: boolean }) => (
     <th
       onClick={() => sortBy(k)}
-      className={`px-3 py-2 cursor-pointer select-none hover:text-[var(--accent)] ${right ? "text-right" : "text-left"}`}
+      className={`px-3 py-3 cursor-pointer select-none hover:text-[var(--accent)] ${right ? "text-right" : "text-left"}`}
       title="Sort"
     >
       {label}{sortKey === k ? (asc ? " ▲" : " ▼") : ""}
     </th>
+  );
+  const Stat = ({ label, v, strong }: { label: string; v: number; strong?: boolean }) => (
+    <div>
+      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{label}</div>
+      <div className={`tabular-nums ${strong ? "font-semibold" : "text-[var(--text-muted)]"}`} style={mono}>{v || "—"}</div>
+    </div>
   );
 
   return (
@@ -123,7 +129,91 @@ export default function DomesticLeaguesTable({
         </p>
       )}
 
-      <div className="overflow-x-auto rounded-lg border border-[var(--border)]">
+      {/* Mobile: one card per club instead of an 8-column table. Same
+          `view` array (filters + sort state above) drives both. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {view.map(({ c, h, displayCountry }) => {
+          const id = c.name + "|" + (c.metro || "");
+          const isOpen = open.has(id);
+          const eras = Object.entries(c.byCountry).sort((a, b) => (b[1].lastYear || 0) - (a[1].lastYear || 0));
+          return (
+            <div
+              key={id}
+              className="rounded-lg border p-3 cursor-pointer"
+              style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+              onClick={() => toggle(id)}
+            >
+              <div className="flex items-start justify-between gap-2">
+                <div className="flex items-center gap-1.5 min-w-0">
+                  <CrestIcon name={c.name} size={20} className="flex-shrink-0" />
+                  <div className="min-w-0">
+                    {c.slug ? (
+                      <Link
+                        href={`/teams/football/${c.slug}`}
+                        className="font-medium text-[var(--accent)] hover:underline"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        {c.name}
+                      </Link>
+                    ) : (
+                      <span className="font-medium text-[var(--text)]">{c.name}</span>
+                    )}
+                    {c.metro && <div className="text-[11px] text-[var(--text-dim)]">{c.metro}</div>}
+                  </div>
+                </div>
+                <span className="text-[var(--text-dim)] flex-shrink-0">{isOpen ? "−" : "+"}</span>
+              </div>
+              <div className="mt-1 text-xs text-[var(--text-muted)]">
+                {displayCountry}
+                {countryActive && c.country !== country && (
+                  <span className="ml-1 text-[10px] text-[var(--text-dim)]">now {c.country}</span>
+                )}
+                {!countryActive && c.status === "former" && (
+                  <span className="ml-1 text-[9px] uppercase tracking-wide text-[var(--text-dim)]">former</span>
+                )}
+              </div>
+              <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+                <Stat label="Titles" v={h.titles} strong />
+                <Stat label="Major" v={h.majorTrophies} />
+                <Stat label="Cups" v={h.cups} />
+                <Stat label="Cont." v={h.contTitles} />
+                <Stat label="CL" v={h.clTitles} />
+              </div>
+              {isOpen && (
+                <div className="mt-2 pt-2 border-t text-xs text-[var(--text-muted)]" style={{ borderColor: "var(--border)" }}>
+                  <div className="mb-1 space-y-0.5">
+                    <div>Confederation: <b className="text-[var(--text)]">{c.confederation}</b></div>
+                    <div>Status: <b className="text-[var(--text)]">{c.status === "current" ? "Current top flight" : "Former top flight"}</b></div>
+                    {c.lastTopFlight != null && <div>Last top flight: <b className="text-[var(--text)]">{c.lastTopFlight}</b></div>}
+                    {c.slug && (
+                      <Link
+                        href={`/teams/football/${c.slug}`}
+                        className="inline-block text-[var(--accent)] hover:underline"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        Club page →
+                      </Link>
+                    )}
+                  </div>
+                  <div className="flex flex-wrap gap-x-5 gap-y-1">
+                    {eras.map(([ctry, e]) => (
+                      <span key={ctry}>
+                        <b className="text-[var(--text)]">{ctry}</b>: {e.titles} titles
+                        {e.cups ? `, ${e.cups} cups` : ""}
+                        {e.contTitles ? `, ${e.contTitles} continental` : ""}
+                        {e.clTitles ? `, ${e.clTitles} CL` : ""}
+                        {e.lastTitle ? ` (last title ${e.lastTitle})` : ""}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="overflow-x-auto rounded-lg border border-[var(--border)] hidden sm:block">
         <table className="w-full text-sm">
           <thead className="text-[var(--text-muted)] border-b border-[var(--border)] bg-[var(--bg-card)]">
             <tr>

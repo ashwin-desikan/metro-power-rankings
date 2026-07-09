@@ -132,7 +132,70 @@ export default function ArtistsTable({ artists, byPeriod }: { artists: ArtistRow
         </p>
       )}
 
-      <div className="overflow-x-auto">
+      {/* Mobile: stacked cards, same rows/sort/filter state as the desktop table */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {rows.map((a, i) => (
+          <div key={a.slug + a.name} className="rounded-lg border p-3" style={{ borderColor: 'var(--border, #1b2330)' }}>
+            <div className="flex items-start justify-between gap-2">
+              <div className="min-w-0">
+                <div className="text-sm font-medium leading-tight">
+                  <a href={`/sound/artists/${a.slug}`} className="hover:underline">{a.name}</a>
+                  <GrammyChip wins={a.gram_wins} noms={a.gram_noms} />
+                </div>
+                {a.metro_slug && (
+                  <div className="text-xs mt-0.5" style={muted}>
+                    <a href={`/rankings/${a.metro_slug}`} className="hover:underline">{a.metro}</a>
+                    <a href={`/sound/metros/${a.metro_slug}`} title="Sound profile" className="ml-1 align-middle" style={{ color: 'var(--text-muted)' }}>&#9834;</a>
+                  </div>
+                )}
+              </div>
+              <div className="text-xs tabular-nums flex-shrink-0" style={muted}>#{i + 1}</div>
+            </div>
+            <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+              <div>
+                <div className="text-[10px] uppercase tracking-wide" style={muted}>BB #1 / T10</div>
+                <div className="tabular-nums" style={muted}>{a.bb_no1 || 0} / {a.bb_top10 || 0}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide" style={muted}>BB score</div>
+                <div className="tabular-nums font-semibold">{d1(a.bb_score)}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide" style={muted}>UK #1 / T10</div>
+                <div className="tabular-nums" style={muted}>{a.uk_no1 || 0} / {a.uk_top10 || 0}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide" style={muted}>UK score</div>
+                <div className="tabular-nums font-semibold">{d1(a.uk_score)}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide" style={muted}>Combined</div>
+                <div className="tabular-nums font-semibold">{a.combined.toFixed(2)}</div>
+              </div>
+              {!period && (
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide" style={muted}>Albums</div>
+                  <div className="tabular-nums" style={muted}>{a.album_raw ? `${a.album_raw}M` : '—'}</div>
+                </div>
+              )}
+              {!period && (
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide" style={muted}>★ Prestige</div>
+                  <div className="tabular-nums" style={{ color: a.gram_wins ? '#e8c766' : 'var(--text-muted)' }}>{d1(a.prestige) || '—'}</div>
+                </div>
+              )}
+              {!period && a.peak_decade && (
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide" style={muted}>Peak</div>
+                  <div style={muted}>{a.peak_decade}</div>
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="overflow-x-auto hidden sm:block">
         <table className="w-full border-collapse text-sm">
           <thead>
             <tr className="text-left">

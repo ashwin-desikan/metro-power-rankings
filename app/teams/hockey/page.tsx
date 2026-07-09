@@ -122,7 +122,31 @@ export default function HockeyHubPage() {
         <p className="text-xs text-[var(--text-muted)] mb-3">
           The ultimate trophy. Men&apos;s Olympic ice hockey, every Games since 1920.
         </p>
-        <div className="rounded-xl border overflow-x-auto max-h-[460px] overflow-y-auto" style={card}>
+        {/* Mobile: one card per Games instead of a 4-column table that forces
+            sideways scrolling. Same data, card presentation only. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[460px] overflow-y-auto pr-0.5">
+          {hub.olympic_podiums.map((p) => (
+            <div key={`${p.year}-card`} className="rounded-lg border p-3" style={card}>
+              <div className="font-semibold tabular-nums text-sm mb-2" style={mono}>{p.year}</div>
+              <div className="grid grid-cols-1 gap-1.5 text-sm">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[10px] uppercase tracking-wide flex-shrink-0" style={{ color: GOLD }}>Gold</span>
+                  <span className="font-semibold text-right" style={{ color: GOLD }}>{teamLink(p.gold)}</span>
+                </div>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Silver</span>
+                  <span className="text-right">{teamLink(p.silver)}</span>
+                </div>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Bronze</span>
+                  <span className="text-right">{teamLink(p.bronze)}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto max-h-[460px] overflow-y-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[560px]">
             <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
               <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -153,7 +177,29 @@ export default function HockeyHubPage() {
           The best-on-best invitational: the Canada Cup (1976-1991) and its successor,
           the World Cup of Hockey (1996-2016).
         </p>
-        <div className="rounded-xl border overflow-x-auto" style={card}>
+        {/* Mobile: stacked cards, same data as the desktop table below. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {hub.world_cup.map((w) => (
+            <div key={`${w.year}-card`} className="rounded-lg border p-3" style={card}>
+              <div className="flex items-center justify-between gap-2 mb-2">
+                <span className="font-semibold tabular-nums text-sm" style={mono}>{w.year}</span>
+                <span className="text-xs text-[var(--text-muted)]">{w.event}</span>
+              </div>
+              <div className="grid grid-cols-1 gap-1.5 text-sm">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Champion</span>
+                  <span className="font-semibold text-right">{teamLink(w.champion)}</span>
+                </div>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Runner-up</span>
+                  <span className="text-right">{teamLink(w.ru)}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[560px]">
             <thead>
               <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -184,7 +230,30 @@ export default function HockeyHubPage() {
           The annual Worlds, held nearly every year since 1920. The least weighty of the
           three honours, but the deepest record. {hub.totals.worlds_editions} editions.
         </p>
-        <div className="rounded-xl border overflow-x-auto max-h-[460px] overflow-y-auto" style={card}>
+        {/* Mobile: stacked cards, same data as the desktop table below. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[460px] overflow-y-auto pr-0.5">
+          {hub.worlds.map((w) => (
+            <div key={`${w.year}-card`} className="rounded-lg border p-3" style={card}>
+              <div className="font-semibold tabular-nums text-sm mb-2" style={mono}>{w.year}</div>
+              <div className="grid grid-cols-1 gap-1.5 text-sm">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[10px] uppercase tracking-wide flex-shrink-0" style={{ color: GOLD }}>Gold</span>
+                  <span className="font-semibold text-right" style={{ color: GOLD }}>{teamLink(w.gold)}</span>
+                </div>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Silver</span>
+                  <span className="text-right">{teamLink(w.silver)}</span>
+                </div>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Bronze</span>
+                  <span className="text-right">{teamLink(w.bronze)}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto max-h-[460px] overflow-y-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[560px]">
             <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
               <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -219,7 +288,38 @@ export default function HockeyHubPage() {
       {/* ---------------- Nations ---------------- */}
       <section className="mb-10">
         <h2 id="nations" className="text-lg font-semibold mb-3">Nations</h2>
-        <div className="rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto" style={card}>
+        {/* Mobile: one card per nation instead of a 5-column table nobody
+            can read at 375px without scrolling sideways. Same `nations` data. */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[520px] overflow-y-auto pr-0.5">
+          {nations.map((t) => (
+            <div key={`${t.slug}-card`} className="rounded-lg border p-3" style={card}>
+              <div className="flex items-center gap-1.5 font-medium text-sm mb-2">
+                {flagCdnUrl(t.slug) ? <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" loading="lazy" decoding="async" /> : null}
+                <Link href={`/teams/hockey/${t.slug}`} className="hover:text-[var(--accent)]">{t.name}</Link>
+              </div>
+              <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Oly Gold</div>
+                  <div className="tabular-nums font-semibold" style={{ ...mono, color: t.oly_gold > 0 ? GOLD : "var(--text-dim)" }}>{t.oly_gold}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Oly Medals</div>
+                  <div className="tabular-nums" style={mono}>{t.oly_medals}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">World Cups</div>
+                  <div className="tabular-nums" style={mono}>{t.wc_titles}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Worlds Gold</div>
+                  <div className="tabular-nums" style={mono}>{t.worlds_gold}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[680px]">
             <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
               <tr className="text-left text-xs text-[var(--text-muted)]">

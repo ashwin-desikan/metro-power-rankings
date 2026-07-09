@@ -75,7 +75,44 @@ export default function StatesDirectory({ rows, governors }: { rows: Row[]; gove
         </select>
         <span className="text-xs text-[var(--text-dim)]">{view.length} of {rows.length}</span>
       </div>
-      <div className="rounded-xl border overflow-x-auto" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+      {/* Mobile: stacked cards, same sorted/filtered data as the table */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {view.map((r) => {
+          const g = governors[r.slug];
+          return (
+            <div key={`${r.slug}-card`} className="rounded-lg border p-3" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+              <div className="flex items-start justify-between gap-2">
+                <div className="min-w-0">
+                  <Link href={`/states/${r.slug}`} className="font-medium text-[var(--text)] hover:text-[var(--accent)]">{r.name}</Link>
+                  {r.type && r.type !== "State" ? <span className="ml-1 text-[10px] text-[var(--text-dim)]">{r.type}</span> : null}
+                  <div className="text-xs text-[var(--text-muted)] mt-0.5">
+                    <Link href={`/countries/${r.countrySlug}`} className="hover:text-[var(--accent)]">{r.country}</Link>
+                    {r.continent ? <span className="text-[var(--text-dim)]"> · {r.continent}</span> : null}
+                  </div>
+                </div>
+                <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-dim)]">#{r.rank}</span>
+              </div>
+              <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs tabular-nums">
+                <span className="text-[var(--text-muted)]">{fmtPop(r.pop)}</span>
+                {r.metroCount > 0 && <span className="text-[var(--text-muted)]">{r.metroCount} metros</span>}
+                <span className="font-medium text-[var(--text)]">
+                  {r.score > 0 ? r.score.toFixed(1) : "—"}
+                  {!r.weighted && r.score > 0 ? <span className="text-[var(--text-dim)]">*</span> : null}
+                </span>
+              </div>
+              {g ? (
+                <div className="mt-1.5 text-xs text-[var(--text-muted)]">
+                  {g.name}
+                  {g.party ? <span className="text-[10px] text-[var(--text-dim)]"> {g.party}</span> : null}
+                  {g.second ? <span className="block text-[10px] text-[var(--text-dim)]">{g.second.name} ({g.second.role})</span> : null}
+                </div>
+              ) : null}
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="hidden sm:block rounded-xl border overflow-x-auto" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
         <table className="w-full text-left text-sm">
           <thead>
             <tr className="border-b text-xs uppercase tracking-wider text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }}>

@@ -169,7 +169,30 @@ export default function BasketballHubPage() {
         <p className="text-xs text-[var(--text-muted)] mb-3">
           Every men&apos;s Olympic basketball podium since Berlin 1936.
         </p>
-        <div className="rounded-xl border overflow-x-auto max-h-[440px] overflow-y-auto" style={card}>
+        {/* Mobile: one card per Games instead of a cramped 4-column table */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[440px] overflow-y-auto">
+          {hub.podiums.map((p) => (
+            <div key={p.year} className="rounded-lg border p-3" style={card}>
+              <div className="font-medium text-sm tabular-nums" style={mono}>{p.year}</div>
+              <div className="mt-2 grid grid-cols-1 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide" style={{ color: GOLD }}>Gold</div>
+                  <div className="font-semibold" style={{ color: GOLD }}>{teamLink(p.gold)}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Silver</div>
+                  <div>{p.silver ? teamLink(p.silver) : "—"}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Bronze</div>
+                  <div>{p.bronze ? teamLink(p.bronze) : "—"}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto max-h-[440px] overflow-y-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[560px]">
             <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
               <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -199,7 +222,29 @@ export default function BasketballHubPage() {
         <p className="text-xs text-[var(--text-muted)] mb-3">
           Editions on file: {hub.wc_editions_on_file.join(", ")}.
         </p>
-        <div className="rounded-xl border overflow-x-auto" style={card}>
+        {/* Mobile: one card per final instead of a cramped 4-column table */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden">
+          {hub.wc_finals.map((f) => (
+            <div key={f.year} className="rounded-lg border p-3" style={card}>
+              <div className="flex items-center justify-between gap-2">
+                <span className="font-semibold text-sm">{teamLink(f.champion)}</span>
+                <span className="text-xs tabular-nums text-[var(--text-dim)] flex-shrink-0" style={mono}>{f.year}</span>
+              </div>
+              <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Score</div>
+                  <div className="tabular-nums" style={mono}>{f.score}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Runner-up</div>
+                  <div>{teamLink(f.ru)}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[560px]">
             <thead>
               <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -226,7 +271,41 @@ export default function BasketballHubPage() {
       {/* ---------------- Nations ---------------- */}
       <section className="mb-10">
         <h2 id="nations" className="text-lg font-semibold mb-3">Nations</h2>
-        <div className="rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto" style={card}>
+        {/* Mobile: one card per nation instead of a cramped 5-column table */}
+        <div className="grid grid-cols-1 gap-2 sm:hidden max-h-[520px] overflow-y-auto">
+          {nations.map((t) => (
+            <div key={t.slug} className="rounded-lg border p-3" style={card}>
+              <div className="flex items-center gap-1.5 min-w-0 font-medium text-sm">
+                {flagCdnUrl(t.slug) && (
+                  <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" loading="lazy" decoding="async" />
+                )}
+                <Link href={`/teams/basketball/${t.slug}`} className="hover:text-[var(--accent)] truncate">
+                  {t.name}
+                </Link>
+              </div>
+              <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Oly Gold</div>
+                  <div className="tabular-nums font-semibold" style={{ ...mono, color: t.gold > 0 ? GOLD : "var(--text-dim)" }}>{t.gold}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Oly Medals</div>
+                  <div className="tabular-nums" style={mono}>{t.medals}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">WC Titles</div>
+                  <div className="tabular-nums" style={mono}>{t.wc_titles}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">WC Apps</div>
+                  <div className="tabular-nums" style={mono}>{t.wc_apps}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border overflow-x-auto max-h-[520px] overflow-y-auto hidden sm:block" style={card}>
           <table className="w-full text-sm min-w-[640px]">
             <thead className="sticky top-0" style={{ backgroundColor: "var(--bg-card)" }}>
               <tr className="text-left text-xs text-[var(--text-muted)]">

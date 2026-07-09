@@ -49,44 +49,91 @@ function Honors({ row }: { row: MlsStanding }) {
   return <span className="inline-flex flex-wrap gap-1">{badges}</span>;
 }
 
+function StandingStat({ label, v }: { label: string; v: React.ReactNode }) {
+  return (
+    <div>
+      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{label}</div>
+      <div className="tabular-nums">{v}</div>
+    </div>
+  );
+}
+
 function Table({ rows, showConf, showHonors }: { rows: MlsStanding[]; showConf: boolean; showHonors: boolean }) {
   return (
-    <div className="rounded-xl border overflow-x-auto" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
-      <table className="w-full min-w-[640px] text-sm tabular-nums">
-        <thead>
-          <tr className="border-b text-[11px] uppercase tracking-wide" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
-            <th className="text-left py-2 px-3 font-medium">#</th>
-            <th className="text-left py-2 px-3 font-medium">Team</th>
-            {showConf && <th className="text-left py-2 px-2 font-medium hidden sm:table-cell">Conf</th>}
-            <th className="text-right py-2 px-2 font-medium">W</th>
-            <th className="text-right py-2 px-2 font-medium">D</th>
-            <th className="text-right py-2 px-2 font-medium">L</th>
-            <th className="text-right py-2 px-2 font-medium">Pts</th>
-            <th className="text-right py-2 px-2 font-medium hidden sm:table-cell">GF</th>
-            <th className="text-right py-2 px-2 font-medium hidden sm:table-cell">GA</th>
-            <th className="text-right py-2 px-2 font-medium">GD</th>
-            {showHonors && <th className="text-left py-2 px-3 font-medium">Honors</th>}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((r, i) => (
-            <tr key={r.cur_name} className="border-b last:border-b-0" style={{ borderColor: "var(--border)", background: r.supporters_shield ? "rgba(245,215,110,0.06)" : undefined }}>
-              <td className="py-1.5 px-3 text-[var(--text-muted)]">{i + 1}</td>
-              <td className="py-1.5 px-3"><TeamCell row={r} /></td>
-              {showConf && <td className="py-1.5 px-2 text-[var(--text-muted)] hidden sm:table-cell">{r.conference ?? "—"}</td>}
-              <td className="py-1.5 px-2 text-right">{r.w}</td>
-              <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.d}</td>
-              <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.l}</td>
-              <td className="py-1.5 px-2 text-right font-semibold">{r.pts ?? "—"}</td>
-              <td className="py-1.5 px-2 text-right text-[var(--text-muted)] hidden sm:table-cell">{r.gs}</td>
-              <td className="py-1.5 px-2 text-right text-[var(--text-muted)] hidden sm:table-cell">{r.ga}</td>
-              <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.gd > 0 ? `+${r.gd}` : r.gd}</td>
-              {showHonors && <td className="py-1.5 px-3"><Honors row={r} /></td>}
+    <>
+      {/* Mobile: one card per team instead of a dense, column-hiding table.
+          Every column from the desktop table is present on the card. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {rows.map((r, i) => (
+          <div
+            key={r.cur_name}
+            className="rounded-lg border p-3"
+            style={{ background: r.supporters_shield ? "rgba(245,215,110,0.06)" : "var(--bg-card)", borderColor: "var(--border)" }}
+          >
+            <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center gap-2 min-w-0">
+                <span className="text-xs tabular-nums text-[var(--text-muted)] w-4 flex-shrink-0">{i + 1}</span>
+                <TeamCell row={r} />
+              </div>
+              <span className="flex-shrink-0 text-sm font-semibold tabular-nums">{r.pts ?? "—"} <span className="text-[10px] font-normal text-[var(--text-dim)] uppercase">pts</span></span>
+            </div>
+            {showConf && r.conference && (
+              <div className="mt-0.5 ml-6 text-[11px] text-[var(--text-dim)]">{r.conference}</div>
+            )}
+            <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+              <StandingStat label="W" v={r.w} />
+              <StandingStat label="D" v={r.d} />
+              <StandingStat label="L" v={r.l} />
+              <StandingStat label="GF" v={r.gs} />
+              <StandingStat label="GA" v={r.ga} />
+              <StandingStat label="GD" v={r.gd > 0 ? `+${r.gd}` : r.gd} />
+            </div>
+            {showHonors && (
+              <div className="mt-2">
+                <Honors row={r} />
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+        <table className="w-full min-w-[640px] text-sm tabular-nums">
+          <thead>
+            <tr className="border-b text-[11px] uppercase tracking-wide" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
+              <th className="text-left py-2 px-3 font-medium">#</th>
+              <th className="text-left py-2 px-3 font-medium">Team</th>
+              {showConf && <th className="text-left py-2 px-2 font-medium">Conf</th>}
+              <th className="text-right py-2 px-2 font-medium">W</th>
+              <th className="text-right py-2 px-2 font-medium">D</th>
+              <th className="text-right py-2 px-2 font-medium">L</th>
+              <th className="text-right py-2 px-2 font-medium">Pts</th>
+              <th className="text-right py-2 px-2 font-medium">GF</th>
+              <th className="text-right py-2 px-2 font-medium">GA</th>
+              <th className="text-right py-2 px-2 font-medium">GD</th>
+              {showHonors && <th className="text-left py-2 px-3 font-medium">Honors</th>}
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {rows.map((r, i) => (
+              <tr key={r.cur_name} className="border-b last:border-b-0" style={{ borderColor: "var(--border)", background: r.supporters_shield ? "rgba(245,215,110,0.06)" : undefined }}>
+                <td className="py-1.5 px-3 text-[var(--text-muted)]">{i + 1}</td>
+                <td className="py-1.5 px-3"><TeamCell row={r} /></td>
+                {showConf && <td className="py-1.5 px-2 text-[var(--text-muted)]">{r.conference ?? "—"}</td>}
+                <td className="py-1.5 px-2 text-right">{r.w}</td>
+                <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.d}</td>
+                <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.l}</td>
+                <td className="py-1.5 px-2 text-right font-semibold">{r.pts ?? "—"}</td>
+                <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.gs}</td>
+                <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.ga}</td>
+                <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.gd > 0 ? `+${r.gd}` : r.gd}</td>
+                {showHonors && <td className="py-1.5 px-3"><Honors row={r} /></td>}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 }
 
