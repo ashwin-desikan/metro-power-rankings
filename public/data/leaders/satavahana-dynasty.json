@@ -1,0 +1,52 @@
+[
+  {
+    "name": "👑 Simuka",
+    "role": "King",
+    "start": "-0100-01-01",
+    "end": "-0077-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "founder; dating uncertain",
+    "era": "Satavahana dynasty"
+  },
+  {
+    "name": "👑 Gautamiputra Satakarni",
+    "role": "King",
+    "start": "0106-01-01",
+    "end": "0130-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "epigraphically attested",
+    "era": "Satavahana dynasty"
+  },
+  {
+    "name": "👑 Vasishthiputra Sri Pulumavi",
+    "role": "King",
+    "start": "0130-01-01",
+    "end": "0159-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "epigraphically attested",
+    "era": "Satavahana dynasty"
+  },
+  {
+    "name": "👑 Sri Yajna Satakarni",
+    "role": "King",
+    "start": "0170-01-01",
+    "end": "0199-01-01",
+    "current": false,
+    "tenure": "29y 0d",
+    "party": "epigraphically attested",
+    "era": "Satavahana dynasty"
+  },
+  {
+    "name": "👑 Pulumavi IV",
+    "role": "King",
+    "start": "0218-01-01",
+    "end": "0224-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "last ruler",
+    "era": "Satavahana dynasty"
+  }
+]

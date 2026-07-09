@@ -698,5 +698,19 @@
   "start": "-0209",
   "end": "91",
   "href": "https://en.wikipedia.org/wiki/Xiongnu"
+ },
+ "shunga-empire": {
+  "name": "Shunga Empire",
+  "continent": "Asia",
+  "start": "-0185",
+  "end": "-0073",
+  "href": "https://en.wikipedia.org/wiki/Shunga_Empire"
+ },
+ "satavahana-dynasty": {
+  "name": "Satavahana dynasty",
+  "continent": "Asia",
+  "start": "-0100",
+  "end": "224",
+  "href": "https://en.wikipedia.org/wiki/Satavahana_dynasty"
  }
 }

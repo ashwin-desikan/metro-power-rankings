@@ -1,0 +1,92 @@
+[
+  {
+    "name": "👑 Pushyamitra Shunga",
+    "role": "King",
+    "start": "-0185-01-01",
+    "end": "-0149-01-01",
+    "current": false,
+    "tenure": "36y 0d",
+    "party": "year-level backbone",
+    "era": "Shunga dynasty"
+  },
+  {
+    "name": "👑 Agnimitra",
+    "role": "King",
+    "start": "-0149-01-01",
+    "end": "-0141-01-01",
+    "current": false,
+    "tenure": "8y 0d",
+    "party": "year-level backbone",
+    "era": "Shunga dynasty"
+  },
+  {
+    "name": "👑 Vasujyeshtha",
+    "role": "King",
+    "start": "-0141-01-01",
+    "end": "-0131-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Shunga dynasty"
+  },
+  {
+    "name": "👑 Vasumitra",
+    "role": "King",
+    "start": "-0131-01-01",
+    "end": "-0124-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "year-level backbone",
+    "era": "Shunga dynasty"
+  },
+  {
+    "name": "👑 Bhadraka",
+    "role": "King",
+    "start": "-0124-01-01",
+    "end": "-0122-01-01",
+    "current": false,
+    "tenure": "2y 0d",
+    "party": "year-level backbone",
+    "era": "Shunga dynasty"
+  },
+  {
+    "name": "👑 Pulindaka",
+    "role": "King",
+    "start": "-0122-01-01",
+    "end": "-0119-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "year-level backbone",
+    "era": "Shunga dynasty"
+  },
+  {
+    "name": "👑 Vajramitra",
+    "role": "King",
+    "start": "-0119-01-01",
+    "end": "-0114-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Shunga dynasty"
+  },
+  {
+    "name": "👑 Bhagabhadra",
+    "role": "King",
+    "start": "-0114-01-01",
+    "end": "-0083-01-01",
+    "current": false,
+    "tenure": "31y 0d",
+    "party": "year-level backbone",
+    "era": "Shunga dynasty"
+  },
+  {
+    "name": "👑 Devabhuti",
+    "role": "King",
+    "start": "-0083-01-01",
+    "end": "-0073-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone",
+    "era": "Shunga dynasty"
+  }
+]

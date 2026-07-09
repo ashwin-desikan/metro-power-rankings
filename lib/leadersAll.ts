@@ -52,6 +52,8 @@ export type LeaderEntity = {
   orgSpans: Record<string, { s: string | null; e: string | null }> | null;
   country: string | null;
   href: string | null;
+  /** Defunct only: present-day countries whose land now covers this territory (max 3), linking to /countries. NOT heirs/successors — separate modern states on the same ground. */
+  modernTerritory?: { slug: string; name: string }[];
   hasHistory: boolean;
   current: CurrentLeader | null;
   history: HistRow[];
@@ -107,6 +109,7 @@ export async function getLeadersMaster(): Promise<LeaderEntity[]> {
     ) ?? {};
   const defunct = readJSON<Record<string, DefunctMeta>>(path.join(LEADERS_DIR, "_defunct.json")) ?? {};
   const names = readJSON<Record<string, RawNamePeriod[]>>(path.join(LEADERS_DIR, "_names.json")) ?? {};
+  const territoryMap = readJSON<Record<string, string[]>>(path.join(LEADERS_DIR, "_modern-territory.json")) ?? {};
 
   const out: LeaderEntity[] = [];
 
@@ -229,6 +232,9 @@ export async function getLeadersMaster(): Promise<LeaderEntity[]> {
       scoreTotal: null,
       realm: false,
       yearRange: `${fmtDefunctYear(meta.start)}–${fmtDefunctYear(meta.end)}`,
+      modernTerritory: (territoryMap[slug] ?? [])
+        .map((cs) => { const cc = getCountry(cs); return cc ? { slug: cc.slug, name: cc.name } : null; })
+        .filter((x): x is { slug: string; name: string } => x != null),
       nameHistory: normNames(names[slug]),
       orgs: [],
       orgSpans: Object.keys(dSpans).length ? dSpans : null,

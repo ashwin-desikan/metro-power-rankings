@@ -77,6 +77,26 @@ function resolveAsOf(
 
 // Historical name of an entity at a date (Russia→Soviet Union, Germany→Nazi
 // Germany, ...). Falls back to the entity's present-day name.
+// Modern-territory chips: links to the present-day country/countries whose land
+// now covers this defunct entity's territory (curated, max 3; public/data/
+// leaders/_modern-territory.json). These are NOT heirs or successors — separate
+// modern states that happen to occupy the same ground. Shown wherever a defunct
+// entity's name appears.
+function TerritoryChips({ e }: { e: LeaderEntity }) {
+  if (!e.modernTerritory || e.modernTerritory.length === 0) return null;
+  return (
+    <span className="ml-1 text-[10px] text-[var(--text-dim)]">
+      territory now in{" "}
+      {e.modernTerritory.map((s, i) => (
+        <span key={s.slug}>
+          {i > 0 ? ", " : ""}
+          <Link href={`/countries/${s.slug}`} className="text-[var(--accent)] hover:underline">{s.name}</Link>
+        </span>
+      ))}
+    </span>
+  );
+}
+
 function nameAt(e: LeaderEntity, dateISO: string): string {
   if (!e.nameHistory) return e.name;
   const p = e.nameHistory.find(
@@ -529,6 +549,7 @@ export default function LeadersDirectory({
                     <Link href={x.e.href} className="font-semibold hover:text-[var(--accent)] transition-colors">{nameAt(x.e, x.en ?? "9999")}</Link>
                   ) : <span className="font-semibold">{nameAt(x.e, x.en ?? "9999")}</span>}
                   {x.e.yearRange ? <span className="text-[10px] text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{x.e.yearRange}</span> : null}
+                  <TerritoryChips e={x.e} />
                 </div>
                 <div className="mt-1 text-sm text-[var(--text)]">
                   {x.n} <span className="text-xs text-[var(--text-dim)]">({x.r})</span>
@@ -560,6 +581,7 @@ export default function LeadersDirectory({
                         <Link href={x.e.href} className="hover:text-[var(--accent)] transition-colors">{nameAt(x.e, x.en ?? "9999")}</Link>
                       ) : <span>{nameAt(x.e, x.en ?? "9999")}</span>}
                       {x.e.yearRange ? <span className="ml-1 text-[10px] text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{x.e.yearRange}</span> : null}
+                      <TerritoryChips e={x.e} />
                     </td>
                     <td className="px-2 sm:px-4 py-2 text-[var(--text)]">{x.n}<span className="sm:hidden text-xs text-[var(--text-dim)] ml-1">({shortRole(x.r)})</span></td>
                     <td className="hidden sm:table-cell px-4 py-2 text-[var(--text-muted)] text-xs">{x.r}</td>
@@ -630,6 +652,7 @@ export default function LeadersDirectory({
                         <Link href={e.href} className="font-semibold hover:text-[var(--accent)] transition-colors">{displayName}</Link>
                       ) : <span className="font-semibold">{displayName}</span>}
                       {e.yearRange ? <span className="ml-1 text-xs text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{e.yearRange}</span> : null}
+                      <TerritoryChips e={e} />
                     </div>
                     <span className="flex-shrink-0 font-semibold tabular-nums" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>{fmtPct(powerShare(e.slug))}</span>
                   </div>
@@ -690,6 +713,7 @@ export default function LeadersDirectory({
                           <Link href={e.href} className="font-semibold hover:text-[var(--accent)] transition-colors">{displayName}</Link>
                         ) : <span className="font-semibold">{displayName}</span>}
                         {e.yearRange ? <span className="ml-1 text-xs text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{e.yearRange}</span> : null}
+                      <TerritoryChips e={e} />
                       </td>
                       <td className="hidden md:table-cell px-4 py-3 text-[var(--text-muted)] text-xs">{regionLabel(e)}</td>
                       <td className="px-2 sm:px-4 py-3 text-right font-semibold" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>{fmtPct(powerShare(e.slug))}</td>

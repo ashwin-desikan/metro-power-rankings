@@ -1,0 +1,379 @@
+{
+ "achaemenid-empire": [
+  "iran"
+ ],
+ "akkadian-empire": [
+  "iraq"
+ ],
+ "aksumite-empire": [
+  "ethiopia",
+  "eritrea"
+ ],
+ "ancient-egypt": [
+  "egypt"
+ ],
+ "aq-qoyunlu": [
+  "iran",
+  "azerbaijan",
+  "iraq"
+ ],
+ "ashanti-empire": [
+  "ghana"
+ ],
+ "assyria": [
+  "iraq"
+ ],
+ "austrian-netherlands": [
+  "belgium",
+  "luxembourg"
+ ],
+ "ayyubid-sultanate": [
+  "egypt",
+  "syria"
+ ],
+ "aztec-empire": [
+  "mexico"
+ ],
+ "babylon": [
+  "iraq"
+ ],
+ "baden": [
+  "germany"
+ ],
+ "bavaria": [
+  "germany"
+ ],
+ "buyid-dynasty": [
+  "iran",
+  "iraq"
+ ],
+ "byzantine-empire": [
+  "turkey",
+  "greece"
+ ],
+ "caliphate": [
+  "saudi-arabia",
+  "syria",
+  "iraq"
+ ],
+ "carthage": [
+  "tunisia"
+ ],
+ "central-america-federation": [
+  "guatemala",
+  "el-salvador",
+  "honduras"
+ ],
+ "chola-empire": [
+  "india",
+  "sri-lanka"
+ ],
+ "confederate-states": [
+  "united-states"
+ ],
+ "crimean-khanate": [
+  "russia",
+  "ukraine"
+ ],
+ "delhi-sultanate": [
+  "india",
+  "pakistan",
+  "bangladesh"
+ ],
+ "duchy-of-burgundy": [
+  "france",
+  "belgium",
+  "netherlands"
+ ],
+ "duchy-of-milan": [
+  "italy"
+ ],
+ "duchy-of-modena": [
+  "italy"
+ ],
+ "duchy-of-parma": [
+  "italy"
+ ],
+ "duchy-of-savoy": [
+  "italy",
+  "france"
+ ],
+ "duchy-of-warsaw": [
+  "poland"
+ ],
+ "east-germany": [
+  "germany"
+ ],
+ "electorate-of-hesse": [
+  "germany"
+ ],
+ "fatimid-caliphate": [
+  "egypt",
+  "tunisia"
+ ],
+ "ghaznavid-empire": [
+  "afghanistan",
+  "iran",
+  "pakistan"
+ ],
+ "goguryeo": [
+  "north-korea",
+  "south-korea",
+  "china"
+ ],
+ "golden-horde": [
+  "russia",
+  "kazakhstan",
+  "ukraine"
+ ],
+ "gran-colombia": [
+  "colombia",
+  "venezuela",
+  "ecuador"
+ ],
+ "grand-duchy-of-hesse": [
+  "germany"
+ ],
+ "gupta-empire": [
+  "india"
+ ],
+ "hanover": [
+  "germany"
+ ],
+ "hatay": [
+  "turkey"
+ ],
+ "hittite-empire": [
+  "turkey"
+ ],
+ "holy-roman-empire": [
+  "germany",
+  "austria",
+  "italy"
+ ],
+ "hunnic-empire": [
+  "hungary"
+ ],
+ "ilkhanate": [
+  "iran",
+  "iraq",
+  "azerbaijan"
+ ],
+ "inca-empire": [
+  "peru",
+  "bolivia",
+  "ecuador"
+ ],
+ "joseon-korea": [
+  "south-korea",
+  "north-korea"
+ ],
+ "khmer-empire": [
+  "cambodia",
+  "thailand",
+  "laos"
+ ],
+ "khwarazmian-empire": [
+  "uzbekistan",
+  "iran",
+  "turkmenistan"
+ ],
+ "kingdom-of-armenia": [
+  "armenia",
+  "turkey"
+ ],
+ "kingdom-of-hawaii": [
+  "united-states"
+ ],
+ "kingdom-of-judah": [
+  "israel",
+  "palestine",
+  "jordan"
+ ],
+ "kingdom-of-kush": [
+  "sudan"
+ ],
+ "kingdom-of-mysore": [
+  "india"
+ ],
+ "kingdom-of-naples": [
+  "italy"
+ ],
+ "kushan-empire": [
+  "afghanistan",
+  "pakistan",
+  "india"
+ ],
+ "lombardy-venetia": [
+  "italy"
+ ],
+ "macedon": [
+  "greece",
+  "north-macedonia"
+ ],
+ "majapahit": [
+  "indonesia"
+ ],
+ "mali-empire": [
+  "mali",
+  "guinea",
+  "senegal"
+ ],
+ "mamluk-sultanate": [
+  "egypt",
+  "syria"
+ ],
+ "manchukuo": [
+  "china"
+ ],
+ "maratha-empire": [
+  "india"
+ ],
+ "maurya-empire": [
+  "india"
+ ],
+ "mecklenburg-schwerin": [
+  "germany"
+ ],
+ "mongol-empire": [
+  "mongolia",
+  "china",
+  "russia"
+ ],
+ "orange-free-state": [
+  "south-africa"
+ ],
+ "palmyra": [
+  "syria"
+ ],
+ "parthian-empire": [
+  "iran",
+  "iraq"
+ ],
+ "pontus": [
+  "turkey"
+ ],
+ "ptolemaic-egypt": [
+  "egypt"
+ ],
+ "republic-of-genoa": [
+  "italy"
+ ],
+ "republic-of-ragusa": [
+  "croatia"
+ ],
+ "republic-of-texas": [
+  "united-states"
+ ],
+ "republic-of-venice": [
+  "italy"
+ ],
+ "rhodesia": [
+  "zimbabwe"
+ ],
+ "roman-empire": [
+  "italy",
+  "france",
+  "spain"
+ ],
+ "saar": [
+  "germany"
+ ],
+ "saffarid-dynasty": [
+  "iran",
+  "afghanistan"
+ ],
+ "samanid-empire": [
+  "iran",
+  "uzbekistan",
+  "tajikistan"
+ ],
+ "sasanian-empire": [
+  "iran",
+  "iraq"
+ ],
+ "satavahana-dynasty": [
+  "india"
+ ],
+ "saxony": [
+  "germany"
+ ],
+ "seleucid-empire": [
+  "syria",
+  "iran",
+  "iraq"
+ ],
+ "seljuk-empire": [
+  "turkey",
+  "iran",
+  "iraq"
+ ],
+ "shunga-empire": [
+  "india"
+ ],
+ "sikh-empire": [
+  "india",
+  "pakistan"
+ ],
+ "sokoto-caliphate": [
+  "nigeria",
+  "niger",
+  "cameroon"
+ ],
+ "songhai-empire": [
+  "mali",
+  "niger",
+  "nigeria"
+ ],
+ "south-vietnam": [
+  "vietnam"
+ ],
+ "south-yemen": [
+  "yemen"
+ ],
+ "sparta": [
+  "greece"
+ ],
+ "tibet": [
+  "china"
+ ],
+ "timurid-empire": [
+  "uzbekistan",
+  "iran",
+  "afghanistan"
+ ],
+ "transvaal": [
+  "south-africa"
+ ],
+ "tuscany": [
+  "italy"
+ ],
+ "two-sicilies": [
+  "italy"
+ ],
+ "umayyad-cordoba": [
+  "spain",
+  "portugal"
+ ],
+ "vijayanagara-empire": [
+  "india"
+ ],
+ "west-indies-federation": [
+  "jamaica",
+  "trinidad-tobago",
+  "barbados"
+ ],
+ "wurttemberg": [
+  "germany"
+ ],
+ "xiongnu": [
+  "mongolia",
+  "china"
+ ],
+ "zanzibar": [
+  "tanzania"
+ ],
+ "zulu-kingdom": [
+  "south-africa"
+ ]
+}
