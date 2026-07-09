@@ -62,7 +62,7 @@ function TeamCell({ slugs }: { slugs: string[] }) {
         <span key={s} className="inline-flex items-center gap-1">
           {i > 0 && <span className="text-[var(--text-dim)] text-[10px]">tie</span>}
           {flagCdnUrl(s) && (
-            <img src={flagCdnUrl(s)!} alt="" aria-hidden width={16} height={12} className="inline-block flex-shrink-0" />
+            <img src={flagCdnUrl(s)!} alt="" aria-hidden width={16} height={12} className="inline-block flex-shrink-0" loading="lazy" decoding="async" />
           )}
           <Link
             href={`/teams/national/${s}`}
@@ -130,7 +130,7 @@ export default function BritishHomeChampionshipPage() {
             >
               <span className="inline-flex items-center gap-1.5">
                 {flagCdnUrl(t.slug) && (
-                  <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={18} height={13} className="inline-block" />
+                  <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={18} height={13} className="inline-block" loading="lazy" decoding="async" />
                 )}
                 <Link href={`/teams/national/${t.slug}`} className="hover:underline">
                   {t.name}

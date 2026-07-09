@@ -14,7 +14,17 @@ import { getCrest } from "@/lib/teamCrest";
 import type { FootballMapPoint } from "./FootballMapInner";
 
 // Leaflet is browser-only; SSR import would crash on window access.
-const FootballMap = dynamic(() => import("./FootballMapInner"), { ssr: false, loading: () => null });
+const FootballMap = dynamic(() => import("./FootballMapInner"), {
+  ssr: false,
+  loading: () => (
+    <div
+      className="h-full w-full flex items-center justify-center text-xs animate-pulse"
+      style={{ color: "var(--text-muted)", fontFamily: "'JetBrains Mono', monospace" }}
+    >
+      Loading map…
+    </div>
+  ),
+});
 
 // Tiny color dot keyed by slug. Mirrors the curated colors + slug-hash
 // fallback from lib/football.ts. Re-implemented client-side because the

@@ -144,12 +144,12 @@ export default async function NhlStandings() {
               const displayShort = fr?.name ?? t.canonical ?? t.display_name;
               return (
                 <tr key={t.canonical} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
-                  <td className="py-1 pr-1">
+                  <td className="py-2 pr-1">
                     {slug ? (
                       <Link href={`/teams/nhl/${slug}`} className="flex items-center gap-1.5 hover:text-[var(--accent)] transition-colors">
                         {logo ? (
                           /* eslint-disable-next-line @next/next/no-img-element */
-                          <img src={logo} alt="" className="w-4 h-4 flex-shrink-0 object-contain" />
+                          <img src={logo} alt="" className="w-4 h-4 flex-shrink-0 object-contain" loading="lazy" decoding="async" />
                         ) : (
                           <span
                             className="inline-grid place-items-center rounded-full flex-shrink-0"

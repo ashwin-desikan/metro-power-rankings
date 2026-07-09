@@ -58,7 +58,7 @@ function AuthBar() {
           <div className="flex items-center gap-3 min-w-0">
             {user.avatar && (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={user.avatar} alt="" width={28} height={28} className="rounded-full" />
+              <img src={user.avatar} alt="" width={28} height={28} className="rounded-full" loading="lazy" decoding="async" />
             )}
             <div className="min-w-0">
               <div className="text-[13px] font-medium truncate">{user.name || user.email}</div>

@@ -68,7 +68,7 @@ export default async function RlNationPage({ params }: { params: Promise<{ slug:
         <div className="flex items-center gap-3 flex-wrap mb-1">
           <h1 className="text-3xl font-semibold tracking-tight inline-flex items-center gap-2">
             {flagCdnUrl(t.slug) && (
-              <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={28} height={21} className="inline-block" />
+              <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={28} height={21} className="inline-block" loading="lazy" decoding="async" />
             )}
             {t.name}
           </h1>

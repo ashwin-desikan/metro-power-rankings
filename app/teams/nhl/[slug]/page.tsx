@@ -189,7 +189,7 @@ export default async function NhlTeamPage({ params }: Props) {
           <div className="flex-shrink-0">
             {logo ? (
               /* eslint-disable-next-line @next/next/no-img-element */
-              <img src={logo} alt="" className="w-16 h-16 object-contain" />
+              <img src={logo} alt="" className="w-16 h-16 object-contain" loading="lazy" decoding="async" />
             ) : mono ? (
               <span
                 className="inline-grid place-items-center rounded-full flex-shrink-0 font-bold"

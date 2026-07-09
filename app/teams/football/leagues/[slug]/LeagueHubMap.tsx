@@ -17,7 +17,14 @@ import type { FootballMapPoint } from "../../FootballMapInner";
 
 const FootballMap = dynamic(() => import("../../FootballMapInner"), {
   ssr: false,
-  loading: () => null,
+  loading: () => (
+    <div
+      className="h-full w-full flex items-center justify-center text-xs animate-pulse"
+      style={{ color: "var(--text-muted)", fontFamily: "'JetBrains Mono', monospace" }}
+    >
+      Loading map…
+    </div>
+  ),
 });
 
 // Per-country color ramp by tier. England and Scotland are wired down

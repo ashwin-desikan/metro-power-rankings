@@ -177,7 +177,7 @@ export default function FranchiseTable({ franchises, historical, playoffState, l
                       <Link href={`/teams/nba/${r.slug}`} className="flex items-center gap-3 hover:text-[var(--accent)] transition-colors">
                         {logo ? (
                           // eslint-disable-next-line @next/next/no-img-element
-                          <img src={logo} alt="" className="w-8 h-8 flex-shrink-0 object-contain" />
+                          <img src={logo} alt="" className="w-8 h-8 flex-shrink-0 object-contain" loading="lazy" decoding="async" />
                         ) : (
                           <span className="inline-grid place-items-center rounded-full flex-shrink-0" style={{ background: mono?.bg, color: mono?.fg, width: 28, height: 28, fontSize: 10, fontWeight: 700, letterSpacing: "-0.02em" }} aria-hidden>{mono?.mono}</span>
                         )}

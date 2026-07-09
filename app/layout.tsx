@@ -3,6 +3,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import SiteNav from "./SiteNav";
 import VisitBeacon from "./VisitBeacon";
+import BackToTop from "./BackToTop";
 import { AUTHOR, BASE_URL, PUBLISHER, SITE_NAME, serializeJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -14,6 +15,11 @@ export const metadata: Metadata = {
   description:
     "A composite ranking of every metropolitan area on Earth, across sixteen dimensions, hand-curated from individually verified parameters.",
   applicationName: SITE_NAME,
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Metro Rankings",
+  },
   keywords: [
     "global metro rankings",
     "metropolitan areas",
@@ -64,6 +70,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: "#0d1117",
 };
 
 // Site-wide identity graph. Emitted once in the root layout so every page
@@ -130,6 +137,7 @@ export default function RootLayout({
         <SiteNav />
         <VisitBeacon />
         {children}
+        <BackToTop />
       </body>
       <GoogleAnalytics gaId="G-8BQVX0NFZZ" />
     </html>

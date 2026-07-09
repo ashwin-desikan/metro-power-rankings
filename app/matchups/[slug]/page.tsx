@@ -9,6 +9,7 @@ import {
 import { BASE_URL } from "@/lib/seo";
 import { computeTier } from "@/lib/tiers";
 import MetroMap from "@/app/MetroMap";
+import ShareRow from "@/app/_shared/ShareRow";
 
 // Matchup pages: canonical head-to-head URLs for any two metros.
 // URL pattern: /matchups/{a-slug}-vs-{b-slug}
@@ -451,33 +452,7 @@ export default async function MatchupPage({ params }: PageProps) {
           <h3 className="text-sm font-semibold mb-3 text-[var(--text-muted)]">
             Share this matchup
           </h3>
-          <div
-            className="flex gap-3 text-sm"
-            style={{ fontFamily: "'JetBrains Mono', monospace" }}
-          >
-            <a
-              href={`https://www.reddit.com/submit?url=${encodeURIComponent(
-                shareUrl,
-              )}&title=${encodeURIComponent(shareTitle)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded border px-3 py-1.5 text-[var(--text-muted)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
-              style={{ borderColor: "var(--border)" }}
-            >
-              Reddit
-            </a>
-            <a
-              href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-                shareUrl,
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded border px-3 py-1.5 text-[var(--text-muted)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
-              style={{ borderColor: "var(--border)" }}
-            >
-              LinkedIn
-            </a>
-          </div>
+          <ShareRow url={shareUrl} title={shareTitle} />
         </section>
 
         {/* Cross-links */}

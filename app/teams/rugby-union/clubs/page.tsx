@@ -92,7 +92,7 @@ export default function DomesticRugbyPage() {
                   {clubs.rolls[k].map((r, i) => (
                     <tr key={i} className="border-t" style={{ borderColor: "var(--border)" }}>
                       <td className="py-1 pr-2 tabular-nums whitespace-nowrap" style={mono}>{r.season}</td>
-                      <td className="py-1 font-medium">
+                      <td className="py-2 font-medium">
                         <CrestIcon name={r.team ?? r.winner} size={16} className="mr-1.5 align-middle" />
                         {r.metro_slug ? (
                           <Link href={`/rankings/${r.metro_slug}`} className="hover:text-[var(--accent)]">

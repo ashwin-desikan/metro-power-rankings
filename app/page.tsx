@@ -314,7 +314,7 @@ function IndexPreview({ rows }: { rows: Preview[] }) {
         <div key={r.name} className="flex items-baseline justify-between gap-2">
           <span className="flex items-baseline gap-2 min-w-0">
             <span className="text-[11px] flex-shrink-0" style={{ ...MONO, color: 'var(--text-dim)' }}>{i + 1}</span>
-            {r.flagUrl && <img src={r.flagUrl} alt="" width={18} height={13} className="flex-shrink-0 rounded-[2px]" style={{ objectFit: 'cover' }} />}
+            {r.flagUrl && <img src={r.flagUrl} alt="" width={18} height={13} className="flex-shrink-0 rounded-[2px]" style={{ objectFit: 'cover' }} loading="lazy" decoding="async" />}
             <span className="text-[13px] font-medium truncate">{r.name}</span>
             {r.sub && <span className="text-[11px] text-[var(--text-dim)] truncate hidden sm:inline">{r.sub}</span>}
           </span>
@@ -451,7 +451,7 @@ export default async function Home() {
                 </div>
                 <div className="flex items-center gap-2.5 mb-2">
                   {c.seal ? (
-                    <img src="/nowhere-100-seal.svg" alt="" width={26} height={26} style={{ flexShrink: 0 }} />
+                    <img src="/nowhere-100-seal.svg" alt="" width={26} height={26} style={{ flexShrink: 0 }} loading="lazy" decoding="async" />
                   ) : (
                     <span className="text-2xl leading-none" aria-hidden>{c.emoji}</span>
                   )}
@@ -489,7 +489,7 @@ export default async function Home() {
                           </div>
                           <div className="flex items-center gap-2 mt-0.5 pl-5">
                             {g.flagUrls.map((u, i) => (
-                              <img key={i} src={u} alt="" width={18} height={13} className="rounded-[2px] flex-shrink-0" style={{ objectFit: 'cover' }} />
+                              <img key={i} src={u} alt="" width={18} height={13} className="rounded-[2px] flex-shrink-0" style={{ objectFit: 'cover' }} loading="lazy" decoding="async" />
                             ))}
                             {g.matchup && <span className="text-[12px]" style={{ color: 'var(--accent)' }}>{g.matchup}</span>}
                           </div>

@@ -90,7 +90,7 @@ export default async function LiveChartsPage() {
                     width={24}
                     height={18}
                     className="rounded-[2px] flex-shrink-0"
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: "cover" }} loading="lazy" decoding="async"
                   />
                   <div className="min-w-0">
                     <div className="font-semibold text-sm leading-tight">Apple Music Top Songs</div>

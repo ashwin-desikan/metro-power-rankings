@@ -277,7 +277,7 @@ export default async function FranchisePage({ params }: Props) {
           <img
             src={logo}
             alt={`${f.display_name} logo`}
-            className="w-20 h-20 flex-shrink-0 object-contain"
+            className="w-20 h-20 flex-shrink-0 object-contain" loading="lazy" decoding="async"
           />
         ) : (
           <div

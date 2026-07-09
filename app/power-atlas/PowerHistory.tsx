@@ -208,7 +208,7 @@ export default function PowerHistory({ data }: { data: Data }) {
                       <div key={r.slug} className="flex items-center gap-2.5 rounded px-2.5 py-1.5 border" style={{ borderColor: "var(--border)", background: "var(--bg-card)" }}>
                         <span className="text-xs text-[var(--text-dim)] w-6 text-right tabular-nums" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{r.rank ?? "—"}</span>
                         {l?.flag && modern
-                          ? <img src={l.flag} alt="" width={20} height={15} className="rounded-sm flex-shrink-0" style={{ objectFit: "cover" }} />
+                          ? <img src={l.flag} alt="" width={20} height={15} className="rounded-sm flex-shrink-0" style={{ objectFit: "cover" }} loading="lazy" decoding="async" />
                           : <span className="w-5 text-center text-[var(--text-dim)] flex-shrink-0" aria-hidden>{modern ? "" : "⌛"}</span>}
                         <span className="text-sm flex-1 truncate">
                           {l?.href ? <a href={l.href} className="hover:text-[var(--accent)] transition-colors">{nm}</a> : nm}
@@ -242,7 +242,7 @@ export default function PowerHistory({ data }: { data: Data }) {
                   return (
                     <span key={r.slug} className="inline-flex items-center gap-1.5 rounded px-2 py-1 border text-xs" style={{ borderColor: "var(--border)", background: "var(--bg-card)" }}>
                       {l?.flag && modern
-                        ? <img src={l.flag} alt="" width={16} height={12} className="rounded-sm flex-shrink-0" style={{ objectFit: "cover" }} />
+                        ? <img src={l.flag} alt="" width={16} height={12} className="rounded-sm flex-shrink-0" style={{ objectFit: "cover" }} loading="lazy" decoding="async" />
                         : <span className="text-[var(--text-dim)]" aria-hidden>{modern ? "" : "⌛"}</span>}
                       {l?.href ? <a href={l.href} className="hover:text-[var(--accent)] transition-colors">{nm}</a> : <span>{nm}</span>}
                       <span className="text-[var(--text-dim)]">—</span>

@@ -12,7 +12,14 @@ import type { NationalMapPoint } from "./NationalMapInner";
 
 const NationalMap = dynamic(() => import("./NationalMapInner"), {
   ssr: false,
-  loading: () => null,
+  loading: () => (
+    <div
+      className="flex items-center justify-center text-xs animate-pulse"
+      style={{ height: "520px", width: "100%", borderRadius: "0.75rem", background: "var(--bg-card)", color: "var(--text-muted)", fontFamily: "'JetBrains Mono', monospace" }}
+    >
+      Loading map…
+    </div>
+  ),
 });
 
 export type IndexTeam = {
@@ -299,7 +306,7 @@ export default function NationalIndexClient({ teams, snapshots }: Props) {
                     <td className="py-1.5 px-2">
                       <span className="inline-flex items-center gap-2">
                         {continentDot}
-                        {flagCdnUrl(t.slug) && <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" />}
+                        {flagCdnUrl(t.slug) && <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" loading="lazy" decoding="async" />}
                         <Link href={`/teams/national/${t.slug}`} className="hover:underline font-medium">
                           {displayNameForTeam(t.slug, t.cur_name)}
                         </Link>

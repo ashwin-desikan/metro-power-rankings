@@ -26,7 +26,7 @@ function ChampSpan({ c }: { c: ChampCell }) {
     <span>
       {c.flagUrl ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={c.flagUrl} alt="" aria-hidden width={18} height={13} className="inline-block mr-1.5 align-[-2px]" />
+        <img src={c.flagUrl} alt="" aria-hidden width={18} height={13} className="inline-block mr-1.5 align-[-2px]" loading="lazy" decoding="async" />
       ) : null}
       {c.name}
       {c.neutral ? " †" : ""}

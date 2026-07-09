@@ -41,7 +41,7 @@ export default async function PowerPage() {
 
       <header className="mb-6">
         <div className="flex items-center gap-4 mb-2">
-          <img src="/nowhere-100-seal.svg" alt="The Nowhere 100 seal" width={64} height={70} className="flex-shrink-0" style={{ height: 70, width: 64 }} />
+          <img src="/nowhere-100-seal.svg" alt="The Nowhere 100 seal" width={64} height={70} className="flex-shrink-0" style={{ height: 70, width: 64 }} loading="lazy" decoding="async" />
           <h1 className="text-3xl font-bold text-[var(--text)]">{TITLE}</h1>
         </div>
         <p className="text-[var(--text-muted)] max-w-3xl">{DESC}</p>

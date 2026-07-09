@@ -217,7 +217,7 @@ export default function AllTimeTable({ rows }: { rows: AllTimeRow[] }) {
                 <td className="py-1.5 px-3 font-medium">
                   <span className="inline-flex items-center gap-1.5">
                     {flagCdnUrl(row.slug) && (
-                      <img src={flagCdnUrl(row.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block" />
+                      <img src={flagCdnUrl(row.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block" loading="lazy" decoding="async" />
                     )}
                     <Link href={`/teams/olympics/${row.slug}`} className="hover:text-[var(--accent)]">
                       {row.name}

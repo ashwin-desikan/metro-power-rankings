@@ -120,7 +120,7 @@ export default function ZoneZeroCupPage() {
             <>
               <div className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">#{p.rank}</div>
               <div className="flex items-center gap-2 mt-1">
-                {flagCdnUrl(p.slug, "40x30") ? <img src={flagCdnUrl(p.slug, "40x30")!} alt="" width={26} height={19} className="rounded-[2px] flex-shrink-0" style={{ objectFit: "cover" }} /> : null}
+                {flagCdnUrl(p.slug, "40x30") ? <img src={flagCdnUrl(p.slug, "40x30")!} alt="" width={26} height={19} className="rounded-[2px] flex-shrink-0" style={{ objectFit: "cover" }} loading="lazy" decoding="async" /> : null}
                 <span className="font-semibold text-sm sm:text-base leading-tight">{p.name}</span>
               </div>
               <div className="text-[11px] text-[var(--text-dim)] mt-0.5">{p.continent}</div>

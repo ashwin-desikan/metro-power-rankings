@@ -86,7 +86,7 @@ function TeamChip({ slot, alive }: { slot: TeamSlot; alive: boolean }) {
       >
         {slot.logo && (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={slot.logo} alt="" className="w-4 h-4 object-contain" />
+          <img src={slot.logo} alt="" className="w-4 h-4 object-contain" loading="lazy" decoding="async" />
         )}
         <span>{slot.display}</span>
       </Link>
@@ -101,7 +101,7 @@ function TeamChip({ slot, alive }: { slot: TeamSlot; alive: boolean }) {
     >
       {slot.logo && (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={slot.logo} alt="" className="w-4 h-4 object-contain grayscale" />
+        <img src={slot.logo} alt="" className="w-4 h-4 object-contain grayscale" loading="lazy" decoding="async" />
       )}
       <span>{slot.display}</span>
     </Link>

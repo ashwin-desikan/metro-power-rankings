@@ -24,8 +24,8 @@ const MetroMap = dynamic(() => import('@/app/MetroMap'), {
   ssr: false,
   loading: () => (
     <div
-      className="h-full w-full flex items-center justify-center text-xs"
-      style={{ color: 'var(--text-muted)', fontFamily: "'JetBrains Mono', monospace" }}
+      className="h-full w-full flex items-center justify-center text-xs animate-pulse"
+      style={{ color: 'var(--text-muted)', background: 'var(--bg-card)', fontFamily: "'JetBrains Mono', monospace" }}
     >
       Loading map…
     </div>

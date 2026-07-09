@@ -84,7 +84,7 @@ export default function SportsPage() {
         {/* Bold hero */}
         <header className="mb-8 border-b border-[var(--border)] pb-8">
           <div className="flex items-center gap-3 mb-4">
-            <img src="/zone-zero-seal.svg" alt="" width={52} height={52} style={{ flexShrink: 0 }} />
+            <img src="/zone-zero-seal.svg" alt="" width={52} height={52} style={{ flexShrink: 0 }} loading="lazy" decoding="async" />
             <p className="text-xs tracking-widest text-[var(--text-muted)]" style={mono}>CITIZEN OF NOWHERE&rsquo;S</p>
           </div>
           <h1 className="font-extrabold tracking-tight mb-4" style={{ fontSize: "clamp(34px, 6vw, 60px)", lineHeight: 1.02 }}>

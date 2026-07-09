@@ -134,7 +134,7 @@ export default function FranchiseTable({ franchises, historical, logoMap, monoMa
                       <Link href={`/teams/nhl/${r.slug}`} className="flex items-center gap-2 hover:text-[var(--accent)] transition-colors">
                         {logo ? (
                           /* eslint-disable-next-line @next/next/no-img-element */
-                          <img src={logo} alt="" className="w-5 h-5 flex-shrink-0 object-contain" />
+                          <img src={logo} alt="" className="w-5 h-5 flex-shrink-0 object-contain" loading="lazy" decoding="async" />
                         ) : mono ? (
                           <span className="inline-grid place-items-center rounded-full flex-shrink-0" style={{ background: mono.bg, color: mono.fg, width: 20, height: 20, fontSize: 8, fontWeight: 700 }} aria-hidden>{mono.mono}</span>
                         ) : null}

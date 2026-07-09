@@ -46,11 +46,11 @@ export default function SenatorsTable({ rows }: { rows: SenRow[] }) {
     if (av > bv) return 1 * dir;
     return 0;
   });
-  function Th({ k, label, right }: { k: SortKey; label: string; right?: boolean }) {
+  function Th({ k, label, right, hideOnMobile }: { k: SortKey; label: string; right?: boolean; hideOnMobile?: boolean }) {
     return (
       <th
         onClick={() => sortBy(k)}
-        className={`py-2 px-4 cursor-pointer select-none hover:text-[var(--accent)] ${right ? "text-right" : ""}`}
+        className={`py-2 px-4 cursor-pointer select-none hover:text-[var(--accent)] ${right ? "text-right" : ""} ${hideOnMobile ? "hidden sm:table-cell" : ""}`}
       >
         {label}
         {key === k ? (dir === 1 ? " ▲" : " ▼") : ""}
@@ -65,7 +65,7 @@ export default function SenatorsTable({ rows }: { rows: SenRow[] }) {
             <Th k="state" label="State" />
             <Th k="name" label="Senator" />
             <Th k="party" label="Party" />
-            <Th k="cls" label="Class" right />
+            <Th k="cls" label="Class" right hideOnMobile />
             <Th k="score" label="Metro score" right />
           </tr>
         </thead>
@@ -79,7 +79,7 @@ export default function SenatorsTable({ rows }: { rows: SenRow[] }) {
               </td>
               <td className="py-2 px-4 font-medium text-[var(--text)]">{r.name}</td>
               <td className={`py-2 px-4 font-medium ${partyClass(r.party)}`}>{r.party}</td>
-              <td className="py-2 px-4 text-right tabular-nums text-[var(--text-muted)]">{r.cls}</td>
+              <td className="py-2 px-4 text-right tabular-nums text-[var(--text-muted)] hidden sm:table-cell">{r.cls}</td>
               <td className="py-2 px-4 text-right tabular-nums text-[var(--text)]">{r.score > 0 ? r.score.toFixed(1) : "—"}</td>
             </tr>
           ))}

@@ -253,10 +253,10 @@ function GroupStage({
                             borderLeft: i < 2 ? "3px solid var(--accent)" : "3px solid transparent",
                           }}
                         >
-                          <td className="py-1 pr-1">
+                          <td className="py-2 pr-1">
                             <span className="inline-flex items-center gap-1">
                               {t.slug && flagCdnUrl(t.slug) && (
-                                <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" />
+                                <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" loading="lazy" decoding="async" />
                               )}
                               {t.slug ? (
                                 <Link href={`/teams/national/${t.slug}`} className="hover:text-[var(--accent)] transition-colors">
@@ -349,7 +349,7 @@ function TitleOdds({ sim, alive }: { sim: WorldCup2026Sim; alive: Set<string> })
                   <td className="py-1.5 px-2 whitespace-nowrap">
                     <span className="inline-flex items-center gap-1.5">
                       {flagCdnUrl(r.slug) ? (
-                        <img src={flagCdnUrl(r.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" />
+                        <img src={flagCdnUrl(r.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" loading="lazy" decoding="async" />
                       ) : (
                         <span aria-hidden>{flagForTeam(r.slug)}</span>
                       )}
@@ -530,7 +530,7 @@ function Row({
   return (
     <div className="flex items-center justify-between gap-2 py-0.5">
       <span className="flex items-center gap-1.5 min-w-0">
-        {flag && <img src={flag} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" />}
+        {flag && <img src={flag} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" loading="lazy" decoding="async" />}
         {slug ? (
           <Link href={`/teams/national/${slug}`} className="truncate hover:text-[var(--accent)] transition-colors">
             <span style={{ fontWeight: win ? 600 : 400 }}>{name}</span>
