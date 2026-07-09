@@ -69,6 +69,7 @@ function compare(a: SeasonRow, b: SeasonRow, key: SortKey): number {
 export default function SeasonsByTeamTable({ rows, sourceLabel, week }: Props) {
   const [sortKey, setSortKey] = useState<SortKey>("year");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
+  const [announce, setAnnounce] = useState("");
 
   const { liveRow, sortedHistorical } = useMemo(() => {
     const live = rows.find((r) => r.is_live === true) || null;
@@ -103,12 +104,19 @@ export default function SeasonsByTeamTable({ rows, sourceLabel, week }: Props) {
       {/* Mobile sort control: the desktop header cells (onClick={() => toggle(k)})
           are hidden along with the table below sm, so cards need their own way
           to drive the same sortKey/sortDir state. */}
-      <div className="flex items-center gap-2 mb-3 sm:hidden">
+      <div
+        className="sticky top-20 z-30 flex items-center gap-2 py-2 mb-1 sm:hidden"
+        style={{ backgroundColor: "var(--bg)" }}
+      >
         <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
           <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
           <select
             value={sortKey}
-            onChange={(e) => toggle(e.target.value as SortKey)}
+            onChange={(e) => {
+              const label = e.target.options[e.target.selectedIndex]?.text ?? "";
+              toggle(e.target.value as SortKey);
+              setAnnounce(`Sorted by ${label}`);
+            }}
             className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
             style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
           >
@@ -125,13 +133,17 @@ export default function SeasonsByTeamTable({ rows, sourceLabel, week }: Props) {
         </label>
         <button
           type="button"
-          onClick={() => toggle(sortKey)}
+          onClick={() => {
+            toggle(sortKey);
+            setAnnounce(`Sort direction: ${sortDir === "asc" ? "descending" : "ascending"}`);
+          }}
           aria-label={sortDir === "asc" ? "Sort ascending" : "Sort descending"}
           className="rounded-lg border px-3 py-2 text-sm flex-shrink-0"
           style={{ borderColor: "var(--border)", color: "var(--text)" }}
         >
           {sortDir === "asc" ? "▲" : "▼"}
         </button>
+        <span aria-live="polite" className="sr-only">{announce}</span>
       </div>
 
       {/* Mobile: one card per season instead of an 11-column table nobody

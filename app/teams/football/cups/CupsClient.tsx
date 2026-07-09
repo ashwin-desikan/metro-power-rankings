@@ -126,6 +126,7 @@ type SortKey =
 
 function AggregateTable({ rows }: { rows: DomesticCupAggregateRow[] }) {
   const [sort, setSort] = useState<SortKey>("cups");
+  const [announce, setAnnounce] = useState("");
   const sorted = [...rows].sort((a, b) =>
     b[sort] - a[sort] || b.cups - a.cups || b.f - a.f || a.cur_name.localeCompare(b.cur_name));
 
@@ -165,12 +166,19 @@ function AggregateTable({ rows }: { rows: DomesticCupAggregateRow[] }) {
           call setSort(k), never flip a direction), so the mobile control is
           a Sort-by select alone - no flip button, matching the desktop
           behavior exactly. */}
-      <div className="flex items-center gap-2 mb-3 sm:hidden">
+      <div
+        className="sticky top-20 z-30 flex items-center gap-2 py-2 mb-1 sm:hidden"
+        style={{ backgroundColor: "var(--bg)" }}
+      >
         <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
           <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
           <select
             value={sort}
-            onChange={(e) => setSort(e.target.value as SortKey)}
+            onChange={(e) => {
+              const label = e.target.options[e.target.selectedIndex]?.text ?? "";
+              setSort(e.target.value as SortKey);
+              setAnnounce(`Sorted by ${label}`);
+            }}
             className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
             style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
           >
@@ -185,6 +193,7 @@ function AggregateTable({ rows }: { rows: DomesticCupAggregateRow[] }) {
             <option value="cups">Total Cups</option>
           </select>
         </label>
+        <span aria-live="polite" className="sr-only">{announce}</span>
       </div>
 
       {/* Mobile: one card per club instead of a 10-column table. Same

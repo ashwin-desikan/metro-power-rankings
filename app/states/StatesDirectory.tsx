@@ -23,6 +23,7 @@ export default function StatesDirectory({ rows, governors }: { rows: Row[]; gove
   const [continent, setContinent] = useState("All");
   const [country, setCountry] = useState("All");
   const [q, setQ] = useState("");
+  const [announce, setAnnounce] = useState("");
 
   const continents = useMemo(
     () => ["All", ...Array.from(new Set(rows.map((r) => r.continent).filter(Boolean))).sort() as string[]],
@@ -77,13 +78,23 @@ export default function StatesDirectory({ rows, governors }: { rows: Row[]; gove
       </div>
       {/* Mobile sort control: the desktop header cells (onClick={() => toggle(k)})
           are hidden along with the table below sm, so cards need their own way
-          to drive the same sortKey/dir state. */}
-      <div className="flex items-center gap-2 mb-3 sm:hidden">
+          to drive the same sortKey/dir state. Sticky so it stays reachable on
+          long lists instead of forcing a scroll back to the top. The
+          aria-live span announces the change for screen-reader users, who
+          otherwise get no signal that the (silently reordered) cards moved. */}
+      <div
+        className="sticky top-20 z-30 flex items-center gap-2 py-2 mb-1 sm:hidden"
+        style={{ backgroundColor: "var(--bg)" }}
+      >
         <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
           <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
           <select
             value={sortKey}
-            onChange={(e) => toggle(e.target.value as SortKey)}
+            onChange={(e) => {
+              const label = e.target.options[e.target.selectedIndex]?.text ?? "";
+              toggle(e.target.value as SortKey);
+              setAnnounce(`Sorted by ${label}`);
+            }}
             className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
             style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
           >
@@ -97,13 +108,17 @@ export default function StatesDirectory({ rows, governors }: { rows: Row[]; gove
         </label>
         <button
           type="button"
-          onClick={() => toggle(sortKey)}
+          onClick={() => {
+            toggle(sortKey);
+            setAnnounce(`Sort direction: ${dir === 1 ? "descending" : "ascending"}`);
+          }}
           aria-label={dir === 1 ? "Sort ascending" : "Sort descending"}
           className="rounded-lg border px-3 py-2 text-sm flex-shrink-0"
           style={{ borderColor: "var(--border)", color: "var(--text)" }}
         >
           {dir === 1 ? "▲" : "▼"}
         </button>
+        <span aria-live="polite" className="sr-only">{announce}</span>
       </div>
 
       {/* Mobile: stacked cards, same sorted/filtered data as the table */}

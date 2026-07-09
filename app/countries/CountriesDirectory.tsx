@@ -93,6 +93,7 @@ export default function CountriesDirectory({
   const [continent, setContinent] = useState<string>("All");
   const [search, setSearch] = useState<string>("");
   const [expanded, setExpanded] = useState<Set<string>>(new Set());
+  const [announce, setAnnounce] = useState("");
 
   function toggleSort(key: SortKey) {
     if (sortKey === key) {
@@ -185,12 +186,19 @@ export default function CountriesDirectory({
           to drive the same sortKey/sortDir state - a Sort-by select (reuses
           toggleSort, which already sets each column's sensible default
           direction) plus a direction flip button. */}
-      <div className="flex items-center gap-2 mb-3 sm:hidden">
+      <div
+        className="sticky top-20 z-30 flex items-center gap-2 py-2 mb-1 sm:hidden"
+        style={{ backgroundColor: "var(--bg)" }}
+      >
         <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
           <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
           <select
             value={sortKey}
-            onChange={(e) => toggleSort(e.target.value as SortKey)}
+            onChange={(e) => {
+              const label = e.target.options[e.target.selectedIndex]?.text ?? "";
+              toggleSort(e.target.value as SortKey);
+              setAnnounce(`Sorted by ${label}`);
+            }}
             className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
             style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
           >
@@ -204,13 +212,17 @@ export default function CountriesDirectory({
         </label>
         <button
           type="button"
-          onClick={() => toggleSort(sortKey)}
+          onClick={() => {
+            toggleSort(sortKey);
+            setAnnounce(`Sort direction: ${sortDir === "asc" ? "descending" : "ascending"}`);
+          }}
           aria-label={sortDir === "asc" ? "Sort ascending" : "Sort descending"}
           className="rounded-lg border px-3 py-2 text-sm flex-shrink-0"
           style={{ borderColor: "var(--border)", color: "var(--text)" }}
         >
           {sortDir === "asc" ? "▲" : "▼"}
         </button>
+        <span aria-live="polite" className="sr-only">{announce}</span>
       </div>
 
       {/* Mobile: true stacked cards. All stats visible up front (no hidden

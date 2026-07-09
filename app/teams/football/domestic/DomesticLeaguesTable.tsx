@@ -25,6 +25,7 @@ export default function DomesticLeaguesTable({
   const [sortKey, setSortKey] = useState<SortKey>("titles");
   const [asc, setAsc] = useState(false);
   const [open, setOpen] = useState<Set<string>>(new Set());
+  const [announce, setAnnounce] = useState("");
 
   const countryActive = country !== "";
 
@@ -134,12 +135,19 @@ export default function DomesticLeaguesTable({
           to drive the same sortKey/asc state - a Sort-by select (reuses sortBy,
           which already sets each column's sensible default direction) plus a
           direction flip button. */}
-      <div className="flex items-center gap-2 mb-3 sm:hidden">
+      <div
+        className="sticky top-20 z-30 flex items-center gap-2 py-2 mb-1 sm:hidden"
+        style={{ backgroundColor: "var(--bg)" }}
+      >
         <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
           <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
           <select
             value={sortKey}
-            onChange={(e) => sortBy(e.target.value as SortKey)}
+            onChange={(e) => {
+              const label = e.target.options[e.target.selectedIndex]?.text ?? "";
+              sortBy(e.target.value as SortKey);
+              setAnnounce(`Sorted by ${label}`);
+            }}
             className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
             style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
           >
@@ -154,13 +162,17 @@ export default function DomesticLeaguesTable({
         </label>
         <button
           type="button"
-          onClick={() => sortBy(sortKey)}
+          onClick={() => {
+            sortBy(sortKey);
+            setAnnounce(`Sort direction: ${asc ? "descending" : "ascending"}`);
+          }}
           aria-label={asc ? "Sort ascending" : "Sort descending"}
           className="rounded-lg border px-3 py-2 text-sm flex-shrink-0"
           style={{ borderColor: "var(--border)", color: "var(--text)" }}
         >
           {asc ? "▲" : "▼"}
         </button>
+        <span aria-live="polite" className="sr-only">{announce}</span>
       </div>
 
       {/* Mobile: one card per club instead of an 8-column table. Same

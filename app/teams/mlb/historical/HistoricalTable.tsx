@@ -101,6 +101,7 @@ type Props = {
 export default function HistoricalTable({ rows, histSeasons }: Props) {
   const [sortKey, setSortKey] = useState<SortKey | null>(null);
   const [sortDir, setSortDir] = useState<SortDir>("desc");
+  const [announce, setAnnounce] = useState("");
 
   const sorted = useMemo(() => {
     if (sortKey == null) return rows;
@@ -149,12 +150,19 @@ export default function HistoricalTable({ rows, histSeasons }: Props) {
       {/* Mobile sort control: the desktop header strip above (Th buttons
           calling onClick={() => toggle(k)}) is hidden below md, so cards
           need their own way to drive the same sortKey/sortDir state. */}
-      <div className="flex items-center gap-2 mb-3 md:hidden">
+      <div
+        className="sticky top-20 z-30 flex items-center gap-2 py-2 mb-1 md:hidden"
+        style={{ backgroundColor: "var(--bg)" }}
+      >
         <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
           <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
           <select
             value={sortKey ?? ""}
-            onChange={(e) => toggle(e.target.value as SortKey)}
+            onChange={(e) => {
+              const label = e.target.options[e.target.selectedIndex]?.text ?? "";
+              toggle(e.target.value as SortKey);
+              setAnnounce(`Sorted by ${label}`);
+            }}
             className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
             style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
           >
@@ -173,7 +181,11 @@ export default function HistoricalTable({ rows, histSeasons }: Props) {
         </label>
         <button
           type="button"
-          onClick={() => sortKey && toggle(sortKey)}
+          onClick={() => {
+            if (!sortKey) return;
+            toggle(sortKey);
+            setAnnounce(`Sort direction: ${sortDir === "asc" ? "descending" : "ascending"}`);
+          }}
           disabled={!sortKey}
           aria-label={sortDir === "asc" ? "Sort ascending" : "Sort descending"}
           className="rounded-lg border px-3 py-2 text-sm flex-shrink-0 disabled:opacity-40"
@@ -181,6 +193,7 @@ export default function HistoricalTable({ rows, histSeasons }: Props) {
         >
           {sortDir === "asc" ? "▲" : "▼"}
         </button>
+        <span aria-live="polite" className="sr-only">{announce}</span>
       </div>
 
       <section

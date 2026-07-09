@@ -138,6 +138,7 @@ export default function NationalIndexClient({ teams, snapshots }: Props) {
   // ascending is the v1 default since lower = better in ranking systems.
   const [sortKey, setSortKey] = useState<"elo" | "fifa">("elo");
   const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
+  const [announce, setAnnounce] = useState("");
 
   function toggleSort(key: "elo" | "fifa") {
     if (sortKey === key) {
@@ -263,12 +264,19 @@ export default function NationalIndexClient({ teams, snapshots }: Props) {
         {/* Mobile sort control: the desktop SortableTh buttons (onClick={() =>
             toggleSort(k)}) live only in the table below, hidden below sm, so
             cards need their own way to drive the same sortKey/sortDir state. */}
-        <div className="flex items-center gap-2 mb-3 sm:hidden">
+        <div
+          className="sticky top-20 z-30 flex items-center gap-2 py-2 mb-1 sm:hidden"
+          style={{ backgroundColor: "var(--bg)" }}
+        >
           <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
             <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
             <select
               value={sortKey}
-              onChange={(e) => toggleSort(e.target.value as "elo" | "fifa")}
+              onChange={(e) => {
+                const label = e.target.options[e.target.selectedIndex]?.text ?? "";
+                toggleSort(e.target.value as "elo" | "fifa");
+                setAnnounce(`Sorted by ${label}`);
+              }}
               className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
               style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
             >
@@ -278,13 +286,17 @@ export default function NationalIndexClient({ teams, snapshots }: Props) {
           </label>
           <button
             type="button"
-            onClick={() => toggleSort(sortKey)}
+            onClick={() => {
+              toggleSort(sortKey);
+              setAnnounce(`Sort direction: ${sortDir === "asc" ? "descending" : "ascending"}`);
+            }}
             aria-label={sortDir === "asc" ? "Sort ascending" : "Sort descending"}
             className="rounded-lg border px-3 py-2 text-sm flex-shrink-0"
             style={{ borderColor: "var(--border)", color: "var(--text)" }}
           >
             {sortDir === "asc" ? "↑" : "↓"}
           </button>
+          <span aria-live="polite" className="sr-only">{announce}</span>
         </div>
 
         {/* Mobile: one card per national team instead of a 6-column table.
