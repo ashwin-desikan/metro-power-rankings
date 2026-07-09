@@ -72,7 +72,7 @@ export default async function BasketballNationPage(
       <header className="mb-8">
         <div className="flex items-center gap-3 flex-wrap">
           {flagCdnUrl(team.slug, "40x30") && (
-            <img src={flagCdnUrl(team.slug, "40x30")!} alt="" aria-hidden width={40} height={30} className="inline-block" />
+            <img src={flagCdnUrl(team.slug, "40x30")!} alt="" aria-hidden width={40} height={30} className="inline-block" loading="lazy" decoding="async" />
           )}
           <h1 className="text-3xl font-semibold tracking-tight">{team.name}</h1>
         <ChampionBadge items={getCurrentChampionships(team.name, "Basketball")} />

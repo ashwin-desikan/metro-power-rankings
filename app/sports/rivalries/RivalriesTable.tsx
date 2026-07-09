@@ -91,7 +91,7 @@ function Side({ name, href, national }: { name: string; href: string | null; nat
     <span className="inline-flex items-center gap-1.5">
       {flag ? (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={flag} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0 align-middle" />
+        <img src={flag} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0 align-middle" loading="lazy" decoding="async" />
       ) : (
         <CrestIcon name={name} size={18} className="align-middle" />
       )}

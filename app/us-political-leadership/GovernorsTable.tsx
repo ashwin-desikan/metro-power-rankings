@@ -69,17 +69,19 @@ export default function GovernorsTable({
     k,
     label,
     right,
+    hideOnMobile,
   }: {
     k: SortKey;
     label: string;
     right?: boolean;
+    hideOnMobile?: boolean;
   }) {
     return (
       <th
         onClick={() => sortBy(k)}
         className={`py-2 px-4 cursor-pointer select-none hover:text-[var(--accent)] ${
           right ? "text-right" : ""
-        }`}
+        } ${hideOnMobile ? "hidden sm:table-cell" : ""}`}
       >
         {label}
         {key === k ? (dir === 1 ? " ▲" : " ▼") : ""}
@@ -101,8 +103,8 @@ export default function GovernorsTable({
             <Th k="name" label={nameHeader} />
             <Th k="gov" label="Governor" />
             <Th k="party" label="Party" />
-            <Th k="since" label="Since" right />
-            <Th k="metros" label="Metros" right />
+            <Th k="since" label="Since" right hideOnMobile />
+            <Th k="metros" label="Metros" right hideOnMobile />
             <Th k="score" label="Metro score" right />
           </tr>
         </thead>
@@ -125,10 +127,10 @@ export default function GovernorsTable({
               <td className={`py-2 px-4 font-medium ${partyClass(r.party)}`}>
                 {r.party}
               </td>
-              <td className="py-2 px-4 text-right tabular-nums text-[var(--text-muted)]">
+              <td className="py-2 px-4 text-right tabular-nums text-[var(--text-muted)] hidden sm:table-cell">
                 {yr(r.since)}
               </td>
-              <td className="py-2 px-4 text-right tabular-nums text-[var(--text-muted)]">
+              <td className="py-2 px-4 text-right tabular-nums text-[var(--text-muted)] hidden sm:table-cell">
                 {r.metros || "—"}
               </td>
               <td className="py-2 px-4 text-right tabular-nums text-[var(--text)]">

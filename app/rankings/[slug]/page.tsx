@@ -5,6 +5,7 @@ import { olympicEditionSlugFromName } from "@/lib/olympics";
 import { getMetroTitles, getFormerTopFlightForMetro, type FormerTopFlight } from "@/lib/championsHistory";
 import ChampionLogo from "@/app/teams/_shared/ChampionLogo";
 import FollowButton from "@/app/FollowButton";
+import ShareRow from "@/app/_shared/ShareRow";
 import { competitionHref } from "@/lib/competitionLinks";
 import HubNav from "@/app/teams/HubNav";
 import { getSoundForMetro } from "@/lib/sound";
@@ -363,7 +364,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
         {/* Hero Section */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           <div className="lg:col-span-2">
-            <h1 className="text-5xl font-bold mb-4" style={{ color: regionColors[metro.region] || "var(--accent)" }}>
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4" style={{ color: regionColors[metro.region] || "var(--accent)" }}>
               {metro.name}
             </h1>
             <div className="mb-4">
@@ -542,28 +543,12 @@ export default async function MetroDetailPage({ params }: PageProps) {
                 rank, score, and three signature dimensions. */}
             <hr className="my-4 border-[var(--border)]" />
             <p className="text-xs text-[var(--text-muted)] mb-2">Share</p>
-            <div className="flex gap-2 text-xs" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-              <a
-                href={`https://www.reddit.com/submit?url=${encodeURIComponent(`${BASE_URL}/rankings/${slug}`)}&title=${encodeURIComponent(`${metro.name} (#${metro.rank}) - Global Metro Power Rankings`)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 text-center rounded border px-2 py-1.5 text-[var(--text-muted)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
-                style={{ borderColor: "var(--border)" }}
-                title={`Share ${metro.name} on Reddit`}
-              >
-                Reddit
-              </a>
-              <a
-                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${BASE_URL}/rankings/${slug}`)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 text-center rounded border px-2 py-1.5 text-[var(--text-muted)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
-                style={{ borderColor: "var(--border)" }}
-                title={`Share ${metro.name} on LinkedIn`}
-              >
-                LinkedIn
-              </a>
-            </div>
+            <ShareRow
+              url={`${BASE_URL}/rankings/${slug}`}
+              title={`${metro.name} (#${metro.rank}) - Global Metro Power Rankings`}
+              containerClassName="flex gap-2 text-xs"
+              linkClassName="flex-1 text-center rounded border px-2 py-1.5 text-[var(--text-muted)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
+            />
           </div>
         </div>
 
@@ -659,7 +644,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                 <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center flex-shrink-0">
                   <span className="text-amber-400 text-lg" aria-hidden="true">&#9812;</span>
                 </div>
-                <div className="flex-1 min-w-[240px]">
+                <div className="flex-1 min-w-[160px]">
                   <p className="text-sm font-semibold text-amber-400">Top Team</p>
                   <p className="text-xs text-[var(--text-muted)] mb-3">
                     The single sporting franchise this metro is identified with.
@@ -716,7 +701,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                 <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
                   <span className="text-emerald-400 text-lg" aria-hidden="true">&#9873;</span>
                 </div>
-                <div className="flex-1 min-w-[240px]">
+                <div className="flex-1 min-w-[160px]">
                   <p className="text-sm font-semibold text-emerald-400">Walkable Elite Quarters</p>
                   <p className="text-xs text-[var(--text-muted)] mb-3">
                     Neighborhoods that clear the dense, historic, walkable, elite residential test.
@@ -917,7 +902,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                 competition&apos;s full honour roll.
               </p>
               <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-lg overflow-hidden">
-                <div className="max-h-[32rem] overflow-y-auto">
+                <div className="max-h-[32rem] overflow-y-auto overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead className="sticky top-0 bg-[var(--bg-card)] border-b border-[var(--border)]">
                       <tr className="text-left text-[10px] uppercase tracking-widest text-[var(--text-dim)]">
@@ -2561,7 +2546,7 @@ function TeamCard({
             <img
               src={link.logoUrl}
               alt=""
-              className="w-8 h-8 flex-shrink-0 object-contain"
+              className="w-8 h-8 flex-shrink-0 object-contain" loading="lazy" decoding="async"
             />
           ) : (
             <span

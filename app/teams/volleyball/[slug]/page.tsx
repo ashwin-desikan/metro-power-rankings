@@ -70,7 +70,7 @@ export default async function VolleyballTeamPage(
 
       <header className="mb-8">
         <div className="flex items-center gap-3 flex-wrap">
-          {flag && <img src={flag} alt="" aria-hidden width={40} height={30} className="inline-block" />}
+          {flag && <img src={flag} alt="" aria-hidden width={40} height={30} className="inline-block" loading="lazy" decoding="async" />}
           <h1 className="text-3xl font-semibold tracking-tight">{team.name}</h1>
         <ChampionBadge items={getCurrentChampionships(team.name, "Volleyball")} />
           {team.oly_alltime_rank != null ? (

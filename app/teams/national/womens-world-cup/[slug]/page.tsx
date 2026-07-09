@@ -70,7 +70,7 @@ export default async function WWCNationPage({ params }: Props) {
       <header className="mb-6">
         <div className="flex items-center gap-3 flex-wrap">
           {flagCdnUrl(n.slug, "40x30") && (
-            <img src={flagCdnUrl(n.slug, "40x30")!} alt="" aria-hidden width={40} height={30} className="inline-block" />
+            <img src={flagCdnUrl(n.slug, "40x30")!} alt="" aria-hidden width={40} height={30} className="inline-block" loading="lazy" decoding="async" />
           )}
           <h1 className="text-3xl font-semibold tracking-tight">{n.name}</h1>
         </div>

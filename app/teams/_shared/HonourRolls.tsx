@@ -49,7 +49,7 @@ export default function HonourRolls({
               </span>
             ))}
           </div>
-          <div className="overflow-y-auto max-h-[340px]">
+          <div className="overflow-y-auto" style={{ overflowX: "auto", maxHeight: 340 }}>
             <table className="w-full text-xs">
               <tbody>
                 {/* Rolls are stored oldest-first in the ETL; render newest-first
@@ -57,7 +57,7 @@ export default function HonourRolls({
                 {[...portal.rolls[k]].reverse().map((r, i) => (
                   <tr key={`${r.season}-${i}`} className="border-t" style={{ borderColor: "var(--border)" }}>
                     <td className="py-1 pr-2 tabular-nums whitespace-nowrap align-top" style={mono}>{r.season}</td>
-                    <td className="py-1 pr-2 font-medium">
+                    <td className="py-2 pr-2 font-medium">
                       <span className="inline-flex items-center gap-1.5">
                         <CrestIcon name={r.winner} size={16} />
                         {links?.[r.winner] ? (
@@ -65,7 +65,7 @@ export default function HonourRolls({
                         ) : r.winner}
                       </span>
                     </td>
-                    <td className="py-1 text-[var(--text-dim)] hidden sm:table-cell">
+                    <td className="py-2 text-[var(--text-dim)] hidden sm:table-cell">
                       {r.ru ? (
                         <span className="inline-flex items-center gap-1.5">
                           <CrestIcon name={r.ru} size={16} />

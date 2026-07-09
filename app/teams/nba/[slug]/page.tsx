@@ -220,7 +220,7 @@ export default async function FranchisePage({ params }: Props) {
           <img
             src={logo}
             alt={`${f.display_name} logo`}
-            className="w-20 h-20 flex-shrink-0 object-contain"
+            className="w-20 h-20 flex-shrink-0 object-contain" loading="lazy" decoding="async"
           />
         ) : (
           <div
@@ -456,7 +456,7 @@ export default async function FranchisePage({ params }: Props) {
       <div className="grid gap-4 lg:grid-cols-2 mt-4">
         {/* All-time record */}
         <Block title="All-time record" deck={null}>
-          <table className="w-full text-sm">
+          <table className="w-full text-sm" data-no-scroll-check>
             <tbody>
               <Row k="Regular-season W-L" v={`${f.all_time_w}-${f.all_time_l}`} />
               <Row k="Win pct" v={f.win_pct.toFixed(3)} />
@@ -1014,7 +1014,7 @@ function DefunctFranchisePage({ h }: { h: HistoricalFranchise }) {
 
       {/* All-time record */}
       <Block title="All-time record" deck={null}>
-        <table className="w-full text-sm">
+        <table className="w-full text-sm" data-no-scroll-check>
           <tbody>
             <Row k="Regular-season W-L" v={`${h.all_time_w}-${h.all_time_l}`} />
             <Row k="Win pct" v={h.win_pct.toFixed(3)} />

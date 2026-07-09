@@ -130,7 +130,7 @@ export default async function NationalTeamPage({ params }: Props) {
             aria-hidden
           />
           {flagCdnUrl(team.slug, "40x30") && (
-            <img src={flagCdnUrl(team.slug, "40x30")!} alt="" aria-hidden width={40} height={30} className="inline-block" />
+            <img src={flagCdnUrl(team.slug, "40x30")!} alt="" aria-hidden width={40} height={30} className="inline-block" loading="lazy" decoding="async" />
           )}
           <h1 className="text-3xl font-semibold tracking-tight">{displayNameForTeam(team.slug, team.cur_name)}</h1>
           <FollowButton type="team" slug={team.slug} name={displayNameForTeam(team.slug, team.cur_name)} href={`/teams/national/${team.slug}`} size="sm" />
@@ -304,7 +304,7 @@ function ComparablePrograms({
                   style={{ background: continentColor }}
                   aria-hidden
                 />
-                {flag && <img src={flag} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" />}
+                {flag && <img src={flag} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" loading="lazy" decoding="async" />}
                 <span className="font-medium">{displayNameForTeam(n.slug, n.cur_name)}</span>
               </div>
               <div className="mt-1.5 text-xs text-[var(--text-muted)]">{captionForNeighbor(n.shared_axis)}</div>
@@ -510,7 +510,7 @@ function FinalsTable({ finals }: { finals: NationalTeamFinal[] }) {
                   <td className="py-1.5">{f.competition}</td>
                   <td className="py-1.5">
                     {f.opp_slug && flagCdnUrl(f.opp_slug) && (
-                      <img src={flagCdnUrl(f.opp_slug)!} alt="" aria-hidden width={20} height={15} className="inline-block mr-1.5" />
+                      <img src={flagCdnUrl(f.opp_slug)!} alt="" aria-hidden width={20} height={15} className="inline-block mr-1.5" loading="lazy" decoding="async" />
                     )}
                     {f.opp_slug ? (
                       <Link href={`/teams/national/${f.opp_slug}`} className="hover:underline">

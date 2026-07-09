@@ -39,7 +39,7 @@ export default function BaseballHubPage() {
     const flag = slug && flagCdnUrl(slug);
     return slug ? (
       <Link href={`/teams/baseball/${slug}`} className={`hover:text-[var(--accent)] ${className ?? ""}`}>
-        {flag && <img src={flag} alt="" aria-hidden width={20} height={15} className="inline-block mr-1 align-middle flex-shrink-0" />}
+        {flag && <img src={flag} alt="" aria-hidden width={20} height={15} className="inline-block mr-1 align-middle flex-shrink-0" loading="lazy" decoding="async" />}
         {name}
       </Link>
     ) : (
@@ -262,7 +262,7 @@ export default function BaseballHubPage() {
               <div className="flex items-center justify-between mb-1">
                 <span className="font-semibold inline-flex items-center gap-1.5">
                   {flagCdnUrl(t.slug) && (
-                    <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block" />
+                    <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block" loading="lazy" decoding="async" />
                   )}
                   {t.name}
                 </span>

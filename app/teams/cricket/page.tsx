@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
+import { TableScroll } from "@/app/_shared/TableScroll";
 import {
   CRICKET_FORMATS,
   getAllCricketTeams,
@@ -77,7 +78,7 @@ export default async function CricketHubPage() {
     );
     return flag ? (
       <span className="inline-flex items-center gap-1.5">
-        <img src={flag} alt="" aria-hidden width={18} height={13} className="inline-block flex-shrink-0" />
+        <img src={flag} alt="" aria-hidden width={18} height={13} className="inline-block flex-shrink-0" loading="lazy" decoding="async" />
         {inner}
       </span>
     ) : inner;
@@ -225,6 +226,7 @@ export default async function CricketHubPage() {
           {CRICKET_FORMATS.map((fmt) => (
             <div key={fmt} className="rounded-xl border p-4" style={card}>
               <div className="font-semibold mb-2">{fmt}</div>
+              <TableScroll>
               <table className="w-full text-sm">
                 <thead>
                   <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -243,6 +245,7 @@ export default async function CricketHubPage() {
                   ))}
                 </tbody>
               </table>
+              </TableScroll>
             </div>
           ))}
         </div>
@@ -258,6 +261,7 @@ export default async function CricketHubPage() {
           {CRICKET_FORMATS.map((fmt) => (
             <div key={fmt} className="rounded-xl border p-4" style={card}>
               <div className="font-semibold mb-2">{fmt}</div>
+              <TableScroll>
               <table className="w-full text-sm">
                 <thead>
                   <tr className="text-left text-xs text-[var(--text-muted)]">
@@ -278,6 +282,7 @@ export default async function CricketHubPage() {
                   ))}
                 </tbody>
               </table>
+              </TableScroll>
             </div>
           ))}
         </div>
@@ -397,7 +402,7 @@ export default async function CricketHubPage() {
               >
                 <div className="flex items-center justify-between mb-1">
                   <span className="font-semibold inline-flex items-center gap-1.5">
-                    {flagCdnUrl(t.slug) ? <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block" /> : null}
+                    {flagCdnUrl(t.slug) ? <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block" loading="lazy" decoding="async" /> : null}
                     {t.name}
                   </span>
                   <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full border"
@@ -448,7 +453,7 @@ export default async function CricketHubPage() {
                   <tr key={t.slug} className="border-t" style={{ borderColor: "var(--border)" }}>
                     <td className="py-1.5 px-3">
                       <Link href={`/teams/cricket/${t.slug}`} className="hover:text-[var(--accent)] font-medium inline-flex items-center gap-1.5">
-                        {flagCdnUrl(t.slug) ? <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={18} height={13} className="inline-block flex-shrink-0" /> : null}
+                        {flagCdnUrl(t.slug) ? <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={18} height={13} className="inline-block flex-shrink-0" loading="lazy" decoding="async" /> : null}
                         {t.name}
                       </Link>
                     </td>

@@ -12,7 +12,7 @@ function Team({ name, score, win }: { name: string; score: number | null; win: b
   const flag = flagCdnUrl(slugFor(name));
   return (
     <span className="inline-flex items-center gap-1.5">
-      {flag ? <img src={flag} alt="" aria-hidden width={18} height={13} className="inline-block flex-shrink-0" /> : null}
+      {flag ? <img src={flag} alt="" aria-hidden width={18} height={13} className="inline-block flex-shrink-0" loading="lazy" decoding="async" /> : null}
       <span className={win ? "font-semibold" : ""}>{name}</span>
       {score !== null ? <span className="tabular-nums" style={mono}>{score}</span> : null}
     </span>

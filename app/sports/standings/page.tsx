@@ -118,11 +118,11 @@ function Marker({ r }: { r: SRow }) {
     : <span className="inline-block flex-shrink-0" style={{ width: 15 }} />;
   if (r.logoUrl) {
     // eslint-disable-next-line @next/next/no-img-element
-    return <img src={r.logoUrl} alt="" aria-hidden width={15} height={15} className="object-contain flex-shrink-0" style={{ width: 15, height: 15 }} />;
+    return <img src={r.logoUrl} alt="" aria-hidden width={15} height={15} className="object-contain flex-shrink-0" style={{ width: 15, height: 15 }} loading="lazy" decoding="async" />;
   }
   if (r.flagUrl) {
     // eslint-disable-next-line @next/next/no-img-element
-    return <img src={r.flagUrl} alt="" aria-hidden width={18} height={13} className="object-contain flex-shrink-0" style={{ width: 18, height: 13 }} />;
+    return <img src={r.flagUrl} alt="" aria-hidden width={18} height={13} className="object-contain flex-shrink-0" style={{ width: 18, height: 13 }} loading="lazy" decoding="async" />;
   }
   if (r.crestName) return <TeamCrest name={r.crestName} size={15} fallback={monoEl} />;
   return monoEl;

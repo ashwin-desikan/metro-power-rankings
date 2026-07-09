@@ -13,7 +13,7 @@ function NationCell({ name, slug }: { name: string; slug: string | null }) {
   const flag = slug ? flagCdnUrl(slug) : null;
   const label = (
     <span className="inline-flex items-center gap-1.5">
-      {flag ? <img src={flag} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" /> : null}
+      {flag ? <img src={flag} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" loading="lazy" decoding="async" /> : null}
       <span>{name}</span>
     </span>
   );

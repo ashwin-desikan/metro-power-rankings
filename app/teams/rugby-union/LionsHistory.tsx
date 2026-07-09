@@ -9,7 +9,7 @@ function Flag({ nation }: { nation: string }) {
   const url = flagCdnUrl(FLAG[nation] ?? "");
   if (!url) return null;
   // eslint-disable-next-line @next/next/no-img-element
-  return <img src={url} alt="" aria-hidden width={18} height={13} className="inline-block mr-1.5 align-[-2px] flex-shrink-0" />;
+  return <img src={url} alt="" aria-hidden width={18} height={13} className="inline-block mr-1.5 align-[-2px] flex-shrink-0" loading="lazy" decoding="async" />;
 }
 
 const seriesLabel = (s: "W" | "L" | "D") => (s === "W" ? "won" : s === "L" ? "lost" : "drawn");

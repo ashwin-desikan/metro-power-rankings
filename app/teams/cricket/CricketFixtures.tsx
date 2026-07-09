@@ -10,7 +10,7 @@ function Team({ name, score }: { name: string; score: string | null }) {
   const flag = flagCdnUrl(slugify(name));
   return (
     <span className="inline-flex items-center gap-1.5">
-      {flag ? <img src={flag} alt="" aria-hidden width={18} height={13} className="inline-block flex-shrink-0" /> : null}
+      {flag ? <img src={flag} alt="" aria-hidden width={18} height={13} className="inline-block flex-shrink-0" loading="lazy" decoding="async" /> : null}
       <span>{name}</span>
       {score ? <span className="text-[var(--text-muted)]" style={mono}>{score}</span> : null}
     </span>

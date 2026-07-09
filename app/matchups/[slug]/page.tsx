@@ -9,6 +9,7 @@ import {
 import { BASE_URL } from "@/lib/seo";
 import { computeTier } from "@/lib/tiers";
 import MetroMap from "@/app/MetroMap";
+import ShareRow from "@/app/_shared/ShareRow";
 
 // Matchup pages: canonical head-to-head URLs for any two metros.
 // URL pattern: /matchups/{a-slug}-vs-{b-slug}
@@ -399,42 +400,44 @@ export default async function MatchupPage({ params }: PageProps) {
                     return (
                       <div
                         key={v.key}
-                        className="grid grid-cols-12 items-center py-2 border-b border-[var(--border)]"
+                        className="flex flex-col gap-1 py-2 border-b border-[var(--border)] sm:grid sm:grid-cols-12 sm:items-center sm:gap-0"
                       >
-                        <span className="col-span-5 text-sm">{v.label}</span>
-                        <span
-                          className="col-span-3 text-sm text-right"
-                          style={{
-                            color:
-                              v.winner === "a" ? tierA.accentHex : "var(--text)",
-                            fontWeight: v.winner === "a" ? 600 : 400,
-                            fontFamily: "'JetBrains Mono', monospace",
-                          }}
-                        >
-                          #{v.rankADisplay}
-                        </span>
-                        <span
-                          className="col-span-1 text-center text-xs"
-                          style={{ color: winnerColor }}
-                          aria-hidden="true"
-                        >
-                          {v.winner === "a"
-                            ? "◀"
-                            : v.winner === "b"
-                            ? "▶"
-                            : "·"}
-                        </span>
-                        <span
-                          className="col-span-3 text-sm text-left"
-                          style={{
-                            color:
-                              v.winner === "b" ? tierB.accentHex : "var(--text)",
-                            fontWeight: v.winner === "b" ? 600 : 400,
-                            fontFamily: "'JetBrains Mono', monospace",
-                          }}
-                        >
-                          #{v.rankBDisplay}
-                        </span>
+                        <span className="text-sm sm:col-span-5">{v.label}</span>
+                        <div className="flex items-center sm:contents">
+                          <span
+                            className="flex-1 text-sm text-right sm:col-span-3"
+                            style={{
+                              color:
+                                v.winner === "a" ? tierA.accentHex : "var(--text)",
+                              fontWeight: v.winner === "a" ? 600 : 400,
+                              fontFamily: "'JetBrains Mono', monospace",
+                            }}
+                          >
+                            #{v.rankADisplay}
+                          </span>
+                          <span
+                            className="w-6 text-center text-xs sm:w-auto sm:col-span-1"
+                            style={{ color: winnerColor }}
+                            aria-hidden="true"
+                          >
+                            {v.winner === "a"
+                              ? "◀"
+                              : v.winner === "b"
+                              ? "▶"
+                              : "·"}
+                          </span>
+                          <span
+                            className="flex-1 text-sm text-left sm:col-span-3"
+                            style={{
+                              color:
+                                v.winner === "b" ? tierB.accentHex : "var(--text)",
+                              fontWeight: v.winner === "b" ? 600 : 400,
+                              fontFamily: "'JetBrains Mono', monospace",
+                            }}
+                          >
+                            #{v.rankBDisplay}
+                          </span>
+                        </div>
                       </div>
                     );
                   })}
@@ -449,33 +452,7 @@ export default async function MatchupPage({ params }: PageProps) {
           <h3 className="text-sm font-semibold mb-3 text-[var(--text-muted)]">
             Share this matchup
           </h3>
-          <div
-            className="flex gap-3 text-sm"
-            style={{ fontFamily: "'JetBrains Mono', monospace" }}
-          >
-            <a
-              href={`https://www.reddit.com/submit?url=${encodeURIComponent(
-                shareUrl,
-              )}&title=${encodeURIComponent(shareTitle)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded border px-3 py-1.5 text-[var(--text-muted)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
-              style={{ borderColor: "var(--border)" }}
-            >
-              Reddit
-            </a>
-            <a
-              href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-                shareUrl,
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded border px-3 py-1.5 text-[var(--text-muted)] hover:text-[var(--accent)] hover:border-[var(--accent)] transition-colors"
-              style={{ borderColor: "var(--border)" }}
-            >
-              LinkedIn
-            </a>
-          </div>
+          <ShareRow url={shareUrl} title={shareTitle} />
         </section>
 
         {/* Cross-links */}

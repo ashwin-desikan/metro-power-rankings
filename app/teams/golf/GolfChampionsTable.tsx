@@ -99,7 +99,7 @@ export default function GolfChampionsTable({
                 <td className="py-1.5 px-3 text-[var(--text-muted)]">
                   {r.flagUrl ? (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img src={r.flagUrl} alt="" aria-hidden width={18} height={13} className="inline-block mr-1.5 align-[-2px]" />
+                    <img src={r.flagUrl} alt="" aria-hidden width={18} height={13} className="inline-block mr-1.5 align-[-2px]" loading="lazy" decoding="async" />
                   ) : null}
                   {r.nation ?? "—"}
                 </td>

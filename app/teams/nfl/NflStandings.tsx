@@ -78,6 +78,7 @@ export default async function NflStandings() {
           return (
             <div key={divName} className="rounded-xl border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
               <h3 className="text-[11px] uppercase tracking-widest font-semibold text-[var(--text-muted)] mb-2">{divName}</h3>
+              <div className="overflow-x-auto">
               <table className="w-full text-xs tabular-nums">
                 <thead className="text-[var(--text-muted)]">
                   <tr className="border-b" style={{ borderColor: "var(--border)" }}>
@@ -95,11 +96,11 @@ export default async function NflStandings() {
                     const showRec = hasLive && t != null && t.games_played > 0;
                     return (
                       <tr key={f.slug} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
-                        <td className="py-1 pr-1">
+                        <td className="py-2 pr-1">
                           <Link href={`/teams/nfl/${f.slug}`} className="flex items-center gap-1.5 hover:text-[var(--accent)] transition-colors">
                             {logo ? (
                               // eslint-disable-next-line @next/next/no-img-element
-                              <img src={logo} alt="" className="w-4 h-4 flex-shrink-0 object-contain" />
+                              <img src={logo} alt="" className="w-4 h-4 flex-shrink-0 object-contain" loading="lazy" decoding="async" />
                             ) : (
                               <span className="inline-grid place-items-center rounded-full flex-shrink-0" style={{ background: mono.bg, color: mono.fg, width: 16, height: 16, fontSize: 7, fontWeight: 700 }} aria-hidden>{mono.mono}</span>
                             )}
@@ -115,6 +116,7 @@ export default async function NflStandings() {
                   })}
                 </tbody>
               </table>
+              </div>
             </div>
           );
         })}

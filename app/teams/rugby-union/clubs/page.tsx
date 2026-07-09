@@ -86,13 +86,13 @@ export default function DomesticRugbyPage() {
                 </span>
               ))}
             </div>
-            <div className="overflow-y-auto max-h-[300px]">
+            <div className="overflow-y-auto" style={{ overflowX: "auto", maxHeight: 300 }}>
               <table className="w-full text-xs">
                 <tbody>
                   {clubs.rolls[k].map((r, i) => (
                     <tr key={i} className="border-t" style={{ borderColor: "var(--border)" }}>
                       <td className="py-1 pr-2 tabular-nums whitespace-nowrap" style={mono}>{r.season}</td>
-                      <td className="py-1 font-medium">
+                      <td className="py-2 font-medium">
                         <CrestIcon name={r.team ?? r.winner} size={16} className="mr-1.5 align-middle" />
                         {r.metro_slug ? (
                           <Link href={`/rankings/${r.metro_slug}`} className="hover:text-[var(--accent)]">

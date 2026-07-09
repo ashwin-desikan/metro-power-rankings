@@ -33,7 +33,7 @@ export default function InternationalRugbyLeaguePage() {
     const flag = slug && flagCdnUrl(slug);
     return slug ? (
       <Link href={`/teams/rugby-league/${slug}`} className={`hover:text-[var(--accent)] ${className ?? ""}`}>
-        {flag && <img src={flag} alt="" aria-hidden width={20} height={15} className="inline-block mr-1 align-middle flex-shrink-0" />}
+        {flag && <img src={flag} alt="" aria-hidden width={20} height={15} className="inline-block mr-1 align-middle flex-shrink-0" loading="lazy" decoding="async" />}
         {name}
       </Link>
     ) : (
@@ -127,7 +127,7 @@ export default function InternationalRugbyLeaguePage() {
                   <td className="py-1.5 px-3 font-medium">
                     <span className="inline-flex items-center gap-1.5">
                       {flagCdnUrl(t.slug) && (
-                        <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block" />
+                        <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block" loading="lazy" decoding="async" />
                       )}
                       {teamLink(t.name)}
                     </span>
@@ -185,7 +185,7 @@ export default function InternationalRugbyLeaguePage() {
               <div className="flex items-center justify-between mb-1">
                 <span className="font-semibold inline-flex items-center gap-1.5">
                   {flagCdnUrl(t.slug) && (
-                    <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block" />
+                    <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block" loading="lazy" decoding="async" />
                   )}
                   {t.name}
                 </span>

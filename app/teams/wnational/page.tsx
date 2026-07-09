@@ -28,7 +28,7 @@ const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 
 function Flag({ slug }: { slug: string | null | undefined }) {
   const u = slug ? flagCdnUrl(slug) : null;
-  return u ? <img src={u} alt="" aria-hidden width={20} height={15} className="inline-block" /> : null;
+  return u ? <img src={u} alt="" aria-hidden width={20} height={15} className="inline-block" loading="lazy" decoding="async" /> : null;
 }
 
 function norm(s: string): string {

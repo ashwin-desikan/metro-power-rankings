@@ -73,7 +73,7 @@ export default function FibaRankingTable({ ranking }: { ranking: FibaRanking }) 
                 <td className="py-1.5 px-3 font-medium">
                   <span className="inline-flex items-center gap-1.5">
                     {flagCdnUrl(t.country_slug ?? t.slug ?? "") ? (
-                      <img src={flagCdnUrl(t.country_slug ?? t.slug ?? "")!} alt="" aria-hidden width={18} height={13} className="inline-block flex-shrink-0" />
+                      <img src={flagCdnUrl(t.country_slug ?? t.slug ?? "")!} alt="" aria-hidden width={18} height={13} className="inline-block flex-shrink-0" loading="lazy" decoding="async" />
                     ) : null}
                     {t.slug
                       ? <Link href={`/teams/basketball/${t.slug}`} className="hover:text-[var(--accent)]">{t.country}</Link>

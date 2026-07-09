@@ -460,7 +460,7 @@ export default function TopTeamsPage() {
                                         style={{ color: "var(--accent)" }}
                                       >
                                         {link.logoUrl ? (
-                                          <img src={link.logoUrl} alt="" width={18} height={18} className="inline-block flex-shrink-0 object-contain" aria-hidden />
+                                          <img src={link.logoUrl} alt="" width={18} height={18} className="inline-block flex-shrink-0 object-contain" aria-hidden loading="lazy" decoding="async" />
                                         ) : (
                                           <CrestIcon name={part} size={18} className="flex-shrink-0" />
                                         )}

@@ -49,7 +49,7 @@ function Flag({ nation }: { nation: string | null }) {
   const url = flagCdnUrl(nationSlug(nation) ?? "");
   if (!url) return null;
   // eslint-disable-next-line @next/next/no-img-element
-  return <img src={url} alt="" aria-hidden width={18} height={13} className="inline-block mr-1.5 align-[-2px]" />;
+  return <img src={url} alt="" aria-hidden width={18} height={13} className="inline-block mr-1.5 align-[-2px]" loading="lazy" decoding="async" />;
 }
 
 function Champ({ c }: { c?: Champion }) {

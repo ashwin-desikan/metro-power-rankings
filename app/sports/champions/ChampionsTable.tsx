@@ -111,7 +111,7 @@ function NationFlag({ team, scopeType }: { team: string; scopeType: ChampRow["sc
       aria-hidden
       width={18}
       height={13}
-      className="inline-block rounded-sm object-contain flex-shrink-0 align-middle"
+      className="inline-block rounded-sm object-contain flex-shrink-0 align-middle" loading="lazy" decoding="async"
     />
   );
 }
@@ -283,7 +283,81 @@ export default function ChampionsTable({ rows }: { rows: ChampRow[] }) {
         </div>
       </div>
 
-      <div className="rounded-xl border overflow-x-auto" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
+      {/* Mobile: one card per champion instead of a 7-column table nobody
+          can read at 375px without scrolling sideways. Same `sorted` data,
+          same filters/sort state above - only the presentation differs. */}
+      <div className="grid grid-cols-1 gap-2 sm:hidden">
+        {sorted.map((c, i) => (
+          <div
+            key={`${c.team}-${c.competition}-${i}-card`}
+            className="rounded-lg border p-3"
+            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
+          >
+            <div className="flex items-start justify-between gap-2">
+              <div className={`leading-tight flex items-center gap-1.5 flex-wrap ${c.tier != null && c.tier <= 2 ? "font-bold text-base" : "font-medium text-sm"}`}>
+                {c.sport === "F1" ? (
+                  <CrestIcon name={f1ConstructorCrestName(c.crestName ?? c.team)} />
+                ) : SPORT_EMOJI[c.sport] ? (
+                  <span className="text-base leading-none flex-shrink-0" aria-hidden>{SPORT_EMOJI[c.sport]}</span>
+                ) : (
+                  <CrestIcon name={c.team} />
+                )}
+                <NationFlag team={c.team} scopeType={c.scopeType} />
+                {c.teamHref ? (
+                  <Link href={c.teamHref} className="hover:text-[var(--accent)] hover:underline">
+                    {c.team}
+                  </Link>
+                ) : (
+                  <span>{c.team}</span>
+                )}
+              </div>
+              {c.tier != null && (
+                <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]" style={mono}>
+                  Tier {c.tier}
+                </span>
+              )}
+            </div>
+            <div className="text-[11px] text-[var(--text-dim)] mb-2">{sportDisplay(c.sport)}</div>
+            <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+              <div className="col-span-2">
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Competition</div>
+                <div>
+                  {c.leagueHref ? (
+                    <Link href={c.leagueHref} className="hover:text-[var(--accent)] hover:underline">
+                      {c.competition}
+                    </Link>
+                  ) : (
+                    <span>{c.competition}</span>
+                  )}
+                  {c.gold && (
+                    <span aria-label="Gold Standard competition" title="Gold Standard — the apex trophy in its sport" className="ml-1 cursor-default">
+                      🥇
+                    </span>
+                  )}
+                </div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Scope</div>
+                <div className="text-[var(--text-muted)]">{c.scopeType ?? "—"}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Region</div>
+                <div className="text-[var(--text-muted)]">{c.geo}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Since</div>
+                <div className="tabular-nums" style={{ ...mono, color: GOLD }}>{fmtDate(c.dateAwarded) || (c.year ?? "")}</div>
+              </div>
+              <div>
+                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Next title</div>
+                <div className="tabular-nums text-[var(--text-muted)]" style={mono}>{fmtDate(c.nextAwardedDate) || (c.nextAwarded ?? "")}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
         <table className="w-full text-sm">
           <thead>
             <tr className="text-xs">

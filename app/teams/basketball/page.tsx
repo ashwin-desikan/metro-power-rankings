@@ -43,7 +43,7 @@ export default function BasketballHubPage() {
     // the historical-entity marker, since flagcdn has no historical flags.
     const ownSlug = slugByName.get(name);
     const url = ownSlug ? flagCdnUrl(ownSlug) : null;
-    if (url) return <img src={url} alt="" aria-hidden width={18} height={13} className="inline-block mr-1.5 align-[-2px]" />;
+    if (url) return <img src={url} alt="" aria-hidden width={18} height={13} className="inline-block mr-1.5 align-[-2px]" loading="lazy" decoding="async" />;
     if (lineageSlug.has(name)) return <span aria-hidden className="mr-1">{HISTORICAL_FLAG}</span>;
     return null;
   };
@@ -243,7 +243,7 @@ export default function BasketballHubPage() {
                   <td className="py-1.5 px-3 font-medium">
                     <span className="inline-flex items-center gap-1.5">
                       {flagCdnUrl(t.slug) && (
-                        <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block" />
+                        <img src={flagCdnUrl(t.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block" loading="lazy" decoding="async" />
                       )}
                       <Link href={`/teams/basketball/${t.slug}`} className="hover:text-[var(--accent)]">
                         {t.name}

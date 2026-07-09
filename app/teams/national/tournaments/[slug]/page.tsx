@@ -111,7 +111,7 @@ function MostDecorated({ hub }: { hub: TournamentHub }) {
           >
             <span className="inline-flex items-center gap-1.5">
               {d.slug && flagCdnUrl(d.slug) && (
-                <img src={flagCdnUrl(d.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" />
+                <img src={flagCdnUrl(d.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block flex-shrink-0" loading="lazy" decoding="async" />
               )}
               {d.slug ? (
                 <Link href={`/teams/national/${d.slug}`} className="hover:underline">
@@ -196,7 +196,7 @@ function ChampionsList({ hub }: { hub: TournamentHub }) {
                       <span aria-hidden>★</span>
                     </span>
                     {c.champion_slug && flagCdnUrl(c.champion_slug) && (
-                      <img src={flagCdnUrl(c.champion_slug)!} alt="" aria-hidden width={20} height={15} className="inline-block mr-1.5" />
+                      <img src={flagCdnUrl(c.champion_slug)!} alt="" aria-hidden width={20} height={15} className="inline-block mr-1.5" loading="lazy" decoding="async" />
                     )}
                     {c.champion_slug ? (
                       <Link href={`/teams/national/${c.champion_slug}`} className="hover:underline font-medium">
@@ -217,7 +217,7 @@ function ChampionsList({ hub }: { hub: TournamentHub }) {
                         <span key={fi}>
                           {fi > 0 && ", "}
                           {f.slug && flagCdnUrl(f.slug) && (
-                            <img src={flagCdnUrl(f.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block mr-1" />
+                            <img src={flagCdnUrl(f.slug)!} alt="" aria-hidden width={20} height={15} className="inline-block mr-1" loading="lazy" decoding="async" />
                           )}
                           {f.slug ? (
                             <Link href={`/teams/national/${f.slug}`} className="hover:underline">

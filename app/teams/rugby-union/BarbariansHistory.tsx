@@ -14,7 +14,7 @@ function Flag({ opponent }: { opponent: string }) {
   const url = flagCdnUrl(OVERRIDE[opponent] ?? slugify(opponent));
   if (!url) return null;
   // eslint-disable-next-line @next/next/no-img-element
-  return <img src={url} alt="" aria-hidden width={18} height={13} className="inline-block mr-1.5 align-[-2px] flex-shrink-0" />;
+  return <img src={url} alt="" aria-hidden width={18} height={13} className="inline-block mr-1.5 align-[-2px] flex-shrink-0" loading="lazy" decoding="async" />;
 }
 
 const rColor = (r: "W" | "L" | "D") => (r === "W" ? "#10b981" : r === "L" ? "var(--text-muted)" : "var(--text-dim)");

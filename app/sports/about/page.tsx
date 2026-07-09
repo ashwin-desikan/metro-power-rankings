@@ -52,7 +52,7 @@ export default function ZoneZeroAboutPage() {
       <header className="mb-12">
         <div className="flex items-center gap-3 mb-3">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/zone-zero-seal.svg" alt="Zone Zero" width={48} height={48} />
+          <img src="/zone-zero-seal.svg" alt="Zone Zero" width={48} height={48} loading="lazy" decoding="async" />
           <div className="text-xs uppercase tracking-widest text-[var(--text-dim)]">Citizen of Nowhere&rsquo;s</div>
         </div>
         <h1 className="text-4xl font-bold tracking-tight mb-3">Zone Zero</h1>

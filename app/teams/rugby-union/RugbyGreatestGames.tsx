@@ -34,7 +34,7 @@ function Flag({ slug }: { slug: string }) {
   const url = flagCdnUrl(slug);
   if (!url) return null;
   // eslint-disable-next-line @next/next/no-img-element
-  return <img src={url} alt="" aria-hidden width={16} height={12} className="inline-block rounded-[1px] align-[-1px] mr-0.5" style={{ objectFit: "cover" }} />;
+  return <img src={url} alt="" aria-hidden width={16} height={12} className="inline-block rounded-[1px] align-[-1px] mr-0.5" style={{ objectFit: "cover" }} loading="lazy" decoding="async" />;
 }
 
 function Team({ name, slug, bold }: { name: string; slug: string; bold?: boolean }) {
