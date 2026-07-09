@@ -109,6 +109,7 @@ export default function RivalriesTable({ rows }: { rows: RivalryRow[] }) {
   const [q, setQ] = useState("");
   const [sortKey, setSortKey] = useState<SortKey | null>(null);
   const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
+  const [announce, setAnnounce] = useState("");
 
   const leagues = useMemo(
     () => [ALL, ...Array.from(new Set(rows.map((r) => leagueOf(r)))).sort()],
@@ -177,13 +178,23 @@ export default function RivalriesTable({ rows }: { rows: RivalryRow[] }) {
 
       {/* Mobile sort control: the desktop header cells (onClick={() => clickSort(k)})
           are hidden along with the table below sm, so cards need their own way
-          to drive the same sortKey/sortDir state. */}
-      <div className="flex items-center gap-2 mb-3 sm:hidden">
+          to drive the same sortKey/sortDir state. Sticky so it stays reachable
+          on long lists instead of forcing a scroll back to the top. The
+          aria-live span announces the change for screen-reader users, who
+          otherwise get no signal that the (silently reordered) cards moved. */}
+      <div
+        className="sticky top-20 z-30 flex items-center gap-2 py-2 mb-1 sm:hidden"
+        style={{ backgroundColor: "var(--bg)" }}
+      >
         <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
           <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
           <select
             value={sortKey ?? ""}
-            onChange={(e) => clickSort(e.target.value as SortKey)}
+            onChange={(e) => {
+              const label = e.target.options[e.target.selectedIndex]?.text ?? "";
+              clickSort(e.target.value as SortKey);
+              setAnnounce(`Sorted by ${label}`);
+            }}
             className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
             style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
           >
@@ -199,7 +210,11 @@ export default function RivalriesTable({ rows }: { rows: RivalryRow[] }) {
         </label>
         <button
           type="button"
-          onClick={() => sortKey && clickSort(sortKey)}
+          onClick={() => {
+            if (!sortKey) return;
+            clickSort(sortKey);
+            setAnnounce(`Sort direction: ${sortDir === "asc" ? "descending" : "ascending"}`);
+          }}
           disabled={!sortKey}
           aria-label={sortDir === "asc" ? "Sort ascending" : "Sort descending"}
           className="rounded-lg border px-3 py-2 text-sm flex-shrink-0 disabled:opacity-40"
@@ -207,6 +222,7 @@ export default function RivalriesTable({ rows }: { rows: RivalryRow[] }) {
         >
           {sortDir === "asc" ? "▲" : "▼"}
         </button>
+        <span aria-live="polite" className="sr-only">{announce}</span>
       </div>
 
       {/* Mobile: stacked cards, same sorted/filtered rows as the desktop table */}

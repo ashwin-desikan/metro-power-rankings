@@ -149,6 +149,7 @@ export default function LeadersDirectory({
   const [search, setSearch] = useState<string>("");
   const [sortKey, setSortKey] = useState<"score" | "power" | "name" | "since">("score");
   const [sortDir, setSortDir] = useState<"asc" | "desc">("desc");
+  const [announce, setAnnounce] = useState("");
 
   // Free-typed year; only coerced when we build the query window, so the field
   // never fights the user mid-keystroke.
@@ -485,12 +486,19 @@ export default function LeadersDirectory({
               to drive the same sortKey/sortDir state - a Sort-by select (reuses
               toggleSort, which already sets each column's sensible default
               direction) plus a direction flip button. */}
-          <div className="flex items-center gap-2 mb-3 sm:hidden">
+          <div
+            className="sticky top-20 z-30 flex items-center gap-2 py-2 mb-1 sm:hidden"
+            style={{ backgroundColor: "var(--bg)" }}
+          >
             <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
               <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
               <select
                 value={sortKey}
-                onChange={(e) => toggleSort(e.target.value as "score" | "power" | "name" | "since")}
+                onChange={(e) => {
+                  const label = e.target.options[e.target.selectedIndex]?.text ?? "";
+                  toggleSort(e.target.value as "score" | "power" | "name" | "since");
+                  setAnnounce(`Sorted by ${label}`);
+                }}
                 className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
                 style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
               >
@@ -499,13 +507,17 @@ export default function LeadersDirectory({
             </label>
             <button
               type="button"
-              onClick={() => toggleSort(sortKey)}
+              onClick={() => {
+                toggleSort(sortKey);
+                setAnnounce(`Sort direction: ${sortDir === "asc" ? "descending" : "ascending"}`);
+              }}
               aria-label={sortDir === "asc" ? "Sort ascending" : "Sort descending"}
               className="rounded-lg border px-3 py-2 text-sm flex-shrink-0"
               style={{ borderColor: "var(--border)", color: "var(--text)" }}
             >
               {sortDir === "asc" ? "▲" : "▼"}
             </button>
+            <span aria-live="polite" className="sr-only">{announce}</span>
           </div>
           {/* Mobile: stacked cards */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">
@@ -566,12 +578,19 @@ export default function LeadersDirectory({
               to drive the same sortKey/sortDir state - a Sort-by select (reuses
               toggleSort, which already sets each column's sensible default
               direction) plus a direction flip button. */}
-          <div className="flex items-center gap-2 mb-3 sm:hidden">
+          <div
+            className="sticky top-20 z-30 flex items-center gap-2 py-2 mb-1 sm:hidden"
+            style={{ backgroundColor: "var(--bg)" }}
+          >
             <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
               <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
               <select
                 value={sortKey}
-                onChange={(e) => toggleSort(e.target.value as "score" | "power" | "name" | "since")}
+                onChange={(e) => {
+                  const label = e.target.options[e.target.selectedIndex]?.text ?? "";
+                  toggleSort(e.target.value as "score" | "power" | "name" | "since");
+                  setAnnounce(`Sorted by ${label}`);
+                }}
                 className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
                 style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
               >
@@ -583,13 +602,17 @@ export default function LeadersDirectory({
             </label>
             <button
               type="button"
-              onClick={() => toggleSort(sortKey)}
+              onClick={() => {
+                toggleSort(sortKey);
+                setAnnounce(`Sort direction: ${sortDir === "asc" ? "descending" : "ascending"}`);
+              }}
               aria-label={sortDir === "asc" ? "Sort ascending" : "Sort descending"}
               className="rounded-lg border px-3 py-2 text-sm flex-shrink-0"
               style={{ borderColor: "var(--border)", color: "var(--text)" }}
             >
               {sortDir === "asc" ? "▲" : "▼"}
             </button>
+            <span aria-live="polite" className="sr-only">{announce}</span>
           </div>
           {/* Mobile: stacked cards */}
           <div className="grid grid-cols-1 gap-2 sm:hidden">

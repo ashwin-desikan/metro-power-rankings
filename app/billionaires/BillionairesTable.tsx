@@ -22,6 +22,7 @@ export default function BillionairesTable({ data }: { data: B[] }) {
   const [sortKey, setSortKey] = useState<SortKey>("rank");
   const [dir, setDir] = useState<"asc" | "desc">("asc");
   const [limit, setLimit] = useState(100);
+  const [announce, setAnnounce] = useState("");
 
   const countries = useMemo(
     () => ["All", ...Array.from(new Set(data.map((b) => b.countryName).filter(Boolean) as string[])).sort()],
@@ -83,12 +84,19 @@ export default function BillionairesTable({ data }: { data: B[] }) {
           to drive the same sortKey/dir state - a Sort-by select (reuses toggle,
           which already sets each column's sensible default direction) plus a
           direction flip button. */}
-      <div className="flex items-center gap-2 mb-3 sm:hidden">
+      <div
+        className="sticky top-20 z-30 flex items-center gap-2 py-2 mb-1 sm:hidden"
+        style={{ backgroundColor: "var(--bg)" }}
+      >
         <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
           <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
           <select
             value={sortKey}
-            onChange={(e) => toggle(e.target.value as SortKey)}
+            onChange={(e) => {
+              const label = e.target.options[e.target.selectedIndex]?.text ?? "";
+              toggle(e.target.value as SortKey);
+              setAnnounce(`Sorted by ${label}`);
+            }}
             className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
             style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
           >
@@ -100,13 +108,17 @@ export default function BillionairesTable({ data }: { data: B[] }) {
         </label>
         <button
           type="button"
-          onClick={() => toggle(sortKey)}
+          onClick={() => {
+            toggle(sortKey);
+            setAnnounce(`Sort direction: ${dir === "asc" ? "descending" : "ascending"}`);
+          }}
           aria-label={dir === "asc" ? "Sort ascending" : "Sort descending"}
           className="rounded-lg border px-3 py-2 text-sm flex-shrink-0"
           style={{ borderColor: "var(--border)", color: "var(--text)" }}
         >
           {dir === "asc" ? "▲" : "▼"}
         </button>
+        <span aria-live="polite" className="sr-only">{announce}</span>
       </div>
 
       {/* Mobile: stacked cards, same sorted/filtered/limited data as the table */}

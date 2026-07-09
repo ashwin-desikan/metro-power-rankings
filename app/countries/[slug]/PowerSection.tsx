@@ -81,8 +81,8 @@ export default function PowerSection({ series, name }: { series: PowerPoint[]; n
       </div>
 
       {(pts.length > 1 || spts.length > 1) ? (
-        <div className="rounded-lg border p-3 overflow-x-auto" style={{ borderColor: "var(--border)", background: "var(--bg-card)" }}>
-          <svg viewBox={`0 0 ${W} ${H}`} className="w-full" style={{ minWidth: 520 }} role="img" aria-label={`${name}: share of world power over time`}
+        <div className="rounded-lg border p-3" style={{ borderColor: "var(--border)", background: "var(--bg-card)" }}>
+          <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label={`${name}: share of world power over time`}
             onMouseLeave={() => setHoverYear(null)}>
             {[0.25, 0.5, 0.75, 1].map((f) => {
               const g = maxV * f;

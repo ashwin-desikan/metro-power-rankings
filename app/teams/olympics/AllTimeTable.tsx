@@ -67,7 +67,7 @@ function MultiSelect<T extends string | number>({
                style={{ ...card, color: "var(--text)" }}>
         {label}: <span className="font-semibold">{summary}</span>
       </summary>
-      <div className="absolute z-20 mt-1 w-56 max-h-72 overflow-y-auto rounded-md border p-2 shadow-lg"
+      <div className="absolute z-20 mt-1 w-[calc(100vw-2rem)] left-1/2 -translate-x-1/2 sm:w-56 sm:left-0 sm:translate-x-0 max-h-72 overflow-y-auto rounded-md border p-2 shadow-lg"
            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
         <div className="flex gap-3 mb-2 text-xs">
           <button type="button" onClick={onAll} className="hover:text-[var(--accent)] underline">All</button>

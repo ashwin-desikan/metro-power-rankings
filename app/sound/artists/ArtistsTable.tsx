@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { useSessionState } from '@/lib/useSessionState';
 import { GrammyChip } from '../GrammyBadges';
 
@@ -42,6 +42,7 @@ export default function ArtistsTable({ artists, byPeriod }: { artists: ArtistRow
   const [decade, setDecade] = useSessionState<string>('mpr.sound.art.decade', 'All');
   const DECADES = ['All', '1950s', '1960s', '1970s', '1980s', '1990s', '2000s', '2010s', '2020s'];
   const [year, setYear] = useSessionState<string>('mpr.sound.art.year', 'All');
+  const [announce, setAnnounce] = useState('');
 
   const period = decade !== 'All';
 
@@ -137,12 +138,19 @@ export default function ArtistsTable({ artists, byPeriod }: { artists: ArtistRow
           to drive the same `sort` state. This table has no separate direction
           state (rows are always ranked highest-first by the chosen column), so
           there's no flip button to wire up — just the same Sort-by select. */}
-      <div className="mb-3 sm:hidden">
+      <div
+        className="sticky top-20 z-30 py-2 mb-1 sm:hidden"
+        style={{ backgroundColor: 'var(--bg)' }}
+      >
         <label className="flex items-center gap-2 text-xs">
           <span className="uppercase tracking-wide flex-shrink-0" style={muted}>Sort</span>
           <select
             value={sort}
-            onChange={(e) => setSort(e.target.value as SortKey)}
+            onChange={(e) => {
+              const label = e.target.options[e.target.selectedIndex]?.text ?? '';
+              setSort(e.target.value as SortKey);
+              setAnnounce(`Sorted by ${label}`);
+            }}
             className="flex-1 min-w-0 rounded-md border bg-transparent px-3 py-2 text-sm"
             style={{ borderColor: 'var(--border, #222b36)', color: 'var(--text, #e6edf3)' }}
           >
@@ -153,6 +161,7 @@ export default function ArtistsTable({ artists, byPeriod }: { artists: ArtistRow
             <option value="combined">Combined</option>
           </select>
         </label>
+        <span aria-live="polite" className="sr-only">{announce}</span>
       </div>
 
       {/* Mobile: stacked cards, same rows/sort/filter state as the desktop table */}

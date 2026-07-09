@@ -49,6 +49,7 @@ function NationFlag({ slug }: { slug: string }) {
 export default function WWCNationsTable({ nations }: { nations: WWCNation[] }) {
   const [sortKey, setSortKey] = useState<SortKey>("default");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
+  const [announce, setAnnounce] = useState("");
 
   function onSort(k: SortKey) {
     if (sortKey === k) setSortDir((d) => (d === "asc" ? "desc" : "asc"));
@@ -84,12 +85,19 @@ export default function WWCNationsTable({ nations }: { nations: WWCNation[] }) {
       {/* Mobile sort control: the desktop Th buttons (onClick={() => onSort(k)})
           live only in the table below, hidden below sm, so cards need their own
           way to drive the same sortKey/sortDir state. */}
-      <div className="mt-4 flex items-center gap-2 mb-3 sm:hidden">
+      <div
+        className="sticky top-20 z-30 flex items-center gap-2 py-2 mb-1 mt-4 sm:hidden"
+        style={{ backgroundColor: "var(--bg)" }}
+      >
         <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
           <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
           <select
             value={sortKey}
-            onChange={(e) => onSort(e.target.value as SortKey)}
+            onChange={(e) => {
+              const label = e.target.options[e.target.selectedIndex]?.text ?? "";
+              onSort(e.target.value as SortKey);
+              setAnnounce(`Sorted by ${label}`);
+            }}
             className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
             style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
           >
@@ -105,13 +113,17 @@ export default function WWCNationsTable({ nations }: { nations: WWCNation[] }) {
         </label>
         <button
           type="button"
-          onClick={() => onSort(sortKey)}
+          onClick={() => {
+            onSort(sortKey);
+            setAnnounce(`Sort direction: ${sortDir === "asc" ? "descending" : "ascending"}`);
+          }}
           aria-label={sortDir === "asc" ? "Sort ascending" : "Sort descending"}
           className="rounded-lg border px-3 py-2 text-sm flex-shrink-0"
           style={{ borderColor: "var(--border)", color: "var(--text)" }}
         >
           {sortDir === "asc" ? "↑" : "↓"}
         </button>
+        <span aria-live="polite" className="sr-only">{announce}</span>
       </div>
 
       {/* Mobile: one card per nation instead of an 8-column table that would

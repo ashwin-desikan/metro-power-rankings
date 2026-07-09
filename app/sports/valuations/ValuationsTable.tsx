@@ -29,6 +29,7 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
   const [sortKey, setSortKey] = useState<SortKey>("value");
   const [asc, setAsc] = useState(false);
   const [highlight, setHighlight] = useState<string | null>(null);
+  const [announce, setAnnounce] = useState("");
 
   useEffect(() => {
     const h = decodeURIComponent(window.location.hash.replace(/^#/, ""));
@@ -98,13 +99,25 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
 
       {/* Mobile sort control: the desktop header cells (onClick={() => toggleSort(k)})
           are hidden along with the table below sm, so cards need their own way
-          to drive the same sortKey/asc state. */}
-      <div className="flex items-center gap-2 mb-3 sm:hidden">
+          to drive the same sortKey/asc state. Sticky so it stays reachable on
+          long lists instead of forcing a scroll back to the top. Uses top-24
+          (not the site-wide top-20) to match this file's own anchor offset
+          (scrollMarginTop: 96px) used for the #anchor highlight rows above.
+          The aria-live span announces the change for screen-reader users, who
+          otherwise get no signal that the (silently reordered) cards moved. */}
+      <div
+        className="sticky top-24 z-30 flex items-center gap-2 py-2 mb-1 sm:hidden"
+        style={{ backgroundColor: "var(--bg)" }}
+      >
         <label className="flex-1 flex items-center gap-2 text-xs min-w-0">
           <span className="uppercase tracking-wide text-[var(--text-dim)] flex-shrink-0">Sort</span>
           <select
             value={sortKey}
-            onChange={(e) => toggleSort(e.target.value as SortKey)}
+            onChange={(e) => {
+              const label = e.target.options[e.target.selectedIndex]?.text ?? "";
+              toggleSort(e.target.value as SortKey);
+              setAnnounce(`Sorted by ${label}`);
+            }}
             className="flex-1 min-w-0 rounded-lg border px-3 py-2 text-sm"
             style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
           >
@@ -116,13 +129,17 @@ export default function ValuationsTable({ rows }: { rows: Row[] }) {
         </label>
         <button
           type="button"
-          onClick={() => toggleSort(sortKey)}
+          onClick={() => {
+            toggleSort(sortKey);
+            setAnnounce(`Sort direction: ${asc ? "descending" : "ascending"}`);
+          }}
           aria-label={asc ? "Sort ascending" : "Sort descending"}
           className="rounded-lg border px-3 py-2 text-sm flex-shrink-0"
           style={{ borderColor: "var(--border)", color: "var(--text)" }}
         >
           {asc ? "↑" : "↓"}
         </button>
+        <span aria-live="polite" className="sr-only">{announce}</span>
       </div>
 
       {/* Mobile: stacked cards, same filtered/sorted rows as the desktop table */}
