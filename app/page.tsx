@@ -338,7 +338,7 @@ export default async function Home() {
     { n: '02', title: 'The Nowhere 100', desc: 'The hundred most powerful people alive, on one Metro Power scale.', stat: '100 people', href: '/power', seal: true, preview: topPeople() },
     { n: '03', title: 'Zone Zero Cup', desc: 'National sporting merit across fourteen pillars, ten-year half-life.', stat: '200+ nations', href: '/sports/zone-zero-cup', emoji: '🏆', preview: topNations() },
     { n: '04', title: 'Musical Artist Rankings', desc: 'The biggest artists by chart success and prestige, by home metro.', stat: 'By metro', href: '/sound/artists', emoji: '🎵', preview: topArtists() },
-    { n: '05', title: 'The Power Atlas', desc: 'National power ranked year by year, from Pax Britannica to today.', stat: '235 years · 1789–now', href: '/power-atlas', emoji: '🏛️', isNew: true, preview: topPowers() },
+    { n: '05', title: 'The Power Atlas', desc: 'National power ranked year by year, from the Renaissance to today.', stat: '526 years · 1500–now', href: '/power-atlas', emoji: '🏛️', isNew: true, preview: topPowers() },
   ];
 
   const leagueRows = LEAGUES.map((l) => ({ ...l, status: leagueStatusFor(l.href) }));

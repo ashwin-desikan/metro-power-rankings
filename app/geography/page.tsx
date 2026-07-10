@@ -29,7 +29,7 @@ const PLACES: Card[] = [
 ];
 const PEOPLE: Card[] = [
   { emoji: "👑", title: "The Nowhere 100", desc: "The hundred most powerful people alive, on one Metro Power scale.", href: "/power" },
-  { emoji: "🎖️", title: "World Leaders", desc: "Every head of state and government, with a time machine back to 1789.", href: "/leaders" },
+  { emoji: "🎖️", title: "World Leaders", desc: "Every head of state and government, with a time machine back to antiquity.", href: "/leaders" },
   { emoji: "💰", title: "Billionaires", desc: "The world's wealthiest, placed on the metros that made them.", href: "/billionaires" },
   { emoji: "🏛️", title: "US Political Leadership", desc: "The executive, Congress, and the fifty governors.", href: "/us-political-leadership" },
   { emoji: "🏙️", title: "Mayors of the World", desc: "Who runs the great cities, capital by capital.", href: "/mayors" },
@@ -97,7 +97,7 @@ export default function GeographyHubPage() {
           <p className="text-lg text-[var(--text-muted)] leading-relaxed max-w-3xl">
             Everything on the site that maps the world: the metros that concentrate civilization, the countries and
             states that contain them, the people and offices that run them, the alliances and wars between them, and a
-            year-by-year ranking of national power stretching back to 1789.
+            year-by-year ranking of national power stretching back to 1500.
           </p>
         </header>
 
@@ -115,9 +115,10 @@ export default function GeographyHubPage() {
           </div>
           <h2 className="text-2xl font-bold mb-1 flex items-center gap-2"><span aria-hidden>🏛️</span> The Power Atlas</h2>
           <p className="text-[15px] text-[var(--text-muted)] max-w-3xl">
-            A single index of national power, computed for every state from 1789 to today and ranked against its
-            contemporaries. Slide through 235 years and watch empires rise and fall, from Pax Britannica to the bipolar
-            Cold War to now, with latent-versus-recognised lenses and a rising-and-fading divergence view.
+            A single index of national power, computed for every state from 1500 to today and ranked against its
+            contemporaries. Slide through five centuries and watch empires rise and fall, from the Age of Discovery
+            through Pax Britannica and the bipolar Cold War to now, with latent-versus-recognised lenses and a
+            rising-and-fading divergence view.
           </p>
           <span className="inline-flex items-center gap-1 mt-3 text-xs" style={{ ...mono, color: "var(--accent)" }}>Open the atlas <span aria-hidden>→</span></span>
         </Link>

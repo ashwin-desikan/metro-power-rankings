@@ -4,6 +4,7 @@
 // Gold pill = full Member; styled variants for Candidate, Observer, etc.
 
 import Link from "next/link";
+import Collapsible from "./Collapsible";
 import {
   getOrgsForCountry,
   ORG_DEFS,
@@ -78,18 +79,19 @@ export default function OrgsSection({ countrySlug }: Props) {
   const memberCount = Object.values(memberships).filter((s) => s === "Member").length;
 
   return (
-    <section className="mb-12" id="orgs">
-      <div className="flex items-baseline gap-3 mb-4">
-        <h2 className="text-xl font-bold">
-          <Link href="/orgs" className="hover:text-[var(--accent)] hover:underline">
-            Alliances &amp; Organisations
-          </Link>
-        </h2>
+    <Collapsible
+      id="orgs"
+      title={
+        <Link href="/orgs" className="hover:text-[var(--accent)] hover:underline">
+          Alliances &amp; Organisations
+        </Link>
+      }
+      right={
         <span className="text-sm text-[var(--text-muted)]">
           {memberCount} full {memberCount === 1 ? "membership" : "memberships"}
         </span>
-      </div>
-
+      }
+    >
       <div className="space-y-4">
         {groups.map(({ group, badges }) => (
           <div key={group}>
@@ -113,6 +115,6 @@ export default function OrgsSection({ countrySlug }: Props) {
         <span className="mr-3 opacity-70">Dashed border = Candidate / Applicant</span>
         <span className="opacity-70">Italic = Dialogue / Observer</span>
       </p>
-    </section>
+    </Collapsible>
   );
 }

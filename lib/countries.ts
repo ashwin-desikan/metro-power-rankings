@@ -132,6 +132,75 @@ export function getCountryIndicators(slug: string): CountryIndicators | null {
   return loadIndicators()[slug] ?? null;
 }
 
+// Wikidata-sourced infobox facts keyed by country slug (public/data/
+// country-facts.json, built by scripts/countryfacts/build-facts.mjs; Supabase
+// public.country_facts is the editable system of record). Additive to the
+// workbook — never overrides pop/area/continent.
+export type CountryFacts = {
+  qid: string | null;
+  officialLanguages: string[] | null;
+  currencyName: string | null;
+  currencySymbol: string | null;
+  currencyIso: string | null;
+  timezones: string[] | null;
+  drivingSide: string | null;
+  callingCode: string | null;
+  tld: string[] | null;
+  iso3166: string | null;
+  governmentForm: string | null;
+  demonym: string | null;
+  formationDate: string | null;
+  highestPointName: string | null;
+  highestPointM: number | null;
+  anthem: string | null;
+  motto: string | null;
+  legislature: string | null;
+};
+
+let _facts: Record<string, CountryFacts> | null = null;
+let _factsTried = false;
+
+function loadFacts(): Record<string, CountryFacts> {
+  if (!_factsTried) {
+    _factsTried = true;
+    try {
+      const raw = readFileSync(
+        join(process.cwd(), "public", "data", "country-facts.json"),
+        "utf-8",
+      );
+      const parsed = JSON.parse(raw) as { countries?: Record<string, CountryFacts> };
+      _facts = parsed.countries ?? {};
+    } catch {
+      _facts = {};
+    }
+  }
+  return _facts ?? {};
+}
+
+// Fields a dependent territory sensibly inherits from its parent country when
+// Wikidata doesn't set them at the territory level (a British Overseas
+// Territory uses the pound, drives on the left, etc.).
+const INHERITABLE_FACTS: (keyof CountryFacts)[] = [
+  "currencyName", "currencySymbol", "currencyIso", "drivingSide", "callingCode", "tld",
+];
+
+export function getCountryFacts(slug: string): CountryFacts | null {
+  const facts = loadFacts();
+  const own = facts[slug];
+  if (!own) return null;
+  const parentSlug = getCountry(slug)?.parent_slug ?? null;
+  const parent = parentSlug ? facts[parentSlug] : null;
+  if (!parent) return own;
+  const merged: CountryFacts = { ...own };
+  for (const k of INHERITABLE_FACTS) {
+    const v = merged[k];
+    if (v == null || (Array.isArray(v) && v.length === 0)) {
+      (merged as Record<string, unknown>)[k] = (parent as Record<string, unknown>)[k];
+    }
+  }
+  return merged;
+}
+
 // Per-indicator global ranking. Direction encodes the "rank #1 is notable"
 // reading: bigger is rank 1 for magnitude/attainment indicators; smaller is
 // rank 1 for Gini (less inequality) and inflation (more price stability), so a

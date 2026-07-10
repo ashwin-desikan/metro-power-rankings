@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { PowerPoint } from "@/lib/powerHistory";
+import Collapsible from "./Collapsible";
 
 const TIER_COLOR: Record<string, string> = {
   "Superpower": "#f5c518", "Great Power": "#e8833a", "Middle Power": "#4a9edb", "Regional": "#7a8a99", "Minor": "#464659",
@@ -51,13 +52,16 @@ export default function PowerSection({ series, name }: { series: PowerPoint[]; n
   const hovered = hoverYear != null ? hovMap.get(hoverYear) ?? null : null;
 
   return (
-    <section className="mb-12" id="power">
-      <div className="flex items-baseline justify-between mb-3 flex-wrap gap-2">
-        <h2 className="text-2xl font-bold tracking-tight">Power over time</h2>
-        <Link href="/power-atlas" className="text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+    <Collapsible
+      id="power"
+      title="Power over time"
+      titleClassName="text-2xl font-bold tracking-tight"
+      right={
+        <Link href="/power-atlas" className="ml-auto text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
           The Power Atlas &rarr;
         </Link>
-      </div>
+      }
+    >
 
       <div className="flex flex-wrap gap-3 mb-4">
         <div className="rounded-lg border px-4 py-3" style={{ borderColor: "var(--border)", background: "var(--bg-card)" }}>
@@ -137,6 +141,6 @@ export default function PowerSection({ series, name }: { series: PowerPoint[]; n
         Council seat or nuclear arsenal). When latent runs above recognised, a power is rising or under-rated; when recognised
         runs higher, it is punching above its weight or coasting on prestige. Material sub-indices run 1816 through 2016.
       </p>
-    </section>
+    </Collapsible>
   );
 }

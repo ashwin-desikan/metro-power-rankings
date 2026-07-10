@@ -78,6 +78,7 @@ function arrow(deg){return ARROWS[Math.round(deg/45)%8];}
 function prox(d){return Math.max(0,Math.round((1-d/20000)*100));}
 function pcol(p){return p>=80?"#4ECDC4":p>=50?"#E6B34A":p>=20?"#E08A4E":"#E2628B";}
 function psq(p,win){return win?"🎯":p>=80?"🟩":p>=50?"🟨":p>=20?"🟧":"🟥";}
+function du(d){return d.toLocaleString()+" km ("+Math.round(d*0.621371).toLocaleString()+" mi)";}
 function save(){localStorage.setItem("globle-"+dayKey(),JSON.stringify({g:guesses.map(x=>x.slug),done}));}
 function load(){try{const s=JSON.parse(localStorage.getItem("globle-"+dayKey()));if(s){s.g.forEach(sl=>{const m=POOL.find(x=>x.slug===sl);if(m)guesses.push(m);});done=s.done;}}catch(e){}}
 function initMap(){
@@ -89,7 +90,7 @@ function drawMap(){
   if(!map)return;layer.clearLayers();const pts=[];
   guesses.forEach(m=>{
     const win=m.slug===target.slug;const d=win?0:dist(m,target);const p=win?100:prox(d);const c=pcol(p);
-    L.circleMarker([m.lat,m.lon],{radius:7,color:"#fff",weight:1.5,fillColor:c,fillOpacity:.9}).addTo(layer).bindTooltip(m.name+(win?" 🎯":" · "+d.toLocaleString()+" km"),{direction:"top"});
+    L.circleMarker([m.lat,m.lon],{radius:7,color:"#fff",weight:1.5,fillColor:c,fillOpacity:.9}).addTo(layer).bindTooltip(m.name+(win?" 🎯":" · "+du(d)),{direction:"top"});
     pts.push([m.lat,m.lon]);
     if(!win&&!done){const e=dest(m,bearing(m,target),900);L.polyline([[m.lat,m.lon],e],{color:c,weight:2,opacity:.8}).addTo(layer);}
   });
@@ -102,7 +103,7 @@ function drawMap(){
 }
 function render(){
   $("guesses").innerHTML=guesses.map(m=>{const win=m.slug===target.slug;const d=win?0:dist(m,target);const p=win?100:prox(d);
-    return `<div class="guess"><span class="dot" style="background:${pcol(p)}"></span><span class="nm">${m.name}<span style="color:var(--text-dim);font-weight:400;"> · ${m.country}</span></span><span class="di">${win?"":d.toLocaleString()+" km"}</span><span class="ar">${win?"🎯":arrow(bearing(m,target))}</span><span class="px" style="color:${pcol(p)}">${p}%</span></div>`;}).join("");
+    return `<div class="guess"><span class="dot" style="background:${pcol(p)}"></span><span class="nm">${m.name}<span style="color:var(--text-dim);font-weight:400;"> · ${m.country}</span></span><span class="di">${win?"":du(d)}</span><span class="ar">${win?"🎯":arrow(bearing(m,target))}</span><span class="px" style="color:${pcol(p)}">${p}%</span></div>`;}).join("");
   $("left").textContent=done?"":(MAXG-guesses.length)+" guesses left";
   drawMap();if(done)showEnd();
 }

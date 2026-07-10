@@ -88,7 +88,7 @@ export default function CountriesDirectory({
 }: {
   countries: DirectoryCountry[];
 }) {
-  const [sortKey, setSortKey] = useSessionState<SortKey>("countries-sort-key", "pop");
+  const [sortKey, setSortKey] = useSessionState<SortKey>("countries-sort-key", "scoreTotal");
   const [sortDir, setSortDir] = useSessionState<SortDir>("countries-sort-dir", "desc");
   const [continent, setContinent] = useState<string>("All");
   const [search, setSearch] = useState<string>("");

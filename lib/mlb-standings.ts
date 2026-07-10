@@ -281,12 +281,32 @@ function buildLabel(year: number, type: SeasonType, allZero: boolean): string {
   }
 }
 
+// The authoritative "current season" descriptor. ESPN's top-level
+// `season.year` is a FORWARD pointer — mid-2026 it already reads 2027 (the
+// next season), which mislabels the in-progress standings and breaks the
+// franchise-page guard that requires season_year === current calendar year.
+// The `seasons[]` array instead carries each season's real [startDate,
+// endDate] window, so we pick the entry whose window contains "now". Falls
+// back to seasons[0], which is the safe default when no window matches
+// (e.g. the dead space between postseason and the next spring training).
+function pickCurrentSeason(root: AnyObj): AnyObj | null {
+  const seasons = asArr(root.seasons)
+    .map(asObj)
+    .filter((s): s is AnyObj => s !== null);
+  const now = Date.now();
+  const containing = seasons.find((s) => {
+    const start = Date.parse(asStr(s.startDate));
+    const end = Date.parse(asStr(s.endDate));
+    return Number.isFinite(start) && Number.isFinite(end) && now >= start && now <= end;
+  });
+  return containing ?? seasons[0] ?? null;
+}
+
 function pickSeasonYear(root: AnyObj): number {
-  const season = asObj(root.season);
-  const seasons = asArr(root.seasons);
+  const cur = pickCurrentSeason(root);
   const candidates: unknown[] = [
-    season?.year,
-    asObj(seasons[0])?.year,
+    cur?.year,
+    asObj(root.season)?.year,
     asObj(asArr(root.children)[0])?.season,
   ];
   for (const c of candidates) {
@@ -297,6 +317,27 @@ function pickSeasonYear(root: AnyObj): number {
 }
 
 function pickSeasonType(root: AnyObj): SeasonType {
+  // Prefer the active phase from the current season's `types` windows —
+  // ESPN has begun returning the top-level `season.type` as undefined, which
+  // stranded this at "unknown" and made source labels drop the phase word.
+  const cur = pickCurrentSeason(root);
+  const now = Date.now();
+  const activeType = asArr(cur?.types)
+    .map(asObj)
+    .filter((t): t is AnyObj => t !== null)
+    .find((t) => {
+      const start = Date.parse(asStr(t.startDate));
+      const end = Date.parse(asStr(t.endDate));
+      return Number.isFinite(start) && Number.isFinite(end) && now >= start && now <= end;
+    });
+  const activeName = asStr(activeType?.name).toLowerCase();
+  if (activeName.includes("regular")) return "regular";
+  if (activeName.includes("post")) return "postseason";
+  if (activeName.includes("spring") || activeName.includes("pre")) return "spring";
+  if (activeName.includes("off")) return "offseason";
+
+  // Legacy fallback: ESPN's top-level season.type numeric code, kept for
+  // responses where the seasons[].types date windows are absent.
   const season = asObj(root.season);
   const rawType = season?.type;
   const typeObj = asObj(rawType);

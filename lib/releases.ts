@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-07-10",
+    headline: "Country facts, flags, dual units, and data corrections",
+    items: [
+      "Every country page gains an At a glance panel with its flag, official languages, currency, government, time zones, national anthem and more, and every section now collapses for easier phone reading.",
+      "Distances and elevations across the site now show both metric and imperial, so kilometres and metres always sit beside miles and feet.",
+      "Fixed missing economy figures for several countries including Egypt and Slovakia, and MLB standings now show the current season instead of jumping a year ahead.",
+      "Amsterdam now absorbs Almere and Lelystad into one metro, the countries list sorts by score by default, and the Power Atlas is correctly dated from 1500.",
+    ],
+  },
+  {
     date: "2026-07-09",
     headline: "Mobile tables, kids games, Origin 2026, and Tour de France in Champions",
     items: [

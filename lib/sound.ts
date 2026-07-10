@@ -51,7 +51,7 @@ export function getSoundForMetro(slug: string): MetroSound | null {
     uk: m.uk_score,
     signatureDecade: m.signature_decade,
     topArtists: (m.top_artists ?? []).slice(0, 8),
-    numberOnes: n?.number_ones ?? [],
+    numberOnes: (n?.number_ones ?? []).slice().sort((a, b) => (b.year ?? 0) - (a.year ?? 0)),
     numberOnesCount: n?.count ?? 0,
   };
 }

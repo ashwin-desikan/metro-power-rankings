@@ -1,0 +1,1484 @@
+{
+  "united-states": {
+    "qid": "Q30",
+    "method": "iso3",
+    "iso2": "US",
+    "iso3": "USA"
+  },
+  "china": {
+    "qid": "Q148",
+    "method": "iso3",
+    "iso2": "CN",
+    "iso3": "CHN"
+  },
+  "germany": {
+    "qid": "Q183",
+    "method": "iso3",
+    "iso2": "DE",
+    "iso3": "DEU"
+  },
+  "england": {
+    "qid": "Q21",
+    "method": "seed",
+    "iso2": null,
+    "iso3": null
+  },
+  "france": {
+    "qid": "Q142",
+    "method": "iso3",
+    "iso2": "FR",
+    "iso3": "FRA"
+  },
+  "italy": {
+    "qid": "Q38",
+    "method": "iso3",
+    "iso2": "IT",
+    "iso3": "ITA"
+  },
+  "japan": {
+    "qid": "Q17",
+    "method": "iso3",
+    "iso2": "JP",
+    "iso3": "JPN"
+  },
+  "india": {
+    "qid": "Q668",
+    "method": "iso3",
+    "iso2": "IN",
+    "iso3": "IND"
+  },
+  "spain": {
+    "qid": "Q29",
+    "method": "iso3",
+    "iso2": "ES",
+    "iso3": "ESP"
+  },
+  "canada": {
+    "qid": "Q16",
+    "method": "iso3",
+    "iso2": "CA",
+    "iso3": "CAN"
+  },
+  "brazil": {
+    "qid": "Q155",
+    "method": "iso3",
+    "iso2": "BR",
+    "iso3": "BRA"
+  },
+  "australia": {
+    "qid": "Q408",
+    "method": "iso3",
+    "iso2": "AU",
+    "iso3": "AUS"
+  },
+  "russia": {
+    "qid": "Q159",
+    "method": "iso3",
+    "iso2": "RU",
+    "iso3": "RUS"
+  },
+  "mexico": {
+    "qid": "Q96",
+    "method": "iso3",
+    "iso2": "MX",
+    "iso3": "MEX"
+  },
+  "south-korea": {
+    "qid": "Q884",
+    "method": "iso3",
+    "iso2": "KR",
+    "iso3": "KOR"
+  },
+  "netherlands": {
+    "qid": "Q29999",
+    "method": "iso3",
+    "iso2": "NL",
+    "iso3": "NLD"
+  },
+  "turkey": {
+    "qid": "Q43",
+    "method": "iso3",
+    "iso2": "TR",
+    "iso3": "TUR"
+  },
+  "switzerland": {
+    "qid": "Q39",
+    "method": "iso3",
+    "iso2": "CH",
+    "iso3": "CHE"
+  },
+  "indonesia": {
+    "qid": "Q252",
+    "method": "iso3",
+    "iso2": "ID",
+    "iso3": "IDN"
+  },
+  "poland": {
+    "qid": "Q36",
+    "method": "iso3",
+    "iso2": "PL",
+    "iso3": "POL"
+  },
+  "belgium": {
+    "qid": "Q31",
+    "method": "iso3",
+    "iso2": "BE",
+    "iso3": "BEL"
+  },
+  "south-africa": {
+    "qid": "Q258",
+    "method": "iso3",
+    "iso2": "ZA",
+    "iso3": "ZAF"
+  },
+  "united-arab-emirates": {
+    "qid": "Q878",
+    "method": "iso3",
+    "iso2": "AE",
+    "iso3": "ARE"
+  },
+  "malaysia": {
+    "qid": "Q833",
+    "method": "iso3",
+    "iso2": "MY",
+    "iso3": "MYS"
+  },
+  "saudi-arabia": {
+    "qid": "Q851",
+    "method": "iso3",
+    "iso2": "SA",
+    "iso3": "SAU"
+  },
+  "austria": {
+    "qid": "Q40",
+    "method": "iso3",
+    "iso2": "AT",
+    "iso3": "AUT"
+  },
+  "argentina": {
+    "qid": "Q414",
+    "method": "iso3",
+    "iso2": "AR",
+    "iso3": "ARG"
+  },
+  "portugal": {
+    "qid": "Q45",
+    "method": "iso3",
+    "iso2": "PT",
+    "iso3": "PRT"
+  },
+  "sweden": {
+    "qid": "Q34",
+    "method": "iso3",
+    "iso2": "SE",
+    "iso3": "SWE"
+  },
+  "taiwan": {
+    "qid": "Q865",
+    "method": "seed",
+    "iso2": null,
+    "iso3": null
+  },
+  "thailand": {
+    "qid": "Q869",
+    "method": "iso3",
+    "iso2": "TH",
+    "iso3": "THA"
+  },
+  "colombia": {
+    "qid": "Q739",
+    "method": "iso3",
+    "iso2": "CO",
+    "iso3": "COL"
+  },
+  "egypt": {
+    "qid": "Q79",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "scotland": {
+    "qid": "Q22",
+    "method": "seed",
+    "iso2": null,
+    "iso3": null
+  },
+  "hong-kong": {
+    "qid": "Q8646",
+    "method": "iso3",
+    "iso2": "HK",
+    "iso3": "HKG"
+  },
+  "philippines": {
+    "qid": "Q928",
+    "method": "iso3",
+    "iso2": "PH",
+    "iso3": "PHL"
+  },
+  "greece": {
+    "qid": "Q41",
+    "method": "iso3",
+    "iso2": "GR",
+    "iso3": "GRC"
+  },
+  "denmark": {
+    "qid": "Q35",
+    "method": "iso3",
+    "iso2": "DK",
+    "iso3": "DNK"
+  },
+  "singapore": {
+    "qid": "Q334",
+    "method": "iso3",
+    "iso2": "SG",
+    "iso3": "SGP"
+  },
+  "vietnam": {
+    "qid": "Q881",
+    "method": "iso3",
+    "iso2": "VN",
+    "iso3": "VNM"
+  },
+  "israel": {
+    "qid": "Q801",
+    "method": "iso3",
+    "iso2": "IL",
+    "iso3": "ISR"
+  },
+  "pakistan": {
+    "qid": "Q843",
+    "method": "iso3",
+    "iso2": "PK",
+    "iso3": "PAK"
+  },
+  "norway": {
+    "qid": "Q20",
+    "method": "iso3",
+    "iso2": "NO",
+    "iso3": "NOR"
+  },
+  "iran": {
+    "qid": "Q794",
+    "method": "iso3",
+    "iso2": "IR",
+    "iso3": "IRN"
+  },
+  "new-zealand": {
+    "qid": "Q664",
+    "method": "iso3",
+    "iso2": "NZ",
+    "iso3": "NZL"
+  },
+  "czech-republic": {
+    "qid": "Q213",
+    "method": "iso3",
+    "iso2": "CZ",
+    "iso3": "CZE"
+  },
+  "chile": {
+    "qid": "Q298",
+    "method": "iso3",
+    "iso2": "CL",
+    "iso3": "CHL"
+  },
+  "ireland": {
+    "qid": "Q27",
+    "method": "iso3",
+    "iso2": "IE",
+    "iso3": "IRL"
+  },
+  "finland": {
+    "qid": "Q33",
+    "method": "iso3",
+    "iso2": "FI",
+    "iso3": "FIN"
+  },
+  "nigeria": {
+    "qid": "Q1033",
+    "method": "iso3",
+    "iso2": "NG",
+    "iso3": "NGA"
+  },
+  "bangladesh": {
+    "qid": "Q902",
+    "method": "iso3",
+    "iso2": "BD",
+    "iso3": "BGD"
+  },
+  "ukraine": {
+    "qid": "Q212",
+    "method": "iso3",
+    "iso2": "UA",
+    "iso3": "UKR"
+  },
+  "qatar": {
+    "qid": "Q846",
+    "method": "iso3",
+    "iso2": "QA",
+    "iso3": "QAT"
+  },
+  "hungary": {
+    "qid": "Q28",
+    "method": "iso3",
+    "iso2": "HU",
+    "iso3": "HUN"
+  },
+  "peru": {
+    "qid": "Q419",
+    "method": "iso3",
+    "iso2": "PE",
+    "iso3": "PER"
+  },
+  "morocco": {
+    "qid": "Q1028",
+    "method": "iso3",
+    "iso2": "MA",
+    "iso3": "MAR"
+  },
+  "kazakhstan": {
+    "qid": "Q232",
+    "method": "iso3",
+    "iso2": "KZ",
+    "iso3": "KAZ"
+  },
+  "romania": {
+    "qid": "Q218",
+    "method": "iso3",
+    "iso2": "RO",
+    "iso3": "ROU"
+  },
+  "kenya": {
+    "qid": "Q114",
+    "method": "iso3",
+    "iso2": "KE",
+    "iso3": "KEN"
+  },
+  "macau": {
+    "qid": "Q14773",
+    "method": "iso3",
+    "iso2": "MO",
+    "iso3": "MAC"
+  },
+  "sri-lanka": {
+    "qid": "Q854",
+    "method": "iso3",
+    "iso2": "LK",
+    "iso3": "LKA"
+  },
+  "venezuela": {
+    "qid": "Q717",
+    "method": "iso3",
+    "iso2": "VE",
+    "iso3": "VEN"
+  },
+  "azerbaijan": {
+    "qid": "Q227",
+    "method": "iso3",
+    "iso2": "AZ",
+    "iso3": "AZE"
+  },
+  "congo-dr": {
+    "qid": "Q974",
+    "method": "iso3",
+    "iso2": "CD",
+    "iso3": "COD"
+  },
+  "wales": {
+    "qid": "Q25",
+    "method": "seed",
+    "iso2": null,
+    "iso3": null
+  },
+  "panama": {
+    "qid": "Q804",
+    "method": "iso3",
+    "iso2": "PA",
+    "iso3": "PAN"
+  },
+  "serbia": {
+    "qid": "Q403",
+    "method": "iso3",
+    "iso2": "RS",
+    "iso3": "SRB"
+  },
+  "kuwait": {
+    "qid": "Q817",
+    "method": "iso3",
+    "iso2": "KW",
+    "iso3": "KWT"
+  },
+  "iraq": {
+    "qid": "Q796",
+    "method": "iso3",
+    "iso2": "IQ",
+    "iso3": "IRQ"
+  },
+  "tanzania": {
+    "qid": "Q924",
+    "method": "iso3",
+    "iso2": "TZ",
+    "iso3": "TZA"
+  },
+  "algeria": {
+    "qid": "Q262",
+    "method": "iso3",
+    "iso2": "DZ",
+    "iso3": "DZA"
+  },
+  "bahrain": {
+    "qid": "Q398",
+    "method": "iso3",
+    "iso2": "BH",
+    "iso3": "BHR"
+  },
+  "ecuador": {
+    "qid": "Q736",
+    "method": "iso3",
+    "iso2": "EC",
+    "iso3": "ECU"
+  },
+  "uzbekistan": {
+    "qid": "Q265",
+    "method": "iso3",
+    "iso2": "UZ",
+    "iso3": "UZB"
+  },
+  "cambodia": {
+    "qid": "Q424",
+    "method": "iso3",
+    "iso2": "KH",
+    "iso3": "KHM"
+  },
+  "dominican-republic": {
+    "qid": "Q786",
+    "method": "iso3",
+    "iso2": "DO",
+    "iso3": "DOM"
+  },
+  "tunisia": {
+    "qid": "Q948",
+    "method": "iso3",
+    "iso2": "TN",
+    "iso3": "TUN"
+  },
+  "ethiopia": {
+    "qid": "Q115",
+    "method": "iso3",
+    "iso2": "ET",
+    "iso3": "ETH"
+  },
+  "croatia": {
+    "qid": "Q224",
+    "method": "iso3",
+    "iso2": "HR",
+    "iso3": "HRV"
+  },
+  "bolivia": {
+    "qid": "Q750",
+    "method": "iso3",
+    "iso2": "BO",
+    "iso3": "BOL"
+  },
+  "jordan": {
+    "qid": "Q810",
+    "method": "iso3",
+    "iso2": "JO",
+    "iso3": "JOR"
+  },
+  "cyprus": {
+    "qid": "Q229",
+    "method": "iso3",
+    "iso2": "CY",
+    "iso3": "CYP"
+  },
+  "bulgaria": {
+    "qid": "Q219",
+    "method": "iso3",
+    "iso2": "BG",
+    "iso3": "BGR"
+  },
+  "north-korea": {
+    "qid": "Q423",
+    "method": "iso3",
+    "iso2": "KP",
+    "iso3": "PRK"
+  },
+  "northern-ireland": {
+    "qid": "Q26",
+    "method": "seed",
+    "iso2": null,
+    "iso3": null
+  },
+  "sudan": {
+    "qid": "Q1049",
+    "method": "iso3",
+    "iso2": "SD",
+    "iso3": "SDN"
+  },
+  "belarus": {
+    "qid": "Q184",
+    "method": "iso3",
+    "iso2": "BY",
+    "iso3": "BLR"
+  },
+  "myanmar": {
+    "qid": "Q836",
+    "method": "iso3",
+    "iso2": "MM",
+    "iso3": "MMR"
+  },
+  "lithuania": {
+    "qid": "Q37",
+    "method": "iso3",
+    "iso2": "LT",
+    "iso3": "LTU"
+  },
+  "puerto-rico": {
+    "qid": "Q1183",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "uruguay": {
+    "qid": "Q77",
+    "method": "iso3",
+    "iso2": "UY",
+    "iso3": "URY"
+  },
+  "georgia": {
+    "qid": "Q230",
+    "method": "iso3",
+    "iso2": "GE",
+    "iso3": "GEO"
+  },
+  "ghana": {
+    "qid": "Q117",
+    "method": "iso3",
+    "iso2": "GH",
+    "iso3": "GHA"
+  },
+  "cuba": {
+    "qid": "Q241",
+    "method": "iso3",
+    "iso2": "CU",
+    "iso3": "CUB"
+  },
+  "costa-rica": {
+    "qid": "Q800",
+    "method": "iso3",
+    "iso2": "CR",
+    "iso3": "CRI"
+  },
+  "slovakia": {
+    "qid": "Q214",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "slovenia": {
+    "qid": "Q215",
+    "method": "iso3",
+    "iso2": "SI",
+    "iso3": "SVN"
+  },
+  "luxembourg": {
+    "qid": "Q32",
+    "method": "iso3",
+    "iso2": "LU",
+    "iso3": "LUX"
+  },
+  "cameroon": {
+    "qid": "Q1009",
+    "method": "iso3",
+    "iso2": "CM",
+    "iso3": "CMR"
+  },
+  "lebanon": {
+    "qid": "Q822",
+    "method": "iso3",
+    "iso2": "LB",
+    "iso3": "LBN"
+  },
+  "monaco": {
+    "qid": "Q235",
+    "method": "iso3",
+    "iso2": "MC",
+    "iso3": "MCO"
+  },
+  "bosnia-herzegovina": {
+    "qid": "Q225",
+    "method": "iso3",
+    "iso2": "BA",
+    "iso3": "BIH"
+  },
+  "montenegro": {
+    "qid": "Q236",
+    "method": "iso3",
+    "iso2": "ME",
+    "iso3": "MNE"
+  },
+  "malta": {
+    "qid": "Q233",
+    "method": "iso3",
+    "iso2": "MT",
+    "iso3": "MLT"
+  },
+  "syria": {
+    "qid": "Q858",
+    "method": "iso3",
+    "iso2": "SY",
+    "iso3": "SYR"
+  },
+  "oman": {
+    "qid": "Q842",
+    "method": "iso3",
+    "iso2": "OM",
+    "iso3": "OMN"
+  },
+  "nepal": {
+    "qid": "Q837",
+    "method": "iso3",
+    "iso2": "NP",
+    "iso3": "NPL"
+  },
+  "angola": {
+    "qid": "Q916",
+    "method": "iso3",
+    "iso2": "AO",
+    "iso3": "AGO"
+  },
+  "paraguay": {
+    "qid": "Q733",
+    "method": "iso3",
+    "iso2": "PY",
+    "iso3": "PRY"
+  },
+  "latvia": {
+    "qid": "Q211",
+    "method": "iso3",
+    "iso2": "LV",
+    "iso3": "LVA"
+  },
+  "jamaica": {
+    "qid": "Q766",
+    "method": "iso3",
+    "iso2": "JM",
+    "iso3": "JAM"
+  },
+  "afghanistan": {
+    "qid": "Q889",
+    "method": "iso3",
+    "iso2": "AF",
+    "iso3": "AFG"
+  },
+  "fiji": {
+    "qid": "Q712",
+    "method": "iso3",
+    "iso2": "FJ",
+    "iso3": "FJI"
+  },
+  "armenia": {
+    "qid": "Q399",
+    "method": "iso3",
+    "iso2": "AM",
+    "iso3": "ARM"
+  },
+  "zimbabwe": {
+    "qid": "Q954",
+    "method": "iso3",
+    "iso2": "ZW",
+    "iso3": "ZWE"
+  },
+  "estonia": {
+    "qid": "Q191",
+    "method": "iso3",
+    "iso2": "EE",
+    "iso3": "EST"
+  },
+  "senegal": {
+    "qid": "Q1041",
+    "method": "iso3",
+    "iso2": "SN",
+    "iso3": "SEN"
+  },
+  "iceland": {
+    "qid": "Q189",
+    "method": "iso3",
+    "iso2": "IS",
+    "iso3": "ISL"
+  },
+  "cote-divoire": {
+    "qid": "Q1008",
+    "method": "iso3",
+    "iso2": "CI",
+    "iso3": "CIV"
+  },
+  "mauritius": {
+    "qid": "Q1027",
+    "method": "iso3",
+    "iso2": "MU",
+    "iso3": "MUS"
+  },
+  "cayman-islands": {
+    "qid": "Q5785",
+    "method": "iso3",
+    "iso2": "KY",
+    "iso3": "CYM"
+  },
+  "rwanda": {
+    "qid": "Q1037",
+    "method": "iso3",
+    "iso2": "RW",
+    "iso3": "RWA"
+  },
+  "mozambique": {
+    "qid": "Q1029",
+    "method": "iso3",
+    "iso2": "MZ",
+    "iso3": "MOZ"
+  },
+  "guatemala": {
+    "qid": "Q774",
+    "method": "iso3",
+    "iso2": "GT",
+    "iso3": "GTM"
+  },
+  "albania": {
+    "qid": "Q222",
+    "method": "iso3",
+    "iso2": "AL",
+    "iso3": "ALB"
+  },
+  "bahamas": {
+    "qid": "Q778",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "honduras": {
+    "qid": "Q783",
+    "method": "iso3",
+    "iso2": "HN",
+    "iso3": "HND"
+  },
+  "uganda": {
+    "qid": "Q1036",
+    "method": "iso3",
+    "iso2": "UG",
+    "iso3": "UGA"
+  },
+  "yemen": {
+    "qid": "Q805",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "north-macedonia": {
+    "qid": "Q221",
+    "method": "iso3",
+    "iso2": "MK",
+    "iso3": "MKD"
+  },
+  "barbados": {
+    "qid": "Q244",
+    "method": "iso3",
+    "iso2": "BB",
+    "iso3": "BRB"
+  },
+  "turkmenistan": {
+    "qid": "Q874",
+    "method": "iso3",
+    "iso2": "TM",
+    "iso3": "TKM"
+  },
+  "gibraltar": {
+    "qid": "Q1410",
+    "method": "iso3",
+    "iso2": "GI",
+    "iso3": "GIB"
+  },
+  "zambia": {
+    "qid": "Q953",
+    "method": "iso3",
+    "iso2": "ZM",
+    "iso3": "ZMB"
+  },
+  "seychelles": {
+    "qid": "Q1042",
+    "method": "iso3",
+    "iso2": "SC",
+    "iso3": "SYC"
+  },
+  "anguilla": {
+    "qid": "Q25228",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "turks-caicos-islands": {
+    "qid": "Q18221",
+    "method": "seed",
+    "iso2": null,
+    "iso3": null
+  },
+  "laos": {
+    "qid": "Q819",
+    "method": "iso3",
+    "iso2": "LA",
+    "iso3": "LAO"
+  },
+  "madagascar": {
+    "qid": "Q1019",
+    "method": "iso3",
+    "iso2": "MG",
+    "iso3": "MDG"
+  },
+  "tahiti": {
+    "qid": "Q30971",
+    "method": "seed",
+    "iso2": null,
+    "iso3": null
+  },
+  "tajikistan": {
+    "qid": "Q863",
+    "method": "iso3",
+    "iso2": "TJ",
+    "iso3": "TJK"
+  },
+  "el-salvador": {
+    "qid": "Q792",
+    "method": "iso3",
+    "iso2": "SV",
+    "iso3": "SLV"
+  },
+  "san-marino": {
+    "qid": "Q238",
+    "method": "iso3",
+    "iso2": "SM",
+    "iso3": "SMR"
+  },
+  "moldova": {
+    "qid": "Q217",
+    "method": "iso3",
+    "iso2": "MD",
+    "iso3": "MDA"
+  },
+  "mali": {
+    "qid": "Q912",
+    "method": "iso3",
+    "iso2": "ML",
+    "iso3": "MLI"
+  },
+  "nicaragua": {
+    "qid": "Q811",
+    "method": "iso3",
+    "iso2": "NI",
+    "iso3": "NIC"
+  },
+  "bhutan": {
+    "qid": "Q917",
+    "method": "iso3",
+    "iso2": "BT",
+    "iso3": "BTN"
+  },
+  "malawi": {
+    "qid": "Q1020",
+    "method": "iso3",
+    "iso2": "MW",
+    "iso3": "MWI"
+  },
+  "saint-barthelemy": {
+    "qid": "Q25362",
+    "method": "seed",
+    "iso2": null,
+    "iso3": null
+  },
+  "andorra": {
+    "qid": "Q228",
+    "method": "iso3",
+    "iso2": "AD",
+    "iso3": "AND"
+  },
+  "st-kitts-nevis": {
+    "qid": "Q763",
+    "method": "iso3",
+    "iso2": "KN",
+    "iso3": "KNA"
+  },
+  "libya": {
+    "qid": "Q1016",
+    "method": "iso3",
+    "iso2": "LY",
+    "iso3": "LBY"
+  },
+  "sint-eustatius": {
+    "qid": "Q26180",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "saba": {
+    "qid": "Q25528",
+    "method": "seed",
+    "iso2": null,
+    "iso3": null
+  },
+  "vatican-city": {
+    "qid": "Q237",
+    "method": "seed",
+    "iso2": null,
+    "iso3": null
+  },
+  "trinidad-tobago": {
+    "qid": "Q754",
+    "method": "iso3",
+    "iso2": "TT",
+    "iso3": "TTO"
+  },
+  "antigua-barbuda": {
+    "qid": "Q781",
+    "method": "iso3",
+    "iso2": "AG",
+    "iso3": "ATG"
+  },
+  "saint-lucia": {
+    "qid": "Q760",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "gabon": {
+    "qid": "Q1000",
+    "method": "iso3",
+    "iso2": "GA",
+    "iso3": "GAB"
+  },
+  "kosovo": {
+    "qid": "Q1246",
+    "method": "iso2",
+    "iso2": "XK",
+    "iso3": "XKX"
+  },
+  "congo": {
+    "qid": "Q971",
+    "method": "seed",
+    "iso2": null,
+    "iso3": null
+  },
+  "djibouti": {
+    "qid": "Q977",
+    "method": "iso3",
+    "iso2": "DJ",
+    "iso3": "DJI"
+  },
+  "kyrgyzstan": {
+    "qid": "Q813",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "brunei": {
+    "qid": "Q921",
+    "method": "iso3",
+    "iso2": "BN",
+    "iso3": "BRN"
+  },
+  "somalia": {
+    "qid": "Q1045",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "burkina-faso": {
+    "qid": "Q965",
+    "method": "iso3",
+    "iso2": "BF",
+    "iso3": "BFA"
+  },
+  "sint-maarten": {
+    "qid": "Q26273",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "faroe-islands": {
+    "qid": "Q4628",
+    "method": "iso3",
+    "iso2": "FO",
+    "iso3": "FRO"
+  },
+  "togo": {
+    "qid": "Q945",
+    "method": "iso3",
+    "iso2": "TG",
+    "iso3": "TGO"
+  },
+  "haiti": {
+    "qid": "Q790",
+    "method": "iso3",
+    "iso2": "HT",
+    "iso3": "HTI"
+  },
+  "botswana": {
+    "qid": "Q963",
+    "method": "iso3",
+    "iso2": "BW",
+    "iso3": "BWA"
+  },
+  "papua-new-guinea": {
+    "qid": "Q691",
+    "method": "iso3",
+    "iso2": "PG",
+    "iso3": "PNG"
+  },
+  "guyana": {
+    "qid": "Q734",
+    "method": "iso3",
+    "iso2": "GY",
+    "iso3": "GUY"
+  },
+  "st-vincent-the-grenadines": {
+    "qid": "Q757",
+    "method": "iso3",
+    "iso2": "VC",
+    "iso3": "VCT"
+  },
+  "grenada": {
+    "qid": "Q769",
+    "method": "iso3",
+    "iso2": "GD",
+    "iso3": "GRD"
+  },
+  "british-virgin-islands": {
+    "qid": "Q25305",
+    "method": "iso3",
+    "iso2": "VG",
+    "iso3": "VGB"
+  },
+  "mongolia": {
+    "qid": "Q711",
+    "method": "iso3",
+    "iso2": "MN",
+    "iso3": "MNG"
+  },
+  "guinea": {
+    "qid": "Q1006",
+    "method": "iso3",
+    "iso2": "GN",
+    "iso3": "GIN"
+  },
+  "sierra-leone": {
+    "qid": "Q1044",
+    "method": "iso3",
+    "iso2": "SL",
+    "iso3": "SLE"
+  },
+  "namibia": {
+    "qid": "Q1030",
+    "method": "iso3",
+    "iso2": "NA",
+    "iso3": "NAM"
+  },
+  "liberia": {
+    "qid": "Q1014",
+    "method": "iso3",
+    "iso2": "LR",
+    "iso3": "LBR"
+  },
+  "samoa": {
+    "qid": "Q683",
+    "method": "iso3",
+    "iso2": "WS",
+    "iso3": "WSM"
+  },
+  "niger": {
+    "qid": "Q1032",
+    "method": "iso3",
+    "iso2": "NE",
+    "iso3": "NER"
+  },
+  "benin": {
+    "qid": "Q962",
+    "method": "iso3",
+    "iso2": "BJ",
+    "iso3": "BEN"
+  },
+  "palestine": {
+    "qid": "Q219060",
+    "method": "iso3",
+    "iso2": "PS",
+    "iso3": "PSE"
+  },
+  "us-virgin-islands": {
+    "qid": "Q11703",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "burundi": {
+    "qid": "Q967",
+    "method": "iso3",
+    "iso2": "BI",
+    "iso3": "BDI"
+  },
+  "curacao": {
+    "qid": "Q25279",
+    "method": "iso3",
+    "iso2": "CW",
+    "iso3": "CUW"
+  },
+  "mauritania": {
+    "qid": "Q1025",
+    "method": "iso3",
+    "iso2": "MR",
+    "iso3": "MRT"
+  },
+  "new-caledonia": {
+    "qid": "Q33788",
+    "method": "iso3",
+    "iso2": "NC",
+    "iso3": "NCL"
+  },
+  "french-guiana": {
+    "qid": "Q3769",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "sao-tome-and-principe": {
+    "qid": "Q1039",
+    "method": "iso3",
+    "iso2": "ST",
+    "iso3": "STP"
+  },
+  "guadeloupe": {
+    "qid": "Q17012",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "martinique": {
+    "qid": "Q17054",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "chad": {
+    "qid": "Q657",
+    "method": "iso3",
+    "iso2": "TD",
+    "iso3": "TCD"
+  },
+  "central-african-republic": {
+    "qid": "Q929",
+    "method": "iso3",
+    "iso2": "CF",
+    "iso3": "CAF"
+  },
+  "equatorial-guinea": {
+    "qid": "Q983",
+    "method": "iso3",
+    "iso2": "GQ",
+    "iso3": "GNQ"
+  },
+  "falkland-islands": {
+    "qid": "Q9648",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "western-sahara": {
+    "qid": "Q6250",
+    "method": "seed",
+    "iso2": null,
+    "iso3": null
+  },
+  "bermuda": {
+    "qid": "Q23635",
+    "method": "iso3",
+    "iso2": "BM",
+    "iso3": "BMU"
+  },
+  "eritrea": {
+    "qid": "Q986",
+    "method": "iso3",
+    "iso2": "ER",
+    "iso3": "ERI"
+  },
+  "cape-verde": {
+    "qid": "Q1011",
+    "method": "iso3",
+    "iso2": "CV",
+    "iso3": "CPV"
+  },
+  "gambia": {
+    "qid": "Q1005",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "reunion": {
+    "qid": "Q17070",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "guernsey": {
+    "qid": "Q25230",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "northern-mariana-islands": {
+    "qid": "Q16644",
+    "method": "iso3",
+    "iso2": "MP",
+    "iso3": "MNP"
+  },
+  "greenland": {
+    "qid": "Q223",
+    "method": "iso3",
+    "iso2": "GL",
+    "iso3": "GRL"
+  },
+  "marshall-islands": {
+    "qid": "Q709",
+    "method": "iso3",
+    "iso2": "MH",
+    "iso3": "MHL"
+  },
+  "wallis-and-futuna": {
+    "qid": "Q35555",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "lesotho": {
+    "qid": "Q1013",
+    "method": "iso3",
+    "iso2": "LS",
+    "iso3": "LSO"
+  },
+  "south-sudan": {
+    "qid": "Q958",
+    "method": "iso3",
+    "iso2": "SS",
+    "iso3": "SSD"
+  },
+  "guinea-bissau": {
+    "qid": "Q1007",
+    "method": "iso3",
+    "iso2": "GW",
+    "iso3": "GNB"
+  },
+  "transnistria": {
+    "qid": "Q907112",
+    "method": "seed",
+    "iso2": null,
+    "iso3": null
+  },
+  "eswatini": {
+    "qid": "Q1050",
+    "method": "iso3",
+    "iso2": "SZ",
+    "iso3": "SWZ"
+  },
+  "east-timor": {
+    "qid": "Q574",
+    "method": "iso3",
+    "iso2": "TL",
+    "iso3": "TLS"
+  },
+  "suriname": {
+    "qid": "Q730",
+    "method": "iso3",
+    "iso2": "SR",
+    "iso3": "SUR"
+  },
+  "belize": {
+    "qid": "Q242",
+    "method": "iso3",
+    "iso2": "BZ",
+    "iso3": "BLZ"
+  },
+  "maldives": {
+    "qid": "Q826",
+    "method": "iso3",
+    "iso2": "MV",
+    "iso3": "MDV"
+  },
+  "guam": {
+    "qid": "Q16635",
+    "method": "iso3",
+    "iso2": "GU",
+    "iso3": "GUM"
+  },
+  "comoros": {
+    "qid": "Q970",
+    "method": "iso3",
+    "iso2": "KM",
+    "iso3": "COM"
+  },
+  "isle-of-man": {
+    "qid": "Q9676",
+    "method": "iso3",
+    "iso2": "IM",
+    "iso3": "IMN"
+  },
+  "vanuatu": {
+    "qid": "Q686",
+    "method": "iso3",
+    "iso2": "VU",
+    "iso3": "VUT"
+  },
+  "jersey": {
+    "qid": "Q785",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "solomon-islands": {
+    "qid": "Q685",
+    "method": "iso3",
+    "iso2": "SB",
+    "iso3": "SLB"
+  },
+  "tonga": {
+    "qid": "Q678",
+    "method": "iso3",
+    "iso2": "TO",
+    "iso3": "TON"
+  },
+  "kiribati": {
+    "qid": "Q710",
+    "method": "iso3",
+    "iso2": "KI",
+    "iso3": "KIR"
+  },
+  "abkhazia": {
+    "qid": "Q23334",
+    "method": "seed",
+    "iso2": null,
+    "iso3": null
+  },
+  "liechtenstein": {
+    "qid": "Q347",
+    "method": "iso3",
+    "iso2": "LI",
+    "iso3": "LIE"
+  },
+  "dominica": {
+    "qid": "Q784",
+    "method": "iso3",
+    "iso2": "DM",
+    "iso3": "DMA"
+  },
+  "aruba": {
+    "qid": "Q21203",
+    "method": "iso3",
+    "iso2": "AW",
+    "iso3": "ABW"
+  },
+  "american-samoa": {
+    "qid": "Q16641",
+    "method": "iso3",
+    "iso2": "AS",
+    "iso3": "ASM"
+  },
+  "bonaire": {
+    "qid": "Q25396",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "palau": {
+    "qid": "Q695",
+    "method": "iso3",
+    "iso2": "PW",
+    "iso3": "PLW"
+  },
+  "nauru": {
+    "qid": "Q697",
+    "method": "iso3",
+    "iso2": "NR",
+    "iso3": "NRU"
+  },
+  "saint-pierre-and-miquelon": {
+    "qid": "Q34617",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "tuvalu": {
+    "qid": "Q672",
+    "method": "iso3",
+    "iso2": "TV",
+    "iso3": "TUV"
+  },
+  "saint-helena-ascension-and-tristan-da-cunha": {
+    "qid": "Q192184",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "montserrat": {
+    "qid": "Q13353",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "niue": {
+    "qid": "Q34020",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "mayotte": {
+    "qid": "Q17063",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "northern-cyprus": {
+    "qid": "Q23681",
+    "method": "seed",
+    "iso2": null,
+    "iso3": null
+  },
+  "federated-states-of-micronesia": {
+    "qid": "Q702",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "south-ossetia": {
+    "qid": "Q23427",
+    "method": "seed",
+    "iso2": null,
+    "iso3": null
+  },
+  "saint-martin": {
+    "qid": "Q126125",
+    "method": "seed",
+    "iso2": null,
+    "iso3": null
+  },
+  "cook-islands": {
+    "qid": "Q26988",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "tokelau": {
+    "qid": "Q36823",
+    "method": "search",
+    "iso2": null,
+    "iso3": null
+  },
+  "united-kingdom": {
+    "qid": "Q145",
+    "method": "iso3",
+    "iso2": "GB",
+    "iso3": "GBR"
+  }
+}

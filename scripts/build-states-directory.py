@@ -11,14 +11,23 @@ import sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 WB = sys.argv[1] if len(sys.argv) > 1 else str(ROOT.parent / "MetroAreas.xlsx")
-metros = json.load(open("/tmp/metros.json"))
+
+def _load(name):
+    # Prefer the committed public/data output (the Windows workbook-sync flow);
+    # fall back to the /tmp staging used by the sandbox pipeline.
+    for p in (ROOT / "public" / "data" / name, Path("/tmp") / name):
+        if p.exists():
+            return json.load(open(p, encoding="utf-8"))
+    raise FileNotFoundError(f"{name} not found in public/data or /tmp")
+
+metros = _load("metros.json")
 mrows = metros if isinstance(metros, list) else metros.get("metros", metros)
 # (country, metroName) -> (slug, score)
 metro_cn = {}
 for m in mrows:
     metro_cn[(m.get("country","").strip(), m.get("name","").strip())] = (m["slug"], m.get("score") or 0.0)
 
-states = json.load(open("/tmp/states.json"))
+states = _load("states.json")
 # (country, stateName) -> slug   (country = immediate parent in states.json)
 state_slug = {}
 meta = {}
@@ -86,10 +95,10 @@ for slug,s in meta.items():
         "pop":s.get("pop"),"metroCount":s.get("metroCount") or 0,
         "score":sc["score"],"weighted":sc["weighted"]})
 
-json.dump(scores, open(str(ROOT / "public/data/state-metro-scores.json"),"w"), indent=2, sort_keys=True)
+json.dump(scores, open(str(ROOT / "public/data/state-metro-scores.json"),"w",encoding="utf-8"), indent=2, sort_keys=True)
 directory.sort(key=lambda r:-(r["score"] or 0))
 for i,r in enumerate(directory,1): r["rank"]=i
-json.dump(directory, open(str(ROOT / "public/data/states-directory.json"),"w"), ensure_ascii=False, indent=0)
+json.dump(directory, open(str(ROOT / "public/data/states-directory.json"),"w",encoding="utf-8"), ensure_ascii=False, indent=0)
 print("states scored:",len(scores)," weighted:",sum(1 for v in scores.values() if v['weighted']))
 print("US check texas:",scores.get("texas"),"| florida:",scores.get("florida-united-states"),"| california:",scores.get("california"))
 print("unmatched metros (sheet name not in metros.json):",len(unmatched_metro))

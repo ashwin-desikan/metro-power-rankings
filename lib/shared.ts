@@ -65,6 +65,37 @@ export function formatPop(n: number): string {
   return n.toString();
 }
 
+// Dual-unit formatters. Readers think in one system or the other, so the site
+// always shows metric and imperial together. Plain inline conversions — no
+// data lookup, applied to values already on the page.
+export function fmtElevation(m: number): string {
+  return `${m.toLocaleString()} m (${Math.round(m * 3.28084).toLocaleString()} ft)`;
+}
+
+export function fmtKm(km: number): string {
+  return `${Math.round(km).toLocaleString()} km (${Math.round(km * 0.621371).toLocaleString()} mi)`;
+}
+
+// ISO 3166-1 alpha-2 -> flag emoji (regional indicator pair). Empty string for
+// codes that aren't two ASCII letters (e.g. UK home nations, disputed states).
+export function flagEmoji(iso2: string | null | undefined): string {
+  if (!iso2) return "";
+  const c = iso2.trim().toUpperCase();
+  if (!/^[A-Z]{2}$/.test(c)) return "";
+  return String.fromCodePoint(...[...c].map((ch) => 0x1f1e6 + ch.charCodeAt(0) - 65));
+}
+
+export function fmtArea(km2: number | null): string {
+  if (km2 == null) return "—";
+  const abbr = (n: number) =>
+    n >= 1_000_000
+      ? `${(n / 1_000_000).toFixed(1)}M`
+      : n >= 1_000
+        ? `${(n / 1_000).toFixed(0)}k`
+        : `${Math.round(n)}`;
+  return `${abbr(km2)} km² (${abbr(km2 * 0.386102)} sq mi)`;
+}
+
 export function formatMarketCap(n: number): string {
   if (n >= 1e12) return "$" + (n / 1e12).toFixed(1) + "T";
   if (n >= 1e9) return "$" + (n / 1e9).toFixed(0) + "B";

@@ -6,6 +6,7 @@ import {
   getChildrenOf,
   getCountry,
   getCountryIndicators,
+  getCountryFacts,
   getIndicatorRank,
   getMetrosForCountry,
   isTop5pct,
@@ -13,6 +14,8 @@ import {
 } from "@/lib/countries";
 import { getStatesForCountry } from "@/lib/states";
 import CountryMap from "./CountryMap";
+import Collapsible from "./Collapsible";
+import CountryFactsSection from "./CountryFactsSection";
 import NationalTeamsSection, { countryHasNationalTeams } from "./NationalTeamsSection";
 import LeagueHubsSection from "./LeagueHubsSection";
 import HubNav from "@/app/teams/HubNav";
@@ -32,7 +35,8 @@ import BillionairesSection from "./BillionairesSection";
 import { getBillionaires, billionairesForCountry } from "@/lib/billionaires";
 import { countryHasOrgs } from "@/lib/orgs";
 import { computeTier, tierAnchor } from "@/lib/tiers";
-import { formatPop, regionColors } from "@/lib/shared";
+import { formatPop, regionColors, fmtArea } from "@/lib/shared";
+import { flagUrl, flagSrcSet } from "@/lib/flags";
 import {
   AUTHOR,
   BASE_URL,
@@ -128,13 +132,6 @@ function groupStatesByType<S extends { type: string; metroCount: number; name: s
   return groups;
 }
 
-function fmtArea(n: number | null): string {
-  if (n == null) return "—";
-  if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M km²`;
-  if (n >= 1_000) return `${(n / 1_000).toFixed(0)}k km²`;
-  return `${n} km²`;
-}
-
 function fmtPercent(n: number | null): string {
   if (n == null) return "—";
   return `${(n * 100).toFixed(0)}%`;
@@ -224,6 +221,7 @@ export default async function CountryDetailPage({ params }: Props) {
 
   const metros = getMetrosForCountry(slug);
   const indicators = getCountryIndicators(slug);
+  const facts = getCountryFacts(slug);
   const metroSlugByName = new Map(metros.map((m) => [m.name, m.slug] as const));
   const children = getChildrenOf(country.name);
   // Championship history for this country: club / domestic titles join by the
@@ -270,6 +268,7 @@ export default async function CountryDetailPage({ params }: Props) {
     name: country.name,
     description: `${country.name}: tracked metropolitan areas, population, and composite score.`,
     url: `${BASE_URL}/countries/${country.slug}`,
+    ...(facts?.qid ? { sameAs: [`https://www.wikidata.org/entity/${facts.qid}`] } : {}),
     isPartOf: { "@type": "WebSite", name: SITE_NAME, url: BASE_URL, publisher: PUBLISHER },
     author: AUTHOR,
   };
@@ -300,7 +299,21 @@ export default async function CountryDetailPage({ params }: Props) {
 
           <header className="mb-10 border-b border-[var(--border)] pb-8">
             <div className="flex items-baseline gap-3 mb-3">
-              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">{country.name}</h1>
+              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight flex items-center gap-3">
+                {(() => {
+                  const fu = flagUrl(country.slug);
+                  return fu ? (
+                    <img
+                      src={fu}
+                      srcSet={flagSrcSet(country.slug) ?? undefined}
+                      alt=""
+                      aria-hidden
+                      className="h-[0.85em] w-auto rounded-sm ring-1 ring-white/10 shrink-0"
+                    />
+                  ) : null;
+                })()}
+                <span>{country.name}</span>
+              </h1>
               {country.disputed ? (
                 <span className="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded italic"
                       style={{ color: "var(--text-dim)", border: "1px solid var(--border)", fontFamily: "'JetBrains Mono', monospace" }}
@@ -379,6 +392,7 @@ export default async function CountryDetailPage({ params }: Props) {
 
           {(() => {
             const navItems = [
+              ...(facts ? [{ label: "At a glance", href: "#at-a-glance" }] : []),
               ...(indicators ? [{ label: "Economy", href: "#economy" }] : []),
               ...(countryHasNationalTeams(country.name) ? [{ label: "National Teams", href: "#national-teams" }] : []),
               ...(countryHasOrgs(slug) ? [{ label: "Alliances & Orgs", href: "#orgs" }] : []),
@@ -393,12 +407,14 @@ export default async function CountryDetailPage({ params }: Props) {
             return navItems.length > 1 ? <HubNav items={navItems} /> : null;
           })()}
 
+          <CountryFactsSection facts={facts} />
+
           {indicators ? (
-            <section className="mb-12" id="economy">
-              <div className="flex items-baseline gap-3 mb-3">
-                <h2 className="text-xl font-bold">Economy and development</h2>
-                {indicators.incomeLevel ? <IncomeBadge level={indicators.incomeLevel} /> : null}
-              </div>
+            <Collapsible
+              id="economy"
+              title="Economy and development"
+              right={indicators.incomeLevel ? <IncomeBadge level={indicators.incomeLevel} /> : null}
+            >
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
                 {ECON_INDICATORS.map(({ key, label, fmt }) => {
                   const iv = indicators.indicators[key];
@@ -428,7 +444,7 @@ export default async function CountryDetailPage({ params }: Props) {
                 </a>{" "}
                 (UNDP, UN, V-Dem; CC BY 4.0). Each figure is the most recent year available.
               </p>
-            </section>
+            </Collapsible>
           ) : null}
 
           <OrgsSection countrySlug={slug} />
@@ -439,14 +455,15 @@ export default async function CountryDetailPage({ params }: Props) {
           <ConflictsSection wars={conflictWars} />
           <BillionairesSection list={billionaires} />
 
-          <NationalTeamsSection countryName={country.name} />
-
-          {champTitles.length > 0 ? (
-            <section className="mb-12" id="championships">
-              <h2 className="text-xl font-bold mb-2">National Teams Champions</h2>
-              <p className="text-sm text-[var(--text-muted)] mb-4">
-                Every major championship won by {country.name}&apos;s national teams, newest first. {champTitles.length} in total.
-              </p>
+          {(countryHasNationalTeams(country.name) || champTitles.length > 0) ? (
+            <Collapsible id="national-teams" title="National Teams">
+              <NationalTeamsSection countryName={country.name} bare />
+              {champTitles.length > 0 ? (
+                <div className="mt-8">
+                  <h3 className="text-lg font-bold mb-2">National Teams Champions</h3>
+                  <p className="text-sm text-[var(--text-muted)] mb-4">
+                    Every major championship won by {country.name}&apos;s national teams, newest first. {champTitles.length} in total.
+                  </p>
               <div className="border rounded-lg overflow-hidden" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
                 {/* Mobile: one card per title, same data as the desktop table */}
                 <div className="sm:hidden divide-y divide-[var(--border)] max-h-[32rem] overflow-y-auto">
@@ -505,14 +522,15 @@ export default async function CountryDetailPage({ params }: Props) {
                   </table>
                 </div>
               </div>
-            </section>
+                </div>
+              ) : null}
+            </Collapsible>
           ) : null}
 
           <LeagueHubsSection countrySlug={slug} countryName={country.name} />
 
           {children.length > 0 ? (
-            <section className="mb-12" id="constituents">
-              <h2 className="text-xl font-bold mb-3">Constituents and territories</h2>
+            <Collapsible id="constituents" title="Constituents and territories">
               <p className="text-sm text-[var(--text-muted)] mb-4">{children.length} entries listed under {country.name}. Click any to see its own metros.</p>
               <div className="flex flex-wrap gap-2">
                 {children.map((c) => (
@@ -524,12 +542,11 @@ export default async function CountryDetailPage({ params }: Props) {
                   </Link>
                 ))}
               </div>
-            </section>
+            </Collapsible>
           ) : null}
 
           {stateGroups.length > 0 ? (
-            <section className="mb-12" id="subdivisions">
-              <h2 className="text-xl font-bold mb-3">{stateSectionTitle}</h2>
+            <Collapsible id="subdivisions" title={stateSectionTitle}>
               {slug === "united-states" ? (
                 <Link href="/us-political-leadership" className="inline-block mb-3 text-sm font-medium text-[var(--accent)] hover:underline">
                   United States political leadership: president, cabinet, governors &amp; Congress →
@@ -584,7 +601,7 @@ export default async function CountryDetailPage({ params }: Props) {
                   </div>
                 </div>
               ))}
-            </section>
+            </Collapsible>
           ) : null}
 
           {metros.length > 0 ? (
@@ -593,10 +610,10 @@ export default async function CountryDetailPage({ params }: Props) {
             </div>
           ) : null}
 
-          <section className="mb-12" id="metros">
-            <h2 className="text-xl font-bold mb-3">
-              {metros.length > 0 ? `${metros.length} tracked ${metros.length === 1 ? "metro" : "metros"}` : "No metros tracked yet"}
-            </h2>
+          <Collapsible
+            id="metros"
+            title={metros.length > 0 ? `${metros.length} tracked ${metros.length === 1 ? "metro" : "metros"}` : "No metros tracked yet"}
+          >
             {metros.length > 0 ? (
               <div className="border rounded-lg overflow-hidden" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
                 {/* Mobile: stacked cards */}
@@ -733,7 +750,7 @@ export default async function CountryDetailPage({ params }: Props) {
                 <p className="text-xs text-[var(--text-dim)]">This page will populate automatically when metros are added.</p>
               </div>
             )}
-          </section>
+          </Collapsible>
 
 
           <footer className="mt-12 pt-8 border-t border-[var(--border)] text-sm text-[var(--text-muted)]">

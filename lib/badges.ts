@@ -1120,7 +1120,7 @@ export function formatContextValue(badgeSlug: string, value: number): string {
     return value.toFixed(1);
   }
   if (badgeSlug === "isolated-capital") {
-    return `${value.toFixed(0)} km`;
+    return `${value.toFixed(0)} km (${Math.round(value * 0.621371).toLocaleString()} mi)`;
   }
   if (badgeSlug === "frozen-conurbations") {
     return value.toFixed(0);

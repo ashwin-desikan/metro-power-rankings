@@ -502,7 +502,13 @@ const UK_HOME_NATIONS = ["England", "Scotland", "Wales", "Northern Ireland"];
 
 const NT_GRID = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5";
 
-export default function NationalTeamsSection({ countryName }: { countryName: string }) {
+export default function NationalTeamsSection({
+  countryName,
+  bare = false,
+}: {
+  countryName: string;
+  bare?: boolean;
+}) {
   const main = buildEntries(countryName);
   const homeBlocks =
     countryName === "United Kingdom"
@@ -514,9 +520,8 @@ export default function NationalTeamsSection({ countryName }: { countryName: str
 
   if (main.length === 0 && homeBlocks.length === 0) return null;
 
-  return (
-    <section className="mb-8" id="national-teams">
-      <h2 className="text-xl font-bold mb-3">National Teams</h2>
+  const body = (
+    <>
       <p className="text-sm text-[var(--text-muted)] mb-4">
         {countryName === "United Kingdom"
           ? "Great Britain competes as one at the Olympics and in a handful of other sports, while England, Scotland, Wales, and Northern Ireland field separate sides in football, rugby and more (Ireland's all-island teams cover Northern Ireland)."
@@ -536,6 +541,18 @@ export default function NationalTeamsSection({ countryName }: { countryName: str
           <div className={NT_GRID}>{b.nodes.map((e) => e.node)}</div>
         </div>
       ))}
+    </>
+  );
+
+  // Bare mode: rendered inside the page's merged "National Teams" collapsible,
+  // which owns the section wrapper, the heading and the National Teams
+  // Champions block so the two open and close together.
+  if (bare) return body;
+
+  return (
+    <section className="mb-8" id="national-teams">
+      <h2 className="text-xl font-bold mb-3">National Teams</h2>
+      {body}
     </section>
   );
 }

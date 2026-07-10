@@ -57,6 +57,12 @@ OVERRIDES = {
     "Macau": "MAC", "Taiwan": "TWN", "Kosovo": "XKX", "Vatican City": "VAT", "The Gambia": "GMB",
     "Bosnia-Herzegovina": "BIH", "St. Kitts & Nevis": "KNA", "Trinidad & Tobago": "TTO",
     "Antigua & Barbuda": "ATG", "St. Vincent & the Grenadines": "VCT", "São Tomé and Príncipe": "STP",
+    # Sovereigns whose site name doesn't match the World Bank spelling ("Egypt,
+    # Arab Rep.", "Slovak Republic", "Yemen, Rep.", ...). Explicit so they don't
+    # depend on the pycountry fallback, which isn't installed on the host.
+    "Egypt": "EGY", "Slovakia": "SVK", "Bahamas": "BHS", "Yemen": "YEM", "Gambia": "GMB",
+    "Congo": "COG", "Kyrgyzstan": "KGZ", "Saint Lucia": "LCA", "Somalia": "SOM",
+    "Federated States of Micronesia": "FSM",
 }
 
 
@@ -111,13 +117,18 @@ def fetch_indicator(code):
     out = {}
     page = 1
     while True:
-        url = f"{WB_API}/country/all/indicator/{code}?format=json&mrnev=1&per_page=300&page={page}"
+        # World Bank deprecated mrnev (now HTTP 400). Use mrv=20 (last 20
+        # values) and keep the most-recent NON-empty value per country here.
+        url = f"{WB_API}/country/all/indicator/{code}?format=json&mrv=20&per_page=20000&page={page}"
         data = fetch_json(url)
         meta, rows = data[0], (data[1] or [])
         for row in rows:
             iso3 = row.get("countryiso3code")
-            if iso3 and row.get("value") is not None:
-                out[iso3] = (row["value"], row["date"])
+            val = row.get("value")
+            if iso3 and val is not None:
+                prev = out.get(iso3)
+                if prev is None or str(row["date"]) > str(prev[1]):
+                    out[iso3] = (val, row["date"])
         if page >= meta["pages"]:
             break
         page += 1
@@ -194,13 +205,21 @@ def main():
     out, matched, unmatched = {}, 0, 0
     for c in countries:
         iso3 = resolve(c["name"])
-        if not iso3 or iso3 not in universe:
+        # Keep a country when the code resolves AND we have data for it: either a
+        # World Bank universe entry (income/capital + WB indicators) or, for
+        # WB-excluded places like Taiwan, at least one OWID series (HDI etc.).
+        u = universe.get(iso3) if iso3 else None
+        has_series = bool(iso3) and any(iso3 in series[key] for key in series)
+        if not iso3 or (u is None and not has_series):
             unmatched += 1
             continue
-        u = universe[iso3]
         block = {
-            "iso3": iso3, "iso2": u["iso2"], "incomeLevel": u["incomeLevel"],
-            "incomeLevelId": u["incomeLevelId"], "wbCapital": u["capitalCity"], "indicators": {},
+            "iso3": iso3,
+            "iso2": u["iso2"] if u else None,
+            "incomeLevel": u["incomeLevel"] if u else None,
+            "incomeLevelId": u["incomeLevelId"] if u else None,
+            "wbCapital": u["capitalCity"] if u else None,
+            "indicators": {},
         }
         for key in series:
             if iso3 in series[key]:

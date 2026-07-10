@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { formatPop } from '@/lib/shared';
+import { formatPop, fmtKm } from '@/lib/shared';
 import { tierAnchor, computeTier } from '@/lib/tiers';
 import MetroMap from '@/app/MetroMap';
 
@@ -137,7 +137,7 @@ function ConurbationRowView({
               </span>
             ))}
             <span className="text-[var(--text-dim)]">
-              {' '}({row.cluster.size} metros, {row.cluster.diameterKm.toFixed(0)} km, {formatPop(row.cluster.populationSum)} pop)
+              {' '}({row.cluster.size} metros, {fmtKm(row.cluster.diameterKm)}, {formatPop(row.cluster.populationSum)} pop)
             </span>
           </div>
         ) : row.cluster && row.cluster.otherNames.length > 0 ? (
@@ -276,7 +276,7 @@ function ConurbationCardView({
             </span>
           ))}
           <span className="text-[var(--text-dim)]">
-            {' '}({row.cluster.size} metros, {row.cluster.diameterKm.toFixed(0)} km, {formatPop(row.cluster.populationSum)} pop)
+            {' '}({row.cluster.size} metros, {fmtKm(row.cluster.diameterKm)}, {formatPop(row.cluster.populationSum)} pop)
           </span>
         </div>
       ) : row.cluster && row.cluster.otherNames.length > 0 ? (
