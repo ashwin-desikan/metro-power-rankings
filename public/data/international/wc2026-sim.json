@@ -1,7 +1,7 @@
 {
  "meta": {
   "tournament": "FIFA World Cup 2026",
-  "generated_at": "2026-07-10T06:30:09Z",
+  "generated_at": "2026-07-11T06:30:09Z",
   "sims": 40000,
   "model": "Blended Elo + market odds, Poisson goals, Monte Carlo",
   "blend_market_weight": 0.45,
@@ -13,9 +13,9 @@
   "odds_as_of": "2026-07-09",
   "starts_iso": "2026-06-11",
   "pre_tournament": false,
-  "results_as_of": "2026-07-10T06:30:04Z",
+  "results_as_of": "2026-07-11T06:30:04Z",
   "played_group": 72,
-  "played_knockout": 25
+  "played_knockout": 26
  },
  "groups": {
   "A": [
@@ -525,36 +525,36 @@
  },
  "deep_runs": [
   {
-   "slug": "argentina",
-   "name": "Argentina",
-   "group": "J",
-   "p_r16": 100.0,
-   "p_qf": 100.0,
-   "p_sf": 75.31,
-   "p_final": 50.8,
-   "p_title": 31.44,
-   "market_prob": 13.41
-  },
-  {
    "slug": "spain",
    "name": "Spain",
    "group": "H",
    "p_r16": 100.0,
    "p_qf": 100.0,
-   "p_sf": 75.36,
-   "p_final": 45.87,
-   "p_title": 24.32,
+   "p_sf": 97.28,
+   "p_final": 58.94,
+   "p_title": 31.11,
    "market_prob": 12.55
+  },
+  {
+   "slug": "argentina",
+   "name": "Argentina",
+   "group": "J",
+   "p_r16": 100.0,
+   "p_qf": 100.0,
+   "p_sf": 76.31,
+   "p_final": 51.38,
+   "p_title": 30.55,
+   "market_prob": 13.41
   },
   {
    "slug": "france",
    "name": "France",
    "group": "I",
-   "p_r16": 79.56,
-   "p_qf": 56.47,
-   "p_sf": 56.47,
-   "p_final": 30.73,
-   "p_title": 15.6,
+   "p_r16": 79.45,
+   "p_qf": 56.61,
+   "p_sf": 56.61,
+   "p_final": 27.73,
+   "p_title": 14.35,
    "market_prob": 21.51
   },
   {
@@ -562,10 +562,10 @@
    "name": "England",
    "group": "L",
    "p_r16": 100.0,
-   "p_qf": 92.79,
-   "p_sf": 56.51,
-   "p_final": 24.65,
-   "p_title": 12.19,
+   "p_qf": 93.09,
+   "p_sf": 56.4,
+   "p_final": 24.35,
+   "p_title": 11.34,
    "market_prob": 10.67
   },
   {
@@ -574,21 +574,10 @@
    "group": "I",
    "p_r16": 100.0,
    "p_qf": 100.0,
-   "p_sf": 41.42,
-   "p_final": 14.13,
-   "p_title": 5.48,
+   "p_sf": 41.61,
+   "p_final": 14.28,
+   "p_title": 5.26,
    "market_prob": 3.98
-  },
-  {
-   "slug": "belgium",
-   "name": "Belgium",
-   "group": "G",
-   "p_r16": 100.0,
-   "p_qf": 84.44,
-   "p_sf": 21.86,
-   "p_final": 7.73,
-   "p_title": 2.25,
-   "market_prob": 1.64
   },
   {
    "slug": "morocco",
@@ -596,20 +585,20 @@
    "group": "C",
    "p_r16": 100.0,
    "p_qf": 100.0,
-   "p_sf": 21.02,
-   "p_final": 6.83,
-   "p_title": 2.02,
+   "p_sf": 20.68,
+   "p_final": 5.55,
+   "p_title": 1.62,
    "market_prob": 1.91
   },
   {
    "slug": "switzerland",
    "name": "Switzerland",
    "group": "B",
-   "p_r16": 55.49,
-   "p_qf": 55.49,
-   "p_sf": 13.23,
-   "p_final": 5.18,
-   "p_title": 1.75,
+   "p_r16": 55.34,
+   "p_qf": 55.34,
+   "p_sf": 12.59,
+   "p_final": 4.96,
+   "p_title": 1.52,
    "market_prob": 1.44
   },
   {
@@ -617,28 +606,28 @@
    "name": "Colombia",
    "group": "K",
    "p_r16": 100.0,
-   "p_qf": 27.88,
-   "p_sf": 8.17,
-   "p_final": 3.74,
-   "p_title": 1.58,
+   "p_qf": 27.63,
+   "p_sf": 7.86,
+   "p_final": 3.57,
+   "p_title": 1.33,
    "market_prob": 2.24
   },
   {
    "slug": "paraguay",
    "name": "Paraguay",
    "group": "D",
-   "p_r16": 20.43,
-   "p_qf": 8.1,
-   "p_sf": 3.35,
-   "p_final": 0.77,
-   "p_title": 0.19,
+   "p_r16": 20.55,
+   "p_qf": 8.15,
+   "p_sf": 3.3,
+   "p_final": 0.65,
+   "p_title": 0.14,
    "market_prob": 0.33
   },
   {
    "slug": "mexico",
    "name": "Mexico",
    "group": "A",
-   "p_r16": 67.14,
+   "p_r16": 67.89,
    "p_qf": 0.0,
    "p_sf": 0.0,
    "p_final": 0.0,
@@ -726,7 +715,7 @@
    "slug": "united-states",
    "name": "United States",
    "group": "D",
-   "p_r16": 59.09,
+   "p_r16": 59.24,
    "p_qf": 0.0,
    "p_sf": 0.0,
    "p_final": 0.0,
@@ -765,6 +754,17 @@
    "p_final": 0.0,
    "p_title": 0.0,
    "market_prob": 0.03
+  },
+  {
+   "slug": "belgium",
+   "name": "Belgium",
+   "group": "G",
+   "p_r16": 100.0,
+   "p_qf": 84.45,
+   "p_sf": 0.0,
+   "p_final": 0.0,
+   "p_title": 0.0,
+   "market_prob": 1.64
   },
   {
    "slug": "egypt",
