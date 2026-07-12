@@ -77,10 +77,14 @@ jobs:
           set -e
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- public/data; then
+          # scripts/civic/city-qids.json is the mayors QID cache (refresh_mayors.py);
+          # committing it alongside public/data keeps this manual-fallback run and the
+          # mini's weekly run sharing one warm cache instead of cold-starting each time.
+          DATA_PATHS="public/data scripts/civic/city-qids.json"
+          if git diff --quiet -- $DATA_PATHS; then
             echo "No safe auto changes this run."
           else
-            git add public/data
+            git add $DATA_PATHS
             git commit -m "data: weekly refresh - officeholders, billionaires, valuations, World Power Rankings [vercel skip]"
             git push origin HEAD:main
           fi
