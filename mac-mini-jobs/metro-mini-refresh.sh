@@ -31,6 +31,12 @@ GIT_BRANCH="${GIT_BRANCH:-main}"
 PY="${PYTHON_BIN:-python3}"
 DRY_RUN="${DRY_RUN:-0}"
 STEP_TIMEOUT="${STEP_TIMEOUT:-300}"   # seconds; caps any single refresh step (e.g. a Wikidata outage)
+MAYORS_STEP_TIMEOUT="${MAYORS_STEP_TIMEOUT:-900}"  # mayors gets more room: cold-start QID
+                                                    # discovery (scripts/civic/city-qids.json) is
+                                                    # chunked and label-based, so it's slower than
+                                                    # the steady-state single-query hot path once
+                                                    # the cache is warm. Persists progress per chunk,
+                                                    # so a timeout here never loses prior work.
 
 note() { echo "[$(date '+%F %T')] $*"; }
 alert() { "$PY" "$DIR/notify.py" "CoN mini refresh" "$1" 1 || true; }
@@ -59,12 +65,14 @@ note "running self-tests"
 STEP_FAILS=""
 run_step() {  # run_step "label" cmd...
   local label="$1"; shift
-  note "step: $label (timeout ${STEP_TIMEOUT}s)"
-  # Run the step in the background; a watchdog kills it if it exceeds STEP_TIMEOUT.
+  local step_timeout="$STEP_TIMEOUT"
+  [ "$label" = "mayors" ] && step_timeout="$MAYORS_STEP_TIMEOUT"
+  note "step: $label (timeout ${step_timeout}s)"
+  # Run the step in the background; a watchdog kills it if it exceeds step_timeout.
   # macOS ships no `timeout` binary, so this is a portable pure-bash equivalent.
   "$@" &
   local pid=$!
-  ( sleep "$STEP_TIMEOUT"
+  ( sleep "$step_timeout"
     if kill -0 "$pid" 2>/dev/null; then
       kill -TERM "$pid" 2>/dev/null; sleep 3; kill -KILL "$pid" 2>/dev/null
     fi ) &
@@ -75,7 +83,7 @@ run_step() {  # run_step "label" cmd...
     local rc=$?
     kill "$watcher" 2>/dev/null; wait "$watcher" 2>/dev/null
     if [ "$rc" -ge 124 ] || [ "$rc" -eq 143 ] || [ "$rc" -eq 137 ]; then
-      note "  step TIMED OUT after ${STEP_TIMEOUT}s: $label"
+      note "  step TIMED OUT after ${step_timeout}s: $label"
     else
       note "  step FAILED (rc=$rc): $label"
     fi
@@ -93,16 +101,22 @@ run_step "valuations"           "$PY" scripts/build-valuations-data.py
 run_step "power ranking"        "$PY" scripts/build-power-ranking.py
 
 # --- commit + push ---------------------------------------------------------
-if git diff --quiet -- public/data; then
+# scripts/civic/city-qids.json is included alongside public/data: it's the
+# mayors QID cache (see refresh_mayors.py), stable but not static (self-heals
+# as new metros enter the top 100 or a chunk resolves late), and committing it
+# keeps the mini and the civic-data-refresh.yml Action fallback warm-started
+# instead of every run cold-starting QID discovery from an empty cache.
+DATA_PATHS="public/data scripts/civic/city-qids.json"
+if git diff --quiet -- $DATA_PATHS; then
   note "no data change this run; nothing to commit"
 else
   git config user.name  "metro-mini[bot]"
   git config user.email "metro-mini-bot@users.noreply.github.com"
-  git add public/data
+  git add $DATA_PATHS
   MSG="data: mini civic/leaders/billionaires refresh [vercel skip]"
   if [ "$DRY_RUN" = "1" ]; then
     note "DRY_RUN=1: would commit and push -> $MSG"
-    git reset -q -- public/data
+    git reset -q -- $DATA_PATHS
   else
     git commit -m "$MSG" || fail "git commit failed"
     git push "$GIT_REMOTE" "HEAD:$GIT_BRANCH" || fail "git push failed"
