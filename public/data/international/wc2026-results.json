@@ -1,6 +1,6 @@
 {
  "source": "API-Football (api-sports.io) league=1 season=2026",
- "as_of": "2026-07-11T06:30:04Z",
+ "as_of": "2026-07-12T06:30:02Z",
  "events": {
   "apisports-1489369": {
    "round": "Group",
@@ -882,6 +882,24 @@
    "b_slug": "belgium",
    "b_score": 1,
    "winner_slug": "spain",
+   "completed": true
+  },
+  "apisports-1581037": {
+   "round": "Quarterfinals",
+   "a_slug": "norway",
+   "a_score": 1,
+   "b_slug": "england",
+   "b_score": 2,
+   "winner_slug": "england",
+   "completed": true
+  },
+  "apisports-1582681": {
+   "round": "Quarterfinals",
+   "a_slug": "argentina",
+   "a_score": 3,
+   "b_slug": "switzerland",
+   "b_score": 1,
+   "winner_slug": "argentina",
    "completed": true
   }
  }
