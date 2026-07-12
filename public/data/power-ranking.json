@@ -21,7 +21,7 @@
     "commissioner_factor": 0.44,
     "judiciary": 0.09
   },
-  "asOf": "2026-07-05",
+  "asOf": "2026-07-12",
   "ranking": [
     {
       "name": "⚠️ Donald Trump",
@@ -264,7 +264,7 @@
       "jurisdiction": "UN",
       "metro": "New York",
       "metroSlug": "new-york",
-      "jscore": 11876.8,
+      "jscore": 11875.6,
       "weight": 0.02,
       "power": 237.5,
       "jurisdictionHref": "/orgs",
@@ -440,6 +440,19 @@
       "transition": ""
     },
     {
+      "name": "Gavin Newsom",
+      "role": "Governor, California",
+      "category": "Sub-national",
+      "jurisdiction": "California",
+      "metro": "Sacramento",
+      "metroSlug": "sacramento",
+      "jscore": 327.5,
+      "weight": 0.55,
+      "power": 180.1,
+      "jurisdictionHref": "/states/california",
+      "transition": "Term-limited; leaves office Jan 2027 (California gubernatorial election, 3 Nov 2026)"
+    },
+    {
       "name": "⚠️ Kim Jong-un",
       "role": "Sup. Leader, North Korea",
       "category": "National",
@@ -451,19 +464,6 @@
       "power": 180.0,
       "jurisdictionHref": "/countries/north-korea",
       "transition": ""
-    },
-    {
-      "name": "Gavin Newsom",
-      "role": "Governor, California",
-      "category": "Sub-national",
-      "jurisdiction": "California",
-      "metro": "Sacramento",
-      "metroSlug": "sacramento",
-      "jscore": 326.1,
-      "weight": 0.55,
-      "power": 179.4,
-      "jurisdictionHref": "/states/california",
-      "transition": "Term-limited; leaves office Jan 2027 (California gubernatorial election, 3 Nov 2026)"
     },
     {
       "name": "John Thune",
@@ -823,9 +823,9 @@
       "jurisdiction": "Texas",
       "metro": "Austin",
       "metroSlug": "austin",
-      "jscore": 211.4,
+      "jscore": 211.8,
       "weight": 0.55,
-      "power": 116.3,
+      "power": 116.5,
       "jurisdictionHref": "/states/texas",
       "transition": "Seeking a 4th term; Texas gubernatorial election, 3 Nov 2026"
     },
@@ -1044,9 +1044,9 @@
       "jurisdiction": "New York",
       "metro": "New York",
       "metroSlug": "new-york",
-      "jscore": 164.2,
+      "jscore": 164.4,
       "weight": 0.55,
-      "power": 90.3,
+      "power": 90.4,
       "jurisdictionHref": "/states/new-york",
       "transition": "Seeking re-election; New York gubernatorial election, 3 Nov 2026"
     },
@@ -1291,9 +1291,9 @@
       "jurisdiction": "Île-de-France",
       "metro": "Paris",
       "metroSlug": "paris",
-      "jscore": 137.9,
+      "jscore": 138.0,
       "weight": 0.55,
-      "power": 75.8,
+      "power": 75.9,
       "jurisdictionHref": "/states/ile-de-france",
       "transition": ""
     },
@@ -1304,9 +1304,9 @@
       "jurisdiction": "Zhejiang",
       "metro": "Hangzhou",
       "metroSlug": "hangzhou",
-      "jscore": 92.6,
+      "jscore": 92.8,
       "weight": 0.8,
-      "power": 74.1,
+      "power": 74.2,
       "jurisdictionHref": "/states/zhejiang",
       "transition": ""
     },
