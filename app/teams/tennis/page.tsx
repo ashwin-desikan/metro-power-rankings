@@ -205,12 +205,17 @@ export default function TennisHubPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {data.tournaments.map((t) => {
             const m = latestOf(t, "M"); const w = latestOf(t, "W");
-            const yr = Math.max(m?.year ?? 0, w?.year ?? 0);
             return (
               <div key={t} className="rounded-xl border p-4" style={card}>
-                <div className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">{TOUR_META[t]?.short ?? t} · {yr || ""}</div>
-                <div className="mt-1 text-sm"><span className="text-[var(--text-dim)] text-xs mr-1">M</span><Champ c={m} /></div>
-                <div className="mt-0.5 text-sm"><span className="text-[var(--text-dim)] text-xs mr-1">W</span><Champ c={w} /></div>
+                <div className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">{TOUR_META[t]?.short ?? t}</div>
+                {/* Each gender shows its own most-recent year rather than a
+                    combined Math.max header: the two finals don't always land
+                    on the same day (e.g. Wimbledon), so one gender's result
+                    can lag the other's by a few days while ESPN/ingest catches
+                    up. A shared year would misattribute the older champion to
+                    the newer year. */}
+                <div className="mt-1 text-sm"><span className="text-[var(--text-dim)] text-xs mr-1">M {m?.year ?? ""}</span><Champ c={m} /></div>
+                <div className="mt-0.5 text-sm"><span className="text-[var(--text-dim)] text-xs mr-1">W {w?.year ?? ""}</span><Champ c={w} /></div>
                 <div className="mt-1 text-xs text-[var(--text-muted)]"><MetroCell c={m ?? w} /></div>
               </div>
             );
