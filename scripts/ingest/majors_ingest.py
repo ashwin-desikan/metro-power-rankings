@@ -14,7 +14,7 @@ which is handy for testing the detection off-season.
     SUPABASE_WRITE_KEY=... python scripts/ingest/majors_ingest.py
     python scripts/ingest/majors_ingest.py          # dry run
 """
-import os, sys, json, urllib.request, urllib.parse, urllib.error
+import os, sys, json, datetime, urllib.request, urllib.parse, urllib.error
 
 SB_URL = (os.environ.get("SUPABASE_URL") or "https://nmprqkmymrdknffwnuur.supabase.co").rstrip("/")
 SB_READ = (os.environ.get("SUPABASE_ANON_KEY") or os.environ.get("NEXT_PUBLIC_SUPABASE_ANON_KEY")
@@ -26,6 +26,22 @@ GOLF_URL = "https://site.api.espn.com/apis/site/v2/sports/golf/pga/scoreboard"
 TENNIS_URL = {"atp": "https://site.api.espn.com/apis/site/v2/sports/tennis/atp/scoreboard",
               "wta": "https://site.api.espn.com/apis/site/v2/sports/tennis/wta/scoreboard"}
 UA = {"User-Agent": "Mozilla/5.0 (compatible; CitizenOfNowhere/1.0)", "Accept": "application/json"}
+
+# LOOKBACK_DAYS: without an explicit `dates=` range, ESPN's site.api scoreboard
+# endpoints default to a "current" window (effectively "today"/"this event").
+# A major that just finished can scroll out of that window before the NEXT
+# day's cron looks at it — e.g. the ATP tour moves on to its next event the
+# Monday after Wimbledon, so a same-day-ish miss then compounds into a
+# multi-day miss (observed: Wimbledon 2026 men's final went undetected for 3
+# straight daily runs). Widening the query to a rolling lookback keeps a
+# just-finished major visible to `detect_*()` for several days after it ends,
+# so a transient miss self-heals on the next run instead of persisting.
+LOOKBACK_DAYS = 14
+
+def _windowed(url):
+    end = datetime.date.today()
+    start = end - datetime.timedelta(days=LOOKBACK_DAYS)
+    return f"{url}?dates={start:%Y%m%d}-{end:%Y%m%d}"
 
 def get_json(url):
     req = urllib.request.Request(url, headers=UA)
@@ -81,7 +97,7 @@ def map_tennis(name):
 def detect_golf():
     out = []
     try:
-        root = get_json(GOLF_URL)
+        root = get_json(_windowed(GOLF_URL))
     except Exception as e:
         print(f"golf feed error: {e}", file=sys.stderr); return out
     for ev in root.get("events", []):
@@ -112,7 +128,7 @@ def detect_tennis():
     for tour, url in TENNIS_URL.items():
         gender = "M" if tour == "atp" else "W"
         try:
-            root = get_json(url)
+            root = get_json(_windowed(url))
         except Exception as e:
             print(f"tennis {tour} feed error: {e}", file=sys.stderr); continue
         for ev in root.get("events", []):
