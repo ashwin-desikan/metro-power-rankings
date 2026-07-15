@@ -1,6 +1,6 @@
 {
  "source": "API-Football (api-sports.io) league=1 season=2026",
- "as_of": "2026-07-12T06:30:02Z",
+ "as_of": "2026-07-15T06:30:03Z",
  "events": {
   "apisports-1489369": {
    "round": "Group",
@@ -900,6 +900,15 @@
    "b_slug": "switzerland",
    "b_score": 1,
    "winner_slug": "argentina",
+   "completed": true
+  },
+  "apisports-1585131": {
+   "round": "Semifinals",
+   "a_slug": "france",
+   "a_score": 0,
+   "b_slug": "spain",
+   "b_score": 2,
+   "winner_slug": "spain",
    "completed": true
   }
  }
