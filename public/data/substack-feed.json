@@ -1,6 +1,6 @@
 {
   "_comment": "Cached fallback snapshot for lib/substack.ts. The live RSS feed at https://citizenofnowhere.substack.com/feed is the source of truth at runtime; this file is used when fetch fails (e.g., sandbox egress blocked, Substack 5xx) so the home page can always render. Refresh by running scripts/refresh-substack-feed.ts or by editing manually after publishing a new post.",
-  "fetchedAt": "2026-07-17",
+  "fetchedAt": "2026-07-18",
   "posts": [
     {
       "title": "The Nowhere 100",
