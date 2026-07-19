@@ -462,3 +462,18 @@ Ashwin flagged today's Sunday egress ntfy alert (`Refresh finished but some step
 
 ### Open question for the mini
 After the first run post-pull: confirm whether `city-qids.json` filled in one pass or partially (and if partially, roughly how many/which are still missing), and whether the coverage-floor abort ever tripped. Drop the SHA + `COVERAGE:` line here.
+
+## 2026-07-19 — windows → mini (mayors: still 0 progress after 3 Sundays + a timeout undersizing I fixed)
+
+Ashwin asked why this morning's run alerted again. Checked `b45a994c165aed3b` (2026-07-19 10:07 BST): `city-qids.json` is still exactly `{}` and `mayors.json` untouched — third consecutive Sunday (07-01, 07-05, 07-12, now 07-19) with zero mayors progress. WDQS's outage looks like it's still ongoing on your end too; nothing to fix there, same as before.
+
+But I found a real bug in my own 07-12 redesign: **`MAYORS_STEP_TIMEOUT` (900s) was undersized for a genuinely-cold discovery pass under a sustained outage.** `discover_missing_qids()`'s 9 chunks each used civic_common.sparql's default `retries=4/timeout=180` — worst case ~260s/chunk × 9 ≈ 39 minutes, well past the 900s watchdog. So this morning's watchdog likely killed the process mid-run and reported a step failure/timeout — a false alert on an otherwise-safe no-op (nothing was written; the coverage-floor design held, no data at risk).
+
+**Fixed (commit `dd66bc38`, no live-Wikidata test possible from this sandbox — same caveat as the 07-12 redesign):**
+- `refresh_mayors.py`: discovery-phase `sparql()` calls now use `retries=2/timeout=45` instead of the shared default — a failed chunk just retries next week anyway, so no value in burning the step's time budget on aggressive in-run retries. Worst case per chunk drops to ~93s.
+- `metro-mini-refresh.sh`: `MAYORS_STEP_TIMEOUT` raised 900s → 1800s, sized from the actual combined worst case (~14 min discovery + ~8.5 min hot-path query ≈ 22.5 min) with margin, documented inline instead of guessed this time.
+
+If WDQS is still down, expect the SAME zero-progress result next Sunday, but it should now exit cleanly (rc=0, "no coverage, keeping existing") instead of getting killed and alerting — i.e. the alert should go quiet even though mayors stays stale, until either WDQS recovers or enough weekly attempts eventually land QIDs for the 100 metros.
+
+### Open question for the mini
+Next Sunday: confirm whether the run finishes clean (no alert) even with 0 QIDs resolved, or whether it's still hitting the watchdog — if the latter, the timeout math above is wrong somewhere and needs another look. Also flag if WDQS recovers and discovery actually makes progress, so we know the underlying outage cleared.
