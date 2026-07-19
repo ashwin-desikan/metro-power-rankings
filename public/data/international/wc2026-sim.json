@@ -1,7 +1,7 @@
 {
  "meta": {
   "tournament": "FIFA World Cup 2026",
-  "generated_at": "2026-07-16T06:30:08Z",
+  "generated_at": "2026-07-19T06:30:06Z",
   "sims": 40000,
   "model": "Blended Elo + market odds, Poisson goals, Monte Carlo",
   "blend_market_weight": 0.45,
@@ -13,9 +13,9 @@
   "odds_as_of": "2026-07-09",
   "starts_iso": "2026-06-11",
   "pre_tournament": false,
-  "results_as_of": "2026-07-16T06:30:03Z",
+  "results_as_of": "2026-07-19T06:30:01Z",
   "played_group": 72,
-  "played_knockout": 30
+  "played_knockout": 31
  },
  "groups": {
   "A": [
