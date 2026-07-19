@@ -6587,7 +6587,7 @@
     "name": "Leo KoGuan",
     "networth": 8672.481,
     "rank": 407,
-    "countryCode": "us",
+    "countryCode": null,
     "industries": [
       "Technology"
     ],
@@ -8527,7 +8527,7 @@
     "name": "Janice McNair & family",
     "networth": 7315.359,
     "rank": 527,
-    "countryCode": "us",
+    "countryCode": null,
     "industries": [
       "Sports"
     ],
@@ -30790,7 +30790,7 @@
     "name": "Yoon Dae-in",
     "networth": 2201.493,
     "rank": 1908,
-    "countryCode": "kr",
+    "countryCode": null,
     "industries": [
       "Healthcare"
     ],
@@ -43805,7 +43805,7 @@
     "name": "Wang Mingwang",
     "networth": 1440.853,
     "rank": 2716,
-    "countryCode": "cn",
+    "countryCode": null,
     "industries": [
       "Manufacturing"
     ],
@@ -45752,7 +45752,7 @@
     "name": "Zhong Huaijun",
     "networth": 1353.342,
     "rank": 2837,
-    "countryCode": "cn",
+    "countryCode": null,
     "industries": [
       "Food & Beverage"
     ],
@@ -46673,7 +46673,7 @@
     "name": "Lin Por-Shih",
     "networth": 1310.654,
     "rank": 2894,
-    "countryCode": "tw",
+    "countryCode": null,
     "industries": [
       "Manufacturing"
     ],
@@ -46705,7 +46705,7 @@
     "name": "Zhu Xingliang",
     "networth": 1310.384,
     "rank": 2896,
-    "countryCode": "cn",
+    "countryCode": null,
     "industries": [
       "Construction & Engineering"
     ],
@@ -46835,7 +46835,7 @@
     "name": "Li Hongjing",
     "networth": 1308.653,
     "rank": 2904,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Automotive"
     ],
@@ -47573,7 +47573,7 @@
     "name": "Michelle Xia",
     "networth": 1281.968,
     "rank": 2950,
-    "countryCode": "us",
+    "countryCode": null,
     "industries": [
       "Healthcare"
     ],
@@ -48441,7 +48441,7 @@
     "name": "Zhu Weisong",
     "networth": 1237.002,
     "rank": 3004,
-    "countryCode": "cn",
+    "countryCode": null,
     "industries": [
       "Media & Entertainment"
     ],
@@ -50450,7 +50450,7 @@
     "name": "Zhu Jiangming",
     "networth": 1160.098,
     "rank": 3130,
-    "countryCode": "cn",
+    "countryCode": null,
     "industries": [
       "Manufacturing"
     ],
@@ -50901,7 +50901,7 @@
     "name": "Wang Xinyang",
     "networth": 1144.946,
     "rank": 3158,
-    "countryCode": "cn",
+    "countryCode": null,
     "industries": [
       "Technology"
     ],
@@ -51158,7 +51158,7 @@
     "name": "Caspar Callerström",
     "networth": 1135.687,
     "rank": 3174,
-    "countryCode": null,
+    "countryCode": "se",
     "industries": [
       "Finance & Investments"
     ],
@@ -51335,7 +51335,7 @@
     "name": "Christian Sinding",
     "networth": 1128.532,
     "rank": 3185,
-    "countryCode": null,
+    "countryCode": "no",
     "industries": [
       "Finance & Investments"
     ],
@@ -51832,7 +51832,7 @@
     "name": "Nguyen Dang Quang",
     "networth": 1108.29,
     "rank": 3217,
-    "countryCode": "vn",
+    "countryCode": null,
     "industries": [
       "Food & Beverage"
     ],
@@ -51961,7 +51961,7 @@
     "name": "Hua Shen",
     "networth": 1103.307,
     "rank": 3225,
-    "countryCode": "us",
+    "countryCode": null,
     "industries": [
       "Technology"
     ],
@@ -52137,7 +52137,7 @@
     "name": "Shyam Sankar",
     "networth": 1099.266,
     "rank": 3236,
-    "countryCode": null,
+    "countryCode": "us",
     "industries": [
       "Technology"
     ],
@@ -52846,7 +52846,7 @@
     "name": "Luigi Cremonini & family",
     "networth": 1072.613,
     "rank": 3280,
-    "countryCode": null,
+    "countryCode": "it",
     "industries": [
       "Food & Beverage"
     ],
@@ -53121,7 +53121,7 @@
     "name": "Xu Zhihan",
     "networth": 1059.606,
     "rank": 3297,
-    "countryCode": "cn",
+    "countryCode": null,
     "industries": [
       "Technology"
     ],
@@ -53425,7 +53425,7 @@
     "name": "Maria Frias",
     "networth": 1039.95,
     "rank": 3316,
-    "countryCode": "br",
+    "countryCode": null,
     "industries": [
       "Media & Entertainment"
     ],
@@ -53441,7 +53441,7 @@
     "name": "Chen Xueli",
     "networth": 1039.89,
     "rank": 3317,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Healthcare"
     ],
@@ -53700,7 +53700,7 @@
     "name": "Kristina Hollweg",
     "networth": 1029.654,
     "rank": 3333,
-    "countryCode": null,
+    "countryCode": "de",
     "industries": [
       "Manufacturing"
     ],
@@ -53798,7 +53798,7 @@
     "name": "Ninian Mogan Lourdenadin",
     "networth": 1026.683,
     "rank": 3339,
-    "countryCode": "my",
+    "countryCode": null,
     "industries": [
       "Real Estate"
     ],
@@ -53896,7 +53896,7 @@
     "name": "Wu Ying",
     "networth": 1021.557,
     "rank": 3345,
-    "countryCode": "cn",
+    "countryCode": null,
     "industries": [
       "Manufacturing"
     ],
@@ -54089,7 +54089,7 @@
     "name": "Amelie Voigt Trejes",
     "networth": 1012.454,
     "rank": 3357,
-    "countryCode": "br",
+    "countryCode": null,
     "industries": [
       "Manufacturing"
     ],
@@ -54105,7 +54105,7 @@
     "name": "Felipe Voigt Trejes",
     "networth": 1012.454,
     "rank": 3357,
-    "countryCode": "br",
+    "countryCode": null,
     "industries": [
       "Manufacturing"
     ],
@@ -54121,7 +54121,7 @@
     "name": "Pedro Voigt Trejes",
     "networth": 1012.454,
     "rank": 3357,
-    "countryCode": "br",
+    "countryCode": null,
     "industries": [
       "Manufacturing"
     ],
