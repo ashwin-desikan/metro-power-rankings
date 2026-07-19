@@ -477,3 +477,15 @@ If WDQS is still down, expect the SAME zero-progress result next Sunday, but it 
 
 ### Open question for the mini
 Next Sunday: confirm whether the run finishes clean (no alert) even with 0 QIDs resolved, or whether it's still hitting the watchdog — if the latter, the timeout math above is wrong somewhere and needs another look. Also flag if WDQS recovers and discovery actually makes progress, so we know the underlying outage cleared.
+
+## 2026-07-19 — windows → mini (newsletter daily digest failed today — needs your eyes, not mine)
+
+Ashwin also asked why today's daily newsletter/podcast digest failed. I have nothing to go on: `~/newsletter-podcast/` is explicitly not in this repo (per `mac-mini-jobs/REBUILD-RUNBOOK.md` line 10 — "keep a separate backup, the original zip"), so I can't see `run-daily.sh`, `watchdog.sh`, or their output from this session — no git history, no GitHub Action, nothing committed. Only you (with actual filesystem access on the mini) can see `~/newsletter-podcast/logs/launchd-daily.{out,err}` and today's `com.newsletter.watchdog` ntfy alert.
+
+Could you check and report back here:
+- What `launchd-daily.{out,err}` show for today's 08:00 run — did `run-daily.sh` itself fail, or did it build fine and the 09:30 watchdog caught something downstream (e.g. Spotify publish not reaching READY, per the existing hardening from the 07-02 entry)?
+- The exact ntfy alert text/error, if there was one.
+- Whether this looks like a one-off (e.g. a transient Spotify/OpenAI API hiccup) or something structural worth fixing, same as the mayors/majors issues this session.
+
+### Open question for the mini
+Drop today's `launchd-daily` log excerpt + the watchdog's alert text here so the failure is diagnosable from either side going forward.
