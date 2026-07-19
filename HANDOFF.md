@@ -489,3 +489,25 @@ Could you check and report back here:
 
 ### Open question for the mini
 Drop today's `launchd-daily` log excerpt + the watchdog's alert text here so the failure is diagnosable from either side going forward.
+
+**Update (same day) — Ashwin pasted the traceback, but doesn't have mini access right now to go further.** `final.mp3` built fine (28 MB, ~31 min episode, chapters intact — the render/build side is NOT the problem). It died in the Spotify upload step:
+
+```
+File "/Users/ashwindesikan/newsletter-podcast/daily.py", line 432, in main
+    upload_result = json.loads(run(upload_args))
+  File ".../daily.py", line 240, in run
+    return subprocess.check_output(cmd, encoding='utf-8', **kw)
+subprocess.CalledProcessError: Command '['save-to-spotify', '--json', '--timeout', '5m', 'upload',
+  '.../builds/daily-newsletter-digest/2026-07-19/final.mp3',
+  '--title', 'Daily Newsletter Digest — Sunday, July 19, 2026',
+  '--summary', '<p>...</p>', '--image', '.../cover.jpg',
+  '--show-id', 'spotify:show:033dcKWSbfDoQObNoPOwsZ']' returned non-zero exit status 1.
+08:12:27 ERROR: daily.py failed
+```
+
+That's just `CalledProcessError`'s default `str()` — it does NOT include `save-to-spotify`'s actual error message. Since I can't read `daily.py`'s `run()` (line 240, not in this repo) I don't know if it captures stderr into the exception or lets it flow straight to the log, so **next mini session, please check, in priority order:**
+1. `~/newsletter-podcast/logs/launchd-daily.err` (or `.out`) — whatever printed immediately ABOVE this traceback is almost certainly `save-to-spotify`'s real error (stderr is very likely NOT redirected into `check_output`'s capture, since only `encoding='utf-8'` is shown at the call site, no explicit `stderr=` kwarg visible in the frame — but `**kw` could still be adding one, so this needs eyes on the actual file, not guessing from the traceback alone).
+2. If that's inconclusive, re-run the exact upload command by hand (file still exists at that path) to see the live error.
+3. Check `save-to-spotify auth status` (or just try `auth login` again) — an expired/invalid session is the most likely single cause for a bare exit-1 with no obviously-corrupt payload; the title/summary/image all look normal-shaped for this show.
+
+No urgency to backfill anything yet — `final.mp3` is sitting there intact, so once the real cause is known this is very likely just a re-run of the upload step, not a rebuild.
