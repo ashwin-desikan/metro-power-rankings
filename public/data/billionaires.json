@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-12",
+  "generated": "2026-07-19",
   "source": "Forbes real-time billionaires via komed3/rtb-api (MIT)",
   "count": 3381,
   "billionaires": [
@@ -6997,9 +6997,9 @@
       "name": "Leo KoGuan",
       "uri": "leo-koguan",
       "networth": 8672.481,
-      "countryCode": "US",
-      "countrySlug": "united-states",
-      "countryName": "United States",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Technology"
       ],
@@ -9057,9 +9057,9 @@
       "name": "Janice McNair & family",
       "uri": "janice-mcnair",
       "networth": 7315.359,
-      "countryCode": "US",
-      "countrySlug": "united-states",
-      "countryName": "United States",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Sports"
       ],
@@ -32700,9 +32700,9 @@
       "name": "Yoon Dae-in",
       "uri": "yoon-dae-in",
       "networth": 2201.493,
-      "countryCode": "KR",
-      "countrySlug": "south-korea",
-      "countryName": "South Korea",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Healthcare"
       ],
@@ -46523,9 +46523,9 @@
       "name": "Wang Mingwang",
       "uri": "wang-mingwang",
       "networth": 1440.853,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Manufacturing"
       ],
@@ -48591,9 +48591,9 @@
       "name": "Zhong Huaijun",
       "uri": "zhong-huaijun",
       "networth": 1353.342,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Food & Beverage"
       ],
@@ -49569,9 +49569,9 @@
       "name": "Lin Por-Shih",
       "uri": "lin-por-shih",
       "networth": 1310.654,
-      "countryCode": "TW",
+      "countryCode": null,
       "countrySlug": null,
-      "countryName": "TW",
+      "countryName": null,
       "industries": [
         "Manufacturing"
       ],
@@ -49603,9 +49603,9 @@
       "name": "Zhu Xingliang",
       "uri": "zhu-xingliang",
       "networth": 1310.384,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Construction & Engineering"
       ],
@@ -49741,9 +49741,9 @@
       "name": "Li Hongjing",
       "uri": "li-hongjing",
       "networth": 1308.653,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "CN",
+      "countrySlug": "china",
+      "countryName": "China",
       "industries": [
         "Automotive"
       ],
@@ -50525,9 +50525,9 @@
       "name": "Michelle Xia",
       "uri": "michelle-xia",
       "networth": 1281.968,
-      "countryCode": "US",
-      "countrySlug": "united-states",
-      "countryName": "United States",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Healthcare"
       ],
@@ -51447,9 +51447,9 @@
       "name": "Zhu Weisong",
       "uri": "zhu-weisong",
       "networth": 1237.002,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Media & Entertainment"
       ],
@@ -53581,9 +53581,9 @@
       "name": "Zhu Jiangming",
       "uri": "zhu-jiangming",
       "networth": 1160.098,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Manufacturing"
       ],
@@ -54060,9 +54060,9 @@
       "name": "Wang Xinyang",
       "uri": "wang-xinyang",
       "networth": 1144.946,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Technology"
       ],
@@ -54333,9 +54333,9 @@
       "name": "Caspar Callerström",
       "uri": "caspar-callerstrom",
       "networth": 1135.687,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "SE",
+      "countrySlug": "sweden",
+      "countryName": "Sweden",
       "industries": [
         "Finance & Investments"
       ],
@@ -54521,9 +54521,9 @@
       "name": "Christian Sinding",
       "uri": "christian-sinding",
       "networth": 1128.532,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "NO",
+      "countrySlug": "norway",
+      "countryName": "Norway",
       "industries": [
         "Finance & Investments"
       ],
@@ -55049,9 +55049,9 @@
       "name": "Nguyen Dang Quang",
       "uri": "nguyen-dang-quang",
       "networth": 1108.29,
-      "countryCode": "VN",
-      "countrySlug": "vietnam",
-      "countryName": "Vietnam",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Food & Beverage"
       ],
@@ -55186,9 +55186,9 @@
       "name": "Hua Shen",
       "uri": "hua-shen",
       "networth": 1103.307,
-      "countryCode": "US",
-      "countrySlug": "united-states",
-      "countryName": "United States",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Technology"
       ],
@@ -55373,9 +55373,9 @@
       "name": "Shyam Sankar",
       "uri": "shyam-sankar",
       "networth": 1099.266,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "US",
+      "countrySlug": "united-states",
+      "countryName": "United States",
       "industries": [
         "Technology"
       ],
@@ -56126,9 +56126,9 @@
       "name": "Luigi Cremonini & family",
       "uri": "luigi-cremonini",
       "networth": 1072.613,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "IT",
+      "countrySlug": "italy",
+      "countryName": "Italy",
       "industries": [
         "Food & Beverage"
       ],
@@ -56418,9 +56418,9 @@
       "name": "Xu Zhihan",
       "uri": "xu-zhihan",
       "networth": 1059.606,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Technology"
       ],
@@ -56741,9 +56741,9 @@
       "name": "Maria Frias",
       "uri": "maria-frias",
       "networth": 1039.95,
-      "countryCode": "BR",
-      "countrySlug": "brazil",
-      "countryName": "Brazil",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Media & Entertainment"
       ],
@@ -56758,9 +56758,9 @@
       "name": "Chen Xueli",
       "uri": "chen-xueli",
       "networth": 1039.89,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "CN",
+      "countrySlug": "china",
+      "countryName": "China",
       "industries": [
         "Healthcare"
       ],
@@ -57033,9 +57033,9 @@
       "name": "Kristina Hollweg",
       "uri": "kristina-hollweg",
       "networth": 1029.654,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "DE",
+      "countrySlug": "germany",
+      "countryName": "Germany",
       "industries": [
         "Manufacturing"
       ],
@@ -57137,9 +57137,9 @@
       "name": "Ninian Mogan Lourdenadin",
       "uri": "ninian-mogan-lourdenadin",
       "networth": 1026.683,
-      "countryCode": "MY",
-      "countrySlug": "malaysia",
-      "countryName": "Malaysia",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Real Estate"
       ],
@@ -57241,9 +57241,9 @@
       "name": "Wu Ying",
       "uri": "wu-ying",
       "networth": 1021.557,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Manufacturing"
       ],
@@ -57446,9 +57446,9 @@
       "name": "Amelie Voigt Trejes",
       "uri": "amelie-voigt-trejes",
       "networth": 1012.454,
-      "countryCode": "BR",
-      "countrySlug": "brazil",
-      "countryName": "Brazil",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Manufacturing"
       ],
@@ -57463,9 +57463,9 @@
       "name": "Felipe Voigt Trejes",
       "uri": "felipe-voigt-trejes",
       "networth": 1012.454,
-      "countryCode": "BR",
-      "countrySlug": "brazil",
-      "countryName": "Brazil",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Manufacturing"
       ],
@@ -57480,9 +57480,9 @@
       "name": "Pedro Voigt Trejes",
       "uri": "pedro-voigt-trejes",
       "networth": 1012.454,
-      "countryCode": "BR",
-      "countrySlug": "brazil",
-      "countryName": "Brazil",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Manufacturing"
       ],
