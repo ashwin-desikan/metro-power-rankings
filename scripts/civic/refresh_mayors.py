@@ -46,7 +46,17 @@ def discover_missing_qids(metros, cache):
     """Cold-start / self-healing: resolve a Wikidata city QID for any metro
     not already in the cache. Chunked defensively (label joins are the
     expensive WDQS pattern); each successful chunk is saved immediately so a
-    timeout partway through still keeps whatever it found."""
+    timeout partway through still keeps whatever it found.
+
+    retries=2/timeout=45 (vs civic_common.sparql's default retries=4/timeout=180)
+    is deliberate: an unresolved chunk just retries again NEXT WEEK (that's the
+    whole point of the cache), so there is no value in burning the wrapper's
+    step-timeout budget on aggressive in-run retries here. Worst case per chunk
+    is ~2*45s + one ~3s backoff sleep =~ 93s; across the 9 chunks needed for a
+    fully-cold cache that is ~14 minutes, safely inside MAYORS_STEP_TIMEOUT
+    (metro-mini-refresh.sh) even if every single chunk fails outright — which
+    is exactly what's been happening under the ongoing WDQS outage (confirmed
+    still active as of the 2026-07-19 run: 0 chunks resolved, cache still {})."""
     missing = [m for m in metros if m["slug"] not in cache]
     if not missing:
         return cache
@@ -63,7 +73,7 @@ def discover_missing_qids(metros, cache):
       ?city wdt:P17 ?ctry . ?ctry rdfs:label ?ctlab . FILTER(?ctlab = STRLANG(?countryLabel, "en"))
     }}"""
         try:
-            rows = sparql(q, timeout=60)
+            rows = sparql(q, timeout=45, retries=2)
         except Exception as e:
             print(f"  QID discovery chunk {i // CHUNK} failed ({e}); will retry next run")
             continue

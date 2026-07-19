@@ -31,12 +31,22 @@ GIT_BRANCH="${GIT_BRANCH:-main}"
 PY="${PYTHON_BIN:-python3}"
 DRY_RUN="${DRY_RUN:-0}"
 STEP_TIMEOUT="${STEP_TIMEOUT:-300}"   # seconds; caps any single refresh step (e.g. a Wikidata outage)
-MAYORS_STEP_TIMEOUT="${MAYORS_STEP_TIMEOUT:-900}"  # mayors gets more room: cold-start QID
+MAYORS_STEP_TIMEOUT="${MAYORS_STEP_TIMEOUT:-1800}"  # mayors gets more room: cold-start QID
                                                     # discovery (scripts/civic/city-qids.json) is
                                                     # chunked and label-based, so it's slower than
                                                     # the steady-state single-query hot path once
                                                     # the cache is warm. Persists progress per chunk,
                                                     # so a timeout here never loses prior work.
+                                                    # Sized from the actual worst case, not a guess:
+                                                    # discovery retries=2/timeout=45 -> ~93s/chunk x 9
+                                                    # chunks =~ 14 min if EVERY chunk fails outright,
+                                                    # plus the hot-path query's own worst case (default
+                                                    # retries=4/timeout=120 =~ 8.5 min) if some slugs
+                                                    # are already cached -> ~22.5 min combined. 900s
+                                                    # (the original value) was undersized for this and
+                                                    # got the step killed mid-run under the 2026-07
+                                                    # WDQS outage, registering as a false "step timed
+                                                    # out" alert on an otherwise-safe no-op week.
 
 note() { echo "[$(date '+%F %T')] $*"; }
 alert() { "$PY" "$DIR/notify.py" "CoN mini refresh" "$1" 1 || true; }
