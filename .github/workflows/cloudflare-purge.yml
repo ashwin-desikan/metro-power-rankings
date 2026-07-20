@@ -1,0 +1,49 @@
+name: Purge Cloudflare cache on deploy
+
+# Root fix for stale HTML at the edge: the citizenofnowhere.org zone caches
+# whole pages ("Cache Everything"), so a fresh Vercel deploy is not visible
+# until the edge cache is cleared. Vercel reports each deploy to GitHub as a
+# deployment status; when a PRODUCTION deploy succeeds we purge everything so
+# the new build is live immediately.
+#
+# One-time setup (repo Settings > Secrets and variables > Actions):
+#   CLOUDFLARE_ZONE_ID    - the Zone ID for citizenofnowhere.org (Cloudflare
+#                           dashboard > the zone > Overview, right rail).
+#   CLOUDFLARE_API_TOKEN  - a token with the "Zone > Cache Purge" permission
+#                           scoped to that zone (My Profile > API Tokens).
+
+on:
+  deployment_status:
+
+permissions:
+  contents: read
+
+jobs:
+  purge:
+    if: ${{ github.event.deployment_status.state == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Purge Cloudflare cache (production only)
+        env:
+          CF_ENV: ${{ github.event.deployment_status.environment }}
+          CF_ZONE: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          echo "Deployment environment: ${CF_ENV}"
+          case "${CF_ENV}" in
+            Production|production|prod) : ;;
+            *) echo "Not a production deploy; skipping purge."; exit 0 ;;
+          esac
+          if [ -z "${CF_ZONE}" ] || [ -z "${CF_TOKEN}" ]; then
+            echo "::error::CLOUDFLARE_ZONE_ID / CLOUDFLARE_API_TOKEN not set. Add them in Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+          resp="$(curl -sS -X POST \
+            "https://api.cloudflare.com/client/v4/zones/${CF_ZONE}/purge_cache" \
+            -H "Authorization: Bearer ${CF_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}')"
+          echo "${resp}"
+          echo "${resp}" | grep -q '"success":true' \
+            && echo "Purged Cloudflare cache for the zone." \
+            || { echo "::error::Cloudflare purge failed (see response above)."; exit 1; }
