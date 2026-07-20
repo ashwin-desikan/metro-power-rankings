@@ -4,7 +4,7 @@
 workbook (Champions League-201516.xlsx -> Int Tournaments, column CK Game Score).
 Mirrors scripts/build-{nfl,nba,mlb}-data.py top-games outputs.
 
-Men's tournament matches only (excludes Women's World Cup and 2026 World Cup).
+Men's tournament matches only (excludes Women's World Cup).
 Outputs under public/data/international/:
   top-games-all-time.json   (top 25 unique matches)
   top-games-by-decade.json  (top 10 per decade)
@@ -63,7 +63,6 @@ def main():
     for r in ws.iter_rows(min_row=2):
         if g(r,'K') is None or g(r,'CK') is None: continue
         if g(r,'F')=="Women's World Cup": continue
-        if g(r,'C')==2026: continue
         rows.append({
             'date':(str(g(r,'J'))[:10] if g(r,'J') else None),'year':g(r,'C'),
             'team':g(r,'K'),'opp':g(r,'M'),'for':g(r,'N'),'ag':g(r,'O'),'res':g(r,'L'),
