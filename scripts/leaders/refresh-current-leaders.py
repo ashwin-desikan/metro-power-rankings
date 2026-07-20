@@ -200,9 +200,97 @@ def _plausible(name):
     return True
 
 
+CHANGES = LEADERS_DIR / "_changes.json"
+ROLE_FULL = {
+    "PM": "Prime Minister", "Pres.": "President", "Federal Chanc.": "Federal Chancellor",
+    "Chanc.": "Chancellor", "Sup. Leader": "Supreme Leader", "Taoiseach": "Taoiseach",
+    "Monarch": "Monarch", "Pope": "Pope", "Chief Adviser": "Chief Adviser",
+    "Acting Pres.": "President", "Gen. Sec.": "General Secretary",
+}
+
+def _office_family(role):
+    r = (role or "").lower()
+    if any(k in r for k in ("monarch", "king", "queen", "emperor", "sovereign")):
+        return "monarch"
+    if any(k in r for k in ("pm", "prime minister", "chanc", "taoiseach", "chief adviser", "premier")):
+        return "gov"
+    return "state"
+
+def _tenure(start, end):
+    import datetime
+    try:
+        s = datetime.date.fromisoformat(start[:10]); e = datetime.date.fromisoformat(end[:10])
+        days = (e - s).days
+        if days < 0: return ""
+        return f"{days // 365}y {(days % 365) // 30}m {(days % 365) % 30}d"
+    except Exception:
+        return ""
+
+def _slug_country_name():
+    try:
+        cj = json.loads(COUNTRIES.read_text(encoding="utf-8"))
+        rows = cj if isinstance(cj, list) else (cj.get("countries") or list(cj.values())[0])
+        return {r["slug"]: r.get("name", r["slug"]) for r in rows if isinstance(r, dict) and r.get("slug")}
+    except Exception:
+        return {}
+
+def _update_history(slug, new_name, abbrev_role, since):
+    """Conservatively retire the outgoing current entry for the changed office
+    and insert the incoming one in the per-country history file. Returns the
+    office label; only mutates the file when exactly one current entry matches
+    the changed office family (skips ambiguous cases, still logs the change)."""
+    office_full = ROLE_FULL.get(abbrev_role, abbrev_role or "Head of government")
+    fpath = LEADERS_DIR / f"{slug}.json"
+    fam = _office_family(abbrev_role)
+    if not fpath.exists():
+        return office_full
+    try:
+        d = json.loads(fpath.read_text(encoding="utf-8"))
+    except Exception:
+        return office_full
+    cur = [i for i, x in enumerate(d) if x.get("current") and _office_family(x.get("role")) == fam]
+    if len(cur) != 1:
+        return office_full
+    idx = cur[0]; old = d[idx]
+    if bare(old.get("name", "")) == bare(new_name):
+        return office_full
+    old["current"] = False
+    old["end"] = since
+    if old.get("start"):
+        old["tenure"] = _tenure(old["start"], since)
+    new = {"name": new_name, "role": old.get("role") or office_full, "start": since,
+           "end": None, "current": True, "tenure": "in office", "party": "", "era": old.get("era")}
+    if "metros" in old:
+        new["metros"] = old["metros"]
+    d.insert(idx + 1, new)
+    fpath.write_text(json.dumps(d, indent=2, ensure_ascii=False), encoding="utf-8")
+    return office_full
+
+def _append_changes(records):
+    import datetime
+    today = datetime.date.today().isoformat()
+    data = {"updated": today, "changes": []}
+    if CHANGES.exists():
+        try: data = json.loads(CHANGES.read_text(encoding="utf-8"))
+        except Exception: pass
+    seen = {(c.get("slug"), c.get("to"), c.get("date")) for c in data.get("changes", [])}
+    added = 0
+    for r in records:
+        key = (r.get("slug"), r.get("to"), r.get("date"))
+        if key in seen: continue
+        data.setdefault("changes", []).insert(0, r); seen.add(key); added += 1
+    data["updated"] = today
+    data["changes"] = data.get("changes", [])[:500]
+    CHANGES.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"_changes.json: +{added} new (total {len(data['changes'])})")
+
+
 def main(add_only=False):
+    import datetime
     slug_iso = load_slug_iso()
     existing = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}
+    name_by_slug = _slug_country_name()
+    change_log = []
     wd = query_wikidata()
     changed = 0
     for slug, iso in slug_iso.items():
@@ -228,8 +316,19 @@ def main(add_only=False):
         existing[slug] = entry
         changed += 1
         print(f"  {'added' if not prev else 'updated'} {slug}: {entry['name']} ({entry['role']})")
+        if prev:  # a genuine leadership change, not a first-time gap fill
+            since = entry.get("since") or datetime.date.today().isoformat()
+            office = _update_history(slug, entry["name"], entry.get("role", ""), since)
+            change_log.append({
+                "date": since, "slug": slug,
+                "country": name_by_slug.get(slug, slug.replace("-", " ").title()),
+                "office": office, "from": bare(prev.get("name", "")) or None,
+                "to": bare(entry["name"]), "source": "wikidata",
+            })
     OUT.write_text(json.dumps(existing, indent=2, ensure_ascii=False, sort_keys=True), encoding="utf-8")
     print(f"_current.json written: {len(existing)} countries, {changed} changed (add_only={add_only})")
+    if change_log:
+        _append_changes(change_log)
 
 def self_test():
     # parliamentary republic: PM leads, president secondary
@@ -260,6 +359,12 @@ def self_test():
     # realm with missing head of government -> crowned monarch only (main() guard preserves curated PM)
     e = build_entry("tuvalu", "Charles III", None, None, "")
     assert e["role"] == "Monarch" and e["name"].startswith(CROWN), e
+    # change side-effects helpers
+    assert _office_family("PM") == "gov" and _office_family("Pres.") == "state" and _office_family("Monarch") == "monarch"
+    assert _office_family("Federal Chanc.") == "gov" and _office_family("Sup. Leader") == "state"
+    assert _tenure("2024-07-05", "2026-07-21").startswith("2y")
+    assert _tenure("2026-07-21", "2026-07-01") == ""  # negative guarded
+    assert ROLE_FULL["PM"] == "Prime Minister"
     print("self-test OK")
 
 if __name__ == "__main__":
