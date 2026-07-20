@@ -1405,9 +1405,25 @@
     "name": "Keir Starmer",
     "role": "Prime Minister",
     "start": "2024-07-05",
+    "end": "2026-07-21",
+    "current": false,
+    "tenure": "2y 0m 16d",
+    "party": "Labour",
+    "era": null,
+    "metros": [
+      {
+        "name": "London",
+        "slug": "london"
+      }
+    ]
+  },
+  {
+    "name": "Andy Burnham",
+    "role": "Prime Minister",
+    "start": "2026-07-21",
     "end": null,
     "current": true,
-    "tenure": "1y 11m 26d",
+    "tenure": "in office",
     "party": "Labour",
     "era": null,
     "metros": [
