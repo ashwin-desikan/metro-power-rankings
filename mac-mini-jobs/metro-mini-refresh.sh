@@ -101,7 +101,12 @@ run_step() {  # run_step "label" cmd...
   fi
 }
 
-run_step "leaders (add-only)"   "$PY" scripts/leaders/refresh-current-leaders.py --add-only
+# 2026-07-20: --add-only dropped. The script now auto-applies a genuine change
+# of head of state/government to _current.json AND the per-country history, and
+# logs it to public/data/leaders/_changes.json (feeds /leaders/changes). Guarded
+# by _plausible() plus a single-unambiguous-office check, so a noisy Wikidata
+# edit is skipped rather than published.
+run_step "leaders (auto-apply)" "$PY" scripts/leaders/refresh-current-leaders.py
 run_step "governors (add-only)" "$PY" scripts/civic/refresh_governors.py --add-only
 run_step "congress"             "$PY" scripts/civic/refresh_congress.py
 run_step "mayors"               "$PY" scripts/civic/refresh_mayors.py
@@ -109,6 +114,11 @@ run_step "billionaires fetch"   "$PY" scripts/billionaires/fetch-billionaires.py
 run_step "billionaires build"   "$PY" scripts/billionaires/build-billionaires.py
 run_step "valuations"           "$PY" scripts/build-valuations-data.py
 run_step "power ranking"        "$PY" scripts/build-power-ranking.py
+# Zone Zero Cup: weekly regeneration (added 2026-07-20; the Cup had not been
+# rebuilt since 21 Jun). Preflight-guarded, so it refuses to write a hollowed-out
+# Cup if a pillar input has collapsed. The page ISR-reads it from GitHub raw, so
+# this needs no Vercel build.
+run_step "zone zero cup"        "$PY" scripts/zzc_v1_multipillar.py
 
 # --- commit + push ---------------------------------------------------------
 # scripts/civic/city-qids.json is included alongside public/data: it's the
@@ -122,8 +132,17 @@ if git diff --quiet -- $DATA_PATHS; then
 else
   git config user.name  "metro-mini[bot]"
   git config user.email "metro-mini-bot@users.noreply.github.com"
+  # A leadership change rewrites the per-country history (leaders/<slug>.json),
+  # which the country pages read at BUILD time, so that alone needs a real Vercel
+  # build to surface. Everything else here (including the Zone Zero Cup since
+  # 2026-07-20) is ISR-read from GitHub raw and rides [vercel skip], no deploy.
+  # Checked before `git add`, so this compares the unstaged working tree.
+  if git diff --quiet -- public/data/leaders/_changes.json; then
+    MSG="data: mini civic/leaders/billionaires refresh [vercel skip]"
+  else
+    MSG="data: mini refresh + leadership change(s) - rebuild country pages"
+  fi
   git add $DATA_PATHS
-  MSG="data: mini civic/leaders/billionaires refresh [vercel skip]"
   if [ "$DRY_RUN" = "1" ]; then
     note "DRY_RUN=1: would commit and push -> $MSG"
     git reset -q -- $DATA_PATHS
