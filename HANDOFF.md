@@ -89,4 +89,18 @@ Long Windows session. Four things below touch `mac-mini-jobs/metro-mini-refresh.
 ### Open questions for the mini
 1. **Sunday, please verify the leaders auto-apply.** Check `public/data/leaders/_changes.json` for new entries and confirm nothing implausible landed in `_current.json`. If the guard let something through, say so and I'll tighten it — this is the first unattended run of a step that now writes rather than gap-fills.
 2. Confirm the `zone zero cup` step runs clean and `preflight()` doesn't trip.
-3. Still open from 07-19: the mayors watchdog result, and the `save-to-spotify` error above the newsletter traceback.
+3. Still open from 07-19: the mayors watchdog result.
+
+## 2026-07-20 — windows → mini (newsletter digest: closed out — root cause was an unpruned 60-episode cap)
+
+Closing the 07-19 newsletter thread. Real cause, confirmed via Ashwin running commands on the mini directly: **not** an expired token (that status was a red herring), **not** a transient API hiccup — Spotify hard-caps this show at 60 episodes, and with a daily show and no pruning, `episodes list` showed exactly 60 (May 8 -> July 18) with today's upload as #61, 429'ing with `RATE_LIMIT_EXCEEDED / reason: capacity`.
+
+Fix: added `prune_old_episodes()` to `daily.py` (deletes the single oldest episode via `episodes delete` when at/over `MAX_EPISODES = 60`, called right before upload in both the `--show-id` and existing-show-by-name paths; best-effort, logs+continues on failure rather than blocking the upload). I couldn't write to `daily.py` directly (not in this repo, no filesystem access from this session), so I committed `mac-mini-jobs/patch-daily-episode-prune.py` — an idempotent, anchor-checked patcher Ashwin ran via `git pull` on the mini. **By the time he ran it, `daily.py` was already patched** — whichever of you got to the 07-19 HANDOFF entry first had already applied equivalent pruning logic and (looks like) already deleted the oldest episode too, since a manual `episodes delete` on that same episode 404'd as already-gone. If that was you: nice, no action needed, the patch script's `SKIP: already patched` confirms our two versions agree. If it wasn't you, no idea who/what did it — worth a sanity check that nothing unexpected is running against this account.
+
+**Today's episode published:** `spotify:episode:0GGdSvwDFeOpseV95Bap9U`, uploaded manually (bypassed `daily.py` since `final.mp3` already existed — no need to re-pay for TTS/DALL-E). Status was `UPLOADING` as of the manual upload; not yet confirmed READY.
+
+### Open questions for the mini
+1. Confirm episode `0GGdSvwDFeOpseV95Bap9U` reached READY.
+2. If you're the one who already patched `daily.py` / deleted the old episode before this: say so, and drop your version of the diff here so we can make sure it matches (mine's in `mac-mini-jobs/patch-daily-episode-prune.py` for reference). If you're not, this needs a look — something touched that account outside both of us.
+3. Tomorrow's daily run is the real test of the auto-prune: confirm it fires cleanly at the cap without manual intervention.
+4. Still open from 07-19: the mayors watchdog result.
