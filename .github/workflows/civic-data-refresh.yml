@@ -75,6 +75,14 @@ jobs:
         continue-on-error: true
         run: python scripts/build-power-ranking.py
 
+      - name: Zone Zero Cup (weekly regeneration)
+        # Preflight-guarded: the script refuses to write a hollowed-out Cup if an
+        # upstream pillar input has collapsed (see preflight() in the script).
+        # continue-on-error so a tripped guard leaves the Cup stale (safe) and
+        # still lets the rest of the weekly refresh commit; the red step is the signal.
+        continue-on-error: true
+        run: python scripts/zzc_v1_multipillar.py
+
       - name: Commit safe auto changes to main
         run: |
           set -e
@@ -89,12 +97,15 @@ jobs:
             exit 0
           fi
           # A leadership change edits the per-country history (leaders/<slug>.json),
-          # which country pages read at build time, so it needs a real build. Every
-          # other refresh is ISR-read and rides [vercel skip] with no deploy.
-          if git diff --quiet -- public/data/leaders/_changes.json; then
+          # and the Zone Zero Cup is likewise read at build time, so either one needs
+          # a real build to surface. Every other refresh is ISR-read and rides
+          # [vercel skip] with no deploy. NOTE: the Cup shifts most weeks, so this
+          # means roughly one build per week; converting lib/zoneZeroCup.ts to the
+          # ISR-from-raw pattern (as lib/powerRanking.ts does) would make it free.
+          if git diff --quiet -- public/data/leaders/_changes.json public/data/zone-zero-cup.json; then
             MSG="data: weekly refresh - officeholders, billionaires, valuations, World Power Rankings [vercel skip]"
           else
-            MSG="data: weekly refresh + leadership change(s) - rebuild country pages"
+            MSG="data: weekly refresh + leadership change and/or Zone Zero Cup - rebuild build-time pages"
           fi
           git add $DATA_PATHS
           git commit -m "$MSG"

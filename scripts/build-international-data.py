@@ -363,7 +363,14 @@ def read_finals(wb):
     if not headers_raw:
         return []
     headers = [str(h).strip() if h else "" for h in headers_raw]
-    h_idx = {h: i for i, h in enumerate(headers) if h}
+    # Int Tournaments has DUPLICATE header names ("Year" at idx 2 and 113, plus
+    # "Stakes" and "Round"). A dict comprehension binds to the LAST occurrence;
+    # for "Year" that is a near-empty column (34 of 5,768 rows), which silently
+    # dropped ~350 of 354 finals and collapsed finals.json. First occurrence wins.
+    h_idx = {}
+    for i, h in enumerate(headers):
+        if h and h not in h_idx:
+            h_idx[h] = i
     out = []
     for r in rows_iter:
         if not r:
