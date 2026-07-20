@@ -21,7 +21,7 @@
     "commissioner_factor": 0.44,
     "judiciary": 0.09
   },
-  "asOf": "2026-07-19",
+  "asOf": "2026-07-20",
   "ranking": [
     {
       "name": "⚠️ Donald Trump",
@@ -245,6 +245,32 @@
       "transition": ""
     },
     {
+      "name": "Jensen Huang",
+      "role": "CEO, NVIDIA",
+      "category": "Corporate",
+      "jurisdiction": "NVIDIA",
+      "metro": "San Francisco-San Jose",
+      "metroSlug": "san-francisco-san-jose",
+      "jscore": 4912.3,
+      "weight": 0.05,
+      "power": 245.6,
+      "jurisdictionHref": "",
+      "transition": ""
+    },
+    {
+      "name": "Tim Cook",
+      "role": "CEO, Apple",
+      "category": "Corporate",
+      "jurisdiction": "Apple",
+      "metro": "San Francisco-San Jose",
+      "metroSlug": "san-francisco-san-jose",
+      "jscore": 4901.8,
+      "weight": 0.05,
+      "power": 245.1,
+      "jurisdictionHref": "",
+      "transition": "Apple CEO succession expected"
+    },
+    {
       "name": "Salim Ramji",
       "role": "Vanguard (AUM)",
       "category": "Finance",
@@ -281,19 +307,6 @@
       "weight": 0.656,
       "power": 236.6,
       "jurisdictionHref": "/countries/italy",
-      "transition": ""
-    },
-    {
-      "name": "Jensen Huang",
-      "role": "CEO, NVIDIA",
-      "category": "Corporate",
-      "jurisdiction": "NVIDIA",
-      "metro": "San Francisco-San Jose",
-      "metroSlug": "san-francisco-san-jose",
-      "jscore": 4663.3,
-      "weight": 0.05,
-      "power": 233.2,
-      "jurisdictionHref": "",
       "transition": ""
     },
     {
@@ -349,17 +362,17 @@
       "transition": ""
     },
     {
-      "name": "Tim Cook",
-      "role": "CEO, Apple",
+      "name": "Sundar Pichai",
+      "role": "CEO, Alphabet (Google)",
       "category": "Corporate",
-      "jurisdiction": "Apple",
+      "jurisdiction": "Alphabet (Google)",
       "metro": "San Francisco-San Jose",
       "metroSlug": "san-francisco-san-jose",
-      "jscore": 4168.0,
+      "jscore": 4223.6,
       "weight": 0.05,
-      "power": 208.4,
+      "power": 211.2,
       "jurisdictionHref": "",
-      "transition": "Apple CEO succession expected"
+      "transition": ""
     },
     {
       "name": "Claudia Sheinbaum",
@@ -372,19 +385,6 @@
       "weight": 1.052,
       "power": 205.4,
       "jurisdictionHref": "/countries/mexico",
-      "transition": ""
-    },
-    {
-      "name": "Sundar Pichai",
-      "role": "CEO, Alphabet (Google)",
-      "category": "Corporate",
-      "jurisdiction": "Alphabet (Google)",
-      "metro": "San Francisco-San Jose",
-      "metroSlug": "san-francisco-san-jose",
-      "jscore": 4084.1,
-      "weight": 0.05,
-      "power": 204.2,
-      "jurisdictionHref": "",
       "transition": ""
     },
     {
@@ -446,9 +446,9 @@
       "jurisdiction": "California",
       "metro": "Sacramento",
       "metroSlug": "sacramento",
-      "jscore": 327.5,
+      "jscore": 327.6,
       "weight": 0.55,
-      "power": 180.1,
+      "power": 180.2,
       "jurisdictionHref": "/states/california",
       "transition": "Term-limited; leaves office Jan 2027 (California gubernatorial election, 3 Nov 2026)"
     },
@@ -596,6 +596,19 @@
       "transition": ""
     },
     {
+      "name": "Satya Nadella",
+      "role": "CEO, Microsoft",
+      "category": "Corporate",
+      "jurisdiction": "Microsoft",
+      "metro": "Seattle",
+      "metroSlug": "seattle",
+      "jscore": 2925.5,
+      "weight": 0.05,
+      "power": 146.3,
+      "jurisdictionHref": "",
+      "transition": ""
+    },
+    {
       "name": "⚠️ Recep Tayyip Erdoğan",
       "role": "Pres., Turkey",
       "category": "National",
@@ -619,19 +632,6 @@
       "weight": 0.45,
       "power": 140.3,
       "jurisdictionHref": "/countries/united-states",
-      "transition": ""
-    },
-    {
-      "name": "Satya Nadella",
-      "role": "CEO, Microsoft",
-      "category": "Corporate",
-      "jurisdiction": "Microsoft",
-      "metro": "Seattle",
-      "metroSlug": "seattle",
-      "jscore": 2770.6,
-      "weight": 0.05,
-      "power": 138.5,
-      "jurisdictionHref": "",
       "transition": ""
     },
     {
@@ -700,6 +700,19 @@
       "transition": ""
     },
     {
+      "name": "Andy Jassy",
+      "role": "CEO, Amazon",
+      "category": "Corporate",
+      "jurisdiction": "Amazon",
+      "metro": "Seattle",
+      "metroSlug": "seattle",
+      "jscore": 2659.5,
+      "weight": 0.05,
+      "power": 133.0,
+      "jurisdictionHref": "",
+      "transition": ""
+    },
+    {
       "name": "Ted Sarandos",
       "role": "Co-CEO, Netflix",
       "category": "Media",
@@ -719,9 +732,9 @@
       "jurisdiction": "New York",
       "metro": "New York",
       "metroSlug": "new-york",
-      "jscore": 182.2,
+      "jscore": 182.1,
       "weight": 0.72,
-      "power": 131.2,
+      "power": 131.1,
       "jurisdictionHref": "/rankings/new-york",
       "transition": ""
     },
@@ -732,9 +745,9 @@
       "jurisdiction": "London",
       "metro": "London",
       "metroSlug": "london",
-      "jscore": 180.3,
+      "jscore": 180.4,
       "weight": 0.72,
-      "power": 129.8,
+      "power": 129.9,
       "jurisdictionHref": "/rankings/london",
       "transition": ""
     },
@@ -791,19 +804,6 @@
       "transition": ""
     },
     {
-      "name": "Andy Jassy",
-      "role": "CEO, Amazon",
-      "category": "Corporate",
-      "jurisdiction": "Amazon",
-      "metro": "Seattle",
-      "metroSlug": "seattle",
-      "jscore": 2503.1,
-      "weight": 0.05,
-      "power": 125.2,
-      "jurisdictionHref": "",
-      "transition": ""
-    },
-    {
       "name": "MrBeast",
       "role": "Creator",
       "category": "Culture",
@@ -823,9 +823,9 @@
       "jurisdiction": "Texas",
       "metro": "Austin",
       "metroSlug": "austin",
-      "jscore": 211.8,
+      "jscore": 211.1,
       "weight": 0.55,
-      "power": 116.5,
+      "power": 116.1,
       "jurisdictionHref": "/states/texas",
       "transition": "Seeking a 4th term; Texas gubernatorial election, 3 Nov 2026"
     },
@@ -839,19 +839,6 @@
       "jscore": 5700,
       "weight": 0.02,
       "power": 114.0,
-      "jurisdictionHref": "",
-      "transition": ""
-    },
-    {
-      "name": "C.C. Wei",
-      "role": "CEO, TSMC",
-      "category": "Corporate",
-      "jurisdiction": "TSMC",
-      "metro": "Hsinchu",
-      "metroSlug": "hsinchu",
-      "jscore": 2242.4,
-      "weight": 0.05,
-      "power": 112.1,
       "jurisdictionHref": "",
       "transition": ""
     },
@@ -882,15 +869,28 @@
       "transition": ""
     },
     {
+      "name": "C.C. Wei",
+      "role": "CEO, TSMC",
+      "category": "Corporate",
+      "jurisdiction": "TSMC",
+      "metro": "Hsinchu",
+      "metroSlug": "hsinchu",
+      "jscore": 2066.1,
+      "weight": 0.05,
+      "power": 103.3,
+      "jurisdictionHref": "",
+      "transition": ""
+    },
+    {
       "name": "Emmanuel Grégoire",
       "role": "Mayor of Paris",
       "category": "Mayor",
       "jurisdiction": "Paris",
       "metro": "Paris",
       "metroSlug": "paris",
-      "jscore": 143.5,
+      "jscore": 143.4,
       "weight": 0.72,
-      "power": 103.3,
+      "power": 103.2,
       "jurisdictionHref": "/rankings/paris",
       "transition": ""
     },
@@ -992,9 +992,9 @@
       "jurisdiction": "Tokyo",
       "metro": "Tokyo",
       "metroSlug": "tokyo",
-      "jscore": 132.8,
+      "jscore": 132.4,
       "weight": 0.72,
-      "power": 95.6,
+      "power": 95.3,
       "jurisdictionHref": "/rankings/tokyo",
       "transition": ""
     },
@@ -1070,10 +1070,23 @@
       "jurisdiction": "San Francisco",
       "metro": "San Francisco-San Jose",
       "metroSlug": "san-francisco-san-jose",
-      "jscore": 123.9,
+      "jscore": 124.1,
       "weight": 0.72,
-      "power": 89.2,
+      "power": 89.4,
       "jurisdictionHref": "/rankings/san-francisco-san-jose",
+      "transition": ""
+    },
+    {
+      "name": "Hock Tan",
+      "role": "CEO, Broadcom",
+      "category": "Corporate",
+      "jurisdiction": "Broadcom",
+      "metro": "San Francisco-San Jose",
+      "metroSlug": "san-francisco-san-jose",
+      "jscore": 1764.2,
+      "weight": 0.05,
+      "power": 88.2,
+      "jurisdictionHref": "",
       "transition": ""
     },
     {
@@ -1116,28 +1129,15 @@
       "transition": ""
     },
     {
-      "name": "Hock Tan",
-      "role": "CEO, Broadcom",
-      "category": "Corporate",
-      "jurisdiction": "Broadcom",
-      "metro": "San Francisco-San Jose",
-      "metroSlug": "san-francisco-san-jose",
-      "jscore": 1736.6,
-      "weight": 0.05,
-      "power": 86.8,
-      "jurisdictionHref": "",
-      "transition": ""
-    },
-    {
       "name": "Amin H. Nasser",
       "role": "CEO, Saudi Aramco",
       "category": "Corporate",
       "jurisdiction": "Saudi Aramco",
       "metro": "Dammam",
       "metroSlug": "dammam",
-      "jscore": 1683.9,
+      "jscore": 1718.6,
       "weight": 0.05,
-      "power": 84.2,
+      "power": 85.9,
       "jurisdictionHref": "",
       "transition": ""
     },
@@ -1161,7 +1161,7 @@
       "jurisdiction": "Shandong",
       "metro": "Jinan",
       "metroSlug": "jinan",
-      "jscore": 102.2,
+      "jscore": 102.3,
       "weight": 0.8,
       "power": 81.8,
       "jurisdictionHref": "/states/shandong",
@@ -1187,9 +1187,9 @@
       "jurisdiction": "Beijing",
       "metro": "Beijing",
       "metroSlug": "beijing",
-      "jscore": 112.7,
+      "jscore": 112.9,
       "weight": 0.72,
-      "power": 81.1,
+      "power": 81.3,
       "jurisdictionHref": "/rankings/beijing",
       "transition": ""
     },
@@ -1252,24 +1252,11 @@
       "jurisdiction": "Los Angeles",
       "metro": "Los Angeles",
       "metroSlug": "los-angeles",
-      "jscore": 108.5,
-      "weight": 0.72,
-      "power": 78.1,
-      "jurisdictionHref": "/rankings/los-angeles",
-      "transition": "In a runoff for re-election; LA mayoral election, 3 Nov 2026"
-    },
-    {
-      "name": "Oh Se-hoon",
-      "role": "Mayor of Seoul",
-      "category": "Mayor",
-      "jurisdiction": "Seoul",
-      "metro": "Seoul",
-      "metroSlug": "seoul",
-      "jscore": 108.3,
+      "jscore": 108.4,
       "weight": 0.72,
       "power": 78.0,
-      "jurisdictionHref": "/rankings/seoul",
-      "transition": ""
+      "jurisdictionHref": "/rankings/los-angeles",
+      "transition": "In a runoff for re-election; LA mayoral election, 3 Nov 2026"
     },
     {
       "name": "Gong Zheng",
@@ -1278,10 +1265,23 @@
       "jurisdiction": "Shanghai",
       "metro": "Shanghai",
       "metroSlug": "shanghai",
-      "jscore": 107.9,
+      "jscore": 107.8,
       "weight": 0.72,
-      "power": 77.7,
+      "power": 77.6,
       "jurisdictionHref": "/rankings/shanghai",
+      "transition": ""
+    },
+    {
+      "name": "Oh Se-hoon",
+      "role": "Mayor of Seoul",
+      "category": "Mayor",
+      "jurisdiction": "Seoul",
+      "metro": "Seoul",
+      "metroSlug": "seoul",
+      "jscore": 107.6,
+      "weight": 0.72,
+      "power": 77.5,
+      "jurisdictionHref": "/rankings/seoul",
       "transition": ""
     },
     {
@@ -1291,9 +1291,9 @@
       "jurisdiction": "Île-de-France",
       "metro": "Paris",
       "metroSlug": "paris",
-      "jscore": 138.0,
+      "jscore": 137.9,
       "weight": 0.55,
-      "power": 75.9,
+      "power": 75.8,
       "jurisdictionHref": "/states/ile-de-france",
       "transition": ""
     },
@@ -1304,23 +1304,23 @@
       "jurisdiction": "Zhejiang",
       "metro": "Hangzhou",
       "metroSlug": "hangzhou",
-      "jscore": 92.8,
+      "jscore": 92.9,
       "weight": 0.8,
-      "power": 74.2,
+      "power": 74.3,
       "jurisdictionHref": "/states/zhejiang",
       "transition": ""
     },
     {
-      "name": "Lee Jae-yong",
-      "role": "CEO, Samsung",
-      "category": "Corporate",
-      "jurisdiction": "Samsung",
-      "metro": "Seoul",
-      "metroSlug": "seoul",
-      "jscore": 1452.0,
-      "weight": 0.05,
-      "power": 72.6,
-      "jurisdictionHref": "",
+      "name": "Cyril Ramaphosa",
+      "role": "Pres., South Africa",
+      "category": "National",
+      "jurisdiction": "South Africa",
+      "metro": "Johannesburg",
+      "metroSlug": "johannesburg",
+      "jscore": 106.9,
+      "weight": 0.676,
+      "power": 72.3,
+      "jurisdictionHref": "/countries/south-africa",
       "transition": ""
     }
   ]

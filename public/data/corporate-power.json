@@ -3,7 +3,7 @@
     "name": "Jensen Huang",
     "company": "NVIDIA",
     "role": "CEO, NVIDIA",
-    "valuationB": 4663.3,
+    "valuationB": 4912.3,
     "metro": "San Francisco-San Jose",
     "metroSlug": "san-francisco-san-jose",
     "source": "Public"
@@ -12,7 +12,7 @@
     "name": "Tim Cook",
     "company": "Apple",
     "role": "CEO, Apple",
-    "valuationB": 4168.0,
+    "valuationB": 4901.8,
     "metro": "San Francisco-San Jose",
     "metroSlug": "san-francisco-san-jose",
     "source": "Public"
@@ -21,7 +21,7 @@
     "name": "Sundar Pichai",
     "company": "Alphabet (Google)",
     "role": "CEO, Alphabet (Google)",
-    "valuationB": 4084.1,
+    "valuationB": 4223.6,
     "metro": "San Francisco-San Jose",
     "metroSlug": "san-francisco-san-jose",
     "source": "Public"
@@ -30,7 +30,7 @@
     "name": "Satya Nadella",
     "company": "Microsoft",
     "role": "CEO, Microsoft",
-    "valuationB": 2770.6,
+    "valuationB": 2925.5,
     "metro": "Seattle",
     "metroSlug": "seattle",
     "source": "Public"
@@ -39,7 +39,7 @@
     "name": "Andy Jassy",
     "company": "Amazon",
     "role": "CEO, Amazon",
-    "valuationB": 2503.1,
+    "valuationB": 2659.5,
     "metro": "Seattle",
     "metroSlug": "seattle",
     "source": "Public"
@@ -48,25 +48,16 @@
     "name": "C.C. Wei",
     "company": "TSMC",
     "role": "CEO, TSMC",
-    "valuationB": 2242.4,
+    "valuationB": 2066.1,
     "metro": "Hsinchu",
     "metroSlug": "hsinchu",
-    "source": "Public"
-  },
-  {
-    "name": "Elon Musk",
-    "company": "SpaceX",
-    "role": "CEO, SpaceX",
-    "valuationB": 2018.7,
-    "metro": "Brownsville",
-    "metroSlug": "brownsville",
     "source": "Public"
   },
   {
     "name": "Hock Tan",
     "company": "Broadcom",
     "role": "CEO, Broadcom",
-    "valuationB": 1736.6,
+    "valuationB": 1764.2,
     "metro": "San Francisco-San Jose",
     "metroSlug": "san-francisco-san-jose",
     "source": "Public"
@@ -75,54 +66,36 @@
     "name": "Amin H. Nasser",
     "company": "Saudi Aramco",
     "role": "CEO, Saudi Aramco",
-    "valuationB": 1683.9,
+    "valuationB": 1718.6,
     "metro": "Dammam",
     "metroSlug": "dammam",
-    "source": "Public"
-  },
-  {
-    "name": "Lee Jae-yong",
-    "company": "Samsung",
-    "role": "CEO, Samsung",
-    "valuationB": 1452.0,
-    "metro": "Seoul",
-    "metroSlug": "seoul",
-    "source": "Public"
-  },
-  {
-    "name": "Elon Musk",
-    "company": "Tesla",
-    "role": "CEO, Tesla",
-    "valuationB": 1426.1,
-    "metro": "Austin",
-    "metroSlug": "austin",
     "source": "Public"
   },
   {
     "name": "Mark Zuckerberg",
     "company": "Meta Platforms (Facebook)",
     "role": "CEO, Meta Platforms (Facebook)",
-    "valuationB": 1396.8,
+    "valuationB": 1639.8,
     "metro": "San Francisco-San Jose",
     "metroSlug": "san-francisco-san-jose",
     "source": "Public"
   },
   {
-    "name": "Sanjay Mehrotra",
-    "company": "Micron Technology",
-    "role": "CEO, Micron Technology",
-    "valuationB": 1278.8,
-    "metro": "Boise",
-    "metroSlug": "boise",
+    "name": "Elon Musk",
+    "company": "SpaceX",
+    "role": "CEO, SpaceX",
+    "valuationB": 1633.5,
+    "metro": "Brownsville",
+    "metroSlug": "brownsville",
     "source": "Public"
   },
   {
-    "name": "Kwak Noh-jung",
-    "company": "SK Hynix",
-    "role": "CEO, SK Hynix",
-    "valuationB": 1235.8,
-    "metro": "Seoul",
-    "metroSlug": "seoul",
+    "name": "Elon Musk",
+    "company": "Tesla",
+    "role": "CEO, Tesla",
+    "valuationB": 1430.3,
+    "metro": "Austin",
+    "metroSlug": "austin",
     "source": "Public"
   },
   {
@@ -135,10 +108,19 @@
     "source": "Private"
   },
   {
+    "name": "Lee Jae-yong",
+    "company": "Samsung",
+    "role": "CEO, Samsung",
+    "valuationB": 1123.9,
+    "metro": "Seoul",
+    "metroSlug": "seoul",
+    "source": "Public"
+  },
+  {
     "name": "David Ricks",
     "company": "Eli Lilly",
     "role": "CEO, Eli Lilly",
-    "valuationB": 1077.3,
+    "valuationB": 1051.5,
     "metro": "Indianapolis",
     "metroSlug": "indianapolis",
     "source": "Public"
@@ -153,12 +135,21 @@
     "source": "Unicorn"
   },
   {
-    "name": "Lisa Su",
-    "company": "AMD",
-    "role": "CEO, AMD",
-    "valuationB": 850.5,
-    "metro": "San Francisco-San Jose",
-    "metroSlug": "san-francisco-san-jose",
+    "name": "Sanjay Mehrotra",
+    "company": "Micron Technology",
+    "role": "CEO, Micron Technology",
+    "valuationB": 958.8,
+    "metro": "Boise",
+    "metroSlug": "boise",
+    "source": "Public"
+  },
+  {
+    "name": "Kwak Noh-jung",
+    "company": "SK Hynix",
+    "role": "CEO, SK Hynix",
+    "valuationB": 877.6,
+    "metro": "Seoul",
+    "metroSlug": "seoul",
     "source": "Public"
   },
   {
@@ -171,10 +162,19 @@
     "source": "Unicorn"
   },
   {
+    "name": "Lisa Su",
+    "company": "AMD",
+    "role": "CEO, AMD",
+    "valuationB": 808.4,
+    "metro": "San Francisco-San Jose",
+    "metroSlug": "san-francisco-san-jose",
+    "source": "Public"
+  },
+  {
     "name": "Christophe Fouquet",
     "company": "ASML",
     "role": "CEO, ASML",
-    "valuationB": 691.7,
+    "valuationB": 671.2,
     "metro": "Eindhoven",
     "metroSlug": "eindhoven",
     "source": "Public"
