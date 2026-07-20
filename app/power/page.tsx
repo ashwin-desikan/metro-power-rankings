@@ -53,7 +53,7 @@ export default async function PowerPage() {
       </header>
 
       {rows.length ? (
-        <PowerTable rows={rows} />
+        <PowerTable rows={rows} dropped={data?.dropped ?? []} prevSnapshotDate={data?.prevSnapshotDate ?? null} />
       ) : (
         <p className="text-[var(--text-muted)]">Ranking unavailable.</p>
       )}
