@@ -1,0 +1,60 @@
+name: Purge Cloudflare cache on deploy
+
+# Root fix for stale HTML at the edge: the citizenofnowhere.org zone caches
+# whole pages ("Cache Everything"), so a fresh Vercel deploy is not visible
+# until the edge cache is cleared. This purges the zone when a PRODUCTION
+# deploy succeeds, and can also be run on demand from the Actions tab
+# (Run workflow) to purge immediately / test the credentials.
+#
+# One-time setup (repo Settings > Secrets and variables > Actions):
+#   CLOUDFLARE_ZONE_ID    - Zone ID for citizenofnowhere.org (zone Overview).
+#   CLOUDFLARE_API_TOKEN  - token with "Zone > Cache Purge" for that zone.
+
+on:
+  deployment_status:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  purge:
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Context
+        run: |
+          echo "event:       ${{ github.event_name }}"
+          echo "environment: ${{ github.event.deployment_status.environment }}"
+          echo "prod flag:   ${{ github.event.deployment.production_environment }}"
+      - name: Purge Cloudflare (production or manual)
+        env:
+          EVENT: ${{ github.event_name }}
+          CF_ENV: ${{ github.event.deployment_status.environment }}
+          CF_ZONE: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ "${EVENT}" = "deployment_status" ]; then
+            case "${CF_ENV}" in
+              *[Pp]roduction*|prod|Prod) : ;;
+              *) echo "Non-production deploy ('${CF_ENV}'); skipping purge."; exit 0 ;;
+            esac
+          fi
+          if [ -z "${CF_ZONE}" ] || [ -z "${CF_TOKEN}" ]; then
+            echo "::error::CLOUDFLARE_ZONE_ID / CLOUDFLARE_API_TOKEN not set."
+            exit 1
+          fi
+          resp="$(curl -sS -X POST \
+            "https://api.cloudflare.com/client/v4/zones/${CF_ZONE}/purge_cache" \
+            -H "Authorization: Bearer ${CF_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}')"
+          echo "Cloudflare response: ${resp}"
+          if echo "${resp}" | grep -q '"success":true'; then
+            echo "Purged Cloudflare cache for the zone."
+          else
+            echo "::error::Cloudflare purge failed (check the token Cache Purge permission and the zone ID above)."
+            exit 1
+          fi

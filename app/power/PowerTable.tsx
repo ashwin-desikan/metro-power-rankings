@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { PowerEntry } from "@/lib/powerRanking";
+import type { PowerEntry, DroppedEntry } from "@/lib/powerRanking";
 
 const CAT: Record<string, string> = {
   National: "text-blue-700 dark:text-blue-300 bg-blue-500/10",
@@ -32,7 +32,16 @@ const CORE = new Set([
 // leading ⚠ (+ variation selector + space); keeps the 👑 crown.
 const stripWarn = (s: string) => s.replace(/\u26a0\ufe0f?\s*/g, "");
 
-export default function PowerTable({ rows }: { rows: PowerEntry[] }) {
+function Move({ r }: { r: PowerEntry }) {
+  if (r.isNew) return <span className="text-[10px] px-1 py-0.5 rounded font-semibold" style={{ background: "color-mix(in srgb, var(--accent) 18%, transparent)", color: "var(--accent)" }}>NEW</span>;
+  const d = r.delta;
+  if (d === null || d === undefined) return null;
+  if (d === 0) return <span className="text-[10px] text-[var(--text-dim)]" title="No change">–</span>;
+  if (d > 0) return <span className="text-[10px] font-semibold tabular-nums text-green-600 dark:text-green-400" title={`Up ${d}`}>▲{d}</span>;
+  return <span className="text-[10px] font-semibold tabular-nums text-red-600 dark:text-red-400" title={`Down ${Math.abs(d)}`}>▼{Math.abs(d)}</span>;
+}
+
+export default function PowerTable({ rows, dropped = [], prevSnapshotDate = null }: { rows: PowerEntry[]; dropped?: DroppedEntry[]; prevSnapshotDate?: string | null }) {
   const [view, setView] = useState<"all" | "core">("all");
   const shown = view === "core" ? rows.filter((r) => CORE.has(r.category)) : rows;
   const max = shown.length ? Math.max(...shown.map((r) => r.power)) : 1;
@@ -57,6 +66,7 @@ export default function PowerTable({ rows }: { rows: PowerEntry[] }) {
         <span className="text-xs text-[var(--text-dim)]">
           {shown.length} of {rows.length}
           {view === "core" ? " · hides media, sport, culture, royalty, faith" : ""}
+          {prevSnapshotDate ? <> · <span className="text-green-600 dark:text-green-400">▲</span><span className="text-red-600 dark:text-red-400">▼</span> vs {prevSnapshotDate}</> : ""}
         </span>
       </div>
 
@@ -71,6 +81,7 @@ export default function PowerTable({ rows }: { rows: PowerEntry[] }) {
               </div>
               <div className="text-right flex-shrink-0">
                 <div className="tabular-nums font-bold text-[var(--text-dim)] text-xs">#{i + 1}</div>
+                <div className="mt-0.5"><Move r={r} /></div>
                 <div className="tabular-nums font-semibold text-[var(--text)]">{Math.round(r.power)}</div>
               </div>
             </div>
@@ -111,7 +122,10 @@ export default function PowerTable({ rows }: { rows: PowerEntry[] }) {
           <tbody>
             {shown.map((r, i) => (
               <tr key={`${r.name}-${i}`} className="border-b last:border-0" style={{ borderColor: "var(--border)" }}>
-                <td className="py-2 px-4 text-right tabular-nums font-bold text-[var(--text-dim)]">{i + 1}</td>
+                <td className="py-2 px-4 text-right tabular-nums font-bold text-[var(--text-dim)]">
+                  <div>{i + 1}</div>
+                  <div className="mt-0.5"><Move r={r} /></div>
+                </td>
                 <td className="py-2 px-4">
                   <div className="font-medium text-[var(--text)]">{stripWarn(r.name)}</div>
                   <div className="text-xs text-[var(--text-muted)]">{r.role}</div>
@@ -147,6 +161,21 @@ export default function PowerTable({ rows }: { rows: PowerEntry[] }) {
           </tbody>
         </table>
       </div>
+
+      {dropped.length ? (
+        <div className="mt-4 rounded-xl border p-3" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+          <div className="text-xs uppercase tracking-wider text-[var(--text-dim)]">
+            Dropped off{prevSnapshotDate ? ` since ${prevSnapshotDate}` : ""} · {dropped.length}
+          </div>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {dropped.map((d) => (
+              <span key={d.name} className="text-xs px-2 py-1 rounded border" style={{ borderColor: "var(--border)" }} title={`${d.category} · ${d.jurisdiction}`}>
+                {stripWarn(d.name)} <span className="text-[var(--text-dim)] tabular-nums">#{d.prevRank}</span>
+              </span>
+            ))}
+          </div>
+        </div>
+      ) : null}
     </>
   );
 }

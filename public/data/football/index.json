@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10",
+  "generated_at": "2026-07-20",
   "source": "Champions League-201516.xlsx",
   "scope": {
     "countries": [
@@ -65901,7 +65901,7 @@
       "country": "Netherlands",
       "federation_country": null,
       "city": "Almere",
-      "metro": "Almere",
+      "metro": "Amsterdam",
       "county": "Flevoland",
       "continent": "Europe",
       "lat": 52.394444,

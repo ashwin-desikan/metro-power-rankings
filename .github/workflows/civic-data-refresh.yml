@@ -45,8 +45,11 @@ jobs:
           python scripts/civic/refresh_mayors.py --self-test
 
       # ---- SAFE: auto-applied to main ----
-      - name: World leaders (add-only gap-fill)
-        run: python scripts/leaders/refresh-current-leaders.py --add-only
+      - name: World leaders (auto-apply changes from Wikidata)
+        # No --add-only: a plausible, unambiguous change to a current head of
+        # state/government is applied to _current.json AND the per-country
+        # history file, and logged to public/data/leaders/_changes.json.
+        run: python scripts/leaders/refresh-current-leaders.py
 
       - name: US governors (add-only gap-fill)
         run: python scripts/civic/refresh_governors.py --add-only
@@ -72,6 +75,14 @@ jobs:
         continue-on-error: true
         run: python scripts/build-power-ranking.py
 
+      - name: Zone Zero Cup (weekly regeneration)
+        # Preflight-guarded: the script refuses to write a hollowed-out Cup if an
+        # upstream pillar input has collapsed (see preflight() in the script).
+        # continue-on-error so a tripped guard leaves the Cup stale (safe) and
+        # still lets the rest of the weekly refresh commit; the red step is the signal.
+        continue-on-error: true
+        run: python scripts/zzc_v1_multipillar.py
+
       - name: Commit safe auto changes to main
         run: |
           set -e
@@ -82,12 +93,22 @@ jobs:
           # mini's weekly run sharing one warm cache instead of cold-starting each time.
           DATA_PATHS="public/data scripts/civic/city-qids.json"
           if git diff --quiet -- $DATA_PATHS; then
-            echo "No safe auto changes this run."
-          else
-            git add $DATA_PATHS
-            git commit -m "data: weekly refresh - officeholders, billionaires, valuations, World Power Rankings [vercel skip]"
-            git push origin HEAD:main
+            echo "No auto changes this run."
+            exit 0
           fi
+          # A leadership change edits the per-country history (leaders/<slug>.json),
+          # which country pages read at build time, so it needs a real build. The
+          # Zone Zero Cup no longer does: lib/zoneZeroCup.ts reads it from GitHub
+          # raw with ISR, so the weekly regeneration surfaces with no deploy. Every
+          # other refresh is likewise ISR-read and rides [vercel skip].
+          if git diff --quiet -- public/data/leaders/_changes.json; then
+            MSG="data: weekly refresh - officeholders, billionaires, valuations, World Power Rankings [vercel skip]"
+          else
+            MSG="data: weekly refresh + leadership change(s) - rebuild country pages"
+          fi
+          git add $DATA_PATHS
+          git commit -m "$MSG"
+          git push origin HEAD:main
 
       # ---- REVIEW: proposed leader overwrites -> Pull Request ----
       - name: Propose leader overwrites for review (PR)

@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-07-20",
+    headline: "World Cup champions, Nowhere 100 movement, leaders tracker, Zone Zero fixes",
+    items: [
+      "Spain's 2026 World Cup win now runs through the site: it joins Champions, national team pages show the final result instead of a live bracket, and the final enters the all-time Greatest Games top fifteen.",
+      "Wimbledon's Jannik Sinner and Linda Noskova and The Open's Ryan Fox join Champions, Andy Burnham replaces Keir Starmer as UK Prime Minister, and a new Leadership changes page logs each switch.",
+      "The Nowhere 100 now tracks week-to-week movement: everyone shows how many places they climbed or fell, new entries are flagged, and anyone who dropped off the list is named beneath the table.",
+      "The Zone Zero Cup is corrected and now refreshes weekly: Spain's World Cup lifts them to fourth overall, and a fault that had emptied tournament finals across national team pages is repaired.",
+    ],
+  },
+  {
     date: "2026-07-10",
     headline: "Country facts, flags, dual units, and data corrections",
     items: [

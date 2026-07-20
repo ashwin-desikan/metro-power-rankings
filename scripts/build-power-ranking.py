@@ -14,7 +14,7 @@ dedupe_and_rank, juris_href, memsum) take their data as explicit arguments so
 they're unit-testable without the public/data/*.json feeds; see
 scripts/tests/test_build_power_ranking.py. All file I/O and the pipeline
 sequencing live in main(), which only runs under __main__."""
-import json,time,re,datetime
+import json,time,re,datetime,os,glob
 
 def rj(p):
     for _ in range(15):
@@ -299,7 +299,45 @@ def main():
     for e in top:
         e["jurisdictionHref"]=juris_href(e, country_name2slug, state_name2slug, cname, JHREF_OVERRIDE)
         e["transition"]=inp.get("transitions",{}).get(_bare(e["name"]),"")
-    json.dump({"weights":W,"asOf":datetime.date.today().isoformat(),"ranking":top}, open("public/data/power-ranking.json","w",encoding="utf-8"), indent=2, ensure_ascii=False)
+    # ---- week-over-week movement vs the most recent prior snapshot ----
+    today = datetime.date.today().isoformat()
+    hist_dir = "public/data/power-ranking-history"
+    os.makedirs(hist_dir, exist_ok=True)
+    prior = None
+    for f in sorted(glob.glob(os.path.join(hist_dir, "*.json"))):
+        if os.path.basename(f)[:-5] < today:
+            prior = f
+    prev_map = {}; prev_date = None
+    if prior:
+        try:
+            psnap = json.load(open(prior, encoding="utf-8"))
+            prev_date = psnap.get("asOf")
+            for r in psnap.get("ranking", []):
+                prev_map[r.get("bare") or _bare(r.get("name","")).lower()] = r
+        except Exception:
+            prev_map = {}; prev_date = None
+    cur_keys = set()
+    for i, e in enumerate(top, 1):
+        k = _bare(e["name"]).lower(); cur_keys.add(k)
+        pv = prev_map.get(k)
+        if pv is None:
+            e["prevRank"] = None; e["isNew"] = bool(prev_map); e["delta"] = None
+        else:
+            pr = pv.get("rank")
+            e["prevRank"] = pr; e["isNew"] = False
+            e["delta"] = (pr - i) if isinstance(pr, int) else None
+    dropped = []
+    for k, r in prev_map.items():
+        if k not in cur_keys:
+            dropped.append({"name": r.get("name"), "prevRank": r.get("rank"),
+                            "category": r.get("category"), "jurisdiction": r.get("jurisdiction")})
+    dropped.sort(key=lambda x: x.get("prevRank") or 999)
+    snap = {"asOf": today, "ranking": [
+        {"rank": i, "name": e["name"], "bare": _bare(e["name"]).lower(),
+         "category": e["category"], "jurisdiction": e.get("jurisdiction",""), "power": e["power"]}
+        for i, e in enumerate(top, 1)]}
+    json.dump(snap, open(os.path.join(hist_dir, today + ".json"), "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    json.dump({"weights":W,"asOf":today,"prevSnapshotDate":prev_date,"ranking":top,"dropped":dropped}, open("public/data/power-ranking.json","w",encoding="utf-8"), indent=2, ensure_ascii=False)
     print(f"{'#':>3} {'POWER':>7}  {'METRO':22} {'SLUG':22} NAME")
     for i,e in enumerate(top,1):
         print(f"{i:>3} {e['power']:>7.0f}  {str(e.get('metro','')):22} {str(e.get('metroSlug','')):22} {e['name']}")

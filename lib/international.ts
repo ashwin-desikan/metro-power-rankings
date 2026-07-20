@@ -488,7 +488,13 @@ const WC2026_DEEPEST_ROUND_PRIORITY = [
   "Round of 32",
 ];
 
+// The 2026 World Cup has concluded, so per-team tournament-history rows render
+// the finalized workbook result (Champion / Final / round reached) instead of
+// the frozen live-bracket stage. Flip to false only while a WC is in progress.
+const WC2026_COMPLETE = true;
+
 export function getWorldCup2026StageForTeam(slug: string): string | null {
+  if (WC2026_COMPLETE) return null;
   const wc = getWorldCup2026();
   if (!wc) return null;
   for (const rn of WC2026_DEEPEST_ROUND_PRIORITY) {

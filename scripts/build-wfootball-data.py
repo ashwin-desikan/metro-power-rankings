@@ -447,7 +447,14 @@ def build_womens_world_cup():
     wb = openpyxl.load_workbook(WC_SRC, read_only=True, data_only=True)
     ws = wb["Int Tournaments"]
     header = list(next(ws.iter_rows(values_only=True)))
-    ix = {name: i for i, name in enumerate(header)}
+    # Int Tournaments has DUPLICATE header names ("Year" at idx 2 and 113, plus
+    # "Stakes"/"Round"). A dict comprehension binds to the LAST occurrence; for
+    # "Year" that is a near-empty column, which collapsed this editions list to a
+    # single null-year entry. First occurrence wins.
+    ix = {}
+    for i, name in enumerate(header):
+        if name is not None and name not in ix:
+            ix[name] = i
     iComp = ix["Leag/Comp."]
     iY, iRnd, iTeam, iWDL, iOpp = ix["Year"], ix["Comp. Rnd"], ix["Team"], ix["W/D/L"], ix["Opp Team"]
     iFor, iAg, iHost, iTrophy, iCont = ix["For"], ix["Ag"], ix["Stad. Country"], ix["Trophy Won"], ix["Continent"]

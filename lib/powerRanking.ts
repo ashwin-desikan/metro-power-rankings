@@ -5,8 +5,10 @@ import path from "path";
 export type PowerEntry = {
   name: string; role: string; category: string;
   jurisdiction: string; jurisdictionHref?: string; transition?: string; metro: string; metroSlug: string; jscore: number; weight: number; power: number;
+  prevRank?: number | null; delta?: number | null; isNew?: boolean;
 };
-export type PowerRanking = { weights: Record<string, number>; asOf?: string; ranking: PowerEntry[] };
+export type DroppedEntry = { name: string; prevRank: number; category: string; jurisdiction: string };
+export type PowerRanking = { weights: Record<string, number>; asOf?: string; prevSnapshotDate?: string | null; ranking: PowerEntry[]; dropped?: DroppedEntry[] };
 
 const GH_RAW = "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data/power-ranking.json";
 
