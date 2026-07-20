@@ -26,10 +26,14 @@ const GOLD = "#d4af37";
 
 import IndexSwitcher from "@/app/IndexSwitcher";
 
-export default function ZoneZeroCupPage() {
-  const nations = getZoneZeroNations();
-  const meta = getZoneZeroMeta();
-  const regions = getZoneZeroRegions();
+// ISR: the Cup is regenerated weekly and committed with [vercel skip]; this
+// re-reads it from GitHub raw within the window, so no build is needed.
+export const revalidate = 3600;
+
+export default async function ZoneZeroCupPage() {
+  const nations = await getZoneZeroNations();
+  const meta = await getZoneZeroMeta();
+  const regions = await getZoneZeroRegions();
 
   const rows: ZzcRow[] = nations.map((n) => ({
     slug: n.slug,
