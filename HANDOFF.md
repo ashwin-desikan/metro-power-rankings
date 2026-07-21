@@ -158,3 +158,21 @@ Ashwin asked to fill the missing Party column now that the pipeline works. 15 of
 
 ### Heads-up for windows
 This is the tell that our `P6`-latest-start pick can silently lag for cities where Wikidata is stale — it's showed up twice today (Copenhagen, + KL/Cairo/Mumbai). Worth a periodic sanity pass on the non-US auto-resolved mayors specifically; the US ones track Wikidata well, the rest drift. No code change needed, just curation via the two files.
+
+## 2026-07-21 — windows → mini (new: refresh_cabinet.py — President/VP/Cabinet, never automated before)
+
+Ashwin caught Tulsi Gabbard still listed as DNI on `/us-political-leadership`. Traced it: `refresh_congress.py`'s `build()` explicitly passes `executive` through untouched (own self-test asserts it) — President/VP/Cabinet (and House leadership, same passthrough, not addressed yet) have never been refreshed by anything, pure hand-entered data since this pipeline existed.
+
+**New `scripts/civic/refresh_cabinet.py` + `cabinet-positions.json` cache**, same two-phase discovery pattern as mayors' city-QID cache. Two live runs on the mini today found real problems and both got fixed from actual evidence, not guesses:
+
+1. **Position discovery** (P1001=US jurisdiction + keyword match) needed `wikibase:sitelinks`-based disambiguation, same trick as mayors' city QIDs — 9-14 raw candidates per office, only accepted a >=5x sitelinks winner. Also fixed a real substring collision: "president of the united states" is literally inside "vice president of the united states", so President discovery kept losing to VP as a false rival — added an `exclude` filter.
+2. **Holder resolution** — Wikidata's "no end-date = current" heuristic (reliable for Senators/Governors) completely breaks down here: live output included 1970s-80s historical secretaries AND actual fictional TV characters (Josh Lyman, Doug Stamper, Jack Ryan, Bob Russell) tagged with the real position, never dated. Fixed with dedupe-by-name + require a start date >= 2020 + prefer the latest, only when unambiguous. Every one of the messy real patterns from the live run is now a self-test (`pick_holder()`, no network needed).
+
+**Result of the second live run: 12/17 positions resolved clean, correctly discarding all the historical/fictional noise, and exactly ONE real discrepancy surfaced: Secretary of Labor — Wikidata said Keith Sonderling (since 2026-04-20), curated data still said Lori Chavez-DeRemer.** Ashwin confirmed: she resigned, Sonderling is Acting (nominated, not yet confirmed). Applied directly — added an `acting` flag to the `CabinetMember` schema (`lib/usPolitics.ts`) so the page shows "(Acting)" instead of implying full confirmed status, and hardened `build()` so a future auto-detected name change always writes a fresh entry rather than spreading the old row — an `acting` flag can never silently carry onto a different person; a human has to set/clear it deliberately every time, same as this one was.
+
+**Still DRY-RUN ONLY (no `--write`).** 5 positions still don't have a clean sitelinks winner (President, Secretary of State, Secretary of Defense, EPA Administrator, SBA Administrator) — logged, not guessed. Wired into `civic-data-refresh.yml` as a dry-run step; not yet added to your `metro-mini-refresh.sh` since it needed two rounds of live hardening before I'd trust it near your actively-evolving script.
+
+### Open questions for the mini
+1. Once you're back on this: another dry run to confirm the president/VP exclude-filter fix actually resolves those two now, and see if the remaining 3 (State, Defense, EPA/SBA — sitelinks margin genuinely close) need a manual QID override rather than more heuristic tuning.
+2. Worth deciding together when `--write` is trustworthy enough to flip on for real, vs. keeping this a "surfaces discrepancies, human applies them" tool indefinitely given how messy Wikidata's Cabinet-position modeling turned out to be.
+3. House leadership (Speaker/Whips/Conference Chairs) has the identical untouched-passthrough problem — same mechanism would work, not started.
