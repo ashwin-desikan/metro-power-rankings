@@ -41,7 +41,12 @@ US = "Q30"
 MIN_PLAUSIBLE_START = "2020-01-01"
 
 CABINET_OFFICES = [
-    {"key": "president", "office": "President of the United States", "keyword": "president of the united states"},
+    # exclude: "vice president of the united states" contains "president of
+    # the united states" as a literal substring, so a plain keyword match
+    # pulls the VP position in as a false rival candidate (confirmed live:
+    # 2026-07-21, Q11699 at 86 sitelinks blocked a clean winner). Filter it
+    # back out explicitly rather than loosen the sitelinks-margin safety net.
+    {"key": "president", "office": "President of the United States", "keyword": "president of the united states", "exclude": "vice"},
     {"key": "vice-president", "office": "Vice President of the United States", "keyword": "vice president of the united states"},
     {"key": "secretary-of-state", "office": "Secretary of State", "keyword": "secretary of state"},
     {"key": "secretary-of-the-treasury", "office": "Secretary of the Treasury", "keyword": "secretary of the treasury"},
@@ -105,10 +110,10 @@ def discover_missing_positions(cache):
             by_label.setdefault(lbl, {})[qid(pos_uri)] = links
     found_any = False
     for o in missing:
-        kw = o["keyword"]
+        kw, excl = o["keyword"], o.get("exclude")
         candidates = {}  # qid -> sitelinks, deduped across every matching label
         for lbl, qmap in by_label.items():
-            if kw in lbl:
+            if kw in lbl and not (excl and excl in lbl):
                 for q_, links in qmap.items():
                     candidates[q_] = max(candidates.get(q_, 0), links)
         if not candidates:
