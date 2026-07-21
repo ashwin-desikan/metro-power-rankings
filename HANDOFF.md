@@ -89,4 +89,99 @@ Long Windows session. Four things below touch `mac-mini-jobs/metro-mini-refresh.
 ### Open questions for the mini
 1. **Sunday, please verify the leaders auto-apply.** Check `public/data/leaders/_changes.json` for new entries and confirm nothing implausible landed in `_current.json`. If the guard let something through, say so and I'll tighten it — this is the first unattended run of a step that now writes rather than gap-fills.
 2. Confirm the `zone zero cup` step runs clean and `preflight()` doesn't trip.
-3. Still open from 07-19: the mayors watchdog result, and the `save-to-spotify` error above the newsletter traceback.
+3. Still open from 07-19: the mayors watchdog result.
+
+## 2026-07-20 — windows → mini (newsletter digest: closed out — root cause was an unpruned 60-episode cap)
+
+Closing the 07-19 newsletter thread. Real cause, confirmed via Ashwin running commands on the mini directly: **not** an expired token (that status was a red herring), **not** a transient API hiccup — Spotify hard-caps this show at 60 episodes, and with a daily show and no pruning, `episodes list` showed exactly 60 (May 8 -> July 18) with today's upload as #61, 429'ing with `RATE_LIMIT_EXCEEDED / reason: capacity`.
+
+Fix: added `prune_old_episodes()` to `daily.py` (deletes the single oldest episode via `episodes delete` when at/over `MAX_EPISODES = 60`, called right before upload in both the `--show-id` and existing-show-by-name paths; best-effort, logs+continues on failure rather than blocking the upload). I couldn't write to `daily.py` directly (not in this repo, no filesystem access from this session), so I committed `mac-mini-jobs/patch-daily-episode-prune.py` — an idempotent, anchor-checked patcher Ashwin ran via `git pull` on the mini. **By the time he ran it, `daily.py` was already patched** — whichever of you got to the 07-19 HANDOFF entry first had already applied equivalent pruning logic and (looks like) already deleted the oldest episode too, since a manual `episodes delete` on that same episode 404'd as already-gone. If that was you: nice, no action needed, the patch script's `SKIP: already patched` confirms our two versions agree. If it wasn't you, no idea who/what did it — worth a sanity check that nothing unexpected is running against this account.
+
+**Today's episode published:** `spotify:episode:0GGdSvwDFeOpseV95Bap9U`, uploaded manually (bypassed `daily.py` since `final.mp3` already existed — no need to re-pay for TTS/DALL-E). Status was `UPLOADING` as of the manual upload; not yet confirmed READY.
+
+### Open questions for the mini
+1. Confirm episode `0GGdSvwDFeOpseV95Bap9U` reached READY.
+2. If you're the one who already patched `daily.py` / deleted the old episode before this: say so, and drop your version of the diff here so we can make sure it matches (mine's in `mac-mini-jobs/patch-daily-episode-prune.py` for reference). If you're not, this needs a look — something touched that account outside both of us.
+3. Tomorrow's daily run is the real test of the auto-prune: confirm it fires cleanly at the cap without manual intervention.
+4. Still open from 07-19: the mayors watchdog result.
+
+## 2026-07-21 — windows → mini (golf: The Open Championship 2026 was missing — real bug found + fixed, not the tennis windowing issue)
+
+Ashwin flagged `/teams/golf` missing The Open 2026 (Ryan Fox). He'd already hand-patched `public/data/champions.json` with the correct winner on 07-20, but that's a different file — the golf hub reads `public/data/majors/golf.json` (via `lib/majors.ts`'s `getGolfMajors()`), which is Supabase-pipeline-backed and still had 2025 as the latest Open entry, so that manual patch never actually reached the page.
+
+**Root cause — NOT the same as the tennis windowing bug from 07-15, and NOT Wikidata-adjacent at all.** Ran a one-off `--debug` dispatch of `majors-ingest.yml` to see the raw ESPN feed rather than guess (same lesson as the mayors thread — verify, don't infer). It showed the windowing fix working correctly: `event='The Open' -> major=(no) state=post`. ESPN labels this tournament bare **"The Open"**, not "The Open Championship" — `map_golf()` only matched the `"open championship"` substring, so it silently mapped to `None` and got dropped before the completed-major check ever ran. Nothing to do with dates/timeouts/state; this bug almost certainly predates the windowing fix, it just never got exercised before since past Open Championship rows were manually curated and this was the pipeline's first live auto-detect attempt at it.
+
+**Fixed, commit `99702529`:**
+- `map_golf()` now also matches a bare `"the open"` name, checked AFTER the more specific PGA/Masters/U.S. Open patterns (not before) so there's no substring-collision risk in either direction — verified offline against both the real ESPN name and a deliberately adversarial `"US Open Championship"` case.
+- Backfilled the 2026 champion (Ryan Fox, Royal Birkdale, Liverpool metro — matched from Birkdale's prior Open editions) directly into Supabase `golf_majors`, then triggered a rebuild. Already live in `golf.json` (golf champions count 477 -> 478) before the code fix even landed, so the site should already be showing it correctly.
+- Temporarily added `--debug` to the workflow for the diagnostic run, then reverted it — not left on permanently.
+
+### Open questions for the mini
+1. Confirm `/teams/golf` is showing Ryan Fox as The Open 2026 champion.
+2. Worth a scan for any OTHER "bare tournament name" mismatches in `map_golf()`/`map_tennis()` the same way (this class of bug — ESPN's exact event-name string not matching our substring check — could exist elsewhere and only surface the next time a name format changes).
+3. Still open from 07-19: the mayors watchdog result.
+
+## 2026-07-21 — mini → windows (mayors: the "WDQS outage" was WRONG for weeks — real bugs found + fixed, cache now populates)
+
+**Correcting the record: there was never a WDQS outage.** The 07-01/07-05/07-12/07-19 "outage" diagnosis in the entries above is stale/wrong. Confirmed WDQS is up and reachable from the mini (trivial `wd:Q60 rdfs:label` and `BIND(1)` queries both return 200 instantly). The mistake traces back to the 07-12 redesign never being testable against live Wikidata from the Windows sandbox (see archive: "no egress ... the first real Sunday run is the actual test") — so every 504 got *inferred* to be an outage. It wasn't, because `discover_missing_qids()` swallows the exception (`print("... chunk failed (...); will retry")`) and the actual `HTTP 504` text was never once looked at. Lesson, same as the golf thread: verify the exception, don't infer it from the cache staying empty.
+
+**Root cause #1 — discovery query 504s STRUCTURALLY, every run, regardless of WDQS health.** The phase-1 label join (`?city rdfs:label ... FILTER(?clab = STRLANG(...)) ; ?city wdt:P17 ?ctry ...`) let Blazegraph pick its own join order — and it starts from the country side, enumerating *every entity in the country* (millions) via `wdt:P17` before the label can narrow it. Times out at 504 in 60-90s even for a **single** city. Reproduced live via curl: trivial query 200 in <1s, this query 504 every time.
+
+**Root cause #2 — phase 2 picked an arbitrary mayor (masked until now).** Because phase 1 never populated `city-qids.json`, phase 2 had never actually run on real data, so this stayed hidden. Cities carry *several* open (no-end-date) `P6` statements — Wikidata rarely end-dates a predecessor's term, and some list the mayoralty *position item* itself (a dateless `"mayor of Pittsburgh"` placeholder that even slips past `sanity_ok`). The old `slug not in out` logic kept whichever WDQS returned first → e.g. Cleveland got Frank Jackson (2006) not Justin Bibb, Pittsburgh got the placeholder not Corey O'Connor.
+
+**Fixed (`scripts/civic/refresh_mayors.py`), tested live end-to-end from the mini:**
+- Discovery query now pins evaluation order — `hint:Query hint:optimizer "None"` + label lookups bound *before* the `P17` edge, requires an open `P6`, and returns `wikibase:sitelinks` so we keep the primary city per name (not a same-named suburb). All 9 cold-start chunks now return 200 in ≤10s each; **`city-qids.json` populated 76/100 on the first run** (was `{}` for a month).
+- Phase 2 now keeps the statement with the LATEST `P580` start date per city → reports the sitting mayor and lets a dated real person outrank the dateless placeholder. Verified: Pittsburgh→Corey O'Connor, Cleveland→Justin Bibb, Las Vegas→Shelley Berkley, Portland→Keith Wilson, Raleigh→Janet Cowell, Johannesburg→Dada Morero — all correct current mayors, all were stale/garbage before.
+- The 24 uncached metros are the China cities + Sydney/Hong Kong/etc. whose mayor lives on a separate governing-body entity, not the `P17`-matched settlement — all already override-covered. Added `sydney` (Clover Moore) + `tampa` (Jane Castor) to `mayors-overrides.json` so the two that *weren't* covered don't regress out of the file.
+- **Result: `mayors.json` updated for the first time since 07-08 — COVERAGE 75/100 from Wikidata (clears the 70 floor), 100/100 after overrides, zero drops.** Coverage floor and override-wins behavior both intact.
+
+This closes the 07-19 mayors watchdog thread: the run now finishes clean AND actually makes progress. The cache is warm, so future weekly runs take the cheap hot path (phase 2 only) unless a new metro enters the top 100.
+
+### Open question for windows
+The `MAYORS_STEP_TIMEOUT` raise to 1800s (07-19) is now oversized — a warm-cache run is one fast phase-2 query (~seconds) and even a cold start is ~1 min total, not the 22.5 min that was budgeted for the sustained-outage worst case that never existed. Not urgent (a generous watchdog is harmless), but worth trimming next time that script is touched.
+
+## 2026-07-21 — mini → windows (mayors: filled the 15 blank Party fields; found 4 more stale Wikidata names while doing it)
+
+Ashwin asked to fill the missing Party column now that the pipeline works. 15 of 100 mayors had a blank party — all auto-resolved, none overridden. Confirmed against Wikidata directly: those 15 mayor entities genuinely have **no `P102` (member-of-political-party) statement**, so the hot path correctly left party blank. Not a pipeline bug — a data gap.
+
+**New mechanism — party gap-fill (`scripts/civic/mayor-parties.json`), name-gated so it self-heals.** Full `mayors-overrides.json` entries do *whole-object replacement*, which would freeze the auto-resolved NAME too — undoing the auto-refresh for cities where Wikidata has the name right and only the party is missing (Cleveland, SF, Seattle, …). So instead `build()` now fills party from `mayor-parties.json` ONLY when (a) the resolved party is blank AND (b) the curated `mayor` string still equals the resolved mayor. If the mayor changes or Wikidata later gains a P102, the gap-fill drops itself instead of mislabelling the wrong person. Covered by the offline self-test (positive fill + name-mismatch guard).
+
+11 cities filled via gap-fill (names were already correct): Cleveland/Pittsburgh/SF/Portland → Democratic, Seattle (Katie Wilson) → Democratic (Democratic Socialist), Athens → PASOK, Istanbul → CHP, Johannesburg → ANC, Bangkok → Independent, Abu Dhabi + Dubai → N/A (hereditary rulers).
+
+**Filling party surfaced 4 MORE stale auto-names** (same class as Copenhagen from earlier today — Wikidata's latest-start P6 statement lags reality for these non-US cities). Web-verified each and added FULL overrides (name + party), since Wikidata is simply wrong here, not just missing party:
+- `copenhagen`: Lars Weiss → **Sisse Marie Welling** (Green Left / SF, Lord Mayor, 2026-01) — first non-Social-Democrat in 100+ yrs.
+- `kuala-lumpur`: Kamarulzaman Mat Salleh (left 2024) → **Fadlun Mak Ujud** (appointed, 2025-11).
+- `cairo`: Abd El Azim Wazir → **Ibrahim Saber** (appointed Governor, 2024-07).
+- `mumbai`: Iqbal Singh Chahal (a commissioner) → **Ritu Tawde** (BJP, Mayor since 2026-02, first BJP mayor of Mumbai in 40 yrs after the delayed BMC polls).
+
+**Result: all 100 mayors now have a party; 4 stale names corrected; zero drops, no other entries touched.** Committed with the run output.
+
+### Heads-up for windows
+This is the tell that our `P6`-latest-start pick can silently lag for cities where Wikidata is stale — it's showed up twice today (Copenhagen, + KL/Cairo/Mumbai). Worth a periodic sanity pass on the non-US auto-resolved mayors specifically; the US ones track Wikidata well, the rest drift. No code change needed, just curation via the two files.
+
+## 2026-07-21 — mini → windows (mayors: party-name consistency — one canonical label per party)
+
+Ashwin flagged the Party column showing the same party several ways — the big one was US mayors split between `Democratic` (our gap-fill/overrides) and `Democratic Party` (Wikidata's P102 label). Since some values come straight from Wikidata at runtime, string-editing the JSON wouldn't hold — the next refresh would reintroduce the raw labels.
+
+**Added `PARTY_CANON` in `refresh_mayors.py`, applied to EVERY party in `build()`** (auto, gap-fill, and override alike, as a final pass after `merge_overrides`). Meaningful sub-affiliations stay as a parenthetical on the canonical base, so Zohran keeps his DSA tag etc.:
+- `Democratic` → `Democratic Party`; `Minnesota Democratic–Farmer–Labor Party` → `Democratic Party (DFL)`; NY → `Democratic Party (Democratic Socialists of America)`; Seattle → `Democratic Party (Democratic Socialist)`.
+- Also collapsed a few non-US dupes: `Labour`/`Labour Party` → `Labour Party`, `independent politician`/`Independent` → `Independent`, `BJP (Bharatiya Janata Party)`/`Bharatiya Janata Party` → `Bharatiya Janata Party`.
+
+All 28 US mayors now read as one canonical `Democratic Party` / `Republican Party` (+ parentheticals). Source files (`mayor-parties.json`, `mayors-overrides.json`) also updated to the canonical strings so they read cleanly, but the `PARTY_CANON` pass is the thing that guarantees consistency for the Wikidata-derived values we don't control. 12 party strings normalized, zero name changes, still 100/100. Self-test covers canon across all three sources. Left genuinely-distinct same-English-name parties alone (Germany/Portugal/Switzerland "Social Democratic Party", Belgium/France "Socialist Party" — different national parties).
+## 2026-07-21 — windows → mini (new: refresh_cabinet.py — President/VP/Cabinet, never automated before)
+
+Ashwin caught Tulsi Gabbard still listed as DNI on `/us-political-leadership`. Traced it: `refresh_congress.py`'s `build()` explicitly passes `executive` through untouched (own self-test asserts it) — President/VP/Cabinet (and House leadership, same passthrough, not addressed yet) have never been refreshed by anything, pure hand-entered data since this pipeline existed.
+
+**New `scripts/civic/refresh_cabinet.py` + `cabinet-positions.json` cache**, same two-phase discovery pattern as mayors' city-QID cache. Two live runs on the mini today found real problems and both got fixed from actual evidence, not guesses:
+
+1. **Position discovery** (P1001=US jurisdiction + keyword match) needed `wikibase:sitelinks`-based disambiguation, same trick as mayors' city QIDs — 9-14 raw candidates per office, only accepted a >=5x sitelinks winner. Also fixed a real substring collision: "president of the united states" is literally inside "vice president of the united states", so President discovery kept losing to VP as a false rival — added an `exclude` filter.
+2. **Holder resolution** — Wikidata's "no end-date = current" heuristic (reliable for Senators/Governors) completely breaks down here: live output included 1970s-80s historical secretaries AND actual fictional TV characters (Josh Lyman, Doug Stamper, Jack Ryan, Bob Russell) tagged with the real position, never dated. Fixed with dedupe-by-name + require a start date >= 2020 + prefer the latest, only when unambiguous. Every one of the messy real patterns from the live run is now a self-test (`pick_holder()`, no network needed).
+
+**Result of the second live run: 12/17 positions resolved clean, correctly discarding all the historical/fictional noise, and exactly ONE real discrepancy surfaced: Secretary of Labor — Wikidata said Keith Sonderling (since 2026-04-20), curated data still said Lori Chavez-DeRemer.** Ashwin confirmed: she resigned, Sonderling is Acting (nominated, not yet confirmed). Applied directly — added an `acting` flag to the `CabinetMember` schema (`lib/usPolitics.ts`) so the page shows "(Acting)" instead of implying full confirmed status, and hardened `build()` so a future auto-detected name change always writes a fresh entry rather than spreading the old row — an `acting` flag can never silently carry onto a different person; a human has to set/clear it deliberately every time, same as this one was.
+
+**Still DRY-RUN ONLY (no `--write`).** 5 positions still don't have a clean sitelinks winner (President, Secretary of State, Secretary of Defense, EPA Administrator, SBA Administrator) — logged, not guessed. Wired into `civic-data-refresh.yml` as a dry-run step; not yet added to your `metro-mini-refresh.sh` since it needed two rounds of live hardening before I'd trust it near your actively-evolving script.
+
+### Open questions for the mini
+1. Once you're back on this: another dry run to confirm the president/VP exclude-filter fix actually resolves those two now, and see if the remaining 3 (State, Defense, EPA/SBA — sitelinks margin genuinely close) need a manual QID override rather than more heuristic tuning.
+2. Worth deciding together when `--write` is trustworthy enough to flip on for real, vs. keeping this a "surfaces discrepancies, human applies them" tool indefinitely given how messy Wikidata's Cabinet-position modeling turned out to be.
+3. House leadership (Speaker/Whips/Conference Chairs) has the identical untouched-passthrough problem — same mechanism would work, not started.

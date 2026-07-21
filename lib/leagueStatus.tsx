@@ -56,6 +56,14 @@ const SEASON_WINDOWS: Record<string, MajorWindow[]> = {
 // Months are 1-12; the first window that includes the current month wins.
 type MonthWindow = { label: string; tone: LeagueStatusTone; months: number[] };
 const LEAGUE_SEASONS: Record<string, MonthWindow[]> = {
+  // F1's calendar is ~24 individual race weekends March-December with gaps
+  // between them, not a continuous fixture list -- treated as one live window
+  // for the whole active stretch, same convention as every other league here
+  // (e.g. Premier League stays "live" between match days too). The hub itself
+  // was already marquee + status:"live" in sportsCatalog.ts, but that field is
+  // vestigial (nothing reads it except the "coming" filter) -- the actual green
+  // dot comes from here, and F1 was simply never added, so it never lit up.
+  "/teams/f1":   [{ label: "Live - Race Season", tone: "regular", months: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12] }],
   "/teams/nfl":  [{ label: "Live - Regular Season", tone: "regular", months: [9, 10, 11, 12] }, { label: "Live - Playoffs", tone: "playoffs", months: [1, 2] }],
   "/teams/nba":  [{ label: "Live - Regular Season", tone: "regular", months: [10, 11, 12, 1, 2, 3] }, { label: "Live - Playoffs", tone: "playoffs", months: [4, 5, 6] }],
   "/teams/nhl":  [{ label: "Live - Regular Season", tone: "regular", months: [10, 11, 12, 1, 2, 3] }, { label: "Live - Playoffs", tone: "playoffs", months: [4, 5, 6] }],

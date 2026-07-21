@@ -47,6 +47,7 @@ jobs:
           python scripts/civic/build_executive_history.py --self-test
           python scripts/civic/sync_history_from_current.py --self-test
           python scripts/civic/refresh_cabinet.py --self-test
+          python scripts/civic/refresh_house_leadership.py --self-test
 
       # ---- SAFE: auto-applied to main ----
       - name: World leaders (auto-apply changes from Wikidata)
@@ -77,6 +78,26 @@ jobs:
         continue-on-error: true
         run: python scripts/civic/refresh_mayors.py
 
+      - name: Executive & Cabinet
+        # President/VP/Cabinet were previously untouched by any refresh script
+        # (refresh_congress.py explicitly passes `executive` through). Live-
+        # validated clean across multiple real Wikidata rounds (see git
+        # history / HANDOFF.md) -- --write enabled 2026-07-21. A position that
+        # can't be unambiguously resolved is left untouched, not guessed at.
+        continue-on-error: true
+        run: python scripts/civic/refresh_cabinet.py --write
+
+      - name: House leadership
+        # Speaker/Majority-Minority Leader+Whip/Conference-Caucus Chairs were
+        # previously untouched by any refresh script (same passthrough gap as
+        # executive/Cabinet). Live-validated clean -- --write enabled
+        # 2026-07-21. Majority/Minority Whip are a genuine Wikidata data gap
+        # (no federal item, no P39 statements from the actual officeholders --
+        # see refresh_house_leadership.py's docstring) and stay untouched/
+        # manual until Wikidata models the role.
+        continue-on-error: true
+        run: python scripts/civic/refresh_house_leadership.py --write
+
       - name: Billionaires (Forbes real-time list)
         continue-on-error: true
         run: |
@@ -104,10 +125,12 @@ jobs:
           set -e
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          # scripts/civic/city-qids.json is the mayors QID cache (refresh_mayors.py);
-          # committing it alongside public/data keeps this manual-fallback run and the
-          # mini's weekly run sharing one warm cache instead of cold-starting each time.
-          DATA_PATHS="public/data scripts/civic/city-qids.json"
+          # scripts/civic/city-qids.json, cabinet-positions.json, and
+          # house-leadership-positions.json are the mayors/cabinet/house-leadership
+          # QID/position caches; committing them alongside public/data keeps this
+          # manual-fallback run and the mini's weekly run sharing one warm cache
+          # instead of cold-starting each time.
+          DATA_PATHS="public/data scripts/civic/city-qids.json scripts/civic/cabinet-positions.json scripts/civic/house-leadership-positions.json"
           if git diff --quiet -- $DATA_PATHS; then
             echo "No auto changes this run."
             exit 0

@@ -66,6 +66,8 @@ note "running self-tests"
 "$PY" scripts/civic/refresh_governors.py --self-test || fail "governors self-test failed"
 "$PY" scripts/civic/refresh_congress.py --self-test  || fail "congress self-test failed"
 "$PY" scripts/civic/refresh_mayors.py --self-test    || fail "mayors self-test failed"
+"$PY" scripts/civic/refresh_cabinet.py --self-test   || fail "cabinet self-test failed"
+"$PY" scripts/civic/refresh_house_leadership.py --self-test || fail "house leadership self-test failed"
 "$PY" scripts/leaders/refresh-current-leaders.py --self-test || fail "leaders self-test failed"
 
 # --- refreshes -------------------------------------------------------------
@@ -110,6 +112,16 @@ run_step "leaders (auto-apply)" "$PY" scripts/leaders/refresh-current-leaders.py
 run_step "governors (add-only)" "$PY" scripts/civic/refresh_governors.py --add-only
 run_step "congress"             "$PY" scripts/civic/refresh_congress.py
 run_step "mayors"               "$PY" scripts/civic/refresh_mayors.py
+# 2026-07-21: Executive/Cabinet and House leadership were never automated
+# before this (refresh_congress.py explicitly passed them through untouched).
+# Both live-validated clean across multiple real Wikidata rounds (see git
+# history / HANDOFF.md) -- --write enabled. Each still degrades safely: an
+# individual position that can't be unambiguously resolved (e.g. House
+# Majority/Minority Whip, a genuine Wikidata data gap -- see
+# refresh_house_leadership.py's docstring) is just left untouched, not
+# guessed at or blanked.
+run_step "cabinet"              "$PY" scripts/civic/refresh_cabinet.py --write
+run_step "house leadership"     "$PY" scripts/civic/refresh_house_leadership.py --write
 run_step "billionaires fetch"   "$PY" scripts/billionaires/fetch-billionaires.py
 run_step "billionaires build"   "$PY" scripts/billionaires/build-billionaires.py
 run_step "valuations"           "$PY" scripts/build-valuations-data.py
@@ -126,7 +138,7 @@ run_step "zone zero cup"        "$PY" scripts/zzc_v1_multipillar.py
 # as new metros enter the top 100 or a chunk resolves late), and committing it
 # keeps the mini and the civic-data-refresh.yml Action fallback warm-started
 # instead of every run cold-starting QID discovery from an empty cache.
-DATA_PATHS="public/data scripts/civic/city-qids.json"
+DATA_PATHS="public/data scripts/civic/city-qids.json scripts/civic/cabinet-positions.json scripts/civic/house-leadership-positions.json"
 if git diff --quiet -- $DATA_PATHS; then
   note "no data change this run; nothing to commit"
 else

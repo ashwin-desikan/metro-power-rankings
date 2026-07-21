@@ -1,190 +1,187 @@
 #!/usr/bin/env python3
-"""refresh_cabinet.py -- weekly detection for the US Cabinet (all cabinet-level
-offices in public/data/us-congress.json), so a Secretary change stops sitting
-stale. Two jobs in one pass, both driven off Wikidata:
+"""refresh_cabinet.py — refresh the President, Vice President, and Cabinet in
+public/data/us-congress.json's `executive` block from Wikidata.
 
-  1. PROPOSE  -- for each office, find Wikidata's current holder (a P39 term with
-     no end date). If it differs from the snapshot, propose the change. Because
-     Wikidata is noisy/slow on current cabinet officials, changes are meant to go
-     to the REVIEW PR the civic workflow already opens -- never auto-applied.
-  2. MONITOR  -- flag any office whose snapshot holder now shows an END DATE on
-     Wikidata (a strong 'they've left' signal), even when Wikidata hasn't yet
-     recorded the successor. These are the entries a human should look at.
+Never previously automated: refresh_congress.py explicitly passes `executive`
+through untouched (its own self-test asserts this), so President/VP/Cabinet
+only ever changed by hand. Same for House leadership (refresh_house_leadership.py).
 
-ACTING ROLES: Wikidata is slow/unreliable on acting officials, so an acting
-appointee (e.g. an acting AG/DNI) may not appear here; the curated `acting` flag
-in us-congress.json remains the source for those. This tool improves detection of
-confirmed changes and surfaces stale entries; it does not replace curation.
+Uses civic_common's shared discover_positions_by_sitelinks() /
+resolve_current_holders() / pick_holder() -- the two-phase discovery-cache +
+hot-path pattern refresh_mayors.py proved for city QIDs, applied to Wikidata
+POSITION items, hardened against two live runs against real Wikidata data
+(2026-07-21): naive matching pulled in duplicate legacy position items,
+decades-old historical secretaries, AND fictional TV characters (Josh Lyman,
+Doug Stamper, Jack Ryan) tagged with the real position and never dated. See
+civic_common.py's docstrings for the full mechanism.
 
-Offices are matched by the position item's EXACT English label (Q-ids proved
-unreliable). A 0-holder count for an office => its label needs a fix; the --check
-report prints per-office counts so that surfaces immediately.
-
-MODES
-  --self-test   Offline. Asserts the pure diff/monitor logic on mock holders.
-  --monitor     NETWORK. Report only (current holder + left-signals). No writes.
-  --check       NETWORK. Report AND write proposed name/since changes into
-                us-congress.json (for the review PR). Preserves other fields.
-"""
-import argparse, json, os, sys
+DRY BY DEFAULT: prints what it would change but writes nothing unless --write
+is passed. This pipeline has never run against live Wikidata for long, so
+every resolved change still needs a human look before --write, same as any
+first run of a new feed. --self-test for offline CI."""
+import sys
 from pathlib import Path
-
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from civic_common import sparql, sanity_ok, load_json, write_json  # noqa
+from civic_common import (bare, load_json, write_json,  # noqa
+                          discover_positions_by_sitelinks, resolve_current_holders)
 
 ROOT = Path(__file__).resolve().parents[2]
 CONG = ROOT / "public" / "data" / "us-congress.json"
+POSITIONS = Path(__file__).with_name("cabinet-positions.json")
 
-# snapshot office -> Wikidata position English label(s) (War/Defense merged upstream).
-OFFICES = {
-    "Secretary of State": ["United States Secretary of State"],
-    "Secretary of the Treasury": ["United States Secretary of the Treasury"],
-    "Secretary of Defense": ["United States Secretary of Defense"],
-    "Attorney General": ["United States Attorney General"],
-    "Secretary of the Interior": ["United States Secretary of the Interior"],
-    "Secretary of Agriculture": ["United States Secretary of Agriculture"],
-    "Secretary of Commerce": ["United States Secretary of Commerce"],
-    "Secretary of Labor": ["United States Secretary of Labor"],
-    "Secretary of Health and Human Services": ["United States Secretary of Health and Human Services"],
-    "Secretary of Housing and Urban Development": ["United States Secretary of Housing and Urban Development"],
-    "Secretary of Transportation": ["United States Secretary of Transportation"],
-    "Secretary of Energy": ["United States Secretary of Energy"],
-    "Secretary of Education": ["United States Secretary of Education"],
-    "Secretary of Veterans Affairs": ["United States Secretary of Veterans Affairs"],
-    "Secretary of Homeland Security": ["United States Secretary of Homeland Security"],
-    "White House Chief of Staff": ["White House Chief of Staff"],
-    "Director of National Intelligence": ["Director of National Intelligence"],
-    "Director of the Central Intelligence Agency": ["Director of the Central Intelligence Agency"],
-    "United States Trade Representative": ["United States Trade Representative"],
-    "Director of the Office of Management and Budget": ["Director of the Office of Management and Budget"],
-    "Administrator of the Environmental Protection Agency": ["Administrator of the Environmental Protection Agency"],
-    "Administrator of the Small Business Administration": ["Administrator of the Small Business Administration"],
-}
+CABINET_OFFICES = [
+    # exclude: "vice president of the united states" contains "president of
+    # the united states" as a literal substring, so a plain keyword match
+    # pulls the VP position in as a false rival candidate (confirmed live:
+    # 2026-07-21, Q11699 at 86 sitelinks blocked a clean winner). Filter it
+    # back out explicitly rather than loosen the sitelinks-margin safety net.
+    {"key": "president", "office": "President of the United States", "keyword": "president of the united states", "exclude": "vice"},
+    {"key": "vice-president", "office": "Vice President of the United States", "keyword": "vice president of the united states"},
+    {"key": "secretary-of-state", "office": "Secretary of State", "keyword": "secretary of state"},
+    {"key": "secretary-of-the-treasury", "office": "Secretary of the Treasury", "keyword": "secretary of the treasury"},
+    {"key": "secretary-of-defense", "office": "Secretary of Defense", "keyword": "secretary of defense"},
+    {"key": "attorney-general", "office": "Attorney General", "keyword": "attorney general of the united states"},
+    {"key": "secretary-of-the-interior", "office": "Secretary of the Interior", "keyword": "secretary of the interior"},
+    {"key": "secretary-of-agriculture", "office": "Secretary of Agriculture", "keyword": "secretary of agriculture"},
+    {"key": "secretary-of-commerce", "office": "Secretary of Commerce", "keyword": "secretary of commerce"},
+    {"key": "secretary-of-labor", "office": "Secretary of Labor", "keyword": "secretary of labor"},
+    {"key": "secretary-of-hhs", "office": "Secretary of Health and Human Services", "keyword": "secretary of health and human services"},
+    {"key": "secretary-of-hud", "office": "Secretary of Housing and Urban Development", "keyword": "secretary of housing and urban development"},
+    {"key": "secretary-of-transportation", "office": "Secretary of Transportation", "keyword": "secretary of transportation"},
+    {"key": "secretary-of-energy", "office": "Secretary of Energy", "keyword": "secretary of energy"},
+    {"key": "secretary-of-education", "office": "Secretary of Education", "keyword": "secretary of education"},
+    {"key": "secretary-of-va", "office": "Secretary of Veterans Affairs", "keyword": "secretary of veterans affairs"},
+    {"key": "secretary-of-dhs", "office": "Secretary of Homeland Security", "keyword": "secretary of homeland security"},
+    {"key": "chief-of-staff", "office": "White House Chief of Staff", "keyword": "white house chief of staff"},
+    {"key": "dni", "office": "Director of National Intelligence", "keyword": "director of national intelligence"},
+    {"key": "cia-director", "office": "Director of the Central Intelligence Agency", "keyword": "director of the central intelligence agency"},
+    {"key": "ustr", "office": "United States Trade Representative", "keyword": "united states trade representative"},
+    {"key": "omb-director", "office": "Director of the Office of Management and Budget", "keyword": "office of management and budget"},
+    {"key": "epa-administrator", "office": "Administrator of the Environmental Protection Agency", "keyword": "environmental protection agency"},
+    {"key": "sba-administrator", "office": "Administrator of the Small Business Administration", "keyword": "small business administration"},
+]
+OFFICE_BY_KEY = {o["key"]: o["office"] for o in CABINET_OFFICES}
+KEY_BY_OFFICE = {o["office"]: o["key"] for o in CABINET_OFFICES}
 
+def build(existing, holders):
+    out = dict(existing)
+    exec_ = dict(out.get("executive", {}))
+    changed = []
 
-def query_office(labels):
-    values = " ".join('"%s"@en' % l for l in labels)
-    q = """SELECT ?personLabel ?start ?end WHERE {
-      VALUES ?posLabel { %s }
-      ?pos rdfs:label ?posLabel .
-      ?person p:P39 ?st . ?st ps:P39 ?pos .
-      ?person wdt:P31 wd:Q5 .
-      OPTIONAL { ?st pq:P580 ?start }
-      OPTIONAL { ?st pq:P582 ?end }
-      SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
-    }""" % values
-    holders = []
-    for b in sparql(q):
-        nm = b.get("personLabel", {}).get("value", "")
-        if not sanity_ok(nm):
+    def apply_single(role_key, role):
+        h = holders.get(role_key)
+        if not h:
+            return role
+        prev = role or {}
+        if bare(prev.get("name", "")) == bare(h["name"]):
+            return role
+        changed.append(f"{OFFICE_BY_KEY[role_key]}: {prev.get('name')!r} -> {h['name']!r}")
+        return {"name": h["name"], "party": h["party"] or prev.get("party", ""),
+                "since": h["start"] or prev.get("since", "")}
+
+    exec_["president"] = apply_single("president", exec_.get("president"))
+    exec_["vicePresident"] = apply_single("vice-president", exec_.get("vicePresident"))
+
+    cabinet = [dict(c) for c in exec_.get("cabinet", [])]
+    for i, c in enumerate(cabinet):
+        role_key = KEY_BY_OFFICE.get(c.get("office"))
+        if not role_key:
+            continue  # curated office not (yet) in CABINET_OFFICES -- left as-is
+        h = holders.get(role_key)
+        if not h or bare(c.get("name", "")) == bare(h["name"]):
             continue
-        holders.append({
-            "name": nm,
-            "start": (b.get("start", {}).get("value", "") or "")[:10] or None,
-            "end": (b.get("end", {}).get("value", "") or "")[:10] or None,
-        })
-    return holders
-
-
-def assess(snapshot_name, holders):
-    """Pure: given the snapshot's current name and Wikidata holders for an office,
-    return (status, wd_current, wd_current_start).
-      status in {OK, CHANGE, LEFT, UNKNOWN}
-    OK      snapshot matches Wikidata's open (no-end) holder
-    CHANGE  a single, different open holder on Wikidata -> propose it
-    LEFT    snapshot person appears ONLY with an end date -> they've left; no clear
-            successor yet -> flag for review, do not auto-change
-    UNKNOWN no holders / ambiguous
-    """
-    if not holders:
-        return "UNKNOWN", None, None
-    open_holders = [h for h in holders if not h["end"]]
-    snap_norm = (snapshot_name or "").strip().lower()
-    open_names = {h["name"].strip().lower() for h in open_holders}
-    if snap_norm in open_names:
-        return "OK", snapshot_name, None
-    # snapshot person present but only with an end date => they've left
-    snap_ended = any(h["name"].strip().lower() == snap_norm and h["end"] for h in holders)
-    if len(open_holders) == 1:
-        h = open_holders[0]
-        return "CHANGE", h["name"], h["start"]
-    if snap_ended:
-        return "LEFT", None, None
-    return "UNKNOWN", None, None
-
-
-def run(write):
-    cong = load_json(CONG)
-    cab = cong["executive"]["cabinet"]
-    by_office = {c["office"]: c for c in cab}
-    changes, flags = 0, 0
-    print("%-46s %-22s %-22s %s" % ("OFFICE", "SNAPSHOT", "WIKIDATA-CURRENT", "STATUS"))
-    for office, labels in OFFICES.items():
-        c = by_office.get(office)
-        if not c:
-            continue
-        holders = query_office(labels)
-        # Respect curated acting entries: Wikidata is slow/wrong on acting roles,
-        # so never propose reverting an `acting:true` snapshot entry. Report only.
-        if c.get("acting"):
-            wd_open = [h["name"] for h in holders if not h["end"]]
-            print("%-46s %-22s %-22s %s" % (
-                office[:46], (c.get("name", "") or "")[:22],
-                (wd_open[0] if wd_open else "-")[:22], "ACTING-CURATED (skipped)"))
-            continue
-        status, wd_name, wd_start = assess(c.get("name", ""), holders)
-        note = ""
-        if status == "CHANGE":
-            changes += 1
-            note = "-> propose"
-            if write:
-                c["name"] = wd_name
-                if wd_start:
-                    c["since"] = wd_start
-                c.pop("acting", None)   # a newly-detected confirmed holder is not acting
-        elif status == "LEFT":
-            flags += 1
-            note = "!! snapshot holder shows an end date on Wikidata - review"
-        elif status == "UNKNOWN" and not holders:
-            note = "(0 holders - check the position label)"
-        print("%-46s %-22s %-22s %s %s" % (
-            office[:46], (c.get("name", "") or "")[:22], (wd_name or "-")[:22], status, note))
-    if write and changes:
-        write_json(CONG, cong, sort_keys=False)
-    print("\n%d proposed change(s), %d left-signal flag(s)%s" % (
-        changes, flags, " (written to us-congress.json for the review PR)" if write and changes else ""))
-
-
-def cmd_self_test():
-    # OK: snapshot is the open holder
-    assert assess("Marco Rubio", [{"name": "Marco Rubio", "start": "2025-01-20", "end": None}])[0] == "OK"
-    # CHANGE: a single different open holder
-    s, n, st = assess("Old Sec", [{"name": "Old Sec", "start": "2021-01-20", "end": "2025-01-20"},
-                                  {"name": "New Sec", "start": "2025-01-20", "end": None}])
-    assert s == "CHANGE" and n == "New Sec" and st == "2025-01-20", (s, n, st)
-    # LEFT: snapshot person only appears with an end date, no clear successor
-    assert assess("Gone Sec", [{"name": "Gone Sec", "start": "2025-02-12", "end": "2026-06-02"}])[0] == "LEFT"
-    # UNKNOWN: no data, or ambiguous multiple open holders
-    assert assess("X", [])[0] == "UNKNOWN"
-    assert assess("X", [{"name": "A", "start": "1", "end": None},
-                        {"name": "B", "start": "2", "end": None}])[0] == "UNKNOWN"
-    # 22 offices, unique
-    assert len(OFFICES) == 22 and len(set(OFFICES)) == 22
-    print("self-test OK: assess (OK/CHANGE/LEFT/UNKNOWN), 22 offices")
-
+        changed.append(f"{c['office']}: {c.get('name')!r} -> {h['name']!r}")
+        # Fresh entry, not a spread of `c`: Wikidata gives us no signal for
+        # acting-vs-confirmed (the exact gap that produced the Sonderling/
+        # Chavez-DeRemer case), so any prior curated "acting" flag must NOT
+        # carry forward onto a newly-detected name -- that needs a human to
+        # set again deliberately, same as the name/date themselves did here.
+        cabinet[i] = {"office": c["office"], "name": h["name"], "since": h["start"] or c.get("since", "")}
+    exec_["cabinet"] = cabinet
+    out["executive"] = exec_
+    return out, changed
 
 def main():
-    ap = argparse.ArgumentParser()
-    g = ap.add_mutually_exclusive_group(required=True)
-    g.add_argument("--self-test", action="store_true")
-    g.add_argument("--monitor", action="store_true")
-    g.add_argument("--check", action="store_true")
-    a = ap.parse_args()
-    if a.self_test:
-        cmd_self_test()
+    write = "--write" in sys.argv
+    existing = load_json(CONG, None)
+    if not existing:
+        print("ABORT: us-congress.json missing"); return
+    cache = load_json(POSITIONS, {})
+    cache = discover_positions_by_sitelinks(CABINET_OFFICES, cache, POSITIONS)
+    still_missing = [o["office"] for o in CABINET_OFFICES if o["key"] not in cache]
+    if still_missing:
+        print(f"  {len(still_missing)} position(s) still unresolved: {still_missing}")
+    try:
+        holders = resolve_current_holders(cache, OFFICE_BY_KEY)
+    except Exception as e:
+        print(f"cabinet refresh error ({e}); no changes."); return
+    out, changed = build(existing, holders)
+    if not changed:
+        print("No executive/cabinet changes detected."); return
+    print(f"{len(changed)} change(s) detected:")
+    for c in changed:
+        print(f"  {c}")
+    if write:
+        write_json(CONG, out, sort_keys=False)
+        print("Written.")
     else:
-        run(write=a.check)
+        print("DRY RUN (pass --write to apply once reviewed).")
 
+def _self_test():
+    existing = {
+        "senate": {}, "house": {},
+        "executive": {
+            "president": {"name": "Donald Trump", "party": "Republican", "since": "2025-01-20"},
+            "vicePresident": {"name": "JD Vance", "party": "Republican", "since": "2025-01-20"},
+            "cabinet": [
+                {"office": "Secretary of State", "name": "Marco Rubio", "since": "2025-01-21"},
+                {"office": "Director of National Intelligence", "name": "Tulsi Gabbard", "since": "2025-02-12"},
+            ],
+        },
+    }
+    # Same person confirmed for president/Secretary of State -> no spurious
+    # change; a genuinely new DNI -> update applied and logged.
+    holders = {
+        "president": {"name": "Donald Trump", "party": "Republican", "start": "2025-01-20"},
+        "secretary-of-state": {"name": "Marco Rubio", "party": "Republican", "start": "2025-01-21"},
+        "dni": {"name": "Someone New", "party": "Republican", "start": "2026-08-01"},
+    }
+    out, changed = build(existing, holders)
+    assert out["executive"]["president"]["name"] == "Donald Trump"
+    assert out["executive"]["vicePresident"]["name"] == "JD Vance"  # untouched, not in holders
+    cab = {c["office"]: c for c in out["executive"]["cabinet"]}
+    assert cab["Director of National Intelligence"]["name"] == "Someone New"
+    assert cab["Director of National Intelligence"]["since"] == "2026-08-01"
+    assert cab["Secretary of State"]["name"] == "Marco Rubio"
+    assert any("Director of National Intelligence" in c for c in changed)
+    assert not any(c.startswith("Secretary of State") for c in changed)
+    assert not any("President of the United States" in c for c in changed)
+
+    # No holders at all -> no changes, nothing touched.
+    out2, changed2 = build(existing, {})
+    assert changed2 == []
+    assert out2["executive"] == existing["executive"]
+
+    # A curated "acting" flag must NOT survive a name change onto the new
+    # holder (Wikidata gives no acting-vs-confirmed signal) -- confirmed live
+    # case: Sonderling took over Labor as Acting Secretary 2026-04-20.
+    existing_acting = {
+        "senate": {}, "house": {},
+        "executive": {
+            "president": {"name": "X"}, "vicePresident": {"name": "Y"},
+            "cabinet": [{"office": "Secretary of Labor", "name": "Keith Sonderling",
+                        "since": "2026-04-20", "acting": True}],
+        },
+    }
+    out3, changed3 = build(existing_acting, {"secretary-of-labor": {"name": "Keith Sonderling", "party": "Republican", "start": "2027-01-05"}})
+    assert changed3 == [], changed3  # same person confirmed permanently -> no name change, "acting" flag untouched either way
+    assert out3["executive"]["cabinet"][0]["acting"] is True
+
+    out4, changed4 = build(existing_acting, {"secretary-of-labor": {"name": "Someone Else", "party": "Republican", "start": "2027-06-01"}})
+    assert any("Secretary of Labor" in c for c in changed4)
+    assert "acting" not in out4["executive"]["cabinet"][0], out4["executive"]["cabinet"][0]
+
+    print("refresh_cabinet self-test OK")
 
 if __name__ == "__main__":
-    main()
+    _self_test() if "--self-test" in sys.argv else main()
