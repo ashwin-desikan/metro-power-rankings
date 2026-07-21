@@ -28,8 +28,9 @@
       },
       {
         "office": "Attorney General",
-        "name": "Pam Bondi",
-        "since": "2025-02-05"
+        "name": "Todd Blanche",
+        "since": "2026-04-02",
+        "acting": true
       },
       {
         "office": "Secretary of the Interior",
@@ -93,8 +94,9 @@
       },
       {
         "office": "Director of National Intelligence",
-        "name": "Tulsi Gabbard",
-        "since": "2025-02-12"
+        "name": "Bill Pulte",
+        "since": "2026-06-02",
+        "acting": true
       },
       {
         "office": "Director of the Central Intelligence Agency",

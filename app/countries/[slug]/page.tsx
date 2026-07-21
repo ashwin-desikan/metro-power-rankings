@@ -552,6 +552,11 @@ export default async function CountryDetailPage({ params }: Props) {
                   United States political leadership: president, cabinet, governors &amp; Congress →
                 </Link>
               ) : null}
+              {slug === "united-kingdom" ? (
+                <Link href="/uk-political-leadership" className="inline-block mb-3 text-sm font-medium text-[var(--accent)] hover:underline">
+                  United Kingdom political leadership: the Sovereign, Prime Minister, cabinet &amp; Parliament →
+                </Link>
+              ) : null}
               <p className="text-sm text-[var(--text-muted)] mb-4">
                 {states.length} {states.length === 1 ? "entry" : "entries"} listed under {country.name}
                 {stateGroups.length > 1 ? ` across ${stateGroups.length} types` : ""}

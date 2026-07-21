@@ -1,0 +1,851 @@
+{
+ "alabama": {
+  "electoralVotes": 9,
+  "lowerSeats": 7,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "alaska": {
+  "electoralVotes": 3,
+  "lowerSeats": 1,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "arizona": {
+  "electoralVotes": 11,
+  "lowerSeats": 9,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "arkansas": {
+  "electoralVotes": 6,
+  "lowerSeats": 4,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "california": {
+  "electoralVotes": 54,
+  "lowerSeats": 52,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "colorado": {
+  "electoralVotes": 10,
+  "lowerSeats": 8,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "connecticut": {
+  "electoralVotes": 7,
+  "lowerSeats": 5,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "delaware": {
+  "electoralVotes": 3,
+  "lowerSeats": 1,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "florida-united-states": {
+  "electoralVotes": 30,
+  "lowerSeats": 28,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "georgia": {
+  "electoralVotes": 16,
+  "lowerSeats": 14,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "hawaii": {
+  "electoralVotes": 4,
+  "lowerSeats": 2,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "idaho": {
+  "electoralVotes": 4,
+  "lowerSeats": 2,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "illinois": {
+  "electoralVotes": 19,
+  "lowerSeats": 17,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "indiana": {
+  "electoralVotes": 11,
+  "lowerSeats": 9,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "iowa": {
+  "electoralVotes": 6,
+  "lowerSeats": 4,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "kansas": {
+  "electoralVotes": 6,
+  "lowerSeats": 4,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "kentucky": {
+  "electoralVotes": 8,
+  "lowerSeats": 6,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "louisiana": {
+  "electoralVotes": 8,
+  "lowerSeats": 6,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "maine": {
+  "electoralVotes": 4,
+  "lowerSeats": 2,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "maryland-united-states": {
+  "electoralVotes": 10,
+  "lowerSeats": 8,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "massachusetts": {
+  "electoralVotes": 11,
+  "lowerSeats": 9,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "michigan": {
+  "electoralVotes": 15,
+  "lowerSeats": 13,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "minnesota": {
+  "electoralVotes": 10,
+  "lowerSeats": 8,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "mississippi": {
+  "electoralVotes": 6,
+  "lowerSeats": 4,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "missouri": {
+  "electoralVotes": 10,
+  "lowerSeats": 8,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "montana-united-states": {
+  "electoralVotes": 4,
+  "lowerSeats": 2,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "nebraska": {
+  "electoralVotes": 5,
+  "lowerSeats": 3,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "nevada": {
+  "electoralVotes": 6,
+  "lowerSeats": 4,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "new-hampshire": {
+  "electoralVotes": 4,
+  "lowerSeats": 2,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "new-jersey": {
+  "electoralVotes": 14,
+  "lowerSeats": 12,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "new-mexico": {
+  "electoralVotes": 5,
+  "lowerSeats": 3,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "new-york": {
+  "electoralVotes": 28,
+  "lowerSeats": 26,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "north-carolina": {
+  "electoralVotes": 16,
+  "lowerSeats": 14,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "north-dakota": {
+  "electoralVotes": 3,
+  "lowerSeats": 1,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "ohio": {
+  "electoralVotes": 17,
+  "lowerSeats": 15,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "oklahoma": {
+  "electoralVotes": 7,
+  "lowerSeats": 5,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "oregon": {
+  "electoralVotes": 8,
+  "lowerSeats": 6,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "pennsylvania": {
+  "electoralVotes": 19,
+  "lowerSeats": 17,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "rhode-island": {
+  "electoralVotes": 4,
+  "lowerSeats": 2,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "south-carolina": {
+  "electoralVotes": 9,
+  "lowerSeats": 7,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "south-dakota": {
+  "electoralVotes": 3,
+  "lowerSeats": 1,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "tennessee": {
+  "electoralVotes": 11,
+  "lowerSeats": 9,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "texas": {
+  "electoralVotes": 40,
+  "lowerSeats": 38,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "utah": {
+  "electoralVotes": 6,
+  "lowerSeats": 4,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "vermont": {
+  "electoralVotes": 3,
+  "lowerSeats": 1,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "virginia": {
+  "electoralVotes": 13,
+  "lowerSeats": 11,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "washington": {
+  "electoralVotes": 12,
+  "lowerSeats": 10,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "west-virginia": {
+  "electoralVotes": 4,
+  "lowerSeats": 2,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "wisconsin": {
+  "electoralVotes": 10,
+  "lowerSeats": 8,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "wyoming": {
+  "electoralVotes": 3,
+  "lowerSeats": 1,
+  "lowerHouse": "U.S. House seats",
+  "upperSeats": 2,
+  "upperHouse": "U.S. senators"
+ },
+ "dc": {
+  "electoralVotes": 3
+ },
+ "baden-wurttemberg": {
+  "upperSeats": 6,
+  "upperHouse": "Bundesrat votes"
+ },
+ "bavaria": {
+  "upperSeats": 6,
+  "upperHouse": "Bundesrat votes"
+ },
+ "berlin": {
+  "upperSeats": 4,
+  "upperHouse": "Bundesrat votes"
+ },
+ "brandenburg": {
+  "upperSeats": 4,
+  "upperHouse": "Bundesrat votes"
+ },
+ "bremen": {
+  "upperSeats": 3,
+  "upperHouse": "Bundesrat votes"
+ },
+ "hamburg": {
+  "upperSeats": 3,
+  "upperHouse": "Bundesrat votes"
+ },
+ "hesse": {
+  "upperSeats": 5,
+  "upperHouse": "Bundesrat votes"
+ },
+ "lower-saxony": {
+  "upperSeats": 6,
+  "upperHouse": "Bundesrat votes"
+ },
+ "mecklenburg-vorpommern": {
+  "upperSeats": 3,
+  "upperHouse": "Bundesrat votes"
+ },
+ "north-rhine-westphalia": {
+  "upperSeats": 6,
+  "upperHouse": "Bundesrat votes"
+ },
+ "rhineland-palatinate": {
+  "upperSeats": 4,
+  "upperHouse": "Bundesrat votes"
+ },
+ "saarland": {
+  "upperSeats": 3,
+  "upperHouse": "Bundesrat votes"
+ },
+ "saxony": {
+  "upperSeats": 4,
+  "upperHouse": "Bundesrat votes"
+ },
+ "saxony-anhalt": {
+  "upperSeats": 4,
+  "upperHouse": "Bundesrat votes"
+ },
+ "schleswig-holstein": {
+  "upperSeats": 4,
+  "upperHouse": "Bundesrat votes"
+ },
+ "thuringia": {
+  "upperSeats": 4,
+  "upperHouse": "Bundesrat votes"
+ },
+ "ontario": {
+  "lowerSeats": 122,
+  "lowerHouse": "House of Commons seats",
+  "upperSeats": 24,
+  "upperHouse": "Senate seats"
+ },
+ "quebec": {
+  "lowerSeats": 78,
+  "lowerHouse": "House of Commons seats",
+  "upperSeats": 24,
+  "upperHouse": "Senate seats"
+ },
+ "british-columbia": {
+  "lowerSeats": 43,
+  "lowerHouse": "House of Commons seats",
+  "upperSeats": 6,
+  "upperHouse": "Senate seats"
+ },
+ "alberta": {
+  "lowerSeats": 37,
+  "lowerHouse": "House of Commons seats",
+  "upperSeats": 6,
+  "upperHouse": "Senate seats"
+ },
+ "manitoba": {
+  "lowerSeats": 14,
+  "lowerHouse": "House of Commons seats",
+  "upperSeats": 6,
+  "upperHouse": "Senate seats"
+ },
+ "saskatchewan": {
+  "lowerSeats": 14,
+  "lowerHouse": "House of Commons seats",
+  "upperSeats": 6,
+  "upperHouse": "Senate seats"
+ },
+ "nova-scotia": {
+  "lowerSeats": 11,
+  "lowerHouse": "House of Commons seats",
+  "upperSeats": 10,
+  "upperHouse": "Senate seats"
+ },
+ "new-brunswick": {
+  "lowerSeats": 10,
+  "lowerHouse": "House of Commons seats",
+  "upperSeats": 10,
+  "upperHouse": "Senate seats"
+ },
+ "prince-edward-island": {
+  "lowerSeats": 4,
+  "lowerHouse": "House of Commons seats",
+  "upperSeats": 4,
+  "upperHouse": "Senate seats"
+ },
+ "northwest-territories": {
+  "lowerSeats": 1,
+  "lowerHouse": "House of Commons seats",
+  "upperSeats": 1,
+  "upperHouse": "Senate seats"
+ },
+ "yukon": {
+  "lowerSeats": 1,
+  "lowerHouse": "House of Commons seats",
+  "upperSeats": 1,
+  "upperHouse": "Senate seats"
+ },
+ "nunavut": {
+  "lowerSeats": 1,
+  "lowerHouse": "House of Commons seats",
+  "upperSeats": 1,
+  "upperHouse": "Senate seats"
+ },
+ "new-south-wales": {
+  "lowerSeats": 46,
+  "lowerHouse": "House seats",
+  "upperSeats": 12,
+  "upperHouse": "Senate seats"
+ },
+ "victoria": {
+  "lowerSeats": 38,
+  "lowerHouse": "House seats",
+  "upperSeats": 12,
+  "upperHouse": "Senate seats"
+ },
+ "queensland": {
+  "lowerSeats": 30,
+  "lowerHouse": "House seats",
+  "upperSeats": 12,
+  "upperHouse": "Senate seats"
+ },
+ "western-australia": {
+  "lowerSeats": 16,
+  "lowerHouse": "House seats",
+  "upperSeats": 12,
+  "upperHouse": "Senate seats"
+ },
+ "south-australia": {
+  "lowerSeats": 10,
+  "lowerHouse": "House seats",
+  "upperSeats": 12,
+  "upperHouse": "Senate seats"
+ },
+ "tasmania": {
+  "lowerSeats": 5,
+  "lowerHouse": "House seats",
+  "upperSeats": 12,
+  "upperHouse": "Senate seats"
+ },
+ "australian-capital-territory": {
+  "lowerSeats": 3,
+  "lowerHouse": "House seats",
+  "upperSeats": 2,
+  "upperHouse": "Senate seats"
+ },
+ "northern-territory": {
+  "lowerSeats": 2,
+  "lowerHouse": "House seats",
+  "upperSeats": 2,
+  "upperHouse": "Senate seats"
+ },
+ "sao-paulo": {
+  "lowerSeats": 70,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "minas-gerais": {
+  "lowerSeats": 53,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "rio-de-janeiro": {
+  "lowerSeats": 46,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "bahia": {
+  "lowerSeats": 39,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "rio-grande-do-sul": {
+  "lowerSeats": 31,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "parana": {
+  "lowerSeats": 30,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "pernambuco": {
+  "lowerSeats": 25,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "ceara": {
+  "lowerSeats": 22,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "maranhao": {
+  "lowerSeats": 18,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "goias": {
+  "lowerSeats": 17,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "para-brazil": {
+  "lowerSeats": 17,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "santa-catarina": {
+  "lowerSeats": 16,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "paraiba": {
+  "lowerSeats": 12,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "espirito-santo": {
+  "lowerSeats": 10,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "piaui": {
+  "lowerSeats": 10,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "alagoas": {
+  "lowerSeats": 9,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "acre": {
+  "lowerSeats": 8,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "amazonas-brazil": {
+  "lowerSeats": 8,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "amapa": {
+  "lowerSeats": 8,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "distrito-federal-brazil": {
+  "lowerSeats": 8,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "mato-grosso-do-sul": {
+  "lowerSeats": 8,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "mato-grosso": {
+  "lowerSeats": 8,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "rio-grande-do-norte": {
+  "lowerSeats": 8,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "rondonia": {
+  "lowerSeats": 8,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "roraima": {
+  "lowerSeats": 8,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "sergipe": {
+  "lowerSeats": 8,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "tocantins": {
+  "lowerSeats": 8,
+  "lowerHouse": "Chamber of Deputies seats",
+  "upperSeats": 3,
+  "upperHouse": "Senators"
+ },
+ "uttar-pradesh": {
+  "lowerSeats": 80,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "maharashtra": {
+  "lowerSeats": 48,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "west-bengal": {
+  "lowerSeats": 42,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "bihar": {
+  "lowerSeats": 40,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "tamil-nadu": {
+  "lowerSeats": 39,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "madhya-pradesh": {
+  "lowerSeats": 29,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "karnataka": {
+  "lowerSeats": 28,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "gujarat": {
+  "lowerSeats": 26,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "andhra-pradesh": {
+  "lowerSeats": 25,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "rajasthan": {
+  "lowerSeats": 25,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "odisha": {
+  "lowerSeats": 21,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "kerala": {
+  "lowerSeats": 20,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "telangana": {
+  "lowerSeats": 17,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "assam": {
+  "lowerSeats": 14,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "jharkhand": {
+  "lowerSeats": 14,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "punjab-india": {
+  "lowerSeats": 13,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "chhattisgarh": {
+  "lowerSeats": 11,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "haryana": {
+  "lowerSeats": 10,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "uttarakhand": {
+  "lowerSeats": 5,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "himachal-pradesh": {
+  "lowerSeats": 4,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "arunachal-pradesh": {
+  "lowerSeats": 2,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "goa": {
+  "lowerSeats": 2,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "manipur": {
+  "lowerSeats": 2,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "meghalaya": {
+  "lowerSeats": 2,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "tripura": {
+  "lowerSeats": 2,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "chandigarh": {
+  "lowerSeats": 1,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "ladakh": {
+  "lowerSeats": 1,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "lakshadweep": {
+  "lowerSeats": 1,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "mizoram": {
+  "lowerSeats": 1,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "nagaland": {
+  "lowerSeats": 1,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "puducherry": {
+  "lowerSeats": 1,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "sikkim": {
+  "lowerSeats": 1,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "newfoundland": {
+  "lowerSeats": 7,
+  "lowerHouse": "House of Commons seats",
+  "upperSeats": 6,
+  "upperHouse": "Senate seats"
+ },
+ "national-capital-territory": {
+  "lowerSeats": 7,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "jammu-kashmir": {
+  "lowerSeats": 5,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "andaman-nicobar-islands": {
+  "lowerSeats": 1,
+  "lowerHouse": "Lok Sabha seats"
+ },
+ "dadra-nagar-haveli-daman-diu": {
+  "lowerSeats": 2,
+  "lowerHouse": "Lok Sabha seats"
+ }
+}

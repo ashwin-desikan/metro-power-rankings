@@ -9,6 +9,8 @@ import {
 import { getCountry, getCountryByName } from "@/lib/countries";
 import StateMap from "./StateMap";
 import { getStateGovernor } from "@/lib/governors";
+import { getStateFacts, getInCountryRank, getAreaRank } from "@/lib/stateFacts";
+import StateFactsSection from "./StateFactsSection";
 import { computeTier, tierAnchor } from "@/lib/tiers";
 import { formatPop, regionColors } from "@/lib/shared";
 import {
@@ -100,6 +102,12 @@ export default async function StateDetailPage({ params }: Props) {
 
   const metros = getMetrosForState(slug);
 
+  const facts = getStateFacts(slug);
+  const inCountryRank = getInCountryRank(slug);
+  const areaRank = getAreaRank(slug);
+  const flagshipMetro =
+    metros.length > 0 ? { name: metros[0].name, slug: metros[0].slug } : null;
+
   // Resolve the country page link. The state's `country` field is the
   // immediate parent in the sheet (England / Anguilla / etc.), and its
   // `mainCountry` is the sovereign state. Prefer the immediate parent
@@ -175,6 +183,15 @@ export default async function StateDetailPage({ params }: Props) {
           </nav>
 
           <header className="mb-10 border-b border-[var(--border)] pb-8">
+            {facts?.flag ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={facts.flag}
+                alt={`Flag of ${state.name}`}
+                className="h-8 mb-3 rounded-sm border border-[var(--border)]"
+                loading="lazy"
+              />
+            ) : null}
             <div className="flex items-baseline gap-3 mb-3 flex-wrap">
               <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
                 {state.name}
@@ -293,6 +310,15 @@ export default async function StateDetailPage({ params }: Props) {
               />
             </div>
           </header>
+
+          <StateFactsSection
+            facts={facts}
+            pop={state.pop}
+            rank={inCountryRank}
+            areaRank={areaRank}
+            flagship={flagshipMetro}
+            countryName={state.mainCountry}
+          />
 
           {metros.length > 0 ? (
             <StateMap slug={state.slug} stateName={state.name} />

@@ -1,0 +1,588 @@
+{
+ "presidents": [
+  {
+   "name": "George Washington",
+   "party": "Unaffiliated",
+   "start": "1789-04-30",
+   "end": "1797-03-04"
+  },
+  {
+   "name": "John Adams",
+   "party": "Federalist",
+   "start": "1797-03-04",
+   "end": "1801-03-04"
+  },
+  {
+   "name": "Thomas Jefferson",
+   "party": "Democratic-Republican",
+   "start": "1801-03-04",
+   "end": "1809-03-04"
+  },
+  {
+   "name": "James Madison",
+   "party": "Democratic-Republican",
+   "start": "1809-03-04",
+   "end": "1817-03-04"
+  },
+  {
+   "name": "James Monroe",
+   "party": "Democratic-Republican",
+   "start": "1817-03-04",
+   "end": "1825-03-04"
+  },
+  {
+   "name": "John Quincy Adams",
+   "party": "National Republican",
+   "start": "1825-03-04",
+   "end": "1829-03-04"
+  },
+  {
+   "name": "Andrew Jackson",
+   "party": "Democratic",
+   "start": "1829-03-04",
+   "end": "1837-03-04"
+  },
+  {
+   "name": "Martin Van Buren",
+   "party": "Democratic",
+   "start": "1837-03-04",
+   "end": "1841-03-04"
+  },
+  {
+   "name": "William Henry Harrison",
+   "party": "Whig",
+   "start": "1841-03-04",
+   "end": "1841-04-04"
+  },
+  {
+   "name": "John Tyler",
+   "party": "Whig",
+   "start": "1841-04-04",
+   "end": "1845-03-04"
+  },
+  {
+   "name": "James K. Polk",
+   "party": "Democratic",
+   "start": "1845-03-04",
+   "end": "1849-03-04"
+  },
+  {
+   "name": "Zachary Taylor",
+   "party": "Whig",
+   "start": "1849-03-04",
+   "end": "1850-07-09"
+  },
+  {
+   "name": "Millard Fillmore",
+   "party": "Whig",
+   "start": "1850-07-09",
+   "end": "1853-03-04"
+  },
+  {
+   "name": "Franklin Pierce",
+   "party": "Democratic",
+   "start": "1853-03-04",
+   "end": "1857-03-04"
+  },
+  {
+   "name": "James Buchanan",
+   "party": "Democratic",
+   "start": "1857-03-04",
+   "end": "1861-03-04"
+  },
+  {
+   "name": "Abraham Lincoln",
+   "party": "Republican",
+   "start": "1861-03-04",
+   "end": "1865-04-15"
+  },
+  {
+   "name": "Andrew Johnson",
+   "party": "National Union",
+   "start": "1865-04-15",
+   "end": "1869-03-04"
+  },
+  {
+   "name": "Ulysses S. Grant",
+   "party": "Republican",
+   "start": "1869-03-04",
+   "end": "1877-03-04"
+  },
+  {
+   "name": "Rutherford B. Hayes",
+   "party": "Republican",
+   "start": "1877-03-04",
+   "end": "1881-03-04"
+  },
+  {
+   "name": "James A. Garfield",
+   "party": "Republican",
+   "start": "1881-03-04",
+   "end": "1881-09-19"
+  },
+  {
+   "name": "Chester A. Arthur",
+   "party": "Republican",
+   "start": "1881-09-19",
+   "end": "1885-03-04"
+  },
+  {
+   "name": "Grover Cleveland",
+   "party": "Democratic",
+   "start": "1885-03-04",
+   "end": "1889-03-04"
+  },
+  {
+   "name": "Benjamin Harrison",
+   "party": "Republican",
+   "start": "1889-03-04",
+   "end": "1893-03-04"
+  },
+  {
+   "name": "Grover Cleveland",
+   "party": "Democratic",
+   "start": "1893-03-04",
+   "end": "1897-03-04"
+  },
+  {
+   "name": "William McKinley",
+   "party": "Republican",
+   "start": "1897-03-04",
+   "end": "1901-09-14"
+  },
+  {
+   "name": "Theodore Roosevelt",
+   "party": "Republican",
+   "start": "1901-09-14",
+   "end": "1909-03-04"
+  },
+  {
+   "name": "William Howard Taft",
+   "party": "Republican",
+   "start": "1909-03-04",
+   "end": "1913-03-04"
+  },
+  {
+   "name": "Woodrow Wilson",
+   "party": "Democratic",
+   "start": "1913-03-04",
+   "end": "1921-03-04"
+  },
+  {
+   "name": "Warren G. Harding",
+   "party": "Republican",
+   "start": "1921-03-04",
+   "end": "1923-08-02"
+  },
+  {
+   "name": "Calvin Coolidge",
+   "party": "Republican",
+   "start": "1923-08-02",
+   "end": "1929-03-04"
+  },
+  {
+   "name": "Herbert Hoover",
+   "party": "Republican",
+   "start": "1929-03-04",
+   "end": "1933-03-04"
+  },
+  {
+   "name": "Franklin D. Roosevelt",
+   "party": "Democratic",
+   "start": "1933-03-04",
+   "end": "1945-04-12"
+  },
+  {
+   "name": "Harry S. Truman",
+   "party": "Democratic",
+   "start": "1945-04-12",
+   "end": "1953-01-20"
+  },
+  {
+   "name": "Dwight D. Eisenhower",
+   "party": "Republican",
+   "start": "1953-01-20",
+   "end": "1961-01-20"
+  },
+  {
+   "name": "John F. Kennedy",
+   "party": "Democratic",
+   "start": "1961-01-20",
+   "end": "1963-11-22"
+  },
+  {
+   "name": "Lyndon B. Johnson",
+   "party": "Democratic",
+   "start": "1963-11-22",
+   "end": "1969-01-20"
+  },
+  {
+   "name": "Richard Nixon",
+   "party": "Republican",
+   "start": "1969-01-20",
+   "end": "1974-08-09"
+  },
+  {
+   "name": "Gerald Ford",
+   "party": "Republican",
+   "start": "1974-08-09",
+   "end": "1977-01-20"
+  },
+  {
+   "name": "Jimmy Carter",
+   "party": "Democratic",
+   "start": "1977-01-20",
+   "end": "1981-01-20"
+  },
+  {
+   "name": "Ronald Reagan",
+   "party": "Republican",
+   "start": "1981-01-20",
+   "end": "1989-01-20"
+  },
+  {
+   "name": "George H. W. Bush",
+   "party": "Republican",
+   "start": "1989-01-20",
+   "end": "1993-01-20"
+  },
+  {
+   "name": "Bill Clinton",
+   "party": "Democratic",
+   "start": "1993-01-20",
+   "end": "2001-01-20"
+  },
+  {
+   "name": "George W. Bush",
+   "party": "Republican",
+   "start": "2001-01-20",
+   "end": "2009-01-20"
+  },
+  {
+   "name": "Barack Obama",
+   "party": "Democratic",
+   "start": "2009-01-20",
+   "end": "2017-01-20"
+  },
+  {
+   "name": "Donald Trump",
+   "party": "Republican",
+   "start": "2017-01-20",
+   "end": "2021-01-20"
+  },
+  {
+   "name": "Joe Biden",
+   "party": "Democratic",
+   "start": "2021-01-20",
+   "end": "2025-01-20"
+  },
+  {
+   "name": "Donald Trump",
+   "party": "Republican",
+   "start": "2025-01-20",
+   "end": null
+  }
+ ],
+ "vicePresidents": [
+  {
+   "name": "John Adams",
+   "party": "Federalist",
+   "start": "1789-04-21",
+   "end": "1797-03-04"
+  },
+  {
+   "name": "Thomas Jefferson",
+   "party": "Democratic-Republican",
+   "start": "1797-03-04",
+   "end": "1801-03-04"
+  },
+  {
+   "name": "Aaron Burr",
+   "party": "Democratic-Republican",
+   "start": "1801-03-04",
+   "end": "1805-03-04"
+  },
+  {
+   "name": "George Clinton",
+   "party": "Democratic-Republican",
+   "start": "1805-03-04",
+   "end": "1812-04-20"
+  },
+  {
+   "name": "Elbridge Gerry",
+   "party": "Democratic-Republican",
+   "start": "1813-03-04",
+   "end": "1814-11-23"
+  },
+  {
+   "name": "Daniel D. Tompkins",
+   "party": "Democratic-Republican",
+   "start": "1817-03-04",
+   "end": "1825-03-04"
+  },
+  {
+   "name": "John C. Calhoun",
+   "party": "Democratic",
+   "start": "1825-03-04",
+   "end": "1832-12-28"
+  },
+  {
+   "name": "Martin Van Buren",
+   "party": "Democratic",
+   "start": "1833-03-04",
+   "end": "1837-03-04"
+  },
+  {
+   "name": "Richard Mentor Johnson",
+   "party": "Democratic",
+   "start": "1837-03-04",
+   "end": "1841-03-04"
+  },
+  {
+   "name": "John Tyler",
+   "party": "Whig",
+   "start": "1841-03-04",
+   "end": "1841-04-04"
+  },
+  {
+   "name": "George M. Dallas",
+   "party": "Democratic",
+   "start": "1845-03-04",
+   "end": "1849-03-04"
+  },
+  {
+   "name": "Millard Fillmore",
+   "party": "Whig",
+   "start": "1849-03-04",
+   "end": "1850-07-09"
+  },
+  {
+   "name": "William R. King",
+   "party": "Democratic",
+   "start": "1853-03-04",
+   "end": "1853-04-18"
+  },
+  {
+   "name": "John C. Breckinridge",
+   "party": "Democratic",
+   "start": "1857-03-04",
+   "end": "1861-03-04"
+  },
+  {
+   "name": "Hannibal Hamlin",
+   "party": "Republican",
+   "start": "1861-03-04",
+   "end": "1865-03-04"
+  },
+  {
+   "name": "Andrew Johnson",
+   "party": "National Union",
+   "start": "1865-03-04",
+   "end": "1865-04-15"
+  },
+  {
+   "name": "Schuyler Colfax",
+   "party": "Republican",
+   "start": "1869-03-04",
+   "end": "1873-03-04"
+  },
+  {
+   "name": "Henry Wilson",
+   "party": "Republican",
+   "start": "1873-03-04",
+   "end": "1875-11-22"
+  },
+  {
+   "name": "William A. Wheeler",
+   "party": "Republican",
+   "start": "1877-03-04",
+   "end": "1881-03-04"
+  },
+  {
+   "name": "Chester A. Arthur",
+   "party": "Republican",
+   "start": "1881-03-04",
+   "end": "1881-09-19"
+  },
+  {
+   "name": "Thomas A. Hendricks",
+   "party": "Democratic",
+   "start": "1885-03-04",
+   "end": "1885-11-25"
+  },
+  {
+   "name": "Levi P. Morton",
+   "party": "Republican",
+   "start": "1889-03-04",
+   "end": "1893-03-04"
+  },
+  {
+   "name": "Adlai Stevenson I",
+   "party": "Democratic",
+   "start": "1893-03-04",
+   "end": "1897-03-04"
+  },
+  {
+   "name": "Garret Hobart",
+   "party": "Republican",
+   "start": "1897-03-04",
+   "end": "1899-11-21"
+  },
+  {
+   "name": "Theodore Roosevelt",
+   "party": "Republican",
+   "start": "1901-03-04",
+   "end": "1901-09-14"
+  },
+  {
+   "name": "Charles W. Fairbanks",
+   "party": "Republican",
+   "start": "1905-03-04",
+   "end": "1909-03-04"
+  },
+  {
+   "name": "James S. Sherman",
+   "party": "Republican",
+   "start": "1909-03-04",
+   "end": "1912-10-30"
+  },
+  {
+   "name": "Thomas R. Marshall",
+   "party": "Democratic",
+   "start": "1913-03-04",
+   "end": "1921-03-04"
+  },
+  {
+   "name": "Calvin Coolidge",
+   "party": "Republican",
+   "start": "1921-03-04",
+   "end": "1923-08-02"
+  },
+  {
+   "name": "Charles G. Dawes",
+   "party": "Republican",
+   "start": "1925-03-04",
+   "end": "1929-03-04"
+  },
+  {
+   "name": "Charles Curtis",
+   "party": "Republican",
+   "start": "1929-03-04",
+   "end": "1933-03-04"
+  },
+  {
+   "name": "John Nance Garner",
+   "party": "Democratic",
+   "start": "1933-03-04",
+   "end": "1941-01-20"
+  },
+  {
+   "name": "Henry A. Wallace",
+   "party": "Democratic",
+   "start": "1941-01-20",
+   "end": "1945-01-20"
+  },
+  {
+   "name": "Harry S. Truman",
+   "party": "Democratic",
+   "start": "1945-01-20",
+   "end": "1945-04-12"
+  },
+  {
+   "name": "Alben W. Barkley",
+   "party": "Democratic",
+   "start": "1949-01-20",
+   "end": "1953-01-20"
+  },
+  {
+   "name": "Richard Nixon",
+   "party": "Republican",
+   "start": "1953-01-20",
+   "end": "1961-01-20"
+  },
+  {
+   "name": "Lyndon B. Johnson",
+   "party": "Democratic",
+   "start": "1961-01-20",
+   "end": "1963-11-22"
+  },
+  {
+   "name": "Hubert Humphrey",
+   "party": "Democratic",
+   "start": "1965-01-20",
+   "end": "1969-01-20"
+  },
+  {
+   "name": "Spiro Agnew",
+   "party": "Republican",
+   "start": "1969-01-20",
+   "end": "1973-10-10"
+  },
+  {
+   "name": "Gerald Ford",
+   "party": "Republican",
+   "start": "1973-12-06",
+   "end": "1974-08-09"
+  },
+  {
+   "name": "Nelson Rockefeller",
+   "party": "Republican",
+   "start": "1974-12-19",
+   "end": "1977-01-20"
+  },
+  {
+   "name": "Walter Mondale",
+   "party": "Democratic",
+   "start": "1977-01-20",
+   "end": "1981-01-20"
+  },
+  {
+   "name": "George H. W. Bush",
+   "party": "Republican",
+   "start": "1981-01-20",
+   "end": "1989-01-20"
+  },
+  {
+   "name": "Dan Quayle",
+   "party": "Republican",
+   "start": "1989-01-20",
+   "end": "1993-01-20"
+  },
+  {
+   "name": "Al Gore",
+   "party": "Democratic",
+   "start": "1993-01-20",
+   "end": "2001-01-20"
+  },
+  {
+   "name": "Dick Cheney",
+   "party": "Republican",
+   "start": "2001-01-20",
+   "end": "2009-01-20"
+  },
+  {
+   "name": "Joe Biden",
+   "party": "Democratic",
+   "start": "2009-01-20",
+   "end": "2017-01-20"
+  },
+  {
+   "name": "Mike Pence",
+   "party": "Republican",
+   "start": "2017-01-20",
+   "end": "2021-01-20"
+  },
+  {
+   "name": "Kamala Harris",
+   "party": "Democratic",
+   "start": "2021-01-20",
+   "end": "2025-01-20"
+  },
+  {
+   "name": "JD Vance",
+   "party": "Republican",
+   "start": "2025-01-20",
+   "end": null
+  }
+ ]
+}

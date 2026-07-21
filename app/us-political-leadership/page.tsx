@@ -74,11 +74,22 @@ function PartySplitBar({ split }: { split: PartySplit }) {
   );
 }
 
-function OfficialCard({ label, name, sub }: { label: string; name: string; sub?: string }) {
+function ActingBadge() {
+  return (
+    <span
+      className="ml-1.5 align-middle inline-block rounded px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide"
+      style={{ backgroundColor: "var(--border)", color: "var(--text-muted)" }}
+    >
+      Acting
+    </span>
+  );
+}
+
+function OfficialCard({ label, name, sub, acting }: { label: string; name: string; sub?: string; acting?: boolean }) {
   return (
     <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
       <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">{label}</p>
-      <p className="text-lg font-bold text-[var(--text)]">{name}</p>
+      <p className="text-lg font-bold text-[var(--text)]">{name}{acting ? <ActingBadge /> : null}</p>
       {sub ? <p className="text-xs text-[var(--text-muted)]">{sub}</p> : null}
     </div>
   );
@@ -135,12 +146,22 @@ export default async function USPoliticalLeadershipPage() {
 
       <HubNav items={navItems} />
 
+      <Link
+        href="/us-political-leadership/time-machine"
+        className="block mb-10 rounded-xl border p-4 transition-colors hover:border-[var(--accent)]"
+        style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
+      >
+        <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">Time machine</p>
+        <p className="text-lg font-bold text-[var(--text)]">A day in American history →</p>
+        <p className="text-sm text-[var(--text-muted)]">Who was President, Vice President, and the House balance on any date back to 1789.</p>
+      </Link>
+
       {congress ? (
         <section id="executive" className="mb-12 scroll-mt-20">
           <h2 className="text-xl font-bold mb-3 text-[var(--text)]">Executive Branch</h2>
           <div className="grid gap-3 sm:grid-cols-2 mb-4">
-            <OfficialCard label="President" name={congress.executive.president.name} sub={`${congress.executive.president.party ?? ""} · since ${congress.executive.president.since?.slice(0, 4) ?? ""}`} />
-            <OfficialCard label="Vice President" name={congress.executive.vicePresident.name} sub={`${congress.executive.vicePresident.party ?? ""} · since ${congress.executive.vicePresident.since?.slice(0, 4) ?? ""}`} />
+            <OfficialCard label="President" name={congress.executive.president.name} acting={congress.executive.president.acting} sub={`${congress.executive.president.party ?? ""} · since ${congress.executive.president.since?.slice(0, 4) ?? ""}`} />
+            <OfficialCard label="Vice President" name={congress.executive.vicePresident.name} acting={congress.executive.vicePresident.acting} sub={`${congress.executive.vicePresident.party ?? ""} · since ${congress.executive.vicePresident.since?.slice(0, 4) ?? ""}`} />
           </div>
           <h3 className="text-sm font-semibold text-[var(--text-muted)] mb-2">The Cabinet</h3>
           {/* Mobile: stacked cards */}
@@ -150,7 +171,7 @@ export default async function USPoliticalLeadershipPage() {
                 <div className="flex items-start justify-between gap-2">
                   <div className="min-w-0">
                     <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{c.office}</div>
-                    <div className="font-medium text-sm text-[var(--text)]">{c.name}</div>
+                    <div className="font-medium text-sm text-[var(--text)]">{c.name}{c.acting ? <ActingBadge /> : null}</div>
                   </div>
                   <div className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0">{c.since?.slice(0, 4) ?? "—"}</div>
                 </div>
@@ -170,7 +191,7 @@ export default async function USPoliticalLeadershipPage() {
                 {congress.executive.cabinet.map((c) => (
                   <tr key={c.office} className="border-b last:border-0" style={{ borderColor: "var(--border)" }}>
                     <td className="py-2 px-4 text-[var(--text-muted)]">{c.office}</td>
-                    <td className="py-2 px-4 font-medium text-[var(--text)]">{c.name}</td>
+                    <td className="py-2 px-4 font-medium text-[var(--text)]">{c.name}{c.acting ? <ActingBadge /> : null}</td>
                     <td className="py-2 px-4 text-right tabular-nums text-[var(--text-muted)]">{c.since?.slice(0, 4) ?? "—"}</td>
                   </tr>
                 ))}

@@ -1,0 +1,382 @@
+[
+  {
+    "name": "👑 King Wu of Zhou",
+    "role": "King",
+    "start": "-1046-01-01",
+    "end": "-1043-01-01",
+    "current": false,
+    "tenure": "3y 0d",
+    "party": "reconstructed chronology (pre-841 BC)",
+    "era": "Western Zhou"
+  },
+  {
+    "name": "👑 King Cheng of Zhou",
+    "role": "King",
+    "start": "-1042-01-01",
+    "end": "-1021-01-01",
+    "current": false,
+    "tenure": "21y 0d",
+    "party": "reconstructed chronology (pre-841 BC)",
+    "era": "Western Zhou"
+  },
+  {
+    "name": "👑 King Kang of Zhou",
+    "role": "King",
+    "start": "-1020-01-01",
+    "end": "-0996-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "reconstructed chronology (pre-841 BC)",
+    "era": "Western Zhou"
+  },
+  {
+    "name": "👑 King Zhao of Zhou",
+    "role": "King",
+    "start": "-0995-01-01",
+    "end": "-0977-01-01",
+    "current": false,
+    "tenure": "18y 0d",
+    "party": "reconstructed chronology (pre-841 BC)",
+    "era": "Western Zhou"
+  },
+  {
+    "name": "👑 King Mu of Zhou",
+    "role": "King",
+    "start": "-0976-01-01",
+    "end": "-0922-01-01",
+    "current": false,
+    "tenure": "54y 0d",
+    "party": "reconstructed chronology (pre-841 BC)",
+    "era": "Western Zhou"
+  },
+  {
+    "name": "👑 King Gong of Zhou",
+    "role": "King",
+    "start": "-0922-01-01",
+    "end": "-0900-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "reconstructed chronology (pre-841 BC)",
+    "era": "Western Zhou"
+  },
+  {
+    "name": "👑 King Yih of Zhou",
+    "role": "King",
+    "start": "-0899-01-01",
+    "end": "-0892-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "reconstructed chronology (pre-841 BC)",
+    "era": "Western Zhou"
+  },
+  {
+    "name": "👑 King Xiao of Zhou",
+    "role": "King",
+    "start": "-0891-01-01",
+    "end": "-0886-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "reconstructed chronology (pre-841 BC)",
+    "era": "Western Zhou"
+  },
+  {
+    "name": "👑 King Yi of Zhou",
+    "role": "King",
+    "start": "-0885-01-01",
+    "end": "-0878-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "reconstructed chronology (pre-841 BC)",
+    "era": "Western Zhou"
+  },
+  {
+    "name": "👑 King Li of Zhou",
+    "role": "King",
+    "start": "-0877-01-01",
+    "end": "-0841-01-01",
+    "current": false,
+    "tenure": "36y 0d",
+    "party": "reconstructed chronology (pre-841 BC)",
+    "era": "Western Zhou"
+  },
+  {
+    "name": "Gonghe Regency",
+    "role": "Regency",
+    "start": "-0841-01-01",
+    "end": "-0828-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "first securely dated period in Chinese history (841 BC)",
+    "era": "Western Zhou"
+  },
+  {
+    "name": "👑 King Xuan of Zhou",
+    "role": "King",
+    "start": "-0827-01-01",
+    "end": "-0782-01-01",
+    "current": false,
+    "tenure": "45y 0d",
+    "party": "year-level backbone",
+    "era": "Western Zhou"
+  },
+  {
+    "name": "👑 King You of Zhou",
+    "role": "King",
+    "start": "-0781-01-01",
+    "end": "-0771-01-01",
+    "current": false,
+    "tenure": "10y 0d",
+    "party": "year-level backbone; end of Western Zhou",
+    "era": "Western Zhou"
+  },
+  {
+    "name": "👑 King Ping of Zhou",
+    "role": "King",
+    "start": "-0770-01-01",
+    "end": "-0720-01-01",
+    "current": false,
+    "tenure": "50y 0d",
+    "party": "year-level backbone",
+    "era": "Eastern Zhou (Spring and Autumn)"
+  },
+  {
+    "name": "👑 King Huan of Zhou",
+    "role": "King",
+    "start": "-0719-01-01",
+    "end": "-0697-01-01",
+    "current": false,
+    "tenure": "22y 0d",
+    "party": "year-level backbone",
+    "era": "Eastern Zhou (Spring and Autumn)"
+  },
+  {
+    "name": "👑 King Zhuang of Zhou",
+    "role": "King",
+    "start": "-0696-01-01",
+    "end": "-0682-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone",
+    "era": "Eastern Zhou (Spring and Autumn)"
+  },
+  {
+    "name": "👑 King Xi of Zhou",
+    "role": "King",
+    "start": "-0681-01-01",
+    "end": "-0677-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "year-level backbone",
+    "era": "Eastern Zhou (Spring and Autumn)"
+  },
+  {
+    "name": "👑 King Hui of Zhou",
+    "role": "King",
+    "start": "-0676-01-01",
+    "end": "-0652-01-01",
+    "current": false,
+    "tenure": "24y 0d",
+    "party": "year-level backbone",
+    "era": "Eastern Zhou (Spring and Autumn)"
+  },
+  {
+    "name": "👑 King Xiang of Zhou",
+    "role": "King",
+    "start": "-0651-01-01",
+    "end": "-0619-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "year-level backbone",
+    "era": "Eastern Zhou (Spring and Autumn)"
+  },
+  {
+    "name": "👑 King Qing of Zhou",
+    "role": "King",
+    "start": "-0618-01-01",
+    "end": "-0613-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Eastern Zhou (Spring and Autumn)"
+  },
+  {
+    "name": "👑 King Kuang of Zhou",
+    "role": "King",
+    "start": "-0612-01-01",
+    "end": "-0607-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Eastern Zhou (Spring and Autumn)"
+  },
+  {
+    "name": "👑 King Ding of Zhou",
+    "role": "King",
+    "start": "-0606-01-01",
+    "end": "-0586-01-01",
+    "current": false,
+    "tenure": "20y 0d",
+    "party": "year-level backbone",
+    "era": "Eastern Zhou (Spring and Autumn)"
+  },
+  {
+    "name": "👑 King Jian of Zhou",
+    "role": "King",
+    "start": "-0585-01-01",
+    "end": "-0572-01-01",
+    "current": false,
+    "tenure": "13y 0d",
+    "party": "year-level backbone",
+    "era": "Eastern Zhou (Spring and Autumn)"
+  },
+  {
+    "name": "👑 King Ling of Zhou",
+    "role": "King",
+    "start": "-0571-01-01",
+    "end": "-0545-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone",
+    "era": "Eastern Zhou (Spring and Autumn)"
+  },
+  {
+    "name": "👑 King Jing of Zhou (Gui)",
+    "role": "King",
+    "start": "-0544-01-01",
+    "end": "-0521-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level backbone",
+    "era": "Eastern Zhou (Spring and Autumn)"
+  },
+  {
+    "name": "👑 King Dao of Zhou",
+    "role": "King",
+    "start": "-0520-01-01",
+    "end": "-0520-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "reigned only months in 520 BC",
+    "era": "Eastern Zhou (Spring and Autumn)"
+  },
+  {
+    "name": "👑 King Jing of Zhou (Gai)",
+    "role": "King",
+    "start": "-0519-01-01",
+    "end": "-0476-01-01",
+    "current": false,
+    "tenure": "43y 0d",
+    "party": "year-level backbone; end of Spring and Autumn period",
+    "era": "Eastern Zhou (Spring and Autumn)"
+  },
+  {
+    "name": "👑 King Yuan of Zhou",
+    "role": "King",
+    "start": "-0475-01-01",
+    "end": "-0469-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Eastern Zhou (Warring States)"
+  },
+  {
+    "name": "👑 King Zhending of Zhou",
+    "role": "King",
+    "start": "-0468-01-01",
+    "end": "-0442-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "year-level backbone",
+    "era": "Eastern Zhou (Warring States)"
+  },
+  {
+    "name": "👑 King Ai of Zhou",
+    "role": "King",
+    "start": "-0441-01-01",
+    "end": "-0441-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "reigned only months in 441 BC",
+    "era": "Eastern Zhou (Warring States)"
+  },
+  {
+    "name": "👑 King Si of Zhou",
+    "role": "King",
+    "start": "-0441-01-01",
+    "end": "-0441-01-01",
+    "current": false,
+    "tenure": "0y 0d",
+    "party": "reigned only months in 441 BC",
+    "era": "Eastern Zhou (Warring States)"
+  },
+  {
+    "name": "👑 King Kao of Zhou",
+    "role": "King",
+    "start": "-0440-01-01",
+    "end": "-0426-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "year-level backbone",
+    "era": "Eastern Zhou (Warring States)"
+  },
+  {
+    "name": "👑 King Weilie of Zhou",
+    "role": "King",
+    "start": "-0425-01-01",
+    "end": "-0402-01-01",
+    "current": false,
+    "tenure": "23y 0d",
+    "party": "year-level backbone",
+    "era": "Eastern Zhou (Warring States)"
+  },
+  {
+    "name": "👑 King An of Zhou",
+    "role": "King",
+    "start": "-0401-01-01",
+    "end": "-0376-01-01",
+    "current": false,
+    "tenure": "25y 0d",
+    "party": "year-level backbone",
+    "era": "Eastern Zhou (Warring States)"
+  },
+  {
+    "name": "👑 King Lie of Zhou",
+    "role": "King",
+    "start": "-0375-01-01",
+    "end": "-0369-01-01",
+    "current": false,
+    "tenure": "6y 0d",
+    "party": "year-level backbone",
+    "era": "Eastern Zhou (Warring States)"
+  },
+  {
+    "name": "👑 King Xian of Zhou",
+    "role": "King",
+    "start": "-0368-01-01",
+    "end": "-0321-01-01",
+    "current": false,
+    "tenure": "47y 0d",
+    "party": "year-level backbone",
+    "era": "Eastern Zhou (Warring States)"
+  },
+  {
+    "name": "👑 King Shenjing of Zhou",
+    "role": "King",
+    "start": "-0320-01-01",
+    "end": "-0315-01-01",
+    "current": false,
+    "tenure": "5y 0d",
+    "party": "year-level backbone",
+    "era": "Eastern Zhou (Warring States)"
+  },
+  {
+    "name": "👑 King Nan of Zhou",
+    "role": "King",
+    "start": "-0314-01-01",
+    "end": "-0256-01-01",
+    "current": false,
+    "tenure": "58y 0d",
+    "party": "last king of Zhou; extinguished by Qin, 256 BC",
+    "era": "Eastern Zhou (Warring States)"
+  }
+]

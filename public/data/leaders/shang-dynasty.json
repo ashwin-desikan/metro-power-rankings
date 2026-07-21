@@ -1,0 +1,212 @@
+[
+  {
+    "name": "👑 Tang (Cheng Tang)",
+    "role": "King",
+    "start": "-1600-01-01",
+    "end": "-1563-01-01",
+    "current": false,
+    "tenure": "37y 0d",
+    "party": "founder; reconstructed chronology, dates approximate",
+    "era": "Shang dynasty"
+  },
+  {
+    "name": "👑 Da Ding",
+    "role": "King",
+    "start": "-1563-01-01",
+    "end": "-1530-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "reconstructed chronology; dates approximate",
+    "era": "Shang dynasty"
+  },
+  {
+    "name": "👑 Da Jia",
+    "role": "King",
+    "start": "-1530-01-01",
+    "end": "-1497-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "reconstructed chronology; dates approximate",
+    "era": "Shang dynasty"
+  },
+  {
+    "name": "👑 Da Geng",
+    "role": "King",
+    "start": "-1497-01-01",
+    "end": "-1465-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "reconstructed chronology; dates approximate",
+    "era": "Shang dynasty"
+  },
+  {
+    "name": "👑 Da Wu",
+    "role": "King",
+    "start": "-1465-01-01",
+    "end": "-1432-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "reconstructed chronology; dates approximate",
+    "era": "Shang dynasty"
+  },
+  {
+    "name": "👑 Zhong Ding",
+    "role": "King",
+    "start": "-1432-01-01",
+    "end": "-1400-01-01",
+    "current": false,
+    "tenure": "32y 0d",
+    "party": "reconstructed chronology; dates approximate",
+    "era": "Shang dynasty"
+  },
+  {
+    "name": "👑 Zu Yi",
+    "role": "King",
+    "start": "-1400-01-01",
+    "end": "-1367-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "reconstructed chronology; dates approximate",
+    "era": "Shang dynasty"
+  },
+  {
+    "name": "👑 Zu Xin",
+    "role": "King",
+    "start": "-1367-01-01",
+    "end": "-1334-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "reconstructed chronology; dates approximate",
+    "era": "Shang dynasty"
+  },
+  {
+    "name": "👑 Zu Ding",
+    "role": "King",
+    "start": "-1334-01-01",
+    "end": "-1300-01-01",
+    "current": false,
+    "tenure": "34y 0d",
+    "party": "reconstructed chronology; dates approximate",
+    "era": "Shang dynasty"
+  },
+  {
+    "name": "👑 Pan Geng",
+    "role": "King",
+    "start": "-1300-01-01",
+    "end": "-1273-01-01",
+    "current": false,
+    "tenure": "27y 0d",
+    "party": "moved the capital to Yin, c. 1300 BC; reconstructed dates",
+    "era": "Shang dynasty"
+  },
+  {
+    "name": "👑 Xiao Xin",
+    "role": "King",
+    "start": "-1273-01-01",
+    "end": "-1262-01-01",
+    "current": false,
+    "tenure": "11y 0d",
+    "party": "reconstructed chronology; dates approximate",
+    "era": "Shang dynasty"
+  },
+  {
+    "name": "👑 Xiao Yi",
+    "role": "King",
+    "start": "-1262-01-01",
+    "end": "-1250-01-01",
+    "current": false,
+    "tenure": "12y 0d",
+    "party": "reconstructed chronology; dates approximate",
+    "era": "Shang dynasty"
+  },
+  {
+    "name": "👑 Wu Ding",
+    "role": "King",
+    "start": "-1250-01-01",
+    "end": "-1192-01-01",
+    "current": false,
+    "tenure": "58y 0d",
+    "party": "oracle-bone attested; reconstructed dates",
+    "era": "Shang dynasty"
+  },
+  {
+    "name": "👑 Zu Geng",
+    "role": "King",
+    "start": "-1192-01-01",
+    "end": "-1185-01-01",
+    "current": false,
+    "tenure": "7y 0d",
+    "party": "reconstructed chronology; dates approximate",
+    "era": "Shang dynasty"
+  },
+  {
+    "name": "👑 Zu Jia",
+    "role": "King",
+    "start": "-1185-01-01",
+    "end": "-1152-01-01",
+    "current": false,
+    "tenure": "33y 0d",
+    "party": "reconstructed chronology; dates approximate",
+    "era": "Shang dynasty"
+  },
+  {
+    "name": "👑 Lin Xin",
+    "role": "King",
+    "start": "-1152-01-01",
+    "end": "-1148-01-01",
+    "current": false,
+    "tenure": "4y 0d",
+    "party": "reconstructed chronology; dates approximate",
+    "era": "Shang dynasty"
+  },
+  {
+    "name": "👑 Geng Ding",
+    "role": "King",
+    "start": "-1148-01-01",
+    "end": "-1131-01-01",
+    "current": false,
+    "tenure": "17y 0d",
+    "party": "reconstructed chronology; dates approximate",
+    "era": "Shang dynasty"
+  },
+  {
+    "name": "👑 Wu Yi",
+    "role": "King",
+    "start": "-1131-01-01",
+    "end": "-1117-01-01",
+    "current": false,
+    "tenure": "14y 0d",
+    "party": "reconstructed chronology; dates approximate",
+    "era": "Shang dynasty"
+  },
+  {
+    "name": "👑 Wen Wu Ding",
+    "role": "King",
+    "start": "-1117-01-01",
+    "end": "-1102-01-01",
+    "current": false,
+    "tenure": "15y 0d",
+    "party": "reconstructed chronology; dates approximate",
+    "era": "Shang dynasty"
+  },
+  {
+    "name": "👑 Di Yi",
+    "role": "King",
+    "start": "-1102-01-01",
+    "end": "-1076-01-01",
+    "current": false,
+    "tenure": "26y 0d",
+    "party": "reconstructed chronology; dates approximate",
+    "era": "Shang dynasty"
+  },
+  {
+    "name": "👑 Di Xin (King Zhou of Shang)",
+    "role": "King",
+    "start": "-1076-01-01",
+    "end": "-1046-01-01",
+    "current": false,
+    "tenure": "30y 0d",
+    "party": "last Shang king; defeated at the Battle of Muye; reconstructed dates",
+    "era": "Shang dynasty"
+  }
+]

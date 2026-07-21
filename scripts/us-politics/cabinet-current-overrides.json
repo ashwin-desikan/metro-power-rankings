@@ -1,0 +1,9 @@
+{
+  "_note": "Curated current/acting big-4 cabinet holders that Wikidata lags on. Each entry {name, party, start[, end]} is appended to that office's history; build-office-history.py then closes the prior open term to this start, so the override becomes the current holder. This is the human-review surface for the bleeding-edge tail Wikidata is slow/wrong on. Remove an entry once Wikidata carries it with correct dates.",
+  "Attorney General": [
+    { "name": "Todd Blanche (acting)", "party": "Republican", "start": "2026-04-02" }
+  ],
+  "Secretary of State": [],
+  "Secretary of the Treasury": [],
+  "Secretary of War / Defense": []
+}

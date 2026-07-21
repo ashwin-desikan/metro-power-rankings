@@ -32,6 +32,7 @@ const PEOPLE: Card[] = [
   { emoji: "🎖️", title: "World Leaders", desc: "Every head of state and government, with a time machine back to antiquity.", href: "/leaders" },
   { emoji: "💰", title: "Billionaires", desc: "The world's wealthiest, placed on the metros that made them.", href: "/billionaires" },
   { emoji: "🏛️", title: "US Political Leadership", desc: "The executive, Congress, and the fifty governors.", href: "/us-political-leadership" },
+  { emoji: "🏛️", title: "UK Political Leadership", desc: "The Crown, Prime Minister, Parliament and devolved nations.", href: "/uk-political-leadership" },
   { emoji: "🏙️", title: "Mayors of the World", desc: "Who runs the great cities, capital by capital.", href: "/mayors" },
 ];
 const GEOPOLITICS: Card[] = [

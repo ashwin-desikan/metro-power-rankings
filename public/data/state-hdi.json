@@ -1,0 +1,1394 @@
+{
+ "alabama": {
+  "hdi": 0.896,
+  "hdiYear": 2023
+ },
+ "alaska": {
+  "hdi": 0.94,
+  "hdiYear": 2023
+ },
+ "arizona": {
+  "hdi": 0.922,
+  "hdiYear": 2023
+ },
+ "arkansas": {
+  "hdi": 0.898,
+  "hdiYear": 2023
+ },
+ "california": {
+  "hdi": 0.94,
+  "hdiYear": 2023
+ },
+ "colorado": {
+  "hdi": 0.958,
+  "hdiYear": 2023
+ },
+ "connecticut": {
+  "hdi": 0.955,
+  "hdiYear": 2023
+ },
+ "delaware": {
+  "hdi": 0.935,
+  "hdiYear": 2023
+ },
+ "dc": {
+  "hdi": 0.952,
+  "hdiYear": 2023
+ },
+ "florida-united-states": {
+  "hdi": 0.936,
+  "hdiYear": 2023
+ },
+ "georgia": {
+  "hdi": 0.92,
+  "hdiYear": 2023
+ },
+ "hawaii": {
+  "hdi": 0.959,
+  "hdiYear": 2023
+ },
+ "idaho": {
+  "hdi": 0.934,
+  "hdiYear": 2023
+ },
+ "illinois": {
+  "hdi": 0.94,
+  "hdiYear": 2023
+ },
+ "indiana": {
+  "hdi": 0.917,
+  "hdiYear": 2023
+ },
+ "iowa": {
+  "hdi": 0.938,
+  "hdiYear": 2023
+ },
+ "kansas": {
+  "hdi": 0.934,
+  "hdiYear": 2023
+ },
+ "kentucky": {
+  "hdi": 0.897,
+  "hdiYear": 2023
+ },
+ "louisiana": {
+  "hdi": 0.897,
+  "hdiYear": 2023
+ },
+ "maine": {
+  "hdi": 0.943,
+  "hdiYear": 2023
+ },
+ "maryland-united-states": {
+  "hdi": 0.947,
+  "hdiYear": 2023
+ },
+ "massachusetts": {
+  "hdi": 0.961,
+  "hdiYear": 2023
+ },
+ "michigan": {
+  "hdi": 0.928,
+  "hdiYear": 2023
+ },
+ "minnesota": {
+  "hdi": 0.96,
+  "hdiYear": 2023
+ },
+ "mississippi": {
+  "hdi": 0.88,
+  "hdiYear": 2023
+ },
+ "missouri": {
+  "hdi": 0.92,
+  "hdiYear": 2023
+ },
+ "montana-united-states": {
+  "hdi": 0.938,
+  "hdiYear": 2023
+ },
+ "nebraska": {
+  "hdi": 0.943,
+  "hdiYear": 2023
+ },
+ "nevada": {
+  "hdi": 0.923,
+  "hdiYear": 2023
+ },
+ "new-hampshire": {
+  "hdi": 0.961,
+  "hdiYear": 2023
+ },
+ "new-jersey": {
+  "hdi": 0.948,
+  "hdiYear": 2023
+ },
+ "new-mexico": {
+  "hdi": 0.903,
+  "hdiYear": 2023
+ },
+ "new-york": {
+  "hdi": 0.942,
+  "hdiYear": 2023
+ },
+ "north-carolina": {
+  "hdi": 0.923,
+  "hdiYear": 2023
+ },
+ "north-dakota": {
+  "hdi": 0.945,
+  "hdiYear": 2023
+ },
+ "ohio": {
+  "hdi": 0.923,
+  "hdiYear": 2023
+ },
+ "oklahoma": {
+  "hdi": 0.908,
+  "hdiYear": 2023
+ },
+ "oregon": {
+  "hdi": 0.95,
+  "hdiYear": 2023
+ },
+ "pennsylvania": {
+  "hdi": 0.938,
+  "hdiYear": 2023
+ },
+ "rhode-island": {
+  "hdi": 0.944,
+  "hdiYear": 2023
+ },
+ "south-carolina": {
+  "hdi": 0.911,
+  "hdiYear": 2023
+ },
+ "south-dakota": {
+  "hdi": 0.94,
+  "hdiYear": 2023
+ },
+ "tennessee": {
+  "hdi": 0.908,
+  "hdiYear": 2023
+ },
+ "texas": {
+  "hdi": 0.919,
+  "hdiYear": 2023
+ },
+ "utah": {
+  "hdi": 0.946,
+  "hdiYear": 2023
+ },
+ "vermont": {
+  "hdi": 0.957,
+  "hdiYear": 2023
+ },
+ "virginia": {
+  "hdi": 0.948,
+  "hdiYear": 2023
+ },
+ "washington": {
+  "hdi": 0.957,
+  "hdiYear": 2023
+ },
+ "west-virginia": {
+  "hdi": 0.89,
+  "hdiYear": 2023
+ },
+ "wisconsin": {
+  "hdi": 0.942,
+  "hdiYear": 2023
+ },
+ "wyoming": {
+  "hdi": 0.941,
+  "hdiYear": 2023
+ },
+ "alberta": {
+  "hdi": 0.952,
+  "hdiYear": 2023
+ },
+ "british-columbia": {
+  "hdi": 0.95,
+  "hdiYear": 2023
+ },
+ "manitoba": {
+  "hdi": 0.911,
+  "hdiYear": 2023
+ },
+ "new-brunswick": {
+  "hdi": 0.908,
+  "hdiYear": 2023
+ },
+ "newfoundland": {
+  "hdi": 0.905,
+  "hdiYear": 2023
+ },
+ "nova-scotia": {
+  "hdi": 0.913,
+  "hdiYear": 2023
+ },
+ "ontario": {
+  "hdi": 0.946,
+  "hdiYear": 2023
+ },
+ "quebec": {
+  "hdi": 0.93,
+  "hdiYear": 2023
+ },
+ "saskatchewan": {
+  "hdi": 0.924,
+  "hdiYear": 2023
+ },
+ "australian-capital-territory": {
+  "hdi": 0.988,
+  "hdiYear": 2023
+ },
+ "new-south-wales": {
+  "hdi": 0.958,
+  "hdiYear": 2023
+ },
+ "northern-territory": {
+  "hdi": 0.944,
+  "hdiYear": 2023
+ },
+ "queensland": {
+  "hdi": 0.947,
+  "hdiYear": 2023
+ },
+ "south-australia": {
+  "hdi": 0.944,
+  "hdiYear": 2023
+ },
+ "tasmania": {
+  "hdi": 0.935,
+  "hdiYear": 2023
+ },
+ "victoria": {
+  "hdi": 0.954,
+  "hdiYear": 2023
+ },
+ "western-australia": {
+  "hdi": 0.973,
+  "hdiYear": 2023
+ },
+ "aguascalientes": {
+  "hdi": 0.797,
+  "hdiYear": 2023
+ },
+ "baja-california": {
+  "hdi": 0.813,
+  "hdiYear": 2023
+ },
+ "baja-california-sur": {
+  "hdi": 0.81,
+  "hdiYear": 2023
+ },
+ "campeche": {
+  "hdi": 0.779,
+  "hdiYear": 2023
+ },
+ "chiapas": {
+  "hdi": 0.696,
+  "hdiYear": 2023
+ },
+ "chihuahua": {
+  "hdi": 0.796,
+  "hdiYear": 2023
+ },
+ "coahuila": {
+  "hdi": 0.801,
+  "hdiYear": 2023
+ },
+ "colima": {
+  "hdi": 0.789,
+  "hdiYear": 2023
+ },
+ "distrito-federal-mexico": {
+  "hdi": 0.846,
+  "hdiYear": 2023
+ },
+ "durango": {
+  "hdi": 0.768,
+  "hdiYear": 2023
+ },
+ "guanajuato": {
+  "hdi": 0.761,
+  "hdiYear": 2023
+ },
+ "guerrero": {
+  "hdi": 0.708,
+  "hdiYear": 2023
+ },
+ "hidalgo": {
+  "hdi": 0.765,
+  "hdiYear": 2023
+ },
+ "jalisco": {
+  "hdi": 0.794,
+  "hdiYear": 2023
+ },
+ "mexico": {
+  "hdi": 0.788,
+  "hdiYear": 2023
+ },
+ "morelos": {
+  "hdi": 0.782,
+  "hdiYear": 2023
+ },
+ "nayarit": {
+  "hdi": 0.773,
+  "hdiYear": 2023
+ },
+ "nuevo-leon": {
+  "hdi": 0.815,
+  "hdiYear": 2023
+ },
+ "oaxaca": {
+  "hdi": 0.709,
+  "hdiYear": 2023
+ },
+ "puebla": {
+  "hdi": 0.745,
+  "hdiYear": 2023
+ },
+ "queretaro": {
+  "hdi": 0.792,
+  "hdiYear": 2023
+ },
+ "quintana-roo": {
+  "hdi": 0.789,
+  "hdiYear": 2023
+ },
+ "san-luis-potosi": {
+  "hdi": 0.76,
+  "hdiYear": 2023
+ },
+ "sinaloa": {
+  "hdi": 0.809,
+  "hdiYear": 2023
+ },
+ "sonora": {
+  "hdi": 0.811,
+  "hdiYear": 2023
+ },
+ "tabasco": {
+  "hdi": 0.778,
+  "hdiYear": 2023
+ },
+ "tamaulipas": {
+  "hdi": 0.795,
+  "hdiYear": 2023
+ },
+ "tlaxcala": {
+  "hdi": 0.767,
+  "hdiYear": 2023
+ },
+ "veracruz": {
+  "hdi": 0.742,
+  "hdiYear": 2023
+ },
+ "yucatan": {
+  "hdi": 0.772,
+  "hdiYear": 2023
+ },
+ "zacatecas": {
+  "hdi": 0.772,
+  "hdiYear": 2023
+ },
+ "baden-wurttemberg": {
+  "hdi": 0.972,
+  "hdiYear": 2023
+ },
+ "bavaria": {
+  "hdi": 0.967,
+  "hdiYear": 2023
+ },
+ "berlin": {
+  "hdi": 0.977,
+  "hdiYear": 2023
+ },
+ "brandenburg": {
+  "hdi": 0.936,
+  "hdiYear": 2023
+ },
+ "bremen": {
+  "hdi": 0.961,
+  "hdiYear": 2023
+ },
+ "hamburg": {
+  "hdi": 0.977,
+  "hdiYear": 2023
+ },
+ "hesse": {
+  "hdi": 0.963,
+  "hdiYear": 2023
+ },
+ "mecklenburg-vorpommern": {
+  "hdi": 0.932,
+  "hdiYear": 2023
+ },
+ "lower-saxony": {
+  "hdi": 0.945,
+  "hdiYear": 2023
+ },
+ "north-rhine-westphalia": {
+  "hdi": 0.955,
+  "hdiYear": 2023
+ },
+ "rhineland-palatinate": {
+  "hdi": 0.948,
+  "hdiYear": 2023
+ },
+ "saarland": {
+  "hdi": 0.944,
+  "hdiYear": 2023
+ },
+ "saxony": {
+  "hdi": 0.953,
+  "hdiYear": 2023
+ },
+ "saxony-anhalt": {
+  "hdi": 0.93,
+  "hdiYear": 2023
+ },
+ "schleswig-holstein": {
+  "hdi": 0.939,
+  "hdiYear": 2023
+ },
+ "thuringia": {
+  "hdi": 0.937,
+  "hdiYear": 2023
+ },
+ "abruzzo": {
+  "hdi": 0.909,
+  "hdiYear": 2023
+ },
+ "basilicata": {
+  "hdi": 0.888,
+  "hdiYear": 2023
+ },
+ "calabria": {
+  "hdi": 0.867,
+  "hdiYear": 2023
+ },
+ "campania": {
+  "hdi": 0.876,
+  "hdiYear": 2023
+ },
+ "emilia-romagna": {
+  "hdi": 0.943,
+  "hdiYear": 2023
+ },
+ "friuli-venezia-giulia": {
+  "hdi": 0.926,
+  "hdiYear": 2023
+ },
+ "lazio": {
+  "hdi": 0.938,
+  "hdiYear": 2023
+ },
+ "liguria": {
+  "hdi": 0.921,
+  "hdiYear": 2023
+ },
+ "lombardy": {
+  "hdi": 0.936,
+  "hdiYear": 2023
+ },
+ "marche": {
+  "hdi": 0.923,
+  "hdiYear": 2023
+ },
+ "molise": {
+  "hdi": 0.894,
+  "hdiYear": 2023
+ },
+ "piedmont": {
+  "hdi": 0.92,
+  "hdiYear": 2023
+ },
+ "apulia": {
+  "hdi": 0.878,
+  "hdiYear": 2023
+ },
+ "sardinia": {
+  "hdi": 0.887,
+  "hdiYear": 2023
+ },
+ "sicily": {
+  "hdi": 0.868,
+  "hdiYear": 2023
+ },
+ "tuscany": {
+  "hdi": 0.93,
+  "hdiYear": 2023
+ },
+ "umbria": {
+  "hdi": 0.917,
+  "hdiYear": 2023
+ },
+ "veneto": {
+  "hdi": 0.922,
+  "hdiYear": 2023
+ },
+ "andalusia": {
+  "hdi": 0.889,
+  "hdiYear": 2023
+ },
+ "aragon": {
+  "hdi": 0.923,
+  "hdiYear": 2023
+ },
+ "cantabria": {
+  "hdi": 0.918,
+  "hdiYear": 2023
+ },
+ "castile-leon": {
+  "hdi": 0.92,
+  "hdiYear": 2023
+ },
+ "castilla-la-mancha": {
+  "hdi": 0.884,
+  "hdiYear": 2023
+ },
+ "navarre": {
+  "hdi": 0.936,
+  "hdiYear": 2023
+ },
+ "valencia": {
+  "hdi": 0.905,
+  "hdiYear": 2023
+ },
+ "madrid": {
+  "hdi": 0.951,
+  "hdiYear": 2023
+ },
+ "extremadura": {
+  "hdi": 0.884,
+  "hdiYear": 2023
+ },
+ "galicia": {
+  "hdi": 0.917,
+  "hdiYear": 2023
+ },
+ "balearic-islands": {
+  "hdi": 0.887,
+  "hdiYear": 2023
+ },
+ "la-rioja-spain": {
+  "hdi": 0.924,
+  "hdiYear": 2023
+ },
+ "asturias": {
+  "hdi": 0.914,
+  "hdiYear": 2023
+ },
+ "murcia": {
+  "hdi": 0.893,
+  "hdiYear": 2023
+ },
+ "andhra-pradesh": {
+  "hdi": 0.681,
+  "hdiYear": 2023
+ },
+ "arunachal-pradesh": {
+  "hdi": 0.724,
+  "hdiYear": 2023
+ },
+ "assam": {
+  "hdi": 0.654,
+  "hdiYear": 2023
+ },
+ "bihar": {
+  "hdi": 0.614,
+  "hdiYear": 2023
+ },
+ "chhattisgarh": {
+  "hdi": 0.664,
+  "hdiYear": 2023
+ },
+ "goa": {
+  "hdi": 0.806,
+  "hdiYear": 2023
+ },
+ "gujarat": {
+  "hdi": 0.686,
+  "hdiYear": 2023
+ },
+ "haryana": {
+  "hdi": 0.738,
+  "hdiYear": 2023
+ },
+ "himachal-pradesh": {
+  "hdi": 0.759,
+  "hdiYear": 2023
+ },
+ "jharkhand": {
+  "hdi": 0.638,
+  "hdiYear": 2023
+ },
+ "karnataka": {
+  "hdi": 0.715,
+  "hdiYear": 2023
+ },
+ "kerala": {
+  "hdi": 0.804,
+  "hdiYear": 2023
+ },
+ "lakshadweep": {
+  "hdi": 0.763,
+  "hdiYear": 2023
+ },
+ "madhya-pradesh": {
+  "hdi": 0.649,
+  "hdiYear": 2023
+ },
+ "maharashtra": {
+  "hdi": 0.738,
+  "hdiYear": 2023
+ },
+ "manipur": {
+  "hdi": 0.726,
+  "hdiYear": 2023
+ },
+ "meghalaya": {
+  "hdi": 0.69,
+  "hdiYear": 2023
+ },
+ "mizoram": {
+  "hdi": 0.753,
+  "hdiYear": 2023
+ },
+ "nagaland": {
+  "hdi": 0.721,
+  "hdiYear": 2023
+ },
+ "puducherry": {
+  "hdi": 0.786,
+  "hdiYear": 2023
+ },
+ "punjab-india": {
+  "hdi": 0.74,
+  "hdiYear": 2023
+ },
+ "rajasthan": {
+  "hdi": 0.692,
+  "hdiYear": 2023
+ },
+ "sikkim": {
+  "hdi": 0.755,
+  "hdiYear": 2023
+ },
+ "tamil-nadu": {
+  "hdi": 0.734,
+  "hdiYear": 2023
+ },
+ "telangana": {
+  "hdi": 0.7,
+  "hdiYear": 2023
+ },
+ "tripura": {
+  "hdi": 0.663,
+  "hdiYear": 2023
+ },
+ "uttar-pradesh": {
+  "hdi": 0.648,
+  "hdiYear": 2023
+ },
+ "west-bengal": {
+  "hdi": 0.674,
+  "hdiYear": 2023
+ },
+ "hokkaido": {
+  "hdi": 0.898,
+  "hdiYear": 2023
+ },
+ "acre": {
+  "hdi": 0.739,
+  "hdiYear": 2023
+ },
+ "alagoas": {
+  "hdi": 0.741,
+  "hdiYear": 2023
+ },
+ "amapa": {
+  "hdi": 0.773,
+  "hdiYear": 2023
+ },
+ "amazonas-brazil": {
+  "hdi": 0.761,
+  "hdiYear": 2023
+ },
+ "bahia": {
+  "hdi": 0.759,
+  "hdiYear": 2023
+ },
+ "ceara": {
+  "hdi": 0.757,
+  "hdiYear": 2023
+ },
+ "distrito-federal-brazil": {
+  "hdi": 0.85,
+  "hdiYear": 2023
+ },
+ "espirito-santo": {
+  "hdi": 0.788,
+  "hdiYear": 2023
+ },
+ "goias": {
+  "hdi": 0.793,
+  "hdiYear": 2023
+ },
+ "maranhao": {
+  "hdi": 0.728,
+  "hdiYear": 2023
+ },
+ "mato-grosso": {
+  "hdi": 0.782,
+  "hdiYear": 2023
+ },
+ "mato-grosso-do-sul": {
+  "hdi": 0.788,
+  "hdiYear": 2023
+ },
+ "minas-gerais": {
+  "hdi": 0.786,
+  "hdiYear": 2023
+ },
+ "para-brazil": {
+  "hdi": 0.742,
+  "hdiYear": 2023
+ },
+ "paraiba": {
+  "hdi": 0.759,
+  "hdiYear": 2023
+ },
+ "parana": {
+  "hdi": 0.795,
+  "hdiYear": 2023
+ },
+ "pernambuco": {
+  "hdi": 0.76,
+  "hdiYear": 2023
+ },
+ "piaui": {
+  "hdi": 0.737,
+  "hdiYear": 2023
+ },
+ "rio-grande-do-norte": {
+  "hdi": 0.775,
+  "hdiYear": 2023
+ },
+ "rio-grande-do-sul": {
+  "hdi": 0.801,
+  "hdiYear": 2023
+ },
+ "rio-de-janeiro": {
+  "hdi": 0.816,
+  "hdiYear": 2023
+ },
+ "rondonia": {
+  "hdi": 0.758,
+  "hdiYear": 2023
+ },
+ "roraima": {
+  "hdi": 0.788,
+  "hdiYear": 2023
+ },
+ "santa-catarina": {
+  "hdi": 0.801,
+  "hdiYear": 2023
+ },
+ "sao-paulo": {
+  "hdi": 0.813,
+  "hdiYear": 2023
+ },
+ "sergipe": {
+  "hdi": 0.77,
+  "hdiYear": 2023
+ },
+ "tocantins": {
+  "hdi": 0.774,
+  "hdiYear": 2023
+ },
+ "ticino": {
+  "hdi": 0.965,
+  "hdiYear": 2023
+ },
+ "zurich": {
+  "hdi": 0.993,
+  "hdiYear": 2023
+ },
+ "anhui": {
+  "hdi": 0.776,
+  "hdiYear": 2023
+ },
+ "beijing": {
+  "hdi": 0.912,
+  "hdiYear": 2023
+ },
+ "chongqing": {
+  "hdi": 0.804,
+  "hdiYear": 2023
+ },
+ "fujian": {
+  "hdi": 0.812,
+  "hdiYear": 2023
+ },
+ "gansu": {
+  "hdi": 0.731,
+  "hdiYear": 2023
+ },
+ "guangdong": {
+  "hdi": 0.823,
+  "hdiYear": 2023
+ },
+ "guangxi": {
+  "hdi": 0.76,
+  "hdiYear": 2023
+ },
+ "guizhou": {
+  "hdi": 0.734,
+  "hdiYear": 2023
+ },
+ "hainan": {
+  "hdi": 0.79,
+  "hdiYear": 2023
+ },
+ "hebei": {
+  "hdi": 0.771,
+  "hdiYear": 2023
+ },
+ "heilongjiang": {
+  "hdi": 0.778,
+  "hdiYear": 2023
+ },
+ "henan": {
+  "hdi": 0.769,
+  "hdiYear": 2023
+ },
+ "hubei": {
+  "hdi": 0.803,
+  "hdiYear": 2023
+ },
+ "hunan": {
+  "hdi": 0.79,
+  "hdiYear": 2023
+ },
+ "inner-mongolia": {
+  "hdi": 0.807,
+  "hdiYear": 2023
+ },
+ "jiangsu": {
+  "hdi": 0.836,
+  "hdiYear": 2023
+ },
+ "jiangxi": {
+  "hdi": 0.777,
+  "hdiYear": 2023
+ },
+ "jilin": {
+  "hdi": 0.787,
+  "hdiYear": 2023
+ },
+ "liaoning": {
+  "hdi": 0.803,
+  "hdiYear": 2023
+ },
+ "ningxia": {
+  "hdi": 0.773,
+  "hdiYear": 2023
+ },
+ "qinghai": {
+  "hdi": 0.727,
+  "hdiYear": 2023
+ },
+ "shaanxi": {
+  "hdi": 0.802,
+  "hdiYear": 2023
+ },
+ "shandong": {
+  "hdi": 0.798,
+  "hdiYear": 2023
+ },
+ "shanghai": {
+  "hdi": 0.901,
+  "hdiYear": 2023
+ },
+ "shanxi": {
+  "hdi": 0.8,
+  "hdiYear": 2023
+ },
+ "sichuan": {
+  "hdi": 0.771,
+  "hdiYear": 2023
+ },
+ "tianjin": {
+  "hdi": 0.867,
+  "hdiYear": 2023
+ },
+ "tibet": {
+  "hdi": 0.656,
+  "hdiYear": 2023
+ },
+ "xinjiang": {
+  "hdi": 0.771,
+  "hdiYear": 2023
+ },
+ "yunnan": {
+  "hdi": 0.737,
+  "hdiYear": 2023
+ },
+ "zhejiang": {
+  "hdi": 0.823,
+  "hdiYear": 2023
+ },
+ "ile-de-france": {
+  "hdi": 0.959,
+  "hdiYear": 2023
+ },
+ "pays-de-la-loire": {
+  "hdi": 0.915,
+  "hdiYear": 2023
+ },
+ "provence-alpes-cote-d-azur": {
+  "hdi": 0.921,
+  "hdiYear": 2023
+ },
+ "lower-silesian": {
+  "hdi": 0.929,
+  "hdiYear": 2023
+ },
+ "lublin": {
+  "hdi": 0.886,
+  "hdiYear": 2023
+ },
+ "masovian": {
+  "hdi": 0.958,
+  "hdiYear": 2023
+ },
+ "opole": {
+  "hdi": 0.888,
+  "hdiYear": 2023
+ },
+ "subcarpathian": {
+  "hdi": 0.883,
+  "hdiYear": 2023
+ },
+ "podlaskie": {
+  "hdi": 0.891,
+  "hdiYear": 2023
+ },
+ "silesian": {
+  "hdi": 0.91,
+  "hdiYear": 2023
+ },
+ "swietokrzyskie": {
+  "hdi": 0.877,
+  "hdiYear": 2023
+ },
+ "drenthe": {
+  "hdi": 0.926,
+  "hdiYear": 2023
+ },
+ "flevoland": {
+  "hdi": 0.933,
+  "hdiYear": 2023
+ },
+ "friesland": {
+  "hdi": 0.931,
+  "hdiYear": 2023
+ },
+ "gelderland": {
+  "hdi": 0.944,
+  "hdiYear": 2023
+ },
+ "groningen": {
+  "hdi": 0.951,
+  "hdiYear": 2023
+ },
+ "limburg-netherlands": {
+  "hdi": 0.944,
+  "hdiYear": 2023
+ },
+ "north-brabant": {
+  "hdi": 0.955,
+  "hdiYear": 2023
+ },
+ "north-holland": {
+  "hdi": 0.964,
+  "hdiYear": 2023
+ },
+ "overijssel": {
+  "hdi": 0.942,
+  "hdiYear": 2023
+ },
+ "utrecht": {
+  "hdi": 0.969,
+  "hdiYear": 2023
+ },
+ "zeeland": {
+  "hdi": 0.93,
+  "hdiYear": 2023
+ },
+ "south-holland": {
+  "hdi": 0.954,
+  "hdiYear": 2023
+ },
+ "antwerp": {
+  "hdi": 0.966,
+  "hdiYear": 2023
+ },
+ "walloon-brabant": {
+  "hdi": 0.957,
+  "hdiYear": 2023
+ },
+ "hainaut": {
+  "hdi": 0.903,
+  "hdiYear": 2023
+ },
+ "liege": {
+  "hdi": 0.916,
+  "hdiYear": 2023
+ },
+ "limburg-belgium": {
+  "hdi": 0.946,
+  "hdiYear": 2023
+ },
+ "luxembourg-belgium": {
+  "hdi": 0.911,
+  "hdiYear": 2023
+ },
+ "namur": {
+  "hdi": 0.92,
+  "hdiYear": 2023
+ },
+ "east-flanders": {
+  "hdi": 0.955,
+  "hdiYear": 2023
+ },
+ "flemish-brabant": {
+  "hdi": 0.957,
+  "hdiYear": 2023
+ },
+ "istanbul": {
+  "hdi": 0.886,
+  "hdiYear": 2023
+ },
+ "eastern-cape": {
+  "hdi": 0.72,
+  "hdiYear": 2023
+ },
+ "free-state": {
+  "hdi": 0.737,
+  "hdiYear": 2023
+ },
+ "gauteng": {
+  "hdi": 0.759,
+  "hdiYear": 2023
+ },
+ "kwazulu-natal": {
+  "hdi": 0.745,
+  "hdiYear": 2023
+ },
+ "mpumalanga": {
+  "hdi": 0.718,
+  "hdiYear": 2023
+ },
+ "north-west-south-africa": {
+  "hdi": 0.718,
+  "hdiYear": 2023
+ },
+ "northern-cape": {
+  "hdi": 0.719,
+  "hdiYear": 2023
+ },
+ "western-cape": {
+  "hdi": 0.75,
+  "hdiYear": 2023
+ },
+ "alexandria": {
+  "hdi": 0.805,
+  "hdiYear": 2023
+ },
+ "aswan": {
+  "hdi": 0.748,
+  "hdiYear": 2023
+ },
+ "beni-suef": {
+  "hdi": 0.719,
+  "hdiYear": 2023
+ },
+ "cairo": {
+  "hdi": 0.805,
+  "hdiYear": 2023
+ },
+ "dakahlia": {
+  "hdi": 0.772,
+  "hdiYear": 2023
+ },
+ "damietta": {
+  "hdi": 0.781,
+  "hdiYear": 2023
+ },
+ "gharbia": {
+  "hdi": 0.767,
+  "hdiYear": 2023
+ },
+ "giza": {
+  "hdi": 0.757,
+  "hdiYear": 2023
+ },
+ "ismailia": {
+  "hdi": 0.769,
+  "hdiYear": 2023
+ },
+ "kafr-el-sheikh": {
+  "hdi": 0.758,
+  "hdiYear": 2023
+ },
+ "port-said": {
+  "hdi": 0.824,
+  "hdiYear": 2023
+ },
+ "qena": {
+  "hdi": 0.731,
+  "hdiYear": 2023
+ },
+ "suez": {
+  "hdi": 0.809,
+  "hdiYear": 2023
+ },
+ "bali": {
+  "hdi": 0.754,
+  "hdiYear": 2023
+ },
+ "bangka-belitung": {
+  "hdi": 0.714,
+  "hdiYear": 2023
+ },
+ "banten": {
+  "hdi": 0.729,
+  "hdiYear": 2023
+ },
+ "bengkulu": {
+  "hdi": 0.74,
+  "hdiYear": 2023
+ },
+ "central-java": {
+  "hdi": 0.727,
+  "hdiYear": 2023
+ },
+ "central-kalimantan": {
+  "hdi": 0.705,
+  "hdiYear": 2023
+ },
+ "central-sulawesi": {
+  "hdi": 0.709,
+  "hdiYear": 2023
+ },
+ "aceh": {
+  "hdi": 0.733,
+  "hdiYear": 2023
+ },
+ "yogyakarta": {
+  "hdi": 0.781,
+  "hdiYear": 2023
+ },
+ "east-java": {
+  "hdi": 0.726,
+  "hdiYear": 2023
+ },
+ "east-kalimantan": {
+  "hdi": 0.75,
+  "hdiYear": 2023
+ },
+ "east-nusa-tenggara": {
+  "hdi": 0.671,
+  "hdiYear": 2023
+ },
+ "gorontalo": {
+  "hdi": 0.686,
+  "hdiYear": 2023
+ },
+ "jambi": {
+  "hdi": 0.722,
+  "hdiYear": 2023
+ },
+ "lampung": {
+  "hdi": 0.718,
+  "hdiYear": 2023
+ },
+ "maluku": {
+  "hdi": 0.714,
+  "hdiYear": 2023
+ },
+ "north-sulawesi": {
+  "hdi": 0.74,
+  "hdiYear": 2023
+ },
+ "north-sumatra": {
+  "hdi": 0.735,
+  "hdiYear": 2023
+ },
+ "south-kalimantan": {
+  "hdi": 0.713,
+  "hdiYear": 2023
+ },
+ "south-sumatra": {
+  "hdi": 0.72,
+  "hdiYear": 2023
+ },
+ "south-east-sulawesi": {
+  "hdi": 0.72,
+  "hdiYear": 2023
+ },
+ "west-java": {
+  "hdi": 0.731,
+  "hdiYear": 2023
+ },
+ "west-kalimantan": {
+  "hdi": 0.701,
+  "hdiYear": 2023
+ },
+ "west-nusa-tenggara": {
+  "hdi": 0.713,
+  "hdiYear": 2023
+ },
+ "west-sumatra": {
+  "hdi": 0.752,
+  "hdiYear": 2023
+ },
+ "johor": {
+  "hdi": 0.833,
+  "hdiYear": 2023
+ },
+ "kedah": {
+  "hdi": 0.816,
+  "hdiYear": 2023
+ },
+ "kelantan": {
+  "hdi": 0.785,
+  "hdiYear": 2023
+ },
+ "negeri-sembilan": {
+  "hdi": 0.837,
+  "hdiYear": 2023
+ },
+ "pahang": {
+  "hdi": 0.812,
+  "hdiYear": 2023
+ },
+ "perak": {
+  "hdi": 0.823,
+  "hdiYear": 2023
+ },
+ "perlis": {
+  "hdi": 0.813,
+  "hdiYear": 2023
+ },
+ "sabah": {
+  "hdi": 0.717,
+  "hdiYear": 2023
+ },
+ "sarawak": {
+  "hdi": 0.751,
+  "hdiYear": 2023
+ },
+ "selangor": {
+  "hdi": 0.872,
+  "hdiYear": 2023
+ },
+ "terengganu": {
+  "hdi": 0.807,
+  "hdiYear": 2023
+ },
+ "burgenland": {
+  "hdi": 0.894,
+  "hdiYear": 2023
+ },
+ "salzburg": {
+  "hdi": 0.948,
+  "hdiYear": 2023
+ },
+ "vorarlberg": {
+  "hdi": 0.92,
+  "hdiYear": 2023
+ },
+ "stockholm": {
+  "hdi": 0.976,
+  "hdiYear": 2023
+ },
+ "bucuresti": {
+  "hdi": 0.938,
+  "hdiYear": 2023
+ },
+ "auckland": {
+  "hdi": 0.954,
+  "hdiYear": 2023
+ },
+ "bay-of-plenty": {
+  "hdi": 0.925,
+  "hdiYear": 2023
+ },
+ "canterbury": {
+  "hdi": 0.936,
+  "hdiYear": 2023
+ },
+ "gisborne": {
+  "hdi": 0.899,
+  "hdiYear": 2023
+ },
+ "hawke-s-bay": {
+  "hdi": 0.916,
+  "hdiYear": 2023
+ },
+ "marlborough": {
+  "hdi": 0.933,
+  "hdiYear": 2023
+ },
+ "northland": {
+  "hdi": 0.903,
+  "hdiYear": 2023
+ },
+ "otago": {
+  "hdi": 0.936,
+  "hdiYear": 2023
+ },
+ "southland": {
+  "hdi": 0.921,
+  "hdiYear": 2023
+ },
+ "taranaki": {
+  "hdi": 0.929,
+  "hdiYear": 2023
+ },
+ "waikato": {
+  "hdi": 0.927,
+  "hdiYear": 2023
+ },
+ "wellington": {
+  "hdi": 0.955,
+  "hdiYear": 2023
+ },
+ "west-coast": {
+  "hdi": 0.911,
+  "hdiYear": 2023
+ },
+ "hovedstaden": {
+  "hdi": 0.971,
+  "hdiYear": 2023
+ },
+ "midtjylland": {
+  "hdi": 0.959,
+  "hdiYear": 2023
+ },
+ "nordjylland": {
+  "hdi": 0.941,
+  "hdiYear": 2023
+ },
+ "syddanmark": {
+  "hdi": 0.948,
+  "hdiYear": 2023
+ }
+}
