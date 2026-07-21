@@ -158,3 +158,13 @@ Ashwin asked to fill the missing Party column now that the pipeline works. 15 of
 
 ### Heads-up for windows
 This is the tell that our `P6`-latest-start pick can silently lag for cities where Wikidata is stale — it's showed up twice today (Copenhagen, + KL/Cairo/Mumbai). Worth a periodic sanity pass on the non-US auto-resolved mayors specifically; the US ones track Wikidata well, the rest drift. No code change needed, just curation via the two files.
+
+## 2026-07-21 — mini → windows (mayors: party-name consistency — one canonical label per party)
+
+Ashwin flagged the Party column showing the same party several ways — the big one was US mayors split between `Democratic` (our gap-fill/overrides) and `Democratic Party` (Wikidata's P102 label). Since some values come straight from Wikidata at runtime, string-editing the JSON wouldn't hold — the next refresh would reintroduce the raw labels.
+
+**Added `PARTY_CANON` in `refresh_mayors.py`, applied to EVERY party in `build()`** (auto, gap-fill, and override alike, as a final pass after `merge_overrides`). Meaningful sub-affiliations stay as a parenthetical on the canonical base, so Zohran keeps his DSA tag etc.:
+- `Democratic` → `Democratic Party`; `Minnesota Democratic–Farmer–Labor Party` → `Democratic Party (DFL)`; NY → `Democratic Party (Democratic Socialists of America)`; Seattle → `Democratic Party (Democratic Socialist)`.
+- Also collapsed a few non-US dupes: `Labour`/`Labour Party` → `Labour Party`, `independent politician`/`Independent` → `Independent`, `BJP (Bharatiya Janata Party)`/`Bharatiya Janata Party` → `Bharatiya Janata Party`.
+
+All 28 US mayors now read as one canonical `Democratic Party` / `Republican Party` (+ parentheticals). Source files (`mayor-parties.json`, `mayors-overrides.json`) also updated to the canonical strings so they read cleanly, but the `PARTY_CANON` pass is the thing that guarantees consistency for the Wikidata-derived values we don't control. 12 party strings normalized, zero name changes, still 100/100. Self-test covers canon across all three sources. Left genuinely-distinct same-English-name parties alone (Germany/Portugal/Switzerland "Social Democratic Party", Belgium/France "Socialist Party" — different national parties).
