@@ -80,10 +80,17 @@ def flag_nation(flag):
 
 def map_golf(name):
     n = (name or "").lower()
-    if "open championship" in n: return "The Open Championship"
+    # More specific patterns first, so "The Open Championship" can't shadow
+    # "U.S. Open" (or vice versa) regardless of substring overlap.
     if "pga championship" in n: return "PGA Championship"
     if "masters" in n: return "Masters Tournament"
     if "u.s. open" in n or "us open" in n: return "U.S. Open"
+    # ESPN's PGA scoreboard labels this event bare "The Open" (confirmed via a
+    # --debug run 2026-07-21), not "The Open Championship" -- the old check
+    # only matched the "open championship" substring, silently dropped this
+    # event (major=(no)), and the 2026 champion went undetected all week.
+    if "open championship" in n or n == "the open" or n.startswith("the open "):
+        return "The Open Championship"
     return None
 
 def map_tennis(name):
