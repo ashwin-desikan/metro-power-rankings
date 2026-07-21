@@ -4,41 +4,30 @@ public/data/us-congress.json's `executive` block from Wikidata.
 
 Never previously automated: refresh_congress.py explicitly passes `executive`
 through untouched (its own self-test asserts this), so President/VP/Cabinet
-only ever changed by hand. Same for the mayors/governors/congress feeds this
-was extended to match.
+only ever changed by hand. Same for House leadership (refresh_house_leadership.py).
 
-Two-phase design (cabinet-positions.json caches phase 1's output), same
-pattern as refresh_mayors.py's city-QID cache:
-  1. Position discovery (cold-start / self-healing): ONE query for every
-     Wikidata item with jurisdiction (P1001) = United States (Q30), matched
-     in Python against the curated office list by a keyword substring on the
-     label. Jurisdiction is what disambiguates a federal role from a
-     state-level one sharing the same name (e.g. "Secretary of State" of
-     Texas vs of the United States). 0 or 2+ candidates for an office is
-     logged and left uncached rather than guessed.
-  2. Holder lookup (hot weekly path): one VALUES query over the cached
-     position QIDs for the CURRENT holder (P39, no end date). Requires
-     exactly one match per position; 0 or 2+ is logged and left unresolved
-     (a genuine vacancy, or a transition Wikidata hasn't settled).
+Uses civic_common's shared discover_positions_by_sitelinks() /
+resolve_current_holders() / pick_holder() -- the two-phase discovery-cache +
+hot-path pattern refresh_mayors.py proved for city QIDs, applied to Wikidata
+POSITION items, hardened against two live runs against real Wikidata data
+(2026-07-21): naive matching pulled in duplicate legacy position items,
+decades-old historical secretaries, AND fictional TV characters (Josh Lyman,
+Doug Stamper, Jack Ryan) tagged with the real position and never dated. See
+civic_common.py's docstrings for the full mechanism.
 
 DRY BY DEFAULT: prints what it would change but writes nothing unless --write
-is passed. This pipeline has never run before, so the first pass against real
-Wikidata data needs a human look before it touches the live site.
---self-test for offline CI."""
+is passed. This pipeline has never run against live Wikidata for long, so
+every resolved change still needs a human look before --write, same as any
+first run of a new feed. --self-test for offline CI."""
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from civic_common import sanity_ok, bare, load_json, write_json, sparql, qid  # noqa
+from civic_common import (bare, load_json, write_json,  # noqa
+                          discover_positions_by_sitelinks, resolve_current_holders)
 
 ROOT = Path(__file__).resolve().parents[2]
 CONG = ROOT / "public" / "data" / "us-congress.json"
 POSITIONS = Path(__file__).with_name("cabinet-positions.json")
-US = "Q30"
-# Floor for trusting a "latest start date wins" pick in resolve_holders(): a
-# genuinely current appointee's start date should be well within the current
-# administration; anything older is presumptively historical/undated noise
-# even if it technically has no recorded end date.
-MIN_PLAUSIBLE_START = "2020-01-01"
 
 CABINET_OFFICES = [
     # exclude: "vice president of the united states" contains "president of
@@ -73,143 +62,6 @@ CABINET_OFFICES = [
 ]
 OFFICE_BY_KEY = {o["key"]: o["office"] for o in CABINET_OFFICES}
 KEY_BY_OFFICE = {o["office"]: o["key"] for o in CABINET_OFFICES}
-
-def discover_missing_positions(cache):
-    """A keyword can match several Wikidata items sharing a jurisdiction --
-    duplicate/legacy position items, or narrower sub-roles (confirmed live:
-    'president of the united states' alone matched 9 candidates). Same
-    disambiguator refresh_mayors.py already proved for same-named cities:
-    the REAL, canonical position item is overwhelmingly the one with the
-    most sitelinks (hundreds of Wikipedia articles link a real Cabinet
-    office; a duplicate/legacy item has few to none). Picks the top
-    candidate only when it's unambiguously ahead -- at least 5x the
-    runner-up's sitelinks, or the runner-up has none -- otherwise logs and
-    leaves it uncached rather than guess a close call."""
-    missing = [o for o in CABINET_OFFICES if o["key"] not in cache]
-    if not missing:
-        return cache
-    q = f"""SELECT ?position ?label ?sitelinks WHERE {{
-      ?position wdt:P1001 wd:{US} .
-      ?position rdfs:label ?label . FILTER(LANG(?label) = "en")
-      OPTIONAL {{ ?position wikibase:sitelinks ?sitelinks }}
-    }}"""
-    try:
-        rows = sparql(q, timeout=90, retries=2)
-    except Exception as e:
-        print(f"  position discovery failed ({e}); will retry next run")
-        return cache
-    by_label = {}
-    for b in rows:
-        lbl = b.get("label", {}).get("value", "").strip().lower()
-        pos_uri = b.get("position", {}).get("value", "")
-        try:
-            links = int(b.get("sitelinks", {}).get("value", "0"))
-        except ValueError:
-            links = 0
-        if lbl and pos_uri:
-            by_label.setdefault(lbl, {})[qid(pos_uri)] = links
-    found_any = False
-    for o in missing:
-        kw, excl = o["keyword"], o.get("exclude")
-        candidates = {}  # qid -> sitelinks, deduped across every matching label
-        for lbl, qmap in by_label.items():
-            if kw in lbl and not (excl and excl in lbl):
-                for q_, links in qmap.items():
-                    candidates[q_] = max(candidates.get(q_, 0), links)
-        if not candidates:
-            print(f"  no US-jurisdiction position matched {o['office']!r} (keyword {kw!r}); will retry next run")
-            continue
-        ranked = sorted(candidates.items(), key=lambda kv: -kv[1])
-        top_qid, top_links = ranked[0]
-        runner_up_links = ranked[1][1] if len(ranked) > 1 else 0
-        if len(ranked) == 1 or top_links >= max(5 * runner_up_links, 1) or (top_links > 0 and runner_up_links == 0):
-            cache[o["key"]] = top_qid
-            found_any = True
-        else:
-            print(f"  {len(candidates)} candidate positions matched {o['office']!r} (keyword {kw!r}), "
-                  f"no clear sitelinks winner: {ranked[:5]} -- ambiguous, not caching, needs a manual look")
-    if found_any:
-        write_json(POSITIONS, cache, sort_keys=True)
-    return cache
-
-def resolve_holders(cache):
-    """Returns {key: {name, party, start}}.
-
-    Wikidata's 'no end-date = current' assumption, reliable for Senators and
-    Governors, is NOT reliable here -- confirmed live: decades-old historical
-    secretaries and even fictional TV characters (Josh Lyman, Doug Stamper)
-    carry a real Cabinet position with no end date ever recorded. Two
-    defenses, applied per position:
-      1. Dedupe by name first -- the same real person sometimes has 2+
-         near-duplicate statement nodes for the same position.
-      2. Among distinct names, require a start date at/after
-         MIN_PLAUSIBLE_START and prefer whichever is LATEST -- a genuinely
-         current appointee's start date is recent; undated or pre-2020
-         entries are dropped as historical/fictional noise. Only resolves
-         when there's a single dated, sufficiently-recent name left, or one
-         whose start date is strictly later than every other dated
-         candidate; a genuine tie or "everyone undated" stays unresolved and
-         logged rather than guessed.
-    This does NOT fully solve Wikidata's data-quality gap for these
-    positions (an acting official with an earlier recorded start could still
-    edge out a later-confirmed permanent one in principle) -- it narrows the
-    obviously-wrong cases the live run surfaced. Every resolved change still
-    needs a human look before --write, same as any first run of a new feed."""
-    qid_to_key = {q: k for k, q in cache.items() if q}
-    if not qid_to_key:
-        return {}
-    values = " ".join(f"wd:{q}" for q in qid_to_key)
-    query = f"""SELECT ?position ?personLabel ?partyLabel ?start WHERE {{
-      VALUES ?position {{ {values} }}
-      ?person p:P39 ?st . ?st ps:P39 ?position .
-      FILTER NOT EXISTS {{ ?st pq:P582 ?end }}
-      OPTIONAL {{ ?person wdt:P102 ?party }}
-      OPTIONAL {{ ?st pq:P580 ?start }}
-      SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
-    }}"""
-    rows = sparql(query, timeout=120)
-    by_key = {}
-    for b in rows:
-        key = qid_to_key.get(qid(b.get("position", {}).get("value", "")))
-        nm = b.get("personLabel", {}).get("value", "")
-        if not key or not sanity_ok(nm):
-            continue
-        by_key.setdefault(key, []).append({
-            "name": nm,
-            "party": b.get("partyLabel", {}).get("value", ""),
-            "start": (b.get("start", {}).get("value", "") or "")[:10],
-        })
-    out = {}
-    for key, raw in by_key.items():
-        holder, log_line = pick_holder(OFFICE_BY_KEY.get(key, key), raw)
-        if holder:
-            out[key] = holder
-        if log_line:
-            print(f"  {log_line}")
-    return out
-
-def pick_holder(label, raw):
-    """Pure decision logic factored out of resolve_holders() so it can be
-    unit-tested offline against the exact messy patterns a live run
-    surfaces, without mocking the network. Returns (holder_or_None,
-    log_line_or_None)."""
-    by_name = {}
-    for h in raw:
-        b = bare(h["name"])
-        if b not in by_name or (not by_name[b]["start"] and h["start"]):
-            by_name[b] = h
-    holders = list(by_name.values())
-    if len(holders) == 1:
-        return holders[0], None
-    dated = sorted((h for h in holders if h["start"] >= MIN_PLAUSIBLE_START),
-                    key=lambda h: h["start"], reverse=True)
-    if len(dated) == 1 or (len(dated) > 1 and dated[0]["start"] > dated[1]["start"]):
-        others = [h["name"] for h in holders if h is not dated[0]]
-        return dated[0], (f"{label}: resolved to {dated[0]['name']} (start {dated[0]['start']}) among "
-                          f"{len(holders)} raw current-holder name(s); discarded undated/older: {others}")
-    names = [h["name"] for h in holders]
-    return None, (f"{label}: {len(holders)} current holders, no clear latest-plausible-start "
-                  f"winner {names} -- ambiguous, left unchanged")
 
 def build(existing, holders):
     out = dict(existing)
@@ -255,12 +107,12 @@ def main():
     if not existing:
         print("ABORT: us-congress.json missing"); return
     cache = load_json(POSITIONS, {})
-    cache = discover_missing_positions(cache)
+    cache = discover_positions_by_sitelinks(CABINET_OFFICES, cache, POSITIONS)
     still_missing = [o["office"] for o in CABINET_OFFICES if o["key"] not in cache]
     if still_missing:
         print(f"  {len(still_missing)} position(s) still unresolved: {still_missing}")
     try:
-        holders = resolve_holders(cache)
+        holders = resolve_current_holders(cache, OFFICE_BY_KEY)
     except Exception as e:
         print(f"cabinet refresh error ({e}); no changes."); return
     out, changed = build(existing, holders)
@@ -328,49 +180,6 @@ def _self_test():
     out4, changed4 = build(existing_acting, {"secretary-of-labor": {"name": "Someone Else", "party": "Republican", "start": "2027-06-01"}})
     assert any("Secretary of Labor" in c for c in changed4)
     assert "acting" not in out4["executive"]["cabinet"][0], out4["executive"]["cabinet"][0]
-
-    # pick_holder() against the actual messy patterns a live Wikidata run
-    # surfaced (2026-07-21): historical secretaries and fictional TV
-    # characters with no end date, mixed in with the real current appointee.
-    h, log = pick_holder("Secretary of Transportation", [
-        {"name": "Claude Brinegar", "party": "", "start": "1973-02-02"},
-        {"name": "William Thaddeus Coleman, Jr.", "party": "", "start": "1975-03-07"},
-        {"name": "Andrew L. Lewis, Jr.", "party": "Republican", "start": "1981-01-23"},
-        {"name": "Sean Duffy", "party": "Republican", "start": "2025-01-28"},
-    ])
-    assert h and h["name"] == "Sean Duffy", h
-    assert log and "discarded" in log
-
-    h, log = pick_holder("White House Chief of Staff", [
-        {"name": "Susie Wiles", "party": "", "start": "2025-01-20"},
-        {"name": "Josh Lyman", "party": "", "start": ""},          # fictional, undated
-        {"name": "Doug Stamper", "party": "", "start": ""},        # fictional, undated
-        {"name": 'Edwin "Pa" Watson', "party": "", "start": "1939-09-09"},  # historical, pre-floor
-    ])
-    assert h and h["name"] == "Susie Wiles", h
-
-    # Duplicate statement nodes for the SAME real person (e.g. RFK Jr. showed
-    # up twice live) dedupe to one before any date comparison is needed.
-    h, log = pick_holder("Secretary of Health and Human Services", [
-        {"name": "Robert F. Kennedy Jr.", "party": "Republican", "start": "2025-02-13"},
-        {"name": "Robert F. Kennedy Jr.", "party": "", "start": ""},
-        {"name": "Eric Hargan", "party": "Republican", "start": "2017-04-28"},
-    ])
-    assert h and h["name"] == "Robert F. Kennedy Jr.", h
-
-    # Genuine ambiguity (two plausibly-recent dated names, no clear latest,
-    # or nobody dated at all) must NOT guess.
-    h, log = pick_holder("Ambiguous Office", [
-        {"name": "Alice Example", "party": "", "start": "2025-01-01"},
-        {"name": "Bob Example", "party": "", "start": "2025-01-01"},
-    ])
-    assert h is None and "ambiguous" in log, (h, log)
-
-    h, log = pick_holder("All Undated", [
-        {"name": "Old Historical Figure", "party": "", "start": ""},
-        {"name": "Another Old Figure", "party": "", "start": ""},
-    ])
-    assert h is None and "ambiguous" in log, (h, log)
 
     print("refresh_cabinet self-test OK")
 

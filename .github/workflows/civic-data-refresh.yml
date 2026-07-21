@@ -44,6 +44,7 @@ jobs:
           python scripts/civic/refresh_congress.py --self-test
           python scripts/civic/refresh_mayors.py --self-test
           python scripts/civic/refresh_cabinet.py --self-test
+          python scripts/civic/refresh_house_leadership.py --self-test
 
       # ---- SAFE: auto-applied to main ----
       - name: World leaders (auto-apply changes from Wikidata)
@@ -70,6 +71,13 @@ jobs:
         # been reviewed for accuracy.
         continue-on-error: true
         run: python scripts/civic/refresh_cabinet.py
+
+      - name: House leadership (DRY RUN -- never automated before, review before enabling --write)
+        # Speaker/Majority-Minority Leader+Whip/Conference-Caucus Chairs were
+        # previously untouched by any refresh script (same passthrough gap as
+        # executive/Cabinet). Dry run only until reviewed for accuracy.
+        continue-on-error: true
+        run: python scripts/civic/refresh_house_leadership.py
 
       - name: Billionaires (Forbes real-time list)
         continue-on-error: true
@@ -98,13 +106,15 @@ jobs:
           set -e
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          # scripts/civic/city-qids.json and cabinet-positions.json are the mayors
-          # and cabinet QID/position caches; committing them alongside public/data
-          # keeps this manual-fallback run and the mini's weekly run sharing one
-          # warm cache instead of cold-starting each time. Cabinet is dry-run only
-          # right now (see the step above) so the cache is all that ever changes
-          # from it here -- us-congress.json itself isn't touched until --write is added.
-          DATA_PATHS="public/data scripts/civic/city-qids.json scripts/civic/cabinet-positions.json"
+          # scripts/civic/city-qids.json, cabinet-positions.json, and
+          # house-leadership-positions.json are the mayors/cabinet/house-leadership
+          # QID/position caches; committing them alongside public/data keeps this
+          # manual-fallback run and the mini's weekly run sharing one warm cache
+          # instead of cold-starting each time. Cabinet and House leadership are
+          # dry-run only right now (see the steps above) so their caches are all
+          # that ever changes from them here -- us-congress.json itself isn't
+          # touched until --write is added to either.
+          DATA_PATHS="public/data scripts/civic/city-qids.json scripts/civic/cabinet-positions.json scripts/civic/house-leadership-positions.json"
           if git diff --quiet -- $DATA_PATHS; then
             echo "No auto changes this run."
             exit 0
