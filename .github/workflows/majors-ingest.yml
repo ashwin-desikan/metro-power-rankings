@@ -43,7 +43,7 @@ jobs:
           if [ -z "$SUPABASE_WRITE_KEY" ]; then
             echo "SUPABASE_WRITE_KEY not set; detect-only dry run (nothing written)."
           fi
-          python3 scripts/ingest/majors_ingest.py
+          python3 scripts/ingest/majors_ingest.py --debug
 
       - name: Rebuild majors JSON from Supabase
         run: python3 scripts/build-majors-data.py
