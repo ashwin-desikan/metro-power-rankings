@@ -139,3 +139,22 @@ This closes the 07-19 mayors watchdog thread: the run now finishes clean AND act
 
 ### Open question for windows
 The `MAYORS_STEP_TIMEOUT` raise to 1800s (07-19) is now oversized — a warm-cache run is one fast phase-2 query (~seconds) and even a cold start is ~1 min total, not the 22.5 min that was budgeted for the sustained-outage worst case that never existed. Not urgent (a generous watchdog is harmless), but worth trimming next time that script is touched.
+
+## 2026-07-21 — mini → windows (mayors: filled the 15 blank Party fields; found 4 more stale Wikidata names while doing it)
+
+Ashwin asked to fill the missing Party column now that the pipeline works. 15 of 100 mayors had a blank party — all auto-resolved, none overridden. Confirmed against Wikidata directly: those 15 mayor entities genuinely have **no `P102` (member-of-political-party) statement**, so the hot path correctly left party blank. Not a pipeline bug — a data gap.
+
+**New mechanism — party gap-fill (`scripts/civic/mayor-parties.json`), name-gated so it self-heals.** Full `mayors-overrides.json` entries do *whole-object replacement*, which would freeze the auto-resolved NAME too — undoing the auto-refresh for cities where Wikidata has the name right and only the party is missing (Cleveland, SF, Seattle, …). So instead `build()` now fills party from `mayor-parties.json` ONLY when (a) the resolved party is blank AND (b) the curated `mayor` string still equals the resolved mayor. If the mayor changes or Wikidata later gains a P102, the gap-fill drops itself instead of mislabelling the wrong person. Covered by the offline self-test (positive fill + name-mismatch guard).
+
+11 cities filled via gap-fill (names were already correct): Cleveland/Pittsburgh/SF/Portland → Democratic, Seattle (Katie Wilson) → Democratic (Democratic Socialist), Athens → PASOK, Istanbul → CHP, Johannesburg → ANC, Bangkok → Independent, Abu Dhabi + Dubai → N/A (hereditary rulers).
+
+**Filling party surfaced 4 MORE stale auto-names** (same class as Copenhagen from earlier today — Wikidata's latest-start P6 statement lags reality for these non-US cities). Web-verified each and added FULL overrides (name + party), since Wikidata is simply wrong here, not just missing party:
+- `copenhagen`: Lars Weiss → **Sisse Marie Welling** (Green Left / SF, Lord Mayor, 2026-01) — first non-Social-Democrat in 100+ yrs.
+- `kuala-lumpur`: Kamarulzaman Mat Salleh (left 2024) → **Fadlun Mak Ujud** (appointed, 2025-11).
+- `cairo`: Abd El Azim Wazir → **Ibrahim Saber** (appointed Governor, 2024-07).
+- `mumbai`: Iqbal Singh Chahal (a commissioner) → **Ritu Tawde** (BJP, Mayor since 2026-02, first BJP mayor of Mumbai in 40 yrs after the delayed BMC polls).
+
+**Result: all 100 mayors now have a party; 4 stale names corrected; zero drops, no other entries touched.** Committed with the run output.
+
+### Heads-up for windows
+This is the tell that our `P6`-latest-start pick can silently lag for cities where Wikidata is stale — it's showed up twice today (Copenhagen, + KL/Cairo/Mumbai). Worth a periodic sanity pass on the non-US auto-resolved mayors specifically; the US ones track Wikidata well, the rest drift. No code change needed, just curation via the two files.

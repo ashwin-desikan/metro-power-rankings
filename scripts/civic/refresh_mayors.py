@@ -35,6 +35,7 @@ ROOT = Path(__file__).resolve().parents[2]
 METROS = ROOT / "public" / "data" / "metros.json"
 OUT = ROOT / "public" / "data" / "mayors.json"
 OVR = Path(__file__).with_name("mayors-overrides.json")
+PARTIES = Path(__file__).with_name("mayor-parties.json")
 QID_CACHE = Path(__file__).with_name("city-qids.json")
 TOP_N = 100
 COVERAGE_FLOOR = 0.70  # abort the write below this fraction of TOP_N resolved
@@ -149,14 +150,25 @@ def resolve_mayors(cache):
                                   "party": b.get("partyLabel", {}).get("value", "")})
     return {slug: info for slug, (_, info) in best.items()}
 
-def build(metros, resolved, overrides):
+def build(metros, resolved, overrides, parties):
     out = {}
     for m in metros:
         info = resolved.get(m["slug"])
         if not info:
             continue
+        party = info.get("party", "")
+        # Party gap-fill: many mayors have no P102 (member-of-party) statement on
+        # Wikidata, so the hot path leaves party blank. Fill from mayor-parties.json
+        # ONLY when it is blank AND the curated name still matches the resolved
+        # mayor — so the fill self-heals (a new mayor or a later Wikidata P102 both
+        # drop the stale gap-fill instead of mislabelling the wrong person). Full
+        # overrides (below) still win outright for names Wikidata has stale/wrong.
+        if not party:
+            gf = parties.get(m["slug"])
+            if gf and gf.get("mayor", "").strip() == (info["mayor"] or "").strip():
+                party = gf.get("party", "")
         out[m["slug"]] = {"city": m["city"], "country": m["country"],
-                          "mayor": info["mayor"], "title": "Mayor", "since": info["since"], "party": info.get("party", "")}
+                          "mayor": info["mayor"], "title": "Mayor", "since": info["since"], "party": party}
     return merge_overrides(out, overrides)
 
 def coverage_ok(resolved_count, total, floor=COVERAGE_FLOOR):
@@ -182,7 +194,8 @@ def main():
         return
 
     overrides = load_json(OVR, {})
-    out = build(metros, resolved, overrides)
+    parties = load_json(PARTIES, {})
+    out = build(metros, resolved, overrides, parties)
     write_json(OUT, out, sort_keys=True)
     miss = [f"{m['city']} ({m['country']})" for m in metros if m["slug"] not in resolved]
     print(f"COVERAGE: {len(resolved)}/{len(metros)} from Wikidata; {len(out)} total after {len(overrides)} overrides.")
@@ -194,13 +207,22 @@ def load_qid_cache():
 
 def _self_test():
     metros = [{"slug": "tokyo", "city": "Tokyo", "country": "Japan"},
-              {"slug": "shanghai", "city": "Shanghai", "country": "China"}]
-    out = build(metros, {"tokyo": {"mayor": "Yuriko Koike", "since": "2016-08-02"}},
+              {"slug": "shanghai", "city": "Shanghai", "country": "China"},
+              {"slug": "cleveland", "city": "Cleveland", "country": "United States"}]
+    out = build(metros,
+                {"tokyo": {"mayor": "Yuriko Koike", "since": "2016-08-02", "party": ""},
+                 "cleveland": {"mayor": "Justin Bibb", "since": "2022-01-03", "party": ""}},
                 {"shanghai": {"city": "Shanghai", "country": "China", "mayor": "Gong Zheng",
                               "title": "Mayor", "since": "2020-03-23",
-                              "second": {"name": "Chen Jining", "role": "Party Secretary"}}})
+                              "second": {"name": "Chen Jining", "role": "Party Secretary"}}},
+                {"cleveland": {"mayor": "Justin Bibb", "party": "Democratic"},
+                 "tokyo": {"mayor": "A Different Person", "party": "Should Not Apply"}})
     assert out["tokyo"]["mayor"] == "Yuriko Koike"
     assert out["shanghai"]["second"]["role"] == "Party Secretary"
+
+    # Party gap-fill only when blank AND the curated name matches the resolved mayor
+    assert out["cleveland"]["party"] == "Democratic"   # name matches -> filled
+    assert out["tokyo"]["party"] == ""                 # name mismatch -> left blank
 
     # Coverage floor: below COVERAGE_FLOOR must abort (caller checks this return value)
     assert not coverage_ok(69, 100)

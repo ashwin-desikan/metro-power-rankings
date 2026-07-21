@@ -3,7 +3,7 @@
     "city": "Abu Dhabi",
     "country": "United Arab Emirates",
     "mayor": "Mohammed Bin Zayed Al Nahyan",
-    "party": "",
+    "party": "N/A",
     "since": "2022-05-14",
     "title": "Mayor"
   },
@@ -19,7 +19,7 @@
     "city": "Athens",
     "country": "Greece",
     "mayor": "Haris Doukas",
-    "party": "",
+    "party": "PASOK (Movement for Change)",
     "since": "2024-01-01",
     "title": "Mayor"
   },
@@ -43,7 +43,7 @@
     "city": "Bangkok",
     "country": "Thailand",
     "mayor": "Chadchart Sittipunt",
-    "party": "",
+    "party": "Independent",
     "since": "2022-05-22",
     "title": "Mayor"
   },
@@ -118,10 +118,10 @@
   "cairo": {
     "city": "Cairo",
     "country": "Egypt",
-    "mayor": "Abd El Azim Wazir",
-    "party": "",
-    "since": "",
-    "title": "Mayor"
+    "mayor": "Ibrahim Saber",
+    "party": "Appointed",
+    "since": "2024-07-03",
+    "title": "Governor"
   },
   "calcutta": {
     "city": "Kolkata",
@@ -187,17 +187,17 @@
     "city": "Cleveland",
     "country": "United States",
     "mayor": "Justin Bibb",
-    "party": "",
+    "party": "Democratic",
     "since": "2022-01-03",
     "title": "Mayor"
   },
   "copenhagen": {
     "city": "Copenhagen",
     "country": "Denmark",
-    "mayor": "Lars Weiss",
-    "party": "",
-    "since": "2024-09-19",
-    "title": "Mayor"
+    "mayor": "Sisse Marie Welling",
+    "party": "Green Left (Socialist People's Party)",
+    "since": "2026-01-01",
+    "title": "Lord Mayor"
   },
   "dallas": {
     "city": "Dallas",
@@ -243,7 +243,7 @@
     "city": "Dubai",
     "country": "United Arab Emirates",
     "mayor": "Mohammed bin Rashid Al Maktoum",
-    "party": "",
+    "party": "N/A",
     "since": "2006-01-04",
     "title": "Mayor"
   },
@@ -323,7 +323,7 @@
     "city": "Istanbul",
     "country": "Turkey",
     "mayor": "Nuri Aslan",
-    "party": "",
+    "party": "CHP (Republican People's Party)",
     "since": "2025-03-26",
     "title": "Mayor"
   },
@@ -339,16 +339,16 @@
     "city": "Johannesburg",
     "country": "South Africa",
     "mayor": "Dada Morero",
-    "party": "",
+    "party": "ANC (African National Congress)",
     "since": "2024-08-01",
     "title": "Mayor"
   },
   "kuala-lumpur": {
     "city": "Kuala Lumpur",
     "country": "Malaysia",
-    "mayor": "Kamarulzaman Mat Salleh",
-    "party": "",
-    "since": "2023-04-17",
+    "mayor": "Fadlun Mak Ujud",
+    "party": "Appointed",
+    "since": "2025-11-15",
     "title": "Mayor"
   },
   "las-vegas": {
@@ -466,9 +466,9 @@
   "mumbai": {
     "city": "Mumbai",
     "country": "India",
-    "mayor": "Iqbal Singh Chahal",
-    "party": "",
-    "since": "2022-03-08",
+    "mayor": "Ritu Tawde",
+    "party": "BJP (Bharatiya Janata Party)",
+    "since": "2026-02-07",
     "title": "Mayor"
   },
   "munich": {
@@ -551,7 +551,7 @@
     "city": "Pittsburgh",
     "country": "United States",
     "mayor": "Corey O'Connor",
-    "party": "",
+    "party": "Democratic",
     "since": "2026-01-05",
     "title": "Mayor"
   },
@@ -559,7 +559,7 @@
     "city": "Portland",
     "country": "United States",
     "mayor": "Keith Wilson",
-    "party": "",
+    "party": "Democratic",
     "since": "2025-01-01",
     "title": "Mayor"
   },
@@ -651,7 +651,7 @@
     "city": "San Francisco",
     "country": "United States",
     "mayor": "Daniel Lurie",
-    "party": "",
+    "party": "Democratic",
     "since": "2025-01-08",
     "title": "Mayor"
   },
@@ -675,7 +675,7 @@
     "city": "Seattle",
     "country": "United States",
     "mayor": "Katie Wilson",
-    "party": "",
+    "party": "Democratic (Democratic Socialist)",
     "since": "2026-01-01",
     "title": "Mayor"
   },
