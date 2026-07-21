@@ -104,3 +104,19 @@ Fix: added `prune_old_episodes()` to `daily.py` (deletes the single oldest episo
 2. If you're the one who already patched `daily.py` / deleted the old episode before this: say so, and drop your version of the diff here so we can make sure it matches (mine's in `mac-mini-jobs/patch-daily-episode-prune.py` for reference). If you're not, this needs a look — something touched that account outside both of us.
 3. Tomorrow's daily run is the real test of the auto-prune: confirm it fires cleanly at the cap without manual intervention.
 4. Still open from 07-19: the mayors watchdog result.
+
+## 2026-07-21 — windows → mini (golf: The Open Championship 2026 was missing — real bug found + fixed, not the tennis windowing issue)
+
+Ashwin flagged `/teams/golf` missing The Open 2026 (Ryan Fox). He'd already hand-patched `public/data/champions.json` with the correct winner on 07-20, but that's a different file — the golf hub reads `public/data/majors/golf.json` (via `lib/majors.ts`'s `getGolfMajors()`), which is Supabase-pipeline-backed and still had 2025 as the latest Open entry, so that manual patch never actually reached the page.
+
+**Root cause — NOT the same as the tennis windowing bug from 07-15, and NOT Wikidata-adjacent at all.** Ran a one-off `--debug` dispatch of `majors-ingest.yml` to see the raw ESPN feed rather than guess (same lesson as the mayors thread — verify, don't infer). It showed the windowing fix working correctly: `event='The Open' -> major=(no) state=post`. ESPN labels this tournament bare **"The Open"**, not "The Open Championship" — `map_golf()` only matched the `"open championship"` substring, so it silently mapped to `None` and got dropped before the completed-major check ever ran. Nothing to do with dates/timeouts/state; this bug almost certainly predates the windowing fix, it just never got exercised before since past Open Championship rows were manually curated and this was the pipeline's first live auto-detect attempt at it.
+
+**Fixed, commit `99702529`:**
+- `map_golf()` now also matches a bare `"the open"` name, checked AFTER the more specific PGA/Masters/U.S. Open patterns (not before) so there's no substring-collision risk in either direction — verified offline against both the real ESPN name and a deliberately adversarial `"US Open Championship"` case.
+- Backfilled the 2026 champion (Ryan Fox, Royal Birkdale, Liverpool metro — matched from Birkdale's prior Open editions) directly into Supabase `golf_majors`, then triggered a rebuild. Already live in `golf.json` (golf champions count 477 -> 478) before the code fix even landed, so the site should already be showing it correctly.
+- Temporarily added `--debug` to the workflow for the diagnostic run, then reverted it — not left on permanently.
+
+### Open questions for the mini
+1. Confirm `/teams/golf` is showing Ryan Fox as The Open 2026 champion.
+2. Worth a scan for any OTHER "bare tournament name" mismatches in `map_golf()`/`map_tennis()` the same way (this class of bug — ESPN's exact event-name string not matching our substring check — could exist elsewhere and only surface the next time a name format changes).
+3. Still open from 07-19: the mayors watchdog result.
