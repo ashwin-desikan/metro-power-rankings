@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "ignoreCommand": "sh -c 'git log -1 --pretty=%B | grep -q \"\\[vercel skip\\]\" && exit 0; git diff --quiet ${VERCEL_GIT_PREVIOUS_SHA:-HEAD^} HEAD -- app lib public next.config.ts postcss.config.mjs tsconfig.json package.json package-lock.json 2>/dev/null; s=$?; [ $s -eq 0 ] && exit 0; exit 1'",
+  "ignoreCommand": "git log -1 --pretty=%B | grep -q '\\[vercel skip\\]' || git diff --quiet ${VERCEL_GIT_PREVIOUS_SHA:-HEAD^} HEAD -- app lib public next.config.ts postcss.config.mjs tsconfig.json package.json package-lock.json 2>/dev/null || exit 1",
   "headers": [
     {
       "source": "/data/(.*)",
