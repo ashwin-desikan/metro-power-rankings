@@ -17,6 +17,20 @@ so `party` (unlike the Cabinet, which has none) is refreshed here too --
 pick_holder()'s "latest start date wins" logic already resolves this
 correctly regardless of which party currently holds the role.
 
+Live-diagnosed 2026-07-21 (see git history for diag_house_positions.py,
+since deleted): Republican Conference Chair (Q7314581) and Democratic
+Caucus Chair (Q5255561) are real Wikidata items but lack wdt:P1001
+(jurisdiction), so the P1001=Q30-bound discovery query never finds them --
+seeded directly into house-leadership-positions.json instead of relying on
+discovery for these two. Majority Whip / Minority Whip are a genuine
+Wikidata data gap, not a query bug: no item titled for the federal House
+role was found via EntitySearch (only the generic "whip" concept and
+several *state legislature* whip positions), and the current officeholders'
+own Wikidata items (Tom Emmer, Katherine Clark, checked live) carry zero
+wdt:P39 (position held) statement for it. These two stay manual-curation-only
+until Wikidata models the office; left in HOUSE_LEADERSHIP_OFFICES so
+discovery keeps trying (cheap, bounded query) in case that ever changes.
+
 DRY BY DEFAULT: prints what it would change but writes nothing unless --write
 is passed. --self-test for offline CI."""
 import sys
