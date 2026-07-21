@@ -211,6 +211,22 @@
     "since": "2022-10-18",
     "title": "Mayor (Finance Commissioner)"
   },
+  "sydney": {
+    "city": "Sydney",
+    "country": "Australia",
+    "mayor": "Clover Moore",
+    "party": "Independent (Clover Moore Independent Team)",
+    "since": "2004-03-27",
+    "title": "Lord Mayor"
+  },
+  "tampa": {
+    "city": "Tampa",
+    "country": "United States",
+    "mayor": "Jane Castor",
+    "party": "Democratic",
+    "since": "2019-05-01",
+    "title": "Mayor"
+  },
   "tel-aviv": {
     "city": "Tel-Aviv",
     "country": "Israel",

@@ -4,12 +4,18 @@ Wikidata (P6), keyed by metro slug -> public/data/mayors.json.
 
 Two-phase design (city-qids.json caches phase 1's output):
   1. QID discovery (cold-start / self-healing only): resolve each metro's
-     Wikidata city QID via the expensive city+country LABEL join, chunked so
-     WDQS never 504s on one huge query. Only runs for slugs not already in the
-     cache, and persists each successful chunk immediately — a mid-run failure
-     under a WDQS outage loses no progress and the next run resumes where it
-     left off. Once a metro's QID is cached it is stable (cities don't get
-     renamed) and this phase never touches it again.
+     Wikidata city QID via a city+country LABEL join. The join MUST pin its
+     evaluation order (hint:Query hint:optimizer "None", label lookups before
+     the P17 country edge) — left to its own devices Blazegraph starts from the
+     country side and enumerates every entity in the country before the label
+     can narrow it, which 504s EVERY time regardless of WDQS health. That
+     structural timeout, not any WDQS outage, is what stalled this phase for
+     weeks. Chunked, and persists each successful chunk immediately, so a
+     mid-run failure loses no progress and the next run resumes where it left
+     off. A name matches several entities, so we keep the one with the most
+     sitelinks (the primary city, not a same-named district/suburb). Only runs
+     for slugs not already cached; once cached a QID is stable and never
+     re-touched.
   2. Mayor lookup (the hot weekly path): ONE query, VALUES over the cached
      QIDs directly (?city p:P6 ?st ...) — the same cheap, indexed
      entity-matching pattern refresh_governors.py / refresh_congress.py use,
@@ -44,19 +50,24 @@ def esc(s): return (s or "").replace("\\", "").replace('"', '\\"')
 
 def discover_missing_qids(metros, cache):
     """Cold-start / self-healing: resolve a Wikidata city QID for any metro
-    not already in the cache. Chunked defensively (label joins are the
-    expensive WDQS pattern); each successful chunk is saved immediately so a
-    timeout partway through still keeps whatever it found.
+    not already in the cache. The label join is pinned to a label-first
+    evaluation order via an optimizer hint (see module docstring) — without it
+    the query 504s every run, which is what stalled this phase for weeks and
+    was mistaken for a WDQS outage. Chunked; each successful chunk is saved
+    immediately so a timeout partway through still keeps whatever it found. A
+    city name matches several entities, so per key we keep the highest-sitelink
+    one (the primary city). Requiring an open P6 (head-of-government) statement
+    both disambiguates toward the governed city and matches phase 2's need — a
+    city with no modelled mayor could not produce one anyway, so it is left
+    uncached for an override to supply (e.g. Sydney, whose mayor sits on the
+    separate 'City of Sydney' LGA entity, not the settlement).
 
     retries=2/timeout=45 (vs civic_common.sparql's default retries=4/timeout=180)
     is deliberate: an unresolved chunk just retries again NEXT WEEK (that's the
     whole point of the cache), so there is no value in burning the wrapper's
-    step-timeout budget on aggressive in-run retries here. Worst case per chunk
-    is ~2*45s + one ~3s backoff sleep =~ 93s; across the 9 chunks needed for a
-    fully-cold cache that is ~14 minutes, safely inside MAYORS_STEP_TIMEOUT
-    (metro-mini-refresh.sh) even if every single chunk fails outright — which
-    is exactly what's been happening under the ongoing WDQS outage (confirmed
-    still active as of the 2026-07-19 run: 0 chunks resolved, cache still {})."""
+    step-timeout budget on aggressive in-run retries here. With the join order
+    pinned each chunk now returns in a few seconds, so the ~93s worst case per
+    chunk is effectively never hit."""
     missing = [m for m in metros if m["slug"] not in cache]
     if not missing:
         return cache
@@ -65,26 +76,42 @@ def discover_missing_qids(metros, cache):
         chunk = missing[i:i + CHUNK]
         values = "\n".join(
             f'    ("{esc(m["slug"])}" "{esc(m["city"])}" "{esc(m["country"])}")' for m in chunk)
-        q = f"""SELECT ?key ?city WHERE {{
+        # hint:optimizer "None" forces top-to-bottom evaluation: bind the
+        # country/city labels (indexed, tiny) BEFORE the P17 edge. Without it
+        # Blazegraph joins from the country side first and scans every entity in
+        # the country -> guaranteed 504. wikibase:sitelinks lets us pick the
+        # primary city when a name matches several entities.
+        q = f"""SELECT ?key ?city ?sitelinks WHERE {{
+      hint:Query hint:optimizer "None" .
       VALUES (?key ?cityLabel ?countryLabel) {{
 {values}
       }}
-      ?city rdfs:label ?clab . FILTER(?clab = STRLANG(?cityLabel, "en"))
-      ?city wdt:P17 ?ctry . ?ctry rdfs:label ?ctlab . FILTER(?ctlab = STRLANG(?countryLabel, "en"))
+      BIND(STRLANG(?cityLabel, "en") AS ?clab)
+      BIND(STRLANG(?countryLabel, "en") AS ?ctlab)
+      ?ctry rdfs:label ?ctlab .
+      ?city rdfs:label ?clab .
+      ?city wdt:P17 ?ctry .
+      ?city p:P6 ?st . FILTER NOT EXISTS {{ ?st pq:P582 ?e }}
+      ?city wikibase:sitelinks ?sitelinks .
     }}"""
         try:
             rows = sparql(q, timeout=45, retries=2)
         except Exception as e:
             print(f"  QID discovery chunk {i // CHUNK} failed ({e}); will retry next run")
             continue
-        found = 0
+        best = {}  # slug -> (qid, sitelinks); keep the most-linked match per slug
         for b in rows:
             key = b.get("key", {}).get("value", "")
             city_uri = b.get("city", {}).get("value", "")
-            if key and city_uri:
-                cache[key] = qid(city_uri)
-                found += 1
-        if found:
+            try:
+                links = int(b.get("sitelinks", {}).get("value", "0"))
+            except ValueError:
+                links = 0
+            if key and city_uri and (key not in best or links > best[key][1]):
+                best[key] = (qid(city_uri), links)
+        if best:
+            for key, (city_qid, _) in best.items():
+                cache[key] = city_qid
             write_json(QID_CACHE, cache, sort_keys=True)  # persist progress incrementally
     return cache
 
@@ -104,14 +131,23 @@ def resolve_mayors(cache):
       OPTIONAL {{ ?mayor wdt:P102 ?party }}
       SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
     }}"""
-    out = {}
+    # A city usually carries SEVERAL open (no end-date) P6 statements: on
+    # Wikidata a predecessor's term often never got an end date, and some
+    # cities even list the mayoralty position item itself (a dateless
+    # "mayor of <city>" placeholder). Keep the statement with the LATEST start
+    # date (P580) so we report the sitting mayor, not an arbitrary predecessor
+    # or the placeholder — a dated real person always outranks a dateless one.
+    best = {}  # slug -> (start, info)
     for b in sparql(query, timeout=120):
         slug = qid_to_slug.get(qid(b.get("city", {}).get("value", "")))
         nm = b.get("mayorLabel", {}).get("value", "")
-        if slug and slug not in out and sanity_ok(nm):
-            out[slug] = {"mayor": nm, "since": (b.get("start", {}).get("value", "") or "")[:10],
-                        "party": b.get("partyLabel", {}).get("value", "")}
-    return out
+        if not slug or not sanity_ok(nm):
+            continue
+        start = (b.get("start", {}).get("value", "") or "")[:10]
+        if slug not in best or start > best[slug][0]:
+            best[slug] = (start, {"mayor": nm, "since": start,
+                                  "party": b.get("partyLabel", {}).get("value", "")})
+    return {slug: info for slug, (_, info) in best.items()}
 
 def build(metros, resolved, overrides):
     out = {}
