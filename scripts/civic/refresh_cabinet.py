@@ -239,7 +239,12 @@ def build(existing, holders):
         if not h or bare(c.get("name", "")) == bare(h["name"]):
             continue
         changed.append(f"{c['office']}: {c.get('name')!r} -> {h['name']!r}")
-        cabinet[i] = {**c, "name": h["name"], "since": h["start"] or c.get("since", "")}
+        # Fresh entry, not a spread of `c`: Wikidata gives us no signal for
+        # acting-vs-confirmed (the exact gap that produced the Sonderling/
+        # Chavez-DeRemer case), so any prior curated "acting" flag must NOT
+        # carry forward onto a newly-detected name -- that needs a human to
+        # set again deliberately, same as the name/date themselves did here.
+        cabinet[i] = {"office": c["office"], "name": h["name"], "since": h["start"] or c.get("since", "")}
     exec_["cabinet"] = cabinet
     out["executive"] = exec_
     return out, changed
@@ -304,6 +309,25 @@ def _self_test():
     out2, changed2 = build(existing, {})
     assert changed2 == []
     assert out2["executive"] == existing["executive"]
+
+    # A curated "acting" flag must NOT survive a name change onto the new
+    # holder (Wikidata gives no acting-vs-confirmed signal) -- confirmed live
+    # case: Sonderling took over Labor as Acting Secretary 2026-04-20.
+    existing_acting = {
+        "senate": {}, "house": {},
+        "executive": {
+            "president": {"name": "X"}, "vicePresident": {"name": "Y"},
+            "cabinet": [{"office": "Secretary of Labor", "name": "Keith Sonderling",
+                        "since": "2026-04-20", "acting": True}],
+        },
+    }
+    out3, changed3 = build(existing_acting, {"secretary-of-labor": {"name": "Keith Sonderling", "party": "Republican", "start": "2027-01-05"}})
+    assert changed3 == [], changed3  # same person confirmed permanently -> no name change, "acting" flag untouched either way
+    assert out3["executive"]["cabinet"][0]["acting"] is True
+
+    out4, changed4 = build(existing_acting, {"secretary-of-labor": {"name": "Someone Else", "party": "Republican", "start": "2027-06-01"}})
+    assert any("Secretary of Labor" in c for c in changed4)
+    assert "acting" not in out4["executive"]["cabinet"][0], out4["executive"]["cabinet"][0]
 
     # pick_holder() against the actual messy patterns a live Wikidata run
     # surfaced (2026-07-21): historical secretaries and fictional TV

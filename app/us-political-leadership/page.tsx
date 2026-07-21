@@ -150,7 +150,7 @@ export default async function USPoliticalLeadershipPage() {
                 <div className="flex items-start justify-between gap-2">
                   <div className="min-w-0">
                     <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{c.office}</div>
-                    <div className="font-medium text-sm text-[var(--text)]">{c.name}</div>
+                    <div className="font-medium text-sm text-[var(--text)]">{c.name}{c.acting ? <span className="text-[var(--text-dim)] font-normal"> (Acting)</span> : null}</div>
                   </div>
                   <div className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0">{c.since?.slice(0, 4) ?? "—"}</div>
                 </div>
@@ -170,7 +170,7 @@ export default async function USPoliticalLeadershipPage() {
                 {congress.executive.cabinet.map((c) => (
                   <tr key={c.office} className="border-b last:border-0" style={{ borderColor: "var(--border)" }}>
                     <td className="py-2 px-4 text-[var(--text-muted)]">{c.office}</td>
-                    <td className="py-2 px-4 font-medium text-[var(--text)]">{c.name}</td>
+                    <td className="py-2 px-4 font-medium text-[var(--text)]">{c.name}{c.acting ? <span className="text-[var(--text-dim)] font-normal"> (Acting)</span> : null}</td>
                     <td className="py-2 px-4 text-right tabular-nums text-[var(--text-muted)]">{c.since?.slice(0, 4) ?? "—"}</td>
                   </tr>
                 ))}
