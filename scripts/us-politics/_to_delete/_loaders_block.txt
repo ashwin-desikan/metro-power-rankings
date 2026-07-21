@@ -1,0 +1,72 @@
+const GH_DATA_BASE =
+  "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data/";
+
+// ISR-read a time-machine history file from GitHub raw so the weekly civic-refresh
+// commits (which sync officeholder changes into these files) surface with NO
+// rebuild -- exactly like getUsCongress() does for the current-state snapshot.
+// Falls back to the build-time committed copy when the fetch fails.
+async function readHistoryFile<T>(file: string, fallback: T): Promise<T> {
+  try {
+    const res = await fetch(GH_DATA_BASE + file, { next: { revalidate: 3600 } });
+    if (res.ok) return (await res.json()) as T;
+  } catch {
+    /* fall through to the committed copy */
+  }
+  try {
+    return JSON.parse(
+      fs.readFileSync(path.join(process.cwd(), "public", "data", file), "utf-8"),
+    ) as T;
+  } catch {
+    return fallback;
+  }
+}
+
+export async function getExecutiveHistory(): Promise<{
+  presidents: DatedOffice[];
+  vicePresidents: DatedOffice[];
+}> {
+  return readHistoryFile("us-executive-history.json", {
+    presidents: [] as DatedOffice[],
+    vicePresidents: [] as DatedOffice[],
+  });
+}
+
+export async function getHouseHistory(): Promise<HouseCongress[]> {
+  return readHistoryFile<HouseCongress[]>("us-house-history.json", []);
+}
+
+export type SenateTerm = {
+  name: string;
+  state: string;
+  class: number;
+  party: string;
+  start: string;
+  end: string | null;
+};
+
+export async function getSenateHistory(): Promise<SenateTerm[]> {
+  const parsed = await readHistoryFile<{ terms?: SenateTerm[] }>(
+    "us-senate-history.json",
+    {},
+  );
+  return parsed.terms ?? [];
+}
+
+export type CabinetOfficeHistory = { office: string; holders: DatedOffice[] };
+
+export async function getCabinetHistory(): Promise<CabinetOfficeHistory[]> {
+  const parsed = await readHistoryFile<{
+    offices?: string[];
+    cabinet?: Record<string, DatedOffice[]>;
+  }>("us-cabinet-history.json", {});
+  const cab = parsed.cabinet ?? {};
+  const offices = parsed.offices ?? Object.keys(cab);
+  return offices.map((office) => ({ office, holders: cab[office] ?? [] }));
+}
+
+export async function getGovernorHistory(): Promise<Record<string, DatedOffice[]>> {
+  const parsed = await readHistoryFile<{
+    governors?: Record<string, DatedOffice[]>;
+  }>("us-governor-history.json", {});
+  return parsed.governors ?? {};
+}

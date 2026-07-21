@@ -545,18 +545,51 @@ export default async function CountryDetailPage({ params }: Props) {
             </Collapsible>
           ) : null}
 
+          {slug === "united-states" || slug === "united-kingdom" || slug === "canada" ? (
+            <div className="grid gap-3 sm:grid-cols-2 mb-6">
+              {slug !== "canada" ? (
+              <Link
+                href={slug === "united-states" ? "/us-political-leadership" : "/uk-political-leadership"}
+                className="block rounded-xl border p-4 transition-colors hover:border-[var(--accent)]"
+                style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
+              >
+                <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">Political leadership</p>
+                <p className="font-bold text-[var(--text)]">
+                  {slug === "united-states"
+                    ? "President, Supreme Court, Cabinet, governors & Congress →"
+                    : "The Crown, Prime Minister, Cabinet & Parliament →"}
+                </p>
+                <p className="text-xs text-[var(--text-muted)] mt-1">
+                  Who holds power today, with a time machine back through history.
+                </p>
+              </Link>
+              ) : null}
+              <Link
+                href={slug === "united-states" ? "/elections/us" : slug === "canada" ? "/elections/ca" : "/elections/uk"}
+                className="block rounded-xl border p-4 transition-colors hover:border-[var(--accent)]"
+                style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
+              >
+                <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">Elections</p>
+                <p className="font-bold text-[var(--text)]">
+                  {slug === "united-states"
+                    ? "Every presidential election since 1788 →"
+                    : slug === "canada"
+                      ? "Every federal election since 1867 →"
+                      : "Every general election since 1802 →"}
+                </p>
+                <p className="text-xs text-[var(--text-muted)] mt-1">
+                  {slug === "united-states"
+                    ? "Sixty contests: electoral college, state results, turnout, Congress and the midterm penalty."
+                    : slug === "canada"
+                      ? "Forty-five contests: seats, swings, turnout, minority parliaments and the 1993 collapse."
+                      : "Fifty-eight contests: seats, swings, turnout, referendums and the devolved map."}
+                </p>
+              </Link>
+            </div>
+          ) : null}
+
           {stateGroups.length > 0 ? (
             <Collapsible id="subdivisions" title={stateSectionTitle}>
-              {slug === "united-states" ? (
-                <Link href="/us-political-leadership" className="inline-block mb-3 text-sm font-medium text-[var(--accent)] hover:underline">
-                  United States political leadership: president, cabinet, governors &amp; Congress →
-                </Link>
-              ) : null}
-              {slug === "united-kingdom" ? (
-                <Link href="/uk-political-leadership" className="inline-block mb-3 text-sm font-medium text-[var(--accent)] hover:underline">
-                  United Kingdom political leadership: the Sovereign, Prime Minister, cabinet &amp; Parliament →
-                </Link>
-              ) : null}
               <p className="text-sm text-[var(--text-muted)] mb-4">
                 {states.length} {states.length === 1 ? "entry" : "entries"} listed under {country.name}
                 {stateGroups.length > 1 ? ` across ${stateGroups.length} types` : ""}

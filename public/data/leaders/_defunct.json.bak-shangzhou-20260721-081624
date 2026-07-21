@@ -1,0 +1,716 @@
+{
+ "east-germany": {
+  "name": "East Germany",
+  "continent": "Europe",
+  "start": "1949",
+  "end": "1990",
+  "href": "https://en.wikipedia.org/wiki/East_Germany"
+ },
+ "south-vietnam": {
+  "name": "South Vietnam",
+  "continent": "Asia",
+  "start": "1955",
+  "end": "1975",
+  "href": "https://en.wikipedia.org/wiki/South_Vietnam"
+ },
+ "hatay": {
+  "name": "Republic of Hatay",
+  "continent": "Asia",
+  "start": "1938",
+  "end": "1939",
+  "href": "https://en.wikipedia.org/wiki/Hatay_State"
+ },
+ "saar": {
+  "name": "Saar Protectorate",
+  "continent": "Europe",
+  "start": "1947",
+  "end": "1957",
+  "href": "https://en.wikipedia.org/wiki/Saar_Protectorate"
+ },
+ "confederate-states": {
+  "name": "Confederate States",
+  "continent": "North America",
+  "start": "1861",
+  "end": "1865",
+  "href": "https://en.wikipedia.org/wiki/Confederate_States_of_America"
+ },
+ "rhodesia": {
+  "name": "Rhodesia",
+  "continent": "Africa",
+  "start": "1965",
+  "end": "1979",
+  "href": "https://en.wikipedia.org/wiki/Rhodesia"
+ },
+ "central-america-federation": {
+  "name": "Federal Republic of Central America",
+  "continent": "North America",
+  "start": "1823",
+  "end": "1841",
+  "href": "https://en.wikipedia.org/wiki/Federal_Republic_of_Central_America"
+ },
+ "south-yemen": {
+  "name": "South Yemen",
+  "continent": "Asia",
+  "start": "1967",
+  "end": "1990",
+  "href": "https://en.wikipedia.org/wiki/South_Yemen"
+ },
+ "west-indies-federation": {
+  "name": "West Indies Federation",
+  "continent": "North America",
+  "start": "1958",
+  "end": "1962",
+  "href": "https://en.wikipedia.org/wiki/West_Indies_Federation"
+ },
+ "tibet": {
+  "name": "Tibet",
+  "continent": "Asia",
+  "start": "1912",
+  "end": "1951",
+  "href": "https://en.wikipedia.org/wiki/Tibet_(1912%E2%80%931951)"
+ },
+ "zanzibar": {
+  "name": "Zanzibar",
+  "continent": "Africa",
+  "start": "1963",
+  "end": "1964",
+  "href": "https://en.wikipedia.org/wiki/People%27s_Republic_of_Zanzibar"
+ },
+ "holy-roman-empire": {
+  "name": "Holy Roman Empire",
+  "continent": "Europe",
+  "start": "962",
+  "end": "1806",
+  "href": "https://en.wikipedia.org/wiki/Holy_Roman_Empire"
+ },
+ "bavaria": {
+  "name": "Bavaria",
+  "continent": "Europe",
+  "start": "1806",
+  "end": "1918",
+  "href": "https://en.wikipedia.org/wiki/Kingdom_of_Bavaria"
+ },
+ "two-sicilies": {
+  "name": "Kingdom of the Two Sicilies",
+  "continent": "Europe",
+  "start": "1816",
+  "end": "1861",
+  "href": "https://en.wikipedia.org/wiki/Kingdom_of_the_Two_Sicilies"
+ },
+ "tuscany": {
+  "name": "Grand Duchy of Tuscany",
+  "continent": "Europe",
+  "start": "1737",
+  "end": "1859",
+  "href": "https://en.wikipedia.org/wiki/Grand_Duchy_of_Tuscany"
+ },
+ "duchy-of-milan": {
+  "name": "Duchy of Milan",
+  "continent": "Europe",
+  "start": "1395",
+  "end": "1797",
+  "href": "https://en.wikipedia.org/wiki/Duchy_of_Milan"
+ },
+ "republic-of-venice": {
+  "name": "Republic of Venice",
+  "continent": "Europe",
+  "start": "697",
+  "end": "1797",
+  "href": "https://en.wikipedia.org/wiki/Republic_of_Venice"
+ },
+ "lombardy-venetia": {
+  "name": "Lombardy-Venetia",
+  "continent": "Europe",
+  "start": "1815",
+  "end": "1866",
+  "href": "https://en.wikipedia.org/wiki/Kingdom_of_Lombardy%E2%80%93Venetia"
+ },
+ "duchy-of-parma": {
+  "name": "Duchy of Parma",
+  "continent": "Europe",
+  "start": "1545",
+  "end": "1859",
+  "href": "https://en.wikipedia.org/wiki/Duchy_of_Parma"
+ },
+ "duchy-of-modena": {
+  "name": "Duchy of Modena",
+  "continent": "Europe",
+  "start": "1452",
+  "end": "1859",
+  "href": "https://en.wikipedia.org/wiki/Duchy_of_Modena_and_Reggio"
+ },
+ "joseon-korea": {
+  "name": "Korea (Joseon & Empire)",
+  "continent": "Asia",
+  "start": "1392",
+  "end": "1910",
+  "href": "https://en.wikipedia.org/wiki/Korean_Empire"
+ },
+ "gran-colombia": {
+  "name": "Gran Colombia",
+  "continent": "South America",
+  "start": "1819",
+  "end": "1831",
+  "href": "https://en.wikipedia.org/wiki/Gran_Colombia"
+ },
+ "kingdom-of-hawaii": {
+  "name": "Hawaii",
+  "continent": "Oceania",
+  "start": "1795",
+  "end": "1898",
+  "href": "https://en.wikipedia.org/wiki/Kingdom_of_Hawaii"
+ },
+ "republic-of-texas": {
+  "name": "Republic of Texas",
+  "continent": "North America",
+  "start": "1836",
+  "end": "1846",
+  "href": "https://en.wikipedia.org/wiki/Republic_of_Texas"
+ },
+ "transvaal": {
+  "name": "South African Republic (Transvaal)",
+  "continent": "Africa",
+  "start": "1852",
+  "end": "1902",
+  "href": "https://en.wikipedia.org/wiki/South_African_Republic"
+ },
+ "orange-free-state": {
+  "name": "Orange Free State",
+  "continent": "Africa",
+  "start": "1854",
+  "end": "1902",
+  "href": "https://en.wikipedia.org/wiki/Orange_Free_State"
+ },
+ "saxony": {
+  "name": "Kingdom of Saxony",
+  "continent": "Europe",
+  "start": "1806",
+  "end": "1918",
+  "href": "https://en.wikipedia.org/wiki/Kingdom_of_Saxony"
+ },
+ "hanover": {
+  "name": "Kingdom of Hanover",
+  "continent": "Europe",
+  "start": "1814",
+  "end": "1866",
+  "href": "https://en.wikipedia.org/wiki/Kingdom_of_Hanover"
+ },
+ "wurttemberg": {
+  "name": "Kingdom of Württemberg",
+  "continent": "Europe",
+  "start": "1806",
+  "end": "1918",
+  "href": "https://en.wikipedia.org/wiki/Kingdom_of_W%C3%BCrttemberg"
+ },
+ "baden": {
+  "name": "Grand Duchy of Baden",
+  "continent": "Europe",
+  "start": "1806",
+  "end": "1918",
+  "href": "https://en.wikipedia.org/wiki/Grand_Duchy_of_Baden"
+ },
+ "austrian-netherlands": {
+  "name": "Austrian Netherlands",
+  "continent": "Europe",
+  "start": "1714",
+  "end": "1795",
+  "href": "https://en.wikipedia.org/wiki/Austrian_Netherlands"
+ },
+ "byzantine-empire": {
+  "name": "Byzantine Empire",
+  "continent": "Europe",
+  "start": "395",
+  "end": "1453",
+  "href": "https://en.wikipedia.org/wiki/Byzantine_Empire"
+ },
+ "caliphate": {
+  "name": "Caliphate",
+  "continent": "Asia",
+  "start": "632",
+  "end": "1258",
+  "href": "https://en.wikipedia.org/wiki/Caliphate"
+ },
+ "mongol-empire": {
+  "name": "Mongol Empire",
+  "continent": "Asia",
+  "start": "1206",
+  "end": "1294",
+  "href": "https://en.wikipedia.org/wiki/Mongol_Empire"
+ },
+ "golden-horde": {
+  "name": "Golden Horde",
+  "continent": "Asia",
+  "start": "1242",
+  "end": "1502",
+  "href": "https://en.wikipedia.org/wiki/Golden_Horde"
+ },
+ "aztec-empire": {
+  "name": "Aztec Empire",
+  "continent": "North America",
+  "start": "1428",
+  "end": "1521",
+  "href": "https://en.wikipedia.org/wiki/Aztec_Empire"
+ },
+ "inca-empire": {
+  "name": "Inca Empire",
+  "continent": "South America",
+  "start": "1438",
+  "end": "1533",
+  "href": "https://en.wikipedia.org/wiki/Inca_Empire"
+ },
+ "mali-empire": {
+  "name": "Mali Empire",
+  "continent": "Africa",
+  "start": "1235",
+  "end": "1600",
+  "href": "https://en.wikipedia.org/wiki/Mali_Empire"
+ },
+ "roman-empire": {
+  "name": "Roman Empire",
+  "continent": "Europe",
+  "start": "-0753",
+  "end": "0476",
+  "href": "https://en.wikipedia.org/wiki/Ancient_Rome"
+ },
+ "carthage": {
+  "name": "Carthage",
+  "continent": "Africa",
+  "start": "-0814",
+  "end": "-0146",
+  "href": "https://en.wikipedia.org/wiki/Ancient_Carthage"
+ },
+ "achaemenid-empire": {
+  "name": "Achaemenid Empire",
+  "continent": "Asia",
+  "start": "-0559",
+  "end": "-0330",
+  "href": "https://en.wikipedia.org/wiki/Achaemenid_Empire"
+ },
+ "ptolemaic-egypt": {
+  "name": "Ptolemaic Egypt",
+  "continent": "Africa",
+  "start": "-0305",
+  "end": "-0030",
+  "href": "https://en.wikipedia.org/wiki/Ptolemaic_Kingdom"
+ },
+ "ancient-egypt": {
+  "name": "Ancient Egypt",
+  "continent": "Africa",
+  "start": "-3100",
+  "end": "-0332",
+  "href": "https://en.wikipedia.org/wiki/List_of_pharaohs"
+ },
+ "republic-of-genoa": {
+  "name": "Republic of Genoa",
+  "continent": "Europe",
+  "start": "1339",
+  "end": "1797",
+  "href": "https://en.wikipedia.org/wiki/Republic_of_Genoa"
+ },
+ "duchy-of-burgundy": {
+  "name": "Duchy of Burgundy",
+  "continent": "Europe",
+  "start": "1363",
+  "end": "1477",
+  "href": "https://en.wikipedia.org/wiki/Duchy_of_Burgundy"
+ },
+ "duchy-of-savoy": {
+  "name": "Duchy of Savoy",
+  "continent": "Europe",
+  "start": "1416",
+  "end": "1720",
+  "href": "https://en.wikipedia.org/wiki/Duchy_of_Savoy"
+ },
+ "sikh-empire": {
+  "name": "Sikh Empire",
+  "continent": "Asia",
+  "start": "1799",
+  "end": "1849",
+  "href": "https://en.wikipedia.org/wiki/Sikh_Empire"
+ },
+ "zulu-kingdom": {
+  "name": "Zulu Kingdom",
+  "continent": "Africa",
+  "start": "1816",
+  "end": "1897",
+  "href": "https://en.wikipedia.org/wiki/Zulu_Kingdom"
+ },
+ "sokoto-caliphate": {
+  "name": "Sokoto Caliphate",
+  "continent": "Africa",
+  "start": "1804",
+  "end": "1903",
+  "href": "https://en.wikipedia.org/wiki/Sokoto_Caliphate"
+ },
+ "manchukuo": {
+  "name": "Manchukuo",
+  "continent": "Asia",
+  "start": "1932",
+  "end": "1945",
+  "href": "https://en.wikipedia.org/wiki/Manchukuo"
+ },
+ "duchy-of-warsaw": {
+  "name": "Duchy of Warsaw",
+  "continent": "Europe",
+  "start": "1807",
+  "end": "1815",
+  "href": "https://en.wikipedia.org/wiki/Duchy_of_Warsaw"
+ },
+ "ashanti-empire": {
+  "name": "Ashanti Empire",
+  "continent": "Africa",
+  "start": "1701",
+  "end": "1902",
+  "href": "https://en.wikipedia.org/wiki/Ashanti_Empire"
+ },
+ "maratha-empire": {
+  "name": "Maratha Empire",
+  "continent": "Asia",
+  "start": "1674",
+  "end": "1818",
+  "href": "https://en.wikipedia.org/wiki/Maratha_Confederacy"
+ },
+ "kingdom-of-mysore": {
+  "name": "Kingdom of Mysore",
+  "continent": "Asia",
+  "start": "1399",
+  "end": "1947",
+  "href": "https://en.wikipedia.org/wiki/Kingdom_of_Mysore"
+ },
+ "republic-of-ragusa": {
+  "name": "Republic of Ragusa",
+  "continent": "Europe",
+  "start": "1358",
+  "end": "1808",
+  "href": "https://en.wikipedia.org/wiki/Republic_of_Ragusa"
+ },
+ "electorate-of-hesse": {
+  "name": "Electorate of Hesse",
+  "continent": "Europe",
+  "start": "1803",
+  "end": "1866",
+  "href": "https://en.wikipedia.org/wiki/Electorate_of_Hesse"
+ },
+ "grand-duchy-of-hesse": {
+  "name": "Grand Duchy of Hesse",
+  "continent": "Europe",
+  "start": "1806",
+  "end": "1918",
+  "href": "https://en.wikipedia.org/wiki/Grand_Duchy_of_Hesse"
+ },
+ "mecklenburg-schwerin": {
+  "name": "Mecklenburg-Schwerin",
+  "continent": "Europe",
+  "start": "1815",
+  "end": "1918",
+  "href": "https://en.wikipedia.org/wiki/List_of_rulers_of_Mecklenburg"
+ },
+ "akkadian-empire": {
+  "name": "Akkadian Empire",
+  "continent": "Asia",
+  "start": "-2334",
+  "end": "-2154",
+  "href": "https://en.wikipedia.org/wiki/List_of_kings_of_Akkad"
+ },
+ "aksumite-empire": {
+  "name": "Kingdom of Aksum",
+  "continent": "Africa",
+  "start": "0100-01-01",
+  "end": "0940-01-01",
+  "href": "https://en.wikipedia.org/wiki/Kingdom_of_Aksum"
+ },
+ "assyria": {
+  "name": "Assyria",
+  "continent": "Asia",
+  "start": "-1808",
+  "end": "-0609",
+  "href": "https://en.wikipedia.org/wiki/List_of_Assyrian_kings"
+ },
+ "ayyubid-sultanate": {
+  "name": "Ayyubid Sultanate",
+  "continent": "Africa",
+  "start": "1171-01-01",
+  "end": "1250-01-01",
+  "href": "https://en.wikipedia.org/wiki/Ayyubid_dynasty"
+ },
+ "babylon": {
+  "name": "Babylonia",
+  "continent": "Asia",
+  "start": "-1894",
+  "end": "-0539",
+  "href": "https://en.wikipedia.org/wiki/List_of_kings_of_Babylon"
+ },
+ "chola-empire": {
+  "name": "Chola Empire",
+  "continent": "Asia",
+  "start": "848",
+  "end": "1279",
+  "href": "https://en.wikipedia.org/wiki/Chola_dynasty"
+ },
+ "crimean-khanate": {
+  "name": "Crimean Khanate",
+  "continent": "Europe",
+  "start": "1441-01-01",
+  "end": "1783-01-01",
+  "href": "https://en.wikipedia.org/wiki/List_of_Crimean_khans"
+ },
+ "delhi-sultanate": {
+  "name": "Delhi Sultanate",
+  "continent": "Asia",
+  "start": "1206",
+  "end": "1526",
+  "href": "https://en.wikipedia.org/wiki/List_of_sultans_of_Delhi"
+ },
+ "fatimid-caliphate": {
+  "name": "Fatimid Caliphate",
+  "continent": "Africa",
+  "start": "0909-01-01",
+  "end": "1171-01-01",
+  "href": "https://en.wikipedia.org/wiki/List_of_Fatimid_caliphs"
+ },
+ "gupta-empire": {
+  "name": "Gupta Empire",
+  "continent": "Asia",
+  "start": "320",
+  "end": "550",
+  "href": "https://en.wikipedia.org/wiki/Gupta_Empire"
+ },
+ "hittite-empire": {
+  "name": "Hittite Empire",
+  "continent": "Asia",
+  "start": "-1650",
+  "end": "-1178",
+  "href": "https://en.wikipedia.org/wiki/List_of_Hittite_kings"
+ },
+ "ilkhanate": {
+  "name": "Ilkhanate",
+  "continent": "Asia",
+  "start": "1256-01-01",
+  "end": "1335-01-01",
+  "href": "https://en.wikipedia.org/wiki/Ilkhanate"
+ },
+ "khmer-empire": {
+  "name": "Khmer Empire",
+  "continent": "Asia",
+  "start": "0802-01-01",
+  "end": "1431-01-01",
+  "href": "https://en.wikipedia.org/wiki/Khmer_Empire"
+ },
+ "kingdom-of-naples": {
+  "name": "Kingdom of Naples",
+  "continent": "Europe",
+  "start": "1130",
+  "end": "1816",
+  "href": "https://en.wikipedia.org/wiki/Kingdom_of_Naples"
+ },
+ "macedon": {
+  "name": "Macedon",
+  "continent": "Europe",
+  "start": "-0512",
+  "end": "-0168",
+  "href": "https://en.wikipedia.org/wiki/Macedonia_(ancient_kingdom)"
+ },
+ "majapahit": {
+  "name": "Majapahit",
+  "continent": "Asia",
+  "start": "1293-01-01",
+  "end": "1527-01-01",
+  "href": "https://en.wikipedia.org/wiki/Majapahit"
+ },
+ "mamluk-sultanate": {
+  "name": "Mamluk Sultanate",
+  "continent": "Africa",
+  "start": "1250-01-01",
+  "end": "1517-01-01",
+  "href": "https://en.wikipedia.org/wiki/List_of_Mamluk_sultans"
+ },
+ "maurya-empire": {
+  "name": "Maurya Empire",
+  "continent": "Asia",
+  "start": "-0322",
+  "end": "-0185",
+  "href": "https://en.wikipedia.org/wiki/Maurya_Empire"
+ },
+ "parthian-empire": {
+  "name": "Parthian Empire",
+  "continent": "Asia",
+  "start": "-0247",
+  "end": "224",
+  "href": "https://en.wikipedia.org/wiki/List_of_monarchs_of_the_Parthian_Empire"
+ },
+ "sasanian-empire": {
+  "name": "Sasanian Empire",
+  "continent": "Asia",
+  "start": "224",
+  "end": "651",
+  "href": "https://en.wikipedia.org/wiki/List_of_monarchs_of_the_Sasanian_Empire"
+ },
+ "seleucid-empire": {
+  "name": "Seleucid Empire",
+  "continent": "Asia",
+  "start": "-0312",
+  "end": "-0063",
+  "href": "https://en.wikipedia.org/wiki/Seleucid_Empire"
+ },
+ "seljuk-empire": {
+  "name": "Seljuk Empire",
+  "continent": "Asia",
+  "start": "1037-01-01",
+  "end": "1194-01-01",
+  "href": "https://en.wikipedia.org/wiki/Seljuk_Empire"
+ },
+ "songhai-empire": {
+  "name": "Songhai Empire",
+  "continent": "Africa",
+  "start": "1464-01-01",
+  "end": "1591-01-01",
+  "href": "https://en.wikipedia.org/wiki/Songhai_Empire"
+ },
+ "timurid-empire": {
+  "name": "Timurid Empire",
+  "continent": "Asia",
+  "start": "1370-01-01",
+  "end": "1507-01-01",
+  "href": "https://en.wikipedia.org/wiki/Timurid_dynasty"
+ },
+ "umayyad-cordoba": {
+  "name": "Umayyad Córdoba",
+  "continent": "Europe",
+  "start": "0756-01-01",
+  "end": "1031-01-01",
+  "href": "https://en.wikipedia.org/wiki/Caliphate_of_C%C3%B3rdoba"
+ },
+ "vijayanagara-empire": {
+  "name": "Vijayanagara Empire",
+  "continent": "Asia",
+  "start": "1336",
+  "end": "1646",
+  "href": "https://en.wikipedia.org/wiki/Vijayanagara_Empire"
+ },
+ "aq-qoyunlu": {
+  "name": "Aq Qoyunlu",
+  "continent": "Asia",
+  "start": "1378",
+  "end": "1508",
+  "href": "https://en.wikipedia.org/wiki/Aq_Qoyunlu"
+ },
+ "buyid-dynasty": {
+  "name": "Buyid Dynasty",
+  "continent": "Asia",
+  "start": "934",
+  "end": "1062",
+  "href": "https://en.wikipedia.org/wiki/Buyid_dynasty"
+ },
+ "ghaznavid-empire": {
+  "name": "Ghaznavid Empire",
+  "continent": "Asia",
+  "start": "977",
+  "end": "1186",
+  "href": "https://en.wikipedia.org/wiki/Ghaznavids"
+ },
+ "khwarazmian-empire": {
+  "name": "Khwarazmian Empire",
+  "continent": "Asia",
+  "start": "1077",
+  "end": "1231",
+  "href": "https://en.wikipedia.org/wiki/Khwarazmian_Empire"
+ },
+ "saffarid-dynasty": {
+  "name": "Saffarid Dynasty",
+  "continent": "Asia",
+  "start": "861",
+  "end": "1002",
+  "href": "https://en.wikipedia.org/wiki/Saffarid_dynasty"
+ },
+ "samanid-empire": {
+  "name": "Samanid Empire",
+  "continent": "Asia",
+  "start": "819",
+  "end": "999",
+  "href": "https://en.wikipedia.org/wiki/Samanid_Empire"
+ },
+ "goguryeo": {
+  "name": "Goguryeo",
+  "continent": "Asia",
+  "start": "-0037",
+  "end": "668",
+  "href": "https://en.wikipedia.org/wiki/Goguryeo"
+ },
+ "hunnic-empire": {
+  "name": "Hunnic Empire",
+  "continent": "Europe",
+  "start": "370",
+  "end": "469",
+  "href": "https://en.wikipedia.org/wiki/Huns"
+ },
+ "kingdom-of-armenia": {
+  "name": "Kingdom of Armenia",
+  "continent": "Asia",
+  "start": "-0321",
+  "end": "428",
+  "href": "https://en.wikipedia.org/wiki/List_of_Armenian_kings"
+ },
+ "kingdom-of-judah": {
+  "name": "Kingdom of Judah",
+  "continent": "Asia",
+  "start": "-1008",
+  "end": "-0586",
+  "href": "https://en.wikipedia.org/wiki/Kings_of_Judah"
+ },
+ "kingdom-of-kush": {
+  "name": "Kingdom of Kush",
+  "continent": "Africa",
+  "start": "-0780",
+  "end": "350",
+  "href": "https://en.wikipedia.org/wiki/List_of_monarchs_of_Kush"
+ },
+ "kushan-empire": {
+  "name": "Kushan Empire",
+  "continent": "Asia",
+  "start": "30",
+  "end": "375",
+  "href": "https://en.wikipedia.org/wiki/Kushan_Empire"
+ },
+ "palmyra": {
+  "name": "Palmyrene Empire",
+  "continent": "Asia",
+  "start": "260",
+  "end": "273",
+  "href": "https://en.wikipedia.org/wiki/Palmyrene_Empire"
+ },
+ "pontus": {
+  "name": "Kingdom of Pontus",
+  "continent": "Asia",
+  "start": "-0281",
+  "end": "-0063",
+  "href": "https://en.wikipedia.org/wiki/Kingdom_of_Pontus"
+ },
+ "sparta": {
+  "name": "Sparta",
+  "continent": "Europe",
+  "start": "-0560",
+  "end": "-0192",
+  "href": "https://en.wikipedia.org/wiki/List_of_kings_of_Sparta"
+ },
+ "xiongnu": {
+  "name": "Xiongnu Empire",
+  "continent": "Asia",
+  "start": "-0209",
+  "end": "91",
+  "href": "https://en.wikipedia.org/wiki/Xiongnu"
+ },
+ "shunga-empire": {
+  "name": "Shunga Empire",
+  "continent": "Asia",
+  "start": "-0185",
+  "end": "-0073",
+  "href": "https://en.wikipedia.org/wiki/Shunga_Empire"
+ },
+ "satavahana-dynasty": {
+  "name": "Satavahana dynasty",
+  "continent": "Asia",
+  "start": "-0100",
+  "end": "224",
+  "href": "https://en.wikipedia.org/wiki/Satavahana_dynasty"
+ }
+}

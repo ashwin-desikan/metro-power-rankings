@@ -6,7 +6,7 @@ import {
   getTerritoryGovernors,
   getStateMetroScore,
 } from "@/lib/governors";
-import { getUsCongress, type PartySplit } from "@/lib/usPolitics";
+import { getUsCongress, getScotusHistory, benchOn, type PartySplit } from "@/lib/usPolitics";
 import { getState } from "@/lib/states";
 import { getAllMetros } from "@/lib/data";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
@@ -16,7 +16,7 @@ import SenatorsTable, { type SenRow } from "./SenatorsTable";
 const PATH = "/us-political-leadership";
 const TITLE = "United States Political Leadership";
 const DESC =
-  "Who holds power in the United States: the President, Vice President and Cabinet; every state governor; all 100 US senators; and House leadership — with party balance and, where it applies, the Metro Power score of the places they represent.";
+  "Who holds power in the United States: the President, Vice President and Cabinet; the nine Supreme Court justices; every state governor; all 100 US senators; and House leadership — with party balance and, where it applies, the Metro Power score of the places they represent.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -97,6 +97,8 @@ function OfficialCard({ label, name, sub, acting }: { label: string; name: strin
 
 export default async function USPoliticalLeadershipPage() {
   const congress = await getUsCongress();
+  const justices = await getScotusHistory();
+  const bench = benchOn(justices, new Date().toISOString().slice(0, 10));
 
   // Governors
   const states = await getAllStateGovernors();
@@ -124,6 +126,7 @@ export default async function USPoliticalLeadershipPage() {
 
   const navItems = [
     { label: "Executive", href: "#executive" },
+    { label: "Supreme Court", href: "#supreme-court" },
     { label: "Governors", href: "#governors" },
     { label: "Senate", href: "#senate" },
     { label: "House", href: "#house" },
@@ -198,6 +201,32 @@ export default async function USPoliticalLeadershipPage() {
               </tbody>
             </table>
           </div>
+        </section>
+      ) : null}
+
+      {bench.length > 0 ? (
+        <section id="supreme-court" className="mb-12 scroll-mt-20">
+          <h2 className="text-xl font-bold mb-1 text-[var(--text)]">Supreme Court</h2>
+          <p className="text-sm text-[var(--text-dim)] mb-3">
+            The nine justices, chief justice first, then by seniority. The judiciary has no party labels;
+            each justice is shown with the president who appointed them.
+          </p>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {bench.map((j) => (
+              <OfficialCard
+                key={`${j.n}-${j.position}`}
+                label={j.position}
+                name={j.name}
+                sub={`Since ${j.start.slice(0, 4)} · appointed by ${j.appointer ?? "—"} · b. ${j.born}`}
+              />
+            ))}
+          </div>
+          <p className="text-xs text-[var(--text-dim)] mt-2">
+            116 people have served on the Court since 1789.{" "}
+            <Link href="/us-political-leadership/time-machine" className="text-[var(--accent)] hover:underline">
+              See the bench on any date →
+            </Link>
+          </p>
         </section>
       ) : null}
 

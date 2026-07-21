@@ -198,7 +198,11 @@ export default function UKTimeMachine({
           min="1707-05-01"
           max={today}
           onChange={(e) => {
-            if (e.target.value) setDate(e.target.value);
+            const v = e.target.value;
+            if (!v) return;
+            // Hard-clamp typed dates: the picker's min/max only constrain the
+            // calendar UI, not keyboard entry. No future dates.
+            setDate(v > today ? today : v < "1707-05-01" ? "1707-05-01" : v);
           }}
           className="rounded-lg border px-3 py-2 text-sm text-[var(--text)]"
           style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}

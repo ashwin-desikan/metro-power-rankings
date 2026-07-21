@@ -1,0 +1,5363 @@
+{
+ "meta": {
+  "title": "European Parliament elections, 1979–2024",
+  "sources": [
+   "Wikipedia election infoboxes and group-composition tables for the 1979–2024 European Parliament elections (user-supplied extract, July 2026)",
+   "European Parliament official results"
+  ],
+  "note": "Group compositions are those at or immediately after each Parliament's constitutive session, from the source's composition tables; Non-Inscrits computed as the remainder of the chamber where the source lists groups only. Vote shares are EU-wide shares for the parties that formed each group, where the source reports them.",
+  "built": "2026-07-21"
+ },
+ "eras": [
+  {
+   "key": "founding",
+   "label": "The Community years",
+   "span": "1979–1994",
+   "blurb": "The world's first directly elected transnational parliament, chosen by nine countries in 1979 and twelve by 1994. It began with few real powers, a chamber of national delegations grouped loosely into families, and turnout that started at 62% and never stopped falling."
+  },
+  {
+   "key": "enlargement",
+   "label": "Enlargement & empowerment",
+   "span": "1999–2009",
+   "blurb": "Maastricht, Amsterdam and Lisbon made the Parliament a genuine co-legislator just as the Union grew from 15 states to 27. The centre-right EPP overtook the Socialists in 1999 and has been the largest group ever since, while turnout slid below 50% and kept going."
+  },
+  {
+   "key": "polycrisis",
+   "label": "The polycrisis parliaments",
+   "span": "2014–2024",
+   "blurb": "Three elections fought amid the euro crisis, migration, Brexit, a pandemic and war in Ukraine. The Spitzenkandidat experiment made and then unmade itself, the grand-coalition duopoly lost its combined majority for the first time in 2019, turnout finally rebounded, and the radical right kept growing until, by 2024, it filled three separate groups."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1979",
+   "year": 1979,
+   "date": "7–10 June 1979",
+   "era": "founding",
+   "totalSeats": 410,
+   "majoritySeats": 206,
+   "turnout": 62.0,
+   "memberStates": 9,
+   "groups": [
+    {
+     "abbr": "SOC",
+     "name": "Socialist Group",
+     "seats": 113,
+     "leader": "Ernest Glinne",
+     "share": 26.6,
+     "votes": 29530418
+    },
+    {
+     "abbr": "EPP",
+     "name": "European People's Party (Christian Democrats)",
+     "seats": 107,
+     "leader": "Egon Klepsch",
+     "share": 28.3,
+     "votes": 31355631
+    },
+    {
+     "abbr": "ED",
+     "name": "European Democrats (Conservatives)",
+     "seats": 64,
+     "leader": "James Scott-Hopkins",
+     "share": 6.2,
+     "votes": 6878970
+    },
+    {
+     "abbr": "COM",
+     "name": "Communists and Allies",
+     "seats": 44,
+     "leader": "Giorgio Amendola",
+     "share": 13.4,
+     "votes": 14908281
+    },
+    {
+     "abbr": "LD",
+     "name": "Liberal and Democratic Group",
+     "seats": 40,
+     "leader": "Martin Bangemann",
+     "share": 10.4,
+     "votes": 11520616
+    },
+    {
+     "abbr": "EPD",
+     "name": "European Progressive Democrats",
+     "seats": 22,
+     "leader": "Christian de La Malène",
+     "share": 3.7,
+     "votes": 4114969
+    },
+    {
+     "abbr": "CDI",
+     "name": "Technical Co-ordination Group",
+     "seats": 11,
+     "leader": null,
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "NI",
+     "name": "Non-Inscrits",
+     "seats": 9,
+     "leader": null,
+     "share": null,
+     "votes": null
+    }
+   ],
+   "before": null,
+   "after": {
+    "name": "Simone Veil",
+    "party": "LD",
+    "office": "President of the European Parliament"
+   },
+   "knownAs": "The first international election",
+   "summary": "The first direct election to any transnational assembly in history: 110 million voters in nine countries chose 410 MEPs, replacing the appointed delegates who had sat since 1958. The Socialists formed the largest group, but the chamber elected the liberal Simone Veil, Auschwitz survivor and French health minister, as its first president.",
+   "label": "1979",
+   "seatLeader": "SOC",
+   "countries": {
+    "groups": [
+     "SOC",
+     "EPP",
+     "ED",
+     "COM",
+     "LD",
+     "EPD",
+     "CDI",
+     "NI"
+    ],
+    "note": null,
+    "rows": [
+     {
+      "name": "Belgium",
+      "total": 24,
+      "byGroup": [
+       7,
+       10,
+       0,
+       0,
+       4,
+       0,
+       1,
+       2
+      ],
+      "detail": null
+     },
+     {
+      "name": "Denmark",
+      "total": 16,
+      "byGroup": [
+       4,
+       0,
+       3,
+       1,
+       3,
+       1,
+       4,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "France",
+      "total": 81,
+      "byGroup": [
+       22,
+       8,
+       0,
+       19,
+       17,
+       15,
+       0,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "West Germany",
+      "total": 81,
+      "byGroup": [
+       35,
+       42,
+       0,
+       0,
+       4,
+       0,
+       0,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Ireland",
+      "total": 15,
+      "byGroup": [
+       4,
+       4,
+       0,
+       0,
+       1,
+       5,
+       1,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Italy",
+      "total": 81,
+      "byGroup": [
+       13,
+       30,
+       0,
+       24,
+       5,
+       0,
+       5,
+       4
+      ],
+      "detail": null
+     },
+     {
+      "name": "Luxembourg",
+      "total": 6,
+      "byGroup": [
+       1,
+       3,
+       0,
+       0,
+       2,
+       0,
+       0,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Netherlands",
+      "total": 25,
+      "byGroup": [
+       9,
+       10,
+       0,
+       0,
+       4,
+       0,
+       0,
+       2
+      ],
+      "detail": null
+     },
+     {
+      "name": "United Kingdom",
+      "total": 81,
+      "byGroup": [
+       18,
+       0,
+       61,
+       0,
+       0,
+       1,
+       0,
+       1
+      ],
+      "detail": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "1984",
+   "year": 1984,
+   "date": "14–17 June 1984",
+   "era": "founding",
+   "totalSeats": 434,
+   "majoritySeats": 218,
+   "turnout": 61.0,
+   "memberStates": 10,
+   "groups": [
+    {
+     "abbr": "SOC",
+     "name": "Socialist Group",
+     "seats": 130,
+     "leader": "Rudi Arndt",
+     "share": 30.0,
+     "votes": null
+    },
+    {
+     "abbr": "EPP",
+     "name": "European People's Party (Christian Democrats)",
+     "seats": 110,
+     "leader": "Egon Klepsch",
+     "share": 25.3,
+     "votes": null
+    },
+    {
+     "abbr": "ED",
+     "name": "European Democrats (Conservatives)",
+     "seats": 50,
+     "leader": "Henry Plumb",
+     "share": 11.5,
+     "votes": null
+    },
+    {
+     "abbr": "COM",
+     "name": "Communists and Allies",
+     "seats": 41,
+     "leader": "Gianni Cervetti",
+     "share": 9.4,
+     "votes": null
+    },
+    {
+     "abbr": "LD",
+     "name": "Liberal and Democratic Group",
+     "seats": 31,
+     "leader": "Simone Veil",
+     "share": 7.1,
+     "votes": null
+    },
+    {
+     "abbr": "EDA",
+     "name": "European Democratic Alliance",
+     "seats": 29,
+     "leader": "Christian de La Malène",
+     "share": 6.7,
+     "votes": null
+    },
+    {
+     "abbr": "RBW",
+     "name": "Rainbow Group (Greens and regionalists)",
+     "seats": 20,
+     "leader": null,
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "DR",
+     "name": "European Right",
+     "seats": 16,
+     "leader": "Jean-Marie Le Pen",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "NI",
+     "name": "Non-Inscrits",
+     "seats": 7,
+     "leader": null,
+     "share": null,
+     "votes": null
+    }
+   ],
+   "before": {
+    "name": "Piet Dankert",
+    "party": "SOC",
+    "office": "President of the European Parliament"
+   },
+   "after": {
+    "name": "Pierre Pflimlin",
+    "party": "EPP",
+    "office": "President of the European Parliament"
+   },
+   "knownAs": null,
+   "summary": "Greece's accession brought the electorate to ten countries. The Socialists consolidated their lead, but the sensation was Jean-Marie Le Pen's Front National winning 10 far-right seats in France and founding the European Right group, the radical right's first parliamentary bridgehead in the chamber.",
+   "label": "1984",
+   "seatLeader": "SOC",
+   "countries": {
+    "groups": [
+     "SOC",
+     "EPP",
+     "ED",
+     "COM",
+     "LD",
+     "EDA",
+     "RBW",
+     "DR",
+     "NI"
+    ],
+    "note": null,
+    "rows": [
+     {
+      "name": "Belgium",
+      "total": 24,
+      "byGroup": [
+       7,
+       6,
+       0,
+       0,
+       5,
+       0,
+       4,
+       0,
+       2
+      ],
+      "detail": null
+     },
+     {
+      "name": "Denmark",
+      "total": 16,
+      "byGroup": [
+       4,
+       1,
+       4,
+       1,
+       2,
+       0,
+       4,
+       0,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "France",
+      "total": 81,
+      "byGroup": [
+       20,
+       9,
+       0,
+       10,
+       12,
+       20,
+       0,
+       10,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "West Germany",
+      "total": 81,
+      "byGroup": [
+       33,
+       41,
+       0,
+       0,
+       0,
+       0,
+       7,
+       0,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Ireland",
+      "total": 15,
+      "byGroup": [
+       0,
+       6,
+       0,
+       0,
+       1,
+       8,
+       0,
+       0,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Italy",
+      "total": 81,
+      "byGroup": [
+       12,
+       27,
+       0,
+       26,
+       5,
+       0,
+       3,
+       5,
+       3
+      ],
+      "detail": null
+     },
+     {
+      "name": "Luxembourg",
+      "total": 6,
+      "byGroup": [
+       2,
+       3,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Netherlands",
+      "total": 25,
+      "byGroup": [
+       9,
+       8,
+       0,
+       0,
+       5,
+       0,
+       2,
+       0,
+       1
+      ],
+      "detail": null
+     },
+     {
+      "name": "United Kingdom",
+      "total": 81,
+      "byGroup": [
+       33,
+       0,
+       46,
+       0,
+       0,
+       1,
+       0,
+       0,
+       1
+      ],
+      "detail": null
+     },
+     {
+      "name": "Greece",
+      "total": 24,
+      "byGroup": [
+       10,
+       9,
+       0,
+       4,
+       0,
+       0,
+       0,
+       1,
+       0
+      ],
+      "detail": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "1989",
+   "year": 1989,
+   "date": "15–18 June 1989",
+   "era": "founding",
+   "totalSeats": 518,
+   "majoritySeats": 260,
+   "turnout": 58.5,
+   "memberStates": 12,
+   "groups": [
+    {
+     "abbr": "SOC",
+     "name": "Socialist Group",
+     "seats": 180,
+     "leader": "Jean-Pierre Cot",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "EPP",
+     "name": "European People's Party (Christian Democrats)",
+     "seats": 121,
+     "leader": "Egon Klepsch",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "LDR",
+     "name": "Liberal, Democratic and Reformist Group",
+     "seats": 49,
+     "leader": "Valéry Giscard d'Estaing",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "EUL & LU",
+     "name": "European United Left / Left Unity",
+     "seats": 42,
+     "leader": null,
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "ED",
+     "name": "European Democrats (Conservatives)",
+     "seats": 34,
+     "leader": "Christopher Prout",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "G",
+     "name": "Green Group",
+     "seats": 30,
+     "leader": "Maria Amélia Santos",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "EDA",
+     "name": "European Democratic Alliance",
+     "seats": 20,
+     "leader": "Christian de La Malène",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "DR",
+     "name": "European Right",
+     "seats": 17,
+     "leader": "Jean-Marie Le Pen",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "RBW",
+     "name": "Rainbow Group (regionalists)",
+     "seats": 13,
+     "leader": "Jaak Vandemeulebroucke",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "NI",
+     "name": "Non-Inscrits",
+     "seats": 12,
+     "leader": null,
+     "share": null,
+     "votes": null
+    }
+   ],
+   "before": {
+    "name": "Henry Plumb",
+    "party": "ED",
+    "office": "President of the European Parliament"
+   },
+   "after": {
+    "name": "Enrique Barón Crespo",
+    "party": "SOC",
+    "office": "President of the European Parliament"
+   },
+   "knownAs": "The green wave",
+   "summary": "Spain and Portugal's first full European election, held as the Berlin Wall entered its final months. The Socialists won a third straight victory, and the green wave arrived: 30 MEPs formed the first Green group after breakthroughs in Britain (15% of the vote and no seats, courtesy of first-past-the-post), France and Germany.",
+   "label": "1989",
+   "seatLeader": "SOC",
+   "countries": {
+    "groups": [
+     "SOC",
+     "EPP",
+     "LDR",
+     "EUL & LU",
+     "ED",
+     "G",
+     "EDA",
+     "DR",
+     "RBW",
+     "NI"
+    ],
+    "note": null,
+    "rows": [
+     {
+      "name": "Belgium",
+      "total": 24,
+      "byGroup": [
+       8,
+       7,
+       4,
+       0,
+       0,
+       3,
+       0,
+       1,
+       1,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Denmark",
+      "total": 16,
+      "byGroup": [
+       4,
+       2,
+       3,
+       1,
+       2,
+       0,
+       0,
+       0,
+       4,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "France",
+      "total": 81,
+      "byGroup": [
+       22,
+       6,
+       13,
+       7,
+       0,
+       8,
+       13,
+       10,
+       1,
+       1
+      ],
+      "detail": null
+     },
+     {
+      "name": "West Germany",
+      "total": 81,
+      "byGroup": [
+       31,
+       32,
+       4,
+       0,
+       0,
+       8,
+       0,
+       6,
+       0,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Ireland",
+      "total": 15,
+      "byGroup": [
+       1,
+       4,
+       2,
+       1,
+       0,
+       0,
+       6,
+       0,
+       1,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Italy",
+      "total": 81,
+      "byGroup": [
+       14,
+       27,
+       3,
+       22,
+       0,
+       7,
+       0,
+       0,
+       3,
+       5
+      ],
+      "detail": null
+     },
+     {
+      "name": "Luxembourg",
+      "total": 6,
+      "byGroup": [
+       2,
+       3,
+       1,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Netherlands",
+      "total": 25,
+      "byGroup": [
+       8,
+       10,
+       4,
+       0,
+       0,
+       2,
+       0,
+       0,
+       0,
+       1
+      ],
+      "detail": null
+     },
+     {
+      "name": "United Kingdom",
+      "total": 81,
+      "byGroup": [
+       46,
+       1,
+       0,
+       0,
+       32,
+       0,
+       0,
+       0,
+       1,
+       1
+      ],
+      "detail": null
+     },
+     {
+      "name": "Greece",
+      "total": 24,
+      "byGroup": [
+       9,
+       10,
+       0,
+       4,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Spain",
+      "total": 60,
+      "byGroup": [
+       27,
+       16,
+       6,
+       4,
+       0,
+       1,
+       0,
+       0,
+       2,
+       4
+      ],
+      "detail": null
+     },
+     {
+      "name": "Portugal",
+      "total": 24,
+      "byGroup": [
+       8,
+       3,
+       9,
+       3,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0
+      ],
+      "detail": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "1994",
+   "year": 1994,
+   "date": "9–12 June 1994",
+   "era": "founding",
+   "totalSeats": 567,
+   "majoritySeats": 285,
+   "turnout": 56.8,
+   "memberStates": 12,
+   "groups": [
+    {
+     "abbr": "PES",
+     "name": "Party of European Socialists",
+     "seats": 198,
+     "leader": "Pauline Green",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "EPP",
+     "name": "European People's Party",
+     "seats": 157,
+     "leader": "Wilfried Martens",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "ELDR",
+     "name": "European Liberal Democrat and Reform Party",
+     "seats": 43,
+     "leader": "Gijs De Vries",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "EUL",
+     "name": "European United Left",
+     "seats": 28,
+     "leader": "Alonso José Puerta",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "FE",
+     "name": "Forza Europa",
+     "seats": 27,
+     "leader": "Giancarlo Ligabue",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "EDA",
+     "name": "European Democratic Alliance",
+     "seats": 26,
+     "leader": "Jean-Claude Pasty",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "G",
+     "name": "Green Group",
+     "seats": 23,
+     "leader": null,
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "ERA",
+     "name": "European Radical Alliance",
+     "seats": 19,
+     "leader": "Catherine Lalumière",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "EN",
+     "name": "Europe of Nations",
+     "seats": 19,
+     "leader": "James Goldsmith",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "NI",
+     "name": "Non-Inscrits",
+     "seats": 27,
+     "leader": null,
+     "share": null,
+     "votes": null
+    }
+   ],
+   "before": {
+    "name": "Egon Klepsch",
+    "party": "EPP",
+    "office": "President of the European Parliament"
+   },
+   "after": {
+    "name": "Klaus Hänsch",
+    "party": "PES",
+    "office": "President of the European Parliament"
+   },
+   "knownAs": null,
+   "summary": "The first post-Maastricht election returned the Socialists' largest-ever group, 198 seats, in a chamber enlarged for German reunification. Silvio Berlusconi, Italy's brand-new Prime Minister, exported his party wholesale as Forza Europa, the first group built from a single national party.",
+   "label": "1994",
+   "seatLeader": "PES",
+   "countries": {
+    "groups": [
+     "PES",
+     "EPP",
+     "ELDR",
+     "EUL",
+     "NI",
+     "FE",
+     "EDA",
+     "G",
+     "ERA",
+     "EN"
+    ],
+    "note": null,
+    "rows": [
+     {
+      "name": "Belgium",
+      "total": 25,
+      "byGroup": [
+       6,
+       7,
+       6,
+       0,
+       3,
+       0,
+       0,
+       2,
+       1,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Denmark",
+      "total": 16,
+      "byGroup": [
+       3,
+       3,
+       5,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       4
+      ],
+      "detail": null
+     },
+     {
+      "name": "France",
+      "total": 87,
+      "byGroup": [
+       15,
+       13,
+       1,
+       7,
+       11,
+       0,
+       14,
+       0,
+       13,
+       13
+      ],
+      "detail": null
+     },
+     {
+      "name": "Germany",
+      "total": 99,
+      "byGroup": [
+       40,
+       47,
+       0,
+       0,
+       0,
+       0,
+       0,
+       12,
+       0,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Ireland",
+      "total": 15,
+      "byGroup": [
+       1,
+       4,
+       1,
+       0,
+       0,
+       0,
+       7,
+       2,
+       0,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Italy",
+      "total": 87,
+      "byGroup": [
+       18,
+       12,
+       7,
+       5,
+       12,
+       27,
+       0,
+       4,
+       2,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Luxembourg",
+      "total": 6,
+      "byGroup": [
+       2,
+       2,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Netherlands",
+      "total": 31,
+      "byGroup": [
+       8,
+       10,
+       10,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       2
+      ],
+      "detail": null
+     },
+     {
+      "name": "United Kingdom",
+      "total": 87,
+      "byGroup": [
+       63,
+       19,
+       2,
+       0,
+       1,
+       0,
+       0,
+       0,
+       2,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Greece",
+      "total": 25,
+      "byGroup": [
+       10,
+       9,
+       0,
+       4,
+       0,
+       0,
+       2,
+       0,
+       0,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Spain",
+      "total": 64,
+      "byGroup": [
+       22,
+       30,
+       2,
+       9,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Portugal",
+      "total": 25,
+      "byGroup": [
+       10,
+       1,
+       8,
+       3,
+       0,
+       0,
+       3,
+       0,
+       0,
+       0
+      ],
+      "detail": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "1999",
+   "year": 1999,
+   "date": "10–13 June 1999",
+   "era": "enlargement",
+   "totalSeats": 626,
+   "majoritySeats": 314,
+   "turnout": 49.8,
+   "memberStates": 15,
+   "groups": [
+    {
+     "abbr": "EPP-ED",
+     "name": "European People's Party–European Democrats",
+     "seats": 233,
+     "leader": "Hans-Gert Pöttering",
+     "share": 37.2,
+     "votes": null
+    },
+    {
+     "abbr": "PES",
+     "name": "Party of European Socialists",
+     "seats": 180,
+     "leader": "Enrique Barón Crespo",
+     "share": 28.8,
+     "votes": null
+    },
+    {
+     "abbr": "ELDR",
+     "name": "European Liberal Democrat and Reform Party",
+     "seats": 50,
+     "leader": "Pat Cox",
+     "share": 8.0,
+     "votes": null
+    },
+    {
+     "abbr": "G-EFA",
+     "name": "Greens–European Free Alliance",
+     "seats": 48,
+     "leader": "Heidi Hautala & Paul Lannoye",
+     "share": 7.7,
+     "votes": null
+    },
+    {
+     "abbr": "EUL-NGL",
+     "name": "European United Left–Nordic Green Left",
+     "seats": 42,
+     "leader": "Francis Wurtz",
+     "share": 6.7,
+     "votes": null
+    },
+    {
+     "abbr": "UEN",
+     "name": "Union for Europe of the Nations",
+     "seats": 31,
+     "leader": "Charles Pasqua",
+     "share": 4.8,
+     "votes": null
+    },
+    {
+     "abbr": "TGI",
+     "name": "Technical Group of Independents",
+     "seats": 18,
+     "leader": null,
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "EDD",
+     "name": "Europe of Democracies and Diversities",
+     "seats": 16,
+     "leader": "Jens-Peter Bonde",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "NI",
+     "name": "Non-Inscrits",
+     "seats": 8,
+     "leader": null,
+     "share": null,
+     "votes": null
+    }
+   ],
+   "before": {
+    "name": "José María Gil-Robles",
+    "party": "EPP",
+    "office": "President of the European Parliament"
+   },
+   "after": {
+    "name": "Nicole Fontaine",
+    "party": "EPP-ED",
+    "office": "President of the European Parliament"
+   },
+   "knownAs": null,
+   "summary": "Weeks after the Santer Commission resigned en masse over fraud allegations, a Parliament that had just flexed real power saw the EPP overtake the Socialists for the first time since 1979, a lead it has never surrendered. Turnout fell below 50% for the first time.",
+   "label": "1999",
+   "seatLeader": "EPP-ED",
+   "countries": {
+    "groups": [
+     "EPP-ED",
+     "PES",
+     "ELDR",
+     "G-EFA",
+     "EUL-NGL",
+     "UEN",
+     "NI & TGI",
+     "EDD"
+    ],
+    "note": "The source's by-country table differs slightly from the headline group totals (EPP-ED sums to 231 here against 233 in the headline result), reflecting members who switched groups in the Parliament's first days.",
+    "rows": [
+     {
+      "name": "Belgium",
+      "total": 24,
+      "byGroup": [
+       5,
+       5,
+       5,
+       7,
+       0,
+       0,
+       2,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Denmark",
+      "total": 16,
+      "byGroup": [
+       1,
+       3,
+       6,
+       0,
+       1,
+       1,
+       0,
+       4
+      ],
+      "detail": null
+     },
+     {
+      "name": "France",
+      "total": 87,
+      "byGroup": [
+       21,
+       22,
+       0,
+       9,
+       11,
+       13,
+       5,
+       6
+      ],
+      "detail": null
+     },
+     {
+      "name": "Germany",
+      "total": 99,
+      "byGroup": [
+       53,
+       33,
+       0,
+       7,
+       6,
+       0,
+       0,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Ireland",
+      "total": 15,
+      "byGroup": [
+       5,
+       1,
+       1,
+       2,
+       0,
+       6,
+       0,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Italy",
+      "total": 87,
+      "byGroup": [
+       34,
+       17,
+       7,
+       2,
+       6,
+       9,
+       12,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Luxembourg",
+      "total": 6,
+      "byGroup": [
+       2,
+       2,
+       1,
+       1,
+       0,
+       0,
+       0,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Netherlands",
+      "total": 31,
+      "byGroup": [
+       9,
+       6,
+       8,
+       4,
+       1,
+       0,
+       0,
+       3
+      ],
+      "detail": null
+     },
+     {
+      "name": "United Kingdom",
+      "total": 87,
+      "byGroup": [
+       37,
+       30,
+       10,
+       6,
+       0,
+       0,
+       1,
+       3
+      ],
+      "detail": null
+     },
+     {
+      "name": "Greece",
+      "total": 25,
+      "byGroup": [
+       9,
+       9,
+       0,
+       0,
+       7,
+       0,
+       0,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Spain",
+      "total": 65,
+      "byGroup": [
+       29,
+       24,
+       3,
+       4,
+       4,
+       0,
+       1,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Portugal",
+      "total": 25,
+      "byGroup": [
+       9,
+       12,
+       0,
+       0,
+       2,
+       2,
+       0,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Austria",
+      "total": 21,
+      "byGroup": [
+       7,
+       7,
+       0,
+       2,
+       0,
+       0,
+       5,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Finland",
+      "total": 16,
+      "byGroup": [
+       5,
+       3,
+       5,
+       2,
+       1,
+       0,
+       0,
+       0
+      ],
+      "detail": null
+     },
+     {
+      "name": "Sweden",
+      "total": 20,
+      "byGroup": [
+       5,
+       6,
+       4,
+       2,
+       3,
+       0,
+       0,
+       0
+      ],
+      "detail": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "2004",
+   "year": 2004,
+   "date": "10–13 June 2004",
+   "era": "enlargement",
+   "totalSeats": 732,
+   "majoritySeats": 367,
+   "turnout": 45.47,
+   "memberStates": 25,
+   "groups": [
+    {
+     "abbr": "EPP-ED",
+     "name": "European People's Party–European Democrats",
+     "seats": 268,
+     "leader": "Hans-Gert Pöttering",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "PES",
+     "name": "Party of European Socialists",
+     "seats": 200,
+     "leader": "Martin Schulz",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "ALDE",
+     "name": "Alliance of Liberals and Democrats for Europe",
+     "seats": 88,
+     "leader": "Graham Watson",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "G-EFA",
+     "name": "Greens–European Free Alliance",
+     "seats": 42,
+     "leader": "Daniel Cohn-Bendit & Monica Frassoni",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "EUL-NGL",
+     "name": "European United Left–Nordic Green Left",
+     "seats": 41,
+     "leader": "Francis Wurtz",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "IND/DEM",
+     "name": "Independence/Democracy",
+     "seats": 37,
+     "leader": "Jens-Peter Bonde & Nigel Farage",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "UEN",
+     "name": "Union for Europe of the Nations",
+     "seats": 27,
+     "leader": "Brian Crowley & Cristiana Muscardini",
+     "share": null,
+     "votes": null
+    },
+    {
+     "abbr": "NI",
+     "name": "Non-Inscrits",
+     "seats": 29,
+     "leader": null,
+     "share": null,
+     "votes": null
+    }
+   ],
+   "before": {
+    "name": "Pat Cox",
+    "party": "ELDR",
+    "office": "President of the European Parliament"
+   },
+   "after": {
+    "name": "Josep Borrell",
+    "party": "PES",
+    "office": "President of the European Parliament"
+   },
+   "knownAs": "The big-bang election",
+   "summary": "The first election after the big-bang enlargement: 342 million eligible voters in 25 countries, the largest transnational vote ever held to that point. Ten mostly ex-communist new member states elected their first MEPs, turnout hit a new low of 45%, and UKIP's 12 seats previewed a rising eurosceptic tide.",
+   "label": "2004",
+   "seatLeader": "EPP-ED",
+   "countries": {
+    "groups": [
+     "EPP-ED",
+     "PES",
+     "ALDE",
+     "G-EFA",
+     "EUL-NGL",
+     "IND/DEM",
+     "UEN",
+     "NI"
+    ],
+    "note": null,
+    "rows": [
+     {
+      "name": "Belgium",
+      "total": 24,
+      "byGroup": [
+       6,
+       7,
+       6,
+       2,
+       0,
+       0,
+       0,
+       3
+      ],
+      "detail": [
+       "CD&V/N-VA, CDH, CSP",
+       "PS, SP.A",
+       "VLD, MR",
+       "Groen!, Ecolo",
+       "",
+       "",
+       "",
+       "VB"
+      ]
+     },
+     {
+      "name": "Denmark",
+      "total": 14,
+      "byGroup": [
+       1,
+       5,
+       4,
+       1,
+       1,
+       1,
+       1,
+       0
+      ],
+      "detail": [
+       "C",
+       "S",
+       "V, B",
+       "SF",
+       "N",
+       "J",
+       "DF",
+       ""
+      ]
+     },
+     {
+      "name": "France",
+      "total": 78,
+      "byGroup": [
+       17,
+       31,
+       11,
+       6,
+       3,
+       3,
+       0,
+       7
+      ],
+      "detail": [
+       "UMP",
+       "PS",
+       "UDF",
+       "Verts",
+       "PCF",
+       "MPF",
+       "",
+       "FN"
+      ]
+     },
+     {
+      "name": "Germany",
+      "total": 99,
+      "byGroup": [
+       49,
+       23,
+       7,
+       13,
+       7,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "CDU, CSU",
+       "SPD",
+       "FDP",
+       "GRÜNE",
+       "PDS",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Ireland",
+      "total": 13,
+      "byGroup": [
+       5,
+       1,
+       1,
+       0,
+       1,
+       1,
+       4,
+       0
+      ],
+      "detail": [
+       "FG",
+       "LAB",
+       "Ind.",
+       "",
+       "SF",
+       "Ind.",
+       "FF",
+       ""
+      ]
+     },
+     {
+      "name": "Italy",
+      "total": 78,
+      "byGroup": [
+       24,
+       16,
+       12,
+       2,
+       7,
+       4,
+       9,
+       4
+      ],
+      "detail": [
+       "FI, UDC, SVP, UDEUR, PP",
+       "DS, SDI, Ind.",
+       "DL, LB, IdV, MRE",
+       "FdV",
+       "PRC, PdCI",
+       "LN",
+       "AN",
+       "SUE, AS, FT"
+      ]
+     },
+     {
+      "name": "Luxembourg",
+      "total": 6,
+      "byGroup": [
+       3,
+       1,
+       1,
+       1,
+       0,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "CSV",
+       "LSAP",
+       "DP",
+       "Gréng",
+       "",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Netherlands",
+      "total": 27,
+      "byGroup": [
+       7,
+       7,
+       5,
+       4,
+       2,
+       2,
+       0,
+       0
+      ],
+      "detail": [
+       "CDA",
+       "PvdA",
+       "VVD, D66",
+       "GL, ET",
+       "SP",
+       "CU-SGP",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "United Kingdom",
+      "total": 78,
+      "byGroup": [
+       28,
+       19,
+       12,
+       5,
+       1,
+       11,
+       0,
+       2
+      ],
+      "detail": [
+       "CON, UUP",
+       "LAB",
+       "LD",
+       "GPEW, SNP, PC",
+       "SF",
+       "UKIP",
+       "",
+       "UKIP, DUP"
+      ]
+     },
+     {
+      "name": "Greece",
+      "total": 24,
+      "byGroup": [
+       11,
+       8,
+       0,
+       0,
+       4,
+       1,
+       0,
+       0
+      ],
+      "detail": [
+       "ND",
+       "PASOK",
+       "",
+       "",
+       "KKE, Synaspismós",
+       "LAOS",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Spain",
+      "total": 54,
+      "byGroup": [
+       24,
+       24,
+       2,
+       3,
+       1,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "PP",
+       "PSOE",
+       "CDC, EAJ",
+       "Verdes, ICV, ERC",
+       "IU",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Portugal",
+      "total": 24,
+      "byGroup": [
+       9,
+       12,
+       0,
+       0,
+       3,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "PSD, CDS-PP",
+       "PS",
+       "",
+       "",
+       "PCP, BE",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Austria",
+      "total": 18,
+      "byGroup": [
+       6,
+       7,
+       0,
+       2,
+       0,
+       0,
+       0,
+       3
+      ],
+      "detail": [
+       "ÖVP",
+       "SPÖ",
+       "",
+       "GRÜNE",
+       "",
+       "",
+       "",
+       "Martin, FPÖ"
+      ]
+     },
+     {
+      "name": "Finland",
+      "total": 14,
+      "byGroup": [
+       4,
+       3,
+       5,
+       1,
+       1,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "Kok.",
+       "SDP",
+       "Kesk., SFP",
+       "Vihr.",
+       "VAS",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Sweden",
+      "total": 19,
+      "byGroup": [
+       5,
+       5,
+       3,
+       1,
+       2,
+       3,
+       0,
+       0
+      ],
+      "detail": [
+       "M, KD",
+       "SAP",
+       "FP, C",
+       "MP",
+       "V",
+       "JL",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Cyprus",
+      "total": 6,
+      "byGroup": [
+       3,
+       0,
+       1,
+       0,
+       2,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "DISY, GTE",
+       "",
+       "DIKO",
+       "",
+       "AKEL",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Czech Republic",
+      "total": 24,
+      "byGroup": [
+       14,
+       2,
+       0,
+       0,
+       6,
+       1,
+       0,
+       1
+      ],
+      "detail": [
+       "ODS, SNK, KDU–ČSL, ED",
+       "ČSSD",
+       "",
+       "",
+       "KSČM",
+       "Ind.",
+       "",
+       "Ind."
+      ]
+     },
+     {
+      "name": "Estonia",
+      "total": 6,
+      "byGroup": [
+       1,
+       3,
+       2,
+       0,
+       0,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "IL",
+       "SDE",
+       "K, ER",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Hungary",
+      "total": 24,
+      "byGroup": [
+       13,
+       9,
+       2,
+       0,
+       0,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "FIDESZ, MDF",
+       "MSZP",
+       "SZDSZ",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Latvia",
+      "total": 9,
+      "byGroup": [
+       3,
+       0,
+       1,
+       1,
+       0,
+       0,
+       4,
+       0
+      ],
+      "detail": [
+       "JL, TP",
+       "",
+       "LC",
+       "PCTVL",
+       "",
+       "",
+       "TB/LNNK",
+       ""
+      ]
+     },
+     {
+      "name": "Lithuania",
+      "total": 13,
+      "byGroup": [
+       2,
+       2,
+       7,
+       0,
+       0,
+       0,
+       2,
+       0
+      ],
+      "detail": [
+       "TS",
+       "LSDP",
+       "DP, LiCS",
+       "",
+       "",
+       "",
+       "VNDPS, LDP",
+       ""
+      ]
+     },
+     {
+      "name": "Malta",
+      "total": 5,
+      "byGroup": [
+       2,
+       3,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "PN",
+       "PL",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Poland",
+      "total": 54,
+      "byGroup": [
+       19,
+       8,
+       4,
+       0,
+       0,
+       10,
+       7,
+       6
+      ],
+      "detail": [
+       "PO, PSL",
+       "SLD, SDPL",
+       "UW",
+       "",
+       "",
+       "LPR",
+       "PiS",
+       "SRP"
+      ]
+     },
+     {
+      "name": "Slovakia",
+      "total": 14,
+      "byGroup": [
+       8,
+       3,
+       0,
+       0,
+       0,
+       0,
+       0,
+       3
+      ],
+      "detail": [
+       "SDKÚ, KDH, MKP",
+       "SMER",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "ĽS-HZDS"
+      ]
+     },
+     {
+      "name": "Slovenia",
+      "total": 7,
+      "byGroup": [
+       4,
+       1,
+       2,
+       0,
+       0,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "NSi, SDS",
+       "ZLSD",
+       "LDS",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "2009",
+   "year": 2009,
+   "date": "4–7 June 2009",
+   "era": "enlargement",
+   "totalSeats": 736,
+   "majoritySeats": 369,
+   "turnout": 43.24,
+   "memberStates": 27,
+   "groups": [
+    {
+     "abbr": "EPP",
+     "name": "European People's Party",
+     "seats": 265,
+     "leader": "Joseph Daul",
+     "share": 36.0,
+     "votes": null
+    },
+    {
+     "abbr": "S&D",
+     "name": "Progressive Alliance of Socialists and Democrats",
+     "seats": 183,
+     "leader": "Martin Schulz",
+     "share": 25.0,
+     "votes": null
+    },
+    {
+     "abbr": "ALDE",
+     "name": "Alliance of Liberals and Democrats for Europe",
+     "seats": 84,
+     "leader": "Graham Watson",
+     "share": 11.4,
+     "votes": null
+    },
+    {
+     "abbr": "G-EFA",
+     "name": "Greens–European Free Alliance",
+     "seats": 55,
+     "leader": "Daniel Cohn-Bendit",
+     "share": 7.5,
+     "votes": null
+    },
+    {
+     "abbr": "ECR",
+     "name": "European Conservatives and Reformists",
+     "seats": 54,
+     "leader": null,
+     "share": 7.3,
+     "votes": null
+    },
+    {
+     "abbr": "EUL-NGL",
+     "name": "European United Left–Nordic Green Left",
+     "seats": 35,
+     "leader": "Francis Wurtz",
+     "share": 4.8,
+     "votes": null
+    },
+    {
+     "abbr": "EFD",
+     "name": "Europe of Freedom and Democracy",
+     "seats": 32,
+     "leader": "Nigel Farage",
+     "share": 4.3,
+     "votes": null
+    },
+    {
+     "abbr": "NI",
+     "name": "Non-Inscrits",
+     "seats": 28,
+     "leader": null,
+     "share": null,
+     "votes": null
+    }
+   ],
+   "before": {
+    "name": "Hans-Gert Pöttering",
+    "party": "EPP",
+    "office": "President of the European Parliament"
+   },
+   "after": {
+    "name": "Jerzy Buzek",
+    "party": "EPP",
+    "office": "President of the European Parliament"
+   },
+   "knownAs": null,
+   "summary": "Held in the trough of the financial crisis, the election punished governing socialists rather than incumbents generally: the EPP won decisively while the S&D fell to its worst result yet. David Cameron's Conservatives walked out of the EPP to found the ECR, and Jerzy Buzek of Poland became the first president of the chamber from the former eastern bloc.",
+   "label": "2009",
+   "seatLeader": "EPP",
+   "countries": {
+    "groups": [
+     "EPP",
+     "PES",
+     "ALDE",
+     "G-EFA",
+     "EUL-NGL",
+     "UEN",
+     "EFD",
+     "NI"
+    ],
+    "note": "Countries are grouped by the European group each national party sat with before the election, as the source presents them; the source table sums to 737 against the chamber's 736 full members.",
+    "rows": [
+     {
+      "name": "Belgium",
+      "total": 22,
+      "byGroup": [
+       6,
+       5,
+       5,
+       3,
+       0,
+       0,
+       0,
+       3
+      ],
+      "detail": [
+       "CD&V, N-VA, CDH, CSP-EVP",
+       "PS, SP.A",
+       "OpenVLD, MR",
+       "Groen!, Ecolo",
+       "",
+       "",
+       "",
+       "VB, LDD"
+      ]
+     },
+     {
+      "name": "Denmark",
+      "total": 13,
+      "byGroup": [
+       1,
+       4,
+       3,
+       2,
+       1,
+       2,
+       0,
+       0
+      ],
+      "detail": [
+       "C",
+       "A",
+       "V",
+       "F",
+       "N",
+       "O",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "France",
+      "total": 72,
+      "byGroup": [
+       29,
+       14,
+       6,
+       14,
+       5,
+       0,
+       1,
+       3
+      ],
+      "detail": [
+       "UMP, NC, LGM",
+       "PS",
+       "MoDem",
+       "E-É",
+       "FG",
+       "",
+       "Libertas",
+       "FN"
+      ]
+     },
+     {
+      "name": "Germany",
+      "total": 99,
+      "byGroup": [
+       42,
+       23,
+       12,
+       14,
+       8,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "CDU, CSU",
+       "SPD",
+       "FDP",
+       "Grüne",
+       "Linke",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Ireland",
+      "total": 12,
+      "byGroup": [
+       4,
+       3,
+       4,
+       0,
+       1,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "FG",
+       "Lab",
+       "FF, Harkin",
+       "",
+       "SP",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Italy",
+      "total": 72,
+      "byGroup": [
+       35,
+       21,
+       7,
+       0,
+       0,
+       9,
+       0,
+       0
+      ],
+      "detail": [
+       "PdL, UDC, SVP",
+       "PD",
+       "IdV",
+       "",
+       "",
+       "LN",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Luxembourg",
+      "total": 6,
+      "byGroup": [
+       3,
+       1,
+       1,
+       1,
+       0,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "CSV",
+       "LSAP",
+       "DP",
+       "Gréng",
+       "",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Netherlands",
+      "total": 25,
+      "byGroup": [
+       5,
+       3,
+       6,
+       3,
+       2,
+       0,
+       2,
+       4
+      ],
+      "detail": [
+       "CDA",
+       "PvdA",
+       "VVD, D66",
+       "GL",
+       "SP",
+       "",
+       "CU-SGP",
+       "PVV"
+      ]
+     },
+     {
+      "name": "United Kingdom",
+      "total": 72,
+      "byGroup": [
+       0,
+       13,
+       11,
+       5,
+       1,
+       0,
+       13,
+       29
+      ],
+      "detail": [
+       "",
+       "LAB",
+       "LD",
+       "GPEW, SNP, PC",
+       "SF",
+       "",
+       "UKIP",
+       "CON/UCUNF, BNP, DUP"
+      ]
+     },
+     {
+      "name": "Greece",
+      "total": 22,
+      "byGroup": [
+       8,
+       8,
+       0,
+       1,
+       3,
+       0,
+       2,
+       0
+      ],
+      "detail": [
+       "ND",
+       "PASOK",
+       "",
+       "Greens",
+       "KKE, SYRIZA",
+       "",
+       "LAOS",
+       ""
+      ]
+     },
+     {
+      "name": "Spain",
+      "total": 50,
+      "byGroup": [
+       23,
+       21,
+       2,
+       2,
+       1,
+       0,
+       0,
+       1
+      ],
+      "detail": [
+       "PP",
+       "PSOE",
+       "CDC, EAJ-PNV",
+       "ERC, ICV",
+       "IU",
+       "",
+       "",
+       "UPyD"
+      ]
+     },
+     {
+      "name": "Portugal",
+      "total": 22,
+      "byGroup": [
+       10,
+       7,
+       0,
+       0,
+       5,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "PSD, CDS–PP",
+       "PS",
+       "",
+       "",
+       "CDU, BE",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Austria",
+      "total": 17,
+      "byGroup": [
+       6,
+       4,
+       0,
+       2,
+       0,
+       0,
+       0,
+       5
+      ],
+      "detail": [
+       "ÖVP",
+       "SPÖ",
+       "",
+       "Grüne",
+       "",
+       "",
+       "",
+       "Martin, FPÖ"
+      ]
+     },
+     {
+      "name": "Finland",
+      "total": 13,
+      "byGroup": [
+       4,
+       2,
+       4,
+       2,
+       0,
+       0,
+       0,
+       1
+      ],
+      "detail": [
+       "Kok., KD",
+       "SDP",
+       "Kesk., SFP",
+       "Vihr.",
+       "",
+       "",
+       "",
+       "PS"
+      ]
+     },
+     {
+      "name": "Sweden",
+      "total": 18,
+      "byGroup": [
+       5,
+       5,
+       4,
+       2,
+       1,
+       0,
+       0,
+       1
+      ],
+      "detail": [
+       "M, KD",
+       "S",
+       "FP, C",
+       "MP",
+       "V",
+       "",
+       "",
+       "PP"
+      ]
+     },
+     {
+      "name": "Cyprus",
+      "total": 6,
+      "byGroup": [
+       2,
+       1,
+       0,
+       0,
+       2,
+       0,
+       0,
+       1
+      ],
+      "detail": [
+       "DISY",
+       "EDEK",
+       "",
+       "",
+       "AKEL",
+       "",
+       "",
+       "DIKO"
+      ]
+     },
+     {
+      "name": "Czech Republic",
+      "total": 22,
+      "byGroup": [
+       2,
+       7,
+       0,
+       0,
+       4,
+       0,
+       0,
+       9
+      ],
+      "detail": [
+       "KDU–ČSL",
+       "ČSSD",
+       "",
+       "",
+       "KSČM",
+       "",
+       "",
+       "ODS"
+      ]
+     },
+     {
+      "name": "Estonia",
+      "total": 6,
+      "byGroup": [
+       1,
+       1,
+       3,
+       0,
+       0,
+       0,
+       0,
+       1
+      ],
+      "detail": [
+       "IRL",
+       "SDE",
+       "RE, KE",
+       "",
+       "",
+       "",
+       "",
+       "Tarand"
+      ]
+     },
+     {
+      "name": "Hungary",
+      "total": 22,
+      "byGroup": [
+       14,
+       4,
+       0,
+       0,
+       0,
+       0,
+       0,
+       4
+      ],
+      "detail": [
+       "Fidesz-MPP",
+       "MSZP",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "Jobbik, MDF"
+      ]
+     },
+     {
+      "name": "Latvia",
+      "total": 8,
+      "byGroup": [
+       3,
+       0,
+       1,
+       1,
+       0,
+       1,
+       0,
+       2
+      ],
+      "detail": [
+       "JL, PS",
+       "",
+       "LPP/LC",
+       "PCTVL",
+       "",
+       "TB/LNNK",
+       "",
+       "SC"
+      ]
+     },
+     {
+      "name": "Lithuania",
+      "total": 12,
+      "byGroup": [
+       4,
+       3,
+       2,
+       0,
+       0,
+       2,
+       0,
+       1
+      ],
+      "detail": [
+       "TS-LKD",
+       "LSDP",
+       "DP, LRLS",
+       "",
+       "",
+       "TT",
+       "",
+       "LLRA"
+      ]
+     },
+     {
+      "name": "Malta",
+      "total": 5,
+      "byGroup": [
+       2,
+       3,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "PN",
+       "PL",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Poland",
+      "total": 50,
+      "byGroup": [
+       28,
+       7,
+       0,
+       0,
+       0,
+       0,
+       0,
+       15
+      ],
+      "detail": [
+       "PO, PSL",
+       "SLD-UP",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "PiS"
+      ]
+     },
+     {
+      "name": "Slovakia",
+      "total": 13,
+      "byGroup": [
+       6,
+       5,
+       0,
+       0,
+       0,
+       0,
+       0,
+       2
+      ],
+      "detail": [
+       "SDKÚ-DS, KDH, SMK",
+       "Smer",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "SNS, LS-HZDS"
+      ]
+     },
+     {
+      "name": "Slovenia",
+      "total": 7,
+      "byGroup": [
+       3,
+       2,
+       2,
+       0,
+       0,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "SDS, NSi",
+       "SD",
+       "LDS, Zares",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Bulgaria",
+      "total": 18,
+      "byGroup": [
+       7,
+       4,
+       5,
+       0,
+       0,
+       0,
+       0,
+       2
+      ],
+      "detail": [
+       "GERB, SDS, DSB",
+       "BSP",
+       "DPS, NDSV",
+       "",
+       "",
+       "",
+       "",
+       "Attack"
+      ]
+     },
+     {
+      "name": "Romania",
+      "total": 33,
+      "byGroup": [
+       14,
+       11,
+       5,
+       0,
+       0,
+       0,
+       0,
+       3
+      ],
+      "detail": [
+       "PD-L, UDMR, Băsescu, Tőkés",
+       "PSD-PC",
+       "PNL",
+       "",
+       "",
+       "",
+       "",
+       "PRM"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "2014",
+   "year": 2014,
+   "date": "22–25 May 2014",
+   "era": "polycrisis",
+   "totalSeats": 751,
+   "majoritySeats": 376,
+   "turnout": 42.54,
+   "memberStates": 28,
+   "groups": [
+    {
+     "abbr": "EPP",
+     "name": "European People's Party",
+     "seats": 221,
+     "leader": "Jean-Claude Juncker",
+     "share": 23.8,
+     "votes": null
+    },
+    {
+     "abbr": "S&D",
+     "name": "Progressive Alliance of Socialists and Democrats",
+     "seats": 191,
+     "leader": "Martin Schulz",
+     "share": 24.4,
+     "votes": null
+    },
+    {
+     "abbr": "ECR",
+     "name": "European Conservatives and Reformists",
+     "seats": 70,
+     "leader": "Syed Kamall",
+     "share": 5.2,
+     "votes": null
+    },
+    {
+     "abbr": "ALDE",
+     "name": "Alliance of Liberals and Democrats for Europe",
+     "seats": 67,
+     "leader": "Guy Verhofstadt",
+     "share": 7.0,
+     "votes": null
+    },
+    {
+     "abbr": "EUL-NGL",
+     "name": "European United Left–Nordic Green Left",
+     "seats": 52,
+     "leader": "Alexis Tsipras",
+     "share": 5.6,
+     "votes": null
+    },
+    {
+     "abbr": "G-EFA",
+     "name": "Greens–European Free Alliance",
+     "seats": 50,
+     "leader": "Ska Keller",
+     "share": 7.3,
+     "votes": null
+    },
+    {
+     "abbr": "EFDD",
+     "name": "Europe of Freedom and Direct Democracy",
+     "seats": 48,
+     "leader": "Nigel Farage & David Borrelli",
+     "share": 6.6,
+     "votes": null
+    },
+    {
+     "abbr": "NI",
+     "name": "Non-Inscrits",
+     "seats": 52,
+     "leader": null,
+     "share": null,
+     "votes": null
+    }
+   ],
+   "before": {
+    "name": "José Manuel Barroso",
+    "party": "EPP",
+    "office": "President of the European Commission"
+   },
+   "after": {
+    "name": "Jean-Claude Juncker",
+    "party": "EPP",
+    "office": "President of the European Commission"
+   },
+   "knownAs": "The Spitzenkandidat election",
+   "summary": "The first election fought under the Spitzenkandidat system, in which the lead candidate of the winning family claims the Commission presidency: the EPP's Jean-Claude Juncker duly got the job over David Cameron's objections. Eurosceptic insurgents topped the poll outright in Britain (UKIP), France (Front National) and Denmark, the first time anti-EU parties had won national first places at a European election. Group seat totals are those at the Parliament's constitutive session.",
+   "label": "2014",
+   "seatLeader": "EPP",
+   "countries": {
+    "groups": [
+     "EPP",
+     "S&D",
+     "ECR",
+     "ALDE",
+     "EUL-NGL",
+     "G-EFA",
+     "EFDD",
+     "NI"
+    ],
+    "note": null,
+    "rows": [
+     {
+      "name": "Belgium",
+      "total": 21,
+      "byGroup": [
+       4,
+       4,
+       4,
+       6,
+       0,
+       2,
+       0,
+       1
+      ],
+      "detail": [
+       "CD&V, CDH, CSP",
+       "PS, SP.A",
+       "N-VA",
+       "Open VLD, MR",
+       "",
+       "Groen, Ecolo",
+       "",
+       "VB"
+      ]
+     },
+     {
+      "name": "Denmark",
+      "total": 13,
+      "byGroup": [
+       1,
+       3,
+       4,
+       3,
+       1,
+       1,
+       0,
+       0
+      ],
+      "detail": [
+       "K",
+       "S",
+       "DF",
+       "V, RV",
+       "N",
+       "SF",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "France",
+      "total": 74,
+      "byGroup": [
+       20,
+       13,
+       0,
+       7,
+       4,
+       6,
+       1,
+       23
+      ],
+      "detail": [
+       "UMP",
+       "PS, PRG",
+       "",
+       "MoDem, UDI",
+       "FG, UOM",
+       "EE",
+       "Bergeron",
+       "FN"
+      ]
+     },
+     {
+      "name": "Germany",
+      "total": 96,
+      "byGroup": [
+       34,
+       27,
+       8,
+       4,
+       8,
+       13,
+       0,
+       2
+      ],
+      "detail": [
+       "CDU, CSU",
+       "SPD",
+       "AfD, Familie",
+       "FDP, FW",
+       "Linke, Tierschutz",
+       "B'90/Grüne, Piraten, ÖDP",
+       "",
+       "NPD, Partei"
+      ]
+     },
+     {
+      "name": "Ireland",
+      "total": 11,
+      "byGroup": [
+       4,
+       1,
+       1,
+       1,
+       4,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "FG",
+       "Childers",
+       "FF/Crowley",
+       "Harkin",
+       "SF, Flanagan",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Italy",
+      "total": 73,
+      "byGroup": [
+       17,
+       31,
+       0,
+       0,
+       3,
+       0,
+       17,
+       5
+      ],
+      "detail": [
+       "FI, NCD, UDC, SVP",
+       "PD",
+       "",
+       "",
+       "AET",
+       "",
+       "M5S",
+       "LN"
+      ]
+     },
+     {
+      "name": "Luxembourg",
+      "total": 6,
+      "byGroup": [
+       3,
+       1,
+       0,
+       1,
+       0,
+       1,
+       0,
+       0
+      ],
+      "detail": [
+       "CSV",
+       "LSAP",
+       "",
+       "DP",
+       "",
+       "Gréng",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Netherlands",
+      "total": 26,
+      "byGroup": [
+       5,
+       3,
+       2,
+       7,
+       3,
+       2,
+       0,
+       4
+      ],
+      "detail": [
+       "CDA",
+       "PvdA",
+       "CU, SGP",
+       "D66, VVD",
+       "SP, PvdD",
+       "GL",
+       "",
+       "PVV"
+      ]
+     },
+     {
+      "name": "United Kingdom",
+      "total": 73,
+      "byGroup": [
+       0,
+       20,
+       20,
+       1,
+       1,
+       6,
+       24,
+       1
+      ],
+      "detail": [
+       "",
+       "Lab",
+       "Cons., UUP",
+       "LibDem",
+       "SF",
+       "Green, SNP, PC",
+       "UKIP",
+       "DUP"
+      ]
+     },
+     {
+      "name": "Greece",
+      "total": 21,
+      "byGroup": [
+       5,
+       4,
+       1,
+       0,
+       6,
+       0,
+       0,
+       5
+      ],
+      "detail": [
+       "ND",
+       "PASOK, Potami",
+       "ANEL",
+       "",
+       "SYRIZA",
+       "",
+       "",
+       "XA, KKE"
+      ]
+     },
+     {
+      "name": "Spain",
+      "total": 54,
+      "byGroup": [
+       17,
+       14,
+       0,
+       8,
+       11,
+       4,
+       0,
+       0
+      ],
+      "detail": [
+       "PP, UDC",
+       "PSOE, PSC",
+       "",
+       "UPyD, C's, CDC, PNV",
+       "Podemos, IU, Anova, LPD",
+       "EDD, ICV, PE",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Portugal",
+      "total": 21,
+      "byGroup": [
+       7,
+       8,
+       0,
+       2,
+       4,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "PSD, CDS-PP",
+       "PS",
+       "",
+       "MPT",
+       "PCP, BE",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Austria",
+      "total": 18,
+      "byGroup": [
+       5,
+       5,
+       0,
+       1,
+       0,
+       3,
+       0,
+       4
+      ],
+      "detail": [
+       "ÖVP",
+       "SPÖ",
+       "",
+       "NEOS",
+       "",
+       "Grüne",
+       "",
+       "FPÖ"
+      ]
+     },
+     {
+      "name": "Finland",
+      "total": 13,
+      "byGroup": [
+       3,
+       2,
+       2,
+       4,
+       1,
+       1,
+       0,
+       0
+      ],
+      "detail": [
+       "Kok.",
+       "SDP",
+       "PS",
+       "Kesk., RKP",
+       "Vas.",
+       "Vihr.",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Sweden",
+      "total": 20,
+      "byGroup": [
+       4,
+       6,
+       0,
+       3,
+       1,
+       4,
+       2,
+       0
+      ],
+      "detail": [
+       "M, KD",
+       "S, FI",
+       "",
+       "FP, C",
+       "V",
+       "MP",
+       "SD",
+       ""
+      ]
+     },
+     {
+      "name": "Cyprus",
+      "total": 6,
+      "byGroup": [
+       2,
+       2,
+       0,
+       0,
+       2,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "DISY",
+       "EDEK, DIKO",
+       "",
+       "",
+       "AKEL",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Czech Republic",
+      "total": 21,
+      "byGroup": [
+       7,
+       4,
+       2,
+       4,
+       3,
+       0,
+       1,
+       0
+      ],
+      "detail": [
+       "KDU-ČSL, TOP 09, STAN",
+       "ČSSD",
+       "ODS",
+       "ANO",
+       "KSČM",
+       "",
+       "Svobodní",
+       ""
+      ]
+     },
+     {
+      "name": "Estonia",
+      "total": 6,
+      "byGroup": [
+       1,
+       1,
+       0,
+       3,
+       0,
+       1,
+       0,
+       0
+      ],
+      "detail": [
+       "IRL",
+       "SDE",
+       "",
+       "RE, KE",
+       "",
+       "Tarand",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Hungary",
+      "total": 21,
+      "byGroup": [
+       12,
+       4,
+       0,
+       0,
+       0,
+       2,
+       0,
+       3
+      ],
+      "detail": [
+       "Fidesz, KDNP",
+       "MSZP, DK",
+       "",
+       "",
+       "",
+       "LMP, PM",
+       "",
+       "Jobbik"
+      ]
+     },
+     {
+      "name": "Latvia",
+      "total": 8,
+      "byGroup": [
+       4,
+       1,
+       1,
+       0,
+       0,
+       1,
+       1,
+       0
+      ],
+      "detail": [
+       "Vienotība",
+       "Saskaņa SDP",
+       "NA",
+       "",
+       "",
+       "LKS",
+       "LZS",
+       ""
+      ]
+     },
+     {
+      "name": "Lithuania",
+      "total": 11,
+      "byGroup": [
+       2,
+       2,
+       1,
+       3,
+       0,
+       1,
+       2,
+       0
+      ],
+      "detail": [
+       "TS-LKD",
+       "LSDP",
+       "LLRA",
+       "LRLS, DP",
+       "",
+       "LVŽS",
+       "TT",
+       ""
+      ]
+     },
+     {
+      "name": "Malta",
+      "total": 6,
+      "byGroup": [
+       3,
+       3,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "PN",
+       "PL",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Poland",
+      "total": 51,
+      "byGroup": [
+       23,
+       5,
+       19,
+       0,
+       0,
+       0,
+       0,
+       4
+      ],
+      "detail": [
+       "PO, PSL",
+       "SLD, UP",
+       "PiS, PR",
+       "",
+       "",
+       "",
+       "",
+       "KNP"
+      ]
+     },
+     {
+      "name": "Slovakia",
+      "total": 13,
+      "byGroup": [
+       6,
+       4,
+       2,
+       1,
+       0,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "KDH, SDKÚ-DS, SMK, Most-Híd",
+       "Smer – SD",
+       "OĽaNO, Nova",
+       "SaS",
+       "",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Slovenia",
+      "total": 8,
+      "byGroup": [
+       5,
+       1,
+       0,
+       1,
+       0,
+       1,
+       0,
+       0
+      ],
+      "detail": [
+       "SDS, NSi, SLS",
+       "SD",
+       "",
+       "DeSUS",
+       "",
+       "Verjamem",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Bulgaria",
+      "total": 17,
+      "byGroup": [
+       7,
+       4,
+       2,
+       4,
+       0,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "GERB, DSB",
+       "BSP",
+       "BBTs, VMRO",
+       "DPS",
+       "",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Romania",
+      "total": 32,
+      "byGroup": [
+       15,
+       16,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "PNL, PDL, UDMR, PMP",
+       "PSD, UNPR, PC",
+       "",
+       "Diaconu",
+       "",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Croatia",
+      "total": 11,
+      "byGroup": [
+       5,
+       2,
+       1,
+       2,
+       0,
+       1,
+       0,
+       0
+      ],
+      "detail": [
+       "HDZ, HSS",
+       "SDP",
+       "HSP-AS",
+       "HNS, IDS",
+       "",
+       "ORaH",
+       "",
+       ""
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "2019",
+   "year": 2019,
+   "date": "23–26 May 2019",
+   "era": "polycrisis",
+   "totalSeats": 751,
+   "majoritySeats": 376,
+   "turnout": 50.66,
+   "memberStates": 28,
+   "groups": [
+    {
+     "abbr": "EPP",
+     "name": "European People's Party",
+     "seats": 182,
+     "leader": "Manfred Weber",
+     "share": 21.0,
+     "votes": null
+    },
+    {
+     "abbr": "S&D",
+     "name": "Progressive Alliance of Socialists and Democrats",
+     "seats": 154,
+     "leader": "Frans Timmermans",
+     "share": 18.5,
+     "votes": null
+    },
+    {
+     "abbr": "Renew",
+     "name": "Renew Europe",
+     "seats": 108,
+     "leader": "Margrethe Vestager",
+     "share": 13.0,
+     "votes": null
+    },
+    {
+     "abbr": "G-EFA",
+     "name": "Greens–European Free Alliance",
+     "seats": 74,
+     "leader": "Bas Eickhout & Ska Keller",
+     "share": 11.7,
+     "votes": null
+    },
+    {
+     "abbr": "ID",
+     "name": "Identity and Democracy",
+     "seats": 73,
+     "leader": "Marco Zanni",
+     "share": 10.8,
+     "votes": null
+    },
+    {
+     "abbr": "ECR",
+     "name": "European Conservatives and Reformists",
+     "seats": 62,
+     "leader": "Jan Zahradil",
+     "share": 8.2,
+     "votes": null
+    },
+    {
+     "abbr": "EUL-NGL",
+     "name": "European United Left–Nordic Green Left",
+     "seats": 41,
+     "leader": "Violeta Tomić & Nico Cué",
+     "share": 6.5,
+     "votes": null
+    },
+    {
+     "abbr": "NI",
+     "name": "Non-Inscrits",
+     "seats": 57,
+     "leader": null,
+     "share": null,
+     "votes": null
+    }
+   ],
+   "before": {
+    "name": "Jean-Claude Juncker",
+    "party": "EPP",
+    "office": "President of the European Commission"
+   },
+   "after": {
+    "name": "Ursula von der Leyen",
+    "party": "EPP",
+    "office": "President of the European Commission"
+   },
+   "knownAs": null,
+   "summary": "Turnout rose for the first time in the Parliament's history, above 50%, in a contest framed as pro- versus anti-European. The EPP–S&D grand coalition lost its combined majority for the first time since 1979, liberals and greens surged, and Britain elected MEPs it would withdraw within a year. The Spitzenkandidat system collapsed: the European Council bypassed every lead candidate to nominate Ursula von der Leyen.",
+   "label": "2019",
+   "seatLeader": "EPP",
+   "countries": {
+    "groups": [
+     "EPP",
+     "S&D",
+     "Renew",
+     "G-EFA",
+     "ID",
+     "ECR",
+     "EUL-NGL",
+     "NI"
+    ],
+    "note": null,
+    "rows": [
+     {
+      "name": "Belgium",
+      "total": 21,
+      "byGroup": [
+       4,
+       3,
+       4,
+       3,
+       3,
+       3,
+       1,
+       0
+      ],
+      "detail": [
+       "CD&V, CDH, CSP",
+       "PS, SP.A",
+       "Open VLD, MR",
+       "ECOLO, Groen",
+       "VB",
+       "N-VA",
+       "PTB",
+       ""
+      ]
+     },
+     {
+      "name": "Denmark",
+      "total": 13,
+      "byGroup": [
+       1,
+       3,
+       5,
+       2,
+       1,
+       0,
+       1,
+       0
+      ],
+      "detail": [
+       "C",
+       "S",
+       "V, B",
+       "SF",
+       "O",
+       "",
+       "RG",
+       ""
+      ]
+     },
+     {
+      "name": "France",
+      "total": 74,
+      "byGroup": [
+       8,
+       5,
+       21,
+       12,
+       22,
+       0,
+       6,
+       0
+      ],
+      "detail": [
+       "LR-LC",
+       "PS-PP-ND",
+       "LREM-MoDem-Agir–MR",
+       "EELV",
+       "RN",
+       "",
+       "FI",
+       ""
+      ]
+     },
+     {
+      "name": "Germany",
+      "total": 96,
+      "byGroup": [
+       29,
+       16,
+       7,
+       25,
+       11,
+       1,
+       6,
+       1
+      ],
+      "detail": [
+       "CDU, CSU",
+       "SPD",
+       "FDP, FW",
+       "B’90/Grüne, ÖDP, Piraten, Volt Europa, PARTEI",
+       "AfD",
+       "Familie",
+       "Linke, Tierschutz",
+       "PARTEI"
+      ]
+     },
+     {
+      "name": "Ireland",
+      "total": 11,
+      "byGroup": [
+       4,
+       0,
+       1,
+       2,
+       0,
+       0,
+       4,
+       0
+      ],
+      "detail": [
+       "FG",
+       "",
+       "FF",
+       "GP",
+       "",
+       "",
+       "I4C, SF, Flanagan",
+       ""
+      ]
+     },
+     {
+      "name": "Italy",
+      "total": 73,
+      "byGroup": [
+       7,
+       19,
+       0,
+       0,
+       28,
+       5,
+       0,
+       14
+      ],
+      "detail": [
+       "FI, SVP",
+       "PD",
+       "",
+       "",
+       "Lega",
+       "FdI",
+       "",
+       "M5S"
+      ]
+     },
+     {
+      "name": "Luxembourg",
+      "total": 6,
+      "byGroup": [
+       2,
+       1,
+       2,
+       1,
+       0,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "CSV",
+       "LSAP",
+       "DP",
+       "Gréng",
+       "",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Netherlands",
+      "total": 26,
+      "byGroup": [
+       6,
+       6,
+       6,
+       3,
+       0,
+       4,
+       1,
+       0
+      ],
+      "detail": [
+       "CDA, 50+, CU",
+       "PvdA",
+       "D66, VVD",
+       "GL",
+       "",
+       "FvD, SGP",
+       "PvdD",
+       ""
+      ]
+     },
+     {
+      "name": "United Kingdom",
+      "total": 73,
+      "byGroup": [
+       0,
+       10,
+       17,
+       11,
+       0,
+       4,
+       1,
+       30
+      ],
+      "detail": [
+       "",
+       "LAB",
+       "LD, Alliance",
+       "GPEW, SNP, PC",
+       "",
+       "CON",
+       "SF",
+       "Brexit Party, DUP"
+      ]
+     },
+     {
+      "name": "Greece",
+      "total": 21,
+      "byGroup": [
+       8,
+       2,
+       0,
+       0,
+       0,
+       1,
+       6,
+       4
+      ],
+      "detail": [
+       "ND",
+       "KINAL",
+       "",
+       "",
+       "",
+       "EL",
+       "SYRIZA",
+       "KKE, XA"
+      ]
+     },
+     {
+      "name": "Spain",
+      "total": 54,
+      "byGroup": [
+       12,
+       20,
+       8,
+       2,
+       0,
+       3,
+       6,
+       3
+      ],
+      "detail": [
+       "PP",
+       "PSOE",
+       "Cs, CEUS: EAJ/PNV",
+       "AR: ERC, UP: CatComú",
+       "",
+       "VOX",
+       "UP: Podemos+IU, AR: EH Bildu",
+       "JuntsxCat, AR: ERC"
+      ]
+     },
+     {
+      "name": "Portugal",
+      "total": 21,
+      "byGroup": [
+       7,
+       9,
+       0,
+       1,
+       0,
+       0,
+       4,
+       0
+      ],
+      "detail": [
+       "PSD, CDS–PP",
+       "PS",
+       "",
+       "PAN",
+       "",
+       "",
+       "CDU: PCP, BE",
+       ""
+      ]
+     },
+     {
+      "name": "Austria",
+      "total": 18,
+      "byGroup": [
+       7,
+       5,
+       1,
+       2,
+       3,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "ÖVP",
+       "SPÖ",
+       "NEOS",
+       "Grüne",
+       "FPÖ",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Finland",
+      "total": 13,
+      "byGroup": [
+       3,
+       2,
+       3,
+       2,
+       2,
+       0,
+       1,
+       0
+      ],
+      "detail": [
+       "Kok.",
+       "SDP",
+       "Kesk., SFP",
+       "VIHR",
+       "PS",
+       "",
+       "Vas.",
+       ""
+      ]
+     },
+     {
+      "name": "Sweden",
+      "total": 20,
+      "byGroup": [
+       6,
+       5,
+       3,
+       2,
+       0,
+       3,
+       1,
+       0
+      ],
+      "detail": [
+       "M, KD",
+       "S",
+       "C, L",
+       "MP",
+       "",
+       "SD",
+       "V",
+       ""
+      ]
+     },
+     {
+      "name": "Cyprus",
+      "total": 6,
+      "byGroup": [
+       2,
+       2,
+       0,
+       0,
+       0,
+       0,
+       2,
+       0
+      ],
+      "detail": [
+       "DISY",
+       "EDEK, DIKO",
+       "",
+       "",
+       "",
+       "",
+       "AKEL",
+       ""
+      ]
+     },
+     {
+      "name": "Czech Republic",
+      "total": 21,
+      "byGroup": [
+       5,
+       0,
+       6,
+       3,
+       2,
+       4,
+       1,
+       0
+      ],
+      "detail": [
+       "TOP 09+STAN, KDU–ČSL",
+       "",
+       "ANO",
+       "Piráti",
+       "SPD",
+       "ODS",
+       "KSČM",
+       ""
+      ]
+     },
+     {
+      "name": "Estonia",
+      "total": 6,
+      "byGroup": [
+       0,
+       2,
+       3,
+       0,
+       1,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "",
+       "SDE",
+       "RE, KE",
+       "",
+       "EKRE",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Hungary",
+      "total": 21,
+      "byGroup": [
+       13,
+       5,
+       2,
+       0,
+       0,
+       0,
+       0,
+       1
+      ],
+      "detail": [
+       "Fidesz+KDNP",
+       "MSZP, DK",
+       "MoMo",
+       "",
+       "",
+       "",
+       "",
+       "Jobbik"
+      ]
+     },
+     {
+      "name": "Latvia",
+      "total": 8,
+      "byGroup": [
+       2,
+       2,
+       1,
+       1,
+       0,
+       2,
+       0,
+       0
+      ],
+      "detail": [
+       "JV",
+       "Saskaņa",
+       "AP!",
+       "LKS",
+       "",
+       "NA",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Lithuania",
+      "total": 11,
+      "byGroup": [
+       4,
+       2,
+       2,
+       2,
+       0,
+       1,
+       0,
+       0
+      ],
+      "detail": [
+       "TS–LKD, Maldeikienė",
+       "LSDP",
+       "DP, LRLS",
+       "LVŽS",
+       "",
+       "LLRA",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Malta",
+      "total": 6,
+      "byGroup": [
+       2,
+       4,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "PN",
+       "PL",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Poland",
+      "total": 51,
+      "byGroup": [
+       17,
+       8,
+       0,
+       0,
+       0,
+       26,
+       0,
+       0
+      ],
+      "detail": [
+       "KE: KO+PSL",
+       "KE: SLD, Wiosna",
+       "",
+       "",
+       "",
+       "PiS-SP",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Slovakia",
+      "total": 13,
+      "byGroup": [
+       4,
+       3,
+       2,
+       0,
+       0,
+       2,
+       0,
+       2
+      ],
+      "detail": [
+       "PS+SPOLU, KDH, OĽaNO",
+       "Smer–SD",
+       "PS+SPOLU",
+       "",
+       "",
+       "SaS",
+       "",
+       "ĽSNS"
+      ]
+     },
+     {
+      "name": "Slovenia",
+      "total": 8,
+      "byGroup": [
+       4,
+       2,
+       2,
+       0,
+       0,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "SDS+SLS, NSi",
+       "SD",
+       "LMS",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Bulgaria",
+      "total": 17,
+      "byGroup": [
+       7,
+       5,
+       3,
+       0,
+       0,
+       2,
+       0,
+       0
+      ],
+      "detail": [
+       "GERB+SDS, DSB",
+       "BSP",
+       "DPS",
+       "",
+       "",
+       "VMRO",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Romania",
+      "total": 32,
+      "byGroup": [
+       14,
+       10,
+       8,
+       0,
+       0,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "PNL, UDMR, PMP",
+       "PSD, PRO",
+       "USR-PLUS",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Croatia",
+      "total": 11,
+      "byGroup": [
+       4,
+       3,
+       1,
+       0,
+       0,
+       1,
+       0,
+       2
+      ],
+      "detail": [
+       "HDZ",
+       "SDP",
+       "AMS: IDS",
+       "",
+       "",
+       "HKS",
+       "",
+       "Human Shield, Kolakušić"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "2024",
+   "year": 2024,
+   "date": "6–9 June 2024",
+   "era": "polycrisis",
+   "totalSeats": 720,
+   "majoritySeats": 361,
+   "turnout": 50.74,
+   "memberStates": 27,
+   "groups": [
+    {
+     "abbr": "EPP",
+     "name": "European People's Party",
+     "seats": 188,
+     "leader": "Ursula von der Leyen",
+     "share": 19.6,
+     "votes": 34408182
+    },
+    {
+     "abbr": "S&D",
+     "name": "Progressive Alliance of Socialists and Democrats",
+     "seats": 136,
+     "leader": "Nicolas Schmit",
+     "share": 15.6,
+     "votes": 27368235
+    },
+    {
+     "abbr": "PfE",
+     "name": "Patriots for Europe",
+     "seats": 84,
+     "leader": null,
+     "share": 10.5,
+     "votes": 18462468
+    },
+    {
+     "abbr": "ECR",
+     "name": "European Conservatives and Reformists",
+     "seats": 78,
+     "leader": null,
+     "share": 8.9,
+     "votes": 15640969
+    },
+    {
+     "abbr": "Renew",
+     "name": "Renew Europe",
+     "seats": 77,
+     "leader": "Marie-Agnes Strack-Zimmermann",
+     "share": 9.1,
+     "votes": 16025384
+    },
+    {
+     "abbr": "G-EFA",
+     "name": "Greens–European Free Alliance",
+     "seats": 53,
+     "leader": "Terry Reintke & Bas Eickhout",
+     "share": 6.6,
+     "votes": 11537487
+    },
+    {
+     "abbr": "The Left",
+     "name": "The Left in the European Parliament – GUE/NGL",
+     "seats": 46,
+     "leader": "Walter Baier",
+     "share": 6.8,
+     "votes": 11864583
+    },
+    {
+     "abbr": "ESN",
+     "name": "Europe of Sovereign Nations",
+     "seats": 25,
+     "leader": null,
+     "share": 4.9,
+     "votes": 8659122
+    },
+    {
+     "abbr": "NI",
+     "name": "Non-Inscrits",
+     "seats": 33,
+     "leader": null,
+     "share": null,
+     "votes": null
+    }
+   ],
+   "before": {
+    "name": "Ursula von der Leyen",
+    "party": "EPP",
+    "office": "President of the European Commission"
+   },
+   "after": {
+    "name": "Ursula von der Leyen",
+    "party": "EPP",
+    "office": "President of the European Commission"
+   },
+   "knownAs": null,
+   "summary": "The first election of the post-Brexit Union returned a Parliament shifted rightward: the radical right now filled three groups, with Viktor Orbán's new Patriots for Europe becoming the third-largest, while the Greens and liberals gave back their 2019 gains. The EPP alone gained seats among the big groups, and Ursula von der Leyen was confirmed for a second Commission term.",
+   "label": "2024",
+   "seatLeader": "EPP",
+   "countries": {
+    "groups": [
+     "EPP",
+     "S&D",
+     "PfE",
+     "ECR",
+     "Renew",
+     "G-EFA",
+     "The Left",
+     "ESN",
+     "NI"
+    ],
+    "note": null,
+    "rows": [
+     {
+      "name": "Belgium",
+      "total": 22,
+      "byGroup": [
+       3,
+       4,
+       3,
+       3,
+       5,
+       2,
+       2,
+       0,
+       0
+      ],
+      "detail": [
+       "CD&V, CSP",
+       "Vooruit, PS",
+       "VB",
+       "N-VA",
+       "MR, Open VLD, LE",
+       "Groen, ECOLO",
+       "PTB",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Denmark",
+      "total": 15,
+      "byGroup": [
+       2,
+       3,
+       1,
+       1,
+       4,
+       3,
+       1,
+       0,
+       0
+      ],
+      "detail": [
+       "C, I",
+       "A",
+       "O",
+       "Æ",
+       "V, B, M",
+       "F",
+       "Ø",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "France",
+      "total": 81,
+      "byGroup": [
+       6,
+       13,
+       30,
+       4,
+       13,
+       5,
+       9,
+       1,
+       0
+      ],
+      "detail": [
+       "LR",
+       "PS-PP",
+       "RN",
+       "R!",
+       "Ensemble",
+       "LE",
+       "FI",
+       "R!",
+       ""
+      ]
+     },
+     {
+      "name": "Germany",
+      "total": 96,
+      "byGroup": [
+       31,
+       14,
+       0,
+       0,
+       8,
+       15,
+       4,
+       14,
+       10
+      ],
+      "detail": [
+       "CDU, CSU, ÖDP, FAMILIE",
+       "SPD",
+       "",
+       "",
+       "FDP, FW",
+       "B90/Grüne, Volt",
+       "Linke, Tierschutz",
+       "AfD",
+       "BSW, PARTEI, AfD, PdF"
+      ]
+     },
+     {
+      "name": "Ireland",
+      "total": 14,
+      "byGroup": [
+       4,
+       1,
+       0,
+       0,
+       6,
+       0,
+       3,
+       0,
+       0
+      ],
+      "detail": [
+       "FG",
+       "Lab",
+       "",
+       "",
+       "FF, II, McNamara",
+       "",
+       "SF, Flanagan",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Italy",
+      "total": 76,
+      "byGroup": [
+       9,
+       21,
+       8,
+       24,
+       0,
+       4,
+       10,
+       0,
+       0
+      ],
+      "detail": [
+       "FI, SVP",
+       "PD",
+       "Lega",
+       "FdI",
+       "",
+       "AVS: EV",
+       "M5S, AVS: SI",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Luxembourg",
+      "total": 6,
+      "byGroup": [
+       2,
+       1,
+       0,
+       1,
+       1,
+       1,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "CSV",
+       "LSAP",
+       "",
+       "ADR",
+       "DP",
+       "Gréng",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Netherlands",
+      "total": 31,
+      "byGroup": [
+       6,
+       4,
+       6,
+       1,
+       7,
+       6,
+       1,
+       0,
+       0
+      ],
+      "detail": [
+       "CDA, BBB, NSC",
+       "GL–PvdA: PvdA",
+       "PVV",
+       "SGP",
+       "VVD, D66",
+       "GL–PvdA: GL, Volt",
+       "PvdD",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Greece",
+      "total": 21,
+      "byGroup": [
+       7,
+       3,
+       1,
+       2,
+       0,
+       0,
+       4,
+       0,
+       4
+      ],
+      "detail": [
+       "ND",
+       "PASOK-KINAL",
+       "FL",
+       "EL",
+       "",
+       "",
+       "Syriza",
+       "",
+       "KKE, NIKI, PE"
+      ]
+     },
+     {
+      "name": "Spain",
+      "total": 61,
+      "byGroup": [
+       22,
+       20,
+       6,
+       0,
+       1,
+       4,
+       4,
+       0,
+       4
+      ],
+      "detail": [
+       "PP",
+       "PSOE",
+       "Vox",
+       "",
+       "CEUS",
+       "AR: ERC, AR: BNG, Sumar: Comuns, Sumar: Més",
+       "Podemos, AR: EH Bildu, Sumar: SMR",
+       "",
+       "SALF, Junts"
+      ]
+     },
+     {
+      "name": "Portugal",
+      "total": 21,
+      "byGroup": [
+       7,
+       8,
+       2,
+       0,
+       2,
+       0,
+       2,
+       0,
+       0
+      ],
+      "detail": [
+       "AD",
+       "PS",
+       "CH",
+       "",
+       "IL",
+       "",
+       "BE, CDU",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Austria",
+      "total": 20,
+      "byGroup": [
+       5,
+       5,
+       6,
+       0,
+       2,
+       2,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "ÖVP",
+       "SPÖ",
+       "FPÖ",
+       "",
+       "NEOS",
+       "Grüne",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Finland",
+      "total": 15,
+      "byGroup": [
+       4,
+       2,
+       0,
+       1,
+       3,
+       2,
+       3,
+       0,
+       0
+      ],
+      "detail": [
+       "Kok.",
+       "SDP",
+       "",
+       "PS",
+       "Kesk, SFP",
+       "VIHR",
+       "Vas.",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Sweden",
+      "total": 21,
+      "byGroup": [
+       5,
+       5,
+       0,
+       3,
+       3,
+       3,
+       2,
+       0,
+       0
+      ],
+      "detail": [
+       "M, KD",
+       "S",
+       "",
+       "SD",
+       "C, L",
+       "MP",
+       "V",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Cyprus",
+      "total": 6,
+      "byGroup": [
+       2,
+       1,
+       0,
+       1,
+       0,
+       0,
+       1,
+       0,
+       1
+      ],
+      "detail": [
+       "DISY",
+       "DIKO",
+       "",
+       "ELAM",
+       "",
+       "",
+       "AKEL",
+       "",
+       "Fidias"
+      ]
+     },
+     {
+      "name": "Czech Republic",
+      "total": 21,
+      "byGroup": [
+       5,
+       0,
+       9,
+       3,
+       0,
+       1,
+       0,
+       1,
+       2
+      ],
+      "detail": [
+       "SPOLU: TOP 09, SPOLU: KDU–ČSL, STAN",
+       "",
+       "ANO, Přísaha–AUTO",
+       "SPOLU: ODS",
+       "",
+       "Piráti",
+       "",
+       "SPD",
+       "Stačilo!"
+      ]
+     },
+     {
+      "name": "Estonia",
+      "total": 7,
+      "byGroup": [
+       2,
+       2,
+       0,
+       1,
+       2,
+       0,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "Isamaa",
+       "SDE",
+       "",
+       "EKRE",
+       "RE, KE",
+       "",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Hungary",
+      "total": 21,
+      "byGroup": [
+       7,
+       2,
+       11,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0
+      ],
+      "detail": [
+       "TISZA",
+       "DK-MSZP-P",
+       "Fidesz–KDNP",
+       "",
+       "",
+       "",
+       "",
+       "MHM",
+       ""
+      ]
+     },
+     {
+      "name": "Latvia",
+      "total": 9,
+      "byGroup": [
+       2,
+       1,
+       1,
+       3,
+       1,
+       1,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "JV",
+       "Saskaņa",
+       "LPV",
+       "NA, AS",
+       "LA",
+       "P",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Lithuania",
+      "total": 11,
+      "byGroup": [
+       3,
+       2,
+       0,
+       2,
+       2,
+       1,
+       0,
+       1,
+       0
+      ],
+      "detail": [
+       "TS–LKD",
+       "LSDP",
+       "",
+       "LVŽS, LLRA-KŠS",
+       "LP, LS",
+       "DSVL",
+       "",
+       "LCP",
+       ""
+      ]
+     },
+     {
+      "name": "Malta",
+      "total": 6,
+      "byGroup": [
+       3,
+       3,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "PN",
+       "PL",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Poland",
+      "total": 53,
+      "byGroup": [
+       23,
+       3,
+       0,
+       20,
+       1,
+       0,
+       0,
+       3,
+       3
+      ],
+      "detail": [
+       "KO: PO-IPL, TD: PSL",
+       "L: NL",
+       "",
+       "PiS-SP",
+       "TD: PL2050",
+       "",
+       "",
+       "KWiN: NN",
+       "KWiN: RN-KKP"
+      ]
+     },
+     {
+      "name": "Slovakia",
+      "total": 15,
+      "byGroup": [
+       1,
+       0,
+       0,
+       0,
+       6,
+       0,
+       0,
+       1,
+       7
+      ],
+      "detail": [
+       "KDH",
+       "",
+       "",
+       "",
+       "PS",
+       "",
+       "",
+       "Republic",
+       "Smer, Republic, Hlas"
+      ]
+     },
+     {
+      "name": "Slovenia",
+      "total": 9,
+      "byGroup": [
+       5,
+       1,
+       0,
+       0,
+       2,
+       1,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "SDS, NSi",
+       "SD",
+       "",
+       "",
+       "Svoboda",
+       "Vesna",
+       "",
+       "",
+       ""
+      ]
+     },
+     {
+      "name": "Bulgaria",
+      "total": 17,
+      "byGroup": [
+       6,
+       2,
+       0,
+       1,
+       5,
+       0,
+       0,
+       3,
+       0
+      ],
+      "detail": [
+       "GERB–SDS, PP-DB: DSB",
+       "BSP",
+       "",
+       "ITN",
+       "DPS, PP-DB: PP",
+       "",
+       "",
+       "Revival",
+       ""
+      ]
+     },
+     {
+      "name": "Romania",
+      "total": 33,
+      "byGroup": [
+       10,
+       11,
+       0,
+       6,
+       3,
+       1,
+       0,
+       0,
+       2
+      ],
+      "detail": [
+       "CNR: PNL, UDMR",
+       "CNR: PSD",
+       "",
+       "AUR Alliance",
+       "ADU",
+       "Ștefănuță",
+       "",
+       "",
+       "SOS"
+      ]
+     },
+     {
+      "name": "Croatia",
+      "total": 12,
+      "byGroup": [
+       6,
+       4,
+       0,
+       1,
+       0,
+       1,
+       0,
+       0,
+       0
+      ],
+      "detail": [
+       "HDZ",
+       "SDP",
+       "",
+       "DP",
+       "",
+       "Možemo!",
+       "",
+       "",
+       ""
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

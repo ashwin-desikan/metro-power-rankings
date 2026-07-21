@@ -54,6 +54,7 @@ function buildSections(): Section[] {
         { href: '/power-atlas', label: 'The Power Atlas' },
         { href: '/us-political-leadership', label: 'US Political Leadership' },
         { href: '/uk-political-leadership', label: 'UK Political Leadership' },
+        { href: '/elections', label: 'Elections' },
         { href: '/mayors', label: 'Mayors of the World' },
       ],
     },

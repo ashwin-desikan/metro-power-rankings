@@ -19,6 +19,16 @@ type SenTerm = {
   end: string | null;
 };
 type CabinetOffice = { office: string; holders: Dated[] };
+type Justice = {
+  n: number;
+  name: string;
+  born: number;
+  died: number | null;
+  position: string;
+  start: string;
+  end: string | null;
+  appointer: string | null;
+};
 
 // Party names arrive in two styles: Wikidata ("Republican Party",
 // "independent politician") and Wikipedia/hand-built ("Republican", "Democrat").
@@ -195,6 +205,7 @@ export default function USTimeMachine({
   senate = [],
   cabinet = [],
   governors = {},
+  scotus = [],
 }: {
   presidents: Dated[];
   vicePresidents: Dated[];
@@ -202,6 +213,7 @@ export default function USTimeMachine({
   senate?: SenTerm[];
   cabinet?: CabinetOffice[];
   governors?: Record<string, Dated[]>;
+  scotus?: Justice[];
 }) {
   const today = new Date().toISOString().slice(0, 10);
   const [date, setDate] = useState(today);
@@ -231,6 +243,16 @@ export default function USTimeMachine({
     return { total: active.length, parties: tally(active), byState, states };
   }, [senate, date]);
 
+  const benchOnDate = useMemo(() => {
+    return scotus
+      .filter((j) => j.start <= date && (j.end == null || date < j.end))
+      .sort((a, b) =>
+        a.position === b.position
+          ? a.start.localeCompare(b.start)
+          : a.position === "Chief Justice" ? -1 : 1,
+      );
+  }, [scotus, date]);
+
   const govOnDate = useMemo(() => {
     const hits: { code: string; gov: Dated }[] = [];
     for (const code of Object.keys(governors)) {
@@ -252,7 +274,11 @@ export default function USTimeMachine({
           min="1789-04-30"
           max={today}
           onChange={(e) => {
-            if (e.target.value) setDate(e.target.value);
+            const v = e.target.value;
+            if (!v) return;
+            // Hard-clamp typed dates: the picker's min/max only constrain the
+            // calendar UI, not keyboard entry. No future dates.
+            setDate(v > today ? today : v < "1789-04-30" ? "1789-04-30" : v);
           }}
           className="rounded-lg border px-3 py-2 text-sm text-[var(--text)]"
           style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
@@ -273,6 +299,37 @@ export default function USTimeMachine({
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {cabinetOnDate.map((c) => (
               <Card key={c.office} label={c.office} office={c.holder} />
+            ))}
+          </div>
+        </div>
+      ) : null}
+
+      {benchOnDate.length > 0 ? (
+        <div
+          className="rounded-xl border p-4 mb-4"
+          style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
+        >
+          <div className="flex items-baseline justify-between gap-3 mb-2 flex-wrap">
+            <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">
+              Supreme Court
+            </p>
+            <p className="text-xs text-[var(--text-muted)] tabular-nums">
+              {benchOnDate.length} justices
+            </p>
+          </div>
+          <div className="grid gap-x-6 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
+            {benchOnDate.map((j) => (
+              <div key={`${j.n}-${j.position}`} className="text-xs">
+                <p className="font-semibold text-[var(--text)]">
+                  {j.name}
+                  {j.position === "Chief Justice" ? (
+                    <span className="ml-1.5 text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Chief</span>
+                  ) : null}
+                </p>
+                <p className="text-[var(--text-muted)]">
+                  {j.start.slice(0, 4)}–{j.end ? j.end.slice(0, 4) : "present"} · appointed by {j.appointer ?? "—"}
+                </p>
+              </div>
             ))}
           </div>
         </div>
@@ -373,10 +430,11 @@ export default function USTimeMachine({
       ) : null}
 
       <p className="text-xs text-[var(--text-dim)] mt-3">
-        President, Vice President, the big-four Cabinet, House balance, Senate
-        membership and state governors are shown for the selected date. Cabinet
-        counts include acting secretaries. Governors appear from statehood
-        onward.
+        President, Vice President, the big-four Cabinet, the Supreme Court bench,
+        House balance, Senate membership and state governors are shown for the
+        selected date. Cabinet counts include acting secretaries. Governors appear
+        from statehood onward. The Court&apos;s size has ranged from five sitting
+        justices to ten; the judiciary carries no party labels.
       </p>
     </section>
   );

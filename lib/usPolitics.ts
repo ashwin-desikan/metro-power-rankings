@@ -142,3 +142,40 @@ export async function getGovernorHistory(): Promise<Record<string, DatedOffice[]
   }>("us-governor-history.json", {});
   return parsed.governors ?? {};
 }
+
+// Every Supreme Court service period since 1789 (121 records for 116 justices;
+// five served twice, associate first and chief justice later).
+export type JusticeTerm = {
+  n: number;
+  name: string;
+  born: number;
+  died: number | null;
+  state: string;
+  position: "Chief Justice" | "Associate Justice";
+  succeeded: string;
+  confirmed: string;
+  vote: string;
+  start: string;
+  end: string | null;
+  endReason: string | null;
+  appointer: string | null;
+};
+
+export async function getScotusHistory(): Promise<JusticeTerm[]> {
+  const parsed = await readHistoryFile<{ justices?: JusticeTerm[] }>(
+    "us-scotus-history.json",
+    {},
+  );
+  return parsed.justices ?? [];
+}
+
+// Chief justice first, then associates by seniority (service start).
+export function benchOn(justices: JusticeTerm[], date: string): JusticeTerm[] {
+  return justices
+    .filter((j) => j.start <= date && (j.end == null || date < j.end))
+    .sort((a, b) =>
+      a.position === b.position
+        ? a.start.localeCompare(b.start)
+        : a.position === "Chief Justice" ? -1 : 1,
+    );
+}

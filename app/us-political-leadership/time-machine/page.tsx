@@ -6,6 +6,7 @@ import {
   getSenateHistory,
   getCabinetHistory,
   getGovernorHistory,
+  getScotusHistory,
 } from "@/lib/usPolitics";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import USTimeMachine from "../USTimeMachine";
@@ -13,7 +14,7 @@ import USTimeMachine from "../USTimeMachine";
 const PATH = "/us-political-leadership/time-machine";
 const TITLE = "A Day in American History";
 const DESC =
-  "Pick any date back to 1789 to see who was President and Vice President, and the partisan balance of the U.S. House of Representatives on that day.";
+  "Pick any date back to 1789 to see who was President and Vice President, the Supreme Court bench, and the partisan balance of the U.S. House of Representatives on that day.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -33,6 +34,7 @@ export default async function USTimeMachinePage() {
   const senateHist = await getSenateHistory();
   const cabinetHist = await getCabinetHistory();
   const governorHist = await getGovernorHistory();
+  const scotusHist = await getScotusHistory();
   return (
     <main className="mx-auto max-w-5xl px-4 py-8">
       <nav className="text-xs text-[var(--text-muted)] mb-4">
@@ -66,6 +68,7 @@ export default async function USTimeMachinePage() {
         senate={senateHist}
         cabinet={cabinetHist}
         governors={governorHist}
+        scotus={scotusHist}
       />
 
       <p className="text-sm text-[var(--text-muted)]">

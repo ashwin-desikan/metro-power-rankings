@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-07-21",
+    headline: "Election history hubs: Britain, America, Canada and Europe",
+    items: [
+      "Four election hubs now chart every UK general election since 1802, every US presidential race since 1788, every Canadian federal election since 1867, and every European Parliament election since the first in 1979.",
+      "All 173 contests get their own page and story, now with the full sub-national picture: every UK constituency since 1918, every Canadian province back to 1867, and every EU member state's delegation by group.",
+      "Every chart is interactive and every chronology now runs newest first, from turnout arcs on four continents and the two-party grip to the Electoral College amplifier and the erosion of Europe's grand coalition.",
+      "New US and UK political leadership pages show who holds power now, including the full Supreme Court bench past and present, with time machines back through history, and country pages link it all.",
+    ],
+  },
+  {
     date: "2026-07-20",
     headline: "World Cup champions, Nowhere 100 movement, leaders tracker, Zone Zero fixes",
     items: [

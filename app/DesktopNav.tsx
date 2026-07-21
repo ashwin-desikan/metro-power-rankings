@@ -243,6 +243,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
             <MenuLink href="/power-atlas" title="The Power Atlas" />
             <MenuLink href="/us-political-leadership" title="US Political Leadership" />
             <MenuLink href="/uk-political-leadership" title="UK Political Leadership" />
+            <MenuLink href="/elections" title="Elections" />
             <MenuLink href="/mayors" title="Mayors of the World" />
             <MenuGroupLabel>Geopolitics</MenuGroupLabel>
             <MenuLink href="/orgs" title="Alliances &amp; Orgs" />
