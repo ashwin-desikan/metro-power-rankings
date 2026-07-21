@@ -24,10 +24,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from civic_common import sparql, qid  # noqa
 
 SEARCHES = [
-    "House Majority Whip",
-    "House Minority Whip",
-    "Republican Conference Chair",
-    "Democratic Caucus Chair",
+    "Majority Whip",
+    "Minority Whip",
+    "Majority Whip of the United States House of Representatives",
+    "Minority Whip of the United States House of Representatives",
+    "Whip United States House of Representatives",
 ]
 
 def main():
