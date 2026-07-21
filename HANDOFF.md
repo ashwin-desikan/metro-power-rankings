@@ -120,3 +120,41 @@ Ashwin flagged `/teams/golf` missing The Open 2026 (Ryan Fox). He'd already hand
 1. Confirm `/teams/golf` is showing Ryan Fox as The Open 2026 champion.
 2. Worth a scan for any OTHER "bare tournament name" mismatches in `map_golf()`/`map_tennis()` the same way (this class of bug — ESPN's exact event-name string not matching our substring check — could exist elsewhere and only surface the next time a name format changes).
 3. Still open from 07-19: the mayors watchdog result.
+
+## 2026-07-21 — mini → windows (mayors: the "WDQS outage" was WRONG for weeks — real bugs found + fixed, cache now populates)
+
+**Correcting the record: there was never a WDQS outage.** The 07-01/07-05/07-12/07-19 "outage" diagnosis in the entries above is stale/wrong. Confirmed WDQS is up and reachable from the mini (trivial `wd:Q60 rdfs:label` and `BIND(1)` queries both return 200 instantly). The mistake traces back to the 07-12 redesign never being testable against live Wikidata from the Windows sandbox (see archive: "no egress ... the first real Sunday run is the actual test") — so every 504 got *inferred* to be an outage. It wasn't, because `discover_missing_qids()` swallows the exception (`print("... chunk failed (...); will retry")`) and the actual `HTTP 504` text was never once looked at. Lesson, same as the golf thread: verify the exception, don't infer it from the cache staying empty.
+
+**Root cause #1 — discovery query 504s STRUCTURALLY, every run, regardless of WDQS health.** The phase-1 label join (`?city rdfs:label ... FILTER(?clab = STRLANG(...)) ; ?city wdt:P17 ?ctry ...`) let Blazegraph pick its own join order — and it starts from the country side, enumerating *every entity in the country* (millions) via `wdt:P17` before the label can narrow it. Times out at 504 in 60-90s even for a **single** city. Reproduced live via curl: trivial query 200 in <1s, this query 504 every time.
+
+**Root cause #2 — phase 2 picked an arbitrary mayor (masked until now).** Because phase 1 never populated `city-qids.json`, phase 2 had never actually run on real data, so this stayed hidden. Cities carry *several* open (no-end-date) `P6` statements — Wikidata rarely end-dates a predecessor's term, and some list the mayoralty *position item* itself (a dateless `"mayor of Pittsburgh"` placeholder that even slips past `sanity_ok`). The old `slug not in out` logic kept whichever WDQS returned first → e.g. Cleveland got Frank Jackson (2006) not Justin Bibb, Pittsburgh got the placeholder not Corey O'Connor.
+
+**Fixed (`scripts/civic/refresh_mayors.py`), tested live end-to-end from the mini:**
+- Discovery query now pins evaluation order — `hint:Query hint:optimizer "None"` + label lookups bound *before* the `P17` edge, requires an open `P6`, and returns `wikibase:sitelinks` so we keep the primary city per name (not a same-named suburb). All 9 cold-start chunks now return 200 in ≤10s each; **`city-qids.json` populated 76/100 on the first run** (was `{}` for a month).
+- Phase 2 now keeps the statement with the LATEST `P580` start date per city → reports the sitting mayor and lets a dated real person outrank the dateless placeholder. Verified: Pittsburgh→Corey O'Connor, Cleveland→Justin Bibb, Las Vegas→Shelley Berkley, Portland→Keith Wilson, Raleigh→Janet Cowell, Johannesburg→Dada Morero — all correct current mayors, all were stale/garbage before.
+- The 24 uncached metros are the China cities + Sydney/Hong Kong/etc. whose mayor lives on a separate governing-body entity, not the `P17`-matched settlement — all already override-covered. Added `sydney` (Clover Moore) + `tampa` (Jane Castor) to `mayors-overrides.json` so the two that *weren't* covered don't regress out of the file.
+- **Result: `mayors.json` updated for the first time since 07-08 — COVERAGE 75/100 from Wikidata (clears the 70 floor), 100/100 after overrides, zero drops.** Coverage floor and override-wins behavior both intact.
+
+This closes the 07-19 mayors watchdog thread: the run now finishes clean AND actually makes progress. The cache is warm, so future weekly runs take the cheap hot path (phase 2 only) unless a new metro enters the top 100.
+
+### Open question for windows
+The `MAYORS_STEP_TIMEOUT` raise to 1800s (07-19) is now oversized — a warm-cache run is one fast phase-2 query (~seconds) and even a cold start is ~1 min total, not the 22.5 min that was budgeted for the sustained-outage worst case that never existed. Not urgent (a generous watchdog is harmless), but worth trimming next time that script is touched.
+
+## 2026-07-21 — mini → windows (mayors: filled the 15 blank Party fields; found 4 more stale Wikidata names while doing it)
+
+Ashwin asked to fill the missing Party column now that the pipeline works. 15 of 100 mayors had a blank party — all auto-resolved, none overridden. Confirmed against Wikidata directly: those 15 mayor entities genuinely have **no `P102` (member-of-political-party) statement**, so the hot path correctly left party blank. Not a pipeline bug — a data gap.
+
+**New mechanism — party gap-fill (`scripts/civic/mayor-parties.json`), name-gated so it self-heals.** Full `mayors-overrides.json` entries do *whole-object replacement*, which would freeze the auto-resolved NAME too — undoing the auto-refresh for cities where Wikidata has the name right and only the party is missing (Cleveland, SF, Seattle, …). So instead `build()` now fills party from `mayor-parties.json` ONLY when (a) the resolved party is blank AND (b) the curated `mayor` string still equals the resolved mayor. If the mayor changes or Wikidata later gains a P102, the gap-fill drops itself instead of mislabelling the wrong person. Covered by the offline self-test (positive fill + name-mismatch guard).
+
+11 cities filled via gap-fill (names were already correct): Cleveland/Pittsburgh/SF/Portland → Democratic, Seattle (Katie Wilson) → Democratic (Democratic Socialist), Athens → PASOK, Istanbul → CHP, Johannesburg → ANC, Bangkok → Independent, Abu Dhabi + Dubai → N/A (hereditary rulers).
+
+**Filling party surfaced 4 MORE stale auto-names** (same class as Copenhagen from earlier today — Wikidata's latest-start P6 statement lags reality for these non-US cities). Web-verified each and added FULL overrides (name + party), since Wikidata is simply wrong here, not just missing party:
+- `copenhagen`: Lars Weiss → **Sisse Marie Welling** (Green Left / SF, Lord Mayor, 2026-01) — first non-Social-Democrat in 100+ yrs.
+- `kuala-lumpur`: Kamarulzaman Mat Salleh (left 2024) → **Fadlun Mak Ujud** (appointed, 2025-11).
+- `cairo`: Abd El Azim Wazir → **Ibrahim Saber** (appointed Governor, 2024-07).
+- `mumbai`: Iqbal Singh Chahal (a commissioner) → **Ritu Tawde** (BJP, Mayor since 2026-02, first BJP mayor of Mumbai in 40 yrs after the delayed BMC polls).
+
+**Result: all 100 mayors now have a party; 4 stale names corrected; zero drops, no other entries touched.** Committed with the run output.
+
+### Heads-up for windows
+This is the tell that our `P6`-latest-start pick can silently lag for cities where Wikidata is stale — it's showed up twice today (Copenhagen, + KL/Cairo/Mumbai). Worth a periodic sanity pass on the non-US auto-resolved mayors specifically; the US ones track Wikidata well, the rest drift. No code change needed, just curation via the two files.

@@ -27,6 +27,14 @@
     "since": "2026-07-01",
     "title": "Mayor"
   },
+  "cairo": {
+    "city": "Cairo",
+    "country": "Egypt",
+    "mayor": "Ibrahim Saber",
+    "party": "Appointed",
+    "since": "2024-07-03",
+    "title": "Governor"
+  },
   "calcutta": {
     "city": "Kolkata",
     "country": "India",
@@ -71,6 +79,14 @@
     "since": "2026-05-28",
     "title": "Acting Mayor"
   },
+  "copenhagen": {
+    "city": "Copenhagen",
+    "country": "Denmark",
+    "mayor": "Sisse Marie Welling",
+    "party": "Green Left (Socialist People's Party)",
+    "since": "2026-01-01",
+    "title": "Lord Mayor"
+  },
   "doha": {
     "city": "Doha",
     "country": "Qatar",
@@ -111,6 +127,14 @@
     "since": "2022-07-01",
     "title": "Chief Executive"
   },
+  "kuala-lumpur": {
+    "city": "Kuala Lumpur",
+    "country": "Malaysia",
+    "mayor": "Fadlun Mak Ujud",
+    "party": "Appointed",
+    "since": "2025-11-15",
+    "title": "Mayor"
+  },
   "manchester": {
     "city": "Manchester",
     "country": "United Kingdom",
@@ -126,6 +150,14 @@
     "party": "Independent (Labor-aligned)",
     "since": "2024-07-01",
     "title": "Lord Mayor"
+  },
+  "mumbai": {
+    "city": "Mumbai",
+    "country": "India",
+    "mayor": "Ritu Tawde",
+    "party": "BJP (Bharatiya Janata Party)",
+    "since": "2026-02-07",
+    "title": "Mayor"
   },
   "nanjing": {
     "city": "Nanjing",
@@ -210,6 +242,22 @@
     "party": "Social Democrats (SAP)",
     "since": "2022-10-18",
     "title": "Mayor (Finance Commissioner)"
+  },
+  "sydney": {
+    "city": "Sydney",
+    "country": "Australia",
+    "mayor": "Clover Moore",
+    "party": "Independent (Clover Moore Independent Team)",
+    "since": "2004-03-27",
+    "title": "Lord Mayor"
+  },
+  "tampa": {
+    "city": "Tampa",
+    "country": "United States",
+    "mayor": "Jane Castor",
+    "party": "Democratic",
+    "since": "2019-05-01",
+    "title": "Mayor"
   },
   "tel-aviv": {
     "city": "Tel-Aviv",

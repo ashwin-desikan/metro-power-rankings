@@ -3,6 +3,7 @@
     "city": "Abu Dhabi",
     "country": "United Arab Emirates",
     "mayor": "Mohammed Bin Zayed Al Nahyan",
+    "party": "N/A",
     "since": "2022-05-14",
     "title": "Mayor"
   },
@@ -10,6 +11,7 @@
     "city": "Amsterdam",
     "country": "Netherlands",
     "mayor": "Femke Halsema",
+    "party": "GroenLinks",
     "since": "2018-07-12",
     "title": "Mayor"
   },
@@ -17,6 +19,7 @@
     "city": "Athens",
     "country": "Greece",
     "mayor": "Haris Doukas",
+    "party": "PASOK (Movement for Change)",
     "since": "2024-01-01",
     "title": "Mayor"
   },
@@ -24,6 +27,7 @@
     "city": "Atlanta",
     "country": "United States",
     "mayor": "Andre Dickens",
+    "party": "Democratic Party",
     "since": "2021-05-01",
     "title": "Mayor"
   },
@@ -31,6 +35,7 @@
     "city": "Austin",
     "country": "United States",
     "mayor": "Kirk Watson",
+    "party": "Democratic Party",
     "since": "2023-01-06",
     "title": "Mayor"
   },
@@ -38,6 +43,7 @@
     "city": "Bangkok",
     "country": "Thailand",
     "mayor": "Chadchart Sittipunt",
+    "party": "Independent",
     "since": "2022-05-22",
     "title": "Mayor"
   },
@@ -45,6 +51,7 @@
     "city": "Barcelona",
     "country": "Spain",
     "mayor": "Jaume Collboni Cuadrado",
+    "party": "Socialists' Party of Catalonia",
     "since": "2023-06-17",
     "title": "Mayor"
   },
@@ -64,6 +71,7 @@
     "city": "Berlin",
     "country": "Germany",
     "mayor": "Kai Wegner",
+    "party": "Christian Democratic Union",
     "since": "2023-04-27",
     "title": "Mayor"
   },
@@ -71,6 +79,7 @@
     "city": "Boston",
     "country": "United States",
     "mayor": "Michelle Wu",
+    "party": "Democratic Party",
     "since": "2021-11-16",
     "title": "Mayor"
   },
@@ -86,6 +95,7 @@
     "city": "Brussels",
     "country": "Belgium",
     "mayor": "Philippe Close",
+    "party": "Socialist Party",
     "since": "2017-07-20",
     "title": "Mayor"
   },
@@ -93,6 +103,7 @@
     "city": "Buenos Aires",
     "country": "Argentina",
     "mayor": "Jorge Macri",
+    "party": "Republican Proposal",
     "since": "2023-12-10",
     "title": "Mayor"
   },
@@ -107,9 +118,10 @@
   "cairo": {
     "city": "Cairo",
     "country": "Egypt",
-    "mayor": "Abd El Azim Wazir",
-    "since": "",
-    "title": "Mayor"
+    "mayor": "Ibrahim Saber",
+    "party": "Appointed",
+    "since": "2024-07-03",
+    "title": "Governor"
   },
   "calcutta": {
     "city": "Kolkata",
@@ -135,6 +147,7 @@
     "city": "Charlotte",
     "country": "United States",
     "mayor": "Vi Lyles",
+    "party": "Democratic Party",
     "since": "2017-12-04",
     "title": "Mayor"
   },
@@ -154,6 +167,7 @@
     "city": "Chicago",
     "country": "United States",
     "mayor": "Brandon Johnson",
+    "party": "Democratic Party",
     "since": "2023-05-15",
     "title": "Mayor"
   },
@@ -172,21 +186,24 @@
   "cleveland": {
     "city": "Cleveland",
     "country": "United States",
-    "mayor": "Billy Nowell",
-    "since": "",
+    "mayor": "Justin Bibb",
+    "party": "Democratic",
+    "since": "2022-01-03",
     "title": "Mayor"
   },
   "copenhagen": {
     "city": "Copenhagen",
     "country": "Denmark",
-    "mayor": "Lars Weiss",
-    "since": "2024-09-19",
-    "title": "Mayor"
+    "mayor": "Sisse Marie Welling",
+    "party": "Green Left (Socialist People's Party)",
+    "since": "2026-01-01",
+    "title": "Lord Mayor"
   },
   "dallas": {
     "city": "Dallas",
     "country": "United States",
     "mayor": "Eric Johnson",
+    "party": "Democratic Party",
     "since": "2019-06-17",
     "title": "Mayor"
   },
@@ -194,6 +211,7 @@
     "city": "Delhi",
     "country": "India",
     "mayor": "Rekha Gupta",
+    "party": "Bharatiya Janata Party",
     "since": "2025-02-20",
     "title": "Mayor"
   },
@@ -201,6 +219,7 @@
     "city": "Denver",
     "country": "United States",
     "mayor": "Michael Johnston",
+    "party": "Democratic Party",
     "since": "2023-07-17",
     "title": "Mayor"
   },
@@ -208,6 +227,7 @@
     "city": "Detroit",
     "country": "United States",
     "mayor": "Mary Sheffield",
+    "party": "Democratic Party",
     "since": "2026-01-01",
     "title": "Mayor"
   },
@@ -223,20 +243,23 @@
     "city": "Dubai",
     "country": "United Arab Emirates",
     "mayor": "Mohammed bin Rashid Al Maktoum",
+    "party": "N/A",
     "since": "2006-01-04",
     "title": "Mayor"
   },
   "dublin": {
     "city": "Dublin",
     "country": "Ireland",
-    "mayor": "Mícheál Mac Donncha",
-    "since": "",
+    "mayor": "Paul McAuliffe",
+    "party": "Fianna Fáil",
+    "since": "2019-06-07",
     "title": "Mayor"
   },
   "edinburgh": {
     "city": "Edinburgh",
     "country": "United Kingdom",
     "mayor": "Frank Ross",
+    "party": "Scottish National Party",
     "since": "2017-04-01",
     "title": "Mayor"
   },
@@ -244,6 +267,7 @@
     "city": "Frankfurt",
     "country": "Germany",
     "mayor": "Mike Josef",
+    "party": "Social Democratic Party of Germany",
     "since": "2023-05-11",
     "title": "Mayor"
   },
@@ -263,6 +287,7 @@
     "city": "Hamburg",
     "country": "Germany",
     "mayor": "Peter Tschentscher",
+    "party": "Social Democratic Party of Germany",
     "since": "2018-03-28",
     "title": "Mayor"
   },
@@ -290,6 +315,7 @@
     "city": "Houston",
     "country": "United States",
     "mayor": "John Whitmire",
+    "party": "Democratic Party",
     "since": "2024-01-01",
     "title": "Mayor"
   },
@@ -297,6 +323,7 @@
     "city": "Istanbul",
     "country": "Turkey",
     "mayor": "Nuri Aslan",
+    "party": "CHP (Republican People's Party)",
     "since": "2025-03-26",
     "title": "Mayor"
   },
@@ -304,34 +331,39 @@
     "city": "Jakarta",
     "country": "Indonesia",
     "mayor": "Pramono Anung",
+    "party": "Indonesian Democratic Party – Struggle",
     "since": "2025-02-20",
     "title": "Mayor"
   },
   "johannesburg": {
     "city": "Johannesburg",
     "country": "South Africa",
-    "mayor": "Mpho Phalatse",
-    "since": "2021-11-22",
+    "mayor": "Dada Morero",
+    "party": "ANC (African National Congress)",
+    "since": "2024-08-01",
     "title": "Mayor"
   },
   "kuala-lumpur": {
     "city": "Kuala Lumpur",
     "country": "Malaysia",
-    "mayor": "Kamarulzaman Mat Salleh",
-    "since": "2023-04-17",
+    "mayor": "Fadlun Mak Ujud",
+    "party": "Appointed",
+    "since": "2025-11-15",
     "title": "Mayor"
   },
   "las-vegas": {
     "city": "Las Vegas",
     "country": "United States",
-    "mayor": "Carolyn Goodman",
-    "since": "2011-07-06",
+    "mayor": "Shelley Berkley",
+    "party": "Democratic Party",
+    "since": "2024-11-01",
     "title": "Mayor"
   },
   "lisbon": {
     "city": "Lisbon",
     "country": "Portugal",
     "mayor": "Carlos Moedas",
+    "party": "Social Democratic Party",
     "since": "",
     "title": "Mayor"
   },
@@ -339,6 +371,7 @@
     "city": "London",
     "country": "United Kingdom",
     "mayor": "Sadiq Khan",
+    "party": "Labour Party",
     "since": "2016-05-09",
     "title": "Mayor"
   },
@@ -346,6 +379,7 @@
     "city": "Los Angeles",
     "country": "United States",
     "mayor": "Karen Bass",
+    "party": "Democratic Party",
     "since": "2022-12-01",
     "title": "Mayor"
   },
@@ -353,6 +387,7 @@
     "city": "Madrid",
     "country": "Spain",
     "mayor": "José Luis Martínez-Almeida",
+    "party": "People's Party",
     "since": "2019-06-15",
     "title": "Mayor"
   },
@@ -368,6 +403,7 @@
     "city": "Manila",
     "country": "Philippines",
     "mayor": "Isko Moreno",
+    "party": "Aksyon Demokratiko",
     "since": "2025-06-30",
     "title": "Mayor"
   },
@@ -383,6 +419,7 @@
     "city": "Mexico City",
     "country": "Mexico",
     "mayor": "Clara Brugada",
+    "party": "Party of the Democratic Revolution",
     "since": "2024-10-01",
     "title": "Mayor"
   },
@@ -390,6 +427,7 @@
     "city": "Miami",
     "country": "United States",
     "mayor": "Francis X. Suarez",
+    "party": "Republican Party",
     "since": "2017-11-15",
     "title": "Mayor"
   },
@@ -397,6 +435,7 @@
     "city": "Milan",
     "country": "Italy",
     "mayor": "Giuseppe Sala",
+    "party": "independent politician",
     "since": "2016-06-20",
     "title": "Mayor"
   },
@@ -404,6 +443,7 @@
     "city": "Minneapolis",
     "country": "United States",
     "mayor": "Jacob Frey",
+    "party": "Minnesota Democratic–Farmer–Labor Party",
     "since": "2018-01-02",
     "title": "Mayor"
   },
@@ -411,6 +451,7 @@
     "city": "Montreal",
     "country": "Canada",
     "mayor": "Soraya Martinez Ferrada",
+    "party": "Liberal Party of Canada",
     "since": "2025-11-02",
     "title": "Mayor"
   },
@@ -418,20 +459,23 @@
     "city": "Moscow",
     "country": "Russia",
     "mayor": "Sergey Sobyanin",
+    "party": "United Russia",
     "since": "2010-10-21",
     "title": "Mayor"
   },
   "mumbai": {
     "city": "Mumbai",
     "country": "India",
-    "mayor": "Iqbal Singh Chahal",
-    "since": "2022-03-08",
+    "mayor": "Ritu Tawde",
+    "party": "BJP (Bharatiya Janata Party)",
+    "since": "2026-02-07",
     "title": "Mayor"
   },
   "munich": {
     "city": "Munich",
     "country": "Germany",
     "mayor": "Dominik Krause",
+    "party": "Alliance '90/The Greens",
     "since": "2026-05-01",
     "title": "Mayor"
   },
@@ -439,6 +483,7 @@
     "city": "Nagoya",
     "country": "Japan",
     "mayor": "Ichirō Hirosawa",
+    "party": "Genzei Nippon",
     "since": "2024-11-25",
     "title": "Mayor"
   },
@@ -458,6 +503,7 @@
     "city": "New Orleans",
     "country": "United States",
     "mayor": "Helena Moreno",
+    "party": "Democratic Party",
     "since": "2026-01-12",
     "title": "Mayor"
   },
@@ -481,6 +527,7 @@
     "city": "Paris",
     "country": "France",
     "mayor": "Emmanuel Grégoire",
+    "party": "Socialist Party",
     "since": "2026-03-29",
     "title": "Mayor"
   },
@@ -488,6 +535,7 @@
     "city": "Philadelphia",
     "country": "United States",
     "mayor": "Cherelle Parker",
+    "party": "Democratic Party",
     "since": "2024-01-02",
     "title": "Mayor"
   },
@@ -495,6 +543,7 @@
     "city": "Phoenix",
     "country": "United States",
     "mayor": "Kate Gallego",
+    "party": "Democratic Party",
     "since": "2019-03-21",
     "title": "Mayor"
   },
@@ -502,20 +551,23 @@
     "city": "Pittsburgh",
     "country": "United States",
     "mayor": "Corey O'Connor",
+    "party": "Democratic",
     "since": "2026-01-05",
     "title": "Mayor"
   },
   "portland": {
     "city": "Portland",
     "country": "United States",
-    "mayor": "Mike Callis",
-    "since": "",
+    "mayor": "Keith Wilson",
+    "party": "Democratic",
+    "since": "2025-01-01",
     "title": "Mayor"
   },
   "prague": {
     "city": "Prague",
     "country": "Czech Republic",
     "mayor": "Bohuslav Svoboda",
+    "party": "Civic Democratic Party",
     "since": "2023-02-16",
     "title": "Mayor"
   },
@@ -534,14 +586,16 @@
   "raleigh-durham": {
     "city": "Raleigh",
     "country": "United States",
-    "mayor": "Nancy McFarlane",
-    "since": "",
+    "mayor": "Janet Cowell",
+    "party": "Democratic Party",
+    "since": "2024-01-01",
     "title": "Mayor"
   },
   "rhine-ruhr": {
     "city": "Cologne",
     "country": "Germany",
     "mayor": "Torsten Burmester",
+    "party": "Social Democratic Party of Germany",
     "since": "2025-11-01",
     "title": "Mayor"
   },
@@ -549,6 +603,7 @@
     "city": "Rio de Janeiro",
     "country": "Brazil",
     "mayor": "Eduardo Paes",
+    "party": "Democratic Movement Party",
     "since": "2021-01-01",
     "title": "Mayor"
   },
@@ -564,6 +619,7 @@
     "city": "Rome",
     "country": "Italy",
     "mayor": "Roberto Gualtieri",
+    "party": "Democratic Party",
     "since": "2021-10-21",
     "title": "Mayor"
   },
@@ -571,6 +627,7 @@
     "city": "Rotterdam",
     "country": "Netherlands",
     "mayor": "Carola Schouten",
+    "party": "Christian Union",
     "since": "2024-10-10",
     "title": "Mayor"
   },
@@ -578,6 +635,7 @@
     "city": "Salt Lake City",
     "country": "United States",
     "mayor": "Erin Mendenhall",
+    "party": "Democratic Party",
     "since": "2020-01-06",
     "title": "Mayor"
   },
@@ -585,6 +643,7 @@
     "city": "San Diego",
     "country": "United States",
     "mayor": "Todd Gloria",
+    "party": "Democratic Party",
     "since": "2020-12-10",
     "title": "Mayor"
   },
@@ -592,6 +651,7 @@
     "city": "San Francisco",
     "country": "United States",
     "mayor": "Daniel Lurie",
+    "party": "Democratic",
     "since": "2025-01-08",
     "title": "Mayor"
   },
@@ -615,6 +675,7 @@
     "city": "Seattle",
     "country": "United States",
     "mayor": "Katie Wilson",
+    "party": "Democratic (Democratic Socialist)",
     "since": "2026-01-01",
     "title": "Mayor"
   },
@@ -622,6 +683,7 @@
     "city": "Seoul",
     "country": "South Korea",
     "mayor": "Oh Se-hoon",
+    "party": "People Power Party",
     "since": "2021-04-08",
     "title": "Mayor"
   },
@@ -641,6 +703,7 @@
     "city": "Singapore",
     "country": "Singapore",
     "mayor": "Lawrence Wong",
+    "party": "People's Action Party",
     "since": "2024-05-15",
     "title": "Mayor"
   },
@@ -648,6 +711,7 @@
     "city": "St. Louis",
     "country": "United States",
     "mayor": "Tishaura Jones",
+    "party": "Democratic Party",
     "since": "2021-04-20",
     "title": "Mayor"
   },
@@ -663,13 +727,15 @@
     "city": "Sydney",
     "country": "Australia",
     "mayor": "Clover Moore",
+    "party": "Independent (Clover Moore Independent Team)",
     "since": "2004-03-27",
-    "title": "Mayor"
+    "title": "Lord Mayor"
   },
   "taipei": {
     "city": "Taipei",
     "country": "Taiwan",
     "mayor": "Chiang Wan-an",
+    "party": "Kuomintang",
     "since": "2022-12-25",
     "title": "Mayor"
   },
@@ -677,6 +743,7 @@
     "city": "Tampa",
     "country": "United States",
     "mayor": "Jane Castor",
+    "party": "Democratic",
     "since": "2019-05-01",
     "title": "Mayor"
   },
@@ -704,6 +771,7 @@
     "city": "Tokyo",
     "country": "Japan",
     "mayor": "Yuriko Koike",
+    "party": "Liberal Democratic Party",
     "since": "2016-08-02",
     "title": "Mayor"
   },
@@ -711,6 +779,7 @@
     "city": "Toronto",
     "country": "Canada",
     "mayor": "Olivia Chow",
+    "party": "New Democratic Party",
     "since": "2023-07-12",
     "title": "Mayor"
   },
@@ -718,6 +787,7 @@
     "city": "Vancouver",
     "country": "Canada",
     "mayor": "Ken Sim",
+    "party": "Non-Partisan Association",
     "since": "2022-01-01",
     "title": "Mayor"
   },
@@ -733,6 +803,7 @@
     "city": "Warsaw",
     "country": "Poland",
     "mayor": "Rafał Trzaskowski",
+    "party": "Civic Platform",
     "since": "2018-11-22",
     "title": "Mayor"
   },
@@ -772,6 +843,7 @@
     "city": "Zurich",
     "country": "Switzerland",
     "mayor": "Corine Mauch",
+    "party": "Social Democratic Party of Switzerland",
     "since": "2009-05-01",
     "title": "Mayor"
   }
