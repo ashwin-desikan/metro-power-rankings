@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 
 export type Official = { name: string; party?: string; since?: string };
-export type CabinetMember = { office: string; name: string; since?: string };
+export type CabinetMember = { office: string; name: string; since?: string; acting?: boolean };
 export type Senator = {
   name: string;
   state: string;
