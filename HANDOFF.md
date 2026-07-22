@@ -185,3 +185,40 @@ Ashwin caught Tulsi Gabbard still listed as DNI on `/us-political-leadership`. T
 1. Once you're back on this: another dry run to confirm the president/VP exclude-filter fix actually resolves those two now, and see if the remaining 3 (State, Defense, EPA/SBA — sitelinks margin genuinely close) need a manual QID override rather than more heuristic tuning.
 2. Worth deciding together when `--write` is trustworthy enough to flip on for real, vs. keeping this a "surfaces discrepancies, human applies them" tool indefinitely given how messy Wikidata's Cabinet-position modeling turned out to be.
 3. House leadership (Speaker/Whips/Conference Chairs) has the identical untouched-passthrough problem — same mechanism would work, not started.
+
+
+## 2026-07-22 — windows → mini (election hubs shipped; your civic scripts survived a merge; vercel.json ignore-step changed)
+
+Big production round went out tonight, tip `3990b81c2` (deploy PASS, verified live). Four election
+history hubs under `/elections`: UK 1802–2024 (with constituency-level results 1918+ from the Commons
+Library dataset), US 1788–2024 (state-by-state layer + Congress), Canada 1867–2025 (province results),
+European Parliament 1979–2024 (member-state × group matrices). Plus SCOTUS on /us-political-leadership
++ time machine, and newest-first chronologies on every hub. ~42k lines, 73 files in `c2acab315`.
+
+**Three things you should know:**
+
+1. **Your civic pipeline work was preserved through a real merge (`eb9e86dc2`).** My push carried an
+   older checkpoint (`82f51bee4`, from the crashed 07-21 session) containing a DRAFT refresh_cabinet.py
+   that collided with your hardened version. Resolution: **your refresh_cabinet.py won** (it, plus
+   refresh_house_leadership.py + civic_common.py, are untouched on main); my side won lib/usPolitics.ts
+   + the leadership page (superset: SCOTUS + the acting?: flag + ActingBadge — your Sonderling/Labor
+   correction is intact); `civic-data-refresh.yml`'s self-test list is now the UNION (my
+   build_senate_history/build_executive_history/sync_history_from_current + your refresh_cabinet +
+   refresh_house_leadership). Also: your last entry's open questions about dry-run --write appear
+   resolved by your own later commits (`d1695db7c` enabled --write and wired the weekly job) — closing
+   the loop from this side.
+
+2. **vercel.json ignoreCommand changed (`3990b81c2`).** The merge commit made Vercel's shallow clone
+   miss `VERCEL_GIT_PREVIOUS_SHA` → `git diff` died with `fatal: bad object` → the whole deployment
+   ERRORED (it does not fall back to building). The command now ends `2>/dev/null || exit 1` so any
+   diff failure means "build" instead of "error". Behavior for your `[vercel skip]` commits is
+   unchanged. Also learned: ignoreCommand has a hard 256-char schema cap — don't extend it casually.
+
+3. **Election data maintenance is trigger-scheduled from my side** (GM by-election 07-31, UK May cycle
+   yearly, US midterms 2026-11-05) — nothing for your weekly jobs to pick up. The new hubs are
+   build-time datasets, not ISR, except uk-elections-beyond.json which stays on the ISR-from-raw path.
+
+### Open question for the mini
+Next weekly civic run: confirm the unioned self-test list in `civic-data-refresh.yml` passes clean on
+your side (all five scripts), and that your metro-mini-refresh.sh cadence is unaffected by the merged
+workflow. Nothing else needed.
