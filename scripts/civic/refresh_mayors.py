@@ -40,6 +40,21 @@ QID_CACHE = Path(__file__).with_name("city-qids.json")
 TOP_N = 100
 COVERAGE_FLOOR = 0.70  # abort the write below this fraction of TOP_N resolved
 
+# One canonical label per party, so the same party never shows two ways across
+# metros (Wikidata's P102 label, our gap-fill, and overrides otherwise disagree).
+# Meaningful sub-affiliations stay as a parenthetical on the canonical base
+# (DSA, DFL). Applied to EVERY party value in build(), whatever its source.
+PARTY_CANON = {
+    "Democratic": "Democratic Party",
+    "Democratic (Democratic Socialist)": "Democratic Party (Democratic Socialist)",
+    "Democratic (Democratic Socialists of America)": "Democratic Party (Democratic Socialists of America)",
+    "Minnesota Democratic–Farmer–Labor Party": "Democratic Party (DFL)",
+    "Republican": "Republican Party",
+    "BJP (Bharatiya Janata Party)": "Bharatiya Janata Party",
+    "Labour": "Labour Party",
+    "independent politician": "Independent",
+}
+
 def top_metros():
     d = load_json(METROS, [])
     rows = d if isinstance(d, list) else d.get("metros", d)
@@ -169,7 +184,12 @@ def build(metros, resolved, overrides, parties):
                 party = gf.get("party", "")
         out[m["slug"]] = {"city": m["city"], "country": m["country"],
                           "mayor": info["mayor"], "title": "Mayor", "since": info["since"], "party": party}
-    return merge_overrides(out, overrides)
+    merged = merge_overrides(out, overrides)
+    for v in merged.values():  # collapse party-name variants to one canonical label
+        p = (v.get("party") or "").strip()
+        if p:
+            v["party"] = PARTY_CANON.get(p, p)
+    return merged
 
 def coverage_ok(resolved_count, total, floor=COVERAGE_FLOOR):
     return total > 0 and resolved_count >= total * floor
@@ -208,21 +228,32 @@ def load_qid_cache():
 def _self_test():
     metros = [{"slug": "tokyo", "city": "Tokyo", "country": "Japan"},
               {"slug": "shanghai", "city": "Shanghai", "country": "China"},
-              {"slug": "cleveland", "city": "Cleveland", "country": "United States"}]
+              {"slug": "cleveland", "city": "Cleveland", "country": "United States"},
+              {"slug": "minneapolis", "city": "Minneapolis", "country": "United States"},
+              {"slug": "denver", "city": "Denver", "country": "United States"}]
     out = build(metros,
                 {"tokyo": {"mayor": "Yuriko Koike", "since": "2016-08-02", "party": ""},
-                 "cleveland": {"mayor": "Justin Bibb", "since": "2022-01-03", "party": ""}},
+                 "cleveland": {"mayor": "Justin Bibb", "since": "2022-01-03", "party": ""},
+                 "minneapolis": {"mayor": "Jacob Frey", "since": "2018-01-02",
+                                 "party": "Minnesota Democratic–Farmer–Labor Party"},
+                 "denver": {"mayor": "Mike Johnston", "since": "2023-07-17", "party": ""}},
                 {"shanghai": {"city": "Shanghai", "country": "China", "mayor": "Gong Zheng",
                               "title": "Mayor", "since": "2020-03-23",
-                              "second": {"name": "Chen Jining", "role": "Party Secretary"}}},
+                              "second": {"name": "Chen Jining", "role": "Party Secretary"}},
+                 "denver": {"city": "Denver", "country": "United States", "mayor": "Mike Johnston",
+                            "title": "Mayor", "since": "2023-07-17", "party": "Democratic"}},
                 {"cleveland": {"mayor": "Justin Bibb", "party": "Democratic"},
                  "tokyo": {"mayor": "A Different Person", "party": "Should Not Apply"}})
     assert out["tokyo"]["mayor"] == "Yuriko Koike"
     assert out["shanghai"]["second"]["role"] == "Party Secretary"
 
     # Party gap-fill only when blank AND the curated name matches the resolved mayor
-    assert out["cleveland"]["party"] == "Democratic"   # name matches -> filled
     assert out["tokyo"]["party"] == ""                 # name mismatch -> left blank
+    # Every party is canonicalized, whatever its source: gap-fill, raw Wikidata
+    # label, and full override all collapse to the one canonical label.
+    assert out["cleveland"]["party"] == "Democratic Party"          # gap-fill -> canon
+    assert out["minneapolis"]["party"] == "Democratic Party (DFL)"  # Wikidata label -> canon
+    assert out["denver"]["party"] == "Democratic Party"             # override -> canon
 
     # Coverage floor: below COVERAGE_FLOOR must abort (caller checks this return value)
     assert not coverage_ok(69, 100)

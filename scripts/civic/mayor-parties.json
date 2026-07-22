@@ -2,12 +2,12 @@
   "abu-dhabi": { "mayor": "Mohammed Bin Zayed Al Nahyan", "party": "N/A" },
   "athens": { "mayor": "Haris Doukas", "party": "PASOK (Movement for Change)" },
   "bangkok": { "mayor": "Chadchart Sittipunt", "party": "Independent" },
-  "cleveland": { "mayor": "Justin Bibb", "party": "Democratic" },
+  "cleveland": { "mayor": "Justin Bibb", "party": "Democratic Party" },
   "dubai-sharjah": { "mayor": "Mohammed bin Rashid Al Maktoum", "party": "N/A" },
   "istanbul": { "mayor": "Nuri Aslan", "party": "CHP (Republican People's Party)" },
   "johannesburg": { "mayor": "Dada Morero", "party": "ANC (African National Congress)" },
-  "pittsburgh": { "mayor": "Corey O'Connor", "party": "Democratic" },
-  "portland": { "mayor": "Keith Wilson", "party": "Democratic" },
-  "san-francisco-san-jose": { "mayor": "Daniel Lurie", "party": "Democratic" },
-  "seattle": { "mayor": "Katie Wilson", "party": "Democratic (Democratic Socialist)" }
+  "pittsburgh": { "mayor": "Corey O'Connor", "party": "Democratic Party" },
+  "portland": { "mayor": "Keith Wilson", "party": "Democratic Party" },
+  "san-francisco-san-jose": { "mayor": "Daniel Lurie", "party": "Democratic Party" },
+  "seattle": { "mayor": "Katie Wilson", "party": "Democratic Party (Democratic Socialist)" }
 }

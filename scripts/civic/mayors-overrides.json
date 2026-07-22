@@ -139,7 +139,7 @@
     "city": "Manchester",
     "country": "United Kingdom",
     "mayor": "Paul Dennett",
-    "party": "Labour",
+    "party": "Labour Party",
     "since": "2026-06-19",
     "title": "Acting Mayor of Greater Manchester"
   },
@@ -155,7 +155,7 @@
     "city": "Mumbai",
     "country": "India",
     "mayor": "Ritu Tawde",
-    "party": "BJP (Bharatiya Janata Party)",
+    "party": "Bharatiya Janata Party",
     "since": "2026-02-07",
     "title": "Mayor"
   },
@@ -175,7 +175,7 @@
     "city": "New York",
     "country": "United States",
     "mayor": "Zohran Mamdani",
-    "party": "Democratic (Democratic Socialists of America)",
+    "party": "Democratic Party (Democratic Socialists of America)",
     "since": "2026-01-01",
     "title": "Mayor"
   },
@@ -255,7 +255,7 @@
     "city": "Tampa",
     "country": "United States",
     "mayor": "Jane Castor",
-    "party": "Democratic",
+    "party": "Democratic Party",
     "since": "2019-05-01",
     "title": "Mayor"
   },
@@ -291,7 +291,7 @@
     "city": "Washington",
     "country": "United States",
     "mayor": "Muriel Bowser",
-    "party": "Democratic",
+    "party": "Democratic Party",
     "since": "2015-01-02",
     "title": "Mayor"
   },

@@ -187,7 +187,7 @@
     "city": "Cleveland",
     "country": "United States",
     "mayor": "Justin Bibb",
-    "party": "Democratic",
+    "party": "Democratic Party",
     "since": "2022-01-03",
     "title": "Mayor"
   },
@@ -395,7 +395,7 @@
     "city": "Manchester",
     "country": "United Kingdom",
     "mayor": "Paul Dennett",
-    "party": "Labour",
+    "party": "Labour Party",
     "since": "2026-06-19",
     "title": "Acting Mayor of Greater Manchester"
   },
@@ -435,7 +435,7 @@
     "city": "Milan",
     "country": "Italy",
     "mayor": "Giuseppe Sala",
-    "party": "independent politician",
+    "party": "Independent",
     "since": "2016-06-20",
     "title": "Mayor"
   },
@@ -443,7 +443,7 @@
     "city": "Minneapolis",
     "country": "United States",
     "mayor": "Jacob Frey",
-    "party": "Minnesota Democratic–Farmer–Labor Party",
+    "party": "Democratic Party (DFL)",
     "since": "2018-01-02",
     "title": "Mayor"
   },
@@ -467,7 +467,7 @@
     "city": "Mumbai",
     "country": "India",
     "mayor": "Ritu Tawde",
-    "party": "BJP (Bharatiya Janata Party)",
+    "party": "Bharatiya Janata Party",
     "since": "2026-02-07",
     "title": "Mayor"
   },
@@ -511,7 +511,7 @@
     "city": "New York",
     "country": "United States",
     "mayor": "Zohran Mamdani",
-    "party": "Democratic (Democratic Socialists of America)",
+    "party": "Democratic Party (Democratic Socialists of America)",
     "since": "2026-01-01",
     "title": "Mayor"
   },
@@ -551,7 +551,7 @@
     "city": "Pittsburgh",
     "country": "United States",
     "mayor": "Corey O'Connor",
-    "party": "Democratic",
+    "party": "Democratic Party",
     "since": "2026-01-05",
     "title": "Mayor"
   },
@@ -559,7 +559,7 @@
     "city": "Portland",
     "country": "United States",
     "mayor": "Keith Wilson",
-    "party": "Democratic",
+    "party": "Democratic Party",
     "since": "2025-01-01",
     "title": "Mayor"
   },
@@ -651,7 +651,7 @@
     "city": "San Francisco",
     "country": "United States",
     "mayor": "Daniel Lurie",
-    "party": "Democratic",
+    "party": "Democratic Party",
     "since": "2025-01-08",
     "title": "Mayor"
   },
@@ -675,7 +675,7 @@
     "city": "Seattle",
     "country": "United States",
     "mayor": "Katie Wilson",
-    "party": "Democratic (Democratic Socialist)",
+    "party": "Democratic Party (Democratic Socialist)",
     "since": "2026-01-01",
     "title": "Mayor"
   },
@@ -743,7 +743,7 @@
     "city": "Tampa",
     "country": "United States",
     "mayor": "Jane Castor",
-    "party": "Democratic",
+    "party": "Democratic Party",
     "since": "2019-05-01",
     "title": "Mayor"
   },
@@ -811,7 +811,7 @@
     "city": "Washington",
     "country": "United States",
     "mayor": "Muriel Bowser",
-    "party": "Democratic",
+    "party": "Democratic Party",
     "since": "2015-01-02",
     "title": "Mayor"
   },
