@@ -14,6 +14,7 @@ import { useEffect, useMemo, useState } from "react";
 import { flagUrl, flagSrcSet, flagUrlByCode, flagSrcSetByCode } from "@/lib/flags";
 import { activeIn, dkey, resolveWindow, shortRole, type HistRow } from "@/lib/leaderRules";
 import type { LeaderEntity } from "@/lib/leadersAll";
+import { BALLOT_OF } from "@/lib/electionLeaderLinks";
 
 const CONTINENTS = [
   "All", "Europe", "North America", "Asia", "South America", "Africa",
@@ -661,7 +662,9 @@ export default function LeadersDirectory({
                       <div className="text-sm text-[var(--text)]">
                         {primaries.map((p, i) => (
                           <div key={i}>
-                            {p.name}
+                            {e.hasHistory ? (
+                              <Link href={`/leaders/${e.slug}`} className="hover:text-[var(--accent)] transition-colors">{p.name}</Link>
+                            ) : p.name}
                             {(p as Line).currentOnly ? <span className="ml-1 text-[10px] uppercase tracking-wider text-[var(--text-dim)]">now</span> : null}
                             <span className="text-xs text-[var(--text-dim)] ml-1">({p.role})</span>
                           </div>
@@ -669,6 +672,11 @@ export default function LeadersDirectory({
                         {seconds.map((s, i) => (
                           <div key={`s${i}`} className="text-xs text-[var(--text-dim)]">{s.name} ({s.role})</div>
                         ))}
+                        {mode === "current" && BALLOT_OF[e.slug] ? (
+                          <Link href={BALLOT_OF[e.slug].href} title={BALLOT_OF[e.slug].title} className="inline-block mt-0.5 text-[10px] text-[var(--accent)] hover:underline">
+                            elected · {BALLOT_OF[e.slug].year} →
+                          </Link>
+                        ) : null}
                       </div>
                     ) : <span className="text-sm text-[var(--text-dim)]">—</span>}
                   </div>
@@ -725,7 +733,9 @@ export default function LeadersDirectory({
                           <span className="text-[var(--text)]">
                             {primaries.map((p, i) => (
                               <span key={i} className="block">
-                                {p.name}
+                                {e.hasHistory ? (
+                                  <Link href={`/leaders/${e.slug}`} className="hover:text-[var(--accent)] transition-colors">{p.name}</Link>
+                                ) : p.name}
                                 {(p as Line).currentOnly ? <span className="ml-1 text-[10px] uppercase tracking-wider text-[var(--text-dim)]">now</span> : null}
                                 <span className="sm:hidden text-xs text-[var(--text-dim)] ml-1">({p.role})</span>
                               </span>
@@ -733,6 +743,11 @@ export default function LeadersDirectory({
                             {seconds.map((s, i) => (
                               <span key={`s${i}`} className="block text-xs text-[var(--text-dim)]">{s.name} ({s.role})</span>
                             ))}
+                            {mode === "current" && BALLOT_OF[e.slug] ? (
+                              <Link href={BALLOT_OF[e.slug].href} title={BALLOT_OF[e.slug].title} className="block w-fit mt-0.5 text-[10px] text-[var(--accent)] hover:underline">
+                                elected · {BALLOT_OF[e.slug].year} →
+                              </Link>
+                            ) : null}
                           </span>
                         ) : <span className="text-[var(--text-dim)]">—</span>}
                       </td>

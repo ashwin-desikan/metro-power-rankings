@@ -1,0 +1,1475 @@
+{
+ "meta": {
+  "title": "Indonesian elections",
+  "sources": [
+   "Wikipedia: Indonesian presidential, general and legislative election articles, 1917–2024, including the Dutch East Indies Volksraad (results, infoboxes and leads)",
+   "KPU figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "presEras": [
+  {
+   "key": "reformasi",
+   "label": "Reformasi's indirect choice",
+   "span": "1999",
+   "blurb": "After Suharto's fall, the People's Consultative Assembly — not the voters — chose the president: Abdurrahman Wahid's surprise 1999 win over Megawati Sukarnoputri was democratic Indonesia's last indirect presidential selection."
+  },
+  {
+   "key": "direct",
+   "label": "The direct-election era",
+   "span": "2004–2024",
+   "blurb": "Since 2004 Indonesians have chosen their president directly, in the world's biggest single-day elections: Yudhoyono's two wins, Jokowi's decade, and Prabowo Subianto's 2024 first-round victory at his third attempt — each transfer of power peaceful, in the world's third-largest democracy."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "volksraad",
+   "label": "The colonial Volksraad",
+   "span": "1917–1939",
+   "blurb": "The Dutch East Indies' Volksraad was a colonial advisory council: partly appointed, elected on a tiny franchise weighted toward Europeans, and never sovereign. Its elections are recorded here as the colonial prelude, not as Indonesian democracy."
+  },
+  {
+   "key": "parliamentary",
+   "label": "The 1955 experiment",
+   "span": "1955",
+   "blurb": "Free Indonesia's first national election was among the most open in the postcolonial world: four big parties within a few points of each other. Parliamentary democracy did not survive the decade — Sukarno's Guided Democracy ended it, and no comparable vote came for 44 years."
+  },
+  {
+   "key": "new-order",
+   "label": "The New Order's managed elections",
+   "span": "1971–1997",
+   "blurb": "Suharto's regime held elections on schedule and won every one: Golkar's totals were engineered through civil-service mobilisation, forced party mergers and un-counted opposition. Recorded here as rituals of the New Order, with that machinery stated plainly."
+  },
+  {
+   "key": "reformasi",
+   "label": "The reformasi DPR",
+   "span": "1999–2024",
+   "blurb": "The 1999 election reopened genuine competition, and the DPR has since been elected in the world's largest single-day polls — a fragmented, coalition-bound chamber where no party has ever approached a majority."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1999",
+   "label": "1999",
+   "year": 1999,
+   "kind": "presidential",
+   "date": "20 October 1999",
+   "era": "reformasi",
+   "turnout": 97.86,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Abdurrahman Wahid",
+     "party": "National Awakening Party",
+     "r1Votes": 373,
+     "r1Share": 54.37,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Megawati Sukarnoputri",
+     "party": "Indonesian Democratic Party of Struggle",
+     "r1Votes": 313,
+     "r1Share": 45.63,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "B. J. Habibie",
+    "party": "Golkar"
+   },
+   "presAfter": {
+    "name": "Abdurrahman Wahid",
+    "party": "PKB"
+   },
+   "knownAs": "Chosen by the Assembly",
+   "summary": "From 20 to 21 October 1999, the People's Consultative Assembly (MPR), the legislative branch of Indonesia, met to elect both the president and vice president of the country for the 1999–2004 term. The incumbent president, B.",
+   "caveat": "An indirect vote of the People's Consultative Assembly, not a popular election — the last before direct presidential voting began in 2004."
+  },
+  {
+   "id": "pres-2004",
+   "label": "2004",
+   "year": 2004,
+   "kind": "presidential",
+   "date": "2004",
+   "era": "direct",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Susilo Bambang Yudhoyono",
+     "party": "Democratic Party",
+     "r1Votes": 39838184,
+     "r1Share": 33.57,
+     "r2Votes": 69266350,
+     "r2Share": 60.62
+    },
+    {
+     "name": "Megawati Sukarnoputri",
+     "party": "Indonesian Democratic Party of Struggle",
+     "r1Votes": 31569104,
+     "r1Share": 26.61,
+     "r2Votes": 44990704,
+     "r2Share": 39.38
+    },
+    {
+     "name": "Wiranto",
+     "party": "Golkar",
+     "r1Votes": 26286788,
+     "r1Share": 22.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Amien Rais",
+     "party": "National Mandate Party",
+     "r1Votes": 17392931,
+     "r1Share": 14.66,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hamzah Haz",
+     "party": "United Development Party",
+     "r1Votes": 3569861,
+     "r1Share": 3.01,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Megawati Sukarnoputri",
+    "party": "PDI-P"
+   },
+   "presAfter": {
+    "name": "Susilo Bambang Yudhoyono",
+    "party": "Demokrat"
+   },
+   "knownAs": "First direct election",
+   "summary": "Presidential elections were held in Indonesia on 5 July and 20 September 2004. As no candidate won a majority in the first round, a runoff was held, in which Susilo Bambang Yudhoyono defeated Megawati Sukarnoputri and was elected president.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2009",
+   "label": "2009",
+   "year": 2009,
+   "kind": "presidential",
+   "date": "8 July 2009",
+   "era": "direct",
+   "turnout": 72.57,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Susilo Bambang Yudhoyono",
+     "party": "Boediono",
+     "r1Votes": 73874562,
+     "r1Share": 60.8,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Megawati Sukarnoputri",
+     "party": "Prabowo Subianto",
+     "r1Votes": 32548105,
+     "r1Share": 26.79,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jusuf Kalla",
+     "party": "Wiranto",
+     "r1Votes": 15081814,
+     "r1Share": 12.41,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Susilo Bambang Yudhoyono",
+    "party": "Demokrat"
+   },
+   "presAfter": {
+    "name": "Susilo Bambang Yudhoyono",
+    "party": "Demokrat"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in Indonesia on 8 July 2009. The elections returned a president and vice president for the 2009–2014 term.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2014",
+   "label": "2014",
+   "year": 2014,
+   "kind": "presidential",
+   "date": "9 July 2014",
+   "era": "direct",
+   "turnout": 69.58,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Joko Widodo",
+     "party": "Jusuf Kalla",
+     "r1Votes": 70997833,
+     "r1Share": 53.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Prabowo Subianto",
+     "party": "Hatta Rajasa",
+     "r1Votes": 62576444,
+     "r1Share": 46.85,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Susilo Bambang Yudhoyono",
+    "party": "Demokrat"
+   },
+   "presAfter": {
+    "name": "Joko Widodo",
+    "party": "PDI-P"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in Indonesia on 9 July 2014, with former general Prabowo Subianto contesting the elections against the governor of Jakarta, Joko Widodo; incumbent president Susilo Bambang Yudhoyono was constitutionally barred from seeking a third term in office. On 22 July the General Elections Commission (KPU) announced Joko Widodo's victory.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2019",
+   "label": "2019",
+   "year": 2019,
+   "kind": "presidential",
+   "date": "17 April 2019",
+   "era": "direct",
+   "turnout": 81.69,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Joko Widodo",
+     "party": "Ma'ruf Amin",
+     "r1Votes": 85607362,
+     "r1Share": 55.5,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Prabowo Subianto",
+     "party": "Sandiaga Uno",
+     "r1Votes": 68650239,
+     "r1Share": 44.5,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Joko Widodo",
+    "party": "PDI-P"
+   },
+   "presAfter": {
+    "name": "Joko Widodo",
+    "party": "PDI-P"
+   },
+   "knownAs": "The biggest one-day vote ever",
+   "summary": "General elections were held in Indonesia on 17 April 2019. For the first time in the country's history, the president, the vice president, members of the People's Consultative Assembly (MPR), and members of local legislative bodies (DPRD) were elected on the same day with over 190 million eligible voters.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2024",
+   "label": "2024",
+   "year": 2024,
+   "kind": "presidential",
+   "date": "14 February 2024",
+   "era": "direct",
+   "turnout": 82.39,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Prabowo Subianto",
+     "party": "Gibran Rakabuming",
+     "r1Votes": 96214691,
+     "r1Share": 58.59,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Anies Baswedan",
+     "party": "Muhaimin Iskandar",
+     "r1Votes": 40971906,
+     "r1Share": 24.95,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ganjar Pranowo",
+     "party": "Mahfud MD",
+     "r1Votes": 27040878,
+     "r1Share": 16.47,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Joko Widodo",
+    "party": "PDI-P"
+   },
+   "presAfter": {
+    "name": "Prabowo Subianto",
+    "party": "Gerindra"
+   },
+   "knownAs": "Prabowo's third attempt",
+   "summary": "Presidential elections were held in Indonesia on 14 February 2024 with defence minister and former general Prabowo Subianto contesting the elections against the former governor of Jakarta, Anies Baswedan and the former governor of Central Java, Ganjar Pranowo; incumbent president Joko Widodo was constitutionally barred from seeking a third term in office.",
+   "caveat": null
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1917",
+   "label": "1917",
+   "year": 1917,
+   "kind": "legislative",
+   "date": "16 October 1917",
+   "era": "volksraad",
+   "totalSeats": 22,
+   "majoritySeats": 20,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The Volksraad was created by a law passed on 16 December 1916 in order to further the possibility of self-government. It had a total of 38 members, half of which were to be elected and half appointed.",
+   "caveat": "A colonial advisory council of the Dutch East Indies: partly appointed, elected on a tiny franchise weighted toward Europeans. Recorded here as the colonial prelude, not as an Indonesian election.",
+   "seatLeader": null
+  },
+  {
+   "id": "1921",
+   "label": "1921",
+   "year": 1921,
+   "kind": "legislative",
+   "date": "1921",
+   "era": "volksraad",
+   "totalSeats": 27,
+   "majoritySeats": 25,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The Volksraad had a total of 48 members, half of which were elected and half appointed. Seats were also assigned to ethnic groups, with 25 for the Dutch population (twelve elected, thirteen appointed), 20 for the native population (twelve elected, eight appointed) and three for the Chinese population (all of which were appointed).",
+   "caveat": "A colonial advisory council of the Dutch East Indies: partly appointed, elected on a tiny franchise weighted toward Europeans. Recorded here as the colonial prelude, not as an Indonesian election.",
+   "seatLeader": null
+  },
+  {
+   "id": "1924",
+   "label": "1924",
+   "year": 1924,
+   "kind": "legislative",
+   "date": "1924",
+   "era": "volksraad",
+   "totalSeats": 27,
+   "majoritySeats": 25,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The Volksraad had a total of 48 members, half of which were elected and half appointed. Seats were also assigned to ethnic groups, with 25 for the Dutch population (twelve elected, thirteen appointed), 20 for the native population (twelve elected, eight appointed) and three for the Chinese population (all of which were appointed).",
+   "caveat": "A colonial advisory council of the Dutch East Indies: partly appointed, elected on a tiny franchise weighted toward Europeans. Recorded here as the colonial prelude, not as an Indonesian election.",
+   "seatLeader": null
+  },
+  {
+   "id": "1927",
+   "label": "1927",
+   "year": 1927,
+   "kind": "legislative",
+   "date": "1927",
+   "era": "volksraad",
+   "totalSeats": 37,
+   "majoritySeats": 31,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The Volksraad had a total of 60 members, 37 of which were elected and 21 appointed. Seats were also assigned to ethnic groups, with 30 for the Dutch population (15 elected, 15 appointed), 25 for the native population (19 elected, 4 appointed) and five for the Chinese population (3 elected, 2 appointed).",
+   "caveat": "A colonial advisory council of the Dutch East Indies: partly appointed, elected on a tiny franchise weighted toward Europeans. Recorded here as the colonial prelude, not as an Indonesian election.",
+   "seatLeader": null
+  },
+  {
+   "id": "1931",
+   "label": "1931",
+   "year": 1931,
+   "kind": "legislative",
+   "date": "1931",
+   "era": "volksraad",
+   "totalSeats": 38,
+   "majoritySeats": 31,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The Volksraad had a total of 60 members, 38 of which were elected and 22 appointed. Seats were also assigned to ethnic groups, with 25 for the Dutch population (15 elected, 10 appointed), 30 for the native population (20 elected, 10 appointed) and five for the Chinese population (3 elected, 2 appointed).",
+   "caveat": "A colonial advisory council of the Dutch East Indies: partly appointed, elected on a tiny franchise weighted toward Europeans. Recorded here as the colonial prelude, not as an Indonesian election.",
+   "seatLeader": null
+  },
+  {
+   "id": "1935",
+   "label": "1935",
+   "year": 1935,
+   "kind": "legislative",
+   "date": "1935",
+   "era": "volksraad",
+   "totalSeats": 38,
+   "majoritySeats": 31,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The Volksraad had a total of 60 members, 38 of which were elected and 22 appointed. Seats were also assigned to ethnic groups, with 25 for the Dutch population (15 elected, 10 appointed), 30 for the native population (20 elected, 10 appointed) and five for the foreign Orientals (Chinese and Arab Indonesian) (3 elected, 2 appointed).",
+   "caveat": "A colonial advisory council of the Dutch East Indies: partly appointed, elected on a tiny franchise weighted toward Europeans. Recorded here as the colonial prelude, not as an Indonesian election.",
+   "seatLeader": null
+  },
+  {
+   "id": "1939",
+   "label": "1939",
+   "year": 1939,
+   "kind": "legislative",
+   "date": "1939",
+   "era": "volksraad",
+   "totalSeats": 38,
+   "majoritySeats": 31,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Elections to the Volksraad were held in the Dutch East Indies in 1939. Only ten percent of the population was allowed to vote, but this was only to choose 937 electors, who together with another 515 government appointees, in turn elected 38 of the 60 members.",
+   "caveat": "A colonial advisory council of the Dutch East Indies: partly appointed, elected on a tiny franchise weighted toward Europeans. Recorded here as the colonial prelude, not as an Indonesian election.",
+   "seatLeader": null
+  },
+  {
+   "id": "1955",
+   "label": "1955",
+   "year": 1955,
+   "kind": "legislative",
+   "date": "29 September 1955",
+   "era": "parliamentary",
+   "totalSeats": 257,
+   "majoritySeats": 129,
+   "turnout": 91.54,
+   "parties": [
+    {
+     "name": "Indonesian National Party",
+     "leader": "Sidik Djojosukarto",
+     "seats": 57,
+     "seatChange": null,
+     "votes": 8434653,
+     "share": 22.32,
+     "swing": null
+    },
+    {
+     "name": "Masyumi Party",
+     "leader": "Mohammad Natsir",
+     "seats": 57,
+     "seatChange": null,
+     "votes": 7903886,
+     "share": 20.92,
+     "swing": null
+    },
+    {
+     "name": "Nahdlatul Ulama",
+     "leader": "Abdul Wahab Hasbullah",
+     "seats": 45,
+     "seatChange": null,
+     "votes": 6955141,
+     "share": 18.41,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Indonesia",
+     "leader": "D. N. Aidit",
+     "seats": 39,
+     "seatChange": null,
+     "votes": 6176914,
+     "share": 16.35,
+     "swing": null
+    },
+    {
+     "name": "Indonesian Islamic Union Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 1091160,
+     "share": 2.89,
+     "swing": null
+    },
+    {
+     "name": "Indonesian Christian Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 1003325,
+     "share": 2.66,
+     "swing": null
+    },
+    {
+     "name": "Catholic Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 770740,
+     "share": 2.04,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Indonesia",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 753191,
+     "share": 1.99,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "Free Indonesia's first election",
+   "summary": "Legislative elections were held in Indonesia on 29 September 1955 to elect all 257 members of the House of Representatives. They were the first national elections to be held in the country following independence and would see over 37 million votes cast in over 93 thousand polling stations.",
+   "caveat": null,
+   "seatLeader": "Indonesian National Party"
+  },
+  {
+   "id": "1971",
+   "label": "1971",
+   "year": 1971,
+   "kind": "legislative",
+   "date": "3 July 1971",
+   "era": "new-order",
+   "totalSeats": 360,
+   "majoritySeats": 181,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Golkar",
+     "leader": "Suprapto Sukowati",
+     "seats": 236,
+     "seatChange": 100.0,
+     "votes": 34348673,
+     "share": 62.8,
+     "swing": null
+    },
+    {
+     "name": "Nahdlatul Ulama",
+     "leader": "Idham Chalid",
+     "seats": 58,
+     "seatChange": 0.0,
+     "votes": 10213650,
+     "share": 18.67,
+     "swing": 0.26
+    },
+    {
+     "name": "Parmusi",
+     "leader": "Mohammad Syafaat Mintaredja",
+     "seats": 24,
+     "seatChange": 0.0,
+     "votes": 2930746,
+     "share": 5.36,
+     "swing": -15.56
+    },
+    {
+     "name": "Indonesian National Party",
+     "leader": "Mohammad Isnaeni",
+     "seats": 20,
+     "seatChange": 0.0,
+     "votes": 3793266,
+     "share": 6.93,
+     "swing": -15.39
+    },
+    {
+     "name": "Indonesian Islamic Union Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 0.0,
+     "votes": 1308237,
+     "share": 2.39,
+     "swing": null
+    },
+    {
+     "name": "Indonesian Christian Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 0.0,
+     "votes": 733359,
+     "share": 1.34,
+     "swing": null
+    },
+    {
+     "name": "Catholic Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": 603740,
+     "share": 1.1,
+     "swing": null
+    },
+    {
+     "name": "Islamic Education Movement",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": 381309,
+     "share": 0.7,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Suharto",
+    "party": "Golkar"
+   },
+   "pmAfter": {
+    "name": "Suharto",
+    "party": "Golkar"
+   },
+   "knownAs": "The New Order's first vote",
+   "summary": "Legislative elections were held in Indonesia on 3 July 1971, the first under the New Order regime. There were ten participants; nine political parties and the \"functional group\" Golkar, which came first with more than 60 percent of the vote, resulting in an absolute majority in the People's Representative Council.",
+   "caveat": "A managed election under Suharto's New Order: only sanctioned parties could run and the ruling Golkar's victory was engineered in advance. Recorded here as history, not as a free election.",
+   "seatLeader": "Golkar"
+  },
+  {
+   "id": "1977",
+   "label": "1977",
+   "year": 1977,
+   "kind": "legislative",
+   "date": "2 May 1977",
+   "era": "new-order",
+   "totalSeats": 360,
+   "majoritySeats": 181,
+   "turnout": 90.93,
+   "parties": [
+    {
+     "name": "Golkar",
+     "leader": "Amir Murtono",
+     "seats": 232,
+     "seatChange": 100.0,
+     "votes": 39750096,
+     "share": 62.11,
+     "swing": -0.71
+    },
+    {
+     "name": "United Development Party",
+     "leader": "Mohammad Syafaat Mintaredja",
+     "seats": 99,
+     "seatChange": 0.0,
+     "votes": 18743491,
+     "share": 29.29,
+     "swing": 2.17
+    },
+    {
+     "name": "Indonesian Democratic Party",
+     "leader": "Sanusi Hardjadinata",
+     "seats": 29,
+     "seatChange": 0.0,
+     "votes": 5504757,
+     "share": 8.6,
+     "swing": -1.46
+    }
+   ],
+   "pmBefore": {
+    "name": "Suharto",
+    "party": "Golkar"
+   },
+   "pmAfter": {
+    "name": "Suharto",
+    "party": "Golkar"
+   },
+   "knownAs": null,
+   "summary": "In 1971, the New Order regime of Indonesia held the first legislative elections since 1955 in an effort to establish a system of government with President Suharto and the Indonesian military in control and to give this system legitimacy.",
+   "caveat": "A managed election under Suharto's New Order: only sanctioned parties could run and the ruling Golkar's victory was engineered in advance. Recorded here as history, not as a free election.",
+   "seatLeader": "Golkar"
+  },
+  {
+   "id": "1982",
+   "label": "1982",
+   "year": 1982,
+   "kind": "legislative",
+   "date": "4 May 1982",
+   "era": "new-order",
+   "totalSeats": 360,
+   "majoritySeats": 181,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Golkar",
+     "leader": "Amir Murtono",
+     "seats": 242,
+     "seatChange": 10.0,
+     "votes": 48334724,
+     "share": 64.34,
+     "swing": 2.23
+    },
+    {
+     "name": "United Development Party",
+     "leader": "Jailani Naro",
+     "seats": 94,
+     "seatChange": 5.0,
+     "votes": 20871880,
+     "share": 27.78,
+     "swing": -1.51
+    },
+    {
+     "name": "Indonesian Democratic Party",
+     "leader": "Sunawar Sukowati",
+     "seats": 24,
+     "seatChange": 5.0,
+     "votes": 5919702,
+     "share": 7.88,
+     "swing": -0.72
+    }
+   ],
+   "pmBefore": {
+    "name": "Suharto",
+    "party": "Golkar"
+   },
+   "pmAfter": {
+    "name": "Suharto",
+    "party": "Golkar"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in Indonesia on 4 May 1982. They were the fourth legislative elections since independence and the third under the New Order regime There were three participants; the two political parties, the United Development Party (PPP), the Indonesian Democratic Party (PDI) and the \"functional group\" Golkar.",
+   "caveat": "A managed election under Suharto's New Order: only sanctioned parties could run and the ruling Golkar's victory was engineered in advance. Recorded here as history, not as a free election.",
+   "seatLeader": "Golkar"
+  },
+  {
+   "id": "1987",
+   "label": "1987",
+   "year": 1987,
+   "kind": "legislative",
+   "date": "23 April 1987",
+   "era": "new-order",
+   "totalSeats": 400,
+   "majoritySeats": 201,
+   "turnout": 91.38,
+   "parties": [
+    {
+     "name": "Golkar",
+     "leader": "Sudharmono",
+     "seats": 299,
+     "seatChange": 57.0,
+     "votes": 62783680,
+     "share": 73.11,
+     "swing": 8.77
+    },
+    {
+     "name": "United Development Party",
+     "leader": "Jailani Naro",
+     "seats": 61,
+     "seatChange": 33.0,
+     "votes": 13701428,
+     "share": 15.96,
+     "swing": -11.82
+    },
+    {
+     "name": "Indonesian Democratic Party",
+     "leader": "Suryadi",
+     "seats": 40,
+     "seatChange": 16.0,
+     "votes": 9384708,
+     "share": 10.93,
+     "swing": 3.05
+    }
+   ],
+   "pmBefore": {
+    "name": "Suharto",
+    "party": "Golkar"
+   },
+   "pmAfter": {
+    "name": "Suharto",
+    "party": "Golkar"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in Indonesia on 23 April 1987, to elect 400 of the 500 members of the People's Representative Council (DPR), the national legislature. The election was the fifth legislative election in the country since independence and the fourth legislative election under President Suharto's New Order.",
+   "caveat": "A managed election under Suharto's New Order: only sanctioned parties could run and the ruling Golkar's victory was engineered in advance. Recorded here as history, not as a free election.",
+   "seatLeader": "Golkar"
+  },
+  {
+   "id": "1992",
+   "label": "1992",
+   "year": 1992,
+   "kind": "legislative",
+   "date": "9 June 1992",
+   "era": "new-order",
+   "totalSeats": 400,
+   "majoritySeats": 201,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Golkar",
+     "leader": "Wahono",
+     "seats": 282,
+     "seatChange": -17.0,
+     "votes": 66599331,
+     "share": 68.1,
+     "swing": -5.01
+    },
+    {
+     "name": "PPP",
+     "leader": "Ismail Hasan Metareum",
+     "seats": 62,
+     "seatChange": 1.0,
+     "votes": 16624647,
+     "share": 17.0,
+     "swing": 1.04
+    },
+    {
+     "name": "PDI",
+     "leader": "Suryadi",
+     "seats": 56,
+     "seatChange": 16.0,
+     "votes": 14565556,
+     "share": 14.89,
+     "swing": 3.96
+    }
+   ],
+   "pmBefore": {
+    "name": "Suharto",
+    "party": "Golkar"
+   },
+   "pmAfter": {
+    "name": "Suharto",
+    "party": "Golkar"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in Indonesia on 9 June 1992, to select 400 of the 500 members of the People's Representative Council (DPR). The election was the sixth legislative elections since Indonesian independence and the fifth legislative elections under the New Order regime of president Suharto.",
+   "caveat": "A managed election under Suharto's New Order: only sanctioned parties could run and the ruling Golkar's victory was engineered in advance. Recorded here as history, not as a free election.",
+   "seatLeader": "Golkar"
+  },
+  {
+   "id": "1997",
+   "label": "1997",
+   "year": 1997,
+   "kind": "legislative",
+   "date": "29 May 1997",
+   "era": "new-order",
+   "totalSeats": 425,
+   "majoritySeats": 213,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Golkar",
+     "leader": "Harmoko",
+     "seats": 325,
+     "seatChange": 43.0,
+     "votes": 84187907,
+     "share": 74.51,
+     "swing": 6.41
+    },
+    {
+     "name": "United Development Party",
+     "leader": "Ismail Hasan Metareum",
+     "seats": 89,
+     "seatChange": 27.0,
+     "votes": 25340028,
+     "share": 22.43,
+     "swing": 5.43
+    },
+    {
+     "name": "Indonesian Democratic Party",
+     "leader": "Megawati Sukarnoputri",
+     "seats": 11,
+     "seatChange": 45.0,
+     "votes": 3463225,
+     "share": 3.07,
+     "swing": -11.83
+    }
+   ],
+   "pmBefore": {
+    "name": "Suharto",
+    "party": "Golkar"
+   },
+   "pmAfter": {
+    "name": "Suharto",
+    "party": "Golkar"
+   },
+   "knownAs": "Golkar's last managed win",
+   "summary": "Legislative elections were held in Indonesia on 29 May 1997. There were three simultaneous elections in one because voters were electing members of two levels of regional government (provincial and regency levels) as well as the national-level People's Representative Council.",
+   "caveat": "A managed election under Suharto's New Order: only sanctioned parties could run and the ruling Golkar's victory was engineered in advance. Recorded here as history, not as a free election.",
+   "seatLeader": "Golkar"
+  },
+  {
+   "id": "1999",
+   "label": "1999",
+   "year": 1999,
+   "kind": "legislative",
+   "date": "7 June 1999",
+   "era": "reformasi",
+   "totalSeats": 462,
+   "majoritySeats": 232,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Indonesian Democratic Party of Struggle",
+     "leader": "Megawati Sukarnoputri",
+     "seats": 153,
+     "seatChange": null,
+     "votes": 35689073,
+     "share": 33.74,
+     "swing": null
+    },
+    {
+     "name": "Golongan Karya",
+     "leader": "Akbar Tanjung",
+     "seats": 120,
+     "seatChange": -205.0,
+     "votes": 23741749,
+     "share": 22.44,
+     "swing": -50.05
+    },
+    {
+     "name": "United Development Party",
+     "leader": "Hamzah Haz",
+     "seats": 58,
+     "seatChange": -31.0,
+     "votes": 11329905,
+     "share": 10.71,
+     "swing": -11.72
+    },
+    {
+     "name": "National Awakening Party",
+     "leader": "Matori Abdul Djalil",
+     "seats": 51,
+     "seatChange": null,
+     "votes": 13336982,
+     "share": 12.61,
+     "swing": null
+    },
+    {
+     "name": "National Mandate Party",
+     "leader": "Amien Rais",
+     "seats": 34,
+     "seatChange": null,
+     "votes": 7528956,
+     "share": 7.12,
+     "swing": null
+    },
+    {
+     "name": "Crescent Star Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": 2049708,
+     "share": 1.94,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "B. J. Habibie",
+    "party": "Golkar"
+   },
+   "pmAfter": {
+    "name": "B. J. Habibie",
+    "party": "Golkar"
+   },
+   "knownAs": "The reformasi election",
+   "summary": "Early legislative elections were held in Indonesia on 7 June 1999. They were the first elections since the fall of Suharto and end of the New Order, the first free elections in Indonesia since 1955, and the first and only free legislative election held in East Timor during Indonesian provincehood.",
+   "caveat": null,
+   "seatLeader": "Indonesian Democratic Party of Struggle"
+  },
+  {
+   "id": "2004",
+   "label": "2004",
+   "year": 2004,
+   "kind": "legislative",
+   "date": "5 April 2004",
+   "era": "reformasi",
+   "totalSeats": 550,
+   "majoritySeats": 276,
+   "turnout": 84.07,
+   "parties": [
+    {
+     "name": "Golkar",
+     "leader": "Akbar Tandjung",
+     "seats": 128,
+     "seatChange": 8.0,
+     "votes": 24480757,
+     "share": 21.58,
+     "swing": -4.39
+    },
+    {
+     "name": "Indonesian Democratic Party of Struggle",
+     "leader": "Megawati Sukarnoputri",
+     "seats": 109,
+     "seatChange": -44.0,
+     "votes": 21026629,
+     "share": 18.53,
+     "swing": -15.21
+    },
+    {
+     "name": "United Development Party",
+     "leader": "Hamzah Haz",
+     "seats": 58,
+     "seatChange": 0.0,
+     "votes": 9248764,
+     "share": 8.15,
+     "swing": -2.56
+    },
+    {
+     "name": "Democratic Party",
+     "leader": "Subur Budhisantoso",
+     "seats": 55,
+     "seatChange": null,
+     "votes": 8455225,
+     "share": 7.45,
+     "swing": null
+    },
+    {
+     "name": "National Mandate Party",
+     "leader": "Amien Rais",
+     "seats": 53,
+     "seatChange": 19.0,
+     "votes": 7303324,
+     "share": 6.44,
+     "swing": -0.68
+    },
+    {
+     "name": "National Awakening Party",
+     "leader": "Alwi Shihab",
+     "seats": 52,
+     "seatChange": 1.0,
+     "votes": 11989564,
+     "share": 10.57,
+     "swing": -0.46
+    }
+   ],
+   "pmBefore": {
+    "name": "Megawati Sukarnoputri",
+    "party": "PDI-P"
+   },
+   "pmAfter": {
+    "name": "Megawati Sukarnoputri",
+    "party": "PDI-P"
+   },
+   "knownAs": null,
+   "summary": "Final results of the popular vote tally showed that Golkar, the former ruling party of the New Order era, received the most votes. It had lost to the Indonesian Democratic Party of Struggle in the 1999 legislative election.",
+   "caveat": null,
+   "seatLeader": "Golkar"
+  },
+  {
+   "id": "2009",
+   "label": "2009",
+   "year": 2009,
+   "kind": "legislative",
+   "date": "9 April 2009",
+   "era": "reformasi",
+   "totalSeats": 560,
+   "majoritySeats": 281,
+   "turnout": 70.99,
+   "parties": [
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 148,
+     "seatChange": 93.0,
+     "votes": 21655295,
+     "share": 20.81,
+     "swing": null
+    },
+    {
+     "name": "Golkar",
+     "leader": null,
+     "seats": 106,
+     "seatChange": 22.0,
+     "votes": 15031497,
+     "share": 14.45,
+     "swing": null
+    },
+    {
+     "name": "Indonesian Democratic Party of Struggle",
+     "leader": null,
+     "seats": 94,
+     "seatChange": 15.0,
+     "votes": 14576388,
+     "share": 14.01,
+     "swing": null
+    },
+    {
+     "name": "Prosperous Justice Party",
+     "leader": null,
+     "seats": 57,
+     "seatChange": 12.0,
+     "votes": 8204946,
+     "share": 7.89,
+     "swing": null
+    },
+    {
+     "name": "National Mandate Party",
+     "leader": null,
+     "seats": 46,
+     "seatChange": 7.0,
+     "votes": 6273462,
+     "share": 6.03,
+     "swing": null
+    },
+    {
+     "name": "United Development Party",
+     "leader": null,
+     "seats": 38,
+     "seatChange": 20.0,
+     "votes": 5544332,
+     "share": 5.33,
+     "swing": null
+    },
+    {
+     "name": "National Awakening Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": 24.0,
+     "votes": 5146302,
+     "share": 4.95,
+     "swing": null
+    },
+    {
+     "name": "Gerindra Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": null,
+     "votes": 4642795,
+     "share": 4.46,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Susilo Bambang Yudhoyono",
+    "party": "Democratic Party"
+   },
+   "pmAfter": {
+    "name": "Susilo Bambang Yudhoyono",
+    "party": "Democratic Party"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in Indonesia on 9 April 2009 for 132 seats of the Regional Representative Council (DPD) and 560 seats of the People's Representative Council (DPR). A total of 38 parties met the requirements to be allowed to participate in the national elections, with a further six regional parties contesting in Aceh only.",
+   "caveat": null,
+   "seatLeader": "Democratic Party"
+  },
+  {
+   "id": "2014",
+   "label": "2014",
+   "year": 2014,
+   "kind": "legislative",
+   "date": "9 April 2014",
+   "era": "reformasi",
+   "totalSeats": 560,
+   "majoritySeats": 281,
+   "turnout": 74.53,
+   "parties": [
+    {
+     "name": "PDI-P",
+     "leader": "Megawati Sukarnoputri",
+     "seats": 109,
+     "seatChange": 15.0,
+     "votes": null,
+     "share": 18.95,
+     "swing": null
+    },
+    {
+     "name": "Golkar",
+     "leader": "Aburizal Bakrie",
+     "seats": 91,
+     "seatChange": -15.0,
+     "votes": null,
+     "share": 14.75,
+     "swing": null
+    },
+    {
+     "name": "Gerindra",
+     "leader": "Prabowo Subianto",
+     "seats": 73,
+     "seatChange": 47.0,
+     "votes": null,
+     "share": 11.81,
+     "swing": null
+    },
+    {
+     "name": "Demokrat",
+     "leader": "Susilo Bambang Yudhoyono",
+     "seats": 61,
+     "seatChange": -87.0,
+     "votes": null,
+     "share": 10.18,
+     "swing": null
+    },
+    {
+     "name": "PAN",
+     "leader": "Hatta Rajasa",
+     "seats": 49,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 7.59,
+     "swing": null
+    },
+    {
+     "name": "PKB",
+     "leader": "Muhaimin Iskandar",
+     "seats": 47,
+     "seatChange": 19.0,
+     "votes": null,
+     "share": 9.04,
+     "swing": null
+    },
+    {
+     "name": "PKS",
+     "leader": "Anis Matta",
+     "seats": 40,
+     "seatChange": -17.0,
+     "votes": null,
+     "share": 6.79,
+     "swing": null
+    },
+    {
+     "name": "PPP",
+     "leader": "Suryadharma Ali",
+     "seats": 39,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 6.53,
+     "swing": null
+    },
+    {
+     "name": "NasDem",
+     "leader": "Surya Paloh",
+     "seats": 35,
+     "seatChange": null,
+     "votes": null,
+     "share": 6.72,
+     "swing": null
+    },
+    {
+     "name": "Hanura",
+     "leader": "Wiranto",
+     "seats": 16,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 5.27,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Susilo Bambang Yudhoyono",
+    "party": "Democratic Party"
+   },
+   "pmAfter": {
+    "name": "Susilo Bambang Yudhoyono",
+    "party": "Democratic Party"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in Indonesia on 9 April 2014 to elect 136 members of the Regional Representative Council (DPD), 560 members of the People's Representative Council (DPR) and members of and members of local legislative bodies (DPRD) at the provincial and regency/municipality level.",
+   "caveat": null,
+   "seatLeader": "PDI-P"
+  },
+  {
+   "id": "2019",
+   "label": "2019",
+   "year": 2019,
+   "kind": "legislative",
+   "date": "17 April 2019",
+   "era": "reformasi",
+   "totalSeats": 575,
+   "majoritySeats": 288,
+   "turnout": 81.69,
+   "parties": [
+    {
+     "name": "PDI-P",
+     "leader": "Megawati Sukarnoputri",
+     "seats": 128,
+     "seatChange": 19.0,
+     "votes": null,
+     "share": 19.33,
+     "swing": null
+    },
+    {
+     "name": "Golkar",
+     "leader": "Airlangga Hartarto",
+     "seats": 85,
+     "seatChange": -6.0,
+     "votes": null,
+     "share": 12.31,
+     "swing": null
+    },
+    {
+     "name": "Gerindra",
+     "leader": "Prabowo Subianto",
+     "seats": 78,
+     "seatChange": 5.0,
+     "votes": null,
+     "share": 12.57,
+     "swing": null
+    },
+    {
+     "name": "NasDem",
+     "leader": "Surya Paloh",
+     "seats": 59,
+     "seatChange": 24.0,
+     "votes": null,
+     "share": 9.05,
+     "swing": null
+    },
+    {
+     "name": "PKB",
+     "leader": "Muhaimin Iskandar",
+     "seats": 58,
+     "seatChange": 11.0,
+     "votes": null,
+     "share": 9.69,
+     "swing": null
+    },
+    {
+     "name": "Demokrat",
+     "leader": "Susilo Bambang Yudhoyono",
+     "seats": 54,
+     "seatChange": -7.0,
+     "votes": null,
+     "share": 7.77,
+     "swing": null
+    },
+    {
+     "name": "PKS",
+     "leader": "Sohibul Iman",
+     "seats": 50,
+     "seatChange": 10.0,
+     "votes": null,
+     "share": 8.21,
+     "swing": null
+    },
+    {
+     "name": "PAN",
+     "leader": "Zulkifli Hasan",
+     "seats": 44,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": 6.84,
+     "swing": null
+    },
+    {
+     "name": "PPP",
+     "leader": "Suharso Monoarfa",
+     "seats": 19,
+     "seatChange": -20.0,
+     "votes": null,
+     "share": 4.52,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Joko Widodo",
+    "party": "PDI-P"
+   },
+   "pmAfter": {
+    "name": "Joko Widodo",
+    "party": "PDI-P"
+   },
+   "knownAs": "Held with the presidential vote",
+   "summary": "General elections were held in Indonesia on 17 April 2019. For the first time in the country's history, the president, the vice president, members of the People's Consultative Assembly (MPR), and members of local legislative bodies (DPRD) were elected on the same day with over 190 million eligible voters.",
+   "caveat": null,
+   "seatLeader": "PDI-P"
+  },
+  {
+   "id": "2024",
+   "label": "2024",
+   "year": 2024,
+   "kind": "legislative",
+   "date": "14 February 2024",
+   "era": "reformasi",
+   "totalSeats": 580,
+   "majoritySeats": 291,
+   "turnout": 82.03,
+   "parties": [
+    {
+     "name": "PDI-P",
+     "leader": "Megawati Sukarnoputri",
+     "seats": 110,
+     "seatChange": -18.0,
+     "votes": null,
+     "share": 16.72,
+     "swing": null
+    },
+    {
+     "name": "Golkar",
+     "leader": "Airlangga Hartarto",
+     "seats": 102,
+     "seatChange": 17.0,
+     "votes": null,
+     "share": 15.29,
+     "swing": null
+    },
+    {
+     "name": "Gerindra",
+     "leader": "Prabowo Subianto",
+     "seats": 86,
+     "seatChange": 8.0,
+     "votes": null,
+     "share": 13.22,
+     "swing": null
+    },
+    {
+     "name": "NasDem",
+     "leader": "Surya Paloh",
+     "seats": 69,
+     "seatChange": 10.0,
+     "votes": null,
+     "share": 9.66,
+     "swing": null
+    },
+    {
+     "name": "PKB",
+     "leader": "Muhaimin Iskandar",
+     "seats": 68,
+     "seatChange": 10.0,
+     "votes": null,
+     "share": 10.62,
+     "swing": null
+    },
+    {
+     "name": "PKS",
+     "leader": "Ahmad Syaikhu",
+     "seats": 53,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 8.42,
+     "swing": null
+    },
+    {
+     "name": "PAN",
+     "leader": "Zulkifli Hasan",
+     "seats": 48,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": 7.24,
+     "swing": null
+    },
+    {
+     "name": "Demokrat",
+     "leader": "Agus Harimurti Yudhoyono",
+     "seats": 44,
+     "seatChange": -10.0,
+     "votes": null,
+     "share": 7.43,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Joko Widodo",
+    "party": "PDI-P"
+   },
+   "pmAfter": {
+    "name": "Prabowo Subianto",
+    "party": "Gerindra"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Indonesia on 14 February 2024 to elect the president, vice president, and People's Consultative Assembly (MPR), which consists of the House of Representatives (DPR), the Regional Representative Council (DPD), and members of local legislative bodies (DPRD) at the provincial and city or regency levels.",
+   "caveat": null,
+   "seatLeader": "PDI-P"
+  }
+ ]
+}

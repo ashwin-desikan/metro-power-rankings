@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-07-22",
+    headline: "Thirty-five election hubs, from papal conclaves to wartime ballots",
+    items: [
+      "Twenty-six new election hubs in one day: thirty-five polities, 1,300+ contests — from royal Poland and 964 years of papal conclaves to Denmark's March 2026 snap vote, with a compact tier built for many more.",
+      "Unfree and managed votes recorded honestly throughout — Soviet single lists, Saddam's referendums, Singapore's tilted dominance — every entry carrying its label, with Russia, China and the Vatican badged on the card.",
+      "The conflicts atlas now spans 1500 to today with civil wars labelled, and every wartime election carries a marker — gathered on a new Elections Under Fire page, with landmark referendums and leader profiles.",
+      "The elections landing page gains a clickable world map, a two-century timeline of every recorded contest and cross-polity charts — and every table with values, in every hub, now sorts.",
+    ],
+  },
+  {
     date: "2026-07-21",
     headline: "Election history hubs: Britain, America, Canada and Europe",
     items: [

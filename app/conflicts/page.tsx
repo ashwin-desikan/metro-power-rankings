@@ -5,9 +5,9 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import ConflictsTable from "./ConflictsTable";
 
 const PATH = "/conflicts";
-const TITLE = "Interstate Wars since 1945";
+const TITLE = "Wars since 1500";
 const DESC =
-  "Every interstate war since 1945 — the wars fought between sovereign states, with belligerents linked to their country pages, dates, and combat-death estimates. Sourced from Wikipedia and refreshed monthly.";
+  "Five centuries of war — the interstate wars fought between sovereign states, and the notable civil wars labelled as such — with belligerents linked to their country pages throughout. Combat-death estimates are shown from 1945, where the source tracks them; the modern era refreshes monthly.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -20,6 +20,7 @@ export default async function ConflictsPage() {
   const wars = await getConflicts();
   const ongoing = wars.filter((w) => w.ongoing).length;
   const major = wars.filter((w) => w.major).length;
+  const civil = wars.filter((w) => w.civil).length;
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
       <nav className="text-xs text-[var(--text-muted)] mb-4">
@@ -29,15 +30,18 @@ export default async function ConflictsPage() {
         <h1 className="text-3xl font-bold mb-2 text-[var(--text)]">{TITLE}</h1>
         <p className="text-[var(--text-muted)] max-w-2xl">{DESC}</p>
         <p className="text-sm text-[var(--text-dim)] mt-2 tabular-nums">
-          {wars.length} wars · {ongoing} ongoing · {major} with 10,000+ combat deaths
+          {wars.length} wars · {ongoing} ongoing · {major} major · {civil} civil wars
         </p>
       </header>
       <ConflictsTable wars={wars} />
       <footer className="mt-10 pt-6 border-t text-xs text-[var(--text-dim)]" style={{ borderColor: "var(--border)" }}>
-        Interstate war = armed conflict between sovereign states with 100+ combat deaths (excludes civil wars and wars of
-        independence). Predecessor states are mapped to their modern country where the continuation is clear; contested
-        successions (the Soviet Union, Yugoslavia, Czechoslovakia) and non-state forces are shown unlinked. Source:
-        Wikipedia, “List of interstate wars since 1945.”
+        Interstate war = armed conflict between sovereign states (excludes rebellions and purely colonial campaigns;
+        wars of independence appear only where sovereign states fought on both sides). Notable civil wars — from the
+        Wars of Religion and the Taiping Rebellion to Syria and Yemen — are included and carry a civil-war label. Predecessor states are
+        mapped to their modern country where the continuation is clear — Ottoman Empire to Turkey, Prussia to Germany,
+        the Russian Empire and Soviet Union to Russia; non-state forces are shown unlinked. Major = a war of the first
+        rank (10,000+ combat deaths in the modern era). Sources: Wikipedia, “List of interstate wars since 1945”
+        (refreshed monthly) and the “List of wars” series, 1500–1944, curated to notable interstate wars.
       </footer>
     </main>
   );

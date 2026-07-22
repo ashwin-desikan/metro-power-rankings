@@ -1,0 +1,2891 @@
+{
+ "meta": {
+  "title": "New Zealand general elections",
+  "sources": [
+   "Wikipedia: New Zealand general election articles, 1853–2023 (results, infoboxes and leads)",
+   "Electoral Commission / Chief Electoral Office figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "eras": [
+  {
+   "key": "colonial",
+   "label": "The colonial parliaments",
+   "span": "1853–1887",
+   "blurb": "New Zealand's first elections chose a parliament for a young settler colony: a property-based franchise, multi-day polling spread across months, and no political parties — members grouped and regrouped around personalities and provincial interests. Four Māori seats were added in 1868, decades before comparable representation anywhere else in the Empire."
+  },
+  {
+   "key": "liberal",
+   "label": "The Liberal era",
+   "span": "1890–1908",
+   "blurb": "The 1890 election produced the world's first enduring party government of its kind, and the Liberals under Ballance and Seddon ran the colony for two decades. In 1893 New Zealand became the first self-governing country where women voted in a national election — a fact stamped on every contest since."
+  },
+  {
+   "key": "reform",
+   "label": "Reform and the three-party years",
+   "span": "1911–1928",
+   "blurb": "Massey's Reform Party broke the Liberal grip in 1911, and for two decades three parties — Reform, Liberal and the rising Labour — circled each other through war, influenza and depression, with United's surprise 1928 comeback under the aged Ward the era's final twist."
+  },
+  {
+   "key": "first-labour",
+   "label": "Depression and the first Labour government",
+   "span": "1931–1946",
+   "blurb": "The Depression broke the old order: Michael Joseph Savage's Labour swept to power in 1935 on a promise of security from cradle to grave, built the welfare state, and won again in 1938 with the highest vote share ever recorded. Their opponents fused into the National Party — and the two-party system was born."
+  },
+  {
+   "key": "two-party",
+   "label": "The two-party era",
+   "span": "1949–1993",
+   "blurb": "First-past-the-post delivered single-party majorities for four decades: National's long hegemony under Holland, Holyoake and Muldoon, Labour's brief stormy interludes, the snap election of 1984 that unleashed Rogernomics, and mounting anger at governments that broke promises with impunity — until voters chose MMP by referendum on election night 1993."
+  },
+  {
+   "key": "mmp",
+   "label": "The MMP era",
+   "span": "1996–2023",
+   "blurb": "Mixed-member proportional voting rebuilt the system around coalitions: New Zealand First as kingmaker in 1996 and 2017, Helen Clark's three terms, John Key's three, Jacinda Ardern's rise and the 2020 landslide — the only single-party majority MMP has ever produced — then the three-party coalition that replaced it in 2023."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1853",
+   "label": "1853",
+   "year": 1853,
+   "date": "14 July – 1 October 1853",
+   "era": "colonial",
+   "totalSeats": 37,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 37,
+     "seatChange": 37.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The first election",
+   "summary": "The 1853 New Zealand general election was a nationwide vote to determine the shape of the New Zealand Parliament's first term. It was the first national election ever held in New Zealand, although Parliament did not yet have full authority to govern the colony, which was part of the British Empire at that time.",
+   "caveat": null,
+   "seatLeader": "Independent"
+  },
+  {
+   "id": "1855",
+   "label": "1855",
+   "year": 1855,
+   "date": "26 October – 28 December 1855",
+   "era": "colonial",
+   "totalSeats": 37,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Independent",
+     "leader": "Henry Sewell",
+     "seats": 37,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Henry Sewell",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "The 1855 New Zealand general election was a nationwide vote to determine the shape of the New Zealand Parliament's 2nd term. It was the second national election ever held in New Zealand, and the first one which elected a Parliament that had full authority to govern the colony.",
+   "caveat": null,
+   "seatLeader": "Independent"
+  },
+  {
+   "id": "1860",
+   "label": "1860–61",
+   "year": 1860,
+   "date": "12 December 1860 – 28 March 1861",
+   "era": "colonial",
+   "totalSeats": 53,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Independent",
+     "leader": "Edward Stafford",
+     "seats": 53,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Edward Stafford",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Edward Stafford",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "1894–1987 (alcohol licensing)1949 (gambling)1949 (military training)1949 (licensing hours)1967 (parliamentary term)1967 (licensing hours)1990 (parliamentary term)1992 (voting method)1993 (voting method)1997 (pension)2011 (voting method)2015–2016 (flag)2020 cannabiseuthanasia",
+   "caveat": null,
+   "seatLeader": "Independent"
+  },
+  {
+   "id": "1866",
+   "label": "1866",
+   "year": 1866,
+   "date": "1866",
+   "era": "colonial",
+   "totalSeats": 70,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Independent",
+     "leader": "Edward Stafford",
+     "seats": 70,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Edward Stafford",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Edward Stafford",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "1894–1987 (alcohol licensing)1949 (gambling)1949 (military training)1949 (licensing hours)1967 (parliamentary term)1967 (licensing hours)1990 (parliamentary term)1992 (voting method)1993 (voting method)1997 (pension)2011 (voting method)2015–2016 (flag)2020 cannabiseuthanasia",
+   "caveat": null,
+   "seatLeader": "Independent"
+  },
+  {
+   "id": "1871",
+   "label": "1871",
+   "year": 1871,
+   "date": "1871",
+   "era": "colonial",
+   "totalSeats": 78,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Independent",
+     "leader": "William Fox",
+     "seats": 78,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "William Fox",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "William Fox",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "1871 was the first general election to include the four Māori electorates, with elections held on 1 and 15 February. The first Māori Members of Parliament had been elected in 1868, but in 1871 three retired and one (Western Maori) was defeated.",
+   "caveat": null,
+   "seatLeader": "Independent"
+  },
+  {
+   "id": "1875",
+   "label": "1875–76",
+   "year": 1875,
+   "date": "20 December 1875 – 29 January 1876",
+   "era": "colonial",
+   "totalSeats": 88,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Independent",
+     "leader": "Julius Vogel",
+     "seats": 88,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Daniel Pollen",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Julius Vogel",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "The 1875–1876 New Zealand general election was held between 20 December 1875 and 29 January 1876 to elect a total of 88 MPs in 73 electorates to the 6th session of the New Zealand Parliament. The Māori vote was held on 4 and 15 January 1876.",
+   "caveat": null,
+   "seatLeader": "Independent"
+  },
+  {
+   "id": "1879",
+   "label": "1879",
+   "year": 1879,
+   "date": "28 August and 15 September 1879",
+   "era": "colonial",
+   "totalSeats": 88,
+   "majoritySeats": null,
+   "turnout": 66.5,
+   "parties": [
+    {
+     "name": "Conservative Independents",
+     "leader": "John Hall",
+     "seats": 45,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Greyite Independents",
+     "leader": "George Grey",
+     "seats": 41,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "George Grey",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "John Hall",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "The 1879 New Zealand general election was held between 28 August and 15 September 1879 to elect a total of 88 MPs to the 7th session of the New Zealand Parliament. The Māori vote was held on 8 September.",
+   "caveat": null,
+   "seatLeader": "Conservative Independents"
+  },
+  {
+   "id": "1881",
+   "label": "1881",
+   "year": 1881,
+   "date": "8 (Māori) & 9 (general) December 1881",
+   "era": "colonial",
+   "totalSeats": 95,
+   "majoritySeats": null,
+   "turnout": 66.5,
+   "parties": [
+    {
+     "name": "Conservative Independents",
+     "leader": "John Hall",
+     "seats": 45,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Greyite Independents",
+     "leader": "George Grey",
+     "seats": 39,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "John Hall",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "John Hall",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "1881 was the first time a general election was held under universal male suffrage; all MPs were elected in single-member electorates; and the country quota was introduced, allowing rural electorates to have 25% fewer voters than urban electorates.",
+   "caveat": null,
+   "seatLeader": "Conservative Independents"
+  },
+  {
+   "id": "1884",
+   "label": "1884",
+   "year": 1884,
+   "date": "21 (Māori) & 22 (general) July 1884",
+   "era": "colonial",
+   "totalSeats": 95,
+   "majoritySeats": null,
+   "turnout": 60.6,
+   "parties": [
+    {
+     "name": "Stout–Vogelites",
+     "leader": "Robert Stout",
+     "seats": 57,
+     "seatChange": 18.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservatives",
+     "leader": "Harry Atkinson",
+     "seats": 32,
+     "seatChange": -13.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Harry Atkinson",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Robert Stout",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "The 1884 New Zealand general election was held on 22 July to elect a total of 95 MPs to the 9th session of the New Zealand Parliament. The Māori vote was held on 21 July.",
+   "caveat": null,
+   "seatLeader": "Stout–Vogelites"
+  },
+  {
+   "id": "1887",
+   "label": "1887",
+   "year": 1887,
+   "date": "7 (Māori) & 26 (general) September 1887",
+   "era": "colonial",
+   "totalSeats": 95,
+   "majoritySeats": 48,
+   "turnout": 67.1,
+   "parties": [
+    {
+     "name": "Conservatives",
+     "leader": "Harry Atkinson",
+     "seats": 52,
+     "seatChange": 20.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Stout–Vogelites",
+     "leader": "Robert Stout",
+     "seats": 34,
+     "seatChange": -23.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Robert Stout",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Harry Atkinson",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "The 1887 New Zealand general election was held on 26 September to elect 95 MPs to the tenth session of the New Zealand Parliament. The Māori vote was held on 7 September. 175,410 votes (67.1% turnout) were cast.",
+   "caveat": null,
+   "seatLeader": "Conservatives"
+  },
+  {
+   "id": "1890",
+   "label": "1890",
+   "year": 1890,
+   "date": "27 November (Māori) & 5 December (general) 1890",
+   "era": "liberal",
+   "totalSeats": 74,
+   "majoritySeats": 38,
+   "turnout": 80.4,
+   "parties": [
+    {
+     "name": "Liberal",
+     "leader": "John Ballance",
+     "seats": 40,
+     "seatChange": 6.0,
+     "votes": 76548,
+     "share": 56.1,
+     "swing": null
+    },
+    {
+     "name": "Conservative",
+     "leader": "Harry Atkinson",
+     "seats": 25,
+     "seatChange": -27.0,
+     "votes": 39338,
+     "share": 28.9,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Harry Atkinson",
+    "party": "Conservative"
+   },
+   "pmAfter": {
+    "name": "John Ballance",
+    "party": "Liberal"
+   },
+   "knownAs": "The Liberals' breakthrough",
+   "summary": "The 1890 New Zealand general election was one of New Zealand's most significant. It marked the beginning of party politics in New Zealand with the formation of the Liberal Government, which was to enact major welfare, labour and electoral reforms, including giving the vote to women.",
+   "caveat": null,
+   "seatLeader": "Liberal"
+  },
+  {
+   "id": "1893",
+   "label": "1893",
+   "year": 1893,
+   "date": "28 November (general) & 20 December (Māori) 1893",
+   "era": "liberal",
+   "totalSeats": 74,
+   "majoritySeats": 38,
+   "turnout": 75.3,
+   "parties": [
+    {
+     "name": "Liberal",
+     "leader": "Richard Seddon",
+     "seats": 51,
+     "seatChange": 11.0,
+     "votes": 175814,
+     "share": 57.8,
+     "swing": 1.7
+    },
+    {
+     "name": "Conservative",
+     "leader": "William Rolleston",
+     "seats": 13,
+     "seatChange": -12.0,
+     "votes": 74482,
+     "share": 24.5,
+     "swing": -4.5
+    }
+   ],
+   "pmBefore": {
+    "name": "Richard Seddon",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "Richard Seddon",
+    "party": "Liberal"
+   },
+   "knownAs": "The first election with women's votes",
+   "summary": "The 1893 New Zealand general election was held on 28 November and 20 December in the European and Māori electorates, respectively, to elect 74 MPs to the 12th session of the New Zealand Parliament. The election was won by the Liberal Party, and Richard Seddon became prime minister.",
+   "caveat": null,
+   "seatLeader": "Liberal"
+  },
+  {
+   "id": "1896",
+   "label": "1896",
+   "year": 1896,
+   "date": "4 (general) & 19 December (Māori) 1896",
+   "era": "liberal",
+   "totalSeats": 74,
+   "majoritySeats": 38,
+   "turnout": 76.1,
+   "parties": [
+    {
+     "name": "Liberal",
+     "leader": "Richard Seddon",
+     "seats": 39,
+     "seatChange": -12.0,
+     "votes": 184650,
+     "share": 54.8,
+     "swing": -3.0
+    },
+    {
+     "name": "Conservative",
+     "leader": "William Russell",
+     "seats": 26,
+     "seatChange": 13.0,
+     "votes": 114574,
+     "share": 34.0,
+     "swing": 9.5
+    }
+   ],
+   "pmBefore": {
+    "name": "Richard Seddon",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "Richard Seddon",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "The 1896 New Zealand general election was held on Wednesday, 4 December in the general electorates, and on Thursday, 19 December in the Māori electorates to elect a total of 74 MPs to the 13th session of the New Zealand Parliament. A total number of 337,024 (76.1%) voters turned out to vote.",
+   "caveat": null,
+   "seatLeader": "Liberal"
+  },
+  {
+   "id": "1899",
+   "label": "1899",
+   "year": 1899,
+   "date": "6 (general) & 19 December (Māori) 1899",
+   "era": "liberal",
+   "totalSeats": 74,
+   "majoritySeats": 38,
+   "turnout": 77.6,
+   "parties": [
+    {
+     "name": "Liberal",
+     "leader": "Richard Seddon",
+     "seats": 49,
+     "seatChange": 10.0,
+     "votes": 204331,
+     "share": 52.7,
+     "swing": -2.1
+    },
+    {
+     "name": "Conservative",
+     "leader": "William Russell",
+     "seats": 19,
+     "seatChange": -7.0,
+     "votes": 141758,
+     "share": 36.7,
+     "swing": 2.7
+    }
+   ],
+   "pmBefore": {
+    "name": "Richard Seddon",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "Richard Seddon",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "The 1899 New Zealand general election was held on 6 and 19 December in the European and Māori electorates, respectively, to elect 74 MPs to the 14th session of the New Zealand Parliament. The election was again won by the Liberal Party, and Richard Seddon remained Prime Minister.",
+   "caveat": null,
+   "seatLeader": "Liberal"
+  },
+  {
+   "id": "1902",
+   "label": "1902",
+   "year": 1902,
+   "date": "25 November (general) & 22 December (Māori) 1902",
+   "era": "liberal",
+   "totalSeats": 80,
+   "majoritySeats": 41,
+   "turnout": 76.7,
+   "parties": [
+    {
+     "name": "Liberal",
+     "leader": "Richard Seddon",
+     "seats": 47,
+     "seatChange": -2.0,
+     "votes": 215378,
+     "share": 51.8,
+     "swing": -1.9
+    },
+    {
+     "name": "Conservative",
+     "leader": "William Massey",
+     "seats": 19,
+     "seatChange": 0.0,
+     "votes": 85652,
+     "share": 20.6,
+     "swing": -16.0
+    }
+   ],
+   "pmBefore": {
+    "name": "Richard Seddon",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "Richard Seddon",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "The 1902 New Zealand general election was held on Tuesday, 25 November, in the general electorates, and on Monday, 22 December in the Māori electorates to elect a total of 80 MPs to the 15th session of the New Zealand Parliament. A total number of 415,789 (76.7%) voters turned out to vote.",
+   "caveat": null,
+   "seatLeader": "Liberal"
+  },
+  {
+   "id": "1905",
+   "label": "1905",
+   "year": 1905,
+   "date": "6 (general) & 20 December (Māori) 1905",
+   "era": "liberal",
+   "totalSeats": 80,
+   "majoritySeats": 41,
+   "turnout": 83.3,
+   "parties": [
+    {
+     "name": "Liberal",
+     "leader": "Richard Seddon",
+     "seats": 58,
+     "seatChange": 16.0,
+     "votes": 219144,
+     "share": 53.1,
+     "swing": 1.3
+    },
+    {
+     "name": "Conservative",
+     "leader": "William Massey",
+     "seats": 16,
+     "seatChange": -5.0,
+     "votes": 122572,
+     "share": 29.7,
+     "swing": 9.1
+    },
+    {
+     "name": "New Liberal",
+     "leader": "George Laurenson",
+     "seats": 2,
+     "seatChange": -2.0,
+     "votes": 15721,
+     "share": 3.8,
+     "swing": 3.8
+    }
+   ],
+   "pmBefore": {
+    "name": "Richard Seddon",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "Richard Seddon",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "The 1905 New Zealand general election was held on Wednesday, 6 December in the general electorates, and on Wednesday, 20 December in the Māori electorates to elect a total of 80 MPs to the 16th session of the New Zealand Parliament. A total number of 412,702 voters turned out, with 396,657 (83.25% of the electoral roll) voting in the European electorates.",
+   "caveat": null,
+   "seatLeader": "Liberal"
+  },
+  {
+   "id": "1908",
+   "label": "1908",
+   "year": 1908,
+   "date": "17 November to 2 December 1908",
+   "era": "liberal",
+   "totalSeats": 80,
+   "majoritySeats": 41,
+   "turnout": 79.8,
+   "parties": [
+    {
+     "name": "Liberal",
+     "leader": "Joseph Ward",
+     "seats": 50,
+     "seatChange": -8.0,
+     "votes": 315220,
+     "share": 58.7,
+     "swing": 5.6
+    },
+    {
+     "name": "Conservative",
+     "leader": "William Massey",
+     "seats": 26,
+     "seatChange": 10.0,
+     "votes": 149286,
+     "share": 27.8,
+     "swing": -1.9
+    },
+    {
+     "name": "Ind. Labour League",
+     "leader": "David McLaren",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": 16974,
+     "share": 3.1,
+     "swing": 2.3
+    }
+   ],
+   "pmBefore": {
+    "name": "Joseph Ward",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "Joseph Ward",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "The 1908 New Zealand general election was held on Tuesday, 17 and 24 November and 1 December in the general electorates, and on Wednesday, 2 December in the Māori electorates to elect a total of 80 MPs to the 17th session of the New Zealand Parliament. A total number of 537,003 (79.8%) voters turned out to vote.",
+   "caveat": null,
+   "seatLeader": "Liberal"
+  },
+  {
+   "id": "1911",
+   "label": "1911",
+   "year": 1911,
+   "date": "7 to 19 December 1911",
+   "era": "reform",
+   "totalSeats": 80,
+   "majoritySeats": 41,
+   "turnout": 83.5,
+   "parties": [
+    {
+     "name": "Reform",
+     "leader": "William Massey",
+     "seats": 37,
+     "seatChange": 37.0,
+     "votes": 161773,
+     "share": 33.37,
+     "swing": 33.37
+    },
+    {
+     "name": "Liberal",
+     "leader": "Joseph Ward",
+     "seats": 33,
+     "seatChange": -17.0,
+     "votes": 163401,
+     "share": 34.23,
+     "swing": -14.4
+    },
+    {
+     "name": "Labour",
+     "leader": "Alfred Hindmarsh",
+     "seats": 4,
+     "seatChange": 3.0,
+     "votes": 35869,
+     "share": 7.51,
+     "swing": 2.62
+    }
+   ],
+   "pmBefore": {
+    "name": "Joseph Ward",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "Joseph Ward",
+    "party": "Liberal"
+   },
+   "knownAs": "Reform breaks through",
+   "summary": "The 1911 New Zealand general election was held on Thursday, 7 and 14 December in the general electorates, and on Tuesday, 19 December in the Māori electorates to elect a total of 80 MPs to the 18th session of the New Zealand Parliament. A total number of 590,042 (83.5%) voters turned out to vote.",
+   "caveat": null,
+   "seatLeader": "Reform"
+  },
+  {
+   "id": "1914",
+   "label": "1914",
+   "year": 1914,
+   "date": "10 & 11 December 1914",
+   "era": "reform",
+   "totalSeats": 80,
+   "majoritySeats": 41,
+   "turnout": 84.7,
+   "parties": [
+    {
+     "name": "Reform",
+     "leader": "William Massey",
+     "seats": 40,
+     "seatChange": -1.0,
+     "votes": 243122,
+     "share": 47.1,
+     "swing": 13.7
+    },
+    {
+     "name": "Liberal",
+     "leader": "Joseph Ward",
+     "seats": 34,
+     "seatChange": 2.0,
+     "votes": 222299,
+     "share": 43.1,
+     "swing": 8.9
+    },
+    {
+     "name": "United Labour",
+     "leader": "Alfred Hindmarsh",
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": 22672,
+     "share": 4.2,
+     "swing": 4.2
+    },
+    {
+     "name": "Social Democrat",
+     "leader": "James McCombs",
+     "seats": 2,
+     "seatChange": -1.0,
+     "votes": 22500,
+     "share": 4.2,
+     "swing": 4.2
+    }
+   ],
+   "pmBefore": {
+    "name": "William Massey",
+    "party": "Reform"
+   },
+   "pmAfter": {
+    "name": "William Massey",
+    "party": "Reform"
+   },
+   "knownAs": null,
+   "summary": "The 1914 New Zealand general election was held on 10 December to elect a total of 80 MPs to the 19th session of the New Zealand Parliament. The Maori vote was held on 11 December.",
+   "caveat": null,
+   "seatLeader": "Reform"
+  },
+  {
+   "id": "1919",
+   "label": "1919",
+   "year": 1919,
+   "date": "16 (Māori) & 17 December (general) 1919",
+   "era": "reform",
+   "totalSeats": 80,
+   "majoritySeats": 41,
+   "turnout": 80.5,
+   "parties": [
+    {
+     "name": "Reform",
+     "leader": "William Massey",
+     "seats": 45,
+     "seatChange": 6.0,
+     "votes": 193676,
+     "share": 35.7,
+     "swing": -11.4
+    },
+    {
+     "name": "Liberal",
+     "leader": "Joseph Ward",
+     "seats": 19,
+     "seatChange": -15.0,
+     "votes": 155708,
+     "share": 28.7,
+     "swing": -14.4
+    },
+    {
+     "name": "Labour",
+     "leader": "Harry Holland",
+     "seats": 8,
+     "seatChange": 3.0,
+     "votes": 131402,
+     "share": 24.2,
+     "swing": 15.8
+    }
+   ],
+   "pmBefore": {
+    "name": "William Massey",
+    "party": "Reform"
+   },
+   "pmAfter": {
+    "name": "William Massey",
+    "party": "Reform"
+   },
+   "knownAs": null,
+   "summary": "The 1919 New Zealand general election was held on Tuesday, 16 December in the Māori electorates and on Wednesday, 17 December in the general electorates to elect a total of 80 MPs to the 20th session of the New Zealand Parliament. A total number of 560,673 (80.5%) voters turned out to vote.",
+   "caveat": null,
+   "seatLeader": "Reform"
+  },
+  {
+   "id": "1922",
+   "label": "1922",
+   "year": 1922,
+   "date": "6 (Māori) & 7 December (general) 1922",
+   "era": "reform",
+   "totalSeats": 80,
+   "majoritySeats": 41,
+   "turnout": 87.7,
+   "parties": [
+    {
+     "name": "Reform",
+     "leader": "William Massey",
+     "seats": 37,
+     "seatChange": -8.0,
+     "votes": 249735,
+     "share": 39.4,
+     "swing": 3.7
+    },
+    {
+     "name": "Liberal",
+     "leader": "Thomas Wilford",
+     "seats": 22,
+     "seatChange": 3.0,
+     "votes": 166708,
+     "share": 26.3,
+     "swing": -2.4
+    },
+    {
+     "name": "Labour",
+     "leader": "Harry Holland",
+     "seats": 17,
+     "seatChange": 9.0,
+     "votes": 150448,
+     "share": 23.7,
+     "swing": -0.5
+    }
+   ],
+   "pmBefore": {
+    "name": "William Massey",
+    "party": "Reform"
+   },
+   "pmAfter": {
+    "name": "William Massey",
+    "party": "Reform"
+   },
+   "knownAs": null,
+   "summary": "The 1922 New Zealand general election was held on Monday, 6 December in the Māori electorates, and on Tuesday, 7 December in the general electorates to elect a total of 80 MPs to the 21st session of the New Zealand Parliament. A total number of 700,111 (87.7%) voters turned out to vote.",
+   "caveat": null,
+   "seatLeader": "Reform"
+  },
+  {
+   "id": "1925",
+   "label": "1925",
+   "year": 1925,
+   "date": "3 (Māori) & 4 November (general) 1925",
+   "era": "reform",
+   "totalSeats": 80,
+   "majoritySeats": 41,
+   "turnout": 90.02,
+   "parties": [
+    {
+     "name": "Reform",
+     "leader": "Gordon Coates",
+     "seats": 55,
+     "seatChange": 18.0,
+     "votes": 324239,
+     "share": 47.18,
+     "swing": 8.39
+    },
+    {
+     "name": "Labour",
+     "leader": "Harry Holland",
+     "seats": 12,
+     "seatChange": -5.0,
+     "votes": 187610,
+     "share": 27.3,
+     "swing": 3.5
+    },
+    {
+     "name": "Liberal",
+     "leader": "George Forbes",
+     "seats": 11,
+     "seatChange": -11.0,
+     "votes": 143931,
+     "share": 20.94,
+     "swing": -3.81
+    }
+   ],
+   "pmBefore": {
+    "name": "Gordon Coates",
+    "party": "Reform"
+   },
+   "pmAfter": {
+    "name": "Gordon Coates",
+    "party": "Reform"
+   },
+   "knownAs": null,
+   "summary": "Gordon Coates continued as Prime Minister, with his Reform Party winning an outright majority of 30. Leonard Isitt and George Witty were both appointed to the Legislative Council by Gordon Coates on 28 October 1925; shortly before the election on 4 November.",
+   "caveat": null,
+   "seatLeader": "Reform"
+  },
+  {
+   "id": "1928",
+   "label": "1928",
+   "year": 1928,
+   "date": "13 (Māori) & 14 November (general) 1928",
+   "era": "reform",
+   "totalSeats": 80,
+   "majoritySeats": 41,
+   "turnout": 88.01,
+   "parties": [
+    {
+     "name": "Reform",
+     "leader": "Gordon Coates",
+     "seats": 28,
+     "seatChange": -27.0,
+     "votes": 263382,
+     "share": 34.82,
+     "swing": -9.97
+    },
+    {
+     "name": "United",
+     "leader": "Sir Joseph Ward",
+     "seats": 27,
+     "seatChange": 16.0,
+     "votes": 225042,
+     "share": 29.75,
+     "swing": 7.26
+    },
+    {
+     "name": "Labour",
+     "leader": "Harry Holland",
+     "seats": 19,
+     "seatChange": 7.0,
+     "votes": 198092,
+     "share": 26.19,
+     "swing": 3.5
+    },
+    {
+     "name": "Country Party",
+     "leader": "Harold Rushworth",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": 11990,
+     "share": 1.59,
+     "swing": 1.24
+    }
+   ],
+   "pmBefore": {
+    "name": "Gordon Coates",
+    "party": "Reform"
+   },
+   "pmAfter": {
+    "name": "Joseph Ward",
+    "party": "United"
+   },
+   "knownAs": "Ward's comeback",
+   "summary": "The 1928 election was held on Tuesday, 13 November in the Māori electorates, and on Wednesday, 14 November in the general electorates to elect a total of 80 MPs to the 23rd session of Parliament. A total of 844,633 electors were registered on the European roll, of which 743,691 (88.05%) turned out to vote.",
+   "caveat": null,
+   "seatLeader": "Reform"
+  },
+  {
+   "id": "1931",
+   "label": "1931",
+   "year": 1931,
+   "date": "1 (Māori) & 2 December (general) 1931",
+   "era": "first-labour",
+   "totalSeats": 80,
+   "majoritySeats": 41,
+   "turnout": 83.3,
+   "parties": [
+    {
+     "name": "Reform",
+     "leader": "Gordon Coates",
+     "seats": 28,
+     "seatChange": 0.0,
+     "votes": 190170,
+     "share": 26.6,
+     "swing": -9.3
+    },
+    {
+     "name": "Labour",
+     "leader": "Harry Holland",
+     "seats": 24,
+     "seatChange": 5.0,
+     "votes": 244881,
+     "share": 34.3,
+     "swing": 8.1
+    },
+    {
+     "name": "United",
+     "leader": "George Forbes",
+     "seats": 19,
+     "seatChange": -8.0,
+     "votes": 120801,
+     "share": 16.9,
+     "swing": -13.3
+    },
+    {
+     "name": "Country Party",
+     "leader": "Harold Rushworth",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 16710,
+     "share": 2.3,
+     "swing": 0.7
+    }
+   ],
+   "pmBefore": {
+    "name": "George Forbes",
+    "party": "United"
+   },
+   "pmAfter": {
+    "name": "George Forbes",
+    "party": "United"
+   },
+   "knownAs": "The Depression election",
+   "summary": "The 1931 New Zealand general election was a nationwide vote to determine the shape of the New Zealand Parliament's 24th term.",
+   "caveat": null,
+   "seatLeader": "Reform"
+  },
+  {
+   "id": "1935",
+   "label": "1935",
+   "year": 1935,
+   "date": "26 (Māori) & 27 November (general) 1935",
+   "era": "first-labour",
+   "totalSeats": 80,
+   "majoritySeats": 41,
+   "turnout": 90.75,
+   "parties": [
+    {
+     "name": "Labour",
+     "leader": "Michael Joseph Savage",
+     "seats": 53,
+     "seatChange": 29.0,
+     "votes": 389911,
+     "share": 45.73,
+     "swing": 11.46
+    },
+    {
+     "name": "United/Reform",
+     "leader": "George Forbes",
+     "seats": 16,
+     "seatChange": -31.0,
+     "votes": 285422,
+     "share": 33.48,
+     "swing": -20.55
+    },
+    {
+     "name": "Country Party",
+     "leader": "Harold Rushworth",
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": 11809,
+     "share": 1.67,
+     "swing": -0.67
+    },
+    {
+     "name": "Ratana",
+     "leader": "Eruera Tirikatene",
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": 6249,
+     "share": 0.73,
+     "swing": -0.27
+    }
+   ],
+   "pmBefore": {
+    "name": "George Forbes",
+    "party": "United/Reform"
+   },
+   "pmAfter": {
+    "name": "Michael Joseph Savage",
+    "party": "Labour"
+   },
+   "knownAs": "The first Labour government",
+   "summary": "The 1935 New Zealand general election was a nationwide vote held on 26 and 27 November to determine the shape of the New Zealand Parliament's 25th term.",
+   "caveat": null,
+   "seatLeader": "Labour"
+  },
+  {
+   "id": "1938",
+   "label": "1938",
+   "year": 1938,
+   "date": "14 (Māori) & 15 October (general) 1938",
+   "era": "first-labour",
+   "totalSeats": 80,
+   "majoritySeats": 41,
+   "turnout": 92.9,
+   "parties": [
+    {
+     "name": "Labour",
+     "leader": "Michael Joseph Savage",
+     "seats": 53,
+     "seatChange": 0.0,
+     "votes": 528290,
+     "share": 55.8,
+     "swing": 10.1
+    },
+    {
+     "name": "National",
+     "leader": "Adam Hamilton",
+     "seats": 25,
+     "seatChange": 6.0,
+     "votes": 381081,
+     "share": 40.3,
+     "swing": 7.4
+    }
+   ],
+   "pmBefore": {
+    "name": "Michael Joseph Savage",
+    "party": "Labour"
+   },
+   "pmAfter": {
+    "name": "Michael Joseph Savage",
+    "party": "Labour"
+   },
+   "knownAs": "Labour's record vote",
+   "summary": "The 1938 New Zealand general election was a nationwide vote to determine the shape of the New Zealand Parliament's 26th term. It resulted in the governing Labour Party being re-elected in a landslide, winning nearly 56% of the vote despite not gaining any more seats.",
+   "caveat": null,
+   "seatLeader": "Labour"
+  },
+  {
+   "id": "1943",
+   "label": "1943",
+   "year": 1943,
+   "date": "24 (Māori) & 25 September (general) 1943",
+   "era": "first-labour",
+   "totalSeats": 80,
+   "majoritySeats": 41,
+   "turnout": 82.8,
+   "parties": [
+    {
+     "name": "Labour",
+     "leader": "Peter Fraser",
+     "seats": 45,
+     "seatChange": -8.0,
+     "votes": 447919,
+     "share": 47.6,
+     "swing": -8.2
+    },
+    {
+     "name": "National",
+     "leader": "Sidney Holland",
+     "seats": 34,
+     "seatChange": 9.0,
+     "votes": 402887,
+     "share": 42.8,
+     "swing": 2.5
+    }
+   ],
+   "pmBefore": {
+    "name": "Peter Fraser",
+    "party": "Labour"
+   },
+   "pmAfter": {
+    "name": "Peter Fraser",
+    "party": "Labour"
+   },
+   "knownAs": null,
+   "summary": "The 1943 New Zealand general election was a nationwide vote to determine the shape of the New Zealand Parliament's 27th term. With the onset of World War II, elections were initially postponed, but it was eventually decided to hold a general election in September 1943, around two years after it would normally have occurred.",
+   "caveat": null,
+   "seatLeader": "Labour"
+  },
+  {
+   "id": "1946",
+   "label": "1946",
+   "year": 1946,
+   "date": "27 November 1946 (general)",
+   "era": "first-labour",
+   "totalSeats": 80,
+   "majoritySeats": 41,
+   "turnout": 93.5,
+   "parties": [
+    {
+     "name": "Labour",
+     "leader": "Peter Fraser",
+     "seats": 42,
+     "seatChange": -3.0,
+     "votes": 536994,
+     "share": 51.3,
+     "swing": 3.7
+    },
+    {
+     "name": "National",
+     "leader": "Sidney Holland",
+     "seats": 38,
+     "seatChange": 4.0,
+     "votes": 507139,
+     "share": 48.4,
+     "swing": 5.6
+    }
+   ],
+   "pmBefore": {
+    "name": "Peter Fraser",
+    "party": "Labour"
+   },
+   "pmAfter": {
+    "name": "Peter Fraser",
+    "party": "Labour"
+   },
+   "knownAs": null,
+   "summary": "The 1946 New Zealand general election was a nationwide vote to determine the shape of the New Zealand Parliament's 28th term. It saw the governing Labour Party re-elected, but by a substantially narrower margin than in the three previous elections.",
+   "caveat": null,
+   "seatLeader": "Labour"
+  },
+  {
+   "id": "1949",
+   "label": "1949",
+   "year": 1949,
+   "date": "29 (Māori) & 30 November (general) 1949",
+   "era": "two-party",
+   "totalSeats": 80,
+   "majoritySeats": 41,
+   "turnout": 96.3,
+   "parties": [
+    {
+     "name": "National",
+     "leader": "Sidney Holland",
+     "seats": 46,
+     "seatChange": 8.0,
+     "votes": 556805,
+     "share": 51.9,
+     "swing": 3.5
+    },
+    {
+     "name": "Labour",
+     "leader": "Peter Fraser",
+     "seats": 34,
+     "seatChange": -8.0,
+     "votes": 506073,
+     "share": 47.2,
+     "swing": -4.1
+    }
+   ],
+   "pmBefore": {
+    "name": "Peter Fraser",
+    "party": "Labour"
+   },
+   "pmAfter": {
+    "name": "Sidney Holland",
+    "party": "National"
+   },
+   "knownAs": "National's ascendancy begins",
+   "summary": "The 1949 New Zealand general election was a nationwide vote to determine the shape of the New Zealand Parliament's 29th term. It saw the governing Labour Party defeated by the opposition National Party.",
+   "caveat": null,
+   "seatLeader": "National"
+  },
+  {
+   "id": "1951",
+   "label": "1951",
+   "year": 1951,
+   "date": "1 September 1951",
+   "era": "two-party",
+   "totalSeats": 80,
+   "majoritySeats": 41,
+   "turnout": 89.1,
+   "parties": [
+    {
+     "name": "National",
+     "leader": "Sidney Holland",
+     "seats": 50,
+     "seatChange": 4.0,
+     "votes": 577630,
+     "share": 54.0,
+     "swing": 2.1
+    },
+    {
+     "name": "Labour",
+     "leader": "Walter Nash",
+     "seats": 30,
+     "seatChange": -4.0,
+     "votes": 490143,
+     "share": 45.8,
+     "swing": -1.4
+    }
+   ],
+   "pmBefore": {
+    "name": "Sidney Holland",
+    "party": "National"
+   },
+   "pmAfter": {
+    "name": "Sidney Holland",
+    "party": "National"
+   },
+   "knownAs": "The waterfront snap election",
+   "summary": "The 1951 New Zealand general election was a nationwide vote to determine the shape of the New Zealand Parliament's 30th term. The First National Government was re-elected, with the National Party increasing its parliamentary majority over the opposition Labour Party.",
+   "caveat": null,
+   "seatLeader": "National"
+  },
+  {
+   "id": "1954",
+   "label": "1954",
+   "year": 1954,
+   "date": "13 November 1954",
+   "era": "two-party",
+   "totalSeats": 80,
+   "majoritySeats": 41,
+   "turnout": 91.4,
+   "parties": [
+    {
+     "name": "National",
+     "leader": "Sidney Holland",
+     "seats": 45,
+     "seatChange": -5.0,
+     "votes": 485630,
+     "share": 44.3,
+     "swing": -9.7
+    },
+    {
+     "name": "Labour",
+     "leader": "Walter Nash",
+     "seats": 35,
+     "seatChange": 5.0,
+     "votes": 484028,
+     "share": 44.1,
+     "swing": -1.7
+    }
+   ],
+   "pmBefore": {
+    "name": "Sidney Holland",
+    "party": "National"
+   },
+   "pmAfter": {
+    "name": "Sidney Holland",
+    "party": "National"
+   },
+   "knownAs": null,
+   "summary": "The 1954 New Zealand general election was a nationwide vote to determine the shape of the New Zealand Parliament's 31st term. It saw the governing National Party remain in office, but with a slightly reduced majority.",
+   "caveat": null,
+   "seatLeader": "National"
+  },
+  {
+   "id": "1957",
+   "label": "1957",
+   "year": 1957,
+   "date": "30 November 1957",
+   "era": "two-party",
+   "totalSeats": 80,
+   "majoritySeats": 41,
+   "turnout": 92.9,
+   "parties": [
+    {
+     "name": "Labour",
+     "leader": "Walter Nash",
+     "seats": 41,
+     "seatChange": 6.0,
+     "votes": 559096,
+     "share": 48.3,
+     "swing": 4.2
+    },
+    {
+     "name": "National",
+     "leader": "Keith Holyoake",
+     "seats": 39,
+     "seatChange": -6.0,
+     "votes": 511699,
+     "share": 44.2,
+     "swing": -0.1
+    }
+   ],
+   "pmBefore": {
+    "name": "Keith Holyoake",
+    "party": "National"
+   },
+   "pmAfter": {
+    "name": "Walter Nash",
+    "party": "Labour"
+   },
+   "knownAs": null,
+   "summary": "The 1957 New Zealand general election was a nationwide vote to determine the shape of the New Zealand Parliament's 32nd term. It saw the governing National Party narrowly defeated by the Labour Party.",
+   "caveat": null,
+   "seatLeader": "Labour"
+  },
+  {
+   "id": "1960",
+   "label": "1960",
+   "year": 1960,
+   "date": "26 November 1960",
+   "era": "two-party",
+   "totalSeats": 80,
+   "majoritySeats": 41,
+   "turnout": 89.8,
+   "parties": [
+    {
+     "name": "National",
+     "leader": "Keith Holyoake",
+     "seats": 46,
+     "seatChange": 7.0,
+     "votes": 557046,
+     "share": 47.6,
+     "swing": 3.4
+    },
+    {
+     "name": "Labour",
+     "leader": "Walter Nash",
+     "seats": 34,
+     "seatChange": -7.0,
+     "votes": 508179,
+     "share": 43.4,
+     "swing": -4.9
+    }
+   ],
+   "pmBefore": {
+    "name": "Walter Nash",
+    "party": "Labour"
+   },
+   "pmAfter": {
+    "name": "Keith Holyoake",
+    "party": "National"
+   },
+   "knownAs": null,
+   "summary": "The Labour Party had won the 1957 election by a narrow margin, beginning New Zealand's second period of Labour government. However, the new administration soon lost its narrow lead in public opinion, with its financial policies being the principal cause of dissatisfaction.",
+   "caveat": null,
+   "seatLeader": "National"
+  },
+  {
+   "id": "1963",
+   "label": "1963",
+   "year": 1963,
+   "date": "30 November 1963",
+   "era": "two-party",
+   "totalSeats": 80,
+   "majoritySeats": 41,
+   "turnout": 89.6,
+   "parties": [
+    {
+     "name": "National",
+     "leader": "Keith Holyoake",
+     "seats": 45,
+     "seatChange": -1.0,
+     "votes": 563875,
+     "share": 47.1,
+     "swing": -0.5
+    },
+    {
+     "name": "Labour",
+     "leader": "Arnold Nordmeyer",
+     "seats": 35,
+     "seatChange": 1.0,
+     "votes": 524066,
+     "share": 43.7,
+     "swing": 0.6
+    }
+   ],
+   "pmBefore": {
+    "name": "Keith Holyoake",
+    "party": "National"
+   },
+   "pmAfter": {
+    "name": "Keith Holyoake",
+    "party": "National"
+   },
+   "knownAs": null,
+   "summary": "The 1960 election had been won by the National Party, beginning New Zealand's second period of National government. Keith Holyoake, who had briefly been prime minister at the end of the first period, returned to office.",
+   "caveat": null,
+   "seatLeader": "National"
+  },
+  {
+   "id": "1966",
+   "label": "1966",
+   "year": 1966,
+   "date": "26 November 1966",
+   "era": "two-party",
+   "totalSeats": 80,
+   "majoritySeats": 41,
+   "turnout": 86.0,
+   "parties": [
+    {
+     "name": "National",
+     "leader": "Keith Holyoake",
+     "seats": 44,
+     "seatChange": -1.0,
+     "votes": 525925,
+     "share": 43.6,
+     "swing": -3.5
+    },
+    {
+     "name": "Labour",
+     "leader": "Norman Kirk",
+     "seats": 35,
+     "seatChange": 0.0,
+     "votes": 499392,
+     "share": 41.4,
+     "swing": -2.3
+    },
+    {
+     "name": "Social Credit",
+     "leader": "Vernon Cracknell",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": 174513,
+     "share": 14.5,
+     "swing": 6.6
+    }
+   ],
+   "pmBefore": {
+    "name": "Keith Holyoake",
+    "party": "National"
+   },
+   "pmAfter": {
+    "name": "Keith Holyoake",
+    "party": "National"
+   },
+   "knownAs": null,
+   "summary": "The National Party had established its second administration following the 1960 elections, and had been re-elected in the 1963 election. Keith Holyoake remained Prime Minister.",
+   "caveat": null,
+   "seatLeader": "National"
+  },
+  {
+   "id": "1969",
+   "label": "1969",
+   "year": 1969,
+   "date": "29 November 1969",
+   "era": "two-party",
+   "totalSeats": 84,
+   "majoritySeats": 43,
+   "turnout": 88.94,
+   "parties": [
+    {
+     "name": "National",
+     "leader": "Keith Holyoake",
+     "seats": 45,
+     "seatChange": 1.0,
+     "votes": 605960,
+     "share": 45.2,
+     "swing": 1.6
+    },
+    {
+     "name": "Labour",
+     "leader": "Norman Kirk",
+     "seats": 39,
+     "seatChange": 4.0,
+     "votes": 592055,
+     "share": 44.2,
+     "swing": 2.8
+    }
+   ],
+   "pmBefore": {
+    "name": "Keith Holyoake",
+    "party": "National"
+   },
+   "pmAfter": {
+    "name": "Keith Holyoake",
+    "party": "National"
+   },
+   "knownAs": null,
+   "summary": "The 1969 New Zealand general election was a nationwide vote to determine the shape of Parliament's 36th term. It saw the Second National Government headed by Prime Minister Keith Holyoake of the National Party win a fourth consecutive term.",
+   "caveat": null,
+   "seatLeader": "National"
+  },
+  {
+   "id": "1972",
+   "label": "1972",
+   "year": 1972,
+   "date": "25 November 1972",
+   "era": "two-party",
+   "totalSeats": 87,
+   "majoritySeats": 44,
+   "turnout": 88.94,
+   "parties": [
+    {
+     "name": "Labour",
+     "leader": "Norman Kirk",
+     "seats": 55,
+     "seatChange": 16.0,
+     "votes": 677669,
+     "share": 48.4,
+     "swing": 4.2
+    },
+    {
+     "name": "National",
+     "leader": "Jack Marshall",
+     "seats": 32,
+     "seatChange": -13.0,
+     "votes": 581422,
+     "share": 41.5,
+     "swing": -3.7
+    }
+   ],
+   "pmBefore": {
+    "name": "Jack Marshall",
+    "party": "National"
+   },
+   "pmAfter": {
+    "name": "Norman Kirk",
+    "party": "Labour"
+   },
+   "knownAs": null,
+   "summary": "The National Party had been in office since the 1960 election, when it had defeated the ruling Labour Party, led by Walter Nash. The Second Labour Government was the shortest-lasting of all New Zealand governments to that day; in contrast, the Second National Government, led for the majority of its tenure by Keith Holyoake, would be re-elected three times.",
+   "caveat": null,
+   "seatLeader": "Labour"
+  },
+  {
+   "id": "1975",
+   "label": "1975",
+   "year": 1975,
+   "date": "29 November 1975",
+   "era": "two-party",
+   "totalSeats": 87,
+   "majoritySeats": 44,
+   "turnout": 82.11,
+   "parties": [
+    {
+     "name": "National",
+     "leader": "Robert Muldoon",
+     "seats": 55,
+     "seatChange": 23.0,
+     "votes": 763136,
+     "share": 47.6,
+     "swing": 6.1
+    },
+    {
+     "name": "Labour",
+     "leader": "Bill Rowling",
+     "seats": 32,
+     "seatChange": -23.0,
+     "votes": 634453,
+     "share": 39.6,
+     "swing": -8.8
+    }
+   ],
+   "pmBefore": {
+    "name": "Bill Rowling",
+    "party": "Labour"
+   },
+   "pmAfter": {
+    "name": "Robert Muldoon",
+    "party": "National"
+   },
+   "knownAs": "Muldoon's landslide",
+   "summary": "The 1975 New Zealand general election was held on 29 November to elect MPs to the 38th session of the New Zealand Parliament. It was the first general election in New Zealand where 18- to 20-year-olds and all permanent residents of New Zealand were eligible to vote, although only citizens were able to be elected.",
+   "caveat": null,
+   "seatLeader": "National"
+  },
+  {
+   "id": "1978",
+   "label": "1978",
+   "year": 1978,
+   "date": "25 November 1978",
+   "era": "two-party",
+   "totalSeats": 92,
+   "majoritySeats": 47,
+   "turnout": 68.7,
+   "parties": [
+    {
+     "name": "National",
+     "leader": "Robert Muldoon",
+     "seats": 51,
+     "seatChange": -3.0,
+     "votes": 680991,
+     "share": 39.8,
+     "swing": -7.8
+    },
+    {
+     "name": "Labour",
+     "leader": "Bill Rowling",
+     "seats": 40,
+     "seatChange": 8.0,
+     "votes": 691076,
+     "share": 40.4,
+     "swing": 0.8
+    },
+    {
+     "name": "Social Credit",
+     "leader": "Bruce Beetham",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 274756,
+     "share": 16.1,
+     "swing": 8.7
+    }
+   ],
+   "pmBefore": {
+    "name": "Robert Muldoon",
+    "party": "National"
+   },
+   "pmAfter": {
+    "name": "Robert Muldoon",
+    "party": "National"
+   },
+   "knownAs": null,
+   "summary": "The 1978 New Zealand general election was a nationwide vote to elect the 39th New Zealand Parliament. It saw the governing National Party, led by Robert Muldoon, retain office, but the opposition Labour Party won the largest share of the vote.",
+   "caveat": null,
+   "seatLeader": "National"
+  },
+  {
+   "id": "1981",
+   "label": "1981",
+   "year": 1981,
+   "date": "28 November 1981",
+   "era": "two-party",
+   "totalSeats": 92,
+   "majoritySeats": 47,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National",
+     "leader": "Robert Muldoon",
+     "seats": 47,
+     "seatChange": -3.0,
+     "votes": 698508,
+     "share": 38.8,
+     "swing": -1.0
+    },
+    {
+     "name": "Labour",
+     "leader": "Bill Rowling",
+     "seats": 43,
+     "seatChange": 3.0,
+     "votes": 702630,
+     "share": 39.0,
+     "swing": -1.4
+    },
+    {
+     "name": "Social Credit",
+     "leader": "Bruce Beetham",
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": 372056,
+     "share": 20.7,
+     "swing": 4.6
+    }
+   ],
+   "pmBefore": {
+    "name": "Robert Muldoon",
+    "party": "National"
+   },
+   "pmAfter": {
+    "name": "Robert Muldoon",
+    "party": "National"
+   },
+   "knownAs": null,
+   "summary": "The 1981 New Zealand general election, held on 28 November 1981, was a nationwide vote to determine the shape of the 40th New Zealand Parliament. It saw the governing National Party, led by Robert Muldoon, win a third term in office, but the opposition Labour Party, led by Bill Rowling, won the largest share of the votes cast.",
+   "caveat": null,
+   "seatLeader": "National"
+  },
+  {
+   "id": "1984",
+   "label": "1984",
+   "year": 1984,
+   "date": "14 July 1984",
+   "era": "two-party",
+   "totalSeats": 95,
+   "majoritySeats": 48,
+   "turnout": 93.7,
+   "parties": [
+    {
+     "name": "Labour",
+     "leader": "David Lange",
+     "seats": 56,
+     "seatChange": 13.0,
+     "votes": 829154,
+     "share": 42.98,
+     "swing": 3.97
+    },
+    {
+     "name": "National",
+     "leader": "Sir Robert Muldoon",
+     "seats": 37,
+     "seatChange": -10.0,
+     "votes": 692494,
+     "share": 35.89,
+     "swing": -2.88
+    },
+    {
+     "name": "Social Credit",
+     "leader": "Bruce Beetham",
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": 147162,
+     "share": 7.63,
+     "swing": -13.02
+    },
+    {
+     "name": "NZ Party",
+     "leader": "Bob Jones",
+     "seats": 0,
+     "seatChange": 0.0,
+     "votes": 236385,
+     "share": 12.25,
+     "swing": 12.25
+    }
+   ],
+   "pmBefore": {
+    "name": "Robert Muldoon",
+    "party": "National"
+   },
+   "pmAfter": {
+    "name": "David Lange",
+    "party": "Labour"
+   },
+   "knownAs": "The snap election",
+   "summary": "The 1984 New Zealand general election was a nationwide vote to determine the composition of the 41st New Zealand Parliament. It marked the beginning of the Fourth Labour Government, with David Lange's Labour Party defeating the long-serving Prime Minister, Robert Muldoon, of the National Party.",
+   "caveat": null,
+   "seatLeader": "Labour"
+  },
+  {
+   "id": "1987",
+   "label": "1987",
+   "year": 1987,
+   "date": "15 August 1987",
+   "era": "two-party",
+   "totalSeats": 97,
+   "majoritySeats": 49,
+   "turnout": 89.1,
+   "parties": [
+    {
+     "name": "Labour",
+     "leader": "David Lange",
+     "seats": 57,
+     "seatChange": 2.0,
+     "votes": 878448,
+     "share": 47.96,
+     "swing": 4.98
+    },
+    {
+     "name": "National",
+     "leader": "Jim Bolger",
+     "seats": 40,
+     "seatChange": 2.0,
+     "votes": 806305,
+     "share": 44.02,
+     "swing": 8.13
+    },
+    {
+     "name": "Democrats",
+     "leader": "Neil Morrison",
+     "seats": 0,
+     "seatChange": -2.0,
+     "votes": 105091,
+     "share": 5.74,
+     "swing": -1.89
+    }
+   ],
+   "pmBefore": {
+    "name": "David Lange",
+    "party": "Labour"
+   },
+   "pmAfter": {
+    "name": "David Lange",
+    "party": "Labour"
+   },
+   "knownAs": null,
+   "summary": "The 1987 New Zealand general election was a nationwide vote to determine the shape of the 42nd sitting of the New Zealand Parliament. The governing New Zealand Labour Party, led by Prime Minister David Lange, was re-elected for a second term, although the Opposition National Party made gains.",
+   "caveat": null,
+   "seatLeader": "Labour"
+  },
+  {
+   "id": "1990",
+   "label": "1990",
+   "year": 1990,
+   "date": "27 October 1990",
+   "era": "two-party",
+   "totalSeats": 97,
+   "majoritySeats": 49,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National",
+     "leader": "Jim Bolger",
+     "seats": 67,
+     "seatChange": 27.0,
+     "votes": 872358,
+     "share": 47.82,
+     "swing": 3.8
+    },
+    {
+     "name": "Labour",
+     "leader": "Mike Moore",
+     "seats": 29,
+     "seatChange": -28.0,
+     "votes": 640915,
+     "share": 35.14,
+     "swing": -12.82
+    },
+    {
+     "name": "NewLabour",
+     "leader": "Jim Anderton",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": 94171,
+     "share": 5.16,
+     "swing": 5.16
+    }
+   ],
+   "pmBefore": {
+    "name": "Mike Moore",
+    "party": "Labour"
+   },
+   "pmAfter": {
+    "name": "Jim Bolger",
+    "party": "National"
+   },
+   "knownAs": "National's biggest win",
+   "summary": "The 1990 New Zealand general election was held on 27 October to determine the composition of the 43rd New Zealand parliament. The governing Labour Party was defeated in a landslide, ending its two terms in office.",
+   "caveat": null,
+   "seatLeader": "National"
+  },
+  {
+   "id": "1993",
+   "label": "1993",
+   "year": 1993,
+   "date": "6 November 1993",
+   "era": "two-party",
+   "totalSeats": 99,
+   "majoritySeats": 50,
+   "turnout": 82.82,
+   "parties": [
+    {
+     "name": "National",
+     "leader": "Jim Bolger",
+     "seats": 50,
+     "seatChange": -17.0,
+     "votes": 673892,
+     "share": 35.05,
+     "swing": -12.77
+    },
+    {
+     "name": "Labour",
+     "leader": "Mike Moore",
+     "seats": 45,
+     "seatChange": 16.0,
+     "votes": 666759,
+     "share": 34.68,
+     "swing": -0.46
+    },
+    {
+     "name": "Alliance",
+     "leader": "Jim Anderton",
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": 350063,
+     "share": 18.21,
+     "swing": 3.93
+    },
+    {
+     "name": "NZ First",
+     "leader": "Winston Peters",
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": 161481,
+     "share": 8.4,
+     "swing": 8.4
+    }
+   ],
+   "pmBefore": {
+    "name": "Jim Bolger",
+    "party": "National"
+   },
+   "pmAfter": {
+    "name": "Jim Bolger",
+    "party": "National"
+   },
+   "knownAs": "FPP's last election",
+   "summary": "The 1993 New Zealand general election was held on 6 November 1993 to determine the composition of the 44th New Zealand Parliament. Voters elected 99 members to the House of Representatives, up from 97 members at the 1990 election.",
+   "caveat": null,
+   "seatLeader": "National"
+  },
+  {
+   "id": "1996",
+   "label": "1996",
+   "year": 1996,
+   "date": "12 October 1996",
+   "era": "mmp",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 88.28,
+   "parties": [
+    {
+     "name": "National",
+     "leader": "Jim Bolger",
+     "seats": 44,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Helen Clark",
+     "seats": 37,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "NZ First",
+     "leader": "Winston Peters",
+     "seats": 17,
+     "seatChange": 12.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Alliance",
+     "leader": "Jim Anderton",
+     "seats": 13,
+     "seatChange": 11.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ACT",
+     "leader": "Richard Prebble",
+     "seats": 8,
+     "seatChange": 8.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "United NZ",
+     "leader": "Clive Matthewson",
+     "seats": 1,
+     "seatChange": -6.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Jim Bolger",
+    "party": "National—NZ First"
+   },
+   "knownAs": "The first MMP election",
+   "summary": "The 1996 New Zealand general election was held on 12 October 1996 to determine the composition of the 45th New Zealand Parliament. It was significant for being the first election to be held under the new mixed-member proportional (MMP) electoral system, and produced a parliament considerably more diverse than previous elections.",
+   "caveat": null,
+   "seatLeader": "National"
+  },
+  {
+   "id": "1999",
+   "label": "1999",
+   "year": 1999,
+   "date": "27 November 1999",
+   "era": "mmp",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 84.77,
+   "parties": [
+    {
+     "name": "Labour",
+     "leader": "Helen Clark",
+     "seats": 49,
+     "seatChange": 12.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National",
+     "leader": "Jenny Shipley",
+     "seats": 39,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Alliance",
+     "leader": "Jim Anderton",
+     "seats": 10,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ACT",
+     "leader": "Richard Prebble",
+     "seats": 9,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Green",
+     "leader": "Rod Donald",
+     "seats": 7,
+     "seatChange": 7.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "NZ First",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -12.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "United NZ",
+     "leader": "Peter Dunne",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Helen Clark",
+    "party": "Labour—Alliance (C&S: Green)"
+   },
+   "knownAs": "Clark's first win",
+   "summary": "The 1999 New Zealand general election was held on 27 November 1999 to determine the composition of the 46th New Zealand Parliament. The governing National Party, led by Prime Minister Jenny Shipley, was defeated, being replaced by a coalition of Helen Clark's Labour Party and the smaller Alliance.",
+   "caveat": null,
+   "seatLeader": "Labour"
+  },
+  {
+   "id": "2002",
+   "label": "2002",
+   "year": 2002,
+   "date": "27 July 2002",
+   "era": "mmp",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 76.98,
+   "parties": [
+    {
+     "name": "Labour",
+     "leader": "Helen Clark",
+     "seats": 52,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National",
+     "leader": "Bill English",
+     "seats": 27,
+     "seatChange": -12.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "NZ First",
+     "leader": "Winston Peters",
+     "seats": 13,
+     "seatChange": 8.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ACT",
+     "leader": "Richard Prebble",
+     "seats": 9,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Green",
+     "leader": "Rod Donald",
+     "seats": 9,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "United Future New Zealand",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 7.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Progressive",
+     "leader": "Jim Anderton",
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Alliance",
+     "leader": "Laila Harré",
+     "seats": 0,
+     "seatChange": -10.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Helen Clark",
+    "party": "Labour—Progressive (C&S: United Future)"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in New Zealand on 27 July 2002 to determine the composition of the 47th New Zealand Parliament. It saw the reelection of Helen Clark's Labour Party government, as well as the worst-ever performance by the opposition National Party (the 2020 election would see it suffer a greater defeat in terms of net loss of seats).",
+   "caveat": null,
+   "seatLeader": "Labour"
+  },
+  {
+   "id": "2005",
+   "label": "2005",
+   "year": 2005,
+   "date": "17 September 2005",
+   "era": "mmp",
+   "totalSeats": 121,
+   "majoritySeats": 61,
+   "turnout": 80.92,
+   "parties": [
+    {
+     "name": "Labour",
+     "leader": "Helen Clark",
+     "seats": 50,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National",
+     "leader": "Don Brash",
+     "seats": 48,
+     "seatChange": 21.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "NZ First",
+     "leader": "Winston Peters",
+     "seats": 7,
+     "seatChange": -6.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Green",
+     "leader": "Rod Donald",
+     "seats": 6,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Māori Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "United Future New Zealand",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ACT",
+     "leader": "Rodney Hide",
+     "seats": 2,
+     "seatChange": -7.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Progressive",
+     "leader": "Jim Anderton",
+     "seats": 1,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Helen Clark",
+    "party": "Labour—Progressive (C&S: United Future, NZ First, Green)"
+   },
+   "knownAs": null,
+   "summary": "A general election took place in New Zealand on 17 September 2005 and determined the membership of the 48th New Zealand Parliament. One hundred and twenty-one MPs were elected to the New Zealand House of Representatives: 69 from single-member electorates, including one overhang seat, and 52 from party lists (one extra due to the overhang).",
+   "caveat": null,
+   "seatLeader": "Labour"
+  },
+  {
+   "id": "2008",
+   "label": "2008",
+   "year": 2008,
+   "date": "8 November 2008",
+   "era": "mmp",
+   "totalSeats": 122,
+   "majoritySeats": 62,
+   "turnout": 79.46,
+   "parties": [
+    {
+     "name": "National",
+     "leader": "John Key",
+     "seats": 58,
+     "seatChange": 10.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Helen Clark",
+     "seats": 43,
+     "seatChange": -7.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Green",
+     "leader": "Russel Norman",
+     "seats": 9,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ACT",
+     "leader": "Rodney Hide",
+     "seats": 5,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Māori Party",
+     "leader": "Tariana Turia",
+     "seats": 5,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Progressive",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "United Future New Zealand",
+     "leader": "Peter Dunne",
+     "seats": 1,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "NZ First",
+     "leader": "Winston Peters",
+     "seats": 0,
+     "seatChange": -7.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "John Key",
+    "party": "National (C&S: ACT, Māori, United Future)"
+   },
+   "knownAs": "Key's first win",
+   "summary": "A general election was held in New Zealand on 8 November 2008 to determine the composition of the 49th New Zealand Parliament. The liberal-conservative National Party, headed by its parliamentary leader John Key, won the largest share of votes and seats, ending nine years of government by the social-democratic Labour Party, led by Helen Clark.",
+   "caveat": null,
+   "seatLeader": "National"
+  },
+  {
+   "id": "2011",
+   "label": "2011",
+   "year": 2011,
+   "date": "26 November 2011",
+   "era": "mmp",
+   "totalSeats": 121,
+   "majoritySeats": 61,
+   "turnout": 74.21,
+   "parties": [
+    {
+     "name": "National",
+     "leader": "John Key",
+     "seats": 59,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Phil Goff",
+     "seats": 34,
+     "seatChange": -9.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Green",
+     "leader": "Russel Norman",
+     "seats": 14,
+     "seatChange": 5.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "NZ First",
+     "leader": "Winston Peters",
+     "seats": 8,
+     "seatChange": 8.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Māori Party",
+     "leader": "Tariana Turia",
+     "seats": 3,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Mana",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ACT",
+     "leader": "Don Brash",
+     "seats": 1,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "United Future",
+     "leader": "Peter Dunne",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "John Key",
+    "party": "National (C&S: Māori, ACT, United Future)"
+   },
+   "knownAs": null,
+   "summary": "One hundred and twenty-one MPs were elected to the New Zealand House of Representatives, 70 from single-member electorates, and 51 from party lists including one overhang seat. New Zealand since 1996 has used the Mixed Member Proportional (MMP) voting system, giving voters two votes: one for a political party and the other for their local electorate MP.",
+   "caveat": null,
+   "seatLeader": "National"
+  },
+  {
+   "id": "2014",
+   "label": "2014",
+   "year": 2014,
+   "date": "20 September 2014",
+   "era": "mmp",
+   "totalSeats": 121,
+   "majoritySeats": 61,
+   "turnout": 77.9,
+   "parties": [
+    {
+     "name": "National",
+     "leader": "John Key",
+     "seats": 60,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "David Cunliffe",
+     "seats": 32,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Green",
+     "leader": "Russel Norman",
+     "seats": 14,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "NZ First",
+     "leader": "Winston Peters",
+     "seats": 11,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Māori Party",
+     "leader": "Te Ururoa Flavell",
+     "seats": 2,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ACT",
+     "leader": "Jamie Whyte",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "United Future",
+     "leader": "Peter Dunne",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Internet Mana",
+     "leader": "Hone Harawira",
+     "seats": 0,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "John Key",
+    "party": "National (C&S: Māori, ACT, United Future)"
+   },
+   "knownAs": null,
+   "summary": "Voters elected 121 members to the House of Representatives, with 71 from single-member electorates (an increase from 70 in 2011) and 49 from party lists. Since 1996, New Zealand has used the Mixed Member Proportional (MMP) voting system, giving voters two votes: one for a political party and one for their local electorate MP.",
+   "caveat": null,
+   "seatLeader": "National"
+  },
+  {
+   "id": "2017",
+   "label": "2017",
+   "year": 2017,
+   "date": "23 September 2017",
+   "era": "mmp",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 79.8,
+   "parties": [
+    {
+     "name": "National",
+     "leader": "Bill English",
+     "seats": 56,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Jacinda Ardern",
+     "seats": 46,
+     "seatChange": 14.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "NZ First",
+     "leader": "Winston Peters",
+     "seats": 9,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Green",
+     "leader": "James Shaw",
+     "seats": 8,
+     "seatChange": -6.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ACT",
+     "leader": "David Seymour",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Māori Party",
+     "leader": "Marama Fox",
+     "seats": 0,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Jacinda Ardern",
+    "party": "Labour—NZ First (C&S: Green)"
+   },
+   "knownAs": "Ardern and the kingmaker",
+   "summary": "The 2017 New Zealand general election took place on Saturday 23 September 2017 to determine the membership of the 52nd New Zealand Parliament. The previous parliament was elected on 20 September 2014 and was officially dissolved on 22 August 2017.",
+   "caveat": null,
+   "seatLeader": "National"
+  },
+  {
+   "id": "2020",
+   "label": "2020",
+   "year": 2020,
+   "date": "17 October 2020",
+   "era": "mmp",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 82.24,
+   "parties": [
+    {
+     "name": "Labour",
+     "leader": "Jacinda Ardern",
+     "seats": 65,
+     "seatChange": 19.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National",
+     "leader": "Judith Collins",
+     "seats": 33,
+     "seatChange": -23.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Green",
+     "leader": "James Shaw",
+     "seats": 10,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ACT",
+     "leader": "David Seymour",
+     "seats": 10,
+     "seatChange": 9.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Māori Party",
+     "leader": "John Tamihere",
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "NZ First",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -9.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Jacinda Ardern",
+    "party": "Labour (C&S: Green)"
+   },
+   "knownAs": "The MMP-era landslide",
+   "summary": "The 2020 New Zealand general election was held on Saturday 17 October 2020 to determine the composition of the 53rd New Zealand Parliament. Voters elected 120 members to the House of Representatives, 72 from single-member electorates and 48 from closed party lists.",
+   "caveat": null,
+   "seatLeader": "Labour"
+  },
+  {
+   "id": "2023",
+   "label": "2023",
+   "year": 2023,
+   "date": "14 October 2023",
+   "era": "mmp",
+   "totalSeats": 123,
+   "majoritySeats": 62,
+   "turnout": 78.2,
+   "parties": [
+    {
+     "name": "National",
+     "leader": "Christopher Luxon",
+     "seats": 48,
+     "seatChange": 15.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": "Chris Hipkins",
+     "seats": 34,
+     "seatChange": -31.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Green",
+     "leader": "James Shaw",
+     "seats": 15,
+     "seatChange": 5.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ACT",
+     "leader": "David Seymour",
+     "seats": 11,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "NZ First",
+     "leader": "Winston Peters",
+     "seats": 8,
+     "seatChange": 8.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Te Pāti Māori",
+     "leader": "Debbie Ngarewa-Packer",
+     "seats": 6,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Christopher Luxon",
+    "party": "National—ACT—NZ First"
+   },
+   "knownAs": "The three-party turn",
+   "summary": "A general election took place in New Zealand on 14 October 2023 to determine the composition of the 54th New Zealand Parliament.",
+   "caveat": null,
+   "seatLeader": "National"
+  }
+ ]
+}

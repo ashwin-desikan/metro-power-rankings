@@ -1,0 +1,3133 @@
+{
+ "meta": {
+  "title": "Brazilian elections",
+  "sources": [
+   "Wikipedia: Brazilian presidential and general election articles, 1891–2022, and parliamentary election articles, 1934–1990 (results, infoboxes and leads)",
+   "TSE and historical figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "presEras": [
+  {
+   "key": "old-republic",
+   "label": "The Old Republic",
+   "span": "1891–1930",
+   "blurb": "The First Republic's presidents were chosen on a tiny, literate-male franchise under 'café com leite' arrangements between the big-state machines, with open ballots and routine fraud. The chain broke in 1930, when the defeated Getúlio Vargas took power by revolution instead."
+  },
+  {
+   "key": "vargas",
+   "label": "The Vargas era",
+   "span": "1934",
+   "blurb": "Vargas was confirmed in office indirectly by the Constituent Assembly in 1934; the promised 1938 direct election never came — his Estado Novo coup of 1937 cancelled it and closed the Congress."
+  },
+  {
+   "key": "populist",
+   "label": "The populist republic",
+   "span": "1945–1960",
+   "blurb": "Democratisation in 1945 brought Brazil's first mass elections: Dutra's win, Vargas's astonishing comeback by direct vote in 1950, Kubitschek's developmentalist 1955 victory, and Jânio Quadros's 1960 landslide — the last direct presidential vote for nearly three decades."
+  },
+  {
+   "key": "military",
+   "label": "The military regime's electoral college",
+   "span": "1964–1985",
+   "blurb": "After the 1964 coup, presidents-general were ratified by a purged Congress and later an electoral college, with the imposed ARENA majority guaranteeing the outcome. The 1985 college vote turned the weapon around: the opposition's Tancredo Neves won, and the dictatorship ended."
+  },
+  {
+   "key": "new-republic",
+   "label": "The New Republic",
+   "span": "1989–2022",
+   "blurb": "Direct two-round elections returned in 1989 with Collor's win over Lula. The real gave Cardoso two first-round victories, Lula's 2002 breakthrough began four straight Workers' Party wins, and the Bolsonaro years ended with the closest runoff in Brazilian history in 2022. The next contest is due in October 2026."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "vargas-assembly",
+   "label": "Constituent assemblies",
+   "span": "1934–1947",
+   "blurb": "The 1934 Constituent Assembly wrote the short-lived Second Republic's constitution; the 1945 election seated the assembly that wrote 1946's, and 1947 filled the remaining seats — the founding votes of two democratic orders."
+  },
+  {
+   "key": "populist",
+   "label": "The populist republic's Congress",
+   "span": "1950–1962",
+   "blurb": "Multiparty congressional politics under the 1946 constitution: the PSD, UDN and PTB triangle that framed every presidency from Dutra to Goulart, elected on a franchise that still excluded illiterate Brazilians."
+  },
+  {
+   "key": "arena-mdb",
+   "label": "The two-party dictatorship",
+   "span": "1966–1978",
+   "blurb": "The military regime dissolved the parties and imposed exactly two: the governing ARENA and the tolerated opposition MDB. The MDB's 1974 surge turned a managed safety valve into a genuine opposition — elections the regime counted on winning began to bite."
+  },
+  {
+   "key": "abertura",
+   "label": "Abertura and the New Republic",
+   "span": "1982–1990",
+   "blurb": "The controlled opening restored multiparty contests in 1982, the 1986 election seated the assembly that wrote the 1988 Constitution, and 1990 elected the first Congress of the restored democracy."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1891",
+   "label": "1891",
+   "year": 1891,
+   "kind": "presidential",
+   "date": "February 1891",
+   "era": "old-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Deodoro da Fonseca",
+     "party": null,
+     "r1Votes": 129,
+     "r1Share": 55.6,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Prudente de Morais",
+     "party": null,
+     "r1Votes": 97,
+     "r1Share": 41.81,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Floriano Peixoto",
+     "party": null,
+     "r1Votes": 3,
+     "r1Share": 1.29,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Saldanha Marinho",
+     "party": null,
+     "r1Votes": 2,
+     "r1Share": 0.86,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Higino Duarte Pereira",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.43,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Deodoro da Fonseca (Provisional)",
+    "party": "Elected President"
+   },
+   "presAfter": {
+    "name": "Deodoro da Fonseca",
+    "party": "Vice presidential election"
+   },
+   "knownAs": "The first republican election",
+   "summary": "Indirect presidential elections were held in Brazil on 25 February 1891. They were the first presidential elections in the country following the overthrow of the monarchy, with the president and vice president elected by members of Congress.",
+   "caveat": "An Old Republic election: a very restricted, literate-male franchise, open voting and machine control make the recorded totals a poor guide to popular opinion."
+  },
+  {
+   "id": "pres-1894",
+   "label": "1894",
+   "year": 1894,
+   "kind": "presidential",
+   "date": "1894",
+   "era": "old-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Prudente de Morais",
+     "party": "Paulista Republican Party",
+     "r1Votes": 276583,
+     "r1Share": 80.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Afonso Pena",
+     "party": "Mineiro Republican Party",
+     "r1Votes": 38291,
+     "r1Share": 11.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Cesário Alvim",
+     "party": "Mineiro Republican Party",
+     "r1Votes": 3719,
+     "r1Share": 1.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ruy Barbosa",
+     "party": "Bahia Republican Party",
+     "r1Votes": 3718,
+     "r1Share": 1.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Luiz de Almeida Couto",
+     "party": "3,437",
+     "r1Votes": 3437,
+     "r1Share": 1.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lauro Sodré",
+     "party": "Paraná Republican Party",
+     "r1Votes": 1983,
+     "r1Share": 0.57,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Other candidates",
+     "party": "17,366",
+     "r1Votes": 17366,
+     "r1Share": 5.03,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Floriano Peixoto",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Prudente de Morais",
+    "party": "PRP"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An Old Republic election: a very restricted, literate-male franchise, open voting and machine control make the recorded totals a poor guide to popular opinion."
+  },
+  {
+   "id": "pres-1898",
+   "label": "1898",
+   "year": 1898,
+   "kind": "presidential",
+   "date": "1 March 1898",
+   "era": "old-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Campos Sales",
+     "party": "Paulista Republican Party",
+     "r1Votes": 420286,
+     "r1Share": 90.9,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lauro Sodré",
+     "party": "Paraná Republican Party",
+     "r1Votes": 38929,
+     "r1Share": 8.42,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Other candidates",
+     "party": "3,146",
+     "r1Votes": 3146,
+     "r1Share": 0.68,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Prudente de Morais",
+    "party": "PRP"
+   },
+   "presAfter": {
+    "name": "Campos Sales",
+    "party": "PRP"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An Old Republic election: a very restricted, literate-male franchise, open voting and machine control make the recorded totals a poor guide to popular opinion."
+  },
+  {
+   "id": "pres-1902",
+   "label": "1902",
+   "year": 1902,
+   "kind": "presidential",
+   "date": "1 March 1902",
+   "era": "old-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Rodrigues Alves",
+     "party": "Paulista Republican Party",
+     "r1Votes": 592039,
+     "r1Share": 91.71,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Quintino Bocaiuva",
+     "party": "Fluminense Republican Party",
+     "r1Votes": 42542,
+     "r1Share": 6.59,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ubaldino Fontoura",
+     "party": "Fluminense Republican Party",
+     "r1Votes": 5371,
+     "r1Share": 0.83,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Other candidates",
+     "party": "5,579",
+     "r1Votes": 5579,
+     "r1Share": 0.86,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Manuel Ferraz de Campos Sales",
+    "party": "PRP"
+   },
+   "presAfter": {
+    "name": "Rodrigues Alves",
+    "party": "PRP"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An Old Republic election: a very restricted, literate-male franchise, open voting and machine control make the recorded totals a poor guide to popular opinion."
+  },
+  {
+   "id": "pres-1906",
+   "label": "1906",
+   "year": 1906,
+   "kind": "presidential",
+   "date": "1 March 1906",
+   "era": "old-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Afonso Pena",
+     "party": "Mineiro Republican Party",
+     "r1Votes": 288285,
+     "r1Share": 97.92,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lauro Sodré",
+     "party": "Paraná Republican Party",
+     "r1Votes": 4865,
+     "r1Share": 1.65,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ruy Barbosa",
+     "party": "207",
+     "r1Votes": 207,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Campos Sales",
+     "party": "95",
+     "r1Votes": 95,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Severino Vieira",
+     "party": "78",
+     "r1Votes": 78,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "97 other candidates",
+     "party": "871",
+     "r1Votes": 871,
+     "r1Share": 0.3,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Rodrigues Alves",
+    "party": "PRP"
+   },
+   "presAfter": {
+    "name": "Afonso Pena",
+    "party": "PRM"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in Brazil on 1 March 1906. The presidential elections were won by Afonso Pena of the Mineiro Republican Party, who received 98% of the vote.",
+   "caveat": "An Old Republic election: a very restricted, literate-male franchise, open voting and machine control make the recorded totals a poor guide to popular opinion."
+  },
+  {
+   "id": "pres-1910",
+   "label": "1910",
+   "year": 1910,
+   "kind": "presidential",
+   "date": "1 March 1910",
+   "era": "old-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Hermes da Fonseca",
+     "party": "Conservative Republican Party",
+     "r1Votes": 403867,
+     "r1Share": 57.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ruy Barbosa",
+     "party": "Paulista Republican Party",
+     "r1Votes": 222822,
+     "r1Share": 31.49,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Other candidates",
+     "party": "80,962",
+     "r1Votes": 80962,
+     "r1Share": 11.44,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Nilo Peçanha",
+    "party": "PRF"
+   },
+   "presAfter": {
+    "name": "Hermes da Fonseca",
+    "party": "PRC"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in Brazil on 1 March 1910. The result was a victory for Hermes da Fonseca, who received 57% of the vote.",
+   "caveat": "An Old Republic election: a very restricted, literate-male franchise, open voting and machine control make the recorded totals a poor guide to popular opinion."
+  },
+  {
+   "id": "pres-1914",
+   "label": "1914",
+   "year": 1914,
+   "kind": "presidential",
+   "date": "1 March 1914",
+   "era": "old-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Venceslau Brás",
+     "party": "Mineiro Republican Party",
+     "r1Votes": 532107,
+     "r1Share": 91.6,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ruy Barbosa",
+     "party": "Liberal Republican Party",
+     "r1Votes": 47782,
+     "r1Share": 8.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Other candidates",
+     "party": "1,028",
+     "r1Votes": 1028,
+     "r1Share": 0.18,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Hermes da Fonseca",
+    "party": "PRC"
+   },
+   "presAfter": {
+    "name": "Venceslau Brás",
+    "party": "PRM"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An Old Republic election: a very restricted, literate-male franchise, open voting and machine control make the recorded totals a poor guide to popular opinion."
+  },
+  {
+   "id": "pres-1918",
+   "label": "1918",
+   "year": 1918,
+   "kind": "presidential",
+   "date": "1 March 1918",
+   "era": "old-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Rodrigues Alves",
+     "party": "Paulista Republican Party",
+     "r1Votes": 386467,
+     "r1Share": 99.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nilo Peçanha",
+     "party": "Fluminense Republican Party",
+     "r1Votes": 1258,
+     "r1Share": 0.32,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ruy Barbosa",
+     "party": "Independent",
+     "r1Votes": 1014,
+     "r1Share": 0.26,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Other candidates",
+     "party": "1,392",
+     "r1Votes": 1392,
+     "r1Share": 0.36,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Rodrigues Alves",
+    "party": "PRP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Brazil on 1 March 1918. The presidential elections were won by former President Rodrigues Alves, who received 99% of the vote.",
+   "caveat": "An Old Republic election: a very restricted, literate-male franchise, open voting and machine control make the recorded totals a poor guide to popular opinion."
+  },
+  {
+   "id": "pres-1919",
+   "label": "1919",
+   "year": 1919,
+   "kind": "presidential",
+   "date": "13 April 1919",
+   "era": "old-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Epitácio Pessoa",
+     "party": "Paraíba Republican Party",
+     "r1Votes": 286373,
+     "r1Share": 71.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ruy Barbosa",
+     "party": "Independent",
+     "r1Votes": 116414,
+     "r1Share": 28.86,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Other candidates",
+     "party": "528",
+     "r1Votes": 528,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Delfim Moreira",
+    "party": "PRP"
+   },
+   "presAfter": {
+    "name": "Epitácio Pessoa",
+    "party": "PR Paraíba"
+   },
+   "knownAs": null,
+   "summary": "Early presidential elections were held in Brazil on 13 April 1919, following the death of Rodrigues Alves, who had been elected the previous year. The result was a victory for Epitácio Pessoa of the Paraíba Republican Party (and supported by the Paulista Republican Party and the Mineiro Republican Party), who received 71% of the vote.",
+   "caveat": "An Old Republic election: a very restricted, literate-male franchise, open voting and machine control make the recorded totals a poor guide to popular opinion."
+  },
+  {
+   "id": "pres-1922",
+   "label": "1922",
+   "year": 1922,
+   "kind": "presidential",
+   "date": "1922",
+   "era": "old-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Artur Bernardes",
+     "party": "Mineiro Republican Party",
+     "r1Votes": 466877,
+     "r1Share": 56.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nilo Peçanha",
+     "party": "Republican Reaction",
+     "r1Votes": 317714,
+     "r1Share": 38.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Other candidates",
+     "party": "48,679",
+     "r1Votes": 48679,
+     "r1Share": 5.84,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Epitacio Pessoa",
+    "party": "PRM"
+   },
+   "presAfter": {
+    "name": "Artur Bernardes",
+    "party": "PRM"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An Old Republic election: a very restricted, literate-male franchise, open voting and machine control make the recorded totals a poor guide to popular opinion."
+  },
+  {
+   "id": "pres-1926",
+   "label": "1926",
+   "year": 1926,
+   "kind": "presidential",
+   "date": "1 March 1926",
+   "era": "old-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Washington Luís",
+     "party": "Paulista Republican Party",
+     "r1Votes": 688528,
+     "r1Share": 98.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Joaquim Francisco de Assis Brasil",
+     "party": "Brazilian Federalist Party",
+     "r1Votes": 1116,
+     "r1Share": 0.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Other candidates",
+     "party": "12,936",
+     "r1Votes": 12936,
+     "r1Share": 1.84,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Artur Bernardes",
+    "party": "PRM"
+   },
+   "presAfter": {
+    "name": "Washington Luís",
+    "party": "PRP"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An Old Republic election: a very restricted, literate-male franchise, open voting and machine control make the recorded totals a poor guide to popular opinion."
+  },
+  {
+   "id": "pres-1930",
+   "label": "1930",
+   "year": 1930,
+   "kind": "presidential",
+   "date": "1 March 1930",
+   "era": "old-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Júlio Prestes",
+     "party": "Paulista Republican Party",
+     "r1Votes": 1091709,
+     "r1Share": 57.68,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Getúlio Vargas",
+     "party": "Liberal Alliance",
+     "r1Votes": 742794,
+     "r1Share": 39.25,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Other candidates",
+     "party": "58,074",
+     "r1Votes": 58074,
+     "r1Share": 3.07,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Washington Luís",
+    "party": "PRP"
+   },
+   "presAfter": {
+    "name": "Júlio Prestes",
+    "party": "PRP"
+   },
+   "knownAs": "The election the Revolution overturned",
+   "summary": "General elections were held in Brazil on 1 March 1930. In the presidential elections the result was a victory for Júlio Prestes of the Paulista Republican Party, who received 58% of the vote.",
+   "caveat": "An Old Republic election: a very restricted, literate-male franchise, open voting and machine control make the recorded totals a poor guide to popular opinion."
+  },
+  {
+   "id": "pres-1934",
+   "label": "1934",
+   "year": 1934,
+   "kind": "presidential",
+   "date": "17 July 1934",
+   "era": "vargas",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Getúlio Vargas",
+     "party": null,
+     "r1Votes": 175,
+     "r1Share": 70.56,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Borges de Medeiros",
+     "party": null,
+     "r1Votes": 59,
+     "r1Share": 23.79,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pedro Aurélio de Góis Monteiro",
+     "party": null,
+     "r1Votes": 4,
+     "r1Share": 1.61,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Protógenes Guimarães",
+     "party": null,
+     "r1Votes": 2,
+     "r1Share": 0.81,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Raul Fernandes",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Artur Bernardes",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Plínio Salgado",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Antônio Carlos Ribeiro de Andrada",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Afrânio de Melo Franco",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oscar Weinschenck",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Paim Filho",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Levi Carneiro",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.4,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Getúlio Vargas",
+    "party": "AL"
+   },
+   "presAfter": {
+    "name": "Getúlio Vargas",
+    "party": "Independent"
+   },
+   "knownAs": "Chosen by the Constituent Assembly",
+   "summary": "Indirect presidential elections were held in Brazil on 17 July 1934. Unlike previous elections which had been public (with the exception of the 1891 presidential election), this election was carried out by the Constituent Assembly.",
+   "caveat": "An indirect vote of the Constituent Assembly, not a popular election."
+  },
+  {
+   "id": "pres-1945",
+   "label": "1945",
+   "year": 1945,
+   "kind": "presidential",
+   "date": "2 December 1945",
+   "era": "populist",
+   "turnout": 82.13,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Eurico Gaspar Dutra",
+     "party": "Social Democratic Party",
+     "r1Votes": 3251507,
+     "r1Share": 55.39,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eduardo Gomes",
+     "party": "National Democratic Union",
+     "r1Votes": 2039341,
+     "r1Share": 34.74,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yedo Fiúza",
+     "party": "Brazilian Communist Party",
+     "r1Votes": 569818,
+     "r1Share": 9.71,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mário Rolim Teles",
+     "party": "National Agrarian Party",
+     "r1Votes": 10001,
+     "r1Share": 0.17,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "José Linhares",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Eurico Gaspar Dutra",
+    "party": "PSD"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Brazil on 2 December 1945, the first since the establishment of Getúlio Vargas' Estado Novo. The presidential elections were won by Eurico Gaspar Dutra of the Social Democratic Party (PSD), whilst the PSD also won a majority of seats in both the Chamber of Deputies and the Senate.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1950",
+   "label": "1950",
+   "year": 1950,
+   "kind": "presidential",
+   "date": "3 October 1950",
+   "era": "populist",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Getúlio Vargas",
+     "party": "Brazilian Labour Party",
+     "r1Votes": 3849040,
+     "r1Share": 48.73,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eduardo Gomes",
+     "party": "National Democratic Union",
+     "r1Votes": 2342384,
+     "r1Share": 29.66,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Cristiano Machado",
+     "party": "Social Democratic Party",
+     "r1Votes": 1697193,
+     "r1Share": 21.49,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "João Mangabeira",
+     "party": "Brazilian Socialist Party",
+     "r1Votes": 9466,
+     "r1Share": 0.12,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Eurico Gaspar Dutra",
+    "party": "PSD"
+   },
+   "presAfter": {
+    "name": "Getúlio Vargas",
+    "party": "PTB"
+   },
+   "knownAs": "Vargas returns by the ballot",
+   "summary": "General elections were held in Brazil on 3 October 1950. The presidential elections were won by Getúlio Vargas of the Brazilian Labour Party, whilst the Social Democratic Party remained the largest party in both the Chamber of Deputies and the Senate, although they lost their majority in the former.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1955",
+   "label": "1955",
+   "year": 1955,
+   "kind": "presidential",
+   "date": "3 October 1955",
+   "era": "populist",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Juscelino Kubitschek",
+     "party": "Social Democratic Party",
+     "r1Votes": 3077411,
+     "r1Share": 35.68,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juarez Távora",
+     "party": "National Democratic Union",
+     "r1Votes": 2610462,
+     "r1Share": 30.27,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Adhemar de Barros",
+     "party": "Social Progressive Party",
+     "r1Votes": 2222725,
+     "r1Share": 25.77,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Plínio Salgado",
+     "party": "Popular Representation Party",
+     "r1Votes": 714379,
+     "r1Share": 8.28,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Nereu Ramos",
+    "party": "PSD"
+   },
+   "presAfter": {
+    "name": "Juscelino Kubitschek",
+    "party": "PSD"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in Brazil on 3 October 1955 to elect both the president and vice president. Juscelino Kubitschek of the Social Democratic Party was elected president with 36% of the vote, while João Goulart of the Brazilian Labour Party was elected vice president with 44% of the vote.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1960",
+   "label": "1960",
+   "year": 1960,
+   "kind": "presidential",
+   "date": "3 October 1960",
+   "era": "populist",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Jânio Quadros",
+     "party": "PTN–UDN–PDC",
+     "r1Votes": 5636623,
+     "r1Share": 48.26,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Henrique Teixeira Lott",
+     "party": "PSD–PTB",
+     "r1Votes": 3846825,
+     "r1Share": 32.94,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Adhemar de Barros",
+     "party": "Social Progressive Party",
+     "r1Votes": 2195709,
+     "r1Share": 18.8,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Juscelino Kubitschek",
+    "party": "PSD"
+   },
+   "presAfter": {
+    "name": "Jânio Quadros",
+    "party": "PTN"
+   },
+   "knownAs": "The last direct vote for 29 years",
+   "summary": "Presidential elections were held in Brazil on 3 October 1960 to elect the president and vice president. Jânio Quadros of the National Labour Party (PTN), heading a coalition of the PTN, the National Democratic Union and the Christian Democratic Party was elected president with 48% of the vote.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1964",
+   "label": "1964",
+   "year": 1964,
+   "kind": "presidential",
+   "date": "11 April 1964",
+   "era": "military",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Castelo Branco",
+     "party": "Independent",
+     "r1Votes": 361,
+     "r1Share": 98.63,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juarez Távora",
+     "party": "Christian Democratic Party",
+     "r1Votes": 3,
+     "r1Share": 0.82,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eurico Gaspar Dutra",
+     "party": "Social Democratic Party",
+     "r1Votes": 2,
+     "r1Share": 0.55,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ranieri Mazzilli",
+    "party": "PSD"
+   },
+   "presAfter": {
+    "name": "Humberto Castelo Branco",
+    "party": "Independent"
+   },
+   "knownAs": "After the coup",
+   "summary": "Indirect presidential elections were held in Brazil on 11 April 1964 shortly after the 1964 coup carried out by the Brazilian military. Humberto de Alencar Castelo Branco was elected president by the National Congress, receiving 361 of the 366 votes cast.",
+   "caveat": "An indirect vote under the military regime: the president was ratified by a purged Congress or electoral college, with the outcome guaranteed in advance. Recorded here as history, not as a free election."
+  },
+  {
+   "id": "pres-1966",
+   "label": "1966",
+   "year": 1966,
+   "kind": "presidential",
+   "date": "3 October 1966",
+   "era": "military",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Artur da Costa e Silva",
+     "party": "Pedro Aleixo",
+     "r1Votes": 294,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Castelo Branco",
+    "party": "ARENA"
+   },
+   "presAfter": {
+    "name": "Artur da Costa e Silva",
+    "party": "ARENA"
+   },
+   "knownAs": null,
+   "summary": "Indirect presidential elections were held in Brazil on 3 October 1966 through an electoral college system. It was the second election during the Brazilian military government, with Artur da Costa e Silva as the sole candidate.",
+   "caveat": "An indirect vote under the military regime: the president was ratified by a purged Congress or electoral college, with the outcome guaranteed in advance. Recorded here as history, not as a free election."
+  },
+  {
+   "id": "pres-1969",
+   "label": "1969",
+   "year": 1969,
+   "kind": "presidential",
+   "date": "25 October 1969",
+   "era": "military",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Emílio Garrastazu Médici",
+     "party": "Augusto Rademaker",
+     "r1Votes": 293,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Brazilian Military Junta of 1969",
+    "party": "ARENA"
+   },
+   "presAfter": {
+    "name": "Emílio Garrastazu Médici",
+    "party": "ARENA"
+   },
+   "knownAs": null,
+   "summary": "The National Congress had been closed since Institutional Act Number Five was issued on 13 December 1968. President Artur da Costa e Silva left office on 14 October due to ill health, later dying on 17 December.",
+   "caveat": "An indirect vote under the military regime: the president was ratified by a purged Congress or electoral college, with the outcome guaranteed in advance. Recorded here as history, not as a free election."
+  },
+  {
+   "id": "pres-1974",
+   "label": "1974",
+   "year": 1974,
+   "kind": "presidential",
+   "date": "15 January 1974",
+   "era": "military",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Ernesto Geisel",
+     "party": "Adalberto Pereira dos Santos",
+     "r1Votes": 400,
+     "r1Share": 84.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ulysses Guimarães",
+     "party": "Barbosa Lima Sobrinho",
+     "r1Votes": 76,
+     "r1Share": 15.97,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Emílio Garrastazu Médici",
+    "party": "ARENA"
+   },
+   "presAfter": {
+    "name": "Ernesto Geisel",
+    "party": "ARENA"
+   },
+   "knownAs": null,
+   "summary": "All elections during the military government elected candidates from the National Renewal Alliance Party (ARENA), though the 1966 and 1969 were one-party elections. In other elections during the military government, there were two parties running for elections.",
+   "caveat": "An indirect vote under the military regime: the president was ratified by a purged Congress or electoral college, with the outcome guaranteed in advance. Recorded here as history, not as a free election."
+  },
+  {
+   "id": "pres-1978",
+   "label": "1978",
+   "year": 1978,
+   "kind": "presidential",
+   "date": "15 October 1978",
+   "era": "military",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "João Figueiredo",
+     "party": "Aureliano Chaves",
+     "r1Votes": 355,
+     "r1Share": 61.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Euler Bentes Monteiro",
+     "party": "Paulo Brossard",
+     "r1Votes": 226,
+     "r1Share": 38.9,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ernesto Geisel",
+    "party": "ARENA"
+   },
+   "presAfter": {
+    "name": "João Figueiredo",
+    "party": "ARENA"
+   },
+   "knownAs": null,
+   "summary": "Indirect presidential elections were held in Brazil on 15 October 1978. The opposition Brazilian Democratic Movement (MDB) chose an anti-candidate to fill the spot and denounce the restrictive democracy.",
+   "caveat": "An indirect vote under the military regime: the president was ratified by a purged Congress or electoral college, with the outcome guaranteed in advance. Recorded here as history, not as a free election."
+  },
+  {
+   "id": "pres-1985",
+   "label": "1985",
+   "year": 1985,
+   "kind": "presidential",
+   "date": "15 January 1985",
+   "era": "military",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Tancredo Neves",
+     "party": "José Sarney",
+     "r1Votes": 480,
+     "r1Share": 72.73,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Paulo Maluf",
+     "party": "Flávio Marcílio",
+     "r1Votes": 180,
+     "r1Share": 27.27,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "João Figueiredo",
+    "party": "PDS"
+   },
+   "presAfter": {
+    "name": "Tancredo Neves",
+    "party": "(died before taking office)"
+   },
+   "knownAs": "The college chooses the opposition",
+   "summary": "Presidential elections were held in Brazil on 15 January 1985, the last to be held indirectly through an electoral college, and the last to be held under the military regime.",
+   "caveat": "An indirect electoral-college vote under the military regime's rules — won, for the first time, by the opposition."
+  },
+  {
+   "id": "pres-1989",
+   "label": "1989",
+   "year": 1989,
+   "kind": "presidential",
+   "date": "15 November and 17 December 1989",
+   "era": "new-republic",
+   "turnout": 88.08,
+   "turnout2": 85.61,
+   "candidates": [
+    {
+     "name": "Fernando Collor",
+     "party": "National Reconstruction Party",
+     "r1Votes": 20611030,
+     "r1Share": 30.48,
+     "r2Votes": 35090206,
+     "r2Share": 53.03
+    },
+    {
+     "name": "Lula da Silva",
+     "party": "Workers' Party",
+     "r1Votes": 11622321,
+     "r1Share": 17.19,
+     "r2Votes": 31075803,
+     "r2Share": 46.97
+    },
+    {
+     "name": "Leonel Brizola",
+     "party": "Democratic Labour Party",
+     "r1Votes": 11167665,
+     "r1Share": 16.51,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mário Covas",
+     "party": "Brazilian Social Democracy Party",
+     "r1Votes": 7790381,
+     "r1Share": 11.52,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Paulo Maluf",
+     "party": "Democratic Social Party",
+     "r1Votes": 5986585,
+     "r1Share": 8.85,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Guilherme Afif",
+     "party": "Liberal Party",
+     "r1Votes": 3272520,
+     "r1Share": 4.84,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ulysses Guimarães",
+     "party": "Party of the Brazilian Democratic Movement",
+     "r1Votes": 3204996,
+     "r1Share": 4.74,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Roberto Freire",
+     "party": "Brazilian Communist Party",
+     "r1Votes": 769117,
+     "r1Share": 1.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Aureliano Chaves",
+     "party": "Party of the Liberal Front",
+     "r1Votes": 600821,
+     "r1Share": 0.89,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ronaldo Caiado",
+     "party": "Social Democratic Party",
+     "r1Votes": 488893,
+     "r1Share": 0.72,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Affonso Camargo",
+     "party": "Brazilian Labour Party",
+     "r1Votes": 379284,
+     "r1Share": 0.56,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Enéas Carneiro",
+     "party": "Party of the Reconstruction of the National Order",
+     "r1Votes": 360578,
+     "r1Share": 0.53,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marronzinho",
+     "party": "Social Progressive Party",
+     "r1Votes": 238408,
+     "r1Share": 0.35,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Paulo Gontijo",
+     "party": "People's Party",
+     "r1Votes": 198710,
+     "r1Share": 0.29,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Zamir Teixeira",
+     "party": "National Communitarian Party",
+     "r1Votes": 187164,
+     "r1Share": 0.28,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lívia Maria",
+     "party": "Nationalist Party",
+     "r1Votes": 179925,
+     "r1Share": 0.27,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eudes Mattar",
+     "party": "Progressive Liberal Party",
+     "r1Votes": 162343,
+     "r1Share": 0.24,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Fernando Gabeira",
+     "party": "Green Party",
+     "r1Votes": 125844,
+     "r1Share": 0.19,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Celso Brant",
+     "party": "Party of National Mobilization",
+     "r1Votes": 109903,
+     "r1Share": 0.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Antônio Pedreira",
+     "party": "Brazilian People's Party",
+     "r1Votes": 86107,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manoel Horta",
+     "party": "Party of the Christian Democracy of Brazil",
+     "r1Votes": 83291,
+     "r1Share": 0.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Armando Corrêa",
+     "party": "Brazilian Municipalist Party",
+     "r1Votes": 0,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "José Sarney",
+    "party": "MDB"
+   },
+   "presAfter": {
+    "name": "Fernando Collor",
+    "party": "PRN"
+   },
+   "knownAs": "Direct elections return",
+   "summary": "Presidential elections were held in Brazil in 1989, with the first round on November 15 and a second round on December 17. They were the first direct presidential elections since 1960, the first to be held using a two-round system and the first to take place under the 1988 constitution, which followed two decades of authoritarian rule after the 1964 Brazilian coup d'état.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1994",
+   "label": "1994",
+   "year": 1994,
+   "kind": "presidential",
+   "date": "1994",
+   "era": "new-republic",
+   "turnout": 82.24,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Fernando Henrique Cardoso",
+     "party": "Marco Maciel (PFL)",
+     "r1Votes": 34364961,
+     "r1Share": 54.28,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luiz Inácio Lula da Silva",
+     "party": "Aloizio Mercadante",
+     "r1Votes": 17122127,
+     "r1Share": 27.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Enéas Carneiro",
+     "party": "Roberto Gama",
+     "r1Votes": 4671457,
+     "r1Share": 7.38,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Orestes Quércia",
+     "party": "Iris de Araújo",
+     "r1Votes": 2772121,
+     "r1Share": 4.38,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Leonel Brizola",
+     "party": "Darcy Ribeiro",
+     "r1Votes": 2015836,
+     "r1Share": 3.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Esperidião Amin",
+     "party": "Gardênia Gonçalves",
+     "r1Votes": 1739894,
+     "r1Share": 2.75,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carlos Antônio Gomes",
+     "party": "Dilton Carlos Salomoni",
+     "r1Votes": 387738,
+     "r1Share": 0.61,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hernani Fortuna",
+     "party": "Vitor Nósseis",
+     "r1Votes": 238197,
+     "r1Share": 0.38,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Itamar Franco",
+    "party": "PRN"
+   },
+   "presAfter": {
+    "name": "Fernando Henrique Cardoso",
+    "party": "PSDB"
+   },
+   "knownAs": null,
+   "summary": "Elected in 1989, President Fernando Collor of the centre-right National Reconstruction Party (PRN) had resigned in the face of an impeachment trial, resulting in Vice President Itamar Franco succeeding him. Facing a fiscal crisis Franco's government launched the Plano Real (\"Real Plan\") to stabilize the national economy.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1998",
+   "label": "1998",
+   "year": 1998,
+   "kind": "presidential",
+   "date": "4 October 1998",
+   "era": "new-republic",
+   "turnout": 78.51,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Fernando Henrique Cardoso",
+     "party": "Marco Maciel (PFL)",
+     "r1Votes": 35936540,
+     "r1Share": 53.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luiz Inácio Lula da Silva",
+     "party": "Leonel Brizola (PDT)",
+     "r1Votes": 21475218,
+     "r1Share": 31.71,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ciro Gomes",
+     "party": "Roberto Freire",
+     "r1Votes": 7426190,
+     "r1Share": 10.97,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Enéas Carneiro",
+     "party": "Irapuan Teixeira",
+     "r1Votes": 1447090,
+     "r1Share": 2.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ivan Frota",
+     "party": "João Ferreira da Silva",
+     "r1Votes": 251337,
+     "r1Share": 0.37,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alfredo Sirkis",
+     "party": "Carla Miranda Rabello",
+     "r1Votes": 212984,
+     "r1Share": 0.31,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Maria de Almeida",
+     "party": "José Galvão de Lima",
+     "r1Votes": 202659,
+     "r1Share": 0.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "João de Deus",
+     "party": "Nanci Pilar",
+     "r1Votes": 198916,
+     "r1Share": 0.29,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Maria Eymael",
+     "party": "Josmar Alderete",
+     "r1Votes": 171831,
+     "r1Share": 0.25,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Thereza Ruiz",
+     "party": "Eduardo Gomes",
+     "r1Votes": 166138,
+     "r1Share": 0.25,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sérgio Bueno",
+     "party": "Ronald Azaro",
+     "r1Votes": 124659,
+     "r1Share": 0.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vasco Azevedo Neto",
+     "party": "Alexandre José dos Santos",
+     "r1Votes": 109003,
+     "r1Share": 0.16,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Fernando Henrique Cardoso",
+    "party": "PSDB"
+   },
+   "presAfter": {
+    "name": "Fernando Henrique Cardoso",
+    "party": "PSDB"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Brazil on 4 October 1998 to elect the President, National Congress and state governorships. If no candidate in the presidential election received more than 50% of the vote in the first round, a second-round runoff would have been held on 25 October.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2002",
+   "label": "2002",
+   "year": 2002,
+   "kind": "presidential",
+   "date": "6 October and 27 October 2002",
+   "era": "new-republic",
+   "turnout": 82.26,
+   "turnout2": 79.53,
+   "candidates": [
+    {
+     "name": "Luiz Inácio Lula da Silva",
+     "party": "Workers' Party",
+     "r1Votes": 39455233,
+     "r1Share": 46.44,
+     "r2Votes": 52793364,
+     "r2Share": 61.27
+    },
+    {
+     "name": "José Serra",
+     "party": "Brazilian Social Democratic Party",
+     "r1Votes": 19705445,
+     "r1Share": 23.2,
+     "r2Votes": 33370739,
+     "r2Share": 38.73
+    },
+    {
+     "name": "Anthony Garotinho",
+     "party": "Brazilian Socialist Party",
+     "r1Votes": 15180097,
+     "r1Share": 17.87,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ciro Gomes",
+     "party": "Popular Socialist Party",
+     "r1Votes": 10170882,
+     "r1Share": 11.97,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Maria de Almeida",
+     "party": "United Socialist Workers' Party",
+     "r1Votes": 402236,
+     "r1Share": 0.47,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rui Costa Pimenta",
+     "party": "Workers' Cause Party",
+     "r1Votes": 38619,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Fernando Henrique Cardoso",
+    "party": "PSDB"
+   },
+   "presAfter": {
+    "name": "Luiz Inácio Lula da Silva",
+    "party": "PT"
+   },
+   "knownAs": "Lula's breakthrough",
+   "summary": "General elections were held in Brazil on 6 October 2002, with a second round of the presidential election on 27 October. The elections were held in the midst of an economic crisis that began in the second term of the incumbent president, Fernando Henrique Cardoso of the centre-right Brazilian Social Democracy Party (PSDB).",
+   "caveat": null
+  },
+  {
+   "id": "pres-2006",
+   "label": "2006",
+   "year": 2006,
+   "kind": "presidential",
+   "date": "1 October and 29 October 2006",
+   "era": "new-republic",
+   "turnout": 83.25,
+   "turnout2": 81.01,
+   "candidates": [
+    {
+     "name": "Luiz Inácio Lula da Silva",
+     "party": "Workers' Party",
+     "r1Votes": 46662365,
+     "r1Share": 48.61,
+     "r2Votes": 58295042,
+     "r2Share": 60.83
+    },
+    {
+     "name": "Geraldo Alckmin",
+     "party": "Brazilian Social Democracy Party",
+     "r1Votes": 39968369,
+     "r1Share": 41.64,
+     "r2Votes": 37543178,
+     "r2Share": 39.17
+    },
+    {
+     "name": "Heloísa Helena",
+     "party": "Socialism and Liberty Party",
+     "r1Votes": 6575393,
+     "r1Share": 6.85,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Cristovam Buarque",
+     "party": "Democratic Labour Party",
+     "r1Votes": 2538844,
+     "r1Share": 2.64,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ana Maria Rangel",
+     "party": "Progressive Republican Party",
+     "r1Votes": 126404,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Maria Eymael",
+     "party": "Christian Social Democratic Party",
+     "r1Votes": 63294,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luciano Bivar",
+     "party": "Social Liberal Party",
+     "r1Votes": 62064,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Lula da Silva",
+    "party": "PT"
+   },
+   "presAfter": {
+    "name": "Lula da Silva",
+    "party": "PT"
+   },
+   "knownAs": null,
+   "summary": "Elected by a wide margin in the 2002 presidential elections, incumbent Luiz Inácio Lula da Silva of the centre-left Workers' Party (PT) ran for reelection. During his first term in office, Lula implemented a wide array of social programs, including the Fome Zero (Zero Hunger) and Bolsa Família (Family Allowance) programs.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2010",
+   "label": "2010",
+   "year": 2010,
+   "kind": "presidential",
+   "date": "3 October and 31 October 2010",
+   "era": "new-republic",
+   "turnout": 81.88,
+   "turnout2": 78.5,
+   "candidates": [
+    {
+     "name": "Dilma Rousseff",
+     "party": "Workers' Party",
+     "r1Votes": 47651434,
+     "r1Share": 46.91,
+     "r2Votes": 55752529,
+     "r2Share": 56.05
+    },
+    {
+     "name": "José Serra",
+     "party": "Brazilian Social Democracy Party",
+     "r1Votes": 33132283,
+     "r1Share": 32.61,
+     "r2Votes": 43711388,
+     "r2Share": 43.95
+    },
+    {
+     "name": "Marina Silva",
+     "party": "Green Party",
+     "r1Votes": 19636359,
+     "r1Share": 19.33,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Plínio de Arruda Sampaio",
+     "party": "Socialism and Liberty Party",
+     "r1Votes": 886816,
+     "r1Share": 0.87,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Maria Eymael",
+     "party": "Christian Social Democratic Party",
+     "r1Votes": 89350,
+     "r1Share": 0.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Maria de Almeida",
+     "party": "United Socialist Workers' Party",
+     "r1Votes": 84609,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Levy Fidelix",
+     "party": "Brazilian Labour Renewal Party",
+     "r1Votes": 57960,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ivan Pinheiro",
+     "party": "Brazilian Communist Party",
+     "r1Votes": 39136,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rui Costa Pimenta",
+     "party": "Workers' Cause Party",
+     "r1Votes": 12206,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Luiz Inácio Lula da Silva",
+    "party": "PT"
+   },
+   "presAfter": {
+    "name": "Dilma Rousseff",
+    "party": "PT"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Brazil on 3 October 2010 to elect the president, National Congress and state governors.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2014",
+   "label": "2014",
+   "year": 2014,
+   "kind": "presidential",
+   "date": "5 October and 26 October 2014",
+   "era": "new-republic",
+   "turnout": 80.61,
+   "turnout2": 78.9,
+   "candidates": [
+    {
+     "name": "Dilma Rousseff",
+     "party": "Workers' Party",
+     "r1Votes": 43267668,
+     "r1Share": 41.59,
+     "r2Votes": 54501118,
+     "r2Share": 51.64
+    },
+    {
+     "name": "Aécio Neves",
+     "party": "Brazilian Social Democracy Party",
+     "r1Votes": 34897211,
+     "r1Share": 33.55,
+     "r2Votes": 51041155,
+     "r2Share": 48.36
+    },
+    {
+     "name": "Marina Silva",
+     "party": "Brazilian Socialist Party",
+     "r1Votes": 22176619,
+     "r1Share": 21.32,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luciana Genro",
+     "party": "Socialism and Liberty Party",
+     "r1Votes": 1612186,
+     "r1Share": 1.55,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Everaldo Pereira",
+     "party": "Social Christian Party",
+     "r1Votes": 780513,
+     "r1Share": 0.75,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eduardo Jorge",
+     "party": "Green Party",
+     "r1Votes": 630099,
+     "r1Share": 0.61,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Levy Fidelix",
+     "party": "Brazilian Labour Renewal Party",
+     "r1Votes": 446878,
+     "r1Share": 0.43,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Maria de Almeida",
+     "party": "United Socialist Workers' Party",
+     "r1Votes": 91209,
+     "r1Share": 0.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Maria Eymael",
+     "party": "Christian Social Democratic Party",
+     "r1Votes": 61250,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mauro Iasi",
+     "party": "Brazilian Communist Party",
+     "r1Votes": 47845,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rui Costa Pimenta",
+     "party": "Workers' Cause Party",
+     "r1Votes": 12324,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Dilma Rousseff",
+    "party": "PT"
+   },
+   "presAfter": {
+    "name": "Dilma Rousseff",
+    "party": "PT"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Brazil on 5 October 2014 to elect the president, the National Congress, and state governorships. As no candidate in the presidential election received more than 50% of the vote in the first round on 5 October 2014, a second-round runoff was held on 26 October 2014.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2018",
+   "label": "2018",
+   "year": 2018,
+   "kind": "presidential",
+   "date": "7 October and 28 October 2018",
+   "era": "new-republic",
+   "turnout": 79.67,
+   "turnout2": 78.7,
+   "candidates": [
+    {
+     "name": "Jair Bolsonaro",
+     "party": "Social Liberal Party",
+     "r1Votes": 49277010,
+     "r1Share": 46.03,
+     "r2Votes": 57797847,
+     "r2Share": 55.13
+    },
+    {
+     "name": "Fernando Haddad",
+     "party": "Workers' Party",
+     "r1Votes": 31342051,
+     "r1Share": 29.28,
+     "r2Votes": 47040906,
+     "r2Share": 44.87
+    },
+    {
+     "name": "Ciro Gomes",
+     "party": "Democratic Labour Party",
+     "r1Votes": 13344371,
+     "r1Share": 12.47,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Geraldo Alckmin",
+     "party": "Brazilian Social Democracy Party",
+     "r1Votes": 5096350,
+     "r1Share": 4.76,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "João Amoêdo",
+     "party": "New Party",
+     "r1Votes": 2679745,
+     "r1Share": 2.5,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Cabo Daciolo",
+     "party": "Patriota",
+     "r1Votes": 1348323,
+     "r1Share": 1.26,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Henrique Meirelles",
+     "party": "Brazilian Democratic Movement",
+     "r1Votes": 1288950,
+     "r1Share": 1.2,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marina Silva",
+     "party": "Sustainability Network",
+     "r1Votes": 1069578,
+     "r1Share": 1.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alvaro Dias",
+     "party": "Podemos",
+     "r1Votes": 859601,
+     "r1Share": 0.8,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Guilherme Boulos",
+     "party": "Socialism and Liberty Party",
+     "r1Votes": 617122,
+     "r1Share": 0.58,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vera Lúcia",
+     "party": "United Socialist Workers' Party",
+     "r1Votes": 55762,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Maria Eymael",
+     "party": "Christian Democracy",
+     "r1Votes": 41710,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "João Vicente Goulart",
+     "party": "Free Fatherland Party",
+     "r1Votes": 30176,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Michel Temer",
+    "party": "MDB"
+   },
+   "presAfter": {
+    "name": "Jair Bolsonaro",
+    "party": "PSL"
+   },
+   "knownAs": "The Bolsonaro wave",
+   "summary": "General elections were held in Brazil on 7 October 2018 to elect the president, National Congress and state governors. As no candidate in the presidential election (and for the gubernatorial election in some states) received more than 50% of the vote in the first round, a runoff round was held of those offices on 28 October.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2022",
+   "label": "2022",
+   "year": 2022,
+   "kind": "presidential",
+   "date": "2 October and 30 October 2022",
+   "era": "new-republic",
+   "turnout": 79.05,
+   "turnout2": 79.41,
+   "candidates": [
+    {
+     "name": "Luiz Inácio Lula da Silva",
+     "party": "Workers' Party",
+     "r1Votes": 57259504,
+     "r1Share": 48.43,
+     "r2Votes": 60345999,
+     "r2Share": 50.9
+    },
+    {
+     "name": "Jair Bolsonaro",
+     "party": "Liberal Party",
+     "r1Votes": 51072345,
+     "r1Share": 43.2,
+     "r2Votes": 58206354,
+     "r2Share": 49.1
+    },
+    {
+     "name": "Simone Tebet",
+     "party": "Brazilian Democratic Movement",
+     "r1Votes": 4915423,
+     "r1Share": 4.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ciro Gomes",
+     "party": "Democratic Labour Party",
+     "r1Votes": 3599287,
+     "r1Share": 3.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Soraya Thronicke",
+     "party": "Brazil Union",
+     "r1Votes": 600955,
+     "r1Share": 0.51,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luiz Felipe d'Avila",
+     "party": "New Party",
+     "r1Votes": 559708,
+     "r1Share": 0.47,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kelmon Souza",
+     "party": "Brazilian Labour Party",
+     "r1Votes": 81129,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Leonardo Péricles",
+     "party": "Popular Unity",
+     "r1Votes": 53519,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sofia Manzano",
+     "party": "Brazilian Communist Party",
+     "r1Votes": 45620,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vera Lúcia Salgado",
+     "party": "United Socialist Workers' Party",
+     "r1Votes": 25625,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Maria Eymael",
+     "party": "Christian Democracy",
+     "r1Votes": 16604,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Jair Bolsonaro",
+    "party": "PL"
+   },
+   "presAfter": {
+    "name": "Luiz Inácio Lula da Silva",
+    "party": "PT"
+   },
+   "knownAs": "The closest runoff ever",
+   "summary": "General elections were held in Brazil on 2 October 2022 to elect the president, vice president, the National Congress, the governors, vice governors and legislative assemblies of all federative units, and the district council of Fernando de Noronha.",
+   "caveat": null
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1934",
+   "label": "1934",
+   "year": 1934,
+   "kind": "legislative",
+   "date": "1934",
+   "era": "vargas-assembly",
+   "totalSeats": 2,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "People's Slate",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": 2291,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "Constituent Assembly",
+   "summary": "Following the Revolution of 1930, a constitutional assembly was elected in 1933 and drew up a new constitution, which came into force on 16 July 1934.",
+   "caveat": null,
+   "seatLeader": "People's Slate"
+  },
+  {
+   "id": "1945",
+   "label": "1945",
+   "year": 1945,
+   "kind": "legislative",
+   "date": "2 December 1945",
+   "era": "vargas-assembly",
+   "totalSeats": 286,
+   "majoritySeats": null,
+   "turnout": 82.13,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 151,
+     "seatChange": null,
+     "votes": 2531944,
+     "share": 42.74,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Union",
+     "leader": null,
+     "seats": 81,
+     "seatChange": null,
+     "votes": 1575375,
+     "share": 26.59,
+     "swing": null
+    },
+    {
+     "name": "Brazilian Labour Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": null,
+     "votes": 603500,
+     "share": 10.19,
+     "swing": null
+    },
+    {
+     "name": "Brazilian Communist Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 511302,
+     "share": 8.63,
+     "swing": null
+    },
+    {
+     "name": "Republican Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 219562,
+     "share": 3.71,
+     "swing": null
+    },
+    {
+     "name": "Syndicalist Popular Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 107321,
+     "share": 1.81,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 101636,
+     "share": 1.72,
+     "swing": null
+    },
+    {
+     "name": "Popular Representation Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 94447,
+     "share": 1.59,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "José Linhares",
+    "party": "Independent"
+   },
+   "pmAfter": null,
+   "knownAs": "Democratisation election",
+   "summary": "General elections were held in Brazil on 2 December 1945, the first since the establishment of Getúlio Vargas' Estado Novo. The presidential elections were won by Eurico Gaspar Dutra of the Social Democratic Party (PSD), whilst the PSD also won a majority of seats in both the Chamber of Deputies and the Senate.",
+   "caveat": null,
+   "seatLeader": "Social Democratic Party"
+  },
+  {
+   "id": "1947",
+   "label": "1947",
+   "year": 1947,
+   "kind": "legislative",
+   "date": "19 January 1947",
+   "era": "vargas-assembly",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Brazil on 19 January 1947. The elections were for 19 vacant seats in the Chamber of Deputies, one additional Senator for each state (except Santa Catarina, which elected two), and for all state Governors and legislatures.",
+   "caveat": null,
+   "seatLeader": null
+  },
+  {
+   "id": "1950",
+   "label": "1950",
+   "year": 1950,
+   "kind": "legislative",
+   "date": "3 October 1950",
+   "era": "populist",
+   "totalSeats": 304,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 112,
+     "seatChange": null,
+     "votes": 2068405,
+     "share": 26.99,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Union",
+     "leader": null,
+     "seats": 81,
+     "seatChange": null,
+     "votes": 1301489,
+     "share": 16.99,
+     "swing": null
+    },
+    {
+     "name": "Brazilian Labour Party",
+     "leader": null,
+     "seats": 51,
+     "seatChange": null,
+     "votes": 1262000,
+     "share": 16.47,
+     "swing": null
+    },
+    {
+     "name": "Social Progressive Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": null,
+     "votes": 558792,
+     "share": 7.29,
+     "swing": null
+    },
+    {
+     "name": "Republican Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 216207,
+     "share": 2.82,
+     "swing": null
+    },
+    {
+     "name": "Social Labour Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 163341,
+     "share": 2.13,
+     "swing": null
+    },
+    {
+     "name": "National Labor Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 211090,
+     "share": 2.75,
+     "swing": null
+    },
+    {
+     "name": "Liberator Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 55338,
+     "share": 0.72,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Eurico Gaspar Dutra",
+    "party": "PSD"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "General elections were held in Brazil on 3 October 1950. The presidential elections were won by Getúlio Vargas of the Brazilian Labour Party, whilst the Social Democratic Party remained the largest party in both the Chamber of Deputies and the Senate, although they lost their majority in the former.",
+   "caveat": null,
+   "seatLeader": "Social Democratic Party"
+  },
+  {
+   "id": "1954",
+   "label": "1954",
+   "year": 1954,
+   "kind": "legislative",
+   "date": "3 October 1954",
+   "era": "populist",
+   "totalSeats": 326,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 114,
+     "seatChange": 2.0,
+     "votes": 2136220,
+     "share": 23.13,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Union",
+     "leader": null,
+     "seats": 74,
+     "seatChange": 7.0,
+     "votes": 1318101,
+     "share": 14.27,
+     "swing": null
+    },
+    {
+     "name": "Brazilian Labour Party",
+     "leader": null,
+     "seats": 56,
+     "seatChange": 5.0,
+     "votes": 1447784,
+     "share": 15.68,
+     "swing": null
+    },
+    {
+     "name": "Social Progressive Party",
+     "leader": null,
+     "seats": 32,
+     "seatChange": 12.0,
+     "votes": 863401,
+     "share": 9.35,
+     "swing": null
+    },
+    {
+     "name": "Republican Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 8.0,
+     "votes": 246487,
+     "share": 2.67,
+     "swing": null
+    },
+    {
+     "name": "Liberator Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 3.0,
+     "votes": 114665,
+     "share": 1.24,
+     "swing": null
+    },
+    {
+     "name": "National Labor Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 1.0,
+     "votes": 190839,
+     "share": 2.07,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Social Democratic Party"
+  },
+  {
+   "id": "1958",
+   "label": "1958",
+   "year": 1958,
+   "kind": "legislative",
+   "date": "3 October 1958",
+   "era": "populist",
+   "totalSeats": 326,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Democratic Union",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 856846,
+     "share": 8.1,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 1123574,
+     "share": 10.62,
+     "swing": null
+    },
+    {
+     "name": "Brazilian Labour Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 688880,
+     "share": 6.51,
+     "swing": null
+    },
+    {
+     "name": "Brazilian Socialist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 59201,
+     "share": 0.56,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "National Democratic Union"
+  },
+  {
+   "id": "1962",
+   "label": "1962",
+   "year": 1962,
+   "kind": "legislative",
+   "date": "7 October 1962",
+   "era": "populist",
+   "totalSeats": 409,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 2222547,
+     "share": 10.8,
+     "swing": null
+    },
+    {
+     "name": "Brazilian Labour Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 2694308,
+     "share": 13.09,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Union",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 2182647,
+     "share": 10.6,
+     "swing": null
+    },
+    {
+     "name": "National Labor Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 431284,
+     "share": 2.1,
+     "swing": null
+    },
+    {
+     "name": "Labour Renewal Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 538789,
+     "share": 2.62,
+     "swing": null
+    },
+    {
+     "name": "Republican Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 408524,
+     "share": 1.98,
+     "swing": null
+    },
+    {
+     "name": "Brazilian Socialist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 318369,
+     "share": 1.55,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 269560,
+     "share": 1.31,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Social Democratic Party"
+  },
+  {
+   "id": "1966",
+   "label": "1966",
+   "year": 1966,
+   "kind": "legislative",
+   "date": "15 November 1966",
+   "era": "arena-mdb",
+   "totalSeats": 409,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Renewal Alliance",
+     "leader": null,
+     "seats": 277,
+     "seatChange": null,
+     "votes": 8731638,
+     "share": 63.98,
+     "swing": null
+    },
+    {
+     "name": "Brazilian Democratic Movement",
+     "leader": null,
+     "seats": 132,
+     "seatChange": null,
+     "votes": 4915470,
+     "share": 36.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Brazil on 15 November 1966. They were the first elections held after a military coup in 1964.",
+   "caveat": "Held under the military regime's imposed two-party system; competitive, but on the dictatorship's terms.",
+   "seatLeader": "National Renewal Alliance"
+  },
+  {
+   "id": "1970",
+   "label": "1970",
+   "year": 1970,
+   "kind": "legislative",
+   "date": "15 November 1970",
+   "era": "arena-mdb",
+   "totalSeats": 310,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Renewal Alliance",
+     "leader": null,
+     "seats": 223,
+     "seatChange": 54.0,
+     "votes": 10867814,
+     "share": 69.46,
+     "swing": null
+    },
+    {
+     "name": "Brazilian Democratic Movement",
+     "leader": null,
+     "seats": 87,
+     "seatChange": 45.0,
+     "votes": 4777927,
+     "share": 30.54,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Brazil on 15 November 1970. The result was a victory for the National Renewal Alliance Party, which won 223 of the 310 seats in the Chamber of Deputies and 40 of the 46 seats in the Senate.",
+   "caveat": "Held under the military regime's imposed two-party system; competitive, but on the dictatorship's terms.",
+   "seatLeader": "National Renewal Alliance"
+  },
+  {
+   "id": "1974",
+   "label": "1974",
+   "year": 1974,
+   "kind": "legislative",
+   "date": "15 November 1974",
+   "era": "arena-mdb",
+   "totalSeats": 364,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Renewal Alliance",
+     "leader": null,
+     "seats": 203,
+     "seatChange": 20.0,
+     "votes": 11866599,
+     "share": 52.0,
+     "swing": null
+    },
+    {
+     "name": "Brazilian Democratic Movement",
+     "leader": null,
+     "seats": 161,
+     "seatChange": 74.0,
+     "votes": 10954359,
+     "share": 48.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The MDB surge",
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "Held under the military regime's imposed two-party system; competitive, but on the dictatorship's terms.",
+   "seatLeader": "National Renewal Alliance"
+  },
+  {
+   "id": "1978",
+   "label": "1978",
+   "year": 1978,
+   "kind": "legislative",
+   "date": "15 November 1978",
+   "era": "arena-mdb",
+   "totalSeats": 422,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Renewal Alliance",
+     "leader": null,
+     "seats": 231,
+     "seatChange": 28.0,
+     "votes": 15053387,
+     "share": 50.42,
+     "swing": null
+    },
+    {
+     "name": "Brazilian Democratic Movement",
+     "leader": null,
+     "seats": 191,
+     "seatChange": 30.0,
+     "votes": 14803526,
+     "share": 49.58,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "They were the last elections held under a mandatory two-party system, as reforms were enacted in 1979 by Brazil's governing military junta, represented in Congress by ARENA, to allow a multi-party system to emerge in an effort to combat the growing popularity of the opposition Brazilian Democratic Movement (MDB) by splitting their vote.",
+   "caveat": "Held under the military regime's imposed two-party system; competitive, but on the dictatorship's terms.",
+   "seatLeader": "National Renewal Alliance"
+  },
+  {
+   "id": "1982",
+   "label": "1982",
+   "year": 1982,
+   "kind": "legislative",
+   "date": "15 November 1982",
+   "era": "abertura",
+   "totalSeats": 479,
+   "majoritySeats": 240,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Democratic Social Party",
+     "leader": null,
+     "seats": 235,
+     "seatChange": 4.0,
+     "votes": 17775738,
+     "share": 43.22,
+     "swing": null
+    },
+    {
+     "name": "Brazilian Democratic Movement Party",
+     "leader": null,
+     "seats": 200,
+     "seatChange": 9.0,
+     "votes": 17666773,
+     "share": 42.96,
+     "swing": null
+    },
+    {
+     "name": "Democratic Labour Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": null,
+     "votes": 2394723,
+     "share": 5.82,
+     "swing": null
+    },
+    {
+     "name": "Brazilian Labour Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": 1829055,
+     "share": 4.45,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 1458719,
+     "share": 3.55,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The pro-government Democratic Social Party (the successor of the ruling National Renewal Alliance) won 235 of the 479 seats in the Chamber of Deputies and 15 of the 25 seats in the Senate. Voter turnout was 82% for the Chamber of Deputies and 83% for the Senate.",
+   "caveat": null,
+   "seatLeader": "Democratic Social Party"
+  },
+  {
+   "id": "1986",
+   "label": "1986",
+   "year": 1986,
+   "kind": "legislative",
+   "date": "15 November 1986",
+   "era": "abertura",
+   "totalSeats": 487,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Brazilian Democratic Movement Party",
+     "leader": null,
+     "seats": 260,
+     "seatChange": 60.0,
+     "votes": 22633805,
+     "share": 47.84,
+     "swing": null
+    },
+    {
+     "name": "Liberal Front Party",
+     "leader": null,
+     "seats": 118,
+     "seatChange": null,
+     "votes": 8374709,
+     "share": 17.7,
+     "swing": null
+    },
+    {
+     "name": "Democratic Social Party",
+     "leader": null,
+     "seats": 33,
+     "seatChange": 202.0,
+     "votes": 3731735,
+     "share": 7.89,
+     "swing": null
+    },
+    {
+     "name": "Democratic Labour Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 1.0,
+     "votes": 3075429,
+     "share": 6.5,
+     "swing": null
+    },
+    {
+     "name": "Brazilian Labour Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 4.0,
+     "votes": 2110467,
+     "share": 4.46,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 8.0,
+     "votes": 3253999,
+     "share": 6.88,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 1335139,
+     "share": 2.82,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 565021,
+     "share": 1.19,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The constitution-writing Congress",
+   "summary": "Parliamentary elections were held in Brazil on 15 November 1986. The Brazilian Democratic Movement Party won 260 of the 487 seats in the Chamber of Deputies and 38 of the 49 seats in the Senate.",
+   "caveat": null,
+   "seatLeader": "Brazilian Democratic Movement Party"
+  },
+  {
+   "id": "1990",
+   "label": "1990",
+   "year": 1990,
+   "kind": "legislative",
+   "date": "3 October 1990",
+   "era": "abertura",
+   "totalSeats": 503,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Brazilian Democratic Movement Party",
+     "leader": null,
+     "seats": 108,
+     "seatChange": 152.0,
+     "votes": 7798653,
+     "share": 19.26,
+     "swing": null
+    },
+    {
+     "name": "Liberal Front Party",
+     "leader": null,
+     "seats": 83,
+     "seatChange": 35.0,
+     "votes": 5026474,
+     "share": 12.41,
+     "swing": null
+    },
+    {
+     "name": "Democratic Labour Party",
+     "leader": null,
+     "seats": 46,
+     "seatChange": 22.0,
+     "votes": 4068078,
+     "share": 10.04,
+     "swing": null
+    },
+    {
+     "name": "Democratic Social Party",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 9.0,
+     "votes": 3609196,
+     "share": 8.91,
+     "swing": null
+    },
+    {
+     "name": "National Reconstruction Party",
+     "leader": null,
+     "seats": 40,
+     "seatChange": null,
+     "votes": 3357091,
+     "share": 8.29,
+     "swing": null
+    },
+    {
+     "name": "Brazilian Social Democracy Party",
+     "leader": null,
+     "seats": 38,
+     "seatChange": null,
+     "votes": 3515809,
+     "share": 8.68,
+     "swing": null
+    },
+    {
+     "name": "Brazilian Labour Party",
+     "leader": null,
+     "seats": 38,
+     "seatChange": 21.0,
+     "votes": 2277882,
+     "share": 5.62,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 19.0,
+     "votes": 4128052,
+     "share": 10.19,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "First Congress of the New Republic",
+   "summary": "Parliamentary elections were held in Brazil on 3 October 1990, the first held under the 1988 constitution. The Brazilian Democratic Movement Party emerged as the largest party, winning 108 of the 502 seats in the Chamber of Deputies and 8 of the 31 seats in the Senate.",
+   "caveat": null,
+   "seatLeader": "Brazilian Democratic Movement Party"
+  }
+ ]
+}

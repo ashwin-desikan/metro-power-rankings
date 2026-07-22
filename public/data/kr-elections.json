@@ -1,0 +1,2907 @@
+{
+ "meta": {
+  "title": "South Korean elections",
+  "sources": [
+   "Wikipedia: South Korean presidential and legislative election articles, 1946–2025 (results, infoboxes and leads)",
+   "National Election Commission figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "presEras": [
+  {
+   "key": "first-republic",
+   "label": "The First Republic and its fall",
+   "span": "1948–1960",
+   "blurb": "Syngman Rhee was chosen by the Assembly in 1948 and re-elected by increasingly manipulated direct votes. The blatantly rigged March 1960 election ignited the April Revolution that toppled him; the August 1960 contest, held by the new parliamentary republic, chose a figurehead president indirectly."
+  },
+  {
+   "key": "park",
+   "label": "The Park Chung Hee elections",
+   "span": "1963–1971",
+   "blurb": "After his 1961 coup, Park Chung Hee legitimised his rule through direct presidential contests — winning narrowly in 1963, comfortably in 1967, and in 1971 fending off Kim Dae-jung by a margin small enough to convince him never to risk a real election again."
+  },
+  {
+   "key": "yushin",
+   "label": "Yushin and the Fifth Republic",
+   "span": "1972–1981",
+   "blurb": "Under the Yushin constitution and its successor, presidents were 'elected' unopposed by a rubber-stamp conference or electoral college — Park twice, then Choi Kyu-hah briefly, then coup-maker Chun Doo-hwan twice. Recorded here as rituals of authoritarian rule, not elections."
+  },
+  {
+   "key": "democratization",
+   "label": "Democratisation",
+   "span": "1987–2002",
+   "blurb": "The June 1987 uprising forced direct elections. A split opposition let Roh Tae-woo win the founding contest; Kim Young-sam, Kim Dae-jung — the first opposition transfer of power, in the teeth of the IMF crisis — and Roh Moo-hyun followed, each by single-round plurality."
+  },
+  {
+   "key": "alternation",
+   "label": "The alternation era",
+   "span": "2007–2025",
+   "blurb": "Power has swung between the two big camps ever since: Lee Myung-bak and Park Geun-hye — the first woman president, later impeached — then Moon Jae-in's post-impeachment win, Yoon Suk Yeol's razor-thin 2022 victory, and after Yoon's martial-law declaration and removal, Lee Jae-myung's 2025 snap-election landslide."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "founding",
+   "label": "Founding assemblies",
+   "span": "1946–1958",
+   "blurb": "From the occupation-era interim legislature and the 1948 Constitutional Assembly that wrote the republic into being, through the wartime and postwar Assemblies under Syngman Rhee's tightening grip."
+  },
+  {
+   "key": "military",
+   "label": "The Park era Assemblies",
+   "span": "1960–1971",
+   "blurb": "The democratic interlude of 1960 was cut short by the 1961 coup; the Assemblies elected from 1963 operated in the shadow of Park's presidency, with real opposition that could be contained but not eliminated."
+  },
+  {
+   "key": "authoritarian",
+   "label": "Yushin and the Fifth Republic",
+   "span": "1973–1985",
+   "blurb": "Under Yushin a third of the Assembly was appointed by the president, and the Fifth Republic's seat bonuses manufactured majorities. Even so, the opposition's 1985 breakthrough helped force the democratic transition two years later."
+  },
+  {
+   "key": "democratic",
+   "label": "The democratic Assembly",
+   "span": "1988–2024",
+   "blurb": "Since 1988 the National Assembly has been the arena of Korea's fierce two-camp politics — frequently controlled by the president's opponents, as in 2016's rebuke of Park Geun-hye and 2024's landslide against Yoon Suk Yeol months before his martial-law gamble."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1948",
+   "label": "1948",
+   "year": 1948,
+   "kind": "presidential",
+   "date": "20 July 1948",
+   "era": "first-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Syngman Rhee",
+     "party": "NARRKI",
+     "r1Votes": 180,
+     "r1Share": 92.31,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Ku",
+     "party": "Korea Independence Party",
+     "r1Votes": 13,
+     "r1Share": 6.67,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "An Jae-hong",
+     "party": "Independent",
+     "r1Votes": 2,
+     "r1Share": 1.03,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Syngman Rhee",
+    "party": "NARRKI"
+   },
+   "knownAs": "Chosen by the Assembly",
+   "summary": "Presidential and vice presidential elections were held in South Korea on 20 July 1948, following the Constitutional Assembly elections in May. The president was to be elected by the members of the National Assembly, as instructed by the 1948 Constitution.",
+   "caveat": "The first president was chosen by the newly elected National Assembly, not by popular vote."
+  },
+  {
+   "id": "pres-1952",
+   "label": "1952",
+   "year": 1952,
+   "kind": "presidential",
+   "date": "5 August 1952",
+   "era": "first-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Syngman Rhee",
+     "party": "Liberal Party",
+     "r1Votes": 5238769,
+     "r1Share": 74.62,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Cho Bong-am",
+     "party": "Independent",
+     "r1Votes": 797504,
+     "r1Share": 11.36,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yi Si-yeong",
+     "party": "Democratic Nationalist Party",
+     "r1Votes": 764715,
+     "r1Share": 10.89,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Shin Heung-u",
+     "party": "Independent",
+     "r1Votes": 219696,
+     "r1Share": 3.13,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Syngman Rhee",
+    "party": "Liberal"
+   },
+   "presAfter": {
+    "name": "Syngman Rhee",
+    "party": "Liberal"
+   },
+   "knownAs": "First direct election",
+   "summary": "Presidential and vice presidential elections were held in South Korea on 5 August 1952. The result was a victory for Syngman Rhee, who won 74.6% of the vote.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1956",
+   "label": "1956",
+   "year": 1956,
+   "kind": "presidential",
+   "date": "15 May 1956",
+   "era": "first-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Syngman Rhee",
+     "party": "Liberal Party",
+     "r1Votes": 5046437,
+     "r1Share": 69.99,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Cho Bong-am",
+     "party": "Progressive Party",
+     "r1Votes": 2163808,
+     "r1Share": 30.01,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Syngman Rhee",
+    "party": "Liberal"
+   },
+   "presAfter": {
+    "name": "Syngman Rhee",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "Rhee, who at that time held a virtual monopoly on political power, was opposed by Shin Ik-hee and Cho Bong-am. Shin died before the election by disease, and Cho campaigned on a platform of peaceful reunification in opposition to Rhee's policy of \"March North and unify Korea\".",
+   "caveat": null
+  },
+  {
+   "id": "pres-1960-mar",
+   "label": "March 1960",
+   "year": 1960,
+   "kind": "presidential",
+   "date": "15 March 1960",
+   "era": "first-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Syngman Rhee",
+     "party": "Liberal Party",
+     "r1Votes": 9633376,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Syngman Rhee",
+    "party": "Liberal"
+   },
+   "presAfter": null,
+   "knownAs": "The rigged election",
+   "summary": "Presidential and vice presidential elections were held in South Korea on 15 March 1960. Shortly after winning reelection to a second term in the 1952 presidential election, Rhee had the legislature pass a constitutional amendment exempting himself from the two-term limit, allowing himself to run for and win a third term in 1956 and in March 1960.",
+   "caveat": "So blatantly rigged that it was annulled: the fraud ignited the April Revolution, ended the First Republic, and sent Syngman Rhee into exile."
+  },
+  {
+   "id": "pres-1960-aug",
+   "label": "August 1960",
+   "year": 1960,
+   "kind": "presidential",
+   "date": "12 August 1960",
+   "era": "first-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Yun Posun",
+     "party": "Democratic Party",
+     "r1Votes": 208,
+     "r1Share": 82.21,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Chang-sook",
+     "party": "Independent",
+     "r1Votes": 29,
+     "r1Share": 11.46,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Baek Nak-jun",
+     "party": "Independent",
+     "r1Votes": 3,
+     "r1Share": 1.19,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Byeon Yeong-tae",
+     "party": "Independent",
+     "r1Votes": 3,
+     "r1Share": 1.19,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Do-yeon",
+     "party": "Democratic Party",
+     "r1Votes": 2,
+     "r1Share": 0.79,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Heo Jeong",
+     "party": "Independent",
+     "r1Votes": 2,
+     "r1Share": 0.79,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Pyeung-roh",
+     "party": "Independent",
+     "r1Votes": 1,
+     "r1Share": 0.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Shi-hyeon",
+     "party": "Independent",
+     "r1Votes": 1,
+     "r1Share": 0.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Na Yeong-gyun",
+     "party": "Democratic Party",
+     "r1Votes": 1,
+     "r1Share": 0.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Bak Sun-cheon",
+     "party": "Democratic Party",
+     "r1Votes": 1,
+     "r1Share": 0.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yu Ok-woo",
+     "party": "Democratic Party",
+     "r1Votes": 1,
+     "r1Share": 0.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lee Chul-seung",
+     "party": "Democratic Party",
+     "r1Votes": 1,
+     "r1Share": 0.4,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Paek Nak-chun (acting)",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Yun Posun",
+    "party": "Democratic"
+   },
+   "knownAs": "The parliamentary republic's choice",
+   "summary": "Indirect presidential elections were held in South Korea on 12 August 1960, which saw the election of Yun Posun as President of the Republic of Korea, a ceremonial political position in the Second Republic.",
+   "caveat": "An indirect vote of the new parliamentary republic's legislature for a largely ceremonial presidency."
+  },
+  {
+   "id": "pres-1963",
+   "label": "1963",
+   "year": 1963,
+   "kind": "presidential",
+   "date": "15 October 1963",
+   "era": "park",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Park Chung Hee",
+     "party": "Democratic Republican Party",
+     "r1Votes": 4702640,
+     "r1Share": 46.65,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yun Po-sun",
+     "party": "Civil Rule Party",
+     "r1Votes": 4546614,
+     "r1Share": 45.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oh Jae-young",
+     "party": "Independent",
+     "r1Votes": 408664,
+     "r1Share": 4.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pyon Yong-tae",
+     "party": "Righteous Citizens Party",
+     "r1Votes": 224443,
+     "r1Share": 2.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jang I-seok",
+     "party": "New Development Party",
+     "r1Votes": 198837,
+     "r1Share": 1.97,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Park Chung Hee (acting)",
+    "party": "Democratic Republican"
+   },
+   "presAfter": {
+    "name": "Park Chung Hee",
+    "party": "Democratic Republican"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in South Korea on 15 October 1963. They were the first elections since the 1961 May Coup, and the first during the Third Republic.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1967",
+   "label": "1967",
+   "year": 1967,
+   "kind": "presidential",
+   "date": "3 May 1967",
+   "era": "park",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Park Chung Hee",
+     "party": "Democratic Republican Party",
+     "r1Votes": 5688666,
+     "r1Share": 51.44,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yun Posun",
+     "party": "New Democratic Party",
+     "r1Votes": 4526541,
+     "r1Share": 40.93,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oh Jae-young",
+     "party": "United Korea Party",
+     "r1Votes": 264533,
+     "r1Share": 2.39,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Chun-yon",
+     "party": "People's Party",
+     "r1Votes": 248369,
+     "r1Share": 2.25,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Chun Jin-han",
+     "party": "Korea Independence Party",
+     "r1Votes": 232179,
+     "r1Share": 2.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lee Se-chin",
+     "party": "Justice Party",
+     "r1Votes": 98433,
+     "r1Share": 0.89,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Park Chung Hee",
+    "party": "Democratic Republican"
+   },
+   "presAfter": {
+    "name": "Park Chung Hee",
+    "party": "Democratic Republican"
+   },
+   "knownAs": null,
+   "summary": "In May 1965 the two largest opposition parties in the parliament, former president Yun Posun's Civil Rule Party (CRP) and stateswoman Park Soon-cheon's Democratic Party (DP), joined to create the People's Party (PP), forming a united opposition against President Park Chung Hee's military dictatorship.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1971",
+   "label": "1971",
+   "year": 1971,
+   "kind": "presidential",
+   "date": "27 April 1971",
+   "era": "park",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Park Chung Hee",
+     "party": "Democratic Republican Party",
+     "r1Votes": 6342828,
+     "r1Share": 53.2,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Dae-jung",
+     "party": "New Democratic Party",
+     "r1Votes": 5395900,
+     "r1Share": 45.26,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jin Bok-ki",
+     "party": "People's Party",
+     "r1Votes": 122914,
+     "r1Share": 1.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Park Gi-chul",
+     "party": "National Party",
+     "r1Votes": 43753,
+     "r1Share": 0.37,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lee Jong-yun",
+     "party": "Liberal Democratic Party",
+     "r1Votes": 17823,
+     "r1Share": 0.15,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Park Chung Hee",
+    "party": "Democratic Republican"
+   },
+   "presAfter": {
+    "name": "Park Chung Hee",
+    "party": "Democratic Republican"
+   },
+   "knownAs": "Park's last real contest",
+   "summary": "Presidential elections were held in South Korea on 27 April 1971. The result was a victory for incumbent president Park Chung Hee, who received 53% of the vote.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1972",
+   "label": "1972",
+   "year": 1972,
+   "kind": "presidential",
+   "date": "23 December 1972",
+   "era": "yushin",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Park Chung-hee",
+     "party": "Democratic Republican Party",
+     "r1Votes": 2357,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Park Chung-hee",
+    "party": "Democratic Republican"
+   },
+   "presAfter": {
+    "name": "Park Chung-hee",
+    "party": "Democratic Republican"
+   },
+   "knownAs": "The Yushin ratification",
+   "summary": "Presidential elections were held in South Korea in December 1972 following the promulgation of the Yushin Constitution, which created the National Conference for Unification, a body whose functions included being an electoral college for presidential elections.",
+   "caveat": "An unopposed ratification by a rubber-stamp electoral body under authoritarian rule. Recorded here as history, not as an election."
+  },
+  {
+   "id": "pres-1978",
+   "label": "1978",
+   "year": 1978,
+   "kind": "presidential",
+   "date": "6 July 1978",
+   "era": "yushin",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Park Chung-hee",
+     "party": "Democratic Republican Party",
+     "r1Votes": 2577,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Park Chung-hee",
+    "party": "Democratic Republican"
+   },
+   "presAfter": {
+    "name": "Park Chung-hee",
+    "party": "Democratic Republican"
+   },
+   "knownAs": null,
+   "summary": "The National Conference for Unification was elected on 18 May, and the newly sworn-in delegates proceeded to elect the president on 6 July. As in 1972, incumbent President Park Chung-hee was the only candidate.",
+   "caveat": "An unopposed ratification by a rubber-stamp electoral body under authoritarian rule. Recorded here as history, not as an election."
+  },
+  {
+   "id": "pres-1979",
+   "label": "1979",
+   "year": 1979,
+   "kind": "presidential",
+   "date": "6 December 1979",
+   "era": "yushin",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Choi Kyu-hah",
+     "party": "Independent",
+     "r1Votes": 2465,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Choi Kyu-hah (Acting)",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Choi Kyu-hah",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in South Korea on 6 December 1979 following the assassination of Park Chung Hee on 26 October.",
+   "caveat": "An unopposed ratification by a rubber-stamp electoral body under authoritarian rule. Recorded here as history, not as an election."
+  },
+  {
+   "id": "pres-1980",
+   "label": "1980",
+   "year": 1980,
+   "kind": "presidential",
+   "date": "27 August 1980",
+   "era": "yushin",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Chun Doo-hwan",
+     "party": "Independent",
+     "r1Votes": 2524,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Park Choong-hoon (acting)",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Chun Doo-hwan",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Under the 1972 Yushin Constitution, the president was elected by the National Conference for Unification, whose 2,540 members had been elected for a six-year term of office in December 1978. General Chun Doo-hwan was the only candidate, and was elected unopposed.",
+   "caveat": "An unopposed ratification by a rubber-stamp electoral body under authoritarian rule. Recorded here as history, not as an election."
+  },
+  {
+   "id": "pres-1981",
+   "label": "1981",
+   "year": 1981,
+   "kind": "presidential",
+   "date": "1981",
+   "era": "yushin",
+   "turnout": 78.12,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Chun Doo-hwan",
+     "party": "Democratic Justice Party",
+     "r1Votes": 4755,
+     "r1Share": 90.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yu Chi-song",
+     "party": "Democratic Korea Party",
+     "r1Votes": 404,
+     "r1Share": 7.67,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Chong-cheol",
+     "party": "Korean National Party",
+     "r1Votes": 85,
+     "r1Share": 1.61,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Eui-taek",
+     "party": "Civil Rights Party",
+     "r1Votes": 26,
+     "r1Share": 0.49,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Chun Doo-hwan",
+    "party": "Democratic Justice"
+   },
+   "presAfter": {
+    "name": "Chun Doo-hwan",
+    "party": "Democratic Justice"
+   },
+   "knownAs": null,
+   "summary": "Two-stage presidential elections were held in South Korea in February 1981. An electoral college was elected on 11 February, which in turn elected the president on 25 February.",
+   "caveat": "An unopposed ratification by a rubber-stamp electoral body under authoritarian rule. Recorded here as history, not as an election."
+  },
+  {
+   "id": "pres-1987",
+   "label": "1987",
+   "year": 1987,
+   "kind": "presidential",
+   "date": "16 December 1987",
+   "era": "democratization",
+   "turnout": 89.15,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Roh Tae-woo",
+     "party": "Democratic Justice Party",
+     "r1Votes": 8282738,
+     "r1Share": 36.64,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Young-sam",
+     "party": "Reunification Democratic Party",
+     "r1Votes": 6337581,
+     "r1Share": 28.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Dae-jung",
+     "party": "Peace Democratic Party",
+     "r1Votes": 6113375,
+     "r1Share": 27.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Jong-pil",
+     "party": "New Democratic Republican Party",
+     "r1Votes": 1823067,
+     "r1Share": 8.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Shin Jeong-yil",
+     "party": "Unified Korea Party",
+     "r1Votes": 46650,
+     "r1Share": 0.21,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Chun Doo-hwan",
+    "party": "Democratic Justice"
+   },
+   "presAfter": {
+    "name": "Roh Tae-woo",
+    "party": "Democratic Justice"
+   },
+   "knownAs": "The June Uprising's election",
+   "summary": "Presidential elections were held in South Korea on 16 December 1987. They marked the establishment of the Sixth Republic, as well as the end of the authoritarian rule that had prevailed in the country for all but one year since its founding in 1948.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1992",
+   "label": "1992",
+   "year": 1992,
+   "kind": "presidential",
+   "date": "18 December 1992",
+   "era": "democratization",
+   "turnout": 81.89,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Kim Young-sam",
+     "party": "Democratic Liberal Party",
+     "r1Votes": 9977332,
+     "r1Share": 41.96,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Dae-jung",
+     "party": "Democratic Party",
+     "r1Votes": 8041284,
+     "r1Share": 33.82,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Chung Ju-yung",
+     "party": "Unification National Party",
+     "r1Votes": 3880067,
+     "r1Share": 16.32,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Park Chan-jong",
+     "party": "New Political Reform Party",
+     "r1Votes": 1516047,
+     "r1Share": 6.38,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Baek Gi-Wan",
+     "party": "Independent",
+     "r1Votes": 238648,
+     "r1Share": 1.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Ok-sun",
+     "party": "Independent",
+     "r1Votes": 86292,
+     "r1Share": 0.36,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lee Byeong-ho",
+     "party": "Korean Justice Party",
+     "r1Votes": 35739,
+     "r1Share": 0.15,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Roh Tae-woo",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Kim Young-sam",
+    "party": "Democratic Liberal"
+   },
+   "knownAs": null,
+   "summary": "On 22 January 1990 two opposition leaders Kim Young-sam and Kim Jong-pil merged their parties into the ruling party Democratic Justice Party to form the Democratic Liberal Party, led by President Roh Tae-woo. Before they merged, Roh's party did not have a majority in the National Assembly.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1997",
+   "label": "1997",
+   "year": 1997,
+   "kind": "presidential",
+   "date": "18 December 1997",
+   "era": "democratization",
+   "turnout": 80.65,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Kim Dae-jung",
+     "party": "National Congress for New Politics",
+     "r1Votes": 10326275,
+     "r1Share": 40.27,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lee Hoi-chang",
+     "party": "Grand National Party",
+     "r1Votes": 9935718,
+     "r1Share": 38.75,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lee In-je",
+     "party": "New National Party",
+     "r1Votes": 4925591,
+     "r1Share": 19.21,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kwon Young-ghil",
+     "party": "People's Victory for 21st Century",
+     "r1Votes": 306026,
+     "r1Share": 1.19,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Shin Jeong Yil",
+     "party": "Unified Korea Party",
+     "r1Votes": 61056,
+     "r1Share": 0.24,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Han-sik",
+     "party": "Honest Politics Unite",
+     "r1Votes": 48717,
+     "r1Share": 0.19,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Huh Kyung-young",
+     "party": "Republican Party",
+     "r1Votes": 39055,
+     "r1Share": 0.15,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Kim Young-sam",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Kim Dae-jung",
+    "party": "National Congress"
+   },
+   "knownAs": "First transfer of power",
+   "summary": "Presidential elections were held in South Korea on 18 December 1997. The result was a victory for opposition candidate Kim Dae-jung, who won with 40% of the vote.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2002",
+   "label": "2002",
+   "year": 2002,
+   "kind": "presidential",
+   "date": "19 December 2002",
+   "era": "democratization",
+   "turnout": 70.83,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Roh Moo-hyun",
+     "party": "Millennium Democratic Party",
+     "r1Votes": 12014277,
+     "r1Share": 48.91,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lee Hoi-chang",
+     "party": "Grand National Party",
+     "r1Votes": 11443297,
+     "r1Share": 46.59,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kwon Young-ghil",
+     "party": "Democratic Labor Party",
+     "r1Votes": 957148,
+     "r1Share": 3.9,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lee Han-dong",
+     "party": "One National People Unite",
+     "r1Votes": 74027,
+     "r1Share": 0.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Gil-soo",
+     "party": "Fatherland Defenders Party",
+     "r1Votes": 51104,
+     "r1Share": 0.21,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Yeong-gyu",
+     "party": "Socialist Party",
+     "r1Votes": 22063,
+     "r1Share": 0.09,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Kim Dae-jung",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Roh Moo-hyun",
+    "party": "Millennium Democratic"
+   },
+   "knownAs": null,
+   "summary": "President Kim Dae-jung's National Congress for New Politics (NCNP) re-branded itself to Millennium Democratic Party (MDP) in 2000, but was struggling as it had been defeated by the Grand National Party (GNP) in both the 2000 legislative election and the 2002 local elections.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2007",
+   "label": "2007",
+   "year": 2007,
+   "kind": "presidential",
+   "date": "19 December 2007",
+   "era": "alternation",
+   "turnout": 63.03,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Lee Myung-bak",
+     "party": "Grand National Party",
+     "r1Votes": 11492389,
+     "r1Share": 48.67,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Chung Dong-young",
+     "party": "Grand Unified Democratic New Party",
+     "r1Votes": 6174681,
+     "r1Share": 26.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lee Hoi-chang",
+     "party": "Independent",
+     "r1Votes": 3559963,
+     "r1Share": 15.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Moon Kook-hyun",
+     "party": "Creative Korea Party",
+     "r1Votes": 1375498,
+     "r1Share": 5.83,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kwon Young-ghil",
+     "party": "Democratic Labor Party",
+     "r1Votes": 712121,
+     "r1Share": 3.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lee In-je",
+     "party": "Democratic Party",
+     "r1Votes": 160708,
+     "r1Share": 0.68,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Huh Kyung-young",
+     "party": "Economic Republican Party",
+     "r1Votes": 96756,
+     "r1Share": 0.41,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Geum Min",
+     "party": "Socialist Party",
+     "r1Votes": 18223,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Chung Kun-mo",
+     "party": "True Owner Coalition",
+     "r1Votes": 15380,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Chun Kwan",
+     "party": "Chamsaram Society Full True Act",
+     "r1Votes": 7161,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Roh Moo-hyun",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Lee Myung-bak",
+    "party": "Grand National Party"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in South Korea on 19 December 2007. The elections were won by Lee Myung-bak of the Grand National Party, returning conservatives to the Blue House for the first time in ten years.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2012",
+   "label": "2012",
+   "year": 2012,
+   "kind": "presidential",
+   "date": "19 December 2012",
+   "era": "alternation",
+   "turnout": 75.84,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Park Geun-hye",
+     "party": "Saenuri Party",
+     "r1Votes": 15773128,
+     "r1Share": 51.56,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Moon Jae-in",
+     "party": "Democratic United Party",
+     "r1Votes": 14692632,
+     "r1Share": 48.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kang Ji-won",
+     "party": "Independent",
+     "r1Votes": 53303,
+     "r1Share": 0.17,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Soon-ja",
+     "party": "Independent",
+     "r1Votes": 46017,
+     "r1Share": 0.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim So-yeon",
+     "party": "Independent",
+     "r1Votes": 16687,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Park Jong-sun",
+     "party": "Independent",
+     "r1Votes": 12854,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Lee Myung-bak",
+    "party": "Saenuri"
+   },
+   "presAfter": {
+    "name": "Park Geun-hye",
+    "party": "Saenuri"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in South Korea on 19 December 2012. They were the sixth presidential elections since democratisation and the establishment of the Sixth Republic, and were held under a first-past-the-post system, in which there was a single round of voting and the candidate receiving the highest number of votes was elected.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2017",
+   "label": "2017",
+   "year": 2017,
+   "kind": "presidential",
+   "date": "9 May 2017",
+   "era": "alternation",
+   "turnout": 77.23,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Moon Jae-in",
+     "party": "Democratic Party",
+     "r1Votes": 13423800,
+     "r1Share": 41.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hong Joon-pyo",
+     "party": "Liberty Korea Party",
+     "r1Votes": 7852849,
+     "r1Share": 24.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ahn Cheol-soo",
+     "party": "People Party",
+     "r1Votes": 6998342,
+     "r1Share": 21.42,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yoo Seong-min",
+     "party": "Bareun Party",
+     "r1Votes": 2208771,
+     "r1Share": 6.76,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sim Sang-jung",
+     "party": "Justice Party",
+     "r1Votes": 2017458,
+     "r1Share": 6.17,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Cho Won-jin",
+     "party": "Saenuri Party",
+     "r1Votes": 42949,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Min-chan",
+     "party": "Independent",
+     "r1Votes": 33990,
+     "r1Share": 0.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Sun-dong",
+     "party": "People's United Party",
+     "r1Votes": 27229,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jang Sung-min",
+     "party": "Grand National Unity Party",
+     "r1Votes": 21709,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yoon Hong-sik",
+     "party": "Hongik Party",
+     "r1Votes": 18543,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lee Kyung-hee",
+     "party": "Korean Nationalist Party",
+     "r1Votes": 11355,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lee Jae-oh",
+     "party": "Evergreen Korea Party",
+     "r1Votes": 9140,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oh Young-guk",
+     "party": "Economic Patriots Party",
+     "r1Votes": 6040,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Hwang Kyo-ahn",
+    "party": "Acting"
+   },
+   "presAfter": {
+    "name": "Moon Jae-in",
+    "party": "Democratic"
+   },
+   "knownAs": "The post-impeachment election",
+   "summary": "An early presidential election was held in South Korea on 9 May 2017. The elections were conducted in a single round, on a first-past-the-post basis.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2022",
+   "label": "2022",
+   "year": 2022,
+   "kind": "presidential",
+   "date": "9 March 2022",
+   "era": "alternation",
+   "turnout": 77.08,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Yoon Suk Yeol",
+     "party": "People Power Party",
+     "r1Votes": 16394815,
+     "r1Share": 48.56,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lee Jae Myung",
+     "party": "Democratic Party",
+     "r1Votes": 16147738,
+     "r1Share": 47.83,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sim Sang-jung",
+     "party": "Justice Party",
+     "r1Votes": 803358,
+     "r1Share": 2.38,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Huh Kyung-young",
+     "party": "National Revolutionary Party",
+     "r1Votes": 281481,
+     "r1Share": 0.83,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Jae-yeon",
+     "party": "Progressive Party",
+     "r1Votes": 37366,
+     "r1Share": 0.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Cho Won-jin",
+     "party": "Our Republican Party",
+     "r1Votes": 25972,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oh Jun-ho",
+     "party": "Basic Income Party",
+     "r1Votes": 18105,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Min-chan",
+     "party": "Korean Wave Alliance",
+     "r1Votes": 17305,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lee Gyeong-hee",
+     "party": "Korean Unification",
+     "r1Votes": 11708,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lee Baek-yun",
+     "party": "Labor Party",
+     "r1Votes": 9176,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Gyeong-jae",
+     "party": "New Liberal Democratic Union",
+     "r1Votes": 8317,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ok Un-ho",
+     "party": "Saenuri Party",
+     "r1Votes": 4970,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Moon Jae-in",
+    "party": "Democratic"
+   },
+   "presAfter": {
+    "name": "Yoon Suk Yeol",
+    "party": "People Power"
+   },
+   "knownAs": "The narrowest win",
+   "summary": "Presidential elections were held in South Korea on 9 March 2022. Under the South Korean constitution, presidents are restricted to a single five-year term, meaning that incumbent president Moon Jae-in was ineligible to run for a second term.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2025",
+   "label": "2025",
+   "year": 2025,
+   "kind": "presidential",
+   "date": "3 June 2025",
+   "era": "alternation",
+   "turnout": 79.38,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Lee Jae Myung",
+     "party": "Democratic Party",
+     "r1Votes": 17287513,
+     "r1Share": 49.42,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kim Moon-soo",
+     "party": "People Power Party",
+     "r1Votes": 14395639,
+     "r1Share": 41.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lee Jun-seok",
+     "party": "Reform Party",
+     "r1Votes": 2917523,
+     "r1Share": 8.34,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kwon Yeong-guk",
+     "party": "Democratic Labor Party",
+     "r1Votes": 344150,
+     "r1Share": 0.98,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Song Jin-ho",
+     "party": "Independent",
+     "r1Votes": 35791,
+     "r1Share": 0.1,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Lee Ju-ho (acting)",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Lee Jae Myung",
+    "party": "Democratic"
+   },
+   "knownAs": "After martial law",
+   "summary": "These were the ninth presidential elections since the 1987 democratization and the establishment of the Sixth Republic, the second to be held following an impeachment, and the first to take place in a year different from the original schedule.",
+   "caveat": null
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1946",
+   "label": "1946",
+   "year": 1946,
+   "kind": "legislative",
+   "date": "1946",
+   "era": "founding",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The establishment of the Interim Legislative Assembly was announced by Archer L. Lerch of the United States Army Military Government on 1 July 1946.",
+   "caveat": "An occupation-era interim body: only part of the seats were popularly elected, on a restricted basis.",
+   "seatLeader": null
+  },
+  {
+   "id": "1948",
+   "label": "1948",
+   "year": 1948,
+   "kind": "legislative",
+   "date": "10 May 1948",
+   "era": "founding",
+   "totalSeats": 200,
+   "majoritySeats": 101,
+   "turnout": 95.5,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 85,
+     "seatChange": null,
+     "votes": 2745483,
+     "share": 40.47,
+     "swing": null
+    },
+    {
+     "name": "NARRKI",
+     "leader": null,
+     "seats": 55,
+     "seatChange": null,
+     "votes": 1755543,
+     "share": 25.87,
+     "swing": null
+    },
+    {
+     "name": "Korea Democratic Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": null,
+     "votes": 916322,
+     "share": 13.51,
+     "swing": null
+    },
+    {
+     "name": "Korea Youth Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 655653,
+     "share": 9.66,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 401554,
+     "share": 5.92,
+     "swing": null
+    },
+    {
+     "name": "National Youth Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 151043,
+     "share": 2.23,
+     "swing": null
+    },
+    {
+     "name": "Farmers Federation",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 52512,
+     "share": 0.77,
+     "swing": null
+    },
+    {
+     "name": "Taehan Labour Federation",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 106629,
+     "share": 1.57,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The Constitutional Assembly",
+   "summary": "Constitutional Assembly elections were held in South Korea on 10 May 1948. They were held under the U.S. military occupation, with supervision from the United Nations, and resulted in a victory for the National Association for the Rapid Realisation of Korean Independence, which won 55 of the 200 seats, although 85 were held by independents.",
+   "caveat": null,
+   "seatLeader": "Independents"
+  },
+  {
+   "id": "1950",
+   "label": "1950",
+   "year": 1950,
+   "kind": "legislative",
+   "date": "30 May 1950",
+   "era": "founding",
+   "totalSeats": 210,
+   "majoritySeats": 106,
+   "turnout": 91.91,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 126,
+     "seatChange": null,
+     "votes": 4397287,
+     "share": 62.93,
+     "swing": null
+    },
+    {
+     "name": "Democratic Nationalist Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": null,
+     "votes": 683910,
+     "share": 9.79,
+     "swing": null
+    },
+    {
+     "name": "Korea Nationalist Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": null,
+     "votes": 677173,
+     "share": 9.69,
+     "swing": null
+    },
+    {
+     "name": "National Association",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 473153,
+     "share": 6.77,
+     "swing": null
+    },
+    {
+     "name": "Korea Youth Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 227539,
+     "share": 3.26,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 152365,
+     "share": 2.18,
+     "swing": null
+    },
+    {
+     "name": "Korean Federation of Trade Unions",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 117939,
+     "share": 1.69,
+     "swing": null
+    },
+    {
+     "name": "Ilmin Club",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 71239,
+     "share": 1.02,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Legislative elections were held in South Korea on 30 May 1950, less than a month before the invasion of the country by North Korea. The elections resulted in a tie between the Democratic Nationalist Party and the Korea Nationalist Party, which both won 24 seats, although a majority of the 210 seats were won by independents.",
+   "caveat": null,
+   "seatLeader": "Independents"
+  },
+  {
+   "id": "1954",
+   "label": "1954",
+   "year": 1954,
+   "kind": "legislative",
+   "date": "20 May 1954",
+   "era": "founding",
+   "totalSeats": 203,
+   "majoritySeats": 102,
+   "turnout": 91.14,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": "Syngman Rhee",
+     "seats": 114,
+     "seatChange": null,
+     "votes": 2756061,
+     "share": 36.79,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 68,
+     "seatChange": 58.0,
+     "votes": 3591617,
+     "share": 47.94,
+     "swing": null
+    },
+    {
+     "name": "Democratic Nationalist Party",
+     "leader": "Sin Ik-hui",
+     "seats": 15,
+     "seatChange": 9.0,
+     "votes": 593499,
+     "share": 7.92,
+     "swing": -1.87
+    },
+    {
+     "name": "National Association",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 11.0,
+     "votes": 192109,
+     "share": 2.56,
+     "swing": null
+    },
+    {
+     "name": "Korea Nationalist Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 21.0,
+     "votes": 72923,
+     "share": 0.97,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Liberal Party"
+  },
+  {
+   "id": "1958",
+   "label": "1958",
+   "year": 1958,
+   "kind": "legislative",
+   "date": "2 May 1958",
+   "era": "founding",
+   "totalSeats": 233,
+   "majoritySeats": 117,
+   "turnout": 87.8,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": "Syngman Rhee",
+     "seats": 126,
+     "seatChange": 12.0,
+     "votes": 3607092,
+     "share": 42.07,
+     "swing": 5.28
+    },
+    {
+     "name": "Democratic Party",
+     "leader": "Chough Pyung-ok",
+     "seats": 79,
+     "seatChange": 64.0,
+     "votes": 2914049,
+     "share": 33.99,
+     "swing": 26.07
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 27,
+     "seatChange": 41.0,
+     "votes": 1857707,
+     "share": 21.67,
+     "swing": null
+    },
+    {
+     "name": "Unification Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 53716,
+     "share": 0.63,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Liberal Party"
+  },
+  {
+   "id": "1960",
+   "label": "1960",
+   "year": 1960,
+   "kind": "legislative",
+   "date": "29 June 1960",
+   "era": "military",
+   "totalSeats": 233,
+   "majoritySeats": 30,
+   "turnout": 84.3,
+   "parties": [
+    {
+     "name": "Democratic Party",
+     "leader": "Chang Myon",
+     "seats": 175,
+     "seatChange": 96.0,
+     "votes": 3786401,
+     "share": 41.71,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 49,
+     "seatChange": 22.0,
+     "votes": 4249180,
+     "share": 46.81,
+     "swing": null
+    },
+    {
+     "name": "Socialist Mass Party",
+     "leader": "Seo Sang-il",
+     "seats": 4,
+     "seatChange": null,
+     "votes": 541021,
+     "share": 5.96,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": "Cho Gyeong-gyu",
+     "seats": 2,
+     "seatChange": 124.0,
+     "votes": 249960,
+     "share": 2.75,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 149366,
+     "share": 1.65,
+     "swing": null
+    },
+    {
+     "name": "Korea Socialist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 57965,
+     "share": 0.64,
+     "swing": null
+    },
+    {
+     "name": "Unification Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 17293,
+     "share": 0.19,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The Second Republic's Assembly",
+   "summary": "Parliamentary elections were held in South Korea on 29 June 1960. They were the first and only direct elections of the Second Republic and saw the first election of members of the new House of Councillors, together with the fifth election of members of the House of Representatives.",
+   "caveat": null,
+   "seatLeader": "Democratic Party"
+  },
+  {
+   "id": "1963",
+   "label": "1963",
+   "year": 1963,
+   "kind": "legislative",
+   "date": "26 November 1963",
+   "era": "military",
+   "totalSeats": 175,
+   "majoritySeats": 88,
+   "turnout": 72.11,
+   "parties": [
+    {
+     "name": "Democratic Republican Party",
+     "leader": "Park Chung-hee",
+     "seats": 88,
+     "seatChange": 22.0,
+     "votes": 3112985,
+     "share": 33.48,
+     "swing": null
+    },
+    {
+     "name": "Civil Rule Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": 14.0,
+     "votes": 1870976,
+     "share": 20.12,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 5.0,
+     "votes": 1264285,
+     "share": 13.6,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": "Kim Chun-yon",
+     "seats": 6,
+     "seatChange": 3.0,
+     "votes": 752026,
+     "share": 8.09,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": "Kim Byeong-ro",
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": 822000,
+     "share": 8.84,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Legislative elections were held in South Korea on 26 November 1963. They were the first held after the 1961 coup and subsequent approval of a new constitution the previous December, which inaugurated the Third Republic.",
+   "caveat": null,
+   "seatLeader": "Democratic Republican Party"
+  },
+  {
+   "id": "1967",
+   "label": "1967",
+   "year": 1967,
+   "kind": "legislative",
+   "date": "8 June 1967",
+   "era": "military",
+   "totalSeats": 175,
+   "majoritySeats": 88,
+   "turnout": 76.12,
+   "parties": [
+    {
+     "name": "Democratic Republican Party",
+     "leader": "Park Chung-hee",
+     "seats": 102,
+     "seatChange": 27.0,
+     "votes": 5494922,
+     "share": 50.62,
+     "swing": 17.14
+    },
+    {
+     "name": "New Democratic Party",
+     "leader": "Yu Jin-oh",
+     "seats": 28,
+     "seatChange": 17.0,
+     "votes": 3554224,
+     "share": 32.74,
+     "swing": -17.91
+    },
+    {
+     "name": "Mass Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 249561,
+     "share": 2.3,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The unicameral National Assembly was elected by parallel voting, with 131 legislators elected in single-member constituencies and 44 allocated via a modified formula on the national level, excluding parties that did not win more than three seats or more than 5% of the valid vote.",
+   "caveat": null,
+   "seatLeader": "Democratic Republican Party"
+  },
+  {
+   "id": "1971",
+   "label": "1971",
+   "year": 1971,
+   "kind": "legislative",
+   "date": "25 May 1971",
+   "era": "military",
+   "totalSeats": 204,
+   "majoritySeats": 103,
+   "turnout": 73.22,
+   "parties": [
+    {
+     "name": "Democratic Republican Party",
+     "leader": "Park Chung-hee",
+     "seats": 86,
+     "seatChange": 27.0,
+     "votes": 5460581,
+     "share": 48.77,
+     "swing": -1.85
+    },
+    {
+     "name": "New Democratic Party",
+     "leader": "Kim Hong-il",
+     "seats": 65,
+     "seatChange": 24.0,
+     "votes": 4969050,
+     "share": 44.38,
+     "swing": 11.64
+    },
+    {
+     "name": "National Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 454257,
+     "share": 4.06,
+     "swing": null
+    },
+    {
+     "name": "People's Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 155277,
+     "share": 1.39,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The unicameral National Assembly was elected by parallel voting, with 153 legislators elected in single-member constituencies and 51 allocated via a modified formula on the national level, excluding parties that did not win more than three seats or more than 5% of the valid vote.",
+   "caveat": null,
+   "seatLeader": "Democratic Republican Party"
+  },
+  {
+   "id": "1973",
+   "label": "1973",
+   "year": 1973,
+   "kind": "legislative",
+   "date": "27 February 1973",
+   "era": "authoritarian",
+   "totalSeats": 146,
+   "majoritySeats": 110,
+   "turnout": 71.36,
+   "parties": [
+    {
+     "name": "Democratic Republican Party",
+     "leader": "Park Chung-hee",
+     "seats": 73,
+     "seatChange": 40.0,
+     "votes": 4251754,
+     "share": 38.68,
+     "swing": -10.09
+    },
+    {
+     "name": "New Democratic Party",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 37.0,
+     "votes": 3577300,
+     "share": 32.55,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 2048178,
+     "share": 18.63,
+     "swing": null
+    },
+    {
+     "name": "Democratic Unification Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 1114204,
+     "share": 10.14,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "A third of seats appointed",
+   "summary": "The election reconstituted the National Assembly after Park had dissolved it in the October Restoration self-coup four months earlier and pushed through a constitutional referendum which removed presidential term limits and gave him the power to appoint one-third of the National Assembly.",
+   "caveat": "Held under the Yushin constitution: one third of the Assembly was appointed on the president's nomination.",
+   "seatLeader": "Democratic Republican Party"
+  },
+  {
+   "id": "1978",
+   "label": "1978",
+   "year": 1978,
+   "kind": "legislative",
+   "date": "12 December 1978",
+   "era": "authoritarian",
+   "totalSeats": 154,
+   "majoritySeats": 116,
+   "turnout": 77.08,
+   "parties": [
+    {
+     "name": "Democratic Republican Party",
+     "leader": "Park Chung-hee",
+     "seats": 68,
+     "seatChange": 5.0,
+     "votes": 4695995,
+     "share": 31.7,
+     "swing": -6.98
+    },
+    {
+     "name": "New Democratic Party",
+     "leader": null,
+     "seats": 61,
+     "seatChange": 9.0,
+     "votes": 4861204,
+     "share": 32.82,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 3.0,
+     "votes": 4160187,
+     "share": 28.09,
+     "swing": null
+    },
+    {
+     "name": "Democratic Unification Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": 1095057,
+     "share": 7.39,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Legislative elections were held in South Korea on 12 December 1978 to elect 154 members of the National Assembly. Another 77 members appointed by President Park Chung-hee were indirectly elected by the National Conference for Unification on 21 December 1978.",
+   "caveat": "Held under the Yushin constitution: one third of the Assembly was appointed on the president's nomination.",
+   "seatLeader": "Democratic Republican Party"
+  },
+  {
+   "id": "1981",
+   "label": "1981",
+   "year": 1981,
+   "kind": "legislative",
+   "date": "25 March 1981",
+   "era": "authoritarian",
+   "totalSeats": 276,
+   "majoritySeats": 139,
+   "turnout": 77.74,
+   "parties": [
+    {
+     "name": "Democratic Justice Party",
+     "leader": "Chun Doo-hwan",
+     "seats": 90,
+     "seatChange": 61.0,
+     "votes": 5776624,
+     "share": 35.64,
+     "swing": null
+    },
+    {
+     "name": "Democratic Korea Party",
+     "leader": "Yu Chi-song",
+     "seats": 57,
+     "seatChange": 24.0,
+     "votes": 3495829,
+     "share": 21.57,
+     "swing": null
+    },
+    {
+     "name": "Korean National Party",
+     "leader": "Kim Jong-cheol",
+     "seats": 18,
+     "seatChange": 7.0,
+     "votes": 2147293,
+     "share": 13.25,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 0.0,
+     "votes": 1734224,
+     "share": 10.7,
+     "swing": null
+    },
+    {
+     "name": "Civil Rights Party",
+     "leader": "Kim Ui-Taek",
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": 1088847,
+     "share": 6.72,
+     "swing": null
+    },
+    {
+     "name": "New Politics Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": 676921,
+     "share": 4.18,
+     "swing": null
+    },
+    {
+     "name": "Democratic Socialist Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": 524361,
+     "share": 3.24,
+     "swing": null
+    },
+    {
+     "name": "Democratic Farmer's Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 227715,
+     "share": 1.41,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Legislative elections were held in South Korea on 25 March 1981. The elections were held following coups in 1979 and 1980, with major opposition political figures including Kim Young-sam and Kim Jong-pil barred from running and the Democratic Republican Party of late president Park Chung-hee forcibly dissolved.",
+   "caveat": "Held under the Fifth Republic's rules, with a seat bonus guaranteeing the ruling party a majority.",
+   "seatLeader": "Democratic Justice Party"
+  },
+  {
+   "id": "1985",
+   "label": "1985",
+   "year": 1985,
+   "kind": "legislative",
+   "date": "12 February 1985",
+   "era": "authoritarian",
+   "totalSeats": 276,
+   "majoritySeats": 139,
+   "turnout": 84.57,
+   "parties": [
+    {
+     "name": "Democratic Justice Party",
+     "leader": "Chun Doo-hwan",
+     "seats": 87,
+     "seatChange": 61.0,
+     "votes": 7040811,
+     "share": 35.25,
+     "swing": -0.39
+    },
+    {
+     "name": "New Korean Democratic Party",
+     "leader": "Lee Min-woo",
+     "seats": 50,
+     "seatChange": 17.0,
+     "votes": 5843827,
+     "share": 29.26,
+     "swing": null
+    },
+    {
+     "name": "Democratic Korea Party",
+     "leader": "Yu Chi-song",
+     "seats": 26,
+     "seatChange": 9.0,
+     "votes": 3930966,
+     "share": 19.68,
+     "swing": -1.87
+    },
+    {
+     "name": "Korean National Party",
+     "leader": "Kim Jong-cheol",
+     "seats": 15,
+     "seatChange": 5.0,
+     "votes": 1828744,
+     "share": 9.16,
+     "swing": -4.09
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 650028,
+     "share": 3.25,
+     "swing": null
+    },
+    {
+     "name": "New Socialist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 288863,
+     "share": 1.45,
+     "swing": null
+    },
+    {
+     "name": "New Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 112654,
+     "share": 0.56,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The opposition's breakthrough",
+   "summary": "Of the 276 seats, 184 were elected in two-member constituencies via single non-transferable vote, while the remainder were allocated via proportional representation at the national level among parties that won five or more seats in constituencies.",
+   "caveat": "Held under the Fifth Republic's rules, with a seat bonus favouring the ruling party.",
+   "seatLeader": "Democratic Justice Party"
+  },
+  {
+   "id": "1988",
+   "label": "1988",
+   "year": 1988,
+   "kind": "legislative",
+   "date": "26 April 1988",
+   "era": "democratic",
+   "totalSeats": 299,
+   "majoritySeats": 150,
+   "turnout": 75.77,
+   "parties": [
+    {
+     "name": "Democratic Justice Party",
+     "leader": "Roh Tae-woo",
+     "seats": 87,
+     "seatChange": 38.0,
+     "votes": 6670494,
+     "share": 33.96,
+     "swing": -1.29
+    },
+    {
+     "name": "Peace Democratic Party",
+     "leader": "Park Yeong-suk",
+     "seats": 54,
+     "seatChange": 16.0,
+     "votes": 3783279,
+     "share": 19.26,
+     "swing": null
+    },
+    {
+     "name": "Reunification Democratic Party",
+     "leader": "Kim Myeong-yun",
+     "seats": 46,
+     "seatChange": 13.0,
+     "votes": 4680175,
+     "share": 23.83,
+     "swing": null
+    },
+    {
+     "name": "New Democratic Republican Party",
+     "leader": "Kim Jong-pil",
+     "seats": 27,
+     "seatChange": 8.0,
+     "votes": 3062506,
+     "share": 15.59,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 0.0,
+     "votes": 933161,
+     "share": 4.75,
+     "swing": null
+    },
+    {
+     "name": "Hankyoreh Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 251236,
+     "share": 1.28,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "First democratic Assembly",
+   "summary": "Legislative elections were held in South Korea on 26 April 1988. The result was a victory for the ruling Democratic Justice Party (DJP), which won 125 of the 299 seats in the National Assembly.",
+   "caveat": null,
+   "seatLeader": "Democratic Justice Party"
+  },
+  {
+   "id": "1992",
+   "label": "1992",
+   "year": 1992,
+   "kind": "legislative",
+   "date": "24 March 1992",
+   "era": "democratic",
+   "totalSeats": 299,
+   "majoritySeats": 150,
+   "turnout": 71.86,
+   "parties": [
+    {
+     "name": "Democratic Liberal Party",
+     "leader": "Roh Tae-woo",
+     "seats": 116,
+     "seatChange": 33.0,
+     "votes": 7923719,
+     "share": 38.49,
+     "swing": -34.89
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 75,
+     "seatChange": 22.0,
+     "votes": 6004577,
+     "share": 29.17,
+     "swing": null
+    },
+    {
+     "name": "Unification National Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 7.0,
+     "votes": 3574419,
+     "share": 17.37,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 0.0,
+     "votes": 2372005,
+     "share": 11.52,
+     "swing": null
+    },
+    {
+     "name": "New Political Reform Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 369044,
+     "share": 1.79,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Legislative elections were held in South Korea on 25 March 1992. The result was a victory for the Democratic Liberal Party, which won 149 of the 299 seats in the National Assembly.",
+   "caveat": null,
+   "seatLeader": "Democratic Liberal Party"
+  },
+  {
+   "id": "1996",
+   "label": "1996",
+   "year": 1996,
+   "kind": "legislative",
+   "date": "11 April 1996",
+   "era": "democratic",
+   "totalSeats": 299,
+   "majoritySeats": 150,
+   "turnout": 63.91,
+   "parties": [
+    {
+     "name": "New Korea Party",
+     "leader": "Kim Young-sam",
+     "seats": 121,
+     "seatChange": 18.0,
+     "votes": 6783730,
+     "share": 34.52,
+     "swing": -3.97
+    },
+    {
+     "name": "National Congress for New Politics",
+     "leader": "Kim Dae-jung",
+     "seats": 66,
+     "seatChange": 13.0,
+     "votes": 4971961,
+     "share": 25.3,
+     "swing": null
+    },
+    {
+     "name": "United Liberal Democrats",
+     "leader": "Kim Jong-pil",
+     "seats": 41,
+     "seatChange": 9.0,
+     "votes": 3178474,
+     "share": 16.17,
+     "swing": -2.99
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 0.0,
+     "votes": 2328785,
+     "share": 11.85,
+     "swing": null
+    },
+    {
+     "name": "United Democratic Party",
+     "leader": "Park Il",
+     "seats": 9,
+     "seatChange": 6.0,
+     "votes": 2207695,
+     "share": 11.23,
+     "swing": -17.94
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Legislative elections were held in South Korea on 12 April 1996. The result was a victory for the New Korea Party, which won 139 of the 299 seats in the National Assembly.",
+   "caveat": null,
+   "seatLeader": "New Korea Party"
+  },
+  {
+   "id": "2000",
+   "label": "2000",
+   "year": 2000,
+   "kind": "legislative",
+   "date": "13 April 2000",
+   "era": "democratic",
+   "totalSeats": 273,
+   "majoritySeats": 137,
+   "turnout": 57.22,
+   "parties": [
+    {
+     "name": "Grand National",
+     "leader": "Lee Hoi-chang",
+     "seats": 133,
+     "seatChange": -7.0,
+     "votes": 7365359,
+     "share": 38.96,
+     "swing": -6.79
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Legislative elections were held in South Korea on 13 April 2000 to elect the 273 members of the National Assembly. Opinion polls suggested that the ruling Millennium Democratic Party (MDP) would win the most seats, but the conservative Grand National Party (GNP) emerged as the largest party, winning 133 of the 273 seats.",
+   "caveat": null,
+   "seatLeader": "Grand National"
+  },
+  {
+   "id": "2004",
+   "label": "2004",
+   "year": 2004,
+   "kind": "legislative",
+   "date": "15 April 2004",
+   "era": "democratic",
+   "totalSeats": 299,
+   "majoritySeats": 150,
+   "turnout": 60.63,
+   "parties": [
+    {
+     "name": "Uri",
+     "leader": "Chung Dong-young",
+     "seats": 152,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Grand National",
+     "leader": "Park Geun-hye",
+     "seats": 121,
+     "seatChange": -12.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Labor",
+     "leader": "Kwon Young-ghil",
+     "seats": 10,
+     "seatChange": 10.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Millennium Democratic",
+     "leader": "Cho Soon-hyung",
+     "seats": 9,
+     "seatChange": -106.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Legislative elections were held in South Korea on 15 April 2004. In the 17th election for the National Assembly, voters elected 299 members of the legislature.",
+   "caveat": null,
+   "seatLeader": "Uri"
+  },
+  {
+   "id": "2008",
+   "label": "2008",
+   "year": 2008,
+   "kind": "legislative",
+   "date": "9 April 2008",
+   "era": "democratic",
+   "totalSeats": 299,
+   "majoritySeats": 150,
+   "turnout": 46.08,
+   "parties": [
+    {
+     "name": "Grand National",
+     "leader": "Kang Jae-sup",
+     "seats": 153,
+     "seatChange": 32.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberty Forward",
+     "leader": "Lee Hoi-chang",
+     "seats": 18,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Labor",
+     "leader": "Chon Young-sae",
+     "seats": 5,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Creative Korea",
+     "leader": "Han Myeon-hee",
+     "seats": 3,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The election was held under parallel voting, with 245 members elected in single-member constituencies via first-past-the-post voting and the remainder elected via proportional representation. Proportional seats were only available to parties which won three percent of the national valid vote among seat-allocated parties and/or won five or more constituency seats.",
+   "caveat": null,
+   "seatLeader": "Grand National"
+  },
+  {
+   "id": "2012",
+   "label": "2012",
+   "year": 2012,
+   "kind": "legislative",
+   "date": "11 April 2012",
+   "era": "democratic",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 54.24,
+   "parties": [
+    {
+     "name": "Saenuri",
+     "leader": "Park Geun-hye",
+     "seats": 152,
+     "seatChange": -15.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic United",
+     "leader": "Han Myeong-sook",
+     "seats": 127,
+     "seatChange": 46.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Unified Progressive",
+     "leader": "Lee Jung-hee",
+     "seats": 13,
+     "seatChange": 8.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberty Forward",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -13.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Legislative elections were held in South Korea on 11 April 2012. The election was won by the ruling Saenuri or New Frontier Party, which renewed its majority in the National Assembly, despite losing seats.",
+   "caveat": null,
+   "seatLeader": "Saenuri"
+  },
+  {
+   "id": "2016",
+   "label": "2016",
+   "year": 2016,
+   "kind": "legislative",
+   "date": "13 April 2016",
+   "era": "democratic",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 58.15,
+   "parties": [
+    {
+     "name": "Democratic",
+     "leader": "Kim Chong-in",
+     "seats": 123,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Saenuri",
+     "leader": "Kim Moo-sung",
+     "seats": 122,
+     "seatChange": -35.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "People",
+     "leader": "Ahn Cheol-soo",
+     "seats": 38,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Justice",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The rebuke of Park Geun-hye",
+   "summary": "Legislative elections were held in South Korea on 13 April 2016. All 300 members of the National Assembly were elected, 253 from first-past-the-post constituencies and 47 from proportional party lists.",
+   "caveat": null,
+   "seatLeader": "Democratic"
+  },
+  {
+   "id": "2020",
+   "label": "2020",
+   "year": 2020,
+   "kind": "legislative",
+   "date": "15 April 2020",
+   "era": "democratic",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 66.19,
+   "parties": [
+    {
+     "name": "Democratic",
+     "leader": "Lee Hae-chan",
+     "seats": 180,
+     "seatChange": 57.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "People",
+     "leader": "Ahn Cheol-soo",
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Open Democratic",
+     "leader": "Lee Keun-shik",
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Legislative elections were held in South Korea on 15 April 2020. All 300 members of the National Assembly were elected, 253 from first-past-the-post constituencies and 47 from proportional party lists.",
+   "caveat": null,
+   "seatLeader": "Democratic"
+  },
+  {
+   "id": "2024",
+   "label": "2024",
+   "year": 2024,
+   "kind": "legislative",
+   "date": "10 April 2024",
+   "era": "democratic",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": 66.97,
+   "parties": [
+    {
+     "name": "Democratic",
+     "leader": "Lee Jae-myung",
+     "seats": 173,
+     "seatChange": -7.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "People Power",
+     "leader": "Han Dong-hoon",
+     "seats": 108,
+     "seatChange": 5.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Rebuilding Korea",
+     "leader": "Cho Kuk",
+     "seats": 12,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Reform",
+     "leader": "Lee Jun-seok",
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The landslide against Yoon",
+   "summary": "Legislative elections were held in South Korea on 10 April 2024. All 300 members of the National Assembly were elected, 254 from first-past-the-post constituencies and 46 from proportional party lists.",
+   "caveat": null,
+   "seatLeader": "Democratic"
+  }
+ ]
+}

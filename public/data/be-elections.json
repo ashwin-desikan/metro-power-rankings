@@ -1,0 +1,4915 @@
+{
+ "meta": {
+  "title": "Belgian elections",
+  "sources": [
+   "Wikipedia: Belgian general and federal election articles 1831–2024 (results, infoboxes and leads)",
+   "FPS Interior figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "eras": [
+  {
+   "key": "censitaire",
+   "label": "The censitaire kingdom",
+   "span": "1831–1892",
+   "blurb": "The new kingdom's parliament was chosen by the roughly one per cent of Belgians who paid enough tax to vote. Politics was a two-party duel between Catholics and Liberals — fought over schools above all — with partial renewals every two years and power alternating between the same narrow elites."
+  },
+  {
+   "key": "plural",
+   "label": "Plural voting",
+   "span": "1894–1913",
+   "blurb": "The general strike of 1893 won universal male suffrage, but with a catch: fathers of family and property owners cast up to three votes each. The newly enfranchised working class made the Belgian Workers' Party the second force overnight, yet the weighted franchise kept the Catholic Party in absolute majority for two decades straight."
+  },
+  {
+   "key": "equal",
+   "label": "One man, one vote",
+   "span": "1919–1939",
+   "blurb": "Equal male suffrage arrived in 1919 and ended the Catholic majority at a stroke. The interwar chambers were governed by shifting Catholic–Liberal–Socialist combinations, shaken in 1936 by the fascist Rex and the Flemish nationalists — Belgium's parliament on the eve of catastrophe."
+  },
+  {
+   "key": "postwar",
+   "label": "The Belgian compromise",
+   "span": "1946–1968",
+   "blurb": "Women voted from 1949. The postwar decades ran on grand bargains — the royal question that nearly split the country in 1950, the school pact of 1958 — until language conflict did what class conflict had not: from 1968 the three great national parties began breaking into Flemish and francophone halves."
+  },
+  {
+   "key": "linguistic",
+   "label": "The linguistic fracture",
+   "span": "1971–1991",
+   "blurb": "Every election now ran on two separate party systems, one Dutch-speaking and one French-speaking, with community parties surging and successive state reforms federalising the country step by step. Governments took months to build and fell over language as often as economics."
+  },
+  {
+   "key": "federal",
+   "label": "The federal era",
+   "span": "1995–2024",
+   "blurb": "The first elections of federal Belgium settled into a new pattern: fragmented chambers, Flemish nationalism as the largest force, and record-breaking coalition formations — 541 days without a government after 2010, 494 after 2019. The 2024 election made Bart De Wever, the N-VA leader once committed to Belgium's dissolution, its prime minister."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1831",
+   "label": "1831",
+   "year": 1831,
+   "date": "29 August 1831",
+   "era": "censitaire",
+   "totalSeats": 102,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholics",
+     "leader": null,
+     "seats": 31,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberals",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The founding election",
+   "summary": "The electoral system was defined in the 1831 constitution and the electoral law of 3 March 1831. The 102 members of the Chamber of Representatives and 51 members of the Senate were elected by absolute majority in 44 electoral districts.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Catholics"
+  },
+  {
+   "id": "1833",
+   "label": "1833",
+   "year": 1833,
+   "date": "23 May 1833",
+   "era": "censitaire",
+   "totalSeats": 102,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The Chamber of Representatives was fully renewed, following its dissolution by royal order of 28 April 1833. The King did so because of conflicts between the Liberal government (of Albert Goblet d'Alviella and Charles Rogier) and the Catholic-majority Parliament.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": null
+  },
+  {
+   "id": "1835",
+   "label": "1835",
+   "year": 1835,
+   "date": "9 June 1835",
+   "era": "censitaire",
+   "totalSeats": 51,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "18301831183318351837183918411843184518471848185018511852185418551856185718591861186318641866186718681870 (Jun)1870 (Aug)18721874187618781880188218841886188818901892189418961898190019021904190619081910191219141919192119251929193219361939194619491950195419581961196519681971197419771978198119851987199119951999200320072010201420192024",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": null
+  },
+  {
+   "id": "1837",
+   "label": "1837",
+   "year": 1837,
+   "date": "13 June 1837",
+   "era": "censitaire",
+   "totalSeats": 51,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Partial general elections were held in Belgium on Tuesday 13 June 1837 in which 51 of the 102 seats in the Chamber of Representatives were elected. Voter turnout was 56.0%, although only 24,526 people were eligible to vote.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": null
+  },
+  {
+   "id": "1839",
+   "label": "1839",
+   "year": 1839,
+   "date": "11 June 1839",
+   "era": "censitaire",
+   "totalSeats": 47,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholics",
+     "leader": null,
+     "seats": 27,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberals",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Under the alternating system, Chamber elections were only held in four out of the nine provinces: East Flanders, Hainaut, Liège and Limburg. Thus, 47 of the 98 Chamber seats were up for election.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Catholics"
+  },
+  {
+   "id": "1841",
+   "label": "1841",
+   "year": 1841,
+   "date": "8 June 1841",
+   "era": "censitaire",
+   "totalSeats": 48,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Partial legislative elections were held in Belgium on Tuesday 8 June 1841 in which 48 of the 95 seats in the Chamber of Representatives were elected. Voter turnout was 77.0%, although only 24,887 people were eligible to vote.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": null
+  },
+  {
+   "id": "1843",
+   "label": "1843",
+   "year": 1843,
+   "date": "13 June 1843",
+   "era": "censitaire",
+   "totalSeats": 47,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholics",
+     "leader": null,
+     "seats": 32,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberals",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "18301831183318351837183918411843184518471848185018511852185418551856185718591861186318641866186718681870 (Jun)1870 (Aug)18721874187618781880188218841886188818901892189418961898190019021904190619081910191219141919192119251929193219361939194619491950195419581961196519681971197419771978198119851987199119951999200320072010201420192024",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Catholics"
+  },
+  {
+   "id": "1845",
+   "label": "1845",
+   "year": 1845,
+   "date": "10 June 1845",
+   "era": "censitaire",
+   "totalSeats": 48,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "18301831183318351837183918411843184518471848185018511852185418551856185718591861186318641866186718681870 (Jun)1870 (Aug)18721874187618781880188218841886188818901892189418961898190019021904190619081910191219141919192119251929193219361939194619491950195419581961196519681971197419771978198119851987199119951999200320072010201420192024",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": null
+  },
+  {
+   "id": "1847",
+   "label": "1847",
+   "year": 1847,
+   "date": "8 June 1847",
+   "era": "censitaire",
+   "totalSeats": 54,
+   "majoritySeats": 55,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Association",
+     "leader": "Charles Rogier",
+     "seats": 33,
+     "seatChange": 55.0,
+     "votes": 9142,
+     "share": 52.12,
+     "swing": null
+    },
+    {
+     "name": "Catholics",
+     "leader": "Barthélémy de Theux de Meylandt",
+     "seats": 21,
+     "seatChange": 53.0,
+     "votes": 8298,
+     "share": 47.31,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The first Liberal government",
+   "summary": "Partial general elections were held in Belgium on 8 June 1847. The result was a victory for the new Liberal Association, which had been formed the previous year.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Liberal Association"
+  },
+  {
+   "id": "1848",
+   "label": "1848",
+   "year": 1848,
+   "date": "13 June 1848",
+   "era": "censitaire",
+   "totalSeats": 108,
+   "majoritySeats": 55,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": "Charles Rogier",
+     "seats": 83,
+     "seatChange": 28.0,
+     "votes": 30806,
+     "share": 69.52,
+     "swing": null
+    },
+    {
+     "name": "Catholics",
+     "leader": null,
+     "seats": 25,
+     "seatChange": 28.0,
+     "votes": 13122,
+     "share": 29.61,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Full general elections were held in Belgium on 13 June 1848. They followed an equalisation of the tax qualifications for voters, which widened the franchise from 1.0% of the population to 1.8%.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Liberal Party"
+  },
+  {
+   "id": "1850",
+   "label": "1850",
+   "year": 1850,
+   "date": "11 June 1850",
+   "era": "censitaire",
+   "totalSeats": 54,
+   "majoritySeats": 55,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": "Charles Rogier",
+     "seats": 32,
+     "seatChange": 69.0,
+     "votes": 15320,
+     "share": 54.8,
+     "swing": null
+    },
+    {
+     "name": "Catholics",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 39.0,
+     "votes": 11618,
+     "share": 41.56,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Partial general elections were held in Belgium on 11 June 1850. In the Chamber of Representatives elections the result was a victory for the Liberal Party, who won 69 of the 108 seats.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Liberal Party"
+  },
+  {
+   "id": "1852",
+   "label": "1852",
+   "year": 1852,
+   "date": "8 June 1852",
+   "era": "censitaire",
+   "totalSeats": 54,
+   "majoritySeats": 55,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": "Charles Rogier",
+     "seats": 31,
+     "seatChange": 57.0,
+     "votes": 16688,
+     "share": 57.36,
+     "swing": null
+    },
+    {
+     "name": "Catholics",
+     "leader": null,
+     "seats": 23,
+     "seatChange": 51.0,
+     "votes": 12404,
+     "share": 42.64,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Partial general elections were held in Belgium on 8 June 1852. In the elections for the Chamber of Representatives the result was a victory for the Liberal Party, who won 57 of the 108 seats.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Liberal Party"
+  },
+  {
+   "id": "1854",
+   "label": "1854",
+   "year": 1854,
+   "date": "13 June 1854",
+   "era": "censitaire",
+   "totalSeats": 54,
+   "majoritySeats": 55,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": "Henri de Brouckère",
+     "seats": 28,
+     "seatChange": 54.0,
+     "votes": 16087,
+     "share": 57.44,
+     "swing": null
+    },
+    {
+     "name": "Catholics",
+     "leader": "Pierre de Decker",
+     "seats": 26,
+     "seatChange": 54.0,
+     "votes": 11921,
+     "share": 42.56,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Liberal Party"
+  },
+  {
+   "id": "1856",
+   "label": "1856",
+   "year": 1856,
+   "date": "10 June 1856",
+   "era": "censitaire",
+   "totalSeats": 54,
+   "majoritySeats": 55,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholics",
+     "leader": "Pierre de Decker",
+     "seats": 33,
+     "seatChange": 63.0,
+     "votes": 15168,
+     "share": 54.88,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": "Charles Rogier",
+     "seats": 21,
+     "seatChange": 45.0,
+     "votes": 12472,
+     "share": 45.12,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Partial general elections were held in Belgium on 10 June 1856. In the elections for the Chamber of Representatives the result was a victory for the Catholics, who won 63 of the 108 seats.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Catholics"
+  },
+  {
+   "id": "1857",
+   "label": "1857",
+   "year": 1857,
+   "date": "10 December 1857",
+   "era": "censitaire",
+   "totalSeats": 108,
+   "majoritySeats": 55,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": "Charles Rogier",
+     "seats": 70,
+     "seatChange": 25.0,
+     "votes": 39280,
+     "share": 54.72,
+     "swing": null
+    },
+    {
+     "name": "Catholics",
+     "leader": "Pierre de Decker",
+     "seats": 38,
+     "seatChange": 25.0,
+     "votes": 32503,
+     "share": 45.28,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "General elections were held in Belgium on 10 December 1857, the first full general elections since 1848. The elections were called by royal order of 12 November 1857, dissolving the Chamber of Representatives that had convened in a new session only two days earlier.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Liberal Party"
+  },
+  {
+   "id": "1859",
+   "label": "1859",
+   "year": 1859,
+   "date": "14 June 1859",
+   "era": "censitaire",
+   "totalSeats": 58,
+   "majoritySeats": 57,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": "Charles Rogier",
+     "seats": 31,
+     "seatChange": 69.0,
+     "votes": 15052,
+     "share": 54.19,
+     "swing": null
+    },
+    {
+     "name": "Catholics",
+     "leader": null,
+     "seats": 27,
+     "seatChange": 47.0,
+     "votes": 12726,
+     "share": 45.81,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Partial general elections were held in Belgium on 14 June 1859. The result was a victory for the Liberal Party, which won 69 of the 116 seats in the Chamber of Representatives and 31 of the 58 seats in the Senate.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Liberal Party"
+  },
+  {
+   "id": "1861",
+   "label": "1861",
+   "year": 1861,
+   "date": "11 June 1861",
+   "era": "censitaire",
+   "totalSeats": 58,
+   "majoritySeats": 57,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": "Charles Rogier",
+     "seats": 36,
+     "seatChange": 66.0,
+     "votes": 15979,
+     "share": 57.52,
+     "swing": null
+    },
+    {
+     "name": "Catholics",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 50.0,
+     "votes": 11799,
+     "share": 42.48,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Partial general elections were held in Belgium on 11 June 1861. In the elections for the Chamber of Representatives the result was a victory for the Liberal Party, which won 66 of the 116 seats.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Liberal Party"
+  },
+  {
+   "id": "1863",
+   "label": "1863",
+   "year": 1863,
+   "date": "9 June 1863",
+   "era": "censitaire",
+   "totalSeats": 58,
+   "majoritySeats": 57,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholics",
+     "leader": null,
+     "seats": 34,
+     "seatChange": 57.0,
+     "votes": 21310,
+     "share": 54.49,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": "Charles Rogier",
+     "seats": 24,
+     "seatChange": 59.0,
+     "votes": 17799,
+     "share": 45.51,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Partial general elections were held in Belgium on 9 June 1863. The result was a victory for the Liberal Party, which won 59 of the 116 seats in the Chamber of Representatives and 33 of the 58 seats in the Senate.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Catholics"
+  },
+  {
+   "id": "1864",
+   "label": "1864",
+   "year": 1864,
+   "date": "11 August 1864",
+   "era": "censitaire",
+   "totalSeats": 116,
+   "majoritySeats": 57,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": "Charles Rogier",
+     "seats": 64,
+     "seatChange": 5.0,
+     "votes": 39576,
+     "share": 49.74,
+     "swing": null
+    },
+    {
+     "name": "Catholics",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 5.0,
+     "votes": 39750,
+     "share": 49.96,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "General elections were held in Belgium on 11 August 1864, the first full general elections since 1857. The snap elections were called upon the loss of a parliamentary majority for the liberal government of Charles Rogier and a hung parliament, following the death of liberal representative Charles Cumont on 10 July 1864.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Liberal Party"
+  },
+  {
+   "id": "1866",
+   "label": "1866",
+   "year": 1866,
+   "date": "12 June 1866",
+   "era": "censitaire",
+   "totalSeats": 61,
+   "majoritySeats": 62,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": "Charles Rogier",
+     "seats": 43,
+     "seatChange": 70.0,
+     "votes": 20965,
+     "share": 58.2,
+     "swing": null
+    },
+    {
+     "name": "Catholics",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 52.0,
+     "votes": 15060,
+     "share": 41.8,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Partial general elections were held in Belgium on 12 June 1866. In the elections for the Chamber of Representatives the result was a victory for the Liberal Party, which won 70 of the 122 seats.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Liberal Party"
+  },
+  {
+   "id": "1868",
+   "label": "1868",
+   "year": 1868,
+   "date": "9 June 1868",
+   "era": "censitaire",
+   "totalSeats": 63,
+   "majoritySeats": 62,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholics",
+     "leader": null,
+     "seats": 33,
+     "seatChange": 50.0,
+     "votes": 16918,
+     "share": 55.07,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": "Walthère Frère-Orban",
+     "seats": 30,
+     "seatChange": 72.0,
+     "votes": 13619,
+     "share": 44.33,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "General elections were held in Belgium on 9 June 1868. In the elections for the Chamber of Representatives the result was a victory for the Liberal Party, which won 72 of the 122 seats.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Catholics"
+  },
+  {
+   "id": "1870-jun",
+   "label": "June 1870",
+   "year": 1870,
+   "date": "14 June 1870",
+   "era": "censitaire",
+   "totalSeats": 61,
+   "majoritySeats": 62,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": "Walthère Frère-Orban",
+     "seats": 31,
+     "seatChange": 61.0,
+     "votes": 17173,
+     "share": 55.63,
+     "swing": null
+    },
+    {
+     "name": "Catholic Party",
+     "leader": "Jules d'Anethan",
+     "seats": 30,
+     "seatChange": 61.0,
+     "votes": 13698,
+     "share": 44.37,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Partial general elections were held in Belgium on Tuesday 14 June 1870. In the elections for the Chamber of Representatives the Liberal Party and the Catholic Party both won 61 seats, resulting in a hung parliament.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Liberal Party"
+  },
+  {
+   "id": "1870-aug",
+   "label": "August 1870",
+   "year": 1870,
+   "date": "2 August 1870",
+   "era": "censitaire",
+   "totalSeats": 124,
+   "majoritySeats": 63,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholic Party",
+     "leader": "Jules d'Anethan",
+     "seats": 72,
+     "seatChange": 11.0,
+     "votes": 39705,
+     "share": 54.49,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": "Walthère Frère-Orban",
+     "seats": 52,
+     "seatChange": 9.0,
+     "votes": 32448,
+     "share": 44.53,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Early general elections were held in Belgium on 2 August 1870, the second that year after the partial elections in June had ended with both the Catholic Party and the Liberal Party holding 61 seats each. The result was a victory for the Catholic Party, which won 72 of the 124 seats in the Chamber of Representatives and 34 of the 62 seats in the Senate.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Catholic Party"
+  },
+  {
+   "id": "1872",
+   "label": "1872",
+   "year": 1872,
+   "date": "11 June 1872",
+   "era": "censitaire",
+   "totalSeats": 63,
+   "majoritySeats": 63,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholic Party",
+     "leader": "Barthélémy de Theux de Meylandt",
+     "seats": 43,
+     "seatChange": 71.0,
+     "votes": 20949,
+     "share": 68.75,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": "Walthère Frère-Orban",
+     "seats": 20,
+     "seatChange": 53.0,
+     "votes": 9455,
+     "share": 31.03,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Partial general elections were held in Belgium on Tuesday 11 June 1872. In the elections for the Chamber of Representatives the result was a victory for the Catholic Party, which won 71 of the 124 seats.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Catholic Party"
+  },
+  {
+   "id": "1874",
+   "label": "1874",
+   "year": 1874,
+   "date": "9 June 1874",
+   "era": "censitaire",
+   "totalSeats": 61,
+   "majoritySeats": 63,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": "Walthère Frère-Orban",
+     "seats": 35,
+     "seatChange": 56.0,
+     "votes": 17531,
+     "share": 52.5,
+     "swing": null
+    },
+    {
+     "name": "Catholic Party",
+     "leader": "Barthélémy de Theux de Meylandt",
+     "seats": 26,
+     "seatChange": 68.0,
+     "votes": 15864,
+     "share": 47.5,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Partial general elections were held in Belgium on 9 June 1874. The result was a victory for the Catholic Party, which won 68 of the 124 seats in the Chamber of Representatives and 34 of the 62 seats in the Senate.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Liberal Party"
+  },
+  {
+   "id": "1876",
+   "label": "1876",
+   "year": 1876,
+   "date": "13 June 1876",
+   "era": "censitaire",
+   "totalSeats": 63,
+   "majoritySeats": 63,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholic Party",
+     "leader": "Jules Malou",
+     "seats": 42,
+     "seatChange": 67.0,
+     "votes": 22952,
+     "share": 53.7,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": "Walthère Frère-Orban",
+     "seats": 21,
+     "seatChange": 57.0,
+     "votes": 19788,
+     "share": 46.3,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Partial general elections were held in Belgium on 13 June 1876. In the elections for the Chamber of Representatives the result was a victory for the Catholic Party, which won 67 of the 124 seats.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Catholic Party"
+  },
+  {
+   "id": "1878",
+   "label": "1878",
+   "year": 1878,
+   "date": "11 June 1878",
+   "era": "censitaire",
+   "totalSeats": 66,
+   "majoritySeats": 67,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": "Walthère Frère-Orban",
+     "seats": 48,
+     "seatChange": 72.0,
+     "votes": 18966,
+     "share": 52.61,
+     "swing": null
+    },
+    {
+     "name": "Catholic Party",
+     "leader": "Jules Malou",
+     "seats": 18,
+     "seatChange": 60.0,
+     "votes": 17085,
+     "share": 47.39,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Partial general elections were held in Belgium on 11 June, 18 June and 15 July 1878. The result was a victory for the Liberal Party, which won 72 of the 132 seats in the Chamber of Representatives and 36 of the 66 seats in the Senate.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Liberal Party"
+  },
+  {
+   "id": "1880",
+   "label": "1880",
+   "year": 1880,
+   "date": "8 June 1880",
+   "era": "censitaire",
+   "totalSeats": 66,
+   "majoritySeats": 67,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholic Party",
+     "leader": "Jules Malou",
+     "seats": 40,
+     "seatChange": 58.0,
+     "votes": 20700,
+     "share": 48.94,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": "Walthère Frère-Orban",
+     "seats": 26,
+     "seatChange": 74.0,
+     "votes": 21283,
+     "share": 50.31,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Partial general elections were held in Belgium on 8 June 1880. In the elections for the Chamber of Representatives the result was a victory for the Liberal Party, which won 74 of the 132 seats.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Catholic Party"
+  },
+  {
+   "id": "1882",
+   "label": "1882",
+   "year": 1882,
+   "date": "13 June 1882",
+   "era": "censitaire",
+   "totalSeats": 69,
+   "majoritySeats": 70,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": "Walthère Frère-Orban",
+     "seats": 49,
+     "seatChange": 79.0,
+     "votes": 22001,
+     "share": 52.77,
+     "swing": null
+    },
+    {
+     "name": "Catholic Party",
+     "leader": "Jules Malou",
+     "seats": 20,
+     "seatChange": 59.0,
+     "votes": 19681,
+     "share": 47.21,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Partial general elections were held in Belgium on 13 June 1882. The result was a victory for the Liberal Party, which won 79 of the 138 seats in the Chamber of Representatives and 37 of the 69 seats in the Senate.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Liberal Party"
+  },
+  {
+   "id": "1884",
+   "label": "1884",
+   "year": 1884,
+   "date": "15 July 1884 (Senate run-off)",
+   "era": "censitaire",
+   "totalSeats": 69,
+   "majoritySeats": 70,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholic Party",
+     "leader": "Jules Malou",
+     "seats": 67,
+     "seatChange": 86.0,
+     "votes": 33428,
+     "share": 61.01,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": "Walthère Frère-Orban",
+     "seats": 2,
+     "seatChange": 52.0,
+     "votes": 21294,
+     "share": 38.86,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Regular partial elections for the Chamber of Representatives were held on Tuesday 10 June 1884, with a run-off on Tuesday 17 June. Under the alternating system, elections for the Chamber of Representatives were only held in five out of the nine provinces: Antwerp, Brabant, Luxembourg, Namur and West Flanders.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Catholic Party"
+  },
+  {
+   "id": "1886",
+   "label": "1886",
+   "year": 1886,
+   "date": "8 June 1886",
+   "era": "censitaire",
+   "totalSeats": 69,
+   "majoritySeats": 70,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 37,
+     "seatChange": 40.0,
+     "votes": 18965,
+     "share": 51.33,
+     "swing": null
+    },
+    {
+     "name": "Catholic Party",
+     "leader": "Auguste Beernaert",
+     "seats": 32,
+     "seatChange": 98.0,
+     "votes": 17979,
+     "share": 48.67,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The Catholics continued their gains, after the 1884 elections that gave them a victory over the Liberals. With the defeat of the Liberals by the Catholics in the eight-member arrondissement of Ghent, the Catholics now had all \"Flemish\" seats.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Liberal Party"
+  },
+  {
+   "id": "1888",
+   "label": "1888",
+   "year": 1888,
+   "date": "12 June 1888",
+   "era": "censitaire",
+   "totalSeats": 69,
+   "majoritySeats": 70,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholic Party",
+     "leader": "Auguste Beernaert",
+     "seats": 66,
+     "seatChange": 98.0,
+     "votes": 31273,
+     "share": 58.44,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 40.0,
+     "votes": 19967,
+     "share": 37.31,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Catholic Party"
+  },
+  {
+   "id": "1890",
+   "label": "1890",
+   "year": 1890,
+   "date": "10 June 1890",
+   "era": "censitaire",
+   "totalSeats": 69,
+   "majoritySeats": 70,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 40,
+     "seatChange": 44.0,
+     "votes": 20829,
+     "share": 54.51,
+     "swing": null
+    },
+    {
+     "name": "Catholic Party",
+     "leader": "Auguste Beernaert",
+     "seats": 29,
+     "seatChange": 94.0,
+     "votes": 17253,
+     "share": 45.15,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Under the alternating system, elections were held in only four out of the nine provinces: Hainaut, Limburg, Liège and East Flanders. Thus, only 69 seats out of the 138 were up for election.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Liberal Party"
+  },
+  {
+   "id": "1892",
+   "label": "1892",
+   "year": 1892,
+   "date": "14 June 1892",
+   "era": "censitaire",
+   "totalSeats": 152,
+   "majoritySeats": 77,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholic Party",
+     "leader": "Auguste Beernaert",
+     "seats": 92,
+     "seatChange": 2.0,
+     "votes": 56199,
+     "share": 53.66,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 60,
+     "seatChange": 16.0,
+     "votes": 47518,
+     "share": 45.37,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "General elections were held in Belgium on Tuesday 14 June 1892, the first full general elections since 1870 and the last before the introduction of universal male suffrage prior to the 1894 elections. The result was a victory for the Catholic Party, which won 92 of the 152 seats in the Chamber of Representatives and 46 of the 76 seats in the Senate.",
+   "caveat": "A censitaire election: only taxpaying men — around one to two per cent of the population — could vote. Recorded here as history, not a mass democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Catholic Party"
+  },
+  {
+   "id": "1894",
+   "label": "1894",
+   "year": 1894,
+   "date": "14 October 1894",
+   "era": "plural",
+   "totalSeats": 152,
+   "majoritySeats": 77,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholic Party",
+     "leader": "Jules de Burlet",
+     "seats": 102,
+     "seatChange": 10.0,
+     "votes": 926987,
+     "share": 50.05,
+     "swing": null
+    },
+    {
+     "name": "Belgian Labour Party",
+     "leader": "Grégoire Serwy",
+     "seats": 27,
+     "seatChange": 27.0,
+     "votes": 301940,
+     "share": 16.3,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 43.0,
+     "votes": 515808,
+     "share": 27.85,
+     "swing": null
+    },
+    {
+     "name": "Liberal–Socialist kartels",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 32914,
+     "share": 1.78,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": 48354,
+     "share": 2.61,
+     "swing": null
+    },
+    {
+     "name": "Christene Volkspartij",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": 26224,
+     "share": 1.42,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "Plural voting's debut",
+   "summary": "The elections followed several major reforms: they were the first held under universal male suffrage for those over the age of 25. This followed the abolition of tax qualifications, and increased the number of voters tenfold.",
+   "caveat": "Universal male suffrage weighted by plural voting: wealthier and propertied men cast two or three votes each, which manufactured the Catholic majorities of this era.",
+   "unfree": null,
+   "seatLeader": "Catholic Party"
+  },
+  {
+   "id": "1896",
+   "label": "1896",
+   "year": 1896,
+   "date": "5 July 1896",
+   "era": "plural",
+   "totalSeats": 77,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholic Party",
+     "leader": "Paul de Smet de Naeyer",
+     "seats": 72,
+     "seatChange": null,
+     "votes": 492541,
+     "share": 49.68,
+     "swing": null
+    },
+    {
+     "name": "Liberal–Socialist kartels",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 49614,
+     "share": 5.0,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 193563,
+     "share": 19.52,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Partial legislative elections were held in Belgium on 5 and 12 July 1896. Under the alternating system, elections were held in only five of the nine provinces: Antwerp, Brabant, Luxembourg, Namur and West Flanders.",
+   "caveat": "Universal male suffrage weighted by plural voting: wealthier and propertied men cast two or three votes each, which manufactured the Catholic majorities of this era.",
+   "unfree": null,
+   "seatLeader": "Catholic Party"
+  },
+  {
+   "id": "1898",
+   "label": "1898",
+   "year": 1898,
+   "date": "22 May 1898",
+   "era": "plural",
+   "totalSeats": 75,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholic Party",
+     "leader": "Paul de Smet de Naeyer",
+     "seats": 36,
+     "seatChange": null,
+     "votes": 377275,
+     "share": 38.49,
+     "swing": null
+    },
+    {
+     "name": "Belgian Labour Party",
+     "leader": "Grégoire Serwy",
+     "seats": 15,
+     "seatChange": null,
+     "votes": 213511,
+     "share": 21.78,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 177802,
+     "share": 18.14,
+     "swing": null
+    },
+    {
+     "name": "Liberal–Socialist kartels",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 91947,
+     "share": 9.38,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 63122,
+     "share": 6.44,
+     "swing": null
+    },
+    {
+     "name": "Christene Volkspartij",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 22962,
+     "share": 2.34,
+     "swing": null
+    },
+    {
+     "name": "Left kartels",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 17724,
+     "share": 1.81,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Partial legislative elections were held in Belgium on 22 May 1898, with run-off elections held on 29 May. Under the alternating system, elections for the Chamber of Representatives were held in only four of the nine provinces: Hainaut, Limburg, Liège and East Flanders, with only 75 seats out of the 152 seats in the Chamber of Representatives up for election.",
+   "caveat": "Universal male suffrage weighted by plural voting: wealthier and propertied men cast two or three votes each, which manufactured the Catholic majorities of this era.",
+   "unfree": null,
+   "seatLeader": "Catholic Party"
+  },
+  {
+   "id": "1900",
+   "label": "1900",
+   "year": 1900,
+   "date": "27 May 1900",
+   "era": "plural",
+   "totalSeats": 152,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholic Party",
+     "leader": "Paul de Smet de Naeyer",
+     "seats": 86,
+     "seatChange": null,
+     "votes": 993945,
+     "share": 48.46,
+     "swing": null
+    },
+    {
+     "name": "Belgian Labour Party",
+     "leader": "August De Winne",
+     "seats": 32,
+     "seatChange": null,
+     "votes": 461295,
+     "share": 22.49,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": null,
+     "votes": 464959,
+     "share": 22.67,
+     "swing": null
+    },
+    {
+     "name": "Radical Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 33840,
+     "share": 1.65,
+     "swing": null
+    },
+    {
+     "name": "Christene Volkspartij",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 52093,
+     "share": 2.54,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Full general elections were held in Belgium on 27 May 1900. They were the first elections under a proportional system (using the D'Hondt method) instead of a majority system, with Belgium becoming the first country in the world to adopt proportional representation for parliamentary elections.",
+   "caveat": "Universal male suffrage weighted by plural voting: wealthier and propertied men cast two or three votes each, which manufactured the Catholic majorities of this era.",
+   "unfree": null,
+   "seatLeader": "Catholic Party"
+  },
+  {
+   "id": "1902",
+   "label": "1902",
+   "year": 1902,
+   "date": "25 May 1902",
+   "era": "plural",
+   "totalSeats": 85,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholic Party",
+     "leader": "Paul de Smet de Naeyer",
+     "seats": 54,
+     "seatChange": null,
+     "votes": 596382,
+     "share": 56.0,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": 266891,
+     "share": 25.06,
+     "swing": null
+    },
+    {
+     "name": "Belgian Labour Party",
+     "leader": "August De Winne",
+     "seats": 10,
+     "seatChange": null,
+     "votes": 159370,
+     "share": 14.97,
+     "swing": null
+    },
+    {
+     "name": "Christene Volkspartij",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 26435,
+     "share": 2.48,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Under the alternating system, elections were only held in five out of the nine provinces: Antwerp, Brabant, Luxembourg, Namur and West Flanders.",
+   "caveat": "Universal male suffrage weighted by plural voting: wealthier and propertied men cast two or three votes each, which manufactured the Catholic majorities of this era.",
+   "unfree": null,
+   "seatLeader": "Catholic Party"
+  },
+  {
+   "id": "1904",
+   "label": "1904",
+   "year": 1904,
+   "date": "29 May 1904",
+   "era": "plural",
+   "totalSeats": 81,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholic Party",
+     "leader": "Paul de Smet de Naeyer",
+     "seats": 38,
+     "seatChange": null,
+     "votes": 486643,
+     "share": 43.53,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": null,
+     "votes": 283411,
+     "share": 25.35,
+     "swing": null
+    },
+    {
+     "name": "Belgian Labour Party",
+     "leader": "Georges Maes",
+     "seats": 19,
+     "seatChange": null,
+     "votes": 297847,
+     "share": 26.64,
+     "swing": null
+    },
+    {
+     "name": "Christene Volkspartij",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 20761,
+     "share": 1.86,
+     "swing": null
+    },
+    {
+     "name": "Catholic Dissidents",
+     "leader": "Paul de Smet de Naeyer",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 17391,
+     "share": 1.56,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "Universal male suffrage weighted by plural voting: wealthier and propertied men cast two or three votes each, which manufactured the Catholic majorities of this era.",
+   "unfree": null,
+   "seatLeader": "Catholic Party"
+  },
+  {
+   "id": "1906",
+   "label": "1906",
+   "year": 1906,
+   "date": "27 May 1906",
+   "era": "plural",
+   "totalSeats": 83,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholic Party",
+     "leader": "Paul de Smet de Naeyer",
+     "seats": 41,
+     "seatChange": null,
+     "votes": 526856,
+     "share": 44.92,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": "Paul Hymans",
+     "seats": 15,
+     "seatChange": null,
+     "votes": 207341,
+     "share": 17.68,
+     "swing": null
+    },
+    {
+     "name": "Liberal–Socialist kartels",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 224357,
+     "share": 19.13,
+     "swing": null
+    },
+    {
+     "name": "Liberal–Socialist Cartel",
+     "leader": "Paul Janson",
+     "seats": 12,
+     "seatChange": null,
+     "votes": 224357,
+     "share": 19.13,
+     "swing": null
+    },
+    {
+     "name": "Catholic Workers' Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 109590,
+     "share": 9.34,
+     "swing": null
+    },
+    {
+     "name": "PCO",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 109590,
+     "share": 9.34,
+     "swing": null
+    },
+    {
+     "name": "Belgian Labour Party",
+     "leader": "Émile Vandervelde",
+     "seats": 6,
+     "seatChange": null,
+     "votes": 72224,
+     "share": 6.16,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "Universal male suffrage weighted by plural voting: wealthier and propertied men cast two or three votes each, which manufactured the Catholic majorities of this era.",
+   "unfree": null,
+   "seatLeader": "Catholic Party"
+  },
+  {
+   "id": "1908",
+   "label": "1908",
+   "year": 1908,
+   "date": "24 May 1908",
+   "era": "plural",
+   "totalSeats": 81,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholic Party",
+     "leader": "Frans Schollaert",
+     "seats": 37,
+     "seatChange": null,
+     "votes": 517679,
+     "share": 43.1,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": 331981,
+     "share": 27.64,
+     "swing": null
+    },
+    {
+     "name": "Belgian Labour Party",
+     "leader": "Georges Maes",
+     "seats": 19,
+     "seatChange": null,
+     "votes": 271870,
+     "share": 22.64,
+     "swing": null
+    },
+    {
+     "name": "Liberal–Socialist kartels",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 40068,
+     "share": 3.34,
+     "swing": null
+    },
+    {
+     "name": "Christene Volkspartij",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 25167,
+     "share": 2.1,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "Universal male suffrage weighted by plural voting: wealthier and propertied men cast two or three votes each, which manufactured the Catholic majorities of this era.",
+   "unfree": null,
+   "seatLeader": "Catholic Party"
+  },
+  {
+   "id": "1910",
+   "label": "1910",
+   "year": 1910,
+   "date": "22 May 1910",
+   "era": "plural",
+   "totalSeats": 87,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholic Party",
+     "leader": "Frans Schollaert",
+     "seats": 49,
+     "seatChange": null,
+     "votes": 676849,
+     "share": 53.11,
+     "swing": null
+    },
+    {
+     "name": "Liberal–Socialist kartels",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": 243063,
+     "share": 19.07,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": 236467,
+     "share": 18.55,
+     "swing": null
+    },
+    {
+     "name": "Belgian Labour Party",
+     "leader": "Georges Maes",
+     "seats": 6,
+     "seatChange": null,
+     "votes": 85326,
+     "share": 6.69,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Liberal Adolphe May defeated Catholic Emile de Lalieux de La Rocq in Nivelles and the socialist Joseph Bologne defeated liberal Léopold Gillard in Namur. All other representatives were either re-elected, or succeeded by candidates of the same party.",
+   "caveat": "Universal male suffrage weighted by plural voting: wealthier and propertied men cast two or three votes each, which manufactured the Catholic majorities of this era.",
+   "unfree": null,
+   "seatLeader": "Catholic Party"
+  },
+  {
+   "id": "1912",
+   "label": "1912",
+   "year": 1912,
+   "date": "2 June 1912",
+   "era": "plural",
+   "totalSeats": 186,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholic Party",
+     "leader": "Charles de Broqueville",
+     "seats": 101,
+     "seatChange": null,
+     "votes": 1337315,
+     "share": 51.01,
+     "swing": null
+    },
+    {
+     "name": "Liberal–Socialist kartels",
+     "leader": null,
+     "seats": 45,
+     "seatChange": null,
+     "votes": 710459,
+     "share": 27.1,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": 291084,
+     "share": 11.1,
+     "swing": null
+    },
+    {
+     "name": "Belgian Labour Party",
+     "leader": "Laurent Vandersmissen",
+     "seats": 18,
+     "seatChange": null,
+     "votes": 243338,
+     "share": 9.28,
+     "swing": null
+    },
+    {
+     "name": "Christene Volkspartij",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 19317,
+     "share": 0.74,
+     "swing": null
+    },
+    {
+     "name": "CVP",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 19317,
+     "share": 0.74,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Catholics had formed the government continuously since 1884. Minister Schollaert had drafted a controversial education law, because of which he was forced to resign in June 1911.",
+   "caveat": "Universal male suffrage weighted by plural voting: wealthier and propertied men cast two or three votes each, which manufactured the Catholic majorities of this era.",
+   "unfree": null,
+   "seatLeader": "Catholic Party"
+  },
+  {
+   "id": "1914",
+   "label": "1914",
+   "year": 1914,
+   "date": "24 May 1914",
+   "era": "equal",
+   "totalSeats": 88,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholic Party",
+     "leader": "Charles de Broqueville",
+     "seats": 41,
+     "seatChange": null,
+     "votes": 570806,
+     "share": 42.77,
+     "swing": null
+    },
+    {
+     "name": "Belgian Labour Party",
+     "leader": "Laurent Vandersmissen",
+     "seats": 26,
+     "seatChange": null,
+     "votes": 404701,
+     "share": 30.32,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": 326922,
+     "share": 24.5,
+     "swing": null
+    },
+    {
+     "name": "Christene Volkspartij",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 22219,
+     "share": 1.66,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The elections occurred shortly before the outbreak of World War I. The newly elected legislature met for just one day in a special session: on 4 August 1914, when King Albert I addressed the United Chambers of Parliament upon the German invasion of Belgium.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Catholic Party"
+  },
+  {
+   "id": "1919",
+   "label": "1919",
+   "year": 1919,
+   "date": "16 November 1919",
+   "era": "equal",
+   "totalSeats": 186,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Belgian Labour Party",
+     "leader": null,
+     "seats": 70,
+     "seatChange": null,
+     "votes": 645124,
+     "share": 36.62,
+     "swing": null
+    },
+    {
+     "name": "Catholic Party",
+     "leader": null,
+     "seats": 70,
+     "seatChange": null,
+     "votes": 619911,
+     "share": 35.19,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": null,
+     "votes": 310876,
+     "share": 17.65,
+     "swing": null
+    },
+    {
+     "name": "Frontpartij",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 60814,
+     "share": 3.45,
+     "swing": null
+    },
+    {
+     "name": "Catholic dissidents",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 36063,
+     "share": 2.05,
+     "swing": null
+    },
+    {
+     "name": "Combatants",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 19075,
+     "share": 1.08,
+     "swing": null
+    },
+    {
+     "name": "Middle Class Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 19939,
+     "share": 1.13,
+     "swing": null
+    },
+    {
+     "name": "National Renaissance",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 18546,
+     "share": 1.05,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "One man, one vote",
+   "summary": "General elections were held in Belgium on 16 November 1919. Although the Belgian Labour Party received the most votes in the Chamber of Representatives elections, the Catholic Party remained the largest party in both the Chamber and the Senate.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Belgian Labour Party"
+  },
+  {
+   "id": "1921",
+   "label": "1921",
+   "year": 1921,
+   "date": "20 November 1921",
+   "era": "equal",
+   "totalSeats": 186,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholic Party",
+     "leader": null,
+     "seats": 78,
+     "seatChange": 8.0,
+     "votes": 715041,
+     "share": 37.01,
+     "swing": null
+    },
+    {
+     "name": "Belgian Labour Party",
+     "leader": null,
+     "seats": 68,
+     "seatChange": 2.0,
+     "votes": 672445,
+     "share": 34.81,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 33,
+     "seatChange": 1.0,
+     "votes": 343929,
+     "share": 17.8,
+     "swing": null
+    },
+    {
+     "name": "Frontpartij",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 1.0,
+     "votes": 58790,
+     "share": 3.04,
+     "swing": null
+    },
+    {
+     "name": "Catholic dissidents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": 64746,
+     "share": 3.35,
+     "swing": null
+    },
+    {
+     "name": "Combatants",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": 20633,
+     "share": 1.07,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A constitutional change eased the requirements to be a candidate for the Senate. As a compensation, the number of senators elected by provincial councils was increased from 27 to 40 and a new type of senators was introduced: 20 co-opted senators.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Catholic Party"
+  },
+  {
+   "id": "1925",
+   "label": "1925",
+   "year": 1925,
+   "date": "5 April 1925",
+   "era": "equal",
+   "totalSeats": 187,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Belgian Labour Party",
+     "leader": "Joseph Van Roosbroeck",
+     "seats": 78,
+     "seatChange": 10.0,
+     "votes": 821116,
+     "share": 39.46,
+     "swing": 4.47
+    },
+    {
+     "name": "Catholic Party",
+     "leader": "Aloys Van de Vyvere",
+     "seats": 78,
+     "seatChange": 0.0,
+     "votes": 778366,
+     "share": 37.41,
+     "swing": 3.4
+    },
+    {
+     "name": "Liberal Party",
+     "leader": "Édouard Pecher",
+     "seats": 23,
+     "seatChange": 10.0,
+     "votes": 304757,
+     "share": 14.65,
+     "swing": -3.15
+    },
+    {
+     "name": "Frontpartij",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 2.0,
+     "votes": 80407,
+     "share": 3.86,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Belgium",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": 34149,
+     "share": 1.64,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "General elections were held in Belgium on 5 April 1925. The result was a victory for the Belgian Labour Party, which won 78 of the 187 seats in the Chamber of Representatives.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Belgian Labour Party"
+  },
+  {
+   "id": "1929",
+   "label": "1929",
+   "year": 1929,
+   "date": "26 May 1929",
+   "era": "equal",
+   "totalSeats": 187,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholic Party",
+     "leader": "Henri Jaspar",
+     "seats": 71,
+     "seatChange": 7.0,
+     "votes": 788914,
+     "share": 35.38,
+     "swing": -2.04
+    },
+    {
+     "name": "Belgian Labour Party",
+     "leader": "Joseph Van Roosbroeck",
+     "seats": 70,
+     "seatChange": 8.0,
+     "votes": 803347,
+     "share": 36.02,
+     "swing": -3.46
+    },
+    {
+     "name": "Liberal Party",
+     "leader": "Albert Devèze",
+     "seats": 28,
+     "seatChange": 5.0,
+     "votes": 369114,
+     "share": 16.55,
+     "swing": 1.9
+    },
+    {
+     "name": "Frontpartij",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 5.0,
+     "votes": 132567,
+     "share": 5.94,
+     "swing": null
+    },
+    {
+     "name": "Christian Workers' Alliance",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 5.0,
+     "votes": 52642,
+     "share": 2.36,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Belgium",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": 43237,
+     "share": 1.94,
+     "swing": null
+    },
+    {
+     "name": "Lille List",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 12905,
+     "share": 0.58,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "18301831183318351837183918411843184518471848185018511852185418551856185718591861186318641866186718681870 (Jun)1870 (Aug)18721874187618781880188218841886188818901892189418961898190019021904190619081910191219141919192119251929193219361939194619491950195419581961196519681971197419771978198119851987199119951999200320072010201420192024",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Catholic Party"
+  },
+  {
+   "id": "1932",
+   "label": "1932",
+   "year": 1932,
+   "date": "27 November 1932",
+   "era": "equal",
+   "totalSeats": 187,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholic Party",
+     "leader": "Charles de Broqueville",
+     "seats": 79,
+     "seatChange": 8.0,
+     "votes": 856027,
+     "share": 38.42,
+     "swing": 3.04
+    },
+    {
+     "name": "Belgian Labour Party",
+     "leader": "Joseph Van Roosbroeck",
+     "seats": 73,
+     "seatChange": 3.0,
+     "votes": 824946,
+     "share": 37.03,
+     "swing": 1.01
+    },
+    {
+     "name": "Liberal Party",
+     "leader": "Albert Devèze",
+     "seats": 24,
+     "seatChange": 4.0,
+     "votes": 313722,
+     "share": 14.08,
+     "swing": -2.47
+    },
+    {
+     "name": "Frontpartij",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 3.0,
+     "votes": 126113,
+     "share": 5.66,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Belgium",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2.0,
+     "votes": 64552,
+     "share": 2.9,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The elections occurred during an economic crisis, the Great Depression. The Catholic-Liberal government led by Jules Renkin faced rising unemployment, derailing public finances and strikes benefiting the Communist Party.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Catholic Party"
+  },
+  {
+   "id": "1936",
+   "label": "1936",
+   "year": 1936,
+   "date": "24 May 1936",
+   "era": "equal",
+   "totalSeats": 202,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Belgian Labour Party",
+     "leader": "Emile Vandervelde",
+     "seats": 70,
+     "seatChange": 3.0,
+     "votes": 758485,
+     "share": 32.11,
+     "swing": -4.92
+    },
+    {
+     "name": "Catholic Party",
+     "leader": "Paul van Zeeland",
+     "seats": 61,
+     "seatChange": 18.0,
+     "votes": 653717,
+     "share": 27.67,
+     "swing": -10.75
+    },
+    {
+     "name": "Liberal Party",
+     "leader": "Léon Dens",
+     "seats": 23,
+     "seatChange": 1.0,
+     "votes": 292970,
+     "share": 12.4,
+     "swing": -1.68
+    },
+    {
+     "name": "Rexist Party",
+     "leader": "Léon Degrelle",
+     "seats": 21,
+     "seatChange": null,
+     "votes": 271481,
+     "share": 11.49,
+     "swing": null
+    },
+    {
+     "name": "Vlaamsch Nationaal Verbond",
+     "leader": "Staf De Clercq",
+     "seats": 16,
+     "seatChange": 8.0,
+     "votes": 166737,
+     "share": 7.06,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Belgium",
+     "leader": "Joseph Jacquemotte",
+     "seats": 9,
+     "seatChange": 6.0,
+     "votes": 143223,
+     "share": 6.06,
+     "swing": 3.16
+    },
+    {
+     "name": "Christian Democratic Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 22224,
+     "share": 0.94,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The Rex shock",
+   "summary": "The distribution of seats among the electoral districts of the Chamber of Representatives was as follows. Several arrondissements got one or more additional seats.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Belgian Labour Party"
+  },
+  {
+   "id": "1939",
+   "label": "1939",
+   "year": 1939,
+   "date": "2 April 1939",
+   "era": "equal",
+   "totalSeats": 202,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Catholic Party",
+     "leader": null,
+     "seats": 67,
+     "seatChange": 6.0,
+     "votes": 764843,
+     "share": 32.71,
+     "swing": null
+    },
+    {
+     "name": "Belgian Labour Party",
+     "leader": null,
+     "seats": 64,
+     "seatChange": 6.0,
+     "votes": 705969,
+     "share": 30.19,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 33,
+     "seatChange": 10.0,
+     "votes": 401991,
+     "share": 17.19,
+     "swing": null
+    },
+    {
+     "name": "Vlaamsch Nationaal Verbond",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 1.0,
+     "votes": 193528,
+     "share": 8.28,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Belgium",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 0.0,
+     "votes": 125428,
+     "share": 5.36,
+     "swing": null
+    },
+    {
+     "name": "Rexist Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 17.0,
+     "votes": 103821,
+     "share": 4.44,
+     "swing": null
+    },
+    {
+     "name": "Technocrat Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 35124,
+     "share": 1.5,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "On 22 February 1939, the Pierlot Government succeeded the Spaak Government. The Spaak Government was in a political crisis caused by, among other things, the Martens Affair.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Catholic Party"
+  },
+  {
+   "id": "1946",
+   "label": "1946",
+   "year": 1946,
+   "date": "17 February 1946",
+   "era": "postwar",
+   "totalSeats": 202,
+   "majoritySeats": 102,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Christian Social Party",
+     "leader": "Hubert Pierlot",
+     "seats": 92,
+     "seatChange": null,
+     "votes": 1006293,
+     "share": 42.54,
+     "swing": 8.96
+    },
+    {
+     "name": "Belgian Socialist Party",
+     "leader": "Paul-Henri Spaak",
+     "seats": 69,
+     "seatChange": null,
+     "votes": 746738,
+     "share": 31.57,
+     "swing": 2.13
+    },
+    {
+     "name": "Communist Party of Belgium",
+     "leader": "Julien Lahaut",
+     "seats": 23,
+     "seatChange": null,
+     "votes": 300099,
+     "share": 12.69,
+     "swing": 8.04
+    },
+    {
+     "name": "Liberal Party",
+     "leader": "Roger Motz",
+     "seats": 17,
+     "seatChange": null,
+     "votes": 211143,
+     "share": 8.93,
+     "swing": -8.25
+    },
+    {
+     "name": "Belgian Democratic Union",
+     "leader": "Pierre Clerdent",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 51095,
+     "share": 2.16,
+     "swing": 2.16
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "They were the first elections after the Second World War and saw fundamental changes among the political parties. The Flemish National Union, which held 17 seats prior to the war and collaborated with Nazi Germany during the war, was outlawed.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Christian Social Party"
+  },
+  {
+   "id": "1949",
+   "label": "1949",
+   "year": 1949,
+   "date": "26 June 1949",
+   "era": "postwar",
+   "totalSeats": 212,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Christian Social Party",
+     "leader": "Gaston Eyskens",
+     "seats": 105,
+     "seatChange": 13.0,
+     "votes": 2190895,
+     "share": 43.55,
+     "swing": 1.01
+    },
+    {
+     "name": "Belgian Socialist Party",
+     "leader": "Paul-Henri Spaak",
+     "seats": 66,
+     "seatChange": -3.0,
+     "votes": 1496539,
+     "share": 29.75,
+     "swing": -1.81
+    },
+    {
+     "name": "Liberal Party",
+     "leader": "Roger Motz",
+     "seats": 29,
+     "seatChange": 12.0,
+     "votes": 767180,
+     "share": 15.25,
+     "swing": 6.32
+    },
+    {
+     "name": "Communist Party of Belgium",
+     "leader": "Julien Lahaut",
+     "seats": 12,
+     "seatChange": 11.0,
+     "votes": 376765,
+     "share": 7.49,
+     "swing": -5.2
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "General elections were held in Belgium on 26 June 1949. Several reforms took effect prior to the elections; they were the first after the introduction of universal women's suffrage; the number of seats in the Chamber of Representatives was increased from 202 to 212, and from now on, elections for the nine provincial councils were held simultaneously with parliamentary elections",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Christian Social Party"
+  },
+  {
+   "id": "1950",
+   "label": "1950",
+   "year": 1950,
+   "date": "4 June 1950",
+   "era": "postwar",
+   "totalSeats": 212,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Christian Social Party",
+     "leader": "Jean Duvieusart",
+     "seats": 108,
+     "seatChange": 3.0,
+     "votes": 2356608,
+     "share": 47.68,
+     "swing": 4.13
+    },
+    {
+     "name": "Belgian Socialist Party",
+     "leader": "Max Buset",
+     "seats": 73,
+     "seatChange": 7.0,
+     "votes": 1705781,
+     "share": 34.51,
+     "swing": 4.76
+    },
+    {
+     "name": "Liberal Party",
+     "leader": "Roger Motz",
+     "seats": 20,
+     "seatChange": 9.0,
+     "votes": 556102,
+     "share": 11.25,
+     "swing": -4.0
+    },
+    {
+     "name": "Communist Party of Belgium",
+     "leader": "Edgard Lalmand",
+     "seats": 7,
+     "seatChange": 5.0,
+     "votes": 234541,
+     "share": 4.75,
+     "swing": -2.74
+    },
+    {
+     "name": "Liberal–Socialist Kartels",
+     "leader": "Max Buset",
+     "seats": 4,
+     "seatChange": 4.0,
+     "votes": 87252,
+     "share": 1.77,
+     "swing": 4.76
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The royal question",
+   "summary": "General elections were held in Belgium on 4 June 1950. The result was a victory for the Christian Social Party, which won 108 of the 212 seats in the Chamber of Representatives and 54 of the 106 seats in the Senate.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Christian Social Party"
+  },
+  {
+   "id": "1954",
+   "label": "1954",
+   "year": 1954,
+   "date": "11 April 1954",
+   "era": "postwar",
+   "totalSeats": 212,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Christian Social Party",
+     "leader": "Jean Van Houtte",
+     "seats": 95,
+     "seatChange": 13.0,
+     "votes": 2123408,
+     "share": 41.14,
+     "swing": -6.53
+    },
+    {
+     "name": "Belgian Socialist Party",
+     "leader": "Achille Van Acker",
+     "seats": 82,
+     "seatChange": 9.0,
+     "votes": 1927015,
+     "share": 37.34,
+     "swing": 2.83
+    },
+    {
+     "name": "Liberal Party",
+     "leader": "Henri Liebaert",
+     "seats": 24,
+     "seatChange": 4.0,
+     "votes": 626983,
+     "share": 12.15,
+     "swing": 0.9
+    },
+    {
+     "name": "Liberal–Socialist Kartels",
+     "leader": "Achille Van Acker",
+     "seats": 5,
+     "seatChange": 1.0,
+     "votes": 108175,
+     "share": 2.1,
+     "swing": 2.83
+    },
+    {
+     "name": "Communist Party of Belgium",
+     "leader": "Edgard Lalmand",
+     "seats": 4,
+     "seatChange": 3.0,
+     "votes": 184108,
+     "share": 3.57,
+     "swing": -1.18
+    },
+    {
+     "name": "Christian Flemish People's Union",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 113632,
+     "share": 2.2,
+     "swing": null
+    },
+    {
+     "name": "CVV",
+     "leader": "Walter Couvreur",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 113632,
+     "share": 2.2,
+     "swing": null
+    },
+    {
+     "name": "Christian Social Rally of Liberty",
+     "leader": "Jean Van Houtte",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 42979,
+     "share": 0.83,
+     "swing": -6.53
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "General elections were held in Belgium on 11 April 1954. The dominant Christian Social Party won 95 of the 212 seats in the Chamber of Representatives and 49 of the 106 seats in the Senate.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Christian Social Party"
+  },
+  {
+   "id": "1958",
+   "label": "1958",
+   "year": 1958,
+   "date": "1 June 1958",
+   "era": "postwar",
+   "totalSeats": 212,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Christian Social Party",
+     "leader": "Gaston Eyskens",
+     "seats": 104,
+     "seatChange": 9.0,
+     "votes": 2465549,
+     "share": 46.5,
+     "swing": 5.35
+    },
+    {
+     "name": "Belgian Socialist Party",
+     "leader": "Achille Van Acker",
+     "seats": 80,
+     "seatChange": 2.0,
+     "votes": 1897646,
+     "share": 35.79,
+     "swing": -1.55
+    },
+    {
+     "name": "Liberal Party",
+     "leader": "Maurice Destenay",
+     "seats": 20,
+     "seatChange": 4.0,
+     "votes": 585999,
+     "share": 11.05,
+     "swing": -1.1
+    },
+    {
+     "name": "Liberal–Socialist Kartels",
+     "leader": "Achille Van Acker",
+     "seats": 5,
+     "seatChange": 0.0,
+     "votes": 111284,
+     "share": 2.1,
+     "swing": -1.55
+    },
+    {
+     "name": "Communist Party of Belgium",
+     "leader": "Ernest Burnelle",
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": 100145,
+     "share": 1.89,
+     "swing": -1.68
+    },
+    {
+     "name": "People's Union",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 104823,
+     "share": 1.98,
+     "swing": null
+    },
+    {
+     "name": "VU",
+     "leader": "Frans Van der Elst",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 104823,
+     "share": 1.98,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "General elections were held in Belgium on 1 June 1958. The result was a victory for the Christian Social Party, which won 104 of the 212 seats in the Chamber of Representatives and 53 of the 106 seats in the Senate.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Christian Social Party"
+  },
+  {
+   "id": "1961",
+   "label": "1961",
+   "year": 1961,
+   "date": "26 March 1961",
+   "era": "postwar",
+   "totalSeats": 212,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Christian Social Party",
+     "leader": "Théo Lefèvre",
+     "seats": 96,
+     "seatChange": 8.0,
+     "votes": 2182642,
+     "share": 41.46,
+     "swing": -5.04
+    },
+    {
+     "name": "Belgian Socialist Party",
+     "leader": "Léo Collard",
+     "seats": 84,
+     "seatChange": 4.0,
+     "votes": 1933424,
+     "share": 36.72,
+     "swing": 0.93
+    },
+    {
+     "name": "Liberal Party",
+     "leader": "Roger Motz",
+     "seats": 20,
+     "seatChange": 0.0,
+     "votes": 649376,
+     "share": 12.33,
+     "swing": 1.28
+    },
+    {
+     "name": "People's Union",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 4.0,
+     "votes": 182407,
+     "share": 3.46,
+     "swing": null
+    },
+    {
+     "name": "VU",
+     "leader": "Frans Van der Elst",
+     "seats": 5,
+     "seatChange": 4.0,
+     "votes": 182407,
+     "share": 3.46,
+     "swing": 1.48
+    },
+    {
+     "name": "Communist Party of Belgium",
+     "leader": "Ernest Burnelle",
+     "seats": 5,
+     "seatChange": 3.0,
+     "votes": 162238,
+     "share": 3.08,
+     "swing": 1.19
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": 46244,
+     "share": 0.88,
+     "swing": null
+    },
+    {
+     "name": "National Rally",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 42450,
+     "share": 0.81,
+     "swing": null
+    },
+    {
+     "name": "RN",
+     "leader": "Jean-Marie Evrard",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 42450,
+     "share": 0.81,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "General elections were held in Belgium on 26 March 1961. The result was a victory for the Christian Social Party, which won 96 of the 212 seats in the Chamber of Representatives and 47 of the 106 seats in the Senate.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Christian Social Party"
+  },
+  {
+   "id": "1965",
+   "label": "1965",
+   "year": 1965,
+   "date": "23 May 1965",
+   "era": "postwar",
+   "totalSeats": 212,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Christian Social Party",
+     "leader": "Pierre Harmel",
+     "seats": 77,
+     "seatChange": 19.0,
+     "votes": 1785211,
+     "share": 34.43,
+     "swing": -7.01
+    },
+    {
+     "name": "Belgian Socialist Party",
+     "leader": "Léo Collard",
+     "seats": 64,
+     "seatChange": 20.0,
+     "votes": 1465503,
+     "share": 28.27,
+     "swing": -8.44
+    },
+    {
+     "name": "Party for Freedom and Progress",
+     "leader": "Omer Vanaudenhove",
+     "seats": 48,
+     "seatChange": 28.0,
+     "votes": 1119991,
+     "share": 21.6,
+     "swing": null
+    },
+    {
+     "name": "People's Union",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 7.0,
+     "votes": 346860,
+     "share": 6.69,
+     "swing": null
+    },
+    {
+     "name": "VU",
+     "leader": "Frans Van der Elst",
+     "seats": 12,
+     "seatChange": 7.0,
+     "votes": 346860,
+     "share": 6.69,
+     "swing": 3.23
+    },
+    {
+     "name": "Communist Party of Belgium",
+     "leader": "Ernest Burnelle",
+     "seats": 6,
+     "seatChange": 1.0,
+     "votes": 236721,
+     "share": 4.57,
+     "swing": 1.69
+    },
+    {
+     "name": "Democratic Front of the Francophones",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 68966,
+     "share": 1.33,
+     "swing": null
+    },
+    {
+     "name": "DéFI",
+     "leader": "Paul Brien",
+     "seats": 3,
+     "seatChange": null,
+     "votes": 68966,
+     "share": 1.33,
+     "swing": null
+    },
+    {
+     "name": "Walloon Front",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 24245,
+     "share": 0.47,
+     "swing": null
+    },
+    {
+     "name": "Walloon Workers' Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 23582,
+     "share": 0.45,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "General elections were held in Belgium on 23 May 1965. The result was a victory for the Christian Social Party, which won 77 of the 212 seats in the Chamber of Representatives and 44 of the 106 seats in the Senate.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Christian Social Party"
+  },
+  {
+   "id": "1968",
+   "label": "1968",
+   "year": 1968,
+   "date": "31 March 1968",
+   "era": "postwar",
+   "totalSeats": 212,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Christian Social Party",
+     "leader": "Gaston Eyskens",
+     "seats": 69,
+     "seatChange": 8.0,
+     "votes": 1643785,
+     "share": 31.75,
+     "swing": -2.65
+    },
+    {
+     "name": "Belgian Socialist Party",
+     "leader": "Léo Collard",
+     "seats": 59,
+     "seatChange": 5.0,
+     "votes": 1403107,
+     "share": 27.1,
+     "swing": -1.18
+    },
+    {
+     "name": "Party for Freedom and Progress",
+     "leader": "Omer Vanaudenhove",
+     "seats": 47,
+     "seatChange": 1.0,
+     "votes": 1080894,
+     "share": 20.87,
+     "swing": -0.74
+    },
+    {
+     "name": "People's Union",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 8.0,
+     "votes": 506697,
+     "share": 9.79,
+     "swing": null
+    },
+    {
+     "name": "VU",
+     "leader": "Frans Van der Elst",
+     "seats": 20,
+     "seatChange": 8.0,
+     "votes": 506697,
+     "share": 9.79,
+     "swing": 3.1
+    },
+    {
+     "name": "Democratic Front of the Francophones",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 3.0,
+     "votes": 154023,
+     "share": 2.97,
+     "swing": null
+    },
+    {
+     "name": "FDF",
+     "leader": "Albert Peeters",
+     "seats": 6,
+     "seatChange": 3.0,
+     "votes": 154023,
+     "share": 2.92,
+     "swing": 1.59
+    },
+    {
+     "name": "Walloon Rally",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 151421,
+     "share": 2.92,
+     "swing": null
+    },
+    {
+     "name": "RW",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 151421,
+     "share": 2.92,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Belgium",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 1.0,
+     "votes": 170625,
+     "share": 3.3,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The unitary parties break",
+   "summary": "The linguistic crisis would trigger the split of the dominant Christian Social Party into a Flemish and French-speaking party. The two other main parties would follow suit.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Christian Social Party"
+  },
+  {
+   "id": "1971",
+   "label": "1971",
+   "year": 1971,
+   "date": "7 November 1971",
+   "era": "linguistic",
+   "totalSeats": 212,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Belgian Socialist Party",
+     "leader": "Jos Van Eynde",
+     "seats": 57,
+     "seatChange": 2.0,
+     "votes": 1335730,
+     "share": 25.29,
+     "swing": -1.81
+    },
+    {
+     "name": "Christian People's Party",
+     "leader": null,
+     "seats": 40,
+     "seatChange": null,
+     "votes": 967701,
+     "share": 18.32,
+     "swing": null
+    },
+    {
+     "name": "Party for Freedom and Progress",
+     "leader": null,
+     "seats": 34,
+     "seatChange": 13.0,
+     "votes": 865655,
+     "share": 16.39,
+     "swing": null
+    },
+    {
+     "name": "PVV-PLP",
+     "leader": null,
+     "seats": 34,
+     "seatChange": -13.0,
+     "votes": 865655,
+     "share": 16.39,
+     "swing": -4.48
+    },
+    {
+     "name": "People's Union",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 1.0,
+     "votes": 586917,
+     "share": 11.11,
+     "swing": null
+    },
+    {
+     "name": "VU",
+     "leader": "Frans Van der Elst",
+     "seats": 21,
+     "seatChange": 1.0,
+     "votes": 586917,
+     "share": 11.11,
+     "swing": 1.32
+    },
+    {
+     "name": "Christian Social Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": 327393,
+     "share": 6.2,
+     "swing": null
+    },
+    {
+     "name": "Walloon Rally",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 6.0,
+     "votes": 306606,
+     "share": 5.81,
+     "swing": null
+    },
+    {
+     "name": "PSC–CVP",
+     "leader": null,
+     "seats": 12,
+     "seatChange": -57.0,
+     "votes": 292101,
+     "share": 5.53,
+     "swing": null
+    },
+    {
+     "name": "FDF–Walloon Rally",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 286639,
+     "share": 5.43,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "General elections were held in Belgium on 7 November 1971. The result was a victory for the Christian People's Party, which won 40 of the 212 seats in the Chamber of Representatives and 34 of the 106 seats in the Senate.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Belgian Socialist Party"
+  },
+  {
+   "id": "1974",
+   "label": "1974",
+   "year": 1974,
+   "date": "10 March 1974",
+   "era": "linguistic",
+   "totalSeats": 212,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Belgian Socialist Party",
+     "leader": "Edmond Leburton",
+     "seats": 59,
+     "seatChange": 2.0,
+     "votes": 1314796,
+     "share": 25.0,
+     "swing": 16.26
+    },
+    {
+     "name": "Christian People's Party",
+     "leader": null,
+     "seats": 50,
+     "seatChange": 10.0,
+     "votes": 1222646,
+     "share": 23.25,
+     "swing": null
+    },
+    {
+     "name": "CVP",
+     "leader": "Leo Tindemans",
+     "seats": 50,
+     "seatChange": 10.0,
+     "votes": 1222646,
+     "share": 23.25,
+     "swing": 4.91
+    },
+    {
+     "name": "Party for Freedom and Progress",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 4.0,
+     "votes": 798818,
+     "share": 15.19,
+     "swing": null
+    },
+    {
+     "name": "Open Vld",
+     "leader": "Frans Grootjans",
+     "seats": 30,
+     "seatChange": 14.0,
+     "votes": 798818,
+     "share": 15.19,
+     "swing": 7.77
+    },
+    {
+     "name": "People's Union",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 1.0,
+     "votes": 536287,
+     "share": 10.2,
+     "swing": null
+    },
+    {
+     "name": "VU",
+     "leader": "Frans Van der Elst",
+     "seats": 22,
+     "seatChange": 1.0,
+     "votes": 536287,
+     "share": 10.2,
+     "swing": -0.91
+    },
+    {
+     "name": "Christian Social Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 7.0,
+     "votes": 478209,
+     "share": 9.09,
+     "swing": null
+    },
+    {
+     "name": "cdH",
+     "leader": "Charles-Ferdinand Nothomb",
+     "seats": 22,
+     "seatChange": 7.0,
+     "votes": 478209,
+     "share": 9.09,
+     "swing": 2.89
+    },
+    {
+     "name": "FDF–PDLP",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 301303,
+     "share": 5.73,
+     "swing": null
+    },
+    {
+     "name": "DéFI",
+     "leader": "André Lagasse",
+     "seats": 14,
+     "seatChange": 2.0,
+     "votes": 301303,
+     "share": 5.73,
+     "swing": 0.3
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "General elections were held in Belgium on 10 March 1974. The Belgian Socialist Party emerged as the largest faction in the Chamber of Representatives with 59 of the 212 seats.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Belgian Socialist Party"
+  },
+  {
+   "id": "1977",
+   "label": "1977",
+   "year": 1977,
+   "date": "17 April 1977",
+   "era": "linguistic",
+   "totalSeats": 212,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "CVP",
+     "leader": "Leo Tindemans",
+     "seats": 56,
+     "seatChange": 6.0,
+     "votes": 1460757,
+     "share": 26.2,
+     "swing": 2.95
+    },
+    {
+     "name": "Christian People's Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": 1.0,
+     "votes": 1446806,
+     "share": 26.18,
+     "swing": null
+    },
+    {
+     "name": "cdH",
+     "leader": "Georges Gramme",
+     "seats": 24,
+     "seatChange": 2.0,
+     "votes": 406694,
+     "share": 7.29,
+     "swing": -1.8
+    },
+    {
+     "name": "VU",
+     "leader": "Hugo Schiltz",
+     "seats": 20,
+     "seatChange": -2.0,
+     "votes": 559567,
+     "share": 10.04,
+     "swing": -0.16
+    },
+    {
+     "name": "Belgian Socialist Party (Wallonia)",
+     "leader": "Karel Van Miert",
+     "seats": 19,
+     "seatChange": null,
+     "votes": 756401,
+     "share": 13.69,
+     "swing": -13.65
+    },
+    {
+     "name": "Open Vld",
+     "leader": "Frans Grootjans",
+     "seats": 17,
+     "seatChange": -13.0,
+     "votes": 475917,
+     "share": 8.54,
+     "swing": -6.65
+    },
+    {
+     "name": "Belgian Socialist Party (Flanders)",
+     "leader": "Karel Van Miert",
+     "seats": 12,
+     "seatChange": null,
+     "votes": 719533,
+     "share": 13.02,
+     "swing": -13.65
+    },
+    {
+     "name": "Christian Social Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 1.0,
+     "votes": 522613,
+     "share": 9.46,
+     "swing": null
+    },
+    {
+     "name": "People's Union",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 0.0,
+     "votes": 562894,
+     "share": 10.19,
+     "swing": null
+    },
+    {
+     "name": "Party for Freedom and Progress",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 472645,
+     "share": 8.55,
+     "swing": null
+    },
+    {
+     "name": "Party of Reforms and Freedom of Wallonia",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 316292,
+     "share": 5.72,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "General elections were held in Belgium on 17 April 1977. The result was a victory for the Christian People's Party, which won 56 of the 212 seats in the Chamber of Representatives and 28 of the 106 seats in the Senate.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "CVP"
+  },
+  {
+   "id": "1978",
+   "label": "1978",
+   "year": 1978,
+   "date": "17 December 1978",
+   "era": "linguistic",
+   "totalSeats": 212,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Christian People's Party",
+     "leader": null,
+     "seats": 57,
+     "seatChange": 1.0,
+     "votes": 1447112,
+     "share": 26.14,
+     "swing": null
+    },
+    {
+     "name": "CVP",
+     "leader": "Paul Vanden Boeynants",
+     "seats": 57,
+     "seatChange": 1.0,
+     "votes": 1447112,
+     "share": 26.14,
+     "swing": -0.06
+    },
+    {
+     "name": "Belgian Socialist Party (Wallonia)",
+     "leader": null,
+     "seats": 31,
+     "seatChange": 31.0,
+     "votes": 689876,
+     "share": 12.46,
+     "swing": null
+    },
+    {
+     "name": "PS",
+     "leader": "André Cools",
+     "seats": 31,
+     "seatChange": null,
+     "votes": 689876,
+     "share": 12.46,
+     "swing": null
+    },
+    {
+     "name": "Belgian Socialist Party (Flanders)",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 1.0,
+     "votes": 684976,
+     "share": 12.37,
+     "swing": null
+    },
+    {
+     "name": "sp.a",
+     "leader": "Karel Van Miert",
+     "seats": 26,
+     "seatChange": null,
+     "votes": 684976,
+     "share": 12.37,
+     "swing": null
+    },
+    {
+     "name": "Christian Social Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": 1.0,
+     "votes": 560440,
+     "share": 10.12,
+     "swing": null
+    },
+    {
+     "name": "cdH",
+     "leader": "Charles-Ferdinand Nothomb",
+     "seats": 25,
+     "seatChange": 1.0,
+     "votes": 560440,
+     "share": 10.12,
+     "swing": 2.83
+    },
+    {
+     "name": "Party for Freedom and Progress",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 5.0,
+     "votes": 573387,
+     "share": 10.36,
+     "swing": null
+    },
+    {
+     "name": "Open Vld",
+     "leader": "Willy De Clercq",
+     "seats": 22,
+     "seatChange": 5.0,
+     "votes": 573387,
+     "share": 10.36,
+     "swing": 1.82
+    },
+    {
+     "name": "Party of Reforms and Freedom of Wallonia",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 1.0,
+     "votes": 256685,
+     "share": 4.64,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "Egmont's collapse",
+   "summary": "General elections were held in Belgium on 17 December 1978. The Christian People's Party emerged as the largest party, with 57 of the 212 seats in the Chamber of Representatives and 29 of the 106 seats in the Senate.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Christian People's Party"
+  },
+  {
+   "id": "1981",
+   "label": "1981",
+   "year": 1981,
+   "date": "8 November 1981",
+   "era": "linguistic",
+   "totalSeats": 212,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Christian People's Party",
+     "leader": null,
+     "seats": 43,
+     "seatChange": 14.0,
+     "votes": 1165239,
+     "share": 19.34,
+     "swing": null
+    },
+    {
+     "name": "CVP",
+     "leader": "Mark Eyskens",
+     "seats": 43,
+     "seatChange": -14.0,
+     "votes": 1165239,
+     "share": 19.34,
+     "swing": -6.8
+    },
+    {
+     "name": "Parti Socialiste",
+     "leader": "André Cools",
+     "seats": 35,
+     "seatChange": 4.0,
+     "votes": 764921,
+     "share": 12.7,
+     "swing": -0.29
+    },
+    {
+     "name": "Party for Freedom and Progress",
+     "leader": null,
+     "seats": 28,
+     "seatChange": 6.0,
+     "votes": 776871,
+     "share": 12.89,
+     "swing": null
+    },
+    {
+     "name": "Open Vld",
+     "leader": "Willy De Clercq",
+     "seats": 28,
+     "seatChange": 6.0,
+     "votes": 776871,
+     "share": 12.89,
+     "swing": 2.53
+    },
+    {
+     "name": "Socialistische Partij",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 0.0,
+     "votes": 744593,
+     "share": 12.36,
+     "swing": null
+    },
+    {
+     "name": "sp.a",
+     "leader": "Karel Van Miert",
+     "seats": 26,
+     "seatChange": 0.0,
+     "votes": 744593,
+     "share": 12.36,
+     "swing": -0.01
+    },
+    {
+     "name": "Liberal Reformist Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 9.0,
+     "votes": 480380,
+     "share": 7.97,
+     "swing": null
+    },
+    {
+     "name": "PRL",
+     "leader": "Jean Gol",
+     "seats": 24,
+     "seatChange": 9.0,
+     "votes": 480380,
+     "share": 7.97,
+     "swing": 3.33
+    },
+    {
+     "name": "People's Union",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 6.0,
+     "votes": 588436,
+     "share": 9.77,
+     "swing": null
+    },
+    {
+     "name": "VU",
+     "leader": "Vic Anciaux",
+     "seats": 20,
+     "seatChange": 6.0,
+     "votes": 588436,
+     "share": 9.77,
+     "swing": 2.75
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "General elections were held in Belgium on 8 November 1981. Voter turnout was 94.5% in the Chamber election and 94.6% in the Senate election.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Christian People's Party"
+  },
+  {
+   "id": "1985",
+   "label": "1985",
+   "year": 1985,
+   "date": "13 October 1985",
+   "era": "linguistic",
+   "totalSeats": 212,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Christian People's Party",
+     "leader": null,
+     "seats": 49,
+     "seatChange": 6.0,
+     "votes": 1291244,
+     "share": 21.29,
+     "swing": null
+    },
+    {
+     "name": "CVP",
+     "leader": "Wilfried Martens",
+     "seats": 49,
+     "seatChange": 6.0,
+     "votes": 1291244,
+     "share": 21.29,
+     "swing": 1.95
+    },
+    {
+     "name": "Parti Socialiste",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 0.0,
+     "votes": 834488,
+     "share": 13.76,
+     "swing": null
+    },
+    {
+     "name": "Socialistische Partij",
+     "leader": null,
+     "seats": 32,
+     "seatChange": 6.0,
+     "votes": 882200,
+     "share": 14.55,
+     "swing": null
+    },
+    {
+     "name": "sp.a",
+     "leader": "Karel Van Miert",
+     "seats": 32,
+     "seatChange": 6.0,
+     "votes": 882200,
+     "share": 14.55,
+     "swing": 2.19
+    },
+    {
+     "name": "Liberal Reformist Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 0.0,
+     "votes": 619390,
+     "share": 10.21,
+     "swing": null
+    },
+    {
+     "name": "PRL",
+     "leader": "Louis Michel",
+     "seats": 24,
+     "seatChange": 0.0,
+     "votes": 619390,
+     "share": 10.21,
+     "swing": 2.24
+    },
+    {
+     "name": "Party for Freedom and Progress",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 6.0,
+     "votes": 651806,
+     "share": 10.75,
+     "swing": null
+    },
+    {
+     "name": "Open Vld",
+     "leader": "Guy Verhofstadt",
+     "seats": 22,
+     "seatChange": -6.0,
+     "votes": 651806,
+     "share": 10.75,
+     "swing": -2.14
+    },
+    {
+     "name": "Social Christian Party (PSC)",
+     "leader": "Guy Spitaels",
+     "seats": 20,
+     "seatChange": 2.0,
+     "votes": 482254,
+     "share": 7.95,
+     "swing": 1.59
+    },
+    {
+     "name": "cdH",
+     "leader": "Gérard Deprez",
+     "seats": 20,
+     "seatChange": 2.0,
+     "votes": 482254,
+     "share": 7.95,
+     "swing": 1.5
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "General elections were held in Belgium on 13 October 1985. The Christian People's Party emerged as the largest party, with 49 of the 212 seats in the Chamber of Representatives and 25 of the 106 seats in the Senate.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Christian People's Party"
+  },
+  {
+   "id": "1987",
+   "label": "1987",
+   "year": 1987,
+   "date": "13 December 1987",
+   "era": "linguistic",
+   "totalSeats": 212,
+   "majoritySeats": null,
+   "turnout": 93.39,
+   "parties": [
+    {
+     "name": "Christian People's Party",
+     "leader": null,
+     "seats": 43,
+     "seatChange": 6.0,
+     "votes": 1195363,
+     "share": 19.45,
+     "swing": null
+    },
+    {
+     "name": "Parti Socialiste",
+     "leader": null,
+     "seats": 40,
+     "seatChange": 5.0,
+     "votes": 961361,
+     "share": 15.64,
+     "swing": null
+    },
+    {
+     "name": "Socialistische Partij",
+     "leader": null,
+     "seats": 32,
+     "seatChange": 0.0,
+     "votes": 915432,
+     "share": 14.9,
+     "swing": null
+    },
+    {
+     "name": "Party for Freedom and Progress",
+     "leader": null,
+     "seats": 25,
+     "seatChange": 3.0,
+     "votes": 709758,
+     "share": 11.55,
+     "swing": null
+    },
+    {
+     "name": "Liberal Reformist Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": 1.0,
+     "votes": 577959,
+     "share": 9.41,
+     "swing": null
+    },
+    {
+     "name": "Christian Social Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 1.0,
+     "votes": 491908,
+     "share": 8.0,
+     "swing": null
+    },
+    {
+     "name": "People's Union",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 0.0,
+     "votes": 495120,
+     "share": 8.06,
+     "swing": null
+    },
+    {
+     "name": "Agalev",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 2.0,
+     "votes": 275437,
+     "share": 4.48,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Christian People's Party"
+  },
+  {
+   "id": "1991",
+   "label": "1991",
+   "year": 1991,
+   "date": "24 November 1991",
+   "era": "linguistic",
+   "totalSeats": 212,
+   "majoritySeats": null,
+   "turnout": 92.72,
+   "parties": [
+    {
+     "name": "Christian People Party",
+     "leader": null,
+     "seats": 39,
+     "seatChange": 4.0,
+     "votes": 1036165,
+     "share": 16.81,
+     "swing": null
+    },
+    {
+     "name": "Parti Socialiste",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 5.0,
+     "votes": 831199,
+     "share": 13.49,
+     "swing": null
+    },
+    {
+     "name": "Socialistische Partij",
+     "leader": null,
+     "seats": 28,
+     "seatChange": 4.0,
+     "votes": 737976,
+     "share": 11.98,
+     "swing": null
+    },
+    {
+     "name": "Party for Freedom and Progress",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 1.0,
+     "votes": 738016,
+     "share": 11.98,
+     "swing": null
+    },
+    {
+     "name": "Liberal Reformist Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 3.0,
+     "votes": 501647,
+     "share": 8.14,
+     "swing": null
+    },
+    {
+     "name": "Christian Social Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 1.0,
+     "votes": 476730,
+     "share": 7.74,
+     "swing": null
+    },
+    {
+     "name": "Vlaams Blok",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 10.0,
+     "votes": 405247,
+     "share": 6.58,
+     "swing": null
+    },
+    {
+     "name": "People's Union",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 6.0,
+     "votes": 363124,
+     "share": 5.89,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "General elections were held in Belgium on 24 November 1991 to elect members of the Chamber of Representatives and Senate. The results represented a big loss for the majority parties (Christian democrats and Socialists) and significant gains for the Vlaams Blok.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Christian People Party"
+  },
+  {
+   "id": "1995",
+   "label": "1995",
+   "year": 1995,
+   "date": "21 May 1995",
+   "era": "federal",
+   "totalSeats": 150,
+   "majoritySeats": 36,
+   "turnout": 91.15,
+   "parties": [
+    {
+     "name": "Christian People's Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": 10.0,
+     "votes": 1042933,
+     "share": 17.18,
+     "swing": null
+    },
+    {
+     "name": "Flemish Liberals and Democrats",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 5.0,
+     "votes": 798363,
+     "share": 13.15,
+     "swing": null
+    },
+    {
+     "name": "Parti Socialiste",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 14.0,
+     "votes": 720819,
+     "share": 11.87,
+     "swing": null
+    },
+    {
+     "name": "Socialistische Partij",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 8.0,
+     "votes": 762444,
+     "share": 12.56,
+     "swing": null
+    },
+    {
+     "name": "Liberal Reformist Party–Democratic Front of Francophones",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 5.0,
+     "votes": 623250,
+     "share": 10.26,
+     "swing": null
+    },
+    {
+     "name": "Christian Social Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 6.0,
+     "votes": 469101,
+     "share": 7.73,
+     "swing": null
+    },
+    {
+     "name": "Vlaams Blok",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 1.0,
+     "votes": 475677,
+     "share": 7.83,
+     "swing": null
+    },
+    {
+     "name": "Ecolo",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 4.0,
+     "votes": 243362,
+     "share": 4.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Jean-Luc Dehaene",
+    "party": "CVP"
+   },
+   "knownAs": null,
+   "summary": "Federal elections were held in Belgium on 21 May 1995 to elect members of the Chamber of Representatives and Senate. The Christian People's Party (CVP) kept its position as largest party in Flanders and overall in Belgium, and Jean-Luc Dehaene (CVP) continued as Prime Minister.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Christian People's Party"
+  },
+  {
+   "id": "1999",
+   "label": "1999",
+   "year": 1999,
+   "date": "13 June 1999",
+   "era": "federal",
+   "totalSeats": 150,
+   "majoritySeats": 36,
+   "turnout": 90.57,
+   "parties": [
+    {
+     "name": "Flemish Liberals and Democrats",
+     "leader": null,
+     "seats": 23,
+     "seatChange": 2.0,
+     "votes": 888861,
+     "share": 14.3,
+     "swing": null
+    },
+    {
+     "name": "Christian People's Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 7.0,
+     "votes": 875455,
+     "share": 14.09,
+     "swing": null
+    },
+    {
+     "name": "Parti Socialiste",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 2.0,
+     "votes": 631653,
+     "share": 10.16,
+     "swing": null
+    },
+    {
+     "name": "Liberal Reformist Party–Democratic Front of Francophones",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 0.0,
+     "votes": 630219,
+     "share": 10.14,
+     "swing": null
+    },
+    {
+     "name": "Vlaams Blok",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 4.0,
+     "votes": 613399,
+     "share": 9.87,
+     "swing": null
+    },
+    {
+     "name": "Socialistische Partij",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 6.0,
+     "votes": 593372,
+     "share": 9.55,
+     "swing": null
+    },
+    {
+     "name": "Ecolo",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 5.0,
+     "votes": 457281,
+     "share": 7.36,
+     "swing": null
+    },
+    {
+     "name": "Christian Social Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 2.0,
+     "votes": 365318,
+     "share": 5.88,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Guy Verhofstadt",
+    "party": "VLD"
+   },
+   "knownAs": null,
+   "summary": "Federal elections were held in Belgium on June 13, 1999 to elect members of the Chamber of Representatives and Senate. The elections were held on the same day as the European elections and the regional elections.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Flemish Liberals and Democrats"
+  },
+  {
+   "id": "2003",
+   "label": "2003",
+   "year": 2003,
+   "date": "18 May 2003",
+   "era": "federal",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 91.63,
+   "parties": [
+    {
+     "name": "VLD",
+     "leader": "Guy Verhofstadt",
+     "seats": 25,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 15.36,
+     "swing": null
+    },
+    {
+     "name": "PS",
+     "leader": "Elio Di Rupo",
+     "seats": 25,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": 13.02,
+     "swing": null
+    },
+    {
+     "name": "MR",
+     "leader": "Antoine Duquesne",
+     "seats": 24,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": 11.4,
+     "swing": null
+    },
+    {
+     "name": "sp.a–spirit",
+     "leader": "Johan Vande Lanotte",
+     "seats": 23,
+     "seatChange": 9.0,
+     "votes": null,
+     "share": 14.91,
+     "swing": null
+    },
+    {
+     "name": "CD&V",
+     "leader": "Stefaan De Clerck",
+     "seats": 21,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 13.25,
+     "swing": null
+    },
+    {
+     "name": "Vlaams Blok",
+     "leader": "Frank Vanhecke",
+     "seats": 18,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 11.68,
+     "swing": null
+    },
+    {
+     "name": "cdH",
+     "leader": "Joëlle Milquet",
+     "seats": 8,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 5.47,
+     "swing": null
+    },
+    {
+     "name": "N-VA",
+     "leader": "Geert Bourgeois",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 3.06,
+     "swing": null
+    },
+    {
+     "name": "FN",
+     "leader": "Daniel Féret",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 1.98,
+     "swing": null
+    },
+    {
+     "name": "Marc Hordies",
+     "leader": "3.06",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 4.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Guy Verhofstadt",
+    "party": "VLD"
+   },
+   "knownAs": null,
+   "summary": "This article includes a list of references, related reading, or external links, but its sources remain unclear because it lacks inline citations. Please help improve this article by introducing more precise citations. (November 2024) (Learn how and when to remove this message)",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "VLD"
+  },
+  {
+   "id": "2007",
+   "label": "2007",
+   "year": 2007,
+   "date": "10 June 2007",
+   "era": "federal",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 91.08,
+   "parties": [
+    {
+     "name": "CD&V–N-VA",
+     "leader": "Yves Leterme",
+     "seats": 30,
+     "seatChange": 8.0,
+     "votes": null,
+     "share": 18.51,
+     "swing": null
+    },
+    {
+     "name": "MR",
+     "leader": "Didier Reynders",
+     "seats": 23,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 12.52,
+     "swing": null
+    },
+    {
+     "name": "PS",
+     "leader": "Elio Di Rupo",
+     "seats": 20,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": 10.86,
+     "swing": null
+    },
+    {
+     "name": "Open Vld",
+     "leader": "Guy Verhofstadt",
+     "seats": 18,
+     "seatChange": -7.0,
+     "votes": null,
+     "share": 11.83,
+     "swing": null
+    },
+    {
+     "name": "Vlaams Belang",
+     "leader": "Frank Vanhecke",
+     "seats": 17,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 11.99,
+     "swing": null
+    },
+    {
+     "name": "sp.a–spirit",
+     "leader": "Johan Vande Lanotte",
+     "seats": 14,
+     "seatChange": -9.0,
+     "votes": null,
+     "share": 10.26,
+     "swing": null
+    },
+    {
+     "name": "cdH",
+     "leader": "Joëlle Milquet",
+     "seats": 10,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 6.06,
+     "swing": null
+    },
+    {
+     "name": "Lijst Dedecker",
+     "leader": "Jean-Marie Dedecker",
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": 4.03,
+     "swing": null
+    },
+    {
+     "name": "Groen",
+     "leader": "Vera Dua",
+     "seats": 4,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": 3.98,
+     "swing": null
+    },
+    {
+     "name": "FN",
+     "leader": "Daniel Féret",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 1.97,
+     "swing": null
+    },
+    {
+     "name": "Isabelle Durant",
+     "leader": "5.10",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 8.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Yves Leterme",
+    "party": "CD&V"
+   },
+   "knownAs": null,
+   "summary": "Eligible voters were Belgian citizens 18 years and older. There was a legal electoral threshold of 5% for political parties to meet to receive representation, but in several election districts the real electoral threshold is higher than the legal, due to the small number of seats to be elected in the particular district.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "CD&V–N-VA"
+  },
+  {
+   "id": "2010",
+   "label": "2010",
+   "year": 2010,
+   "date": "13 June 2010",
+   "era": "federal",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 89.22,
+   "parties": [
+    {
+     "name": "N-VA",
+     "leader": "Bart De Wever",
+     "seats": 27,
+     "seatChange": 22.0,
+     "votes": null,
+     "share": 17.4,
+     "swing": null
+    },
+    {
+     "name": "PS",
+     "leader": "Elio Di Rupo",
+     "seats": 26,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": 13.7,
+     "swing": null
+    },
+    {
+     "name": "MR",
+     "leader": "Didier Reynders",
+     "seats": 18,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": 9.28,
+     "swing": null
+    },
+    {
+     "name": "CD&V",
+     "leader": "Marianne Thyssen",
+     "seats": 17,
+     "seatChange": -8.0,
+     "votes": null,
+     "share": 10.85,
+     "swing": null
+    },
+    {
+     "name": "sp.a",
+     "leader": "Caroline Gennez",
+     "seats": 13,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 9.24,
+     "swing": null
+    },
+    {
+     "name": "Open Vld",
+     "leader": "Alexander De Croo",
+     "seats": 13,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": 8.64,
+     "swing": null
+    },
+    {
+     "name": "Vlaams Belang",
+     "leader": "Bruno Valkeniers",
+     "seats": 12,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": 7.76,
+     "swing": null
+    },
+    {
+     "name": "cdH",
+     "leader": "Benoît Lutgen",
+     "seats": 9,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 5.52,
+     "swing": null
+    },
+    {
+     "name": "Groen",
+     "leader": "Wouter Van Besien",
+     "seats": 5,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 4.38,
+     "swing": null
+    },
+    {
+     "name": "LDD",
+     "leader": "Jean-Marie Dedecker",
+     "seats": 1,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": 3.74,
+     "swing": null
+    },
+    {
+     "name": "PP",
+     "leader": "Mischaël Modrikamen",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 1.29,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Elio Di Rupo",
+    "party": "PS"
+   },
+   "knownAs": "541 days",
+   "summary": "Federal elections were held in Belgium on 13 June 2010, during the midst of the 2007-11 Belgian political crisis. After the fall of the previous Leterme II Government over the withdrawal of Open Flemish Liberals and Democrats (Open VLD) from the government the King dissolved the legislature and called new elections.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "N-VA"
+  },
+  {
+   "id": "2014",
+   "label": "2014",
+   "year": 2014,
+   "date": "25 May 2014",
+   "era": "federal",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 89.37,
+   "parties": [
+    {
+     "name": "N-VA",
+     "leader": "Bart De Wever",
+     "seats": 33,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": 20.26,
+     "swing": null
+    },
+    {
+     "name": "PS",
+     "leader": "Elio Di Rupo",
+     "seats": 23,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": 11.67,
+     "swing": null
+    },
+    {
+     "name": "MR",
+     "leader": "Charles Michel",
+     "seats": 20,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 9.64,
+     "swing": null
+    },
+    {
+     "name": "CD&V",
+     "leader": "Wouter Beke",
+     "seats": 18,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 11.61,
+     "swing": null
+    },
+    {
+     "name": "Open Vld",
+     "leader": "Gwendolyn Rutten",
+     "seats": 14,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 9.78,
+     "swing": null
+    },
+    {
+     "name": "sp.a",
+     "leader": "Bruno Tobback",
+     "seats": 13,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 8.83,
+     "swing": null
+    },
+    {
+     "name": "cdH",
+     "leader": "Benoît Lutgen",
+     "seats": 9,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 4.98,
+     "swing": null
+    },
+    {
+     "name": "Groen",
+     "leader": "Wouter Van Besien",
+     "seats": 6,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 5.32,
+     "swing": null
+    },
+    {
+     "name": "Vlaams Belang",
+     "leader": "Gerolf Annemans",
+     "seats": 3,
+     "seatChange": -9.0,
+     "votes": null,
+     "share": 3.67,
+     "swing": null
+    },
+    {
+     "name": "PVDA-PTB",
+     "leader": "Peter Mertens",
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 3.72,
+     "swing": null
+    },
+    {
+     "name": "FDF",
+     "leader": "Olivier Maingain",
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": 1.8,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Charles Michel",
+    "party": "MR"
+   },
+   "knownAs": "The N-VA era",
+   "summary": "Federal elections were held in Belgium on 25 May 2014. All 150 members of the Chamber of Representatives were elected, whereas the Senate was no longer directly elected following the 2011–2012 state reform.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "N-VA"
+  },
+  {
+   "id": "2019",
+   "label": "2019",
+   "year": 2019,
+   "date": "26 May 2019",
+   "era": "federal",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 88.38,
+   "parties": [
+    {
+     "name": "New Flemish Alliance",
+     "leader": null,
+     "seats": 25,
+     "seatChange": -8.0,
+     "votes": 1086787,
+     "share": 25.56,
+     "swing": null
+    },
+    {
+     "name": "Vlaams Belang",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 15.0,
+     "votes": 810177,
+     "share": 19.05,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic and Flemish",
+     "leader": null,
+     "seats": 12,
+     "seatChange": -6.0,
+     "votes": 602520,
+     "share": 14.17,
+     "swing": null
+    },
+    {
+     "name": "Open Flemish Liberals and Democrats",
+     "leader": null,
+     "seats": 12,
+     "seatChange": -2.0,
+     "votes": 579334,
+     "share": 13.62,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party Different",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -4.0,
+     "votes": 455034,
+     "share": 10.7,
+     "swing": null
+    },
+    {
+     "name": "Groen",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 2.0,
+     "votes": 413836,
+     "share": 9.73,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party of Belgium",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 3.0,
+     "votes": 236897,
+     "share": 5.57,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Alexander De Croo",
+    "party": "Open Vld"
+   },
+   "knownAs": null,
+   "summary": "The far right-wing Vlaams Belang (VB) saw a resurgence in Flanders, and with the New Flemish Alliance (NVA), parties subscribing to Flemish separatism and nationalism obtained nearly 50% of the vote in Flanders. The Belgian coalition of N-VA, CD&V, MR and Open VLD lost more than a quarter of its seats, the worst government punishment in 20 years.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "New Flemish Alliance"
+  },
+  {
+   "id": "2024",
+   "label": "2024",
+   "year": 2024,
+   "date": "9 June 2024",
+   "era": "federal",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 88.45,
+   "parties": [
+    {
+     "name": "N-VA",
+     "leader": "Bart De Wever",
+     "seats": 24,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 16.71,
+     "swing": null
+    },
+    {
+     "name": "Vlaams Belang",
+     "leader": "Tom Van Grieken",
+     "seats": 20,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 13.77,
+     "swing": null
+    },
+    {
+     "name": "MR",
+     "leader": "Georges-Louis Bouchez",
+     "seats": 20,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": 10.26,
+     "swing": null
+    },
+    {
+     "name": "PS",
+     "leader": "Paul Magnette",
+     "seats": 16,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": 8.04,
+     "swing": null
+    },
+    {
+     "name": "PVDA-PTB",
+     "leader": "Raoul Hedebouw",
+     "seats": 15,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 9.86,
+     "swing": null
+    },
+    {
+     "name": "LE",
+     "leader": "Maxime Prévot",
+     "seats": 14,
+     "seatChange": 9.0,
+     "votes": null,
+     "share": 6.77,
+     "swing": null
+    },
+    {
+     "name": "Vooruit",
+     "leader": "Melissa Depraetere",
+     "seats": 13,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": 8.11,
+     "swing": null
+    },
+    {
+     "name": "CD&V",
+     "leader": "Sammy Mahdi",
+     "seats": 11,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 7.98,
+     "swing": null
+    },
+    {
+     "name": "Open Vld",
+     "leader": "Tom Ongena",
+     "seats": 7,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": 5.45,
+     "swing": null
+    },
+    {
+     "name": "DéFI",
+     "leader": "François De Smet",
+     "seats": 1,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 1.2,
+     "swing": null
+    },
+    {
+     "name": "Jeremie Vaneeckhout",
+     "leader": "4.65",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": 6.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Bart De Wever",
+    "party": "N-VA"
+   },
+   "knownAs": "De Wever's election",
+   "summary": "After a lengthy government formation spanning 494 days, the 2019 Belgian federal election eventually resulted in the formation of a government led by prime minister Alexander De Croo, consisting of a so-called Vivaldi coalition.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "N-VA"
+  }
+ ]
+}

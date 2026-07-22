@@ -1,0 +1,45 @@
+// Joins the /leaders directory to the election hubs: for each polity we track,
+// the election that produced the current government. Pure data (no server-only)
+// so the client-side leaders table can import it. Update alongside `last` in
+// electionHubsMeta.ts after each contest.
+
+export type BallotLink = { href: string; year: string; title: string };
+
+export const BALLOT_OF: Record<string, BallotLink> = {
+  "united-states": { href: "/elections/us/2024", year: "2024", title: "The 2024 presidential election that produced this administration" },
+  "united-kingdom": { href: "/elections/uk/2024", year: "2024", title: "The July 2024 general election that produced this government" },
+  canada: { href: "/elections/ca/2025", year: "2025", title: "The April 2025 federal election that produced this government" },
+  "european-union": { href: "/elections/eu/2024", year: "2024", title: "The June 2024 European Parliament election behind the current Commission" },
+  eu: { href: "/elections/eu/2024", year: "2024", title: "The June 2024 European Parliament election behind the current Commission" },
+  mexico: { href: "/elections/mx/pres-2024", year: "2024", title: "The June 2024 general election that produced this administration" },
+  brazil: { href: "/elections/br/pres-2022", year: "2022", title: "The October 2022 runoff that produced this administration" },
+  argentina: { href: "/elections/ar/2023", year: "2023", title: "The November 2023 runoff that produced this administration" },
+  germany: { href: "/elections/de/2025", year: "2025", title: "The February 2025 federal election that produced this government" },
+  france: { href: "/elections/fr/pres-2022", year: "2022", title: "The April 2022 presidential election that produced this presidency" },
+  italy: { href: "/elections/it/2022", year: "2022", title: "The September 2022 general election that produced this government" },
+  spain: { href: "/elections/es/2023", year: "2023", title: "The July 2023 general election that produced this government" },
+  poland: { href: "/elections/pl/pres-2025", year: "2025", title: "The June 2025 presidential runoff that produced this presidency" },
+  netherlands: { href: "/elections/nl/2025", year: "2025", title: "The October 2025 general election behind the current formation" },
+  russia: { href: "/elections/ru/pres-2024", year: "2024", title: "The managed March 2024 vote behind the current presidency — recorded with its honest label" },
+  israel: { href: "/elections/il/2022", year: "2022", title: "The November 2022 Knesset election that produced this government" },
+  "south-africa": { href: "/elections/za/2024", year: "2024", title: "The May 2024 general election behind the current coalition" },
+  nigeria: { href: "/elections/ng/pres-2023", year: "2023", title: "The February 2023 presidential election that produced this administration" },
+  turkey: { href: "/elections/tr/pres-2023", year: "2023", title: "The May 2023 presidential runoff that produced this presidency" },
+  india: { href: "/elections/in/2024", year: "2024", title: "The 2024 general election that produced this government" },
+  japan: { href: "/elections/jp/2026", year: "2026", title: "The February 2026 general election that produced this government" },
+  australia: { href: "/elections/au/2025", year: "2025", title: "The May 2025 federal election that produced this government" },
+  "new-zealand": { href: "/elections/nz/2023", year: "2023", title: "The October 2023 general election behind the current coalition" },
+  "south-korea": { href: "/elections/kr/pres-2025", year: "2025", title: "The June 2025 presidential election that produced this presidency" },
+  indonesia: { href: "/elections/id/pres-2024", year: "2024", title: "The February 2024 presidential election that produced this administration" },
+  taiwan: { href: "/elections/tw/2024", year: "2024", title: "The January 2024 presidential election that produced this presidency" },
+  china: { href: "/elections/cn/2023", year: "2023", title: "The 14th National People's Congress — a party-managed selection, recorded with its honest label" },
+  ukraine: { href: "/elections/ua/pres-2019", year: "2019", title: "The 2019 presidential landslide behind the current presidency — term extended under martial law" },
+  iraq: { href: "/elections/iq/2025", year: "2025", title: "The November 2025 parliamentary election that produced this government" },
+  palestine: { href: "/elections/ps/pres-2005", year: "2005", title: "The 2005 presidential election — the mandate has been extended without a vote ever since" },
+  "vatican-city": { href: "/elections/va/2025", year: "2025", title: "The May 2025 conclave that elected Leo XIV" },
+  singapore: { href: "/elections/sg/2025", year: "2025", title: "The May 2025 general election that produced this government" },
+  malaysia: { href: "/elections/my/2022", year: "2022", title: "The November 2022 hung parliament that produced the unity government" },
+  switzerland: { href: "/elections/ch/2023", year: "2023", title: "The October 2023 federal election behind the current Federal Council" },
+  belgium: { href: "/elections/be/2024", year: "2024", title: "The June 2024 federal election that produced this government" },
+  denmark: { href: "/elections/dk/2026", year: "2026", title: "The March 2026 snap election that produced this government" },
+};

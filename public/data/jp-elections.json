@@ -1,0 +1,4151 @@
+{
+ "meta": {
+  "title": "Japanese general elections",
+  "sources": [
+   "Wikipedia: Japanese general election articles, 1890–2026 (results, infoboxes and leads)",
+   "Ministry of Internal Affairs figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "eras": [
+  {
+   "key": "meiji",
+   "label": "The Imperial Diet's first decades",
+   "span": "1890–1917",
+   "blurb": "Japan's first general election in 1890 made it the first Asian nation with an elected national parliament — on a franchise of barely one percent of the population. The early Diet was a battleground between the Meiji oligarchs' governments and the political parties they refused to answer to."
+  },
+  {
+   "key": "interwar",
+   "label": "Party cabinets and universal male suffrage",
+   "span": "1920–1932",
+   "blurb": "The 1925 suffrage law quadrupled the electorate, and 1928 was the first election with universal male suffrage. For a decade Japan looked like a maturing parliamentary democracy, with the Seiyūkai and Minseitō alternating in power — until assassinations and the military's rise ended party government after 1932."
+  },
+  {
+   "key": "militarism",
+   "label": "Militarism and war",
+   "span": "1936–1942",
+   "blurb": "Parties still contested the 1936 and 1937 elections even as cabinets answered to the military, not the Diet. By 1942 the parties had been dissolved into the Imperial Rule Assistance Association, and the wartime election was managed by the state — recorded here with that caveat."
+  },
+  {
+   "key": "occupation",
+   "label": "Occupation and the road to 1955",
+   "span": "1946–1953",
+   "blurb": "The 1946 election was the first with women's suffrage, held under Allied occupation with a new constitution ahead. Cabinets rose and fell — including Japan's only socialist-led government in 1947 — until conservative consolidation loomed."
+  },
+  {
+   "key": "fiftyfive",
+   "label": "The 1955 system",
+   "span": "1955–1990",
+   "blurb": "The Liberal Democratic Party, formed in 1955, won every election for a generation, governing without interruption while the Socialists held a permanent second place. The '1955 system' delivered the economic miracle and one of the democratic world's longest runs of single-party dominance."
+  },
+  {
+   "key": "reform",
+   "label": "Reform, upheaval and alternation",
+   "span": "1993–2012",
+   "blurb": "The LDP's 1993 defeat ended 38 years of uninterrupted rule and brought electoral reform: single-member districts plus proportional blocks. Koizumi's 2005 landslide and the DPJ's historic 2009 victory showed the new system could produce both dominance and full alternation — before the 2012 wipeout brought Abe back."
+  },
+  {
+   "key": "modern",
+   "label": "The long Abe era and after",
+   "span": "2014–2026",
+   "blurb": "Shinzō Abe's second premiership made the LDP-Komeito coalition look unshakeable through 2014 and 2017. After his assassination the ground shifted: the coalition lost its majority in 2024, and the snap election of February 2026 under Sanae Takaichi — Japan's first female prime minister — reset the board again."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1890",
+   "label": "1890",
+   "year": 1890,
+   "date": "1 July 1890",
+   "era": "meiji",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal",
+     "leader": "Itagaki Taisuke",
+     "seats": 130,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Taiseikai",
+     "leader": "Shigeyuki Masuda",
+     "seats": 79,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Rikken Kaishintō",
+     "leader": "Ōkuma Shigenobu",
+     "seats": 41,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Kokumin Jiyutō",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Yamagata Aritomo",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Yamagata Aritomo",
+    "party": "Independent"
+   },
+   "knownAs": "Asia's first national election",
+   "summary": "General elections were held in Japan for the first time on 1 July 1890. Voters elected 300 members of the House of Representatives of the Diet of Japan in what was the first example of a popularly elected national assembly in Asia (as the Ottoman Chamber of Deputies was elected indirectly).",
+   "caveat": null,
+   "seatLeader": "Liberal"
+  },
+  {
+   "id": "1892",
+   "label": "1892",
+   "year": 1892,
+   "date": "15 February 1892",
+   "era": "meiji",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal",
+     "leader": "Itagaki Taisuke",
+     "seats": 94,
+     "seatChange": -36.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Chūō Club",
+     "leader": null,
+     "seats": 81,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Rikken Kaishintō",
+     "leader": "Ōkuma Shigenobu",
+     "seats": 38,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Dokuristu Club",
+     "leader": null,
+     "seats": 31,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Kinki Club",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Matsukata Masayoshi",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Matsukata Masayoshi",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "After the 1890 general elections for the lower house of the Diet of Japan, the elected members proved much less amenable to government persuasion than had been anticipated by Itō Hirobumi and other members of the Meiji oligarchy.",
+   "caveat": null,
+   "seatLeader": "Liberal"
+  },
+  {
+   "id": "1894-mar",
+   "label": "March 1894",
+   "year": 1894,
+   "date": "1 March 1894",
+   "era": "meiji",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal",
+     "leader": "Itagaki Taisuke",
+     "seats": 120,
+     "seatChange": 26.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Rikken Kaishintō",
+     "leader": "Ōkuma Shigenobu",
+     "seats": 60,
+     "seatChange": 22.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Kokumin Kyōkai",
+     "leader": "Shinagawa Yajirō",
+     "seats": 35,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Dōshi Seisha",
+     "leader": null,
+     "seats": 24,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Dōmei Seisha",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Dai-Nippon",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Itō Hirobumi",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Itō Hirobumi",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Liberal"
+  },
+  {
+   "id": "1894-sep",
+   "label": "September 1894",
+   "year": 1894,
+   "date": "September 1894",
+   "era": "meiji",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal",
+     "leader": "Itagaki Taisuke",
+     "seats": 107,
+     "seatChange": -13.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Rikken Kaishintō",
+     "leader": "Ōkuma Shigenobu",
+     "seats": 49,
+     "seatChange": -11.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Rikken Kakushintō",
+     "leader": null,
+     "seats": 39,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Kokumin Kyōkai",
+     "leader": "Shinagawa Yajirō",
+     "seats": 32,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Itō Hirobumi",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Itō Hirobumi",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Liberal"
+  },
+  {
+   "id": "1898-mar",
+   "label": "March 1898",
+   "year": 1898,
+   "date": "March 1898",
+   "era": "meiji",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal",
+     "leader": "Itagaki Taisuke",
+     "seats": 105,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Shimpotō",
+     "leader": "Ōkuma Shigenobu",
+     "seats": 103,
+     "seatChange": 54.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Kokumin Kyōkai",
+     "leader": "Shinagawa Yajirō",
+     "seats": 29,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Yamashita Club",
+     "leader": null,
+     "seats": 26,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Itō Hirobumi",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Itō Hirobumi",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Liberal"
+  },
+  {
+   "id": "1898-aug",
+   "label": "August 1898",
+   "year": 1898,
+   "date": "August 1898",
+   "era": "meiji",
+   "totalSeats": 300,
+   "majoritySeats": 151,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Kenseitō",
+     "leader": "Ōkuma Shigenobu",
+     "seats": 244,
+     "seatChange": 36.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Kokumin Kyōkai",
+     "leader": "Shinagawa Yajirō",
+     "seats": 21,
+     "seatChange": -8.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Hiyoshi Club",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ōkuma Shigenobu",
+    "party": "Kenseitō"
+   },
+   "pmAfter": {
+    "name": "Ōkuma Shigenobu",
+    "party": "Kenseitō"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Kenseitō"
+  },
+  {
+   "id": "1902",
+   "label": "1902",
+   "year": 1902,
+   "date": "1902",
+   "era": "meiji",
+   "totalSeats": 376,
+   "majoritySeats": 189,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Rikken Seiyūkai",
+     "leader": "Itō Hirobumi",
+     "seats": 191,
+     "seatChange": null,
+     "votes": 433763,
+     "share": 50.4,
+     "swing": null
+    },
+    {
+     "name": "Kensei Hontō",
+     "leader": "Ōkuma Shigenobu",
+     "seats": 95,
+     "seatChange": null,
+     "votes": 220989,
+     "share": 25.68,
+     "swing": null
+    },
+    {
+     "name": "Jinin Kai",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": 35950,
+     "share": 4.18,
+     "swing": null
+    },
+    {
+     "name": "Teikokutō",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": 37749,
+     "share": 4.39,
+     "swing": null
+    },
+    {
+     "name": "Dōshi Club",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": 24541,
+     "share": 2.85,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Katsura Tarō",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Katsura Tarō",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Rikken Seiyūkai"
+  },
+  {
+   "id": "1903",
+   "label": "1903",
+   "year": 1903,
+   "date": "1 March 1903",
+   "era": "meiji",
+   "totalSeats": 376,
+   "majoritySeats": 189,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Rikken Seiyūkai",
+     "leader": "Saionji Kinmochi",
+     "seats": 175,
+     "seatChange": 16.0,
+     "votes": 373022,
+     "share": 45.42,
+     "swing": -4.98
+    },
+    {
+     "name": "Kensei Hontō",
+     "leader": "Ōkuma Shigenobu",
+     "seats": 85,
+     "seatChange": 10.0,
+     "votes": 218689,
+     "share": 26.63,
+     "swing": 0.95
+    },
+    {
+     "name": "Chūsei Club",
+     "leader": null,
+     "seats": 31,
+     "seatChange": null,
+     "votes": 37070,
+     "share": 4.51,
+     "swing": null
+    },
+    {
+     "name": "Teikokutō",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 0.0,
+     "votes": 34811,
+     "share": 4.24,
+     "swing": null
+    },
+    {
+     "name": "Seiyū Club",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": 24129,
+     "share": 2.94,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Katsura Tarō",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Katsura Tarō",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Rikken Seiyūkai"
+  },
+  {
+   "id": "1904",
+   "label": "1904",
+   "year": 1904,
+   "date": "1 March 1904",
+   "era": "meiji",
+   "totalSeats": 379,
+   "majoritySeats": 190,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Rikken Seiyūkai",
+     "leader": "Saionji Kinmochi",
+     "seats": 133,
+     "seatChange": 42.0,
+     "votes": 217691,
+     "share": 33.47,
+     "swing": -11.95
+    },
+    {
+     "name": "Kensei Hontō",
+     "leader": "Ōkuma Shigenobu",
+     "seats": 90,
+     "seatChange": 5.0,
+     "votes": 170319,
+     "share": 26.19,
+     "swing": -0.44
+    },
+    {
+     "name": "Kōshin Club",
+     "leader": null,
+     "seats": 39,
+     "seatChange": 8.0,
+     "votes": 55709,
+     "share": 8.57,
+     "swing": 4.06
+    },
+    {
+     "name": "Mumei Club",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": 31197,
+     "share": 4.8,
+     "swing": null
+    },
+    {
+     "name": "Teikokutō",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 2.0,
+     "votes": 27244,
+     "share": 4.19,
+     "swing": null
+    },
+    {
+     "name": "Jiyu Club",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 31772,
+     "share": 4.89,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Katsura Tarō",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Katsura Tarō",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Rikken Seiyūkai"
+  },
+  {
+   "id": "1908",
+   "label": "1908",
+   "year": 1908,
+   "date": "15 May 1908",
+   "era": "meiji",
+   "totalSeats": 379,
+   "majoritySeats": 190,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Rikken Seiyūkai",
+     "leader": "Saionji Kinmochi",
+     "seats": 187,
+     "seatChange": 54.0,
+     "votes": 649858,
+     "share": 48.4,
+     "swing": 14.93
+    },
+    {
+     "name": "Kensei Hontō",
+     "leader": "Collective Leadership",
+     "seats": 70,
+     "seatChange": 20.0,
+     "votes": 288243,
+     "share": 21.47,
+     "swing": -4.72
+    },
+    {
+     "name": "Yūkōkai",
+     "leader": null,
+     "seats": 29,
+     "seatChange": null,
+     "votes": 99690,
+     "share": 7.42,
+     "swing": null
+    },
+    {
+     "name": "Daidō Club",
+     "leader": null,
+     "seats": 29,
+     "seatChange": 29.0,
+     "votes": 92477,
+     "share": 6.89,
+     "swing": -5.87
+    }
+   ],
+   "pmBefore": {
+    "name": "Saionji Kinmochi",
+    "party": "Rikken Seiyūkai"
+   },
+   "pmAfter": {
+    "name": "Saionji Kinmochi",
+    "party": "Rikken Seiyūkai"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Rikken Seiyūkai"
+  },
+  {
+   "id": "1912",
+   "label": "1912",
+   "year": 1912,
+   "date": "15 May 1912",
+   "era": "meiji",
+   "totalSeats": 381,
+   "majoritySeats": 191,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Rikken Seiyūkai",
+     "leader": "Saionji Kinmochi",
+     "seats": 209,
+     "seatChange": 22.0,
+     "votes": 689613,
+     "share": 51.52,
+     "swing": 3.12
+    },
+    {
+     "name": "Rikken Kokumintō",
+     "leader": "Inukai Tsuyoshi",
+     "seats": 95,
+     "seatChange": null,
+     "votes": 381465,
+     "share": 28.5,
+     "swing": null
+    },
+    {
+     "name": "Chūō Club",
+     "leader": null,
+     "seats": 31,
+     "seatChange": null,
+     "votes": 113834,
+     "share": 8.5,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Saionji Kinmochi",
+    "party": "Rikken Seiyūkai"
+   },
+   "pmAfter": {
+    "name": "Saionji Kinmochi",
+    "party": "Rikken Seiyūkai"
+   },
+   "knownAs": null,
+   "summary": "The 381 members of the House of Representatives were elected in 51 multi-member constituencies based on prefectures and cities. Voting was restricted to men aged over 25 who paid at least 10 yen a year in direct taxation. 1912 was also the first year citizens in Okinawa could vote.",
+   "caveat": null,
+   "seatLeader": "Rikken Seiyūkai"
+  },
+  {
+   "id": "1915",
+   "label": "1915",
+   "year": 1915,
+   "date": "25 March 1915",
+   "era": "meiji",
+   "totalSeats": 381,
+   "majoritySeats": 191,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Rikken Dōshikai",
+     "leader": "Kato Takaaki",
+     "seats": 153,
+     "seatChange": null,
+     "votes": 523228,
+     "share": 36.92,
+     "swing": null
+    },
+    {
+     "name": "Rikken Seiyūkai",
+     "leader": "Hara Takashi",
+     "seats": 108,
+     "seatChange": 101.0,
+     "votes": 446934,
+     "share": 31.54,
+     "swing": -19.98
+    },
+    {
+     "name": "Chūseikai",
+     "leader": null,
+     "seats": 33,
+     "seatChange": null,
+     "votes": 101970,
+     "share": 7.2,
+     "swing": null
+    },
+    {
+     "name": "Rikken Kokumintō",
+     "leader": "Inukai Tsuyoshi",
+     "seats": 27,
+     "seatChange": 68.0,
+     "votes": 106445,
+     "share": 7.51,
+     "swing": -20.99
+    },
+    {
+     "name": "Okuma Kōenkai",
+     "leader": "Ichishima Kenkichi",
+     "seats": 12,
+     "seatChange": null,
+     "votes": 55684,
+     "share": 3.93,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ōkuma Shigenobu",
+    "party": "Dōshikai"
+   },
+   "pmAfter": {
+    "name": "Ōkuma Shigenobu",
+    "party": "Dōshikai"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Rikken Dōshikai"
+  },
+  {
+   "id": "1917",
+   "label": "1917",
+   "year": 1917,
+   "date": "20 April 1917",
+   "era": "meiji",
+   "totalSeats": 381,
+   "majoritySeats": 191,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Rikken Seiyūkai",
+     "leader": "Hara Takashi",
+     "seats": 165,
+     "seatChange": 57.0,
+     "votes": 504720,
+     "share": 38.8,
+     "swing": 7.27
+    },
+    {
+     "name": "Kenseikai",
+     "leader": "Kato Takaaki",
+     "seats": 121,
+     "seatChange": 92.0,
+     "votes": 467518,
+     "share": 35.94,
+     "swing": -15.69
+    },
+    {
+     "name": "Rikken Kokumintō",
+     "leader": "Inukai Tsuyoshi",
+     "seats": 35,
+     "seatChange": 8.0,
+     "votes": 125974,
+     "share": 9.68,
+     "swing": 2.17
+    }
+   ],
+   "pmBefore": {
+    "name": "Terauchi Masatake",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Terauchi Masatake",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Rikken Seiyūkai"
+  },
+  {
+   "id": "1920",
+   "label": "1920",
+   "year": 1920,
+   "date": "10 May 1920",
+   "era": "interwar",
+   "totalSeats": 464,
+   "majoritySeats": 233,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Rikken Seiyūkai",
+     "leader": "Hara Takashi",
+     "seats": 278,
+     "seatChange": 113.0,
+     "votes": 1471728,
+     "share": 55.77,
+     "swing": 16.97
+    },
+    {
+     "name": "Kenseikai",
+     "leader": "Kato Takaaki",
+     "seats": 110,
+     "seatChange": 11.0,
+     "votes": 715500,
+     "share": 27.11,
+     "swing": -8.83
+    },
+    {
+     "name": "Rikken Kokumintō",
+     "leader": "Inukai Tsuyoshi",
+     "seats": 29,
+     "seatChange": 6.0,
+     "votes": 140397,
+     "share": 5.32,
+     "swing": -4.36
+    }
+   ],
+   "pmBefore": {
+    "name": "Hara Takashi",
+    "party": "Rikken Seiyūkai"
+   },
+   "pmAfter": {
+    "name": "Hara Takashi",
+    "party": "Rikken Seiyūkai"
+   },
+   "knownAs": null,
+   "summary": "Following electoral reforms in 1919, the 464 members of the House of Representatives were elected in 295 single-member constituencies, 68 two-member constituencies and 11 three-member constituencies.",
+   "caveat": null,
+   "seatLeader": "Rikken Seiyūkai"
+  },
+  {
+   "id": "1924",
+   "label": "1924",
+   "year": 1924,
+   "date": "10 May 1924",
+   "era": "interwar",
+   "totalSeats": 464,
+   "majoritySeats": 233,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Kenseikai",
+     "leader": "Kato Takaaki",
+     "seats": 151,
+     "seatChange": 41.0,
+     "votes": 872533,
+     "share": 29.35,
+     "swing": 2.24
+    },
+    {
+     "name": "Seiyūhontō",
+     "leader": "Tokonami Takejirō",
+     "seats": 111,
+     "seatChange": null,
+     "votes": 730077,
+     "share": 24.56,
+     "swing": null
+    },
+    {
+     "name": "Rikken Seiyūkai",
+     "leader": "Takahashi Korekiyo",
+     "seats": 103,
+     "seatChange": 175.0,
+     "votes": 666317,
+     "share": 22.41,
+     "swing": -33.36
+    },
+    {
+     "name": "Kakushin Club",
+     "leader": "Inukai Tsuyoshi",
+     "seats": 30,
+     "seatChange": null,
+     "votes": 182720,
+     "share": 6.15,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Kiyoura Keigo",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Kato Takaaki",
+    "party": "Kenseikai"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Kenseikai"
+  },
+  {
+   "id": "1928",
+   "label": "1928",
+   "year": 1928,
+   "date": "20 February 1928",
+   "era": "interwar",
+   "totalSeats": 466,
+   "majoritySeats": 234,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Rikken Seiyūkai",
+     "leader": "Tanaka Giichi",
+     "seats": 217,
+     "seatChange": 114.0,
+     "votes": 4244385,
+     "share": 43.06,
+     "swing": 20.86
+    },
+    {
+     "name": "Constitutional Democratic Party",
+     "leader": null,
+     "seats": 216,
+     "seatChange": null,
+     "votes": 4251771,
+     "share": 43.14,
+     "swing": null
+    },
+    {
+     "name": "Rikken Minseitō",
+     "leader": "Hamaguchi Osachi",
+     "seats": 216,
+     "seatChange": null,
+     "votes": 4251771,
+     "share": 43.14,
+     "swing": null
+    },
+    {
+     "name": "Jitsugyo Doshikai",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 166250,
+     "share": 1.69,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 120044,
+     "share": 1.22,
+     "swing": null
+    },
+    {
+     "name": "Kakushintō",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 81324,
+     "share": 0.83,
+     "swing": null
+    },
+    {
+     "name": "Labour-Farmer Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 184040,
+     "share": 1.87,
+     "swing": null
+    },
+    {
+     "name": "Japan Labour-Farmer Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 94626,
+     "share": 0.96,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Tanaka Giichi",
+    "party": "Rikken Seiyūkai"
+   },
+   "pmAfter": {
+    "name": "Tanaka Giichi",
+    "party": "Rikken Seiyūkai"
+   },
+   "knownAs": "First universal male suffrage",
+   "summary": "General elections were held in Japan on 20 February 1928, the first after the passing of the Universal Manhood Suffrage Law in 1925 which introduced universal male suffrage for men 25 years and over.",
+   "caveat": null,
+   "seatLeader": "Rikken Seiyūkai"
+  },
+  {
+   "id": "1930",
+   "label": "1930",
+   "year": 1930,
+   "date": "20 February 1930",
+   "era": "interwar",
+   "totalSeats": 466,
+   "majoritySeats": 234,
+   "turnout": 82.29,
+   "parties": [
+    {
+     "name": "Constitutional Democratic Party",
+     "leader": null,
+     "seats": 273,
+     "seatChange": 57.0,
+     "votes": 5466908,
+     "share": 52.48,
+     "swing": null
+    },
+    {
+     "name": "Rikken Minseitō",
+     "leader": "Osachi Hamaguchi",
+     "seats": 273,
+     "seatChange": 57.0,
+     "votes": 5466908,
+     "share": 52.48,
+     "swing": 9.42
+    },
+    {
+     "name": "Rikken Seiyūkai",
+     "leader": "Tsuyoshi Inukai",
+     "seats": 174,
+     "seatChange": 43.0,
+     "votes": 3925980,
+     "share": 37.69,
+     "swing": -5.45
+    },
+    {
+     "name": "Kokumin Doshikai",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 2.0,
+     "votes": 128505,
+     "share": 1.23,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 10.0,
+     "votes": 323536,
+     "share": 3.11,
+     "swing": null
+    },
+    {
+     "name": "Kakushintō",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": 55487,
+     "share": 0.53,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": 173458,
+     "share": 1.67,
+     "swing": null
+    },
+    {
+     "name": "Japan Masses Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 158074,
+     "share": 1.52,
+     "swing": null
+    },
+    {
+     "name": "Labour-Farmer Masses Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 92519,
+     "share": 0.89,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Hamaguchi Osachi",
+    "party": "Rikken Minseitō"
+   },
+   "pmAfter": {
+    "name": "Hamaguchi Osachi",
+    "party": "Rikken Minseitō"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Constitutional Democratic Party"
+  },
+  {
+   "id": "1932",
+   "label": "1932",
+   "year": 1932,
+   "date": "20 February 1932",
+   "era": "interwar",
+   "totalSeats": 466,
+   "majoritySeats": 234,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Rikken Seiyūkai",
+     "leader": "Tsuyoshi Inukai",
+     "seats": 301,
+     "seatChange": 127.0,
+     "votes": 5683137,
+     "share": 58.2,
+     "swing": 20.51
+    },
+    {
+     "name": "Rikken Minseitō",
+     "leader": "Reijiro Wakatsuki",
+     "seats": 146,
+     "seatChange": 127.0,
+     "votes": 3442326,
+     "share": 35.25,
+     "swing": -17.23
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 7.0,
+     "votes": 347668,
+     "share": 3.56,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": 125758,
+     "share": 1.29,
+     "swing": null
+    },
+    {
+     "name": "Shakai Minshūtō",
+     "leader": "Abe Isoo",
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": 125758,
+     "share": 1.29,
+     "swing": -0.38
+    },
+    {
+     "name": "Rōnō Taishūtō",
+     "leader": "Asō Hisashi",
+     "seats": 2,
+     "seatChange": null,
+     "votes": 127459,
+     "share": 1.31,
+     "swing": null
+    },
+    {
+     "name": "Kakushintō",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": 36839,
+     "share": 0.38,
+     "swing": -0.15
+    }
+   ],
+   "pmBefore": {
+    "name": "Tsuyoshi Inukai",
+    "party": "Rikken Seiyūkai"
+   },
+   "pmAfter": {
+    "name": "Tsuyoshi Inukai",
+    "party": "Rikken Seiyūkai"
+   },
+   "knownAs": null,
+   "summary": "In 1931, the ruling Rikken Minseitō opposed the Mukden Incident, which was engineered by the military. The anti-war Foreign Minister Kijuro Shidehara and Prime Minister Wakatsuki Reijirō were criticized for their intervention in military and was accused of \"serious corruption\".",
+   "caveat": null,
+   "seatLeader": "Rikken Seiyūkai"
+  },
+  {
+   "id": "1936",
+   "label": "1936",
+   "year": 1936,
+   "date": "20 February 1936",
+   "era": "militarism",
+   "totalSeats": 466,
+   "majoritySeats": 234,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Rikken Minseitō",
+     "leader": "Machida Chūji",
+     "seats": 205,
+     "seatChange": 59.0,
+     "votes": 4444413,
+     "share": 39.92,
+     "swing": 4.67
+    },
+    {
+     "name": "Rikken Seiyūkai",
+     "leader": "Suzuki Kisaburō",
+     "seats": 174,
+     "seatChange": 127.0,
+     "votes": 4188029,
+     "share": 37.62,
+     "swing": -20.58
+    },
+    {
+     "name": "Shōwakai",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": 531772,
+     "share": 4.78,
+     "swing": null
+    },
+    {
+     "name": "Shakai Taishūtō",
+     "leader": "Abe Isoo",
+     "seats": 18,
+     "seatChange": 13.0,
+     "votes": 518844,
+     "share": 4.66,
+     "swing": 2.07
+    },
+    {
+     "name": "Kokumin Dōmei",
+     "leader": "Adachi Kenzō",
+     "seats": 15,
+     "seatChange": null,
+     "votes": 421632,
+     "share": 3.79,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Keisuke Okada",
+    "party": "Imperial Japanese Navy"
+   },
+   "pmAfter": {
+    "name": "Kōki Hirota",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Japan on 20 February 1936. Rikken Minseitō emerged as the largest party in the House of Representatives, winning 205 of the 466 seats and securing a slim majority with parties in support of the government.",
+   "caveat": null,
+   "seatLeader": "Rikken Minseitō"
+  },
+  {
+   "id": "1937",
+   "label": "1937",
+   "year": 1937,
+   "date": "30 April 1937",
+   "era": "militarism",
+   "totalSeats": 466,
+   "majoritySeats": 234,
+   "turnout": 71.64,
+   "parties": [
+    {
+     "name": "Rikken Minseitō",
+     "leader": "Machida Chūji",
+     "seats": 179,
+     "seatChange": -26.0,
+     "votes": 3689355,
+     "share": 36.16,
+     "swing": -3.76
+    },
+    {
+     "name": "Rikken Seiyūkai",
+     "leader": "Various",
+     "seats": 175,
+     "seatChange": 1.0,
+     "votes": 3594863,
+     "share": 35.23,
+     "swing": 2.39
+    },
+    {
+     "name": "Shakai Taishūtō",
+     "leader": "Abe Isoo",
+     "seats": 37,
+     "seatChange": 19.0,
+     "votes": 928934,
+     "share": 9.1,
+     "swing": 4.44
+    },
+    {
+     "name": "Shōwakai",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -1.0,
+     "votes": 414088,
+     "share": 4.06,
+     "swing": -0.72
+    },
+    {
+     "name": "Kokumin Dōmei",
+     "leader": "Adachi Kenzō",
+     "seats": 11,
+     "seatChange": -4.0,
+     "votes": 281834,
+     "share": 2.76,
+     "swing": 1.03
+    },
+    {
+     "name": "Tōhōkai",
+     "leader": "Nakano Seigō",
+     "seats": 11,
+     "seatChange": null,
+     "votes": 221455,
+     "share": 2.17,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Senjūrō Hayashi",
+    "party": "Imperial Japanese Army"
+   },
+   "pmAfter": {
+    "name": "Senjūrō Hayashi",
+    "party": "Imperial Japanese Army"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Japan on 30 April 1937 to elect the 466 members of the House of Representatives, after the dissolution of Parliament on 31 March. Rikken Minseitō emerged as the largest party in Parliament, with 179 of the 466 seats.",
+   "caveat": null,
+   "seatLeader": "Rikken Minseitō"
+  },
+  {
+   "id": "1942",
+   "label": "1942",
+   "year": 1942,
+   "date": "30 April 1942",
+   "era": "militarism",
+   "totalSeats": 466,
+   "majoritySeats": 234,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Taisei Yokusankai",
+     "leader": "Hideki Tojo",
+     "seats": 381,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Not endorsed",
+     "leader": null,
+     "seats": 85,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Hideki Tojo",
+    "party": "Taisei Yokusankai"
+   },
+   "pmAfter": {
+    "name": "Hideki Tojo",
+    "party": "Taisei Yokusankai"
+   },
+   "knownAs": "The wartime managed vote",
+   "summary": "General elections were held in Japan on 30 April 1942 to elect members of the House of Representatives. They were the only elections held in Japan during World War II.",
+   "caveat": "Held in wartime under the Imperial Rule Assistance Association: candidates ran with or without state recommendation, and the parties had been dissolved. Recorded here as history, not as a free election.",
+   "seatLeader": "Taisei Yokusankai"
+  },
+  {
+   "id": "1946",
+   "label": "1946",
+   "year": 1946,
+   "date": "10 April 1946",
+   "era": "occupation",
+   "totalSeats": 468,
+   "majoritySeats": 235,
+   "turnout": 72.08,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": "Ichirō Hatoyama",
+     "seats": 141,
+     "seatChange": null,
+     "votes": 13505746,
+     "share": 24.36,
+     "swing": null
+    },
+    {
+     "name": "Japan Progressive Party",
+     "leader": "Chūji Machida",
+     "seats": 94,
+     "seatChange": null,
+     "votes": 10350530,
+     "share": 18.67,
+     "swing": null
+    },
+    {
+     "name": "Japan Socialist Party",
+     "leader": "Tetsu Katayama",
+     "seats": 93,
+     "seatChange": null,
+     "votes": 9924930,
+     "share": 17.9,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 81,
+     "seatChange": null,
+     "votes": 11244120,
+     "share": 20.28,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 38,
+     "seatChange": null,
+     "votes": 6488032,
+     "share": 11.7,
+     "swing": null
+    },
+    {
+     "name": "Japan Cooperative Party",
+     "leader": "Yamamoto Sanehiko",
+     "seats": 14,
+     "seatChange": null,
+     "votes": 1799764,
+     "share": 3.25,
+     "swing": null
+    },
+    {
+     "name": "Japanese Communist Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 2135757,
+     "share": 3.85,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Kijūrō Shidehara",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Shigeru Yoshida",
+    "party": "Liberal"
+   },
+   "knownAs": "First with women voting",
+   "summary": "General elections were held in Japan on 10 April 1946, the first after World War II, during the Allied occupation. All 468 seats in the House of Representatives were elected by limited voting.",
+   "caveat": null,
+   "seatLeader": "Liberal Party"
+  },
+  {
+   "id": "1947",
+   "label": "1947",
+   "year": 1947,
+   "date": "25 April 1947",
+   "era": "occupation",
+   "totalSeats": 468,
+   "majoritySeats": 235,
+   "turnout": 67.95,
+   "parties": [
+    {
+     "name": "Japan Socialist Party",
+     "leader": "Tetsu Katayama",
+     "seats": 143,
+     "seatChange": 50.0,
+     "votes": 7176882,
+     "share": 26.23,
+     "swing": 8.33
+    },
+    {
+     "name": "Liberal Party",
+     "leader": "Shigeru Yoshida",
+     "seats": 131,
+     "seatChange": -10.0,
+     "votes": 7312524,
+     "share": 26.73,
+     "swing": 2.37
+    },
+    {
+     "name": "Democratic Party",
+     "leader": "Hitoshi Ashida",
+     "seats": 124,
+     "seatChange": null,
+     "votes": 6960270,
+     "share": 25.44,
+     "swing": null
+    },
+    {
+     "name": "National Cooperative Party",
+     "leader": "Takeo Miki",
+     "seats": 31,
+     "seatChange": null,
+     "votes": 1915948,
+     "share": 7.0,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": 1174662,
+     "share": 4.29,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 12,
+     "seatChange": -69.0,
+     "votes": 1603684,
+     "share": 5.86,
+     "swing": null
+    },
+    {
+     "name": "Japanese Communist Party",
+     "leader": "Kyuichi Tokuda",
+     "seats": 4,
+     "seatChange": -1.0,
+     "votes": 1002883,
+     "share": 3.67,
+     "swing": -0.18
+    },
+    {
+     "name": "Japan Farmers Party",
+     "leader": "Shiro Nakano",
+     "seats": 4,
+     "seatChange": null,
+     "votes": 214754,
+     "share": 0.78,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Shigeru Yoshida",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "Tetsu Katayama",
+    "party": "Socialist"
+   },
+   "knownAs": "The socialist interlude",
+   "summary": "General elections were held in Japan on 25 April 1947. The Japan Socialist Party won 143 of the 468 seats, making it the largest party in the House of Representatives following the election.",
+   "caveat": null,
+   "seatLeader": "Japan Socialist Party"
+  },
+  {
+   "id": "1949",
+   "label": "1949",
+   "year": 1949,
+   "date": "23 January 1949",
+   "era": "occupation",
+   "totalSeats": 466,
+   "majoritySeats": 234,
+   "turnout": 74.04,
+   "parties": [
+    {
+     "name": "Democratic Liberal Party",
+     "leader": "Shigeru Yoshida",
+     "seats": 264,
+     "seatChange": null,
+     "votes": 13420269,
+     "share": 43.87,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": "Takeru Inukai",
+     "seats": 69,
+     "seatChange": -55.0,
+     "votes": 4798352,
+     "share": 15.68,
+     "swing": -9.76
+    },
+    {
+     "name": "Japan Socialist Party",
+     "leader": "Tetsu Katayama",
+     "seats": 48,
+     "seatChange": -95.0,
+     "votes": 4129794,
+     "share": 13.5,
+     "swing": -12.73
+    },
+    {
+     "name": "Japanese Communist Party",
+     "leader": "Kyuichi Tokuda",
+     "seats": 35,
+     "seatChange": 31.0,
+     "votes": 2984780,
+     "share": 9.76,
+     "swing": 6.09
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": 1602496,
+     "share": 5.24,
+     "swing": null
+    },
+    {
+     "name": "National Cooperative Party",
+     "leader": "Takeo Miki",
+     "seats": 14,
+     "seatChange": -17.0,
+     "votes": 1041879,
+     "share": 3.41,
+     "swing": -3.59
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 0.0,
+     "votes": 2008109,
+     "share": 6.56,
+     "swing": null
+    },
+    {
+     "name": "Labourers and Farmers Party",
+     "leader": "Hisao Kuroda",
+     "seats": 7,
+     "seatChange": null,
+     "votes": 606840,
+     "share": 1.98,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Shigeru Yoshida",
+    "party": "Democratic Liberal"
+   },
+   "pmAfter": {
+    "name": "Shigeru Yoshida",
+    "party": "Democratic Liberal"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Japan on 23 January 1949. The result was a landslide victory for the Democratic Liberal Party, which won 269 of the 466 seats.",
+   "caveat": null,
+   "seatLeader": "Democratic Liberal Party"
+  },
+  {
+   "id": "1952",
+   "label": "1952",
+   "year": 1952,
+   "date": "1 October 1952",
+   "era": "occupation",
+   "totalSeats": 466,
+   "majoritySeats": 234,
+   "turnout": 76.43,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": "Shigeru Yoshida",
+     "seats": 240,
+     "seatChange": null,
+     "votes": 16938221,
+     "share": 47.93,
+     "swing": null
+    },
+    {
+     "name": "Kaishintō",
+     "leader": "Mamoru Shigemitsu",
+     "seats": 85,
+     "seatChange": null,
+     "votes": 6429450,
+     "share": 18.19,
+     "swing": null
+    },
+    {
+     "name": "Right Socialist Party of Japan",
+     "leader": "Inejirō Asanuma",
+     "seats": 57,
+     "seatChange": null,
+     "votes": 4108274,
+     "share": 11.63,
+     "swing": null
+    },
+    {
+     "name": "Left Socialist Party of Japan",
+     "leader": "Mosaburō Suzuki",
+     "seats": 54,
+     "seatChange": null,
+     "votes": 3398597,
+     "share": 9.62,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 7.0,
+     "votes": 2355172,
+     "share": 6.66,
+     "swing": null
+    },
+    {
+     "name": "Labourers and Farmers Party",
+     "leader": "Hisao Kuroda",
+     "seats": 4,
+     "seatChange": 3.0,
+     "votes": 261190,
+     "share": 0.74,
+     "swing": -1.24
+    },
+    {
+     "name": "Cooperative Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 390015,
+     "share": 1.1,
+     "swing": null
+    },
+    {
+     "name": "Japan Teachers Political Federation",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 114869,
+     "share": 0.33,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Shigeru Yoshida",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "Shigeru Yoshida",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Liberal Party"
+  },
+  {
+   "id": "1953",
+   "label": "1953",
+   "year": 1953,
+   "date": "19 April 1953",
+   "era": "occupation",
+   "totalSeats": 466,
+   "majoritySeats": 234,
+   "turnout": 74.21,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": "Shigeru Yoshida",
+     "seats": 199,
+     "seatChange": -41.0,
+     "votes": 13476428,
+     "share": 38.95,
+     "swing": -8.98
+    },
+    {
+     "name": "Kaishintō",
+     "leader": "Mamoru Shigemitsu",
+     "seats": 76,
+     "seatChange": -13.0,
+     "votes": 6186232,
+     "share": 17.88,
+     "swing": -0.31
+    },
+    {
+     "name": "Leftist Socialist Party of Japan",
+     "leader": null,
+     "seats": 72,
+     "seatChange": 18.0,
+     "votes": 4516715,
+     "share": 13.05,
+     "swing": null
+    },
+    {
+     "name": "Left Socialist",
+     "leader": "Mosaburō Suzuki",
+     "seats": 72,
+     "seatChange": 18.0,
+     "votes": 4516715,
+     "share": 13.05,
+     "swing": 3.43
+    },
+    {
+     "name": "Rightist Socialist Party of Japan",
+     "leader": null,
+     "seats": 66,
+     "seatChange": 9.0,
+     "votes": 4677833,
+     "share": 13.52,
+     "swing": null
+    },
+    {
+     "name": "Right Socialist",
+     "leader": "Jōtarō Kawakami",
+     "seats": 66,
+     "seatChange": 9.0,
+     "votes": 4677833,
+     "share": 13.52,
+     "swing": 1.89
+    },
+    {
+     "name": "Liberal Party–Hatoyama",
+     "leader": "Bukichi Miki",
+     "seats": 35,
+     "seatChange": null,
+     "votes": 3054688,
+     "share": 8.83,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -8.0,
+     "votes": 1523736,
+     "share": 4.4,
+     "swing": null
+    },
+    {
+     "name": "Labourers and Farmers Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 1.0,
+     "votes": 358773,
+     "share": 1.04,
+     "swing": null
+    },
+    {
+     "name": "Japanese Communist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": 655990,
+     "share": 1.9,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Shigeru Yoshida",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "Shigeru Yoshida",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Liberal Party"
+  },
+  {
+   "id": "1955",
+   "label": "1955",
+   "year": 1955,
+   "date": "27 February 1955",
+   "era": "fiftyfive",
+   "totalSeats": 467,
+   "majoritySeats": 234,
+   "turnout": 75.83,
+   "parties": [
+    {
+     "name": "Democratic Party",
+     "leader": "Ichirō Hatoyama",
+     "seats": 185,
+     "seatChange": 74.0,
+     "votes": 13536044,
+     "share": 36.57,
+     "swing": 9.86
+    },
+    {
+     "name": "Liberal Party",
+     "leader": "Taketora Ogata",
+     "seats": 112,
+     "seatChange": -87.0,
+     "votes": 9849458,
+     "share": 26.61,
+     "swing": -12.34
+    },
+    {
+     "name": "Left Socialist Party of Japan",
+     "leader": "Mosaburō Suzuki",
+     "seats": 89,
+     "seatChange": 17.0,
+     "votes": 5683312,
+     "share": 15.35,
+     "swing": 2.3
+    },
+    {
+     "name": "Right Socialist Party of Japan",
+     "leader": "Jōtarō Kawakami",
+     "seats": 67,
+     "seatChange": 1.0,
+     "votes": 5129594,
+     "share": 13.86,
+     "swing": 0.34
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -5.0,
+     "votes": 1229082,
+     "share": 3.32,
+     "swing": null
+    },
+    {
+     "name": "Labourers and Farmers Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -1.0,
+     "votes": 357611,
+     "share": 0.97,
+     "swing": null
+    },
+    {
+     "name": "Japanese Communist Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": 733121,
+     "share": 1.98,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 496614,
+     "share": 1.34,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ichirō Hatoyama",
+    "party": "Democratic"
+   },
+   "pmAfter": {
+    "name": "Ichirō Hatoyama",
+    "party": "Democratic"
+   },
+   "knownAs": "Eve of the merger",
+   "summary": "On 15 November 1955, the Japan Democratic Party and the Liberal Party combined as the modern Liberal Democratic Party, which ruled Japan continuously until 1993. The Rightist Socialist Party of Japan and the Leftist Socialist Party of Japan also merged to form the Japan Socialist Party, which was Japan's largest opposition party in the 1955 system.",
+   "caveat": null,
+   "seatLeader": "Democratic Party"
+  },
+  {
+   "id": "1958",
+   "label": "1958",
+   "year": 1958,
+   "date": "22 May 1958",
+   "era": "fiftyfive",
+   "totalSeats": 467,
+   "majoritySeats": 234,
+   "turnout": 76.98,
+   "parties": [
+    {
+     "name": "Liberal Democratic Party",
+     "leader": "Nobusuke Kishi",
+     "seats": 287,
+     "seatChange": -10.0,
+     "votes": 22976846,
+     "share": 57.8,
+     "swing": -5.38
+    },
+    {
+     "name": "Japan Socialist Party",
+     "leader": "Mosaburō Suzuki",
+     "seats": 166,
+     "seatChange": 6.0,
+     "votes": 13093993,
+     "share": 32.94,
+     "swing": 2.76
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 6.0,
+     "votes": 2380795,
+     "share": 5.99,
+     "swing": null
+    },
+    {
+     "name": "Japanese Communist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1.0,
+     "votes": 1012036,
+     "share": 2.55,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 287991,
+     "share": 0.72,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Nobusuke Kishi",
+    "party": "LDP"
+   },
+   "pmAfter": {
+    "name": "Nobusuke Kishi",
+    "party": "LDP"
+   },
+   "knownAs": "First LDP vs JSP contest",
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Liberal Democratic Party"
+  },
+  {
+   "id": "1960",
+   "label": "1960",
+   "year": 1960,
+   "date": "20 November 1960",
+   "era": "fiftyfive",
+   "totalSeats": 467,
+   "majoritySeats": 234,
+   "turnout": 73.5,
+   "parties": [
+    {
+     "name": "Liberal Democratic Party",
+     "leader": "Hayato Ikeda",
+     "seats": 296,
+     "seatChange": 9.0,
+     "votes": 22740272,
+     "share": 57.56,
+     "swing": -0.24
+    },
+    {
+     "name": "Japan Socialist Party",
+     "leader": "Saburō Eda",
+     "seats": 145,
+     "seatChange": -21.0,
+     "votes": 10887134,
+     "share": 27.56,
+     "swing": -5.88
+    },
+    {
+     "name": "Democratic Socialist Party",
+     "leader": "Suehiro Nishio",
+     "seats": 17,
+     "seatChange": null,
+     "votes": 3464148,
+     "share": 8.77,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -7.0,
+     "votes": 1118905,
+     "share": 2.83,
+     "swing": null
+    },
+    {
+     "name": "Japanese Communist Party",
+     "leader": "Kenji Miyamoto",
+     "seats": 3,
+     "seatChange": 2.0,
+     "votes": 1156723,
+     "share": 2.93,
+     "swing": 0.38
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 141941,
+     "share": 0.36,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Hayato Ikeda",
+    "party": "LDP"
+   },
+   "pmAfter": {
+    "name": "Hayato Ikeda",
+    "party": "LDP"
+   },
+   "knownAs": null,
+   "summary": "The elections came near the end of a turbulent year marked by violent labour disputes at Mitsui Miike Coal Mine, the \"May 19th Incident\" in which Nobusuke Kishi and LDP lawmakers in the Diet forced the revised US-Japan Security Treaty through parliament (causing an upsurge in the Anpo protests), and the assassination of Japan Socialist Party (JSP) leader Inejirō Asanuma by waki",
+   "caveat": null,
+   "seatLeader": "Liberal Democratic Party"
+  },
+  {
+   "id": "1963",
+   "label": "1963",
+   "year": 1963,
+   "date": "21 November 1963",
+   "era": "fiftyfive",
+   "totalSeats": 467,
+   "majoritySeats": 234,
+   "turnout": 71.14,
+   "parties": [
+    {
+     "name": "Liberal Democratic Party",
+     "leader": "Hayato Ikeda",
+     "seats": 283,
+     "seatChange": -13.0,
+     "votes": 22423915,
+     "share": 54.67,
+     "swing": -2.89
+    },
+    {
+     "name": "Japan Socialist Party",
+     "leader": "Jōtarō Kawakami",
+     "seats": 144,
+     "seatChange": -1.0,
+     "votes": 11906766,
+     "share": 29.03,
+     "swing": 1.53
+    },
+    {
+     "name": "Democratic Socialist Party",
+     "leader": "Suehiro Nishio",
+     "seats": 23,
+     "seatChange": 6.0,
+     "votes": 3023302,
+     "share": 7.37,
+     "swing": -1.4
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 7.0,
+     "votes": 1956313,
+     "share": 4.77,
+     "swing": null
+    },
+    {
+     "name": "Japanese Communist Party",
+     "leader": "Kenji Miyamoto",
+     "seats": 5,
+     "seatChange": 2.0,
+     "votes": 1646477,
+     "share": 4.01,
+     "swing": 1.08
+    }
+   ],
+   "pmBefore": {
+    "name": "Hayato Ikeda",
+    "party": "LDP"
+   },
+   "pmAfter": {
+    "name": "Hayato Ikeda",
+    "party": "LDP"
+   },
+   "knownAs": null,
+   "summary": "Most commentators believed that the election results would not radically alter the Japanese political landscape, and this was confirmed in the results, which did not see any party win or lose a large number of seats. Although the LDP lost 13 seats, 12 LDP-aligned independents were also elected.",
+   "caveat": null,
+   "seatLeader": "Liberal Democratic Party"
+  },
+  {
+   "id": "1967",
+   "label": "1967",
+   "year": 1967,
+   "date": "29 January 1967",
+   "era": "fiftyfive",
+   "totalSeats": 486,
+   "majoritySeats": 244,
+   "turnout": 73.98,
+   "parties": [
+    {
+     "name": "Liberal Democratic Party",
+     "leader": "Eisaku Satō",
+     "seats": 277,
+     "seatChange": -6.0,
+     "votes": 22447838,
+     "share": 48.8,
+     "swing": -5.87
+    },
+    {
+     "name": "Japan Socialist Party",
+     "leader": "Kōzō Sasaki",
+     "seats": 140,
+     "seatChange": -4.0,
+     "votes": 12826104,
+     "share": 27.88,
+     "swing": -1.15
+    },
+    {
+     "name": "Democratic Socialist Party",
+     "leader": "Suehiro Nishio",
+     "seats": 30,
+     "seatChange": 7.0,
+     "votes": 3404464,
+     "share": 7.4,
+     "swing": 0.03
+    },
+    {
+     "name": "Komeitō",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": 2472371,
+     "share": 5.38,
+     "swing": null
+    },
+    {
+     "name": "Kōmeitō",
+     "leader": "Takehisa Tsuji",
+     "seats": 25,
+     "seatChange": null,
+     "votes": 2472371,
+     "share": 5.38,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -3.0,
+     "votes": 2553989,
+     "share": 5.55,
+     "swing": null
+    },
+    {
+     "name": "Japanese Communist Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 0.0,
+     "votes": 2190564,
+     "share": 4.76,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Eisaku Satō",
+    "party": "LDP"
+   },
+   "pmAfter": {
+    "name": "Eisaku Satō",
+    "party": "LDP"
+   },
+   "knownAs": null,
+   "summary": "Prime Minister Eisaku Satō had dissolved parliament in 1966, following a number of what was called Black Fog Incidents , such as the resignation of Transport Minister Seijuro Arafune and calls for greater reform in 1966.",
+   "caveat": null,
+   "seatLeader": "Liberal Democratic Party"
+  },
+  {
+   "id": "1969",
+   "label": "1969",
+   "year": 1969,
+   "date": "27 December 1969",
+   "era": "fiftyfive",
+   "totalSeats": 486,
+   "majoritySeats": 244,
+   "turnout": 68.51,
+   "parties": [
+    {
+     "name": "Liberal Democratic Party",
+     "leader": "Eisaku Satō",
+     "seats": 288,
+     "seatChange": 11.0,
+     "votes": 22381570,
+     "share": 47.63,
+     "swing": -1.17
+    },
+    {
+     "name": "Japan Socialist Party",
+     "leader": "Tomomi Narita",
+     "seats": 90,
+     "seatChange": -50.0,
+     "votes": 10074101,
+     "share": 21.44,
+     "swing": -6.44
+    },
+    {
+     "name": "Komeitō",
+     "leader": null,
+     "seats": 47,
+     "seatChange": 22.0,
+     "votes": 5124666,
+     "share": 10.91,
+     "swing": null
+    },
+    {
+     "name": "Kōmeitō",
+     "leader": "Yoshikatsu Takeiri",
+     "seats": 47,
+     "seatChange": 22.0,
+     "votes": 5124666,
+     "share": 10.91,
+     "swing": 5.53
+    },
+    {
+     "name": "Democratic Socialist Party",
+     "leader": "Eiichi Nishimura",
+     "seats": 31,
+     "seatChange": 1.0,
+     "votes": 3636591,
+     "share": 7.74,
+     "swing": 0.34
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 7.0,
+     "votes": 2492560,
+     "share": 5.3,
+     "swing": null
+    },
+    {
+     "name": "Japanese Communist Party",
+     "leader": "Kenji Miyamoto",
+     "seats": 14,
+     "seatChange": 9.0,
+     "votes": 3199032,
+     "share": 6.81,
+     "swing": 2.05
+    }
+   ],
+   "pmBefore": {
+    "name": "Eisaku Satō",
+    "party": "LDP"
+   },
+   "pmAfter": {
+    "name": "Eisaku Satō",
+    "party": "LDP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Japan on 27 December 1969. The result was a victory for the Liberal Democratic Party, which won 288 of the 486 seats.",
+   "caveat": null,
+   "seatLeader": "Liberal Democratic Party"
+  },
+  {
+   "id": "1972",
+   "label": "1972",
+   "year": 1972,
+   "date": "10 December 1972",
+   "era": "fiftyfive",
+   "totalSeats": 491,
+   "majoritySeats": 246,
+   "turnout": 71.76,
+   "parties": [
+    {
+     "name": "Liberal Democratic Party",
+     "leader": "Kakuei Tanaka",
+     "seats": 271,
+     "seatChange": -17.0,
+     "votes": 24563199,
+     "share": 46.85,
+     "swing": -0.78
+    },
+    {
+     "name": "Japan Socialist Party",
+     "leader": "Tomomi Narita",
+     "seats": 118,
+     "seatChange": 28.0,
+     "votes": 11478742,
+     "share": 21.9,
+     "swing": 0.46
+    },
+    {
+     "name": "Japanese Communist Party",
+     "leader": "Kenji Miyamoto",
+     "seats": 38,
+     "seatChange": 24.0,
+     "votes": 5496827,
+     "share": 10.49,
+     "swing": 3.68
+    },
+    {
+     "name": "Kōmeitō",
+     "leader": "Yoshikatsu Takeiri",
+     "seats": 29,
+     "seatChange": -18.0,
+     "votes": 4436755,
+     "share": 8.46,
+     "swing": -2.45
+    },
+    {
+     "name": "Democratic Socialist Party",
+     "leader": "Kasuga Ikkō",
+     "seats": 19,
+     "seatChange": -12.0,
+     "votes": 3660953,
+     "share": 6.98,
+     "swing": -0.76
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 14,
+     "seatChange": -2.0,
+     "votes": 2645582,
+     "share": 5.05,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": 143019,
+     "share": 0.27,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Kakuei Tanaka",
+    "party": "LDP"
+   },
+   "pmAfter": {
+    "name": "Kakuei Tanaka",
+    "party": "LDP"
+   },
+   "knownAs": null,
+   "summary": "Little changed in the aftermath of the election; the LDP saw a slight decrease in seat numbers (debatably due to it fielding more candidates than ever before as a result of regained confidence in 1969), and its vote share remained below 50% (even with the addition of conservative-aligned independents).",
+   "caveat": null,
+   "seatLeader": "Liberal Democratic Party"
+  },
+  {
+   "id": "1976",
+   "label": "1976",
+   "year": 1976,
+   "date": "5 December 1976",
+   "era": "fiftyfive",
+   "totalSeats": 511,
+   "majoritySeats": 256,
+   "turnout": 73.45,
+   "parties": [
+    {
+     "name": "Liberal Democratic Party",
+     "leader": "Takeo Miki",
+     "seats": 249,
+     "seatChange": -22.0,
+     "votes": 23653626,
+     "share": 41.78,
+     "swing": -5.07
+    },
+    {
+     "name": "Japan Socialist Party",
+     "leader": "Tomomi Narita",
+     "seats": 123,
+     "seatChange": 5.0,
+     "votes": 11713009,
+     "share": 20.69,
+     "swing": -1.21
+    },
+    {
+     "name": "Komeitō",
+     "leader": null,
+     "seats": 55,
+     "seatChange": 26.0,
+     "votes": 6177300,
+     "share": 10.91,
+     "swing": null
+    },
+    {
+     "name": "Kōmeitō",
+     "leader": "Yoshikatsu Takeiri",
+     "seats": 55,
+     "seatChange": 26.0,
+     "votes": 6177300,
+     "share": 10.91,
+     "swing": 2.45
+    },
+    {
+     "name": "Democratic Socialist Party",
+     "leader": "Kasuga Ikkō",
+     "seats": 29,
+     "seatChange": 10.0,
+     "votes": 3554076,
+     "share": 6.28,
+     "swing": -0.7
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 7.0,
+     "votes": 3227463,
+     "share": 5.7,
+     "swing": null
+    },
+    {
+     "name": "Japanese Communist Party",
+     "leader": "Kenji Miyamoto",
+     "seats": 17,
+     "seatChange": -21.0,
+     "votes": 5878192,
+     "share": 10.38,
+     "swing": -0.11
+    },
+    {
+     "name": "New Liberal Club",
+     "leader": "Yōhei Kōno",
+     "seats": 17,
+     "seatChange": null,
+     "votes": 2363985,
+     "share": 4.18,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Takeo Miki",
+    "party": "LDP"
+   },
+   "pmAfter": {
+    "name": "Takeo Fukuda",
+    "party": "LDP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Japan on 5 December 1976. Voter turnout was 73.45%.",
+   "caveat": null,
+   "seatLeader": "Liberal Democratic Party"
+  },
+  {
+   "id": "1979",
+   "label": "1979",
+   "year": 1979,
+   "date": "7 October 1979",
+   "era": "fiftyfive",
+   "totalSeats": 511,
+   "majoritySeats": 256,
+   "turnout": 68.01,
+   "parties": [
+    {
+     "name": "Liberal Democratic Party",
+     "leader": "Masayoshi Ōhira",
+     "seats": 248,
+     "seatChange": -1.0,
+     "votes": 24084131,
+     "share": 44.59,
+     "swing": 2.81
+    },
+    {
+     "name": "Japan Socialist Party",
+     "leader": "Ichio Asukata",
+     "seats": 107,
+     "seatChange": -16.0,
+     "votes": 10643450,
+     "share": 19.71,
+     "swing": -0.98
+    },
+    {
+     "name": "Kōmeitō",
+     "leader": "Yoshikatsu Takeiri",
+     "seats": 57,
+     "seatChange": 2.0,
+     "votes": 5282683,
+     "share": 9.78,
+     "swing": -1.13
+    },
+    {
+     "name": "Japanese Communist Party",
+     "leader": "Kenji Miyamoto",
+     "seats": 39,
+     "seatChange": 22.0,
+     "votes": 5625528,
+     "share": 10.42,
+     "swing": -0.04
+    },
+    {
+     "name": "Democratic Socialist Party",
+     "leader": "Sasaki Ryōsaku",
+     "seats": 35,
+     "seatChange": 6.0,
+     "votes": 3663692,
+     "share": 6.78,
+     "swing": 0.5
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -2.0,
+     "votes": 2641064,
+     "share": 4.89,
+     "swing": null
+    },
+    {
+     "name": "New Liberal Club",
+     "leader": "Yōhei Kōno",
+     "seats": 4,
+     "seatChange": -13.0,
+     "votes": 1631812,
+     "share": 3.02,
+     "swing": -1.16
+    },
+    {
+     "name": "Socialist Democratic Federation",
+     "leader": "Ichio Asukata",
+     "seats": 2,
+     "seatChange": null,
+     "votes": 368660,
+     "share": 0.68,
+     "swing": -0.98
+    }
+   ],
+   "pmBefore": {
+    "name": "Masayoshi Ōhira",
+    "party": "LDP"
+   },
+   "pmAfter": {
+    "name": "Masayoshi Ōhira",
+    "party": "LDP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Japan on 7 October 1979 to elect the 511 members of the House of Representatives. Prime Minister Ōhira Masayoshi's announcement that a consumption (sales) tax would be imposed was a hot-button issue in the run-up to the election.",
+   "caveat": null,
+   "seatLeader": "Liberal Democratic Party"
+  },
+  {
+   "id": "1980",
+   "label": "1980",
+   "year": 1980,
+   "date": "22 June 1980",
+   "era": "fiftyfive",
+   "totalSeats": 511,
+   "majoritySeats": 256,
+   "turnout": 74.57,
+   "parties": [
+    {
+     "name": "Liberal Democratic Party",
+     "leader": "Eiichi Nishimura (acting)",
+     "seats": 284,
+     "seatChange": 36.0,
+     "votes": 28262442,
+     "share": 47.88,
+     "swing": 3.29
+    },
+    {
+     "name": "Japan Socialist Party",
+     "leader": "Ichio Asukata",
+     "seats": 107,
+     "seatChange": 0.0,
+     "votes": 11400748,
+     "share": 19.31,
+     "swing": -0.4
+    },
+    {
+     "name": "Kōmeitō",
+     "leader": "Yoshikatsu Takeiri",
+     "seats": 33,
+     "seatChange": -24.0,
+     "votes": 5329942,
+     "share": 9.03,
+     "swing": -0.74
+    },
+    {
+     "name": "Democratic Socialist Party",
+     "leader": "Sasaki Ryōsaku",
+     "seats": 32,
+     "seatChange": -4.0,
+     "votes": 3896728,
+     "share": 6.6,
+     "swing": -0.18
+    },
+    {
+     "name": "Japanese Communist Party",
+     "leader": "Kenji Miyamoto",
+     "seats": 29,
+     "seatChange": -10.0,
+     "votes": 5803613,
+     "share": 9.83,
+     "swing": -0.59
+    },
+    {
+     "name": "New Liberal Club",
+     "leader": "Yōhei Kōno",
+     "seats": 12,
+     "seatChange": 8.0,
+     "votes": 1766396,
+     "share": 2.99,
+     "swing": -0.03
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -8.0,
+     "votes": 2056967,
+     "share": 3.48,
+     "swing": null
+    },
+    {
+     "name": "Socialist Democratic Federation",
+     "leader": "Ichio Asukata",
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": 402832,
+     "share": 0.68,
+     "swing": -0.4
+    }
+   ],
+   "pmBefore": {
+    "name": "Masayoshi Ito (acting)",
+    "party": "LDP"
+   },
+   "pmAfter": {
+    "name": "Zenkō Suzuki",
+    "party": "LDP"
+   },
+   "knownAs": null,
+   "summary": "The election was triggered following a vote of no confidence brought by the Japan Socialist Party (JSP) on 16 May 1980 regarding corruption and rises in public utility charges as reasons for the House of Representatives of Japan (lower house) to withdraw its backing from the LDP government.",
+   "caveat": null,
+   "seatLeader": "Liberal Democratic Party"
+  },
+  {
+   "id": "1983",
+   "label": "1983",
+   "year": 1983,
+   "date": "18 December 1983",
+   "era": "fiftyfive",
+   "totalSeats": 511,
+   "majoritySeats": 256,
+   "turnout": 67.94,
+   "parties": [
+    {
+     "name": "Liberal Democratic Party",
+     "leader": "Yasuhiro Nakasone",
+     "seats": 250,
+     "seatChange": -34.0,
+     "votes": 25982785,
+     "share": 45.76,
+     "swing": -2.12
+    },
+    {
+     "name": "Japan Socialist Party",
+     "leader": "Masashi Ishibashi",
+     "seats": 112,
+     "seatChange": 5.0,
+     "votes": 11065083,
+     "share": 19.49,
+     "swing": 0.18
+    },
+    {
+     "name": "Kōmeitō",
+     "leader": "Yoshikatsu Takeiri",
+     "seats": 58,
+     "seatChange": 25.0,
+     "votes": 5745751,
+     "share": 10.12,
+     "swing": 1.09
+    },
+    {
+     "name": "Democratic Socialist Party",
+     "leader": "Sasaki Ryōsaku",
+     "seats": 38,
+     "seatChange": 6.0,
+     "votes": 4129908,
+     "share": 7.27,
+     "swing": 0.67
+    },
+    {
+     "name": "Japanese Communist Party",
+     "leader": "Tetsuzo Fuwa",
+     "seats": 26,
+     "seatChange": -3.0,
+     "votes": 5302485,
+     "share": 9.34,
+     "swing": -0.49
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 5.0,
+     "votes": 2768736,
+     "share": 4.88,
+     "swing": null
+    },
+    {
+     "name": "New Liberal Club",
+     "leader": "Seiichi Tagawa",
+     "seats": 8,
+     "seatChange": -4.0,
+     "votes": 1341584,
+     "share": 2.36,
+     "swing": -0.63
+    },
+    {
+     "name": "Socialist Democratic Federation",
+     "leader": "Masashi Ishibashi",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": 381045,
+     "share": 0.67,
+     "swing": 0.18
+    }
+   ],
+   "pmBefore": {
+    "name": "Yasuhiro Nakasone",
+    "party": "LDP"
+   },
+   "pmAfter": {
+    "name": "Yasuhiro Nakasone",
+    "party": "LDP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Japan on 18 December 1983 to elect the 511 members of the House of Representatives. The voter turnout was 67.94%, the lowest it had ever been in post-war history up to that point, and a low which would not be surpassed until ten years later.",
+   "caveat": null,
+   "seatLeader": "Liberal Democratic Party"
+  },
+  {
+   "id": "1986",
+   "label": "1986",
+   "year": 1986,
+   "date": "6 July 1986",
+   "era": "fiftyfive",
+   "totalSeats": 512,
+   "majoritySeats": 257,
+   "turnout": 71.4,
+   "parties": [
+    {
+     "name": "Liberal Democratic Party",
+     "leader": "Yasuhiro Nakasone",
+     "seats": 300,
+     "seatChange": 50.0,
+     "votes": 29875501,
+     "share": 49.42,
+     "swing": 3.66
+    },
+    {
+     "name": "Japan Socialist Party",
+     "leader": "Masashi Ishibashi",
+     "seats": 85,
+     "seatChange": -27.0,
+     "votes": 10412584,
+     "share": 17.23,
+     "swing": -2.26
+    },
+    {
+     "name": "Kōmeitō",
+     "leader": "Yoshikatsu Takeiri",
+     "seats": 56,
+     "seatChange": -2.0,
+     "votes": 5701277,
+     "share": 9.43,
+     "swing": -0.69
+    },
+    {
+     "name": "Japanese Communist Party",
+     "leader": "Tetsuzo Fuwa",
+     "seats": 26,
+     "seatChange": 0.0,
+     "votes": 5313246,
+     "share": 8.79,
+     "swing": -0.55
+    },
+    {
+     "name": "Democratic Socialist Party",
+     "leader": "Tsukamoto Saburō",
+     "seats": 26,
+     "seatChange": -12.0,
+     "votes": 3895858,
+     "share": 6.44,
+     "swing": -0.83
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -7.0,
+     "votes": 3515043,
+     "share": 5.81,
+     "swing": null
+    },
+    {
+     "name": "New Liberal Club",
+     "leader": "Yōhei Kōno",
+     "seats": 6,
+     "seatChange": -2.0,
+     "votes": 1114800,
+     "share": 1.84,
+     "swing": -0.72
+    },
+    {
+     "name": "Socialist Democratic Federation",
+     "leader": "Masashi Ishibashi",
+     "seats": 4,
+     "seatChange": 1.0,
+     "votes": 499670,
+     "share": 0.83,
+     "swing": -2.26
+    }
+   ],
+   "pmBefore": {
+    "name": "Yasuhiro Nakasone",
+    "party": "LDP"
+   },
+   "pmAfter": {
+    "name": "Yasuhiro Nakasone",
+    "party": "LDP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Japan on 6 July 1986 to elect the 512 members of the House of Representatives, alongside elections for the House of Councillors. The result was a landslide victory for the ruling Liberal Democratic Party (LDP), which gained 50 seats and an outright majority in the House.",
+   "caveat": null,
+   "seatLeader": "Liberal Democratic Party"
+  },
+  {
+   "id": "1990",
+   "label": "1990",
+   "year": 1990,
+   "date": "18 February 1990",
+   "era": "fiftyfive",
+   "totalSeats": 512,
+   "majoritySeats": 257,
+   "turnout": 73.31,
+   "parties": [
+    {
+     "name": "Liberal Democratic Party",
+     "leader": "Toshiki Kaifu",
+     "seats": 275,
+     "seatChange": -31.0,
+     "votes": 30315417,
+     "share": 46.14,
+     "swing": -3.28
+    },
+    {
+     "name": "Japan Socialist Party",
+     "leader": "Takako Doi",
+     "seats": 136,
+     "seatChange": 51.0,
+     "votes": 16025473,
+     "share": 24.39,
+     "swing": 7.12
+    },
+    {
+     "name": "Kōmeitō",
+     "leader": "Koshiro Ishida",
+     "seats": 45,
+     "seatChange": -11.0,
+     "votes": 5242675,
+     "share": 7.98,
+     "swing": -1.45
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 12.0,
+     "votes": 4807524,
+     "share": 7.32,
+     "swing": null
+    },
+    {
+     "name": "Japanese Communist Party",
+     "leader": "Tetsuzo Fuwa",
+     "seats": 16,
+     "seatChange": -10.0,
+     "votes": 5226987,
+     "share": 7.96,
+     "swing": -0.83
+    },
+    {
+     "name": "Democratic Socialist Party",
+     "leader": "Eiichi Nagasue",
+     "seats": 14,
+     "seatChange": -12.0,
+     "votes": 3178949,
+     "share": 4.84,
+     "swing": -1.6
+    },
+    {
+     "name": "Socialist Democratic Federation",
+     "leader": "Takako Doi",
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 566957,
+     "share": 0.86,
+     "swing": 7.12
+    },
+    {
+     "name": "Progressive Party",
+     "leader": "Seiichi Tagawa",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 281793,
+     "share": 0.43,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Toshiki Kaifu",
+    "party": "LDP"
+   },
+   "pmAfter": {
+    "name": "Toshiki Kaifu",
+    "party": "LDP"
+   },
+   "knownAs": null,
+   "summary": "As with the previous House of Councillors election, the \"four-point set of evils\" in the minds of voters were the controversial consumption tax, the Recruit scandal, agricultural import liberalisation, and former Prime Minister Sōsuke Uno's sex scandal.",
+   "caveat": null,
+   "seatLeader": "Liberal Democratic Party"
+  },
+  {
+   "id": "1993",
+   "label": "1993",
+   "year": 1993,
+   "date": "18 July 1993",
+   "era": "reform",
+   "totalSeats": 511,
+   "majoritySeats": 256,
+   "turnout": 66.99,
+   "parties": [
+    {
+     "name": "Liberal Democratic Party",
+     "leader": "Kiichi Miyazawa",
+     "seats": 223,
+     "seatChange": -52.0,
+     "votes": 22999646,
+     "share": 36.62,
+     "swing": -9.49
+    },
+    {
+     "name": "Japan Socialist Party",
+     "leader": null,
+     "seats": 70,
+     "seatChange": -66.0,
+     "votes": 9687589,
+     "share": 15.43,
+     "swing": null
+    },
+    {
+     "name": "Japan Renewal Party",
+     "leader": null,
+     "seats": 55,
+     "seatChange": null,
+     "votes": 6341365,
+     "share": 10.1,
+     "swing": null
+    },
+    {
+     "name": "Kōmeitō",
+     "leader": "Kōshirō Ishida",
+     "seats": 51,
+     "seatChange": 6.0,
+     "votes": 5114351,
+     "share": 8.14,
+     "swing": 0.16
+    },
+    {
+     "name": "Japan New Party",
+     "leader": "Morihiro Hosokawa",
+     "seats": 35,
+     "seatChange": null,
+     "votes": 5053981,
+     "share": 8.05,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 9.0,
+     "votes": 4304189,
+     "share": 6.85,
+     "swing": null
+    },
+    {
+     "name": "Japanese Communist Party",
+     "leader": "Tetsuzo Fuwa",
+     "seats": 15,
+     "seatChange": -1.0,
+     "votes": 4834588,
+     "share": 7.7,
+     "swing": -0.26
+    },
+    {
+     "name": "Democratic Socialist Party",
+     "leader": "Keigo Ōuchi",
+     "seats": 15,
+     "seatChange": 1.0,
+     "votes": 2205683,
+     "share": 3.51,
+     "swing": -1.33
+    },
+    {
+     "name": "NP-Sakigake",
+     "leader": "Masayoshi Takemura",
+     "seats": 13,
+     "seatChange": null,
+     "votes": 1658097,
+     "share": 2.64,
+     "swing": null
+    },
+    {
+     "name": "Socialist Democratic",
+     "leader": "Satsuki Eda",
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 461169,
+     "share": 0.73,
+     "swing": -0.13
+    }
+   ],
+   "pmBefore": {
+    "name": "Kiichi Miyazawa",
+    "party": "LDP"
+   },
+   "pmAfter": {
+    "name": "Morihiro Hosokawa",
+    "party": "New Party"
+   },
+   "knownAs": "The LDP falls",
+   "summary": "General elections were held in Japan on 18 July 1993 to elect the 511 members of the House of Representatives. The Liberal Democratic Party (LDP), which had been in power since 1955, lost their majority in the House.",
+   "caveat": null,
+   "seatLeader": "Liberal Democratic Party"
+  },
+  {
+   "id": "1996",
+   "label": "1996",
+   "year": 1996,
+   "date": "20 October 1996",
+   "era": "reform",
+   "totalSeats": 500,
+   "majoritySeats": 251,
+   "turnout": 59.65,
+   "parties": [
+    {
+     "name": "LDP",
+     "leader": "Ryutaro Hashimoto",
+     "seats": 239,
+     "seatChange": 16.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "New Frontier",
+     "leader": "Ichirō Ozawa",
+     "seats": 156,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic",
+     "leader": null,
+     "seats": 52,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "JCP",
+     "leader": "Tetsuzo Fuwa",
+     "seats": 26,
+     "seatChange": 11.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic",
+     "leader": "Takako Doi",
+     "seats": 15,
+     "seatChange": -55.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "NP-Sakigake",
+     "leader": "Shōichi Ide",
+     "seats": 2,
+     "seatChange": -11.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ryutaro Hashimoto",
+    "party": "LDP"
+   },
+   "pmAfter": {
+    "name": "Ryutaro Hashimoto",
+    "party": "LDP"
+   },
+   "knownAs": null,
+   "summary": "These were the first elections held after the 1994 electoral reforms. Previously, each district was represented by multiple members, sometimes from the same party, causing intra-party competition.",
+   "caveat": null,
+   "seatLeader": "LDP"
+  },
+  {
+   "id": "2000",
+   "label": "2000",
+   "year": 2000,
+   "date": "25 June 2000",
+   "era": "reform",
+   "totalSeats": 480,
+   "majoritySeats": 241,
+   "turnout": 62.49,
+   "parties": [
+    {
+     "name": "LDP",
+     "leader": "Yoshirō Mori",
+     "seats": 233,
+     "seatChange": -6.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic",
+     "leader": "Yukio Hatoyama",
+     "seats": 127,
+     "seatChange": 75.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "New Kōmeitō",
+     "leader": "Takenori Kanzaki",
+     "seats": 31,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal",
+     "leader": "Ichirō Ozawa",
+     "seats": 22,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "JCP",
+     "leader": "Tetsuzo Fuwa",
+     "seats": 20,
+     "seatChange": -6.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic",
+     "leader": "Takako Doi",
+     "seats": 19,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Yoshirō Mori",
+    "party": "LDP"
+   },
+   "pmAfter": {
+    "name": "Yoshirō Mori",
+    "party": "LDP"
+   },
+   "knownAs": null,
+   "summary": "The ruling Liberal Democratic Party (LDP) remained the largest party in the House of Representatives but lost seats, along with its two coalition partners. Two cabinet members, Takashi Fukaya and Tokuichiro Tamazawa, lost their seats.",
+   "caveat": null,
+   "seatLeader": "LDP"
+  },
+  {
+   "id": "2003",
+   "label": "2003",
+   "year": 2003,
+   "date": "9 November 2003",
+   "era": "reform",
+   "totalSeats": 480,
+   "majoritySeats": 241,
+   "turnout": 59.85,
+   "parties": [
+    {
+     "name": "LDP",
+     "leader": "Junichiro Koizumi",
+     "seats": 237,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic",
+     "leader": "Naoto Kan",
+     "seats": 177,
+     "seatChange": 28.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "New Kōmeitō",
+     "leader": "Takenori Kanzaki",
+     "seats": 34,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "JCP",
+     "leader": "Kazuo Shii",
+     "seats": 9,
+     "seatChange": -11.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic",
+     "leader": "Takako Doi",
+     "seats": 6,
+     "seatChange": -13.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "New Conservative",
+     "leader": "Hiroshi Kumagai",
+     "seats": 4,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Junichiro Koizumi",
+    "party": "LDP"
+   },
+   "pmAfter": {
+    "name": "Junichiro Koizumi",
+    "party": "LDP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Japan on November 9, 2003. Incumbent Prime Minister Junichiro Koizumi and the Liberal Democratic Party won the most seats in the House of Representatives but failed to secure a majority.",
+   "caveat": null,
+   "seatLeader": "LDP"
+  },
+  {
+   "id": "2005",
+   "label": "2005",
+   "year": 2005,
+   "date": "11 September 2005",
+   "era": "reform",
+   "totalSeats": 480,
+   "majoritySeats": 241,
+   "turnout": 67.51,
+   "parties": [
+    {
+     "name": "LDP",
+     "leader": "Junichiro Koizumi",
+     "seats": 296,
+     "seatChange": 55.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic",
+     "leader": "Katsuya Okada",
+     "seats": 113,
+     "seatChange": -64.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "New Kōmeitō",
+     "leader": "Takenori Kanzaki",
+     "seats": 31,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "JCP",
+     "leader": "Kazuo Shii",
+     "seats": 9,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic",
+     "leader": "Mizuho Fukushima",
+     "seats": 7,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "People's New",
+     "leader": "Tamisuke Watanuki",
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Junichiro Koizumi",
+    "party": "LDP"
+   },
+   "pmAfter": {
+    "name": "Junichiro Koizumi",
+    "party": "LDP"
+   },
+   "knownAs": "The postal election",
+   "summary": "General elections were held in Japan on 11 September 2005 for all 480 seats of the House of Representatives, the lower house of the Diet.",
+   "caveat": null,
+   "seatLeader": "LDP"
+  },
+  {
+   "id": "2009",
+   "label": "2009",
+   "year": 2009,
+   "date": "30 August 2009",
+   "era": "reform",
+   "totalSeats": 480,
+   "majoritySeats": 241,
+   "turnout": 69.19,
+   "parties": [
+    {
+     "name": "Democratic",
+     "leader": "Yukio Hatoyama",
+     "seats": 308,
+     "seatChange": 195.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "LDP",
+     "leader": "Tarō Asō",
+     "seats": 119,
+     "seatChange": -177.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "New Kōmeitō",
+     "leader": "Akihiro Ota",
+     "seats": 21,
+     "seatChange": -10.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "JCP",
+     "leader": "Kazuo Shii",
+     "seats": 9,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic",
+     "leader": "Mizuho Fukushima",
+     "seats": 7,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Your",
+     "leader": "Yoshimi Watanabe",
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Tarō Asō",
+    "party": "LDP"
+   },
+   "pmAfter": {
+    "name": "Yukio Hatoyama",
+    "party": "Democratic"
+   },
+   "knownAs": "The DPJ landslide",
+   "summary": "General elections were held in Japan on August 30, 2009 to elect the 480 members of the House of Representatives.",
+   "caveat": null,
+   "seatLeader": "Democratic"
+  },
+  {
+   "id": "2012",
+   "label": "2012",
+   "year": 2012,
+   "date": "16 December 2012",
+   "era": "reform",
+   "totalSeats": 480,
+   "majoritySeats": 241,
+   "turnout": 59.32,
+   "parties": [
+    {
+     "name": "LDP",
+     "leader": "Shinzō Abe",
+     "seats": 294,
+     "seatChange": 175.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic",
+     "leader": "Yoshihiko Noda",
+     "seats": 57,
+     "seatChange": -251.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Restoration",
+     "leader": "Shintaro Ishihara",
+     "seats": 54,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Komeito",
+     "leader": "Natsuo Yamaguchi",
+     "seats": 31,
+     "seatChange": 10.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Your",
+     "leader": "Yoshimi Watanabe",
+     "seats": 18,
+     "seatChange": 13.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Tomorrow",
+     "leader": "Yukiko Kada",
+     "seats": 9,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "JCP",
+     "leader": "Kazuo Shii",
+     "seats": 8,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic",
+     "leader": "Mizuho Fukushima",
+     "seats": 2,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Yoshihiko Noda",
+    "party": "Democratic"
+   },
+   "pmAfter": {
+    "name": "Shinzo Abe",
+    "party": "LDP"
+   },
+   "knownAs": "Abe returns",
+   "summary": "This article's use of external links may not follow Wikipedia's policies or guidelines. Please improve this article by removing excessive or inappropriate external links, and converting useful links where appropriate into footnote references. (January 2026) (Learn how and when to remove this message)",
+   "caveat": null,
+   "seatLeader": "LDP"
+  },
+  {
+   "id": "2014",
+   "label": "2014",
+   "year": 2014,
+   "date": "14 December 2014",
+   "era": "modern",
+   "totalSeats": 475,
+   "majoritySeats": 238,
+   "turnout": 52.65,
+   "parties": [
+    {
+     "name": "LDP",
+     "leader": "Shinzō Abe",
+     "seats": 291,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic",
+     "leader": "Banri Kaieda",
+     "seats": 73,
+     "seatChange": 16.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Innovation",
+     "leader": "Toru Hashimoto",
+     "seats": 41,
+     "seatChange": -13.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Komeito",
+     "leader": "Natsuo Yamaguchi",
+     "seats": 35,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "JCP",
+     "leader": "Kazuo Shii",
+     "seats": 21,
+     "seatChange": 13.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Future Generations",
+     "leader": "Takeo Hiranuma",
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Shinzō Abe",
+    "party": "LDP"
+   },
+   "pmAfter": {
+    "name": "Shinzō Abe",
+    "party": "LDP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Japan on 14 December 2014. Voting took place in all Representatives constituencies of Japan including proportional blocks to elect the members of the House of Representatives, the lower house of the National Diet of Japan.",
+   "caveat": null,
+   "seatLeader": "LDP"
+  },
+  {
+   "id": "2017",
+   "label": "2017",
+   "year": 2017,
+   "date": "22 October 2017",
+   "era": "modern",
+   "totalSeats": 465,
+   "majoritySeats": 233,
+   "turnout": 53.68,
+   "parties": [
+    {
+     "name": "LDP",
+     "leader": "Shinzo Abe",
+     "seats": 284,
+     "seatChange": -7.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "CDP",
+     "leader": "Yukio Edano",
+     "seats": 55,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Kibō no Tō",
+     "leader": "Yuriko Koike",
+     "seats": 50,
+     "seatChange": -23.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Komeito",
+     "leader": "Natsuo Yamaguchi",
+     "seats": 29,
+     "seatChange": -6.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "JCP",
+     "leader": "Kazuo Shii",
+     "seats": 12,
+     "seatChange": -9.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ishin",
+     "leader": "Ichirō Matsui",
+     "seats": 11,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Shinzo Abe",
+    "party": "LDP"
+   },
+   "pmAfter": {
+    "name": "Shinzo Abe",
+    "party": "LDP"
+   },
+   "knownAs": null,
+   "summary": "This article's use of external links may not follow Wikipedia's policies or guidelines. Please improve this article by removing excessive or inappropriate external links, and converting useful links where appropriate into footnote references. (January 2026) (Learn how and when to remove this message)",
+   "caveat": null,
+   "seatLeader": "LDP"
+  },
+  {
+   "id": "2021",
+   "label": "2021",
+   "year": 2021,
+   "date": "31 October 2021",
+   "era": "modern",
+   "totalSeats": 465,
+   "majoritySeats": 233,
+   "turnout": 55.98,
+   "parties": [
+    {
+     "name": "LDP",
+     "leader": "Fumio Kishida",
+     "seats": 259,
+     "seatChange": -25.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "CDP",
+     "leader": "Yukio Edano",
+     "seats": 96,
+     "seatChange": -9.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ishin",
+     "leader": "Ichirō Matsui",
+     "seats": 41,
+     "seatChange": 30.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Komeito",
+     "leader": "Natsuo Yamaguchi",
+     "seats": 32,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "DPP",
+     "leader": "Yuichiro Tamaki",
+     "seats": 11,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "JCP",
+     "leader": "Kazuo Shii",
+     "seats": 10,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Fumio Kishida",
+    "party": "LDP"
+   },
+   "pmAfter": {
+    "name": "Fumio Kishida",
+    "party": "LDP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Japan on 31 October 2021, as required by the constitution. Voting took place in all constituencies in order to elect members to the House of Representatives, the lower house of the National Diet.",
+   "caveat": null,
+   "seatLeader": "LDP"
+  },
+  {
+   "id": "2024",
+   "label": "2024",
+   "year": 2024,
+   "date": "27 October 2024",
+   "era": "modern",
+   "totalSeats": 465,
+   "majoritySeats": 233,
+   "turnout": 53.84,
+   "parties": [
+    {
+     "name": "LDP",
+     "leader": "Shigeru Ishiba",
+     "seats": 191,
+     "seatChange": -68.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "CDP",
+     "leader": "Yoshihiko Noda",
+     "seats": 148,
+     "seatChange": 52.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ishin",
+     "leader": "Nobuyuki Baba",
+     "seats": 38,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "DPP",
+     "leader": "Yuichiro Tamaki",
+     "seats": 28,
+     "seatChange": 16.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Komeito",
+     "leader": "Keiichi Ishii",
+     "seats": 24,
+     "seatChange": -8.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Reiwa",
+     "leader": "Tarō Yamamoto",
+     "seats": 9,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "JCP",
+     "leader": "Tomoko Tamura",
+     "seats": 8,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Sanseitō",
+     "leader": "Sohei Kamiya",
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "CPJ",
+     "leader": "Naoki Hyakuta",
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Shigeru Ishiba",
+    "party": "LDP"
+   },
+   "pmAfter": {
+    "name": "Shigeru Ishiba",
+    "party": "LDP"
+   },
+   "knownAs": "The coalition loses its majority",
+   "summary": "General elections were held in Japan on 27 October 2024 due to the early dissolution of the House of Representatives, the lower house of the National Diet, by Prime Minister Shigeru Ishiba. Voting took place in all constituencies, including proportional blocks, to elect all 465 members of the House of Representatives.",
+   "caveat": null,
+   "seatLeader": "LDP"
+  },
+  {
+   "id": "2026",
+   "label": "2026",
+   "year": 2026,
+   "date": "8 February 2026",
+   "era": "modern",
+   "totalSeats": 465,
+   "majoritySeats": 233,
+   "turnout": 56.26,
+   "parties": [
+    {
+     "name": "LDP",
+     "leader": "Sanae Takaichi",
+     "seats": 316,
+     "seatChange": 125.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Centrist Reform",
+     "leader": "Yoshihiko Noda",
+     "seats": 49,
+     "seatChange": -123.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ishin",
+     "leader": null,
+     "seats": 36,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "DPP",
+     "leader": "Yuichiro Tamaki",
+     "seats": 28,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Sanseitō",
+     "leader": "Sohei Kamiya",
+     "seats": 15,
+     "seatChange": 12.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Team Mirai",
+     "leader": "Takahiro Anno",
+     "seats": 11,
+     "seatChange": 11.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "JCP",
+     "leader": "Tomoko Tamura",
+     "seats": 4,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Reiwa",
+     "leader": "Taro Yamamoto",
+     "seats": 1,
+     "seatChange": -8.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Genzei–Yukoku",
+     "leader": "Kazuhiro Haraguchi",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Sanae Takaichi",
+    "party": "LDP"
+   },
+   "pmAfter": {
+    "name": "Sanae Takaichi",
+    "party": "LDP"
+   },
+   "knownAs": "The Takaichi snap election",
+   "summary": "The election took place nearly four months into Sanae Takaichi's tenure as Prime Minister of Japan, which began on 21 October after she won the 2025 Liberal Democratic Party presidential election and formed the Liberal Democratic Party–Japan Innovation Party coalition (LDP–JIP).",
+   "caveat": null,
+   "seatLeader": "LDP"
+  }
+ ]
+}

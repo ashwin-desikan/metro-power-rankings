@@ -1,0 +1,3455 @@
+{
+ "meta": {
+  "title": "Spanish general elections",
+  "sources": [
+   "Wikipedia: Spanish general election articles, 1867–2023 (results, infoboxes and leads)",
+   "Interior Ministry and Junta Electoral figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "eras": [
+  {
+   "key": "sexenio",
+   "label": "Revolution and the Sexenio",
+   "span": "1867–1873",
+   "blurb": "The last Isabelline election of 1867 was followed by the Glorious Revolution: the 1869 vote, held under universal male suffrage, was among Europe's most democratic to date, and the turbulent Sexenio ran through a monarchy-by-invitation to the First Republic's brief life."
+  },
+  {
+   "key": "restoration",
+   "label": "The Restoration and the turno pacífico",
+   "span": "1876–1923",
+   "blurb": "For half a century the Conservative and Liberal parties alternated in power by arrangement — the turno pacífico. The Interior Ministry's encasillado assigned winners before polling day, with rural bosses, the caciques, delivering the count. The recorded majorities are the system's product, not the voters'."
+  },
+  {
+   "key": "second-republic",
+   "label": "The Second Republic",
+   "span": "1931–1936",
+   "blurb": "The Republic's three elections were mass democracy at last — women voted from 1933 — and each swung violently: a republican-socialist chamber, then a right-wing one, then the Popular Front's narrow 1936 victory, five months before the coup that began the Civil War."
+  },
+  {
+   "key": "francoist",
+   "label": "The Francoist Cortes",
+   "span": "1967–1971",
+   "blurb": "Franco's 'organic democracy' allowed heads of family to elect a small fraction of a corporatist Cortes, with no parties and no opposition. These votes are recorded here as rituals of the dictatorship, not elections."
+  },
+  {
+   "key": "democracy",
+   "label": "The democratic era",
+   "span": "1977–2023",
+   "blurb": "The 1977 election — the first free vote in 41 years — anchored the transition, and the 1978 Constitution followed. Since then: González's 1982 landslide, the peaceful alternations of PSOE and PP, the end of the two-party duopoly after 2015, and the coalition politics of the 2019–2023 chambers."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1867",
+   "label": "1867",
+   "year": 1867,
+   "date": "10–13 March 1867",
+   "era": "sexenio",
+   "totalSeats": 352,
+   "majoritySeats": 177,
+   "turnout": 51.8,
+   "parties": [
+    {
+     "name": "Moderate",
+     "leader": "Ramón María Narváez",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Union",
+     "leader": "Leopoldo O'Donnell",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ramón María Narváez",
+    "party": "Moderate"
+   },
+   "pmAfter": {
+    "name": "Ramón María Narváez",
+    "party": "Moderate"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain from 10 to 13 March 1867 to elect the members of the 10th Cortes under the Spanish Constitution of 1845. 352 seats in the Congress of Deputies were up for election. Less than 400,000 people were eligible to vote, about 2.6% of the total population.",
+   "caveat": null,
+   "seatLeader": null
+  },
+  {
+   "id": "1869",
+   "label": "1869",
+   "year": 1869,
+   "date": "30 May – 1 June 1869",
+   "era": "sexenio",
+   "totalSeats": 381,
+   "majoritySeats": 191,
+   "turnout": 77.5,
+   "parties": [
+    {
+     "name": "Monarchist–Democratic",
+     "leader": "Juan Prim",
+     "seats": 259,
+     "seatChange": null,
+     "votes": 8743286,
+     "share": 65.0,
+     "swing": null
+    },
+    {
+     "name": "Republican",
+     "leader": "Francesc Pi i Margall",
+     "seats": 69,
+     "seatChange": null,
+     "votes": 2987398,
+     "share": 22.2,
+     "swing": null
+    },
+    {
+     "name": "Carlist",
+     "leader": "Carlos, Duke of Madrid",
+     "seats": 23,
+     "seatChange": null,
+     "votes": 1090254,
+     "share": 8.1,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Francisco Serrano",
+    "party": "Liberal Union"
+   },
+   "pmAfter": {
+    "name": "Francisco Serrano",
+    "party": "Liberal Union"
+   },
+   "knownAs": "Universal male suffrage",
+   "summary": "A general election was held in Spain from 15 to 18 January 1869 to elect the members of the Constituent Cortes in the Democratic Sexennium period. 363 of 381 seats in the Cortes were up for election. In the Canary Islands the election was held from 27 to 30 January, in Puerto Rico it was held from 30 May to 1 June, and in Cuba it was indefinitely postponed.",
+   "caveat": null,
+   "seatLeader": "Monarchist–Democratic"
+  },
+  {
+   "id": "1871",
+   "label": "1871",
+   "year": 1871,
+   "date": "20–23 June 1871",
+   "era": "sexenio",
+   "totalSeats": 424,
+   "majoritySeats": 213,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Monarchist–Democratic",
+     "leader": "Francisco Serrano",
+     "seats": 235,
+     "seatChange": -24.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican",
+     "leader": "Francesc Pi i Margall",
+     "seats": 52,
+     "seatChange": -17.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Carlist",
+     "leader": "Agustín Crespí de Valldaura",
+     "seats": 51,
+     "seatChange": 28.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Moderate",
+     "leader": "Alejandro Mon y Menéndez",
+     "seats": 18,
+     "seatChange": 17.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Alfonsist",
+     "leader": "Antonio Cánovas del Castillo",
+     "seats": 9,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Montpensierist",
+     "leader": "Duke of Montpensier",
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Francisco Serrano",
+    "party": "Liberal Union"
+   },
+   "pmAfter": {
+    "name": "Francisco Serrano",
+    "party": "Liberal Union"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain from 8 to 11 March 1871 to elect the members of the 1st Cortes under the Spanish Constitution of 1869, during the Democratic Sexennium period. 406 of 424 seats in the Congress of Deputies and all 200 seats in the Senate were up for election.",
+   "caveat": null,
+   "seatLeader": "Monarchist–Democratic"
+  },
+  {
+   "id": "1872-apr",
+   "label": "April 1872",
+   "year": 1872,
+   "date": "2–5 April 1872",
+   "era": "sexenio",
+   "totalSeats": 424,
+   "majoritySeats": 213,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Conservative–Constitutional",
+     "leader": "Práxedes Mateo Sagasta",
+     "seats": 236,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican",
+     "leader": "Francesc Pi i Margall",
+     "seats": 52,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Radical",
+     "leader": "Manuel Ruiz Zorrilla",
+     "seats": 42,
+     "seatChange": 42.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Práxedes Mateo Sagasta",
+    "party": "Constitutional"
+   },
+   "pmAfter": {
+    "name": "Práxedes Mateo Sagasta",
+    "party": "Constitutional"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain from 2 to 5 April 1872 to elect the members of the 2nd Cortes under the Spanish Constitution of 1869, during the Democratic Sexennium period. 406 of 424 seats in the Congress of Deputies and all 200 seats in the Senate were up for election. The election in Cuba was indefinitely postponed.",
+   "caveat": null,
+   "seatLeader": "Conservative–Constitutional"
+  },
+  {
+   "id": "1872-aug",
+   "label": "August 1872",
+   "year": 1872,
+   "date": "1872",
+   "era": "sexenio",
+   "totalSeats": 424,
+   "majoritySeats": 213,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Radical",
+     "leader": "Manuel Ruiz Zorrilla",
+     "seats": 274,
+     "seatChange": 232.0,
+     "votes": 1321338,
+     "share": 69.5,
+     "swing": null
+    },
+    {
+     "name": "Republican",
+     "leader": "Francesc Pi i Margall",
+     "seats": 78,
+     "seatChange": 26.0,
+     "votes": 379345,
+     "share": 20.0,
+     "swing": null
+    },
+    {
+     "name": "Conservative–Constitutional",
+     "leader": "Práxedes Mateo Sagasta",
+     "seats": 14,
+     "seatChange": -222.0,
+     "votes": 120543,
+     "share": 6.3,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Manuel Ruiz Zorrilla",
+    "party": "Radical"
+   },
+   "pmAfter": {
+    "name": "Manuel Ruiz Zorrilla",
+    "party": "Radical"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain from 24 to 27 August 1872 to elect the members of the 3rd Cortes under the Spanish Constitution of 1869, during the Democratic Sexennium period. 406 of 424 seats in the Congress of Deputies and all 200 seats in the Senate were up for election. The election in Cuba was indefinitely postponed.",
+   "caveat": null,
+   "seatLeader": "Radical"
+  },
+  {
+   "id": "1873",
+   "label": "1873",
+   "year": 1873,
+   "date": "1873",
+   "era": "sexenio",
+   "totalSeats": 424,
+   "majoritySeats": 213,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Republican",
+     "leader": "Francesc Pi i Margall",
+     "seats": 343,
+     "seatChange": 265.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Radical",
+     "leader": "Cristino Martos",
+     "seats": 20,
+     "seatChange": -254.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative–Constitutional",
+     "leader": "Práxedes Mateo Sagasta",
+     "seats": 7,
+     "seatChange": -7.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Estanislao Figueras",
+    "party": "Republican"
+   },
+   "pmAfter": {
+    "name": "Estanislao Figueras",
+    "party": "Republican"
+   },
+   "knownAs": "The First Republic's election",
+   "summary": "The election was held with universal male suffrage. It was held in very unorthodox conditions and drew a very low voter turnout, as neither the Carlist or Alfonsist monarchists participated.",
+   "caveat": null,
+   "seatLeader": "Republican"
+  },
+  {
+   "id": "1876",
+   "label": "1876",
+   "year": 1876,
+   "date": "15–18 February 1876",
+   "era": "restoration",
+   "totalSeats": 424,
+   "majoritySeats": 213,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Conservative",
+     "leader": "Antonio Cánovas del Castillo",
+     "seats": 317,
+     "seatChange": 314.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Constitutional",
+     "leader": "Práxedes Mateo Sagasta",
+     "seats": 48,
+     "seatChange": 41.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Moderate",
+     "leader": "Alejandro Pidal y Mon",
+     "seats": 12,
+     "seatChange": 12.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Radical",
+     "leader": "Cristino Martos",
+     "seats": 6,
+     "seatChange": -14.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican",
+     "leader": "Emilio Castelar",
+     "seats": 1,
+     "seatChange": -346.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Antonio Cánovas del Castillo",
+    "party": "Conservative"
+   },
+   "pmAfter": {
+    "name": "Antonio Cánovas del Castillo",
+    "party": "Conservative"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain from 20 to 23 January 1876 to elect the members of the Constituent Cortes in the Restoration period. 406 of 424 seats in the Congress of Deputies and all 200 seats in the Senate were up for election.",
+   "caveat": "A turno pacífico election: the result was largely arranged in advance through the Interior Ministry's encasillado and enforced locally by caciques. The recorded majorities describe the system, not free voting.",
+   "seatLeader": "Conservative"
+  },
+  {
+   "id": "1879",
+   "label": "1879",
+   "year": 1879,
+   "date": "20 April 1879",
+   "era": "restoration",
+   "totalSeats": 431,
+   "majoritySeats": 216,
+   "turnout": 65.3,
+   "parties": [
+    {
+     "name": "Conservative",
+     "leader": "Antonio Cánovas del Castillo",
+     "seats": 288,
+     "seatChange": null,
+     "votes": 402357,
+     "share": 64.7,
+     "swing": null
+    },
+    {
+     "name": "Liberal Left",
+     "leader": "Práxedes Mateo Sagasta",
+     "seats": 64,
+     "seatChange": null,
+     "votes": 139314,
+     "share": 22.4,
+     "swing": null
+    },
+    {
+     "name": "Parliamentary Centre",
+     "leader": "Manuel Alonso Martínez",
+     "seats": 13,
+     "seatChange": null,
+     "votes": 20473,
+     "share": 3.3,
+     "swing": null
+    },
+    {
+     "name": "Moderate",
+     "leader": "Alejandro Pidal y Mon",
+     "seats": 11,
+     "seatChange": null,
+     "votes": 16501,
+     "share": 2.7,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Arsenio Martínez Campos",
+    "party": "Conservative"
+   },
+   "pmAfter": {
+    "name": "Arsenio Martínez Campos",
+    "party": "Conservative"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 20 April 1879 (for the Congress of Deputies), and on 3 May 1879 (for the Senate), to elect the members of the 1st Cortes under the Spanish Constitution of 1876, during the Restoration period. All 431 seats in the Congress of Deputies were up for election, as well as 180 of 360 seats in the Senate.",
+   "caveat": "A turno pacífico election: the result was largely arranged in advance through the Interior Ministry's encasillado and enforced locally by caciques. The recorded majorities describe the system, not free voting.",
+   "seatLeader": "Conservative"
+  },
+  {
+   "id": "1881",
+   "label": "1881",
+   "year": 1881,
+   "date": "21 August 1881",
+   "era": "restoration",
+   "totalSeats": null,
+   "majoritySeats": 217,
+   "turnout": 71.4,
+   "parties": [
+    {
+     "name": "Fusionist",
+     "leader": "Práxedes Mateo Sagasta",
+     "seats": 297,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative",
+     "leader": "Antonio Cánovas del Castillo",
+     "seats": 48,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic",
+     "leader": "Emilio Castelar",
+     "seats": 32,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Práxedes Mateo Sagasta",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "Práxedes Mateo Sagasta",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 21 August 1881 (for the Congress of Deputies), and on 2 September 1881 (for the Senate), to elect the members of the 2nd Cortes under the Spanish Constitution of 1876, during the Restoration period. All 432 seats in the Congress of Deputies were up for election, as well as 180 of 360 seats in the Senate.",
+   "caveat": "A turno pacífico election: the result was largely arranged in advance through the Interior Ministry's encasillado and enforced locally by caciques. The recorded majorities describe the system, not free voting.",
+   "seatLeader": "Fusionist"
+  },
+  {
+   "id": "1884",
+   "label": "1884",
+   "year": 1884,
+   "date": "27 April 1884",
+   "era": "restoration",
+   "totalSeats": null,
+   "majoritySeats": 217,
+   "turnout": 72.7,
+   "parties": [
+    {
+     "name": "Conservative",
+     "leader": "Antonio Cánovas del Castillo",
+     "seats": 342,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Fusionist",
+     "leader": "Práxedes Mateo Sagasta",
+     "seats": 43,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Leftist",
+     "leader": "José López Domínguez",
+     "seats": 36,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Antonio Cánovas del Castillo",
+    "party": "Conservative"
+   },
+   "pmAfter": {
+    "name": "Antonio Cánovas del Castillo",
+    "party": "Conservative"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 27 April 1884 (for the Congress of Deputies) and on 8 May 1884 (for the Senate), to elect the members of the 3rd Cortes under the Spanish Constitution of 1876, during the Restoration period. All 433 seats in the Congress of Deputies were up for election, as well as 180 of 360 seats in the Senate.",
+   "caveat": "A turno pacífico election: the result was largely arranged in advance through the Interior Ministry's encasillado and enforced locally by caciques. The recorded majorities describe the system, not free voting.",
+   "seatLeader": "Conservative"
+  },
+  {
+   "id": "1886",
+   "label": "1886",
+   "year": 1886,
+   "date": "4 April 1886",
+   "era": "restoration",
+   "totalSeats": null,
+   "majoritySeats": 218,
+   "turnout": 58.9,
+   "parties": [
+    {
+     "name": "Liberal",
+     "leader": "Práxedes Mateo Sagasta",
+     "seats": 309,
+     "seatChange": 266.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative",
+     "leader": "Antonio Cánovas del Castillo",
+     "seats": 70,
+     "seatChange": -272.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican",
+     "leader": "Manuel Ruiz Zorrilla",
+     "seats": 20,
+     "seatChange": 11.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Leftist",
+     "leader": "José López Domínguez",
+     "seats": 12,
+     "seatChange": -24.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Reformist",
+     "leader": "Francisco Romero Robledo",
+     "seats": 11,
+     "seatChange": 11.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Possibilist",
+     "leader": "Emilio Castelar",
+     "seats": 11,
+     "seatChange": 8.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Práxedes Mateo Sagasta",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "Práxedes Mateo Sagasta",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 4 April 1886 (for the Congress of Deputies) and on 25 April 1886 (for the Senate), to elect the members of the 4th Cortes under the Spanish Constitution of 1876, during the Restoration period. All 434 seats in the Congress of Deputies were up for election, as well as 180 of 360 seats in the Senate.",
+   "caveat": "A turno pacífico election: the result was largely arranged in advance through the Interior Ministry's encasillado and enforced locally by caciques. The recorded majorities describe the system, not free voting.",
+   "seatLeader": "Liberal"
+  },
+  {
+   "id": "1891",
+   "label": "1891",
+   "year": 1891,
+   "date": "1 February 1891",
+   "era": "restoration",
+   "totalSeats": 446,
+   "majoritySeats": 224,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Conservative",
+     "leader": "Antonio Cánovas del Castillo",
+     "seats": 284,
+     "seatChange": 214.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal",
+     "leader": "Práxedes Mateo Sagasta",
+     "seats": 100,
+     "seatChange": -221.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Reformist",
+     "leader": "Francisco Romero Robledo",
+     "seats": 17,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican",
+     "leader": "Emilio Castelar",
+     "seats": 15,
+     "seatChange": -0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Progressive",
+     "leader": "Manuel Ruiz Zorrilla",
+     "seats": 12,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Martist",
+     "leader": "Cristino Martos",
+     "seats": 8,
+     "seatChange": 8.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Antonio Cánovas del Castillo",
+    "party": "Conservative"
+   },
+   "pmAfter": {
+    "name": "Antonio Cánovas del Castillo",
+    "party": "Conservative"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 1 February 1891 (for the Congress of Deputies), and on 15 February 1891 (for the Senate), to elect the members of the 5th Cortes under the Spanish Constitution of 1876, during the Restoration period. All 442 seats in the Congress of Deputies—plus four special districts—were up for election, as well as 180 of 360 seats in the Senate.",
+   "caveat": "A turno pacífico election: the result was largely arranged in advance through the Interior Ministry's encasillado and enforced locally by caciques. The recorded majorities describe the system, not free voting.",
+   "seatLeader": "Conservative"
+  },
+  {
+   "id": "1893",
+   "label": "1893",
+   "year": 1893,
+   "date": "5 March 1893",
+   "era": "restoration",
+   "totalSeats": 447,
+   "majoritySeats": 224,
+   "turnout": 68.4,
+   "parties": [
+    {
+     "name": "Liberal",
+     "leader": "Práxedes Mateo Sagasta",
+     "seats": 298,
+     "seatChange": 190.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative",
+     "leader": "Antonio Cánovas del Castillo",
+     "seats": 67,
+     "seatChange": -234.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican",
+     "leader": "Manuel Ruiz Zorrilla",
+     "seats": 36,
+     "seatChange": 15.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Possibilist",
+     "leader": "Emilio Castelar",
+     "seats": 18,
+     "seatChange": 12.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Silvelist",
+     "leader": "Francisco Silvela",
+     "seats": 17,
+     "seatChange": 17.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Carlist",
+     "leader": "Enrique de Aguilera y Gamboa",
+     "seats": 8,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Práxedes Mateo Sagasta",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "Práxedes Mateo Sagasta",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 5 March 1893 (for the Congress of Deputies), and on 19 March 1893 (for the Senate), to elect the members of the 6th Cortes under the Spanish Constitution of 1876, during the Restoration period. All 442 seats in the Congress of Deputies—plus five special districts—were up for election, as well as 180 of 360 seats in the Senate.",
+   "caveat": "A turno pacífico election: the result was largely arranged in advance through the Interior Ministry's encasillado and enforced locally by caciques. The recorded majorities describe the system, not free voting.",
+   "seatLeader": "Liberal"
+  },
+  {
+   "id": "1896",
+   "label": "1896",
+   "year": 1896,
+   "date": "12 April 1896",
+   "era": "restoration",
+   "totalSeats": 447,
+   "majoritySeats": 224,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Conservative",
+     "leader": "Antonio Cánovas del Castillo",
+     "seats": 307,
+     "seatChange": 240.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal",
+     "leader": "Práxedes Mateo Sagasta",
+     "seats": 111,
+     "seatChange": -187.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Silvelist",
+     "leader": "Francisco Silvela",
+     "seats": 12,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Carlist",
+     "leader": "Enrique de Aguilera y Gamboa",
+     "seats": 10,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Integrist",
+     "leader": "Ramón Nocedal",
+     "seats": 1,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Antonio Cánovas del Castillo",
+    "party": "Conservative"
+   },
+   "pmAfter": {
+    "name": "Antonio Cánovas del Castillo",
+    "party": "Conservative"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 12 April 1896 (for the Congress of Deputies), and on 26 April 1896 (for the Senate), to elect the members of the 7th Cortes under the Spanish Constitution of 1876, during the Restoration period. All 445 seats in the Congress of Deputies—plus two special districts—were up for election, as well as 180 of 360 seats in the Senate.",
+   "caveat": "A turno pacífico election: the result was largely arranged in advance through the Interior Ministry's encasillado and enforced locally by caciques. The recorded majorities describe the system, not free voting.",
+   "seatLeader": "Conservative"
+  },
+  {
+   "id": "1898",
+   "label": "1898",
+   "year": 1898,
+   "date": "27 March 1898",
+   "era": "restoration",
+   "totalSeats": 447,
+   "majoritySeats": 224,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal",
+     "leader": "Práxedes Mateo Sagasta",
+     "seats": 324,
+     "seatChange": 213.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative (Silvelist)",
+     "leader": "Francisco Silvela",
+     "seats": 79,
+     "seatChange": 65.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican",
+     "leader": "Nicolás Salmerón",
+     "seats": 15,
+     "seatChange": -11.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Tetuanist",
+     "leader": "Carlos O'Donnell",
+     "seats": 7,
+     "seatChange": -300.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Reformist",
+     "leader": "Francisco Romero Robledo",
+     "seats": 6,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Carlist",
+     "leader": "Enrique de Aguilera y Gamboa",
+     "seats": 6,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Práxedes Mateo Sagasta",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "Práxedes Mateo Sagasta",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 27 March 1898 (for the Congress of Deputies), and on 10 April 1898 (for the Senate), to elect the members of the 8th Cortes under the Spanish Constitution of 1876, during the Restoration period. All 445 seats in the Congress of Deputies—plus two special districts—were up for election, as well as 180 of 360 seats in the Senate.",
+   "caveat": "A turno pacífico election: the result was largely arranged in advance through the Interior Ministry's encasillado and enforced locally by caciques. The recorded majorities describe the system, not free voting.",
+   "seatLeader": "Liberal"
+  },
+  {
+   "id": "1899",
+   "label": "1899",
+   "year": 1899,
+   "date": "16 April 1899",
+   "era": "restoration",
+   "totalSeats": 402,
+   "majoritySeats": 202,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Conservative (Silvelist)",
+     "leader": "Francisco Silvela",
+     "seats": 240,
+     "seatChange": 161.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal",
+     "leader": "Práxedes Mateo Sagasta",
+     "seats": 92,
+     "seatChange": -232.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gamacist",
+     "leader": "Germán Gamazo",
+     "seats": 32,
+     "seatChange": 32.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Tetuanist",
+     "leader": "Carlos O'Donnell",
+     "seats": 11,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican",
+     "leader": "Nicolás Salmerón",
+     "seats": 11,
+     "seatChange": -0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Carlist",
+     "leader": "Enrique de Aguilera y Gamboa",
+     "seats": 3,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Francisco Silvela",
+    "party": "Conservative"
+   },
+   "pmAfter": {
+    "name": "Francisco Silvela",
+    "party": "Conservative"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 16 April 1899 (for the Congress of Deputies), and on 30 April 1899 (for the Senate), to elect the members of the 9th Cortes under the Spanish Constitution of 1876, during the Restoration period. All 401 seats in the Congress of Deputies—plus one special district—were up for election, as well as 180 of 360 seats in the Senate.",
+   "caveat": "A turno pacífico election: the result was largely arranged in advance through the Interior Ministry's encasillado and enforced locally by caciques. The recorded majorities describe the system, not free voting.",
+   "seatLeader": "Conservative (Silvelist)"
+  },
+  {
+   "id": "1901",
+   "label": "1901",
+   "year": 1901,
+   "date": "19 May 1901",
+   "era": "restoration",
+   "totalSeats": 402,
+   "majoritySeats": 202,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal",
+     "leader": "Práxedes Mateo Sagasta",
+     "seats": 246,
+     "seatChange": 154.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative",
+     "leader": "Francisco Silvela",
+     "seats": 76,
+     "seatChange": -164.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican",
+     "leader": "Francisco Pi y Margall",
+     "seats": 15,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Gamacist",
+     "leader": "Germán Gamazo",
+     "seats": 15,
+     "seatChange": -17.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Reformist",
+     "leader": "Francisco Romero Robledo",
+     "seats": 12,
+     "seatChange": 9.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Tetuanist",
+     "leader": "Carlos O'Donnell",
+     "seats": 10,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Práxedes Mateo Sagasta",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "Práxedes Mateo Sagasta",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 19 May 1901 (for the Congress of Deputies), and on 2 June 1901 (for the Senate), to elect the members of the 10th Cortes under the Spanish Constitution of 1876, during the Restoration period. All 402 seats in the Congress of Deputies were up for election, as well as 180 of 360 seats in the Senate.",
+   "caveat": "A turno pacífico election: the result was largely arranged in advance through the Interior Ministry's encasillado and enforced locally by caciques. The recorded majorities describe the system, not free voting.",
+   "seatLeader": "Liberal"
+  },
+  {
+   "id": "1903",
+   "label": "1903",
+   "year": 1903,
+   "date": "26 April 1903",
+   "era": "restoration",
+   "totalSeats": 403,
+   "majoritySeats": 202,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Conservative",
+     "leader": "Francisco Silvela",
+     "seats": 228,
+     "seatChange": 137.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal",
+     "leader": "Eugenio Montero Ríos",
+     "seats": 95,
+     "seatChange": -157.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican",
+     "leader": "Nicolás Salmerón",
+     "seats": 28,
+     "seatChange": -13.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic",
+     "leader": "José Canalejas",
+     "seats": 9,
+     "seatChange": 9.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Federal",
+     "leader": "José María Vallés",
+     "seats": 8,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Tetuanist",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Francisco Silvela",
+    "party": "Conservative"
+   },
+   "pmAfter": {
+    "name": "Francisco Silvela",
+    "party": "Conservative"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 26 April 1903 (for the Congress of Deputies), and on 10 May 1903 (for the Senate), to elect the members of the 11th Cortes under the Spanish Constitution of 1876, during the Restoration period. All 403 seats in the Congress of Deputies were up for election, as well as 180 of 360 seats in the Senate.",
+   "caveat": "A turno pacífico election: the result was largely arranged in advance through the Interior Ministry's encasillado and enforced locally by caciques. The recorded majorities describe the system, not free voting.",
+   "seatLeader": "Conservative"
+  },
+  {
+   "id": "1905",
+   "label": "1905",
+   "year": 1905,
+   "date": "10 September 1905",
+   "era": "restoration",
+   "totalSeats": 404,
+   "majoritySeats": 203,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal–Democratic",
+     "leader": "Eugenio Montero Ríos",
+     "seats": 226,
+     "seatChange": 122.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative",
+     "leader": "Antonio Maura",
+     "seats": 105,
+     "seatChange": -129.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican",
+     "leader": "Nicolás Salmerón",
+     "seats": 25,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Villaverdist",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 16.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Regionalist",
+     "leader": "Enric Prat de la Riba",
+     "seats": 7,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Reformist",
+     "leader": "Francisco Romero Robledo",
+     "seats": 7,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Eugenio Montero Ríos",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "Eugenio Montero Ríos",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 10 September 1905 (for the Congress of Deputies), and on 24 September 1905 (for the Senate), to elect the members of the 12th Cortes under the Spanish Constitution of 1876, during the Restoration period. All 404 seats in the Congress of Deputies were up for election, as well as 180 of 360 seats in the Senate.",
+   "caveat": "A turno pacífico election: the result was largely arranged in advance through the Interior Ministry's encasillado and enforced locally by caciques. The recorded majorities describe the system, not free voting.",
+   "seatLeader": "Liberal–Democratic"
+  },
+  {
+   "id": "1907",
+   "label": "1907",
+   "year": 1907,
+   "date": "21 April 1907",
+   "era": "restoration",
+   "totalSeats": 404,
+   "majoritySeats": 203,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Conservative",
+     "leader": "Antonio Maura",
+     "seats": 256,
+     "seatChange": 128.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal",
+     "leader": "Segismundo Moret",
+     "seats": 72,
+     "seatChange": -154.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Solidarity",
+     "leader": "Enric Prat de la Riba",
+     "seats": 38,
+     "seatChange": 20.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican",
+     "leader": "Nicolás Salmerón",
+     "seats": 15,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Carlist",
+     "leader": "Matías Barrio y Mier",
+     "seats": 8,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic",
+     "leader": "José Canalejas",
+     "seats": 7,
+     "seatChange": 7.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Antonio Maura",
+    "party": "Conservative"
+   },
+   "pmAfter": {
+    "name": "Antonio Maura",
+    "party": "Conservative"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 21 April 1907 (for the Congress of Deputies), and on 5 May 1907 (for the Senate), to elect the members of the 13th Cortes under the Spanish Constitution of 1876, during the Restoration period. All 404 seats in the Congress of Deputies were up for election, as well as 180 of 360 seats in the Senate.",
+   "caveat": "A turno pacífico election: the result was largely arranged in advance through the Interior Ministry's encasillado and enforced locally by caciques. The recorded majorities describe the system, not free voting.",
+   "seatLeader": "Conservative"
+  },
+  {
+   "id": "1910",
+   "label": "1910",
+   "year": 1910,
+   "date": "8 May 1910",
+   "era": "restoration",
+   "totalSeats": 404,
+   "majoritySeats": 203,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Democratic–Liberal",
+     "leader": "José Canalejas",
+     "seats": 223,
+     "seatChange": 144.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative",
+     "leader": "Antonio Maura",
+     "seats": 110,
+     "seatChange": -146.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican–Socialist",
+     "leader": "Benito Pérez Galdós",
+     "seats": 29,
+     "seatChange": 12.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Jaimist",
+     "leader": "Bartolomé Feliú",
+     "seats": 10,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "UFNR",
+     "leader": "José María Vallés",
+     "seats": 10,
+     "seatChange": -8.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Regionalist",
+     "leader": "Enric Prat de la Riba",
+     "seats": 8,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "José Canalejas",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "José Canalejas",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 8 May 1910 (for the Congress of Deputies), and on 22 May 1910 (for the Senate), to elect the members of the 14th Cortes under the Spanish Constitution of 1876, during the Restoration period. All 404 seats in the Congress of Deputies were up for election, as well as 180 of 360 seats in the Senate.",
+   "caveat": "A turno pacífico election: the result was largely arranged in advance through the Interior Ministry's encasillado and enforced locally by caciques. The recorded majorities describe the system, not free voting.",
+   "seatLeader": "Democratic–Liberal"
+  },
+  {
+   "id": "1914",
+   "label": "1914",
+   "year": 1914,
+   "date": "8 March 1914",
+   "era": "restoration",
+   "totalSeats": 408,
+   "majoritySeats": 205,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Conservative",
+     "leader": "Eduardo Dato",
+     "seats": 225,
+     "seatChange": 116.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal",
+     "leader": "Count of Romanones",
+     "seats": 84,
+     "seatChange": -140.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic",
+     "leader": "Marquis of Alhucemas",
+     "seats": 33,
+     "seatChange": 33.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Regionalist",
+     "leader": "Enric Prat de la Riba",
+     "seats": 13,
+     "seatChange": 5.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Reformist",
+     "leader": "Melquíades Álvarez",
+     "seats": 12,
+     "seatChange": 12.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican–Socialist",
+     "leader": "Roberto Castrovido",
+     "seats": 12,
+     "seatChange": -6.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Eduardo Dato",
+    "party": "Conservative"
+   },
+   "pmAfter": {
+    "name": "Eduardo Dato",
+    "party": "Conservative"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 8 March 1914 (for the Congress of Deputies), and on 22 March 1914 (for the Senate), to elect the members of the 15th Cortes under the Spanish Constitution of 1876, during the Restoration period. All 408 seats in the Congress of Deputies were up for election, as well as 180 of 360 seats in the Senate.",
+   "caveat": "A turno pacífico election: the result was largely arranged in advance through the Interior Ministry's encasillado and enforced locally by caciques. The recorded majorities describe the system, not free voting.",
+   "seatLeader": "Conservative"
+  },
+  {
+   "id": "1916",
+   "label": "1916",
+   "year": 1916,
+   "date": "9 April 1916",
+   "era": "restoration",
+   "totalSeats": 409,
+   "majoritySeats": 205,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal–Democratic",
+     "leader": "Count of Romanones",
+     "seats": 228,
+     "seatChange": 111.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative",
+     "leader": "Eduardo Dato",
+     "seats": 89,
+     "seatChange": -102.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Maurist",
+     "leader": "Antonio Maura",
+     "seats": 18,
+     "seatChange": -7.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Reformist",
+     "leader": "Melquíades Álvarez",
+     "seats": 14,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Regionalist",
+     "leader": "Enric Prat de la Riba",
+     "seats": 13,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican–Socialist",
+     "leader": "Roberto Castrovido",
+     "seats": 13,
+     "seatChange": -0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Count of Romanones",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "Count of Romanones",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 9 April 1916 (for the Congress of Deputies), and on 23 April 1916 (for the Senate), to elect the members of the 16th Cortes under the Spanish Constitution of 1876, during the Restoration period. All 409 seats in the Congress of Deputies were up for election, as well as 180 of 360 seats in the Senate.",
+   "caveat": "A turno pacífico election: the result was largely arranged in advance through the Interior Ministry's encasillado and enforced locally by caciques. The recorded majorities describe the system, not free voting.",
+   "seatLeader": "Liberal–Democratic"
+  },
+  {
+   "id": "1918",
+   "label": "1918",
+   "year": 1918,
+   "date": "24 February 1918",
+   "era": "restoration",
+   "totalSeats": 409,
+   "majoritySeats": 205,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Conservative",
+     "leader": "Eduardo Dato",
+     "seats": 104,
+     "seatChange": 14.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic",
+     "leader": "Marquis of Alhucemas",
+     "seats": 89,
+     "seatChange": 89.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Romanonist",
+     "leader": "Count of Romanones",
+     "seats": 40,
+     "seatChange": -188.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Alliance",
+     "leader": "Melquíades Álvarez",
+     "seats": 34,
+     "seatChange": -0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Left",
+     "leader": "Santiago Alba",
+     "seats": 33,
+     "seatChange": 33.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Maurist",
+     "leader": "Antonio Maura",
+     "seats": 27,
+     "seatChange": 10.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Marquis of Alhucemas",
+    "party": "Liberal Democratic"
+   },
+   "pmAfter": {
+    "name": "Antonio Maura",
+    "party": "Maurist"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 24 February 1918 (for the Congress of Deputies), and on 10 March 1918 (for the Senate), to elect the members of the 17th Cortes under the Spanish Constitution of 1876, during the Restoration period. All 409 seats in the Congress of Deputies were up for election, as well as 180 of 360 seats in the Senate.",
+   "caveat": "A turno pacífico election: the result was largely arranged in advance through the Interior Ministry's encasillado and enforced locally by caciques. The recorded majorities describe the system, not free voting.",
+   "seatLeader": "Conservative"
+  },
+  {
+   "id": "1919",
+   "label": "1919",
+   "year": 1919,
+   "date": "1 June 1919",
+   "era": "restoration",
+   "totalSeats": 409,
+   "majoritySeats": 205,
+   "turnout": 64.2,
+   "parties": [
+    {
+     "name": "Maurist–Ciervist",
+     "leader": "Antonio Maura",
+     "seats": 105,
+     "seatChange": 54.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative",
+     "leader": "Eduardo Dato",
+     "seats": 95,
+     "seatChange": -9.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic",
+     "leader": "Marquis of Alhucemas",
+     "seats": 51,
+     "seatChange": -38.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Romanonist",
+     "leader": "Count of Romanones",
+     "seats": 41,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Left",
+     "leader": "Santiago Alba",
+     "seats": 31,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Regionalist",
+     "leader": "Francesc Cambó",
+     "seats": 14,
+     "seatChange": -8.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Antonio Maura",
+    "party": "Maurist"
+   },
+   "pmAfter": {
+    "name": "Joaquín Sánchez de Toca",
+    "party": "Conservative"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 1 June 1919 (for the Congress of Deputies), and on 15 June 1919 (for the Senate), to elect the members of the 18th Cortes under the Spanish Constitution of 1876, during the Restoration period. All 409 seats in the Congress of Deputies were up for election, as well as 180 of 360 seats in the Senate.",
+   "caveat": "A turno pacífico election: the result was largely arranged in advance through the Interior Ministry's encasillado and enforced locally by caciques. The recorded majorities describe the system, not free voting.",
+   "seatLeader": "Maurist–Ciervist"
+  },
+  {
+   "id": "1920",
+   "label": "1920",
+   "year": 1920,
+   "date": "19 December 1920",
+   "era": "restoration",
+   "totalSeats": 409,
+   "majoritySeats": 205,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Conservative",
+     "leader": "Eduardo Dato",
+     "seats": 182,
+     "seatChange": 87.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic",
+     "leader": "Marquis of Alhucemas",
+     "seats": 40,
+     "seatChange": -11.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Romanonist",
+     "leader": "Count of Romanones",
+     "seats": 32,
+     "seatChange": -9.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal Left",
+     "leader": "Santiago Alba",
+     "seats": 30,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Maurist",
+     "leader": "Antonio Maura",
+     "seats": 24,
+     "seatChange": -44.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ciervists",
+     "leader": "Juan de la Cierva",
+     "seats": 21,
+     "seatChange": -12.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Eduardo Dato",
+    "party": "Conservative"
+   },
+   "pmAfter": {
+    "name": "Eduardo Dato",
+    "party": "Conservative"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 19 December 1920 (for the Congress of Deputies), and on 2 January 1921 (for the Senate), to elect the members of the 19th Cortes under the Spanish Constitution of 1876, during the Restoration period. All 409 seats in the Congress of Deputies were up for election, as well as 180 of 360 seats in the Senate.",
+   "caveat": "A turno pacífico election: the result was largely arranged in advance through the Interior Ministry's encasillado and enforced locally by caciques. The recorded majorities describe the system, not free voting.",
+   "seatLeader": "Conservative"
+  },
+  {
+   "id": "1923",
+   "label": "1923",
+   "year": 1923,
+   "date": "29 April 1923",
+   "era": "restoration",
+   "totalSeats": 409,
+   "majoritySeats": 205,
+   "turnout": 65.7,
+   "parties": [
+    {
+     "name": "Liberal Union",
+     "leader": "Marquis of Alhucemas",
+     "seats": 223,
+     "seatChange": null,
+     "votes": 979435,
+     "share": 47.6,
+     "swing": null
+    },
+    {
+     "name": "Conservative",
+     "leader": "José Sánchez-Guerra",
+     "seats": 124,
+     "seatChange": null,
+     "votes": 591026,
+     "share": 28.7,
+     "swing": null
+    },
+    {
+     "name": "Regionalist",
+     "leader": "Francesc Cambó",
+     "seats": 22,
+     "seatChange": null,
+     "votes": 110007,
+     "share": 5.3,
+     "swing": null
+    },
+    {
+     "name": "Republican",
+     "leader": "Alejandro Lerroux",
+     "seats": 15,
+     "seatChange": null,
+     "votes": 129225,
+     "share": 6.3,
+     "swing": null
+    },
+    {
+     "name": "PSOE",
+     "leader": "Pablo Iglesias",
+     "seats": 7,
+     "seatChange": null,
+     "votes": 38151,
+     "share": 1.9,
+     "swing": null
+    },
+    {
+     "name": "Carlist",
+     "leader": "José Selva Mergelina",
+     "seats": 5,
+     "seatChange": null,
+     "votes": 19071,
+     "share": 0.9,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Marquis of Alhucemas",
+    "party": "PLD (Liberal Union)"
+   },
+   "pmAfter": {
+    "name": "Marquis of Alhucemas",
+    "party": "PLD (Liberal Union)"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 29 April 1923 (for the Congress of Deputies), and on 13 May 1923 (for the Senate), to elect the members of the 20th Cortes under the Spanish Constitution of 1876, during the Restoration period. All 409 seats in the Congress of Deputies were up for election, as well as 180 of 360 seats in the Senate.",
+   "caveat": "A turno pacífico election: the result was largely arranged in advance through the Interior Ministry's encasillado and enforced locally by caciques. The recorded majorities describe the system, not free voting.",
+   "seatLeader": "Liberal Union"
+  },
+  {
+   "id": "1931",
+   "label": "1931",
+   "year": 1931,
+   "date": "28 June 1931",
+   "era": "second-republic",
+   "totalSeats": 470,
+   "majoritySeats": 236,
+   "turnout": 70.13,
+   "parties": [
+    {
+     "name": "PSOE",
+     "leader": "Julián Besteiro",
+     "seats": 115,
+     "seatChange": 115.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PRR",
+     "leader": "Alejandro Lerroux",
+     "seats": 90,
+     "seatChange": 90.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PRRS",
+     "leader": "Marcelino Domingo",
+     "seats": 61,
+     "seatChange": 61.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ERC",
+     "leader": "Francesc Macià",
+     "seats": 29,
+     "seatChange": 29.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "AR",
+     "leader": "Manuel Azaña",
+     "seats": 26,
+     "seatChange": 26.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "DLR",
+     "leader": "Niceto Alcalá-Zamora",
+     "seats": 25,
+     "seatChange": 25.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Niceto Alcalá-Zamora",
+    "party": "DLR"
+   },
+   "pmAfter": {
+    "name": "Manuel Azaña",
+    "party": "AR"
+   },
+   "knownAs": "The Republic arrives",
+   "summary": "General Primo de Rivera, who had run a military dictatorship in Spain since 1923, resigned as head of government in January 1930. There was little support for a return to the pre-1923 system, and the monarchy had lost credibility by backing the military government.",
+   "caveat": null,
+   "seatLeader": "PSOE"
+  },
+  {
+   "id": "1933",
+   "label": "1933",
+   "year": 1933,
+   "date": "19 November 1933",
+   "era": "second-republic",
+   "totalSeats": 473,
+   "majoritySeats": 237,
+   "turnout": 67.31,
+   "parties": [
+    {
+     "name": "CEDA",
+     "leader": "José María Gil-Robles y Quiñones",
+     "seats": 115,
+     "seatChange": 110.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PRR",
+     "leader": "Alejandro Lerroux",
+     "seats": 102,
+     "seatChange": 12.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PSOE",
+     "leader": "Francisco Largo Caballero",
+     "seats": 59,
+     "seatChange": -56.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Agrarian minority",
+     "leader": "José Martínez de Velasco",
+     "seats": 30,
+     "seatChange": 15.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "LRC",
+     "leader": "Francesc Cambó",
+     "seats": 24,
+     "seatChange": 22.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Traditionalist",
+     "leader": "The Count of Rodezno",
+     "seats": 20,
+     "seatChange": 16.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Diego Martínez Barrio",
+    "party": "PRR"
+   },
+   "pmAfter": {
+    "name": "Alejandro Lerroux",
+    "party": "PRR"
+   },
+   "knownAs": "Women vote for the first time",
+   "summary": "Elections to Spain's legislature, the Cortes Generales, were held on 19 November 1933 for all 473 seats in the unicameral Cortes of the Second Spanish Republic. Since the previous elections of 1931, a new constitution had been ratified, and the franchise extended to more than six million women.",
+   "caveat": null,
+   "seatLeader": "CEDA"
+  },
+  {
+   "id": "1936",
+   "label": "1936",
+   "year": 1936,
+   "date": "16 February 1936",
+   "era": "second-republic",
+   "totalSeats": 473,
+   "majoritySeats": 237,
+   "turnout": 72.95,
+   "parties": [
+    {
+     "name": "PSOE",
+     "leader": "Indalecio Prieto",
+     "seats": 99,
+     "seatChange": 40.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "CEDA",
+     "leader": "José María Gil-Robles",
+     "seats": 88,
+     "seatChange": -27.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "IR",
+     "leader": "Manuel Azaña",
+     "seats": 87,
+     "seatChange": 73.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican Union",
+     "leader": "Diego Martínez Barrio",
+     "seats": 37,
+     "seatChange": 37.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican Left of Catalonia",
+     "leader": "Lluís Companys",
+     "seats": 21,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of the Democratic Centre",
+     "leader": "Manuel Portela",
+     "seats": 17,
+     "seatChange": 17.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Manuel Portela Valladares (acting)",
+    "party": "PCD"
+   },
+   "pmAfter": {
+    "name": "Manuel Azaña",
+    "party": "IR"
+   },
+   "knownAs": "The Popular Front",
+   "summary": "Legislative elections were held in Spain on 16 February 1936. At stake were all 473 seats in the unicameral Cortes Generales.",
+   "caveat": null,
+   "seatLeader": "PSOE"
+  },
+  {
+   "id": "1967",
+   "label": "1967",
+   "year": 1967,
+   "date": "10 October 1967",
+   "era": "francoist",
+   "totalSeats": 102,
+   "majoritySeats": null,
+   "turnout": 64.3,
+   "parties": [
+    {
+     "name": "National Movement",
+     "leader": "Francisco Franco",
+     "seats": 564,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Francisco Franco",
+    "party": "National Movement"
+   },
+   "pmAfter": {
+    "name": "Francisco Franco",
+    "party": "National Movement"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Spain on 10 October 1967 where Spanish citizens elected 102 of the 564 members of the Cortes Españolas, the Spanish legislature. It was the first election held in Spain since the 1936 general election before the Spanish Civil War (1936–1939) and the first general election held during the dictatorship of Francisco Franco.",
+   "caveat": "A Francoist 'organic democracy' vote: no parties, no opposition, and only a fraction of a corporatist Cortes elected by heads of family. Recorded here as a ritual of the dictatorship, not an election.",
+   "seatLeader": "National Movement"
+  },
+  {
+   "id": "1971",
+   "label": "1971",
+   "year": 1971,
+   "date": "29 September 1971",
+   "era": "francoist",
+   "totalSeats": 104,
+   "majoritySeats": null,
+   "turnout": 42.28,
+   "parties": [
+    {
+     "name": "National Movement",
+     "leader": "Francisco Franco",
+     "seats": 561,
+     "seatChange": null,
+     "votes": 7294134,
+     "share": 100.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Francisco Franco",
+    "party": "National Movement"
+   },
+   "pmAfter": {
+    "name": "Francisco Franco",
+    "party": "National Movement"
+   },
+   "knownAs": null,
+   "summary": "To be eligible to vote, citizens must be heads of families, married women, or widows. To be eligible to be a candidate, citizens must be born in a province they are running in, have resided in the province for at least seven years since the age of 14, be supported by 1,000 electors of 0.5 percent of the province's population, and be a member of the National Movement.",
+   "caveat": "A Francoist 'organic democracy' vote: no parties, no opposition, and only a fraction of a corporatist Cortes elected by heads of family. Recorded here as a ritual of the dictatorship, not an election.",
+   "seatLeader": "National Movement"
+  },
+  {
+   "id": "1977",
+   "label": "1977",
+   "year": 1977,
+   "date": "15 June 1977",
+   "era": "democracy",
+   "totalSeats": 350,
+   "majoritySeats": 176,
+   "turnout": 78.8,
+   "parties": [
+    {
+     "name": "UCD",
+     "leader": "Adolfo Suárez",
+     "seats": 165,
+     "seatChange": null,
+     "votes": 6310391,
+     "share": 34.4,
+     "swing": null
+    },
+    {
+     "name": "PSOE",
+     "leader": "Felipe González",
+     "seats": 118,
+     "seatChange": null,
+     "votes": 5371866,
+     "share": 29.3,
+     "swing": null
+    },
+    {
+     "name": "PCE",
+     "leader": "Santiago Carrillo",
+     "seats": 20,
+     "seatChange": null,
+     "votes": 1709890,
+     "share": 9.3,
+     "swing": null
+    },
+    {
+     "name": "AP",
+     "leader": "Manuel Fraga",
+     "seats": 16,
+     "seatChange": null,
+     "votes": 1526671,
+     "share": 8.3,
+     "swing": null
+    },
+    {
+     "name": "PDC",
+     "leader": "Jordi Pujol",
+     "seats": 11,
+     "seatChange": null,
+     "votes": 514647,
+     "share": 2.8,
+     "swing": null
+    },
+    {
+     "name": "EAJ/PNV",
+     "leader": "Xabier Arzalluz",
+     "seats": 8,
+     "seatChange": null,
+     "votes": 296193,
+     "share": 1.6,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Adolfo Suárez",
+    "party": "UCD"
+   },
+   "pmAfter": {
+    "name": "Adolfo Suárez",
+    "party": "UCD"
+   },
+   "knownAs": "The first free vote in 41 years",
+   "summary": "It was the first free election held in Spain since 1936, prior to the outbreak of the Spanish Civil War. It was called by Prime Minister Adolfo Suárez as part of the political reform of the Francoist regime, ongoing since shortly after Francisco Franco's death in 1975 and promoted by his successor, King Juan Carlos I.",
+   "caveat": null,
+   "seatLeader": "UCD"
+  },
+  {
+   "id": "1979",
+   "label": "1979",
+   "year": 1979,
+   "date": "1 March 1979",
+   "era": "democracy",
+   "totalSeats": 350,
+   "majoritySeats": 176,
+   "turnout": 68.0,
+   "parties": [
+    {
+     "name": "UCD",
+     "leader": "Adolfo Suárez",
+     "seats": 168,
+     "seatChange": 3.0,
+     "votes": 6268593,
+     "share": 34.8,
+     "swing": 0.4
+    },
+    {
+     "name": "PSOE",
+     "leader": "Felipe González",
+     "seats": 121,
+     "seatChange": -3.0,
+     "votes": 5469813,
+     "share": 30.4,
+     "swing": -3.4
+    },
+    {
+     "name": "PCE",
+     "leader": "Santiago Carrillo",
+     "seats": 23,
+     "seatChange": 3.0,
+     "votes": 1938487,
+     "share": 10.8,
+     "swing": 1.5
+    },
+    {
+     "name": "CD",
+     "leader": "Manuel Fraga",
+     "seats": 9,
+     "seatChange": -7.0,
+     "votes": 1094438,
+     "share": 6.1,
+     "swing": -2.3
+    },
+    {
+     "name": "CiU",
+     "leader": "Jordi Pujol",
+     "seats": 8,
+     "seatChange": -5.0,
+     "votes": 483353,
+     "share": 2.7,
+     "swing": -1.1
+    },
+    {
+     "name": "EAJ/PNV",
+     "leader": "Xabier Arzalluz",
+     "seats": 7,
+     "seatChange": -1.0,
+     "votes": 296597,
+     "share": 1.6,
+     "swing": 0.0
+    }
+   ],
+   "pmBefore": {
+    "name": "Adolfo Suárez",
+    "party": "UCD"
+   },
+   "pmAfter": {
+    "name": "Adolfo Suárez",
+    "party": "UCD"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 1 March 1979 to elect the members of the 1st Cortes Generales under the Spanish Constitution of 1978. All 350 seats in the Congress of Deputies were up for election, as well as all 208 seats in the Senate.",
+   "caveat": null,
+   "seatLeader": "UCD"
+  },
+  {
+   "id": "1982",
+   "label": "1982",
+   "year": 1982,
+   "date": "28 October 1982",
+   "era": "democracy",
+   "totalSeats": 350,
+   "majoritySeats": null,
+   "turnout": 80.0,
+   "parties": [
+    {
+     "name": "PSOE",
+     "leader": "Felipe González",
+     "seats": 202,
+     "seatChange": 81.0,
+     "votes": 10127392,
+     "share": 48.1,
+     "swing": 17.7
+    },
+    {
+     "name": "AP–PDP",
+     "leader": "Manuel Fraga",
+     "seats": 107,
+     "seatChange": 91.0,
+     "votes": 5548108,
+     "share": 26.4,
+     "swing": 19.0
+    },
+    {
+     "name": "CiU",
+     "leader": "Miquel Roca",
+     "seats": 12,
+     "seatChange": 4.0,
+     "votes": 772726,
+     "share": 3.7,
+     "swing": 1.0
+    },
+    {
+     "name": "UCD",
+     "leader": "Landelino Lavilla",
+     "seats": 11,
+     "seatChange": -152.0,
+     "votes": 1425094,
+     "share": 6.8,
+     "swing": -27.1
+    },
+    {
+     "name": "EAJ/PNV",
+     "leader": "Íñigo Aguirre",
+     "seats": 8,
+     "seatChange": 1.0,
+     "votes": 395656,
+     "share": 1.9,
+     "swing": 0.3
+    },
+    {
+     "name": "PCE",
+     "leader": "Santiago Carrillo",
+     "seats": 4,
+     "seatChange": -19.0,
+     "votes": 865272,
+     "share": 4.1,
+     "swing": -6.7
+    }
+   ],
+   "pmBefore": {
+    "name": "Leopoldo Calvo-Sotelo",
+    "party": "UCD"
+   },
+   "pmAfter": {
+    "name": "Felipe González",
+    "party": "PSOE"
+   },
+   "knownAs": "The PSOE landslide",
+   "summary": "The election was called several months ahead of schedule by Prime Minister Leopoldo Calvo-Sotelo, amid poor polling ratings and severe infighting within the ruling Union of the Democratic Centre (UCD) party, which had seen the splits of former prime minister Adolfo Suárez's Democratic and Social Centre (CDS), Óscar Alzaga's People's Democratic Party (PDP), and the Democratic Ac",
+   "caveat": null,
+   "seatLeader": "PSOE"
+  },
+  {
+   "id": "1986",
+   "label": "1986",
+   "year": 1986,
+   "date": "22 June 1986",
+   "era": "democracy",
+   "totalSeats": 350,
+   "majoritySeats": null,
+   "turnout": 70.5,
+   "parties": [
+    {
+     "name": "PSOE",
+     "leader": "Felipe González",
+     "seats": 184,
+     "seatChange": -18.0,
+     "votes": 8901718,
+     "share": 44.1,
+     "swing": -4.0
+    },
+    {
+     "name": "AP–PDP–PL",
+     "leader": "Manuel Fraga",
+     "seats": 105,
+     "seatChange": -2.0,
+     "votes": 5247677,
+     "share": 26.0,
+     "swing": -0.4
+    },
+    {
+     "name": "CDS",
+     "leader": "Adolfo Suárez",
+     "seats": 19,
+     "seatChange": 17.0,
+     "votes": 1861912,
+     "share": 9.2,
+     "swing": 6.3
+    },
+    {
+     "name": "PRD–CiU–CG",
+     "leader": "Miquel Roca",
+     "seats": 19,
+     "seatChange": 7.0,
+     "votes": 1288768,
+     "share": 6.4,
+     "swing": 2.7
+    },
+    {
+     "name": "IU",
+     "leader": "Gerardo Iglesias",
+     "seats": 7,
+     "seatChange": 3.0,
+     "votes": 935504,
+     "share": 4.6,
+     "swing": 0.4
+    },
+    {
+     "name": "EAJ/PNV",
+     "leader": "Iñaki Anasagasti",
+     "seats": 6,
+     "seatChange": -2.0,
+     "votes": 309610,
+     "share": 1.5,
+     "swing": -0.4
+    }
+   ],
+   "pmBefore": {
+    "name": "Felipe González",
+    "party": "PSOE"
+   },
+   "pmAfter": {
+    "name": "Felipe González",
+    "party": "PSOE"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 22 June 1986 to elect the members of the 3rd Cortes Generales under the Spanish Constitution of 1978. All 350 seats in the Congress of Deputies were up for election, as well as 208 of 254 seats in the Senate.",
+   "caveat": null,
+   "seatLeader": "PSOE"
+  },
+  {
+   "id": "1989",
+   "label": "1989",
+   "year": 1989,
+   "date": "29 October 1989",
+   "era": "democracy",
+   "totalSeats": 350,
+   "majoritySeats": 176,
+   "turnout": 69.7,
+   "parties": [
+    {
+     "name": "PSOE",
+     "leader": "Felipe González",
+     "seats": 175,
+     "seatChange": -9.0,
+     "votes": 8115568,
+     "share": 39.6,
+     "swing": -4.5
+    },
+    {
+     "name": "PP",
+     "leader": "José María Aznar",
+     "seats": 107,
+     "seatChange": 2.0,
+     "votes": 5285972,
+     "share": 25.8,
+     "swing": -0.2
+    },
+    {
+     "name": "CiU",
+     "leader": "Miquel Roca",
+     "seats": 18,
+     "seatChange": 0.0,
+     "votes": 1032243,
+     "share": 5.0,
+     "swing": 0.0
+    },
+    {
+     "name": "IU",
+     "leader": "Julio Anguita",
+     "seats": 17,
+     "seatChange": 10.0,
+     "votes": 1858588,
+     "share": 9.1,
+     "swing": 4.5
+    },
+    {
+     "name": "CDS",
+     "leader": "Adolfo Suárez",
+     "seats": 14,
+     "seatChange": -5.0,
+     "votes": 1617716,
+     "share": 7.9,
+     "swing": -1.3
+    },
+    {
+     "name": "EAJ/PNV",
+     "leader": "Iñaki Anasagasti",
+     "seats": 5,
+     "seatChange": -1.0,
+     "votes": 254681,
+     "share": 1.2,
+     "swing": -0.3
+    }
+   ],
+   "pmBefore": {
+    "name": "Felipe González",
+    "party": "PSOE"
+   },
+   "pmAfter": {
+    "name": "Felipe González",
+    "party": "PSOE"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 29 October 1989 to elect the members of the 4th Cortes Generales under the Spanish Constitution of 1978. All 350 seats in the Congress of Deputies were up for election, as well as 208 of 254 seats in the Senate.",
+   "caveat": null,
+   "seatLeader": "PSOE"
+  },
+  {
+   "id": "1993",
+   "label": "1993",
+   "year": 1993,
+   "date": "6 June 1993",
+   "era": "democracy",
+   "totalSeats": 350,
+   "majoritySeats": 176,
+   "turnout": 76.4,
+   "parties": [
+    {
+     "name": "PSOE",
+     "leader": "Felipe González",
+     "seats": 159,
+     "seatChange": -18.0,
+     "votes": 9150083,
+     "share": 38.8,
+     "swing": -1.3
+    },
+    {
+     "name": "PP",
+     "leader": "José María Aznar",
+     "seats": 141,
+     "seatChange": 34.0,
+     "votes": 8201463,
+     "share": 34.8,
+     "swing": 9.0
+    },
+    {
+     "name": "IU",
+     "leader": "Julio Anguita",
+     "seats": 18,
+     "seatChange": 1.0,
+     "votes": 2253722,
+     "share": 9.6,
+     "swing": 0.5
+    },
+    {
+     "name": "CiU",
+     "leader": "Miquel Roca",
+     "seats": 17,
+     "seatChange": -1.0,
+     "votes": 1165783,
+     "share": 4.9,
+     "swing": -0.1
+    },
+    {
+     "name": "EAJ/PNV",
+     "leader": "Iñaki Anasagasti",
+     "seats": 5,
+     "seatChange": 0.0,
+     "votes": 291448,
+     "share": 1.2,
+     "swing": 0.0
+    },
+    {
+     "name": "CC",
+     "leader": "Luis Mardones",
+     "seats": 4,
+     "seatChange": 3.0,
+     "votes": 207077,
+     "share": 0.9,
+     "swing": 0.6
+    }
+   ],
+   "pmBefore": {
+    "name": "Felipe González",
+    "party": "PSOE"
+   },
+   "pmAfter": {
+    "name": "Felipe González",
+    "party": "PSOE"
+   },
+   "knownAs": null,
+   "summary": "Felipe González's third term in office had seen Spain completing projects like the Madrid–Seville high-speed rail line and hosting events such as the Seville Expo '92 and the Barcelona '92 Summer Olympics, which contributed to the modernization of the country's international image.",
+   "caveat": null,
+   "seatLeader": "PSOE"
+  },
+  {
+   "id": "1996",
+   "label": "1996",
+   "year": 1996,
+   "date": "3 March 1996",
+   "era": "democracy",
+   "totalSeats": 350,
+   "majoritySeats": 176,
+   "turnout": 77.4,
+   "parties": [
+    {
+     "name": "PP",
+     "leader": "José María Aznar",
+     "seats": 156,
+     "seatChange": 14.0,
+     "votes": 9716006,
+     "share": 38.8,
+     "swing": 3.4
+    },
+    {
+     "name": "PSOE",
+     "leader": "Felipe González",
+     "seats": 141,
+     "seatChange": -18.0,
+     "votes": 9425678,
+     "share": 37.6,
+     "swing": -1.2
+    },
+    {
+     "name": "IU",
+     "leader": "Julio Anguita",
+     "seats": 21,
+     "seatChange": 3.0,
+     "votes": 2639774,
+     "share": 10.5,
+     "swing": 0.9
+    },
+    {
+     "name": "CiU",
+     "leader": "Joaquim Molins",
+     "seats": 16,
+     "seatChange": -1.0,
+     "votes": 1151633,
+     "share": 4.6,
+     "swing": -0.3
+    },
+    {
+     "name": "EAJ/PNV",
+     "leader": "Iñaki Anasagasti",
+     "seats": 5,
+     "seatChange": 0.0,
+     "votes": 318951,
+     "share": 1.3,
+     "swing": 0.1
+    },
+    {
+     "name": "CC",
+     "leader": "José Carlos Mauricio",
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 220418,
+     "share": 0.9,
+     "swing": 0.0
+    }
+   ],
+   "pmBefore": {
+    "name": "Felipe González",
+    "party": "PSOE"
+   },
+   "pmAfter": {
+    "name": "José María Aznar",
+    "party": "PP"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 3 March 1996 to elect the members of the 6th Cortes Generales under the Spanish Constitution of 1978. All 350 seats in the Congress of Deputies were up for election, as well as 208 of 257 seats in the Senate.",
+   "caveat": null,
+   "seatLeader": "PP"
+  },
+  {
+   "id": "2000",
+   "label": "2000",
+   "year": 2000,
+   "date": "12 March 2000",
+   "era": "democracy",
+   "totalSeats": 350,
+   "majoritySeats": 176,
+   "turnout": 68.7,
+   "parties": [
+    {
+     "name": "PP",
+     "leader": "José María Aznar",
+     "seats": 183,
+     "seatChange": 27.0,
+     "votes": 10321178,
+     "share": 44.5,
+     "swing": 5.7
+    },
+    {
+     "name": "CiU",
+     "leader": "Xavier Trias",
+     "seats": 15,
+     "seatChange": -1.0,
+     "votes": 970421,
+     "share": 4.2,
+     "swing": -0.4
+    },
+    {
+     "name": "IU",
+     "leader": "Francisco Frutos",
+     "seats": 8,
+     "seatChange": -11.0,
+     "votes": 1263043,
+     "share": 5.4,
+     "swing": -3.9
+    },
+    {
+     "name": "EAJ/PNV",
+     "leader": "Iñaki Anasagasti",
+     "seats": 7,
+     "seatChange": 2.0,
+     "votes": 353953,
+     "share": 1.5,
+     "swing": 0.2
+    },
+    {
+     "name": "CC",
+     "leader": "José Carlos Mauricio",
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 248261,
+     "share": 1.1,
+     "swing": 0.2
+    }
+   ],
+   "pmBefore": {
+    "name": "José María Aznar",
+    "party": "PP"
+   },
+   "pmAfter": {
+    "name": "José María Aznar",
+    "party": "PP"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 12 March 2000 to elect the members of the 7th Cortes Generales under the Spanish Constitution of 1978. All 350 seats in the Congress of Deputies were up for election, as well as 208 of 259 seats in the Senate.",
+   "caveat": null,
+   "seatLeader": "PP"
+  },
+  {
+   "id": "2004",
+   "label": "2004",
+   "year": 2004,
+   "date": "14 March 2004",
+   "era": "democracy",
+   "totalSeats": 350,
+   "majoritySeats": 176,
+   "turnout": 75.7,
+   "parties": [
+    {
+     "name": "PSOE",
+     "leader": "José Luis Rodríguez Zapatero",
+     "seats": 164,
+     "seatChange": 39.0,
+     "votes": 11026163,
+     "share": 42.6,
+     "swing": 8.3
+    },
+    {
+     "name": "PP",
+     "leader": "Mariano Rajoy",
+     "seats": 148,
+     "seatChange": -35.0,
+     "votes": 9763144,
+     "share": 37.7,
+     "swing": -6.8
+    },
+    {
+     "name": "CiU",
+     "leader": "Josep Antoni Duran i Lleida",
+     "seats": 10,
+     "seatChange": -5.0,
+     "votes": 835471,
+     "share": 3.2,
+     "swing": -1.0
+    },
+    {
+     "name": "ERC",
+     "leader": "Josep-Lluís Carod-Rovira",
+     "seats": 8,
+     "seatChange": 7.0,
+     "votes": 652196,
+     "share": 2.5,
+     "swing": 1.7
+    },
+    {
+     "name": "EAJ/PNV",
+     "leader": "Josu Erkoreka",
+     "seats": 7,
+     "seatChange": 0.0,
+     "votes": 420980,
+     "share": 1.6,
+     "swing": 0.1
+    },
+    {
+     "name": "IU",
+     "leader": "Gaspar Llamazares",
+     "seats": 5,
+     "seatChange": -4.0,
+     "votes": 1284081,
+     "share": 5.0,
+     "swing": -1.0
+    }
+   ],
+   "pmBefore": {
+    "name": "José María Aznar",
+    "party": "PP"
+   },
+   "pmAfter": {
+    "name": "José Luis Rodríguez Zapatero",
+    "party": "PSOE"
+   },
+   "knownAs": "Three days after the Madrid bombings",
+   "summary": "A general election was held in Spain on 14 March 2004 to elect the members of the 8th Cortes Generales under the Spanish Constitution of 1978. All 350 seats in the Congress of Deputies were up for election, as well as 208 of 259 seats in the Senate.",
+   "caveat": null,
+   "seatLeader": "PSOE"
+  },
+  {
+   "id": "2008",
+   "label": "2008",
+   "year": 2008,
+   "date": "9 March 2008",
+   "era": "democracy",
+   "totalSeats": 350,
+   "majoritySeats": 176,
+   "turnout": 73.8,
+   "parties": [
+    {
+     "name": "PSOE",
+     "leader": "José Luis Rodríguez Zapatero",
+     "seats": 169,
+     "seatChange": 5.0,
+     "votes": 11289335,
+     "share": 43.9,
+     "swing": 1.3
+    },
+    {
+     "name": "PP",
+     "leader": "Mariano Rajoy",
+     "seats": 154,
+     "seatChange": 6.0,
+     "votes": 10278010,
+     "share": 39.9,
+     "swing": 2.2
+    },
+    {
+     "name": "CiU",
+     "leader": "Josep Antoni Duran i Lleida",
+     "seats": 10,
+     "seatChange": 0.0,
+     "votes": 779425,
+     "share": 3.0,
+     "swing": -0.2
+    },
+    {
+     "name": "EAJ/PNV",
+     "leader": "Josu Erkoreka",
+     "seats": 6,
+     "seatChange": -1.0,
+     "votes": 306128,
+     "share": 1.2,
+     "swing": -0.4
+    },
+    {
+     "name": "ERC",
+     "leader": "Joan Ridao",
+     "seats": 3,
+     "seatChange": -5.0,
+     "votes": 298139,
+     "share": 1.2,
+     "swing": -1.3
+    },
+    {
+     "name": "IU",
+     "leader": "Gaspar Llamazares",
+     "seats": 2,
+     "seatChange": -3.0,
+     "votes": 969946,
+     "share": 3.8,
+     "swing": -1.2
+    }
+   ],
+   "pmBefore": {
+    "name": "José Luis Rodríguez Zapatero",
+    "party": "PSOE"
+   },
+   "pmAfter": {
+    "name": "José Luis Rodríguez Zapatero",
+    "party": "PSOE"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 9 March 2008 to elect the members of the 9th Cortes Generales under the Spanish Constitution of 1978. All 350 seats in the Congress of Deputies were up for election, as well as 208 of 264 seats in the Senate.",
+   "caveat": null,
+   "seatLeader": "PSOE"
+  },
+  {
+   "id": "2011",
+   "label": "2011",
+   "year": 2011,
+   "date": "20 November 2011",
+   "era": "democracy",
+   "totalSeats": 350,
+   "majoritySeats": 176,
+   "turnout": 68.9,
+   "parties": [
+    {
+     "name": "PP",
+     "leader": "Mariano Rajoy",
+     "seats": 186,
+     "seatChange": 32.0,
+     "votes": 10866566,
+     "share": 44.6,
+     "swing": 4.5
+    },
+    {
+     "name": "PSOE",
+     "leader": "Alfredo Pérez Rubalcaba",
+     "seats": 110,
+     "seatChange": -59.0,
+     "votes": 7003511,
+     "share": 28.8,
+     "swing": -15.1
+    },
+    {
+     "name": "CiU",
+     "leader": "Josep Antoni Duran i Lleida",
+     "seats": 16,
+     "seatChange": 6.0,
+     "votes": 1015691,
+     "share": 4.2,
+     "swing": 1.2
+    },
+    {
+     "name": "IU",
+     "leader": "Cayo Lara",
+     "seats": 11,
+     "seatChange": 9.0,
+     "votes": 1686040,
+     "share": 6.9,
+     "swing": 3.0
+    },
+    {
+     "name": "Amaiur",
+     "leader": "Iñaki Antigüedad",
+     "seats": 7,
+     "seatChange": 7.0,
+     "votes": 334498,
+     "share": 1.4,
+     "swing": 1.1
+    },
+    {
+     "name": "UPyD",
+     "leader": "Rosa Díez",
+     "seats": 5,
+     "seatChange": 4.0,
+     "votes": 1143225,
+     "share": 4.7,
+     "swing": 3.5
+    }
+   ],
+   "pmBefore": {
+    "name": "José Luis Rodríguez Zapatero",
+    "party": "PSOE"
+   },
+   "pmAfter": {
+    "name": "Mariano Rajoy",
+    "party": "PP"
+   },
+   "knownAs": null,
+   "summary": "The second term of Prime Minister José Luis Rodríguez Zapatero was quickly overshadowed by the impact of the Great Recession in Spain, aggravated by the Spanish property bubble's crash that led to a real estate crisis.",
+   "caveat": null,
+   "seatLeader": "PP"
+  },
+  {
+   "id": "2015",
+   "label": "2015",
+   "year": 2015,
+   "date": "20 December 2015",
+   "era": "democracy",
+   "totalSeats": 350,
+   "majoritySeats": 176,
+   "turnout": 69.7,
+   "parties": [
+    {
+     "name": "PP",
+     "leader": "Mariano Rajoy",
+     "seats": 123,
+     "seatChange": -64.0,
+     "votes": 7236965,
+     "share": 28.7,
+     "swing": -16.3
+    },
+    {
+     "name": "PSOE",
+     "leader": "Pedro Sánchez",
+     "seats": 90,
+     "seatChange": -20.0,
+     "votes": 5545315,
+     "share": 22.0,
+     "swing": -6.8
+    },
+    {
+     "name": "Podemos",
+     "leader": "Pablo Iglesias",
+     "seats": 69,
+     "seatChange": 65.0,
+     "votes": 5212711,
+     "share": 20.7,
+     "swing": null
+    },
+    {
+     "name": "C's",
+     "leader": "Albert Rivera",
+     "seats": 40,
+     "seatChange": 40.0,
+     "votes": 3514528,
+     "share": 13.9,
+     "swing": null
+    },
+    {
+     "name": "ERC–CatSí",
+     "leader": "Gabriel Rufián",
+     "seats": 9,
+     "seatChange": 6.0,
+     "votes": 604285,
+     "share": 2.4,
+     "swing": 1.3
+    },
+    {
+     "name": "DiL",
+     "leader": "Francesc Homs",
+     "seats": 8,
+     "seatChange": -8.0,
+     "votes": 567253,
+     "share": 2.2,
+     "swing": -2.0
+    }
+   ],
+   "pmBefore": {
+    "name": "Mariano Rajoy",
+    "party": "PP"
+   },
+   "pmAfter": {
+    "name": "No government formed",
+    "party": "and fresh election called."
+   },
+   "knownAs": "The duopoly breaks",
+   "summary": "A general election was held in Spain on 20 December 2015 to elect the members of the 11th Cortes Generales under the Spanish Constitution of 1978. All 350 seats in the Congress of Deputies were up for election, as well as 208 of 266 seats in the Senate.",
+   "caveat": null,
+   "seatLeader": "PP"
+  },
+  {
+   "id": "2016",
+   "label": "2016",
+   "year": 2016,
+   "date": "26 June 2016",
+   "era": "democracy",
+   "totalSeats": 350,
+   "majoritySeats": 176,
+   "turnout": 66.5,
+   "parties": [
+    {
+     "name": "PP",
+     "leader": "Mariano Rajoy",
+     "seats": 137,
+     "seatChange": 14.0,
+     "votes": 7941236,
+     "share": 33.0,
+     "swing": 4.3
+    },
+    {
+     "name": "PSOE",
+     "leader": "Pedro Sánchez",
+     "seats": 85,
+     "seatChange": -5.0,
+     "votes": 5443846,
+     "share": 22.6,
+     "swing": 0.6
+    },
+    {
+     "name": "Unidos Podemos",
+     "leader": "Pablo Iglesias",
+     "seats": 71,
+     "seatChange": 0.0,
+     "votes": 5087538,
+     "share": 21.2,
+     "swing": -3.3
+    },
+    {
+     "name": "C's",
+     "leader": "Albert Rivera",
+     "seats": 32,
+     "seatChange": -8.0,
+     "votes": 3141570,
+     "share": 13.1,
+     "swing": -0.8
+    },
+    {
+     "name": "ERC–CatSí",
+     "leader": "Gabriel Rufián",
+     "seats": 9,
+     "seatChange": 0.0,
+     "votes": 639652,
+     "share": 2.7,
+     "swing": 0.3
+    },
+    {
+     "name": "CDC",
+     "leader": "Francesc Homs",
+     "seats": 8,
+     "seatChange": 0.0,
+     "votes": 483488,
+     "share": 2.0,
+     "swing": -0.2
+    }
+   ],
+   "pmBefore": {
+    "name": "Mariano Rajoy (acting)",
+    "party": "PP"
+   },
+   "pmAfter": {
+    "name": "Mariano Rajoy",
+    "party": "PP"
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 26 June 2016 to elect the members of the 12th Cortes Generales under the Spanish Constitution of 1978. All 350 seats in the Congress of Deputies were up for election, as well as 208 of 266 seats in the Senate.",
+   "caveat": null,
+   "seatLeader": "PP"
+  },
+  {
+   "id": "2019-apr",
+   "label": "April 2019",
+   "year": 2019,
+   "date": "28 April 2019",
+   "era": "democracy",
+   "totalSeats": 350,
+   "majoritySeats": 176,
+   "turnout": 71.8,
+   "parties": [
+    {
+     "name": "PSOE",
+     "leader": "Pedro Sánchez",
+     "seats": 123,
+     "seatChange": 38.0,
+     "votes": 7513142,
+     "share": 28.7,
+     "swing": 6.1
+    },
+    {
+     "name": "PP",
+     "leader": "Pablo Casado",
+     "seats": 66,
+     "seatChange": -69.0,
+     "votes": 4373653,
+     "share": 16.7,
+     "swing": -15.9
+    },
+    {
+     "name": "Cs",
+     "leader": "Albert Rivera",
+     "seats": 57,
+     "seatChange": 25.0,
+     "votes": 4155665,
+     "share": 15.9,
+     "swing": 2.9
+    },
+    {
+     "name": "Unidas Podemos",
+     "leader": "Pablo Iglesias",
+     "seats": 42,
+     "seatChange": -29.0,
+     "votes": 3751145,
+     "share": 14.3,
+     "swing": -6.9
+    },
+    {
+     "name": "Vox",
+     "leader": "Santiago Abascal",
+     "seats": 24,
+     "seatChange": 24.0,
+     "votes": 2688092,
+     "share": 10.3,
+     "swing": 10.1
+    },
+    {
+     "name": "ERC–Sobiranistes",
+     "leader": "Oriol Junqueras",
+     "seats": 15,
+     "seatChange": 6.0,
+     "votes": 1024628,
+     "share": 3.9,
+     "swing": 1.3
+    }
+   ],
+   "pmBefore": {
+    "name": "Pedro Sánchez",
+    "party": "PSOE"
+   },
+   "pmAfter": {
+    "name": "No government formed",
+    "party": "and fresh election called."
+   },
+   "knownAs": null,
+   "summary": "A general election was held in Spain on 28 April 2019 to elect the members of the 13th Cortes Generales under the Spanish Constitution of 1978. All 350 seats in the Congress of Deputies were up for election, as well as 208 of 266 seats in the Senate.",
+   "caveat": null,
+   "seatLeader": "PSOE"
+  },
+  {
+   "id": "2019-nov",
+   "label": "November 2019",
+   "year": 2019,
+   "date": "10 November 2019",
+   "era": "democracy",
+   "totalSeats": 350,
+   "majoritySeats": 176,
+   "turnout": 66.2,
+   "parties": [
+    {
+     "name": "PSOE",
+     "leader": "Pedro Sánchez",
+     "seats": 120,
+     "seatChange": -3.0,
+     "votes": 6792199,
+     "share": 28.0,
+     "swing": -0.7
+    },
+    {
+     "name": "PP",
+     "leader": "Pablo Casado",
+     "seats": 89,
+     "seatChange": 23.0,
+     "votes": 5047040,
+     "share": 20.8,
+     "swing": 4.1
+    },
+    {
+     "name": "Vox",
+     "leader": "Santiago Abascal",
+     "seats": 52,
+     "seatChange": 28.0,
+     "votes": 3656979,
+     "share": 15.1,
+     "swing": 4.8
+    },
+    {
+     "name": "Unidas Podemos",
+     "leader": "Pablo Iglesias",
+     "seats": 35,
+     "seatChange": -7.0,
+     "votes": 3119364,
+     "share": 12.9,
+     "swing": -1.4
+    },
+    {
+     "name": "ERC–Sobiranistes",
+     "leader": "Gabriel Rufián",
+     "seats": 13,
+     "seatChange": -2.0,
+     "votes": 880734,
+     "share": 3.6,
+     "swing": -0.3
+    },
+    {
+     "name": "Cs",
+     "leader": "Albert Rivera",
+     "seats": 10,
+     "seatChange": -47.0,
+     "votes": 1650318,
+     "share": 6.8,
+     "swing": -9.1
+    }
+   ],
+   "pmBefore": {
+    "name": "Pedro Sánchez (acting)",
+    "party": "PSOE"
+   },
+   "pmAfter": {
+    "name": "Pedro Sánchez",
+    "party": "PSOE"
+   },
+   "knownAs": "Fourth election in four years",
+   "summary": "A general election was held in Spain on 10 November 2019 to elect the members of the 14th Cortes Generales under the Spanish Constitution of 1978. All 350 seats in the Congress of Deputies were up for election, as well as 208 of 265 seats in the Senate.",
+   "caveat": null,
+   "seatLeader": "PSOE"
+  },
+  {
+   "id": "2023",
+   "label": "2023",
+   "year": 2023,
+   "date": "23 July 2023",
+   "era": "democracy",
+   "totalSeats": 350,
+   "majoritySeats": 176,
+   "turnout": 66.6,
+   "parties": [
+    {
+     "name": "PP",
+     "leader": "Alberto Núñez Feijóo",
+     "seats": 137,
+     "seatChange": 48.0,
+     "votes": 8160837,
+     "share": 33.1,
+     "swing": 12.3
+    },
+    {
+     "name": "PSOE",
+     "leader": "Pedro Sánchez",
+     "seats": 121,
+     "seatChange": 1.0,
+     "votes": 7821718,
+     "share": 31.7,
+     "swing": 3.7
+    },
+    {
+     "name": "Vox",
+     "leader": "Santiago Abascal",
+     "seats": 33,
+     "seatChange": -19.0,
+     "votes": 3057000,
+     "share": 12.4,
+     "swing": -2.7
+    },
+    {
+     "name": "Sumar",
+     "leader": "Yolanda Díaz",
+     "seats": 31,
+     "seatChange": -7.0,
+     "votes": 3044996,
+     "share": 12.3,
+     "swing": -3.0
+    },
+    {
+     "name": "ERC",
+     "leader": "Gabriel Rufián",
+     "seats": 7,
+     "seatChange": -6.0,
+     "votes": 466020,
+     "share": 1.9,
+     "swing": -1.7
+    },
+    {
+     "name": "Junts",
+     "leader": "Míriam Nogueras",
+     "seats": 7,
+     "seatChange": -1.0,
+     "votes": 395429,
+     "share": 1.6,
+     "swing": -0.6
+    }
+   ],
+   "pmBefore": {
+    "name": "Pedro Sánchez",
+    "party": "PSOE"
+   },
+   "pmAfter": {
+    "name": "Pedro Sánchez",
+    "party": "PSOE"
+   },
+   "knownAs": "The coalition holds",
+   "summary": "A general election was held in Spain on 23 July 2023 to elect the members of the 15th Cortes Generales under the Spanish Constitution of 1978. All 350 seats in the Congress of Deputies were up for election, as well as 208 of 266 seats in the Senate.",
+   "caveat": null,
+   "seatLeader": "PP"
+  }
+ ]
+}

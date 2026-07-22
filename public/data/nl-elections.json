@@ -1,0 +1,4661 @@
+{
+ "meta": {
+  "title": "Dutch general elections",
+  "sources": [
+   "Wikipedia: Dutch general election articles, 1886–2025 (results, infoboxes and leads)",
+   "Kiesraad figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "eras": [
+  {
+   "key": "census",
+   "label": "The census-suffrage kingdom",
+   "span": "1886–1913",
+   "blurb": "The Netherlands elected its House of Representatives in two-round district contests on a franchise limited by tax and property tests — under a tenth of the population at first. Politics revolved around the school struggle: Liberals against a rising alliance of Catholics and orthodox Protestants, with socialists arriving at the century's turn."
+  },
+  {
+   "key": "pillarised",
+   "label": "Pacification and the pillarised nation",
+   "span": "1917–1937",
+   "blurb": "The great Pacification of 1917 settled the school struggle and rebuilt the system in one stroke: universal male suffrage, nationwide proportional representation and equal funding for religious schools. Women voted from 1922. For half a century the confessional parties, anchored by the Catholics, sat in every government while the country organised itself into separate Catholic, Protestant, socialist and liberal worlds."
+  },
+  {
+   "key": "postwar",
+   "label": "Postwar reconstruction",
+   "span": "1946–1963",
+   "blurb": "After occupation and liberation, the restored parties rebuilt the country through Catholic–Labour 'Roman-red' coalitions under Drees, the architect of the Dutch welfare state. The pillars held: election after election returned the same five parties in nearly the same proportions."
+  },
+  {
+   "key": "depillarised",
+   "label": "Depillarisation",
+   "span": "1967–1989",
+   "blurb": "The pillars crumbled fast: D66 arrived in 1967 promising to blow up the system, the Catholic vote collapsed, and the three confessional parties fused into the CDA — which promptly led every government of the 1980s under Lubbers, while Den Uyl's PvdA fought the era's polarised battles from the left."
+  },
+  {
+   "key": "purple",
+   "label": "Purple and the Fortuyn revolt",
+   "span": "1994–2002",
+   "blurb": "In 1994 Labour and the Liberals governed together for the first time, excluding the confessionals from power since 1918 — the 'purple' cabinets of Wim Kok. The experiment ended in shock: Pim Fortuyn, assassinated nine days before the 2002 election, whose party then surged into government from nowhere."
+  },
+  {
+   "key": "fragmented",
+   "label": "The fragmented century",
+   "span": "2003–2025",
+   "blurb": "The electorate came loose from its moorings: Wilders on the right, upstart parties in every direction, and record fragmentation — governments now need four partners. Rutte's four cabinets spanned thirteen years; the 2023 election made the PVV the largest party, and 2025 swung back to D66 under Rob Jetten after the Schoof cabinet's collapse."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1886",
+   "label": "1886",
+   "year": 1886,
+   "date": "29 June 1886",
+   "era": "census",
+   "totalSeats": 86,
+   "majoritySeats": 44,
+   "turnout": 75.58,
+   "parties": [
+    {
+     "name": "LU",
+     "leader": "Hendrik Goeman Borgesius",
+     "seats": 47,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Abraham Kuyper",
+     "seats": 19,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Catholics",
+     "leader": "Bernardus Bahlmann  & Herman Schaepman",
+     "seats": 19,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Conservative",
+     "leader": "Jan Reijnaud Corver Hooft",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Jan Heemskerk",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "The other 78 were elected using two-round plurality block voting in 35 constituencies from 2 to 7 seats. To be elected in the first round, a candidate had to reach an electoral threshold of 50% of the number of valid votes cast, divided by the number of seats up for election in the district.",
+   "caveat": null,
+   "seatLeader": "LU"
+  },
+  {
+   "id": "1887",
+   "label": "1887",
+   "year": 1887,
+   "date": "14 September 1887",
+   "era": "census",
+   "totalSeats": 86,
+   "majoritySeats": 44,
+   "turnout": 55.14,
+   "parties": [
+    {
+     "name": "LU",
+     "leader": "Hendrik Goeman Borgesius",
+     "seats": 48,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Abraham Kuyper",
+     "seats": 19,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Catholics",
+     "leader": "Bernardus Bahlmann  & Herman Schaepman",
+     "seats": 19,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Jan Heemskerk",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "The other 78 were elected using two-round plurality block voting in 35 constituencies from 2 to 7 seats. To be elected in the first round, a candidate had to reach an electoral threshold of 50% of the number of valid votes cast, divided by the number of seats up for election in the district.",
+   "caveat": null,
+   "seatLeader": "LU"
+  },
+  {
+   "id": "1888",
+   "label": "1888",
+   "year": 1888,
+   "date": "20 March 1888",
+   "era": "census",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": 81.41,
+   "parties": [
+    {
+     "name": "LU",
+     "leader": "Hendrik Goeman Borgesius",
+     "seats": 45,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": 40.72,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Abraham Kuyper",
+     "seats": 27,
+     "seatChange": 8.0,
+     "votes": null,
+     "share": 30.43,
+     "swing": null
+    },
+    {
+     "name": "Catholic",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 7.0,
+     "votes": null,
+     "share": 21.55,
+     "swing": null
+    },
+    {
+     "name": "SDB",
+     "leader": "Ferdinand Domela Nieuwenhuis",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 0.68,
+     "swing": null
+    },
+    {
+     "name": "Conservative",
+     "leader": "Rutger Jan Schimmelpenninck van Nijenhuis",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Aeneas Mackay",
+    "party": "ARP"
+   },
+   "knownAs": "The first confessional cabinet",
+   "summary": "This was the first election held after the constitutional revision of 1887, achieved by Minister of the Interior Jan Heemskerk, which had several effects on the parliamentary system. Firstly, this revision fixed the number of seats in the House of Representatives at 100.",
+   "caveat": null,
+   "seatLeader": "LU"
+  },
+  {
+   "id": "1891",
+   "label": "1891",
+   "year": 1891,
+   "date": "23 June 1891",
+   "era": "census",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": 71.64,
+   "parties": [
+    {
+     "name": "LU",
+     "leader": "Hendrik Goeman Borgesius",
+     "seats": 54,
+     "seatChange": 9.0,
+     "votes": null,
+     "share": 47.44,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Abraham Kuyper",
+     "seats": 20,
+     "seatChange": -7.0,
+     "votes": null,
+     "share": 23.08,
+     "swing": null
+    },
+    {
+     "name": "Catholic",
+     "leader": null,
+     "seats": 25,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 19.44,
+     "swing": null
+    },
+    {
+     "name": "Radicals",
+     "leader": "Boelo Luitjen Tijdens",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 0.85,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Gijsbert van Tienhoven",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "The other 21 were elected using two-round plurality block voting in 5 constituencies from 2 to 9 seats. To be elected in the first round, a candidate had to reach an electoral threshold of 50% of the number of valid votes cast, divided by the number of seats up for election in the district.",
+   "caveat": null,
+   "seatLeader": "LU"
+  },
+  {
+   "id": "1894",
+   "label": "1894",
+   "year": 1894,
+   "date": "24 April 1894",
+   "era": "census",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": 57.21,
+   "parties": [
+    {
+     "name": "Lib",
+     "leader": "Hendrik Goeman Borgesius",
+     "seats": 31,
+     "seatChange": -23.0,
+     "votes": null,
+     "share": 31.6,
+     "swing": null
+    },
+    {
+     "name": "VL",
+     "leader": null,
+     "seats": 29,
+     "seatChange": null,
+     "votes": null,
+     "share": 27.99,
+     "swing": null
+    },
+    {
+     "name": "Catholics",
+     "leader": "Leopold Haffmans",
+     "seats": 25,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 13.38,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Abraham Kuyper",
+     "seats": 5,
+     "seatChange": -15.0,
+     "votes": null,
+     "share": 12.98,
+     "swing": null
+    },
+    {
+     "name": "Free ARs",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": 6.82,
+     "swing": null
+    },
+    {
+     "name": "RL",
+     "leader": "Willem Treub",
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 5.23,
+     "swing": null
+    },
+    {
+     "name": "Radicals",
+     "leader": "Boelo Luitjen Tijdens",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 0.37,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Joan Röell",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in the Netherlands on 10 April 1894, with a second round in 27 constituencies on 24 April. The Liberal Union and the dissident Free Liberals remained the largest group, winning 60 of the 100 seats in the House of Representatives.",
+   "caveat": null,
+   "seatLeader": "Lib"
+  },
+  {
+   "id": "1897",
+   "label": "1897",
+   "year": 1897,
+   "date": "25 June 1897",
+   "era": "census",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": 78.04,
+   "parties": [
+    {
+     "name": "LU",
+     "leader": "Hendrik Goeman Borgesius",
+     "seats": 38,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Catholic",
+     "leader": "Franciscus Dobbelmann",
+     "seats": 22,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Abraham Kuyper",
+     "seats": 18,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "VL",
+     "leader": "Joan Röell",
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "RL",
+     "leader": "Willem Treub",
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "VAR",
+     "leader": "Alexander de Savornin Lohman",
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "SDAP",
+     "leader": "Pieter Jelles Troelstra",
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "CHK",
+     "leader": "Johannes Theodoor de Visser",
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Nicolaas Pierson",
+    "party": "Liberal"
+   },
+   "knownAs": "The Liberals' last decade begins",
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "LU"
+  },
+  {
+   "id": "1901",
+   "label": "1901",
+   "year": 1901,
+   "date": "27 June 1901",
+   "era": "census",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": 73.05,
+   "parties": [
+    {
+     "name": "Catholic",
+     "leader": "Franciscus Dobbelmann",
+     "seats": 25,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Abraham Kuyper",
+     "seats": 24,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "LU",
+     "leader": "Hendrik Goeman Borgesius",
+     "seats": 21,
+     "seatChange": -17.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "VL",
+     "leader": "Joan Röell",
+     "seats": 8,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "SDAP",
+     "leader": "Pieter Jelles Troelstra",
+     "seats": 7,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "VAR",
+     "leader": "Alexander de Savornin Lohman",
+     "seats": 7,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "VDB",
+     "leader": "Hendrik Lodewijk Drucker",
+     "seats": 6,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "CHK",
+     "leader": "Johannes de Visser",
+     "seats": 1,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FB",
+     "leader": "Jan Schokking",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Abraham Kuyper",
+    "party": "ARP"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Catholic"
+  },
+  {
+   "id": "1905",
+   "label": "1905",
+   "year": 1905,
+   "date": "28 June 1905",
+   "era": "census",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": 82.98,
+   "parties": [
+    {
+     "name": "LU",
+     "leader": "Hendrik Goeman Borgesius",
+     "seats": 25,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "AB",
+     "leader": "Maximilien Kolkman",
+     "seats": 25,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "VDB",
+     "leader": "Hendrik Lodewijk Drucker",
+     "seats": 10,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "VL",
+     "leader": "Meinard Tydeman",
+     "seats": 10,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Abraham Kuyper",
+     "seats": 15,
+     "seatChange": -9.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "SDAP",
+     "leader": "Pieter Jelles Troelstra",
+     "seats": 7,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "CHP",
+     "leader": "Alexander de Savornin Lohman",
+     "seats": 7,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FB",
+     "leader": "Jan Schokking",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Theo de Meester",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in the Netherlands on 16 June 1905, with a second round in some constituencies on 28 June. The General League of Roman Catholic Electoral Associations and the Liberal Union emerged as the largest party, winning each 25 of the 100 seats in the House of Representatives.",
+   "caveat": null,
+   "seatLeader": "LU"
+  },
+  {
+   "id": "1909",
+   "label": "1909",
+   "year": 1909,
+   "date": "23 June 1909",
+   "era": "census",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": 78.76,
+   "parties": [
+    {
+     "name": "AB",
+     "leader": "Jan Loeff",
+     "seats": 25,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "LU",
+     "leader": "Hendrik Goeman Borgesius",
+     "seats": 21,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Abraham Kuyper",
+     "seats": 21,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "CHU",
+     "leader": "Alexander de Savornin Lohman",
+     "seats": 12,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "VDB",
+     "leader": "Hendrik Lodewijk Drucker",
+     "seats": 8,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "SDAP",
+     "leader": "Pieter Jelles Troelstra",
+     "seats": 7,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "BVL",
+     "leader": "Meinard Tydeman",
+     "seats": 4,
+     "seatChange": -6.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": "—",
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Theo Heemskerk",
+    "party": "ARP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in the Netherlands on 11 June 1909, with a second round in some constituencies on 23 June. The General League of Roman Catholic Electoral Associations emerged as the largest party, winning 25 of the 100 seats in the House of Representatives.",
+   "caveat": null,
+   "seatLeader": "AB"
+  },
+  {
+   "id": "1913",
+   "label": "1913",
+   "year": 1913,
+   "date": "25 June 1913",
+   "era": "census",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": 84.62,
+   "parties": [
+    {
+     "name": "AB",
+     "leader": "Willem Hubert Nolens",
+     "seats": 25,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "LU",
+     "leader": "Hendrik Goeman Borgesius",
+     "seats": 20,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "SDAP",
+     "leader": "Pieter Jelles Troelstra",
+     "seats": 18,
+     "seatChange": 11.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Abraham Kuyper",
+     "seats": 11,
+     "seatChange": -10.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "BVL",
+     "leader": "Meinard Tydeman",
+     "seats": 10,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "CHU",
+     "leader": "Alexander de Savornin Lohman",
+     "seats": 8,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "VDB",
+     "leader": "Dirk Bos",
+     "seats": 7,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ind CHU",
+     "leader": "Cornelis Bichon van IJsselmonde",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Pieter Cort van der Linden",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in the Netherlands on 17 June 1913, with a second round in some constituencies on 25 June. Despite receiving the third highest number of votes in the first round, the General League of Roman Catholic Electoral Associations emerged as the largest party, winning 25 of the 100 seats in the House of Representatives.",
+   "caveat": null,
+   "seatLeader": "AB"
+  },
+  {
+   "id": "1917",
+   "label": "1917",
+   "year": 1917,
+   "date": "22 June 1917",
+   "era": "pillarised",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": 38.0,
+   "parties": [
+    {
+     "name": "AB",
+     "leader": "Willem Hubert Nolens",
+     "seats": 25,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "LU",
+     "leader": "Theo de Meester",
+     "seats": 21,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "SDAP",
+     "leader": "Pieter Jelles Troelstra",
+     "seats": 15,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Abraham Kuyper",
+     "seats": 11,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "BVL",
+     "leader": "Meinard Tydeman",
+     "seats": 10,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "CHU",
+     "leader": "Alexander de Savornin Lohman",
+     "seats": 9,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "VDB",
+     "leader": "Henri Marchant",
+     "seats": 8,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ind CHU",
+     "leader": "C. J. A. Bichon van Ijsselmonde",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Pieter Cort van der Linden",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in the Netherlands on 15 June 1917 to elect members of the House of Representatives of the Dutch Parliament. The elections were held following the Pacification of 1917, an agreement between the seven parties with seats in parliament to allow a change in the constitution to introduce universal manhood suffrage and proportional representation.",
+   "caveat": null,
+   "seatLeader": "AB"
+  },
+  {
+   "id": "1918",
+   "label": "1918",
+   "year": 1918,
+   "date": "3 July 1918",
+   "era": "pillarised",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "AB",
+     "leader": "Willem Hubert Nolens",
+     "seats": 30,
+     "seatChange": 5.0,
+     "votes": null,
+     "share": 29.97,
+     "swing": null
+    },
+    {
+     "name": "SDAP",
+     "leader": "Pieter Jelles Troelstra",
+     "seats": 22,
+     "seatChange": 7.0,
+     "votes": null,
+     "share": 22.03,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Abraham Kuyper",
+     "seats": 13,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 13.36,
+     "swing": null
+    },
+    {
+     "name": "CHU",
+     "leader": "Alexander de Savornin Lohman",
+     "seats": 7,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 6.55,
+     "swing": null
+    },
+    {
+     "name": "LU",
+     "leader": "Eduard Ellis van Raalte",
+     "seats": 6,
+     "seatChange": -15.0,
+     "votes": null,
+     "share": 6.19,
+     "swing": null
+    },
+    {
+     "name": "VDB",
+     "leader": "Henri Marchant",
+     "seats": 5,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": 5.33,
+     "swing": null
+    },
+    {
+     "name": "BVL",
+     "leader": "Alibert Cornelis Visser van IJzendoorn",
+     "seats": 4,
+     "seatChange": -6.0,
+     "votes": null,
+     "share": 3.81,
+     "swing": null
+    },
+    {
+     "name": "EB",
+     "leader": "Willem Treub",
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": 3.13,
+     "swing": null
+    },
+    {
+     "name": "SDP",
+     "leader": "David Wijnkoop",
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 2.31,
+     "swing": null
+    },
+    {
+     "name": "MP",
+     "leader": "Abraham Staalman",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 0.94,
+     "swing": null
+    },
+    {
+     "name": "CDP",
+     "leader": "Andries Staalman",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 0.79,
+     "swing": null
+    },
+    {
+     "name": "PB",
+     "leader": "Frederik Bos",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 0.67,
+     "swing": null
+    },
+    {
+     "name": "SP",
+     "leader": "Harm Kolthek",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 0.67,
+     "swing": null
+    },
+    {
+     "name": "BCS",
+     "leader": "Willy Kruyt",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 0.63,
+     "swing": null
+    },
+    {
+     "name": "CSP",
+     "leader": "Adolf Robbert van de Laar",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 0.61,
+     "swing": null
+    },
+    {
+     "name": "NP",
+     "leader": "Henri ter Hall",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 0.53,
+     "swing": null
+    },
+    {
+     "name": "VDW",
+     "leader": "Willem Wijk",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 0.51,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Charles Ruijs de Beerenbrouck",
+    "party": "RKSP"
+   },
+   "knownAs": "The first PR election",
+   "summary": "General elections were held in the Netherlands on 3 July 1918. They were the first elections held after a series of reforms that introduced universal male suffrage and pure proportional representation, replacing the previous two-round system in single member constituencies.",
+   "caveat": null,
+   "seatLeader": "AB"
+  },
+  {
+   "id": "1922",
+   "label": "1922",
+   "year": 1922,
+   "date": "5 July 1922",
+   "era": "pillarised",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "AB",
+     "leader": "Willem Hubert Nolens",
+     "seats": 32,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 29.86,
+     "swing": null
+    },
+    {
+     "name": "SDAP",
+     "leader": "Pieter Jelles Troelstra",
+     "seats": 20,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 19.38,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Hendrikus Colijn",
+     "seats": 16,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 13.73,
+     "swing": null
+    },
+    {
+     "name": "CHU",
+     "leader": "Johannes Theodoor de Visser",
+     "seats": 11,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": 10.88,
+     "swing": null
+    },
+    {
+     "name": "LSP",
+     "leader": "Hendrik Coenraad Dresselhuijs",
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": 9.26,
+     "swing": null
+    },
+    {
+     "name": "VDB",
+     "leader": "Henri Marchant",
+     "seats": 5,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 4.59,
+     "swing": null
+    },
+    {
+     "name": "CPH",
+     "leader": "David Wijnkoop",
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 1.83,
+     "swing": null
+    },
+    {
+     "name": "PB",
+     "leader": "Arend Braat",
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 1.56,
+     "swing": null
+    },
+    {
+     "name": "LP",
+     "leader": "Samuel van Houten",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 0.96,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Gerrit Hendrik Kersten",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 0.91,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Charles Ruijs de Beerenbrouck",
+    "party": "RKSP"
+   },
+   "knownAs": "The first election with women's votes",
+   "summary": "General elections were held in the Netherlands on 5 July 1922. They were the first elections held under universal suffrage, which became reality after the acceptance of a proposal by Henri Marchant in 1919 that gave women full voting rights.",
+   "caveat": null,
+   "seatLeader": "AB"
+  },
+  {
+   "id": "1925",
+   "label": "1925",
+   "year": 1925,
+   "date": "1 July 1925",
+   "era": "pillarised",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": 91.35,
+   "parties": [
+    {
+     "name": "General League",
+     "leader": "Willem Hubert Nolens",
+     "seats": 30,
+     "seatChange": -2.0,
+     "votes": 883333,
+     "share": 28.63,
+     "swing": null
+    },
+    {
+     "name": "SDAP",
+     "leader": "Pieter Jelles Troelstra",
+     "seats": 24,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": 22.9,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Hendrikus Colijn",
+     "seats": 13,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": 12.23,
+     "swing": null
+    },
+    {
+     "name": "CHU",
+     "leader": "Johannes Theodoor de Visser",
+     "seats": 11,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 9.9,
+     "swing": null
+    },
+    {
+     "name": "LSP",
+     "leader": "Hendrik Coenraad Dresselhuijs",
+     "seats": 9,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 8.74,
+     "swing": null
+    },
+    {
+     "name": "VDB",
+     "leader": "Henri Marchant",
+     "seats": 7,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 6.07,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Gerrit Hendrik Kersten",
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 2.03,
+     "swing": null
+    },
+    {
+     "name": "PB",
+     "leader": "Arend Braat",
+     "seats": 1,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 1.42,
+     "swing": null
+    },
+    {
+     "name": "CPH",
+     "leader": "David Wijnkoop",
+     "seats": 1,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 1.19,
+     "swing": null
+    },
+    {
+     "name": "RKVP",
+     "leader": "Pius Arts",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 1.19,
+     "swing": null
+    },
+    {
+     "name": "HGSP",
+     "leader": "Casper Andries Lingbeek",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 0.98,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Hendrikus Colijn",
+    "party": "ARP"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "General League"
+  },
+  {
+   "id": "1929",
+   "label": "1929",
+   "year": 1929,
+   "date": "3 July 1929",
+   "era": "pillarised",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": 92.68,
+   "parties": [
+    {
+     "name": "RKSP",
+     "leader": "Willem Hubert Nolens",
+     "seats": 30,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 29.64,
+     "swing": null
+    },
+    {
+     "name": "SDAP",
+     "leader": "Johan Willem Albarda",
+     "seats": 24,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 23.81,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Hendrikus Colijn",
+     "seats": 12,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 11.59,
+     "swing": null
+    },
+    {
+     "name": "CHU",
+     "leader": "Dirk Jan de Geer",
+     "seats": 11,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 10.49,
+     "swing": null
+    },
+    {
+     "name": "LSP",
+     "leader": "Dirk Fock",
+     "seats": 8,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 7.37,
+     "swing": null
+    },
+    {
+     "name": "VDB",
+     "leader": "Henri Marchant",
+     "seats": 7,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 6.18,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Gerrit Hendrik Kersten",
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 2.27,
+     "swing": null
+    },
+    {
+     "name": "CPH",
+     "leader": "Louis de Visser",
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 2.0,
+     "swing": null
+    },
+    {
+     "name": "MPSL",
+     "leader": "Floris Vos",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 1.18,
+     "swing": null
+    },
+    {
+     "name": "HGS",
+     "leader": "Casper Andries Lingbeek",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 1.06,
+     "swing": null
+    },
+    {
+     "name": "PB",
+     "leader": "Arend Braat",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 1.03,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Charles Ruijs de Beerenbrouck",
+    "party": "RKSP"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "RKSP"
+  },
+  {
+   "id": "1933",
+   "label": "1933",
+   "year": 1933,
+   "date": "26 April 1933",
+   "era": "pillarised",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": 94.22,
+   "parties": [
+    {
+     "name": "RKSP",
+     "leader": "Piet Aalberse",
+     "seats": 28,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 27.87,
+     "swing": null
+    },
+    {
+     "name": "SDAP",
+     "leader": "Johan Willem Albarda",
+     "seats": 22,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 21.46,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Hendrikus Colijn",
+     "seats": 14,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 13.43,
+     "swing": null
+    },
+    {
+     "name": "CHU",
+     "leader": "Dirk Jan de Geer",
+     "seats": 10,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 9.13,
+     "swing": null
+    },
+    {
+     "name": "LSP",
+     "leader": "Dirk Fock",
+     "seats": 7,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 6.95,
+     "swing": null
+    },
+    {
+     "name": "VDB",
+     "leader": "Dolf Joekes",
+     "seats": 6,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 5.08,
+     "swing": null
+    },
+    {
+     "name": "CPH",
+     "leader": "Louis de Visser",
+     "seats": 4,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 3.18,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Gerrit Hendrik Kersten",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.51,
+     "swing": null
+    },
+    {
+     "name": "RSP",
+     "leader": "Henk Sneevliet",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 1.3,
+     "swing": null
+    },
+    {
+     "name": "NBTMP",
+     "leader": "Cornelis Vervoorn & Arend Braat",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 1.28,
+     "swing": null
+    },
+    {
+     "name": "RKVP",
+     "leader": "Pius Arts",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 1.1,
+     "swing": null
+    },
+    {
+     "name": "CDU",
+     "leader": "Harm van Houten",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 1.03,
+     "swing": null
+    },
+    {
+     "name": "HGS",
+     "leader": "Casper Andries Lingbeek",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 0.91,
+     "swing": null
+    },
+    {
+     "name": "VNH",
+     "leader": "Cornelis Jacobus Snijders",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 0.81,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Hendrikus Colijn",
+    "party": "ARP"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "RKSP"
+  },
+  {
+   "id": "1937",
+   "label": "1937",
+   "year": 1937,
+   "date": "26 May 1937",
+   "era": "pillarised",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": 94.4,
+   "parties": [
+    {
+     "name": "RKSP",
+     "leader": "Piet Aalberse",
+     "seats": 31,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 28.84,
+     "swing": null
+    },
+    {
+     "name": "SDAP",
+     "leader": "Johan Willem Albarda",
+     "seats": 23,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 21.95,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Hendrikus Colijn",
+     "seats": 17,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 16.4,
+     "swing": null
+    },
+    {
+     "name": "CHU",
+     "leader": "Dirk Jan de Geer",
+     "seats": 8,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 7.46,
+     "swing": null
+    },
+    {
+     "name": "VDB",
+     "leader": "Pieter Oud",
+     "seats": 6,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 5.9,
+     "swing": null
+    },
+    {
+     "name": "NSB",
+     "leader": "Anton Mussert",
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": 4.22,
+     "swing": null
+    },
+    {
+     "name": "LSP",
+     "leader": "Willem Carel Wendelaar",
+     "seats": 4,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": 3.95,
+     "swing": null
+    },
+    {
+     "name": "CPN",
+     "leader": "Louis de Visser",
+     "seats": 3,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 3.35,
+     "swing": null
+    },
+    {
+     "name": "CDU",
+     "leader": "Harm van Houten",
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 2.09,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Gerrit Hendrik Kersten",
+     "seats": 2,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 1.94,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Hendrikus Colijn",
+    "party": "ARP"
+   },
+   "knownAs": "Colijn against the storm",
+   "summary": "General elections were held in the Netherlands on 26 May 1937. The Roman Catholic State Party remained the largest party in the House of Representatives, winning 31 of the 100 seats.",
+   "caveat": null,
+   "seatLeader": "RKSP"
+  },
+  {
+   "id": "1946",
+   "label": "1946",
+   "year": 1946,
+   "date": "17 May 1946",
+   "era": "postwar",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": 93.1,
+   "parties": [
+    {
+     "name": "KVP",
+     "leader": "Carl Romme",
+     "seats": 32,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 30.81,
+     "swing": null
+    },
+    {
+     "name": "PvdA",
+     "leader": "Willem Drees",
+     "seats": 29,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 28.31,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Jan Schouten",
+     "seats": 13,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": 12.9,
+     "swing": null
+    },
+    {
+     "name": "CPN",
+     "leader": "Paul de Groot",
+     "seats": 10,
+     "seatChange": 7.0,
+     "votes": null,
+     "share": 10.56,
+     "swing": null
+    },
+    {
+     "name": "CHU",
+     "leader": "Hendrik Tilanus",
+     "seats": 8,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 7.84,
+     "swing": null
+    },
+    {
+     "name": "PvdV",
+     "leader": "Dirk Stikker",
+     "seats": 6,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 6.41,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Pieter Zandt",
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.14,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Louis Beel",
+    "party": "KVP"
+   },
+   "knownAs": "The first postwar election",
+   "summary": "General elections were held in the Netherlands on 17 May 1946, the first after World War II. The Catholic People's Party, a continuation of the pre-war Roman Catholic State Party, remained the largest party in the House of Representatives, winning 32 of the 100 seats.",
+   "caveat": null,
+   "seatLeader": "KVP"
+  },
+  {
+   "id": "1948",
+   "label": "1948",
+   "year": 1948,
+   "date": "7 July 1948",
+   "era": "postwar",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": 93.67,
+   "parties": [
+    {
+     "name": "KVP",
+     "leader": "Carl Romme",
+     "seats": 32,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 31.04,
+     "swing": null
+    },
+    {
+     "name": "PvdA",
+     "leader": "Willem Drees",
+     "seats": 27,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 25.6,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Jan Schouten",
+     "seats": 13,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 13.21,
+     "swing": null
+    },
+    {
+     "name": "CHU",
+     "leader": "Hendrik Tilanus",
+     "seats": 9,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 9.19,
+     "swing": null
+    },
+    {
+     "name": "VVD",
+     "leader": "Pieter Oud",
+     "seats": 8,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 7.95,
+     "swing": null
+    },
+    {
+     "name": "CPN",
+     "leader": "Paul de Groot",
+     "seats": 8,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 7.74,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Pieter Zandt",
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.37,
+     "swing": null
+    },
+    {
+     "name": "KNP",
+     "leader": "Charles Welter",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 1.26,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Willem Drees",
+    "party": "PvdA"
+   },
+   "knownAs": null,
+   "summary": "Following the elections, a broad four-party coalition government was formed between the Catholic People's Party, Labour Party, Christian Historical Union and People's Party for Freedom and Democracy. Combined these parties held 76% of the available seats in parliament.",
+   "caveat": null,
+   "seatLeader": "KVP"
+  },
+  {
+   "id": "1952",
+   "label": "1952",
+   "year": 1952,
+   "date": "25 June 1952",
+   "era": "postwar",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": 94.98,
+   "parties": [
+    {
+     "name": "PvdA",
+     "leader": "Willem Drees",
+     "seats": 30,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 28.97,
+     "swing": null
+    },
+    {
+     "name": "KVP",
+     "leader": "Carl Romme",
+     "seats": 30,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 28.67,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Jan Schouten",
+     "seats": 12,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 11.31,
+     "swing": null
+    },
+    {
+     "name": "CHU",
+     "leader": "Hendrik Tilanus",
+     "seats": 9,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 8.92,
+     "swing": null
+    },
+    {
+     "name": "VVD",
+     "leader": "Pieter Oud",
+     "seats": 9,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 8.83,
+     "swing": null
+    },
+    {
+     "name": "CPN",
+     "leader": "Paul de Groot",
+     "seats": 6,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 6.16,
+     "swing": null
+    },
+    {
+     "name": "KNP",
+     "leader": "Charles Welter",
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 2.71,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Pieter Zandt",
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.42,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "First Drees cabinet",
+    "party": "KVP–PvdA–CHU–VVD\tSecond Drees cabinet"
+   },
+   "pmAfter": {
+    "name": "Willem Drees",
+    "party": "PvdA"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in the Netherlands on 25 June 1952. The Catholic People's Party and the Labour Party both won 30 of the 100 seats in the House of Representatives.",
+   "caveat": null,
+   "seatLeader": "PvdA"
+  },
+  {
+   "id": "1956",
+   "label": "1956",
+   "year": 1956,
+   "date": "13 June 1956",
+   "era": "postwar",
+   "totalSeats": 100,
+   "majoritySeats": 51,
+   "turnout": 95.5,
+   "parties": [
+    {
+     "name": "PvdA",
+     "leader": "Willem Drees",
+     "seats": 34,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": 32.69,
+     "swing": null
+    },
+    {
+     "name": "KVP",
+     "leader": "Carl Romme",
+     "seats": 33,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 31.69,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Jelle Zijlstra",
+     "seats": 10,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 9.91,
+     "swing": null
+    },
+    {
+     "name": "VVD",
+     "leader": "Pieter Oud",
+     "seats": 9,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 8.77,
+     "swing": null
+    },
+    {
+     "name": "CHU",
+     "leader": "Hendrik Tilanus",
+     "seats": 8,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 8.43,
+     "swing": null
+    },
+    {
+     "name": "CPN",
+     "leader": "Paul de Groot",
+     "seats": 4,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 4.75,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Pieter Zandt",
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.26,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Willem Drees",
+    "party": "PvdA"
+   },
+   "knownAs": "Drees at high tide",
+   "summary": "18481850185218531854185618581860186218641866 (Jun)1866 (Oct)1868186918711873187518771879188118831884188618871888189118941897190119051909191319171918192219251929193319371946194819521956195919631967197119721977198119821986198919941998200220032006201020122017202120232025Next",
+   "caveat": null,
+   "seatLeader": "PvdA"
+  },
+  {
+   "id": "1959",
+   "label": "1959",
+   "year": 1959,
+   "date": "12 March 1959",
+   "era": "postwar",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 95.57,
+   "parties": [
+    {
+     "name": "KVP",
+     "leader": "Carl Romme",
+     "seats": 49,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 31.6,
+     "swing": null
+    },
+    {
+     "name": "PvdA",
+     "leader": "Jaap Burger",
+     "seats": 48,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 30.36,
+     "swing": null
+    },
+    {
+     "name": "VVD",
+     "leader": "Pieter Oud",
+     "seats": 19,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": 12.21,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Jelle Zijlstra",
+     "seats": 14,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 9.39,
+     "swing": null
+    },
+    {
+     "name": "CHU",
+     "leader": "Henk Beernink",
+     "seats": 12,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 8.11,
+     "swing": null
+    },
+    {
+     "name": "CPN",
+     "leader": "Paul de Groot",
+     "seats": 3,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": 2.41,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Pieter Zandt",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.16,
+     "swing": null
+    },
+    {
+     "name": "PSP",
+     "leader": "Henk Lankhorst, Nico van der Veen",
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": 1.84,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Jan de Quay",
+    "party": "KVP"
+   },
+   "knownAs": null,
+   "summary": "18481850185218531854185618581860186218641866 (Jun)1866 (Oct)1868186918711873187518771879188118831884188618871888189118941897190119051909191319171918192219251929193319371946194819521956195919631967197119721977198119821986198919941998200220032006201020122017202120232025Next",
+   "caveat": null,
+   "seatLeader": "KVP"
+  },
+  {
+   "id": "1963",
+   "label": "1963",
+   "year": 1963,
+   "date": "15 May 1963",
+   "era": "postwar",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 95.13,
+   "parties": [
+    {
+     "name": "KVP",
+     "leader": "Wim de Kort",
+     "seats": 50,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 31.88,
+     "swing": null
+    },
+    {
+     "name": "PvdA",
+     "leader": "Anne Vondeling",
+     "seats": 43,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": 28.01,
+     "swing": null
+    },
+    {
+     "name": "VVD",
+     "leader": "Edzo Toxopeus",
+     "seats": 16,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": 10.29,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Barend Biesheuvel",
+     "seats": 13,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 8.72,
+     "swing": null
+    },
+    {
+     "name": "CHU",
+     "leader": "Henk Beernink",
+     "seats": 13,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 8.58,
+     "swing": null
+    },
+    {
+     "name": "PSP",
+     "leader": "Henk Lankhorst",
+     "seats": 4,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 3.03,
+     "swing": null
+    },
+    {
+     "name": "CPN",
+     "leader": "Paul de Groot",
+     "seats": 4,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 2.77,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Cornelius van Dis",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.3,
+     "swing": null
+    },
+    {
+     "name": "BP",
+     "leader": "Hendrik Koekoek",
+     "seats": 3,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 2.13,
+     "swing": null
+    },
+    {
+     "name": "GPV",
+     "leader": "Piet Jongeling",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 0.74,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Victor Marijnen",
+    "party": "KVP"
+   },
+   "knownAs": null,
+   "summary": "The elections led to a four-party coalition government initially consisting of the KVP, People's Party for Freedom and Democracy, Anti-Revolutionary Party (ARP) and Christian Historical Union. In 1965 this coalition was replaced by one consisting of the KVP, Labour Party and ARP.",
+   "caveat": null,
+   "seatLeader": "KVP"
+  },
+  {
+   "id": "1967",
+   "label": "1967",
+   "year": 1967,
+   "date": "15 February 1967",
+   "era": "depillarised",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 94.9,
+   "parties": [
+    {
+     "name": "KVP",
+     "leader": "Norbert Schmelzer",
+     "seats": 42,
+     "seatChange": -8.0,
+     "votes": null,
+     "share": 26.5,
+     "swing": null
+    },
+    {
+     "name": "PvdA",
+     "leader": "Joop den Uyl",
+     "seats": 37,
+     "seatChange": -6.0,
+     "votes": null,
+     "share": 23.6,
+     "swing": null
+    },
+    {
+     "name": "VVD",
+     "leader": "Edzo Toxopeus",
+     "seats": 17,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 10.7,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Barend Biesheuvel",
+     "seats": 15,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 9.9,
+     "swing": null
+    },
+    {
+     "name": "CHU",
+     "leader": "Henk Beernink",
+     "seats": 12,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 8.1,
+     "swing": null
+    },
+    {
+     "name": "BP",
+     "leader": "Hendrik Koekoek",
+     "seats": 7,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": 4.8,
+     "swing": null
+    },
+    {
+     "name": "D66",
+     "leader": "Hans van Mierlo",
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": 4.5,
+     "swing": null
+    },
+    {
+     "name": "CPN",
+     "leader": "Marcus Bakker",
+     "seats": 5,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 3.6,
+     "swing": null
+    },
+    {
+     "name": "PSP",
+     "leader": "Henk Lankhorst",
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.9,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Cornelius van Dis",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.0,
+     "swing": null
+    },
+    {
+     "name": "GPV",
+     "leader": "Piet Jongeling",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 0.9,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Piet de Jong",
+    "party": "KVP"
+   },
+   "knownAs": "Depillarisation begins",
+   "summary": "A general election was held in the Netherlands on 15 February 1967. The Catholic People's Party (KVP) remained the largest party, though it suffered considerable losses, dropping to 42 of the 150 seats in the House of Representatives.",
+   "caveat": null,
+   "seatLeader": "KVP"
+  },
+  {
+   "id": "1971",
+   "label": "1971",
+   "year": 1971,
+   "date": "28 April 1971",
+   "era": "depillarised",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 79.12,
+   "parties": [
+    {
+     "name": "PvdA",
+     "leader": "Joop den Uyl",
+     "seats": 39,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 24.6,
+     "swing": null
+    },
+    {
+     "name": "KVP",
+     "leader": "Gerard Veringa",
+     "seats": 35,
+     "seatChange": -7.0,
+     "votes": null,
+     "share": 21.84,
+     "swing": null
+    },
+    {
+     "name": "VVD",
+     "leader": "Molly Geertsema",
+     "seats": 16,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 10.34,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Barend Biesheuvel",
+     "seats": 13,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 8.59,
+     "swing": null
+    },
+    {
+     "name": "D66",
+     "leader": "Hans van Mierlo",
+     "seats": 11,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": 6.77,
+     "swing": null
+    },
+    {
+     "name": "CHU",
+     "leader": "Bé Udink",
+     "seats": 10,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 6.32,
+     "swing": null
+    },
+    {
+     "name": "DS'70",
+     "leader": "Willem Drees Jr.",
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": 5.33,
+     "swing": null
+    },
+    {
+     "name": "CPN",
+     "leader": "Marcus Bakker",
+     "seats": 6,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 3.9,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Hette Abma",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.35,
+     "swing": null
+    },
+    {
+     "name": "PPR",
+     "leader": "Jacques Aarden",
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": 1.84,
+     "swing": null
+    },
+    {
+     "name": "GPV",
+     "leader": "Piet Jongeling",
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 1.61,
+     "swing": null
+    },
+    {
+     "name": "NMP",
+     "leader": "Ab te Pas",
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": 1.51,
+     "swing": null
+    },
+    {
+     "name": "PSP",
+     "leader": "Hans Wiebenga",
+     "seats": 2,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 1.44,
+     "swing": null
+    },
+    {
+     "name": "BP",
+     "leader": "Hendrik Koekoek",
+     "seats": 1,
+     "seatChange": -6.0,
+     "votes": null,
+     "share": 1.1,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Barend Biesheuvel",
+    "party": "ARP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in the Netherlands on 28 April 1971. The Labour Party (PvdA) emerged as the largest party, winning 39 of the 150 seats in the House of Representatives.",
+   "caveat": null,
+   "seatLeader": "PvdA"
+  },
+  {
+   "id": "1972",
+   "label": "1972",
+   "year": 1972,
+   "date": "29 November 1972",
+   "era": "depillarised",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 83.5,
+   "parties": [
+    {
+     "name": "PvdA",
+     "leader": "Joop den Uyl",
+     "seats": 43,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": 27.3,
+     "swing": null
+    },
+    {
+     "name": "KVP",
+     "leader": "Frans Andriessen",
+     "seats": 27,
+     "seatChange": -8.0,
+     "votes": null,
+     "share": 17.7,
+     "swing": null
+    },
+    {
+     "name": "VVD",
+     "leader": "Hans Wiegel",
+     "seats": 22,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": 14.4,
+     "swing": null
+    },
+    {
+     "name": "ARP",
+     "leader": "Barend Biesheuvel",
+     "seats": 14,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 8.8,
+     "swing": null
+    },
+    {
+     "name": "PPR",
+     "leader": "Bas de Gaay Fortman",
+     "seats": 7,
+     "seatChange": 5.0,
+     "votes": null,
+     "share": 4.8,
+     "swing": null
+    },
+    {
+     "name": "CHU",
+     "leader": "Arnold Tilanus",
+     "seats": 7,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": 4.4,
+     "swing": null
+    },
+    {
+     "name": "CPN",
+     "leader": "Marcus Bakker",
+     "seats": 7,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 4.4,
+     "swing": null
+    },
+    {
+     "name": "D66",
+     "leader": "Hans van Mierlo",
+     "seats": 6,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": 4.1,
+     "swing": null
+    },
+    {
+     "name": "DS'70",
+     "leader": "Willem Drees Jr.",
+     "seats": 6,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 4.1,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Hette Abma",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.2,
+     "swing": null
+    },
+    {
+     "name": "BP",
+     "leader": "Hendrik Koekoek",
+     "seats": 3,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 1.9,
+     "swing": null
+    },
+    {
+     "name": "GPV",
+     "leader": "Piet Jongeling",
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 1.8,
+     "swing": null
+    },
+    {
+     "name": "PSP",
+     "leader": "Bram van der Lek",
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 1.5,
+     "swing": null
+    },
+    {
+     "name": "RKPN",
+     "leader": "Klaas Beuker",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 0.9,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Joop den Uyl",
+    "party": "PvdA"
+   },
+   "knownAs": null,
+   "summary": "18481850185218531854185618581860186218641866 (Jun)1866 (Oct)1868186918711873187518771879188118831884188618871888189118941897190119051909191319171918192219251929193319371946194819521956195919631967197119721977198119821986198919941998200220032006201020122017202120232025Next",
+   "caveat": null,
+   "seatLeader": "PvdA"
+  },
+  {
+   "id": "1977",
+   "label": "1977",
+   "year": 1977,
+   "date": "25 May 1977",
+   "era": "depillarised",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 88.1,
+   "parties": [
+    {
+     "name": "PvdA",
+     "leader": "Joop den Uyl",
+     "seats": 53,
+     "seatChange": 10.0,
+     "votes": null,
+     "share": 33.8,
+     "swing": null
+    },
+    {
+     "name": "CDA",
+     "leader": "Dries van Agt",
+     "seats": 49,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 31.9,
+     "swing": null
+    },
+    {
+     "name": "VVD",
+     "leader": "Hans Wiegel",
+     "seats": 28,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": 17.9,
+     "swing": null
+    },
+    {
+     "name": "D66",
+     "leader": "Jan Terlouw",
+     "seats": 8,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 5.4,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Hette Abma",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.1,
+     "swing": null
+    },
+    {
+     "name": "CPN",
+     "leader": "Marcus Bakker",
+     "seats": 2,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": 1.7,
+     "swing": null
+    },
+    {
+     "name": "PPR",
+     "leader": "Ria Beckers",
+     "seats": 3,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": 1.6,
+     "swing": null
+    },
+    {
+     "name": "GPV",
+     "leader": "Bart Verbrugh",
+     "seats": 1,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 0.9,
+     "swing": null
+    },
+    {
+     "name": "PSP",
+     "leader": "Bram van der Lek",
+     "seats": 1,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 0.9,
+     "swing": null
+    },
+    {
+     "name": "BP",
+     "leader": "Hendrik Koekoek",
+     "seats": 1,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 0.8,
+     "swing": null
+    },
+    {
+     "name": "DS'70",
+     "leader": "Willem Drees Jr.",
+     "seats": 1,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": 0.7,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Dries van Agt",
+    "party": "CDA"
+   },
+   "knownAs": "Labour's record — and opposition",
+   "summary": "General elections were held in the Netherlands on 25 May 1977. The Labour Party remained the largest party, winning 53 of the 150 seats in the House of Representatives.",
+   "caveat": null,
+   "seatLeader": "PvdA"
+  },
+  {
+   "id": "1981",
+   "label": "1981",
+   "year": 1981,
+   "date": "26 May 1981",
+   "era": "depillarised",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 87.0,
+   "parties": [
+    {
+     "name": "CDA",
+     "leader": "Dries van Agt",
+     "seats": 48,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 30.8,
+     "swing": null
+    },
+    {
+     "name": "PvdA",
+     "leader": "Joop den Uyl",
+     "seats": 44,
+     "seatChange": -9.0,
+     "votes": null,
+     "share": 28.3,
+     "swing": null
+    },
+    {
+     "name": "VVD",
+     "leader": "Hans Wiegel",
+     "seats": 26,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 17.3,
+     "swing": null
+    },
+    {
+     "name": "D66",
+     "leader": "Jan Terlouw",
+     "seats": 17,
+     "seatChange": 9.0,
+     "votes": null,
+     "share": 11.1,
+     "swing": null
+    },
+    {
+     "name": "PSP",
+     "leader": "Fred van der Spek",
+     "seats": 3,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 2.1,
+     "swing": null
+    },
+    {
+     "name": "CPN",
+     "leader": "Marcus Bakker",
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 2.1,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Henk van Rossum",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.0,
+     "swing": null
+    },
+    {
+     "name": "PPR",
+     "leader": "Ria Beckers",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.0,
+     "swing": null
+    },
+    {
+     "name": "RPF",
+     "leader": "Meindert Leerling",
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 1.2,
+     "swing": null
+    },
+    {
+     "name": "GPV",
+     "leader": "Gert Schutte",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 0.8,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Dries van Agt",
+    "party": "CDA"
+   },
+   "knownAs": null,
+   "summary": "The incumbent Christian Democratic Appeal-People's Party for Freedom and Democracy coalition lost its overall majority leading to a new coalition being formed between the CDA, the Labour Party (PvdA) and Democrats 66, with the CDA's Dries van Agt continuing as Prime Minister.",
+   "caveat": null,
+   "seatLeader": "CDA"
+  },
+  {
+   "id": "1982",
+   "label": "1982",
+   "year": 1982,
+   "date": "8 September 1982",
+   "era": "depillarised",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 80.98,
+   "parties": [
+    {
+     "name": "PvdA",
+     "leader": "Joop den Uyl",
+     "seats": 47,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 30.4,
+     "swing": null
+    },
+    {
+     "name": "CDA",
+     "leader": "Dries van Agt",
+     "seats": 45,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": 29.39,
+     "swing": null
+    },
+    {
+     "name": "VVD",
+     "leader": "Ed Nijpels",
+     "seats": 36,
+     "seatChange": 10.0,
+     "votes": null,
+     "share": 23.08,
+     "swing": null
+    },
+    {
+     "name": "D66",
+     "leader": "Jan Terlouw",
+     "seats": 6,
+     "seatChange": -11.0,
+     "votes": null,
+     "share": 4.26,
+     "swing": null
+    },
+    {
+     "name": "PSP",
+     "leader": "Fred van der Spek",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.28,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Henk van Rossum",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 1.9,
+     "swing": null
+    },
+    {
+     "name": "CPN",
+     "leader": "Ina Brouwer",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 1.79,
+     "swing": null
+    },
+    {
+     "name": "PPR",
+     "leader": "Ria Beckers",
+     "seats": 2,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 1.66,
+     "swing": null
+    },
+    {
+     "name": "RPF",
+     "leader": "Meindert Leerling",
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 1.51,
+     "swing": null
+    },
+    {
+     "name": "CP",
+     "leader": "Hans Janmaat",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 0.83,
+     "swing": null
+    },
+    {
+     "name": "GPV",
+     "leader": "Gert Schutte",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 0.82,
+     "swing": null
+    },
+    {
+     "name": "EVP",
+     "leader": "Cathy Ubels-Veen",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 0.69,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Ruud Lubbers",
+    "party": "CDA"
+   },
+   "knownAs": "The Lubbers era begins",
+   "summary": "18481850185218531854185618581860186218641866 (Jun)1866 (Oct)1868186918711873187518771879188118831884188618871888189118941897190119051909191319171918192219251929193319371946194819521956195919631967197119721977198119821986198919941998200220032006201020122017202120232025Next",
+   "caveat": null,
+   "seatLeader": "PvdA"
+  },
+  {
+   "id": "1986",
+   "label": "1986",
+   "year": 1986,
+   "date": "21 May 1986",
+   "era": "depillarised",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 85.76,
+   "parties": [
+    {
+     "name": "CDA",
+     "leader": "Ruud Lubbers",
+     "seats": 54,
+     "seatChange": 9.0,
+     "votes": null,
+     "share": 34.59,
+     "swing": null
+    },
+    {
+     "name": "PvdA",
+     "leader": "Joop den Uyl",
+     "seats": 52,
+     "seatChange": 5.0,
+     "votes": null,
+     "share": 33.27,
+     "swing": null
+    },
+    {
+     "name": "VVD",
+     "leader": "Ed Nijpels",
+     "seats": 27,
+     "seatChange": -9.0,
+     "votes": null,
+     "share": 17.41,
+     "swing": null
+    },
+    {
+     "name": "D66",
+     "leader": "Hans van Mierlo",
+     "seats": 9,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 6.13,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Bas van der Vlies",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 1.74,
+     "swing": null
+    },
+    {
+     "name": "PPR",
+     "leader": "Ria Beckers",
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 1.26,
+     "swing": null
+    },
+    {
+     "name": "PSP",
+     "leader": "Andrée van Es",
+     "seats": 1,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 1.2,
+     "swing": null
+    },
+    {
+     "name": "GPV",
+     "leader": "Gert Schutte",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 0.96,
+     "swing": null
+    },
+    {
+     "name": "RPF",
+     "leader": "Meindert Leerling",
+     "seats": 1,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 0.91,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Ruud Lubbers",
+    "party": "CDA"
+   },
+   "knownAs": null,
+   "summary": "18481850185218531854185618581860186218641866 (Jun)1866 (Oct)1868186918711873187518771879188118831884188618871888189118941897190119051909191319171918192219251929193319371946194819521956195919631967197119721977198119821986198919941998200220032006201020122017202120232025Next",
+   "caveat": null,
+   "seatLeader": "CDA"
+  },
+  {
+   "id": "1989",
+   "label": "1989",
+   "year": 1989,
+   "date": "6 September 1989",
+   "era": "depillarised",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 80.3,
+   "parties": [
+    {
+     "name": "CDA",
+     "leader": "Ruud Lubbers",
+     "seats": 54,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 35.3,
+     "swing": null
+    },
+    {
+     "name": "PvdA",
+     "leader": "Wim Kok",
+     "seats": 49,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": 31.9,
+     "swing": null
+    },
+    {
+     "name": "VVD",
+     "leader": "Joris Voorhoeve",
+     "seats": 22,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": 14.5,
+     "swing": null
+    },
+    {
+     "name": "D66",
+     "leader": "Hans van Mierlo",
+     "seats": 12,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 7.9,
+     "swing": null
+    },
+    {
+     "name": "GL",
+     "leader": "Ria Beckers",
+     "seats": 6,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 4.1,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Bas van der Vlies",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 1.9,
+     "swing": null
+    },
+    {
+     "name": "GPV",
+     "leader": "Gert Schutte",
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 1.2,
+     "swing": null
+    },
+    {
+     "name": "RPF",
+     "leader": "Meindert Leerling",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 1.0,
+     "swing": null
+    },
+    {
+     "name": "CD",
+     "leader": "Hans Janmaat",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 0.9,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Ruud Lubbers",
+    "party": "CDA"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in the Netherlands on 6 September 1989. The Christian Democratic Appeal (CDA) remained the largest party, winning 54 of the 150 seats in the House of Representatives.",
+   "caveat": null,
+   "seatLeader": "CDA"
+  },
+  {
+   "id": "1994",
+   "label": "1994",
+   "year": 1994,
+   "date": "3 May 1994",
+   "era": "purple",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 78.8,
+   "parties": [
+    {
+     "name": "PvdA",
+     "leader": "Wim Kok",
+     "seats": 37,
+     "seatChange": -12.0,
+     "votes": null,
+     "share": 24.0,
+     "swing": null
+    },
+    {
+     "name": "CDA",
+     "leader": "Elco Brinkman",
+     "seats": 34,
+     "seatChange": -20.0,
+     "votes": null,
+     "share": 22.2,
+     "swing": null
+    },
+    {
+     "name": "VVD",
+     "leader": "Frits Bolkestein",
+     "seats": 31,
+     "seatChange": 9.0,
+     "votes": null,
+     "share": 20.0,
+     "swing": null
+    },
+    {
+     "name": "D66",
+     "leader": "Hans van Mierlo",
+     "seats": 24,
+     "seatChange": 12.0,
+     "votes": null,
+     "share": 15.5,
+     "swing": null
+    },
+    {
+     "name": "AOV",
+     "leader": "Jet Nijpels",
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": 3.6,
+     "swing": null
+    },
+    {
+     "name": "GL",
+     "leader": "Ina Brouwer • Mohamed Rabbae",
+     "seats": 5,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 3.5,
+     "swing": null
+    },
+    {
+     "name": "CD",
+     "leader": "Hans Janmaat",
+     "seats": 3,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 2.5,
+     "swing": null
+    },
+    {
+     "name": "RPF",
+     "leader": "Leen van Dijke",
+     "seats": 3,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 1.8,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Bas van der Vlies",
+     "seats": 2,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 1.7,
+     "swing": null
+    },
+    {
+     "name": "GPV",
+     "leader": "Gert Schutte",
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 1.3,
+     "swing": null
+    },
+    {
+     "name": "SP",
+     "leader": "Jan Marijnissen",
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 1.3,
+     "swing": null
+    },
+    {
+     "name": "U55+",
+     "leader": "Bertus Leerkes",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 0.9,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Wim Kok",
+    "party": "PvdA"
+   },
+   "knownAs": "The purple breakthrough",
+   "summary": "General elections were held in the Netherlands on 3 May 1994. The Labour Party emerged as the largest party, winning 37 of the 150 seats in the House of Representatives.",
+   "caveat": null,
+   "seatLeader": "PvdA"
+  },
+  {
+   "id": "1998",
+   "label": "1998",
+   "year": 1998,
+   "date": "6 May 1998",
+   "era": "purple",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 73.35,
+   "parties": [
+    {
+     "name": "PvdA",
+     "leader": "Wim Kok",
+     "seats": 45,
+     "seatChange": 8.0,
+     "votes": null,
+     "share": 28.98,
+     "swing": null
+    },
+    {
+     "name": "VVD",
+     "leader": "Frits Bolkestein",
+     "seats": 38,
+     "seatChange": 7.0,
+     "votes": null,
+     "share": 24.69,
+     "swing": null
+    },
+    {
+     "name": "CDA",
+     "leader": "Jaap de Hoop Scheffer",
+     "seats": 29,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": 18.37,
+     "swing": null
+    },
+    {
+     "name": "D66",
+     "leader": "Els Borst",
+     "seats": 14,
+     "seatChange": -10.0,
+     "votes": null,
+     "share": 8.99,
+     "swing": null
+    },
+    {
+     "name": "GL",
+     "leader": "Paul Rosenmöller",
+     "seats": 11,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": 7.27,
+     "swing": null
+    },
+    {
+     "name": "SP",
+     "leader": "Jan Marijnissen",
+     "seats": 5,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 3.53,
+     "swing": null
+    },
+    {
+     "name": "RPF",
+     "leader": "Leen van Dijke",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.03,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Bas van der Vlies",
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 1.78,
+     "swing": null
+    },
+    {
+     "name": "GPV",
+     "leader": "Gert Schutte",
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 1.26,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Wim Kok",
+    "party": "PvdA"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in the Netherlands on 6 May 1998. The elections saw the purple coalition of social democrats and liberals (left and right) strengthen its majority.",
+   "caveat": null,
+   "seatLeader": "PvdA"
+  },
+  {
+   "id": "2002",
+   "label": "2002",
+   "year": 2002,
+   "date": "15 May 2002",
+   "era": "purple",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 79.06,
+   "parties": [
+    {
+     "name": "CDA",
+     "leader": "Jan Peter Balkenende",
+     "seats": 43,
+     "seatChange": 14.0,
+     "votes": null,
+     "share": 27.93,
+     "swing": null
+    },
+    {
+     "name": "LPF",
+     "leader": "Pim Fortuyn (assassinated)",
+     "seats": 26,
+     "seatChange": null,
+     "votes": null,
+     "share": 17.0,
+     "swing": null
+    },
+    {
+     "name": "VVD",
+     "leader": "Hans Dijkstal",
+     "seats": 24,
+     "seatChange": -14.0,
+     "votes": null,
+     "share": 15.44,
+     "swing": null
+    },
+    {
+     "name": "PvdA",
+     "leader": "Ad Melkert",
+     "seats": 23,
+     "seatChange": -22.0,
+     "votes": null,
+     "share": 15.11,
+     "swing": null
+    },
+    {
+     "name": "GL",
+     "leader": "Paul Rosenmöller",
+     "seats": 10,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 6.95,
+     "swing": null
+    },
+    {
+     "name": "SP",
+     "leader": "Jan Marijnissen",
+     "seats": 9,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": 5.9,
+     "swing": null
+    },
+    {
+     "name": "D66",
+     "leader": "Thom de Graaf",
+     "seats": 7,
+     "seatChange": -7.0,
+     "votes": null,
+     "share": 5.1,
+     "swing": null
+    },
+    {
+     "name": "CU",
+     "leader": "Kars Veling",
+     "seats": 4,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 2.54,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Bas van der Vlies",
+     "seats": 2,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 1.72,
+     "swing": null
+    },
+    {
+     "name": "LN",
+     "leader": "Fred Teeven",
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 1.61,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Jan Peter Balkenende",
+    "party": "CDA"
+   },
+   "knownAs": "The Fortuyn election",
+   "summary": "General elections were held in the Netherlands on 15 May 2002. The elections were amongst the most dramatic in Dutch history, not just in terms of the electoral results, as they were completely overshadowed by the assassination of leader Pim Fortuyn only nine days before election day.",
+   "caveat": null,
+   "seatLeader": "CDA"
+  },
+  {
+   "id": "2003",
+   "label": "2003",
+   "year": 2003,
+   "date": "22 January 2003",
+   "era": "fragmented",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 80.04,
+   "parties": [
+    {
+     "name": "CDA",
+     "leader": "Jan Peter Balkenende",
+     "seats": 44,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 28.62,
+     "swing": null
+    },
+    {
+     "name": "PvdA",
+     "leader": "Wouter Bos",
+     "seats": 42,
+     "seatChange": 19.0,
+     "votes": null,
+     "share": 27.26,
+     "swing": null
+    },
+    {
+     "name": "VVD",
+     "leader": "Gerrit Zalm",
+     "seats": 28,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": 17.91,
+     "swing": null
+    },
+    {
+     "name": "SP",
+     "leader": "Jan Marijnissen",
+     "seats": 9,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 6.32,
+     "swing": null
+    },
+    {
+     "name": "LPF",
+     "leader": "Mat Herben",
+     "seats": 8,
+     "seatChange": -18.0,
+     "votes": null,
+     "share": 5.7,
+     "swing": null
+    },
+    {
+     "name": "GL",
+     "leader": "Femke Halsema",
+     "seats": 8,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 5.14,
+     "swing": null
+    },
+    {
+     "name": "D66",
+     "leader": "Thom de Graaf",
+     "seats": 6,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 4.07,
+     "swing": null
+    },
+    {
+     "name": "CU",
+     "leader": "André Rouvoet",
+     "seats": 3,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 2.12,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Bas van der Vlies",
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 1.56,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Jan Peter Balkenende",
+    "party": "CDA"
+   },
+   "knownAs": null,
+   "summary": "In the 2002 general election the Labour Party (PvdA) ran a campaign to transfer the premiership from Wim Kok to Ad Melkert, but its elitist tone alienated voters; Labour lost 22 seats and Melkert resigned.",
+   "caveat": null,
+   "seatLeader": "CDA"
+  },
+  {
+   "id": "2006",
+   "label": "2006",
+   "year": 2006,
+   "date": "22 November 2006",
+   "era": "fragmented",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 80.35,
+   "parties": [
+    {
+     "name": "CDA",
+     "leader": "Jan Peter Balkenende",
+     "seats": 41,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": 26.51,
+     "swing": null
+    },
+    {
+     "name": "PvdA",
+     "leader": "Wouter Bos",
+     "seats": 33,
+     "seatChange": -9.0,
+     "votes": null,
+     "share": 21.19,
+     "swing": null
+    },
+    {
+     "name": "SP",
+     "leader": "Jan Marijnissen",
+     "seats": 25,
+     "seatChange": 16.0,
+     "votes": null,
+     "share": 16.58,
+     "swing": null
+    },
+    {
+     "name": "VVD",
+     "leader": "Mark Rutte",
+     "seats": 22,
+     "seatChange": -6.0,
+     "votes": null,
+     "share": 14.67,
+     "swing": null
+    },
+    {
+     "name": "PVV",
+     "leader": "Geert Wilders",
+     "seats": 9,
+     "seatChange": null,
+     "votes": null,
+     "share": 5.89,
+     "swing": null
+    },
+    {
+     "name": "GL",
+     "leader": "Femke Halsema",
+     "seats": 7,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 4.6,
+     "swing": null
+    },
+    {
+     "name": "CU",
+     "leader": "André Rouvoet",
+     "seats": 6,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 3.97,
+     "swing": null
+    },
+    {
+     "name": "D66",
+     "leader": "Alexander Pechtold",
+     "seats": 3,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": 1.96,
+     "swing": null
+    },
+    {
+     "name": "PvdD",
+     "leader": "Marianne Thieme",
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": 1.83,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Bas van der Vlies",
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 1.56,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Jan Peter Balkenende",
+    "party": "CDA"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in the Netherlands on 22 November 2006, following the fall of the Second Balkenende cabinet. The election proved relatively successful for the governing Christian Democratic Appeal (CDA) which remained the largest party with 41 seats, a loss of only three seats.",
+   "caveat": null,
+   "seatLeader": "CDA"
+  },
+  {
+   "id": "2010",
+   "label": "2010",
+   "year": 2010,
+   "date": "9 June 2010",
+   "era": "fragmented",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 75.4,
+   "parties": [
+    {
+     "name": "VVD",
+     "leader": "Mark Rutte",
+     "seats": 31,
+     "seatChange": 9.0,
+     "votes": null,
+     "share": 20.49,
+     "swing": null
+    },
+    {
+     "name": "PvdA",
+     "leader": "Job Cohen",
+     "seats": 30,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": 19.63,
+     "swing": null
+    },
+    {
+     "name": "PVV",
+     "leader": "Geert Wilders",
+     "seats": 24,
+     "seatChange": 15.0,
+     "votes": null,
+     "share": 15.45,
+     "swing": null
+    },
+    {
+     "name": "CDA",
+     "leader": "Jan Peter Balkenende",
+     "seats": 21,
+     "seatChange": -20.0,
+     "votes": null,
+     "share": 13.61,
+     "swing": null
+    },
+    {
+     "name": "SP",
+     "leader": "Emile Roemer",
+     "seats": 15,
+     "seatChange": -10.0,
+     "votes": null,
+     "share": 9.82,
+     "swing": null
+    },
+    {
+     "name": "D66",
+     "leader": "Alexander Pechtold",
+     "seats": 10,
+     "seatChange": 7.0,
+     "votes": null,
+     "share": 6.95,
+     "swing": null
+    },
+    {
+     "name": "GL",
+     "leader": "Femke Halsema",
+     "seats": 10,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 6.67,
+     "swing": null
+    },
+    {
+     "name": "CU",
+     "leader": "André Rouvoet",
+     "seats": 5,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 3.24,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Kees van der Staaij",
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 1.74,
+     "swing": null
+    },
+    {
+     "name": "PvdD",
+     "leader": "Marianne Thieme",
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 1.3,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Mark Rutte",
+    "party": "VVD"
+   },
+   "knownAs": "Rutte's arrival",
+   "summary": "General elections were held in the Netherlands on Wednesday 9 June 2010. This was triggered by the fall of Prime Minister Jan Peter Balkenende's fourth cabinet on 20 February with Queen Beatrix accepting the resignation of the Labour Party (PvdA) ministers on 23 February.",
+   "caveat": null,
+   "seatLeader": "VVD"
+  },
+  {
+   "id": "2012",
+   "label": "2012",
+   "year": 2012,
+   "date": "12 September 2012",
+   "era": "fragmented",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 74.6,
+   "parties": [
+    {
+     "name": "VVD",
+     "leader": "Mark Rutte",
+     "seats": 41,
+     "seatChange": 10.0,
+     "votes": null,
+     "share": 26.58,
+     "swing": null
+    },
+    {
+     "name": "PvdA",
+     "leader": "Diederik Samsom",
+     "seats": 38,
+     "seatChange": 8.0,
+     "votes": null,
+     "share": 24.84,
+     "swing": null
+    },
+    {
+     "name": "PVV",
+     "leader": "Geert Wilders",
+     "seats": 15,
+     "seatChange": -9.0,
+     "votes": null,
+     "share": 10.08,
+     "swing": null
+    },
+    {
+     "name": "SP",
+     "leader": "Emile Roemer",
+     "seats": 15,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 9.65,
+     "swing": null
+    },
+    {
+     "name": "CDA",
+     "leader": "Sybrand van Haersma Buma",
+     "seats": 13,
+     "seatChange": -8.0,
+     "votes": null,
+     "share": 8.51,
+     "swing": null
+    },
+    {
+     "name": "D66",
+     "leader": "Alexander Pechtold",
+     "seats": 12,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 8.03,
+     "swing": null
+    },
+    {
+     "name": "CU",
+     "leader": "Arie Slob",
+     "seats": 5,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 3.13,
+     "swing": null
+    },
+    {
+     "name": "GL",
+     "leader": "Jolande Sap",
+     "seats": 4,
+     "seatChange": -6.0,
+     "votes": null,
+     "share": 2.33,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Kees van der Staaij",
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 2.09,
+     "swing": null
+    },
+    {
+     "name": "PvdD",
+     "leader": "Marianne Thieme",
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 1.93,
+     "swing": null
+    },
+    {
+     "name": "50+",
+     "leader": "Henk Krol",
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": 1.88,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Mark Rutte",
+    "party": "VVD"
+   },
+   "knownAs": null,
+   "summary": "Early general elections were held in the Netherlands on 12 September 2012 after Prime Minister Mark Rutte handed in his government's resignation to Queen Beatrix on 23 April. The 150 seats of the House of Representatives were contested using party-list proportional representation.",
+   "caveat": null,
+   "seatLeader": "VVD"
+  },
+  {
+   "id": "2017",
+   "label": "2017",
+   "year": 2017,
+   "date": "15 March 2017",
+   "era": "fragmented",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 81.93,
+   "parties": [
+    {
+     "name": "VVD",
+     "leader": "Mark Rutte",
+     "seats": 33,
+     "seatChange": -8.0,
+     "votes": null,
+     "share": 21.29,
+     "swing": null
+    },
+    {
+     "name": "PVV",
+     "leader": "Geert Wilders",
+     "seats": 20,
+     "seatChange": 5.0,
+     "votes": null,
+     "share": 13.06,
+     "swing": null
+    },
+    {
+     "name": "CDA",
+     "leader": "Sybrand van Haersma Buma",
+     "seats": 19,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": 12.38,
+     "swing": null
+    },
+    {
+     "name": "D66",
+     "leader": "Alexander Pechtold",
+     "seats": 19,
+     "seatChange": 7.0,
+     "votes": null,
+     "share": 12.23,
+     "swing": null
+    },
+    {
+     "name": "GL",
+     "leader": "Jesse Klaver",
+     "seats": 14,
+     "seatChange": 10.0,
+     "votes": null,
+     "share": 9.13,
+     "swing": null
+    },
+    {
+     "name": "SP",
+     "leader": "Emile Roemer",
+     "seats": 14,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 9.09,
+     "swing": null
+    },
+    {
+     "name": "PvdA",
+     "leader": "Lodewijk Asscher",
+     "seats": 9,
+     "seatChange": -29.0,
+     "votes": null,
+     "share": 5.7,
+     "swing": null
+    },
+    {
+     "name": "CU",
+     "leader": "Gert-Jan Segers",
+     "seats": 5,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 3.39,
+     "swing": null
+    },
+    {
+     "name": "PvdD",
+     "leader": "Marianne Thieme",
+     "seats": 5,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 3.19,
+     "swing": null
+    },
+    {
+     "name": "50+",
+     "leader": "Henk Krol",
+     "seats": 4,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 3.11,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Kees van der Staaij",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.08,
+     "swing": null
+    },
+    {
+     "name": "Denk",
+     "leader": "Tunahan Kuzu",
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": 2.06,
+     "swing": null
+    },
+    {
+     "name": "FvD",
+     "leader": "Thierry Baudet",
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": 1.78,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Mark Rutte",
+    "party": "VVD"
+   },
+   "knownAs": "The fragmentation record",
+   "summary": "The incumbent government of Prime Minister Mark Rutte was the first to serve a full term since 2002. The previous elections in 2012 had resulted in a ruling coalition of his People's Party for Freedom and Democracy (VVD) and the Labour Party (PvdA).",
+   "caveat": null,
+   "seatLeader": "VVD"
+  },
+  {
+   "id": "2021",
+   "label": "2021",
+   "year": 2021,
+   "date": "15–17 March 2021",
+   "era": "fragmented",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 78.71,
+   "parties": [
+    {
+     "name": "VVD",
+     "leader": "Mark Rutte",
+     "seats": 34,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 21.87,
+     "swing": null
+    },
+    {
+     "name": "D66",
+     "leader": "Sigrid Kaag",
+     "seats": 24,
+     "seatChange": 5.0,
+     "votes": null,
+     "share": 15.02,
+     "swing": null
+    },
+    {
+     "name": "PVV",
+     "leader": "Geert Wilders",
+     "seats": 17,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": 10.79,
+     "swing": null
+    },
+    {
+     "name": "CDA",
+     "leader": "Wopke Hoekstra",
+     "seats": 15,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": 9.5,
+     "swing": null
+    },
+    {
+     "name": "SP",
+     "leader": "Lilian Marijnissen",
+     "seats": 9,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": 5.98,
+     "swing": null
+    },
+    {
+     "name": "PvdA",
+     "leader": "Lilianne Ploumen",
+     "seats": 9,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 5.73,
+     "swing": null
+    },
+    {
+     "name": "GL",
+     "leader": "Jesse Klaver",
+     "seats": 8,
+     "seatChange": -6.0,
+     "votes": null,
+     "share": 5.16,
+     "swing": null
+    },
+    {
+     "name": "FvD",
+     "leader": "Thierry Baudet",
+     "seats": 8,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": 5.02,
+     "swing": null
+    },
+    {
+     "name": "PvdD",
+     "leader": "Esther Ouwehand",
+     "seats": 6,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 3.84,
+     "swing": null
+    },
+    {
+     "name": "CU",
+     "leader": "Gert-Jan Segers",
+     "seats": 5,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 3.37,
+     "swing": null
+    },
+    {
+     "name": "Volt",
+     "leader": "Laurens Dassen",
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": 2.42,
+     "swing": null
+    },
+    {
+     "name": "JA21",
+     "leader": "Joost Eerdmans",
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": 2.37,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Kees van der Staaij",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.07,
+     "swing": null
+    },
+    {
+     "name": "Denk",
+     "leader": "Farid Azarkan",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.03,
+     "swing": null
+    },
+    {
+     "name": "50+",
+     "leader": "Liane den Haan",
+     "seats": 1,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": 1.02,
+     "swing": null
+    },
+    {
+     "name": "BBB",
+     "leader": "Caroline van der Plas",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 1.0,
+     "swing": null
+    },
+    {
+     "name": "BIJ1",
+     "leader": "Sylvana Simons",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 0.84,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Mark Rutte",
+    "party": "VVD"
+   },
+   "knownAs": null,
+   "summary": "The elections had originally been scheduled to take place on 17 March; however, due to the COVID-19 pandemic, the government decided to open some polling stations two days in advance to ensure safe voting for elderly and immunocompromised citizens. Citizens aged 70 years or older were also given the opportunity to vote by post.",
+   "caveat": null,
+   "seatLeader": "VVD"
+  },
+  {
+   "id": "2023",
+   "label": "2023",
+   "year": 2023,
+   "date": "22 November 2023",
+   "era": "fragmented",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 77.75,
+   "parties": [
+    {
+     "name": "PVV",
+     "leader": "Geert Wilders",
+     "seats": 37,
+     "seatChange": 20.0,
+     "votes": null,
+     "share": 23.49,
+     "swing": null
+    },
+    {
+     "name": "GL/PvdA",
+     "leader": "Frans Timmermans",
+     "seats": 25,
+     "seatChange": 8.0,
+     "votes": null,
+     "share": 15.75,
+     "swing": null
+    },
+    {
+     "name": "VVD",
+     "leader": "Dilan Yeşilgöz",
+     "seats": 24,
+     "seatChange": -10.0,
+     "votes": null,
+     "share": 15.24,
+     "swing": null
+    },
+    {
+     "name": "NSC",
+     "leader": "Pieter Omtzigt",
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": 12.88,
+     "swing": null
+    },
+    {
+     "name": "D66",
+     "leader": "Rob Jetten",
+     "seats": 9,
+     "seatChange": -15.0,
+     "votes": null,
+     "share": 6.29,
+     "swing": null
+    },
+    {
+     "name": "BBB",
+     "leader": "Caroline van der Plas",
+     "seats": 7,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": 4.65,
+     "swing": null
+    },
+    {
+     "name": "CDA",
+     "leader": "Henri Bontenbal",
+     "seats": 5,
+     "seatChange": -10.0,
+     "votes": null,
+     "share": 3.31,
+     "swing": null
+    },
+    {
+     "name": "SP",
+     "leader": "Lilian Marijnissen",
+     "seats": 5,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": 3.15,
+     "swing": null
+    },
+    {
+     "name": "Denk",
+     "leader": "Stephan van Baarle",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.37,
+     "swing": null
+    },
+    {
+     "name": "PvdD",
+     "leader": "Esther Ouwehand",
+     "seats": 3,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": 2.25,
+     "swing": null
+    },
+    {
+     "name": "FvD",
+     "leader": "Thierry Baudet",
+     "seats": 3,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": 2.23,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Chris Stoffer",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.08,
+     "swing": null
+    },
+    {
+     "name": "CU",
+     "leader": "Mirjam Bikker",
+     "seats": 3,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 2.04,
+     "swing": null
+    },
+    {
+     "name": "Volt",
+     "leader": "Laurens Dassen",
+     "seats": 2,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 1.71,
+     "swing": null
+    },
+    {
+     "name": "JA21",
+     "leader": "Joost Eerdmans",
+     "seats": 1,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 0.68,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Dick Schoof",
+    "party": "Independent"
+   },
+   "knownAs": "The PVV shock",
+   "summary": "Early general elections were held in the Netherlands on 22 November 2023 to elect the members of the House of Representatives. The elections had been expected to be held in 2025, but a snap election was called after the fourth Rutte cabinet collapsed on 7 July 2023 due to disagreements on immigration policy between the coalition parties.",
+   "caveat": null,
+   "seatLeader": "PVV"
+  },
+  {
+   "id": "2025",
+   "label": "2025",
+   "year": 2025,
+   "date": "29 October 2025",
+   "era": "fragmented",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 78.3,
+   "parties": [
+    {
+     "name": "D66",
+     "leader": "Rob Jetten",
+     "seats": 26,
+     "seatChange": 17.0,
+     "votes": null,
+     "share": 16.94,
+     "swing": null
+    },
+    {
+     "name": "PVV",
+     "leader": "Geert Wilders",
+     "seats": 26,
+     "seatChange": -11.0,
+     "votes": null,
+     "share": 16.66,
+     "swing": null
+    },
+    {
+     "name": "VVD",
+     "leader": "Dilan Yeşilgöz",
+     "seats": 22,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 14.24,
+     "swing": null
+    },
+    {
+     "name": "GL/PvdA",
+     "leader": "Frans Timmermans",
+     "seats": 20,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": 12.79,
+     "swing": null
+    },
+    {
+     "name": "CDA",
+     "leader": "Henri Bontenbal",
+     "seats": 18,
+     "seatChange": 13.0,
+     "votes": null,
+     "share": 11.79,
+     "swing": null
+    },
+    {
+     "name": "JA21",
+     "leader": "Joost Eerdmans",
+     "seats": 9,
+     "seatChange": 8.0,
+     "votes": null,
+     "share": 5.95,
+     "swing": null
+    },
+    {
+     "name": "FvD",
+     "leader": "Lidewij de Vos",
+     "seats": 7,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": 4.54,
+     "swing": null
+    },
+    {
+     "name": "BBB",
+     "leader": "Caroline van der Plas",
+     "seats": 4,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": 2.65,
+     "swing": null
+    },
+    {
+     "name": "Denk",
+     "leader": "Stephan van Baarle",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.37,
+     "swing": null
+    },
+    {
+     "name": "SGP",
+     "leader": "Chris Stoffer",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.25,
+     "swing": null
+    },
+    {
+     "name": "PvdD",
+     "leader": "Esther Ouwehand",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 2.08,
+     "swing": null
+    },
+    {
+     "name": "CU",
+     "leader": "Mirjam Bikker",
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 1.9,
+     "swing": null
+    },
+    {
+     "name": "SP",
+     "leader": "Jimmy Dijk",
+     "seats": 3,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 1.89,
+     "swing": null
+    },
+    {
+     "name": "50+",
+     "leader": "Jan Struijs",
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 1.43,
+     "swing": null
+    },
+    {
+     "name": "Volt",
+     "leader": "Laurens Dassen",
+     "seats": 1,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 1.1,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Rob Jetten",
+    "party": "D66"
+   },
+   "knownAs": "The D66 comeback",
+   "summary": "Early general elections were held in the Netherlands on 29 October 2025 to elect the members of the House of Representatives. The elections had been expected to be held in 2028, but a snap election was called after the Schoof cabinet collapsed due to the Party for Freedom (PVV) withdrawing from the coalition.",
+   "caveat": null,
+   "seatLeader": "D66"
+  }
+ ]
+}

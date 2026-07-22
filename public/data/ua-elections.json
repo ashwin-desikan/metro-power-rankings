@@ -1,0 +1,1924 @@
+{
+ "meta": {
+  "title": "Ukrainian elections",
+  "sources": [
+   "Wikipedia: Ukrainian presidential election articles 1991–2019 and parliamentary election articles 1994–2019 (results, infoboxes and leads)",
+   "Central Election Commission figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "presEras": [
+  {
+   "key": "founding",
+   "label": "The founding elections",
+   "span": "1991–1999",
+   "blurb": "Ukraine elected its first president on the same day it voted for independence, 1 December 1991. The Kravchuk and Kuchma years established the pattern of fiercely contested two-round races decided between east and west — and of incumbents losing, which has happened more often in Ukraine than almost anywhere in the post-Soviet world."
+  },
+  {
+   "key": "orange",
+   "label": "The Orange decade",
+   "span": "2004–2010",
+   "blurb": "The falsified runoff of November 2004 brought a million people onto the Maidan, and the re-run it forced put Viktor Yushchenko in office. Six years later his rival Viktor Yanukovych won the rematch cleanly — the revolution's promise unfulfilled, but the habit of real elections intact."
+  },
+  {
+   "key": "wartime",
+   "label": "Elections at war",
+   "span": "2014–2019",
+   "blurb": "Both post-Maidan presidential elections were held with Crimea annexed and a war burning in the Donbas. Petro Poroshenko won outright in 2014; five years later voters replaced him with a television comedian in the largest landslide in Ukrainian history. The next election awaits the end of martial law."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "post-soviet",
+   "label": "The post-Soviet Rada",
+   "span": "1994–2002",
+   "blurb": "The first Verkhovna Rada elections ran on majoritarian and then mixed rules, producing fragmented parliaments where independents and the revived Communist Party loomed large and governments were made in the corridors rather than at the ballot box."
+  },
+  {
+   "key": "orange",
+   "label": "Orange and blue",
+   "span": "2006–2012",
+   "blurb": "Full proportional voting from 2006 turned Rada elections into national duels between the Orange camp and Yanukovych's Party of Regions — including the 2007 snap election that briefly returned Yulia Tymoshenko to the premiership, and the tilted 2012 vote held with her in prison."
+  },
+  {
+   "key": "wartime",
+   "label": "The wartime Rada",
+   "span": "2014–2019",
+   "blurb": "The post-Maidan parliaments were elected without Crimea and much of the Donbas. In 2019 Volodymyr Zelenskyy's brand-new Servant of the People party won the first single-party majority in Ukraine's independent history. The Rada elected in 2019 continues to sit under martial law."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1991",
+   "label": "1991",
+   "year": 1991,
+   "kind": "presidential",
+   "date": "1 December 1991",
+   "era": "founding",
+   "turnout": 84.18,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Leonid Kravchuk",
+     "party": "Independent",
+     "r1Votes": 19643481,
+     "r1Share": 61.59,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Viacheslav Chornovil",
+     "party": "People's Movement of Ukraine",
+     "r1Votes": 7420727,
+     "r1Share": 23.27,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Levko Lukianenko",
+     "party": "Ukrainian Republican Party",
+     "r1Votes": 1432556,
+     "r1Share": 4.49,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Volodymyr Hrynyov",
+     "party": "Party of Democratic Revival of Ukraine",
+     "r1Votes": 1329758,
+     "r1Share": 4.17,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ihor Yukhnovskyi",
+     "party": "Party of Democratic Revival of Ukraine",
+     "r1Votes": 554719,
+     "r1Share": 1.74,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Leopold Taburyanskyi",
+     "party": "People's Party of Ukraine",
+     "r1Votes": 182713,
+     "r1Share": 0.57,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Against all and invalid votes",
+     "party": null,
+     "r1Votes": 1327788,
+     "r1Share": 4.16,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Leonid Kravchuk (acting)",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Leonid Kravchuk",
+    "party": "Independent"
+   },
+   "knownAs": "The independence-day election",
+   "summary": "Presidential elections were held in Ukraine on 1 December 1991. Leonid Kravchuk, the chairman of the Verkhovna Rada and de facto incumbent head of state, won with 61.6% of the vote, defeating five candidates from the pro-independence national democratic opposition Democratic Bloc.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1994",
+   "label": "1994",
+   "year": 1994,
+   "kind": "presidential",
+   "date": "10 July 1994 (second round)",
+   "era": "founding",
+   "turnout": 70.37,
+   "turnout2": 71.63,
+   "candidates": [
+    {
+     "name": "Leonid Kravchuk",
+     "party": "Independent",
+     "r1Votes": 9977766,
+     "r1Share": 38.36,
+     "r2Votes": 12111603,
+     "r2Share": 45.24
+    },
+    {
+     "name": "Leonid Kuchma",
+     "party": "Independent",
+     "r1Votes": 8274806,
+     "r1Share": 31.81,
+     "r2Votes": 14016850,
+     "r2Share": 52.35
+    },
+    {
+     "name": "Oleksandr Moroz",
+     "party": "Socialist Party of Ukraine",
+     "r1Votes": 3466541,
+     "r1Share": 13.33,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Volodymyr Lanovyi",
+     "party": "Independent",
+     "r1Votes": 2483986,
+     "r1Share": 9.55,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Valeriy Babych",
+     "party": "Independent",
+     "r1Votes": 644263,
+     "r1Share": 2.48,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ivan Plyushch",
+     "party": "Independent",
+     "r1Votes": 321886,
+     "r1Share": 1.24,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Petro Talanchuk",
+     "party": "Independent",
+     "r1Votes": 143361,
+     "r1Share": 0.55,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Leonid Kravchuk",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Leonid Kuchma",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Early presidential elections were held in Ukraine on 26 June 1994, with a second round on 10 July. They were held ahead of schedule following a compromise between President Leonid Kravchuk and the Verkhovna Rada, the Ukrainian parliament.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1999",
+   "label": "1999",
+   "year": 1999,
+   "kind": "presidential",
+   "date": "14 November 1999 (second round)",
+   "era": "founding",
+   "turnout": 70.15,
+   "turnout2": 74.87,
+   "candidates": [
+    {
+     "name": "Leonid Kuchma",
+     "party": "Independent",
+     "r1Votes": 9598672,
+     "r1Share": 37.99,
+     "r2Votes": 15870722,
+     "r2Share": 57.7
+    },
+    {
+     "name": "Petro Symonenko",
+     "party": "Communist Party of Ukraine",
+     "r1Votes": 5849077,
+     "r1Share": 23.15,
+     "r2Votes": 10665420,
+     "r2Share": 38.77
+    },
+    {
+     "name": "Oleksandr Moroz",
+     "party": "Socialist Party of Ukraine",
+     "r1Votes": 2969896,
+     "r1Share": 11.75,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nataliya Vitrenko",
+     "party": "Progressive Socialist Party of Ukraine",
+     "r1Votes": 2886972,
+     "r1Share": 11.43,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yevhen Marchuk",
+     "party": "Independent",
+     "r1Votes": 2138356,
+     "r1Share": 8.46,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yuriy Kostenko",
+     "party": "Independent",
+     "r1Votes": 570623,
+     "r1Share": 2.26,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hennadiy Udovenko",
+     "party": "Rukh–Reforms and Order",
+     "r1Votes": 319778,
+     "r1Share": 1.27,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vasyl Onopenko",
+     "party": "Social Democratic Party of Ukraine (united)",
+     "r1Votes": 124040,
+     "r1Share": 0.49,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oleksandr Rzhavskyy",
+     "party": "One Family",
+     "r1Votes": 96515,
+     "r1Share": 0.38,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yuriy Karmazin",
+     "party": "Motherland Defenders Party",
+     "r1Votes": 90793,
+     "r1Share": 0.36,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vitaliy Kononov",
+     "party": "Party of Greens of Ukraine",
+     "r1Votes": 76832,
+     "r1Share": 0.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oleksandr Bazyliuk",
+     "party": "Slavic Party",
+     "r1Votes": 36012,
+     "r1Share": 0.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mykola Haber",
+     "party": "Patriotic Party of Ukraine",
+     "r1Votes": 31829,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Leonid Kuchma",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Leonid Kuchma",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Kuchma, who had been elected on a leftist programme in 1994 before subsequently abandoning it for economic liberalisation, was extremely unpopular prior to the election, with a reputation for patronage and ties to large corporations and organised crime.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2004",
+   "label": "2004",
+   "year": 2004,
+   "kind": "presidential",
+   "date": "26 December 2004 (second round re-run)",
+   "era": "orange",
+   "turnout": 74.54,
+   "turnout2": 81.12,
+   "candidates": [
+    {
+     "name": "Viktor Yushchenko",
+     "party": "Independent",
+     "r1Votes": 11188675,
+     "r1Share": 41.13,
+     "r2Votes": 15115712,
+     "r2Share": 52.77
+    },
+    {
+     "name": "Viktor Yanukovych",
+     "party": "Party of Regions",
+     "r1Votes": 11008731,
+     "r1Share": 40.47,
+     "r2Votes": 12848528,
+     "r2Share": 44.85
+    },
+    {
+     "name": "Oleksandr Moroz",
+     "party": "Socialist Party of Ukraine",
+     "r1Votes": 1632098,
+     "r1Share": 6.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Petro Symonenko",
+     "party": "Communist Party of Ukraine",
+     "r1Votes": 1396135,
+     "r1Share": 5.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nataliya Vitrenko",
+     "party": "Progressive Socialist Party of Ukraine",
+     "r1Votes": 429794,
+     "r1Share": 1.58,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Anatoliy Kinakh",
+     "party": "Party of Industrialists and Entrepreneurs of Ukraine",
+     "r1Votes": 262530,
+     "r1Share": 0.97,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oleksandr Yakovenko",
+     "party": "Communist Party of Workers and Peasants",
+     "r1Votes": 219191,
+     "r1Share": 0.81,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oleksandr Omelchenko",
+     "party": "Unity",
+     "r1Votes": 136830,
+     "r1Share": 0.5,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Leonid Chernovetskyi",
+     "party": "Independent",
+     "r1Votes": 129066,
+     "r1Share": 0.47,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Dmytro Korchynsky",
+     "party": "Independent",
+     "r1Votes": 49961,
+     "r1Share": 0.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Andriy Chornovil",
+     "party": "Independent",
+     "r1Votes": 36278,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mykola Hrabar",
+     "party": "Independent",
+     "r1Votes": 19675,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mykhailo Brodskyy",
+     "party": "Independent",
+     "r1Votes": 16498,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yuriy Zbitnyev",
+     "party": "New Power",
+     "r1Votes": 16321,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Serhiy Komisarenko",
+     "party": "Independent",
+     "r1Votes": 13754,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vasyl Volha",
+     "party": "Public Control",
+     "r1Votes": 12956,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Bohdan Boyko",
+     "party": "People's Movement of Ukraine for Unity",
+     "r1Votes": 12793,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oleksandr Rzhavskyy",
+     "party": "United Family",
+     "r1Votes": 10714,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mykola Rohozhynskyy",
+     "party": "Independent",
+     "r1Votes": 10289,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vladyslav Kryvobokov",
+     "party": "People's Party of Depositors and Social Protection",
+     "r1Votes": 9340,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oleksandr Bazylyuk",
+     "party": "Slavic Party",
+     "r1Votes": 8963,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ihor Dushyn",
+     "party": "Liberal Democratic Party of Ukraine",
+     "r1Votes": 8623,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Roman Kozak",
+     "party": "OUN in Ukraine",
+     "r1Votes": 8410,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Volodymyr Nechyporuk",
+     "party": "Independent",
+     "r1Votes": 6171,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Leonid Kuchma",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Viktor Yushchenko",
+    "party": "Independent"
+   },
+   "knownAs": "The Orange Revolution election",
+   "summary": "Presidential elections were held in Ukraine on 31 October, 21 November, 26 December 2004 and 1 January 2005. This was the fourth presidential election in Ukraine following independence from the Soviet Union.",
+   "caveat": "The official November runoff was falsified for Viktor Yanukovych, and the Orange Revolution forced the Supreme Court to annul it. The result recorded here is the re-run of 26 December, judged free and fair by international observers."
+  },
+  {
+   "id": "pres-2010",
+   "label": "2010",
+   "year": 2010,
+   "kind": "presidential",
+   "date": "7 February 2010 (second round)",
+   "era": "orange",
+   "turnout": 66.51,
+   "turnout2": 68.81,
+   "candidates": [
+    {
+     "name": "Viktor Yanukovych",
+     "party": "Party of Regions",
+     "r1Votes": 8686642,
+     "r1Share": 35.92,
+     "r2Votes": 12481266,
+     "r2Share": 49.55
+    },
+    {
+     "name": "Yulia Tymoshenko",
+     "party": "Batkivshchyna",
+     "r1Votes": 6159810,
+     "r1Share": 25.47,
+     "r2Votes": 11593357,
+     "r2Share": 46.03
+    },
+    {
+     "name": "Serhiy Tihipko",
+     "party": "Strong Ukraine",
+     "r1Votes": 3211198,
+     "r1Share": 13.28,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Arseniy Yatsenyuk",
+     "party": "Independent",
+     "r1Votes": 1711737,
+     "r1Share": 7.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Viktor Yushchenko",
+     "party": "Independent",
+     "r1Votes": 1341534,
+     "r1Share": 5.55,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Petro Symonenko",
+     "party": "Communist Party of Ukraine",
+     "r1Votes": 872877,
+     "r1Share": 3.61,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Volodymyr Lytvyn",
+     "party": "People's Party",
+     "r1Votes": 578883,
+     "r1Share": 2.39,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oleh Tyahnybok",
+     "party": "Svoboda",
+     "r1Votes": 352282,
+     "r1Share": 1.46,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Anatoliy Hrytsenko",
+     "party": "Independent",
+     "r1Votes": 296412,
+     "r1Share": 1.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Inna Bohoslovska",
+     "party": "Independent",
+     "r1Votes": 102435,
+     "r1Share": 0.42,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oleksandr Moroz",
+     "party": "Socialist Party of Ukraine",
+     "r1Votes": 95169,
+     "r1Share": 0.39,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yuriy Kostenko",
+     "party": "Ukrainian People's Party",
+     "r1Votes": 54376,
+     "r1Share": 0.22,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Liudmyla Suprun",
+     "party": "People's Democratic Party",
+     "r1Votes": 47349,
+     "r1Share": 0.2,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vasyl Protyvsikh",
+     "party": "Independent",
+     "r1Votes": 40352,
+     "r1Share": 0.17,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oleksandr Pabat",
+     "party": "Independent",
+     "r1Votes": 35474,
+     "r1Share": 0.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Serhiy Ratushniak",
+     "party": "Independent",
+     "r1Votes": 29795,
+     "r1Share": 0.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mykhailo Brodskyy",
+     "party": "Independent",
+     "r1Votes": 14991,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oleg Riabokon",
+     "party": "Independent",
+     "r1Votes": 8334,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Viktor Yushchenko",
+    "party": "Our Ukraine"
+   },
+   "presAfter": {
+    "name": "Viktor Yanukovych",
+    "party": "Party of Regions"
+   },
+   "knownAs": null,
+   "summary": "On 14 February, Yanukovych was declared President-elect and winner with 50% of the popular vote. According to Article 104 of Ukraine's Constitution, the president had to be sworn into office within 30 days of the official declaration of the results.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2014",
+   "label": "2014",
+   "year": 2014,
+   "kind": "presidential",
+   "date": "25 May 2014",
+   "era": "wartime",
+   "turnout": 59.88,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Petro Poroshenko",
+     "party": "Independent (UDAR)",
+     "r1Votes": 9857308,
+     "r1Share": 55.46,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yulia Tymoshenko",
+     "party": "Batkivshchyna",
+     "r1Votes": 2310050,
+     "r1Share": 13.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oleh Liashko",
+     "party": "Radical Party",
+     "r1Votes": 1500377,
+     "r1Share": 8.44,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Anatoliy Hrytsenko",
+     "party": "Civil Position",
+     "r1Votes": 989029,
+     "r1Share": 5.56,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Serhiy Tihipko",
+     "party": "Independent (Strong Ukraine)",
+     "r1Votes": 943430,
+     "r1Share": 5.31,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mykhailo Dobkin",
+     "party": "Party of Regions",
+     "r1Votes": 546138,
+     "r1Share": 3.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vadim Rabinovich",
+     "party": "Independent",
+     "r1Votes": 406301,
+     "r1Share": 2.29,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Olha Bohomolets",
+     "party": "Independent",
+     "r1Votes": 345384,
+     "r1Share": 1.94,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Petro Symonenko",
+     "party": "Communist Party of Ukraine",
+     "r1Votes": 272723,
+     "r1Share": 1.53,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oleh Tyahnybok",
+     "party": "Svoboda",
+     "r1Votes": 210476,
+     "r1Share": 1.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Dmytro Yarosh",
+     "party": "Right Sector",
+     "r1Votes": 127772,
+     "r1Share": 0.72,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Andriy Hrynenko",
+     "party": "Independent",
+     "r1Votes": 73277,
+     "r1Share": 0.41,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Valeriy Konovalyuk",
+     "party": "Independent",
+     "r1Votes": 69572,
+     "r1Share": 0.39,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yuriy Boyko",
+     "party": "Independent",
+     "r1Votes": 35928,
+     "r1Share": 0.2,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mykola Malomuzh",
+     "party": "Independent",
+     "r1Votes": 23771,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Renat Kuzmin",
+     "party": "Independent",
+     "r1Votes": 18689,
+     "r1Share": 0.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vasyl Kuybida",
+     "party": "People's Movement of Ukraine",
+     "r1Votes": 12391,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oleksandr Klymenko",
+     "party": "Ukrainian People's Party",
+     "r1Votes": 10542,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vasyl Tsushko",
+     "party": "Independent",
+     "r1Votes": 10434,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Volodymyr Saranov",
+     "party": "Independent",
+     "r1Votes": 6232,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Zoryan Shkiryak",
+     "party": "Independent",
+     "r1Votes": 5021,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Oleksandr Turchynov (acting)",
+    "party": "Batkivshchyna"
+   },
+   "presAfter": {
+    "name": "Petro Poroshenko",
+    "party": "Independent"
+   },
+   "knownAs": "The post-Maidan election",
+   "summary": "Snap presidential elections were held in Ukraine on 25 May 2014 and resulted in Petro Poroshenko being elected President of Ukraine. Originally scheduled to take place on 29 March 2015, the date was brought forward following the 2014 Ukrainian revolution.",
+   "caveat": "Held with Crimea annexed and fighting under way in the Donbas: voting was impossible in the occupied territories, disenfranchising several million citizens through no fault of the election itself."
+  },
+  {
+   "id": "pres-2019",
+   "label": "2019",
+   "year": 2019,
+   "kind": "presidential",
+   "date": "21 April 2019 (second round)",
+   "era": "wartime",
+   "turnout": 62.88,
+   "turnout2": 61.42,
+   "candidates": [
+    {
+     "name": "Volodymyr Zelenskyy",
+     "party": "Servant of the People",
+     "r1Votes": 5714034,
+     "r1Share": 30.61,
+     "r2Votes": 13541528,
+     "r2Share": 74.96
+    },
+    {
+     "name": "Petro Poroshenko",
+     "party": "Independent (BPP)",
+     "r1Votes": 3014609,
+     "r1Share": 16.15,
+     "r2Votes": 4522450,
+     "r2Share": 25.04
+    },
+    {
+     "name": "Yulia Tymoshenko",
+     "party": "Batkivshchyna",
+     "r1Votes": 2532452,
+     "r1Share": 13.56,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yuriy Boyko",
+     "party": "Independent (Opposition Platform — For Life)",
+     "r1Votes": 2206216,
+     "r1Share": 11.82,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Anatoliy Hrytsenko",
+     "party": "Civil Position",
+     "r1Votes": 1306450,
+     "r1Share": 7.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ihor Smeshko",
+     "party": "Independent",
+     "r1Votes": 1141332,
+     "r1Share": 6.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oleh Liashko",
+     "party": "Radical Party of Oleh Liashko",
+     "r1Votes": 1036003,
+     "r1Share": 5.55,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oleksandr Vilkul",
+     "party": "Opposition Bloc — Party for Peace and Development",
+     "r1Votes": 784274,
+     "r1Share": 4.2,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ruslan Koshulynskyi",
+     "party": "Svoboda",
+     "r1Votes": 307244,
+     "r1Share": 1.65,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yuriy Tymoshenko",
+     "party": "Independent",
+     "r1Votes": 117693,
+     "r1Share": 0.63,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oleksandr Shevchenko",
+     "party": "UKROP",
+     "r1Votes": 109078,
+     "r1Share": 0.58,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Valentyn Nalyvaichenko",
+     "party": "Spravedlyvist",
+     "r1Votes": 43239,
+     "r1Share": 0.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Olha Bohomolets",
+     "party": "Independent",
+     "r1Votes": 33966,
+     "r1Share": 0.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hennadiy Balashov",
+     "party": "5.10",
+     "r1Votes": 32872,
+     "r1Share": 0.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Roman Bezsmertnyi",
+     "party": "Independent",
+     "r1Votes": 27182,
+     "r1Share": 0.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Viktor Bondar",
+     "party": "Revival",
+     "r1Votes": 22564,
+     "r1Share": 0.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yulia Lytvynenko",
+     "party": "Independent",
+     "r1Votes": 20014,
+     "r1Share": 0.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yuriy Derevyanko",
+     "party": "Liberty",
+     "r1Votes": 19542,
+     "r1Share": 0.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Serhiy Taruta",
+     "party": "Osnova",
+     "r1Votes": 18918,
+     "r1Share": 0.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ihor Shevchenko",
+     "party": "Independent",
+     "r1Votes": 18667,
+     "r1Share": 0.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Inna Bohoslovska",
+     "party": "Independent",
+     "r1Votes": 18482,
+     "r1Share": 0.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yurii Karmazin",
+     "party": "Independent",
+     "r1Votes": 15965,
+     "r1Share": 0.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Volodymyr Petrov",
+     "party": "Independent",
+     "r1Votes": 15587,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vitaliy Skotsyk",
+     "party": "Independent",
+     "r1Votes": 15118,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Serhiy Kaplin",
+     "party": "Social Democratic Party",
+     "r1Votes": 14532,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oleksandr Moroz",
+     "party": "Socialist Party of Oleksandr Moroz",
+     "r1Votes": 13139,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Viktor Kryvenko",
+     "party": "People's Movement of Ukraine",
+     "r1Votes": 9243,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vasyl Zhuravlyov",
+     "party": "Stability",
+     "r1Votes": 8453,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Illia Kyva",
+     "party": "Socialist Party of Ukraine",
+     "r1Votes": 5869,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Andriy Novak",
+     "party": "Patriot",
+     "r1Votes": 5587,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oleksandr Vashchenko",
+     "party": "Independent",
+     "r1Votes": 5503,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mykola Haber",
+     "party": "Independent",
+     "r1Votes": 5433,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oleksandr Solovyev",
+     "party": "Reasonable Force",
+     "r1Votes": 5331,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ruslan Rygovanov",
+     "party": "Independent",
+     "r1Votes": 5230,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oleksandr Danylyuk",
+     "party": "Independent",
+     "r1Votes": 4648,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vitalii Kuprii",
+     "party": "Independent",
+     "r1Votes": 4508,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Arkadiy Kornatskiy",
+     "party": "Independent",
+     "r1Votes": 4494,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Serhiy Nosenko",
+     "party": "Independent",
+     "r1Votes": 3114,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Roman Nasirov",
+     "party": "Independent",
+     "r1Votes": 2579,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Petro Poroshenko",
+    "party": "BPP"
+   },
+   "presAfter": {
+    "name": "Volodymyr Zelenskyy",
+    "party": "Servant of the People"
+   },
+   "knownAs": "The Zelenskyy landslide",
+   "summary": "Presidential elections were held in Ukraine on 31 March 2019. As none of the 39 candidates on the ballot received an absolute majority of the initial vote, a runoff was held on 21 April between the top two vote-getters: Volodymyr Zelenskyy, a television personality, and Petro Poroshenko, the incumbent president.",
+   "caveat": "Free and fair, but held without Crimea and the occupied Donbas, whose residents could not vote."
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1994",
+   "label": "1994",
+   "year": 1994,
+   "kind": "legislative",
+   "date": "2–10 April 1994 (second round)",
+   "era": "post-soviet",
+   "totalSeats": 450,
+   "majoritySeats": 226,
+   "turnout": 75.81,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 168,
+     "seatChange": null,
+     "votes": 14894269,
+     "share": 54.87,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Ukraine",
+     "leader": null,
+     "seats": 86,
+     "seatChange": null,
+     "votes": 3683332,
+     "share": 13.57,
+     "swing": null
+    },
+    {
+     "name": "KPU",
+     "leader": "Petro Symonenko",
+     "seats": 86,
+     "seatChange": null,
+     "votes": 3683332,
+     "share": 13.57,
+     "swing": null
+    },
+    {
+     "name": "People's Movement of Ukraine",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": 1491164,
+     "share": 5.49,
+     "swing": null
+    },
+    {
+     "name": "Rukh",
+     "leader": "Viacheslav Chornovil",
+     "seats": 20,
+     "seatChange": null,
+     "votes": 1491164,
+     "share": 5.49,
+     "swing": null
+    },
+    {
+     "name": "Peasant Party of Ukraine",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 794614,
+     "share": 2.93,
+     "swing": null
+    },
+    {
+     "name": "SelPU",
+     "leader": "Serhii Dovhan",
+     "seats": 19,
+     "seatChange": null,
+     "votes": 794614,
+     "share": 2.93,
+     "swing": null
+    },
+    {
+     "name": "Socialist Party of Ukraine",
+     "leader": "Oleksandr Moroz",
+     "seats": 14,
+     "seatChange": null,
+     "votes": 895830,
+     "share": 3.3,
+     "swing": null
+    },
+    {
+     "name": "Ukrainian Republican Party",
+     "leader": "Levko Lukianenko",
+     "seats": 8,
+     "seatChange": null,
+     "votes": 728614,
+     "share": 2.68,
+     "swing": null
+    },
+    {
+     "name": "Congress of Ukrainian Nationalists",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 361352,
+     "share": 1.33,
+     "swing": null
+    },
+    {
+     "name": "KUN",
+     "leader": "Slava Stetsko",
+     "seats": 5,
+     "seatChange": null,
+     "votes": 361352,
+     "share": 1.33,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The first Rada election",
+   "summary": "Parliamentary elections were held in Ukraine on 27 March 1994, with a second round between 2 and 10 April. These were the first parliamentary elections in Ukraine as an independent state.",
+   "caveat": null,
+   "seatLeader": "Independents"
+  },
+  {
+   "id": "1998",
+   "label": "1998",
+   "year": 1998,
+   "kind": "legislative",
+   "date": "29 March 1998",
+   "era": "post-soviet",
+   "totalSeats": 450,
+   "majoritySeats": 226,
+   "turnout": 70.78,
+   "parties": [
+    {
+     "name": "KPU",
+     "leader": "Petro Symonenko",
+     "seats": 121,
+     "seatChange": 35.0,
+     "votes": 6550353,
+     "share": 25.44,
+     "swing": 11.87
+    },
+    {
+     "name": "Rukh",
+     "leader": "Viacheslav Chornovil",
+     "seats": 46,
+     "seatChange": 26.0,
+     "votes": 2498262,
+     "share": 9.7,
+     "swing": 4.21
+    },
+    {
+     "name": "SPU–SelPU",
+     "leader": "Oleksandr Moroz",
+     "seats": 34,
+     "seatChange": 1.0,
+     "votes": 2273788,
+     "share": 8.83,
+     "swing": 2.6
+    },
+    {
+     "name": "NDP",
+     "leader": "Anatoliy Matviyenko",
+     "seats": 28,
+     "seatChange": null,
+     "votes": 1331460,
+     "share": 5.17,
+     "swing": null
+    },
+    {
+     "name": "Hromada",
+     "leader": "Pavlo Lazarenko",
+     "seats": 24,
+     "seatChange": null,
+     "votes": 1242235,
+     "share": 4.82,
+     "swing": null
+    },
+    {
+     "name": "Party of Greens",
+     "leader": "Vitaliy Kononov",
+     "seats": 19,
+     "seatChange": 19.0,
+     "votes": 1444264,
+     "share": 5.61,
+     "swing": 5.34
+    },
+    {
+     "name": "SDPU(o)",
+     "leader": "Leonid Kravchuk",
+     "seats": 17,
+     "seatChange": null,
+     "votes": 1066113,
+     "share": 4.14,
+     "swing": null
+    },
+    {
+     "name": "PSPU",
+     "leader": "Nataliya Vitrenko",
+     "seats": 16,
+     "seatChange": null,
+     "votes": 1075118,
+     "share": 4.18,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Ukraine on 29 March 1998.",
+   "caveat": null,
+   "seatLeader": "KPU"
+  },
+  {
+   "id": "2002",
+   "label": "2002",
+   "year": 2002,
+   "kind": "legislative",
+   "date": "31 March 2002",
+   "era": "post-soviet",
+   "totalSeats": 450,
+   "majoritySeats": 226,
+   "turnout": 69.27,
+   "parties": [
+    {
+     "name": "Our Ukraine Bloc",
+     "leader": "Viktor Yushchenko",
+     "seats": 113,
+     "seatChange": 51.0,
+     "votes": 6108088,
+     "share": 24.49,
+     "swing": null
+    },
+    {
+     "name": "For United Ukraine!",
+     "leader": "Volodymyr Lytvyn",
+     "seats": 101,
+     "seatChange": 65.0,
+     "votes": 3051056,
+     "share": 12.23,
+     "swing": null
+    },
+    {
+     "name": "KPU",
+     "leader": "Petro Symonenko",
+     "seats": 64,
+     "seatChange": -57.0,
+     "votes": 5178074,
+     "share": 20.76,
+     "swing": -4.48
+    },
+    {
+     "name": "SDPU(o)",
+     "leader": "Viktor Medvedchuk",
+     "seats": 24,
+     "seatChange": 7.0,
+     "votes": 1331460,
+     "share": 6.52,
+     "swing": 2.38
+    },
+    {
+     "name": "SPU",
+     "leader": "Oleksandr Moroz",
+     "seats": 23,
+     "seatChange": 6.0,
+     "votes": 1780642,
+     "share": 7.14,
+     "swing": null
+    },
+    {
+     "name": "Tymoshenko Bloc",
+     "leader": "Yulia Tymoshenko",
+     "seats": 22,
+     "seatChange": null,
+     "votes": 1882087,
+     "share": 7.54,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The Organization for Security and Co-operation in Europe noted at the time that there were physical assaults and harassment of candidates and campaign workers associated with opposition political parties prior to the March election. The Yulia Tymoshenko Bloc complained of campaign related violations including \"an informal 'media blackout,'  negatively slanted coverage\".",
+   "caveat": null,
+   "seatLeader": "Our Ukraine Bloc"
+  },
+  {
+   "id": "2006",
+   "label": "2006",
+   "year": 2006,
+   "kind": "legislative",
+   "date": "26 March 2006",
+   "era": "orange",
+   "totalSeats": 450,
+   "majoritySeats": 226,
+   "turnout": 67.55,
+   "parties": [
+    {
+     "name": "Party of Regions",
+     "leader": "Viktor Yanukovych",
+     "seats": 186,
+     "seatChange": 150.0,
+     "votes": 8148745,
+     "share": 32.78,
+     "swing": null
+    },
+    {
+     "name": "Yulia Tymoshenko Bloc",
+     "leader": "Yulia Tymoshenko",
+     "seats": 129,
+     "seatChange": 107.0,
+     "votes": 5652876,
+     "share": 22.74,
+     "swing": 15.21
+    },
+    {
+     "name": "Our Ukraine",
+     "leader": "Yuriy Yekhanurov",
+     "seats": 81,
+     "seatChange": 31.0,
+     "votes": 3539140,
+     "share": 14.24,
+     "swing": -10.05
+    },
+    {
+     "name": "Socialist Party of Ukraine",
+     "leader": "Oleksandr Moroz",
+     "seats": 33,
+     "seatChange": 11.0,
+     "votes": 1444224,
+     "share": 5.81,
+     "swing": -1.33
+    },
+    {
+     "name": "Communist Party of Ukraine",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 44.0,
+     "votes": 929591,
+     "share": 3.74,
+     "swing": null
+    },
+    {
+     "name": "KPU",
+     "leader": "Petro Symonenko",
+     "seats": 21,
+     "seatChange": -43.0,
+     "votes": 929591,
+     "share": 3.74,
+     "swing": -17.02
+    }
+   ],
+   "pmBefore": {
+    "name": "Yuriy Yekhanurov",
+    "party": "Our Ukraine Bloc"
+   },
+   "pmAfter": {
+    "name": "Viktor Yanukovych",
+    "party": "Party of Regions"
+   },
+   "knownAs": null,
+   "summary": "The election to the Ukrainian parliament, Verkhovna Rada, was held according to the party-list proportional election system—that is, in a single nationwide electoral district with votes being allocated to the political parties or election blocs rather than to individual candidates.",
+   "caveat": null,
+   "seatLeader": "Party of Regions"
+  },
+  {
+   "id": "2007",
+   "label": "2007",
+   "year": 2007,
+   "kind": "legislative",
+   "date": "30 September 2007",
+   "era": "orange",
+   "totalSeats": 450,
+   "majoritySeats": 226,
+   "turnout": 62.03,
+   "parties": [
+    {
+     "name": "Party of Regions",
+     "leader": "Viktor Yanukovych",
+     "seats": 175,
+     "seatChange": 11.0,
+     "votes": 8013895,
+     "share": 34.94,
+     "swing": 2.16
+    },
+    {
+     "name": "Yulia Tymoshenko Bloc",
+     "leader": "Yulia Tymoshenko",
+     "seats": 156,
+     "seatChange": 27.0,
+     "votes": 7162193,
+     "share": 31.23,
+     "swing": 8.48
+    },
+    {
+     "name": "Our Ukraine — People's Self-Defense",
+     "leader": null,
+     "seats": 72,
+     "seatChange": 9.0,
+     "votes": 3301282,
+     "share": 14.39,
+     "swing": null
+    },
+    {
+     "name": "Our Ukraine Bloc",
+     "leader": "Yuriy Lutsenko",
+     "seats": 72,
+     "seatChange": -9.0,
+     "votes": 3301282,
+     "share": 14.39,
+     "swing": -0.15
+    },
+    {
+     "name": "Communist Party of Ukraine",
+     "leader": null,
+     "seats": 27,
+     "seatChange": 6.0,
+     "votes": 1257291,
+     "share": 5.48,
+     "swing": null
+    },
+    {
+     "name": "KPU",
+     "leader": "Petro Symonenko",
+     "seats": 27,
+     "seatChange": 6.0,
+     "votes": 1257291,
+     "share": 5.48,
+     "swing": 1.78
+    },
+    {
+     "name": "Lytvyn Bloc",
+     "leader": "Volodymyr Lytvyn",
+     "seats": 20,
+     "seatChange": 20.0,
+     "votes": 924538,
+     "share": 4.03,
+     "swing": 1.54
+    }
+   ],
+   "pmBefore": {
+    "name": "Viktor Yanukovych",
+    "party": "Party of Regions"
+   },
+   "pmAfter": {
+    "name": "Yulia Tymoshenko",
+    "party": "BYuT (Batkivshchyna)"
+   },
+   "knownAs": "The snap election",
+   "summary": "Early parliamentary elections were held in Ukraine on 30 September 2007.",
+   "caveat": null,
+   "seatLeader": "Party of Regions"
+  },
+  {
+   "id": "2012",
+   "label": "2012",
+   "year": 2012,
+   "kind": "legislative",
+   "date": "28 October 2012",
+   "era": "orange",
+   "totalSeats": 450,
+   "majoritySeats": 226,
+   "turnout": 57.43,
+   "parties": [
+    {
+     "name": "Party of Regions",
+     "leader": "Mykola Azarov",
+     "seats": 185,
+     "seatChange": 10.0,
+     "votes": 6116746,
+     "share": 30.0,
+     "swing": -4.94
+    },
+    {
+     "name": "Batkivshchyna",
+     "leader": "Arseniy Yatsenyuk",
+     "seats": 101,
+     "seatChange": -55.0,
+     "votes": 5209090,
+     "share": 25.55,
+     "swing": -5.68
+    },
+    {
+     "name": "UDAR",
+     "leader": "Vitali Klitschko",
+     "seats": 40,
+     "seatChange": null,
+     "votes": 2847979,
+     "share": 13.97,
+     "swing": null
+    },
+    {
+     "name": "Svoboda",
+     "leader": "Oleh Tyahnybok",
+     "seats": 37,
+     "seatChange": 37.0,
+     "votes": 2129933,
+     "share": 10.45,
+     "swing": 9.67
+    },
+    {
+     "name": "KPU",
+     "leader": "Petro Symonenko",
+     "seats": 32,
+     "seatChange": 5.0,
+     "votes": 2687269,
+     "share": 13.18,
+     "swing": 7.7
+    }
+   ],
+   "pmBefore": {
+    "name": "Mykola Azarov",
+    "party": "Party of Regions"
+   },
+   "pmAfter": {
+    "name": "Mykola Azarov",
+    "party": "Party of Regions"
+   },
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Ukraine on 28 October 2012. Because of various reasons, including the \"impossibility of announcing election results\" various by-elections have taken place since.",
+   "caveat": "Judged a step backwards by OSCE observers: the leading opposition figure, Yulia Tymoshenko, was in prison, and state resources and media tilted toward the ruling Party of Regions.",
+   "seatLeader": "Party of Regions"
+  },
+  {
+   "id": "2014",
+   "label": "2014",
+   "year": 2014,
+   "kind": "legislative",
+   "date": "26 October 2014",
+   "era": "wartime",
+   "totalSeats": 423,
+   "majoritySeats": 226,
+   "turnout": 51.91,
+   "parties": [
+    {
+     "name": "Petro Poroshenko Bloc",
+     "leader": "Vitali Klitschko",
+     "seats": 131,
+     "seatChange": null,
+     "votes": 3437521,
+     "share": 21.82,
+     "swing": null
+    },
+    {
+     "name": "People's Front",
+     "leader": "Arseniy Yatsenyuk",
+     "seats": 82,
+     "seatChange": null,
+     "votes": 3488114,
+     "share": 22.14,
+     "swing": null
+    },
+    {
+     "name": "Self Reliance",
+     "leader": "Hanna Hopko",
+     "seats": 33,
+     "seatChange": null,
+     "votes": 1729271,
+     "share": 10.98,
+     "swing": null
+    },
+    {
+     "name": "Opposition Bloc",
+     "leader": "Yuriy Boyko",
+     "seats": 29,
+     "seatChange": null,
+     "votes": 1486203,
+     "share": 9.43,
+     "swing": null
+    },
+    {
+     "name": "Radical Party",
+     "leader": "Oleh Liashko",
+     "seats": 22,
+     "seatChange": 21.0,
+     "votes": 1173131,
+     "share": 7.45,
+     "swing": 6.38
+    },
+    {
+     "name": "Batkivshchyna",
+     "leader": "Nadiya Savchenko",
+     "seats": 20,
+     "seatChange": -81.0,
+     "votes": 894837,
+     "share": 5.68,
+     "swing": -19.87
+    },
+    {
+     "name": "Svoboda",
+     "leader": "Oleh Tyahnybok",
+     "seats": 6,
+     "seatChange": -31.0,
+     "votes": 742022,
+     "share": 4.71,
+     "swing": -5.74
+    }
+   ],
+   "pmBefore": {
+    "name": "Arseniy Yatsenyuk",
+    "party": "People's Front"
+   },
+   "pmAfter": {
+    "name": "Arseniy Yatsenyuk",
+    "party": "People's Front"
+   },
+   "knownAs": "The wartime Rada",
+   "summary": "Snap parliamentary elections were held in Ukraine on 26 October 2014 to elect members of the Verkhovna Rada. President Petro Poroshenko had pressed for early parliamentary elections since his victory in the presidential elections in May.",
+   "caveat": "Held with Crimea annexed and the Donbas at war: 27 of the Rada's 450 seats could not be filled, and voters in the occupied territories were unable to take part.",
+   "seatLeader": "Petro Poroshenko Bloc"
+  },
+  {
+   "id": "2019",
+   "label": "2019",
+   "year": 2019,
+   "kind": "legislative",
+   "date": "21 July 2019",
+   "era": "wartime",
+   "totalSeats": 424,
+   "majoritySeats": 226,
+   "turnout": 49.24,
+   "parties": [
+    {
+     "name": "Servant of the People",
+     "leader": "Dmytro Razumkov",
+     "seats": 254,
+     "seatChange": null,
+     "votes": 6307793,
+     "share": 43.16,
+     "swing": null
+    },
+    {
+     "name": "Opposition Platform — For Life",
+     "leader": "Yuriy Boyko",
+     "seats": 43,
+     "seatChange": null,
+     "votes": 1908111,
+     "share": 13.06,
+     "swing": null
+    },
+    {
+     "name": "Batkivshchyna",
+     "leader": "Yulia Tymoshenko",
+     "seats": 26,
+     "seatChange": 6.0,
+     "votes": 1196303,
+     "share": 8.19,
+     "swing": 2.51
+    },
+    {
+     "name": "European Solidarity",
+     "leader": "Petro Poroshenko",
+     "seats": 25,
+     "seatChange": -106.0,
+     "votes": 1184620,
+     "share": 8.11,
+     "swing": -13.71
+    },
+    {
+     "name": "Holos",
+     "leader": "Sviatoslav Vakarchuk",
+     "seats": 20,
+     "seatChange": null,
+     "votes": 851722,
+     "share": 5.83,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Volodymyr Groysman",
+    "party": "USH"
+   },
+   "pmAfter": {
+    "name": "Oleksiy Honcharuk",
+    "party": "Independent"
+   },
+   "knownAs": "The Servant of the People sweep",
+   "summary": "Parliamentary elections were held in Ukraine on 21 July 2019. Originally scheduled to be held at the end of October, the elections were brought forward after newly inaugurated President Volodymyr Zelenskyy dissolved parliament on 21 May 2019, during his inauguration.",
+   "caveat": "Free and fair, but 26 seats representing Crimea and the occupied Donbas remained unfilled.",
+   "seatLeader": "Servant of the People"
+  }
+ ]
+}

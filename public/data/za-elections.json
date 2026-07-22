@@ -1,0 +1,1883 @@
+{
+ "meta": {
+  "title": "South African general elections",
+  "sources": [
+   "Wikipedia: South African general election articles, 1910–2024 (results, infoboxes and leads)",
+   "IEC and pre-1994 official figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "eras": [
+  {
+   "key": "union",
+   "label": "The Union's whites-only parliament",
+   "span": "1910–1943",
+   "blurb": "From Union in 1910, the House of Assembly was elected almost entirely by white voters — a qualified Cape franchise for Black and Coloured voters was progressively stripped away. Politics turned on Boer–British reconciliation, Hertzog's nationalism, the 1933 fusion of Hertzog and Smuts, and the war split of 1939."
+  },
+  {
+   "key": "apartheid",
+   "label": "The apartheid parliament",
+   "span": "1948–1989",
+   "blurb": "D. F. Malan's National Party won the whites-only 1948 election on the apartheid platform and never lost again, entrenching minority rule for four decades. The last Black voters were removed from the rolls, the Republic left the Commonwealth in 1961, and by the tricameral 1980s the white chamber governed a country in revolt."
+  },
+  {
+   "key": "democracy",
+   "label": "The democratic era",
+   "span": "1994–2024",
+   "blurb": "The 1994 election was the first in which every adult South African could vote — queues stretched for days and Nelson Mandela's ANC won just short of two-thirds. Three decades of ANC dominance followed, until 2024 broke the majority and produced a government of national unity."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1910",
+   "label": "1910",
+   "year": 1910,
+   "date": "15 September 1910",
+   "era": "union",
+   "totalSeats": 121,
+   "majoritySeats": 61,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "South African National Party",
+     "leader": null,
+     "seats": 66,
+     "seatChange": null,
+     "votes": 30052,
+     "share": 28.45,
+     "swing": null
+    },
+    {
+     "name": "South African, Orangia Unie, and Het Volk",
+     "leader": "Louis Botha",
+     "seats": 66,
+     "seatChange": null,
+     "votes": 30052,
+     "share": 28.45,
+     "swing": null
+    },
+    {
+     "name": "Unionist Party",
+     "leader": "Leander Starr Jameson",
+     "seats": 36,
+     "seatChange": null,
+     "votes": 39766,
+     "share": 37.65,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 19563,
+     "share": 18.52,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": "Frederic Creswell",
+     "seats": 3,
+     "seatChange": null,
+     "votes": 11549,
+     "share": 10.93,
+     "swing": null
+    },
+    {
+     "name": "Independent South African National Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 3430,
+     "share": 3.25,
+     "swing": null
+    },
+    {
+     "name": "Independent Labour Party",
+     "leader": "Frederic Creswell",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 815,
+     "share": 0.77,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Louis Botha",
+    "party": "South African"
+   },
+   "knownAs": "First Union election",
+   "summary": "The elections were held alongside the first election to the provincial councils of Cape Province and Transvaal. Those councils used the same electoral districts as those for the House of Assembly seats in the province.",
+   "caveat": "Held under a franchise restricted by race: the overwhelming majority of South Africans could not vote. Recorded here as history, with that exclusion stated plainly.",
+   "seatLeader": "South African National Party"
+  },
+  {
+   "id": "1915",
+   "label": "1915",
+   "year": 1915,
+   "date": "20 October 1915",
+   "era": "union",
+   "totalSeats": 130,
+   "majoritySeats": 66,
+   "turnout": 71.57,
+   "parties": [
+    {
+     "name": "South African Party",
+     "leader": "Louis Botha",
+     "seats": 54,
+     "seatChange": 12.0,
+     "votes": 94285,
+     "share": 36.67,
+     "swing": 8.22
+    },
+    {
+     "name": "Unionist Party",
+     "leader": "Thomas Smartt",
+     "seats": 39,
+     "seatChange": 3.0,
+     "votes": 49917,
+     "share": 19.42,
+     "swing": -18.24
+    },
+    {
+     "name": "National Party",
+     "leader": "J. B. M. Hertzog",
+     "seats": 27,
+     "seatChange": null,
+     "votes": 75623,
+     "share": 29.41,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 10.0,
+     "votes": 12383,
+     "share": 4.82,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": "Frederic Creswell",
+     "seats": 4,
+     "seatChange": 1.0,
+     "votes": 24755,
+     "share": 9.63,
+     "swing": -1.3
+    }
+   ],
+   "pmBefore": {
+    "name": "Louis Botha",
+    "party": "South African"
+   },
+   "pmAfter": {
+    "name": "Louis Botha",
+    "party": "South African"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in South Africa on 20 October 1915 to elect the 130 members of the House of Assembly. This was the second Union Parliament.",
+   "caveat": "Held under a franchise restricted by race: the overwhelming majority of South Africans could not vote. Recorded here as history, with that exclusion stated plainly.",
+   "seatLeader": "South African Party"
+  },
+  {
+   "id": "1920",
+   "label": "1920",
+   "year": 1920,
+   "date": "10 March 1920",
+   "era": "union",
+   "totalSeats": 134,
+   "majoritySeats": 68,
+   "turnout": 66.94,
+   "parties": [
+    {
+     "name": "National Party",
+     "leader": "J. B. M. Hertzog",
+     "seats": 43,
+     "seatChange": 16.0,
+     "votes": 90512,
+     "share": 32.62,
+     "swing": 3.21
+    },
+    {
+     "name": "South African Party",
+     "leader": "Jan Smuts",
+     "seats": 41,
+     "seatChange": 13.0,
+     "votes": 101227,
+     "share": 36.48,
+     "swing": -0.19
+    },
+    {
+     "name": "Unionist Party",
+     "leader": "Thomas Smartt",
+     "seats": 25,
+     "seatChange": 14.0,
+     "votes": 38946,
+     "share": 14.03,
+     "swing": -5.39
+    },
+    {
+     "name": "Labour Party",
+     "leader": "Frederic Creswell",
+     "seats": 21,
+     "seatChange": 17.0,
+     "votes": 40639,
+     "share": 14.65,
+     "swing": 5.01
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 3.0,
+     "votes": 5968,
+     "share": 2.15,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jan Smuts",
+    "party": "South African"
+   },
+   "pmAfter": {
+    "name": "Jan Smuts",
+    "party": "South African"
+   },
+   "knownAs": null,
+   "summary": "The National Party (NP) won the largest number of seats, but not a majority. The South African Party (SAP) minority government continued in office, with Unionist Party support in Parliament.",
+   "caveat": "Held under a franchise restricted by race: the overwhelming majority of South Africans could not vote. Recorded here as history, with that exclusion stated plainly.",
+   "seatLeader": "National Party"
+  },
+  {
+   "id": "1921",
+   "label": "1921",
+   "year": 1921,
+   "date": "8 February 1921",
+   "era": "union",
+   "totalSeats": 134,
+   "majoritySeats": 68,
+   "turnout": 55.6,
+   "parties": [
+    {
+     "name": "South African Party",
+     "leader": "Jan Smuts",
+     "seats": 77,
+     "seatChange": 11.0,
+     "votes": 137389,
+     "share": 49.9,
+     "swing": -0.61
+    },
+    {
+     "name": "National Party",
+     "leader": "J. B. M. Hertzog",
+     "seats": 44,
+     "seatChange": 1.0,
+     "votes": 105039,
+     "share": 38.15,
+     "swing": 5.53
+    },
+    {
+     "name": "Labour Party",
+     "leader": "Frederic Creswell",
+     "seats": 10,
+     "seatChange": 11.0,
+     "votes": 29406,
+     "share": 10.68,
+     "swing": -3.97
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 2.0,
+     "votes": 3385,
+     "share": 1.23,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jan Smuts",
+    "party": "South African"
+   },
+   "pmAfter": {
+    "name": "Jan Smuts",
+    "party": "South African"
+   },
+   "knownAs": null,
+   "summary": "The South Africa Act 1909 had provided for a delimitation commission to define the boundaries for each electoral division. The representation by province, under the third delimitation report of 1919, is set out in the table below.",
+   "caveat": "Held under a franchise restricted by race: the overwhelming majority of South Africans could not vote. Recorded here as history, with that exclusion stated plainly.",
+   "seatLeader": "South African Party"
+  },
+  {
+   "id": "1924",
+   "label": "1924",
+   "year": 1924,
+   "date": "17 June 1924",
+   "era": "union",
+   "totalSeats": 135,
+   "majoritySeats": 68,
+   "turnout": 77.23,
+   "parties": [
+    {
+     "name": "National Party",
+     "leader": "J. B. M. Hertzog",
+     "seats": 63,
+     "seatChange": 19.0,
+     "votes": 111483,
+     "share": 35.25,
+     "swing": -2.9
+    },
+    {
+     "name": "South African Party",
+     "leader": "Jan Smuts",
+     "seats": 53,
+     "seatChange": 24.0,
+     "votes": 148769,
+     "share": 47.04,
+     "swing": -2.86
+    },
+    {
+     "name": "Labour Party",
+     "leader": "Frederic Creswell",
+     "seats": 18,
+     "seatChange": 8.0,
+     "votes": 45380,
+     "share": 14.35,
+     "swing": 3.67
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 10610,
+     "share": 3.36,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jan Smuts",
+    "party": "South African"
+   },
+   "pmAfter": {
+    "name": "J. B. M. Hertzog",
+    "party": "National"
+   },
+   "knownAs": "The Pact defeats Smuts",
+   "summary": "General elections were held in South Africa on 17 June 1924, electing 135 members of the House of Assembly.",
+   "caveat": "Held under a franchise restricted by race: the overwhelming majority of South Africans could not vote. Recorded here as history, with that exclusion stated plainly.",
+   "seatLeader": "National Party"
+  },
+  {
+   "id": "1929",
+   "label": "1929",
+   "year": 1929,
+   "date": "12 June 1929",
+   "era": "union",
+   "totalSeats": 148,
+   "majoritySeats": 75,
+   "turnout": 75.34,
+   "parties": [
+    {
+     "name": "National Party",
+     "leader": "J. B. M. Hertzog",
+     "seats": 78,
+     "seatChange": 15.0,
+     "votes": 141579,
+     "share": 41.17,
+     "swing": 5.92
+    },
+    {
+     "name": "South African Party",
+     "leader": "Jan Smuts",
+     "seats": 61,
+     "seatChange": 8.0,
+     "votes": 159896,
+     "share": 46.5,
+     "swing": -0.54
+    },
+    {
+     "name": "Labour Party",
+     "leader": "Disputed",
+     "seats": 8,
+     "seatChange": 10.0,
+     "votes": 33919,
+     "share": 9.86,
+     "swing": -4.49
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 8503,
+     "share": 2.47,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "J. B. M. Hertzog",
+    "party": "National"
+   },
+   "pmAfter": {
+    "name": "J. B. M. Hertzog",
+    "party": "National"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in South Africa on 12 June 1929. The National Party under J.",
+   "caveat": "Held under a franchise restricted by race: the overwhelming majority of South Africans could not vote. Recorded here as history, with that exclusion stated plainly.",
+   "seatLeader": "National Party"
+  },
+  {
+   "id": "1933",
+   "label": "1933",
+   "year": 1933,
+   "date": "17 May 1933",
+   "era": "union",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 33.77,
+   "parties": [
+    {
+     "name": "National Party",
+     "leader": "J. B. M. Hertzog",
+     "seats": 75,
+     "seatChange": 3.0,
+     "votes": 101159,
+     "share": 31.61,
+     "swing": -9.55
+    },
+    {
+     "name": "South African Party",
+     "leader": "Jan Smuts",
+     "seats": 61,
+     "seatChange": 0.0,
+     "votes": 71486,
+     "share": 22.34,
+     "swing": -24.16
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 9.0,
+     "votes": 87321,
+     "share": 27.29,
+     "swing": null
+    },
+    {
+     "name": "Roos Party",
+     "leader": "Tielman Roos",
+     "seats": 2,
+     "seatChange": null,
+     "votes": 27441,
+     "share": 8.58,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": "Walter Madeley",
+     "seats": 2,
+     "seatChange": 6.0,
+     "votes": 20276,
+     "share": 6.34,
+     "swing": -3.52
+    }
+   ],
+   "pmBefore": {
+    "name": "J. B. M. Hertzog",
+    "party": "National"
+   },
+   "pmAfter": {
+    "name": "J. B. M. Hertzog",
+    "party": "National"
+   },
+   "knownAs": null,
+   "summary": "Since the 1929 election several changes had been made to the franchise laws. Adult white women were enfranchised in 1930.",
+   "caveat": "Held under a franchise restricted by race: the overwhelming majority of South Africans could not vote. Recorded here as history, with that exclusion stated plainly.",
+   "seatLeader": "National Party"
+  },
+  {
+   "id": "1938",
+   "label": "1938",
+   "year": 1938,
+   "date": "18 May 1938",
+   "era": "union",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 79.36,
+   "parties": [
+    {
+     "name": "United Party",
+     "leader": "J. B. M. Hertzog",
+     "seats": 111,
+     "seatChange": 25.0,
+     "votes": 446032,
+     "share": 53.81,
+     "swing": -0.14
+    },
+    {
+     "name": "Purified National Party",
+     "leader": "D. F. Malan",
+     "seats": 27,
+     "seatChange": null,
+     "votes": 259543,
+     "share": 31.31,
+     "swing": null
+    },
+    {
+     "name": "Dominion Party",
+     "leader": "Charles Stallard",
+     "seats": 8,
+     "seatChange": null,
+     "votes": 52356,
+     "share": 6.32,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": "Walter Madeley",
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": 48641,
+     "share": 5.87,
+     "swing": -0.47
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 4963,
+     "share": 0.6,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "J. B. M. Hertzog",
+    "party": "United"
+   },
+   "pmAfter": {
+    "name": "J. B. M. Hertzog",
+    "party": "United"
+   },
+   "knownAs": null,
+   "summary": "Those members of the National Party who did not accept the fusion, constituted themselves as the Purified National Party (PNP) in June 1934. The leader of the new party was Dr.",
+   "caveat": "Held under a franchise restricted by race: the overwhelming majority of South Africans could not vote. Recorded here as history, with that exclusion stated plainly.",
+   "seatLeader": "United Party"
+  },
+  {
+   "id": "1943",
+   "label": "1943",
+   "year": 1943,
+   "date": "7 July 1943",
+   "era": "union",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 79.49,
+   "parties": [
+    {
+     "name": "United Party",
+     "leader": "Jan Smuts",
+     "seats": 89,
+     "seatChange": 22.0,
+     "votes": 435297,
+     "share": 49.68,
+     "swing": -4.13
+    },
+    {
+     "name": "Herenigde Nasionale Party",
+     "leader": "D. F. Malan",
+     "seats": 43,
+     "seatChange": 16.0,
+     "votes": 321601,
+     "share": 36.7,
+     "swing": 5.39
+    },
+    {
+     "name": "Labour Party",
+     "leader": "Walter Madeley",
+     "seats": 9,
+     "seatChange": 6.0,
+     "votes": 38206,
+     "share": 4.36,
+     "swing": -1.51
+    },
+    {
+     "name": "Dominion Party",
+     "leader": "Charles Stallard",
+     "seats": 7,
+     "seatChange": 1.0,
+     "votes": 29023,
+     "share": 3.31,
+     "swing": -3.01
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": 30185,
+     "share": 3.44,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jan Smuts",
+    "party": "United"
+   },
+   "pmAfter": {
+    "name": "Jan Smuts",
+    "party": "United"
+   },
+   "knownAs": null,
+   "summary": "Due to a racially segregated election system and restrictive franchise requirements, the electorate consisted almost exclusively of white people (who were roughly 20% of the population). Very few people of coloured and Asian descent were allowed to vote in the election.",
+   "caveat": "Held under a franchise restricted by race: the overwhelming majority of South Africans could not vote. Recorded here as history, with that exclusion stated plainly.",
+   "seatLeader": "United Party"
+  },
+  {
+   "id": "1948",
+   "label": "1948",
+   "year": 1948,
+   "date": "26 May 1948",
+   "era": "apartheid",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 80.25,
+   "parties": [
+    {
+     "name": "Herenigde Nasionale Party",
+     "leader": "D. F. Malan",
+     "seats": 70,
+     "seatChange": 27.0,
+     "votes": 401834,
+     "share": 37.7,
+     "swing": 1.0
+    },
+    {
+     "name": "United Party",
+     "leader": "Jan Smuts",
+     "seats": 65,
+     "seatChange": 24.0,
+     "votes": 524230,
+     "share": 49.18,
+     "swing": -0.5
+    },
+    {
+     "name": "Afrikaner Party",
+     "leader": "Nicolaas Havenga",
+     "seats": 9,
+     "seatChange": 9.0,
+     "votes": 41885,
+     "share": 3.93,
+     "swing": 2.15
+    },
+    {
+     "name": "Labour Party",
+     "leader": "John Christie",
+     "seats": 6,
+     "seatChange": 3.0,
+     "votes": 27360,
+     "share": 2.57,
+     "swing": -1.79
+    }
+   ],
+   "pmBefore": {
+    "name": "Jan Smuts",
+    "party": "United"
+   },
+   "pmAfter": {
+    "name": "D. F. Malan",
+    "party": "Reunited National"
+   },
+   "knownAs": "The apartheid election",
+   "summary": "General elections were held in South Africa on 26 May 1948. They represented a major turning point in the country's history, as despite receiving just under half of the votes cast, the United Party and its leader, incumbent Prime Minister Jan Smuts, were ousted by the Herenigde Nasionale Party (HNP) led by D.",
+   "caveat": "A whites-only election under apartheid: the great majority of South Africans were denied the vote entirely. Recorded here as history, with that exclusion stated plainly.",
+   "seatLeader": "Herenigde Nasionale Party"
+  },
+  {
+   "id": "1953",
+   "label": "1953",
+   "year": 1953,
+   "date": "15 April 1953",
+   "era": "apartheid",
+   "totalSeats": 156,
+   "majoritySeats": 79,
+   "turnout": 87.95,
+   "parties": [
+    {
+     "name": "National Party",
+     "leader": "D. F. Malan",
+     "seats": 94,
+     "seatChange": 15.0,
+     "votes": 598718,
+     "share": 49.48,
+     "swing": 7.85
+    },
+    {
+     "name": "United Party",
+     "leader": "Koos Strauss",
+     "seats": 57,
+     "seatChange": 8.0,
+     "votes": 576474,
+     "share": 47.65,
+     "swing": -1.53
+    },
+    {
+     "name": "Labour Party",
+     "leader": "John Christie",
+     "seats": 5,
+     "seatChange": 1.0,
+     "votes": 34730,
+     "share": 2.87,
+     "swing": 0.3
+    }
+   ],
+   "pmBefore": {
+    "name": "D. F. Malan",
+    "party": "National"
+   },
+   "pmAfter": {
+    "name": "D. F. Malan",
+    "party": "National"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in South Africa on 15 April 1953. The elections consolidated the position of the National Party under D.",
+   "caveat": "A whites-only election under apartheid: the great majority of South Africans were denied the vote entirely. Recorded here as history, with that exclusion stated plainly.",
+   "seatLeader": "National Party"
+  },
+  {
+   "id": "1958",
+   "label": "1958",
+   "year": 1958,
+   "date": "16 April 1958",
+   "era": "apartheid",
+   "totalSeats": 156,
+   "majoritySeats": 79,
+   "turnout": 74.42,
+   "parties": [
+    {
+     "name": "National Party",
+     "leader": "J. G. Strijdom",
+     "seats": 103,
+     "seatChange": 9.0,
+     "votes": 642006,
+     "share": 55.54,
+     "swing": 6.06
+    },
+    {
+     "name": "United Party",
+     "leader": "De Villiers Graaff",
+     "seats": 53,
+     "seatChange": 4.0,
+     "votes": 492080,
+     "share": 42.57,
+     "swing": -5.08
+    }
+   ],
+   "pmBefore": {
+    "name": "J. G. Strijdom",
+    "party": "National"
+   },
+   "pmAfter": {
+    "name": "J. G. Strijdom",
+    "party": "National"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in South Africa on 16 April 1958. The result was a victory for the National Party, now under the leadership of J.",
+   "caveat": "A whites-only election under apartheid: the great majority of South Africans were denied the vote entirely. Recorded here as history, with that exclusion stated plainly.",
+   "seatLeader": "National Party"
+  },
+  {
+   "id": "1961",
+   "label": "1961",
+   "year": 1961,
+   "date": "18 October 1961",
+   "era": "apartheid",
+   "totalSeats": 156,
+   "majoritySeats": 79,
+   "turnout": 44.55,
+   "parties": [
+    {
+     "name": "National Party",
+     "leader": "H. F. Verwoerd",
+     "seats": 105,
+     "seatChange": 2.0,
+     "votes": 370395,
+     "share": 46.44,
+     "swing": -9.1
+    },
+    {
+     "name": "United Party",
+     "leader": "De Villiers Graaff",
+     "seats": 49,
+     "seatChange": 4.0,
+     "votes": 281361,
+     "share": 35.28,
+     "swing": -7.29
+    },
+    {
+     "name": "Progressive Party",
+     "leader": "Jan Steytler",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 69045,
+     "share": 8.66,
+     "swing": null
+    },
+    {
+     "name": "National Union",
+     "leader": "Henry Allan Fagan",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 50279,
+     "share": 6.3,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "H. F. Verwoerd",
+    "party": "National"
+   },
+   "pmAfter": {
+    "name": "H. F. Verwoerd",
+    "party": "National"
+   },
+   "knownAs": "First republic election",
+   "summary": "General elections were held in South Africa on 18 October 1961. They were the first general elections after South Africa became a republic following the 1960 South African referendum.",
+   "caveat": "A whites-only election under apartheid: the great majority of South Africans were denied the vote entirely. Recorded here as history, with that exclusion stated plainly.",
+   "seatLeader": "National Party"
+  },
+  {
+   "id": "1966",
+   "label": "1966",
+   "year": 1966,
+   "date": "30 March 1966",
+   "era": "apartheid",
+   "totalSeats": 166,
+   "majoritySeats": 84,
+   "turnout": 68.48,
+   "parties": [
+    {
+     "name": "National Party",
+     "leader": "H. F. Verwoerd",
+     "seats": 126,
+     "seatChange": 21.0,
+     "votes": 759331,
+     "share": 58.31,
+     "swing": 11.87
+    },
+    {
+     "name": "United Party",
+     "leader": "De Villiers Graaff",
+     "seats": 39,
+     "seatChange": 10.0,
+     "votes": 476815,
+     "share": 36.62,
+     "swing": 1.34
+    },
+    {
+     "name": "Progressive Party",
+     "leader": "Jan Steytler",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 39717,
+     "share": 3.05,
+     "swing": -5.61
+    }
+   ],
+   "pmBefore": {
+    "name": "H. F. Verwoerd",
+    "party": "National"
+   },
+   "pmAfter": {
+    "name": "H. F. Verwoerd",
+    "party": "National"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in South Africa on 30 March 1966. The result was another landslide victory for the National Party (NP) under H.",
+   "caveat": "A whites-only election under apartheid: the great majority of South Africans were denied the vote entirely. Recorded here as history, with that exclusion stated plainly.",
+   "seatLeader": "National Party"
+  },
+  {
+   "id": "1970",
+   "label": "1970",
+   "year": 1970,
+   "date": "22 April 1970",
+   "era": "apartheid",
+   "totalSeats": 166,
+   "majoritySeats": 84,
+   "turnout": 69.76,
+   "parties": [
+    {
+     "name": "National Party",
+     "leader": "B. J. Vorster",
+     "seats": 117,
+     "seatChange": 9.0,
+     "votes": 822034,
+     "share": 54.89,
+     "swing": -3.42
+    },
+    {
+     "name": "United Party",
+     "leader": "De Villiers Graaff",
+     "seats": 47,
+     "seatChange": 8.0,
+     "votes": 553280,
+     "share": 36.94,
+     "swing": 0.32
+    },
+    {
+     "name": "Progressive Party",
+     "leader": "Jan Steytler",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 51742,
+     "share": 3.45,
+     "swing": 0.4
+    }
+   ],
+   "pmBefore": {
+    "name": "B. J. Vorster",
+    "party": "National"
+   },
+   "pmAfter": {
+    "name": "B. J. Vorster",
+    "party": "National"
+   },
+   "knownAs": null,
+   "summary": "The elections marked the first time since the formation of South African in 1910 that the House of Assembly would be responsible solely to White South Africans, as the seats for the four MPs elected separately by \"qualified\" Cape Coloured voters expired in the same year, completing the process of political apartheid.",
+   "caveat": "A whites-only election under apartheid: the great majority of South Africans were denied the vote entirely. Recorded here as history, with that exclusion stated plainly.",
+   "seatLeader": "National Party"
+  },
+  {
+   "id": "1974",
+   "label": "1974",
+   "year": 1974,
+   "date": "24 April 1974",
+   "era": "apartheid",
+   "totalSeats": 169,
+   "majoritySeats": 86,
+   "turnout": 51.87,
+   "parties": [
+    {
+     "name": "National Party",
+     "leader": "John Vorster",
+     "seats": 122,
+     "seatChange": 4.0,
+     "votes": 638424,
+     "share": 56.14,
+     "swing": 1.25
+    },
+    {
+     "name": "United Party",
+     "leader": "De Villiers Graaff",
+     "seats": 41,
+     "seatChange": 6.0,
+     "votes": 363478,
+     "share": 31.96,
+     "swing": -4.98
+    },
+    {
+     "name": "Progressive Party",
+     "leader": "Colin Eglin",
+     "seats": 6,
+     "seatChange": 5.0,
+     "votes": 72479,
+     "share": 6.37,
+     "swing": 2.94
+    }
+   ],
+   "pmBefore": {
+    "name": "John Vorster",
+    "party": "National"
+   },
+   "pmAfter": {
+    "name": "John Vorster",
+    "party": "National"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in South Africa on 24 April 1974. They were called one year earlier than scheduled by Prime Minister John Vorster on 4 February.",
+   "caveat": "A whites-only election under apartheid: the great majority of South Africans were denied the vote entirely. Recorded here as history, with that exclusion stated plainly.",
+   "seatLeader": "National Party"
+  },
+  {
+   "id": "1977",
+   "label": "1977",
+   "year": 1977,
+   "date": "30 November 1977",
+   "era": "apartheid",
+   "totalSeats": 164,
+   "majoritySeats": 83,
+   "turnout": 48.52,
+   "parties": [
+    {
+     "name": "National Party",
+     "leader": "B. J. Vorster",
+     "seats": 134,
+     "seatChange": 12.0,
+     "votes": 685035,
+     "share": 65.34,
+     "swing": 9.2
+    },
+    {
+     "name": "Progressive Federal Party",
+     "leader": "Colin Eglin",
+     "seats": 17,
+     "seatChange": 11.0,
+     "votes": 177705,
+     "share": 16.95,
+     "swing": 10.58
+    },
+    {
+     "name": "New Republic Party",
+     "leader": "Radclyffe Cadman",
+     "seats": 10,
+     "seatChange": null,
+     "votes": 127335,
+     "share": 12.15,
+     "swing": -20.69
+    },
+    {
+     "name": "South African Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 17915,
+     "share": 1.71,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "B. J. Vorster",
+    "party": "National"
+   },
+   "pmAfter": {
+    "name": "B. J. Vorster",
+    "party": "National"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in South Africa on 30 November 1977. The National Party, led by B.",
+   "caveat": "A whites-only election under apartheid: the great majority of South Africans were denied the vote entirely. Recorded here as history, with that exclusion stated plainly.",
+   "seatLeader": "National Party"
+  },
+  {
+   "id": "1981",
+   "label": "1981",
+   "year": 1981,
+   "date": "29 April 1981",
+   "era": "apartheid",
+   "totalSeats": 165,
+   "majoritySeats": 83,
+   "turnout": 59.9,
+   "parties": [
+    {
+     "name": "National Party",
+     "leader": "P. W. Botha",
+     "seats": 131,
+     "seatChange": 3.0,
+     "votes": 778371,
+     "share": 57.66,
+     "swing": -7.68
+    },
+    {
+     "name": "Progressive Federal Party",
+     "leader": "Frederik van Zyl Slabbert",
+     "seats": 26,
+     "seatChange": 9.0,
+     "votes": 265297,
+     "share": 19.65,
+     "swing": 2.7
+    },
+    {
+     "name": "New Republic Party",
+     "leader": "Vause Raw",
+     "seats": 8,
+     "seatChange": 2.0,
+     "votes": 93603,
+     "share": 6.93,
+     "swing": -5.22
+    }
+   ],
+   "pmBefore": {
+    "name": "P. W. Botha",
+    "party": "National"
+   },
+   "pmAfter": {
+    "name": "P. W. Botha",
+    "party": "National"
+   },
+   "knownAs": null,
+   "summary": "Meanwhile, the Progressive Federal Party – led since 1979 by Frederik van Zyl Slabbert, an Afrikaner – increased its representation to 26 seats, thereby consolidating its position as the official opposition. The Herstigte Nasionale Party (HNP) now under the leadership of Jaap Marais and representing right-wing Afrikaner conservatives, received 14.1% of the vote.",
+   "caveat": "A whites-only election under apartheid: the great majority of South Africans were denied the vote entirely. Recorded here as history, with that exclusion stated plainly.",
+   "seatLeader": "National Party"
+  },
+  {
+   "id": "1987",
+   "label": "1987",
+   "year": 1987,
+   "date": "6 May 1987",
+   "era": "apartheid",
+   "totalSeats": 166,
+   "majoritySeats": 84,
+   "turnout": 67.84,
+   "parties": [
+    {
+     "name": "National Party",
+     "leader": "P. W. Botha",
+     "seats": 123,
+     "seatChange": 8.0,
+     "votes": 1075505,
+     "share": 52.7,
+     "swing": -4.96
+    },
+    {
+     "name": "Conservative Party",
+     "leader": "Andries Treurnicht",
+     "seats": 22,
+     "seatChange": null,
+     "votes": 547559,
+     "share": 26.83,
+     "swing": null
+    },
+    {
+     "name": "Progressive Federal Party",
+     "leader": "Colin Eglin",
+     "seats": 19,
+     "seatChange": 7.0,
+     "votes": 288574,
+     "share": 14.14,
+     "swing": -5.51
+    },
+    {
+     "name": "New Republic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 7.0,
+     "votes": 40494,
+     "share": 1.98,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": 27149,
+     "share": 1.33,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "P. W. Botha",
+    "party": "National"
+   },
+   "pmAfter": {
+    "name": "P. W. Botha",
+    "party": "National Party"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in South Africa on 6 May 1987. The State of Emergency cast a cloud over the elections, which were again won by the National Party (NP) under the leadership of P.",
+   "caveat": "A whites-only election under apartheid: the great majority of South Africans were denied the vote entirely. Recorded here as history, with that exclusion stated plainly.",
+   "seatLeader": "National Party"
+  },
+  {
+   "id": "1989",
+   "label": "1989",
+   "year": 1989,
+   "date": "6 September 1989",
+   "era": "apartheid",
+   "totalSeats": 166,
+   "majoritySeats": 21,
+   "turnout": 23.29,
+   "parties": [
+    {
+     "name": "National Party",
+     "leader": "F. W. de Klerk",
+     "seats": 94,
+     "seatChange": -29.0,
+     "votes": 1039704,
+     "share": 48.19,
+     "swing": -4.51
+    },
+    {
+     "name": "Conservative Party",
+     "leader": "Andries Treurnicht",
+     "seats": 39,
+     "seatChange": 17.0,
+     "votes": 680131,
+     "share": 31.52,
+     "swing": 4.69
+    },
+    {
+     "name": "Democratic Party",
+     "leader": "Zach de Beer",
+     "seats": 33,
+     "seatChange": 13.0,
+     "votes": 431444,
+     "share": 20.0,
+     "swing": 3.88
+    }
+   ],
+   "pmBefore": {
+    "name": "F. W. de Klerk",
+    "party": "National\tF. W. de Klerk"
+   },
+   "pmAfter": {
+    "name": "F. W. de Klerk",
+    "party": "National Party"
+   },
+   "knownAs": "The last whites-only election",
+   "summary": "General elections were held in South Africa on 6 September 1989, the last under apartheid. Snap elections had been called early (no election was required until 1992) by the recently elected head of the National Party (NP), F.",
+   "caveat": "A whites-only election under apartheid: the great majority of South Africans were denied the vote entirely. Recorded here as history, with that exclusion stated plainly.",
+   "seatLeader": "National Party"
+  },
+  {
+   "id": "1994",
+   "label": "1994",
+   "year": 1994,
+   "date": "26–29 April 1994",
+   "era": "democracy",
+   "totalSeats": 400,
+   "majoritySeats": 201,
+   "turnout": 86.9,
+   "parties": [
+    {
+     "name": "African National Congress",
+     "leader": "Nelson Mandela",
+     "seats": 252,
+     "seatChange": null,
+     "votes": 12237655,
+     "share": 62.65,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": "F. W. de Klerk",
+     "seats": 82,
+     "seatChange": null,
+     "votes": 3983690,
+     "share": 20.39,
+     "swing": -27.8
+    },
+    {
+     "name": "Inkatha Freedom Party",
+     "leader": "Mangosuthu Buthelezi",
+     "seats": 43,
+     "seatChange": null,
+     "votes": 2058294,
+     "share": 10.54,
+     "swing": null
+    },
+    {
+     "name": "Freedom Front",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 424555,
+     "share": 2.17,
+     "swing": null
+    },
+    {
+     "name": "VF",
+     "leader": "Constand Viljoen",
+     "seats": 9,
+     "seatChange": null,
+     "votes": 424555,
+     "share": 2.17,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": "Zach de Beer",
+     "seats": 7,
+     "seatChange": null,
+     "votes": 338426,
+     "share": 1.73,
+     "swing": -18.27
+    },
+    {
+     "name": "Pan Africanist Congress",
+     "leader": "Clarence Makwetu",
+     "seats": 5,
+     "seatChange": null,
+     "votes": 243478,
+     "share": 1.25,
+     "swing": null
+    },
+    {
+     "name": "African Christian Democratic Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 88104,
+     "share": 0.45,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "F. W. de Klerk",
+    "party": "NP"
+   },
+   "pmAfter": {
+    "name": "Nelson Mandela",
+    "party": "ANC"
+   },
+   "knownAs": "The first free election",
+   "summary": "General elections were held in South Africa between 26 and 29 April 1994. The elections were the first in South Africa in which citizens of all races could vote, bringing an end to the herrenvolk democracy that had existed since the 1950s and marking the country's first election under universal suffrage.",
+   "caveat": null,
+   "seatLeader": "African National Congress"
+  },
+  {
+   "id": "1999",
+   "label": "1999",
+   "year": 1999,
+   "date": "2 June 1999",
+   "era": "democracy",
+   "totalSeats": 400,
+   "majoritySeats": 201,
+   "turnout": 89.3,
+   "parties": [
+    {
+     "name": "African National Congress",
+     "leader": "Thabo Mbeki",
+     "seats": 266,
+     "seatChange": 14.0,
+     "votes": 10601330,
+     "share": 66.35,
+     "swing": 3.7
+    },
+    {
+     "name": "Democratic Party",
+     "leader": "Tony Leon",
+     "seats": 38,
+     "seatChange": 31.0,
+     "votes": 1527337,
+     "share": 9.56,
+     "swing": 7.83
+    },
+    {
+     "name": "Inkatha Freedom Party",
+     "leader": "Mangosuthu Buthelezi",
+     "seats": 34,
+     "seatChange": -9.0,
+     "votes": 1371477,
+     "share": 8.58,
+     "swing": -1.96
+    },
+    {
+     "name": "New National Party",
+     "leader": "Marthinus van Schalkwyk",
+     "seats": 28,
+     "seatChange": -54.0,
+     "votes": 1098215,
+     "share": 6.87,
+     "swing": -13.52
+    },
+    {
+     "name": "United Democratic Movement",
+     "leader": "Bantu Holomisa",
+     "seats": 14,
+     "seatChange": null,
+     "votes": 546790,
+     "share": 3.42,
+     "swing": null
+    },
+    {
+     "name": "African Christian Democratic Party",
+     "leader": "Kenneth Meshoe",
+     "seats": 6,
+     "seatChange": 4.0,
+     "votes": 228975,
+     "share": 1.43,
+     "swing": 0.98
+    },
+    {
+     "name": "Freedom Front",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -6.0,
+     "votes": 127217,
+     "share": 0.8,
+     "swing": null
+    },
+    {
+     "name": "United Christian Democratic Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 125280,
+     "share": 0.78,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Nelson Mandela",
+    "party": "ANC"
+   },
+   "pmAfter": {
+    "name": "Thabo Mbeki",
+    "party": "ANC"
+   },
+   "knownAs": "Mandela hands over",
+   "summary": "General elections were held in South Africa on 2 June 1999. The result was a landslide victory for the governing African National Congress (ANC), which gained fourteen seats.",
+   "caveat": null,
+   "seatLeader": "African National Congress"
+  },
+  {
+   "id": "2004",
+   "label": "2004",
+   "year": 2004,
+   "date": "14 April 2004",
+   "era": "democracy",
+   "totalSeats": 400,
+   "majoritySeats": 201,
+   "turnout": 76.7,
+   "parties": [
+    {
+     "name": "African National Congress",
+     "leader": null,
+     "seats": 279,
+     "seatChange": 13.0,
+     "votes": 10880915,
+     "share": 69.69,
+     "swing": null
+    },
+    {
+     "name": "Democratic Alliance",
+     "leader": "Thabo Mbeki",
+     "seats": 50,
+     "seatChange": 12.0,
+     "votes": 1931201,
+     "share": 12.37,
+     "swing": 3.34
+    },
+    {
+     "name": "Inkatha Freedom Party",
+     "leader": "Mangosuthu Buthelezi",
+     "seats": 28,
+     "seatChange": -6.0,
+     "votes": 1088664,
+     "share": 6.97,
+     "swing": -1.61
+    },
+    {
+     "name": "United Democratic Movement",
+     "leader": "Bantu Holomisa",
+     "seats": 9,
+     "seatChange": -5.0,
+     "votes": 355717,
+     "share": 2.28,
+     "swing": -1.14
+    },
+    {
+     "name": "Independent Democrats",
+     "leader": "Patricia de Lille",
+     "seats": 7,
+     "seatChange": null,
+     "votes": 269765,
+     "share": 1.73,
+     "swing": null
+    },
+    {
+     "name": "New National Party",
+     "leader": "Marthinus van Schalkwyk",
+     "seats": 7,
+     "seatChange": -21.0,
+     "votes": 257824,
+     "share": 1.65,
+     "swing": -5.22
+    },
+    {
+     "name": "African Christian Democratic Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 1.0,
+     "votes": 250272,
+     "share": 1.6,
+     "swing": null
+    },
+    {
+     "name": "Freedom Front Plus",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 1.0,
+     "votes": 139465,
+     "share": 0.89,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Thabo Mbeki",
+    "party": "ANC"
+   },
+   "pmAfter": {
+    "name": "Thabo Mbeki",
+    "party": "ANC"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in South Africa on Wednesday, 14 April 2004. The African National Congress (ANC) of President Thabo Mbeki, which came to power after the end of the apartheid system in 1994, was re-elected with an increased majority.",
+   "caveat": null,
+   "seatLeader": "African National Congress"
+  },
+  {
+   "id": "2009",
+   "label": "2009",
+   "year": 2009,
+   "date": "22 April 2009",
+   "era": "democracy",
+   "totalSeats": 400,
+   "majoritySeats": 201,
+   "turnout": 77.3,
+   "parties": [
+    {
+     "name": "African National Congress",
+     "leader": null,
+     "seats": 264,
+     "seatChange": -15.0,
+     "votes": 11650748,
+     "share": 65.9,
+     "swing": null
+    },
+    {
+     "name": "Democratic Alliance",
+     "leader": "Jacob Zuma",
+     "seats": 67,
+     "seatChange": 17.0,
+     "votes": 2945829,
+     "share": 16.66,
+     "swing": -3.79
+    },
+    {
+     "name": "Congress of the People",
+     "leader": null,
+     "seats": 30,
+     "seatChange": null,
+     "votes": 1311027,
+     "share": 7.42,
+     "swing": null
+    },
+    {
+     "name": "COPE",
+     "leader": "Mosiuoa Lekota",
+     "seats": 30,
+     "seatChange": null,
+     "votes": 1311027,
+     "share": 7.42,
+     "swing": null
+    },
+    {
+     "name": "Inkatha Freedom Party",
+     "leader": "Mangosuthu Buthelezi",
+     "seats": 18,
+     "seatChange": -10.0,
+     "votes": 804260,
+     "share": 4.55,
+     "swing": -2.42
+    },
+    {
+     "name": "Independent Democrats",
+     "leader": "Patricia de Lille",
+     "seats": 4,
+     "seatChange": -3.0,
+     "votes": 162915,
+     "share": 0.92,
+     "swing": -0.81
+    },
+    {
+     "name": "United Democratic Movement",
+     "leader": "Bantu Holomisa",
+     "seats": 4,
+     "seatChange": -5.0,
+     "votes": 149680,
+     "share": 0.85,
+     "swing": -1.43
+    },
+    {
+     "name": "Freedom Front Plus",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 146796,
+     "share": 0.83,
+     "swing": null
+    },
+    {
+     "name": "African Christian Democratic Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -4.0,
+     "votes": 142658,
+     "share": 0.81,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Kgalema Motlanthe",
+    "party": "ANC"
+   },
+   "pmAfter": {
+    "name": "Jacob Zuma",
+    "party": "ANC"
+   },
+   "knownAs": null,
+   "summary": "The North Gauteng High Court ruled on 9 February 2009 that South African citizens living abroad should be allowed to vote in elections. The judgment was confirmed by the Constitutional Court on 12 March 2009, when it decided that overseas voters who were already registered would be allowed to vote.",
+   "caveat": null,
+   "seatLeader": "African National Congress"
+  },
+  {
+   "id": "2014",
+   "label": "2014",
+   "year": 2014,
+   "date": "7 May 2014",
+   "era": "democracy",
+   "totalSeats": 400,
+   "majoritySeats": 201,
+   "turnout": 73.48,
+   "parties": [
+    {
+     "name": "African National Congress",
+     "leader": null,
+     "seats": 249,
+     "seatChange": 15.0,
+     "votes": 11436921,
+     "share": 62.15,
+     "swing": null
+    },
+    {
+     "name": "Democratic Alliance",
+     "leader": "Jacob Zuma",
+     "seats": 89,
+     "seatChange": 18.0,
+     "votes": 4091584,
+     "share": 22.23,
+     "swing": -3.75
+    },
+    {
+     "name": "Economic Freedom Fighters",
+     "leader": "Julius Malema",
+     "seats": 25,
+     "seatChange": null,
+     "votes": 1169259,
+     "share": 6.35,
+     "swing": null
+    },
+    {
+     "name": "Inkatha Freedom Party",
+     "leader": "Mangosuthu Buthelezi",
+     "seats": 10,
+     "seatChange": 8.0,
+     "votes": 441854,
+     "share": 2.4,
+     "swing": -2.15
+    },
+    {
+     "name": "National Freedom Party",
+     "leader": "Zanele kaMagwaza-Msibi",
+     "seats": 6,
+     "seatChange": null,
+     "votes": 288742,
+     "share": 1.57,
+     "swing": null
+    },
+    {
+     "name": "United Democratic Movement",
+     "leader": "Bantu Holomisa",
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 184636,
+     "share": 1.0,
+     "swing": 0.15
+    },
+    {
+     "name": "Freedom Front Plus",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 165715,
+     "share": 0.9,
+     "swing": null
+    },
+    {
+     "name": "Congress of the People",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 27.0,
+     "votes": 123235,
+     "share": 0.67,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jacob Zuma",
+    "party": "ANC"
+   },
+   "pmAfter": {
+    "name": "Jacob Zuma",
+    "party": "ANC"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in South Africa on 7 May 2014, to elect a new National Assembly and new provincial legislatures in each province. It was the fifth election held in South Africa under conditions of universal adult suffrage since the end of the apartheid era in 1994, and also the first held since the death of Nelson Mandela.",
+   "caveat": null,
+   "seatLeader": "African National Congress"
+  },
+  {
+   "id": "2019",
+   "label": "2019",
+   "year": 2019,
+   "date": "8 May 2019",
+   "era": "democracy",
+   "totalSeats": 400,
+   "majoritySeats": 201,
+   "turnout": 66.05,
+   "parties": [
+    {
+     "name": "ANC",
+     "leader": "Cyril Ramaphosa",
+     "seats": 230,
+     "seatChange": -19.0,
+     "votes": 10026475,
+     "share": 57.5,
+     "swing": -4.65
+    },
+    {
+     "name": "DA",
+     "leader": "Mmusi Maimane",
+     "seats": 84,
+     "seatChange": -5.0,
+     "votes": 3622531,
+     "share": 20.77,
+     "swing": -1.46
+    },
+    {
+     "name": "EFF",
+     "leader": "Julius Malema",
+     "seats": 44,
+     "seatChange": 19.0,
+     "votes": 1882480,
+     "share": 10.8,
+     "swing": 4.45
+    },
+    {
+     "name": "IFP",
+     "leader": "Mangosuthu Buthelezi",
+     "seats": 14,
+     "seatChange": 4.0,
+     "votes": 588839,
+     "share": 3.38,
+     "swing": 0.98
+    },
+    {
+     "name": "VF+",
+     "leader": "Pieter Groenewald",
+     "seats": 10,
+     "seatChange": 6.0,
+     "votes": 414864,
+     "share": 2.38,
+     "swing": 1.48
+    },
+    {
+     "name": "ACDP",
+     "leader": "Kenneth Meshoe",
+     "seats": 4,
+     "seatChange": 1.0,
+     "votes": 146262,
+     "share": 0.84,
+     "swing": 0.27
+    }
+   ],
+   "pmBefore": {
+    "name": "Cyril Ramaphosa",
+    "party": "ANC"
+   },
+   "pmAfter": {
+    "name": "Cyril Ramaphosa",
+    "party": "ANC"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in South Africa on 8 May 2019 to elect a new President, National Assembly and provincial legislatures in each province. These were the sixth elections held since the end of apartheid in 1994 and determined who would become the next President of South Africa.",
+   "caveat": null,
+   "seatLeader": "ANC"
+  },
+  {
+   "id": "2024",
+   "label": "2024",
+   "year": 2024,
+   "date": "29 May 2024",
+   "era": "democracy",
+   "totalSeats": 400,
+   "majoritySeats": 201,
+   "turnout": 58.64,
+   "parties": [
+    {
+     "name": "ANC",
+     "leader": "Cyril Ramaphosa",
+     "seats": 159,
+     "seatChange": -71.0,
+     "votes": 6459683,
+     "share": 40.18,
+     "swing": -17.32
+    },
+    {
+     "name": "DA",
+     "leader": "John Steenhuisen",
+     "seats": 87,
+     "seatChange": 3.0,
+     "votes": 3505735,
+     "share": 21.81,
+     "swing": 1.04
+    },
+    {
+     "name": "MK",
+     "leader": "Jacob Zuma",
+     "seats": 58,
+     "seatChange": null,
+     "votes": 2344309,
+     "share": 14.58,
+     "swing": null
+    },
+    {
+     "name": "EFF",
+     "leader": "Julius Malema",
+     "seats": 39,
+     "seatChange": -5.0,
+     "votes": 1529961,
+     "share": 9.52,
+     "swing": -1.28
+    },
+    {
+     "name": "IFP",
+     "leader": "Velenkosini Hlabisa",
+     "seats": 17,
+     "seatChange": 3.0,
+     "votes": 618207,
+     "share": 3.85,
+     "swing": 0.47
+    },
+    {
+     "name": "PA",
+     "leader": "Gayton McKenzie",
+     "seats": 9,
+     "seatChange": 9.0,
+     "votes": 330425,
+     "share": 2.06,
+     "swing": 2.02
+    }
+   ],
+   "pmBefore": {
+    "name": "Cyril Ramaphosa",
+    "party": "African National Congress"
+   },
+   "pmAfter": {
+    "name": "Cyril Ramaphosa",
+    "party": "African National Congress"
+   },
+   "knownAs": "The ANC loses its majority",
+   "summary": "General elections were held in South Africa on 29 May 2024 to elect a new National Assembly as well as the provincial legislature in each of the nine provinces. This was the seventh general election held under the conditions of universal adult suffrage since the end of the apartheid era in 1994.",
+   "caveat": null,
+   "seatLeader": "ANC"
+  }
+ ]
+}

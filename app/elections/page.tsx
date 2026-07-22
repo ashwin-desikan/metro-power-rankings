@@ -3,12 +3,47 @@ import Link from "next/link";
 import { getUkElections } from "@/lib/ukElections";
 import { getCaElections } from "@/lib/caElections";
 import { getEuElections } from "@/lib/euElections";
+import { getAuElections } from "@/lib/auElections";
+import { getDeElections } from "@/lib/deElections";
+import { getFrElections } from "@/lib/frElections";
+import { getInElections } from "@/lib/inElections";
+import { getJpElections } from "@/lib/jpElections";
+import { getZaElections } from "@/lib/zaElections";
+import { getMxElections } from "@/lib/mxElections";
+import { getBrElections } from "@/lib/brElections";
+import { getIlElections } from "@/lib/ilElections";
+import { getItElections } from "@/lib/itElections";
+import { getKrElections } from "@/lib/krElections";
+import { getIdElections } from "@/lib/idElections";
+import { getEsElections } from "@/lib/esElections";
+import { getPlElections } from "@/lib/plElections";
+import { getNlElections } from "@/lib/nlElections";
+import { getArElections } from "@/lib/arElections";
+import { getTwElections } from "@/lib/twElections";
+import { getNgElections } from "@/lib/ngElections";
+import { getNzElections } from "@/lib/nzElections";
+import { getRuElections } from "@/lib/ruElections";
+import { getCnElections } from "@/lib/cnElections";
+import { getTrElections } from "@/lib/trElections";
+import { getUaElections } from "@/lib/uaElections";
+import { getIqElections } from "@/lib/iqElections";
+import { getPsElections } from "@/lib/psElections";
+import { getVaElections } from "@/lib/vaElections";
+import { ELECTION_HUBS } from "@/lib/electionHubsMeta";
+import { flagUrlByCode, flagSrcSetByCode } from "@/lib/flags";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import HubCardClient from "./HubCardClient";
+import { getUsElections } from "@/lib/usElections";
+import ElectionsWorldMap, { type HubMarker } from "./ElectionsWorldMap";
+import TimelineStrip, { TimelineLegend, type TlDot, type TlRow } from "./TimelineStrip";
+import { BackButton } from "./HubShared";
+import { getElectionCensus } from "@/lib/electionCensus";
+import LineChart, { type ChartSeries } from "./LineChart";
 
 const PATH = "/elections";
 const TITLE = "Elections";
 const DESC =
-  "Election history hubs: every general election, the parties, the leaders, the turnout and the results — for novices who want the story and experts who want the numbers.";
+  "Election history hubs for thirty-five polities: every general election, the parties, the leaders, the turnout and the results — with unfree and managed votes labelled as such. For novices who want the story and experts who want the numbers.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -16,6 +51,43 @@ export const metadata: Metadata = {
   alternates: { canonical: PATH },
   openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
 };
+
+type Card = { hub: string; head: string; body: string };
+
+// Seat of government for each hub — the world map's marker positions.
+const CAPITALS: Record<string, [number, number]> = {
+  us: [38.9072, -77.0369], uk: [51.5074, -0.1278], ca: [45.4215, -75.6972], eu: [50.8503, 4.3517],
+  mx: [19.4326, -99.1332], br: [-15.7975, -47.8919], ar: [-34.6037, -58.3816],
+  de: [52.52, 13.405], fr: [48.8566, 2.3522], it: [41.9028, 12.4964], es: [40.4168, -3.7038],
+  pl: [52.2297, 21.0122], nl: [52.0705, 4.3007], ru: [55.7558, 37.6173],
+  il: [31.7683, 35.2137], za: [-25.7479, 28.2293], ng: [9.0765, 7.3986], tr: [39.9334, 32.8597],
+  in: [28.6139, 77.209], jp: [35.6762, 139.6503], au: [-35.2809, 149.13], nz: [-41.2866, 174.7756],
+  kr: [37.5665, 126.978], id: [-6.2088, 106.8456], tw: [25.033, 121.5654], cn: [39.9042, 116.4074],
+  ua: [50.4501, 30.5234], iq: [33.3152, 44.3661], ps: [31.9038, 35.2034], va: [41.9029, 12.4534],
+};
+
+// Timeline dots come from the shared election census (lib/electionCensus),
+// which also powers the wartime cross-references and /elections/under-fire.
+
+// Cards are collapsed by default (flag, headline, last and next elections);
+// the description expands on click. Interactivity lives in HubCardClient.
+function HubCard({ c }: { c: Card }) {
+  const meta = ELECTION_HUBS[c.hub];
+  return (
+    <HubCardClient
+      href={meta.href}
+      flagSrc={flagUrlByCode(meta.flag)}
+      flagSrcSet={flagSrcSetByCode(meta.flag)}
+      name={meta.name}
+      note={meta.note ?? null}
+      noteTone={meta.noteTone ?? null}
+      head={c.head}
+      body={c.body}
+      last={meta.last}
+      next={meta.next}
+    />
+  );
+}
 
 export default function ElectionsPage() {
   const uk = getUkElections();
@@ -25,85 +97,426 @@ export default function ElectionsPage() {
   const caLast = ca.elections[ca.elections.length - 1];
   const eu = getEuElections();
   const euLast = eu.elections[eu.elections.length - 1];
+  const au = getAuElections();
+  const auLast = au.elections[au.elections.length - 1];
+  const de = getDeElections();
+  const deLast = de.elections[de.elections.length - 1];
+  const fr = getFrElections();
+  const frLegLast = fr.legislative[fr.legislative.length - 1];
+  const ind = getInElections();
+  const inLast = ind.elections[ind.elections.length - 1];
+  const jp = getJpElections();
+  const jpLast = jp.elections[jp.elections.length - 1];
+  const za = getZaElections();
+  const zaLast = za.elections[za.elections.length - 1];
+  const mx = getMxElections();
+  const br = getBrElections();
+  const il = getIlElections();
+  const ilLast = il.elections[il.elections.length - 1];
+  const it = getItElections();
+  const itLast = it.elections[it.elections.length - 1];
+  const kr = getKrElections();
+  const idn = getIdElections();
+  const es = getEsElections();
+  const esLast = es.elections[es.elections.length - 1];
+  const pl = getPlElections();
+  const nl = getNlElections();
+  const nlLast = nl.elections[nl.elections.length - 1];
+  const ar = getArElections();
+  const tw = getTwElections();
+  const ng = getNgElections();
+  const nz = getNzElections();
+  const nzLast = nz.elections[nz.elections.length - 1];
+  const ru = getRuElections();
+  const cn = getCnElections();
+  const tr = getTrElections();
+  const usd = getUsElections();
+  const ua = getUaElections();
+  const iq = getIqElections();
+  const ps = getPsElections();
+  const va = getVaElections();
+
+  // ---------- world map markers ----------
+  const markers: HubMarker[] = Object.values(ELECTION_HUBS)
+    .filter((m) => m.tier !== "compact" && CAPITALS[m.code])
+    .map((m) => ({
+      code: m.code, name: m.name, href: m.href,
+      lat: CAPITALS[m.code][0], lon: CAPITALS[m.code][1],
+      last: m.last, next: m.next, note: m.note ?? null,
+    }));
+
+  // ---------- "every election ever" timeline ----------
+  const tlRows: TlRow[] = getElectionCensus()
+    .filter((r) => ELECTION_HUBS[r.code]?.tier !== "compact")
+    .map((r) => ({
+    code: r.code, name: r.name, href: r.href,
+    dots: r.items.map((i): TlDot => ({ id: i.id, y: i.year, t: i.title, f: i.f })),
+  }));
+  const totalContests = tlRows.reduce((s, r) => s + r.dots.length, 0);
+
+  // ---------- cross-polity turnout ----------
+  const turnoutPoints = (els: { year: number; label: string; turnout: number | null }[], nm: string) =>
+    els
+      .filter((e) => e.year >= 1900 && e.turnout != null)
+      .map((e) => ({ x: e.year, y: e.turnout as number, label: `${nm} ${e.label}` }));
+  const turnoutSeries: ChartSeries[] = [
+    { name: "Australia", color: "#E4B505", points: turnoutPoints(au.elections, "Australia") },
+    { name: "New Zealand", color: "#4ECDC4", points: turnoutPoints(nz.elections, "New Zealand") },
+    { name: "United Kingdom", color: "#8A7CA8", points: turnoutPoints(uk.elections, "United Kingdom") },
+    { name: "Germany", color: "#9ca3af", points: turnoutPoints(de.elections.filter((e) => !e.unfree), "Germany") },
+    { name: "India", color: "#FF9933", points: turnoutPoints(ind.elections, "India") },
+    { name: "United States (pres.)", color: "#5B8DEF", points: turnoutPoints(usd.elections, "United States") },
+  ];
+
+  // ---------- freedom by decade ----------
+  const allDots = tlRows.flatMap((r) => r.dots);
+  const freedomDecades: { d: number; free: number; partial: number; unfree: number }[] = [];
+  for (let d = 1850; d <= 2020; d += 10) {
+    const slice = allDots.filter((x) => x.y >= d && x.y < d + 10);
+    if (!slice.length) continue;
+    freedomDecades.push({
+      d,
+      free: slice.filter((x) => x.f === 0).length,
+      partial: slice.filter((x) => x.f === 1).length,
+      unfree: slice.filter((x) => x.f === 2).length,
+    });
+  }
+
+  const top: Card[] = [
+    {
+      hub: "us",
+      head: "US Presidential Elections →",
+      body: "All 60 presidential elections from 1788 to 2024: every ticket, the popular and electoral votes, state-by-state results, turnout back to Washington, the Congress each contest seated, and the story of ten eras — from unanimous elections to the polarized present.",
+    },
+    {
+      hub: "uk",
+      head: "UK General Elections →",
+      body: `All ${uk.elections.length} general elections from ${ukFirst.year} to ${ukLast.year}: every result, every Prime Minister made and unmade, eight eras of electoral history, plus the referendums, devolved parliaments and mayoralties around them.`,
+    },
+  ];
+
+  const europe: Card[] = [
+    {
+      hub: "eu",
+      head: "European Parliament Elections →",
+      body: `All ${eu.elections.length} elections to the world's only directly elected transnational parliament, 1979 to ${euLast.year}: the political groups, the presidents they made, and a chamber that grew from 410 seats to ${euLast.totalSeats}.`,
+    },
+    {
+      hub: "de",
+      head: "German Federal Elections →",
+      body: `${de.elections.length} national elections from the Frankfurt Parliament of 1848 to ${deLast.year}, across Empire, Weimar, dictatorship and two republics — with the Nazi-era sham votes clearly labelled as such.`,
+    },
+    {
+      hub: "fr",
+      head: "French Elections →",
+      body: `${fr.legislative.length} legislative elections from the Revolution of 1791 to ${frLegLast.year} and all ${fr.presidential.length} Fifth Republic presidential contests: five republics, two empires, three monarchies.`,
+    },
+    {
+      hub: "it",
+      head: "Italian General Elections →",
+      body: `All ${it.elections.length} general elections from unification in 1861 to ${itLast.year}: the Liberal monarchy, the Fascist plebiscites labelled as such, the First Republic's decades and the Second Republic's upheavals.`,
+    },
+    {
+      hub: "es",
+      head: "Spanish General Elections →",
+      body: `All ${es.elections.length} general elections from 1867 to ${esLast.year}: the turno pacífico's arranged results stated plainly, the Second Republic's swings, and the democratic era from the transition to today's coalitions.`,
+    },
+    {
+      hub: "pl",
+      head: "Polish Elections →",
+      body: `From the Commonwealth's royal free elections of 1573 to the 2025 runoff: ${pl.presidential.length} contests for the head of state and ${pl.legislative.length} parliamentary elections, with the communist rituals labelled as such.`,
+    },
+    {
+      hub: "nl",
+      head: "Dutch General Elections →",
+      body: `All ${nl.elections.length} general elections from 1886 to ${nlLast.year}: the school struggle, the Pacification of 1917, the pillarised decades, the Fortuyn shock — and the fragmented coalitions of the world's purest proportional system.`,
+    },
+    {
+      hub: "ru",
+      head: "Russian & Soviet Elections →",
+      body: `${ru.presidential.length} presidential votes and ${ru.legislative.length} legislative elections, 1906–2024, recorded honestly: the Tsar's Dumas, the free 1917 vote the Bolsheviks overturned, the Soviet single-list theatre, the contested Duma of the 1990s — and the managed votes that closed the window.`,
+    },
+    {
+      hub: "ua",
+      head: "Ukrainian Elections →",
+      body: `${ua.presidential.length} presidential and ${ua.legislative.length} Rada elections since independence — every one competitive, three incumbents defeated, one falsified runoff overturned by revolution. Suspended under martial law since 2022; the record awaits the war's end.`,
+    },
+    {
+      hub: "va",
+      head: "Papal Conclaves →",
+      body: `${va.elections.length} papal elections across 964 years — the oldest electoral system still in use. The 33-month deadlock that invented the conclave, the schism with three rival popes, the crown vetoes, and the two-day conclaves of the modern age, through Leo XIV in 2025.`,
+    },
+  ];
+
+  const asiaOceania: Card[] = [
+    {
+      hub: "in",
+      head: "Indian General Elections →",
+      body: `${ind.elections.length} elections from the Raj-era assemblies of 1920 to ${inLast.year}: the world's largest democratic exercise, from Nehru's first sweep through the Emergency verdict to the Modi era.`,
+    },
+    {
+      hub: "jp",
+      head: "Japanese General Elections →",
+      body: `All ${jp.elections.length} general elections from 1890 — Asia's first national parliament — to the ${jpLast.year} snap election: the 1955 system, the reform era, and the LDP's seven decades of dominance.`,
+    },
+    {
+      hub: "au",
+      head: "Australian Federal Elections →",
+      body: `All ${au.elections.length} federal elections from Federation in 1901 to ${auLast.year}: preferential voting, compulsory turnout, the Dismissal, and every Prime Minister the ballot box made and unmade.`,
+    },
+    {
+      hub: "kr",
+      head: "South Korean Elections →",
+      body: `${kr.presidential.length} presidential contests from 1948 to the post-martial-law snap vote of 2025, plus every National Assembly election: the authoritarian rituals labelled as such, and the two-camp democracy since 1987.`,
+    },
+    {
+      hub: "id",
+      head: "Indonesian Elections →",
+      body: `From the colonial Volksraad of 1917 to the world's largest single-day vote: the 1955 experiment, the New Order's managed contests stated plainly, and the reformasi era's ${idn.presidential.length} presidential and ${idn.legislative.length} legislative elections.`,
+    },
+    {
+      hub: "tw",
+      head: "Taiwanese Presidential Elections →",
+      body: `${tw.elections.length} contests across the Republic of China's whole lineage, 1911–2024: the Beiyang parliaments, the 'eternal' National Assembly's rituals labelled as such, and the direct-election democracy born under missile fire in 1996.`,
+    },
+    {
+      hub: "nz",
+      head: "New Zealand General Elections →",
+      body: `All ${nz.elections.length} general elections from 1853 to ${nzLast.year}: the world's first vote with women's suffrage in 1893, the first Labour government, and the MMP era's coalition mathematics.`,
+    },
+    {
+      hub: "cn",
+      head: "Chinese National Congresses →",
+      body: `China holds no competitive national elections. This hub records what exists instead: all ${cn.elections.length} national congresses since 1949, their party-managed selection stated plainly, and what the theatre of unanimity reveals.`,
+    },
+  ];
+
+  const meAfrica: Card[] = [
+    {
+      hub: "za",
+      head: "South African General Elections →",
+      body: `All ${za.elections.length} general elections from Union in 1910 to ${zaLast.year}: the whites-only parliaments stated plainly as such, then the democratic era — from the queues of 1994 to the 2024 coalition.`,
+    },
+    {
+      hub: "il",
+      head: "Israeli Elections →",
+      body: `${il.elections.length} elections from the pre-state assemblies of 1920 to ${ilLast.year}: the Mapai decades, the Mahapach, the direct-election experiment and the deadlock cycle — where no party has ever won a majority.`,
+    },
+    {
+      hub: "tr",
+      head: "Turkish Elections →",
+      body: `From the Ottoman parliaments of 1877 to the 2023 runoff: ${tr.legislative.length} parliamentary and ${tr.presidential.length} presidential contests — the single-party era labelled, the coups, and the tilted contests of today.`,
+    },
+    {
+      hub: "ng",
+      head: "Nigerian Elections →",
+      body: `From Africa's first colonial election in 1923 to the three-way contest of 2023: ${ng.presidential.length} presidential and ${ng.legislative.length} parliamentary votes, with June 12 and the rigged contests labelled for what they were.`,
+    },
+    {
+      hub: "iq",
+      head: "Iraqi Elections →",
+      body: `${iq.legislative.length} parliamentary elections from the monarchy of 1946 to November 2025, recorded honestly: the palace-managed chambers, Saddam's 99.99% rituals stated plainly — and seven consecutive competitive elections since the purple fingers of 2005.`,
+    },
+    {
+      hub: "ps",
+      head: "Palestinian Elections →",
+      body: `The shortest record in the atlas: the annulled Mandate election of 1923, the Authority's founding votes of 1996, Abbas's 2005 mandate still running two decades later, and the free 2006 election that froze everything. Next vote scheduled for 28 November 2026.`,
+    },
+  ];
+
+  const americas: Card[] = [
+    {
+      hub: "ca",
+      head: "Canadian Federal Elections →",
+      body: `All ${ca.elections.length} federal elections from Confederation in 1867 to ${caLast.year}: every Parliament from Macdonald to Carney, the minority-government specialty, and the 1993 collapse.`,
+    },
+    {
+      hub: "mx",
+      head: "Mexican Elections →",
+      body: `${mx.presidential.length} presidential contests from 1853 to 2024 and the Chamber midterms since 1943: the Porfiriato, seventy-one years of one-party rule, and the transition that made elections real.`,
+    },
+    {
+      hub: "br",
+      head: "Brazilian Elections →",
+      body: `${br.presidential.length} presidential contests from 1891 to 2022 plus the parliamentary record: the Old Republic's machine counts, the dictatorship's electoral college, and the New Republic's runoffs.`,
+    },
+    {
+      hub: "ar",
+      head: "Argentine Presidential Elections →",
+      body: `All ${ar.elections.length} presidential contests from 1826 to Milei's runoff: the oligarchic republic's arranged successions, the secret-ballot revolution of 1916, Perón, the proscription years — and unbroken democracy since 1983.`,
+    },
+  ];
+
+  // Compact hubs: the scaling pattern for an ever-growing atlas. Each new
+  // polity joins as a flag + name link in its region — no card, no place in
+  // the map/timeline/charts above — and can be promoted to a featured card
+  // later by dropping `tier: "compact"` in electionHubsMeta.
+  const regions: { title: string; cards: Card[]; more: string[] }[] = [
+    { title: "Europe", cards: europe, more: ["ch", "be", "dk"] },
+    { title: "Asia & Oceania", cards: asiaOceania, more: ["sg", "my"] },
+    { title: "Middle East & Africa", cards: meAfrica, more: [] },
+    { title: "The Americas", cards: americas, more: [] },
+  ];
 
   return (
-    <main className="mx-auto max-w-5xl px-4 py-8">
+    <main className="mx-auto max-w-7xl px-4 py-8">
       <nav className="text-xs text-[var(--text-muted)] mb-4">
         <Link href="/" className="hover:underline">Home</Link>
         {" / "}
         <span>{TITLE}</span>
       </nav>
 
-      <header className="mb-8">
+      <div className="mb-4 flex flex-wrap items-center gap-2">
+        <BackButton href="/" label="Back to rankings" />
+        <BackButton href="/leaders" label="World Leaders" />
+        <BackButton href="/countries" label="Countries" />
+        <BackButton href="/conflicts" label="Conflicts" />
+      </div>
+
+      <header className="mb-6">
         <h1 className="text-3xl font-bold mb-2 text-[var(--text)]">{TITLE}</h1>
         <p className="text-[var(--text-muted)] max-w-3xl">{DESC}</p>
       </header>
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        <Link
-          href="/elections/uk"
-          className="block rounded-xl border p-5 transition-colors hover:border-[var(--accent)]"
-          style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
-        >
-          <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">United Kingdom</p>
-          <p className="text-xl font-bold text-[var(--text)] mt-1">UK General Elections →</p>
-          <p className="text-sm text-[var(--text-muted)] mt-2">
-            All {uk.elections.length} general elections from {ukFirst.year} to {ukLast.year}: every result, every
-            Prime Minister made and unmade, eight eras of electoral history, plus the referendums, devolved
-            parliaments and mayoralties around them.
-          </p>
-        </Link>
+      {/* ---------- world map ---------- */}
+      <section className="mb-10">
+        <ElectionsWorldMap markers={markers} />
+        <p className="text-xs text-[var(--text-muted)] mt-2">
+          {markers.length} election hubs, {totalContests.toLocaleString("en-US")} contests.{" "}
+          <span className="inline-flex items-center gap-1.5 ml-1">
+            <span className="inline-block h-2.5 w-2.5 rounded-full" style={{ backgroundColor: "#4ECDC4" }} /> competitive democracies
+          </span>
+          <span className="inline-flex items-center gap-1.5 ml-3">
+            <span className="inline-block h-2.5 w-2.5 rounded-full" style={{ backgroundColor: "#D97706" }} /> managed systems
+          </span>
+          <span className="ml-3 text-[var(--text-dim)]">Click any marker to open its hub.</span>
+        </p>
+      </section>
 
-        <Link
-          href="/elections/us"
-          className="block rounded-xl border p-5 transition-colors hover:border-[var(--accent)]"
-          style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
-        >
-          <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">United States</p>
-          <p className="text-xl font-bold text-[var(--text)] mt-1">US Presidential Elections →</p>
-          <p className="text-sm text-[var(--text-muted)] mt-2">
-            All 60 presidential elections from 1788 to 2024: every ticket, the popular and electoral votes,
-            state-by-state results, turnout back to Washington, the Congress each contest seated, and the
-            story of ten eras — from unanimous elections to the polarized present.
-          </p>
-        </Link>
-
-        <Link
-          href="/elections/ca"
-          className="block rounded-xl border p-5 transition-colors hover:border-[var(--accent)]"
-          style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
-        >
-          <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">Canada</p>
-          <p className="text-xl font-bold text-[var(--text)] mt-1">Canadian Federal Elections →</p>
-          <p className="text-sm text-[var(--text-muted)] mt-2">
-            All {ca.elections.length} federal elections from Confederation in 1867 to {caLast.year}: every
-            Parliament from Macdonald to Carney, the minority-government specialty, the 1993 collapse, and
-            eight eras of the world&apos;s second-largest Westminster democracy.
-          </p>
-        </Link>
-
-        <Link
-          href="/elections/eu"
-          className="block rounded-xl border p-5 transition-colors hover:border-[var(--accent)]"
-          style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
-        >
-          <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">European Union</p>
-          <p className="text-xl font-bold text-[var(--text)] mt-1">European Parliament Elections →</p>
-          <p className="text-sm text-[var(--text-muted)] mt-2">
-            All {eu.elections.length} elections to the world&apos;s only directly elected transnational
-            parliament, 1979 to {euLast.year}: the political groups, the presidents they made, turnout&apos;s
-            long slide and rebound, and a chamber that grew from 410 seats to {euLast.totalSeats}.
-          </p>
-        </Link>
+      <div className="grid gap-4 sm:grid-cols-2 mb-10">
+        {top.map((c) => <HubCard key={c.hub} c={c} />)}
       </div>
 
-      <section className="mt-10 text-sm text-[var(--text-muted)]">
+      {/* Regions side by side: each region is a column with its hubs stacked,
+          so every region is visible at once instead of section after section. */}
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4 mb-10 items-start">
+        {regions.map((r) => (
+          <section key={r.title}>
+            <h2 className="text-xl font-bold mb-3 text-[var(--text)]">{r.title}</h2>
+            <div className="grid gap-4">
+              {r.cards.map((c) => <HubCard key={c.hub} c={c} />)}
+            </div>
+            {r.more.length ? (
+              <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 items-center">
+                <span className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">More hubs</span>
+                {r.more.map((code) => {
+                  const m = ELECTION_HUBS[code];
+                  return (
+                    <Link
+                      key={code}
+                      href={m.href}
+                      className="inline-flex items-center gap-1.5 text-sm text-[var(--text-muted)] hover:text-[var(--accent)] hover:underline"
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={flagUrlByCode(m.flag)}
+                        srcSet={flagSrcSetByCode(m.flag)}
+                        alt={`Flag of ${m.name}`}
+                        width={16}
+                        height={12}
+                        className="rounded-[2px] border"
+                        style={{ borderColor: "var(--border)" }}
+                      />
+                      {m.name} →
+                    </Link>
+                  );
+                })}
+              </div>
+            ) : null}
+          </section>
+        ))}
+      </div>
+
+      {/* ---------- every election ever ---------- */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-bold mb-1 text-[var(--text)]">Two centuries of ballots</h2>
+        <p className="text-sm text-[var(--text-muted)] mb-4 max-w-3xl">
+          Every one of the {totalContests.toLocaleString("en-US")} contests in the atlas on one
+          timeline, newest first — the postwar democratic wave, the cluster of 1989–91, the solid
+          amber-and-red rows of the managed systems, and New Zealand&apos;s unbroken teal line back
+          to 1853. Scroll right to travel back in time.
+        </p>
+        <TimelineStrip rows={tlRows} />
+        <TimelineLegend />
+        <p className="text-sm mt-3 flex flex-wrap gap-x-5 gap-y-1">
+          <Link href="/elections/under-fire" className="text-[var(--accent)] hover:underline">
+            Elections under fire: every ballot held in wartime →
+          </Link>
+          <Link href="/elections/referendums" className="text-[var(--accent)] hover:underline">
+            Landmark referendums: when the people decided directly →
+          </Link>
+        </p>
+      </section>
+
+      {/* ---------- cross-polity charts ---------- */}
+      <section className="mb-10">
+        <h2 className="text-2xl font-bold mb-4 text-[var(--text)]">The world compared</h2>
+        <div className="grid gap-4 lg:grid-cols-2 items-start">
+          <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+            <h3 className="font-bold text-[var(--text)] mb-1">Turnout across six democracies, 1900–2026</h3>
+            <p className="text-xs text-[var(--text-muted)] mb-2">
+              Compulsory-voting Australia holds above 90% for a century; New Zealand and Germany run
+              high without compulsion; India climbs as the franchise deepens; American presidential
+              turnout lives 20 points below its peers. Hover for exact figures.
+            </p>
+            <LineChart series={turnoutSeries} yMax={100} yTicks={[25, 50, 75]} />
+          </div>
+          <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+            <h3 className="font-bold text-[var(--text)] mb-1">How much of the world voted freely</h3>
+            <p className="text-xs text-[var(--text-muted)] mb-3">
+              Every contest in the atlas by decade, colored by the honesty labels: the imperial and
+              colonial restrictions of the early rows, the mid-century surge of rituals under
+              dictatorship, the democratic flood after 1945 and again after 1989.
+            </p>
+            <div className="grid gap-1">
+              {freedomDecades.map(({ d, free, partial, unfree }) => {
+                const total = free + partial + unfree;
+                return (
+                  <div key={d} className="flex items-center gap-2">
+                    <span className="text-[10px] tabular-nums text-[var(--text-dim)] w-10 shrink-0">{d}s</span>
+                    <div className="flex h-3 flex-1 overflow-hidden rounded-sm" style={{ backgroundColor: "var(--border)" }}>
+                      {free > 0 ? <div style={{ width: `${(free / total) * 100}%`, backgroundColor: "#4ECDC4" }} title={`${free} free contests`} /> : null}
+                      {partial > 0 ? <div style={{ width: `${(partial / total) * 100}%`, backgroundColor: "#D97706" }} title={`${partial} restricted or tilted`} /> : null}
+                      {unfree > 0 ? <div style={{ width: `${(unfree / total) * 100}%`, backgroundColor: "#8E1B1B" }} title={`${unfree} unfree rituals`} /> : null}
+                    </div>
+                    <span className="text-[10px] tabular-nums text-[var(--text-dim)] w-8 shrink-0 text-right">{total}</span>
+                  </div>
+                );
+              })}
+            </div>
+            <p className="text-[10px] text-[var(--text-dim)] mt-2">
+              Share of contests in this atlas rated free (teal), restricted or tilted (amber), and
+              unfree (dark red), by decade. Coverage reflects the 26 polities tracked here.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-2 text-sm text-[var(--text-muted)]">
         <p>
           Related: <Link href="/uk-political-leadership" className="text-[var(--accent)] hover:underline">UK Political Leadership</Link>
           {" · "}
           <Link href="/us-political-leadership" className="text-[var(--accent)] hover:underline">US Political Leadership</Link>
           {" · "}
           <Link href="/leaders" className="text-[var(--accent)] hover:underline">World Leaders</Link>
+          {" · "}
+          <Link href="/power-atlas" className="text-[var(--accent)] hover:underline">Power Atlas</Link>
+          {" · "}
+          <Link href="/conflicts" className="text-[var(--accent)] hover:underline">Conflicts</Link>
+          {" · "}
+          <Link href="/mayors" className="text-[var(--accent)] hover:underline">Mayors</Link>
+          {" · "}
+          <Link href="/orgs" className="text-[var(--accent)] hover:underline">Organisations</Link>
         </p>
       </section>
     </main>

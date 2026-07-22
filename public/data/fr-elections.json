@@ -1,0 +1,5216 @@
+{
+ "meta": {
+  "title": "French elections",
+  "sources": [
+   "Wikipedia: French legislative election articles, 1791–2024, and French presidential election articles, 1958–2022 (results, infoboxes and leads)",
+   "Interior Ministry and Constitutional Council figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "legEras": [
+  {
+   "key": "revolution",
+   "label": "Revolution and Empire",
+   "span": "1791–May 1815",
+   "blurb": "From the first Legislative Assembly of 1791 through the Convention that abolished the monarchy, the Directory's managed contests and Napoleon's Hundred Days chamber, French elections were born in upheaval — franchise, method and meaning changing with each regime."
+  },
+  {
+   "key": "restoration",
+   "label": "The Restoration",
+   "span": "1815–1830",
+   "blurb": "Under the restored Bourbons a tiny propertied electorate — never much above 100,000 voters — chose the Chamber of Deputies. Ultra-royalists and liberals traded ascendancy until the liberal victory of 1830 provoked Charles X's ordinances and the July Revolution that ended the dynasty."
+  },
+  {
+   "key": "july-monarchy",
+   "label": "The July Monarchy",
+   "span": "1831–1846",
+   "blurb": "Louis Philippe's citizen-kingship doubled the electorate but kept it to the wealthy few. Elections turned on shades of liberalism — Movement against Resistance — while republicans, excluded from the ballot, organised in the streets that would rise in 1848."
+  },
+  {
+   "key": "second",
+   "label": "Second Republic and Second Empire",
+   "span": "1848–1869",
+   "blurb": "The Republic of 1848 introduced universal male suffrage at a stroke — nine million voters where a quarter-million had been. Louis-Napoléon's coup turned elections into managed plebiscites with official candidates, yet by 1869 the opposition's third of the vote signalled the Empire's liberalisation and coming end."
+  },
+  {
+   "key": "third",
+   "label": "The Third Republic",
+   "span": "1871–1936",
+   "blurb": "Born from defeat in 1871 with a monarchist assembly, the Third Republic confounded expectations for sixty-five years: the Seize Mai crisis of 1877 settled that governments answer to parliament, and elections swung between radical, moderate and socialist combinations down to the Popular Front of 1936."
+  },
+  {
+   "key": "fourth",
+   "label": "Liberation and the Fourth Republic",
+   "span": "1945–1956",
+   "blurb": "Women voted for the first time in the Liberation election of 1945. Proportional representation produced a three-party system of Communists, Socialists and Christian democrats, then the unstable coalitions — and the 1956 chamber that collapsed into the Algiers crisis of 1958."
+  },
+  {
+   "key": "fifth",
+   "label": "The Fifth Republic",
+   "span": "1958–2024",
+   "blurb": "De Gaulle's republic restored single-member seats with two rounds of voting, manufacturing majorities for two generations: Gaullist dominance, the alternances of 1981 and 1986, three cohabitations — until 2022 and 2024 delivered hung parliaments and the return of coalition arithmetic."
+  }
+ ],
+ "presEras": [
+  {
+   "key": "founding",
+   "label": "Founding the presidency",
+   "span": "1958–1969",
+   "blurb": "De Gaulle was first chosen by an electoral college of notables in 1958; the 1962 referendum then gave France direct presidential election. The 1965 contest — the first direct vote for a head of state in France since 1848 — forced de Gaulle to a runoff, and 1969 elected his heir Pompidou after his resignation."
+  },
+  {
+   "key": "alternance",
+   "label": "The age of alternance",
+   "span": "1974–1995",
+   "blurb": "Giscard's narrow 1974 win over Mitterrand, Mitterrand's revenge in 1981 that brought the left to power for the first time in the Fifth Republic, his 1988 re-election over Chirac, and Chirac's 1995 victory — two decades in which left and right traded the Élysée."
+  },
+  {
+   "key": "modern",
+   "label": "Shocks and recompositions",
+   "span": "2002–2022",
+   "blurb": "Le Pen's 2002 first-round shock and the republican front, Sarkozy and Hollande's single terms, and Macron's 2017 demolition of the old party system, confirmed in the 2022 rematch — every election since 2002 has had a National Front or National Rally candidate in or near the runoff."
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1791",
+   "label": "1791",
+   "year": 1791,
+   "kind": "legislative",
+   "date": "29 August–5 September 1791",
+   "era": "revolution",
+   "totalSeats": 745,
+   "majoritySeats": 373,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Legislative elections were held in France between 29 August and 5 September 1791, the first national elections to the Legislative Assembly. They took place during a period of turmoil caused by the Flight and Arrest at Varennes, the Jacobin split, the Champ-de-Mars Massacre and the Pillnitz Declaration.",
+   "seatLeader": null
+  },
+  {
+   "id": "1792",
+   "label": "1792",
+   "year": 1792,
+   "kind": "legislative",
+   "date": "September 1792 (electoral colleges)",
+   "era": "revolution",
+   "totalSeats": 749,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Marais",
+     "leader": "Lazare Carnot",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Montagnard",
+     "leader": "Maximilien Robespierre",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Girondins",
+     "leader": "Jacques Pierre Brissot",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The Convention",
+   "summary": "Legislative elections were held in France in August and September 1792 to elect deputies to the National Convention. Primary elections to elect members of electoral colleges were held in August, with the electoral colleges subsequently voting from 2 to 19 September.",
+   "seatLeader": null
+  },
+  {
+   "id": "1795",
+   "label": "1795",
+   "year": 1795,
+   "kind": "legislative",
+   "date": "12–21 October 1795",
+   "era": "revolution",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Thermidorians",
+     "leader": "Paul Barras",
+     "seats": 63,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Clichyens",
+     "leader": "Mathieu Dumas",
+     "seats": 54,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Royalists",
+     "leader": "Vincent-Marie Viénot de Vaublanc",
+     "seats": 33,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Legislative elections were held in France between 12 and 21 October 1795 (20 to 29 Vendémiaire, Year IV) to elect one-third of the members of the Council of Five Hundred and the Council of Ancients, the lower and upper houses of the legislature. The elections were held in accordance with the Constitution of the Year III and the first under the French Directory.",
+   "seatLeader": "Thermidorians"
+  },
+  {
+   "id": "1797",
+   "label": "1797",
+   "year": 1797,
+   "kind": "legislative",
+   "date": "21 March – 2 April 1797",
+   "era": "revolution",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Constitutional monarchists",
+     "leader": null,
+     "seats": 182,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republicans",
+     "leader": null,
+     "seats": 34,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Following the events of the Conspiracy of Equals, the Jacobins and Montagnards lost their majority in the house, due to their support of François-Noël Babeuf. This led to a massive pro-Royalist push in the country, which increased with the impending end to the War of the First Coalition.",
+   "seatLeader": "Constitutional monarchists"
+  },
+  {
+   "id": "1798",
+   "label": "1798",
+   "year": 1798,
+   "kind": "legislative",
+   "date": "9–18 April 1798",
+   "era": "revolution",
+   "totalSeats": 298,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Thermidorians",
+     "leader": "Paul Barras",
+     "seats": null,
+     "seatChange": 107.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Jacobins",
+     "leader": "Marie-Joseph Chénier",
+     "seats": null,
+     "seatChange": 105.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Legislative elections were held in France between 9 and 18 April 1798 to elect one-third of the members of the Council of Five Hundred and the Council of Ancients, the lower and upper houses of the legislature, as well as 201 vacant seats. They marked the beginning of the end of the French far-left and rise of the anti-Montagnard and anti-Jacobin groupings.",
+   "seatLeader": null
+  },
+  {
+   "id": "1799",
+   "label": "1799",
+   "year": 1799,
+   "kind": "legislative",
+   "date": "9–16 April 1799",
+   "era": "revolution",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Montagnards",
+     "leader": "Jean Antoine Debry",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Directoriaux",
+     "leader": "François Barthélemy",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Rightists",
+     "leader": "Jean-Pierre Fabre",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Far-left",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Following the Coup of 11 May 1798 (22 Floréal year VI in the Republican calendar), the small Jacobin minority led by Generals Jean-Antoine Marbot and Jean-Baptiste Jourdan harassed the Directory, with the occasional support of directorial deputies exasperated by the encroachments of the executive.",
+   "seatLeader": null
+  },
+  {
+   "id": "1815-may",
+   "label": "May 1815",
+   "year": 1815,
+   "kind": "legislative",
+   "date": "8–22 May 1815",
+   "era": "revolution",
+   "totalSeats": 629,
+   "majoritySeats": 315,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Jacobins",
+     "leader": "Bertrand Barère",
+     "seats": 30,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberals",
+     "leader": "Gilbert du Motier",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bonapartists",
+     "leader": "Lucien Bonaparte",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "Hundred Days chamber",
+   "summary": "Legislative elections were held in France between 8 and 22 May 1815 for the period of the Hundred Days. The elections were held to appoint deputies to the Chamber of Representatives established by the Additional Charter of 22 April 1815.",
+   "seatLeader": "Jacobins"
+  },
+  {
+   "id": "1815",
+   "label": "1815",
+   "year": 1815,
+   "kind": "legislative",
+   "date": "May 1815",
+   "era": "restoration",
+   "totalSeats": 400,
+   "majoritySeats": 201,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Ultra-royalist",
+     "leader": "François-Régis de La Bourdonnaye",
+     "seats": 350,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Opposition",
+     "leader": null,
+     "seats": 50,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Joseph Fouché",
+    "party": "Elected Prime Minister"
+   },
+   "pmAfter": {
+    "name": "Charles Maurice de Talleyrand",
+    "party": "Legislative elections were held in France on 18 and 28 August 1815 to elect members of the first Chamber of Deputies of the Bourbon Restoration."
+   },
+   "knownAs": "Chambre introuvable",
+   "summary": "17891791179217951797179817991815 (May)1815 (Aug)181618171818181918201824182718301831183418371839184218461848184918521857186318691871187618771881188518891893189819021906191019141919192419281932193619451946 (Jun)1946 (Nov)1951195619581962196719681973197819811986198819931997200220072012201720222024Next",
+   "seatLeader": "Ultra-royalist"
+  },
+  {
+   "id": "1816",
+   "label": "1816",
+   "year": 1816,
+   "kind": "legislative",
+   "date": "25 September and 4 October 1816",
+   "era": "restoration",
+   "totalSeats": 258,
+   "majoritySeats": 155,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Doctrinaires",
+     "leader": "Armand Emmanuel de Vignerot du Plessis",
+     "seats": 136,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ultra-royalist",
+     "leader": "François-Régis de La Bourdonnaye",
+     "seats": 92,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republicans–Bonapartists",
+     "leader": "Jacques-Charles Dupont de l'Eure",
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberals",
+     "leader": "Marc-René de Voyer de Paulmy d'Argenson",
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "The Duke of Richelieu",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "The Duke of Richelieu",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in France on 25 September and 4 October 1816 to elect the first legislature of the Second Restoration. Voters elected three-fifths of all deputies in the first round.",
+   "seatLeader": "Doctrinaires"
+  },
+  {
+   "id": "1817",
+   "label": "1817",
+   "year": 1817,
+   "kind": "legislative",
+   "date": "20 September 1817",
+   "era": "restoration",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Partial legislative elections were held in France on 20 September 1817, during the Second Restoration, to choose delegates to the Chamber of Deputies. It was the first of three elections (the others coming in 1818 and 1819) under a new law that called for legislative elections to be held annually in one-fifth of the nation's departments.",
+   "seatLeader": null
+  },
+  {
+   "id": "1818",
+   "label": "1818",
+   "year": 1818,
+   "kind": "legislative",
+   "date": "17 June – 19 July 1818",
+   "era": "restoration",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberals",
+     "leader": null,
+     "seats": 22,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ministerials",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal-adjacents",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ultra-royalist",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Partial legislative elections were held in France in 1818, during the Bourbon Restoration. The election resulted in little change in the party-makeup parliament.",
+   "seatLeader": "Liberals"
+  },
+  {
+   "id": "1819",
+   "label": "1819",
+   "year": 1819,
+   "kind": "legislative",
+   "date": "11 September 1819",
+   "era": "restoration",
+   "totalSeats": 49,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 37,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ministerials",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ultra-royalist",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Doctrinaires",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Partial legislative elections were held in France on 11 September 1819, during the Second Restoration, to choose delegates to the French Chamber of Deputies. It was the third of three elections (the others coming in 1817 and 1818) under a new law that called for legislative elections to be held annually in one-fifth of the nation's departments.",
+   "seatLeader": "Liberal Party"
+  },
+  {
+   "id": "1820",
+   "label": "1820",
+   "year": 1820,
+   "kind": "legislative",
+   "date": "4 and 13 November 1820",
+   "era": "restoration",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Rightists",
+     "leader": null,
+     "seats": 187,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal",
+     "leader": "Benjamin Constant",
+     "seats": 33,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Armand Emmanuel de Vignerot du Plessis",
+    "party": "Doctrinaire"
+   },
+   "pmAfter": {
+    "name": "Armand Emmanuel de Vignerot du Plessis",
+    "party": "Doctrinaire"
+   },
+   "knownAs": null,
+   "summary": "Only citizens paying taxes were eligible to vote. All electors elected three-fifths of all deputies in the first round.",
+   "seatLeader": "Rightists"
+  },
+  {
+   "id": "1824",
+   "label": "1824",
+   "year": 1824,
+   "kind": "legislative",
+   "date": "25 February 1824 and 6 March 1824",
+   "era": "restoration",
+   "totalSeats": 428,
+   "majoritySeats": 215,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Rightists",
+     "leader": null,
+     "seats": 411,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal",
+     "leader": "Benjamin Constant",
+     "seats": 17,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Joseph de Villèle",
+    "party": "Ultra-royalist"
+   },
+   "pmAfter": {
+    "name": "Joseph de Villèle",
+    "party": "Ultra-royalist"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in France on 25 February and 6 March 1824. The election was an overwhelming victory for Villèle and rightists, as only 17 MPs of the opposition were re-elected (including Royer-Collard, Cécile Stanilas de Girardin, Benjamin Constant and Maximilien Sébastien Foy).",
+   "seatLeader": "Rightists"
+  },
+  {
+   "id": "1827",
+   "label": "1827",
+   "year": 1827,
+   "kind": "legislative",
+   "date": "17 and 24 November 1827",
+   "era": "restoration",
+   "totalSeats": 430,
+   "majoritySeats": 216,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Left-wing opposition",
+     "leader": null,
+     "seats": 199,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ministerials",
+     "leader": null,
+     "seats": 195,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Right-wing opposition",
+     "leader": null,
+     "seats": 31,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Joseph de Villèle",
+    "party": "Elected Prime Minister"
+   },
+   "pmAfter": {
+    "name": "The Viscount of Martignac",
+    "party": "Legislative elections were held in France on 17 and 24 November 1827. The Ultra-royalists loyal to Charles X of France lost the elections."
+   },
+   "knownAs": null,
+   "summary": "Suffrage had been restricted to taxpayers since the Restoration. In addition, the monarchist Plessis government had passed a law in 1820 which gave a second vote to the richest 25% of the electorate, known to historians as the \"loi du double vote\".",
+   "seatLeader": "Left-wing opposition"
+  },
+  {
+   "id": "1830",
+   "label": "1830",
+   "year": 1830,
+   "kind": "legislative",
+   "date": "and and 19 July 1830",
+   "era": "restoration",
+   "totalSeats": 417,
+   "majoritySeats": 209,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The electoral system, which was used for the last time, was the Loi du double vote (\"double voting\") as defined in June 1820, combining single-member districts for three-fifths of the deputies, elected by 94,000 registered voters, with at-large voting in each of the departments of France for the remaining seats. This meant that many men could vote twice.",
+   "seatLeader": null
+  },
+  {
+   "id": "1831",
+   "label": "1831",
+   "year": 1831,
+   "kind": "legislative",
+   "date": "5 July 1831",
+   "era": "july-monarchy",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberals",
+     "leader": "Casimir Périer",
+     "seats": 282,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Legitimists",
+     "leader": "Pierre-Antoine Berryer",
+     "seats": 104,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republicans and leftists",
+     "leader": "Jacques Laffitte",
+     "seats": 73,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Casimir Périer",
+    "party": "Elected Prime Minister"
+   },
+   "pmAfter": {
+    "name": "Casimir Périer",
+    "party": "Legislative elections were held in France on 5 July 1831."
+   },
+   "knownAs": null,
+   "summary": "Although suffrage remained limited, the electorate was nearly doubled. Voters now needed to be at least twenty-five years old and to pay 200 francs in income taxes, down from 300 francs before the revolution.",
+   "seatLeader": "Liberals"
+  },
+  {
+   "id": "1834",
+   "label": "1834",
+   "year": 1834,
+   "kind": "legislative",
+   "date": "21 June 1834",
+   "era": "july-monarchy",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": {
+    "name": "Jean-de-Dieu Soult",
+    "party": "Resistance Party\tJean-de-Dieu Soult"
+   },
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "17891791179217951797179817991815 (May)1815 (Aug)181618171818181918201824182718301831183418371839184218461848184918521857186318691871187618771881188518891893189819021906191019141919192419281932193619451946 (Jun)1946 (Nov)1951195619581962196719681973197819811986198819931997200220072012201720222024Next",
+   "seatLeader": null
+  },
+  {
+   "id": "1837",
+   "label": "1837",
+   "year": 1837,
+   "kind": "legislative",
+   "date": "4 November 1837",
+   "era": "july-monarchy",
+   "totalSeats": 459,
+   "majoritySeats": 230,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Votes",
+     "leader": "Louis-Mathieu Molé",
+     "seats": 163,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "%",
+     "leader": "André Dupin",
+     "seats": 142,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Seats",
+     "leader": "François Guizot",
+     "seats": 64,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Louis-Mathieu Molé",
+    "party": "Elected Prime Minister"
+   },
+   "pmAfter": {
+    "name": "Louis-Mathieu Molé",
+    "party": "Legislative elections were held in France on 4 November 1837."
+   },
+   "knownAs": null,
+   "summary": "17891791179217951797179817991815 (May)1815 (Aug)181618171818181918201824182718301831183418371839184218461848184918521857186318691871187618771881188518891893189819021906191019141919192419281932193619451946 (Jun)1946 (Nov)1951195619581962196719681973197819811986198819931997200220072012201720222024Next",
+   "seatLeader": "Votes"
+  },
+  {
+   "id": "1839",
+   "label": "1839",
+   "year": 1839,
+   "kind": "legislative",
+   "date": "2 and 6 March 1839",
+   "era": "july-monarchy",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Opposition",
+     "leader": "François Arago",
+     "seats": 240,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ministerial",
+     "leader": "François Guizot",
+     "seats": 199,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Legitimists",
+     "leader": "Pierre-Antoine Berryer",
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Louis-Mathieu Molé",
+    "party": "Ministerial"
+   },
+   "pmAfter": {
+    "name": "Jean-de-Dieu Soult",
+    "party": "Legislative elections were held in France on 2 and 6 March 1839. Only citizens paying taxes were eligible to vote."
+   },
+   "knownAs": null,
+   "summary": "17891791179217951797179817991815 (May)1815 (Aug)181618171818181918201824182718301831183418371839184218461848184918521857186318691871187618771881188518891893189819021906191019141919192419281932193619451946 (Jun)1946 (Nov)1951195619581962196719681973197819811986198819931997200220072012201720222024Next",
+   "seatLeader": "Opposition"
+  },
+  {
+   "id": "1842",
+   "label": "1842",
+   "year": 1842,
+   "kind": "legislative",
+   "date": "9 July 1842",
+   "era": "july-monarchy",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Resistance Party",
+     "leader": "François Guizot",
+     "seats": 266,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Opposition",
+     "leader": "Adolphe Thiers",
+     "seats": 193,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jean-de-Dieu Soult",
+    "party": "Resistance Party"
+   },
+   "pmAfter": {
+    "name": "Jean-de-Dieu Soult",
+    "party": "Resistance Party"
+   },
+   "knownAs": null,
+   "summary": "17891791179217951797179817991815 (May)1815 (Aug)181618171818181918201824182718301831183418371839184218461848184918521857186318691871187618771881188518891893189819021906191019141919192419281932193619451946 (Jun)1946 (Nov)1951195619581962196719681973197819811986198819931997200220072012201720222024Next",
+   "seatLeader": "Resistance Party"
+  },
+  {
+   "id": "1846",
+   "label": "1846",
+   "year": 1846,
+   "kind": "legislative",
+   "date": "1 August 1846",
+   "era": "july-monarchy",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Resistance Party",
+     "leader": "François Guizot",
+     "seats": 290,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Movement Party",
+     "leader": "Adolphe Thiers",
+     "seats": 168,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jean-de-Dieu Soult",
+    "party": "Resistance Party"
+   },
+   "pmAfter": {
+    "name": "Jean-de-Dieu Soult",
+    "party": "Resistance Party"
+   },
+   "knownAs": null,
+   "summary": "17891791179217951797179817991815 (May)1815 (Aug)181618171818181918201824182718301831183418371839184218461848184918521857186318691871187618771881188518891893189819021906191019141919192419281932193619451946 (Jun)1946 (Nov)1951195619581962196719681973197819811986198819931997200220072012201720222024Next",
+   "seatLeader": "Resistance Party"
+  },
+  {
+   "id": "1848",
+   "label": "1848",
+   "year": 1848,
+   "kind": "legislative",
+   "date": "23 and 24 April 1848",
+   "era": "second",
+   "totalSeats": 880,
+   "majoritySeats": 441,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Moderate Republicans",
+     "leader": "Louis Eugène Cavaignac",
+     "seats": 600,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Party of Order",
+     "leader": "Nicolas Changarnier",
+     "seats": 200,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Montagnard",
+     "leader": "Alexandre Ledru-Rollin",
+     "seats": 80,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jacques-Charles Dupont",
+    "party": "Moderate Republicans"
+   },
+   "pmAfter": {
+    "name": "Jacques-Charles Dupont",
+    "party": "Moderate Republicans"
+   },
+   "knownAs": "First with universal male suffrage",
+   "summary": "Constituent Assembly elections were held in France on 23 and 24 April 1848 to elect the Constituent Assembly of the new Second Republic. Over nine million citizens were eligible to vote in the first French election since 1792 held under male universal suffrage.",
+   "seatLeader": "Moderate Republicans"
+  },
+  {
+   "id": "1849",
+   "label": "1849",
+   "year": 1849,
+   "kind": "legislative",
+   "date": "13 and 14 May 1849",
+   "era": "second",
+   "totalSeats": 705,
+   "majoritySeats": 353,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Party of Order",
+     "leader": "Odilon Barrot",
+     "seats": 450,
+     "seatChange": null,
+     "votes": 3310000,
+     "share": 50.2,
+     "swing": null
+    },
+    {
+     "name": "Democratic Socialists",
+     "leader": null,
+     "seats": 180,
+     "seatChange": null,
+     "votes": 1955000,
+     "share": 29.65,
+     "swing": null
+    },
+    {
+     "name": "Montagnard",
+     "leader": "Alexandre Auguste Ledru-Rollin",
+     "seats": 180,
+     "seatChange": null,
+     "votes": 1955000,
+     "share": 29.65,
+     "swing": null
+    },
+    {
+     "name": "Constitutionalist Republicans",
+     "leader": "Louis-Eugène Cavaignac",
+     "seats": 75,
+     "seatChange": null,
+     "votes": 834000,
+     "share": 12.65,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Odilon Barrot",
+    "party": "Party of Order"
+   },
+   "pmAfter": {
+    "name": "Alphonse Henri, comte d'Hautpoul",
+    "party": "Party of Order"
+   },
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in France on 13 and 14 May 1849. Voters elected the first National Assembly of the Second Republic.",
+   "seatLeader": "Party of Order"
+  },
+  {
+   "id": "1852",
+   "label": "1852",
+   "year": 1852,
+   "kind": "legislative",
+   "date": "29 February 1852 and 14 March 1852",
+   "era": "second",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 61.3,
+   "parties": [
+    {
+     "name": "Bonapartists",
+     "leader": "Adolphe Billault",
+     "seats": 253,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Monarchists",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Léon Faucher",
+    "party": "Party of Order"
+   },
+   "pmAfter": {
+    "name": "François-Xavier de Casabianca",
+    "party": "Bonapartists"
+   },
+   "knownAs": null,
+   "summary": "Emperor Napoleon III's Bonapartists won a huge majority consisting of 258 of the 261 seats (five Royalists allied with the Bonapartists). The Party of Order that had won a majority in the 1849 election was banned following their opposition to the 1851 coup by President Louis Napoleon Bonaparte.",
+   "seatLeader": "Bonapartists"
+  },
+  {
+   "id": "1857",
+   "label": "1857",
+   "year": 1857,
+   "kind": "legislative",
+   "date": "28 February 1857 and 5 March 1857",
+   "era": "second",
+   "totalSeats": 283,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Bonapartists",
+     "leader": "Charles de Morny",
+     "seats": 276,
+     "seatChange": null,
+     "votes": 5471000,
+     "share": 89.16,
+     "swing": null
+    },
+    {
+     "name": "Republicans",
+     "leader": "Michel Goudchaux",
+     "seats": 7,
+     "seatChange": null,
+     "votes": 665000,
+     "share": 10.84,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jules Baroche",
+    "party": "Bonapartist"
+   },
+   "pmAfter": {
+    "name": "Jules Baroche",
+    "party": "Bonapartist"
+   },
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in France on 28 February 1857, with a second round on 5 March. According to the constitution of the empire, partisans of the regime ran as \"official candidates\" of the regime in often gerrymandered circonscriptions.",
+   "seatLeader": "Bonapartists"
+  },
+  {
+   "id": "1863",
+   "label": "1863",
+   "year": 1863,
+   "kind": "legislative",
+   "date": "5–6 July 1863",
+   "era": "second",
+   "totalSeats": 268,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Bonapartists",
+     "leader": "Charles de Morny",
+     "seats": 251,
+     "seatChange": null,
+     "votes": 5355000,
+     "share": 74.22,
+     "swing": null
+    },
+    {
+     "name": "Republicans",
+     "leader": "Émile Ollivier",
+     "seats": 17,
+     "seatChange": null,
+     "votes": 1860000,
+     "share": 25.78,
+     "swing": null
+    },
+    {
+     "name": "Legitimists",
+     "leader": "Pierre-Antoine Berryer",
+     "seats": 15,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jules Baroche",
+    "party": "Bonapartist"
+   },
+   "pmAfter": {
+    "name": "Eugène Rouher",
+    "party": "Bonapartist"
+   },
+   "knownAs": null,
+   "summary": "17891791179217951797179817991815 (May)1815 (Aug)181618171818181918201824182718301831183418371839184218461848184918521857186318691871187618771881188518891893189819021906191019141919192419281932193619451946 (Jun)1946 (Nov)1951195619581962196719681973197819811986198819931997200220072012201720222024Next",
+   "seatLeader": "Bonapartists"
+  },
+  {
+   "id": "1869",
+   "label": "1869",
+   "year": 1869,
+   "kind": "legislative",
+   "date": "and and 7 June 1869",
+   "era": "second",
+   "totalSeats": 161,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Bonapartists",
+     "leader": "Émile Ollivier",
+     "seats": 120,
+     "seatChange": null,
+     "votes": 4455000,
+     "share": 55.7,
+     "swing": null
+    },
+    {
+     "name": "Conservative Bonapartists",
+     "leader": "Adolphe Vuitry",
+     "seats": 92,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Legitimists",
+     "leader": "Adolphe Thiers",
+     "seats": 41,
+     "seatChange": null,
+     "votes": 3543000,
+     "share": 44.3,
+     "swing": null
+    },
+    {
+     "name": "Republicans",
+     "leader": "Léon Gambetta",
+     "seats": 30,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Adolphe Vuitry",
+    "party": "Conservative Bonapartist"
+   },
+   "pmAfter": {
+    "name": "Prosper de Chasseloup-Laubat",
+    "party": "Liberal Bonapartist"
+   },
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in France on 24 May and 1 June 1869, with a second round on 6 and 7 June. These elections resulted in a victory for the regime of the Second Empire, but the opposition strengthened its presence in the legislature.",
+   "seatLeader": "Liberal Bonapartists"
+  },
+  {
+   "id": "1871",
+   "label": "1871",
+   "year": 1871,
+   "kind": "legislative",
+   "date": "8 February 1871",
+   "era": "third",
+   "totalSeats": 758,
+   "majoritySeats": 320,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Republicans",
+     "leader": "Jules Grévy",
+     "seats": 249,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Orléanists",
+     "leader": "Henri d'Orléans",
+     "seats": 223,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Legitimists",
+     "leader": "Henri of Artois",
+     "seats": 185,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberals",
+     "leader": null,
+     "seats": 78,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bonapartists",
+     "leader": null,
+     "seats": 23,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Louis-Jules Trochu",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Jules Dufaure",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in France on 8 February 1871 to elect the first legislature of the Third French Republic, the unicameral National Assembly. The elections were held during a situation of crisis in the country, as following the Franco-Prussian War, 43 departments were occupied by Prussian forces.",
+   "seatLeader": "Republicans"
+  },
+  {
+   "id": "1876",
+   "label": "1876",
+   "year": 1876,
+   "kind": "legislative",
+   "date": "20 February and 5 March 1876",
+   "era": "third",
+   "totalSeats": 533,
+   "majoritySeats": 267,
+   "turnout": 75.9,
+   "parties": [
+    {
+     "name": "Republican Left",
+     "leader": "Jules Dufaure",
+     "seats": 193,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican Union",
+     "leader": "Léon Gambetta",
+     "seats": 98,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bonapartists",
+     "leader": "Napoléon-Jérôme Bonaparte",
+     "seats": 76,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Louis Buffet",
+    "party": "Monarchist"
+   },
+   "pmAfter": {
+    "name": "Jules Dufaure",
+    "party": "Republican Left"
+   },
+   "knownAs": null,
+   "summary": "The result was a victory for the Republicans. President Patrice MacMahon subsequently invited Jules Simon, who declared himself \"resolutely republican and resolutely conservative\", to form a government, but dismissed him on 16 May 1877, precipitating the Seize Mai crisis and further elections.",
+   "seatLeader": "Republican Left"
+  },
+  {
+   "id": "1877",
+   "label": "1877",
+   "year": 1877,
+   "kind": "legislative",
+   "date": "14–28 October 1877",
+   "era": "third",
+   "totalSeats": 521,
+   "majoritySeats": 261,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Republican Union",
+     "leader": "Jules Dufaure",
+     "seats": 313,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bonapartists",
+     "leader": "Georges-Eugène Haussmann",
+     "seats": 104,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Legitimists",
+     "leader": "Albert de Broglie",
+     "seats": 44,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Orléanist",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Gaëtan de Rochebouët",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Jules Dufaure",
+    "party": "Republican Left"
+   },
+   "knownAs": "After the Seize Mai crisis",
+   "summary": "President Patrice de MacMahon dissolved the Chamber of Deputies elected in 1876, in the hope of a conservative and royalist victory. Although royalists lost seats, Bonapartists increased their seat total over 1876; the Republicans lost 80 seats, but retained a majority.",
+   "seatLeader": "Republican Union"
+  },
+  {
+   "id": "1881",
+   "label": "1881",
+   "year": 1881,
+   "kind": "legislative",
+   "date": "21 August and 4 September 1881",
+   "era": "third",
+   "totalSeats": 545,
+   "majoritySeats": 273,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Republican Union",
+     "leader": "Léon Gambetta",
+     "seats": 204,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Republican Left",
+     "leader": "Jules Ferry",
+     "seats": 168,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Bonapartists",
+     "leader": "Georges-Eugène Haussmann",
+     "seats": 46,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Far-left",
+     "leader": "Louis Blanc",
+     "seats": 46,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Monarchists",
+     "leader": null,
+     "seats": 42,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Centre-left",
+     "leader": null,
+     "seats": 39,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jules Ferry",
+    "party": "Republican Left"
+   },
+   "pmAfter": {
+    "name": "Léon Gambetta",
+    "party": "Republican Union"
+   },
+   "knownAs": null,
+   "summary": "It was a great success for the followers of Léon Gambetta, whom President Jules Grévy appointed premier two months after the election. His government only lasted 73 days, however, before falling over the issue of electoral reform.",
+   "seatLeader": "Republican Union"
+  },
+  {
+   "id": "1885",
+   "label": "1885",
+   "year": 1885,
+   "kind": "legislative",
+   "date": "4–18 October 1885",
+   "era": "third",
+   "totalSeats": 584,
+   "majoritySeats": 293,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Opportunist Republicans",
+     "leader": "Henri Brisson",
+     "seats": 200,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Moderates",
+     "leader": null,
+     "seats": 83,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Monarchists",
+     "leader": "Armand de Mackau",
+     "seats": 73,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Henri Brisson",
+    "party": "Republican Union"
+   },
+   "pmAfter": {
+    "name": "Henri Brisson",
+    "party": "Opportunist Republicans"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in France on 4 and 18 October 1885. Following the deaths of Louis-Napoléon, Prince Imperial and the Comte de Chambord, the monarchists and Bonapartists formed a conservative electoral alliance under the leadership of Baron Armand de Mackau.",
+   "seatLeader": "Opportunist Republicans"
+  },
+  {
+   "id": "1889",
+   "label": "1889",
+   "year": 1889,
+   "kind": "legislative",
+   "date": "22 September and 6 October 1889",
+   "era": "third",
+   "totalSeats": 576,
+   "majoritySeats": 289,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Moderate Republicans",
+     "leader": "Jean Casimir-Perier",
+     "seats": 216,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent Radicals",
+     "leader": "Georges Clemenceau",
+     "seats": 100,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Monarchists",
+     "leader": "Albert de Mun",
+     "seats": 86,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Boulangists",
+     "leader": "Georges Boulanger",
+     "seats": 72,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Pierre Tirard",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Pierre Tirard",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "17891791179217951797179817991815 (May)1815 (Aug)181618171818181918201824182718301831183418371839184218461848184918521857186318691871187618771881188518891893189819021906191019141919192419281932193619451946 (Jun)1946 (Nov)1951195619581962196719681973197819811986198819931997200220072012201720222024Next",
+   "seatLeader": "Moderate Republicans"
+  },
+  {
+   "id": "1893",
+   "label": "1893",
+   "year": 1893,
+   "kind": "legislative",
+   "date": "20 August and 3 September 1893",
+   "era": "third",
+   "totalSeats": 566,
+   "majoritySeats": 284,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Moderate Republicans",
+     "leader": "Jean Casimir-Perier",
+     "seats": 279,
+     "seatChange": null,
+     "votes": 3187670,
+     "share": 44.6,
+     "swing": null
+    },
+    {
+     "name": "Radicals",
+     "leader": "Georges Clemenceau",
+     "seats": 143,
+     "seatChange": null,
+     "votes": 1443915,
+     "share": 20.2,
+     "swing": null
+    },
+    {
+     "name": "Conservatives",
+     "leader": "Albert de Mun",
+     "seats": 76,
+     "seatChange": null,
+     "votes": 1178007,
+     "share": 16.48,
+     "swing": null
+    },
+    {
+     "name": "Socialists",
+     "leader": null,
+     "seats": 31,
+     "seatChange": null,
+     "votes": 598206,
+     "share": 8.37,
+     "swing": null
+    },
+    {
+     "name": "Republicans",
+     "leader": "Jean Casimir-Perier",
+     "seats": 27,
+     "seatChange": null,
+     "votes": 458416,
+     "share": 6.41,
+     "swing": null
+    },
+    {
+     "name": "Radical-Socialists",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 171810,
+     "share": 2.4,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Charles Dupuy",
+    "party": "Democratic Union"
+   },
+   "pmAfter": {
+    "name": "Jean Casimir-Perier",
+    "party": "Democratic Union"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in France on 20 August and 3 September 1893. The Republicans were victorious and gained an increased majority, which resulted in President Sadi Carnot inviting Jean Casimir-Perier to form a government.",
+   "seatLeader": "Moderate Republicans"
+  },
+  {
+   "id": "1898",
+   "label": "1898",
+   "year": 1898,
+   "kind": "legislative",
+   "date": "8 and 22 May 1898",
+   "era": "third",
+   "totalSeats": 585,
+   "majoritySeats": 293,
+   "turnout": 75.2,
+   "parties": [
+    {
+     "name": "Progressives",
+     "leader": "Jules Méline",
+     "seats": 254,
+     "seatChange": null,
+     "votes": 3262725,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent Radicals",
+     "leader": "Henri Brisson",
+     "seats": 104,
+     "seatChange": null,
+     "votes": 1293507,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Radical-Socialists",
+     "leader": "Jean Jaurès",
+     "seats": 74,
+     "seatChange": null,
+     "votes": 629572,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Socialists",
+     "leader": "Jean Jaurès",
+     "seats": 57,
+     "seatChange": null,
+     "votes": 791148,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Monarchists",
+     "leader": null,
+     "seats": 44,
+     "seatChange": null,
+     "votes": 887759,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Nationalists",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 250101,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jules Méline",
+    "party": "Democratic Union"
+   },
+   "pmAfter": {
+    "name": "Henri Brisson",
+    "party": "Radical Left"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in France on 8 and 22 May 1898.",
+   "seatLeader": "Progressives"
+  },
+  {
+   "id": "1902",
+   "label": "1902",
+   "year": 1902,
+   "kind": "legislative",
+   "date": "27 April and 11 May 1902",
+   "era": "third",
+   "totalSeats": 527,
+   "majoritySeats": 295,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Left Bloc",
+     "leader": "Pierre Waldeck-Rousseau",
+     "seats": 338,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independent Radicals",
+     "leader": null,
+     "seats": 129,
+     "seatChange": null,
+     "votes": 1413931,
+     "share": 16.81,
+     "swing": null
+    },
+    {
+     "name": "Progressive Republicans",
+     "leader": null,
+     "seats": 127,
+     "seatChange": null,
+     "votes": 2501429,
+     "share": 29.73,
+     "swing": null
+    },
+    {
+     "name": "Radical-Socialists",
+     "leader": null,
+     "seats": 104,
+     "seatChange": null,
+     "votes": 853140,
+     "share": 10.14,
+     "swing": null
+    },
+    {
+     "name": "Nationalists",
+     "leader": null,
+     "seats": 89,
+     "seatChange": null,
+     "votes": 1194900,
+     "share": 14.2,
+     "swing": null
+    },
+    {
+     "name": "Socialists",
+     "leader": null,
+     "seats": 43,
+     "seatChange": null,
+     "votes": 531087,
+     "share": 6.31,
+     "swing": null
+    },
+    {
+     "name": "Popular Liberal Action",
+     "leader": null,
+     "seats": 35,
+     "seatChange": null,
+     "votes": 385615,
+     "share": 4.58,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Pierre Waldeck-Rousseau",
+    "party": "ARD"
+   },
+   "pmAfter": {
+    "name": "Émile Combes",
+    "party": "Radicals"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in France on 27 April and 11 May 1902. The result was a victory for the Bloc des gauches alliance between Socialists, Radicals, and the Democratic Republican Alliance, over the anti-Dreyfusard right wing of the Republicans, the progressistes.",
+   "seatLeader": "Left Bloc"
+  },
+  {
+   "id": "1906",
+   "label": "1906",
+   "year": 1906,
+   "kind": "legislative",
+   "date": "6 and 20 May 1906",
+   "era": "third",
+   "totalSeats": 585,
+   "majoritySeats": 293,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Left Bloc",
+     "leader": "Ferdinand Sarrien",
+     "seats": 357,
+     "seatChange": 19.0,
+     "votes": 4115530,
+     "share": 46.7,
+     "swing": null
+    },
+    {
+     "name": "Radical-Socialist Party",
+     "leader": null,
+     "seats": 132,
+     "seatChange": null,
+     "votes": 2514508,
+     "share": 28.53,
+     "swing": null
+    },
+    {
+     "name": "Independent Radicals",
+     "leader": null,
+     "seats": 115,
+     "seatChange": null,
+     "votes": 692029,
+     "share": 7.85,
+     "swing": null
+    },
+    {
+     "name": "Democratic Republican Alliance",
+     "leader": null,
+     "seats": 90,
+     "seatChange": null,
+     "votes": 703912,
+     "share": 7.99,
+     "swing": null
+    },
+    {
+     "name": "Conservatives (incl. ALP)",
+     "leader": null,
+     "seats": 78,
+     "seatChange": null,
+     "votes": 2571765,
+     "share": 29.18,
+     "swing": null
+    },
+    {
+     "name": "Republican Federation",
+     "leader": null,
+     "seats": 66,
+     "seatChange": null,
+     "votes": 1238048,
+     "share": 14.05,
+     "swing": null
+    },
+    {
+     "name": "French Section of the Workers' International",
+     "leader": null,
+     "seats": 54,
+     "seatChange": null,
+     "votes": 877221,
+     "share": 9.95,
+     "swing": null
+    },
+    {
+     "name": "Independent Socialists",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": 205081,
+     "share": 2.33,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ferdinand Sarrien",
+    "party": "Radical-Socialist Party"
+   },
+   "pmAfter": {
+    "name": "Ferdinand Sarrien",
+    "party": "Radical-Socialist Party"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in France on 6 and 20 May 1906. The elections produced an increased majority for the governing coalition between the Radicals (PRRRS) and the left Republicans (ARD), which had held power under the premierships of Maurice Rouvier and Ferdinand Sarrien since January 1905.",
+   "seatLeader": "Left Bloc"
+  },
+  {
+   "id": "1910",
+   "label": "1910",
+   "year": 1910,
+   "kind": "legislative",
+   "date": "24 April 1910 and 8 May 1910",
+   "era": "third",
+   "totalSeats": 587,
+   "majoritySeats": 294,
+   "turnout": 77.41,
+   "parties": [
+    {
+     "name": "Radical Socialists",
+     "leader": null,
+     "seats": 148,
+     "seatChange": null,
+     "votes": 1727064,
+     "share": 20.45,
+     "swing": null
+    },
+    {
+     "name": "PRV",
+     "leader": "Émile Combes",
+     "seats": 148,
+     "seatChange": 16.0,
+     "votes": 1727064,
+     "share": 20.45,
+     "swing": -8.08
+    },
+    {
+     "name": "Republican Union",
+     "leader": null,
+     "seats": 116,
+     "seatChange": null,
+     "votes": 1472442,
+     "share": 17.43,
+     "swing": null
+    },
+    {
+     "name": "Conservatives",
+     "leader": null,
+     "seats": 86,
+     "seatChange": null,
+     "votes": 1602209,
+     "share": 18.97,
+     "swing": null
+    },
+    {
+     "name": "French Section of the Workers' International",
+     "leader": null,
+     "seats": 75,
+     "seatChange": null,
+     "votes": 1110561,
+     "share": 13.15,
+     "swing": null
+    },
+    {
+     "name": "SFIO",
+     "leader": "Jean Jaurès",
+     "seats": 75,
+     "seatChange": 21.0,
+     "votes": 1110561,
+     "share": 13.15,
+     "swing": 2.96
+    },
+    {
+     "name": "Republican Left",
+     "leader": null,
+     "seats": 70,
+     "seatChange": null,
+     "votes": 1018704,
+     "share": 12.06,
+     "swing": null
+    },
+    {
+     "name": "Independent Radicals",
+     "leader": null,
+     "seats": 60,
+     "seatChange": null,
+     "votes": 966407,
+     "share": 11.44,
+     "swing": null
+    },
+    {
+     "name": "Independent Socialists",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": 345202,
+     "share": 4.09,
+     "swing": null
+    },
+    {
+     "name": "Popular Liberal Action",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 153231,
+     "share": 1.81,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Aristide Briand",
+    "party": "Independent Socialist"
+   },
+   "pmAfter": {
+    "name": "Aristide Briand",
+    "party": "Independent Socialist"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in France on 24 April and 8 May 1910. The elections resulted in a clear victory for the forces of electoral reform and the governing coalition of Radicals, Independent Socialists and Left Republicans, allowing the incumbent premier Aristide Briand to form his second government .",
+   "seatLeader": "Radical Socialists"
+  },
+  {
+   "id": "1914",
+   "label": "1914",
+   "year": 1914,
+   "kind": "legislative",
+   "date": "26 April and 10 May 1914",
+   "era": "third",
+   "totalSeats": 592,
+   "majoritySeats": 297,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Republican, Radical and Radical-Socialist Party",
+     "leader": null,
+     "seats": 140,
+     "seatChange": null,
+     "votes": 1530188,
+     "share": 18.15,
+     "swing": null
+    },
+    {
+     "name": "PRV",
+     "leader": "Joseph Caillaux",
+     "seats": 140,
+     "seatChange": -8.0,
+     "votes": 1530188,
+     "share": 18.15,
+     "swing": -2.3
+    },
+    {
+     "name": "French Section of the Workers' International",
+     "leader": null,
+     "seats": 103,
+     "seatChange": null,
+     "votes": 1413044,
+     "share": 16.76,
+     "swing": null
+    },
+    {
+     "name": "Republican Federation",
+     "leader": null,
+     "seats": 96,
+     "seatChange": null,
+     "votes": 1588075,
+     "share": 18.84,
+     "swing": null
+    },
+    {
+     "name": "Independent Radicals",
+     "leader": null,
+     "seats": 96,
+     "seatChange": null,
+     "votes": 1399830,
+     "share": 16.6,
+     "swing": null
+    },
+    {
+     "name": "ALP–PN–Reactionaries",
+     "leader": "Georges Clemenceau",
+     "seats": 73,
+     "seatChange": null,
+     "votes": 1297722,
+     "share": 15.39,
+     "swing": -5.16
+    },
+    {
+     "name": "Democratic Republican Alliance",
+     "leader": null,
+     "seats": 57,
+     "seatChange": null,
+     "votes": 819184,
+     "share": 9.72,
+     "swing": null
+    },
+    {
+     "name": "Republican-Socialist Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": null,
+     "votes": 326927,
+     "share": 3.88,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Gaston Doumergue",
+    "party": "RI"
+   },
+   "pmAfter": {
+    "name": "René Viviani",
+    "party": "PRS"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in France on 26 April and 10 May 1914, three months before the outbreak of World War I. The Radical Socialist Party emerged as the largest party, though, with the outbreak of the First World War, many in the Chamber, ranging from Catholics to socialists, united to form the Union sacrée.",
+   "seatLeader": "Republican, Radical and Radical-Socialist Party"
+  },
+  {
+   "id": "1919",
+   "label": "1919",
+   "year": 1919,
+   "kind": "legislative",
+   "date": "16 and 30 November 1919",
+   "era": "third",
+   "totalSeats": 613,
+   "majoritySeats": null,
+   "turnout": 72.08,
+   "parties": [
+    {
+     "name": "Republican Union",
+     "leader": "Auguste Isaac",
+     "seats": 201,
+     "seatChange": null,
+     "votes": 1819691,
+     "share": 22.33,
+     "swing": null
+    },
+    {
+     "name": "Radical Party",
+     "leader": null,
+     "seats": 106,
+     "seatChange": null,
+     "votes": 1420381,
+     "share": 17.43,
+     "swing": null
+    },
+    {
+     "name": "Conservatives and independents",
+     "leader": null,
+     "seats": 88,
+     "seatChange": null,
+     "votes": 1139794,
+     "share": 13.99,
+     "swing": null
+    },
+    {
+     "name": "Democratic Republican Alliance",
+     "leader": null,
+     "seats": 79,
+     "seatChange": null,
+     "votes": 889177,
+     "share": 10.91,
+     "swing": null
+    },
+    {
+     "name": "French Section of the Workers' International",
+     "leader": null,
+     "seats": 67,
+     "seatChange": null,
+     "votes": 1728663,
+     "share": 21.22,
+     "swing": null
+    },
+    {
+     "name": "Independent Radicals",
+     "leader": null,
+     "seats": 51,
+     "seatChange": null,
+     "votes": 504363,
+     "share": 6.19,
+     "swing": null
+    },
+    {
+     "name": "Republican-Socialist Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": 283001,
+     "share": 3.47,
+     "swing": null
+    },
+    {
+     "name": "Independent Socialists",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 147053,
+     "share": 1.8,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Georges Clemenceau",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Alexandre Millerand",
+    "party": "Independent"
+   },
+   "knownAs": "Horizon-blue chamber",
+   "summary": "The formation of electoral lists needed to take into account of three factors: on one hand, the tendency of the opinion to think that the Union sacrée needed to be prolonged in peacetime in order to solve the new problems of France of the post-war period; on the other hand, the refusal of the French Section of the Workers' International (SFIO), then in crisis, to discuss the qu",
+   "seatLeader": "Republican Union"
+  },
+  {
+   "id": "1924",
+   "label": "1924",
+   "year": 1924,
+   "kind": "legislative",
+   "date": "11 and 25 May 1924",
+   "era": "third",
+   "totalSeats": 574,
+   "majoritySeats": null,
+   "turnout": 83.03,
+   "parties": [
+    {
+     "name": "Democratic and Republican Union",
+     "leader": null,
+     "seats": 204,
+     "seatChange": null,
+     "votes": 3190831,
+     "share": 35.35,
+     "swing": null
+    },
+    {
+     "name": "URD",
+     "leader": "Auguste Isaac",
+     "seats": 204,
+     "seatChange": 3.0,
+     "votes": 3190831,
+     "share": 35.35,
+     "swing": null
+    },
+    {
+     "name": "Radical Socialist Party–Republican-Socialist Party",
+     "leader": null,
+     "seats": 162,
+     "seatChange": null,
+     "votes": 1612581,
+     "share": 17.86,
+     "swing": null
+    },
+    {
+     "name": "French Section of the Workers' International",
+     "leader": null,
+     "seats": 104,
+     "seatChange": null,
+     "votes": 1814000,
+     "share": 20.1,
+     "swing": null
+    },
+    {
+     "name": "Independent Radicals–Democratic Republican Alliance",
+     "leader": null,
+     "seats": 53,
+     "seatChange": null,
+     "votes": 1058293,
+     "share": 11.72,
+     "swing": null
+    },
+    {
+     "name": "French Communist Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": null,
+     "votes": 885993,
+     "share": 9.82,
+     "swing": null
+    },
+    {
+     "name": "Conservatives and independents",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": 375806,
+     "share": 4.16,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Raymond Poincaré",
+    "party": "Democratic Alliance"
+   },
+   "pmAfter": {
+    "name": "Édouard Herriot",
+    "party": "Radical-Socialist Party"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in France on 11 May and 25 May 1924. They resulted in a victory for the left-wing Cartel des Gauches, an alliance of Radicals and Socialists, which governed until July 1926 under the premierships of Édouard Herriot, Paul Painlevé and Aristide Briand.",
+   "seatLeader": "Democratic and Republican Union"
+  },
+  {
+   "id": "1928",
+   "label": "1928",
+   "year": 1928,
+   "kind": "legislative",
+   "date": "22 and 29 April 1928",
+   "era": "third",
+   "totalSeats": 604,
+   "majoritySeats": null,
+   "turnout": 83.79,
+   "parties": [
+    {
+     "name": "Democratic and Republican Union",
+     "leader": null,
+     "seats": 182,
+     "seatChange": null,
+     "votes": 2082041,
+     "share": 21.99,
+     "swing": null
+    },
+    {
+     "name": "Radical Socialist Party",
+     "leader": "Raymond Poincaré",
+     "seats": 120,
+     "seatChange": null,
+     "votes": 1682543,
+     "share": 17.77,
+     "swing": 11.47
+    },
+    {
+     "name": "PRV",
+     "leader": "Édouard Daladier",
+     "seats": 120,
+     "seatChange": -19.0,
+     "votes": 1682543,
+     "share": 17.77,
+     "swing": -0.09
+    },
+    {
+     "name": "French Section of the Workers' International",
+     "leader": "Louis Marin",
+     "seats": 99,
+     "seatChange": null,
+     "votes": 1708972,
+     "share": 18.05,
+     "swing": -13.36
+    },
+    {
+     "name": "SFIO",
+     "leader": "Léon Blum",
+     "seats": 99,
+     "seatChange": -5.0,
+     "votes": 1708972,
+     "share": 18.05,
+     "swing": -2.05
+    },
+    {
+     "name": "Democratic Alliance",
+     "leader": null,
+     "seats": 74,
+     "seatChange": null,
+     "votes": 2196243,
+     "share": 23.19,
+     "swing": null
+    },
+    {
+     "name": "Republican-Socialist Party",
+     "leader": null,
+     "seats": 30,
+     "seatChange": null,
+     "votes": 432045,
+     "share": 4.56,
+     "swing": null
+    },
+    {
+     "name": "Conservatives and independents",
+     "leader": null,
+     "seats": 26,
+     "seatChange": null,
+     "votes": 215169,
+     "share": 2.27,
+     "swing": null
+    },
+    {
+     "name": "French Communist Party",
+     "leader": "Louis Marin",
+     "seats": 14,
+     "seatChange": null,
+     "votes": 1066099,
+     "share": 11.26,
+     "swing": -13.36
+    },
+    {
+     "name": "Independent Socialists",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 58279,
+     "share": 0.62,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Raymond Poincaré",
+    "party": "Democratic Alliance"
+   },
+   "pmAfter": {
+    "name": "Raymond Poincaré",
+    "party": "Democratic Alliance"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "seatLeader": "Democratic and Republican Union"
+  },
+  {
+   "id": "1932",
+   "label": "1932",
+   "year": 1932,
+   "kind": "legislative",
+   "date": "1 and 8 May 1932",
+   "era": "third",
+   "totalSeats": 607,
+   "majoritySeats": null,
+   "turnout": 81.6,
+   "parties": [
+    {
+     "name": "PRRRS",
+     "leader": "Édouard Herriot",
+     "seats": 320,
+     "seatChange": 33.0,
+     "votes": 4394963,
+     "share": 45.89,
+     "swing": 7.82
+    },
+    {
+     "name": "Radical Socialist Party",
+     "leader": null,
+     "seats": 157,
+     "seatChange": null,
+     "votes": 1836991,
+     "share": 19.18,
+     "swing": null
+    },
+    {
+     "name": "French Section of the Workers' International",
+     "leader": null,
+     "seats": 129,
+     "seatChange": null,
+     "votes": 1964384,
+     "share": 20.51,
+     "swing": null
+    },
+    {
+     "name": "Republican Union",
+     "leader": null,
+     "seats": 76,
+     "seatChange": null,
+     "votes": 1233360,
+     "share": 12.88,
+     "swing": null
+    },
+    {
+     "name": "Democratic Republican Alliance",
+     "leader": null,
+     "seats": 72,
+     "seatChange": null,
+     "votes": 1299936,
+     "share": 13.57,
+     "swing": null
+    },
+    {
+     "name": "Independent Radicals",
+     "leader": null,
+     "seats": 62,
+     "seatChange": null,
+     "votes": 955990,
+     "share": 9.98,
+     "swing": null
+    },
+    {
+     "name": "Republican-Socialist Party",
+     "leader": null,
+     "seats": 37,
+     "seatChange": null,
+     "votes": 515176,
+     "share": 5.38,
+     "swing": null
+    },
+    {
+     "name": "Conservatives and independents",
+     "leader": null,
+     "seats": 33,
+     "seatChange": null,
+     "votes": 582095,
+     "share": 6.08,
+     "swing": null
+    },
+    {
+     "name": "Popular Democratic Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 309336,
+     "share": 3.23,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "André Tardieu",
+    "party": "Democratic Alliance"
+   },
+   "pmAfter": {
+    "name": "Édouard Herriot",
+    "party": "Radical-Socialist Party"
+   },
+   "knownAs": null,
+   "summary": "The elections saw the victory of the second Cartel des gauches, but the socialists and Radicals could not form a coalition government. Édouard Herriot instead formed a government with the support of the centre-right and Radicals held the premiership until the 6 February 1934 crisis.",
+   "seatLeader": "PRRRS"
+  },
+  {
+   "id": "1936",
+   "label": "1936",
+   "year": 1936,
+   "kind": "legislative",
+   "date": "26 April 1936 and 3 May 1936",
+   "era": "third",
+   "totalSeats": 612,
+   "majoritySeats": 307,
+   "turnout": 84.45,
+   "parties": [
+    {
+     "name": "SFIO",
+     "leader": "Léon Blum",
+     "seats": 149,
+     "seatChange": 20.0,
+     "votes": 1955306,
+     "share": 19.86,
+     "swing": -0.65
+    },
+    {
+     "name": "Republican Left",
+     "leader": "Pierre-Étienne Flandin",
+     "seats": 95,
+     "seatChange": 23.0,
+     "votes": 2536294,
+     "share": 25.76,
+     "swing": 12.19
+    },
+    {
+     "name": "PCF",
+     "leader": "Maurice Thorez",
+     "seats": 72,
+     "seatChange": 60.0,
+     "votes": 1502404,
+     "share": 15.26,
+     "swing": 6.94
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "Popular Front",
+   "summary": "Legislative elections were held in France on 26 April and 3 May 1936, the last elections before World War II. The number of candidates set a record, with 4,807 running for election to the Chamber of Deputies.",
+   "seatLeader": "SFIO"
+  },
+  {
+   "id": "1945",
+   "label": "1945",
+   "year": 1945,
+   "kind": "legislative",
+   "date": "21 October 1945",
+   "era": "fourth",
+   "totalSeats": 522,
+   "majoritySeats": 262,
+   "turnout": 81.85,
+   "parties": [
+    {
+     "name": "French Communist Party",
+     "leader": null,
+     "seats": 148,
+     "seatChange": null,
+     "votes": 5005336,
+     "share": 26.08,
+     "swing": null
+    },
+    {
+     "name": "PCF",
+     "leader": "Maurice Thorez",
+     "seats": 148,
+     "seatChange": null,
+     "votes": 5005336,
+     "share": 26.08,
+     "swing": null
+    },
+    {
+     "name": "Popular Republican Movement",
+     "leader": null,
+     "seats": 141,
+     "seatChange": null,
+     "votes": 4780338,
+     "share": 24.91,
+     "swing": null
+    },
+    {
+     "name": "French Section of the Workers' International",
+     "leader": null,
+     "seats": 134,
+     "seatChange": null,
+     "votes": 4561411,
+     "share": 23.77,
+     "swing": null
+    },
+    {
+     "name": "Conservatives (AD–DM–ER–PP–PRL)",
+     "leader": null,
+     "seats": 62,
+     "seatChange": null,
+     "votes": 2545845,
+     "share": 13.27,
+     "swing": null
+    },
+    {
+     "name": "Radicals (RS–RG–IG–PRRS–RGR)",
+     "leader": null,
+     "seats": 35,
+     "seatChange": null,
+     "votes": 2131763,
+     "share": 11.11,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Charles de Gaulle",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Charles de Gaulle",
+    "party": "Independent"
+   },
+   "knownAs": "First with women voting",
+   "summary": "Legislative elections were held in France on 21 October 1945 to elect a Constituent Assembly to draft a constitution for a Fourth French Republic. A total of 522 seats were elected through proportional representation; women were allowed to vote for the first time.",
+   "seatLeader": "French Communist Party"
+  },
+  {
+   "id": "1951",
+   "label": "1951",
+   "year": 1951,
+   "kind": "legislative",
+   "date": "November 1946",
+   "era": "fourth",
+   "totalSeats": 625,
+   "majoritySeats": 313,
+   "turnout": 80.19,
+   "parties": [
+    {
+     "name": "Rally of the French People",
+     "leader": null,
+     "seats": 107,
+     "seatChange": 102.0,
+     "votes": 4125492,
+     "share": 21.57,
+     "swing": null
+    },
+    {
+     "name": "RPF",
+     "leader": "Jacques Soustelle",
+     "seats": 107,
+     "seatChange": 107.0,
+     "votes": 4125492,
+     "share": 21.57,
+     "swing": null
+    },
+    {
+     "name": "French Communist Party",
+     "leader": null,
+     "seats": 97,
+     "seatChange": 69.0,
+     "votes": 5056605,
+     "share": 26.43,
+     "swing": null
+    },
+    {
+     "name": "PCF",
+     "leader": "Maurice Thorez",
+     "seats": 97,
+     "seatChange": -69.0,
+     "votes": 5056605,
+     "share": 26.43,
+     "swing": null
+    },
+    {
+     "name": "French Section of the Workers' International",
+     "leader": null,
+     "seats": 94,
+     "seatChange": 40.0,
+     "votes": 2744842,
+     "share": 14.35,
+     "swing": null
+    },
+    {
+     "name": "SFIO",
+     "leader": "Guy Mollet",
+     "seats": 94,
+     "seatChange": 4.0,
+     "votes": 2744842,
+     "share": 14.35,
+     "swing": null
+    },
+    {
+     "name": "Conservatives (CNIP–UNIR–RGRIF)",
+     "leader": null,
+     "seats": 87,
+     "seatChange": 14.0,
+     "votes": 2656995,
+     "share": 13.89,
+     "swing": null
+    },
+    {
+     "name": "Popular Republican Movement",
+     "leader": null,
+     "seats": 82,
+     "seatChange": 57.0,
+     "votes": 2369788,
+     "share": 12.39,
+     "swing": null
+    },
+    {
+     "name": "MRP",
+     "leader": "Georges Bidault",
+     "seats": 82,
+     "seatChange": -76.0,
+     "votes": 2369788,
+     "share": 12.39,
+     "swing": null
+    },
+    {
+     "name": "Rally of Republican Lefts",
+     "leader": null,
+     "seats": 77,
+     "seatChange": null,
+     "votes": 1887583,
+     "share": 9.87,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Henri Queuille",
+    "party": "PRV"
+   },
+   "pmAfter": {
+    "name": "René Pleven",
+    "party": "UDSR"
+   },
+   "knownAs": null,
+   "summary": "After the Second World War, the three parties which took a major part in the French Resistance to the German occupation dominated the political scene and government: the French Communist Party (PCF), the French Section of the Workers' International (SFIO, socialist party) and the Christian democratic Popular Republican Movement (MRP).",
+   "seatLeader": "Rally of the French People"
+  },
+  {
+   "id": "1956",
+   "label": "1956",
+   "year": 1956,
+   "kind": "legislative",
+   "date": "2 January 1956",
+   "era": "fourth",
+   "totalSeats": 544,
+   "majoritySeats": null,
+   "turnout": 81.98,
+   "parties": [
+    {
+     "name": "French Communist Party",
+     "leader": null,
+     "seats": 147,
+     "seatChange": null,
+     "votes": 5514403,
+     "share": 25.89,
+     "swing": null
+    },
+    {
+     "name": "PCF",
+     "leader": "Maurice Thorez",
+     "seats": 147,
+     "seatChange": 50.0,
+     "votes": 5514403,
+     "share": 25.89,
+     "swing": null
+    },
+    {
+     "name": "Moderates",
+     "leader": null,
+     "seats": 95,
+     "seatChange": null,
+     "votes": 3259782,
+     "share": 15.3,
+     "swing": null
+    },
+    {
+     "name": "CNIP",
+     "leader": null,
+     "seats": 95,
+     "seatChange": 8.0,
+     "votes": 3259782,
+     "share": 15.3,
+     "swing": null
+    },
+    {
+     "name": "French Section of the Workers' International",
+     "leader": null,
+     "seats": 88,
+     "seatChange": null,
+     "votes": 3247431,
+     "share": 15.25,
+     "swing": null
+    },
+    {
+     "name": "SFIO",
+     "leader": "Guy Mollet",
+     "seats": 88,
+     "seatChange": -6.0,
+     "votes": 3247431,
+     "share": 15.25,
+     "swing": null
+    },
+    {
+     "name": "Republican Front (Radical Party–UDSR)",
+     "leader": null,
+     "seats": 73,
+     "seatChange": null,
+     "votes": 2389163,
+     "share": 11.22,
+     "swing": null
+    },
+    {
+     "name": "Radical–UDSR",
+     "leader": "Pierre Mendès France (Radical)",
+     "seats": 73,
+     "seatChange": null,
+     "votes": 2389163,
+     "share": 11.22,
+     "swing": null
+    },
+    {
+     "name": "Popular Republican Movement",
+     "leader": null,
+     "seats": 71,
+     "seatChange": null,
+     "votes": 2366321,
+     "share": 11.11,
+     "swing": null
+    },
+    {
+     "name": "MRP",
+     "leader": "Pierre-Henri Teitgen",
+     "seats": 71,
+     "seatChange": -11.0,
+     "votes": 2366321,
+     "share": 11.11,
+     "swing": null
+    },
+    {
+     "name": "Union for the Defense of Tradesmen and Artisans",
+     "leader": null,
+     "seats": 51,
+     "seatChange": null,
+     "votes": 2483813,
+     "share": 11.66,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Edgar Faure",
+    "party": "PRV"
+   },
+   "pmAfter": {
+    "name": "Guy Mollet",
+    "party": "SFIO"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in France on 2 January 1956 to elect the third National Assembly of the Fourth Republic. The elections were held using party-list proportional representation.",
+   "seatLeader": "French Communist Party"
+  },
+  {
+   "id": "1958",
+   "label": "1958",
+   "year": 1958,
+   "kind": "legislative",
+   "date": "23 and 30 November 1958",
+   "era": "fifth",
+   "totalSeats": 576,
+   "majoritySeats": 289,
+   "turnout": 77.1,
+   "parties": [
+    {
+     "name": "UNR",
+     "leader": "Charles de Gaulle",
+     "seats": 189,
+     "seatChange": 167.0,
+     "votes": 3603958,
+     "share": 17.6,
+     "swing": null
+    },
+    {
+     "name": "SFIO",
+     "leader": "Guy Mollet",
+     "seats": 40,
+     "seatChange": -55.0,
+     "votes": 3167354,
+     "share": 15.5,
+     "swing": null
+    },
+    {
+     "name": "PRV",
+     "leader": "Félix Gaillard",
+     "seats": 37,
+     "seatChange": -40.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PCF",
+     "leader": "Maurice Thorez",
+     "seats": 10,
+     "seatChange": -140.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Charles de Gaulle",
+    "party": "UNR"
+   },
+   "pmAfter": {
+    "name": "Michel Debré",
+    "party": "UNR"
+   },
+   "knownAs": "Founding the Fifth Republic",
+   "summary": "On 13 May, riots broke out in Algiers, with the complicity of the army in what is known as the May 1958 crisis in France. A rebel government seized power in Algiers in order to defend \"French Algeria\".",
+   "seatLeader": "UNR"
+  },
+  {
+   "id": "1962",
+   "label": "1962",
+   "year": 1962,
+   "kind": "legislative",
+   "date": "18 November and 25 November 1962",
+   "era": "fifth",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 68.7,
+   "parties": [
+    {
+     "name": "UNR",
+     "leader": "Georges Pompidou",
+     "seats": 229,
+     "seatChange": 40.0,
+     "votes": 5855744,
+     "share": 31.94,
+     "swing": null
+    },
+    {
+     "name": "PCF",
+     "leader": "Maurice Thorez",
+     "seats": 41,
+     "seatChange": 31.0,
+     "votes": 4003553,
+     "share": 21.84,
+     "swing": null
+    },
+    {
+     "name": "MRP",
+     "leader": "André Colin",
+     "seats": 36,
+     "seatChange": -21.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "CNIP",
+     "leader": "Camille Laurens",
+     "seats": 28,
+     "seatChange": -104.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "RI",
+     "leader": "Valéry Giscard d'Estaing",
+     "seats": 20,
+     "seatChange": null,
+     "votes": 1089348,
+     "share": 5.94,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Georges Pompidou",
+    "party": "UNR"
+   },
+   "pmAfter": {
+    "name": "Georges Pompidou",
+    "party": "UNR"
+   },
+   "knownAs": null,
+   "summary": "Since 1959 and the change of Algerian policy (Charles de Gaulle decided in favour of the \"self-government\" and \"Algerian Algeria\"), France had faced bomb attacks by the Secret Armed Organization (Organisation armée secrète or OAS) which opposed the independence of Algeria, negotiated by the FLN with the March 1962 Evian agreements and approved by referendum by the French people",
+   "seatLeader": "UNR"
+  },
+  {
+   "id": "1967",
+   "label": "1967",
+   "year": 1967,
+   "kind": "legislative",
+   "date": "5 and 12 March 1967",
+   "era": "fifth",
+   "totalSeats": 487,
+   "majoritySeats": 244,
+   "turnout": 80.9,
+   "parties": [
+    {
+     "name": "UDR",
+     "leader": "Georges Pompidou",
+     "seats": 240,
+     "seatChange": -8.0,
+     "votes": 8453512,
+     "share": 37.75,
+     "swing": null
+    },
+    {
+     "name": "FGDS",
+     "leader": "François Mitterrand",
+     "seats": 118,
+     "seatChange": 11.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PCF",
+     "leader": "Waldeck Rochet",
+     "seats": 73,
+     "seatChange": 32.0,
+     "votes": 5029808,
+     "share": 22.46,
+     "swing": null
+    },
+    {
+     "name": "CD",
+     "leader": "Jean Lecanuet",
+     "seats": 42,
+     "seatChange": -22.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Legislative elections were held in France on 5 March 1967, with a second round on 12 March, electing the third National Assembly of the Fifth Republic. Although the Gaullists retained their absolute majority, the results made it clear that Charles de Gaulle's position was weakening, as the French Communist Party and the Socialists achieved 40% representation in parliament.",
+   "seatLeader": "UDR"
+  },
+  {
+   "id": "1968",
+   "label": "1968",
+   "year": 1968,
+   "kind": "legislative",
+   "date": "23 June and 30 June 1968",
+   "era": "fifth",
+   "totalSeats": 487,
+   "majoritySeats": 244,
+   "turnout": 80.0,
+   "parties": [
+    {
+     "name": "UDR",
+     "leader": "Georges Pompidou",
+     "seats": 354,
+     "seatChange": 111.0,
+     "votes": 9667532,
+     "share": 43.65,
+     "swing": null
+    },
+    {
+     "name": "FGDS",
+     "leader": "François Mitterrand",
+     "seats": 57,
+     "seatChange": -60.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PCF",
+     "leader": "Waldeck Rochet",
+     "seats": 34,
+     "seatChange": -39.0,
+     "votes": 4434832,
+     "share": 20.02,
+     "swing": null
+    },
+    {
+     "name": "PDM",
+     "leader": "Camille Laurens (NCIP),",
+     "seats": 33,
+     "seatChange": -11.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "After May 68",
+   "summary": "Early legislative elections were held in France on 23 and 30 June 1968, to elect the fourth National Assembly of the Fifth Republic. They were held in the aftermath of the general strike in May 1968.",
+   "seatLeader": "UDR"
+  },
+  {
+   "id": "1973",
+   "label": "1973",
+   "year": 1973,
+   "kind": "legislative",
+   "date": "4 March and 11 March 1973",
+   "era": "fifth",
+   "totalSeats": 491,
+   "majoritySeats": 246,
+   "turnout": 81.2,
+   "parties": [
+    {
+     "name": "UDR",
+     "leader": "Pierre Messmer",
+     "seats": 272,
+     "seatChange": -82.0,
+     "votes": 8242661,
+     "share": 34.68,
+     "swing": null
+    },
+    {
+     "name": "PS",
+     "leader": "François Mitterrand",
+     "seats": 102,
+     "seatChange": 45.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PCF",
+     "leader": "Georges Marchais",
+     "seats": 73,
+     "seatChange": 39.0,
+     "votes": 5085108,
+     "share": 21.39,
+     "swing": null
+    },
+    {
+     "name": "MR",
+     "leader": "Jean-Jacques Servan-Schreiber (PR),",
+     "seats": 30,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "In order to end the May 1968 crisis, President Charles de Gaulle dissolved the National Assembly and his party, the Gaullist Party Union of Democrats for the Republic (UDR), won the absolute majority of the seats in the May 1968 elections. However, the failure of his 1969 constitutional referendum led him to resign.",
+   "seatLeader": "UDR"
+  },
+  {
+   "id": "1978",
+   "label": "1978",
+   "year": 1978,
+   "kind": "legislative",
+   "date": "12 and 19 March 1978",
+   "era": "fifth",
+   "totalSeats": 491,
+   "majoritySeats": 246,
+   "turnout": 82.8,
+   "parties": [
+    {
+     "name": "RPR",
+     "leader": "Jacques Chirac",
+     "seats": 150,
+     "seatChange": -33.0,
+     "votes": 6462462,
+     "share": 22.62,
+     "swing": null
+    },
+    {
+     "name": "UDF",
+     "leader": "Jean Lecanuet",
+     "seats": 121,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PS",
+     "leader": "François Mitterrand",
+     "seats": 104,
+     "seatChange": 2.0,
+     "votes": 6451151,
+     "share": 22.58,
+     "swing": null
+    },
+    {
+     "name": "PCF",
+     "leader": "Georges Marchais",
+     "seats": 86,
+     "seatChange": 13.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Raymond Barre",
+    "party": "UDF"
+   },
+   "pmAfter": {
+    "name": "Raymond Barre",
+    "party": "UDF"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in France on 12 and 19 March 1978 to elect the sixth National Assembly of the Fifth Republic. The election results were a victory for conservatives.",
+   "seatLeader": "RPR"
+  },
+  {
+   "id": "1981",
+   "label": "1981",
+   "year": 1981,
+   "kind": "legislative",
+   "date": "14 June and 21 June 1981",
+   "era": "fifth",
+   "totalSeats": 491,
+   "majoritySeats": 246,
+   "turnout": 70.3,
+   "parties": [
+    {
+     "name": "PS",
+     "leader": "Pierre Mauroy",
+     "seats": 269,
+     "seatChange": 166.0,
+     "votes": 9432362,
+     "share": 37.52,
+     "swing": null
+    },
+    {
+     "name": "RPR",
+     "leader": "Jacques Chirac",
+     "seats": 85,
+     "seatChange": -63.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "UDF",
+     "leader": "Jean Lecanuet",
+     "seats": 62,
+     "seatChange": -59.0,
+     "votes": 4827437,
+     "share": 19.2,
+     "swing": null
+    },
+    {
+     "name": "PCF",
+     "leader": "Georges Marchais",
+     "seats": 44,
+     "seatChange": -42.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Raymond Barre",
+    "party": "UDF"
+   },
+   "pmAfter": {
+    "name": "Pierre Mauroy",
+    "party": "PS"
+   },
+   "knownAs": "The pink wave",
+   "summary": "Legislative elections were held in France on 14 and 21 June 1981, to elect the seventh National Assembly of the Fifth Republic. The elections were called after François Mitterrand won the 1981 presidential elections and subsequently dissolved the National Assembly.",
+   "seatLeader": "PS"
+  },
+  {
+   "id": "1986",
+   "label": "1986",
+   "year": 1986,
+   "kind": "legislative",
+   "date": "16 March 1986",
+   "era": "fifth",
+   "totalSeats": 573,
+   "majoritySeats": 287,
+   "turnout": 78.12,
+   "parties": [
+    {
+     "name": "UOR",
+     "leader": "Jacques Chirac",
+     "seats": 277,
+     "seatChange": 131.0,
+     "votes": 11492450,
+     "share": 40.97,
+     "swing": null
+    },
+    {
+     "name": "PS",
+     "leader": "Laurent Fabius",
+     "seats": 207,
+     "seatChange": -62.0,
+     "votes": 8705163,
+     "share": 31.04,
+     "swing": null
+    },
+    {
+     "name": "PCF",
+     "leader": "Georges Marchais",
+     "seats": 35,
+     "seatChange": -9.0,
+     "votes": 2740972,
+     "share": 9.77,
+     "swing": null
+    },
+    {
+     "name": "FN",
+     "leader": "Jean-Marie Le Pen",
+     "seats": 35,
+     "seatChange": 35.0,
+     "votes": 2705336,
+     "share": 9.65,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Laurent Fabius",
+    "party": "PS"
+   },
+   "pmAfter": {
+    "name": "Jacques Chirac",
+    "party": "RPR"
+   },
+   "knownAs": "First cohabitation",
+   "summary": "Legislative elections were held in France on 16 March 1986 to elect the eighth National Assembly of the Fifth Republic. Because of the 47th of the 110 Propositions for France, this election was conducted under a system of party-list proportional representation, unlike other legislative elections of the Fifth Republic.",
+   "seatLeader": "UOR"
+  },
+  {
+   "id": "1988",
+   "label": "1988",
+   "year": 1988,
+   "kind": "legislative",
+   "date": "5 and 12 June 1988",
+   "era": "fifth",
+   "totalSeats": 577,
+   "majoritySeats": 289,
+   "turnout": 65.7,
+   "parties": [
+    {
+     "name": "PS",
+     "leader": "Michel Rocard",
+     "seats": 262,
+     "seatChange": 56.0,
+     "votes": 8493702,
+     "share": 34.77,
+     "swing": null
+    },
+    {
+     "name": "PCF",
+     "leader": "Georges Marchais",
+     "seats": 27,
+     "seatChange": -8.0,
+     "votes": 2765761,
+     "share": 11.32,
+     "swing": null
+    },
+    {
+     "name": "FN",
+     "leader": "Jean-Marie Le Pen",
+     "seats": 1,
+     "seatChange": -34.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jacques Chirac",
+    "party": "RPR"
+   },
+   "pmAfter": {
+    "name": "Michel Rocard",
+    "party": "PS"
+   },
+   "knownAs": null,
+   "summary": "In 1986, the Socialist Party (PS) of President Mitterrand lost the legislative election. For the first time under the Fifth Republic, the President was forced to \"cohabit\" with a hostile parliamentary majority and cabinet.",
+   "seatLeader": "PS"
+  },
+  {
+   "id": "1993",
+   "label": "1993",
+   "year": 1993,
+   "kind": "legislative",
+   "date": "21 and 28 March 1993",
+   "era": "fifth",
+   "totalSeats": 577,
+   "majoritySeats": 289,
+   "turnout": 68.93,
+   "parties": [
+    {
+     "name": "RPR",
+     "leader": "Jacques Chirac",
+     "seats": 247,
+     "seatChange": 119.0,
+     "votes": 5188196,
+     "share": 20.39,
+     "swing": null
+    },
+    {
+     "name": "UDF",
+     "leader": "Valéry Giscard d'Estaing",
+     "seats": 213,
+     "seatChange": 83.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PS",
+     "leader": "Pierre Bérégovoy",
+     "seats": 53,
+     "seatChange": -209.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PCF",
+     "leader": "Georges Marchais",
+     "seats": 24,
+     "seatChange": -3.0,
+     "votes": 2336254,
+     "share": 9.18,
+     "swing": null
+    },
+    {
+     "name": "FN",
+     "leader": "Jean-Marie Le Pen",
+     "seats": 0,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Pierre Bérégovoy",
+    "party": "PS"
+   },
+   "pmAfter": {
+    "name": "Edouard Balladur",
+    "party": "RPR"
+   },
+   "knownAs": null,
+   "summary": "Since 1988, President François Mitterrand and his Socialist cabinets had relied on a relative parliamentary majority. In an attempt to avoid having to work with the Communists, Prime Minister Michel Rocard tried to gain support from the UDF by appointing four UDF ministers.",
+   "seatLeader": "RPR"
+  },
+  {
+   "id": "1997",
+   "label": "1997",
+   "year": 1997,
+   "kind": "legislative",
+   "date": "25 May and 1 June 1997",
+   "era": "fifth",
+   "totalSeats": 577,
+   "majoritySeats": 289,
+   "turnout": 67.9,
+   "parties": [
+    {
+     "name": "PS",
+     "leader": "Lionel Jospin",
+     "seats": 255,
+     "seatChange": 202.0,
+     "votes": 5961612,
+     "share": 23.53,
+     "swing": null
+    },
+    {
+     "name": "RPR",
+     "leader": "Alain Juppé",
+     "seats": 139,
+     "seatChange": -103.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "UDF",
+     "leader": "François Léotard",
+     "seats": 112,
+     "seatChange": -95.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PCF",
+     "leader": "Robert Hue",
+     "seats": 35,
+     "seatChange": 9.0,
+     "votes": 2519281,
+     "share": 9.94,
+     "swing": null
+    },
+    {
+     "name": "LV",
+     "leader": "Dominique Voynet",
+     "seats": 7,
+     "seatChange": 7.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FN",
+     "leader": "Jean-Marie Le Pen",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Alain Juppé",
+    "party": "Elected Prime Minister"
+   },
+   "pmAfter": {
+    "name": "Lionel Jospin",
+    "party": "PS"
+   },
+   "knownAs": "The backfired dissolution",
+   "summary": "Legislative elections were held in France on 25 May and 1 June 1997 to elect the 11th National Assembly of the French Fifth Republic. It was the consequence of President Jacques Chirac's decision to call the legislative election one year before the deadline.",
+   "seatLeader": "PS"
+  },
+  {
+   "id": "2002",
+   "label": "2002",
+   "year": 2002,
+   "kind": "legislative",
+   "date": "9 and 16 June 2002",
+   "era": "fifth",
+   "totalSeats": 577,
+   "majoritySeats": 289,
+   "turnout": 64.42,
+   "parties": [
+    {
+     "name": "UMP",
+     "leader": "Jean-Pierre Raffarin",
+     "seats": 357,
+     "seatChange": 357.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PS",
+     "leader": "François Hollande",
+     "seats": 140,
+     "seatChange": -115.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FN",
+     "leader": "Jean-Marie Le Pen",
+     "seats": 0,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jean-Pierre Raffarin",
+    "party": "UMP"
+   },
+   "pmAfter": {
+    "name": "Jean-Pierre Raffarin",
+    "party": "UMP"
+   },
+   "knownAs": "After the Le Pen shock",
+   "summary": "The Socialist Prime Minister Lionel Jospin announced his political retirement after his elimination at the first round of the 2002 presidential elections. President Jacques Chirac was easily reelected, all the Republican parties having called to block far-right leader Jean-Marie Le Pen.",
+   "seatLeader": "UMP"
+  },
+  {
+   "id": "2007",
+   "label": "2007",
+   "year": 2007,
+   "kind": "legislative",
+   "date": "10 June and 17 June 2007",
+   "era": "fifth",
+   "totalSeats": 577,
+   "majoritySeats": 289,
+   "turnout": 60.4,
+   "parties": [
+    {
+     "name": "UMP",
+     "leader": "François Fillon",
+     "seats": 313,
+     "seatChange": -44.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PS",
+     "leader": "François Hollande",
+     "seats": 186,
+     "seatChange": 46.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "MoDem",
+     "leader": "François Bayrou",
+     "seats": 3,
+     "seatChange": -26.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "François Fillon",
+    "party": "UMP"
+   },
+   "pmAfter": {
+    "name": "François Fillon",
+    "party": "UMP"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in France on 10 June and 17 June 2007 to elect the 13th National Assembly of the Fifth Republic, a few weeks after the presidential election run-off on 6 May. 7,639 candidates stood for 577 seats, including France's overseas possessions.",
+   "seatLeader": "UMP"
+  },
+  {
+   "id": "2012",
+   "label": "2012",
+   "year": 2012,
+   "kind": "legislative",
+   "date": "10 and 17 June 2012",
+   "era": "fifth",
+   "totalSeats": 577,
+   "majoritySeats": 289,
+   "turnout": 57.2,
+   "parties": [
+    {
+     "name": "PS",
+     "leader": "Jean-Marc Ayrault",
+     "seats": 280,
+     "seatChange": 94.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "UMP",
+     "leader": "Jean-François Copé",
+     "seats": 194,
+     "seatChange": -119.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "EELV",
+     "leader": "Cécile Duflot",
+     "seats": 17,
+     "seatChange": 13.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FG",
+     "leader": "Jean-Luc Mélenchon",
+     "seats": 10,
+     "seatChange": -8.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FN",
+     "leader": "Marine Le Pen",
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jean-Marc Ayrault",
+    "party": "PS"
+   },
+   "pmAfter": {
+    "name": "Jean-Marc Ayrault",
+    "party": "PS"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in France on 10 and 17 June 2012 (and on other dates for small numbers of voters outside metropolitan France) to select the members of the 14th National Assembly of the Fifth Republic, a little over a month after the presidential election run-off held on 6 May.",
+   "seatLeader": "PS"
+  },
+  {
+   "id": "2017",
+   "label": "2017",
+   "year": 2017,
+   "kind": "legislative",
+   "date": "11 and 18 June 2017",
+   "era": "fifth",
+   "totalSeats": 577,
+   "majoritySeats": 289,
+   "turnout": 48.7,
+   "parties": [
+    {
+     "name": "LREM",
+     "leader": "Édouard Philippe",
+     "seats": 350,
+     "seatChange": 350.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "LR",
+     "leader": "François Baroin",
+     "seats": 136,
+     "seatChange": -101.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PS",
+     "leader": "Bernard Cazeneuve",
+     "seats": 45,
+     "seatChange": -269.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "LFI",
+     "leader": "Jean-Luc Mélenchon",
+     "seats": 17,
+     "seatChange": 17.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "FN",
+     "leader": "Marine Le Pen",
+     "seats": 8,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Édouard Philippe",
+    "party": "LR"
+   },
+   "pmAfter": {
+    "name": "Édouard Philippe",
+    "party": "DVD"
+   },
+   "knownAs": "Macron sweep",
+   "summary": "Legislative elections were held in France on 11 and 18 June 2017 (with different dates for voters overseas) to elect the 577 members of the 15th National Assembly of the Fifth Republic. They followed the two-round presidential election won by Emmanuel Macron.",
+   "seatLeader": "LREM"
+  },
+  {
+   "id": "2022",
+   "label": "2022",
+   "year": 2022,
+   "kind": "legislative",
+   "date": "12 and 19 June 2022",
+   "era": "fifth",
+   "totalSeats": 577,
+   "majoritySeats": 289,
+   "turnout": 47.5,
+   "parties": [
+    {
+     "name": "LREM",
+     "leader": "Élisabeth Borne",
+     "seats": 245,
+     "seatChange": -105.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "LFI",
+     "leader": "Jean-Luc Mélenchon",
+     "seats": 131,
+     "seatChange": 74.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "RN",
+     "leader": "Marine Le Pen",
+     "seats": 89,
+     "seatChange": 81.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "LR",
+     "leader": "Christian Jacob",
+     "seats": 64,
+     "seatChange": -66.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Élisabeth Borne",
+    "party": "LREM"
+   },
+   "pmAfter": {
+    "name": "Élisabeth Borne",
+    "party": "LREM"
+   },
+   "knownAs": "Majority lost",
+   "summary": "Legislative elections were held in France on 12 and 19 June 2022 to elect the 577 members of the 16th National Assembly of the Fifth Republic. The elections took place following the 2022 French presidential election, which was held in April 2022.",
+   "seatLeader": "LREM"
+  },
+  {
+   "id": "2024",
+   "label": "2024",
+   "year": 2024,
+   "kind": "legislative",
+   "date": "30 June 2024 and 7 July 2024",
+   "era": "fifth",
+   "totalSeats": 577,
+   "majoritySeats": 289,
+   "turnout": 66.71,
+   "parties": [
+    {
+     "name": "NFP",
+     "leader": null,
+     "seats": 180,
+     "seatChange": 49.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ensemble",
+     "leader": "Gabriel Attal",
+     "seats": 159,
+     "seatChange": -86.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "RN/UXD",
+     "leader": "Jordan Bardella",
+     "seats": 142,
+     "seatChange": 53.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "LR",
+     "leader": "Disputed leadership",
+     "seats": 39,
+     "seatChange": -22.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Gabriel Attal",
+    "party": "LREM"
+   },
+   "pmAfter": {
+    "name": "Michel Barnier",
+    "party": "LR"
+   },
+   "knownAs": "The snap election",
+   "summary": "Legislative elections were held in France on 30 June and 7 July 2024 (and one day earlier for some voters outside of metropolitan France) to elect all 577 members of the 17th National Assembly of the Fifth French Republic.",
+   "seatLeader": "NFP"
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1958",
+   "label": "1958",
+   "year": 1958,
+   "kind": "presidential",
+   "date": "21 December 1958",
+   "era": "founding",
+   "turnout": 99.42,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Charles de Gaulle",
+     "party": "UNR",
+     "r1Votes": 62394,
+     "r1Share": 78.51,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Georges Marrane",
+     "party": "PCF",
+     "r1Votes": 10355,
+     "r1Share": 13.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Albert Châtelet",
+     "party": "UFD",
+     "r1Votes": 6721,
+     "r1Share": 8.46,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "René Coty",
+    "party": "CNIP"
+   },
+   "presAfter": {
+    "name": "Charles de Gaulle",
+    "party": "UNR"
+   },
+   "knownAs": "Electoral-college vote",
+   "summary": "The 1958 French presidential election was the first held under the French Fifth Republic, on 21 December. It was the sole presidential election by electoral college (gathering the members of the French Parliament, the general councils, the overseas assemblies, as well as tens of thousands of mayors, deputy mayors and municipal councillors) under the Fifth Republic."
+  },
+  {
+   "id": "pres-1965",
+   "label": "1965",
+   "year": 1965,
+   "kind": "presidential",
+   "date": "5 and 19 December 1965",
+   "era": "founding",
+   "turnout": 84.75,
+   "turnout2": 84.32,
+   "candidates": [
+    {
+     "name": "Charles de Gaulle",
+     "party": "Union for the New Republic",
+     "r1Votes": 10828521,
+     "r1Share": 44.65,
+     "r2Votes": 13083699,
+     "r2Share": 55.2
+    },
+    {
+     "name": "François Mitterrand",
+     "party": "Federation of the Democratic and Socialist Left",
+     "r1Votes": 7694005,
+     "r1Share": 31.72,
+     "r2Votes": 10619735,
+     "r2Share": 44.8
+    },
+    {
+     "name": "Jean Lecanuet",
+     "party": "Popular Republican Movement",
+     "r1Votes": 3777120,
+     "r1Share": 15.57,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jean-Louis Tixier-Vignancour",
+     "party": "Tixier-Vignancour Committees",
+     "r1Votes": 1260208,
+     "r1Share": 5.2,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pierre Marcilhacy",
+     "party": "European Liberal Party",
+     "r1Votes": 415017,
+     "r1Share": 1.71,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marcel Barbu",
+     "party": "Miscellaneous left",
+     "r1Votes": 279685,
+     "r1Share": 1.15,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Charles de Gaulle",
+    "party": "UNR"
+   },
+   "presAfter": {
+    "name": "Charles de Gaulle",
+    "party": "UNR"
+   },
+   "knownAs": "First direct election",
+   "summary": "Presidential elections were held in France on 5 December 1965, with a second round on 19 December. They were the first direct presidential elections in the Fifth Republic and the first since the Second Republic in 1848."
+  },
+  {
+   "id": "pres-1969",
+   "label": "1969",
+   "year": 1969,
+   "kind": "presidential",
+   "date": "1 and 15 June 1969",
+   "era": "founding",
+   "turnout": 77.59,
+   "turnout2": 68.85,
+   "candidates": [
+    {
+     "name": "Georges Pompidou",
+     "party": "Union of Democrats for the Republic",
+     "r1Votes": 10051783,
+     "r1Share": 44.47,
+     "r2Votes": 11064371,
+     "r2Share": 58.21
+    },
+    {
+     "name": "Alain Poher",
+     "party": "Democratic Centre",
+     "r1Votes": 5268613,
+     "r1Share": 23.31,
+     "r2Votes": 7943118,
+     "r2Share": 41.79
+    },
+    {
+     "name": "Jacques Duclos",
+     "party": "French Communist Party",
+     "r1Votes": 4808285,
+     "r1Share": 21.27,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gaston Defferre",
+     "party": "French Section of the Workers' International",
+     "r1Votes": 1133222,
+     "r1Share": 5.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Michel Rocard",
+     "party": "Unified Socialist Party",
+     "r1Votes": 816470,
+     "r1Share": 3.61,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Louis Ducatel",
+     "party": "Miscellaneous left",
+     "r1Votes": 286447,
+     "r1Share": 1.27,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alain Krivine",
+     "party": "Communist League",
+     "r1Votes": 239104,
+     "r1Share": 1.06,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Alain Poher",
+    "party": "(acting President after Charles de Gaulle resigned in April)"
+   },
+   "presAfter": {
+    "name": "Georges Pompidou",
+    "party": "UDR"
+   },
+   "knownAs": "After de Gaulle resigns",
+   "summary": "Incumbent president Charles de Gaulle proposed a referendum on government decentralisation and a reform of the Senate. In the referendum on 27 April, 53.5% of voters rejected the proposed amendments."
+  },
+  {
+   "id": "pres-1974",
+   "label": "1974",
+   "year": 1974,
+   "kind": "presidential",
+   "date": "5 and 19 May 1974",
+   "era": "alternance",
+   "turnout": 84.23,
+   "turnout2": 87.33,
+   "candidates": [
+    {
+     "name": "François Mitterrand",
+     "party": "Socialist Party",
+     "r1Votes": 11044373,
+     "r1Share": 43.25,
+     "r2Votes": 12971604,
+     "r2Share": 49.19
+    },
+    {
+     "name": "Valéry Giscard d'Estaing",
+     "party": "National Federation of the Independent Republicans",
+     "r1Votes": 8326774,
+     "r1Share": 32.6,
+     "r2Votes": 13396203,
+     "r2Share": 50.81
+    },
+    {
+     "name": "Jacques Chaban-Delmas",
+     "party": "Union of Democrats for the Republic",
+     "r1Votes": 3857728,
+     "r1Share": 15.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jean Royer",
+     "party": "Independent right-wing conservative",
+     "r1Votes": 810540,
+     "r1Share": 3.17,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Arlette Laguiller",
+     "party": "Workers' Struggle",
+     "r1Votes": 595247,
+     "r1Share": 2.33,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "René Dumont",
+     "party": "Independent environmentalist",
+     "r1Votes": 337800,
+     "r1Share": 1.32,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jean-Marie Le Pen",
+     "party": "National Front",
+     "r1Votes": 190921,
+     "r1Share": 0.75,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Émile Muller",
+     "party": "Democratic Socialist Movement",
+     "r1Votes": 176279,
+     "r1Share": 0.69,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alain Krivine",
+     "party": "Revolutionary Communist Front",
+     "r1Votes": 93990,
+     "r1Share": 0.37,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Bertrand Renouvin",
+     "party": "New French Action",
+     "r1Votes": 43722,
+     "r1Share": 0.17,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jean-Claude Sebag",
+     "party": "European Federalist Movement",
+     "r1Votes": 42007,
+     "r1Share": 0.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Guy Héraud",
+     "party": "European federalist",
+     "r1Votes": 19255,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Alain Poher",
+    "party": "(acting President after Georges Pompidou died in April)"
+   },
+   "presAfter": {
+    "name": "Valéry Giscard d'Estaing",
+    "party": "RI"
+   },
+   "knownAs": "Closest ever runoff",
+   "summary": "In 1969, Georges Pompidou, formerly Prime Minister under the presidency of Charles de Gaulle, was elected President of France for a seven-year term. However, he died in office on 2 April 1974, and the French voters were called to elect his successor."
+  },
+  {
+   "id": "pres-1981",
+   "label": "1981",
+   "year": 1981,
+   "kind": "presidential",
+   "date": "26 April 1981 and 10 May 1981",
+   "era": "alternance",
+   "turnout": 81.09,
+   "turnout2": 85.85,
+   "candidates": [
+    {
+     "name": "Valéry Giscard d'Estaing",
+     "party": "Union for French Democracy",
+     "r1Votes": 8222432,
+     "r1Share": 28.32,
+     "r2Votes": 14642306,
+     "r2Share": 48.24
+    },
+    {
+     "name": "François Mitterrand",
+     "party": "Socialist Party",
+     "r1Votes": 7505960,
+     "r1Share": 25.85,
+     "r2Votes": 15708262,
+     "r2Share": 51.76
+    },
+    {
+     "name": "Jacques Chirac",
+     "party": "Rally for the Republic",
+     "r1Votes": 5225848,
+     "r1Share": 18.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Georges Marchais",
+     "party": "French Communist Party",
+     "r1Votes": 4456922,
+     "r1Share": 15.35,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Brice Lalonde",
+     "party": "Political Ecology Movement",
+     "r1Votes": 1126254,
+     "r1Share": 3.88,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Arlette Laguiller",
+     "party": "Workers' Struggle",
+     "r1Votes": 668057,
+     "r1Share": 2.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Michel Crépeau",
+     "party": "Movement of Radicals of the Left",
+     "r1Votes": 642847,
+     "r1Share": 2.21,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Michel Debré",
+     "party": "Rally for the Republic (splinter)",
+     "r1Votes": 481821,
+     "r1Share": 1.66,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marie-France Garaud",
+     "party": "Rally for the Republic (splinter)",
+     "r1Votes": 386623,
+     "r1Share": 1.33,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Huguette Bouchardeau",
+     "party": "Unified Socialist Party",
+     "r1Votes": 321353,
+     "r1Share": 1.11,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Valéry Giscard d'Estaing",
+    "party": "UDF"
+   },
+   "presAfter": {
+    "name": "François Mitterrand",
+    "party": "PS"
+   },
+   "knownAs": "The left takes the Élysée",
+   "summary": "Presidential elections were held in France on 26 April 1981, with a second round on 10 May. François Mitterrand defeated incumbent president, Valéry Giscard d'Estaing to become the first Socialist president of the Fifth Republic."
+  },
+  {
+   "id": "pres-1988",
+   "label": "1988",
+   "year": 1988,
+   "kind": "presidential",
+   "date": "24 April 1988 and 8 May 1988",
+   "era": "alternance",
+   "turnout": 81.38,
+   "turnout2": 84.06,
+   "candidates": [
+    {
+     "name": "François Mitterrand",
+     "party": "Socialist Party",
+     "r1Votes": 10367220,
+     "r1Share": 34.1,
+     "r2Votes": 16704279,
+     "r2Share": 54.02
+    },
+    {
+     "name": "Jacques Chirac",
+     "party": "Rally for the Republic",
+     "r1Votes": 6063514,
+     "r1Share": 19.94,
+     "r2Votes": 14218970,
+     "r2Share": 45.98
+    },
+    {
+     "name": "Raymond Barre",
+     "party": "Union for French Democracy",
+     "r1Votes": 5031849,
+     "r1Share": 16.55,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jean-Marie Le Pen",
+     "party": "National Front",
+     "r1Votes": 4375894,
+     "r1Share": 14.39,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "André Lajoinie",
+     "party": "French Communist Party",
+     "r1Votes": 2055995,
+     "r1Share": 6.76,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Antoine Waechter",
+     "party": "The Greens",
+     "r1Votes": 1149642,
+     "r1Share": 3.78,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pierre Juquin",
+     "party": "Independent communist",
+     "r1Votes": 639084,
+     "r1Share": 2.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Arlette Laguiller",
+     "party": "Workers' Struggle",
+     "r1Votes": 606017,
+     "r1Share": 1.99,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pierre Boussel",
+     "party": "Movement for a Workers' Party",
+     "r1Votes": 116823,
+     "r1Share": 0.38,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "François Mitterrand",
+    "party": "PS"
+   },
+   "presAfter": {
+    "name": "François Mitterrand",
+    "party": "PS"
+   },
+   "knownAs": null,
+   "summary": "In 1981, the Socialist Party leader, François Mitterrand, was elected President of France and the Left won the legislative election. However, in 1986, the right regained a parliamentary majority."
+  },
+  {
+   "id": "pres-1995",
+   "label": "1995",
+   "year": 1995,
+   "kind": "presidential",
+   "date": "23 April 1995 and 7 May 1995",
+   "era": "alternance",
+   "turnout": 78.38,
+   "turnout2": 79.66,
+   "candidates": [
+    {
+     "name": "Lionel Jospin",
+     "party": "Socialist Party",
+     "r1Votes": 7097786,
+     "r1Share": 23.3,
+     "r2Votes": 14180644,
+     "r2Share": 47.36
+    },
+    {
+     "name": "Jacques Chirac",
+     "party": "Rally for the Republic",
+     "r1Votes": 6348375,
+     "r1Share": 20.84,
+     "r2Votes": 15763027,
+     "r2Share": 52.64
+    },
+    {
+     "name": "Édouard Balladur",
+     "party": "Rally for the Republic",
+     "r1Votes": 5658796,
+     "r1Share": 18.58,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jean-Marie Le Pen",
+     "party": "National Front",
+     "r1Votes": 4570838,
+     "r1Share": 15.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Robert Hue",
+     "party": "French Communist Party",
+     "r1Votes": 2632460,
+     "r1Share": 8.64,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Arlette Laguiller",
+     "party": "Workers Struggle",
+     "r1Votes": 1615552,
+     "r1Share": 5.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Philippe de Villiers",
+     "party": "Movement for France",
+     "r1Votes": 1443186,
+     "r1Share": 4.74,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Dominique Voynet",
+     "party": "The Greens",
+     "r1Votes": 1010681,
+     "r1Share": 3.32,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jacques Cheminade",
+     "party": "Federation for a New Solidarity",
+     "r1Votes": 84959,
+     "r1Share": 0.28,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "François Mitterrand",
+    "party": "PS"
+   },
+   "presAfter": {
+    "name": "Jacques Chirac",
+    "party": "RPR"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in France on 23 April, with a second round on 7 May. Following his tenure as Mayor of Paris, Jacques Chirac launched his third campaign for the presidency of the French Republic."
+  },
+  {
+   "id": "pres-2002",
+   "label": "2002",
+   "year": 2002,
+   "kind": "presidential",
+   "date": "21 April 2002 and 5 May 2002",
+   "era": "modern",
+   "turnout": 71.6,
+   "turnout2": 79.71,
+   "candidates": [
+    {
+     "name": "Jacques Chirac",
+     "party": "Rally for the Republic",
+     "r1Votes": 5665855,
+     "r1Share": 19.88,
+     "r2Votes": 25537956,
+     "r2Share": 82.21
+    },
+    {
+     "name": "Jean-Marie Le Pen",
+     "party": "National Front",
+     "r1Votes": 4804713,
+     "r1Share": 16.86,
+     "r2Votes": 5525032,
+     "r2Share": 17.79
+    },
+    {
+     "name": "Lionel Jospin",
+     "party": "Socialist Party",
+     "r1Votes": 4610113,
+     "r1Share": 16.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "François Bayrou",
+     "party": "Union for French Democracy",
+     "r1Votes": 1949170,
+     "r1Share": 6.84,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Arlette Laguiller",
+     "party": "Workers' Struggle",
+     "r1Votes": 1630045,
+     "r1Share": 5.72,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jean-Pierre Chevènement",
+     "party": "Citizens' Movement",
+     "r1Votes": 1518528,
+     "r1Share": 5.33,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Noël Mamère",
+     "party": "The Greens",
+     "r1Votes": 1495724,
+     "r1Share": 5.25,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Olivier Besancenot",
+     "party": "Revolutionary Communist League",
+     "r1Votes": 1210562,
+     "r1Share": 4.25,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jean Saint-Josse",
+     "party": "Hunting, Fishing, Nature and Traditions",
+     "r1Votes": 1204689,
+     "r1Share": 4.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alain Madelin",
+     "party": "Liberal Democracy",
+     "r1Votes": 1113484,
+     "r1Share": 3.91,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Robert Hue",
+     "party": "French Communist Party",
+     "r1Votes": 960480,
+     "r1Share": 3.37,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Bruno Mégret",
+     "party": "National Republican Movement",
+     "r1Votes": 667026,
+     "r1Share": 2.34,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Christiane Taubira",
+     "party": "Radical Party of the Left",
+     "r1Votes": 660447,
+     "r1Share": 2.32,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Corinne Lepage",
+     "party": "Cap21",
+     "r1Votes": 535837,
+     "r1Share": 1.88,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Christine Boutin",
+     "party": "Forum of Social Republicans",
+     "r1Votes": 339112,
+     "r1Share": 1.19,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Daniel Gluckstein",
+     "party": "Workers' Party",
+     "r1Votes": 132686,
+     "r1Share": 0.47,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Jacques Chirac",
+    "party": "RPR"
+   },
+   "presAfter": {
+    "name": "Jacques Chirac",
+    "party": "RPR"
+   },
+   "knownAs": "The Le Pen shock",
+   "summary": "Presidential elections were held in France on 21 April 2002, with a runoff election between the top two candidates, incumbent Jacques Chirac of the Rally for the Republic and Jean-Marie Le Pen of the National Front, on 5 May."
+  },
+  {
+   "id": "pres-2007",
+   "label": "2007",
+   "year": 2007,
+   "kind": "presidential",
+   "date": "22 April 2007 and 6 May 2007",
+   "era": "modern",
+   "turnout": 83.77,
+   "turnout2": 83.97,
+   "candidates": [
+    {
+     "name": "Nicolas Sarkozy",
+     "party": "Union for a Popular Movement",
+     "r1Votes": 11448663,
+     "r1Share": 31.18,
+     "r2Votes": 18983138,
+     "r2Share": 53.06
+    },
+    {
+     "name": "Ségolène Royal",
+     "party": "Socialist Party",
+     "r1Votes": 9500112,
+     "r1Share": 25.87,
+     "r2Votes": 16790440,
+     "r2Share": 46.94
+    },
+    {
+     "name": "François Bayrou",
+     "party": "Union for French Democracy",
+     "r1Votes": 6820119,
+     "r1Share": 18.57,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jean-Marie Le Pen",
+     "party": "National Front",
+     "r1Votes": 3834530,
+     "r1Share": 10.44,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Olivier Besancenot",
+     "party": "Revolutionary Communist League",
+     "r1Votes": 1498581,
+     "r1Share": 4.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Philippe de Villiers",
+     "party": "Movement for France",
+     "r1Votes": 818407,
+     "r1Share": 2.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marie-George Buffet",
+     "party": "French Communist Party",
+     "r1Votes": 707268,
+     "r1Share": 1.93,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Dominique Voynet",
+     "party": "The Greens",
+     "r1Votes": 576666,
+     "r1Share": 1.57,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Arlette Laguiller",
+     "party": "Workers' Struggle",
+     "r1Votes": 487857,
+     "r1Share": 1.33,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Bové",
+     "party": "Miscellaneous left/environmentalist",
+     "r1Votes": 483008,
+     "r1Share": 1.32,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Frédéric Nihous",
+     "party": "Hunting, Fishing, Nature and Traditions",
+     "r1Votes": 420645,
+     "r1Share": 1.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gérard Schivardi",
+     "party": "Workers' Party",
+     "r1Votes": 123540,
+     "r1Share": 0.34,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Jacques Chirac",
+    "party": "UMP"
+   },
+   "presAfter": {
+    "name": "Nicolas Sarkozy",
+    "party": "UMP"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in France on 21 and 22 April 2007 to elect the successor to Jacques Chirac as president of France (and ex officio Co-Prince of Andorra) for a five-year term. As no candidate received a majority of the vote, a second round was held on 5 and 6 May 2007 between the two leading candidates, Nicolas Sarkozy and Ségolène Royal."
+  },
+  {
+   "id": "pres-2012",
+   "label": "2012",
+   "year": 2012,
+   "kind": "presidential",
+   "date": "22 April 2012 and 6 May 2012",
+   "era": "modern",
+   "turnout": 79.48,
+   "turnout2": 80.35,
+   "candidates": [
+    {
+     "name": "François Hollande",
+     "party": "Socialist Party",
+     "r1Votes": 10272705,
+     "r1Share": 28.63,
+     "r2Votes": 18000668,
+     "r2Share": 51.64
+    },
+    {
+     "name": "Nicolas Sarkozy",
+     "party": "Union for a Popular Movement",
+     "r1Votes": 9753629,
+     "r1Share": 27.18,
+     "r2Votes": 16860685,
+     "r2Share": 48.36
+    },
+    {
+     "name": "Marine Le Pen",
+     "party": "National Front",
+     "r1Votes": 6421426,
+     "r1Share": 17.9,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jean-Luc Mélenchon",
+     "party": "Left Front",
+     "r1Votes": 3984822,
+     "r1Share": 11.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "François Bayrou",
+     "party": "Democratic Movement",
+     "r1Votes": 3275122,
+     "r1Share": 9.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eva Joly",
+     "party": "Europe Ecology – The Greens",
+     "r1Votes": 828345,
+     "r1Share": 2.31,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nicolas Dupont-Aignan",
+     "party": "Republic Arise",
+     "r1Votes": 643907,
+     "r1Share": 1.79,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Philippe Poutou",
+     "party": "New Anticapitalist Party",
+     "r1Votes": 411160,
+     "r1Share": 1.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nathalie Arthaud",
+     "party": "Workers' Struggle",
+     "r1Votes": 202548,
+     "r1Share": 0.56,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jacques Cheminade",
+     "party": "Solidarity and Progress",
+     "r1Votes": 89545,
+     "r1Share": 0.25,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Nicolas Sarkozy",
+    "party": "UMP"
+   },
+   "presAfter": {
+    "name": "François Hollande",
+    "party": "PS"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in France on 22 April 2012 (or 21 April in some overseas departments and territories), with a second round run-off held on 6 May (or 5 May for those same territories) to elect the President of France (who is also ex officio one of the two joint heads of state of Andorra, a sovereign state)."
+  },
+  {
+   "id": "pres-2017",
+   "label": "2017",
+   "year": 2017,
+   "kind": "presidential",
+   "date": "23 April 2017 and 7 May 2017",
+   "era": "modern",
+   "turnout": 77.77,
+   "turnout2": 74.56,
+   "candidates": [
+    {
+     "name": "Emmanuel Macron",
+     "party": "La République En Marche!",
+     "r1Votes": 8656346,
+     "r1Share": 24.01,
+     "r2Votes": 20743128,
+     "r2Share": 66.1
+    },
+    {
+     "name": "Marine Le Pen",
+     "party": "National Front",
+     "r1Votes": 7678491,
+     "r1Share": 21.3,
+     "r2Votes": 10638475,
+     "r2Share": 33.9
+    },
+    {
+     "name": "François Fillon",
+     "party": "The Republicans",
+     "r1Votes": 7212995,
+     "r1Share": 20.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jean-Luc Mélenchon",
+     "party": "La France Insoumise",
+     "r1Votes": 7059951,
+     "r1Share": 19.58,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Benoît Hamon",
+     "party": "Socialist Party",
+     "r1Votes": 2291288,
+     "r1Share": 6.36,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nicolas Dupont-Aignan",
+     "party": "Debout la France",
+     "r1Votes": 1695000,
+     "r1Share": 4.7,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jean Lassalle",
+     "party": "Résistons!",
+     "r1Votes": 435301,
+     "r1Share": 1.21,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Philippe Poutou",
+     "party": "New Anticapitalist Party",
+     "r1Votes": 394505,
+     "r1Share": 1.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "François Asselineau",
+     "party": "Popular Republican Union",
+     "r1Votes": 332547,
+     "r1Share": 0.92,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nathalie Arthaud",
+     "party": "Workers' Struggle",
+     "r1Votes": 232384,
+     "r1Share": 0.64,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jacques Cheminade",
+     "party": "Solidarity and Progress",
+     "r1Votes": 65586,
+     "r1Share": 0.18,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "François Hollande",
+    "party": "PS"
+   },
+   "presAfter": {
+    "name": "Emmanuel Macron",
+    "party": "EM"
+   },
+   "knownAs": "The system upended",
+   "summary": "Presidential elections were held in France on 23 April and 7 May 2017. Incumbent president François Hollande of the Socialist Party (PS) was eligible to run for a second term, but declared on 1 December 2016 that he would not seek reelection in light of low approval ratings, making him the first incumbent head of state of the Fifth Republic not to seek reelection."
+  },
+  {
+   "id": "pres-2022",
+   "label": "2022",
+   "year": 2022,
+   "kind": "presidential",
+   "date": "10 and 24 April 2022",
+   "era": "modern",
+   "turnout": 73.69,
+   "turnout2": 71.99,
+   "candidates": [
+    {
+     "name": "Emmanuel Macron",
+     "party": "La République En Marche!",
+     "r1Votes": 9783058,
+     "r1Share": 27.85,
+     "r2Votes": 18768639,
+     "r2Share": 58.55
+    },
+    {
+     "name": "Marine Le Pen",
+     "party": "National Rally",
+     "r1Votes": 8133828,
+     "r1Share": 23.15,
+     "r2Votes": 13288686,
+     "r2Share": 41.45
+    },
+    {
+     "name": "Jean-Luc Mélenchon",
+     "party": "La France Insoumise",
+     "r1Votes": 7712520,
+     "r1Share": 21.95,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Éric Zemmour",
+     "party": "Reconquête",
+     "r1Votes": 2485226,
+     "r1Share": 7.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Valérie Pécresse",
+     "party": "The Republicans",
+     "r1Votes": 1679001,
+     "r1Share": 4.78,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yannick Jadot",
+     "party": "Europe Ecology – The Greens",
+     "r1Votes": 1627853,
+     "r1Share": 4.63,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jean Lassalle",
+     "party": "Résistons!",
+     "r1Votes": 1101387,
+     "r1Share": 3.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Fabien Roussel",
+     "party": "French Communist Party",
+     "r1Votes": 802422,
+     "r1Share": 2.28,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nicolas Dupont-Aignan",
+     "party": "Debout la France",
+     "r1Votes": 725176,
+     "r1Share": 2.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Anne Hidalgo",
+     "party": "Socialist Party",
+     "r1Votes": 616478,
+     "r1Share": 1.75,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Philippe Poutou",
+     "party": "New Anticapitalist Party",
+     "r1Votes": 268904,
+     "r1Share": 0.77,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nathalie Arthaud",
+     "party": "Lutte Ouvrière",
+     "r1Votes": 197094,
+     "r1Share": 0.56,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Emmanuel Macron",
+    "party": "LREM"
+   },
+   "presAfter": {
+    "name": "Emmanuel Macron",
+    "party": "LREM"
+   },
+   "knownAs": "The rematch",
+   "summary": "Presidential elections were held in France on 10 and 24 April 2022. As no candidate won a majority in the first round, a runoff was held, in which incumbent Emmanuel Macron defeated Marine Le Pen and was re-elected as President of France."
+  }
+ ]
+}

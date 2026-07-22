@@ -12,6 +12,7 @@ import {
 } from "@/lib/ukElections";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import LineChart, { type ChartSeries } from "../LineChart";
+import SortableTable from "../SortableTable";
 
 const PATH = "/elections/uk";
 const TITLE = "UK General Elections";
@@ -306,20 +307,23 @@ export default async function UkElectionsPage() {
           Britain governed without referendums until 1973; it has held them at every constitutional fork since.
         </p>
         <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]">
-                <th className="px-3 py-2">Date</th>
-                <th className="px-3 py-2">Scope</th>
-                <th className="px-3 py-2">Question</th>
-                <th className="px-3 py-2">Outcome</th>
-                <th className="px-3 py-2 text-right">Winning side</th>
-                <th className="px-3 py-2 text-right">Turnout</th>
-              </tr>
-            </thead>
-            <tbody>
-              {beyond.referendums.map((r) => (
-                <tr key={`${r.date}-${r.scope}`} className="border-t align-top" style={{ borderColor: "var(--border)" }}>
+          <SortableTable
+            tableClassName="w-full text-sm"
+            headClassName="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]"
+            rowClassName="border-t align-top"
+            cols={[
+              { key: "date", label: "Date", className: "px-3 py-2" },
+              { key: "scope", label: "Scope", className: "px-3 py-2" },
+              { key: "question", label: "Question", className: "px-3 py-2" },
+              { key: "outcome", label: "Outcome", className: "px-3 py-2" },
+              { key: "win", label: "Winning side", className: "px-3 py-2 text-right" },
+              { key: "turnout", label: "Turnout", className: "px-3 py-2 text-right" },
+            ]}
+            rows={beyond.referendums.map((r) => ({
+              key: `${r.date}-${r.scope}`,
+              sort: { date: r.date, scope: r.scope, question: r.name, outcome: r.outcome, win: Math.max(r.yesPct, 100 - r.yesPct), turnout: r.turnout },
+              cells: (
+                <>
                   <td className="px-3 py-2 whitespace-nowrap text-[var(--text)]">{r.date}</td>
                   <td className="px-3 py-2 whitespace-nowrap text-[var(--text-muted)]">{r.scope}</td>
                   <td className="px-3 py-2 text-[var(--text-muted)]">
@@ -329,10 +333,10 @@ export default async function UkElectionsPage() {
                   <td className="px-3 py-2 whitespace-nowrap font-semibold text-[var(--text)]">{r.outcome}</td>
                   <td className="px-3 py-2 text-right tabular-nums text-[var(--text)]">{fmtPct(Math.max(r.yesPct, 100 - r.yesPct))}</td>
                   <td className="px-3 py-2 text-right tabular-nums text-[var(--text-muted)]">{fmtPct(r.turnout)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                </>
+              ),
+            }))}
+          />
         </div>
       </section>
 
@@ -383,20 +387,22 @@ export default async function UkElectionsPage() {
             UKIP in 2014 and the Brexit Party in 2019.
           </p>
           <div className="overflow-x-auto">
-            <table className="w-full text-xs">
-              <thead>
-                <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]">
-                  <th className="px-2 py-1.5">Election</th>
-                  <th className="px-2 py-1.5">Largest party (MEPs)</th>
-                  <th className="px-2 py-1.5">Runner-up</th>
-                  <th className="px-2 py-1.5 text-right">Turnout</th>
-                </tr>
-              </thead>
-              <tbody>
-                {beyond.europarl.elections.map((el) => {
-                  const [a, b] = el.parties;
-                  return (
-                    <tr key={el.year} className="border-t" style={{ borderColor: "var(--border)" }}>
+            <SortableTable
+              tableClassName="w-full text-xs"
+              headClassName="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]"
+              cols={[
+                { key: "year", label: "Election", className: "px-2 py-1.5" },
+                { key: "largest", label: "Largest party (MEPs)", className: "px-2 py-1.5" },
+                { key: "runnerUp", label: "Runner-up", className: "px-2 py-1.5" },
+                { key: "turnout", label: "Turnout", className: "px-2 py-1.5 text-right" },
+              ]}
+              rows={beyond.europarl.elections.map((el) => {
+                const [a, b] = el.parties;
+                return {
+                  key: String(el.year),
+                  sort: { year: el.year, largest: a?.party ?? null, runnerUp: b?.party ?? null, turnout: el.turnout },
+                  cells: (
+                    <>
                       <td className="px-2 py-1.5 font-semibold text-[var(--text)] tabular-nums">{el.year}</td>
                       <td className="px-2 py-1.5 text-[var(--text-muted)]">
                         {a ? <><span style={{ color: partyColor(a.party) }}>{a.party}</span> · {a.meps} MEPs{a.share != null ? ` · ${fmtPct(a.share)}` : ""}</> : "—"}
@@ -405,11 +411,11 @@ export default async function UkElectionsPage() {
                         {b ? <><span style={{ color: partyColor(b.party) }}>{b.party}</span> · {b.meps} MEPs</> : "—"}
                       </td>
                       <td className="px-2 py-1.5 text-right tabular-nums text-[var(--text-muted)]">{fmtPct(el.turnout)}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+                    </>
+                  ),
+                };
+              })}
+            />
           </div>
         </div>
       </section>
@@ -427,28 +433,30 @@ export default async function UkElectionsPage() {
             <h3 className="font-bold text-[var(--text)] mb-1">Metro-mayoral contests</h3>
             <p className="text-xs text-[var(--text-muted)] mb-3">{beyond.metroMayors.note}</p>
             <div className="overflow-x-auto">
-              <table className="w-full text-xs">
-                <thead>
-                  <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]">
-                    <th className="px-2 py-1.5">Authority</th>
-                    <th className="px-2 py-1.5">Winner</th>
-                    <th className="px-2 py-1.5 text-right">Elected</th>
-                    <th className="px-2 py-1.5 text-right">Turnout</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {beyond.metroMayors.latest.map((m) => (
-                    <tr key={m.authority} className="border-t" style={{ borderColor: "var(--border)" }}>
+              <SortableTable
+                tableClassName="w-full text-xs"
+                headClassName="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]"
+                cols={[
+                  { key: "authority", label: "Authority", className: "px-2 py-1.5" },
+                  { key: "winner", label: "Winner", className: "px-2 py-1.5" },
+                  { key: "elected", label: "Elected", className: "px-2 py-1.5 text-right" },
+                  { key: "turnout", label: "Turnout", className: "px-2 py-1.5 text-right" },
+                ]}
+                rows={beyond.metroMayors.latest.map((m) => ({
+                  key: m.authority,
+                  sort: { authority: m.authority, winner: m.mayor, elected: Number(m.date.slice(0, 4)), turnout: m.turnout },
+                  cells: (
+                    <>
                       <td className="px-2 py-1.5 text-[var(--text)]">{m.authority}</td>
                       <td className="px-2 py-1.5 text-[var(--text-muted)]">
                         {m.mayor} <span style={{ color: partyColor(m.party) }}>({m.party})</span>
                       </td>
                       <td className="px-2 py-1.5 text-right tabular-nums text-[var(--text-muted)]">{m.date.slice(0, 4)}</td>
                       <td className="px-2 py-1.5 text-right tabular-nums text-[var(--text-muted)]">{fmtPct(m.turnout)}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                    </>
+                  ),
+                }))}
+              />
             </div>
             <p className="text-xs mt-2">
               <Link href="/mayors" className="text-[var(--accent)] hover:underline">Current mayors, kept fresh weekly →</Link>

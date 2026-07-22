@@ -235,6 +235,8 @@ export default function EuElectionsPage() {
           <Link href="/elections/ca" className="text-[var(--accent)] hover:underline">Canadian Federal Elections</Link>
           {" · "}
           <Link href="/leaders" className="text-[var(--accent)] hover:underline">World Leaders</Link>
+          {" \u00b7 "}
+          <Link href="/orgs" className="text-[var(--accent)] hover:underline">International Organisations</Link>
         </p>
       </footer>
     </main>

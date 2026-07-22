@@ -216,7 +216,14 @@ export default function USTimeMachine({
   scotus?: Justice[];
 }) {
   const today = new Date().toISOString().slice(0, 10);
+  const MIN_DATE = "1789-04-30";
   const [date, setDate] = useState(today);
+  // What the input currently shows. Kept separate from the applied date so
+  // typing a year is never interrupted: a controlled date input reports
+  // partial years while they're being keyed ("19…" arrives as 0019), and
+  // clamping those mid-keystroke resets the field so a date can never be
+  // typed. Complete in-range values apply live; the rest settle on blur.
+  const [draft, setDraft] = useState(today);
 
   const pres = onDate(presidents, date);
   const vp = onDate(vicePresidents, date);
@@ -270,15 +277,18 @@ export default function USTimeMachine({
       <div className="flex flex-wrap items-center gap-3 mb-5">
         <input
           type="date"
-          value={date}
-          min="1789-04-30"
+          value={draft}
+          min={MIN_DATE}
           max={today}
           onChange={(e) => {
             const v = e.target.value;
-            if (!v) return;
-            // Hard-clamp typed dates: the picker's min/max only constrain the
-            // calendar UI, not keyboard entry. No future dates.
-            setDate(v > today ? today : v < "1789-04-30" ? "1789-04-30" : v);
+            setDraft(v);
+            if (v && v >= MIN_DATE && v <= today) setDate(v);
+          }}
+          onBlur={() => {
+            const c = !draft ? date : draft > today ? today : draft < MIN_DATE ? MIN_DATE : draft;
+            setDraft(c);
+            setDate(c);
           }}
           className="rounded-lg border px-3 py-2 text-sm text-[var(--text)]"
           style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}

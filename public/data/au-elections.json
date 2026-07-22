@@ -1,0 +1,2423 @@
+{
+ "meta": {
+  "title": "Australian federal elections",
+  "sources": [
+   "Wikipedia: Australian federal election articles, 1901–2025 (results, infoboxes and leads)",
+   "Australian Electoral Commission figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "eras": [
+  {
+   "key": "federation",
+   "label": "Founding the Commonwealth",
+   "span": "1901–1906",
+   "blurb": "The first Commonwealth parliaments were three-cornered contests between Protectionists, Free Traders and the rising Labour movement. Governments formed and fell on shifting alliances — Australia changed prime ministers five times in its first decade without an election deciding it."
+  },
+  {
+   "key": "labor-fusion",
+   "label": "Labor against the Fusion",
+   "span": "1910–1917",
+   "blurb": "The anti-Labour forces fused into a single Liberal party in 1909, and in 1910 Andrew Fisher's Labor won the world's first majority labour government at national level. War, conscription and the great Labor split of 1916 remade the landscape."
+  },
+  {
+   "key": "nationalist",
+   "label": "Hughes, Bruce and the coalition habit",
+   "span": "1919–1929",
+   "blurb": "Billy Hughes's Nationalists absorbed the Labor defectors, the new Country Party learned to name its price, and from 1923 the non-Labor side governed as a coalition — a habit Australian politics never broke. It ended with Stanley Bruce losing his own seat in 1929."
+  },
+  {
+   "key": "depression",
+   "label": "Depression and war",
+   "span": "1931–1943",
+   "blurb": "The Depression split Labor and handed power to Joseph Lyons's new United Australia Party. As war came, the UAP crumbled; John Curtin's Labor took office in 1941 without an election and then won the 1943 wartime landslide, still Labor's biggest."
+  },
+  {
+   "key": "menzies",
+   "label": "The Menzies ascendancy",
+   "span": "1946–1963",
+   "blurb": "Robert Menzies rebuilt the shattered non-Labor side as the Liberal Party and won in 1949 on anti-socialism and postwar prosperity. The Labor split of 1955 and DLP preferences kept him in power; he retired unbeaten after seven straight wins."
+  },
+  {
+   "key": "transition",
+   "label": "Holt to the Dismissal",
+   "span": "1966–1975",
+   "blurb": "The Coalition's Vietnam-era landslide of 1966 gave way to Gough Whitlam's 'It's Time' victory in 1972 — Labor's first win in 23 years. Three years, two elections and one constitutional crisis later, the Dismissal made 1975 the most bitter election in Australian history."
+  },
+  {
+   "key": "fraser-hawke",
+   "label": "Fraser, then Hawke and Keating",
+   "span": "1977–1993",
+   "blurb": "Malcolm Fraser consolidated the post-Dismissal order until Bob Hawke's consensus politics delivered Labor four straight wins from 1983. Paul Keating took the leadership in 1991 and won 1993's 'sweetest victory of all' against the GST."
+  },
+  {
+   "key": "howard",
+   "label": "The Howard era",
+   "span": "1996–2007",
+   "blurb": "John Howard's 1996 landslide began eleven years of Coalition government: gun laws, the GST election of 1998 won with a minority of the two-party vote, Tampa and national security in 2001, and interest rates in 2004 — until WorkChoices and Kevin Rudd ended it in 2007, taking Howard's own seat with it."
+  },
+  {
+   "key": "modern",
+   "label": "The modern seesaw",
+   "span": "2010–2025",
+   "blurb": "A hung parliament in 2010, a decade of leadership coups on both sides, the teal-independent wave of 2022 and a fragmenting primary vote — then Anthony Albanese's 2025 landslide, the largest seat haul either party has ever recorded, bucked the fragmentation story."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1901",
+   "label": "1901",
+   "year": 1901,
+   "date": "29–30 March 1901",
+   "era": "federation",
+   "totalSeats": 75,
+   "majoritySeats": 38,
+   "turnout": 51.39,
+   "parties": [
+    {
+     "name": "Protectionist",
+     "leader": "Edmund Barton",
+     "seats": 32,
+     "seatChange": null,
+     "votes": 135996,
+     "share": 27.52,
+     "swing": null
+    },
+    {
+     "name": "Free Trade Party",
+     "leader": "George Reid",
+     "seats": 25,
+     "seatChange": null,
+     "votes": 164085,
+     "share": 33.21,
+     "swing": null
+    },
+    {
+     "name": "Labour",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 90174,
+     "share": 18.25,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 103832,
+     "share": 21.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Edmund Barton",
+    "party": "Protectionist"
+   },
+   "pmAfter": {
+    "name": "Edmund Barton",
+    "party": "Protectionist"
+   },
+   "knownAs": null,
+   "summary": "The 1901 Australian federal election for the inaugural Parliament of Australia was held in Australia on Friday 29 March and Saturday 30 March 1901. The elections followed Federation and the establishment of the Commonwealth of Australia on 1 January 1901.",
+   "seatLeader": "Protectionist"
+  },
+  {
+   "id": "1903",
+   "label": "1903",
+   "year": 1903,
+   "date": "16 December 1903",
+   "era": "federation",
+   "totalSeats": 75,
+   "majoritySeats": 38,
+   "turnout": 39.05,
+   "parties": [
+    {
+     "name": "Protectionist",
+     "leader": "Alfred Deakin",
+     "seats": 26,
+     "seatChange": -6.0,
+     "votes": 210738,
+     "share": 29.23,
+     "swing": 1.71
+    },
+    {
+     "name": "Free Trade",
+     "leader": "George Reid",
+     "seats": 24,
+     "seatChange": -1.0,
+     "votes": 228721,
+     "share": 31.73,
+     "swing": -1.48
+    },
+    {
+     "name": "Labour",
+     "leader": "Chris Watson",
+     "seats": 22,
+     "seatChange": 6.0,
+     "votes": 214713,
+     "share": 29.78,
+     "swing": 11.53
+    },
+    {
+     "name": "Independents/Other",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": 63218,
+     "share": 8.77,
+     "swing": -12.24
+    },
+    {
+     "name": "Revenue Tariff",
+     "leader": "William McWilliams",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": 3546,
+     "share": 0.49,
+     "swing": 0.49
+    }
+   ],
+   "pmBefore": {
+    "name": "Alfred Deakin",
+    "party": "Protectionist"
+   },
+   "pmAfter": {
+    "name": "Alfred Deakin",
+    "party": "Protectionist"
+   },
+   "knownAs": null,
+   "summary": "The 1903 Australian federal election was held in Australia on 16 December 1903. All 75 seats in the House of Representatives, and 19 of the 36 seats in the Senate were up for election.",
+   "seatLeader": "Protectionist"
+  },
+  {
+   "id": "1906",
+   "label": "1906",
+   "year": 1906,
+   "date": "12 December 1906",
+   "era": "federation",
+   "totalSeats": 75,
+   "majoritySeats": 38,
+   "turnout": 47.48,
+   "parties": [
+    {
+     "name": "Labour",
+     "leader": "Chris Watson",
+     "seats": 26,
+     "seatChange": 4.0,
+     "votes": 348712,
+     "share": 36.64,
+     "swing": 6.86
+    },
+    {
+     "name": "Anti-Socialist",
+     "leader": "George Reid",
+     "seats": 26,
+     "seatChange": 2.0,
+     "votes": 345781,
+     "share": 36.33,
+     "swing": 4.6
+    },
+    {
+     "name": "Protectionist",
+     "leader": "Alfred Deakin",
+     "seats": 16,
+     "seatChange": -10.0,
+     "votes": 155991,
+     "share": 16.39,
+     "swing": -12.84
+    },
+    {
+     "name": "Western Australian Party",
+     "leader": "John Forrest",
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": 22154,
+     "share": 2.33,
+     "swing": 2.33
+    }
+   ],
+   "pmBefore": {
+    "name": "Alfred Deakin",
+    "party": "Protectionist"
+   },
+   "pmAfter": {
+    "name": "Alfred Deakin",
+    "party": "Protectionist"
+   },
+   "knownAs": null,
+   "summary": "The 1906 Australian federal election was held in Australia on 12 December 1906. All 75 seats in the House of Representatives, and 18 of the 36 seats in the Senate were up for election.",
+   "seatLeader": "Labour"
+  },
+  {
+   "id": "1910",
+   "label": "1910",
+   "year": 1910,
+   "date": "13 April 1910",
+   "era": "labor-fusion",
+   "totalSeats": 75,
+   "majoritySeats": 38,
+   "turnout": 59.52,
+   "parties": [
+    {
+     "name": "Labour",
+     "leader": "Andrew Fisher",
+     "seats": 42,
+     "seatChange": 15.0,
+     "votes": 649538,
+     "share": 49.12,
+     "swing": 13.33
+    },
+    {
+     "name": "Liberal",
+     "leader": "Alfred Deakin",
+     "seats": 31,
+     "seatChange": -11.0,
+     "votes": 591248,
+     "share": 44.71,
+     "swing": -8.01
+    }
+   ],
+   "pmBefore": {
+    "name": "Alfred Deakin",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "Andrew Fisher",
+    "party": "Labour"
+   },
+   "knownAs": "First majority Labor government",
+   "summary": "The 1910 Australian federal election was held in Australia on 13 April 1910. All 75 seats in the House of Representatives, and 18 of the 36 seats in the Senate were up for election.",
+   "seatLeader": "Labour"
+  },
+  {
+   "id": "1913",
+   "label": "1913",
+   "year": 1913,
+   "date": "31 May 1913",
+   "era": "labor-fusion",
+   "totalSeats": 75,
+   "majoritySeats": 38,
+   "turnout": 73.49,
+   "parties": [
+    {
+     "name": "Liberal",
+     "leader": "Joseph Cook",
+     "seats": 38,
+     "seatChange": 7.0,
+     "votes": 930076,
+     "share": 48.94,
+     "swing": 3.85
+    },
+    {
+     "name": "Labor",
+     "leader": "Andrew Fisher",
+     "seats": 37,
+     "seatChange": -5.0,
+     "votes": 921099,
+     "share": 48.47,
+     "swing": -1.5
+    }
+   ],
+   "pmBefore": {
+    "name": "Andrew Fisher",
+    "party": "Labor"
+   },
+   "pmAfter": {
+    "name": "Joseph Cook",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "The 1913 Australian federal election was held in Australia on 31 May 1913. All 75 seats in the House of Representatives, and 18 of the 36 seats in the Senate were up for election.",
+   "seatLeader": "Liberal"
+  },
+  {
+   "id": "1914",
+   "label": "1914",
+   "year": 1914,
+   "date": "5 September 1914",
+   "era": "labor-fusion",
+   "totalSeats": 75,
+   "majoritySeats": 38,
+   "turnout": 73.53,
+   "parties": [
+    {
+     "name": "Labor",
+     "leader": "Andrew Fisher",
+     "seats": 42,
+     "seatChange": 5.0,
+     "votes": 858451,
+     "share": 50.89,
+     "swing": 2.42
+    },
+    {
+     "name": "Liberal",
+     "leader": "Joseph Cook",
+     "seats": 32,
+     "seatChange": -6.0,
+     "votes": 796397,
+     "share": 47.21,
+     "swing": -1.73
+    }
+   ],
+   "pmBefore": {
+    "name": "Joseph Cook",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "Andrew Fisher",
+    "party": "Labor"
+   },
+   "knownAs": "First double dissolution",
+   "summary": "The 1914 Australian federal election was held in Australia on 5 September 1914. The election had been called before the declaration of war in August 1914.",
+   "seatLeader": "Labor"
+  },
+  {
+   "id": "1917",
+   "label": "1917",
+   "year": 1917,
+   "date": "5 May 1917",
+   "era": "labor-fusion",
+   "totalSeats": 75,
+   "majoritySeats": 38,
+   "turnout": 78.3,
+   "parties": [
+    {
+     "name": "Nationalist",
+     "leader": "Billy Hughes",
+     "seats": 53,
+     "seatChange": 21.0,
+     "votes": 1021138,
+     "share": 54.22,
+     "swing": 7.01
+    },
+    {
+     "name": "Labor",
+     "leader": "Frank Tudor",
+     "seats": 22,
+     "seatChange": -20.0,
+     "votes": 827541,
+     "share": 43.94,
+     "swing": -6.95
+    }
+   ],
+   "pmBefore": {
+    "name": "Billy Hughes",
+    "party": "Nationalist"
+   },
+   "pmAfter": {
+    "name": "Billy Hughes",
+    "party": "Nationalist"
+   },
+   "knownAs": "Conscription-split election",
+   "summary": "The 1917 Australian federal election was held in Australia on 5 May 1917. All 75 seats in the House of Representatives and 18 of the 36 seats in the Senate were up for election.",
+   "seatLeader": "Nationalist"
+  },
+  {
+   "id": "1919",
+   "label": "1919",
+   "year": 1919,
+   "date": "13 December 1919",
+   "era": "nationalist",
+   "totalSeats": 75,
+   "majoritySeats": 38,
+   "turnout": 71.59,
+   "parties": [
+    {
+     "name": "Nationalist",
+     "leader": "Billy Hughes",
+     "seats": 37,
+     "seatChange": -16.0,
+     "votes": null,
+     "share": 45.62,
+     "swing": null
+    },
+    {
+     "name": "Labor",
+     "leader": "Frank Tudor",
+     "seats": 26,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": 42.49,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Billy Hughes",
+    "party": "Nationalist"
+   },
+   "pmAfter": {
+    "name": "Billy Hughes",
+    "party": "Nationalist"
+   },
+   "knownAs": null,
+   "summary": "The 1919 Australian federal election was held on 13 December 1919 to elect members to the Parliament of Australia. All 75 seats in the House of Representatives and 19 of the 36 seats in the Senate were up for election.",
+   "seatLeader": "Nationalist"
+  },
+  {
+   "id": "1922",
+   "label": "1922",
+   "year": 1922,
+   "date": "16 December 1922",
+   "era": "nationalist",
+   "totalSeats": 76,
+   "majoritySeats": 38,
+   "turnout": 59.36,
+   "parties": [
+    {
+     "name": "Labor",
+     "leader": "Matthew Charlton",
+     "seats": 29,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": 42.3,
+     "swing": -0.19
+    },
+    {
+     "name": "Nationalist",
+     "leader": "Billy Hughes",
+     "seats": 26,
+     "seatChange": -11.0,
+     "votes": null,
+     "share": 35.23,
+     "swing": -9.85
+    },
+    {
+     "name": "Country",
+     "leader": "Earle Page",
+     "seats": 14,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 12.56,
+     "swing": 3.3
+    }
+   ],
+   "pmBefore": {
+    "name": "Billy Hughes",
+    "party": "Nationalist"
+   },
+   "pmAfter": {
+    "name": "Stanley Bruce",
+    "party": "Nationalist/Country coalition"
+   },
+   "knownAs": null,
+   "summary": "The 1922 Australian federal election was held on 16 December 1922 to elect members to the Parliament of Australia. All 76 seats in the House of Representatives and 19 of the 36 seats in the Senate were up for election.",
+   "seatLeader": "Labor"
+  },
+  {
+   "id": "1925",
+   "label": "1925",
+   "year": 1925,
+   "date": "14 November 1925",
+   "era": "nationalist",
+   "totalSeats": 75,
+   "majoritySeats": 38,
+   "turnout": 91.39,
+   "parties": [
+    {
+     "name": "Nationalist",
+     "leader": "Stanley Bruce",
+     "seats": 37,
+     "seatChange": 11.0,
+     "votes": null,
+     "share": 42.46,
+     "swing": 7.23
+    },
+    {
+     "name": "Labor",
+     "leader": "Matthew Charlton",
+     "seats": 23,
+     "seatChange": -6.0,
+     "votes": null,
+     "share": 45.04,
+     "swing": 2.74
+    },
+    {
+     "name": "Country",
+     "leader": "Earle Page",
+     "seats": null,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 10.74,
+     "swing": -1.82
+    }
+   ],
+   "pmBefore": {
+    "name": "Stanley Bruce",
+    "party": "Nationalist/Country coalition"
+   },
+   "pmAfter": {
+    "name": "Stanley Bruce",
+    "party": "Nationalist/Country coalition"
+   },
+   "knownAs": null,
+   "summary": "The 1925 Australian federal election was held in Australia on 14 November 1925. All 75 seats in the House of Representatives and 22 of the 36 seats in the Senate were up for election.",
+   "seatLeader": "Nationalist"
+  },
+  {
+   "id": "1928",
+   "label": "1928",
+   "year": 1928,
+   "date": "17 November 1928",
+   "era": "nationalist",
+   "totalSeats": 75,
+   "majoritySeats": 38,
+   "turnout": 93.64,
+   "parties": [
+    {
+     "name": "Labor",
+     "leader": "James Scullin",
+     "seats": 31,
+     "seatChange": 8.0,
+     "votes": null,
+     "share": 44.64,
+     "swing": -0.4
+    },
+    {
+     "name": "Nationalist",
+     "leader": "Stanley Bruce",
+     "seats": 29,
+     "seatChange": -8.0,
+     "votes": null,
+     "share": 39.09,
+     "swing": -3.37
+    },
+    {
+     "name": "Country",
+     "leader": "Earle Page",
+     "seats": 13,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 10.47,
+     "swing": -0.27
+    }
+   ],
+   "pmBefore": {
+    "name": "Stanley Bruce",
+    "party": "Nationalist/Country coalition"
+   },
+   "pmAfter": {
+    "name": "Stanley Bruce",
+    "party": "Nationalist/Country coalition"
+   },
+   "knownAs": null,
+   "summary": "The 1928 Australian federal election was held in Australia on 17 November 1928. All 75 seats in the House of Representatives and 19 of the 36 seats in the Senate were up for election.",
+   "seatLeader": "Labor"
+  },
+  {
+   "id": "1929",
+   "label": "1929",
+   "year": 1929,
+   "date": "12 October 1929",
+   "era": "nationalist",
+   "totalSeats": 75,
+   "majoritySeats": 38,
+   "turnout": 94.85,
+   "parties": [
+    {
+     "name": "Labor",
+     "leader": "James Scullin",
+     "seats": 46,
+     "seatChange": 15.0,
+     "votes": null,
+     "share": 56.7,
+     "swing": 8.3
+    },
+    {
+     "name": "Nationalist–Country Coalition",
+     "leader": "Stanley Bruce",
+     "seats": 24,
+     "seatChange": -18.0,
+     "votes": null,
+     "share": 43.3,
+     "swing": -8.3
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 6.02,
+     "swing": 2.61
+    },
+    {
+     "name": "Country Progressive",
+     "leader": "Albert Dunstan",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 0.97,
+     "swing": -0.64
+    }
+   ],
+   "pmBefore": {
+    "name": "Stanley Bruce",
+    "party": "Nationalist/Country coalition"
+   },
+   "pmAfter": {
+    "name": "James Scullin",
+    "party": "Labor"
+   },
+   "knownAs": "PM loses his own seat",
+   "summary": "The 1929 Australian federal election was held in Australia on 12 October 1929. All 75 seats in the House of Representatives were up for election, but there was no Senate election.",
+   "seatLeader": "Labor"
+  },
+  {
+   "id": "1931",
+   "label": "1931",
+   "year": 1931,
+   "date": "19 December 1931",
+   "era": "depression",
+   "totalSeats": 75,
+   "majoritySeats": 38,
+   "turnout": 95.04,
+   "parties": [
+    {
+     "name": "United Australia",
+     "leader": "Joseph Lyons",
+     "seats": 33,
+     "seatChange": 14.0,
+     "votes": null,
+     "share": 36.4,
+     "swing": null
+    },
+    {
+     "name": "Country",
+     "leader": "Earle Page",
+     "seats": 16,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": 12.2,
+     "swing": 1.9
+    },
+    {
+     "name": "Labor",
+     "leader": "James Scullin",
+     "seats": 15,
+     "seatChange": -21.0,
+     "votes": null,
+     "share": 27.1,
+     "swing": -21.7
+    },
+    {
+     "name": "Emergency Committee",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 5.0,
+     "votes": null,
+     "share": 5.5,
+     "swing": null
+    },
+    {
+     "name": "Lang Labor",
+     "leader": "Jack Lang",
+     "seats": 4,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 10.6,
+     "swing": 10.6
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 6.0,
+     "swing": -0.02
+    }
+   ],
+   "pmBefore": {
+    "name": "James Scullin",
+    "party": "Labor"
+   },
+   "pmAfter": {
+    "name": "Joseph Lyons",
+    "party": "United Australia"
+   },
+   "knownAs": "Depression election",
+   "summary": "The incumbent first-term Australian Labor Party (ALP) government led by Prime Minister James Scullin was defeated in a landslide by the United Australia Party (UAP) led by Joseph Lyons. As of 2025, this is the last time that a sitting government at a federal level has been defeated after a single term.",
+   "seatLeader": "United Australia"
+  },
+  {
+   "id": "1934",
+   "label": "1934",
+   "year": 1934,
+   "date": "15 September 1934",
+   "era": "depression",
+   "totalSeats": 74,
+   "majoritySeats": 38,
+   "turnout": 95.17,
+   "parties": [
+    {
+     "name": "United Australia",
+     "leader": "Joseph Lyons",
+     "seats": 33,
+     "seatChange": -6.0,
+     "votes": null,
+     "share": 32.97,
+     "swing": -3.13
+    },
+    {
+     "name": "Labor",
+     "leader": "James Scullin",
+     "seats": 18,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": 26.81,
+     "swing": -0.28
+    },
+    {
+     "name": "Country",
+     "leader": "Earle Page",
+     "seats": 14,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 12.61,
+     "swing": 0.36
+    },
+    {
+     "name": "Lang Labor",
+     "leader": "Jack Lang",
+     "seats": 9,
+     "seatChange": 5.0,
+     "votes": null,
+     "share": 14.37,
+     "swing": 3.8
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 3.02,
+     "swing": -5.17
+    }
+   ],
+   "pmBefore": {
+    "name": "Joseph Lyons",
+    "party": "United Australia"
+   },
+   "pmAfter": {
+    "name": "Joseph Lyons",
+    "party": "United Australia"
+   },
+   "knownAs": null,
+   "summary": "The 1934 Australian federal election was held in Australia on 15 September 1934. All 74 seats in the House of Representatives, and 18 of the 36 seats in the Senate were up for election.",
+   "seatLeader": "United Australia"
+  },
+  {
+   "id": "1937",
+   "label": "1937",
+   "year": 1937,
+   "date": "23 October 1937",
+   "era": "depression",
+   "totalSeats": 74,
+   "majoritySeats": 38,
+   "turnout": 96.13,
+   "parties": [
+    {
+     "name": "United Australia–Country Coalition",
+     "leader": "Joseph Lyons",
+     "seats": 43,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 49.26,
+     "swing": -1.01
+    },
+    {
+     "name": "Labor",
+     "leader": "John Curtin",
+     "seats": 29,
+     "seatChange": 11.0,
+     "votes": null,
+     "share": 43.17,
+     "swing": 16.36
+    }
+   ],
+   "pmBefore": {
+    "name": "Joseph Lyons",
+    "party": "UAP/Country coalition"
+   },
+   "pmAfter": {
+    "name": "Joseph Lyons",
+    "party": "UAP/Country coalition"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held in Australia on 23 October 1937. All 74 seats in the House of Representatives, and 19 of the 36 seats in the Senate were up for election.",
+   "seatLeader": "United Australia–Country Coalition"
+  },
+  {
+   "id": "1940",
+   "label": "1940",
+   "year": 1940,
+   "date": "21 September 1940",
+   "era": "depression",
+   "totalSeats": 74,
+   "majoritySeats": 38,
+   "turnout": 94.82,
+   "parties": [
+    {
+     "name": "United Australia–Country Coalition",
+     "leader": "Robert Menzies",
+     "seats": 36,
+     "seatChange": -8.0,
+     "votes": null,
+     "share": 43.93,
+     "swing": -4.65
+    },
+    {
+     "name": "Labor",
+     "leader": "John Curtin",
+     "seats": 32,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 40.16,
+     "swing": -3.01
+    },
+    {
+     "name": "Labor (Non-Communist)",
+     "leader": "Jack Lang",
+     "seats": 4,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": 5.23,
+     "swing": 0.87
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 7.46,
+     "swing": 1.9
+    }
+   ],
+   "pmBefore": {
+    "name": "Robert Menzies",
+    "party": "UAP/Country coalition"
+   },
+   "pmAfter": {
+    "name": "Robert Menzies",
+    "party": "UAP/Country coalition"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held in Australia on 21 September 1940. All 74 seats in the House of Representatives and 19 of the 36 seats in the Senate were up for election.",
+   "seatLeader": "United Australia–Country Coalition"
+  },
+  {
+   "id": "1943",
+   "label": "1943",
+   "year": 1943,
+   "date": "21 August 1943",
+   "era": "depression",
+   "totalSeats": 74,
+   "majoritySeats": 38,
+   "turnout": 96.32,
+   "parties": [
+    {
+     "name": "Labor",
+     "leader": "John Curtin",
+     "seats": 49,
+     "seatChange": 17.0,
+     "votes": null,
+     "share": 49.93,
+     "swing": 9.77
+    },
+    {
+     "name": "Country–United Australia Coalition",
+     "leader": "Arthur Fadden",
+     "seats": 23,
+     "seatChange": -13.0,
+     "votes": null,
+     "share": 30.44,
+     "swing": -13.49
+    }
+   ],
+   "pmBefore": {
+    "name": "John Curtin",
+    "party": "Labor"
+   },
+   "pmAfter": {
+    "name": "John Curtin",
+    "party": "Labor"
+   },
+   "knownAs": "Curtin's wartime landslide",
+   "summary": "A federal election was held in Australia on 21 August 1943. All 74 seats in the House of Representatives and 19 of the 36 seats in the Senate were up for election.",
+   "seatLeader": "Labor"
+  },
+  {
+   "id": "1946",
+   "label": "1946",
+   "year": 1946,
+   "date": "28 September 1946",
+   "era": "menzies",
+   "totalSeats": 74,
+   "majoritySeats": 38,
+   "turnout": 93.97,
+   "parties": [
+    {
+     "name": "Labor",
+     "leader": "Ben Chifley",
+     "seats": 43,
+     "seatChange": -6.0,
+     "votes": null,
+     "share": 49.71,
+     "swing": -0.22
+    },
+    {
+     "name": "Liberal–Country Coalition",
+     "leader": "Robert Menzies",
+     "seats": 29,
+     "seatChange": 10.0,
+     "votes": null,
+     "share": 43.65,
+     "swing": 13.2
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 1.82,
+     "swing": -10.34
+    },
+    {
+     "name": "Labor (Non-Communist)",
+     "leader": "Jack Lang",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 1.59,
+     "swing": 0.87
+    }
+   ],
+   "pmBefore": {
+    "name": "Ben Chifley",
+    "party": "Labor"
+   },
+   "pmAfter": {
+    "name": "Ben Chifley",
+    "party": "Labor"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held in Australia on 28 September 1946. All 74 seats in the House of Representatives and 19 of the 36 seats in the Senate were up for election.",
+   "seatLeader": "Labor"
+  },
+  {
+   "id": "1949",
+   "label": "1949",
+   "year": 1949,
+   "date": "10 December 1949",
+   "era": "menzies",
+   "totalSeats": 121,
+   "majoritySeats": 61,
+   "turnout": 95.97,
+   "parties": [
+    {
+     "name": "Liberal–Country Coalition",
+     "leader": "Robert Menzies",
+     "seats": 74,
+     "seatChange": 48.0,
+     "votes": null,
+     "share": 50.26,
+     "swing": 6.61
+    },
+    {
+     "name": "Labor",
+     "leader": "Ben Chifley",
+     "seats": 47,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": 45.98,
+     "swing": -3.73
+    }
+   ],
+   "pmBefore": {
+    "name": "Ben Chifley",
+    "party": "Labor"
+   },
+   "pmAfter": {
+    "name": "Robert Menzies",
+    "party": "Liberal–Country Coalition"
+   },
+   "knownAs": "Menzies returns",
+   "summary": "A federal election was held in Australia on 10 December 1949. All 121 seats in the House of Representatives and 42 of the 60 seats in the Senate were up for election.",
+   "seatLeader": "Liberal–Country Coalition"
+  },
+  {
+   "id": "1951",
+   "label": "1951",
+   "year": 1951,
+   "date": "28 April 1951",
+   "era": "menzies",
+   "totalSeats": 121,
+   "majoritySeats": 61,
+   "turnout": 96.0,
+   "parties": [
+    {
+     "name": "Liberal–Country Coalition",
+     "leader": "Robert Menzies",
+     "seats": 69,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": 50.34,
+     "swing": 0.08
+    },
+    {
+     "name": "Labor",
+     "leader": "Ben Chifley",
+     "seats": 52,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": 47.63,
+     "swing": 1.65
+    }
+   ],
+   "pmBefore": {
+    "name": "Robert Menzies",
+    "party": "Liberal/Country coalition"
+   },
+   "pmAfter": {
+    "name": "Robert Menzies",
+    "party": "Liberal/Country coalition"
+   },
+   "knownAs": "Double dissolution",
+   "summary": "A federal election was held in Australia on 28 April 1951. All 121 seats in the House of Representatives and all 60 seats in the Senate were up for election, due to a double dissolution called after the Senate rejected the Commonwealth Bank Bill.",
+   "seatLeader": "Liberal–Country Coalition"
+  },
+  {
+   "id": "1954",
+   "label": "1954",
+   "year": 1954,
+   "date": "29 May 1954",
+   "era": "menzies",
+   "totalSeats": 121,
+   "majoritySeats": 61,
+   "turnout": 96.09,
+   "parties": [
+    {
+     "name": "Liberal–Country Coalition",
+     "leader": "Robert Menzies",
+     "seats": 64,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": 47.57,
+     "swing": -2.77
+    },
+    {
+     "name": "Labor",
+     "leader": "H. V. Evatt",
+     "seats": 57,
+     "seatChange": 5.0,
+     "votes": null,
+     "share": 50.07,
+     "swing": 2.44
+    }
+   ],
+   "pmBefore": {
+    "name": "Robert Menzies",
+    "party": "Liberal/Country coalition"
+   },
+   "pmAfter": {
+    "name": "Robert Menzies",
+    "party": "Liberal/Country coalition"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held in Australia on 29 May 1954. All 121 seats in the House of Representatives were up for election, but no Senate election took place.",
+   "seatLeader": "Liberal–Country Coalition"
+  },
+  {
+   "id": "1955",
+   "label": "1955",
+   "year": 1955,
+   "date": "10 December 1955",
+   "era": "menzies",
+   "totalSeats": 122,
+   "majoritySeats": 62,
+   "turnout": 95.0,
+   "parties": [
+    {
+     "name": "Liberal–Country Coalition",
+     "leader": "Robert Menzies",
+     "seats": 75,
+     "seatChange": 11.0,
+     "votes": null,
+     "share": 47.67,
+     "swing": 0.1
+    },
+    {
+     "name": "Labor",
+     "leader": "H. V. Evatt",
+     "seats": 47,
+     "seatChange": -10.0,
+     "votes": null,
+     "share": 44.65,
+     "swing": -5.42
+    }
+   ],
+   "pmBefore": {
+    "name": "Robert Menzies",
+    "party": "Liberal/Country coalition"
+   },
+   "pmAfter": {
+    "name": "Robert Menzies",
+    "party": "Liberal/Country coalition"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held in Australia on 10 December 1955. All 122 seats in the House of Representatives and 30 of the 60 seats in the Senate were up for election.",
+   "seatLeader": "Liberal–Country Coalition"
+  },
+  {
+   "id": "1958",
+   "label": "1958",
+   "year": 1958,
+   "date": "22 November 1958",
+   "era": "menzies",
+   "totalSeats": 122,
+   "majoritySeats": 62,
+   "turnout": 95.48,
+   "parties": [
+    {
+     "name": "Liberal–Country Coalition",
+     "leader": "Robert Menzies",
+     "seats": 77,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 46.55,
+     "swing": -1.12
+    },
+    {
+     "name": "Labor",
+     "leader": "H. V. Evatt",
+     "seats": 45,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 42.81,
+     "swing": -1.84
+    }
+   ],
+   "pmBefore": {
+    "name": "Robert Menzies",
+    "party": "Liberal/Country coalition"
+   },
+   "pmAfter": {
+    "name": "Robert Menzies",
+    "party": "Liberal/Country coalition"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held in Australia on 22 November 1958. All 122 seats in the House of Representatives and 32 of the 60 seats in the Senate were up for election.",
+   "seatLeader": "Liberal–Country Coalition"
+  },
+  {
+   "id": "1961",
+   "label": "1961",
+   "year": 1961,
+   "date": "9 December 1961",
+   "era": "menzies",
+   "totalSeats": 122,
+   "majoritySeats": 62,
+   "turnout": 95.27,
+   "parties": [
+    {
+     "name": "Liberal–Country Coalition",
+     "leader": "Robert Menzies",
+     "seats": 62,
+     "seatChange": -15.0,
+     "votes": null,
+     "share": 42.09,
+     "swing": -4.46
+    },
+    {
+     "name": "Labor",
+     "leader": "Arthur Calwell",
+     "seats": 60,
+     "seatChange": 15.0,
+     "votes": null,
+     "share": 47.9,
+     "swing": 5.09
+    }
+   ],
+   "pmBefore": {
+    "name": "Robert Menzies",
+    "party": "Liberal/Country coalition"
+   },
+   "pmAfter": {
+    "name": "Robert Menzies",
+    "party": "Liberal/Country coalition"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held in Australia on 9 December 1961. All 122 seats in the House of Representatives and 31 of the 60 seats in the Senate were up for election.",
+   "seatLeader": "Liberal–Country Coalition"
+  },
+  {
+   "id": "1963",
+   "label": "1963",
+   "year": 1963,
+   "date": "30 November 1963",
+   "era": "menzies",
+   "totalSeats": 122,
+   "majoritySeats": 62,
+   "turnout": 95.73,
+   "parties": [
+    {
+     "name": "Liberal–Country Coalition",
+     "leader": "Sir Robert Menzies",
+     "seats": 72,
+     "seatChange": 10.0,
+     "votes": null,
+     "share": 46.04,
+     "swing": 3.95
+    },
+    {
+     "name": "Labor",
+     "leader": "Arthur Calwell",
+     "seats": 50,
+     "seatChange": -10.0,
+     "votes": null,
+     "share": 45.47,
+     "swing": -2.43
+    }
+   ],
+   "pmBefore": {
+    "name": "Sir Robert Menzies",
+    "party": "Liberal/Country coalition"
+   },
+   "pmAfter": {
+    "name": "Sir Robert Menzies",
+    "party": "Liberal/Country coalition"
+   },
+   "knownAs": "Menzies' seventh win",
+   "summary": "A federal election was held in Australia on 30 November 1963. All 122 seats in the House of Representatives were up for election.",
+   "seatLeader": "Liberal–Country Coalition"
+  },
+  {
+   "id": "1966",
+   "label": "1966",
+   "year": 1966,
+   "date": "26 November 1966",
+   "era": "transition",
+   "totalSeats": 124,
+   "majoritySeats": 63,
+   "turnout": 95.13,
+   "parties": [
+    {
+     "name": "Liberal–Country Coalition",
+     "leader": "Harold Holt",
+     "seats": 82,
+     "seatChange": 10.0,
+     "votes": null,
+     "share": 49.98,
+     "swing": 3.94
+    },
+    {
+     "name": "Labor",
+     "leader": "Arthur Calwell",
+     "seats": 41,
+     "seatChange": -9.0,
+     "votes": null,
+     "share": 39.98,
+     "swing": -5.49
+    }
+   ],
+   "pmBefore": {
+    "name": "Harold Holt",
+    "party": "Liberal/Country coalition"
+   },
+   "pmAfter": {
+    "name": "Harold Holt",
+    "party": "Liberal/Country coalition"
+   },
+   "knownAs": "Vietnam election",
+   "summary": "A federal election was held in Australia on 26 November 1966. All 124 seats in the House of Representatives were up for election.",
+   "seatLeader": "Liberal–Country Coalition"
+  },
+  {
+   "id": "1969",
+   "label": "1969",
+   "year": 1969,
+   "date": "25 October 1969",
+   "era": "transition",
+   "totalSeats": 125,
+   "majoritySeats": 63,
+   "turnout": 94.97,
+   "parties": [
+    {
+     "name": "Liberal–Country Coalition",
+     "leader": "John Gorton",
+     "seats": 66,
+     "seatChange": -16.0,
+     "votes": null,
+     "share": 43.33,
+     "swing": -6.65
+    },
+    {
+     "name": "Labor",
+     "leader": "Gough Whitlam",
+     "seats": 59,
+     "seatChange": 18.0,
+     "votes": null,
+     "share": 46.95,
+     "swing": 6.97
+    }
+   ],
+   "pmBefore": {
+    "name": "John Gorton",
+    "party": "Liberal/Country coalition"
+   },
+   "pmAfter": {
+    "name": "John Gorton",
+    "party": "Liberal/Country coalition"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held in Australia on 25 October 1969. The incumbent Liberal–Country coalition government, led by Prime Minister John Gorton, won the election with a severely diminished majority over the opposition Labor Party, led by Gough Whitlam, despite losing the two-party-preferred vote.",
+   "seatLeader": "Liberal–Country Coalition"
+  },
+  {
+   "id": "1972",
+   "label": "1972",
+   "year": 1972,
+   "date": "2 December 1972",
+   "era": "transition",
+   "totalSeats": 125,
+   "majoritySeats": 63,
+   "turnout": 95.38,
+   "parties": [
+    {
+     "name": "Labor",
+     "leader": "Gough Whitlam",
+     "seats": 67,
+     "seatChange": 8.0,
+     "votes": null,
+     "share": 49.59,
+     "swing": 2.64
+    },
+    {
+     "name": "Liberal–Country Coalition",
+     "leader": "William McMahon",
+     "seats": 58,
+     "seatChange": -8.0,
+     "votes": null,
+     "share": 41.48,
+     "swing": -1.84
+    }
+   ],
+   "pmBefore": {
+    "name": "William McMahon",
+    "party": "Liberal/Country coalition"
+   },
+   "pmAfter": {
+    "name": "Gough Whitlam",
+    "party": "Labor"
+   },
+   "knownAs": "It's Time",
+   "summary": "A federal election was held in Australia on 2 December 1972. All 125 seats in the House of Representatives were up for election, as well as a single Senate seat in Queensland.",
+   "seatLeader": "Labor"
+  },
+  {
+   "id": "1974",
+   "label": "1974",
+   "year": 1974,
+   "date": "18 May 1974",
+   "era": "transition",
+   "totalSeats": 127,
+   "majoritySeats": 64,
+   "turnout": 95.42,
+   "parties": [
+    {
+     "name": "Labor",
+     "leader": "Gough Whitlam",
+     "seats": 66,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 49.3,
+     "swing": -0.29
+    },
+    {
+     "name": "Liberal–Country Coalition",
+     "leader": "Billy Snedden",
+     "seats": 61,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 45.73,
+     "swing": 4.25
+    }
+   ],
+   "pmBefore": {
+    "name": "Gough Whitlam",
+    "party": "Labor"
+   },
+   "pmAfter": {
+    "name": "Gough Whitlam",
+    "party": "Labor"
+   },
+   "knownAs": "Double dissolution",
+   "summary": "A federal election was held in Australia on 18 May 1974. All 127 seats in the House of Representatives and all 60 seats in the Senate were up for election, due to a double dissolution.",
+   "seatLeader": "Labor"
+  },
+  {
+   "id": "1975",
+   "label": "1975",
+   "year": 1975,
+   "date": "13 December 1975",
+   "era": "transition",
+   "totalSeats": 127,
+   "majoritySeats": 64,
+   "turnout": 95.39,
+   "parties": [
+    {
+     "name": "Liberal–National Country Coalition",
+     "leader": "Malcolm Fraser",
+     "seats": 91,
+     "seatChange": 30.0,
+     "votes": null,
+     "share": 53.05,
+     "swing": 7.32
+    },
+    {
+     "name": "Labor",
+     "leader": "Gough Whitlam",
+     "seats": 36,
+     "seatChange": -30.0,
+     "votes": null,
+     "share": 42.84,
+     "swing": -6.46
+    }
+   ],
+   "pmBefore": {
+    "name": "Malcolm Fraser",
+    "party": "Liberal/NCP coalition"
+   },
+   "pmAfter": {
+    "name": "Malcolm Fraser",
+    "party": "Liberal/NCP coalition"
+   },
+   "knownAs": "The Dismissal election",
+   "summary": "Malcolm Fraser had been commissioned as caretaker prime minister following the dismissal of Gough Whitlam's three-year-old Labor government by Governor-General Sir John Kerr, on 11 November 1975. The same day, Fraser advised an immediate double dissolution, in accordance with Kerr's stipulated conditions (see 1975 Australian constitutional crisis).",
+   "seatLeader": "Liberal–National Country Coalition"
+  },
+  {
+   "id": "1977",
+   "label": "1977",
+   "year": 1977,
+   "date": "10 December 1977",
+   "era": "fraser-hawke",
+   "totalSeats": 124,
+   "majoritySeats": 63,
+   "turnout": 95.08,
+   "parties": [
+    {
+     "name": "Liberal–National Country Coalition",
+     "leader": "Malcolm Fraser",
+     "seats": 86,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": 48.11,
+     "swing": -4.95
+    },
+    {
+     "name": "Labor",
+     "leader": "Gough Whitlam",
+     "seats": 38,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 39.65,
+     "swing": -3.2
+    }
+   ],
+   "pmBefore": {
+    "name": "Malcolm Fraser",
+    "party": "Liberal–NCP Coalition"
+   },
+   "pmAfter": {
+    "name": "Malcolm Fraser",
+    "party": "Liberal–NCP Coalition"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held on 10 December 1977 to elect members of the 31st Parliament of Australia. All 124 seats in the House of Representatives were up for election, along with 34 of the 64 seats in the Senate.",
+   "seatLeader": "Liberal–National Country Coalition"
+  },
+  {
+   "id": "1980",
+   "label": "1980",
+   "year": 1980,
+   "date": "18 October 1980",
+   "era": "fraser-hawke",
+   "totalSeats": 125,
+   "majoritySeats": 63,
+   "turnout": 94.35,
+   "parties": [
+    {
+     "name": "Liberal–National Country Coalition",
+     "leader": "Malcolm Fraser",
+     "seats": 74,
+     "seatChange": -12.0,
+     "votes": null,
+     "share": 46.4,
+     "swing": -1.71
+    },
+    {
+     "name": "Labor",
+     "leader": "Bill Hayden",
+     "seats": 51,
+     "seatChange": 13.0,
+     "votes": null,
+     "share": 45.15,
+     "swing": 5.5
+    }
+   ],
+   "pmBefore": {
+    "name": "Malcolm Fraser",
+    "party": "Liberal–NCP coalition"
+   },
+   "pmAfter": {
+    "name": "Malcolm Fraser",
+    "party": "Liberal–NCP Coalition"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held in Australia on 18 October 1980. All 125 seats in the House of Representatives and 34 of the 64 seats in the Senate were up for election.",
+   "seatLeader": "Liberal–National Country Coalition"
+  },
+  {
+   "id": "1983",
+   "label": "1983",
+   "year": 1983,
+   "date": "5 March 1983",
+   "era": "fraser-hawke",
+   "totalSeats": 125,
+   "majoritySeats": 63,
+   "turnout": 94.64,
+   "parties": [
+    {
+     "name": "Labor",
+     "leader": "Bob Hawke",
+     "seats": 75,
+     "seatChange": 24.0,
+     "votes": null,
+     "share": 49.48,
+     "swing": 4.34
+    },
+    {
+     "name": "Liberal–National Coalition",
+     "leader": "Malcolm Fraser",
+     "seats": 50,
+     "seatChange": -24.0,
+     "votes": null,
+     "share": 43.61,
+     "swing": -2.79
+    }
+   ],
+   "pmBefore": {
+    "name": "Malcolm Fraser",
+    "party": "Liberal/National coalition"
+   },
+   "pmAfter": {
+    "name": "Bob Hawke",
+    "party": "Labor"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held in Australia on 5 March 1983. All 125 seats in the House of Representatives and all 64 seats in the Senate were up for election, following a double dissolution.",
+   "seatLeader": "Labor"
+  },
+  {
+   "id": "1984",
+   "label": "1984",
+   "year": 1984,
+   "date": "1 December 1984",
+   "era": "fraser-hawke",
+   "totalSeats": 148,
+   "majoritySeats": 75,
+   "turnout": 94.19,
+   "parties": [
+    {
+     "name": "Labor",
+     "leader": "Bob Hawke",
+     "seats": 82,
+     "seatChange": 7.0,
+     "votes": null,
+     "share": 47.55,
+     "swing": -1.93
+    },
+    {
+     "name": "Liberal–National Coalition",
+     "leader": "Andrew Peacock",
+     "seats": 66,
+     "seatChange": 16.0,
+     "votes": null,
+     "share": 45.01,
+     "swing": 1.4
+    }
+   ],
+   "pmBefore": {
+    "name": "Bob Hawke",
+    "party": "Labor"
+   },
+   "pmAfter": {
+    "name": "Bob Hawke",
+    "party": "Labor"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held in Australia on 1 December 1984. All 148 seats in the House of Representatives (24 of them newly created) and 46 of 76 seats in the Senate (12 of them newly created) were up for election.",
+   "seatLeader": "Labor"
+  },
+  {
+   "id": "1987",
+   "label": "1987",
+   "year": 1987,
+   "date": "11 July 1987",
+   "era": "fraser-hawke",
+   "totalSeats": 148,
+   "majoritySeats": 75,
+   "turnout": 93.84,
+   "parties": [
+    {
+     "name": "Labor",
+     "leader": "Bob Hawke",
+     "seats": 86,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": 45.9,
+     "swing": -1.65
+    },
+    {
+     "name": "Liberal",
+     "leader": "John Howard",
+     "seats": 43,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 34.32,
+     "swing": 0.26
+    },
+    {
+     "name": "National",
+     "leader": "Ian Sinclair",
+     "seats": 19,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 11.35,
+     "swing": 0.72
+    }
+   ],
+   "pmBefore": {
+    "name": "Bob Hawke",
+    "party": "Labor"
+   },
+   "pmAfter": {
+    "name": "Bob Hawke",
+    "party": "Labor"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held in Australia on 11 July 1987, following the granting of a double dissolution on 5 June by the Governor-General Sir Ninian Stephen. Consequently, all 148 seats in the House of Representatives as well as all 76 seats in the Senate were up for election.",
+   "seatLeader": "Labor"
+  },
+  {
+   "id": "1990",
+   "label": "1990",
+   "year": 1990,
+   "date": "24 March 1990",
+   "era": "fraser-hawke",
+   "totalSeats": 148,
+   "majoritySeats": 75,
+   "turnout": 95.31,
+   "parties": [
+    {
+     "name": "Labor",
+     "leader": "Bob Hawke",
+     "seats": 78,
+     "seatChange": -8.0,
+     "votes": null,
+     "share": 39.44,
+     "swing": -6.46
+    },
+    {
+     "name": "Liberal–National Coalition",
+     "leader": "Andrew Peacock",
+     "seats": 69,
+     "seatChange": 7.0,
+     "votes": null,
+     "share": 43.46,
+     "swing": -2.44
+    }
+   ],
+   "pmBefore": {
+    "name": "Bob Hawke",
+    "party": "Labor"
+   },
+   "pmAfter": {
+    "name": "Bob Hawke",
+    "party": "Labor"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held in Australia on 24 March 1990. All 148 seats in the House of Representatives and 40 seats in the 76-member Senate were up for election.",
+   "seatLeader": "Labor"
+  },
+  {
+   "id": "1993",
+   "label": "1993",
+   "year": 1993,
+   "date": "13 March 1993",
+   "era": "fraser-hawke",
+   "totalSeats": 147,
+   "majoritySeats": 74,
+   "turnout": 95.75,
+   "parties": [
+    {
+     "name": "Labor",
+     "leader": "Paul Keating",
+     "seats": 80,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 44.92,
+     "swing": 5.49
+    },
+    {
+     "name": "Liberal–National Coalition",
+     "leader": "John Hewson",
+     "seats": 65,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": 44.27,
+     "swing": 0.81
+    }
+   ],
+   "pmBefore": {
+    "name": "Paul Keating",
+    "party": "Labor"
+   },
+   "pmAfter": {
+    "name": "Paul Keating",
+    "party": "Labor"
+   },
+   "knownAs": "The sweetest victory",
+   "summary": "A federal election was held in Australia on 13 March 1993 to determine the members of the 37th Parliament of Australia. All 147 seats of the Australian House of Representatives and 40 seats of the 76-seat Australian Senate were up for election.",
+   "seatLeader": "Labor"
+  },
+  {
+   "id": "1996",
+   "label": "1996",
+   "year": 1996,
+   "date": "2 March 1996",
+   "era": "howard",
+   "totalSeats": 148,
+   "majoritySeats": 75,
+   "turnout": 95.77,
+   "parties": [
+    {
+     "name": "Liberal–National Coalition",
+     "leader": "John Howard",
+     "seats": 94,
+     "seatChange": 29.0,
+     "votes": null,
+     "share": 47.25,
+     "swing": 2.98
+    },
+    {
+     "name": "Labor",
+     "leader": "Paul Keating",
+     "seats": 49,
+     "seatChange": -31.0,
+     "votes": null,
+     "share": 38.75,
+     "swing": -6.17
+    }
+   ],
+   "pmBefore": {
+    "name": "Paul Keating",
+    "party": "Labor"
+   },
+   "pmAfter": {
+    "name": "John Howard",
+    "party": "Liberal/National coalition"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held on 2 March 1996 to elect members of the 38th Parliament of Australia. All 148 seats of the House of Representatives were up for election, along with 40 of the 76 seats in the Senate.",
+   "seatLeader": "Liberal–National Coalition"
+  },
+  {
+   "id": "1998",
+   "label": "1998",
+   "year": 1998,
+   "date": "3 October 1998",
+   "era": "howard",
+   "totalSeats": 148,
+   "majoritySeats": 75,
+   "turnout": 94.99,
+   "parties": [
+    {
+     "name": "Liberal–National Coalition",
+     "leader": "John Howard",
+     "seats": 80,
+     "seatChange": -14.0,
+     "votes": null,
+     "share": 39.51,
+     "swing": -7.73
+    },
+    {
+     "name": "Labor",
+     "leader": "Kim Beazley",
+     "seats": 67,
+     "seatChange": 18.0,
+     "votes": null,
+     "share": 40.1,
+     "swing": 1.34
+    }
+   ],
+   "pmBefore": {
+    "name": "John Howard",
+    "party": "Liberal/National coalition"
+   },
+   "pmAfter": {
+    "name": "John Howard",
+    "party": "Liberal/National coalition"
+   },
+   "knownAs": "The GST election",
+   "summary": "A federal election was held on 3 October 1998 to elect members of the 39th Parliament of Australia. All 148 seats of the House of Representatives and 40 seats of the 76 seat Senate were up for election.",
+   "seatLeader": "Liberal–National Coalition"
+  },
+  {
+   "id": "2001",
+   "label": "2001",
+   "year": 2001,
+   "date": "10 November 2001",
+   "era": "howard",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 94.85,
+   "parties": [
+    {
+     "name": "Liberal–National Coalition",
+     "leader": "John Howard",
+     "seats": 82,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 42.92,
+     "swing": 3.41
+    },
+    {
+     "name": "Labor",
+     "leader": "Kim Beazley",
+     "seats": 65,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": 37.84,
+     "swing": -2.26
+    }
+   ],
+   "pmBefore": {
+    "name": "John Howard",
+    "party": "Coalition"
+   },
+   "pmAfter": {
+    "name": "John Howard",
+    "party": "Coalition"
+   },
+   "knownAs": "Tampa election",
+   "summary": "A federal election was held in Australia on 10 November 2001. All 150 seats in the House of Representatives and 40 seats in the 76-member Senate were up for election.",
+   "seatLeader": "Liberal–National Coalition"
+  },
+  {
+   "id": "2004",
+   "label": "2004",
+   "year": 2004,
+   "date": "9 October 2004",
+   "era": "howard",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 94.32,
+   "parties": [
+    {
+     "name": "Liberal–National Coalition",
+     "leader": "John Howard",
+     "seats": 87,
+     "seatChange": 5.0,
+     "votes": null,
+     "share": 46.71,
+     "swing": 3.79
+    },
+    {
+     "name": "Labor",
+     "leader": "Mark Latham",
+     "seats": 60,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": 37.63,
+     "swing": -0.21
+    }
+   ],
+   "pmBefore": {
+    "name": "John Howard",
+    "party": "Liberal/National coalition"
+   },
+   "pmAfter": {
+    "name": "John Howard",
+    "party": "Liberal/National coalition"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held on 9 October 2004 to elect members of the 41st Parliament of Australia. All 150 seats in the House of Representatives were up for election, along with 40 of the 76 seats in the Senate.",
+   "seatLeader": "Liberal–National Coalition"
+  },
+  {
+   "id": "2007",
+   "label": "2007",
+   "year": 2007,
+   "date": "24 November 2007",
+   "era": "howard",
+   "totalSeats": 150,
+   "majoritySeats": null,
+   "turnout": 94.72,
+   "parties": [
+    {
+     "name": "Labor",
+     "leader": "Kevin Rudd",
+     "seats": 83,
+     "seatChange": 23.0,
+     "votes": null,
+     "share": 43.38,
+     "swing": 5.74
+    },
+    {
+     "name": "Liberal–National Coalition",
+     "leader": "John Howard",
+     "seats": 65,
+     "seatChange": -22.0,
+     "votes": null,
+     "share": 42.09,
+     "swing": -4.62
+    }
+   ],
+   "pmBefore": {
+    "name": "John Howard",
+    "party": "Liberal/National coalition"
+   },
+   "pmAfter": {
+    "name": "Kevin Rudd",
+    "party": "Labor"
+   },
+   "knownAs": "Howard loses Bennelong",
+   "summary": "A federal election was held in Australia on 24 November 2007. All 150 seats in the House of Representatives and 40 of the seats in the 76-member Senate were up for election.",
+   "seatLeader": "Labor"
+  },
+  {
+   "id": "2010",
+   "label": "2010",
+   "year": 2010,
+   "date": "21 August 2010",
+   "era": "modern",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 93.22,
+   "parties": [
+    {
+     "name": "Labor",
+     "leader": "Julia Gillard",
+     "seats": 72,
+     "seatChange": -11.0,
+     "votes": null,
+     "share": 37.99,
+     "swing": -5.4
+    },
+    {
+     "name": "Liberal–National Coalition",
+     "leader": "Tony Abbott",
+     "seats": 72,
+     "seatChange": 7.0,
+     "votes": null,
+     "share": 43.32,
+     "swing": 1.16
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 2.52,
+     "swing": 0.3
+    },
+    {
+     "name": "Greens",
+     "leader": "Bob Brown",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 11.76,
+     "swing": 3.97
+    },
+    {
+     "name": "WA Nationals",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 0.34,
+     "swing": 0.2
+    }
+   ],
+   "pmBefore": {
+    "name": "Julia Gillard",
+    "party": "Labor"
+   },
+   "pmAfter": {
+    "name": "Julia Gillard",
+    "party": "Labor"
+   },
+   "knownAs": "Hung parliament",
+   "summary": "A federal election was held on 21 August 2010 to elect members of the 43rd Parliament of Australia. All 150 seats in the House of Representatives were up for election, along with 40 of the 76 seats in the Senate.",
+   "seatLeader": "Labor"
+  },
+  {
+   "id": "2013",
+   "label": "2013",
+   "year": 2013,
+   "date": "7 September 2013",
+   "era": "modern",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 93.23,
+   "parties": [
+    {
+     "name": "Liberal–National Coalition",
+     "leader": "Tony Abbott",
+     "seats": 90,
+     "seatChange": 19.0,
+     "votes": null,
+     "share": 45.55,
+     "swing": 1.93
+    },
+    {
+     "name": "Labor",
+     "leader": "Kevin Rudd",
+     "seats": 55,
+     "seatChange": -16.0,
+     "votes": null,
+     "share": 33.38,
+     "swing": -4.61
+    },
+    {
+     "name": "Greens",
+     "leader": "Christine Milne",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 8.65,
+     "swing": -3.11
+    },
+    {
+     "name": "Palmer United",
+     "leader": "Clive Palmer",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 5.49,
+     "swing": 5.49
+    },
+    {
+     "name": "Katter's Australian",
+     "leader": "Bob Katter",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 1.04,
+     "swing": 1.04
+    }
+   ],
+   "pmBefore": {
+    "name": "Kevin Rudd",
+    "party": "Labor"
+   },
+   "pmAfter": {
+    "name": "Tony Abbott",
+    "party": "Liberal/National coalition"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held on 7 September 2013 to elect the members of the 44th Parliament of Australia. The incumbent Labor government, led by Prime Minister Kevin Rudd, sought to win a third consecutive term, but was defeated by the opposition Liberal–National Coalition, led by Tony Abbott, in a landslide.",
+   "seatLeader": "Liberal–National Coalition"
+  },
+  {
+   "id": "2016",
+   "label": "2016",
+   "year": 2016,
+   "date": "2 July 2016",
+   "era": "modern",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 91.01,
+   "parties": [
+    {
+     "name": "Liberal–National Coalition",
+     "leader": "Malcolm Turnbull",
+     "seats": 76,
+     "seatChange": -14.0,
+     "votes": null,
+     "share": 42.04,
+     "swing": -3.51
+    },
+    {
+     "name": "Labor",
+     "leader": "Bill Shorten",
+     "seats": 69,
+     "seatChange": 14.0,
+     "votes": null,
+     "share": 34.73,
+     "swing": 1.35
+    },
+    {
+     "name": "Greens",
+     "leader": "Richard Di Natale",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 10.23,
+     "swing": 1.58
+    },
+    {
+     "name": "Xenophon Team",
+     "leader": "Nick Xenophon",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 1.85,
+     "swing": 1.85
+    },
+    {
+     "name": "Katter's Australian",
+     "leader": "Bob Katter",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 0.54,
+     "swing": -0.5
+    }
+   ],
+   "pmBefore": {
+    "name": "Malcolm Turnbull",
+    "party": "Liberal/National coalition"
+   },
+   "pmAfter": {
+    "name": "Malcolm Turnbull",
+    "party": "Liberal/National coalition"
+   },
+   "knownAs": null,
+   "summary": "A double dissolution election was held on 2 July 2016 to elect all 226 members of the 45th Parliament of Australia, after an extended eight-week official campaign period. It was the first double dissolution election since the 1987 election and the first under a new voting system for the Senate that replaced group voting tickets with optional preferential voting.",
+   "seatLeader": "Liberal–National Coalition"
+  },
+  {
+   "id": "2019",
+   "label": "2019",
+   "year": 2019,
+   "date": "18 May 2019",
+   "era": "modern",
+   "totalSeats": 151,
+   "majoritySeats": 76,
+   "turnout": 91.89,
+   "parties": [
+    {
+     "name": "Liberal–National Coalition",
+     "leader": "Scott Morrison",
+     "seats": 77,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 41.44,
+     "swing": -0.6
+    },
+    {
+     "name": "Labor",
+     "leader": "Bill Shorten",
+     "seats": 68,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": 33.34,
+     "swing": -1.39
+    },
+    {
+     "name": "Greens",
+     "leader": "Richard Di Natale",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 10.4,
+     "swing": 0.17
+    },
+    {
+     "name": "Katter's Australian",
+     "leader": "Bob Katter",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 0.49,
+     "swing": -0.05
+    },
+    {
+     "name": "Centre Alliance",
+     "leader": "No leader",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 0.33,
+     "swing": -1.52
+    }
+   ],
+   "pmBefore": {
+    "name": "Scott Morrison",
+    "party": "Liberal/National coalition"
+   },
+   "pmAfter": {
+    "name": "Scott Morrison",
+    "party": "Liberal/National coalition"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held on 18 May 2019 to elect members of the 46th Parliament of Australia. The election had been called following the dissolution of the 45th Parliament as elected at the 2016 double dissolution federal election.",
+   "seatLeader": "Liberal–National Coalition"
+  },
+  {
+   "id": "2022",
+   "label": "2022",
+   "year": 2022,
+   "date": "21 May 2022",
+   "era": "modern",
+   "totalSeats": 151,
+   "majoritySeats": 76,
+   "turnout": 89.82,
+   "parties": [
+    {
+     "name": "Labor",
+     "leader": "Anthony Albanese",
+     "seats": 77,
+     "seatChange": 9.0,
+     "votes": null,
+     "share": 32.58,
+     "swing": -0.76
+    },
+    {
+     "name": "Liberal–National Coalition",
+     "leader": "Scott Morrison",
+     "seats": 58,
+     "seatChange": -19.0,
+     "votes": null,
+     "share": 35.7,
+     "swing": -5.73
+    },
+    {
+     "name": "Greens",
+     "leader": "Adam Bandt",
+     "seats": 4,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 12.25,
+     "swing": 1.85
+    },
+    {
+     "name": "Katter's Australian",
+     "leader": "Robbie Katter",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 0.38,
+     "swing": -0.11
+    },
+    {
+     "name": "Centre Alliance",
+     "leader": "No leader",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 0.25,
+     "swing": -0.08
+    }
+   ],
+   "pmBefore": {
+    "name": "Scott Morrison",
+    "party": "Liberal/National coalition"
+   },
+   "pmAfter": {
+    "name": "Anthony Albanese",
+    "party": "Labor"
+   },
+   "knownAs": "The teal wave",
+   "summary": "A federal election was held on 21 May 2022 to elect members of the 47th Parliament of Australia. The incumbent Liberal–National Coalition government, led by Prime Minister Scott Morrison, sought to win a fourth consecutive term in office but was defeated by the Labor Party, led by Opposition Leader Anthony Albanese.",
+   "seatLeader": "Labor"
+  },
+  {
+   "id": "2025",
+   "label": "2025",
+   "year": 2025,
+   "date": "3 May 2025",
+   "era": "modern",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": 90.7,
+   "parties": [
+    {
+     "name": "Labor",
+     "leader": "Anthony Albanese",
+     "seats": 94,
+     "seatChange": 17.0,
+     "votes": null,
+     "share": 34.56,
+     "swing": 1.98
+    },
+    {
+     "name": "Liberal–National Coalition",
+     "leader": "Peter Dutton",
+     "seats": 43,
+     "seatChange": -15.0,
+     "votes": null,
+     "share": 31.82,
+     "swing": -3.88
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 7.27,
+     "swing": 1.98
+    },
+    {
+     "name": "Greens",
+     "leader": "Adam Bandt",
+     "seats": 1,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": 12.2,
+     "swing": -0.05
+    },
+    {
+     "name": "Katter's Australian",
+     "leader": "Robbie Katter",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 0.33,
+     "swing": -0.05
+    },
+    {
+     "name": "Centre Alliance",
+     "leader": "No leader",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 0.24,
+     "swing": -0.01
+    }
+   ],
+   "pmBefore": {
+    "name": "Anthony Albanese",
+    "party": "Labor"
+   },
+   "pmAfter": {
+    "name": "Anthony Albanese",
+    "party": "Labor"
+   },
+   "knownAs": "Labor's record landslide",
+   "summary": "A federal election was held on 3 May 2025 to elect members of the 48th Parliament of Australia. All 150 seats in the House of Representatives were up for election, along with 40 of the 76 seats in the Senate.",
+   "seatLeader": "Labor"
+  }
+ ]
+}

@@ -1,0 +1,1714 @@
+{
+ "meta": {
+  "title": "Argentine presidential elections",
+  "sources": [
+   "Wikipedia: Argentine general and presidential election articles, 1826–2023 (results, infoboxes and leads)",
+   "CNE / Ministry of the Interior figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "eras": [
+  {
+   "key": "oligarchic",
+   "label": "The oligarchic republic",
+   "span": "1826–1910",
+   "blurb": "From Rivadavia's short-lived presidency through the 1853 Constitution, Argentina chose its presidents through an electoral college on a public ballot the ruling circle controlled. From Roca's rise in 1880 the PAN machine arranged each succession in advance — elections were held, and their outcomes were rarely in doubt."
+  },
+  {
+   "key": "radical",
+   "label": "The Sáenz Peña revolution",
+   "span": "1916–1928",
+   "blurb": "The 1912 Sáenz Peña Law made the ballot secret, universal for men and compulsory — and handed power to the Radicals. Hipólito Yrigoyen's 1916 victory was the first genuinely popular presidential election in Argentine history, and his movement won every contest until the army removed him in 1930."
+  },
+  {
+   "key": "infamous",
+   "label": "The Infamous Decade",
+   "span": "1931–1937",
+   "blurb": "After the 1930 coup, the restored elections were hollow: the Radicals were banned or cheated, and the Concordancia governed through what its own supporters called 'patriotic fraud'. The votes of 1931 and 1937 are recorded here as the rigged contests they were."
+  },
+  {
+   "key": "peron",
+   "label": "Perón's republic",
+   "span": "1946–1955",
+   "blurb": "Juan Perón won the clean 1946 election from the labour movement he had built, then remade the state around his own re-election: the 1949 constitution, the vote for women — cast for the first time in 1951, in large majority for Perón — and a playing field that tilted further with each contest until the 1955 coup."
+  },
+  {
+   "key": "proscription",
+   "label": "Democracy with Peronism banned",
+   "span": "1958–1973",
+   "blurb": "For eighteen years the largest movement in the country was barred from the ballot. Frondizi won in 1958 with Perón's exiled blessing and was overthrown; Illia won in 1963 with Peronism proscribed and was overthrown; and in 1973 the ban finally broke — Cámpora won in March, resigned, and Perón himself returned to win in September with 62%."
+  },
+  {
+   "key": "modern",
+   "label": "The restored democracy",
+   "span": "1983–2023",
+   "blurb": "Alfonsín's 1983 victory ended the dictatorship and began Argentina's longest democratic era: Menem's decade, the 2001 collapse and its aftermath, the Kirchner years, Macri's interlude, and in 2023 the libertarian outsider Javier Milei winning the widest runoff margin of the era."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1826",
+   "label": "1826",
+   "year": 1826,
+   "kind": "presidential",
+   "date": "7 February 1826 / 27 February 1826",
+   "era": "oligarchic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Bernardino Rivadavia",
+     "party": null,
+     "r1Votes": 35,
+     "r1Share": 92.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Against",
+     "party": null,
+     "r1Votes": 3,
+     "r1Share": 7.89,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Juan Gregorio de las Heras",
+    "party": "(Governor of Buenos Aires)"
+   },
+   "presAfter": {
+    "name": "Bernardino Rivadavia",
+    "party": "Unitarian"
+   },
+   "knownAs": "The first presidential election",
+   "summary": "Presidential elections were held for the first time in the United Provinces of the Río de la Plata on 7 February 1826 while other sources claim 27 February 1826, during the Cisplatine War. The elections were indirectly, with members of Congress forming an electoral college.",
+   "caveat": "An indirect electoral-college contest of the oligarchic republic: voting was public, participation tiny, and the outcome largely arranged by the ruling circle."
+  },
+  {
+   "id": "1853",
+   "label": "1853",
+   "year": 1853,
+   "kind": "presidential",
+   "date": "1 November 1853",
+   "era": "oligarchic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Justo José de Urquiza",
+     "party": "Federalist Party",
+     "r1Votes": 91,
+     "r1Share": 88.35,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mariano Fragueiro",
+     "party": "Unitarian Party",
+     "r1Votes": 7,
+     "r1Share": 6.8,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pedro Ferré",
+     "party": "Federalist Party",
+     "r1Votes": 1,
+     "r1Share": 0.97,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vicente López y Planes",
+     "party": "Independent",
+     "r1Votes": 1,
+     "r1Share": 0.97,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José María Paz",
+     "party": "Unitarian Party",
+     "r1Votes": 1,
+     "r1Share": 0.97,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Benjamín Virasoro",
+     "party": "Federalist Party",
+     "r1Votes": 1,
+     "r1Share": 0.97,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Facundo Zuviría",
+     "party": "Unitarian Party",
+     "r1Votes": 1,
+     "r1Share": 0.97,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Justo José de Urquiza",
+    "party": "(As Provisional Director of the Argentine Confederation)"
+   },
+   "presAfter": {
+    "name": "Justo José de Urquiza",
+    "party": "Federalist"
+   },
+   "knownAs": "The Constitution's first election",
+   "summary": "It was the first presidential election after the unification of the country in 1852, after Urquiza defeated Juan Manuel de Rosas at the Battle of Caseros on 3 February 1852. The State of Buenos Aires seceded on 11 September 1852 and did not participate in elections until 1862.",
+   "caveat": "An indirect electoral-college contest of the oligarchic republic: voting was public, participation tiny, and the outcome largely arranged by the ruling circle."
+  },
+  {
+   "id": "1859",
+   "label": "1859",
+   "year": 1859,
+   "kind": "presidential",
+   "date": "5, 6 and 7 September 1859",
+   "era": "oligarchic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Santiago Derqui",
+     "party": "Federalist Party",
+     "r1Votes": 72,
+     "r1Share": 57.6,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mariano Fragueiro",
+     "party": "Unitarian Party",
+     "r1Votes": 46,
+     "r1Share": 36.8,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Salvador María del Carril",
+     "party": "Unitarian Party",
+     "r1Votes": 4,
+     "r1Share": 3.2,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juan Bautista Alberdi",
+     "party": "Independent",
+     "r1Votes": 2,
+     "r1Share": 1.6,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Tomás Guido",
+     "party": "Independent",
+     "r1Votes": 1,
+     "r1Share": 0.8,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Justo José de Urquiza",
+    "party": "Federalist"
+   },
+   "presAfter": {
+    "name": "Santiago Derqui",
+    "party": "Federalist"
+   },
+   "knownAs": null,
+   "summary": "185418561858186018621864186618681870187218731874187618781880188218841886188818901892189418961898190019021904190619081910191219141916191819201922192419261928193019311934193619381940194219461948195119541958196019621963196519731983198519871989199119931995199719992001200320052007200920112013201520172019202120232025",
+   "caveat": "An indirect electoral-college contest of the oligarchic republic: voting was public, participation tiny, and the outcome largely arranged by the ruling circle."
+  },
+  {
+   "id": "1862",
+   "label": "1862",
+   "year": 1862,
+   "kind": "presidential",
+   "date": "27, 28 and 29 July 1862",
+   "era": "oligarchic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Bartolomé Mitre",
+     "party": "Liberal Party",
+     "r1Votes": 133,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Bartolomé Mitre",
+    "party": "(Acting President and Governor of Buenos Aires)"
+   },
+   "presAfter": {
+    "name": "Bartolomé Mitre",
+    "party": "Liberal"
+   },
+   "knownAs": null,
+   "summary": "These elections were all indirectly decided in the electoral college, and not reflective of popular vote (whose turnout averaged 10% of male suffrage).",
+   "caveat": "An indirect electoral-college contest of the oligarchic republic: voting was public, participation tiny, and the outcome largely arranged by the ruling circle."
+  },
+  {
+   "id": "1868",
+   "label": "1868",
+   "year": 1868,
+   "kind": "presidential",
+   "date": "12 April 1868",
+   "era": "oligarchic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Domingo Faustino Sarmiento",
+     "party": "Independent",
+     "r1Votes": 79,
+     "r1Share": 60.31,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Justo José de Urquiza",
+     "party": "Federalist Party",
+     "r1Votes": 26,
+     "r1Share": 19.85,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rufino de Elizalde",
+     "party": "Nationalist Party",
+     "r1Votes": 22,
+     "r1Share": 16.79,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Guillermo Rawson",
+     "party": "Nationalist Party",
+     "r1Votes": 3,
+     "r1Share": 2.29,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Dalmacio Vélez Sarsfield",
+     "party": "Nationalist Party",
+     "r1Votes": 1,
+     "r1Share": 0.76,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Bartolomé Mitre",
+    "party": "Nationalist"
+   },
+   "presAfter": {
+    "name": "Domingo Faustino Sarmiento",
+    "party": "Independent"
+   },
+   "knownAs": "Sarmiento from abroad",
+   "summary": "Presiding over a prosperous economy overshadowed somewhat by the costly Paraguayan War, President Mitre was at pains to avoid risking the tenuous national unity his administration had secured. Though he hand-picked prospective candidates, Mitre avoided the appearance of direct support for any one figure, while limiting the field to those he considered acceptable.",
+   "caveat": "An indirect electoral-college contest of the oligarchic republic: voting was public, participation tiny, and the outcome largely arranged by the ruling circle."
+  },
+  {
+   "id": "1874",
+   "label": "1874",
+   "year": 1874,
+   "kind": "presidential",
+   "date": "12 April 1874",
+   "era": "oligarchic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Nicolás Avellaneda",
+     "party": "National Party",
+     "r1Votes": 145,
+     "r1Share": 64.73,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Bartolomé Mitre",
+     "party": "Nationalist Party",
+     "r1Votes": 79,
+     "r1Share": 35.27,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Domingo Faustino Sarmiento",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Nicolás Avellaneda",
+    "party": "National"
+   },
+   "knownAs": null,
+   "summary": "President Domingo Faustino Sarmiento's pragmatic approach to Buenos Aires' demands and his successful control of separatist revolts in the north paved the way to high office for his vice president, Autonomist Party  leader Adolfo Alsina.",
+   "caveat": "An indirect electoral-college contest of the oligarchic republic: voting was public, participation tiny, and the outcome largely arranged by the ruling circle."
+  },
+  {
+   "id": "1880",
+   "label": "1880",
+   "year": 1880,
+   "kind": "presidential",
+   "date": "11 April 1880",
+   "era": "oligarchic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Julio Argentino Roca",
+     "party": "National Autonomist Party",
+     "r1Votes": 155,
+     "r1Share": 68.89,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carlos Tejedor",
+     "party": "Independent",
+     "r1Votes": 70,
+     "r1Share": 31.11,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Nicolás Avellaneda",
+    "party": "PAN"
+   },
+   "presAfter": {
+    "name": "Julio Argentino Roca",
+    "party": "PAN"
+   },
+   "knownAs": "Roca and the machine",
+   "summary": "A leader of the Conquest of the Desert, as well as of the suppression of Mitre's 1874 uprising and others, outgoing president Nicolás Avellaneda had decided on General Julio Roca as his successor early on. Memories of Mitre's defeat did not sit well with Buenos Aires separatists, and this faction nominated the Governor of Buenos Aires Province, Carlos Tejedor.",
+   "caveat": "An indirect electoral-college contest of the oligarchic republic: voting was public, participation tiny, and the outcome largely arranged by the ruling circle."
+  },
+  {
+   "id": "1886",
+   "label": "1886",
+   "year": 1886,
+   "kind": "presidential",
+   "date": "11 April 1886",
+   "era": "oligarchic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Miguel Ángel Juárez",
+     "party": "National Autonomist Party",
+     "r1Votes": 168,
+     "r1Share": 78.87,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Anselmo Ocampo",
+     "party": "United Parties",
+     "r1Votes": 32,
+     "r1Share": 15.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Bernardo de Irigoyen",
+     "party": "United Parties",
+     "r1Votes": 13,
+     "r1Share": 6.1,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Julio Argentino Roca",
+    "party": "PAN"
+   },
+   "presAfter": {
+    "name": "Miguel Ángel Juárez",
+    "party": "PAN"
+   },
+   "knownAs": null,
+   "summary": "Confident of his authority following six years of peace and prosperity, President Roca was by then known for his shrewdness as \"the fox.\" Enjoying the support of the agricultural elites - as well as of the London financial powerhouse, Barings Bank - Roca daringly fielded his son-in-law, Córdoba Province Governor Miguel Ángel Juárez, as the PAN candidate for president.",
+   "caveat": "An indirect electoral-college contest of the oligarchic republic: voting was public, participation tiny, and the outcome largely arranged by the ruling circle."
+  },
+  {
+   "id": "1892",
+   "label": "1892",
+   "year": 1892,
+   "kind": "presidential",
+   "date": "10 April 1892",
+   "era": "oligarchic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Luis Sáenz Peña",
+     "party": "National Autonomist Party",
+     "r1Votes": 210,
+     "r1Share": 95.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Bernardo de Irigoyen",
+     "party": "Radical Civic Union",
+     "r1Votes": 5,
+     "r1Share": 2.26,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Bartolomé Mitre",
+     "party": "National Civic Union",
+     "r1Votes": 5,
+     "r1Share": 2.26,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Julio Argentino Roca",
+     "party": "National Autonomist Party",
+     "r1Votes": 1,
+     "r1Share": 0.45,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Carlos Pellegrini",
+    "party": "PAN"
+   },
+   "presAfter": {
+    "name": "Luis Sáenz Peña",
+    "party": "PAN"
+   },
+   "knownAs": null,
+   "summary": "An 1888 massacre of a May Day gathering and an unprecedented financial crisis led to the formation of the first meaningful opposition to develop as reform movements in urban areas, culminating in the Revolution of the Park that forced Juárez Celman's 1890 resignation.",
+   "caveat": "An indirect electoral-college contest of the oligarchic republic: voting was public, participation tiny, and the outcome largely arranged by the ruling circle."
+  },
+  {
+   "id": "1898",
+   "label": "1898",
+   "year": 1898,
+   "kind": "presidential",
+   "date": "10 April 1898",
+   "era": "oligarchic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Julio Argentino Roca",
+     "party": "National Autonomist Party",
+     "r1Votes": 218,
+     "r1Share": 85.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Bartolomé Mitre",
+     "party": "National Civic Union",
+     "r1Votes": 38,
+     "r1Share": 14.84,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "José Evaristo Uriburu",
+    "party": "National Autonomist Party"
+   },
+   "presAfter": {
+    "name": "Julio Argentino Roca",
+    "party": "National Autonomist Party"
+   },
+   "knownAs": null,
+   "summary": "Having obtained the aging Luis Sáenz Peña's resignation in favor of Vice President José Evaristo Uriburu (who was good stead with both Roca and Mitre), Roca once again carried the PAN standard in 1898.",
+   "caveat": "An indirect electoral-college contest of the oligarchic republic: voting was public, participation tiny, and the outcome largely arranged by the ruling circle."
+  },
+  {
+   "id": "1904",
+   "label": "1904",
+   "year": 1904,
+   "kind": "presidential",
+   "date": "10 April 1904",
+   "era": "oligarchic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Manuel Quintana",
+     "party": "National Autonomist Party",
+     "r1Votes": 240,
+     "r1Share": 81.36,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Evaristo Uriburu",
+     "party": "Republican Party",
+     "r1Votes": 34,
+     "r1Share": 11.53,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marco Aurelio Avellaneda",
+     "party": "National Autonomist Party",
+     "r1Votes": 14,
+     "r1Share": 4.75,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mauricio Pastor Daract",
+     "party": "Independent",
+     "r1Votes": 6,
+     "r1Share": 2.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Carlos Pellegrini",
+     "party": "National Autonomist Party",
+     "r1Votes": 1,
+     "r1Share": 0.34,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Julio Argentino Roca",
+    "party": "PAN"
+   },
+   "presAfter": {
+    "name": "Manuel Quintana",
+    "party": "PAN"
+   },
+   "knownAs": null,
+   "summary": "Riding high after another term of prosperity and important diplomatic accomplishments such as the May 1902 Pact with neighboring Chile over a border dispute and Foreign Minister Luis Drago's settlement of imminent war between the German Empire and Venezuela, President Roca enlisted Congressman Manuel Quintana as the PAN standard bearer.",
+   "caveat": "An indirect electoral-college contest of the oligarchic republic: voting was public, participation tiny, and the outcome largely arranged by the ruling circle."
+  },
+  {
+   "id": "1910",
+   "label": "1910",
+   "year": 1910,
+   "kind": "presidential",
+   "date": "1910",
+   "era": "oligarchic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Roque Sáenz Peña",
+     "party": "National Autonomist Party",
+     "r1Votes": 265,
+     "r1Share": 99.62,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Adolfo Contte",
+     "party": "Liberal Party of Corrientes",
+     "r1Votes": 1,
+     "r1Share": 0.38,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "José Figueroa Alcorta",
+    "party": "PAN"
+   },
+   "presAfter": {
+    "name": "Roque Sáenz Peña",
+    "party": "PAN"
+   },
+   "knownAs": null,
+   "summary": "The ailing president Quintana's death in 1906 was the beginning of the end of Roca dominance of national politics and policy. Moderate opposition to the PAN had greatly eroded its majorities in Congress, the very day the president died, and within months, Bartolomé Mitre and Carlos Pellegrini were dead, as well.",
+   "caveat": "An indirect electoral-college contest of the oligarchic republic: voting was public, participation tiny, and the outcome largely arranged by the ruling circle."
+  },
+  {
+   "id": "1916",
+   "label": "1916",
+   "year": 1916,
+   "kind": "presidential",
+   "date": "2 April 1916",
+   "era": "radical",
+   "turnout": 65.59,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Hipólito Yrigoyen",
+     "party": "UCR",
+     "r1Votes": 340802,
+     "r1Share": 47.25,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ángel Rojas",
+     "party": "Conservative",
+     "r1Votes": 150245,
+     "r1Share": 20.83,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lisandro de la Torre",
+     "party": "PDP",
+     "r1Votes": 135308,
+     "r1Share": 18.76,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Victorino de la Plaza",
+    "party": "PAN"
+   },
+   "presAfter": {
+    "name": "Hipólito Yrigoyen",
+    "party": "UCR"
+   },
+   "knownAs": "The first secret-ballot election",
+   "summary": "General elections were held in Argentina on 2 April 1916. Voters elected the President, legislators, and local officials.",
+   "caveat": null
+  },
+  {
+   "id": "1922",
+   "label": "1922",
+   "year": 1922,
+   "kind": "presidential",
+   "date": "2 April 1922",
+   "era": "radical",
+   "turnout": 56.41,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Marcelo Torcuato de Alvear",
+     "party": "UCR",
+     "r1Votes": 419170,
+     "r1Share": 50.49,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Norberto Piñero",
+     "party": "National Concentration",
+     "r1Votes": 231102,
+     "r1Share": 27.84,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Hipólito Yrigoyen",
+    "party": "UCR"
+   },
+   "presAfter": {
+    "name": "Marcelo Torcuato de Alvear",
+    "party": "UCR"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Argentina on 2 April 1922. Marcelo Torcuato de Alvear of the Radical Civic Union (UCR) was elected president, while Elpidio González, also of the UCR, was elected vice-president.",
+   "caveat": null
+  },
+  {
+   "id": "1928",
+   "label": "1928",
+   "year": 1928,
+   "kind": "presidential",
+   "date": "1928",
+   "era": "radical",
+   "turnout": 83.12,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Hipólito Yrigoyen",
+     "party": "UCR",
+     "r1Votes": 839140,
+     "r1Share": 61.42,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Leopoldo Melo",
+     "party": "Confederation",
+     "r1Votes": 470050,
+     "r1Share": 34.48,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Marcelo T. de Alvear",
+    "party": "UCR"
+   },
+   "presAfter": {
+    "name": "Hipólito Yrigoyen",
+    "party": "UCR"
+   },
+   "knownAs": null,
+   "summary": "Former President Hipólito Yrigoyen's differences with his successor and erstwhile ally, Marcelo Torcuato de Alvear, persuaded him to campaign for the presidency again.",
+   "caveat": null
+  },
+  {
+   "id": "1931",
+   "label": "1931",
+   "year": 1931,
+   "kind": "presidential",
+   "date": "8 November 1931",
+   "era": "infamous",
+   "turnout": 73.81,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Agustín P. Justo",
+     "party": "UCRA",
+     "r1Votes": 864394,
+     "r1Share": 61.44,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lisandro de la Torre",
+     "party": "PDP",
+     "r1Votes": 487584,
+     "r1Share": 34.66,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "José F. Uriburu",
+    "party": "ALN"
+   },
+   "presAfter": {
+    "name": "Agustín P. Justo",
+    "party": "PDN"
+   },
+   "knownAs": "Fraud restores the old order",
+   "summary": "Following months of protest triggered in part by the onset of the Great Depression, a quiet coup d'état deposed the aging Hipólito Yrigoyen in September 1930.",
+   "caveat": "Held under the Concordancia's 'patriotic fraud', with the Radicals banned or robbed at the count. Recorded here as a rigged contest."
+  },
+  {
+   "id": "1937",
+   "label": "1937",
+   "year": 1937,
+   "kind": "presidential",
+   "date": "5 September 1937",
+   "era": "infamous",
+   "turnout": 76.17,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Roberto M. Ortiz",
+     "party": "Concordancia",
+     "r1Votes": 1097660,
+     "r1Share": 55.77,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marcelo T. de Alvear",
+     "party": "UCR",
+     "r1Votes": 814750,
+     "r1Share": 41.39,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Agustín P. Justo",
+    "party": "Concordancia"
+   },
+   "presAfter": {
+    "name": "Roberto M. Ortiz",
+    "party": "Concordancia"
+   },
+   "knownAs": "The patriotic fraud",
+   "summary": "The 1931 elections (boycotted by the previous ruling party, the centrist Radical Civic Union) proved to be a precedent for the 1937 elections, called to replace outgoing President Agustín Justo.",
+   "caveat": "Held under the Concordancia's 'patriotic fraud', with the Radicals banned or robbed at the count. Recorded here as a rigged contest."
+  },
+  {
+   "id": "1946",
+   "label": "1946",
+   "year": 1946,
+   "kind": "presidential",
+   "date": "24 February 1946",
+   "era": "peron",
+   "turnout": 82.25,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Juan Perón",
+     "party": "Labour Party",
+     "r1Votes": 1485468,
+     "r1Share": 53.71,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Tamborini",
+     "party": "UCR",
+     "r1Votes": 1262630,
+     "r1Share": 45.65,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Juan Perón",
+    "party": "Labour Party"
+   },
+   "knownAs": "Perón elected",
+   "summary": "Conservative rule, maintained through electoral fraud despite a moderate record, was brought to an end in a June 1943 coup d'état. Broadcasting \"orders of the day\" every morning on the radio, the new regime enjoyed little approval.",
+   "caveat": null
+  },
+  {
+   "id": "1951",
+   "label": "1951",
+   "year": 1951,
+   "kind": "presidential",
+   "date": "1951",
+   "era": "peron",
+   "turnout": 88.46,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Juan Perón",
+     "party": "Peronist Party",
+     "r1Votes": 4745168,
+     "r1Share": 63.51,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ricardo Balbín",
+     "party": "Radical Civic Union",
+     "r1Votes": 2415750,
+     "r1Share": 32.33,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Juan Perón",
+    "party": "Peronist Party"
+   },
+   "presAfter": {
+    "name": "Juan Perón",
+    "party": "Peronist Party"
+   },
+   "knownAs": "Women vote for the first time",
+   "summary": "President Juan Perón (1895–1974) had become president for the first time in June 1946. His popularity was riding high following five years of social reforms and a vigorous public works program, but he faced intensifying opposition during 1951.",
+   "caveat": "The first election with women's suffrage and direct popular voting — but held under Perón's increasingly authoritarian rule, with opposition media and campaigning severely curtailed."
+  },
+  {
+   "id": "1954",
+   "label": "1954",
+   "year": 1954,
+   "kind": "presidential",
+   "date": "25 April 1954",
+   "era": "peron",
+   "turnout": 86.0,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Alberto Teisaire",
+     "party": "Peronist Party",
+     "r1Votes": 4994106,
+     "r1Share": 64.52,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Crisólogo Larralde",
+     "party": "Radical Civic Union",
+     "r1Votes": 2493422,
+     "r1Share": 32.22,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Benito de Miguel",
+     "party": "National Democratic Party",
+     "r1Votes": 105550,
+     "r1Share": 1.36,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alcira de la Peña",
+     "party": "Communist Party of Argentina",
+     "r1Votes": 89624,
+     "r1Share": 1.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luciano Molinas",
+     "party": "Democratic Progressive Party",
+     "r1Votes": 54054,
+     "r1Share": 0.7,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Fernando Penelón",
+     "party": "Labour Gathering Party",
+     "r1Votes": 3183,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Alberto Teisaire",
+    "party": "Peronist Party"
+   },
+   "knownAs": null,
+   "summary": "The death of his wife and closest advisor, Evita, stuck President Juan Perón amid serious difficulties. A severe drought in 1952 and years of pessimism in Argentina's important agrarian sector depleted foreign reserves and forced Perón to curtail public lending and spending programs.",
+   "caveat": "A vice-presidential and legislative vote under the same restrictions as 1951."
+  },
+  {
+   "id": "1958",
+   "label": "1958",
+   "year": 1958,
+   "kind": "presidential",
+   "date": "1958",
+   "era": "proscription",
+   "turnout": 90.86,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Arturo Frondizi",
+     "party": "UCRI",
+     "r1Votes": 4070398,
+     "r1Share": 49.49,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ricardo Balbín",
+     "party": "UCRP",
+     "r1Votes": 2617693,
+     "r1Share": 31.83,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Pedro Eugenio Aramburu",
+    "party": null
+   },
+   "presAfter": {
+    "name": "Arturo Frondizi",
+    "party": "UCRI"
+   },
+   "knownAs": "Frondizi with Perón's blessing",
+   "summary": "The year 1955 cast a long shadow over these elections. President Juan Perón was violently overthrown in September of that year and the succeeding junta banned the Peronist Party and even the possession of Peronist mementoes or the very mention of the former leader or of the late Eva Perón.",
+   "caveat": "Held with Peronism — the country's largest movement — banned from presenting candidates."
+  },
+  {
+   "id": "1963",
+   "label": "1963",
+   "year": 1963,
+   "kind": "presidential",
+   "date": "7 July 1963",
+   "era": "proscription",
+   "turnout": 85.48,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Arturo Illia",
+     "party": "UCRP",
+     "r1Votes": 2441064,
+     "r1Share": 31.9,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oscar Alende",
+     "party": "UCRI",
+     "r1Votes": 1593002,
+     "r1Share": 20.82,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pedro Aramburu",
+     "party": "UDELPA",
+     "r1Votes": 1362596,
+     "r1Share": 17.81,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "José María Guido",
+    "party": "UCRI"
+   },
+   "presAfter": {
+    "name": "Arturo Illia",
+    "party": "UCRP"
+   },
+   "knownAs": "Illia at 25%",
+   "summary": "The spectre of military intervention so much in evidence after the election of Arturo Frondizi in 1958 became reality following his coerced resignation on March 29, 1962.",
+   "caveat": "Held with Peronism — the country's largest movement — banned from presenting candidates."
+  },
+  {
+   "id": "1973-mar",
+   "label": "March 1973",
+   "year": 1973,
+   "kind": "presidential",
+   "date": "11 March 1973",
+   "era": "proscription",
+   "turnout": 85.55,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Héctor Cámpora",
+     "party": "PJ",
+     "r1Votes": 5899642,
+     "r1Share": 49.53,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ricardo Balbín",
+     "party": "UCR",
+     "r1Votes": 2535581,
+     "r1Share": 21.29,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Alejandro Lanusse",
+    "party": null
+   },
+   "presAfter": {
+    "name": "Héctor Cámpora",
+    "party": "Justicialist Party"
+   },
+   "knownAs": "Cámpora opens the door",
+   "summary": "The 1966 coup d'état against the moderate President Arturo Illia was carried out largely as a reaction to Illia's decision to honor local and legislative elections in which Peronists, officially banned from political activity following the violent overthrow of President Juan Perón in 1955, did well.",
+   "caveat": null
+  },
+  {
+   "id": "1973-sep",
+   "label": "September 1973",
+   "year": 1973,
+   "kind": "presidential",
+   "date": "23 September 1973",
+   "era": "proscription",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Juan Perón",
+     "party": "Justicialist Party",
+     "r1Votes": 7359252,
+     "r1Share": 61.86,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ricardo Balbín",
+     "party": "Radical Civic Union",
+     "r1Votes": 2905719,
+     "r1Share": 24.42,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Francisco Manrique",
+     "party": "Federal Party",
+     "r1Votes": 1450996,
+     "r1Share": 12.2,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Raúl Lastiri",
+    "party": "Justicialist Party"
+   },
+   "presAfter": {
+    "name": "Juan Perón",
+    "party": "Justicialist Party"
+   },
+   "knownAs": "Perón returns",
+   "summary": "The jubilation that followed the May 1973 return to democracy (following over six and a half years of military rule) was soon clouded by political friction and unforeseen events.",
+   "caveat": null
+  },
+  {
+   "id": "1983",
+   "label": "1983",
+   "year": 1983,
+   "kind": "presidential",
+   "date": "30 October 1983",
+   "era": "modern",
+   "turnout": 85.61,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Raúl Alfonsín",
+     "party": "Radical Civic Union",
+     "r1Votes": 7724559,
+     "r1Share": 51.75,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ítalo Argentino Luder",
+     "party": "Justicialist Party",
+     "r1Votes": 5944402,
+     "r1Share": 40.16,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Reynaldo Bignone",
+    "party": "Military"
+   },
+   "presAfter": {
+    "name": "Raúl Alfonsín",
+    "party": "UCR"
+   },
+   "knownAs": "Alfonsín and the return of democracy",
+   "summary": "General elections were held in Argentina on 30 October 1983, marking the return of constitutional rule following the self-styled National Reorganization Process dictatorship installed in 1976. Voters fully chose the president, governors, mayors, and their respective national, province and town legislators, with a turnout of 85.6%.",
+   "caveat": null
+  },
+  {
+   "id": "1989",
+   "label": "1989",
+   "year": 1989,
+   "kind": "presidential",
+   "date": "14 May 1989",
+   "era": "modern",
+   "turnout": 85.31,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Carlos Menem",
+     "party": "PJ",
+     "r1Votes": 7957518,
+     "r1Share": 47.51,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eduardo Angeloz",
+     "party": "UCR",
+     "r1Votes": 6213217,
+     "r1Share": 37.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Álvaro Alsogaray",
+     "party": "UCEDE",
+     "r1Votes": 1200172,
+     "r1Share": 7.17,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Raúl Alfonsín",
+    "party": "UCR"
+   },
+   "presAfter": {
+    "name": "Carlos Menem",
+    "party": "PJ"
+   },
+   "knownAs": "Menem, and an early handover",
+   "summary": "General elections were held in Argentina on 14 May 1989. Voters chose both the President and their legislators and with a turnout of 85%, Carlos Menem won the presidency, and the Peronist Justicialist Party won the control of both houses of Congress.",
+   "caveat": null
+  },
+  {
+   "id": "1995",
+   "label": "1995",
+   "year": 1995,
+   "kind": "presidential",
+   "date": "14 May 1995",
+   "era": "modern",
+   "turnout": 82.08,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Carlos Menem",
+     "party": "PJ",
+     "r1Votes": 8687511,
+     "r1Share": 49.94,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Octavio Bordón",
+     "party": "PAIS",
+     "r1Votes": 5096104,
+     "r1Share": 29.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Horacio Massaccesi",
+     "party": "UCR",
+     "r1Votes": 2956137,
+     "r1Share": 16.99,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Carlos Menem",
+    "party": "PJ"
+   },
+   "presAfter": {
+    "name": "Carlos Menem",
+    "party": "PJ"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Argentina on 14 May. Voters chose both the President and their legislators and with a turnout of 82%.",
+   "caveat": null
+  },
+  {
+   "id": "1999",
+   "label": "1999",
+   "year": 1999,
+   "kind": "presidential",
+   "date": "24 October 1999",
+   "era": "modern",
+   "turnout": 82.27,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Fernando de la Rúa",
+     "party": "UCR",
+     "r1Votes": 9167220,
+     "r1Share": 48.37,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eduardo Duhalde",
+     "party": "PJ",
+     "r1Votes": 7255586,
+     "r1Share": 38.28,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Domingo Cavallo",
+     "party": "AxR",
+     "r1Votes": 1937544,
+     "r1Share": 10.22,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Carlos Menem",
+    "party": "Justicialist Party"
+   },
+   "presAfter": {
+    "name": "Fernando de la Rúa",
+    "party": "Radical Civic Union"
+   },
+   "knownAs": null,
+   "summary": "The Convertibility Plan, which had helped bring about stable prices and economic recovery and modernization, had endured the 1995 Mexican peso crisis, the 1997 Asian financial crisis, and other global shocks; but not without strain.",
+   "caveat": null
+  },
+  {
+   "id": "2003",
+   "label": "2003",
+   "year": 2003,
+   "kind": "presidential",
+   "date": "27 April 2003",
+   "era": "modern",
+   "turnout": 71.88,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Carlos Menem",
+     "party": "PJ",
+     "r1Votes": 4741200,
+     "r1Share": 24.45,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Néstor Kirchner",
+     "party": "PJ",
+     "r1Votes": 4313131,
+     "r1Share": 22.25,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ricardo López Murphy",
+     "party": "Recreate",
+     "r1Votes": 3173584,
+     "r1Share": 16.37,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Eduardo Duhalde",
+    "party": "PJ"
+   },
+   "presAfter": {
+    "name": "Néstor Kirchner",
+    "party": "FPV-PJ"
+   },
+   "knownAs": "Kirchner from 22%",
+   "summary": "General elections were held in Argentina on 27 April 2003. Turnout was 78.2%.",
+   "caveat": null
+  },
+  {
+   "id": "2007",
+   "label": "2007",
+   "year": 2007,
+   "kind": "presidential",
+   "date": "28 October 2007",
+   "era": "modern",
+   "turnout": 76.21,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Cristina Fernández de Kirchner",
+     "party": "PJ",
+     "r1Votes": 8652293,
+     "r1Share": 45.28,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Elisa Carrió",
+     "party": "ARI",
+     "r1Votes": 5168481,
+     "r1Share": 27.05,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Néstor Kirchner",
+    "party": "FPV-PJ"
+   },
+   "presAfter": {
+    "name": "Cristina Fernández de Kirchner",
+    "party": "FPV-PJ"
+   },
+   "knownAs": null,
+   "summary": "Argentina held national presidential and legislative elections on Sunday, 28 October 2007, and elections for provincial governors took place on staggered dates throughout the year. For the national elections, each of the 23 provinces and the Autonomous City of Buenos Aires are considered electoral districts.",
+   "caveat": null
+  },
+  {
+   "id": "2011",
+   "label": "2011",
+   "year": 2011,
+   "kind": "presidential",
+   "date": "23 October 2011",
+   "era": "modern",
+   "turnout": 81.75,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Cristina Fernández de Kirchner",
+     "party": "Front for Victory",
+     "r1Votes": 11865055,
+     "r1Share": 54.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hermes Binner",
+     "party": "Broad Progressive Front",
+     "r1Votes": 3684970,
+     "r1Share": 16.81,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ricardo Alfonsín",
+     "party": "Union for Social Development",
+     "r1Votes": 2443016,
+     "r1Share": 11.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alberto Rodríguez Saá",
+     "party": "Federal Commitment",
+     "r1Votes": 1745354,
+     "r1Share": 7.96,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eduardo Duhalde",
+     "party": "Popular Front",
+     "r1Votes": 1285830,
+     "r1Share": 5.86,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jorge Altamira",
+     "party": "Workers' Left Front",
+     "r1Votes": 503372,
+     "r1Share": 2.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Elisa Carrió",
+     "party": "Civic Coalition ARI",
+     "r1Votes": 399685,
+     "r1Share": 1.82,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Cristina Fernández de Kirchner",
+    "party": "FPV-PJ"
+   },
+   "presAfter": {
+    "name": "Cristina Fernández de Kirchner",
+    "party": "FPV-PJ"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Argentina on Sunday, 23 October 2011. Incumbent president Cristina Fernández de Kirchner of the Front for Victory won in a landslide, with 54% of the vote, securing a second term in office.",
+   "caveat": null
+  },
+  {
+   "id": "2015",
+   "label": "2015",
+   "year": 2015,
+   "kind": "presidential",
+   "date": "25 October and 22 November 2015",
+   "era": "modern",
+   "turnout": 79.83,
+   "turnout2": 80.77,
+   "candidates": [
+    {
+     "name": "Mauricio Macri",
+     "party": "Cambiemos",
+     "r1Votes": 8601131,
+     "r1Share": 34.15,
+     "r2Votes": 12988349,
+     "r2Share": 51.34
+    },
+    {
+     "name": "Daniel Scioli",
+     "party": "Front for Victory",
+     "r1Votes": 9338490,
+     "r1Share": 37.08,
+     "r2Votes": 12309575,
+     "r2Share": 48.66
+    },
+    {
+     "name": "Sergio Massa",
+     "party": "United for a New Alternative",
+     "r1Votes": 5386977,
+     "r1Share": 21.39,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nicolás del Caño",
+     "party": "Workers' Left Front",
+     "r1Votes": 812530,
+     "r1Share": 3.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Margarita Stolbizer",
+     "party": "Progresistas",
+     "r1Votes": 632551,
+     "r1Share": 2.51,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Adolfo Rodríguez Saá",
+     "party": "Federal Commitment",
+     "r1Votes": 412578,
+     "r1Share": 1.64,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Cristina Fernández de Kirchner",
+    "party": "FPV–PJ"
+   },
+   "presAfter": {
+    "name": "Mauricio Macri",
+    "party": "Cambiemos–PRO"
+   },
+   "knownAs": "The first runoff",
+   "summary": "General elections were held in Argentina on 25 October 2015 to elect the President and National Congress, and followed primary elections which were held on 9 August 2015. A second round of voting between the two leading candidates took place on 22 November, after surprisingly close results forced a runoff.",
+   "caveat": null
+  },
+  {
+   "id": "2019",
+   "label": "2019",
+   "year": 2019,
+   "kind": "presidential",
+   "date": "27 October 2019",
+   "era": "modern",
+   "turnout": 78.27,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Alberto Fernández",
+     "party": "Frente de Todos",
+     "r1Votes": 12946037,
+     "r1Share": 48.24,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mauricio Macri",
+     "party": "Juntos por el Cambio",
+     "r1Votes": 10811586,
+     "r1Share": 40.28,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Roberto Lavagna",
+     "party": "Federal Consensus",
+     "r1Votes": 1649322,
+     "r1Share": 6.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nicolás del Caño",
+     "party": "Workers' Left Front",
+     "r1Votes": 579228,
+     "r1Share": 2.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juan José Gómez Centurión",
+     "party": "NOS",
+     "r1Votes": 457956,
+     "r1Share": 1.71,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Luis Espert",
+     "party": "Unite por la Libertad y la Dignidad",
+     "r1Votes": 394207,
+     "r1Share": 1.47,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Mauricio Macri",
+    "party": "JxC–PRO"
+   },
+   "presAfter": {
+    "name": "Alberto Fernández",
+    "party": "FDT–PJ"
+   },
+   "knownAs": null,
+   "summary": "The Peronist, left-wing Frente de Todos ticket of Alberto Fernández, former Chief Cabinet, and Cristina Fernández de Kirchner, National Senator and former president, defeated the center-right Juntos por el Cambio ticket of incumbent president Mauricio Macri and conservative Peronist National Senator Miguel Ángel Pichetto, exceeding the threshold to win the presidency in a singl",
+   "caveat": null
+  },
+  {
+   "id": "2023",
+   "label": "2023",
+   "year": 2023,
+   "kind": "presidential",
+   "date": "22 October 2023",
+   "era": "modern",
+   "turnout": 78.3,
+   "turnout2": 76.32,
+   "candidates": [
+    {
+     "name": "Sergio Massa",
+     "party": "Union for the Homeland",
+     "r1Votes": 9853492,
+     "r1Share": 36.78,
+     "r2Votes": 11598720,
+     "r2Share": 44.35
+    },
+    {
+     "name": "Javier Milei",
+     "party": "Freedom Advances",
+     "r1Votes": 8034990,
+     "r1Share": 29.99,
+     "r2Votes": 14554560,
+     "r2Share": 55.65
+    },
+    {
+     "name": "Patricia Bullrich",
+     "party": "Together for Change",
+     "r1Votes": 6379023,
+     "r1Share": 23.81,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juan Schiaretti",
+     "party": "We Do for Our Country",
+     "r1Votes": 1802068,
+     "r1Share": 6.73,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Myriam Bregman",
+     "party": "Workers' Left Front",
+     "r1Votes": 722061,
+     "r1Share": 2.7,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Alberto Fernández",
+    "party": "FdT–PJ"
+   },
+   "presAfter": {
+    "name": "Javier Milei",
+    "party": "LLA–PL"
+   },
+   "knownAs": "Milei's runoff",
+   "summary": "General elections were held in Argentina on 22 October 2023 to elect the president, vice president, members of the National Congress, and the governors of most provinces.",
+   "caveat": null
+  }
+ ]
+}

@@ -1,0 +1,3422 @@
+{
+ "meta": {
+  "title": "Italian general elections",
+  "sources": [
+   "Wikipedia: Italian general election articles, 1861–2022 (results, infoboxes and leads)",
+   "Interior Ministry figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "eras": [
+  {
+   "key": "liberal",
+   "label": "The Liberal monarchy",
+   "span": "1861–1895",
+   "blurb": "United Italy's first elections chose a parliament for a fraction of the population — a literate, taxpaying franchise of around two percent at first. The Historical Right and Left traded power through trasformismo, the art of absorbing opponents rather than beating them."
+  },
+  {
+   "key": "giolitti",
+   "label": "The Giolittian era",
+   "span": "1897–1913",
+   "blurb": "Giovanni Giolitti managed Italy's politics for a generation, and the 1913 election — the first under near-universal male suffrage — multiplied the electorate five-fold, bringing Catholics and socialists flooding into a system built to exclude them."
+  },
+  {
+   "key": "crisis",
+   "label": "Proportional revolution and the Fascist seizure",
+   "span": "1919–1924",
+   "blurb": "Proportional representation in 1919 shattered the liberal order, making socialists and the new Catholic party the largest forces. The 1921 election brought Mussolini's Fascists into parliament; the violence-soaked 1924 contest, under the rigged Acerbo premium, ended Italian democracy for two decades."
+  },
+  {
+   "key": "fascist",
+   "label": "The Fascist plebiscites",
+   "span": "1929–1934",
+   "blurb": "The single-list votes of 1929 and 1934 offered Italians one Fascist slate to approve or reject, under a regime that controlled the press, the police and the count. They are recorded here as rituals of the dictatorship, not elections."
+  },
+  {
+   "key": "first-republic",
+   "label": "The First Republic",
+   "span": "1946–1992",
+   "blurb": "The 1946 vote — the first with women's suffrage, held alongside the referendum that abolished the monarchy — opened five decades in which Christian Democracy led every government, the West's largest Communist party led the opposition, and the same parties returned in endlessly reshuffled coalitions."
+  },
+  {
+   "key": "second-republic",
+   "label": "The Second Republic",
+   "span": "1994–2022",
+   "blurb": "Tangentopoli destroyed the old parties, and Silvio Berlusconi's 1994 debut inaugurated an era of alternating coalitions, new electoral laws, the Five Star quake of 2013, and in 2022 the country's first woman prime minister at the head of its most right-wing government since the war."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1861",
+   "label": "1861",
+   "year": 1861,
+   "date": "3 February 1861",
+   "era": "liberal",
+   "totalSeats": 443,
+   "majoritySeats": 222,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Historical Right",
+     "leader": "Camillo Benso di Cavour",
+     "seats": 342,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "None",
+    "party": "Elected Prime Minister"
+   },
+   "pmAfter": {
+    "name": "Camillo Benso, Count of Cavour",
+    "party": "Historical Right"
+   },
+   "knownAs": "The first Italian parliament",
+   "summary": "General elections were held in Italy on 27 January 1861, with a second round on 3 February. The newly elected Parliament first convened in Turin on 4 March 1861, where, thirteen days later, it declared the unification of the country as the Kingdom of Italy.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Historical Right"
+  },
+  {
+   "id": "1865",
+   "label": "1865",
+   "year": 1865,
+   "date": "29 October 1865",
+   "era": "liberal",
+   "totalSeats": 443,
+   "majoritySeats": 222,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Historical Right",
+     "leader": "Alfonso Ferrero La Marmora",
+     "seats": 183,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Alfonso Ferrero La Marmora",
+    "party": "Historical Right"
+   },
+   "pmAfter": {
+    "name": "Alfonso Ferrero La Marmora",
+    "party": "Historical Right"
+   },
+   "knownAs": null,
+   "summary": "On 22 and 29 October only 504,263 men of a total population of around 23 million were entitled to vote. Right-wing candidates emerged as the largest bloc in Parliament with around 41% of the 443 seats.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Historical Right"
+  },
+  {
+   "id": "1867",
+   "label": "1867",
+   "year": 1867,
+   "date": "17 March 1867",
+   "era": "liberal",
+   "totalSeats": 493,
+   "majoritySeats": 247,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Historical Left",
+     "leader": "Urbano Rattazzi",
+     "seats": 225,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Historical Right",
+     "leader": "Bettino Ricasoli",
+     "seats": 151,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Bettino Ricasoli",
+    "party": "Historical Right"
+   },
+   "pmAfter": {
+    "name": "Urbano Rattazzi",
+    "party": "Historical Left"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Italy on 10 March 1867, with a second round on 17 March. Before the elections, Bettino Ricasoli resigned as prime minister due to a disagreement with the Chamber; the Chamber disapproved of his agreements with the Vatican regarding the repatriation of certain religious properties.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Historical Left"
+  },
+  {
+   "id": "1870",
+   "label": "1870",
+   "year": 1870,
+   "date": "27 November 1870",
+   "era": "liberal",
+   "totalSeats": 508,
+   "majoritySeats": 255,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Historical Right",
+     "leader": "Giovanni Lanza",
+     "seats": 233,
+     "seatChange": 82.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Historical Left",
+     "leader": "Urbano Rattazzi",
+     "seats": 195,
+     "seatChange": -30.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Giovanni Lanza",
+    "party": "Historical Right"
+   },
+   "pmAfter": {
+    "name": "Giovanni Lanza",
+    "party": "Historical Right"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Italy on 20 November 1870, with a second round of voting on 27 November. They were a snap election, called by Prime Minister Giovanni Lanza to take advantage by the Capture of Rome and to give parliamentary representation to the future capital of Italy.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Historical Right"
+  },
+  {
+   "id": "1874",
+   "label": "1874",
+   "year": 1874,
+   "date": "15 November 1874",
+   "era": "liberal",
+   "totalSeats": 508,
+   "majoritySeats": 255,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Historical Right",
+     "leader": "Marco Minghetti",
+     "seats": 276,
+     "seatChange": 43.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Historical Left",
+     "leader": "Agostino Depretis",
+     "seats": 232,
+     "seatChange": 37.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Marco Minghetti",
+    "party": "Historical Right"
+   },
+   "pmAfter": {
+    "name": "Marco Minghetti",
+    "party": "Historical Right"
+   },
+   "knownAs": null,
+   "summary": "Only 571,939 men of a total population of around 28 million were entitled to vote. Right-wing candidates emerged as the largest bloc in Parliament with around 48% of the seats in Parliament.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Historical Right"
+  },
+  {
+   "id": "1876",
+   "label": "1876",
+   "year": 1876,
+   "date": "12 November 1876",
+   "era": "liberal",
+   "totalSeats": 508,
+   "majoritySeats": 255,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Historical Left",
+     "leader": "Agostino Depretis",
+     "seats": 414,
+     "seatChange": 182.0,
+     "votes": 243319,
+     "share": 70.21,
+     "swing": null
+    },
+    {
+     "name": "Historical Right",
+     "leader": "Marco Minghetti",
+     "seats": 94,
+     "seatChange": -182.0,
+     "votes": 97726,
+     "share": 28.2,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Agostino Depretis",
+    "party": "Historical Left"
+   },
+   "pmAfter": {
+    "name": "Agostino Depretis",
+    "party": "Historical Left"
+   },
+   "knownAs": "The Left's revolution",
+   "summary": "The election on 5 and 12 November was a snap one, and it came after MPs from Tuscany became dissatisfied with the government of Minghetti following its refusal to intervene in the financial problems of Florence. The government was defeated on a vote on nationalising railways on 18 March 1876 and was forced to resign and Depretis was appointed prime minister.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Historical Left"
+  },
+  {
+   "id": "1880",
+   "label": "1880",
+   "year": 1880,
+   "date": "23 May 1880",
+   "era": "liberal",
+   "totalSeats": 508,
+   "majoritySeats": 255,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Historical Left",
+     "leader": "Agostino Depretis",
+     "seats": 218,
+     "seatChange": -196.0,
+     "votes": 146096,
+     "share": 40.76,
+     "swing": -29.45
+    },
+    {
+     "name": "Historical Right",
+     "leader": null,
+     "seats": 171,
+     "seatChange": 77.0,
+     "votes": 135717,
+     "share": 37.86,
+     "swing": null
+    },
+    {
+     "name": "Dissident Left",
+     "leader": null,
+     "seats": 119,
+     "seatChange": null,
+     "votes": 70479,
+     "share": 19.66,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Benedetto Cairoli",
+    "party": "Historical Left"
+   },
+   "pmAfter": {
+    "name": "Benedetto Cairoli",
+    "party": "Historical Left"
+   },
+   "knownAs": null,
+   "summary": "The Historical Left group emerged as the largest in Parliament, although left-wing dissidents won 119 of the 508 seats, becoming the third parliamentary group. Only 621,896 men of a total population of around 29 million were entitled to vote.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Historical Left"
+  },
+  {
+   "id": "1882",
+   "label": "1882",
+   "year": 1882,
+   "date": "5 November 1882",
+   "era": "liberal",
+   "totalSeats": 508,
+   "majoritySeats": 255,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Historical Left",
+     "leader": "Agostino Depretis",
+     "seats": 289,
+     "seatChange": 71.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Historical Right",
+     "leader": "Marco Minghetti",
+     "seats": 147,
+     "seatChange": -24.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Historical Far Left",
+     "leader": "Agostino Bertani",
+     "seats": 44,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Dissident Left",
+     "leader": "Giuseppe Zanardelli",
+     "seats": 19,
+     "seatChange": -100.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Agostino Depretis",
+    "party": "Historical Left"
+   },
+   "pmAfter": {
+    "name": "Agostino Depretis",
+    "party": "Historical Left"
+   },
+   "knownAs": null,
+   "summary": "Shortly before the elections the voting age was lowered from 25 to 21 and the tax requirement lowered from ₤40 to ₤19.80, whilst men with three years of primary education were exempted from it. This resulted in the number of eligible voters increasing from 621,896 at the 1880 elections to 2,017,829.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Historical Left"
+  },
+  {
+   "id": "1886",
+   "label": "1886",
+   "year": 1886,
+   "date": "30 May 1886",
+   "era": "liberal",
+   "totalSeats": 508,
+   "majoritySeats": 255,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Historical Left",
+     "leader": "Agostino Depretis",
+     "seats": 292,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Historical Right",
+     "leader": "Silvio Spaventa",
+     "seats": 145,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Historical Far Left",
+     "leader": "Felice Cavallotti",
+     "seats": 45,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Dissident Left",
+     "leader": "Giuseppe Zanardelli",
+     "seats": 26,
+     "seatChange": 7.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Agostino Depretis",
+    "party": "Historical Left"
+   },
+   "pmAfter": {
+    "name": "Agostino Depretis",
+    "party": "Historical Left"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Italy on 23 May 1886, with a second round of voting on 30 May. The \"ministerial\" left-wing bloc emerged as the largest in Parliament, winning 292 of the 508 seats.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Historical Left"
+  },
+  {
+   "id": "1890",
+   "label": "1890",
+   "year": 1890,
+   "date": "30 November 1890",
+   "era": "liberal",
+   "totalSeats": 508,
+   "majoritySeats": 255,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Historical Left",
+     "leader": "Francesco Crispi",
+     "seats": 401,
+     "seatChange": 109.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Francesco Crispi",
+    "party": "Historical Left"
+   },
+   "pmAfter": {
+    "name": "Francesco Crispi",
+    "party": "Historical Left"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Italy on 23 November 1890, with a second round of voting on 30 November. The \"ministerial\" left-wing bloc emerged as the largest in Parliament, winning 401 of the 508 seats.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Historical Left"
+  },
+  {
+   "id": "1892",
+   "label": "1892",
+   "year": 1892,
+   "date": "13 November 1892",
+   "era": "liberal",
+   "totalSeats": 508,
+   "majoritySeats": 255,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Historical Left",
+     "leader": "Giovanni Giolitti",
+     "seats": 323,
+     "seatChange": -78.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Antonio Starabba, Marchese di Rudinì",
+    "party": "Historical Right"
+   },
+   "pmAfter": {
+    "name": "Giovanni Giolitti",
+    "party": "Historical Left"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Italy on 6 November 1892, with a second round of voting on 13 November. The \"ministerial\" left-wing bloc emerged as the largest in Parliament, winning 323 of the 508 seats.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Historical Left"
+  },
+  {
+   "id": "1895",
+   "label": "1895",
+   "year": 1895,
+   "date": "2 June 1895",
+   "era": "liberal",
+   "totalSeats": 508,
+   "majoritySeats": 255,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Historical Left",
+     "leader": "Francesco Crispi",
+     "seats": 334,
+     "seatChange": 11.0,
+     "votes": 713812,
+     "share": 58.57,
+     "swing": null
+    },
+    {
+     "name": "Historical Right",
+     "leader": "Antonio Starabba di Rudinì",
+     "seats": 104,
+     "seatChange": 11.0,
+     "votes": 263315,
+     "share": 21.61,
+     "swing": null
+    },
+    {
+     "name": "Historical Far Left",
+     "leader": "Felice Cavallotti",
+     "seats": 47,
+     "seatChange": 20.0,
+     "votes": 142356,
+     "share": 11.68,
+     "swing": null
+    },
+    {
+     "name": "Italian Socialist Party",
+     "leader": "Andrea Costa",
+     "seats": 15,
+     "seatChange": null,
+     "votes": 82523,
+     "share": 6.77,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Giovanni Giolitti",
+    "party": "Historical Left"
+   },
+   "pmAfter": {
+    "name": "Francesco Crispi",
+    "party": "Historical Left"
+   },
+   "knownAs": null,
+   "summary": "In December 1893 the impotence of the Giovanni Giolitti cabinet to restore public order, menaced by disturbances in Sicily and the Banca Romana scandal, gave rise to a general demand that Francesco Crispi should return to power. Although Giolitti tried to put a halt to the manifestations and protests of the Fasci Siciliani, his measures were relatively mild.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Historical Left"
+  },
+  {
+   "id": "1897",
+   "label": "1897",
+   "year": 1897,
+   "date": "28 March 1897",
+   "era": "giolitti",
+   "totalSeats": 508,
+   "majoritySeats": 255,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Historical Left",
+     "leader": "Giovanni Giolitti",
+     "seats": 327,
+     "seatChange": -7.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PRI",
+     "leader": "Giovanni Bovio",
+     "seats": 25,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PSI",
+     "leader": "Filippo Turati",
+     "seats": 15,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Antonio Starabba, Marchese di Rudinì",
+    "party": "Historical Right"
+   },
+   "pmAfter": {
+    "name": "Antonio Starabba, Marchese di Rudinì",
+    "party": "Historical Right"
+   },
+   "knownAs": null,
+   "summary": "The ensuing Antonio di Rudini cabinet lent itself to Cavallotti's campaign, and at the end of 1897 the judicial authorities applied to the Chamber of Deputies for permission to prosecute Crispi for embezzlement.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Historical Left"
+  },
+  {
+   "id": "1900",
+   "label": "1900",
+   "year": 1900,
+   "date": "10 June 1900",
+   "era": "giolitti",
+   "totalSeats": 508,
+   "majoritySeats": 255,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Ministerials",
+     "leader": "Giovanni Giolitti",
+     "seats": 296,
+     "seatChange": -33.0,
+     "votes": 663418,
+     "share": 52.28,
+     "swing": -12.0
+    },
+    {
+     "name": "Constitutional opposition",
+     "leader": null,
+     "seats": 116,
+     "seatChange": 17.0,
+     "votes": 271698,
+     "share": 21.41,
+     "swing": null
+    },
+    {
+     "name": "Radical opposition",
+     "leader": "Ettore Sacchi",
+     "seats": 34,
+     "seatChange": -8.0,
+     "votes": 89872,
+     "share": 7.08,
+     "swing": -1.1
+    },
+    {
+     "name": "Italian Socialist Party",
+     "leader": null,
+     "seats": 33,
+     "seatChange": 18.0,
+     "votes": 164946,
+     "share": 13.0,
+     "swing": null
+    },
+    {
+     "name": "Italian Republican Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": 4.0,
+     "votes": 79127,
+     "share": 6.24,
+     "swing": null
+    },
+    {
+     "name": "PRI",
+     "leader": "Napoleone Colajanni",
+     "seats": 29,
+     "seatChange": 4.0,
+     "votes": 79127,
+     "share": 6.2,
+     "swing": 0.4
+    }
+   ],
+   "pmBefore": {
+    "name": "Luigi Pelloux",
+    "party": "Military"
+   },
+   "pmAfter": {
+    "name": "Giuseppe Saracco",
+    "party": "Ministerials"
+   },
+   "knownAs": null,
+   "summary": "Upon the fall of Antonio Starabba di Rudinì in June 1898, General Luigi Pelloux was entrusted by King Umberto with the formation of a cabinet, and took for himself the post of minister of the interior. He resigned office in May 1899 over his Chinese policy, but was again entrusted with the formation of a government.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Ministerials"
+  },
+  {
+   "id": "1904",
+   "label": "1904",
+   "year": 1904,
+   "date": "13 November 1904",
+   "era": "giolitti",
+   "totalSeats": 508,
+   "majoritySeats": 255,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Ministerials",
+     "leader": "Giovanni Giolitti",
+     "seats": 339,
+     "seatChange": 43.0,
+     "votes": 777345,
+     "share": 50.9,
+     "swing": -1.38
+    },
+    {
+     "name": "Constitutional opposition",
+     "leader": null,
+     "seats": 76,
+     "seatChange": -40.0,
+     "votes": 212584,
+     "share": 13.92,
+     "swing": null
+    },
+    {
+     "name": "Italian Radical Party",
+     "leader": null,
+     "seats": 37,
+     "seatChange": 3.0,
+     "votes": 128002,
+     "share": 8.38,
+     "swing": null
+    },
+    {
+     "name": "Italian Socialist Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": -4.0,
+     "votes": 326016,
+     "share": 21.35,
+     "swing": null
+    },
+    {
+     "name": "Italian Republican Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": -5.0,
+     "votes": 75225,
+     "share": 4.93,
+     "swing": null
+    },
+    {
+     "name": "Italian Catholic Electoral Union",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 8008,
+     "share": 0.52,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Giovanni Giolitti",
+    "party": "Ministerials"
+   },
+   "pmAfter": {
+    "name": "Giovanni Giolitti",
+    "party": "Ministerials"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Italy on 6 November 1904, with a second round of voting on 13 November. The \"ministerial\" left-wing bloc remained the largest in Parliament, winning 339 of the 508 seats.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Ministerials"
+  },
+  {
+   "id": "1909",
+   "label": "1909",
+   "year": 1909,
+   "date": "14 March 1909",
+   "era": "giolitti",
+   "totalSeats": 508,
+   "majoritySeats": 255,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Ministerials",
+     "leader": "Giovanni Giolitti",
+     "seats": 336,
+     "seatChange": -3.0,
+     "votes": 995290,
+     "share": 54.45,
+     "swing": 3.55
+    },
+    {
+     "name": "Italian Radical Party",
+     "leader": null,
+     "seats": 45,
+     "seatChange": 8.0,
+     "votes": 181242,
+     "share": 9.92,
+     "swing": null
+    },
+    {
+     "name": "Italian Socialist Party",
+     "leader": null,
+     "seats": 41,
+     "seatChange": 12.0,
+     "votes": 347615,
+     "share": 19.02,
+     "swing": null
+    },
+    {
+     "name": "Constitutional opposition",
+     "leader": null,
+     "seats": 36,
+     "seatChange": -40.0,
+     "votes": 108029,
+     "share": 5.91,
+     "swing": null
+    },
+    {
+     "name": "Italian Republican Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 0.0,
+     "votes": 81461,
+     "share": 4.46,
+     "swing": null
+    },
+    {
+     "name": "Italian Catholic Electoral Union",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 13.0,
+     "votes": 73015,
+     "share": 3.99,
+     "swing": null
+    },
+    {
+     "name": "Constitutional Independents",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 41213,
+     "share": 2.25,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Giovanni Giolitti",
+    "party": "Ministerials"
+   },
+   "pmAfter": {
+    "name": "Giovanni Giolitti",
+    "party": "Ministerials"
+   },
+   "knownAs": null,
+   "summary": "The right-wing leader Sidney Sonnino succeed to Giolitti's protégé Alessandro Fortis as prime minister in 1906. But his cabinet had a short lift; any way Sonnino formed an alliance with France on the colonial expansion in North Africa.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Ministerials"
+  },
+  {
+   "id": "1913",
+   "label": "1913",
+   "year": 1913,
+   "date": "2 November 1913",
+   "era": "giolitti",
+   "totalSeats": 508,
+   "majoritySeats": 255,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberal Party",
+     "leader": "Giovanni Giolitti",
+     "seats": 270,
+     "seatChange": null,
+     "votes": 2387947,
+     "share": 47.62,
+     "swing": -6.83
+    },
+    {
+     "name": "Italian Radical Party",
+     "leader": null,
+     "seats": 62,
+     "seatChange": 14.0,
+     "votes": 522522,
+     "share": 10.42,
+     "swing": null
+    },
+    {
+     "name": "Italian Socialist Party",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 11.0,
+     "votes": 883409,
+     "share": 17.62,
+     "swing": null
+    },
+    {
+     "name": "Constitutional Democratic Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": null,
+     "votes": 277251,
+     "share": 5.53,
+     "swing": null
+    },
+    {
+     "name": "Italian Catholic Electoral Union",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 2.0,
+     "votes": 212319,
+     "share": 4.23,
+     "swing": null
+    },
+    {
+     "name": "Italian Reformist Socialist Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 196406,
+     "share": 3.92,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 138967,
+     "share": 2.77,
+     "swing": null
+    },
+    {
+     "name": "Dissident Radicals",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 65671,
+     "share": 1.31,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Giovanni Giolitti",
+    "party": "Liberal"
+   },
+   "pmAfter": {
+    "name": "Giovanni Giolitti",
+    "party": "Liberal"
+   },
+   "knownAs": "First mass-suffrage election",
+   "summary": "General elections were held in Italy on 26 October 1913, with a second round of voting on 2 November. The Liberals (the former Ministeriali) narrowly retained an absolute majority in the Chamber of Deputies, while the Radical Party emerged as the largest opposition bloc.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Liberal Party"
+  },
+  {
+   "id": "1919",
+   "label": "1919",
+   "year": 1919,
+   "date": "16 November 1919",
+   "era": "crisis",
+   "totalSeats": 508,
+   "majoritySeats": 255,
+   "turnout": 56.58,
+   "parties": [
+    {
+     "name": "Italian Socialist Party",
+     "leader": null,
+     "seats": 156,
+     "seatChange": 104.0,
+     "votes": 1834792,
+     "share": 32.28,
+     "swing": null
+    },
+    {
+     "name": "PSI",
+     "leader": "Nicola Bombacci",
+     "seats": 156,
+     "seatChange": 104.0,
+     "votes": 1834792,
+     "share": 32.28,
+     "swing": null
+    },
+    {
+     "name": "Italian People's Party",
+     "leader": null,
+     "seats": 100,
+     "seatChange": null,
+     "votes": 1167354,
+     "share": 20.53,
+     "swing": null
+    },
+    {
+     "name": "Liberals, Democrats and Radicals",
+     "leader": null,
+     "seats": 96,
+     "seatChange": null,
+     "votes": 904195,
+     "share": 15.91,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 60,
+     "seatChange": null,
+     "votes": 622310,
+     "share": 10.95,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 41,
+     "seatChange": -229.0,
+     "votes": 490384,
+     "share": 8.63,
+     "swing": null
+    },
+    {
+     "name": "Combatants' Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": 232923,
+     "share": 4.1,
+     "swing": null
+    },
+    {
+     "name": "Italian Radical Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": -50.0,
+     "votes": 110697,
+     "share": 1.95,
+     "swing": null
+    },
+    {
+     "name": "Economic Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 87450,
+     "share": 1.54,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Francesco Saverio Nitti",
+    "party": "Radical Party"
+   },
+   "pmAfter": {
+    "name": "Francesco Saverio Nitti",
+    "party": "Radical Party"
+   },
+   "knownAs": "The proportional revolution",
+   "summary": "The elections took place in the middle of Biennio Rosso (\"Red Biennium\") a two-year period, between 1919 and 1920, of intense social conflict in Italy, following the First World War. The revolutionary period was followed by the violent reaction of the Fascist blackshirts militia and eventually by the March on Rome of Benito Mussolini in 1922.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Italian Socialist Party"
+  },
+  {
+   "id": "1921",
+   "label": "1921",
+   "year": 1921,
+   "date": "15 May 1921",
+   "era": "crisis",
+   "totalSeats": 535,
+   "majoritySeats": 268,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Italian Socialist Party",
+     "leader": null,
+     "seats": 123,
+     "seatChange": -33.0,
+     "votes": 1631435,
+     "share": 24.69,
+     "swing": null
+    },
+    {
+     "name": "PSI",
+     "leader": "Giovanni Bacci",
+     "seats": 123,
+     "seatChange": -33.0,
+     "votes": 1631435,
+     "share": 24.69,
+     "swing": -7.59
+    },
+    {
+     "name": "Italian People's Party",
+     "leader": null,
+     "seats": 108,
+     "seatChange": 8.0,
+     "votes": 1347305,
+     "share": 20.39,
+     "swing": null
+    },
+    {
+     "name": "National Bloc",
+     "leader": null,
+     "seats": 105,
+     "seatChange": null,
+     "votes": 1260007,
+     "share": 19.07,
+     "swing": null
+    },
+    {
+     "name": "Italian Democratic Liberal Party",
+     "leader": null,
+     "seats": 68,
+     "seatChange": -28.0,
+     "votes": 684855,
+     "share": 10.36,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 43,
+     "seatChange": 2.0,
+     "votes": 470605,
+     "share": 7.12,
+     "swing": null
+    },
+    {
+     "name": "Social Democracy",
+     "leader": null,
+     "seats": 29,
+     "seatChange": -31.0,
+     "votes": 309191,
+     "share": 4.68,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Italy",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": 304719,
+     "share": 4.61,
+     "swing": null
+    },
+    {
+     "name": "Reformist Democratic Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 122087,
+     "share": 1.85,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Giovanni Giolitti",
+    "party": "PLI"
+   },
+   "pmAfter": {
+    "name": "Ivanoe Bonomi",
+    "party": "Reformist Socialist Party"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Italy on 15 May 1921. It was the first election in which the recently acquired regions of Trentino-Alto Adige, Venezia Giulia, Zara and Lagosta island elected deputies, many of whom were from the Germanic and South Slavic ethnic groups.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Italian Socialist Party"
+  },
+  {
+   "id": "1924",
+   "label": "1924",
+   "year": 1924,
+   "date": "6 April 1924",
+   "era": "crisis",
+   "totalSeats": 535,
+   "majoritySeats": 268,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National List",
+     "leader": "Benito Mussolini",
+     "seats": 355,
+     "seatChange": 250.0,
+     "votes": 4305936,
+     "share": 60.09,
+     "swing": null
+    },
+    {
+     "name": "Italian People's Party",
+     "leader": null,
+     "seats": 39,
+     "seatChange": -69.0,
+     "votes": 645789,
+     "share": 9.01,
+     "swing": null
+    },
+    {
+     "name": "Unitary Socialist Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": null,
+     "votes": 422957,
+     "share": 5.9,
+     "swing": null
+    },
+    {
+     "name": "Italian Socialist Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": -101.0,
+     "votes": 360694,
+     "share": 5.03,
+     "swing": null
+    },
+    {
+     "name": "National List bis",
+     "leader": "Benito Mussolini",
+     "seats": 19,
+     "seatChange": null,
+     "votes": 347552,
+     "share": 4.85,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Italy",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 4.0,
+     "votes": 268191,
+     "share": 3.74,
+     "swing": null
+    },
+    {
+     "name": "Italian Liberal Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": -28.0,
+     "votes": 233521,
+     "share": 3.26,
+     "swing": null
+    },
+    {
+     "name": "Italian Democratic Liberal Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": -54.0,
+     "votes": 157932,
+     "share": 2.2,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Benito Mussolini",
+    "party": "PNF"
+   },
+   "pmAfter": {
+    "name": "Benito Mussolini",
+    "party": "PNF"
+   },
+   "knownAs": "The Acerbo election",
+   "summary": "General elections were held in Italy on 6 April 1924 to elect the members of the Chamber of Deputies.",
+   "caveat": "Held amid Fascist squad violence and under the Acerbo Law, which handed two-thirds of the seats to the leading list. The last multi-party election before the dictatorship — and not a free one.",
+   "unfree": null,
+   "seatLeader": "National List"
+  },
+  {
+   "id": "1929",
+   "label": "1929",
+   "year": 1929,
+   "date": "24 March 1929",
+   "era": "fascist",
+   "totalSeats": 400,
+   "majoritySeats": 201,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Fascist Party",
+     "leader": null,
+     "seats": 400,
+     "seatChange": 26.0,
+     "votes": 8517838,
+     "share": 98.43,
+     "swing": null
+    },
+    {
+     "name": "PNF",
+     "leader": "Benito Mussolini",
+     "seats": 400,
+     "seatChange": 26.0,
+     "votes": 8517838,
+     "share": 98.43,
+     "swing": 38.34
+    }
+   ],
+   "pmBefore": {
+    "name": "Benito Mussolini",
+    "party": "PNF"
+   },
+   "pmAfter": {
+    "name": "Benito Mussolini",
+    "party": "PNF"
+   },
+   "knownAs": "Single-list plebiscite",
+   "summary": "Following a parliamentary reform enacted in 1928 by the Chamber of Deputies and Senate, the elections were held in the form of a referendum, with the Grand Council of the PNF, now an official state organ, allowed to compose a single party list to be either approved or rejected by the voters. The list put forward was ultimately approved by 98.43% of voters.",
+   "caveat": null,
+   "unfree": "unfree",
+   "seatLeader": "National Fascist Party"
+  },
+  {
+   "id": "1934",
+   "label": "1934",
+   "year": 1934,
+   "date": "25 March 1934",
+   "era": "fascist",
+   "totalSeats": 400,
+   "majoritySeats": 201,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Fascist Party",
+     "leader": null,
+     "seats": 400,
+     "seatChange": 0.0,
+     "votes": 10045477,
+     "share": 99.85,
+     "swing": null
+    },
+    {
+     "name": "PNF",
+     "leader": "Benito Mussolini",
+     "seats": 400,
+     "seatChange": 0.0,
+     "votes": 10045477,
+     "share": 99.85,
+     "swing": 1.55
+    }
+   ],
+   "pmBefore": {
+    "name": "Benito Mussolini",
+    "party": "PNF"
+   },
+   "pmAfter": {
+    "name": "Benito Mussolini",
+    "party": "PNF"
+   },
+   "knownAs": "Single-list plebiscite",
+   "summary": "This article may require cleanup to meet Wikipedia's quality standards. The specific problem is: Written by non-native English speakers, some of the prose is not clear.",
+   "caveat": null,
+   "unfree": "unfree",
+   "seatLeader": "National Fascist Party"
+  },
+  {
+   "id": "1946",
+   "label": "1946",
+   "year": 1946,
+   "date": "2–3 June 1946",
+   "era": "first-republic",
+   "totalSeats": 556,
+   "majoritySeats": 279,
+   "turnout": 89.08,
+   "parties": [
+    {
+     "name": "Christian Democracy",
+     "leader": null,
+     "seats": 207,
+     "seatChange": null,
+     "votes": 8101004,
+     "share": 35.21,
+     "swing": null
+    },
+    {
+     "name": "DC",
+     "leader": "Alcide De Gasperi",
+     "seats": 207,
+     "seatChange": null,
+     "votes": 8101004,
+     "share": 35.21,
+     "swing": null
+    },
+    {
+     "name": "Italian Socialist Party of Proletarian Unity",
+     "leader": null,
+     "seats": 115,
+     "seatChange": null,
+     "votes": 4758129,
+     "share": 20.68,
+     "swing": null
+    },
+    {
+     "name": "Italian Communist Party",
+     "leader": null,
+     "seats": 104,
+     "seatChange": null,
+     "votes": 4356686,
+     "share": 18.93,
+     "swing": null
+    },
+    {
+     "name": "National Democratic Union",
+     "leader": null,
+     "seats": 41,
+     "seatChange": null,
+     "votes": 1560638,
+     "share": 6.78,
+     "swing": null
+    },
+    {
+     "name": "UDN",
+     "leader": null,
+     "seats": 41,
+     "seatChange": null,
+     "votes": 1560638,
+     "share": 6.78,
+     "swing": null
+    },
+    {
+     "name": "Common Man's Front",
+     "leader": null,
+     "seats": 30,
+     "seatChange": null,
+     "votes": 1211956,
+     "share": 5.27,
+     "swing": null
+    },
+    {
+     "name": "FUQ",
+     "leader": "Guglielmo Giannini",
+     "seats": 30,
+     "seatChange": null,
+     "votes": 1211956,
+     "share": 5.27,
+     "swing": null
+    },
+    {
+     "name": "Italian Republican Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": null,
+     "votes": 1003007,
+     "share": 4.36,
+     "swing": null
+    },
+    {
+     "name": "PRI",
+     "leader": "Randolfo Pacciardi",
+     "seats": 23,
+     "seatChange": null,
+     "votes": 1003007,
+     "share": 4.36,
+     "swing": null
+    },
+    {
+     "name": "National Bloc of Freedom",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 637328,
+     "share": 2.77,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Alcide De Gasperi",
+    "party": "DC"
+   },
+   "pmAfter": {
+    "name": "Alcide De Gasperi",
+    "party": "DC"
+   },
+   "knownAs": "Republic, and women vote",
+   "summary": "General elections were held in Italy on Sunday 2 and also on Monday 3 June (but until noon) 1946. They were the first after World War II and elected 556 deputies to the Constituent Assembly.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Christian Democracy"
+  },
+  {
+   "id": "1948",
+   "label": "1948",
+   "year": 1948,
+   "date": "18 April 1948",
+   "era": "first-republic",
+   "totalSeats": 574,
+   "majoritySeats": 172,
+   "turnout": 92.2,
+   "parties": [
+    {
+     "name": "Christian Democracy",
+     "leader": null,
+     "seats": 305,
+     "seatChange": 98.0,
+     "votes": 12740042,
+     "share": 48.51,
+     "swing": null
+    },
+    {
+     "name": "DC",
+     "leader": "Attilio Piccioni",
+     "seats": 305,
+     "seatChange": null,
+     "votes": 12740042,
+     "share": 48.5,
+     "swing": null
+    },
+    {
+     "name": "Popular Democratic Front",
+     "leader": null,
+     "seats": 183,
+     "seatChange": -36.0,
+     "votes": 8136637,
+     "share": 30.98,
+     "swing": null
+    },
+    {
+     "name": "Socialist Unity",
+     "leader": null,
+     "seats": 33,
+     "seatChange": null,
+     "votes": 1858116,
+     "share": 7.07,
+     "swing": null
+    },
+    {
+     "name": "National Bloc",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -52.0,
+     "votes": 1003727,
+     "share": 3.82,
+     "swing": null
+    },
+    {
+     "name": "BN",
+     "leader": "Francesco Saverio Nitti",
+     "seats": 19,
+     "seatChange": null,
+     "votes": 1003727,
+     "share": 3.8,
+     "swing": null
+    },
+    {
+     "name": "Monarchist National Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": -2.0,
+     "votes": 729078,
+     "share": 2.78,
+     "swing": null
+    },
+    {
+     "name": "PNM",
+     "leader": "Alfredo Covelli",
+     "seats": 14,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Italian Republican Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -14.0,
+     "votes": 651875,
+     "share": 2.48,
+     "swing": null
+    },
+    {
+     "name": "PRI",
+     "leader": "Randolfo Pacciardi",
+     "seats": 9,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Italian Social Movement",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 526882,
+     "share": 2.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Alcide De Gasperi",
+    "party": "DC"
+   },
+   "pmAfter": {
+    "name": "Alcide De Gasperi",
+    "party": "DC"
+   },
+   "knownAs": "The great Cold War election",
+   "summary": "General elections were held in Italy on 18 April 1948 to elect the first Parliament of the Italian Republic.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Christian Democracy"
+  },
+  {
+   "id": "1953",
+   "label": "1953",
+   "year": 1953,
+   "date": "7 June 1953",
+   "era": "first-republic",
+   "totalSeats": 590,
+   "majoritySeats": 122,
+   "turnout": 93.8,
+   "parties": [
+    {
+     "name": "DC",
+     "leader": "Guido Gonella",
+     "seats": 263,
+     "seatChange": -57.0,
+     "votes": 10862073,
+     "share": 40.1,
+     "swing": -8.4
+    },
+    {
+     "name": "Christian Democracy",
+     "leader": null,
+     "seats": 112,
+     "seatChange": -19.0,
+     "votes": 9660210,
+     "share": 39.76,
+     "swing": null
+    },
+    {
+     "name": "Italian Communist Party",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 6.0,
+     "votes": 4910077,
+     "share": 20.21,
+     "swing": null
+    },
+    {
+     "name": "PNM",
+     "leader": "Alfredo Covelli",
+     "seats": 40,
+     "seatChange": 26.0,
+     "votes": 1854850,
+     "share": 6.9,
+     "swing": 4.1
+    },
+    {
+     "name": "MSI",
+     "leader": "Augusto De Marsanich",
+     "seats": 29,
+     "seatChange": 23.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Italian Socialist Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": -15.0,
+     "votes": 2891605,
+     "share": 11.9,
+     "swing": null
+    },
+    {
+     "name": "PSDI",
+     "leader": "Giuseppe Saragat",
+     "seats": 19,
+     "seatChange": -14.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Monarchist National Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 10.0,
+     "votes": 1581128,
+     "share": 6.51,
+     "swing": null
+    },
+    {
+     "name": "Other parties",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 1313380,
+     "share": 5.41,
+     "swing": null
+    },
+    {
+     "name": "Italian Social Movement",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 8.0,
+     "votes": 1473645,
+     "share": 6.07,
+     "swing": null
+    },
+    {
+     "name": "Italian Democratic Socialist Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -4.0,
+     "votes": 1046301,
+     "share": 4.31,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Alcide De Gasperi",
+    "party": "DC"
+   },
+   "pmAfter": {
+    "name": "Alcide De Gasperi",
+    "party": "DC"
+   },
+   "knownAs": null,
+   "summary": "This article may require cleanup to meet Wikipedia's quality standards. The specific problem is: Written by non-native English speakers, some of the prose is not clear.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "DC"
+  },
+  {
+   "id": "1958",
+   "label": "1958",
+   "year": 1958,
+   "date": "25 May 1958",
+   "era": "first-republic",
+   "totalSeats": 596,
+   "majoritySeats": 127,
+   "turnout": 93.8,
+   "parties": [
+    {
+     "name": "Christian Democracy",
+     "leader": null,
+     "seats": 273,
+     "seatChange": 10.0,
+     "votes": 12520207,
+     "share": 42.35,
+     "swing": null
+    },
+    {
+     "name": "DC",
+     "leader": "Amintore Fanfani",
+     "seats": 273,
+     "seatChange": 17.0,
+     "votes": 12520207,
+     "share": 42.4,
+     "swing": 2.3
+    },
+    {
+     "name": "Italian Communist Party",
+     "leader": null,
+     "seats": 140,
+     "seatChange": -3.0,
+     "votes": 6704454,
+     "share": 22.68,
+     "swing": null
+    },
+    {
+     "name": "Italian Socialist Party",
+     "leader": null,
+     "seats": 84,
+     "seatChange": 9.0,
+     "votes": 4206726,
+     "share": 14.23,
+     "swing": null
+    },
+    {
+     "name": "Italian Social Movement",
+     "leader": null,
+     "seats": 24,
+     "seatChange": -5.0,
+     "votes": 1407718,
+     "share": 4.76,
+     "swing": null
+    },
+    {
+     "name": "MSI",
+     "leader": "Arturo Michelini",
+     "seats": 24,
+     "seatChange": -5.0,
+     "votes": 1407718,
+     "share": 4.8,
+     "swing": -1.0
+    },
+    {
+     "name": "Italian Democratic Socialist Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 3.0,
+     "votes": 1345447,
+     "share": 4.55,
+     "swing": null
+    },
+    {
+     "name": "PSDI",
+     "leader": "Giuseppe Saragat",
+     "seats": 22,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Italian Liberal Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 4.0,
+     "votes": 1047081,
+     "share": 3.54,
+     "swing": null
+    },
+    {
+     "name": "PLI",
+     "leader": "Giovanni Malagodi",
+     "seats": 17,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "People's Monarchist Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 776919,
+     "share": 2.63,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Adone Zoli",
+    "party": "DC"
+   },
+   "pmAfter": {
+    "name": "Amintore Fanfani",
+    "party": "DC"
+   },
+   "knownAs": null,
+   "summary": "The pure party-list proportional representation was definitely adopted for the Chamber of Deputies. Italian provinces were united in 32 constituencies, each electing a group of candidates.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Christian Democracy"
+  },
+  {
+   "id": "1963",
+   "label": "1963",
+   "year": 1963,
+   "date": "28 April 1963",
+   "era": "first-republic",
+   "totalSeats": 630,
+   "majoritySeats": 161,
+   "turnout": 92.9,
+   "parties": [
+    {
+     "name": "Christian Democracy",
+     "leader": null,
+     "seats": 260,
+     "seatChange": -13.0,
+     "votes": 11773182,
+     "share": 38.28,
+     "swing": null
+    },
+    {
+     "name": "DC",
+     "leader": "Aldo Moro",
+     "seats": 260,
+     "seatChange": -13.0,
+     "votes": 11773182,
+     "share": 38.3,
+     "swing": -4.1
+    },
+    {
+     "name": "Italian Communist Party",
+     "leader": null,
+     "seats": 166,
+     "seatChange": 16.0,
+     "votes": 7767601,
+     "share": 25.26,
+     "swing": null
+    },
+    {
+     "name": "Italian Socialist Party",
+     "leader": null,
+     "seats": 87,
+     "seatChange": 3.0,
+     "votes": 4255836,
+     "share": 13.84,
+     "swing": null
+    },
+    {
+     "name": "Italian Liberal Party",
+     "leader": null,
+     "seats": 39,
+     "seatChange": 22.0,
+     "votes": 2144270,
+     "share": 6.97,
+     "swing": null
+    },
+    {
+     "name": "PLI",
+     "leader": "Giovanni Malagodi",
+     "seats": 39,
+     "seatChange": 22.0,
+     "votes": 2144270,
+     "share": 7.0,
+     "swing": 3.5
+    },
+    {
+     "name": "Italian Democratic Socialist Party",
+     "leader": null,
+     "seats": 33,
+     "seatChange": 11.0,
+     "votes": 1876271,
+     "share": 6.1,
+     "swing": null
+    },
+    {
+     "name": "PSDI",
+     "leader": "Giuseppe Saragat",
+     "seats": 33,
+     "seatChange": 11.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Italian Social Movement",
+     "leader": null,
+     "seats": 27,
+     "seatChange": 3.0,
+     "votes": 1570282,
+     "share": 5.11,
+     "swing": null
+    },
+    {
+     "name": "MSI",
+     "leader": "Arturo Michelini",
+     "seats": 27,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Italian Democratic Party of Monarchist Unity",
+     "leader": null,
+     "seats": 8,
+     "seatChange": -17.0,
+     "votes": 536948,
+     "share": 1.75,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Amintore Fanfani",
+    "party": "DC"
+   },
+   "pmAfter": {
+    "name": "Giovanni Leone",
+    "party": "DC"
+   },
+   "knownAs": null,
+   "summary": "The 1963 Italian general election was held in Italy on 28 April 1963. It was the first election with a fixed number of MPs to be elected, as decided by the second Constitutional Reform in February 1963.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Christian Democracy"
+  },
+  {
+   "id": "1968",
+   "label": "1968",
+   "year": 1968,
+   "date": "19 May 1968",
+   "era": "first-republic",
+   "totalSeats": 630,
+   "majoritySeats": 162,
+   "turnout": 92.8,
+   "parties": [
+    {
+     "name": "DC",
+     "leader": "Mariano Rumor",
+     "seats": 266,
+     "seatChange": 6.0,
+     "votes": 12441553,
+     "share": 39.1,
+     "swing": 0.8
+    },
+    {
+     "name": "Christian Democracy",
+     "leader": null,
+     "seats": 266,
+     "seatChange": 6.0,
+     "votes": 12437848,
+     "share": 39.12,
+     "swing": null
+    },
+    {
+     "name": "Italian Communist Party",
+     "leader": null,
+     "seats": 177,
+     "seatChange": 11.0,
+     "votes": 8551347,
+     "share": 26.9,
+     "swing": null
+    },
+    {
+     "name": "Unified Socialist Party",
+     "leader": null,
+     "seats": 91,
+     "seatChange": -29.0,
+     "votes": 4603192,
+     "share": 14.48,
+     "swing": null
+    },
+    {
+     "name": "Italian Liberal Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": -8.0,
+     "votes": 1850650,
+     "share": 5.82,
+     "swing": null
+    },
+    {
+     "name": "PLI",
+     "leader": "Giovanni Malagodi",
+     "seats": 31,
+     "seatChange": -8.0,
+     "votes": 1850650,
+     "share": 5.1,
+     "swing": -1.2
+    },
+    {
+     "name": "Italian Social Movement",
+     "leader": null,
+     "seats": 24,
+     "seatChange": -3.0,
+     "votes": 1414036,
+     "share": 4.45,
+     "swing": null
+    },
+    {
+     "name": "MSI",
+     "leader": "Arturo Michelini",
+     "seats": 24,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Italian Socialist Party of Proletarian Unity",
+     "leader": null,
+     "seats": 23,
+     "seatChange": null,
+     "votes": 1414697,
+     "share": 4.45,
+     "swing": null
+    },
+    {
+     "name": "PSIUP",
+     "leader": "Tullio Vecchietti",
+     "seats": 23,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Italian Republican Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 3.0,
+     "votes": 626533,
+     "share": 1.97,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Aldo Moro",
+    "party": "DC"
+   },
+   "pmAfter": {
+    "name": "Giovanni Leone",
+    "party": "DC"
+   },
+   "knownAs": null,
+   "summary": "The 1968 Italian general election was held in Italy on 19 May 1968. The Christian Democracy (DC) remained stable around 38% of the votes.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "DC"
+  },
+  {
+   "id": "1972",
+   "label": "1972",
+   "year": 1972,
+   "date": "7 May 1972",
+   "era": "first-republic",
+   "totalSeats": 630,
+   "majoritySeats": 162,
+   "turnout": 93.2,
+   "parties": [
+    {
+     "name": "Christian Democracy (DC)",
+     "leader": "Arnaldo Forlani",
+     "seats": 266,
+     "seatChange": 0.0,
+     "votes": 12912466,
+     "share": 38.66,
+     "swing": -0.4
+    },
+    {
+     "name": "Italian Communist Party (PCI)",
+     "leader": null,
+     "seats": 179,
+     "seatChange": 2.0,
+     "votes": 9068961,
+     "share": 27.15,
+     "swing": null
+    },
+    {
+     "name": "Italian Socialist Party (PSI)",
+     "leader": null,
+     "seats": 61,
+     "seatChange": null,
+     "votes": 3208497,
+     "share": 9.61,
+     "swing": null
+    },
+    {
+     "name": "Italian Social Movement (MSI)",
+     "leader": "Giorgio Almirante",
+     "seats": 56,
+     "seatChange": 32.0,
+     "votes": 2894722,
+     "share": 8.67,
+     "swing": 4.2
+    },
+    {
+     "name": "Italian Democratic Socialist Party (PSDI)",
+     "leader": "Mario Tanassi",
+     "seats": 29,
+     "seatChange": null,
+     "votes": 1718142,
+     "share": 5.14,
+     "swing": null
+    },
+    {
+     "name": "Italian Liberal Party (PLI)",
+     "leader": "Giovanni Malagodi",
+     "seats": 20,
+     "seatChange": -11.0,
+     "votes": 1300439,
+     "share": 3.89,
+     "swing": null
+    },
+    {
+     "name": "Italian Republican Party (PRI)",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 6.0,
+     "votes": 954357,
+     "share": 2.86,
+     "swing": null
+    },
+    {
+     "name": "South Tyrolean People's Party (SVP)",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": 153674,
+     "share": 0.46,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Giulio Andreotti",
+    "party": "DC"
+   },
+   "pmAfter": {
+    "name": "Giulio Andreotti",
+    "party": "DC"
+   },
+   "knownAs": null,
+   "summary": "The 1972 Italian general election was held in Italy on 7 May 1972. The Christian Democracy (DC) remained stable with around 38% of the votes, as did the Communist Party (PCI) which obtained the same 27% it had in 1968.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Christian Democracy (DC)"
+  },
+  {
+   "id": "1976",
+   "label": "1976",
+   "year": 1976,
+   "date": "20 June 1976",
+   "era": "first-republic",
+   "totalSeats": 630,
+   "majoritySeats": 162,
+   "turnout": 93.4,
+   "parties": [
+    {
+     "name": "Christian Democracy (DC)",
+     "leader": "Benigno Zaccagnini",
+     "seats": 262,
+     "seatChange": -4.0,
+     "votes": 14209519,
+     "share": 38.71,
+     "swing": 0.0
+    },
+    {
+     "name": "Italian Communist Party (PCI)",
+     "leader": null,
+     "seats": 228,
+     "seatChange": 49.0,
+     "votes": 12614650,
+     "share": 34.37,
+     "swing": null
+    },
+    {
+     "name": "Italian Socialist Party (PSI)",
+     "leader": null,
+     "seats": 57,
+     "seatChange": -4.0,
+     "votes": 3540309,
+     "share": 9.64,
+     "swing": null
+    },
+    {
+     "name": "Italian Social Movement (MSI)",
+     "leader": "Giorgio Almirante",
+     "seats": 35,
+     "seatChange": -21.0,
+     "votes": 2238339,
+     "share": 6.1,
+     "swing": -2.6
+    },
+    {
+     "name": "Italian Democratic Socialist Party (PSDI)",
+     "leader": "Pier Luigi Romita",
+     "seats": 15,
+     "seatChange": -14.0,
+     "votes": 1239492,
+     "share": 3.38,
+     "swing": null
+    },
+    {
+     "name": "Italian Republican Party (PRI)",
+     "leader": "Oddo Biasini",
+     "seats": 14,
+     "seatChange": -1.0,
+     "votes": 1135546,
+     "share": 3.09,
+     "swing": null
+    },
+    {
+     "name": "Proletarian Democracy (DP)",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 557025,
+     "share": 1.52,
+     "swing": null
+    },
+    {
+     "name": "Italian Liberal Party (PLI)",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -15.0,
+     "votes": 480122,
+     "share": 1.31,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Aldo Moro",
+    "party": "DC"
+   },
+   "pmAfter": {
+    "name": "Giulio Andreotti",
+    "party": "DC"
+   },
+   "knownAs": "The Communist high-water mark",
+   "summary": "Christian Democracy (DC) won roughly the same number of votes as it had four years prior. The Italian Communist Party performed well, winning seven percent more votes than the previous election, while minor parties lost votes to the Christian Democrats due to fears of communism.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Christian Democracy (DC)"
+  },
+  {
+   "id": "1979",
+   "label": "1979",
+   "year": 1979,
+   "date": "3 June 1979",
+   "era": "first-republic",
+   "totalSeats": 630,
+   "majoritySeats": 162,
+   "turnout": 90.6,
+   "parties": [
+    {
+     "name": "Christian Democracy (DC)",
+     "leader": "Benigno Zaccagnini",
+     "seats": 262,
+     "seatChange": 0.0,
+     "votes": 14046290,
+     "share": 38.3,
+     "swing": -0.4
+    },
+    {
+     "name": "Italian Communist Party (PCI)",
+     "leader": null,
+     "seats": 201,
+     "seatChange": -26.0,
+     "votes": 11139231,
+     "share": 30.38,
+     "swing": null
+    },
+    {
+     "name": "Italian Socialist Party (PSI)",
+     "leader": null,
+     "seats": 62,
+     "seatChange": 5.0,
+     "votes": 3596802,
+     "share": 9.81,
+     "swing": null
+    },
+    {
+     "name": "Italian Social Movement (MSI)",
+     "leader": "Giorgio Almirante",
+     "seats": 30,
+     "seatChange": -5.0,
+     "votes": 1930639,
+     "share": 5.26,
+     "swing": -0.8
+    },
+    {
+     "name": "Italian Democratic Socialist Party (PSDI)",
+     "leader": "Pietro Longo",
+     "seats": 20,
+     "seatChange": 5.0,
+     "votes": 1407535,
+     "share": 3.84,
+     "swing": null
+    },
+    {
+     "name": "Radical Party (PR)",
+     "leader": "Marco Pannella",
+     "seats": 18,
+     "seatChange": 14.0,
+     "votes": 1264870,
+     "share": 3.45,
+     "swing": null
+    },
+    {
+     "name": "Italian Republican Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 2.0,
+     "votes": 1110209,
+     "share": 3.03,
+     "swing": null
+    },
+    {
+     "name": "Italian Liberal Party (PLI)",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 4.0,
+     "votes": 712646,
+     "share": 1.94,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Giulio Andreotti",
+    "party": "DC"
+   },
+   "pmAfter": {
+    "name": "Francesco Cossiga",
+    "party": "DC"
+   },
+   "knownAs": null,
+   "summary": "Terrorist attacks by the Red Brigades led to a reversal of the results of the previous election three years before: for the first time the Italian Communist Party lost significant numbers of seats, delaying the government change that had seemed imminent in 1976.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Christian Democracy (DC)"
+  },
+  {
+   "id": "1983",
+   "label": "1983",
+   "year": 1983,
+   "date": "26 June 1983",
+   "era": "first-republic",
+   "totalSeats": 630,
+   "majoritySeats": 162,
+   "turnout": 88.0,
+   "parties": [
+    {
+     "name": "Christian Democracy",
+     "leader": null,
+     "seats": 225,
+     "seatChange": -37.0,
+     "votes": 12153081,
+     "share": 32.93,
+     "swing": null
+    },
+    {
+     "name": "DC",
+     "leader": "Ciriaco De Mita",
+     "seats": 225,
+     "seatChange": -37.0,
+     "votes": 12153081,
+     "share": 32.9,
+     "swing": -5.4
+    },
+    {
+     "name": "Italian Communist Party",
+     "leader": null,
+     "seats": 198,
+     "seatChange": -3.0,
+     "votes": 11032318,
+     "share": 29.89,
+     "swing": null
+    },
+    {
+     "name": "Italian Socialist Party",
+     "leader": null,
+     "seats": 73,
+     "seatChange": 11.0,
+     "votes": 4223362,
+     "share": 11.44,
+     "swing": null
+    },
+    {
+     "name": "Italian Social Movement",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 12.0,
+     "votes": 2511487,
+     "share": 6.81,
+     "swing": null
+    },
+    {
+     "name": "MSI",
+     "leader": "Giorgio Almirante",
+     "seats": 42,
+     "seatChange": 12.0,
+     "votes": 2511487,
+     "share": 6.8,
+     "swing": 1.6
+    },
+    {
+     "name": "Italian Republican Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": 13.0,
+     "votes": 1874512,
+     "share": 5.08,
+     "swing": null
+    },
+    {
+     "name": "PRI",
+     "leader": "Giovanni Spadolini",
+     "seats": 29,
+     "seatChange": 13.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Italian Democratic Socialist Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": 3.0,
+     "votes": 1508234,
+     "share": 4.09,
+     "swing": null
+    },
+    {
+     "name": "PSDI",
+     "leader": "Pietro Longo",
+     "seats": 23,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Italian Liberal Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 7.0,
+     "votes": 1066980,
+     "share": 2.89,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Amintore Fanfani",
+    "party": "DC"
+   },
+   "pmAfter": {
+    "name": "Bettino Craxi",
+    "party": "PSI"
+   },
+   "knownAs": null,
+   "summary": "The 1983 Italian general election was held in Italy on 26 June 1983. The Pentapartito formula, the governative alliance between five centrist parties, caused unexpected problems to Christian Democracy.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Christian Democracy"
+  },
+  {
+   "id": "1987",
+   "label": "1987",
+   "year": 1987,
+   "date": "14–15 June 1987",
+   "era": "first-republic",
+   "totalSeats": 630,
+   "majoritySeats": 163,
+   "turnout": 88.8,
+   "parties": [
+    {
+     "name": "DC",
+     "leader": "Ciriaco De Mita",
+     "seats": 234,
+     "seatChange": 9.0,
+     "votes": 13241188,
+     "share": 34.3,
+     "swing": 1.4
+    },
+    {
+     "name": "Christian Democracy",
+     "leader": null,
+     "seats": 234,
+     "seatChange": 9.0,
+     "votes": 13233620,
+     "share": 34.31,
+     "swing": null
+    },
+    {
+     "name": "Italian Communist Party",
+     "leader": null,
+     "seats": 177,
+     "seatChange": -21.0,
+     "votes": 10250644,
+     "share": 26.58,
+     "swing": null
+    },
+    {
+     "name": "PCI",
+     "leader": "Alessandro Natta",
+     "seats": 177,
+     "seatChange": -21.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Italian Socialist Party",
+     "leader": null,
+     "seats": 94,
+     "seatChange": 21.0,
+     "votes": 5501696,
+     "share": 14.26,
+     "swing": null
+    },
+    {
+     "name": "PSI",
+     "leader": "Bettino Craxi",
+     "seats": 94,
+     "seatChange": -21.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Italian Social Movement",
+     "leader": null,
+     "seats": 35,
+     "seatChange": -7.0,
+     "votes": 2281126,
+     "share": 5.91,
+     "swing": null
+    },
+    {
+     "name": "MSI",
+     "leader": "Giorgio Almirante",
+     "seats": 35,
+     "seatChange": -7.0,
+     "votes": 2281126,
+     "share": 5.9,
+     "swing": -0.9
+    },
+    {
+     "name": "Italian Republican Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": -8.0,
+     "votes": 1428663,
+     "share": 3.7,
+     "swing": null
+    },
+    {
+     "name": "PRI",
+     "leader": "Giovanni Spadolini",
+     "seats": 21,
+     "seatChange": -8.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Italian Democratic Socialist Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": -6.0,
+     "votes": 1140209,
+     "share": 2.96,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Amintore Fanfani",
+    "party": "DC"
+   },
+   "pmAfter": {
+    "name": "Giovanni Goria",
+    "party": "DC"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Italy on 14–15 June 1987. This election was the first Italian election in which the distance between the Christian Democrats and the Communists grew significantly instead of decreasing.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "DC"
+  },
+  {
+   "id": "1992",
+   "label": "1992",
+   "year": 1992,
+   "date": "5–6 April 1992",
+   "era": "first-republic",
+   "totalSeats": 630,
+   "majoritySeats": null,
+   "turnout": 87.4,
+   "parties": [
+    {
+     "name": "Christian Democracy",
+     "leader": null,
+     "seats": 206,
+     "seatChange": -28.0,
+     "votes": 11637569,
+     "share": 29.65,
+     "swing": null
+    },
+    {
+     "name": "DC",
+     "leader": "Arnaldo Forlani",
+     "seats": 206,
+     "seatChange": -46.0,
+     "votes": 11637569,
+     "share": 29.7,
+     "swing": -4.6
+    },
+    {
+     "name": "Democratic Party of the Left",
+     "leader": null,
+     "seats": 107,
+     "seatChange": -70.0,
+     "votes": 6317962,
+     "share": 16.1,
+     "swing": null
+    },
+    {
+     "name": "PDS",
+     "leader": "Achille Occhetto",
+     "seats": 107,
+     "seatChange": -51.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Italian Socialist Party",
+     "leader": null,
+     "seats": 92,
+     "seatChange": -2.0,
+     "votes": 5343808,
+     "share": 13.62,
+     "swing": null
+    },
+    {
+     "name": "PSI",
+     "leader": "Bettino Craxi",
+     "seats": 92,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "LN",
+     "leader": "Umberto Bossi",
+     "seats": 55,
+     "seatChange": 54.0,
+     "votes": 3396012,
+     "share": 8.7,
+     "swing": 8.2
+    },
+    {
+     "name": "Northern League",
+     "leader": null,
+     "seats": 55,
+     "seatChange": 54.0,
+     "votes": 3395384,
+     "share": 8.65,
+     "swing": null
+    },
+    {
+     "name": "Communist Refoundation Party",
+     "leader": null,
+     "seats": 35,
+     "seatChange": null,
+     "votes": 2201428,
+     "share": 5.61,
+     "swing": null
+    },
+    {
+     "name": "PRC",
+     "leader": "Sergio Garavini",
+     "seats": 35,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Italian Social Movement",
+     "leader": null,
+     "seats": 34,
+     "seatChange": -1.0,
+     "votes": 2107272,
+     "share": 5.37,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Giulio Andreotti",
+    "party": "DC"
+   },
+   "pmAfter": {
+    "name": "Giuliano Amato",
+    "party": "PSI"
+   },
+   "knownAs": "The old order's last election",
+   "summary": "General elections were held in Italy on 5 and 6 April 1992. They were the first without the traditionally second most important political force in Italian politics, the Italian Communist Party (PCI), which had been disbanded in 1991.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Christian Democracy"
+  },
+  {
+   "id": "1994",
+   "label": "1994",
+   "year": 1994,
+   "date": "27–28 March 1994",
+   "era": "second-republic",
+   "totalSeats": 630,
+   "majoritySeats": 163,
+   "turnout": 86.3,
+   "parties": [
+    {
+     "name": "Democratic Party of the Left (PDS)",
+     "leader": "Achille Occhetto",
+     "seats": 38,
+     "seatChange": null,
+     "votes": 7881646,
+     "share": 20.36,
+     "swing": null
+    },
+    {
+     "name": "Forza Italia (FI)",
+     "leader": "Silvio Berlusconi",
+     "seats": 30,
+     "seatChange": null,
+     "votes": 8136135,
+     "share": 21.01,
+     "swing": null
+    },
+    {
+     "name": "Italian People's Party (PPI)",
+     "leader": null,
+     "seats": 29,
+     "seatChange": null,
+     "votes": 4287172,
+     "share": 11.07,
+     "swing": null
+    },
+    {
+     "name": "National Alliance (AN)",
+     "leader": null,
+     "seats": 23,
+     "seatChange": null,
+     "votes": 5214133,
+     "share": 13.47,
+     "swing": null
+    },
+    {
+     "name": "Segni Pact (PS)",
+     "leader": "Mario Segni",
+     "seats": 13,
+     "seatChange": null,
+     "votes": 1811814,
+     "share": 4.68,
+     "swing": null
+    },
+    {
+     "name": "Northern League (LN)",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 3235248,
+     "share": 8.36,
+     "swing": null
+    },
+    {
+     "name": "Communist Refoundation Party (PRC)",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 2343946,
+     "share": 6.05,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Carlo Azeglio Ciampi",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Silvio Berlusconi",
+    "party": "Forza Italia"
+   },
+   "knownAs": "Berlusconi's debut",
+   "summary": "The 1994 Italian general election was held on 27 and 28 March 1994 to elect members of the Chamber of Deputies and the Senate of the Republic for the 12th legislature. Silvio Berlusconi's centre-right coalition won a large majority in the Chamber of Deputies but just missed winning a majority in the Senate.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Democratic Party of the Left (PDS)"
+  },
+  {
+   "id": "1996",
+   "label": "1996",
+   "year": 1996,
+   "date": "21 April 1996",
+   "era": "second-republic",
+   "totalSeats": 630,
+   "majoritySeats": 163,
+   "turnout": 82.9,
+   "parties": [
+    {
+     "name": "Independent",
+     "leader": "Romano Prodi",
+     "seats": 285,
+     "seatChange": 20.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Forza Italia (FI)",
+     "leader": "Silvio Berlusconi",
+     "seats": 37,
+     "seatChange": null,
+     "votes": 7712149,
+     "share": 20.57,
+     "swing": null
+    },
+    {
+     "name": "National Alliance (AN)",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": 5870491,
+     "share": 15.66,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party of the Left (PDS)",
+     "leader": null,
+     "seats": 26,
+     "seatChange": null,
+     "votes": 7894118,
+     "share": 21.06,
+     "swing": null
+    },
+    {
+     "name": "Northern League (LN)",
+     "leader": "Umberto Bossi",
+     "seats": 20,
+     "seatChange": null,
+     "votes": 3776354,
+     "share": 10.07,
+     "swing": null
+    },
+    {
+     "name": "Communist Refoundation Party (PRC)",
+     "leader": "Fausto Bertinotti",
+     "seats": 20,
+     "seatChange": null,
+     "votes": 3213748,
+     "share": 8.57,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Centre – United Christian Democrats (CCD–CDU)",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 2189563,
+     "share": 5.84,
+     "swing": null
+    },
+    {
+     "name": "Italian Renewal (RI)",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 1627380,
+     "share": 4.34,
+     "swing": null
+    },
+    {
+     "name": "Populars for Prodi (PPI–UD–PRI–SVP)",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 2554072,
+     "share": 6.81,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Lamberto Dini",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Romano Prodi",
+    "party": "The Olive Tree"
+   },
+   "knownAs": null,
+   "summary": "The 1996 Italian general election was held on 21 April 1996 to elect members of the Chamber of Deputies and the Senate of the Republic. Romano Prodi, leader of the centre-left The Olive Tree, won the election, narrowly defeating Silvio Berlusconi, who led the centre-right Pole for Freedoms.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Independent"
+  },
+  {
+   "id": "2001",
+   "label": "2001",
+   "year": 2001,
+   "date": "13 May 2001",
+   "era": "second-republic",
+   "totalSeats": 630,
+   "majoritySeats": 163,
+   "turnout": 81.4,
+   "parties": [
+    {
+     "name": "The Daisy",
+     "leader": "Francesco Rutelli",
+     "seats": 241,
+     "seatChange": -82.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Forza Italia (FI)",
+     "leader": "Silvio Berlusconi",
+     "seats": 62,
+     "seatChange": null,
+     "votes": 10923431,
+     "share": 29.43,
+     "swing": null
+    },
+    {
+     "name": "Democrats of the Left (DS)",
+     "leader": null,
+     "seats": 31,
+     "seatChange": null,
+     "votes": 6151154,
+     "share": 16.57,
+     "swing": null
+    },
+    {
+     "name": "Democracy is Freedom (DL)",
+     "leader": null,
+     "seats": 27,
+     "seatChange": null,
+     "votes": 5391827,
+     "share": 14.52,
+     "swing": null
+    },
+    {
+     "name": "National Alliance (AN)",
+     "leader": null,
+     "seats": 24,
+     "seatChange": null,
+     "votes": 4463205,
+     "share": 12.02,
+     "swing": null
+    },
+    {
+     "name": "Communist Refoundation Party (PRC)",
+     "leader": "Fausto Bertinotti",
+     "seats": 11,
+     "seatChange": null,
+     "votes": 1868659,
+     "share": 5.03,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Giuliano Amato",
+    "party": "The Olive Tree"
+   },
+   "pmAfter": {
+    "name": "Silvio Berlusconi",
+    "party": "House of Freedoms"
+   },
+   "knownAs": null,
+   "summary": "The 2001 Italian general election was held in Italy on 13 May 2001 to elect members of the Chamber of Deputies and the Senate of the Republic.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "The Daisy"
+  },
+  {
+   "id": "2006",
+   "label": "2006",
+   "year": 2006,
+   "date": "9–10 April 2006",
+   "era": "second-republic",
+   "totalSeats": 630,
+   "majoritySeats": 162,
+   "turnout": 83.6,
+   "parties": [
+    {
+     "name": "Independent",
+     "leader": "Romano Prodi",
+     "seats": 348,
+     "seatChange": 109.0,
+     "votes": null,
+     "share": 49.8,
+     "swing": 14.3
+    },
+    {
+     "name": "Forza Italia",
+     "leader": "Silvio Berlusconi",
+     "seats": 281,
+     "seatChange": -107.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Autonomy Liberty Democracy (ALD)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 34168,
+     "share": 43.44,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Silvio Berlusconi",
+    "party": "Forza Italia"
+   },
+   "pmAfter": {
+    "name": "Romano Prodi",
+    "party": "The Olive Tree"
+   },
+   "knownAs": null,
+   "summary": "The 2006 Italian general election was held on 9 and 10 April 2006. Romano Prodi, leader of the centre-left coalition The Union, narrowly defeated the incumbent Prime Minister Silvio Berlusconi, leader of the centre-right coalition House of Freedoms.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Independent"
+  },
+  {
+   "id": "2008",
+   "label": "2008",
+   "year": 2008,
+   "date": "13–14 April 2008",
+   "era": "second-republic",
+   "totalSeats": 630,
+   "majoritySeats": 162,
+   "turnout": 80.5,
+   "parties": [
+    {
+     "name": "People of Freedom",
+     "leader": "Silvio Berlusconi",
+     "seats": 344,
+     "seatChange": 102.0,
+     "votes": 17403145,
+     "share": 46.8,
+     "swing": -2.9
+    },
+    {
+     "name": "Democratic Party",
+     "leader": "Walter Veltroni",
+     "seats": 246,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "UDC",
+     "leader": "Pier Ferdinando Casini",
+     "seats": 36,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Autonomy Liberty Democracy (ALD)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 29314,
+     "share": 39.12,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Romano Prodi",
+    "party": "Democratic Party"
+   },
+   "pmAfter": {
+    "name": "Silvio Berlusconi",
+    "party": "People of Freedom"
+   },
+   "knownAs": null,
+   "summary": "Election results maps for the Chamber of Deputies (on the left) and for the Senate (on the right). On the left, the color identifies the coalition which received the most votes in each province.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "People of Freedom"
+  },
+  {
+   "id": "2013",
+   "label": "2013",
+   "year": 2013,
+   "date": "24–25 February 2013",
+   "era": "second-republic",
+   "totalSeats": 630,
+   "majoritySeats": 160,
+   "turnout": 75.2,
+   "parties": [
+    {
+     "name": "Democratic Party",
+     "leader": "Pier Luigi Bersani",
+     "seats": 345,
+     "seatChange": 134.0,
+     "votes": null,
+     "share": 29.6,
+     "swing": -7.9
+    },
+    {
+     "name": "People of Freedom",
+     "leader": "Silvio Berlusconi[nb 1]",
+     "seats": 125,
+     "seatChange": -219.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Five Star Movement",
+     "leader": "Beppe Grillo",
+     "seats": 109,
+     "seatChange": null,
+     "votes": null,
+     "share": 25.6,
+     "swing": null
+    },
+    {
+     "name": "Civic Choice",
+     "leader": "Mario Monti",
+     "seats": 47,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mario Monti",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Enrico Letta",
+    "party": "Democratic Party"
+   },
+   "knownAs": "The Five Star quake",
+   "summary": "Election results maps for the Chamber of Deputies (on the left) and for the Senate (on the right). On the left, the color identifies the coalition which received the most votes in each province.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Democratic Party"
+  },
+  {
+   "id": "2018",
+   "label": "2018",
+   "year": 2018,
+   "date": "4 March 2018",
+   "era": "second-republic",
+   "totalSeats": 630,
+   "majoritySeats": 160,
+   "turnout": 72.94,
+   "parties": [
+    {
+     "name": "Five Star Movement (M5S)",
+     "leader": "Luigi Di Maio",
+     "seats": 133,
+     "seatChange": null,
+     "votes": 10732066,
+     "share": 32.68,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party (PD)",
+     "leader": "Matteo Renzi",
+     "seats": 86,
+     "seatChange": null,
+     "votes": 6161896,
+     "share": 18.76,
+     "swing": -6.7
+    },
+    {
+     "name": "League (Lega)",
+     "leader": "Matteo Salvini[nb 1]",
+     "seats": 73,
+     "seatChange": null,
+     "votes": 5698687,
+     "share": 17.35,
+     "swing": 7.8
+    },
+    {
+     "name": "Forza Italia (FI)",
+     "leader": null,
+     "seats": 59,
+     "seatChange": null,
+     "votes": 4596956,
+     "share": 14.0,
+     "swing": null
+    },
+    {
+     "name": "Brothers of Italy (FdI)",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 1429550,
+     "share": 4.35,
+     "swing": null
+    },
+    {
+     "name": "Free and Equal (LeU)",
+     "leader": "Pietro Grasso",
+     "seats": 14,
+     "seatChange": null,
+     "votes": 1114799,
+     "share": 3.39,
+     "swing": null
+    },
+    {
+     "name": "South Tyrolean People's Party – PATT (SVP–PATT)",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 134651,
+     "share": 0.41,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Paolo Gentiloni",
+    "party": "Democratic Party"
+   },
+   "pmAfter": {
+    "name": "Giuseppe Conte",
+    "party": "Independent (close to M5S)"
+   },
+   "knownAs": null,
+   "summary": "The 2018 Italian general election was held on 4 March 2018 after the Italian Parliament was dissolved by President Sergio Mattarella on 28 December 2017. Voters were electing the 630 members of the Chamber of Deputies and the 315 elective members of the Senate of the Republic for the 18th legislature of the Italian Republic since 1948.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Five Star Movement (M5S)"
+  },
+  {
+   "id": "2022",
+   "label": "2022",
+   "year": 2022,
+   "date": "25 September 2022",
+   "era": "second-republic",
+   "totalSeats": 400,
+   "majoritySeats": 104,
+   "turnout": 63.85,
+   "parties": [
+    {
+     "name": "Brothers of Italy (FdI)",
+     "leader": "Giorgia Meloni[nb 1]",
+     "seats": 69,
+     "seatChange": null,
+     "votes": 7301303,
+     "share": 25.98,
+     "swing": 6.8
+    },
+    {
+     "name": "Democratic Party – IDP (PD–IDP)",
+     "leader": "Enrico Letta",
+     "seats": 57,
+     "seatChange": null,
+     "votes": 5348676,
+     "share": 19.04,
+     "swing": null
+    },
+    {
+     "name": "Five Star Movement (M5S)",
+     "leader": "Giuseppe Conte",
+     "seats": 41,
+     "seatChange": null,
+     "votes": 4335494,
+     "share": 15.43,
+     "swing": -17.3
+    },
+    {
+     "name": "League (Lega)",
+     "leader": null,
+     "seats": 23,
+     "seatChange": null,
+     "votes": 2470318,
+     "share": 8.79,
+     "swing": null
+    },
+    {
+     "name": "Forza Italia (FI)",
+     "leader": null,
+     "seats": 22,
+     "seatChange": null,
+     "votes": 2279266,
+     "share": 8.11,
+     "swing": null
+    },
+    {
+     "name": "Action – Italia Viva (A–IV)",
+     "leader": "Carlo Calenda",
+     "seats": 21,
+     "seatChange": null,
+     "votes": 2186505,
+     "share": 7.78,
+     "swing": null
+    },
+    {
+     "name": "Greens and Left Alliance (AVS)",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 1021808,
+     "share": 3.64,
+     "swing": null
+    },
+    {
+     "name": "South Tyrolean People's Party – PATT (SVP–PATT)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 117032,
+     "share": 0.42,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mario Draghi",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Giorgia Meloni",
+    "party": "Brothers of Italy"
+   },
+   "knownAs": "First woman Prime Minister",
+   "summary": "Early general elections were held in Italy on 25 September 2022. After the fall of the Draghi government, which led to a parliamentary impasse, President Sergio Mattarella dissolved Parliament on 21 July, and called for new elections.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Brothers of Italy (FdI)"
+  }
+ ]
+}

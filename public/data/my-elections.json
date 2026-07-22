@@ -1,0 +1,995 @@
+{
+ "meta": {
+  "title": "Malaysian elections",
+  "sources": [
+   "Wikipedia: Malayan and Malaysian general election articles 1955–2022 (results, infoboxes and leads)",
+   "EC figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "eras": [
+  {
+   "key": "malayan",
+   "label": "Malaya before and after Merdeka",
+   "span": "1955–1959",
+   "blurb": "The 1955 election, held two years before independence, gave the Alliance of UMNO, MCA and MIC 51 of 52 seats and made Tunku Abdul Rahman chief minister of a country that did not yet exist. The 1959 vote was the first of independent Malaya."
+  },
+  {
+   "key": "alliance",
+   "label": "Alliance high tide and 13 May",
+   "span": "1964–1969",
+   "blurb": "The Alliance dominated the new Malaysia's first election in 1964, fought under Confrontation with Indonesia. The 1969 election broke the pattern: the opposition's surge was answered by the May 13 riots, a state of emergency and nearly two years of rule by decree before parliament returned."
+  },
+  {
+   "key": "bn",
+   "label": "The Barisan Nasional decades",
+   "span": "1974–2004",
+   "blurb": "Rebuilt as the Barisan Nasional, the ruling coalition won a two-thirds supermajority in every election for three decades. The votes were real and the counts broadly honest, but malapportionment, a controlled press and the Internal Security Act kept the contest tilted far toward the government — the Mahathir era at its peak delivered 1995's record landslide, and 2004's was larger still."
+  },
+  {
+   "key": "twocoalition",
+   "label": "The two-coalition era",
+   "span": "2008–2022",
+   "blurb": "The 2008 'political tsunami' broke the two-thirds majority; in 2013 the BN kept power while losing the popular vote outright. In 2018 Malaysia's first change of government at the ballot box ended 61 years of continuous rule, and the hung parliament of 2022 produced Anwar Ibrahim's unity government — the contest is now genuinely national and genuinely uncertain."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1955",
+   "label": "1955",
+   "year": 1955,
+   "date": "27 July 1955",
+   "era": "malayan",
+   "totalSeats": 52,
+   "majoritySeats": 27,
+   "turnout": 82.84,
+   "parties": [
+    {
+     "name": "Alliance (UMNO–MCA–MIC)",
+     "leader": "Tunku Abdul Rahman",
+     "seats": 51,
+     "seatChange": null,
+     "votes": 818013,
+     "share": 81.68,
+     "swing": null
+    },
+    {
+     "name": "PMIP",
+     "leader": "Abbas Alias",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 40667,
+     "share": 4.06,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Tunku Abdul Rahman",
+    "party": "Alliance"
+   },
+   "knownAs": "The Merdeka election",
+   "summary": "General elections were held in the Federation of Malaya on Wednesday, 27 July 1955, the only general election before independence in 1957. They were held to elect members of the Federal Legislative Council, whose members had previously been fully appointed by the British High Commissioner.",
+   "caveat": "A pre-independence election under British oversight, on a citizens-only franchise that enfranchised a fraction of the population.",
+   "seatLeader": "Alliance (UMNO–MCA–MIC)"
+  },
+  {
+   "id": "1959",
+   "label": "1959",
+   "year": 1959,
+   "date": "19 August 1959",
+   "era": "malayan",
+   "totalSeats": 104,
+   "majoritySeats": 53,
+   "turnout": 73.34,
+   "parties": [
+    {
+     "name": "Alliance",
+     "leader": "Tunku Abdul Rahman",
+     "seats": 74,
+     "seatChange": 23.0,
+     "votes": 800944,
+     "share": 51.77,
+     "swing": -29.91
+    },
+    {
+     "name": "Pan-Malayan Islamic Party",
+     "leader": "Burhanuddin al-Helmy",
+     "seats": 9,
+     "seatChange": 9.0,
+     "votes": 116087,
+     "share": 68.38,
+     "swing": 17.21
+    },
+    {
+     "name": "Socialist Front",
+     "leader": "Ahmad Boestamam",
+     "seats": 8,
+     "seatChange": 8.0,
+     "votes": 199688,
+     "share": 12.91,
+     "swing": 12.43
+    },
+    {
+     "name": "PPP",
+     "leader": "D. R. Seenivasagam",
+     "seats": 4,
+     "seatChange": 4.0,
+     "votes": 97391,
+     "share": 6.29,
+     "swing": 6.18
+    },
+    {
+     "name": "United Malays National Organisation",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 4.0,
+     "votes": 53382,
+     "share": 31.45,
+     "swing": null
+    },
+    {
+     "name": "National Party",
+     "leader": "Onn Jaafar",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": 32578,
+     "share": 2.11,
+     "swing": -5.77
+    },
+    {
+     "name": "Malayan Party",
+     "leader": "Tan Kee Gak",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 13404,
+     "share": 0.87,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Tunku Abdul Rahman",
+    "party": "Alliance"
+   },
+   "pmAfter": {
+    "name": "Tunku Abdul Rahman",
+    "party": "Alliance"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in the Federation of Malaya on Wednesday, 19 August 1959 for members of the first Parliament of the Federation of Malaya, the first parliamentary election in Malaya. It was the third national-wide election held in Malaya since the end of World War II.",
+   "caveat": null,
+   "seatLeader": "Alliance"
+  },
+  {
+   "id": "1964",
+   "label": "1964",
+   "year": 1964,
+   "date": "25 April 1964",
+   "era": "alliance",
+   "totalSeats": 104,
+   "majoritySeats": 53,
+   "turnout": 80.03,
+   "parties": [
+    {
+     "name": "Alliance",
+     "leader": "Tunku Abdul Rahman",
+     "seats": 89,
+     "seatChange": 15.0,
+     "votes": 1204340,
+     "share": 58.5,
+     "swing": 6.7
+    },
+    {
+     "name": "PAS",
+     "leader": "Burhanuddin al-Helmy",
+     "seats": 9,
+     "seatChange": -4.0,
+     "votes": 301187,
+     "share": 14.6,
+     "swing": -6.7
+    },
+    {
+     "name": "Socialist Front",
+     "leader": "Tan Chee Khoon",
+     "seats": 2,
+     "seatChange": -6.0,
+     "votes": 330898,
+     "share": 16.1,
+     "swing": 3.2
+    },
+    {
+     "name": "PPP",
+     "leader": "D. R. Seenivasagam",
+     "seats": 2,
+     "seatChange": -2.0,
+     "votes": 69898,
+     "share": 3.4,
+     "swing": -2.9
+    },
+    {
+     "name": "UDP",
+     "leader": "Lim Chong Eu",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 88223,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PAP",
+     "leader": "Lee Kuan Yew",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 42130,
+     "share": 2.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Tunku Abdul Rahman",
+    "party": "Alliance"
+   },
+   "pmAfter": {
+    "name": "Tunku Abdul Rahman",
+    "party": "Alliance"
+   },
+   "knownAs": "The Confrontation election",
+   "summary": "General elections were held in Malaysia on Saturday, 25 April 1964, to elect members of the expanded Dewan Rakyat, the lower house of the bicameral Parliament of Malaysia. These were the first federal elections since the Malaysia Agreement of 1963, which transformed the Federation of Malaya into Malaysia with the addition of Singapore, Sabah and Sarawak.",
+   "caveat": "Cleanly counted but heavily tilted: severe malapportionment, government-controlled media and the Internal Security Act framed every contest of the Barisan Nasional decades.",
+   "seatLeader": "Alliance"
+  },
+  {
+   "id": "1969",
+   "label": "1969",
+   "year": 1969,
+   "date": "10 May 1969 – 4 July 1970",
+   "era": "alliance",
+   "totalSeats": 144,
+   "majoritySeats": 73,
+   "turnout": 73.59,
+   "parties": [
+    {
+     "name": "Alliance",
+     "leader": "Tunku Abdul Rahman",
+     "seats": 74,
+     "seatChange": -15.0,
+     "votes": 1077499,
+     "share": 44.96,
+     "swing": -13.57
+    },
+    {
+     "name": "DAP",
+     "leader": "Goh Hock Guan",
+     "seats": 13,
+     "seatChange": 12.0,
+     "votes": 286606,
+     "share": 11.96,
+     "swing": 9.91
+    },
+    {
+     "name": "USNO",
+     "leader": "Mustapha Harun",
+     "seats": 13,
+     "seatChange": 7.0,
+     "votes": 13634,
+     "share": 0.57,
+     "swing": null
+    },
+    {
+     "name": "PAS",
+     "leader": "Burhanuddin al-Helmy",
+     "seats": 12,
+     "seatChange": 3.0,
+     "votes": 501123,
+     "share": 20.91,
+     "swing": 6.27
+    },
+    {
+     "name": "SNAP",
+     "leader": "Stephen Kalong Ningkan",
+     "seats": 9,
+     "seatChange": 5.0,
+     "votes": 64593,
+     "share": 2.69,
+     "swing": null
+    },
+    {
+     "name": "GERAKAN",
+     "leader": "Syed Hussein Alatas",
+     "seats": 8,
+     "seatChange": null,
+     "votes": 178971,
+     "share": 7.47,
+     "swing": null
+    },
+    {
+     "name": "SUPP",
+     "leader": "Ong Kee Hui",
+     "seats": 5,
+     "seatChange": 2.0,
+     "votes": 72754,
+     "share": 3.04,
+     "swing": null
+    },
+    {
+     "name": "PPP",
+     "leader": "S. P. Seenivasagam",
+     "seats": 4,
+     "seatChange": 2.0,
+     "votes": 80756,
+     "share": 3.37,
+     "swing": -0.04
+    },
+    {
+     "name": "Pesaka",
+     "leader": "Jugah Barieng",
+     "seats": 2,
+     "seatChange": null,
+     "votes": 30765,
+     "share": 1.28,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Tunku Abdul Rahman",
+    "party": "Alliance"
+   },
+   "pmAfter": {
+    "name": "Tunku Abdul Rahman",
+    "party": "Alliance"
+   },
+   "knownAs": "The May 13 election",
+   "summary": "General elections were held in Malaysia on Saturday, 10 May 1969, although polling in Sabah and Sarawak was postponed until between 6 June and 4 July 1970. This was the first parliamentary election in Sabah and Sarawak since the formation of Malaysia in 1963.",
+   "caveat": "The results stood, but the aftermath did not: the May 13 riots led to a state of emergency, parliament suspended for 22 months, and voting in Sabah and Sarawak halted mid-election.",
+   "seatLeader": "Alliance"
+  },
+  {
+   "id": "1974",
+   "label": "1974",
+   "year": 1974,
+   "date": "24 August – 14 September 1974",
+   "era": "bn",
+   "totalSeats": 154,
+   "majoritySeats": 78,
+   "turnout": 75.01,
+   "parties": [
+    {
+     "name": "BN",
+     "leader": "Abdul Razak Hussein",
+     "seats": 135,
+     "seatChange": 14.0,
+     "votes": 1287463,
+     "share": 60.76,
+     "swing": 14.47
+    },
+    {
+     "name": "DAP",
+     "leader": "Lim Kit Siang",
+     "seats": 9,
+     "seatChange": -4.0,
+     "votes": 387845,
+     "share": 18.3,
+     "swing": 6.34
+    },
+    {
+     "name": "SNAP",
+     "leader": "James Wong",
+     "seats": 9,
+     "seatChange": 0.0,
+     "votes": 117566,
+     "share": 5.55,
+     "swing": 2.85
+    }
+   ],
+   "pmBefore": {
+    "name": "Abdul Razak Hussein",
+    "party": "BN"
+   },
+   "pmAfter": {
+    "name": "Abdul Razak Hussein",
+    "party": "BN"
+   },
+   "knownAs": "Barisan Nasional's debut",
+   "summary": "General elections were held in Malaysia between Saturday, 24 August and Saturday, 14 September 1974. Voting took place in all 154 parliamentary constituencies of Malaysia, each electing one Member of Parliament to the Dewan Rakyat, the dominant house of Parliament.",
+   "caveat": "Cleanly counted but heavily tilted: severe malapportionment, government-controlled media and the Internal Security Act framed every contest of the Barisan Nasional decades.",
+   "seatLeader": "BN"
+  },
+  {
+   "id": "1978",
+   "label": "1978",
+   "year": 1978,
+   "date": "8–22 July 1978",
+   "era": "bn",
+   "totalSeats": 154,
+   "majoritySeats": 78,
+   "turnout": 75.3,
+   "parties": [
+    {
+     "name": "BN",
+     "leader": "Hussein Onn",
+     "seats": 130,
+     "seatChange": -5.0,
+     "votes": 1987907,
+     "share": 57.23,
+     "swing": -3.58
+    },
+    {
+     "name": "DAP",
+     "leader": "Lim Kit Siang",
+     "seats": 16,
+     "seatChange": 7.0,
+     "votes": 664433,
+     "share": 19.13,
+     "swing": 0.81
+    },
+    {
+     "name": "PAS",
+     "leader": "Asri Muda",
+     "seats": 5,
+     "seatChange": -8.0,
+     "votes": 537720,
+     "share": 15.48,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Hussein Onn",
+    "party": "BN"
+   },
+   "pmAfter": {
+    "name": "Hussein Onn",
+    "party": "BN"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Malaysia between Saturday, 8 July and Saturday, 22 July 1978. Voting took place in all 154 parliamentary constituencies, each electing one Member of Parliament to the Dewan Rakyat, the dominant house of Parliament.",
+   "caveat": "Cleanly counted but heavily tilted: severe malapportionment, government-controlled media and the Internal Security Act framed every contest of the Barisan Nasional decades.",
+   "seatLeader": "BN"
+  },
+  {
+   "id": "1982",
+   "label": "1982",
+   "year": 1982,
+   "date": "22–26 April 1982",
+   "era": "bn",
+   "totalSeats": 154,
+   "majoritySeats": 78,
+   "turnout": 74.39,
+   "parties": [
+    {
+     "name": "UMNO",
+     "leader": "Mahathir Mohamad",
+     "seats": 132,
+     "seatChange": 2.0,
+     "votes": 2522079,
+     "share": 60.54,
+     "swing": 3.31
+    },
+    {
+     "name": "DAP",
+     "leader": "Lim Kit Siang",
+     "seats": 9,
+     "seatChange": -7.0,
+     "votes": 815473,
+     "share": 19.58,
+     "swing": 0.45
+    },
+    {
+     "name": "PAS",
+     "leader": "Asri Muda",
+     "seats": 5,
+     "seatChange": 0.0,
+     "votes": 602530,
+     "share": 14.46,
+     "swing": -0.98
+    }
+   ],
+   "pmBefore": {
+    "name": "Mahathir Mohamad",
+    "party": "BN"
+   },
+   "pmAfter": {
+    "name": "Mahathir Mohamad",
+    "party": "BN"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Malaysia between Thursday, 22 April and Monday, 26 April 1982. Voting took place in all 154 parliamentary constituencies of Malaysia, each electing one Member of Parliament to the Dewan Rakyat, the dominant house of Parliament.",
+   "caveat": "Cleanly counted but heavily tilted: severe malapportionment, government-controlled media and the Internal Security Act framed every contest of the Barisan Nasional decades.",
+   "seatLeader": "UMNO"
+  },
+  {
+   "id": "1986",
+   "label": "1986",
+   "year": 1986,
+   "date": "2–3 August 1986",
+   "era": "bn",
+   "totalSeats": 177,
+   "majoritySeats": 89,
+   "turnout": 69.97,
+   "parties": [
+    {
+     "name": "BN",
+     "leader": "Mahathir Mohamad",
+     "seats": 148,
+     "seatChange": 16.0,
+     "votes": 2649238,
+     "share": 57.28,
+     "swing": -3.26
+    },
+    {
+     "name": "DAP",
+     "leader": "Lim Kit Siang",
+     "seats": 24,
+     "seatChange": 15.0,
+     "votes": 975544,
+     "share": 21.09,
+     "swing": 1.51
+    },
+    {
+     "name": "PAS",
+     "leader": "Yusof Rawa",
+     "seats": 1,
+     "seatChange": -4.0,
+     "votes": 716952,
+     "share": 15.5,
+     "swing": 1.04
+    }
+   ],
+   "pmBefore": {
+    "name": "Mahathir Mohamad",
+    "party": "BN"
+   },
+   "pmAfter": {
+    "name": "Mahathir Mohamad",
+    "party": "BN"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Malaysia on 2 and 3 August 1986. Voting took place in all 177 parliamentary constituencies of Malaysia, each electing one Member of Parliament to the Dewan Rakyat, the dominant house of Parliament.",
+   "caveat": "Cleanly counted but heavily tilted: severe malapportionment, government-controlled media and the Internal Security Act framed every contest of the Barisan Nasional decades.",
+   "seatLeader": "BN"
+  },
+  {
+   "id": "1990",
+   "label": "1990",
+   "year": 1990,
+   "date": "20–21 October 1990",
+   "era": "bn",
+   "totalSeats": 180,
+   "majoritySeats": 91,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "UMNO",
+     "leader": "Mahathir Mohamad",
+     "seats": 127,
+     "seatChange": -21.0,
+     "votes": 2985392,
+     "share": 53.38,
+     "swing": -3.9
+    },
+    {
+     "name": "DAP & USP",
+     "leader": "Lim Kit Siang & Joseph Pairin Kitingan",
+     "seats": 34,
+     "seatChange": -4.0,
+     "votes": 1113488,
+     "share": 19.91,
+     "swing": -2.78
+    },
+    {
+     "name": "S46",
+     "leader": "Tengku Razaleigh Hamzah",
+     "seats": 15,
+     "seatChange": 14.0,
+     "votes": 1218211,
+     "share": 21.78,
+     "swing": 6.28
+    }
+   ],
+   "pmBefore": {
+    "name": "Mahathir Mohamad",
+    "party": "BN"
+   },
+   "pmAfter": {
+    "name": "Mahathir Mohamad",
+    "party": "BN"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Malaysia on 20 and 21 October 1990. Voting took place in all 180 parliamentary constituencies of Malaysia, each electing one Member of Parliament to the Dewan Rakyat, the dominant house of Parliament.",
+   "caveat": "Cleanly counted but heavily tilted: severe malapportionment, government-controlled media and the Internal Security Act framed every contest of the Barisan Nasional decades.",
+   "seatLeader": "UMNO"
+  },
+  {
+   "id": "1995",
+   "label": "1995",
+   "year": 1995,
+   "date": "24–25 April 1995",
+   "era": "bn",
+   "totalSeats": 192,
+   "majoritySeats": 97,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "UMNO",
+     "leader": "Mahathir Mohamad",
+     "seats": 162,
+     "seatChange": 35.0,
+     "votes": 3881214,
+     "share": 65.16,
+     "swing": 11.78
+    },
+    {
+     "name": "DAP & USP",
+     "leader": "Lim Kit Siang & Joseph Pairin Kitingan",
+     "seats": 17,
+     "seatChange": -17.0,
+     "votes": 910769,
+     "share": 15.29,
+     "swing": -4.62
+    },
+    {
+     "name": "S46",
+     "leader": "Tengku Razaleigh Hamzah & Fadzil Noor",
+     "seats": 13,
+     "seatChange": -2.0,
+     "votes": 1046687,
+     "share": 17.57,
+     "swing": -4.21
+    },
+    {
+     "name": "Barisan Nasional",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 9076,
+     "share": 69.79,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mahathir Mohamad",
+    "party": "BN"
+   },
+   "pmAfter": {
+    "name": "Mahathir Mohamad",
+    "party": "BN"
+   },
+   "knownAs": "Mahathir's landslide",
+   "summary": "General elections were held in Malaysia on 24 and 25 April 1995. Voting took place in all 192 parliamentary constituencies of Malaysia, each electing one Member of Parliament to the Dewan Rakyat, the dominant house of Parliament.",
+   "caveat": "Cleanly counted but heavily tilted: severe malapportionment, government-controlled media and the Internal Security Act framed every contest of the Barisan Nasional decades.",
+   "seatLeader": "UMNO"
+  },
+  {
+   "id": "1999",
+   "label": "1999",
+   "year": 1999,
+   "date": "29 November 1999",
+   "era": "bn",
+   "totalSeats": 193,
+   "majoritySeats": 97,
+   "turnout": 71.19,
+   "parties": [
+    {
+     "name": "UMNO",
+     "leader": "Mahathir Mohamad",
+     "seats": 148,
+     "seatChange": -14.0,
+     "votes": 3763003,
+     "share": 56.52,
+     "swing": -8.64
+    },
+    {
+     "name": "PAS",
+     "leader": "Fadzil Noor",
+     "seats": 42,
+     "seatChange": 26.0,
+     "votes": 2681460,
+     "share": 40.28,
+     "swing": 10.75
+    },
+    {
+     "name": "PBS",
+     "leader": "Joseph Pairin Kitingan",
+     "seats": 3,
+     "seatChange": -5.0,
+     "votes": 143338,
+     "share": 2.15,
+     "swing": -1.18
+    }
+   ],
+   "pmBefore": {
+    "name": "Mahathir Mohamad",
+    "party": "BN"
+   },
+   "pmAfter": {
+    "name": "Mahathir Mohamad",
+    "party": "BN"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Malaysia on Monday, 29 November 1999. Voting took place in all 193 parliamentary constituencies of Malaysia, each electing one Member of Parliament to the Dewan Rakyat, the dominant house of Parliament.",
+   "caveat": "Cleanly counted but heavily tilted: severe malapportionment, government-controlled media and the Internal Security Act framed every contest of the Barisan Nasional decades.",
+   "seatLeader": "UMNO"
+  },
+  {
+   "id": "2004",
+   "label": "2004",
+   "year": 2004,
+   "date": "21 March 2004",
+   "era": "bn",
+   "totalSeats": 219,
+   "majoritySeats": 110,
+   "turnout": 72.95,
+   "parties": [
+    {
+     "name": "UMNO",
+     "leader": "Abdullah Ahmad Badawi",
+     "seats": 198,
+     "seatChange": 50.0,
+     "votes": 4437919,
+     "share": 63.82,
+     "swing": 7.3
+    },
+    {
+     "name": "DAP",
+     "leader": "Kerk Kim Hock",
+     "seats": 12,
+     "seatChange": 2.0,
+     "votes": 687350,
+     "share": 9.88,
+     "swing": -2.86
+    },
+    {
+     "name": "PAS",
+     "leader": "Abdul Hadi Awang",
+     "seats": 8,
+     "seatChange": -34.0,
+     "votes": 1672350,
+     "share": 24.05,
+     "swing": -16.23
+    }
+   ],
+   "pmBefore": {
+    "name": "Abdullah Ahmad Badawi",
+    "party": "BN"
+   },
+   "pmAfter": {
+    "name": "Abdullah Ahmad Badawi",
+    "party": "BN"
+   },
+   "knownAs": "The Badawi wave",
+   "summary": "General elections were held in Malaysia on Sunday, 21 March 2004. Voting took place in all 219 parliamentary constituencies, each electing one Member of Parliament to the Dewan Rakyat, the dominant house of Parliament.",
+   "caveat": "Cleanly counted but heavily tilted: severe malapportionment, government-controlled media and the Internal Security Act framed every contest of the Barisan Nasional decades.",
+   "seatLeader": "UMNO"
+  },
+  {
+   "id": "2008",
+   "label": "2008",
+   "year": 2008,
+   "date": "8 March 2008",
+   "era": "twocoalition",
+   "totalSeats": 222,
+   "majoritySeats": 112,
+   "turnout": 75.38,
+   "parties": [
+    {
+     "name": "UMNO",
+     "leader": "Abdullah Ahmad Badawi",
+     "seats": 140,
+     "seatChange": -58.0,
+     "votes": 4036248,
+     "share": 50.96,
+     "swing": -12.86
+    },
+    {
+     "name": "PKR",
+     "leader": "Wan Azizah Wan Ismail",
+     "seats": 82,
+     "seatChange": 62.0,
+     "votes": 3746028,
+     "share": 47.3,
+     "swing": 13.37
+    }
+   ],
+   "pmBefore": {
+    "name": "Abdullah Ahmad Badawi",
+    "party": "BN"
+   },
+   "pmAfter": {
+    "name": "Abdullah Ahmad Badawi",
+    "party": "BN"
+   },
+   "knownAs": "The political tsunami",
+   "summary": "General elections were held in Malaysia on Saturday, 8 March 2008. Voting took place in all 222 parliamentary constituencies of Malaysia, each electing one Member of Parliament to the Dewan Rakyat, the dominant house of Parliament.",
+   "caveat": null,
+   "seatLeader": "UMNO"
+  },
+  {
+   "id": "2013",
+   "label": "2013",
+   "year": 2013,
+   "date": "5 May 2013",
+   "era": "twocoalition",
+   "totalSeats": 222,
+   "majoritySeats": 112,
+   "turnout": 84.6,
+   "parties": [
+    {
+     "name": "UMNO",
+     "leader": "Najib Razak",
+     "seats": 133,
+     "seatChange": -7.0,
+     "votes": 5237703,
+     "share": 47.38,
+     "swing": -3.58
+    },
+    {
+     "name": "PKR",
+     "leader": "Anwar Ibrahim",
+     "seats": 89,
+     "seatChange": 7.0,
+     "votes": 5623984,
+     "share": 50.88,
+     "swing": 3.58
+    }
+   ],
+   "pmBefore": {
+    "name": "Najib Razak",
+    "party": "BN"
+   },
+   "pmAfter": {
+    "name": "Najib Razak",
+    "party": "BN"
+   },
+   "knownAs": "Won the vote, lost the power",
+   "summary": "General elections were held in Malaysia on Sunday, 5 May 2013. Voting took place in all 222 parliamentary constituencies, each electing one MP to the Dewan Rakyat, the dominant house of Parliament.",
+   "caveat": "The Barisan Nasional kept its majority while losing the popular vote 47–51 — the starkest product of Malaysia's malapportioned map.",
+   "seatLeader": "UMNO"
+  },
+  {
+   "id": "2018",
+   "label": "2018",
+   "year": 2018,
+   "date": "9 May 2018",
+   "era": "twocoalition",
+   "totalSeats": 222,
+   "majoritySeats": 112,
+   "turnout": 82.32,
+   "parties": [
+    {
+     "name": "BERSATU",
+     "leader": "Mahathir Mohamad",
+     "seats": 113,
+     "seatChange": 46.0,
+     "votes": 5518906,
+     "share": 45.68,
+     "swing": 9.77
+    },
+    {
+     "name": "UMNO",
+     "leader": "Najib Razak",
+     "seats": 79,
+     "seatChange": -54.0,
+     "votes": 4081063,
+     "share": 33.78,
+     "swing": -13.6
+    },
+    {
+     "name": "PAS",
+     "leader": "Abdul Hadi Awang",
+     "seats": 18,
+     "seatChange": -3.0,
+     "votes": 2041200,
+     "share": 16.89,
+     "swing": 1.83
+    },
+    {
+     "name": "Warisan",
+     "leader": "Shafie Apdal",
+     "seats": 8,
+     "seatChange": null,
+     "votes": 280520,
+     "share": 2.32,
+     "swing": null
+    },
+    {
+     "name": "STAR",
+     "leader": "Jeffrey Kitingan",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 67175,
+     "share": 0.56,
+     "swing": 0.47
+    }
+   ],
+   "pmBefore": {
+    "name": "Najib Razak",
+    "party": "BN"
+   },
+   "pmAfter": {
+    "name": "Mahathir Mohamad",
+    "party": "PH"
+   },
+   "knownAs": "The first turnover",
+   "summary": "General elections were held in Malaysia on Wednesday, 9 May 2018. At stake were all 222 seats in the Dewan Rakyat, the lower house of parliament.",
+   "caveat": null,
+   "seatLeader": "BERSATU"
+  },
+  {
+   "id": "2022",
+   "label": "2022",
+   "year": 2022,
+   "date": "19 November 2022",
+   "era": "twocoalition",
+   "totalSeats": 222,
+   "majoritySeats": 112,
+   "turnout": 74.13,
+   "parties": [
+    {
+     "name": "PKR",
+     "leader": "Anwar Ibrahim",
+     "seats": 82,
+     "seatChange": -19.0,
+     "votes": 5931856,
+     "share": 37.99,
+     "swing": -2.17
+    },
+    {
+     "name": "BERSATU",
+     "leader": "Muhyiddin Yassin",
+     "seats": 74,
+     "seatChange": 43.0,
+     "votes": 4719665,
+     "share": 30.23,
+     "swing": 6.35
+    },
+    {
+     "name": "UMNO",
+     "leader": "Ahmad Zahid Hamidi",
+     "seats": 30,
+     "seatChange": -28.0,
+     "votes": 3459988,
+     "share": 22.16,
+     "swing": -5.63
+    },
+    {
+     "name": "PBB",
+     "leader": "Abang Johari",
+     "seats": 23,
+     "seatChange": 4.0,
+     "votes": 662601,
+     "share": 4.24,
+     "swing": 0.42
+    },
+    {
+     "name": "GRS",
+     "leader": "Hajiji Noor",
+     "seats": 6,
+     "seatChange": 4.0,
+     "votes": 194652,
+     "share": 1.25,
+     "swing": 0.54
+    },
+    {
+     "name": "WARISAN",
+     "leader": "Shafie Apdal",
+     "seats": 3,
+     "seatChange": -5.0,
+     "votes": 281611,
+     "share": 1.8,
+     "swing": -0.52
+    }
+   ],
+   "pmBefore": {
+    "name": "Ismail Sabri Yaakob",
+    "party": "BN"
+   },
+   "pmAfter": {
+    "name": "Anwar Ibrahim",
+    "party": "PH"
+   },
+   "knownAs": "The hung parliament",
+   "summary": "General elections were held in Malaysia on Saturday, 19 November 2022.",
+   "caveat": null,
+   "seatLeader": "PKR"
+  }
+ ]
+}

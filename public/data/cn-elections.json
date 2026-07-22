@@ -1,0 +1,836 @@
+{
+ "meta": {
+  "title": "Chinese national congresses",
+  "sources": [
+   "Wikipedia: National People's Congress articles, 1st (1954) to 14th (2023), and the 1st CPPCC of 1949 (composition, infoboxes and leads)"
+  ],
+  "built": "2026-07-22"
+ },
+ "eras": [
+  {
+   "key": "founding",
+   "label": "The founding conference",
+   "span": "1949",
+   "blurb": "The People's Republic began without any election at all: the Chinese People's Political Consultative Conference — delegates invited by the Communist Party — proclaimed the state and acted as its legislature until 1954. It is recorded here as the system's origin, not as a vote."
+  },
+  {
+   "key": "mao",
+   "label": "The Mao-era congresses",
+   "span": "1954–1975",
+   "blurb": "The first National People's Congress met in 1954, chosen through tiers of indirect, single-candidate selection under party control. The rhythm soon broke down entirely: the third Congress sat through the Cultural Revolution without meeting for a decade, and the fourth met just once."
+  },
+  {
+   "key": "reform",
+   "label": "The reform-era congresses",
+   "span": "1978–1988",
+   "blurb": "Deng Xiaoping's era restored the institution's routine — five-year terms, annual sessions, secret ballots inside the chamber — and the NPC began occasionally registering dissenting votes. The selection of its nearly 3,000 delegates, however, remained a party-managed process from start to finish."
+  },
+  {
+   "key": "technocratic",
+   "label": "The technocratic congresses",
+   "span": "1993–2008",
+   "blurb": "The congresses of the Jiang and Hu years rubber-stamped the market reforms that transformed China, with delegate seats allocated across provinces, the army and the eight licensed minor parties — every one of which formally accepts Communist Party leadership."
+  },
+  {
+   "key": "xi",
+   "label": "The Xi-era congresses",
+   "span": "2013–2023",
+   "blurb": "Under Xi Jinping the NPC's residual space narrowed again: the 2018 Congress abolished presidential term limits with two dissenting votes out of nearly three thousand, and the 2023 Congress re-elected Xi unanimously. The theatre of unanimity is itself the message."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1949",
+   "label": "1st CPPCC",
+   "year": 1949,
+   "kind": "legislative",
+   "date": "convened 21 September 1949",
+   "era": "founding",
+   "totalSeats": 662,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Mao Zedong",
+    "party": "Chinese Communist Party"
+   },
+   "knownAs": "The state proclaimed, unelected",
+   "summary": "The 1st National Committee of the Chinese People's Political Consultative Conference was the first meeting of the top political advisory body of the People's Republic of China. It convened in Beijing on 9 October 1949 and ended on 21 December 1954.",
+   "caveat": "Not an election at all: the delegates were invited by the Communist Party, and the conference proclaimed the People's Republic and acted as its legislature until 1954.",
+   "unfree": "unfree",
+   "seatLeader": null
+  },
+  {
+   "id": "1954",
+   "label": "1st NPC",
+   "year": 1954,
+   "kind": "legislative",
+   "date": "convened 15 September 1954",
+   "era": "mao",
+   "totalSeats": 1226,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Chinese Communist Party",
+     "leader": "Mao Zedong",
+     "seats": 1048,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Other licensed parties and independents",
+     "leader": null,
+     "seats": 178,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Chinese Peasants' and Workers' Democratic Party",
+     "leader": "Zhang Bojun",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Liu Shaoqi",
+    "party": null
+   },
+   "knownAs": "The first NPC",
+   "summary": "The 1st National People's Congress (NPC) was in session from 1954 to 1959. It held four sessions in this period.",
+   "caveat": "An indirect, Communist Party-controlled selection: delegates are chosen through tiers of party-managed elections with no opposition permitted, and the eight licensed minor parties all formally accept CCP leadership. Recorded here as the workings of a one-party state, not as a competitive election.",
+   "unfree": "unfree",
+   "seatLeader": "Chinese Communist Party"
+  },
+  {
+   "id": "1959",
+   "label": "2nd NPC",
+   "year": 1959,
+   "kind": "legislative",
+   "date": "convened 18 April 1959",
+   "era": "mao",
+   "totalSeats": 1235,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Chinese Communist Party",
+     "leader": "Mao Zedong",
+     "seats": 1047,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Other licensed parties and independents",
+     "leader": null,
+     "seats": 179,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Chinese Peasants' and Workers' Democratic Party",
+     "leader": "Ji Fang",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Zhu De",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Since the succeeding Congress was to be the first to be elected under the 1954 Constitution of the People's Republic of China, the Standing Committee of the National People's Congress, in February 1959, finished all the preparatory work for selection of deputies, which were voted by representatives of the provincial legislatures and the city legislatures of the then two Direct-",
+   "caveat": "An indirect, Communist Party-controlled selection: delegates are chosen through tiers of party-managed elections with no opposition permitted, and the eight licensed minor parties all formally accept CCP leadership. Recorded here as the workings of a one-party state, not as a competitive election.",
+   "unfree": "unfree",
+   "seatLeader": "Chinese Communist Party"
+  },
+  {
+   "id": "1964",
+   "label": "3rd NPC",
+   "year": 1964,
+   "kind": "legislative",
+   "date": "convened 21 December 1964",
+   "era": "mao",
+   "totalSeats": 3040,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Chinese Communist Party",
+     "leader": "Mao Zedong",
+     "seats": 2668,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Other licensed parties and independents",
+     "leader": null,
+     "seats": 372,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Chinese Peasants' and Workers' Democratic Party",
+     "leader": "Ji Fang",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Zhu De",
+    "party": null
+   },
+   "knownAs": "The congress the Cultural Revolution froze",
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An indirect, Communist Party-controlled selection: delegates are chosen through tiers of party-managed elections with no opposition permitted, and the eight licensed minor parties all formally accept CCP leadership. Recorded here as the workings of a one-party state, not as a competitive election.",
+   "unfree": "unfree",
+   "seatLeader": "Chinese Communist Party"
+  },
+  {
+   "id": "1975",
+   "label": "4th NPC",
+   "year": 1975,
+   "kind": "legislative",
+   "date": "convened 13 January 1975",
+   "era": "mao",
+   "totalSeats": 2864,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Zhu De",
+    "party": null
+   },
+   "knownAs": "One session in a decade",
+   "summary": "The first session passed the 1975 Constitution of the People's Republic of China. The offices of Chairman and Vice Chairman were abolished at the suggestion of Chairman Mao Zedong, passing the role of head of state to the Chairman of the Standing Committee of the National People's Congress.",
+   "caveat": "An indirect, Communist Party-controlled selection: delegates are chosen through tiers of party-managed elections with no opposition permitted, and the eight licensed minor parties all formally accept CCP leadership. Recorded here as the workings of a one-party state, not as a competitive election.",
+   "unfree": "unfree",
+   "seatLeader": "Chinese Communist Party"
+  },
+  {
+   "id": "1978",
+   "label": "5th NPC",
+   "year": 1978,
+   "kind": "legislative",
+   "date": "convened 26 February 1978",
+   "era": "reform",
+   "totalSeats": 3497,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Other licensed parties and independents",
+     "leader": null,
+     "seats": 381,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Chinese Peasants' and Workers' Democratic Party",
+     "leader": "Ji Fang",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Ye Jianying",
+    "party": null
+   },
+   "knownAs": "The reform era convenes",
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An indirect, Communist Party-controlled selection: delegates are chosen through tiers of party-managed elections with no opposition permitted, and the eight licensed minor parties all formally accept CCP leadership. Recorded here as the workings of a one-party state, not as a competitive election.",
+   "unfree": "unfree",
+   "seatLeader": "Chinese Communist Party"
+  },
+  {
+   "id": "1983",
+   "label": "6th NPC",
+   "year": 1983,
+   "kind": "legislative",
+   "date": "convened 6 June 1983",
+   "era": "reform",
+   "totalSeats": 2884,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Chinese Communist Party",
+     "leader": "Hu Yaobang",
+     "seats": 1861,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Other licensed parties and independents",
+     "leader": null,
+     "seats": 543,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Chinese Peasants' and Workers' Democratic Party",
+     "leader": "Ji Fang",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Peng Zhen",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An indirect, Communist Party-controlled selection: delegates are chosen through tiers of party-managed elections with no opposition permitted, and the eight licensed minor parties all formally accept CCP leadership. Recorded here as the workings of a one-party state, not as a competitive election.",
+   "unfree": "unfree",
+   "seatLeader": "Chinese Communist Party"
+  },
+  {
+   "id": "1988",
+   "label": "7th NPC",
+   "year": 1988,
+   "kind": "legislative",
+   "date": "convened 25 March 1988",
+   "era": "reform",
+   "totalSeats": 2892,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Other licensed parties and independents",
+     "leader": null,
+     "seats": 540,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Chinese Peasants' and Workers' Democratic Party",
+     "leader": "Lu Jiaxi",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Wan Li",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An indirect, Communist Party-controlled selection: delegates are chosen through tiers of party-managed elections with no opposition permitted, and the eight licensed minor parties all formally accept CCP leadership. Recorded here as the workings of a one-party state, not as a competitive election.",
+   "unfree": "unfree",
+   "seatLeader": "Chinese Communist Party"
+  },
+  {
+   "id": "1993",
+   "label": "8th NPC",
+   "year": 1993,
+   "kind": "legislative",
+   "date": "convened 15 March 1993",
+   "era": "technocratic",
+   "totalSeats": 2977,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Chinese Communist Party",
+     "leader": "Jiang Zemin",
+     "seats": 2037,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Other licensed parties and independents",
+     "leader": null,
+     "seats": 572,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Chinese Peasants' and Workers' Democratic Party",
+     "leader": "Jiang Zhenghua",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Qiao Shi",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An indirect, Communist Party-controlled selection: delegates are chosen through tiers of party-managed elections with no opposition permitted, and the eight licensed minor parties all formally accept CCP leadership. Recorded here as the workings of a one-party state, not as a competitive election.",
+   "unfree": "unfree",
+   "seatLeader": "Chinese Communist Party"
+  },
+  {
+   "id": "1998",
+   "label": "9th NPC",
+   "year": 1998,
+   "kind": "legislative",
+   "date": "convened 5 March 1998",
+   "era": "technocratic",
+   "totalSeats": 2979,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Chinese Communist Party",
+     "leader": "Jiang Zemin",
+     "seats": 2130,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Other licensed parties and independents",
+     "leader": null,
+     "seats": 460,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Chinese Peasants' and Workers' Democratic Party",
+     "leader": "Jiang Zhenghua",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Li Peng",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An indirect, Communist Party-controlled selection: delegates are chosen through tiers of party-managed elections with no opposition permitted, and the eight licensed minor parties all formally accept CCP leadership. Recorded here as the workings of a one-party state, not as a competitive election.",
+   "unfree": "unfree",
+   "seatLeader": "Chinese Communist Party"
+  },
+  {
+   "id": "2003",
+   "label": "10th NPC",
+   "year": 2003,
+   "kind": "legislative",
+   "date": "convened 5 March 2003",
+   "era": "technocratic",
+   "totalSeats": 2985,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Chinese Communist Party",
+     "leader": "Hu Jintao",
+     "seats": 2178,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Other licensed parties and independents",
+     "leader": null,
+     "seats": 480,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Chinese Peasants' and Workers' Democratic Party",
+     "leader": "Jiang Zhenghua",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Wu Bangguo",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An indirect, Communist Party-controlled selection: delegates are chosen through tiers of party-managed elections with no opposition permitted, and the eight licensed minor parties all formally accept CCP leadership. Recorded here as the workings of a one-party state, not as a competitive election.",
+   "unfree": "unfree",
+   "seatLeader": "Chinese Communist Party"
+  },
+  {
+   "id": "2008",
+   "label": "11th NPC",
+   "year": 2008,
+   "kind": "legislative",
+   "date": "convened 5 March 2008",
+   "era": "technocratic",
+   "totalSeats": 2987,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Chinese Communist Party",
+     "leader": "Hu Jintao",
+     "seats": 2099,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Other licensed parties and independents",
+     "leader": null,
+     "seats": 888,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Chinese Peasants' and Workers' Democratic Party",
+     "leader": "Sang Guowei",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Wu Bangguo",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "The 11th National People's Congress (NPC) met for a 5-year term, from 2008 to 2013. It held five annual two week plenary sessions during this period.",
+   "caveat": "An indirect, Communist Party-controlled selection: delegates are chosen through tiers of party-managed elections with no opposition permitted, and the eight licensed minor parties all formally accept CCP leadership. Recorded here as the workings of a one-party state, not as a competitive election.",
+   "unfree": "unfree",
+   "seatLeader": "Chinese Communist Party"
+  },
+  {
+   "id": "2013",
+   "label": "12th NPC",
+   "year": 2013,
+   "kind": "legislative",
+   "date": "convened 5 March 2013",
+   "era": "xi",
+   "totalSeats": 2987,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Chinese Communist Party",
+     "leader": "Xi Jinping",
+     "seats": 2157,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Other licensed parties and independents",
+     "leader": null,
+     "seats": 830,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Chinese Peasants' and Workers' Democratic Party",
+     "leader": "Sang Guowei",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Zhang Dejiang",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "The 12th National People's Congress (NPC) was elected in national congressional conferences from October 2012 to February 2013 and was in session from 2013 to 2018. It succeeded the 11th National People's Congress.",
+   "caveat": "An indirect, Communist Party-controlled selection: delegates are chosen through tiers of party-managed elections with no opposition permitted, and the eight licensed minor parties all formally accept CCP leadership. Recorded here as the workings of a one-party state, not as a competitive election.",
+   "unfree": "unfree",
+   "seatLeader": "Chinese Communist Party"
+  },
+  {
+   "id": "2018",
+   "label": "13th NPC",
+   "year": 2018,
+   "kind": "legislative",
+   "date": "convened 5 March 2018",
+   "era": "xi",
+   "totalSeats": 2980,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Chinese Communist Party",
+     "leader": "Xi Jinping",
+     "seats": 2119,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 479,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Jiusan Society",
+     "leader": "Wu Weihua",
+     "seats": 64,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "China Democratic League",
+     "leader": "Ding Zhongli",
+     "seats": 58,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "China National Democratic Construction Association",
+     "leader": "Hao Mingjin",
+     "seats": 57,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "China Association for Promoting Democracy",
+     "leader": "Cai Dafeng",
+     "seats": 55,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Chinese Peasants' and Workers' Democratic Party",
+     "leader": "Chen Zhu",
+     "seats": 54,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Committee of the Chinese Kuomintang",
+     "leader": "Wan Exiang",
+     "seats": 43,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "China Zhi Gong Party",
+     "leader": "Wan Gang",
+     "seats": 38,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Taiwan Democratic Self-Government League",
+     "leader": "Su Hui",
+     "seats": 13,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Li Zhanshu",
+    "party": null
+   },
+   "knownAs": "Term limits abolished, 2 votes against",
+   "summary": "The 13th National People's Congress (NPC) was elected from October 2017 to February 2018 and was in session in the five-year period from 2018 to 2023. It held five sessions in this period, occurring around early March every year until before 2023, when the 14th National People's Congress first convened.",
+   "caveat": "An indirect, Communist Party-controlled selection: delegates are chosen through tiers of party-managed elections with no opposition permitted, and the eight licensed minor parties all formally accept CCP leadership. Recorded here as the workings of a one-party state, not as a competitive election.",
+   "unfree": "unfree",
+   "seatLeader": "Chinese Communist Party"
+  },
+  {
+   "id": "2023",
+   "label": "14th NPC",
+   "year": 2023,
+   "kind": "legislative",
+   "date": "delegates chosen October 2022 to February 2023; convened 5 March 2023",
+   "era": "xi",
+   "totalSeats": 2977,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Chinese Peasants' and Workers' Democratic Party",
+     "leader": "He Wei",
+     "seats": 60,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Jiusan Society",
+     "leader": "Wu Weihua",
+     "seats": 56,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "China Democratic League",
+     "leader": "Ding Zhongli",
+     "seats": 56,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "China Association for Promoting Democracy",
+     "leader": "Cai Dafeng",
+     "seats": 54,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "China National Democratic Construction Association",
+     "leader": "Hao Mingjin",
+     "seats": 44,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Revolutionary Committee of the Chinese Kuomintang",
+     "leader": "Zheng Jianbang",
+     "seats": 41,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "China Zhi Gong Party",
+     "leader": "Jiang Zuojun",
+     "seats": 39,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Taiwan Democratic Self-Government League",
+     "leader": "Su Hui",
+     "seats": 14,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Chinese Communist Party",
+     "leader": "Xi Jinping",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Zhao Leji",
+    "party": null
+   },
+   "knownAs": "Xi re-elected unanimously",
+   "summary": "The 14th National People's Congress (NPC) is the current term of the supreme organ of state power of the People's Republic of China. This term of the National People's Congress convened in Beijing, on 5 March 2023, and is scheduled to continue until March 2028.",
+   "caveat": "An indirect, Communist Party-controlled selection: delegates are chosen through tiers of party-managed elections with no opposition permitted, and the eight licensed minor parties all formally accept CCP leadership. Recorded here as the workings of a one-party state, not as a competitive election.",
+   "unfree": "unfree",
+   "seatLeader": "Chinese Communist Party"
+  }
+ ]
+}

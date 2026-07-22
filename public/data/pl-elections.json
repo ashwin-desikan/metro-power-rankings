@@ -1,0 +1,3031 @@
+{
+ "meta": {
+  "title": "Polish elections",
+  "sources": [
+   "Wikipedia: Polish parliamentary and presidential election articles, 1919–2025, and the Polish–Lithuanian Commonwealth's royal free elections, 1573–1764 (results, infoboxes and leads)",
+   "PKW figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "presEras": [
+  {
+   "key": "commonwealth",
+   "label": "The Commonwealth's royal elections",
+   "span": "1573–1764",
+   "blurb": "For two centuries the Polish–Lithuanian Commonwealth elected its kings: every nobleman had the right to ride to the election field at Wola and vote, a franchise of hundreds of thousands when western Europe's parliaments answered to dozens. Eleven free elections chose monarchs from Valois to Poniatowski — until the neighbouring powers learned to buy the outcome."
+  },
+  {
+   "key": "second-republic",
+   "label": "The Second Republic and after",
+   "span": "1922–1947",
+   "blurb": "Reborn Poland's presidents were chosen by the National Assembly: the 1922 election ended with Gabriel Narutowicz assassinated within a week; the 1926 vote followed Piłsudski's coup — he declined the office he had just won — and 1947's was the communist takeover ratifying itself."
+  },
+  {
+   "key": "direct",
+   "label": "The direct-election era",
+   "span": "1989–2025",
+   "blurb": "The 1989 round-table parliament narrowly elected Jaruzelski; from 1990 Poland has chosen its president by direct two-round vote — Wałęsa's rise and fall, the Kaczyński era and the Smolensk shadow over 2010, and the knife-edge runoffs of 2020 and 2025."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "second-republic",
+   "label": "The Second Republic",
+   "span": "1919–1938",
+   "blurb": "The reborn state's Sejm began with the 1919 constituent election and grew fractious fast. After Piłsudski's 1926 coup the sanacja regime bent the process — the 1930 'Brest election' jailed opposition leaders, and the opposition boycotted 1935 and 1938."
+  },
+  {
+   "key": "communist",
+   "label": "The People's Republic",
+   "span": "1947–1985",
+   "blurb": "The 1947 election was rigged outright; from 1952 voters were handed a single Front of National Unity list. Recorded here as rituals of the communist state, not elections — until the system cracked."
+  },
+  {
+   "key": "transition",
+   "label": "The round-table breakthrough",
+   "span": "1989",
+   "blurb": "The June 1989 election was semi-free by design: the opposition could contest all Senate seats and a third of the Sejm. Solidarity won everything it was allowed to contest, the arrangement collapsed under the result, and communist rule in Poland ended within months."
+  },
+  {
+   "key": "third-republic",
+   "label": "The Third Republic",
+   "span": "1991–2023",
+   "blurb": "Fully free elections from 1991: hyper-fragmentation, consolidation into the Civic Platform–Law and Justice duopoly, PiS's 2015 and 2019 majorities, and the record-turnout 2023 election that changed the government again."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1573",
+   "label": "1573",
+   "year": 1573,
+   "kind": "presidential",
+   "date": "April 5, 1573 – May 16, 1573",
+   "era": "commonwealth",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Henri de Valois",
+    "party": "The free election of 1573 was the first ever royal election to be held in the Polish–Lithuanian Commonwealth. It attracted an estimated 40,000–50,000 szlachta (Polish nobility) voters (the highest turnout ever) who elected Henry of Valois king."
+   },
+   "knownAs": "The first free election",
+   "summary": "The free election was introduced due to the childless death of the last Jagiellonian monarch Sigismund II Augustus and the lack of a potential candidate that would satisfy most of the nobles.",
+   "caveat": "A royal free election of the Polish–Lithuanian Commonwealth: the assembled nobility chose the king. Vast for its era, the franchise was still nobility-only — and later elections were swayed openly by foreign money and armies."
+  },
+  {
+   "id": "pres-1576",
+   "label": "1576",
+   "year": 1576,
+   "kind": "presidential",
+   "date": "November 8, 1575 – February 1, 1576",
+   "era": "commonwealth",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Anna Jagiellon",
+    "party": "Stephen Báthory"
+   },
+   "knownAs": null,
+   "summary": "The free election of 1576 was the second royal election to be held in the Polish–Lithuanian Commonwealth, which took place in 1575/1576. In the night of June 28–29, 1574, King Henry III of France secretly left Poland to claim the French throne.",
+   "caveat": "A royal free election of the Polish–Lithuanian Commonwealth: the assembled nobility chose the king. Vast for its era, the franchise was still nobility-only — and later elections were swayed openly by foreign money and armies."
+  },
+  {
+   "id": "pres-1587",
+   "label": "1587",
+   "year": 1587,
+   "kind": "presidential",
+   "date": "June 30, 1587 - August 19, 1587",
+   "era": "commonwealth",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Sigismund III Vasa",
+    "party": "The free election of 1587 was the third royal election to be held in the Polish–Lithuanian Commonwealth, which took place after the death of King Stefan Batory. It began on June 30, 1587, when Election Sejm was summoned in the village of Wola near Warsaw, and ended on December 27 of the same year, when King Sigismund III was crowned in Kraków’s Wawel Cathedral."
+   },
+   "knownAs": null,
+   "summary": "The free election of 1587 was the third royal election to be held in the Polish–Lithuanian Commonwealth, which took place after the death of King Stefan Batory. It began on June 30, 1587, when Election Sejm was summoned in the village of Wola near Warsaw, and ended on December 27 of the same year, when King Sigismund III was crowned in Kraków’s Wawel Cathedral.",
+   "caveat": "A royal free election of the Polish–Lithuanian Commonwealth: the assembled nobility chose the king. Vast for its era, the franchise was still nobility-only — and later elections were swayed openly by foreign money and armies."
+  },
+  {
+   "id": "pres-1632",
+   "label": "1632",
+   "year": 1632,
+   "kind": "presidential",
+   "date": "September 27, 1632 – November 8, 1632",
+   "era": "commonwealth",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Władysław IV Vasa",
+    "party": "The 1632 free election in the Polish–Lithuanian Commonwealth commenced between September 27 and November 8, 1632. It then extended to November 13, 1632. The election sejm elevated Władysław IV to the Polish throne. Władysław had won the support of most of the political factions; and in the absence of any other serious contenders, he was elected King of Poland and Grand Duke of Lithuania."
+   },
+   "knownAs": null,
+   "summary": "The 1632 free election in the Polish–Lithuanian Commonwealth commenced between September 27 and November 8, 1632. It then extended to November 13, 1632.",
+   "caveat": "A royal free election of the Polish–Lithuanian Commonwealth: the assembled nobility chose the king. Vast for its era, the franchise was still nobility-only — and later elections were swayed openly by foreign money and armies."
+  },
+  {
+   "id": "pres-1648",
+   "label": "1648",
+   "year": 1648,
+   "kind": "presidential",
+   "date": "October 6, 1648 – November 17, 1648",
+   "era": "commonwealth",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": {
+    "name": "John II Casimir Vasa",
+    "party": "The 1648 free election in the Polish–Lithuanian Commonwealth began on 6 October 1648, and ended on November 17 of the same year. The new King of Poland and Grand Duke of Lithuania was John II Casimir, the younger brother of previous king, Władysław IV, who had died on May 20, 1648."
+   },
+   "knownAs": null,
+   "summary": "The 1648 free election in the Polish–Lithuanian Commonwealth began on 6 October 1648, and ended on November 17 of the same year. The new King of Poland and Grand Duke of Lithuania was John II Casimir, the younger brother of previous king, Władysław IV, who had died on May 20, 1648.",
+   "caveat": "A royal free election of the Polish–Lithuanian Commonwealth: the assembled nobility chose the king. Vast for its era, the franchise was still nobility-only — and later elections were swayed openly by foreign money and armies."
+  },
+  {
+   "id": "pres-1669",
+   "label": "1669",
+   "year": 1669,
+   "kind": "presidential",
+   "date": "May 1, 1669 – June 19, 1669",
+   "era": "commonwealth",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Michael I",
+    "party": "The 1669 Polish–Lithuanian royal election was an election to decide on the new candidate for the Polish–Lithuanian throne."
+   },
+   "knownAs": null,
+   "summary": "On 16 September 1668, King John II Casimir abdicated the Polish–Lithuanian throne. He left for France and joined the Jesuits where he became Abbot of Saint-Germain-des-Prés Abbey in Paris which resulted in the Polish–Lithuanian Commonwealth being left without a monarch, making an election necessary.",
+   "caveat": "A royal free election of the Polish–Lithuanian Commonwealth: the assembled nobility chose the king. Vast for its era, the franchise was still nobility-only — and later elections were swayed openly by foreign money and armies."
+  },
+  {
+   "id": "pres-1674",
+   "label": "1674",
+   "year": 1674,
+   "kind": "presidential",
+   "date": "June 19, 1674 – June 21, 1674",
+   "era": "commonwealth",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": {
+    "name": "John III",
+    "party": "The 1674 Polish–Lithuanian royal election was an election to decide on the new candidate for the Polish–Lithuanian throne."
+   },
+   "knownAs": null,
+   "summary": "On November 10, 1673, Michael Korybut Wiśniowiecki, King of Poland and Grand Duke of Lithuania, suddenly died in Lwów. The Polish throne was vacant again, so another free election was necessary.",
+   "caveat": "A royal free election of the Polish–Lithuanian Commonwealth: the assembled nobility chose the king. Vast for its era, the franchise was still nobility-only — and later elections were swayed openly by foreign money and armies."
+  },
+  {
+   "id": "pres-1697",
+   "label": "1697",
+   "year": 1697,
+   "kind": "presidential",
+   "date": "June 27, 1697",
+   "era": "commonwealth",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Augustus II",
+    "party": "The 1697 Polish–Lithuanian royal election was an election to decide on the new candidate for the Polish–Lithuanian throne."
+   },
+   "knownAs": "The bought election",
+   "summary": "One of the candidates for the Polish throne was the Duke of Oława (Lower Silesia) and son of the late king, James Louis Sobieski. He was initially supported by the Kingdom of France and the Swedish Empire.",
+   "caveat": "A royal free election of the Polish–Lithuanian Commonwealth: the assembled nobility chose the king. Vast for its era, the franchise was still nobility-only — and later elections were swayed openly by foreign money and armies."
+  },
+  {
+   "id": "pres-1704",
+   "label": "1704",
+   "year": 1704,
+   "kind": "presidential",
+   "date": "July 12, 1704",
+   "era": "commonwealth",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Stanisław I",
+    "party": "The 1704 Polish–Lithuanian royal election was an election to decide on the new candidate for the Polish–Lithuanian throne."
+   },
+   "knownAs": null,
+   "summary": "In early 1700, King of Poland, Grand Duke of Lithuania and Elector of Saxony, Augustus II the Strong began the Great Northern War by attacking Swedish Livonia. Despite Russian support, Saxon army lost several battles, and soon afterwards, forces of the Swedish Empire controlled most of the Polish–Lithuanian Commonwealth.",
+   "caveat": "A royal free election of the Polish–Lithuanian Commonwealth: the assembled nobility chose the king. Vast for its era, the franchise was still nobility-only — and later elections were swayed openly by foreign money and armies."
+  },
+  {
+   "id": "pres-1733",
+   "label": "1733",
+   "year": 1733,
+   "kind": "presidential",
+   "date": "September 12, 1733",
+   "era": "commonwealth",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Stanisław I",
+    "party": "The 1733 Polish–Lithuanian royal election was an election to decide on the new candidate for the Polish–Lithuanian throne."
+   },
+   "knownAs": null,
+   "summary": "On February 1, 1733, the King of Poland and Grand Duke of Lithuania Augustus II the Strong died in Warsaw, leaving the Polish–Lithuanian Commonwealth without a monarch. Another royal election was necessary.",
+   "caveat": "A royal free election of the Polish–Lithuanian Commonwealth: the assembled nobility chose the king. Vast for its era, the franchise was still nobility-only — and later elections were swayed openly by foreign money and armies."
+  },
+  {
+   "id": "pres-1764",
+   "label": "1764",
+   "year": 1764,
+   "kind": "presidential",
+   "date": "1764",
+   "era": "commonwealth",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Stanisław II Augustus",
+    "party": "The 1764 Polish–Lithuanian royal election was an election to decide on the new candidate for the Polish–Lithuanian throne."
+   },
+   "knownAs": "The last royal election",
+   "summary": "The Seven Years' War, which ended in 1763, established a new pattern of political alliances in Europe. The Kingdom of Prussia, the Kingdom of Great Britain and the Russian Empire emerged as great powers, while the position of Austria, France, Spain, Sweden and the Ottoman Empire was weakened.",
+   "caveat": "A royal free election of the Polish–Lithuanian Commonwealth: the assembled nobility chose the king. Vast for its era, the franchise was still nobility-only — and later elections were swayed openly by foreign money and armies."
+  },
+  {
+   "id": "pres-1922",
+   "label": "1922",
+   "year": 1922,
+   "kind": "presidential",
+   "date": "9 December 1922",
+   "era": "second-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Maurycy Klemens Zamoyski",
+     "party": "Popular National Union",
+     "r1Votes": 222,
+     "r1Share": 41.04,
+     "r2Votes": 228,
+     "r2Share": 41.99
+    },
+    {
+     "name": "Stanisław Wojciechowski",
+     "party": "Polish People's Party \"Piast\"",
+     "r1Votes": 105,
+     "r1Share": 19.41,
+     "r2Votes": 153,
+     "r2Share": 28.18
+    },
+    {
+     "name": "Jan Baudouin de Courtenay",
+     "party": "National minorities",
+     "r1Votes": 103,
+     "r1Share": 19.04,
+     "r2Votes": 10,
+     "r2Share": 1.84
+    },
+    {
+     "name": "Gabriel Narutowicz",
+     "party": "Polish People's Party \"Wyzwolenie\"",
+     "r1Votes": 62,
+     "r1Share": 11.46,
+     "r2Votes": 151,
+     "r2Share": 27.81
+    },
+    {
+     "name": "Ignacy Daszyński",
+     "party": "Polish Socialist Party",
+     "r1Votes": 49,
+     "r1Share": 9.06,
+     "r2Votes": 1,
+     "r2Share": 0.18
+    }
+   ],
+   "presBefore": {
+    "name": "Maciej Rataj (acting)",
+    "party": "PSL"
+   },
+   "presAfter": {
+    "name": "Gabriel Narutowicz",
+    "party": "Independent"
+   },
+   "knownAs": "Narutowicz, elected and assassinated",
+   "summary": "Two indirect presidential elections were held in Poland in December 1922. In the first election on 9 December Gabriel Narutowicz was elected president, but he was assassinated five days later.",
+   "caveat": "An indirect vote of the National Assembly, not a popular election."
+  },
+  {
+   "id": "pres-1926",
+   "label": "1926",
+   "year": 1926,
+   "kind": "presidential",
+   "date": "31 May 1926",
+   "era": "second-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Józef Piłsudski",
+     "party": null,
+     "r1Votes": 292,
+     "r1Share": 60.21,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Adolf Bniński",
+     "party": null,
+     "r1Votes": 193,
+     "r1Share": 39.79,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Stanisław Wojciechowski",
+    "party": "PSL"
+   },
+   "presAfter": {
+    "name": "Maciej Rataj (acting)",
+    "party": "PSL"
+   },
+   "knownAs": "Piłsudski declines the prize",
+   "summary": "There were two candidates: Piłsudski and supported by the National Democracy, Christian Democracy and Piast Adolf Bniński, Voivode of Poznań.",
+   "caveat": "An indirect vote of the National Assembly, not a popular election."
+  },
+  {
+   "id": "pres-1933",
+   "label": "1933",
+   "year": 1933,
+   "kind": "presidential",
+   "date": "8 May 1933",
+   "era": "second-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Ignacy Mościcki",
+     "party": "BBWR",
+     "r1Votes": 332,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ignacy Mościcki",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Ignacy Mościcki",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in Poland on May 8, 1933. Professor Ignacy Mościcki was re-elected for a second seven-year term, having previously been elected to the position in 1926.",
+   "caveat": "An indirect vote of the National Assembly, not a popular election."
+  },
+  {
+   "id": "pres-1947",
+   "label": "1947",
+   "year": 1947,
+   "kind": "presidential",
+   "date": "5 February 1947",
+   "era": "second-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Bolesław Bierut",
+     "party": "BD–SP–PSL \"NW\"",
+     "r1Votes": 408,
+     "r1Share": 94.44,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Against",
+     "party": "24",
+     "r1Votes": 24,
+     "r1Share": 5.56,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Bolesław Bierut",
+    "party": "BD"
+   },
+   "knownAs": "The communist ratification",
+   "summary": "Presidential elections were held in Poland on February 5th 1947, the last presidential elections until 1989. The president had to be elected by the newly formed Legislative Sejm among presented candidates.",
+   "caveat": "Held by a legislature produced by a rigged election, under communist control."
+  },
+  {
+   "id": "pres-1989",
+   "label": "1989",
+   "year": 1989,
+   "kind": "presidential",
+   "date": "19 July 1989",
+   "era": "direct",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Wojciech Jaruzelski",
+     "party": "Polish United Workers' Party",
+     "r1Votes": 270,
+     "r1Share": 50.28,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Against",
+     "party": "233",
+     "r1Votes": 233,
+     "r1Share": 43.39,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Abstention",
+     "party": "34",
+     "r1Votes": 34,
+     "r1Share": 6.33,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Wojciech Jaruzelski",
+    "party": "PZPR"
+   },
+   "knownAs": "Jaruzelski by one vote",
+   "summary": "Indirect presidential elections were held in Poland on 19 July 1989. The elections were the first after the office of President of the Republic of Poland had been re-established after a period of Communist rule and were the last in which the President was elected by Parliament (joint houses of the Sejm and Senate).",
+   "caveat": "Elected by the round-table parliament, not by popular vote — by a single vote's margin."
+  },
+  {
+   "id": "pres-1990",
+   "label": "1990",
+   "year": 1990,
+   "kind": "presidential",
+   "date": "25 November and 9 December 1990",
+   "era": "direct",
+   "turnout": 60.63,
+   "turnout2": 53.4,
+   "candidates": [
+    {
+     "name": "Lech Wałęsa",
+     "party": "Solidarity (PC faction)",
+     "r1Votes": 6569889,
+     "r1Share": 39.96,
+     "r2Votes": 10622696,
+     "r2Share": 74.25
+    },
+    {
+     "name": "Stanisław Tymiński",
+     "party": "Independent",
+     "r1Votes": 3797605,
+     "r1Share": 23.1,
+     "r2Votes": 3683098,
+     "r2Share": 25.75
+    },
+    {
+     "name": "Tadeusz Mazowiecki",
+     "party": "Solidarity (ROAD and FPD factions)",
+     "r1Votes": 2973264,
+     "r1Share": 18.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Włodzimierz Cimoszewicz",
+     "party": "Social Democracy of the Republic of Poland",
+     "r1Votes": 1514025,
+     "r1Share": 9.21,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Roman Bartoszcze",
+     "party": "Polish People's Party",
+     "r1Votes": 1176175,
+     "r1Share": 7.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Leszek Moczulski",
+     "party": "Confederation of Independent Poland",
+     "r1Votes": 411516,
+     "r1Share": 2.5,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Wojciech Jaruzelski",
+    "party": "PZPR"
+   },
+   "presAfter": {
+    "name": "Lech Wałęsa",
+    "party": "KO \"S\""
+   },
+   "knownAs": "Wałęsa's election",
+   "summary": "Presidential elections were held in Poland on 25 November 1990, with a second round on 9 December. They were the first direct presidential elections in the history of Poland, and the first free presidential elections since the May Coup of 1926.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1995",
+   "label": "1995",
+   "year": 1995,
+   "kind": "presidential",
+   "date": "5 November and 19 November 1995",
+   "era": "direct",
+   "turnout": 64.7,
+   "turnout2": 68.23,
+   "candidates": [
+    {
+     "name": "Aleksander Kwaśniewski",
+     "party": "Democratic Left Alliance (SdRP)",
+     "r1Votes": 6275670,
+     "r1Share": 35.11,
+     "r2Votes": 9704439,
+     "r2Share": 51.72
+    },
+    {
+     "name": "Lech Wałęsa",
+     "party": "Independent",
+     "r1Votes": 5917328,
+     "r1Share": 33.11,
+     "r2Votes": 9058176,
+     "r2Share": 48.28
+    },
+    {
+     "name": "Jacek Kuroń",
+     "party": "Freedom Union",
+     "r1Votes": 1646946,
+     "r1Share": 9.22,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jan Olszewski",
+     "party": "Movement for the Republic",
+     "r1Votes": 1225453,
+     "r1Share": 6.86,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Waldemar Pawlak",
+     "party": "Polish People's Party",
+     "r1Votes": 770419,
+     "r1Share": 4.31,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Tadeusz Zieliński",
+     "party": "Labor Union",
+     "r1Votes": 631432,
+     "r1Share": 3.53,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hanna Gronkiewicz-Waltz",
+     "party": "Independent",
+     "r1Votes": 492628,
+     "r1Share": 2.76,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Janusz Korwin-Mikke",
+     "party": "Real Politics Union",
+     "r1Votes": 428969,
+     "r1Share": 2.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Andrzej Lepper",
+     "party": "Self-Defence of the Republic of Poland",
+     "r1Votes": 235797,
+     "r1Share": 1.32,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jan Pietrzak",
+     "party": "Independent",
+     "r1Votes": 201033,
+     "r1Share": 1.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Tadeusz Koźluk",
+     "party": "Independent",
+     "r1Votes": 27259,
+     "r1Share": 0.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kazimierz Piotrowicz",
+     "party": "Independent",
+     "r1Votes": 12591,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Leszek Bubel",
+     "party": "Independent",
+     "r1Votes": 6825,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Lech Wałęsa",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Aleksander Kwaśniewski",
+    "party": "SdRP"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in Poland on 5 November 1995, with a second round on 19 November. The leader of Social Democracy, Aleksander Kwaśniewski, and incumbent President Lech Wałęsa advanced to the second round.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2000",
+   "label": "2000",
+   "year": 2000,
+   "kind": "presidential",
+   "date": "8 October 2000",
+   "era": "direct",
+   "turnout": 61.08,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Aleksander Kwaśniewski",
+     "party": "Independent (SLD)",
+     "r1Votes": 9485224,
+     "r1Share": 53.9,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Andrzej Olechowski",
+     "party": "Independent (SKL)",
+     "r1Votes": 3044141,
+     "r1Share": 17.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marian Krzaklewski",
+     "party": "Solidarity Electoral Action",
+     "r1Votes": 2739621,
+     "r1Share": 15.57,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jarosław Kalinowski",
+     "party": "Polish People's Party",
+     "r1Votes": 1047949,
+     "r1Share": 5.95,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Andrzej Lepper",
+     "party": "Self-Defence of the Republic of Poland",
+     "r1Votes": 537570,
+     "r1Share": 3.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Janusz Korwin-Mikke",
+     "party": "Real Politics Union",
+     "r1Votes": 252499,
+     "r1Share": 1.43,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lech Wałęsa",
+     "party": "Christian Democracy of the Third Polish Republic",
+     "r1Votes": 178590,
+     "r1Share": 1.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jan Łopuszański",
+     "party": "Polish Agreement",
+     "r1Votes": 139682,
+     "r1Share": 0.79,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Dariusz Grabowski",
+     "party": "Coalition for Poland",
+     "r1Votes": 89002,
+     "r1Share": 0.51,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Piotr Ikonowicz",
+     "party": "Polish Socialist Party",
+     "r1Votes": 38672,
+     "r1Share": 0.22,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Tadeusz Wilecki",
+     "party": "National Party",
+     "r1Votes": 28805,
+     "r1Share": 0.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Bogdan Pawłowski",
+     "party": "Independent",
+     "r1Votes": 17164,
+     "r1Share": 0.1,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Aleksander Kwaśniewski",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Aleksander Kwaśniewski",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in Poland on 8 October 2000. Incumbent President Aleksander Kwaśniewski was easily re-elected in the first round with more than 50% of the vote, the only time a direct presidential election in Poland has not gone to a second round.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2005",
+   "label": "2005",
+   "year": 2005,
+   "kind": "presidential",
+   "date": "9 October and 23 October 2005",
+   "era": "direct",
+   "turnout": 49.72,
+   "turnout2": 50.98,
+   "candidates": [
+    {
+     "name": "Lech Kaczyński",
+     "party": "Law and Justice",
+     "r1Votes": 4947927,
+     "r1Share": 33.1,
+     "r2Votes": 8257468,
+     "r2Share": 54.04
+    },
+    {
+     "name": "Donald Tusk",
+     "party": "Civic Platform",
+     "r1Votes": 5429666,
+     "r1Share": 36.33,
+     "r2Votes": 7022319,
+     "r2Share": 45.96
+    },
+    {
+     "name": "Andrzej Lepper",
+     "party": "Self-Defense of the Republic of Poland",
+     "r1Votes": 2259094,
+     "r1Share": 15.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marek Borowski",
+     "party": "Social Democracy of Poland",
+     "r1Votes": 1544642,
+     "r1Share": 10.33,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jarosław Kalinowski",
+     "party": "Polish People's Party",
+     "r1Votes": 269316,
+     "r1Share": 1.8,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Janusz Korwin-Mikke",
+     "party": "Real Politics Union",
+     "r1Votes": 214116,
+     "r1Share": 1.43,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Henryka Bochniarz",
+     "party": "Democratic Party",
+     "r1Votes": 188598,
+     "r1Share": 1.26,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Liwiusz Ilasz",
+     "party": "Independent",
+     "r1Votes": 31691,
+     "r1Share": 0.21,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Stanisław Tymiński",
+     "party": "All-Polish Citizens Coalition",
+     "r1Votes": 23545,
+     "r1Share": 0.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Leszek Bubel",
+     "party": "Polish National Party",
+     "r1Votes": 18828,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jan Pyszko",
+     "party": "Organisation of the Polish Nation – Polish League",
+     "r1Votes": 10371,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Adam Słomka",
+     "party": "Polish Confederation – Dignity and Work",
+     "r1Votes": 8895,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Aleksander Kwaśniewski",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Lech Kaczyński",
+    "party": "PiS"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in Poland on 9 October and 23 October 2005. The outgoing President of Poland, Aleksander Kwaśniewski, had served the two five-year terms allowed under the constitution and was unable to stand for a third term.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2010",
+   "label": "2010",
+   "year": 2010,
+   "kind": "presidential",
+   "date": "20 June and 4 July 2010",
+   "era": "direct",
+   "turnout": 54.92,
+   "turnout2": 55.3,
+   "candidates": [
+    {
+     "name": "Bronisław Komorowski",
+     "party": "Civic Platform",
+     "r1Votes": 6981319,
+     "r1Share": 41.54,
+     "r2Votes": 8933887,
+     "r2Share": 53.01
+    },
+    {
+     "name": "Jarosław Kaczyński",
+     "party": "Law and Justice",
+     "r1Votes": 6128255,
+     "r1Share": 36.46,
+     "r2Votes": 7919134,
+     "r2Share": 46.99
+    },
+    {
+     "name": "Grzegorz Napieralski",
+     "party": "Democratic Left Alliance",
+     "r1Votes": 2299870,
+     "r1Share": 13.68,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Janusz Korwin-Mikke",
+     "party": "Liberty and Lawfulness",
+     "r1Votes": 416898,
+     "r1Share": 2.48,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Waldemar Pawlak",
+     "party": "Polish People's Party",
+     "r1Votes": 294273,
+     "r1Share": 1.75,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Andrzej Olechowski",
+     "party": "Independent (SD)",
+     "r1Votes": 242439,
+     "r1Share": 1.44,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Andrzej Lepper",
+     "party": "Self-Defense of the Republic of Poland",
+     "r1Votes": 214657,
+     "r1Share": 1.28,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marek Jurek",
+     "party": "Right Wing of the Republic",
+     "r1Votes": 177315,
+     "r1Share": 1.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Bogusław Ziętek",
+     "party": "Polish Labour Party - August 80",
+     "r1Votes": 29548,
+     "r1Share": 0.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kornel Morawiecki",
+     "party": "Independent (SW)",
+     "r1Votes": 21596,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Bronisław Komorowski (acting)",
+    "party": "PO"
+   },
+   "presAfter": {
+    "name": "Bronisław Komorowski",
+    "party": "PO"
+   },
+   "knownAs": "After Smolensk",
+   "summary": "Presidential elections were held in Poland on 20 June 2010. As no candidate received a majority of votes in the first round, a second round was held on 4 July 2010.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2015",
+   "label": "2015",
+   "year": 2015,
+   "kind": "presidential",
+   "date": "10 May and 24 May 2015",
+   "era": "direct",
+   "turnout": 48.96,
+   "turnout2": 55.34,
+   "candidates": [
+    {
+     "name": "Andrzej Duda",
+     "party": "Law and Justice",
+     "r1Votes": 5179092,
+     "r1Share": 34.76,
+     "r2Votes": 8630627,
+     "r2Share": 51.55
+    },
+    {
+     "name": "Bronisław Komorowski",
+     "party": "Independent (PO)",
+     "r1Votes": 5031060,
+     "r1Share": 33.77,
+     "r2Votes": 8112311,
+     "r2Share": 48.45
+    },
+    {
+     "name": "Paweł Kukiz",
+     "party": "Independent",
+     "r1Votes": 3099079,
+     "r1Share": 20.8,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Janusz Korwin-Mikke",
+     "party": "KORWiN",
+     "r1Votes": 486084,
+     "r1Share": 3.26,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Magdalena Ogórek",
+     "party": "Independent (SLD)",
+     "r1Votes": 353883,
+     "r1Share": 2.38,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Adam Jarubas",
+     "party": "Polish People's Party",
+     "r1Votes": 238761,
+     "r1Share": 1.6,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Janusz Palikot",
+     "party": "Your Movement",
+     "r1Votes": 211242,
+     "r1Share": 1.42,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Grzegorz Braun",
+     "party": "Independent (KWWGB „Szczęść Boże!”)",
+     "r1Votes": 124132,
+     "r1Share": 0.83,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marian Kowalski",
+     "party": "National Movement",
+     "r1Votes": 77630,
+     "r1Share": 0.52,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jacek Wilk",
+     "party": "Congress of the New Right",
+     "r1Votes": 68186,
+     "r1Share": 0.46,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Paweł Tanajno",
+     "party": "Direct Democracy",
+     "r1Votes": 29785,
+     "r1Share": 0.2,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Bronisław Komorowski",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Andrzej Duda",
+    "party": "PiS"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in Poland on 10 and 24 May 2015.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2020",
+   "label": "2020",
+   "year": 2020,
+   "kind": "presidential",
+   "date": "28 June and 12 July 2020",
+   "era": "direct",
+   "turnout": 64.51,
+   "turnout2": 68.18,
+   "candidates": [
+    {
+     "name": "Andrzej Duda",
+     "party": "Independent (PiS)",
+     "r1Votes": 8450513,
+     "r1Share": 43.5,
+     "r2Votes": 10440648,
+     "r2Share": 51.03
+    },
+    {
+     "name": "Rafał Trzaskowski",
+     "party": "Civic Coalition (PO)",
+     "r1Votes": 5917340,
+     "r1Share": 30.46,
+     "r2Votes": 10018263,
+     "r2Share": 48.97
+    },
+    {
+     "name": "Szymon Hołownia",
+     "party": "Independent",
+     "r1Votes": 2693397,
+     "r1Share": 13.87,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Krzysztof Bosak",
+     "party": "Confederation (RN)",
+     "r1Votes": 1317380,
+     "r1Share": 6.78,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Władysław Kosiniak-Kamysz",
+     "party": "Polish People's Party",
+     "r1Votes": 459365,
+     "r1Share": 2.36,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Robert Biedroń",
+     "party": "The Left (W)",
+     "r1Votes": 432129,
+     "r1Share": 2.22,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Stanisław Żółtek",
+     "party": "Congress of the New Right",
+     "r1Votes": 45419,
+     "r1Share": 0.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marek Jakubiak",
+     "party": "Federation for the Republic",
+     "r1Votes": 33652,
+     "r1Share": 0.17,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Paweł Tanajno",
+     "party": "Independent",
+     "r1Votes": 27909,
+     "r1Share": 0.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Waldemar Witkowski",
+     "party": "Labour Union",
+     "r1Votes": 27290,
+     "r1Share": 0.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mirosław Piotrowski",
+     "party": "Real Europe Movement",
+     "r1Votes": 21065,
+     "r1Share": 0.11,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Andrzej Duda",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Andrzej Duda",
+    "party": "Independent"
+   },
+   "knownAs": "The knife-edge runoff",
+   "summary": "Presidential elections were held in Poland on 28 June 2020. As no candidate received a majority of the vote, a second round was held on 12 July, in which incumbent president Andrzej Duda, running with the support of the incumbent government of the Law and Justice (PiS) party, faced off against Civic Platform vice-chairman and Mayor of Warsaw Rafał Trzaskowski.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2025",
+   "label": "2025",
+   "year": 2025,
+   "kind": "presidential",
+   "date": "18 May and 1 June 2025",
+   "era": "direct",
+   "turnout": 67.31,
+   "turnout2": 71.63,
+   "candidates": [
+    {
+     "name": "Karol Nawrocki",
+     "party": "Independent (PiS)",
+     "r1Votes": 5790804,
+     "r1Share": 29.54,
+     "r2Votes": 10606877,
+     "r2Share": 50.89
+    },
+    {
+     "name": "Rafał Trzaskowski",
+     "party": "Civic Coalition (PO)",
+     "r1Votes": 6147797,
+     "r1Share": 31.36,
+     "r2Votes": 10237286,
+     "r2Share": 49.11
+    },
+    {
+     "name": "Sławomir Mentzen",
+     "party": "Confederation (New Hope)",
+     "r1Votes": 2902448,
+     "r1Share": 14.81,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Grzegorz Braun",
+     "party": "Polish Crown",
+     "r1Votes": 1242917,
+     "r1Share": 6.34,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Szymon Hołownia",
+     "party": "Third Way (Poland 2050)",
+     "r1Votes": 978901,
+     "r1Share": 4.99,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Adrian Zandberg",
+     "party": "Partia Razem",
+     "r1Votes": 952832,
+     "r1Share": 4.86,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Magdalena Biejat",
+     "party": "Independent (The Left)",
+     "r1Votes": 829361,
+     "r1Share": 4.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Krzysztof Stanowski",
+     "party": "Independent",
+     "r1Votes": 243479,
+     "r1Share": 1.24,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Joanna Senyszyn",
+     "party": "Independent (SLD)",
+     "r1Votes": 214198,
+     "r1Share": 1.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marek Jakubiak",
+     "party": "Free Republicans",
+     "r1Votes": 150698,
+     "r1Share": 0.77,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Artur Bartoszewicz",
+     "party": "Independent",
+     "r1Votes": 95640,
+     "r1Share": 0.49,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Maciej Maciak",
+     "party": "Independent (RDiP)",
+     "r1Votes": 36371,
+     "r1Share": 0.19,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Marek Woch",
+     "party": "Bezpartyjni Samorządowcy",
+     "r1Votes": 18338,
+     "r1Share": 0.09,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Andrzej Duda",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Karol Nawrocki",
+    "party": "Independent"
+   },
+   "knownAs": "The nationalist upset",
+   "summary": "Presidential elections were held in Poland on 18 May 2025. As no candidate received a majority of the vote, a second round was held on 1 June 2025.",
+   "caveat": null
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1919",
+   "label": "1919",
+   "year": 1919,
+   "kind": "legislative",
+   "date": "26 January 1919",
+   "era": "second-republic",
+   "totalSeats": 394,
+   "majoritySeats": 198,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Popular National Union",
+     "leader": null,
+     "seats": 140,
+     "seatChange": null,
+     "votes": 1616157,
+     "share": 28.96,
+     "swing": null
+    },
+    {
+     "name": "Polish People's Party \"Wyzwolenie\"",
+     "leader": null,
+     "seats": 59,
+     "seatChange": null,
+     "votes": 839914,
+     "share": 15.05,
+     "swing": null
+    },
+    {
+     "name": "Polish People's Party \"Piast\"",
+     "leader": null,
+     "seats": 46,
+     "seatChange": null,
+     "votes": 232983,
+     "share": 4.17,
+     "swing": null
+    },
+    {
+     "name": "Polish Socialist Party",
+     "leader": null,
+     "seats": 35,
+     "seatChange": null,
+     "votes": 515062,
+     "share": 9.23,
+     "swing": null
+    },
+    {
+     "name": "Polish People's Union",
+     "leader": null,
+     "seats": 35,
+     "seatChange": null,
+     "votes": 212097,
+     "share": 3.8,
+     "swing": null
+    },
+    {
+     "name": "National Workers' Union",
+     "leader": null,
+     "seats": 32,
+     "seatChange": null,
+     "votes": 67285,
+     "share": 1.21,
+     "swing": null
+    },
+    {
+     "name": "Catholic People's Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 102292,
+     "share": 1.83,
+     "swing": null
+    },
+    {
+     "name": "Polish People's Party \"Left\"",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 197838,
+     "share": 3.54,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The constituent Sejm",
+   "summary": "Parliamentary elections were held in Poland on 26 January 1919, electing the first Sejm of the Second Polish Republic. The elections, based on universal suffrage and proportional representation, was the first free election in the country's history.",
+   "caveat": null,
+   "seatLeader": "Popular National Union"
+  },
+  {
+   "id": "1922",
+   "label": "1922",
+   "year": 1922,
+   "kind": "legislative",
+   "date": "12 November 1922 (Senat)",
+   "era": "second-republic",
+   "totalSeats": 444,
+   "majoritySeats": null,
+   "turnout": 67.9,
+   "parties": [
+    {
+     "name": "ChZJN",
+     "leader": "November 1920",
+     "seats": 163,
+     "seatChange": 23.0,
+     "votes": 2551582,
+     "share": 29.1,
+     "swing": null
+    },
+    {
+     "name": "Christian Union of National Unity",
+     "leader": null,
+     "seats": 163,
+     "seatChange": 23.0,
+     "votes": 2528256,
+     "share": 28.81,
+     "swing": null
+    },
+    {
+     "name": "Polish People's Party \"Piast\"",
+     "leader": null,
+     "seats": 70,
+     "seatChange": 24.0,
+     "votes": 1132962,
+     "share": 12.91,
+     "swing": null
+    },
+    {
+     "name": "Bloc of National Minorities",
+     "leader": null,
+     "seats": 66,
+     "seatChange": null,
+     "votes": 1397538,
+     "share": 15.93,
+     "swing": null
+    },
+    {
+     "name": "PSL \"Wyzwolenie\"",
+     "leader": "Stanisław Thugutt",
+     "seats": 49,
+     "seatChange": -10.0,
+     "votes": 963385,
+     "share": 11.0,
+     "swing": null
+    },
+    {
+     "name": "Polish People's Party \"Wyzwolenie\"",
+     "leader": null,
+     "seats": 49,
+     "seatChange": 10.0,
+     "votes": 959022,
+     "share": 10.93,
+     "swing": null
+    },
+    {
+     "name": "PPS",
+     "leader": "Ignacy Daszyński",
+     "seats": 41,
+     "seatChange": 6.0,
+     "votes": 906537,
+     "share": 10.3,
+     "swing": null
+    },
+    {
+     "name": "Polish Socialist Party",
+     "leader": null,
+     "seats": 41,
+     "seatChange": 6.0,
+     "votes": 894103,
+     "share": 10.19,
+     "swing": null
+    },
+    {
+     "name": "NPR",
+     "leader": "Jan Stanisław Jankowski",
+     "seats": 18,
+     "seatChange": -14.0,
+     "votes": 473676,
+     "share": 5.4,
+     "swing": null
+    },
+    {
+     "name": "National Workers' Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 14.0,
+     "votes": 472737,
+     "share": 5.39,
+     "swing": null
+    },
+    {
+     "name": "Union of Jewish National Parties in Lesser Poland",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 7.0,
+     "votes": 168593,
+     "share": 1.92,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Julian Nowak",
+    "party": "Party of the National Right"
+   },
+   "pmAfter": {
+    "name": "Władysław Sikorski",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Poland on 5 November 1922, with Senate elections held a week later on 12 November. The elections were governed by the March Constitution of Poland, and saw the Christian Union of National Unity coalition emerge as the largest bloc in the Sejm with 163 of the 444 seats.",
+   "caveat": null,
+   "seatLeader": "ChZJN"
+  },
+  {
+   "id": "1928",
+   "label": "1928",
+   "year": 1928,
+   "kind": "legislative",
+   "date": "11 March 1928 (Senat)",
+   "era": "second-republic",
+   "totalSeats": 444,
+   "majoritySeats": null,
+   "turnout": 78.5,
+   "parties": [
+    {
+     "name": "BBWR",
+     "leader": "Walery Sławek",
+     "seats": 125,
+     "seatChange": 125.0,
+     "votes": 2399438,
+     "share": 21.0,
+     "swing": null
+    },
+    {
+     "name": "Nonpartisan Bloc for Cooperation with the Government",
+     "leader": null,
+     "seats": 125,
+     "seatChange": null,
+     "votes": 2399032,
+     "share": 21.03,
+     "swing": null
+    },
+    {
+     "name": "Polish Socialist Party",
+     "leader": null,
+     "seats": 64,
+     "seatChange": 23.0,
+     "votes": 1481279,
+     "share": 12.98,
+     "swing": null
+    },
+    {
+     "name": "Bloc of National Minorities",
+     "leader": null,
+     "seats": 55,
+     "seatChange": 11.0,
+     "votes": 1438725,
+     "share": 12.61,
+     "swing": null
+    },
+    {
+     "name": "Polish People's Party \"Wyzwolenie\"",
+     "leader": null,
+     "seats": 41,
+     "seatChange": 8.0,
+     "votes": 834448,
+     "share": 7.31,
+     "swing": null
+    },
+    {
+     "name": "PSL \"Wyzwolenie\"",
+     "leader": "Maksymilian Malinowski",
+     "seats": 40,
+     "seatChange": -9.0,
+     "votes": 834710,
+     "share": 7.3,
+     "swing": null
+    },
+    {
+     "name": "Catholic-National Bloc",
+     "leader": null,
+     "seats": 38,
+     "seatChange": null,
+     "votes": 925774,
+     "share": 8.11,
+     "swing": null
+    },
+    {
+     "name": "BKN",
+     "leader": "Stanisław Kozicki",
+     "seats": 38,
+     "seatChange": -60.0,
+     "votes": 925570,
+     "share": 8.1,
+     "swing": null
+    },
+    {
+     "name": "Polish Catholic Bloc",
+     "leader": "Wincenty Witos",
+     "seats": 34,
+     "seatChange": 34.0,
+     "votes": 770891,
+     "share": 6.76,
+     "swing": null
+    },
+    {
+     "name": "Peasant Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": 618503,
+     "share": 5.42,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Józef Piłsudski",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Kazimierz Bartel",
+    "party": "BBWR"
+   },
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Poland on 4 March 1928, with Senate elections held a week later on 11 March. The Nonpartisan Bloc for Cooperation with the Government, a coalition of the Sanation faction - won the highest number of seats in the Sejm (125 out of 444) and 48 out of 111 in the Senate–in both cases, short of a majority.",
+   "caveat": null,
+   "seatLeader": "BBWR"
+  },
+  {
+   "id": "1930",
+   "label": "1930",
+   "year": 1930,
+   "kind": "legislative",
+   "date": "23 November 1930 (Senate)",
+   "era": "second-republic",
+   "totalSeats": 444,
+   "majoritySeats": 56,
+   "turnout": 63.43,
+   "parties": [
+    {
+     "name": "BBWR",
+     "leader": "Walery Sławek",
+     "seats": 249,
+     "seatChange": 124.0,
+     "votes": 5292725,
+     "share": 46.7,
+     "swing": 25.7
+    },
+    {
+     "name": "Nonpartisan Bloc for Cooperation with the Government",
+     "leader": null,
+     "seats": 77,
+     "seatChange": 29.0,
+     "votes": 3715273,
+     "share": 54.66,
+     "swing": null
+    },
+    {
+     "name": "UBBW",
+     "leader": "Dmytro Levytsky",
+     "seats": 21,
+     "seatChange": null,
+     "votes": 725984,
+     "share": 6.4,
+     "swing": null
+    },
+    {
+     "name": "PBK",
+     "leader": "Antoni Ponikowski",
+     "seats": 14,
+     "seatChange": null,
+     "votes": 430074,
+     "share": 3.8,
+     "swing": null
+    },
+    {
+     "name": "Centrolew",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": 882636,
+     "share": 12.99,
+     "swing": null
+    },
+    {
+     "name": "National List",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 3.0,
+     "votes": 882215,
+     "share": 12.98,
+     "swing": null
+    },
+    {
+     "name": "NBW",
+     "leader": "Eugen Naumann",
+     "seats": 5,
+     "seatChange": null,
+     "votes": 309713,
+     "share": 2.7,
+     "swing": null
+    },
+    {
+     "name": "Ukrainian and Belarusian Electoral Bloc",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 2.0,
+     "votes": 434042,
+     "share": 6.39,
+     "swing": null
+    },
+    {
+     "name": "German Electoral Bloc",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 18.0,
+     "votes": 236471,
+     "share": 3.48,
+     "swing": null
+    },
+    {
+     "name": "People's Catholic Bloc",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 4.0,
+     "votes": 160444,
+     "share": 2.36,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The Brest election",
+   "summary": "Parliamentary elections were held in Poland on 16 November 1930, with Senate elections held a week later on 23 November. In what became known as the Brest elections (Polish: Wybory brzeskie), the pro-Sanation Nonpartisan Bloc for Cooperation with the Government took 47% of the vote and 249 of the 444 seats in Sejm and 77 of the 111 seats in the Senate.",
+   "caveat": "Held with opposition leaders imprisoned in the Brest fortress and the state apparatus mobilised for the government list.",
+   "seatLeader": "BBWR"
+  },
+  {
+   "id": "1935",
+   "label": "1935",
+   "year": 1935,
+   "kind": "legislative",
+   "date": "15 September 1935",
+   "era": "second-republic",
+   "totalSeats": 208,
+   "majoritySeats": null,
+   "turnout": 45.95,
+   "parties": [
+    {
+     "name": "Nonpartisan Bloc for Cooperation with the Government",
+     "leader": "Walery Sławek",
+     "seats": 181,
+     "seatChange": 68.0,
+     "votes": 6118695,
+     "share": 86.61,
+     "swing": null
+    },
+    {
+     "name": "Bloc of National Minorities",
+     "leader": null,
+     "seats": 25,
+     "seatChange": 8.0,
+     "votes": 946305,
+     "share": 13.39,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Walery Sławek",
+    "party": "BBWR"
+   },
+   "pmAfter": {
+    "name": "Marian Zyndram-Kościałkowski",
+    "party": "BBWR"
+   },
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Poland on 8 September 1935, with Senate elections held a week later on 15 September. They were held under the April Constitution, drawn up earlier in 1935 by the Sanation movement, which had changed the electoral system to one more in its favor.",
+   "caveat": "Held under the sanacja regime's 1935 constitution and boycotted by the main opposition parties.",
+   "seatLeader": "Nonpartisan Bloc for Cooperation with the Government"
+  },
+  {
+   "id": "1938",
+   "label": "1938",
+   "year": 1938,
+   "kind": "legislative",
+   "date": "6 November 1938",
+   "era": "second-republic",
+   "totalSeats": 208,
+   "majoritySeats": null,
+   "turnout": 67.09,
+   "parties": [
+    {
+     "name": "OZN",
+     "leader": "Adam Koc",
+     "seats": 164,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Felicjan Sławoj Składkowski",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Felicjan Sławoj Składkowski",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Poland on 6 November 1938, with Senate elections held a week later on 13 November. They were the last elections in the Second Polish Republic.",
+   "caveat": "Held under the sanacja regime's 1935 constitution and boycotted by the main opposition parties.",
+   "seatLeader": "OZN"
+  },
+  {
+   "id": "1947",
+   "label": "1947",
+   "year": 1947,
+   "kind": "legislative",
+   "date": "17 January 1947",
+   "era": "communist",
+   "totalSeats": 444,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Democratic Bloc",
+     "leader": "Bolesław Bierut",
+     "seats": 394,
+     "seatChange": null,
+     "votes": 9003682,
+     "share": 80.07,
+     "swing": null
+    },
+    {
+     "name": "PSL",
+     "leader": "Stanisław Mikołajczyk",
+     "seats": 28,
+     "seatChange": null,
+     "votes": 1154847,
+     "share": 10.27,
+     "swing": null
+    },
+    {
+     "name": "SP",
+     "leader": "Tadeusz Michejda",
+     "seats": 12,
+     "seatChange": null,
+     "votes": 530979,
+     "share": 4.72,
+     "swing": null
+    },
+    {
+     "name": "PSL \"NW\"",
+     "leader": "Bronisław Drzewiecki",
+     "seats": 7,
+     "seatChange": null,
+     "votes": 397754,
+     "share": 3.54,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The rigged election",
+   "summary": "Parliamentary elections were held in Poland on 19 January 1947, the first since World War II.",
+   "caveat": "Rigged outright: the count was falsified and the opposition terrorised. Recorded here as history, not as an election.",
+   "seatLeader": "Democratic Bloc"
+  },
+  {
+   "id": "1952",
+   "label": "1952",
+   "year": 1952,
+   "kind": "legislative",
+   "date": "26 October 1952",
+   "era": "communist",
+   "totalSeats": 425,
+   "majoritySeats": null,
+   "turnout": 95.03,
+   "parties": [
+    {
+     "name": "PZPR",
+     "leader": "Bolesław Bierut",
+     "seats": 273,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ZSL",
+     "leader": "Józef Niećko",
+     "seats": 90,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "SD",
+     "leader": "Wacław Barcikowski",
+     "seats": 25,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Poland on 26 October 1952. They were the first elections to the Sejm, the parliament of the Polish People's Republic.",
+   "caveat": "A single-list vote of the communist People's Republic, with no opposition permitted. Recorded here as history, not as an election.",
+   "seatLeader": "PZPR"
+  },
+  {
+   "id": "1957",
+   "label": "1957",
+   "year": 1957,
+   "kind": "legislative",
+   "date": "January 20, 1957",
+   "era": "communist",
+   "totalSeats": 459,
+   "majoritySeats": null,
+   "turnout": 94.14,
+   "parties": [
+    {
+     "name": "PZPR",
+     "leader": "Władysław Gomułka",
+     "seats": 459,
+     "seatChange": 34.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Poland on 20 January 1957. They were the second election to the Sejm – the unicameral parliament of the People's Republic of Poland, and the third ever in the history of Communist Poland.",
+   "caveat": "A single-list vote of the communist People's Republic, with no opposition permitted. Recorded here as history, not as an election.",
+   "seatLeader": "PZPR"
+  },
+  {
+   "id": "1961",
+   "label": "1961",
+   "year": 1961,
+   "kind": "legislative",
+   "date": "16 April 1961",
+   "era": "communist",
+   "totalSeats": 460,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "PZPR",
+     "leader": "Władysław Gomułka",
+     "seats": 460,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 1961 elections followed the liberalized rules prepared for those in 1957, but compared to the situation five years ago, the Polish society was much more apathetic and disappointed with the government.",
+   "caveat": "A single-list vote of the communist People's Republic, with no opposition permitted. Recorded here as history, not as an election.",
+   "seatLeader": "PZPR"
+  },
+  {
+   "id": "1965",
+   "label": "1965",
+   "year": 1965,
+   "kind": "legislative",
+   "date": "30 June 1965",
+   "era": "communist",
+   "totalSeats": 460,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "PZPR",
+     "leader": "Władysław Gomułka",
+     "seats": 460,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Poland on 30 May 1965. They were the fourth elections to the Sejm of the People's Republic of Poland, and fifth in Communist Poland.",
+   "caveat": "A single-list vote of the communist People's Republic, with no opposition permitted. Recorded here as history, not as an election.",
+   "seatLeader": "PZPR"
+  },
+  {
+   "id": "1969",
+   "label": "1969",
+   "year": 1969,
+   "kind": "legislative",
+   "date": "1 June 1969",
+   "era": "communist",
+   "totalSeats": 460,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "PZPR",
+     "leader": "Władysław Gomułka",
+     "seats": 255,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Poland on 1 June 1969. The results, like with the other elections in communist Poland, were controlled by the communist government.",
+   "caveat": "A single-list vote of the communist People's Republic, with no opposition permitted. Recorded here as history, not as an election.",
+   "seatLeader": "PZPR"
+  },
+  {
+   "id": "1972",
+   "label": "1972",
+   "year": 1972,
+   "kind": "legislative",
+   "date": "19 March 1972",
+   "era": "communist",
+   "totalSeats": 460,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "PZPR",
+     "leader": "Edward Gierek",
+     "seats": 255,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Poland on 19 March 1972. The results, like with the other elections in communist Poland, were controlled by the communist government.",
+   "caveat": "A single-list vote of the communist People's Republic, with no opposition permitted. Recorded here as history, not as an election.",
+   "seatLeader": "PZPR"
+  },
+  {
+   "id": "1976",
+   "label": "1976",
+   "year": 1976,
+   "kind": "legislative",
+   "date": "21 March 1976",
+   "era": "communist",
+   "totalSeats": 460,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "PZPR",
+     "leader": "Edward Gierek",
+     "seats": 261,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "A single-list vote of the communist People's Republic, with no opposition permitted. Recorded here as history, not as an election.",
+   "seatLeader": "PZPR"
+  },
+  {
+   "id": "1980",
+   "label": "1980",
+   "year": 1980,
+   "kind": "legislative",
+   "date": "23 March 1980",
+   "era": "communist",
+   "totalSeats": 460,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "PZPR",
+     "leader": "Edward Gierek",
+     "seats": 261,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Poland on 23 March 1980. The results, like with the other elections in communist Poland, were controlled by the communist government.",
+   "caveat": "A single-list vote of the communist People's Republic, with no opposition permitted. Recorded here as history, not as an election.",
+   "seatLeader": "PZPR"
+  },
+  {
+   "id": "1985",
+   "label": "1985",
+   "year": 1985,
+   "kind": "legislative",
+   "date": "13 October 1985",
+   "era": "communist",
+   "totalSeats": 460,
+   "majoritySeats": 231,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "PZPR",
+     "leader": "Wojciech Jaruzelski",
+     "seats": 245,
+     "seatChange": -16.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Poland on 13 October 1985.",
+   "caveat": "A single-list vote of the communist People's Republic, with no opposition permitted. Recorded here as history, not as an election.",
+   "seatLeader": "PZPR"
+  },
+  {
+   "id": "1989",
+   "label": "1989",
+   "year": 1989,
+   "kind": "legislative",
+   "date": "4 June and 18 June 1989",
+   "era": "transition",
+   "totalSeats": 460,
+   "majoritySeats": 51,
+   "turnout": 62.7,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The round-table election",
+   "summary": "Parliamentary elections were held in Poland on 4 June 1989 to elect members of the Sejm and the recreated Senate, with a second round on 18 June.",
+   "caveat": "Semi-free by agreement: the opposition could contest all Senate seats but only a third of the Sejm. Within those limits, Solidarity swept everything.",
+   "seatLeader": null
+  },
+  {
+   "id": "1991",
+   "label": "1991",
+   "year": 1991,
+   "kind": "legislative",
+   "date": "27 October 1991",
+   "era": "third-republic",
+   "totalSeats": 460,
+   "majoritySeats": 51,
+   "turnout": 43.2,
+   "parties": [
+    {
+     "name": "Democratic Union",
+     "leader": null,
+     "seats": 62,
+     "seatChange": null,
+     "votes": 1382051,
+     "share": 12.32,
+     "swing": null
+    },
+    {
+     "name": "Democratic Left Alliance",
+     "leader": null,
+     "seats": 60,
+     "seatChange": null,
+     "votes": 1344820,
+     "share": 11.99,
+     "swing": null
+    },
+    {
+     "name": "Catholic Electoral Action",
+     "leader": null,
+     "seats": 49,
+     "seatChange": null,
+     "votes": 980304,
+     "share": 8.74,
+     "swing": null
+    },
+    {
+     "name": "Polish People's Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": null,
+     "votes": 972952,
+     "share": 8.67,
+     "swing": null
+    },
+    {
+     "name": "Confederation of Independent Poland",
+     "leader": null,
+     "seats": 46,
+     "seatChange": null,
+     "votes": 841738,
+     "share": 7.5,
+     "swing": null
+    },
+    {
+     "name": "Centre Civic Alliance",
+     "leader": null,
+     "seats": 44,
+     "seatChange": null,
+     "votes": 977344,
+     "share": 8.71,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Congress",
+     "leader": null,
+     "seats": 37,
+     "seatChange": null,
+     "votes": 839978,
+     "share": 7.49,
+     "swing": null
+    },
+    {
+     "name": "Peasants' Agreement",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": 613626,
+     "share": 5.47,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The first fully free Sejm",
+   "summary": "Parliamentary elections were held in Poland on 27 October 1991 to elect deputies to the First Term Sejm and the Senate, the two houses of the National Assembly. The 1991 election was notable on several counts.",
+   "caveat": null,
+   "seatLeader": "Democratic Union"
+  },
+  {
+   "id": "1993",
+   "label": "1993",
+   "year": 1993,
+   "kind": "legislative",
+   "date": "19 September 1993",
+   "era": "third-republic",
+   "totalSeats": 460,
+   "majoritySeats": 51,
+   "turnout": 52.1,
+   "parties": [
+    {
+     "name": "SLD",
+     "leader": "Aleksander Kwaśniewski",
+     "seats": 171,
+     "seatChange": 111.0,
+     "votes": 2815169,
+     "share": 20.4,
+     "swing": 8.4
+    },
+    {
+     "name": "Democratic Left Alliance",
+     "leader": null,
+     "seats": 37,
+     "seatChange": 33.0,
+     "votes": 4993061,
+     "share": 18.31,
+     "swing": null
+    },
+    {
+     "name": "Polish People's Party",
+     "leader": null,
+     "seats": 36,
+     "seatChange": 29.0,
+     "votes": 3238999,
+     "share": 11.88,
+     "swing": null
+    },
+    {
+     "name": "KPN",
+     "leader": "Leszek Moczulski",
+     "seats": 22,
+     "seatChange": -24.0,
+     "votes": 795487,
+     "share": 5.8,
+     "swing": -1.7
+    },
+    {
+     "name": "BBWR",
+     "leader": "Andrzej Gąsienica-Makowski",
+     "seats": 16,
+     "seatChange": null,
+     "votes": 746653,
+     "share": 5.4,
+     "swing": null
+    },
+    {
+     "name": "Solidarity",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 2.0,
+     "votes": 2683085,
+     "share": 9.84,
+     "swing": null
+    },
+    {
+     "name": "Democratic Union",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 17.0,
+     "votes": 2913773,
+     "share": 10.69,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 1198999,
+     "share": 4.4,
+     "swing": null
+    },
+    {
+     "name": "Nonpartisan Bloc for Support of Reforms",
+     "leader": "Ryszard Bugaj",
+     "seats": 2,
+     "seatChange": null,
+     "votes": 2193970,
+     "share": 8.05,
+     "swing": null
+    },
+    {
+     "name": "Labour Union",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 1121744,
+     "share": 4.11,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Congress",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 5.0,
+     "votes": 1088769,
+     "share": 3.99,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Poland on 19 September 1993. All 460 members of the Sejm and 100 senators of the Senate were elected.",
+   "caveat": null,
+   "seatLeader": "SLD"
+  },
+  {
+   "id": "1997",
+   "label": "1997",
+   "year": 1997,
+   "kind": "legislative",
+   "date": "21 September 1997",
+   "era": "third-republic",
+   "totalSeats": 460,
+   "majoritySeats": 51,
+   "turnout": 47.83,
+   "parties": [
+    {
+     "name": "Solidarity Electoral Action",
+     "leader": "Marian Krzaklewski",
+     "seats": 201,
+     "seatChange": 163.0,
+     "votes": 4427373,
+     "share": 33.83,
+     "swing": 4.6
+    },
+    {
+     "name": "Democratic Left Alliance",
+     "leader": null,
+     "seats": 164,
+     "seatChange": 7.0,
+     "votes": 3551224,
+     "share": 27.13,
+     "swing": null
+    },
+    {
+     "name": "Freedom Union",
+     "leader": null,
+     "seats": 60,
+     "seatChange": 14.0,
+     "votes": 1749518,
+     "share": 13.37,
+     "swing": null
+    },
+    {
+     "name": "Polish People's Party",
+     "leader": "Waldemar Pawlak",
+     "seats": 27,
+     "seatChange": 105.0,
+     "votes": 956184,
+     "share": 7.31,
+     "swing": -8.1
+    },
+    {
+     "name": "Movement for Reconstruction of Poland",
+     "leader": "Jan Olszewski",
+     "seats": 6,
+     "seatChange": 6.0,
+     "votes": 727072,
+     "share": 5.56,
+     "swing": 2.9
+    },
+    {
+     "name": "German Minority Electoral Committee",
+     "leader": "Henryk Kroll",
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": 51027,
+     "share": 0.39,
+     "swing": -0.3
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Poland on 21 September 1997. All 460 members of the Sejm and 100 senators of the Senate were elected.",
+   "caveat": null,
+   "seatLeader": "Solidarity Electoral Action"
+  },
+  {
+   "id": "2001",
+   "label": "2001",
+   "year": 2001,
+   "kind": "legislative",
+   "date": "23 September 2001",
+   "era": "third-republic",
+   "totalSeats": 460,
+   "majoritySeats": 51,
+   "turnout": 46.15,
+   "parties": [
+    {
+     "name": "Democratic Left Alliance – Labour Union",
+     "leader": "Leszek Miller",
+     "seats": 216,
+     "seatChange": 52.0,
+     "votes": 5342519,
+     "share": 41.04,
+     "swing": 6.9
+    },
+    {
+     "name": "Civic Platform",
+     "leader": null,
+     "seats": 65,
+     "seatChange": null,
+     "votes": 1651099,
+     "share": 12.68,
+     "swing": null
+    },
+    {
+     "name": "Self-Defence of the Republic of Poland",
+     "leader": null,
+     "seats": 53,
+     "seatChange": 53.0,
+     "votes": 1327624,
+     "share": 10.2,
+     "swing": null
+    },
+    {
+     "name": "Law and Justice",
+     "leader": "Lech Kaczyński",
+     "seats": 44,
+     "seatChange": null,
+     "votes": 1236787,
+     "share": 9.5,
+     "swing": null
+    },
+    {
+     "name": "Polish People's Party",
+     "leader": "Jarosław Kalinowski",
+     "seats": 42,
+     "seatChange": 15.0,
+     "votes": 1168659,
+     "share": 8.98,
+     "swing": 1.7
+    },
+    {
+     "name": "League of Polish Families",
+     "leader": "Marek Kotlinowski",
+     "seats": 38,
+     "seatChange": 38.0,
+     "votes": 1025148,
+     "share": 7.87,
+     "swing": null
+    },
+    {
+     "name": "German Minority",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": 47230,
+     "share": 0.36,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Poland on 23 September 2001. All 460 members of the Sejm and 100 senators of the Senate were elected.",
+   "caveat": null,
+   "seatLeader": "Democratic Left Alliance – Labour Union"
+  },
+  {
+   "id": "2005",
+   "label": "2005",
+   "year": 2005,
+   "kind": "legislative",
+   "date": "25 September 2005",
+   "era": "third-republic",
+   "totalSeats": 460,
+   "majoritySeats": 51,
+   "turnout": 40.49,
+   "parties": [
+    {
+     "name": "Law and Justice",
+     "leader": "Jarosław Kaczyński",
+     "seats": 155,
+     "seatChange": 111.0,
+     "votes": 3185714,
+     "share": 26.99,
+     "swing": 17.5
+    },
+    {
+     "name": "Civic Platform",
+     "leader": null,
+     "seats": 133,
+     "seatChange": 68.0,
+     "votes": 2849259,
+     "share": 24.14,
+     "swing": null
+    },
+    {
+     "name": "Self-Defence of the Republic of Poland",
+     "leader": null,
+     "seats": 56,
+     "seatChange": 3.0,
+     "votes": 1347355,
+     "share": 11.41,
+     "swing": null
+    },
+    {
+     "name": "Democratic Left Alliance",
+     "leader": "Wojciech Olejniczak",
+     "seats": 55,
+     "seatChange": 161.0,
+     "votes": 1335257,
+     "share": 11.31,
+     "swing": -29.7
+    },
+    {
+     "name": "League of Polish Families",
+     "leader": "Roman Giertych",
+     "seats": 34,
+     "seatChange": 4.0,
+     "votes": 940762,
+     "share": 7.97,
+     "swing": 0.1
+    },
+    {
+     "name": "Polish People's Party",
+     "leader": "Waldemar Pawlak",
+     "seats": 25,
+     "seatChange": 17.0,
+     "votes": 821656,
+     "share": 6.96,
+     "swing": -2.0
+    },
+    {
+     "name": "German Minority Electoral Committee",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": 34469,
+     "share": 0.29,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Poland on 25 September 2005. All 460 members of the Sejm and 100 senators of the Senate were elected.",
+   "caveat": null,
+   "seatLeader": "Law and Justice"
+  },
+  {
+   "id": "2007",
+   "label": "2007",
+   "year": 2007,
+   "kind": "legislative",
+   "date": "21 October 2007",
+   "era": "third-republic",
+   "totalSeats": 460,
+   "majoritySeats": 51,
+   "turnout": 53.81,
+   "parties": [
+    {
+     "name": "Civic Platform",
+     "leader": null,
+     "seats": 209,
+     "seatChange": 76.0,
+     "votes": 6701010,
+     "share": 41.51,
+     "swing": null
+    },
+    {
+     "name": "Law and Justice",
+     "leader": null,
+     "seats": 166,
+     "seatChange": 11.0,
+     "votes": 5183477,
+     "share": 32.11,
+     "swing": null
+    },
+    {
+     "name": "Left and Democrats",
+     "leader": null,
+     "seats": 53,
+     "seatChange": 2.0,
+     "votes": 2122981,
+     "share": 13.15,
+     "swing": null
+    },
+    {
+     "name": "Polish People's Party",
+     "leader": "Donald Tusk",
+     "seats": 31,
+     "seatChange": 6.0,
+     "votes": 1437638,
+     "share": 8.91,
+     "swing": 17.4
+    },
+    {
+     "name": "German Minority Electoral Committee",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": 32462,
+     "share": 0.2,
+     "swing": null
+    },
+    {
+     "name": "KWMN",
+     "leader": "Henryk Kroll",
+     "seats": 1,
+     "seatChange": -1.0,
+     "votes": 28014,
+     "share": 0.2,
+     "swing": -0.1
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Poland on 21 October 2007. All 460 members of the Sejm and 100 senators of the Senate were elected.",
+   "caveat": null,
+   "seatLeader": "Civic Platform"
+  },
+  {
+   "id": "2011",
+   "label": "2011",
+   "year": 2011,
+   "kind": "legislative",
+   "date": "9 October 2011",
+   "era": "third-republic",
+   "totalSeats": 460,
+   "majoritySeats": 51,
+   "turnout": 48.92,
+   "parties": [
+    {
+     "name": "Civic Platform",
+     "leader": null,
+     "seats": 207,
+     "seatChange": 2.0,
+     "votes": 5629773,
+     "share": 39.18,
+     "swing": null
+    },
+    {
+     "name": "Law and Justice",
+     "leader": null,
+     "seats": 157,
+     "seatChange": 9.0,
+     "votes": 4295016,
+     "share": 29.89,
+     "swing": null
+    },
+    {
+     "name": "Palikot's Movement",
+     "leader": null,
+     "seats": 40,
+     "seatChange": null,
+     "votes": 1439490,
+     "share": 10.02,
+     "swing": null
+    },
+    {
+     "name": "Polish People's Party",
+     "leader": "Donald Tusk",
+     "seats": 28,
+     "seatChange": 3.0,
+     "votes": 1201628,
+     "share": 8.36,
+     "swing": -2.3
+    },
+    {
+     "name": "Democratic Left Alliance",
+     "leader": "Grzegorz Napieralski",
+     "seats": 27,
+     "seatChange": 26.0,
+     "votes": 1184303,
+     "share": 8.24,
+     "swing": -5.0
+    },
+    {
+     "name": "German Minority Electoral Committee",
+     "leader": "Ryszard Galla",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 28014,
+     "share": 0.19,
+     "swing": 0.0
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Poland on 9 October 2011. All 460 members of the Sejm and 100 senators of the Senate were elected.",
+   "caveat": null,
+   "seatLeader": "Civic Platform"
+  },
+  {
+   "id": "2015",
+   "label": "2015",
+   "year": 2015,
+   "kind": "legislative",
+   "date": "25 October 2015",
+   "era": "third-republic",
+   "totalSeats": 460,
+   "majoritySeats": 51,
+   "turnout": 50.92,
+   "parties": [
+    {
+     "name": "United Right",
+     "leader": "Beata Szydło",
+     "seats": 235,
+     "seatChange": 78.0,
+     "votes": 5711687,
+     "share": 37.58,
+     "swing": 7.69
+    },
+    {
+     "name": "Civic Platform",
+     "leader": null,
+     "seats": 138,
+     "seatChange": 69.0,
+     "votes": 3661474,
+     "share": 24.09,
+     "swing": null
+    },
+    {
+     "name": "Kukiz'15",
+     "leader": null,
+     "seats": 42,
+     "seatChange": null,
+     "votes": 1339094,
+     "share": 8.81,
+     "swing": null
+    },
+    {
+     "name": "Modern",
+     "leader": "Ryszard Petru",
+     "seats": 28,
+     "seatChange": null,
+     "votes": 1155370,
+     "share": 7.6,
+     "swing": null
+    },
+    {
+     "name": "Polish People's Party",
+     "leader": "Janusz Piechociński",
+     "seats": 16,
+     "seatChange": 12.0,
+     "votes": 779875,
+     "share": 5.13,
+     "swing": -3.23
+    },
+    {
+     "name": "German Minority Electoral Committee",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 27530,
+     "share": 0.18,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The PiS majority",
+   "summary": "Parliamentary elections were held in Poland on 25 October 2015. All 460 members of the Sejm and 100 senators of the Senate were elected.",
+   "caveat": null,
+   "seatLeader": "United Right"
+  },
+  {
+   "id": "2019",
+   "label": "2019",
+   "year": 2019,
+   "kind": "legislative",
+   "date": "13 October 2019",
+   "era": "third-republic",
+   "totalSeats": 460,
+   "majoritySeats": 51,
+   "turnout": 61.74,
+   "parties": [
+    {
+     "name": "Law and Justice",
+     "leader": "Mateusz Morawiecki",
+     "seats": 235,
+     "seatChange": 0.0,
+     "votes": 8051935,
+     "share": 43.59,
+     "swing": 6.0
+    },
+    {
+     "name": "Civic Coalition",
+     "leader": null,
+     "seats": 134,
+     "seatChange": -32.0,
+     "votes": 5060355,
+     "share": 27.4,
+     "swing": null
+    },
+    {
+     "name": "The Left",
+     "leader": null,
+     "seats": 49,
+     "seatChange": 49.0,
+     "votes": 2319946,
+     "share": 12.56,
+     "swing": null
+    },
+    {
+     "name": "Polish Coalition",
+     "leader": "Władysław Kosiniak-Kamysz",
+     "seats": 30,
+     "seatChange": -28.0,
+     "votes": 1578523,
+     "share": 8.55,
+     "swing": -5.4
+    },
+    {
+     "name": "Confederation Liberty and Independence",
+     "leader": "Janusz Korwin-Mikke",
+     "seats": 11,
+     "seatChange": 8.0,
+     "votes": 1256953,
+     "share": 6.81,
+     "swing": 2.0
+    },
+    {
+     "name": "German Minority",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 32094,
+     "share": 0.17,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Poland on 13 October 2019. All 460 members of the Sejm and 100 senators of the Senate were elected.",
+   "caveat": null,
+   "seatLeader": "Law and Justice"
+  },
+  {
+   "id": "2023",
+   "label": "2023",
+   "year": 2023,
+   "kind": "legislative",
+   "date": "15 October 2023",
+   "era": "third-republic",
+   "totalSeats": 460,
+   "majoritySeats": 51,
+   "turnout": 74.31,
+   "parties": [
+    {
+     "name": "United Right",
+     "leader": "Mateusz Morawiecki",
+     "seats": 194,
+     "seatChange": -41.0,
+     "votes": 7640854,
+     "share": 35.38,
+     "swing": -8.2
+    },
+    {
+     "name": "Civic Coalition",
+     "leader": null,
+     "seats": 157,
+     "seatChange": 23.0,
+     "votes": 6629402,
+     "share": 30.7,
+     "swing": null
+    },
+    {
+     "name": "Third Way",
+     "leader": null,
+     "seats": 65,
+     "seatChange": 35.0,
+     "votes": 3110670,
+     "share": 14.4,
+     "swing": null
+    },
+    {
+     "name": "The Left",
+     "leader": "Włodzimierz Czarzasty",
+     "seats": 26,
+     "seatChange": -23.0,
+     "votes": 1859018,
+     "share": 8.61,
+     "swing": -4.0
+    },
+    {
+     "name": "Confederation Liberty and Independence",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 7.0,
+     "votes": 1547364,
+     "share": 7.16,
+     "swing": 0.4
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "Record turnout changes the government",
+   "summary": "In the previous 2019 Polish parliamentary election, the ruling right-wing Law and Justice Party (PiS) had held onto its majority in the Sejm with Prime Minister Mateusz Morawiecki forming a second government. The PiS sought to win a third term which would be unprecedented in Polish history.",
+   "caveat": null,
+   "seatLeader": "United Right"
+  }
+ ]
+}

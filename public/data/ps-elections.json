@@ -1,0 +1,325 @@
+{
+ "meta": {
+  "title": "Palestinian elections",
+  "sources": [
+   "Wikipedia: the 1923 Legislative Council election, the 1996 general election, the 2005 presidential election, and the 2006 and 2026 legislative election articles (results, infoboxes and leads)",
+   "CEC figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "presEras": [
+  {
+   "key": "authority",
+   "label": "Presidents of the Authority",
+   "span": "1996–2005",
+   "blurb": "Both presidential elections the Authority has held were won by Fatah's founder-generation: Yasser Arafat against a single token challenger in 1996, and Mahmoud Abbas two months after Arafat's death in 2005, with Hamas boycotting both. Abbas's four-year term has been extended without election ever since — he entered his third decade in office in 2025."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "mandate",
+   "label": "Under the British Mandate",
+   "span": "1923",
+   "blurb": "The Mandate's one attempt at an elected Legislative Council collapsed before it began: the Arab majority boycotted a body designed with a built-in official majority, so few electors were returned that the results were annulled, and Palestine was governed without an elected legislature for the rest of the Mandate."
+  },
+  {
+   "key": "authority",
+   "label": "The Palestinian Authority",
+   "span": "1996–2006",
+   "blurb": "The Oslo Accords created a Palestinian Legislative Council, elected twice: a Fatah-dominated chamber in 1996 with Hamas boycotting, and the shock Hamas landslide of 2006 — judged free and fair by observers, and followed by an international boycott, the Fatah–Hamas split and nearly two decades without another vote. The next election is scheduled for 28 November 2026."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1996",
+   "label": "1996",
+   "year": 1996,
+   "kind": "presidential",
+   "date": "20 January 1996",
+   "era": "authority",
+   "turnout": 71.66,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Yasser Arafat",
+     "party": "Fatah",
+     "r1Votes": 643079,
+     "r1Share": 89.82,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Samiha Khalil",
+     "party": "Independent",
+     "r1Votes": 72887,
+     "r1Share": 10.18,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Yasser Arafat",
+    "party": "Fatah"
+   },
+   "presAfter": {
+    "name": "Yasser Arafat",
+    "party": "Fatah"
+   },
+   "knownAs": "The Authority's first vote",
+   "summary": "General elections were held for the first time in the Palestinian territories on 20 January 1996 to elect the President of the Palestinian National Authority (PNA) and members of the Palestinian Legislative Council (PLC), the legislative arm of the PNA. They took place in the West Bank, the Gaza Strip, and East Jerusalem.",
+   "caveat": "The Authority's first election, held under the Oslo Accords with Hamas, Islamic Jihad and the PFLP boycotting. Arafat faced a single challenger, the 72-year-old social worker Samiha Khalil."
+  },
+  {
+   "id": "pres-2005",
+   "label": "2005",
+   "year": 2005,
+   "kind": "presidential",
+   "date": "9 January 2005",
+   "era": "authority",
+   "turnout": 73.42,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Mahmoud Abbas",
+     "party": "Fatah",
+     "r1Votes": 501448,
+     "r1Share": 67.38,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mustafa Barghouti",
+     "party": "Palestinian National Initiative",
+     "r1Votes": 156227,
+     "r1Share": 20.99,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Taysir Khalid",
+     "party": "Democratic Front for the Liberation of Palestine",
+     "r1Votes": 26848,
+     "r1Share": 3.61,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Abelhaleem Hasan Abdelraziq Ashqar",
+     "party": "Independent",
+     "r1Votes": 22171,
+     "r1Share": 2.98,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Bassam as-Salhi",
+     "party": "Palestinian People's Party",
+     "r1Votes": 21429,
+     "r1Share": 2.88,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sayyid Barakah",
+     "party": "Independent",
+     "r1Votes": 10406,
+     "r1Share": 1.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Abdel Karim Shubeir",
+     "party": "Independent",
+     "r1Votes": 5717,
+     "r1Share": 0.77,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Rawhi Fattouh",
+    "party": "Fatah"
+   },
+   "presAfter": {
+    "name": "Mahmoud Abbas",
+    "party": "Fatah"
+   },
+   "knownAs": "After Arafat",
+   "summary": "The 2005 Palestinian Presidential elections were held in the West Bank and Gaza Strip of the Palestinian National Authority on Sunday, 9 January 2005 to elect the President of the Palestinian National Authority, to succeed Yasser Arafat, who had died on 11 November 2004.",
+   "caveat": "Held two months after Yasser Arafat's death, with Hamas and Islamic Jihad boycotting. Abbas won a four-year term that has never been renewed at the ballot box: no presidential election has been held since."
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1923",
+   "label": "1923",
+   "year": 1923,
+   "kind": "legislative",
+   "date": "February–March 1923",
+   "era": "mandate",
+   "totalSeats": 23,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The annulled election",
+   "summary": "Legislative Council elections were held in Mandatory Palestine in February and March 1923. However, due to an Arab boycott of the elections called by the fifth Palestine Arab Congress, the results of the election were annulled, and an Advisory Council was appointed instead.",
+   "caveat": "A colonial design with a built-in official majority: 12 elected seats against 10 appointees and the High Commissioner, on a male-only franchise. The Arab boycott left the elected seats unfillable and the results were annulled — no Legislative Council ever met.",
+   "unfree": "partial",
+   "seatLeader": null
+  },
+  {
+   "id": "1996",
+   "label": "1996",
+   "year": 1996,
+   "kind": "legislative",
+   "date": "20 January 1996",
+   "era": "authority",
+   "totalSeats": 88,
+   "majoritySeats": 45,
+   "turnout": 71.66,
+   "parties": [
+    {
+     "name": "Fatah",
+     "leader": "Yasser Arafat",
+     "seats": 50,
+     "seatChange": null,
+     "votes": null,
+     "share": 30.9,
+     "swing": null
+    },
+    {
+     "name": "NDC",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 2.25,
+     "swing": null
+    },
+    {
+     "name": "FIDA",
+     "leader": "Yasser Abed Rabbo",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 2.04,
+     "swing": null
+    },
+    {
+     "name": "LIB",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 1.64,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": "–",
+     "seats": 35,
+     "seatChange": null,
+     "votes": null,
+     "share": 57.51,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Alongside the presidential vote, Palestinians elected the first Legislative Council on 20 January 1996. With Hamas and the other Islamist and leftist factions boycotting, Fatah took 50 of the 88 seats and nominally independent candidates — many of them Fatah-aligned — most of the rest.",
+   "caveat": "Held with Hamas and several other factions boycotting; competitive within those limits, and judged broadly credible by international observers.",
+   "seatLeader": "Fatah"
+  },
+  {
+   "id": "2006",
+   "label": "2006",
+   "year": 2006,
+   "kind": "legislative",
+   "date": "25 January 2006",
+   "era": "authority",
+   "totalSeats": 132,
+   "majoritySeats": 67,
+   "turnout": 71.18,
+   "parties": [
+    {
+     "name": "Hamas",
+     "leader": "Ismail Haniyeh",
+     "seats": 74,
+     "seatChange": null,
+     "votes": null,
+     "share": 44.45,
+     "swing": null
+    },
+    {
+     "name": "Fatah",
+     "leader": "Farouk Kaddoumi",
+     "seats": 45,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": 41.43,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -31.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PFLP",
+     "leader": "Ahmad Sa'adat",
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": 4.25,
+     "swing": null
+    },
+    {
+     "name": "The Alternative",
+     "leader": "Qais Abd al-Karim",
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": 2.92,
+     "swing": null
+    },
+    {
+     "name": "Independent Palestine",
+     "leader": "Mustafa Barghouti",
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": 2.72,
+     "swing": null
+    },
+    {
+     "name": "Third Way",
+     "leader": "Salam Fayyad",
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": 2.41,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ahmed Qurei",
+    "party": "Fatah\tIsmail Haniyeh"
+   },
+   "pmAfter": {
+    "name": "Ismail Haniyeh",
+    "party": "Hamas"
+   },
+   "knownAs": "The Hamas landslide",
+   "summary": "Legislative elections were held in the Palestinian territories on 25 January 2006 in order to elect the second Palestinian Legislative Council (PLC), the legislature of the Palestinian National Authority (PNA).",
+   "caveat": "Judged free and fair by international observers — and never repeated. The Hamas victory triggered an international boycott, the 2007 Fatah–Hamas split, and the indefinite postponement of every election since; the PLC was dissolved in 2018 without ever being re-elected.",
+   "seatLeader": "Hamas"
+  }
+ ]
+}

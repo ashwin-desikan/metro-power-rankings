@@ -5,7 +5,7 @@ import Link from "next/link";
 type Belligerent = { name: string; slug: string | null; principal: boolean };
 type War = {
   name: string; url: string; start: string | null; end: string | null;
-  ongoing: boolean; major: boolean; deathsMin: number | null; deathsMax: number | null;
+  ongoing: boolean; major: boolean; civil?: boolean | null; deathsMin: number | null; deathsMax: number | null;
   sideA: Belligerent[]; sideB: Belligerent[];
 };
 type SortKey = "start" | "deaths";
@@ -44,7 +44,7 @@ function Side({ list }: { list: Belligerent[] }) {
 
 export default function ConflictsTable({ wars }: { wars: War[] }) {
   const [q, setQ] = useState("");
-  const [filter, setFilter] = useState<"all" | "ongoing" | "major">("all");
+  const [filter, setFilter] = useState<"all" | "ongoing" | "major" | "civil" | "interstate">("all");
   const [sortKey, setSortKey] = useState<SortKey>("start");
   const [dir, setDir] = useState<"asc" | "desc">("desc");
   const [announce, setAnnounce] = useState("");
@@ -59,6 +59,8 @@ export default function ConflictsTable({ wars }: { wars: War[] }) {
     let r = wars;
     if (filter === "ongoing") r = r.filter((w) => w.ongoing);
     else if (filter === "major") r = r.filter((w) => w.major);
+    else if (filter === "civil") r = r.filter((w) => w.civil);
+    else if (filter === "interstate") r = r.filter((w) => !w.civil);
     if (q) {
       const s = q.toLowerCase();
       r = r.filter((w) =>
@@ -77,7 +79,7 @@ export default function ConflictsTable({ wars }: { wars: War[] }) {
     return out;
   }, [wars, q, filter, sortKey, dir]);
 
-  const btn = (v: "all" | "ongoing" | "major", label: string) => (
+  const btn = (v: "all" | "ongoing" | "major" | "civil" | "interstate", label: string) => (
     <button onClick={() => setFilter(v)}
       className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${
         filter === v ? "bg-[var(--accent)] text-black"
@@ -88,7 +90,7 @@ export default function ConflictsTable({ wars }: { wars: War[] }) {
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap gap-2">{btn("all", "All")}{btn("ongoing", "Ongoing")}{btn("major", "10,000+ deaths")}</div>
+      <div className="flex flex-wrap gap-2">{btn("all", "All")}{btn("ongoing", "Ongoing")}{btn("major", "Major wars")}{btn("interstate", "Interstate")}{btn("civil", "Civil wars")}</div>
       <input type="text" placeholder="Search a war or a country (e.g. Vietnam, India, Six-Day)…"
         value={q} onChange={(e) => setQ(e.target.value)}
         className="w-full px-4 py-2 bg-[var(--bg-card)] border border-[var(--border)] rounded-lg text-[var(--text)] placeholder-[var(--text-dim)] focus:outline-none focus:border-[var(--accent)]" />
@@ -139,7 +141,7 @@ export default function ConflictsTable({ wars }: { wars: War[] }) {
             <div className="flex items-start justify-between gap-2">
               <a href={w.url} target="_blank" rel="noopener noreferrer" className="font-medium text-sm text-[var(--text)] hover:text-[var(--accent)] hover:underline">
                 {w.name}
-                {w.major ? <span className="ml-1.5 text-[10px] text-red-500" title="10,000+ combat deaths">●</span> : null}
+                {w.major ? <span className="ml-1.5 text-[10px] text-red-500" title="Major war">●</span> : null}{w.civil ? <span className="ml-1.5 text-[9px] uppercase tracking-wider rounded-full border px-1.5 py-0.5 text-[var(--text-muted)]" style={{ borderColor: "var(--border)" }}>civil war</span> : null}
               </a>
               <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]">{years(w)}</span>
             </div>
@@ -167,7 +169,7 @@ export default function ConflictsTable({ wars }: { wars: War[] }) {
               <tr key={w.name + w.start} className="border-b border-[var(--border)] hover:bg-[var(--bg-card-hover)] transition-colors align-top">
                 <td className="px-4 py-3">
                   <a href={w.url} target="_blank" rel="noopener noreferrer" className="font-medium text-[var(--text)] hover:text-[var(--accent)] hover:underline">{w.name}</a>
-                  {w.major ? <span className="ml-1.5 text-[10px] text-red-500" title="10,000+ combat deaths">●</span> : null}
+                  {w.major ? <span className="ml-1.5 text-[10px] text-red-500" title="Major war">●</span> : null}{w.civil ? <span className="ml-1.5 text-[9px] uppercase tracking-wider rounded-full border px-1.5 py-0.5 text-[var(--text-muted)]" style={{ borderColor: "var(--border)" }}>civil war</span> : null}
                 </td>
                 <td className="px-4 py-3 whitespace-nowrap tabular-nums text-[var(--text-muted)]">{years(w)}</td>
                 <td className="px-4 py-3">
@@ -183,7 +185,7 @@ export default function ConflictsTable({ wars }: { wars: War[] }) {
           </tbody>
         </table>
       </div>
-      <p className="text-xs text-[var(--text-dim)]">{rows.length} of {wars.length} wars · bold = principal belligerent · red ● = 10,000+ combat deaths</p>
+      <p className="text-xs text-[var(--text-dim)]">{rows.length} of {wars.length} wars · bold = principal belligerent · red ● = major war · civil wars labelled · deaths tracked from 1945</p>
     </div>
   );
 }

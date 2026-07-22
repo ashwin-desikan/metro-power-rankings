@@ -12,6 +12,7 @@ import {
 } from "@/lib/usElections";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import LineChart, { type ChartSeries } from "../LineChart";
+import SortableTable from "../SortableTable";
 
 const PATH = "/elections/us";
 const TITLE = "US Presidential Elections";
@@ -292,20 +293,22 @@ export default function UsElectionsPage() {
           />
         </div>
         <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
-          <table className="w-full text-xs">
-            <thead>
-              <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]">
-                <th className="px-3 py-2">Congress</th>
-                <th className="px-3 py-2">Years</th>
-                <th className="px-3 py-2 text-right">Senate</th>
-                <th className="px-3 py-2 text-right">House</th>
-                <th className="px-3 py-2">President</th>
-                <th className="px-3 py-2">Trifecta</th>
-              </tr>
-            </thead>
-            <tbody>
-              {congress.congresses.slice().reverse().slice(0, 20).map((c) => (
-                <tr key={c.n} className="border-t" style={{ borderColor: "var(--border)" }}>
+          <SortableTable
+            tableClassName="w-full text-xs"
+            headClassName="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]"
+            cols={[
+              { key: "n", label: "Congress", className: "px-3 py-2" },
+              { key: "years", label: "Years", className: "px-3 py-2" },
+              { key: "senate", label: "Senate", className: "px-3 py-2 text-right" },
+              { key: "house", label: "House", className: "px-3 py-2 text-right" },
+              { key: "president", label: "President", className: "px-3 py-2" },
+              { key: "trifecta", label: "Trifecta", className: "px-3 py-2" },
+            ]}
+            rows={congress.congresses.slice().reverse().slice(0, 20).map((c) => ({
+              key: String(c.n),
+              sort: { n: c.n, years: c.years, senate: c.senate.b - c.senate.a, house: c.house.b - c.house.a, president: c.president, trifecta: c.trifecta?.startsWith("Yes") ? "Yes" : "No" },
+              cells: (
+                <>
                   <td className="px-3 py-1.5 font-semibold text-[var(--text)] tabular-nums">{c.n}th</td>
                   <td className="px-3 py-1.5 text-[var(--text-muted)] tabular-nums">{c.years}</td>
                   <td className="px-3 py-1.5 text-right tabular-nums text-[var(--text-muted)]">
@@ -320,10 +323,10 @@ export default function UsElectionsPage() {
                   </td>
                   <td className="px-3 py-1.5 text-[var(--text-muted)]">{c.president}</td>
                   <td className="px-3 py-1.5 text-[var(--text-muted)]">{c.trifecta?.startsWith("Yes") ? "Yes" : "No"}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                </>
+              ),
+            }))}
+          />
         </div>
         <p className="text-xs text-[var(--text-dim)] mt-2">
           Latest twenty Congresses shown; each election page links the Congress it seated. Dem–Rep columns
@@ -337,19 +340,21 @@ export default function UsElectionsPage() {
           {congress.midterms.list.length} midterms. {congress.midterms.note}
         </p>
         <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
-          <table className="w-full text-xs">
-            <thead>
-              <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]">
-                <th className="px-3 py-2">Midterm</th>
-                <th className="px-3 py-2">President</th>
-                <th className="px-3 py-2 text-right">House seats +/−</th>
-                <th className="px-3 py-2 text-right">Senate seats +/−</th>
-                <th className="px-3 py-2">Chamber flipped</th>
-              </tr>
-            </thead>
-            <tbody>
-              {congress.midterms.list.slice().reverse().slice(0, 14).map((m) => (
-                <tr key={m.year} className="border-t" style={{ borderColor: "var(--border)" }}>
+          <SortableTable
+            tableClassName="w-full text-xs"
+            headClassName="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]"
+            cols={[
+              { key: "year", label: "Midterm", className: "px-3 py-2" },
+              { key: "president", label: "President", className: "px-3 py-2" },
+              { key: "house", label: "House seats +/−", className: "px-3 py-2 text-right" },
+              { key: "senate", label: "Senate seats +/−", className: "px-3 py-2 text-right" },
+              { key: "flip", label: "Chamber flipped", className: "px-3 py-2" },
+            ]}
+            rows={congress.midterms.list.slice().reverse().slice(0, 14).map((m) => ({
+              key: String(m.year),
+              sort: { year: m.year, president: m.president, house: m.houseChange, senate: m.senateChange, flip: m.houseFlip && m.senateFlip ? "Both" : m.houseFlip ? "House" : m.senateFlip ? "Senate" : null },
+              cells: (
+                <>
                   <td className="px-3 py-1.5 font-semibold text-[var(--text)] tabular-nums">{m.year}</td>
                   <td className="px-3 py-1.5 text-[var(--text-muted)]">
                     {m.president} <span style={{ color: usPartyColor(m.presParty) }}>({m.presParty.slice(0, 1)})</span>
@@ -363,10 +368,10 @@ export default function UsElectionsPage() {
                   <td className="px-3 py-1.5 text-[var(--text-muted)]">
                     {m.houseFlip && m.senateFlip ? "Both" : m.houseFlip ? "House" : m.senateFlip ? "Senate" : "—"}
                   </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                </>
+              ),
+            }))}
+          />
         </div>
       </section>
 

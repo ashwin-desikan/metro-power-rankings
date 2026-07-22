@@ -1,6 +1,7 @@
 import "server-only";
 import fs from "fs";
 import path from "path";
+import { getStatesDirectory } from "./statesDirectory";
 
 // ---------------- types ----------------
 export type CaElectionParty = {
@@ -108,6 +109,33 @@ export function caNeighbours(id: string): { prev: CaElection | null; next: CaEle
 }
 export const fmtInt = (n: number | null | undefined) => (n == null ? "—" : n.toLocaleString("en-CA"));
 export const fmtPct = (n: number | null | undefined, dp = 1) => (n == null ? "—" : `${n.toFixed(dp)}%`);
+
+// ---------------- province-page links ----------------
+// Full name and /states/[slug] page for a province-table column code,
+// resolved against states-directory.json (which lists the province as
+// "Newfoundland", so the modern official name is aliased onto it). The
+// aggregate territory columns some older results tables use ("TERR",
+// "TERRITORIES") display as "Territories" with no page of their own.
+let _caProvSlugs: Map<string, string> | null = null;
+function caProvSlugs(): Map<string, string> {
+  if (_caProvSlugs) return _caProvSlugs;
+  const m = new Map<string, string>();
+  for (const r of getStatesDirectory()) {
+    if (r.countrySlug === "canada") m.set(r.name, r.slug);
+  }
+  const nl = m.get("Newfoundland");
+  if (nl) m.set("Newfoundland and Labrador", nl);
+  _caProvSlugs = m;
+  return m;
+}
+export function caProvinceDisplay(code: string, labels: Record<string, string>): string {
+  if (code === "TERR" || code === "TERRITORIES") return "Territories";
+  return labels[code] ?? code;
+}
+export function caProvinceHref(display: string): string | null {
+  const slug = caProvSlugs().get(display);
+  return slug ? `/states/${slug}` : null;
+}
 
 // Records & superlatives, computed from the dataset (no hand-entered figures).
 export type CaElectionRecord = { label: string; value: string; electionId: string; detail: string };

@@ -1,0 +1,942 @@
+{
+ "meta": {
+  "title": "Taiwanese presidential elections",
+  "sources": [
+   "Wikipedia: Taiwanese (ROC) presidential election articles, 1911–2024 (results, infoboxes and leads)",
+   "Central Election Commission figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "eras": [
+  {
+   "key": "beiyang",
+   "label": "The Chinese Republic's first elections",
+   "span": "1911–1923",
+   "blurb": "The Republic of China — whose constitutional lineage Taiwan's government carries — began with delegates of the revolutionary provinces electing Sun Yat-sen provisional president in Nanjing. The parliamentary elections of the Beiyang years that followed were indirect, factional and increasingly corrupt, ending with Cao Kun openly buying the presidency in 1923."
+  },
+  {
+   "key": "nanjing",
+   "label": "The constitutional moment",
+   "span": "1948",
+   "blurb": "Under the new 1947 constitution, the first National Assembly elected Chiang Kai-shek president in Nanjing — a constitutional beginning immediately engulfed by civil war. Within two years the government, the constitution and the Assembly itself had retreated to Taiwan."
+  },
+  {
+   "key": "authoritarian",
+   "label": "The National Assembly on Taiwan",
+   "span": "1954–1990",
+   "blurb": "For four decades the presidency was conferred by the 'eternal' National Assembly — the body elected on the mainland in 1947 and never re-elected, its members aging in place. Under martial law and one-party rule, Chiang Kai-shek, Chiang Ching-kuo and Lee Teng-hui were each elected without competition. These votes are recorded here as rituals of the era, not contests."
+  },
+  {
+   "key": "democracy",
+   "label": "The direct-election era",
+   "span": "1996–2024",
+   "blurb": "Taiwan's democratisation culminated in 1996 with the first direct presidential election, held as the People's Liberation Army fired missiles into the strait. Since then power has changed hands three times between the KMT and the DPP — through the razor-thin 'two-bullet' election of 2004, Tsai Ing-wen's landslides, and in 2024 an unprecedented third consecutive DPP term under Lai Ching-te."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1911",
+   "label": "1911",
+   "year": 1911,
+   "kind": "presidential",
+   "date": "29 December 1911",
+   "era": "beiyang",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Sun Yat-sen",
+     "party": "Tongmenghui",
+     "r1Votes": 16,
+     "r1Share": 94.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Huang Hsing",
+     "party": "Tongmenghui",
+     "r1Votes": 1,
+     "r1Share": 5.88,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Li Yuanhong",
+     "party": "Independent",
+     "r1Votes": 0,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Sun Yat-sen",
+    "party": "Tongmenghui"
+   },
+   "knownAs": "Sun Yat-sen elected",
+   "summary": "The 1911 Chinese provisional presidential election was the election held on 29 December 1911 during the Xinhai Revolution for the First Provisional President and Vice President of the Provisional Government of the Republic of China. Sun Yat-sen and Li Yuanhong were elected as President and Vice-President respectively.",
+   "caveat": "An indirect vote of assembly delegates or parliamentarians in the early Chinese Republic, not a popular election."
+  },
+  {
+   "id": "1912",
+   "label": "1912",
+   "year": 1912,
+   "kind": "presidential",
+   "date": "15 & 20 February 1912",
+   "era": "beiyang",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Yuan Shikai",
+     "party": "Independent",
+     "r1Votes": 17,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Sun Yat-sen",
+    "party": "Tongmenghui"
+   },
+   "presAfter": {
+    "name": "Yuan Shikai",
+    "party": "Independent"
+   },
+   "knownAs": "Yuan Shikai takes the presidency",
+   "summary": "After the Wuchang Uprising on 10 October 1911, Yuan Shikai, the powerful military officer was reappointed to lead the Beiyang Army by the Qing court. Yuan realized that Manchu's days were numbered and decided to establish a government himself.",
+   "caveat": "An indirect vote of assembly delegates or parliamentarians in the early Chinese Republic, not a popular election."
+  },
+  {
+   "id": "1913",
+   "label": "1913",
+   "year": 1913,
+   "kind": "presidential",
+   "date": "6 and 7 October 1913",
+   "era": "beiyang",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Yuan Shikai",
+     "party": "Independent",
+     "r1Votes": 500,
+     "r1Share": 71.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Others",
+     "party": null,
+     "r1Votes": 203,
+     "r1Share": 28.88,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Yuan Shikai",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Yuan Shikai",
+    "party": "Independent"
+   },
+   "knownAs": "The first constitutional election",
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An indirect vote of assembly delegates or parliamentarians in the early Chinese Republic, not a popular election."
+  },
+  {
+   "id": "1918",
+   "label": "1918",
+   "year": 1918,
+   "kind": "presidential",
+   "date": "4 September 1918",
+   "era": "beiyang",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Xu Shichang",
+     "party": "Independent",
+     "r1Votes": 425,
+     "r1Share": 98.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Duan Qirui",
+     "party": "Anhui clique",
+     "r1Votes": 5,
+     "r1Share": 1.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Wang Shizhen",
+     "party": "Independent",
+     "r1Votes": 1,
+     "r1Share": 0.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Zhang Jian",
+     "party": "Independent",
+     "r1Votes": 1,
+     "r1Share": 0.23,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ni Sichong",
+     "party": "Anhui clique",
+     "r1Votes": 1,
+     "r1Share": 0.23,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Feng Guozhang",
+    "party": "Zhili clique"
+   },
+   "presAfter": {
+    "name": "Xu Shichang",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "The 1918 Chinese presidential election were the elections held on 4 September 1918 in Beijing for the second term of the President of China. Xu Shichang was elected by two houses of the National Assembly which were controlled by the Anfu Club formed in the National Assembly election in the same year.",
+   "caveat": "An indirect vote of assembly delegates or parliamentarians in the early Chinese Republic, not a popular election."
+  },
+  {
+   "id": "1923",
+   "label": "1923",
+   "year": 1923,
+   "kind": "presidential",
+   "date": "5 October 1923",
+   "era": "beiyang",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Cao Kun",
+     "party": "Zhili clique",
+     "r1Votes": 480,
+     "r1Share": 83.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sun Yat-sen",
+     "party": "Kuomintang",
+     "r1Votes": 33,
+     "r1Share": 5.71,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Tang Jiyao",
+     "party": "Yunnan clique",
+     "r1Votes": 20,
+     "r1Share": 3.46,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Cen Chunxuan",
+     "party": "Kuomintang",
+     "r1Votes": 8,
+     "r1Share": 1.38,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Duan Qirui",
+     "party": "Anhui clique",
+     "r1Votes": 7,
+     "r1Share": 1.21,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Wu Peifu",
+     "party": "Zhili clique",
+     "r1Votes": 5,
+     "r1Share": 0.87,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Other candidates",
+     "party": null,
+     "r1Votes": 25,
+     "r1Share": 4.33,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Gao Lingwei (acting)",
+    "party": "Nonpartisan"
+   },
+   "presAfter": {
+    "name": "Cao Kun",
+    "party": "Zhili clique"
+   },
+   "knownAs": "The bribery election",
+   "summary": "The capital was under control of the Zhili Clique after the Zhili–Anhui War. In 1922 the Zhili warlords Wu Peifu and Cao Kun restored the \"old\" parliament elected in 1912.",
+   "caveat": "The 'bribery election': Cao Kun openly bought parliamentarians' votes at a going rate of 5,000 silver dollars. Recorded here as history, not a legitimate contest."
+  },
+  {
+   "id": "1948",
+   "label": "1948",
+   "year": 1948,
+   "kind": "presidential",
+   "date": "April 20, 1948",
+   "era": "nanjing",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Chiang Kai-shek",
+     "party": "Kuomintang",
+     "r1Votes": 2430,
+     "r1Share": 90.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ju Zheng",
+     "party": "Kuomintang",
+     "r1Votes": 269,
+     "r1Share": 9.97,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Chiang Kai-shek",
+    "party": "(as Chairman of Nationalist government)"
+   },
+   "presAfter": {
+    "name": "Chiang Kai-shek",
+    "party": "KMT"
+   },
+   "knownAs": "Chiang under the new constitution",
+   "summary": "The 1948 Chinese presidential election was held on April 20, 1948, at the National Assembly House in Nanjing. The election was conducted by the National Assembly to elect the president and vice president of China.",
+   "caveat": "An indirect vote of the newly elected National Assembly under the 1947 constitution, held amid full-scale civil war."
+  },
+  {
+   "id": "1954",
+   "label": "1954",
+   "year": 1954,
+   "kind": "presidential",
+   "date": "March 22, 1954",
+   "era": "authoritarian",
+   "turnout": 53.19,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Chiang Kai-shek",
+     "party": "Kuomintang",
+     "r1Votes": 1507,
+     "r1Share": 96.91,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hsu Fu-lin",
+     "party": "China Democratic Socialist Party",
+     "r1Votes": 48,
+     "r1Share": 3.09,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Chiang Kai-shek",
+    "party": "KMT"
+   },
+   "presAfter": {
+    "name": "Chiang Kai-shek",
+    "party": "KMT"
+   },
+   "knownAs": null,
+   "summary": "Indirect presidential elections were held in the Republic of China on March 22, 1954 to elect the President and Vice President. The vote took place at the Chung-Shan Hall in Taipei.",
+   "caveat": "An indirect, uncontested vote of the National Assembly elected on the mainland in 1947 and never re-elected, under martial law and one-party rule. Recorded here as a ritual of the era, not a competitive election."
+  },
+  {
+   "id": "1960",
+   "label": "1960",
+   "year": 1960,
+   "kind": "presidential",
+   "date": "March 21, 1960",
+   "era": "authoritarian",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Chiang Kai-shek",
+     "party": "Kuomintang",
+     "r1Votes": 1481,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Chiang Kai-shek",
+    "party": "KMT"
+   },
+   "presAfter": {
+    "name": "Chiang Kai-shek",
+    "party": "KMT"
+   },
+   "knownAs": null,
+   "summary": "Indirect elections were held for the presidency and vice-presidency of the government of the Republic of China on Taiwan on March 21, 1960. The vote took place at the Chung-Shan Hall in Taipei.",
+   "caveat": "An indirect, uncontested vote of the National Assembly elected on the mainland in 1947 and never re-elected, under martial law and one-party rule. Recorded here as a ritual of the era, not a competitive election."
+  },
+  {
+   "id": "1966",
+   "label": "1966",
+   "year": 1966,
+   "kind": "presidential",
+   "date": "March 21, 1966",
+   "era": "authoritarian",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Chiang Kai-shek",
+     "party": "Kuomintang",
+     "r1Votes": 1405,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Chiang Kai-shek",
+    "party": "KMT"
+   },
+   "presAfter": {
+    "name": "Chiang Kai-shek",
+    "party": "KMT"
+   },
+   "knownAs": null,
+   "summary": "Indirect elections were held for the presidency and vice-presidency of the government of the Republic of China on Taiwan on March 21, 1966. The vote took place at the Chung-Shan Hall in Taipei.",
+   "caveat": "An indirect, uncontested vote of the National Assembly elected on the mainland in 1947 and never re-elected, under martial law and one-party rule. Recorded here as a ritual of the era, not a competitive election."
+  },
+  {
+   "id": "1972",
+   "label": "1972",
+   "year": 1972,
+   "kind": "presidential",
+   "date": "March 21, 1972",
+   "era": "authoritarian",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Chiang Kai-shek",
+     "party": "Kuomintang",
+     "r1Votes": 1308,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Chiang Kai-shek",
+    "party": "KMT"
+   },
+   "presAfter": {
+    "name": "Chiang Kai-shek",
+    "party": "KMT"
+   },
+   "knownAs": null,
+   "summary": "Indirect elections were held for the presidency and vice-presidency of the government of the Republic of China on Taiwan on March 21, 1972. The vote took place at the Chung-Shan Building in Yangmingshan, Taipei.",
+   "caveat": "An indirect, uncontested vote of the National Assembly elected on the mainland in 1947 and never re-elected, under martial law and one-party rule. Recorded here as a ritual of the era, not a competitive election."
+  },
+  {
+   "id": "1978",
+   "label": "1978",
+   "year": 1978,
+   "kind": "presidential",
+   "date": "March 21, 1978",
+   "era": "authoritarian",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Chiang Ching-kuo",
+     "party": "Kuomintang",
+     "r1Votes": 1184,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Yen Chia-kan",
+    "party": "KMT"
+   },
+   "presAfter": {
+    "name": "Chiang Ching-kuo",
+    "party": "KMT"
+   },
+   "knownAs": null,
+   "summary": "Indirect elections were held for the presidency and vice-presidency of the government of the Republic of China on Taiwan on March 21, 1978. The vote took place at the Chung-Shan Building in Yangmingshan, Taipei.",
+   "caveat": "An indirect, uncontested vote of the National Assembly elected on the mainland in 1947 and never re-elected, under martial law and one-party rule. Recorded here as a ritual of the era, not a competitive election."
+  },
+  {
+   "id": "1984",
+   "label": "1984",
+   "year": 1984,
+   "kind": "presidential",
+   "date": "March 21, 1984",
+   "era": "authoritarian",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Chiang Ching-kuo",
+     "party": "Kuomintang",
+     "r1Votes": 1012,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Chiang Ching-kuo",
+    "party": "KMT"
+   },
+   "presAfter": {
+    "name": "Chiang Ching-kuo",
+    "party": "KMT"
+   },
+   "knownAs": null,
+   "summary": "Indirect elections were held for the presidency and vice-presidency of the government of the Republic of China on Taiwan on March 21, 1984. The vote took place at the Chung-Shan Building in Yangmingshan, Taipei.",
+   "caveat": "An indirect, uncontested vote of the National Assembly elected on the mainland in 1947 and never re-elected, under martial law and one-party rule. Recorded here as a ritual of the era, not a competitive election."
+  },
+  {
+   "id": "1990",
+   "label": "1990",
+   "year": 1990,
+   "kind": "presidential",
+   "date": "March 21, 1990",
+   "era": "authoritarian",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Lee Teng-hui",
+     "party": "Kuomintang",
+     "r1Votes": 641,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Lee Teng-hui",
+    "party": "KMT"
+   },
+   "presAfter": {
+    "name": "Lee Teng-hui",
+    "party": "KMT"
+   },
+   "knownAs": "The last indirect election",
+   "summary": "Indirect elections were held for the presidency and vice-presidency of the government of the Republic of China on Taiwan on March 21, 1990. The vote took place at the Chung-Shan Building in Yangmingshan, Taipei.",
+   "caveat": "An indirect, uncontested vote of the National Assembly elected on the mainland in 1947 and never re-elected, under martial law and one-party rule. Recorded here as a ritual of the era, not a competitive election."
+  },
+  {
+   "id": "1996",
+   "label": "1996",
+   "year": 1996,
+   "kind": "presidential",
+   "date": "23 March 1996",
+   "era": "democracy",
+   "turnout": 76.04,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Lee Teng-hui",
+     "party": "Kuomintang",
+     "r1Votes": 5813699,
+     "r1Share": 54.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Peng Ming-min",
+     "party": "Democratic Progressive Party",
+     "r1Votes": 2274586,
+     "r1Share": 21.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lin Yang-kang",
+     "party": "Independent",
+     "r1Votes": 1603790,
+     "r1Share": 14.9,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Chen Li-an",
+     "party": "Independent",
+     "r1Votes": 1074044,
+     "r1Share": 9.98,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Lee Teng-hui",
+    "party": "KMT"
+   },
+   "presAfter": {
+    "name": "Lee Teng-hui",
+    "party": "KMT"
+   },
+   "knownAs": "The first direct election",
+   "summary": "Presidential elections were held in Taiwan on 23 March 1996. It was Taiwan's first direct presidential election, officially the Republic of China.",
+   "caveat": null
+  },
+  {
+   "id": "2000",
+   "label": "2000",
+   "year": 2000,
+   "kind": "presidential",
+   "date": "18 March 2000",
+   "era": "democracy",
+   "turnout": 82.69,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Chen Shui-bian",
+     "party": "Democratic Progressive Party",
+     "r1Votes": 4977697,
+     "r1Share": 39.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "James Soong",
+     "party": "Independent",
+     "r1Votes": 4664972,
+     "r1Share": 36.84,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lien Chan",
+     "party": "Kuomintang",
+     "r1Votes": 2925513,
+     "r1Share": 23.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hsu Hsin-liang",
+     "party": "Independent",
+     "r1Votes": 79429,
+     "r1Share": 0.63,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Li Ao",
+     "party": "New Party",
+     "r1Votes": 16782,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Lee Teng-hui",
+    "party": "KMT"
+   },
+   "presAfter": {
+    "name": "Chen Shui-bian",
+    "party": "DPP"
+   },
+   "knownAs": "The first transfer of power",
+   "summary": "Presidential elections were held in Taiwan on 18 March 2000 to elect the president and vice president. With a voter turnout of 83%, Chen Shui-bian and Annette Lu of the Democratic Progressive Party (DPP) were elected president and vice president respectively with a slight plurality.",
+   "caveat": null
+  },
+  {
+   "id": "2004",
+   "label": "2004",
+   "year": 2004,
+   "kind": "presidential",
+   "date": "20 March 2004",
+   "era": "democracy",
+   "turnout": 80.28,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Chen Shui-bian",
+     "party": "Democratic Progressive Party",
+     "r1Votes": 6471970,
+     "r1Share": 50.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lien Chan",
+     "party": "Kuomintang",
+     "r1Votes": 6442452,
+     "r1Share": 49.89,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Chen Shui-bian",
+    "party": "DPP"
+   },
+   "presAfter": {
+    "name": "Chen Shui-bian",
+    "party": "DPP"
+   },
+   "knownAs": "The two-bullet election",
+   "summary": "President Chen Shui-bian and Vice President Annette Lu of the Democratic Progressive Party were re-elected by a narrow margin of 0.22% over a combined opposition ticket of Kuomintang (KMT) Chairman Lien Chan and People First Party Chairman James Soong. Lien and Soong refused to concede and unsuccessfully challenged the results.",
+   "caveat": null
+  },
+  {
+   "id": "2008",
+   "label": "2008",
+   "year": 2008,
+   "kind": "presidential",
+   "date": "22 March 2008",
+   "era": "democracy",
+   "turnout": 76.33,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Ma Ying-jeou",
+     "party": "Kuomintang",
+     "r1Votes": 7659014,
+     "r1Share": 58.45,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Frank Hsieh",
+     "party": "Democratic Progressive Party",
+     "r1Votes": 5444949,
+     "r1Share": 41.55,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Chen Shui-bian",
+    "party": "DPP"
+   },
+   "presAfter": {
+    "name": "Ma Ying-jeou",
+    "party": "KMT"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in Taiwan on 22 March 2008. Kuomintang (KMT) nominee Ma Ying-jeou won with 58% of the vote, ending eight years of Democratic Progressive Party (DPP) rule.",
+   "caveat": null
+  },
+  {
+   "id": "2012",
+   "label": "2012",
+   "year": 2012,
+   "kind": "presidential",
+   "date": "14 January 2012",
+   "era": "democracy",
+   "turnout": 74.38,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Ma Ying-jeou",
+     "party": "Kuomintang",
+     "r1Votes": 6891139,
+     "r1Share": 51.6,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Tsai Ing-wen",
+     "party": "Democratic Progressive Party",
+     "r1Votes": 6093578,
+     "r1Share": 45.63,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "James Soong",
+     "party": "People First Party",
+     "r1Votes": 369588,
+     "r1Share": 2.77,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ma Ying-jeou",
+    "party": "KMT"
+   },
+   "presAfter": {
+    "name": "Ma Ying-jeou",
+    "party": "KMT"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in Taiwan on 14 January 2012. The election was held concurrently with legislative elections.",
+   "caveat": null
+  },
+  {
+   "id": "2016",
+   "label": "2016",
+   "year": 2016,
+   "kind": "presidential",
+   "date": "16 January 2016",
+   "era": "democracy",
+   "turnout": 66.27,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Tsai Ing-wen",
+     "party": "Democratic Progressive Party",
+     "r1Votes": 6894744,
+     "r1Share": 56.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eric Chu",
+     "party": "Kuomintang",
+     "r1Votes": 3813365,
+     "r1Share": 31.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "James Soong",
+     "party": "People First Party",
+     "r1Votes": 1576861,
+     "r1Share": 12.84,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ma Ying-jeou",
+    "party": "KMT"
+   },
+   "presAfter": {
+    "name": "Tsai Ing-wen",
+    "party": "DPP"
+   },
+   "knownAs": "Tsai's landslide",
+   "summary": "Presidential elections were held in Taiwan on 16 January 2016. Democratic Progressive Party (DPP) candidate Tsai Ing-wen with her independent running mate Chen Chien-jen won over Eric Chu of the Kuomintang (KMT) and James Soong of the People First Party (PFP).",
+   "caveat": null
+  },
+  {
+   "id": "2020",
+   "label": "2020",
+   "year": 2020,
+   "kind": "presidential",
+   "date": "11 January 2020",
+   "era": "democracy",
+   "turnout": 74.9,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Tsai Ing-wen",
+     "party": "Democratic Progressive Party",
+     "r1Votes": 8170231,
+     "r1Share": 57.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Han Kuo-yu",
+     "party": "Kuomintang",
+     "r1Votes": 5522119,
+     "r1Share": 38.61,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "James Soong",
+     "party": "People First Party",
+     "r1Votes": 608590,
+     "r1Share": 4.26,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Tsai Ing-wen",
+    "party": "DPP"
+   },
+   "presAfter": {
+    "name": "Tsai Ing-wen",
+    "party": "DPP"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in Taiwan on 11 January 2020 alongside Legislative Yuan election. Incumbent president Tsai Ing-wen and former premier Lai Ching-te of the Democratic Progressive Party (DPP) won the election, defeating Kaohsiung mayor Han Kuo-yu of the Kuomintang (KMT) and his running mate Chang San-cheng, as well as third-party candidate James Soong.",
+   "caveat": null
+  },
+  {
+   "id": "2024",
+   "label": "2024",
+   "year": 2024,
+   "kind": "presidential",
+   "date": "13 January 2024",
+   "era": "democracy",
+   "turnout": 71.86,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Lai Ching-te",
+     "party": "Democratic Progressive Party",
+     "r1Votes": 5586017,
+     "r1Share": 40.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hou Yu-ih",
+     "party": "Kuomintang",
+     "r1Votes": 4671021,
+     "r1Share": 33.49,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ko Wen-je",
+     "party": "Taiwan People's Party",
+     "r1Votes": 3690466,
+     "r1Share": 26.46,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Tsai Ing-wen",
+    "party": "DPP"
+   },
+   "presAfter": {
+    "name": "Lai Ching-te",
+    "party": "DPP"
+   },
+   "knownAs": "A third DPP term",
+   "summary": "Presidential elections were held in Taiwan on 13 January 2024 as part of the 2024 general elections. Tsai Ing-wen of the Democratic Progressive Party (DPP), the incumbent president of the Republic of China, was ineligible for reelection due to term limits.",
+   "caveat": null
+  }
+ ]
+}

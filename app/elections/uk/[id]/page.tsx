@@ -15,6 +15,7 @@ import {
 } from "@/lib/ukElections";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import ConstituencyExplorer from "./ConstituencyExplorer";
+import SortableTable from "../../SortableTable";
 
 export function generateStaticParams() {
   return getUkElections().elections.map((e) => ({ id: e.id }));
@@ -149,21 +150,23 @@ export default async function UkElectionDetailPage({ params }: { params: Promise
       <section className="mb-8">
         <h2 className="text-xl font-bold mb-3 text-[var(--text)]">The result</h2>
         <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]">
-                <th className="px-3 py-2">Party</th>
-                <th className="px-3 py-2">Leader</th>
-                <th className="px-3 py-2 text-right">Seats</th>
-                <th className="px-3 py-2 w-1/4">Share of Commons</th>
-                <th className="px-3 py-2 text-right">Votes</th>
-                <th className="px-3 py-2 text-right">Vote share</th>
-                <th className="px-3 py-2 text-right">Swing</th>
-              </tr>
-            </thead>
-            <tbody>
-              {e.parties.map((p, i) => (
-                <tr key={`${p.name}-${i}`} className="border-t" style={{ borderColor: "var(--border)" }}>
+          <SortableTable
+            tableClassName="w-full text-sm"
+            headClassName="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]"
+            cols={[
+              { key: "party", label: "Party", className: "px-3 py-2" },
+              { key: "leader", label: "Leader", className: "px-3 py-2" },
+              { key: "seats", label: "Seats", className: "px-3 py-2 text-right" },
+              { key: "bar", label: "Share of Commons", className: "px-3 py-2 w-1/4", sortable: false },
+              { key: "votes", label: "Votes", className: "px-3 py-2 text-right" },
+              { key: "share", label: "Vote share", className: "px-3 py-2 text-right" },
+              { key: "swing", label: "Swing", className: "px-3 py-2 text-right" },
+            ]}
+            rows={e.parties.map((p, i) => ({
+              key: `${p.name}-${i}`,
+              sort: { party: p.name, leader: p.leader, seats: p.seats, votes: p.votes, share: p.share, swing: p.swing },
+              cells: (
+                <>
                   <td className="px-3 py-2 whitespace-nowrap">
                     <span className="inline-block w-2.5 h-2.5 rounded-full mr-2 align-middle" style={{ backgroundColor: partyColor(p.name) }} />
                     <span className="font-semibold text-[var(--text)]">{p.name}</span>
@@ -182,10 +185,10 @@ export default async function UkElectionDetailPage({ params }: { params: Promise
                   <td className="px-3 py-2 text-right tabular-nums text-[var(--text-muted)]">
                     {p.swing == null ? "—" : `${p.swing > 0 ? "+" : ""}${p.swing.toFixed(1)}`}
                   </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                </>
+              ),
+            }))}
+          />
         </div>
         {e.year < 1918 ? (
           <p className="text-xs text-[var(--text-dim)] mt-2">
@@ -275,21 +278,26 @@ export default async function UkElectionDetailPage({ params }: { params: Promise
 
           {/* regional table */}
           <div className="overflow-x-auto rounded-xl border mb-5" style={{ borderColor: "var(--border)" }}>
-            <table className="w-full text-xs">
-              <thead>
-                <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]">
-                  <th className="px-2 py-1.5">Country / region</th>
-                  <th className="px-2 py-1.5 text-right">Seats</th>
-                  {constituencies.families.map((f) => (
-                    <th key={f} className="px-2 py-1.5 text-right">{constituencies.labels[f]}</th>
-                  ))}
-                  <th className="px-2 py-1.5 text-right">Turnout</th>
-                  <th className="px-2 py-1.5">Most votes, by seat</th>
-                </tr>
-              </thead>
-              <tbody>
-                {constituencies.regions.map((g) => (
-                  <tr key={g.name} className="border-t" style={{ borderColor: "var(--border)" }}>
+            <SortableTable
+              tableClassName="w-full text-xs"
+              headClassName="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]"
+              cols={[
+                { key: "region", label: "Country / region", className: "px-2 py-1.5" },
+                { key: "n", label: "Seats", className: "px-2 py-1.5 text-right" },
+                ...constituencies.families.map((f) => ({ key: `f-${f}`, label: constituencies.labels[f], className: "px-2 py-1.5 text-right" })),
+                { key: "turnout", label: "Turnout", className: "px-2 py-1.5 text-right" },
+                { key: "led", label: "Most votes, by seat", className: "px-2 py-1.5", sortable: false },
+              ]}
+              rows={constituencies.regions.map((g) => ({
+                key: g.name,
+                sort: {
+                  region: g.name,
+                  n: g.n,
+                  ...Object.fromEntries(constituencies.families.map((f) => [`f-${f}`, g.shares[f] ?? null])),
+                  turnout: g.turnout,
+                },
+                cells: (
+                  <>
                     <td className="px-2 py-1.5 font-semibold text-[var(--text)] whitespace-nowrap">{g.name}</td>
                     <td className="px-2 py-1.5 text-right tabular-nums text-[var(--text-muted)]">{g.n}</td>
                     {constituencies.families.map((f) => (
@@ -308,10 +316,10 @@ export default async function UkElectionDetailPage({ params }: { params: Promise
                           </span>
                         ))}
                     </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                  </>
+                ),
+              }))}
+            />
           </div>
 
           <ConstituencyExplorer

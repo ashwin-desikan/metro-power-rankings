@@ -1,0 +1,2559 @@
+{
+ "meta": {
+  "title": "Mexican elections",
+  "sources": [
+   "Wikipedia: Mexican general and presidential election articles, 1853–2024, and Mexican legislative election articles, 1943–2021 (results, infoboxes and leads)",
+   "INE and historical figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "presEras": [
+  {
+   "key": "reforma",
+   "label": "Santa Anna to the Restored Republic",
+   "span": "1853–1876",
+   "blurb": "Mexico's mid-century elections were indirect, held between coups and wars: Santa Anna's last dictatorship, the Reforma and Benito Juárez's embattled presidencies through French intervention, and the disputed 1876 contest that ended in Porfirio Díaz's revolt."
+  },
+  {
+   "key": "porfiriato",
+   "label": "The Porfiriato",
+   "span": "1877–1910",
+   "blurb": "Porfirio Díaz was re-elected seven times in contests with no real opposition, the machinery of a personal dictatorship dressed as a republic. The fraudulent 1910 election against the jailed Francisco Madero lit the Mexican Revolution."
+  },
+  {
+   "key": "revolution",
+   "label": "Revolution and reconstruction",
+   "span": "1911–1929",
+   "blurb": "Madero's 1911 landslide was Mexico's freest election yet — followed by his murder, civil war, the 1917 Constitution, and the assassination-scarred rise of the Sonoran generals. The 1929 special election, won by the brand-new official party amid open fraud, founded the system that would rule for seven decades."
+  },
+  {
+   "key": "pri",
+   "label": "The PRI's hegemony",
+   "span": "1934–1988",
+   "blurb": "For sixty years the official party — PNR, then PRM, then PRI — never lost a presidential election, blending real social bases with electoral control. The arc runs from Cárdenas's oil nationalism to the 1988 'fall of the system', when the count mysteriously crashed with the opposition ahead."
+  },
+  {
+   "key": "transition",
+   "label": "Transition and alternation",
+   "span": "1994–2024",
+   "blurb": "Reformed electoral institutions turned real: Fox's 2000 victory ended 71 years of one-party rule, 2006 was decided by half a point, the PRI returned in 2012, and Morena's landslides in 2018 and 2024 — the latter electing Claudia Sheinbaum, Mexico's first woman president — built a new dominant party."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "hegemony",
+   "label": "Midterms under the hegemonic party",
+   "span": "1943–1991",
+   "blurb": "Chamber of Deputies midterms under PRI rule were rituals of an official majority, though reforms from 1963 onward carved out token, then real, opposition seats — the laboratory where Mexico's opposition slowly learned to win."
+  },
+  {
+   "key": "pluralism",
+   "label": "The plural Chamber",
+   "span": "1997–2021",
+   "blurb": "In 1997 the PRI lost its Chamber majority for the first time, and every midterm since has been a genuine referendum on the sitting president — from Fox's divided government through the PRI's 2009 comeback to Morena's defence of its supermajority in 2021."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1853",
+   "label": "1853",
+   "year": 1853,
+   "kind": "presidential",
+   "date": "April 1853",
+   "era": "reforma",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": {
+    "name": "Manuel María Lombardini",
+    "party": "Elected President"
+   },
+   "presAfter": {
+    "name": "Antonio López de Santa Anna",
+    "party": "Politics of Mexico"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in Mexico in April 1853, following the resignation of Mariano Arista on January 5. The country experienced profound political polarization between liberal and conservative factions, alongside economic and military instability as a result of the Mexican-American War.",
+   "caveat": "An indirect election held amid deep instability; the franchise and the count were controlled by the government of the day."
+  },
+  {
+   "id": "pres-1857",
+   "label": "1857",
+   "year": 1857,
+   "kind": "presidential",
+   "date": "1857",
+   "era": "reforma",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Ignacio Comonfort",
+     "party": null,
+     "r1Votes": 8084,
+     "r1Share": 92.67,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Miguel Lerdo de Tejada",
+     "party": null,
+     "r1Votes": 639,
+     "r1Share": 7.33,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ignacio Comonfort",
+    "party": "Elected President"
+   },
+   "presAfter": {
+    "name": "Ignacio Comonfort",
+    "party": "Politics of Mexico"
+   },
+   "knownAs": "Under the new liberal constitution",
+   "summary": "General elections were held in Mexico in September 1857. They were the first to be held under the February 1857 constitution, which introduced direct elections for the presidency, abolished the Senate, and introduced universal male suffrage for citizens aged 18 (if married) or 20 (if single), as long as they had an \"honest mode of living\".",
+   "caveat": "An indirect election held amid deep instability; the franchise and the count were controlled by the government of the day."
+  },
+  {
+   "id": "pres-1861",
+   "label": "1861",
+   "year": 1861,
+   "kind": "presidential",
+   "date": "1861",
+   "era": "reforma",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Benito Juárez",
+     "party": null,
+     "r1Votes": 5161,
+     "r1Share": 53.41,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sebastián Lerdo de Tejada",
+     "party": null,
+     "r1Votes": 2700,
+     "r1Share": 27.94,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jesús González Ortega",
+     "party": null,
+     "r1Votes": 1800,
+     "r1Share": 18.63,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Benito Juárez",
+    "party": "Elected President"
+   },
+   "presAfter": {
+    "name": "Benito Juárez",
+    "party": "Politics of Mexico"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Mexico in 1861. Although incumbent president Benito Juárez received a majority (53%) of the popular vote, opponents claimed his margin of victory was not enough and a Congressional vote was required.",
+   "caveat": "An indirect election held amid deep instability; the franchise and the count were controlled by the government of the day."
+  },
+  {
+   "id": "pres-1867",
+   "label": "1867",
+   "year": 1867,
+   "kind": "presidential",
+   "date": "October 1867",
+   "era": "reforma",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Benito Juárez",
+     "party": null,
+     "r1Votes": 7422,
+     "r1Share": 71.5,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Porfirio Díaz",
+     "party": null,
+     "r1Votes": 2709,
+     "r1Share": 26.1,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Benito Juárez",
+    "party": "Elected President"
+   },
+   "presAfter": {
+    "name": "Benito Juárez",
+    "party": "Politics of Mexico"
+   },
+   "knownAs": "After the fall of Maximilian",
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An indirect election held amid deep instability; the franchise and the count were controlled by the government of the day."
+  },
+  {
+   "id": "pres-1871",
+   "label": "1871",
+   "year": 1871,
+   "kind": "presidential",
+   "date": "1871",
+   "era": "reforma",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Benito Juárez",
+     "party": null,
+     "r1Votes": 5837,
+     "r1Share": 47.63,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Porfirio Díaz",
+     "party": null,
+     "r1Votes": 3555,
+     "r1Share": 29.01,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Benito Juárez",
+    "party": "Elected President"
+   },
+   "presAfter": {
+    "name": "Benito Juárez",
+    "party": "Politics of Mexico"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Mexico in 1871. In the presidential election, no candidate received more than 50% of the electoral college vote, resulting in Congress electing the winner.",
+   "caveat": "An indirect election held amid deep instability; the franchise and the count were controlled by the government of the day."
+  },
+  {
+   "id": "pres-1872",
+   "label": "1872",
+   "year": 1872,
+   "kind": "presidential",
+   "date": "1872",
+   "era": "reforma",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Sebastián Lerdo de Tejada",
+     "party": null,
+     "r1Votes": 9520,
+     "r1Share": 92.32,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Porfirio Diaz",
+     "party": null,
+     "r1Votes": 604,
+     "r1Share": 5.86,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Benito Juárez",
+    "party": "Elected President"
+   },
+   "presAfter": {
+    "name": "Sebastián Lerdo de Tejada",
+    "party": "Politics of Mexico"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An indirect election held amid deep instability; the franchise and the count were controlled by the government of the day."
+  },
+  {
+   "id": "pres-1876",
+   "label": "1876",
+   "year": 1876,
+   "kind": "presidential",
+   "date": "1876",
+   "era": "reforma",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Sebastián Lerdo de Tejada",
+     "party": null,
+     "r1Votes": 7536,
+     "r1Share": 90.93,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Other candidates",
+     "party": null,
+     "r1Votes": 752,
+     "r1Share": 9.07,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Sebastián Lerdo de Tejada",
+    "party": "Elected President"
+   },
+   "presAfter": {
+    "name": "Sebastián Lerdo de Tejada",
+    "party": "Politics of Mexico"
+   },
+   "knownAs": "Settled by revolt",
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An indirect election held amid deep instability; the franchise and the count were controlled by the government of the day."
+  },
+  {
+   "id": "pres-1877",
+   "label": "1877",
+   "year": 1877,
+   "kind": "presidential",
+   "date": "1877",
+   "era": "porfiriato",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Porfirio Díaz",
+     "party": null,
+     "r1Votes": 11475,
+     "r1Share": 96.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Other candidates",
+     "party": null,
+     "r1Votes": 428,
+     "r1Share": 3.6,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Juan N. Méndez",
+    "party": "Elected President"
+   },
+   "presAfter": {
+    "name": "Porfirio Díaz",
+    "party": "Politics of Mexico"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An election in form only: under the Porfiriato the result was arranged in advance and no genuine opposition was permitted. Recorded here as history, not as a free election."
+  },
+  {
+   "id": "pres-1880",
+   "label": "1880",
+   "year": 1880,
+   "kind": "presidential",
+   "date": "1880",
+   "era": "porfiriato",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Manuel González Flores",
+     "party": null,
+     "r1Votes": 11528,
+     "r1Share": 76.72,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Justo Benítez ",
+     "party": null,
+     "r1Votes": 1368,
+     "r1Share": 9.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Trinidad García de la Cadena ",
+     "party": null,
+     "r1Votes": 1075,
+     "r1Share": 7.15,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Porfirio Díaz",
+    "party": "Elected President"
+   },
+   "presAfter": {
+    "name": "Manuel González Flores",
+    "party": "Politics of Mexico"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An election in form only: under the Porfiriato the result was arranged in advance and no genuine opposition was permitted. Recorded here as history, not as a free election."
+  },
+  {
+   "id": "pres-1884",
+   "label": "1884",
+   "year": 1884,
+   "kind": "presidential",
+   "date": "1884",
+   "era": "porfiriato",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Porfirio Díaz",
+     "party": null,
+     "r1Votes": 15766,
+     "r1Share": 98.83,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ramón Corral",
+     "party": null,
+     "r1Votes": 31,
+     "r1Share": 0.19,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Manuel González Flores",
+    "party": "Elected President"
+   },
+   "presAfter": {
+    "name": "Porfirio Díaz",
+    "party": "Politics of Mexico"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An election in form only: under the Porfiriato the result was arranged in advance and no genuine opposition was permitted. Recorded here as history, not as a free election."
+  },
+  {
+   "id": "pres-1888",
+   "label": "1888",
+   "year": 1888,
+   "kind": "presidential",
+   "date": "1888",
+   "era": "porfiriato",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Porfirio Díaz",
+     "party": null,
+     "r1Votes": 16662,
+     "r1Share": 99.72,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ramón Corral",
+     "party": null,
+     "r1Votes": 6,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Porfirio Díaz",
+    "party": "Elected President"
+   },
+   "presAfter": {
+    "name": "Porfirio Díaz",
+    "party": "Politics of Mexico"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An election in form only: under the Porfiriato the result was arranged in advance and no genuine opposition was permitted. Recorded here as history, not as a free election."
+  },
+  {
+   "id": "pres-1892",
+   "label": "1892",
+   "year": 1892,
+   "kind": "presidential",
+   "date": "1892",
+   "era": "porfiriato",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Porfirio Díaz",
+     "party": null,
+     "r1Votes": 17277,
+     "r1Share": 99.88,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Other candidates",
+     "party": null,
+     "r1Votes": 21,
+     "r1Share": 0.12,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Porfirio Díaz",
+    "party": "Elected President"
+   },
+   "presAfter": {
+    "name": "Porfirio Díaz",
+    "party": "Politics of Mexico"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An election in form only: under the Porfiriato the result was arranged in advance and no genuine opposition was permitted. Recorded here as history, not as a free election."
+  },
+  {
+   "id": "pres-1896",
+   "label": "1896",
+   "year": 1896,
+   "kind": "presidential",
+   "date": "1896",
+   "era": "porfiriato",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Porfirio Díaz",
+     "party": null,
+     "r1Votes": 17416,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Porfirio Díaz",
+    "party": "Elected President"
+   },
+   "presAfter": {
+    "name": "Porfirio Díaz",
+    "party": "Politics of Mexico"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An election in form only: under the Porfiriato the result was arranged in advance and no genuine opposition was permitted. Recorded here as history, not as a free election."
+  },
+  {
+   "id": "pres-1900",
+   "label": "1900",
+   "year": 1900,
+   "kind": "presidential",
+   "date": "1900",
+   "era": "porfiriato",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Porfirio Díaz",
+     "party": null,
+     "r1Votes": 17091,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Porfirio Díaz",
+    "party": "Elected President"
+   },
+   "presAfter": {
+    "name": "Porfirio Díaz",
+    "party": "Politics of Mexico"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An election in form only: under the Porfiriato the result was arranged in advance and no genuine opposition was permitted. Recorded here as history, not as a free election."
+  },
+  {
+   "id": "pres-1904",
+   "label": "1904",
+   "year": 1904,
+   "kind": "presidential",
+   "date": "11 July 1904",
+   "era": "porfiriato",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Porfirio Díaz",
+     "party": null,
+     "r1Votes": 19008,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nicolás Zúñiga y Miranda",
+     "party": null,
+     "r1Votes": 0,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Porfirio Díaz",
+    "party": "Elected President"
+   },
+   "presAfter": {
+    "name": "Porfirio Díaz",
+    "party": "Politics of Mexico"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Mexico on 11 July 1904. Incumbent Porfirio Díaz was the only serious candidate for the presidency, and was re-elected with 100% of the vote.",
+   "caveat": "An election in form only: under the Porfiriato the result was arranged in advance and no genuine opposition was permitted. Recorded here as history, not as a free election."
+  },
+  {
+   "id": "pres-1910",
+   "label": "1910",
+   "year": 1910,
+   "kind": "presidential",
+   "date": "1910",
+   "era": "porfiriato",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Porfirio Díaz",
+     "party": "National Reelectionist",
+     "r1Votes": 18625,
+     "r1Share": 98.93,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Francisco I. Madero",
+     "party": "National Antireelectionist",
+     "r1Votes": 196,
+     "r1Share": 1.04,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Porfirio Díaz",
+    "party": "National Reelectionist"
+   },
+   "presAfter": {
+    "name": "Porfirio Díaz",
+    "party": "National Reelectionist"
+   },
+   "knownAs": "The spark of the Revolution",
+   "summary": "Porfirio Díaz, a liberal general who had distinguished himself during the War of Reform and resistance to French intervention, seized control of the Mexican government from Sebastian Lerdo de Tejada in an 1876 coup d'état, in which Díaz and other Mexican military officials explicitly opposed presidential re-election.",
+   "caveat": "An election in form only: under the Porfiriato the result was arranged in advance and no genuine opposition was permitted. Recorded here as history, not as a free election."
+  },
+  {
+   "id": "pres-1911",
+   "label": "1911",
+   "year": 1911,
+   "kind": "presidential",
+   "date": "1911",
+   "era": "revolution",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Francisco I. Madero",
+     "party": "Progressive Constitutionalist",
+     "r1Votes": 19997,
+     "r1Share": 99.27,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Francisco León de la Barra",
+     "party": "Independent",
+     "r1Votes": 87,
+     "r1Share": 0.43,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Francisco León de la Barra",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Francisco I. Madero",
+    "party": "Progressive Constitutionalist"
+   },
+   "knownAs": "Madero's free election",
+   "summary": "The 1910 elections were intended to be the first free elections of the Porfiriato, but after opposition leader Francisco I. Madero appeared poised to upset the Porfirian regime, he was arrested and imprisoned before the election was held.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1917",
+   "label": "1917",
+   "year": 1917,
+   "kind": "presidential",
+   "date": "1917",
+   "era": "revolution",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Venustiano Carranza",
+     "party": "Liberal Constitutionalist",
+     "r1Votes": 797305,
+     "r1Share": 97.17,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pablo González Garza",
+     "party": "Democratic League",
+     "r1Votes": 11615,
+     "r1Share": 1.42,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Position vacant",
+    "party": "Venustiano Carranza as Head of the Executive Power"
+   },
+   "presAfter": {
+    "name": "Venustiano Carranza",
+    "party": "Liberal Constitutionalist"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An indirect election held amid deep instability; the franchise and the count were controlled by the government of the day."
+  },
+  {
+   "id": "pres-1920",
+   "label": "1920",
+   "year": 1920,
+   "kind": "presidential",
+   "date": "5 September 1920",
+   "era": "revolution",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Álvaro Obregón",
+     "party": "Laborist",
+     "r1Votes": 1131751,
+     "r1Share": 95.79,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alfredo Robles Domínguez ",
+     "party": "Nationalist Republican",
+     "r1Votes": 47442,
+     "r1Share": 4.02,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Adolfo de la Huerta",
+    "party": "Liberal Constitutionalist"
+   },
+   "presAfter": {
+    "name": "Álvaro Obregón",
+    "party": "Laborist"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1924",
+   "label": "1924",
+   "year": 1924,
+   "kind": "presidential",
+   "date": "6 July 1924",
+   "era": "revolution",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Plutarco Elías Calles",
+     "party": "Laborist",
+     "r1Votes": 1340634,
+     "r1Share": 84.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ángel Flores ",
+     "party": "LPN",
+     "r1Votes": 252599,
+     "r1Share": 15.85,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Álvaro Obregón",
+    "party": "Laborist"
+   },
+   "presAfter": {
+    "name": "Plutarco Elías Calles",
+    "party": "Laborist"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1928",
+   "label": "1928",
+   "year": 1928,
+   "kind": "presidential",
+   "date": "1 July 1928",
+   "era": "revolution",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Alvaro Obregón",
+     "party": "Laborist Party",
+     "r1Votes": 1670453,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Plutarco Elías Calles",
+    "party": "Laborist"
+   },
+   "presAfter": {
+    "name": "Álvaro Obregón assassinated",
+    "party": "Emilio Portes Gil (PNR) became President"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Mexico on 1 July 1928. Alvaro Obregón was the only candidate in the presidential elections, and was elected unopposed.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1929",
+   "label": "1929",
+   "year": 1929,
+   "kind": "presidential",
+   "date": "17 November 1929",
+   "era": "revolution",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Pascual Ortiz Rubio",
+     "party": "PNR",
+     "r1Votes": 1947848,
+     "r1Share": 93.55,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José Vasconcelos",
+     "party": "PNA",
+     "r1Votes": 110979,
+     "r1Share": 5.33,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Emilio Portes Gil",
+    "party": "PNR"
+   },
+   "presAfter": {
+    "name": "Pascual Ortiz Rubio",
+    "party": "PNR"
+   },
+   "knownAs": "The official party's debut",
+   "summary": "The National Revolutionary Party, founded in 1928 by Mexico's most powerful leader at the time, Plutarco Elías Calles, made its debut in these elections. The 1929 elections marked the beginning of 71 uninterrupted years of rule by that party, which was later renamed Party of the Mexican Revolution in 1938 and finally, Institutional Revolutionary Party (PRI) in 1946.",
+   "caveat": "Held under the hegemonic-party system: opposition parties appeared on the ballot, but the machinery of state made the official candidate's victory a foregone conclusion."
+  },
+  {
+   "id": "pres-1934",
+   "label": "1934",
+   "year": 1934,
+   "kind": "presidential",
+   "date": "1934",
+   "era": "pri",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Lázaro Cárdenas",
+     "party": "PNR",
+     "r1Votes": 2225000,
+     "r1Share": 98.19,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Antonio Villarreal",
+     "party": "CPRI",
+     "r1Votes": 24395,
+     "r1Share": 1.08,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Abelardo L. Rodríguez",
+    "party": "PNR"
+   },
+   "presAfter": {
+    "name": "Lázaro Cárdenas",
+    "party": "PNR"
+   },
+   "knownAs": null,
+   "summary": "The 1934 campaign and elections took place during the final phase of the period known as the Maximato; since 1924, Plutarco Elías Calles (self-proclaimed “Maximum Leader of the Revolution”) had been the most powerful figure in the country (between 1924 and 1928 de jure, as President, and from 1928 onward de facto as the “power behind the throne” while three presidents succeeded",
+   "caveat": "Held under the hegemonic-party system: opposition parties appeared on the ballot, but the machinery of state made the official candidate's victory a foregone conclusion."
+  },
+  {
+   "id": "pres-1940",
+   "label": "1940",
+   "year": 1940,
+   "kind": "presidential",
+   "date": "7 July 1940",
+   "era": "pri",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Manuel Ávila Camacho",
+     "party": "PRM",
+     "r1Votes": 2476641,
+     "r1Share": 93.9,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Juan Andreu Almazán",
+     "party": "PRUN",
+     "r1Votes": 151101,
+     "r1Share": 5.73,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Lázaro Cárdenas",
+    "party": "PRM"
+   },
+   "presAfter": {
+    "name": "Manuel Ávila Camacho",
+    "party": "PRM"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Mexico on 7 July 1940. The presidential elections were won by Manuel Ávila Camacho, who received 94% of the vote.",
+   "caveat": "Held under the hegemonic-party system: opposition parties appeared on the ballot, but the machinery of state made the official candidate's victory a foregone conclusion."
+  },
+  {
+   "id": "pres-1946",
+   "label": "1946",
+   "year": 1946,
+   "kind": "presidential",
+   "date": "1946",
+   "era": "pri",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Miguel Alemán Valdés",
+     "party": "PRI",
+     "r1Votes": 1786901,
+     "r1Share": 77.87,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ezequiel Padilla Peñaloza",
+     "party": "PDM",
+     "r1Votes": 443357,
+     "r1Share": 19.32,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Manuel Ávila Camacho",
+    "party": "PRI"
+   },
+   "presAfter": {
+    "name": "Miguel Alemán Valdés",
+    "party": "PRI"
+   },
+   "knownAs": null,
+   "summary": "With the establishment of the Federal Electoral Law of 1946, three political parties were registered: the National Action Party (PAN), the Mexican Democratic Party (PDM) and the Institutional Revolutionary Party (PRI), with the latter being a successor of the Party of the Mexican Revolution.",
+   "caveat": "Held under the hegemonic-party system: opposition parties appeared on the ballot, but the machinery of state made the official candidate's victory a foregone conclusion."
+  },
+  {
+   "id": "pres-1952",
+   "label": "1952",
+   "year": 1952,
+   "kind": "presidential",
+   "date": "7 July 1952",
+   "era": "pri",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Adolfo Ruiz Cortines",
+     "party": "PRI",
+     "r1Votes": 2713419,
+     "r1Share": 74.31,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Miguel Henríquez Guzmán",
+     "party": "FPPM",
+     "r1Votes": 579745,
+     "r1Share": 15.88,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Efraín González Luna",
+     "party": "PAN",
+     "r1Votes": 285555,
+     "r1Share": 7.82,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Miguel Alemán Valdés",
+    "party": "PRI"
+   },
+   "presAfter": {
+    "name": "Adolfo Ruiz Cortines",
+    "party": "PRI"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Mexico on 7 July 1952. The presidential elections were won by Adolfo Ruiz Cortines of the Institutional Revolutionary Party (PRI), who received 74.3% of the vote.",
+   "caveat": "Held under the hegemonic-party system: opposition parties appeared on the ballot, but the machinery of state made the official candidate's victory a foregone conclusion."
+  },
+  {
+   "id": "pres-1958",
+   "label": "1958",
+   "year": 1958,
+   "kind": "presidential",
+   "date": "6 July 1958",
+   "era": "pri",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Adolfo López Mateos",
+     "party": "PRI",
+     "r1Votes": 6767754,
+     "r1Share": 90.44,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Luis Héctor Álvarez",
+     "party": "PAN",
+     "r1Votes": 705303,
+     "r1Share": 9.42,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Adolfo Ruiz Cortines",
+    "party": "PRI"
+   },
+   "presAfter": {
+    "name": "Adolfo López Mateos",
+    "party": "PRI"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Mexico on 6 July 1958. The presidential elections were won by Adolfo López Mateos, who received 90.4% of the vote.",
+   "caveat": "Held under the hegemonic-party system: opposition parties appeared on the ballot, but the machinery of state made the official candidate's victory a foregone conclusion."
+  },
+  {
+   "id": "pres-1964",
+   "label": "1964",
+   "year": 1964,
+   "kind": "presidential",
+   "date": "1964",
+   "era": "pri",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Gustavo Díaz Ordaz",
+     "party": "PRI",
+     "r1Votes": 8368446,
+     "r1Share": 88.82,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "José González Torres",
+     "party": "PAN",
+     "r1Votes": 1034337,
+     "r1Share": 10.98,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Adolfo López Mateos",
+    "party": "PRI"
+   },
+   "presAfter": {
+    "name": "Gustavo Díaz Ordaz",
+    "party": "PRI"
+   },
+   "knownAs": null,
+   "summary": "The 1964 election was the first to use the party deputy mechanism: a form of proportional representation through which three parties other than the hegemonic Institutional Revolutionary Party (PRI) – none of which won any first-past-the-post districts – were allocated 32 seats.",
+   "caveat": "Held under the hegemonic-party system: opposition parties appeared on the ballot, but the machinery of state made the official candidate's victory a foregone conclusion."
+  },
+  {
+   "id": "pres-1970",
+   "label": "1970",
+   "year": 1970,
+   "kind": "presidential",
+   "date": "5 July 1970",
+   "era": "pri",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Luis Echeverría",
+     "party": "PRI",
+     "r1Votes": 11970893,
+     "r1Share": 86.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Efraín González Morfín",
+     "party": "PAN",
+     "r1Votes": 1945070,
+     "r1Share": 13.98,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Gustavo Díaz Ordaz",
+    "party": "PRI"
+   },
+   "presAfter": {
+    "name": "Luis Echeverría",
+    "party": "PRI"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Mexico on 5 July 1970. The presidential elections were won by Luis Echeverría, who received 86% of the vote.",
+   "caveat": "Held under the hegemonic-party system: opposition parties appeared on the ballot, but the machinery of state made the official candidate's victory a foregone conclusion."
+  },
+  {
+   "id": "pres-1976",
+   "label": "1976",
+   "year": 1976,
+   "kind": "presidential",
+   "date": "4 July 1976",
+   "era": "pri",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "José López Portillo",
+     "party": "Institutional Revolutionary Party",
+     "r1Votes": 15435321,
+     "r1Share": 92.27,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Popular Socialist Party",
+     "party": "648,778",
+     "r1Votes": 648778,
+     "r1Share": 3.88,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Authentic Party of the Mexican Revolution",
+     "party": "339,922",
+     "r1Votes": 339922,
+     "r1Share": 2.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Personal votes",
+     "party": "303,972",
+     "r1Votes": 303972,
+     "r1Share": 1.82,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Luis Echeverría",
+    "party": "PRI"
+   },
+   "presAfter": {
+    "name": "José López Portillo",
+    "party": "PRI"
+   },
+   "knownAs": "An unopposed election",
+   "summary": "General elections were held in Mexico on 4 July 1976. José López Portillo was the only candidate in the presidential election, and was elected unopposed.",
+   "caveat": "Held under the hegemonic-party system: opposition parties appeared on the ballot, but the machinery of state made the official candidate's victory a foregone conclusion."
+  },
+  {
+   "id": "pres-1982",
+   "label": "1982",
+   "year": 1982,
+   "kind": "presidential",
+   "date": "4 July 1982",
+   "era": "pri",
+   "turnout": 74.84,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Miguel de la Madrid",
+     "party": "PRI",
+     "r1Votes": 16748006,
+     "r1Share": 74.31,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pablo Emilio Madero",
+     "party": "PAN",
+     "r1Votes": 3700045,
+     "r1Share": 16.42,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "José López Portillo",
+    "party": "PRI"
+   },
+   "presAfter": {
+    "name": "Miguel de la Madrid",
+    "party": "PRI"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Mexico on 4 July 1982. The presidential elections were won by Miguel de la Madrid, who received 74% of the vote.",
+   "caveat": "Held under the hegemonic-party system: opposition parties appeared on the ballot, but the machinery of state made the official candidate's victory a foregone conclusion."
+  },
+  {
+   "id": "pres-1988",
+   "label": "1988",
+   "year": 1988,
+   "kind": "presidential",
+   "date": "6 July 1988",
+   "era": "pri",
+   "turnout": 52.01,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Carlos Salinas de Gortari",
+     "party": "PRI",
+     "r1Votes": 9687926,
+     "r1Share": 50.71,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Cuauhtémoc Cárdenas",
+     "party": "FDN",
+     "r1Votes": 5929585,
+     "r1Share": 31.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Manuel Clouthier",
+     "party": "PAN",
+     "r1Votes": 3208584,
+     "r1Share": 16.79,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Miguel de la Madrid",
+    "party": "PRI"
+   },
+   "presAfter": {
+    "name": "Carlos Salinas de Gortari",
+    "party": "PRI"
+   },
+   "knownAs": "The fall of the system",
+   "summary": "General elections were held in Mexico on 6 July 1988. They were the first competitive presidential elections in Mexico since the Institutional Revolutionary Party (PRI) took power in 1929.",
+   "caveat": "Held under the hegemonic-party system; the vote count was interrupted and the official result is widely regarded as fraudulent."
+  },
+  {
+   "id": "pres-1994",
+   "label": "1994",
+   "year": 1994,
+   "kind": "presidential",
+   "date": "21 August 1994",
+   "era": "transition",
+   "turnout": 77.16,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Ernesto Zedillo",
+     "party": "PRI",
+     "r1Votes": 17181651,
+     "r1Share": 50.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Diego Fernández de Cevallos",
+     "party": "PAN",
+     "r1Votes": 9146841,
+     "r1Share": 26.69,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Cuauhtémoc Cárdenas",
+     "party": "PRD",
+     "r1Votes": 5852134,
+     "r1Share": 17.07,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Carlos Salinas de Gortari",
+    "party": "PRI"
+   },
+   "presAfter": {
+    "name": "Ernesto Zedillo",
+    "party": "PRI"
+   },
+   "knownAs": "The Colosio year",
+   "summary": "General elections were held in Mexico on 21 August 1994. The presidential elections resulted in a victory for Ernesto Zedillo of the Institutional Revolutionary Party (PRI), whilst the PRI won 300 of the 500 seats in the Chamber of Deputies and 95 of the 128 seats in the Senate.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2000",
+   "label": "2000",
+   "year": 2000,
+   "kind": "presidential",
+   "date": "2 July 2000",
+   "era": "transition",
+   "turnout": 63.97,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Vicente Fox",
+     "party": "PAN",
+     "r1Votes": 15989636,
+     "r1Share": 43.43,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Francisco Labastida",
+     "party": "PRI",
+     "r1Votes": 13579718,
+     "r1Share": 36.89,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Cuauhtémoc Cárdenas",
+     "party": "PRD",
+     "r1Votes": 6256780,
+     "r1Share": 17.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ernesto Zedillo",
+    "party": "PRI"
+   },
+   "presAfter": {
+    "name": "Vicente Fox",
+    "party": "PAN"
+   },
+   "knownAs": "The end of one-party rule",
+   "summary": "General elections were held in Mexico on Sunday, 2 July 2000. Voters went to the polls to elect a new president to serve a single six-year term, replacing President Ernesto Zedillo Ponce de León, who was ineligible for re-election under the 1917 Constitution.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2006",
+   "label": "2006",
+   "year": 2006,
+   "kind": "presidential",
+   "date": "2 July 2006",
+   "era": "transition",
+   "turnout": 58.55,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Felipe Calderón",
+     "party": "PAN",
+     "r1Votes": 15000284,
+     "r1Share": 36.69,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Andrés Manuel López Obrador",
+     "party": "PRD",
+     "r1Votes": 14756350,
+     "r1Share": 36.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Roberto Madrazo",
+     "party": "PRI",
+     "r1Votes": 9301441,
+     "r1Share": 22.75,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Vicente Fox",
+    "party": "PAN"
+   },
+   "presAfter": {
+    "name": "Felipe Calderón",
+    "party": "PAN"
+   },
+   "knownAs": "Decided by half a point",
+   "summary": "General elections were held in Mexico on Sunday, 2 July 2006.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2012",
+   "label": "2012",
+   "year": 2012,
+   "kind": "presidential",
+   "date": "2012",
+   "era": "transition",
+   "turnout": 63.08,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Enrique Peña Nieto",
+     "party": "PRI",
+     "r1Votes": 19158592,
+     "r1Share": 39.17,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Andrés Manuel López Obrador",
+     "party": "PRD",
+     "r1Votes": 15848827,
+     "r1Share": 32.41,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Josefina Vázquez Mota",
+     "party": "PAN",
+     "r1Votes": 12732630,
+     "r1Share": 26.03,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Felipe Calderón",
+    "party": "PAN"
+   },
+   "presAfter": {
+    "name": "Enrique Peña Nieto",
+    "party": "PRI"
+   },
+   "knownAs": null,
+   "summary": "Several local ballots were held on the same day, including the election of a new Head of Government and new Legislative Assembly of the Federal District, gubernatorial elections in six states (Chiapas, Guanajuato, Jalisco, Morelos, Tabasco and Yucatán) and municipal and local congressional elections several states.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2018",
+   "label": "2018",
+   "year": 2018,
+   "kind": "presidential",
+   "date": "1 July 2018",
+   "era": "transition",
+   "turnout": 63.43,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Andrés Manuel López Obrador",
+     "party": "MORENA",
+     "r1Votes": 30113483,
+     "r1Share": 54.71,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ricardo Anaya",
+     "party": "PAN",
+     "r1Votes": 12610120,
+     "r1Share": 22.91,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Enrique Peña Nieto",
+    "party": "PRI"
+   },
+   "presAfter": {
+    "name": "Andrés Manuel López Obrador",
+    "party": "MORENA"
+   },
+   "knownAs": "The AMLO landslide",
+   "summary": "General elections were held in Mexico on 1 July 2018. Voters elected a new president to serve a six-year term, 128 members of the Senate for six years and 500 members of the Chamber of Deputies for three years.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2024",
+   "label": "2024",
+   "year": 2024,
+   "kind": "presidential",
+   "date": "2 June 2024",
+   "era": "transition",
+   "turnout": 61.05,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Claudia Sheinbaum",
+     "party": "MORENA",
+     "r1Votes": 35924519,
+     "r1Share": 61.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Xóchitl Gálvez",
+     "party": "PAN[a]",
+     "r1Votes": 16502697,
+     "r1Share": 28.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jorge Máynez",
+     "party": "MC",
+     "r1Votes": 6204710,
+     "r1Share": 10.57,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Andrés Manuel López Obrador",
+    "party": "MORENA"
+   },
+   "presAfter": {
+    "name": "Claudia Sheinbaum",
+    "party": "MORENA"
+   },
+   "knownAs": "Mexico's first woman president",
+   "summary": "General elections were held in Mexico on 2 June 2024. Voters elected a new president to serve a six-year term, all 500 members of the Chamber of Deputies, and all 128 members of the Senate of the Republic.",
+   "caveat": null
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1943",
+   "label": "1943",
+   "year": 1943,
+   "kind": "legislative",
+   "date": "1943",
+   "era": "hegemony",
+   "totalSeats": 147,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Party of the Mexican Revolution",
+     "leader": null,
+     "seats": 147,
+     "seatChange": 25.0,
+     "votes": 376000,
+     "share": 92.13,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Manuel Ávila Camacho",
+    "party": "PRM"
+   },
+   "pmAfter": {
+    "name": "Manuel Ávila Camacho",
+    "party": "PRM"
+   },
+   "knownAs": "First PRI-era midterm in the dataset",
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "A midterm held under the hegemonic-party system: the official majority was not in genuine doubt.",
+   "seatLeader": "Party of the Mexican Revolution"
+  },
+  {
+   "id": "1949",
+   "label": "1949",
+   "year": 1949,
+   "kind": "legislative",
+   "date": "3 July 1949",
+   "era": "hegemony",
+   "totalSeats": 147,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Institutional Revolutionary Party",
+     "leader": null,
+     "seats": 142,
+     "seatChange": 1.0,
+     "votes": 2031783,
+     "share": 93.91,
+     "swing": null
+    },
+    {
+     "name": "National Action Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 121061,
+     "share": 5.6,
+     "swing": null
+    },
+    {
+     "name": "Popular Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 10738,
+     "share": 0.5,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Miguel Alemán",
+    "party": "PRI"
+   },
+   "pmAfter": {
+    "name": "Miguel Alemán",
+    "party": "PRI"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in Mexico on 3 July 1949. The Institutional Revolutionary Party (PRI), a dominant party that ruled the nation under an authoritarian regime, won 142 of the 147 seats in the Chamber of Deputies.",
+   "caveat": "A midterm held under the hegemonic-party system: the official majority was not in genuine doubt.",
+   "seatLeader": "Institutional Revolutionary Party"
+  },
+  {
+   "id": "1955",
+   "label": "1955",
+   "year": 1955,
+   "kind": "legislative",
+   "date": "4 July 1955",
+   "era": "hegemony",
+   "totalSeats": 162,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Institutional Revolutionary Party (PRI)",
+     "leader": null,
+     "seats": 153,
+     "seatChange": 2.0,
+     "votes": 5562761,
+     "share": 89.86,
+     "swing": null
+    },
+    {
+     "name": "National Action Party (PAN)",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 1.0,
+     "votes": 567678,
+     "share": 9.17,
+     "swing": null
+    },
+    {
+     "name": "Popular Party (PP)",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": 42621,
+     "share": 0.69,
+     "swing": null
+    },
+    {
+     "name": "Nationalist Party of Mexico (PNM)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 17316,
+     "share": 0.28,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Adolfo Ruiz Cortines",
+    "party": "PRI"
+   },
+   "pmAfter": {
+    "name": "Adolfo Ruiz Cortines",
+    "party": "PRI"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in Mexico on 4 July 1955. They were first federal elections in which women were able to vote after President Adolfo Ruiz Cortines introduced unrestricted citizenship for women on 17 October 1953, meeting one of his main campaign promises.",
+   "caveat": "A midterm held under the hegemonic-party system: the official majority was not in genuine doubt.",
+   "seatLeader": "Institutional Revolutionary Party (PRI)"
+  },
+  {
+   "id": "1961",
+   "label": "1961",
+   "year": 1961,
+   "kind": "legislative",
+   "date": "1961",
+   "era": "hegemony",
+   "totalSeats": 178,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Institutional Revolutionary Party (PRI)",
+     "leader": null,
+     "seats": 172,
+     "seatChange": 19.0,
+     "votes": 6178434,
+     "share": 90.25,
+     "swing": null
+    },
+    {
+     "name": "National Action Party (PAN)",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 1.0,
+     "votes": 518652,
+     "share": 7.58,
+     "swing": null
+    },
+    {
+     "name": "Popular Socialist Party (PPS)",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 65143,
+     "share": 0.95,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Adolfo López Mateos",
+    "party": "PRI"
+   },
+   "pmAfter": {
+    "name": "Adolfo López Mateos",
+    "party": "PRI"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "A midterm held under the hegemonic-party system: the official majority was not in genuine doubt.",
+   "seatLeader": "Institutional Revolutionary Party (PRI)"
+  },
+  {
+   "id": "1967",
+   "label": "1967",
+   "year": 1967,
+   "kind": "legislative",
+   "date": "1967",
+   "era": "hegemony",
+   "totalSeats": 212,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Institutional Revolutionary Party",
+     "leader": null,
+     "seats": 177,
+     "seatChange": 2.0,
+     "votes": 8342114,
+     "share": 83.93,
+     "swing": null
+    },
+    {
+     "name": "National Action Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 0.0,
+     "votes": 1223926,
+     "share": 12.31,
+     "swing": null
+    },
+    {
+     "name": "Popular Socialist Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 0.0,
+     "votes": 215087,
+     "share": 2.16,
+     "swing": null
+    },
+    {
+     "name": "Authentic Party of the Mexican Revolution",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 0.0,
+     "votes": 138799,
+     "share": 1.4,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Gustavo Díaz Ordaz",
+    "party": "PRI"
+   },
+   "pmAfter": {
+    "name": "Gustavo Díaz Ordaz",
+    "party": "PRI"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "A midterm held under the hegemonic-party system: the official majority was not in genuine doubt.",
+   "seatLeader": "Institutional Revolutionary Party"
+  },
+  {
+   "id": "1973",
+   "label": "1973",
+   "year": 1973,
+   "kind": "legislative",
+   "date": "1973",
+   "era": "hegemony",
+   "totalSeats": 231,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Institutional Revolutionary Party",
+     "leader": null,
+     "seats": 189,
+     "seatChange": 11.0,
+     "votes": 10458618,
+     "share": 77.38,
+     "swing": null
+    },
+    {
+     "name": "National Action Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": 5.0,
+     "votes": 2207069,
+     "share": 16.33,
+     "swing": null
+    },
+    {
+     "name": "Popular Socialist Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 0.0,
+     "votes": 541833,
+     "share": 4.01,
+     "swing": null
+    },
+    {
+     "name": "Authentic Party of the Mexican Revolution",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 2.0,
+     "votes": 272339,
+     "share": 2.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Luis Echeverría",
+    "party": "PRI"
+   },
+   "pmAfter": {
+    "name": "Luis Echeverría",
+    "party": "PRI"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "A midterm held under the hegemonic-party system: the official majority was not in genuine doubt.",
+   "seatLeader": "Institutional Revolutionary Party"
+  },
+  {
+   "id": "1979",
+   "label": "1979",
+   "year": 1979,
+   "kind": "legislative",
+   "date": "1979",
+   "era": "hegemony",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": {
+    "name": "José López Portillo",
+    "party": "PRI"
+   },
+   "pmAfter": {
+    "name": "José López Portillo",
+    "party": "PRI"
+   },
+   "knownAs": "First with proportional seats",
+   "summary": "They were the first national elections held after the approval of the political reforms of 1977, which allowed the Mexican Communist Party, Mexican Democratic Party and the Workers' Socialist Party to obtain legal registration and compete in elections for the first time, as well as increasing the size of the Chamber of Deputies from 237 seats to 400.",
+   "caveat": "A midterm held under the hegemonic-party system: the official majority was not in genuine doubt.",
+   "seatLeader": null
+  },
+  {
+   "id": "1985",
+   "label": "1985",
+   "year": 1985,
+   "kind": "legislative",
+   "date": "1985",
+   "era": "hegemony",
+   "totalSeats": 400,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Institutional Revolutionary Party",
+     "leader": null,
+     "seats": 292,
+     "seatChange": 7.0,
+     "votes": 10981938,
+     "share": 63.29,
+     "swing": null
+    },
+    {
+     "name": "National Action Party",
+     "leader": null,
+     "seats": 38,
+     "seatChange": 13.0,
+     "votes": 2831248,
+     "share": 16.32,
+     "swing": null
+    },
+    {
+     "name": "Unified Socialist Party of Mexico",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 5.0,
+     "votes": 602530,
+     "share": 3.47,
+     "swing": null
+    },
+    {
+     "name": "Workers' Socialist Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 1.0,
+     "votes": 593022,
+     "share": 3.42,
+     "swing": null
+    },
+    {
+     "name": "Mexican Democratic Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 0.0,
+     "votes": 507710,
+     "share": 2.93,
+     "swing": null
+    },
+    {
+     "name": "Popular Socialist Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 1.0,
+     "votes": 441567,
+     "share": 2.54,
+     "swing": null
+    },
+    {
+     "name": "Authentic Party of the Mexican Revolution",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 11.0,
+     "votes": 416780,
+     "share": 2.4,
+     "swing": null
+    },
+    {
+     "name": "Mexican Workers' Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 291127,
+     "share": 1.68,
+     "swing": null
+    },
+    {
+     "name": "Workers' Revolutionary Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 6.0,
+     "votes": 289626,
+     "share": 1.67,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Miguel de la Madrid",
+    "party": "PRI"
+   },
+   "pmAfter": {
+    "name": "Miguel de la Madrid",
+    "party": "PRI"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "A midterm held under the hegemonic-party system: the official majority was not in genuine doubt.",
+   "seatLeader": "Institutional Revolutionary Party"
+  },
+  {
+   "id": "1991",
+   "label": "1991",
+   "year": 1991,
+   "kind": "legislative",
+   "date": "18 August 1991",
+   "era": "hegemony",
+   "totalSeats": 500,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Institutional Revolutionary Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": 30.0,
+     "votes": 14256447,
+     "share": 61.54,
+     "swing": null
+    },
+    {
+     "name": "National Action Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 4100287,
+     "share": 17.7,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Carlos Salinas de Gortari",
+    "party": "PRI"
+   },
+   "pmAfter": {
+    "name": "Carlos Salinas de Gortari",
+    "party": "PRI"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in Mexico on 18 August 1991, alongside gubernatorial elections in six states. The Institutional Revolutionary Party (PRI) won 320 of the 500 seats in the Chamber of Deputies and 31 of the 32 seats up for election in the Senate.",
+   "caveat": null,
+   "seatLeader": "Institutional Revolutionary Party"
+  },
+  {
+   "id": "1997",
+   "label": "1997",
+   "year": 1997,
+   "kind": "legislative",
+   "date": "6 July 1997",
+   "era": "pluralism",
+   "totalSeats": 500,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Institutional Revolutionary Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 63.0,
+     "votes": 11266155,
+     "share": 38.48,
+     "swing": null
+    },
+    {
+     "name": "National Action Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 24.0,
+     "votes": 7881121,
+     "share": 26.92,
+     "swing": null
+    },
+    {
+     "name": "Party of the Democratic Revolution",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 6.0,
+     "votes": 7564656,
+     "share": 25.83,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ecologist Green Party of Mexico",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 1180004,
+     "share": 4.03,
+     "swing": null
+    },
+    {
+     "name": "Labor Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 745881,
+     "share": 2.55,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ernesto Zedillo",
+    "party": "PRI"
+   },
+   "pmAfter": {
+    "name": "Ernesto Zedillo",
+    "party": "PRI"
+   },
+   "knownAs": "The PRI loses the Chamber",
+   "summary": "Legislative elections were held in Mexico on 6 July 1997. The Institutional Revolutionary Party (PRI) won 239 of the 500 seats in the Chamber of Deputies, the first time it had failed to win a majority.",
+   "caveat": null,
+   "seatLeader": "Institutional Revolutionary Party"
+  },
+  {
+   "id": "2003",
+   "label": "2003",
+   "year": 2003,
+   "kind": "legislative",
+   "date": "2003",
+   "era": "pluralism",
+   "totalSeats": 500,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Institutional Revolutionary Party",
+     "leader": null,
+     "seats": 224,
+     "seatChange": 16.0,
+     "votes": 6196171,
+     "share": 23.98,
+     "swing": null
+    },
+    {
+     "name": "National Action Party",
+     "leader": null,
+     "seats": 151,
+     "seatChange": 56.0,
+     "votes": 8219649,
+     "share": 31.81,
+     "swing": null
+    },
+    {
+     "name": "Party of the Democratic Revolution",
+     "leader": null,
+     "seats": 97,
+     "seatChange": 44.0,
+     "votes": 4707009,
+     "share": 18.22,
+     "swing": null
+    },
+    {
+     "name": "Ecologist Green Party of Mexico",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 0.0,
+     "votes": 1068721,
+     "share": 4.14,
+     "swing": null
+    },
+    {
+     "name": "Labor Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 1.0,
+     "votes": 642290,
+     "share": 2.49,
+     "swing": null
+    },
+    {
+     "name": "Convergence for Democracy",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 1.0,
+     "votes": 605156,
+     "share": 2.34,
+     "swing": null
+    },
+    {
+     "name": "Alliance for All Coalition",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 3637685,
+     "share": 14.08,
+     "swing": null
+    },
+    {
+     "name": "México Posible",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": 243361,
+     "share": 0.94,
+     "swing": null
+    },
+    {
+     "name": "Social Alliance Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": 2.0,
+     "votes": 198075,
+     "share": 0.77,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Vicente Fox",
+    "party": "PAN"
+   },
+   "pmAfter": {
+    "name": "Vicente Fox",
+    "party": "PAN"
+   },
+   "knownAs": null,
+   "summary": "According to polls, many voters were disappointed in President Vicente Fox for not fulfilling his campaign promises to create millions of jobs upon his election in July 2000, even though his approval ratings remained high.",
+   "caveat": null,
+   "seatLeader": "Institutional Revolutionary Party"
+  },
+  {
+   "id": "2009",
+   "label": "2009",
+   "year": 2009,
+   "kind": "legislative",
+   "date": "5 July 2009",
+   "era": "pluralism",
+   "totalSeats": 500,
+   "majoritySeats": 251,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "PRI",
+     "leader": "Beatriz Paredes Rangel",
+     "seats": 237,
+     "seatChange": 133.0,
+     "votes": null,
+     "share": 39.05,
+     "swing": null
+    },
+    {
+     "name": "PAN",
+     "leader": "Germán Martínez",
+     "seats": 143,
+     "seatChange": -63.0,
+     "votes": null,
+     "share": 29.61,
+     "swing": null
+    },
+    {
+     "name": "PRD",
+     "leader": "Alejandro Encinas",
+     "seats": 71,
+     "seatChange": -55.0,
+     "votes": null,
+     "share": 12.89,
+     "swing": null
+    },
+    {
+     "name": "PVEM",
+     "leader": "Jorge Emilio González Martínez",
+     "seats": 21,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 7.09,
+     "swing": null
+    },
+    {
+     "name": "PT",
+     "leader": "Alberto Anaya",
+     "seats": 13,
+     "seatChange": -3.0,
+     "votes": null,
+     "share": 3.87,
+     "swing": null
+    },
+    {
+     "name": "PNA",
+     "leader": "Jorge Kahwagi",
+     "seats": 9,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 3.62,
+     "swing": null
+    },
+    {
+     "name": "Convergence",
+     "leader": "Luis Maldonado Venegas",
+     "seats": 6,
+     "seatChange": -9.0,
+     "votes": null,
+     "share": 2.6,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Felipe Calderón",
+    "party": "PAN"
+   },
+   "pmAfter": {
+    "name": "Felipe Calderón",
+    "party": "PAN"
+   },
+   "knownAs": null,
+   "summary": "A none of the above movement, dubbed \"voto en blanco\", or \"blank vote\", had arisen in response to the perceived corruption of the three major parties running in this election. Starting as a small group on blogs and YouTube, the movement had expanded its ranks, with politicians and intellectuals, such as Jose Antonio Crespo, supporting the movement.",
+   "caveat": null,
+   "seatLeader": "PRI"
+  },
+  {
+   "id": "2015",
+   "label": "2015",
+   "year": 2015,
+   "kind": "legislative",
+   "date": "7 June 2015",
+   "era": "pluralism",
+   "totalSeats": 500,
+   "majoritySeats": 251,
+   "turnout": 47.72,
+   "parties": [
+    {
+     "name": "PRI",
+     "leader": "César Camacho Quiroz",
+     "seats": 203,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": 30.65,
+     "swing": null
+    },
+    {
+     "name": "PAN",
+     "leader": "Marko Antonio Cortés Mendoza",
+     "seats": 109,
+     "seatChange": -5.0,
+     "votes": null,
+     "share": 22.07,
+     "swing": null
+    },
+    {
+     "name": "PRD",
+     "leader": "Francisco Martínez Neri",
+     "seats": 55,
+     "seatChange": -45.0,
+     "votes": null,
+     "share": 11.47,
+     "swing": null
+    },
+    {
+     "name": "PVEM",
+     "leader": "Jesús Sesma Suárez",
+     "seats": 47,
+     "seatChange": 13.0,
+     "votes": null,
+     "share": 7.26,
+     "swing": null
+    },
+    {
+     "name": "MORENA",
+     "leader": "Rocío Nahle García",
+     "seats": 35,
+     "seatChange": null,
+     "votes": null,
+     "share": 8.81,
+     "swing": null
+    },
+    {
+     "name": "MC",
+     "leader": "Dante Delgado Rannauro",
+     "seats": 25,
+     "seatChange": 9.0,
+     "votes": null,
+     "share": 6.4,
+     "swing": null
+    },
+    {
+     "name": "PNA",
+     "leader": "Luis Alfredo Valles Mendoza",
+     "seats": 11,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 3.92,
+     "swing": null
+    },
+    {
+     "name": "PES",
+     "leader": "Alejandro González Murillo",
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": 3.49,
+     "swing": null
+    },
+    {
+     "name": "PT",
+     "leader": "Alberto Anaya Gutiérrez",
+     "seats": 6,
+     "seatChange": -13.0,
+     "votes": null,
+     "share": 2.99,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 0.59,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Enrique Peña Nieto",
+    "party": "PRI"
+   },
+   "pmAfter": {
+    "name": "Enrique Peña Nieto",
+    "party": "PRI"
+   },
+   "knownAs": null,
+   "summary": "The 500 members of the Chamber of Deputies were elected by two methods; 300 were elected in single-member constituencies and 200 by proportional representation in a single nationwide constituency. Constitutional reforms in 2014 led to the creation of the National Electoral Institute, replacing the Federal Electoral Institute.",
+   "caveat": null,
+   "seatLeader": "PRI"
+  },
+  {
+   "id": "2021",
+   "label": "2021",
+   "year": 2021,
+   "kind": "legislative",
+   "date": "6 June 2021",
+   "era": "pluralism",
+   "totalSeats": 500,
+   "majoritySeats": 251,
+   "turnout": 52.7,
+   "parties": [
+    {
+     "name": "MORENA",
+     "leader": "Mario Martín Delgado",
+     "seats": 198,
+     "seatChange": 7.0,
+     "votes": null,
+     "share": 35.3,
+     "swing": null
+    },
+    {
+     "name": "PAN",
+     "leader": "Marko Cortés Mendoza",
+     "seats": 114,
+     "seatChange": 33.0,
+     "votes": null,
+     "share": 18.89,
+     "swing": null
+    },
+    {
+     "name": "PRI",
+     "leader": "Alejandro Moreno Cárdenas",
+     "seats": 70,
+     "seatChange": 25.0,
+     "votes": null,
+     "share": 18.36,
+     "swing": null
+    },
+    {
+     "name": "PVEM",
+     "leader": "Karen Castrejón Trujillo",
+     "seats": 43,
+     "seatChange": 27.0,
+     "votes": null,
+     "share": 5.63,
+     "swing": null
+    },
+    {
+     "name": "PT",
+     "leader": "Alberto Anaya",
+     "seats": 37,
+     "seatChange": -24.0,
+     "votes": null,
+     "share": 3.36,
+     "swing": null
+    },
+    {
+     "name": "MC",
+     "leader": "Clemente Castañeda",
+     "seats": 23,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": 7.27,
+     "swing": null
+    },
+    {
+     "name": "PRD",
+     "leader": "Ángel Ávila Romero",
+     "seats": 15,
+     "seatChange": -6.0,
+     "votes": null,
+     "share": 3.78,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Andrés Manuel López Obrador",
+    "party": "Morena"
+   },
+   "pmAfter": {
+    "name": "Andrés Manuel López Obrador",
+    "party": "Morena"
+   },
+   "knownAs": "Morena defends its majority",
+   "summary": "Legislative elections were held in Mexico on 6 June 2021. Voters elected 500 deputies (300 in single-member constituencies by first-past-the-post and 200 by proportional representation) to sit in the Chamber of Deputies for the 65th Congress.",
+   "caveat": null,
+   "seatLeader": "MORENA"
+  }
+ ]
+}

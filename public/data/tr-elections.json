@@ -1,0 +1,3250 @@
+{
+ "meta": {
+  "title": "Turkish elections",
+  "sources": [
+   "Wikipedia: Turkish presidential and parliamentary election articles 1920–2023, and the Ottoman general elections 1877–1919 (results, infoboxes and leads)",
+   "YSK figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "presEras": [
+  {
+   "key": "single-party",
+   "label": "The single-party presidencies",
+   "span": "1923–1946",
+   "blurb": "For the Republic's first quarter-century the Grand National Assembly elected the president unopposed: Atatürk four times, then İnönü. There was one party, one candidate and one outcome — these votes are recorded as the rituals of the founding regime, not contests."
+  },
+  {
+   "key": "assembly",
+   "label": "Elected by the Assembly",
+   "span": "1950–2007",
+   "blurb": "From the multiparty breakthrough until 2007, parliament chose the president — sometimes routinely, sometimes catastrophically: the deadlock of 1980 ran more than a hundred ballots and ended in a coup, and the 2007 crisis over Abdullah Gül's election triggered the switch to direct voting."
+  },
+  {
+   "key": "direct",
+   "label": "The direct-election era",
+   "span": "2014–2023",
+   "blurb": "Turks have elected their president directly since 2014, and all three contests have been won by Recep Tayyip Erdoğan. The elections remain genuinely competitive — 2023 went to a runoff — but they are no longer fair: state resources, broadcast dominance and jailed opponents tilt the field long before polling day."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "ottoman",
+   "label": "The Ottoman experiments",
+   "span": "1877–1919",
+   "blurb": "The Ottoman Empire held the Muslim world's first parliamentary elections in 1877 — twice in one year — before the sultan shelved the constitution for three decades. The Young Turk restoration of 1908 revived the Chamber, the 'big-stick' election of 1912 corrupted it, and the 1919 vote was the empire's last."
+  },
+  {
+   "key": "founding",
+   "label": "The founding Assembly",
+   "span": "1920",
+   "blurb": "With Istanbul occupied and the empire dying, the 1920 elections assembled the Grand National Assembly in Ankara — the revolutionary parliament that fought the War of Independence and proclaimed the Republic."
+  },
+  {
+   "key": "single-party",
+   "label": "The single-party era",
+   "span": "1923–1946",
+   "blurb": "For two decades the Republican People's Party was the only party on the ballot, and elections were two-stage affirmations of its list. The 1946 vote allowed an opposition for the first time — held with open ballots and secret counting, and rigged in the ruling party's favour."
+  },
+  {
+   "key": "multiparty",
+   "label": "The multiparty decades",
+   "span": "1950–1977",
+   "blurb": "The 1950 election ended a quarter-century of single-party rule in a single day — the DP's 'White Revolution'. Democracy held through rapid growth and deep polarisation, punctured by the coups of 1960 and 1971 and ending in the violence-soaked deadlock of the late 1970s."
+  },
+  {
+   "key": "coup-shadow",
+   "label": "Under the coup's shadow",
+   "span": "1983–1999",
+   "blurb": "The 1980 junta rewrote the rules before handing power back: banned parties, vetted candidates and a 10% national threshold. Özal's ANAP won the constrained 1983 election; the old leaders returned by referendum in 1987, and the 1990s fragmented into short-lived coalitions."
+  },
+  {
+   "key": "akp",
+   "label": "The AKP era",
+   "span": "2002–2023",
+   "blurb": "The 2002 earthquake left every governing party below the threshold and gave the new AKP two-thirds of the seats with a third of the vote. Five further victories followed — through the 2015 double election, the state-of-emergency vote of 2018 and the tilted but fiercely contested elections of 2023."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1923",
+   "label": "1923",
+   "year": 1923,
+   "kind": "presidential",
+   "date": "29 October 1923",
+   "era": "single-party",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Mustafa Kemal Atatürk",
+     "party": "Republican People's Party",
+     "r1Votes": 158,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Mustafa Kemal Atatürk",
+    "party": "CHP"
+   },
+   "knownAs": "Atatürk, unopposed",
+   "summary": "The 1923 Turkish presidential election is the presidential election held in the Grand National Assembly of Turkey on 29 October 1923. 158 MPs participated in the elections. Mustafa Kemal Atatürk, the Speaker of the Grand National Assembly of Turkey, was unanimously elected as the founding president in the first round.",
+   "caveat": "An uncontested vote of the single-party Grand National Assembly — one party, one candidate. Recorded here as a ritual of the founding regime, not a contest."
+  },
+  {
+   "id": "pres-1927",
+   "label": "1927",
+   "year": 1927,
+   "kind": "presidential",
+   "date": "1 November 1927",
+   "era": "single-party",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Mustafa Kemal Atatürk",
+     "party": "Republican People's Party",
+     "r1Votes": 288,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Mustafa Kemal Atatürk",
+    "party": "CHP"
+   },
+   "presAfter": {
+    "name": "Mustafa Kemal Atatürk",
+    "party": "CHP"
+   },
+   "knownAs": null,
+   "summary": "The 1927 Turkish presidential election is the presidential election held in the Grand National Assembly of Turkey on 1 November 1927. 288 MPs participated in the elections. The current President Mustafa Kemal Atatürk was unanimously re-elected President in the first round.",
+   "caveat": "An uncontested vote of the single-party Grand National Assembly — one party, one candidate. Recorded here as a ritual of the founding regime, not a contest."
+  },
+  {
+   "id": "pres-1931",
+   "label": "1931",
+   "year": 1931,
+   "kind": "presidential",
+   "date": "4 May 1931",
+   "era": "single-party",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Mustafa Kemal Atatürk",
+     "party": "Republican People's Party",
+     "r1Votes": 289,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Mustafa Kemal Atatürk",
+    "party": "CHP"
+   },
+   "presAfter": {
+    "name": "Mustafa Kemal Atatürk",
+    "party": "CHP"
+   },
+   "knownAs": null,
+   "summary": "The 1931 Turkish presidential election is the presidential election held in the Grand National Assembly of Turkey on 4 May 1931. 289 MPs participated in the elections. The current President Mustafa Kemal Atatürk was unanimously re-elected President in the first round.",
+   "caveat": "An uncontested vote of the single-party Grand National Assembly — one party, one candidate. Recorded here as a ritual of the founding regime, not a contest."
+  },
+  {
+   "id": "pres-1935",
+   "label": "1935",
+   "year": 1935,
+   "kind": "presidential",
+   "date": "1 March 1935",
+   "era": "single-party",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Mustafa Kemal Atatürk",
+     "party": "Republican People's Party",
+     "r1Votes": 386,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Mustafa Kemal Atatürk",
+    "party": "CHP"
+   },
+   "presAfter": {
+    "name": "Mustafa Kemal Atatürk",
+    "party": "CHP"
+   },
+   "knownAs": null,
+   "summary": "The 1935 Turkish presidential election is the presidential election held in the Grand National Assembly of Turkey on 1 March 1935. 386 MPs participated in the elections. The current President Mustafa Kemal Atatürk was unanimously re-elected President in the first round.",
+   "caveat": "An uncontested vote of the single-party Grand National Assembly — one party, one candidate. Recorded here as a ritual of the founding regime, not a contest."
+  },
+  {
+   "id": "pres-1938",
+   "label": "1938",
+   "year": 1938,
+   "kind": "presidential",
+   "date": "11 November 1938",
+   "era": "single-party",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "İsmet İnönü",
+     "party": "Republican People's Party",
+     "r1Votes": 348,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Mustafa Kemal Atatürk",
+    "party": "CHP"
+   },
+   "presAfter": {
+    "name": "İsmet İnönü",
+    "party": "CHP"
+   },
+   "knownAs": "İnönü succeeds Atatürk",
+   "summary": "The 1938 Turkish presidential election is the presidential election held in the Grand National Assembly of Turkey on 11 November 1938. The election was held one day after the death of President Mustafa Kemal Atatürk on 10 November 1938. 348 MPs participated in the elections.",
+   "caveat": "An uncontested vote of the single-party Grand National Assembly — one party, one candidate. Recorded here as a ritual of the founding regime, not a contest."
+  },
+  {
+   "id": "pres-1939",
+   "label": "1939",
+   "year": 1939,
+   "kind": "presidential",
+   "date": "3 April 1939",
+   "era": "single-party",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "İsmet İnönü",
+     "party": "Republican People's Party",
+     "r1Votes": 413,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "İsmet İnönü",
+    "party": "CHP"
+   },
+   "presAfter": {
+    "name": "İsmet İnönü",
+    "party": "CHP"
+   },
+   "knownAs": null,
+   "summary": "The 1939 Turkish presidential election is the presidential election held in the Grand National Assembly of Turkey on 3 April 1939. 413 MPs participated in the elections. The current President İsmet İnönü was unanimously re-elected President in the first round.",
+   "caveat": "An uncontested vote of the single-party Grand National Assembly — one party, one candidate. Recorded here as a ritual of the founding regime, not a contest."
+  },
+  {
+   "id": "pres-1943",
+   "label": "1943",
+   "year": 1943,
+   "kind": "presidential",
+   "date": "8 March 1943",
+   "era": "single-party",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "İsmet İnönü",
+     "party": "Republican People's Party",
+     "r1Votes": 435,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "İsmet İnönü",
+    "party": "CHP"
+   },
+   "presAfter": {
+    "name": "İsmet İnönü",
+    "party": "CHP"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "An uncontested vote of the single-party Grand National Assembly — one party, one candidate. Recorded here as a ritual of the founding regime, not a contest."
+  },
+  {
+   "id": "pres-1946",
+   "label": "1946",
+   "year": 1946,
+   "kind": "presidential",
+   "date": "5 August 1946",
+   "era": "single-party",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "İsmet İnönü",
+     "party": "Republican People's Party",
+     "r1Votes": 388,
+     "r1Share": 86.41,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Fevzi Çakmak",
+     "party": "Democrat Party",
+     "r1Votes": 59,
+     "r1Share": 13.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yusuf Kemal Tengirşenk",
+     "party": "Democrat Party",
+     "r1Votes": 2,
+     "r1Share": 0.45,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "İsmet İnönü",
+    "party": "CHP"
+   },
+   "presAfter": {
+    "name": "İsmet İnönü",
+    "party": "CHP"
+   },
+   "knownAs": null,
+   "summary": "The 1946 Turkish presidential election is the presidential election held in the Grand National Assembly of Turkey on 5 August 1946. For the first time, the elections were competed by more than one candidate and the current President İsmet İnönü won again in the first round with 388 votes.",
+   "caveat": "An uncontested vote of the single-party Grand National Assembly — one party, one candidate. Recorded here as a ritual of the founding regime, not a contest."
+  },
+  {
+   "id": "pres-1950",
+   "label": "1950",
+   "year": 1950,
+   "kind": "presidential",
+   "date": "22 May 1950",
+   "era": "assembly",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Celâl Bayar",
+     "party": "Democrat Party",
+     "r1Votes": 387,
+     "r1Share": 85.43,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "İsmet İnönü",
+     "party": "Republican People's Party",
+     "r1Votes": 66,
+     "r1Share": 14.57,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "İsmet İnönü",
+    "party": "CHP"
+   },
+   "presAfter": {
+    "name": "Celâl Bayar",
+    "party": "DP"
+   },
+   "knownAs": "Bayar and the new majority",
+   "summary": "Indirect presidential elections were held in Turkey on 22 May 1950. This was the first time candidates from other parties than the ruling CHP were admitted. 453 out of 487 members of the Grand National Assembly participated in the elections, which were held as required by law immediately after the election of the members of the ninth parliament.",
+   "caveat": "An indirect vote of the Grand National Assembly, not a popular election."
+  },
+  {
+   "id": "pres-1954",
+   "label": "1954",
+   "year": 1954,
+   "kind": "presidential",
+   "date": "14 May 1954",
+   "era": "assembly",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Celâl Bayar",
+     "party": "Democrat Party",
+     "r1Votes": 486,
+     "r1Share": 94.74,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "İsmet İnönü",
+     "party": "Republican People's Party",
+     "r1Votes": 27,
+     "r1Share": 5.26,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Celâl Bayar",
+    "party": "DP"
+   },
+   "presAfter": {
+    "name": "Celâl Bayar",
+    "party": "DP"
+   },
+   "knownAs": null,
+   "summary": "Indirect presidential elections were held in Turkey on 14 May 1954. 513 out of 541 members of the Grand National Assembly participated in the elections, which were held as required by law immediately after the election of the members of the tenth parliament. Incumbent president Celâl Bayar was re-elected to the presidency with 486 votes in the first round.",
+   "caveat": "An indirect vote of the Grand National Assembly, not a popular election."
+  },
+  {
+   "id": "pres-1957",
+   "label": "1957",
+   "year": 1957,
+   "kind": "presidential",
+   "date": "1 November 1957",
+   "era": "assembly",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Celâl Bayar",
+     "party": "Democrat Party",
+     "r1Votes": 413,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Celâl Bayar",
+    "party": "DP"
+   },
+   "presAfter": {
+    "name": "Celâl Bayar",
+    "party": "DP"
+   },
+   "knownAs": null,
+   "summary": "Indirect presidential elections were held in Turkey on November 1, 1957 immediately after the 1957 general elections on October 27. Members of the Grand National Assembly re-elected Celâl Bayar as president.",
+   "caveat": "An indirect vote of the Grand National Assembly, not a popular election."
+  },
+  {
+   "id": "pres-1961",
+   "label": "1961",
+   "year": 1961,
+   "kind": "presidential",
+   "date": "October 26, 1961",
+   "era": "assembly",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Cemal Gürsel",
+     "party": "Independent",
+     "r1Votes": 434,
+     "r1Share": 68.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Celâl Bayar",
+    "party": "DP"
+   },
+   "presAfter": {
+    "name": "Cemal Gürsel",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "The 1961 Turkish presidential election was the election to elect the fourth President of Turkey. In the election held on October 26, 1961, 607 out of 638 deputies participated in the voting.",
+   "caveat": "An indirect vote of the Grand National Assembly, not a popular election."
+  },
+  {
+   "id": "pres-1966",
+   "label": "1966",
+   "year": 1966,
+   "kind": "presidential",
+   "date": "March 28th, 1966",
+   "era": "assembly",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Cevdet Sunay",
+     "party": "Independent",
+     "r1Votes": null,
+     "r1Share": 72.7,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alparslan Türkeş",
+     "party": "CKMP",
+     "r1Votes": null,
+     "r1Share": 1.7,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Cemal Gürsel",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Cevdet Sunay",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "The 1966 Turkish presidential election is the presidential election held in the Grand National Assembly of Turkey on March 28, 1966. 532 out of 634 deputies participated in the elections held after the 4th President Cemal Gürsel, was dismissed by the Grand National Assembly of Turkey due to his health problems.",
+   "caveat": "An indirect vote of the Grand National Assembly, not a popular election."
+  },
+  {
+   "id": "pres-1973",
+   "label": "1973",
+   "year": 1973,
+   "kind": "presidential",
+   "date": "1973",
+   "era": "assembly",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Fahri Korutürk",
+     "party": "Independent",
+     "r1Votes": null,
+     "r1Share": 57.5,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ferruh Bozbeyli",
+     "party": "Democratic Party",
+     "r1Votes": null,
+     "r1Share": 8.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Cevdet Sunay",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Fahri Korutürk",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "The 1973 Turkish presidential election was held starting on March 13, 1973 and continuing for 15 rounds before a candidate could be selected by at least half of the votes cast. It resolved on April 6, 1973 on the 15th ballot, when 557 out of 635 deputies participated in the voting and Republican Senator Fahri Korutürk was elected President with 365 votes.",
+   "caveat": "An indirect vote of the Grand National Assembly, not a popular election."
+  },
+  {
+   "id": "pres-1980",
+   "label": "1980",
+   "year": 1980,
+   "kind": "presidential",
+   "date": "12 March 1980",
+   "era": "assembly",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [],
+   "presBefore": null,
+   "presAfter": null,
+   "knownAs": "The election that never ended",
+   "summary": "The 1980 Turkish presidential election refers to the unsuccessful election process to choose the country's seventh president, to succeed Fahri Korutürk. The first round of the election was held on 12 March 1980.",
+   "caveat": "The deadlocked election that never chose a president: more than a hundred ballots failed over six months, and the September 1980 coup followed. No winner is recorded because there was none."
+  },
+  {
+   "id": "pres-1989",
+   "label": "1989",
+   "year": 1989,
+   "kind": "presidential",
+   "date": "31 October 1989",
+   "era": "assembly",
+   "turnout": 63.33,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Turgut Özal",
+     "party": "Motherland Party",
+     "r1Votes": 263,
+     "r1Share": 94.95,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Fethi Çelikbaş",
+     "party": "Motherland Party",
+     "r1Votes": 14,
+     "r1Share": 5.05,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Kenan Evren",
+    "party": "Military"
+   },
+   "presAfter": {
+    "name": "Turgut Özal",
+    "party": "ANAP"
+   },
+   "knownAs": "Özal moves up",
+   "summary": "The 1989 Turkish presidential election refers the election to choose the country's eighth president, to succeed Kenan Evren. The candidate of the governing Motherland Party (ANAP) was its leader and Prime Minister Turgut Özal.",
+   "caveat": "An indirect vote of the Grand National Assembly, not a popular election."
+  },
+  {
+   "id": "pres-1993",
+   "label": "1993",
+   "year": 1993,
+   "kind": "presidential",
+   "date": "8–16 May 1993",
+   "era": "assembly",
+   "turnout": 91.56,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Süleyman Demirel",
+     "party": "True Path Party",
+     "r1Votes": 234,
+     "r1Share": 58.5,
+     "r2Votes": 235,
+     "r2Share": 58.17
+    },
+    {
+     "name": "Kâmran İnan",
+     "party": "Motherland Party",
+     "r1Votes": 95,
+     "r1Share": 23.75,
+     "r2Votes": 95,
+     "r2Share": 23.51
+    },
+    {
+     "name": "Lütfi Doğan",
+     "party": "Welfare Party",
+     "r1Votes": 46,
+     "r1Share": 11.5,
+     "r2Votes": 49,
+     "r2Share": 12.13
+    },
+    {
+     "name": "İsmail Cem",
+     "party": "Republican People's Party",
+     "r1Votes": 25,
+     "r1Share": 6.25,
+     "r2Votes": 25,
+     "r2Share": 6.19
+    }
+   ],
+   "presBefore": {
+    "name": "Hüsamettin Cindoruk",
+    "party": "DYP"
+   },
+   "presAfter": {
+    "name": "Süleyman Demirel",
+    "party": "DYP"
+   },
+   "knownAs": null,
+   "summary": "Indirect presidential elections were held in Turkey in May 1993 to elect the country's ninth president, who would succeed Turgut Özal who had recently died. The candidate of DYP was Süleyman Demirel who was also supported by SHP.",
+   "caveat": "An indirect vote of the Grand National Assembly, not a popular election."
+  },
+  {
+   "id": "pres-2000",
+   "label": "2000",
+   "year": 2000,
+   "kind": "presidential",
+   "date": "27 April 2000 to 5 May 2000",
+   "era": "assembly",
+   "turnout": 96.91,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Ahmet Necdet Sezer",
+     "party": "Independent",
+     "r1Votes": 281,
+     "r1Share": 54.04,
+     "r2Votes": 314,
+     "r2Share": 59.58
+    },
+    {
+     "name": "Nevzat Yalçıntaş",
+     "party": "Virtue Party",
+     "r1Votes": 61,
+     "r1Share": 11.73,
+     "r2Votes": 66,
+     "r2Share": 12.52
+    },
+    {
+     "name": "Sadi Somuncuoğlu",
+     "party": "Nationalist Movement Party",
+     "r1Votes": 58,
+     "r1Share": 11.15,
+     "r2Votes": 32,
+     "r2Share": 6.07
+    },
+    {
+     "name": "Rasim Zaimoğlu",
+     "party": "True Path Party",
+     "r1Votes": 7,
+     "r1Share": 1.35,
+     "r2Votes": 3,
+     "r2Share": 0.57
+    },
+    {
+     "name": "Mehmet Mail Büyükerman",
+     "party": "Democratic Left Party",
+     "r1Votes": 3,
+     "r1Share": 0.58,
+     "r2Votes": 2,
+     "r2Share": 0.38
+    },
+    {
+     "name": "Yıldırım Akbulut",
+     "party": "Motherland Party",
+     "r1Votes": 56,
+     "r1Share": 10.77,
+     "r2Votes": 88,
+     "r2Share": 16.7
+    },
+    {
+     "name": "Doğan Güreş",
+     "party": "True Path Party",
+     "r1Votes": 35,
+     "r1Share": 6.73,
+     "r2Votes": 22,
+     "r2Share": 4.17
+    },
+    {
+     "name": "Ahmet İyimaya",
+     "party": "True Path Party",
+     "r1Votes": 10,
+     "r1Share": 1.92,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Agah Oktay Güner",
+     "party": "Motherland Party",
+     "r1Votes": 5,
+     "r1Share": 0.96,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oğuz Aygün",
+     "party": "Democratic Left Party",
+     "r1Votes": 4,
+     "r1Share": 0.77,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Süleyman Demirel",
+    "party": "DYP"
+   },
+   "presAfter": {
+    "name": "Ahmet Necdet Sezer",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Indirect presidential elections were held in Turkey on 27 April 2000 followed by a second round vote on 1 May and a third on 5 May. It occurred at the end of 9th president Süleyman Demirel's seven-year term in office.",
+   "caveat": "An indirect vote of the Grand National Assembly, not a popular election."
+  },
+  {
+   "id": "pres-2007",
+   "label": "2007",
+   "year": 2007,
+   "kind": "presidential",
+   "date": "20–28 August 2007",
+   "era": "assembly",
+   "turnout": 81.45,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Abdullah Gül",
+     "party": "Justice and Development Party",
+     "r1Votes": 341,
+     "r1Share": 80.42,
+     "r2Votes": 337,
+     "r2Share": 79.86
+    },
+    {
+     "name": "Sabahattin Çakmakoğlu",
+     "party": "Nationalist Movement Party",
+     "r1Votes": 70,
+     "r1Share": 16.51,
+     "r2Votes": 71,
+     "r2Share": 16.82
+    },
+    {
+     "name": "Hüseyin Tayfun İçli",
+     "party": "Democratic Left Party",
+     "r1Votes": 13,
+     "r1Share": 3.07,
+     "r2Votes": 14,
+     "r2Share": 3.32
+    }
+   ],
+   "presBefore": {
+    "name": "Ahmet Necdet Sezer",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Abdullah Gül",
+    "party": "AK Party"
+   },
+   "knownAs": "The Gül crisis",
+   "summary": "This article may contain an excessive number of citations. Please help improve it by removing low-quality or irrelevant citations or redistributing those citations so there are fewer than four in a row. (November 2023) (Learn how and when to remove this message)",
+   "caveat": "An indirect vote of the Grand National Assembly, not a popular election."
+  },
+  {
+   "id": "pres-2014",
+   "label": "2014",
+   "year": 2014,
+   "kind": "presidential",
+   "date": "10 August 2014",
+   "era": "direct",
+   "turnout": 74.13,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Recep Tayyip Erdoğan",
+     "party": "Justice and Development Party",
+     "r1Votes": 21000143,
+     "r1Share": 51.79,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ekmeleddin İhsanoğlu",
+     "party": "Independent",
+     "r1Votes": 15587720,
+     "r1Share": 38.44,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Selahattin Demirtaş",
+     "party": "Peoples' Democratic Party",
+     "r1Votes": 3958048,
+     "r1Share": 9.76,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Abdullah Gül",
+    "party": "AK Party"
+   },
+   "presAfter": {
+    "name": "Recep Tayyip Erdoğan",
+    "party": "AK Party"
+   },
+   "knownAs": "The first direct election",
+   "summary": "Presidential elections were held in Turkey on 10 August 2014 in order to elect the 12th President. Prime Minister Recep Tayyip Erdoğan was elected outright with an absolute majority of the vote in the first round, making a scheduled run-off for 24 August unnecessary.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2018",
+   "label": "2018",
+   "year": 2018,
+   "kind": "presidential",
+   "date": "24 June 2018",
+   "era": "direct",
+   "turnout": 86.24,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Recep Tayyip Erdoğan",
+     "party": "Justice and Development Party",
+     "r1Votes": 26330823,
+     "r1Share": 52.59,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Muharrem İnce",
+     "party": "Republican People's Party",
+     "r1Votes": 15340321,
+     "r1Share": 30.64,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Selahattin Demirtaş",
+     "party": "Peoples' Democratic Party",
+     "r1Votes": 4205794,
+     "r1Share": 8.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Meral Akşener",
+     "party": "Good Party",
+     "r1Votes": 3649030,
+     "r1Share": 7.29,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Temel Karamollaoğlu",
+     "party": "Felicity Party",
+     "r1Votes": 443704,
+     "r1Share": 0.89,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Doğu Perinçek",
+     "party": "Patriotic Party",
+     "r1Votes": 98955,
+     "r1Share": 0.2,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Recep Tayyip Erdoğan",
+    "party": "AK Party"
+   },
+   "presAfter": {
+    "name": "Recep Tayyip Erdoğan",
+    "party": "AK Party"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in Turkey on 24 June 2018 as part of the 2018 general election, alongside parliamentary elections on the same day. They were the first presidential elections held after constitutional amendments were approved in a 2017 referendum.",
+   "caveat": "Held under a state of emergency, with one major candidate campaigning from a prison cell and near-total broadcast dominance for the incumbent. Competitive, but not fair."
+  },
+  {
+   "id": "pres-2023",
+   "label": "2023",
+   "year": 2023,
+   "kind": "presidential",
+   "date": "14–28 May 2023",
+   "era": "direct",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Recep Tayyip Erdoğan",
+     "party": "Justice and Development Party",
+     "r1Votes": 27133849,
+     "r1Share": 49.52,
+     "r2Votes": 27834589,
+     "r2Share": 52.18
+    },
+    {
+     "name": "Kemal Kılıçdaroğlu",
+     "party": "Republican People's Party",
+     "r1Votes": 24595178,
+     "r1Share": 44.88,
+     "r2Votes": 25504724,
+     "r2Share": 47.82
+    },
+    {
+     "name": "Sinan Oğan",
+     "party": "Independent",
+     "r1Votes": 2831239,
+     "r1Share": 5.17,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Muharrem İnce",
+     "party": "Homeland Party",
+     "r1Votes": 235783,
+     "r1Share": 0.43,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Recep Tayyip Erdoğan",
+    "party": "AK Party"
+   },
+   "presAfter": {
+    "name": "Recep Tayyip Erdoğan",
+    "party": "AK Party"
+   },
+   "knownAs": "The runoff Erdoğan survived",
+   "summary": "Presidential elections were held in Turkey in May 2023, alongside parliamentary elections, to elect a president for a term of five years. Dubbed the most important election of 2023, the presidential election went to a run-off for the first time in Turkish history.",
+   "caveat": "Genuinely competitive — it took a runoff — but not fair: state resources and overwhelming media dominance backed the incumbent throughout."
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1877-1",
+   "label": "1877 (first)",
+   "year": 1877,
+   "kind": "legislative",
+   "date": "1877",
+   "era": "ottoman",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The Muslim world's first parliament",
+   "summary": "Provisional Electoral Regulations were issued on 29 October 1876, stating that the elected members of the Provincial Administrative Councils would elect members to the first Parliament of the Ottoman Empire.",
+   "caveat": "A two-stage Ottoman election on a restricted franchise — an experiment in constitutionalism, not a modern democratic vote.",
+   "seatLeader": null
+  },
+  {
+   "id": "1877-2",
+   "label": "1877 (second)",
+   "year": 1877,
+   "kind": "legislative",
+   "date": "1877",
+   "era": "ottoman",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "General elections had been held earlier in 1877 after a new constitution was promulgated in December 1876. The new Parliament opened on 19 March 1877, with a planned lifetime of three months.",
+   "caveat": "A two-stage Ottoman election on a restricted franchise — an experiment in constitutionalism, not a modern democratic vote.",
+   "seatLeader": null
+  },
+  {
+   "id": "1908",
+   "label": "1908",
+   "year": 1908,
+   "kind": "legislative",
+   "date": "November–December 1908",
+   "era": "ottoman",
+   "totalSeats": 275,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Committee of Union and Progress",
+     "leader": null,
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberty Party",
+     "leader": "Prince Sabahaddin",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The Young Turk restoration",
+   "summary": "General elections were held in November and December 1908 for all 275 seats of the Chamber of Deputies of the Ottoman Empire, following the Young Turk Revolution which established the Second Constitutional Era. They were the first elections contested by organised political parties in the Ottoman Empire.",
+   "caveat": "A two-stage Ottoman election on a restricted franchise — an experiment in constitutionalism, not a modern democratic vote.",
+   "seatLeader": null
+  },
+  {
+   "id": "1912",
+   "label": "1912",
+   "year": 1912,
+   "kind": "legislative",
+   "date": "April 1912",
+   "era": "ottoman",
+   "totalSeats": 275,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "CUP",
+     "leader": null,
+     "seats": 269,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Freedom & Accord",
+     "leader": "Damat Ferid Pasha",
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The big-stick election",
+   "summary": "Early general elections were held in the Ottoman Empire in April 1912. The ruling Committee of Union and Progress won 269 of the 275 seats in the Chamber of Deputies, whilst the opposition Freedom and Accord Party only won six seats, a victory widely deemed fraudulent and won through intimidation.",
+   "caveat": "The 'big-stick election': the Committee of Union and Progress used fraud, pressure and violence to win all but six seats.",
+   "seatLeader": "CUP"
+  },
+  {
+   "id": "1914",
+   "label": "1914",
+   "year": 1914,
+   "kind": "legislative",
+   "date": "January 1914",
+   "era": "ottoman",
+   "totalSeats": 275,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "After the coup the CUP was able to bring the cabinet under its control. Following the assassination of the new Grand Vizier Mahmud Shevket Pasha in June, the CUP was able to crush its political rival, the Freedom and Accord Party, whose supporters had been involved in the assassination, constructing a one-party-state.",
+   "caveat": "Held with the CUP as the only organised party after its 1913 coup — effectively a one-party vote.",
+   "seatLeader": null
+  },
+  {
+   "id": "1919",
+   "label": "1919",
+   "year": 1919,
+   "kind": "legislative",
+   "date": "1919",
+   "era": "ottoman",
+   "totalSeats": 168,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The empire's last election",
+   "summary": "General elections were held in the Ottoman Empire in 1919, the last official elections held in the Empire. Due to the dearth of political parties, the elections were dominated by the Association for Defence of National Rights (A-RMHC), which consisted of nationalist local groups protesting against the Allied occupation of Turkey.",
+   "caveat": "A two-stage Ottoman election on a restricted franchise — an experiment in constitutionalism, not a modern democratic vote.",
+   "seatLeader": null
+  },
+  {
+   "id": "1920",
+   "label": "1920",
+   "year": 1920,
+   "kind": "legislative",
+   "date": "1920",
+   "era": "founding",
+   "totalSeats": 436,
+   "majoritySeats": 218,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The Assembly of the resistance",
+   "summary": "General elections were held in the Ottoman Empire in 1920 in order to select delegates to the new Grand National Assembly. The elections were dominated by the Association for the Defense of the Rights of Anatolia and Rumelia (Turkish: Anadolu ve Rumeli Müdafaa-i Hukuk Cemiyeti), which consisted of nationalist local groups protesting against the Allied occupation of Turkey.",
+   "caveat": null,
+   "seatLeader": null
+  },
+  {
+   "id": "1923",
+   "label": "1923",
+   "year": 1923,
+   "kind": "legislative",
+   "date": "28 June 1923",
+   "era": "single-party",
+   "totalSeats": 333,
+   "majoritySeats": 167,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "ARMHC",
+     "leader": "Mustafa Kemal Pasha",
+     "seats": 285,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Rauf Orbay",
+    "party": "ARMHC"
+   },
+   "pmAfter": {
+    "name": "Rauf Orbay",
+    "party": "ARMHC"
+   },
+   "knownAs": null,
+   "summary": "The elections were held under the Ottoman electoral law passed in 1908, which provided for a two-stage process. In the first stage voters elected secondary electors (one for the first 750 voters in a constituency, then one for every additional 500 voters).",
+   "caveat": "A two-stage, single-party vote of the early Republic: the Republican People's Party was the only party on the ballot. Recorded here as history, not a competitive election.",
+   "seatLeader": "ARMHC"
+  },
+  {
+   "id": "1927",
+   "label": "1927",
+   "year": 1927,
+   "kind": "legislative",
+   "date": "20 July 1927",
+   "era": "single-party",
+   "totalSeats": null,
+   "majoritySeats": 168,
+   "turnout": 20.0,
+   "parties": [
+    {
+     "name": "CHP",
+     "leader": "Mustafa Kemal Pasha",
+     "seats": 335,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "İsmet İnönü",
+    "party": "CHP"
+   },
+   "pmAfter": {
+    "name": "İsmet İnönü",
+    "party": "CHP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Turkey in 1927. The Republican People's Party (\"Association for the Defense of the Rights of Anatolia and Rumelia\" until 9 September 1923) was the only party in the country at the time, as the Progressive Republican Party that had been set up in 1924 was dissolved the following year.",
+   "caveat": "A two-stage, single-party vote of the early Republic: the Republican People's Party was the only party on the ballot. Recorded here as history, not a competitive election.",
+   "seatLeader": "CHP"
+  },
+  {
+   "id": "1931",
+   "label": "1931",
+   "year": 1931,
+   "kind": "legislative",
+   "date": "25 April 1931",
+   "era": "single-party",
+   "totalSeats": 317,
+   "majoritySeats": 159,
+   "turnout": 88.0,
+   "parties": [
+    {
+     "name": "CHP",
+     "leader": "Mustafa Kemal Pasha",
+     "seats": 287,
+     "seatChange": -48.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 30.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "İsmet İnönü",
+    "party": "CHP"
+   },
+   "pmAfter": {
+    "name": "İsmet İnönü",
+    "party": "CHP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Turkey in 1931. The Republican People's Party was the only party in the country at the time, as the Liberal Republican Party that had been set up the previous year had already been dissolved.",
+   "caveat": "A two-stage, single-party vote of the early Republic: the Republican People's Party was the only party on the ballot. Recorded here as history, not a competitive election.",
+   "seatLeader": "CHP"
+  },
+  {
+   "id": "1935",
+   "label": "1935",
+   "year": 1935,
+   "kind": "legislative",
+   "date": "8 February 1935",
+   "era": "single-party",
+   "totalSeats": 399,
+   "majoritySeats": 200,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": {
+    "name": "İsmet İnönü",
+    "party": "CHP"
+   },
+   "pmAfter": {
+    "name": "İsmet İnönü",
+    "party": "CHP"
+   },
+   "knownAs": null,
+   "summary": "The elections were held under the Ottoman electoral law passed in 1908, which provided for a two-stage process. In the first stage, voters elected secondary electors (one for the first 750 voters in a constituency, then one for every additional 500 voters).",
+   "caveat": "A two-stage, single-party vote of the early Republic: the Republican People's Party was the only party on the ballot. Recorded here as history, not a competitive election.",
+   "seatLeader": null
+  },
+  {
+   "id": "1939",
+   "label": "1939",
+   "year": 1939,
+   "kind": "legislative",
+   "date": "26 March 1939",
+   "era": "single-party",
+   "totalSeats": 429,
+   "majoritySeats": 215,
+   "turnout": 77.8,
+   "parties": [
+    {
+     "name": "CHP",
+     "leader": "İsmet İnönü",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Refik Saydam",
+    "party": "CHP"
+   },
+   "pmAfter": {
+    "name": "Refik Saydam",
+    "party": "CHP"
+   },
+   "knownAs": null,
+   "summary": "The elections were held under the Ottoman electoral law passed in 1908, which provided for a two-stage process. In the first stage, voters elected secondary electors (one for the first 750 voters in a constituency, then one for every additional 500 voters).",
+   "caveat": "A two-stage, single-party vote of the early Republic: the Republican People's Party was the only party on the ballot. Recorded here as history, not a competitive election.",
+   "seatLeader": null
+  },
+  {
+   "id": "1943",
+   "label": "1943",
+   "year": 1943,
+   "kind": "legislative",
+   "date": "28 February 1943",
+   "era": "single-party",
+   "totalSeats": 455,
+   "majoritySeats": 228,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "CHP",
+     "leader": "İsmet İnönü",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Şükrü Saracoğlu",
+    "party": "CHP"
+   },
+   "pmAfter": {
+    "name": "Şükrü Saracoğlu",
+    "party": "CHP"
+   },
+   "knownAs": null,
+   "summary": "The elections were held under the Ottoman electoral law passed in 1908, which provided for a two-stage process. In the first stage, voters elected secondary electors (one for the first 750 voters in a constituency, then one for every additional 500 voters).",
+   "caveat": "A two-stage, single-party vote of the early Republic: the Republican People's Party was the only party on the ballot. Recorded here as history, not a competitive election.",
+   "seatLeader": null
+  },
+  {
+   "id": "1946",
+   "label": "1946",
+   "year": 1946,
+   "kind": "legislative",
+   "date": "21 July 1946",
+   "era": "single-party",
+   "totalSeats": 465,
+   "majoritySeats": 233,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "CHP",
+     "leader": "İsmet İnönü",
+     "seats": 395,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "DP",
+     "leader": "Celâl Bayar",
+     "seats": 64,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Şükrü Saracoğlu",
+    "party": "CHP"
+   },
+   "pmAfter": {
+    "name": "Recep Peker",
+    "party": "CHP"
+   },
+   "knownAs": "Open vote, secret count",
+   "summary": "General elections were held in Turkey on 21 July 1946, the first multi-party general elections in the country's history. The multiple non-transferable vote electoral system was used.",
+   "caveat": "The first multiparty election — held with open voting and secret counting, and rigged in the ruling CHP's favour.",
+   "seatLeader": "CHP"
+  },
+  {
+   "id": "1950",
+   "label": "1950",
+   "year": 1950,
+   "kind": "legislative",
+   "date": "14 May 1950",
+   "era": "multiparty",
+   "totalSeats": 487,
+   "majoritySeats": 244,
+   "turnout": 89.3,
+   "parties": [
+    {
+     "name": "Democrat Party",
+     "leader": "Celâl Bayar",
+     "seats": 416,
+     "seatChange": 352.0,
+     "votes": 4391694,
+     "share": 55.22,
+     "swing": null
+    },
+    {
+     "name": "Republican People's Party",
+     "leader": null,
+     "seats": 69,
+     "seatChange": 326.0,
+     "votes": 3148626,
+     "share": 39.59,
+     "swing": null
+    },
+    {
+     "name": "CHP",
+     "leader": "İsmet İnönü",
+     "seats": 69,
+     "seatChange": -326.0,
+     "votes": 3148626,
+     "share": 39.59,
+     "swing": null
+    },
+    {
+     "name": "Nation Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 368537,
+     "share": 4.63,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 5.0,
+     "votes": 44537,
+     "share": 0.56,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Şemsettin Günaltay",
+    "party": "CHP"
+   },
+   "pmAfter": {
+    "name": "Adnan Menderes",
+    "party": "DP"
+   },
+   "knownAs": "The White Revolution",
+   "summary": "Unlike the previous elections in 1946, the 1950 elections took place in a calm atmosphere. The results meant that Republican People's Party (CHP) was ousted from power for the first time since the foundation of the republic.",
+   "caveat": null,
+   "seatLeader": "Democrat Party"
+  },
+  {
+   "id": "1954",
+   "label": "1954",
+   "year": 1954,
+   "kind": "legislative",
+   "date": "2 May 1954",
+   "era": "multiparty",
+   "totalSeats": 541,
+   "majoritySeats": 271,
+   "turnout": 88.6,
+   "parties": [
+    {
+     "name": "Democrat Party",
+     "leader": "Adnan Menderes",
+     "seats": 503,
+     "seatChange": 87.0,
+     "votes": 5313659,
+     "share": 58.42,
+     "swing": 3.2
+    },
+    {
+     "name": "Republican People's Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": 38.0,
+     "votes": 3193471,
+     "share": 35.11,
+     "swing": null
+    },
+    {
+     "name": "CHP",
+     "leader": "İsmet İnönü",
+     "seats": 31,
+     "seatChange": -38.0,
+     "votes": 3193471,
+     "share": 35.11,
+     "swing": -4.48
+    },
+    {
+     "name": "Republican Nation Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 480249,
+     "share": 5.28,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 6.0,
+     "votes": 56393,
+     "share": 0.62,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Adnan Menderes",
+    "party": "DP"
+   },
+   "pmAfter": {
+    "name": "Adnan Menderes",
+    "party": "DP"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Democrat Party"
+  },
+  {
+   "id": "1957",
+   "label": "1957",
+   "year": 1957,
+   "kind": "legislative",
+   "date": "27 October 1957",
+   "era": "multiparty",
+   "totalSeats": 610,
+   "majoritySeats": 306,
+   "turnout": 76.6,
+   "parties": [
+    {
+     "name": "Democrat Party",
+     "leader": "Adnan Menderes",
+     "seats": 424,
+     "seatChange": 79.0,
+     "votes": 4497811,
+     "share": 48.62,
+     "swing": -9.8
+    },
+    {
+     "name": "Republican People's Party",
+     "leader": null,
+     "seats": 178,
+     "seatChange": 147.0,
+     "votes": 3825267,
+     "share": 41.35,
+     "swing": null
+    },
+    {
+     "name": "CHP",
+     "leader": "İsmet İnönü",
+     "seats": 178,
+     "seatChange": 147.0,
+     "votes": 3825267,
+     "share": 41.35,
+     "swing": 6.24
+    },
+    {
+     "name": "Republican Nation Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 1.0,
+     "votes": 604087,
+     "share": 6.53,
+     "swing": null
+    },
+    {
+     "name": "CMP",
+     "leader": "Osman Bölükbaşı",
+     "seats": 4,
+     "seatChange": -1.0,
+     "votes": 604087,
+     "share": 6.53,
+     "swing": 1.25
+    },
+    {
+     "name": "Liberty Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 321471,
+     "share": 3.48,
+     "swing": null
+    },
+    {
+     "name": "HP",
+     "leader": "Fevzi Lütfi Karaosmanoğlu",
+     "seats": 4,
+     "seatChange": null,
+     "votes": 321471,
+     "share": 3.48,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Adnan Menderes",
+    "party": "DP"
+   },
+   "pmAfter": {
+    "name": "Adnan Menderes",
+    "party": "DP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Turkey on 27 October 1957. The electoral system used was the multiple non-transferable vote, with each electoral district electing an average of nine members.",
+   "caveat": null,
+   "seatLeader": "Democrat Party"
+  },
+  {
+   "id": "1961",
+   "label": "1961",
+   "year": 1961,
+   "kind": "legislative",
+   "date": "15 October 1961",
+   "era": "multiparty",
+   "totalSeats": 450,
+   "majoritySeats": 226,
+   "turnout": 81.41,
+   "parties": [
+    {
+     "name": "Republican People's Party",
+     "leader": null,
+     "seats": 173,
+     "seatChange": 5.0,
+     "votes": 3724752,
+     "share": 36.73,
+     "swing": null
+    },
+    {
+     "name": "CHP",
+     "leader": "İsmet İnönü",
+     "seats": 173,
+     "seatChange": -5.0,
+     "votes": 3724752,
+     "share": 36.73,
+     "swing": -4.62
+    },
+    {
+     "name": "Justice Party",
+     "leader": null,
+     "seats": 158,
+     "seatChange": null,
+     "votes": 3527435,
+     "share": 34.78,
+     "swing": null
+    },
+    {
+     "name": "AP",
+     "leader": "Ragıp Gümüşpala",
+     "seats": 158,
+     "seatChange": null,
+     "votes": 3527435,
+     "share": 34.78,
+     "swing": null
+    },
+    {
+     "name": "New Turkey Party",
+     "leader": null,
+     "seats": 65,
+     "seatChange": null,
+     "votes": 1391934,
+     "share": 13.73,
+     "swing": null
+    },
+    {
+     "name": "YTP",
+     "leader": "Ekrem Alican",
+     "seats": 65,
+     "seatChange": null,
+     "votes": 1391934,
+     "share": 13.73,
+     "swing": null
+    },
+    {
+     "name": "Republican Villagers Nation Party",
+     "leader": null,
+     "seats": 54,
+     "seatChange": null,
+     "votes": 1415390,
+     "share": 13.96,
+     "swing": null
+    },
+    {
+     "name": "CKMP",
+     "leader": "Osman Bölükbaşı",
+     "seats": 54,
+     "seatChange": null,
+     "votes": 1415390,
+     "share": 13.96,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Cemal Gürsel (acting Fahri Özdilek)",
+    "party": "Military"
+   },
+   "pmAfter": {
+    "name": "İsmet İnönü",
+    "party": "CHP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Turkey on 15 October 1961. The Republican People's Party (CHP) emerged as the largest party, winning 173 of the 450 seats.",
+   "caveat": null,
+   "seatLeader": "Republican People's Party"
+  },
+  {
+   "id": "1965",
+   "label": "1965",
+   "year": 1965,
+   "kind": "legislative",
+   "date": "10 October 1965",
+   "era": "multiparty",
+   "totalSeats": 450,
+   "majoritySeats": 226,
+   "turnout": 71.26,
+   "parties": [
+    {
+     "name": "Justice Party",
+     "leader": null,
+     "seats": 240,
+     "seatChange": 82.0,
+     "votes": 4921235,
+     "share": 52.87,
+     "swing": null
+    },
+    {
+     "name": "AP",
+     "leader": "Süleyman Demirel",
+     "seats": 240,
+     "seatChange": 82.0,
+     "votes": 4921235,
+     "share": 52.87,
+     "swing": 18.09
+    },
+    {
+     "name": "Republican People's Party",
+     "leader": null,
+     "seats": 134,
+     "seatChange": 39.0,
+     "votes": 2675785,
+     "share": 28.75,
+     "swing": null
+    },
+    {
+     "name": "CHP",
+     "leader": "İsmet İnönü",
+     "seats": 134,
+     "seatChange": -39.0,
+     "votes": 2675785,
+     "share": 28.75,
+     "swing": -7.98
+    },
+    {
+     "name": "Nation Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": null,
+     "votes": 582704,
+     "share": 6.26,
+     "swing": null
+    },
+    {
+     "name": "MP",
+     "leader": "Osman Bölükbaşı",
+     "seats": 31,
+     "seatChange": null,
+     "votes": 582704,
+     "share": 6.26,
+     "swing": null
+    },
+    {
+     "name": "New Turkey Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 46.0,
+     "votes": 346514,
+     "share": 3.72,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 276101,
+     "share": 2.97,
+     "swing": null
+    },
+    {
+     "name": "Republican Villagers Nation Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 43.0,
+     "votes": 208696,
+     "share": 2.24,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": 296528,
+     "share": 3.19,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Suat Hayri Ürgüplü",
+    "party": "Elected Prime Minister"
+   },
+   "pmAfter": {
+    "name": "Süleyman Demirel",
+    "party": "AP"
+   },
+   "knownAs": null,
+   "summary": "The national remnant electoral system was used. This was a two-tier system of party-list proportional representation, with the country divided into 66 districts.",
+   "caveat": null,
+   "seatLeader": "Justice Party"
+  },
+  {
+   "id": "1969",
+   "label": "1969",
+   "year": 1969,
+   "kind": "legislative",
+   "date": "12 October 1969",
+   "era": "multiparty",
+   "totalSeats": 450,
+   "majoritySeats": 226,
+   "turnout": 64.35,
+   "parties": [
+    {
+     "name": "Justice Party",
+     "leader": null,
+     "seats": 256,
+     "seatChange": 16.0,
+     "votes": 4229712,
+     "share": 46.53,
+     "swing": null
+    },
+    {
+     "name": "AP",
+     "leader": "Süleyman Demirel",
+     "seats": 256,
+     "seatChange": 16.0,
+     "votes": 4229712,
+     "share": 46.53,
+     "swing": -6.34
+    },
+    {
+     "name": "Republican People's Party",
+     "leader": null,
+     "seats": 143,
+     "seatChange": 9.0,
+     "votes": 2487006,
+     "share": 27.36,
+     "swing": null
+    },
+    {
+     "name": "CHP",
+     "leader": "İsmet İnönü",
+     "seats": 143,
+     "seatChange": 9.0,
+     "votes": 2487006,
+     "share": 27.36,
+     "swing": -1.39
+    },
+    {
+     "name": "Reliance Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": 597818,
+     "share": 6.58,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 12.0,
+     "votes": 511023,
+     "share": 5.62,
+     "swing": null
+    },
+    {
+     "name": "Unity Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 254695,
+     "share": 2.8,
+     "swing": null
+    },
+    {
+     "name": "Nation Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 25.0,
+     "votes": 292961,
+     "share": 3.22,
+     "swing": null
+    },
+    {
+     "name": "New Turkey Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 13.0,
+     "votes": 197929,
+     "share": 2.18,
+     "swing": null
+    },
+    {
+     "name": "Workers' Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 12.0,
+     "votes": 243631,
+     "share": 2.68,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Süleyman Demirel",
+    "party": "AP"
+   },
+   "pmAfter": {
+    "name": "Süleyman Demirel",
+    "party": "AP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Turkey on 12 October 1969. The electoral system used was party-list proportional representation using the D'Hondt method in 66 electoral districts.",
+   "caveat": null,
+   "seatLeader": "Justice Party"
+  },
+  {
+   "id": "1973",
+   "label": "1973",
+   "year": 1973,
+   "kind": "legislative",
+   "date": "14 October 1973",
+   "era": "multiparty",
+   "totalSeats": 450,
+   "majoritySeats": 226,
+   "turnout": 66.82,
+   "parties": [
+    {
+     "name": "Republican People's Party",
+     "leader": null,
+     "seats": 185,
+     "seatChange": 42.0,
+     "votes": 3570583,
+     "share": 33.3,
+     "swing": null
+    },
+    {
+     "name": "CHP",
+     "leader": "Bülent Ecevit",
+     "seats": 185,
+     "seatChange": 42.0,
+     "votes": 3570583,
+     "share": 33.3,
+     "swing": 5.94
+    },
+    {
+     "name": "Justice Party",
+     "leader": null,
+     "seats": 149,
+     "seatChange": 107.0,
+     "votes": 3197897,
+     "share": 29.82,
+     "swing": null
+    },
+    {
+     "name": "AP",
+     "leader": "Süleyman Demirel",
+     "seats": 149,
+     "seatChange": -107.0,
+     "votes": 3197897,
+     "share": 29.82,
+     "swing": -16.71
+    },
+    {
+     "name": "National Salvation Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": null,
+     "votes": 1265771,
+     "share": 11.8,
+     "swing": null
+    },
+    {
+     "name": "MSP",
+     "leader": "Süleyman Ârif Emre",
+     "seats": 48,
+     "seatChange": null,
+     "votes": 1265771,
+     "share": 11.8,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": "Ferruh Bozbeyli",
+     "seats": 45,
+     "seatChange": null,
+     "votes": 1275502,
+     "share": 11.89,
+     "swing": null
+    },
+    {
+     "name": "Republican Reliance Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 2.0,
+     "votes": 564343,
+     "share": 5.26,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 7.0,
+     "votes": 303218,
+     "share": 2.83,
+     "swing": null
+    },
+    {
+     "name": "Nationalist Movement Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2.0,
+     "votes": 362208,
+     "share": 3.38,
+     "swing": null
+    },
+    {
+     "name": "Unity Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 7.0,
+     "votes": 121759,
+     "share": 1.14,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Naim Talu",
+    "party": "Elected Prime Minister"
+   },
+   "pmAfter": {
+    "name": "Bülent Ecevit",
+    "party": "CHP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Turkey on 14 October 1973, on the same day as for the senate. The Republican People's Party (CHP) emerged as the largest party, winning 185 of the 450 seats with 33% of the vote.",
+   "caveat": null,
+   "seatLeader": "Republican People's Party"
+  },
+  {
+   "id": "1977",
+   "label": "1977",
+   "year": 1977,
+   "kind": "legislative",
+   "date": "5 June 1977",
+   "era": "multiparty",
+   "totalSeats": 450,
+   "majoritySeats": 226,
+   "turnout": 72.42,
+   "parties": [
+    {
+     "name": "Republican People's Party",
+     "leader": null,
+     "seats": 213,
+     "seatChange": 28.0,
+     "votes": 6136171,
+     "share": 41.38,
+     "swing": null
+    },
+    {
+     "name": "CHP",
+     "leader": "Bülent Ecevit",
+     "seats": 213,
+     "seatChange": 28.0,
+     "votes": 6136171,
+     "share": 41.38,
+     "swing": 8.08
+    },
+    {
+     "name": "Justice Party",
+     "leader": null,
+     "seats": 189,
+     "seatChange": 40.0,
+     "votes": 5468202,
+     "share": 36.88,
+     "swing": null
+    },
+    {
+     "name": "AP",
+     "leader": "Süleyman Demirel",
+     "seats": 189,
+     "seatChange": 40.0,
+     "votes": 5468202,
+     "share": 36.88,
+     "swing": 7.06
+    },
+    {
+     "name": "National Salvation Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 24.0,
+     "votes": 1269918,
+     "share": 8.56,
+     "swing": null
+    },
+    {
+     "name": "MSP",
+     "leader": "Necmettin Erbakan",
+     "seats": 24,
+     "seatChange": -24.0,
+     "votes": 1269918,
+     "share": 8.56,
+     "swing": -3.24
+    },
+    {
+     "name": "Nationalist Movement Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 13.0,
+     "votes": 951544,
+     "share": 6.42,
+     "swing": null
+    },
+    {
+     "name": "MHP",
+     "leader": "Alparslan Türkeş",
+     "seats": 16,
+     "seatChange": 13.0,
+     "votes": 951544,
+     "share": null,
+     "swing": 3.04
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 2.0,
+     "votes": 370035,
+     "share": 2.5,
+     "swing": null
+    },
+    {
+     "name": "Republican Reliance Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 10.0,
+     "votes": 277713,
+     "share": 1.87,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 44.0,
+     "votes": 274484,
+     "share": 1.85,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Süleyman Demirel",
+    "party": "AP"
+   },
+   "pmAfter": {
+    "name": "Bülent Ecevit",
+    "party": "CHP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Turkey on 5 June 1977, on the same day as for the senate. Elections took place in the middle of a political race between the right-wing Justice Party (AP) and the left-wing Republican People's Party (CHP).",
+   "caveat": null,
+   "seatLeader": "Republican People's Party"
+  },
+  {
+   "id": "1983",
+   "label": "1983",
+   "year": 1983,
+   "kind": "legislative",
+   "date": "6 November 1983",
+   "era": "coup-shadow",
+   "totalSeats": 400,
+   "majoritySeats": 201,
+   "turnout": 92.27,
+   "parties": [
+    {
+     "name": "Motherland Party",
+     "leader": null,
+     "seats": 211,
+     "seatChange": null,
+     "votes": 7833148,
+     "share": 45.14,
+     "swing": null
+    },
+    {
+     "name": "ANAP",
+     "leader": "Turgut Özal",
+     "seats": 211,
+     "seatChange": null,
+     "votes": 7833148,
+     "share": 45.14,
+     "swing": null
+    },
+    {
+     "name": "Populist Party",
+     "leader": null,
+     "seats": 117,
+     "seatChange": null,
+     "votes": 5285804,
+     "share": 30.46,
+     "swing": null
+    },
+    {
+     "name": "HP",
+     "leader": "Necdet Calp",
+     "seats": 117,
+     "seatChange": null,
+     "votes": 5285804,
+     "share": 30.46,
+     "swing": null
+    },
+    {
+     "name": "Nationalist Democracy Party",
+     "leader": null,
+     "seats": 71,
+     "seatChange": null,
+     "votes": 4036970,
+     "share": 23.27,
+     "swing": null
+    },
+    {
+     "name": "MDP",
+     "leader": "Turgut Sunalp",
+     "seats": 71,
+     "seatChange": null,
+     "votes": 4036970,
+     "share": 23.27,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Bülent Ulusu",
+    "party": "Military"
+   },
+   "pmAfter": {
+    "name": "Turgut Özal",
+    "party": "ANAP"
+   },
+   "knownAs": "The junta's constrained handover",
+   "summary": "General elections were held in Turkey on 6 November 1983, the first since 1977 after democratic rights were abandoned after the military coup of 1980. The National Security Council banned the previous political parties from participating, leading to the establishment of new parties.",
+   "caveat": "Held under the junta's rules: the old parties banned, candidates vetted, and only three parties permitted to run.",
+   "seatLeader": "Motherland Party"
+  },
+  {
+   "id": "1987",
+   "label": "1987",
+   "year": 1987,
+   "kind": "legislative",
+   "date": "29 November 1987",
+   "era": "coup-shadow",
+   "totalSeats": 450,
+   "majoritySeats": 226,
+   "turnout": 93.28,
+   "parties": [
+    {
+     "name": "Motherland Party",
+     "leader": null,
+     "seats": 292,
+     "seatChange": 81.0,
+     "votes": 8704335,
+     "share": 36.31,
+     "swing": null
+    },
+    {
+     "name": "ANAP",
+     "leader": "Turgut Özal",
+     "seats": 292,
+     "seatChange": 81.0,
+     "votes": 8704335,
+     "share": 36.31,
+     "swing": -8.83
+    },
+    {
+     "name": "Social Democratic Populist Party",
+     "leader": null,
+     "seats": 99,
+     "seatChange": null,
+     "votes": 5931000,
+     "share": 24.74,
+     "swing": null
+    },
+    {
+     "name": "SHP",
+     "leader": "Erdal İnönü",
+     "seats": 99,
+     "seatChange": -18.0,
+     "votes": 5931000,
+     "share": 24.74,
+     "swing": -5.72
+    },
+    {
+     "name": "True Path Party",
+     "leader": null,
+     "seats": 59,
+     "seatChange": null,
+     "votes": 4587062,
+     "share": 19.14,
+     "swing": null
+    },
+    {
+     "name": "DYP",
+     "leader": "Süleyman Demirel",
+     "seats": 59,
+     "seatChange": null,
+     "votes": 4587062,
+     "share": 19.14,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Turgut Özal",
+    "party": "ANAP"
+   },
+   "pmAfter": {
+    "name": "Turgut Özal",
+    "party": "ANAP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Turkey on 29 November 1987. Prior to the elections, the military junta's restrictions on former politicians were lifted, allowing them to re-enter politics.",
+   "caveat": null,
+   "seatLeader": "Motherland Party"
+  },
+  {
+   "id": "1991",
+   "label": "1991",
+   "year": 1991,
+   "kind": "legislative",
+   "date": "20 October 1991",
+   "era": "coup-shadow",
+   "totalSeats": 450,
+   "majoritySeats": 226,
+   "turnout": 83.92,
+   "parties": [
+    {
+     "name": "True Path Party",
+     "leader": null,
+     "seats": 178,
+     "seatChange": 119.0,
+     "votes": 6600726,
+     "share": 27.03,
+     "swing": null
+    },
+    {
+     "name": "DYP",
+     "leader": "Süleyman Demirel",
+     "seats": 178,
+     "seatChange": 119.0,
+     "votes": 6600726,
+     "share": 27.03,
+     "swing": 7.89
+    },
+    {
+     "name": "Motherland Party",
+     "leader": null,
+     "seats": 115,
+     "seatChange": 177.0,
+     "votes": 5862623,
+     "share": 24.01,
+     "swing": null
+    },
+    {
+     "name": "ANAP",
+     "leader": "Mesut Yılmaz",
+     "seats": 115,
+     "seatChange": -177.0,
+     "votes": 5862623,
+     "share": 24.01,
+     "swing": -12.3
+    },
+    {
+     "name": "Social Democratic Populist Party",
+     "leader": null,
+     "seats": 88,
+     "seatChange": 11.0,
+     "votes": 5066571,
+     "share": 20.75,
+     "swing": null
+    },
+    {
+     "name": "SHP",
+     "leader": "Erdal İnönü",
+     "seats": 88,
+     "seatChange": -11.0,
+     "votes": 5066571,
+     "share": 20.75,
+     "swing": -3.99
+    },
+    {
+     "name": "Welfare Party",
+     "leader": null,
+     "seats": 62,
+     "seatChange": 62.0,
+     "votes": 4121355,
+     "share": 16.88,
+     "swing": null
+    },
+    {
+     "name": "RP",
+     "leader": "Necmettin Erbakan",
+     "seats": 62,
+     "seatChange": 62.0,
+     "votes": 4121355,
+     "share": 16.88,
+     "swing": 9.72
+    },
+    {
+     "name": "Democratic Left Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 7.0,
+     "votes": 2624301,
+     "share": 10.75,
+     "swing": null
+    },
+    {
+     "name": "DSP",
+     "leader": "Bülent Ecevit",
+     "seats": 7,
+     "seatChange": 7.0,
+     "votes": 2624301,
+     "share": 10.75,
+     "swing": 2.22
+    }
+   ],
+   "pmBefore": {
+    "name": "Mesut Yılmaz",
+    "party": "ANAP"
+   },
+   "pmAfter": {
+    "name": "Süleyman Demirel",
+    "party": "DYP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Turkey on 20 October 1991, to elect members to the 19th Grand National Assembly. It was the first by the ruling Motherland Party to be contested without its founding leader, Turgut Özal, who had become Turkish president two years previously.",
+   "caveat": null,
+   "seatLeader": "True Path Party"
+  },
+  {
+   "id": "1995",
+   "label": "1995",
+   "year": 1995,
+   "kind": "legislative",
+   "date": "24 December 1995",
+   "era": "coup-shadow",
+   "totalSeats": 550,
+   "majoritySeats": 276,
+   "turnout": 85.2,
+   "parties": [
+    {
+     "name": "Welfare Party",
+     "leader": null,
+     "seats": 158,
+     "seatChange": 96.0,
+     "votes": 6012450,
+     "share": 21.38,
+     "swing": null
+    },
+    {
+     "name": "RP",
+     "leader": "Necmettin Erbakan",
+     "seats": 158,
+     "seatChange": 96.0,
+     "votes": 6012450,
+     "share": 21.38,
+     "swing": 4.5
+    },
+    {
+     "name": "True Path Party",
+     "leader": null,
+     "seats": 135,
+     "seatChange": 43.0,
+     "votes": 5396009,
+     "share": 19.18,
+     "swing": null
+    },
+    {
+     "name": "DYP",
+     "leader": "Tansu Çiller",
+     "seats": 135,
+     "seatChange": -43.0,
+     "votes": 5396009,
+     "share": 19.18,
+     "swing": -7.85
+    },
+    {
+     "name": "Motherland Party",
+     "leader": null,
+     "seats": 132,
+     "seatChange": 17.0,
+     "votes": 5527288,
+     "share": 19.65,
+     "swing": null
+    },
+    {
+     "name": "ANAP",
+     "leader": "Mesut Yılmaz",
+     "seats": 132,
+     "seatChange": 17.0,
+     "votes": 5527288,
+     "share": 19.65,
+     "swing": -4.36
+    },
+    {
+     "name": "Democratic Left Party",
+     "leader": null,
+     "seats": 76,
+     "seatChange": 69.0,
+     "votes": 4118025,
+     "share": 14.64,
+     "swing": null
+    },
+    {
+     "name": "DSP",
+     "leader": "Bülent Ecevit",
+     "seats": 76,
+     "seatChange": 69.0,
+     "votes": 4118025,
+     "share": 14.64,
+     "swing": 3.89
+    },
+    {
+     "name": "Republican People's Party",
+     "leader": null,
+     "seats": 49,
+     "seatChange": null,
+     "votes": 3011076,
+     "share": 10.71,
+     "swing": null
+    },
+    {
+     "name": "CHP",
+     "leader": "Deniz Baykal",
+     "seats": 49,
+     "seatChange": null,
+     "votes": 3011076,
+     "share": 10.71,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Tansu Çiller",
+    "party": "DYP"
+   },
+   "pmAfter": {
+    "name": "Mesut Yılmaz",
+    "party": "ANAP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Turkey on Sunday 24 December 1995, triggered by the newly re-established Republican People's Party's (CHP) withdrawal from a coalition government with the True Path Party (DYP). The coalition had been in government for four years, having been formed by the Social Democratic Populist Party, the CHP's predecessor.",
+   "caveat": null,
+   "seatLeader": "Welfare Party"
+  },
+  {
+   "id": "1999",
+   "label": "1999",
+   "year": 1999,
+   "kind": "legislative",
+   "date": "18 April 1999",
+   "era": "coup-shadow",
+   "totalSeats": 550,
+   "majoritySeats": 276,
+   "turnout": 87.09,
+   "parties": [
+    {
+     "name": "Democratic Left Party",
+     "leader": null,
+     "seats": 136,
+     "seatChange": 60.0,
+     "votes": 6919670,
+     "share": 22.19,
+     "swing": null
+    },
+    {
+     "name": "DSP",
+     "leader": "Bülent Ecevit",
+     "seats": 136,
+     "seatChange": 60.0,
+     "votes": 6919670,
+     "share": 22.19,
+     "swing": 7.55
+    },
+    {
+     "name": "Nationalist Movement Party",
+     "leader": null,
+     "seats": 129,
+     "seatChange": 129.0,
+     "votes": 5606583,
+     "share": 17.98,
+     "swing": null
+    },
+    {
+     "name": "MHP",
+     "leader": "Devlet Bahçeli",
+     "seats": 129,
+     "seatChange": 129.0,
+     "votes": 5606583,
+     "share": 17.98,
+     "swing": 9.8
+    },
+    {
+     "name": "Virtue Party",
+     "leader": null,
+     "seats": 111,
+     "seatChange": 47.0,
+     "votes": 4805381,
+     "share": 15.41,
+     "swing": null
+    },
+    {
+     "name": "FP",
+     "leader": "Recai Kutan",
+     "seats": 111,
+     "seatChange": -47.0,
+     "votes": 4805381,
+     "share": 15.41,
+     "swing": -5.97
+    },
+    {
+     "name": "Motherland Party",
+     "leader": null,
+     "seats": 86,
+     "seatChange": 46.0,
+     "votes": 4122929,
+     "share": 13.22,
+     "swing": null
+    },
+    {
+     "name": "ANAP",
+     "leader": "Mesut Yılmaz",
+     "seats": 86,
+     "seatChange": -46.0,
+     "votes": 4122929,
+     "share": 13.22,
+     "swing": -6.43
+    },
+    {
+     "name": "True Path Party",
+     "leader": null,
+     "seats": 85,
+     "seatChange": 50.0,
+     "votes": 3745417,
+     "share": 12.01,
+     "swing": null
+    },
+    {
+     "name": "DYP",
+     "leader": "Tansu Çiller",
+     "seats": 85,
+     "seatChange": -50.0,
+     "votes": 3745417,
+     "share": 12.01,
+     "swing": -7.17
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 3.0,
+     "votes": 270265,
+     "share": 0.87,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Bülent Ecevit",
+    "party": "DSP"
+   },
+   "pmAfter": {
+    "name": "Bülent Ecevit",
+    "party": "DSP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Turkey on Sunday, 18 April 1999. For the first time, local, council and parliamentary elections were held on the same day.",
+   "caveat": null,
+   "seatLeader": "Democratic Left Party"
+  },
+  {
+   "id": "2002",
+   "label": "2002",
+   "year": 2002,
+   "kind": "legislative",
+   "date": "3 November 2002",
+   "era": "akp",
+   "totalSeats": 550,
+   "majoritySeats": 276,
+   "turnout": 79.14,
+   "parties": [
+    {
+     "name": "Justice and Development Party",
+     "leader": null,
+     "seats": 363,
+     "seatChange": null,
+     "votes": 10808229,
+     "share": 34.28,
+     "swing": null
+    },
+    {
+     "name": "AK Party",
+     "leader": "Recep Tayyip Erdoğan",
+     "seats": 363,
+     "seatChange": null,
+     "votes": 10808229,
+     "share": 34.28,
+     "swing": null
+    },
+    {
+     "name": "Republican People's Party",
+     "leader": null,
+     "seats": 178,
+     "seatChange": 178.0,
+     "votes": 6113352,
+     "share": 19.39,
+     "swing": null
+    },
+    {
+     "name": "CHP",
+     "leader": "Deniz Baykal",
+     "seats": 178,
+     "seatChange": 178.0,
+     "votes": 6113352,
+     "share": 19.39,
+     "swing": 10.68
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 6.0,
+     "votes": 314251,
+     "share": 1.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Bülent Ecevit",
+    "party": "DSP"
+   },
+   "pmAfter": {
+    "name": "Abdullah Gül",
+    "party": "AK Party"
+   },
+   "knownAs": "The threshold earthquake",
+   "summary": "The elections were held during an ongoing economic crisis that followed the 2001 financial crash, which resulted in a deep resentment of coalition governments which had governed the country since the 1980 military coup. The Justice and Development Party (AKP) and Republican People's Party (CHP) between them made massive gains, winning 98.36% of the seats between them.",
+   "caveat": null,
+   "seatLeader": "Justice and Development Party"
+  },
+  {
+   "id": "2007",
+   "label": "2007",
+   "year": 2007,
+   "kind": "legislative",
+   "date": "22 July 2007",
+   "era": "akp",
+   "totalSeats": 550,
+   "majoritySeats": 276,
+   "turnout": 84.25,
+   "parties": [
+    {
+     "name": "Justice and Development Party",
+     "leader": null,
+     "seats": 341,
+     "seatChange": 22.0,
+     "votes": 16327291,
+     "share": 46.58,
+     "swing": null
+    },
+    {
+     "name": "AK Party",
+     "leader": "Recep Tayyip Erdoğan",
+     "seats": 341,
+     "seatChange": -22.0,
+     "votes": 16327291,
+     "share": 46.58,
+     "swing": 12.3
+    },
+    {
+     "name": "Republican People's Party",
+     "leader": null,
+     "seats": 112,
+     "seatChange": 66.0,
+     "votes": 7317808,
+     "share": 20.88,
+     "swing": null
+    },
+    {
+     "name": "CHP",
+     "leader": "Deniz Baykal",
+     "seats": 112,
+     "seatChange": -66.0,
+     "votes": 7317808,
+     "share": 20.88,
+     "swing": 1.49
+    },
+    {
+     "name": "Nationalist Movement Party",
+     "leader": null,
+     "seats": 71,
+     "seatChange": 71.0,
+     "votes": 5001869,
+     "share": 14.27,
+     "swing": null
+    },
+    {
+     "name": "MHP",
+     "leader": "Devlet Bahçeli",
+     "seats": 71,
+     "seatChange": 71.0,
+     "votes": 5001869,
+     "share": 14.27,
+     "swing": 5.91
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 17.0,
+     "votes": 1835486,
+     "share": 5.24,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Recep Tayyip Erdoğan",
+    "party": "AK Party"
+   },
+   "pmAfter": {
+    "name": "Recep Tayyip Erdoğan",
+    "party": "AK Party"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Turkey on 22 July 2007 to elect 550 members to the Grand National Assembly. Originally scheduled for November, the elections were brought forward after parliament failed to elect a new president to replace Ahmet Necdet Sezer.",
+   "caveat": null,
+   "seatLeader": "Justice and Development Party"
+  },
+  {
+   "id": "2011",
+   "label": "2011",
+   "year": 2011,
+   "kind": "legislative",
+   "date": "12 June 2011",
+   "era": "akp",
+   "totalSeats": 550,
+   "majoritySeats": 276,
+   "turnout": 83.16,
+   "parties": [
+    {
+     "name": "Justice and Development Party",
+     "leader": null,
+     "seats": 327,
+     "seatChange": 14.0,
+     "votes": 21399082,
+     "share": 49.83,
+     "swing": null
+    },
+    {
+     "name": "AK Party",
+     "leader": "Recep Tayyip Erdoğan",
+     "seats": 327,
+     "seatChange": -14.0,
+     "votes": 21399082,
+     "share": 49.83,
+     "swing": 3.25
+    },
+    {
+     "name": "Republican People's Party",
+     "leader": null,
+     "seats": 135,
+     "seatChange": 23.0,
+     "votes": 11155972,
+     "share": 25.98,
+     "swing": null
+    },
+    {
+     "name": "CHP",
+     "leader": "Kemal Kılıçdaroğlu",
+     "seats": 135,
+     "seatChange": 23.0,
+     "votes": 11155972,
+     "share": 25.98,
+     "swing": 5.1
+    },
+    {
+     "name": "Nationalist Movement Party",
+     "leader": null,
+     "seats": 53,
+     "seatChange": 18.0,
+     "votes": 5585513,
+     "share": 13.01,
+     "swing": null
+    },
+    {
+     "name": "MHP",
+     "leader": "Devlet Bahçeli",
+     "seats": 53,
+     "seatChange": -18.0,
+     "votes": 5585513,
+     "share": 13.01,
+     "swing": -1.26
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 8.0,
+     "votes": 2819917,
+     "share": 6.57,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Recep Tayyip Erdoğan",
+    "party": "AK Party"
+   },
+   "pmAfter": {
+    "name": "Recep Tayyip Erdoğan",
+    "party": "AK Party"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Turkey on 12 June 2011 to elect the 550 members of Grand National Assembly. In accordance to the result of the constitutional referendum held in 2007, the elections were held four years after the previous elections in 2007 instead of five.",
+   "caveat": null,
+   "seatLeader": "Justice and Development Party"
+  },
+  {
+   "id": "2015-jun",
+   "label": "June 2015",
+   "year": 2015,
+   "kind": "legislative",
+   "date": "7 June 2015",
+   "era": "akp",
+   "totalSeats": 550,
+   "majoritySeats": 276,
+   "turnout": 83.92,
+   "parties": [
+    {
+     "name": "Justice and Development Party",
+     "leader": null,
+     "seats": 258,
+     "seatChange": 69.0,
+     "votes": 18867411,
+     "share": 40.87,
+     "swing": null
+    },
+    {
+     "name": "AK Party",
+     "leader": "Ahmet Davutoğlu",
+     "seats": 258,
+     "seatChange": -69.0,
+     "votes": 18867411,
+     "share": 40.87,
+     "swing": -8.96
+    },
+    {
+     "name": "Republican People's Party",
+     "leader": null,
+     "seats": 132,
+     "seatChange": 3.0,
+     "votes": 11518139,
+     "share": 24.95,
+     "swing": null
+    },
+    {
+     "name": "CHP",
+     "leader": "Kemal Kılıçdaroğlu",
+     "seats": 132,
+     "seatChange": -3.0,
+     "votes": 11518139,
+     "share": 24.95,
+     "swing": -1.03
+    },
+    {
+     "name": "Nationalist Movement Party",
+     "leader": null,
+     "seats": 80,
+     "seatChange": 27.0,
+     "votes": 7520006,
+     "share": 16.29,
+     "swing": null
+    },
+    {
+     "name": "MHP",
+     "leader": "Devlet Bahçeli",
+     "seats": 80,
+     "seatChange": 27.0,
+     "votes": 7520006,
+     "share": 16.29,
+     "swing": 3.28
+    },
+    {
+     "name": "Peoples' Democratic Party",
+     "leader": null,
+     "seats": 80,
+     "seatChange": 80.0,
+     "votes": 6058489,
+     "share": 13.12,
+     "swing": null
+    },
+    {
+     "name": "HDP",
+     "leader": "Selahattin Demirtaş",
+     "seats": 80,
+     "seatChange": null,
+     "votes": 6058489,
+     "share": 13.12,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ahmet Davutoğlu",
+    "party": "AK Party"
+   },
+   "pmAfter": {
+    "name": "Ahmet Davutoğlu (interim)",
+    "party": "AK Party"
+   },
+   "knownAs": "The AKP loses its majority",
+   "summary": "Gezi Park protests2013 government corruption scandalSolution processMurder of Özgecan AslanEconomyGülen MovementSoma mine disasterPresidential systemCensorshipSyrian Civil WarIslamic State of Iraq and the LevantEuropean UnionSiege of KobanîMİT lorries scandalReyhanlı bombingsKurdish riotsHDP rally bombingMerkez Türkiye",
+   "caveat": null,
+   "seatLeader": "Justice and Development Party"
+  },
+  {
+   "id": "2015-nov",
+   "label": "November 2015",
+   "year": 2015,
+   "kind": "legislative",
+   "date": "1 November 2015",
+   "era": "akp",
+   "totalSeats": 550,
+   "majoritySeats": 276,
+   "turnout": 85.23,
+   "parties": [
+    {
+     "name": "AK Party",
+     "leader": "Ahmet Davutoğlu",
+     "seats": 317,
+     "seatChange": 59.0,
+     "votes": 23681926,
+     "share": 49.5,
+     "swing": 8.63
+    },
+    {
+     "name": "CHP",
+     "leader": "Kemal Kılıçdaroğlu",
+     "seats": 134,
+     "seatChange": 2.0,
+     "votes": 12111812,
+     "share": 25.32,
+     "swing": 0.37
+    },
+    {
+     "name": "HDP",
+     "leader": "Selahattin Demirtaş",
+     "seats": 59,
+     "seatChange": -21.0,
+     "votes": 5148085,
+     "share": 10.76,
+     "swing": -2.36
+    },
+    {
+     "name": "MHP",
+     "leader": null,
+     "seats": 40,
+     "seatChange": -40.0,
+     "votes": 5694136,
+     "share": 11.9,
+     "swing": -4.39
+    }
+   ],
+   "pmBefore": {
+    "name": "Ahmet Davutoğlu",
+    "party": "AK Party"
+   },
+   "pmAfter": {
+    "name": "Ahmet Davutoğlu",
+    "party": "AK Party"
+   },
+   "knownAs": "The majority regained",
+   "summary": "General elections were held in Turkey on 1 November 2015 to elect 550 members to the Grand National Assembly. They were the 25th general elections in the history of the Republic of Turkey and elected the country's 26th Parliament.",
+   "caveat": null,
+   "seatLeader": "AK Party"
+  },
+  {
+   "id": "2018",
+   "label": "2018",
+   "year": 2018,
+   "kind": "legislative",
+   "date": "24 June 2018",
+   "era": "akp",
+   "totalSeats": 600,
+   "majoritySeats": 301,
+   "turnout": 86.22,
+   "parties": [
+    {
+     "name": "AK Party",
+     "leader": "Recep Tayyip Erdoğan",
+     "seats": 295,
+     "seatChange": -22.0,
+     "votes": 21338693,
+     "share": 42.56,
+     "swing": -6.94
+    },
+    {
+     "name": "CHP",
+     "leader": "Kemal Kılıçdaroğlu",
+     "seats": 146,
+     "seatChange": 12.0,
+     "votes": 11354190,
+     "share": 22.65,
+     "swing": -2.67
+    },
+    {
+     "name": "HDP",
+     "leader": "Sezai Temelli",
+     "seats": 67,
+     "seatChange": 8.0,
+     "votes": 5867302,
+     "share": 11.7,
+     "swing": 0.94
+    },
+    {
+     "name": "MHP",
+     "leader": "Devlet Bahçeli",
+     "seats": 49,
+     "seatChange": 9.0,
+     "votes": 5565331,
+     "share": 11.1,
+     "swing": -0.8
+    },
+    {
+     "name": "İYİ",
+     "leader": "Meral Akşener",
+     "seats": 43,
+     "seatChange": null,
+     "votes": 4993479,
+     "share": 9.96,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The emergency election",
+   "summary": "Parliamentary elections were held in Turkey on 24 June 2018 as part of general elections, with presidential elections taking place on the same day. Originally scheduled for 27 October 2019, President Recep Tayyip Erdoğan called snap elections on 18 April after months of speculation.",
+   "caveat": "Held under a state of emergency alongside the presidential vote, on a field tilted heavily toward the governing alliance.",
+   "seatLeader": "AK Party"
+  },
+  {
+   "id": "2023",
+   "label": "2023",
+   "year": 2023,
+   "kind": "legislative",
+   "date": "14 May 2023",
+   "era": "akp",
+   "totalSeats": 600,
+   "majoritySeats": 301,
+   "turnout": 87.05,
+   "parties": [
+    {
+     "name": "AK Party",
+     "leader": "Recep Tayyip Erdoğan",
+     "seats": 268,
+     "seatChange": -27.0,
+     "votes": 19387412,
+     "share": 35.61,
+     "swing": -6.95
+    },
+    {
+     "name": "CHP",
+     "leader": "Kemal Kılıçdaroğlu",
+     "seats": 169,
+     "seatChange": 23.0,
+     "votes": 13791299,
+     "share": 25.33,
+     "swing": 2.68
+    },
+    {
+     "name": "YSGP",
+     "leader": "Çiğdem Kılıçgün Uçar",
+     "seats": 61,
+     "seatChange": -4.0,
+     "votes": 4803774,
+     "share": 8.82,
+     "swing": -2.88
+    },
+    {
+     "name": "MHP",
+     "leader": "Devlet Bahçeli",
+     "seats": 50,
+     "seatChange": 1.0,
+     "votes": 5484515,
+     "share": 10.07,
+     "swing": -1.03
+    },
+    {
+     "name": "YRP",
+     "leader": "Fatih Erbakan",
+     "seats": 5,
+     "seatChange": null,
+     "votes": 1529119,
+     "share": 2.81,
+     "swing": null
+    },
+    {
+     "name": "TİP",
+     "leader": "Erkan Baş",
+     "seats": 4,
+     "seatChange": null,
+     "votes": 940230,
+     "share": 1.73,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Turkey on 14 May 2023, alongside presidential elections, to elect all 600 members of the Grand National Assembly. The incoming members formed the 28th Parliament of Turkey.",
+   "caveat": "Fiercely contested but tilted: state resources and broadcast dominance favoured the governing alliance throughout.",
+   "seatLeader": "AK Party"
+  }
+ ]
+}

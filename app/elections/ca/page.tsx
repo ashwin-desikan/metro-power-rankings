@@ -10,6 +10,7 @@ import {
   type CaElection,
 } from "@/lib/caElections";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { HubTitle } from "../HubShared";
 import LineChart, { type ChartSeries } from "../LineChart";
 
 const PATH = "/elections/ca";
@@ -128,7 +129,7 @@ export default function CaElectionsPage() {
       </nav>
 
       <header className="mb-6">
-        <h1 className="text-3xl font-bold mb-2 text-[var(--text)]">{TITLE}</h1>
+        <HubTitle code="ca" title={TITLE} />
         <p className="text-[var(--text-muted)] max-w-3xl">{DESC}</p>
       </header>
 

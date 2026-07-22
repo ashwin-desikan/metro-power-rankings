@@ -47,6 +47,45 @@ import {
 
 export const dynamicParams = false;
 
+// Countries with an election-history hub get a card linking to it (and the US
+// and UK also link their political-leadership pages).
+const ELECTION_CARD: Record<string, { href: string; head: string; sub: string }> = {
+  "united-states": { href: "/elections/us", head: "Every presidential election since 1788 →", sub: "Sixty contests: electoral college, state results, turnout, Congress and the midterm penalty." },
+  "united-kingdom": { href: "/elections/uk", head: "Every general election since 1802 →", sub: "Fifty-eight contests: seats, swings, turnout, referendums and the devolved map." },
+  canada: { href: "/elections/ca", head: "Every federal election since 1867 →", sub: "Forty-five contests: seats, swings, turnout, minority parliaments and the 1993 collapse." },
+  australia: { href: "/elections/au", head: "Every federal election since 1901 →", sub: "Forty-eight contests: preferential voting, compulsory turnout, the Dismissal and the 2025 landslide." },
+  germany: { href: "/elections/de", head: "Every federal election since 1848 →", sub: "Fifty national votes across Empire, Weimar and two republics, with the unfree years labelled." },
+  france: { href: "/elections/fr", head: "Elections since the Revolution →", sub: "Legislative contests back to 1791 and every Fifth Republic presidential runoff in one hub." },
+  india: { href: "/elections/in", head: "Every general election since 1920 →", sub: "The world's largest democratic exercise, from the Raj-era assemblies to 970 million voters." },
+  japan: { href: "/elections/jp", head: "Every general election since 1890 →", sub: "Asia's first parliament, the 1955 system and the LDP's seven decades of dominance." },
+  brazil: { href: "/elections/br", head: "Elections since the first Republic →", sub: "Presidential contests from 1891 and the parliamentary record, through the 2022 runoff." },
+  mexico: { href: "/elections/mx", head: "Presidential elections since 1853 →", sub: "From the Porfiriato and one-party rule to real contests and the first woman president." },
+  "south-africa": { href: "/elections/za", head: "Every general election since 1910 →", sub: "The whites-only parliaments stated plainly, and the democratic era from 1994 to 2024." },
+  italy: { href: "/elections/it", head: "Every general election since 1861 →", sub: "From the Liberal monarchy through the First Republic's decades to the Second Republic." },
+  israel: { href: "/elections/il", head: "Every election since the Yishuv →", sub: "From the pre-state assemblies to the Knesset's deadlock cycle; next contest due in 2026." },
+  "south-korea": { href: "/elections/kr", head: "Presidential and Assembly elections since 1948 →", sub: "The authoritarian rituals labelled as such, and the two-camp democracy since 1987." },
+  indonesia: { href: "/elections/id", head: "Elections since the Volksraad →", sub: "The 1955 experiment, the New Order's managed votes, and the world's largest election day." },
+  spain: { href: "/elections/es", head: "Every general election since 1867 →", sub: "The turno pacífico stated plainly, the Second Republic, and the democratic era since 1977." },
+  poland: { href: "/elections/pl", head: "Elections since the royal free elections →", sub: "Elected kings from 1573, the communist rituals labelled, and the Third Republic's duels." },
+  netherlands: { href: "/elections/nl", head: "Every general election since 1886 →", sub: "The Pacification of 1917, the pillarised decades, and the world's purest proportional system." },
+  "new-zealand": { href: "/elections/nz", head: "Every general election since 1853 →", sub: "The world's first vote with women's suffrage, the first Labour government, and the MMP era." },
+  argentina: { href: "/elections/ar", head: "Presidential elections since 1826 →", sub: "The oligarchic republic, the Sáenz Peña revolution, Perón, and unbroken democracy since 1983." },
+  taiwan: { href: "/elections/tw", head: "Presidential elections since 1911 →", sub: "The ROC's whole lineage, with the National Assembly rituals labelled and democracy since 1996." },
+  nigeria: { href: "/elections/ng", head: "Elections since Africa's first, in 1923 →", sub: "June 12 and the rigged contests labelled plainly, and the Fourth Republic's unbroken run." },
+  turkey: { href: "/elections/tr", head: "Elections since the Republic →", sub: "The single-party era labelled, the 1950 breakthrough, the coups — and the tilted contests of today." },
+  russia: { href: "/elections/ru", head: "Russian & Soviet votes, recorded honestly →", sub: "Single-list rituals, the free 1990s window, and the managed elections that closed it." },
+  china: { href: "/elections/cn", head: "The national congresses since 1949 →", sub: "China holds no competitive elections; this records the NPC's party-managed selection instead." },
+  ukraine: { href: "/elections/ua", head: "Every election since independence →", sub: "Seven presidential races and eight Rada contests — all real, three incumbents defeated — suspended under martial law." },
+  iraq: { href: "/elections/iq", head: "Elections since the monarchy →", sub: "The palace-managed chambers, Saddam's rituals stated plainly, and seven competitive elections since 2005." },
+  palestine: { href: "/elections/ps", head: "The elections of 1996–2006 →", sub: "The Authority's founding votes, the free 2006 election that froze everything — and the vote scheduled for 2026." },
+  "vatican-city": { href: "/elections/va", head: "Papal conclaves since 1061 →", sub: "The oldest electoral system on earth: 964 years of conclaves and papal elections, through Leo XIV in 2025." },
+  singapore: { href: "/elections/sg", head: "Every general election since 1948 →", sub: "The PAP's seventeen consecutive victories, cleanly counted and structurally tilted, each labelled honestly." },
+  malaysia: { href: "/elections/my", head: "Every general election since 1955 →", sub: "The BN supermajority decades on a tilted map, and the two-coalition era that made power change hands." },
+  switzerland: { href: "/elections/ch", head: "Every federal election since 1848 →", sub: "The Radical republic, the PR revolution, the magic formula — and the SVP era that broke it." },
+  belgium: { href: "/elections/be", head: "Every election since 1831 →", sub: "From the censitaire kingdom and plural voting to the linguistic fracture and the 541-day formation." },
+  denmark: { href: "/elections/dk", head: "Every election since 1849 →", sub: "The constitutional struggle, Stauning's Denmark, the 1973 earthquake and bloc politics to March 2026." },
+};
+
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
@@ -545,9 +584,9 @@ export default async function CountryDetailPage({ params }: Props) {
             </Collapsible>
           ) : null}
 
-          {slug === "united-states" || slug === "united-kingdom" || slug === "canada" ? (
+          {ELECTION_CARD[slug] ? (
             <div className="grid gap-3 sm:grid-cols-2 mb-6">
-              {slug !== "canada" ? (
+              {slug === "united-states" || slug === "united-kingdom" ? (
               <Link
                 href={slug === "united-states" ? "/us-political-leadership" : "/uk-political-leadership"}
                 className="block rounded-xl border p-4 transition-colors hover:border-[var(--accent)]"
@@ -565,25 +604,13 @@ export default async function CountryDetailPage({ params }: Props) {
               </Link>
               ) : null}
               <Link
-                href={slug === "united-states" ? "/elections/us" : slug === "canada" ? "/elections/ca" : "/elections/uk"}
+                href={ELECTION_CARD[slug].href}
                 className="block rounded-xl border p-4 transition-colors hover:border-[var(--accent)]"
                 style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
               >
                 <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">Elections</p>
-                <p className="font-bold text-[var(--text)]">
-                  {slug === "united-states"
-                    ? "Every presidential election since 1788 →"
-                    : slug === "canada"
-                      ? "Every federal election since 1867 →"
-                      : "Every general election since 1802 →"}
-                </p>
-                <p className="text-xs text-[var(--text-muted)] mt-1">
-                  {slug === "united-states"
-                    ? "Sixty contests: electoral college, state results, turnout, Congress and the midterm penalty."
-                    : slug === "canada"
-                      ? "Forty-five contests: seats, swings, turnout, minority parliaments and the 1993 collapse."
-                      : "Fifty-eight contests: seats, swings, turnout, referendums and the devolved map."}
-                </p>
+                <p className="font-bold text-[var(--text)]">{ELECTION_CARD[slug].head}</p>
+                <p className="text-xs text-[var(--text-muted)] mt-1">{ELECTION_CARD[slug].sub}</p>
               </Link>
             </div>
           ) : null}

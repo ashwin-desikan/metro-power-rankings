@@ -1,0 +1,2709 @@
+{
+ "meta": {
+  "title": "Israeli elections",
+  "sources": [
+   "Wikipedia: Israeli legislative and general election articles, 1920–2022, including the pre-state Assembly of Representatives and the 2001 prime ministerial election (results, infoboxes and leads)",
+   "Central Elections Committee figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "eras": [
+  {
+   "key": "yishuv",
+   "label": "The Yishuv's assemblies",
+   "span": "1920–1944",
+   "blurb": "Before the state, the Jewish community of Mandatory Palestine elected its own Assembly of Representatives — voluntary, internal elections that built the parties, the ballot habits and the proportional system the Knesset would inherit wholesale in 1949."
+  },
+  {
+   "key": "mapai",
+   "label": "The Mapai decades",
+   "span": "1949–1973",
+   "blurb": "From the Constituent Assembly of 1949, David Ben-Gurion's Mapai and its successors led every government for nearly three decades — a dominant-party system in a pure proportional parliament where no party has ever won an outright majority."
+  },
+  {
+   "key": "upheaval",
+   "label": "The Mahapach and the two-bloc era",
+   "span": "1977–1992",
+   "blurb": "The 1977 'upheaval' ended Labor's rule and brought Menachem Begin's Likud to power, remaking Israeli politics into a contest of two blocs — including the deadlocked 1984 result that produced a rotating premiership."
+  },
+  {
+   "key": "direct-pm",
+   "label": "The direct-election experiment",
+   "span": "1996–2003",
+   "blurb": "For three elections Israelis cast two ballots — one for a party, one directly for prime minister. The experiment fragmented the Knesset while personalising the premiership, produced 2001's unique PM-only contest, and was abolished as a failure."
+  },
+  {
+   "key": "deadlock",
+   "label": "The Netanyahu era and the deadlock cycle",
+   "span": "2006–2022",
+   "blurb": "Kadima's breakaway, then Benjamin Netanyahu's long ascendancy, then paralysis: five elections between April 2019 and November 2022, fought less over policy than over one man, with the next contest due in 2026."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1920",
+   "label": "1920",
+   "year": 1920,
+   "date": "19 April–3 May 1920",
+   "era": "yishuv",
+   "totalSeats": 314,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The first elections to the Assembly of Representatives in Mandatory Palestine were held amongst members of the Jewish community on 19 April 1920, except in Jerusalem where voting took place on 3 May. Ahdut HaAvoda led by David Ben-Gurion emerged as the largest party, winning 70 of the 314 seats.",
+   "caveat": "An internal election of the Jewish community under the British Mandate — a voluntary communal assembly, not a state legislature. Recorded here as the pre-state root of Israeli electoral politics.",
+   "seatLeader": null
+  },
+  {
+   "id": "1925",
+   "label": "1925",
+   "year": 1925,
+   "date": "6 December 1925",
+   "era": "yishuv",
+   "totalSeats": 221,
+   "majoritySeats": null,
+   "turnout": 57.0,
+   "parties": [
+    {
+     "name": "Ahdut HaAvoda",
+     "leader": null,
+     "seats": 54,
+     "seatChange": 16.0,
+     "votes": 8834,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Hapoel Hatzair",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 11.0,
+     "votes": 5337,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Ma'amad Hapoalim",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 1028,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Elections to the Assembly of Representatives in Mandatory Palestine were held on 6 December 1925, electing the legislature of the Yishuv. Around half the votes went to parties associated with trade unions.",
+   "caveat": "An internal election of the Jewish community under the British Mandate — a voluntary communal assembly, not a state legislature. Recorded here as the pre-state root of Israeli electoral politics.",
+   "seatLeader": "Ahdut HaAvoda"
+  },
+  {
+   "id": "1931",
+   "label": "1931",
+   "year": 1931,
+   "date": "5 January 1931",
+   "era": "yishuv",
+   "totalSeats": 71,
+   "majoritySeats": null,
+   "turnout": 67.21,
+   "parties": [
+    {
+     "name": "Mapai",
+     "leader": null,
+     "seats": 27,
+     "seatChange": null,
+     "votes": 21497,
+     "share": 43.45,
+     "swing": null
+    },
+    {
+     "name": "Revisionists",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 8069,
+     "share": 16.31,
+     "swing": null
+    },
+    {
+     "name": "Sephardic Bloc",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 2301,
+     "share": 4.65,
+     "swing": null
+    },
+    {
+     "name": "Mizrachi–Hapoel HaMizrachi",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 4107,
+     "share": 8.3,
+     "swing": null
+    },
+    {
+     "name": "General Zionists",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 2841,
+     "share": 5.74,
+     "swing": null
+    },
+    {
+     "name": "Sephardic Revisionists",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 2121,
+     "share": 4.29,
+     "swing": null
+    },
+    {
+     "name": "Sephardic Workers",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 1653,
+     "share": 3.34,
+     "swing": null
+    },
+    {
+     "name": "Women's Association",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 1861,
+     "share": 3.76,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The Jewish National Council reduced the number of seats in the Assembly from 221 to 71, the same number of representatives in the ancient Great Sanhedrin. Voting was open to all naturalized Palestinian citizens who were registered as Jewish and at least 20 years old.",
+   "caveat": "An internal election of the Jewish community under the British Mandate — a voluntary communal assembly, not a state legislature. Recorded here as the pre-state root of Israeli electoral politics.",
+   "seatLeader": "Mapai"
+  },
+  {
+   "id": "1944",
+   "label": "1944",
+   "year": 1944,
+   "date": "2 August 1944",
+   "era": "yishuv",
+   "totalSeats": 173,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Mapai",
+     "leader": null,
+     "seats": 64,
+     "seatChange": null,
+     "votes": 73122,
+     "share": 36.85,
+     "swing": null
+    },
+    {
+     "name": "Left Bloc (Hashomer Hatzair–Poale Zion Left)",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": 24582,
+     "share": 12.39,
+     "swing": null
+    },
+    {
+     "name": "New Aliyah Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 21279,
+     "share": 10.72,
+     "swing": null
+    },
+    {
+     "name": "Hapoel HaMizrachi",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 18748,
+     "share": 9.45,
+     "swing": null
+    },
+    {
+     "name": "Ahdut HaAvoda",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 17928,
+     "share": 9.04,
+     "swing": null
+    },
+    {
+     "name": "Mizrachi",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 6513,
+     "share": 3.28,
+     "swing": null
+    },
+    {
+     "name": "Yemenite Association",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 5019,
+     "share": 2.53,
+     "swing": null
+    },
+    {
+     "name": "Democratic Centre",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 4704,
+     "share": 2.37,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Elections to the Assembly of Representatives of Mandatory Palestine were held on 2 August 1944. Just over 200,000 Jewish residents voted, more than 70% of all those eligible to vote.",
+   "caveat": "An internal election of the Jewish community under the British Mandate — a voluntary communal assembly, not a state legislature. Recorded here as the pre-state root of Israeli electoral politics.",
+   "seatLeader": "Mapai"
+  },
+  {
+   "id": "1949",
+   "label": "1949",
+   "year": 1949,
+   "date": "25 January 1949",
+   "era": "mapai",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 86.88,
+   "parties": [
+    {
+     "name": "Mapai",
+     "leader": null,
+     "seats": 46,
+     "seatChange": null,
+     "votes": 155274,
+     "share": 35.72,
+     "swing": null
+    },
+    {
+     "name": "Mapam",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 64018,
+     "share": 14.73,
+     "swing": null
+    },
+    {
+     "name": "United Religious Front",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 52982,
+     "share": 12.19,
+     "swing": null
+    },
+    {
+     "name": "Herut",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 49782,
+     "share": 11.45,
+     "swing": null
+    },
+    {
+     "name": "General Zionists",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 22661,
+     "share": 5.21,
+     "swing": null
+    },
+    {
+     "name": "Progressive Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 17786,
+     "share": 4.09,
+     "swing": null
+    },
+    {
+     "name": "Sephardim and Oriental Communities",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 15287,
+     "share": 3.52,
+     "swing": null
+    },
+    {
+     "name": "Maki",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 15148,
+     "share": 3.48,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "David Ben-Gurion",
+    "party": "Mapai"
+   },
+   "pmAfter": {
+    "name": "David Ben-Gurion",
+    "party": "Mapai"
+   },
+   "knownAs": "The Constituent Assembly",
+   "summary": "Constituent Assembly elections were held in newly independent Israel on 25 January 1949. Voter turnout was 86.9%.",
+   "caveat": null,
+   "seatLeader": "Mapai"
+  },
+  {
+   "id": "1951",
+   "label": "1951",
+   "year": 1951,
+   "date": "30 July 1951",
+   "era": "mapai",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 75.15,
+   "parties": [
+    {
+     "name": "Mapai",
+     "leader": null,
+     "seats": 45,
+     "seatChange": -1.0,
+     "votes": 256456,
+     "share": 37.3,
+     "swing": null
+    },
+    {
+     "name": "General Zionists",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 13.0,
+     "votes": 111394,
+     "share": 16.2,
+     "swing": null
+    },
+    {
+     "name": "Mapam",
+     "leader": null,
+     "seats": 15,
+     "seatChange": -4.0,
+     "votes": 86095,
+     "share": 12.52,
+     "swing": null
+    },
+    {
+     "name": "Hapoel HaMizrachi",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 1.0,
+     "votes": 46347,
+     "share": 6.74,
+     "swing": null
+    },
+    {
+     "name": "Herut",
+     "leader": null,
+     "seats": 8,
+     "seatChange": -6.0,
+     "votes": 45651,
+     "share": 6.64,
+     "swing": null
+    },
+    {
+     "name": "Maki",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 1.0,
+     "votes": 27334,
+     "share": 3.98,
+     "swing": null
+    },
+    {
+     "name": "Progressive Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -1.0,
+     "votes": 22171,
+     "share": 3.22,
+     "swing": null
+    },
+    {
+     "name": "Democratic List for Israeli Arabs",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 16370,
+     "share": 2.38,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "David Ben-Gurion",
+    "party": "Mapai"
+   },
+   "pmAfter": {
+    "name": "David Ben-Gurion",
+    "party": "Mapai"
+   },
+   "knownAs": null,
+   "summary": "The second Knesset was highly unstable, with four separate governments, two different Prime Ministers and several defections; Rostam Bastuni, Avraham Berman and Moshe Sneh left Mapam and set up the Left Faction. Bastuni later returned to Mapam whilst Berman and Sneh joined Maki.",
+   "caveat": null,
+   "seatLeader": "Mapai"
+  },
+  {
+   "id": "1955",
+   "label": "1955",
+   "year": 1955,
+   "date": "26 July 1955",
+   "era": "mapai",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 82.83,
+   "parties": [
+    {
+     "name": "Mapai",
+     "leader": null,
+     "seats": 40,
+     "seatChange": -5.0,
+     "votes": 274735,
+     "share": 32.2,
+     "swing": null
+    },
+    {
+     "name": "Herut",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 7.0,
+     "votes": 107190,
+     "share": 12.56,
+     "swing": null
+    },
+    {
+     "name": "General Zionists",
+     "leader": null,
+     "seats": 13,
+     "seatChange": -7.0,
+     "votes": 87099,
+     "share": 10.21,
+     "swing": null
+    },
+    {
+     "name": "National Religious Front",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 1.0,
+     "votes": 77936,
+     "share": 9.13,
+     "swing": null
+    },
+    {
+     "name": "Ahdut HaAvoda",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 69475,
+     "share": 8.14,
+     "swing": null
+    },
+    {
+     "name": "Mapam",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -6.0,
+     "votes": 62401,
+     "share": 7.31,
+     "swing": null
+    },
+    {
+     "name": "Religious Torah Front",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 1.0,
+     "votes": 39836,
+     "share": 4.67,
+     "swing": null
+    },
+    {
+     "name": "Maki",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 1.0,
+     "votes": 38492,
+     "share": 4.51,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Moshe Sharett",
+    "party": "Mapai"
+   },
+   "pmAfter": {
+    "name": "David Ben-Gurion",
+    "party": "Mapai"
+   },
+   "knownAs": null,
+   "summary": "Mapai retained its plurality in the Knesset, although its share of the vote dropped by 5.1 and its share of seats dropped from 47 (at the end of the Second Knesset) to 40. Meanwhile, Herut overtook the General Zionists, Mapam, and Hapoel HaMizrachi to become the second-largest party, with its share of seats nearly doubling (from 8 in the Second Knesset to 15 in the Third).",
+   "caveat": null,
+   "seatLeader": "Mapai"
+  },
+  {
+   "id": "1959",
+   "label": "1959",
+   "year": 1959,
+   "date": "3 November 1959",
+   "era": "mapai",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 81.6,
+   "parties": [
+    {
+     "name": "Mapai",
+     "leader": null,
+     "seats": 47,
+     "seatChange": 7.0,
+     "votes": 370585,
+     "share": 38.23,
+     "swing": null
+    },
+    {
+     "name": "Herut",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 2.0,
+     "votes": 130515,
+     "share": 13.46,
+     "swing": null
+    },
+    {
+     "name": "National Religious Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 1.0,
+     "votes": 95581,
+     "share": 9.86,
+     "swing": null
+    },
+    {
+     "name": "Mapam",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 0.0,
+     "votes": 69468,
+     "share": 7.17,
+     "swing": null
+    },
+    {
+     "name": "General Zionists",
+     "leader": null,
+     "seats": 8,
+     "seatChange": -5.0,
+     "votes": 59700,
+     "share": 6.16,
+     "swing": null
+    },
+    {
+     "name": "Ahdut HaAvoda",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -3.0,
+     "votes": 58043,
+     "share": 5.99,
+     "swing": null
+    },
+    {
+     "name": "Religious Torah Front",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 0.0,
+     "votes": 45569,
+     "share": 4.7,
+     "swing": null
+    },
+    {
+     "name": "Progressive Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 1.0,
+     "votes": 44889,
+     "share": 4.63,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "David Ben-Gurion",
+    "party": "Mapai"
+   },
+   "pmAfter": {
+    "name": "David Ben-Gurion",
+    "party": "Mapai"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in Israel on 3 November 1959 to elect the 120 members of the fourth Knesset. Mapai remained the dominant party, gaining seven seats.",
+   "caveat": null,
+   "seatLeader": "Mapai"
+  },
+  {
+   "id": "1961",
+   "label": "1961",
+   "year": 1961,
+   "date": "15 August 1961",
+   "era": "mapai",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 81.57,
+   "parties": [
+    {
+     "name": "Mapai",
+     "leader": null,
+     "seats": 42,
+     "seatChange": -5.0,
+     "votes": 349330,
+     "share": 34.69,
+     "swing": null
+    },
+    {
+     "name": "Herut",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 0.0,
+     "votes": 138599,
+     "share": 13.76,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 3.0,
+     "votes": 137255,
+     "share": 13.63,
+     "swing": null
+    },
+    {
+     "name": "National Religious Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 0.0,
+     "votes": 98786,
+     "share": 9.81,
+     "swing": null
+    },
+    {
+     "name": "Mapam",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 0.0,
+     "votes": 75654,
+     "share": 7.51,
+     "swing": null
+    },
+    {
+     "name": "Ahdut HaAvoda",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 1.0,
+     "votes": 66170,
+     "share": 6.57,
+     "swing": null
+    },
+    {
+     "name": "Maki",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 2.0,
+     "votes": 42111,
+     "share": 4.18,
+     "swing": null
+    },
+    {
+     "name": "Agudat Yisrael",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 37178,
+     "share": 3.69,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "David Ben-Gurion",
+    "party": "Mapai"
+   },
+   "pmAfter": {
+    "name": "David Ben-Gurion",
+    "party": "Mapai"
+   },
+   "knownAs": null,
+   "summary": "During the Knesset term, eight MKs broke away from Mapai to establish Rafi and two MKs left Maki to establish Rakah. Herut and the Liberal Party merged to form Gahal.",
+   "caveat": null,
+   "seatLeader": "Mapai"
+  },
+  {
+   "id": "1965",
+   "label": "1965",
+   "year": 1965,
+   "date": "2 November 1965",
+   "era": "mapai",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 85.86,
+   "parties": [
+    {
+     "name": "Labour Alignment",
+     "leader": null,
+     "seats": 45,
+     "seatChange": -5.0,
+     "votes": 443379,
+     "share": 36.74,
+     "swing": null
+    },
+    {
+     "name": "Gahal",
+     "leader": null,
+     "seats": 26,
+     "seatChange": -8.0,
+     "votes": 256957,
+     "share": 21.29,
+     "swing": null
+    },
+    {
+     "name": "National Religious Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -1.0,
+     "votes": 107966,
+     "share": 8.95,
+     "swing": null
+    },
+    {
+     "name": "Rafi",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 95328,
+     "share": 7.9,
+     "swing": null
+    },
+    {
+     "name": "Mapam",
+     "leader": null,
+     "seats": 8,
+     "seatChange": -1.0,
+     "votes": 79985,
+     "share": 6.63,
+     "swing": null
+    },
+    {
+     "name": "Independent Liberals",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 45299,
+     "share": 3.75,
+     "swing": null
+    },
+    {
+     "name": "Agudat Yisrael",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 39795,
+     "share": 3.3,
+     "swing": null
+    },
+    {
+     "name": "Rakah",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 27413,
+     "share": 2.27,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Levi Eshkol",
+    "party": "Mapai"
+   },
+   "pmAfter": {
+    "name": "Levi Eshkol",
+    "party": "Alignment"
+   },
+   "knownAs": null,
+   "summary": "Prior to the elections, two major alliances were formed; Mapai and Ahdut HaAvoda united to form the Alignment, whilst Herut and the Liberal Party had formed the Gahal alliance towards the end of the previous Knesset session.",
+   "caveat": null,
+   "seatLeader": "Labour Alignment"
+  },
+  {
+   "id": "1969",
+   "label": "1969",
+   "year": 1969,
+   "date": "28 October 1969",
+   "era": "mapai",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 81.66,
+   "parties": [
+    {
+     "name": "Alignment",
+     "leader": null,
+     "seats": 56,
+     "seatChange": -7.0,
+     "votes": 632035,
+     "share": 46.21,
+     "swing": null
+    },
+    {
+     "name": "Gahal",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 0.0,
+     "votes": 296294,
+     "share": 21.66,
+     "swing": null
+    },
+    {
+     "name": "National Religious Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 1.0,
+     "votes": 133238,
+     "share": 9.74,
+     "swing": null
+    },
+    {
+     "name": "Agudat Yisrael",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 44002,
+     "share": 3.22,
+     "swing": null
+    },
+    {
+     "name": "Independent Liberals",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -1.0,
+     "votes": 43933,
+     "share": 3.21,
+     "swing": null
+    },
+    {
+     "name": "National List",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 42654,
+     "share": 3.12,
+     "swing": null
+    },
+    {
+     "name": "Rakah",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": 38827,
+     "share": 2.84,
+     "swing": null
+    },
+    {
+     "name": "Progress and Development",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": 28046,
+     "share": 2.05,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Golda Meir",
+    "party": "Alignment"
+   },
+   "pmAfter": {
+    "name": "Golda Meir",
+    "party": "Alignment"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in Israel on 28 October 1969 to elect members of the seventh Knesset. The ruling Alignment coalition was returned to power with the largest number of seats ever won in an Israeli election (56 out of 120).",
+   "caveat": null,
+   "seatLeader": "Alignment"
+  },
+  {
+   "id": "1973",
+   "label": "1973",
+   "year": 1973,
+   "date": "31 December 1973",
+   "era": "mapai",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 78.58,
+   "parties": [
+    {
+     "name": "Alignment",
+     "leader": null,
+     "seats": 51,
+     "seatChange": -5.0,
+     "votes": 621183,
+     "share": 39.65,
+     "swing": null
+    },
+    {
+     "name": "Likud",
+     "leader": null,
+     "seats": 39,
+     "seatChange": 7.0,
+     "votes": 473309,
+     "share": 30.21,
+     "swing": null
+    },
+    {
+     "name": "National Religious Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -2.0,
+     "votes": 130349,
+     "share": 8.32,
+     "swing": null
+    },
+    {
+     "name": "Religious Torah Front",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -1.0,
+     "votes": 60012,
+     "share": 3.83,
+     "swing": null
+    },
+    {
+     "name": "Independent Liberals",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 56560,
+     "share": 3.61,
+     "swing": null
+    },
+    {
+     "name": "Rakah",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 1.0,
+     "votes": 53353,
+     "share": 3.41,
+     "swing": null
+    },
+    {
+     "name": "Ratz",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 35023,
+     "share": 2.24,
+     "swing": null
+    },
+    {
+     "name": "Progress and Development",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": 22604,
+     "share": 1.44,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Golda Meir",
+    "party": "Alignment"
+   },
+   "pmAfter": {
+    "name": "Golda Meir",
+    "party": "Alignment"
+   },
+   "knownAs": null,
+   "summary": "Golda Meir of the Alignment formed the sixteenth government on 10 March 1974, including the National Religious Party and the Independent Liberals in her coalition, with 22 ministers. Meir resigned on 11 April 1974 after the Agranat Commission had published its interim report on the Yom Kippur War.",
+   "caveat": null,
+   "seatLeader": "Alignment"
+  },
+  {
+   "id": "1977",
+   "label": "1977",
+   "year": 1977,
+   "date": "17 May 1977",
+   "era": "upheaval",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 79.23,
+   "parties": [
+    {
+     "name": "Likud",
+     "leader": null,
+     "seats": 43,
+     "seatChange": 4.0,
+     "votes": 583968,
+     "share": 33.41,
+     "swing": null
+    },
+    {
+     "name": "Alignment",
+     "leader": null,
+     "seats": 32,
+     "seatChange": -19.0,
+     "votes": 430023,
+     "share": 24.6,
+     "swing": null
+    },
+    {
+     "name": "Democratic Movement for Change",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": 202265,
+     "share": 11.57,
+     "swing": null
+    },
+    {
+     "name": "National Religious Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 2.0,
+     "votes": 160787,
+     "share": 9.2,
+     "swing": null
+    },
+    {
+     "name": "Hadash",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 1.0,
+     "votes": 80118,
+     "share": 4.58,
+     "swing": null
+    },
+    {
+     "name": "Agudat Yisrael",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 1.0,
+     "votes": 58652,
+     "share": 3.36,
+     "swing": null
+    },
+    {
+     "name": "Shlomtzion",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 33947,
+     "share": 1.94,
+     "swing": null
+    },
+    {
+     "name": "Left Camp of Israel",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": 27281,
+     "share": 1.56,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Yitzhak Rabin",
+    "party": "Alignment"
+   },
+   "pmAfter": {
+    "name": "Menachem Begin",
+    "party": "Likud"
+   },
+   "knownAs": "The Mahapach",
+   "summary": "Legislative elections were held in Israel on 17 May 1977 to elect the ninth Knesset. For the first time in Israeli political history, the right wing, led by Likud, won a plurality of seats, ending almost 30 years of rule by the left-wing Alignment and its predecessor, Mapai.",
+   "caveat": null,
+   "seatLeader": "Likud"
+  },
+  {
+   "id": "1981",
+   "label": "1981",
+   "year": 1981,
+   "date": "30 June 1981",
+   "era": "upheaval",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 78.5,
+   "parties": [
+    {
+     "name": "Likud",
+     "leader": null,
+     "seats": 48,
+     "seatChange": 3.0,
+     "votes": 718941,
+     "share": 37.11,
+     "swing": null
+    },
+    {
+     "name": "Alignment",
+     "leader": null,
+     "seats": 47,
+     "seatChange": 15.0,
+     "votes": 708536,
+     "share": 36.57,
+     "swing": null
+    },
+    {
+     "name": "National Religious Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -6.0,
+     "votes": 95232,
+     "share": 4.92,
+     "swing": null
+    },
+    {
+     "name": "Agudat Yisrael",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 72312,
+     "share": 3.73,
+     "swing": null
+    },
+    {
+     "name": "Hadash",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -1.0,
+     "votes": 64918,
+     "share": 3.35,
+     "swing": null
+    },
+    {
+     "name": "Tehiya",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 44700,
+     "share": 2.31,
+     "swing": null
+    },
+    {
+     "name": "Tami",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 44466,
+     "share": 2.3,
+     "swing": null
+    },
+    {
+     "name": "Telem",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 30600,
+     "share": 1.58,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Menachem Begin",
+    "party": "Likud"
+   },
+   "pmAfter": {
+    "name": "Menachem Begin",
+    "party": "Likud"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in Israel on 30 June 1981 to elect the 120 members of the Knesset. The ruling Likud won one more seat than the opposition Alignment, in line with many polls which had predicted a tight race.",
+   "caveat": null,
+   "seatLeader": "Likud"
+  },
+  {
+   "id": "1984",
+   "label": "1984",
+   "year": 1984,
+   "date": "23 July 1984",
+   "era": "upheaval",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 78.8,
+   "parties": [
+    {
+     "name": "Alignment",
+     "leader": null,
+     "seats": 44,
+     "seatChange": -3.0,
+     "votes": 724074,
+     "share": 34.92,
+     "swing": null
+    },
+    {
+     "name": "Likud",
+     "leader": null,
+     "seats": 41,
+     "seatChange": -7.0,
+     "votes": 661302,
+     "share": 31.9,
+     "swing": null
+    },
+    {
+     "name": "Tehiya–Tzomet",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 2.0,
+     "votes": 83037,
+     "share": 4.01,
+     "swing": null
+    },
+    {
+     "name": "National Religious Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -2.0,
+     "votes": 73530,
+     "share": 3.55,
+     "swing": null
+    },
+    {
+     "name": "Hadash",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 69815,
+     "share": 3.37,
+     "swing": null
+    },
+    {
+     "name": "Shas",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 63605,
+     "share": 3.07,
+     "swing": null
+    },
+    {
+     "name": "Shinui",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": 54747,
+     "share": 2.64,
+     "swing": null
+    },
+    {
+     "name": "Ratz",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2.0,
+     "votes": 49698,
+     "share": 2.4,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Yitzhak Shamir",
+    "party": "Likud"
+   },
+   "pmAfter": {
+    "name": "Shimon Peres",
+    "party": "Alignment"
+   },
+   "knownAs": "The rotation election",
+   "summary": "Legislative elections were held in Israel on 23 July 1984 to elect the eleventh Knesset. Voter turnout was 78.8%.",
+   "caveat": null,
+   "seatLeader": "Alignment"
+  },
+  {
+   "id": "1988",
+   "label": "1988",
+   "year": 1988,
+   "date": "1 November 1988",
+   "era": "upheaval",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 79.66,
+   "parties": [
+    {
+     "name": "Likud",
+     "leader": null,
+     "seats": 40,
+     "seatChange": -1.0,
+     "votes": 709305,
+     "share": 31.07,
+     "swing": null
+    },
+    {
+     "name": "Alignment",
+     "leader": null,
+     "seats": 39,
+     "seatChange": -5.0,
+     "votes": 685363,
+     "share": 30.02,
+     "swing": null
+    },
+    {
+     "name": "Shas",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 2.0,
+     "votes": 107709,
+     "share": 4.72,
+     "swing": null
+    },
+    {
+     "name": "Agudat Yisrael",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 3.0,
+     "votes": 102714,
+     "share": 4.5,
+     "swing": null
+    },
+    {
+     "name": "Ratz",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 2.0,
+     "votes": 97513,
+     "share": 4.27,
+     "swing": null
+    },
+    {
+     "name": "National Religious Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 1.0,
+     "votes": 89720,
+     "share": 3.93,
+     "swing": null
+    },
+    {
+     "name": "Hadash",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 84032,
+     "share": 3.68,
+     "swing": null
+    },
+    {
+     "name": "Tehiya",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -2.0,
+     "votes": 70730,
+     "share": 3.1,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Yitzhak Shamir",
+    "party": "Likud"
+   },
+   "pmAfter": {
+    "name": "Yitzhak Shamir",
+    "party": "Likud"
+   },
+   "knownAs": null,
+   "summary": "On 8 October 1988, the Alignment leader Shimon Peres visited the Likud stronghold Beit Shemesh, near Jerusalem. There, he was greeted by a mob of angry protesters, who called him \"Peres Arafat\", a \"traitor\", and a \"maniac\", and threw buckets of cold water at him, forcing dozens of police officers being called to guide Peres away from the demonstrators.",
+   "caveat": null,
+   "seatLeader": "Likud"
+  },
+  {
+   "id": "1992",
+   "label": "1992",
+   "year": 1992,
+   "date": "23 June 1992",
+   "era": "upheaval",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 77.38,
+   "parties": [
+    {
+     "name": "Labor Party",
+     "leader": null,
+     "seats": 44,
+     "seatChange": 5.0,
+     "votes": 906810,
+     "share": 34.65,
+     "swing": null
+    },
+    {
+     "name": "Likud",
+     "leader": null,
+     "seats": 32,
+     "seatChange": -8.0,
+     "votes": 651229,
+     "share": 24.89,
+     "swing": null
+    },
+    {
+     "name": "Meretz",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 2.0,
+     "votes": 250667,
+     "share": 9.58,
+     "swing": null
+    },
+    {
+     "name": "Tzomet",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 6.0,
+     "votes": 166366,
+     "share": 6.36,
+     "swing": null
+    },
+    {
+     "name": "National Religious Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 1.0,
+     "votes": 129663,
+     "share": 4.95,
+     "swing": null
+    },
+    {
+     "name": "Shas",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 0.0,
+     "votes": 129347,
+     "share": 4.94,
+     "swing": null
+    },
+    {
+     "name": "United Torah Judaism",
+     "leader": null,
+     "seats": 4,
+     "seatChange": -3.0,
+     "votes": 86167,
+     "share": 3.29,
+     "swing": null
+    },
+    {
+     "name": "Hadash",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -1.0,
+     "votes": 62546,
+     "share": 2.39,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Yitzhak Shamir",
+    "party": "Likud"
+   },
+   "pmAfter": {
+    "name": "Yitzhak Rabin",
+    "party": "Labor Party"
+   },
+   "knownAs": "Rabin's comeback",
+   "summary": "Elections for the 13th Knesset were held in Israel on 23 June 1992. The election resulted in the formation of a Labor government, led by Yitzhak Rabin, helped by the failure of several small right wing parties to pass the electoral threshold.",
+   "caveat": null,
+   "seatLeader": "Labor Party"
+  },
+  {
+   "id": "1996",
+   "label": "1996",
+   "year": 1996,
+   "date": "29 May 1996",
+   "era": "direct-pm",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Labor Party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": -10.0,
+     "votes": 818741,
+     "share": 26.83,
+     "swing": null
+    },
+    {
+     "name": "Likud–Gesher–Tzomet",
+     "leader": null,
+     "seats": 32,
+     "seatChange": -8.0,
+     "votes": 767401,
+     "share": 25.14,
+     "swing": null
+    },
+    {
+     "name": "Shas",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 4.0,
+     "votes": 259796,
+     "share": 8.51,
+     "swing": null
+    },
+    {
+     "name": "National Religious Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 3.0,
+     "votes": 240271,
+     "share": 7.87,
+     "swing": null
+    },
+    {
+     "name": "Meretz",
+     "leader": null,
+     "seats": 9,
+     "seatChange": -3.0,
+     "votes": 226275,
+     "share": 7.41,
+     "swing": null
+    },
+    {
+     "name": "Yisrael BaAliyah",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 174994,
+     "share": 5.73,
+     "swing": null
+    },
+    {
+     "name": "Hadash–Balad",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 2.0,
+     "votes": 129455,
+     "share": 4.24,
+     "swing": null
+    },
+    {
+     "name": "United Torah Judaism",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 98657,
+     "share": 3.23,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Shimon Peres",
+    "party": "Labor Party"
+   },
+   "pmAfter": {
+    "name": "Benjamin Netanyahu",
+    "party": "Likud"
+   },
+   "knownAs": "First direct PM vote",
+   "summary": "The elections for prime minister resulted in a surprise victory for Benjamin Netanyahu, by a margin of 29,457 votes, less than 1% of the total number of votes cast, and much smaller than the number of spoiled votes. This came after the initial exit polls had predicted a Shimon Peres win, spawning the phrase \"went to sleep with Peres, woke up with Netanyahu\".",
+   "caveat": null,
+   "seatLeader": "Labor Party"
+  },
+  {
+   "id": "1999",
+   "label": "1999",
+   "year": 1999,
+   "date": "1999",
+   "era": "direct-pm",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 78.71,
+   "parties": [
+    {
+     "name": "One Israel",
+     "leader": null,
+     "seats": 26,
+     "seatChange": -11.0,
+     "votes": 670484,
+     "share": 20.26,
+     "swing": null
+    },
+    {
+     "name": "Likud",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -8.0,
+     "votes": 468103,
+     "share": 14.14,
+     "swing": null
+    },
+    {
+     "name": "Shas",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 7.0,
+     "votes": 430676,
+     "share": 13.01,
+     "swing": null
+    },
+    {
+     "name": "Meretz",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 1.0,
+     "votes": 253525,
+     "share": 7.66,
+     "swing": null
+    },
+    {
+     "name": "Yisrael BaAliyah",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -1.0,
+     "votes": 171705,
+     "share": 5.19,
+     "swing": null
+    },
+    {
+     "name": "Shinui",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 167748,
+     "share": 5.07,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 165622,
+     "share": 5.0,
+     "swing": null
+    },
+    {
+     "name": "National Religious Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": -4.0,
+     "votes": 140307,
+     "share": 4.24,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Benjamin Netanyahu",
+    "party": "Likud"
+   },
+   "pmAfter": {
+    "name": "Ehud Barak",
+    "party": "One Israel"
+   },
+   "knownAs": null,
+   "summary": "The elections were only the second time in Israeli history that the prime minister had been directly elected; the first such election in 1996 had been an extremely tight contest between Benjamin Netanyahu of Likud and Shimon Peres of Labor, with Netanyahu winning by just 29,000 votes.",
+   "caveat": null,
+   "seatLeader": "One Israel"
+  },
+  {
+   "id": "2001",
+   "label": "2001",
+   "year": 2001,
+   "date": "6 February 2001",
+   "era": "direct-pm",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 62.29,
+   "parties": [],
+   "pmBefore": {
+    "name": "Ehud Barak",
+    "party": "Labor"
+   },
+   "pmAfter": {
+    "name": "Ariel Sharon",
+    "party": "Likud"
+   },
+   "knownAs": "PM-only special election",
+   "summary": "Voter turnout was 62%, the lowest turnout for any national election held in Israel. The low turnout was at least partially due to many Israeli Arabs boycotting the elections in protest at the October 2000 events in which twelve Israeli Arabs were killed by the police.",
+   "caveat": "A special election for prime minister only — no Knesset seats were contested. The sitting parliament stayed in place, and the direct-ballot system was abolished two years later.",
+   "seatLeader": null
+  },
+  {
+   "id": "2003",
+   "label": "2003",
+   "year": 2003,
+   "date": "28 January 2003",
+   "era": "direct-pm",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 67.81,
+   "parties": [
+    {
+     "name": "Likud",
+     "leader": null,
+     "seats": 38,
+     "seatChange": 19.0,
+     "votes": 925279,
+     "share": 29.39,
+     "swing": null
+    },
+    {
+     "name": "Labor–Meimad",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -6.0,
+     "votes": 455183,
+     "share": 14.46,
+     "swing": null
+    },
+    {
+     "name": "Shinui",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 9.0,
+     "votes": 386535,
+     "share": 12.28,
+     "swing": null
+    },
+    {
+     "name": "Shas",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -6.0,
+     "votes": 258879,
+     "share": 8.22,
+     "swing": null
+    },
+    {
+     "name": "National Union",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -1.0,
+     "votes": 173973,
+     "share": 5.53,
+     "swing": null
+    },
+    {
+     "name": "Meretz - Democratic Choice - Shahar",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -4.0,
+     "votes": 164122,
+     "share": 5.21,
+     "swing": null
+    },
+    {
+     "name": "National Religious Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 1.0,
+     "votes": 132370,
+     "share": 4.2,
+     "swing": null
+    },
+    {
+     "name": "United Torah Judaism",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 0.0,
+     "votes": 135087,
+     "share": 4.29,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ariel Sharon",
+    "party": "Likud"
+   },
+   "pmAfter": {
+    "name": "Ariel Sharon",
+    "party": "Likud\tAriel Sharon"
+   },
+   "knownAs": "The direct ballot abolished",
+   "summary": "Similarly to the 2001 elections for the position of prime minister, these elections were also affected by the Second Intifada, which was a period of intense fighting and Palestinian militancy campaigns.",
+   "caveat": null,
+   "seatLeader": "Likud"
+  },
+  {
+   "id": "2006",
+   "label": "2006",
+   "year": 2006,
+   "date": "28 March 2006",
+   "era": "deadlock",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 63.55,
+   "parties": [
+    {
+     "name": "Kadima",
+     "leader": null,
+     "seats": 29,
+     "seatChange": null,
+     "votes": 690901,
+     "share": 22.02,
+     "swing": null
+    },
+    {
+     "name": "Labor–Meimad",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 0.0,
+     "votes": 472366,
+     "share": 15.06,
+     "swing": null
+    },
+    {
+     "name": "Shas",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 1.0,
+     "votes": 299054,
+     "share": 9.53,
+     "swing": null
+    },
+    {
+     "name": "Likud",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 26.0,
+     "votes": 281996,
+     "share": 8.99,
+     "swing": null
+    },
+    {
+     "name": "Yisrael Beiteinu",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 8.0,
+     "votes": 281880,
+     "share": 8.99,
+     "swing": null
+    },
+    {
+     "name": "National Union–National Religious Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 1.0,
+     "votes": 224083,
+     "share": 7.14,
+     "swing": null
+    },
+    {
+     "name": "Gil",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 185759,
+     "share": 5.92,
+     "swing": null
+    },
+    {
+     "name": "United Torah Judaism",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 1.0,
+     "votes": 147091,
+     "share": 4.69,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ariel Sharon",
+    "party": null
+   },
+   "pmAfter": {
+    "name": "Ariel Sharon",
+    "party": null
+   },
+   "knownAs": null,
+   "summary": "After the election, the government was formed by the Kadima, Labor, Shas, and Gil parties, with the Yisrael Beiteinu party joining the government later. The Prime Minister was Ehud Olmert, leader of Kadima, who had been the acting prime minister going into the election.",
+   "caveat": null,
+   "seatLeader": "Kadima"
+  },
+  {
+   "id": "2009",
+   "label": "2009",
+   "year": 2009,
+   "date": "10 February 2009",
+   "era": "deadlock",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 64.72,
+   "parties": [
+    {
+     "name": "Kadima",
+     "leader": null,
+     "seats": 28,
+     "seatChange": -1.0,
+     "votes": 758032,
+     "share": 22.47,
+     "swing": null
+    },
+    {
+     "name": "Likud",
+     "leader": null,
+     "seats": 27,
+     "seatChange": 15.0,
+     "votes": 729054,
+     "share": 21.61,
+     "swing": null
+    },
+    {
+     "name": "Yisrael Beiteinu",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 4.0,
+     "votes": 394577,
+     "share": 11.7,
+     "swing": null
+    },
+    {
+     "name": "Labor Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 6.0,
+     "votes": 334900,
+     "share": 9.93,
+     "swing": null
+    },
+    {
+     "name": "Shas",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 1.0,
+     "votes": 286300,
+     "share": 8.49,
+     "swing": null
+    },
+    {
+     "name": "United Torah Judaism",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 1.0,
+     "votes": 147954,
+     "share": 4.39,
+     "swing": null
+    },
+    {
+     "name": "United Arab List–Ta'al",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 113954,
+     "share": 3.38,
+     "swing": null
+    },
+    {
+     "name": "National Union",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 112570,
+     "share": 3.34,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ehud Olmert",
+    "party": "Kadima"
+   },
+   "pmAfter": {
+    "name": "Benjamin Netanyahu",
+    "party": "Likud"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in Israel on 10 February 2009 to elect the 120 members of the eighteenth Knesset. These elections became necessary due to the resignation of Prime Minister Ehud Olmert as leader of the Kadima party, and the failure of his successor, Tzipi Livni, to form a coalition government.",
+   "caveat": null,
+   "seatLeader": "Kadima"
+  },
+  {
+   "id": "2013",
+   "label": "2013",
+   "year": 2013,
+   "date": "22 January 2013",
+   "era": "deadlock",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 67.77,
+   "parties": [
+    {
+     "name": "Likud Yisrael Beiteinu",
+     "leader": null,
+     "seats": 31,
+     "seatChange": 11.0,
+     "votes": 885054,
+     "share": 23.34,
+     "swing": null
+    },
+    {
+     "name": "Yesh Atid",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 543458,
+     "share": 14.33,
+     "swing": null
+    },
+    {
+     "name": "Labor Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 2.0,
+     "votes": 432118,
+     "share": 11.39,
+     "swing": null
+    },
+    {
+     "name": "The Jewish Home",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 9.0,
+     "votes": 345985,
+     "share": 9.12,
+     "swing": null
+    },
+    {
+     "name": "Shas",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 0.0,
+     "votes": 331868,
+     "share": 8.75,
+     "swing": null
+    },
+    {
+     "name": "United Torah Judaism",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 2.0,
+     "votes": 195892,
+     "share": 5.16,
+     "swing": null
+    },
+    {
+     "name": "Hatnua",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 189167,
+     "share": 4.99,
+     "swing": null
+    },
+    {
+     "name": "Meretz",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 3.0,
+     "votes": 172403,
+     "share": 4.55,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Benjamin Netanyahu",
+    "party": "Likud"
+   },
+   "pmAfter": {
+    "name": "Benjamin Netanyahu",
+    "party": "Likud Yisrael Beiteinu"
+   },
+   "knownAs": null,
+   "summary": "Early legislative elections were held in Israel on 22 January 2013 to elect the 120 members of the nineteenth Knesset. Public debate over the Tal Law had nearly led to early elections in 2012, but they were aborted at the last moment after Kadima briefly joined the government.",
+   "caveat": null,
+   "seatLeader": "Likud Yisrael Beiteinu"
+  },
+  {
+   "id": "2015",
+   "label": "2015",
+   "year": 2015,
+   "date": "17 March 2015",
+   "era": "deadlock",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 72.34,
+   "parties": [
+    {
+     "name": "Likud",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 12.0,
+     "votes": 985408,
+     "share": 23.4,
+     "swing": null
+    },
+    {
+     "name": "Zionist Union",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 3.0,
+     "votes": 786313,
+     "share": 18.67,
+     "swing": null
+    },
+    {
+     "name": "Joint List",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 2.0,
+     "votes": 446583,
+     "share": 10.61,
+     "swing": null
+    },
+    {
+     "name": "Yesh Atid",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 8.0,
+     "votes": 371602,
+     "share": 8.82,
+     "swing": null
+    },
+    {
+     "name": "Kulanu",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 315360,
+     "share": 7.49,
+     "swing": null
+    },
+    {
+     "name": "The Jewish Home",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 4.0,
+     "votes": 283910,
+     "share": 6.74,
+     "swing": null
+    },
+    {
+     "name": "Shas",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 4.0,
+     "votes": 241613,
+     "share": 5.74,
+     "swing": null
+    },
+    {
+     "name": "Yisrael Beiteinu",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 7.0,
+     "votes": 214906,
+     "share": 5.1,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Benjamin Netanyahu",
+    "party": "Likud"
+   },
+   "pmAfter": {
+    "name": "Benjamin Netanyahu",
+    "party": "Likud"
+   },
+   "knownAs": null,
+   "summary": "Early legislative elections were held in Israel on 17 March 2015 to elect the 120 members of the twentieth Knesset. Disagreements within the governing coalition, particularly over the budget and a \"Jewish state\" proposal, led to the dissolution of the government in December 2014.",
+   "caveat": null,
+   "seatLeader": "Likud"
+  },
+  {
+   "id": "2019-apr",
+   "label": "April 2019",
+   "year": 2019,
+   "date": "9 April 2019",
+   "era": "deadlock",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 68.46,
+   "parties": [
+    {
+     "name": "Likud",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 5.0,
+     "votes": 1140370,
+     "share": 26.46,
+     "swing": null
+    },
+    {
+     "name": "Blue and White",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 24.0,
+     "votes": 1125881,
+     "share": 26.13,
+     "swing": null
+    },
+    {
+     "name": "Shas",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 1.0,
+     "votes": 258275,
+     "share": 5.99,
+     "swing": null
+    },
+    {
+     "name": "United Torah Judaism",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 2.0,
+     "votes": 249049,
+     "share": 5.78,
+     "swing": null
+    },
+    {
+     "name": "Hadash–Ta'al",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 0.0,
+     "votes": 193442,
+     "share": 4.49,
+     "swing": null
+    },
+    {
+     "name": "Labor Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 13.0,
+     "votes": 190870,
+     "share": 4.43,
+     "swing": null
+    },
+    {
+     "name": "Yisrael Beiteinu",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 1.0,
+     "votes": 173004,
+     "share": 4.01,
+     "swing": null
+    },
+    {
+     "name": "Union of Right-Wing Parties",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 3.0,
+     "votes": 159468,
+     "share": 3.7,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Benjamin Netanyahu",
+    "party": "Likud"
+   },
+   "pmAfter": {
+    "name": "Benjamin Netanyahu (caretaker government)",
+    "party": "Likud"
+   },
+   "knownAs": "The deadlock begins",
+   "summary": "Early legislative elections were held in Israel on 9 April 2019 to elect the 120 members of the 21st Knesset. Elections had been due in November 2019, but were brought forward following a dispute between members of the current government over a bill on Haredi conscription, as well as impending corruption charges against incumbent prime minister Benjamin Netanyahu.",
+   "caveat": null,
+   "seatLeader": "Likud"
+  },
+  {
+   "id": "2019-sep",
+   "label": "September 2019",
+   "year": 2019,
+   "date": "17 September 2019",
+   "era": "deadlock",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 69.83,
+   "parties": [
+    {
+     "name": "Blue and White",
+     "leader": null,
+     "seats": 33,
+     "seatChange": 2.0,
+     "votes": 1151214,
+     "share": 25.95,
+     "swing": null
+    },
+    {
+     "name": "Likud",
+     "leader": null,
+     "seats": 32,
+     "seatChange": 6.0,
+     "votes": 1113617,
+     "share": 25.1,
+     "swing": null
+    },
+    {
+     "name": "Joint List",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 3.0,
+     "votes": 470211,
+     "share": 10.6,
+     "swing": null
+    },
+    {
+     "name": "Shas",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 1.0,
+     "votes": 330199,
+     "share": 7.44,
+     "swing": null
+    },
+    {
+     "name": "Yisrael Beiteinu",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 3.0,
+     "votes": 310154,
+     "share": 6.99,
+     "swing": null
+    },
+    {
+     "name": "United Torah Judaism",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 1.0,
+     "votes": 268775,
+     "share": 6.06,
+     "swing": null
+    },
+    {
+     "name": "Yamina",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 1.0,
+     "votes": 260655,
+     "share": 5.87,
+     "swing": null
+    },
+    {
+     "name": "Labor–Gesher",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 0.0,
+     "votes": 212782,
+     "share": 4.8,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Benjamin Netanyahu",
+    "party": "(caretaker government)"
+   },
+   "pmAfter": {
+    "name": "Benjamin Netanyahu",
+    "party": "(caretaker government)"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in Israel on 17 September 2019 to elect the 120 members of the 22nd Knesset. Following the previous elections in April, incumbent Prime Minister Benjamin Netanyahu failed to form a governing coalition.",
+   "caveat": null,
+   "seatLeader": "Blue and White"
+  },
+  {
+   "id": "2020",
+   "label": "2020",
+   "year": 2020,
+   "date": "2 March 2020",
+   "era": "deadlock",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 71.52,
+   "parties": [
+    {
+     "name": "Likud",
+     "leader": null,
+     "seats": 36,
+     "seatChange": 4.0,
+     "votes": 1352449,
+     "share": 29.46,
+     "swing": null
+    },
+    {
+     "name": "Blue and White",
+     "leader": null,
+     "seats": 33,
+     "seatChange": 0.0,
+     "votes": 1220381,
+     "share": 26.59,
+     "swing": null
+    },
+    {
+     "name": "Joint List",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 2.0,
+     "votes": 581507,
+     "share": 12.67,
+     "swing": null
+    },
+    {
+     "name": "Shas",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 0.0,
+     "votes": 352853,
+     "share": 7.69,
+     "swing": null
+    },
+    {
+     "name": "United Torah Judaism",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 0.0,
+     "votes": 274437,
+     "share": 5.98,
+     "swing": null
+    },
+    {
+     "name": "Labor-Gesher-Meretz",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 3.0,
+     "votes": 267480,
+     "share": 5.83,
+     "swing": null
+    },
+    {
+     "name": "Yisrael Beiteinu",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 1.0,
+     "votes": 263365,
+     "share": 5.74,
+     "swing": null
+    },
+    {
+     "name": "Yamina",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 1.0,
+     "votes": 240689,
+     "share": 5.24,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Benjamin Netanyahu (caretaker)",
+    "party": "Likud"
+   },
+   "pmAfter": {
+    "name": "Benjamin Netanyahu",
+    "party": "Likud"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in Israel on 2 March 2020 to elect members of the twenty-third Knesset. The result was initially a stalemate, which was resolved when Likud and Blue & White reached a coalition agreement.",
+   "caveat": null,
+   "seatLeader": "Likud"
+  },
+  {
+   "id": "2021",
+   "label": "2021",
+   "year": 2021,
+   "date": "23 March 2021",
+   "era": "deadlock",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 67.44,
+   "parties": [
+    {
+     "name": "Likud",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 7.0,
+     "votes": 1066892,
+     "share": 24.19,
+     "swing": null
+    },
+    {
+     "name": "Yesh Atid",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 4.0,
+     "votes": 614112,
+     "share": 13.93,
+     "swing": null
+    },
+    {
+     "name": "Shas",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 0.0,
+     "votes": 316008,
+     "share": 7.17,
+     "swing": null
+    },
+    {
+     "name": "Blue and White",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 7.0,
+     "votes": 292257,
+     "share": 6.63,
+     "swing": null
+    },
+    {
+     "name": "Yamina",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 4.0,
+     "votes": 273836,
+     "share": 6.21,
+     "swing": null
+    },
+    {
+     "name": "Israeli Labor Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 4.0,
+     "votes": 268767,
+     "share": 6.09,
+     "swing": null
+    },
+    {
+     "name": "United Torah Judaism",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 0.0,
+     "votes": 248391,
+     "share": 5.63,
+     "swing": null
+    },
+    {
+     "name": "Yisrael Beiteinu",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 0.0,
+     "votes": 248370,
+     "share": 5.63,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Benjamin Netanyahu",
+    "party": "Likud"
+   },
+   "pmAfter": {
+    "name": "Naftali Bennett",
+    "party": "Yamina"
+   },
+   "knownAs": null,
+   "summary": "Legislative elections were held in Israel on 23 March 2021 to elect the 120 members of the 24th Knesset. It was the fourth Knesset election in two years, amidst the continued political deadlock following the previous three elections in April 2019, September 2019 and 2020.",
+   "caveat": null,
+   "seatLeader": "Likud"
+  },
+  {
+   "id": "2022",
+   "label": "2022",
+   "year": 2022,
+   "date": "1 November 2022",
+   "era": "deadlock",
+   "totalSeats": 120,
+   "majoritySeats": 61,
+   "turnout": 70.63,
+   "parties": [
+    {
+     "name": "Likud",
+     "leader": null,
+     "seats": 32,
+     "seatChange": 2.0,
+     "votes": 1115336,
+     "share": 23.41,
+     "swing": null
+    },
+    {
+     "name": "Yesh Atid",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 7.0,
+     "votes": 847435,
+     "share": 17.79,
+     "swing": null
+    },
+    {
+     "name": "Religious Zionism-Otzma Yehudit",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 8.0,
+     "votes": 516470,
+     "share": 10.84,
+     "swing": null
+    },
+    {
+     "name": "National Unity",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 2.0,
+     "votes": 432482,
+     "share": 9.08,
+     "swing": null
+    },
+    {
+     "name": "Shas",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 2.0,
+     "votes": 392964,
+     "share": 8.25,
+     "swing": null
+    },
+    {
+     "name": "United Torah Judaism",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 0.0,
+     "votes": 280194,
+     "share": 5.88,
+     "swing": null
+    },
+    {
+     "name": "Yisrael Beiteinu",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 1.0,
+     "votes": 213687,
+     "share": 4.48,
+     "swing": null
+    },
+    {
+     "name": "United Arab List",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 1.0,
+     "votes": 194047,
+     "share": 4.07,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Yair Lapid",
+    "party": "Yesh Atid"
+   },
+   "pmAfter": {
+    "name": "Benjamin Netanyahu",
+    "party": "Likud"
+   },
+   "knownAs": "Fifth in under four years",
+   "summary": "Legislative elections were held in Israel on 1 November 2022 to elect the 120 members of the 25th Knesset. The results saw the right-wing national camp of former prime minister Benjamin Netanyahu win a parliamentary majority, amid losses for left-wing and Arab parties, as well as gains by the far-right.",
+   "caveat": null,
+   "seatLeader": "Likud"
+  }
+ ]
+}

@@ -15,6 +15,8 @@ export type War = {
   end: string | null;
   ongoing: boolean;
   major: boolean;
+  civil?: boolean | null; // notable civil wars, labelled as such
+  home?: string | null; // civil wars: the country whose war it is (chips attach only there)
   deathsMin: number | null;
   deathsMax: number | null;
   sideA: Belligerent[];
@@ -25,24 +27,55 @@ type ConflictsFile = { generated: string; source: string; count: number; wars: W
 const GH_RAW =
   "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data/conflicts.json";
 
-export async function getConflicts(): Promise<War[]> {
-  try {
-    const res = await fetch(GH_RAW, { next: { revalidate: 3600 } }); // 30 days
-    if (res.ok) {
-      const d = (await res.json()) as ConflictsFile;
-      if (d?.wars?.length) return d.wars;
-    }
-  } catch {
-    /* fall through to build-time copy */
+// Post-merge curation, applied to local and remote rows alike so it survives
+// the monthly refresh. Renames fix scrape artefacts; drops remove rows that a
+// curated local entry supersedes (the Iraq War entry covers the invasion).
+const NAME_FIX: Record<string, string> = {
+  "Russo-Ukrainian War (outline)": "Russo-Ukrainian War",
+};
+const DROP_NAMES = new Set(["2003 invasion of Iraq"]);
+
+function curate(wars: War[]): War[] {
+  const seen = new Set<string>();
+  const out: War[] = [];
+  for (const w of wars) {
+    const name = NAME_FIX[w.name] ?? w.name;
+    if (DROP_NAMES.has(name) || seen.has(name)) continue;
+    seen.add(name);
+    out.push(name === w.name ? w : { ...w, name });
   }
+  return out;
+}
+
+export async function getConflicts(): Promise<War[]> {
+  // The committed local file carries the full 1500-present dataset; the GitHub
+  // raw feed is the monthly-refreshed modern era (the Action regenerates the
+  // since-1945 list). Merge them: remote wins on name matches so deaths and
+  // ongoing flags stay fresh, and the pre-1945 history always survives.
+  let local: War[] = [];
   try {
     const d = JSON.parse(
       readFileSync(join(process.cwd(), "public", "data", "conflicts.json"), "utf-8"),
     ) as ConflictsFile;
-    return d.wars ?? [];
+    local = d.wars ?? [];
   } catch {
-    return [];
+    /* no build-time copy */
   }
+  let remote: War[] = [];
+  try {
+    const res = await fetch(GH_RAW, { next: { revalidate: 3600 } }); // 30 days
+    if (res.ok) {
+      const d = (await res.json()) as ConflictsFile;
+      remote = d?.wars ?? [];
+    }
+  } catch {
+    /* offline: local only */
+  }
+  if (!remote.length) return curate(local);
+  const remoteNames = new Set(remote.map((w) => w.name));
+  const merged = curate([...remote, ...local.filter((w) => !remoteNames.has(w.name))]);
+  merged.sort((a, b) => (a.start ?? "").localeCompare(b.start ?? ""));
+  return merged;
 }
 
 export type CountryWar = {

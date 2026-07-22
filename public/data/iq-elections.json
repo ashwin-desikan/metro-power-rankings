@@ -1,0 +1,1460 @@
+{
+ "meta": {
+  "title": "Iraqi elections",
+  "sources": [
+   "Wikipedia: Iraqi parliamentary election articles 1946–2025, the presidential referendums of 1995 and 2002, and the indirect presidential elections 2014–2026 (results, infoboxes and leads)",
+   "IHEC figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "presEras": [
+  {
+   "key": "referendum",
+   "label": "Saddam's referendums",
+   "span": "1995–2002",
+   "blurb": "Twice, Saddam Hussein put himself to a 'vote': a yes-or-no referendum with no other candidate, no secrecy worth the name and ration cards hanging over every household. The official results — 99.96 per cent, then a perfect 100 — are recorded here as artefacts of state terror, not elections."
+  },
+  {
+   "key": "indirect",
+   "label": "Elected by parliament",
+   "span": "2014–present",
+   "blurb": "Under the post-2003 constitution the Council of Representatives elects the president, by convention a Kurd, with a two-thirds majority required on the first ballot. The office is largely ceremonial, but the vote is real — and repeatedly deadlocked, taking a year in 2022 and five months in 2026."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "monarchy",
+   "label": "The Hashemite monarchy",
+   "span": "1946–1958",
+   "blurb": "Parliamentary elections under the British-installed monarchy were managed affairs: a narrow franchise, two-stage voting for most of the era, palace-picked prime ministers and chambers stuffed with notables. The September 1954 election returned almost every deputy unopposed; the 1958 chamber never finished its term — the July revolution shot the king and buried the parliament with him."
+  },
+  {
+   "key": "baath",
+   "label": "Ba'athist rituals",
+   "span": "1980–2000",
+   "blurb": "Saddam Hussein revived the National Assembly in 1980 as decoration. Every candidate was vetted by the regime, the Ba'ath-led National Progressive Front could not lose, and the chamber had no power worth contesting. These votes are recorded here as rituals of the dictatorship, not elections."
+  },
+  {
+   "key": "federal",
+   "label": "The federal republic",
+   "span": "2005–present",
+   "blurb": "The purple-finger election of January 2005 was the first real vote in half a century, held under insurgent fire. Since then Iraq has kept an unbroken run of competitive parliamentary elections — through civil war, the ISIS catastrophe and the Tishreen uprising — even as turnout sagged and governments took months to form."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1995",
+   "label": "1995",
+   "year": 1995,
+   "kind": "presidential",
+   "date": "October 15, 1995",
+   "era": "referendum",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Saddam Hussein",
+     "party": "Ba'ath Party",
+     "r1Votes": 8348700,
+     "r1Share": 99.99,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Saddam Hussein",
+    "party": "Ba'ath Party"
+   },
+   "presAfter": {
+    "name": "Saddam Hussein",
+    "party": "Ba'ath Party"
+   },
+   "knownAs": null,
+   "summary": "A presidential referendum was held in Iraq on October 15, 1995. It was the first direct presidential election in Ba'athist Iraq under the rule of Saddam Hussein, who had seized power through the Revolutionary Command Council (RCC) in 1979.",
+   "caveat": "A yes-or-no referendum on Saddam Hussein with no other candidate, open intimidation and no meaningful secrecy. The official figures are recorded here as artefacts of the dictatorship, not as results.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-2002",
+   "label": "2002",
+   "year": 2002,
+   "kind": "presidential",
+   "date": "October 16, 2002",
+   "era": "referendum",
+   "turnout": 100.0,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Saddam Hussein",
+     "party": "Ba'ath Party",
+     "r1Votes": 11445638,
+     "r1Share": 100.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Saddam Hussein",
+    "party": "Ba'ath Party"
+   },
+   "presAfter": {
+    "name": "Saddam Hussein",
+    "party": "Ba'ath Party"
+   },
+   "knownAs": "The hundred-per-cent referendum",
+   "summary": "A presidential referendum took place in Iraq on October 16, 2002. It was the second presidential election under the rule of Saddam Hussein (the first having taken place in 1995).",
+   "caveat": "A yes-or-no referendum on Saddam Hussein with no other candidate, open intimidation and no meaningful secrecy. The official figures are recorded here as artefacts of the dictatorship, not as results.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-2014",
+   "label": "2014",
+   "year": 2014,
+   "kind": "presidential",
+   "date": "24 July 2014",
+   "era": "indirect",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Fuad Masum",
+     "party": "Patriotic Union of Kurdistan",
+     "r1Votes": 175,
+     "r1Share": 76.42,
+     "r2Votes": 221,
+     "r2Share": 92.86
+    },
+    {
+     "name": "Hussein Al-Moussawi",
+     "party": "Independent",
+     "r1Votes": 3,
+     "r1Share": 1.31,
+     "r2Votes": 17,
+     "r2Share": 7.14
+    },
+    {
+     "name": "Hanan al-Fatlawi",
+     "party": "State of Law Coalition",
+     "r1Votes": 37,
+     "r1Share": 16.16,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Faiq Al Sheikh Ali",
+     "party": "Civil Democratic Alliance",
+     "r1Votes": 10,
+     "r1Share": 4.37,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hameed Hammadi",
+     "party": null,
+     "r1Votes": 2,
+     "r1Share": 0.87,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hussein Al-Lami",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.44,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Thaer Ghanem",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.44,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Jalal Talabani",
+    "party": "PUK"
+   },
+   "presAfter": {
+    "name": "Fuad Masum",
+    "party": "PUK"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in Iraq on 24 July 2014 to elect the President of Iraq for a four-year term via indirect suffrage by the Council of Representatives. The result was a win for Fuad Masum, who received 211 votes.",
+   "caveat": "An indirect vote of the Council of Representatives; the presidency is largely ceremonial and by convention held by a Kurd.",
+   "unfree": null
+  },
+  {
+   "id": "pres-2018",
+   "label": "2018",
+   "year": 2018,
+   "kind": "presidential",
+   "date": "2 October 2018",
+   "era": "indirect",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Barham Salih",
+     "party": "Patriotic Union of Kurdistan",
+     "r1Votes": 165,
+     "r1Share": 58.72,
+     "r2Votes": 219,
+     "r2Share": 90.87
+    },
+    {
+     "name": "Fuad Hussein",
+     "party": "Kurdistan Democratic Party",
+     "r1Votes": 89,
+     "r1Share": 31.67,
+     "r2Votes": 22,
+     "r2Share": 9.13
+    },
+    {
+     "name": "Sarwa Abdel Wahid",
+     "party": "Independent",
+     "r1Votes": 18,
+     "r1Share": 6.41,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Abbas Mohammed Nouri",
+     "party": null,
+     "r1Votes": 4,
+     "r1Share": 1.42,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nawar Saad Al-Mulla",
+     "party": null,
+     "r1Votes": 2,
+     "r1Share": 0.71,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Munqith Abdul Latif Al-Saffa",
+     "party": null,
+     "r1Votes": 2,
+     "r1Share": 0.71,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Thaer Ghanem",
+     "party": null,
+     "r1Votes": 1,
+     "r1Share": 0.36,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Fuad Masum",
+    "party": "PUK"
+   },
+   "presAfter": {
+    "name": "Barham Salih",
+    "party": "PUK"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in Iraq on 2 October 2018 to elect the President of Iraq for a four-year term via indirect suffrage by the Council of Representatives. The result was a win for Barham Salih, who received 219 votes.",
+   "caveat": "An indirect vote of the Council of Representatives; the presidency is largely ceremonial and by convention held by a Kurd.",
+   "unfree": null
+  },
+  {
+   "id": "pres-2022",
+   "label": "2022",
+   "year": 2022,
+   "kind": "presidential",
+   "date": "13 October 2022",
+   "era": "indirect",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Abdul Latif Rashid",
+     "party": "PUK",
+     "r1Votes": 157,
+     "r1Share": 61.33,
+     "r2Votes": 162,
+     "r2Share": 62.07
+    },
+    {
+     "name": "Barham Salih",
+     "party": "PUK",
+     "r1Votes": 99,
+     "r1Share": 38.67,
+     "r2Votes": 99,
+     "r2Share": 37.93
+    },
+    {
+     "name": "Required majority",
+     "party": "220 votes",
+     "r1Votes": 50,
+     "r1Share": null,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Barham Salih",
+    "party": "PUK"
+   },
+   "presAfter": {
+    "name": "Abdul Latif Rashid",
+    "party": "PUK"
+   },
+   "knownAs": "The year-long deadlock",
+   "summary": "The Iraqi presidential election of 2022 was held on 13 October 2022 to elect by indirect suffrage the president of Iraq for a four-year term. The position is largely ceremonial, with Iraq being a parliamentary system.",
+   "caveat": "An indirect vote of the Council of Representatives, held a year late after repeated failures to reach the two-thirds quorum.",
+   "unfree": null
+  },
+  {
+   "id": "pres-2026",
+   "label": "2026",
+   "year": 2026,
+   "kind": "presidential",
+   "date": "11 April 2026",
+   "era": "indirect",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Nizar Amidi",
+     "party": "PUK",
+     "r1Votes": null,
+     "r1Share": 90.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Muthanna Amin",
+     "party": "KIU",
+     "r1Votes": null,
+     "r1Share": 5.95,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Abdul Latif Rashid",
+    "party": "PUK"
+   },
+   "presAfter": {
+    "name": "Nizar Amidi",
+    "party": "PUK"
+   },
+   "knownAs": null,
+   "summary": "An indirect election was held for the president of Iraq on 11 April 2026 by the Council of Representatives. Nizar Amidi of the Patriotic Union of Kurdistan was elected in the second round of voting with 227 votes, defeating Muthanna Amin of the Kurdistan Islamic Union with 15 votes.",
+   "caveat": "An indirect vote of the Council of Representatives, delayed five months by coalition deadlock; the KDP refused to recognise the result.",
+   "unfree": null
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1946-47",
+   "label": "1946–47",
+   "year": 1947,
+   "kind": "legislative",
+   "date": "December 1946 – March 1947",
+   "era": "monarchy",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "During the al-Suwaidi government (February–June 1946), the electoral law of 1924 was revised. The number of seats in the Chamber of Deputies was increased to 138 and provinces were divided into smaller electoral districts.",
+   "caveat": "A managed election of the Hashemite monarchy: narrow franchise, heavy palace influence over candidacies and results, and a parliament that answered to the court more than the voters. Recorded here as history, not a fully free election.",
+   "unfree": "partial",
+   "seatLeader": null
+  },
+  {
+   "id": "1948",
+   "label": "1948",
+   "year": 1948,
+   "kind": "legislative",
+   "date": "1948",
+   "era": "monarchy",
+   "totalSeats": 138,
+   "majoritySeats": 70,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Independence",
+     "leader": "Muhammad Mahdi Kubba",
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "NDP",
+     "leader": "Kamel al-Chaderji",
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Liberal",
+     "leader": "Tawfiq al-Suwaidi",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Muhammad as-Sadr",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Muzahim al-Pachachi",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "A managed election of the Hashemite monarchy: narrow franchise, heavy palace influence over candidacies and results, and a parliament that answered to the court more than the voters. Recorded here as history, not a fully free election.",
+   "unfree": "partial",
+   "seatLeader": "Independence"
+  },
+  {
+   "id": "1953",
+   "label": "1953",
+   "year": 1953,
+   "kind": "legislative",
+   "date": "17 January 1953",
+   "era": "monarchy",
+   "totalSeats": 135,
+   "majoritySeats": 68,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "CUP",
+     "leader": "Nuri as-Said",
+     "seats": 67,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "UPF",
+     "leader": "Taha al-Hashimi",
+     "seats": 11,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Nureddin Mahmud",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Jamil al-Midfai",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "A managed election of the Hashemite monarchy: narrow franchise, heavy palace influence over candidacies and results, and a parliament that answered to the court more than the voters. Recorded here as history, not a fully free election.",
+   "unfree": "partial",
+   "seatLeader": "CUP"
+  },
+  {
+   "id": "jun-1954",
+   "label": "June 1954",
+   "year": 1954,
+   "kind": "legislative",
+   "date": "9 June 1954",
+   "era": "monarchy",
+   "totalSeats": 135,
+   "majoritySeats": 68,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "CUP",
+     "leader": "Nuri al-Said",
+     "seats": 50,
+     "seatChange": -17.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "SNP",
+     "leader": "Salih Jabr",
+     "seats": 21,
+     "seatChange": 13.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Arshad al-Umari",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Arshad al-Umari",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Iraq on 9 June 1954, although they were delayed until 14 June in some areas due to social upheaval. The Constitutional Union Party remained the largest party in the Chamber of Deputies, winning 50 of the 135 seats, although 53 were won by independents.",
+   "caveat": "A managed election of the Hashemite monarchy: narrow franchise, heavy palace influence over candidacies and results, and a parliament that answered to the court more than the voters. Recorded here as history, not a fully free election.",
+   "unfree": "partial",
+   "seatLeader": "CUP"
+  },
+  {
+   "id": "sep-1954",
+   "label": "September 1954",
+   "year": 1954,
+   "kind": "legislative",
+   "date": "12 September 1954",
+   "era": "monarchy",
+   "totalSeats": 135,
+   "majoritySeats": 68,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "CUP",
+     "leader": "Nuri as-Said",
+     "seats": 94,
+     "seatChange": 44.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "SNP",
+     "leader": "Salih Jabr",
+     "seats": 8,
+     "seatChange": -13.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Nuri al-Said",
+    "party": "CUP"
+   },
+   "pmAfter": {
+    "name": "Nuri al-Said",
+    "party": "CUP"
+   },
+   "knownAs": "The uncontested election",
+   "summary": "Early parliamentary elections were held in Iraq on 12 September 1954, after the Chamber of Deputies elected in June was dissolved by the King on 3 August. The Constitutional Union Party remained the largest party, winning 94 of the 135 seats, although only 25 seats were actually contested.",
+   "caveat": "The most rigged vote of the monarchy: Nuri al-Said dissolved the freshly elected June chamber, suppressed the opposition, and had nearly every seat returned unopposed.",
+   "unfree": "partial",
+   "seatLeader": "CUP"
+  },
+  {
+   "id": "1958",
+   "label": "1958",
+   "year": 1958,
+   "kind": "legislative",
+   "date": "5 May 1958",
+   "era": "monarchy",
+   "totalSeats": 145,
+   "majoritySeats": 73,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Pro-government",
+     "leader": "Nuri as-Said",
+     "seats": 140,
+     "seatChange": 46.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Nuri al-Said",
+    "party": "Elected Prime Minister"
+   },
+   "pmAfter": {
+    "name": "Ahmad Mukhtar Baban",
+    "party": "Politics of Iraq"
+   },
+   "knownAs": "The monarchy's last election",
+   "summary": "Parliamentary elections were held in Iraq on 5 May 1958 to elect the members of the Chamber of Deputies. It was the last election in monarchical Iraq.",
+   "caveat": "A managed election of the Hashemite monarchy: narrow franchise, heavy palace influence over candidacies and results, and a parliament that answered to the court more than the voters. Recorded here as history, not a fully free election.",
+   "unfree": "partial",
+   "seatLeader": "Pro-government"
+  },
+  {
+   "id": "1980",
+   "label": "1980",
+   "year": 1980,
+   "kind": "legislative",
+   "date": "20 June 1980",
+   "era": "baath",
+   "totalSeats": 250,
+   "majoritySeats": 126,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Ba'ath Party",
+     "leader": "Saddam Hussein",
+     "seats": 187,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Saddam Hussein",
+    "party": "Ba'ath Party"
+   },
+   "pmAfter": {
+    "name": "Saddam Hussein",
+    "party": "Ba'ath Party"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "A ritual of Ba'athist rule: every candidate was vetted by the regime and the National Assembly held no real power. Recorded here as history, not an election.",
+   "unfree": "unfree",
+   "seatLeader": "Ba'ath Party"
+  },
+  {
+   "id": "1984",
+   "label": "1984",
+   "year": 1984,
+   "kind": "legislative",
+   "date": "20 October 1984",
+   "era": "baath",
+   "totalSeats": 250,
+   "majoritySeats": 126,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Ba'ath Party",
+     "leader": "Saddam Hussein",
+     "seats": 183,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Saddam Hussein",
+    "party": "Ba'ath Party"
+   },
+   "pmAfter": {
+    "name": "Saddam Hussein",
+    "party": "Ba'ath Party"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "A ritual of Ba'athist rule: every candidate was vetted by the regime and the National Assembly held no real power. Recorded here as history, not an election.",
+   "unfree": "unfree",
+   "seatLeader": "Ba'ath Party"
+  },
+  {
+   "id": "1989",
+   "label": "1989",
+   "year": 1989,
+   "kind": "legislative",
+   "date": "1 April 1989",
+   "era": "baath",
+   "totalSeats": 250,
+   "majoritySeats": 126,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Ba'ath Party",
+     "leader": "Saddam Hussein",
+     "seats": 207,
+     "seatChange": 24.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Saddam Hussein",
+    "party": "Ba'ath Party"
+   },
+   "pmAfter": {
+    "name": "Saddam Hussein",
+    "party": "Ba'ath Party"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "A ritual of Ba'athist rule: every candidate was vetted by the regime and the National Assembly held no real power. Recorded here as history, not an election.",
+   "unfree": "unfree",
+   "seatLeader": "Ba'ath Party"
+  },
+  {
+   "id": "1996",
+   "label": "1996",
+   "year": 1996,
+   "kind": "legislative",
+   "date": "24 March 1996",
+   "era": "baath",
+   "totalSeats": 250,
+   "majoritySeats": 126,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Ba'ath Party",
+     "leader": "Saddam Hussein",
+     "seats": 161,
+     "seatChange": -46.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Saddam Hussein",
+    "party": "Ba'ath Party"
+   },
+   "pmAfter": {
+    "name": "Saddam Hussein",
+    "party": "Ba'ath Party"
+   },
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Iraq on 24 March 1996. The elections were contested by 689 candidates, although 30 MPs were appointed to represent Iraqi Kurdistan.",
+   "caveat": "A ritual of Ba'athist rule: every candidate was vetted by the regime and the National Assembly held no real power. Recorded here as history, not an election.",
+   "unfree": "unfree",
+   "seatLeader": "Ba'ath Party"
+  },
+  {
+   "id": "2000",
+   "label": "2000",
+   "year": 2000,
+   "kind": "legislative",
+   "date": "27 March 2000",
+   "era": "baath",
+   "totalSeats": 250,
+   "majoritySeats": 126,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Ba'ath Party",
+     "leader": "Saddam Hussein",
+     "seats": 165,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Saddam Hussein",
+    "party": "Ba'ath Party"
+   },
+   "pmAfter": {
+    "name": "Saddam Hussein",
+    "party": "Ba'ath Party"
+   },
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Iraq on 27 March 2000. The elections were contested by 522 candidates, including 25 women.",
+   "caveat": "A ritual of Ba'athist rule: every candidate was vetted by the regime and the National Assembly held no real power. Recorded here as history, not an election.",
+   "unfree": "unfree",
+   "seatLeader": "Ba'ath Party"
+  },
+  {
+   "id": "jan-2005",
+   "label": "January 2005",
+   "year": 2005,
+   "kind": "legislative",
+   "date": "30 January 2005",
+   "era": "federal",
+   "totalSeats": 275,
+   "majoritySeats": 138,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "United Iraqi Alliance",
+     "leader": null,
+     "seats": 140,
+     "seatChange": null,
+     "votes": 4075295,
+     "share": 48.19,
+     "swing": null
+    },
+    {
+     "name": "Democratic Patriotic Alliance of Kurdistan",
+     "leader": null,
+     "seats": 75,
+     "seatChange": null,
+     "votes": 2175551,
+     "share": 25.73,
+     "swing": null
+    },
+    {
+     "name": "Iraqi List",
+     "leader": null,
+     "seats": 40,
+     "seatChange": null,
+     "votes": 1168943,
+     "share": 13.82,
+     "swing": null
+    },
+    {
+     "name": "The Iraqis",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 150680,
+     "share": 1.78,
+     "swing": null
+    },
+    {
+     "name": "Iraqi Turkmen Front",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 93480,
+     "share": 1.11,
+     "swing": null
+    },
+    {
+     "name": "National Independent Cadres and Elites",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 69938,
+     "share": 0.83,
+     "swing": null
+    },
+    {
+     "name": "People's Union",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 69920,
+     "share": 0.83,
+     "swing": null
+    },
+    {
+     "name": "Kurdistan Islamic Group",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 60592,
+     "share": 0.72,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ayad Allawi",
+    "party": "Iraqi List\tIbrahim al-Jaafari"
+   },
+   "pmAfter": {
+    "name": "Ibrahim al-Jaafari",
+    "party": "UIA"
+   },
+   "knownAs": "The purple-finger election",
+   "summary": "Parliamentary elections were held in Iraq on 30 January 2005 to elect the new National Assembly, alongside governorate elections and a parliamentary election in Kurdistan Region. The 275-member legislature had been created under the Transitional Law during the international occupation.",
+   "caveat": "Held under insurgent fire with much of the Sunni Arab electorate boycotting or unable to vote — a landmark, but a wounded one.",
+   "unfree": null,
+   "seatLeader": "United Iraqi Alliance"
+  },
+  {
+   "id": "dec-2005",
+   "label": "December 2005",
+   "year": 2005,
+   "kind": "legislative",
+   "date": "15 December 2005",
+   "era": "federal",
+   "totalSeats": 275,
+   "majoritySeats": 138,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "United Iraqi Alliance",
+     "leader": null,
+     "seats": 128,
+     "seatChange": 12.0,
+     "votes": 5021137,
+     "share": 41.19,
+     "swing": null
+    },
+    {
+     "name": "Democratic Patriotic Alliance of Kurdistan",
+     "leader": null,
+     "seats": 53,
+     "seatChange": 22.0,
+     "votes": 2642172,
+     "share": 21.67,
+     "swing": null
+    },
+    {
+     "name": "Iraqi Accord Front",
+     "leader": null,
+     "seats": 44,
+     "seatChange": null,
+     "votes": 1840216,
+     "share": 15.09,
+     "swing": null
+    },
+    {
+     "name": "Iraqi National List",
+     "leader": null,
+     "seats": 25,
+     "seatChange": 15.0,
+     "votes": 977325,
+     "share": 8.02,
+     "swing": null
+    },
+    {
+     "name": "Iraqi National Dialogue Front",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 499963,
+     "share": 4.1,
+     "swing": null
+    },
+    {
+     "name": "Kurdistan Islamic Union",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 157688,
+     "share": 1.29,
+     "swing": null
+    },
+    {
+     "name": "Reconciliation and Liberation Bloc",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2.0,
+     "votes": 129847,
+     "share": 1.07,
+     "swing": null
+    },
+    {
+     "name": "The Upholders of the Message",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 145028,
+     "share": 1.19,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ibrahim al-Jaafari",
+    "party": "UIA\tNouri al-Maliki"
+   },
+   "pmAfter": {
+    "name": "Nouri al-Maliki",
+    "party": "UIA"
+   },
+   "knownAs": null,
+   "summary": "The elections took place under a list system, whereby voters chose from a list of parties and coalitions. 230 seats were apportioned among Iraq's 18 governorates based on the number of registered voters in each as of the January 2005 elections, including 59 seats for Baghdad Governorate.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "United Iraqi Alliance"
+  },
+  {
+   "id": "2010",
+   "label": "2010",
+   "year": 2010,
+   "kind": "legislative",
+   "date": "7 March 2010",
+   "era": "federal",
+   "totalSeats": 325,
+   "majoritySeats": 163,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Iraqi National Movement",
+     "leader": null,
+     "seats": 91,
+     "seatChange": 54.0,
+     "votes": 2849612,
+     "share": 24.72,
+     "swing": null
+    },
+    {
+     "name": "State of Law Coalition",
+     "leader": null,
+     "seats": 89,
+     "seatChange": 64.0,
+     "votes": 2792083,
+     "share": 24.22,
+     "swing": null
+    },
+    {
+     "name": "National Iraqi Alliance",
+     "leader": null,
+     "seats": 70,
+     "seatChange": 35.0,
+     "votes": 2092066,
+     "share": 18.15,
+     "swing": null
+    },
+    {
+     "name": "Kurdistan List",
+     "leader": null,
+     "seats": 43,
+     "seatChange": 10.0,
+     "votes": 1681714,
+     "share": 14.59,
+     "swing": null
+    },
+    {
+     "name": "Movement for Change",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 8.0,
+     "votes": 476478,
+     "share": 4.13,
+     "swing": null
+    },
+    {
+     "name": "Reserved seats for ethnic minorities",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 6.0,
+     "votes": 61153,
+     "share": 0.53,
+     "swing": null
+    },
+    {
+     "name": "Iraqi Accord Front",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 38.0,
+     "votes": 298226,
+     "share": 2.59,
+     "swing": null
+    },
+    {
+     "name": "Unity Alliance of Iraq",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 4.0,
+     "votes": 306647,
+     "share": 2.66,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Nouri al-Maliki",
+    "party": "State of Law\tNouri al-Maliki"
+   },
+   "pmAfter": {
+    "name": "Nouri al-Maliki",
+    "party": "State of Law"
+   },
+   "knownAs": "The photo-finish",
+   "summary": "Parliamentary elections were held in Iraq on 7 March 2010. The elections decided the 325 members of the Council of Representatives who would elect the prime minister and president.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Iraqi National Movement"
+  },
+  {
+   "id": "2014",
+   "label": "2014",
+   "year": 2014,
+   "kind": "legislative",
+   "date": "30 April 2014",
+   "era": "federal",
+   "totalSeats": 328,
+   "majoritySeats": 165,
+   "turnout": 62.0,
+   "parties": [
+    {
+     "name": "State of Law Coalition",
+     "leader": "Nouri al-Maliki",
+     "seats": 92,
+     "seatChange": 3.0,
+     "votes": 3141835,
+     "share": 24.14,
+     "swing": null
+    },
+    {
+     "name": "Al-Muwatin",
+     "leader": "Ammar al-Hakim",
+     "seats": 29,
+     "seatChange": 11.0,
+     "votes": 982003,
+     "share": 7.55,
+     "swing": null
+    },
+    {
+     "name": "Al-Ahrar Bloc",
+     "leader": "Muqtada al-Sadr",
+     "seats": 28,
+     "seatChange": null,
+     "votes": 917589,
+     "share": 7.05,
+     "swing": null
+    },
+    {
+     "name": "Muttahidoon",
+     "leader": null,
+     "seats": 23,
+     "seatChange": null,
+     "votes": 680690,
+     "share": 5.23,
+     "swing": null
+    },
+    {
+     "name": "Al-Wataniya",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 7.0,
+     "votes": 686017,
+     "share": 5.27,
+     "swing": null
+    },
+    {
+     "name": "Kurdistan Democratic Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 10.0,
+     "votes": 852198,
+     "share": 6.55,
+     "swing": null
+    },
+    {
+     "name": "Patriotic Union of Kurdistan",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 5.0,
+     "votes": 789519,
+     "share": 6.07,
+     "swing": null
+    },
+    {
+     "name": "Al-Arabiya Coalition",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 6.0,
+     "votes": 315858,
+     "share": 2.43,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Nouri al-Maliki",
+    "party": "State of Law"
+   },
+   "pmAfter": {
+    "name": "Haidar al-Abadi",
+    "party": "State of Law"
+   },
+   "knownAs": null,
+   "summary": "The open list form of party-list proportional representation, using the governorates as the constituencies, is the electoral system used. The counting system has been changed slightly from the largest remainder method to the modified Sainte-Laguë method due to a ruling by the Supreme Court of Iraq that the previous method discriminated against smaller parties.",
+   "caveat": "Held as ISIS overran Anbar; voting was impossible in parts of the province, and the state lost Mosul weeks after the polls closed.",
+   "unfree": null,
+   "seatLeader": "State of Law Coalition"
+  },
+  {
+   "id": "2018",
+   "label": "2018",
+   "year": 2018,
+   "kind": "legislative",
+   "date": "12 May 2018",
+   "era": "federal",
+   "totalSeats": 329,
+   "majoritySeats": 165,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Alliance Towards Reforms",
+     "leader": null,
+     "seats": 54,
+     "seatChange": null,
+     "votes": 1500832,
+     "share": 14.47,
+     "swing": null
+    },
+    {
+     "name": "Fatah Alliance",
+     "leader": null,
+     "seats": 48,
+     "seatChange": null,
+     "votes": 1367561,
+     "share": 13.18,
+     "swing": null
+    },
+    {
+     "name": "Victory Alliance",
+     "leader": null,
+     "seats": 42,
+     "seatChange": null,
+     "votes": 1136425,
+     "share": 10.95,
+     "swing": null
+    },
+    {
+     "name": "Kurdistan Democratic Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": 883923,
+     "share": 8.52,
+     "swing": null
+    },
+    {
+     "name": "State of Law Coalition",
+     "leader": null,
+     "seats": 25,
+     "seatChange": null,
+     "votes": 724957,
+     "share": 6.99,
+     "swing": null
+    },
+    {
+     "name": "Al-Wataniya",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": 626638,
+     "share": 6.04,
+     "swing": null
+    },
+    {
+     "name": "National Wisdom Movement",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 576806,
+     "share": 5.56,
+     "swing": null
+    },
+    {
+     "name": "Patriotic Union of Kurdistan",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 619694,
+     "share": 5.97,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Haider al-Abadi",
+    "party": "Victory Alliance\tAdil Abdul-Mahdi"
+   },
+   "pmAfter": {
+    "name": "Adil Abdul-Mahdi",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Iraq on 12 May 2018. The elections decided the 329 members of the Council of Representatives, the country's unicameral legislature, who in turn will elect the Iraqi president and prime minister.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Alliance Towards Reforms"
+  },
+  {
+   "id": "2021",
+   "label": "2021",
+   "year": 2021,
+   "kind": "legislative",
+   "date": "10 October 2021",
+   "era": "federal",
+   "totalSeats": 329,
+   "majoritySeats": 165,
+   "turnout": 43.3,
+   "parties": [
+    {
+     "name": "Sadrist Movement",
+     "leader": null,
+     "seats": 73,
+     "seatChange": null,
+     "votes": 885310,
+     "share": 10.0,
+     "swing": null
+    },
+    {
+     "name": "Independent",
+     "leader": null,
+     "seats": 43,
+     "seatChange": null,
+     "votes": 1686792,
+     "share": 19.05,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 37,
+     "seatChange": null,
+     "votes": 637198,
+     "share": 7.2,
+     "swing": null
+    },
+    {
+     "name": "State of Law Coalition",
+     "leader": null,
+     "seats": 33,
+     "seatChange": null,
+     "votes": 502188,
+     "share": 5.67,
+     "swing": null
+    },
+    {
+     "name": "Kurdistan Democratic Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": null,
+     "votes": 781670,
+     "share": 8.83,
+     "swing": null
+    },
+    {
+     "name": "Fatah Alliance",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": 462800,
+     "share": 5.23,
+     "swing": null
+    },
+    {
+     "name": "Kurdistani Coalition",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": 368226,
+     "share": 4.16,
+     "swing": null
+    },
+    {
+     "name": "Azem Alliance",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 421579,
+     "share": 4.76,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mustafa Al-Kadhimi",
+    "party": "Independent\tMohammed Shia' al-Sudani"
+   },
+   "pmAfter": {
+    "name": "Mohammed Shia' al-Sudani",
+    "party": "Furatayn Movement"
+   },
+   "knownAs": "The Tishreen election",
+   "summary": "Parliamentary elections were held in Iraq on 10 October 2021. The elections determined the 329 members of the Council of Representatives who in turn elected the Iraqi president and confirmed the prime minister.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Sadrist Movement"
+  },
+  {
+   "id": "2025",
+   "label": "2025",
+   "year": 2025,
+   "kind": "legislative",
+   "date": "11 November 2025",
+   "era": "federal",
+   "totalSeats": 329,
+   "majoritySeats": 165,
+   "turnout": 56.04,
+   "parties": [
+    {
+     "name": "Reconstruction and Development Coalition",
+     "leader": null,
+     "seats": 46,
+     "seatChange": null,
+     "votes": 1318687,
+     "share": 11.74,
+     "swing": null
+    },
+    {
+     "name": "State of Law Coalition",
+     "leader": null,
+     "seats": 29,
+     "seatChange": null,
+     "votes": 728446,
+     "share": 6.49,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": null,
+     "votes": 939810,
+     "share": 8.37,
+     "swing": null
+    },
+    {
+     "name": "Al-Sadiqoun Bloc",
+     "leader": null,
+     "seats": 27,
+     "seatChange": null,
+     "votes": 686902,
+     "share": 6.12,
+     "swing": null
+    },
+    {
+     "name": "Kurdistan Democratic Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": null,
+     "votes": 1101357,
+     "share": 9.81,
+     "swing": null
+    },
+    {
+     "name": "Badr Organization",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 556850,
+     "share": 4.96,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Nation State Forces",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 513715,
+     "share": 4.57,
+     "swing": null
+    },
+    {
+     "name": "Patriotic Union of Kurdistan",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": 548928,
+     "share": 4.89,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Mohammed Shia' al-Sudani",
+    "party": "Furatayn Movement\tAli al-Zaidi"
+   },
+   "pmAfter": {
+    "name": "Ali al-Zaidi",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "The 2021 Iraqi parliamentary election resulted in violent protests in Baghdad as well as a political crisis of eleven months. On 3 August 2022, Muqtada al-Sadr called for snap elections, but was unsuccessful.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Reconstruction and Development Coalition"
+  }
+ ]
+}

@@ -1,0 +1,3695 @@
+{
+ "meta": {
+  "title": "German federal elections",
+  "sources": [
+   "Wikipedia: German federal election articles, 1848–2025 (results, infoboxes and leads)",
+   "Bundeswahlleiterin figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "eras": [
+  {
+   "key": "unification",
+   "label": "Revolution and unification",
+   "span": "1848–1871",
+   "blurb": "From the Frankfurt Parliament of 1848 — the first assembly elected across the German lands — through the North German Confederation to the first Reichstag of the unified Empire in 1871, elections tracked the making of a German nation-state under Prussian leadership."
+  },
+  {
+   "key": "kaiserreich",
+   "label": "The Imperial Reichstag",
+   "span": "1874–1912",
+   "blurb": "Universal male suffrage made the Reichstag one of Europe's most democratically elected chambers, even as chancellors answered to the Kaiser, not to it. Bismarck built and discarded majorities against Catholics and socialists alike; by 1912 the outlawed-then-legalised SPD was the largest party in the chamber."
+  },
+  {
+   "key": "weimar",
+   "label": "The Weimar Republic",
+   "span": "1919–1932",
+   "blurb": "Women voted from the first republican election in 1919, and pure proportional representation mapped every fracture of a society under strain. Nine elections in fourteen years ran from the founding coalition's triumph to the crisis votes of 1930–32 that made the NSDAP the largest party."
+  },
+  {
+   "key": "dictatorship",
+   "label": "The destruction of democracy",
+   "span": "1933–1938",
+   "blurb": "The March 1933 election was held five days after the Reichstag fire, under mass arrests and terror — the last with more than one party on the ballot. The single-list plebiscites of November 1933, 1936 and 1938 that followed were rituals of the dictatorship, recorded here as such, not as free elections."
+  },
+  {
+   "key": "bonn",
+   "label": "The Bonn Republic",
+   "span": "1949–1987",
+   "blurb": "West Germany's founding election in 1949 began the Adenauer era and one of the century's great party systems: CDU/CSU against SPD with the FDP as kingmaker. Brandt's Ostpolitik victories, Schmidt's chancellorship and Kohl's 1983 confirmation all turned on it, with turnout peaking above 91%."
+  },
+  {
+   "key": "berlin",
+   "label": "The Berlin Republic",
+   "span": "1990–2025",
+   "blurb": "The 1990 reunification election joined two electorates into one. Schröder's red–green project, the Merkel era's four wins, the arrival of the Greens, Left and AfD as fixtures, and the 2025 election after the traffic-light coalition's collapse trace the reunified republic's widening party system."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1848",
+   "label": "1848",
+   "year": 1848,
+   "date": "1 May 1848",
+   "era": "unification",
+   "totalSeats": 649,
+   "majoritySeats": null,
+   "turnout": 75.0,
+   "parties": [
+    {
+     "name": "Liberal",
+     "leader": "Heinrich von Gagern",
+     "seats": null,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "Frankfurt Parliament",
+   "summary": "The Pre-Parliament (Vorparlement) convened in the Paulskirche in Frankfurt on 31 March 1848 and ended on 30 May 1849. Most of the 521 members of it were from South and West Germany, including 2 from Austria.",
+   "unfree": null,
+   "seatLeader": null
+  },
+  {
+   "id": "1867-feb",
+   "label": "February 1867",
+   "year": 1867,
+   "date": "12 February 1867",
+   "era": "unification",
+   "totalSeats": 297,
+   "majoritySeats": 149,
+   "turnout": 65.0,
+   "parties": [
+    {
+     "name": "National Liberal Party",
+     "leader": "Rudolf von Bennigsen",
+     "seats": 78,
+     "seatChange": null,
+     "votes": 753758,
+     "share": 20.19,
+     "swing": null
+    },
+    {
+     "name": "Conservative Party",
+     "leader": null,
+     "seats": 63,
+     "seatChange": null,
+     "votes": 629360,
+     "share": 16.86,
+     "swing": null
+    },
+    {
+     "name": "Free Conservative Party",
+     "leader": null,
+     "seats": 39,
+     "seatChange": null,
+     "votes": 348537,
+     "share": 9.33,
+     "swing": null
+    },
+    {
+     "name": "DRP",
+     "leader": "Eduard Georg von Bethusy-Huc",
+     "seats": 39,
+     "seatChange": null,
+     "votes": 348537,
+     "share": 9.33,
+     "swing": null
+    },
+    {
+     "name": "Old Liberals",
+     "leader": "Georg von Vincke",
+     "seats": 31,
+     "seatChange": null,
+     "votes": 265670,
+     "share": 7.12,
+     "swing": null
+    },
+    {
+     "name": "Independent Liberals",
+     "leader": null,
+     "seats": 23,
+     "seatChange": null,
+     "votes": 190815,
+     "share": 5.11,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 276321,
+     "share": 7.4,
+     "swing": null
+    },
+    {
+     "name": "DFP",
+     "leader": "Benedict Waldeck",
+     "seats": 19,
+     "seatChange": null,
+     "votes": 276321,
+     "share": 7.4,
+     "swing": null
+    },
+    {
+     "name": "Polish Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": 209382,
+     "share": 5.61,
+     "swing": null
+    },
+    {
+     "name": "Independent Conservatives",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 345965,
+     "share": 9.27,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Otto von Bismarck",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Elections to the Constituent Reichstag of the North German Confederation were held on 12 February 1867, with run-off elections during the following weeks. The National Liberal Party emerged as the largest party, winning 80 seats and receiving strong support in Hanover, Kassel and Nassau.",
+   "unfree": null,
+   "seatLeader": "National Liberal Party"
+  },
+  {
+   "id": "1867-aug",
+   "label": "August 1867",
+   "year": 1867,
+   "date": "31 August 1867",
+   "era": "unification",
+   "totalSeats": 297,
+   "majoritySeats": 149,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "NlP",
+     "leader": "Rudolf von Bennigsen",
+     "seats": 80,
+     "seatChange": 2.0,
+     "votes": 414043,
+     "share": 18.02,
+     "swing": -2.17
+    },
+    {
+     "name": "Conservatives",
+     "leader": null,
+     "seats": 66,
+     "seatChange": 3.0,
+     "votes": 480775,
+     "share": 20.92,
+     "swing": 4.06
+    },
+    {
+     "name": "DRP",
+     "leader": "Eduard Georg von Bethusy-Huc",
+     "seats": 36,
+     "seatChange": -3.0,
+     "votes": 205792,
+     "share": 8.95,
+     "swing": -0.38
+    },
+    {
+     "name": "DFP",
+     "leader": "Benedict Waldeck",
+     "seats": 32,
+     "seatChange": 13.0,
+     "votes": 290500,
+     "share": 12.64,
+     "swing": 5.24
+    },
+    {
+     "name": "Old Liberals",
+     "leader": "Georg von Vincke",
+     "seats": 15,
+     "seatChange": -16.0,
+     "votes": 107758,
+     "share": 4.69,
+     "swing": -2.43
+    },
+    {
+     "name": "Polish Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -2.0,
+     "votes": 169006,
+     "share": 7.35,
+     "swing": 1.7
+    }
+   ],
+   "pmBefore": {
+    "name": "Otto von Bismarck",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Otto von Bismarck",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Elections to the Reichstag of the North German Confederation were held on 31 August 1867, with run-off elections during the following weeks. The National Liberal Party continued to serve as the largest party, winning 81 seats.",
+   "unfree": null,
+   "seatLeader": "NlP"
+  },
+  {
+   "id": "1868",
+   "label": "1868",
+   "year": 1868,
+   "date": "February–March 1868",
+   "era": "unification",
+   "totalSeats": 85,
+   "majoritySeats": 192,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Liberal Party",
+     "leader": "Rudolf von Bennigsen",
+     "seats": 8,
+     "seatChange": null,
+     "votes": 97615,
+     "share": 51.38,
+     "swing": null
+    },
+    {
+     "name": "Clericals",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 78858,
+     "share": 41.51,
+     "swing": null
+    },
+    {
+     "name": "Conservatives",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 11870,
+     "share": 6.25,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Otto von Bismarck",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Otto von Bismarck",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Elections to the Zollparlament of the German Zollverein were held in February and March 1868. The Zollparlament consisted of the members of the Reichstag of the North German Confederation and members from the South German states.",
+   "unfree": null,
+   "seatLeader": "National Liberal Party"
+  },
+  {
+   "id": "1871",
+   "label": "1871",
+   "year": 1871,
+   "date": "3 March 1871",
+   "era": "unification",
+   "totalSeats": 382,
+   "majoritySeats": 192,
+   "turnout": 51.01,
+   "parties": [
+    {
+     "name": "NlP",
+     "leader": "Rudolf von Bennigsen",
+     "seats": 117,
+     "seatChange": 13.0,
+     "votes": 1125942,
+     "share": 28.97,
+     "swing": 5.69
+    },
+    {
+     "name": "Centre",
+     "leader": "Hermann von Mallinckrodt",
+     "seats": 58,
+     "seatChange": null,
+     "votes": 707896,
+     "share": 18.21,
+     "swing": null
+    },
+    {
+     "name": "Conservatives",
+     "leader": null,
+     "seats": 56,
+     "seatChange": -9.0,
+     "votes": 524881,
+     "share": 13.51,
+     "swing": -1.31
+    },
+    {
+     "name": "DFP",
+     "leader": null,
+     "seats": 45,
+     "seatChange": 14.0,
+     "votes": 351209,
+     "share": 9.04,
+     "swing": 0.29
+    },
+    {
+     "name": "DRP",
+     "leader": "Viktor I, Duke of Ratibor",
+     "seats": 37,
+     "seatChange": 0.0,
+     "votes": 343098,
+     "share": 8.83,
+     "swing": 2.16
+    },
+    {
+     "name": "LRP",
+     "leader": "Chlodwig Hohenlohe-Schillingsfürst",
+     "seats": 33,
+     "seatChange": null,
+     "votes": 274068,
+     "share": 7.05,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Otto von Bismarck",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Otto von Bismarck",
+    "party": "Independent"
+   },
+   "knownAs": "First all-German Reichstag",
+   "summary": "A federal election for the first Reichstag of the German Empire was held on 3 March 1871, 45 days after the founding of the Empire. The voting took place under the provisions of the short-lived Constitution of the German Confederation.",
+   "unfree": null,
+   "seatLeader": "NlP"
+  },
+  {
+   "id": "1874",
+   "label": "1874",
+   "year": 1874,
+   "date": "10 January 1874",
+   "era": "kaiserreich",
+   "totalSeats": 397,
+   "majoritySeats": 199,
+   "turnout": 61.24,
+   "parties": [
+    {
+     "name": "NlP",
+     "leader": "Rudolf von Bennigsen",
+     "seats": 147,
+     "seatChange": 30.0,
+     "votes": 1394250,
+     "share": 26.86,
+     "swing": -2.11
+    },
+    {
+     "name": "Centre",
+     "leader": "Hermann von Mallinckrodt",
+     "seats": 91,
+     "seatChange": 33.0,
+     "votes": 1438792,
+     "share": 27.72,
+     "swing": 9.51
+    },
+    {
+     "name": "DFP",
+     "leader": null,
+     "seats": 48,
+     "seatChange": 3.0,
+     "votes": 458133,
+     "share": 8.83,
+     "swing": -0.21
+    },
+    {
+     "name": "DRP",
+     "leader": "Viktor I, Duke of Ratibor",
+     "seats": 32,
+     "seatChange": -5.0,
+     "votes": 388840,
+     "share": 7.49,
+     "swing": -1.34
+    },
+    {
+     "name": "Conservatives",
+     "leader": null,
+     "seats": 21,
+     "seatChange": -35.0,
+     "votes": 352050,
+     "share": 6.78,
+     "swing": -6.73
+    },
+    {
+     "name": "Polish Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 1.0,
+     "votes": 208797,
+     "share": 4.02,
+     "swing": -0.52
+    },
+    {
+     "name": "Clericals",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 106106,
+     "share": 43.86,
+     "swing": null
+    },
+    {
+     "name": "Protesters",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 83082,
+     "share": 34.35,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Otto von Bismarck",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Otto von Bismarck",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "A federal election for the second Reichstag of the German Empire was held on 10 January 1874. The National Liberal Party remained the largest party in the Reichstag, with 147 of the 397 seats.",
+   "unfree": null,
+   "seatLeader": "NlP"
+  },
+  {
+   "id": "1877",
+   "label": "1877",
+   "year": 1877,
+   "date": "10 January 1877",
+   "era": "kaiserreich",
+   "totalSeats": 397,
+   "majoritySeats": 199,
+   "turnout": 60.64,
+   "parties": [
+    {
+     "name": "NlP",
+     "leader": "Rudolf von Bennigsen",
+     "seats": 127,
+     "seatChange": -20.0,
+     "votes": 1440266,
+     "share": 26.67,
+     "swing": -0.19
+    },
+    {
+     "name": "Centre",
+     "leader": "Ludwig Windthorst",
+     "seats": 93,
+     "seatChange": 2.0,
+     "votes": 1341295,
+     "share": 24.83,
+     "swing": -2.89
+    },
+    {
+     "name": "DKP",
+     "leader": "Otto von Helldorff",
+     "seats": 40,
+     "seatChange": 19.0,
+     "votes": 517811,
+     "share": 9.59,
+     "swing": 2.81
+    },
+    {
+     "name": "DRP",
+     "leader": "Viktor I, Duke of Ratibor",
+     "seats": 38,
+     "seatChange": 6.0,
+     "votes": 424228,
+     "share": 7.85,
+     "swing": 0.36
+    },
+    {
+     "name": "DFP",
+     "leader": null,
+     "seats": 34,
+     "seatChange": -14.0,
+     "votes": 412769,
+     "share": 7.64,
+     "swing": -1.19
+    },
+    {
+     "name": "Polish Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 0.0,
+     "votes": 216157,
+     "share": 4.0,
+     "swing": -0.02
+    }
+   ],
+   "pmBefore": {
+    "name": "Otto von Bismarck",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Otto von Bismarck",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "A federal election for the third Reichstag of the German Empire was held on 10 January 1877. It was a regularly scheduled election based on the three-year legislative period established in the imperial constitution.",
+   "unfree": null,
+   "seatLeader": "NlP"
+  },
+  {
+   "id": "1878",
+   "label": "1878",
+   "year": 1878,
+   "date": "30 July 1878",
+   "era": "kaiserreich",
+   "totalSeats": 397,
+   "majoritySeats": 199,
+   "turnout": 63.33,
+   "parties": [
+    {
+     "name": "NlP",
+     "leader": "Rudolf von Bennigsen",
+     "seats": 97,
+     "seatChange": -30.0,
+     "votes": 1291161,
+     "share": 22.41,
+     "swing": -4.26
+    },
+    {
+     "name": "Centre",
+     "leader": "Ludwig Windthorst",
+     "seats": 94,
+     "seatChange": 1.0,
+     "votes": 1315720,
+     "share": 22.84,
+     "swing": -1.99
+    },
+    {
+     "name": "DKP",
+     "leader": "Otto von Helldorff",
+     "seats": 59,
+     "seatChange": 19.0,
+     "votes": 736826,
+     "share": 12.79,
+     "swing": 3.2
+    },
+    {
+     "name": "DRP",
+     "leader": "Viktor I, Duke of Ratibor",
+     "seats": 57,
+     "seatChange": 19.0,
+     "votes": 785631,
+     "share": 13.64,
+     "swing": 5.79
+    },
+    {
+     "name": "DFP",
+     "leader": null,
+     "seats": 26,
+     "seatChange": -8.0,
+     "votes": 395065,
+     "share": 6.86,
+     "swing": -0.78
+    },
+    {
+     "name": "Polish Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 0.0,
+     "votes": 216148,
+     "share": 3.75,
+     "swing": -0.25
+    }
+   ],
+   "pmBefore": {
+    "name": "Otto von Bismarck",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Otto von Bismarck",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "A federal election for the fourth Reichstag of the German Empire was held on 30 July 1878. It took place 18 months ahead of schedule after two unsuccessful assassination attempts against Emperor Wilhelm I led Chancellor Otto von Bismarck to request an early dissolution of the Reichstag that had been elected in January 1877.",
+   "unfree": null,
+   "seatLeader": "NlP"
+  },
+  {
+   "id": "1881",
+   "label": "1881",
+   "year": 1881,
+   "date": "27 October 1881",
+   "era": "kaiserreich",
+   "totalSeats": 397,
+   "majoritySeats": 199,
+   "turnout": 56.3,
+   "parties": [
+    {
+     "name": "Centre",
+     "leader": "Ludwig Windthorst",
+     "seats": 100,
+     "seatChange": 6.0,
+     "votes": 1177033,
+     "share": 23.09,
+     "swing": 0.25
+    },
+    {
+     "name": "DFP",
+     "leader": "Eugen Richter",
+     "seats": 58,
+     "seatChange": 32.0,
+     "votes": 645851,
+     "share": 12.67,
+     "swing": 5.81
+    },
+    {
+     "name": "DKP",
+     "leader": "Otto von Helldorff",
+     "seats": 50,
+     "seatChange": -9.0,
+     "votes": 776436,
+     "share": 15.23,
+     "swing": 2.44
+    },
+    {
+     "name": "LV",
+     "leader": "Eduard Lasker",
+     "seats": 48,
+     "seatChange": null,
+     "votes": 450166,
+     "share": 8.83,
+     "swing": null
+    },
+    {
+     "name": "NlP",
+     "leader": "Rudolf von Bennigsen",
+     "seats": 45,
+     "seatChange": -52.0,
+     "votes": 617752,
+     "share": 12.12,
+     "swing": -10.29
+    },
+    {
+     "name": "DRP",
+     "leader": "Viktor I, Duke of Ratibor",
+     "seats": 27,
+     "seatChange": -30.0,
+     "votes": 382149,
+     "share": 7.5,
+     "swing": -6.14
+    }
+   ],
+   "pmBefore": {
+    "name": "Otto von Bismarck",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Otto von Bismarck",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "The dominant issues were protective tariffs and the government's requests for increased taxes. The conservative parties, which supported the government, lost seats, leaving the Reichstag without options for a stable majority.",
+   "unfree": null,
+   "seatLeader": "Centre"
+  },
+  {
+   "id": "1884",
+   "label": "1884",
+   "year": 1884,
+   "date": "28 October 1884",
+   "era": "kaiserreich",
+   "totalSeats": 397,
+   "majoritySeats": 199,
+   "turnout": 60.55,
+   "parties": [
+    {
+     "name": "Centre",
+     "leader": "Ludwig Windthorst",
+     "seats": 99,
+     "seatChange": -1.0,
+     "votes": 1275369,
+     "share": 22.52,
+     "swing": -0.57
+    },
+    {
+     "name": "DKP",
+     "leader": "Otto von Helldorff",
+     "seats": 78,
+     "seatChange": 28.0,
+     "votes": 858589,
+     "share": 15.16,
+     "swing": -0.07
+    },
+    {
+     "name": "DFP",
+     "leader": "Rudolf Virchow",
+     "seats": 66,
+     "seatChange": -40.0,
+     "votes": 978436,
+     "share": 17.28,
+     "swing": -4.22
+    },
+    {
+     "name": "NlP",
+     "leader": "Rudolf von Bennigsen",
+     "seats": 50,
+     "seatChange": 5.0,
+     "votes": 987355,
+     "share": 17.44,
+     "swing": 5.32
+    },
+    {
+     "name": "DRP",
+     "leader": "Viktor I, Duke of Ratibor",
+     "seats": 28,
+     "seatChange": 1.0,
+     "votes": 387637,
+     "share": 6.85,
+     "swing": -0.65
+    },
+    {
+     "name": "SPD",
+     "leader": "Banned",
+     "seats": 24,
+     "seatChange": 11.0,
+     "votes": 549990,
+     "share": 9.71,
+     "swing": 3.59
+    }
+   ],
+   "pmBefore": {
+    "name": "Otto von Bismarck",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Otto von Bismarck",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "The campaign centered on Germany's nascent colonial policy, which Chancellor Otto von Bismarck reluctantly backed in the hope that it would help his supporters in the conservative parties and among the National Liberals in the 1884 election. They remained well short of a majority, however, and Bismarck had to govern through temporary blocs that he pieced together.",
+   "unfree": null,
+   "seatLeader": "Centre"
+  },
+  {
+   "id": "1887",
+   "label": "1887",
+   "year": 1887,
+   "date": "21 February 1887",
+   "era": "kaiserreich",
+   "totalSeats": 397,
+   "majoritySeats": 199,
+   "turnout": 77.49,
+   "parties": [
+    {
+     "name": "NLP",
+     "leader": "Rudolf von Bennigsen",
+     "seats": 98,
+     "seatChange": 48.0,
+     "votes": 1651288,
+     "share": 21.9,
+     "swing": 4.46
+    },
+    {
+     "name": "Centre",
+     "leader": "Ludwig Windthorst",
+     "seats": 98,
+     "seatChange": -1.0,
+     "votes": 1501774,
+     "share": 19.91,
+     "swing": -2.61
+    },
+    {
+     "name": "DKP",
+     "leader": "Otto von Helldorff",
+     "seats": 80,
+     "seatChange": 2.0,
+     "votes": 1147200,
+     "share": 15.21,
+     "swing": 0.05
+    },
+    {
+     "name": "DRP",
+     "leader": "Viktor I, Duke of Ratibor",
+     "seats": 41,
+     "seatChange": 13.0,
+     "votes": 736389,
+     "share": 9.77,
+     "swing": 2.92
+    },
+    {
+     "name": "DFP",
+     "leader": "Rudolf Virchow",
+     "seats": 32,
+     "seatChange": -34.0,
+     "votes": 951861,
+     "share": 12.62,
+     "swing": -4.66
+    },
+    {
+     "name": "Polish Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": -3.0,
+     "votes": 227835,
+     "share": 3.02,
+     "swing": -0.69
+    }
+   ],
+   "pmBefore": {
+    "name": "Otto von Bismarck",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Otto von Bismarck",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "A federal election for the seventh Reichstag of the German Empire was held on 21 February 1887. It was an early election called after Chancellor Otto von Bismarck requested the dissolution of the Reichstag elected in October 1884 because it had refused to accept his seven-year military budget.",
+   "unfree": null,
+   "seatLeader": "NLP"
+  },
+  {
+   "id": "1890",
+   "label": "1890",
+   "year": 1890,
+   "date": "20 February 1890",
+   "era": "kaiserreich",
+   "totalSeats": 397,
+   "majoritySeats": 199,
+   "turnout": 71.58,
+   "parties": [
+    {
+     "name": "Centre",
+     "leader": "Ludwig Windthorst",
+     "seats": 107,
+     "seatChange": 9.0,
+     "votes": 1340688,
+     "share": 18.55,
+     "swing": -1.36
+    },
+    {
+     "name": "DKP",
+     "leader": "Otto von Helldorff",
+     "seats": 71,
+     "seatChange": -9.0,
+     "votes": 882820,
+     "share": 12.21,
+     "swing": -3.0
+    },
+    {
+     "name": "DFP",
+     "leader": "Rudolf Virchow",
+     "seats": 67,
+     "seatChange": 35.0,
+     "votes": 1148468,
+     "share": 15.89,
+     "swing": 3.27
+    },
+    {
+     "name": "NLP",
+     "leader": "Rudolf von Bennigsen",
+     "seats": 38,
+     "seatChange": -60.0,
+     "votes": 1130842,
+     "share": 15.64,
+     "swing": -6.26
+    },
+    {
+     "name": "SPD",
+     "leader": "Paul Singer",
+     "seats": 35,
+     "seatChange": 24.0,
+     "votes": 1427323,
+     "share": 19.75,
+     "swing": 9.63
+    },
+    {
+     "name": "DRP",
+     "leader": null,
+     "seats": 19,
+     "seatChange": -22.0,
+     "votes": 461307,
+     "share": 6.38,
+     "swing": -3.39
+    }
+   ],
+   "pmBefore": {
+    "name": "Otto von Bismarck",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Leo von Caprivi",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "A federal election for the eighth Reichstag of the German Empire was held on 20 February 1890. It was an early election called after Chancellor Otto von Bismarck requested that the Reichstag elected in February 1887 be dissolved because it had refused to extend the Anti-Socialist Laws.",
+   "unfree": null,
+   "seatLeader": "Centre"
+  },
+  {
+   "id": "1893",
+   "label": "1893",
+   "year": 1893,
+   "date": "15 June 1893",
+   "era": "kaiserreich",
+   "totalSeats": 397,
+   "majoritySeats": 199,
+   "turnout": 72.47,
+   "parties": [
+    {
+     "name": "Centre",
+     "leader": "Franz von Ballestrem",
+     "seats": 96,
+     "seatChange": -11.0,
+     "votes": 1468501,
+     "share": 19.14,
+     "swing": 0.59
+    },
+    {
+     "name": "DKP",
+     "leader": "Otto von Manteuffel",
+     "seats": 69,
+     "seatChange": -2.0,
+     "votes": 992412,
+     "share": 12.93,
+     "swing": 0.72
+    },
+    {
+     "name": "NLP",
+     "leader": "Rudolf von Bennigsen",
+     "seats": 51,
+     "seatChange": 13.0,
+     "votes": 942410,
+     "share": 12.29,
+     "swing": -3.35
+    },
+    {
+     "name": "SPD",
+     "leader": "Paul Singer &",
+     "seats": 44,
+     "seatChange": 9.0,
+     "votes": 1786738,
+     "share": 23.28,
+     "swing": 3.53
+    },
+    {
+     "name": "DRP",
+     "leader": null,
+     "seats": 28,
+     "seatChange": 9.0,
+     "votes": 437972,
+     "share": 5.71,
+     "swing": -0.67
+    },
+    {
+     "name": "FVP",
+     "leader": null,
+     "seats": 24,
+     "seatChange": -43.0,
+     "votes": 665427,
+     "share": 8.67,
+     "swing": -7.22
+    }
+   ],
+   "pmBefore": {
+    "name": "Leo von Caprivi",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Leo von Caprivi",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "The pro-government parties won a narrow victory in the election. The Centre Party remained the largest party with 96 of the 397 seats, followed by the German Conservative Party and the National Liberal Party.",
+   "unfree": null,
+   "seatLeader": "Centre"
+  },
+  {
+   "id": "1898",
+   "label": "1898",
+   "year": 1898,
+   "date": "16 June 1898",
+   "era": "kaiserreich",
+   "totalSeats": 397,
+   "majoritySeats": 199,
+   "turnout": 68.06,
+   "parties": [
+    {
+     "name": "Centre",
+     "leader": "Franz von Ballestrem",
+     "seats": 102,
+     "seatChange": 6.0,
+     "votes": 1454042,
+     "share": 18.76,
+     "swing": -0.38
+    },
+    {
+     "name": "SPD",
+     "leader": "Paul Singer &",
+     "seats": 56,
+     "seatChange": 12.0,
+     "votes": 2107076,
+     "share": 27.18,
+     "swing": 3.9
+    },
+    {
+     "name": "DKP",
+     "leader": null,
+     "seats": 53,
+     "seatChange": -16.0,
+     "votes": 830341,
+     "share": 10.71,
+     "swing": -2.22
+    },
+    {
+     "name": "NLP",
+     "leader": "Ernst Bassermann",
+     "seats": 48,
+     "seatChange": -3.0,
+     "votes": 997147,
+     "share": 12.86,
+     "swing": -0.57
+    },
+    {
+     "name": "FVP",
+     "leader": "Eugen Richter",
+     "seats": 29,
+     "seatChange": 5.0,
+     "votes": 558314,
+     "share": 7.2,
+     "swing": -1.47
+    },
+    {
+     "name": "DRP",
+     "leader": null,
+     "seats": 22,
+     "seatChange": -6.0,
+     "votes": 337601,
+     "share": 4.35,
+     "swing": -1.36
+    }
+   ],
+   "pmBefore": {
+    "name": "Chlodwig zu Hohenlohe-Schillingsfürst",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Chlodwig zu Hohenlohe-Schillingsfürst",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Federal elections were held in Germany on 16 June 1898. Despite the Social Democratic Party (SPD) receiving the most votes, the Centre Party remained the largest party in the Reichstag after winning 102 of the 397 seats, whilst the SPD won just 56.",
+   "unfree": null,
+   "seatLeader": "Centre"
+  },
+  {
+   "id": "1903",
+   "label": "1903",
+   "year": 1903,
+   "date": "16 June 1903",
+   "era": "kaiserreich",
+   "totalSeats": 397,
+   "majoritySeats": 199,
+   "turnout": 76.08,
+   "parties": [
+    {
+     "name": "Centre",
+     "leader": "Franz von Ballestrem",
+     "seats": 100,
+     "seatChange": -2.0,
+     "votes": 1875292,
+     "share": 19.75,
+     "swing": 0.99
+    },
+    {
+     "name": "SPD",
+     "leader": "Paul Singer &",
+     "seats": 81,
+     "seatChange": 25.0,
+     "votes": 3010771,
+     "share": 31.71,
+     "swing": 4.53
+    },
+    {
+     "name": "DKP",
+     "leader": null,
+     "seats": 52,
+     "seatChange": -1.0,
+     "votes": 901415,
+     "share": 9.49,
+     "swing": -1.22
+    },
+    {
+     "name": "NLP",
+     "leader": "Ernst Bassermann",
+     "seats": 50,
+     "seatChange": 2.0,
+     "votes": 1301473,
+     "share": 13.71,
+     "swing": 0.85
+    },
+    {
+     "name": "FVP",
+     "leader": "Eugen Richter",
+     "seats": 21,
+     "seatChange": -8.0,
+     "votes": 536879,
+     "share": 5.65,
+     "swing": -1.55
+    },
+    {
+     "name": "DRP",
+     "leader": null,
+     "seats": 21,
+     "seatChange": -1.0,
+     "votes": 336617,
+     "share": 3.54,
+     "swing": -0.81
+    }
+   ],
+   "pmBefore": {
+    "name": "Bernhard von Bülow",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Bernhard von Bülow",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Federal elections were held in Germany on 16 June 1903. Despite the Social Democratic Party (SPD) receiving a clear plurality of votes, the Centre Party remained the largest party in the Reichstag after winning 100 of the 397 seats, whilst the SPD won only 81.",
+   "unfree": null,
+   "seatLeader": "Centre"
+  },
+  {
+   "id": "1907",
+   "label": "1907",
+   "year": 1907,
+   "date": "25 January 1907",
+   "era": "kaiserreich",
+   "totalSeats": 397,
+   "majoritySeats": 199,
+   "turnout": 84.65,
+   "parties": [
+    {
+     "name": "Centre",
+     "leader": "Franz von Ballestrem",
+     "seats": 101,
+     "seatChange": 1.0,
+     "votes": 2116246,
+     "share": 18.79,
+     "swing": -0.96
+    },
+    {
+     "name": "DKP",
+     "leader": "Otto von Manteuffel",
+     "seats": 59,
+     "seatChange": 7.0,
+     "votes": 1060209,
+     "share": 9.41,
+     "swing": -0.08
+    },
+    {
+     "name": "NLP",
+     "leader": "Ernst Bassermann",
+     "seats": 56,
+     "seatChange": 6.0,
+     "votes": 1666705,
+     "share": 14.8,
+     "swing": 1.1
+    },
+    {
+     "name": "SPD",
+     "leader": "Paul Singer &",
+     "seats": 43,
+     "seatChange": -38.0,
+     "votes": 3259029,
+     "share": 28.94,
+     "swing": -2.77
+    },
+    {
+     "name": "FVP",
+     "leader": null,
+     "seats": 29,
+     "seatChange": 8.0,
+     "votes": 737220,
+     "share": 6.55,
+     "swing": 0.9
+    },
+    {
+     "name": "DRP",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 3.0,
+     "votes": 471863,
+     "share": 4.19,
+     "swing": 0.65
+    }
+   ],
+   "pmBefore": {
+    "name": "Bernhard von Bülow",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Bernhard von Bülow",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Federal elections were held in Germany on 25 January 1907. Despite the Social Democratic Party (SPD) receiving a clear plurality of votes, they were hampered by the unequal constituency sizes that favoured rural seats.",
+   "unfree": null,
+   "seatLeader": "Centre"
+  },
+  {
+   "id": "1912",
+   "label": "1912",
+   "year": 1912,
+   "date": "12 January 1912",
+   "era": "kaiserreich",
+   "totalSeats": 397,
+   "majoritySeats": 199,
+   "turnout": 84.89,
+   "parties": [
+    {
+     "name": "SPD",
+     "leader": "August Bebel &",
+     "seats": 110,
+     "seatChange": 67.0,
+     "votes": 4250400,
+     "share": 34.82,
+     "swing": 5.88
+    },
+    {
+     "name": "Centre",
+     "leader": null,
+     "seats": 90,
+     "seatChange": -11.0,
+     "votes": 1988504,
+     "share": 16.29,
+     "swing": -2.5
+    },
+    {
+     "name": "NLP",
+     "leader": null,
+     "seats": 45,
+     "seatChange": -11.0,
+     "votes": 1662700,
+     "share": 13.53,
+     "swing": -1.27
+    },
+    {
+     "name": "FVp",
+     "leader": "Otto Fischbeck",
+     "seats": 41,
+     "seatChange": -9.0,
+     "votes": 1448097,
+     "share": 11.86,
+     "swing": 1.2
+    },
+    {
+     "name": "DKP",
+     "leader": "Ernst von Heydebrand",
+     "seats": 41,
+     "seatChange": -18.0,
+     "votes": 1006570,
+     "share": 8.25,
+     "swing": -1.16
+    },
+    {
+     "name": "PP",
+     "leader": "Ferdynand Radziwiłł",
+     "seats": 18,
+     "seatChange": -2.0,
+     "votes": 441744,
+     "share": 3.62,
+     "swing": -0.41
+    }
+   ],
+   "pmBefore": {
+    "name": "Theobald von Bethmann Hollweg",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Theobald von Bethmann Hollweg",
+    "party": "Independent"
+   },
+   "knownAs": "SPD becomes largest party",
+   "summary": "Federal elections were held in Germany on 12 January 1912. Although the Social Democratic Party (SPD) had received the most votes in every election since 1890, it had never won the most seats, and in the 1907 elections, it had won fewer than half the seats won by the Centre Party despite receiving over a million more votes.",
+   "unfree": null,
+   "seatLeader": "SPD"
+  },
+  {
+   "id": "1919",
+   "label": "1919",
+   "year": 1919,
+   "date": "19 January 1919",
+   "era": "weimar",
+   "totalSeats": 423,
+   "majoritySeats": 212,
+   "turnout": 83.0,
+   "parties": [
+    {
+     "name": "SPD",
+     "leader": "Friedrich Ebert &",
+     "seats": 165,
+     "seatChange": null,
+     "votes": 11516852,
+     "share": 37.9,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 163,
+     "seatChange": null,
+     "votes": 11509048,
+     "share": 37.86,
+     "swing": null
+    },
+    {
+     "name": "CVP",
+     "leader": null,
+     "seats": 91,
+     "seatChange": null,
+     "votes": 5980259,
+     "share": 19.7,
+     "swing": null
+    },
+    {
+     "name": "Christian People's Party",
+     "leader": null,
+     "seats": 91,
+     "seatChange": null,
+     "votes": 5980216,
+     "share": 19.67,
+     "swing": null
+    },
+    {
+     "name": "DDP",
+     "leader": null,
+     "seats": 75,
+     "seatChange": null,
+     "votes": 5643506,
+     "share": 18.6,
+     "swing": null
+    },
+    {
+     "name": "German Democratic Party",
+     "leader": null,
+     "seats": 75,
+     "seatChange": null,
+     "votes": 5641825,
+     "share": 18.56,
+     "swing": null
+    },
+    {
+     "name": "DNVP",
+     "leader": "Arthur von Posadowsky-Wehner",
+     "seats": 44,
+     "seatChange": null,
+     "votes": 3121541,
+     "share": 10.3,
+     "swing": null
+    },
+    {
+     "name": "German National People's Party",
+     "leader": null,
+     "seats": 44,
+     "seatChange": null,
+     "votes": 3121479,
+     "share": 10.27,
+     "swing": null
+    },
+    {
+     "name": "USPD",
+     "leader": "Hugo Haase",
+     "seats": 22,
+     "seatChange": null,
+     "votes": 2319235,
+     "share": 7.6,
+     "swing": null
+    },
+    {
+     "name": "Independent Social Democratic Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": null,
+     "votes": 2317290,
+     "share": 7.62,
+     "swing": null
+    },
+    {
+     "name": "DVP",
+     "leader": "Rudolf Heinze",
+     "seats": 19,
+     "seatChange": null,
+     "votes": 1345712,
+     "share": 4.4,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Friedrich Ebert",
+    "party": "SPD"
+   },
+   "pmAfter": {
+    "name": "Philipp Scheidemann",
+    "party": "SPD"
+   },
+   "knownAs": "First with women's suffrage",
+   "summary": "Federal elections were held in Germany on 19 January 1919 to elect a national constituent assembly that would write a new constitution for Germany following the collapse of the German Empire at the end of World War I.",
+   "unfree": null,
+   "seatLeader": "SPD"
+  },
+  {
+   "id": "1920",
+   "label": "1920",
+   "year": 1920,
+   "date": "6 June 1920",
+   "era": "weimar",
+   "totalSeats": 459,
+   "majoritySeats": 230,
+   "turnout": 79.2,
+   "parties": [
+    {
+     "name": "SPD",
+     "leader": null,
+     "seats": 103,
+     "seatChange": -62.0,
+     "votes": 6179991,
+     "share": 21.9,
+     "swing": -16.0
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 103,
+     "seatChange": 5.0,
+     "votes": 75593,
+     "share": 14.78,
+     "swing": null
+    },
+    {
+     "name": "USPD",
+     "leader": null,
+     "seats": 83,
+     "seatChange": 61.0,
+     "votes": 4971220,
+     "share": 17.6,
+     "swing": 10.0
+    },
+    {
+     "name": "DNVP",
+     "leader": null,
+     "seats": 71,
+     "seatChange": 27.0,
+     "votes": 4249100,
+     "share": 15.1,
+     "swing": 4.8
+    },
+    {
+     "name": "DVP",
+     "leader": "Gustav Stresemann",
+     "seats": 65,
+     "seatChange": 46.0,
+     "votes": 3919446,
+     "share": 13.9,
+     "swing": 9.5
+    },
+    {
+     "name": "German National People's Party",
+     "leader": null,
+     "seats": 65,
+     "seatChange": 0.0,
+     "votes": 70841,
+     "share": 13.85,
+     "swing": null
+    },
+    {
+     "name": "German People's Party",
+     "leader": null,
+     "seats": 65,
+     "seatChange": 0.0,
+     "votes": 36560,
+     "share": 7.15,
+     "swing": null
+    },
+    {
+     "name": "Centre Party",
+     "leader": "Karl Trimborn",
+     "seats": 64,
+     "seatChange": 4.0,
+     "votes": 205237,
+     "share": 40.12,
+     "swing": -6.1
+    },
+    {
+     "name": "DDP",
+     "leader": "Carl Wilhelm Petersen",
+     "seats": 39,
+     "seatChange": -36.0,
+     "votes": 2333741,
+     "share": 8.3,
+     "swing": -10.3
+    },
+    {
+     "name": "German Democratic Party",
+     "leader": null,
+     "seats": 39,
+     "seatChange": 1.0,
+     "votes": 11874,
+     "share": 2.32,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 37120,
+     "share": 7.26,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Hermann Müller",
+    "party": "SPD"
+   },
+   "pmAfter": {
+    "name": "Konstantin Fehrenbach",
+    "party": "Centre"
+   },
+   "knownAs": null,
+   "summary": "Federal elections were held in Germany on 6 June 1920 to elect the first Reichstag of the Weimar Republic. It succeeded the Weimar National Assembly elected in January 1919, which had drafted and ratified the Weimar Constitution.",
+   "unfree": null,
+   "seatLeader": "SPD"
+  },
+  {
+   "id": "1924-may",
+   "label": "May 1924",
+   "year": 1924,
+   "date": "4 May 1924",
+   "era": "weimar",
+   "totalSeats": 472,
+   "majoritySeats": 237,
+   "turnout": 77.4,
+   "parties": [
+    {
+     "name": "SPD",
+     "leader": "Hermann Müller",
+     "seats": 100,
+     "seatChange": -3.0,
+     "votes": 6008905,
+     "share": 20.5,
+     "swing": -1.4
+    },
+    {
+     "name": "DNVP",
+     "leader": null,
+     "seats": 95,
+     "seatChange": 24.0,
+     "votes": 5696475,
+     "share": 19.5,
+     "swing": 4.4
+    },
+    {
+     "name": "Centre",
+     "leader": null,
+     "seats": 65,
+     "seatChange": 1.0,
+     "votes": 3914379,
+     "share": 13.4,
+     "swing": -0.2
+    },
+    {
+     "name": "KPD",
+     "leader": "Ruth Fischer & Arkadi Maslow",
+     "seats": 62,
+     "seatChange": 58.0,
+     "votes": 3693280,
+     "share": 12.6,
+     "swing": 10.5
+    },
+    {
+     "name": "DVP",
+     "leader": "Gustav Stresemann",
+     "seats": 45,
+     "seatChange": -20.0,
+     "votes": 2694381,
+     "share": 9.2,
+     "swing": -4.7
+    },
+    {
+     "name": "NSFP",
+     "leader": "Erich Ludendorff",
+     "seats": 32,
+     "seatChange": null,
+     "votes": 1918329,
+     "share": 6.5,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Wilhelm Marx",
+    "party": "Centre"
+   },
+   "pmAfter": {
+    "name": "Wilhelm Marx",
+    "party": "Centre"
+   },
+   "knownAs": null,
+   "summary": "A federal election for the second Reichstag of the Weimar Republic was held in Germany on 4 May 1924. It took place following a series of national crises in 1923, most notably the occupation of the Ruhr by French and Belgian troops and the resulting period of hyperinflation.",
+   "unfree": null,
+   "seatLeader": "SPD"
+  },
+  {
+   "id": "1924-dec",
+   "label": "December 1924",
+   "year": 1924,
+   "date": "7 December 1924",
+   "era": "weimar",
+   "totalSeats": 493,
+   "majoritySeats": 247,
+   "turnout": 78.8,
+   "parties": [
+    {
+     "name": "SPD",
+     "leader": "Hermann Müller",
+     "seats": 131,
+     "seatChange": 31.0,
+     "votes": 7881041,
+     "share": 26.0,
+     "swing": 5.5
+    },
+    {
+     "name": "DNVP",
+     "leader": null,
+     "seats": 103,
+     "seatChange": 8.0,
+     "votes": 6205802,
+     "share": 20.5,
+     "swing": 1.0
+    },
+    {
+     "name": "Centre",
+     "leader": null,
+     "seats": 69,
+     "seatChange": 4.0,
+     "votes": 4118849,
+     "share": 13.6,
+     "swing": 0.2
+    },
+    {
+     "name": "DVP",
+     "leader": "Gustav Stresemann",
+     "seats": 51,
+     "seatChange": 6.0,
+     "votes": 3049064,
+     "share": 10.1,
+     "swing": 0.9
+    },
+    {
+     "name": "KPD",
+     "leader": "Ruth Fischer & Arkadi Maslow",
+     "seats": 45,
+     "seatChange": -17.0,
+     "votes": 2709086,
+     "share": 8.9,
+     "swing": -3.7
+    },
+    {
+     "name": "DDP",
+     "leader": "Erich Koch-Weser",
+     "seats": 32,
+     "seatChange": 4.0,
+     "votes": 1919829,
+     "share": 6.3,
+     "swing": 0.6
+    }
+   ],
+   "pmBefore": {
+    "name": "Wilhelm Marx",
+    "party": "Centre"
+   },
+   "pmAfter": {
+    "name": "Hans Luther",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "A federal election for the third Reichstag of the Weimar Republic was held in Germany on 7 December 1924. The parties of the far left and far right suffered significant losses in the voting, while the moderate left Social Democratic Party (SPD) made the greatest gains and remained the strongest party in the Reichstag.",
+   "unfree": null,
+   "seatLeader": "SPD"
+  },
+  {
+   "id": "1928",
+   "label": "1928",
+   "year": 1928,
+   "date": "20 May 1928",
+   "era": "weimar",
+   "totalSeats": 491,
+   "majoritySeats": 246,
+   "turnout": 75.6,
+   "parties": [
+    {
+     "name": "SPD",
+     "leader": "Hermann Müller",
+     "seats": 153,
+     "seatChange": 22.0,
+     "votes": 9152979,
+     "share": 29.8,
+     "swing": 3.8
+    },
+    {
+     "name": "DNVP",
+     "leader": null,
+     "seats": 73,
+     "seatChange": -30.0,
+     "votes": 4381563,
+     "share": 14.3,
+     "swing": -6.2
+    },
+    {
+     "name": "Centre",
+     "leader": null,
+     "seats": 61,
+     "seatChange": -8.0,
+     "votes": 3712152,
+     "share": 12.1,
+     "swing": -1.5
+    },
+    {
+     "name": "KPD",
+     "leader": "Ernst Thälmann",
+     "seats": 54,
+     "seatChange": 9.0,
+     "votes": 3264793,
+     "share": 10.6,
+     "swing": 1.7
+    },
+    {
+     "name": "DVP",
+     "leader": null,
+     "seats": 45,
+     "seatChange": -6.0,
+     "votes": 2679703,
+     "share": 8.7,
+     "swing": -1.4
+    },
+    {
+     "name": "DDP",
+     "leader": null,
+     "seats": 25,
+     "seatChange": -7.0,
+     "votes": 1479374,
+     "share": 4.8,
+     "swing": -1.5
+    }
+   ],
+   "pmBefore": {
+    "name": "Wilhelm Marx",
+    "party": "Centre"
+   },
+   "pmAfter": {
+    "name": "Hermann Müller",
+    "party": "SPD"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held in Germany on 20 May 1928 to elect the fourth Reichstag of the Weimar Republic. It resulted in a significant shift to the left, with gains for the socialists and communists and losses for the nationalists.",
+   "unfree": null,
+   "seatLeader": "SPD"
+  },
+  {
+   "id": "1930",
+   "label": "1930",
+   "year": 1930,
+   "date": "14 September 1930",
+   "era": "weimar",
+   "totalSeats": 577,
+   "majoritySeats": 289,
+   "turnout": 82.0,
+   "parties": [
+    {
+     "name": "SPD",
+     "leader": "Otto Wels &",
+     "seats": 143,
+     "seatChange": -10.0,
+     "votes": 8575244,
+     "share": 24.5,
+     "swing": -5.3
+    },
+    {
+     "name": "NSDAP",
+     "leader": null,
+     "seats": 107,
+     "seatChange": 95.0,
+     "votes": 6379672,
+     "share": 18.3,
+     "swing": 15.7
+    },
+    {
+     "name": "KPD",
+     "leader": null,
+     "seats": 77,
+     "seatChange": 23.0,
+     "votes": 4590160,
+     "share": 13.1,
+     "swing": 2.5
+    },
+    {
+     "name": "Centre",
+     "leader": "Ludwig Kaas",
+     "seats": 68,
+     "seatChange": 7.0,
+     "votes": 4127000,
+     "share": 11.8,
+     "swing": -0.3
+    },
+    {
+     "name": "DNVP",
+     "leader": "Alfred Hugenberg",
+     "seats": 41,
+     "seatChange": -32.0,
+     "votes": 2457686,
+     "share": 7.0,
+     "swing": -7.2
+    },
+    {
+     "name": "DVP",
+     "leader": "Ernst Scholz",
+     "seats": 30,
+     "seatChange": -15.0,
+     "votes": 1577365,
+     "share": 4.5,
+     "swing": -4.2
+    }
+   ],
+   "pmBefore": {
+    "name": "Heinrich Brüning",
+    "party": "Centre"
+   },
+   "pmAfter": {
+    "name": "Heinrich Brüning",
+    "party": "Centre"
+   },
+   "knownAs": "Nazi breakthrough",
+   "summary": "A federal election was held in Germany on 14 September 1930 to elect the fifth Reichstag of the Weimar Republic. Despite losing ten seats, the Social Democratic Party of Germany (SPD) remained the largest party in the Reichstag, winning 143 of the 577 seats, while the Nazi Party (NSDAP) dramatically increased its number of seats from 12 to 107.",
+   "unfree": null,
+   "seatLeader": "SPD"
+  },
+  {
+   "id": "1932-jul",
+   "label": "July 1932",
+   "year": 1932,
+   "date": "31 July 1932",
+   "era": "weimar",
+   "totalSeats": 608,
+   "majoritySeats": 305,
+   "turnout": 84.1,
+   "parties": [
+    {
+     "name": "NSDAP",
+     "leader": "Adolf Hitler",
+     "seats": 230,
+     "seatChange": 123.0,
+     "votes": 13745680,
+     "share": 37.3,
+     "swing": 19.0
+    },
+    {
+     "name": "SPD",
+     "leader": "Otto Wels",
+     "seats": 133,
+     "seatChange": -10.0,
+     "votes": 7959712,
+     "share": 21.6,
+     "swing": -2.9
+    },
+    {
+     "name": "KPD",
+     "leader": null,
+     "seats": 89,
+     "seatChange": 12.0,
+     "votes": 5282636,
+     "share": 14.3,
+     "swing": 1.2
+    },
+    {
+     "name": "Centre",
+     "leader": "Ludwig Kaas",
+     "seats": 75,
+     "seatChange": 7.0,
+     "votes": 4589430,
+     "share": 12.4,
+     "swing": 0.6
+    },
+    {
+     "name": "DNVP",
+     "leader": "Alfred Hugenberg",
+     "seats": 37,
+     "seatChange": -4.0,
+     "votes": 2178024,
+     "share": 5.9,
+     "swing": -1.1
+    },
+    {
+     "name": "BVP",
+     "leader": "Heinrich Held",
+     "seats": 22,
+     "seatChange": 3.0,
+     "votes": 1192684,
+     "share": 3.2,
+     "swing": 0.2
+    }
+   ],
+   "pmBefore": {
+    "name": "Franz von Papen",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Franz von Papen",
+    "party": "Independent"
+   },
+   "knownAs": "NSDAP becomes largest party",
+   "summary": "Federal elections were held in Germany on 31 July 1932, following the premature dissolution of the Reichstag. The Nazi Party made significant gains and became the largest party in the Reichstag for the first time, although they failed to win a majority.",
+   "unfree": null,
+   "seatLeader": "NSDAP"
+  },
+  {
+   "id": "1932-nov",
+   "label": "November 1932",
+   "year": 1932,
+   "date": "6 November 1932",
+   "era": "weimar",
+   "totalSeats": 584,
+   "majoritySeats": 293,
+   "turnout": 80.6,
+   "parties": [
+    {
+     "name": "NSDAP",
+     "leader": "Adolf Hitler",
+     "seats": 196,
+     "seatChange": -34.0,
+     "votes": 11737021,
+     "share": 33.1,
+     "swing": -4.2
+    },
+    {
+     "name": "SPD",
+     "leader": "Otto Wels",
+     "seats": 121,
+     "seatChange": -12.0,
+     "votes": 7247091,
+     "share": 20.4,
+     "swing": -1.2
+    },
+    {
+     "name": "KPD",
+     "leader": null,
+     "seats": 100,
+     "seatChange": 11.0,
+     "votes": 5980239,
+     "share": 16.9,
+     "swing": 2.6
+    },
+    {
+     "name": "Centre",
+     "leader": "Ludwig Kaas",
+     "seats": 70,
+     "seatChange": -5.0,
+     "votes": 4230545,
+     "share": 11.9,
+     "swing": -0.5
+    },
+    {
+     "name": "DNVP",
+     "leader": "Alfred Hugenberg",
+     "seats": 51,
+     "seatChange": 14.0,
+     "votes": 2959053,
+     "share": 8.3,
+     "swing": 2.4
+    },
+    {
+     "name": "BVP",
+     "leader": "Heinrich Held",
+     "seats": 20,
+     "seatChange": -2.0,
+     "votes": 1094597,
+     "share": 3.1,
+     "swing": -0.1
+    }
+   ],
+   "pmBefore": {
+    "name": "Franz von Papen",
+    "party": "Independent"
+   },
+   "pmAfter": {
+    "name": "Kurt von Schleicher",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Federal elections were held in Germany on 6 November 1932. The Nazi Party saw its vote share fall by four percentage points from the July 1932 election, while there were slight increases for the Communist Party of Germany and the national conservative German National People's Party.",
+   "unfree": null,
+   "seatLeader": "NSDAP"
+  },
+  {
+   "id": "1933-mar",
+   "label": "March 1933",
+   "year": 1933,
+   "date": "5 March 1933",
+   "era": "dictatorship",
+   "totalSeats": 647,
+   "majoritySeats": 324,
+   "turnout": 88.7,
+   "parties": [
+    {
+     "name": "NSDAP",
+     "leader": "Adolf Hitler",
+     "seats": 288,
+     "seatChange": 92.0,
+     "votes": 17277180,
+     "share": 43.9,
+     "swing": 10.8
+    },
+    {
+     "name": "SPD",
+     "leader": "Otto Wels",
+     "seats": 120,
+     "seatChange": -1.0,
+     "votes": 7181629,
+     "share": 18.3,
+     "swing": -2.1
+    },
+    {
+     "name": "KPD",
+     "leader": null,
+     "seats": 81,
+     "seatChange": -19.0,
+     "votes": 4848058,
+     "share": 12.3,
+     "swing": -4.6
+    },
+    {
+     "name": "Centre",
+     "leader": "Ludwig Kaas",
+     "seats": 73,
+     "seatChange": 3.0,
+     "votes": 4424905,
+     "share": 11.3,
+     "swing": -0.6
+    },
+    {
+     "name": "DNVP",
+     "leader": "Alfred Hugenberg",
+     "seats": 52,
+     "seatChange": 1.0,
+     "votes": 3136760,
+     "share": 8.0,
+     "swing": -0.3
+    },
+    {
+     "name": "BVP",
+     "leader": "Heinrich Held",
+     "seats": 19,
+     "seatChange": -1.0,
+     "votes": 1073552,
+     "share": 2.7,
+     "swing": -0.4
+    }
+   ],
+   "pmBefore": {
+    "name": "Adolf Hitler",
+    "party": "NSDAP"
+   },
+   "pmAfter": {
+    "name": "Adolf Hitler",
+    "party": "NSDAP"
+   },
+   "knownAs": "Held under Nazi terror",
+   "summary": "Federal elections were held in Germany on 5 March 1933, after the Nazi seizure of power on 30 January and just six days after the Reichstag fire.",
+   "unfree": "partial",
+   "seatLeader": "NSDAP"
+  },
+  {
+   "id": "1933-nov",
+   "label": "November 1933",
+   "year": 1933,
+   "date": "12 November 1933",
+   "era": "dictatorship",
+   "totalSeats": 661,
+   "majoritySeats": 331,
+   "turnout": 95.3,
+   "parties": [
+    {
+     "name": "Nazi Party and guests",
+     "leader": null,
+     "seats": 661,
+     "seatChange": null,
+     "votes": 39655224,
+     "share": 92.11,
+     "swing": null
+    },
+    {
+     "name": "NSDAP",
+     "leader": "Adolf Hitler",
+     "seats": 661,
+     "seatChange": 373.0,
+     "votes": 39655224,
+     "share": 92.1,
+     "swing": 48.2
+    }
+   ],
+   "pmBefore": {
+    "name": "Adolf Hitler",
+    "party": "NSDAP"
+   },
+   "pmAfter": {
+    "name": "Adolf Hitler",
+    "party": "NSDAP"
+   },
+   "knownAs": "Single-list vote",
+   "summary": "Parliamentary elections were held in Germany on 12 November 1933. They were the first since the Nazi Party seized complete power with the enactment of the Enabling Act in March.",
+   "unfree": "unfree",
+   "seatLeader": "Nazi Party and guests"
+  },
+  {
+   "id": "1936",
+   "label": "1936",
+   "year": 1936,
+   "date": "29 March 1936",
+   "era": "dictatorship",
+   "totalSeats": 741,
+   "majoritySeats": 371,
+   "turnout": 99.0,
+   "parties": [
+    {
+     "name": "Nazi Party and guests",
+     "leader": null,
+     "seats": 741,
+     "seatChange": null,
+     "votes": 44462458,
+     "share": 98.8,
+     "swing": null
+    },
+    {
+     "name": "NSDAP",
+     "leader": "Adolf Hitler",
+     "seats": 741,
+     "seatChange": 80.0,
+     "votes": 44462458,
+     "share": 98.8,
+     "swing": 6.7
+    }
+   ],
+   "pmBefore": {
+    "name": "Adolf Hitler",
+    "party": "NSDAP"
+   },
+   "pmAfter": {
+    "name": "Adolf Hitler",
+    "party": "NSDAP"
+   },
+   "knownAs": "Single-list vote",
+   "summary": "Parliamentary elections were held in Germany on 29 March 1936. They took the form of a single-question referendum, asking voters whether they approved of the military occupation of the Rhineland and a single party list for the new Reichstag composed exclusively of Nazis and 19 nominally independent \"guests\" of the party.",
+   "unfree": "unfree",
+   "seatLeader": "Nazi Party and guests"
+  },
+  {
+   "id": "1938",
+   "label": "1938",
+   "year": 1938,
+   "date": "10 April 1938",
+   "era": "dictatorship",
+   "totalSeats": 814,
+   "majoritySeats": 408,
+   "turnout": 99.6,
+   "parties": [
+    {
+     "name": "Nazi Party and guests",
+     "leader": null,
+     "seats": 814,
+     "seatChange": null,
+     "votes": 48905004,
+     "share": 99.08,
+     "swing": null
+    },
+    {
+     "name": "NSDAP",
+     "leader": "Adolf Hitler",
+     "seats": 814,
+     "seatChange": 73.0,
+     "votes": 48905004,
+     "share": 99.1,
+     "swing": 0.3
+    }
+   ],
+   "pmBefore": {
+    "name": "Adolf Hitler",
+    "party": "NSDAP"
+   },
+   "pmAfter": {
+    "name": "Adolf Hitler",
+    "party": "NSDAP"
+   },
+   "knownAs": "Single-list vote",
+   "summary": "Parliamentary elections were held in Germany (including recently annexed Austria) on 10 April 1938. They were the final elections to the Reichstag during Nazi rule and took the form of a single-question referendum asking whether voters approved of a single list of Nazi and 11 pro-Nazi \"guest\" candidates for the 814-member Reichstag, as well as the recent annexation of Austria.",
+   "unfree": "unfree",
+   "seatLeader": "Nazi Party and guests"
+  },
+  {
+   "id": "1949",
+   "label": "1949",
+   "year": 1949,
+   "date": "14 August 1949",
+   "era": "bonn",
+   "totalSeats": 402,
+   "majoritySeats": 202,
+   "turnout": 78.5,
+   "parties": [
+    {
+     "name": "CDU/CSU",
+     "leader": "Konrad Adenauer",
+     "seats": 139,
+     "seatChange": null,
+     "votes": 7359084,
+     "share": 31.0,
+     "swing": null
+    },
+    {
+     "name": "SPD",
+     "leader": "Kurt Schumacher",
+     "seats": 131,
+     "seatChange": null,
+     "votes": 6934975,
+     "share": 29.2,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 96,
+     "seatChange": 35.0,
+     "votes": 6934975,
+     "share": 29.22,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic Union",
+     "leader": null,
+     "seats": 91,
+     "seatChange": 24.0,
+     "votes": 5978636,
+     "share": 25.19,
+     "swing": null
+    },
+    {
+     "name": "Christian Social Union",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 0.0,
+     "votes": 1380448,
+     "share": 5.82,
+     "swing": null
+    },
+    {
+     "name": "DP",
+     "leader": "Heinrich Hellwege",
+     "seats": 17,
+     "seatChange": null,
+     "votes": 939934,
+     "share": 4.0,
+     "swing": null
+    },
+    {
+     "name": "KPD",
+     "leader": "Max Reimann",
+     "seats": 15,
+     "seatChange": null,
+     "votes": 1361706,
+     "share": 5.7,
+     "swing": null
+    },
+    {
+     "name": "Free Democratic Party",
+     "leader": "Franz Blücher",
+     "seats": 12,
+     "seatChange": 40.0,
+     "votes": 2829920,
+     "share": 11.92,
+     "swing": null
+    },
+    {
+     "name": "Bavaria Party",
+     "leader": "Joseph Baumgartner",
+     "seats": 11,
+     "seatChange": 6.0,
+     "votes": 986478,
+     "share": 4.16,
+     "swing": null
+    },
+    {
+     "name": "German Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 12.0,
+     "votes": 939934,
+     "share": 3.96,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": 1141647,
+     "share": 4.81,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Konrad Adenauer",
+    "party": "CDU"
+   },
+   "knownAs": "Founding Bundestag election",
+   "summary": "A federal election was held in West Germany on 14 August 1949 to elect the members of the first Bundestag, with a further eight seats elected in West Berlin between 1949 and January 1952 and another eleven between February 1952 and 1953. They were the first free federal elections in West Germany since 1933 and the first after the division of the country.",
+   "unfree": null,
+   "seatLeader": "CDU/CSU"
+  },
+  {
+   "id": "1953",
+   "label": "1953",
+   "year": 1953,
+   "date": "6 September 1953",
+   "era": "bonn",
+   "totalSeats": 487,
+   "majoritySeats": 244,
+   "turnout": 86.0,
+   "parties": [
+    {
+     "name": "CDU/CSU",
+     "leader": "Konrad Adenauer",
+     "seats": 243,
+     "seatChange": 104.0,
+     "votes": 12443981,
+     "share": 45.2,
+     "swing": 14.2
+    },
+    {
+     "name": "SPD",
+     "leader": "Erich Ollenhauer",
+     "seats": 151,
+     "seatChange": 20.0,
+     "votes": 7944943,
+     "share": 28.8,
+     "swing": -0.4
+    },
+    {
+     "name": "FDP",
+     "leader": "Franz Blücher",
+     "seats": 48,
+     "seatChange": -4.0,
+     "votes": 2629163,
+     "share": 9.5,
+     "swing": -2.4
+    },
+    {
+     "name": "GB/BHE",
+     "leader": "Waldemar Kraft",
+     "seats": 27,
+     "seatChange": null,
+     "votes": 1616953,
+     "share": 5.9,
+     "swing": null
+    },
+    {
+     "name": "DP",
+     "leader": "Heinrich Hellwege",
+     "seats": 15,
+     "seatChange": -2.0,
+     "votes": 896128,
+     "share": 3.3,
+     "swing": -0.7
+    },
+    {
+     "name": "Centre",
+     "leader": "Johannes Brockmann",
+     "seats": 3,
+     "seatChange": -7.0,
+     "votes": 217078,
+     "share": 0.8,
+     "swing": -2.3
+    }
+   ],
+   "pmBefore": {
+    "name": "Konrad Adenauer",
+    "party": "CDU"
+   },
+   "pmAfter": {
+    "name": "Konrad Adenauer",
+    "party": "CDU"
+   },
+   "knownAs": null,
+   "summary": "The CDU/CSU formed a center-right coalition government with the FDP, DP and GB/BHE, leaving the SPD as the main opposition. In comparison to the 1949 election where ten parties won seats, only six parties won seats in the 1953 election, thus entailing a consolidation of the party system.",
+   "unfree": null,
+   "seatLeader": "CDU/CSU"
+  },
+  {
+   "id": "1957",
+   "label": "1957",
+   "year": 1957,
+   "date": "15 September 1957",
+   "era": "bonn",
+   "totalSeats": 497,
+   "majoritySeats": 249,
+   "turnout": 87.8,
+   "parties": [
+    {
+     "name": "CDU/CSU",
+     "leader": "Konrad Adenauer",
+     "seats": 270,
+     "seatChange": 27.0,
+     "votes": 15008399,
+     "share": 50.2,
+     "swing": 5.0
+    },
+    {
+     "name": "SPD",
+     "leader": "Erich Ollenhauer",
+     "seats": 169,
+     "seatChange": 18.0,
+     "votes": 9495571,
+     "share": 31.8,
+     "swing": 3.0
+    },
+    {
+     "name": "FDP",
+     "leader": "Reinhold Maier",
+     "seats": 41,
+     "seatChange": -7.0,
+     "votes": 2307135,
+     "share": 7.7,
+     "swing": -1.8
+    },
+    {
+     "name": "DP",
+     "leader": "Heinrich Hellwege",
+     "seats": 17,
+     "seatChange": 2.0,
+     "votes": 1007282,
+     "share": 3.4,
+     "swing": 0.1
+    }
+   ],
+   "pmBefore": {
+    "name": "Konrad Adenauer",
+    "party": "CDU"
+   },
+   "pmAfter": {
+    "name": "Konrad Adenauer",
+    "party": "CDU"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held in West Germany on 15 September 1957 to elect the members of the third Bundestag. The Christian Democratic Union and its longtime ally, the Christian Social Union in Bavaria, won a sweeping victory, taking 270 seats in the Bundestag to win the first–and, to date, only–absolute majority for a single German parliamentary group in a free election.",
+   "unfree": null,
+   "seatLeader": "CDU/CSU"
+  },
+  {
+   "id": "1961",
+   "label": "1961",
+   "year": 1961,
+   "date": "17 September 1961",
+   "era": "bonn",
+   "totalSeats": 499,
+   "majoritySeats": 250,
+   "turnout": 87.7,
+   "parties": [
+    {
+     "name": "CDU/CSU",
+     "leader": "Konrad Adenauer",
+     "seats": 242,
+     "seatChange": -28.0,
+     "votes": 14298372,
+     "share": 45.3,
+     "swing": -4.9
+    },
+    {
+     "name": "SPD",
+     "leader": "Willy Brandt",
+     "seats": 190,
+     "seatChange": 21.0,
+     "votes": 11427355,
+     "share": 36.2,
+     "swing": 4.4
+    },
+    {
+     "name": "FDP",
+     "leader": "Erich Mende",
+     "seats": 67,
+     "seatChange": 26.0,
+     "votes": 4028766,
+     "share": 12.8,
+     "swing": 5.1
+    }
+   ],
+   "pmBefore": {
+    "name": "Konrad Adenauer",
+    "party": "CDU"
+   },
+   "pmAfter": {
+    "name": "Konrad Adenauer",
+    "party": "CDU"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held in West Germany on 17 September 1961 to elect the members of the fourth Bundestag. The CDU/CSU remained the largest faction, winning 242 of the 499 seats.",
+   "unfree": null,
+   "seatLeader": "CDU/CSU"
+  },
+  {
+   "id": "1965",
+   "label": "1965",
+   "year": 1965,
+   "date": "19 September 1965",
+   "era": "bonn",
+   "totalSeats": 496,
+   "majoritySeats": 249,
+   "turnout": 86.8,
+   "parties": [
+    {
+     "name": "CDU/CSU",
+     "leader": "Ludwig Erhard",
+     "seats": 245,
+     "seatChange": 3.0,
+     "votes": 15524068,
+     "share": 47.6,
+     "swing": 2.3
+    },
+    {
+     "name": "SPD",
+     "leader": "Willy Brandt",
+     "seats": 202,
+     "seatChange": 12.0,
+     "votes": 12813186,
+     "share": 39.3,
+     "swing": 3.1
+    },
+    {
+     "name": "FDP",
+     "leader": "Erich Mende",
+     "seats": 49,
+     "seatChange": -18.0,
+     "votes": 3096739,
+     "share": 9.5,
+     "swing": -3.3
+    }
+   ],
+   "pmBefore": {
+    "name": "Ludwig Erhard",
+    "party": "CDU"
+   },
+   "pmAfter": {
+    "name": "Ludwig Erhard",
+    "party": "CDU"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held in West Germany on 19 September 1965 to elect the members of the 5th Bundestag. The CDU/CSU remained the largest faction, while the Social Democratic Party remained the largest single party in the Bundestag, winning 217 of the 518 seats (including 15 of the 22 non-voting delegates for West Berlin).",
+   "unfree": null,
+   "seatLeader": "CDU/CSU"
+  },
+  {
+   "id": "1969",
+   "label": "1969",
+   "year": 1969,
+   "date": "28 September 1969",
+   "era": "bonn",
+   "totalSeats": 496,
+   "majoritySeats": 249,
+   "turnout": 86.7,
+   "parties": [
+    {
+     "name": "CDU/CSU",
+     "leader": "Kurt Georg Kiesinger",
+     "seats": 242,
+     "seatChange": -3.0,
+     "votes": 15195187,
+     "share": 46.1,
+     "swing": -1.5
+    },
+    {
+     "name": "SPD",
+     "leader": "Willy Brandt",
+     "seats": 224,
+     "seatChange": 22.0,
+     "votes": 14065716,
+     "share": 42.7,
+     "swing": 3.4
+    },
+    {
+     "name": "FDP",
+     "leader": "Walter Scheel",
+     "seats": 30,
+     "seatChange": -19.0,
+     "votes": 1903422,
+     "share": 5.8,
+     "swing": -3.7
+    }
+   ],
+   "pmBefore": {
+    "name": "Kurt Georg Kiesinger",
+    "party": "CDU"
+   },
+   "pmAfter": {
+    "name": "Willy Brandt",
+    "party": "SPD"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held in West Germany on 28 September 1969 to elect the members of the 6th Bundestag. The CDU/CSU remained the largest faction and the Social Democratic Party (SDP) remained the largest single party in the Bundestag, winning 237 of the 518 seats.",
+   "unfree": null,
+   "seatLeader": "CDU/CSU"
+  },
+  {
+   "id": "1972",
+   "label": "1972",
+   "year": 1972,
+   "date": "19 November 1972",
+   "era": "bonn",
+   "totalSeats": 496,
+   "majoritySeats": 249,
+   "turnout": 91.1,
+   "parties": [
+    {
+     "name": "SPD",
+     "leader": "Willy Brandt",
+     "seats": 230,
+     "seatChange": 6.0,
+     "votes": 17175169,
+     "share": 45.8,
+     "swing": 3.1
+    },
+    {
+     "name": "CDU/CSU",
+     "leader": "Rainer Barzel",
+     "seats": 225,
+     "seatChange": -17.0,
+     "votes": 16806020,
+     "share": 44.9,
+     "swing": -1.2
+    },
+    {
+     "name": "FDP",
+     "leader": "Walter Scheel",
+     "seats": 41,
+     "seatChange": 11.0,
+     "votes": 3129982,
+     "share": 8.4,
+     "swing": 2.6
+    }
+   ],
+   "pmBefore": {
+    "name": "Willy Brandt",
+    "party": "SPD"
+   },
+   "pmAfter": {
+    "name": "Willy Brandt",
+    "party": "SPD"
+   },
+   "knownAs": "The Willy election",
+   "summary": "A federal election was held in West Germany on 19 November 1972 to elect the members of the seventh Bundestag. In the first snap elections since the resumption of democratic elections in 1949, the Social Democratic Party (SPD) emerged as the largest party in parliament, winning 230 of the 496 seats.",
+   "unfree": null,
+   "seatLeader": "SPD"
+  },
+  {
+   "id": "1976",
+   "label": "1976",
+   "year": 1976,
+   "date": "3 October 1976",
+   "era": "bonn",
+   "totalSeats": 496,
+   "majoritySeats": 249,
+   "turnout": 90.7,
+   "parties": [
+    {
+     "name": "CDU/CSU",
+     "leader": "Helmut Kohl",
+     "seats": 243,
+     "seatChange": 18.0,
+     "votes": 18394801,
+     "share": 48.6,
+     "swing": 3.7
+    },
+    {
+     "name": "SPD",
+     "leader": "Helmut Schmidt",
+     "seats": 214,
+     "seatChange": -16.0,
+     "votes": 16099019,
+     "share": 42.6,
+     "swing": -3.2
+    },
+    {
+     "name": "FDP",
+     "leader": "Hans-Dietrich Genscher",
+     "seats": 39,
+     "seatChange": -2.0,
+     "votes": 2995085,
+     "share": 7.9,
+     "swing": -0.5
+    }
+   ],
+   "pmBefore": {
+    "name": "Helmut Schmidt",
+    "party": "SPD"
+   },
+   "pmAfter": {
+    "name": "Helmut Schmidt",
+    "party": "SPD"
+   },
+   "knownAs": null,
+   "summary": "The coalition of the SPD and the FDP wanted to be re-elected, with the SPD, since 1974 led by Helmut Schmidt, the party's candidate for Chancellor. The CDU and the CSU tried to achieve an absolute majority of the votes to make CDU chairman Helmut Kohl Chancellor, but they fell six seats short of their target.",
+   "unfree": null,
+   "seatLeader": "CDU/CSU"
+  },
+  {
+   "id": "1980",
+   "label": "1980",
+   "year": 1980,
+   "date": "5 October 1980",
+   "era": "bonn",
+   "totalSeats": 497,
+   "majoritySeats": 249,
+   "turnout": 88.6,
+   "parties": [
+    {
+     "name": "CDU/CSU",
+     "leader": "Franz-Josef Strauss",
+     "seats": 226,
+     "seatChange": -17.0,
+     "votes": 16897659,
+     "share": 44.5,
+     "swing": -4.1
+    },
+    {
+     "name": "SPD",
+     "leader": "Helmut Schmidt",
+     "seats": 218,
+     "seatChange": 4.0,
+     "votes": 16260677,
+     "share": 42.9,
+     "swing": 0.3
+    },
+    {
+     "name": "FDP",
+     "leader": "Hans-Dietrich Genscher",
+     "seats": 53,
+     "seatChange": 14.0,
+     "votes": 4030999,
+     "share": 10.6,
+     "swing": 2.7
+    }
+   ],
+   "pmBefore": {
+    "name": "Helmut Schmidt",
+    "party": "SPD"
+   },
+   "pmAfter": {
+    "name": "Helmut Schmidt",
+    "party": "SPD"
+   },
+   "knownAs": null,
+   "summary": "Chancellor Helmut Schmidt of the SPD-FDP coalition wanted to be re-elected. The CDU/CSU candidate for Chancellor was CSU leader Franz Josef Strauß.",
+   "unfree": null,
+   "seatLeader": "CDU/CSU"
+  },
+  {
+   "id": "1983",
+   "label": "1983",
+   "year": 1983,
+   "date": "6 March 1983",
+   "era": "bonn",
+   "totalSeats": 498,
+   "majoritySeats": 250,
+   "turnout": 89.1,
+   "parties": [
+    {
+     "name": "CDU/CSU",
+     "leader": "Helmut Kohl",
+     "seats": 244,
+     "seatChange": 18.0,
+     "votes": 18998545,
+     "share": 48.8,
+     "swing": 4.3
+    },
+    {
+     "name": "SPD",
+     "leader": "Hans-Jochen Vogel",
+     "seats": 193,
+     "seatChange": -25.0,
+     "votes": 14865807,
+     "share": 38.2,
+     "swing": -4.7
+    },
+    {
+     "name": "FDP",
+     "leader": "Hans-Dietrich Genscher",
+     "seats": 34,
+     "seatChange": -19.0,
+     "votes": 2706942,
+     "share": 6.9,
+     "swing": -3.7
+    },
+    {
+     "name": "Greens",
+     "leader": "Petra Kelly",
+     "seats": 27,
+     "seatChange": 27.0,
+     "votes": 2167431,
+     "share": 5.6,
+     "swing": 4.1
+    }
+   ],
+   "pmBefore": {
+    "name": "Helmut Kohl",
+    "party": "CDU"
+   },
+   "pmAfter": {
+    "name": "Helmut Kohl",
+    "party": "CDU"
+   },
+   "knownAs": null,
+   "summary": "The SPD/FDP coalition under Chancellor Helmut Schmidt was returned to power in the 1980 West German federal election. The coalition parties grew more and more apart over economic policies.",
+   "unfree": null,
+   "seatLeader": "CDU/CSU"
+  },
+  {
+   "id": "1987",
+   "label": "1987",
+   "year": 1987,
+   "date": "25 January 1987",
+   "era": "bonn",
+   "totalSeats": 497,
+   "majoritySeats": 249,
+   "turnout": 84.3,
+   "parties": [
+    {
+     "name": "CDU/CSU",
+     "leader": "Helmut Kohl",
+     "seats": 223,
+     "seatChange": -21.0,
+     "votes": 16761572,
+     "share": 44.3,
+     "swing": -4.5
+    },
+    {
+     "name": "SPD",
+     "leader": "Johannes Rau",
+     "seats": 186,
+     "seatChange": -7.0,
+     "votes": 14025763,
+     "share": 37.0,
+     "swing": -1.2
+    },
+    {
+     "name": "FDP",
+     "leader": "Martin Bangemann",
+     "seats": 46,
+     "seatChange": 12.0,
+     "votes": 3440911,
+     "share": 9.1,
+     "swing": 2.2
+    },
+    {
+     "name": "Greens",
+     "leader": "Petra Kelly",
+     "seats": 42,
+     "seatChange": 15.0,
+     "votes": 3126256,
+     "share": 8.3,
+     "swing": 2.7
+    }
+   ],
+   "pmBefore": {
+    "name": "Helmut Kohl",
+    "party": "CDU"
+   },
+   "pmAfter": {
+    "name": "Helmut Kohl",
+    "party": "CDU"
+   },
+   "knownAs": null,
+   "summary": "The SPD nominated Johannes Rau, their vice chairman and the Minister-President of North Rhine-Westphalia, as their candidate for Chancellor. However, the SPD suffered from internal divisions and competition with the Greens.",
+   "unfree": null,
+   "seatLeader": "CDU/CSU"
+  },
+  {
+   "id": "1990",
+   "label": "1990",
+   "year": 1990,
+   "date": "2 December 1990",
+   "era": "berlin",
+   "totalSeats": 662,
+   "majoritySeats": 332,
+   "turnout": 77.8,
+   "parties": [
+    {
+     "name": "CDU/CSU",
+     "leader": "Helmut Kohl",
+     "seats": 319,
+     "seatChange": 14.0,
+     "votes": 20358096,
+     "share": 43.8,
+     "swing": -0.5
+    },
+    {
+     "name": "SPD",
+     "leader": "Oskar Lafontaine",
+     "seats": 239,
+     "seatChange": 13.0,
+     "votes": 15545366,
+     "share": 33.5,
+     "swing": -3.5
+    },
+    {
+     "name": "FDP",
+     "leader": "Otto Graf Lambsdorff",
+     "seats": 79,
+     "seatChange": 22.0,
+     "votes": 5123233,
+     "share": 11.0,
+     "swing": 1.9
+    },
+    {
+     "name": "PDS",
+     "leader": "Gregor Gysi",
+     "seats": 17,
+     "seatChange": -7.0,
+     "votes": 1129578,
+     "share": 2.4,
+     "swing": null
+    },
+    {
+     "name": "Greens (East)",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 1.0,
+     "votes": 559207,
+     "share": 1.2,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Helmut Kohl",
+    "party": "CDU"
+   },
+   "pmAfter": {
+    "name": "Helmut Kohl",
+    "party": "CDU"
+   },
+   "knownAs": "Reunification election",
+   "summary": "A federal election was held in recently united Germany on 2 December 1990 to elect the members of the 12th Bundestag, within the regular time of nearly four years after the January 1987 West German federal election.",
+   "unfree": null,
+   "seatLeader": "CDU/CSU"
+  },
+  {
+   "id": "1994",
+   "label": "1994",
+   "year": 1994,
+   "date": "16 October 1994",
+   "era": "berlin",
+   "totalSeats": 672,
+   "majoritySeats": 337,
+   "turnout": 79.0,
+   "parties": [
+    {
+     "name": "CDU/CSU",
+     "leader": "Helmut Kohl",
+     "seats": 294,
+     "seatChange": -25.0,
+     "votes": 19517156,
+     "share": 41.4,
+     "swing": -2.4
+    },
+    {
+     "name": "SPD",
+     "leader": "Rudolf Scharping",
+     "seats": 252,
+     "seatChange": 13.0,
+     "votes": 17140354,
+     "share": 36.4,
+     "swing": 2.9
+    },
+    {
+     "name": "Greens",
+     "leader": "Ludger Volmer &",
+     "seats": 49,
+     "seatChange": 41.0,
+     "votes": 3424315,
+     "share": 7.3,
+     "swing": 2.2
+    },
+    {
+     "name": "FDP",
+     "leader": "Klaus Kinkel",
+     "seats": 47,
+     "seatChange": -32.0,
+     "votes": 3258407,
+     "share": 6.9,
+     "swing": -4.1
+    },
+    {
+     "name": "PDS",
+     "leader": "Lothar Bisky",
+     "seats": 30,
+     "seatChange": 13.0,
+     "votes": 2066176,
+     "share": 4.4,
+     "swing": 2.0
+    }
+   ],
+   "pmBefore": {
+    "name": "Helmut Kohl",
+    "party": "CDU"
+   },
+   "pmAfter": {
+    "name": "Helmut Kohl",
+    "party": "CDU"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held in Germany on 16 October 1994 to elect the members of the 13th Bundestag. The CDU/CSU alliance led by Helmut Kohl remained the largest faction in parliament, with Kohl remaining Chancellor in a narrowly re-elected coalition with the Free Democratic Party (FDP).",
+   "unfree": null,
+   "seatLeader": "CDU/CSU"
+  },
+  {
+   "id": "1998",
+   "label": "1998",
+   "year": 1998,
+   "date": "27 September 1998",
+   "era": "berlin",
+   "totalSeats": 669,
+   "majoritySeats": 335,
+   "turnout": 82.2,
+   "parties": [
+    {
+     "name": "SPD",
+     "leader": "Gerhard Schröder",
+     "seats": 298,
+     "seatChange": 46.0,
+     "votes": 20181269,
+     "share": 40.9,
+     "swing": 4.5
+    },
+    {
+     "name": "CDU/CSU",
+     "leader": "Helmut Kohl",
+     "seats": 245,
+     "seatChange": -49.0,
+     "votes": 17329388,
+     "share": 35.1,
+     "swing": -6.3
+    },
+    {
+     "name": "Greens",
+     "leader": "Joschka Fischer",
+     "seats": 47,
+     "seatChange": -2.0,
+     "votes": 3301624,
+     "share": 6.7,
+     "swing": -0.6
+    },
+    {
+     "name": "FDP",
+     "leader": "Wolfgang Gerhardt",
+     "seats": 43,
+     "seatChange": -4.0,
+     "votes": 3080955,
+     "share": 6.2,
+     "swing": -0.7
+    },
+    {
+     "name": "PDS",
+     "leader": "Lothar Bisky",
+     "seats": 36,
+     "seatChange": 6.0,
+     "votes": 2515454,
+     "share": 5.1,
+     "swing": 0.7
+    }
+   ],
+   "pmBefore": {
+    "name": "Helmut Kohl",
+    "party": "CDU"
+   },
+   "pmAfter": {
+    "name": "Gerhard Schröder",
+    "party": "SPD"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held in Germany on 27 September 1998 to elect the members of the 14th Bundestag. The Social Democratic Party (SPD) emerged as the largest faction in parliament for the first time since 1972, with its leader Gerhard Schröder becoming chancellor.",
+   "unfree": null,
+   "seatLeader": "SPD"
+  },
+  {
+   "id": "2002",
+   "label": "2002",
+   "year": 2002,
+   "date": "22 September 2002",
+   "era": "berlin",
+   "totalSeats": 603,
+   "majoritySeats": 302,
+   "turnout": 79.1,
+   "parties": [
+    {
+     "name": "SPD",
+     "leader": "Gerhard Schröder",
+     "seats": 251,
+     "seatChange": -47.0,
+     "votes": 18488668,
+     "share": 38.5,
+     "swing": -2.4
+    },
+    {
+     "name": "CDU/CSU",
+     "leader": "Edmund Stoiber",
+     "seats": 248,
+     "seatChange": 3.0,
+     "votes": 18482641,
+     "share": 38.5,
+     "swing": 3.4
+    },
+    {
+     "name": "Greens",
+     "leader": "Joschka Fischer",
+     "seats": 55,
+     "seatChange": 8.0,
+     "votes": 4110355,
+     "share": 8.6,
+     "swing": 1.9
+    },
+    {
+     "name": "FDP",
+     "leader": "Guido Westerwelle",
+     "seats": 47,
+     "seatChange": 4.0,
+     "votes": 3538815,
+     "share": 7.4,
+     "swing": 1.2
+    },
+    {
+     "name": "PDS",
+     "leader": "Gabi Zimmer",
+     "seats": 2,
+     "seatChange": -34.0,
+     "votes": 1916702,
+     "share": 4.0,
+     "swing": -1.1
+    }
+   ],
+   "pmBefore": {
+    "name": "Gerhard Schröder",
+    "party": "SPD"
+   },
+   "pmAfter": {
+    "name": "Gerhard Schröder",
+    "party": "SPD"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held in Germany on 22 September 2002 to elect the members of the 15th Bundestag. Incumbent Chancellor Gerhard Schröder's centre-left \"red-green\" governing coalition retained a narrow majority, and the Social Democratic Party (SPD) retained their status as the largest party in the Bundestag by three seats.",
+   "unfree": null,
+   "seatLeader": "SPD"
+  },
+  {
+   "id": "2005",
+   "label": "2005",
+   "year": 2005,
+   "date": "18 September 2005",
+   "era": "berlin",
+   "totalSeats": 614,
+   "majoritySeats": 308,
+   "turnout": 77.7,
+   "parties": [
+    {
+     "name": "CDU/CSU",
+     "leader": "Angela Merkel",
+     "seats": 226,
+     "seatChange": -22.0,
+     "votes": 16631049,
+     "share": 35.2,
+     "swing": -3.3
+    },
+    {
+     "name": "SPD",
+     "leader": "Gerhard Schröder",
+     "seats": 222,
+     "seatChange": -29.0,
+     "votes": 16194665,
+     "share": 34.2,
+     "swing": -4.3
+    },
+    {
+     "name": "FDP",
+     "leader": "Guido Westerwelle",
+     "seats": 61,
+     "seatChange": 14.0,
+     "votes": 4648144,
+     "share": 9.8,
+     "swing": 2.4
+    },
+    {
+     "name": "The Left.PDS",
+     "leader": "Gregor Gysi &",
+     "seats": 54,
+     "seatChange": 52.0,
+     "votes": 4118194,
+     "share": 8.7,
+     "swing": 4.7
+    },
+    {
+     "name": "Greens",
+     "leader": null,
+     "seats": 51,
+     "seatChange": -4.0,
+     "votes": 3838326,
+     "share": 8.1,
+     "swing": -0.5
+    }
+   ],
+   "pmBefore": {
+    "name": "Gerhard Schröder",
+    "party": "SPD"
+   },
+   "pmAfter": {
+    "name": "Angela Merkel",
+    "party": "CDU"
+   },
+   "knownAs": "Merkel's first win",
+   "summary": "A federal election was held in Germany on 18 September 2005 to elect the members of the 16th Bundestag. The snap election was called after the government's defeat in the North Rhine-Westphalia state election, which caused them to intentionally lose a motion of confidence to trigger an early federal election.",
+   "unfree": null,
+   "seatLeader": "CDU/CSU"
+  },
+  {
+   "id": "2009",
+   "label": "2009",
+   "year": 2009,
+   "date": "27 September 2009",
+   "era": "berlin",
+   "totalSeats": 622,
+   "majoritySeats": 312,
+   "turnout": 70.8,
+   "parties": [
+    {
+     "name": "CDU/CSU",
+     "leader": "Angela Merkel",
+     "seats": 239,
+     "seatChange": 13.0,
+     "votes": 14658515,
+     "share": 33.8,
+     "swing": -1.4
+    },
+    {
+     "name": "SPD",
+     "leader": "Frank-Walter Steinmeier",
+     "seats": 146,
+     "seatChange": -76.0,
+     "votes": 9990488,
+     "share": 23.0,
+     "swing": -11.2
+    },
+    {
+     "name": "FDP",
+     "leader": "Guido Westerwelle",
+     "seats": 93,
+     "seatChange": 32.0,
+     "votes": 6316080,
+     "share": 14.6,
+     "swing": 4.8
+    },
+    {
+     "name": "Left",
+     "leader": "Gregor Gysi &",
+     "seats": 76,
+     "seatChange": 22.0,
+     "votes": 5155933,
+     "share": 11.9,
+     "swing": 3.2
+    },
+    {
+     "name": "Greens",
+     "leader": null,
+     "seats": 68,
+     "seatChange": 17.0,
+     "votes": 4643272,
+     "share": 10.7,
+     "swing": 2.6
+    }
+   ],
+   "pmBefore": {
+    "name": "Angela Merkel",
+    "party": "CDU"
+   },
+   "pmAfter": {
+    "name": "Angela Merkel",
+    "party": "CDU"
+   },
+   "knownAs": null,
+   "summary": "The Christian Democratic Union (CDU), its Bavarian sister party, the Christian Social Union (CSU), and the Free Democratic Party (FDP) won the election, and the three parties formed a new centre-right government with Angela Merkel as chancellor.",
+   "unfree": null,
+   "seatLeader": "CDU/CSU"
+  },
+  {
+   "id": "2013",
+   "label": "2013",
+   "year": 2013,
+   "date": "22 September 2013",
+   "era": "berlin",
+   "totalSeats": 631,
+   "majoritySeats": 316,
+   "turnout": 71.5,
+   "parties": [
+    {
+     "name": "CDU/CSU",
+     "leader": "Angela Merkel",
+     "seats": 311,
+     "seatChange": 72.0,
+     "votes": 18165446,
+     "share": 41.5,
+     "swing": 7.7
+    },
+    {
+     "name": "SPD",
+     "leader": "Peer Steinbrück",
+     "seats": 193,
+     "seatChange": 47.0,
+     "votes": 11252215,
+     "share": 25.7,
+     "swing": 2.7
+    },
+    {
+     "name": "Left",
+     "leader": "Gregor Gysi",
+     "seats": 64,
+     "seatChange": -12.0,
+     "votes": 3755699,
+     "share": 8.6,
+     "swing": -3.3
+    },
+    {
+     "name": "Greens",
+     "leader": "Jürgen Trittin & Katrin Göring-Eckardt",
+     "seats": 63,
+     "seatChange": -5.0,
+     "votes": 3694057,
+     "share": 8.4,
+     "swing": -2.3
+    },
+    {
+     "name": "FDP",
+     "leader": "Rainer Brüderle",
+     "seats": 0,
+     "seatChange": -93.0,
+     "votes": 2083533,
+     "share": 4.8,
+     "swing": -9.8
+    }
+   ],
+   "pmBefore": {
+    "name": "Angela Merkel",
+    "party": "CDU"
+   },
+   "pmAfter": {
+    "name": "Angela Merkel",
+    "party": "CDU"
+   },
+   "knownAs": null,
+   "summary": "A federal election was held on 22 September to elect the members of the 18th Bundestag of Germany. At stake were all 598 seats to the Bundestag, plus 33 overhang seats determined thereafter.",
+   "unfree": null,
+   "seatLeader": "CDU/CSU"
+  },
+  {
+   "id": "2017",
+   "label": "2017",
+   "year": 2017,
+   "date": "24 September 2017",
+   "era": "berlin",
+   "totalSeats": 709,
+   "majoritySeats": 355,
+   "turnout": 76.2,
+   "parties": [
+    {
+     "name": "CDU/CSU",
+     "leader": "Angela Merkel",
+     "seats": 246,
+     "seatChange": -65.0,
+     "votes": 15317344,
+     "share": 32.9,
+     "swing": -8.6
+    },
+    {
+     "name": "SPD",
+     "leader": "Martin Schulz",
+     "seats": 153,
+     "seatChange": -40.0,
+     "votes": 9539381,
+     "share": 20.5,
+     "swing": -5.2
+    },
+    {
+     "name": "AfD",
+     "leader": "Alexander Gauland",
+     "seats": 94,
+     "seatChange": 94.0,
+     "votes": 5878115,
+     "share": 12.6,
+     "swing": 7.9
+    },
+    {
+     "name": "FDP",
+     "leader": "Christian Lindner",
+     "seats": 80,
+     "seatChange": 80.0,
+     "votes": 4999449,
+     "share": 10.7,
+     "swing": 5.9
+    },
+    {
+     "name": "Left",
+     "leader": "Dietmar Bartsch &",
+     "seats": 69,
+     "seatChange": 5.0,
+     "votes": 4297270,
+     "share": 9.2,
+     "swing": 0.6
+    },
+    {
+     "name": "Greens",
+     "leader": null,
+     "seats": 67,
+     "seatChange": 4.0,
+     "votes": 4158400,
+     "share": 8.9,
+     "swing": 0.5
+    }
+   ],
+   "pmBefore": {
+    "name": "Angela Merkel",
+    "party": "CDU"
+   },
+   "pmAfter": {
+    "name": "Angela Merkel",
+    "party": "CDU"
+   },
+   "knownAs": null,
+   "summary": "The Christian Democratic Union of Germany and the Christian Social Union of Bavaria (CDU/CSU), led by incumbent chancellor Angela Merkel, won the highest percentage of the vote with 33%, though it suffered a large swing against it of more than 8%.",
+   "unfree": null,
+   "seatLeader": "CDU/CSU"
+  },
+  {
+   "id": "2021",
+   "label": "2021",
+   "year": 2021,
+   "date": "26 September 2021",
+   "era": "berlin",
+   "totalSeats": 735,
+   "majoritySeats": 368,
+   "turnout": 76.4,
+   "parties": [
+    {
+     "name": "SPD",
+     "leader": "Olaf Scholz",
+     "seats": 206,
+     "seatChange": 53.0,
+     "votes": 11901556,
+     "share": 25.7,
+     "swing": 5.2
+    },
+    {
+     "name": "CDU/CSU",
+     "leader": "Armin Laschet",
+     "seats": 197,
+     "seatChange": -49.0,
+     "votes": 11177746,
+     "share": 24.1,
+     "swing": -8.8
+    },
+    {
+     "name": "Greens",
+     "leader": "Annalena Baerbock",
+     "seats": 118,
+     "seatChange": 51.0,
+     "votes": 6814401,
+     "share": 14.7,
+     "swing": 5.8
+    },
+    {
+     "name": "FDP",
+     "leader": "Christian Lindner",
+     "seats": 91,
+     "seatChange": 11.0,
+     "votes": 5291010,
+     "share": 11.4,
+     "swing": 0.7
+    },
+    {
+     "name": "AfD",
+     "leader": "Alice Weidel &",
+     "seats": 83,
+     "seatChange": -11.0,
+     "votes": 4809228,
+     "share": 10.4,
+     "swing": -2.2
+    },
+    {
+     "name": "Left",
+     "leader": null,
+     "seats": 39,
+     "seatChange": -30.0,
+     "votes": 2255860,
+     "share": 4.9,
+     "swing": -4.3
+    },
+    {
+     "name": "SSW",
+     "leader": "Stefan Seidler",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": 55578,
+     "share": 0.12,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Angela Merkel",
+    "party": "CDU"
+   },
+   "pmAfter": {
+    "name": "Olaf Scholz",
+    "party": "SPD"
+   },
+   "knownAs": "End of the Merkel era",
+   "summary": "A federal election was held in Germany on 26 September 2021 to elect the members of the 20th Bundestag. State elections in Berlin and Mecklenburg-Vorpommern were also held.",
+   "unfree": null,
+   "seatLeader": "SPD"
+  },
+  {
+   "id": "2025",
+   "label": "2025",
+   "year": 2025,
+   "date": "23 February 2025",
+   "era": "berlin",
+   "totalSeats": 630,
+   "majoritySeats": 316,
+   "turnout": 82.5,
+   "parties": [
+    {
+     "name": "CDU/CSU",
+     "leader": "Friedrich Merz",
+     "seats": 208,
+     "seatChange": 11.0,
+     "votes": 14160402,
+     "share": 28.5,
+     "swing": 4.4
+    },
+    {
+     "name": "AfD",
+     "leader": "Alice Weidel",
+     "seats": 152,
+     "seatChange": 69.0,
+     "votes": 10328780,
+     "share": 20.8,
+     "swing": 10.4
+    },
+    {
+     "name": "SPD",
+     "leader": "Olaf Scholz",
+     "seats": 120,
+     "seatChange": -86.0,
+     "votes": 8149124,
+     "share": 16.4,
+     "swing": -9.3
+    },
+    {
+     "name": "Greens",
+     "leader": "Robert Habeck",
+     "seats": 85,
+     "seatChange": -33.0,
+     "votes": 5762380,
+     "share": 11.6,
+     "swing": -3.1
+    },
+    {
+     "name": "Die Linke",
+     "leader": "Jan van Aken &",
+     "seats": 64,
+     "seatChange": 25.0,
+     "votes": 4356532,
+     "share": 8.8,
+     "swing": 3.9
+    },
+    {
+     "name": "SSW",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 76138,
+     "share": 0.15,
+     "swing": 0.03
+    },
+    {
+     "name": "BSW",
+     "leader": "Sahra Wagenknecht",
+     "seats": 0,
+     "seatChange": null,
+     "votes": 2472947,
+     "share": 4.98,
+     "swing": null
+    },
+    {
+     "name": "FDP",
+     "leader": "Christian Lindner",
+     "seats": 0,
+     "seatChange": -91.0,
+     "votes": 2148757,
+     "share": 4.3,
+     "swing": -7.1
+    }
+   ],
+   "pmBefore": {
+    "name": "Olaf Scholz",
+    "party": "SPD"
+   },
+   "pmAfter": {
+    "name": "Friedrich Merz",
+    "party": "CDU"
+   },
+   "knownAs": "After the traffic-light collapse",
+   "summary": "A federal election was held in Germany on 23 February 2025 to elect the 630 members of the 21st Bundestag, down from 736 in 2021 due to reforms in seat distribution. The 2025 election took place seven months ahead of schedule due to the 2024 collapse of the Scholz governing coalition.",
+   "unfree": null,
+   "seatLeader": "CDU/CSU"
+  }
+ ]
+}

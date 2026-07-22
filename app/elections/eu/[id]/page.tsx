@@ -11,6 +11,7 @@ import {
   fmtPct,
 } from "@/lib/euElections";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import SortableTable from "../../SortableTable";
 
 export function generateStaticParams() {
   return getEuElections().elections.map((e) => ({ id: e.id }));
@@ -124,20 +125,22 @@ export default async function EuElectionDetailPage({ params }: { params: Promise
       <section className="mb-8">
         <h2 className="text-xl font-bold mb-3 text-[var(--text)]">The Parliament it elected</h2>
         <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]">
-                <th className="px-3 py-2">Group</th>
-                <th className="px-3 py-2">Political family</th>
-                <th className="px-3 py-2">Leading figure</th>
-                <th className="px-3 py-2 text-right">MEPs</th>
-                <th className="px-3 py-2 w-1/5">Share of chamber</th>
-                <th className="px-3 py-2 text-right">Vote share</th>
-              </tr>
-            </thead>
-            <tbody>
-              {e.groups.map((g, i) => (
-                <tr key={`${g.abbr}-${i}`} className="border-t" style={{ borderColor: "var(--border)" }}>
+          <SortableTable
+            tableClassName="w-full text-sm"
+            headClassName="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]"
+            cols={[
+              { key: "group", label: "Group", className: "px-3 py-2" },
+              { key: "family", label: "Political family", className: "px-3 py-2" },
+              { key: "leader", label: "Leading figure", className: "px-3 py-2" },
+              { key: "seats", label: "MEPs", className: "px-3 py-2 text-right" },
+              { key: "bar", label: "Share of chamber", className: "px-3 py-2 w-1/5", sortable: false },
+              { key: "share", label: "Vote share", className: "px-3 py-2 text-right" },
+            ]}
+            rows={e.groups.map((g, i) => ({
+              key: `${g.abbr}-${i}`,
+              sort: { group: g.abbr, family: g.name, leader: g.leader, seats: g.seats, share: g.share },
+              cells: (
+                <>
                   <td className="px-3 py-2 whitespace-nowrap">
                     <span className="inline-block w-2.5 h-2.5 rounded-full mr-2 align-middle" style={{ backgroundColor: euGroupColor(g.abbr) }} />
                     <span className="font-semibold text-[var(--text)]">{g.abbr}</span>
@@ -154,10 +157,10 @@ export default async function EuElectionDetailPage({ params }: { params: Promise
                     {g.share != null ? fmtPct(g.share) : "—"}
                     {g.votes != null ? <span className="block text-[10px] text-[var(--text-dim)]">{fmtInt(g.votes)} votes</span> : null}
                   </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                </>
+              ),
+            }))}
+          />
         </div>
         <p className="text-xs text-[var(--text-dim)] mt-2">
           Group composition at or immediately after the Parliament&apos;s constitutive session; groups form
@@ -176,22 +179,33 @@ export default async function EuElectionDetailPage({ params }: { params: Promise
             {e.countries.note ? ` ${e.countries.note}` : ""}
           </p>
           <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
-            <table className="w-full text-xs">
-              <thead>
-                <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]">
-                  <th className="px-2 py-1.5 sticky left-0" style={{ backgroundColor: "var(--bg-card)" }}>Member state</th>
-                  {e.countries.groups.map((g) => (
-                    <th key={g} className="px-2 py-1.5 text-right whitespace-nowrap">
+            <SortableTable
+              tableClassName="w-full text-xs"
+              headClassName="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]"
+              rowClassName="border-t align-top"
+              cols={[
+                { key: "state", label: "Member state", className: "px-2 py-1.5 sticky left-0" },
+                ...e.countries.groups.map((g) => ({
+                  key: `g-${g}`,
+                  label: (
+                    <>
                       <span className="inline-block w-2 h-2 rounded-full mr-1 align-middle" style={{ backgroundColor: euGroupColor(g) }} />
                       {g}
-                    </th>
-                  ))}
-                  <th className="px-2 py-1.5 text-right">MEPs</th>
-                </tr>
-              </thead>
-              <tbody>
-                {e.countries.rows.map((r) => (
-                  <tr key={r.name} className="border-t align-top" style={{ borderColor: "var(--border)" }}>
+                    </>
+                  ),
+                  className: "px-2 py-1.5 text-right whitespace-nowrap",
+                })),
+                { key: "total", label: "MEPs", className: "px-2 py-1.5 text-right" },
+              ]}
+              rows={e.countries.rows.map((r) => ({
+                key: r.name,
+                sort: {
+                  state: r.name,
+                  ...Object.fromEntries(e.countries!.groups.map((g, gi) => [`g-${g}`, r.byGroup[gi] || null])),
+                  total: r.total,
+                },
+                cells: (
+                  <>
                     <td className="px-2 py-1.5 font-semibold text-[var(--text)] whitespace-nowrap sticky left-0" style={{ backgroundColor: "var(--bg-card)" }}>
                       {r.name}
                     </td>
@@ -214,8 +228,10 @@ export default async function EuElectionDetailPage({ params }: { params: Promise
                       </td>
                     ))}
                     <td className="px-2 py-1.5 text-right tabular-nums font-semibold text-[var(--text)]">{r.total}</td>
-                  </tr>
-                ))}
+                  </>
+                ),
+              }))}
+              footer={
                 <tr className="border-t" style={{ borderColor: "var(--border)" }}>
                   <td className="px-2 py-1.5 font-semibold text-[var(--text)] sticky left-0" style={{ backgroundColor: "var(--bg-card)" }}>Total</td>
                   {e.countries.groups.map((g, gi) => (
@@ -227,8 +243,8 @@ export default async function EuElectionDetailPage({ params }: { params: Promise
                     {e.countries.rows.reduce((s, r) => s + r.total, 0)}
                   </td>
                 </tr>
-              </tbody>
-            </table>
+              }
+            />
           </div>
         </section>
       ) : null}

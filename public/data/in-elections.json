@@ -1,0 +1,2169 @@
+{
+ "meta": {
+  "title": "Indian general elections",
+  "sources": [
+   "Wikipedia: Indian general election articles, 1920–2024 (results, infoboxes and leads)",
+   "Election Commission of India figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "eras": [
+  {
+   "key": "raj",
+   "label": "Elections under the Raj",
+   "span": "1920–1946",
+   "blurb": "The Central Legislative Assembly elections of British India were contests on a franchise so narrow that under a tenth of adults could vote, with separate communal electorates. They still mattered: the Swaraj Party's entryism, Congress boycotts and returns, and the 1945–46 results that settled the mandate for Partition and the Constituent Assembly."
+  },
+  {
+   "key": "nehru",
+   "label": "The Nehru era",
+   "span": "1951–1962",
+   "blurb": "The 1951–52 general election was the largest democratic exercise the world had attempted — a mostly illiterate electorate of 173 million choosing freely. Jawaharlal Nehru's Congress won three sweeping majorities on a divided opposition, setting the template of the one-party-dominant 'Congress system'."
+  },
+  {
+   "key": "congress-system",
+   "label": "The Congress system tested",
+   "span": "1967–1984",
+   "blurb": "The 1967 setback, Indira Gandhi's split of Congress and her 1971 'Garibi Hatao' landslide, the Emergency and the extraordinary Janata verdict of 1977 — the first time Congress lost power — then her 1980 return and Rajiv Gandhi's 1984 sympathy wave, still the largest majority in Indian history."
+  },
+  {
+   "key": "coalition",
+   "label": "Mandal, Mandir and the coalition era",
+   "span": "1989–1999",
+   "blurb": "No single party won a majority in any of the five elections from 1989 to 1999. Caste and communal realignments — the Mandal report, the Ayodhya movement — broke the Congress system, lifted the BJP from two seats to power, and made the United Front and NDA coalitions the new normal."
+  },
+  {
+   "key": "upa",
+   "label": "The UPA decade",
+   "span": "2004–2009",
+   "blurb": "The 2004 upset ended 'India Shining' and brought Manmohan Singh to office at the head of the Congress-led UPA; 2009 renewed it with the best Congress result in two decades. Coalition management, the nuclear deal and rural welfare schemes defined the politics."
+  },
+  {
+   "key": "modi",
+   "label": "The Modi era",
+   "span": "2014–2024",
+   "blurb": "Narendra Modi's 2014 campaign delivered the first single-party majority since 1984 and reduced Congress to its lowest-ever tally; 2019 enlarged it. In 2024 the BJP fell short of a majority for the first time in a decade, governing through the NDA against a revived INDIA-bloc opposition."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1920",
+   "label": "1920",
+   "year": 1920,
+   "date": "1920",
+   "era": "raj",
+   "totalSeats": 104,
+   "majoritySeats": 53,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "DP",
+     "leader": "Hari Singh Gour",
+     "seats": 48,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Independent",
+     "leader": "W. H. H. Vincent",
+     "seats": 47,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null,
+     "alliance": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "First Central Legislative Assembly",
+   "summary": "The new Central Legislative Assembly, which was the lower chamber of the Imperial Legislative Council, was based in Delhi and had 104 elected seats, of which 66 were contested and 38 were reserved for Europeans elected through the Chambers of Commerce.",
+   "seatLeader": "DP"
+  },
+  {
+   "id": "1923",
+   "label": "1923",
+   "year": 1923,
+   "date": "1923",
+   "era": "raj",
+   "totalSeats": 105,
+   "majoritySeats": 73,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "SP",
+     "leader": "Motilal Nehru",
+     "seats": 38,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "ILP",
+     "leader": "H. N. Kunzru",
+     "seats": 27,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null,
+     "alliance": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Government of India: Sir Malcolm Hailey, Charles Alexander Innes, Atul Chandra Chatterjee, Basil Phillott Blackett (Finance Member), Ernest Burdon, Alexander Muddiman (Home Member), Bhupendra Nath Mitra, Denys Bray, J. W.",
+   "seatLeader": "SP"
+  },
+  {
+   "id": "1926",
+   "label": "1926",
+   "year": 1926,
+   "date": "1926",
+   "era": "raj",
+   "totalSeats": 105,
+   "majoritySeats": 53,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "SP",
+     "leader": "Vithalbhai Patel",
+     "seats": 38,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "NP",
+     "leader": "Madan Mohan Malaviya",
+     "seats": 22,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null,
+     "alliance": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Government of India: Sir James Crerar (Home Member), Alexander Muddiman (Home Member), Sir George Rainy (Railways, Commerce & Ecclesiastical Member), George Ernest Schuster (Finance Member), Sir Brojendra Mitter (Law Member), Bhupendra Nath Mitra (Industries & Labour Member), Evelyn Berkeley Howell, Alfred Alen Lethbridge Parsons, Hubert Arthur Sams, Gerard Macworth Young, Kodi",
+   "seatLeader": "SP"
+  },
+  {
+   "id": "1930",
+   "label": "1930",
+   "year": 1930,
+   "date": "1930",
+   "era": "raj",
+   "totalSeats": 104,
+   "majoritySeats": 53,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "NP",
+     "leader": "Hari Singh Gour",
+     "seats": 40,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Independent",
+     "leader": "Abdur Rahim",
+     "seats": 30,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null,
+     "alliance": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Government of India: P. J.",
+   "seatLeader": "NP"
+  },
+  {
+   "id": "1934",
+   "label": "1934",
+   "year": 1934,
+   "date": "1934",
+   "era": "raj",
+   "totalSeats": 147,
+   "majoritySeats": 74,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "INC",
+     "leader": "Bhulabhai Desai",
+     "seats": 42,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "CNP",
+     "leader": "Madhav Shrihari Aney",
+     "seats": 12,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null,
+     "alliance": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The total electorate for the 1934 elections was 1,415,892 (from a population of 242 million), of which 1,135,899 were in contested constituencies. The total number of votes polled was 608,198.",
+   "seatLeader": "INC"
+  },
+  {
+   "id": "1945",
+   "label": "1945",
+   "year": 1945,
+   "date": "December 1945",
+   "era": "raj",
+   "totalSeats": 102,
+   "majoritySeats": 52,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "INC",
+     "leader": "Abul Kalam Azad",
+     "seats": 57,
+     "seatChange": 15.0,
+     "votes": null,
+     "share": null,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "AIML",
+     "leader": "Muhammad Ali Jinnah",
+     "seats": 30,
+     "seatChange": 30.0,
+     "votes": null,
+     "share": null,
+     "swing": null,
+     "alliance": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The Partition mandate",
+   "summary": "General elections were held in British India in December 1945 to elect members of the Central Legislative Assembly and the Council of State. Election under Government of India Act 1935 were held with limited franchise and only around 10% of the population in direct British controlled provinces were eligible to vote based on their income and property.",
+   "seatLeader": "INC"
+  },
+  {
+   "id": "1946",
+   "label": "1946",
+   "year": 1946,
+   "date": "July 1946",
+   "era": "raj",
+   "totalSeats": 296,
+   "majoritySeats": 149,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "INC",
+     "leader": "Jawaharlal Nehru",
+     "seats": 211,
+     "seatChange": 154.0,
+     "votes": null,
+     "share": null,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "AIML",
+     "leader": "Muhammad Ali Jinnah",
+     "seats": 73,
+     "seatChange": 43.0,
+     "votes": null,
+     "share": null,
+     "swing": null,
+     "alliance": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Lord Archibald Wavell",
+    "party": "Elected Head of Government"
+   },
+   "pmAfter": {
+    "name": "Jawaharlal Nehru",
+    "party": "INC"
+   },
+   "knownAs": "Constituent Assembly election",
+   "summary": "In 1946, prior to the independence of India, members of the Constituent Assembly of India were selected through an indirect election by the elected legislators of the 1946 Indian provincial elections, conducted under the British government's Cabinet Mission plan.",
+   "seatLeader": "INC"
+  },
+  {
+   "id": "1951",
+   "label": "1951–52",
+   "year": 1951,
+   "date": "25 October 1951 – 21 February 1952",
+   "era": "nehru",
+   "totalSeats": 489,
+   "majoritySeats": 245,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Indian National Congress",
+     "leader": "Jawaharlal Nehru",
+     "seats": 364,
+     "seatChange": null,
+     "votes": 47665951,
+     "share": 44.99,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 37,
+     "seatChange": null,
+     "votes": 16850089,
+     "share": 15.9,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Communist Party of India",
+     "leader": "Ajoy Ghosh",
+     "seats": 16,
+     "seatChange": null,
+     "votes": 3487401,
+     "share": 3.29,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": "Narendra Deva",
+     "seats": 12,
+     "seatChange": null,
+     "votes": 11216719,
+     "share": 10.59,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Kisan Mazdoor Praja Party",
+     "leader": "J. B. Kripalani",
+     "seats": 9,
+     "seatChange": null,
+     "votes": 6135978,
+     "share": 5.79,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "People's Democratic Front",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 1367404,
+     "share": 1.29,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "All India Ganatantra Parishad",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 959749,
+     "share": 0.91,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Shiromani Akali Dal",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 1047611,
+     "share": 0.99,
+     "swing": null,
+     "alliance": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jawaharlal Nehru",
+    "party": "INC"
+   },
+   "pmAfter": {
+    "name": "Jawaharlal Nehru",
+    "party": "INC"
+   },
+   "knownAs": "The world's largest first election",
+   "summary": "General elections were held in India between 25 October 1951 and 21 February 1952, the first national elections after India gained independence in 1947. Voters elected 489 members of the first Lok Sabha, the lower house of the Parliament of India.",
+   "seatLeader": "Indian National Congress"
+  },
+  {
+   "id": "1957",
+   "label": "1957",
+   "year": 1957,
+   "date": "1951–52",
+   "era": "nehru",
+   "totalSeats": 494,
+   "majoritySeats": 248,
+   "turnout": 45.44,
+   "parties": [
+    {
+     "name": "Indian National Congress",
+     "leader": "Jawaharlal Nehru",
+     "seats": 371,
+     "seatChange": 7.0,
+     "votes": 57579589,
+     "share": 47.78,
+     "swing": 2.79,
+     "alliance": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 5.0,
+     "votes": 23284249,
+     "share": 19.32,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Communist Party of India",
+     "leader": "Ajoy Ghosh",
+     "seats": 27,
+     "seatChange": 11.0,
+     "votes": 10754075,
+     "share": 8.92,
+     "swing": 5.63,
+     "alliance": null
+    },
+    {
+     "name": "Praja Socialist Party",
+     "leader": "Jayaprakash Narayan",
+     "seats": 19,
+     "seatChange": 2.0,
+     "votes": 12542666,
+     "share": 10.41,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "All India Ganatantra Parishad",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 1.0,
+     "votes": 1291141,
+     "share": 1.07,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Scheduled Castes Federation",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 4.0,
+     "votes": 2038890,
+     "share": 1.69,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Jharkhand Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 3.0,
+     "votes": 751830,
+     "share": 0.62,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Bharatiya Jana Sangh",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 1.0,
+     "votes": 7193267,
+     "share": 5.97,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "ABJS",
+     "leader": "Debaprasad Ghosh",
+     "seats": 4,
+     "seatChange": 1.0,
+     "votes": 7193267,
+     "share": 5.97,
+     "swing": 2.91,
+     "alliance": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jawaharlal Nehru",
+    "party": "INC"
+   },
+   "pmAfter": {
+    "name": "Jawaharlal Nehru",
+    "party": "INC"
+   },
+   "knownAs": null,
+   "summary": "Under the leadership of Jawaharlal Nehru, the Indian National Congress easily won a second term in power, taking 371 of the 494 seats. They gained an extra seven seats (the size of the Lok Sabha had been increased by five) and their vote share increased from 45% to 48%.",
+   "seatLeader": "Indian National Congress"
+  },
+  {
+   "id": "1962",
+   "label": "1962",
+   "year": 1962,
+   "date": "19–25 February 1962",
+   "era": "nehru",
+   "totalSeats": 494,
+   "majoritySeats": 248,
+   "turnout": 55.42,
+   "parties": [
+    {
+     "name": "Indian National Congress",
+     "leader": "Jawaharlal Nehru",
+     "seats": 361,
+     "seatChange": 10.0,
+     "votes": 51509084,
+     "share": 44.72,
+     "swing": -3.06,
+     "alliance": null
+    },
+    {
+     "name": "Communist Party of India",
+     "leader": "Shripad Amrit Dange",
+     "seats": 29,
+     "seatChange": 2.0,
+     "votes": 11450037,
+     "share": 9.94,
+     "swing": 1.02,
+     "alliance": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 22.0,
+     "votes": 12722488,
+     "share": 11.05,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Swatantra Party",
+     "leader": "C. Rajagopalachari",
+     "seats": 18,
+     "seatChange": null,
+     "votes": 9085252,
+     "share": 7.89,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Bharatiya Jana Sangh",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 10.0,
+     "votes": 7415170,
+     "share": 6.44,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "ABJS",
+     "leader": "Deendayal Upadhyaya",
+     "seats": 14,
+     "seatChange": 10.0,
+     "votes": 7415170,
+     "share": 6.44,
+     "swing": 0.47,
+     "alliance": null
+    },
+    {
+     "name": "Praja Socialist Party",
+     "leader": "Jayaprakash Narayan",
+     "seats": 12,
+     "seatChange": 7.0,
+     "votes": 7848345,
+     "share": 6.81,
+     "swing": -3.6,
+     "alliance": null
+    },
+    {
+     "name": "Dravida Munnetra Kazhagam",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 2315610,
+     "share": 2.01,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Socialist Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 3099397,
+     "share": 2.69,
+     "swing": null,
+     "alliance": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jawaharlal Nehru",
+    "party": "INC"
+   },
+   "pmAfter": {
+    "name": "Jawaharlal Nehru",
+    "party": "INC"
+   },
+   "knownAs": null,
+   "summary": "Jawaharlal Nehru won another landslide victory in his third and final election campaign. The Indian National Congress received 44.7% of the vote and won 361 of the 494 elected seats.",
+   "seatLeader": "Indian National Congress"
+  },
+  {
+   "id": "1967",
+   "label": "1967",
+   "year": 1967,
+   "date": "17–21 February 1967",
+   "era": "congress-system",
+   "totalSeats": 520,
+   "majoritySeats": 261,
+   "turnout": 61.04,
+   "parties": [
+    {
+     "name": "Indian National Congress",
+     "leader": "Indira Gandhi",
+     "seats": 283,
+     "seatChange": 78.0,
+     "votes": 59490701,
+     "share": 40.78,
+     "swing": -3.94,
+     "alliance": null
+    },
+    {
+     "name": "Swatantra Party",
+     "leader": "C. Rajagopalachari",
+     "seats": 44,
+     "seatChange": 26.0,
+     "votes": 12646847,
+     "share": 8.67,
+     "swing": 0.78,
+     "alliance": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 15.0,
+     "votes": 20106051,
+     "share": 13.78,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Bharatiya Jana Sangh",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 21.0,
+     "votes": 13580935,
+     "share": 9.31,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "ABJS",
+     "leader": "Deendayal Upadhyaya",
+     "seats": 35,
+     "seatChange": 21.0,
+     "votes": 13580935,
+     "share": 9.31,
+     "swing": 2.87,
+     "alliance": null
+    },
+    {
+     "name": "Dravida Munnetra Kazhagam",
+     "leader": null,
+     "seats": 25,
+     "seatChange": 18.0,
+     "votes": 5529405,
+     "share": 3.79,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Communist Party of India",
+     "leader": "Shripad Amrit Dange",
+     "seats": 23,
+     "seatChange": 6.0,
+     "votes": 7458396,
+     "share": 5.11,
+     "swing": -4.83,
+     "alliance": null
+    },
+    {
+     "name": "Samyukta Socialist Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": null,
+     "votes": 7171627,
+     "share": 4.92,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Communist Party of India (Marxist)",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 6246522,
+     "share": 4.28,
+     "swing": null,
+     "alliance": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Indira Gandhi",
+    "party": "INC"
+   },
+   "pmAfter": {
+    "name": "Indira Gandhi",
+    "party": "INC"
+   },
+   "knownAs": "The Congress system cracks",
+   "summary": "General elections were held in India between 17 and 21 February 1967 to elect 520 of the 523 members of the fourth Lok Sabha, an increase of 15 from the previous session of Lok Sabha. Elections to State Assemblies were also held simultaneously, the last general election to do so.",
+   "seatLeader": "Indian National Congress"
+  },
+  {
+   "id": "1971",
+   "label": "1971",
+   "year": 1971,
+   "date": "1–10 March 1971",
+   "era": "congress-system",
+   "totalSeats": 518,
+   "majoritySeats": 260,
+   "turnout": 55.27,
+   "parties": [
+    {
+     "name": "Indian National Congress (R)",
+     "leader": "Indira Gandhi",
+     "seats": 352,
+     "seatChange": 69.0,
+     "votes": 64033274,
+     "share": 43.68,
+     "swing": 2.9,
+     "alliance": null
+    },
+    {
+     "name": "Communist Party of India (Marxist)",
+     "leader": "Puchalapalli Sundarayya",
+     "seats": 25,
+     "seatChange": 6.0,
+     "votes": 7510089,
+     "share": 5.12,
+     "swing": 0.84,
+     "alliance": null
+    },
+    {
+     "name": "Communist Party of India",
+     "leader": null,
+     "seats": 23,
+     "seatChange": 0.0,
+     "votes": 6933627,
+     "share": 4.73,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Dravida Munnetra Kazhagam",
+     "leader": null,
+     "seats": 23,
+     "seatChange": 2.0,
+     "votes": 5622758,
+     "share": 3.84,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Bharatiya Jana Sangh",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 13.0,
+     "votes": 10777119,
+     "share": 7.35,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "ABJS",
+     "leader": "Atal Bihari Vajpayee",
+     "seats": 22,
+     "seatChange": -13.0,
+     "votes": 10777119,
+     "share": 7.35,
+     "swing": -1.96,
+     "alliance": "Grand Alliance"
+    },
+    {
+     "name": "Indian National Congress (Organisation)",
+     "leader": "K. Kamaraj",
+     "seats": 16,
+     "seatChange": null,
+     "votes": 15285851,
+     "share": 10.43,
+     "swing": null,
+     "alliance": "Grand Alliance"
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 21.0,
+     "votes": 12279629,
+     "share": 8.38,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Telangana Praja Samithi",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 1873589,
+     "share": 1.28,
+     "swing": null,
+     "alliance": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Indira Gandhi",
+    "party": "INC(R)"
+   },
+   "pmAfter": {
+    "name": "Indira Gandhi",
+    "party": "INC(R)"
+   },
+   "knownAs": "Garibi Hatao",
+   "summary": "General elections were held in India between 1 and 10 March 1971 to elect members of the fifth Lok Sabha. They were the fifth general elections since independence in 1947.",
+   "seatLeader": "Indian National Congress (R)"
+  },
+  {
+   "id": "1977",
+   "label": "1977",
+   "year": 1977,
+   "date": "16–20 March 1977",
+   "era": "congress-system",
+   "totalSeats": 542,
+   "majoritySeats": 272,
+   "turnout": 60.49,
+   "parties": [
+    {
+     "name": "Janata Party",
+     "leader": "Morarji Desai",
+     "seats": 295,
+     "seatChange": 209.0,
+     "votes": 78062828,
+     "share": 41.32,
+     "swing": 20.99,
+     "alliance": "JP+LF"
+    },
+    {
+     "name": "Indian National Congress (R)",
+     "leader": "Indira Gandhi",
+     "seats": 154,
+     "seatChange": 198.0,
+     "votes": 65211589,
+     "share": 34.52,
+     "swing": -9.16,
+     "alliance": "INC (R)+"
+    },
+    {
+     "name": "Communist Party of India (Marxist)",
+     "leader": "Puchalapalli Sundarayya",
+     "seats": 22,
+     "seatChange": 3.0,
+     "votes": 8113659,
+     "share": 4.29,
+     "swing": -0.83,
+     "alliance": "JP+LF"
+    },
+    {
+     "name": "All India Anna Dravida Munnetra Kazhagam",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 5480378,
+     "share": 2.9,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 5.0,
+     "votes": 10393617,
+     "share": 5.5,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Shiromani Akali Dal",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 8.0,
+     "votes": 2373331,
+     "share": 1.26,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Communist Party of India",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 16.0,
+     "votes": 5322088,
+     "share": 2.82,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Peasants and Workers Party of India",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 5.0,
+     "votes": 1030232,
+     "share": 0.55,
+     "swing": null,
+     "alliance": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Indira Gandhi",
+    "party": "INC(R)"
+   },
+   "pmAfter": {
+    "name": "Morarji Desai",
+    "party": "JP"
+   },
+   "knownAs": "The post-Emergency verdict",
+   "summary": "The elections resulted in a heavy defeat for the Indian National Congress (R), with the incumbent Prime Minister and INC(R) party leader Indira Gandhi losing her seat in Rae Bareli, while her son Sanjay lost his seat in Amethi. Morarji Desai of the Janata Party took office as the first non-Congress Prime Minister on 24 March.",
+   "seatLeader": "Janata Party"
+  },
+  {
+   "id": "1980",
+   "label": "1980",
+   "year": 1980,
+   "date": "3 and 6 January 1980",
+   "era": "congress-system",
+   "totalSeats": 529,
+   "majoritySeats": 265,
+   "turnout": 56.92,
+   "parties": [
+    {
+     "name": "Indian National Congress (Indira)",
+     "leader": "Indira Gandhi",
+     "seats": 353,
+     "seatChange": 199.0,
+     "votes": 84455313,
+     "share": 42.69,
+     "swing": 8.17,
+     "alliance": "INC (I)+"
+    },
+    {
+     "name": "Janata Party (Secular)",
+     "leader": "Charan Singh",
+     "seats": 41,
+     "seatChange": null,
+     "votes": 18574696,
+     "share": 9.39,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Communist Party of India (Marxist)",
+     "leader": "E. M. S. Namboodiripad",
+     "seats": 37,
+     "seatChange": 15.0,
+     "votes": 12352331,
+     "share": 6.24,
+     "swing": 1.95,
+     "alliance": "LF"
+    },
+    {
+     "name": "Janata Party",
+     "leader": "Jagjivan Ram",
+     "seats": 31,
+     "seatChange": 264.0,
+     "votes": 37530228,
+     "share": 18.97,
+     "swing": -22.35,
+     "alliance": "JP+"
+    },
+    {
+     "name": "Dravida Munnetra Kazhagam",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 14.0,
+     "votes": 4236537,
+     "share": 2.14,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Indian National Congress (Urs)",
+     "leader": "A. K. Antony",
+     "seats": 13,
+     "seatChange": null,
+     "votes": 10449859,
+     "share": 5.28,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Communist Party of India",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 3.0,
+     "votes": 4927342,
+     "share": 2.49,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 0.0,
+     "votes": 12717510,
+     "share": 6.43,
+     "swing": null,
+     "alliance": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Charan Singh",
+    "party": "JP(S)"
+   },
+   "pmAfter": {
+    "name": "Indira Gandhi",
+    "party": "INC(I)"
+   },
+   "knownAs": null,
+   "summary": "The Janata Party alliance came into power in the 1977 general elections amidst public anger with the Indian National Congress (R) and the Emergency. However, its position was weak; the loose coalition barely held on to a majority with only 295 seats in the Lok Sabha and never quite had a firm grip on power.",
+   "seatLeader": "Indian National Congress (Indira)"
+  },
+  {
+   "id": "1984",
+   "label": "1984",
+   "year": 1984,
+   "date": "24, 27 and 28 December 1984",
+   "era": "congress-system",
+   "totalSeats": 541,
+   "majoritySeats": 271,
+   "turnout": 64.01,
+   "parties": [
+    {
+     "name": "Indian National Congress (Indira)",
+     "leader": "Rajiv Gandhi",
+     "seats": 404,
+     "seatChange": null,
+     "votes": 115478267,
+     "share": 49.1,
+     "swing": 4.17,
+     "alliance": null
+    },
+    {
+     "name": "Telugu Desam Party",
+     "leader": "N. T. Rama Rao",
+     "seats": 30,
+     "seatChange": null,
+     "votes": 10132859,
+     "share": 4.31,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Communist Party of India (Marxist)",
+     "leader": "E. M. S. Namboodiripad",
+     "seats": 22,
+     "seatChange": null,
+     "votes": 13809950,
+     "share": 5.87,
+     "swing": -0.37,
+     "alliance": null
+    },
+    {
+     "name": "All India Anna Dravida Munnetra Kazhagam",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 3968967,
+     "share": 1.69,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Janata Party",
+     "leader": "Chandra Shekhar",
+     "seats": 10,
+     "seatChange": null,
+     "votes": 16210514,
+     "share": 6.89,
+     "swing": -12.08,
+     "alliance": null
+    },
+    {
+     "name": "Communist Party of India",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 6363430,
+     "share": 2.71,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 18623803,
+     "share": 7.92,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Indian Congress (Socialist)",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 3577377,
+     "share": 1.52,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "LKD",
+     "leader": "Charan Singh",
+     "seats": 3,
+     "seatChange": null,
+     "votes": 14040064,
+     "share": 5.97,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "BJP",
+     "leader": "L. K. Advani",
+     "seats": 2,
+     "seatChange": null,
+     "votes": 18202853,
+     "share": 7.74,
+     "swing": null,
+     "alliance": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Rajiv Gandhi",
+    "party": "INC(I)"
+   },
+   "pmAfter": {
+    "name": "Rajiv Gandhi",
+    "party": "INC(I)"
+   },
+   "knownAs": "Largest majority ever",
+   "summary": "The elections were a landslide victory for the Indian National Congress (Indira) of Rajiv Gandhi (son of Indira Gandhi), which won 404 of the 514 seats elected in 1984 and a further 10 in the delayed elections. The Telugu Desam Party of N.",
+   "seatLeader": "Indian National Congress (Indira)"
+  },
+  {
+   "id": "1989",
+   "label": "1989",
+   "year": 1989,
+   "date": "22 and 26 November 1989",
+   "era": "coalition",
+   "totalSeats": 529,
+   "majoritySeats": 265,
+   "turnout": 61.95,
+   "parties": [
+    {
+     "name": "Indian National Congress (Indira)",
+     "leader": "Rajiv Gandhi",
+     "seats": 197,
+     "seatChange": null,
+     "votes": 118894702,
+     "share": 39.53,
+     "swing": -7.33,
+     "alliance": null
+    },
+    {
+     "name": "Janata Dal",
+     "leader": "V. P. Singh",
+     "seats": 143,
+     "seatChange": null,
+     "votes": 53518521,
+     "share": 17.79,
+     "swing": 4.29,
+     "alliance": null
+    },
+    {
+     "name": "Bharatiya Janata Party",
+     "leader": "Lal Krishna Advani",
+     "seats": 85,
+     "seatChange": null,
+     "votes": 34171477,
+     "share": 11.36,
+     "swing": 3.62,
+     "alliance": null
+    },
+    {
+     "name": "Communist Party of India (Marxist)",
+     "leader": "E. M. S. Namboodiripad",
+     "seats": 33,
+     "seatChange": null,
+     "votes": 19691309,
+     "share": 6.55,
+     "swing": 0.68,
+     "alliance": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 15793781,
+     "share": 5.25,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Communist Party of India",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 7734697,
+     "share": 2.57,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "All India Anna Dravida Munnetra Kazhagam",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 4518649,
+     "share": 1.5,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Shiromani Akali Dal (Simranjit Singh Mann)",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 2318872,
+     "share": 0.77,
+     "swing": null,
+     "alliance": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Rajiv Gandhi",
+    "party": "INC(I)"
+   },
+   "pmAfter": {
+    "name": "V. P. Singh",
+    "party": "JD"
+   },
+   "knownAs": "End of single-party rule",
+   "summary": "General elections were held in India on 22 and 26 November 1989 to elect the members of the ninth Lok Sabha. The incumbent Indian National Congress (Indira) government under the premiership of Rajiv Gandhi lost its mandate, even though it was still the largest single party in the Lok Sabha.",
+   "seatLeader": "Indian National Congress (Indira)"
+  },
+  {
+   "id": "1991",
+   "label": "1991",
+   "year": 1991,
+   "date": "19 February 1992 (Punjab)",
+   "era": "coalition",
+   "totalSeats": 534,
+   "majoritySeats": 269,
+   "turnout": 56.73,
+   "parties": [
+    {
+     "name": "Indian National Congress (Indira)",
+     "leader": "P. V. Narasimha Rao",
+     "seats": 232,
+     "seatChange": null,
+     "votes": 99799403,
+     "share": 36.26,
+     "swing": -3.27,
+     "alliance": "248"
+    },
+    {
+     "name": "Bharatiya Janata Party",
+     "leader": "L. K. Advani",
+     "seats": 120,
+     "seatChange": null,
+     "votes": 55345075,
+     "share": 20.11,
+     "swing": 8.75,
+     "alliance": "124"
+    },
+    {
+     "name": "Janata Dal",
+     "leader": "V. P. Singh",
+     "seats": 59,
+     "seatChange": null,
+     "votes": 32589180,
+     "share": 11.84,
+     "swing": -5.95,
+     "alliance": "NF"
+    },
+    {
+     "name": "Communist Party of India (Marxist)",
+     "leader": "E. M. S. Namboodiripad",
+     "seats": 35,
+     "seatChange": null,
+     "votes": 16954797,
+     "share": 6.16,
+     "swing": -0.39,
+     "alliance": "NF"
+    },
+    {
+     "name": "Communist Party of India",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 6851114,
+     "share": 2.49,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Telugu Desam Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": 8223271,
+     "share": 2.99,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "All India Anna Dravida Munnetra Kazhagam",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 4470542,
+     "share": 1.62,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Jharkhand Mukti Morcha",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 1481900,
+     "share": 0.54,
+     "swing": null,
+     "alliance": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Chandra Shekhar",
+    "party": "SJP"
+   },
+   "pmAfter": {
+    "name": "P. V. Narasimha Rao",
+    "party": "INC(I)"
+   },
+   "knownAs": "Held amid assassination",
+   "summary": "No party won a majority in the Lok Sabha, resulting in the Indian National Congress (Indira) forming a minority government under new Prime Minister P. V.",
+   "seatLeader": "Indian National Congress (Indira)"
+  },
+  {
+   "id": "1996",
+   "label": "1996",
+   "year": 1996,
+   "date": "27 April, 2 May and 7 May 1996",
+   "era": "coalition",
+   "totalSeats": 543,
+   "majoritySeats": 272,
+   "turnout": 57.94,
+   "parties": [
+    {
+     "name": "Bharatiya Janata Party",
+     "leader": "Atal Bihari Vajpayee",
+     "seats": 161,
+     "seatChange": null,
+     "votes": 67950851,
+     "share": 20.29,
+     "swing": 0.18,
+     "alliance": "187"
+    },
+    {
+     "name": "Indian National Congress",
+     "leader": "P. V. Narasimha Rao",
+     "seats": 140,
+     "seatChange": null,
+     "votes": 96455493,
+     "share": 28.8,
+     "swing": -7.46,
+     "alliance": "143"
+    },
+    {
+     "name": "Janata Dal",
+     "leader": "H. D. Deve Gowda",
+     "seats": 46,
+     "seatChange": null,
+     "votes": 27070340,
+     "share": 8.08,
+     "swing": -3.76,
+     "alliance": "UF"
+    },
+    {
+     "name": "Communist Party of India (Marxist)",
+     "leader": "Harkishan Singh Surjeet",
+     "seats": 32,
+     "seatChange": null,
+     "votes": 20496810,
+     "share": 6.12,
+     "swing": -0.04,
+     "alliance": "UF"
+    },
+    {
+     "name": "Tamil Maanila Congress",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": 7339982,
+     "share": 2.19,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Samajwadi Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": 10989241,
+     "share": 3.28,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Dravida Munnetra Kazhagam",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": 7151381,
+     "share": 2.14,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Telugu Desam Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 9931826,
+     "share": 2.97,
+     "swing": null,
+     "alliance": null
+    }
+   ],
+   "pmBefore": {
+    "name": "P. V. Narasimha Rao",
+    "party": "INC"
+   },
+   "pmAfter": {
+    "name": "Atal Bihari Vajpayee",
+    "party": "BJP"
+   },
+   "knownAs": "The 13-day government",
+   "summary": "The elections resulted in a hung parliament with no single party having a majority. The Bharatiya Janata Party, which had won the most seats despite finishing second in the popular vote, formed a short-lived government under Prime Minister Atal Bihari Vajpayee.",
+   "seatLeader": "Bharatiya Janata Party"
+  },
+  {
+   "id": "1998",
+   "label": "1998",
+   "year": 1998,
+   "date": "16, 22 and 28 February 1998",
+   "era": "coalition",
+   "totalSeats": 543,
+   "majoritySeats": 272,
+   "turnout": 61.97,
+   "parties": [
+    {
+     "name": "Bharatiya Janata Party",
+     "leader": "Atal Bihari Vajpayee",
+     "seats": 182,
+     "seatChange": null,
+     "votes": 94266188,
+     "share": 25.59,
+     "swing": 5.3,
+     "alliance": "NDA"
+    },
+    {
+     "name": "Indian National Congress",
+     "leader": "Sonia Gandhi",
+     "seats": 141,
+     "seatChange": null,
+     "votes": 95111131,
+     "share": 25.82,
+     "swing": -2.98,
+     "alliance": "INC+"
+    },
+    {
+     "name": "Communist Party of India (Marxist)",
+     "leader": "Harkishan Singh Surjeet",
+     "seats": 32,
+     "seatChange": null,
+     "votes": 18991867,
+     "share": 5.16,
+     "swing": -0.96,
+     "alliance": "LF"
+    },
+    {
+     "name": "Samajwadi Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": 18167640,
+     "share": 4.93,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "All India Anna Dravida Munnetra Kazhagam",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 6731550,
+     "share": 1.83,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Rashtriya Janata Dal",
+     "leader": null,
+     "seats": 17,
+     "seatChange": null,
+     "votes": 10229971,
+     "share": 2.78,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Telugu Desam Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 10199463,
+     "share": 2.77,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Samata Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 6491639,
+     "share": 1.76,
+     "swing": null,
+     "alliance": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Inder Kumar Gujral",
+    "party": "JD"
+   },
+   "pmAfter": {
+    "name": "Atal Bihari Vajpayee",
+    "party": "BJP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in India on 16, 22 and 28 February 1998 to elect the members of the twelfth Lok Sabha. The elections were held three years ahead of schedule after the government led by Inder Kumar Gujral collapsed when the Indian National Congress (INC) withdrew its support in November 1997.",
+   "seatLeader": "Bharatiya Janata Party"
+  },
+  {
+   "id": "1999",
+   "label": "1999",
+   "year": 1999,
+   "date": "5 September–3 October 1999",
+   "era": "coalition",
+   "totalSeats": 543,
+   "majoritySeats": 272,
+   "turnout": 59.99,
+   "parties": [
+    {
+     "name": "Bharatiya Janata Party",
+     "leader": "Atal Bihari Vajpayee",
+     "seats": 182,
+     "seatChange": null,
+     "votes": 86562209,
+     "share": 23.75,
+     "swing": -1.84,
+     "alliance": "NDA"
+    },
+    {
+     "name": "Indian National Congress",
+     "leader": "Sonia Gandhi",
+     "seats": 114,
+     "seatChange": null,
+     "votes": 103120330,
+     "share": 28.3,
+     "swing": 2.48,
+     "alliance": "INC+"
+    },
+    {
+     "name": "Communist Party of India (Marxist)",
+     "leader": "Harkishan Singh Surjeet",
+     "seats": 33,
+     "seatChange": null,
+     "votes": 19695767,
+     "share": 5.4,
+     "swing": 0.24,
+     "alliance": "LF"
+    },
+    {
+     "name": "Telugu Desam Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": null,
+     "votes": 13297370,
+     "share": 3.65,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Samajwadi Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": null,
+     "votes": 13717021,
+     "share": 3.76,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Janata Dal (United)",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": 11282084,
+     "share": 3.1,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Shiv Sena",
+     "leader": null,
+     "seats": 15,
+     "seatChange": null,
+     "votes": 5672412,
+     "share": 1.56,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Bahujan Samaj Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 15175845,
+     "share": 4.16,
+     "swing": null,
+     "alliance": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Atal Bihari Vajpayee",
+    "party": "BJP"
+   },
+   "pmAfter": {
+    "name": "Atal Bihari Vajpayee",
+    "party": "BJP"
+   },
+   "knownAs": null,
+   "summary": "The elections saw the National Democratic Alliance led by the Bharatiya Janata Party win a majority in the Lok Sabha, the first time since 1984 that a party or alliance had won an outright majority and the second since the 1977 elections that a non-Congress coalition had done so.",
+   "seatLeader": "Bharatiya Janata Party"
+  },
+  {
+   "id": "2004",
+   "label": "2004",
+   "year": 2004,
+   "date": "20 April 26 April, 5 and 10 May 2004",
+   "era": "upa",
+   "totalSeats": 543,
+   "majoritySeats": 272,
+   "turnout": 58.07,
+   "parties": [
+    {
+     "name": "Indian National Congress",
+     "leader": "Sonia Gandhi",
+     "seats": 145,
+     "seatChange": null,
+     "votes": 103408949,
+     "share": 26.53,
+     "swing": -1.77,
+     "alliance": "218"
+    },
+    {
+     "name": "Bharatiya Janata Party",
+     "leader": "Atal Bihari Vajpayee",
+     "seats": 138,
+     "seatChange": null,
+     "votes": 86371561,
+     "share": 22.16,
+     "swing": -1.59,
+     "alliance": "181"
+    },
+    {
+     "name": "Communist Party of India (Marxist)",
+     "leader": "Harkishan Singh Surjeet",
+     "seats": 43,
+     "seatChange": null,
+     "votes": 22070614,
+     "share": 5.66,
+     "swing": 0.26,
+     "alliance": "60"
+    },
+    {
+     "name": "Samajwadi Party",
+     "leader": null,
+     "seats": 36,
+     "seatChange": null,
+     "votes": 16824072,
+     "share": 4.32,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Rashtriya Janata Dal",
+     "leader": null,
+     "seats": 24,
+     "seatChange": null,
+     "votes": 9384147,
+     "share": 2.41,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Bahujan Samaj Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 20765229,
+     "share": 5.33,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Dravida Munnetra Kazhagam",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 7064393,
+     "share": 1.81,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Shiv Sena",
+     "leader": null,
+     "seats": 12,
+     "seatChange": null,
+     "votes": 7056255,
+     "share": 1.81,
+     "swing": null,
+     "alliance": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Atal Bihari Vajpayee",
+    "party": "BJP"
+   },
+   "pmAfter": {
+    "name": "Manmohan Singh",
+    "party": "INC"
+   },
+   "knownAs": "The India Shining upset",
+   "summary": "General elections were held in India in four phases between 20 April and 10 May 2004. Over 670 million people were eligible to vote, electing 543 members of the 14th Lok Sabha.",
+   "seatLeader": "Indian National Congress"
+  },
+  {
+   "id": "2009",
+   "label": "2009",
+   "year": 2009,
+   "date": "16 April 2009 – 13 May 2009",
+   "era": "upa",
+   "totalSeats": 543,
+   "majoritySeats": 272,
+   "turnout": 58.21,
+   "parties": [
+    {
+     "name": "Indian National Congress",
+     "leader": "Manmohan Singh",
+     "seats": 206,
+     "seatChange": null,
+     "votes": 119111019,
+     "share": 28.55,
+     "swing": 2.02,
+     "alliance": "UPA"
+    },
+    {
+     "name": "Bharatiya Janata Party",
+     "leader": "L. K. Advani",
+     "seats": 116,
+     "seatChange": null,
+     "votes": 78435381,
+     "share": 18.8,
+     "swing": -3.36,
+     "alliance": "NDA"
+    },
+    {
+     "name": "Samajwadi Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": null,
+     "votes": 14284638,
+     "share": 3.42,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Bahujan Samaj Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": null,
+     "votes": 25728920,
+     "share": 6.17,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Janata Dal (United)",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": 6331201,
+     "share": 1.52,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "All India Trinamool Congress",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": 13356510,
+     "share": 3.2,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Dravida Munnetra Kazhagam",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 7625397,
+     "share": 1.83,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Communist Party of India (Marxist)",
+     "leader": "Prakash Karat",
+     "seats": 16,
+     "seatChange": null,
+     "votes": 22219111,
+     "share": 5.33,
+     "swing": -0.33,
+     "alliance": "TF[1]"
+    }
+   ],
+   "pmBefore": {
+    "name": "Manmohan Singh",
+    "party": "INC"
+   },
+   "pmAfter": {
+    "name": "Manmohan Singh",
+    "party": "INC"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in India in five phases between 16 April 2009 and 13 May 2009 to elect the members of the fifteenth Lok Sabha. With a registered electorate of 716 million and a turnout of 417 million voters, it was the largest democratic election in the world until being surpassed by the 2014 general election.",
+   "seatLeader": "Indian National Congress"
+  },
+  {
+   "id": "2014",
+   "label": "2014",
+   "year": 2014,
+   "date": "7 April 2014 – 12 May 2014",
+   "era": "modi",
+   "totalSeats": 543,
+   "majoritySeats": 272,
+   "turnout": 66.44,
+   "parties": [
+    {
+     "name": "Bharatiya Janata Party",
+     "leader": "Narendra Modi",
+     "seats": 282,
+     "seatChange": null,
+     "votes": 171660230,
+     "share": 31.0,
+     "swing": 12.2,
+     "alliance": "NDA"
+    },
+    {
+     "name": "Indian National Congress",
+     "leader": "Rahul Gandhi",
+     "seats": 44,
+     "seatChange": null,
+     "votes": 106935942,
+     "share": 19.31,
+     "swing": -9.24,
+     "alliance": "UPA"
+    },
+    {
+     "name": "All India Anna Dravida Munnetra Kazhagam",
+     "leader": null,
+     "seats": 37,
+     "seatChange": null,
+     "votes": 18111579,
+     "share": 3.27,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "All India Trinamool Congress",
+     "leader": null,
+     "seats": 34,
+     "seatChange": null,
+     "votes": 21262665,
+     "share": 3.84,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Biju Janata Dal",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": 9489946,
+     "share": 1.71,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Shiv Sena",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 10262544,
+     "share": 1.85,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Telugu Desam Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 14099230,
+     "share": 2.55,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Telangana Rashtra Samithi",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 6736270,
+     "share": 1.22,
+     "swing": null,
+     "alliance": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Manmohan Singh",
+    "party": "INC"
+   },
+   "pmAfter": {
+    "name": "Narendra Modi",
+    "party": "BJP"
+   },
+   "knownAs": "First majority since 1984",
+   "summary": "General elections were held in India in nine phases from 7 April to 12 May 2014 to elect the members of the 16th Lok Sabha. With 834 million registered voters, they were the largest-ever elections in the world until being surpassed by the 2019 election.",
+   "seatLeader": "Bharatiya Janata Party"
+  },
+  {
+   "id": "2019",
+   "label": "2019",
+   "year": 2019,
+   "date": "11 April – 19 May 2019",
+   "era": "modi",
+   "totalSeats": 543,
+   "majoritySeats": 272,
+   "turnout": 67.4,
+   "parties": [
+    {
+     "name": "Bharatiya Janata Party",
+     "leader": "Narendra Modi",
+     "seats": 303,
+     "seatChange": 21.0,
+     "votes": 229076879,
+     "share": 37.3,
+     "swing": 6.36,
+     "alliance": "NDA"
+    },
+    {
+     "name": "Indian National Congress",
+     "leader": "Rahul Gandhi",
+     "seats": 52,
+     "seatChange": 8.0,
+     "votes": 119495214,
+     "share": 19.46,
+     "swing": 0.18,
+     "alliance": "UPA"
+    },
+    {
+     "name": "Dravida Munnetra Kazhagam",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 24.0,
+     "votes": 14363332,
+     "share": 2.34,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Trinamool Congress",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 12.0,
+     "votes": 24929330,
+     "share": 4.06,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "YSR Congress Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 13.0,
+     "votes": 15537006,
+     "share": 2.53,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Shiv Sena",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 0.0,
+     "votes": 12858904,
+     "share": 2.09,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Janata Dal (United)",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 14.0,
+     "votes": 8926679,
+     "share": 1.45,
+     "swing": null,
+     "alliance": null
+    },
+    {
+     "name": "Biju Janata Dal",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 8.0,
+     "votes": 10174021,
+     "share": 1.66,
+     "swing": null,
+     "alliance": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Narendra Modi",
+    "party": "BJP"
+   },
+   "pmAfter": {
+    "name": "Narendra Modi",
+    "party": "BJP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in India in seven phases from 11 April to 19 May 2019 to elect the members of the 17th Lok Sabha. Votes were counted and the result was declared on 23 May.",
+   "seatLeader": "Bharatiya Janata Party"
+  },
+  {
+   "id": "2024",
+   "label": "2024",
+   "year": 2024,
+   "date": "19 April – 1 June 2024",
+   "era": "modi",
+   "totalSeats": 543,
+   "majoritySeats": 272,
+   "turnout": 66.1,
+   "parties": [
+    {
+     "name": "BJP",
+     "leader": "Narendra Modi",
+     "seats": 240,
+     "seatChange": -63.0,
+     "votes": 235974144,
+     "share": 36.56,
+     "swing": -0.8,
+     "alliance": "NDA"
+    },
+    {
+     "name": "INC",
+     "leader": "Mallikarjun Kharge",
+     "seats": 99,
+     "seatChange": 47.0,
+     "votes": 136758952,
+     "share": 21.19,
+     "swing": 1.7,
+     "alliance": "INDIA"
+    }
+   ],
+   "pmBefore": {
+    "name": "Narendra Modi",
+    "party": "BJP"
+   },
+   "pmAfter": {
+    "name": "Narendra Modi",
+    "party": "BJP"
+   },
+   "knownAs": "The BJP loses its majority",
+   "summary": "General elections were held in India from 19 April to 1 June 2024 in seven phases, to elect all 543 members of the Lok Sabha. Votes were counted and the result was declared on 4 June to form the 18th Lok Sabha.",
+   "seatLeader": "BJP"
+  }
+ ]
+}

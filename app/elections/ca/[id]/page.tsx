@@ -11,6 +11,7 @@ import {
   fmtPct,
 } from "@/lib/caElections";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import SortableTable from "../../SortableTable";
 
 export function generateStaticParams() {
   return getCaElections().elections.map((e) => ({ id: e.id }));
@@ -142,22 +143,24 @@ export default async function CaElectionDetailPage({ params }: { params: Promise
       <section className="mb-8">
         <h2 className="text-xl font-bold mb-3 text-[var(--text)]">The result</h2>
         <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]">
-                <th className="px-3 py-2">Party</th>
-                <th className="px-3 py-2">Leader</th>
-                <th className="px-3 py-2 text-right">Seats</th>
-                <th className="px-3 py-2 text-right">±</th>
-                <th className="px-3 py-2 w-1/5">Share of House</th>
-                <th className="px-3 py-2 text-right">Votes</th>
-                <th className="px-3 py-2 text-right">Vote share</th>
-                <th className="px-3 py-2 text-right">Swing</th>
-              </tr>
-            </thead>
-            <tbody>
-              {e.parties.map((p, i) => (
-                <tr key={`${p.name}-${i}`} className="border-t" style={{ borderColor: "var(--border)" }}>
+          <SortableTable
+            tableClassName="w-full text-sm"
+            headClassName="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]"
+            cols={[
+              { key: "party", label: "Party", className: "px-3 py-2" },
+              { key: "leader", label: "Leader", className: "px-3 py-2" },
+              { key: "seats", label: "Seats", className: "px-3 py-2 text-right" },
+              { key: "change", label: "±", className: "px-3 py-2 text-right" },
+              { key: "bar", label: "Share of House", className: "px-3 py-2 w-1/5", sortable: false },
+              { key: "votes", label: "Votes", className: "px-3 py-2 text-right" },
+              { key: "share", label: "Vote share", className: "px-3 py-2 text-right" },
+              { key: "swing", label: "Swing", className: "px-3 py-2 text-right" },
+            ]}
+            rows={e.parties.map((p, i) => ({
+              key: `${p.name}-${i}`,
+              sort: { party: p.name, leader: p.leader, seats: p.seats, change: p.seatChange ?? null, votes: p.votes, share: p.share, swing: p.swing },
+              cells: (
+                <>
                   <td className="px-3 py-2 whitespace-nowrap">
                     <span className="inline-block w-2.5 h-2.5 rounded-full mr-2 align-middle" style={{ backgroundColor: caPartyColor(p.name) }} />
                     <span className="font-semibold text-[var(--text)]">{p.name}</span>
@@ -179,10 +182,10 @@ export default async function CaElectionDetailPage({ params }: { params: Promise
                   <td className="px-3 py-2 text-right tabular-nums text-[var(--text-muted)]">
                     {p.swing == null ? "—" : `${p.swing > 0 ? "+" : ""}${p.swing.toFixed(1)}`}
                   </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                </>
+              ),
+            }))}
+          />
         </div>
         {rest > 0 ? (
           <p className="text-xs text-[var(--text-dim)] mt-2">
@@ -208,19 +211,24 @@ export default async function CaElectionDetailPage({ params }: { params: Promise
             candidates, independents) that the headline figures group together.
           </p>
           <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
-            <table className="w-full text-xs">
-              <thead>
-                <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]">
-                  <th className="px-2 py-1.5 sticky left-0" style={{ backgroundColor: "var(--bg-card)" }}>Party</th>
-                  {e.provinces.codes.map((c) => (
-                    <th key={c} className="px-2 py-1.5 text-right" title={e.provinces!.labels[c]}>{c}</th>
-                  ))}
-                  <th className="px-2 py-1.5 text-right">Total</th>
-                </tr>
-              </thead>
-              <tbody>
-                {e.provinces.parties.map((p) => (
-                  <tr key={p.name} className="border-t align-top" style={{ borderColor: "var(--border)" }}>
+            <SortableTable
+              tableClassName="w-full text-xs"
+              headClassName="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]"
+              rowClassName="border-t align-top"
+              cols={[
+                { key: "party", label: "Party", className: "px-2 py-1.5 sticky left-0" },
+                ...e.provinces.codes.map((c) => ({ key: `p-${c}`, label: c, className: "px-2 py-1.5 text-right" })),
+                { key: "total", label: "Total", className: "px-2 py-1.5 text-right" },
+              ]}
+              rows={e.provinces.parties.map((p) => ({
+                key: p.name,
+                sort: {
+                  party: p.name,
+                  ...Object.fromEntries(e.provinces!.codes.map((c, i) => [`p-${c}`, p.seats[i] ?? p.votes[i] ?? null])),
+                  total: p.totalSeats ?? p.totalVote ?? null,
+                },
+                cells: (
+                  <>
                     <td className="px-2 py-1.5 whitespace-nowrap sticky left-0" style={{ backgroundColor: "var(--bg-card)" }}>
                       <span className="inline-block w-2 h-2 rounded-full mr-1.5 align-middle" style={{ backgroundColor: caPartyColor(p.name) }} />
                       <span className="font-semibold text-[var(--text)]">{p.name}</span>
@@ -241,21 +249,21 @@ export default async function CaElectionDetailPage({ params }: { params: Promise
                         {p.totalVote != null ? `${p.totalVote.toFixed(1)}%` : ""}
                       </span>
                     </td>
-                  </tr>
-                ))}
-                {e.provinces.seatTotals ? (
-                  <tr className="border-t" style={{ borderColor: "var(--border)" }}>
-                    <td className="px-2 py-1.5 font-semibold text-[var(--text)] sticky left-0" style={{ backgroundColor: "var(--bg-card)" }}>
-                      Total seats
-                    </td>
-                    {e.provinces.seatTotals.map((v, i) => (
-                      <td key={e.provinces!.codes[i]} className="px-2 py-1.5 text-right tabular-nums font-semibold text-[var(--text)]">{v}</td>
-                    ))}
-                    <td className="px-2 py-1.5 text-right tabular-nums font-semibold text-[var(--text)]">{e.provinces.totalSeats}</td>
-                  </tr>
-                ) : null}
-              </tbody>
-            </table>
+                  </>
+                ),
+              }))}
+              footer={e.provinces.seatTotals ? (
+                <tr className="border-t" style={{ borderColor: "var(--border)" }}>
+                  <td className="px-2 py-1.5 font-semibold text-[var(--text)] sticky left-0" style={{ backgroundColor: "var(--bg-card)" }}>
+                    Total seats
+                  </td>
+                  {e.provinces.seatTotals.map((v, i) => (
+                    <td key={e.provinces!.codes[i]} className="px-2 py-1.5 text-right tabular-nums font-semibold text-[var(--text)]">{v}</td>
+                  ))}
+                  <td className="px-2 py-1.5 text-right tabular-nums font-semibold text-[var(--text)]">{e.provinces.totalSeats}</td>
+                </tr>
+              ) : undefined}
+            />
           </div>
         </section>
       ) : null}

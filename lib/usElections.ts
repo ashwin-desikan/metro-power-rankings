@@ -1,6 +1,7 @@
 import "server-only";
 import fs from "fs";
 import path from "path";
+import { getStatesDirectory } from "./statesDirectory";
 
 // ---------------- types ----------------
 export type UsCandidate = {
@@ -165,6 +166,51 @@ export function congressAfter(year: number): UsCongress | null {
 }
 export const usFmtInt = (n: number | null | undefined) => (n == null ? "—" : n.toLocaleString("en-US"));
 export const usFmtPct = (n: number | null | undefined, dp = 1) => (n == null ? "—" : `${n.toFixed(dp)}%`);
+
+// ---------------- state-page links ----------------
+// Clean display name and /states/[slug] page for the raw state labels in
+// us-elections-states.json, resolved against states-directory.json. The raw
+// labels carry a few source artifacts — "Georgia (U.S. state) Georgia",
+// "Washington, D.C. District of Columbia", and several spellings of the Maine
+// and Nebraska congressional-district electors — so this normalises the
+// display too. Unrecognised labels render as-is with no link.
+let _usStateSlugs: Map<string, string> | null = null;
+function usStateSlugs(): Map<string, string> {
+  if (_usStateSlugs) return _usStateSlugs;
+  const m = new Map<string, string>();
+  for (const r of getStatesDirectory()) {
+    if (r.countrySlug === "united-states") m.set(r.name, r.slug);
+  }
+  _usStateSlugs = m;
+  return m;
+}
+const CD_ORDINAL: Record<string, string> = { "1": "1st", "2": "2nd", "3": "3rd" };
+export function usStateLink(raw: string): { display: string; href: string | null } {
+  const slugs = usStateSlugs();
+  const direct = slugs.get(raw);
+  if (direct) return { display: raw, href: `/states/${direct}` };
+  // "New York (state) New York" / "Georgia (U.S. state) Georgia" artifacts
+  const dup = raw.match(/^(.+?) \((?:U\.S\. )?state\) (.+)$/);
+  if (dup && dup[1] === dup[2] && slugs.get(dup[1])) {
+    return { display: dup[1], href: `/states/${slugs.get(dup[1])}` };
+  }
+  // District of Columbia variants
+  if (/district of columbia|d of columbia|washington, d\.c\./i.test(raw)) {
+    const dc = slugs.get("DC");
+    return { display: "District of Columbia", href: dc ? `/states/${dc}` : null };
+  }
+  // Maine / Nebraska congressional-district electors, in all their spellings
+  const cd = raw.match(/^(Maine|Nebraska)(?:'s (\d)(?:st|nd|rd).*| [A-Z]{2}-(\d)Tooltip.*|-(\d))$/);
+  if (cd) {
+    const n = cd[2] ?? cd[3] ?? cd[4];
+    const slug = slugs.get(cd[1]);
+    return {
+      display: `${cd[1]}'s ${CD_ORDINAL[n] ?? `${n}th`} district`,
+      href: slug ? `/states/${slug}` : null,
+    };
+  }
+  return { display: raw, href: null };
+}
 
 // Records & superlatives, computed from the dataset.
 export type UsRecord = { label: string; value: string; electionId: string; detail: string };

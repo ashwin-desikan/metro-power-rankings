@@ -1,0 +1,1035 @@
+{
+ "meta": {
+  "title": "Singaporean elections",
+  "sources": [
+   "Wikipedia: Singaporean general election articles 1948–2025 (results, infoboxes and leads)",
+   "ELD figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "eras": [
+  {
+   "key": "colonial",
+   "label": "The colonial Legislative Council",
+   "span": "1948–1955",
+   "blurb": "Singapore's first elections filled a minority of seats on a tiny registered franchise — 23,000 voters in 1948. The Rendel constitution of 1955 widened the vote and produced the island's first real contest, David Marshall's Labour Front upsetting the establishment Progressives."
+  },
+  {
+   "key": "selfgov",
+   "label": "Self-government and merger",
+   "span": "1959–1963",
+   "blurb": "The 1959 election for full internal self-government swept Lee Kuan Yew's People's Action Party to power, where it has remained ever since. The 1963 vote, held days after merger into Malaysia and months after Operation Coldstore jailed much of the left opposition, broke the Barisan Sosialis."
+  },
+  {
+   "key": "monopoly",
+   "label": "The PAP monopoly",
+   "span": "1968–1980",
+   "blurb": "With the Barisan boycotting parliament after 1966, the PAP won every seat in four consecutive general elections — most of them walkovers. These were peaceful, orderly votes in which the outcome was never in question and much of the electorate never saw a contest."
+  },
+  {
+   "key": "managed",
+   "label": "Dominance by design",
+   "span": "1984–2025",
+   "blurb": "Opposition MPs returned from 1984 and the state adapted: Group Representation Constituencies from 1988, a pliant press, defamation suits and upgrading carrots kept the field tilted while the count stayed clean. The PAP's share swings between 60 and 70 per cent; its seat share barely moves. The 2025 election was the first under Lawrence Wong."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1948",
+   "label": "1948",
+   "year": 1948,
+   "date": "20 March 1948",
+   "era": "colonial",
+   "totalSeats": 6,
+   "majoritySeats": null,
+   "turnout": 63.25,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 11997,
+     "share": 50.51,
+     "swing": null
+    },
+    {
+     "name": "Progressive Party",
+     "leader": "Tan Chye Cheng",
+     "seats": 3,
+     "seatChange": null,
+     "votes": 11754,
+     "share": 49.49,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "Singapore's first election",
+   "summary": "General elections were held in Singapore for the first time on 20 March 1948 to elect six members of the Legislative Council. The elections were part of a series of constitutional reforms introduced by the British colonial administration following the end of World War II.",
+   "caveat": "A colonial-era vote on a very narrow registered franchise, filling only a minority of seats. Recorded here as history, not a full democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Independents"
+  },
+  {
+   "id": "1951",
+   "label": "1951",
+   "year": 1951,
+   "date": "10 April 1951",
+   "era": "colonial",
+   "totalSeats": 9,
+   "majoritySeats": null,
+   "turnout": 52.05,
+   "parties": [
+    {
+     "name": "Progressive Party",
+     "leader": "Tan Chye Cheng",
+     "seats": 6,
+     "seatChange": 3.0,
+     "votes": 11202,
+     "share": 45.37,
+     "swing": -4.12
+    },
+    {
+     "name": "Labour Party",
+     "leader": "Lim Yew Hock",
+     "seats": 2,
+     "seatChange": null,
+     "votes": 7335,
+     "share": 29.7,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 2.0,
+     "votes": 6156,
+     "share": 24.93,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "General elections were held in Singapore on 10 April 1951 to elect nine members of the Legislative Council. This election followed amendments to the Constitution which expanded the number of elected seats from six to nine out of a total of 25 seats.",
+   "caveat": "A colonial-era vote on a very narrow registered franchise, filling only a minority of seats. Recorded here as history, not a full democratic election.",
+   "unfree": "partial",
+   "seatLeader": "Progressive Party"
+  },
+  {
+   "id": "1955",
+   "label": "1955",
+   "year": 1955,
+   "date": "2 April 1955",
+   "era": "colonial",
+   "totalSeats": 25,
+   "majoritySeats": 17,
+   "turnout": 52.66,
+   "parties": [
+    {
+     "name": "Labour Front",
+     "leader": "David Marshall",
+     "seats": 10,
+     "seatChange": null,
+     "votes": 42300,
+     "share": 27.06,
+     "swing": null
+    },
+    {
+     "name": "Progressive Party",
+     "leader": "Tan Chye Cheng",
+     "seats": 4,
+     "seatChange": 2.0,
+     "votes": 38695,
+     "share": 24.75,
+     "swing": -20.62
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2.0,
+     "votes": 15098,
+     "share": 9.66,
+     "swing": null
+    },
+    {
+     "name": "People's Action Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 13634,
+     "share": 8.72,
+     "swing": null
+    },
+    {
+     "name": "PAP",
+     "leader": "Lee Kuan Yew",
+     "seats": 3,
+     "seatChange": null,
+     "votes": 13634,
+     "share": 8.72,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party",
+     "leader": "Tan Ek Khoo",
+     "seats": 2,
+     "seatChange": null,
+     "votes": 32115,
+     "share": 20.54,
+     "swing": null
+    },
+    {
+     "name": "Malayan Chinese Association",
+     "leader": "Wong Foo Nam",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 6203,
+     "share": 3.97,
+     "swing": null
+    },
+    {
+     "name": "United Malays National Organisation",
+     "leader": "Abdul Hamid Jumat",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 5721,
+     "share": 3.66,
+     "swing": null
+    },
+    {
+     "name": "Malay Union",
+     "leader": "Inche Sidik",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 1233,
+     "share": 0.79,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "David Marshall",
+    "party": "Labour Front"
+   },
+   "knownAs": "Marshall's upset",
+   "summary": "General elections were held in Singapore on 2 April 1955 to elect 25 members of the Legislative Assembly. It marked a pivotal moment in Singapore's political development, being the first election conducted under the Rendel Constitution, which introduced a significantly expanded legislature with a majority of elected seats.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "Labour Front"
+  },
+  {
+   "id": "1959",
+   "label": "1959",
+   "year": 1959,
+   "date": "30 May 1959",
+   "era": "selfgov",
+   "totalSeats": 51,
+   "majoritySeats": 26,
+   "turnout": 90.07,
+   "parties": [
+    {
+     "name": "People's Action Party",
+     "leader": null,
+     "seats": 43,
+     "seatChange": 40.0,
+     "votes": 281891,
+     "share": 54.08,
+     "swing": null
+    },
+    {
+     "name": "PAP",
+     "leader": "Lee Kuan Yew",
+     "seats": 43,
+     "seatChange": 39.0,
+     "votes": 281891,
+     "share": 54.08,
+     "swing": 45.36
+    },
+    {
+     "name": "Singapore People's Alliance",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 107755,
+     "share": 20.67,
+     "swing": null
+    },
+    {
+     "name": "SPA",
+     "leader": "Lim Yew Hock",
+     "seats": 4,
+     "seatChange": null,
+     "votes": 107755,
+     "share": 20.67,
+     "swing": null
+    },
+    {
+     "name": "United Malays National Organisation",
+     "leader": "Abdul Hamid Jumat",
+     "seats": 3,
+     "seatChange": 2.0,
+     "votes": 27448,
+     "share": 5.27,
+     "swing": 1.61
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 2.0,
+     "votes": 35341,
+     "share": 6.78,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Lee Kuan Yew",
+    "party": "PAP"
+   },
+   "knownAs": "The PAP takes power",
+   "summary": "General elections were held in Singapore on 30 May 1959 to elect all 51 members of the Legislative Assembly. They were the first general elections after Singapore was granted full internal self-government from the United Kingdom, excluding matters of defence and foreign affairs.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "People's Action Party"
+  },
+  {
+   "id": "1963",
+   "label": "1963",
+   "year": 1963,
+   "date": "21 September 1963",
+   "era": "selfgov",
+   "totalSeats": 51,
+   "majoritySeats": 26,
+   "turnout": 95.11,
+   "parties": [
+    {
+     "name": "People's Action Party",
+     "leader": null,
+     "seats": 37,
+     "seatChange": 6.0,
+     "votes": 272924,
+     "share": 46.93,
+     "swing": null
+    },
+    {
+     "name": "PAP",
+     "leader": "Lee Kuan Yew",
+     "seats": 37,
+     "seatChange": -6.0,
+     "votes": 272924,
+     "share": 46.93,
+     "swing": -7.15
+    },
+    {
+     "name": "Barisan Sosialis",
+     "leader": "Lee Siew Choh",
+     "seats": 13,
+     "seatChange": null,
+     "votes": 193301,
+     "share": 33.24,
+     "swing": null
+    },
+    {
+     "name": "United People's Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 48785,
+     "share": 8.39,
+     "swing": null
+    },
+    {
+     "name": "UPP",
+     "leader": "Ong Eng Guan",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 48785,
+     "share": 8.39,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Lee Kuan Yew",
+    "party": "PAP"
+   },
+   "pmAfter": {
+    "name": "Lee Kuan Yew",
+    "party": "PAP"
+   },
+   "knownAs": "The merger election",
+   "summary": "General elections were held in Singapore on 21 September 1963 to elect all 51 members of the Legislative Assembly. This was the first and only general election held when Singapore was part of Malaysia as an autonomous state, and just days after it became fully independent from the United Kingdom on 16 September following full internal self-government in 1959.",
+   "caveat": "Held nine days after merger into Malaysia and months after Operation Coldstore detained over a hundred leftists, including much of the Barisan Sosialis leadership.",
+   "unfree": null,
+   "seatLeader": "People's Action Party"
+  },
+  {
+   "id": "1968",
+   "label": "1968",
+   "year": 1968,
+   "date": "13 April 1968",
+   "era": "monopoly",
+   "totalSeats": null,
+   "majoritySeats": 30,
+   "turnout": 91.83,
+   "parties": [
+    {
+     "name": "PAP",
+     "leader": "Lee Kuan Yew",
+     "seats": 58,
+     "seatChange": 21.0,
+     "votes": 65812,
+     "share": 86.72,
+     "swing": 39.79
+    }
+   ],
+   "pmBefore": {
+    "name": "Lee Kuan Yew",
+    "party": "PAP"
+   },
+   "pmAfter": {
+    "name": "Lee Kuan Yew",
+    "party": "PAP"
+   },
+   "knownAs": "The boycott walkover",
+   "summary": "General elections were held in Singapore on 13 April 1968 to elect all 58 members of Parliament. They were the third general elections since Singapore attained self-governance in 1959 and the first since gaining independence in 1965.",
+   "caveat": "The Barisan Sosialis boycotted: the PAP won all 58 seats, 51 of them without a contest.",
+   "unfree": null,
+   "seatLeader": "PAP"
+  },
+  {
+   "id": "1972",
+   "label": "1972",
+   "year": 1972,
+   "date": "2 September 1972",
+   "era": "monopoly",
+   "totalSeats": null,
+   "majoritySeats": 33,
+   "turnout": 93.55,
+   "parties": [
+    {
+     "name": "PAP",
+     "leader": "Lee Kuan Yew",
+     "seats": 65,
+     "seatChange": 7.0,
+     "votes": 524892,
+     "share": 70.43,
+     "swing": -16.29
+    }
+   ],
+   "pmBefore": {
+    "name": "Lee Kuan Yew",
+    "party": "PAP"
+   },
+   "pmAfter": {
+    "name": "Lee Kuan Yew",
+    "party": "PAP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Singapore on 2 September 1972 to elect all 65 members of Parliament. They were the fourth general elections since Singapore attained self-governance in 1959 and the second since gaining independence in 1965.",
+   "caveat": "Every seat won by the PAP; the opposition contested but the field was heavily tilted.",
+   "unfree": null,
+   "seatLeader": "PAP"
+  },
+  {
+   "id": "1976",
+   "label": "1976",
+   "year": 1976,
+   "date": "23 December 1976",
+   "era": "monopoly",
+   "totalSeats": null,
+   "majoritySeats": 35,
+   "turnout": 95.08,
+   "parties": [
+    {
+     "name": "PAP",
+     "leader": "Lee Kuan Yew",
+     "seats": 69,
+     "seatChange": 4.0,
+     "votes": 590169,
+     "share": 74.09,
+     "swing": 3.66
+    }
+   ],
+   "pmBefore": {
+    "name": "Lee Kuan Yew",
+    "party": "PAP"
+   },
+   "pmAfter": {
+    "name": "Lee Kuan Yew",
+    "party": "PAP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Singapore on 23 December 1976 to elect all 69 members of Parliament. They were the fifth general elections since the introduction of self-government in 1959 and the third since Singapore's independence in 1965.",
+   "caveat": "Every seat won by the PAP on a tilted field.",
+   "unfree": null,
+   "seatLeader": "PAP"
+  },
+  {
+   "id": "1980",
+   "label": "1980",
+   "year": 1980,
+   "date": "23 December 1980",
+   "era": "monopoly",
+   "totalSeats": null,
+   "majoritySeats": 38,
+   "turnout": 95.5,
+   "parties": [
+    {
+     "name": "PAP",
+     "leader": "Lee Kuan Yew",
+     "seats": 75,
+     "seatChange": 6.0,
+     "votes": 494268,
+     "share": 77.66,
+     "swing": 3.57
+    }
+   ],
+   "pmBefore": {
+    "name": "Lee Kuan Yew",
+    "party": "PAP"
+   },
+   "pmAfter": {
+    "name": "Lee Kuan Yew",
+    "party": "PAP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Singapore on 23 December 1980 to elect all 75 members of Parliament. They were the sixth general elections since the introduction of self-government in 1959 and the fourth since independence in 1965.",
+   "caveat": "Every seat won by the PAP on a tilted field.",
+   "unfree": null,
+   "seatLeader": "PAP"
+  },
+  {
+   "id": "1984",
+   "label": "1984",
+   "year": 1984,
+   "date": "22 December 1984",
+   "era": "managed",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 95.65,
+   "parties": [
+    {
+     "name": "PAP",
+     "leader": "Lee Kuan Yew",
+     "seats": 77,
+     "seatChange": 2.0,
+     "votes": 568310,
+     "share": 64.83,
+     "swing": -12.83
+    },
+    {
+     "name": "WP",
+     "leader": "J. B. Jeyaretnam",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": 110868,
+     "share": 12.65,
+     "swing": 6.43
+    },
+    {
+     "name": "SDP",
+     "leader": "Chiam See Tong",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": 32102,
+     "share": 3.66,
+     "swing": 1.89
+    }
+   ],
+   "pmBefore": {
+    "name": "Lee Kuan Yew",
+    "party": "PAP"
+   },
+   "pmAfter": {
+    "name": "Lee Kuan Yew",
+    "party": "PAP"
+   },
+   "knownAs": "The opposition returns",
+   "summary": "General elections were held in Singapore on 22 December 1984 to elect members of Parliament. They were the seventh general elections since the introduction of self-government in 1959 and the fifth since independence in 1965.",
+   "caveat": "Cleanly counted but structurally tilted: GRC wards, government-aligned media and litigation against opposition figures shape the field long before polling day.",
+   "unfree": null,
+   "seatLeader": "PAP"
+  },
+  {
+   "id": "1988",
+   "label": "1988",
+   "year": 1988,
+   "date": "3 September 1988",
+   "era": "managed",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 94.7,
+   "parties": [
+    {
+     "name": "PAP",
+     "leader": "Lee Kuan Yew",
+     "seats": 80,
+     "seatChange": 3.0,
+     "votes": 848029,
+     "share": 63.17,
+     "swing": -1.66
+    },
+    {
+     "name": "WP",
+     "leader": "J. B. Jeyaretnam",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 224473,
+     "share": 16.72,
+     "swing": 4.07
+    },
+    {
+     "name": "SDP",
+     "leader": "Chiam See Tong",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 158341,
+     "share": 11.8,
+     "swing": 8.14
+    }
+   ],
+   "pmBefore": {
+    "name": "Lee Kuan Yew",
+    "party": "PAP"
+   },
+   "pmAfter": {
+    "name": "Lee Kuan Yew",
+    "party": "PAP"
+   },
+   "knownAs": "The first GRC election",
+   "summary": "General elections were held in Singapore on 3 September 1988 to elect members of Parliament. They were the eighth general elections since the introduction of self-government in 1959 and the sixth since independence in 1965.",
+   "caveat": "Cleanly counted but structurally tilted: GRC wards, government-aligned media and litigation against opposition figures shape the field long before polling day.",
+   "unfree": null,
+   "seatLeader": "PAP"
+  },
+  {
+   "id": "1991",
+   "label": "1991",
+   "year": 1991,
+   "date": "31 August 1991",
+   "era": "managed",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 95.03,
+   "parties": [
+    {
+     "name": "PAP",
+     "leader": "Goh Chok Tong",
+     "seats": 77,
+     "seatChange": -3.0,
+     "votes": 477760,
+     "share": 60.97,
+     "swing": -2.2
+    },
+    {
+     "name": "SDP",
+     "leader": "Chiam See Tong",
+     "seats": 3,
+     "seatChange": 2.0,
+     "votes": 93856,
+     "share": 11.98,
+     "swing": 0.18
+    },
+    {
+     "name": "WP",
+     "leader": "J. B. Jeyaretnam",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 112010,
+     "share": 14.29,
+     "swing": -2.43
+    }
+   ],
+   "pmBefore": {
+    "name": "Goh Chok Tong",
+    "party": "PAP"
+   },
+   "pmAfter": {
+    "name": "Goh Chok Tong",
+    "party": "PAP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Singapore on 31 August 1991 to elect members of Parliament. They were the ninth general elections since the introduction of self-government in 1959 and the seventh since independence in 1965.",
+   "caveat": "Cleanly counted but structurally tilted: GRC wards, government-aligned media and litigation against opposition figures shape the field long before polling day.",
+   "unfree": null,
+   "seatLeader": "PAP"
+  },
+  {
+   "id": "1997",
+   "label": "1997",
+   "year": 1997,
+   "date": "2 January 1997",
+   "era": "managed",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 95.91,
+   "parties": [
+    {
+     "name": "PAP",
+     "leader": "Goh Chok Tong",
+     "seats": 81,
+     "seatChange": 4.0,
+     "votes": 465751,
+     "share": 64.98,
+     "swing": 4.01
+    },
+    {
+     "name": "WP",
+     "leader": "J. B. Jeyaretnam",
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": 101544,
+     "share": 14.17,
+     "swing": -0.12
+    },
+    {
+     "name": "SPP",
+     "leader": "Chiam See Tong",
+     "seats": 1,
+     "seatChange": null,
+     "votes": 16746,
+     "share": 2.34,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Goh Chok Tong",
+    "party": "PAP"
+   },
+   "pmAfter": {
+    "name": "Goh Chok Tong",
+    "party": "PAP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Singapore on 2 January 1997 to elect members of Parliament. They were the tenth general elections since the introduction of self-government in 1959 and the eighth since independence in 1965.",
+   "caveat": "Cleanly counted but structurally tilted: GRC wards, government-aligned media and litigation against opposition figures shape the field long before polling day.",
+   "unfree": null,
+   "seatLeader": "PAP"
+  },
+  {
+   "id": "2001",
+   "label": "2001",
+   "year": 2001,
+   "date": "3 November 2001",
+   "era": "managed",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 94.61,
+   "parties": [
+    {
+     "name": "PAP",
+     "leader": "Goh Chok Tong",
+     "seats": 82,
+     "seatChange": 1.0,
+     "votes": 470765,
+     "share": 75.29,
+     "swing": 10.31
+    },
+    {
+     "name": "SDA",
+     "leader": "Chiam See Tong",
+     "seats": 2,
+     "seatChange": null,
+     "votes": 75248,
+     "share": 12.03,
+     "swing": null
+    },
+    {
+     "name": "WP",
+     "leader": "Low Thia Khiang",
+     "seats": 1,
+     "seatChange": -1.0,
+     "votes": 19060,
+     "share": 3.05,
+     "swing": -11.12
+    }
+   ],
+   "pmBefore": {
+    "name": "Goh Chok Tong",
+    "party": "PAP"
+   },
+   "pmAfter": {
+    "name": "Goh Chok Tong",
+    "party": "PAP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Singapore on 3 November 2001 to elect members of Parliament. They were the eleventh general elections since the introduction of self-government in 1959 and the ninth since independence in 1965.",
+   "caveat": "Cleanly counted but structurally tilted: GRC wards, government-aligned media and litigation against opposition figures shape the field long before polling day.",
+   "unfree": null,
+   "seatLeader": "PAP"
+  },
+  {
+   "id": "2006",
+   "label": "2006",
+   "year": 2006,
+   "date": "6 May 2006",
+   "era": "managed",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 94.0,
+   "parties": [
+    {
+     "name": "PAP",
+     "leader": "Lee Hsien Loong",
+     "seats": 82,
+     "seatChange": 0.0,
+     "votes": 748130,
+     "share": 66.6,
+     "swing": -8.69
+    },
+    {
+     "name": "WP",
+     "leader": "Low Thia Khiang",
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": 183578,
+     "share": 16.34,
+     "swing": 13.29
+    },
+    {
+     "name": "SDA",
+     "leader": "Chiam See Tong",
+     "seats": 1,
+     "seatChange": -1.0,
+     "votes": 145628,
+     "share": 12.96,
+     "swing": 0.93
+    }
+   ],
+   "pmBefore": {
+    "name": "Lee Hsien Loong",
+    "party": "PAP"
+   },
+   "pmAfter": {
+    "name": "Lee Hsien Loong",
+    "party": "PAP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Singapore on 6 May 2006 to elect members of Parliament. They were the twelfth general elections since the introduction of self-government in 1959 and the tenth since independence in 1965.",
+   "caveat": "Cleanly counted but structurally tilted: GRC wards, government-aligned media and litigation against opposition figures shape the field long before polling day.",
+   "unfree": null,
+   "seatLeader": "PAP"
+  },
+  {
+   "id": "2011",
+   "label": "2011",
+   "year": 2011,
+   "date": "7 May 2011",
+   "era": "managed",
+   "totalSeats": 90,
+   "majoritySeats": null,
+   "turnout": 93.18,
+   "parties": [
+    {
+     "name": "People's Action Party",
+     "leader": null,
+     "seats": 81,
+     "seatChange": 1.0,
+     "votes": 1212154,
+     "share": 60.14,
+     "swing": null
+    },
+    {
+     "name": "PAP",
+     "leader": "Lee Hsien Loong",
+     "seats": 81,
+     "seatChange": -1.0,
+     "votes": 1212154,
+     "share": 60.14,
+     "swing": -6.46
+    },
+    {
+     "name": "Workers' Party",
+     "leader": "Low Thia Khiang",
+     "seats": 8,
+     "seatChange": 6.0,
+     "votes": 258510,
+     "share": 12.83,
+     "swing": -3.67
+    },
+    {
+     "name": "Singapore People's Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 62639,
+     "share": 3.11,
+     "swing": null
+    },
+    {
+     "name": "SPP",
+     "leader": "Chiam See Tong",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 62639,
+     "share": 3.11,
+     "swing": -9.85
+    }
+   ],
+   "pmBefore": {
+    "name": "Lee Hsien Loong",
+    "party": "PAP"
+   },
+   "pmAfter": {
+    "name": "Lee Hsien Loong",
+    "party": "PAP"
+   },
+   "knownAs": "The watershed",
+   "summary": "General elections were held in Singapore on 7 May 2011 to elect members of Parliament. They were the thirteenth general elections since the introduction of self-government in 1959 and the eleventh since independence in 1965.",
+   "caveat": "Cleanly counted but structurally tilted: GRC wards, government-aligned media and litigation against opposition figures shape the field long before polling day.",
+   "unfree": null,
+   "seatLeader": "People's Action Party"
+  },
+  {
+   "id": "2015",
+   "label": "2015",
+   "year": 2015,
+   "date": "11 September 2015",
+   "era": "managed",
+   "totalSeats": 92,
+   "majoritySeats": null,
+   "turnout": 93.7,
+   "parties": [
+    {
+     "name": "People's Action Party",
+     "leader": null,
+     "seats": 83,
+     "seatChange": 2.0,
+     "votes": 1579183,
+     "share": 69.86,
+     "swing": null
+    },
+    {
+     "name": "PAP",
+     "leader": "Lee Hsien Loong",
+     "seats": 83,
+     "seatChange": 2.0,
+     "votes": 1579183,
+     "share": 69.86,
+     "swing": 9.72
+    },
+    {
+     "name": "Workers' Party",
+     "leader": "Low Thia Khiang",
+     "seats": 9,
+     "seatChange": 0.0,
+     "votes": 282143,
+     "share": 12.48,
+     "swing": -0.35
+    }
+   ],
+   "pmBefore": {
+    "name": "Lee Hsien Loong",
+    "party": "PAP"
+   },
+   "pmAfter": {
+    "name": "Lee Hsien Loong",
+    "party": "PAP"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Singapore on 11 September 2015 to elect members of Parliament. They were the fourteenth general elections since the introduction of self-government in 1959 and the twelfth since independence in 1965.",
+   "caveat": "Cleanly counted but structurally tilted: GRC wards, government-aligned media and litigation against opposition figures shape the field long before polling day.",
+   "unfree": null,
+   "seatLeader": "People's Action Party"
+  },
+  {
+   "id": "2020",
+   "label": "2020",
+   "year": 2020,
+   "date": "10 July 2020",
+   "era": "managed",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 95.81,
+   "parties": [
+    {
+     "name": "PAP",
+     "leader": "Lee Hsien Loong",
+     "seats": 83,
+     "seatChange": 0.0,
+     "votes": 1527491,
+     "share": 61.23,
+     "swing": -8.63
+    },
+    {
+     "name": "WP",
+     "leader": "Pritam Singh",
+     "seats": 10,
+     "seatChange": 1.0,
+     "votes": 279922,
+     "share": 11.22,
+     "swing": -1.26
+    },
+    {
+     "name": "PSP",
+     "leader": "Tan Cheng Bock",
+     "seats": 2,
+     "seatChange": null,
+     "votes": 253996,
+     "share": 10.18,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Lee Hsien Loong",
+    "party": "PAP"
+   },
+   "pmAfter": {
+    "name": "Lee Hsien Loong",
+    "party": "PAP"
+   },
+   "knownAs": "The pandemic election",
+   "summary": "General elections were held in Singapore on 10 July 2020 to elect members of Parliament. They were the fifteenth general elections since the introduction of self-government in 1959 and the thirtheenth since independence in 1965.",
+   "caveat": "Cleanly counted but structurally tilted: GRC wards, government-aligned media and litigation against opposition figures shape the field long before polling day.",
+   "unfree": null,
+   "seatLeader": "PAP"
+  },
+  {
+   "id": "2025",
+   "label": "2025",
+   "year": 2025,
+   "date": "3 May 2025",
+   "era": "managed",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 92.83,
+   "parties": [
+    {
+     "name": "PAP",
+     "leader": "Lawrence Wong",
+     "seats": 87,
+     "seatChange": 4.0,
+     "votes": 1570803,
+     "share": 65.57,
+     "swing": 4.34
+    },
+    {
+     "name": "WP",
+     "leader": "Pritam Singh",
+     "seats": 12,
+     "seatChange": 2.0,
+     "votes": 359161,
+     "share": 14.99,
+     "swing": 3.77
+    }
+   ],
+   "pmBefore": {
+    "name": "Lawrence Wong",
+    "party": "PAP"
+   },
+   "pmAfter": {
+    "name": "Lawrence Wong",
+    "party": "PAP"
+   },
+   "knownAs": "Wong's first test",
+   "summary": "General elections were held in Singapore on 3 May 2025 to elect members of Parliament.",
+   "caveat": "Cleanly counted but structurally tilted: GRC wards, government-aligned media and litigation against opposition figures shape the field long before polling day.",
+   "unfree": null,
+   "seatLeader": "PAP"
+  }
+ ]
+}

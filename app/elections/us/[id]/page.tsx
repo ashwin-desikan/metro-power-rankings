@@ -14,6 +14,7 @@ import {
   usFmtPct,
 } from "@/lib/usElections";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import SortableTable from "../../SortableTable";
 
 export function generateStaticParams() {
   return getUsElections().elections.map((e) => ({ id: e.id }));
@@ -140,22 +141,24 @@ export default async function UsElectionDetailPage({ params }: { params: Promise
       <section className="mb-8">
         <h2 className="text-xl font-bold mb-3 text-[var(--text)]">The result</h2>
         <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]">
-                <th className="px-3 py-2">Candidate</th>
-                <th className="px-3 py-2">Party</th>
-                <th className="px-3 py-2">Running mate</th>
-                <th className="px-3 py-2 text-right">Electoral votes</th>
-                <th className="px-3 py-2 w-1/5">EV share</th>
-                <th className="px-3 py-2 text-right">Popular votes</th>
-                <th className="px-3 py-2 text-right">PV share</th>
-                <th className="px-3 py-2 text-right">States won</th>
-              </tr>
-            </thead>
-            <tbody>
-              {e.candidates.map((c, i) => (
-                <tr key={`${c.name}-${i}`} className="border-t" style={{ borderColor: "var(--border)" }}>
+          <SortableTable
+            tableClassName="w-full text-sm"
+            headClassName="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]"
+            cols={[
+              { key: "candidate", label: "Candidate", className: "px-3 py-2" },
+              { key: "party", label: "Party", className: "px-3 py-2" },
+              { key: "mate", label: "Running mate", className: "px-3 py-2" },
+              { key: "ev", label: "Electoral votes", className: "px-3 py-2 text-right" },
+              { key: "evbar", label: "EV share", className: "px-3 py-2 w-1/5", sortable: false },
+              { key: "votes", label: "Popular votes", className: "px-3 py-2 text-right" },
+              { key: "share", label: "PV share", className: "px-3 py-2 text-right" },
+              { key: "states", label: "States won", className: "px-3 py-2 text-right" },
+            ]}
+            rows={e.candidates.map((c, i) => ({
+              key: `${c.name}-${i}`,
+              sort: { candidate: c.name, party: c.party, mate: c.vp, ev: c.ev, votes: c.votes, share: c.share, states: carried[c.name] ?? null },
+              cells: (
+                <>
                   <td className="px-3 py-2 whitespace-nowrap font-semibold text-[var(--text)]">
                     <span className="inline-block w-2.5 h-2.5 rounded-full mr-2 align-middle" style={{ backgroundColor: usPartyColor(c.party) }} />
                     {c.name}
@@ -173,10 +176,10 @@ export default async function UsElectionDetailPage({ params }: { params: Promise
                   <td className="px-3 py-2 text-right tabular-nums text-[var(--text-muted)]">{usFmtInt(c.votes)}</td>
                   <td className="px-3 py-2 text-right tabular-nums text-[var(--text-muted)]">{usFmtPct(c.share, 2)}</td>
                   <td className="px-3 py-2 text-right tabular-nums text-[var(--text-muted)]">{carried[c.name] ?? "—"}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                </>
+              ),
+            }))}
+          />
         </div>
         {e.year <= 1820 ? (
           <p className="text-xs text-[var(--text-dim)] mt-2">
@@ -196,32 +199,35 @@ export default async function UsElectionDetailPage({ params }: { params: Promise
         <section className="mb-8">
           <h2 className="text-xl font-bold mb-3 text-[var(--text)]">Results by state</h2>
           <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
-            <table className="w-full text-xs">
-              <thead>
-                <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]">
-                  <th className="px-3 py-2">State</th>
-                  <th className="px-3 py-2">Carried by</th>
-                  <th className="px-3 py-2 text-right">Share</th>
-                  <th className="px-3 py-2 text-right">Electoral votes</th>
-                  <th className="px-3 py-2">Runner-up</th>
-                </tr>
-              </thead>
-              <tbody>
-                {stateData.states.map((s) => {
-                  const idxs = stateData.candidates.map((_, i) => i);
-                  const byEv = idxs.slice().sort((a, b) => (s.r[b]?.[0] ?? 0) - (s.r[a]?.[0] ?? 0) || (s.r[b]?.[1] ?? 0) - (s.r[a]?.[1] ?? 0));
-                  const wi = byEv[0];
-                  const w = stateData.candidates[wi];
-                  const wr = s.r[wi] ?? [0, null, null];
-                  const byVotes = idxs.filter((i) => i !== wi && s.r[i]?.[1] != null).sort((a, b) => (s.r[b]?.[1] ?? 0) - (s.r[a]?.[1] ?? 0));
-                  const ru = byVotes[0] != null ? stateData.candidates[byVotes[0]] : null;
-                  const rr = byVotes[0] != null ? s.r[byVotes[0]] : null;
-                  const splits = idxs.filter((i) => (s.r[i]?.[0] ?? 0) > 0);
-                  const evLabel = splits.length > 1
-                    ? splits.map((i) => `${s.r[i]?.[0]} ${stateData.candidates[i].name.split(" ").slice(-1)[0]}`).join(" · ")
-                    : (wr[0] ?? 0) > 0 ? String(wr[0]) : "—";
-                  return (
-                    <tr key={s.state} className="border-t" style={{ borderColor: "var(--border)" }}>
+            <SortableTable
+              tableClassName="w-full text-xs"
+              headClassName="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]"
+              cols={[
+                { key: "state", label: "State", className: "px-3 py-2" },
+                { key: "carried", label: "Carried by", className: "px-3 py-2" },
+                { key: "share", label: "Share", className: "px-3 py-2 text-right" },
+                { key: "ev", label: "Electoral votes", className: "px-3 py-2 text-right" },
+                { key: "runnerUp", label: "Runner-up", className: "px-3 py-2" },
+              ]}
+              rows={stateData.states.map((s) => {
+                const idxs = stateData.candidates.map((_, i) => i);
+                const byEv = idxs.slice().sort((a, b) => (s.r[b]?.[0] ?? 0) - (s.r[a]?.[0] ?? 0) || (s.r[b]?.[1] ?? 0) - (s.r[a]?.[1] ?? 0));
+                const wi = byEv[0];
+                const w = stateData.candidates[wi];
+                const wr = s.r[wi] ?? [0, null, null];
+                const byVotes = idxs.filter((i) => i !== wi && s.r[i]?.[1] != null).sort((a, b) => (s.r[b]?.[1] ?? 0) - (s.r[a]?.[1] ?? 0));
+                const ru = byVotes[0] != null ? stateData.candidates[byVotes[0]] : null;
+                const rr = byVotes[0] != null ? s.r[byVotes[0]] : null;
+                const splits = idxs.filter((i) => (s.r[i]?.[0] ?? 0) > 0);
+                const evTotal = splits.reduce((n, i) => n + (s.r[i]?.[0] ?? 0), 0);
+                const evLabel = splits.length > 1
+                  ? splits.map((i) => `${s.r[i]?.[0]} ${stateData.candidates[i].name.split(" ").slice(-1)[0]}`).join(" · ")
+                  : (wr[0] ?? 0) > 0 ? String(wr[0]) : "—";
+                return {
+                  key: s.state,
+                  sort: { state: s.state, carried: w.name, share: wr[2] ?? null, ev: evTotal || null, runnerUp: ru?.name ?? null },
+                  cells: (
+                    <>
                       <td className="px-3 py-1.5 font-semibold text-[var(--text)] whitespace-nowrap">{s.state}</td>
                       <td className="px-3 py-1.5 whitespace-nowrap">
                         <span className="inline-block w-2 h-2 rounded-full mr-1.5 align-middle" style={{ backgroundColor: usPartyColor(w.party) }} />
@@ -232,11 +238,11 @@ export default async function UsElectionDetailPage({ params }: { params: Promise
                       <td className="px-3 py-1.5 whitespace-nowrap text-[var(--text-muted)]">
                         {ru && rr ? <>{ru.name}{rr[2] != null ? ` · ${usFmtPct(rr[2])}` : ""}</> : "—"}
                       </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+                    </>
+                  ),
+                };
+              })}
+            />
           </div>
           {stateData.reconciliation && stateData.reconciliation.length > 0 ? (
             <p className="text-xs text-[var(--text-dim)] mt-2">

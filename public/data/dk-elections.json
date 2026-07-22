@@ -1,0 +1,4662 @@
+{
+ "meta": {
+  "title": "Danish elections",
+  "sources": [
+   "Wikipedia: Danish Folketing and general election articles 1849–2026 (results, infoboxes and leads)",
+   "Statistics Denmark figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "eras": [
+  {
+   "key": "struggle",
+   "label": "The constitutional struggle",
+   "span": "1849–1901",
+   "blurb": "The June Constitution of 1849 gave Denmark one of Europe's broadest male franchises, but the king kept appointing conservative governments no matter how badly they lost. Under Estrup the country was run by provisional decree for over a decade while the Left won election after election it was not allowed to convert into power."
+  },
+  {
+   "key": "systemskifte",
+   "label": "The change of system",
+   "span": "1903–1918",
+   "blurb": "The Systemskifte of 1901 finally conceded parliamentary government to the Folketing's majority. The Left governed, the Radicals split from them, and the Social Democrats rose election by election; the 1915 constitution enfranchised women and servants, who voted for the first time in 1918."
+  },
+  {
+   "key": "stauning",
+   "label": "Stauning's Denmark",
+   "span": "1920–1943",
+   "blurb": "Three elections in one year resolved the Easter Crisis of 1920, and by 1924 Thorvald Stauning had made the Social Democrats Denmark's largest party — a position they held for three-quarters of a century. His 1935 landslide under 'Stauning or chaos' remains the modern record; even under German occupation, the 1943 election was fought and won by the democratic parties."
+  },
+  {
+   "key": "fourparty",
+   "label": "The four old parties",
+   "span": "1945–1971",
+   "blurb": "Postwar politics ran on the familiar quadrille of Social Democrats, Venstre, Conservatives and Radicals — minority governments, welfare-state construction and low drama, with the Socialist People's Party arriving from the left in 1960 to complicate the arithmetic."
+  },
+  {
+   "key": "earthquake",
+   "label": "The earthquake and after",
+   "span": "1973–1998",
+   "blurb": "The 1973 jordskredsvalg doubled the number of parties in the Folketing overnight: Glistrup's Progress Party arrived second, and every old party lost. Danish politics spent two decades absorbing the shock through weak minority cabinets, Schlüter's long conservative interlude and Nyrup's comeback."
+  },
+  {
+   "key": "bloc",
+   "label": "Bloc politics",
+   "span": "2001–2026",
+   "blurb": "From Fogh Rasmussen's 2001 victory — the first time since 1920 that the Social Democrats were not the largest party — Danish elections became duels between red and blue blocs, with the Danish People's Party setting the tone on immigration. Frederiksen's Social Democrats governed from 2019, crossed the aisle into a grand coalition in 2022, and lost ground in the snap election of March 2026."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1849",
+   "label": "1849",
+   "year": 1849,
+   "date": "1849",
+   "era": "struggle",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Society of the Friends of Peasants",
+     "leader": null,
+     "seats": 45,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Liberal Party",
+     "leader": null,
+     "seats": 42,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Højre",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Others",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The June Constitution election",
+   "summary": "The elections were held using first-past-the-post voting in single-member constituencies.",
+   "caveat": null,
+   "seatLeader": "Society of the Friends of Peasants"
+  },
+  {
+   "id": "1852",
+   "label": "1852",
+   "year": 1852,
+   "date": "1852",
+   "era": "struggle",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The elections were held using first-past-the-post voting in single-member constituencies.",
+   "caveat": null,
+   "seatLeader": null
+  },
+  {
+   "id": "1853-feb",
+   "label": "February 1853",
+   "year": 1853,
+   "date": "26 February 1853",
+   "era": "struggle",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Folketing elections were held in Denmark on 26 February 1853. Christian Albrecht Bluhme of the Højre party remained Prime Minister after the elections, but after the government failed to win a vote on who would succeed King Frederick VII on 18 April by the three-quarters majority necessary, the legislature was dissolved and early elections were held in May.",
+   "caveat": null,
+   "seatLeader": null
+  },
+  {
+   "id": "1853-may",
+   "label": "May 1853",
+   "year": 1853,
+   "date": "27 May 1853",
+   "era": "struggle",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Folketing elections were held in Denmark on 27 May 1853. Although elections had been held in February, the legislature was dissolved after the government failed to win a vote on who would succeed King Frederick VII on 18 April, resulting in early elections.",
+   "caveat": null,
+   "seatLeader": null
+  },
+  {
+   "id": "1854",
+   "label": "1854",
+   "year": 1854,
+   "date": "1854",
+   "era": "struggle",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The elections were held using first-past-the-post voting in single-member constituencies.",
+   "caveat": null,
+   "seatLeader": null
+  },
+  {
+   "id": "1855",
+   "label": "1855",
+   "year": 1855,
+   "date": "1855",
+   "era": "struggle",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The elections were held using first-past-the-post voting in single-member constituencies.",
+   "caveat": null,
+   "seatLeader": null
+  },
+  {
+   "id": "1858",
+   "label": "1858",
+   "year": 1858,
+   "date": "1858",
+   "era": "struggle",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The elections were held using a form of first-past-the-post voting in single-member constituencies; Voting took place in public meetings by a show of hands. If the outcome of this stage was challenged, another vote was held amongst candidates who had not withdrawn.",
+   "caveat": null,
+   "seatLeader": null
+  },
+  {
+   "id": "1861",
+   "label": "1861",
+   "year": 1861,
+   "date": "1861",
+   "era": "struggle",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The elections were held using a form of first-past-the-post voting in single-member constituencies; Voting took place in public meetings by a show of hands. If the outcome of this stage was challenged, another vote was held amongst candidates who had not withdrawn.",
+   "caveat": null,
+   "seatLeader": null
+  },
+  {
+   "id": "1864",
+   "label": "1864",
+   "year": 1864,
+   "date": "1864",
+   "era": "struggle",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The elections were held using first-past-the-post voting in single-member constituencies.",
+   "caveat": null,
+   "seatLeader": null
+  },
+  {
+   "id": "1866-jun",
+   "label": "June 1866",
+   "year": 1866,
+   "date": "1866",
+   "era": "struggle",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The elections were held using first-past-the-post voting in single-member constituencies.",
+   "caveat": null,
+   "seatLeader": null
+  },
+  {
+   "id": "1866-oct",
+   "label": "October 1866",
+   "year": 1866,
+   "date": "12 October 1866",
+   "era": "struggle",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Folketing elections were held in Denmark on 12 October 1866, following the introduction of a new constitution. The National Liberal Party and the National Left emerged as the largest factions, winning 20 seats each.",
+   "caveat": null,
+   "seatLeader": null
+  },
+  {
+   "id": "1869",
+   "label": "1869",
+   "year": 1869,
+   "date": "1869",
+   "era": "struggle",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The elections were held using first-past-the-post voting in single-member constituencies.",
+   "caveat": null,
+   "seatLeader": null
+  },
+  {
+   "id": "1872",
+   "label": "1872",
+   "year": 1872,
+   "date": "1872",
+   "era": "struggle",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The elections were held using first-past-the-post voting in single-member constituencies.",
+   "caveat": null,
+   "seatLeader": null
+  },
+  {
+   "id": "1873",
+   "label": "1873",
+   "year": 1873,
+   "date": "1873",
+   "era": "struggle",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The elections were held using first-past-the-post voting in single-member constituencies.",
+   "caveat": null,
+   "seatLeader": null
+  },
+  {
+   "id": "1876",
+   "label": "1876",
+   "year": 1876,
+   "date": "1876",
+   "era": "struggle",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Liberals",
+     "leader": null,
+     "seats": 74,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Højre",
+     "leader": null,
+     "seats": 26,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Liberals"
+  },
+  {
+   "id": "1879",
+   "label": "1879",
+   "year": 1879,
+   "date": "3 January 1879",
+   "era": "struggle",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 47.2,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": null
+  },
+  {
+   "id": "1881-may",
+   "label": "May 1881",
+   "year": 1881,
+   "date": "24 May 1881",
+   "era": "struggle",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 47.8,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "184918521853 (Feb)1853 (May)185418551858186118641866 (Jun)1866 (Oct)186918721873187618791881 (May)1881 (Jul)188418871890189218951898190119031906190919101913191519181920 (Apr)1920 (Jul)1920 (Sep)19241926192919321935193919431945194719501953 (Apr)1953 (Sep)1957196019641966196819711973197519771979198119841987198819901994199820012005200720112015201920222026Next",
+   "caveat": null,
+   "seatLeader": null
+  },
+  {
+   "id": "1881-jul",
+   "label": "July 1881",
+   "year": 1881,
+   "date": "May 1881",
+   "era": "struggle",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": 55.6,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "184918521853 (Feb)1853 (May)185418551858186118641866 (Jun)1866 (Oct)186918721873187618791881 (May)1881 (Jul)188418871890189218951898190119031906190919101913191519181920 (Apr)1920 (Jul)1920 (Sep)19241926192919321935193919431945194719501953 (Apr)1953 (Sep)1957196019641966196819711973197519771979198119841987198819901994199820012005200720112015201920222026Next",
+   "caveat": null,
+   "seatLeader": null
+  },
+  {
+   "id": "1884",
+   "label": "1884",
+   "year": 1884,
+   "date": "1884",
+   "era": "struggle",
+   "totalSeats": 102,
+   "majoritySeats": 52,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Venstre Reform Party",
+     "leader": null,
+     "seats": 81,
+     "seatChange": null,
+     "votes": null,
+     "share": 56.3,
+     "swing": null
+    },
+    {
+     "name": "Højre",
+     "leader": null,
+     "seats": 19,
+     "seatChange": null,
+     "votes": null,
+     "share": 38.7,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": 4.9,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Venstre Reform Party"
+  },
+  {
+   "id": "1887",
+   "label": "1887",
+   "year": 1887,
+   "date": "28 January 1887",
+   "era": "struggle",
+   "totalSeats": 102,
+   "majoritySeats": 52,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Venstre Reform Party",
+     "leader": null,
+     "seats": 74,
+     "seatChange": 7.0,
+     "votes": null,
+     "share": 58.1,
+     "swing": null
+    },
+    {
+     "name": "Højre",
+     "leader": null,
+     "seats": 27,
+     "seatChange": 8.0,
+     "votes": null,
+     "share": 38.3,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 3.5,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Venstre Reform Party"
+  },
+  {
+   "id": "1890",
+   "label": "1890",
+   "year": 1890,
+   "date": "21 January 1890",
+   "era": "struggle",
+   "totalSeats": 102,
+   "majoritySeats": 52,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Venstre Reform Party",
+     "leader": null,
+     "seats": 75,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 53.0,
+     "swing": null
+    },
+    {
+     "name": "Højre",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 39.7,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 7.3,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Venstre Reform Party"
+  },
+  {
+   "id": "1892",
+   "label": "1892",
+   "year": 1892,
+   "date": "20 April 1892",
+   "era": "struggle",
+   "totalSeats": 102,
+   "majoritySeats": 52,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Moderate Venstre",
+     "leader": null,
+     "seats": 39,
+     "seatChange": null,
+     "votes": null,
+     "share": 28.1,
+     "swing": null
+    },
+    {
+     "name": "Højre",
+     "leader": null,
+     "seats": 31,
+     "seatChange": 7.0,
+     "votes": null,
+     "share": 34.8,
+     "swing": null
+    },
+    {
+     "name": "Venstre Reform Party",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 45.0,
+     "votes": null,
+     "share": 28.1,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 8.9,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Moderate Venstre"
+  },
+  {
+   "id": "1895",
+   "label": "1895",
+   "year": 1895,
+   "date": "9 April 1895",
+   "era": "struggle",
+   "totalSeats": 114,
+   "majoritySeats": 58,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Venstre Reform Party",
+     "leader": null,
+     "seats": 53,
+     "seatChange": 24.0,
+     "votes": 89530,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Moderate Venstre",
+     "leader": null,
+     "seats": 27,
+     "seatChange": 12.0,
+     "votes": 42635,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Højre",
+     "leader": null,
+     "seats": 25,
+     "seatChange": 6.0,
+     "votes": 64395,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 6.0,
+     "votes": 24510,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Venstre Reform Party"
+  },
+  {
+   "id": "1898",
+   "label": "1898",
+   "year": 1898,
+   "date": "5 April 1898",
+   "era": "struggle",
+   "totalSeats": 114,
+   "majoritySeats": 58,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Venstre Reform Party",
+     "leader": null,
+     "seats": 63,
+     "seatChange": 10.0,
+     "votes": 98070,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Moderate Venstre",
+     "leader": null,
+     "seats": 23,
+     "seatChange": 4.0,
+     "votes": 36395,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Højre",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 9.0,
+     "votes": 58755,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 4.0,
+     "votes": 31870,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Venstre Reform Party"
+  },
+  {
+   "id": "1901",
+   "label": "1901",
+   "year": 1901,
+   "date": "3 April 1901",
+   "era": "struggle",
+   "totalSeats": 114,
+   "majoritySeats": 58,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Venstre Reform Party",
+     "leader": null,
+     "seats": 76,
+     "seatChange": 13.0,
+     "votes": 96481,
+     "share": 42.87,
+     "swing": null
+    },
+    {
+     "name": "Moderate Venstre",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 7.0,
+     "votes": 26993,
+     "share": 11.99,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 2.0,
+     "votes": 38398,
+     "share": 17.06,
+     "swing": null
+    },
+    {
+     "name": "Højre",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 8.0,
+     "votes": 54103,
+     "share": 24.04,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Hannibal Sehested",
+    "party": "Højre\tJohan Henrik Deuntzer"
+   },
+   "pmAfter": {
+    "name": "Johan Henrik Deuntzer",
+    "party": "Venstre"
+   },
+   "knownAs": "The change of system",
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Venstre Reform Party"
+  },
+  {
+   "id": "1903",
+   "label": "1903",
+   "year": 1903,
+   "date": "16 June 1903",
+   "era": "systemskifte",
+   "totalSeats": 114,
+   "majoritySeats": 58,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Venstre Reform Party",
+     "leader": null,
+     "seats": 73,
+     "seatChange": 3.0,
+     "votes": 113000,
+     "share": 47.94,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 2.0,
+     "votes": 48117,
+     "share": 20.41,
+     "swing": null
+    },
+    {
+     "name": "Højre",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 4.0,
+     "votes": 49109,
+     "share": 20.84,
+     "swing": null
+    },
+    {
+     "name": "Moderate Venstre",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 4.0,
+     "votes": 19149,
+     "share": 8.12,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Johan Henrik Deuntzer",
+    "party": "Venstre\tJohan Henrik Deuntzer"
+   },
+   "pmAfter": {
+    "name": "Johan Henrik Deuntzer",
+    "party": "Venstre"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Venstre Reform Party"
+  },
+  {
+   "id": "1906",
+   "label": "1906",
+   "year": 1906,
+   "date": "29 May 1906",
+   "era": "systemskifte",
+   "totalSeats": 114,
+   "majoritySeats": 58,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Venstre Reform Party",
+     "leader": null,
+     "seats": 56,
+     "seatChange": 17.0,
+     "votes": 94272,
+     "share": 31.21,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 8.0,
+     "votes": 76612,
+     "share": 25.36,
+     "swing": null
+    },
+    {
+     "name": "Højre",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 0.0,
+     "votes": 63335,
+     "share": 20.97,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 38151,
+     "share": 12.63,
+     "swing": null
+    },
+    {
+     "name": "Moderate Venstre",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 3.0,
+     "votes": 20487,
+     "share": 6.78,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 3.0,
+     "votes": 9099,
+     "share": 3.01,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Jens Christian Christensen",
+    "party": "Venstre\tJens Christian Christensen"
+   },
+   "pmAfter": {
+    "name": "Jens Christian Christensen",
+    "party": "Venstre"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Venstre Reform Party"
+  },
+  {
+   "id": "1909",
+   "label": "1909",
+   "year": 1909,
+   "date": "25 May 1909",
+   "era": "systemskifte",
+   "totalSeats": 114,
+   "majoritySeats": 58,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Venstre Reform Party",
+     "leader": null,
+     "seats": 37,
+     "seatChange": 19.0,
+     "votes": 77749,
+     "share": 23.98,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 0.0,
+     "votes": 93079,
+     "share": 28.71,
+     "swing": null
+    },
+    {
+     "name": "Højre",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 9.0,
+     "votes": 64189,
+     "share": 19.8,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 6.0,
+     "votes": 50305,
+     "share": 15.51,
+     "swing": null
+    },
+    {
+     "name": "Moderate Venstre",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 2.0,
+     "votes": 19241,
+     "share": 5.93,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 2.0,
+     "votes": 18423,
+     "share": 5.68,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Ludvig Holstein-Ledreborg",
+    "party": "Venstre\tLudvig Holstein-Ledreborg"
+   },
+   "pmAfter": {
+    "name": "Ludvig Holstein-Ledreborg",
+    "party": "Venstre"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Venstre Reform Party"
+  },
+  {
+   "id": "1910",
+   "label": "1910",
+   "year": 1910,
+   "date": "20 May 1910",
+   "era": "systemskifte",
+   "totalSeats": 114,
+   "majoritySeats": 58,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 57,
+     "seatChange": 9.0,
+     "votes": 118902,
+     "share": 34.08,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 0.0,
+     "votes": 98718,
+     "share": 28.3,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 5.0,
+     "votes": 64884,
+     "share": 18.6,
+     "swing": null
+    },
+    {
+     "name": "Højre",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 8.0,
+     "votes": 64904,
+     "share": 18.6,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Carl Theodor Zahle",
+    "party": "Social Liberals\tKlaus Berntsen"
+   },
+   "pmAfter": {
+    "name": "Klaus Berntsen",
+    "party": "Venstre"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Venstre"
+  },
+  {
+   "id": "1913",
+   "label": "1913",
+   "year": 1913,
+   "date": "20 May 1913",
+   "era": "systemskifte",
+   "totalSeats": 114,
+   "majoritySeats": 58,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 44,
+     "seatChange": 13.0,
+     "votes": 103917,
+     "share": 28.61,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 32,
+     "seatChange": 8.0,
+     "votes": 107365,
+     "share": 29.56,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": 11.0,
+     "votes": 67903,
+     "share": 18.69,
+     "swing": null
+    },
+    {
+     "name": "Højre",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 6.0,
+     "votes": 81404,
+     "share": 22.41,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Klaus Berntsen",
+    "party": "Venstre\tCarl Theodor Zahle"
+   },
+   "pmAfter": {
+    "name": "Carl Theodor Zahle",
+    "party": "Social Liberals"
+   },
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Venstre"
+  },
+  {
+   "id": "1915",
+   "label": "1915",
+   "year": 1915,
+   "date": "7 May 1915",
+   "era": "systemskifte",
+   "totalSeats": 114,
+   "majoritySeats": 58,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": {
+    "name": "Carl Theodor Zahle",
+    "party": "Social Liberals\tCarl Theodor Zahle"
+   },
+   "pmAfter": {
+    "name": "Carl Theodor Zahle",
+    "party": "Social Liberals"
+   },
+   "knownAs": null,
+   "summary": "Folketing elections were held in Denmark on 6 May 1915. In order to make amendments to the constitution, the government called for the dissolution of both the Folketing and the Landsting to allow a new Rigsdag to make the revisions.",
+   "caveat": null,
+   "seatLeader": null
+  },
+  {
+   "id": "1918",
+   "label": "1918",
+   "year": 1918,
+   "date": "22 April 1918",
+   "era": "systemskifte",
+   "totalSeats": 140,
+   "majoritySeats": 71,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 45,
+     "seatChange": 2.0,
+     "votes": 269646,
+     "share": 29.41,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 39,
+     "seatChange": 7.0,
+     "votes": 262796,
+     "share": 28.66,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 32,
+     "seatChange": 1.0,
+     "votes": 189521,
+     "share": 20.67,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": null,
+     "votes": 167743,
+     "share": 18.29,
+     "swing": null
+    },
+    {
+     "name": "Industry List",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 11934,
+     "share": 1.3,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 3622,
+     "share": 0.4,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Carl Theodor Zahle",
+    "party": "Social Liberals\tCarl Theodor Zahle"
+   },
+   "pmAfter": {
+    "name": "Carl Theodor Zahle",
+    "party": "Social Liberals"
+   },
+   "knownAs": "Women vote",
+   "summary": "The Folketing was elected by rural–urban proportional representation. Copenhagen had 24 members elected by party-list proportional representation using the d'Hondt system, while in the rest of the country 93 members (42 in the Danish Islands and 51 in Jutland) were elected in single-member constituencies using first-past-the-post voting.",
+   "caveat": null,
+   "seatLeader": "Venstre"
+  },
+  {
+   "id": "1920-apr",
+   "label": "April 1920",
+   "year": 1920,
+   "date": "26 April 1920",
+   "era": "stauning",
+   "totalSeats": 140,
+   "majoritySeats": 71,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 48,
+     "seatChange": 4.0,
+     "votes": 350563,
+     "share": 34.23,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 3.0,
+     "votes": 300345,
+     "share": 29.32,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": 6.0,
+     "votes": 201499,
+     "share": 19.67,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 15.0,
+     "votes": 122160,
+     "share": 11.93,
+     "swing": null
+    },
+    {
+     "name": "Industry Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 3.0,
+     "votes": 29464,
+     "share": 2.88,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Michael Pedersen Friis",
+    "party": "Independent\tNiels Neergaard"
+   },
+   "pmAfter": {
+    "name": "Niels Neergaard",
+    "party": "Venstre"
+   },
+   "knownAs": "The Easter Crisis elections",
+   "summary": "Folketing elections were held in Denmark on 26 April 1920, except in the Faroe Islands, where they were held on 20 May. The election campaign was the most aggressive and bitter in Denmark in the 20th century.",
+   "caveat": null,
+   "seatLeader": "Venstre"
+  },
+  {
+   "id": "1920-jul",
+   "label": "July 1920",
+   "year": 1920,
+   "date": "April 1920",
+   "era": "stauning",
+   "totalSeats": 140,
+   "majoritySeats": 71,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 51,
+     "seatChange": 3.0,
+     "votes": 344351,
+     "share": 36.11,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 0.0,
+     "votes": 285166,
+     "share": 29.91,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 2.0,
+     "votes": 180293,
+     "share": 18.91,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 1.0,
+     "votes": 109931,
+     "share": 11.53,
+     "swing": null
+    },
+    {
+     "name": "Industry Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 25627,
+     "share": 2.69,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Niels Neergaard",
+    "party": "Venstre\tNiels Neergaard"
+   },
+   "pmAfter": {
+    "name": "Niels Neergaard",
+    "party": "Venstre"
+   },
+   "knownAs": "The Easter Crisis elections",
+   "summary": "Folketing elections were held in Denmark on 6 July 1920, except in the Faroe Islands, where they were held on 3 August. The result was a victory for Venstre, which won 51 of the 140 seats.",
+   "caveat": null,
+   "seatLeader": "Venstre"
+  },
+  {
+   "id": "1920-sep",
+   "label": "September 1920",
+   "year": 1920,
+   "date": "July 1920",
+   "era": "stauning",
+   "totalSeats": 149,
+   "majoritySeats": 75,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 51,
+     "seatChange": 0.0,
+     "votes": 411661,
+     "share": 33.97,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": 6.0,
+     "votes": 389653,
+     "share": 32.16,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": 1.0,
+     "votes": 216733,
+     "share": 17.89,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 2.0,
+     "votes": 147120,
+     "share": 12.14,
+     "swing": null
+    },
+    {
+     "name": "Industry Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": 27403,
+     "share": 2.26,
+     "swing": null
+    },
+    {
+     "name": "Schleswig Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 7505,
+     "share": 0.62,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Niels Neergaard",
+    "party": "Venstre\tNiels Neergaard"
+   },
+   "pmAfter": {
+    "name": "Niels Neergaard",
+    "party": "Venstre"
+   },
+   "knownAs": "The Easter Crisis elections",
+   "summary": "Folketing elections were held in Denmark on 21 September 1920, except in the Faroe Islands, where they were held on 30 October. They were the first in which South Jutland County participated since the Schleswig Plebiscites and the return to Danish rule, and the total number of seats in the Folketing was increased from 140 to 149.",
+   "caveat": null,
+   "seatLeader": "Venstre"
+  },
+  {
+   "id": "1924",
+   "label": "1924",
+   "year": 1924,
+   "date": "11 April 1924",
+   "era": "stauning",
+   "totalSeats": 149,
+   "majoritySeats": 75,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 55,
+     "seatChange": 7.0,
+     "votes": 469949,
+     "share": 36.63,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 44,
+     "seatChange": -7.0,
+     "votes": 362682,
+     "share": 28.27,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": 1.0,
+     "votes": 242955,
+     "share": 18.94,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 2.0,
+     "votes": 166476,
+     "share": 12.98,
+     "swing": null
+    },
+    {
+     "name": "Schleswig Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 7715,
+     "share": 0.6,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Niels Neergaard",
+    "party": "Venstre\tThorvald Stauning"
+   },
+   "pmAfter": {
+    "name": "Thorvald Stauning",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "Folketing elections were held in Denmark on 11 April 1924. The result was a victory for the Social Democratic Party led by Thorvald Stauning, which won 55 of the 149 seats.",
+   "caveat": null,
+   "seatLeader": "Social Democratic Party"
+  },
+  {
+   "id": "1926",
+   "label": "1926",
+   "year": 1926,
+   "date": "2 December 1926",
+   "era": "stauning",
+   "totalSeats": 149,
+   "majoritySeats": 75,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 53,
+     "seatChange": 2.0,
+     "votes": 497106,
+     "share": 37.16,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 46,
+     "seatChange": 2.0,
+     "votes": 378137,
+     "share": 28.27,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 2.0,
+     "votes": 275793,
+     "share": 20.62,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 4.0,
+     "votes": 150931,
+     "share": 11.28,
+     "swing": null
+    },
+    {
+     "name": "Justice Party of Denmark",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": 17463,
+     "share": 1.31,
+     "swing": null
+    },
+    {
+     "name": "Schleswig Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 10422,
+     "share": 0.78,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Thorvald Stauning",
+    "party": "Social Democrats\tThomas Madsen-Mygdal"
+   },
+   "pmAfter": {
+    "name": "Thomas Madsen-Mygdal",
+    "party": "Venstre"
+   },
+   "knownAs": null,
+   "summary": "Folketing elections were held in Denmark on 2 December 1926, except in the Faroe Islands where they were held on 20 December. The Social Democratic Party remained the largest in the Folketing, with 53 of the 149 seats.",
+   "caveat": null,
+   "seatLeader": "Social Democratic Party"
+  },
+  {
+   "id": "1929",
+   "label": "1929",
+   "year": 1929,
+   "date": "24 April 1929",
+   "era": "stauning",
+   "totalSeats": 149,
+   "majoritySeats": 75,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 61,
+     "seatChange": 8.0,
+     "votes": 593191,
+     "share": 41.77,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 43,
+     "seatChange": 3.0,
+     "votes": 402121,
+     "share": 28.31,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 6.0,
+     "votes": 233935,
+     "share": 16.47,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 0.0,
+     "votes": 151746,
+     "share": 10.68,
+     "swing": null
+    },
+    {
+     "name": "Justice Party of Denmark",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": 25810,
+     "share": 1.82,
+     "swing": null
+    },
+    {
+     "name": "Schleswig Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 9787,
+     "share": 0.69,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Thomas Madsen-Mygdal",
+    "party": "Venstre\tThorvald Stauning"
+   },
+   "pmAfter": {
+    "name": "Thorvald Stauning",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "Folketing elections were held in Denmark on 24 April 1929, except in the Faroe Islands where they were held on 29 May. The Social Democratic Party remained the largest in the Folketing, with 61 of the 149 seats.",
+   "caveat": null,
+   "seatLeader": "Social Democratic Party"
+  },
+  {
+   "id": "1932",
+   "label": "1932",
+   "year": 1932,
+   "date": "16 November 1932",
+   "era": "stauning",
+   "totalSeats": 149,
+   "majoritySeats": 75,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 62,
+     "seatChange": 1.0,
+     "votes": 660839,
+     "share": 42.72,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 38,
+     "seatChange": 5.0,
+     "votes": 381862,
+     "share": 24.68,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": 3.0,
+     "votes": 289531,
+     "share": 18.71,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 2.0,
+     "votes": 145221,
+     "share": 9.39,
+     "swing": null
+    },
+    {
+     "name": "Justice Party of Denmark",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 1.0,
+     "votes": 41238,
+     "share": 2.67,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Denmark",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": 17179,
+     "share": 1.11,
+     "swing": null
+    },
+    {
+     "name": "Schleswig Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 9868,
+     "share": 0.64,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Thorvald Stauning",
+    "party": "Social Democrats\tThorvald Stauning"
+   },
+   "pmAfter": {
+    "name": "Thorvald Stauning",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "Folketing elections were held in Denmark on 16 November 1932, except in the Faroe Islands where they were held on 12 December. The Social Democratic Party remained the largest in the Folketing, with 62 of the 149 seats.",
+   "caveat": null,
+   "seatLeader": "Social Democratic Party"
+  },
+  {
+   "id": "1935",
+   "label": "1935",
+   "year": 1935,
+   "date": "22 October 1935",
+   "era": "stauning",
+   "totalSeats": 149,
+   "majoritySeats": 75,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 68,
+     "seatChange": 6.0,
+     "votes": 759102,
+     "share": 46.11,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 28,
+     "seatChange": 10.0,
+     "votes": 292247,
+     "share": 17.75,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 1.0,
+     "votes": 293393,
+     "share": 17.82,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 0.0,
+     "votes": 151507,
+     "share": 9.2,
+     "swing": null
+    },
+    {
+     "name": "Farmers' Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 52793,
+     "share": 3.21,
+     "swing": null
+    },
+    {
+     "name": "Justice Party of Denmark",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 41199,
+     "share": 2.5,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Denmark",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": 27135,
+     "share": 1.65,
+     "swing": null
+    },
+    {
+     "name": "Schleswig Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 12617,
+     "share": 0.77,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Thorvald Stauning",
+    "party": "Social Democrats\tThorvald Stauning"
+   },
+   "pmAfter": {
+    "name": "Thorvald Stauning",
+    "party": "Social Democrats"
+   },
+   "knownAs": "Stauning or chaos",
+   "summary": "Folketing elections were held in Denmark on 22 October 1935, except in the Faroe Islands where they were held on 11 November. The Social Democratic Party led by Prime minister Thorvald Stauning remained the largest in the Folketing, winning 68 of the 149 seats.",
+   "caveat": null,
+   "seatLeader": "Social Democratic Party"
+  },
+  {
+   "id": "1939",
+   "label": "1939",
+   "year": 1939,
+   "date": "3 April 1939",
+   "era": "stauning",
+   "totalSeats": 149,
+   "majoritySeats": 75,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 64,
+     "seatChange": 4.0,
+     "votes": 729619,
+     "share": 42.92,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 2.0,
+     "votes": 309355,
+     "share": 18.2,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 0.0,
+     "votes": 301625,
+     "share": 17.74,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 0.0,
+     "votes": 161834,
+     "share": 9.52,
+     "swing": null
+    },
+    {
+     "name": "Farmers' Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 1.0,
+     "votes": 50829,
+     "share": 2.99,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Denmark",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": 40893,
+     "share": 2.41,
+     "swing": null
+    },
+    {
+     "name": "Justice Party of Denmark",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": 33783,
+     "share": 1.99,
+     "swing": null
+    },
+    {
+     "name": "National Socialist Workers' Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 3.0,
+     "votes": 31032,
+     "share": 1.83,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Thorvald Stauning",
+    "party": "Social Democrats\tThorvald Stauning"
+   },
+   "pmAfter": {
+    "name": "Thorvald Stauning",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "Folketing elections were held in Denmark on 3 April 1939, except in the Faroe Islands where they were held on 19 April. They followed a dissolution of both chambers in order to call a referendum on changing the constitution.",
+   "caveat": null,
+   "seatLeader": "Social Democratic Party"
+  },
+  {
+   "id": "1943",
+   "label": "1943",
+   "year": 1943,
+   "date": "23 March 1943",
+   "era": "stauning",
+   "totalSeats": 149,
+   "majoritySeats": 75,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 66,
+     "seatChange": 2.0,
+     "votes": 894632,
+     "share": 44.49,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": 5.0,
+     "votes": 421523,
+     "share": 20.96,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 28,
+     "seatChange": 2.0,
+     "votes": 376850,
+     "share": 18.74,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 1.0,
+     "votes": 175179,
+     "share": 8.71,
+     "swing": null
+    },
+    {
+     "name": "Danish Unity",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 3.0,
+     "votes": 43367,
+     "share": 2.16,
+     "swing": null
+    },
+    {
+     "name": "National Socialist Workers' Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": 43309,
+     "share": 2.15,
+     "swing": null
+    },
+    {
+     "name": "Justice Party of Denmark",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": 31323,
+     "share": 1.56,
+     "swing": null
+    },
+    {
+     "name": "Farmers' Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": 24572,
+     "share": 1.22,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Erik Scavenius",
+    "party": "Nonpartisan\tErik Scavenius"
+   },
+   "pmAfter": {
+    "name": "Erik Scavenius",
+    "party": "Nonpartisan"
+   },
+   "knownAs": "The occupation election",
+   "summary": "Folketing elections were held in Denmark on 23 March 1943 alongside Landsting elections, except in the Faroe Islands where they were held on 3 May. They were the only parliamentary elections held during the German occupation, and although many people feared how the Germans might react, they took place peacefully.",
+   "caveat": "Held under German occupation — a genuine contest among the legal democratic parties, with the Communists banned and the country not free. Turnout became a demonstration of national unity.",
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "1945",
+   "label": "1945",
+   "year": 1945,
+   "date": "30 October 1945",
+   "era": "fourparty",
+   "totalSeats": 149,
+   "majoritySeats": 75,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 48,
+     "seatChange": 18.0,
+     "votes": 671755,
+     "share": 32.78,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 38,
+     "seatChange": 10.0,
+     "votes": 479158,
+     "share": 23.38,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 5.0,
+     "votes": 373688,
+     "share": 18.24,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Denmark",
+     "leader": null,
+     "seats": 18,
+     "seatChange": null,
+     "votes": 255236,
+     "share": 12.46,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 2.0,
+     "votes": 167073,
+     "share": 8.15,
+     "swing": null
+    },
+    {
+     "name": "Danish Unity",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 1.0,
+     "votes": 63760,
+     "share": 3.11,
+     "swing": null
+    },
+    {
+     "name": "Justice Party of Denmark",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": 38459,
+     "share": 1.88,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Vilhelm Buhl",
+    "party": "Social Democrats\tKnud Kristensen"
+   },
+   "pmAfter": {
+    "name": "Knud Kristensen",
+    "party": "Venstre"
+   },
+   "knownAs": "Liberation",
+   "summary": "Folketing elections were held alongside Landsting elections in Denmark on 30 October 1945, except in the Faroe Islands where they were held on 20 November. The Social Democratic Party remained the largest in the Folketing, with 48 of the 149 seats.",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "1947",
+   "label": "1947",
+   "year": 1947,
+   "date": "28 October 1947",
+   "era": "fourparty",
+   "totalSeats": 150,
+   "majoritySeats": 76,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 57,
+     "seatChange": 9.0,
+     "votes": 834089,
+     "share": 40.02,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 46,
+     "seatChange": 8.0,
+     "votes": 529066,
+     "share": 25.39,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 9.0,
+     "votes": 259324,
+     "share": 12.44,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 1.0,
+     "votes": 144206,
+     "share": 6.92,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Denmark",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 9.0,
+     "votes": 141094,
+     "share": 6.77,
+     "swing": null
+    },
+    {
+     "name": "Justice Party of Denmark",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 3.0,
+     "votes": 94570,
+     "share": 4.54,
+     "swing": null
+    },
+    {
+     "name": "Capital Venstre",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 45829,
+     "share": 2.2,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Knud Kristensen",
+    "party": "Venstre\tHans Hedtoft"
+   },
+   "pmAfter": {
+    "name": "Hans Hedtoft",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "Folketing elections were held in Denmark on 28 October 1947, except in the Faroe Islands where they were held on 18 February 1948. The Social Democratic Party remained the largest in the Folketing, with 57 of the 150 seats.",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "1950",
+   "label": "1950",
+   "year": 1950,
+   "date": "5 September 1950",
+   "era": "fourparty",
+   "totalSeats": 151,
+   "majoritySeats": 76,
+   "turnout": 81.87,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 59,
+     "seatChange": 2.0,
+     "votes": 813224,
+     "share": 39.59,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 32,
+     "seatChange": 14.0,
+     "votes": 438188,
+     "share": 21.33,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": 10.0,
+     "votes": 365236,
+     "share": 17.78,
+     "swing": null
+    },
+    {
+     "name": "Justice Party of Denmark",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 6.0,
+     "votes": 168784,
+     "share": 8.22,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 2.0,
+     "votes": 167969,
+     "share": 8.18,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Denmark",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 2.0,
+     "votes": 94523,
+     "share": 4.6,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Hans Hedtoft",
+    "party": "Social Democrats\tErik Eriksen"
+   },
+   "pmAfter": {
+    "name": "Erik Eriksen",
+    "party": "Venstre"
+   },
+   "knownAs": null,
+   "summary": "Folketing elections were held in Denmark on 5 September 1950, except in the Faroe Islands where they were held on 14 October. The Social Democratic Party remained the largest in the Folketing, with 59 of the 151 seats.",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "1953-apr",
+   "label": "April 1953",
+   "year": 1953,
+   "date": "21 April 1953",
+   "era": "fourparty",
+   "totalSeats": 151,
+   "majoritySeats": 76,
+   "turnout": 80.8,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 61,
+     "seatChange": 2.0,
+     "votes": 836507,
+     "share": 40.39,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 33,
+     "seatChange": 1.0,
+     "votes": 456896,
+     "share": 22.06,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 1.0,
+     "votes": 358509,
+     "share": 17.31,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 1.0,
+     "votes": 178942,
+     "share": 8.64,
+     "swing": null
+    },
+    {
+     "name": "Justice Party of Denmark",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 3.0,
+     "votes": 116288,
+     "share": 5.62,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Denmark",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 0.0,
+     "votes": 98940,
+     "share": 4.78,
+     "swing": null
+    }
+   ],
+   "pmBefore": {
+    "name": "Erik Eriksen",
+    "party": "Venstre\tErik Eriksen"
+   },
+   "pmAfter": {
+    "name": "Erik Eriksen",
+    "party": "Venstre"
+   },
+   "knownAs": null,
+   "summary": "Folketing elections were held alongside Landsting elections in Denmark on 21 April 1953, except in the Faroe Islands where they were held on 7 May. The Social Democratic Party remained the largest in the Folketing, with 61 of the 151 seats.",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "1953-sep",
+   "label": "September 1953",
+   "year": 1953,
+   "date": "April 1953",
+   "era": "fourparty",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 80.58,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 74,
+     "seatChange": 13.0,
+     "votes": 894913,
+     "share": 41.31,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 9.0,
+     "votes": 499656,
+     "share": 23.06,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 4.0,
+     "votes": 364960,
+     "share": 16.85,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 1.0,
+     "votes": 169295,
+     "share": 7.81,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Denmark",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 1.0,
+     "votes": 93824,
+     "share": 4.33,
+     "swing": null
+    },
+    {
+     "name": "Justice Party of Denmark",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 3.0,
+     "votes": 75449,
+     "share": 3.48,
+     "swing": null
+    },
+    {
+     "name": "Schleswig Party/Independent",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": 9721,
+     "share": 0.45,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Hans Hedtoft",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in the Kingdom of Denmark on 22 September 1953, the first under the new constitution. The Social Democratic Party remained the largest in the Folketing, with 74 of the 179 seats.",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "1957",
+   "label": "1957",
+   "year": 1957,
+   "date": "14 May 1957",
+   "era": "fourparty",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 83.73,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 70,
+     "seatChange": 4.0,
+     "votes": 910170,
+     "share": 39.4,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 45,
+     "seatChange": 3.0,
+     "votes": 578932,
+     "share": 25.06,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 0.0,
+     "votes": 383843,
+     "share": 16.62,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 0.0,
+     "votes": 179822,
+     "share": 7.78,
+     "swing": null
+    },
+    {
+     "name": "Justice Party of Denmark",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 3.0,
+     "votes": 122759,
+     "share": 5.31,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Denmark",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 2.0,
+     "votes": 72315,
+     "share": 3.13,
+     "swing": null
+    },
+    {
+     "name": "Schleswig Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 9202,
+     "share": 0.4,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "H. C. Hansen",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Denmark on 14 May 1957. The Social Democratic Party remained the largest in the Folketing, with 70 of the 179 seats.",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "1960",
+   "label": "1960",
+   "year": 1960,
+   "date": "15 November 1960",
+   "era": "fourparty",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 85.84,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 76,
+     "seatChange": 6.0,
+     "votes": 1023794,
+     "share": 42.1,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 38,
+     "seatChange": 7.0,
+     "votes": 512041,
+     "share": 21.05,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 32,
+     "seatChange": 2.0,
+     "votes": 435764,
+     "share": 17.92,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": 149440,
+     "share": 6.14,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 3.0,
+     "votes": 140979,
+     "share": 5.8,
+     "swing": null
+    },
+    {
+     "name": "Independent Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 6.0,
+     "votes": 81134,
+     "share": 3.34,
+     "swing": null
+    },
+    {
+     "name": "Schleswig Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 9058,
+     "share": 0.37,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Viggo Kampmann",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Denmark on 15 November 1960. The Social Democratic Party remained the largest in the Folketing, with 76 of the 179 seats.",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "1964",
+   "label": "1964",
+   "year": 1964,
+   "date": "22 September 1964",
+   "era": "fourparty",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 85.51,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 76,
+     "seatChange": 0.0,
+     "votes": 1103667,
+     "share": 41.94,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 38,
+     "seatChange": 0.0,
+     "votes": 547770,
+     "share": 20.82,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 36,
+     "seatChange": 4.0,
+     "votes": 527798,
+     "share": 20.06,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 1.0,
+     "votes": 151697,
+     "share": 5.76,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 1.0,
+     "votes": 139702,
+     "share": 5.31,
+     "swing": null
+    },
+    {
+     "name": "Independent Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 1.0,
+     "votes": 65756,
+     "share": 2.5,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Jens Otto Krag",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Denmark on 22 September 1964. The Social Democratic Party remained the largest in the Folketing, with 76 of the 179 seats.",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "1966",
+   "label": "1966",
+   "year": 1966,
+   "date": "22 November 1966",
+   "era": "fourparty",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 88.61,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 69,
+     "seatChange": 7.0,
+     "votes": 1068911,
+     "share": 38.26,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 3.0,
+     "votes": 539027,
+     "share": 19.29,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": 2.0,
+     "votes": 522028,
+     "share": 18.68,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 10.0,
+     "votes": 304437,
+     "share": 10.9,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 3.0,
+     "votes": 203858,
+     "share": 7.3,
+     "swing": null
+    },
+    {
+     "name": "Liberal Centre",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 69180,
+     "share": 2.48,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Jens Otto Krag",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Denmark on 22 November 1966, although in Greenland the elections were held on 6 December 1966. The Social Democratic Party remained the largest in the Folketing, with 69 of the 179 seats.",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "1968",
+   "label": "1968",
+   "year": 1968,
+   "date": "23 January 1968",
+   "era": "fourparty",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 89.28,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 62,
+     "seatChange": 7.0,
+     "votes": 974833,
+     "share": 34.15,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 37,
+     "seatChange": 3.0,
+     "votes": 581051,
+     "share": 20.35,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 34,
+     "seatChange": 1.0,
+     "votes": 530167,
+     "share": 18.57,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": 14.0,
+     "votes": 427304,
+     "share": 14.97,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 9.0,
+     "votes": 174553,
+     "share": 6.11,
+     "swing": null
+    },
+    {
+     "name": "Left Socialists",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 57184,
+     "share": 2.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Hilmar Baunsgaard",
+    "party": "Radikale"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Denmark on 23 January 1968. The Social Democratic Party remained the largest in the Folketing, with 62 of the 179 seats.",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "1971",
+   "label": "1971",
+   "year": 1971,
+   "date": "21 September 1971",
+   "era": "fourparty",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 87.16,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 70,
+     "seatChange": 8.0,
+     "votes": 1074777,
+     "share": 37.27,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": 6.0,
+     "votes": 481335,
+     "share": 16.69,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 4.0,
+     "votes": 450904,
+     "share": 15.64,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": 0.0,
+     "votes": 413620,
+     "share": 14.34,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 6.0,
+     "votes": 262756,
+     "share": 9.11,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Jens Otto Krag",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Denmark on 21 September 1971 and in the Faroe Islands on 5 October. The Social Democratic Party remained the largest in the Folketing, with 70 of the 179 seats.",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "1973",
+   "label": "1973",
+   "year": 1973,
+   "date": "4 December 1973",
+   "era": "earthquake",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 88.32,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 46,
+     "seatChange": 24.0,
+     "votes": 783145,
+     "share": 25.65,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": 485289,
+     "share": 15.89,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 8.0,
+     "votes": 374283,
+     "share": 12.26,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 7.0,
+     "votes": 343117,
+     "share": 11.24,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 15.0,
+     "votes": 279391,
+     "share": 9.15,
+     "swing": null
+    },
+    {
+     "name": "Centre Democrats",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 236784,
+     "share": 7.76,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 6.0,
+     "votes": 183522,
+     "share": 6.01,
+     "swing": null
+    },
+    {
+     "name": "Christian People's Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 7.0,
+     "votes": 123573,
+     "share": 4.05,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Poul Hartling",
+    "party": "Venstre"
+   },
+   "knownAs": "The landslide election",
+   "summary": "General elections were held in Denmark on 4 December 1973 and in the Faroe Islands on 13 December. It has since been referred to as the \"Landslide Election\" (Danish: Jordskredsvalget), as five new or previously unrepresented parties won seats, and more than half the members of Parliament were replaced.",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "1975",
+   "label": "1975",
+   "year": 1975,
+   "date": "9 January 1975",
+   "era": "earthquake",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 88.23,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 53,
+     "seatChange": 7.0,
+     "votes": 913155,
+     "share": 29.94,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 20.0,
+     "votes": 711298,
+     "share": 23.33,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 4.0,
+     "votes": 414219,
+     "share": 13.58,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 7.0,
+     "votes": 216553,
+     "share": 7.1,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 6.0,
+     "votes": 168164,
+     "share": 5.51,
+     "swing": null
+    },
+    {
+     "name": "Christian People's Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 2.0,
+     "votes": 162734,
+     "share": 5.34,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 2.0,
+     "votes": 150963,
+     "share": 4.95,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Denmark",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 1.0,
+     "votes": 127837,
+     "share": 4.19,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Anker Jørgensen",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "184918521853 (Feb)1853 (May)185418551858186118641866 (Jun)1866 (Oct)186918721873187618791881 (May)1881 (Jul)188418871890189218951898190119031906190919101913191519181920 (Apr)1920 (Jul)1920 (Sep)19241926192919321935193919431945194719501953 (Apr)1953 (Sep)1957196019641966196819711973197519771979198119841987198819901994199820012005200720112015201920222026Next",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "1977",
+   "label": "1977",
+   "year": 1977,
+   "date": "15 February 1977",
+   "era": "earthquake",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 88.7,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 65,
+     "seatChange": 12.0,
+     "votes": 1150355,
+     "share": 37.03,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 2.0,
+     "votes": 453792,
+     "share": 14.61,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 21.0,
+     "votes": 371728,
+     "share": 11.97,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 5.0,
+     "votes": 263262,
+     "share": 8.48,
+     "swing": null
+    },
+    {
+     "name": "Centre Democrats",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 7.0,
+     "votes": 200347,
+     "share": 6.45,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 2.0,
+     "votes": 120357,
+     "share": 3.87,
+     "swing": null
+    },
+    {
+     "name": "Communist Party of Denmark",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 0.0,
+     "votes": 114022,
+     "share": 3.67,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 7.0,
+     "votes": 113330,
+     "share": 3.65,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Anker Jørgensen",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "184918521853 (Feb)1853 (May)185418551858186118641866 (Jun)1866 (Oct)186918721873187618791881 (May)1881 (Jul)188418871890189218951898190119031906190919101913191519181920 (Apr)1920 (Jul)1920 (Sep)19241926192919321935193919431945194719501953 (Apr)1953 (Sep)1957196019641966196819711973197519771979198119841987198819901994199820012005200720112015201920222026Next",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "1979",
+   "label": "1979",
+   "year": 1979,
+   "date": "23 October 1979",
+   "era": "earthquake",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 85.62,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 68,
+     "seatChange": 3.0,
+     "votes": 1213456,
+     "share": 38.27,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 1.0,
+     "votes": 396484,
+     "share": 12.5,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 7.0,
+     "votes": 395653,
+     "share": 12.48,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 6.0,
+     "votes": 349243,
+     "share": 11.01,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 4.0,
+     "votes": 187284,
+     "share": 5.91,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 4.0,
+     "votes": 172365,
+     "share": 5.44,
+     "swing": null
+    },
+    {
+     "name": "Left Socialists",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 1.0,
+     "votes": 116047,
+     "share": 3.66,
+     "swing": null
+    },
+    {
+     "name": "Centre Democrats",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 5.0,
+     "votes": 102132,
+     "share": 3.22,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Anker Jørgensen",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "184918521853 (Feb)1853 (May)185418551858186118641866 (Jun)1866 (Oct)186918721873187618791881 (May)1881 (Jul)188418871890189218951898190119031906190919101913191519181920 (Apr)1920 (Jul)1920 (Sep)19241926192919321935193919431945194719501953 (Apr)1953 (Sep)1957196019641966196819711973197519771979198119841987198819901994199820012005200720112015201920222026Next",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "1981",
+   "label": "1981",
+   "year": 1981,
+   "date": "8 December 1981",
+   "era": "earthquake",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 83.26,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 59,
+     "seatChange": 9.0,
+     "votes": 1026726,
+     "share": 32.87,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 4.0,
+     "votes": 451478,
+     "share": 14.45,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 10.0,
+     "votes": 353373,
+     "share": 11.31,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 2.0,
+     "votes": 353280,
+     "share": 11.31,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 4.0,
+     "votes": 278383,
+     "share": 8.91,
+     "swing": null
+    },
+    {
+     "name": "Centre Democrats",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 9.0,
+     "votes": 258522,
+     "share": 8.28,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 1.0,
+     "votes": 160053,
+     "share": 5.12,
+     "swing": null
+    },
+    {
+     "name": "Left Socialists",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 1.0,
+     "votes": 82711,
+     "share": 2.65,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Anker Jørgensen",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "184918521853 (Feb)1853 (May)185418551858186118641866 (Jun)1866 (Oct)186918721873187618791881 (May)1881 (Jul)188418871890189218951898190119031906190919101913191519181920 (Apr)1920 (Jul)1920 (Sep)19241926192919321935193919431945194719501953 (Apr)1953 (Sep)1957196019641966196819711973197519771979198119841987198819901994199820012005200720112015201920222026Next",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "1984",
+   "label": "1984",
+   "year": 1984,
+   "date": "10 January 1984",
+   "era": "earthquake",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 88.01,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 56,
+     "seatChange": 3.0,
+     "votes": 1062561,
+     "share": 31.6,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 16.0,
+     "votes": 788224,
+     "share": 23.45,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 2.0,
+     "votes": 405737,
+     "share": 12.07,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 0.0,
+     "votes": 387122,
+     "share": 11.51,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 1.0,
+     "votes": 184642,
+     "share": 5.49,
+     "swing": null
+    },
+    {
+     "name": "Centre Democrats",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 7.0,
+     "votes": 154553,
+     "share": 4.6,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 10.0,
+     "votes": 120641,
+     "share": 3.59,
+     "swing": null
+    },
+    {
+     "name": "Christian People's Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 1.0,
+     "votes": 91623,
+     "share": 2.73,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Poul Schlüter",
+    "party": "Conservatives"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Denmark on 10 January 1984, after the opposition voted against the centre-right four-party government's state budget bill. Although the Social Democratic Party remained the largest in the Folketing with 56 of the 179 seats, the Conservative People's Party achieved its best-ever result, gaining 16 seats.",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "1987",
+   "label": "1987",
+   "year": 1987,
+   "date": "8 September 1987",
+   "era": "earthquake",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 86.74,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 54,
+     "seatChange": 2.0,
+     "votes": 985906,
+     "share": 29.32,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 38,
+     "seatChange": 4.0,
+     "votes": 700886,
+     "share": 20.84,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": 6.0,
+     "votes": 490176,
+     "share": 14.58,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 3.0,
+     "votes": 354291,
+     "share": 10.54,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 1.0,
+     "votes": 209086,
+     "share": 6.22,
+     "swing": null
+    },
+    {
+     "name": "Centre Democrats",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 1.0,
+     "votes": 161070,
+     "share": 4.79,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 3.0,
+     "votes": 160461,
+     "share": 4.77,
+     "swing": null
+    },
+    {
+     "name": "Christian People's Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 1.0,
+     "votes": 79664,
+     "share": 2.37,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Poul Schlüter",
+    "party": "Conservatives"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Denmark on 8 September 1987. The Social Democratic Party remained the largest in the Folketing with 54 of the 179 seats.",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "1988",
+   "label": "1988",
+   "year": 1988,
+   "date": "10 May 1988",
+   "era": "earthquake",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 85.7,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 55,
+     "seatChange": 1.0,
+     "votes": 992682,
+     "share": 29.82,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 3.0,
+     "votes": 642048,
+     "share": 19.29,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 3.0,
+     "votes": 433261,
+     "share": 13.01,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 3.0,
+     "votes": 394190,
+     "share": 11.84,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 7.0,
+     "votes": 298132,
+     "share": 8.96,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 1.0,
+     "votes": 185707,
+     "share": 5.58,
+     "swing": null
+    },
+    {
+     "name": "Centre Democrats",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 0.0,
+     "votes": 155464,
+     "share": 4.67,
+     "swing": null
+    },
+    {
+     "name": "Christian People's Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 68047,
+     "share": 2.04,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Poul Schlüter",
+    "party": "Conservatives"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Denmark on 10 May 1988, just eight months after the last elections. Prime Minister Poul Schlüter chose to call for an election after the Conservative People's Party-led government fell short of a majority in a foreign policy issue after they failed to come to an agreement with the Social Democrats.",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "1990",
+   "label": "1990",
+   "year": 1990,
+   "date": "12 December 1990",
+   "era": "earthquake",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 82.84,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 69,
+     "seatChange": 14.0,
+     "votes": 1211121,
+     "share": 37.38,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 5.0,
+     "votes": 517293,
+     "share": 15.97,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 29,
+     "seatChange": 7.0,
+     "votes": 511643,
+     "share": 15.79,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 9.0,
+     "votes": 268759,
+     "share": 8.3,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 4.0,
+     "votes": 208484,
+     "share": 6.44,
+     "swing": null
+    },
+    {
+     "name": "Centre Democrats",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 0.0,
+     "votes": 165556,
+     "share": 5.11,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 3.0,
+     "votes": 114888,
+     "share": 3.55,
+     "swing": null
+    },
+    {
+     "name": "Christian People's Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 74174,
+     "share": 2.29,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Poul Schlüter",
+    "party": "Conservatives"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Denmark on 12 December 1990. Although the election resulted in a strong gain for the Social Democratic Party, Poul Schlüter's coalition government was able to continue despite the Danish Social Liberal Party leaving.",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "1994",
+   "label": "1994",
+   "year": 1994,
+   "date": "21 September 1994",
+   "era": "earthquake",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 84.25,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 62,
+     "seatChange": 7.0,
+     "votes": 1150048,
+     "share": 34.56,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 13.0,
+     "votes": 775176,
+     "share": 23.3,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": 3.0,
+     "votes": 499845,
+     "share": 15.02,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 2.0,
+     "votes": 242398,
+     "share": 7.28,
+     "swing": null
+    },
+    {
+     "name": "Progress Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 1.0,
+     "votes": 214057,
+     "share": 6.43,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 1.0,
+     "votes": 152701,
+     "share": 4.59,
+     "swing": null
+    },
+    {
+     "name": "Red–Green Alliance",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 6.0,
+     "votes": 104701,
+     "share": 3.15,
+     "swing": null
+    },
+    {
+     "name": "Centre Democrats",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 4.0,
+     "votes": 94496,
+     "share": 2.84,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Poul Nyrup Rasmussen",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Denmark on 21 September 1994. The coalition of the Social Democratic Party, the Danish Social Liberal Party and the Centre Democrats led by Poul Nyrup Rasmussen remained in power despite the Christian People's Party, which had been part of the government, failing to cross the 2% threshold and losing all four seats.",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "1998",
+   "label": "1998",
+   "year": 1998,
+   "date": "11 March 1998",
+   "era": "earthquake",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 85.95,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 63,
+     "seatChange": 1.0,
+     "votes": 1223620,
+     "share": 35.93,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 0.0,
+     "votes": 817894,
+     "share": 24.01,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 11.0,
+     "votes": 303965,
+     "share": 8.92,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 0.0,
+     "votes": 257406,
+     "share": 7.56,
+     "swing": null
+    },
+    {
+     "name": "Danish People's Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": null,
+     "votes": 252429,
+     "share": 7.41,
+     "swing": null
+    },
+    {
+     "name": "Centre Democrats",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 3.0,
+     "votes": 146802,
+     "share": 4.31,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 1.0,
+     "votes": 131254,
+     "share": 3.85,
+     "swing": null
+    },
+    {
+     "name": "Red–Green Alliance",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 1.0,
+     "votes": 91933,
+     "share": 2.7,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Poul Nyrup Rasmussen",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Denmark on 11 March 1998. Although the centre-right parties led by Venstre had been expected to win, the Social Democratic Party-led government of Poul Nyrup Rasmussen remained in power in a very close vote that required several recounts.",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "2001",
+   "label": "2001",
+   "year": 2001,
+   "date": "20 November 2001",
+   "era": "bloc",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 87.15,
+   "parties": [
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 56,
+     "seatChange": 14.0,
+     "votes": 1077858,
+     "share": 31.25,
+     "swing": null
+    },
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 11.0,
+     "votes": 1003323,
+     "share": 29.08,
+     "swing": null
+    },
+    {
+     "name": "Danish People's Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 9.0,
+     "votes": 413987,
+     "share": 12.0,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 0.0,
+     "votes": 312770,
+     "share": 9.07,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 1.0,
+     "votes": 219842,
+     "share": 6.37,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 2.0,
+     "votes": 179023,
+     "share": 5.19,
+     "swing": null
+    },
+    {
+     "name": "Red–Green Alliance",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 1.0,
+     "votes": 82685,
+     "share": 2.4,
+     "swing": null
+    },
+    {
+     "name": "Christian People's Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 78793,
+     "share": 2.28,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Anders Fogh Rasmussen",
+    "party": "Venstre"
+   },
+   "knownAs": "The bloc shift",
+   "summary": "General elections were held in Denmark on 20 November 2001. For the first time since the 1924 elections, the Social Democrats did not win the most seats.",
+   "caveat": null,
+   "seatLeader": "Venstre"
+  },
+  {
+   "id": "2005",
+   "label": "2005",
+   "year": 2005,
+   "date": "8 February 2005",
+   "era": "bloc",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 84.2,
+   "parties": [
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 4.0,
+     "votes": 974636,
+     "share": 29.03,
+     "swing": null
+    },
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 47,
+     "seatChange": 5.0,
+     "votes": 867349,
+     "share": 25.84,
+     "swing": null
+    },
+    {
+     "name": "Danish People's Party",
+     "leader": null,
+     "seats": 24,
+     "seatChange": 2.0,
+     "votes": 444947,
+     "share": 13.25,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 2.0,
+     "votes": 344886,
+     "share": 10.27,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 8.0,
+     "votes": 308212,
+     "share": 9.18,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 1.0,
+     "votes": 201047,
+     "share": 5.99,
+     "swing": null
+    },
+    {
+     "name": "Red–Green Alliance",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 2.0,
+     "votes": 114123,
+     "share": 3.4,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Anders Fogh Rasmussen",
+    "party": "Venstre"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Denmark on 8 February 2005. Prime Minister Anders Fogh Rasmussen's Venstre remained the largest party in the Folketing and his governing coalition with the Conservative People's Party remained intact, with the Danish People's Party providing the parliamentary support needed for the minority government.",
+   "caveat": null,
+   "seatLeader": "Venstre"
+  },
+  {
+   "id": "2007",
+   "label": "2007",
+   "year": 2007,
+   "date": "13 November 2007",
+   "era": "bloc",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 86.59,
+   "parties": [
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 46,
+     "seatChange": 6.0,
+     "votes": 908472,
+     "share": 26.26,
+     "swing": null
+    },
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 45,
+     "seatChange": 2.0,
+     "votes": 881037,
+     "share": 25.47,
+     "swing": null
+    },
+    {
+     "name": "Danish People's Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": 1.0,
+     "votes": 479532,
+     "share": 13.86,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": 12.0,
+     "votes": 450975,
+     "share": 13.04,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 0.0,
+     "votes": 359404,
+     "share": 10.39,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 8.0,
+     "votes": 177161,
+     "share": 5.12,
+     "swing": null
+    },
+    {
+     "name": "New Alliance",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 97295,
+     "share": 2.81,
+     "swing": null
+    },
+    {
+     "name": "Red–Green Alliance",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 2.0,
+     "votes": 74982,
+     "share": 2.17,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Anders Fogh Rasmussen",
+    "party": "Venstre"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Denmark on 13 November 2007. The elections allowed prime minister Anders Fogh Rasmussen to continue for a third term in a coalition government consisting of Venstre and the Conservative People's Party with parliamentary support from the Danish People's Party.",
+   "caveat": null,
+   "seatLeader": "Venstre"
+  },
+  {
+   "id": "2011",
+   "label": "2011",
+   "year": 2011,
+   "date": "15 September 2011",
+   "era": "bloc",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 87.21,
+   "parties": [
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 47,
+     "seatChange": 1.0,
+     "votes": 947725,
+     "share": 26.73,
+     "swing": null
+    },
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 44,
+     "seatChange": -1.0,
+     "votes": 879615,
+     "share": 24.81,
+     "swing": null
+    },
+    {
+     "name": "Danish People's Party",
+     "leader": null,
+     "seats": 22,
+     "seatChange": -3.0,
+     "votes": 436726,
+     "share": 12.32,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 17,
+     "seatChange": 8.0,
+     "votes": 336698,
+     "share": 9.5,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": -7.0,
+     "votes": 326192,
+     "share": 9.2,
+     "swing": null
+    },
+    {
+     "name": "Red–Green Alliance",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 8.0,
+     "votes": 236860,
+     "share": 6.68,
+     "swing": null
+    },
+    {
+     "name": "Liberal Alliance",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 4.0,
+     "votes": 176585,
+     "share": 4.98,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": -10.0,
+     "votes": 175047,
+     "share": 4.94,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Helle Thorning-Schmidt",
+    "party": "Social Democrats"
+   },
+   "knownAs": null,
+   "summary": "The incumbent centre-right coalition led by Venstre lost power to a centre-left coalition led by the Social Democrats making Helle Thorning-Schmidt the country's first female Prime Minister. The Social Liberal Party and the Socialist People's Party became part of the three-party government.",
+   "caveat": null,
+   "seatLeader": "Venstre"
+  },
+  {
+   "id": "2015",
+   "label": "2015",
+   "year": 2015,
+   "date": "18 June 2015",
+   "era": "bloc",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 85.89,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 47,
+     "seatChange": 3.0,
+     "votes": 924940,
+     "share": 26.28,
+     "swing": null
+    },
+    {
+     "name": "Danish People's Party",
+     "leader": null,
+     "seats": 37,
+     "seatChange": 15.0,
+     "votes": 741746,
+     "share": 21.08,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 34,
+     "seatChange": 13.0,
+     "votes": 685188,
+     "share": 19.47,
+     "swing": null
+    },
+    {
+     "name": "Red–Green Alliance",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 2.0,
+     "votes": 274463,
+     "share": 7.8,
+     "swing": null
+    },
+    {
+     "name": "Liberal Alliance",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 4.0,
+     "votes": 265129,
+     "share": 7.53,
+     "swing": null
+    },
+    {
+     "name": "The Alternative",
+     "leader": null,
+     "seats": 9,
+     "seatChange": null,
+     "votes": 168788,
+     "share": 4.8,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 9.0,
+     "votes": 161009,
+     "share": 4.58,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 9.0,
+     "votes": 147578,
+     "share": 4.19,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Lars Løkke Rasmussen",
+    "party": "Venstre"
+   },
+   "knownAs": "The DPP peak",
+   "summary": "General elections were held in the Kingdom of Denmark on 18 June 2015 to elect the 179 members of the Folketing. 175 members were elected in the Denmark proper, two in the Faroe Islands and two in Greenland.",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "2019",
+   "label": "2019",
+   "year": 2019,
+   "date": "5 June 2019",
+   "era": "bloc",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 84.6,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 48,
+     "seatChange": 1.0,
+     "votes": 914882,
+     "share": 25.9,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 43,
+     "seatChange": 9.0,
+     "votes": 826161,
+     "share": 23.39,
+     "swing": null
+    },
+    {
+     "name": "Danish People's Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 21.0,
+     "votes": 308513,
+     "share": 8.74,
+     "swing": null
+    },
+    {
+     "name": "Danish Social Liberal Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 8.0,
+     "votes": 304714,
+     "share": 8.63,
+     "swing": null
+    },
+    {
+     "name": "Socialist People's Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 7.0,
+     "votes": 272304,
+     "share": 7.71,
+     "swing": null
+    },
+    {
+     "name": "Red–Green Alliance",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 1.0,
+     "votes": 245100,
+     "share": 6.94,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 6.0,
+     "votes": 233865,
+     "share": 6.62,
+     "swing": null
+    },
+    {
+     "name": "The Alternative",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 4.0,
+     "votes": 104278,
+     "share": 2.95,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Mette Frederiksen",
+    "party": "Social Democrats"
+   },
+   "knownAs": "The red comeback",
+   "summary": "General elections were held in the Kingdom of Denmark on 5 June 2019 to elect all 179 members of the Folketing; 175 in Denmark proper, two in the Faroe Islands and two in Greenland. The elections took place ten days after the European Parliament elections.",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "2022",
+   "label": "2022",
+   "year": 2022,
+   "date": "1 November 2022",
+   "era": "bloc",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 84.16,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 50,
+     "seatChange": 2.0,
+     "votes": 971995,
+     "share": 27.5,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 23,
+     "seatChange": 20.0,
+     "votes": 470546,
+     "share": 13.32,
+     "swing": null
+    },
+    {
+     "name": "Moderates",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 327699,
+     "share": 9.27,
+     "swing": null
+    },
+    {
+     "name": "Green Left",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 1.0,
+     "votes": 293186,
+     "share": 8.3,
+     "swing": null
+    },
+    {
+     "name": "Denmark Democrats",
+     "leader": null,
+     "seats": 14,
+     "seatChange": null,
+     "votes": 286796,
+     "share": 8.12,
+     "swing": null
+    },
+    {
+     "name": "Liberal Alliance",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 10.0,
+     "votes": 278656,
+     "share": 7.89,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 2.0,
+     "votes": 194820,
+     "share": 5.51,
+     "swing": null
+    },
+    {
+     "name": "Red–Green Alliance",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 4.0,
+     "votes": 181452,
+     "share": 5.13,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Mette Frederiksen",
+    "party": "Social Democrats"
+   },
+   "knownAs": "The grand coalition",
+   "summary": "General elections were held in the Kingdom of Denmark on 1 November 2022 – except in the Faroe Islands, where they were held on 31 October, for 1 November was a national day of mourning for victims at sea. Of the 179 members of the Folketing, 175 were elected in Denmark proper, two in the Faroes and two in Greenland.",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  },
+  {
+   "id": "2026",
+   "label": "2026",
+   "year": 2026,
+   "date": "24 March 2026",
+   "era": "bloc",
+   "totalSeats": 179,
+   "majoritySeats": 90,
+   "turnout": 83.99,
+   "parties": [
+    {
+     "name": "Social Democrats",
+     "leader": null,
+     "seats": 38,
+     "seatChange": 12.0,
+     "votes": 779252,
+     "share": 21.84,
+     "swing": null
+    },
+    {
+     "name": "Green Left",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 5.0,
+     "votes": 413306,
+     "share": 11.58,
+     "swing": null
+    },
+    {
+     "name": "Venstre",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 5.0,
+     "votes": 361689,
+     "share": 10.14,
+     "swing": null
+    },
+    {
+     "name": "Liberal Alliance",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 2.0,
+     "votes": 334421,
+     "share": 9.37,
+     "swing": null
+    },
+    {
+     "name": "Danish People's Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 11.0,
+     "votes": 324518,
+     "share": 9.1,
+     "swing": null
+    },
+    {
+     "name": "Moderates",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 2.0,
+     "votes": 274775,
+     "share": 7.7,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 3.0,
+     "votes": 270749,
+     "share": 7.59,
+     "swing": null
+    },
+    {
+     "name": "Red–Green Alliance",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 2.0,
+     "votes": 226037,
+     "share": 6.34,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": {
+    "name": "Mette Frederiksen",
+    "party": "Social Democrats"
+   },
+   "knownAs": "The March snap",
+   "summary": "General elections were held in Denmark on 24 March 2026. All 179 seats in the Folketing were up for election, including 175 in Denmark proper, 2 in Greenland, and 2 in the Faroe Islands (the three entities making up the Danish Realm).",
+   "caveat": null,
+   "seatLeader": "Social Democrats"
+  }
+ ]
+}

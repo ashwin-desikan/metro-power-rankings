@@ -1,0 +1,2754 @@
+{
+ "meta": {
+  "title": "Nigerian elections",
+  "sources": [
+   "Wikipedia: Nigerian general, presidential and parliamentary election articles, 1923–2023 (results, infoboxes and leads)",
+   "INEC / FEDECO figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "presEras": [
+  {
+   "key": "second-republic",
+   "label": "The Second Republic",
+   "span": "1979–1983",
+   "blurb": "The military handed power back in 1979 under an American-style presidential constitution: Shehu Shagari won the disputed 'twelve two-thirds' election, then a 1983 re-election so marred by rigging that the army seized power again within months."
+  },
+  {
+   "key": "aborted",
+   "label": "The aborted Third Republic",
+   "span": "1993",
+   "blurb": "Babangida's long transition produced the June 12, 1993 election — widely judged the freest Nigeria had held, won by MKO Abiola across regional and religious lines. The regime annulled it, Abiola died in detention, and the date became a national symbol; June 12 is now Democracy Day."
+  },
+  {
+   "key": "fourth-republic",
+   "label": "The Fourth Republic",
+   "span": "1999–2023",
+   "blurb": "Since 1999 Nigeria has elected its president seven times without the army returning — Africa's largest democracy by far. The era spans Obasanjo's two terms, the flawed 2007 handover, the 2015 election in which an incumbent conceded for the first time, and the three-way 2023 contest that Bola Tinubu won with just 36.6% of the vote."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "colonial",
+   "label": "The Legislative Council",
+   "span": "1923–1947",
+   "blurb": "Britain's 1922 Clifford Constitution created Africa's first elected colonial legislature — but only four seats were elected, by a few thousand propertied voters in Lagos and Calabar, while appointed officials held the majority. Herbert Macaulay's NNDP, and later Azikiwe's NCNC, built Nigerian party politics in this narrow arena."
+  },
+  {
+   "key": "first-republic",
+   "label": "Self-government and the First Republic",
+   "span": "1954–1964",
+   "blurb": "The federal elections of 1954 and 1959 divided the House along the lines of Nigeria's three regions — NPC north, NCNC east, Action Group west — and the 1959 contest chose the parliament that took the country to independence. The 1964 election, boycotted across the south amid census and alliance crises, broke the First Republic; the coup came thirteen months later."
+  },
+  {
+   "key": "second-republic",
+   "label": "The Second Republic",
+   "span": "1979–1983",
+   "blurb": "The 1979 constitution replaced Westminster with a presidential system and an elected National Assembly. The NPN dominated both chambers; the 1983 legislative elections, held in the same corrupted process as the presidential vote, were swept away with the republic that December."
+  },
+  {
+   "key": "aborted",
+   "label": "The aborted Third Republic",
+   "span": "1992–1998",
+   "blurb": "Babangida's transition allowed exactly two parties — one 'a little to the left', one 'a little to the right', both written into existence by the regime. The 1992 Assembly it produced never mattered; Abacha's 1998 election, contested only by five parties that all endorsed him, was annulled when he died weeks later."
+  },
+  {
+   "key": "fourth-republic",
+   "label": "The Fourth Republic",
+   "span": "1999–2023",
+   "blurb": "The National Assembly elected since 1999 — 109 senators, 360 representatives — has been dominated by the PDP and, since 2015, the APC, but the 2023 election returned the most fragmented Assembly of the era, with eight parties winning Senate seats."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1979",
+   "label": "1979",
+   "year": 1979,
+   "kind": "presidential",
+   "date": "11 August 1979",
+   "era": "second-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Shehu Shagari",
+     "party": "National Party of Nigeria",
+     "r1Votes": 5688857,
+     "r1Share": 33.77,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Obafemi Awolowo",
+     "party": "Unity Party of Nigeria",
+     "r1Votes": 4916551,
+     "r1Share": 29.18,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nnamdi Azikiwe",
+     "party": "Nigerian People's Party",
+     "r1Votes": 2822523,
+     "r1Share": 16.75,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Aminu Kano",
+     "party": "People's Redemption Party",
+     "r1Votes": 1732113,
+     "r1Share": 10.28,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Waziri Ibrahim",
+     "party": "Great Nigeria People's Party",
+     "r1Votes": 1686489,
+     "r1Share": 10.01,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Olusegun Obasanjo",
+    "party": "Elected President"
+   },
+   "presAfter": {
+    "name": "Shehu Shagari",
+    "party": "NPN"
+   },
+   "knownAs": "The twelve two-thirds election",
+   "summary": "Under the 1979 constitution, in order to be elected president on the first ballot a candidate needed to receive both the most votes nationwide and at least 25% of the vote in two-thirds of the states. However, at the time of the election, Nigeria had nineteen states, two-thirds of which in exact figures is 12.66.",
+   "caveat": null
+  },
+  {
+   "id": "pres-1983",
+   "label": "1983",
+   "year": 1983,
+   "kind": "presidential",
+   "date": "6 August 1983",
+   "era": "second-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Shehu Shagari",
+     "party": "National Party of Nigeria",
+     "r1Votes": 12081471,
+     "r1Share": 47.51,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Obafemi Awolowo",
+     "party": "Unity Party of Nigeria",
+     "r1Votes": 7907209,
+     "r1Share": 31.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nnamdi Azikiwe",
+     "party": "Nigerian People's Party",
+     "r1Votes": 3557113,
+     "r1Share": 13.99,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Khalifa Hassan Yusuf",
+     "party": "People's Redemption Party",
+     "r1Votes": 968974,
+     "r1Share": 3.81,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Waziri Ibrahim",
+     "party": "Great Nigeria People's Party",
+     "r1Votes": 643806,
+     "r1Share": 2.53,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Tunji Braithwaite",
+     "party": "Nigeria Advance Party",
+     "r1Votes": 271524,
+     "r1Share": 1.07,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Shehu Shagari",
+    "party": "NPN"
+   },
+   "presAfter": {
+    "name": "Shehu Shagari",
+    "party": "NPN"
+   },
+   "knownAs": "The rigged re-election",
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": "Marred by massive rigging and violence; the army seized power within three months. Recorded here with that record."
+  },
+  {
+   "id": "pres-1993",
+   "label": "1993",
+   "year": 1993,
+   "kind": "presidential",
+   "date": "12 June 1993",
+   "era": "aborted",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Moshood Abiola",
+     "party": "Social Democratic Party",
+     "r1Votes": 8341309,
+     "r1Share": 58.36,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Bashir Tofa",
+     "party": "National Republican Convention",
+     "r1Votes": 5952087,
+     "r1Share": 41.64,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Ibrahim Badamasi Babangida",
+    "party": "Elected President"
+   },
+   "presAfter": null,
+   "knownAs": "June 12 — won and annulled",
+   "summary": "Presidential elections were held in Nigeria on 12 June 1993. The elections were the first held since the 1983 military coup d'état which ended the Second Nigerian Republic.",
+   "caveat": "Widely judged the freest election Nigeria had held — and annulled by the Babangida regime before official results were declared. The figures here are the credible collated returns. Abiola never took office."
+  },
+  {
+   "id": "pres-1999",
+   "label": "1999",
+   "year": 1999,
+   "kind": "presidential",
+   "date": "27 February 1999",
+   "era": "fourth-republic",
+   "turnout": 52.26,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Olusegun Obasanjo",
+     "party": "People's Democratic Party",
+     "r1Votes": 18738154,
+     "r1Share": 62.78,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Olu Falae",
+     "party": "AD–APP",
+     "r1Votes": 11110287,
+     "r1Share": 37.22,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Abdulsalami Abubakar",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Olusegun Obasanjo",
+    "party": "PDP"
+   },
+   "knownAs": "The Fourth Republic begins",
+   "summary": "Presidential elections were held in Nigeria on 27 February 1999. They were the first elections to be held since the 1993 military coup and were the first elections of the Fourth Nigerian Republic.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2003",
+   "label": "2003",
+   "year": 2003,
+   "kind": "presidential",
+   "date": "19 April 2003",
+   "era": "fourth-republic",
+   "turnout": 69.08,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Olusegun Obasanjo",
+     "party": "People's Democratic Party",
+     "r1Votes": 24456140,
+     "r1Share": 61.94,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Muhammadu Buhari",
+     "party": "All Nigeria Peoples Party",
+     "r1Votes": 12710022,
+     "r1Share": 32.19,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Chukwuemeka Odumegwu Ojukwu",
+     "party": "All Progressives Grand Alliance",
+     "r1Votes": 1297445,
+     "r1Share": 3.29,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Jim Nwobodo",
+     "party": "United Nigeria People's Party",
+     "r1Votes": 169609,
+     "r1Share": 0.43,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gani Fawehinmi",
+     "party": "National Conscience Party",
+     "r1Votes": 161333,
+     "r1Share": 0.41,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sarah Jubril",
+     "party": "Progressive Action Congress",
+     "r1Votes": 157560,
+     "r1Share": 0.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ike Nwachukwu",
+     "party": "National Democratic Party",
+     "r1Votes": 132997,
+     "r1Share": 0.34,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Chris Okotie",
+     "party": "Justice Party",
+     "r1Votes": 119547,
+     "r1Share": 0.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Balarabe Musa",
+     "party": "People's Redemption Party",
+     "r1Votes": 100765,
+     "r1Share": 0.26,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Arthur Nwankwo",
+     "party": "People's Mandate Party",
+     "r1Votes": 57720,
+     "r1Share": 0.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Emmanuel Okereke",
+     "party": "All People's Liberation Party",
+     "r1Votes": 26921,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kalu Idika Kalu",
+     "party": "New Nigeria People's Party",
+     "r1Votes": 23830,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Muhammadu Dikko Yusuf",
+     "party": "Movement for Democracy and Justice",
+     "r1Votes": 21403,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yahaya Ndu",
+     "party": "African Renaissance Party",
+     "r1Votes": 11565,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Abayomi Ferreira",
+     "party": "Democratic Alternative",
+     "r1Votes": 6932,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Tunji Braithwaite",
+     "party": "Nigeria Advance Party",
+     "r1Votes": 6727,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Iheanyichukwu Godswill Nnaji",
+     "party": "Better Nigeria Progressive Party",
+     "r1Votes": 5987,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Olapade Agoro",
+     "party": "National Action Council",
+     "r1Votes": 5756,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pere Ajuwa",
+     "party": "Liberal Democratic Party of Nigeria",
+     "r1Votes": 4473,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mojisola Adekunle-Obasanjo",
+     "party": "Masses Movement of Nigeria",
+     "r1Votes": 3757,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Olusegun Obasanjo",
+    "party": "PDP"
+   },
+   "presAfter": {
+    "name": "Olusegun Obasanjo",
+    "party": "PDP"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in Nigeria on 19 April 2003. The incumbent, Olusegun Obasanjo, was re-elected as the president of Nigeria.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2007",
+   "label": "2007",
+   "year": 2007,
+   "kind": "presidential",
+   "date": "21 April 2007",
+   "era": "fourth-republic",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Umaru Yar'Adua",
+     "party": "People's Democratic Party",
+     "r1Votes": 24638063,
+     "r1Share": 69.6,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Muhammadu Buhari",
+     "party": "All Nigeria Peoples Party",
+     "r1Votes": 6605299,
+     "r1Share": 18.66,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Atiku Abubakar",
+     "party": "Action Congress",
+     "r1Votes": 2637848,
+     "r1Share": 7.45,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Orji Uzor Kalu",
+     "party": "Progressive Peoples Alliance",
+     "r1Votes": 608803,
+     "r1Share": 1.72,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Attahiru Bafarawa",
+     "party": "Democratic People's Party",
+     "r1Votes": 289224,
+     "r1Share": 0.82,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Chukwuemeka Odimegwu Ojukwu",
+     "party": "All Progressives Grand Alliance",
+     "r1Votes": 155947,
+     "r1Share": 0.44,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pere Ajuwa",
+     "party": "Alliance for Democracy",
+     "r1Votes": 89241,
+     "r1Share": 0.25,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Chris Okotie",
+     "party": "Fresh Democratic Party",
+     "r1Votes": 74049,
+     "r1Share": 0.21,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Patrick Utomi",
+     "party": "African Democratic Congress",
+     "r1Votes": 50849,
+     "r1Share": 0.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Asakarawon Olapere",
+     "party": "Nigeria People's Congress",
+     "r1Votes": 33771,
+     "r1Share": 0.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ambrose Owuru",
+     "party": "Hope Democratic Party",
+     "r1Votes": 28519,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Arthur Nwankwo",
+     "party": "People's Mandate Party",
+     "r1Votes": 24164,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Emmanuel Okereke",
+     "party": "African Liberation Party",
+     "r1Votes": 22677,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lawrence Adedoyin",
+     "party": "African Political System",
+     "r1Votes": 22409,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Habu Fari",
+     "party": "National Democratic Party",
+     "r1Votes": 21974,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Galtima Liman",
+     "party": "New Nigeria Peoples Party",
+     "r1Votes": 21665,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Maxi Okwu",
+     "party": "Citizens Popular Party",
+     "r1Votes": 14027,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sunny Okogwu",
+     "party": "Republican Party of Nigeria",
+     "r1Votes": 13566,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Bartholomew Nnaji",
+     "party": "Better Nigeria Party",
+     "r1Votes": 11705,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Emmanuel Obayuwana",
+     "party": "National Conscience Party",
+     "r1Votes": 8229,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Olapade Agoro",
+     "party": "National Action Council",
+     "r1Votes": 5752,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Akpone Solomon",
+     "party": "National Majority Democratic Party",
+     "r1Votes": 5664,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Isa Odidi",
+     "party": "New Democrats",
+     "r1Votes": 5408,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Aminu Abubakar",
+     "party": "National Unity Party",
+     "r1Votes": 4355,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mojisola Obasanjo",
+     "party": "Nigerian Masses Movement",
+     "r1Votes": 4309,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Olusegun Obasanjo",
+    "party": "PDP"
+   },
+   "presAfter": {
+    "name": "Umaru Yar'Adua",
+    "party": "PDP"
+   },
+   "knownAs": "The flawed handover",
+   "summary": "Umaru Yar'Adua of the ruling People's Democratic Party (PDP) won the highly controversial presidential election, and was sworn in on 29 May. Election observers from the European Union described the elections as \"the worst they had ever seen anywhere in the world\", with \"rampant vote rigging, violence, theft of ballot boxes and intimidation.\".",
+   "caveat": "Condemned by domestic and international observers as deeply flawed, with ballot-box stuffing and falsified returns; the winner himself acknowledged the process was defective."
+  },
+  {
+   "id": "pres-2011",
+   "label": "2011",
+   "year": 2011,
+   "kind": "presidential",
+   "date": "16 April 2011",
+   "era": "fourth-republic",
+   "turnout": 53.68,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Goodluck Jonathan",
+     "party": "People's Democratic Party",
+     "r1Votes": 22495187,
+     "r1Share": 58.87,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Muhammadu Buhari",
+     "party": "Congress for Progressive Change",
+     "r1Votes": 12214853,
+     "r1Share": 31.97,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nuhu Ribadu",
+     "party": "Action Congress of Nigeria",
+     "r1Votes": 2079151,
+     "r1Share": 5.44,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ibrahim Shekarau",
+     "party": "All Nigeria Peoples Party",
+     "r1Votes": 917012,
+     "r1Share": 2.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mahmud Waziri",
+     "party": "People for Democratic Change",
+     "r1Votes": 82243,
+     "r1Share": 0.22,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nwadike Chikezie",
+     "party": "Peoples Mandate Party",
+     "r1Votes": 56248,
+     "r1Share": 0.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lawson Igboanugo Aroh",
+     "party": "Peoples Progressive Party",
+     "r1Votes": 54203,
+     "r1Share": 0.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Peter Nwangwu",
+     "party": "African Democratic Congress",
+     "r1Votes": 51682,
+     "r1Share": 0.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Iheanyichukwu Nnaji",
+     "party": "Better Nigeria Progressive Party",
+     "r1Votes": 47272,
+     "r1Share": 0.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Chris Okotie",
+     "party": "Fresh Democratic Party",
+     "r1Votes": 34331,
+     "r1Share": 0.09,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Dele Momodu",
+     "party": "National Conscience Party",
+     "r1Votes": 26376,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Akpona Solomon",
+     "party": "National Majority Democratic Party",
+     "r1Votes": 25938,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Lawrence Makinde Adedoyin",
+     "party": "African Political System",
+     "r1Votes": 23740,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ebiti Ndok",
+     "party": "United National Party for Development",
+     "r1Votes": 21203,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "John Dara",
+     "party": "National Transformation Party",
+     "r1Votes": 19744,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rasheed Shitta-Bey",
+     "party": "Mega Progressive Peoples Party",
+     "r1Votes": 16492,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yahaya Ndu",
+     "party": "African Renaissance Party",
+     "r1Votes": 12264,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ambrose Awuru",
+     "party": "Hope Democratic Party",
+     "r1Votes": 12023,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Patrick Utomi",
+     "party": "Social Democratic Mega Party",
+     "r1Votes": 11544,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Chris Nwaokobia",
+     "party": "Liberal Democratic Party of Nigeria",
+     "r1Votes": 8472,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Goodluck Jonathan (Acting)",
+    "party": "PDP"
+   },
+   "presAfter": {
+    "name": "Goodluck Jonathan",
+    "party": "PDP"
+   },
+   "knownAs": null,
+   "summary": "Presidential elections were held in Nigeria on 16 April 2011, postponed from 9 April 2011.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2015",
+   "label": "2015",
+   "year": 2015,
+   "kind": "presidential",
+   "date": "28–29 March 2015",
+   "era": "fourth-republic",
+   "turnout": 43.65,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Muhammadu Buhari",
+     "party": null,
+     "r1Votes": 3430,
+     "r1Share": 57.2,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rabiu Kwankwaso",
+     "party": null,
+     "r1Votes": 974,
+     "r1Share": 16.3,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Atiku Abubakar",
+     "party": null,
+     "r1Votes": 954,
+     "r1Share": 15.9,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rochas Okorocha",
+     "party": null,
+     "r1Votes": 400,
+     "r1Share": 10.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sam Nda-Isaiah",
+     "party": null,
+     "r1Votes": 10,
+     "r1Share": 0.2,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Goodluck Jonathan",
+    "party": "PDP"
+   },
+   "presAfter": {
+    "name": "Muhammadu Buhari",
+    "party": "APC"
+   },
+   "knownAs": "An incumbent concedes",
+   "summary": "General elections were held in Nigeria on 28 and 29 March 2015, the fifth quadrennial election to be held since the end of military rule in 1999. Voters elected the President and members to the House of Representatives and the Senate.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2019",
+   "label": "2019",
+   "year": 2019,
+   "kind": "presidential",
+   "date": "23–24 February 2019",
+   "era": "fourth-republic",
+   "turnout": 34.75,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Muhammadu Buhari",
+     "party": "All Progressives Congress",
+     "r1Votes": 15191847,
+     "r1Share": 55.6,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Atiku Abubakar",
+     "party": "People's Democratic Party",
+     "r1Votes": 11262978,
+     "r1Share": 41.22,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Felix Nicolas",
+     "party": "Peoples Coalition Party",
+     "r1Votes": 110196,
+     "r1Share": 0.4,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Obadiah Mailafia",
+     "party": "African Democratic Congress",
+     "r1Votes": 97874,
+     "r1Share": 0.36,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gbor John Wilson Terwase",
+     "party": "All Progressives Grand Alliance",
+     "r1Votes": 66851,
+     "r1Share": 0.24,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yabagi Sani",
+     "party": "Action Democratic Party",
+     "r1Votes": 54930,
+     "r1Share": 0.2,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Akhimien Davidson Isibor",
+     "party": "Grassroots Development Party of Nigeria",
+     "r1Votes": 41852,
+     "r1Share": 0.15,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ibrahim Aliyu Hassan",
+     "party": "African Peoples Alliance",
+     "r1Votes": 36866,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Donald Duke",
+     "party": "Social Democratic Party",
+     "r1Votes": 34746,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Omoyele Sowore",
+     "party": "African Action Congress",
+     "r1Votes": 33953,
+     "r1Share": 0.12,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Da-Silva Thomas Ayo",
+     "party": "Save Nigeria Congress",
+     "r1Votes": 28680,
+     "r1Share": 0.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Shitu Mohammed Kabir",
+     "party": "Advanced Peoples Democratic Alliance",
+     "r1Votes": 26558,
+     "r1Share": 0.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yusuf Mamman Dantalle",
+     "party": "Allied Peoples' Movement",
+     "r1Votes": 26039,
+     "r1Share": 0.1,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kingsley Moghalu",
+     "party": "Young Progressives Party",
+     "r1Votes": 21886,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ameh Peter Ojonugwa",
+     "party": "Progressive Peoples Alliance",
+     "r1Votes": 21822,
+     "r1Share": 0.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Isaac Babatunde Ositelu",
+     "party": "Accord Party",
+     "r1Votes": 19219,
+     "r1Share": 0.07,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Fela Durotoye",
+     "party": "Alliance for New Nigeria",
+     "r1Votes": 16779,
+     "r1Share": 0.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Bashayi Isa Dansarki",
+     "party": "Masses Movement of Nigeria",
+     "r1Votes": 14540,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Osakwe Felix Johnson",
+     "party": "Democratic People's Party",
+     "r1Votes": 14483,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Abdulrashid Hassan Baba",
+     "party": "Action Alliance",
+     "r1Votes": 14380,
+     "r1Share": 0.05,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nwokeafor Ikechukwu Ndubuisi",
+     "party": "Advanced Congress of Democrats",
+     "r1Votes": 11325,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Maina Maimuna Kyari",
+     "party": "Northern People's Congress",
+     "r1Votes": 10081,
+     "r1Share": 0.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Victor Okhai",
+     "party": "Providence Peoples Congress",
+     "r1Votes": 8979,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Chike Ukaegbu",
+     "party": "Advanced Allied Party",
+     "r1Votes": 8902,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oby Ezekwesili",
+     "party": "Allied Congress Party of Nigeria",
+     "r1Votes": 7223,
+     "r1Share": 0.03,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ibrahim Usman Alhaji",
+     "party": "National Rescue Movement",
+     "r1Votes": 6229,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ike Keke",
+     "party": "New Nigeria People's Party",
+     "r1Votes": 6111,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Moses Ayibiowu",
+     "party": "National Unity Party",
+     "r1Votes": 5323,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Awosola Williams Olusola",
+     "party": "Democratic Peoples Congress",
+     "r1Votes": 5242,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Muhammed Usman Zaki",
+     "party": "Labour Party",
+     "r1Votes": 5074,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eke Samuel Chukwuma",
+     "party": "Green Party of Nigeria",
+     "r1Votes": 4924,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nwachukwu Chuks Nwabuikwu",
+     "party": "All Grassroots Alliance",
+     "r1Votes": 4689,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Hamza al-Mustapha",
+     "party": "Peoples Party of Nigeria",
+     "r1Votes": 4622,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Shipi Moses Godia",
+     "party": "All Blended Party",
+     "r1Votes": 4523,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Chris Okotie",
+     "party": "Fresh Democratic Party",
+     "r1Votes": 4554,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Tope Fasua",
+     "party": "Abundant Nigeria Renewal Party",
+     "r1Votes": 4340,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Onwubuya",
+     "party": "Freedom And Justice Party",
+     "r1Votes": 4174,
+     "r1Share": 0.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Asukwo Mendie Archibong",
+     "party": "Nigeria For Democracy",
+     "r1Votes": 4096,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ahmed Buhari",
+     "party": "Sustainable National Party",
+     "r1Votes": 3941,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Salisu Yunusa Tanko",
+     "party": "National Conscience Party",
+     "r1Votes": 3799,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Shittu Moshood Asiwaju",
+     "party": "Alliance National Party",
+     "r1Votes": 3586,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Obinna Uchechukwu Ikeagwuonu",
+     "party": "All People's Party",
+     "r1Votes": 3585,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Balogun Isiaka Ishola",
+     "party": "United Democratic Party",
+     "r1Votes": 3170,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Obaje Yusufu Ameh",
+     "party": "Advanced Nigeria Democratic Party",
+     "r1Votes": 3104,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Chief Umenwa Godwin",
+     "party": "All Grand Alliance Party",
+     "r1Votes": 3071,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Israel Nonyerem Davidson",
+     "party": "Reform and Advancement Party",
+     "r1Votes": 2972,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ukonga Frank",
+     "party": "Democratic Alternative",
+     "r1Votes": 2769,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Santuraki Hamisu",
+     "party": "Mega Party of Nigeria",
+     "r1Votes": 2752,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Funmilayo Adesanya-Davies",
+     "party": "Mass Action Joint Alliance",
+     "r1Votes": 2651,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gbenga Olawepo-Hashim",
+     "party": "Peoples Trust",
+     "r1Votes": 2613,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ali Soyode",
+     "party": "Yes Electorates Solidarity",
+     "r1Votes": 2394,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nsehe Nseobong",
+     "party": "Restoration Party of Nigeria",
+     "r1Votes": 2388,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ojinika Geff Chizee",
+     "party": "Coalition for Change",
+     "r1Votes": 2391,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Rabia Yasai Hassan Cengiz",
+     "party": "National Action Council",
+     "r1Votes": 2279,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Eunice Atuejide",
+     "party": "National Interest Party",
+     "r1Votes": 2248,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Dara John",
+     "party": "Alliance of Social Democrats",
+     "r1Votes": 2146,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Fagbenro-Byron Samuel Adesina",
+     "party": "Kowa Party",
+     "r1Votes": 1911,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Emmanuel Etim",
+     "party": "Change Nigeria Party",
+     "r1Votes": 1874,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Chukwu-Eguzolugo Sunday Chikendu",
+     "party": "Justice Must Prevail Party",
+     "r1Votes": 1853,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Madu Nnamdi Edozie",
+     "party": "Independent Democrats",
+     "r1Votes": 1845,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Osuala Chukwudi John",
+     "party": "Re-build Nigeria Party",
+     "r1Votes": 1792,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Albert Owuru Ambrose",
+     "party": "Hope Democratic Party",
+     "r1Votes": 1663,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "David Esosa Ize-Iyamu",
+     "party": "Better Nigeria Progressive Party",
+     "r1Votes": 1649,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Inwa Ahmed Sakil",
+     "party": "Unity Party of Nigeria",
+     "r1Votes": 1631,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Akpua Robinson",
+     "party": "National Democratic Liberty Party",
+     "r1Votes": 1588,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mark Emmanuel Audu",
+     "party": "United Patriots",
+     "r1Votes": 1561,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ishaka Paul Ofemile",
+     "party": "Nigeria Elements Progressive Party",
+     "r1Votes": 1524,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Kriz David",
+     "party": "Liberation Movement",
+     "r1Votes": 1438,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ademola Babatunde Abidemi",
+     "party": "Nigeria Community Movement Party",
+     "r1Votes": 1378,
+     "r1Share": 0.01,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "A. Edosomwan Johnson",
+     "party": "National Democratic Liberty Party",
+     "r1Votes": 1192,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Angela Johnson",
+     "party": "Alliance for a United Nigeria",
+     "r1Votes": 1092,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Abah Lewis Elaigwu",
+     "party": "Change Advocacy Party",
+     "r1Votes": 1111,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nwangwu Uchenna Peter",
+     "party": "We The People Nigeria",
+     "r1Votes": 732,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Muhammadu Buhari",
+    "party": "APC"
+   },
+   "presAfter": {
+    "name": "Muhammadu Buhari",
+    "party": "APC"
+   },
+   "knownAs": null,
+   "summary": "General elections were held in Nigeria on 23 February 2019 to elect the President, Vice President, House of Representatives and the Senate.",
+   "caveat": null
+  },
+  {
+   "id": "pres-2023",
+   "label": "2023",
+   "year": 2023,
+   "kind": "presidential",
+   "date": "25 February 2023",
+   "era": "fourth-republic",
+   "turnout": 26.71,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Bola Tinubu",
+     "party": "APC",
+     "r1Votes": 8794726,
+     "r1Share": 36.61,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Atiku Abubakar",
+     "party": "PDP",
+     "r1Votes": 6984520,
+     "r1Share": 29.07,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Muhammadu Buhari",
+    "party": "APC"
+   },
+   "presAfter": {
+    "name": "Bola Tinubu",
+    "party": "APC"
+   },
+   "knownAs": "The three-way contest",
+   "summary": "General elections were held in Nigeria on 25 February 2023 to elect the president and vice president and members of the Senate and House of Representatives. Incumbent president Muhammadu Buhari was term-limited and could not seek re-election for a third term.",
+   "caveat": null
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1923",
+   "label": "1923",
+   "year": 1923,
+   "kind": "legislative",
+   "date": "1923",
+   "era": "colonial",
+   "totalSeats": 4,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Nigerian National Democratic Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 3882,
+     "share": 77.5,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 904,
+     "share": 18.05,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "Africa's first colonial election",
+   "summary": "Elective democracy had been introduced in Nigeria in May 1919, when the Townships Ordinance gave the right to vote for three members of Lagos Town Council to some men. The first elections to the council were held on 29 March 1920.",
+   "caveat": "A Legislative Council election of the colonial era: only four seats (Lagos and Calabar) were elected, on a propertied male franchise of a few thousand, in a chamber dominated by appointed members.",
+   "seatLeader": "Nigerian National Democratic Party"
+  },
+  {
+   "id": "1928",
+   "label": "1928",
+   "year": 1928,
+   "kind": "legislative",
+   "date": "1928",
+   "era": "colonial",
+   "totalSeats": 3,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Nigerian National Democratic Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": 2606,
+     "share": 86.46,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 1922 Nigeria (Legislative Council) Order in Council provided for a 46-member Legislative Council, of which 23 were ex-officio officials, four were nominated officials, up to 15 were appointed unofficial members and four were elected (three in Lagos and one in Calabar).",
+   "caveat": "A Legislative Council election of the colonial era: only four seats (Lagos and Calabar) were elected, on a propertied male franchise of a few thousand, in a chamber dominated by appointed members.",
+   "seatLeader": "Nigerian National Democratic Party"
+  },
+  {
+   "id": "1933",
+   "label": "1933",
+   "year": 1933,
+   "kind": "legislative",
+   "date": "1933",
+   "era": "colonial",
+   "totalSeats": 4,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Nigerian National Democratic Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": 2258,
+     "share": 91.86,
+     "swing": null
+    },
+    {
+     "name": "Calabar Ratepayers' Association",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": 1.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 1922 Nigeria (Legislative Council) Order in Council provided for a 46-member Legislative Council, of which 23 were ex-officio officials, four were nominated officials, up to 15 were appointed unofficial members and four were elected (three in Lagos and one in Calabar).",
+   "caveat": "A Legislative Council election of the colonial era: only four seats (Lagos and Calabar) were elected, on a propertied male franchise of a few thousand, in a chamber dominated by appointed members.",
+   "seatLeader": "Nigerian National Democratic Party"
+  },
+  {
+   "id": "1938",
+   "label": "1938",
+   "year": 1938,
+   "kind": "legislative",
+   "date": "1938",
+   "era": "colonial",
+   "totalSeats": 3,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Nigerian Youth Movement",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 1506,
+     "share": 64.83,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 1922 Nigeria (Legislative Council) Order in Council provided for a 46-member Legislative Council, of which 23 were ex-officio officials, four were nominated officials, up to 15 were appointed unofficial members and four were elected (three in Lagos and one in Calabar).",
+   "caveat": "A Legislative Council election of the colonial era: only four seats (Lagos and Calabar) were elected, on a propertied male franchise of a few thousand, in a chamber dominated by appointed members.",
+   "seatLeader": "Nigerian Youth Movement"
+  },
+  {
+   "id": "1943",
+   "label": "1943",
+   "year": 1943,
+   "kind": "legislative",
+   "date": "1943",
+   "era": "colonial",
+   "totalSeats": 2,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": 196,
+     "share": 100.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Rather than hold fresh elections for all four seats, elections were held for the two seats whose members had served their full five year terms since 1942; the Calabar seat held by Okon Efiong and the Lagos seat held by H. S.",
+   "caveat": "A Legislative Council election of the colonial era: only four seats (Lagos and Calabar) were elected, on a propertied male franchise of a few thousand, in a chamber dominated by appointed members.",
+   "seatLeader": "Independents"
+  },
+  {
+   "id": "1947",
+   "label": "1947",
+   "year": 1947,
+   "kind": "legislative",
+   "date": "1947",
+   "era": "colonial",
+   "totalSeats": 4,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Nigerian National Democratic Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 3.0,
+     "votes": 10295,
+     "share": 93.58,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": 706,
+     "share": 6.42,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The elections were the first and only elections to be held under the 1946 constitution introduced by Governor Arthur Richards.",
+   "caveat": "A Legislative Council election of the colonial era: only four seats (Lagos and Calabar) were elected, on a propertied male franchise of a few thousand, in a chamber dominated by appointed members.",
+   "seatLeader": "Nigerian National Democratic Party"
+  },
+  {
+   "id": "1954",
+   "label": "1954",
+   "year": 1954,
+   "kind": "legislative",
+   "date": "1954",
+   "era": "first-republic",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Northern People's Congress",
+     "leader": null,
+     "seats": 84,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Council of Nigeria and the Cameroons",
+     "leader": null,
+     "seats": 63,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Action Group",
+     "leader": null,
+     "seats": 20,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Kamerun National Congress",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "United National Independence Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Idoma State Union",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Middle Belt People's Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Igbirra Tribal Union",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Nigerian Commoners' Liberal Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "General elections were held in Nigeria between October and December 1954. The Northern People's Congress emerged as the largest party, winning 84 of the 184 seats.",
+   "caveat": null,
+   "seatLeader": "Northern People's Congress"
+  },
+  {
+   "id": "1959",
+   "label": "1959",
+   "year": 1959,
+   "kind": "legislative",
+   "date": "12 December 1959",
+   "era": "first-republic",
+   "totalSeats": 302,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Northern People's Congress",
+     "leader": null,
+     "seats": 134,
+     "seatChange": null,
+     "votes": 1922179,
+     "share": 25.2,
+     "swing": null
+    },
+    {
+     "name": "National Council of Nigeria and the Cameroons",
+     "leader": null,
+     "seats": 81,
+     "seatChange": null,
+     "votes": 2594577,
+     "share": 34.01,
+     "swing": null
+    },
+    {
+     "name": "Action Group",
+     "leader": null,
+     "seats": 73,
+     "seatChange": null,
+     "votes": 1992364,
+     "share": 26.12,
+     "swing": null
+    },
+    {
+     "name": "Northern Elements Progressive Union",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 509050,
+     "share": 6.67,
+     "swing": null
+    },
+    {
+     "name": "Mabolaje Grand Alliance",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": 610677,
+     "share": 8.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The independence election",
+   "summary": "Parliamentary elections were held in Nigeria on 12 December 1959. The result was a victory for the Northern People's Congress, which won 134 of the 312 seats in the House of Representatives, despite the National Council of Nigeria and the Cameroons and Action Group receiving more votes.",
+   "caveat": null,
+   "seatLeader": "Northern People's Congress"
+  },
+  {
+   "id": "1964",
+   "label": "1964",
+   "year": 1964,
+   "kind": "legislative",
+   "date": "30 December 1964",
+   "era": "first-republic",
+   "totalSeats": 312,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Northern People's Congress",
+     "leader": null,
+     "seats": 162,
+     "seatChange": 28.0,
+     "votes": 2168007,
+     "share": 37.63,
+     "swing": null
+    },
+    {
+     "name": "National Council of Nigerian Citizens",
+     "leader": null,
+     "seats": 84,
+     "seatChange": 3.0,
+     "votes": 1640700,
+     "share": 28.48,
+     "swing": null
+    },
+    {
+     "name": "Nigerian National Democratic Party",
+     "leader": null,
+     "seats": 36,
+     "seatChange": null,
+     "votes": 870833,
+     "share": 15.11,
+     "swing": null
+    },
+    {
+     "name": "Action Group",
+     "leader": null,
+     "seats": 21,
+     "seatChange": -52.0,
+     "votes": 494730,
+     "share": 8.59,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 128329,
+     "share": 2.23,
+     "swing": null
+    },
+    {
+     "name": "Northern Progressive Front",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 258913,
+     "share": 4.49,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The election that broke the First Republic",
+   "summary": "Parliamentary elections were held in Nigeria on 30 December 1964, although they were not held until 18 March 1965 in some constituencies in Eastern Region, Lagos, and Mid-Western Region due to a boycott in December.",
+   "caveat": "Held amid the census and alliance crises and boycotted across much of the south; the disputed result helped destroy the First Republic.",
+   "seatLeader": "Northern People's Congress"
+  },
+  {
+   "id": "1979",
+   "label": "1979",
+   "year": 1979,
+   "kind": "legislative",
+   "date": "7 July 1979",
+   "era": "second-republic",
+   "totalSeats": 95,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Party of Nigeria",
+     "leader": null,
+     "seats": 36,
+     "seatChange": null,
+     "votes": 4032329,
+     "share": 32.75,
+     "swing": null
+    },
+    {
+     "name": "Unity Party of Nigeria",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": 2835362,
+     "share": 23.03,
+     "swing": null
+    },
+    {
+     "name": "Nigerian People's Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": null,
+     "votes": 2145859,
+     "share": 17.43,
+     "swing": null
+    },
+    {
+     "name": "Great Nigeria People's Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 1847019,
+     "share": 15.0,
+     "swing": null
+    },
+    {
+     "name": "People's Redemption Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 1453538,
+     "share": 11.8,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Nigeria on 7 July 1979 for the first time since 1964 to elect a Senate and House of Representatives on 14 July. The result was a victory for the National Party of Nigeria, which won 36 of the 95 Senate seats and 168 of the 449 House seats.",
+   "caveat": null,
+   "seatLeader": "National Party of Nigeria"
+  },
+  {
+   "id": "1983",
+   "label": "1983",
+   "year": 1983,
+   "kind": "legislative",
+   "date": "1983",
+   "era": "second-republic",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "National Party of Nigeria",
+     "leader": null,
+     "seats": 306,
+     "seatChange": 138.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Unity Party of Nigeria",
+     "leader": null,
+     "seats": 51,
+     "seatChange": -60.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Nigerian People's Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": -30.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "People's Redemption Party",
+     "leader": null,
+     "seats": 41,
+     "seatChange": -8.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Great Nigeria People's Party",
+     "leader": null,
+     "seats": 0,
+     "seatChange": -43.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Parliamentary elections were held in Nigeria in August 1983. The Senate was elected on 20 August and the House of Representatives on 27 August.",
+   "caveat": "Held in the same corrupted process as the 1983 presidential vote.",
+   "seatLeader": "National Party of Nigeria"
+  },
+  {
+   "id": "1992",
+   "label": "1992",
+   "year": 1992,
+   "kind": "legislative",
+   "date": "4 July 1992",
+   "era": "aborted",
+   "totalSeats": 89,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 52,
+     "seatChange": null,
+     "votes": 7494228,
+     "share": 47.42,
+     "swing": null
+    },
+    {
+     "name": "National Republican Convention",
+     "leader": null,
+     "seats": 37,
+     "seatChange": null,
+     "votes": 8309548,
+     "share": 52.58,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The two-party experiment",
+   "summary": "Parliamentary elections were held in Nigeria on 4 July 1992, the first time since the 1983 military coup. Only two parties were allowed to contest the elections, which resulted in a victory for the Social Democratic Party, which won 52 of the 91 Senate seats and 314 of the 593 House seats, despite the National Republican Convention receiving more votes.",
+   "caveat": "Held under Babangida's military transition, with exactly two parties — both created by the regime — permitted to contest.",
+   "seatLeader": "Social Democratic Party"
+  },
+  {
+   "id": "1998",
+   "label": "1998",
+   "year": 1998,
+   "kind": "legislative",
+   "date": "25 April 1998",
+   "era": "aborted",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "United Nigeria Congress Party",
+     "leader": null,
+     "seats": 229,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Democratic Party of Nigeria",
+     "leader": null,
+     "seats": 39,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Congress for National Consensus",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Grassroots Democratic Movement",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "National Centre Party of Nigeria",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "Abacha's five-party election",
+   "summary": "Parliamentary elections were held in Nigeria on 25 April 1998. They were the first since 1992, following a coup in 1993.",
+   "caveat": "Held under Abacha with five parties permitted, every one of which had endorsed him for president; annulled after his death weeks later.",
+   "seatLeader": "United Nigeria Congress Party"
+  },
+  {
+   "id": "1999",
+   "label": "1999",
+   "year": 1999,
+   "kind": "legislative",
+   "date": "20 February 1999",
+   "era": "fourth-republic",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "People's Democratic Party",
+     "leader": null,
+     "seats": 206,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "All People's Party",
+     "leader": null,
+     "seats": 74,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Alliance for Democracy",
+     "leader": null,
+     "seats": 68,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The Fourth Republic's first Assembly",
+   "summary": "Parliamentary elections were held in Nigeria on 20 February 1999, following the annulling of the 1998 elections. The result was a victory for the People's Democratic Party, which won 59 of the 109 Senate seats and 206 of the 360 House seats.",
+   "caveat": null,
+   "seatLeader": "People's Democratic Party"
+  },
+  {
+   "id": "2003",
+   "label": "2003",
+   "year": 2003,
+   "kind": "legislative",
+   "date": "2003",
+   "era": "fourth-republic",
+   "totalSeats": 109,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "People's Democratic Party",
+     "leader": null,
+     "seats": 76,
+     "seatChange": 17.0,
+     "votes": 15585538,
+     "share": 53.69,
+     "swing": null
+    },
+    {
+     "name": "All Nigeria Peoples Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": -2.0,
+     "votes": 8091783,
+     "share": 27.87,
+     "swing": null
+    },
+    {
+     "name": "Alliance for Democracy",
+     "leader": null,
+     "seats": 6,
+     "seatChange": -14.0,
+     "votes": 2828082,
+     "share": 9.74,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "People's Democratic Party"
+  },
+  {
+   "id": "2007",
+   "label": "2007",
+   "year": 2007,
+   "kind": "legislative",
+   "date": "21 April 2007",
+   "era": "fourth-republic",
+   "totalSeats": 360,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "People's Democratic Party",
+     "leader": null,
+     "seats": 262,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "All Nigeria Peoples Party",
+     "leader": null,
+     "seats": 62,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Action Congress",
+     "leader": null,
+     "seats": 32,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Progressive Peoples Alliance",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Accord",
+     "leader": null,
+     "seats": 0,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Umaru Yar'Adua of the ruling People's Democratic Party (PDP) won the highly controversial presidential election, and was sworn in on 29 May. Election observers from the European Union described the elections as \"the worst they had ever seen anywhere in the world\", with \"rampant vote rigging, violence, theft of ballot boxes and intimidation.\".",
+   "caveat": "Condemned by domestic and international observers as deeply flawed, with ballot-box stuffing and falsified returns; the winner himself acknowledged the process was defective.",
+   "seatLeader": "People's Democratic Party"
+  },
+  {
+   "id": "2011",
+   "label": "2011",
+   "year": 2011,
+   "kind": "legislative",
+   "date": "9 April 2011",
+   "era": "fourth-republic",
+   "totalSeats": 360,
+   "majoritySeats": 56,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "People's Democratic Party",
+     "leader": null,
+     "seats": 203,
+     "seatChange": null,
+     "votes": 13351647,
+     "share": 46.69,
+     "swing": null
+    },
+    {
+     "name": "Action Congress of Nigeria",
+     "leader": null,
+     "seats": 69,
+     "seatChange": null,
+     "votes": 5141856,
+     "share": 17.98,
+     "swing": null
+    },
+    {
+     "name": "Congress for Progressive Change",
+     "leader": null,
+     "seats": 38,
+     "seatChange": null,
+     "votes": 4212283,
+     "share": 14.73,
+     "swing": null
+    },
+    {
+     "name": "All Nigeria Peoples Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": null,
+     "votes": 2900306,
+     "share": 10.14,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": null,
+     "votes": 982647,
+     "share": 3.44,
+     "swing": null
+    },
+    {
+     "name": "All Progressives Grand Alliance",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 487753,
+     "share": 1.71,
+     "swing": null
+    },
+    {
+     "name": "Accord",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": 335760,
+     "share": 1.17,
+     "swing": null
+    },
+    {
+     "name": "Democratic People's Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 489074,
+     "share": 1.71,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The election was originally scheduled to be held on 2 April. However it was later postponed to 4 April on the originally scheduled day of the election itself as voters turned up in the morning to see ballots had not yet arrived.",
+   "caveat": null,
+   "seatLeader": "People's Democratic Party"
+  },
+  {
+   "id": "2015",
+   "label": "2015",
+   "year": 2015,
+   "kind": "legislative",
+   "date": "28–29 March 2015",
+   "era": "fourth-republic",
+   "totalSeats": 360,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "All Progressives Congress",
+     "leader": null,
+     "seats": 212,
+     "seatChange": 77.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "People's Democratic Party",
+     "leader": null,
+     "seats": 140,
+     "seatChange": 63.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "All Progressives Grand Alliance",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Accord",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Labour Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 7.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The APC sweep",
+   "summary": "General elections were held in Nigeria on 28 and 29 March 2015, the fifth quadrennial election to be held since the end of military rule in 1999. Voters elected the President and members to the House of Representatives and the Senate.",
+   "caveat": null,
+   "seatLeader": "All Progressives Congress"
+  },
+  {
+   "id": "2019",
+   "label": "2019",
+   "year": 2019,
+   "kind": "legislative",
+   "date": "23–24 February 2019",
+   "era": "fourth-republic",
+   "totalSeats": 360,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "APC",
+     "leader": "Femi Gbajabiamila",
+     "seats": 202,
+     "seatChange": -10.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PDP",
+     "leader": "Yakubu Dogara",
+     "seats": 128,
+     "seatChange": -12.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "APGA",
+     "leader": "Victor Ikechukwu Oye",
+     "seats": 9,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ADC",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "AA",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PRP",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ADP",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "APM",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "LP",
+     "leader": "Mike Omotosho",
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "General elections were held in Nigeria on 23 February 2019 to elect the President, Vice President, House of Representatives and the Senate.",
+   "caveat": null,
+   "seatLeader": "APC"
+  },
+  {
+   "id": "2023",
+   "label": "2023",
+   "year": 2023,
+   "kind": "legislative",
+   "date": "25 February 2023",
+   "era": "fourth-republic",
+   "totalSeats": 360,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "APC",
+     "leader": "Tajudeen Abbas",
+     "seats": 176,
+     "seatChange": -26.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "PDP",
+     "leader": "Ndudi Elumelu",
+     "seats": 119,
+     "seatChange": -9.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "LP",
+     "leader": "Julius Abure",
+     "seats": 35,
+     "seatChange": 34.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "NNPP",
+     "leader": "Rufai Ahmed Alkali",
+     "seats": 19,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "APGA",
+     "leader": "Victor Ikechukwu Oye",
+     "seats": 5,
+     "seatChange": -4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "ADC",
+     "leader": "Leke Abejide",
+     "seats": 2,
+     "seatChange": -1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "SDP",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "YPP",
+     "leader": "Bishop Amakiri",
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The fragmented Assembly",
+   "summary": "General elections were held in Nigeria on 25 February 2023 to elect the president and vice president and members of the Senate and House of Representatives. Incumbent president Muhammadu Buhari was term-limited and could not seek re-election for a third term.",
+   "caveat": null,
+   "seatLeader": "APC"
+  }
+ ]
+}

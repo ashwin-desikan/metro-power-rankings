@@ -1,0 +1,2474 @@
+{
+ "meta": {
+  "title": "Russian and Soviet elections",
+  "sources": [
+   "Wikipedia: Russian presidential election articles 1991–2024 and Soviet Union election articles 1922–1990 (results, infoboxes and leads)",
+   "CEC figures as reported there — with the caveats each contest deserves"
+  ],
+  "built": "2026-07-22"
+ },
+ "presEras": [
+  {
+   "key": "soviet",
+   "label": "The Soviet presidency",
+   "span": "1990",
+   "blurb": "The Soviet Union created an executive presidency only in its final year: Mikhail Gorbachev was elected unopposed by the Congress of People's Deputies in March 1990 — the office's first and last holder. By the next winter the state itself was gone."
+  },
+  {
+   "key": "yeltsin",
+   "label": "The Yeltsin elections",
+   "span": "1991–1996",
+   "blurb": "Russia's June 1991 election — held while the USSR still existed — made Boris Yeltsin the first popularly elected leader in a thousand years of Russian history. The 1996 re-election was genuinely contested but deeply tilted: state television, oligarch money and a manufactured second-round choice against the Communist Zyuganov."
+  },
+  {
+   "key": "putin",
+   "label": "The managed succession",
+   "span": "2000–2024",
+   "blurb": "Every election since 2000 has kept one man or his placeholder in the Kremlin. The machinery tightened by stages — television first, then candidate registration, then open repression — until 2024's wartime vote, held with every genuine opponent dead, imprisoned or exiled. These are recorded here as the managed rituals they became, not competitive elections."
+  }
+ ],
+ "legEras": [
+  {
+   "key": "imperial",
+   "label": "The imperial Dumas",
+   "span": "1906–1912",
+   "blurb": "The 1905 revolution forced a parliament from the Tsar: four State Dumas elected through indirect, class-weighted curiae in which a landowner's vote outweighed dozens of peasants'. The first two Dumas proved defiant and were dissolved within months; Stolypin's June 1907 'coup' rewrote the franchise mid-stream, and the tamer Third and Fourth Dumas sat until the empire fell."
+  },
+  {
+   "key": "revolution",
+   "label": "Revolution and the Constituent Assembly",
+   "span": "1917–1921",
+   "blurb": "The November 1917 Constituent Assembly election was Russia's first universal-suffrage national vote — and its last free one until 1991. The Socialist-Revolutionaries won it decisively; the Bolsheviks, who did not, dissolved the assembly after a single day's sitting. By 1921 elections meant indirect soviet votes under a consolidating one-party state."
+  },
+  {
+   "key": "congress",
+   "label": "The Congress of Soviets",
+   "span": "1922–1936",
+   "blurb": "The early Soviet state elected its congresses indirectly, through soviets, on an openly class-weighted franchise: workers' votes counted five times a peasant's, and 'former people' — priests, merchants, ex-officials — could not vote at all. No opposition to the Communist Party was permitted at any stage."
+  },
+  {
+   "key": "supreme",
+   "label": "The Supreme Soviet rituals",
+   "span": "1937–1984",
+   "blurb": "The 1936 Stalin constitution introduced direct, universal, secret voting — for exactly one candidate per seat, nominated by the party. For half a century the Soviet Union staged the theatre of elections with announced turnouts above 99%. They are recorded here as rituals of the dictatorship, not elections."
+  },
+  {
+   "key": "perestroika",
+   "label": "The perestroika breakthrough",
+   "span": "1989",
+   "blurb": "Gorbachev's Congress of People's Deputies election was the first Soviet vote since 1917 with a choice on the ballot. A third of the seats were reserved for the party and its organisations, but in the contested districts voters humiliated party bosses, elected Yeltsin with 89% in Moscow — and started the avalanche that buried the state."
+  },
+  {
+   "key": "duma-90s",
+   "label": "The contested Duma",
+   "span": "1993–2003",
+   "blurb": "The new constitution's Duma was elected in real, chaotic contests: Zhirinovsky's shock plurality in 1993 — weeks after tanks shelled the old parliament — the Communist wins of 1995 and 1999, and the fractious multiparty chamber they produced. By 2003, when United Russia first swept the board on tilted airwaves, the window was already closing."
+  },
+  {
+   "key": "duma-managed",
+   "label": "The managed Duma",
+   "span": "2007–2021",
+   "blurb": "Since 2007 the Duma has been a managed chamber: United Russia's supermajorities are assembled through a licensed 'systemic opposition', ballot fraud where needed — the trigger for the 2011–12 protests — and the exclusion of genuine opponents. The announced results are recorded here with that label."
+  }
+ ],
+ "presidential": [
+  {
+   "id": "pres-1990",
+   "label": "1990",
+   "year": 1990,
+   "kind": "presidential",
+   "date": "14 March 1990",
+   "era": "soviet",
+   "turnout": null,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Mikhail Gorbachev",
+     "party": "Communist Party of the Soviet Union",
+     "r1Votes": 1329,
+     "r1Share": 72.86,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Against",
+     "party": null,
+     "r1Votes": 495,
+     "r1Share": 27.14,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Mikhail Gorbachev",
+    "party": "CPSU"
+   },
+   "knownAs": "Gorbachev, unopposed",
+   "summary": "The 1990 Soviet Union presidential election was held in the Soviet Union on 14 March 1990 to elect a president for a five-year term. This was the first and only presidential election to be held in the Soviet Union.",
+   "caveat": "An indirect, uncontested vote of the Congress of People's Deputies — Gorbachev was the only candidate.",
+   "unfree": "partial"
+  },
+  {
+   "id": "pres-1991",
+   "label": "1991",
+   "year": 1991,
+   "kind": "presidential",
+   "date": "12 June 1991",
+   "era": "yeltsin",
+   "turnout": 74.67,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Boris Yeltsin",
+     "party": "Independent",
+     "r1Votes": 45552041,
+     "r1Share": 58.56,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nikolai Ryzhkov",
+     "party": "Communist Party of the RSFSR",
+     "r1Votes": 13395335,
+     "r1Share": 17.22,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vladimir Zhirinovsky",
+     "party": "Liberal Democratic Party",
+     "r1Votes": 6211007,
+     "r1Share": 7.98,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Aman Tuleyev",
+     "party": "Independent",
+     "r1Votes": 5417464,
+     "r1Share": 6.96,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Albert Makashov",
+     "party": "Independent",
+     "r1Votes": 2969511,
+     "r1Share": 3.82,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vadim Bakatin",
+     "party": "Independent",
+     "r1Votes": 2719757,
+     "r1Share": 3.5,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Against all",
+     "party": null,
+     "r1Votes": 1525410,
+     "r1Share": 1.96,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Boris Yeltsin",
+    "party": "Independent"
+   },
+   "knownAs": "Russia's first popular election",
+   "summary": "Presidential elections were held in the Russian Soviet Federative Socialist Republic (RSFSR) on 12 June 1991. This was the first ever Russian presidential election.",
+   "caveat": null,
+   "unfree": null
+  },
+  {
+   "id": "pres-1996",
+   "label": "1996",
+   "year": 1996,
+   "kind": "presidential",
+   "date": "16 June and 3 July 1996",
+   "era": "yeltsin",
+   "turnout": 69.67,
+   "turnout2": 68.78,
+   "candidates": [
+    {
+     "name": "Boris Yeltsin",
+     "party": "Independent",
+     "r1Votes": 26665495,
+     "r1Share": 35.79,
+     "r2Votes": 40203948,
+     "r2Share": 54.4
+    },
+    {
+     "name": "Gennady Zyuganov",
+     "party": "Communist Party",
+     "r1Votes": 24211686,
+     "r1Share": 32.49,
+     "r2Votes": 30102288,
+     "r2Share": 40.73
+    },
+    {
+     "name": "Alexander Lebed",
+     "party": "Congress of Russian Communities",
+     "r1Votes": 10974736,
+     "r1Share": 14.73,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Grigory Yavlinsky",
+     "party": "Yabloko",
+     "r1Votes": 5550752,
+     "r1Share": 7.45,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vladimir Zhirinovsky",
+     "party": "Liberal Democratic Party",
+     "r1Votes": 4311479,
+     "r1Share": 5.79,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Svyatoslav Fyodorov",
+     "party": "Party of Workers' Self-Government",
+     "r1Votes": 699158,
+     "r1Share": 0.94,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mikhail Gorbachev",
+     "party": "Independent",
+     "r1Votes": 386069,
+     "r1Share": 0.52,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Martin Shakkum",
+     "party": "Socialist People's Party",
+     "r1Votes": 277068,
+     "r1Share": 0.37,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yury Vlasov",
+     "party": "Independent",
+     "r1Votes": 151282,
+     "r1Share": 0.2,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vladimir Bryntsalov",
+     "party": "Russian Socialist Party",
+     "r1Votes": 123065,
+     "r1Share": 0.17,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Aman Tuleyev",
+     "party": "Independent",
+     "r1Votes": 308,
+     "r1Share": 0.0,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Boris Yeltsin",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Boris Yeltsin",
+    "party": "Independent"
+   },
+   "knownAs": "The oligarchs' election",
+   "summary": "Presidential elections were held in Russia on 16 June 1996, with a second round being held on 3 July 1996. It resulted in a victory for the incumbent Russian president Boris Yeltsin, who ran as an independent politician.",
+   "caveat": "Genuinely contested, but heavily tilted: near-total state and oligarch media backing for Yeltsin, and enduring allegations of fraud in both rounds.",
+   "unfree": null
+  },
+  {
+   "id": "pres-2000",
+   "label": "2000",
+   "year": 2000,
+   "kind": "presidential",
+   "date": "26 March 2000",
+   "era": "putin",
+   "turnout": 68.64,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Vladimir Putin",
+     "party": "Independent",
+     "r1Votes": 39740434,
+     "r1Share": 53.44,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gennady Zyuganov",
+     "party": "Communist Party",
+     "r1Votes": 21928471,
+     "r1Share": 29.49,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Grigory Yavlinsky",
+     "party": "Yabloko",
+     "r1Votes": 4351452,
+     "r1Share": 5.85,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Aman Tuleyev",
+     "party": "Independent",
+     "r1Votes": 2217361,
+     "r1Share": 2.98,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vladimir Zhirinovsky",
+     "party": "Liberal Democratic Party",
+     "r1Votes": 2026513,
+     "r1Share": 2.72,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Konstantin Titov",
+     "party": "Independent",
+     "r1Votes": 1107269,
+     "r1Share": 1.49,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ella Pamfilova",
+     "party": "For Civic Dignity",
+     "r1Votes": 758966,
+     "r1Share": 1.02,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Stanislav Govorukhin",
+     "party": "Independent",
+     "r1Votes": 328723,
+     "r1Share": 0.44,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Yury Skuratov",
+     "party": "Independent",
+     "r1Votes": 319263,
+     "r1Share": 0.43,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Alexey Podberezkin",
+     "party": "Spiritual Heritage",
+     "r1Votes": 98175,
+     "r1Share": 0.13,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Umar Dzhabrailov",
+     "party": "Power of Reason",
+     "r1Votes": 78498,
+     "r1Share": 0.11,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Against all",
+     "party": null,
+     "r1Votes": 1414648,
+     "r1Share": 1.9,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": null,
+   "presAfter": {
+    "name": "Vladimir Putin",
+    "party": "Independent"
+   },
+   "knownAs": "Putin's first election",
+   "summary": "Presidential elections were held in Russia on 26 March 2000. Incumbent prime minister and acting president Vladimir Putin, who had succeeded Boris Yeltsin after his resignation on 31 December 1999, sought a four-year term in his own right and won in the first round.",
+   "caveat": "Held amid the Second Chechen War with state television campaigning for the incumbent; competitive by later standards, but the tilt was already structural.",
+   "unfree": null
+  },
+  {
+   "id": "pres-2004",
+   "label": "2004",
+   "year": 2004,
+   "kind": "presidential",
+   "date": "14 March 2004",
+   "era": "putin",
+   "turnout": 64.32,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Vladimir Putin",
+     "party": "Independent",
+     "r1Votes": 49563020,
+     "r1Share": 71.91,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nikolay Kharitonov",
+     "party": "Communist Party",
+     "r1Votes": 9514224,
+     "r1Share": 13.8,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sergey Glazyev",
+     "party": "Independent",
+     "r1Votes": 2850330,
+     "r1Share": 4.14,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Irina Khakamada",
+     "party": "Independent",
+     "r1Votes": 2671519,
+     "r1Share": 3.88,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Oleg Malyshkin",
+     "party": "Liberal Democratic Party",
+     "r1Votes": 1405396,
+     "r1Share": 2.04,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sergey Mironov",
+     "party": "Russian Party of Life",
+     "r1Votes": 524392,
+     "r1Share": 0.76,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Against all",
+     "party": null,
+     "r1Votes": 2396550,
+     "r1Share": 3.48,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Vladimir Putin",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Vladimir Putin",
+    "party": "Independent"
+   },
+   "knownAs": null,
+   "summary": "Observers representing the Organization for Security and Co-operation in Europe and the Parliamentary Assembly of the Council of Europe, cited what they called abuses of government resources, bias in the state media and instances of ballot stuffing on election day.",
+   "caveat": "Serious opposition candidates declined or were kept off the air; observers found the campaign 'did not adequately reflect' democratic principles.",
+   "unfree": null
+  },
+  {
+   "id": "pres-2008",
+   "label": "2008",
+   "year": 2008,
+   "kind": "presidential",
+   "date": "2 March 2008",
+   "era": "putin",
+   "turnout": 69.71,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Dmitry Medvedev",
+     "party": "United Russia",
+     "r1Votes": 52530712,
+     "r1Share": 71.25,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gennady Zyuganov",
+     "party": "Communist Party",
+     "r1Votes": 13243550,
+     "r1Share": 17.96,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vladimir Zhirinovsky",
+     "party": "Liberal Democratic Party",
+     "r1Votes": 6988510,
+     "r1Share": 9.48,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Andrei Bogdanov",
+     "party": "Democratic Party",
+     "r1Votes": 968344,
+     "r1Share": 1.31,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Vladimir Putin",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Dmitry Medvedev",
+    "party": "United Russia"
+   },
+   "knownAs": "The placeholder election",
+   "summary": "Presidential elections were held in Russia on 2 March 2008. Incumbent president Vladimir Putin was ineligible to run for a third term.",
+   "caveat": "A managed handover: Putin's chosen successor faced no genuine opposition and no real campaign.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-2012",
+   "label": "2012",
+   "year": 2012,
+   "kind": "presidential",
+   "date": "4 March 2012",
+   "era": "putin",
+   "turnout": 65.27,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Vladimir Putin",
+     "party": "United Russia",
+     "r1Votes": 45602075,
+     "r1Share": 64.35,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Gennady Zyuganov",
+     "party": "Communist Party",
+     "r1Votes": 12318353,
+     "r1Share": 17.38,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Mikhail Prokhorov",
+     "party": "Independent",
+     "r1Votes": 5722508,
+     "r1Share": 8.08,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vladimir Zhirinovsky",
+     "party": "Liberal Democratic Party",
+     "r1Votes": 4458103,
+     "r1Share": 6.29,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sergey Mironov",
+     "party": "A Just Russia",
+     "r1Votes": 2763935,
+     "r1Share": 3.9,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Dmitry Medvedev",
+    "party": "United Russia"
+   },
+   "presAfter": {
+    "name": "Vladimir Putin",
+    "party": "United Russia"
+   },
+   "knownAs": "Return amid protest",
+   "summary": "Presidential elections were held in Russia on 4 March 2012. There were five officially registered candidates: four representatives of registered parties, and one nominal independent.",
+   "caveat": "Held amid mass protests over the rigged 2011 Duma vote, with credible fraud findings and the strongest opponents excluded.",
+   "unfree": "partial"
+  },
+  {
+   "id": "pres-2018",
+   "label": "2018",
+   "year": 2018,
+   "kind": "presidential",
+   "date": "18 March 2018",
+   "era": "putin",
+   "turnout": 67.5,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Vladimir Putin",
+     "party": "Independent",
+     "r1Votes": 56430712,
+     "r1Share": 77.53,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Pavel Grudinin",
+     "party": "Communist Party",
+     "r1Votes": 8659206,
+     "r1Share": 11.9,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vladimir Zhirinovsky",
+     "party": "Liberal Democratic Party",
+     "r1Votes": 4154985,
+     "r1Share": 5.71,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Ksenia Sobchak",
+     "party": "Civic Initiative",
+     "r1Votes": 1238031,
+     "r1Share": 1.7,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Grigory Yavlinsky",
+     "party": "Yabloko",
+     "r1Votes": 769644,
+     "r1Share": 1.06,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Boris Titov",
+     "party": "Party of Growth",
+     "r1Votes": 556801,
+     "r1Share": 0.76,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Maxim Suraykin",
+     "party": "Communists of Russia",
+     "r1Votes": 499342,
+     "r1Share": 0.69,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Sergey Baburin",
+     "party": "Russian All-People's Union",
+     "r1Votes": 479013,
+     "r1Share": 0.66,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Vladimir Putin",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Vladimir Putin",
+    "party": "Independent"
+   },
+   "knownAs": "Navalny barred",
+   "summary": "Presidential elections were held in Russia on 18 March 2018. Incumbent president Vladimir Putin was eligible to run.",
+   "caveat": "The leading opposition figure, Alexei Navalny, was barred from the ballot; observers reported widespread irregularities.",
+   "unfree": "unfree"
+  },
+  {
+   "id": "pres-2024",
+   "label": "2024",
+   "year": 2024,
+   "kind": "presidential",
+   "date": "15–17 March 2024",
+   "era": "putin",
+   "turnout": 77.49,
+   "turnout2": null,
+   "candidates": [
+    {
+     "name": "Vladimir Putin",
+     "party": "Independent",
+     "r1Votes": 76277708,
+     "r1Share": 88.48,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Nikolay Kharitonov",
+     "party": "Communist Party",
+     "r1Votes": 3768470,
+     "r1Share": 4.37,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Vladislav Davankov",
+     "party": "New People",
+     "r1Votes": 3362484,
+     "r1Share": 3.9,
+     "r2Votes": null,
+     "r2Share": null
+    },
+    {
+     "name": "Leonid Slutsky",
+     "party": "Liberal Democratic Party",
+     "r1Votes": 2795629,
+     "r1Share": 3.24,
+     "r2Votes": null,
+     "r2Share": null
+    }
+   ],
+   "presBefore": {
+    "name": "Vladimir Putin",
+    "party": "Independent"
+   },
+   "presAfter": {
+    "name": "Vladimir Putin",
+    "party": "Independent"
+   },
+   "knownAs": "The wartime ritual",
+   "summary": "Presidential elections were held in Russia from 15 to 17 March 2024. It was the eighth presidential election in the country.",
+   "caveat": "A wartime ritual, not an election: every genuine opponent was dead, imprisoned, exiled or barred, voting was extended into occupied Ukrainian territory, and the announced result was the highest in post-Soviet history.",
+   "unfree": "unfree"
+  }
+ ],
+ "legislative": [
+  {
+   "id": "1906",
+   "label": "1906",
+   "year": 1906,
+   "kind": "legislative",
+   "date": "March 1906",
+   "era": "imperial",
+   "totalSeats": 477,
+   "majoritySeats": 239,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Kadets",
+     "leader": "Pavel Milyukov",
+     "seats": 184,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Trudoviks",
+     "leader": "Alexey Aladyin",
+     "seats": 85,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Octobrist",
+     "leader": "Alexander Guchkov",
+     "seats": 38,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The Tsar's first Duma",
+   "summary": "Legislative elections were held in the Russian Empire from 26 March to 20 April 1906. At stake were the 477 seats in the State Duma of the Russian Empire, the legislative assembly.",
+   "caveat": "Elected indirectly through class-weighted curiae under an autocracy — yet genuinely contested; the defiant Kadet-led First Duma was dissolved within 73 days.",
+   "unfree": null,
+   "seatLeader": "Kadets"
+  },
+  {
+   "id": "1907-jan",
+   "label": "January 1907",
+   "year": 1907,
+   "kind": "legislative",
+   "date": "January 1907",
+   "era": "imperial",
+   "totalSeats": 518,
+   "majoritySeats": 260,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Trudoviks",
+     "leader": "Alexey Aladyin",
+     "seats": 104,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Kadets",
+     "leader": "Pavel Milyukov",
+     "seats": 98,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "RSDLP",
+     "leader": "Julius Martov",
+     "seats": 65,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "SRs",
+     "leader": "Viktor Chernov",
+     "seats": 37,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Octobrist",
+     "leader": "Alexander Guchkov",
+     "seats": 32,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Popular Socialists",
+     "leader": "Alexey Peshekhonov",
+     "seats": 16,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The defiant Second Duma",
+   "summary": "Legislative elections were held in the Russian Empire between 21 January and 1 March 1907. The Trudoviks emerged as the largest bloc in the second State Duma, winning 104 of the 518 seats.",
+   "caveat": "Elected under the same class-weighted curial system; the radical Second Duma lasted barely three months before Stolypin dissolved it and rewrote the electoral law.",
+   "unfree": null,
+   "seatLeader": "Trudoviks"
+  },
+  {
+   "id": "1907-oct",
+   "label": "October 1907",
+   "year": 1907,
+   "kind": "legislative",
+   "date": "October 1907",
+   "era": "imperial",
+   "totalSeats": 442,
+   "majoritySeats": 223,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Octobrist",
+     "leader": "Alexander Guchkov",
+     "seats": 154,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Kadet",
+     "leader": "Pavel Milyukov",
+     "seats": 54,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Renovation",
+     "leader": "Dmitry Shipov",
+     "seats": 28,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "RSDLP",
+     "leader": "Julius Martov",
+     "seats": 19,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Trudoviks",
+     "leader": "Alexey Aladyin",
+     "seats": 14,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "Stolypin's tamed Duma",
+   "summary": "In June 1907, the Duma was forcibly dissolved by the Russian government, and some of its deputies arrested. Following the dissolution, the laws regarding elections were amended to favour wealthy pro-government Russians.",
+   "caveat": "Held under the June 1907 electoral law, drastically re-weighted toward landowners and the wealthy — a franchise engineered to produce a loyal chamber.",
+   "unfree": "partial",
+   "seatLeader": "Octobrist"
+  },
+  {
+   "id": "1912",
+   "label": "1912",
+   "year": 1912,
+   "kind": "legislative",
+   "date": "1912",
+   "era": "imperial",
+   "totalSeats": 442,
+   "majoritySeats": 222,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Octobrist",
+     "leader": "Alexander Guchkov",
+     "seats": 98,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Kadet",
+     "leader": "Pavel Milyukov",
+     "seats": 59,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Progressists",
+     "leader": "Ivan Yefryemov",
+     "seats": 48,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "RSDLP",
+     "leader": "Julius Martov",
+     "seats": 14,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Trudoviks",
+     "leader": "Aleksei Aladin",
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The empire's last election",
+   "summary": "Around 51% of those elected were nobles, the highest during the Tsarist era. Both the right- and left-wing increased their representation in the Duma; right-wing candidates won 153 seats and left-wingers 152, whilst the centrists, including the Union of October 17, were reduced to 130 seats.",
+   "caveat": "Held under Stolypin's restricted franchise, with heavy administrative interference in the voting.",
+   "unfree": "partial",
+   "seatLeader": "Octobrist"
+  },
+  {
+   "id": "1917",
+   "label": "1917",
+   "year": 1917,
+   "kind": "legislative",
+   "date": "25 November 1917",
+   "era": "revolution",
+   "totalSeats": 767,
+   "majoritySeats": null,
+   "turnout": 64.0,
+   "parties": [
+    {
+     "name": "SRs",
+     "leader": "Viktor Chernov",
+     "seats": 324,
+     "seatChange": null,
+     "votes": 17256911,
+     "share": 37.6,
+     "swing": null
+    },
+    {
+     "name": "Bolsheviks",
+     "leader": "Vladimir Lenin",
+     "seats": 183,
+     "seatChange": null,
+     "votes": 10671387,
+     "share": 23.3,
+     "swing": null
+    },
+    {
+     "name": "Ukrainian SRs",
+     "leader": "Mykhailo Hrushevsky",
+     "seats": 110,
+     "seatChange": null,
+     "votes": 5819395,
+     "share": 12.7,
+     "swing": null
+    },
+    {
+     "name": "Mensheviks",
+     "leader": "Julius Martov",
+     "seats": 18,
+     "seatChange": null,
+     "votes": 1385500,
+     "share": 3.0,
+     "swing": null
+    },
+    {
+     "name": "Cossacks",
+     "leader": "Alexey Kaledin",
+     "seats": 17,
+     "seatChange": null,
+     "votes": 908326,
+     "share": 2.0,
+     "swing": null
+    },
+    {
+     "name": "Cadet",
+     "leader": "Pavel Milyukov",
+     "seats": 16,
+     "seatChange": null,
+     "votes": 2100262,
+     "share": 4.6,
+     "swing": null
+    },
+    {
+     "name": "Alash",
+     "leader": "Alikhan Bukeikhanov",
+     "seats": 15,
+     "seatChange": null,
+     "votes": 767632,
+     "share": 1.7,
+     "swing": null
+    },
+    {
+     "name": "Musavat Party",
+     "leader": "Mahammad Amin Rasulzade",
+     "seats": 15,
+     "seatChange": null,
+     "votes": 615816,
+     "share": 1.3,
+     "swing": null
+    },
+    {
+     "name": "ARF",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": 558400,
+     "share": 1.2,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The dissolved assembly",
+   "summary": "Elections to the Russian Constituent Assembly were held on 25 November 1917. Organized as a result of events in the February Revolution, the elections took place two months after they had been originally meant to occur.",
+   "caveat": "A free, universal-suffrage election — Russia's first, and its last until 1991. The assembly it produced was dissolved by the Bolsheviks after a single day's sitting.",
+   "unfree": null,
+   "seatLeader": "SRs"
+  },
+  {
+   "id": "1921",
+   "label": "1921",
+   "year": 1921,
+   "kind": "legislative",
+   "date": "1921",
+   "era": "revolution",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The soviets consolidate",
+   "summary": "Elections to the 9th All-Russian Congress of Soviets were held in the Russian Soviet Federative Socialist Republic in the spring of 1921 (not to be confused with the 10th Congress of the Russian Communist Party (Bolsheviks)).",
+   "caveat": "Indirect elections to the Congress of Soviets under consolidating Bolshevik power: non-party candidates could still stand, opposition parties could not.",
+   "unfree": "partial",
+   "seatLeader": null
+  },
+  {
+   "id": "1922",
+   "label": "1922",
+   "year": 1922,
+   "kind": "legislative",
+   "date": "30 December 1922",
+   "era": "congress",
+   "totalSeats": 2214,
+   "majoritySeats": null,
+   "turnout": 22.3,
+   "parties": [
+    {
+     "name": "RKP(b)",
+     "leader": "Vladimir Lenin",
+     "seats": 2082,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 127,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Poale Zion",
+     "leader": "Ya'akov Zerubavel",
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "SSPSP",
+     "leader": "Georgiy Laskhishvili",
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Anarchists",
+     "leader": "Vera Figner",
+     "seats": 1,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The Congress of Soviets was convened following the end of the main hostilities of the Russian Civil War, when the overwhelming number of White Army forces were defeated.",
+   "caveat": "An indirect, single-party vote of the early Soviet state, on a class-weighted franchise that disenfranchised whole categories of citizens. Recorded here as history, not as an election.",
+   "unfree": "unfree",
+   "seatLeader": "RKP(b)"
+  },
+  {
+   "id": "1924",
+   "label": "1924",
+   "year": 1924,
+   "kind": "legislative",
+   "date": "1924",
+   "era": "congress",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Legislative elections were held in the Soviet Union in 1924 to elect members of the Congress of Soviets. Some of the citizenry were not enthusiastic about elections in rural areas held the same year, for a number of varied reasons, possibly including reduced faith in the Soviets, which would increase in later years.",
+   "caveat": "An indirect, single-party vote of the early Soviet state, on a class-weighted franchise that disenfranchised whole categories of citizens. Recorded here as history, not as an election.",
+   "unfree": "unfree",
+   "seatLeader": null
+  },
+  {
+   "id": "1927",
+   "label": "1927",
+   "year": 1927,
+   "kind": "legislative",
+   "date": "1927",
+   "era": "congress",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "A General Election was going on in Russia during my stay this year. Save for the reports in the news-papers, one would hardly have suspected it ...",
+   "caveat": "An indirect, single-party vote of the early Soviet state, on a class-weighted franchise that disenfranchised whole categories of citizens. Recorded here as history, not as an election.",
+   "unfree": "unfree",
+   "seatLeader": null
+  },
+  {
+   "id": "1929",
+   "label": "1929",
+   "year": 1929,
+   "kind": "legislative",
+   "date": "1929",
+   "era": "congress",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The elections were noteworthy for their rowdiness and elements of political opposition. Within the Communist Party, the Left Opposition attempted to run rival candidates against the officially nominated Communist candidates, while outside the party the Russian Orthodox Church attempted to create an organized opposition with religious candidates.",
+   "caveat": "An indirect, single-party vote of the early Soviet state, on a class-weighted franchise that disenfranchised whole categories of citizens. Recorded here as history, not as an election.",
+   "unfree": "unfree",
+   "seatLeader": null
+  },
+  {
+   "id": "1931",
+   "label": "1931",
+   "year": 1931,
+   "kind": "legislative",
+   "date": "February 1931",
+   "era": "congress",
+   "totalSeats": 1576,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "VKP(b)",
+     "leader": "Joseph Stalin",
+     "seats": 1151,
+     "seatChange": -11.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 390,
+     "seatChange": -67.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Komsomol",
+     "leader": "Aleksandr Kosarev",
+     "seats": 35,
+     "seatChange": 32.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Institute of Law (USSR Academy of Sciences) (1960). Congresses of Soviets of the USSR, Union and Autonomous Soviet Socialist republics: collection of documents, 1917-.",
+   "caveat": "An indirect, single-party vote of the early Soviet state, on a class-weighted franchise that disenfranchised whole categories of citizens. Recorded here as history, not as an election.",
+   "unfree": "unfree",
+   "seatLeader": "VKP(b)"
+  },
+  {
+   "id": "1935",
+   "label": "1935",
+   "year": 1935,
+   "kind": "legislative",
+   "date": "January 1935",
+   "era": "congress",
+   "totalSeats": 2022,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "VKP(b)",
+     "leader": "Joseph Stalin",
+     "seats": 1498,
+     "seatChange": 347.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 425,
+     "seatChange": 35.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Komsomol",
+     "leader": "Aleksandr Kosarev",
+     "seats": 99,
+     "seatChange": 64.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Institute of Law (Academy of Sciences of the USSR) (1960). Congresses of Soviets of the USSR, Union, and Autonomous Soviet Socialist Republics: Collection of Documents, 1917-.",
+   "caveat": "An indirect, single-party vote of the early Soviet state, on a class-weighted franchise that disenfranchised whole categories of citizens. Recorded here as history, not as an election.",
+   "unfree": "unfree",
+   "seatLeader": "VKP(b)"
+  },
+  {
+   "id": "1936",
+   "label": "1936",
+   "year": 1936,
+   "kind": "legislative",
+   "date": "November 1936",
+   "era": "congress",
+   "totalSeats": 2025,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "VKP(b)",
+     "leader": "Joseph Stalin",
+     "seats": 1448,
+     "seatChange": -50.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 416,
+     "seatChange": -9.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Komsomol",
+     "leader": "Aleksandr Kosarev",
+     "seats": 161,
+     "seatChange": 62.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Institute of Law (USSR Academy of Sciences) (1960). Congresses of Soviets of the USSR, Union and Autonomous Soviet Socialist republics: collection of documents, 1917-.",
+   "caveat": "An indirect, single-party vote of the early Soviet state, on a class-weighted franchise that disenfranchised whole categories of citizens. Recorded here as history, not as an election.",
+   "unfree": "unfree",
+   "seatLeader": "VKP(b)"
+  },
+  {
+   "id": "1937",
+   "label": "1937",
+   "year": 1937,
+   "kind": "legislative",
+   "date": "12 December 1937",
+   "era": "supreme",
+   "totalSeats": 569,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "All-Union Communist Party (Bolsheviks)",
+     "leader": null,
+     "seats": 461,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 108,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The first single-candidate ritual",
+   "summary": "Supreme Soviet elections were held in the Soviet Union on 12 December 1937. It was the first election held under the 1936 Soviet Constitution, which had formed the Supreme Soviet of the Soviet Union to replace the old legislature, the Congress of Soviets of the Soviet Union.",
+   "caveat": "A single-candidate ritual of the Soviet state: one party-approved name per seat, with announced turnout near 100%. Recorded here as history, not as an election.",
+   "unfree": "unfree",
+   "seatLeader": "All-Union Communist Party (Bolsheviks)"
+  },
+  {
+   "id": "1946",
+   "label": "1946",
+   "year": 1946,
+   "kind": "legislative",
+   "date": "10 February 1946",
+   "era": "supreme",
+   "totalSeats": 682,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "All-Union Communist Party (Bolsheviks)",
+     "leader": null,
+     "seats": 576,
+     "seatChange": 115.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 106,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The first postwar vote",
+   "summary": "Supreme Soviet elections were held in the Soviet Union on 10 February 1946. Originally scheduled for December 1941, the elections were delayed due to the outbreak of war with Germany in June of that year.",
+   "caveat": "A single-candidate ritual of the Soviet state: one party-approved name per seat, with announced turnout near 100%. Recorded here as history, not as an election.",
+   "unfree": "unfree",
+   "seatLeader": "All-Union Communist Party (Bolsheviks)"
+  },
+  {
+   "id": "1950",
+   "label": "1950",
+   "year": 1950,
+   "kind": "legislative",
+   "date": "12 March 1950",
+   "era": "supreme",
+   "totalSeats": 678,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "All-Union Communist Party (Bolsheviks)",
+     "leader": null,
+     "seats": 580,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 98,
+     "seatChange": -8.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Candidates had to be nominated by the All-Union Communist Party (Bolsheviks) (CPSU) or by a public organisation. However, all public organisations were controlled by the party and were subservient to a 1931 law that required them to accept party rule.",
+   "caveat": "A single-candidate ritual of the Soviet state: one party-approved name per seat, with announced turnout near 100%. Recorded here as history, not as an election.",
+   "unfree": "unfree",
+   "seatLeader": "All-Union Communist Party (Bolsheviks)"
+  },
+  {
+   "id": "1954",
+   "label": "1954",
+   "year": 1954,
+   "kind": "legislative",
+   "date": "14 March 1954",
+   "era": "supreme",
+   "totalSeats": 708,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 565,
+     "seatChange": -15.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 143,
+     "seatChange": 45.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Candidates had to be nominated by the Communist Party of the Soviet Union (CPSU) or by a public organisation. However, all public organisations were controlled by the party and were subservient to a 1931 law that required them to accept party rule.",
+   "caveat": "A single-candidate ritual of the Soviet state: one party-approved name per seat, with announced turnout near 100%. Recorded here as history, not as an election.",
+   "unfree": "unfree",
+   "seatLeader": "Communist Party"
+  },
+  {
+   "id": "1958",
+   "label": "1958",
+   "year": 1958,
+   "kind": "legislative",
+   "date": "16 March 1958",
+   "era": "supreme",
+   "totalSeats": 738,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 563,
+     "seatChange": -2.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 175,
+     "seatChange": 32.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Candidates had to be nominated by the Communist Party of the Soviet Union (CPSU) or by a public organisation. However, all public organisations were controlled by the party and were subservient to a 1931 law that required them to accept party rule.",
+   "caveat": "A single-candidate ritual of the Soviet state: one party-approved name per seat, with announced turnout near 100%. Recorded here as history, not as an election.",
+   "unfree": "unfree",
+   "seatLeader": "Communist Party"
+  },
+  {
+   "id": "1962",
+   "label": "1962",
+   "year": 1962,
+   "kind": "legislative",
+   "date": "18 March 1962",
+   "era": "supreme",
+   "totalSeats": 791,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 604,
+     "seatChange": 41.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 187,
+     "seatChange": 12.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Candidates had to be nominated by the Communist Party of the Soviet Union (CPSU) or by a public organisation. However, all public organisations were controlled by the party and were subservient to a 1931 law that required them to accept party rule.",
+   "caveat": "A single-candidate ritual of the Soviet state: one party-approved name per seat, with announced turnout near 100%. Recorded here as history, not as an election.",
+   "unfree": "unfree",
+   "seatLeader": "Communist Party"
+  },
+  {
+   "id": "1966",
+   "label": "1966",
+   "year": 1966,
+   "kind": "legislative",
+   "date": "12 June 1966",
+   "era": "supreme",
+   "totalSeats": 767,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Communist Party of the Soviet Union",
+     "leader": null,
+     "seats": 573,
+     "seatChange": 31.0,
+     "votes": 143570976,
+     "share": 99.76,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Candidates had to be nominated by the Communist Party of the Soviet Union (CPSU) or by a public organisation. However, all public organisations were controlled by the party and were subservient to a 1931 law that required them to accept party rule.",
+   "caveat": "A single-candidate ritual of the Soviet state: one party-approved name per seat, with announced turnout near 100%. Recorded here as history, not as an election.",
+   "unfree": "unfree",
+   "seatLeader": "Communist Party of the Soviet Union"
+  },
+  {
+   "id": "1970",
+   "label": "1970",
+   "year": 1970,
+   "kind": "legislative",
+   "date": "14 June 1970",
+   "era": "supreme",
+   "totalSeats": 767,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 562,
+     "seatChange": -11.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 205,
+     "seatChange": 11.0,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Candidates had to be nominated by the Communist Party of the Soviet Union (CPSU) or by a public organisation. However, all public organisations were controlled by the party and were subservient to a 1931 law that required them to accept party rule.",
+   "caveat": "A single-candidate ritual of the Soviet state: one party-approved name per seat, with announced turnout near 100%. Recorded here as history, not as an election.",
+   "unfree": "unfree",
+   "seatLeader": "Communist Party"
+  },
+  {
+   "id": "1974",
+   "label": "1974",
+   "year": 1974,
+   "kind": "legislative",
+   "date": "16 June 1974",
+   "era": "supreme",
+   "totalSeats": 767,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Communist Party of the Soviet Union",
+     "leader": null,
+     "seats": 562,
+     "seatChange": 0.0,
+     "votes": 161355959,
+     "share": 99.79,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Candidates had to be nominated by the Communist Party of the Soviet Union (CPSU) or by a public organisation. However, all public organisations were controlled by the party and were subservient to a 1931 law that required them to accept party rule.",
+   "caveat": "A single-candidate ritual of the Soviet state: one party-approved name per seat, with announced turnout near 100%. Recorded here as history, not as an election.",
+   "unfree": "unfree",
+   "seatLeader": "Communist Party of the Soviet Union"
+  },
+  {
+   "id": "1979",
+   "label": "1979",
+   "year": 1979,
+   "kind": "legislative",
+   "date": "4 March 1979",
+   "era": "supreme",
+   "totalSeats": 750,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Communist Party of the Soviet Union",
+     "leader": null,
+     "seats": 549,
+     "seatChange": 13.0,
+     "votes": 174734459,
+     "share": 99.89,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Candidates had to be nominated by the Communist Party of the Soviet Union (CPSU) or by a public organisation. However, all public organisations were controlled by the party and were subservient to a 1931 law that required them to accept party rule.",
+   "caveat": "A single-candidate ritual of the Soviet state: one party-approved name per seat, with announced turnout near 100%. Recorded here as history, not as an election.",
+   "unfree": "unfree",
+   "seatLeader": "Communist Party of the Soviet Union"
+  },
+  {
+   "id": "1984",
+   "label": "1984",
+   "year": 1984,
+   "kind": "legislative",
+   "date": "4 March 1984",
+   "era": "supreme",
+   "totalSeats": 750,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Communist Party of the Soviet Union",
+     "leader": null,
+     "seats": 551,
+     "seatChange": 2.0,
+     "votes": 183897278,
+     "share": 99.94,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The last single-list election",
+   "summary": "They were the last in the Soviet Union to be held before Mikhail Gorbachev's policies of perestroika and demokratizatsiya resulted in partially free elections in 1989. They were also the last direct elections to the Supreme Soviet, as in 1989 deputies were elected to the Congress of People's Deputies, who then elected the Supreme Soviet.",
+   "caveat": "A single-candidate ritual of the Soviet state: one party-approved name per seat, with announced turnout near 100%. Recorded here as history, not as an election.",
+   "unfree": "unfree",
+   "seatLeader": "Communist Party of the Soviet Union"
+  },
+  {
+   "id": "1989",
+   "label": "1989",
+   "year": 1989,
+   "kind": "legislative",
+   "date": "26 March 1989",
+   "era": "perestroika",
+   "totalSeats": 2250,
+   "majoritySeats": 1126,
+   "turnout": 89.8,
+   "parties": [
+    {
+     "name": "CPSU",
+     "leader": "Mikhail Gorbachev",
+     "seats": 1958,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 292,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The first real choice since 1917",
+   "summary": "Legislative elections were held in the Soviet Union on 26 March 1989 to elect members of the Congress of People's Deputies, with run-offs on 2, 9 and 20 April and 14 and 23 May. They were the first partially free nationwide elections held in the Soviet Union, and would be the last national elections held in that country before its dissolution in 1991.",
+   "caveat": "Semi-free by design: a third of the seats were reserved for the CPSU and its organisations, but the contested districts offered the first genuine choice on a Soviet ballot since 1917.",
+   "unfree": null,
+   "seatLeader": "CPSU"
+  },
+  {
+   "id": "1993",
+   "label": "1993",
+   "year": 1993,
+   "kind": "legislative",
+   "date": "12 December 1993",
+   "era": "duma-90s",
+   "totalSeats": 450,
+   "majoritySeats": 226,
+   "turnout": 54.33,
+   "parties": [
+    {
+     "name": "Independents",
+     "leader": null,
+     "seats": 171,
+     "seatChange": null,
+     "votes": null,
+     "share": null,
+     "swing": null
+    },
+    {
+     "name": "LDPR",
+     "leader": "Vladimir Zhirinovsky",
+     "seats": 64,
+     "seatChange": null,
+     "votes": 12318562,
+     "share": 21.35,
+     "swing": null
+    },
+    {
+     "name": "Choice of Russia",
+     "leader": "Yegor Gaidar",
+     "seats": 62,
+     "seatChange": null,
+     "votes": 8339345,
+     "share": 14.45,
+     "swing": null
+    },
+    {
+     "name": "CPRF",
+     "leader": "Gennady Zyuganov",
+     "seats": 42,
+     "seatChange": null,
+     "votes": 6666402,
+     "share": 11.55,
+     "swing": null
+    },
+    {
+     "name": "APR",
+     "leader": "Mikhail Lapshin",
+     "seats": 38,
+     "seatChange": null,
+     "votes": 4292518,
+     "share": 7.44,
+     "swing": null
+    },
+    {
+     "name": "YaBL",
+     "leader": "Grigory Yavlinsky",
+     "seats": 27,
+     "seatChange": null,
+     "votes": 4223219,
+     "share": 7.32,
+     "swing": null
+    },
+    {
+     "name": "Women of Russia",
+     "leader": "Alevtina Fedulova",
+     "seats": 24,
+     "seatChange": null,
+     "votes": 4369918,
+     "share": 7.57,
+     "swing": null
+    },
+    {
+     "name": "PRES",
+     "leader": "Sergey Shakhray",
+     "seats": 22,
+     "seatChange": null,
+     "votes": 3620035,
+     "share": 6.27,
+     "swing": null
+    },
+    {
+     "name": "DPR",
+     "leader": "Nikolay Travkin",
+     "seats": 15,
+     "seatChange": null,
+     "votes": 2969533,
+     "share": 5.15,
+     "swing": null
+    },
+    {
+     "name": "Civic Union",
+     "leader": "Arkady Volsky",
+     "seats": 7,
+     "seatChange": null,
+     "votes": 1038193,
+     "share": 1.8,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The Zhirinovsky shock",
+   "summary": "Parliamentary elections were held in Russia on 12 December 1993 to elect all 450 seats of the 1st State Duma of the Russian Federation. Additionally, the elections were the first and only instance of direct elections to the Federation Council, with future members appointed by provincial legislatures and governors.",
+   "caveat": "Held weeks after tanks shelled the old parliament, with several opposition parties and newspapers banned — yet genuinely competitive among those allowed to run, and won on the party lists by Zhirinovsky's LDPR.",
+   "unfree": null,
+   "seatLeader": "Independents"
+  },
+  {
+   "id": "1995",
+   "label": "1995",
+   "year": 1995,
+   "kind": "legislative",
+   "date": "17 December 1995",
+   "era": "duma-90s",
+   "totalSeats": 450,
+   "majoritySeats": 226,
+   "turnout": 64.38,
+   "parties": [
+    {
+     "name": "KPRF",
+     "leader": "Gennady Zyuganov",
+     "seats": 157,
+     "seatChange": 115.0,
+     "votes": 15432963,
+     "share": 22.3,
+     "swing": 10.75
+    },
+    {
+     "name": "NDR",
+     "leader": "Viktor Chernomyrdin",
+     "seats": 55,
+     "seatChange": null,
+     "votes": 7009291,
+     "share": 10.13,
+     "swing": null
+    },
+    {
+     "name": "LDPR",
+     "leader": "Vladimir Zhirinovsky",
+     "seats": 51,
+     "seatChange": -13.0,
+     "votes": 7737431,
+     "share": 11.18,
+     "swing": -10.17
+    },
+    {
+     "name": "Yabloko",
+     "leader": "Grigory Yavlinsky",
+     "seats": 45,
+     "seatChange": 18.0,
+     "votes": 4767384,
+     "share": 6.89,
+     "swing": -0.43
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The Communist comeback",
+   "summary": "The anti-government Communist Party won a total of 157 seats, the most deputies of any single bloc in the chamber. The pro-government Our Home – Russia came second with 55 seats, with the far-right Liberal Democratic Party of Russia falling to third place with 51.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "KPRF"
+  },
+  {
+   "id": "1999",
+   "label": "1999",
+   "year": 1999,
+   "kind": "legislative",
+   "date": "19 December 1999",
+   "era": "duma-90s",
+   "totalSeats": 450,
+   "majoritySeats": 226,
+   "turnout": 61.85,
+   "parties": [
+    {
+     "name": "CPRF",
+     "leader": "Gennady Zyuganov",
+     "seats": 113,
+     "seatChange": -44.0,
+     "votes": 16195569,
+     "share": 24.29,
+     "swing": 1.99
+    },
+    {
+     "name": "Unity",
+     "leader": "Sergei Shoigu",
+     "seats": 73,
+     "seatChange": null,
+     "votes": 15548707,
+     "share": 23.32,
+     "swing": null
+    },
+    {
+     "name": "OVR",
+     "leader": "Yevgeny Primakov",
+     "seats": 68,
+     "seatChange": null,
+     "votes": 8886697,
+     "share": 13.33,
+     "swing": null
+    },
+    {
+     "name": "SPS",
+     "leader": "Sergey Kiriyenko",
+     "seats": 29,
+     "seatChange": null,
+     "votes": 5676982,
+     "share": 8.52,
+     "swing": null
+    },
+    {
+     "name": "Yabloko",
+     "leader": "Grigory Yavlinsky",
+     "seats": 20,
+     "seatChange": -25.0,
+     "votes": 3955457,
+     "share": 5.93,
+     "swing": -0.96
+    },
+    {
+     "name": "Zhirinovsky Bloc",
+     "leader": "Vladimir Zhirinovsky",
+     "seats": 17,
+     "seatChange": -34.0,
+     "votes": 3989932,
+     "share": 5.98,
+     "swing": -5.2
+    },
+    {
+     "name": "NDR",
+     "leader": "Viktor Chernomyrdin",
+     "seats": 7,
+     "seatChange": -48.0,
+     "votes": 791160,
+     "share": 1.19,
+     "swing": -8.94
+    },
+    {
+     "name": "DPA",
+     "leader": "Viktor Ilyukhin",
+     "seats": 2,
+     "seatChange": null,
+     "votes": 384392,
+     "share": 0.58,
+     "swing": null
+    },
+    {
+     "name": "ROS",
+     "leader": "Sergey Baburin",
+     "seats": 2,
+     "seatChange": -3.0,
+     "votes": 245266,
+     "share": 0.37,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The election that made Putin possible",
+   "summary": "Legislative elections were held in Russia on 19 December 1999 to elect the 450 seats in the State Duma, the lower house of the Federal Assembly. Like in the previous elections in 1995, the electoral system resulted in many parties competing for the proportional seats and a significant number of independent deputies elected.",
+   "caveat": null,
+   "unfree": null,
+   "seatLeader": "CPRF"
+  },
+  {
+   "id": "2003",
+   "label": "2003",
+   "year": 2003,
+   "kind": "legislative",
+   "date": "7 December 2003",
+   "era": "duma-90s",
+   "totalSeats": 450,
+   "majoritySeats": 226,
+   "turnout": 55.75,
+   "parties": [
+    {
+     "name": "United Russia",
+     "leader": "Boris Gryzlov",
+     "seats": 223,
+     "seatChange": null,
+     "votes": 22776294,
+     "share": 37.56,
+     "swing": null
+    },
+    {
+     "name": "CPRF",
+     "leader": "Gennady Zyuganov",
+     "seats": 52,
+     "seatChange": -61.0,
+     "votes": 7647820,
+     "share": 12.61,
+     "swing": -11.68
+    },
+    {
+     "name": "Rodina",
+     "leader": "Sergey Glazyev",
+     "seats": 37,
+     "seatChange": null,
+     "votes": 5470429,
+     "share": 9.02,
+     "swing": null
+    },
+    {
+     "name": "LDPR",
+     "leader": "Vladimir Zhirinovsky",
+     "seats": 36,
+     "seatChange": 19.0,
+     "votes": 6944322,
+     "share": 11.35,
+     "swing": 6.15
+    },
+    {
+     "name": "NPRF",
+     "leader": "Gennady Raikov",
+     "seats": 17,
+     "seatChange": null,
+     "votes": 714705,
+     "share": 1.18,
+     "swing": null
+    },
+    {
+     "name": "Yabloko",
+     "leader": "Grigory Yavlinsky",
+     "seats": 4,
+     "seatChange": -16.0,
+     "votes": 2610087,
+     "share": 4.3,
+     "swing": -1.63
+    },
+    {
+     "name": "SPS",
+     "leader": "Boris Nemtsov",
+     "seats": 3,
+     "seatChange": -26.0,
+     "votes": 2408535,
+     "share": 3.97,
+     "swing": -4.55
+    },
+    {
+     "name": "PVR–RPZh",
+     "leader": "Gennadiy Seleznyov",
+     "seats": 3,
+     "seatChange": null,
+     "votes": 1140413,
+     "share": 1.88,
+     "swing": null
+    },
+    {
+     "name": "APR",
+     "leader": "Mikhail Lapshin",
+     "seats": 2,
+     "seatChange": -9.0,
+     "votes": 2205850,
+     "share": 3.64,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "United Russia sweeps",
+   "summary": "As expected, the pro-Vladimir Putin United Russia party received the most votes (38%) and won the most seats, gaining a plurality in the Duma. The Communist Party remained the second largest, though much reduced in strength.",
+   "caveat": "Competitive but tilted: observers judged the campaign 'free but not fair', with state television campaigning openly for United Russia.",
+   "unfree": null,
+   "seatLeader": "United Russia"
+  },
+  {
+   "id": "2007",
+   "label": "2007",
+   "year": 2007,
+   "kind": "legislative",
+   "date": "2 December 2007",
+   "era": "duma-managed",
+   "totalSeats": 450,
+   "majoritySeats": 226,
+   "turnout": 63.71,
+   "parties": [
+    {
+     "name": "United Russia",
+     "leader": "Boris Gryzlov",
+     "seats": 315,
+     "seatChange": 92.0,
+     "votes": 44714241,
+     "share": 65.01,
+     "swing": 26.73
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 57,
+     "seatChange": 5.0,
+     "votes": 8046886,
+     "share": 11.7,
+     "swing": null
+    },
+    {
+     "name": "CPRF",
+     "leader": "Gennady Zyuganov",
+     "seats": 57,
+     "seatChange": 5.0,
+     "votes": 8046886,
+     "share": 11.57,
+     "swing": -1.04
+    },
+    {
+     "name": "Liberal Democratic",
+     "leader": null,
+     "seats": 40,
+     "seatChange": 4.0,
+     "votes": 5660823,
+     "share": 8.23,
+     "swing": null
+    },
+    {
+     "name": "LDPR",
+     "leader": "Vladimir Zhirinovsky",
+     "seats": 40,
+     "seatChange": 4.0,
+     "votes": 5660823,
+     "share": 8.14,
+     "swing": -3.31
+    },
+    {
+     "name": "A Just Russia",
+     "leader": "Sergey Mironov",
+     "seats": 38,
+     "seatChange": 1.0,
+     "votes": 5383639,
+     "share": 7.83,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Legislative elections were held in Russia on 2 December 2007. At stake were the 450 seats in the 5th State Duma, the lower house of the Federal Assembly (the legislature).",
+   "caveat": "A managed vote: Putin headed the United Russia list, opposition access was throttled, and the 7% threshold cleared the chamber of genuine opponents.",
+   "unfree": "partial",
+   "seatLeader": "United Russia"
+  },
+  {
+   "id": "2011",
+   "label": "2011",
+   "year": 2011,
+   "kind": "legislative",
+   "date": "4 December 2011",
+   "era": "duma-managed",
+   "totalSeats": 450,
+   "majoritySeats": 226,
+   "turnout": 60.1,
+   "parties": [
+    {
+     "name": "United Russia",
+     "leader": "Vladimir Putin",
+     "seats": 238,
+     "seatChange": 77.0,
+     "votes": 32379135,
+     "share": 50.1,
+     "swing": -14.98
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 92,
+     "seatChange": 35.0,
+     "votes": 12599507,
+     "share": 19.5,
+     "swing": null
+    },
+    {
+     "name": "CPRF",
+     "leader": "Gennady Zyuganov",
+     "seats": 92,
+     "seatChange": 35.0,
+     "votes": 12599507,
+     "share": 19.19,
+     "swing": 7.62
+    },
+    {
+     "name": "A Just Russia",
+     "leader": "Nikolai Levichev",
+     "seats": 64,
+     "seatChange": 26.0,
+     "votes": 8695522,
+     "share": 13.46,
+     "swing": 5.5
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 56,
+     "seatChange": 16.0,
+     "votes": 7664570,
+     "share": 11.86,
+     "swing": null
+    },
+    {
+     "name": "LDPR",
+     "leader": "Vladimir Zhirinovsky",
+     "seats": 56,
+     "seatChange": 16.0,
+     "votes": 7664570,
+     "share": 11.67,
+     "swing": 3.53
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The fraud that sparked the protests",
+   "summary": "Legislative elections were held in Russia on 4 December 2011. At stake were the 450 seats in the 6th State Duma, the lower house of the Federal Assembly (the legislature).",
+   "caveat": "Marred by documented ballot-box fraud — the trigger for the largest protests of the Putin era.",
+   "unfree": "partial",
+   "seatLeader": "United Russia"
+  },
+  {
+   "id": "2016",
+   "label": "2016",
+   "year": 2016,
+   "kind": "legislative",
+   "date": "18 September 2016",
+   "era": "duma-managed",
+   "totalSeats": 450,
+   "majoritySeats": 226,
+   "turnout": 47.88,
+   "parties": [
+    {
+     "name": "United Russia",
+     "leader": "Dmitry Medvedev",
+     "seats": 343,
+     "seatChange": 105.0,
+     "votes": 28527828,
+     "share": 54.2,
+     "swing": 4.87
+    },
+    {
+     "name": "CPRF",
+     "leader": "Gennady Zyuganov",
+     "seats": 42,
+     "seatChange": -50.0,
+     "votes": 7019752,
+     "share": 13.34,
+     "swing": -5.85
+    },
+    {
+     "name": "LDPR",
+     "leader": "Vladimir Zhirinovsky",
+     "seats": 39,
+     "seatChange": -17.0,
+     "votes": 6917063,
+     "share": 13.14,
+     "swing": 1.47
+    },
+    {
+     "name": "A Just Russia",
+     "leader": "Sergey Mironov",
+     "seats": 23,
+     "seatChange": -41.0,
+     "votes": 3275053,
+     "share": 6.22,
+     "swing": -7.02
+    },
+    {
+     "name": "Rodina",
+     "leader": "Aleksey Zhuravlyov",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": 792226,
+     "share": 1.51,
+     "swing": 1.51
+    },
+    {
+     "name": "Civic Platform",
+     "leader": "Rifat Shaykhutdinov",
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": 115433,
+     "share": 0.22,
+     "swing": 0.22
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Legislative elections were held in Russia on 18 September 2016, having been brought forward from 4 December. At stake were the 450 seats in the State Duma of the 7th convocation, the lower house of the Federal Assembly.",
+   "caveat": "A managed vote on a demobilised electorate: turnout fell below 48%, and United Russia took three-quarters of the seats with under half the vote.",
+   "unfree": "partial",
+   "seatLeader": "United Russia"
+  },
+  {
+   "id": "2021",
+   "label": "2021",
+   "year": 2021,
+   "kind": "legislative",
+   "date": "17–19 September 2021",
+   "era": "duma-managed",
+   "totalSeats": 450,
+   "majoritySeats": 226,
+   "turnout": 51.72,
+   "parties": [
+    {
+     "name": "United Russia",
+     "leader": "Dmitry Medvedev",
+     "seats": 324,
+     "seatChange": -19.0,
+     "votes": 28064200,
+     "share": 49.82,
+     "swing": -4.38
+    },
+    {
+     "name": "CPRF",
+     "leader": "Gennady Zyuganov",
+     "seats": 57,
+     "seatChange": 15.0,
+     "votes": 10660669,
+     "share": 18.93,
+     "swing": 5.59
+    },
+    {
+     "name": "SRZP",
+     "leader": "Sergey Mironov",
+     "seats": 27,
+     "seatChange": 4.0,
+     "votes": 4201744,
+     "share": 7.46,
+     "swing": 0.65
+    },
+    {
+     "name": "LDPR",
+     "leader": "Vladimir Zhirinovsky",
+     "seats": 21,
+     "seatChange": -18.0,
+     "votes": 4252252,
+     "share": 7.55,
+     "swing": -5.59
+    },
+    {
+     "name": "New People",
+     "leader": "Alexey Nechayev",
+     "seats": 13,
+     "seatChange": null,
+     "votes": 2997744,
+     "share": 5.32,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The post-Navalny vote",
+   "summary": "Legislative elections were held in Russia from 17 to 19 September 2021. At stake were 450 seats in the 8th convocation of the State Duma, the lower house of the Federal Assembly.",
+   "caveat": "Held with Navalny's movement outlawed as 'extremist', independent candidates barred from the ballot and tactical-voting tools suppressed — a managed vote, not a free one.",
+   "unfree": "partial",
+   "seatLeader": "United Russia"
+  }
+ ]
+}

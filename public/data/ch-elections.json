@@ -1,0 +1,4032 @@
+{
+ "meta": {
+  "title": "Swiss elections",
+  "sources": [
+   "Wikipedia: Swiss federal election articles 1848–2023 (results, infoboxes and leads)",
+   "Federal Statistical Office figures as reported there"
+  ],
+  "built": "2026-07-22"
+ },
+ "eras": [
+  {
+   "key": "radical",
+   "label": "The Radical republic",
+   "span": "1848–1917",
+   "blurb": "The federal state born of the 1847 civil war elected its National Council in two-round district contests, and the victorious Radicals dominated it for seventy years — governing alone until 1891, when the first Catholic-Conservative joined the Federal Council. Elections were frequent, turnout modest, and the executive never once fell to them."
+  },
+  {
+   "key": "pr",
+   "label": "The proportional turn",
+   "span": "1919–1943",
+   "blurb": "The general strike of 1918 forced the change the Radicals had long resisted: proportional representation from 1919, which promptly cut their seats by half and made the Catholics and the new Farmers' Party permanent partners. The Socialists became the largest party in 1943 and joined the Federal Council that December, mid-war."
+  },
+  {
+   "key": "magic",
+   "label": "The magic formula",
+   "span": "1947–1999",
+   "blurb": "From 1959 the four governing parties split the seven Federal Council seats 2:2:2:1 by fixed convention, and elections became the world's most consequence-free: the same coalition governed regardless of the result. Turnout sagged below half. The formula held for forty-four years — until the SVP broke it."
+  },
+  {
+   "key": "svp",
+   "label": "The SVP era",
+   "span": "2003–2023",
+   "blurb": "Christoph Blocher turned a small agrarian party into the largest political force in Switzerland on an anti-EU, anti-immigration platform. The SVP claimed a second Federal Council seat in 2003, was briefly expelled from it, and set an all-time record of 62 National Council seats in 2023 — while the Greens' 2019 surge receded as fast as it came."
+  }
+ ],
+ "elections": [
+  {
+   "id": "1848",
+   "label": "1848",
+   "year": 1848,
+   "date": "1848",
+   "era": "radical",
+   "totalSeats": 111,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Radical Left",
+     "leader": null,
+     "seats": 79,
+     "seatChange": null,
+     "votes": null,
+     "share": 58.0,
+     "swing": null
+    },
+    {
+     "name": "Liberal Centre",
+     "leader": null,
+     "seats": 11,
+     "seatChange": null,
+     "votes": null,
+     "share": 16.9,
+     "swing": null
+    },
+    {
+     "name": "Catholic Right",
+     "leader": null,
+     "seats": 10,
+     "seatChange": null,
+     "votes": null,
+     "share": 11.6,
+     "swing": null
+    },
+    {
+     "name": "Democratic Left",
+     "leader": null,
+     "seats": 6,
+     "seatChange": null,
+     "votes": null,
+     "share": 4.3,
+     "swing": null
+    },
+    {
+     "name": "Evangelical Right",
+     "leader": null,
+     "seats": 5,
+     "seatChange": null,
+     "votes": null,
+     "share": 8.6,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The founding election",
+   "summary": "The 111 members of the National Council were elected from 52 single- and multi-member constituencies. In six cantons (Appenzell Innerrhoden, Appenzell Ausserrhoden, Glarus, Nidwalden, Obwalden and Uri), National Council members were elected by the Landsgemeinde.",
+   "caveat": null,
+   "seatLeader": "Radical Left"
+  },
+  {
+   "id": "1851",
+   "label": "1851",
+   "year": 1851,
+   "date": "1851",
+   "era": "radical",
+   "totalSeats": 120,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Radical Left",
+     "leader": null,
+     "seats": 78,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 53.1,
+     "swing": null
+    },
+    {
+     "name": "Catholic Right",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": 15.5,
+     "swing": null
+    },
+    {
+     "name": "Liberal Centre",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 5.0,
+     "votes": null,
+     "share": 13.6,
+     "swing": null
+    },
+    {
+     "name": "Evangelical Right",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 13.5,
+     "swing": null
+    },
+    {
+     "name": "Democratic Left",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 4.1,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The elections were held under the Federal law concerning the elections to the National Council, which had been passed on 21 December 1850. The 120 members of the National Council were elected in 49 single- and multi-member constituencies; there was one seat for every 20,000 citizens, with seats allocated to cantons in proportion to their population.",
+   "caveat": null,
+   "seatLeader": "Radical Left"
+  },
+  {
+   "id": "1854",
+   "label": "1854",
+   "year": 1854,
+   "date": "1854",
+   "era": "radical",
+   "totalSeats": 120,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Radical Left",
+     "leader": null,
+     "seats": 80,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 59.5,
+     "swing": null
+    },
+    {
+     "name": "Liberal Centre",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 15.8,
+     "swing": null
+    },
+    {
+     "name": "Catholic Right",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 14.3,
+     "swing": null
+    },
+    {
+     "name": "Evangelical Right",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 7.4,
+     "swing": null
+    },
+    {
+     "name": "Democratic Left",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 1.6,
+     "swing": null
+    },
+    {
+     "name": "Dissidents",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": null,
+     "share": 1.4,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 120 members of the National Council were elected in 49 single- and multi-member constituencies; there was one seat for every 20,000 citizens, with seats allocated to cantons in proportion to their population.",
+   "caveat": null,
+   "seatLeader": "Radical Left"
+  },
+  {
+   "id": "1857",
+   "label": "1857",
+   "year": 1857,
+   "date": "1857",
+   "era": "radical",
+   "totalSeats": 120,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Radical Left",
+     "leader": null,
+     "seats": 80,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 60.4,
+     "swing": null
+    },
+    {
+     "name": "Catholic Right",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": 16.8,
+     "swing": null
+    },
+    {
+     "name": "Liberal Centre",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 15.9,
+     "swing": null
+    },
+    {
+     "name": "Evangelical Right",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 4.3,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 120 members of the National Council were elected in 49 single- and multi-member constituencies; there was one seat for every 20,000 citizens, with seats allocated to cantons in proportion to their population.",
+   "caveat": null,
+   "seatLeader": "Radical Left"
+  },
+  {
+   "id": "1860",
+   "label": "1860",
+   "year": 1860,
+   "date": "1860",
+   "era": "radical",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 120 members of the National Council were elected in 49 single- and multi-member constituencies; there was one seat for every 20,000 citizens, with seats allocated to cantons in proportion to their population.",
+   "caveat": null,
+   "seatLeader": null
+  },
+  {
+   "id": "1863",
+   "label": "1863",
+   "year": 1863,
+   "date": "1863",
+   "era": "radical",
+   "totalSeats": 128,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Radical Left",
+     "leader": null,
+     "seats": 59,
+     "seatChange": 5.0,
+     "votes": null,
+     "share": 44.1,
+     "swing": null
+    },
+    {
+     "name": "Liberal Centre",
+     "leader": null,
+     "seats": 37,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 23.8,
+     "swing": null
+    },
+    {
+     "name": "Catholic Right",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": 19.0,
+     "swing": null
+    },
+    {
+     "name": "Democratic Left",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 5.0,
+     "votes": null,
+     "share": 6.7,
+     "swing": null
+    },
+    {
+     "name": "Evangelical Right",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 4.6,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 128 members of the National Council were elected in 47 single- and multi-member constituencies; there was one seat for every 20,000 citizens, with seats allocated to cantons in proportion to their population.",
+   "caveat": null,
+   "seatLeader": "Radical Left"
+  },
+  {
+   "id": "1866",
+   "label": "1866",
+   "year": 1866,
+   "date": "1866",
+   "era": "radical",
+   "totalSeats": 128,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Radical Left",
+     "leader": null,
+     "seats": 53,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": 39.6,
+     "swing": null
+    },
+    {
+     "name": "Liberal Centre",
+     "leader": null,
+     "seats": 39,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 28.4,
+     "swing": null
+    },
+    {
+     "name": "Catholic Right",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 17.0,
+     "swing": null
+    },
+    {
+     "name": "Democratic Left",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 5.0,
+     "votes": null,
+     "share": 10.5,
+     "swing": null
+    },
+    {
+     "name": "Evangelical Right",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 2.9,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 128 members of the National Council were elected in 47 single- and multi-member constituencies; there was one seat for every 20,000 citizens, with seats allocated to cantons in proportion to their population.",
+   "caveat": null,
+   "seatLeader": "Radical Left"
+  },
+  {
+   "id": "1869",
+   "label": "1869",
+   "year": 1869,
+   "date": "1869",
+   "era": "radical",
+   "totalSeats": null,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 128 members of the National Council were elected in 47 single- and multi-member constituencies; there was one seat for every 20,000 citizens, with seats allocated to cantons in proportion to their population.",
+   "caveat": null,
+   "seatLeader": null
+  },
+  {
+   "id": "1872",
+   "label": "1872",
+   "year": 1872,
+   "date": "1872",
+   "era": "radical",
+   "totalSeats": 135,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Radical Left",
+     "leader": null,
+     "seats": 60,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": 35.2,
+     "swing": null
+    },
+    {
+     "name": "Liberal Centre",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 7.0,
+     "votes": null,
+     "share": 25.6,
+     "swing": null
+    },
+    {
+     "name": "Catholic Right",
+     "leader": null,
+     "seats": 27,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": 21.1,
+     "swing": null
+    },
+    {
+     "name": "Democratic Left",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 12.5,
+     "swing": null
+    },
+    {
+     "name": "Evangelical Right",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 4.1,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 135 members of the National Council were elected in 48 single- and multi-member constituencies using a three-round system. Candidates had to receive a majority in the first or second round to be elected; if it went to a third round, only a plurality was required.",
+   "caveat": null,
+   "seatLeader": "Radical Left"
+  },
+  {
+   "id": "1875",
+   "label": "1875",
+   "year": 1875,
+   "date": "1875",
+   "era": "radical",
+   "totalSeats": 135,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Radical Left",
+     "leader": null,
+     "seats": 63,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 38.2,
+     "swing": null
+    },
+    {
+     "name": "Liberal Centre",
+     "leader": null,
+     "seats": 33,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 25.7,
+     "swing": null
+    },
+    {
+     "name": "Catholic Right",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 5.0,
+     "votes": null,
+     "share": 17.9,
+     "swing": null
+    },
+    {
+     "name": "Democratic Left",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 11.7,
+     "swing": null
+    },
+    {
+     "name": "Evangelical Right",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 4.8,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 135 members of the National Council were elected in 48 single- and multi-member constituencies using a three-round system. Candidates had to receive a majority in the first or second round to be elected; if it went to a third round, only a plurality was required.",
+   "caveat": null,
+   "seatLeader": "Radical Left"
+  },
+  {
+   "id": "1878",
+   "label": "1878",
+   "year": 1878,
+   "date": "1878",
+   "era": "radical",
+   "totalSeats": 135,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Radical Left",
+     "leader": null,
+     "seats": 57,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": 34.8,
+     "swing": null
+    },
+    {
+     "name": "Catholic Right",
+     "leader": null,
+     "seats": 37,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": 26.3,
+     "swing": null
+    },
+    {
+     "name": "Liberal Centre",
+     "leader": null,
+     "seats": 26,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": 23.2,
+     "swing": null
+    },
+    {
+     "name": "Democratic Group",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 5.0,
+     "votes": null,
+     "share": 9.4,
+     "swing": null
+    },
+    {
+     "name": "Evangelical Right",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 5.1,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 135 members of the National Council were elected in 48 single- and multi-member constituencies using a three-round system. Candidates had to receive a majority in the first or second round to be elected; if it went to a third round, only a plurality was required.",
+   "caveat": null,
+   "seatLeader": "Radical Left"
+  },
+  {
+   "id": "1881",
+   "label": "1881",
+   "year": 1881,
+   "date": "1881",
+   "era": "radical",
+   "totalSeats": 145,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Radical Left",
+     "leader": null,
+     "seats": 75,
+     "seatChange": 18.0,
+     "votes": null,
+     "share": 39.8,
+     "swing": null
+    },
+    {
+     "name": "Catholic Right",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 24.6,
+     "swing": null
+    },
+    {
+     "name": "Liberal Centre",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": 20.4,
+     "swing": null
+    },
+    {
+     "name": "Democratic Group",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 7.7,
+     "swing": null
+    },
+    {
+     "name": "Evangelical Right",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 6.1,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 145 members of the National Council were elected in 49 single- and multi-member constituencies using a three-round system. Candidates had to receive a majority in the first or second round to be elected; if it went to a third round, only a plurality was required.",
+   "caveat": null,
+   "seatLeader": "Radical Left"
+  },
+  {
+   "id": "1884",
+   "label": "1884",
+   "year": 1884,
+   "date": "1884",
+   "era": "radical",
+   "totalSeats": 145,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Radical Left",
+     "leader": null,
+     "seats": 74,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 42.0,
+     "swing": null
+    },
+    {
+     "name": "Catholic Right",
+     "leader": null,
+     "seats": 37,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 25.7,
+     "swing": null
+    },
+    {
+     "name": "Liberal Centre",
+     "leader": null,
+     "seats": 18,
+     "seatChange": 4.0,
+     "votes": null,
+     "share": 16.8,
+     "swing": null
+    },
+    {
+     "name": "Democratic Group",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 5.0,
+     "votes": null,
+     "share": 8.2,
+     "swing": null
+    },
+    {
+     "name": "Evangelical Right",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 6.2,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 145 members of the National Council were elected in 49 single- and multi-member constituencies using a three-round system. Candidates had to receive a majority in the first or second round to be elected; if it went to a third round, only a plurality was required.",
+   "caveat": null,
+   "seatLeader": "Radical Left"
+  },
+  {
+   "id": "1887",
+   "label": "1887",
+   "year": 1887,
+   "date": "1887",
+   "era": "radical",
+   "totalSeats": 145,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Radical Left",
+     "leader": null,
+     "seats": 73,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 40.2,
+     "swing": null
+    },
+    {
+     "name": "Catholic Right",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 28.3,
+     "swing": null
+    },
+    {
+     "name": "Liberal Centre",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 15.9,
+     "swing": null
+    },
+    {
+     "name": "Democratic Group",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 9.4,
+     "swing": null
+    },
+    {
+     "name": "Evangelical Right",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 3.0,
+     "votes": null,
+     "share": 3.4,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 145 members of the National Council were elected in 49 single- and multi-member constituencies using a three-round system. Candidates had to receive a majority in the first or second round to be elected; if it went to a third round, only a plurality was required.",
+   "caveat": null,
+   "seatLeader": "Radical Left"
+  },
+  {
+   "id": "1890",
+   "label": "1890",
+   "year": 1890,
+   "date": "1890",
+   "era": "radical",
+   "totalSeats": 147,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Radical Left",
+     "leader": null,
+     "seats": 74,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 40.9,
+     "swing": null
+    },
+    {
+     "name": "Catholic Right",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 25.6,
+     "swing": null
+    },
+    {
+     "name": "Liberal Centre",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 15.7,
+     "swing": null
+    },
+    {
+     "name": "Democratic Group",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 10.4,
+     "swing": null
+    },
+    {
+     "name": "Evangelical Right",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 2.0,
+     "votes": null,
+     "share": 2.4,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 3.6,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 147 members of the National Council were elected in 52 single- and multi-member constituencies using a three-round voting system of the Exhaustive ballot or a multiple-winner variant thereof. To be elected, in the first or second round a candidate or candidates had to receive a vote from a majority of the voters.",
+   "caveat": null,
+   "seatLeader": "Radical Left"
+  },
+  {
+   "id": "1893",
+   "label": "1893",
+   "year": 1893,
+   "date": "1893",
+   "era": "radical",
+   "totalSeats": 147,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Radical Left",
+     "leader": null,
+     "seats": 74,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 41.8,
+     "swing": null
+    },
+    {
+     "name": "Catholic Right",
+     "leader": null,
+     "seats": 29,
+     "seatChange": 6.0,
+     "votes": null,
+     "share": 20.0,
+     "swing": null
+    },
+    {
+     "name": "Liberal Centre",
+     "leader": null,
+     "seats": 27,
+     "seatChange": 7.0,
+     "votes": null,
+     "share": 16.8,
+     "swing": null
+    },
+    {
+     "name": "Democratic Group",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 1.0,
+     "votes": null,
+     "share": 10.3,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": null,
+     "share": 5.9,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 147 members of the National Council were elected in 52 single- and multi-member constituencies using a three-round system. Candidates had to receive a majority in the first or second round to be elected; if it went to a third round, only a plurality was required.",
+   "caveat": null,
+   "seatLeader": "Radical Left"
+  },
+  {
+   "id": "1896",
+   "label": "1896",
+   "year": 1896,
+   "date": "1896",
+   "era": "radical",
+   "totalSeats": 147,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 86,
+     "seatChange": 12.0,
+     "votes": 181028,
+     "share": 48.73,
+     "swing": null
+    },
+    {
+     "name": "Catholic People's Party",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 1.0,
+     "votes": 85484,
+     "share": 23.01,
+     "swing": null
+    },
+    {
+     "name": "Liberal Centre",
+     "leader": null,
+     "seats": 23,
+     "seatChange": 4.0,
+     "votes": 54012,
+     "share": 14.54,
+     "swing": null
+    },
+    {
+     "name": "Democratic Group",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 9.0,
+     "votes": 19946,
+     "share": 5.37,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 25304,
+     "share": 6.81,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 147 members of the National Council were elected in 52 single- and multi-member constituencies using a three-round system. Candidates had to receive a majority in the first or second round to be elected; if it went to a third round, only a plurality was required.",
+   "caveat": null,
+   "seatLeader": "Free Democratic Party"
+  },
+  {
+   "id": "1899",
+   "label": "1899",
+   "year": 1899,
+   "date": "1899",
+   "era": "radical",
+   "totalSeats": 147,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 84,
+     "seatChange": 2.0,
+     "votes": 183216,
+     "share": 49.69,
+     "swing": null
+    },
+    {
+     "name": "Catholic People's Party",
+     "leader": null,
+     "seats": 32,
+     "seatChange": 2.0,
+     "votes": 76845,
+     "share": 20.84,
+     "swing": null
+    },
+    {
+     "name": "Liberal Centre",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 3.0,
+     "votes": 51764,
+     "share": 14.04,
+     "swing": null
+    },
+    {
+     "name": "Democratic Group",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 0.0,
+     "votes": 18003,
+     "share": 4.88,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 3.0,
+     "votes": 35488,
+     "share": 9.62,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 147 members of the National Council were elected in 52 single- and multi-member constituencies using a three-round system. Candidates had to receive a majority in the first or second round to be elected; if it went to a third round, only a plurality was required.",
+   "caveat": null,
+   "seatLeader": "Free Democratic Party"
+  },
+  {
+   "id": "1902",
+   "label": "1902",
+   "year": 1902,
+   "date": "1902",
+   "era": "radical",
+   "totalSeats": 167,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 100,
+     "seatChange": 16.0,
+     "votes": 205235,
+     "share": 50.39,
+     "swing": null
+    },
+    {
+     "name": "Catholic People's Party",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 3.0,
+     "votes": 94031,
+     "share": 23.09,
+     "swing": null
+    },
+    {
+     "name": "Liberal Centre",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 0.0,
+     "votes": 34928,
+     "share": 8.58,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 3.0,
+     "votes": 51338,
+     "share": 12.6,
+     "swing": null
+    },
+    {
+     "name": "Democratic Group",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 3.0,
+     "votes": 15053,
+     "share": 3.7,
+     "swing": null
+    },
+    {
+     "name": "Bern People's Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 6737,
+     "share": 1.65,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 167 members of the National Council were elected in 49 single and multi-member constituencies using a three-round system. Candidates had to receive a majority in the first or second round to be elected; if it went to a third round, only a plurality was required.",
+   "caveat": null,
+   "seatLeader": "Free Democratic Party"
+  },
+  {
+   "id": "1905",
+   "label": "1905",
+   "year": 1905,
+   "date": "1905",
+   "era": "radical",
+   "totalSeats": 167,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 104,
+     "seatChange": 4.0,
+     "votes": 202605,
+     "share": 49.25,
+     "swing": null
+    },
+    {
+     "name": "Catholic People's Party",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 0.0,
+     "votes": 92600,
+     "share": 22.51,
+     "swing": null
+    },
+    {
+     "name": "Liberal Centre",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 1.0,
+     "votes": 27643,
+     "share": 6.72,
+     "swing": null
+    },
+    {
+     "name": "Democratic Group",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 2.0,
+     "votes": 18028,
+     "share": 4.38,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 5.0,
+     "votes": 60308,
+     "share": 14.66,
+     "swing": null
+    },
+    {
+     "name": "Bern People's Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 10235,
+     "share": 2.49,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 167 members of the National Council were elected in 49 single- and multi-member constituencies using a three-round system. Candidates had to receive a majority in the first or second round to be elected; if it went to a third round, only a plurality was required.",
+   "caveat": null,
+   "seatLeader": "Free Democratic Party"
+  },
+  {
+   "id": "1908",
+   "label": "1908",
+   "year": 1908,
+   "date": "1908",
+   "era": "radical",
+   "totalSeats": 167,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 105,
+     "seatChange": 1.0,
+     "votes": 202732,
+     "share": 50.91,
+     "swing": null
+    },
+    {
+     "name": "Catholic People's Party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": 1.0,
+     "votes": 81733,
+     "share": 20.52,
+     "swing": null
+    },
+    {
+     "name": "Liberal Centre",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 3.0,
+     "votes": 23597,
+     "share": 5.93,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 5.0,
+     "votes": 70003,
+     "share": 17.58,
+     "swing": null
+    },
+    {
+     "name": "Democratic Group",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 1.0,
+     "votes": 14414,
+     "share": 3.62,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 167 members of the National Council were elected in 49 single- and multi-member constituencies using a three-round system. Candidates had to receive a majority in the first or second round to be elected; if it went to a third round, only a plurality was required.",
+   "caveat": null,
+   "seatLeader": "Free Democratic Party"
+  },
+  {
+   "id": "1911",
+   "label": "1911",
+   "year": 1911,
+   "date": "1911",
+   "era": "radical",
+   "totalSeats": 189,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 115,
+     "seatChange": 10.0,
+     "votes": 198300,
+     "share": 49.47,
+     "swing": null
+    },
+    {
+     "name": "Catholic People's Party",
+     "leader": null,
+     "seats": 38,
+     "seatChange": 4.0,
+     "votes": 76726,
+     "share": 19.14,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 8.0,
+     "votes": 80050,
+     "share": 19.97,
+     "swing": null
+    },
+    {
+     "name": "Liberal Centre",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 2.0,
+     "votes": 27062,
+     "share": 6.75,
+     "swing": null
+    },
+    {
+     "name": "Democratic Group",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 1.0,
+     "votes": 12610,
+     "share": 3.15,
+     "swing": null
+    },
+    {
+     "name": "Circle of Rhine Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 6122,
+     "share": 1.53,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 189 members of the National Council were elected in 49 single- and multi-member constituencies using a three-round system. Candidates had to receive a majority in the first or second round to be elected; if it went to a third round, only a plurality was required.",
+   "caveat": null,
+   "seatLeader": "Free Democratic Party"
+  },
+  {
+   "id": "1914",
+   "label": "1914",
+   "year": 1914,
+   "date": "1914",
+   "era": "radical",
+   "totalSeats": 188,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 112,
+     "seatChange": 3.0,
+     "votes": 191054,
+     "share": 56.15,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 37,
+     "seatChange": 1.0,
+     "votes": 71668,
+     "share": 21.06,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 19,
+     "seatChange": 3.0,
+     "votes": 34204,
+     "share": 10.05,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": 2.0,
+     "votes": 25142,
+     "share": 7.39,
+     "swing": null
+    },
+    {
+     "name": "Democratic Group",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 2.0,
+     "votes": 9069,
+     "share": 2.67,
+     "swing": null
+    },
+    {
+     "name": "Agrarian Movement",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 9133,
+     "share": 2.68,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "The 189 members of the National Council were elected in 49 single- and multi-member constituencies using a three-round system. Candidates had to receive a majority in the first or second round to be elected; if it went to a third round, only a plurality was required.",
+   "caveat": null,
+   "seatLeader": "Free Democratic Party"
+  },
+  {
+   "id": "1917",
+   "label": "1917",
+   "year": 1917,
+   "date": "28 October 1917",
+   "era": "radical",
+   "totalSeats": 188,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 103,
+     "seatChange": 9.0,
+     "votes": 210323,
+     "share": 40.84,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 5.0,
+     "votes": 84784,
+     "share": 16.46,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 2.0,
+     "votes": 158450,
+     "share": 30.77,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 4.0,
+     "votes": 25188,
+     "share": 4.89,
+     "swing": null
+    },
+    {
+     "name": "Democratic Group",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 3.0,
+     "votes": 16818,
+     "share": 3.27,
+     "swing": null
+    },
+    {
+     "name": "Party of Farmers, Traders and Independents",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 3.0,
+     "votes": 19459,
+     "share": 3.78,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Federal elections were held in Switzerland on 28 October 1917. The Free Democratic Party retained its majority in the National Council.",
+   "caveat": null,
+   "seatLeader": "Free Democratic Party"
+  },
+  {
+   "id": "1919",
+   "label": "1919",
+   "year": 1919,
+   "date": "26 October 1919",
+   "era": "pr",
+   "totalSeats": 189,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 60,
+     "seatChange": 43.0,
+     "votes": 215566,
+     "share": 28.85,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 41,
+     "seatChange": 21.0,
+     "votes": 175292,
+     "share": 23.46,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 41,
+     "seatChange": 1.0,
+     "votes": 156702,
+     "share": 20.97,
+     "swing": null
+    },
+    {
+     "name": "Party of Farmers, Traders and Independents",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 26.0,
+     "votes": 114537,
+     "share": 15.33,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 3.0,
+     "votes": 28497,
+     "share": 3.81,
+     "swing": null
+    },
+    {
+     "name": "Democratic Group",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 3.0,
+     "votes": 14677,
+     "share": 1.96,
+     "swing": null
+    },
+    {
+     "name": "Grütli Union",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 20559,
+     "share": 2.75,
+     "swing": null
+    },
+    {
+     "name": "Young Radicals",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 1.0,
+     "votes": 15342,
+     "share": 2.05,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The PR revolution",
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Free Democratic Party"
+  },
+  {
+   "id": "1922",
+   "label": "1922",
+   "year": 1922,
+   "date": "1922",
+   "era": "pr",
+   "totalSeats": 198,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 60,
+     "seatChange": 0.0,
+     "votes": 208144,
+     "share": 28.34,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 44,
+     "seatChange": 3.0,
+     "votes": 153836,
+     "share": 20.95,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 43,
+     "seatChange": 2.0,
+     "votes": 170974,
+     "share": 23.28,
+     "swing": null
+    },
+    {
+     "name": "Party of Farmers, Traders and Independents",
+     "leader": null,
+     "seats": 34,
+     "seatChange": 4.0,
+     "votes": 118382,
+     "share": 16.12,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 1.0,
+     "votes": 29041,
+     "share": 3.95,
+     "swing": null
+    },
+    {
+     "name": "Democratic Group",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": 15144,
+     "share": 2.06,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": null,
+     "votes": 13441,
+     "share": 1.83,
+     "swing": null
+    },
+    {
+     "name": "National Progressive Party",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 8717,
+     "share": 1.19,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Free Democratic Party"
+  },
+  {
+   "id": "1925",
+   "label": "1925",
+   "year": 1925,
+   "date": "1925",
+   "era": "pr",
+   "totalSeats": 198,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 60,
+     "seatChange": 0.0,
+     "votes": 206485,
+     "share": 27.77,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 49,
+     "seatChange": 6.0,
+     "votes": 192208,
+     "share": 25.85,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 2.0,
+     "votes": 155467,
+     "share": 20.91,
+     "swing": null
+    },
+    {
+     "name": "Party of Farmers, Traders and Independents",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 4.0,
+     "votes": 113512,
+     "share": 15.26,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 3.0,
+     "votes": 22217,
+     "share": 2.99,
+     "swing": null
+    },
+    {
+     "name": "Democratic Group",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 2.0,
+     "votes": 16362,
+     "share": 2.2,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": 14837,
+     "share": 2.0,
+     "swing": null
+    },
+    {
+     "name": "Union for Economic Defence",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 13674,
+     "share": 1.84,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Free Democratic Party"
+  },
+  {
+   "id": "1928",
+   "label": "1928",
+   "year": 1928,
+   "date": "28 October 1928",
+   "era": "pr",
+   "totalSeats": 198,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 58,
+     "seatChange": 2.0,
+     "votes": 220135,
+     "share": 27.36,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 50,
+     "seatChange": 1.0,
+     "votes": 220141,
+     "share": 27.36,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 46,
+     "seatChange": 4.0,
+     "votes": 172516,
+     "share": 21.44,
+     "swing": null
+    },
+    {
+     "name": "Party of Farmers, Traders and Independents",
+     "leader": null,
+     "seats": 31,
+     "seatChange": 1.0,
+     "votes": 126961,
+     "share": 15.78,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 1.0,
+     "votes": 23752,
+     "share": 2.95,
+     "swing": null
+    },
+    {
+     "name": "Democratic Group",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2.0,
+     "votes": 14073,
+     "share": 1.75,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": 14818,
+     "share": 1.84,
+     "swing": null
+    },
+    {
+     "name": "Union for Economic Defence",
+     "leader": null,
+     "seats": 1,
+     "seatChange": 0.0,
+     "votes": 6593,
+     "share": 0.82,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Federal elections were held in Switzerland on 28 October 1928. Although the Social Democratic Party received the most votes (by a margin of just six votes), the Free Democratic Party remained the largest party in the National Council, winning 58 of the 198 seats.",
+   "caveat": null,
+   "seatLeader": "Free Democratic Party"
+  },
+  {
+   "id": "1931",
+   "label": "1931",
+   "year": 1931,
+   "date": "1931",
+   "era": "pr",
+   "totalSeats": 187,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 6.0,
+     "votes": 232562,
+     "share": 26.94,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 49,
+     "seatChange": 1.0,
+     "votes": 247946,
+     "share": 28.72,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 44,
+     "seatChange": 2.0,
+     "votes": 184602,
+     "share": 21.38,
+     "swing": null
+    },
+    {
+     "name": "Party of Farmers, Traders and Independents",
+     "leader": null,
+     "seats": 30,
+     "seatChange": 1.0,
+     "votes": 131809,
+     "share": 15.27,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 0.0,
+     "votes": 24573,
+     "share": 2.85,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": 12778,
+     "share": 1.48,
+     "swing": null
+    },
+    {
+     "name": "Social-Political Group",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": 10726,
+     "share": 1.24,
+     "swing": null
+    },
+    {
+     "name": "Communist Party Opposition",
+     "leader": null,
+     "seats": 1,
+     "seatChange": null,
+     "votes": 9841,
+     "share": 1.14,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Free Democratic Party"
+  },
+  {
+   "id": "1935",
+   "label": "1935",
+   "year": 1935,
+   "date": "1935",
+   "era": "pr",
+   "totalSeats": 186,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 50,
+     "seatChange": 1.0,
+     "votes": 255843,
+     "share": 28.01,
+     "swing": null
+    },
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": 4.0,
+     "votes": 216664,
+     "share": 23.72,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 2.0,
+     "votes": 185052,
+     "share": 20.26,
+     "swing": null
+    },
+    {
+     "name": "Party of Farmers, Traders and Independents",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 9.0,
+     "votes": 100300,
+     "share": 10.98,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Independents",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 37861,
+     "share": 4.14,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 0.0,
+     "votes": 30476,
+     "share": 3.34,
+     "swing": null
+    },
+    {
+     "name": "Young Farmers",
+     "leader": null,
+     "seats": 4,
+     "seatChange": null,
+     "votes": 28161,
+     "share": 3.08,
+     "swing": null
+    },
+    {
+     "name": "Social-Political Group",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": 10665,
+     "share": 1.17,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Social Democratic Party"
+  },
+  {
+   "id": "1939",
+   "label": "1939",
+   "year": 1939,
+   "date": "29 October 1939",
+   "era": "pr",
+   "totalSeats": 187,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 49,
+     "seatChange": 1.0,
+     "votes": 128163,
+     "share": 20.72,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 45,
+     "seatChange": 5.0,
+     "votes": 160377,
+     "share": 25.93,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 43,
+     "seatChange": 1.0,
+     "votes": 105018,
+     "share": 16.98,
+     "swing": null
+    },
+    {
+     "name": "Party of Farmers, Traders and Independents",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 1.0,
+     "votes": 91182,
+     "share": 14.74,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Independents",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 2.0,
+     "votes": 43735,
+     "share": 7.07,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 0.0,
+     "votes": 10241,
+     "share": 1.66,
+     "swing": null
+    },
+    {
+     "name": "Social-Political Group",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 2.0,
+     "votes": 16891,
+     "share": 2.73,
+     "swing": null
+    },
+    {
+     "name": "Communist Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 2.0,
+     "votes": 15962,
+     "share": 2.58,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Federal elections were held in Switzerland on 29 October 1939. The Free Democratic Party emerged as the largest party in the National Council, winning 49 of the 187 seats.",
+   "caveat": null,
+   "seatLeader": "Free Democratic Party"
+  },
+  {
+   "id": "1943",
+   "label": "1943",
+   "year": 1943,
+   "date": "1943",
+   "era": "pr",
+   "totalSeats": 194,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 56,
+     "seatChange": 11.0,
+     "votes": 251576,
+     "share": 28.6,
+     "swing": null
+    },
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 47,
+     "seatChange": 2.0,
+     "votes": 197746,
+     "share": 22.48,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 43,
+     "seatChange": 0.0,
+     "votes": 182916,
+     "share": 20.79,
+     "swing": null
+    },
+    {
+     "name": "Party of Farmers, Traders and Independents",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 0.0,
+     "votes": 101998,
+     "share": 11.59,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 2.0,
+     "votes": 28434,
+     "share": 3.23,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Independents",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 2.0,
+     "votes": 48557,
+     "share": 5.52,
+     "swing": null
+    },
+    {
+     "name": "Social-Political Group",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 0.0,
+     "votes": 29627,
+     "share": 3.37,
+     "swing": null
+    },
+    {
+     "name": "Young Farmers",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": 18310,
+     "share": 2.08,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The Socialists arrive",
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Social Democratic Party"
+  },
+  {
+   "id": "1947",
+   "label": "1947",
+   "year": 1947,
+   "date": "1947",
+   "era": "magic",
+   "totalSeats": 194,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 5.0,
+     "votes": 220486,
+     "share": 22.96,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": 8.0,
+     "votes": 251625,
+     "share": 26.2,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 44,
+     "seatChange": 1.0,
+     "votes": 203202,
+     "share": 21.16,
+     "swing": null
+    },
+    {
+     "name": "Party of Farmers, Traders and Independents",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 1.0,
+     "votes": 115976,
+     "share": 12.08,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Independents",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 1.0,
+     "votes": 42428,
+     "share": 4.42,
+     "swing": null
+    },
+    {
+     "name": "Swiss Party of Labour",
+     "leader": null,
+     "seats": 7,
+     "seatChange": null,
+     "votes": 49353,
+     "share": 5.14,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 1.0,
+     "votes": 30492,
+     "share": 3.18,
+     "swing": null
+    },
+    {
+     "name": "Social-Political Group",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 0.0,
+     "votes": 28096,
+     "share": 2.93,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Free Democratic Party"
+  },
+  {
+   "id": "1951",
+   "label": "1951",
+   "year": 1951,
+   "date": "1951",
+   "era": "magic",
+   "totalSeats": 196,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 51,
+     "seatChange": 1.0,
+     "votes": 230687,
+     "share": 23.99,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 49,
+     "seatChange": 1.0,
+     "votes": 249857,
+     "share": 25.99,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": 4.0,
+     "votes": 216616,
+     "share": 22.53,
+     "swing": null
+    },
+    {
+     "name": "Party of Farmers, Traders and Independents",
+     "leader": null,
+     "seats": 23,
+     "seatChange": 2.0,
+     "votes": 120819,
+     "share": 12.57,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Independents",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 2.0,
+     "votes": 49100,
+     "share": 5.11,
+     "swing": null
+    },
+    {
+     "name": "Swiss Party of Labour",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 2.0,
+     "votes": 25659,
+     "share": 2.67,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 2.0,
+     "votes": 24813,
+     "share": 2.58,
+     "swing": null
+    },
+    {
+     "name": "Social-Political Group",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 1.0,
+     "votes": 21606,
+     "share": 2.25,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Free Democratic Party"
+  },
+  {
+   "id": "1955",
+   "label": "1955",
+   "year": 1955,
+   "date": "1955",
+   "era": "magic",
+   "totalSeats": 196,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 53,
+     "seatChange": 4.0,
+     "votes": 263664,
+     "share": 27.02,
+     "swing": null
+    },
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 50,
+     "seatChange": 1.0,
+     "votes": 227370,
+     "share": 23.3,
+     "swing": null
+    },
+    {
+     "name": "Conservative People's Party",
+     "leader": null,
+     "seats": 47,
+     "seatChange": 1.0,
+     "votes": 226122,
+     "share": 23.17,
+     "swing": null
+    },
+    {
+     "name": "Party of Farmers, Traders and Independents",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 1.0,
+     "votes": 117847,
+     "share": 12.08,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Independents",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 0.0,
+     "votes": 53450,
+     "share": 5.48,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 0.0,
+     "votes": 21688,
+     "share": 2.22,
+     "swing": null
+    },
+    {
+     "name": "Swiss Party of Labour",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 1.0,
+     "votes": 25060,
+     "share": 2.57,
+     "swing": null
+    },
+    {
+     "name": "Social-Political Group",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 21003,
+     "share": 2.15,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Social Democratic Party"
+  },
+  {
+   "id": "1959",
+   "label": "1959",
+   "year": 1959,
+   "date": "1959",
+   "era": "magic",
+   "totalSeats": 196,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 51,
+     "seatChange": 2.0,
+     "votes": 259139,
+     "share": 26.38,
+     "swing": null
+    },
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 51,
+     "seatChange": 1.0,
+     "votes": 232557,
+     "share": 23.67,
+     "swing": null
+    },
+    {
+     "name": "Conservative Christian Social Party",
+     "leader": null,
+     "seats": 47,
+     "seatChange": 0.0,
+     "votes": 229088,
+     "share": 23.32,
+     "swing": null
+    },
+    {
+     "name": "Party of Farmers, Traders and Independents",
+     "leader": null,
+     "seats": 23,
+     "seatChange": 1.0,
+     "votes": 113611,
+     "share": 11.56,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Independents",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 0.0,
+     "votes": 54049,
+     "share": 5.5,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Party",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 0.0,
+     "votes": 22934,
+     "share": 2.33,
+     "swing": null
+    },
+    {
+     "name": "Social-Political Group",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 21170,
+     "share": 2.15,
+     "swing": null
+    },
+    {
+     "name": "Swiss Party of Labour",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": 26346,
+     "share": 2.68,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The magic formula",
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Social Democratic Party"
+  },
+  {
+   "id": "1963",
+   "label": "1963",
+   "year": 1963,
+   "date": "1963",
+   "era": "magic",
+   "totalSeats": 200,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 53,
+     "seatChange": 2.0,
+     "votes": 256063,
+     "share": 26.62,
+     "swing": null
+    },
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 51,
+     "seatChange": 0.0,
+     "votes": 230200,
+     "share": 23.94,
+     "swing": null
+    },
+    {
+     "name": "Conservative Christian Social Party",
+     "leader": null,
+     "seats": 48,
+     "seatChange": 1.0,
+     "votes": 225160,
+     "share": 23.41,
+     "swing": null
+    },
+    {
+     "name": "Party of Farmers, Traders and Independents",
+     "leader": null,
+     "seats": 22,
+     "seatChange": 1.0,
+     "votes": 109202,
+     "share": 11.35,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Independents",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 0.0,
+     "votes": 48224,
+     "share": 5.01,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Union",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 1.0,
+     "votes": 21501,
+     "share": 2.24,
+     "swing": null
+    },
+    {
+     "name": "Swiss Party of Labour",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 1.0,
+     "votes": 21088,
+     "share": 2.19,
+     "swing": null
+    },
+    {
+     "name": "Social-Political Group",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 16978,
+     "share": 1.77,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Social Democratic Party"
+  },
+  {
+   "id": "1967",
+   "label": "1967",
+   "year": 1967,
+   "date": "1967",
+   "era": "magic",
+   "totalSeats": 200,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 50,
+     "seatChange": 3.0,
+     "votes": 233873,
+     "share": 23.53,
+     "swing": null
+    },
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 49,
+     "seatChange": 2.0,
+     "votes": 230095,
+     "share": 23.15,
+     "swing": null
+    },
+    {
+     "name": "Conservative Christian Social Party",
+     "leader": null,
+     "seats": 45,
+     "seatChange": 3.0,
+     "votes": 219184,
+     "share": 22.05,
+     "swing": null
+    },
+    {
+     "name": "Party of Farmers, Traders and Independents",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 1.0,
+     "votes": 109621,
+     "share": 11.03,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Independents",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 6.0,
+     "votes": 89950,
+     "share": 9.05,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Union",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 0.0,
+     "votes": 23208,
+     "share": 2.34,
+     "swing": null
+    },
+    {
+     "name": "Swiss Party of Labour",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 1.0,
+     "votes": 28723,
+     "share": 2.89,
+     "swing": null
+    },
+    {
+     "name": "Evangelical People's Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": 15728,
+     "share": 1.58,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Social Democratic Party"
+  },
+  {
+   "id": "1971",
+   "label": "1971",
+   "year": 1971,
+   "date": "31 October 1971",
+   "era": "magic",
+   "totalSeats": 200,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 49,
+     "seatChange": 0.0,
+     "votes": 432259,
+     "share": 21.7,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 46,
+     "seatChange": 4.0,
+     "votes": 456233,
+     "share": 22.9,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic People's Party",
+     "leader": null,
+     "seats": 44,
+     "seatChange": 1.0,
+     "votes": 407225,
+     "share": 20.44,
+     "swing": null
+    },
+    {
+     "name": "Swiss People's Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": 1.0,
+     "votes": 220487,
+     "share": 11.07,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Independents",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 3.0,
+     "votes": 152086,
+     "share": 7.63,
+     "swing": null
+    },
+    {
+     "name": "Republican Movement",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 7.0,
+     "votes": 84700,
+     "share": 4.25,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Union",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 0.0,
+     "votes": 43710,
+     "share": 2.19,
+     "swing": null
+    },
+    {
+     "name": "Swiss Party of Labour",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 0.0,
+     "votes": 51341,
+     "share": 2.58,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The first election with women's votes",
+   "summary": "Federal elections were held in Switzerland on 31 October 1971. Although the Social Democratic Party received the most votes, the Free Democratic Party emerged as the largest party in the National Council, winning 49 of the 200 seats.",
+   "caveat": null,
+   "seatLeader": "Free Democratic Party"
+  },
+  {
+   "id": "1975",
+   "label": "1975",
+   "year": 1975,
+   "date": "1975",
+   "era": "magic",
+   "totalSeats": 200,
+   "majoritySeats": null,
+   "turnout": null,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 55,
+     "seatChange": 9.0,
+     "votes": 480396,
+     "share": 24.87,
+     "swing": null
+    },
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 47,
+     "seatChange": 2.0,
+     "votes": 428919,
+     "share": 22.21,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic People's Party",
+     "leader": null,
+     "seats": 46,
+     "seatChange": 2.0,
+     "votes": 407286,
+     "share": 21.09,
+     "swing": null
+    },
+    {
+     "name": "Swiss People's Party",
+     "leader": null,
+     "seats": 21,
+     "seatChange": 2.0,
+     "votes": 192053,
+     "share": 9.94,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Independents",
+     "leader": null,
+     "seats": 11,
+     "seatChange": 2.0,
+     "votes": 117217,
+     "share": 6.07,
+     "swing": null
+    },
+    {
+     "name": "Liberal Democratic Union",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 0.0,
+     "votes": 47256,
+     "share": 2.45,
+     "swing": null
+    },
+    {
+     "name": "Republican Movement",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 3.0,
+     "votes": 57192,
+     "share": 2.96,
+     "swing": null
+    },
+    {
+     "name": "Swiss Party of Labour",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 1.0,
+     "votes": 45799,
+     "share": 2.37,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Social Democratic Party"
+  },
+  {
+   "id": "1979",
+   "label": "1979",
+   "year": 1979,
+   "date": "21 October 1979",
+   "era": "magic",
+   "totalSeats": 200,
+   "majoritySeats": 24,
+   "turnout": 48.05,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 51,
+     "seatChange": 4.0,
+     "votes": 447990,
+     "share": 24.44,
+     "swing": null
+    },
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 51,
+     "seatChange": 4.0,
+     "votes": 440099,
+     "share": 24.01,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic People's Party",
+     "leader": null,
+     "seats": 44,
+     "seatChange": 2.0,
+     "votes": 390281,
+     "share": 21.29,
+     "swing": null
+    },
+    {
+     "name": "Swiss People's Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": 2.0,
+     "votes": 212705,
+     "share": 11.6,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Independents",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 3.0,
+     "votes": 74623,
+     "share": 4.07,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 2.0,
+     "votes": 51258,
+     "share": 2.8,
+     "swing": null
+    },
+    {
+     "name": "Evangelical People's Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": 40744,
+     "share": 2.22,
+     "swing": null
+    },
+    {
+     "name": "Swiss Party of Labour",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": 38187,
+     "share": 2.08,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Social Democratic Party"
+  },
+  {
+   "id": "1983",
+   "label": "1983",
+   "year": 1983,
+   "date": "23 October 1983",
+   "era": "magic",
+   "totalSeats": 200,
+   "majoritySeats": 24,
+   "turnout": 48.9,
+   "parties": [
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 54,
+     "seatChange": 3.0,
+     "votes": 457283,
+     "share": 23.33,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 47,
+     "seatChange": 4.0,
+     "votes": 447634,
+     "share": 22.84,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic People's Party",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 2.0,
+     "votes": 396281,
+     "share": 20.22,
+     "swing": null
+    },
+    {
+     "name": "Swiss People's Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": 0.0,
+     "votes": 217166,
+     "share": 11.08,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Independents",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 0.0,
+     "votes": 78292,
+     "share": 3.99,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 0.0,
+     "votes": 55326,
+     "share": 2.82,
+     "swing": null
+    },
+    {
+     "name": "National Action",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 2.0,
+     "votes": 57592,
+     "share": 2.94,
+     "swing": null
+    },
+    {
+     "name": "Swiss Progressive Organisations",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": 43694,
+     "share": 2.23,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Federal elections were held in Switzerland on 23 October 1983. The Free Democratic Party emerged as the largest party in the National Council, winning 54 of the 200 seats.",
+   "caveat": null,
+   "seatLeader": "Free Democratic Party"
+  },
+  {
+   "id": "1987",
+   "label": "1987",
+   "year": 1987,
+   "date": "18 October 1987",
+   "era": "magic",
+   "totalSeats": 200,
+   "majoritySeats": 24,
+   "turnout": 46.5,
+   "parties": [
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 51,
+     "seatChange": 3.0,
+     "votes": 443617,
+     "share": 22.93,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic People's Party",
+     "leader": null,
+     "seats": 42,
+     "seatChange": 0.0,
+     "votes": 378822,
+     "share": 19.58,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 41,
+     "seatChange": 6.0,
+     "votes": 356266,
+     "share": 18.42,
+     "swing": null
+    },
+    {
+     "name": "Swiss People's Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": 2.0,
+     "votes": 213253,
+     "share": 11.02,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 5.0,
+     "votes": 94378,
+     "share": 4.88,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 1.0,
+     "votes": 52532,
+     "share": 2.72,
+     "swing": null
+    },
+    {
+     "name": "Alliance of Independents",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 0.0,
+     "votes": 80691,
+     "share": 4.17,
+     "swing": null
+    },
+    {
+     "name": "Green Alliance",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 1.0,
+     "votes": 77451,
+     "share": 4.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Free Democratic Party"
+  },
+  {
+   "id": "1991",
+   "label": "1991",
+   "year": 1991,
+   "date": "20 October 1991",
+   "era": "magic",
+   "totalSeats": 200,
+   "majoritySeats": 24,
+   "turnout": 46.0,
+   "parties": [
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 44,
+     "seatChange": 7.0,
+     "votes": 429072,
+     "share": 20.99,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 41,
+     "seatChange": 0.0,
+     "votes": 377968,
+     "share": 18.49,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic People's Party",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 7.0,
+     "votes": 367928,
+     "share": 18.0,
+     "swing": null
+    },
+    {
+     "name": "Swiss People's Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": 0.0,
+     "votes": 243268,
+     "share": 11.9,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 14,
+     "seatChange": 5.0,
+     "votes": 124149,
+     "share": 6.07,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": 1.0,
+     "votes": 62073,
+     "share": 3.04,
+     "swing": null
+    },
+    {
+     "name": "Swiss Motorists' Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 6.0,
+     "votes": 103585,
+     "share": 5.07,
+     "swing": null
+    },
+    {
+     "name": "Swiss Democrats",
+     "leader": null,
+     "seats": 5,
+     "seatChange": 2.0,
+     "votes": 69297,
+     "share": 3.39,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy.",
+   "caveat": null,
+   "seatLeader": "Free Democratic Party"
+  },
+  {
+   "id": "1995",
+   "label": "1995",
+   "year": 1995,
+   "date": "22 October 1995",
+   "era": "magic",
+   "totalSeats": 200,
+   "majoritySeats": 24,
+   "turnout": 42.22,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 54,
+     "seatChange": 13.0,
+     "votes": 415226,
+     "share": 21.79,
+     "swing": null
+    },
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 45,
+     "seatChange": 1.0,
+     "votes": 384515,
+     "share": 20.18,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic People's Party",
+     "leader": null,
+     "seats": 34,
+     "seatChange": 1.0,
+     "votes": 319972,
+     "share": 16.79,
+     "swing": null
+    },
+    {
+     "name": "Swiss People's Party",
+     "leader": null,
+     "seats": 29,
+     "seatChange": 4.0,
+     "votes": 283902,
+     "share": 14.9,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 6.0,
+     "votes": 96069,
+     "share": 5.04,
+     "swing": null
+    },
+    {
+     "name": "Freedom Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 1.0,
+     "votes": 75641,
+     "share": 3.97,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": 3.0,
+     "votes": 51182,
+     "share": 2.69,
+     "swing": null
+    },
+    {
+     "name": "Swiss Democrats",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 2.0,
+     "votes": 59613,
+     "share": 3.13,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Federal elections were held in Switzerland on October 22, 1995. The Social Democratic Party emerged as the largest party in the National Council, winning 54 of the 200 seats.",
+   "caveat": null,
+   "seatLeader": "Social Democratic Party"
+  },
+  {
+   "id": "1999",
+   "label": "1999",
+   "year": 1999,
+   "date": "24 October 1999",
+   "era": "magic",
+   "totalSeats": 200,
+   "majoritySeats": 24,
+   "turnout": 43.3,
+   "parties": [
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 51,
+     "seatChange": 3.0,
+     "votes": 438560,
+     "share": 22.48,
+     "swing": null
+    },
+    {
+     "name": "Swiss People's Party",
+     "leader": null,
+     "seats": 44,
+     "seatChange": 15.0,
+     "votes": 440159,
+     "share": 22.56,
+     "swing": null
+    },
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 43,
+     "seatChange": 2.0,
+     "votes": 388780,
+     "share": 19.93,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic People's Party",
+     "leader": null,
+     "seats": 35,
+     "seatChange": 1.0,
+     "votes": 309118,
+     "share": 15.84,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 8,
+     "seatChange": 0.0,
+     "votes": 96807,
+     "share": 4.96,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 6,
+     "seatChange": 1.0,
+     "votes": 43870,
+     "share": 2.25,
+     "swing": null
+    },
+    {
+     "name": "Evangelical People's Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": 35679,
+     "share": 1.83,
+     "swing": null
+    },
+    {
+     "name": "Swiss Party of Labour",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": 18569,
+     "share": 0.95,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Map of Swiss cantons colored by the party that won the most votes. The seats that were won in the cantons for both the National Council and the Council of States are shown as well.",
+   "caveat": null,
+   "seatLeader": "Social Democratic Party"
+  },
+  {
+   "id": "2003",
+   "label": "2003",
+   "year": 2003,
+   "date": "19 October 2003",
+   "era": "svp",
+   "totalSeats": 200,
+   "majoritySeats": 24,
+   "turnout": 45.23,
+   "parties": [
+    {
+     "name": "Swiss People's Party",
+     "leader": null,
+     "seats": 55,
+     "seatChange": 11.0,
+     "votes": 560750,
+     "share": 26.68,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 52,
+     "seatChange": 1.0,
+     "votes": 490385,
+     "share": 23.33,
+     "swing": null
+    },
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 36,
+     "seatChange": 7.0,
+     "votes": 364493,
+     "share": 17.34,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic People's Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": 7.0,
+     "votes": 301652,
+     "share": 14.35,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 13,
+     "seatChange": 5.0,
+     "votes": 156226,
+     "share": 7.43,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 2.0,
+     "votes": 45864,
+     "share": 2.18,
+     "swing": null
+    },
+    {
+     "name": "Evangelical People's Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 0.0,
+     "votes": 47838,
+     "share": 2.28,
+     "swing": null
+    },
+    {
+     "name": "Federal Democratic Union",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": 26590,
+     "share": 1.26,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The formula breaks",
+   "summary": "Federal elections were held in Switzerland on 19 October 2003. Although in Switzerland's political system, in which all four major parties form a coalition, it is very difficult to achieve a change of government, this election produced an upset with the strong showing of the right-wing, anti-European Union and anti-immigration Swiss People's Party.",
+   "caveat": null,
+   "seatLeader": "Swiss People's Party"
+  },
+  {
+   "id": "2007",
+   "label": "2007",
+   "year": 2007,
+   "date": "21 October 2007",
+   "era": "svp",
+   "totalSeats": 200,
+   "majoritySeats": 24,
+   "turnout": 48.3,
+   "parties": [
+    {
+     "name": "Swiss People's Party",
+     "leader": null,
+     "seats": 62,
+     "seatChange": 7.0,
+     "votes": 666318,
+     "share": 28.59,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 43,
+     "seatChange": 9.0,
+     "votes": 450116,
+     "share": 19.32,
+     "swing": null
+    },
+    {
+     "name": "Free Democratic Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": 5.0,
+     "votes": 361103,
+     "share": 15.5,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic People's Party",
+     "leader": null,
+     "seats": 31,
+     "seatChange": 3.0,
+     "votes": 332920,
+     "share": 14.29,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 20,
+     "seatChange": 7.0,
+     "votes": 220785,
+     "share": 9.47,
+     "swing": null
+    },
+    {
+     "name": "Liberal Party",
+     "leader": null,
+     "seats": 4,
+     "seatChange": 0.0,
+     "votes": 42356,
+     "share": 1.82,
+     "swing": null
+    },
+    {
+     "name": "Green Liberal Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": null,
+     "votes": 49314,
+     "share": 2.12,
+     "swing": null
+    },
+    {
+     "name": "Evangelical People's Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": 56361,
+     "share": 2.42,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "Elections to the Swiss Federal Assembly, the federal parliament of Switzerland, were held on Sunday, 21 October 2007. In a few cantons, a second round of the elections to the Council of States was held on 11 November, 18 November, and 25 November 2007.",
+   "caveat": null,
+   "seatLeader": "Swiss People's Party"
+  },
+  {
+   "id": "2011",
+   "label": "2011",
+   "year": 2011,
+   "date": "23 October 2011",
+   "era": "svp",
+   "totalSeats": 200,
+   "majoritySeats": 24,
+   "turnout": 48.5,
+   "parties": [
+    {
+     "name": "Swiss People's Party",
+     "leader": null,
+     "seats": 54,
+     "seatChange": -8.0,
+     "votes": 648675,
+     "share": 26.61,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 46,
+     "seatChange": 3.0,
+     "votes": 457317,
+     "share": 18.76,
+     "swing": null
+    },
+    {
+     "name": "FDP.The Liberals",
+     "leader": null,
+     "seats": 30,
+     "seatChange": -1.0,
+     "votes": 368951,
+     "share": 15.13,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic People's Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": -3.0,
+     "votes": 300544,
+     "share": 12.33,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 15,
+     "seatChange": -5.0,
+     "votes": 205984,
+     "share": 8.45,
+     "swing": null
+    },
+    {
+     "name": "Green Liberal Party",
+     "leader": null,
+     "seats": 12,
+     "seatChange": 9.0,
+     "votes": 131436,
+     "share": 5.39,
+     "swing": null
+    },
+    {
+     "name": "Conservative Democratic Party",
+     "leader": null,
+     "seats": 9,
+     "seatChange": 9.0,
+     "votes": 132279,
+     "share": 5.43,
+     "swing": null
+    },
+    {
+     "name": "Evangelical People's Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": 48789,
+     "share": 2.0,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": null,
+   "summary": "At the last election, in 2007, the Swiss People's Party (SVP) won the highest share of the vote ever recorded for a single party in Switzerland, with 29% of the vote. Soon after, a moderate faction split from the SVP, forming the Conservative Democratic Party (BDP).",
+   "caveat": null,
+   "seatLeader": "Swiss People's Party"
+  },
+  {
+   "id": "2015",
+   "label": "2015",
+   "year": 2015,
+   "date": "18 October 2015",
+   "era": "svp",
+   "totalSeats": 200,
+   "majoritySeats": 24,
+   "turnout": 47.62,
+   "parties": [
+    {
+     "name": "Swiss People's Party",
+     "leader": null,
+     "seats": 65,
+     "seatChange": 11.0,
+     "votes": 734171,
+     "share": 29.43,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 43,
+     "seatChange": -3.0,
+     "votes": 470339,
+     "share": 18.86,
+     "swing": null
+    },
+    {
+     "name": "FDP.The Liberals",
+     "leader": null,
+     "seats": 33,
+     "seatChange": 3.0,
+     "votes": 408793,
+     "share": 16.39,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic People's Party",
+     "leader": null,
+     "seats": 27,
+     "seatChange": -1.0,
+     "votes": 289719,
+     "share": 11.61,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 11,
+     "seatChange": -4.0,
+     "votes": 176075,
+     "share": 7.06,
+     "swing": null
+    },
+    {
+     "name": "Green Liberal Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -5.0,
+     "votes": 115604,
+     "share": 4.63,
+     "swing": null
+    },
+    {
+     "name": "Conservative Democratic Party",
+     "leader": null,
+     "seats": 7,
+     "seatChange": -2.0,
+     "votes": 102598,
+     "share": 4.11,
+     "swing": null
+    },
+    {
+     "name": "Evangelical People's Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 0.0,
+     "votes": 47355,
+     "share": 1.9,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The SVP wave",
+   "summary": "Results showed a shift, due to voter concerns regarding refugee immigration, to the right and increased support for the three largest parties, with the strong showing of Swiss People's Party and FDP.The Liberals possibly affecting future reforms of energy, social security and tax issues, as well as the make-up of the seven-member government.",
+   "caveat": null,
+   "seatLeader": "Swiss People's Party"
+  },
+  {
+   "id": "2019",
+   "label": "2019",
+   "year": 2019,
+   "date": "20 October 2019",
+   "era": "svp",
+   "totalSeats": 200,
+   "majoritySeats": 24,
+   "turnout": 45.11,
+   "parties": [
+    {
+     "name": "Swiss People's Party",
+     "leader": null,
+     "seats": 53,
+     "seatChange": -12.0,
+     "votes": 620343,
+     "share": 25.59,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 39,
+     "seatChange": -4.0,
+     "votes": 408128,
+     "share": 16.84,
+     "swing": null
+    },
+    {
+     "name": "FDP.The Liberals",
+     "leader": null,
+     "seats": 29,
+     "seatChange": -4.0,
+     "votes": 366303,
+     "share": 15.11,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 28,
+     "seatChange": 17.0,
+     "votes": 321018,
+     "share": 13.24,
+     "swing": null
+    },
+    {
+     "name": "Christian Democratic People's Party",
+     "leader": null,
+     "seats": 25,
+     "seatChange": -2.0,
+     "votes": 275842,
+     "share": 11.38,
+     "swing": null
+    },
+    {
+     "name": "Green Liberal Party",
+     "leader": null,
+     "seats": 16,
+     "seatChange": 9.0,
+     "votes": 189162,
+     "share": 7.8,
+     "swing": null
+    },
+    {
+     "name": "Conservative Democratic Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": -4.0,
+     "votes": 59852,
+     "share": 2.47,
+     "swing": null
+    },
+    {
+     "name": "Evangelical People's Party",
+     "leader": null,
+     "seats": 3,
+     "seatChange": 1.0,
+     "votes": 50317,
+     "share": 2.08,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The green wave",
+   "summary": "In the 20 October elections, the two green parties, the Green Party of Switzerland and the Green Liberal Party of Switzerland, made major electoral gains, taking 13.2% and 7.8% of the vote respectively. As in the previous election, the Swiss People's Party received the most votes, but its share of votes went down to 25.6% from 29.4%.",
+   "caveat": null,
+   "seatLeader": "Swiss People's Party"
+  },
+  {
+   "id": "2023",
+   "label": "2023",
+   "year": 2023,
+   "date": "22 October 2023",
+   "era": "svp",
+   "totalSeats": 200,
+   "majoritySeats": 24,
+   "turnout": 46.6,
+   "parties": [
+    {
+     "name": "Swiss People's Party",
+     "leader": null,
+     "seats": 62,
+     "seatChange": 9.0,
+     "votes": 713471,
+     "share": 27.93,
+     "swing": null
+    },
+    {
+     "name": "Social Democratic Party",
+     "leader": null,
+     "seats": 41,
+     "seatChange": 2.0,
+     "votes": 466714,
+     "share": 18.27,
+     "swing": null
+    },
+    {
+     "name": "The Centre",
+     "leader": null,
+     "seats": 29,
+     "seatChange": 1.0,
+     "votes": 359075,
+     "share": 14.06,
+     "swing": null
+    },
+    {
+     "name": "The Liberals",
+     "leader": null,
+     "seats": 28,
+     "seatChange": -1.0,
+     "votes": 364053,
+     "share": 14.25,
+     "swing": null
+    },
+    {
+     "name": "Green Party",
+     "leader": null,
+     "seats": 23,
+     "seatChange": -5.0,
+     "votes": 249891,
+     "share": 9.78,
+     "swing": null
+    },
+    {
+     "name": "Green Liberal Party",
+     "leader": null,
+     "seats": 10,
+     "seatChange": -6.0,
+     "votes": 192944,
+     "share": 7.55,
+     "swing": null
+    },
+    {
+     "name": "Evangelical People's Party",
+     "leader": null,
+     "seats": 2,
+     "seatChange": -1.0,
+     "votes": 49828,
+     "share": 1.95,
+     "swing": null
+    },
+    {
+     "name": "Federal Democratic Union",
+     "leader": null,
+     "seats": 2,
+     "seatChange": 1.0,
+     "votes": 31513,
+     "share": 1.23,
+     "swing": null
+    }
+   ],
+   "pmBefore": null,
+   "pmAfter": null,
+   "knownAs": "The SVP record",
+   "summary": "Federal elections were held in Switzerland on 22 October 2023 to elect all members of the National Council and Council of States. The elections were followed by elections to the Federal Council, Switzerland's government and collegial presidency, on 13 December.",
+   "caveat": null,
+   "seatLeader": "Swiss People's Party"
+  }
+ ]
+}
