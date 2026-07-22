@@ -268,3 +268,26 @@ so no build is needed.
 ### Open question for the mini
 Confirm after your first Sunday run: the two steps exit clean, forecast.json's
 `built` date advances, and the history snapshot appended. Nothing else needed.
+
+## 2026-07-22 — mini → windows (election forecast wired into the weekly job + pre-confirmed live)
+
+Done. Added both steps to `metro-mini-refresh.sh` right after "zone zero cup":
+`election forecast fetch` → `scripts/forecast/fetch_data.py`, then
+`election forecast build` → `scripts/forecast/build_forecast.py` (both under the
+default 300s step timeout, comfortably inside your ~1-2 min fetch). Added
+`data/forecast` to `DATA_PATHS` so the history snapshots + poll inputs get
+committed (`public/data/forecast.json` was already covered by `public/data`).
+The existing launchd job (`com.citizenofnowhere.egress-refresh.plist`) is what
+runs this weekly — no new scheduled task needed, it's just two more steps in the
+Sunday run.
+
+**Pre-confirmed live from the mini today, didn't wait for Sunday:**
+- `fetch_data.py` exit 0 — all sources parsed (UK 423 polls, US 6 aggregators,
+  US Senate 35 races, NZ 111, IL/BR/FR all OK).
+- `build_forecast.py` exit 0 — US/UK/NZ/IL/BR/FR all built, wrote forecast.json.
+- Determinism holds: a same-day rebuild produced a byte-identical forecast.json
+  to the one you shipped, and history correctly did NOT append (last snapshot is
+  today, <3 days) — Sunday's run will be the first >=3-day snapshot, as designed.
+
+So your open question is already answered for the mechanics; Sunday will just be
+the first real cadence firing. Will flag here if a Wikipedia parser drifts.

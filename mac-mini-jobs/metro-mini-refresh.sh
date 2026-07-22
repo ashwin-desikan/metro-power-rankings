@@ -131,6 +131,17 @@ run_step "power ranking"        "$PY" scripts/build-power-ranking.py
 # Cup if a pillar input has collapsed. The page ISR-reads it from GitHub raw, so
 # this needs no Vercel build.
 run_step "zone zero cup"        "$PY" scripts/zzc_v1_multipillar.py
+# Election forecast (added 2026-07-22; owned by the mini per HANDOFF, GH Action
+# cron in forecast-weekly.yml left disabled to avoid a double-run). fetch scrapes
+# ~10 Wikipedia polling pages + the GE2024 base, stdlib-only, ~1-2 min; build is
+# deterministic/seeded and writes public/data/forecast.json plus a dated snapshot
+# into data/forecast/history.json. Fail-soft per country (NZ/IL/BR/FR drop from
+# the JSON on a broken scrape); US/UK hard-fail so a bad week keeps last week's
+# JSON rather than shipping a half-empty one. Both /elections and
+# /elections/forecast ISR-read the JSON from GitHub raw, so this rides
+# [vercel skip] with no deploy.
+run_step "election forecast fetch" "$PY" scripts/forecast/fetch_data.py
+run_step "election forecast build" "$PY" scripts/forecast/build_forecast.py
 
 # --- commit + push ---------------------------------------------------------
 # scripts/civic/city-qids.json is included alongside public/data: it's the
@@ -138,7 +149,10 @@ run_step "zone zero cup"        "$PY" scripts/zzc_v1_multipillar.py
 # as new metros enter the top 100 or a chunk resolves late), and committing it
 # keeps the mini and the civic-data-refresh.yml Action fallback warm-started
 # instead of every run cold-starting QID discovery from an empty cache.
-DATA_PATHS="public/data scripts/civic/city-qids.json scripts/civic/cabinet-positions.json scripts/civic/house-leadership-positions.json"
+# data/forecast holds the forecast history snapshots + static poll inputs the
+# forecast build appends to; public/data/forecast.json itself is already covered
+# by the public/data entry above.
+DATA_PATHS="public/data scripts/civic/city-qids.json scripts/civic/cabinet-positions.json scripts/civic/house-leadership-positions.json data/forecast"
 if git diff --quiet -- $DATA_PATHS; then
   note "no data change this run; nothing to commit"
 else
