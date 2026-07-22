@@ -1,0 +1,393 @@
+{
+ "source": "Wikipedia: Opinion polling for the 2027 French presidential election (CC BY-SA 4.0)",
+ "firstRound": [
+  {
+   "date": "2026-07-08",
+   "shares": {
+    "Nathalie Arthaud": 1.0,
+    "Fabien Roussel": 2.0,
+    "Jean-Luc Mélenchon": 16.0,
+    "Raphaël Glucksmann": 10.0,
+    "Marine Tondelier": 2.0,
+    "Gabriel Attal": 8.0,
+    "Édouard Philippe": 14.0,
+    "Bruno Retailleau": 7.0,
+    "Nicolas Dupont-Aignan": 1.0,
+    "Marine Le Pen": 35.0,
+    "Éric Zemmour": 4.0
+   }
+  },
+  {
+   "date": "2026-07-08",
+   "shares": {
+    "Nathalie Arthaud": 0.5,
+    "Fabien Roussel": 2.0,
+    "Jean-Luc Mélenchon": 15.0,
+    "Raphaël Glucksmann": 12.0,
+    "Marine Tondelier": 4.0,
+    "Gabriel Attal": 15.0,
+    "Bruno Retailleau": 10.0,
+    "Nicolas Dupont-Aignan": 2.0,
+    "Marine Le Pen": 36.0,
+    "Éric Zemmour": 3.5
+   }
+  },
+  {
+   "date": "2026-07-09",
+   "shares": {
+    "Nathalie Arthaud": 1.0,
+    "Fabien Roussel": 2.0,
+    "Jean-Luc Mélenchon": 13.0,
+    "Raphaël Glucksmann": 9.0,
+    "Marine Tondelier": 5.0,
+    "Gabriel Attal": 7.0,
+    "Édouard Philippe": 18.0,
+    "Bruno Retailleau": 8.0,
+    "Marine Le Pen": 35.0,
+    "Éric Zemmour": 3.0
+   }
+  },
+  {
+   "date": "2026-07-10",
+   "shares": {
+    "Nathalie Arthaud": 1.0,
+    "Fabien Roussel": 2.5,
+    "Jean-Luc Mélenchon": 16.0,
+    "Raphaël Glucksmann": 10.5,
+    "Marine Tondelier": 3.5,
+    "Édouard Philippe": 16.5,
+    "Dominique de Villepin": 2.5,
+    "Bruno Retailleau": 8.0,
+    "Nicolas Dupont-Aignan": 1.5,
+    "Marine Le Pen": 35.0,
+    "Éric Zemmour": 3.0
+   }
+  },
+  {
+   "date": "2026-07-10",
+   "shares": {
+    "Fabien Roussel": 2.0,
+    "Jean-Luc Mélenchon": 15.0,
+    "Raphaël Glucksmann": 11.0,
+    "Gabriel Attal": 8.0,
+    "Édouard Philippe": 17.0,
+    "Bruno Retailleau": 7.0,
+    "Marine Le Pen": 37.0,
+    "Éric Zemmour": 3.0
+   }
+  }
+ ],
+ "matchups": [
+  {
+   "title": "Philippe vs. Le Pen",
+   "polls": [
+    {
+     "date": "2024-02-01",
+     "shares": {
+      "Philippe HOR": 50.0,
+      "Le Pen RN": 50.0
+     }
+    },
+    {
+     "date": "2024-04-24",
+     "shares": {
+      "Philippe HOR": 49.0,
+      "Le Pen RN": 51.0
+     }
+    },
+    {
+     "date": "2025-04-18",
+     "shares": {
+      "Philippe HOR": 52.0,
+      "Le Pen RN": 48.0
+     }
+    },
+    {
+     "date": "2025-04-24",
+     "shares": {
+      "Philippe HOR": 54.0,
+      "Le Pen RN": 46.0
+     }
+    },
+    {
+     "date": "2026-03-27",
+     "shares": {
+      "Philippe HOR": 53.0,
+      "Le Pen RN": 47.0
+     }
+    },
+    {
+     "date": "2026-05-27",
+     "shares": {
+      "Philippe HOR": 48.0,
+      "Le Pen RN": 52.0
+     }
+    },
+    {
+     "date": "2026-07-08",
+     "shares": {
+      "Philippe HOR": 49.0,
+      "Le Pen RN": 51.0
+     }
+    },
+    {
+     "date": "2026-07-08",
+     "shares": {
+      "Philippe HOR": 46.0,
+      "Le Pen RN": 54.0
+     }
+    }
+   ]
+  },
+  {
+   "title": "Attal vs. Le Pen",
+   "polls": [
+    {
+     "date": "2024-02-01",
+     "shares": {
+      "Attal RE": 49.0,
+      "Le Pen RN": 51.0
+     }
+    },
+    {
+     "date": "2024-04-24",
+     "shares": {
+      "Attal RE": 47.0,
+      "Le Pen RN": 53.0
+     }
+    },
+    {
+     "date": "2026-03-27",
+     "shares": {
+      "Attal RE": 49.0,
+      "Le Pen RN": 51.0
+     }
+    },
+    {
+     "date": "2026-05-27",
+     "shares": {
+      "Attal RE": 46.0,
+      "Le Pen RN": 54.0
+     }
+    },
+    {
+     "date": "2026-07-08",
+     "shares": {
+      "Attal RE": 45.0,
+      "Le Pen RN": 55.0
+     }
+    },
+    {
+     "date": "2026-07-08",
+     "shares": {
+      "Attal RE": 45.0,
+      "Le Pen RN": 55.0
+     }
+    }
+   ]
+  },
+  {
+   "title": "Mélenchon vs. Le Pen",
+   "polls": [
+    {
+     "date": "2024-02-01",
+     "shares": {
+      "Mélenchon LFI": 36.0,
+      "Le Pen RN": 64.0
+     }
+    },
+    {
+     "date": "2024-04-05",
+     "shares": {
+      "Mélenchon LFI": 35.0,
+      "Le Pen RN": 65.0
+     }
+    },
+    {
+     "date": "2026-05-27",
+     "shares": {
+      "Mélenchon LFI": 33.0,
+      "Le Pen RN": 67.0
+     }
+    },
+    {
+     "date": "2026-07-08",
+     "shares": {
+      "Mélenchon LFI": 33.0,
+      "Le Pen RN": 67.0
+     }
+    },
+    {
+     "date": "2026-07-08",
+     "shares": {
+      "Mélenchon LFI": 30.0,
+      "Le Pen RN": 70.0
+     }
+    }
+   ]
+  },
+  {
+   "title": "Ruffin vs. Le Pen",
+   "polls": [
+    {
+     "date": "2024-04-05",
+     "shares": {
+      "}}}}": 50.0,
+      "Le Pen RN": 50.0
+     }
+    }
+   ]
+  },
+  {
+   "title": "Philippe vs. Bardella",
+   "polls": [
+    {
+     "date": "2025-04-18",
+     "shares": {
+      "Philippe HOR": 50.0,
+      "Bardella RN": 50.0
+     }
+    },
+    {
+     "date": "2025-04-24",
+     "shares": {
+      "Philippe HOR": 54.0,
+      "Bardella RN": 46.0
+     }
+    },
+    {
+     "date": "2025-11-20",
+     "shares": {
+      "Philippe HOR": 47.0,
+      "Bardella RN": 53.0
+     }
+    },
+    {
+     "date": "2026-03-26",
+     "shares": {
+      "Philippe HOR": 52.0,
+      "Bardella RN": 48.0
+     }
+    },
+    {
+     "date": "2026-03-27",
+     "shares": {
+      "Philippe HOR": 51.5,
+      "Bardella RN": 48.5
+     }
+    },
+    {
+     "date": "2026-05-21",
+     "shares": {
+      "Philippe HOR": 48.0,
+      "Bardella RN": 52.0
+     }
+    },
+    {
+     "date": "2026-05-27",
+     "shares": {
+      "Philippe HOR": 46.0,
+      "Bardella RN": 54.0
+     }
+    }
+   ]
+  },
+  {
+   "title": "Attal vs. Bardella",
+   "polls": [
+    {
+     "date": "2025-04-18",
+     "shares": {
+      "Attal RE": 48.0,
+      "Bardella RN": 52.0
+     }
+    },
+    {
+     "date": "2025-11-20",
+     "shares": {
+      "Attal RE": 44.0,
+      "Bardella RN": 56.0
+     }
+    },
+    {
+     "date": "2026-05-27",
+     "shares": {
+      "Attal RE": 43.0,
+      "Bardella RN": 57.0
+     }
+    }
+   ]
+  },
+  {
+   "title": "Glucksmann vs. Bardella",
+   "polls": [
+    {
+     "date": "2025-11-20",
+     "shares": {
+      "Glucksmann PP": 42.0,
+      "Bardella RN": 58.0
+     }
+    },
+    {
+     "date": "2026-03-27",
+     "shares": {
+      "Glucksmann PP": 41.5,
+      "Bardella RN": 58.5
+     }
+    }
+   ]
+  },
+  {
+   "title": "Mélenchon vs. Bardella",
+   "polls": [
+    {
+     "date": "2025-04-18",
+     "shares": {
+      "Mélenchon LFI": 33.0,
+      "Bardella RN": 67.0
+     }
+    },
+    {
+     "date": "2025-11-20",
+     "shares": {
+      "Mélenchon LFI": 26.0,
+      "Bardella RN": 74.0
+     }
+    },
+    {
+     "date": "2026-03-27",
+     "shares": {
+      "Mélenchon LFI": 28.5,
+      "Bardella RN": 71.5
+     }
+    },
+    {
+     "date": "2026-05-27",
+     "shares": {
+      "Mélenchon LFI": 32.0,
+      "Bardella RN": 68.0
+     }
+    }
+   ]
+  },
+  {
+   "title": "Retailleau vs. Bardella",
+   "polls": [
+    {
+     "date": "2025-04-18",
+     "shares": {
+      "Retailleau LR": 47.0,
+      "Bardella RN": 53.0
+     }
+    },
+    {
+     "date": "2026-03-27",
+     "shares": {
+      "Retailleau LR": 42.0,
+      "Bardella RN": 58.0
+     }
+    }
+   ]
+  }
+ ]
+}

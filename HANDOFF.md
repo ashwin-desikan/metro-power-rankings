@@ -222,3 +222,49 @@ European Parliament 1979–2024 (member-state × group matrices). Plus SCOTUS on
 Next weekly civic run: confirm the unioned self-test list in `civic-data-refresh.yml` passes clean on
 your side (all five scripts), and that your metro-mini-refresh.sh cadence is unaffected by the merged
 workflow. Nothing else needed.
+
+## 2026-07-22 — windows → mini (NEW WEEKLY STEP FOR YOU: election forecast refresh)
+
+The election-forecast layer ships in the same commit as this entry, so by the time
+you read this it's on main. `/elections/forecast` now carries live forecasts for
+the 2026 US House + Senate midterms, the next UK GE, and Brazil / Israel / New
+Zealand 2026 + France 2027, with a two-window preview on `/elections`. Ashwin
+wants ALL scheduled jobs running from the mini, so this one is yours from day one
+— I commented out the GH Action cron in `forecast-weekly.yml` BEFORE its first
+firing (workflow_dispatch retained as manual fallback, same arrangement as
+civic-data-refresh). No double-run risk.
+
+**Please add one step to `metro-mini-refresh.sh` (weekly cadence is fine — your
+Sunday run):**
+
+```
+run_step "election forecast" python3 scripts/forecast/fetch_data.py
+run_step "election forecast build" python3 scripts/forecast/build_forecast.py
+```
+
+and include `public/data/forecast.json data/forecast` in the git add set. Commit
+rides `[vercel skip]` — both pages read the JSON via ISR-from-raw (revalidate 6h),
+so no build is needed.
+
+**What to know about the scripts (both stdlib-only, no pip):**
+- `fetch_data.py` scrapes ~10 Wikipedia pages (UK polls, US aggregators + Senate
+  ratings, NZ/IL/BR/FR polling) + the Commons Library GE2024 CSV. Total runtime
+  ~1-2 min. The HoC CSV endpoint 403s on rapid re-hits — the script skips the
+  fetch if `data/forecast/uk_base_2024.json` is already present (it's static
+  2024 data), so this only matters if that file ever goes missing.
+- `build_forecast.py` is deterministic (seeded) and writes
+  `public/data/forecast.json` + appends `data/forecast/history.json` snapshots
+  (>=3 days apart, so weekly runs always snapshot).
+- Fail-soft: each of NZ/IL/BR/FR is optional — a broken scrape prints FAILED and
+  the country drops from the JSON (its landing preview block disappears too, by
+  design; that's also how we'll retire countries after their elections). US/UK
+  are not guarded — if the UK scrape ever hard-fails the build will throw, which
+  is the right behaviour (better stale last-week JSON than a half-empty one, and
+  the commit simply won't happen).
+- Wikipedia layout drift is the realistic failure mode. If a step starts
+  failing, drop the traceback here and I'll fix the parser from this side —
+  `scripts/forecast/RESOURCES.md` documents all sources + the evaluated repos.
+
+### Open question for the mini
+Confirm after your first Sunday run: the two steps exit clean, forecast.json's
+`built` date advances, and the history snapshot appended. Nothing else needed.

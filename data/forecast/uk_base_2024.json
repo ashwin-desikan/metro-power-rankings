@@ -1,0 +1,9755 @@
+{
+ "source": "House of Commons Library, GE2024 results by constituency (CBP-10009, Open Parliament Licence)",
+ "seats": [
+  {
+   "name": "Aberafan Maesteg",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 8.12,
+    "lab": 49.89,
+    "ld": 2.56,
+    "ref": 20.93,
+    "grn": 3.06,
+    "snp": 0.0,
+    "pc": 13.2,
+    "oth": 2.24
+   }
+  },
+  {
+   "name": "Aberdeen North",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 13.97,
+    "lab": 30.34,
+    "ld": 6.14,
+    "ref": 8.98,
+    "grn": 3.03,
+    "snp": 34.52,
+    "pc": 0.0,
+    "oth": 3.01
+   }
+  },
+  {
+   "name": "Aberdeen South",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 24.38,
+    "lab": 24.72,
+    "ld": 6.3,
+    "ref": 6.9,
+    "grn": 3.47,
+    "snp": 32.83,
+    "pc": 0.0,
+    "oth": 1.4
+   }
+  },
+  {
+   "name": "Aberdeenshire North and Moray East",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 32.77,
+    "lab": 10.15,
+    "ld": 7.29,
+    "ref": 14.56,
+    "grn": 0.0,
+    "snp": 35.23,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Airdrie and Shotts",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 4.63,
+    "lab": 51.47,
+    "ld": 1.98,
+    "ref": 8.1,
+    "grn": 0.0,
+    "snp": 30.88,
+    "pc": 0.0,
+    "oth": 2.94
+   }
+  },
+  {
+   "name": "Aldershot",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 29.01,
+    "lab": 40.71,
+    "ld": 8.35,
+    "ref": 16.91,
+    "grn": 4.44,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.58
+   }
+  },
+  {
+   "name": "Aldridge-Brownhills",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 38.87,
+    "lab": 28.37,
+    "ld": 4.29,
+    "ref": 24.21,
+    "grn": 4.27,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Alloa and Grangemouth",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 7.59,
+    "lab": 43.78,
+    "ld": 2.79,
+    "ref": 9.23,
+    "grn": 3.45,
+    "snp": 28.92,
+    "pc": 0.0,
+    "oth": 4.23
+   }
+  },
+  {
+   "name": "Altrincham and Sale West",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 32.31,
+    "lab": 40.42,
+    "ld": 9.19,
+    "ref": 9.64,
+    "grn": 7.19,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.25
+   }
+  },
+  {
+   "name": "Alyn and Deeside",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 18.19,
+    "lab": 42.39,
+    "ld": 4.76,
+    "ref": 22.13,
+    "grn": 4.44,
+    "snp": 0.0,
+    "pc": 4.47,
+    "oth": 3.63
+   }
+  },
+  {
+   "name": "Amber Valley",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 25.22,
+    "lab": 37.02,
+    "ld": 3.74,
+    "ref": 28.67,
+    "grn": 5.36,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Angus and Perthshire Glens",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 30.14,
+    "lab": 14.36,
+    "ld": 6.67,
+    "ref": 6.86,
+    "grn": 0.0,
+    "snp": 40.43,
+    "pc": 0.0,
+    "oth": 1.55
+   }
+  },
+  {
+   "name": "Arbroath and Broughty Ferry",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 15.51,
+    "lab": 33.37,
+    "ld": 5.1,
+    "ref": 8.61,
+    "grn": 0.0,
+    "snp": 35.32,
+    "pc": 0.0,
+    "oth": 2.09
+   }
+  },
+  {
+   "name": "Argyll Bute and South Lochaber",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 20.84,
+    "lab": 19.14,
+    "ld": 16.4,
+    "ref": 6.79,
+    "grn": 0.0,
+    "snp": 34.73,
+    "pc": 0.0,
+    "oth": 2.1
+   }
+  },
+  {
+   "name": "Arundel and South Downs",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 40.19,
+    "lab": 17.87,
+    "ld": 18.03,
+    "ref": 13.5,
+    "grn": 10.07,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.34
+   }
+  },
+  {
+   "name": "Ashfield",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 8.2,
+    "lab": 28.97,
+    "ld": 1.55,
+    "ref": 42.78,
+    "grn": 2.76,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 15.74
+   }
+  },
+  {
+   "name": "Ashford",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 28.7,
+    "lab": 32.49,
+    "ld": 5.2,
+    "ref": 21.59,
+    "grn": 9.27,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.74
+   }
+  },
+  {
+   "name": "Ashton-under-Lyne",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 12.34,
+    "lab": 43.92,
+    "ld": 3.98,
+    "ref": 24.77,
+    "grn": 7.0,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 7.99
+   }
+  },
+  {
+   "name": "Aylesbury",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 28.94,
+    "lab": 30.2,
+    "ld": 20.91,
+    "ref": 13.51,
+    "grn": 5.19,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.27
+   }
+  },
+  {
+   "name": "Ayr Carrick and Cumnock",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 22.59,
+    "lab": 36.47,
+    "ld": 2.64,
+    "ref": 8.66,
+    "grn": 2.16,
+    "snp": 26.32,
+    "pc": 0.0,
+    "oth": 1.15
+   }
+  },
+  {
+   "name": "Banbury",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 31.57,
+    "lab": 38.33,
+    "ld": 9.03,
+    "ref": 13.04,
+    "grn": 5.43,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.59
+   }
+  },
+  {
+   "name": "Bangor Aberconwy",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 21.69,
+    "lab": 33.62,
+    "ld": 3.66,
+    "ref": 14.62,
+    "grn": 3.27,
+    "snp": 0.0,
+    "pc": 21.87,
+    "oth": 1.27
+   }
+  },
+  {
+   "name": "Barking",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 11.77,
+    "lab": 44.49,
+    "ld": 2.78,
+    "ref": 14.18,
+    "grn": 13.67,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 13.1
+   }
+  },
+  {
+   "name": "Barnsley North",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 8.36,
+    "lab": 50.44,
+    "ld": 3.62,
+    "ref": 29.27,
+    "grn": 4.89,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.42
+   }
+  },
+  {
+   "name": "Barnsley South",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 9.26,
+    "lab": 46.74,
+    "ld": 3.34,
+    "ref": 33.21,
+    "grn": 4.34,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.11
+   }
+  },
+  {
+   "name": "Barrow and Furness",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 31.29,
+    "lab": 43.9,
+    "ld": 3.98,
+    "ref": 16.66,
+    "grn": 3.47,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.69
+   }
+  },
+  {
+   "name": "Basildon and Billericay",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 30.64,
+    "lab": 30.59,
+    "ld": 5.44,
+    "ref": 26.95,
+    "grn": 5.04,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.34
+   }
+  },
+  {
+   "name": "Basingstoke",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 29.47,
+    "lab": 42.71,
+    "ld": 6.48,
+    "ref": 12.89,
+    "grn": 7.28,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.17
+   }
+  },
+  {
+   "name": "Bassetlaw",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 28.32,
+    "lab": 41.17,
+    "ld": 4.45,
+    "ref": 21.73,
+    "grn": 4.34,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Bath",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 15.91,
+    "lab": 18.0,
+    "ld": 41.31,
+    "ref": 7.89,
+    "grn": 12.37,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 4.51
+   }
+  },
+  {
+   "name": "Bathgate and Linlithgow",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 7.47,
+    "lab": 47.01,
+    "ld": 5.16,
+    "ref": 8.38,
+    "grn": 3.3,
+    "snp": 27.22,
+    "pc": 0.0,
+    "oth": 1.45
+   }
+  },
+  {
+   "name": "Battersea",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 23.24,
+    "lab": 48.81,
+    "ld": 10.25,
+    "ref": 6.0,
+    "grn": 9.0,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.69
+   }
+  },
+  {
+   "name": "Beaconsfield",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 38.75,
+    "lab": 15.12,
+    "ld": 27.32,
+    "ref": 12.69,
+    "grn": 4.14,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.98
+   }
+  },
+  {
+   "name": "Beckenham and Penge",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 24.6,
+    "lab": 49.31,
+    "ld": 8.49,
+    "ref": 10.25,
+    "grn": 7.33,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Bedford",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 21.92,
+    "lab": 45.11,
+    "ld": 9.9,
+    "ref": 11.19,
+    "grn": 5.89,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 6.0
+   }
+  },
+  {
+   "name": "Belfast East",
+   "region": "Northern Ireland",
+   "country": "Northern Ireland",
+   "shares": {
+    "con": 0.0,
+    "lab": 0.0,
+    "ld": 0.0,
+    "ref": 0.0,
+    "grn": 2.52,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 97.48
+   }
+  },
+  {
+   "name": "Belfast North",
+   "region": "Northern Ireland",
+   "country": "Northern Ireland",
+   "shares": {
+    "con": 0.0,
+    "lab": 0.0,
+    "ld": 0.0,
+    "ref": 0.0,
+    "grn": 2.98,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 97.02
+   }
+  },
+  {
+   "name": "Belfast South and Mid Down",
+   "region": "Northern Ireland",
+   "country": "Northern Ireland",
+   "shares": {
+    "con": 0.0,
+    "lab": 0.0,
+    "ld": 0.0,
+    "ref": 0.0,
+    "grn": 3.63,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 96.37
+   }
+  },
+  {
+   "name": "Belfast West",
+   "region": "Northern Ireland",
+   "country": "Northern Ireland",
+   "shares": {
+    "con": 0.0,
+    "lab": 0.0,
+    "ld": 0.0,
+    "ref": 0.0,
+    "grn": 1.13,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 98.87
+   }
+  },
+  {
+   "name": "Bermondsey and Old Southwark",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 7.66,
+    "lab": 44.83,
+    "ld": 24.12,
+    "ref": 9.03,
+    "grn": 11.91,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.45
+   }
+  },
+  {
+   "name": "Berwickshire Roxburgh and Selkirk",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 40.53,
+    "lab": 13.56,
+    "ld": 7.92,
+    "ref": 7.17,
+    "grn": 3.28,
+    "snp": 26.36,
+    "pc": 0.0,
+    "oth": 1.18
+   }
+  },
+  {
+   "name": "Bethnal Green and Stepney",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 4.12,
+    "lab": 34.08,
+    "ld": 10.24,
+    "ref": 4.21,
+    "grn": 13.7,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 33.65
+   }
+  },
+  {
+   "name": "Beverley and Holderness",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 34.53,
+    "lab": 34.25,
+    "ld": 7.54,
+    "ref": 18.26,
+    "grn": 3.67,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.76
+   }
+  },
+  {
+   "name": "Bexhill and Battle",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 33.9,
+    "lab": 28.33,
+    "ld": 7.27,
+    "ref": 16.61,
+    "grn": 6.22,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 7.67
+   }
+  },
+  {
+   "name": "Bexleyheath and Crayford",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 31.3,
+    "lab": 36.16,
+    "ld": 5.07,
+    "ref": 22.69,
+    "grn": 4.78,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Bicester and Woodstock",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 28.8,
+    "lab": 16.4,
+    "ld": 38.67,
+    "ref": 10.77,
+    "grn": 4.79,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.58
+   }
+  },
+  {
+   "name": "Birkenhead",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 7.51,
+    "lab": 52.09,
+    "ld": 5.31,
+    "ref": 14.24,
+    "grn": 20.1,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.75
+   }
+  },
+  {
+   "name": "Birmingham Edgbaston",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 21.99,
+    "lab": 44.35,
+    "ld": 5.62,
+    "ref": 11.66,
+    "grn": 7.47,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 8.91
+   }
+  },
+  {
+   "name": "Birmingham Erdington",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 15.82,
+    "lab": 43.28,
+    "ld": 3.3,
+    "ref": 22.72,
+    "grn": 7.18,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 7.69
+   }
+  },
+  {
+   "name": "Birmingham Hall Green and Moseley",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 9.24,
+    "lab": 30.76,
+    "ld": 11.32,
+    "ref": 5.54,
+    "grn": 9.4,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 33.73
+   }
+  },
+  {
+   "name": "Birmingham Hodge Hill and Solihull North",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 13.58,
+    "lab": 31.21,
+    "ld": 2.76,
+    "ref": 18.91,
+    "grn": 6.91,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 26.63
+   }
+  },
+  {
+   "name": "Birmingham Ladywood",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 6.06,
+    "lab": 42.53,
+    "ld": 4.68,
+    "ref": 4.04,
+    "grn": 9.51,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 33.18
+   }
+  },
+  {
+   "name": "Birmingham Northfield",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 25.34,
+    "lab": 39.65,
+    "ld": 4.76,
+    "ref": 20.97,
+    "grn": 7.46,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.83
+   }
+  },
+  {
+   "name": "Birmingham Perry Barr",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 11.28,
+    "lab": 34.14,
+    "ld": 3.47,
+    "ref": 6.53,
+    "grn": 6.51,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 38.06
+   }
+  },
+  {
+   "name": "Birmingham Selly Oak",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 15.18,
+    "lab": 45.21,
+    "ld": 6.05,
+    "ref": 14.92,
+    "grn": 11.24,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 7.4
+   }
+  },
+  {
+   "name": "Birmingham Yardley",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 10.05,
+    "lab": 31.19,
+    "ld": 10.05,
+    "ref": 14.0,
+    "grn": 5.42,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 29.28
+   }
+  },
+  {
+   "name": "Bishop Auckland",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 25.64,
+    "lab": 42.14,
+    "ld": 3.4,
+    "ref": 23.42,
+    "grn": 4.59,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.82
+   }
+  },
+  {
+   "name": "Blackburn",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 8.93,
+    "lab": 26.71,
+    "ld": 1.77,
+    "ref": 12.46,
+    "grn": 3.64,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 46.49
+   }
+  },
+  {
+   "name": "Blackley and Middleton South",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 9.81,
+    "lab": 53.81,
+    "ld": 5.08,
+    "ref": 21.1,
+    "grn": 10.2,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Blackpool North and Fleetwood",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 28.93,
+    "lab": 40.05,
+    "ld": 3.15,
+    "ref": 23.71,
+    "grn": 3.04,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.12
+   }
+  },
+  {
+   "name": "Blackpool South",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 15.65,
+    "lab": 48.08,
+    "ld": 2.96,
+    "ref": 28.62,
+    "grn": 3.43,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.26
+   }
+  },
+  {
+   "name": "Blaenau Gwent and Rhymney",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 12.62,
+    "lab": 53.56,
+    "ld": 4.24,
+    "ref": 0.0,
+    "grn": 5.74,
+    "snp": 0.0,
+    "pc": 12.85,
+    "oth": 10.99
+   }
+  },
+  {
+   "name": "Blaydon and Consett",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 14.34,
+    "lab": 50.12,
+    "ld": 5.38,
+    "ref": 23.7,
+    "grn": 6.13,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.32
+   }
+  },
+  {
+   "name": "Blyth and Ashington",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 15.15,
+    "lab": 49.58,
+    "ld": 3.55,
+    "ref": 26.87,
+    "grn": 4.85,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Bognor Regis and Littlehampton",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 32.78,
+    "lab": 29.09,
+    "ld": 10.62,
+    "ref": 21.46,
+    "grn": 4.57,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.48
+   }
+  },
+  {
+   "name": "Bolsover",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 25.63,
+    "lab": 40.53,
+    "ld": 3.48,
+    "ref": 21.52,
+    "grn": 8.85,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Bolton North East",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 21.94,
+    "lab": 37.28,
+    "ld": 3.48,
+    "ref": 21.74,
+    "grn": 10.8,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 4.76
+   }
+  },
+  {
+   "name": "Bolton South and Walkden",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 11.29,
+    "lab": 40.87,
+    "ld": 3.75,
+    "ref": 22.61,
+    "grn": 7.66,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 13.83
+   }
+  },
+  {
+   "name": "Bolton West",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 27.84,
+    "lab": 38.93,
+    "ld": 4.41,
+    "ref": 19.1,
+    "grn": 9.26,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.45
+   }
+  },
+  {
+   "name": "Bootle",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 4.31,
+    "lab": 68.75,
+    "ld": 3.35,
+    "ref": 12.21,
+    "grn": 10.04,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.35
+   }
+  },
+  {
+   "name": "Boston and Skegness",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 33.4,
+    "lab": 18.86,
+    "ld": 3.4,
+    "ref": 38.36,
+    "grn": 3.72,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.26
+   }
+  },
+  {
+   "name": "Bournemouth East",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 28.58,
+    "lab": 40.78,
+    "ld": 6.86,
+    "ref": 13.96,
+    "grn": 6.21,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.6
+   }
+  },
+  {
+   "name": "Bournemouth West",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 28.26,
+    "lab": 36.44,
+    "ld": 10.94,
+    "ref": 16.86,
+    "grn": 6.63,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.86
+   }
+  },
+  {
+   "name": "Bracknell",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 31.93,
+    "lab": 33.72,
+    "ld": 10.88,
+    "ref": 16.98,
+    "grn": 4.94,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.54
+   }
+  },
+  {
+   "name": "Bradford East",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 9.27,
+    "lab": 37.88,
+    "ld": 5.13,
+    "ref": 13.31,
+    "grn": 6.91,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 27.5
+   }
+  },
+  {
+   "name": "Bradford South",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 14.69,
+    "lab": 35.81,
+    "ld": 2.89,
+    "ref": 22.52,
+    "grn": 10.19,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 13.91
+   }
+  },
+  {
+   "name": "Bradford West",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 8.24,
+    "lab": 31.62,
+    "ld": 2.04,
+    "ref": 7.98,
+    "grn": 9.95,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 40.18
+   }
+  },
+  {
+   "name": "Braintree",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 35.52,
+    "lab": 28.03,
+    "ld": 5.87,
+    "ref": 23.14,
+    "grn": 5.87,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.56
+   }
+  },
+  {
+   "name": "Brecon Radnor and Cwm Tawe",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 26.35,
+    "lab": 21.28,
+    "ld": 29.51,
+    "ref": 14.11,
+    "grn": 2.55,
+    "snp": 0.0,
+    "pc": 4.9,
+    "oth": 1.31
+   }
+  },
+  {
+   "name": "Brent East",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 16.73,
+    "lab": 51.24,
+    "ld": 6.97,
+    "ref": 5.35,
+    "grn": 9.86,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 9.84
+   }
+  },
+  {
+   "name": "Brent West",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 32.54,
+    "lab": 41.71,
+    "ld": 7.28,
+    "ref": 4.98,
+    "grn": 6.78,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 6.7
+   }
+  },
+  {
+   "name": "Brentford and Isleworth",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 22.5,
+    "lab": 44.21,
+    "ld": 8.54,
+    "ref": 8.71,
+    "grn": 8.9,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 7.14
+   }
+  },
+  {
+   "name": "Brentwood and Ongar",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 36.69,
+    "lab": 22.93,
+    "ld": 12.02,
+    "ref": 24.31,
+    "grn": 3.66,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.39
+   }
+  },
+  {
+   "name": "Bridgend",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 16.35,
+    "lab": 39.92,
+    "ld": 3.49,
+    "ref": 19.14,
+    "grn": 4.25,
+    "snp": 0.0,
+    "pc": 8.77,
+    "oth": 8.07
+   }
+  },
+  {
+   "name": "Bridgwater",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 30.6,
+    "lab": 27.24,
+    "ld": 14.41,
+    "ref": 22.21,
+    "grn": 4.29,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.25
+   }
+  },
+  {
+   "name": "Bridlington and The Wolds",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 34.58,
+    "lab": 27.3,
+    "ld": 7.21,
+    "ref": 24.11,
+    "grn": 3.71,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.09
+   }
+  },
+  {
+   "name": "Brigg and Immingham",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 37.42,
+    "lab": 29.79,
+    "ld": 3.39,
+    "ref": 24.92,
+    "grn": 4.48,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Brighton Kemptown and Peacehaven",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 20.23,
+    "lab": 43.98,
+    "ld": 9.71,
+    "ref": 0.0,
+    "grn": 19.66,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 6.43
+   }
+  },
+  {
+   "name": "Brighton Pavilion",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 7.59,
+    "lab": 27.73,
+    "ld": 3.06,
+    "ref": 5.42,
+    "grn": 55.02,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.18
+   }
+  },
+  {
+   "name": "Bristol Central",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 4.61,
+    "lab": 32.59,
+    "ld": 2.68,
+    "ref": 3.09,
+    "grn": 56.59,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.45
+   }
+  },
+  {
+   "name": "Bristol East",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 13.96,
+    "lab": 45.0,
+    "ld": 5.88,
+    "ref": 0.0,
+    "grn": 30.67,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 4.49
+   }
+  },
+  {
+   "name": "Bristol North East",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 14.8,
+    "lab": 45.26,
+    "ld": 4.68,
+    "ref": 12.9,
+    "grn": 18.66,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.69
+   }
+  },
+  {
+   "name": "Bristol North West",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 13.98,
+    "lab": 49.64,
+    "ld": 8.58,
+    "ref": 10.03,
+    "grn": 17.31,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.46
+   }
+  },
+  {
+   "name": "Bristol South",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 11.4,
+    "lab": 42.67,
+    "ld": 6.27,
+    "ref": 14.27,
+    "grn": 25.01,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.38
+   }
+  },
+  {
+   "name": "Broadland and Fakenham",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 32.97,
+    "lab": 31.51,
+    "ld": 11.16,
+    "ref": 17.89,
+    "grn": 6.47,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Bromley and Biggin Hill",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 34.05,
+    "lab": 33.4,
+    "ld": 9.3,
+    "ref": 17.53,
+    "grn": 5.52,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.2
+   }
+  },
+  {
+   "name": "Bromsgrove",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 32.8,
+    "lab": 26.82,
+    "ld": 14.66,
+    "ref": 19.01,
+    "grn": 3.32,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.38
+   }
+  },
+  {
+   "name": "Broxbourne",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 36.81,
+    "lab": 30.15,
+    "ld": 6.26,
+    "ref": 20.45,
+    "grn": 5.73,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.6
+   }
+  },
+  {
+   "name": "Broxtowe",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 23.32,
+    "lab": 40.89,
+    "ld": 7.96,
+    "ref": 17.56,
+    "grn": 7.29,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.97
+   }
+  },
+  {
+   "name": "Buckingham and Bletchley",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 31.87,
+    "lab": 36.95,
+    "ld": 9.03,
+    "ref": 15.68,
+    "grn": 5.44,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.05
+   }
+  },
+  {
+   "name": "Burnley",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 20.29,
+    "lab": 31.72,
+    "ld": 23.11,
+    "ref": 19.52,
+    "grn": 3.82,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.54
+   }
+  },
+  {
+   "name": "Burton and Uttoxeter",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 30.59,
+    "lab": 35.55,
+    "ld": 3.64,
+    "ref": 21.06,
+    "grn": 4.64,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 4.51
+   }
+  },
+  {
+   "name": "Bury North",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 27.86,
+    "lab": 43.11,
+    "ld": 2.89,
+    "ref": 16.22,
+    "grn": 3.84,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 6.07
+   }
+  },
+  {
+   "name": "Bury South",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 23.42,
+    "lab": 45.59,
+    "ld": 4.25,
+    "ref": 16.26,
+    "grn": 6.43,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 4.04
+   }
+  },
+  {
+   "name": "Bury St Edmunds and Stowmarket",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 30.05,
+    "lab": 32.9,
+    "ld": 6.2,
+    "ref": 16.89,
+    "grn": 11.32,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.64
+   }
+  },
+  {
+   "name": "Caerfyrddin",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 19.35,
+    "lab": 24.09,
+    "ld": 3.2,
+    "ref": 15.23,
+    "grn": 3.01,
+    "snp": 0.0,
+    "pc": 34.03,
+    "oth": 1.09
+   }
+  },
+  {
+   "name": "Caerphilly",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 11.47,
+    "lab": 38.02,
+    "ld": 4.68,
+    "ref": 20.28,
+    "grn": 4.32,
+    "snp": 0.0,
+    "pc": 21.24,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Caithness Sutherland and Easter Ross",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 4.04,
+    "lab": 7.4,
+    "ld": 49.37,
+    "ref": 7.3,
+    "grn": 3.56,
+    "snp": 26.6,
+    "pc": 0.0,
+    "oth": 1.73
+   }
+  },
+  {
+   "name": "Calder Valley",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 26.32,
+    "lab": 44.44,
+    "ld": 5.21,
+    "ref": 15.41,
+    "grn": 7.46,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.16
+   }
+  },
+  {
+   "name": "Camborne and Redruth",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 24.18,
+    "lab": 40.51,
+    "ld": 8.61,
+    "ref": 18.73,
+    "grn": 5.94,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.02
+   }
+  },
+  {
+   "name": "Cambridge",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 12.05,
+    "lab": 46.59,
+    "ld": 20.28,
+    "ref": 0.0,
+    "grn": 16.25,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 4.83
+   }
+  },
+  {
+   "name": "Cannock Chase",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 29.21,
+    "lab": 36.48,
+    "ld": 2.4,
+    "ref": 26.94,
+    "grn": 4.98,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Canterbury",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 23.03,
+    "lab": 41.35,
+    "ld": 8.07,
+    "ref": 14.41,
+    "grn": 12.53,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.6
+   }
+  },
+  {
+   "name": "Cardiff East",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 10.0,
+    "lab": 40.47,
+    "ld": 17.22,
+    "ref": 12.73,
+    "grn": 10.01,
+    "snp": 0.0,
+    "pc": 9.07,
+    "oth": 0.5
+   }
+  },
+  {
+   "name": "Cardiff North",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 20.31,
+    "lab": 43.92,
+    "ld": 6.67,
+    "ref": 12.61,
+    "grn": 6.66,
+    "snp": 0.0,
+    "pc": 9.84,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Cardiff South and Penarth",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 13.93,
+    "lab": 44.49,
+    "ld": 7.42,
+    "ref": 11.47,
+    "grn": 14.45,
+    "snp": 0.0,
+    "pc": 8.24,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Cardiff West",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 15.27,
+    "lab": 36.74,
+    "ld": 4.29,
+    "ref": 12.57,
+    "grn": 7.05,
+    "snp": 0.0,
+    "pc": 21.05,
+    "oth": 3.02
+   }
+  },
+  {
+   "name": "Carlisle",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 28.12,
+    "lab": 39.43,
+    "ld": 6.49,
+    "ref": 20.22,
+    "grn": 4.18,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.57
+   }
+  },
+  {
+   "name": "Carshalton and Wallington",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 26.19,
+    "lab": 13.09,
+    "ld": 43.12,
+    "ref": 12.73,
+    "grn": 3.25,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.62
+   }
+  },
+  {
+   "name": "Castle Point",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 38.11,
+    "lab": 23.27,
+    "ld": 3.3,
+    "ref": 30.11,
+    "grn": 5.21,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Central Ayrshire",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 14.84,
+    "lab": 43.68,
+    "ld": 2.37,
+    "ref": 8.26,
+    "grn": 2.51,
+    "snp": 27.09,
+    "pc": 0.0,
+    "oth": 1.25
+   }
+  },
+  {
+   "name": "Central Devon",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 31.5,
+    "lab": 31.39,
+    "ld": 15.41,
+    "ref": 14.57,
+    "grn": 6.25,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.89
+   }
+  },
+  {
+   "name": "Central Suffolk and North Ipswich",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 32.62,
+    "lab": 23.38,
+    "ld": 11.65,
+    "ref": 18.97,
+    "grn": 12.17,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.21
+   }
+  },
+  {
+   "name": "Ceredigion Preseli",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 10.29,
+    "lab": 11.63,
+    "ld": 15.01,
+    "ref": 11.61,
+    "grn": 4.03,
+    "snp": 0.0,
+    "pc": 46.95,
+    "oth": 0.49
+   }
+  },
+  {
+   "name": "Chatham and Aylesford",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 28.62,
+    "lab": 33.51,
+    "ld": 5.33,
+    "ref": 24.46,
+    "grn": 6.13,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.95
+   }
+  },
+  {
+   "name": "Cheadle",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 22.56,
+    "lab": 15.59,
+    "ld": 46.68,
+    "ref": 10.15,
+    "grn": 3.21,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.81
+   }
+  },
+  {
+   "name": "Chelmsford",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 30.49,
+    "lab": 12.04,
+    "ld": 39.86,
+    "ref": 13.32,
+    "grn": 3.13,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.17
+   }
+  },
+  {
+   "name": "Chelsea and Fulham",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 39.06,
+    "lab": 39.38,
+    "ld": 7.66,
+    "ref": 6.67,
+    "grn": 5.94,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.28
+   }
+  },
+  {
+   "name": "Cheltenham",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 36.06,
+    "lab": 5.38,
+    "ld": 50.62,
+    "ref": 0.0,
+    "grn": 6.38,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.56
+   }
+  },
+  {
+   "name": "Chesham and Amersham",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 34.84,
+    "lab": 6.43,
+    "ld": 44.85,
+    "ref": 9.75,
+    "grn": 3.07,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.06
+   }
+  },
+  {
+   "name": "Chester North and Neston",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 23.24,
+    "lab": 49.8,
+    "ld": 4.64,
+    "ref": 13.13,
+    "grn": 9.18,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Chester South and Eddisbury",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 37.92,
+    "lab": 32.1,
+    "ld": 10.35,
+    "ref": 12.22,
+    "grn": 4.34,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.07
+   }
+  },
+  {
+   "name": "Chesterfield",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 20.45,
+    "lab": 46.48,
+    "ld": 6.14,
+    "ref": 19.0,
+    "grn": 6.45,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.47
+   }
+  },
+  {
+   "name": "Chichester",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 25.73,
+    "lab": 6.11,
+    "ld": 49.17,
+    "ref": 15.13,
+    "grn": 3.49,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.37
+   }
+  },
+  {
+   "name": "Chingford and Woodford Green",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 35.62,
+    "lab": 25.82,
+    "ld": 2.63,
+    "ref": 7.53,
+    "grn": 2.75,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 25.65
+   }
+  },
+  {
+   "name": "Chippenham",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 29.11,
+    "lab": 7.93,
+    "ld": 45.55,
+    "ref": 12.37,
+    "grn": 3.95,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.09
+   }
+  },
+  {
+   "name": "Chipping Barnet",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 36.71,
+    "lab": 42.44,
+    "ld": 5.14,
+    "ref": 7.84,
+    "grn": 6.77,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.1
+   }
+  },
+  {
+   "name": "Chorley",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 0.0,
+    "lab": 0.0,
+    "ld": 0.0,
+    "ref": 0.0,
+    "grn": 13.73,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 86.27
+   }
+  },
+  {
+   "name": "Christchurch",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 35.79,
+    "lab": 16.4,
+    "ld": 20.04,
+    "ref": 18.93,
+    "grn": 4.01,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 4.83
+   }
+  },
+  {
+   "name": "Cities of London and Westminster",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 32.12,
+    "lab": 39.02,
+    "ld": 11.05,
+    "ref": 7.02,
+    "grn": 7.25,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.54
+   }
+  },
+  {
+   "name": "City of Durham",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 12.85,
+    "lab": 47.09,
+    "ld": 14.57,
+    "ref": 18.15,
+    "grn": 6.9,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.44
+   }
+  },
+  {
+   "name": "Clacton",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 27.9,
+    "lab": 16.21,
+    "ld": 4.39,
+    "ref": 46.18,
+    "grn": 4.21,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.12
+   }
+  },
+  {
+   "name": "Clapham and Brixton Hill",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 10.2,
+    "lab": 56.54,
+    "ld": 14.41,
+    "ref": 4.11,
+    "grn": 13.5,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.24
+   }
+  },
+  {
+   "name": "Clwyd East",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 28.99,
+    "lab": 38.65,
+    "ld": 3.89,
+    "ref": 15.95,
+    "grn": 3.47,
+    "snp": 0.0,
+    "pc": 7.81,
+    "oth": 1.25
+   }
+  },
+  {
+   "name": "Clwyd North",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 32.67,
+    "lab": 35.54,
+    "ld": 4.05,
+    "ref": 16.82,
+    "grn": 3.34,
+    "snp": 0.0,
+    "pc": 7.59,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Coatbridge and Bellshill",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 3.57,
+    "lab": 49.81,
+    "ld": 1.73,
+    "ref": 6.72,
+    "grn": 3.17,
+    "snp": 33.43,
+    "pc": 0.0,
+    "oth": 1.57
+   }
+  },
+  {
+   "name": "Colchester",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 23.5,
+    "lab": 41.88,
+    "ld": 14.24,
+    "ref": 14.84,
+    "grn": 5.38,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.16
+   }
+  },
+  {
+   "name": "Colne Valley",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 30.3,
+    "lab": 41.04,
+    "ld": 4.34,
+    "ref": 15.79,
+    "grn": 7.53,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.99
+   }
+  },
+  {
+   "name": "Congleton",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 30.9,
+    "lab": 37.66,
+    "ld": 5.56,
+    "ref": 16.45,
+    "grn": 4.0,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 5.44
+   }
+  },
+  {
+   "name": "Corby and East Northamptonshire",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 29.62,
+    "lab": 42.39,
+    "ld": 4.42,
+    "ref": 17.67,
+    "grn": 5.06,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.85
+   }
+  },
+  {
+   "name": "Coventry East",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 16.86,
+    "lab": 49.46,
+    "ld": 3.31,
+    "ref": 18.06,
+    "grn": 7.38,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 4.93
+   }
+  },
+  {
+   "name": "Coventry North West",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 20.28,
+    "lab": 46.86,
+    "ld": 4.59,
+    "ref": 18.92,
+    "grn": 8.14,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.22
+   }
+  },
+  {
+   "name": "Coventry South",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 23.78,
+    "lab": 47.65,
+    "ld": 5.92,
+    "ref": 13.37,
+    "grn": 5.53,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.76
+   }
+  },
+  {
+   "name": "Cowdenbeath and Kirkcaldy",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 7.85,
+    "lab": 45.72,
+    "ld": 3.9,
+    "ref": 7.66,
+    "grn": 3.81,
+    "snp": 27.97,
+    "pc": 0.0,
+    "oth": 3.08
+   }
+  },
+  {
+   "name": "Cramlington and Killingworth",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 18.93,
+    "lab": 49.07,
+    "ld": 4.18,
+    "ref": 20.83,
+    "grn": 4.72,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.27
+   }
+  },
+  {
+   "name": "Crawley",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 26.77,
+    "lab": 38.24,
+    "ld": 4.83,
+    "ref": 18.51,
+    "grn": 5.74,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 5.91
+   }
+  },
+  {
+   "name": "Crewe and Nantwich",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 23.54,
+    "lab": 44.15,
+    "ld": 4.84,
+    "ref": 20.34,
+    "grn": 4.56,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.57
+   }
+  },
+  {
+   "name": "Croydon East",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 26.76,
+    "lab": 42.35,
+    "ld": 8.14,
+    "ref": 13.39,
+    "grn": 9.36,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Croydon South",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 40.01,
+    "lab": 35.33,
+    "ld": 8.88,
+    "ref": 8.4,
+    "grn": 5.79,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.59
+   }
+  },
+  {
+   "name": "Croydon West",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 16.75,
+    "lab": 54.07,
+    "ld": 9.62,
+    "ref": 5.63,
+    "grn": 10.1,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.82
+   }
+  },
+  {
+   "name": "Cumbernauld and Kirkintilloch",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 4.73,
+    "lab": 45.18,
+    "ld": 3.16,
+    "ref": 7.73,
+    "grn": 4.13,
+    "snp": 35.07,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Dagenham and Rainham",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 17.82,
+    "lab": 42.64,
+    "ld": 2.66,
+    "ref": 24.18,
+    "grn": 10.76,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.94
+   }
+  },
+  {
+   "name": "Darlington",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 33.8,
+    "lab": 39.22,
+    "ld": 4.09,
+    "ref": 16.17,
+    "grn": 6.72,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Dartford",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 31.92,
+    "lab": 34.6,
+    "ld": 4.91,
+    "ref": 21.41,
+    "grn": 7.17,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Daventry",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 33.67,
+    "lab": 27.99,
+    "ld": 12.73,
+    "ref": 20.04,
+    "grn": 5.57,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Derby North",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 23.72,
+    "lab": 45.5,
+    "ld": 4.45,
+    "ref": 18.3,
+    "grn": 8.03,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Derby South",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 13.88,
+    "lab": 38.78,
+    "ld": 4.83,
+    "ref": 22.73,
+    "grn": 5.08,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 14.7
+   }
+  },
+  {
+   "name": "Derbyshire Dales",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 33.95,
+    "lab": 34.64,
+    "ld": 9.48,
+    "ref": 15.07,
+    "grn": 5.52,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.34
+   }
+  },
+  {
+   "name": "Dewsbury and Batley",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 10.99,
+    "lab": 22.87,
+    "ld": 3.52,
+    "ref": 16.16,
+    "grn": 5.38,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 41.08
+   }
+  },
+  {
+   "name": "Didcot and Wantage",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 28.43,
+    "lab": 14.7,
+    "ld": 39.82,
+    "ref": 11.69,
+    "grn": 4.92,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.44
+   }
+  },
+  {
+   "name": "Doncaster Central",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 20.99,
+    "lab": 46.16,
+    "ld": 3.16,
+    "ref": 20.78,
+    "grn": 4.95,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.95
+   }
+  },
+  {
+   "name": "Doncaster East and the Isle of Axholme",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 32.74,
+    "lab": 38.64,
+    "ld": 2.98,
+    "ref": 21.69,
+    "grn": 3.58,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.37
+   }
+  },
+  {
+   "name": "Doncaster North",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 22.92,
+    "lab": 52.35,
+    "ld": 3.37,
+    "ref": 0.0,
+    "grn": 5.74,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 15.62
+   }
+  },
+  {
+   "name": "Dorking and Horley",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 31.08,
+    "lab": 8.11,
+    "ld": 41.87,
+    "ref": 13.81,
+    "grn": 5.13,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Dover and Deal",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 21.71,
+    "lab": 39.64,
+    "ld": 5.43,
+    "ref": 23.77,
+    "grn": 6.5,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.95
+   }
+  },
+  {
+   "name": "Droitwich and Evesham",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 40.26,
+    "lab": 22.13,
+    "ld": 10.34,
+    "ref": 19.06,
+    "grn": 7.72,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.48
+   }
+  },
+  {
+   "name": "Dudley",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 28.82,
+    "lab": 34.12,
+    "ld": 2.95,
+    "ref": 26.38,
+    "grn": 3.22,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 4.51
+   }
+  },
+  {
+   "name": "Dulwich and West Norwood",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 8.53,
+    "lab": 60.28,
+    "ld": 7.68,
+    "ref": 3.97,
+    "grn": 18.88,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.65
+   }
+  },
+  {
+   "name": "Dumfries and Galloway",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 29.55,
+    "lab": 25.71,
+    "ld": 4.57,
+    "ref": 9.42,
+    "grn": 2.73,
+    "snp": 27.52,
+    "pc": 0.0,
+    "oth": 0.5
+   }
+  },
+  {
+   "name": "Dumfriesshire Clydesdale and Tweeddale",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 33.92,
+    "lab": 22.93,
+    "ld": 6.33,
+    "ref": 8.64,
+    "grn": 3.37,
+    "snp": 24.33,
+    "pc": 0.0,
+    "oth": 0.47
+   }
+  },
+  {
+   "name": "Dundee Central",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 4.04,
+    "lab": 38.27,
+    "ld": 6.18,
+    "ref": 6.08,
+    "grn": 0.0,
+    "snp": 40.01,
+    "pc": 0.0,
+    "oth": 5.41
+   }
+  },
+  {
+   "name": "Dunfermline and Dollar",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 7.4,
+    "lab": 45.66,
+    "ld": 7.14,
+    "ref": 6.48,
+    "grn": 4.67,
+    "snp": 27.16,
+    "pc": 0.0,
+    "oth": 1.49
+   }
+  },
+  {
+   "name": "Dunstable and Leighton Buzzard",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 31.08,
+    "lab": 32.52,
+    "ld": 14.11,
+    "ref": 17.53,
+    "grn": 4.59,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.17
+   }
+  },
+  {
+   "name": "Dwyfor Meirionnydd",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 11.66,
+    "lab": 14.64,
+    "ld": 3.42,
+    "ref": 12.02,
+    "grn": 3.58,
+    "snp": 0.0,
+    "pc": 53.94,
+    "oth": 0.74
+   }
+  },
+  {
+   "name": "Ealing Central and Acton",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 17.47,
+    "lab": 46.77,
+    "ld": 12.68,
+    "ref": 6.5,
+    "grn": 11.4,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 5.19
+   }
+  },
+  {
+   "name": "Ealing North",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 18.84,
+    "lab": 47.8,
+    "ld": 5.88,
+    "ref": 9.13,
+    "grn": 9.38,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 8.97
+   }
+  },
+  {
+   "name": "Ealing Southall",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 15.39,
+    "lab": 49.13,
+    "ld": 6.05,
+    "ref": 5.52,
+    "grn": 9.3,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 14.6
+   }
+  },
+  {
+   "name": "Earley and Woodley",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 37.81,
+    "lab": 39.66,
+    "ld": 13.38,
+    "ref": 0.0,
+    "grn": 7.44,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.71
+   }
+  },
+  {
+   "name": "Easington",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 10.93,
+    "lab": 48.87,
+    "ld": 2.36,
+    "ref": 29.81,
+    "grn": 3.42,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 4.61
+   }
+  },
+  {
+   "name": "East Antrim",
+   "region": "Northern Ireland",
+   "country": "Northern Ireland",
+   "shares": {
+    "con": 0.0,
+    "lab": 0.0,
+    "ld": 0.0,
+    "ref": 0.0,
+    "grn": 1.43,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 98.57
+   }
+  },
+  {
+   "name": "East Grinstead and Uckfield",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 38.34,
+    "lab": 20.72,
+    "ld": 21.51,
+    "ref": 0.0,
+    "grn": 10.47,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 8.97
+   }
+  },
+  {
+   "name": "East Ham",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 10.23,
+    "lab": 51.65,
+    "ld": 3.19,
+    "ref": 3.54,
+    "grn": 11.15,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 20.24
+   }
+  },
+  {
+   "name": "East Hampshire",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 37.01,
+    "lab": 9.73,
+    "ld": 34.46,
+    "ref": 12.95,
+    "grn": 4.81,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.03
+   }
+  },
+  {
+   "name": "East Kilbride and Strathaven",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 7.59,
+    "lab": 48.56,
+    "ld": 2.3,
+    "ref": 7.23,
+    "grn": 3.88,
+    "snp": 29.17,
+    "pc": 0.0,
+    "oth": 1.27
+   }
+  },
+  {
+   "name": "East Londonderry",
+   "region": "Northern Ireland",
+   "country": "Northern Ireland",
+   "shares": {
+    "con": 0.45,
+    "lab": 0.0,
+    "ld": 0.0,
+    "ref": 0.0,
+    "grn": 1.08,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 98.47
+   }
+  },
+  {
+   "name": "East Renfrewshire",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 16.91,
+    "lab": 43.67,
+    "ld": 2.29,
+    "ref": 4.7,
+    "grn": 3.01,
+    "snp": 26.91,
+    "pc": 0.0,
+    "oth": 2.52
+   }
+  },
+  {
+   "name": "East Surrey",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 35.58,
+    "lab": 20.43,
+    "ld": 17.95,
+    "ref": 17.03,
+    "grn": 6.01,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.99
+   }
+  },
+  {
+   "name": "East Thanet",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 23.61,
+    "lab": 39.93,
+    "ld": 3.2,
+    "ref": 20.11,
+    "grn": 10.75,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.41
+   }
+  },
+  {
+   "name": "East Wiltshire",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 35.7,
+    "lab": 25.71,
+    "ld": 17.38,
+    "ref": 16.71,
+    "grn": 3.91,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.59
+   }
+  },
+  {
+   "name": "East Worthing and Shoreham",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 25.68,
+    "lab": 45.07,
+    "ld": 6.48,
+    "ref": 14.61,
+    "grn": 6.61,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.55
+   }
+  },
+  {
+   "name": "Eastbourne",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 25.3,
+    "lab": 5.9,
+    "ld": 52.06,
+    "ref": 13.29,
+    "grn": 3.12,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.34
+   }
+  },
+  {
+   "name": "Eastleigh",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 31.07,
+    "lab": 15.09,
+    "ld": 34.4,
+    "ref": 13.25,
+    "grn": 5.18,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.01
+   }
+  },
+  {
+   "name": "Edinburgh East and Musselburgh",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 5.7,
+    "lab": 41.23,
+    "ld": 4.28,
+    "ref": 4.67,
+    "grn": 10.24,
+    "snp": 33.08,
+    "pc": 0.0,
+    "oth": 0.8
+   }
+  },
+  {
+   "name": "Edinburgh North and Leith",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 6.58,
+    "lab": 42.05,
+    "ld": 7.84,
+    "ref": 3.67,
+    "grn": 10.95,
+    "snp": 27.36,
+    "pc": 0.0,
+    "oth": 1.55
+   }
+  },
+  {
+   "name": "Edinburgh South",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 8.54,
+    "lab": 53.34,
+    "ld": 5.86,
+    "ref": 3.94,
+    "grn": 9.12,
+    "snp": 16.5,
+    "pc": 0.0,
+    "oth": 2.7
+   }
+  },
+  {
+   "name": "Edinburgh South West",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 12.17,
+    "lab": 40.87,
+    "ld": 6.6,
+    "ref": 4.57,
+    "grn": 7.56,
+    "snp": 27.26,
+    "pc": 0.0,
+    "oth": 0.98
+   }
+  },
+  {
+   "name": "Edinburgh West",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 5.52,
+    "lab": 14.97,
+    "ld": 50.78,
+    "ref": 4.21,
+    "grn": 4.0,
+    "snp": 19.39,
+    "pc": 0.0,
+    "oth": 1.13
+   }
+  },
+  {
+   "name": "Edmonton and Winchmore Hill",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 19.22,
+    "lab": 49.99,
+    "ld": 6.63,
+    "ref": 8.53,
+    "grn": 8.97,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 6.66
+   }
+  },
+  {
+   "name": "Ellesmere Port and Bromborough",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 12.42,
+    "lab": 57.64,
+    "ld": 5.55,
+    "ref": 17.34,
+    "grn": 6.45,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.61
+   }
+  },
+  {
+   "name": "Eltham and Chislehurst",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 25.55,
+    "lab": 44.04,
+    "ld": 5.32,
+    "ref": 16.3,
+    "grn": 6.76,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.03
+   }
+  },
+  {
+   "name": "Ely and East Cambridgeshire",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 31.76,
+    "lab": 17.49,
+    "ld": 32.7,
+    "ref": 12.3,
+    "grn": 4.5,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.24
+   }
+  },
+  {
+   "name": "Enfield North",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 19.85,
+    "lab": 49.13,
+    "ld": 5.79,
+    "ref": 11.83,
+    "grn": 8.54,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 4.87
+   }
+  },
+  {
+   "name": "Epping Forest",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 43.2,
+    "lab": 29.59,
+    "ld": 12.62,
+    "ref": 0.0,
+    "grn": 5.95,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 8.63
+   }
+  },
+  {
+   "name": "Epsom and Ewell",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 31.16,
+    "lab": 15.27,
+    "ld": 37.92,
+    "ref": 10.63,
+    "grn": 3.2,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.83
+   }
+  },
+  {
+   "name": "Erewash",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 26.43,
+    "lab": 40.05,
+    "ld": 5.64,
+    "ref": 21.3,
+    "grn": 5.76,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.82
+   }
+  },
+  {
+   "name": "Erith and Thamesmead",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 13.78,
+    "lab": 55.09,
+    "ld": 4.64,
+    "ref": 14.72,
+    "grn": 8.62,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.15
+   }
+  },
+  {
+   "name": "Esher and Walton",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 30.27,
+    "lab": 5.28,
+    "ld": 52.55,
+    "ref": 8.87,
+    "grn": 2.59,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.43
+   }
+  },
+  {
+   "name": "Exeter",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 15.64,
+    "lab": 45.34,
+    "ld": 10.45,
+    "ref": 12.23,
+    "grn": 14.7,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.64
+   }
+  },
+  {
+   "name": "Exmouth and Exeter East",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 28.7,
+    "lab": 28.46,
+    "ld": 22.19,
+    "ref": 13.81,
+    "grn": 4.54,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.3
+   }
+  },
+  {
+   "name": "Falkirk",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 8.39,
+    "lab": 43.03,
+    "ld": 2.56,
+    "ref": 7.92,
+    "grn": 4.01,
+    "snp": 31.31,
+    "pc": 0.0,
+    "oth": 2.77
+   }
+  },
+  {
+   "name": "Fareham and Waterlooville",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 35.04,
+    "lab": 22.91,
+    "ld": 19.02,
+    "ref": 18.12,
+    "grn": 4.06,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.85
+   }
+  },
+  {
+   "name": "Farnham and Bordon",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 35.75,
+    "lab": 13.82,
+    "ld": 33.2,
+    "ref": 11.73,
+    "grn": 4.71,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.79
+   }
+  },
+  {
+   "name": "Faversham and Mid Kent",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 31.8,
+    "lab": 28.65,
+    "ld": 8.92,
+    "ref": 21.21,
+    "grn": 9.05,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.37
+   }
+  },
+  {
+   "name": "Feltham and Heston",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 21.07,
+    "lab": 41.5,
+    "ld": 4.68,
+    "ref": 13.19,
+    "grn": 6.54,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 13.01
+   }
+  },
+  {
+   "name": "Fermanagh and South Tyrone",
+   "region": "Northern Ireland",
+   "country": "Northern Ireland",
+   "shares": {
+    "con": 0.0,
+    "lab": 0.0,
+    "ld": 0.0,
+    "ref": 0.0,
+    "grn": 0.0,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 100.0
+   }
+  },
+  {
+   "name": "Filton and Bradley Stoke",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 25.62,
+    "lab": 45.48,
+    "ld": 7.14,
+    "ref": 13.54,
+    "grn": 8.22,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Finchley and Golders Green",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 35.05,
+    "lab": 44.34,
+    "ld": 6.85,
+    "ref": 5.27,
+    "grn": 6.3,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.18
+   }
+  },
+  {
+   "name": "Folkestone and Hythe",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 26.11,
+    "lab": 34.73,
+    "ld": 4.01,
+    "ref": 24.71,
+    "grn": 9.14,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.29
+   }
+  },
+  {
+   "name": "Forest of Dean",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 33.47,
+    "lab": 34.05,
+    "ld": 5.41,
+    "ref": 17.04,
+    "grn": 9.85,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.19
+   }
+  },
+  {
+   "name": "Foyle",
+   "region": "Northern Ireland",
+   "country": "Northern Ireland",
+   "shares": {
+    "con": 0.0,
+    "lab": 0.0,
+    "ld": 0.0,
+    "ref": 0.0,
+    "grn": 0.0,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 100.0
+   }
+  },
+  {
+   "name": "Frome and East Somerset",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 23.9,
+    "lab": 13.73,
+    "ld": 35.49,
+    "ref": 13.79,
+    "grn": 10.88,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.21
+   }
+  },
+  {
+   "name": "Fylde",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 33.19,
+    "lab": 32.02,
+    "ld": 4.42,
+    "ref": 17.3,
+    "grn": 3.25,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 9.82
+   }
+  },
+  {
+   "name": "Gainsborough",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 35.63,
+    "lab": 28.07,
+    "ld": 10.71,
+    "ref": 21.24,
+    "grn": 3.92,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.42
+   }
+  },
+  {
+   "name": "Gateshead Central and Whickham",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 11.51,
+    "lab": 45.37,
+    "ld": 12.4,
+    "ref": 21.39,
+    "grn": 8.0,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.34
+   }
+  },
+  {
+   "name": "Gedling",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 23.39,
+    "lab": 47.78,
+    "ld": 5.08,
+    "ref": 16.85,
+    "grn": 6.41,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.49
+   }
+  },
+  {
+   "name": "Gillingham and Rainham",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 28.17,
+    "lab": 37.83,
+    "ld": 5.46,
+    "ref": 21.37,
+    "grn": 5.63,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.53
+   }
+  },
+  {
+   "name": "Glasgow East",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 4.82,
+    "lab": 43.85,
+    "ld": 2.46,
+    "ref": 6.69,
+    "grn": 7.69,
+    "snp": 33.18,
+    "pc": 0.0,
+    "oth": 1.31
+   }
+  },
+  {
+   "name": "Glasgow North",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 3.93,
+    "lab": 42.19,
+    "ld": 3.29,
+    "ref": 4.76,
+    "grn": 12.19,
+    "snp": 32.0,
+    "pc": 0.0,
+    "oth": 1.65
+   }
+  },
+  {
+   "name": "Glasgow North East",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 3.47,
+    "lab": 45.87,
+    "ld": 1.74,
+    "ref": 6.66,
+    "grn": 7.25,
+    "snp": 32.27,
+    "pc": 0.0,
+    "oth": 2.74
+   }
+  },
+  {
+   "name": "Glasgow South",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 3.82,
+    "lab": 41.76,
+    "ld": 3.11,
+    "ref": 4.1,
+    "grn": 13.11,
+    "snp": 31.96,
+    "pc": 0.0,
+    "oth": 2.16
+   }
+  },
+  {
+   "name": "Glasgow South West",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 3.89,
+    "lab": 43.6,
+    "ld": 2.69,
+    "ref": 6.27,
+    "grn": 7.65,
+    "snp": 34.39,
+    "pc": 0.0,
+    "oth": 1.52
+   }
+  },
+  {
+   "name": "Glasgow West",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 4.31,
+    "lab": 46.67,
+    "ld": 3.3,
+    "ref": 5.26,
+    "grn": 9.18,
+    "snp": 30.51,
+    "pc": 0.0,
+    "oth": 0.78
+   }
+  },
+  {
+   "name": "Glastonbury and Somerton",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 28.87,
+    "lab": 6.53,
+    "ld": 42.74,
+    "ref": 16.12,
+    "grn": 5.74,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Glenrothes and Mid Fife",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 5.46,
+    "lab": 44.26,
+    "ld": 4.44,
+    "ref": 9.76,
+    "grn": 0.0,
+    "snp": 36.08,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Gloucester",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 28.54,
+    "lab": 36.05,
+    "ld": 10.42,
+    "ref": 15.99,
+    "grn": 5.05,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.95
+   }
+  },
+  {
+   "name": "Godalming and Ash",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 42.59,
+    "lab": 5.02,
+    "ld": 40.96,
+    "ref": 8.8,
+    "grn": 2.27,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.36
+   }
+  },
+  {
+   "name": "Goole and Pocklington",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 38.16,
+    "lab": 30.98,
+    "ld": 6.8,
+    "ref": 18.2,
+    "grn": 4.93,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.94
+   }
+  },
+  {
+   "name": "Gordon and Buchan",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 32.88,
+    "lab": 10.69,
+    "ld": 16.66,
+    "ref": 8.89,
+    "grn": 0.0,
+    "snp": 30.88,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Gorton and Denton",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 7.9,
+    "lab": 50.75,
+    "ld": 3.83,
+    "ref": 14.06,
+    "grn": 13.16,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 10.3
+   }
+  },
+  {
+   "name": "Gosport",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 40.27,
+    "lab": 26.6,
+    "ld": 9.12,
+    "ref": 18.03,
+    "grn": 4.4,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.58
+   }
+  },
+  {
+   "name": "Gower",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 18.87,
+    "lab": 43.36,
+    "ld": 5.49,
+    "ref": 18.06,
+    "grn": 5.27,
+    "snp": 0.0,
+    "pc": 8.35,
+    "oth": 0.6
+   }
+  },
+  {
+   "name": "Grantham and Bourne",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 36.36,
+    "lab": 26.61,
+    "ld": 4.39,
+    "ref": 20.36,
+    "grn": 5.57,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 6.7
+   }
+  },
+  {
+   "name": "Gravesham",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 32.18,
+    "lab": 38.45,
+    "ld": 3.55,
+    "ref": 20.61,
+    "grn": 5.21,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Great Grimsby and Cleethorpes",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 22.58,
+    "lab": 41.88,
+    "ld": 2.83,
+    "ref": 28.76,
+    "grn": 3.04,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.9
+   }
+  },
+  {
+   "name": "Great Yarmouth",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 24.62,
+    "lab": 31.8,
+    "ld": 2.7,
+    "ref": 35.3,
+    "grn": 4.26,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.31
+   }
+  },
+  {
+   "name": "Greenwich and Woolwich",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 11.38,
+    "lab": 56.18,
+    "ld": 9.05,
+    "ref": 7.74,
+    "grn": 13.19,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.47
+   }
+  },
+  {
+   "name": "Guildford",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 30.04,
+    "lab": 8.14,
+    "ld": 47.49,
+    "ref": 9.1,
+    "grn": 4.7,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.53
+   }
+  },
+  {
+   "name": "Hackney North and Stoke Newington",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 8.44,
+    "lab": 59.46,
+    "ld": 3.81,
+    "ref": 3.13,
+    "grn": 22.64,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.51
+   }
+  },
+  {
+   "name": "Hackney South and Shoreditch",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 4.98,
+    "lab": 59.29,
+    "ld": 4.79,
+    "ref": 3.84,
+    "grn": 23.95,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.16
+   }
+  },
+  {
+   "name": "Halesowen",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 27.63,
+    "lab": 38.94,
+    "ld": 5.86,
+    "ref": 21.99,
+    "grn": 5.58,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Halifax",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 19.56,
+    "lab": 35.15,
+    "ld": 5.87,
+    "ref": 19.42,
+    "grn": 10.28,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 9.72
+   }
+  },
+  {
+   "name": "Hamble Valley",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 36.43,
+    "lab": 16.21,
+    "ld": 27.53,
+    "ref": 15.21,
+    "grn": 4.28,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.34
+   }
+  },
+  {
+   "name": "Hamilton and Clyde Valley",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 10.9,
+    "lab": 49.95,
+    "ld": 3.59,
+    "ref": 7.84,
+    "grn": 0.0,
+    "snp": 27.44,
+    "pc": 0.0,
+    "oth": 0.28
+   }
+  },
+  {
+   "name": "Hammersmith and Chiswick",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 19.08,
+    "lab": 52.31,
+    "ld": 9.33,
+    "ref": 6.36,
+    "grn": 9.71,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.21
+   }
+  },
+  {
+   "name": "Hampstead and Highgate",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 17.43,
+    "lab": 48.26,
+    "ld": 12.73,
+    "ref": 6.06,
+    "grn": 13.66,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.86
+   }
+  },
+  {
+   "name": "Harborough Oadby and Wigston",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 36.94,
+    "lab": 32.22,
+    "ld": 9.39,
+    "ref": 12.57,
+    "grn": 8.47,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.4
+   }
+  },
+  {
+   "name": "Harlow",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 31.85,
+    "lab": 37.62,
+    "ld": 3.11,
+    "ref": 21.82,
+    "grn": 5.23,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.36
+   }
+  },
+  {
+   "name": "Harpenden and Berkhamsted",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 30.5,
+    "lab": 7.47,
+    "ld": 50.21,
+    "ref": 7.81,
+    "grn": 3.59,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.41
+   }
+  },
+  {
+   "name": "Harrogate and Knaresborough",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 30.23,
+    "lab": 7.98,
+    "ld": 46.05,
+    "ref": 10.91,
+    "grn": 3.38,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.45
+   }
+  },
+  {
+   "name": "Harrow East",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 53.3,
+    "lab": 28.85,
+    "ld": 3.16,
+    "ref": 4.58,
+    "grn": 4.2,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 5.9
+   }
+  },
+  {
+   "name": "Harrow West",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 29.16,
+    "lab": 43.84,
+    "ld": 5.31,
+    "ref": 5.83,
+    "grn": 5.39,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 10.47
+   }
+  },
+  {
+   "name": "Hartlepool",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 21.87,
+    "lab": 46.22,
+    "ld": 1.61,
+    "ref": 24.54,
+    "grn": 2.35,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.4
+   }
+  },
+  {
+   "name": "Harwich and North Essex",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 34.39,
+    "lab": 31.97,
+    "ld": 7.41,
+    "ref": 20.41,
+    "grn": 5.82,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Hastings and Rye",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 22.79,
+    "lab": 41.6,
+    "ld": 5.62,
+    "ref": 16.09,
+    "grn": 12.53,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.36
+   }
+  },
+  {
+   "name": "Havant",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 30.78,
+    "lab": 30.56,
+    "ld": 7.76,
+    "ref": 23.61,
+    "grn": 6.78,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.5
+   }
+  },
+  {
+   "name": "Hayes and Harlington",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 21.86,
+    "lab": 53.26,
+    "ld": 3.43,
+    "ref": 10.74,
+    "grn": 5.56,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 5.15
+   }
+  },
+  {
+   "name": "Hazel Grove",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 19.59,
+    "lab": 23.54,
+    "ld": 37.67,
+    "ref": 15.12,
+    "grn": 3.83,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.25
+   }
+  },
+  {
+   "name": "Hemel Hempstead",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 27.18,
+    "lab": 38.19,
+    "ld": 11.55,
+    "ref": 17.43,
+    "grn": 5.65,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Hendon",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 38.39,
+    "lab": 38.43,
+    "ld": 4.77,
+    "ref": 7.36,
+    "grn": 6.46,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 4.58
+   }
+  },
+  {
+   "name": "Henley and Thame",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 33.18,
+    "lab": 6.72,
+    "ld": 44.97,
+    "ref": 9.81,
+    "grn": 3.78,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.54
+   }
+  },
+  {
+   "name": "Hereford and South Herefordshire",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 32.63,
+    "lab": 29.83,
+    "ld": 11.68,
+    "ref": 18.42,
+    "grn": 6.97,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.47
+   }
+  },
+  {
+   "name": "Herne Bay and Sandwich",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 35.31,
+    "lab": 30.2,
+    "ld": 5.55,
+    "ref": 21.71,
+    "grn": 7.23,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Hertford and Stortford",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 29.74,
+    "lab": 38.53,
+    "ld": 7.72,
+    "ref": 15.41,
+    "grn": 8.1,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.51
+   }
+  },
+  {
+   "name": "Hertsmere",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 44.68,
+    "lab": 28.04,
+    "ld": 7.73,
+    "ref": 13.71,
+    "grn": 4.72,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.12
+   }
+  },
+  {
+   "name": "Hexham",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 39.12,
+    "lab": 46.28,
+    "ld": 4.58,
+    "ref": 0.0,
+    "grn": 4.76,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 5.25
+   }
+  },
+  {
+   "name": "Heywood and Middleton North",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 17.3,
+    "lab": 40.58,
+    "ld": 6.2,
+    "ref": 24.2,
+    "grn": 0.0,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 11.71
+   }
+  },
+  {
+   "name": "High Peak",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 29.72,
+    "lab": 45.79,
+    "ld": 3.47,
+    "ref": 14.14,
+    "grn": 6.87,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Hinckley and Bosworth",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 35.63,
+    "lab": 17.99,
+    "ld": 24.32,
+    "ref": 18.45,
+    "grn": 3.17,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.44
+   }
+  },
+  {
+   "name": "Hitchin",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 28.49,
+    "lab": 43.93,
+    "ld": 9.36,
+    "ref": 12.87,
+    "grn": 5.01,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.34
+   }
+  },
+  {
+   "name": "Holborn and St Pancras",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 7.19,
+    "lab": 48.92,
+    "ld": 5.79,
+    "ref": 6.14,
+    "grn": 10.44,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 21.51
+   }
+  },
+  {
+   "name": "Honiton and Sidmouth",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 32.19,
+    "lab": 5.82,
+    "ld": 45.42,
+    "ref": 12.42,
+    "grn": 2.75,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.4
+   }
+  },
+  {
+   "name": "Hornchurch and Upminster",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 32.53,
+    "lab": 27.58,
+    "ld": 5.08,
+    "ref": 28.39,
+    "grn": 5.59,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.84
+   }
+  },
+  {
+   "name": "Hornsey and Friern Barnet",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 8.25,
+    "lab": 58.66,
+    "ld": 12.54,
+    "ref": 4.09,
+    "grn": 14.51,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.95
+   }
+  },
+  {
+   "name": "Horsham",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 34.44,
+    "lab": 10.77,
+    "ld": 38.98,
+    "ref": 11.02,
+    "grn": 3.85,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.94
+   }
+  },
+  {
+   "name": "Houghton and Sunderland South",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 13.77,
+    "lab": 47.05,
+    "ld": 5.72,
+    "ref": 29.15,
+    "grn": 4.3,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Hove and Portslade",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 12.77,
+    "lab": 52.42,
+    "ld": 5.87,
+    "ref": 8.78,
+    "grn": 14.29,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 5.87
+   }
+  },
+  {
+   "name": "Huddersfield",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 16.33,
+    "lab": 37.6,
+    "ld": 4.33,
+    "ref": 15.43,
+    "grn": 26.31,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Huntingdon",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 35.08,
+    "lab": 32.2,
+    "ld": 9.26,
+    "ref": 15.45,
+    "grn": 5.85,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.16
+   }
+  },
+  {
+   "name": "Hyndburn",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 28.86,
+    "lab": 33.5,
+    "ld": 3.33,
+    "ref": 20.73,
+    "grn": 13.58,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Ilford North",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 20.51,
+    "lab": 33.37,
+    "ld": 2.32,
+    "ref": 7.72,
+    "grn": 3.83,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 32.24
+   }
+  },
+  {
+   "name": "Ilford South",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 14.92,
+    "lab": 40.17,
+    "ld": 3.25,
+    "ref": 5.66,
+    "grn": 8.35,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 27.65
+   }
+  },
+  {
+   "name": "Inverclyde and Renfrewshire West",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 7.1,
+    "lab": 46.92,
+    "ld": 3.12,
+    "ref": 6.14,
+    "grn": 2.91,
+    "snp": 31.13,
+    "pc": 0.0,
+    "oth": 2.7
+   }
+  },
+  {
+   "name": "Inverness Skye and West Ross-shire",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 5.21,
+    "lab": 13.0,
+    "ld": 37.79,
+    "ref": 6.11,
+    "grn": 4.24,
+    "snp": 33.29,
+    "pc": 0.0,
+    "oth": 0.37
+   }
+  },
+  {
+   "name": "Ipswich",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 26.54,
+    "lab": 43.34,
+    "ld": 5.08,
+    "ref": 15.94,
+    "grn": 8.29,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.81
+   }
+  },
+  {
+   "name": "Isle of Wight East",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 30.6,
+    "lab": 18.38,
+    "ld": 10.42,
+    "ref": 20.85,
+    "grn": 18.53,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.23
+   }
+  },
+  {
+   "name": "Isle of Wight West",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 29.35,
+    "lab": 38.61,
+    "ld": 7.95,
+    "ref": 17.01,
+    "grn": 6.74,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.34
+   }
+  },
+  {
+   "name": "Islington North",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 3.98,
+    "lab": 34.43,
+    "ld": 3.39,
+    "ref": 3.49,
+    "grn": 5.43,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 49.28
+   }
+  },
+  {
+   "name": "Islington South and Finsbury",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 8.38,
+    "lab": 53.67,
+    "ld": 9.46,
+    "ref": 7.92,
+    "grn": 17.52,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.04
+   }
+  },
+  {
+   "name": "Jarrow and Gateshead East",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 9.13,
+    "lab": 51.34,
+    "ld": 4.74,
+    "ref": 26.93,
+    "grn": 6.49,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.37
+   }
+  },
+  {
+   "name": "Keighley and Ilkley",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 40.25,
+    "lab": 36.73,
+    "ld": 2.1,
+    "ref": 10.35,
+    "grn": 5.3,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 5.27
+   }
+  },
+  {
+   "name": "Kenilworth and Southam",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 36.37,
+    "lab": 24.05,
+    "ld": 19.62,
+    "ref": 12.98,
+    "grn": 5.86,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.12
+   }
+  },
+  {
+   "name": "Kensington and Bayswater",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 33.7,
+    "lab": 40.62,
+    "ld": 6.94,
+    "ref": 6.0,
+    "grn": 6.52,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 6.22
+   }
+  },
+  {
+   "name": "Kettering",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 28.25,
+    "lab": 35.85,
+    "ld": 2.7,
+    "ref": 16.86,
+    "grn": 13.94,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.4
+   }
+  },
+  {
+   "name": "Kilmarnock and Loudoun",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 8.3,
+    "lab": 44.86,
+    "ld": 2.0,
+    "ref": 8.17,
+    "grn": 2.91,
+    "snp": 32.81,
+    "pc": 0.0,
+    "oth": 0.94
+   }
+  },
+  {
+   "name": "Kingston and Surbiton",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 17.04,
+    "lab": 12.95,
+    "ld": 51.06,
+    "ref": 9.45,
+    "grn": 5.94,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.56
+   }
+  },
+  {
+   "name": "Kingston upon Hull East",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 9.11,
+    "lab": 43.76,
+    "ld": 10.91,
+    "ref": 30.61,
+    "grn": 5.62,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Kingston upon Hull North and Cottingham",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 12.81,
+    "lab": 48.34,
+    "ld": 8.49,
+    "ref": 20.41,
+    "grn": 6.07,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.88
+   }
+  },
+  {
+   "name": "Kingston upon Hull West and Haltemprice",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 18.14,
+    "lab": 46.82,
+    "ld": 6.88,
+    "ref": 23.3,
+    "grn": 4.58,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.29
+   }
+  },
+  {
+   "name": "Kingswinford and South Staffordshire",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 40.28,
+    "lab": 26.33,
+    "ld": 4.6,
+    "ref": 21.97,
+    "grn": 4.6,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.21
+   }
+  },
+  {
+   "name": "Knowsley",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 4.15,
+    "lab": 67.25,
+    "ld": 3.42,
+    "ref": 16.43,
+    "grn": 7.69,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.05
+   }
+  },
+  {
+   "name": "Lagan Valley",
+   "region": "Northern Ireland",
+   "country": "Northern Ireland",
+   "shares": {
+    "con": 0.0,
+    "lab": 0.0,
+    "ld": 0.0,
+    "ref": 0.0,
+    "grn": 0.88,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 99.12
+   }
+  },
+  {
+   "name": "Lancaster and Wyre",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 23.4,
+    "lab": 44.91,
+    "ld": 3.56,
+    "ref": 15.96,
+    "grn": 12.17,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Leeds Central and Headingley",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 7.08,
+    "lab": 50.18,
+    "ld": 8.26,
+    "ref": 7.59,
+    "grn": 23.52,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.37
+   }
+  },
+  {
+   "name": "Leeds East",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 17.51,
+    "lab": 47.25,
+    "ld": 3.67,
+    "ref": 18.65,
+    "grn": 8.9,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 4.02
+   }
+  },
+  {
+   "name": "Leeds North East",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 15.89,
+    "lab": 51.5,
+    "ld": 4.8,
+    "ref": 7.59,
+    "grn": 13.09,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 7.14
+   }
+  },
+  {
+   "name": "Leeds North West",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 22.07,
+    "lab": 45.97,
+    "ld": 11.33,
+    "ref": 11.92,
+    "grn": 6.49,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.21
+   }
+  },
+  {
+   "name": "Leeds South",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 13.17,
+    "lab": 54.03,
+    "ld": 4.23,
+    "ref": 0.0,
+    "grn": 18.43,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 10.14
+   }
+  },
+  {
+   "name": "Leeds South West and Morley",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 23.02,
+    "lab": 43.97,
+    "ld": 4.47,
+    "ref": 20.36,
+    "grn": 6.27,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.9
+   }
+  },
+  {
+   "name": "Leeds West and Pudsey",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 17.1,
+    "lab": 49.3,
+    "ld": 4.53,
+    "ref": 16.32,
+    "grn": 9.86,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.9
+   }
+  },
+  {
+   "name": "Leicester East",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 31.1,
+    "lab": 21.62,
+    "ld": 13.55,
+    "ref": 5.59,
+    "grn": 4.59,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 23.56
+   }
+  },
+  {
+   "name": "Leicester South",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 11.52,
+    "lab": 32.89,
+    "ld": 3.41,
+    "ref": 5.9,
+    "grn": 9.15,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 37.13
+   }
+  },
+  {
+   "name": "Leicester West",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 19.84,
+    "lab": 44.63,
+    "ld": 6.16,
+    "ref": 16.01,
+    "grn": 11.55,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.82
+   }
+  },
+  {
+   "name": "Leigh and Atherton",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 15.75,
+    "lab": 48.51,
+    "ld": 3.88,
+    "ref": 26.94,
+    "grn": 4.02,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.91
+   }
+  },
+  {
+   "name": "Lewes",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 26.84,
+    "lab": 6.72,
+    "ld": 50.58,
+    "ref": 11.91,
+    "grn": 3.51,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.43
+   }
+  },
+  {
+   "name": "Lewisham East",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 10.83,
+    "lab": 58.19,
+    "ld": 6.08,
+    "ref": 8.54,
+    "grn": 13.71,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.65
+   }
+  },
+  {
+   "name": "Lewisham North",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 6.12,
+    "lab": 57.66,
+    "ld": 7.44,
+    "ref": 4.53,
+    "grn": 21.93,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.33
+   }
+  },
+  {
+   "name": "Lewisham West and East Dulwich",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 7.49,
+    "lab": 59.05,
+    "ld": 7.67,
+    "ref": 4.81,
+    "grn": 19.41,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.57
+   }
+  },
+  {
+   "name": "Leyton and Wanstead",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 11.08,
+    "lab": 47.46,
+    "ld": 6.44,
+    "ref": 5.66,
+    "grn": 15.53,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 13.83
+   }
+  },
+  {
+   "name": "Lichfield",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 33.44,
+    "lab": 35.09,
+    "ld": 7.27,
+    "ref": 19.82,
+    "grn": 3.51,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.86
+   }
+  },
+  {
+   "name": "Lincoln",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 22.95,
+    "lab": 43.81,
+    "ld": 6.12,
+    "ref": 18.03,
+    "grn": 6.53,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.56
+   }
+  },
+  {
+   "name": "Liverpool Garston",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 7.01,
+    "lab": 58.37,
+    "ld": 7.71,
+    "ref": 10.49,
+    "grn": 6.71,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 9.71
+   }
+  },
+  {
+   "name": "Liverpool Riverside",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 3.57,
+    "lab": 61.89,
+    "ld": 4.77,
+    "ref": 10.1,
+    "grn": 16.2,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.47
+   }
+  },
+  {
+   "name": "Liverpool Walton",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 3.48,
+    "lab": 70.57,
+    "ld": 2.56,
+    "ref": 15.69,
+    "grn": 6.47,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.23
+   }
+  },
+  {
+   "name": "Liverpool Wavertree",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 4.74,
+    "lab": 57.96,
+    "ld": 6.93,
+    "ref": 8.68,
+    "grn": 17.01,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 4.68
+   }
+  },
+  {
+   "name": "Liverpool West Derby",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 4.12,
+    "lab": 66.57,
+    "ld": 3.36,
+    "ref": 12.84,
+    "grn": 6.96,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 6.15
+   }
+  },
+  {
+   "name": "Livingston",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 7.74,
+    "lab": 40.87,
+    "ld": 4.52,
+    "ref": 8.87,
+    "grn": 3.8,
+    "snp": 33.0,
+    "pc": 0.0,
+    "oth": 1.22
+   }
+  },
+  {
+   "name": "Llanelli",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 10.49,
+    "lab": 31.3,
+    "ld": 3.08,
+    "ref": 27.6,
+    "grn": 2.71,
+    "snp": 0.0,
+    "pc": 23.34,
+    "oth": 1.47
+   }
+  },
+  {
+   "name": "Lothian East",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 11.51,
+    "lab": 48.97,
+    "ld": 5.51,
+    "ref": 6.32,
+    "grn": 5.15,
+    "snp": 21.39,
+    "pc": 0.0,
+    "oth": 1.16
+   }
+  },
+  {
+   "name": "Loughborough",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 29.08,
+    "lab": 40.82,
+    "ld": 6.06,
+    "ref": 17.05,
+    "grn": 6.99,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Louth and Horncastle",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 37.52,
+    "lab": 22.54,
+    "ld": 5.09,
+    "ref": 25.68,
+    "grn": 5.39,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.79
+   }
+  },
+  {
+   "name": "Lowestoft",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 29.76,
+    "lab": 34.58,
+    "ld": 3.56,
+    "ref": 24.69,
+    "grn": 7.4,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Luton North",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 18.5,
+    "lab": 37.88,
+    "ld": 4.88,
+    "ref": 12.04,
+    "grn": 5.01,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 21.69
+   }
+  },
+  {
+   "name": "Luton South and South Bedfordshire",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 17.55,
+    "lab": 35.42,
+    "ld": 6.25,
+    "ref": 12.4,
+    "grn": 6.26,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 22.13
+   }
+  },
+  {
+   "name": "Macclesfield",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 29.46,
+    "lab": 46.73,
+    "ld": 4.7,
+    "ref": 12.49,
+    "grn": 4.72,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.9
+   }
+  },
+  {
+   "name": "Maidenhead",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 37.62,
+    "lab": 11.46,
+    "ld": 43.5,
+    "ref": 0.0,
+    "grn": 3.97,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.46
+   }
+  },
+  {
+   "name": "Maidstone and Malling",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 30.49,
+    "lab": 26.89,
+    "ld": 13.74,
+    "ref": 20.08,
+    "grn": 8.03,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.76
+   }
+  },
+  {
+   "name": "Makerfield",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 10.88,
+    "lab": 45.21,
+    "ld": 6.79,
+    "ref": 31.8,
+    "grn": 4.41,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.91
+   }
+  },
+  {
+   "name": "Maldon",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 38.87,
+    "lab": 19.7,
+    "ld": 11.8,
+    "ref": 25.02,
+    "grn": 4.61,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Manchester Central",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 7.11,
+    "lab": 50.81,
+    "ld": 7.68,
+    "ref": 11.98,
+    "grn": 16.08,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 6.34
+   }
+  },
+  {
+   "name": "Manchester Rusholme",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 5.78,
+    "lab": 51.85,
+    "ld": 0.0,
+    "ref": 4.52,
+    "grn": 23.49,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 14.36
+   }
+  },
+  {
+   "name": "Manchester Withington",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 5.46,
+    "lab": 52.88,
+    "ld": 12.97,
+    "ref": 4.7,
+    "grn": 19.37,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 4.62
+   }
+  },
+  {
+   "name": "Mansfield",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 30.58,
+    "lab": 39.06,
+    "ld": 1.94,
+    "ref": 22.84,
+    "grn": 3.23,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.35
+   }
+  },
+  {
+   "name": "Melksham and Devizes",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 34.43,
+    "lab": 8.96,
+    "ld": 39.12,
+    "ref": 13.14,
+    "grn": 4.35,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Melton and Syston",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 38.11,
+    "lab": 26.38,
+    "ld": 5.54,
+    "ref": 19.45,
+    "grn": 8.01,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.51
+   }
+  },
+  {
+   "name": "Meriden and Solihull East",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 38.13,
+    "lab": 27.72,
+    "ld": 7.61,
+    "ref": 19.88,
+    "grn": 6.65,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Merthyr Tydfil and Aberdare",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 7.63,
+    "lab": 44.84,
+    "ld": 3.62,
+    "ref": 23.69,
+    "grn": 3.5,
+    "snp": 0.0,
+    "pc": 13.54,
+    "oth": 3.17
+   }
+  },
+  {
+   "name": "Mid and South Pembrokeshire",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 31.37,
+    "lab": 35.4,
+    "ld": 5.09,
+    "ref": 16.79,
+    "grn": 3.55,
+    "snp": 0.0,
+    "pc": 6.35,
+    "oth": 1.46
+   }
+  },
+  {
+   "name": "Mid Bedfordshire",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 34.08,
+    "lab": 31.42,
+    "ld": 8.2,
+    "ref": 17.32,
+    "grn": 5.21,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.77
+   }
+  },
+  {
+   "name": "Mid Buckinghamshire",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 37.35,
+    "lab": 17.0,
+    "ld": 26.46,
+    "ref": 12.84,
+    "grn": 5.45,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.9
+   }
+  },
+  {
+   "name": "Mid Cheshire",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 22.96,
+    "lab": 44.47,
+    "ld": 5.94,
+    "ref": 19.19,
+    "grn": 4.74,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.71
+   }
+  },
+  {
+   "name": "Mid Derbyshire",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 32.53,
+    "lab": 36.48,
+    "ld": 4.97,
+    "ref": 17.58,
+    "grn": 7.46,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.98
+   }
+  },
+  {
+   "name": "Mid Dorset and North Poole",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 40.57,
+    "lab": 9.22,
+    "ld": 43.3,
+    "ref": 0.0,
+    "grn": 4.76,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.14
+   }
+  },
+  {
+   "name": "Mid Dunbartonshire",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 4.65,
+    "lab": 20.84,
+    "ld": 42.38,
+    "ref": 3.98,
+    "grn": 3.26,
+    "snp": 24.04,
+    "pc": 0.0,
+    "oth": 0.85
+   }
+  },
+  {
+   "name": "Mid Leicestershire",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 36.91,
+    "lab": 32.33,
+    "ld": 5.09,
+    "ref": 18.57,
+    "grn": 7.11,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Mid Norfolk",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 36.54,
+    "lab": 29.88,
+    "ld": 6.81,
+    "ref": 20.54,
+    "grn": 6.23,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Mid Sussex",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 27.14,
+    "lab": 17.62,
+    "ld": 39.63,
+    "ref": 11.1,
+    "grn": 3.84,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.66
+   }
+  },
+  {
+   "name": "Mid Ulster",
+   "region": "Northern Ireland",
+   "country": "Northern Ireland",
+   "shares": {
+    "con": 0.0,
+    "lab": 0.0,
+    "ld": 0.0,
+    "ref": 0.0,
+    "grn": 0.0,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 100.0
+   }
+  },
+  {
+   "name": "Middlesbrough and Thornaby East",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 17.94,
+    "lab": 47.19,
+    "ld": 3.01,
+    "ref": 20.48,
+    "grn": 4.42,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 6.95
+   }
+  },
+  {
+   "name": "Middlesbrough South and East Cleveland",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 42.73,
+    "lab": 43.3,
+    "ld": 5.34,
+    "ref": 0.0,
+    "grn": 3.8,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 4.82
+   }
+  },
+  {
+   "name": "Midlothian",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 7.35,
+    "lab": 48.64,
+    "ld": 5.86,
+    "ref": 7.42,
+    "grn": 0.0,
+    "snp": 30.14,
+    "pc": 0.0,
+    "oth": 0.59
+   }
+  },
+  {
+   "name": "Milton Keynes Central",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 27.07,
+    "lab": 42.34,
+    "ld": 10.33,
+    "ref": 13.08,
+    "grn": 6.76,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.42
+   }
+  },
+  {
+   "name": "Milton Keynes North",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 30.21,
+    "lab": 42.02,
+    "ld": 7.32,
+    "ref": 13.41,
+    "grn": 7.05,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Mitcham and Morden",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 13.97,
+    "lab": 55.43,
+    "ld": 8.0,
+    "ref": 9.14,
+    "grn": 10.24,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.21
+   }
+  },
+  {
+   "name": "Monmouthshire",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 34.76,
+    "lab": 41.32,
+    "ld": 4.48,
+    "ref": 10.7,
+    "grn": 4.64,
+    "snp": 0.0,
+    "pc": 2.5,
+    "oth": 1.6
+   }
+  },
+  {
+   "name": "Montgomeryshire and Glyndŵr",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 17.97,
+    "lab": 29.38,
+    "ld": 14.96,
+    "ref": 20.56,
+    "grn": 4.03,
+    "snp": 0.0,
+    "pc": 13.1,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Moray West Nairn and Strathspey",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 29.99,
+    "lab": 17.74,
+    "ld": 8.13,
+    "ref": 7.5,
+    "grn": 3.6,
+    "snp": 32.14,
+    "pc": 0.0,
+    "oth": 0.91
+   }
+  },
+  {
+   "name": "Morecambe and Lunesdale",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 28.69,
+    "lab": 40.79,
+    "ld": 9.92,
+    "ref": 16.25,
+    "grn": 4.35,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Motherwell Wishaw and Carluke",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 6.19,
+    "lab": 49.12,
+    "ld": 2.11,
+    "ref": 7.7,
+    "grn": 3.07,
+    "snp": 30.96,
+    "pc": 0.0,
+    "oth": 0.86
+   }
+  },
+  {
+   "name": "Na h-Eileanan an Iar",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 4.78,
+    "lab": 49.47,
+    "ld": 2.82,
+    "ref": 5.15,
+    "grn": 0.0,
+    "snp": 21.11,
+    "pc": 0.0,
+    "oth": 16.66
+   }
+  },
+  {
+   "name": "Neath and Swansea East",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 9.38,
+    "lab": 41.85,
+    "ld": 5.84,
+    "ref": 25.34,
+    "grn": 4.26,
+    "snp": 0.0,
+    "pc": 13.33,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "New Forest East",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 38.5,
+    "lab": 19.71,
+    "ld": 15.91,
+    "ref": 16.9,
+    "grn": 6.89,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.08
+   }
+  },
+  {
+   "name": "New Forest West",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 35.42,
+    "lab": 23.33,
+    "ld": 17.67,
+    "ref": 16.35,
+    "grn": 6.04,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.19
+   }
+  },
+  {
+   "name": "Newark",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 39.22,
+    "lab": 32.54,
+    "ld": 5.66,
+    "ref": 15.49,
+    "grn": 4.39,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.7
+   }
+  },
+  {
+   "name": "Newbury",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 35.29,
+    "lab": 7.48,
+    "ld": 40.15,
+    "ref": 10.95,
+    "grn": 5.55,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.58
+   }
+  },
+  {
+   "name": "Newcastle upon Tyne Central and West",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 10.22,
+    "lab": 45.64,
+    "ld": 4.71,
+    "ref": 18.9,
+    "grn": 7.81,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 12.73
+   }
+  },
+  {
+   "name": "Newcastle upon Tyne East and Wallsend",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 8.32,
+    "lab": 50.09,
+    "ld": 7.01,
+    "ref": 19.81,
+    "grn": 12.42,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.35
+   }
+  },
+  {
+   "name": "Newcastle upon Tyne North",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 13.74,
+    "lab": 50.27,
+    "ld": 12.21,
+    "ref": 12.2,
+    "grn": 10.36,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.22
+   }
+  },
+  {
+   "name": "Newcastle-under-Lyme",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 27.57,
+    "lab": 40.37,
+    "ld": 5.02,
+    "ref": 22.38,
+    "grn": 4.67,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Newport East",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 16.84,
+    "lab": 42.49,
+    "ld": 5.31,
+    "ref": 19.1,
+    "grn": 5.43,
+    "snp": 0.0,
+    "pc": 5.81,
+    "oth": 5.03
+   }
+  },
+  {
+   "name": "Newport West and Islwyn",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 15.99,
+    "lab": 41.5,
+    "ld": 4.97,
+    "ref": 20.36,
+    "grn": 4.95,
+    "snp": 0.0,
+    "pc": 8.41,
+    "oth": 3.81
+   }
+  },
+  {
+   "name": "Newry and Armagh",
+   "region": "Northern Ireland",
+   "country": "Northern Ireland",
+   "shares": {
+    "con": 0.18,
+    "lab": 0.0,
+    "ld": 0.0,
+    "ref": 0.0,
+    "grn": 0.0,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 99.82
+   }
+  },
+  {
+   "name": "Newton Abbot",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 26.99,
+    "lab": 14.83,
+    "ld": 31.67,
+    "ref": 17.7,
+    "grn": 4.34,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 4.47
+   }
+  },
+  {
+   "name": "Newton Aycliffe and Spennymoor",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 20.57,
+    "lab": 46.16,
+    "ld": 3.74,
+    "ref": 23.98,
+    "grn": 4.27,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.28
+   }
+  },
+  {
+   "name": "Normanton and Hemsworth",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 13.74,
+    "lab": 47.53,
+    "ld": 3.63,
+    "ref": 29.2,
+    "grn": 5.91,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "North Antrim",
+   "region": "Northern Ireland",
+   "country": "Northern Ireland",
+   "shares": {
+    "con": 0.0,
+    "lab": 0.0,
+    "ld": 0.0,
+    "ref": 0.0,
+    "grn": 0.0,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 100.0
+   }
+  },
+  {
+   "name": "North Ayrshire and Arran",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 14.09,
+    "lab": 39.8,
+    "ld": 2.38,
+    "ref": 8.08,
+    "grn": 3.14,
+    "snp": 31.4,
+    "pc": 0.0,
+    "oth": 1.11
+   }
+  },
+  {
+   "name": "North Bedfordshire",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 38.75,
+    "lab": 28.25,
+    "ld": 10.77,
+    "ref": 16.36,
+    "grn": 5.87,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "North Cornwall",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 27.59,
+    "lab": 5.77,
+    "ld": 47.02,
+    "ref": 16.48,
+    "grn": 2.61,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.54
+   }
+  },
+  {
+   "name": "North Cotswolds",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 34.69,
+    "lab": 17.11,
+    "ld": 28.01,
+    "ref": 12.94,
+    "grn": 6.35,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.89
+   }
+  },
+  {
+   "name": "North Devon",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 29.32,
+    "lab": 6.25,
+    "ld": 42.44,
+    "ref": 15.83,
+    "grn": 4.57,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.59
+   }
+  },
+  {
+   "name": "North Dorset",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 36.65,
+    "lab": 8.8,
+    "ld": 33.45,
+    "ref": 15.89,
+    "grn": 4.19,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.03
+   }
+  },
+  {
+   "name": "North Down",
+   "region": "Northern Ireland",
+   "country": "Northern Ireland",
+   "shares": {
+    "con": 0.0,
+    "lab": 0.0,
+    "ld": 0.0,
+    "ref": 0.0,
+    "grn": 2.88,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 97.12
+   }
+  },
+  {
+   "name": "North Durham",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 15.62,
+    "lab": 39.85,
+    "ld": 10.12,
+    "ref": 25.72,
+    "grn": 5.69,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.0
+   }
+  },
+  {
+   "name": "North East Cambridgeshire",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 41.47,
+    "lab": 20.44,
+    "ld": 6.93,
+    "ref": 23.12,
+    "grn": 5.11,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.93
+   }
+  },
+  {
+   "name": "North East Derbyshire",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 34.53,
+    "lab": 38.35,
+    "ld": 4.71,
+    "ref": 17.22,
+    "grn": 4.95,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.24
+   }
+  },
+  {
+   "name": "North East Fife",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 3.9,
+    "lab": 9.42,
+    "ld": 54.73,
+    "ref": 4.9,
+    "grn": 3.87,
+    "snp": 23.18,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "North East Hampshire",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 36.98,
+    "lab": 9.1,
+    "ld": 38.12,
+    "ref": 12.01,
+    "grn": 2.56,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.23
+   }
+  },
+  {
+   "name": "North East Hertfordshire",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 31.29,
+    "lab": 34.95,
+    "ld": 10.4,
+    "ref": 16.11,
+    "grn": 7.24,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "North East Somerset and Hanham",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 30.16,
+    "lab": 40.57,
+    "ld": 7.59,
+    "ref": 14.52,
+    "grn": 6.3,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.86
+   }
+  },
+  {
+   "name": "North Herefordshire",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 31.46,
+    "lab": 6.36,
+    "ld": 2.85,
+    "ref": 15.98,
+    "grn": 43.16,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.19
+   }
+  },
+  {
+   "name": "North Norfolk",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 35.93,
+    "lab": 6.12,
+    "ld": 41.43,
+    "ref": 13.54,
+    "grn": 2.99,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "North Northumberland",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 26.18,
+    "lab": 36.56,
+    "ld": 10.58,
+    "ref": 15.74,
+    "grn": 3.57,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 7.37
+   }
+  },
+  {
+   "name": "North Shropshire",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 21.98,
+    "lab": 6.9,
+    "ld": 52.86,
+    "ref": 15.5,
+    "grn": 2.49,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.27
+   }
+  },
+  {
+   "name": "North Somerset",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 34.41,
+    "lab": 35.59,
+    "ld": 13.24,
+    "ref": 10.42,
+    "grn": 6.09,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.25
+   }
+  },
+  {
+   "name": "North Warwickshire and Bedworth",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 30.6,
+    "lab": 35.97,
+    "ld": 3.0,
+    "ref": 26.14,
+    "grn": 4.29,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "North West Cambridgeshire",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 33.19,
+    "lab": 33.28,
+    "ld": 7.19,
+    "ref": 19.68,
+    "grn": 6.66,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "North West Essex",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 35.6,
+    "lab": 30.8,
+    "ld": 11.13,
+    "ref": 14.1,
+    "grn": 5.23,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.14
+   }
+  },
+  {
+   "name": "North West Hampshire",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 34.96,
+    "lab": 28.49,
+    "ld": 15.01,
+    "ref": 15.22,
+    "grn": 5.4,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.92
+   }
+  },
+  {
+   "name": "North West Leicestershire",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 32.65,
+    "lab": 34.73,
+    "ld": 3.35,
+    "ref": 19.93,
+    "grn": 5.83,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.51
+   }
+  },
+  {
+   "name": "North West Norfolk",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 36.12,
+    "lab": 25.0,
+    "ld": 14.57,
+    "ref": 19.51,
+    "grn": 4.8,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Northampton North",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 21.99,
+    "lab": 43.55,
+    "ld": 5.38,
+    "ref": 16.77,
+    "grn": 6.12,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 6.19
+   }
+  },
+  {
+   "name": "Northampton South",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 29.2,
+    "lab": 38.47,
+    "ld": 7.27,
+    "ref": 18.7,
+    "grn": 5.46,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.9
+   }
+  },
+  {
+   "name": "Norwich North",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 21.73,
+    "lab": 45.44,
+    "ld": 4.53,
+    "ref": 17.98,
+    "grn": 9.55,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.77
+   }
+  },
+  {
+   "name": "Norwich South",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 12.88,
+    "lab": 47.64,
+    "ld": 7.93,
+    "ref": 11.59,
+    "grn": 18.28,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.68
+   }
+  },
+  {
+   "name": "Nottingham East",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 10.78,
+    "lab": 53.55,
+    "ld": 4.78,
+    "ref": 9.83,
+    "grn": 11.9,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 9.15
+   }
+  },
+  {
+   "name": "Nottingham North and Kimberley",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 19.39,
+    "lab": 47.08,
+    "ld": 3.82,
+    "ref": 20.15,
+    "grn": 9.57,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Nottingham South",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 16.07,
+    "lab": 47.38,
+    "ld": 6.26,
+    "ref": 15.01,
+    "grn": 8.89,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 6.38
+   }
+  },
+  {
+   "name": "Nuneaton",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 28.48,
+    "lab": 36.92,
+    "ld": 3.25,
+    "ref": 21.98,
+    "grn": 7.02,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.35
+   }
+  },
+  {
+   "name": "Old Bexley and Sidcup",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 37.6,
+    "lab": 30.15,
+    "ld": 4.05,
+    "ref": 21.8,
+    "grn": 5.46,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.94
+   }
+  },
+  {
+   "name": "Oldham East and Saddleworth",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 17.07,
+    "lab": 35.17,
+    "ld": 8.45,
+    "ref": 19.3,
+    "grn": 3.72,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 16.29
+   }
+  },
+  {
+   "name": "Oldham West Chadderton and Royton",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 10.54,
+    "lab": 34.3,
+    "ld": 3.3,
+    "ref": 17.75,
+    "grn": 4.81,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 29.29
+   }
+  },
+  {
+   "name": "Orkney and Shetland",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 2.83,
+    "lab": 7.22,
+    "ld": 55.07,
+    "ref": 7.67,
+    "grn": 9.89,
+    "snp": 17.33,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Orpington",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 37.99,
+    "lab": 26.88,
+    "ld": 10.26,
+    "ref": 19.31,
+    "grn": 5.03,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.52
+   }
+  },
+  {
+   "name": "Ossett and Denby Dale",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 28.92,
+    "lab": 39.28,
+    "ld": 4.07,
+    "ref": 21.02,
+    "grn": 4.86,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.85
+   }
+  },
+  {
+   "name": "Oxford East",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 12.05,
+    "lab": 49.67,
+    "ld": 8.74,
+    "ref": 0.0,
+    "grn": 12.9,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 16.64
+   }
+  },
+  {
+   "name": "Oxford West and Abingdon",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 18.52,
+    "lab": 13.0,
+    "ld": 50.9,
+    "ref": 9.05,
+    "grn": 7.04,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.48
+   }
+  },
+  {
+   "name": "Paisley and Renfrewshire North",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 6.4,
+    "lab": 47.11,
+    "ld": 3.31,
+    "ref": 7.77,
+    "grn": 3.54,
+    "snp": 31.86,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Paisley and Renfrewshire South",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 5.38,
+    "lab": 47.44,
+    "ld": 3.19,
+    "ref": 7.16,
+    "grn": 4.18,
+    "snp": 31.63,
+    "pc": 0.0,
+    "oth": 1.04
+   }
+  },
+  {
+   "name": "Peckham",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 5.87,
+    "lab": 58.8,
+    "ld": 7.02,
+    "ref": 4.61,
+    "grn": 19.55,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 4.15
+   }
+  },
+  {
+   "name": "Pendle and Clitheroe",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 32.57,
+    "lab": 34.5,
+    "ld": 4.36,
+    "ref": 17.48,
+    "grn": 3.04,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 8.06
+   }
+  },
+  {
+   "name": "Penistone and Stocksbridge",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 23.72,
+    "lab": 43.6,
+    "ld": 6.52,
+    "ref": 21.51,
+    "grn": 4.65,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Penrith and Solway",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 29.89,
+    "lab": 40.56,
+    "ld": 9.62,
+    "ref": 15.47,
+    "grn": 3.51,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.95
+   }
+  },
+  {
+   "name": "Perth and Kinross-shire",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 29.56,
+    "lab": 18.01,
+    "ld": 7.35,
+    "ref": 5.93,
+    "grn": 0.0,
+    "snp": 37.8,
+    "pc": 0.0,
+    "oth": 1.36
+   }
+  },
+  {
+   "name": "Peterborough",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 31.76,
+    "lab": 32.05,
+    "ld": 4.17,
+    "ref": 12.85,
+    "grn": 6.07,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 13.1
+   }
+  },
+  {
+   "name": "Plymouth Moor View",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 28.14,
+    "lab": 41.22,
+    "ld": 4.12,
+    "ref": 22.56,
+    "grn": 3.95,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Plymouth Sutton and Devonport",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 16.33,
+    "lab": 49.4,
+    "ld": 5.8,
+    "ref": 17.74,
+    "grn": 7.57,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.17
+   }
+  },
+  {
+   "name": "Pontefract Castleford and Knottingley",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 15.03,
+    "lab": 47.53,
+    "ld": 3.37,
+    "ref": 29.09,
+    "grn": 4.59,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.39
+   }
+  },
+  {
+   "name": "Pontypridd",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 9.59,
+    "lab": 41.2,
+    "ld": 4.08,
+    "ref": 19.87,
+    "grn": 4.74,
+    "snp": 0.0,
+    "pc": 13.4,
+    "oth": 7.13
+   }
+  },
+  {
+   "name": "Poole",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 31.8,
+    "lab": 31.84,
+    "ld": 12.38,
+    "ref": 16.7,
+    "grn": 4.98,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.3
+   }
+  },
+  {
+   "name": "Poplar and Limehouse",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 11.01,
+    "lab": 43.05,
+    "ld": 9.73,
+    "ref": 7.9,
+    "grn": 13.88,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 14.43
+   }
+  },
+  {
+   "name": "Portsmouth North",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 32.97,
+    "lab": 34.85,
+    "ld": 7.29,
+    "ref": 20.44,
+    "grn": 4.45,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Portsmouth South",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 14.5,
+    "lab": 48.44,
+    "ld": 12.55,
+    "ref": 14.65,
+    "grn": 7.98,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.88
+   }
+  },
+  {
+   "name": "Preston",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 13.03,
+    "lab": 35.02,
+    "ld": 7.99,
+    "ref": 14.35,
+    "grn": 4.38,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 25.23
+   }
+  },
+  {
+   "name": "Putney",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 23.58,
+    "lab": 48.92,
+    "ld": 12.06,
+    "ref": 6.23,
+    "grn": 7.55,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.67
+   }
+  },
+  {
+   "name": "Queen's Park and Maida Vale",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 13.27,
+    "lab": 52.49,
+    "ld": 8.91,
+    "ref": 5.49,
+    "grn": 13.6,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 6.24
+   }
+  },
+  {
+   "name": "Rawmarsh and Conisbrough",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 13.26,
+    "lab": 49.0,
+    "ld": 3.35,
+    "ref": 28.62,
+    "grn": 4.98,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.79
+   }
+  },
+  {
+   "name": "Rayleigh and Wickford",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 37.01,
+    "lab": 24.64,
+    "ld": 8.48,
+    "ref": 25.29,
+    "grn": 4.58,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Reading Central",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 19.79,
+    "lab": 47.69,
+    "ld": 8.75,
+    "ref": 8.62,
+    "grn": 14.17,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.99
+   }
+  },
+  {
+   "name": "Reading West and Mid Berkshire",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 32.03,
+    "lab": 34.96,
+    "ld": 10.96,
+    "ref": 13.45,
+    "grn": 6.81,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.79
+   }
+  },
+  {
+   "name": "Redcar",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 32.3,
+    "lab": 40.99,
+    "ld": 4.04,
+    "ref": 18.89,
+    "grn": 3.35,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.44
+   }
+  },
+  {
+   "name": "Redditch",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 33.09,
+    "lab": 34.95,
+    "ld": 5.11,
+    "ref": 20.1,
+    "grn": 4.95,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.81
+   }
+  },
+  {
+   "name": "Reigate",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 35.41,
+    "lab": 29.41,
+    "ld": 12.74,
+    "ref": 13.62,
+    "grn": 8.82,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Rhondda and Ogmore",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 5.73,
+    "lab": 47.81,
+    "ld": 2.61,
+    "ref": 26.05,
+    "grn": 3.29,
+    "snp": 0.0,
+    "pc": 14.52,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Ribble Valley",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 33.29,
+    "lab": 34.94,
+    "ld": 9.61,
+    "ref": 16.39,
+    "grn": 3.32,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.45
+   }
+  },
+  {
+   "name": "Richmond and Northallerton",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 47.52,
+    "lab": 22.41,
+    "ld": 8.91,
+    "ref": 14.72,
+    "grn": 4.24,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.21
+   }
+  },
+  {
+   "name": "Richmond Park",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 21.79,
+    "lab": 9.67,
+    "ld": 54.65,
+    "ref": 6.24,
+    "grn": 6.54,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.11
+   }
+  },
+  {
+   "name": "Rochdale",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 10.77,
+    "lab": 32.82,
+    "ld": 7.1,
+    "ref": 17.07,
+    "grn": 3.05,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 29.2
+   }
+  },
+  {
+   "name": "Rochester and Strood",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 29.28,
+    "lab": 36.16,
+    "ld": 4.45,
+    "ref": 23.4,
+    "grn": 5.7,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.02
+   }
+  },
+  {
+   "name": "Romford",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 34.82,
+    "lab": 31.5,
+    "ld": 4.3,
+    "ref": 21.85,
+    "grn": 5.04,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.48
+   }
+  },
+  {
+   "name": "Romsey and Southampton North",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 39.76,
+    "lab": 9.27,
+    "ld": 35.38,
+    "ref": 11.43,
+    "grn": 3.78,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.37
+   }
+  },
+  {
+   "name": "Rossendale and Darwen",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 28.28,
+    "lab": 40.9,
+    "ld": 2.78,
+    "ref": 21.73,
+    "grn": 5.21,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.1
+   }
+  },
+  {
+   "name": "Rother Valley",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 36.11,
+    "lab": 38.51,
+    "ld": 2.82,
+    "ref": 18.46,
+    "grn": 4.1,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Rotherham",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 0.0,
+    "lab": 45.14,
+    "ld": 7.65,
+    "ref": 30.27,
+    "grn": 7.13,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 9.81
+   }
+  },
+  {
+   "name": "Rugby",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 30.82,
+    "lab": 39.86,
+    "ld": 6.64,
+    "ref": 16.78,
+    "grn": 5.22,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.68
+   }
+  },
+  {
+   "name": "Ruislip Northwood and Pinner",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 45.37,
+    "lab": 29.27,
+    "ld": 9.22,
+    "ref": 9.92,
+    "grn": 6.21,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Runcorn and Helsby",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 16.0,
+    "lab": 52.94,
+    "ld": 5.09,
+    "ref": 18.14,
+    "grn": 6.43,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.41
+   }
+  },
+  {
+   "name": "Runnymede and Weybridge",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 38.22,
+    "lab": 20.65,
+    "ld": 22.41,
+    "ref": 13.3,
+    "grn": 4.05,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.37
+   }
+  },
+  {
+   "name": "Rushcliffe",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 30.94,
+    "lab": 43.8,
+    "ld": 5.43,
+    "ref": 11.0,
+    "grn": 7.56,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.27
+   }
+  },
+  {
+   "name": "Rutherglen",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 5.7,
+    "lab": 50.51,
+    "ld": 4.03,
+    "ref": 6.32,
+    "grn": 0.0,
+    "snp": 29.88,
+    "pc": 0.0,
+    "oth": 3.56
+   }
+  },
+  {
+   "name": "Rutland and Stamford",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 43.74,
+    "lab": 22.34,
+    "ld": 12.87,
+    "ref": 14.43,
+    "grn": 5.78,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.84
+   }
+  },
+  {
+   "name": "Salford",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 9.02,
+    "lab": 53.22,
+    "ld": 6.93,
+    "ref": 15.19,
+    "grn": 13.07,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.56
+   }
+  },
+  {
+   "name": "Salisbury",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 34.1,
+    "lab": 26.51,
+    "ld": 23.57,
+    "ref": 10.43,
+    "grn": 4.22,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.17
+   }
+  },
+  {
+   "name": "Scarborough and Whitby",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 27.93,
+    "lab": 40.16,
+    "ld": 4.29,
+    "ref": 21.84,
+    "grn": 3.89,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.9
+   }
+  },
+  {
+   "name": "Scunthorpe",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 30.58,
+    "lab": 39.65,
+    "ld": 2.41,
+    "ref": 20.9,
+    "grn": 3.12,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.33
+   }
+  },
+  {
+   "name": "Sefton Central",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 17.89,
+    "lab": 56.42,
+    "ld": 5.54,
+    "ref": 12.15,
+    "grn": 6.94,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.05
+   }
+  },
+  {
+   "name": "Selby",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 25.58,
+    "lab": 46.3,
+    "ld": 3.64,
+    "ref": 19.43,
+    "grn": 5.05,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Sevenoaks",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 36.73,
+    "lab": 13.63,
+    "ld": 25.83,
+    "ref": 18.72,
+    "grn": 4.07,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.02
+   }
+  },
+  {
+   "name": "Sheffield Brightside and Hillsborough",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 12.87,
+    "lab": 51.57,
+    "ld": 5.36,
+    "ref": 0.0,
+    "grn": 14.87,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 15.33
+   }
+  },
+  {
+   "name": "Sheffield Central",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 7.35,
+    "lab": 52.1,
+    "ld": 6.84,
+    "ref": 0.0,
+    "grn": 26.04,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 7.67
+   }
+  },
+  {
+   "name": "Sheffield Hallam",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 12.02,
+    "lab": 46.27,
+    "ld": 30.4,
+    "ref": 0.0,
+    "grn": 8.7,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.6
+   }
+  },
+  {
+   "name": "Sheffield Heeley",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 13.63,
+    "lab": 55.22,
+    "ld": 10.05,
+    "ref": 0.0,
+    "grn": 15.41,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 5.68
+   }
+  },
+  {
+   "name": "Sheffield South East",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 17.48,
+    "lab": 52.3,
+    "ld": 9.56,
+    "ref": 0.0,
+    "grn": 8.83,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 11.83
+   }
+  },
+  {
+   "name": "Sherwood Forest",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 27.53,
+    "lab": 38.72,
+    "ld": 3.78,
+    "ref": 23.26,
+    "grn": 4.55,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.15
+   }
+  },
+  {
+   "name": "Shipley",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 27.19,
+    "lab": 45.0,
+    "ld": 2.78,
+    "ref": 14.98,
+    "grn": 7.46,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.58
+   }
+  },
+  {
+   "name": "Shrewsbury",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 22.45,
+    "lab": 44.48,
+    "ld": 13.04,
+    "ref": 14.59,
+    "grn": 4.63,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.81
+   }
+  },
+  {
+   "name": "Sittingbourne and Sheppey",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 28.21,
+    "lab": 29.07,
+    "ld": 3.22,
+    "ref": 25.64,
+    "grn": 4.13,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 9.73
+   }
+  },
+  {
+   "name": "Skipton and Ripon",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 35.23,
+    "lab": 32.15,
+    "ld": 7.85,
+    "ref": 15.93,
+    "grn": 6.45,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.39
+   }
+  },
+  {
+   "name": "Sleaford and North Hykeham",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 35.72,
+    "lab": 26.77,
+    "ld": 4.66,
+    "ref": 21.59,
+    "grn": 5.01,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 6.24
+   }
+  },
+  {
+   "name": "Slough",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 17.23,
+    "lab": 33.89,
+    "ld": 4.76,
+    "ref": 7.75,
+    "grn": 4.33,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 32.05
+   }
+  },
+  {
+   "name": "Smethwick",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 12.95,
+    "lab": 48.01,
+    "ld": 2.9,
+    "ref": 16.15,
+    "grn": 7.81,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 12.19
+   }
+  },
+  {
+   "name": "Solihull West and Shirley",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 34.74,
+    "lab": 24.88,
+    "ld": 16.89,
+    "ref": 15.25,
+    "grn": 6.98,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.27
+   }
+  },
+  {
+   "name": "South Antrim",
+   "region": "Northern Ireland",
+   "country": "Northern Ireland",
+   "shares": {
+    "con": 0.0,
+    "lab": 0.0,
+    "ld": 0.0,
+    "ref": 0.0,
+    "grn": 1.26,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 98.74
+   }
+  },
+  {
+   "name": "South Basildon and East Thurrock",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 25.69,
+    "lab": 30.54,
+    "ld": 2.71,
+    "ref": 30.79,
+    "grn": 4.34,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 5.92
+   }
+  },
+  {
+   "name": "South Cambridgeshire",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 27.44,
+    "lab": 11.13,
+    "ld": 46.83,
+    "ref": 8.92,
+    "grn": 4.84,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.84
+   }
+  },
+  {
+   "name": "South Cotswolds",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 34.4,
+    "lab": 7.54,
+    "ld": 43.91,
+    "ref": 9.84,
+    "grn": 2.99,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.31
+   }
+  },
+  {
+   "name": "South Derbyshire",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 29.66,
+    "lab": 38.77,
+    "ld": 4.67,
+    "ref": 19.63,
+    "grn": 4.24,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.02
+   }
+  },
+  {
+   "name": "South Devon",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 31.45,
+    "lab": 6.26,
+    "ld": 46.0,
+    "ref": 12.98,
+    "grn": 3.05,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.26
+   }
+  },
+  {
+   "name": "South Dorset",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 29.8,
+    "lab": 31.93,
+    "ld": 16.35,
+    "ref": 16.66,
+    "grn": 4.39,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.87
+   }
+  },
+  {
+   "name": "South Down",
+   "region": "Northern Ireland",
+   "country": "Northern Ireland",
+   "shares": {
+    "con": 0.1,
+    "lab": 0.0,
+    "ld": 0.0,
+    "ref": 0.0,
+    "grn": 0.98,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 98.92
+   }
+  },
+  {
+   "name": "South East Cornwall",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 27.92,
+    "lab": 31.79,
+    "ld": 16.81,
+    "ref": 18.89,
+    "grn": 4.06,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.53
+   }
+  },
+  {
+   "name": "South Holland and The Deepings",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 38.02,
+    "lab": 19.78,
+    "ld": 4.23,
+    "ref": 23.09,
+    "grn": 3.92,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 10.95
+   }
+  },
+  {
+   "name": "South Leicestershire",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 35.56,
+    "lab": 24.84,
+    "ld": 14.84,
+    "ref": 19.93,
+    "grn": 4.83,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "South Norfolk",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 29.3,
+    "lab": 35.0,
+    "ld": 11.59,
+    "ref": 15.29,
+    "grn": 8.04,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.77
+   }
+  },
+  {
+   "name": "South Northamptonshire",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 35.74,
+    "lab": 28.87,
+    "ld": 9.29,
+    "ref": 16.69,
+    "grn": 5.66,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.75
+   }
+  },
+  {
+   "name": "South Ribble",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 28.55,
+    "lab": 42.47,
+    "ld": 6.36,
+    "ref": 19.25,
+    "grn": 3.37,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "South Shields",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 11.21,
+    "lab": 41.07,
+    "ld": 3.81,
+    "ref": 23.0,
+    "grn": 14.75,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 6.16
+   }
+  },
+  {
+   "name": "South Shropshire",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 34.13,
+    "lab": 13.43,
+    "ld": 30.98,
+    "ref": 17.76,
+    "grn": 3.7,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "South Suffolk",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 32.95,
+    "lab": 26.71,
+    "ld": 13.16,
+    "ref": 18.96,
+    "grn": 8.21,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "South West Devon",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 34.29,
+    "lab": 30.25,
+    "ld": 10.63,
+    "ref": 17.92,
+    "grn": 5.6,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.31
+   }
+  },
+  {
+   "name": "South West Hertfordshire",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 34.11,
+    "lab": 19.97,
+    "ld": 24.87,
+    "ref": 14.07,
+    "grn": 5.25,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.73
+   }
+  },
+  {
+   "name": "South West Norfolk",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 25.3,
+    "lab": 26.72,
+    "ld": 5.91,
+    "ref": 22.46,
+    "grn": 4.15,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 15.47
+   }
+  },
+  {
+   "name": "South West Wiltshire",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 33.83,
+    "lab": 26.8,
+    "ld": 15.61,
+    "ref": 16.98,
+    "grn": 4.86,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.93
+   }
+  },
+  {
+   "name": "Southampton Itchen",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 25.43,
+    "lab": 41.47,
+    "ld": 7.05,
+    "ref": 18.01,
+    "grn": 7.34,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.69
+   }
+  },
+  {
+   "name": "Southampton Test",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 18.47,
+    "lab": 44.53,
+    "ld": 9.08,
+    "ref": 14.69,
+    "grn": 10.04,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.19
+   }
+  },
+  {
+   "name": "Southend East and Rochford",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 28.67,
+    "lab": 38.82,
+    "ld": 5.72,
+    "ref": 18.19,
+    "grn": 6.85,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.75
+   }
+  },
+  {
+   "name": "Southend West and Leigh",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 31.49,
+    "lab": 35.64,
+    "ld": 6.76,
+    "ref": 17.61,
+    "grn": 6.95,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.55
+   }
+  },
+  {
+   "name": "Southgate and Wood Green",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 17.6,
+    "lab": 51.1,
+    "ld": 8.59,
+    "ref": 6.89,
+    "grn": 12.28,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.54
+   }
+  },
+  {
+   "name": "Southport",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 25.44,
+    "lab": 38.29,
+    "ld": 13.02,
+    "ref": 16.41,
+    "grn": 4.79,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.05
+   }
+  },
+  {
+   "name": "Spelthorne",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 30.41,
+    "lab": 26.96,
+    "ld": 18.87,
+    "ref": 17.94,
+    "grn": 5.23,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.59
+   }
+  },
+  {
+   "name": "Spen Valley",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 24.01,
+    "lab": 39.15,
+    "ld": 3.47,
+    "ref": 24.08,
+    "grn": 5.56,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.72
+   }
+  },
+  {
+   "name": "St Albans",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 18.19,
+    "lab": 10.05,
+    "ld": 56.62,
+    "ref": 8.4,
+    "grn": 6.34,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.4
+   }
+  },
+  {
+   "name": "St Austell and Newquay",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 28.86,
+    "lab": 34.15,
+    "ld": 10.28,
+    "ref": 19.71,
+    "grn": 5.0,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.99
+   }
+  },
+  {
+   "name": "St Helens North",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 11.14,
+    "lab": 52.59,
+    "ld": 4.44,
+    "ref": 22.52,
+    "grn": 8.64,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.68
+   }
+  },
+  {
+   "name": "St Helens South and Whiston",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 8.04,
+    "lab": 49.74,
+    "ld": 5.78,
+    "ref": 18.34,
+    "grn": 6.95,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 11.16
+   }
+  },
+  {
+   "name": "St Ives",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 23.38,
+    "lab": 5.8,
+    "ld": 52.04,
+    "ref": 13.5,
+    "grn": 3.74,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.56
+   }
+  },
+  {
+   "name": "St Neots and Mid Cambridgeshire",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 28.17,
+    "lab": 13.08,
+    "ld": 36.91,
+    "ref": 10.73,
+    "grn": 5.04,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 6.08
+   }
+  },
+  {
+   "name": "Stafford",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 30.29,
+    "lab": 40.28,
+    "ld": 3.64,
+    "ref": 18.72,
+    "grn": 6.21,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.87
+   }
+  },
+  {
+   "name": "Staffordshire Moorlands",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 35.36,
+    "lab": 32.64,
+    "ld": 3.46,
+    "ref": 23.24,
+    "grn": 5.3,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Stalybridge and Hyde",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 18.45,
+    "lab": 43.83,
+    "ld": 2.9,
+    "ref": 20.89,
+    "grn": 7.37,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 6.55
+   }
+  },
+  {
+   "name": "Stevenage",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 25.94,
+    "lab": 41.43,
+    "ld": 8.12,
+    "ref": 17.95,
+    "grn": 6.22,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.35
+   }
+  },
+  {
+   "name": "Stirling and Strathallan",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 19.02,
+    "lab": 33.86,
+    "ld": 5.08,
+    "ref": 6.32,
+    "grn": 4.66,
+    "snp": 31.06,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Stockport",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 11.37,
+    "lab": 49.88,
+    "ld": 8.53,
+    "ref": 14.92,
+    "grn": 11.14,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 4.17
+   }
+  },
+  {
+   "name": "Stockton North",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 21.46,
+    "lab": 45.8,
+    "ld": 3.03,
+    "ref": 24.57,
+    "grn": 5.14,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Stockton West",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 41.88,
+    "lab": 37.49,
+    "ld": 2.47,
+    "ref": 14.05,
+    "grn": 3.04,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.07
+   }
+  },
+  {
+   "name": "Stoke-on-Trent Central",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 17.63,
+    "lab": 42.36,
+    "ld": 2.83,
+    "ref": 24.2,
+    "grn": 4.83,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 8.15
+   }
+  },
+  {
+   "name": "Stoke-on-Trent North",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 26.27,
+    "lab": 40.33,
+    "ld": 2.52,
+    "ref": 24.41,
+    "grn": 3.42,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.05
+   }
+  },
+  {
+   "name": "Stoke-on-Trent South",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 33.2,
+    "lab": 34.73,
+    "ld": 3.85,
+    "ref": 21.62,
+    "grn": 2.95,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.64
+   }
+  },
+  {
+   "name": "Stone Great Wyrley and Penkridge",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 46.48,
+    "lab": 33.7,
+    "ld": 6.9,
+    "ref": 0.0,
+    "grn": 5.23,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 7.69
+   }
+  },
+  {
+   "name": "Stourbridge",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 30.76,
+    "lab": 38.46,
+    "ld": 4.03,
+    "ref": 19.73,
+    "grn": 4.34,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.68
+   }
+  },
+  {
+   "name": "Strangford",
+   "region": "Northern Ireland",
+   "country": "Northern Ireland",
+   "shares": {
+    "con": 0.38,
+    "lab": 0.0,
+    "ld": 0.0,
+    "ref": 0.0,
+    "grn": 1.81,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 97.82
+   }
+  },
+  {
+   "name": "Stratford and Bow",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 7.17,
+    "lab": 44.08,
+    "ld": 4.43,
+    "ref": 4.82,
+    "grn": 17.29,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 22.21
+   }
+  },
+  {
+   "name": "Stratford-on-Avon",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 30.83,
+    "lab": 7.09,
+    "ld": 44.28,
+    "ref": 14.64,
+    "grn": 2.26,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.9
+   }
+  },
+  {
+   "name": "Streatham and Croydon North",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 11.96,
+    "lab": 52.14,
+    "ld": 11.29,
+    "ref": 4.48,
+    "grn": 17.12,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.01
+   }
+  },
+  {
+   "name": "Stretford and Urmston",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 14.11,
+    "lab": 49.22,
+    "ld": 4.82,
+    "ref": 11.92,
+    "grn": 9.56,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 10.37
+   }
+  },
+  {
+   "name": "Stroud",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 25.75,
+    "lab": 46.37,
+    "ld": 5.28,
+    "ref": 11.46,
+    "grn": 10.37,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.77
+   }
+  },
+  {
+   "name": "Suffolk Coastal",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 29.53,
+    "lab": 31.69,
+    "ld": 14.05,
+    "ref": 15.87,
+    "grn": 8.86,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Sunderland Central",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 14.34,
+    "lab": 42.18,
+    "ld": 9.01,
+    "ref": 26.98,
+    "grn": 7.49,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Surrey Heath",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 32.95,
+    "lab": 6.59,
+    "ld": 44.75,
+    "ref": 13.08,
+    "grn": 2.43,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.19
+   }
+  },
+  {
+   "name": "Sussex Weald",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 34.08,
+    "lab": 16.75,
+    "ld": 20.16,
+    "ref": 18.14,
+    "grn": 7.65,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.21
+   }
+  },
+  {
+   "name": "Sutton and Cheam",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 28.94,
+    "lab": 17.71,
+    "ld": 36.92,
+    "ref": 12.16,
+    "grn": 3.62,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.67
+   }
+  },
+  {
+   "name": "Sutton Coldfield",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 38.28,
+    "lab": 33.02,
+    "ld": 5.35,
+    "ref": 16.99,
+    "grn": 5.0,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.35
+   }
+  },
+  {
+   "name": "Swansea West",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 9.92,
+    "lab": 41.4,
+    "ld": 12.25,
+    "ref": 17.52,
+    "grn": 6.46,
+    "snp": 0.0,
+    "pc": 11.51,
+    "oth": 0.95
+   }
+  },
+  {
+   "name": "Swindon North",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 31.31,
+    "lab": 40.6,
+    "ld": 4.72,
+    "ref": 17.11,
+    "grn": 5.36,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.9
+   }
+  },
+  {
+   "name": "Swindon South",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 26.95,
+    "lab": 48.39,
+    "ld": 4.11,
+    "ref": 13.83,
+    "grn": 5.67,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.05
+   }
+  },
+  {
+   "name": "Tamworth",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 31.87,
+    "lab": 35.03,
+    "ld": 3.31,
+    "ref": 25.13,
+    "grn": 3.61,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.05
+   }
+  },
+  {
+   "name": "Tatton",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 38.44,
+    "lab": 36.26,
+    "ld": 8.89,
+    "ref": 11.46,
+    "grn": 4.95,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Taunton and Wellington",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 24.64,
+    "lab": 7.06,
+    "ld": 48.38,
+    "ref": 16.01,
+    "grn": 3.64,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.27
+   }
+  },
+  {
+   "name": "Telford",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 21.43,
+    "lab": 44.71,
+    "ld": 3.83,
+    "ref": 24.82,
+    "grn": 5.21,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Tewkesbury",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 29.81,
+    "lab": 8.85,
+    "ld": 42.71,
+    "ref": 12.36,
+    "grn": 5.92,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.35
+   }
+  },
+  {
+   "name": "The Wrekin",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 32.63,
+    "lab": 30.86,
+    "ld": 9.51,
+    "ref": 19.83,
+    "grn": 6.05,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.12
+   }
+  },
+  {
+   "name": "Thirsk and Malton",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 39.25,
+    "lab": 24.09,
+    "ld": 10.8,
+    "ref": 18.0,
+    "grn": 6.0,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.87
+   }
+  },
+  {
+   "name": "Thornbury and Yate",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 33.36,
+    "lab": 9.48,
+    "ld": 39.0,
+    "ref": 14.11,
+    "grn": 4.06,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Thurrock",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 21.32,
+    "lab": 42.73,
+    "ld": 3.08,
+    "ref": 25.5,
+    "grn": 4.35,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.02
+   }
+  },
+  {
+   "name": "Tipton and Wednesbury",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 26.28,
+    "lab": 36.91,
+    "ld": 1.86,
+    "ref": 25.18,
+    "grn": 4.74,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 5.04
+   }
+  },
+  {
+   "name": "Tiverton and Minehead",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 31.2,
+    "lab": 9.11,
+    "ld": 38.59,
+    "ref": 16.4,
+    "grn": 4.7,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Tonbridge",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 40.77,
+    "lab": 18.58,
+    "ld": 8.41,
+    "ref": 15.0,
+    "grn": 15.09,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.15
+   }
+  },
+  {
+   "name": "Tooting",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 18.36,
+    "lab": 55.17,
+    "ld": 8.38,
+    "ref": 4.81,
+    "grn": 10.71,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.56
+   }
+  },
+  {
+   "name": "Torbay",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 29.47,
+    "lab": 7.1,
+    "ld": 41.06,
+    "ref": 18.78,
+    "grn": 3.08,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.51
+   }
+  },
+  {
+   "name": "Torfaen",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 16.07,
+    "lab": 42.5,
+    "ld": 4.6,
+    "ref": 22.0,
+    "grn": 4.78,
+    "snp": 0.0,
+    "pc": 7.2,
+    "oth": 2.85
+   }
+  },
+  {
+   "name": "Torridge and Tavistock",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 31.58,
+    "lab": 21.18,
+    "ld": 23.81,
+    "ref": 18.01,
+    "grn": 4.62,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.8
+   }
+  },
+  {
+   "name": "Tottenham",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 5.78,
+    "lab": 57.45,
+    "ld": 4.8,
+    "ref": 3.99,
+    "grn": 19.01,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 8.97
+   }
+  },
+  {
+   "name": "Truro and Falmouth",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 25.13,
+    "lab": 41.35,
+    "ld": 13.04,
+    "ref": 12.26,
+    "grn": 6.9,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.32
+   }
+  },
+  {
+   "name": "Tunbridge Wells",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 27.6,
+    "lab": 11.39,
+    "ld": 43.61,
+    "ref": 11.95,
+    "grn": 4.32,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.12
+   }
+  },
+  {
+   "name": "Twickenham",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 16.27,
+    "lab": 12.48,
+    "ld": 56.28,
+    "ref": 7.63,
+    "grn": 6.69,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.65
+   }
+  },
+  {
+   "name": "Tynemouth",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 18.66,
+    "lab": 50.58,
+    "ld": 5.6,
+    "ref": 15.27,
+    "grn": 7.42,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.47
+   }
+  },
+  {
+   "name": "Upper Bann",
+   "region": "Northern Ireland",
+   "country": "Northern Ireland",
+   "shares": {
+    "con": 0.0,
+    "lab": 0.0,
+    "ld": 0.0,
+    "ref": 0.0,
+    "grn": 0.0,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 100.0
+   }
+  },
+  {
+   "name": "Uxbridge and South Ruislip",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 34.87,
+    "lab": 36.15,
+    "ld": 3.82,
+    "ref": 14.4,
+    "grn": 9.48,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.28
+   }
+  },
+  {
+   "name": "Vale of Glamorgan",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 29.51,
+    "lab": 38.71,
+    "ld": 3.52,
+    "ref": 15.22,
+    "grn": 4.1,
+    "snp": 0.0,
+    "pc": 7.08,
+    "oth": 1.86
+   }
+  },
+  {
+   "name": "Vauxhall and Camberwell Green",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 7.48,
+    "lab": 57.35,
+    "ld": 12.12,
+    "ref": 5.42,
+    "grn": 17.09,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.54
+   }
+  },
+  {
+   "name": "Wakefield and Rothwell",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 18.01,
+    "lab": 43.72,
+    "ld": 7.99,
+    "ref": 20.73,
+    "grn": 5.88,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 3.68
+   }
+  },
+  {
+   "name": "Wallasey",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 11.67,
+    "lab": 57.72,
+    "ld": 4.31,
+    "ref": 15.62,
+    "grn": 9.14,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.54
+   }
+  },
+  {
+   "name": "Walsall and Bloxwich",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 17.96,
+    "lab": 33.65,
+    "ld": 2.2,
+    "ref": 19.61,
+    "grn": 6.15,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 20.44
+   }
+  },
+  {
+   "name": "Walthamstow",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 5.15,
+    "lab": 59.5,
+    "ld": 3.8,
+    "ref": 4.02,
+    "grn": 20.09,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 7.43
+   }
+  },
+  {
+   "name": "Warrington North",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 16.2,
+    "lab": 46.78,
+    "ld": 6.84,
+    "ref": 23.83,
+    "grn": 4.72,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.65
+   }
+  },
+  {
+   "name": "Warrington South",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 23.88,
+    "lab": 46.71,
+    "ld": 7.71,
+    "ref": 15.93,
+    "grn": 4.66,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.12
+   }
+  },
+  {
+   "name": "Warwick and Leamington",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 23.5,
+    "lab": 48.73,
+    "ld": 7.89,
+    "ref": 10.48,
+    "grn": 9.09,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.31
+   }
+  },
+  {
+   "name": "Washington and Gateshead South",
+   "region": "North East",
+   "country": "England",
+   "shares": {
+    "con": 12.57,
+    "lab": 47.76,
+    "ld": 4.33,
+    "ref": 29.09,
+    "grn": 4.56,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.69
+   }
+  },
+  {
+   "name": "Watford",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 24.71,
+    "lab": 35.33,
+    "ld": 17.04,
+    "ref": 11.09,
+    "grn": 5.46,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 6.36
+   }
+  },
+  {
+   "name": "Waveney Valley",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 30.31,
+    "lab": 9.42,
+    "ld": 2.47,
+    "ref": 15.85,
+    "grn": 41.71,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.24
+   }
+  },
+  {
+   "name": "Weald of Kent",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 39.84,
+    "lab": 23.23,
+    "ld": 7.84,
+    "ref": 20.13,
+    "grn": 8.97,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Wellingborough and Rushden",
+   "region": "East Midlands",
+   "country": "England",
+   "shares": {
+    "con": 27.85,
+    "lab": 40.32,
+    "ld": 3.57,
+    "ref": 21.5,
+    "grn": 6.15,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.62
+   }
+  },
+  {
+   "name": "Wells and Mendip Hills",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 24.82,
+    "lab": 7.0,
+    "ld": 46.9,
+    "ref": 13.13,
+    "grn": 4.11,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 4.05
+   }
+  },
+  {
+   "name": "Welwyn Hatfield",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 33.18,
+    "lab": 41.02,
+    "ld": 6.43,
+    "ref": 13.2,
+    "grn": 6.16,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "West Aberdeenshire and Kincardine",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 35.6,
+    "lab": 13.07,
+    "ld": 12.95,
+    "ref": 7.14,
+    "grn": 2.11,
+    "snp": 28.57,
+    "pc": 0.0,
+    "oth": 0.56
+   }
+  },
+  {
+   "name": "West Bromwich",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 20.06,
+    "lab": 46.25,
+    "ld": 3.6,
+    "ref": 19.46,
+    "grn": 5.58,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 5.04
+   }
+  },
+  {
+   "name": "West Dorset",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 36.52,
+    "lab": 5.87,
+    "ld": 51.32,
+    "ref": 0.0,
+    "grn": 4.35,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.94
+   }
+  },
+  {
+   "name": "West Dunbartonshire",
+   "region": "Scotland",
+   "country": "Scotland",
+   "shares": {
+    "con": 3.72,
+    "lab": 48.79,
+    "ld": 2.12,
+    "ref": 7.0,
+    "grn": 3.78,
+    "snp": 33.6,
+    "pc": 0.0,
+    "oth": 0.99
+   }
+  },
+  {
+   "name": "West Ham and Beckton",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 10.4,
+    "lab": 45.21,
+    "ld": 4.42,
+    "ref": 7.7,
+    "grn": 10.72,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 21.54
+   }
+  },
+  {
+   "name": "West Lancashire",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 19.64,
+    "lab": 50.46,
+    "ld": 4.62,
+    "ref": 17.89,
+    "grn": 7.38,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "West Suffolk",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 34.26,
+    "lab": 27.22,
+    "ld": 9.28,
+    "ref": 20.85,
+    "grn": 6.3,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.09
+   }
+  },
+  {
+   "name": "West Tyrone",
+   "region": "Northern Ireland",
+   "country": "Northern Ireland",
+   "shares": {
+    "con": 0.21,
+    "lab": 0.0,
+    "ld": 0.0,
+    "ref": 0.0,
+    "grn": 0.0,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 99.79
+   }
+  },
+  {
+   "name": "West Worcestershire",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 36.17,
+    "lab": 15.24,
+    "ld": 24.2,
+    "ref": 14.45,
+    "grn": 9.27,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.66
+   }
+  },
+  {
+   "name": "Westmorland and Lonsdale",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 19.36,
+    "lab": 4.66,
+    "ld": 62.71,
+    "ref": 9.78,
+    "grn": 3.0,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.5
+   }
+  },
+  {
+   "name": "Weston-super-Mare",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 28.08,
+    "lab": 38.48,
+    "ld": 8.86,
+    "ref": 18.25,
+    "grn": 6.34,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Wetherby and Easingwold",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 39.41,
+    "lab": 30.14,
+    "ld": 6.41,
+    "ref": 13.95,
+    "grn": 8.67,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.42
+   }
+  },
+  {
+   "name": "Whitehaven and Workington",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 20.21,
+    "lab": 52.99,
+    "ld": 2.67,
+    "ref": 21.24,
+    "grn": 2.88,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Widnes and Halewood",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 9.2,
+    "lab": 61.61,
+    "ld": 4.18,
+    "ref": 18.52,
+    "grn": 5.4,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.09
+   }
+  },
+  {
+   "name": "Wigan",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 10.54,
+    "lab": 47.44,
+    "ld": 4.14,
+    "ref": 24.09,
+    "grn": 3.98,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 9.82
+   }
+  },
+  {
+   "name": "Wimbledon",
+   "region": "London",
+   "country": "England",
+   "shares": {
+    "con": 22.15,
+    "lab": 21.34,
+    "ld": 45.09,
+    "ref": 5.86,
+    "grn": 4.44,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.13
+   }
+  },
+  {
+   "name": "Winchester",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 28.24,
+    "lab": 5.3,
+    "ld": 52.45,
+    "ref": 8.4,
+    "grn": 4.8,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.8
+   }
+  },
+  {
+   "name": "Windsor",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 36.43,
+    "lab": 22.16,
+    "ld": 21.08,
+    "ref": 10.3,
+    "grn": 5.06,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 4.97
+   }
+  },
+  {
+   "name": "Wirral West",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 26.34,
+    "lab": 46.36,
+    "ld": 6.12,
+    "ref": 12.86,
+    "grn": 8.33,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Witham",
+   "region": "East of England",
+   "country": "England",
+   "shares": {
+    "con": 37.21,
+    "lab": 27.04,
+    "ld": 6.8,
+    "ref": 19.5,
+    "grn": 6.99,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.46
+   }
+  },
+  {
+   "name": "Witney",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 32.61,
+    "lab": 9.44,
+    "ld": 41.18,
+    "ref": 12.47,
+    "grn": 3.28,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.02
+   }
+  },
+  {
+   "name": "Woking",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 26.53,
+    "lab": 9.23,
+    "ld": 49.89,
+    "ref": 10.15,
+    "grn": 3.85,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.35
+   }
+  },
+  {
+   "name": "Wokingham",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 32.22,
+    "lab": 6.72,
+    "ld": 47.67,
+    "ref": 9.77,
+    "grn": 3.62,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Wolverhampton North East",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 26.62,
+    "lab": 42.9,
+    "ld": 3.01,
+    "ref": 23.19,
+    "grn": 4.28,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.0
+   }
+  },
+  {
+   "name": "Wolverhampton South East",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 16.94,
+    "lab": 50.33,
+    "ld": 2.27,
+    "ref": 22.8,
+    "grn": 4.92,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.74
+   }
+  },
+  {
+   "name": "Wolverhampton West",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 26.26,
+    "lab": 44.28,
+    "ld": 3.15,
+    "ref": 13.92,
+    "grn": 5.84,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 6.55
+   }
+  },
+  {
+   "name": "Worcester",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 24.99,
+    "lab": 40.45,
+    "ld": 8.66,
+    "ref": 14.6,
+    "grn": 10.4,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.89
+   }
+  },
+  {
+   "name": "Worsley and Eccles",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 15.96,
+    "lab": 47.66,
+    "ld": 4.35,
+    "ref": 21.59,
+    "grn": 7.72,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.71
+   }
+  },
+  {
+   "name": "Worthing West",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 32.49,
+    "lab": 40.24,
+    "ld": 5.31,
+    "ref": 14.83,
+    "grn": 6.42,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 0.71
+   }
+  },
+  {
+   "name": "Wrexham",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 24.49,
+    "lab": 39.22,
+    "ld": 4.4,
+    "ref": 17.13,
+    "grn": 3.32,
+    "snp": 0.0,
+    "pc": 10.25,
+    "oth": 1.19
+   }
+  },
+  {
+   "name": "Wycombe",
+   "region": "South East",
+   "country": "England",
+   "shares": {
+    "con": 25.64,
+    "lab": 35.92,
+    "ld": 9.49,
+    "ref": 10.68,
+    "grn": 4.91,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 13.35
+   }
+  },
+  {
+   "name": "Wyre Forest",
+   "region": "West Midlands",
+   "country": "England",
+   "shares": {
+    "con": 32.09,
+    "lab": 30.29,
+    "ld": 6.22,
+    "ref": 21.44,
+    "grn": 5.41,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 4.56
+   }
+  },
+  {
+   "name": "Wythenshawe and Sale East",
+   "region": "North West",
+   "country": "England",
+   "shares": {
+    "con": 13.78,
+    "lab": 52.63,
+    "ld": 5.07,
+    "ref": 15.3,
+    "grn": 10.56,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 2.66
+   }
+  },
+  {
+   "name": "Yeovil",
+   "region": "South West",
+   "country": "England",
+   "shares": {
+    "con": 23.49,
+    "lab": 6.13,
+    "ld": 48.55,
+    "ref": 15.68,
+    "grn": 4.91,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.24
+   }
+  },
+  {
+   "name": "Ynys Môn",
+   "region": "Wales",
+   "country": "Wales",
+   "shares": {
+    "con": 30.5,
+    "lab": 23.35,
+    "ld": 1.35,
+    "ref": 9.88,
+    "grn": 1.85,
+    "snp": 0.0,
+    "pc": 32.46,
+    "oth": 0.61
+   }
+  },
+  {
+   "name": "York Central",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 12.43,
+    "lab": 56.64,
+    "ld": 7.04,
+    "ref": 10.9,
+    "grn": 11.97,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.03
+   }
+  },
+  {
+   "name": "York Outer",
+   "region": "Yorkshire and The Humber",
+   "country": "England",
+   "shares": {
+    "con": 26.94,
+    "lab": 45.32,
+    "ld": 10.75,
+    "ref": 11.57,
+    "grn": 4.33,
+    "snp": 0.0,
+    "pc": 0.0,
+    "oth": 1.09
+   }
+  }
+ ]
+}

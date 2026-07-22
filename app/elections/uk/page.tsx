@@ -497,6 +497,8 @@ export default async function UkElectionsPage() {
         <p>Sources: {meta.sources.join("; ")}. Referendum figures from the same Commons Library briefing.</p>
         <p className="mt-1">
           See also{" "}
+          <Link href="/elections/forecast" className="text-[var(--accent)] hover:underline">Forecast: the next election</Link>
+          {" · "}
           <Link href="/uk-political-leadership" className="text-[var(--accent)] hover:underline">UK Political Leadership</Link>
           {" · "}
           <Link href="/countries/united-kingdom" className="text-[var(--accent)] hover:underline">United Kingdom</Link>

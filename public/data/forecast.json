@@ -1,0 +1,1067 @@
+{
+ "built": "2026-07-22",
+ "method": "Recency-weighted poll averages; UK proportional swing on GE2024 constituency results with Monte Carlo error; US seats-votes fit on 2012-2024; NZ Sainte-Laguë; IL seat-poll averages; BR/FR round averages. Full method notes on the page.",
+ "uk": {
+  "electionAssumed": "2029-05-03",
+  "average": {
+   "con": 20.4,
+   "lab": 20.0,
+   "ld": 12.4,
+   "ref": 24.5,
+   "grn": 13.0,
+   "snp": 3.6
+  },
+  "pollsters": 14,
+  "latestPollDate": "2026-07-20",
+  "trend": [
+   {
+    "date": "2024-07-12",
+    "n": 2,
+    "con": 17.1,
+    "lab": 31.4,
+    "ld": 8.9,
+    "ref": 14.1,
+    "grn": 5.8,
+    "snp": 1.4
+   },
+   {
+    "date": "2024-07-26",
+    "n": 1,
+    "con": 22.0,
+    "lab": 36.0,
+    "ld": 11.0,
+    "ref": 17.0,
+    "grn": 7.0,
+    "snp": 2.0
+   },
+   {
+    "date": "2024-08-07",
+    "n": 3,
+    "con": 21.7,
+    "lab": 32.7,
+    "ld": 11.3,
+    "ref": 18.3,
+    "grn": 8.3,
+    "snp": 2.3
+   },
+   {
+    "date": "2024-09-19",
+    "n": 2,
+    "con": 23.0,
+    "lab": 31.0,
+    "ld": 13.5,
+    "ref": 18.0,
+    "grn": 7.5,
+    "snp": 2.5
+   },
+   {
+    "date": "2024-10-03",
+    "n": 6,
+    "con": 24.3,
+    "lab": 30.8,
+    "ld": 12.7,
+    "ref": 18.5,
+    "grn": 7.3,
+    "snp": 2.5
+   },
+   {
+    "date": "2024-10-10",
+    "n": 7,
+    "con": 25.4,
+    "lab": 28.9,
+    "ld": 12.7,
+    "ref": 19.3,
+    "grn": 7.3,
+    "snp": 2.3
+   },
+   {
+    "date": "2024-10-31",
+    "n": 5,
+    "con": 25.4,
+    "lab": 29.2,
+    "ld": 12.8,
+    "ref": 18.4,
+    "grn": 8.0,
+    "snp": 2.2
+   },
+   {
+    "date": "2024-11-13",
+    "n": 5,
+    "con": 26.2,
+    "lab": 28.2,
+    "ld": 12.2,
+    "ref": 19.0,
+    "grn": 7.8,
+    "snp": 2.4
+   },
+   {
+    "date": "2024-11-27",
+    "n": 7,
+    "con": 27.3,
+    "lab": 28.0,
+    "ld": 12.0,
+    "ref": 18.7,
+    "grn": 7.6,
+    "snp": 2.7
+   },
+   {
+    "date": "2024-12-09",
+    "n": 5,
+    "con": 25.6,
+    "lab": 26.8,
+    "ld": 12.4,
+    "ref": 20.8,
+    "grn": 7.4,
+    "snp": 2.6
+   },
+   {
+    "date": "2024-12-19",
+    "n": 5,
+    "con": 25.0,
+    "lab": 28.0,
+    "ld": 12.0,
+    "ref": 21.0,
+    "grn": 8.0,
+    "snp": 2.6
+   },
+   {
+    "date": "2025-01-10",
+    "n": 8,
+    "con": 24.0,
+    "lab": 25.4,
+    "ld": 12.1,
+    "ref": 25.0,
+    "grn": 8.6,
+    "snp": 2.5
+   },
+   {
+    "date": "2025-01-20",
+    "n": 13,
+    "con": 22.7,
+    "lab": 24.8,
+    "ld": 12.3,
+    "ref": 24.8,
+    "grn": 9.5,
+    "snp": 2.7
+   },
+   {
+    "date": "2025-02-03",
+    "n": 12,
+    "con": 23.5,
+    "lab": 22.9,
+    "ld": 13.8,
+    "ref": 24.6,
+    "grn": 8.2,
+    "snp": 3.2
+   },
+   {
+    "date": "2025-02-20",
+    "n": 8,
+    "con": 23.5,
+    "lab": 19.4,
+    "ld": 15.8,
+    "ref": 24.2,
+    "grn": 9.8,
+    "snp": 3.8
+   },
+   {
+    "date": "2025-03-03",
+    "n": 11,
+    "con": 22.5,
+    "lab": 21.6,
+    "ld": 15.3,
+    "ref": 24.5,
+    "grn": 8.9,
+    "snp": 3.7
+   },
+   {
+    "date": "2025-03-17",
+    "n": 9,
+    "con": 23.7,
+    "lab": 20.9,
+    "ld": 14.6,
+    "ref": 23.1,
+    "grn": 9.9,
+    "snp": 4.0
+   },
+   {
+    "date": "2025-03-31",
+    "n": 11,
+    "con": 23.5,
+    "lab": 22.0,
+    "ld": 14.5,
+    "ref": 24.5,
+    "grn": 9.0,
+    "snp": 3.0
+   },
+   {
+    "date": "2025-04-14",
+    "n": 9,
+    "con": 22.1,
+    "lab": 22.1,
+    "ld": 14.9,
+    "ref": 23.8,
+    "grn": 9.7,
+    "snp": 3.3
+   },
+   {
+    "date": "2025-05-02",
+    "n": 9,
+    "con": 20.2,
+    "lab": 24.4,
+    "ld": 13.8,
+    "ref": 26.7,
+    "grn": 8.3,
+    "snp": 2.8
+   },
+   {
+    "date": "2025-05-12",
+    "n": 9,
+    "con": 18.7,
+    "lab": 22.9,
+    "ld": 14.6,
+    "ref": 29.4,
+    "grn": 8.8,
+    "snp": 2.4
+   },
+   {
+    "date": "2025-05-30",
+    "n": 10,
+    "con": 18.3,
+    "lab": 22.8,
+    "ld": 14.2,
+    "ref": 29.3,
+    "grn": 9.4,
+    "snp": 2.3
+   },
+   {
+    "date": "2025-06-11",
+    "n": 10,
+    "con": 18.7,
+    "lab": 23.2,
+    "ld": 13.4,
+    "ref": 29.8,
+    "grn": 8.6,
+    "snp": 3.0
+   },
+   {
+    "date": "2025-06-27",
+    "n": 10,
+    "con": 18.3,
+    "lab": 24.1,
+    "ld": 13.6,
+    "ref": 27.8,
+    "grn": 9.4,
+    "snp": 2.8
+   },
+   {
+    "date": "2025-07-10",
+    "n": 8,
+    "con": 17.9,
+    "lab": 23.0,
+    "ld": 14.2,
+    "ref": 29.1,
+    "grn": 9.2,
+    "snp": 2.9
+   },
+   {
+    "date": "2025-07-21",
+    "n": 7,
+    "con": 18.3,
+    "lab": 23.0,
+    "ld": 14.0,
+    "ref": 28.9,
+    "grn": 9.0,
+    "snp": 2.7
+   },
+   {
+    "date": "2025-08-04",
+    "n": 8,
+    "con": 17.9,
+    "lab": 22.2,
+    "ld": 13.8,
+    "ref": 30.4,
+    "grn": 8.2,
+    "snp": 2.8
+   },
+   {
+    "date": "2025-08-19",
+    "n": 8,
+    "con": 18.4,
+    "lab": 21.6,
+    "ld": 13.5,
+    "ref": 29.0,
+    "grn": 9.2,
+    "snp": 2.8
+   },
+   {
+    "date": "2025-09-01",
+    "n": 11,
+    "con": 17.8,
+    "lab": 21.7,
+    "ld": 13.2,
+    "ref": 30.8,
+    "grn": 8.5,
+    "snp": 2.6
+   },
+   {
+    "date": "2025-09-18",
+    "n": 10,
+    "con": 17.5,
+    "lab": 21.3,
+    "ld": 13.0,
+    "ref": 30.2,
+    "grn": 10.3,
+    "snp": 2.7
+   },
+   {
+    "date": "2025-10-01",
+    "n": 11,
+    "con": 17.8,
+    "lab": 20.9,
+    "ld": 13.9,
+    "ref": 31.0,
+    "grn": 9.2,
+    "snp": 2.9
+   },
+   {
+    "date": "2025-10-17",
+    "n": 7,
+    "con": 19.0,
+    "lab": 18.0,
+    "ld": 16.3,
+    "ref": 27.1,
+    "grn": 12.0,
+    "snp": 3.9
+   },
+   {
+    "date": "2025-10-27",
+    "n": 7,
+    "con": 17.6,
+    "lab": 19.7,
+    "ld": 13.6,
+    "ref": 29.6,
+    "grn": 12.7,
+    "snp": 2.7
+   },
+   {
+    "date": "2025-11-10",
+    "n": 9,
+    "con": 18.0,
+    "lab": 18.4,
+    "ld": 12.7,
+    "ref": 30.2,
+    "grn": 14.4,
+    "snp": 2.9
+   },
+   {
+    "date": "2025-11-28",
+    "n": 12,
+    "con": 19.1,
+    "lab": 18.7,
+    "ld": 14.5,
+    "ref": 28.4,
+    "grn": 12.2,
+    "snp": 3.2
+   },
+   {
+    "date": "2025-12-15",
+    "n": 8,
+    "con": 19.8,
+    "lab": 18.9,
+    "ld": 12.9,
+    "ref": 28.5,
+    "grn": 13.6,
+    "snp": 3.1
+   },
+   {
+    "date": "2025-12-22",
+    "n": 3,
+    "con": 20.0,
+    "lab": 20.3,
+    "ld": 14.0,
+    "ref": 27.7,
+    "grn": 11.3,
+    "snp": 3.0
+   },
+   {
+    "date": "2026-01-09",
+    "n": 7,
+    "con": 18.9,
+    "lab": 18.4,
+    "ld": 13.1,
+    "ref": 28.7,
+    "grn": 13.9,
+    "snp": 2.9
+   },
+   {
+    "date": "2026-01-23",
+    "n": 6,
+    "con": 18.5,
+    "lab": 20.7,
+    "ld": 13.7,
+    "ref": 27.3,
+    "grn": 13.2,
+    "snp": 2.7
+   },
+   {
+    "date": "2026-02-02",
+    "n": 7,
+    "con": 18.9,
+    "lab": 19.9,
+    "ld": 12.4,
+    "ref": 29.6,
+    "grn": 13.6,
+    "snp": 2.6
+   },
+   {
+    "date": "2026-02-16",
+    "n": 9,
+    "con": 19.3,
+    "lab": 20.2,
+    "ld": 12.3,
+    "ref": 27.3,
+    "grn": 13.4,
+    "snp": 2.8
+   },
+   {
+    "date": "2026-03-06",
+    "n": 14,
+    "con": 18.0,
+    "lab": 19.4,
+    "ld": 12.0,
+    "ref": 26.9,
+    "grn": 15.3,
+    "snp": 2.9
+   },
+   {
+    "date": "2026-03-20",
+    "n": 7,
+    "con": 18.3,
+    "lab": 18.3,
+    "ld": 13.3,
+    "ref": 26.0,
+    "grn": 16.3,
+    "snp": 2.7
+   },
+   {
+    "date": "2026-04-01",
+    "n": 10,
+    "con": 19.3,
+    "lab": 17.7,
+    "ld": 11.4,
+    "ref": 25.7,
+    "grn": 16.6,
+    "snp": 2.6
+   },
+   {
+    "date": "2026-04-16",
+    "n": 10,
+    "con": 18.8,
+    "lab": 20.0,
+    "ld": 12.1,
+    "ref": 25.5,
+    "grn": 15.1,
+    "snp": 2.8
+   },
+   {
+    "date": "2026-04-27",
+    "n": 11,
+    "con": 18.4,
+    "lab": 18.6,
+    "ld": 11.8,
+    "ref": 26.4,
+    "grn": 15.5,
+    "snp": 2.7
+   },
+   {
+    "date": "2026-05-15",
+    "n": 10,
+    "con": 18.0,
+    "lab": 19.5,
+    "ld": 12.4,
+    "ref": 27.8,
+    "grn": 13.3,
+    "snp": 3.2
+   },
+   {
+    "date": "2026-05-26",
+    "n": 10,
+    "con": 18.8,
+    "lab": 19.4,
+    "ld": 12.5,
+    "ref": 27.0,
+    "grn": 14.0,
+    "snp": 2.8
+   },
+   {
+    "date": "2026-06-11",
+    "n": 10,
+    "con": 18.7,
+    "lab": 19.0,
+    "ld": 12.1,
+    "ref": 27.1,
+    "grn": 13.4,
+    "snp": 2.9
+   },
+   {
+    "date": "2026-06-25",
+    "n": 13,
+    "con": 19.2,
+    "lab": 20.8,
+    "ld": 11.7,
+    "ref": 25.2,
+    "grn": 13.5,
+    "snp": 2.9
+   },
+   {
+    "date": "2026-07-09",
+    "n": 10,
+    "con": 20.5,
+    "lab": 18.1,
+    "ld": 13.0,
+    "ref": 25.0,
+    "grn": 13.5,
+    "snp": 3.4
+   },
+   {
+    "date": "2026-07-20",
+    "n": 3,
+    "con": 19.7,
+    "lab": 23.3,
+    "ld": 11.0,
+    "ref": 24.7,
+    "grn": 12.7,
+    "snp": 3.0
+   }
+  ],
+  "sim": {
+   "seats": {
+    "con": {
+     "median": 100,
+     "lo": 0,
+     "hi": 355
+    },
+    "lab": {
+     "median": 94,
+     "lo": 0,
+     "hi": 368
+    },
+    "ld": {
+     "median": 75,
+     "lo": 0,
+     "hi": 122
+    },
+    "ref": {
+     "median": 208,
+     "lo": 5,
+     "hi": 409
+    },
+    "grn": {
+     "median": 34,
+     "lo": 2,
+     "hi": 133
+    },
+    "snp": {
+     "median": 47,
+     "lo": 0,
+     "hi": 57
+    },
+    "pc": {
+     "median": 4,
+     "lo": 0,
+     "hi": 8
+    },
+    "oth": {
+     "median": 16,
+     "lo": 9,
+     "hi": 26
+    }
+   },
+   "niSeats": 18,
+   "majorityNeeds": 326,
+   "pLargest": {
+    "con": 28.2,
+    "lab": 20.4,
+    "ld": 0.2,
+    "ref": 50.0,
+    "grn": 1.1
+   },
+   "pMajority": {
+    "con": 8.9,
+    "lab": 7.6,
+    "ref": 23.5,
+    "grn": 0.1
+   },
+   "pHung": 59.9,
+   "monthsOut": 33.4,
+   "sims": 4000,
+   "nat2024": {
+    "con": 23.6,
+    "lab": 35.5,
+    "ld": 11.7,
+    "ref": 14.8,
+    "grn": 7.0,
+    "snp": 2.7,
+    "pc": 0.8,
+    "oth": 3.8
+   }
+  },
+  "sources": [
+   "Wikipedia: Opinion polling for the next United Kingdom general election (CC BY-SA 4.0)",
+   "House of Commons Library, GE2024 results by constituency (CBP-10009, Open Parliament Licence)"
+  ]
+ },
+ "us": {
+  "margin": 4.9,
+  "sigma": 2.7,
+  "aggregators": [
+   {
+    "source": "Decision Desk HQ",
+    "dem": 45.7,
+    "rep": 42.7,
+    "updated": "2026-07-18"
+   },
+   {
+    "source": "FiftyPlusOne",
+    "dem": 49.2,
+    "rep": 43.9,
+    "updated": "2026-07-18"
+   },
+   {
+    "source": "RealClearPolitics",
+    "dem": 48.6,
+    "rep": 43.9,
+    "updated": "2026-07-18"
+   },
+   {
+    "source": "Silver Bulletin",
+    "dem": 47.9,
+    "rep": 41.9,
+    "updated": "2026-07-18"
+   },
+   {
+    "source": "VoteHub",
+    "dem": 47.4,
+    "rep": 42.4,
+    "updated": "2026-07-18"
+   },
+   {
+    "source": "Race to the WH",
+    "dem": 47.4,
+    "rep": 41.9,
+    "updated": "2026-07-18"
+   }
+  ],
+  "demSeats": {
+   "median": 223,
+   "lo": 201,
+   "hi": 245
+  },
+  "pDemHouse": 65.8,
+  "fit": {
+   "a": 209.5,
+   "b": 2.71,
+   "residSd": 11.3,
+   "cycles": [
+    [
+     2012,
+     1.2,
+     201
+    ],
+    [
+     2014,
+     -5.7,
+     188
+    ],
+    [
+     2016,
+     -1.1,
+     194
+    ],
+    [
+     2018,
+     8.6,
+     235
+    ],
+    [
+     2020,
+     3.1,
+     222
+    ],
+    [
+     2022,
+     -2.8,
+     213
+    ],
+    [
+     2024,
+     -2.7,
+     215
+    ]
+   ]
+  },
+  "monthsOut": 3.4,
+  "sims": 20000,
+  "election": "2026-11-03",
+  "sources": [
+   "Wikipedia: 2026 United States House of Representatives elections, generic congressional ballot (CC BY-SA 4.0)",
+   "Wikipedia: 2026 United States Senate elections, race-ratings table citing Cook, Inside Elections, Sabato, The Economist, RCP, DDHQ, Race to the WH and Fox (CC BY-SA 4.0)"
+  ],
+  "senate": {
+   "races": 35,
+   "carryover": {
+    "D": 34,
+    "R": 31
+   },
+   "seatsUp": {
+    "D": 13,
+    "R": 22
+   },
+   "senateNow": {
+    "R": 53,
+    "D": 47
+   },
+   "demSeats": {
+    "median": 49,
+    "lo": 46,
+    "hi": 53
+   },
+   "pDemControl": 31.5,
+   "competitive": [
+    {
+     "state": "Ohio",
+     "held": "R",
+     "score": 0.0,
+     "retiring": false,
+     "pDem": 50.0
+    },
+    {
+     "state": "Maine",
+     "held": "R",
+     "score": 0.19,
+     "retiring": false,
+     "pDem": 56.0
+    },
+    {
+     "state": "Alaska",
+     "held": "R",
+     "score": -0.25,
+     "retiring": false,
+     "pDem": 43.0
+    },
+    {
+     "state": "Michigan",
+     "held": "D",
+     "score": 0.44,
+     "retiring": true,
+     "pDem": 63.0
+    },
+    {
+     "state": "Iowa",
+     "held": "R",
+     "score": -0.62,
+     "retiring": true,
+     "pDem": 33.0
+    },
+    {
+     "state": "Texas",
+     "held": "R",
+     "score": -0.62,
+     "retiring": false,
+     "pDem": 33.0
+    }
+   ],
+   "sims": 20000,
+   "source": "Wikipedia: 2026 United States Senate elections, race-ratings table citing Cook, Inside Elections, Sabato, The Economist, RCP, DDHQ, Race to the WH and Fox (CC BY-SA 4.0)"
+  }
+ },
+ "nz": {
+  "electionAssumed": "2026-10-17",
+  "average": {
+   "nat": 29.6,
+   "lab": 32.0,
+   "grn": 11.3,
+   "act": 7.4,
+   "nzf": 11.2,
+   "tpm": 2.6,
+   "top": 4.4
+  },
+  "pollsters": 7,
+  "latestPollDate": "2026-07-09",
+  "seats": {
+   "nat": {
+    "median": 37,
+    "lo": 32,
+    "hi": 42
+   },
+   "lab": {
+    "median": 40,
+    "lo": 35,
+    "hi": 45
+   },
+   "grn": {
+    "median": 14,
+    "lo": 11,
+    "hi": 17
+   },
+   "act": {
+    "median": 9,
+    "lo": 7,
+    "hi": 12
+   },
+   "nzf": {
+    "median": 14,
+    "lo": 11,
+    "hi": 17
+   },
+   "tpm": {
+    "median": 3,
+    "lo": 0,
+    "hi": 6
+   },
+   "top": {
+    "median": 0,
+    "lo": 0,
+    "hi": 8
+   }
+  },
+  "pRightBloc": 49.1,
+  "pLeftBloc": 18.5,
+  "pNeither": 32.4,
+  "monthsOut": 2.9,
+  "sims": 10000,
+  "sources": [
+   "Wikipedia: Opinion polling for the 2026 New Zealand general election (CC BY-SA 4.0)"
+  ]
+ },
+ "il": {
+  "electionAssumed": "2026-10-27",
+  "parties": [
+   {
+    "name": "Yashar",
+    "seats": 21.4
+   },
+   {
+    "name": "Likud",
+    "seats": 21.0
+   },
+   {
+    "name": "Together",
+    "seats": 15.6
+   },
+   {
+    "name": "Dems",
+    "seats": 10.6
+   },
+   {
+    "name": "Yisrael Beiteinu",
+    "seats": 10.0
+   },
+   {
+    "name": "Shas",
+    "seats": 8.0
+   },
+   {
+    "name": "UTJ",
+    "seats": 8.0
+   },
+   {
+    "name": "Otzma",
+    "seats": 7.4
+   },
+   {
+    "name": "Hadash –Ta'al",
+    "seats": 6.0
+   },
+   {
+    "name": "Ra'am",
+    "seats": 5.0
+   },
+   {
+    "name": "RZP",
+    "seats": 4.6
+   },
+   {
+    "name": "Yesodot Yisrael",
+    "seats": 2.4
+   },
+   {
+    "name": "Blue & White",
+    "seats": 0.0
+   },
+   {
+    "name": "Balad",
+    "seats": 0.0
+   }
+  ],
+  "polls": 3,
+  "pollsters": 2,
+  "latestPollDate": "2026-07-21",
+  "gov": {
+   "avg": 49.6,
+   "pMajority": 0.0
+  },
+  "monthsOut": 3.2,
+  "sims": 8000,
+  "sources": [
+   "Wikipedia: Opinion polling for the 2026 Israeli legislative election (CC BY-SA 4.0)"
+  ]
+ },
+ "br": {
+  "election": "2026-10-04",
+  "firstRound": {
+   "shares": {
+    "Lula": 40.7,
+    "F. Bolsonaro": 32.6,
+    "Caiado": 4.8,
+    "Santos": 4.4,
+    "Zema": 2.9,
+    "Cury": 1.4
+   },
+   "polls": 17,
+   "latest": "2026-07-20"
+  },
+  "runoffs": [
+   {
+    "a": "Lula",
+    "b": "F. Bolsonaro",
+    "avgA": 46.1,
+    "avgB": 41.7,
+    "pA": 84.4,
+    "polls": 51,
+    "latest": "2026-07-20"
+   }
+  ],
+  "monthsOut": 2.4,
+  "sources": [
+   "Wikipedia: Opinion polling for the 2026 Brazilian presidential election (CC BY-SA 4.0)"
+  ]
+ },
+ "fr": {
+  "electionAssumed": "2027-04-11",
+  "firstRound": {
+   "shares": {
+    "Marine Le Pen": 35.6,
+    "Édouard Philippe": 16.4,
+    "Jean-Luc Mélenchon": 15.0,
+    "Raphaël Glucksmann": 10.5,
+    "Gabriel Attal": 9.4,
+    "Bruno Retailleau": 8.0,
+    "Marine Tondelier": 3.6,
+    "Éric Zemmour": 3.3,
+    "Dominique de Villepin": 2.5,
+    "Fabien Roussel": 2.1,
+    "Nicolas Dupont-Aignan": 1.5,
+    "Nathalie Arthaud": 0.9
+   },
+   "polls": 5,
+   "latest": "2026-07-10"
+  },
+  "runoffs": [
+   {
+    "a": "Le Pen RN",
+    "b": "Philippe HOR",
+    "avgA": 52.5,
+    "avgB": 47.5,
+    "pA": 76.9,
+    "polls": 4,
+    "latest": "2026-07-08"
+   },
+   {
+    "a": "Le Pen RN",
+    "b": "Attal RE",
+    "avgA": 54.9,
+    "avgB": 45.1,
+    "pA": 93.8,
+    "polls": 4,
+    "latest": "2026-07-08"
+   },
+   {
+    "a": "Le Pen RN",
+    "b": "Mélenchon LFI",
+    "avgA": 68.4,
+    "avgB": 31.6,
+    "pA": 100.0,
+    "polls": 3,
+    "latest": "2026-07-08"
+   },
+   {
+    "a": "Bardella RN",
+    "b": "Philippe HOR",
+    "avgA": 52.9,
+    "avgB": 47.1,
+    "pA": 81.4,
+    "polls": 4,
+    "latest": "2026-05-27"
+   },
+   {
+    "a": "Bardella RN",
+    "b": "Attal RE",
+    "avgA": 57.0,
+    "avgB": 43.0,
+    "pA": 98.5,
+    "polls": 1,
+    "latest": "2026-05-27"
+   },
+   {
+    "a": "Bardella RN",
+    "b": "Mélenchon LFI",
+    "avgA": 68.2,
+    "avgB": 31.8,
+    "pA": 100.0,
+    "polls": 2,
+    "latest": "2026-05-27"
+   },
+   {
+    "a": "Bardella RN",
+    "b": "Glucksmann PP",
+    "avgA": 58.5,
+    "avgB": 41.5,
+    "pA": 99.6,
+    "polls": 1,
+    "latest": "2026-03-27"
+   },
+   {
+    "a": "Bardella RN",
+    "b": "Retailleau LR",
+    "avgA": 58.0,
+    "avgB": 42.0,
+    "pA": 99.3,
+    "polls": 1,
+    "latest": "2026-03-27"
+   }
+  ],
+  "monthsOut": 8.6,
+  "sources": [
+   "Wikipedia: Opinion polling for the 2027 French presidential election (CC BY-SA 4.0)"
+  ]
+ },
+ "history": [
+  {
+   "date": "2026-07-22",
+   "uk": {
+    "con": 20.4,
+    "lab": 20.0,
+    "ld": 12.4,
+    "ref": 24.5,
+    "grn": 13.0,
+    "snp": 3.6
+   },
+   "us": {
+    "margin": 4.9
+   },
+   "ukSeats": {
+    "con": 100,
+    "lab": 94,
+    "ld": 75,
+    "ref": 208,
+    "grn": 34,
+    "snp": 47,
+    "pc": 4,
+    "oth": 16
+   },
+   "usDemSeats": 223
+  }
+ ]
+}

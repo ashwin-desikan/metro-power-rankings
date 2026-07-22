@@ -1,0 +1,84 @@
+{
+ "source": "Wikipedia: Opinion polling for the 2026 Israeli legislative election (CC BY-SA 4.0)",
+ "parties": [
+  "Likud",
+  "Together",
+  "RZP",
+  "Otzma",
+  "Blue & White",
+  "Shas",
+  "UTJ",
+  "Yisrael Beiteinu",
+  "Ra'am",
+  "Hadash –Ta'al",
+  "Balad",
+  "Dems",
+  "Yashar",
+  "Yesodot Yisrael"
+ ],
+ "polls": [
+  {
+   "date": "2026-07-09",
+   "pollster": "Lazar",
+   "seats": {
+    "Likud": 21,
+    "Together": 18,
+    "RZP": 4,
+    "Otzma": 8,
+    "Blue & White": 0,
+    "Shas": 8,
+    "UTJ": 8,
+    "Yisrael Beiteinu": 10,
+    "Ra'am": 5,
+    "Hadash –Ta'al": 6,
+    "Balad": 0,
+    "Dems": 10,
+    "Yashar": 22,
+    "Yesodot Yisrael": 0
+   },
+   "gov": 49
+  },
+  {
+   "date": "2026-07-20",
+   "pollster": "Midgam",
+   "seats": {
+    "Likud": 23,
+    "Together": 15,
+    "RZP": 4,
+    "Otzma": 8,
+    "Blue & White": 0,
+    "Shas": 8,
+    "UTJ": 8,
+    "Yisrael Beiteinu": 9,
+    "Ra'am": 5,
+    "Hadash –Ta'al": 5,
+    "Balad": 0,
+    "Dems": 11,
+    "Yashar": 24,
+    "Yesodot Yisrael": 0
+   },
+   "gov": 51
+  },
+  {
+   "date": "2026-07-21",
+   "pollster": "Midgam",
+   "seats": {
+    "Likud": 21,
+    "Together": 14,
+    "RZP": 5,
+    "Otzma": 7,
+    "Blue & White": 0,
+    "Shas": 8,
+    "UTJ": 8,
+    "Yisrael Beiteinu": 10,
+    "Ra'am": 5,
+    "Hadash –Ta'al": 6,
+    "Balad": 0,
+    "Dems": 11,
+    "Yashar": 21,
+    "Yesodot Yisrael": 4
+   },
+   "gov": 50
+  }
+ ]
+}

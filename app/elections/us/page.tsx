@@ -397,6 +397,8 @@ export default function UsElectionsPage() {
         <p>Sources: {meta.sources.join("; ")}.</p>
         <p className="mt-1">
           See also{" "}
+          <Link href="/elections/forecast" className="text-[var(--accent)] hover:underline">Forecast: the next election</Link>
+          {" · "}
           <Link href="/us-political-leadership" className="text-[var(--accent)] hover:underline">US Political Leadership</Link>
           {" · "}
           <Link href="/elections/uk" className="text-[var(--accent)] hover:underline">UK General Elections</Link>

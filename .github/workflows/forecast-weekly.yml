@@ -1,0 +1,50 @@
+name: Election forecast refresh (weekly, no deploy)
+
+# Re-scrapes the polling sources (Wikipedia polling tables; the GE2024
+# constituency base is fetched once and kept), reruns the forecast
+# simulation and commits public/data/forecast.json plus the accumulated
+# inputs with [vercel skip]. /elections/forecast reads it via ISR from
+# GitHub raw, so updates appear with no Vercel build. Stdlib only — no
+# pip install needed.
+
+on:
+  # schedule DISABLED 2026-07-22 (before first firing): the mini's weekly
+  # egress-refresh owns the forecast rebuild — Ashwin wants all scheduled jobs
+  # running from the mini. Manual-fallback only here; no double-run.
+  # schedule:
+  #   - cron: "10 6 * * 1"   # 06:10 UTC every Monday
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: forecast-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
+        with:
+          python-version: "3.12"
+      - name: Fetch polls + rebuild forecast
+        run: |
+          set -e
+          python scripts/forecast/fetch_data.py
+          python scripts/forecast/build_forecast.py
+      - name: Commit if changed
+        run: |
+          set -e
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/forecast.json data/forecast
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "data: weekly election forecast refresh [vercel skip]"
+            git pull --rebase origin main
+            git push origin main
+          fi

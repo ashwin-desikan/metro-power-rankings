@@ -38,6 +38,7 @@ import ElectionsWorldMap, { type HubMarker } from "./ElectionsWorldMap";
 import TimelineStrip, { TimelineLegend, type TlDot, type TlRow } from "./TimelineStrip";
 import { BackButton } from "./HubShared";
 import { getElectionCensus } from "@/lib/electionCensus";
+import { getForecast, FORECAST_COLORS, FORECAST_NAMES, NZ_COLORS, NZ_NAMES } from "@/lib/forecast";
 import LineChart, { type ChartSeries } from "./LineChart";
 
 const PATH = "/elections";
@@ -64,7 +65,12 @@ const CAPITALS: Record<string, [number, number]> = {
   in: [28.6139, 77.209], jp: [35.6762, 139.6503], au: [-35.2809, 149.13], nz: [-41.2866, 174.7756],
   kr: [37.5665, 126.978], id: [-6.2088, 106.8456], tw: [25.033, 121.5654], cn: [39.9042, 116.4074],
   ua: [50.4501, 30.5234], iq: [33.3152, 44.3661], ps: [31.9038, 35.2034], va: [41.9029, 12.4534],
+  sg: [1.3521, 103.8198], my: [3.139, 101.6869], ch: [46.948, 7.4474], be: [50.8503, 4.3517],
+  dk: [55.6761, 12.5683],
 };
+// The EU marker sits at Strasbourg — the Parliament's seat — so Brussels
+// stays legible as Belgium's marker.
+CAPITALS.eu = [48.5734, 7.7521];
 
 // Timeline dots come from the shared election census (lib/electionCensus),
 // which also powers the wartime cross-references and /elections/under-fire.
@@ -89,7 +95,75 @@ function HubCard({ c }: { c: Card }) {
   );
 }
 
-export default function ElectionsPage() {
+// Colours for the tracked-election preview blocks (candidate names as they
+// appear in the forecast dataset; unknowns fall back to grey).
+const TRACK_COLORS: Record<string, string> = {
+  "Lula": "#C4122D", "F. Bolsonaro": "#1B4F9C", "Caiado": "#0B7A75", "Santos": "#6D28D9",
+  "Marine Le Pen": "#0D378A", "Édouard Philippe": "#0EA5E9", "Jean-Luc Mélenchon": "#C9462C",
+  "Raphaël Glucksmann": "#E75480", "Yashar": "#0FA88F", "Likud": "#1E5EBE", "Together": "#7C3AED",
+};
+const trackColor = (name: string) => TRACK_COLORS[name] ?? "#9ca3af";
+// FR scenario tables tag candidates with their party ("Le Pen RN") — strip for display
+const frName = (s: string) => s.replace(/\s+[A-ZÉÈÀ]{2,}$/u, "");
+
+function TrackRow({ label, color, value }: { label: string; color: string; value: string }) {
+  return (
+    <div className="flex items-baseline justify-between text-[11px]">
+      <span className="font-semibold text-[var(--text)] truncate">
+        <span className="inline-block w-2 h-2 rounded-full mr-1.5 align-middle shrink-0" style={{ backgroundColor: color }} />
+        {label}
+      </span>
+      <span className="tabular-nums text-[var(--text-muted)] shrink-0 ml-2">{value}</span>
+    </div>
+  );
+}
+
+function TrackBlock({ flag, title, sub, rows, note }: { flag: string; title: string; sub: string; rows: { label: string; color: string; value: string }[]; note: string }) {
+  return (
+    <div className="rounded-xl border p-3" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+      <div className="flex items-center gap-2 mb-0.5">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={flagUrlByCode(flag)}
+          srcSet={flagSrcSetByCode(flag)}
+          alt=""
+          width={20}
+          height={15}
+          className="rounded-[2px] border shrink-0"
+          style={{ borderColor: "var(--border)" }}
+        />
+        <span className="text-sm font-bold text-[var(--text)]">{title}</span>
+      </div>
+      <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] mb-2">{sub}</p>
+      <div className="grid gap-1">
+        {rows.map((r) => <TrackRow key={r.label} {...r} />)}
+      </div>
+      <p className="text-[10px] text-[var(--text-dim)] mt-2">{note}</p>
+    </div>
+  );
+}
+
+function MiniRange({ label, color, median, lo, hi, max, right }: { label: string; color: string; median: number; lo: number; hi: number; max: number; right: string }) {
+  const pct = (n: number) => `${(n / max) * 100}%`;
+  return (
+    <div className="mb-1.5">
+      <div className="flex items-baseline justify-between text-[11px] mb-0.5">
+        <span className="font-semibold text-[var(--text)]">
+          <span className="inline-block w-2 h-2 rounded-full mr-1.5 align-middle" style={{ backgroundColor: color }} />
+          {label}
+        </span>
+        <span className="tabular-nums text-[var(--text-muted)]">{median} <span className="text-[var(--text-dim)]">({lo}–{hi})</span> <span className="ml-1 text-[var(--text-dim)]">{right}</span></span>
+      </div>
+      <div className="relative h-2 rounded-full overflow-hidden" style={{ backgroundColor: "var(--border)" }}>
+        <div className="absolute h-full rounded-full opacity-40" style={{ left: pct(lo), width: `calc(${pct(hi)} - ${pct(lo)})`, backgroundColor: color }} />
+        <div className="absolute h-full w-0.5" style={{ left: `calc(${pct(median)} - 1px)`, backgroundColor: color }} />
+      </div>
+    </div>
+  );
+}
+
+export default async function ElectionsPage() {
+  const forecast = await getForecast();
   const uk = getUkElections();
   const ukFirst = uk.elections[0];
   const ukLast = uk.elections[uk.elections.length - 1];
@@ -138,11 +212,12 @@ export default function ElectionsPage() {
 
   // ---------- world map markers ----------
   const markers: HubMarker[] = Object.values(ELECTION_HUBS)
-    .filter((m) => m.tier !== "compact" && CAPITALS[m.code])
+    .filter((m) => CAPITALS[m.code])
     .map((m) => ({
       code: m.code, name: m.name, href: m.href,
       lat: CAPITALS[m.code][0], lon: CAPITALS[m.code][1],
       last: m.last, next: m.next, note: m.note ?? null,
+      compact: m.tier === "compact",
     }));
 
   // ---------- "every election ever" timeline ----------
@@ -378,6 +453,127 @@ export default function ElectionsPage() {
         <p className="text-[var(--text-muted)] max-w-3xl">{DESC}</p>
       </header>
 
+      {/* ---------- forecast previews: the permanent US & UK window + the rotating tracker ---------- */}
+      {forecast ? (
+        <section className="mb-8 grid gap-4">
+          <Link
+            href="/elections/forecast"
+            className="block rounded-2xl border p-5 transition-colors hover:border-[var(--accent)]"
+            style={{ borderColor: "#B4540A", backgroundColor: "rgba(217,119,6,0.04)" }}
+          >
+            <div className="flex items-baseline justify-between gap-3 flex-wrap mb-1">
+              <h2 className="text-xl font-bold text-[var(--text)]">
+                Forecasts <span className="text-sm font-normal" style={{ color: "#D97706" }}>· United States &amp; United Kingdom, always on</span>
+              </h2>
+              <span className="text-xs text-[var(--accent)]">Open the full forecast →</span>
+            </div>
+            <p className="text-xs text-[var(--text-muted)] mb-4 max-w-3xl">
+              Whatever the next US and UK elections are, they live here permanently. Seat ranges from
+              thousands of simulations, updated weekly — ranges first, probabilities second, and
+              labelled as speculation. Updated {forecast.built}.
+            </p>
+            <div className="grid gap-5 md:grid-cols-2">
+              <div>
+                <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] mb-2">United States · 2026 midterms · 3 November</p>
+                {forecast.us ? (
+                  <>
+                    <MiniRange label="Dem House" color={FORECAST_COLORS.dem} median={forecast.us.demSeats.median} lo={forecast.us.demSeats.lo} hi={forecast.us.demSeats.hi} max={435} right={`House ${forecast.us.pDemHouse}%`} />
+                    <MiniRange label="Rep House" color={FORECAST_COLORS.rep} median={435 - forecast.us.demSeats.median} lo={435 - forecast.us.demSeats.hi} hi={435 - forecast.us.demSeats.lo} max={435} right={`House ${(100 - forecast.us.pDemHouse).toFixed(1)}%`} />
+                    {forecast.us.senate ? (
+                      <>
+                        <MiniRange label="Dem Senate" color={FORECAST_COLORS.dem} median={forecast.us.senate.demSeats.median} lo={forecast.us.senate.demSeats.lo} hi={forecast.us.senate.demSeats.hi} max={100} right={`control ${forecast.us.senate.pDemControl}%`} />
+                        <MiniRange label="Rep Senate" color={FORECAST_COLORS.rep} median={100 - forecast.us.senate.demSeats.median} lo={100 - forecast.us.senate.demSeats.hi} hi={100 - forecast.us.senate.demSeats.lo} max={100} right={`control ${(100 - forecast.us.senate.pDemControl).toFixed(1)}%`} />
+                      </>
+                    ) : null}
+                  </>
+                ) : null}
+              </div>
+              <div>
+                <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] mb-2">United Kingdom · next general election · hung parliament {forecast.uk.sim.pHung}%</p>
+                {Object.entries(forecast.uk.sim.seats)
+                  .filter(([k]) => k !== "oth" && k !== "ni")
+                  .filter(([k]) => k !== "pc")
+                  .sort((a, b) => b[1].median - a[1].median)
+                  .slice(0, 6)
+                  .map(([k, r]) => (
+                    <MiniRange
+                      key={k}
+                      label={FORECAST_NAMES[k] ?? k}
+                      color={FORECAST_COLORS[k] === "#FDF38E" ? "#D9C838" : FORECAST_COLORS[k] ?? "#9ca3af"}
+                      median={r.median}
+                      lo={r.lo}
+                      hi={r.hi}
+                      max={420}
+                      right={forecast.uk.sim.pLargest[k] != null ? `largest ${forecast.uk.sim.pLargest[k]}%` : ""}
+                    />
+                  ))}
+              </div>
+            </div>
+          </Link>
+
+          {forecast.br || forecast.il || forecast.nz || forecast.fr ? (
+            <Link
+              href="/elections/forecast"
+              className="block rounded-2xl border p-5 transition-colors hover:border-[var(--accent)]"
+              style={{ borderColor: "var(--border)" }}
+            >
+              <div className="flex items-baseline justify-between gap-3 flex-wrap mb-1">
+                <h2 className="text-lg font-bold text-[var(--text)]">
+                  Tracking now <span className="text-sm font-normal text-[var(--text-dim)]">· elections on the near horizon</span>
+                </h2>
+                <span className="text-xs text-[var(--accent)]">Full forecasts →</span>
+              </div>
+              <p className="text-xs text-[var(--text-muted)] mb-4 max-w-3xl">
+                Every other race we currently forecast. Each preview retires from this window once
+                its election has been run, and new races rotate in as their polling begins.
+              </p>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                {forecast.br ? (
+                  <TrackBlock
+                    flag="br"
+                    title="Brazil"
+                    sub="Presidential · 4 Oct 2026"
+                    rows={Object.entries(forecast.br.firstRound.shares).slice(0, 2).map(([n, v]) => ({ label: n, color: trackColor(n), value: `${v.toFixed(1)}%` }))}
+                    note={forecast.br.runoffs[0]
+                      ? `Runoff: ${forecast.br.runoffs[0].pA >= 50
+                          ? `${forecast.br.runoffs[0].a} ${forecast.br.runoffs[0].pA.toFixed(0)}%`
+                          : `${forecast.br.runoffs[0].b} ${(100 - forecast.br.runoffs[0].pA).toFixed(0)}%`}`
+                      : "First-round polling average"}
+                  />
+                ) : null}
+                {forecast.il ? (
+                  <TrackBlock
+                    flag="il"
+                    title="Israel"
+                    sub="Knesset · 2026"
+                    rows={forecast.il.parties.slice(0, 2).map((p) => ({ label: p.name, color: trackColor(p.name), value: `${Math.round(p.seats)} seats` }))}
+                    note={forecast.il.gov.avg != null ? `Gov bloc averages ${forecast.il.gov.avg} of 120` : "Seat-poll average"}
+                  />
+                ) : null}
+                {forecast.nz ? (
+                  <TrackBlock
+                    flag="nz"
+                    title="New Zealand"
+                    sub="General · late 2026"
+                    rows={Object.entries(forecast.nz.average).sort((a, b) => b[1] - a[1]).slice(0, 2).map(([k, v]) => ({ label: NZ_NAMES[k] ?? k, color: NZ_COLORS[k] ?? "#9ca3af", value: `${v.toFixed(1)}%` }))}
+                    note={`Right bloc ${forecast.nz.pRightBloc}% · left ${forecast.nz.pLeftBloc}% · neither ${forecast.nz.pNeither}%`}
+                  />
+                ) : null}
+                {forecast.fr ? (
+                  <TrackBlock
+                    flag="fr"
+                    title="France"
+                    sub="Presidential · spring 2027"
+                    rows={Object.entries(forecast.fr.firstRound.shares).slice(0, 2).map(([n, v]) => ({ label: frName(n), color: trackColor(n), value: `${v.toFixed(1)}%` }))}
+                    note="Scenario polling · no declared field yet"
+                  />
+                ) : null}
+              </div>
+            </Link>
+          ) : null}
+        </section>
+      ) : null}
+
       {/* ---------- world map ---------- */}
       <section className="mb-10">
         <ElectionsWorldMap markers={markers} />
@@ -449,6 +645,9 @@ export default function ElectionsPage() {
         <TimelineStrip rows={tlRows} />
         <TimelineLegend />
         <p className="text-sm mt-3 flex flex-wrap gap-x-5 gap-y-1">
+          <Link href="/elections/forecast" className="text-[var(--accent)] hover:underline">
+            Forecasts: the road to the next elections in the US, UK, Brazil, Israel, New Zealand and France →
+          </Link>
           <Link href="/elections/under-fire" className="text-[var(--accent)] hover:underline">
             Elections under fire: every ballot held in wartime →
           </Link>
