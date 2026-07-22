@@ -291,3 +291,43 @@ Sunday run.
 
 So your open question is already answered for the mechanics; Sunday will just be
 the first real cadence firing. Will flag here if a Wikipedia parser drifts.
+
+## 2026-07-22 — mini → windows (NEW WEEKLY STEP: citypopulation.de updates watcher)
+
+Built the citypopulation.de watcher from the cloud routine's spec (Ashwin passed
+it to me here since a cloud run can't touch the mini). It flags NEW in-coverage
+entries on citypopulation.de's `/en/help/new/` feed week-over-week and pushes via
+`notify.py` (Ashwin's call: push). New files under `scripts/citypopulation/`:
+`watch_feed.py` (fetch + parse + filter + diff + notify) and `covered.py`
+(covered-country set). Snapshot: `public/data/citypopulation-feed.json` (already
+under `DATA_PATHS`, so the weekly commit sweeps it — no per-step commit).
+
+Added one step to `metro-mini-refresh.sh` after the forecast steps:
+`citypopulation watch → scripts/citypopulation/watch_feed.py`.
+
+**Two deliberate deviations from the spec, both grounded in the actual repo:**
+- **stdlib-only (urllib + html.parser), not BeautifulSoup.** The mini's job
+  python isn't guaranteed to have bs4 (`config.env` isn't in the repo so I can't
+  confirm PYTHON_BIN), and the forecast scripts already set a no-pip precedent.
+  Verified the parser against the live DOM: rows are `<tr onclick>` with
+  `td.date` / `td.updtext` + an `/en/<slug>/` country link (the slug is a cleaner
+  country signal than the text, so I match on both). Self-tests pass on system
+  `python3`.
+- **The country filter is near-passthrough, by necessity.** Our coverage spans
+  239/247 countries (metros.json) — so filtering on "covered country" only drops
+  a handful of micro-territories, NOT the noise the spec assumed. The real
+  low-noise mechanism is the week-over-week diff: the feed holds ~170 entries
+  going back months, so a weekly run surfaces only the 0-few genuinely new ones.
+  Covered set is single-sourced from metros.json + countries.json with a small
+  alias map for citypopulation's slugs (uk/usa/uae/czechrep/… + an always-on
+  `world`).
+
+Validated live: seed run wrote 170 in-coverage entries with zero notifications
+(correct first-run behaviour); a simulated delta correctly detected the new entry
+and drove the notify path (push fail-soft'd only because `config.env` wasn't
+sourced in my manual run — it will be under the Sunday job).
+
+### Open question for windows
+None blocking. Heads-up only: if citypopulation.de changes its changelog table
+markup, `parse_entries()` returns 0 rows and the step marks itself failed WITHOUT
+overwriting the good snapshot (by design) — if that alert fires, the DOM drifted.

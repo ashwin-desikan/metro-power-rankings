@@ -142,6 +142,13 @@ run_step "zone zero cup"        "$PY" scripts/zzc_v1_multipillar.py
 # [vercel skip] with no deploy.
 run_step "election forecast fetch" "$PY" scripts/forecast/fetch_data.py
 run_step "election forecast build" "$PY" scripts/forecast/build_forecast.py
+# citypopulation.de watcher (added 2026-07-22): flags NEW in-coverage entries on
+# citypopulation.de's /en/help/new/ feed vs the committed snapshot and pushes via
+# notify.py (same channel as alert()). stdlib-only, snapshot is
+# public/data/citypopulation-feed.json (already under DATA_PATHS, so the commit
+# below sweeps it up). Silent unless there's a genuinely new update; a fetch or
+# empty-parse leaves the snapshot untouched and just marks the step failed.
+run_step "citypopulation watch" "$PY" scripts/citypopulation/watch_feed.py
 
 # --- commit + push ---------------------------------------------------------
 # scripts/civic/city-qids.json is included alongside public/data: it's the

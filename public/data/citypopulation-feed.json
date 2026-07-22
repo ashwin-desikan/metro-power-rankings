@@ -1,0 +1,1534 @@
+{
+  "entries": [
+    {
+      "date": "2026-07-01",
+      "title": "Austria",
+      "url": "https://www.citypopulation.de/en/austria/",
+      "countries": [
+        "austria",
+        "Austria"
+      ]
+    },
+    {
+      "date": "2026-06-29",
+      "title": "Germany",
+      "url": "https://www.citypopulation.de/en/germany/",
+      "countries": [
+        "germany",
+        "Germany"
+      ]
+    },
+    {
+      "date": "2026-06-23",
+      "title": "Portugal (municipalities)",
+      "url": "https://www.citypopulation.de/en/portugal/",
+      "countries": [
+        "portugal",
+        "Portugal"
+      ]
+    },
+    {
+      "date": "2026-06-22",
+      "title": "Peru (2025 census)",
+      "url": "https://www.citypopulation.de/en/peru/cities/",
+      "countries": [
+        "peru",
+        "Peru"
+      ]
+    },
+    {
+      "date": "2026-06-19",
+      "title": "Estonia",
+      "url": "https://www.citypopulation.de/en/estonia/",
+      "countries": [
+        "estonia",
+        "Estonia"
+      ]
+    },
+    {
+      "date": "2026-06-16",
+      "title": "Slovenia",
+      "url": "https://www.citypopulation.de/en/slovenia/",
+      "countries": [
+        "slovenia",
+        "Slovenia"
+      ]
+    },
+    {
+      "date": "2026-06-12",
+      "title": "Belgium (municipalities)",
+      "url": "https://www.citypopulation.de/en/belgium/",
+      "countries": [
+        "belgium",
+        "Belgium"
+      ]
+    },
+    {
+      "date": "2026-06-11",
+      "title": "Spain (localities)",
+      "url": "https://www.citypopulation.de/en/spain/",
+      "countries": [
+        "spain",
+        "Spain"
+      ]
+    },
+    {
+      "date": "2026-06-10",
+      "title": "Poland",
+      "url": "https://www.citypopulation.de/en/poland/",
+      "countries": [
+        "poland",
+        "Poland"
+      ]
+    },
+    {
+      "date": "2026-06-09",
+      "title": "Denmark (settlements)",
+      "url": "https://www.citypopulation.de/en/denmark/",
+      "countries": [
+        "denmark",
+        "Denmark"
+      ]
+    },
+    {
+      "date": "2026-06-08",
+      "title": "Bulgaria",
+      "url": "https://www.citypopulation.de/en/bulgaria/",
+      "countries": [
+        "bulgaria",
+        "Bulgaria"
+      ]
+    },
+    {
+      "date": "2026-06-05",
+      "title": "Georgia (2024 census)",
+      "url": "https://www.citypopulation.de/en/georgia/",
+      "countries": [
+        "georgia",
+        "Georgia"
+      ]
+    },
+    {
+      "date": "2026-06-03",
+      "title": "Japan (2025 census)",
+      "url": "https://www.citypopulation.de/en/japan/",
+      "countries": [
+        "japan",
+        "Japan"
+      ]
+    },
+    {
+      "date": "2026-06-02",
+      "title": "Sri Lanka (2024 census)",
+      "url": "https://www.citypopulation.de/en/srilanka/",
+      "countries": [
+        "srilanka",
+        "Sri Lanka"
+      ]
+    },
+    {
+      "date": "2026-06-01",
+      "title": "St. Vincent and the Grenadines (2023 census)",
+      "url": "https://www.citypopulation.de/en/stvincent/",
+      "countries": [
+        "stvincent",
+        "St. Vincent and the Grenadines"
+      ]
+    },
+    {
+      "date": "2026-05-29",
+      "title": "Luxembourg",
+      "url": "https://www.citypopulation.de/en/luxembourg/",
+      "countries": [
+        "luxembourg",
+        "Luxembourg"
+      ]
+    },
+    {
+      "date": "2026-05-26",
+      "title": "Sweden (municipalities)",
+      "url": "https://www.citypopulation.de/en/sweden/",
+      "countries": [
+        "sweden",
+        "Sweden"
+      ]
+    },
+    {
+      "date": "2026-05-25",
+      "title": "USA",
+      "url": "https://www.citypopulation.de/en/usa/",
+      "countries": [
+        "usa",
+        "USA"
+      ]
+    },
+    {
+      "date": "2026-05-13",
+      "title": "Mali",
+      "url": "https://www.citypopulation.de/en/mali/",
+      "countries": [
+        "mali",
+        "Mali"
+      ]
+    },
+    {
+      "date": "2026-05-04",
+      "title": "Angola (2024 census)",
+      "url": "https://www.citypopulation.de/en/angola/",
+      "countries": [
+        "angola",
+        "Angola"
+      ]
+    },
+    {
+      "date": "2026-04-22",
+      "title": "Iraq (2024 census)",
+      "url": "https://www.citypopulation.de/en/iraq/",
+      "countries": [
+        "iraq",
+        "Iraq"
+      ]
+    },
+    {
+      "date": "2026-04-16",
+      "title": "Slovakia",
+      "url": "https://www.citypopulation.de/en/slovakia/",
+      "countries": [
+        "slovakia",
+        "Slovakia"
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "title": "UK (Scotland & UK overviews)",
+      "url": "https://www.citypopulation.de/en/uk/",
+      "countries": [
+        "uk",
+        "UK"
+      ]
+    },
+    {
+      "date": "2026-04-14",
+      "title": "Micronesia (2023 census)",
+      "url": "https://www.citypopulation.de/en/micronesia/",
+      "countries": [
+        "micronesia",
+        "Micronesia"
+      ]
+    },
+    {
+      "date": "2026-04-13",
+      "title": "Finland (municipalities)",
+      "url": "https://www.citypopulation.de/en/finland/",
+      "countries": [
+        "finland",
+        "Finland"
+      ]
+    },
+    {
+      "date": "2026-04-10",
+      "title": "Italy",
+      "url": "https://www.citypopulation.de/en/italy/",
+      "countries": [
+        "italy",
+        "Italy"
+      ]
+    },
+    {
+      "date": "2026-04-08",
+      "title": "Australia",
+      "url": "https://www.citypopulation.de/en/australia/",
+      "countries": [
+        "australia",
+        "Australia"
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "title": "Switzerland",
+      "url": "https://www.citypopulation.de/en/switzerland/",
+      "countries": [
+        "switzerland",
+        "Switzerland"
+      ]
+    },
+    {
+      "date": "2026-04-04",
+      "title": "Kazakhstan",
+      "url": "https://www.citypopulation.de/en/kazakhstan/",
+      "countries": [
+        "kazakhstan",
+        "Kazakhstan"
+      ]
+    },
+    {
+      "date": "2026-04-01",
+      "title": "Liechtenstein",
+      "url": "https://www.citypopulation.de/en/liechtenstein/",
+      "countries": [
+        "liechtenstein",
+        "Liechtenstein"
+      ]
+    },
+    {
+      "date": "2026-03-31",
+      "title": "Norway (municipalities)",
+      "url": "https://www.citypopulation.de/en/norway/",
+      "countries": [
+        "norway",
+        "Norway"
+      ]
+    },
+    {
+      "date": "2026-03-30",
+      "title": "Iceland",
+      "url": "https://www.citypopulation.de/en/iceland/",
+      "countries": [
+        "iceland",
+        "Iceland"
+      ]
+    },
+    {
+      "date": "2026-03-28",
+      "title": "Denmark (municipalities)",
+      "url": "https://www.citypopulation.de/en/denmark/",
+      "countries": [
+        "denmark",
+        "Denmark"
+      ]
+    },
+    {
+      "date": "2026-03-27",
+      "title": "USA (counties & metropolitan areas)",
+      "url": "https://www.citypopulation.de/en/usa/",
+      "countries": [
+        "usa",
+        "USA"
+      ]
+    },
+    {
+      "date": "2026-03-26",
+      "title": "Faroe Islands",
+      "url": "https://www.citypopulation.de/en/faroe/",
+      "countries": [
+        "faroe",
+        "Faroe Islands"
+      ]
+    },
+    {
+      "date": "2026-03-25",
+      "title": "Greenland",
+      "url": "https://www.citypopulation.de/en/greenland/",
+      "countries": [
+        "greenland",
+        "Greenland"
+      ]
+    },
+    {
+      "date": "2026-03-24",
+      "title": "Austria",
+      "url": "https://www.citypopulation.de/en/austria/",
+      "countries": [
+        "austria",
+        "Austria"
+      ]
+    },
+    {
+      "date": "2026-03-23",
+      "title": "New Zealand",
+      "url": "https://www.citypopulation.de/en/newzealand/",
+      "countries": [
+        "newzealand",
+        "New Zealand"
+      ]
+    },
+    {
+      "date": "2026-03-16",
+      "title": "Guinea (2025 census)",
+      "url": "https://www.citypopulation.de/en/guinea/",
+      "countries": [
+        "guinea",
+        "Guinea"
+      ]
+    },
+    {
+      "date": "2026-03-10",
+      "title": "Agglomerations of the World",
+      "url": "https://www.citypopulation.de/en/world/agglomerations/",
+      "countries": [
+        "world",
+        "Agglomerations of the World"
+      ]
+    },
+    {
+      "date": "2026-02-09",
+      "title": "Jamaica (2022 census)",
+      "url": "https://www.citypopulation.de/en/jamaica/",
+      "countries": [
+        "jamaica",
+        "Jamaica"
+      ]
+    },
+    {
+      "date": "2026-02-03",
+      "title": "Greece (statistical regions)",
+      "url": "https://www.citypopulation.de/en/greece/nuts/admin/",
+      "countries": [
+        "greece",
+        "Greece"
+      ]
+    },
+    {
+      "date": "2026-01-30",
+      "title": "Netherlands (municipalities)",
+      "url": "https://www.citypopulation.de/en/netherlands/admin/",
+      "countries": [
+        "netherlands",
+        "Netherlands"
+      ]
+    },
+    {
+      "date": "2026-01-27",
+      "title": "Andorra",
+      "url": "https://www.citypopulation.de/en/andorra/",
+      "countries": [
+        "andorra",
+        "Andorra"
+      ]
+    },
+    {
+      "date": "2026-01-26",
+      "title": "Guyana (2022 census)",
+      "url": "https://www.citypopulation.de/en/guyana/",
+      "countries": [
+        "guyana",
+        "Guyana"
+      ]
+    },
+    {
+      "date": "2026-01-20",
+      "title": "Canada",
+      "url": "https://www.citypopulation.de/en/canada/",
+      "countries": [
+        "canada",
+        "Canada"
+      ]
+    },
+    {
+      "date": "2026-01-13",
+      "title": "Mauritania",
+      "url": "https://www.citypopulation.de/en/mauritania/",
+      "countries": [
+        "mauritania",
+        "Mauritania"
+      ]
+    },
+    {
+      "date": "2026-01-08",
+      "title": "Croatia (municipalities)",
+      "url": "https://www.citypopulation.de/en/croatia/",
+      "countries": [
+        "croatia",
+        "Croatia"
+      ]
+    },
+    {
+      "date": "2026-01-07",
+      "title": "England, Wales, Northern Ireland (places & wards)",
+      "url": "https://www.citypopulation.de/en/uk/",
+      "countries": [
+        "uk",
+        "England, Wales, Northern Ireland"
+      ]
+    },
+    {
+      "date": "2025-12-30",
+      "title": "Spain",
+      "url": "https://www.citypopulation.de/en/spain/",
+      "countries": [
+        "spain",
+        "Spain"
+      ]
+    },
+    {
+      "date": "2025-12-29",
+      "title": "France",
+      "url": "https://www.citypopulation.de/en/france/",
+      "countries": [
+        "france",
+        "France"
+      ]
+    },
+    {
+      "date": "2025-12-23",
+      "title": "Myanmar (2024 census)",
+      "url": "https://www.citypopulation.de/en/myanmar/",
+      "countries": [
+        "myanmar",
+        "Myanmar"
+      ]
+    },
+    {
+      "date": "2025-12-11",
+      "title": "Sri Lanka (2024 census)",
+      "url": "https://www.citypopulation.de/en/srilanka/",
+      "countries": [
+        "srilanka",
+        "Sri Lanka"
+      ]
+    },
+    {
+      "date": "2025-12-01",
+      "title": "Gibraltar (2022 census)",
+      "url": "https://www.citypopulation.de/en/gibraltar/",
+      "countries": [
+        "gibraltar",
+        "Gibraltar"
+      ]
+    },
+    {
+      "date": "2025-11-29",
+      "title": "Papua New Guinea (2024 census)",
+      "url": "https://www.citypopulation.de/en/papuanewguinea/",
+      "countries": [
+        "papuanewguinea",
+        "Papua New Guinea"
+      ]
+    },
+    {
+      "date": "2025-11-26",
+      "title": "Angola (2024 census)",
+      "url": "https://www.citypopulation.de/en/angola/",
+      "countries": [
+        "angola",
+        "Angola"
+      ]
+    },
+    {
+      "date": "2025-11-19",
+      "title": "Finland (settlements)",
+      "url": "https://www.citypopulation.de/en/finland/",
+      "countries": [
+        "finland",
+        "Finland"
+      ]
+    },
+    {
+      "date": "2025-11-18",
+      "title": "Norway (settlements)",
+      "url": "https://www.citypopulation.de/en/norway/",
+      "countries": [
+        "norway",
+        "Norway"
+      ]
+    },
+    {
+      "date": "2025-11-17",
+      "title": "Russia",
+      "url": "https://www.citypopulation.de/en/russia/",
+      "countries": [
+        "russia",
+        "Russia"
+      ]
+    },
+    {
+      "date": "2025-11-03",
+      "title": "Philippines (2024 census)",
+      "url": "https://www.citypopulation.de/en/philippines/",
+      "countries": [
+        "philippines",
+        "Philippines"
+      ]
+    },
+    {
+      "date": "2025-10-31",
+      "title": "New Caledonia (2025 census)",
+      "url": "https://www.citypopulation.de/en/newcaledonia/",
+      "countries": [
+        "newcaledonia",
+        "New Caledonia"
+      ]
+    },
+    {
+      "date": "2025-10-30",
+      "title": "Jamaica (2022 census)",
+      "url": "https://www.citypopulation.de/en/jamaica/cities/",
+      "countries": [
+        "jamaica",
+        "Jamaica"
+      ]
+    },
+    {
+      "date": "2025-10-29",
+      "title": "Hungary",
+      "url": "https://www.citypopulation.de/en/hungary/",
+      "countries": [
+        "hungary",
+        "Hungary"
+      ]
+    },
+    {
+      "date": "2025-10-28",
+      "title": "Armenia",
+      "url": "https://www.citypopulation.de/en/armenia/",
+      "countries": [
+        "armenia",
+        "Armenia"
+      ]
+    },
+    {
+      "date": "2025-10-27",
+      "title": "Azerbaijan",
+      "url": "https://www.citypopulation.de/en/azerbaijan/",
+      "countries": [
+        "azerbaijan",
+        "Azerbaijan"
+      ]
+    },
+    {
+      "date": "2025-10-24",
+      "title": "Latvia (villages)",
+      "url": "https://www.citypopulation.de/en/latvia/",
+      "countries": [
+        "latvia",
+        "Latvia"
+      ]
+    },
+    {
+      "date": "2025-10-21",
+      "title": "Czech Republic",
+      "url": "https://www.citypopulation.de/en/czechrep/",
+      "countries": [
+        "czechrep",
+        "Czech Republic"
+      ]
+    },
+    {
+      "date": "2025-10-17",
+      "title": "Singapore",
+      "url": "https://www.citypopulation.de/en/singapore/",
+      "countries": [
+        "singapore",
+        "Singapore"
+      ]
+    },
+    {
+      "date": "2025-10-15",
+      "title": "North Macedonia",
+      "url": "https://www.citypopulation.de/en/northmacedonia/",
+      "countries": [
+        "northmacedonia",
+        "North Macedonia"
+      ]
+    },
+    {
+      "date": "2025-10-14",
+      "title": "Serbia",
+      "url": "https://www.citypopulation.de/en/serbia/",
+      "countries": [
+        "serbia",
+        "Serbia"
+      ]
+    },
+    {
+      "date": "2025-10-13",
+      "title": "Bangladesh (2022 census)",
+      "url": "https://www.citypopulation.de/en/bangladesh/",
+      "countries": [
+        "bangladesh",
+        "Bangladesh"
+      ]
+    },
+    {
+      "date": "2025-10-07",
+      "title": "Portugal",
+      "url": "https://www.citypopulation.de/en/portugal/",
+      "countries": [
+        "portugal",
+        "Portugal"
+      ]
+    },
+    {
+      "date": "2025-10-06",
+      "title": "Bolivia (census 2024)",
+      "url": "https://www.citypopulation.de/en/bolivia/",
+      "countries": [
+        "bolivia",
+        "Bolivia"
+      ]
+    },
+    {
+      "date": "2025-09-05",
+      "title": "Brazil",
+      "url": "https://www.citypopulation.de/en/brazil/",
+      "countries": [
+        "brazil",
+        "Brazil"
+      ]
+    },
+    {
+      "date": "2025-09-04",
+      "title": "Tajikistan",
+      "url": "https://www.citypopulation.de/en/tajikistan/",
+      "countries": [
+        "tajikistan",
+        "Tajikistan"
+      ]
+    },
+    {
+      "date": "2025-09-03",
+      "title": "Switzerland",
+      "url": "https://www.citypopulation.de/en/switzerland/",
+      "countries": [
+        "switzerland",
+        "Switzerland"
+      ]
+    },
+    {
+      "date": "2025-09-02",
+      "title": "Belize",
+      "url": "https://www.citypopulation.de/en/belize/",
+      "countries": [
+        "belize",
+        "Belize"
+      ]
+    },
+    {
+      "date": "2025-08-11",
+      "title": "Uzbekistan",
+      "url": "https://www.citypopulation.de/en/uzbekistan/",
+      "countries": [
+        "uzbekistan",
+        "Uzbekistan"
+      ]
+    },
+    {
+      "date": "2025-08-06",
+      "title": "Slovenia",
+      "url": "https://www.citypopulation.de/en/slovenia/",
+      "countries": [
+        "slovenia",
+        "Slovenia"
+      ]
+    },
+    {
+      "date": "2025-08-05",
+      "title": "Latvia",
+      "url": "https://www.citypopulation.de/en/latvia/",
+      "countries": [
+        "latvia",
+        "Latvia"
+      ]
+    },
+    {
+      "date": "2025-08-01",
+      "title": "São Tomé and Príncipe (2024 census)",
+      "url": "https://www.citypopulation.de/en/saotome/",
+      "countries": [
+        "saotome",
+        "São Tomé and Príncipe"
+      ]
+    },
+    {
+      "date": "2025-07-31",
+      "title": "England (districts & boroughs)",
+      "url": "https://www.citypopulation.de/en/uk/#england",
+      "countries": [
+        "uk",
+        "England"
+      ]
+    },
+    {
+      "date": "2025-07-29",
+      "title": "Estonia",
+      "url": "https://www.citypopulation.de/en/estonia/",
+      "countries": [
+        "estonia",
+        "Estonia"
+      ]
+    },
+    {
+      "date": "2025-07-24",
+      "title": "Moldova (2024 census)",
+      "url": "https://www.citypopulation.de/en/moldova/",
+      "countries": [
+        "moldova",
+        "Moldova"
+      ]
+    },
+    {
+      "date": "2025-07-23",
+      "title": "Sweden (municipalities)",
+      "url": "https://www.citypopulation.de/en/sweden/",
+      "countries": [
+        "sweden",
+        "Sweden"
+      ]
+    },
+    {
+      "date": "2025-07-21",
+      "title": "Argentina (localities)",
+      "url": "https://www.citypopulation.de/en/argentina/",
+      "countries": [
+        "argentina",
+        "Argentina"
+      ]
+    },
+    {
+      "date": "2025-07-12",
+      "title": "Denmerk (settlements)",
+      "url": "https://www.citypopulation.de/en/denmark/",
+      "countries": [
+        "denmark",
+        "Denmerk"
+      ]
+    },
+    {
+      "date": "2025-07-11",
+      "title": "Belgium (municipalities)",
+      "url": "https://www.citypopulation.de/en/belgium/",
+      "countries": [
+        "belgium",
+        "Belgium"
+      ]
+    },
+    {
+      "date": "2025-07-08",
+      "title": "Grenada (2022 census)",
+      "url": "https://www.citypopulation.de/en/grenada/",
+      "countries": [
+        "grenada",
+        "Grenada"
+      ]
+    },
+    {
+      "date": "2025-07-07",
+      "title": "Georgia (2024 census)",
+      "url": "https://www.citypopulation.de/en/georgia/",
+      "countries": [
+        "georgia",
+        "Georgia"
+      ]
+    },
+    {
+      "date": "2025-07-03",
+      "title": "Germany (communes & urban areas)",
+      "url": "https://www.citypopulation.de/en/germany/",
+      "countries": [
+        "germany",
+        "Germany"
+      ]
+    },
+    {
+      "date": "2025-07-02",
+      "title": "Uganda (towns & subcounties)",
+      "url": "https://www.citypopulation.de/en/uganda/",
+      "countries": [
+        "uganda",
+        "Uganda"
+      ]
+    },
+    {
+      "date": "2025-06-20",
+      "title": "Germany (counties)",
+      "url": "https://www.citypopulation.de/en/germany/admin/",
+      "countries": [
+        "germany",
+        "Germany"
+      ]
+    },
+    {
+      "date": "2025-06-16",
+      "title": "Gambia (2024 census)",
+      "url": "https://www.citypopulation.de/en/gambia/cities/",
+      "countries": [
+        "gambia",
+        "Gambia"
+      ]
+    },
+    {
+      "date": "2025-06-14",
+      "title": "Tuvalu (villages)",
+      "url": "https://www.citypopulation.de/en/tuvalu/",
+      "countries": [
+        "tuvalu",
+        "Tuvalu"
+      ]
+    },
+    {
+      "date": "2025-06-09",
+      "title": "Burundi (2024 census)",
+      "url": "https://www.citypopulation.de/en/burundi/",
+      "countries": [
+        "burundi",
+        "Burundi"
+      ]
+    },
+    {
+      "date": "2025-06-07",
+      "title": "Sri Lanka (2024 census)",
+      "url": "https://www.citypopulation.de/en/srilanka/prov/admin/",
+      "countries": [
+        "srilanka",
+        "Sri Lanka"
+      ]
+    },
+    {
+      "date": "2025-06-06",
+      "title": "Tunisia (2024 census)",
+      "url": "https://www.citypopulation.de/en/tunisia/",
+      "countries": [
+        "tunisia",
+        "Tunisia"
+      ]
+    },
+    {
+      "date": "2025-06-02",
+      "title": "Northern Ireland",
+      "url": "https://www.citypopulation.de/en/uk/#northernireland",
+      "countries": [
+        "uk",
+        "Northern Ireland"
+      ]
+    },
+    {
+      "date": "2025-05-29",
+      "title": "Austria",
+      "url": "https://www.citypopulation.de/en/austria/",
+      "countries": [
+        "austria",
+        "Austria"
+      ]
+    },
+    {
+      "date": "2025-05-28",
+      "title": "Bulgaria",
+      "url": "https://www.citypopulation.de/en/bulgaria/",
+      "countries": [
+        "bulgaria",
+        "Bulgaria"
+      ]
+    },
+    {
+      "date": "2025-05-27",
+      "title": "Luxembourg",
+      "url": "https://www.citypopulation.de/en/luxembourg/",
+      "countries": [
+        "luxembourg",
+        "Luxembourg"
+      ]
+    },
+    {
+      "date": "2025-05-20",
+      "title": "USA",
+      "url": "https://www.citypopulation.de/en/usa/",
+      "countries": [
+        "usa",
+        "USA"
+      ]
+    },
+    {
+      "date": "2025-05-02",
+      "title": "Finland (municipalities)",
+      "url": "https://www.citypopulation.de/en/finland/",
+      "countries": [
+        "finland",
+        "Finland"
+      ]
+    },
+    {
+      "date": "2025-04-29",
+      "title": "Kuwait",
+      "url": "https://www.citypopulation.de/en/kuwait/",
+      "countries": [
+        "kuwait",
+        "Kuwait"
+      ]
+    },
+    {
+      "date": "2025-04-23",
+      "title": "Mauritania (2023 census)",
+      "url": "https://www.citypopulation.de/en/mauritania/",
+      "countries": [
+        "mauritania",
+        "Mauritania"
+      ]
+    },
+    {
+      "date": "2025-04-21",
+      "title": "Albania (2023 census)",
+      "url": "https://www.citypopulation.de/en/albania/",
+      "countries": [
+        "albania",
+        "Albania"
+      ]
+    },
+    {
+      "date": "2025-04-19",
+      "title": "Switzerland",
+      "url": "https://www.citypopulation.de/en/switzerland/",
+      "countries": [
+        "switzerland",
+        "Switzerland"
+      ]
+    },
+    {
+      "date": "2025-04-17",
+      "title": "Liechtenstein",
+      "url": "https://www.citypopulation.de/en/liechtenstein/",
+      "countries": [
+        "liechtenstein",
+        "Liechtenstein"
+      ]
+    },
+    {
+      "date": "2025-04-11",
+      "title": "Kosovo (2024 census)",
+      "url": "https://www.citypopulation.de/en/kosovo/",
+      "countries": [
+        "kosovo",
+        "Kosovo"
+      ]
+    },
+    {
+      "date": "2025-04-07",
+      "title": "Italy",
+      "url": "https://www.citypopulation.de/en/italy/",
+      "countries": [
+        "italy",
+        "Italy"
+      ]
+    },
+    {
+      "date": "2025-04-02",
+      "title": "Norway",
+      "url": "https://www.citypopulation.de/en/norway/",
+      "countries": [
+        "norway",
+        "Norway"
+      ]
+    },
+    {
+      "date": "2025-04-01",
+      "title": "Denmark & Faroe Islands",
+      "url": "https://www.citypopulation.de/en/denmark/",
+      "countries": [
+        "denmark",
+        "Denmark & Faroe Islands"
+      ]
+    },
+    {
+      "date": "2025-03-31",
+      "title": "Australia",
+      "url": "https://www.citypopulation.de/en/australia/",
+      "countries": [
+        "australia",
+        "Australia"
+      ]
+    },
+    {
+      "date": "2025-03-28",
+      "title": "Tuvalu (2022 census)",
+      "url": "https://www.citypopulation.de/en/tuvalu/",
+      "countries": [
+        "tuvalu",
+        "Tuvalu"
+      ]
+    },
+    {
+      "date": "2025-03-27",
+      "title": "Netherlands (municipalities)",
+      "url": "https://www.citypopulation.de/en/netherlands/admin/",
+      "countries": [
+        "netherlands",
+        "Netherlands"
+      ]
+    },
+    {
+      "date": "2025-03-26",
+      "title": "Austria",
+      "url": "https://www.citypopulation.de/en/austria/",
+      "countries": [
+        "austria",
+        "Austria"
+      ]
+    },
+    {
+      "date": "2025-03-25",
+      "title": "Canada",
+      "url": "https://www.citypopulation.de/en/canada/",
+      "countries": [
+        "canada",
+        "Canada"
+      ]
+    },
+    {
+      "date": "2025-03-24",
+      "title": "USA (counties & metropolitan areas)",
+      "url": "https://www.citypopulation.de/en/usa/",
+      "countries": [
+        "usa",
+        "USA"
+      ]
+    },
+    {
+      "date": "2025-03-21",
+      "title": "Germany",
+      "url": "https://www.citypopulation.de/en/germany/",
+      "countries": [
+        "germany",
+        "Germany"
+      ]
+    },
+    {
+      "date": "2025-03-17",
+      "title": "Uruguay (2023 census)",
+      "url": "https://www.citypopulation.de/en/uruguay/",
+      "countries": [
+        "uruguay",
+        "Uruguay"
+      ]
+    },
+    {
+      "date": "2025-03-14",
+      "title": "United Arab Emirates",
+      "url": "https://www.citypopulation.de/en/uae/",
+      "countries": [
+        "uae",
+        "United Arab Emirates"
+      ]
+    },
+    {
+      "date": "2025-03-11",
+      "title": "Greenland",
+      "url": "https://www.citypopulation.de/en/greenland/",
+      "countries": [
+        "greenland",
+        "Greenland"
+      ]
+    },
+    {
+      "date": "2025-03-10",
+      "title": "Russia",
+      "url": "https://www.citypopulation.de/en/russia/",
+      "countries": [
+        "russia",
+        "Russia"
+      ]
+    },
+    {
+      "date": "2025-03-05",
+      "title": "Agglomerations of the World",
+      "url": "https://www.citypopulation.de/en/world/agglomerations/",
+      "countries": [
+        "world",
+        "Agglomerations of the World"
+      ]
+    },
+    {
+      "date": "2025-02-24",
+      "title": "Myanmar (2024 census)",
+      "url": "https://www.citypopulation.de/en/myanmar/",
+      "countries": [
+        "myanmar",
+        "Myanmar"
+      ]
+    },
+    {
+      "date": "2025-02-17",
+      "title": "Turkmenistan (2022 census)",
+      "url": "https://www.citypopulation.de/en/turkmenistan/",
+      "countries": [
+        "turkmenistan",
+        "Turkmenistan"
+      ]
+    },
+    {
+      "date": "2025-02-14",
+      "title": "Moldova (2024 census)",
+      "url": "https://www.citypopulation.de/en/moldova/cities/",
+      "countries": [
+        "moldova",
+        "Moldova"
+      ]
+    },
+    {
+      "date": "2025-02-13",
+      "title": "Togo (2022 census)",
+      "url": "https://www.citypopulation.de/en/togo/",
+      "countries": [
+        "togo",
+        "Togo"
+      ]
+    },
+    {
+      "date": "2025-02-12",
+      "title": "El Salvador (2024 census)",
+      "url": "https://www.citypopulation.de/en/elsalvador/cities/",
+      "countries": [
+        "elsalvador",
+        "El Salvador"
+      ]
+    },
+    {
+      "date": "2025-01-31",
+      "title": "Malta",
+      "url": "https://www.citypopulation.de/en/malta/",
+      "countries": [
+        "malta",
+        "Malta"
+      ]
+    },
+    {
+      "date": "2025-01-30",
+      "title": "Germany (counties)",
+      "url": "https://www.citypopulation.de/en/germany/admin/",
+      "countries": [
+        "germany",
+        "Germany"
+      ]
+    },
+    {
+      "date": "2025-01-15",
+      "title": "Uruguay (2023 census)",
+      "url": "https://www.citypopulation.de/en/uruguay/cities/",
+      "countries": [
+        "uruguay",
+        "Uruguay"
+      ]
+    },
+    {
+      "date": "2025-01-10",
+      "title": "Uganda (2024 census)",
+      "url": "https://www.citypopulation.de/en/uganda/",
+      "countries": [
+        "uganda",
+        "Uganda"
+      ]
+    },
+    {
+      "date": "2025-01-03",
+      "title": "Romania (counties)",
+      "url": "https://www.citypopulation.de/en/romania/admin/",
+      "countries": [
+        "romania",
+        "Romania"
+      ]
+    },
+    {
+      "date": "2025-01-02",
+      "title": "France",
+      "url": "https://www.citypopulation.de/en/france/",
+      "countries": [
+        "france",
+        "France"
+      ]
+    },
+    {
+      "date": "2025-01-01",
+      "title": "Finland (settlements)",
+      "url": "https://www.citypopulation.de/en/finland/",
+      "countries": [
+        "finland",
+        "Finland"
+      ]
+    },
+    {
+      "date": "2024-12-31",
+      "title": "Sweden (localities)",
+      "url": "https://www.citypopulation.de/en/sweden/",
+      "countries": [
+        "sweden",
+        "Sweden"
+      ]
+    },
+    {
+      "date": "2024-12-31",
+      "title": "Norway (settlements)",
+      "url": "https://www.citypopulation.de/en/norway/",
+      "countries": [
+        "norway",
+        "Norway"
+      ]
+    },
+    {
+      "date": "2024-12-30",
+      "title": "Spain",
+      "url": "https://www.citypopulation.de/en/spain/",
+      "countries": [
+        "spain",
+        "Spain"
+      ]
+    },
+    {
+      "date": "2024-12-29",
+      "title": "Croatia (municipalities)",
+      "url": "https://www.citypopulation.de/en/croatia/",
+      "countries": [
+        "croatia",
+        "Croatia"
+      ]
+    },
+    {
+      "date": "2024-12-27",
+      "title": "Djibouti (rural localities)",
+      "url": "https://www.citypopulation.de/en/djibouti/cities/",
+      "countries": [
+        "djibouti",
+        "Djibouti"
+      ]
+    },
+    {
+      "date": "2024-12-26",
+      "title": "Belize (villages)",
+      "url": "https://www.citypopulation.de/en/belize/cities/",
+      "countries": [
+        "belize",
+        "Belize"
+      ]
+    },
+    {
+      "date": "2024-12-10",
+      "title": "Morocco (2024 census)",
+      "url": "https://www.citypopulation.de/en/morocco/",
+      "countries": [
+        "morocco",
+        "Morocco"
+      ]
+    },
+    {
+      "date": "2024-11-27",
+      "title": "Bahamas (2022 census)",
+      "url": "https://www.citypopulation.de/en/bahamas/",
+      "countries": [
+        "bahamas",
+        "Bahamas"
+      ]
+    },
+    {
+      "date": "2024-11-25",
+      "title": "Brazil",
+      "url": "https://www.citypopulation.de/en/brazil/",
+      "countries": [
+        "brazil",
+        "Brazil"
+      ]
+    },
+    {
+      "date": "2024-11-19",
+      "title": "Bangladesh (2022 census)",
+      "url": "https://www.citypopulation.de/en/bangladesh/",
+      "countries": [
+        "bangladesh",
+        "Bangladesh"
+      ]
+    },
+    {
+      "date": "2024-10-31",
+      "title": "Belgium (sub-municipalities & sectors)",
+      "url": "https://www.citypopulation.de/en/belgium/",
+      "countries": [
+        "belgium",
+        "Belgium"
+      ]
+    },
+    {
+      "date": "2024-10-30",
+      "title": "Cyprus (2021 census)",
+      "url": "https://www.citypopulation.de/en/cyprus/",
+      "countries": [
+        "cyprus",
+        "Cyprus"
+      ]
+    },
+    {
+      "date": "2024-10-29",
+      "title": "Montenegro (2023 census)",
+      "url": "https://www.citypopulation.de/en/montenegro/",
+      "countries": [
+        "montenegro",
+        "Montenegro"
+      ]
+    },
+    {
+      "date": "2024-10-28",
+      "title": "Singapore",
+      "url": "https://www.citypopulation.de/en/singapore/",
+      "countries": [
+        "singapore",
+        "Singapore"
+      ]
+    },
+    {
+      "date": "2024-10-25",
+      "title": "El Salvador",
+      "url": "https://www.citypopulation.de/en/elsalvador/",
+      "countries": [
+        "elsalvador",
+        "El Salvador"
+      ]
+    },
+    {
+      "date": "2024-10-24",
+      "title": "Switzerland",
+      "url": "https://www.citypopulation.de/en/switzerland/",
+      "countries": [
+        "switzerland",
+        "Switzerland"
+      ]
+    },
+    {
+      "date": "2024-10-22",
+      "title": "Mauritania (2023 census)",
+      "url": "https://www.citypopulation.de/en/mauritania/",
+      "countries": [
+        "mauritania",
+        "Mauritania"
+      ]
+    },
+    {
+      "date": "2024-10-14",
+      "title": "Chagos Archipelago",
+      "url": "https://www.citypopulation.de/en/mauritius/chagos/admin/",
+      "countries": [
+        "mauritius",
+        "Chagos Archipelago"
+      ]
+    },
+    {
+      "date": "2024-10-08",
+      "title": "Djibouti (2024 census)",
+      "url": "https://www.citypopulation.de/en/djibouti/",
+      "countries": [
+        "djibouti",
+        "Djibouti"
+      ]
+    },
+    {
+      "date": "2024-10-04",
+      "title": "Congo (Republic) (2023 census)",
+      "url": "https://www.citypopulation.de/en/congo/",
+      "countries": [
+        "congo",
+        "Congo"
+      ]
+    },
+    {
+      "date": "2024-09-30",
+      "title": "Saint Lucia (2022 census)",
+      "url": "https://www.citypopulation.de/en/stlucia/",
+      "countries": [
+        "stlucia",
+        "Saint Lucia"
+      ]
+    },
+    {
+      "date": "2024-09-19",
+      "title": "Belize",
+      "url": "https://www.citypopulation.de/en/belize/",
+      "countries": [
+        "belize",
+        "Belize"
+      ]
+    },
+    {
+      "date": "2024-09-11",
+      "title": "Paraguay (2022 census)",
+      "url": "https://www.citypopulation.de/en/paraguay/",
+      "countries": [
+        "paraguay",
+        "Paraguay"
+      ]
+    },
+    {
+      "date": "2024-09-09",
+      "title": "Bolivia (2024 census)",
+      "url": "https://www.citypopulation.de/en/bolivia/",
+      "countries": [
+        "bolivia",
+        "Bolivia"
+      ]
+    },
+    {
+      "date": "2024-09-06",
+      "title": "Djibouti (2024 census)",
+      "url": "https://www.citypopulation.de/en/djibouti/",
+      "countries": [
+        "djibouti",
+        "Djibouti"
+      ]
+    },
+    {
+      "date": "2024-08-28",
+      "title": "Pakistan (2023 census)",
+      "url": "https://www.citypopulation.de/en/pakistan/",
+      "countries": [
+        "pakistan",
+        "Pakistan"
+      ]
+    },
+    {
+      "date": "2024-08-14",
+      "title": "Albania (2023 census)",
+      "url": "https://www.citypopulation.de/en/albania/",
+      "countries": [
+        "albania",
+        "Albania"
+      ]
+    },
+    {
+      "date": "2024-08-01",
+      "title": "Austria",
+      "url": "https://www.citypopulation.de/en/austria/",
+      "countries": [
+        "austria",
+        "Austria"
+      ]
+    },
+    {
+      "date": "2024-07-25",
+      "title": "UK (England & Wales, Northern Ireland)",
+      "url": "https://www.citypopulation.de/en/uk/",
+      "countries": [
+        "uk",
+        "UK"
+      ]
+    },
+    {
+      "date": "2024-07-24",
+      "title": "Dominican Republic (2022 census)",
+      "url": "https://www.citypopulation.de/en/domrep/",
+      "countries": [
+        "domrep",
+        "Dominican Republic"
+      ]
+    },
+    {
+      "date": "2024-07-22",
+      "title": "Zambia (2022 census)",
+      "url": "https://www.citypopulation.de/en/zambia/",
+      "countries": [
+        "zambia",
+        "Zambia"
+      ]
+    },
+    {
+      "date": "2024-07-16",
+      "title": "Senegal (2023 census)",
+      "url": "https://www.citypopulation.de/en/senegal/",
+      "countries": [
+        "senegal",
+        "Senegal"
+      ]
+    },
+    {
+      "date": "2024-07-12",
+      "title": "Greece (settlements)",
+      "url": "https://www.citypopulation.de/en/greece/",
+      "countries": [
+        "greece",
+        "Greece"
+      ]
+    }
+  ]
+}
