@@ -1,5 +1,6 @@
 "use client";
 import { ReactNode, useMemo, useState } from "react";
+import { TableScroll } from "../_shared/TableScroll";
 
 export type SortValue = string | number | null;
 export type SortableCol = {
@@ -63,45 +64,47 @@ export default function SortableTable({
   };
 
   return (
-    <table className={tableClassName}>
-      <thead>
-        <tr className={headClassName}>
-          {cols.map((c) => {
-            const active = sort?.key === c.key;
-            return (
-              <th
-                key={c.key}
-                className={c.className}
-                aria-sort={active ? (sort!.dir === 1 ? "ascending" : "descending") : undefined}
-              >
-                {c.sortable === false ? (
-                  c.label
-                ) : (
-                  <button
-                    type="button"
-                    onClick={() => onSort(c.key)}
-                    className="inline-flex items-baseline gap-1 uppercase tracking-wider cursor-pointer hover:text-[var(--accent)]"
-                    title="Sort by this column"
-                  >
-                    {c.label}
-                    <span aria-hidden className={`text-[8px] ${active ? "" : "opacity-40"}`}>
-                      {active ? (sort!.dir === 1 ? "▲" : "▼") : "↕"}
-                    </span>
-                  </button>
-                )}
-              </th>
-            );
-          })}
-        </tr>
-      </thead>
-      <tbody>
-        {sorted.map((r) => (
-          <tr key={r.key} className={rowClassName} style={{ borderColor: "var(--border)" }}>
-            {r.cells}
+    <TableScroll>
+      <table className={tableClassName}>
+        <thead>
+          <tr className={headClassName}>
+            {cols.map((c) => {
+              const active = sort?.key === c.key;
+              return (
+                <th
+                  key={c.key}
+                  className={c.className}
+                  aria-sort={active ? (sort!.dir === 1 ? "ascending" : "descending") : undefined}
+                >
+                  {c.sortable === false ? (
+                    c.label
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => onSort(c.key)}
+                      className="inline-flex items-baseline gap-1 uppercase tracking-wider cursor-pointer hover:text-[var(--accent)]"
+                      title="Sort by this column"
+                    >
+                      {c.label}
+                      <span aria-hidden className={`text-[8px] ${active ? "" : "opacity-40"}`}>
+                        {active ? (sort!.dir === 1 ? "▲" : "▼") : "↕"}
+                      </span>
+                    </button>
+                  )}
+                </th>
+              );
+            })}
           </tr>
-        ))}
-        {footer}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {sorted.map((r) => (
+            <tr key={r.key} className={rowClassName} style={{ borderColor: "var(--border)" }}>
+              {r.cells}
+            </tr>
+          ))}
+          {footer}
+        </tbody>
+      </table>
+    </TableScroll>
   );
 }
