@@ -286,3 +286,119 @@ export function sportsTeamJsonLd(opts: {
     ...(sameAs.length ? { sameAs } : {}),
   };
 }
+
+export const SOUND_URL = `${BASE_URL}/sound`;
+
+export const SOUND_KEYWORDS = [
+  "music by metro",
+  "artist hometowns",
+  "Billboard Hot 100",
+  "UK Singles Chart",
+  "number-one singles by city",
+  "pop music geography",
+  "Grammy prestige by metro",
+  "chart history",
+];
+
+export const SOUND_DIMENSIONS = [
+  "Top-ten chart entries by metro",
+  "Number-one singles by metro",
+  "Chart points by artist hometown",
+  "Grammy prestige by metro",
+  "Velvet Rock production affinity",
+  "Decade-by-decade metro dominance",
+];
+
+/**
+ * Schema.org Dataset for the "Sound of the Metros" pillar: chart top-ten
+ * success attributed to artists' hometown metros. This is a distinct corpus
+ * from the composite metro ranking, so it gets its own Dataset node — its own
+ * URL, its own distributions, and its own `dateModified` taken from the
+ * pillar's `public/data/sound/summary.json` `generated` stamp (so the markup
+ * stays exactly as fresh as the data on every render, no separate upkeep).
+ */
+export function soundDatasetJsonLd(opts: {
+  dateModified: string;
+  metros?: number;
+  artists?: number;
+}) {
+  const counts =
+    opts.metros && opts.artists
+      ? ` Covers ${opts.metros} metros and ${opts.artists} attributed artists.`
+      : "";
+  return {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: "The Sound of the Metros",
+    description:
+      "Chart top-ten success attributed to artists' hometown metros, across the Billboard Hot 100 and the UK Singles Chart (1958–2026), plus Grammy prestige and record-production geography — aggregated to the metropolitan area." +
+      counts,
+    url: SOUND_URL,
+    identifier: SOUND_URL,
+    keywords: SOUND_KEYWORDS,
+    // The metro attribution, aggregation, and analysis are the author's, released
+    // under CC-BY 4.0. Underlying chart data (Billboard, the Official UK Singles
+    // Chart) and Grammy records remain their rights holders' property and are not
+    // redistributed — the published files hold only derived metro-level aggregates.
+    license: "https://creativecommons.org/licenses/by/4.0/",
+    usageInfo: SOUND_URL,
+    isAccessibleForFree: true,
+    conditionsOfAccess:
+      "The metro attribution, aggregation, and analysis are released by the author under CC-BY 4.0. Underlying chart data (Billboard Hot 100, the Official UK Singles Chart) and Grammy records remain the property of their respective rights holders and are not redistributed; the published files contain derived metro-level aggregates only.",
+    inLanguage: "en",
+    dateModified: opts.dateModified,
+    temporalCoverage: "1958-01-01/2026-12-31",
+    spatialCoverage: {
+      "@type": "Place",
+      name: "Global",
+    },
+    variableMeasured: SOUND_DIMENSIONS.map((k) => ({
+      "@type": "PropertyValue",
+      name: k,
+    })),
+    measurementTechnique:
+      "Each charting act is attributed to a single canonical hometown metro; top-ten chart runs, number-ones, Grammy prestige, and record-production credits are then aggregated per metro across eras.",
+    creator: {
+      "@type": "Person",
+      name: AUTHOR.name,
+      url: AUTHOR.url,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: PUBLISHER.name,
+      url: PUBLISHER.url,
+    },
+    isPartOf: {
+      "@type": "Dataset",
+      name: SITE_NAME,
+      url: BASE_URL,
+    },
+    distribution: [
+      {
+        "@type": "DataDownload",
+        name: "Metro-level aggregates (all lenses)",
+        encodingFormat: "application/json",
+        contentUrl: `${BASE_URL}/data/sound/metros_unified.json`,
+      },
+      {
+        "@type": "DataDownload",
+        name: "Artist-level hometown attributions",
+        encodingFormat: "application/json",
+        contentUrl: `${BASE_URL}/data/sound/artists.json`,
+      },
+      {
+        "@type": "DataDownload",
+        name: "Number-one singles by metro",
+        encodingFormat: "application/json",
+        contentUrl: `${BASE_URL}/data/sound/metro_number_ones.json`,
+      },
+      {
+        "@type": "DataDownload",
+        name: "Decade-by-decade metro dominance",
+        encodingFormat: "application/json",
+        contentUrl: `${BASE_URL}/data/sound/decades.json`,
+      },
+    ],
+    citation: "Desikan, A. (2026). The Sound of the Metros. Citizen of Nowhere.",
+  };
+}

@@ -2,6 +2,9 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import SoundNav from './SoundNav';
 import SoundHub, { type SoundMetro, type LensConfig } from './SoundHub';
+import { soundDatasetJsonLd, serializeJsonLd } from '@/lib/seo';
+
+type SoundSummary = { generated?: string; metros?: number; attributed_artists?: number };
 
 async function readJSON<T>(rel: string): Promise<T> {
   const p = path.join(process.cwd(), 'public', 'data', 'sound', rel);
@@ -9,11 +12,12 @@ async function readJSON<T>(rel: string): Promise<T> {
 }
 
 async function load() {
-  const [metros, lensesDoc] = await Promise.all([
+  const [metros, lensesDoc, summary] = await Promise.all([
     readJSON<SoundMetro[]>('metros_unified.json'),
     readJSON<{ lenses: LensConfig[] }>('lenses.json'),
+    readJSON<SoundSummary>('summary.json').catch(() => ({}) as SoundSummary),
   ]);
-  return { metros, lenses: lensesDoc.lenses };
+  return { metros, lenses: lensesDoc.lenses, summary };
 }
 
 export const metadata = {
@@ -23,9 +27,20 @@ export const metadata = {
 };
 
 export default async function SoundPage() {
-  const { metros, lenses } = await load();
+  const { metros, lenses, summary } = await load();
+  // dateModified rides the pillar's own freshness stamp, so the structured data
+  // is always exactly as fresh as the data itself — no separate maintenance.
+  const dataset = soundDatasetJsonLd({
+    dateModified: summary.generated ?? '2026-07-22',
+    metros: summary.metros,
+    artists: summary.attributed_artists,
+  });
   return (
     <main className="mx-auto max-w-5xl px-4 py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(dataset) }}
+      />
       <SoundNav />
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight">The Sound of the Metros</h1>
