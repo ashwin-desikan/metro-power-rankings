@@ -6,6 +6,7 @@ import { FEATURED } from '@/app/sports/games/featured';
 import { flagCdnUrl } from '@/lib/international-display';
 import { getCountry } from '@/lib/countries';
 import { ELECTION_HUBS } from '@/lib/electionHubsMeta';
+import { getForecast, type ForecastFile } from '@/lib/forecast';
 import { datasetJsonLd, serializeJsonLd } from '@/lib/seo';
 import { readFileSync } from 'fs';
 import { join } from 'path';
@@ -92,12 +93,20 @@ function topPowers(): Preview[] {
   }));
 }
 
-// Three real, dated 2026 contests (not "expected"/"due" placeholders) pulled
-// straight from lib/electionHubsMeta.ts — the same single source of truth
-// that drives the /elections landing page and every hub header, so this
-// preview updates itself the moment `next` is updated after a contest.
-function topElections(): Preview[] {
-  return ['us', 'br', 'nz'].map((code) => {
+// Genuinely self-retiring: candidates are only included while the weekly
+// forecast pipeline (scripts/forecast/) still tracks them in forecast.json --
+// the same source that drives /elections' "Tracking now" band, which "each
+// preview retires from this window once its election has been run." Once a
+// contest is decided and the pipeline drops it, it falls out of both places
+// together with no manual edit here. UK is excluded (its next election is an
+// undated "expected 2029", not a near-horizon race like the others).
+function topElections(forecast: ForecastFile | null): Preview[] {
+  if (!forecast) return [];
+  const CANDIDATES = ['us', 'br', 'nz', 'il', 'fr'] as const;
+  const active: Record<(typeof CANDIDATES)[number], unknown> = {
+    us: forecast.us, br: forecast.br, nz: forecast.nz, il: forecast.il, fr: forecast.fr,
+  };
+  return CANDIDATES.filter((code) => active[code]).slice(0, 3).map((code) => {
     const h = ELECTION_HUBS[code];
     return { name: h.name, flagUrl: flagCdnUrl(h.flag, '20x15'), sub: h.next, meta: '' };
   });
@@ -348,6 +357,7 @@ export default async function Home() {
   const journal = posts.slice(0, 3);
   const badges = getLiveBadges();
   const games = [...marqueeGames(), ...ballGames()];
+  const forecast = await getForecast();
 
   const INDICES: IndexCard[] = [
     { n: '01', title: 'Metro Power Rankings', desc: 'Every metro on Earth, scored across sixteen weighted dimensions.', stat: '4,200+ metros', href: '/rankings', emoji: '🌐', preview: topMetros() },
@@ -355,7 +365,7 @@ export default async function Home() {
     { n: '03', title: 'Zone Zero Cup', desc: 'National sporting merit across fourteen pillars, ten-year half-life.', stat: '200+ nations', href: '/sports/zone-zero-cup', emoji: '🏆', preview: topNations() },
     { n: '04', title: 'Musical Artist Rankings', desc: 'The biggest artists by chart success and prestige, by home metro.', stat: 'By metro', href: '/sound/artists', emoji: '🎵', preview: topArtists() },
     { n: '05', title: 'The Power Atlas', desc: 'National power ranked year by year, from the Renaissance to today.', stat: '526 years · 1500–now', href: '/power-atlas', emoji: '🏛️', preview: topPowers() },
-    { n: '06', title: 'The Election Atlas', desc: 'Every election in 35 countries and the EU — parties, leaders, turnout, and the results.', stat: '35 polities', href: '/elections', emoji: '🗳️', isNew: true, preview: topElections() },
+    { n: '06', title: 'The Election Atlas', desc: 'Every election in 35 countries and the EU — parties, leaders, turnout, and the results.', stat: '35 polities', href: '/elections', emoji: '🗳️', isNew: true, preview: topElections(forecast) },
   ];
 
   const leagueRows = LEAGUES.map((l) => ({ ...l, status: leagueStatusFor(l.href) }));
