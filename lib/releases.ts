@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-07-23",
+    headline: "The Screen of the Metros: a century of film, by metro",
+    items: [
+      "A new nine-tab film hub ranks metros, people and films on a century of US box office with Oscar prestige layered on top — era-normalized, director-weighted, and joined throughout by IMDb identity.",
+      "Every US number-one film since 1946 — 4,181 chart weeks browsable by decade, with reign leaderboards — alongside year-by-year box office almanacs carrying genres, directors and TMDB ratings.",
+      "Every Academy Awards ceremony since 1929, one night at a time — the Big Six with every nominee, winners in gold — plus the 500 greatest films mapped to the metros they are set or filmed in.",
+      "Sound and Screen now share a curated Culture menu in the top bar, and film joins the home page as Index 07.",
+    ],
+  },
+  {
     date: "2026-07-22",
     headline: "Thirty-five election hubs, plus honest forecasts for the next elections",
     items: [

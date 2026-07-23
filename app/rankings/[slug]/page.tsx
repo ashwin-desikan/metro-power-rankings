@@ -10,6 +10,8 @@ import { competitionHref } from "@/lib/competitionLinks";
 import HubNav from "@/app/teams/HubNav";
 import { getSoundForMetro } from "@/lib/sound";
 import SoundSection from "./SoundSection";
+import { getScreenForMetro } from "@/lib/screen";
+import ScreenSection from "./ScreenSection";
 import { getMayor } from "@/lib/mayors";
 import {
   getAllMetros,
@@ -215,6 +217,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
   const { slug } = await params;
   const detail = getMetroDetail(slug);
   const sound = getSoundForMetro(slug);
+  const screen = getScreenForMetro(slug);
   const mayor = await getMayor(slug);
 
   if (!detail) {
@@ -621,6 +624,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
             ...((detail.culture && infrastructureOrder.some((type) => detail.culture?.[type] && (detail.culture[type]?.length ?? 0) > 0)) ? [{ label: "Infrastructure", href: "#infrastructure" }] : []),
             ...(detail.luxury && detail.luxury.length > 0 ? [{ label: "Luxury", href: "#luxury" }] : []),
             ...(sound ? [{ label: "Sound", href: "#sound" }] : []),
+            ...(screen ? [{ label: "Screen", href: "#screen" }] : []),
           ];
           return <HubNav items={navItems} />;
         })()}
@@ -1276,6 +1280,8 @@ export default async function MetroDetailPage({ params }: PageProps) {
         )}
 
         <SoundSection sound={sound} slug={slug} />
+
+        <ScreenSection screen={screen} />
 
         {/* Education & Research Section (collapsed by default) */}
         {((detail.universities && detail.universities.length > 0) ||

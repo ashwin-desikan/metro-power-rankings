@@ -1,0 +1,1988 @@
+{
+ "The Godfather|1972": {
+  "tmdbId": 238,
+  "tt": "tt0068646"
+ },
+ "Citizen Kane|1941": {
+  "tmdbId": 15,
+  "tt": "tt0033467"
+ },
+ "2001: A Space Odyssey|1968": {
+  "tmdbId": 62,
+  "tt": "tt0062622"
+ },
+ "Seven Samurai|1954": {
+  "tmdbId": 346,
+  "tt": "tt0047478"
+ },
+ "Psycho|1960": {
+  "tmdbId": 539,
+  "tt": "tt0054215"
+ },
+ "Star Wars: Episode IV - A New Hope|1977": {
+  "tmdbId": 11,
+  "tt": "tt0076759"
+ },
+ "Battleship Potemkin|1925": {
+  "tmdbId": 643,
+  "tt": "tt0015648"
+ },
+ "The Wizard of Oz|1939": {
+  "tmdbId": 630,
+  "tt": "tt0032138"
+ },
+ "Snow White and the Seven Dwarfs|1937": {
+  "tmdbId": 408,
+  "tt": "tt0029583"
+ },
+ "The Birth of a Nation|1915": {
+  "tmdbId": 618,
+  "tt": "tt0004972"
+ },
+ "Casablanca|1942": {
+  "tmdbId": 289,
+  "tt": "tt0034583"
+ },
+ "Vertigo|1958": {
+  "tmdbId": 426,
+  "tt": "tt0052357"
+ },
+ "Gone with the Wind|1939": {
+  "tmdbId": 770,
+  "tt": "tt0031381"
+ },
+ "Jaws|1975": {
+  "tmdbId": 578,
+  "tt": "tt0073195"
+ },
+ "A Trip to the Moon|1902": {
+  "tmdbId": 775,
+  "tt": "tt0000417"
+ },
+ "Singin' in the Rain|1952": {
+  "tmdbId": 872,
+  "tt": "tt0045152"
+ },
+ "Apocalypse Now|1979": {
+  "tmdbId": 28,
+  "tt": "tt0078788"
+ },
+ "Lawrence of Arabia|1962": {
+  "tmdbId": 947,
+  "tt": "tt0056172"
+ },
+ "Pulp Fiction|1994": {
+  "tmdbId": 680,
+  "tt": "tt0110912"
+ },
+ "The Godfather Part II|1974": {
+  "tmdbId": 240,
+  "tt": "tt0071562"
+ },
+ "Metropolis|1927": {
+  "tmdbId": 19,
+  "tt": "tt0017136"
+ },
+ "City Lights|1931": {
+  "tmdbId": 901,
+  "tt": "tt0021749"
+ },
+ "Breathless|1960": {
+  "tmdbId": 269,
+  "tt": "tt0053472"
+ },
+ "Bicycle Thieves|1948": {
+  "tmdbId": 5156,
+  "tt": "tt0040522"
+ },
+ "Taxi Driver|1976": {
+  "tmdbId": 103,
+  "tt": "tt0075314"
+ },
+ "M|1931": {
+  "tmdbId": 832,
+  "tt": "tt0022100"
+ },
+ "Sunrise: A Song of Two Humans|1927": {
+  "tmdbId": 631,
+  "tt": "tt0018455"
+ },
+ "Rear Window|1954": {
+  "tmdbId": 567,
+  "tt": "tt0047396"
+ },
+ "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb|1964": {
+  "tmdbId": 935,
+  "tt": "tt0057012"
+ },
+ "Rashômon|1950": {
+  "tmdbId": 548,
+  "tt": "tt0042876"
+ },
+ "Raiders of the Lost Ark|1981": {
+  "tmdbId": 85,
+  "tt": "tt0082971"
+ },
+ "The Good, the Bad and the Ugly|1966": {
+  "tmdbId": 429,
+  "tt": "tt0060196"
+ },
+ "Modern Times|1936": {
+  "tmdbId": 3082,
+  "tt": "tt0027977"
+ },
+ "The Passion of Joan of Arc|1928": {
+  "tmdbId": 780,
+  "tt": "tt0019254"
+ },
+ "The Searchers|1956": {
+  "tmdbId": 3114,
+  "tt": "tt0049730"
+ },
+ "8½|1963": {
+  "tmdbId": 422,
+  "tt": "tt0056801"
+ },
+ "12 Angry Men|1957": {
+  "tmdbId": 389,
+  "tt": "tt0050083"
+ },
+ "It's a Wonderful Life|1946": {
+  "tmdbId": 1585,
+  "tt": "tt0038650"
+ },
+ "Stagecoach|1939": {
+  "tmdbId": 995,
+  "tt": "tt0031971"
+ },
+ "Star Wars: Episode V - The Empire Strikes Back|1980": {
+  "tmdbId": 1891,
+  "tt": "tt0080684"
+ },
+ "Some Like It Hot|1959": {
+  "tmdbId": 239,
+  "tt": "tt0053291"
+ },
+ "North by Northwest|1959": {
+  "tmdbId": 213,
+  "tt": "tt0053125"
+ },
+ "Toy Story|1995": {
+  "tmdbId": 862,
+  "tt": "tt0114709"
+ },
+ "The Exorcist|1973": {
+  "tmdbId": 9552,
+  "tt": "tt0070047"
+ },
+ "Schindler's List|1993": {
+  "tmdbId": 424,
+  "tt": "tt0108052"
+ },
+ "Alien|1979": {
+  "tmdbId": 348,
+  "tt": "tt0078748"
+ },
+ "The Gold Rush|1925": {
+  "tmdbId": 962,
+  "tt": "tt0015864"
+ },
+ "Intolerance|1916": {
+  "tmdbId": 3059,
+  "tt": "tt0006864"
+ },
+ "E.T. the Extra-Terrestrial|1982": {
+  "tmdbId": 601,
+  "tt": "tt0083866"
+ },
+ "The Graduate|1967": {
+  "tmdbId": 37247,
+  "tt": "tt0061722"
+ },
+ "The 400 Blows|1959": {
+  "tmdbId": 147,
+  "tt": "tt0053198"
+ },
+ "Tokyo Story|1953": {
+  "tmdbId": 18148,
+  "tt": "tt0046438"
+ },
+ "Bonnie and Clyde|1967": {
+  "tmdbId": 475,
+  "tt": "tt0061418"
+ },
+ "The Rules of the Game|1939": {
+  "tmdbId": 776,
+  "tt": "tt0031885"
+ },
+ "The Terminator|1984": {
+  "tmdbId": 218,
+  "tt": "tt0088247"
+ },
+ "GoodFellas|1990": {
+  "tmdbId": 769,
+  "tt": "tt0099685"
+ },
+ "Sunset Boulevard|1950": {
+  "tmdbId": 599,
+  "tt": "tt0043014"
+ },
+ "Blade Runner|1982": {
+  "tmdbId": 78,
+  "tt": "tt0083658"
+ },
+ "Raging Bull|1980": {
+  "tmdbId": 1578,
+  "tt": "tt0081398"
+ },
+ "A Clockwork Orange|1971": {
+  "tmdbId": 185,
+  "tt": "tt0066921"
+ },
+ "Goldfinger|1964": {
+  "tmdbId": 658,
+  "tt": "tt0058150"
+ },
+ "The Third Man|1949": {
+  "tmdbId": 1092,
+  "tt": "tt0041959"
+ },
+ "One Flew over the Cuckoo's Nest|1975": {
+  "tmdbId": 510,
+  "tt": "tt0073486"
+ },
+ "The Kid|1921": {
+  "tmdbId": 10098,
+  "tt": "tt0012349"
+ },
+ "Pather Panchali|1955": {
+  "tmdbId": 5801,
+  "tt": "tt0048473"
+ },
+ "Do the Right Thing|1989": {
+  "tmdbId": 925,
+  "tt": "tt0097216"
+ },
+ "Lord of the Rings: The Return of the King|2003": {
+  "tmdbId": 122,
+  "tt": "tt0167260"
+ },
+ "Spirited Away|2001": {
+  "tmdbId": 129,
+  "tt": "tt0245429"
+ },
+ "Double Indemnity|1944": {
+  "tmdbId": 996,
+  "tt": "tt0036775"
+ },
+ "Once Upon a Time in the West|1968": {
+  "tmdbId": 335,
+  "tt": "tt0064116"
+ },
+ "King Kong|1933": {
+  "tmdbId": 244,
+  "tt": "tt0024216"
+ },
+ "Persona|1966": {
+  "tmdbId": 797,
+  "tt": "tt0060827"
+ },
+ "La dolce vita|1960": {
+  "tmdbId": 439,
+  "tt": "tt0053779"
+ },
+ "Rome, Open City|1945": {
+  "tmdbId": 307,
+  "tt": "tt0038890"
+ },
+ "The Matrix|1999": {
+  "tmdbId": 603,
+  "tt": "tt0133093"
+ },
+ "On the Waterfront|1954": {
+  "tmdbId": 654,
+  "tt": "tt0047296"
+ },
+ "Chinatown|1974": {
+  "tmdbId": 829,
+  "tt": "tt0071315"
+ },
+ "The Silence of the Lambs|1991": {
+  "tmdbId": 274,
+  "tt": "tt0102926"
+ },
+ "The Deer Hunter|1978": {
+  "tmdbId": 11778,
+  "tt": "tt0077416"
+ },
+ "The Great Dictator|1940": {
+  "tmdbId": 914,
+  "tt": "tt0032553"
+ },
+ "It Happened One Night|1934": {
+  "tmdbId": 3078,
+  "tt": "tt0025316"
+ },
+ "Lord of the Rings: The Fellowship of the Rings|2001": {
+  "tmdbId": 120,
+  "tt": "tt0120737"
+ },
+ "Back to the Future|1985": {
+  "tmdbId": 105,
+  "tt": "tt0088763"
+ },
+ "Night of the Living Dead|1968": {
+  "tmdbId": 10331,
+  "tt": "tt0063350"
+ },
+ "The Bridge on the River Kwai|1957": {
+  "tmdbId": 826,
+  "tt": "tt0050212"
+ },
+ "The Cabinet of Dr. Caligari|1920": {
+  "tmdbId": 234,
+  "tt": "tt0010323"
+ },
+ "The Maltese Falcon|1941": {
+  "tmdbId": 963,
+  "tt": "tt0033870"
+ },
+ "Fantasia|1940": {
+  "tmdbId": 756,
+  "tt": "tt0032455"
+ },
+ "Midnight Cowboy|1969": {
+  "tmdbId": 3116,
+  "tt": "tt0064665"
+ },
+ "Ben-Hur|1959": {
+  "tmdbId": 665,
+  "tt": "tt0052618"
+ },
+ "The Seventh Seal|1957": {
+  "tmdbId": 490,
+  "tt": "tt0050976"
+ },
+ "Man with a Movie Camera|1929": {
+  "tmdbId": 26317,
+  "tt": "tt0019760"
+ },
+ "The Dark Knight|2008": {
+  "tmdbId": 155,
+  "tt": "tt0468569"
+ },
+ "Rocky|1976": {
+  "tmdbId": 1366,
+  "tt": "tt0075148"
+ },
+ "Halloween|1978": {
+  "tmdbId": 948,
+  "tt": "tt0077651"
+ },
+ "To Kill a Mockingbird|1962": {
+  "tmdbId": 595,
+  "tt": "tt0056592"
+ },
+ "Annie Hall|1977": {
+  "tmdbId": 703,
+  "tt": "tt0075686"
+ },
+ "The Apartment|1960": {
+  "tmdbId": 284,
+  "tt": "tt0053604"
+ },
+ "The Shawshank Redemption|1994": {
+  "tmdbId": 278,
+  "tt": "tt0111161"
+ },
+ "Forrest Gump|1994": {
+  "tmdbId": 13,
+  "tt": "tt0109830"
+ },
+ "Frankenstein|1931": {
+  "tmdbId": 3035,
+  "tt": "tt0021884"
+ },
+ "All About Eve|1950": {
+  "tmdbId": 705,
+  "tt": "tt0042192"
+ },
+ "Die Hard|1988": {
+  "tmdbId": 562,
+  "tt": "tt0095016"
+ },
+ "The Grand Illusion|1937": {
+  "tmdbId": 777,
+  "tt": "tt0028950"
+ },
+ "My Neighbour Totoro|1988": {
+  "tmdbId": 8392,
+  "tt": "tt0096283"
+ },
+ "Nosferatu|1922": {
+  "tmdbId": 653,
+  "tt": "tt0013442"
+ },
+ "Mulholland Dr.|2001": {
+  "tmdbId": 1018,
+  "tt": "tt0166924"
+ },
+ "Blue Velvet|1986": {
+  "tmdbId": 793,
+  "tt": "tt0090756"
+ },
+ "High Noon|1952": {
+  "tmdbId": 288,
+  "tt": "tt0044706"
+ },
+ "The Sound of Music|1965": {
+  "tmdbId": 15121,
+  "tt": "tt0059742"
+ },
+ "The Treasure of the Sierra Madre|1948": {
+  "tmdbId": 3090,
+  "tt": "tt0040897"
+ },
+ "The Best Years of Our Lives|1946": {
+  "tmdbId": 887,
+  "tt": "tt0036868"
+ },
+ "The General|1926": {
+  "tmdbId": 961,
+  "tt": "tt0017925"
+ },
+ "West Side Story|1961": {
+  "tmdbId": 1725,
+  "tt": "tt0055614"
+ },
+ "Touch of Evil|1958": {
+  "tmdbId": 1480,
+  "tt": "tt0052311"
+ },
+ "A Streetcar Named Desire|1951": {
+  "tmdbId": 702,
+  "tt": "tt0044081"
+ },
+ "Saving Private Ryan|1998": {
+  "tmdbId": 857,
+  "tt": "tt0120815"
+ },
+ "Titanic|1997": {
+  "tmdbId": 597,
+  "tt": "tt0120338"
+ },
+ "Un chien andalou|1929": {
+  "tmdbId": 626,
+  "tt": "tt0020530"
+ },
+ "Children of Paradise|1945": {
+  "tmdbId": 2457,
+  "tt": "tt0037674"
+ },
+ "The Wild Bunch|1969": {
+  "tmdbId": 576,
+  "tt": "tt0065214"
+ },
+ "La strada|1954": {
+  "tmdbId": 405,
+  "tt": "tt0047528"
+ },
+ "Close Encounters of the Third Kind|1977": {
+  "tmdbId": 840,
+  "tt": "tt0075860"
+ },
+ "Parasite|2019": {
+  "tmdbId": 496243,
+  "tt": "tt6751668"
+ },
+ "Jurassic Park|1993": {
+  "tmdbId": 329,
+  "tt": "tt0107290"
+ },
+ "The Shining|1980": {
+  "tmdbId": 694,
+  "tt": "tt0081505"
+ },
+ "Rebel Without a Cause|1955": {
+  "tmdbId": 221,
+  "tt": "tt0048545"
+ },
+ "Superman|1978": {
+  "tmdbId": 1924,
+  "tt": "tt0078346"
+ },
+ "L'arrivée d'un train en gare de La Ciotat|1896": {
+  "tmdbId": 160,
+  "tt": "tt0000012"
+ },
+ "Notorious|1946": {
+  "tmdbId": 303,
+  "tt": "tt0038787"
+ },
+ "The French Connection|1971": {
+  "tmdbId": 1051,
+  "tt": "tt0067116"
+ },
+ "The Texas Chain Saw Massacre|1974": {
+  "tmdbId": 30497,
+  "tt": "tt0072271"
+ },
+ "Mr. Smith Goes to Washington|1939": {
+  "tmdbId": 3083,
+  "tt": "tt0031679"
+ },
+ "Dr. No|1962": {
+  "tmdbId": 646,
+  "tt": "tt0055928"
+ },
+ "Blow-Up|1966": {
+  "tmdbId": 1052,
+  "tt": "tt0060176"
+ },
+ "Paths of Glory|1957": {
+  "tmdbId": 975,
+  "tt": "tt0050825"
+ },
+ "Rio Bravo|1959": {
+  "tmdbId": 301,
+  "tt": "tt0053221"
+ },
+ "The Grapes of Wrath|1940": {
+  "tmdbId": 596,
+  "tt": "tt0032551"
+ },
+ "Fargo|1996": {
+  "tmdbId": 275,
+  "tt": "tt0116282"
+ },
+ "Terminator 2: Judgment Day|1991": {
+  "tmdbId": 280,
+  "tt": "tt0103064"
+ },
+ "Unforgiven|1992": {
+  "tmdbId": 33,
+  "tt": "tt0105695"
+ },
+ "Rosemary's Baby|1968": {
+  "tmdbId": 805,
+  "tt": "tt0063522"
+ },
+ "Avatar|2009": {
+  "tmdbId": 19995,
+  "tt": "tt0499549"
+ },
+ "Aliens|1986": {
+  "tmdbId": 679,
+  "tt": "tt0090605"
+ },
+ "Sherlock Jr.|1924": {
+  "tmdbId": 992,
+  "tt": "tt0015324"
+ },
+ "Workers Leaving the Lumière Factory|1895": {
+  "tmdbId": 774,
+  "tt": "tt0000010"
+ },
+ "Fight Club|1999": {
+  "tmdbId": 550,
+  "tt": "tt0137523"
+ },
+ "There Will Be Blood|2007": {
+  "tmdbId": 7345,
+  "tt": "tt0469494"
+ },
+ "Eternal Sunshine of the Spotless Mind|2004": {
+  "tmdbId": 38,
+  "tt": "tt0338013"
+ },
+ "Duck Soup|1933": {
+  "tmdbId": 3063,
+  "tt": "tt0023969"
+ },
+ "Amadeus|1984": {
+  "tmdbId": 279,
+  "tt": "tt0086879"
+ },
+ "The Birds|1963": {
+  "tmdbId": 571,
+  "tt": "tt0056869"
+ },
+ "All Quiet on the Western Front|1930": {
+  "tmdbId": 143,
+  "tt": "tt0020629"
+ },
+ "The Night of the Hunter|1955": {
+  "tmdbId": 3112,
+  "tt": "tt0048424"
+ },
+ "Safety Last!|1923": {
+  "tmdbId": 22596,
+  "tt": "tt0014429"
+ },
+ "Nanook of the North|1922": {
+  "tmdbId": 669,
+  "tt": "tt0013427"
+ },
+ "Who's Afraid of Virginia Woolf?|1966": {
+  "tmdbId": 396,
+  "tt": "tt0061184"
+ },
+ "Scarface|1983": {
+  "tmdbId": 111,
+  "tt": "tt0086250"
+ },
+ "Batman|1989": {
+  "tmdbId": 268,
+  "tt": "tt0096895"
+ },
+ "Reservoir Dogs|1992": {
+  "tmdbId": 500,
+  "tt": "tt0105236"
+ },
+ "Enter the Dragon|1973": {
+  "tmdbId": 9461,
+  "tt": "tt0070034"
+ },
+ "Dawn of the Dead|1978": {
+  "tmdbId": 923,
+  "tt": "tt0077402"
+ },
+ "The Red Shoes|1948": {
+  "tmdbId": 19542,
+  "tt": "tt0040725"
+ },
+ "Stalker|1979": {
+  "tmdbId": 1398,
+  "tt": "tt0079944"
+ },
+ "Pinocchio|1940": {
+  "tmdbId": 10895,
+  "tt": "tt0032910"
+ },
+ "Rebecca|1940": {
+  "tmdbId": 223,
+  "tt": "tt0032976"
+ },
+ "Bride of Frankenstein|1935": {
+  "tmdbId": 229,
+  "tt": "tt0026138"
+ },
+ "Invasion of the Body Snatchers|1956": {
+  "tmdbId": 11549,
+  "tt": "tt0049366"
+ },
+ "Wild Strawberries|1957": {
+  "tmdbId": 614,
+  "tt": "tt0050986"
+ },
+ "City of God|2002": {
+  "tmdbId": 598,
+  "tt": "tt0317248"
+ },
+ "Trainspotting|1996": {
+  "tmdbId": 627,
+  "tt": "tt0117951"
+ },
+ "The Lion King|1994": {
+  "tmdbId": 8587,
+  "tt": "tt0110357"
+ },
+ "Barry Lyndon|1975": {
+  "tmdbId": 3175,
+  "tt": "tt0072684"
+ },
+ "Bringing Up Baby|1938": {
+  "tmdbId": 900,
+  "tt": "tt0029947"
+ },
+ "Aguirre: The Wrath of God|1972": {
+  "tmdbId": 2000,
+  "tt": "tt0068182"
+ },
+ "Butch Cassidy and the Sundance Kid|1969": {
+  "tmdbId": 642,
+  "tt": "tt0064115"
+ },
+ "The Adventures of Robin Hood|1938": {
+  "tmdbId": 10907,
+  "tt": "tt0029843"
+ },
+ "Monty Python and the Holy Grail|1975": {
+  "tmdbId": 762,
+  "tt": "tt0071853"
+ },
+ "WALL·E|2008": {
+  "tmdbId": 10681,
+  "tt": "tt0910970"
+ },
+ "Inception|2010": {
+  "tmdbId": 27205,
+  "tt": "tt1375666"
+ },
+ "Godzilla|1954": {
+  "tmdbId": 1678,
+  "tt": "tt0047034"
+ },
+ "Mad Max: Fury Road|2015": {
+  "tmdbId": 76341,
+  "tt": "tt1392190"
+ },
+ "M*A*S*H|1970": {
+  "tmdbId": 651,
+  "tt": "tt0066026"
+ },
+ "Mary Poppins|1964": {
+  "tmdbId": 433,
+  "tt": "tt0058331"
+ },
+ "Ikiru|1952": {
+  "tmdbId": 3782,
+  "tt": "tt0044741"
+ },
+ "The Social Network|2010": {
+  "tmdbId": 37799,
+  "tt": "tt1285016"
+ },
+ "The Big Parade|1925": {
+  "tmdbId": 3060,
+  "tt": "tt0015624"
+ },
+ "No Country for Old Men|2007": {
+  "tmdbId": 6977,
+  "tt": "tt0477348"
+ },
+ "American Graffiti|1973": {
+  "tmdbId": 838,
+  "tt": "tt0069704"
+ },
+ "The Jazz Singer|1927": {
+  "tmdbId": 939,
+  "tt": "tt0018037"
+ },
+ "Dracula|1931": {
+  "tmdbId": 138,
+  "tt": "tt0021814"
+ },
+ "His Girl Friday|1940": {
+  "tmdbId": 3085,
+  "tt": "tt0032599"
+ },
+ "The Philadelphia Story|1940": {
+  "tmdbId": 981,
+  "tt": "tt0032904"
+ },
+ "Ugetsu|1953": {
+  "tmdbId": 14696,
+  "tt": "tt0046478"
+ },
+ "Roman Holiday|1953": {
+  "tmdbId": 804,
+  "tt": "tt0046250"
+ },
+ "Crouching Tiger, Hidden Dragon|2000": {
+  "tmdbId": 146,
+  "tt": "tt0190332"
+ },
+ "A Fistful of Dollars|1964": {
+  "tmdbId": 391,
+  "tt": "tt0058461"
+ },
+ "A Hard Day's Night|1964": {
+  "tmdbId": 704,
+  "tt": "tt0058182"
+ },
+ "Napoléon|1927": {
+  "tmdbId": 42536,
+  "tt": "tt0018192"
+ },
+ "Greed|1924": {
+  "tmdbId": 1405,
+  "tt": "tt0015881"
+ },
+ "In the Heat of the Night|1967": {
+  "tmdbId": 10633,
+  "tt": "tt0061811"
+ },
+ "Easy Rider|1969": {
+  "tmdbId": 624,
+  "tt": "tt0064276"
+ },
+ "The Crowd|1928": {
+  "tmdbId": 3061,
+  "tt": "tt0018806"
+ },
+ "Steamboat Willie|1928": {
+  "tmdbId": 53565,
+  "tt": "tt0019422"
+ },
+ "L'avventura|1960": {
+  "tmdbId": 5165,
+  "tt": "tt0053619"
+ },
+ "Get Out|2017": {
+  "tmdbId": 419430,
+  "tt": "tt5052448"
+ },
+ "Scarface|1932": {
+  "tmdbId": 877,
+  "tt": "tt0023427"
+ },
+ "The Avengers|2012": {
+  "tmdbId": 24428,
+  "tt": "tt0848228"
+ },
+ "The Battle of Algiers|1966": {
+  "tmdbId": 17295,
+  "tt": "tt0058946"
+ },
+ "The Wages of Fear|1953": {
+  "tmdbId": 204,
+  "tt": "tt0046268"
+ },
+ "Dirty Harry|1971": {
+  "tmdbId": 984,
+  "tt": "tt0066999"
+ },
+ "Ghostbusters|1984": {
+  "tmdbId": 620,
+  "tt": "tt0087332"
+ },
+ "American Beauty|1999": {
+  "tmdbId": 14,
+  "tt": "tt0169547"
+ },
+ "The Asphalt Jungle|1950": {
+  "tmdbId": 16958,
+  "tt": "tt0042208"
+ },
+ "Network|1976": {
+  "tmdbId": 10774,
+  "tt": "tt0074958"
+ },
+ "Breakfast at Tiffany's|1961": {
+  "tmdbId": 164,
+  "tt": "tt0054698"
+ },
+ "Pan's Labyrinth|2006": {
+  "tmdbId": 1417,
+  "tt": "tt0457430"
+ },
+ "Cabaret|1972": {
+  "tmdbId": 10784,
+  "tt": "tt0068327"
+ },
+ "Brief Encounter|1945": {
+  "tmdbId": 851,
+  "tt": "tt0037558"
+ },
+ "Out of the Past|1947": {
+  "tmdbId": 678,
+  "tt": "tt0039689"
+ },
+ "The Public Enemy|1931": {
+  "tmdbId": 17687,
+  "tt": "tt0022286"
+ },
+ "Airplane!|1980": {
+  "tmdbId": 813,
+  "tt": "tt0080339"
+ },
+ "Se7en|1995": {
+  "tmdbId": 807,
+  "tt": "tt0114369"
+ },
+ "Brokeback Mountain|2005": {
+  "tmdbId": 142,
+  "tt": "tt0388795"
+ },
+ "Lord of the Rings: The Two Towers|2002": {
+  "tmdbId": 121,
+  "tt": "tt0167261"
+ },
+ "Andrei Rublev|1966": {
+  "tmdbId": 895,
+  "tt": "tt0060107"
+ },
+ "Yojimbo|1961": {
+  "tmdbId": 11878,
+  "tt": "tt0055630"
+ },
+ "The Last Laugh|1924": {
+  "tmdbId": 5991,
+  "tt": "tt0015064"
+ },
+ "Hiroshima mon amour|1959": {
+  "tmdbId": 5544,
+  "tt": "tt0052893"
+ },
+ "The Usual Suspects|1995": {
+  "tmdbId": 629,
+  "tt": "tt0114814"
+ },
+ "Finding Nemo|2003": {
+  "tmdbId": 12,
+  "tt": "tt0266543"
+ },
+ "The Thing|1982": {
+  "tmdbId": 1091,
+  "tt": "tt0084787"
+ },
+ "Manhattan|1979": {
+  "tmdbId": 696,
+  "tt": "tt0079522"
+ },
+ "Boyhood|2014": {
+  "tmdbId": 85350,
+  "tt": "tt1065073"
+ },
+ "Mean Streets|1973": {
+  "tmdbId": 203,
+  "tt": "tt0070379"
+ },
+ "Carrie|1976": {
+  "tmdbId": 7340,
+  "tt": "tt0074285"
+ },
+ "Akira|1988": {
+  "tmdbId": 149,
+  "tt": "tt0094625"
+ },
+ "Gladiator|2000": {
+  "tmdbId": 98,
+  "tt": "tt0172495"
+ },
+ "Ran|1985": {
+  "tmdbId": 11645,
+  "tt": "tt0089881"
+ },
+ "Once Upon a Time in America|1984": {
+  "tmdbId": 311,
+  "tt": "tt0087843"
+ },
+ "Beauty and the Beast|1946": {
+  "tmdbId": 648,
+  "tt": "tt0038348"
+ },
+ "Meet Me in St. Louis|1944": {
+  "tmdbId": 909,
+  "tt": "tt0037059"
+ },
+ "Beauty and the Beast|1991": {
+  "tmdbId": 10020,
+  "tt": "tt0101414"
+ },
+ "To Be or Not to Be|1942": {
+  "tmdbId": 198,
+  "tt": "tt0035446"
+ },
+ "Our Hospitality|1923": {
+  "tmdbId": 701,
+  "tt": "tt0014341"
+ },
+ "Freaks|1932": {
+  "tmdbId": 136,
+  "tt": "tt0022913"
+ },
+ "Memento|2000": {
+  "tmdbId": 77,
+  "tt": "tt0209144"
+ },
+ "The Manchurian Candidate|1962": {
+  "tmdbId": 982,
+  "tt": "tt0056218"
+ },
+ "Nashville|1975": {
+  "tmdbId": 3121,
+  "tt": "tt0073440"
+ },
+ "The Ten Commandments|1956": {
+  "tmdbId": 6844,
+  "tt": "tt0049833"
+ },
+ "Das Boot|1981": {
+  "tmdbId": 387,
+  "tt": "tt0082096"
+ },
+ "Contempt|1963": {
+  "tmdbId": 266,
+  "tt": "tt0057345"
+ },
+ "A Woman Under Influence|1974": {
+  "tmdbId": 29845,
+  "tt": "tt0072417"
+ },
+ "Dog Day Afternoon|1975": {
+  "tmdbId": 968,
+  "tt": "tt0072890"
+ },
+ "Oldboy|2003": {
+  "tmdbId": 670,
+  "tt": "tt0364569"
+ },
+ "Cool Hand Luke|1967": {
+  "tmdbId": 903,
+  "tt": "tt0061512"
+ },
+ "The Thin Man|1934": {
+  "tmdbId": 3529,
+  "tt": "tt0025878"
+ },
+ "This Is Spinal Tap|1984": {
+  "tmdbId": 11031,
+  "tt": "tt0088258"
+ },
+ "Shane|1953": {
+  "tmdbId": 3110,
+  "tt": "tt0046303"
+ },
+ "Laura|1944": {
+  "tmdbId": 1939,
+  "tt": "tt0037008"
+ },
+ "Les diaboliques|1955": {
+  "tmdbId": 827,
+  "tt": "tt0046911"
+ },
+ "Days of Heaven|1978": {
+  "tmdbId": 16642,
+  "tt": "tt0077405"
+ },
+ "All the President's Men|1976": {
+  "tmdbId": 891,
+  "tt": "tt0074119"
+ },
+ "Dr. Mabuse the Gambler Part 1: The Great Gambler|1922": {
+  "tmdbId": 5998,
+  "tt": "tt0013086"
+ },
+ "Repulsion|1965": {
+  "tmdbId": 11481,
+  "tt": "tt0059646"
+ },
+ "Doctor Zhivago|1965": {
+  "tmdbId": 907,
+  "tt": "tt0059113"
+ },
+ "Gravity|2013": {
+  "tmdbId": 49047,
+  "tt": "tt1454468"
+ },
+ "Inglourious Basterds|2009": {
+  "tmdbId": 16869,
+  "tt": "tt0361748"
+ },
+ "In the Mood for Love|2000": {
+  "tmdbId": 843,
+  "tt": "tt0118694"
+ },
+ "The Conformist|1970": {
+  "tmdbId": 8416,
+  "tt": "tt0065571"
+ },
+ "Raise the Red Lantern|1991": {
+  "tmdbId": 10404,
+  "tt": "tt0101640"
+ },
+ "Jules and Jim|1962": {
+  "tmdbId": 1628,
+  "tt": "tt0055032"
+ },
+ "Make Way for Tomorrow|1937": {
+  "tmdbId": 41059,
+  "tt": "tt0029192"
+ },
+ "The Man Who Shot Liberty Valance|1962": {
+  "tmdbId": 11697,
+  "tt": "tt0056217"
+ },
+ "Häxan|1922": {
+  "tmdbId": 57283,
+  "tt": "tt0013257"
+ },
+ "My Darling Clementine|1946": {
+  "tmdbId": 3088,
+  "tt": "tt0038762"
+ },
+ "Top Hat|1935": {
+  "tmdbId": 3080,
+  "tt": "tt0027125"
+ },
+ "Mad Max 2: The Road Warrior|1981": {
+  "tmdbId": 8810,
+  "tt": "tt0082694"
+ },
+ "A Man Escaped|1956": {
+  "tmdbId": 15244,
+  "tt": "tt0049902"
+ },
+ "The Phantom Carriage|1921": {
+  "tmdbId": 58129,
+  "tt": "tt0012364"
+ },
+ "Last Year at Marienbad|1961": {
+  "tmdbId": 4024,
+  "tt": "tt0054632"
+ },
+ "The Last Picture Show|1971": {
+  "tmdbId": 25188,
+  "tt": "tt0067328"
+ },
+ "The Blue Angel|1930": {
+  "tmdbId": 228,
+  "tt": "tt0020697"
+ },
+ "A Matter of Life and Death|1946": {
+  "tmdbId": 28162,
+  "tt": "tt0038733"
+ },
+ "The Big Sleep|1946": {
+  "tmdbId": 910,
+  "tt": "tt0038355"
+ },
+ "The Elephant Man|1980": {
+  "tmdbId": 1955,
+  "tt": "tt0080678"
+ },
+ "L.A. Confidential|1997": {
+  "tmdbId": 2118,
+  "tt": "tt0119488"
+ },
+ "Boyz n the Hood|1991": {
+  "tmdbId": 650,
+  "tt": "tt0101507"
+ },
+ "Anatomy of a Murder|1959": {
+  "tmdbId": 93,
+  "tt": "tt0052561"
+ },
+ "Sansho the Bailiff|1954": {
+  "tmdbId": 20532,
+  "tt": "tt0047445"
+ },
+ "The Sting|1973": {
+  "tmdbId": 9277,
+  "tt": "tt0070735"
+ },
+ "Viridiana|1961": {
+  "tmdbId": 4497,
+  "tt": "tt0055601"
+ },
+ "Brazil|1985": {
+  "tmdbId": 68,
+  "tt": "tt0088846"
+ },
+ "The Truman Show|1998": {
+  "tmdbId": 37165,
+  "tt": "tt0120382"
+ },
+ "Heat|1995": {
+  "tmdbId": 949,
+  "tt": "tt0113277"
+ },
+ "Jeanne Dielman, 23 quai du Commerce, 1080 Bruxelles|1975": {
+  "tmdbId": 44012,
+  "tt": "tt0073198"
+ },
+ "Young Frankenstein|1974": {
+  "tmdbId": 3034,
+  "tt": "tt0072431"
+ },
+ "Moonlight|2016": {
+  "tmdbId": 376867,
+  "tt": "tt4975722"
+ },
+ "A Separation|2011": {
+  "tmdbId": 60243,
+  "tt": "tt1832382"
+ },
+ "Wings|1927": {
+  "tmdbId": 28966,
+  "tt": "tt0018578"
+ },
+ "Red River|1948": {
+  "tmdbId": 3089,
+  "tt": "tt0040724"
+ },
+ "Spartacus|1960": {
+  "tmdbId": 967,
+  "tt": "tt0054331"
+ },
+ "The Conversation|1974": {
+  "tmdbId": 592,
+  "tt": "tt0071360"
+ },
+ "From Here to Eternity|1953": {
+  "tmdbId": 11426,
+  "tt": "tt0045793"
+ },
+ "Who Framed Roger Rabbit|1988": {
+  "tmdbId": 856,
+  "tt": "tt0096438"
+ },
+ "Groundhog Day|1993": {
+  "tmdbId": 137,
+  "tt": "tt0107048"
+ },
+ "The Invisible Man|1933": {
+  "tmdbId": 10787,
+  "tt": "tt0024184"
+ },
+ "Patton|1970": {
+  "tmdbId": 11202,
+  "tt": "tt0066206"
+ },
+ "Planet of the Apes|1968": {
+  "tmdbId": 871,
+  "tt": "tt0063442"
+ },
+ "L'Atalante|1934": {
+  "tmdbId": 43904,
+  "tt": "tt0024844"
+ },
+ "Cat on a Hot Tin Roof|1958": {
+  "tmdbId": 261,
+  "tt": "tt0051459"
+ },
+ "Shoah|1985": {
+  "tmdbId": 42044,
+  "tt": "tt0090015"
+ },
+ "Cinema Paradiso|1988": {
+  "tmdbId": 11216,
+  "tt": "tt0095765"
+ },
+ "Kind Hearts and Coronets|1949": {
+  "tmdbId": 11898,
+  "tt": "tt0041546"
+ },
+ "Three Colours: Red|1994": {
+  "tmdbId": 110,
+  "tt": "tt0111495"
+ },
+ "Le Samouraï|1967": {
+  "tmdbId": 5511,
+  "tt": "tt0062229"
+ },
+ "Trouble in Paradise|1932": {
+  "tmdbId": 195,
+  "tt": "tt0023622"
+ },
+ "The Phantom of the Opera|1925": {
+  "tmdbId": 964,
+  "tt": "tt0016220"
+ },
+ "Last Tango in Paris|1972": {
+  "tmdbId": 1643,
+  "tt": "tt0070849"
+ },
+ "The African Queen|1951": {
+  "tmdbId": 488,
+  "tt": "tt0043265"
+ },
+ "The Great Train Robbery|1903": {
+  "tmdbId": 5698,
+  "tt": "tt0000439"
+ },
+ "Toy Story 3|2010": {
+  "tmdbId": 10193,
+  "tt": "tt0435761"
+ },
+ "Up|2009": {
+  "tmdbId": 14160,
+  "tt": "tt1049413"
+ },
+ "Platoon|1986": {
+  "tmdbId": 792,
+  "tt": "tt0091763"
+ },
+ "The Sixth Sense|1999": {
+  "tmdbId": 745,
+  "tt": "tt0167404"
+ },
+ "Au hasard Balthazar|1966": {
+  "tmdbId": 20108,
+  "tt": "tt0060138"
+ },
+ "The Lives of Others|2006": {
+  "tmdbId": 582,
+  "tt": "tt0405094"
+ },
+ "The Pianist|2002": {
+  "tmdbId": 423,
+  "tt": "tt0253474"
+ },
+ "Life Is Beautiful|1997": {
+  "tmdbId": 637,
+  "tt": "tt0118799"
+ },
+ "Strangers on a Train|1951": {
+  "tmdbId": 845,
+  "tt": "tt0044079"
+ },
+ "Wings of Desire|1987": {
+  "tmdbId": 144,
+  "tt": "tt0093191"
+ },
+ "Full Metal Jacket|1987": {
+  "tmdbId": 600,
+  "tt": "tt0093058"
+ },
+ "Z|1969": {
+  "tmdbId": 2721,
+  "tt": "tt0065234"
+ },
+ "Black Narcissus|1947": {
+  "tmdbId": 16391,
+  "tt": "tt0039192"
+ },
+ "Fanny and Alexander|1982": {
+  "tmdbId": 5961,
+  "tt": "tt0083922"
+ },
+ "White Heat|1949": {
+  "tmdbId": 15794,
+  "tt": "tt0042041"
+ },
+ "Late Spring|1949": {
+  "tmdbId": 20530,
+  "tt": "tt0041154"
+ },
+ "Paris, Texas|1984": {
+  "tmdbId": 655,
+  "tt": "tt0087884"
+ },
+ "Sweet Smell of Success|1957": {
+  "tmdbId": 976,
+  "tt": "tt0051036"
+ },
+ "Monty Python's Life of Brian|1979": {
+  "tmdbId": 583,
+  "tt": "tt0079470"
+ },
+ "Imitation of Life|1959": {
+  "tmdbId": 34148,
+  "tt": "tt0052918"
+ },
+ "Solaris|1972": {
+  "tmdbId": 593,
+  "tt": "tt0069293"
+ },
+ "L'Âge d'or|1930": {
+  "tmdbId": 5729,
+  "tt": "tt0021577"
+ },
+ "Ninotchka|1939": {
+  "tmdbId": 1859,
+  "tt": "tt0031725"
+ },
+ "Badlands|1973": {
+  "tmdbId": 3133,
+  "tt": "tt0069762"
+ },
+ "The Four Horsemen of the Apocalypse|1921": {
+  "tmdbId": 31432,
+  "tt": "tt0012190"
+ },
+ "I Am a Fugitive from a Chain Gang|1932": {
+  "tmdbId": 29740,
+  "tt": "tt0023042"
+ },
+ "Love Me Tonight|1932": {
+  "tmdbId": 31532,
+  "tt": "tt0023158"
+ },
+ "Edward Scissorhands|1990": {
+  "tmdbId": 162,
+  "tt": "tt0099487"
+ },
+ "Aladdin|1992": {
+  "tmdbId": 812,
+  "tt": "tt0103639"
+ },
+ "My Fair Lady|1964": {
+  "tmdbId": 11113,
+  "tt": "tt0058385"
+ },
+ "Cabiria|1914": {
+  "tmdbId": 5153,
+  "tt": "tt0003740"
+ },
+ "The Life and Death of Colonel Blimp|1943": {
+  "tmdbId": 25037,
+  "tt": "tt0036112"
+ },
+ "Bambi|1942": {
+  "tmdbId": 3170,
+  "tt": "tt0034492"
+ },
+ "42nd Street|1933": {
+  "tmdbId": 3062,
+  "tt": "tt0024034"
+ },
+ "Million Dollar Baby|2004": {
+  "tmdbId": 70,
+  "tt": "tt0405159"
+ },
+ "Stranger than Paradise|1984": {
+  "tmdbId": 469,
+  "tt": "tt0088184"
+ },
+ "Amélie|2001": {
+  "tmdbId": 194,
+  "tt": "tt0211915"
+ },
+ "Pandora's Box|1929": {
+  "tmdbId": 905,
+  "tt": "tt0018737"
+ },
+ "Los olvidados|1950": {
+  "tmdbId": 800,
+  "tt": "tt0042804"
+ },
+ "Inside Out|2015": {
+  "tmdbId": 150540,
+  "tt": "tt2096673"
+ },
+ "La La Land|2016": {
+  "tmdbId": 313369,
+  "tt": "tt3783958"
+ },
+ "Kramer vs. Kramer|1979": {
+  "tmdbId": 12102,
+  "tt": "tt0079417"
+ },
+ "From Russia with Love|1963": {
+  "tmdbId": 657,
+  "tt": "tt0057076"
+ },
+ "The Hustler|1961": {
+  "tmdbId": 990,
+  "tt": "tt0054997"
+ },
+ "The Quiet Man|1952": {
+  "tmdbId": 3109,
+  "tt": "tt0045061"
+ },
+ "The 39 Steps|1935": {
+  "tmdbId": 260,
+  "tt": "tt0026029"
+ },
+ "A Night at the Opera|1935": {
+  "tmdbId": 37719,
+  "tt": "tt0026778"
+ },
+ "The Thief of Bagdad|1940": {
+  "tmdbId": 12232,
+  "tt": "tt0033152"
+ },
+ "Ben-Hur: A Tale of the Christ|1925": {
+  "tmdbId": 31510,
+  "tt": "tt0016641"
+ },
+ "Dances with Wolves|1990": {
+  "tmdbId": 581,
+  "tt": "tt0099348"
+ },
+ "The Princess Bride|1987": {
+  "tmdbId": 2493,
+  "tt": "tt0093779"
+ },
+ "The Breakfast Club|1985": {
+  "tmdbId": 2108,
+  "tt": "tt0088847"
+ },
+ "National Lampoon's Animal House|1978": {
+  "tmdbId": 8469,
+  "tt": "tt0077975"
+ },
+ "12 Years a Slave|2013": {
+  "tmdbId": 76203,
+  "tt": "tt2024544"
+ },
+ "The Thief of Bagdad|1924": {
+  "tmdbId": 28963,
+  "tt": "tt0015400"
+ },
+ "Saturday Night Fever|1977": {
+  "tmdbId": 11009,
+  "tt": "tt0076666"
+ },
+ "Grave of the Fireflies|1988": {
+  "tmdbId": 12477,
+  "tt": "tt0095327"
+ },
+ "The Ox-Bow Incident|1942": {},
+ "Close-Up|1990": {
+  "tmdbId": 30017,
+  "tt": "tt0100234"
+ },
+ "Breaking the Waves|1996": {
+  "tmdbId": 145,
+  "tt": "tt0115751"
+ },
+ "Lost in Translation|2003": {
+  "tmdbId": 153,
+  "tt": "tt0335266"
+ },
+ "Boogie Nights|1997": {
+  "tmdbId": 4995,
+  "tt": "tt0118749"
+ },
+ "Elevator to the Gallows|1958": {
+  "tmdbId": 1093,
+  "tt": "tt0051378"
+ },
+ "The Umbrellas of Cherbourg|1964": {
+  "tmdbId": 5967,
+  "tt": "tt0058450"
+ },
+ "Princess Mononoke|1997": {
+  "tmdbId": 128,
+  "tt": "tt0119698"
+ },
+ "The Lost Weekend|1945": {
+  "tmdbId": 28580,
+  "tt": "tt0037884"
+ },
+ "Cat People|1942": {
+  "tmdbId": 25508,
+  "tt": "tt0034587"
+ },
+ "The Incredibles|2004": {
+  "tmdbId": 9806,
+  "tt": "tt0317705"
+ },
+ "The Great Escape|1963": {
+  "tmdbId": 5925,
+  "tt": "tt0057115"
+ },
+ "Bullitt|1968": {
+  "tmdbId": 916,
+  "tt": "tt0062765"
+ },
+ "An American in Paris|1951": {
+  "tmdbId": 2769,
+  "tt": "tt0043278"
+ },
+ "The Day the Earth Stood Still|1951": {
+  "tmdbId": 828,
+  "tt": "tt0043456"
+ },
+ "Dr. Mabuse the Gambler Part 2: Inferno|1922": {
+  "tmdbId": 5998,
+  "tt": "tt0013086"
+ },
+ "The Rocky Horror Picture Show|1975": {
+  "tmdbId": 36685,
+  "tt": "tt0073629"
+ },
+ "The Mirror|1975": {
+  "tmdbId": 565085,
+  "tt": "tt0240131"
+ },
+ "My Man Godfrey|1936": {
+  "tmdbId": 13562,
+  "tt": "tt0028010"
+ },
+ "Pierrot le Fou|1965": {
+  "tmdbId": 2786,
+  "tt": "tt0059592"
+ },
+ "The Jungle Book|1967": {
+  "tmdbId": 9325,
+  "tt": "tt0061852"
+ },
+ "Gertie the Dinosaur|1914": {
+  "tmdbId": 100246,
+  "tt": "tt0004008"
+ },
+ "The Circus|1928": {
+  "tmdbId": 28978,
+  "tt": "tt0018773"
+ },
+ "Mildred Pierce|1945": {
+  "tmdbId": 3309,
+  "tt": "tt0037913"
+ },
+ "Amarcord|1973": {
+  "tmdbId": 7857,
+  "tt": "tt0071129"
+ },
+ "Dracula|1958": {
+  "tmdbId": 11868,
+  "tt": "tt0051554"
+ },
+ "Throne of Blood|1957": {
+  "tmdbId": 3777,
+  "tt": "tt0050613"
+ },
+ "Don't Look Now|1973": {
+  "tmdbId": 931,
+  "tt": "tt0069995"
+ },
+ "The Big Lebowski|1998": {
+  "tmdbId": 115,
+  "tt": "tt0118715"
+ },
+ "Come and See|1985": {
+  "tmdbId": 25237,
+  "tt": "tt0091251"
+ },
+ "Rope|1948": {
+  "tmdbId": 1580,
+  "tt": "tt0040746"
+ },
+ "Mutiny on the Bounty|1935": {
+  "tmdbId": 12311,
+  "tt": "tt0026752"
+ },
+ "The Magnificent Ambersons|1942": {
+  "tmdbId": 965,
+  "tt": "tt0035015"
+ },
+ "Gandhi|1982": {
+  "tmdbId": 783,
+  "tt": "tt0083987"
+ },
+ "Three Colours: Blue|1993": {
+  "tmdbId": 108,
+  "tt": "tt0108394"
+ },
+ "Chimes at Midnight|1965": {
+  "tmdbId": 986,
+  "tt": "tt0059012"
+ },
+ "Nights of Cabiria|1957": {
+  "tmdbId": 19426,
+  "tt": "tt0050783"
+ },
+ "The Producers|1967": {
+  "tmdbId": 30197,
+  "tt": "tt0063462"
+ },
+ "The Leopard|1963": {
+  "tmdbId": 1040,
+  "tt": "tt0057091"
+ },
+ "Spider-Man: Into the Spider-Verse|2018": {
+  "tmdbId": 324857,
+  "tt": "tt4633694"
+ },
+ "The Departed|2006": {
+  "tmdbId": 1422,
+  "tt": "tt0407887"
+ },
+ "The Tree of Life|2011": {
+  "tmdbId": 8967,
+  "tt": "tt0478304"
+ },
+ "Caché|2005": {
+  "tmdbId": 445,
+  "tt": "tt0387898"
+ },
+ "Talk to Her|2002": {
+  "tmdbId": 64,
+  "tt": "tt0287467"
+ },
+ "The Piano|1993": {
+  "tmdbId": 713,
+  "tt": "tt0107822"
+ },
+ "Rififi|1955": {
+  "tmdbId": 934,
+  "tt": "tt0048021"
+ },
+ "The Shop Around the Corner|1940": {
+  "tmdbId": 20334,
+  "tt": "tt0033045"
+ },
+ "The Lady Eve|1941": {
+  "tmdbId": 3086,
+  "tt": "tt0033804"
+ },
+ "Broken Blossoms|1919": {
+  "tmdbId": 899,
+  "tt": "tt0009968"
+ },
+ "Grease|1978": {
+  "tmdbId": 621,
+  "tt": "tt0077631"
+ },
+ "Tootsie|1982": {
+  "tmdbId": 9576,
+  "tt": "tt0084805"
+ },
+ "The Evil Dead|1981": {
+  "tmdbId": 764,
+  "tt": "tt0083907"
+ },
+ "Peeping Tom|1960": {
+  "tmdbId": 11167,
+  "tt": "tt0054167"
+ },
+ "Tillie's Punctured Romance|1914": {
+  "tmdbId": 22943,
+  "tt": "tt0004707"
+ },
+ "Night and Fog|1956": {
+  "tmdbId": 803,
+  "tt": "tt0048434"
+ },
+ "Dr. Jekyll and Mr. Hyde|1931": {
+  "tmdbId": 3019,
+  "tt": "tt0022835"
+ },
+ "East of Eden|1955": {
+  "tmdbId": 220,
+  "tt": "tt0048028"
+ },
+ "Forbidden Planet|1956": {
+  "tmdbId": 830,
+  "tt": "tt0049223"
+ },
+ "Stand by Me|1986": {
+  "tmdbId": 235,
+  "tt": "tt0092005"
+ },
+ "Amour|2012": {
+  "tmdbId": 86837,
+  "tt": "tt1602620"
+ },
+ "Mr. Deeds Goes to Town|1936": {
+  "tmdbId": 24807,
+  "tt": "tt0027996"
+ },
+ "McCabe & Mrs. Miller|1971": {
+  "tmdbId": 29005,
+  "tt": "tt0067411"
+ },
+ "The Awful Truth|1937": {
+  "tmdbId": 14675,
+  "tt": "tt0028597"
+ },
+ "The Discreet Charm of the Bourgeoisie|1972": {
+  "tmdbId": 4593,
+  "tt": "tt0068361"
+ },
+ "Cries and Whispers|1972": {
+  "tmdbId": 10238,
+  "tt": "tt0069467"
+ },
+ "Roma|2018": {
+  "tmdbId": 426426,
+  "tt": "tt6155172"
+ },
+ "The Cameraman|1928": {
+  "tmdbId": 31411,
+  "tt": "tt0018742"
+ },
+ "Dune|2021": {
+  "tmdbId": 438631,
+  "tt": "tt1160419"
+ },
+ "The Hurt Locker|2009": {
+  "tmdbId": 12162,
+  "tt": "tt0887912"
+ },
+ "Magnolia|1999": {
+  "tmdbId": 334,
+  "tt": "tt0175880"
+ },
+ "Mad Max|1979": {
+  "tmdbId": 9659,
+  "tt": "tt0079501"
+ },
+ "Letter from an Unknown Woman|1948": {
+  "tmdbId": 946,
+  "tt": "tt0040536"
+ },
+ "In a Lonely Place|1950": {
+  "tmdbId": 17057,
+  "tt": "tt0042593"
+ },
+ "Eraserhead|1977": {
+  "tmdbId": 985,
+  "tt": "tt0074486"
+ },
+ "Belle de Jour|1967": {
+  "tmdbId": 649,
+  "tt": "tt0061395"
+ },
+ "Kiss Me Deadly|1955": {
+  "tmdbId": 18030,
+  "tt": "tt0048261"
+ },
+ "Suspiria|1977": {
+  "tmdbId": 11906,
+  "tt": "tt0076786"
+ },
+ "Ordet|1955": {
+  "tmdbId": 48035,
+  "tt": "tt0048452"
+ },
+ "Playtime|1967": {
+  "tmdbId": 10227,
+  "tt": "tt0062136"
+ },
+ "Pickpocket|1959": {
+  "tmdbId": 690,
+  "tt": "tt0053168"
+ },
+ "Ivan the Terrible, Part l|1944": {
+  "tmdbId": 9797,
+  "tt": "tt0037824"
+ },
+ "Shadow of a Doubt|1943": {
+  "tmdbId": 21734,
+  "tt": "tt0036342"
+ },
+ "Harold and Maude|1971": {
+  "tmdbId": 343,
+  "tt": "tt0067185"
+ },
+ "Dead Poets Society|1989": {
+  "tmdbId": 207,
+  "tt": "tt0097165"
+ },
+ "The Thin Red Line|1998": {
+  "tmdbId": 8741,
+  "tt": "tt0120863"
+ },
+ "Ali: Fear Eats the Soul|1974": {
+  "tmdbId": 216,
+  "tt": "tt0071141"
+ },
+ "All About My Mother|1999": {
+  "tmdbId": 99,
+  "tt": "tt0185125"
+ },
+ "To Have and Have Not|1944": {
+  "tmdbId": 22584,
+  "tt": "tt0037382"
+ },
+ "How Green Was My Valley|1941": {
+  "tmdbId": 43266,
+  "tt": "tt0033729"
+ },
+ "The Impossible Voyage|1904": {
+  "tmdbId": 2963,
+  "tt": "tt0000499"
+ },
+ "When Harry Met Sally...|1989": {
+  "tmdbId": 639,
+  "tt": "tt0098635"
+ },
+ "Meshes of the Afternoon|1943": {
+  "tmdbId": 27040,
+  "tt": "tt0036154"
+ },
+ "Requiem for a Dream|2000": {
+  "tmdbId": 641,
+  "tt": "tt0180093"
+ },
+ "Everything Everywhere All at Once|2022": {
+  "tmdbId": 545611,
+  "tt": "tt6710474"
+ },
+ "Ferris Bueller's Day Off|1986": {
+  "tmdbId": 9377,
+  "tt": "tt0091042"
+ },
+ "Blazing Saddles|1974": {
+  "tmdbId": 11072,
+  "tt": "tt0071230"
+ },
+ "Sullivan's Travels|1941": {
+  "tmdbId": 16305,
+  "tt": "tt0034240"
+ },
+ "The Grand Budapest Hotel|2014": {
+  "tmdbId": 120467,
+  "tt": "tt2278388"
+ },
+ "Roundhay Garden Scene|1888": {
+  "tmdbId": 16463,
+  "tt": "tt0392728"
+ },
+ "Little Caesar|1931": {
+  "tmdbId": 27899,
+  "tt": "tt0021079"
+ },
+ "Django Unchained|2012": {
+  "tmdbId": 68718,
+  "tt": "tt1853728"
+ },
+ "RoboCop|1987": {
+  "tmdbId": 5548,
+  "tt": "tt0093870"
+ },
+ "Nausicaä of the Valley of the Wind|1984": {
+  "tmdbId": 81,
+  "tt": "tt0087544"
+ },
+ "A Star Is Born|1954": {
+  "tmdbId": 3111,
+  "tt": "tt0047522"
+ },
+ "Mr. Hulot's Holiday|1953": {
+  "tmdbId": 778,
+  "tt": "tt0046487"
+ },
+ "Being John Malkovich|1999": {
+  "tmdbId": 492,
+  "tt": "tt0120601"
+ },
+ "Slumdog Millionaire|2008": {
+  "tmdbId": 12405,
+  "tt": "tt1010048"
+ },
+ "Braveheart|1995": {
+  "tmdbId": 197,
+  "tt": "tt0112573"
+ },
+ "Amores Perros|2000": {
+  "tmdbId": 55,
+  "tt": "tt0245712"
+ },
+ "A Nightmare on Elm Street|1984": {
+  "tmdbId": 377,
+  "tt": "tt0087800"
+ },
+ "Killer of the Sheep|1978": {},
+ "Ratatouille|2007": {
+  "tmdbId": 2062,
+  "tt": "tt0382932"
+ },
+ "Johnny Guitar|1954": {
+  "tmdbId": 26596,
+  "tt": "tt0047136"
+ },
+ "20,000 Leagues Under the Sea|1954": {
+  "tmdbId": 173,
+  "tt": "tt0046672"
+ },
+ "Alexander Nevsky|1938": {
+  "tmdbId": 10235,
+  "tt": "tt0029850"
+ },
+ "Triumph of the Will|1935": {
+  "tmdbId": 39266,
+  "tt": "tt0025913"
+ },
+ "On the Town|1949": {
+  "tmdbId": 31516,
+  "tt": "tt0041716"
+ },
+ "The Spirit of the Beehive|1973": {
+  "tmdbId": 4495,
+  "tt": "tt0070040"
+ },
+ "Rain Man|1988": {
+  "tmdbId": 380,
+  "tt": "tt0095953"
+ },
+ "Ashes and Diamonds|1958": {
+  "tmdbId": 5055,
+  "tt": "tt0052080"
+ }
+}

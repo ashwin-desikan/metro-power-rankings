@@ -287,23 +287,47 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
         </div>
       </Dropdown>
 
-      <Dropdown id="sound" label="Sound" openId={openId} setOpenId={setOpenId}>
-        <DropdownItem href="/sound" title="The Sound of the Metros →" />
-        <div className="border-t" style={{ borderColor: "var(--border)" }} />
-        <DropdownItem href="/sound/charts" title="Live Charts" />
-        <DropdownItem href="/sound/rankings" title="Rankings by Metro" />
-        <DropdownItem href="/sound/artists" title="Artists" />
-        <DropdownItem href="/sound/decades" title="Decades" />
-        <DropdownItem href="/sound/scenes" title="Scenes" />
-        <DropdownItem href="/sound/velvet-rock" title="Velvet Rock" />
-        <DropdownItem href="/sound/grammys" title="Awards History" />
-        <DropdownItem href="/sound/rolling-stone-500" title="RS 500 Greatest Albums" />
-        <div className="border-t" style={{ borderColor: "var(--border)" }} />
-        <DropdownItem href="/sound/number-ones" title="Number-One Machines" />
-        <DropdownItem href="/sound/reigns" title="Longest Reigns" />
-        <DropdownItem href="/sound/disagreements" title="Chart Disagreements" />
-        <DropdownItem href="/sound/transatlantic" title="The Transatlantic Divide" />
-        <DropdownItem href="/sound/christmas" title="UK December #1s" />
+      {/* Culture: Sound (music) and Screen (film) side by side. Curated to the
+          marquee destinations only — each hub's own tab nav and "More from"
+          cards carry the long tail, so this menu stays scannable. */}
+      <Dropdown id="culture" label="Culture" openId={openId} setOpenId={setOpenId} minWidth={540}>
+        <div className="p-2 grid grid-cols-2 gap-x-4">
+          <div>
+            <MenuGroupLabel>🎵 Music</MenuGroupLabel>
+            <a
+              href="/sound"
+              className="block px-2 py-1.5 rounded text-sm font-medium hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
+            >
+              The Sound of the Metros <span aria-hidden className="text-[var(--text-dim)]">→</span>
+            </a>
+            <MenuLink href="/sound/charts" title="Live Charts" />
+            <MenuLink href="/sound/rankings" title="Rankings by Metro" />
+            <MenuLink href="/sound/artists" title="Artists" />
+            <MenuLink href="/sound/grammys" title="Awards History" />
+            <MenuLink href="/sound/number-ones" title="Number-One Machines" />
+            <MenuLink href="/sound/rolling-stone-500" title="RS 500 Greatest Albums" />
+          </div>
+          <div>
+            <MenuGroupLabel>
+              🎬 Film <span className="normal-case tracking-normal" style={{ color: "var(--accent)" }}>new</span>
+            </MenuGroupLabel>
+            <a
+              href="/screen"
+              className="block px-2 py-1.5 rounded text-sm font-medium hover:bg-[var(--bg-card-hover)] hover:text-[var(--accent)] transition-colors"
+            >
+              The Screen of the Metros <span aria-hidden className="text-[var(--text-dim)]">→</span>
+            </a>
+            <MenuLink href="/screen/rankings" title="Rankings by Metro" />
+            <MenuLink href="/screen/years" title="Year by Year" />
+            <MenuLink href="/screen/number-ones" title="US Number Ones" />
+            <MenuLink href="/screen/oscars" title="Oscar Winners" />
+            <MenuLink href="/screen/canon" title="500 Greatest Films" />
+          </div>
+        </div>
+        <div className="border-t px-3 py-2 flex gap-4 text-xs" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
+          <a href="/sound" className="hover:text-[var(--accent)] transition-colors">Everything in Sound <span aria-hidden>→</span></a>
+          <a href="/screen" className="hover:text-[var(--accent)] transition-colors">Everything in Screen <span aria-hidden>→</span></a>
+        </div>
       </Dropdown>
 
       <Dropdown id="articles" label="Deep Dives" openId={openId} setOpenId={setOpenId}>

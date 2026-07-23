@@ -331,3 +331,40 @@ sourced in my manual run — it will be under the Sunday job).
 None blocking. Heads-up only: if citypopulation.de changes its changelog table
 markup, `parse_entries()` returns 0 rows and the step marks itself failed WITHOUT
 overwriting the good snapshot (by design) — if that alert fires, the DOM drifted.
+
+## 2026-07-23 — windows → mini (NEW WEEKLY STEP: US box-office number-ones refresh)
+
+The Screen of the Metros film hub ships today (nine tabs under /screen: metro
+rankings, people, films, year-by-year, US number ones, Oscars, the 500-greatest
+canon). One dataset needs weekly freshness: the US number-one films series,
+whose current-year Wikipedia page updates every weekend.
+
+**New repo script: `scripts/screen/refresh_number_ones.py`** (stdlib-only, same
+no-pip precedent as the forecast scripts). It drops the current year from
+`scripts/screen/data/number_ones.json`, re-scrapes that one Wikipedia page,
+re-resolves wikilink → QID → IMDb tt (both cached, so the weekly delta is a
+handful of new titles), and rewrites `public/data/screen/screen_number_ones.json`
+with leaderboards and canon/top-grosser/Best Picture badges. Cost: one page
+fetch + one cached QID pass + one WDQS batch, ~2–3 min.
+
+**Mini setup (one line + one path):**
+- Add to `metro-mini-refresh.sh` after the forecast steps:
+  `python3 scripts/screen/refresh_number_ones.py`
+- Add `scripts/screen/data` to `DATA_PATHS` so the refreshed caches get swept
+  into the weekly commit (`public/data` already covers the exported JSON).
+
+**Pre-verified from windows today:** full run exit 0 from the repo checkout;
+totals stable (4,181 chart weeks, 2,022 films, 2,021 with IMDb tt; badges 144
+canon / 638 top-grossers / 36 Best Picture). Fail-soft: a year that fetches but
+parses to 0 rows would show as an empty-years warning in stdout — if that ever
+fires, Wikipedia's table markup drifted; flag here.
+
+**Ownership note (annual, stays on windows):** the full film pipeline (box
+office + Oscars + TMDb + canon) lives in the OneDrive folder
+`_screen_of_metros_pipeline/`, outside git — the TMDb key and heavy caches are
+there, and the annual post-Oscars rebuild (each March) is curated, not cron-able.
+After that rebuild, windows refreshes the snapshots under `scripts/screen/data/`
+(film_ids, film_honours, canon_ids). Nothing for the mini to do annually.
+
+### Open question for mini
+None blocking.

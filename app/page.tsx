@@ -83,6 +83,10 @@ function topArtists(): Preview[] {
   const d = readData<{ name: string; metro?: string; combined?: number }[]>(['sound', 'artists.json'], []);
   return d.slice(0, 3).map((a) => ({ name: a.name, sub: a.metro, meta: a.combined != null ? a.combined.toFixed(0) : '' }));
 }
+function topFilmMetros(): Preview[] {
+  const d = readData<{ metros?: { name: string; country?: string; score?: number }[] }>(['screen', 'screen.json'], {});
+  return (d.metros ?? []).slice(0, 3).map((m) => ({ name: m.name, sub: m.country, meta: m.score != null ? m.score.toFixed(0) : '' }));
+}
 function topPowers(): Preview[] {
   const d = readData<{ byYear?: Record<string, { slug: string; share: number | null }[]> }>(['power-history.json'], {});
   const cur = d.byYear?.['2026'] ?? [];
@@ -233,6 +237,7 @@ const ATLAS: AtlasCard[] = [
   { emoji: '🗺️', title: 'Geography', desc: 'Countries, states, leaders, the power atlas, and the world map.', href: '/geography', sub: 'Countries · States · Map · Power Atlas' },
   { emoji: '🏟️', title: 'Sports', desc: 'Every league, national team, and cross-sport index.', href: '/sports', sub: 'Leagues · Zone Zero Cup · Rivalries', live: true },
   { emoji: '🎵', title: 'Sound', desc: 'The music of the metros, by chart and by decade.', href: '/sound', sub: 'Rankings · Artists · Awards · Decades' },
+  { emoji: '🎬', title: 'Screen', desc: 'The films of the metros, by box office and by ceremony.', href: '/screen', sub: 'Rankings · Number Ones · Oscars · 500 Greatest' },
   { emoji: '👑', title: 'People', desc: 'The powerful, the wealthy, and the elected.', href: '/power', sub: 'Nowhere 100 · Billionaires · Mayors' },
   { emoji: '🗳️', title: 'Elections', desc: 'Every democracy’s elections, since the 1800s, in one atlas.', href: '/elections', sub: '35 polities · World Map · Forecasts' },
   { emoji: '✍️', title: 'Essays', desc: 'Long-form deep dives and the Substack archive.', href: '/deep-dives', sub: 'Deep Dives · Substack' },
@@ -247,6 +252,7 @@ const MASTHEAD_LAUNCH: { emoji: string; label: string; href: string; blurb: stri
   { emoji: '🗺️', label: 'Geography', href: '/geography', blurb: 'Atlas of places', tip: "Maps and atlases of the world's places, from metro boundaries to the geography of power." },
   { emoji: '🏟️', label: 'Sports', href: '/sports', blurb: 'Teams, live scores', tip: 'The Zone Zero sports hub: leagues, teams, live standings, champions, and cross-sport rankings.' },
   { emoji: '🎵', label: 'Sound', href: '/sound', blurb: 'Where hits come from', tip: "The Sound of the Metros: cities ranked by their artists' chart success since 1958." },
+  { emoji: '🎬', label: 'Screen', href: '/screen', blurb: 'Where films come from', tip: 'The Screen of the Metros: a century of box office and the Oscars, credited back to the metros behind the films.' },
   { emoji: '👑', label: 'People', href: '/power', blurb: 'The Nowhere 100', tip: 'The most powerful people on the planet, ranked and tied to their home metro and jurisdiction.' },
   { emoji: '✍️', label: 'Essays', href: '/deep-dives', blurb: 'Long-form dives', tip: 'Deep dives and essays on cities, power, and the ideas behind the rankings.' },
   { emoji: '🏅', label: 'Badges', href: '/badges', blurb: 'Ranked, reframed', tip: 'Categorical lenses on the same data, from Finance Capitals to Greying Power.' },
@@ -283,6 +289,7 @@ const SITE_INDEX: IndexColumn[] = [
     { label: 'Zone Zero Cup', href: '/sports/zone-zero-cup' },
     { label: 'The Power Atlas', href: '/power-atlas' },
     { label: 'Artist Rankings', href: '/sound/artists' },
+    { label: 'Billionaires', href: '/billionaires' },
     { label: 'Compare metros', href: '/compare' },
     { label: 'Badges', href: '/badges' },
   ]},
@@ -293,6 +300,8 @@ const SITE_INDEX: IndexColumn[] = [
     { label: 'Expandable Map', href: '/expandable-map' },
     { label: 'Matchups', href: '/matchups/london-vs-new-york' },
     { label: 'Neighborhoods', href: '/neighborhoods' },
+    { label: 'World Leaders', href: '/leaders' },
+    { label: 'Mayors of the World', href: '/mayors' },
     { label: 'Regional champions', href: '/rankings#regions' },
   ]},
   { heading: 'Sports', links: [
@@ -303,15 +312,20 @@ const SITE_INDEX: IndexColumn[] = [
     { label: 'Team Valuations', href: '/sports/valuations' },
     { label: 'Rivalries', href: '/sports/rivalries' },
   ]},
-  { heading: 'Sound & People', links: [
+  { heading: 'Sound', href: '/sound', links: [
     { label: 'The Sound of the Metros', href: '/sound' },
     { label: 'Rankings by Metro', href: '/sound/rankings' },
     { label: 'Artists', href: '/sound/artists' },
     { label: 'Awards History', href: '/sound/grammys' },
-    { label: 'Billionaires', href: '/billionaires' },
-    { label: 'Mayors of the World', href: '/mayors' },
-    { label: 'World Leaders', href: '/leaders' },
-    { label: 'Leadership changes', href: '/leaders/changes' },
+    { label: 'Number-One Machines', href: '/sound/number-ones' },
+  ]},
+  { heading: 'Screen', href: '/screen', links: [
+    { label: 'The Screen of the Metros', href: '/screen' },
+    { label: 'Rankings by Metro', href: '/screen/rankings' },
+    { label: 'Year by Year', href: '/screen/years' },
+    { label: 'US Number Ones', href: '/screen/number-ones' },
+    { label: 'Oscar Winners', href: '/screen/oscars' },
+    { label: '500 Greatest Films', href: '/screen/canon' },
   ]},
   { heading: 'More', links: [
     { label: 'About', href: '/about' },
@@ -366,6 +380,7 @@ export default async function Home() {
     { n: '04', title: 'Musical Artist Rankings', desc: 'The biggest artists by chart success and prestige, by home metro.', stat: 'By metro', href: '/sound/artists', emoji: '🎵', preview: topArtists() },
     { n: '05', title: 'The Power Atlas', desc: 'National power ranked year by year, from the Renaissance to today.', stat: '526 years · 1500–now', href: '/power-atlas', emoji: '🏛️', preview: topPowers() },
     { n: '06', title: 'The Election Atlas', desc: 'Every election in 35 countries and the EU — parties, leaders, turnout, and the results.', stat: '35 polities', href: '/elections', emoji: '🗳️', isNew: true, preview: topElections(forecast) },
+    { n: '07', title: 'The Screen of the Metros', desc: 'A century of box office and Oscar prestige, credited back to the metros that made it.', stat: '1927–now', href: '/screen', emoji: '🎬', isNew: true, preview: topFilmMetros() },
   ];
 
   const leagueRows = LEAGUES.map((l) => ({ ...l, status: leagueStatusFor(l.href) }));
@@ -450,9 +465,12 @@ export default async function Home() {
                 </div>
               </div>
             )}
-              <div className="mt-4 pt-4 border-t" style={{ borderColor: 'var(--border)' }}>
+              <div className="mt-4 pt-4 border-t flex flex-wrap gap-x-5 gap-y-1.5" style={{ borderColor: 'var(--border)' }}>
                 <Link href="/sound/charts" className="inline-flex items-center gap-1.5 text-[13px]" style={{ ...MONO, color: 'var(--accent)' }}>
                   🎵 Live Music Charts <span aria-hidden>→</span>
+                </Link>
+                <Link href="/screen/number-ones" className="inline-flex items-center gap-1.5 text-[13px]" style={{ ...MONO, color: 'var(--accent)' }}>
+                  🎬 Box Office №1s <span aria-hidden>→</span>
                 </Link>
               </div>
             </div>
@@ -467,7 +485,7 @@ export default async function Home() {
           <p className="text-[11px] uppercase tracking-widest mb-2" style={{ ...MONO, color: 'var(--accent)' }}>The indices</p>
           <h2 className="text-2xl sm:text-3xl font-bold mb-3">The rankings</h2>
           <p className="text-[15px] text-[var(--text-muted)] max-w-3xl mb-8">
-            Metros, people, countries, artists, and the 235-year sweep of world power. Each index has its own hub, hand-curated, weighted in the open, and inspectable at the row level.
+            Metros, people, countries, artists, films, and the 235-year sweep of world power. Each index has its own hub, hand-curated, weighted in the open, and inspectable at the row level.
           </p>
           <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
             {INDICES.map((c) => (

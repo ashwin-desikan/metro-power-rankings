@@ -7,7 +7,7 @@ export interface Col {
   label: string;
   align?: 'right';
   numeric?: boolean;
-  kind?: 'rank' | 'peak' | 'pk' | 'artist' | 'metro' | 'with' | 'grammy';
+  kind?: 'rank' | 'peak' | 'pk' | 'artist' | 'metro' | 'rmetro' | 'with' | 'grammy';
   slugKey?: string;
   metroSlugKey?: string;
   bold?: boolean;
@@ -31,6 +31,7 @@ function cellFor(c: Col, r: Record<string, unknown>, i: number): { node: ReactNo
   else if (c.kind === 'peak') cell = v === 1 ? <b>1</b> : (v as ReactNode);
   else if (c.kind === 'pk') { cell = pkfmt(v as number | null); if (v === 1) style = { color: 'var(--accent)' }; else style = muted; }
   else if (c.kind === 'artist') { const sl = (r[c.slugKey || 'slug'] as string) || aslug(String(v)); cell = <a href={`/sound/artists/${sl}`} className="hover:underline">{v as ReactNode}</a>; }
+  else if (c.kind === 'rmetro') { const ms = r[c.metroSlugKey || 'metro_slug'] as string | null; cell = v && ms ? <a href={`/rankings/${ms}`} className="hover:underline">{v as ReactNode}</a> : v ? (v as ReactNode) : <span style={muted}>—</span>; }
   else if (c.kind === 'metro') { const ms = r[c.metroSlugKey || 'metro_slug'] as string; cell = v ? (<><a href={`/rankings/${ms}`} className="hover:underline">{v as ReactNode}</a><a href={`/sound/metros/${ms}`} title="Sound profile" className="ml-1 align-middle text-xs" style={muted}>&#9834;</a></>) : ''; }
   else if (c.kind === 'with') { const arr = (v as string[]) || []; cell = arr.length ? arr.map((n, j) => <span key={j}>{j > 0 ? ', ' : ''}<a href={`/sound/artists/${aslug(n)}`} className="hover:underline">{n}</a></span>) : <span style={muted}>—</span>; }
   else if (c.kind === 'grammy') { const won = !!r['grammy_won']; cell = v ? <span style={{ color: won ? '#e8c766' : 'var(--text-muted)' }}>{won ? '★' : '☆'} {v as ReactNode}</span> : <span style={muted}>—</span>; style = undefined; }

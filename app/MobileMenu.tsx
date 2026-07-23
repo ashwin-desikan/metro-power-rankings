@@ -122,23 +122,30 @@ function buildSections(): Section[] {
     },
   ];
 
-  const sound: SubGroup[] = [
+  // Curated like the desktop Culture mega-menu: marquee destinations only —
+  // each hub's own tab nav and "More from" cards carry the long tail.
+  const culture: SubGroup[] = [
     {
+      label: '🎵 Music',
       items: [
         { href: '/sound', label: 'The Sound of the Metros' },
         { href: '/sound/charts', label: 'Live Charts' },
         { href: '/sound/rankings', label: 'Rankings by Metro' },
         { href: '/sound/artists', label: 'Artists' },
-        { href: '/sound/decades', label: 'Decades' },
-        { href: '/sound/scenes', label: 'Scenes' },
-        { href: '/sound/velvet-rock', label: 'Velvet Rock' },
         { href: '/sound/grammys', label: 'Awards History' },
-        { href: '/sound/rolling-stone-500', label: 'RS 500 Greatest Albums' },
         { href: '/sound/number-ones', label: 'Number-One Machines' },
-        { href: '/sound/reigns', label: 'Longest Reigns' },
-        { href: '/sound/disagreements', label: 'Chart Disagreements' },
-        { href: '/sound/transatlantic', label: 'The Transatlantic Divide' },
-        { href: '/sound/christmas', label: 'UK December #1s' },
+        { href: '/sound/rolling-stone-500', label: 'RS 500 Greatest Albums' },
+      ],
+    },
+    {
+      label: '🎬 Film',
+      items: [
+        { href: '/screen', label: 'The Screen of the Metros' },
+        { href: '/screen/rankings', label: 'Rankings by Metro' },
+        { href: '/screen/years', label: 'Year by Year' },
+        { href: '/screen/number-ones', label: 'US Number Ones' },
+        { href: '/screen/oscars', label: 'Oscar Winners' },
+        { href: '/screen/canon', label: '500 Greatest Films' },
       ],
     },
   ];
@@ -146,7 +153,7 @@ function buildSections(): Section[] {
   return [
     { kind: 'group', id: 'geography', label: 'Geography', groups: geography },
     { kind: 'group', id: 'sports', label: 'Sports', groups: sports },
-    { kind: 'group', id: 'sound', label: 'Sound', groups: sound },
+    { kind: 'group', id: 'culture', label: 'Culture', groups: culture },
     { kind: 'group', id: 'deepdives', label: 'Deep Dives', groups: deepDives },
     { kind: 'group', id: 'play', label: 'Play', groups: play },
     { kind: 'group', id: 'about', label: 'About', groups: about },

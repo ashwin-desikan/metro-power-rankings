@@ -1,0 +1,1053 @@
+{
+ "divergence": {
+  "winners": [
+   {
+    "year": 1927,
+    "title": "Wings",
+    "ceremony": 1,
+    "rank": 6,
+    "target": "Wings (1927 film)"
+   },
+   {
+    "year": 1928,
+    "title": "The Broadway Melody",
+    "ceremony": 2,
+    "rank": 1,
+    "target": "The Broadway Melody"
+   },
+   {
+    "year": 1929,
+    "title": "All Quiet on the Western Front",
+    "ceremony": 3,
+    "rank": 3,
+    "target": "All Quiet on the Western Front (1930 film)"
+   },
+   {
+    "year": 1930,
+    "title": "Cimarron",
+    "ceremony": 4,
+    "rank": 8,
+    "target": "Cimarron (1931 film)"
+   },
+   {
+    "year": 1931,
+    "title": "Grand Hotel",
+    "ceremony": 5,
+    "rank": 5,
+    "target": "Grand Hotel (1932 film)"
+   },
+   {
+    "year": 1932,
+    "title": "Cavalcade",
+    "ceremony": 6,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 1934,
+    "title": "It Happened One Night",
+    "ceremony": 7,
+    "rank": 4,
+    "target": "It Happened One Night"
+   },
+   {
+    "year": 1935,
+    "title": "Mutiny on the Bounty",
+    "ceremony": 8,
+    "rank": 1,
+    "target": "Mutiny on the Bounty (1935 film)"
+   },
+   {
+    "year": 1936,
+    "title": "The Great Ziegfeld",
+    "ceremony": 9,
+    "rank": 1,
+    "target": "The Great Ziegfeld"
+   },
+   {
+    "year": 1937,
+    "title": "The Life of Emile Zola",
+    "ceremony": 10,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 1938,
+    "title": "You Can't Take It with You",
+    "ceremony": 11,
+    "rank": 5,
+    "target": "You Can't Take It with You (film)"
+   },
+   {
+    "year": 1939,
+    "title": "Gone with the Wind",
+    "ceremony": 12,
+    "rank": 1,
+    "target": "Gone with the Wind (film)"
+   },
+   {
+    "year": 1940,
+    "title": "Rebecca",
+    "ceremony": 13,
+    "rank": 3,
+    "target": "Rebecca (1940 film)"
+   },
+   {
+    "year": 1941,
+    "title": "How Green Was My Valley",
+    "ceremony": 14,
+    "rank": 4,
+    "target": "How Green Was My Valley (film)"
+   },
+   {
+    "year": 1942,
+    "title": "Mrs. Miniver",
+    "ceremony": 15,
+    "rank": 1,
+    "target": "Mrs. Miniver"
+   },
+   {
+    "year": 1943,
+    "title": "Casablanca",
+    "ceremony": 16,
+    "rank": 7,
+    "target": "Casablanca (film)"
+   },
+   {
+    "year": 1944,
+    "title": "Going My Way",
+    "ceremony": 17,
+    "rank": 1,
+    "target": "Going My Way"
+   },
+   {
+    "year": 1945,
+    "title": "The Lost Weekend",
+    "ceremony": 18,
+    "rank": 8,
+    "target": "The Lost Weekend"
+   },
+   {
+    "year": 1946,
+    "title": "The Best Years of Our Lives",
+    "ceremony": 19,
+    "rank": 2,
+    "target": "The Best Years of Our Lives"
+   },
+   {
+    "year": 1947,
+    "title": "Gentleman's Agreement",
+    "ceremony": 20,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 1948,
+    "title": "Hamlet",
+    "ceremony": 21,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 1949,
+    "title": "All the King's Men",
+    "ceremony": 22,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 1950,
+    "title": "All about Eve",
+    "ceremony": 23,
+    "rank": 9,
+    "target": "All About Eve"
+   },
+   {
+    "year": 1951,
+    "title": "An American in Paris",
+    "ceremony": 24,
+    "rank": 8,
+    "target": "An American in Paris (film)"
+   },
+   {
+    "year": 1952,
+    "title": "The Greatest Show on Earth",
+    "ceremony": 25,
+    "rank": 1,
+    "target": "The Greatest Show on Earth (film)"
+   },
+   {
+    "year": 1953,
+    "title": "From Here to Eternity",
+    "ceremony": 26,
+    "rank": 2,
+    "target": "From Here to Eternity"
+   },
+   {
+    "year": 1954,
+    "title": "On the Waterfront",
+    "ceremony": 27,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 1955,
+    "title": "Marty",
+    "ceremony": 28,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 1956,
+    "title": "Around the World in 80 Days",
+    "ceremony": 29,
+    "rank": 2,
+    "target": "Around the World in 80 Days (1956 film)"
+   },
+   {
+    "year": 1957,
+    "title": "The Bridge on the River Kwai",
+    "ceremony": 30,
+    "rank": 1,
+    "target": "The Bridge on the River Kwai"
+   },
+   {
+    "year": 1958,
+    "title": "Gigi",
+    "ceremony": 31,
+    "rank": 5,
+    "target": "Gigi (1958 film)"
+   },
+   {
+    "year": 1959,
+    "title": "Ben-Hur",
+    "ceremony": 32,
+    "rank": 1,
+    "target": "Ben-Hur (1959 film)"
+   },
+   {
+    "year": 1960,
+    "title": "The Apartment",
+    "ceremony": 33,
+    "rank": 8,
+    "target": "The Apartment"
+   },
+   {
+    "year": 1961,
+    "title": "West Side Story",
+    "ceremony": 34,
+    "rank": 1,
+    "target": "West Side Story (1961 film)"
+   },
+   {
+    "year": 1962,
+    "title": "Lawrence of Arabia",
+    "ceremony": 35,
+    "rank": 2,
+    "target": "Lawrence of Arabia (film)"
+   },
+   {
+    "year": 1963,
+    "title": "Tom Jones",
+    "ceremony": 36,
+    "rank": 4,
+    "target": "Tom Jones (1963 film)"
+   },
+   {
+    "year": 1964,
+    "title": "My Fair Lady",
+    "ceremony": 37,
+    "rank": 2,
+    "target": "My Fair Lady (film)"
+   },
+   {
+    "year": 1965,
+    "title": "The Sound of Music",
+    "ceremony": 38,
+    "rank": 1,
+    "target": "The Sound of Music (film)"
+   },
+   {
+    "year": 1966,
+    "title": "A Man for All Seasons",
+    "ceremony": 39,
+    "rank": 5,
+    "target": "A Man for All Seasons (1966 film)"
+   },
+   {
+    "year": 1967,
+    "title": "In the Heat of the Night",
+    "ceremony": 40,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 1968,
+    "title": "Oliver!",
+    "ceremony": 41,
+    "rank": 5,
+    "target": "Oliver! (film)"
+   },
+   {
+    "year": 1969,
+    "title": "Midnight Cowboy",
+    "ceremony": 42,
+    "rank": 3,
+    "target": "Midnight Cowboy"
+   },
+   {
+    "year": 1970,
+    "title": "Patton",
+    "ceremony": 43,
+    "rank": 4,
+    "target": "Patton (film)"
+   },
+   {
+    "year": 1971,
+    "title": "The French Connection",
+    "ceremony": 44,
+    "rank": 3,
+    "target": "The French Connection (film)"
+   },
+   {
+    "year": 1972,
+    "title": "The Godfather",
+    "ceremony": 45,
+    "rank": 1,
+    "target": "The Godfather"
+   },
+   {
+    "year": 1973,
+    "title": "The Sting",
+    "ceremony": 46,
+    "rank": 2,
+    "target": "The Sting"
+   },
+   {
+    "year": 1974,
+    "title": "The Godfather Part II",
+    "ceremony": 47,
+    "rank": 6,
+    "target": "The Godfather Part II"
+   },
+   {
+    "year": 1975,
+    "title": "One Flew over the Cuckoo's Nest",
+    "ceremony": 48,
+    "rank": 2,
+    "target": "One Flew Over the Cuckoo's Nest (film)"
+   },
+   {
+    "year": 1976,
+    "title": "Rocky",
+    "ceremony": 49,
+    "rank": 1,
+    "target": "Rocky"
+   },
+   {
+    "year": 1977,
+    "title": "Annie Hall",
+    "ceremony": 50,
+    "rank": 10,
+    "target": "Annie Hall"
+   },
+   {
+    "year": 1978,
+    "title": "The Deer Hunter",
+    "ceremony": 51,
+    "rank": 9,
+    "target": "The Deer Hunter"
+   },
+   {
+    "year": 1979,
+    "title": "Kramer vs. Kramer",
+    "ceremony": 52,
+    "rank": 1,
+    "target": "Kramer vs. Kramer"
+   },
+   {
+    "year": 1980,
+    "title": "Ordinary People",
+    "ceremony": 53,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 1981,
+    "title": "Chariots of Fire",
+    "ceremony": 54,
+    "rank": 7,
+    "target": "Chariots of Fire"
+   },
+   {
+    "year": 1982,
+    "title": "Gandhi",
+    "ceremony": 55,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 1983,
+    "title": "Terms of Endearment",
+    "ceremony": 56,
+    "rank": 2,
+    "target": "Terms of Endearment"
+   },
+   {
+    "year": 1984,
+    "title": "Amadeus",
+    "ceremony": 57,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 1985,
+    "title": "Out of Africa",
+    "ceremony": 58,
+    "rank": 5,
+    "target": "Out of Africa (film)"
+   },
+   {
+    "year": 1986,
+    "title": "Platoon",
+    "ceremony": 59,
+    "rank": 3,
+    "target": "Platoon (film)"
+   },
+   {
+    "year": 1987,
+    "title": "The Last Emperor",
+    "ceremony": 60,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 1988,
+    "title": "Rain Man",
+    "ceremony": 61,
+    "rank": 1,
+    "target": "Rain Man"
+   },
+   {
+    "year": 1989,
+    "title": "Driving Miss Daisy",
+    "ceremony": 62,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 1990,
+    "title": "Dances With Wolves",
+    "ceremony": 63,
+    "rank": 4,
+    "target": "Dances With Wolves"
+   },
+   {
+    "year": 1991,
+    "title": "The Silence of the Lambs",
+    "ceremony": 64,
+    "rank": 5,
+    "target": "The Silence of the Lambs (film)"
+   },
+   {
+    "year": 1992,
+    "title": "Unforgiven",
+    "ceremony": 65,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 1993,
+    "title": "Schindler's List",
+    "ceremony": 66,
+    "rank": 4,
+    "target": "Schindler's List"
+   },
+   {
+    "year": 1994,
+    "title": "Forrest Gump",
+    "ceremony": 67,
+    "rank": 1,
+    "target": "Forrest Gump"
+   },
+   {
+    "year": 1995,
+    "title": "Braveheart",
+    "ceremony": 68,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 1996,
+    "title": "The English Patient",
+    "ceremony": 69,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 1997,
+    "title": "Titanic",
+    "ceremony": 70,
+    "rank": 1,
+    "target": "Titanic (1997 film)"
+   },
+   {
+    "year": 1998,
+    "title": "Shakespeare in Love",
+    "ceremony": 71,
+    "rank": 9,
+    "target": "Shakespeare in Love"
+   },
+   {
+    "year": 1999,
+    "title": "American Beauty",
+    "ceremony": 72,
+    "rank": 9,
+    "target": "American Beauty (1999 film)"
+   },
+   {
+    "year": 2000,
+    "title": "Gladiator",
+    "ceremony": 73,
+    "rank": 2,
+    "target": "Gladiator (2000 film)"
+   },
+   {
+    "year": 2001,
+    "title": "A Beautiful Mind",
+    "ceremony": 74,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 2002,
+    "title": "Chicago",
+    "ceremony": 75,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 2003,
+    "title": "The Lord of the Rings: The Return of the King",
+    "ceremony": 76,
+    "rank": 1,
+    "target": "The Lord of the Rings: The Return of the King"
+   },
+   {
+    "year": 2004,
+    "title": "Million Dollar Baby",
+    "ceremony": 77,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 2005,
+    "title": "Crash",
+    "ceremony": 78,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 2006,
+    "title": "The Departed",
+    "ceremony": 79,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 2007,
+    "title": "No Country for Old Men",
+    "ceremony": 80,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 2008,
+    "title": "Slumdog Millionaire",
+    "ceremony": 81,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 2009,
+    "title": "The Hurt Locker",
+    "ceremony": 82,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 2010,
+    "title": "The King's Speech",
+    "ceremony": 83,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 2011,
+    "title": "The Artist",
+    "ceremony": 84,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 2012,
+    "title": "Argo",
+    "ceremony": 85,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 2013,
+    "title": "12 Years a Slave",
+    "ceremony": 86,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 2014,
+    "title": "Birdman or (The Unexpected Virtue of Ignorance)",
+    "ceremony": 87,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 2015,
+    "title": "Spotlight",
+    "ceremony": 88,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 2016,
+    "title": "Moonlight",
+    "ceremony": 89,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 2017,
+    "title": "The Shape of Water",
+    "ceremony": 90,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 2018,
+    "title": "Green Book",
+    "ceremony": 91,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 2019,
+    "title": "Parasite",
+    "ceremony": 92,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 2020,
+    "title": "Nomadland",
+    "ceremony": 93,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 2021,
+    "title": "CODA",
+    "ceremony": 94,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 2022,
+    "title": "Everything Everywhere All at Once",
+    "ceremony": 95,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 2023,
+    "title": "Oppenheimer",
+    "ceremony": 96,
+    "rank": 3,
+    "target": "Oppenheimer (film)"
+   },
+   {
+    "year": 2024,
+    "title": "Anora",
+    "ceremony": 97,
+    "rank": null,
+    "target": null
+   },
+   {
+    "year": 2025,
+    "title": "One Battle after Another",
+    "ceremony": 98,
+    "rank": null,
+    "target": null
+   }
+  ],
+  "decades": [
+   {
+    "decade": 1920,
+    "pctTop10": 100.0,
+    "n": 3
+   },
+   {
+    "decade": 1930,
+    "pctTop10": 78.0,
+    "n": 9
+   },
+   {
+    "decade": 1940,
+    "pctTop10": 70.0,
+    "n": 10
+   },
+   {
+    "decade": 1950,
+    "pctTop10": 80.0,
+    "n": 10
+   },
+   {
+    "decade": 1960,
+    "pctTop10": 90.0,
+    "n": 10
+   },
+   {
+    "decade": 1970,
+    "pctTop10": 100.0,
+    "n": 10
+   },
+   {
+    "decade": 1980,
+    "pctTop10": 50.0,
+    "n": 10
+   },
+   {
+    "decade": 1990,
+    "pctTop10": 70.0,
+    "n": 10
+   },
+   {
+    "decade": 2000,
+    "pctTop10": 20.0,
+    "n": 10
+   },
+   {
+    "decade": 2010,
+    "pctTop10": 0.0,
+    "n": 10
+   },
+   {
+    "decade": 2020,
+    "pctTop10": 17.0,
+    "n": 6
+   }
+  ]
+ },
+ "badges": {
+  "The Lost Weekend": [
+   "Best Picture",
+   "Palme d'Or"
+  ],
+  "M*A*S*H (film)": [
+   "Palme d'Or"
+  ],
+  "Goodbye, Mr. Chips (1939 film)": [
+   "Palme d'Or"
+  ],
+  "Apocalypse Now": [
+   "Palme d'Or"
+  ],
+  "Four Weddings and a Funeral": [
+   "BAFTA Best Film"
+  ],
+  "The Bridge on the River Kwai": [
+   "Best Picture",
+   "BAFTA Best Film",
+   "Golden Globe (Drama)"
+  ],
+  "Dead Poets Society": [
+   "BAFTA Best Film"
+  ],
+  "Butch Cassidy and the Sundance Kid": [
+   "BAFTA Best Film"
+  ],
+  "Schindler's List": [
+   "Best Picture",
+   "BAFTA Best Film",
+   "Golden Globe (Drama)"
+  ],
+  "Lawrence of Arabia (film)": [
+   "Best Picture",
+   "BAFTA Best Film",
+   "Golden Globe (Drama)"
+  ],
+  "The Graduate": [
+   "BAFTA Best Film"
+  ],
+  "All About Eve": [
+   "Best Picture",
+   "BAFTA Best Film"
+  ],
+  "The Full Monty": [
+   "BAFTA Best Film"
+  ],
+  "Gladiator (2000 film)": [
+   "Best Picture",
+   "BAFTA Best Film",
+   "Golden Globe (Drama)"
+  ],
+  "Who's Afraid of Virginia Woolf? (film)": [
+   "BAFTA Best Film"
+  ],
+  "The Best Years of Our Lives": [
+   "Best Picture",
+   "BAFTA Best Film",
+   "Golden Globe (Drama)"
+  ],
+  "A Man for All Seasons (1966 film)": [
+   "Best Picture",
+   "BAFTA Best Film",
+   "Golden Globe (Drama)"
+  ],
+  "Annie Hall": [
+   "Best Picture",
+   "BAFTA Best Film"
+  ],
+  "American Beauty (1999 film)": [
+   "Best Picture",
+   "BAFTA Best Film",
+   "Golden Globe (Drama)"
+  ],
+  "The Lord of the Rings: The Fellowship of the Ring": [
+   "BAFTA Best Film"
+  ],
+  "Cabaret (1972 film)": [
+   "BAFTA Best Film"
+  ],
+  "The Apartment": [
+   "Best Picture",
+   "BAFTA Best Film"
+  ],
+  "The Lord of the Rings: The Return of the King": [
+   "Best Picture",
+   "BAFTA Best Film",
+   "Golden Globe (Drama)"
+  ],
+  "My Fair Lady (film)": [
+   "Best Picture",
+   "BAFTA Best Film"
+  ],
+  "Shakespeare in Love": [
+   "Best Picture",
+   "BAFTA Best Film"
+  ],
+  "Oppenheimer (film)": [
+   "Best Picture",
+   "BAFTA Best Film",
+   "Golden Globe (Drama)"
+  ],
+  "Tom Jones (1963 film)": [
+   "Best Picture",
+   "BAFTA Best Film"
+  ],
+  "Ben-Hur (1959 film)": [
+   "Best Picture",
+   "BAFTA Best Film",
+   "Golden Globe (Drama)"
+  ],
+  "Chariots of Fire": [
+   "Best Picture",
+   "BAFTA Best Film"
+  ],
+  "Midnight Cowboy": [
+   "Best Picture",
+   "BAFTA Best Film"
+  ],
+  "One Flew Over the Cuckoo's Nest (film)": [
+   "Best Picture",
+   "BAFTA Best Film",
+   "Golden Globe (Drama)"
+  ],
+  "The French Connection (film)": [
+   "Best Picture",
+   "Golden Globe (Drama)"
+  ],
+  "Avatar (2009 film)": [
+   "Golden Globe (Drama)"
+  ],
+  "The Godfather": [
+   "Best Picture",
+   "Golden Globe (Drama)"
+  ],
+  "Doctor Zhivago (film)": [
+   "Golden Globe (Drama)"
+  ],
+  "Kramer vs. Kramer": [
+   "Best Picture",
+   "Golden Globe (Drama)"
+  ],
+  "The Song of Bernadette (film)": [
+   "Golden Globe (Drama)"
+  ],
+  "The Exorcist": [
+   "Golden Globe (Drama)"
+  ],
+  "On Golden Pond (1981 film)": [
+   "Golden Globe (Drama)"
+  ],
+  "Spartacus (film)": [
+   "Golden Globe (Drama)"
+  ],
+  "The Greatest Show on Earth (film)": [
+   "Best Picture",
+   "Golden Globe (Drama)"
+  ],
+  "Bohemian Rhapsody (film)": [
+   "Golden Globe (Drama)"
+  ],
+  "Johnny Belinda (1948 film)": [
+   "Golden Globe (Drama)"
+  ],
+  "The Lion in Winter (1968 film)": [
+   "Golden Globe (Drama)"
+  ],
+  "Rocky": [
+   "Best Picture",
+   "Golden Globe (Drama)"
+  ],
+  "Born on the Fourth of July (film)": [
+   "Golden Globe (Drama)"
+  ],
+  "Around the World in 80 Days (1956 film)": [
+   "Best Picture",
+   "Golden Globe (Drama)"
+  ],
+  "A Place in the Sun (1951 film)": [
+   "Golden Globe (Drama)"
+  ],
+  "Platoon (film)": [
+   "Best Picture",
+   "Golden Globe (Drama)"
+  ],
+  "Love Story (1970 film)": [
+   "Golden Globe (Drama)"
+  ],
+  "E.T. the Extra-Terrestrial": [
+   "Golden Globe (Drama)"
+  ],
+  "Rain Man": [
+   "Best Picture",
+   "Golden Globe (Drama)"
+  ],
+  "Titanic (1997 film)": [
+   "Best Picture",
+   "Golden Globe (Drama)"
+  ],
+  "The Robe (film)": [
+   "Golden Globe (Drama)"
+  ],
+  "Out of Africa (film)": [
+   "Best Picture",
+   "Golden Globe (Drama)"
+  ],
+  "Terms of Endearment": [
+   "Best Picture",
+   "Golden Globe (Drama)"
+  ],
+  "The Guns of Navarone (film)": [
+   "Golden Globe (Drama)"
+  ],
+  "Going My Way": [
+   "Best Picture",
+   "Golden Globe (Drama)"
+  ],
+  "Saving Private Ryan": [
+   "Golden Globe (Drama)"
+  ],
+  "Forrest Gump": [
+   "Best Picture",
+   "Golden Globe (Drama)"
+  ],
+  "Wings (1927 film)": [
+   "Best Picture"
+  ],
+  "The Broadway Melody": [
+   "Best Picture"
+  ],
+  "All Quiet on the Western Front (1930 film)": [
+   "Best Picture"
+  ],
+  "Cimarron (1931 film)": [
+   "Best Picture"
+  ],
+  "Grand Hotel (1932 film)": [
+   "Best Picture"
+  ],
+  "It Happened One Night": [
+   "Best Picture"
+  ],
+  "Mutiny on the Bounty (1935 film)": [
+   "Best Picture"
+  ],
+  "The Great Ziegfeld": [
+   "Best Picture"
+  ],
+  "You Can't Take It with You (film)": [
+   "Best Picture"
+  ],
+  "Gone with the Wind (film)": [
+   "Best Picture"
+  ],
+  "Rebecca (1940 film)": [
+   "Best Picture"
+  ],
+  "How Green Was My Valley (film)": [
+   "Best Picture"
+  ],
+  "Mrs. Miniver": [
+   "Best Picture"
+  ],
+  "Casablanca (film)": [
+   "Best Picture"
+  ],
+  "An American in Paris (film)": [
+   "Best Picture"
+  ],
+  "From Here to Eternity": [
+   "Best Picture"
+  ],
+  "Gigi (1958 film)": [
+   "Best Picture"
+  ],
+  "West Side Story (1961 film)": [
+   "Best Picture"
+  ],
+  "The Sound of Music (film)": [
+   "Best Picture"
+  ],
+  "Oliver! (film)": [
+   "Best Picture"
+  ],
+  "Patton (film)": [
+   "Best Picture"
+  ],
+  "The Sting": [
+   "Best Picture"
+  ],
+  "The Godfather Part II": [
+   "Best Picture"
+  ],
+  "The Deer Hunter": [
+   "Best Picture"
+  ],
+  "Dances With Wolves": [
+   "Best Picture"
+  ],
+  "The Silence of the Lambs (film)": [
+   "Best Picture"
+  ]
+ }
+}
