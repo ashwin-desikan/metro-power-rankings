@@ -301,6 +301,8 @@ const SITE_INDEX: IndexColumn[] = [
     { label: 'Awards History', href: '/sound/grammys' },
     { label: 'Billionaires', href: '/billionaires' },
     { label: 'Mayors of the World', href: '/mayors' },
+    { label: 'World Leaders', href: '/leaders' },
+    { label: 'Leadership changes', href: '/leaders/changes' },
   ]},
   { heading: 'More', links: [
     { label: 'About', href: '/about' },

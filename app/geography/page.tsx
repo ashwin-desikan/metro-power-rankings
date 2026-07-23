@@ -26,12 +26,13 @@ const PLACES: Card[] = [
   { emoji: "🧭", title: "Expandable Map", desc: "Pan and zoom the ranked world, metro by metro.", href: "/expandable-map" },
   { emoji: "⚖️", title: "Compare Metros", desc: "Put any two metros side by side, dimension by dimension.", href: "/compare" },
   { emoji: "🥊", title: "Matchups", desc: "Head-to-head metro showdowns, London versus New York and beyond.", href: "/matchups/london-vs-new-york" },
+  { emoji: "🏘️", title: "Neighborhoods", desc: "Inside the metros: districts, boroughs, and the neighborhoods that make them.", href: "/neighborhoods" },
 ];
 const PEOPLE: Card[] = [
   { emoji: "👑", title: "The Nowhere 100", desc: "The hundred most powerful people alive, on one Metro Power scale.", href: "/power" },
   { emoji: "🎖️", title: "World Leaders", desc: "Every head of state and government, with a time machine back to antiquity.", href: "/leaders" },
   { emoji: "💰", title: "Billionaires", desc: "The world's wealthiest, placed on the metros that made them.", href: "/billionaires" },
-  { emoji: "🏛️", title: "US Political Leadership", desc: "The executive, Congress, and the fifty governors.", href: "/us-political-leadership" },
+  { emoji: "🏛️", title: "US Political Leadership", desc: "The executive, Congress, the Supreme Court, and the fifty governors.", href: "/us-political-leadership" },
   { emoji: "🏛️", title: "UK Political Leadership", desc: "The Crown, Prime Minister, Parliament and devolved nations.", href: "/uk-political-leadership" },
   { emoji: "🗳️", title: "Elections", desc: "Every election in 35 countries and the EU, from the US and UK to Brazil, Japan, and beyond.", href: "/elections" },
   { emoji: "🏙️", title: "Mayors of the World", desc: "Who runs the great cities, capital by capital.", href: "/mayors" },

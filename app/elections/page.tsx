@@ -695,7 +695,7 @@ export default async function ElectionsPage() {
             </div>
             <p className="text-[10px] text-[var(--text-dim)] mt-2">
               Share of contests in this atlas rated free (teal), restricted or tilted (amber), and
-              unfree (dark red), by decade. Coverage reflects the 26 polities tracked here.
+              unfree (dark red), by decade. Coverage reflects the {tlRows.length} polities tracked here.
             </p>
           </div>
         </div>

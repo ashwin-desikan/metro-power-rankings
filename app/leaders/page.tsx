@@ -76,6 +76,13 @@ export default async function LeadersIndexPage() {
             >
               Countries directory &rarr;
             </Link>
+            <Link
+              href="/leaders/changes"
+              className="text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            >
+              Leadership changes &rarr;
+            </Link>
           </nav>
 
           <header className="mb-10 border-b border-[var(--border)] pb-8">

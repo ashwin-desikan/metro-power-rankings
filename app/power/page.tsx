@@ -39,6 +39,16 @@ export default async function PowerPage() {
         <span>The Nowhere 100</span>
       </nav>
 
+      <nav className="mb-6 flex flex-wrap gap-x-4 gap-y-1 text-xs" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+        <span className="text-[var(--text-dim)]">See also:</span>
+        <Link href="/billionaires" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">Billionaires</Link>
+        <Link href="/mayors" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">Mayors of the World</Link>
+        <Link href="/leaders" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">World Leaders</Link>
+        <Link href="/elections" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">Elections</Link>
+        <Link href="/us-political-leadership" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">US Political Leadership</Link>
+        <Link href="/uk-political-leadership" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">UK Political Leadership</Link>
+      </nav>
+
       <header className="mb-6">
         <div className="flex items-center gap-4 mb-2">
           <img src="/nowhere-100-seal.svg" alt="The Nowhere 100 seal" width={64} height={70} className="flex-shrink-0" style={{ height: 70, width: 64 }} loading="lazy" decoding="async" />
