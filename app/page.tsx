@@ -5,6 +5,7 @@ import { leagueStatusFor, type LeagueStatusTone } from '@/lib/leagueStatus';
 import { FEATURED } from '@/app/sports/games/featured';
 import { flagCdnUrl } from '@/lib/international-display';
 import { getCountry } from '@/lib/countries';
+import { ELECTION_HUBS } from '@/lib/electionHubsMeta';
 import { datasetJsonLd, serializeJsonLd } from '@/lib/seo';
 import { readFileSync } from 'fs';
 import { join } from 'path';
@@ -89,6 +90,17 @@ function topPowers(): Preview[] {
     flagUrl: flagCdnUrl(r.slug, '20x15'),
     meta: r.share != null ? `${(r.share * 100).toFixed(1)}%` : '',
   }));
+}
+
+// Three real, dated 2026 contests (not "expected"/"due" placeholders) pulled
+// straight from lib/electionHubsMeta.ts — the same single source of truth
+// that drives the /elections landing page and every hub header, so this
+// preview updates itself the moment `next` is updated after a contest.
+function topElections(): Preview[] {
+  return ['us', 'br', 'nz'].map((code) => {
+    const h = ELECTION_HUBS[code];
+    return { name: h.name, flagUrl: flagCdnUrl(h.flag, '20x15'), sub: h.next, meta: '' };
+  });
 }
 
 // ---- Greatest Games: one marquee game per sport (excluding NHL), pulled
@@ -213,6 +225,7 @@ const ATLAS: AtlasCard[] = [
   { emoji: '🏟️', title: 'Sports', desc: 'Every league, national team, and cross-sport index.', href: '/sports', sub: 'Leagues · Zone Zero Cup · Rivalries', live: true },
   { emoji: '🎵', title: 'Sound', desc: 'The music of the metros, by chart and by decade.', href: '/sound', sub: 'Rankings · Artists · Awards · Decades' },
   { emoji: '👑', title: 'People', desc: 'The powerful, the wealthy, and the elected.', href: '/power', sub: 'Nowhere 100 · Billionaires · Mayors' },
+  { emoji: '🗳️', title: 'Elections', desc: 'Every democracy’s elections, since the 1800s, in one atlas.', href: '/elections', sub: '35 polities · World Map · Forecasts' },
   { emoji: '✍️', title: 'Essays', desc: 'Long-form deep dives and the Substack archive.', href: '/deep-dives', sub: 'Deep Dives · Substack' },
   { emoji: '🏅', title: 'Badges', desc: 'The same data reframed through categorical lenses.', href: '/badges', sub: 'Finance · Culture · Rail · Sport' },
   { emoji: '🎮', title: 'Play', desc: 'Games and learning tools for younger fans.', href: '/play', sub: 'Kids Games · Arcade' },
@@ -266,6 +279,7 @@ const SITE_INDEX: IndexColumn[] = [
   ]},
   { heading: 'Geography', href: '/geography', links: [
     { label: 'Countries', href: '/countries' },
+    { label: 'Elections', href: '/elections' },
     { label: 'States & Provinces', href: '/states' },
     { label: 'Expandable Map', href: '/expandable-map' },
     { label: 'Matchups', href: '/matchups/london-vs-new-york' },
@@ -338,7 +352,8 @@ export default async function Home() {
     { n: '02', title: 'The Nowhere 100', desc: 'The hundred most powerful people alive, on one Metro Power scale.', stat: '100 people', href: '/power', seal: true, preview: topPeople() },
     { n: '03', title: 'Zone Zero Cup', desc: 'National sporting merit across fourteen pillars, ten-year half-life.', stat: '200+ nations', href: '/sports/zone-zero-cup', emoji: '🏆', preview: topNations() },
     { n: '04', title: 'Musical Artist Rankings', desc: 'The biggest artists by chart success and prestige, by home metro.', stat: 'By metro', href: '/sound/artists', emoji: '🎵', preview: topArtists() },
-    { n: '05', title: 'The Power Atlas', desc: 'National power ranked year by year, from the Renaissance to today.', stat: '526 years · 1500–now', href: '/power-atlas', emoji: '🏛️', isNew: true, preview: topPowers() },
+    { n: '05', title: 'The Power Atlas', desc: 'National power ranked year by year, from the Renaissance to today.', stat: '526 years · 1500–now', href: '/power-atlas', emoji: '🏛️', preview: topPowers() },
+    { n: '06', title: 'The Election Atlas', desc: 'Every election in 35 countries and the EU — parties, leaders, turnout, and the results.', stat: '35 polities', href: '/elections', emoji: '🗳️', isNew: true, preview: topElections() },
   ];
 
   const leagueRows = LEAGUES.map((l) => ({ ...l, status: leagueStatusFor(l.href) }));
