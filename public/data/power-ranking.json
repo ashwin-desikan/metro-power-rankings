@@ -21,8 +21,8 @@
     "commissioner_factor": 0.44,
     "judiciary": 0.09
   },
-  "asOf": "2026-07-20",
-  "prevSnapshotDate": "2026-07-12",
+  "asOf": "2026-07-23",
+  "prevSnapshotDate": "2026-07-20",
   "ranking": [
     {
       "name": "⚠️ Donald Trump",
@@ -164,9 +164,9 @@
       "power": 341.1,
       "jurisdictionHref": "/countries/united-kingdom",
       "transition": "",
-      "prevRank": null,
-      "isNew": true,
-      "delta": null
+      "prevRank": 9,
+      "isNew": false,
+      "delta": 0
     },
     {
       "name": "Ursula von der Leyen",
@@ -308,9 +308,9 @@
       "power": 245.6,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 21,
+      "prevRank": 18,
       "isNew": false,
-      "delta": 3
+      "delta": 0
     },
     {
       "name": "Tim Cook",
@@ -324,9 +324,9 @@
       "power": 245.1,
       "jurisdictionHref": "",
       "transition": "Apple CEO succession expected",
-      "prevRank": 26,
+      "prevRank": 19,
       "isNew": false,
-      "delta": 7
+      "delta": 0
     },
     {
       "name": "Salim Ramji",
@@ -340,9 +340,9 @@
       "power": 240.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 18,
+      "prevRank": 20,
       "isNew": false,
-      "delta": -2
+      "delta": 0
     },
     {
       "name": "António Guterres",
@@ -356,9 +356,9 @@
       "power": 237.5,
       "jurisdictionHref": "/orgs",
       "transition": "UN Secretary-General term ends 31 Dec 2026",
-      "prevRank": 19,
+      "prevRank": 21,
       "isNew": false,
-      "delta": -2
+      "delta": 0
     },
     {
       "name": "Giorgia Meloni",
@@ -372,9 +372,9 @@
       "power": 236.6,
       "jurisdictionHref": "/countries/italy",
       "transition": "",
-      "prevRank": 20,
+      "prevRank": 22,
       "isNew": false,
-      "delta": -2
+      "delta": 0
     },
     {
       "name": "Luiz Inácio Lula da Silva",
@@ -388,9 +388,9 @@
       "power": 227.4,
       "jurisdictionHref": "/countries/brazil",
       "transition": "Brazil general election, 4 Oct 2026",
-      "prevRank": 22,
+      "prevRank": 23,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "John Roberts",
@@ -404,9 +404,9 @@
       "power": 226.8,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 23,
+      "prevRank": 24,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Sanae Takaichi",
@@ -420,9 +420,9 @@
       "power": 224.9,
       "jurisdictionHref": "/countries/japan",
       "transition": "",
-      "prevRank": 24,
+      "prevRank": 25,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Ajay Banga",
@@ -436,9 +436,9 @@
       "power": 215.4,
       "jurisdictionHref": "/orgs",
       "transition": "",
-      "prevRank": 25,
+      "prevRank": 26,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Sundar Pichai",
@@ -452,9 +452,9 @@
       "power": 211.2,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 28,
+      "prevRank": 27,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Claudia Sheinbaum",
@@ -468,9 +468,9 @@
       "power": 205.4,
       "jurisdictionHref": "/countries/mexico",
       "transition": "",
-      "prevRank": 27,
+      "prevRank": 28,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Mike Johnson",
@@ -740,9 +740,9 @@
       "power": 146.3,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 47,
+      "prevRank": 45,
       "isNew": false,
-      "delta": 2
+      "delta": 0
     },
     {
       "name": "⚠️ Recep Tayyip Erdoğan",
@@ -756,9 +756,9 @@
       "power": 140.9,
       "jurisdictionHref": "/countries/turkey",
       "transition": "",
-      "prevRank": 45,
+      "prevRank": 46,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Larry Page",
@@ -772,9 +772,9 @@
       "power": 140.3,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 46,
+      "prevRank": 47,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Sergio Ermotti",
@@ -868,9 +868,9 @@
       "power": 133.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 60,
+      "prevRank": 53,
       "isNew": false,
-      "delta": 7
+      "delta": 0
     },
     {
       "name": "Ted Sarandos",
@@ -884,9 +884,9 @@
       "power": 132.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 53,
+      "prevRank": 54,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Zohran Mamdani",
@@ -900,9 +900,9 @@
       "power": 131.1,
       "jurisdictionHref": "/rankings/new-york",
       "transition": "",
-      "prevRank": 54,
+      "prevRank": 55,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Sadiq Khan",
@@ -916,9 +916,9 @@
       "power": 129.9,
       "jurisdictionHref": "/rankings/london",
       "transition": "",
-      "prevRank": 55,
+      "prevRank": 56,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Sergey Brin",
@@ -932,9 +932,9 @@
       "power": 129.3,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 56,
+      "prevRank": 57,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Xin Changxing",
@@ -948,9 +948,9 @@
       "power": 126.6,
       "jurisdictionHref": "/states/jiangsu",
       "transition": "",
-      "prevRank": 57,
+      "prevRank": 58,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Volodymyr Zelensky",
@@ -964,9 +964,9 @@
       "power": 126.5,
       "jurisdictionHref": "/countries/ukraine",
       "transition": "",
-      "prevRank": 58,
+      "prevRank": 59,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Jeff Bezos",
@@ -980,9 +980,9 @@
       "power": 125.3,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 59,
+      "prevRank": 60,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "MrBeast",
@@ -1044,9 +1044,9 @@
       "power": 110.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 65,
+      "prevRank": 64,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Lionel Messi",
@@ -1060,9 +1060,9 @@
       "power": 108.0,
       "jurisdictionHref": "/teams/football/inter-miami-cf",
       "transition": "",
-      "prevRank": 66,
+      "prevRank": 65,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "C.C. Wei",
@@ -1076,9 +1076,9 @@
       "power": 103.3,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 64,
+      "prevRank": 66,
       "isNew": false,
-      "delta": -2
+      "delta": 0
     },
     {
       "name": "Emmanuel Grégoire",
@@ -1332,9 +1332,9 @@
       "power": 88.2,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 85,
+      "prevRank": 82,
       "isNew": false,
-      "delta": 3
+      "delta": 0
     },
     {
       "name": "David Zaslav",
@@ -1348,9 +1348,9 @@
       "power": 88.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 82,
+      "prevRank": 83,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Ahmed el-Tayeb",
@@ -1364,9 +1364,9 @@
       "power": 88.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 83,
+      "prevRank": 84,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Andrew Bailey",
@@ -1380,9 +1380,9 @@
       "power": 87.3,
       "jurisdictionHref": "/countries/united-kingdom",
       "transition": "",
-      "prevRank": 84,
+      "prevRank": 85,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Amin H. Nasser",
@@ -1556,9 +1556,9 @@
       "power": 77.6,
       "jurisdictionHref": "/rankings/shanghai",
       "transition": "",
-      "prevRank": 97,
+      "prevRank": 96,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Oh Se-hoon",
@@ -1572,9 +1572,9 @@
       "power": 77.5,
       "jurisdictionHref": "/rankings/seoul",
       "transition": "",
-      "prevRank": 96,
+      "prevRank": 97,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Valérie Pécresse",
@@ -1620,23 +1620,10 @@
       "power": 72.3,
       "jurisdictionHref": "/countries/south-africa",
       "transition": "",
-      "prevRank": null,
-      "isNew": true,
-      "delta": null
+      "prevRank": 100,
+      "isNew": false,
+      "delta": 0
     }
   ],
-  "dropped": [
-    {
-      "name": "Keir Starmer",
-      "prevRank": 9,
-      "category": "National",
-      "jurisdiction": "United Kingdom"
-    },
-    {
-      "name": "Lee Jae-yong",
-      "prevRank": 100,
-      "category": "Corporate",
-      "jurisdiction": "Samsung"
-    }
-  ]
+  "dropped": []
 }

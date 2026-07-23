@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-19",
+  "generated": "2026-07-23",
   "source": "Forbes real-time billionaires via komed3/rtb-api (MIT)",
   "count": 3381,
   "billionaires": [
@@ -29376,9 +29376,9 @@
       "name": "T. Denny Sanford",
       "uri": "t-denny-sanford",
       "networth": 2443.5,
-      "countryCode": "US",
-      "countrySlug": "united-states",
-      "countryName": "United States",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Finance & Investments"
       ],
@@ -32700,9 +32700,9 @@
       "name": "Yoon Dae-in",
       "uri": "yoon-dae-in",
       "networth": 2201.493,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "KR",
+      "countrySlug": "south-korea",
+      "countryName": "South Korea",
       "industries": [
         "Healthcare"
       ],
@@ -46523,9 +46523,9 @@
       "name": "Wang Mingwang",
       "uri": "wang-mingwang",
       "networth": 1440.853,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "CN",
+      "countrySlug": "china",
+      "countryName": "China",
       "industries": [
         "Manufacturing"
       ],
@@ -47872,9 +47872,9 @@
       "name": "Lin Por-Fong",
       "uri": "lin-por-fong",
       "networth": 1381.432,
-      "countryCode": "TW",
+      "countryCode": null,
       "countrySlug": null,
-      "countryName": "TW",
+      "countryName": null,
       "industries": [
         "Manufacturing"
       ],
@@ -48368,9 +48368,9 @@
       "name": "Wang Wenyin",
       "uri": "wang-wenyin",
       "networth": 1361.942,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Metals & Mining"
       ],
@@ -48608,9 +48608,9 @@
       "name": "Lin Por-Chun",
       "uri": "lin-por-chun",
       "networth": 1353.003,
-      "countryCode": "TW",
+      "countryCode": null,
       "countrySlug": null,
-      "countryName": "TW",
+      "countryName": null,
       "industries": [
         "Manufacturing"
       ],
@@ -50525,9 +50525,9 @@
       "name": "Michelle Xia",
       "uri": "michelle-xia",
       "networth": 1281.968,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "US",
+      "countrySlug": "united-states",
+      "countryName": "United States",
       "industries": [
         "Healthcare"
       ],
@@ -51447,9 +51447,9 @@
       "name": "Zhu Weisong",
       "uri": "zhu-weisong",
       "networth": 1237.002,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "CN",
+      "countrySlug": "china",
+      "countryName": "China",
       "industries": [
         "Media & Entertainment"
       ],
@@ -51517,9 +51517,9 @@
       "name": "Ali Erdemoglu",
       "uri": "ali-erdemoglu",
       "networth": 1234.042,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "TR",
+      "countrySlug": "turkey",
+      "countryName": "Turkey",
       "industries": [
         "Manufacturing"
       ],
@@ -52556,9 +52556,9 @@
       "name": "Leyla Tara Suyabatmaz",
       "uri": "leyla-tara-suyabatmaz",
       "networth": 1196.897,
-      "countryCode": "TR",
-      "countrySlug": "turkey",
-      "countryName": "Turkey",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Construction & Engineering"
       ],
@@ -52573,9 +52573,9 @@
       "name": "Yasemin Zeynep Keyman",
       "uri": "yasemin-zeynep-keyman",
       "networth": 1196.897,
-      "countryCode": "TR",
-      "countrySlug": "turkey",
-      "countryName": "Turkey",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Construction & Engineering"
       ],
@@ -56075,9 +56075,9 @@
       "name": "Chen Huwen",
       "uri": "chen-huwen",
       "networth": 1073.836,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "CN",
+      "countrySlug": "china",
+      "countryName": "China",
       "industries": [
         "Manufacturing"
       ],
@@ -56126,9 +56126,9 @@
       "name": "Luigi Cremonini & family",
       "uri": "luigi-cremonini",
       "networth": 1072.613,
-      "countryCode": "IT",
-      "countrySlug": "italy",
-      "countryName": "Italy",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Food & Beverage"
       ],
@@ -56741,9 +56741,9 @@
       "name": "Maria Frias",
       "uri": "maria-frias",
       "networth": 1039.95,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "BR",
+      "countrySlug": "brazil",
+      "countryName": "Brazil",
       "industries": [
         "Media & Entertainment"
       ],
@@ -57033,9 +57033,9 @@
       "name": "Kristina Hollweg",
       "uri": "kristina-hollweg",
       "networth": 1029.654,
-      "countryCode": "DE",
-      "countrySlug": "germany",
-      "countryName": "Germany",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Manufacturing"
       ],
@@ -57275,9 +57275,9 @@
       "name": "Yuri Shefler",
       "uri": "yuri-shefler",
       "networth": 1019.867,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "RU",
+      "countrySlug": "russia",
+      "countryName": "Russia",
       "industries": [
         "Food & Beverage"
       ],
