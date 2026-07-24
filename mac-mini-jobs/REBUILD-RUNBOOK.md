@@ -62,6 +62,9 @@ Host github-metro
     StrictHostKeyChecking accept-new
 CFG
 git clone git@github-metro:ashwin-desikan/metro-power-rankings.git "$HOME/Projects/Metro Area Project"
+# `internal/` is gitignored so it never arrives with a clone, but the Zone Zero Cup
+# step writes internal/zzc-v1-output.md and dies with FileNotFoundError without it:
+mkdir -p "$HOME/Projects/Metro Area Project/internal"
 ```
 
 ## 4. Python venv (pinned)
