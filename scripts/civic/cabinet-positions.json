@@ -1,1 +1,22 @@
-{}
+{
+  "attorney-general": "Q114896060",
+  "chief-of-staff": "Q786242",
+  "cia-director": "Q27656",
+  "dni": "Q1154057",
+  "omb-director": "Q16300323",
+  "president": "Q11696",
+  "secretary-of-agriculture": "Q1029955",
+  "secretary-of-commerce": "Q2003296",
+  "secretary-of-dhs": "Q642859",
+  "secretary-of-education": "Q967762",
+  "secretary-of-energy": "Q1029968",
+  "secretary-of-hhs": "Q2305968",
+  "secretary-of-hud": "Q2419581",
+  "secretary-of-labor": "Q967750",
+  "secretary-of-the-interior": "Q2287650",
+  "secretary-of-the-treasury": "Q4215834",
+  "secretary-of-transportation": "Q967737",
+  "secretary-of-va": "Q1658460",
+  "ustr": "Q1574977",
+  "vice-president": "Q11699"
+}

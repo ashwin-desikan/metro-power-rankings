@@ -1,6 +1,375 @@
 {
-  "updated": "2026-07-20",
+  "updated": "2026-07-24",
   "changes": [
+    {
+      "date": "2024-02-26",
+      "slug": "tuvalu",
+      "country": "Tuvalu",
+      "office": "Prime Minister",
+      "from": "Feleti Teo",
+      "to": "Ben Do",
+      "source": "wikidata"
+    },
+    {
+      "date": "2012-03-18",
+      "slug": "tonga",
+      "country": "Tonga",
+      "office": "President",
+      "from": "Tupou VI",
+      "to": "Tupou VI of Tonga",
+      "source": "wikidata"
+    },
+    {
+      "date": "2024-05-02",
+      "slug": "solomon-islands",
+      "country": "Solomon Islands",
+      "office": "Prime Minister",
+      "from": "Matthew Wale",
+      "to": "Jeremiah Manele",
+      "source": "wikidata"
+    },
+    {
+      "date": "2026-06-19",
+      "slug": "cape-verde",
+      "country": "Cape Verde",
+      "office": "Prime Minister",
+      "from": "José Maria Neves",
+      "to": "Francisco Carvalho",
+      "source": "wikidata"
+    },
+    {
+      "date": "2023-07-27",
+      "slug": "niger",
+      "country": "Niger",
+      "office": "President",
+      "from": "Abdourahamane Tchiani",
+      "to": "Hassoumi Massoudou",
+      "source": "wikidata"
+    },
+    {
+      "date": "2026-07-24",
+      "slug": "brunei",
+      "country": "Brunei",
+      "office": "President",
+      "from": "Hassanal Bolkiah",
+      "to": "Hassanal Bolkiah I of Brunei",
+      "source": "wikidata"
+    },
+    {
+      "date": "2014-08-05",
+      "slug": "libya",
+      "country": "Libya",
+      "office": "President",
+      "from": "Abdul Hamid Dbeibeh",
+      "to": "Aguila Saleh Issa",
+      "source": "wikidata"
+    },
+    {
+      "date": "2026-07-22",
+      "slug": "moldova",
+      "country": "Moldova",
+      "office": "Prime Minister",
+      "from": "Alexandru Munteanu",
+      "to": "Vasile Tofan",
+      "source": "wikidata"
+    },
+    {
+      "date": "2024-10-01",
+      "slug": "san-marino",
+      "country": "San Marino",
+      "office": "President",
+      "from": "Luca Beccari",
+      "to": "Maria Luisa Berti",
+      "source": "wikidata"
+    },
+    {
+      "date": "2021-09-17",
+      "slug": "bahamas",
+      "country": "Bahamas",
+      "office": "Prime Minister",
+      "from": "Philip Davis",
+      "to": "Philip \"Brave\" Davis",
+      "source": "wikidata"
+    },
+    {
+      "date": "2021-11-12",
+      "slug": "fiji",
+      "country": "Fiji",
+      "office": "President",
+      "from": "Naiqama Lalabalavu",
+      "to": "Wiliame Katonivere",
+      "source": "wikidata"
+    },
+    {
+      "date": "2005-04-06",
+      "slug": "monaco",
+      "country": "Monaco",
+      "office": "Monarch",
+      "from": "Albert II",
+      "to": "Albert II, Prince of Monaco",
+      "source": "wikidata"
+    },
+    {
+      "date": "2025-02-08",
+      "slug": "lebanon",
+      "country": "Lebanon",
+      "office": "Prime Minister",
+      "from": "Joseph Aoun",
+      "to": "Nawaf Salam",
+      "source": "wikidata"
+    },
+    {
+      "date": "2023-11-17",
+      "slug": "luxembourg",
+      "country": "Luxembourg",
+      "office": "Prime Minister",
+      "from": "Luc Frieden",
+      "to": "Émile Reuter",
+      "source": "wikidata"
+    },
+    {
+      "date": "2021-02-01",
+      "slug": "myanmar",
+      "country": "Myanmar",
+      "office": "President",
+      "from": "Min Aung Hlaing",
+      "to": "Myint Swe",
+      "source": "wikidata"
+    },
+    {
+      "date": "1994-07-20",
+      "slug": "belarus",
+      "country": "Belarus",
+      "office": "President",
+      "from": "Alexander Lukashenko",
+      "to": "Alexander Lukashenka",
+      "source": "wikidata"
+    },
+    {
+      "date": "2021-12-13",
+      "slug": "bulgaria",
+      "country": "Bulgaria",
+      "office": "Prime Minister",
+      "from": "Rumen Radev",
+      "to": "Kiril Petkov",
+      "source": "wikidata"
+    },
+    {
+      "date": "2023-02-12",
+      "slug": "cyprus",
+      "country": "Cyprus",
+      "office": "President",
+      "from": "Nikos Christodoulides",
+      "to": "Nicos Christodoulides",
+      "source": "wikidata"
+    },
+    {
+      "date": "2026-07-24",
+      "slug": "jordan",
+      "country": "Jordan",
+      "office": "President",
+      "from": "Jafar Hassan",
+      "to": "Abdullah II of Jordan",
+      "source": "wikidata"
+    },
+    {
+      "date": "2025-11-08",
+      "slug": "bolivia",
+      "country": "Bolivia",
+      "office": "President",
+      "from": "Rodrigo Paz",
+      "to": "Rodrigo Paz Pereira",
+      "source": "wikidata"
+    },
+    {
+      "date": "2020-11-11",
+      "slug": "bahrain",
+      "country": "Bahrain",
+      "office": "Prime Minister",
+      "from": "Salman bin Hamad Al Khalifa",
+      "to": "Salman bin Hamad, Crown Prince of Bahrain",
+      "source": "wikidata"
+    },
+    {
+      "date": "2022-10-27",
+      "slug": "iraq",
+      "country": "Iraq",
+      "office": "Prime Minister",
+      "from": "Ali al-Zaidi",
+      "to": "Muhammad Shia' al-Sudani",
+      "source": "wikidata"
+    },
+    {
+      "date": "2026-07-24",
+      "slug": "kuwait",
+      "country": "Kuwait",
+      "office": "Prime Minister",
+      "from": "Ahmad Abdullah Al-Ahmad Al-Sabah",
+      "to": "Sabah Al-Khalid Al-Sabah",
+      "source": "wikidata"
+    },
+    {
+      "date": "2024-07-01",
+      "slug": "panama",
+      "country": "Panama",
+      "office": "President",
+      "from": "Jose Raul Mulino",
+      "to": "José Raúl Mulino",
+      "source": "wikidata"
+    },
+    {
+      "date": "2024-09-23",
+      "slug": "sri-lanka",
+      "country": "Sri Lanka",
+      "office": "President",
+      "from": "Anura Kumara Dissanayake",
+      "to": "Anura Kurankan Dissanayake",
+      "source": "wikidata"
+    },
+    {
+      "date": "2019-01-01",
+      "slug": "kazakhstan",
+      "country": "Kazakhstan",
+      "office": "President",
+      "from": "Kassym-Jomart Tokayev",
+      "to": "Qasym-Zhomart Toqaev",
+      "source": "wikidata"
+    },
+    {
+      "date": "2019-05-20",
+      "slug": "ukraine",
+      "country": "Ukraine",
+      "office": "President",
+      "from": "Volodymyr Zelensky",
+      "to": "Volodymyr Zelenskyy",
+      "source": "wikidata"
+    },
+    {
+      "date": "2023-04-24",
+      "slug": "bangladesh",
+      "country": "Bangladesh",
+      "office": "President",
+      "from": "Muhammad Yunus",
+      "to": "Mohammad Shahabuddin",
+      "source": "wikidata"
+    },
+    {
+      "date": "2023-05-29",
+      "slug": "nigeria",
+      "country": "Nigeria",
+      "office": "President",
+      "from": "Bola Tinubu",
+      "to": "Bola Ahmed Tinubu",
+      "source": "wikidata"
+    },
+    {
+      "date": "2025-11-11",
+      "slug": "ireland",
+      "country": "Ireland",
+      "office": "President",
+      "from": "Micheál Martin",
+      "to": "Catherine Connolly",
+      "source": "wikidata"
+    },
+    {
+      "date": "2024-01-01",
+      "slug": "pakistan",
+      "country": "Pakistan",
+      "office": "President",
+      "from": "Shehbaz Sharif",
+      "to": "Asif Ali Zardari",
+      "source": "wikidata"
+    },
+    {
+      "date": "2021-07-07",
+      "slug": "israel",
+      "country": "Israel",
+      "office": "President",
+      "from": "Benjamin Netanyahu",
+      "to": "Isaac Herzog",
+      "source": "wikidata"
+    },
+    {
+      "date": "2024-05-22",
+      "slug": "vietnam",
+      "country": "Vietnam",
+      "office": "President",
+      "from": "To Lam",
+      "to": "Tô Lâm",
+      "source": "wikidata"
+    },
+    {
+      "date": "2022-06-30",
+      "slug": "philippines",
+      "country": "Philippines",
+      "office": "President",
+      "from": "Bongbong Marcos (Ferdinand Marcos Jr.)",
+      "to": "Bongbong Marcos",
+      "source": "wikidata"
+    },
+    {
+      "date": "2024-08-16",
+      "slug": "thailand",
+      "country": "Thailand",
+      "office": "Prime Minister",
+      "from": "Anutin Charnvirakul",
+      "to": "Paetongtarn Shinawatra",
+      "source": "wikidata"
+    },
+    {
+      "date": "2015-01-23",
+      "slug": "saudi-arabia",
+      "country": "Saudi Arabia",
+      "office": "Prime Minister",
+      "from": "Mohammed bin Salman",
+      "to": "Salman bin Abdulaziz Al Saud",
+      "source": "wikidata"
+    },
+    {
+      "date": "2026-07-24",
+      "slug": "united-arab-emirates",
+      "country": "United Arab Emirates",
+      "office": "Prime Minister",
+      "from": "Mohamed bin Zayed Al Nahyan",
+      "to": "Mohammed bin Rashid Al Maktoum",
+      "source": "wikidata"
+    },
+    {
+      "date": "2013-07-21",
+      "slug": "belgium",
+      "country": "Belgium",
+      "office": "President",
+      "from": "Bart De Wever",
+      "to": "Philippe of Belgium",
+      "source": "wikidata"
+    },
+    {
+      "date": "2026-07-24",
+      "slug": "switzerland",
+      "country": "Switzerland",
+      "office": "President",
+      "from": "Guy Parmelin",
+      "to": "Swiss Federal Council",
+      "source": "wikidata"
+    },
+    {
+      "date": "2025-06-04",
+      "slug": "south-korea",
+      "country": "South Korea",
+      "office": "President",
+      "from": "Lee Jae-myung",
+      "to": "Lee Jae Myung",
+      "source": "wikidata"
+    },
+    {
+      "date": "2022-07-25",
+      "slug": "india",
+      "country": "India",
+      "office": "President",
+      "from": "Narendra Modi",
+      "to": "Droupadi Murmu",
+      "source": "wikidata"
+    },
     {
       "date": "2026-07-21",
       "slug": "united-kingdom",

@@ -4628,6 +4628,17 @@
    "snp": 11.0
   },
   {
+   "date": "2026-07-16",
+   "pollster": "Trajectory Partnership",
+   "sample": 1458,
+   "lab": 24.0,
+   "con": 20.0,
+   "ref": 22.0,
+   "ld": 13.0,
+   "grn": 11.0,
+   "snp": 3.0
+  },
+  {
    "date": "2026-07-17",
    "pollster": "Opinium",
    "sample": 2050,

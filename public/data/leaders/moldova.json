@@ -203,10 +203,20 @@
     "name": "Alexandru Munteanu",
     "role": "Prime Minister",
     "start": "2025-11-01",
+    "end": "2026-07-22",
+    "current": false,
+    "tenure": "0y 8m 23d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Vasile Tofan",
+    "role": "Prime Minister",
+    "start": "2026-07-22",
     "end": null,
     "current": true,
-    "tenure": "8m 2d",
-    "party": null,
+    "tenure": "in office",
+    "party": "",
     "era": null
   }
 ]

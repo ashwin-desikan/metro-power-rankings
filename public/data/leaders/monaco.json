@@ -43,10 +43,20 @@
     "name": "👑 Albert II",
     "role": "Monarch",
     "start": "2005-04-06",
+    "end": "2005-04-06",
+    "current": false,
+    "tenure": "0y 0m 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "👑 Albert II, Prince of Monaco",
+    "role": "Monarch",
+    "start": "2005-04-06",
     "end": null,
     "current": true,
-    "tenure": "2005-present (Sovereign Prince)",
-    "party": null,
+    "tenure": "in office",
+    "party": "",
     "era": null
   },
   {

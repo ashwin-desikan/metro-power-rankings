@@ -153,10 +153,20 @@
     "name": "Lee Jae-myung",
     "role": "President",
     "start": "2025-06-04",
+    "end": "2025-06-04",
+    "current": false,
+    "tenure": "0y 0m 0d",
+    "party": "DP",
+    "era": null
+  },
+  {
+    "name": "Lee Jae Myung",
+    "role": "President",
+    "start": "2025-06-04",
     "end": null,
     "current": true,
-    "tenure": "1y 28d",
-    "party": "DP",
+    "tenure": "in office",
+    "party": "",
     "era": null
   }
 ]

@@ -63,10 +63,20 @@
     "name": "Volodymyr Zelensky",
     "role": "President",
     "start": "2019-05-20",
+    "end": "2019-05-20",
+    "current": false,
+    "tenure": "0y 0m 0d",
+    "party": "Servant of the People",
+    "era": null
+  },
+  {
+    "name": "Volodymyr Zelenskyy",
+    "role": "President",
+    "start": "2019-05-20",
     "end": null,
     "current": true,
-    "tenure": "7y 1m 15d",
-    "party": "Servant of the People",
+    "tenure": "in office",
+    "party": "",
     "era": null
   }
 ]

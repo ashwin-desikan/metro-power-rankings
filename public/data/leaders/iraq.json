@@ -203,10 +203,20 @@
     "name": "Ali al-Zaidi",
     "role": "Prime Minister",
     "start": "2026-05-14",
+    "end": "2022-10-27",
+    "current": false,
+    "tenure": "",
+    "party": "Independent",
+    "era": "Post-2003 Republic"
+  },
+  {
+    "name": "Muhammad Shia' al-Sudani",
+    "role": "Prime Minister",
+    "start": "2022-10-27",
     "end": null,
     "current": true,
-    "tenure": "2026–present",
-    "party": "Independent",
+    "tenure": "in office",
+    "party": "",
     "era": "Post-2003 Republic"
   }
 ]

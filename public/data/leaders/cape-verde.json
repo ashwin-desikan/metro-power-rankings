@@ -103,10 +103,20 @@
     "name": "Ulisses Correia e Silva",
     "role": "Prime Minister",
     "start": "2016-04-22",
+    "end": "2026-06-19",
+    "current": false,
+    "tenure": "10y 2m 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Francisco Carvalho",
+    "role": "Prime Minister",
+    "start": "2026-06-19",
     "end": null,
     "current": true,
-    "tenure": null,
-    "party": null,
+    "tenure": "in office",
+    "party": "",
     "era": null
   },
   {

@@ -183,10 +183,20 @@
     "name": "Anura Kumara Dissanayake",
     "role": "President",
     "start": "2024-09-23",
+    "end": "2024-09-23",
+    "current": false,
+    "tenure": "0y 0m 0d",
+    "party": "National People's Power (JVP)",
+    "era": "Executive Presidency"
+  },
+  {
+    "name": "Anura Kurankan Dissanayake",
+    "role": "President",
+    "start": "2024-09-23",
     "end": null,
     "current": true,
-    "tenure": "2024-present",
-    "party": "National People's Power (JVP)",
+    "tenure": "in office",
+    "party": "",
     "era": "Executive Presidency"
   },
   {

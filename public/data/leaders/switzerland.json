@@ -1923,10 +1923,20 @@
     "name": "Guy Parmelin",
     "role": "President of the Swiss Confederation",
     "start": "2026-01-01",
+    "end": "2026-07-24",
+    "current": false,
+    "tenure": "0y 6m 24d",
+    "party": "SVP",
+    "era": "Federal Council (rotating presidency)"
+  },
+  {
+    "name": "Swiss Federal Council",
+    "role": "President of the Swiss Confederation",
+    "start": "2026-07-24",
     "end": null,
     "current": true,
-    "tenure": "2026",
-    "party": "SVP",
+    "tenure": "in office",
+    "party": "",
     "era": "Federal Council (rotating presidency)"
   }
 ]

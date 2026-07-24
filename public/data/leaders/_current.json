@@ -81,7 +81,7 @@
     "since": "2003-10-31"
   },
   "bahamas": {
-    "name": "Philip Davis",
+    "name": "Philip \"Brave\" Davis",
     "role": "PM",
     "second": {
       "name": "👑 Charles III",
@@ -90,18 +90,18 @@
     "since": "2021-09-17"
   },
   "bahrain": {
-    "name": "Salman bin Hamad Al Khalifa",
+    "name": "Salman bin Hamad, Crown Prince of Bahrain",
     "role": "PM",
     "second": {
-      "name": "👑 Hamad bin Isa Al Khalifa",
+      "name": "👑 Hamad II of Bahrain",
       "role": "Monarch"
     },
     "since": "2020-11-11"
   },
   "bangladesh": {
-    "name": "Muhammad Yunus",
-    "role": "Chief Adviser",
-    "since": "2024-08-08"
+    "name": "Mohammad Shahabuddin",
+    "role": "Pres.",
+    "since": "2023-04-24"
   },
   "barbados": {
     "name": "Sandra Mason",
@@ -109,18 +109,14 @@
     "since": "2021-11-30"
   },
   "belarus": {
-    "name": "⚠️ Alexander Lukashenko",
+    "name": "Alexander Lukashenka",
     "role": "Pres.",
     "since": "1994-07-20"
   },
   "belgium": {
-    "name": "Bart De Wever",
-    "role": "PM",
-    "second": {
-      "name": "👑 King Philippe",
-      "role": "Monarch"
-    },
-    "since": "2025-02-03"
+    "name": "Philippe of Belgium",
+    "role": "Pres.",
+    "since": "2013-07-21"
   },
   "belize": {
     "name": "Johnny Briceño",
@@ -146,7 +142,7 @@
     "since": "2024-01-28"
   },
   "bolivia": {
-    "name": "Rodrigo Paz",
+    "name": "Rodrigo Paz Pereira",
     "role": "Pres.",
     "since": "2025-11-08"
   },
@@ -170,18 +166,17 @@
     "since": "2023-01-01"
   },
   "brunei": {
-    "name": "👑 Hassanal Bolkiah",
-    "role": "Monarch",
-    "since": "1967-10-05"
+    "name": "Hassanal Bolkiah I of Brunei",
+    "role": "Pres."
   },
   "bulgaria": {
-    "name": "Rumen Radev",
+    "name": "Kiril Petkov",
     "role": "PM",
     "second": {
       "name": "Iliana Iotova",
       "role": "Pres."
     },
-    "since": "2026-05-08"
+    "since": "2021-12-13"
   },
   "burkina-faso": {
     "name": "Ibrahim Traoré",
@@ -217,9 +212,13 @@
     "since": "2025-03-14"
   },
   "cape-verde": {
-    "name": "José Maria Neves",
-    "role": "Pres.",
-    "since": "2021-11-09"
+    "name": "Francisco Carvalho",
+    "role": "PM",
+    "second": {
+      "name": "José Maria Neves",
+      "role": "Pres."
+    },
+    "since": "2026-06-19"
   },
   "central-african-republic": {
     "name": "Faustin-Archange Touadéra",
@@ -290,9 +289,9 @@
     "since": "2021-04-19"
   },
   "cyprus": {
-    "name": "Nikos Christodoulides",
+    "name": "Nicos Christodoulides",
     "role": "Pres.",
-    "since": "2023-02-28"
+    "since": "2023-02-12"
   },
   "czech-republic": {
     "name": "Andrej Babiš",
@@ -395,9 +394,9 @@
     "since": "2023-01-01"
   },
   "fiji": {
-    "name": "Naiqama Lalabalavu",
+    "name": "Wiliame Katonivere",
     "role": "Pres.",
-    "since": "2024-11-12"
+    "since": "2021-11-12"
   },
   "finland": {
     "name": "Petteri Orpo",
@@ -522,9 +521,9 @@
     "since": "2024-12-21"
   },
   "india": {
-    "name": "Narendra Modi",
-    "role": "PM",
-    "since": "2014-05-26"
+    "name": "Droupadi Murmu",
+    "role": "Pres.",
+    "since": "2022-07-25"
   },
   "indonesia": {
     "name": "Prabowo Subianto",
@@ -541,23 +540,23 @@
     "since": "2026-03-08"
   },
   "iraq": {
-    "name": "Ali al-Zaidi",
+    "name": "Muhammad Shia' al-Sudani",
     "role": "PM",
     "second": {
-      "name": "Nizar Amedi",
+      "name": "Abdul Latif Rashid",
       "role": "Pres."
     },
-    "since": "2026-05-14"
+    "since": "2022-10-27"
   },
   "ireland": {
-    "name": "Micheál Martin",
-    "role": "Taoiseach",
-    "since": "2025-01-23"
+    "name": "Catherine Connolly",
+    "role": "Pres.",
+    "since": "2025-11-11"
   },
   "israel": {
-    "name": "⚠️ Benjamin Netanyahu",
-    "role": "PM",
-    "since": "2022-12-29"
+    "name": "Isaac Herzog",
+    "role": "Pres.",
+    "since": "2021-07-07"
   },
   "italy": {
     "name": "Giorgia Meloni",
@@ -579,18 +578,13 @@
     "since": "2024-11-11"
   },
   "jordan": {
-    "name": "Jafar Hassan",
-    "role": "PM",
-    "second": {
-      "name": "👑 Abdullah II bin Al-Hussein",
-      "role": "Monarch"
-    },
-    "since": "2024-09-15"
+    "name": "Abdullah II of Jordan",
+    "role": "Pres."
   },
   "kazakhstan": {
-    "name": "Kassym-Jomart Tokayev",
+    "name": "Qasym-Zhomart Toqaev",
     "role": "Pres.",
-    "since": "2019-03-20"
+    "since": "2019-01-01"
   },
   "kenya": {
     "name": "William Ruto",
@@ -612,13 +606,12 @@
     "since": "2021-03-22"
   },
   "kuwait": {
-    "name": "Ahmad Abdullah Al-Ahmad Al-Sabah",
+    "name": "Sabah Al-Khalid Al-Sabah",
     "role": "PM",
     "second": {
-      "name": "👑 Meshal Al-Ahmad Al-Jaber Al-Sabah",
+      "name": "👑 Mishal Al-Ahmad Al-Jaber Al-Sabah",
       "role": "Monarch"
-    },
-    "since": "2024-05-15"
+    }
   },
   "kyrgyzstan": {
     "name": "Adylbek Kasymaliev",
@@ -640,9 +633,13 @@
     "since": "2023-07-08"
   },
   "lebanon": {
-    "name": "Joseph Aoun",
-    "role": "Pres.",
-    "since": "2025-01-09"
+    "name": "Nawaf Salam",
+    "role": "PM",
+    "second": {
+      "name": "Joseph Aoun",
+      "role": "Pres."
+    },
+    "since": "2025-02-08"
   },
   "lesotho": {
     "name": "Sam Matekane",
@@ -659,13 +656,9 @@
     "since": "2024-01-01"
   },
   "libya": {
-    "name": "Abdul Hamid Dbeibeh",
-    "role": "PM",
-    "second": {
-      "name": "Mohamed al-Menfi",
-      "role": "Head of State"
-    },
-    "since": "2021-03-15"
+    "name": "Aguila Saleh Issa",
+    "role": "Pres.",
+    "since": "2014-08-05"
   },
   "liechtenstein": {
     "name": "Daniel Risch",
@@ -686,10 +679,10 @@
     "since": "2025-08-26"
   },
   "luxembourg": {
-    "name": "Luc Frieden",
+    "name": "Émile Reuter",
     "role": "PM",
     "second": {
-      "name": "👑 Guillaume",
+      "name": "👑 Guillaume V, Grand Duke of Luxembourg",
       "role": "Monarch"
     },
     "since": "2023-11-17"
@@ -757,16 +750,16 @@
     "since": "2024-10-01"
   },
   "moldova": {
-    "name": "Alexandru Munteanu",
+    "name": "Vasile Tofan",
     "role": "PM",
     "second": {
       "name": "Maia Sandu",
       "role": "Pres."
     },
-    "since": "2025-11-01"
+    "since": "2026-07-22"
   },
   "monaco": {
-    "name": "👑 Albert II",
+    "name": "👑 Albert II, Prince of Monaco",
     "role": "Monarch",
     "since": "2005-04-06"
   },
@@ -803,9 +796,9 @@
     "since": "2025-01-15"
   },
   "myanmar": {
-    "name": "⚠️ Min Aung Hlaing",
+    "name": "Myint Swe",
     "role": "Pres.",
-    "since": "2026-04-10"
+    "since": "2021-02-01"
   },
   "namibia": {
     "name": "Netumbo Nandi-Ndaitwah",
@@ -846,12 +839,12 @@
     "since": "2007-01-10"
   },
   "niger": {
-    "name": "Abdourahamane Tchiani",
+    "name": "Hassoumi Massoudou",
     "role": "Pres.",
     "since": "2023-07-27"
   },
   "nigeria": {
-    "name": "Bola Tinubu",
+    "name": "Bola Ahmed Tinubu",
     "role": "Pres.",
     "since": "2023-05-29"
   },
@@ -889,9 +882,9 @@
     "since": "2020-01-11"
   },
   "pakistan": {
-    "name": "Shehbaz Sharif",
-    "role": "PM",
-    "since": "2024-03-04"
+    "name": "Asif Ali Zardari",
+    "role": "Pres.",
+    "since": "2024-01-01"
   },
   "palau": {
     "name": "Surangel Whipps Jr.",
@@ -908,7 +901,7 @@
     "since": "2005-01-15"
   },
   "panama": {
-    "name": "Jose Raul Mulino",
+    "name": "José Raúl Mulino",
     "role": "Pres.",
     "since": "2024-07-01"
   },
@@ -932,7 +925,7 @@
     "since": "2026-02-18"
   },
   "philippines": {
-    "name": "Bongbong Marcos (Ferdinand Marcos Jr.)",
+    "name": "Bongbong Marcos",
     "role": "Pres.",
     "since": "2022-06-30"
   },
@@ -998,9 +991,9 @@
     "since": "2017-07-21"
   },
   "san-marino": {
-    "name": "Luca Beccari",
-    "role": "Sec. of State",
-    "since": "2020-01-08"
+    "name": "Maria Luisa Berti",
+    "role": "Pres.",
+    "since": "2024-10-01"
   },
   "sao-tome-and-principe": {
     "name": "Carlos Vila Nova",
@@ -1008,13 +1001,9 @@
     "since": "2021-10-02"
   },
   "saudi-arabia": {
-    "name": "⚠️ 👑 Mohammed bin Salman",
-    "role": "Crown Prince & PM",
-    "second": {
-      "name": "👑 King Salman bin Abdulaziz",
-      "role": "King"
-    },
-    "since": "2022-09-27"
+    "name": "Salman bin Abdulaziz Al Saud",
+    "role": "PM",
+    "since": "2015-01-23"
   },
   "scotland": {
     "name": "Andy Burnham",
@@ -1069,13 +1058,13 @@
     "since": "2026-05-22"
   },
   "solomon-islands": {
-    "name": "Matthew Wale",
+    "name": "Jeremiah Manele",
     "role": "PM",
     "second": {
       "name": "👑 Charles III",
       "role": "Monarch"
     },
-    "since": "2026-05-15"
+    "since": "2024-05-02"
   },
   "somalia": {
     "name": "Hassan Sheikh Mohamud",
@@ -1088,7 +1077,7 @@
     "since": "2018-02-15"
   },
   "south-korea": {
-    "name": "Lee Jae-myung",
+    "name": "Lee Jae Myung",
     "role": "Pres.",
     "since": "2025-06-04"
   },
@@ -1107,7 +1096,7 @@
     "since": "2018-06-02"
   },
   "sri-lanka": {
-    "name": "Anura Kumara Dissanayake",
+    "name": "Anura Kurankan Dissanayake",
     "role": "Pres.",
     "since": "2024-09-23"
   },
@@ -1149,9 +1138,8 @@
     "since": "2022-10-18"
   },
   "switzerland": {
-    "name": "Guy Parmelin",
-    "role": "Pres. of the Swiss Confederation",
-    "since": "2026-01-01"
+    "name": "Swiss Federal Council",
+    "role": "Pres."
   },
   "syria": {
     "name": "Ahmed al-Sharaa",
@@ -1174,13 +1162,13 @@
     "since": "2021-03-19"
   },
   "thailand": {
-    "name": "Anutin Charnvirakul",
+    "name": "Paetongtarn Shinawatra",
     "role": "PM",
     "second": {
-      "name": "👑 Vajiralongkorn (Rama X)",
+      "name": "👑 Vajiralongkorn",
       "role": "Monarch"
     },
-    "since": "2025-09-05"
+    "since": "2024-08-16"
   },
   "togo": {
     "name": "Jean-Lucien Savi de Tové",
@@ -1188,8 +1176,8 @@
     "since": "2025-05-03"
   },
   "tonga": {
-    "name": "👑 Tupou VI",
-    "role": "Monarch",
+    "name": "Tupou VI of Tonga",
+    "role": "Pres.",
     "since": "2012-03-18"
   },
   "trinidad-tobago": {
@@ -1217,7 +1205,7 @@
     "since": "2022-03-19"
   },
   "tuvalu": {
-    "name": "Feleti Teo",
+    "name": "Ben Do",
     "role": "PM",
     "second": {
       "name": "👑 Charles III",
@@ -1231,14 +1219,17 @@
     "since": "1986-01-29"
   },
   "ukraine": {
-    "name": "Volodymyr Zelensky",
+    "name": "Volodymyr Zelenskyy",
     "role": "Pres.",
     "since": "2019-05-20"
   },
   "united-arab-emirates": {
-    "name": "Mohamed bin Zayed Al Nahyan",
-    "role": "Pres.",
-    "since": "2022-05-14"
+    "name": "Mohammed bin Rashid Al Maktoum",
+    "role": "PM",
+    "second": {
+      "name": "👑 Mohammed Bin Zayed Al Nahyan",
+      "role": "Monarch"
+    }
   },
   "united-kingdom": {
     "name": "Andy Burnham",
@@ -1285,9 +1276,9 @@
     "since": "2026-01-05"
   },
   "vietnam": {
-    "name": "To Lam",
-    "role": "Gen. Sec.",
-    "since": "2024-08-03"
+    "name": "Tô Lâm",
+    "role": "Pres.",
+    "since": "2024-05-22"
   },
   "yemen": {
     "name": "Rashad al-Alimi",

@@ -123,10 +123,20 @@
     "name": "Salman bin Hamad Al Khalifa",
     "role": "Prime Minister",
     "start": "2020-11-11",
+    "end": "2020-11-11",
+    "current": false,
+    "tenure": "0y 0m 0d",
+    "party": null,
+    "era": "Al Khalifa Monarchy"
+  },
+  {
+    "name": "Salman bin Hamad, Crown Prince of Bahrain",
+    "role": "Prime Minister",
+    "start": "2020-11-11",
     "end": null,
     "current": true,
-    "tenure": null,
-    "party": null,
+    "tenure": "in office",
+    "party": "",
     "era": "Al Khalifa Monarchy"
   }
 ]

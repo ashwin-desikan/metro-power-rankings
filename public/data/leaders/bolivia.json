@@ -223,10 +223,20 @@
     "name": "Rodrigo Paz",
     "role": "President",
     "start": "2025-11-08",
+    "end": "2025-11-08",
+    "current": false,
+    "tenure": "0y 0m 0d",
+    "party": "Christian Democratic Party (PDC)",
+    "era": "Post-MAS Era"
+  },
+  {
+    "name": "Rodrigo Paz Pereira",
+    "role": "President",
+    "start": "2025-11-08",
     "end": null,
     "current": true,
-    "tenure": "2025–present",
-    "party": "Christian Democratic Party (PDC)",
+    "tenure": "in office",
+    "party": "",
     "era": "Post-MAS Era"
   }
 ]

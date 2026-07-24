@@ -73,10 +73,20 @@
     "name": "Luca Beccari",
     "role": "Secretary of State",
     "start": "2020-01-08",
+    "end": "2024-10-01",
+    "current": false,
+    "tenure": "4y 8m 28d",
+    "party": "PDCS",
+    "era": null
+  },
+  {
+    "name": "Maria Luisa Berti",
+    "role": "Secretary of State",
+    "start": "2024-10-01",
     "end": null,
     "current": true,
-    "tenure": "6y 5m 25d",
-    "party": "PDCS",
+    "tenure": "in office",
+    "party": "",
     "era": null
   }
 ]

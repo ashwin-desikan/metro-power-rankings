@@ -30790,7 +30790,7 @@
     "name": "Yoon Dae-in",
     "networth": 2201.493,
     "rank": 1908,
-    "countryCode": "kr",
+    "countryCode": null,
     "industries": [
       "Healthcare"
     ],
@@ -41311,7 +41311,7 @@
     "name": "Yu Kai",
     "networth": 1559.859,
     "rank": 2561,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Technology"
     ],
@@ -45075,7 +45075,7 @@
     "name": "Lin Por-Fong",
     "networth": 1381.432,
     "rank": 2795,
-    "countryCode": null,
+    "countryCode": "tw",
     "industries": [
       "Manufacturing"
     ],
@@ -45542,7 +45542,7 @@
     "name": "Wang Wenyin",
     "networth": 1361.942,
     "rank": 2824,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Metals & Mining"
     ],
@@ -45768,7 +45768,7 @@
     "name": "Lin Por-Chun",
     "networth": 1353.003,
     "rank": 2838,
-    "countryCode": null,
+    "countryCode": "tw",
     "industries": [
       "Manufacturing"
     ],
@@ -48441,7 +48441,7 @@
     "name": "Zhu Weisong",
     "networth": 1237.002,
     "rank": 3004,
-    "countryCode": "cn",
+    "countryCode": null,
     "industries": [
       "Media & Entertainment"
     ],
@@ -49485,7 +49485,7 @@
     "name": "Leyla Tara Suyabatmaz",
     "networth": 1196.897,
     "rank": 3070,
-    "countryCode": null,
+    "countryCode": "tr",
     "industries": [
       "Construction & Engineering"
     ],
@@ -49501,7 +49501,7 @@
     "name": "Yasemin Zeynep Keyman",
     "networth": 1196.897,
     "rank": 3070,
-    "countryCode": null,
+    "countryCode": "tr",
     "industries": [
       "Construction & Engineering"
     ],
@@ -49629,7 +49629,7 @@
     "name": "Xiong Xiaochuan",
     "networth": 1190.458,
     "rank": 3079,
-    "countryCode": "cn",
+    "countryCode": null,
     "industries": [
       "Healthcare"
     ],
@@ -52137,7 +52137,7 @@
     "name": "Shyam Sankar",
     "networth": 1099.266,
     "rank": 3236,
-    "countryCode": "us",
+    "countryCode": null,
     "industries": [
       "Technology"
     ],
@@ -52316,7 +52316,7 @@
     "name": "Qi Xiangdong",
     "networth": 1095.08,
     "rank": 3247,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Technology"
     ],
@@ -53104,7 +53104,7 @@
     "name": "Herald Chen",
     "networth": 1060.026,
     "rank": 3296,
-    "countryCode": "us",
+    "countryCode": null,
     "industries": [
       "Technology"
     ],
@@ -53137,7 +53137,7 @@
     "name": "Bart van Malderen",
     "networth": 1058.406,
     "rank": 3298,
-    "countryCode": null,
+    "countryCode": "be",
     "industries": [
       "Manufacturing"
     ],
@@ -53297,7 +53297,7 @@
     "name": "Zhang Tianyu",
     "networth": 1047.489,
     "rank": 3308,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Telecom"
     ],
@@ -53441,7 +53441,7 @@
     "name": "Chen Xueli",
     "networth": 1039.89,
     "rank": 3317,
-    "countryCode": "cn",
+    "countryCode": null,
     "industries": [
       "Healthcare"
     ],
@@ -53928,7 +53928,7 @@
     "name": "Yuri Shefler",
     "networth": 1019.867,
     "rank": 3347,
-    "countryCode": "ru",
+    "countryCode": null,
     "industries": [
       "Food & Beverage"
     ],
@@ -54089,7 +54089,7 @@
     "name": "Amelie Voigt Trejes",
     "networth": 1012.454,
     "rank": 3357,
-    "countryCode": null,
+    "countryCode": "br",
     "industries": [
       "Manufacturing"
     ],
@@ -54105,7 +54105,7 @@
     "name": "Felipe Voigt Trejes",
     "networth": 1012.454,
     "rank": 3357,
-    "countryCode": null,
+    "countryCode": "br",
     "industries": [
       "Manufacturing"
     ],
@@ -54121,7 +54121,7 @@
     "name": "Pedro Voigt Trejes",
     "networth": 1012.454,
     "rank": 3357,
-    "countryCode": null,
+    "countryCode": "br",
     "industries": [
       "Manufacturing"
     ],

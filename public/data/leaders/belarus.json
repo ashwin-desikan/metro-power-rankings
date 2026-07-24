@@ -23,10 +23,20 @@
     "name": "⚠️ Alexander Lukashenko",
     "role": "President",
     "start": "1994-07-20",
+    "end": "1994-07-20",
+    "current": false,
+    "tenure": "0y 0m 0d",
+    "party": "Independent (non-partisan, dominant)",
+    "era": "Independent Belarus"
+  },
+  {
+    "name": "Alexander Lukashenka",
+    "role": "President",
+    "start": "1994-07-20",
     "end": null,
     "current": true,
-    "tenure": "1994–present",
-    "party": "Independent (non-partisan, dominant)",
+    "tenure": "in office",
+    "party": "",
     "era": "Independent Belarus"
   },
   {

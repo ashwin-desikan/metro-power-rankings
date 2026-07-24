@@ -153,10 +153,20 @@
     "name": "⚠️ Min Aung Hlaing",
     "role": "President",
     "start": "2026-04-10",
+    "end": "2021-02-01",
+    "current": false,
+    "tenure": "",
+    "party": "Military (Union Government)",
+    "era": "Military rule (post-coup, post-2026 election)"
+  },
+  {
+    "name": "Myint Swe",
+    "role": "President",
+    "start": "2021-02-01",
     "end": null,
     "current": true,
-    "tenure": "2026-present",
-    "party": "Military (Union Government)",
+    "tenure": "in office",
+    "party": "",
     "era": "Military rule (post-coup, post-2026 election)"
   }
 ]

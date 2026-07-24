@@ -21,8 +21,8 @@
     "commissioner_factor": 0.44,
     "judiciary": 0.09
   },
-  "asOf": "2026-07-23",
-  "prevSnapshotDate": "2026-07-20",
+  "asOf": "2026-07-24",
+  "prevSnapshotDate": "2026-07-23",
   "ranking": [
     {
       "name": "⚠️ Donald Trump",
@@ -89,8 +89,8 @@
       "delta": 0
     },
     {
-      "name": "Narendra Modi",
-      "role": "PM, India",
+      "name": "Droupadi Murmu",
+      "role": "Pres., India",
       "category": "National",
       "jurisdiction": "India",
       "metro": "Delhi",
@@ -100,9 +100,9 @@
       "power": 403.3,
       "jurisdictionHref": "/countries/india",
       "transition": "",
-      "prevRank": 5,
-      "isNew": false,
-      "delta": 0
+      "prevRank": null,
+      "isNew": true,
+      "delta": null
     },
     {
       "name": "Kevin Warsh",
@@ -137,8 +137,8 @@
       "delta": 0
     },
     {
-      "name": "⚠️ 👑 Mohammed bin Salman",
-      "role": "Crown Prince & PM, Saudi Arabia",
+      "name": "Salman bin Abdulaziz Al Saud",
+      "role": "PM, Saudi Arabia",
       "category": "National",
       "jurisdiction": "Saudi Arabia",
       "metro": "Riyadh",
@@ -148,9 +148,9 @@
       "power": 347.7,
       "jurisdictionHref": "/countries/saudi-arabia",
       "transition": "",
-      "prevRank": 8,
-      "isNew": false,
-      "delta": 0
+      "prevRank": null,
+      "isNew": true,
+      "delta": null
     },
     {
       "name": "Andy Burnham",
@@ -505,8 +505,8 @@
       "delta": 0
     },
     {
-      "name": "⚠️ Benjamin Netanyahu",
-      "role": "PM, Israel",
+      "name": "Isaac Herzog",
+      "role": "Pres., Israel",
       "category": "National",
       "jurisdiction": "Israel",
       "metro": "Jerusalem",
@@ -515,10 +515,10 @@
       "weight": 3.157,
       "power": 184.9,
       "jurisdictionHref": "/countries/israel",
-      "transition": "Israeli election due by Oct 2026",
-      "prevRank": 31,
-      "isNew": false,
-      "delta": 0
+      "transition": "",
+      "prevRank": null,
+      "isNew": true,
+      "delta": null
     },
     {
       "name": "Mark Carney",
@@ -649,8 +649,8 @@
       "delta": 0
     },
     {
-      "name": "Mohamed bin Zayed Al Nahyan",
-      "role": "Pres., United Arab Emirates",
+      "name": "Mohammed bin Rashid Al Maktoum",
+      "role": "PM, United Arab Emirates",
       "category": "National",
       "jurisdiction": "United Arab Emirates",
       "metro": "Abu Dhabi",
@@ -660,9 +660,9 @@
       "power": 155.8,
       "jurisdictionHref": "/countries/united-arab-emirates",
       "transition": "",
-      "prevRank": 40,
-      "isNew": false,
-      "delta": 0
+      "prevRank": null,
+      "isNew": true,
+      "delta": null
     },
     {
       "name": "Anthony Albanese",
@@ -841,7 +841,7 @@
       "delta": 0
     },
     {
-      "name": "Lee Jae-myung",
+      "name": "Lee Jae Myung",
       "role": "Pres., South Korea",
       "category": "National",
       "jurisdiction": "South Korea",
@@ -852,9 +852,9 @@
       "power": 133.8,
       "jurisdictionHref": "/countries/south-korea",
       "transition": "",
-      "prevRank": 52,
-      "isNew": false,
-      "delta": 0
+      "prevRank": null,
+      "isNew": true,
+      "delta": null
     },
     {
       "name": "Andy Jassy",
@@ -953,7 +953,7 @@
       "delta": 0
     },
     {
-      "name": "Volodymyr Zelensky",
+      "name": "Volodymyr Zelenskyy",
       "role": "Pres., Ukraine",
       "category": "National",
       "jurisdiction": "Ukraine",
@@ -964,9 +964,9 @@
       "power": 126.5,
       "jurisdictionHref": "/countries/ukraine",
       "transition": "",
-      "prevRank": 59,
-      "isNew": false,
-      "delta": 0
+      "prevRank": null,
+      "isNew": true,
+      "delta": null
     },
     {
       "name": "Jeff Bezos",
@@ -1465,8 +1465,8 @@
       "delta": 0
     },
     {
-      "name": "Guy Parmelin",
-      "role": "Pres. of the Swiss Confederation, Switzerland",
+      "name": "Swiss Federal Council",
+      "role": "Pres., Switzerland",
       "category": "National",
       "jurisdiction": "Switzerland",
       "metro": "Zurich",
@@ -1476,13 +1476,13 @@
       "power": 80.4,
       "jurisdictionHref": "/countries/switzerland",
       "transition": "",
-      "prevRank": 91,
-      "isNew": false,
-      "delta": 0
+      "prevRank": null,
+      "isNew": true,
+      "delta": null
     },
     {
-      "name": "Shehbaz Sharif",
-      "role": "PM, Pakistan",
+      "name": "Asif Ali Zardari",
+      "role": "Pres., Pakistan",
       "category": "National",
       "jurisdiction": "Pakistan",
       "metro": "Islamabad",
@@ -1492,9 +1492,9 @@
       "power": 79.8,
       "jurisdictionHref": "/countries/pakistan",
       "transition": "",
-      "prevRank": 92,
-      "isNew": false,
-      "delta": 0
+      "prevRank": null,
+      "isNew": true,
+      "delta": null
     },
     {
       "name": "Michael Dell",
@@ -1625,5 +1625,54 @@
       "delta": 0
     }
   ],
-  "dropped": []
+  "dropped": [
+    {
+      "name": "Narendra Modi",
+      "prevRank": 5,
+      "category": "National",
+      "jurisdiction": "India"
+    },
+    {
+      "name": "⚠️ 👑 Mohammed bin Salman",
+      "prevRank": 8,
+      "category": "National",
+      "jurisdiction": "Saudi Arabia"
+    },
+    {
+      "name": "⚠️ Benjamin Netanyahu",
+      "prevRank": 31,
+      "category": "National",
+      "jurisdiction": "Israel"
+    },
+    {
+      "name": "Mohamed bin Zayed Al Nahyan",
+      "prevRank": 40,
+      "category": "National",
+      "jurisdiction": "United Arab Emirates"
+    },
+    {
+      "name": "Lee Jae-myung",
+      "prevRank": 52,
+      "category": "National",
+      "jurisdiction": "South Korea"
+    },
+    {
+      "name": "Volodymyr Zelensky",
+      "prevRank": 59,
+      "category": "National",
+      "jurisdiction": "Ukraine"
+    },
+    {
+      "name": "Guy Parmelin",
+      "prevRank": 91,
+      "category": "National",
+      "jurisdiction": "Switzerland"
+    },
+    {
+      "name": "Shehbaz Sharif",
+      "prevRank": 92,
+      "category": "National",
+      "jurisdiction": "Pakistan"
+    }
+  ]
 }

@@ -143,10 +143,20 @@
     "name": "Bongbong Marcos (Ferdinand Marcos Jr.)",
     "role": "President",
     "start": "2022-06-30",
+    "end": "2022-06-30",
+    "current": false,
+    "tenure": "0y 0m 0d",
+    "party": "PFP",
+    "era": "Fifth Republic"
+  },
+  {
+    "name": "Bongbong Marcos",
+    "role": "President",
+    "start": "2022-06-30",
     "end": null,
     "current": true,
-    "tenure": "2022–present",
-    "party": "PFP",
+    "tenure": "in office",
+    "party": "",
     "era": "Fifth Republic"
   }
 ]

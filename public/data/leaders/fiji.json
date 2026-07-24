@@ -1,242 +1,252 @@
 [
- {
-  "name": "Robert Sidney Foster",
-  "role": "President",
-  "start": "1970-10-10",
-  "end": "1973-01-13",
-  "current": false,
-  "tenure": "2y 3m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Kamisese Mara",
-  "role": "Prime Minister",
-  "start": "1970-10-10",
-  "end": "1987-04-13",
-  "current": false,
-  "tenure": "16y 6m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "George Cakobau",
-  "role": "President",
-  "start": "1973-01-13",
-  "end": "1983-02-12",
-  "current": false,
-  "tenure": "10y 0m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Penaia Ganilau",
-  "role": "President",
-  "start": "1983-02-12",
-  "end": "1987-10-06",
-  "current": false,
-  "tenure": "4y 7m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Timoci Bavadra",
-  "role": "Prime Minister",
-  "start": "1987-04-13",
-  "end": "1987-05-14",
-  "current": false,
-  "tenure": "0y 1m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Penaia Ganilau",
-  "role": "President",
-  "start": "1987-12-05",
-  "end": "1993-12-15",
-  "current": false,
-  "tenure": "6y 0m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Kamisese Mara",
-  "role": "Prime Minister",
-  "start": "1987-12-05",
-  "end": "1992-06-02",
-  "current": false,
-  "tenure": "4y 5m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Sitiveni Rabuka",
-  "role": "Prime Minister",
-  "start": "1992-06-02",
-  "end": "1999-05-19",
-  "current": false,
-  "tenure": "6y 11m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Kamisese Mara",
-  "role": "President",
-  "start": "1993-12-16",
-  "end": "2000-05-29",
-  "current": false,
-  "tenure": "6y 5m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Mahendra Chaudhry",
-  "role": "Prime Minister",
-  "start": "1999-05-19",
-  "end": "2000-05-27",
-  "current": false,
-  "tenure": "1y 0m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Tevita Momoedonu",
-  "role": "Prime Minister",
-  "start": "2000-05-27",
-  "end": "2000-05-27",
-  "current": false,
-  "tenure": "0y 0m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Laisenia Qarase",
-  "role": "Prime Minister",
-  "start": "2000-07-04",
-  "end": "2001-03-14",
-  "current": false,
-  "tenure": "0y 8m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Josefa Iloilo",
-  "role": "President",
-  "start": "2000-07-13",
-  "end": "2006-12-05",
-  "current": false,
-  "tenure": "6y 4m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Tevita Momoedonu",
-  "role": "Prime Minister",
-  "start": "2001-03-14",
-  "end": "2001-03-16",
-  "current": false,
-  "tenure": "0y 0m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Laisenia Qarase",
-  "role": "Prime Minister",
-  "start": "2001-03-16",
-  "end": "2006-12-05",
-  "current": false,
-  "tenure": "5y 8m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Jona Senilagakali",
-  "role": "Prime Minister",
-  "start": "2006-12-05",
-  "end": "2007-01-04",
-  "current": false,
-  "tenure": "0y 0m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Josefa Iloilo",
-  "role": "President",
-  "start": "2007-01-04",
-  "end": "2009-07-30",
-  "current": false,
-  "tenure": "2y 6m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Frank Bainimarama",
-  "role": "Prime Minister",
-  "start": "2007-01-05",
-  "end": "2014-09-22",
-  "current": false,
-  "tenure": "7y 8m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Epeli Nailatikau",
-  "role": "President",
-  "start": "2009-07-30",
-  "end": "2015-11-12",
-  "current": false,
-  "tenure": "6y 3m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Frank Bainimarama",
-  "role": "Prime Minister",
-  "start": "2014-09-22",
-  "end": "2022-12-24",
-  "current": false,
-  "tenure": "8y 3m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Jioji Konrote",
-  "role": "President",
-  "start": "2015-11-12",
-  "end": "2021-11-12",
-  "current": false,
-  "tenure": "6y 0m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Wiliame Katonivere",
-  "role": "President",
-  "start": "2021-11-12",
-  "end": "2024-11-12",
-  "current": false,
-  "tenure": "3y 0m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Sitiveni Rabuka",
-  "role": "Prime Minister",
-  "start": "2022-12-24",
-  "end": null,
-  "current": true,
-  "tenure": "3y 6m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Naiqama Lalabalavu",
-  "role": "President",
-  "start": "2024-11-12",
-  "end": null,
-  "current": true,
-  "tenure": "1y 7m",
-  "party": null,
-  "era": null
- }
+  {
+    "name": "Robert Sidney Foster",
+    "role": "President",
+    "start": "1970-10-10",
+    "end": "1973-01-13",
+    "current": false,
+    "tenure": "2y 3m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Kamisese Mara",
+    "role": "Prime Minister",
+    "start": "1970-10-10",
+    "end": "1987-04-13",
+    "current": false,
+    "tenure": "16y 6m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "George Cakobau",
+    "role": "President",
+    "start": "1973-01-13",
+    "end": "1983-02-12",
+    "current": false,
+    "tenure": "10y 0m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Penaia Ganilau",
+    "role": "President",
+    "start": "1983-02-12",
+    "end": "1987-10-06",
+    "current": false,
+    "tenure": "4y 7m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Timoci Bavadra",
+    "role": "Prime Minister",
+    "start": "1987-04-13",
+    "end": "1987-05-14",
+    "current": false,
+    "tenure": "0y 1m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Penaia Ganilau",
+    "role": "President",
+    "start": "1987-12-05",
+    "end": "1993-12-15",
+    "current": false,
+    "tenure": "6y 0m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Kamisese Mara",
+    "role": "Prime Minister",
+    "start": "1987-12-05",
+    "end": "1992-06-02",
+    "current": false,
+    "tenure": "4y 5m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Sitiveni Rabuka",
+    "role": "Prime Minister",
+    "start": "1992-06-02",
+    "end": "1999-05-19",
+    "current": false,
+    "tenure": "6y 11m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Kamisese Mara",
+    "role": "President",
+    "start": "1993-12-16",
+    "end": "2000-05-29",
+    "current": false,
+    "tenure": "6y 5m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Mahendra Chaudhry",
+    "role": "Prime Minister",
+    "start": "1999-05-19",
+    "end": "2000-05-27",
+    "current": false,
+    "tenure": "1y 0m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Tevita Momoedonu",
+    "role": "Prime Minister",
+    "start": "2000-05-27",
+    "end": "2000-05-27",
+    "current": false,
+    "tenure": "0y 0m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Laisenia Qarase",
+    "role": "Prime Minister",
+    "start": "2000-07-04",
+    "end": "2001-03-14",
+    "current": false,
+    "tenure": "0y 8m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Josefa Iloilo",
+    "role": "President",
+    "start": "2000-07-13",
+    "end": "2006-12-05",
+    "current": false,
+    "tenure": "6y 4m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Tevita Momoedonu",
+    "role": "Prime Minister",
+    "start": "2001-03-14",
+    "end": "2001-03-16",
+    "current": false,
+    "tenure": "0y 0m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Laisenia Qarase",
+    "role": "Prime Minister",
+    "start": "2001-03-16",
+    "end": "2006-12-05",
+    "current": false,
+    "tenure": "5y 8m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Jona Senilagakali",
+    "role": "Prime Minister",
+    "start": "2006-12-05",
+    "end": "2007-01-04",
+    "current": false,
+    "tenure": "0y 0m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Josefa Iloilo",
+    "role": "President",
+    "start": "2007-01-04",
+    "end": "2009-07-30",
+    "current": false,
+    "tenure": "2y 6m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Frank Bainimarama",
+    "role": "Prime Minister",
+    "start": "2007-01-05",
+    "end": "2014-09-22",
+    "current": false,
+    "tenure": "7y 8m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Epeli Nailatikau",
+    "role": "President",
+    "start": "2009-07-30",
+    "end": "2015-11-12",
+    "current": false,
+    "tenure": "6y 3m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Frank Bainimarama",
+    "role": "Prime Minister",
+    "start": "2014-09-22",
+    "end": "2022-12-24",
+    "current": false,
+    "tenure": "8y 3m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Jioji Konrote",
+    "role": "President",
+    "start": "2015-11-12",
+    "end": "2021-11-12",
+    "current": false,
+    "tenure": "6y 0m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Wiliame Katonivere",
+    "role": "President",
+    "start": "2021-11-12",
+    "end": "2024-11-12",
+    "current": false,
+    "tenure": "3y 0m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Sitiveni Rabuka",
+    "role": "Prime Minister",
+    "start": "2022-12-24",
+    "end": null,
+    "current": true,
+    "tenure": "3y 6m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Naiqama Lalabalavu",
+    "role": "President",
+    "start": "2024-11-12",
+    "end": "2021-11-12",
+    "current": false,
+    "tenure": "",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Wiliame Katonivere",
+    "role": "President",
+    "start": "2021-11-12",
+    "end": null,
+    "current": true,
+    "tenure": "in office",
+    "party": "",
+    "era": null
+  }
 ]

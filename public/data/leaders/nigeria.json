@@ -153,10 +153,20 @@
     "name": "Bola Tinubu",
     "role": "President",
     "start": "2023-05-29",
+    "end": "2023-05-29",
+    "current": false,
+    "tenure": "0y 0m 0d",
+    "party": "APC",
+    "era": null
+  },
+  {
+    "name": "Bola Ahmed Tinubu",
+    "role": "President",
+    "start": "2023-05-29",
     "end": null,
     "current": true,
-    "tenure": "3y 1m 15d",
-    "party": "APC",
+    "tenure": "in office",
+    "party": "",
     "era": null
   }
 ]

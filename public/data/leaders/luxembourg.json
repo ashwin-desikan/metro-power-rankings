@@ -113,10 +113,20 @@
     "name": "Luc Frieden",
     "role": "Prime Minister",
     "start": "2023-11-17",
+    "end": "2023-11-17",
+    "current": false,
+    "tenure": "0y 0m 0d",
+    "party": "CSV",
+    "era": null
+  },
+  {
+    "name": "Émile Reuter",
+    "role": "Prime Minister",
+    "start": "2023-11-17",
     "end": null,
     "current": true,
-    "tenure": "2023-present",
-    "party": "CSV",
+    "tenure": "in office",
+    "party": "",
     "era": null
   },
   {

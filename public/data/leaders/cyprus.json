@@ -73,10 +73,20 @@
     "name": "Nikos Christodoulides",
     "role": "President",
     "start": "2023-02-28",
+    "end": "2023-02-12",
+    "current": false,
+    "tenure": "",
+    "party": "Independent",
+    "era": "Republic of Cyprus"
+  },
+  {
+    "name": "Nicos Christodoulides",
+    "role": "President",
+    "start": "2023-02-12",
     "end": null,
     "current": true,
-    "tenure": "2023–present",
-    "party": "Independent",
+    "tenure": "in office",
+    "party": "",
     "era": "Republic of Cyprus"
   }
 ]

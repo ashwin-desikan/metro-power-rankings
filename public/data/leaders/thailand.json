@@ -853,10 +853,20 @@
     "name": "Anutin Charnvirakul",
     "role": "Prime Minister",
     "start": "2025-09-05",
+    "end": "2024-08-16",
+    "current": false,
+    "tenure": "",
+    "party": "Bhumjaithai",
+    "era": null
+  },
+  {
+    "name": "Paetongtarn Shinawatra",
+    "role": "Prime Minister",
+    "start": "2024-08-16",
     "end": null,
     "current": true,
-    "tenure": "2025–present",
-    "party": "Bhumjaithai",
+    "tenure": "in office",
+    "party": "",
     "era": null
   }
 ]

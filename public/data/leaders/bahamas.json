@@ -1,72 +1,82 @@
 [
- {
-  "name": "Lynden Pindling",
-  "role": "Prime Minister",
-  "start": "1969-05-10",
-  "end": "1992-08-21",
-  "current": false,
-  "tenure": "23y 3m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Hubert Ingraham",
-  "role": "Prime Minister",
-  "start": "1992-08-21",
-  "end": "2002-05-03",
-  "current": false,
-  "tenure": "9y 8m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Perry Christie",
-  "role": "Prime Minister",
-  "start": "2002-05-03",
-  "end": "2007-05-04",
-  "current": false,
-  "tenure": "5y 0m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Hubert Ingraham",
-  "role": "Prime Minister",
-  "start": "2007-05-04",
-  "end": "2012-05-08",
-  "current": false,
-  "tenure": "5y 0m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Perry Christie",
-  "role": "Prime Minister",
-  "start": "2012-05-08",
-  "end": "2017-05-11",
-  "current": false,
-  "tenure": "5y 0m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Hubert Minnis",
-  "role": "Prime Minister",
-  "start": "2017-05-11",
-  "end": "2021-09-17",
-  "current": false,
-  "tenure": "4y 4m",
-  "party": null,
-  "era": null
- },
- {
-  "name": "Philip Davis",
-  "role": "Prime Minister",
-  "start": "2021-09-17",
-  "end": null,
-  "current": true,
-  "tenure": "4y 9m",
-  "party": null,
-  "era": null
- }
+  {
+    "name": "Lynden Pindling",
+    "role": "Prime Minister",
+    "start": "1969-05-10",
+    "end": "1992-08-21",
+    "current": false,
+    "tenure": "23y 3m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Hubert Ingraham",
+    "role": "Prime Minister",
+    "start": "1992-08-21",
+    "end": "2002-05-03",
+    "current": false,
+    "tenure": "9y 8m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Perry Christie",
+    "role": "Prime Minister",
+    "start": "2002-05-03",
+    "end": "2007-05-04",
+    "current": false,
+    "tenure": "5y 0m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Hubert Ingraham",
+    "role": "Prime Minister",
+    "start": "2007-05-04",
+    "end": "2012-05-08",
+    "current": false,
+    "tenure": "5y 0m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Perry Christie",
+    "role": "Prime Minister",
+    "start": "2012-05-08",
+    "end": "2017-05-11",
+    "current": false,
+    "tenure": "5y 0m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Hubert Minnis",
+    "role": "Prime Minister",
+    "start": "2017-05-11",
+    "end": "2021-09-17",
+    "current": false,
+    "tenure": "4y 4m",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Philip Davis",
+    "role": "Prime Minister",
+    "start": "2021-09-17",
+    "end": "2021-09-17",
+    "current": false,
+    "tenure": "0y 0m 0d",
+    "party": null,
+    "era": null
+  },
+  {
+    "name": "Philip \"Brave\" Davis",
+    "role": "Prime Minister",
+    "start": "2021-09-17",
+    "end": null,
+    "current": true,
+    "tenure": "in office",
+    "party": "",
+    "era": null
+  }
 ]
