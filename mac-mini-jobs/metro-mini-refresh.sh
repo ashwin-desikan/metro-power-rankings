@@ -23,13 +23,18 @@
 set -uo pipefail
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Capture a caller-supplied DRY_RUN BEFORE config.env is sourced. config.env sets
+# DRY_RUN=0 and `set -a; . config.env` overwrites the caller's environment, so
+# `DRY_RUN=1 ./metro-mini-refresh.sh` used to be silently ignored and run LIVE --
+# a safety switch that quietly did nothing. Caller wins; then config.env; then 0.
+_DRY_RUN_CALLER="${DRY_RUN:-}"
 [ -f "$DIR/config.env" ] && set -a && . "$DIR/config.env" && set +a
 
 REPO_DIR="${REPO_DIR:?set REPO_DIR in config.env (path to the git clone on the mini)}"
 GIT_REMOTE="${GIT_REMOTE:-origin}"
 GIT_BRANCH="${GIT_BRANCH:-main}"
 PY="${PYTHON_BIN:-python3}"
-DRY_RUN="${DRY_RUN:-0}"
+DRY_RUN="${_DRY_RUN_CALLER:-${DRY_RUN:-0}}"
 STEP_TIMEOUT="${STEP_TIMEOUT:-300}"   # seconds; caps any single refresh step (e.g. a Wikidata outage)
 MAYORS_STEP_TIMEOUT="${MAYORS_STEP_TIMEOUT:-1800}"  # mayors gets more room: cold-start QID
                                                     # discovery (scripts/civic/city-qids.json) is

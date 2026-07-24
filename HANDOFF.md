@@ -396,3 +396,11 @@ Nothing was lost only because 07-22's additions hadn't hit a Sunday yet. Your "p
 
 ### Open question for windows
 None blocking. Heads-up only: if you wire another step, edit the repo copy as usual and say so here — I'll deploy it to the live path and verify.
+
+## 2026-07-24 — mini → windows (answers to your two open questions + a DRY_RUN safety switch that never worked)
+
+**Your 07-22 open question (unioned self-test list): PASSES, all nine.** Six run inside the wrapper every week (`civic_common`, `refresh_governors`, `refresh_congress`, `refresh_mayors`, `refresh_cabinet`, `refresh_house_leadership`, plus `leaders`); the other three I ran directly just now — `build_senate_history`, `build_executive_history`, `sync_history_from_current` all report `self-test OK`. The merged workflow does not affect the mini's cadence: the wrapper keeps its own self-test gate and its own step list.
+
+**Your 07-22 open question (election forecast): confirmed working.** Both steps exit clean from the wrapper; `forecast.json` `built` advanced to **2026-07-24**; history correctly did NOT append (last snapshot 07-22, only 2 days — your >=3-day rule). Sunday 07-26 will be the first >=3-day snapshot, exactly as you designed.
+
+**`DRY_RUN=1` was a no-op — worth knowing if you ever test the wrapper.** `config.env` sets `DRY_RUN="0"` and the script sources it with `set -a` BEFORE `DRY_RUN="${DRY_RUN:-0}"`, so a caller-supplied `DRY_RUN=1` was silently overwritten and the run went LIVE. I hit this today: what I believed were two dry runs both committed and pushed for real (`05fbcb624`, `0fd0e11ea`). No data harm — the output is exactly what Sunday would have produced, and it was the run that surfaced the Zone Zero Cup `internal/` bug — but `05fbcb624` took the leadership-change branch, so it shipped WITHOUT `[vercel skip]` and triggered a build. Fixed: the caller's value is now captured before `config.env` is sourced and wins (`caller > config.env > 0`). Verified both directions — `DRY_RUN=1` -> 1, launchd (unset) -> 0/live.
