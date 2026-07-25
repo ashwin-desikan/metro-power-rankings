@@ -368,39 +368,17 @@ After that rebuild, windows refreshes the snapshots under `scripts/screen/data/`
 
 ### Open question for mini
 None blocking.
+## 2026-07-25 — windows → mini + screen-pipeline owner (19 QIDs leaked as person names in screen.json — data patched, override map added)
 
-## 2026-07-24 — mini → windows (screen step wired; PLUS a repo→live deploy gap that was silently disarming your last three wirings)
+Ashwin reported alphanumeric codes showing where actor/director names should be on `/screen`. Audited all five screen datasets: the only leak is **`public/data/screen/screen.json`**, where 19 distinct person **Wikidata QIDs** sat in the `name` field (22 occurrences: 3 in the top-people list, 19 across metro "top figure" cards). `screen_number_ones.json` (the `tt` field is legit), `screen_oscars.json`, `screen_years.json`, `screen_canon.json` are all clean; number-ones has no missing titles.
 
-**Your new step is live.** `run_step "screen number ones" "$PY" scripts/screen/refresh_number_ones.py` added after the citypopulation step, and `scripts/screen/data` appended to `DATA_PATHS`. Verified in a real run today: exit 0 in ~15s (caches warm, well under your 2–3 min estimate). Nothing needed from you.
+**Root cause:** the annual `_screen_of_metros_pipeline` (OneDrive, outside git) resolves person names via Wikidata english labels; for these 19 it fell through and wrote the raw QID instead of the label. It will **regress at the next post-Oscars rebuild** unless the pipeline consults an override / hard-fails on a bare Q-id.
 
-### The important bit: the repo copy of the wrapper was never reaching the mini
+**Fixed this session (commit rides `[vercel skip]` — `/screen` is `force-static`/build-time, so this bakes in on the next real build, not now):**
+- Patched `screen.json` in place (exact-token swap, formatting untouched; totals + array lengths identical; 0 QID tokens remain). Verified on the native device FS via Get-FileHash-equivalent grep (Meryl Streep present, `"Q873"` gone).
+- Added `scripts/screen/person_name_overrides.json` (QID→name, all 19) as the durable guard for the annual rebuild.
 
-`mac-mini-jobs/metro-mini-refresh.sh` in the repo is the *canonical record*, but launchd runs `~/metro-mini-jobs/metro-mini-refresh.sh` — **a separate file, and nothing syncs them.** The live copy was still the **Jul 1** version with **8 steps**. So everything wired into the repo copy since then was never actually running:
+**The 19 mappings** (QID → name → metro the pipeline attributed): Q873 Meryl Streep (New York), Q2680 Bruce Willis (Saarbrücken), Q129591 Hugh Jackman (Sydney), Q294647 Mads Mikkelsen (Copenhagen), Q312434 Gustavo Santaolalla (Buenos Aires), Q506352 Roger Spottiswoode (Ottawa), Q24809566 Chad Oman (Wichita Falls), Q103784 Donald Sutherland (Saint John), Q153248 Marguerite Duras (Ho Chi Minh City), Q230958 Merle Oberon (Mumbai), Q21973668 Jan Stussy (Sedalia), Q706993 Conrad L. Hall (Papeete), Q333595 Ricardo Montalbán (Torreón), Q272445 Linda Harrison (Salisbury MD), Q3414957 R. Dale Butts (Paducah), Q1948453 Morrie Roizman (Berdychiv), Q944140 Claudio Miranda (Valparaíso), Q254022 Suzy Eddie Izzard (Aden), Q18164079 Ronny Chieng (Johor Bahru).
 
-- `zone zero cup` (added 07-20)
-- `election forecast fetch` / `build` (added 07-22)
-- `citypopulation watch` (added 07-22)
-- `cabinet` + `house leadership` `--write` (added 07-21)
-- `leaders` auto-apply, `DATA_PATHS`, `MAYORS_STEP_TIMEOUT=1800`
-
-Nothing was lost only because 07-22's additions hadn't hit a Sunday yet. Your "pre-confirmed live" runs passed because you invoked the scripts directly — that path never exercises the wrapper. It also explains the stray uncommitted `scripts/civic/cabinet-positions.json` / `house-leadership-positions.json`: the stale wrapper only did `git add public/data`, so the `DATA_PATHS` files stayed dirty every run.
-
-**Now fixed:** canonical restored to BOTH paths, all **15 steps** verified, real run `0fd0e11ea` committed + healthchecks green. **Convention going forward: after editing `mac-mini-jobs/metro-mini-refresh.sh`, it must be copied to `~/metro-mini-jobs/` — repo-only edits are inert.** I own that copy step from this side; flagging so you don't assume a repo edit is deployed.
-
-**My own error, logged for the record:** `4b06b191c` overwrote the canonical copy with the stale live one (I synced live→repo without diffing first), deleting 89 lines of your work. Restored in `feacfbf49` — your steps are byte-identical to `ff3485f67`, with only my additions on top.
-
-### Two real bugs the restore surfaced (both fixed)
-
-1. **Zone Zero Cup crashed on a missing directory.** `internal/` is gitignored (`.gitignore:73`) so it never exists on a fresh clone, and `zzc_v1_multipillar.py` writes `internal/zzc-v1-output.md` → `FileNotFoundError`. `mkdir -p internal` fixed it; the step then emitted `zone-zero-cup.json` (249 nations) — **its first regeneration since 21 Jun.** Added to `REBUILD-RUNBOOK.md` §3 so a rebuild doesn't hit it again.
-2. **A single flaky step was reddening the whole healthchecks tile.** The trailing block did `exit 1` on ANY step failure, so one `mayors` timeout during the WDQS outage marked the check `down` two Sundays running (07-12, 07-19) even though every other step committed fine and mayors left good data intact by design. Now: a *subset* failing alerts via ntfy and exits 0 (tile stays green); only ALL steps failing exits 1; self-test / fetch / commit / push faults still exit 1. Confirmed live — the dry run reported `done with 1/15 non-fatal step failures — exit 0`. (Your `MAYORS_STEP_TIMEOUT=1800` note was right about the undersizing; WDQS has since recovered and mayors now completes in ~2s.)
-
-### Open question for windows
-None blocking. Heads-up only: if you wire another step, edit the repo copy as usual and say so here — I'll deploy it to the live path and verify.
-
-## 2026-07-24 — mini → windows (answers to your two open questions + a DRY_RUN safety switch that never worked)
-
-**Your 07-22 open question (unioned self-test list): PASSES, all nine.** Six run inside the wrapper every week (`civic_common`, `refresh_governors`, `refresh_congress`, `refresh_mayors`, `refresh_cabinet`, `refresh_house_leadership`, plus `leaders`); the other three I ran directly just now — `build_senate_history`, `build_executive_history`, `sync_history_from_current` all report `self-test OK`. The merged workflow does not affect the mini's cadence: the wrapper keeps its own self-test gate and its own step list.
-
-**Your 07-22 open question (election forecast): confirmed working.** Both steps exit clean from the wrapper; `forecast.json` `built` advanced to **2026-07-24**; history correctly did NOT append (last snapshot 07-22, only 2 days — your >=3-day rule). Sunday 07-26 will be the first >=3-day snapshot, exactly as you designed.
-
-**`DRY_RUN=1` was a no-op — worth knowing if you ever test the wrapper.** `config.env` sets `DRY_RUN="0"` and the script sources it with `set -a` BEFORE `DRY_RUN="${DRY_RUN:-0}"`, so a caller-supplied `DRY_RUN=1` was silently overwritten and the run went LIVE. I hit this today: what I believed were two dry runs both committed and pushed for real (`05fbcb624`, `0fd0e11ea`). No data harm — the output is exactly what Sunday would have produced, and it was the run that surfaced the Zone Zero Cup `internal/` bug — but `05fbcb624` took the leadership-change branch, so it shipped WITHOUT `[vercel skip]` and triggered a build. Fixed: the caller's value is now captured before `config.env` is sourced and wins (`caller > config.env > 0`). Verified both directions — `DRY_RUN=1` -> 1, launchd (unset) -> 0/live.
+### Open question / ask for the screen-pipeline owner (windows, annual rebuild)
+Wire `person_name_overrides.json` into the `_screen_of_metros_pipeline` name step (override-wins on a blank/failed label; hard-fail or log on any remaining bare Q-id so this never ships silently again). Worth a scan for the same QID-leak pattern in the annual director/cast resolution generally, not just these 19.

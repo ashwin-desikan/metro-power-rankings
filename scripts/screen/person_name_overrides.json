@@ -1,0 +1,22 @@
+{
+  "_comment": "QID -> canonical display name overrides for the Screen of the Metros pipeline. Consulted when Wikidata english-label resolution fails and would otherwise emit a raw QID (e.g. 'Q873') as a person's name in screen.json. Seeded 2026-07-25 after 19 person QIDs leaked into screen.json (People/Directors tables + metro 'top figure' cards). The annual _screen_of_metros_pipeline rebuild should look names up here BEFORE writing any person 'name' field, and should hard-fail (or log) rather than emit a bare Q-id if a name is still unresolved.",
+  "Q873": "Meryl Streep",
+  "Q2680": "Bruce Willis",
+  "Q129591": "Hugh Jackman",
+  "Q294647": "Mads Mikkelsen",
+  "Q312434": "Gustavo Santaolalla",
+  "Q506352": "Roger Spottiswoode",
+  "Q24809566": "Chad Oman",
+  "Q103784": "Donald Sutherland",
+  "Q153248": "Marguerite Duras",
+  "Q230958": "Merle Oberon",
+  "Q21973668": "Jan Stussy",
+  "Q706993": "Conrad L. Hall",
+  "Q333595": "Ricardo Montalbán",
+  "Q272445": "Linda Harrison",
+  "Q3414957": "R. Dale Butts",
+  "Q1948453": "Morrie Roizman",
+  "Q944140": "Claudio Miranda",
+  "Q254022": "Suzy Eddie Izzard",
+  "Q18164079": "Ronny Chieng"
+}
