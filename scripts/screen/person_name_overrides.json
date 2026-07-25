@@ -1,5 +1,5 @@
 {
-  "_comment": "QID -> canonical display name overrides for the Screen of the Metros pipeline. Consulted when Wikidata english-label resolution fails and would otherwise emit a raw QID (e.g. 'Q873') as a person's name in screen.json. Seeded 2026-07-25 after 19 person QIDs leaked into screen.json (People/Directors tables + metro 'top figure' cards). The annual _screen_of_metros_pipeline rebuild should look names up here BEFORE writing any person 'name' field, and should hard-fail (or log) rather than emit a bare Q-id if a name is still unresolved.",
+  "_comment": "QID -> canonical display name overrides for the Screen pipeline. build_scores.py consults this in nm() BEFORE falling back to people.json or the raw QID, so a person whose Wikidata english label never resolved still shows a real name. A hard guard in build_scores.py warns on any bare QID that survives; export_screen.py drops any that still slip through. Add new entries here whenever the guard fires. Seeded 2026-07-25.",
   "Q873": "Meryl Streep",
   "Q2680": "Bruce Willis",
   "Q129591": "Hugh Jackman",
@@ -18,5 +18,10 @@
   "Q1948453": "Morrie Roizman",
   "Q944140": "Claudio Miranda",
   "Q254022": "Suzy Eddie Izzard",
-  "Q18164079": "Ronny Chieng"
+  "Q18164079": "Ronny Chieng",
+  "Q2023710": "Tom Holland",
+  "Q36301": "Anne Hathaway",
+  "Q20871151": "Lars Knudsen",
+  "Q195719": "Lana and Lilly Wachowski",
+  "Q2853003": "Anthony and Joe Russo"
 }

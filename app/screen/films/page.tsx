@@ -8,7 +8,7 @@ export const dynamic = "force-static";
 
 const TITLE = "Screen of the Metros — Films";
 const DESC =
-  "The 250 biggest era-normalized hits of the last century, with grosses, directors and honours — Best Picture, Palme d'Or, BAFTA Best Film and Golden Globe wins marked.";
+  "The definitive films of the last century, scored across critical standing, audience acclaim, box-office dominance and cultural longevity — the canon and the blockbusters on one board.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -26,7 +26,8 @@ export default function ScreenFilmsPage() {
     { key: "rank", label: "#", kind: "rank" },
     { key: "title", label: "Film", bold: true },
     { key: "year", label: "Year", align: "right", numeric: true },
-    { key: "points", label: "Era points", align: "right", numeric: true },
+    { key: "score", label: "Score", align: "right", numeric: true },
+    { key: "points", label: "Box office", align: "right", numeric: true, mut: true },
     { key: "grossM", label: "Gross $m", align: "right", numeric: true, mut: true },
     { key: "genre", label: "Genre", mut: true },
     { key: "director", label: "Director", mut: true },
@@ -35,7 +36,7 @@ export default function ScreenFilmsPage() {
   ];
   const rows = f.films.slice(0, 250).map((fl) => ({
     title: fl.basis === "rentals" ? `${fl.title} *` : fl.title,
-    year: fl.year, points: fl.points,
+    year: fl.year, score: fl.score, points: fl.points,
     grossM: fl.gross != null ? Math.round(fl.gross / 1e6) : null,
     genre: fl.genre || "—",
     director: fl.directors.join(", ") || "—",
@@ -51,13 +52,13 @@ export default function ScreenFilmsPage() {
       <header className="mb-5">
         <h1 className="text-2xl font-bold tracking-tight text-[var(--text)]">The films</h1>
         <p className="mt-2 max-w-3xl text-sm text-[var(--text-muted)]">
-          The 250 biggest era-normalized hits of the last century. Points measure dominance of the
-          film&apos;s own year, so Gone with the Wind outranks every modern blockbuster. Films
-          marked * are from years reported on a rentals basis; honours mark Best Picture, Palme
-          d&apos;Or, BAFTA Best Film and Golden Globe (Drama) wins.
+          The definitive top 250, scored across four pillars: critical standing (the 500-greatest
+          canon and major awards), audience acclaim (TMDb), box-office dominance, and cultural
+          longevity (weeks at number one). The blend leans critical, so the canon and the
+          blockbusters share one board. Films marked * are from years reported on a rentals basis.
         </p>
       </header>
-      <SortTable rows={rows} cols={cols} initialSort="points" />
+      <SortTable rows={rows} cols={cols} initialSort="score" />
 
       {gd && gd.rows.length > 3 ? (
         <section className="mt-10">

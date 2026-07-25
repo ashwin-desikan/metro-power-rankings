@@ -45,20 +45,24 @@ export default function ScreenPage() {
       </header>
 
       <div className="grid gap-4 md:grid-cols-2 mb-4">
-        <Link href="/screen/rankings" className="block rounded-xl border p-4 transition-colors hover:border-[var(--accent)]" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+        <div className="block rounded-xl border p-4 transition-colors hover:border-[var(--accent)]" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
           <div className="flex items-baseline justify-between mb-2">
-            <h2 className="font-bold text-[var(--text)]">Rankings by metro</h2>
-            <span className="text-xs text-[var(--accent)]">Full table →</span>
+            <Link href="/screen/rankings" className="font-bold text-[var(--text)] hover:text-[var(--accent)]">Rankings by metro</Link>
+            <Link href="/screen/rankings" className="text-xs text-[var(--accent)]">Full table →</Link>
           </div>
           <div className="grid gap-1 text-sm">
             {f.metros.slice(0, 10).map((m, i) => (
               <div key={m.slug} className="flex items-baseline justify-between gap-3">
-                <span className="text-[var(--text)]"><span className="text-[var(--text-dim)] tabular-nums mr-2">{i + 1}</span>{m.name}</span>
+                <span className="text-[var(--text)] min-w-0 truncate">
+                  <span className="text-[var(--text-dim)] tabular-nums mr-2">{i + 1}</span>
+                  <Link href={`/screen/metros/${m.slug}`} className="hover:underline">{m.name}</Link>
+                  <Link href={`/screen/metros/${m.slug}`} title="Screen profile" className="ml-1 align-middle text-xs text-[var(--text-muted)]">&#127916;</Link>
+                </span>
                 <span className="tabular-nums text-[var(--text-muted)]">{Math.round(m.score)}</span>
               </div>
             ))}
           </div>
-        </Link>
+        </div>
         <Link href="/screen/people" className="block rounded-xl border p-4 transition-colors hover:border-[var(--accent)]" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
           <div className="flex items-baseline justify-between mb-2">
             <h2 className="font-bold text-[var(--text)]">Leading figures</h2>
@@ -75,6 +79,32 @@ export default function ScreenPage() {
         </Link>
       </div>
 
+      <div className="grid gap-4 md:grid-cols-2 mb-4">
+        <div className="block rounded-xl border p-4 transition-colors hover:border-[var(--accent)]" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+          <div className="flex items-baseline justify-between mb-2">
+            <Link href="/screen/countries" className="font-bold text-[var(--text)] hover:text-[var(--accent)]">Rankings by country</Link>
+            <Link href="/screen/countries" className="text-xs text-[var(--accent)]">Full table →</Link>
+          </div>
+          <div className="grid gap-1 text-sm">
+            {(f.countries ?? []).slice(0, 10).map((c, i) => (
+              <div key={c.slug} className="flex items-baseline justify-between gap-3">
+                <span className="text-[var(--text)] min-w-0 truncate">
+                  <span className="text-[var(--text-dim)] tabular-nums mr-2">{i + 1}</span>
+                  <Link href={`/screen/countries/${c.slug}`} className="hover:underline">{c.name}</Link>
+                </span>
+                <span className="tabular-nums text-[var(--text-muted)]">{Math.round(c.score)}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="block rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+          <h2 className="font-bold text-[var(--text)] mb-2">Where the movies come from</h2>
+          <p className="text-sm text-[var(--text-muted)]">
+            Every filmmaker rolls up from their home metro to a country. {(f.countries ?? []).length} countries are scored, led by {(f.countries ?? [])[0]?.name} and {(f.countries ?? [])[1]?.name}. Each has its own profile: the talent it raised and the canon films set on its soil.
+          </p>
+        </div>
+      </div>
+
       <div className="grid gap-4 md:grid-cols-2 mb-8">
         <Link href="/screen/films" className="block rounded-xl border p-4 transition-colors hover:border-[var(--accent)]" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
           <div className="flex items-baseline justify-between mb-2">
@@ -85,11 +115,11 @@ export default function ScreenPage() {
             {f.films.slice(0, 8).map((fl, i) => (
               <div key={fl.title + fl.year} className="flex items-baseline justify-between gap-3">
                 <span className="text-[var(--text)] truncate"><span className="text-[var(--text-dim)] tabular-nums mr-2">{i + 1}</span>{fl.title} <span className="text-[var(--text-dim)]">{fl.year}</span></span>
-                <span className="tabular-nums text-[var(--text-muted)]">{fl.points.toFixed(1)}</span>
+                <span className="tabular-nums text-[var(--text-muted)]">{fl.score.toFixed(1)}</span>
               </div>
             ))}
           </div>
-          <p className="text-xs text-[var(--text-dim)] mt-2">Era-normalized: dominance of the film&apos;s own year, not raw dollars.</p>
+          <p className="text-xs text-[var(--text-dim)] mt-2">Blended: critical standing, audience, box office and longevity.</p>
         </Link>
         <div className="grid gap-4">
           <Link href="/screen/years" className="block rounded-xl border p-4 transition-colors hover:border-[var(--accent)]" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
@@ -120,8 +150,8 @@ export default function ScreenPage() {
         title="How the Screen rankings work"
         cards={[
           ["The base pillar", "The top ten grossing films of every year since 1920 (Wikipedia's year-in-film tables, which cite Box Office Mojo and The Numbers). Each year distributes a fixed 100 points by gross share, so eras compete on dominance, not inflation. Pre-1930 years are discounted — silent-era box office reporting is fragmentary US rentals."],
-          ["Who gets the credit", "A film's points split director-first (37.5%), with the rest flowing down the contractual billing order of the Starring credits at a gentle decay. Like collaboration splits in the Sound of the Metros."],
-          ["The prestige pillar", "Every Academy Award nomination since the first ceremony in 1929 (12,137 of them), win-weighted and tilted toward the marquee categories, each ceremony normalized to the same budget. Data: the open oscar_data project (BSD-2), joined via IMDb identifiers. Palme d'Or, BAFTA Best Film and Golden Globe (Drama) wins appear as honours on the film table."],
+          ["Who gets the credit", "A film's box office goes 25% to its director and the rest down the billing order, with later films in a long career counting less, so the prolific no longer crowd out a brilliant few. Two more pillars sit alongside it: Academy prestige and audience acclaim from TMDb, each normalized and blended."],
+          ["The prestige pillar", "Academy nominations since 1929, win-weighted and restricted to the marquee categories (picture, directing, acting, writing, cinematography), so craft, shorts and honorary awards no longer crown the list. Data: the open oscar_data project (BSD-2), joined via IMDb identifiers. Films rank separately on their own four-pillar blend."],
           ["The metro connection", "People are attributed to metros by birthplace, resolved deterministically through Wikidata, with editorial overrides where someone is really 'from' somewhere else — Spielberg is Phoenix, not Cincinnati. Vague or rural birthplaces stay unattributed rather than guessed."],
         ]}
       />

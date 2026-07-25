@@ -12,8 +12,8 @@ export default function ScreenSection({ screen }: { screen: MetroScreen | null }
         #{screen.rank} by film pedigree · score {Math.round(screen.score * 10) / 10} ·{" "}
         {screen.people} {screen.people === 1 ? "person" : "people"} in a century of top-grossing
         films and Oscar nominations ·{" "}
-        <Link href="/screen" className="underline hover:text-[var(--accent)]">
-          Full film rankings &rarr;
+        <Link href={`/screen/metros/${screen.slug}`} className="underline hover:text-[var(--accent)]">
+          Full screen profile &rarr;
         </Link>
       </p>
       {screen.top.length > 0 && (

@@ -28,12 +28,12 @@ export default function ScreenPeoplePage() {
       <header className="mb-5">
         <h1 className="text-2xl font-bold tracking-tight text-[var(--text)]">The people</h1>
         <p className="mt-2 max-w-3xl text-sm text-[var(--text-muted)]">
-          Top 250 of {f.totals.people.toLocaleString("en-US")} scored people. Box office points come
+          Top 2,000 of {f.totals.people.toLocaleString("en-US")} scored people. Box office points come
           from top-grossing credits (director-weighted, billing-order decay); prestige from
           {" "}{f.totals.nominations.toLocaleString("en-US")} nominations and wins, weighted toward the marquee categories.
         </p>
       </header>
-      <SortTable rows={f.people.slice(0, 250).map(personRow)} cols={peopleCols} initialSort="combined" />
+      <SortTable rows={f.people.map(personRow)} cols={peopleCols} initialSort="combined" />
 
       <h2 className="text-2xl font-bold tracking-tight text-[var(--text)] mt-10 mb-2">The directors</h2>
       <p className="max-w-3xl text-sm text-[var(--text-muted)] mb-4">

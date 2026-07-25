@@ -23,7 +23,7 @@ export default function ScreenRankingsPage() {
 
   const cols: Col[] = [
     { key: "rank", label: "#", kind: "rank" },
-    { key: "name", label: "Metro", kind: "rmetro", metroSlugKey: "slug", bold: true },
+    { key: "name", label: "Metro", kind: "smetro", metroSlugKey: "slug", bold: true },
     { key: "country", label: "Country", mut: true },
     { key: "score", label: "Score", align: "right", numeric: true },
     { key: "people", label: "People", align: "right", numeric: true },
