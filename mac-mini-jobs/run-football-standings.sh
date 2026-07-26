@@ -43,10 +43,12 @@ log "running daily refresh (--write)"
 # Export Supabase -> committed ISR bundles the site reads (no Vercel build; [vercel skip]).
 log "exporting frontend bundles"
 "$PY" scripts/apifootball/export_bundles.py 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "export_bundles failed"
-BUNDLES="public/data/football/live-standings-2026.json public/data/football/live-competitions-2026.json"
+"$PY" scripts/apifootball/refresh_supercups.py 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "supercups export failed"
+"$PY" scripts/apifootball/refresh_domestic_cups.py 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "domestic cups export failed"
+BUNDLES="public/data/football/live-standings-2026.json public/data/football/live-competitions-2026.json public/data/football/live-supercups-2026.json public/data/football/live-cups-2026.json"
 if ! git diff --quiet -- $BUNDLES; then
   git add $BUNDLES
-  git commit -q -m "football: refresh live standings bundles [vercel skip]" || fail "bundle commit failed"
+  git commit -q -m "football: refresh live bundles [vercel skip]" || fail "bundle commit failed"
   git push -q origin main || fail "bundle push failed"
   log "pushed updated football bundles"
 else

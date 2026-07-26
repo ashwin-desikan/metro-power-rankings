@@ -1,0 +1,11 @@
+[
+  {"comp_id": 531, "country": "World", "name": "UEFA Super Cup", "season": 2026, "category": "European"},
+  {"comp_id": 528, "country": "England", "name": "Community Shield", "season": 2026, "category": "Domestic"},
+  {"comp_id": 526, "country": "France", "name": "Trophée des Champions", "season": 2026, "category": "Domestic"},
+  {"comp_id": 556, "country": "Spain", "name": "Super Cup", "season": 2026, "category": "Domestic"},
+  {"comp_id": 529, "country": "Germany", "name": "Super Cup", "season": 2026, "category": "Domestic"},
+  {"comp_id": 543, "country": "Netherlands", "name": "Super Cup", "season": 2025, "category": "Domestic"},
+  {"comp_id": 550, "country": "Portugal", "name": "Super Cup", "season": 2026, "category": "Domestic"},
+  {"comp_id": 547, "country": "Italy", "name": "Super Cup", "season": 2025, "category": "Domestic"},
+  {"comp_id": 1168, "country": "World", "name": "FIFA Intercontinental Cup", "season": 2025, "category": "International"}
+]
