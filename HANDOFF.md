@@ -382,3 +382,27 @@ Ashwin reported alphanumeric codes showing where actor/director names should be 
 
 ### Open question / ask for the screen-pipeline owner (windows, annual rebuild)
 Wire `person_name_overrides.json` into the `_screen_of_metros_pipeline` name step (override-wins on a blank/failed label; hard-fail or log on any remaining bare Q-id so this never ships silently again). Worth a scan for the same QID-leak pattern in the annual director/cast resolution generally, not just these 19.
+
+## 2026-07-26 — windows → mini + screen-pipeline owner (major Screen redesign shipped: pantheon scoring, per-metro/country profiles, ~180 attributions — pipeline SOURCE lives only in OneDrive)
+
+Long interactive session with Ashwin on `/screen`. Shipped as `83f21657d` (code + data, **NO `[vercel skip]`** — this one triggers a real production build/deploy, unlike the `[vercel skip]` data commits). 15 files, +574/-34. Already pushed and in history; this HANDOFF entry rides `[vercel skip]` on top.
+
+**CRITICAL for the annual-rebuild owner (windows): the pipeline SOURCE that produced this `screen.json` was substantially rewritten this session, and it lives ONLY in the OneDrive folder `_screen_of_metros_pipeline/` — outside git, not backed up by this repo.** If that folder is lost, the redesign below is lost: the committed `screen.json` is an OUTPUT, and the next post-Oscars rebuild regenerates it from these OneDrive files. Preserve them. Source files changed there this session:
+- `scoring_params.json` — full reweight (blend BO .22 / prestige .39 / audience .39; per-Oscar-nomination acclaim; durability weighting; canon-significance folded into prestige; marquee = Acting/Directing/Title/Writing only).
+- `build_scores.py` + `export_screen.py` — scorer and exporter rewrites (see below).
+- New data files: `person_merges.json`, `supplemental_people.json`, `afi_legends.json`, `great_directors.json`, `great_actors.json`, `canon_cast.json`, and `overrides.json` (now 181 people overrides).
+
+**Scoring redesign (why ranks moved).** Academy prestige + cinematic-consensus significance now count alongside box office: every marquee Oscar nom/win (acting/directing/writing) earns prestige AND audience acclaim regardless of gross; box office is era-normalized + durability-weighted by TMDb votes; peak signature works beat raw volume; multi-hyphenates calibrated so directors stop swamping actors. AFI-legend / great-director / great-actor consensus lists + a supplemental-people set rescue world-cinema masters (Ozu et al.) from Academy-centric English-label suppression. Cinematography and animated-short/documentary categories are EXCLUDED from the marquee set (that exclusion is what pulled Disney's animated-short noms back down from a false top-5). Net effect: Spielberg / Wilder / Hepburn lead globally; De Niro, Pacino, Denzel now sit in NY's top tier; Hitchcock #1 / Chaplin #3 in London.
+
+**Merges:** Joel & Ethan Coen → one ranked entry; Powell & Pressburger → one ranked entry (`person_merges.json`).
+
+**Attributions:** ~180 metro overrides validated across ranks 1–2000 so figures resolve to the metro that raised them. This session's named ones: Jordana Brewster→New York, Amy Adams→Denver, Joan Fontaine→SF–San Jose, Liv Ullmann→Trondheim, Roman Polanski→Krakow, Ann-Margret→Chicago, Joaquin Phoenix→LA, plus the full 1001–2000 batch. Every mapped person now carries an inferred country.
+
+**New pages / features (in git):** per-metro Screen profiles `app/screen/metros/[slug]` and per-country profiles `app/screen/countries/` (+ `[slug]`); a Rankings-by-Country hub card and nav tab; country + metro columns across the People/Directors tables; metro profiles now link out to their country and to peer metros; People export raised to top 2,000; `lib/screen.ts` gained the country / metro-profile / country-profile getters.
+
+**Closes the 07-25 QID thread.** Regenerated `screen.json` end-to-end this session (apply_aliases → build_scores → export_screen) and verified **0 bare-QID names** in both the people list and the metro top cards — `build_scores.py` prints `name guard: OK, zero bare-QID names`. So `scripts/screen/person_name_overrides.json` IS now consulted by the pipeline (the guard is live, not just a post-patch), which effectively resolves the 07-25 open ask to wire it in. Post-regen totals: 2,000 people, 90 countries, 814 metros.
+
+### Housekeeping / open questions
+1. **Uncommitted scratch in the working tree** (left deliberately, `device_bash` can't delete): `public/data/screen/screen.json.bak-premerge`, `screen.json.bak-domestic`, `screen.json.bak-prev2`, `screen.json.bak-20260725-qidfix`, `.commit-msg-qidfix.txt`. Candidates for `.gitignore` or manual deletion whenever convenient — none are referenced by anything.
+2. **Nothing changes for the mini's weekly cadence.** The `/screen` metro/country/people pages are `force-static` build-time (baked by 83f21657d's deploy); only `screen_number_ones.json` stays on the weekly refresh and it was untouched here.
+3. **Annual-rebuild reminder (windows), reinforcing 07-23:** `_screen_of_metros_pipeline/` in OneDrive is the source of truth and this session moved it substantially (new scorer, new consensus/merge/supplemental data, 181 overrides). Snapshot the whole folder before the next March post-Oscars rebuild so the redesign survives a curated regen.
