@@ -12,24 +12,35 @@ restores the *worker*: the scheduler, scripts, venv, and credentials. Budget ~30
 
 ---
 
-## What the mini runs (10 launchd agents)
+## What the mini runs (18 launchd agents)
 
 | Agent | Wrapper | Schedule (local) |
 |---|---|---|
 | com.newsletter.daily | ~/newsletter-podcast/run-daily.sh | 08:00 daily |
-| com.citizenofnowhere.feed-monitor | feed_shape_monitor.py | 08:20 daily |
 | com.newsletter.weekly | ~/newsletter-podcast/run-weekly.sh | Sun 09:00 |
 | com.newsletter.watchdog | ~/newsletter-podcast/watchdog.sh | 09:30 daily |
+| com.citizenofnowhere.substack-daily | run-scraper-refresh.sh substack | 07:00 daily |
+| com.citizenofnowhere.wc2026-daily | run-wc2026-daily.sh | 07:30 daily |
+| com.citizenofnowhere.rugby-weekly | run-scraper-refresh.sh rugby | Tue 08:05 |
+| com.citizenofnowhere.fiba-weekly | run-scraper-refresh.sh fiba | Wed 08:10 |
+| com.citizenofnowhere.conflicts-monthly | run-scraper-refresh.sh conflicts | 1st @ 08:15 |
+| com.citizenofnowhere.feed-monitor | feed_shape_monitor.py | 08:20 daily |
+| com.citizenofnowhere.sound-weekly | run-sound-weekly.sh | Wed 08:30 |
 | com.citizenofnowhere.egress-refresh | metro-mini-refresh.sh | Sun 10:00 |
 | com.citizenofnowhere.cricket-weekly | run-cricket-weekly.sh | Tue 10:00 |
 | com.citizenofnowhere.cricket-monthly | run-cricket-monthly.sh | 1st @ 11:00 |
+| com.citizenofnowhere.euro-comps | run-euro-comps.sh | 04:00 daily |
+| com.citizenofnowhere.football-standings | mac-mini-jobs/run-football-standings.sh (repo) | 05:00 UTC daily |
+| com.citizenofnowhere.gap-league-watch | mac-mini-jobs/run-gap-league-watch.sh (repo) | 05:00 UTC daily |
 | com.citizenofnowhere.f1-weekly | run-f1-weekly.sh | hourly (round-gated; syncs ~1h post-race) |
-| com.citizenofnowhere.wc2026-daily | run-wc2026-daily.sh | 07:30 daily |
 | com.citizenofnowhere.heartbeat | run-heartbeat.sh | every 15 min |
 
-Wrappers + plists for the `citizenofnowhere` agents live in this folder
-(`mac-mini-jobs/` and `mac-mini-jobs/launchd/`). The `newsletter` agents come
-from `~/newsletter-podcast/` (see its `SETUP.md`).
+All except the two **apifootball** jobs run their wrapper from `~/metro-mini-jobs/`,
+where each `run-*.sh` is a **symlink to the repo copy** in `mac-mini-jobs/` (so the
+live copy can never drift from canonical — see §7). The apifootball plists run the
+repo copy directly. The `newsletter` agents come from `~/newsletter-podcast/` (see
+its `SETUP.md`). Every scheduled job also reports to healthchecks.io via `hc-run.sh`
+(slug = the agent's short name), except `heartbeat` which pings the `mac-mini` check.
 
 ---
 
@@ -100,17 +111,32 @@ mv "$HOME/Projects/F1 Data/schedule_2026.csv" "$HOME/Projects/F1 Data/data/"
 
 ## 7. Wrappers + launchd agents
 ```
+REPO="$HOME/Projects/Metro Area Project"
 mkdir -p "$HOME/metro-mini-jobs/logs"
-cp mac-mini-jobs/*.sh mac-mini-jobs/*.py mac-mini-jobs/config.env.example "$HOME/metro-mini-jobs/"
+# Helpers (hc-run.sh, notify.py, feed_shape_monitor.py, config example) are copied.
+cp "$REPO"/mac-mini-jobs/hc-run.sh "$REPO"/mac-mini-jobs/*.py "$REPO"/mac-mini-jobs/config.env.example "$HOME/metro-mini-jobs/"
 cp "$HOME/metro-mini-jobs/config.env.example" "$HOME/metro-mini-jobs/config.env"   # set NTFY_TOPIC, LOG_DIR
-chmod +x "$HOME/metro-mini-jobs/"*.sh "$HOME/metro-mini-jobs/"*.py
-# load the citizenofnowhere agents:
-cp mac-mini-jobs/launchd/com.citizenofnowhere.*.plist "$HOME/Library/LaunchAgents/"
+# Wrappers are SYMLINKED to the repo copies, NOT copied. A copy can silently drift
+# from canonical (this bit us repeatedly in 2026-07: rugby-results, cabinet/forecast,
+# etc. edited in the repo but never re-copied, so they never ran). A symlink makes a
+# repo edit instantly live. $DIR-relative deps (config.env, notify.py) still resolve
+# because $DIR = the symlink's own dir (~/metro-mini-jobs), not the link target.
+for w in metro-mini-refresh run-cricket-weekly run-cricket-monthly run-f1-weekly \
+         run-wc2026-daily run-sound-weekly run-scraper-refresh run-euro-comps run-heartbeat; do
+  ln -sf "$REPO/mac-mini-jobs/$w.sh" "$HOME/metro-mini-jobs/$w.sh"
+done
+chmod +x "$REPO"/mac-mini-jobs/*.sh "$HOME/metro-mini-jobs/hc-run.sh" "$HOME/metro-mini-jobs/"*.py
+# load ALL citizenofnowhere agents (the two apifootball plists run the repo copy directly):
+cp "$REPO"/mac-mini-jobs/launchd/com.citizenofnowhere.*.plist "$HOME/Library/LaunchAgents/"
 for p in "$HOME/Library/LaunchAgents/com.citizenofnowhere."*.plist; do
   launchctl bootstrap gui/$(id -u) "$p"
 done
 ```
 For the `com.newsletter.*` agents, follow `~/newsletter-podcast/SETUP.md` Phase 5.
+
+**Healthchecks tiles:** each job pings a check named by its slug. On a rebuild, either
+restore the checks from the healthchecks.io project or recreate them via the Management
+API (`HC_API_KEY`) — one per agent slug above (+ `mac-mini` for the heartbeat).
 
 ## 8. Smoke test each
 ```
