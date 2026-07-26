@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-24",
+  "generated": "2026-07-26",
   "source": "Forbes real-time billionaires via komed3/rtb-api (MIT)",
   "count": 3381,
   "billionaires": [
@@ -43874,9 +43874,9 @@
       "name": "Yu Kai",
       "uri": "yu-kai",
       "networth": 1559.859,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Technology"
       ],
@@ -46814,9 +46814,9 @@
       "name": "Cao Yuhua & family",
       "uri": "cao-yuhua",
       "networth": 1423.484,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Automotive"
       ],
@@ -47872,9 +47872,9 @@
       "name": "Lin Por-Fong",
       "uri": "lin-por-fong",
       "networth": 1381.432,
-      "countryCode": "TW",
+      "countryCode": null,
       "countrySlug": null,
-      "countryName": "TW",
+      "countryName": null,
       "industries": [
         "Manufacturing"
       ],
@@ -48608,9 +48608,9 @@
       "name": "Lin Por-Chun",
       "uri": "lin-por-chun",
       "networth": 1353.003,
-      "countryCode": "TW",
+      "countryCode": null,
       "countrySlug": null,
-      "countryName": "TW",
+      "countryName": null,
       "industries": [
         "Manufacturing"
       ],
@@ -52556,9 +52556,9 @@
       "name": "Leyla Tara Suyabatmaz",
       "uri": "leyla-tara-suyabatmaz",
       "networth": 1196.897,
-      "countryCode": "TR",
-      "countrySlug": "turkey",
-      "countryName": "Turkey",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Construction & Engineering"
       ],
@@ -52573,9 +52573,9 @@
       "name": "Yasemin Zeynep Keyman",
       "uri": "yasemin-zeynep-keyman",
       "networth": 1196.897,
-      "countryCode": "TR",
-      "countrySlug": "turkey",
-      "countryName": "Turkey",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Construction & Engineering"
       ],
@@ -54436,9 +54436,9 @@
       "name": "Jiang Xuefei & family",
       "uri": "jiang-xuefei",
       "networth": 1132.009,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Technology"
       ],
@@ -55563,9 +55563,9 @@
       "name": "Qi Xiangdong",
       "uri": "qi-xiangdong",
       "networth": 1095.08,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Technology"
       ],
@@ -56554,9 +56554,9 @@
       "name": "Abigail Bennett",
       "uri": "abigail-bennett",
       "networth": 1051.79,
-      "countryCode": "US",
-      "countrySlug": "united-states",
-      "countryName": "United States",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Food & Beverage"
       ],
@@ -56605,9 +56605,9 @@
       "name": "Zhang Tianyu",
       "uri": "zhang-tianyu",
       "networth": 1047.489,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Telecom"
       ],
@@ -56656,9 +56656,9 @@
       "name": "Shintaro Yamada",
       "uri": "shintaro-yamada",
       "networth": 1043.979,
-      "countryCode": "JP",
-      "countrySlug": "japan",
-      "countryName": "Japan",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Technology"
       ],

@@ -1,6 +1,15 @@
 {
-  "updated": "2026-07-24",
+  "updated": "2026-07-26",
   "changes": [
+    {
+      "date": "2022-07-25",
+      "slug": "india",
+      "country": "India",
+      "office": "President",
+      "from": "Droupadi Murmu",
+      "to": "Ganesh rajput",
+      "source": "wikidata"
+    },
     {
       "date": "2024-02-26",
       "slug": "tuvalu",

@@ -14,7 +14,7 @@
   "Balad",
   "Dems",
   "Yashar",
-  "Yesodot Yisrael"
+  "Zionist Home"
  ],
  "polls": [
   {
@@ -34,7 +34,7 @@
     "Balad": 0,
     "Dems": 10,
     "Yashar": 22,
-    "Yesodot Yisrael": 0
+    "Zionist Home": 0
    },
    "gov": 49
   },
@@ -57,6 +57,27 @@
     "Yashar": 0
    },
    "gov": null
+  },
+  {
+   "date": "2026-07-23",
+   "pollster": "Lazar",
+   "seats": {
+    "Likud": 20,
+    "Together": 17,
+    "RZP": 5,
+    "Otzma": 8,
+    "Blue & White": 0,
+    "Shas": 8,
+    "UTJ": 8,
+    "Yisrael Beiteinu": 10,
+    "Ra'am": 5,
+    "Hadash –Ta'al": 5,
+    "Balad": 0,
+    "Dems": 11,
+    "Yashar": 23,
+    "Zionist Home": 0
+   },
+   "gov": 49
   },
   {
    "date": "2026-07-23",

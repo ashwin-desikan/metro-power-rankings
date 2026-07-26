@@ -1313,6 +1313,18 @@
    "nzf": 11.5,
    "tpm": 2.3,
    "top": 4.7
+  },
+  {
+   "date": "2026-07-19",
+   "pollster": "Talbot Mills",
+   "sample": null,
+   "nat": 31.0,
+   "lab": 33.0,
+   "grn": 9.0,
+   "act": 7.0,
+   "nzf": 12.0,
+   "tpm": 3.0,
+   "top": 4.7
   }
  ]
 }

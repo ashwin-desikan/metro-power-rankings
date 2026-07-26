@@ -4670,6 +4670,39 @@
    "ld": 10.0,
    "grn": 10.0,
    "snp": 3.0
+  },
+  {
+   "date": "2026-07-22",
+   "pollster": "More in Common",
+   "sample": 3118,
+   "lab": 24.0,
+   "con": 22.0,
+   "ref": 26.0,
+   "ld": 11.0,
+   "grn": 11.0,
+   "snp": 2.0
+  },
+  {
+   "date": "2026-07-23",
+   "pollster": "YouGov",
+   "sample": 2262,
+   "lab": 21.0,
+   "con": 20.0,
+   "ref": 23.0,
+   "ld": 14.0,
+   "grn": 13.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2026-07-24",
+   "pollster": "Survation",
+   "sample": 1021,
+   "lab": 25.0,
+   "con": 19.0,
+   "ref": 26.0,
+   "ld": 10.0,
+   "grn": 8.0,
+   "snp": 3.0
   }
  ]
 }

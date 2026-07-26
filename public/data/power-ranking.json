@@ -21,8 +21,8 @@
     "commissioner_factor": 0.44,
     "judiciary": 0.09
   },
-  "asOf": "2026-07-24",
-  "prevSnapshotDate": "2026-07-23",
+  "asOf": "2026-07-26",
+  "prevSnapshotDate": "2026-07-24",
   "ranking": [
     {
       "name": "⚠️ Donald Trump",
@@ -89,7 +89,7 @@
       "delta": 0
     },
     {
-      "name": "Droupadi Murmu",
+      "name": "Ganesh rajput",
       "role": "Pres., India",
       "category": "National",
       "jurisdiction": "India",
@@ -148,9 +148,9 @@
       "power": 347.7,
       "jurisdictionHref": "/countries/saudi-arabia",
       "transition": "",
-      "prevRank": null,
-      "isNew": true,
-      "delta": null
+      "prevRank": 8,
+      "isNew": false,
+      "delta": 0
     },
     {
       "name": "Andy Burnham",
@@ -516,9 +516,9 @@
       "power": 184.9,
       "jurisdictionHref": "/countries/israel",
       "transition": "",
-      "prevRank": null,
-      "isNew": true,
-      "delta": null
+      "prevRank": 31,
+      "isNew": false,
+      "delta": 0
     },
     {
       "name": "Mark Carney",
@@ -660,9 +660,9 @@
       "power": 155.8,
       "jurisdictionHref": "/countries/united-arab-emirates",
       "transition": "",
-      "prevRank": null,
-      "isNew": true,
-      "delta": null
+      "prevRank": 40,
+      "isNew": false,
+      "delta": 0
     },
     {
       "name": "Anthony Albanese",
@@ -852,9 +852,9 @@
       "power": 133.8,
       "jurisdictionHref": "/countries/south-korea",
       "transition": "",
-      "prevRank": null,
-      "isNew": true,
-      "delta": null
+      "prevRank": 52,
+      "isNew": false,
+      "delta": 0
     },
     {
       "name": "Andy Jassy",
@@ -964,9 +964,9 @@
       "power": 126.5,
       "jurisdictionHref": "/countries/ukraine",
       "transition": "",
-      "prevRank": null,
-      "isNew": true,
-      "delta": null
+      "prevRank": 59,
+      "isNew": false,
+      "delta": 0
     },
     {
       "name": "Jeff Bezos",
@@ -1476,9 +1476,9 @@
       "power": 80.4,
       "jurisdictionHref": "/countries/switzerland",
       "transition": "",
-      "prevRank": null,
-      "isNew": true,
-      "delta": null
+      "prevRank": 91,
+      "isNew": false,
+      "delta": 0
     },
     {
       "name": "Asif Ali Zardari",
@@ -1492,9 +1492,9 @@
       "power": 79.8,
       "jurisdictionHref": "/countries/pakistan",
       "transition": "",
-      "prevRank": null,
-      "isNew": true,
-      "delta": null
+      "prevRank": 92,
+      "isNew": false,
+      "delta": 0
     },
     {
       "name": "Michael Dell",
@@ -1627,52 +1627,10 @@
   ],
   "dropped": [
     {
-      "name": "Narendra Modi",
+      "name": "Droupadi Murmu",
       "prevRank": 5,
       "category": "National",
       "jurisdiction": "India"
-    },
-    {
-      "name": "⚠️ 👑 Mohammed bin Salman",
-      "prevRank": 8,
-      "category": "National",
-      "jurisdiction": "Saudi Arabia"
-    },
-    {
-      "name": "⚠️ Benjamin Netanyahu",
-      "prevRank": 31,
-      "category": "National",
-      "jurisdiction": "Israel"
-    },
-    {
-      "name": "Mohamed bin Zayed Al Nahyan",
-      "prevRank": 40,
-      "category": "National",
-      "jurisdiction": "United Arab Emirates"
-    },
-    {
-      "name": "Lee Jae-myung",
-      "prevRank": 52,
-      "category": "National",
-      "jurisdiction": "South Korea"
-    },
-    {
-      "name": "Volodymyr Zelensky",
-      "prevRank": 59,
-      "category": "National",
-      "jurisdiction": "Ukraine"
-    },
-    {
-      "name": "Guy Parmelin",
-      "prevRank": 91,
-      "category": "National",
-      "jurisdiction": "Switzerland"
-    },
-    {
-      "name": "Shehbaz Sharif",
-      "prevRank": 92,
-      "category": "National",
-      "jurisdiction": "Pakistan"
     }
   ]
 }

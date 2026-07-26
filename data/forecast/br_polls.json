@@ -633,6 +633,17 @@
     "Santos": 9.0,
     "Cury": 1.0
    }
+  },
+  {
+   "date": "2026-07-23",
+   "shares": {
+    "Lula": 40.0,
+    "F. Bolsonaro": 32.0,
+    "Caiado": 4.0,
+    "Zema": 3.0,
+    "Santos": 3.0,
+    "Cury": 2.0
+   }
   }
  ],
  "matchups": [
@@ -642,6 +653,13 @@
     "Lula"
    ],
    "polls": [
+    {
+     "date": "2026-07-23",
+     "shares": {
+      "Lula": 48.0,
+      "F. Bolsonaro": 43.0
+     }
+    },
     {
      "date": "2026-07-20",
      "shares": {
