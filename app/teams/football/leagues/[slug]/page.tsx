@@ -25,10 +25,45 @@ const SEASON_COMP_INCLUDE = new Set(["CL", "CLB", "EL", "CWC", "EUCL", "OTH", "O
 import LeagueHubMap, { type HubClub } from "./LeagueHubMap";
 import MlsStandings from "./MlsStandings";
 import MlsMostDecorated from "./MlsMostDecorated";
-import { getCurrentMlsStandings } from "@/lib/mls-standings";
-import { getPlLiveStandings } from "@/lib/premier-league-standings";
-import PremierLeagueStandings from "./PremierLeagueStandings";
+import LiveLeagueTable, { type LiveCompTable } from "./LiveLeagueTable";
+import { getClubStandings, getEuropeBadges, type LiveLeague, type LiveRow } from "@/lib/clubFootballLive";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+
+// api-football league ids for the hub countries' top flights, so the country
+// switcher can default to this hub's own league before falling back to tier 1.
+const LEAGUE_ID_BY_SLUG: Record<string, number> = {
+  "premier-league": 39, "la-liga": 140, "serie-a": 135, "bundesliga": 78,
+  "ligue-1": 61, "eredivisie": 88, "primeira-liga": 94, "scottish-premiership": 179,
+};
+const numCell = (v: number | null): number | string => (v == null ? "-" : v);
+const byPtsGd = (a: LiveRow, b: LiveRow) => (b.points ?? 0) - (a.points ?? 0) || (b.gd ?? 0) - (a.gd ?? 0);
+
+// Resolve every tracked league in a country into serializable tables for the switcher.
+function buildCountryTables(clubStandings: LiveLeague[], country: string, badges: Record<string, string>): LiveCompTable[] {
+  return clubStandings
+    .filter((l) => l.country === country && l.groups.some((g) => g.rows.length > 0))
+    .map((l): LiveCompTable => ({
+      id: l.league_id,
+      name: l.name ?? "",
+      level: l.level,
+      groups: l.groups
+        .map((g) => ({
+          label: l.groups.length > 1 ? g.group_label : null,
+          rows: g.rows.slice().sort(byPtsGd).map((r) => {
+            const c = getFootballClubByName(r.lookup ?? "") ?? getFootballClubByName(r.name ?? "");
+            return {
+              rank: r.rank,
+              name: c?.cur_name ?? r.name ?? r.lookup ?? "-",
+              slug: c?.slug ?? null,
+              badge: r.team_id != null ? (badges[String(r.team_id)] ?? null) : null,
+              cells: [numCell(r.played), numCell(r.win), numCell(r.draw), numCell(r.lose), numCell(r.gf), numCell(r.ga), numCell(r.gd), numCell(r.points)],
+            };
+          }),
+        }))
+        .filter((g) => g.rows.length > 0),
+    }))
+    .sort((a, b) => (a.level ?? 99) - (b.level ?? 99) || a.name.localeCompare(b.name));
+}
 
 export const dynamicParams = false;
 
@@ -60,12 +95,17 @@ export default async function FootballLeagueHubPage({ params }: Props) {
   const hub = getLeagueHub(slug);
   if (!hub) notFound();
 
+  const [clubStandings, europeBadges] = await Promise.all([getClubStandings(), getEuropeBadges()]);
+
   if (hub.is_mls) {
-    return <MlsHubView hub={hub as unknown as MlsLeagueHub} />;
+    return <MlsHubView hub={hub as unknown as MlsLeagueHub} clubStandings={clubStandings} />;
   }
 
-  // Premier League: fetch live standings from ESPN (ISR, 30-min cache)
-  const plLive = hub.slug === "premier-league" ? await getPlLiveStandings() : null;
+  // Live tables for every tracked league in this hub's country, switchable in the UI.
+  const countryTables = buildCountryTables(clubStandings, hub.country, europeBadges);
+  const defaultLeagueId = countryTables.some((t) => t.id === LEAGUE_ID_BY_SLUG[hub.slug])
+    ? LEAGUE_ID_BY_SLUG[hub.slug]
+    : (countryTables[0]?.id ?? 0);
 
   // All in-scope clubs for this hub's country, slimmed to the fields the
   // map needs. tier_by_year drives the year filter and tier coloring.
@@ -141,8 +181,8 @@ export default async function FootballLeagueHubPage({ params }: Props) {
         </section>
       )}
       <div id="standings">
-        {hub.slug === "premier-league" ? (
-          <PremierLeagueStandings live={plLive} hub={hub} cupsBySlug={cupsBySlug} europeBySlug={europeBySlug} />
+        {countryTables.length > 0 ? (
+          <LiveLeagueTable tables={countryTables} defaultId={defaultLeagueId} season="2026-27" />
         ) : (
           <CurrentStandings hub={hub} cupsBySlug={cupsBySlug} europeBySlug={europeBySlug} />
         )}
@@ -157,25 +197,30 @@ export default async function FootballLeagueHubPage({ params }: Props) {
   );
 }
 
-async function MlsHubView({ hub }: { hub: MlsLeagueHub }) {
+async function MlsHubView({ hub, clubStandings }: { hub: MlsLeagueHub; clubStandings: LiveLeague[] }) {
   const finals = [...(hub.mls_cup_finals ?? [])].filter((c) => c.year).sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
   const shields = [...(hub.supporters_shield_winners ?? [])].filter((s) => s.year).sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
-  const live = await getCurrentMlsStandings();
-  const currentYear = new Date().getFullYear();
-  const useLive = live.rows.length > 0 && live.season_year === currentYear;
-  const liveStandings: MlsStanding[] = live.rows.map((r, i) => {
-    const lc = getFootballClubByName(r.name);
-    return {
-      place: i + 1, cur_name: lc?.cur_name ?? r.name, team: lc?.cur_name ?? r.name, slug: lc?.slug ?? null,
-      conference: r.conf || null, w: r.wins, d: r.draws, l: r.losses, pts: r.points, gs: r.gf, ga: r.ga, gd: r.gd,
-      supporters_shield: false, playoffs: false, playoff_sf: false, mls_cup_app: false, mls_cup: false,
-    };
-  });
+  const mlsLeague = clubStandings.find((l) => l.league_id === 253) ?? null;
+  const useLive = !!mlsLeague && mlsLeague.groups.some((g) => g.rows.length > 0);
+  const liveStandings: MlsStanding[] = useLive
+    ? mlsLeague!.groups.flatMap((g) => {
+        const conf = /east/i.test(g.group_label) ? "Eastern" : /west/i.test(g.group_label) ? "Western" : null;
+        return g.rows.slice().sort((a, b) => (b.points ?? 0) - (a.points ?? 0) || (b.gd ?? 0) - (a.gd ?? 0)).map((r, i) => {
+          const lc = getFootballClubByName(r.lookup ?? "") ?? getFootballClubByName(r.name ?? "");
+          const nm = lc?.cur_name ?? r.name ?? "";
+          return {
+            place: i + 1, cur_name: nm, team: nm, slug: lc?.slug ?? null, conference: conf,
+            w: r.win ?? 0, d: r.draw ?? 0, l: r.lose ?? 0, pts: r.points ?? 0, gs: r.gf ?? 0, ga: r.ga ?? 0, gd: r.gd ?? 0,
+            supporters_shield: false, playoffs: false, playoff_sf: false, mls_cup_app: false, mls_cup: false,
+          };
+        });
+      })
+    : [];
   const standings = useLive ? liveStandings : hub.current_standings;
   const conferences = useLive
     ? Array.from(new Set(liveStandings.map((r) => r.conference).filter((c): c is string => !!c))).sort()
     : hub.conferences;
-  const standingsYear = useLive ? live.season_year : hub.current_year;
+  const standingsYear = useLive ? 2026 : hub.current_year;
   const currentSlugs = new Set(hub.current_standings.map((s) => s.slug).filter((x): x is string => !!x));
   const metroBySlug = new Map(getAllClubs().map((c) => [c.slug, c.metro] as const));
   const allTimeRows = hub.most_decorated.map((r) => ({
@@ -194,7 +239,7 @@ async function MlsHubView({ hub }: { hub: MlsLeagueHub }) {
         <h1 className="text-3xl font-semibold tracking-tight">{hub.league}</h1>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
           {hub.country}. No promotion or relegation: the Supporters&apos; Shield goes to the best regular-season record across both conferences, and the MLS Cup is decided in the playoffs.
-          {standingsYear ? (useLive ? <> Live {standingsYear} standings from ESPN, refreshed hourly.</> : <> Standings shown for {standingsYear}.</>) : null}
+          {standingsYear ? (useLive ? <> Live {standingsYear} standings, refreshed daily.</> : <> Standings shown for {standingsYear}.</>) : null}
         </p>
       </header>
       <HubNav

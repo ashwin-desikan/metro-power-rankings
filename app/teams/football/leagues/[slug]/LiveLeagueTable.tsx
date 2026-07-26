@@ -1,0 +1,101 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import CrestIcon from "@/app/teams/_shared/CrestIcon";
+
+// Live standings for a whole country: a switcher across every tracked league/level
+// (Premier League, Championship, League One … and, once wired, the domestic cups),
+// each table pre-resolved server-side and fed in as serializable data.
+
+export type LiveCell = number | string;
+export type LiveTableRow = { rank: number | null; name: string; slug: string | null; badge: string | null; cells: LiveCell[] };
+export type LiveTableGroup = { label: string | null; rows: LiveTableRow[] };
+export type LiveCompTable = { id: number; name: string; level: number | null; groups: LiveTableGroup[] };
+
+const COLS = ["P", "W", "D", "L", "GF", "GA", "GD", "Pts"];
+const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
+const BADGES: Record<string, { label: string; bg: string; fg: string; title: string }> = {
+  UCL: { label: "UCL", bg: "rgba(212,175,55,0.22)", fg: "#d4af37", title: "In the Champions League" },
+  UEL: { label: "UEL", bg: "rgba(255,138,0,0.18)", fg: "#ff8a00", title: "In the Europa League" },
+  UECL: { label: "UECL", bg: "rgba(16,185,129,0.18)", fg: "#10b981", title: "In the Conference League" },
+  LIB: { label: "LIB", bg: "rgba(59,130,246,0.18)", fg: "#3b82f6", title: "In the Copa Libertadores" },
+};
+
+function Table({ group }: { group: LiveTableGroup }) {
+  return (
+    <div className="overflow-x-auto">
+      <table className="w-full text-sm min-w-[420px]">
+        <thead>
+          <tr className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b" style={{ borderColor: "var(--border)" }}>
+            <th className="py-2 text-left font-medium">Pos</th>
+            <th className="py-2 text-left font-medium">Club</th>
+            <th className="py-2 pl-2 text-left font-medium">Europe</th>
+            {COLS.map((c) => (
+              <th key={c} className={`py-2 text-right font-medium ${c === "GF" || c === "GA" ? "hidden sm:table-cell" : ""}`}>{c}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {group.rows.map((r, i) => {
+            const b = r.badge ? BADGES[r.badge] : undefined;
+            return (
+              <tr key={i} className="border-b" style={{ borderColor: "var(--border)" }}>
+                <td className="py-1.5 tabular-nums text-[var(--text-muted)]" style={mono}>{r.rank ?? i + 1}</td>
+                <td className="py-1.5">
+                  <span className="inline-flex items-center gap-2">
+                    <CrestIcon name={r.name} size={20} className="flex-shrink-0" />
+                    {r.slug ? <Link href={`/teams/football/${r.slug}`} className="hover:underline font-medium">{r.name}</Link> : <span className="font-medium">{r.name}</span>}
+                  </span>
+                </td>
+                <td className="py-1.5 pl-2">
+                  {b && <span className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold tracking-wide" style={{ background: b.bg, color: b.fg }} title={b.title}>{b.label}</span>}
+                </td>
+                {r.cells.map((c, j) => (
+                  <td key={j} className={`py-1.5 text-right tabular-nums ${COLS[j] === "GF" || COLS[j] === "GA" ? "hidden sm:table-cell" : ""} ${COLS[j] === "Pts" ? "font-semibold" : ""}`} style={mono}>{c}</td>
+                ))}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export default function LiveLeagueTable({ tables, defaultId, season }: { tables: LiveCompTable[]; defaultId: number; season: string }) {
+  const [active, setActive] = useState(defaultId);
+  const t = tables.find((x) => x.id === active) ?? tables[0];
+  if (!t) return null;
+  return (
+    <section className="rounded-xl border p-5 mb-6" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+      <div className="flex items-center justify-between gap-3 flex-wrap mb-3">
+        <h2 className="text-base font-semibold">{season} standings <span className="text-[var(--text-muted)] font-normal text-sm">· live</span></h2>
+      </div>
+      {tables.length > 1 && (
+        <div className="flex flex-wrap gap-1.5 mb-4">
+          {tables.map((x) => {
+            const on = x.id === t.id;
+            return (
+              <button
+                key={x.id}
+                onClick={() => setActive(x.id)}
+                className={`px-2.5 py-1 text-xs rounded-md border transition ${on ? "font-semibold" : "text-[var(--text-muted)]"}`}
+                style={{ borderColor: on ? "var(--accent)" : "var(--border)", backgroundColor: on ? "var(--bg-card)" : "transparent", color: on ? "var(--accent)" : undefined }}
+              >
+                {x.name}{x.level != null ? <span className="text-[var(--text-dim)]"> · T{x.level}</span> : null}
+              </button>
+            );
+          })}
+        </div>
+      )}
+      {t.groups.map((g, gi) => (
+        <div key={gi} className={gi > 0 ? "mt-4" : ""}>
+          {t.groups.length > 1 && g.label && <div className="text-[11px] font-semibold text-[var(--text-muted)] mb-1">{g.label}</div>}
+          <Table group={g} />
+        </div>
+      ))}
+      <p className="mt-3 text-[11px] text-[var(--text-dim)]">Live tables, refreshed daily. Europe badges mark clubs currently active in a continental competition and clear on elimination. Domestic cups coming soon.</p>
+    </section>
+  );
+}

@@ -50,3 +50,16 @@ export async function getClubCompetitions(): Promise<LiveComp[]> {
   const doc = await load<{ competitions: LiveComp[] }>("live-competitions-2026.json");
   return doc?.competitions ?? [];
 }
+
+// team_id (as string) -> current European/Libertadores badge ("UCL"|"UEL"|"UECL"|"LIB")
+// for clubs still alive in a competition; eliminated clubs are absent.
+export async function getEuropeBadges(): Promise<Record<string, string>> {
+  const doc = await load<{ europe_badges?: Record<string, string> }>("live-competitions-2026.json");
+  return doc?.europe_badges ?? {};
+}
+
+// Find a single league's live table by api-football league id.
+export async function getLiveLeague(leagueId: number): Promise<LiveLeague | null> {
+  const leagues = await getClubStandings();
+  return leagues.find((l) => l.league_id === leagueId) ?? null;
+}
