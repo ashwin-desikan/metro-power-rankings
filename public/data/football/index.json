@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-20",
+  "generated_at": "2026-07-26",
   "source": "Champions League-201516.xlsx",
   "scope": {
     "countries": [
@@ -1117,8 +1117,8 @@
       "metro": "Adelaide",
       "county": "South Australia",
       "continent": "Asia",
-      "lat": null,
-      "lng": null,
+      "lat": -34.933,
+      "lng": 138.6,
       "tiers": [],
       "first_year": null,
       "last_year": null,
@@ -1271,8 +1271,8 @@
       "metro": "Wollongong",
       "county": "New South Wales",
       "continent": "Asia",
-      "lat": null,
-      "lng": null,
+      "lat": -34.4278,
+      "lng": 150.8931,
       "tiers": [],
       "first_year": null,
       "last_year": null,
@@ -1782,8 +1782,8 @@
       "metro": "Santa Cruz de la Sierra",
       "county": null,
       "continent": "South America",
-      "lat": null,
-      "lng": null,
+      "lat": -17.796067,
+      "lng": -63.183873,
       "tiers": [],
       "first_year": null,
       "last_year": null,
@@ -1842,8 +1842,8 @@
       "metro": "Santa Cruz de la Sierra",
       "county": null,
       "continent": "South America",
-      "lat": null,
-      "lng": null,
+      "lat": -17.796067,
+      "lng": -63.183873,
       "tiers": [],
       "first_year": null,
       "last_year": null,
@@ -3373,8 +3373,8 @@
       "metro": "Curicó",
       "county": null,
       "continent": "South America",
-      "lat": null,
-      "lng": null,
+      "lat": -34.9828,
+      "lng": -71.2394,
       "tiers": [],
       "first_year": null,
       "last_year": null,
@@ -4673,8 +4673,8 @@
       "metro": "Pinar del Río",
       "county": null,
       "continent": "North America",
-      "lat": null,
-      "lng": null,
+      "lat": 22.4175,
+      "lng": -83.6981,
       "tiers": [],
       "first_year": null,
       "last_year": null,
@@ -4825,8 +4825,8 @@
       "metro": "Quito",
       "county": null,
       "continent": "South America",
-      "lat": null,
-      "lng": null,
+      "lat": -0.330141,
+      "lng": -78.449992,
       "tiers": [],
       "first_year": null,
       "last_year": null,
@@ -5551,8 +5551,8 @@
       "metro": "San Salvador",
       "county": null,
       "continent": "North America",
-      "lat": null,
-      "lng": null,
+      "lat": 13.689,
+      "lng": -89.187,
       "tiers": [],
       "first_year": null,
       "last_year": null,
@@ -35454,8 +35454,8 @@
       "metro": "Suva",
       "county": null,
       "continent": "Oceania",
-      "lat": null,
-      "lng": null,
+      "lat": -18.1416,
+      "lng": 178.4419,
       "tiers": [],
       "first_year": null,
       "last_year": null,
@@ -36356,8 +36356,8 @@
       "metro": "Troyes",
       "county": "Grand Est",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 48.3,
+      "lng": 4.083,
       "tiers": [
         1
       ],
@@ -36406,8 +36406,8 @@
       "metro": "Valentigney",
       "county": "Bourgogne-Franche-Comté",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 47.4633,
+      "lng": 6.8281,
       "tiers": [
         1
       ],
@@ -36550,8 +36550,8 @@
       "metro": "Chambéry",
       "county": "Auvergne-Rhône-Alpes",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 45.6886,
+      "lng": 5.9153,
       "tiers": [
         1
       ],
@@ -37106,8 +37106,8 @@
       "metro": "Paris",
       "county": "Île-de-France",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 48.8423,
+      "lng": 2.253,
       "tiers": [
         1
       ],
@@ -38396,8 +38396,8 @@
       "metro": "Lyon",
       "county": "Auvergne-Rhône-Alpes",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 45.75,
+      "lng": 4.85,
       "tiers": [
         1
       ],
@@ -38700,8 +38700,8 @@
       "metro": "Nancy",
       "county": "Grand Est",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 48.683,
+      "lng": 6.2,
       "tiers": [
         1
       ],
@@ -41174,8 +41174,8 @@
       "metro": "Quimper",
       "county": "Brittany",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 47.996,
+      "lng": -4.1024,
       "tiers": [
         1
       ],
@@ -41602,8 +41602,8 @@
       "metro": "Lille",
       "county": "Hauts-de-France",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 50.6375,
+      "lng": 3.036111,
       "tiers": [
         1
       ],
@@ -41960,8 +41960,8 @@
       "metro": "Abbeville",
       "county": "Hauts-de-France",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 50.1058,
+      "lng": 1.8358,
       "tiers": [
         1
       ],
@@ -44192,8 +44192,8 @@
       "metro": "Alençon",
       "county": "Normandy",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 48.4306,
+      "lng": 0.0931,
       "tiers": [
         1
       ],
@@ -44374,8 +44374,8 @@
       "metro": "Le Mans",
       "county": "Pays de la Loire",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 47.989,
+      "lng": 0.224,
       "tiers": [
         1
       ],
@@ -45907,8 +45907,8 @@
       "metro": "Berlin",
       "county": "Berlin",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 52.457222,
+      "lng": 13.568056,
       "tiers": [
         1
       ],
@@ -55190,8 +55190,8 @@
       "metro": "Guatemala City",
       "county": null,
       "continent": "North America",
-      "lat": null,
-      "lng": null,
+      "lat": 14.64,
+      "lng": -90.513,
       "tiers": [],
       "first_year": null,
       "last_year": null,
@@ -55252,8 +55252,8 @@
       "metro": "Port-au-Prince",
       "county": null,
       "continent": "North America",
-      "lat": null,
-      "lng": null,
+      "lat": 18.5944,
+      "lng": -72.3074,
       "tiers": [],
       "first_year": null,
       "last_year": null,
@@ -55283,8 +55283,8 @@
       "metro": "Port-au-Prince",
       "county": null,
       "continent": "North America",
-      "lat": null,
-      "lng": null,
+      "lat": 18.5944,
+      "lng": -72.3074,
       "tiers": [],
       "first_year": null,
       "last_year": null,
@@ -55345,8 +55345,8 @@
       "metro": "Tegucigalpa",
       "county": null,
       "continent": "North America",
-      "lat": null,
-      "lng": null,
+      "lat": 14.081,
+      "lng": -87.206,
       "tiers": [],
       "first_year": null,
       "last_year": null,
@@ -55387,8 +55387,8 @@
       "totals": {
         "titles": 3,
         "last_title": 2022,
-        "league_finals": 7,
-        "league_t4": 15,
+        "league_finals": 8,
+        "league_t4": 16,
         "major_cups": 5,
         "minor_cups": 5,
         "last_trophy": 2022,
@@ -55480,7 +55480,7 @@
         "titles": 4,
         "last_title": 2015,
         "league_finals": 9,
-        "league_t4": 14,
+        "league_t4": 15,
         "major_cups": 4,
         "minor_cups": 4,
         "last_trophy": 2015
@@ -56512,8 +56512,8 @@
       "metro": "Genoa",
       "county": "Liguria",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 44.41717,
+      "lng": 8.95164,
       "tiers": [
         1
       ],
@@ -57276,8 +57276,8 @@
       "metro": "Biella",
       "county": "Piedmont",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 45.5667,
+      "lng": 8.05,
       "tiers": [
         1
       ],
@@ -58202,8 +58202,8 @@
       "metro": "Alessandria",
       "county": "Piedmont",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 44.912,
+      "lng": 8.618,
       "tiers": [
         1
       ],
@@ -60356,8 +60356,8 @@
       "metro": "Lucca",
       "county": "Tuscany",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 43.847778,
+      "lng": 10.517222,
       "tiers": [
         1
       ],
@@ -61618,8 +61618,8 @@
       "metro": "Livorno",
       "county": "Tuscany",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 43.542,
+      "lng": 10.316,
       "tiers": [
         1
       ],
@@ -61798,8 +61798,8 @@
       "metro": "Naples",
       "county": "Campania",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 40.833,
+      "lng": 14.25,
       "tiers": [
         1
       ],
@@ -63788,8 +63788,8 @@
       "metro": "Valenza",
       "county": "Piedmont",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 45.0128,
+      "lng": 8.6417,
       "tiers": [
         1
       ],
@@ -64281,8 +64281,8 @@
       "totals": {
         "titles": 5,
         "last_title": 2025,
-        "league_finals": 1,
-        "league_t4": 2,
+        "league_finals": 2,
+        "league_t4": 3,
         "major_cups": 6,
         "minor_cups": 6,
         "last_trophy": 2025,
@@ -65868,8 +65868,8 @@
       "metro": "Alkmaar",
       "county": "North Holland",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 52.612778,
+      "lng": 4.742222,
       "tiers": [
         1
       ],
@@ -70206,8 +70206,8 @@
       "metro": "Veendam",
       "county": "Groningen",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 53.108611,
+      "lng": 6.864444,
       "tiers": [
         1
       ],
@@ -70662,8 +70662,8 @@
       "metro": "Rotterdam-The Hague",
       "county": "South Holland",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 52.09841,
+      "lng": 4.26012,
       "tiers": [
         1
       ],
@@ -71230,8 +71230,8 @@
       "metro": "Wageningen",
       "county": "Gelderland",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 51.9692,
+      "lng": 5.6653,
       "tiers": [
         1
       ],
@@ -71492,8 +71492,8 @@
       "metro": "Willemstad",
       "county": null,
       "continent": "North America",
-      "lat": null,
-      "lng": null,
+      "lat": 12.1084,
+      "lng": -68.9335,
       "tiers": [],
       "first_year": null,
       "last_year": null,
@@ -71552,8 +71552,8 @@
       "metro": "Hienghène",
       "county": null,
       "continent": "Oceania",
-      "lat": null,
-      "lng": null,
+      "lat": -20.69,
+      "lng": 164.94,
       "tiers": [],
       "first_year": null,
       "last_year": null,
@@ -71614,8 +71614,8 @@
       "metro": "Wellington",
       "county": null,
       "continent": "Oceania",
-      "lat": null,
-      "lng": null,
+      "lat": -41.2866,
+      "lng": 174.7756,
       "tiers": [],
       "first_year": null,
       "last_year": null,
@@ -72068,8 +72068,8 @@
       "metro": "Asuncion",
       "county": null,
       "continent": "South America",
-      "lat": null,
-      "lng": null,
+      "lat": -25.3,
+      "lng": -57.6375,
       "tiers": [],
       "first_year": null,
       "last_year": null,
@@ -73507,8 +73507,8 @@
       "metro": "Lisbon",
       "county": "Lisbon",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 38.75256,
+      "lng": -9.18528,
       "tiers": [
         1
       ],
@@ -78963,8 +78963,8 @@
       "metro": "Aberdeen",
       "county": "Aberdeen",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 57.1593,
+      "lng": -2.08872,
       "tiers": [
         3
       ],
@@ -79228,8 +79228,8 @@
       "metro": "Glasgow",
       "county": "North Lanarkshire",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.8497,
+      "lng": -4.20561,
       "tiers": [
         3
       ],
@@ -79632,8 +79632,8 @@
       "metro": "Glasgow",
       "county": "North Lanarkshire",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.8497,
+      "lng": -4.20561,
       "tiers": [
         3
       ],
@@ -79901,8 +79901,8 @@
       "metro": "Stirling",
       "county": "Clackmannanshire",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 56.1191,
+      "lng": -3.91194,
       "tiers": [
         3
       ],
@@ -80243,8 +80243,8 @@
       "metro": "Arbroath",
       "county": "Angus",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 56.5523,
+      "lng": -2.5914,
       "tiers": [
         3
       ],
@@ -80281,8 +80281,8 @@
       "metro": "Edinburgh",
       "county": "West Lothian",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.9388,
+      "lng": -3.2325,
       "tiers": [
         2
       ],
@@ -80337,8 +80337,8 @@
       "metro": "Glasgow",
       "county": "East Renfrewshire",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.8497,
+      "lng": -4.20561,
       "tiers": [
         2,
         3
@@ -80412,8 +80412,8 @@
       "metro": "Ayr",
       "county": "South Ayrshire",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.4697,
+      "lng": -4.61996,
       "tiers": [
         2
       ],
@@ -80472,8 +80472,8 @@
       "metro": "Ayr",
       "county": "South Ayrshire",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.4697,
+      "lng": -4.61996,
       "tiers": [
         2
       ],
@@ -80770,8 +80770,8 @@
       "metro": "Ayr",
       "county": "South Ayrshire",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.4697,
+      "lng": -4.61996,
       "tiers": [
         3
       ],
@@ -80816,8 +80816,8 @@
       "metro": "Edinburgh",
       "county": "West Lothian",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.9388,
+      "lng": -3.2325,
       "tiers": [
         2
       ],
@@ -80866,8 +80866,8 @@
       "metro": "Beith",
       "county": "North Ayrshire",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.75,
+      "lng": -4.6333,
       "tiers": [
         3
       ],
@@ -81114,8 +81114,8 @@
       "metro": "Edinburgh",
       "county": "Midlothian",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.9388,
+      "lng": -3.2325,
       "tiers": [
         4
       ],
@@ -81366,8 +81366,8 @@
       "metro": "Broxburn",
       "county": "West Lothian",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.9333,
+      "lng": -3.4667,
       "tiers": [
         2
       ],
@@ -81743,8 +81743,8 @@
       "metro": "Glasgow",
       "county": "Glasgow",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.8497,
+      "lng": -4.20561,
       "tiers": [
         3
       ],
@@ -81789,8 +81789,8 @@
       "metro": "Clackmannan",
       "county": "Clackmannanshire",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 56.105,
+      "lng": -3.755,
       "tiers": [
         2,
         3
@@ -82125,8 +82125,8 @@
       "metro": "Glasgow",
       "county": "North Lanarkshire",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.8497,
+      "lng": -4.20561,
       "tiers": [
         3
       ],
@@ -82604,8 +82604,8 @@
       "metro": "Cowdenbeath",
       "county": "Fife",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 56.1088,
+      "lng": -3.34717,
       "tiers": [
         3
       ],
@@ -82953,8 +82953,8 @@
       "metro": "Glasgow",
       "county": "West Dunbartonshire",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.8497,
+      "lng": -4.20561,
       "tiers": [
         3
       ],
@@ -82993,8 +82993,8 @@
       "metro": "Glasgow",
       "county": "West Dunbartonshire",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.8497,
+      "lng": -4.20561,
       "tiers": [
         3
       ],
@@ -83316,8 +83316,8 @@
       "metro": "Dundee",
       "county": "Dundee",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 56.4747,
+      "lng": -2.97352,
       "tiers": [
         3
       ],
@@ -83605,8 +83605,8 @@
       "metro": "Dundee",
       "county": "Dundee",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 56.4747,
+      "lng": -2.97352,
       "tiers": [
         3
       ],
@@ -83651,8 +83651,8 @@
       "metro": "Dundee",
       "county": "Dundee",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 56.4747,
+      "lng": -2.97352,
       "tiers": [
         2
       ],
@@ -83925,8 +83925,8 @@
       "metro": "Dunfermline",
       "county": "Fife",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 56.0756,
+      "lng": -3.44196,
       "tiers": [
         3
       ],
@@ -83973,8 +83973,8 @@
       "metro": "Shotts",
       "county": "North Lanarkshire",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.82,
+      "lng": -3.8,
       "tiers": [
         3
       ],
@@ -84246,8 +84246,8 @@
       "metro": "Methil",
       "county": "Fife",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 56.1889,
+      "lng": -2.99914,
       "tiers": [
         3
       ],
@@ -85008,8 +85008,8 @@
       "metro": "Falkirk",
       "county": "Falkirk",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 56.0053,
+      "lng": -3.75262,
       "tiers": [
         3
       ],
@@ -85286,8 +85286,8 @@
       "metro": "Galston",
       "county": "East Ayrshire",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.6,
+      "lng": -4.3833,
       "tiers": [
         3
       ],
@@ -85326,8 +85326,8 @@
       "metro": "Glasgow",
       "county": "Glasgow",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.8497,
+      "lng": -4.20561,
       "tiers": [
         2
       ],
@@ -85981,8 +85981,8 @@
       "metro": "Glasgow",
       "county": "South Lanarkshire",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.8497,
+      "lng": -4.20561,
       "tiers": [
         3
       ],
@@ -86318,8 +86318,8 @@
       "metro": "Edinburgh",
       "county": "Edinburgh",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.9388,
+      "lng": -3.2325,
       "tiers": [
         3
       ],
@@ -86364,8 +86364,8 @@
       "metro": "Helensburgh",
       "county": "Argyll and Bute",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 56.0033,
+      "lng": -4.7333,
       "tiers": [
         3
       ],
@@ -86693,8 +86693,8 @@
       "metro": "Edinburgh",
       "county": "Edinburgh",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.9388,
+      "lng": -3.2325,
       "tiers": [
         3
       ],
@@ -86840,8 +86840,8 @@
       "metro": "Glasgow",
       "county": "Renfrewshire",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.8497,
+      "lng": -4.20561,
       "tiers": [
         2,
         3
@@ -87224,8 +87224,8 @@
       "metro": "Kilmarnock",
       "county": "East Ayrshire",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.6046,
+      "lng": -4.50846,
       "tiers": [
         3
       ],
@@ -87274,8 +87274,8 @@
       "metro": "Glasgow",
       "county": "Glasgow",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.8497,
+      "lng": -4.20561,
       "tiers": [
         2
       ],
@@ -87470,8 +87470,8 @@
       "metro": "Edinburgh",
       "county": "Edinburgh",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.9388,
+      "lng": -3.2325,
       "tiers": [
         3
       ],
@@ -87506,8 +87506,8 @@
       "metro": "Glasgow",
       "county": "Glasgow",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.8497,
+      "lng": -4.20561,
       "tiers": [
         2
       ],
@@ -87651,8 +87651,8 @@
       "metro": "Lochgelly",
       "county": "Fife",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 56.13,
+      "lng": -3.31,
       "tiers": [
         2,
         3
@@ -87775,8 +87775,8 @@
       "metro": "Lockerbie",
       "county": "Dumfries and Galloway",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.1214,
+      "lng": -3.3556,
       "tiers": [
         3
       ],
@@ -88037,8 +88037,8 @@
       "metro": "Greenock",
       "county": "Inverclyde",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.9414,
+      "lng": -4.72719,
       "tiers": [
         3
       ],
@@ -88368,8 +88368,8 @@
       "metro": "Glasgow",
       "county": "North Lanarkshire",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.8497,
+      "lng": -4.20561,
       "tiers": [
         3
       ],
@@ -88414,8 +88414,8 @@
       "metro": "Sanquhar",
       "county": "Dumfries and Galloway",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.37,
+      "lng": -3.92,
       "tiers": [
         2,
         3
@@ -88457,8 +88457,8 @@
       "metro": "Glasgow",
       "county": "Glasgow",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.8497,
+      "lng": -4.20561,
       "tiers": [
         2
       ],
@@ -88781,8 +88781,8 @@
       "metro": "Glasgow",
       "county": "Glasgow",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.8497,
+      "lng": -4.20561,
       "tiers": [
         3
       ],
@@ -88827,8 +88827,8 @@
       "metro": "Peebles",
       "county": "Scottish Borders",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.6519,
+      "lng": -3.1889,
       "tiers": [
         3
       ],
@@ -89253,8 +89253,8 @@
       "metro": "Dumfries",
       "county": "Dumfries and Galloway",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.0703,
+      "lng": -3.6246,
       "tiers": [
         3
       ],
@@ -89574,8 +89574,8 @@
       "metro": "Glasgow",
       "county": "Glasgow",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.8497,
+      "lng": -4.20561,
       "tiers": [
         3
       ],
@@ -89888,8 +89888,8 @@
       "metro": "Kirkcaldy",
       "county": "Fife",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 56.0999,
+      "lng": -3.16851,
       "tiers": [
         3
       ],
@@ -90235,8 +90235,8 @@
       "metro": "Glasgow",
       "county": "Glasgow",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.8497,
+      "lng": -4.20561,
       "tiers": [
         3
       ],
@@ -90429,8 +90429,8 @@
       "metro": "Larkhall",
       "county": "South Lanarkshire",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.7333,
+      "lng": -3.9667,
       "tiers": [
         3
       ],
@@ -90521,8 +90521,8 @@
       "metro": "Annan",
       "county": "Dumfries and Galloway",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 54.9948,
+      "lng": -3.2612,
       "tiers": [
         3
       ],
@@ -90954,8 +90954,8 @@
       "metro": "Perth",
       "county": "Perth and Kinross",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 56.395,
+      "lng": -3.4308,
       "tiers": [
         3
       ],
@@ -91297,8 +91297,8 @@
       "metro": "Glasgow",
       "county": "Renfrewshire",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.8497,
+      "lng": -4.20561,
       "tiers": [
         3
       ],
@@ -91774,8 +91774,8 @@
       "metro": "Stirling",
       "county": "Stirling",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 56.1191,
+      "lng": -3.91194,
       "tiers": [
         3
       ],
@@ -92183,8 +92183,8 @@
       "metro": "Glasgow",
       "county": "Glasgow",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 55.8497,
+      "lng": -4.20561,
       "tiers": [
         3
       ],
@@ -92566,8 +92566,8 @@
       "metro": "Seoul",
       "county": "Seoul",
       "continent": "Asia",
-      "lat": null,
-      "lng": null,
+      "lat": 37.56936,
+      "lng": 126.89683,
       "tiers": [],
       "first_year": null,
       "last_year": null,
@@ -92659,8 +92659,8 @@
       "metro": "Seoul",
       "county": "Seoul",
       "continent": "Asia",
-      "lat": null,
-      "lng": null,
+      "lat": 37.56936,
+      "lng": 126.89683,
       "tiers": [],
       "first_year": null,
       "last_year": null,
@@ -92689,8 +92689,8 @@
       "metro": "Almería",
       "county": "Andalusia",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 36.838,
+      "lng": -2.459,
       "tiers": [
         1
       ],
@@ -96104,8 +96104,8 @@
       "metro": "Burgos",
       "county": "Castile-Leon",
       "continent": "Europe",
-      "lat": null,
-      "lng": null,
+      "lat": 42.35,
+      "lng": -3.7,
       "tiers": [
         1
       ],
@@ -98153,8 +98153,8 @@
       "metro": "Paramaribo",
       "county": null,
       "continent": "North America",
-      "lat": null,
-      "lng": null,
+      "lat": 5.852,
+      "lng": -55.2038,
       "tiers": [],
       "first_year": null,
       "last_year": null,
@@ -98183,8 +98183,8 @@
       "metro": "Paramaribo",
       "county": null,
       "continent": "North America",
-      "lat": null,
-      "lng": null,
+      "lat": 5.852,
+      "lng": -55.2038,
       "tiers": [],
       "first_year": null,
       "last_year": null,
@@ -98486,8 +98486,8 @@
       "metro": "Saint James",
       "county": null,
       "continent": "North America",
-      "lat": null,
-      "lng": null,
+      "lat": 10.67,
+      "lng": -61.53,
       "tiers": [],
       "first_year": null,
       "last_year": null,
@@ -99897,8 +99897,8 @@
       "metro": "Montevideo",
       "county": null,
       "continent": "South America",
-      "lat": null,
-      "lng": null,
+      "lat": -34.894444,
+      "lng": -56.152778,
       "tiers": [],
       "first_year": null,
       "last_year": null,
@@ -100047,8 +100047,8 @@
       "metro": "Maldonado",
       "county": null,
       "continent": "South America",
-      "lat": null,
-      "lng": null,
+      "lat": -34.9,
+      "lng": -54.95,
       "tiers": [],
       "first_year": null,
       "last_year": null,
