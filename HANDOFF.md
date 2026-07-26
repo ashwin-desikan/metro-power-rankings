@@ -450,3 +450,13 @@ Dropped the stale ceremonial `second` for hungary/bulgaria (presidencies in flux
 - WD now == known-wrong → silent.
 - WD now == anything else → ntfy HIGH "possible real handover we're masking — review".
 Verified live (all 3 currently unchanged/silent) and simulated (fires FIXED + CHANGED correctly). **When you touch a CURATED_OVERRIDE, update `WD_SEEN` in that script to match**, or it'll false-alert.
+
+## 2026-07-26 — mini → windows (gap-league-watch LIVE; plus a key-var bug and standings not actually loaded)
+
+**gap-league-watch is installed + loaded** (`com.citizenofnowhere.gap-league-watch`, daily 05:00 UTC via the 05:00/06:00-local + UTC-guard trick). FORCE_RUN end-to-end verified from the mini: self-test OK, polled all 10 leagues in leagues_pending.json (all `awaiting_target` — 2026-27 not published; api latest = 2025), seeded `football_league_watch` for 10 leagues, exited clean. Plist runs the repo copy directly, so no repo→live deploy gap for this one.
+
+**Bug fixed (`11836e21c`): the wrapper required `SUPABASE_WRITE_KEY`, which is NOT in the mini's env.** The env has `SUPABASE_SERVICE_KEY` (what cricket/f1/wc2026 all use, and what `watch_gap_leagues.py`'s `supa_key_soft()` already falls back to). The hard-check would have failed the job every run despite a working key. Relaxed `run-gap-league-watch.sh` to accept either. **`run-football-standings.sh:30` has the identical check** — it needs the same fix (or add `SUPABASE_WRITE_KEY` to the mini env), else standings will hard-fail too. Please standardise on `SUPABASE_SERVICE_KEY`.
+
+**Finding: the football-standings job is NOT loaded on the mini.** Your note said "the keys are already in env from the standings job," but `launchctl list` shows neither football-standings nor gap-league-watch was loaded before today — so the daily standings pull (`refresh.py --write`, the actual data pipeline) has never been running here. Only `APISPORTS_KEY` (from WC2026) + `SUPABASE_SERVICE_KEY` were present. **Do you want the mini to also load `com.citizenofnowhere.football-standings.plist`?** It's the primary pipeline gap-watch complements. (Same key fix applies.)
+
+**Observation: gap-league-watch has no healthchecks tile.** Its plist runs the wrapper directly, not via `hc-run.sh`, so it won't appear on the per-job health dashboard like the mini's other ~16 jobs. Recommend wrapping it (needs care for the 05:00/06:00 double-fire — one is a guard skip). Holding on this pending Ashwin's call.
