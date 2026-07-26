@@ -116,6 +116,12 @@ run_step() {  # run_step "label" cmd...
 # by _plausible() plus a single-unambiguous-office check, so a noisy Wikidata
 # edit is skipped rather than published.
 run_step "leaders (auto-apply)" "$PY" scripts/leaders/refresh-current-leaders.py
+# Weekly reconciliation of the curated leader overrides (saudi/hungary/bulgaria)
+# against live Wikidata. Overrides auto-apply their forced value every run, so a
+# real handover in an overridden country would otherwise be masked silently. This
+# ntfy's if WD has caught up (override removable) or CHANGED to a new value (a
+# possible real change to review). Read-only: queries WD, writes nothing, exits 0.
+run_step "leaders override audit" "$PY" scripts/leaders/check-wikidata-overrides.py
 run_step "governors (add-only)" "$PY" scripts/civic/refresh_governors.py --add-only
 run_step "congress"             "$PY" scripts/civic/refresh_congress.py
 run_step "mayors"               "$PY" scripts/civic/refresh_mayors.py
@@ -181,6 +187,15 @@ DATA_PATHS="public/data scripts/civic/city-qids.json scripts/civic/cabinet-posit
 if git diff --quiet -- $DATA_PATHS; then
   note "no data change this run; nothing to commit"
 else
+  # Vandalism gate (last check before commit): blocks _current.json if a pinned
+  # leader drifted or a name changed while the office did NOT turn over (same
+  # `since`) -- the signature that shipped India's head of state as "Ganesh rajput"
+  # (#5 most powerful person) via 8c3f77912. Nonzero = HOLD: alert + do NOT commit,
+  # leave the working tree for a human. This is a real fault (human needed), so it
+  # reddens the healthchecks tile via fail() -> exit 1, not the soft green path.
+  note "leaders sanity gate"
+  "$PY" scripts/check-leaders-sanity.py \
+    || fail "leaders sanity gate HELD the commit -- _current.json has a vandalism/pin flag; review scripts/check-leaders-sanity.py output, do NOT auto-commit"
   git config user.name  "metro-mini[bot]"
   git config user.email "metro-mini-bot@users.noreply.github.com"
   # A leadership change rewrites the per-country history (leaders/<slug>.json),

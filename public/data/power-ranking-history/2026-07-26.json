@@ -35,8 +35,8 @@
     },
     {
       "rank": 5,
-      "name": "Ganesh rajput",
-      "bare": "ganesh rajput",
+      "name": "Narendra Modi",
+      "bare": "narendra modi",
       "category": "National",
       "jurisdiction": "India",
       "power": 403.3
@@ -59,8 +59,8 @@
     },
     {
       "rank": 8,
-      "name": "Salman bin Abdulaziz Al Saud",
-      "bare": "salman bin abdulaziz al saud",
+      "name": "⚠️ Mohammed bin Salman",
+      "bare": "mohammed bin salman",
       "category": "National",
       "jurisdiction": "Saudi Arabia",
       "power": 347.7
@@ -243,8 +243,8 @@
     },
     {
       "rank": 31,
-      "name": "Isaac Herzog",
-      "bare": "isaac herzog",
+      "name": "⚠️ Benjamin Netanyahu",
+      "bare": "benjamin netanyahu",
       "category": "National",
       "jurisdiction": "Israel",
       "power": 184.9
@@ -263,7 +263,7 @@
       "bare": "gavin newsom",
       "category": "Sub-national",
       "jurisdiction": "California",
-      "power": 180.2
+      "power": 180.1
     },
     {
       "rank": 34,
@@ -439,7 +439,7 @@
       "bare": "zohran mamdani",
       "category": "Mayor",
       "jurisdiction": "New York",
-      "power": 131.1
+      "power": 131.4
     },
     {
       "rank": 56,
@@ -447,7 +447,7 @@
       "bare": "sadiq khan",
       "category": "Mayor",
       "jurisdiction": "London",
-      "power": 129.9
+      "power": 130.0
     },
     {
       "rank": 57,
@@ -495,7 +495,7 @@
       "bare": "greg abbott",
       "category": "Sub-national",
       "jurisdiction": "Texas",
-      "power": 116.1
+      "power": 116.0
     },
     {
       "rank": 63,
@@ -523,19 +523,19 @@
     },
     {
       "rank": 66,
+      "name": "Emmanuel Grégoire",
+      "bare": "emmanuel grégoire",
+      "category": "Mayor",
+      "jurisdiction": "Paris",
+      "power": 103.3
+    },
+    {
+      "rank": 67,
       "name": "C.C. Wei",
       "bare": "c.c. wei",
       "category": "Corporate",
       "jurisdiction": "TSMC",
       "power": 103.3
-    },
-    {
-      "rank": 67,
-      "name": "Emmanuel Grégoire",
-      "bare": "emmanuel grégoire",
-      "category": "Mayor",
-      "jurisdiction": "Paris",
-      "power": 103.2
     },
     {
       "rank": 68,
@@ -547,19 +547,19 @@
     },
     {
       "rank": 69,
-      "name": "Huang Kunming",
-      "bare": "huang kunming",
-      "category": "Sub-national",
-      "jurisdiction": "Guangdong",
-      "power": 100.4
-    },
-    {
-      "rank": 70,
       "name": "Roger Goodell",
       "bare": "roger goodell",
       "category": "Sport",
       "jurisdiction": "NFL",
       "power": 100.1
+    },
+    {
+      "rank": 70,
+      "name": "Huang Kunming",
+      "bare": "huang kunming",
+      "category": "Sub-national",
+      "jurisdiction": "Guangdong",
+      "power": 100.0
     },
     {
       "rank": 71,
@@ -599,7 +599,7 @@
       "bare": "yuriko koike",
       "category": "Mayor",
       "jurisdiction": "Tokyo",
-      "power": 95.3
+      "power": 95.9
     },
     {
       "rank": 76,
@@ -647,7 +647,7 @@
       "bare": "daniel lurie",
       "category": "Mayor",
       "jurisdiction": "San Francisco",
-      "power": 89.4
+      "power": 89.1
     },
     {
       "rank": 82,
@@ -699,18 +699,18 @@
     },
     {
       "rank": 88,
-      "name": "Lin Wu",
-      "bare": "lin wu",
-      "category": "Sub-national",
-      "jurisdiction": "Shandong",
-      "power": 81.8
-    },
-    {
-      "rank": 89,
       "name": "Anwar Ibrahim",
       "bare": "anwar ibrahim",
       "category": "National",
       "jurisdiction": "Malaysia",
+      "power": 81.6
+    },
+    {
+      "rank": 89,
+      "name": "Lin Wu",
+      "bare": "lin wu",
+      "category": "Sub-national",
+      "jurisdiction": "Shandong",
       "power": 81.6
     },
     {
@@ -719,7 +719,7 @@
       "bare": "yin yong",
       "category": "Mayor",
       "jurisdiction": "Beijing",
-      "power": 81.3
+      "power": 81.5
     },
     {
       "rank": 91,
@@ -755,27 +755,27 @@
     },
     {
       "rank": 95,
-      "name": "Karen Bass",
-      "bare": "karen bass",
-      "category": "Mayor",
-      "jurisdiction": "Los Angeles",
-      "power": 78.0
-    },
-    {
-      "rank": 96,
-      "name": "Gong Zheng",
-      "bare": "gong zheng",
-      "category": "Mayor",
-      "jurisdiction": "Shanghai",
-      "power": 77.6
-    },
-    {
-      "rank": 97,
       "name": "Oh Se-hoon",
       "bare": "oh se-hoon",
       "category": "Mayor",
       "jurisdiction": "Seoul",
-      "power": 77.5
+      "power": 78.3
+    },
+    {
+      "rank": 96,
+      "name": "Karen Bass",
+      "bare": "karen bass",
+      "category": "Mayor",
+      "jurisdiction": "Los Angeles",
+      "power": 78.2
+    },
+    {
+      "rank": 97,
+      "name": "Gong Zheng",
+      "bare": "gong zheng",
+      "category": "Mayor",
+      "jurisdiction": "Shanghai",
+      "power": 77.7
     },
     {
       "rank": 98,
@@ -783,7 +783,7 @@
       "bare": "valérie pécresse",
       "category": "Sub-national",
       "jurisdiction": "Île-de-France",
-      "power": 75.8
+      "power": 75.9
     },
     {
       "rank": 99,
@@ -791,7 +791,7 @@
       "bare": "wang hao",
       "category": "Sub-national",
       "jurisdiction": "Zhejiang",
-      "power": 74.3
+      "power": 74.5
     },
     {
       "rank": 100,

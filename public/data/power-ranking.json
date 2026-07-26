@@ -137,7 +137,7 @@
       "delta": 0
     },
     {
-      "name": "Mohammed bin Salman",
+      "name": "⚠️ Mohammed bin Salman",
       "role": "PM, Saudi Arabia",
       "category": "National",
       "jurisdiction": "Saudi Arabia",
@@ -505,8 +505,8 @@
       "delta": 0
     },
     {
-      "name": "Isaac Herzog",
-      "role": "Pres., Israel",
+      "name": "⚠️ Benjamin Netanyahu",
+      "role": "PM, Israel",
       "category": "National",
       "jurisdiction": "Israel",
       "metro": "Jerusalem",
@@ -515,10 +515,10 @@
       "weight": 3.157,
       "power": 184.9,
       "jurisdictionHref": "/countries/israel",
-      "transition": "",
-      "prevRank": 31,
-      "isNew": false,
-      "delta": 0
+      "transition": "Israeli election due by Oct 2026",
+      "prevRank": null,
+      "isNew": true,
+      "delta": null
     },
     {
       "name": "Mark Carney",
@@ -1637,6 +1637,12 @@
       "prevRank": 8,
       "category": "National",
       "jurisdiction": "Saudi Arabia"
+    },
+    {
+      "name": "Isaac Herzog",
+      "prevRank": 31,
+      "category": "National",
+      "jurisdiction": "Israel"
     }
   ]
 }

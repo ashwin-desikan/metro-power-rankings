@@ -170,13 +170,9 @@
     "role": "Pres."
   },
   "bulgaria": {
-    "name": "Kiril Petkov",
+    "name": "Rumen Radev",
     "role": "PM",
-    "second": {
-      "name": "Iliana Iotova",
-      "role": "Pres."
-    },
-    "since": "2021-12-13"
+    "since": "2026-05-08"
   },
   "burkina-faso": {
     "name": "Ibrahim Traoré",
@@ -505,10 +501,6 @@
   "hungary": {
     "name": "Péter Magyar",
     "role": "PM",
-    "second": {
-      "name": "Tamás Sulyok",
-      "role": "Pres."
-    },
     "since": "2026-05-09"
   },
   "iceland": {
@@ -554,9 +546,13 @@
     "since": "2025-11-11"
   },
   "israel": {
-    "name": "Isaac Herzog",
-    "role": "Pres.",
-    "since": "2021-07-07"
+    "name": "⚠️ Benjamin Netanyahu",
+    "role": "PM",
+    "second": {
+      "name": "Isaac Herzog",
+      "role": "Pres."
+    },
+    "since": "2022-12-29"
   },
   "italy": {
     "name": "Giorgia Meloni",
@@ -1001,7 +997,7 @@
     "since": "2021-10-02"
   },
   "saudi-arabia": {
-    "name": "Mohammed bin Salman",
+    "name": "⚠️ Mohammed bin Salman",
     "role": "PM",
     "since": "2022-09-27"
   },

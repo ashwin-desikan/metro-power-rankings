@@ -406,3 +406,47 @@ Long interactive session with Ashwin on `/screen`. Shipped as `83f21657d` (code 
 1. **Uncommitted scratch in the working tree** (left deliberately, `device_bash` can't delete): `public/data/screen/screen.json.bak-premerge`, `screen.json.bak-domestic`, `screen.json.bak-prev2`, `screen.json.bak-20260725-qidfix`, `.commit-msg-qidfix.txt`. Candidates for `.gitignore` or manual deletion whenever convenient — none are referenced by anything.
 2. **Nothing changes for the mini's weekly cadence.** The `/screen` metro/country/people pages are `force-static` build-time (baked by 83f21657d's deploy); only `screen_number_ones.json` stays on the weekly refresh and it was untouched here.
 3. **Annual-rebuild reminder (windows), reinforcing 07-23:** `_screen_of_metros_pipeline/` in OneDrive is the source of truth and this session moved it substantially (new scorer, new consensus/merge/supplemental data, 181 overrides). Snapshot the whole folder before the next March post-Oscars rebuild so the redesign survives a curated regen.
+
+## 2026-07-24 — mini → windows (leaders vandalism FIXED — plus your hand-fix wasn't in main, and Saudi needs an override)
+
+Fixed and pushed in `9a26eec17`. Details, because two of your assumptions didn't hold.
+
+**Your hand-fix never reached main.** You said india/saudi were "already fixed by hand, do not overwrite." But main (86405951e) still had `india: "Ganesh rajput", Pres.` live in `_current.json` AND `power-ranking.json` (rendering as #5 on /power) — the last two commits touching `_current.json` were mini runs, no fix among them. So production was still serving the vandalism when I picked this up. It's fixed now; if you have a local hand-fix, it's superseded — pull, don't push it.
+
+**India (fixed at source):** its Wikidata P122 form comes back as bare `"republic"`, so the `"parliamentary" in form` heuristic missed it and it led President-first. Added `india` to `PM_LED`. Now leads with Modi (PM).
+
+**Saudi needs a curated override — a mapping fix alone can't work.** You asked me to "confirm Saudi resolves to MBS as PM." It doesn't: Wikidata returns **King Salman for BOTH P35 and P6** (2015 date) — it has no knowledge of MBS as PM. So I added `CURATED_OVERRIDES = {"saudi-arabia": MBS/PM/2022-09-27}` in the source (glyph-processed, since MBS is warn-listed → committed as `⚠️ Mohammed bin Salman`). Without this, the scrape would rewrite Salman every run and the gate would HOLD forever, freezing the whole weekly commit.
+
+**Vandalism couldn't be stopped by office-mapping alone.** With India PM-led, the vandalized head-of-state label just moves into the ceremonial `second` (which /power ignores but /countries shows). So I also: (a) strengthened `_plausible()` to reject capitalized-first/lowercased-rest names ("Ganesh rajput" — the earlier guard only caught all-lowercase), and (b) made `build_entry` filter both candidates through it, so a bad name never lands as primary OR second. Dry-ran the fixed source across all countries: **0 legit leaders dropped.**
+
+**The gate (`scripts/check-leaders-sanity.py`) — 3 deviations from your spec, all forced by the data:**
+1. PINS compare the **bare** name (glyphs stripped) — else the pin hard-fails forever on `⚠️ Mohammed bin Salman`.
+2. The vandalism + lowercase checks also scan the ceremonial **`second`** name — that's exactly where the India vandalism sat.
+3. Check #4 ("no `since` date") **downgraded HARD→SOFT**: 5 legitimate entries carry no date (Gulf monarchies, the Swiss Federal Council), so hard-failing there would HOLD every run. The date-carrying vandalism is caught by the pin + name-change-same-since checks anyway.
+Wired as the last step before commit in `metro-mini-refresh.sh` (both copies synced): nonzero → alert + no commit + red tile. Verified it PASSES clean now and HOLDS on a simulated re-vandalism.
+
+**`_changes.json`:** removed 2 bogus India records — the vandalism (`Murmu→Ganesh`) and a malformed `Modi→Murmu (President)` artifact of the old mis-tracking (Modi was never President; no real PM handover happened).
+
+### Same-class cases I did NOT touch — please confirm the correct values (I may be wrong on current events)
+A fresh scrape disagrees with these committed values; I don't know which is right, so I left them:
+- **israel**: committed `Isaac Herzog` (President); Netanyahu is PM. Looks like the same parliamentary-republic-shows-president pattern — but confirm before I add israel to PM_LED.
+- **hungary** (`Péter Magyar`) and **bulgaria** (`Kiril Petkov`): committed values differ from current Wikidata. Could be curated-and-current or stale — your call.
+- **united-kingdom / england / scotland = Andy Burnham (PM):** I wrongly flagged this as vandalism earlier — Ashwin corrected me that Burnham IS the PM (past my knowledge cutoff). **I never modified it; it's untouched and preserved.** Noting only so you know it's intentional, not missed.
+
+## 2026-07-24 — mini → windows (the same-class leaders cases are now fixed, news-verified)
+
+Followed up on the three I flagged for confirmation — verified each with news lookups (not by asking), fixed and pushed:
+- **israel**: added to `PM_LED`. Netanyahu is PM (since 2022-12-29); Wikidata P6 is current so the source derives it. Was showing ceremonial Pres. Herzog.
+- **hungary**: `CURATED_OVERRIDES` → Péter Magyar (PM, 2026-05-09). Wikidata P6 is an unresolved QID (Q124488292), so the scrape regressed to acting-Pres Forsthoffer. Remove the override once WD resolves the label.
+- **bulgaria**: `CURATED_OVERRIDES` → Rumen Radev (PM, 2026-05-08; he resigned the presidency). Wikidata P6 still returns Petkov (2021). Remove the override once WD catches up.
+Dropped the stale ceremonial `second` for hungary/bulgaria (presidencies in flux). CURATED_OVERRIDES now holds saudi-arabia + hungary + bulgaria — each is a Wikidata-is-wrong case and each should be revisited/removed when Wikidata corrects.
+
+## 2026-07-24 — mini → windows (override-masking guard + DRY_RUN audit)
+
+**DRY_RUN footgun audit (Ashwin asked):** `metro-mini-refresh.sh` was the ONLY affected wrapper — the only one sourcing `config.env` (which sets `DRY_RUN=0`) while capturing `DRY_RUN` after the source. The other 7 (`run-cricket-weekly/monthly`, `run-euro-comps`, `run-f1-weekly`, `run-scraper-refresh`, `run-sound-weekly`, `run-wc2026-daily`) capture `DRY_RUN` BEFORE sourcing AND source `metro-supabase/env`, which sets no `DRY_RUN`. Verified empirically: `DRY_RUN=1` → effective 1 on all seven. Nothing to fix there.
+
+**New weekly guard so an override never masks a real handover** (`a824f6988`): a `CURATED_OVERRIDE` auto-applies its value every run, so unlike a validator PIN (which fails loud — the scrape disagrees and the gate HOLDs), a real leadership change in saudi/hungary/bulgaria would be silently hidden. Added `scripts/leaders/check-wikidata-overrides.py` (read-only, exits 0) + a weekly step in the refresh. Each run it compares live Wikidata's head-of-government for the 3 overrides against the forced name and the known-wrong value (`WD_SEEN` inside the script):
+- WD now == our override → ntfy "Wikidata caught up, remove override".
+- WD now == known-wrong → silent.
+- WD now == anything else → ntfy HIGH "possible real handover we're masking — review".
+Verified live (all 3 currently unchanged/silent) and simulated (fires FIXED + CHANGED correctly). **When you touch a CURATED_OVERRIDE, update `WD_SEEN` in that script to match**, or it'll false-alert.
