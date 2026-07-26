@@ -42,7 +42,7 @@ OUT = LEADERS_DIR / "_current.json"
 PM_LED = {
     "germany","poland","austria","czech-republic","hungary","greece","portugal","finland",
     "ethiopia","iraq","georgia","croatia","bulgaria","bosnia-herzegovina",
-    "montenegro","slovenia","slovakia","lithuania","india",
+    "montenegro","slovenia","slovakia","lithuania","india","israel",
 }
 # Curated overrides for countries where Wikidata is stale or wrong about the
 # office holder. Applied verbatim in main() (still glyph-processed by apply_warn),
@@ -53,6 +53,14 @@ CURATED_OVERRIDES = {
     # Mohammed bin Salman has been Prime Minister (head of government) since
     # 2022-09-27; we track heads of government, so this is the PM, not the King.
     "saudi-arabia": {"name": "Mohammed bin Salman", "role": "PM", "since": "2022-09-27"},
+    # Wikidata's P6 for Hungary is an unresolved QID (Q124488292, no en label), so
+    # it degrades to acting-President Forsthoffer. Péter Magyar has been PM since
+    # 2026-05-09 (news-verified). Remove this override once Wikidata resolves the label.
+    "hungary": {"name": "Péter Magyar", "role": "PM", "since": "2026-05-09"},
+    # Wikidata's P6 for Bulgaria is stale (still Kiril Petkov, 2021). Rumen Radev
+    # resigned the presidency and was elected PM on 2026-05-08 (news-verified).
+    # Remove this override once Wikidata catches up.
+    "bulgaria": {"name": "Rumen Radev", "role": "PM", "since": "2026-05-08"},
 }
 # Executive monarchies where the sovereign (not the appointed head of government) leads.
 MONARCH_LED = {"monaco","eswatini","oman","brunei"}
