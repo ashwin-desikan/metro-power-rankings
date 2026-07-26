@@ -14,7 +14,7 @@ import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
 import { getLiveCflStandings } from "@/lib/cflStandings";
 import { getLiveF1Standings } from "@/lib/f1Standings";
 import { getNpbStandings } from "@/lib/npbStandings";
-import { getClubStandings, getClubCompetitions, type LiveLeague, type LiveComp, type LiveRow } from "@/lib/clubFootballLive";
+import { getClubStandings, getClubCompetitions, type LiveLeague, type LiveComp, type LiveRow, type LiveFixture, type LiveTeamRef } from "@/lib/clubFootballLive";
 import { getFootyLiveStandings } from "@/lib/_footyStandings";
 import { getLiveGolfMajor } from "@/lib/golfLeaderboard";
 import { getLiveTennisSlam } from "@/lib/tennisDraw";
@@ -22,7 +22,6 @@ import { f1ConstructorCrestName } from "@/lib/f1Crest";
 import { getWtcStandings } from "@/lib/wtcStandings";
 import { getRugbyFixtures, type RugbyMatch } from "@/lib/rugbyFixtures";
 import { getCricketFixtures, type CricketMatch } from "@/lib/cricketFixtures";
-import { getEuroCompFixtures, type EuroMatch } from "@/lib/euroComps";
 
 import { getAllFranchises as nflFranchises, logoUrlFor as nflLogo, monogramFor as nflMono } from "@/lib/nfl";
 import { getAllFranchises as nbaFranchises, logoUrlFor as nbaLogo, monogramFor as nbaMono } from "@/lib/nba";
@@ -545,39 +544,54 @@ async function cricketFixturesBlock(): Promise<Block | null> {
   return { league: "Internationals", href: "/teams/cricket", note: f.live.length ? "live" : "fixtures", open: true, subTables };
 }
 
-async function euroFixturesBlocks(): Promise<Block[]> {
-  const comps: Array<[string, string]> = [
-    ["champions-league", "Champions League"],
-    ["europa-league", "Europa League"],
-    ["conference-league", "Conference League"],
+// European club-competition fixtures for the standings page, fed from the unified
+// api-football -> Supabase -> ISR bundle (getClubCompetitions), same source as the
+// tournament hubs. Team names resolve to their canonical Lookup name, never the raw
+// api name (which the retired euro-comps.json feed used to surface here).
+function euroFixturesBlocks(comps: LiveComp[]): Block[] {
+  const WANT: Array<[number, string, string]> = [
+    [2, "champions-league", "Champions League"],
+    [3, "europa-league", "Europa League"],
+    [848, "conference-league", "Conference League"],
   ];
-  const dt = (d: string) => (d ? new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" }) : "");
-  const data = await Promise.all(comps.map(([s]) => getEuroCompFixtures(s)));
+  const FIN = new Set(["FT", "AET", "PEN", "AWD", "WO"]);
+  const IN_PLAY = new Set(["1H", "HT", "2H", "ET", "BT", "P", "LIVE", "INT", "SUSP"]);
+  const dt = (d: string | null) => (d ? new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" }) : "");
+  const nm = (t: LiveTeamRef) => {
+    const c = getFootballClubByName(t.lookup ?? "") ?? getFootballClubByName(t.name ?? "");
+    return c?.cur_name ?? t.lookup ?? t.name ?? "TBD";
+  };
+  const byKo = (dir: number) => (a: LiveFixture, b: LiveFixture) => dir * String(a.kickoff ?? "").localeCompare(String(b.kickoff ?? ""));
   const blocks: Block[] = [];
-  comps.forEach(([slug, label], i) => {
-    const c = data[i];
-    if (!c) return;
-    const mk = (title: string, items: EuroMatch[], score: boolean): SubTable | null =>
+  for (const [id, slug, label] of WANT) {
+    const comp = comps.find((c) => c.league_id === id);
+    if (!comp) continue;
+    const fx = comp.fixtures ?? [];
+    const live = fx.filter((f) => f.status && IN_PLAY.has(f.status)).sort(byKo(1));
+    const recent = fx.filter((f) => f.status && FIN.has(f.status)).sort(byKo(-1)).slice(0, 12);
+    const upcoming = fx.filter((f) => !(f.status && (FIN.has(f.status) || IN_PLAY.has(f.status)))).sort(byKo(1)).slice(0, 20);
+    const mk = (title: string, items: LiveFixture[], score: boolean): SubTable | null =>
       items.length ? {
         title, columns: [score ? "Score" : "Date"],
-        rows: items.map((m): SRow => ({ rank: null, name: `${m.home} v ${m.away}`,
-          cells: [score && m.homeGoals != null && m.awayGoals != null ? `${m.homeGoals}–${m.awayGoals}` : dt(m.date)] })),
+        rows: items.map((f): SRow => ({ rank: null, name: `${nm(f.home)} v ${nm(f.away)}`,
+          cells: [score && f.home_goals != null && f.away_goals != null ? `${f.home_goals}–${f.away_goals}` : dt(f.kickoff)] })),
       } : null;
-    const subTables = [mk("Live", c.live, true), mk("Upcoming", c.upcoming, false), mk("Recent", c.recent, true)]
+    const subTables = [mk("Live", live, true), mk("Upcoming", upcoming, false), mk("Recent", recent, true)]
       .filter((st): st is SubTable => st !== null);
-    if (!subTables.length) return;
-    blocks.push({ league: label, href: `/teams/football/tournaments/${slug}`, note: c.live.length ? "live" : "fixtures", open: true, subTables });
-  });
+    if (!subTables.length) continue;
+    blocks.push({ league: label, href: `/teams/football/tournaments/${slug}`, note: live.length ? "live" : "fixtures", open: true, subTables });
+  }
   return blocks;
 }
 
 export default async function LiveStandingsPage() {
-  const [nfl, nba, wnba, nhl, mlb, npb, mls, nwsl, cfl, afl, nrl, f1, golf, tennis, wtc, rugbyFix, cricketFix, euro, clubStandings, clubComps] = await Promise.all([
+  const [nfl, nba, wnba, nhl, mlb, npb, mls, nwsl, cfl, afl, nrl, f1, golf, tennis, wtc, rugbyFix, cricketFix, clubStandings, clubComps] = await Promise.all([
     nflBlock(), nbaBlock(), wnbaBlock(), nhlBlock(), mlbBlock(), npbBlock(),
     mlsBlock(), nwslBlock(), cflBlock(), footyBlock("afl"), footyBlock("nrl"), f1Block(),
-    golfBlock(), tennisBlock(), wtcBlock(), rugbyFixturesBlock(), cricketFixturesBlock(), euroFixturesBlocks(),
+    golfBlock(), tennisBlock(), wtcBlock(), rugbyFixturesBlock(), cricketFixturesBlock(),
     getClubStandings(), getClubCompetitions(),
   ]);
+  const euro = euroFixturesBlocks(clubComps);
   const clubById = new Map(clubStandings.map((l) => [l.league_id, l]));
   const domestics = DOMESTIC_LIVE
     .map((d) => domesticLiveBlock(clubById.get(d.id), d.label))

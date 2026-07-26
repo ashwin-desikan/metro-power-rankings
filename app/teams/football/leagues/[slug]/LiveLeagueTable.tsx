@@ -9,7 +9,7 @@ import CrestIcon from "@/app/teams/_shared/CrestIcon";
 // each table pre-resolved server-side and fed in as serializable data.
 
 export type LiveCell = number | string;
-export type LiveTableRow = { rank: number | null; name: string; slug: string | null; badge: string | null; cells: LiveCell[] };
+export type LiveTableRow = { rank: number | null; name: string; slug: string | null; badge: string | null; cup: string[] | null; cells: LiveCell[] };
 export type LiveTableGroup = { label: string | null; rows: LiveTableRow[] };
 export type LiveCompTable = { id: number; name: string; level: number | null; groups: LiveTableGroup[] };
 
@@ -25,12 +25,13 @@ const BADGES: Record<string, { label: string; bg: string; fg: string; title: str
 function Table({ group }: { group: LiveTableGroup }) {
   return (
     <div className="overflow-x-auto">
-      <table className="w-full text-sm min-w-[420px]">
+      <table className="w-full text-sm min-w-[480px]">
         <thead>
           <tr className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b" style={{ borderColor: "var(--border)" }}>
             <th className="py-2 text-left font-medium">Pos</th>
             <th className="py-2 text-left font-medium">Club</th>
             <th className="py-2 pl-2 text-left font-medium">Europe</th>
+            <th className="py-2 pl-2 text-left font-medium">Cup</th>
             {COLS.map((c) => (
               <th key={c} className={`py-2 text-right font-medium ${c === "GF" || c === "GA" ? "hidden sm:table-cell" : ""}`}>{c}</th>
             ))}
@@ -50,6 +51,13 @@ function Table({ group }: { group: LiveTableGroup }) {
                 </td>
                 <td className="py-1.5 pl-2">
                   {b && <span className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold tracking-wide" style={{ background: b.bg, color: b.fg }} title={b.title}>{b.label}</span>}
+                </td>
+                <td className="py-1.5 pl-2">
+                  {r.cup && r.cup.length > 0 && (
+                    <span className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold tracking-wide" style={{ background: "rgba(139,92,246,0.18)", color: "#8b5cf6" }} title={`Still alive: ${r.cup.join(", ")}`}>
+                      Cup{r.cup.length > 1 ? ` ×${r.cup.length}` : ""}
+                    </span>
+                  )}
                 </td>
                 {r.cells.map((c, j) => (
                   <td key={j} className={`py-1.5 text-right tabular-nums ${COLS[j] === "GF" || COLS[j] === "GA" ? "hidden sm:table-cell" : ""} ${COLS[j] === "Pts" ? "font-semibold" : ""}`} style={mono}>{c}</td>

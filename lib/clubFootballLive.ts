@@ -63,3 +63,27 @@ export async function getLiveLeague(leagueId: number): Promise<LiveLeague | null
   const leagues = await getClubStandings();
   return leagues.find((l) => l.league_id === leagueId) ?? null;
 }
+
+// ---- Super cups + domestic cups (result-only; team names soft-resolved) --------
+
+export type CupFixture = {
+  fixture_id: number; kickoff: string | null; round: string | null;
+  home: LiveTeamRef; away: LiveTeamRef; home_goals: number | null; away_goals: number | null;
+  status: string | null; winner?: string | null;
+};
+export type SuperCup = { comp_id: number; country: string; name: string; category: string; season: number; fixtures: CupFixture[] };
+export type DomesticCup = { comp_id: number; country: string; name: string; season: number; fixtures: CupFixture[] };
+
+export async function getSuperCups(): Promise<SuperCup[]> {
+  const doc = await load<{ super_cups: SuperCup[] }>("live-supercups-2026.json");
+  return doc?.super_cups ?? [];
+}
+export async function getDomesticCups(): Promise<DomesticCup[]> {
+  const doc = await load<{ cups: DomesticCup[] }>("live-cups-2026.json");
+  return doc?.cups ?? [];
+}
+// team_id (as string) -> names of the domestic cups the club is still ALIVE in.
+export async function getCupAlive(): Promise<Record<string, string[]>> {
+  const doc = await load<{ cup_alive?: Record<string, string[]> }>("live-cups-2026.json");
+  return doc?.cup_alive ?? {};
+}

@@ -43,7 +43,7 @@ export default function LiveCompGroups({ comp, season }: { comp: LiveComp; seaso
                 <tbody>
                   {g.rows.slice().sort(byPts).map((r, i) => {
                     const c = getFootballClubByName(r.lookup ?? "") ?? getFootballClubByName(r.name ?? "");
-                    const nm = c?.cur_name ?? r.name ?? r.lookup ?? "-";
+                    const nm = c?.cur_name ?? r.lookup ?? r.name ?? "-";
                     return (
                       <tr key={i} className="border-b" style={{ borderColor: "var(--border)" }}>
                         <td className="py-1.5 tabular-nums text-[var(--text-muted)]" style={mono}>{r.rank ?? i + 1}</td>

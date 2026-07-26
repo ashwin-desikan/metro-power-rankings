@@ -4,8 +4,9 @@ import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import HubNav from "@/app/teams/HubNav";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { getFootballClubByName } from "@/lib/football";
-import { getClubStandings, getClubCompetitions, type LiveRow, type LiveComp } from "@/lib/clubFootballLive";
+import { getClubStandings, getClubCompetitions, getSuperCups, getDomesticCups, type LiveRow, type LiveComp } from "@/lib/clubFootballLive";
 import Hub2027Client, { type HubConf, type HubLeague, type HubGroup, type HubRow } from "./Hub2027Client";
+import { SuperCupsSection, DomesticCupsSection } from "./LiveCups";
 
 export const revalidate = 300;
 
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const cardStyle = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
 const CONF_ORDER = ["UEFA", "CONMEBOL", "CONCACAF", "AFC", "CAF"];
-const COMP_ORDER = [2, 3, 848, 13, 531]; // CL, EL, ECL, Libertadores, Super Cup
+const COMP_ORDER = [2, 3, 848, 13]; // CL, EL, ECL, Libertadores (Super Cup lives in the Super Cups section)
 const DASH = "—";
 
 const num = (v: number | null | undefined): number | string => (v === null || v === undefined ? DASH : v);
@@ -162,15 +163,19 @@ function CompCard({ comp }: { comp: LiveComp }) {
 }
 
 export default async function ClubFootball2027Page() {
-  const [standings, comps] = await Promise.all([getClubStandings(), getClubCompetitions()]);
+  const [standings, comps, superCups, domesticCups] = await Promise.all([
+    getClubStandings(), getClubCompetitions(), getSuperCups(), getDomesticCups(),
+  ]);
   const confs = buildConfs(standings);
   const compById = new Map(comps.map((c) => [c.league_id, c]));
   const orderedComps = COMP_ORDER.map((id) => compById.get(id)).filter((c): c is LiveComp => !!c && (c.groups.length > 0 || c.fixtures.length > 0));
   const totalLeagues = confs.reduce((a, c) => a + c.countries.reduce((b, k) => b + k.leagues.length, 0), 0);
 
   const nav = [
-    { label: "Competitions", href: "#competitions" },
-    ...confs.map((c) => ({ label: c.confederation, href: "#domestic" })),
+    ...(orderedComps.length > 0 ? [{ label: "Competitions", href: "#competitions" }] : []),
+    ...(superCups.some((c) => c.fixtures.length > 0) ? [{ label: "Super Cups", href: "#supercups" }] : []),
+    ...(domesticCups.some((c) => c.fixtures.length > 0) ? [{ label: "Domestic Cups", href: "#domestic-cups" }] : []),
+    { label: "Leagues", href: "#domestic" },
   ];
 
   return (
@@ -203,6 +208,9 @@ export default async function ClubFootball2027Page() {
           </div>
         </section>
       )}
+
+      <SuperCupsSection cups={superCups} />
+      <DomesticCupsSection cups={domesticCups} />
 
       <section id="domestic" className="scroll-mt-24">
         <h2 className="text-lg font-semibold mb-3">Domestic leagues</h2>

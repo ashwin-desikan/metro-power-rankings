@@ -26,7 +26,7 @@ import LeagueHubMap, { type HubClub } from "./LeagueHubMap";
 import MlsStandings from "./MlsStandings";
 import MlsMostDecorated from "./MlsMostDecorated";
 import LiveLeagueTable, { type LiveCompTable } from "./LiveLeagueTable";
-import { getClubStandings, getEuropeBadges, type LiveLeague, type LiveRow } from "@/lib/clubFootballLive";
+import { getClubStandings, getEuropeBadges, getCupAlive, type LiveLeague, type LiveRow } from "@/lib/clubFootballLive";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 // api-football league ids for the hub countries' top flights, so the country
@@ -39,7 +39,7 @@ const numCell = (v: number | null): number | string => (v == null ? "-" : v);
 const byPtsGd = (a: LiveRow, b: LiveRow) => (b.points ?? 0) - (a.points ?? 0) || (b.gd ?? 0) - (a.gd ?? 0);
 
 // Resolve every tracked league in a country into serializable tables for the switcher.
-function buildCountryTables(clubStandings: LiveLeague[], country: string, badges: Record<string, string>): LiveCompTable[] {
+function buildCountryTables(clubStandings: LiveLeague[], country: string, badges: Record<string, string>, cupAlive: Record<string, string[]>): LiveCompTable[] {
   return clubStandings
     .filter((l) => l.country === country && l.groups.some((g) => g.rows.length > 0))
     .map((l): LiveCompTable => ({
@@ -56,6 +56,7 @@ function buildCountryTables(clubStandings: LiveLeague[], country: string, badges
               name: c?.cur_name ?? r.name ?? r.lookup ?? "-",
               slug: c?.slug ?? null,
               badge: r.team_id != null ? (badges[String(r.team_id)] ?? null) : null,
+              cup: r.team_id != null ? (cupAlive[String(r.team_id)] ?? null) : null,
               cells: [numCell(r.played), numCell(r.win), numCell(r.draw), numCell(r.lose), numCell(r.gf), numCell(r.ga), numCell(r.gd), numCell(r.points)],
             };
           }),
@@ -95,14 +96,14 @@ export default async function FootballLeagueHubPage({ params }: Props) {
   const hub = getLeagueHub(slug);
   if (!hub) notFound();
 
-  const [clubStandings, europeBadges] = await Promise.all([getClubStandings(), getEuropeBadges()]);
+  const [clubStandings, europeBadges, cupAlive] = await Promise.all([getClubStandings(), getEuropeBadges(), getCupAlive()]);
 
   if (hub.is_mls) {
     return <MlsHubView hub={hub as unknown as MlsLeagueHub} clubStandings={clubStandings} />;
   }
 
   // Live tables for every tracked league in this hub's country, switchable in the UI.
-  const countryTables = buildCountryTables(clubStandings, hub.country, europeBadges);
+  const countryTables = buildCountryTables(clubStandings, hub.country, europeBadges, cupAlive);
   const defaultLeagueId = countryTables.some((t) => t.id === LEAGUE_ID_BY_SLUG[hub.slug])
     ? LEAGUE_ID_BY_SLUG[hub.slug]
     : (countryTables[0]?.id ?? 0);
