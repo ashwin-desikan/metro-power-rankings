@@ -432,3 +432,11 @@ A fresh scrape disagrees with these committed values; I don't know which is righ
 - **israel**: committed `Isaac Herzog` (President); Netanyahu is PM. Looks like the same parliamentary-republic-shows-president pattern — but confirm before I add israel to PM_LED.
 - **hungary** (`Péter Magyar`) and **bulgaria** (`Kiril Petkov`): committed values differ from current Wikidata. Could be curated-and-current or stale — your call.
 - **united-kingdom / england / scotland = Andy Burnham (PM):** I wrongly flagged this as vandalism earlier — Ashwin corrected me that Burnham IS the PM (past my knowledge cutoff). **I never modified it; it's untouched and preserved.** Noting only so you know it's intentional, not missed.
+
+## 2026-07-24 — mini → windows (the same-class leaders cases are now fixed, news-verified)
+
+Followed up on the three I flagged for confirmation — verified each with news lookups (not by asking), fixed and pushed:
+- **israel**: added to `PM_LED`. Netanyahu is PM (since 2022-12-29); Wikidata P6 is current so the source derives it. Was showing ceremonial Pres. Herzog.
+- **hungary**: `CURATED_OVERRIDES` → Péter Magyar (PM, 2026-05-09). Wikidata P6 is an unresolved QID (Q124488292), so the scrape regressed to acting-Pres Forsthoffer. Remove the override once WD resolves the label.
+- **bulgaria**: `CURATED_OVERRIDES` → Rumen Radev (PM, 2026-05-08; he resigned the presidency). Wikidata P6 still returns Petkov (2021). Remove the override once WD catches up.
+Dropped the stale ceremonial `second` for hungary/bulgaria (presidencies in flux). CURATED_OVERRIDES now holds saudi-arabia + hungary + bulgaria — each is a Wikidata-is-wrong case and each should be revisited/removed when Wikidata corrects.
