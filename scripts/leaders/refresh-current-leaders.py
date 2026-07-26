@@ -34,10 +34,25 @@ COUNTRIES = ROOT / "public" / "data" / "countries.json"
 OUT = LEADERS_DIR / "_current.json"
 
 # Parliamentary / PM-led systems: head of government leads, president ceremonial.
+# NB: Wikidata's P122 for some of these comes back as a bare "republic" (not
+# "parliamentary republic"), so the form-string heuristic in build_entry misses
+# them -- they must be listed here explicitly. India is one such case: it returned
+# form="republic", so it rendered President-first (and shipped a vandalized
+# ceremonial name as the world's #5 most powerful person) until added here.
 PM_LED = {
     "germany","poland","austria","czech-republic","hungary","greece","portugal","finland",
     "ethiopia","iraq","georgia","croatia","bulgaria","bosnia-herzegovina",
-    "montenegro","slovenia","slovakia","lithuania",
+    "montenegro","slovenia","slovakia","lithuania","india",
+}
+# Curated overrides for countries where Wikidata is stale or wrong about the
+# office holder. Applied verbatim in main() (still glyph-processed by apply_warn),
+# and preserved across re-scrapes. Update deliberately, by hand, with a real change.
+CURATED_OVERRIDES = {
+    # Wikidata returns King Salman for BOTH P35 (head of state) and P6 (head of
+    # government), with a 2015 accession date -- it has no knowledge of MBS as PM.
+    # Mohammed bin Salman has been Prime Minister (head of government) since
+    # 2022-09-27; we track heads of government, so this is the PM, not the King.
+    "saudi-arabia": {"name": "Mohammed bin Salman", "role": "PM", "since": "2022-09-27"},
 }
 # Executive monarchies where the sovereign (not the appointed head of government) leads.
 MONARCH_LED = {"monaco","eswatini","oman","brunei"}
@@ -124,10 +139,14 @@ def build_entry(slug, hos_name, hog_name, hog_office, form, hos_start=None, hog_
     if slug in COMMONWEALTH_REALMS:
         is_monarchy = True   # crown the shared sovereign (Charles III)
         pm_led = True        # head of government leads, monarch second
+    # Filter candidate names through _plausible so a vandalized head-of-state or
+    # head-of-government label is dropped entirely -- never selected as primary AND
+    # never surfaced as the ceremonial "second" (which main()'s primary-only check
+    # would otherwise miss).
     cands = []
-    if hog_name and slug not in MONARCH_LED:
+    if hog_name and _plausible(hog_name) and slug not in MONARCH_LED:
         cands.append({"name": hog_name, "role": hog_role_token(hog_office), "start": hog_start})
-    if hos_name:
+    if hos_name and _plausible(hos_name):
         if is_monarchy:
             cands.append({"name": f"{CROWN} {hos_name}", "role": "Monarch", "start": hos_start})
         else:
@@ -188,15 +207,26 @@ def load_slug_iso():
         if iso: out[slug] = iso.upper()
     return out
 
+# Name particles that legitimately stay lowercase mid-name (bin Salman, da Silva,
+# van der Bellen, ...). Anything else lowercase mid-name is treated as vandalism.
+_PARTICLES = {"bin","bint","ibn","al","van","von","de","da","del","dos","di","der",
+              "ter","of","the","e","du","la","le","y","dos","das"}
+
 def _plausible(name):
-    """Reject unresolved QIDs (Q22686) and all-lowercase vandalism (sapo cara
-    picha) before they reach _current.json / the live site."""
+    """Reject unresolved QIDs (Q22686), all-lowercase vandalism (sapo cara picha),
+    AND capitalized-first / lowercased-rest vandalism (Ganesh rajput) before it
+    reaches _current.json / the live site. The last case is the one the earlier
+    guard missed: "Ganesh" is capitalized so the has-an-uppercase check passed,
+    but "rajput" is a lowercase non-particle word -- the vandalism signature."""
     b = bare(name)
     if len(b) < 2: return False
     if re.fullmatch(r"Q\d+", b): return False
     words = [w for w in re.split(r"\s+", b) if w]
     if not any(w[:1].isupper() or (w[:1] and not w[:1].isascii()) for w in words):
         return False
+    for w in words[1:]:
+        if w.isascii() and w.isalpha() and w.islower() and w.lower() not in _PARTICLES:
+            return False
     return True
 
 
@@ -295,8 +325,12 @@ def main(add_only=False):
     changed = 0
     for slug, iso in slug_iso.items():
         info = wd.get(iso)
-        if not info: continue
-        entry = build_entry(slug, info.get("hos"), info.get("hog"), info.get("office"), info.get("form",""), info.get("hos_start"), info.get("hog_start"))
+        if slug in CURATED_OVERRIDES:
+            entry = apply_warn(dict(CURATED_OVERRIDES[slug]))   # override wins over stale Wikidata
+        elif info:
+            entry = build_entry(slug, info.get("hos"), info.get("hog"), info.get("office"), info.get("form",""), info.get("hos_start"), info.get("hog_start"))
+        else:
+            continue
         if not entry: continue
         if not _plausible(entry["name"]):
             print(f"  skip {slug}: implausible name {entry['name']!r}")
@@ -359,6 +393,19 @@ def self_test():
     # realm with missing head of government -> crowned monarch only (main() guard preserves curated PM)
     e = build_entry("tuvalu", "Charles III", None, None, "")
     assert e["role"] == "Monarch" and e["name"].startswith(CROWN), e
+    # India: Wikidata returns form="republic" (not "parliamentary"), so it relies on
+    # the PM_LED set to lead with the PM. A vandalized head-of-state label
+    # ("Ganesh rajput") is dropped by the plausibility filter, NOT surfaced as second.
+    e = build_entry("india", "Ganesh rajput", "Narendra Modi", "Prime Minister of India",
+                    "republic", hos_start="2022-07-25", hog_start="2014-05-26")
+    assert e == {"name": "Narendra Modi", "role": "PM", "since": "2014-05-26"}, e
+    # _plausible: rejects capitalized-first / lowercased-rest vandalism and QIDs;
+    # keeps real names and legitimate lowercase particles.
+    assert _plausible("Narendra Modi") and _plausible("Mohammed bin Salman") and _plausible("Lula da Silva")
+    assert not _plausible("Ganesh rajput") and not _plausible("Q42") and not _plausible("sapo cara picha")
+    # curated override entries are well-formed and glyph-processed (MBS is warn-listed)
+    assert "saudi-arabia" in CURATED_OVERRIDES
+    assert apply_warn(dict(CURATED_OVERRIDES["saudi-arabia"]))["name"] == f"{WARN} Mohammed bin Salman"
     # change side-effects helpers
     assert _office_family("PM") == "gov" and _office_family("Pres.") == "state" and _office_family("Monarch") == "monarch"
     assert _office_family("Federal Chanc.") == "gov" and _office_family("Sup. Leader") == "state"

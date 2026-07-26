@@ -2,15 +2,6 @@
   "updated": "2026-07-26",
   "changes": [
     {
-      "date": "2022-07-25",
-      "slug": "india",
-      "country": "India",
-      "office": "President",
-      "from": "Droupadi Murmu",
-      "to": "Ganesh rajput",
-      "source": "wikidata"
-    },
-    {
       "date": "2024-02-26",
       "slug": "tuvalu",
       "country": "Tuvalu",
@@ -368,15 +359,6 @@
       "office": "President",
       "from": "Lee Jae-myung",
       "to": "Lee Jae Myung",
-      "source": "wikidata"
-    },
-    {
-      "date": "2022-07-25",
-      "slug": "india",
-      "country": "India",
-      "office": "President",
-      "from": "Narendra Modi",
-      "to": "Droupadi Murmu",
       "source": "wikidata"
     },
     {
