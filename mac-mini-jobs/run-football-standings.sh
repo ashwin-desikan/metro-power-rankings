@@ -1,8 +1,9 @@
 #!/bin/bash
-# api-football -> Supabase daily standings + continental fixtures (mini-owned).
-# Refreshes football_standings + football_fixtures via scripts/apifootball/refresh.py.
-# Data lives in Supabase (read by the site over PostgREST), so there is NO git commit
-# and NO Vercel build from this job.
+# api-football -> Supabase daily standings + continental fixtures, then export to committed
+# JSON bundles the site reads via ISR (mini-owned).
+# refresh.py writes football_standings/football_fixtures to Supabase; export_bundles.py then
+# writes public/data/football/live-*.json and commits them with [vercel skip] (ISR from GitHub
+# raw, so NO Vercel build -- vercel.json's ignoreCommand short-circuits on the [vercel skip] tag).
 #
 # Scheduled 05:00 UTC (after run-euro-comps at 04:00 to spread the api-football load).
 # launchd fires in LOCAL time, so the plist wakes this at BOTH 05:00 and 06:00 local;
@@ -36,4 +37,17 @@ git merge --ff-only origin/main --quiet || fail "cannot fast-forward (repo diver
 
 log "running daily refresh (--write)"
 "$PY" scripts/apifootball/refresh.py --write 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "refresh --write failed"
+
+# Export Supabase -> committed ISR bundles the site reads (no Vercel build; [vercel skip]).
+log "exporting frontend bundles"
+"$PY" scripts/apifootball/export_bundles.py 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "export_bundles failed"
+BUNDLES="public/data/football/live-standings-2026.json public/data/football/live-competitions-2026.json"
+if ! git diff --quiet -- $BUNDLES; then
+  git add $BUNDLES
+  git commit -q -m "football: refresh live standings bundles [vercel skip]" || fail "bundle commit failed"
+  git push -q origin main || fail "bundle push failed"
+  log "pushed updated football bundles"
+else
+  log "bundles unchanged"
+fi
 log "=== football-standings done ==="
