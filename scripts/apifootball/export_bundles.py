@@ -20,6 +20,18 @@ from refresh import supa_get, supa_key, CONTINENTAL
 
 OUT = os.path.abspath(os.path.join(HERE, "..", "..", "public", "data", "football"))
 
+# Non-UEFA confederations for the tracked domestic leagues; every other tracked
+# country is UEFA (the site tracks no other European-adjacent edge cases).
+CONF_OVERRIDE = {
+    "Brazil": "CONMEBOL", "Argentina": "CONMEBOL", "Uruguay": "CONMEBOL",
+    "United States": "CONCACAF", "Mexico": "CONCACAF",
+    "Japan": "AFC", "South Korea": "AFC", "China": "AFC", "Saudi Arabia": "AFC",
+    "Qatar": "AFC", "United Arab Emirates": "AFC", "Australia": "AFC", "Iran": "AFC", "India": "AFC",
+    "Egypt": "CAF", "South Africa": "CAF",
+}
+def confed(country):
+    return CONF_OVERRIDE.get(country or "", "UEFA")
+
 def tref(teams, tid):
     t = teams.get(tid) or {}
     return {"team_id": tid, "name": t.get("canonical_name"), "lookup": t.get("lookup_name"),
@@ -59,7 +71,7 @@ def main():
         for lid, L in bucket.items():
             m = lmeta.get(lid, {})
             entry = {"league_id": lid, "name": m.get("name"), "country": m.get("country"),
-                     "level": m.get("level"),
+                     "level": m.get("level"), "confederation": confed(m.get("country")),
                      "groups": [{"group_label": gl, "rows": rows} for gl, rows in L["groups"].items()]}
             if include_fixtures: entry["fixtures"] = L["fixtures"]
             out.append(entry)
