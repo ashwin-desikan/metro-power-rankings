@@ -1,0 +1,49 @@
+[
+  {
+    "league_id": 142,
+    "hub_slug": "spain",
+    "comp_slug": "liga-f",
+    "name": "Liga F",
+    "country": "Spain",
+    "kind": "league",
+    "continental": false,
+    "season": 2026,
+    "season_label": "2026-27"
+  },
+  {
+    "league_id": 254,
+    "hub_slug": "united-states",
+    "comp_slug": "nwsl",
+    "name": "NWSL",
+    "country": "USA",
+    "kind": "league",
+    "continental": false,
+    "season": 2026,
+    "season_label": "2026"
+  },
+  {
+    "league_id": 525,
+    "hub_slug": null,
+    "comp_slug": "uwcl",
+    "name": "UEFA Women's Champions League",
+    "country": "World",
+    "kind": "cup",
+    "continental": true,
+    "season": 2026,
+    "season_label": "2026-27"
+  },
+  {
+    "league_id": 44,
+    "hub_slug": "england",
+    "comp_slug": "wsl",
+    "name": "FA WSL",
+    "country": "England",
+    "kind": "league",
+    "continental": false,
+    "season": 2025,
+    "season_label": "2025-26",
+    "placeholder": true,
+    "watch_season": 2026,
+    "watch_season_label": "2026-27"
+  }
+]

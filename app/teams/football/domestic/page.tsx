@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HubNav from "@/app/teams/HubNav";
+import FootballHubNav from "@/app/teams/FootballHubNav";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { getDomesticClubs, getDomesticFacets } from "@/lib/domesticFootball";
 import DomesticLeaguesTable from "./DomesticLeaguesTable";
@@ -35,6 +36,8 @@ export default function DomesticLeaguesPage() {
         {" / "}
         <span>Domestic Leagues Worldwide</span>
       </nav>
+
+      <FootballHubNav current="domestic" />
 
       <header className="mb-6">
         <h1 className="text-3xl font-semibold tracking-tight">Domestic Leagues Worldwide</h1>

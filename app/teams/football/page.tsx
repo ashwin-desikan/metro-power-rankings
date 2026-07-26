@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
 import HubNav from "@/app/teams/HubNav";
+import FootballHubNav from "@/app/teams/FootballHubNav";
 import Link from "next/link";
 import { getAllClubs, getAllLeagueHubs, getAllEuropeanTournamentHubs } from "@/lib/football";
+import { leagueStatusFor } from "@/lib/leagueStatus";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import FootballIndexClient, { type IndexClub } from "./FootballIndexClient";
+
+// Re-render hourly so the auto month-window league/competition statuses
+// (leagueStatusFor) flip in and out of season without a manual deploy.
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Club Football",
@@ -50,6 +56,8 @@ export default function FootballIndex() {
         {" / "}
         <span>Football clubs</span>
       </nav>
+
+      <FootballHubNav current="overview" backHref="/sports" backLabel="All Sports" />
 
       <header className="mb-8">
         <div className="flex items-baseline justify-between flex-wrap gap-3">
@@ -107,7 +115,10 @@ export default function FootballIndex() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {tournamentHubs.map((t) => {
             const topClub = t.most_decorated[0];
-            const isLive = t.active && t.current_entries.length > 0;
+            // Prefer the auto month-window status (CL/EL/ECL/Libertadores are "live"
+            // from July qualifying on); fall back to the live-bracket entry count.
+            const seasonal = leagueStatusFor(`/teams/football/tournaments/${t.slug}`);
+            const isLive = (seasonal != null && seasonal.tone !== "offseason") || (t.active && t.current_entries.length > 0);
             return (
               <Link
                 key={t.slug}
@@ -160,7 +171,10 @@ export default function FootballIndex() {
       <section className="mb-10">
         <h2 id="leagues" className="text-lg font-semibold mb-3">League hubs</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {hubs.map((h) => (
+          {hubs.map((h) => {
+            const s = leagueStatusFor(`/teams/football/leagues/${h.slug}`);
+            const live = s ? s.tone !== "offseason" : h.is_mls;
+            return (
             <Link
               key={h.slug}
               href={`/teams/football/leagues/${h.slug}`}
@@ -169,14 +183,15 @@ export default function FootballIndex() {
             >
               <div className="flex items-baseline justify-between gap-2">
                 <div className="text-base font-semibold">{h.league}</div>
-                <span className="inline-block rounded px-1.5 py-0.5 text-[9px] uppercase tracking-wide font-semibold" style={h.is_mls ? { background: "rgba(16,185,129,0.18)", color: "#10b981" } : { background: "rgba(120,120,140,0.12)", color: "var(--text-dim)" }}>{h.is_mls ? "Live" : "Offseason"}</span>
+                <span className="inline-block rounded px-1.5 py-0.5 text-[9px] uppercase tracking-wide font-semibold" style={live ? { background: "rgba(16,185,129,0.18)", color: "#10b981" } : { background: "rgba(120,120,140,0.12)", color: "var(--text-dim)" }}>{live ? "Live" : "Offseason"}</span>
               </div>
               <div className="text-xs text-[var(--text-muted)] mt-1">{h.country}</div>
               <div className="text-xs text-[var(--text-muted)] mt-2 tabular-nums">
                 {h.all_time_champions.length} all-time Level 1 champion entries
               </div>
             </Link>
-          ))}
+            );
+          })}
         </div>
       </section>
 

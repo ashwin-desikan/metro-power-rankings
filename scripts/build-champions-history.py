@@ -90,7 +90,7 @@ def _norm_date(d):
         return ""
     if re.fullmatch(r"\d{4}-\d{2}-\d{2}", s):
         return s
-    for fmt in ("%m/%d/%Y", "%m/%d/%y", "%Y/%m/%d"):
+    for fmt in ("%Y-%m-%d %H:%M:%S", "%m/%d/%Y", "%m/%d/%y", "%Y/%m/%d"):
         try:
             return datetime.datetime.strptime(s, fmt).strftime("%Y-%m-%d")
         except ValueError:
@@ -113,11 +113,19 @@ def main():
     hdr = [str(c).strip() if c is not None else "" for c in rows[0]]
     REQUIRED = ["Sport", "Competition", "Era Name", "Season", "Year", "Champion",
                 "Champion (Canonical)", "Metro", "Metro Slug", "Date", "Scope Type"]
-    OPTIONAL = ["Tier", "TierGuide", "Is Current", "Date Awarded", "Next Awarded Date"]
+    OPTIONAL = ["Scope", "Tier", "TierGuide", "Is Current", "Date Awarded", "Next Awarded Date"]
     ix = {n: hdr.index(n) for n in REQUIRED}
     for n in OPTIONAL:
         if n in hdr:
             ix[n] = hdr.index(n)
+    # The "next title" date (when the current holder's crown is next contested)
+    # lives in the column right after "Is Current", which the workbook leaves
+    # header-less. Map it by position so nextAwardedDate populates the "Next
+    # title" column on /sports/champions.
+    if "Next Awarded Date" not in ix and "Is Current" in hdr:
+        j = hdr.index("Is Current") + 1
+        if j < len(hdr) and not hdr[j]:
+            ix["Next Awarded Date"] = j
     slugset, byname = _metro_lookup()
     out = []
     for r in rows[1:]:
@@ -154,6 +162,7 @@ def main():
             "metro": cell(r[ix["Metro"]]),
             "metroSlug": METRO_OVERRIDE.get((comp, yr, cell(r[ix["Champion (Canonical)"]])), _fix_slug(slugset, byname, cell(r[ix["Metro Slug"]]), cell(r[ix["Metro"]]))),
             "date": date,
+            "scope": opt("Scope"),
             "scopeType": cell(r[ix["Scope Type"]]),
             "tier":            tier,
             "tierGuide":       tier_guide,

@@ -1,0 +1,59 @@
+{
+  "generated_at": null,
+  "season": "2026-27",
+  "note": "Seed bundle. scripts/apifootball/refresh_women.py overwrites this with live api-football rows on the Mac mini. Empty rows here render as 'awaiting data' cards; NWSL falls back to the ESPN feed until this fills.",
+  "leagues": [
+    {
+      "league_id": 142,
+      "hub_slug": "spain",
+      "comp_slug": "liga-f",
+      "name": "Liga F",
+      "country": "Spain",
+      "kind": "league",
+      "season": 2026,
+      "season_label": "2026-27",
+      "placeholder": false,
+      "source": "api-football",
+      "groups": [{ "group_label": "", "rows": [] }]
+    },
+    {
+      "league_id": 254,
+      "hub_slug": "united-states",
+      "comp_slug": "nwsl",
+      "name": "NWSL",
+      "country": "USA",
+      "kind": "league",
+      "season": 2026,
+      "season_label": "2026",
+      "placeholder": false,
+      "source": "api-football",
+      "groups": [{ "group_label": "", "rows": [] }]
+    },
+    {
+      "league_id": 44,
+      "hub_slug": "england",
+      "comp_slug": "wsl",
+      "name": "FA WSL",
+      "country": "England",
+      "kind": "league",
+      "season": 2025,
+      "season_label": "2025-26",
+      "placeholder": true,
+      "source": "api-football",
+      "groups": [{ "group_label": "", "rows": [] }]
+    }
+  ],
+  "competitions": [
+    {
+      "league_id": 525,
+      "comp_slug": "uwcl",
+      "name": "UEFA Women's Champions League",
+      "country": "World",
+      "season": 2026,
+      "season_label": "2026-27",
+      "source": "api-football",
+      "groups": [],
+      "fixtures": []
+    }
+  ]
+}

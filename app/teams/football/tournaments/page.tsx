@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllEuropeanTournamentHubs } from "@/lib/football";
+import { leagueStatusFor } from "@/lib/leagueStatus";
+import FootballHubNav from "@/app/teams/FootballHubNav";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+
+// Hourly ISR so the auto month-window competition statuses flip without a deploy.
+export const revalidate = 3600;
 
 const PAGE_PATH = "/teams/football/tournaments";
 const PAGE_URL = `${BASE_URL}${PAGE_PATH}`;
@@ -35,6 +40,8 @@ export default function ClubTournamentsIndexPage() {
         <span>Tournaments</span>
       </nav>
 
+      <FootballHubNav current="competitions" />
+
       <header className="mb-8">
         <h1 className="text-3xl font-semibold tracking-tight">European & World Club Tournaments</h1>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
@@ -49,6 +56,8 @@ export default function ClubTournamentsIndexPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {hubs.map((h) => {
             const topClub = h.most_decorated[0];
+            const seasonal = leagueStatusFor(`/teams/football/tournaments/${h.slug}`);
+            const isLive = (seasonal != null && seasonal.tone !== "offseason") || (h.active && h.current_entries.length > 0);
             return (
               <Link
                 key={h.slug}
@@ -66,7 +75,7 @@ export default function ClubTournamentsIndexPage() {
                       Defunct
                     </span>
                   )}
-                  {h.active && h.current_entries.length > 0 && (
+                  {h.active && isLive && (
                     <span
                       className="inline-block rounded px-1.5 py-0.5 text-[9px] uppercase tracking-wide font-semibold"
                       style={{ background: "rgba(16,185,129,0.18)", color: "#10b981" }}

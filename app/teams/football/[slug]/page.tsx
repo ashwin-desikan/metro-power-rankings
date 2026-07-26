@@ -8,6 +8,7 @@ import ValuationChip from "@/app/teams/ValuationChip";
 import GhostFranchiseTag from "@/app/teams/GhostFranchiseTag";
 import TopTeamChip from "@/app/teams/TopTeamChip";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
+import FootballHubNav from "@/app/teams/FootballHubNav";
 import { notFound } from "next/navigation";
 import {
   getAllClubs,
@@ -157,6 +158,8 @@ export default async function FootballClubPage({ params }: Props) {
         {" / "}
         <span>{club.cur_name}</span>
       </nav>
+
+      <FootballHubNav showBack={false} />
 
       <header className="mb-6">
         <div className="flex flex-wrap items-center gap-3">

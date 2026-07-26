@@ -73,6 +73,7 @@ const LEAGUE_SEASONS: Record<string, MonthWindow[]> = {
   "/teams/afl":  [{ label: "Live - Regular Season", tone: "regular", months: [3, 4, 5, 6, 7, 8] }, { label: "Live - Finals", tone: "playoffs", months: [9] }],
   "/teams/nrl":  [{ label: "Live - Regular Season", tone: "regular", months: [3, 4, 5, 6, 7, 8] }, { label: "Live - Finals", tone: "playoffs", months: [9, 10] }],
   "/teams/cfb":  [{ label: "Live - Season", tone: "regular", months: [8, 9, 10, 11] }, { label: "Live - Bowls & Playoff", tone: "playoffs", months: [12, 1] }],
+  "/teams/cbb":  [{ label: "Live - Regular Season", tone: "regular", months: [11, 12, 1, 2] }, { label: "Live - March Madness", tone: "playoffs", months: [3, 4] }],
   "/teams/ipl":  [{ label: "Live - IPL", tone: "regular", months: [3, 4, 5] }],
   "/teams/football/leagues/mls": [{ label: "Live - Regular Season", tone: "regular", months: [2, 3, 4, 5, 6, 7, 8, 9, 10] }, { label: "Live - Playoffs", tone: "playoffs", months: [11, 12] }],
   "/teams/football/leagues/premier-league": [{ label: "Live - Regular Season", tone: "regular", months: [8, 9, 10, 11, 12, 1, 2, 3, 4, 5] }],

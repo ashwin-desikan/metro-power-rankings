@@ -1,9 +1,12 @@
 import "server-only";
 
-// Current-champions badges. Source of truth: ZoneZero_Champions.xlsx ->
-// scripts/build-champions-data.py -> public/data/champions.json. Every reigning
-// champion of a Gold Standard or selected competition. A team page calls
-// getCurrentChampionships(teamName, sport) and renders <ChampionBadge>.
+// Current-champions badges. SINGLE SOURCE OF TRUTH: the Champions_History
+// workbook -> scripts/build-champions-history.py -> public/data/champions-history.json.
+// The reigning champion of every tracked competition is the row flagged
+// isCurrent in that ledger, so the badge board and the all-time honour rolls
+// both read from one file (champions.json / ZoneZero_Champions.xlsx is retired).
+// A team page calls getCurrentChampionships(teamName, sport) and renders
+// <ChampionBadge>.
 //
 // Server-only. Registered in scripts/check-client-imports.mjs.
 
@@ -24,11 +27,38 @@ export type Championship = {
   tierGuide: number | null;
 };
 
+// Raw champions-history row shape (subset we consume). The ledger carries the
+// full all-time history; the reigning holders are the isCurrent rows.
+type HistoryRow = {
+  sport?: string; competition?: string; canonical?: string; champion?: string;
+  year?: number | null; date?: string | null; dateAwarded?: string | null;
+  scope?: string | null; scopeType?: string | null;
+  nextAwardedDate?: string | null; tier?: number | null; tierGuide?: number | null;
+  isCurrent?: boolean;
+};
+
 let _data: Championship[] | null = null;
 function all(): Championship[] {
   if (_data) return _data;
-  const p = join(process.cwd(), "public", "data", "champions.json");
-  _data = existsSync(p) ? (JSON.parse(readFileSync(p, "utf-8")) as Championship[]) : [];
+  const p = join(process.cwd(), "public", "data", "champions-history.json");
+  const rows: HistoryRow[] = existsSync(p) ? (JSON.parse(readFileSync(p, "utf-8")) as HistoryRow[]) : [];
+  _data = rows
+    .filter((r) => r.isCurrent === true)
+    .map((r): Championship => ({
+      sport: r.sport ?? "",
+      competition: r.competition ?? "",
+      // Use the era-correct canonical name so the reigning champion resolves to
+      // the current club/team page (matches how ChampionBadge is looked up).
+      team: r.canonical || r.champion || "",
+      year: r.year ?? null,
+      dateAwarded: r.dateAwarded ?? r.date ?? null,
+      scope: r.scope ?? "",
+      scopeType: (r.scopeType as Championship["scopeType"]) ?? null,
+      nextAwarded: null,
+      nextAwardedDate: r.nextAwardedDate ?? null,
+      tier: r.tier ?? null,
+      tierGuide: r.tierGuide ?? null,
+    }));
   return _data;
 }
 

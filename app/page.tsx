@@ -1,7 +1,7 @@
 import { getAllMetros } from '@/lib/data';
 import { getSubstackPosts, type SubstackPost } from '@/lib/substack';
 import { getLiveBadges } from '@/lib/badges';
-import { leagueStatusFor, type LeagueStatusTone } from '@/lib/leagueStatus';
+import { leagueStatusFor, clubFootballStatus, type LeagueStatusTone } from '@/lib/leagueStatus';
 import { FEATURED } from '@/app/sports/games/featured';
 import { flagCdnUrl } from '@/lib/international-display';
 import { getCountry } from '@/lib/countries';
@@ -261,11 +261,14 @@ const MASTHEAD_LAUNCH: { emoji: string; label: string; href: string; blurb: stri
 ];
 
 const LEAGUES: { name: string; href: string; emoji?: string }[] = [
-  { name: 'World Cup 2026', href: '/teams/national', emoji: '🏆' },
+  { name: 'International', href: '/teams/national', emoji: '🏆' },
+  { name: 'Club Football', href: '/teams/football', emoji: '⚽' },
+  { name: 'NFL', href: '/teams/nfl', emoji: '🏈' },
   { name: 'NBA', href: '/teams/nba', emoji: '🏀' },
   { name: 'NHL', href: '/teams/nhl', emoji: '🏒' },
   { name: 'MLB', href: '/teams/mlb', emoji: '⚾' },
-  { name: 'MLS', href: '/teams/football/leagues/mls', emoji: '⚽' },
+  { name: 'College Football', href: '/teams/cfb', emoji: '🏈' },
+  { name: 'College Basketball', href: '/teams/cbb', emoji: '🏀' },
   { name: 'WNBA', href: '/teams/wnba', emoji: '🏀' },
   { name: "Women's Football", href: '/teams/wfootball', emoji: '⚽' },
   { name: 'CFL', href: '/teams/cfl', emoji: '🏈' },
@@ -306,6 +309,8 @@ const SITE_INDEX: IndexColumn[] = [
   ]},
   { heading: 'Sports', links: [
     { label: 'Sports Hub', href: '/sports' },
+    { label: 'Club Football', href: '/teams/football' },
+    { label: '2026-27 Season Hub', href: '/teams/football/2026-27' },
     { label: 'Zone Zero Cup', href: '/sports/zone-zero-cup' },
     { label: 'The Greatest Games', href: '/sports/games' },
     { label: 'Geography of Erasure', href: '/sports/geography-of-erasure' },
@@ -383,7 +388,10 @@ export default async function Home() {
     { n: '07', title: 'The Screen of the Metros', desc: 'A century of box office and Oscar prestige, credited back to the metros that made it.', stat: '1927–now', href: '/screen', emoji: '🎬', isNew: true, preview: topFilmMetros() },
   ];
 
-  const leagueRows = LEAGUES.map((l) => ({ ...l, status: leagueStatusFor(l.href) }));
+  const inSeasonRank = (s: ReturnType<typeof leagueStatusFor>) => (!s || s.tone === 'offseason' ? 1 : 0);
+  const leagueRows = LEAGUES
+    .map((l) => ({ ...l, status: l.href === '/teams/football' ? clubFootballStatus() : leagueStatusFor(l.href) }))
+    .sort((a, b) => inSeasonRank(a.status) - inSeasonRank(b.status));
   const liveLeagues = leagueRows.filter((l) => l.status && l.status.tone !== 'offseason');
 
   const dataset = datasetJsonLd({ lastUpdate, metroCount: metros.length });
@@ -453,12 +461,8 @@ export default async function Home() {
                         title={l.status ? `${l.name} — ${l.status.label}` : l.name}
                       >
                         <span aria-hidden>{l.emoji}</span>
-                        <span>{isWC ? 'World Cup' : l.name}</span>
-                        {isWC ? (
-                          <span style={{ color: '#c9a4f5' }}>· Final Jul 19</span>
-                        ) : (
-                          <span className="w-1.5 h-1.5 rounded-full" style={{ background: color }} aria-hidden />
-                        )}
+                        <span>{isWC ? (l.status?.label?.replace('Live - ', '') ?? l.name) : l.name}</span>
+                        <span className="w-1.5 h-1.5 rounded-full" style={{ background: color }} aria-hidden />
                       </Link>
                     );
                   })}

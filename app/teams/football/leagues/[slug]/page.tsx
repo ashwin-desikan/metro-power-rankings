@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fragment } from "react";
 import HubNav from "@/app/teams/HubNav";
+import FootballHubNav from "@/app/teams/FootballHubNav";
 import Link from "next/link";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import { notFound } from "next/navigation";
@@ -151,6 +152,8 @@ export default async function FootballLeagueHubPage({ params }: Props) {
         {" / "}
         <span>{hub.league}</span>
       </nav>
+
+      <FootballHubNav current="leagues" />
 
       <header className="mb-8">
         <h1 className="text-3xl font-semibold tracking-tight">{hub.league}</h1>

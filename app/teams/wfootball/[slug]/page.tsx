@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllWCompetitionSlugs, getWCompetition } from "@/lib/wfootball";
+import { getWLiveCompetition } from "@/lib/wLive";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import WLiveComp from "@/app/teams/wfootball/WLiveComp";
 
 export const dynamicParams = false;
 type Props = { params: Promise<{ slug: string }> };
@@ -33,6 +35,7 @@ export default async function WCompetitionPage({ params }: Props) {
   if (!c) notFound();
   const hasScore = c.champions.some((x) => x.score);
   const top = c.most_decorated[0];
+  const live = await getWLiveCompetition(slug);
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
@@ -87,6 +90,16 @@ export default async function WCompetitionPage({ params }: Props) {
           ) : (
             <div className="text-sm text-[var(--text-dim)]">{c.current.year} season to be decided</div>
           )}
+        </section>
+      )}
+
+      {live && live.hasContent && (
+        <section className="rounded-xl border p-5 mb-6" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+          <div className="flex items-center gap-2 flex-wrap mb-3">
+            <h2 className="text-base font-semibold">{live.seasonLabel} · live</h2>
+            <span className="inline-flex items-center rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold" style={{ background: "rgba(16,185,129,0.16)", color: "#10b981" }}>Live · api-football</span>
+          </div>
+          <WLiveComp comp={live} />
         </section>
       )}
 

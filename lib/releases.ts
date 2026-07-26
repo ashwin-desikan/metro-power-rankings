@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-07-26",
+    headline: "A live women's season hub, cleaner Club Football, and champions fixes",
+    items: [
+      "The women's club page gains a live 2026-27 hub: standings for Spain's Liga F, the NWSL and England's WSL plus the Women's Champions League, echoed on each country hub and the UWCL page.",
+      "Every Club Football page now carries the same section navigation and a back button, and the 2026-27 hub splits UEFA into three coefficient tiers with a collapsed Copa Libertadores.",
+      "The home page promotes Club Football under live standings and its in-season board self-updates, now adding the NFL, college football and college basketball, with UEFA competitions shown as live.",
+      "Champions now read from a single source: the Tour de France updates to its 2026 winner, and every reigning champion shows the date its crown is next contested.",
+    ],
+  },
+  {
     date: "2026-07-23",
     headline: "The Screen of the Metros: a century of film, by metro",
     items: [

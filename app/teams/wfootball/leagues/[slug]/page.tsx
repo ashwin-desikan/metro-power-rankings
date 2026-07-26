@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllWLeagueHubSlugs, getWLeagueHub, getWLeagueHubClubs, decoratedRows, columnsForHub } from "@/lib/wfootball";
+import { getWLiveLeagueForHub } from "@/lib/wLive";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import MostDecoratedClubsTable from "@/app/teams/wfootball/MostDecoratedClubsTable";
+import WLiveTable from "@/app/teams/wfootball/WLiveTable";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 
 export const dynamicParams = false;
@@ -34,6 +36,7 @@ export default async function WLeagueHubPage({ params }: Props) {
   const top = hub.most_decorated[0];
   const rows = decoratedRows(getWLeagueHubClubs(slug));
   const compsLabel = hub.competitions.map((c) => c.short_label).join(" and ");
+  const live = await getWLiveLeagueForHub(slug);
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
@@ -59,6 +62,30 @@ export default async function WLeagueHubPage({ params }: Props) {
           {top ? <> Most decorated: <span className="text-[var(--text)] font-medium"><CrestIcon name={top.name} size={18} className="mr-1.5 align-middle" />{top.name}</span> ({top.titles}).</> : null}
         </p>
       </header>
+
+      {live && live.hasRows && (
+        <section className="mb-8">
+          <div className="flex items-center gap-2 flex-wrap mb-3">
+            <h2 className="text-base font-semibold">{live.name} {live.seasonLabel} standings</h2>
+            <span className="inline-flex items-center rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
+              style={live.placeholder
+                ? { background: "rgba(148,163,184,0.18)", color: "#94a3b8" }
+                : live.source === "ESPN"
+                ? { background: "rgba(59,130,246,0.16)", color: "#3b82f6" }
+                : { background: "rgba(16,185,129,0.16)", color: "#10b981" }}>
+              {live.placeholder ? "Last season" : live.source === "ESPN" ? "Live · ESPN" : "Live · api-football"}
+            </span>
+          </div>
+          {live.placeholder && (
+            <p className="text-xs text-[var(--text-muted)] mb-3">
+              Showing the {live.seasonLabel} table until the 2026-27 season is published; it swaps automatically once the new season appears.
+            </p>
+          )}
+          <div className="rounded-xl border p-4 sm:p-5" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+            <WLiveTable groups={live.groups} />
+          </div>
+        </section>
+      )}
 
       <section id="champions" className="mb-10 scroll-mt-20">
         <h2 className="text-base font-semibold mb-3">Competitions</h2>

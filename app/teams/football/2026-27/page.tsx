@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import HubNav from "@/app/teams/HubNav";
+import FootballHubNav from "@/app/teams/FootballHubNav";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { getFootballClubByName } from "@/lib/football";
 import { getClubStandings, getClubCompetitions, getSuperCups, getDomesticCups, type LiveRow, type LiveComp } from "@/lib/clubFootballLive";
@@ -185,6 +186,8 @@ export default async function ClubFootball2027Page() {
         <Link href="/teams/football" className="hover:underline">Football</Link>{" / "}
         <span>2026-27</span>
       </nav>
+
+      <FootballHubNav current="season" />
 
       <header className="mb-6">
         <h1 className="text-3xl font-semibold tracking-tight">2026-27 Club Football</h1>

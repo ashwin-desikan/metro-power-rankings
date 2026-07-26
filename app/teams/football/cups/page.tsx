@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import HubNav from "@/app/teams/HubNav";
+import FootballHubNav from "@/app/teams/FootballHubNav";
 import { getDomesticCupCompetitions, getDomesticCupAggregate } from "@/lib/football";
 import CupsClient from "./CupsClient";
 
@@ -39,6 +40,8 @@ export default function DomesticCupsPage() {
         {" / "}
         <span>English Domestic Cups</span>
       </nav>
+
+      <FootballHubNav current="cups" />
 
       <header className="mb-6">
         <h1 className="text-4xl font-bold tracking-tight mb-2">English Domestic Cups</h1>

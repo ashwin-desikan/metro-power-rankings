@@ -9,6 +9,7 @@ import {
   type EuropeanCurrentEntry,
 } from "@/lib/football";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import FootballHubNav from "@/app/teams/FootballHubNav";
 import MostDecoratedTable from "./MostDecoratedTable";
 import ContinentalTable from "./ContinentalTable";
 import { getClubCompetitions } from "@/lib/clubFootballLive";
@@ -94,6 +95,8 @@ export default async function ClubTournamentHubPage({ params }: Props) {
         {" / "}
         <span>{hub.short_label}</span>
       </nav>
+
+      <FootballHubNav current="competitions" showBack={false} />
 
       <header className="mb-6">
         <div className="flex items-center gap-3 flex-wrap">
