@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- api-football daily standings/fixtures refresh. Wakes at 05:00 AND 06:00 LOCAL;
+     the script's UTC guard runs the real job only at 05:00 UTC (GMT/BST safe).
+     Install:  cp this plist to ~/Library/LaunchAgents/ ; launchctl load it.  -->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.citizenofnowhere.football-standings</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-lc</string>
+    <string>"$HOME/Projects/Metro Area Project/mac-mini-jobs/run-football-standings.sh"</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Hour</key><integer>5</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Hour</key><integer>6</integer><key>Minute</key><integer>0</integer></dict>
+  </array>
+  <key>StandardOutPath</key>
+  <string>/tmp/football-standings.out</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/football-standings.err</string>
+</dict>
+</plist>

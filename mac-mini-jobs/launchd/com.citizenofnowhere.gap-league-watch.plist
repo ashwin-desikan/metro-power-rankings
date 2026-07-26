@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Gap-league watcher, DAILY. Wakes 05:00 AND 06:00 LOCAL; the script's UTC guard runs the
+     real job only at 05:00 UTC (GMT/BST safe). Checks whether the 2026-27 season has appeared
+     for the leagues in leagues_pending.json.
+     Install:  cp this plist to ~/Library/LaunchAgents/ ; launchctl load it.  -->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.citizenofnowhere.gap-league-watch</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-lc</string>
+    <string>"$HOME/Projects/Metro Area Project/mac-mini-jobs/run-gap-league-watch.sh"</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Hour</key><integer>5</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Hour</key><integer>6</integer><key>Minute</key><integer>0</integer></dict>
+  </array>
+  <key>StandardOutPath</key>
+  <string>/tmp/gap-league-watch.out</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/gap-league-watch.err</string>
+</dict>
+</plist>

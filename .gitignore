@@ -159,3 +159,7 @@ _to_delete/
 /*.xlsx
 Overture-Match-Suggestions/*.xlsx
 Overture-Per-Country-Raw/*.xlsx
+
+# api-football pipeline scratch (contains apikey.txt + local data dumps) — never commit
+scripts/apifootball/_scratch/
+scripts/apifootball/__pycache__/
