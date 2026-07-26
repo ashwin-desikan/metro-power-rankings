@@ -13,7 +13,14 @@ import MostDecoratedTable from "./MostDecoratedTable";
 import ContinentalTable from "./ContinentalTable";
 import EuroCompFixtures from "./EuroCompFixtures";
 import { getEuroCompFixtures } from "@/lib/euroComps";
+import { getClubCompetitions } from "@/lib/clubFootballLive";
+import LiveCompGroups from "./LiveCompGroups";
 import HubNav from "@/app/teams/HubNav";
+
+// api-football competition ids for the tournament hubs that carry live standings.
+const COMP_ID_BY_SLUG: Record<string, number> = {
+  "champions-league": 2, "europa-league": 3, "conference-league": 848, "uefa-super-cup": 531,
+};
 
 export const dynamicParams = false;
 
@@ -55,8 +62,12 @@ export default async function ClubTournamentHubPage({ params }: Props) {
 
   const hasCurrent = hub.active && hub.current_entries.length > 0;
   const euroFix = hub.active ? await getEuroCompFixtures(slug) : null;
+  const compId = COMP_ID_BY_SLUG[slug];
+  const liveComp = hub.active && compId ? ((await getClubCompetitions()).find((c) => c.league_id === compId) ?? null) : null;
+  const hasGroups = !!liveComp && liveComp.groups.length > 0;
 
   const navItems = [
+    ...(hasGroups ? [{ label: "Standings", href: "#groups" }] : []),
     ...(euroFix ? [{ label: "Fixtures", href: "#fixtures" }] : []),
     ...(hasCurrent ? [{ label: "Current Season", href: "#current" }] : []),
     { label: "All-Time Finals", href: "#finals" },
@@ -113,6 +124,8 @@ export default async function ClubTournamentHubPage({ params }: Props) {
       </header>
 
       {navItems.length > 1 && <HubNav items={navItems} />}
+
+      {hasGroups && liveComp && <LiveCompGroups comp={liveComp} season={hub.current_season} />}
 
       {euroFix && <EuroCompFixtures data={euroFix} />}
 
