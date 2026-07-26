@@ -26,8 +26,34 @@ export const metadata: Metadata = {
 
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const cardStyle = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
-const CONF_ORDER = ["UEFA", "CONMEBOL", "CONCACAF", "AFC", "CAF"];
+const CONF_ORDER = ["UEFA · Primary", "UEFA · Secondary", "UEFA · Spring-Summer", "CONMEBOL", "CONCACAF", "AFC", "CAF"];
 const COMP_ORDER = [2, 3, 848, 13]; // CL, EL, ECL, Libertadores (Super Cup lives in the Super Cups section)
+
+// UEFA association-coefficient tiers. `tier` decides which of the three UEFA tabs a country's
+// leagues sit under; `rank` orders countries within a tab (ascending = strongest coefficient
+// first) and orders the three tabs themselves. Countries absent here fall through to Secondary.
+type UefaTier = "Primary" | "Secondary" | "Spring-Summer";
+const UEFA_TIERS: Record<string, { tier: UefaTier; rank: number }> = {
+  England: { tier: "Primary", rank: 1 }, Italy: { tier: "Primary", rank: 2 }, Spain: { tier: "Primary", rank: 3 },
+  Germany: { tier: "Primary", rank: 4 }, France: { tier: "Primary", rank: 5 }, Portugal: { tier: "Primary", rank: 6 },
+  Netherlands: { tier: "Primary", rank: 8 }, Scotland: { tier: "Primary", rank: 19 },
+  Belgium: { tier: "Secondary", rank: 7 }, Turkey: { tier: "Secondary", rank: 9 }, "Czech Republic": { tier: "Secondary", rank: 10 },
+  Poland: { tier: "Secondary", rank: 11 }, Greece: { tier: "Secondary", rank: 12 }, Denmark: { tier: "Secondary", rank: 13 },
+  Cyprus: { tier: "Secondary", rank: 15 }, Switzerland: { tier: "Secondary", rank: 16 }, Hungary: { tier: "Secondary", rank: 17 },
+  Austria: { tier: "Secondary", rank: 20 }, Romania: { tier: "Secondary", rank: 21 }, Ukraine: { tier: "Secondary", rank: 22 },
+  Croatia: { tier: "Secondary", rank: 23 }, Slovenia: { tier: "Secondary", rank: 24 }, Israel: { tier: "Secondary", rank: 25 },
+  Azerbaijan: { tier: "Secondary", rank: 26 }, Slovakia: { tier: "Secondary", rank: 27 }, Bulgaria: { tier: "Secondary", rank: 28 },
+  Russia: { tier: "Secondary", rank: 29 }, Serbia: { tier: "Secondary", rank: 30 }, Armenia: { tier: "Secondary", rank: 33 },
+  "Bosnia-Herzegovina": { tier: "Secondary", rank: 34 }, Kosovo: { tier: "Secondary", rank: 35 }, Moldova: { tier: "Secondary", rank: 39 },
+  "North Macedonia": { tier: "Secondary", rank: 42 }, Albania: { tier: "Secondary", rank: 44 }, Malta: { tier: "Secondary", rank: 45 },
+  Andorra: { tier: "Secondary", rank: 47 }, Gibraltar: { tier: "Secondary", rank: 49 }, "Northern Ireland": { tier: "Secondary", rank: 50 },
+  Luxembourg: { tier: "Secondary", rank: 51 }, Montenegro: { tier: "Secondary", rank: 53 }, Wales: { tier: "Secondary", rank: 54 },
+  "San Marino": { tier: "Secondary", rank: 55 },
+  Norway: { tier: "Spring-Summer", rank: 14 }, Sweden: { tier: "Spring-Summer", rank: 18 }, Iceland: { tier: "Spring-Summer", rank: 31 },
+  Ireland: { tier: "Spring-Summer", rank: 32 }, Latvia: { tier: "Spring-Summer", rank: 36 }, Kazakhstan: { tier: "Spring-Summer", rank: 37 },
+  Finland: { tier: "Spring-Summer", rank: 38 }, "Faroe Islands": { tier: "Spring-Summer", rank: 41 }, Belarus: { tier: "Spring-Summer", rank: 43 },
+  Lithuania: { tier: "Spring-Summer", rank: 46 }, Estonia: { tier: "Spring-Summer", rank: 48 }, Georgia: { tier: "Spring-Summer", rank: 52 },
+};
 const DASH = "—";
 
 const num = (v: number | null | undefined): number | string => (v === null || v === undefined ? DASH : v);
@@ -60,7 +86,8 @@ function buildConfs(standings: Awaited<ReturnType<typeof getClubStandings>>): Hu
       }))
       .filter((g) => g.rows.length > 0);
     if (groups.length === 0) continue;
-    const conf = lg.confederation ?? "Other";
+    const uefaTier = lg.confederation === "UEFA" ? (UEFA_TIERS[lg.country ?? ""]?.tier ?? "Secondary") : null;
+    const conf = uefaTier ? `UEFA · ${uefaTier}` : (lg.confederation ?? "Other");
     const country = lg.country ?? DASH;
     if (!confMap.has(conf)) confMap.set(conf, new Map());
     const byCountry = confMap.get(conf)!;
@@ -73,7 +100,14 @@ function buildConfs(standings: Awaited<ReturnType<typeof getClubStandings>>): Hu
     .map(([confederation, byCountry]) => ({
       confederation,
       countries: [...byCountry.entries()]
-        .sort((a, b) => a[0].localeCompare(b[0]))
+        .sort((a, b) => {
+          // UEFA countries order by coefficient rank (ascending); everything else alphabetical.
+          const ra = UEFA_TIERS[a[0]]?.rank, rb = UEFA_TIERS[b[0]]?.rank;
+          if (ra != null && rb != null) return ra - rb;
+          if (ra != null) return -1;
+          if (rb != null) return 1;
+          return a[0].localeCompare(b[0]);
+        })
         .map(([country, leagues]) => ({ country, leagues: leagues.sort((x, y) => (x.level ?? 99) - (y.level ?? 99) || x.name.localeCompare(y.name)) })),
     }));
 }
@@ -123,9 +157,10 @@ function CompCard({ comp }: { comp: LiveComp }) {
     const res = isFinished(f.status) && f.home_goals !== null && f.away_goals !== null ? `${f.home_goals}–${f.away_goals}` : fmtDate(f.kickoff);
     return { key: f.fixture_id, text: `${h} v ${a}`, res };
   };
-  const name = (comp.name ?? "").replace(/^UEFA |^CONMEBOL /, "");
+  const isLibertadores = comp.league_id === 13;
+  const name = isLibertadores ? "Copa Libertadores" : (comp.name ?? "").replace(/^UEFA |^CONMEBOL /, "");
   return (
-    <details className="rounded-xl border overflow-hidden" style={cardStyle} open={comp.groups.length > 0}>
+    <details className="rounded-xl border overflow-hidden" style={cardStyle} open={comp.groups.length > 0 && !isLibertadores}>
       <summary className="cursor-pointer select-none px-4 py-2.5 font-semibold text-sm">{name}</summary>
       <div className="border-t px-3 py-3 space-y-3" style={{ borderColor: "var(--border)" }}>
         {comp.groups.length > 0 && (
@@ -174,9 +209,9 @@ export default async function ClubFootball2027Page() {
 
   const nav = [
     ...(orderedComps.length > 0 ? [{ label: "Competitions", href: "#competitions" }] : []),
-    ...(superCups.some((c) => c.fixtures.length > 0) ? [{ label: "Super Cups", href: "#supercups" }] : []),
-    ...(domesticCups.some((c) => c.fixtures.length > 0) ? [{ label: "Domestic Cups", href: "#domestic-cups" }] : []),
     { label: "Leagues", href: "#domestic" },
+    ...(domesticCups.some((c) => c.fixtures.length > 0) ? [{ label: "Domestic Cups", href: "#domestic-cups" }] : []),
+    ...(superCups.some((c) => c.fixtures.length > 0) ? [{ label: "Super Cups", href: "#supercups" }] : []),
   ];
 
   return (
@@ -212,10 +247,7 @@ export default async function ClubFootball2027Page() {
         </section>
       )}
 
-      <SuperCupsSection cups={superCups} />
-      <DomesticCupsSection cups={domesticCups} />
-
-      <section id="domestic" className="scroll-mt-24">
+      <section id="domestic" className="scroll-mt-24 mb-10">
         <h2 className="text-lg font-semibold mb-3">Domestic leagues</h2>
         {confs.length === 0 ? (
           <p className="text-sm text-[var(--text-muted)] italic">No live league tables right now. Most European seasons begin in August.</p>
@@ -223,6 +255,9 @@ export default async function ClubFootball2027Page() {
           <Hub2027Client confs={confs} />
         )}
       </section>
+
+      <DomesticCupsSection cups={domesticCups} />
+      <SuperCupsSection cups={superCups} />
     </main>
   );
 }
