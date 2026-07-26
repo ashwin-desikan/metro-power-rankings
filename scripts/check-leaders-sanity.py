@@ -23,12 +23,16 @@ import json, re, subprocess, sys
 
 PATH = "public/data/leaders/_current.json"
 
-# Manually verified; the scrape must NOT overwrite these until the source
-# (office selection + vandalism gate) is fixed. Update deliberately, by hand.
-# Compared on the BARE name, so a warn/crown glyph on the committed value is fine.
+# Manually verified heads of government the scrape must NOT overwrite (Wikidata is
+# vandalized, stale, or returns the wrong office for these). Compared on the BARE
+# name, so a warn/crown glyph on the committed value is fine. Update deliberately,
+# by hand, as part of a real leadership change -- a drift here HOLDs the commit.
 PINS = {
-    "india":        "Narendra Modi",
-    "saudi-arabia": "Mohammed bin Salman",
+    "india":        "Narendra Modi",         # WD head-of-state label was vandalized ("Ganesh rajput")
+    "saudi-arabia": "Mohammed bin Salman",   # WD returns King Salman for both P35/P6
+    "israel":       "Benjamin Netanyahu",    # PM_LED fix; WD would otherwise lead with ceremonial Pres.
+    "hungary":      "Péter Magyar",          # WD P6 is an unresolved QID -> regresses to acting Pres.
+    "bulgaria":     "Rumen Radev",           # WD P6 stale (still Petkov, 2021)
 }
 PARTICLES = {"bin","bint","ibn","al","van","von","de","da","del","dos","di","der",
              "ter","of","the","e","du","la","le","y","das"}
