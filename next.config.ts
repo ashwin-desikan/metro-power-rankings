@@ -10,6 +10,13 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  // boundaries-simplified.json (21.6MB) is fetched client-side only
+  // (lib/useMetroBoundaries.ts); no server function reads it via fs, so
+  // keep it out of every serverless function trace. Honored under the
+  // webpack builder (see build script); Turbopack ignores this today.
+  outputFileTracingExcludes: {
+    "*": ["public/data/boundaries-simplified.json"],
+  },
   async redirects() {
     return [
       // Metro renamed: Tula, Mexico slug changed from tula-mexico to

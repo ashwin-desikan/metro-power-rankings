@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
     "extract": "python3 scripts/extract.py",
     "rebuild:trigger": "node scripts/trigger-rebuild.mjs",
@@ -14,7 +14,7 @@
     "check:table-scroll": "node scripts/check-table-scroll.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
-    "verify": "npm run typecheck && npm run check:client-imports && npm run check:public-data && npm run check:table-scroll && npm run test && next build",
+    "verify": "npm run typecheck && npm run check:client-imports && npm run check:public-data && npm run check:table-scroll && npm run test && next build --webpack",
     "deploy-status": "node scripts/deploy-status.mjs"
   },
   "dependencies": {

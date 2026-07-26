@@ -151,3 +151,11 @@ OtherLeagues.xlsx
 
 # local scratch for files git cannot rm over the device bridge
 _to_delete/
+
+# Excel source workbooks + Overture raw dumps: pipeline inputs on the Windows
+# host, never read by `next build`. Kept on disk, out of git so Vercel does not
+# clone ~50MB+ of them each deploy. Untrack existing ones with:
+#   git rm --cached <file>   (keeps the working copy; reversible via history)
+/*.xlsx
+Overture-Match-Suggestions/*.xlsx
+Overture-Per-Country-Raw/*.xlsx
