@@ -52,6 +52,9 @@ export async function generateStaticParams() {
   const notable = new Set(
     getAllClubs()
       .filter((c) => (c.top_flight_seasons ?? 0) > 0)
+      // Prerender the most-established clubs; long tail renders on demand.
+      .sort((a, b) => (b.top_flight_seasons ?? 0) - (a.top_flight_seasons ?? 0))
+      .slice(0, 150)
       .map((c) => c.slug)
   );
   return getAllClubSlugs()

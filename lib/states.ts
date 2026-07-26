@@ -149,7 +149,7 @@ export function getStateSlugsWithMetros(): string[] {
 // world-significant, so a metroCount>0-but-low-scoreTotal state (a province
 // with one small metro) is what actually gets deferred to on-demand
 // rendering here.
-const STATE_STATIC_PARAMS_TOP_N = 500;
+const STATE_STATIC_PARAMS_TOP_N = 150; // was 500; rest render on demand (dynamicParams=true, 1y revalidate)
 
 export function getTopStateSlugsForStaticParams(): string[] {
   return getAllStates()

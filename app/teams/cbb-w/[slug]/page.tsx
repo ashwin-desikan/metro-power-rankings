@@ -15,7 +15,7 @@ import { getRivalries } from "@/lib/rivalries";
 export const dynamicParams = true;
 export const revalidate = 31536000; // 1 year — effectively static
 export function generateStaticParams() {
-  return getAllWcbbTeams().filter((t) => t.current_d1).map((t) => ({ slug: t.slug }));
+  return getAllWcbbTeams().filter((t) => t.current_d1).sort((a, b) => (b.w ?? 0) - (a.w ?? 0)).slice(0, 120).map((t) => ({ slug: t.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
