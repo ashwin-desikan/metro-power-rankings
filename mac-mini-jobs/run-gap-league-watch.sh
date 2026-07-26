@@ -23,7 +23,11 @@ fi
 
 log "=== gap-league-watch start ($DATE) ==="
 [ -n "${APISPORTS_KEY:-}" ]      || fail "APISPORTS_KEY not set (expected in ~/.config/metro-supabase/env)"
-[ -n "${SUPABASE_WRITE_KEY:-}" ] || fail "SUPABASE_WRITE_KEY not set (expected in ~/.config/metro-supabase/env)"
+# Accept SUPABASE_SERVICE_KEY as well as SUPABASE_WRITE_KEY: watch_gap_leagues.py's
+# supa_key_soft() falls back WRITE_KEY -> SERVICE_KEY -> ANON_KEY, and the rest of the
+# mini's jobs standardise on SERVICE_KEY. Requiring WRITE_KEY alone hard-failed the job
+# even though the env has SERVICE_KEY (which grants write) and the code accepts it.
+[ -n "${SUPABASE_WRITE_KEY:-}${SUPABASE_SERVICE_KEY:-}" ] || fail "no Supabase key set (SUPABASE_WRITE_KEY or SUPABASE_SERVICE_KEY expected in ~/.config/metro-supabase/env)"
 cd "$REPO" || fail "repo not found: $REPO"
 git fetch origin main --quiet || fail "git fetch failed"
 git merge --ff-only origin/main --quiet || fail "cannot fast-forward (repo diverged; resolve by hand)"
