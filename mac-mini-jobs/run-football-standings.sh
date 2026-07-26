@@ -45,7 +45,11 @@ log "exporting frontend bundles"
 "$PY" scripts/apifootball/export_bundles.py 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "export_bundles failed"
 "$PY" scripts/apifootball/refresh_supercups.py 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "supercups export failed"
 "$PY" scripts/apifootball/refresh_domestic_cups.py 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "domestic cups export failed"
-BUNDLES="public/data/football/live-standings-2026.json public/data/football/live-competitions-2026.json public/data/football/live-supercups-2026.json public/data/football/live-cups-2026.json"
+# Women's hub: bundle-direct (no Supabase), writes wlive-2026.json. Its WSL auto-watch
+# swaps FA WSL to 2026-27 the day api-football publishes that table -- so it must run
+# daily, not once. lib/wLive.ts ISR-reads the bundle from GitHub raw ([vercel skip]).
+"$PY" scripts/apifootball/refresh_women.py --write 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "women's refresh failed"
+BUNDLES="public/data/football/live-standings-2026.json public/data/football/live-competitions-2026.json public/data/football/live-supercups-2026.json public/data/football/live-cups-2026.json public/data/football/wlive-2026.json"
 if ! git diff --quiet -- $BUNDLES; then
   git add $BUNDLES
   git commit -q -m "football: refresh live bundles [vercel skip]" || fail "bundle commit failed"
