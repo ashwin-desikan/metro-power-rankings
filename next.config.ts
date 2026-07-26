@@ -12,6 +12,13 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Metro renamed: Tula, Mexico slug changed from tula-mexico to
+      // tula-de-allende (formal metro name). Preserve the old indexed URL.
+      {
+        source: "/rankings/tula-mexico",
+        destination: "/rankings/tula-de-allende",
+        permanent: true,
+      },
       // Original Ottawa Senators / St. Louis Eagles dynasty: canonical name
       // changed from "Eagles" to "Senators (Org)" (slug senators-org).
       {

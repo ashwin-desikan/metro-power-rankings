@@ -148,3 +148,6 @@ data/power-history/maddison_gdp.json
 pull-history-log.txt
 
 OtherLeagues.xlsx
+
+# local scratch for files git cannot rm over the device bridge
+_to_delete/
