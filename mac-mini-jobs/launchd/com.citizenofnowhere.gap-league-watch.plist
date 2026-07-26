@@ -12,7 +12,7 @@
   <array>
     <string>/bin/bash</string>
     <string>-lc</string>
-    <string>"$HOME/Projects/Metro Area Project/mac-mini-jobs/run-gap-league-watch.sh"</string>
+    <string>exec "$HOME/metro-mini-jobs/hc-run.sh" gap-league-watch /bin/bash "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-gap-league-watch.sh"</string>
   </array>
   <key>StartCalendarInterval</key>
   <array>

@@ -27,7 +27,9 @@ fi
 
 log "=== football-standings start ($DATE) ==="
 [ -n "${APISPORTS_KEY:-}" ]      || fail "APISPORTS_KEY not set (expected in ~/.config/metro-supabase/env)"
-[ -n "${SUPABASE_WRITE_KEY:-}" ] || fail "SUPABASE_WRITE_KEY not set (expected in ~/.config/metro-supabase/env)"
+# Accept SUPABASE_SERVICE_KEY as well as SUPABASE_WRITE_KEY (refresh.py already falls
+# back to it, and the mini standardises on SERVICE_KEY). See run-gap-league-watch.sh.
+[ -n "${SUPABASE_WRITE_KEY:-}${SUPABASE_SERVICE_KEY:-}" ] || fail "no Supabase key set (SUPABASE_WRITE_KEY or SUPABASE_SERVICE_KEY expected in ~/.config/metro-supabase/env)"
 cd "$REPO" || fail "repo not found: $REPO"
 git fetch origin main --quiet || fail "git fetch failed"
 git merge --ff-only origin/main --quiet || fail "cannot fast-forward (repo diverged; resolve by hand)"
