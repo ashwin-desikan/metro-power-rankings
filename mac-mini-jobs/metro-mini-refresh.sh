@@ -116,6 +116,12 @@ run_step() {  # run_step "label" cmd...
 # by _plausible() plus a single-unambiguous-office check, so a noisy Wikidata
 # edit is skipped rather than published.
 run_step "leaders (auto-apply)" "$PY" scripts/leaders/refresh-current-leaders.py
+# Weekly reconciliation of the curated leader overrides (saudi/hungary/bulgaria)
+# against live Wikidata. Overrides auto-apply their forced value every run, so a
+# real handover in an overridden country would otherwise be masked silently. This
+# ntfy's if WD has caught up (override removable) or CHANGED to a new value (a
+# possible real change to review). Read-only: queries WD, writes nothing, exits 0.
+run_step "leaders override audit" "$PY" scripts/leaders/check-wikidata-overrides.py
 run_step "governors (add-only)" "$PY" scripts/civic/refresh_governors.py --add-only
 run_step "congress"             "$PY" scripts/civic/refresh_congress.py
 run_step "mayors"               "$PY" scripts/civic/refresh_mayors.py
