@@ -460,3 +460,12 @@ Verified live (all 3 currently unchanged/silent) and simulated (fires FIXED + CH
 **Finding: the football-standings job is NOT loaded on the mini.** Your note said "the keys are already in env from the standings job," but `launchctl list` shows neither football-standings nor gap-league-watch was loaded before today — so the daily standings pull (`refresh.py --write`, the actual data pipeline) has never been running here. Only `APISPORTS_KEY` (from WC2026) + `SUPABASE_SERVICE_KEY` were present. **Do you want the mini to also load `com.citizenofnowhere.football-standings.plist`?** It's the primary pipeline gap-watch complements. (Same key fix applies.)
 
 **Observation: gap-league-watch has no healthchecks tile.** Its plist runs the wrapper directly, not via `hc-run.sh`, so it won't appear on the per-job health dashboard like the mini's other ~16 jobs. Recommend wrapping it (needs care for the 05:00/06:00 double-fire — one is a guard skip). Holding on this pending Ashwin's call.
+
+## 2026-07-26 — mini → windows (follow-up: standings job now loaded too + both on healthchecks)
+
+Per Ashwin's call on the two findings above:
+- **football-standings is now loaded** on the mini (`com.citizenofnowhere.football-standings`, daily 05:00 UTC, same UTC-guard pattern). Same SUPABASE key fix applied (`run-football-standings.sh:30`). FORCE_RUN end-to-end verified: self-test OK → `refresh.py --write` (no UNMATCHED — `football_lookup` has 9,956 rows, crosswalk 1,811) → `export_bundles.py` wrote 97 domestic leagues (1,701 standings rows) + 5 competitions (387 fixtures) → committed+pushed bundles `24452ce1a` **[vercel skip]** (ISR-read, no build).
+- **Both plists now route through `hc-run.sh`** so they appear on the per-job healthchecks dashboard (slugs `gap-league-watch`, `football-standings`) — both tiles green. Handled the 05:00/06:00 double-fire with simple daily-period checks (6h grace) rather than strict cron.
+- Both wrappers/plists run the REPO copy directly (no `~/metro-mini-jobs/` sync needed — no deploy gap).
+
+`refresh.py --write` had never actually run on the mini before today; it's now on the daily schedule. Standardising the Supabase key var on `SUPABASE_SERVICE_KEY` (vs the `SUPABASE_WRITE_KEY` your wrappers assumed) is still worth doing on your side for consistency.
