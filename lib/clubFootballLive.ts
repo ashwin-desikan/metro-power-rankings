@@ -16,7 +16,7 @@ export type LiveRow = LiveTeamRef & {
   gf: number | null; ga: number | null; gd: number | null; points: number | null; form: string | null;
 };
 export type LiveGroup = { group_label: string; rows: LiveRow[] };
-export type LiveLeague = { league_id: number; name: string | null; country: string | null; level: number | null; groups: LiveGroup[] };
+export type LiveLeague = { league_id: number; name: string | null; country: string | null; level: number | null; confederation?: string | null; groups: LiveGroup[] };
 export type LiveFixture = {
   fixture_id: number; round: string | null; kickoff: string | null;
   home: LiveTeamRef; away: LiveTeamRef; home_goals: number | null; away_goals: number | null; status: string | null;

@@ -74,6 +74,26 @@ export default function FootballIndex() {
         </p>
       </header>
 
+      <Link
+        href="/teams/football/2026-27"
+        className="block rounded-xl border-2 p-5 mb-8 transition hover:brightness-110"
+        style={{ background: "var(--bg-card)", borderColor: "var(--accent)" }}
+      >
+        <div className="flex items-center justify-between gap-3 flex-wrap">
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="inline-block rounded px-1.5 py-0.5 text-[9px] uppercase tracking-wide font-semibold" style={{ background: "rgba(16,185,129,0.18)", color: "#10b981" }}>Live</span>
+              <span className="text-lg font-semibold">2026-27 Club Football Hub</span>
+            </div>
+            <p className="text-sm text-[var(--text-muted)] mt-1 max-w-2xl">
+              Live league tables for every domestic competition and tier tracked, grouped by confederation,
+              alongside the European club competitions and Copa Libertadores.
+            </p>
+          </div>
+          <span className="text-sm text-[var(--accent)] font-medium whitespace-nowrap">Open the season hub →</span>
+        </div>
+      </Link>
+
       <HubNav
         items={[
           { label: "Tournament Hubs", href: "#tournaments" },
