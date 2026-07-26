@@ -14,7 +14,7 @@ import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
 import { getLiveCflStandings } from "@/lib/cflStandings";
 import { getLiveF1Standings } from "@/lib/f1Standings";
 import { getNpbStandings } from "@/lib/npbStandings";
-import { getWc2026LiveStandings, mergeWc2026Live, fetchWc2026Bundle, getWc2026LiveScores, mergeWc2026Knockout } from "@/lib/wc2026Standings";
+import { getClubStandings, getClubCompetitions, type LiveLeague, type LiveComp, type LiveRow } from "@/lib/clubFootballLive";
 import { getFootyLiveStandings } from "@/lib/_footyStandings";
 import { getLiveGolfMajor } from "@/lib/golfLeaderboard";
 import { getLiveTennisSlam } from "@/lib/tennisDraw";
@@ -33,15 +33,14 @@ import { getAllAflFranchises } from "@/lib/afl";
 import { getAllNrlFranchises } from "@/lib/nrl";
 import { getWClubByName } from "@/lib/wfootball";
 import { getFootballClubByName } from "@/lib/football";
-import { getWorldCup2026 } from "@/lib/international";
-import { flagCdnUrl, displayNameForTeam } from "@/lib/international-display";
+import { flagCdnUrl } from "@/lib/international-display";
 
 export const revalidate = 120;
 
 const PATH = "/sports/standings";
 const TITLE = "Live Standings";
 const DESC =
-  "Every live league table the site tracks, in one place: the four North American majors, MLS, NWSL, WNBA, CFL, NPB, AFL, NRL, F1 and the 2026 World Cup. Refreshed through each season.";
+  "Every live league table the site tracks, in one place: European club football, Copa Libertadores, the four North American majors, MLS, NWSL, WNBA, CFL, NPB, AFL, NRL and F1. Refreshed through each season.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -68,10 +67,10 @@ type SportGroup = { sport: string; blocks: Block[]; columns?: [Block[], Block[]]
 // in the correct column at the correct rank (ask which column + slot if unsure);
 // anything not listed appends to the end of the right column.
 const FOOTBALL_LEFT = [
-  "FIFA World Cup 2026",
   "Champions League",
   "Europa League",
   "Conference League",
+  "Copa Libertadores",
 ];
 const FOOTBALL_RIGHT = [
   "Premier League", "La Liga", "Bundesliga", "Serie A", "Ligue 1",
@@ -384,98 +383,51 @@ async function npbBlock(): Promise<Block | null> {
   return { league: "NPB", href: "/teams/baseball/npb", note: `${s.year}`, open: true, subTables };
 }
 
-function wc2026KnockoutSubTables(wc: ReturnType<typeof mergeWc2026Live>): SubTable[] {
-  const ko = wc.knockout ?? {};
-  const fmtDate = (d: string | null): string => {
-    if (!d) return DASH;
-    const dt = new Date(d + "T00:00:00Z");
-    return Number.isNaN(dt.getTime())
-      ? DASH
-      : dt.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" });
-  };
-  const ROUND_ORDER = ["Round of 32", "Round of 16", "Quarterfinals", "Semifinals", "Third Place Game", "Final"];
-  // Show only a rolling two-round window: the last completed round and the
-  // current round. Rounds two-or-more completed rounds ago (e.g. the Round of 32
-  // once the Quarterfinals are up) drop off so the block stays current.
-  const populatedRounds = ROUND_ORDER.filter((rn) => (ko[rn] ?? []).some((m) => m.team_slug && m.opp_slug));
-  const roundComplete = (rn: string): boolean => {
-    const ms = (ko[rn] ?? []).filter((m) => m.team_slug && m.opp_slug);
-    return ms.length > 0 && ms.every((m) => m.played && m.team_score !== null && m.opp_score !== null);
-  };
-  const currentIdx = populatedRounds.findIndex((rn) => !roundComplete(rn));
-  const keepRounds = new Set<string>(
-    (currentIdx === -1
-      ? populatedRounds.slice(-1) // between rounds / tournament over: just the latest completed round
-      : [populatedRounds[currentIdx - 1], populatedRounds[currentIdx]].filter(Boolean) as string[]),
-  );
-  // Third Place Game and the Final are one concluding stage — never split them.
-  if (keepRounds.has("Third Place Game") || keepRounds.has("Final")) {
-    keepRounds.add("Third Place Game");
-    keepRounds.add("Final");
-  }
-  return ROUND_ORDER.filter((rn) => keepRounds.has(rn)).map((rn): SubTable | null => {
-    const matches = (ko[rn] ?? []).filter((m) => m.team_slug && m.opp_slug);
-    if (matches.length === 0) return null;
-    const rows = matches.map((m): SRow => {
-      const tName = m.team_slug ? displayNameForTeam(m.team_slug, m.team_cur_name) : m.team_cur_name;
-      const oName = m.opp_slug ? displayNameForTeam(m.opp_slug, m.opp_cur_name) : m.opp_cur_name;
-      const result =
-        m.played && m.team_score !== null && m.opp_score !== null
-          ? `${m.team_score}–${m.opp_score}${m.penalty_kicks ? " (pens)" : ""}`
-          : fmtDate(m.date);
-      return {
-        rank: null,
-        name: `${tName} v ${oName}`,
-        href: m.team_slug ? `/teams/national/${m.team_slug}` : null,
-        flagUrl: m.team_slug ? flagCdnUrl(m.team_slug) : null,
-        cells: [result],
-      };
-    });
-    return { title: rn, columns: ["Result"], rows };
-  }).filter((s): s is SubTable => s !== null);
+// ---- club football (api-football -> Supabase -> committed bundles) ------
+
+const DOMESTIC_LIVE: { label: string; id: number }[] = [
+  { label: "Premier League", id: 39 }, { label: "La Liga", id: 140 }, { label: "Bundesliga", id: 78 },
+  { label: "Serie A", id: 135 }, { label: "Ligue 1", id: 61 }, { label: "Championship", id: 40 },
+  { label: "League One", id: 41 }, { label: "League Two", id: 42 }, { label: "National League", id: 43 },
+  { label: "Eredivisie", id: 88 }, { label: "Primeira Liga", id: 94 }, { label: "Scottish Premiership", id: 179 },
+];
+
+function clubRow(r: LiveRow, i: number, cols: "domestic" | "group"): SRow {
+  const c = getFootballClubByName(r.lookup ?? "") ?? getFootballClubByName(r.name ?? "");
+  const nm = c?.cur_name ?? r.name ?? r.lookup ?? "";
+  const cells = cols === "domestic"
+    ? [num(r.played), num(r.win), num(r.draw), num(r.lose), num(r.gf), num(r.ga), num(r.gd), num(r.points)]
+    : [num(r.played), num(r.win), num(r.draw), num(r.lose), num(r.gd), num(r.points)];
+  return { rank: r.rank ?? i + 1, name: nm, href: c ? `/teams/football/${c.slug}` : null, crestName: nm, cells };
 }
 
-async function wc2026Block(): Promise<Block | null> {
-  // Read the live bundle from GitHub raw (ISR), matching /teams/national, so the
-  // standings hub reflects the daily Action's data commits (knockout scores,
-  // recomputed standings) without needing a Vercel rebuild. Falls back to the
-  // build-time bundle if the fetch fails.
-  const bundle = await fetchWc2026Bundle(getWorldCup2026());
-  if (!bundle) return null;
-  const live = await getWc2026LiveStandings();
-  const scores = await getWc2026LiveScores();
-  // Overlay the live ESPN scoreboard knockout scores (as /teams/national does)
-  // so in-flight and just-finished knockout results appear here too, not only
-  // the results already committed into the wc2026.json bundle.
-  const wc = mergeWc2026Knockout(mergeWc2026Live(bundle, live), scores);
+const byPtsGd = (a: LiveRow, b: LiveRow) => (b.points ?? 0) - (a.points ?? 0) || (b.gd ?? 0) - (a.gd ?? 0);
 
-  // Follow the tournament into its active phase: once the bracket is populated
-  // (group stage complete), show the knockout rounds rather than the now-final
-  // group tables. Falls back to group tables during the group stage.
-  const r32 = wc.knockout?.["Round of 32"] ?? [];
-  if (r32.some((m) => !!m.team_slug && !!m.opp_slug)) {
-    const subTables = wc2026KnockoutSubTables(wc);
-    if (subTables.length > 0) {
-      return { league: "FIFA World Cup 2026", href: "/teams/national", note: "knockout stage", open: true, subTables };
-    }
-  }
+function domesticLiveBlock(league: LiveLeague | undefined, label: string): Block | null {
+  if (!league) return null;
+  const subTables: SubTable[] = league.groups
+    .map((g): SubTable => ({
+      title: league.groups.length > 1 ? g.group_label : null,
+      columns: ["P", "W", "D", "L", "GF", "GA", "GD", "Pts"],
+      rows: g.rows.slice().sort(byPtsGd).map((r, i) => clubRow(r, i, "domestic")),
+    }))
+    .filter((st) => st.rows.length > 0);
+  if (subTables.length === 0) return null;
+  return { league: label, href: "/teams/football/2026-27", note: "live", open: true, subTables };
+}
 
-  const keys = Object.keys(wc.group_stage).sort();
-  const subTables = keys.map((k): SubTable => {
-    const rows = wc.group_stage[k]
-      .slice()
-      .sort((a, b) => b.pts - a.pts || b.gd - a.gd)
-      .map((t): SRow => ({
-        rank: null,
-        name: t.slug ? displayNameForTeam(t.slug, t.cur_name) : t.cur_name,
-        href: t.slug ? `/teams/national/${t.slug}` : null,
-        flagUrl: t.slug ? flagCdnUrl(t.slug) : null,
-        cells: [t.matches, t.w, t.d, t.l, t.gd, t.pts],
-      }));
-    return { title: /^group/i.test(k) ? k : `Group ${k}`, columns: ["P", "W", "D", "L", "GD", "Pts"], rows };
-  });
-  const isLive = !!live && live.rows.length > 0;
-  return { league: "FIFA World Cup 2026", href: "/teams/national", note: isLive ? "live" : null, open: true, subTables };
+function libertadoresBlock(comp: LiveComp | undefined): Block | null {
+  if (!comp || comp.groups.length === 0) return null;
+  const subTables: SubTable[] = comp.groups
+    .slice().sort((a, b) => a.group_label.localeCompare(b.group_label))
+    .map((g): SubTable => ({
+      title: g.group_label,
+      columns: ["P", "W", "D", "L", "GD", "Pts"],
+      rows: g.rows.slice().sort(byPtsGd).map((r, i) => clubRow(r, i, "group")),
+    }))
+    .filter((st) => st.rows.length > 0);
+  if (subTables.length === 0) return null;
+  return { league: "Copa Libertadores", href: "/teams/football/2026-27", note: "group stage", open: true, subTables };
 }
 
 async function cflBlock(): Promise<Block | null> {
@@ -620,11 +572,17 @@ async function euroFixturesBlocks(): Promise<Block[]> {
 }
 
 export default async function LiveStandingsPage() {
-  const [nfl, nba, wnba, nhl, mlb, npb, mls, nwsl, wc, cfl, afl, nrl, f1, golf, tennis, wtc, rugbyFix, cricketFix, euro] = await Promise.all([
+  const [nfl, nba, wnba, nhl, mlb, npb, mls, nwsl, cfl, afl, nrl, f1, golf, tennis, wtc, rugbyFix, cricketFix, euro, clubStandings, clubComps] = await Promise.all([
     nflBlock(), nbaBlock(), wnbaBlock(), nhlBlock(), mlbBlock(), npbBlock(),
-    mlsBlock(), nwslBlock(), wc2026Block(), cflBlock(), footyBlock("afl"), footyBlock("nrl"), f1Block(),
+    mlsBlock(), nwslBlock(), cflBlock(), footyBlock("afl"), footyBlock("nrl"), f1Block(),
     golfBlock(), tennisBlock(), wtcBlock(), rugbyFixturesBlock(), cricketFixturesBlock(), euroFixturesBlocks(),
+    getClubStandings(), getClubCompetitions(),
   ]);
+  const clubById = new Map(clubStandings.map((l) => [l.league_id, l]));
+  const domestics = DOMESTIC_LIVE
+    .map((d) => domesticLiveBlock(clubById.get(d.id), d.label))
+    .filter((b): b is Block => b !== null);
+  const liber = libertadoresBlock(clubComps.find((c) => c.league_id === 13));
 
   // Collapse a block so the user opens it on demand (keeps a busy section tidy),
   // but preserve its in-season state as `live` so the green dot still shows.
@@ -634,11 +592,11 @@ export default async function LiveStandingsPage() {
   // Football first for the World Cup. Olympics/Cricket/Rugby Union/Handball/
   // Volleyball have no live feed here, so they are simply absent.
   const groups: SportGroup[] = [
-    // Keep the World Cup open by default; collapse the club competitions
-    // (European comps + MLS + NWSL) so the Football section doesn't overwhelm.
-    // Order is enforced by footballRank in the normalization step below, so the
-    // top-ranked tables fill the top row of the 2-column grid.
-    { sport: "Football", blocks: [wc, ...euro.map(collapse), collapse(mls), collapse(nwsl)] },
+    // Left column = continental comps (European + Copa Libertadores), right column =
+    // domestic league tables; all collapsed so the section stays tidy. Left/right
+    // placement and order are enforced by FOOTBALL_LEFT/RIGHT in the normalization
+    // step below.
+    { sport: "Football", blocks: [collapse(liber), ...euro.map(collapse), collapse(mls), collapse(nwsl), ...domestics.map(collapse)] },
     { sport: "Motorsport", blocks: [f1] },
     { sport: "Golf", blocks: [golf] },
     { sport: "Tennis", blocks: [tennis] },
