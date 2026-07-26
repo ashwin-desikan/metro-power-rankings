@@ -4,8 +4,11 @@ import { getInElections, inElectionById, inNeighbours, inEraOf, inPartyColor, in
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import LegElectionDetail from "../../LegDetailShared";
 
+export const dynamicParams = true;
+export const revalidate = 604800; // elections are immutable history: prerender none, render + cache on demand (build cost)
+
 export function generateStaticParams() {
-  return getInElections().elections.map((e) => ({ id: e.id }));
+  return []; // ISR: no build-time prerender; ids render on demand
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {

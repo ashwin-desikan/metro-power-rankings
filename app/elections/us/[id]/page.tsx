@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
-  getUsElections,
   usElectionById,
   usNeighbours,
   usEraOf,
@@ -16,8 +15,11 @@ import {
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import SortableTable from "../../SortableTable";
 
+export const dynamicParams = true;
+export const revalidate = 604800; // elections are immutable history: prerender none, render + cache on demand (build cost)
+
 export function generateStaticParams() {
-  return getUsElections().elections.map((e) => ({ id: e.id }));
+  return []; // ISR: no build-time prerender; ids render on demand
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
