@@ -440,3 +440,13 @@ Followed up on the three I flagged for confirmation — verified each with news 
 - **hungary**: `CURATED_OVERRIDES` → Péter Magyar (PM, 2026-05-09). Wikidata P6 is an unresolved QID (Q124488292), so the scrape regressed to acting-Pres Forsthoffer. Remove the override once WD resolves the label.
 - **bulgaria**: `CURATED_OVERRIDES` → Rumen Radev (PM, 2026-05-08; he resigned the presidency). Wikidata P6 still returns Petkov (2021). Remove the override once WD catches up.
 Dropped the stale ceremonial `second` for hungary/bulgaria (presidencies in flux). CURATED_OVERRIDES now holds saudi-arabia + hungary + bulgaria — each is a Wikidata-is-wrong case and each should be revisited/removed when Wikidata corrects.
+
+## 2026-07-24 — mini → windows (override-masking guard + DRY_RUN audit)
+
+**DRY_RUN footgun audit (Ashwin asked):** `metro-mini-refresh.sh` was the ONLY affected wrapper — the only one sourcing `config.env` (which sets `DRY_RUN=0`) while capturing `DRY_RUN` after the source. The other 7 (`run-cricket-weekly/monthly`, `run-euro-comps`, `run-f1-weekly`, `run-scraper-refresh`, `run-sound-weekly`, `run-wc2026-daily`) capture `DRY_RUN` BEFORE sourcing AND source `metro-supabase/env`, which sets no `DRY_RUN`. Verified empirically: `DRY_RUN=1` → effective 1 on all seven. Nothing to fix there.
+
+**New weekly guard so an override never masks a real handover** (`a824f6988`): a `CURATED_OVERRIDE` auto-applies its value every run, so unlike a validator PIN (which fails loud — the scrape disagrees and the gate HOLDs), a real leadership change in saudi/hungary/bulgaria would be silently hidden. Added `scripts/leaders/check-wikidata-overrides.py` (read-only, exits 0) + a weekly step in the refresh. Each run it compares live Wikidata's head-of-government for the 3 overrides against the forced name and the known-wrong value (`WD_SEEN` inside the script):
+- WD now == our override → ntfy "Wikidata caught up, remove override".
+- WD now == known-wrong → silent.
+- WD now == anything else → ntfy HIGH "possible real handover we're masking — review".
+Verified live (all 3 currently unchanged/silent) and simulated (fires FIXED + CHANGED correctly). **When you touch a CURATED_OVERRIDE, update `WD_SEEN` in that script to match**, or it'll false-alert.
