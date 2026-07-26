@@ -12,12 +12,12 @@ Writes public/data/football/live-cups-2026.json:
 
 Runs on the Mac mini (needs api-football + Supabase read). Commit with [vercel skip].
 """
-import os, sys, json
+import os, sys, json, time
 from datetime import datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from refresh import api_get, api_key, supa_get, supa_key
+from refresh import api_get, api_key, supa_get, supa_key, supa_upsert, parse_fixtures
 
 OUT = os.path.abspath(os.path.join(HERE, "..", "..", "public", "data", "football"))
 FINISHED = {"FT", "AET", "PEN", "AWD", "WO"}
@@ -39,8 +39,12 @@ def main():
 
     cups_out = []
     cup_alive = {}   # team_id -> set of cup names
+    fixture_rows = []   # finished 2026-27 results only, for the football_fixtures rankings table
     for c in reg:
         doc = api_get("/fixtures", akey, league=c["comp_id"], season=c["season"])
+        time.sleep(0.4)   # stay under api-football per-minute rate limit
+        frows, _ = parse_fixtures(doc, c["comp_id"], c["season"])
+        fixture_rows += [r for r in frows if r["status"] in FINISHED]   # RESULTS only, not scheduled fixtures
         allfx = []
         for f in (doc.get("response") or []):
             fixture = f.get("fixture") or {}
@@ -66,6 +70,16 @@ def main():
         cups_out.append({"comp_id": c["comp_id"], "country": c["country"], "name": c["name"],
                          "season": c["season"], "fixtures": keep})
         print("%s %s: %d fixtures (kept %d), alive-adds" % (c["country"], c["name"], len(allfx), len(keep)))
+
+    # Store 2026-27 cup RESULTS (finished matches only, no scheduled fixtures) in the unified
+    # football_fixtures table (the rankings source of truth). Register each cup in football_league
+    # (idempotent; never overwrites an existing row) so the rows are self-describing, then upsert
+    # the finished fixtures keyed on fixture_id.
+    league_rows = [{"league_id": c["comp_id"], "country": c["country"], "name": c["name"],
+                    "season": c["season"], "comp_type": "cup", "has_standings": False} for c in reg]
+    supa_upsert("football_league", league_rows, "league_id", skey, resolution="ignore-duplicates")
+    nf = supa_upsert("football_fixtures", fixture_rows, "fixture_id", skey)
+    print("Supabase: upserted %d domestic-cup fixtures into football_fixtures" % nf)
 
     ts = datetime.now(timezone.utc).isoformat()
     os.makedirs(OUT, exist_ok=True)

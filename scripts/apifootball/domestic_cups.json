@@ -4,10 +4,10 @@
   {"comp_id": 81, "country": "Germany", "name": "DFB Pokal", "season": 2026},
   {"comp_id": 97, "country": "Portugal", "name": "Taça da Liga", "season": 2026},
   {"comp_id": 185, "country": "Scotland", "name": "League Cup", "season": 2026},
-  {"comp_id": 90, "country": "Netherlands", "name": "KNVB Beker", "season": 2025},
-  {"comp_id": 143, "country": "Spain", "name": "Copa del Rey", "season": 2025},
-  {"comp_id": 45, "country": "England", "name": "FA Cup", "season": 2025},
-  {"comp_id": 66, "country": "France", "name": "Coupe de France", "season": 2025},
-  {"comp_id": 181, "country": "Scotland", "name": "Scottish Cup", "season": 2025},
-  {"comp_id": 96, "country": "Portugal", "name": "Taça de Portugal", "season": 2025}
+  {"comp_id": 90, "country": "Netherlands", "name": "KNVB Beker", "season": 2026},
+  {"comp_id": 143, "country": "Spain", "name": "Copa del Rey", "season": 2026},
+  {"comp_id": 45, "country": "England", "name": "FA Cup", "season": 2026},
+  {"comp_id": 66, "country": "France", "name": "Coupe de France", "season": 2026},
+  {"comp_id": 181, "country": "Scotland", "name": "Scottish Cup", "season": 2026},
+  {"comp_id": 96, "country": "Portugal", "name": "Taça de Portugal", "season": 2026}
 ]
