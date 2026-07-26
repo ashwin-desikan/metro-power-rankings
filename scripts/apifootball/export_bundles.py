@@ -81,11 +81,33 @@ def main():
     league_list.sort(key=lambda x: (x.get("country") or "", x.get("level") or 99, x.get("name") or ""))
     comp_list = pack(comps, True)
 
+    # Europe participation: a club is "alive" in a comp while it still has an unplayed
+    # fixture. Once eliminated, its remaining fixtures are all finished, so it drops out.
+    # Badge each alive team with its best competition (UCL > UEL > UECL > Libertadores).
+    FINISHED = {"FT", "AET", "PEN", "AWD", "WO"}
+    EURO_BADGE = {2: "UCL", 3: "UEL", 848: "UECL", 13: "LIB"}
+    PRIO = {"UCL": 0, "UEL": 1, "UECL": 2, "LIB": 3}
+    europe_badges = {}
+    for lid, C in comps.items():
+        badge = EURO_BADGE.get(lid)
+        if not badge:
+            continue
+        for f in C["fixtures"]:
+            if f.get("status") in FINISHED:
+                continue
+            for side in (f.get("home") or {}, f.get("away") or {}):
+                tid = side.get("team_id")
+                if tid is None:
+                    continue
+                cur = europe_badges.get(tid)
+                if cur is None or PRIO[badge] < PRIO[cur]:
+                    europe_badges[tid] = badge
+
     ts = datetime.now(timezone.utc).isoformat()
     os.makedirs(OUT, exist_ok=True)
     json.dump({"generated_at": ts, "leagues": league_list},
               open(os.path.join(OUT, "live-standings-2026.json"), "w", encoding="utf-8"), ensure_ascii=False)
-    json.dump({"generated_at": ts, "competitions": comp_list},
+    json.dump({"generated_at": ts, "competitions": comp_list, "europe_badges": europe_badges},
               open(os.path.join(OUT, "live-competitions-2026.json"), "w", encoding="utf-8"), ensure_ascii=False)
     print("wrote %d domestic leagues (%d standings rows), %d competitions (%d fixtures)" % (
         len(league_list), len(standings), len(comp_list), len(fixtures)))
