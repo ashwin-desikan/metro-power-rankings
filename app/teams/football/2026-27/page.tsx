@@ -1,8 +1,11 @@
+import fs from "fs";
+import path from "path";
 import type { Metadata } from "next";
 import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import HubNav from "@/app/teams/HubNav";
 import FootballHubNav from "@/app/teams/FootballHubNav";
+import RankingTable, { type CoefCountry } from "../2025-26/RankingTable";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { getFootballClubByName } from "@/lib/football";
 import { getClubStandings, getClubCompetitions, getSuperCups, getDomesticCups, type LiveRow, type LiveComp } from "@/lib/clubFootballLive";
@@ -55,6 +58,12 @@ const UEFA_TIERS: Record<string, { tier: UefaTier; rank: number }> = {
   Lithuania: { tier: "Spring-Summer", rank: 46 }, Estonia: { tier: "Spring-Summer", rank: 48 }, Georgia: { tier: "Spring-Summer", rank: 52 },
 };
 const DASH = "—";
+
+// Country coefficients that seed 2026-27 (2026 UEFA ranking, five-year window 2021/22–2025/26).
+// Shown in the Club power ranking section until the live club ranking publishes in September.
+const COEF_2027 = JSON.parse(
+  fs.readFileSync(path.join(process.cwd(), "public", "data", "football", "country-coeff-2026-27.json"), "utf-8"),
+) as { clubSeasons: string[]; window: string; countries: CoefCountry[] };
 
 const num = (v: number | null | undefined): number | string => (v === null || v === undefined ? DASH : v);
 const byPtsGd = (a: LiveRow, b: LiveRow) => (b.points ?? 0) - (a.points ?? 0) || (b.gd ?? 0) - (a.gd ?? 0);
@@ -208,6 +217,7 @@ export default async function ClubFootball2027Page() {
   const totalLeagues = confs.reduce((a, c) => a + c.countries.reduce((b, k) => b + k.leagues.length, 0), 0);
 
   const nav = [
+    { label: "Power Ranking", href: "#ranking" },
     ...(orderedComps.length > 0 ? [{ label: "Competitions", href: "#competitions" }] : []),
     { label: "Leagues", href: "#domestic" },
     ...(domesticCups.some((c) => c.fixtures.length > 0) ? [{ label: "Domestic Cups", href: "#domestic-cups" }] : []),
@@ -236,7 +246,23 @@ export default async function ClubFootball2027Page() {
         </p>
       </header>
 
+      <div className="mb-6 flex items-center justify-between gap-3 text-xs">
+        <Link href="/teams/football/2025-26" className="inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 hover:text-[var(--accent)] transition-colors" style={cardStyle}><span className="text-[var(--text-dim)]">←</span> 2025-26</Link>
+        <Link href="/teams/football/seasons" className="text-[var(--text-muted)] hover:text-[var(--accent)]">All seasons</Link>
+        <span />
+      </div>
+
       <HubNav items={nav} />
+
+      <section id="ranking" className="scroll-mt-24 mb-10">
+        <h2 className="text-lg font-semibold mb-1">Club power ranking</h2>
+        <p className="text-xs text-[var(--text-muted)] mb-3">
+          The 2026-27 club power ranking publishes around the first September international break, once the
+          season has been played in enough. Until then, these are the 2026 UEFA country coefficients (five-year
+          window {COEF_2027.window}) that seed this season&rsquo;s European competitions.
+        </p>
+        <RankingTable clubs={[]} countries={COEF_2027.countries} clubSeasons={COEF_2027.clubSeasons} />
+      </section>
 
       {orderedComps.length > 0 && (
         <section id="competitions" className="scroll-mt-24 mb-10">

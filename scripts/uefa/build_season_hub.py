@@ -22,8 +22,9 @@ CLUB POWER-RANKING FORMULA (per club, UEFA first divisions only):
                       17/18-25/26); five_year = sum of the five seasons ending that year.
     country factor  = sqrt(country 5-year coef / England's), from public.uefa_country_coeff_history.
     trophy_bonus    = CL 0.15, Club World Cup 0.05, Europa League 0.05, UEFA Super Cup 0.04,
-                      Conference League 0.03, domestic league title 0.03, Intercontinental 0.02,
-                      domestic cup 0.015, domestic super cup 0.01 (added to the winning club).
+                      Conference League 0.03, old 7-team Club World Cup 0.03, domestic league title
+                      0.03, Intercontinental 0.02, domestic cup 0.015, domestic super cup 0.01
+                      (added to the winning club; the old Club World Cup shows in the super-cup section).
 
 DATA SOURCES (per season): the fetch scripts in scripts/apifootball/_scratch produce the season
 bundles (uefahub{season}.json / the split-file 2025 set), plus countries{year}.json dumped from
@@ -78,6 +79,10 @@ def std_rows(grp):
     return out
 CUPMETA={48:("England","League Cup"),137:("Italy","Coppa Italia"),81:("Germany","DFB Pokal"),97:("Portugal","Taça da Liga"),185:("Scotland","League Cup"),90:("Netherlands","KNVB Beker"),143:("Spain","Copa del Rey"),45:("England","FA Cup"),66:("France","Coupe de France"),181:("Scotland","Scottish Cup"),96:("Portugal","Taça de Portugal"),531:("Europe","UEFA Super Cup"),528:("England","Community Shield"),526:("France","Trophée des Champions"),556:("Spain","Supercopa"),529:("Germany","Super Cup"),543:("Netherlands","Johan Cruyff Shield"),550:("Portugal","Supertaça"),547:("Italy","Supercoppa"),1168:("World","Intercontinental Cup")}
 DOMCUPS={48,137,81,97,185,90,143,45,66,181,96}
+# Old 7-team FIFA Club World Cup (pre-2025 format) — shown in the super-cup section.
+# season key 2022 -> played Feb 2023 (2022-23 hub); 2023 -> played Dec 2023 (2023-24 hub).
+OLD_CWC={2022:{"wid":541,"winner":"Real Madrid","runnerup":"Al Hilal","score":"5–3"},
+         2023:{"wid":50,"winner":"Manchester City","runnerup":"Fluminense","score":"4–0"}}
 
 def load(season):
     if season==2025:
@@ -147,7 +152,9 @@ def build(season):
     addb(fwid(S["europe"]["2"]["fixtures"]),0.15)   # Champions League
     addb(fwid(S["europe"]["3"]["fixtures"]),0.05)   # Europa League
     addb(fwid(S["europe"]["848"]["fixtures"]),0.03) # Conference League
-    if S["cwc"]: addb(fwid(S["cwc"]),0.05)          # Club World Cup
+    if S["cwc"]: addb(fwid(S["cwc"]),0.05)          # Club World Cup (new 32-team format)
+    _oc=OLD_CWC.get(season)
+    if _oc: addb(_oc["wid"],0.03)                    # old 7-team Club World Cup
     for cid,fx in S["cup_fixtures"].items():
         cid=int(cid); wid=fwid(fx)
         if cid in DOMCUPS: addb(wid,0.015)          # domestic cup
@@ -207,6 +214,10 @@ def build(season):
         if not w: continue
         cups.append({"type":"Domestic cup" if cid in DOMCUPS else "Super cup","country":meta[0],"comp":meta[1],
             "winner":w["winner"],"winner_lookup":w["winner_lookup"],"runnerup":w["runnerup"],"score":w["score"]})
+    _oc=OLD_CWC.get(season)
+    if _oc:
+        cups.append({"type":"Super cup","country":"World","comp":"Club World Cup",
+            "winner":_oc["winner"],"winner_lookup":_oc["winner"],"runnerup":_oc["runnerup"],"score":_oc["score"]})
     cups.sort(key=lambda c:({"Domestic cup":0,"Super cup":1}[c["type"]],c["country"]))
     label={2025:"2025-26",2024:"2024-25",2023:"2023-24",2022:"2022-23"}[season]
     hub={"season":label,"clubSeasons":S["cseasons"],"note":"Club power ranking: 0.65 opponent- & stage-weighted quality per match + 0.35 pedigree + current-season coefficient, less a losing-record penalty. Country coefficients are the full 5-year UEFA window.","clubs":clubs,"countries":countries,"leagues":leagues,"continental":continental,"cups":cups}

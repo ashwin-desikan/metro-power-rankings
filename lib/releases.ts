@@ -21,10 +21,10 @@ export const RELEASES: Release[] = [
     date: "2026-07-27",
     headline: "Completed-season club football hubs, four seasons deep",
     items: [
-      "New completed-season hubs for 2022-23 through 2025-26: a club power ranking across the 55 UEFA associations from form, five-year pedigree and a trophy bonus, filterable by country via a new Seasons index.",
-      "Each hub adds the five-year UEFA country coefficients, the European competitions with qualifying, group and knockout results, every final domestic table across the confederations, and every cup winner.",
+      "New completed-season hubs for 2022-23 through 2025-26: a club power ranking from form, pedigree and a trophy bonus, filterable by country, with a Seasons index and previous/next links between years.",
+      "Each hub adds the five-year UEFA country coefficients, the European competitions with qualifying, group and knockout results, every final domestic table, and every cup winner including the old Club World Cup.",
       "The Champions League winner tops each season \u2014 City's 2022-23 treble, Real Madrid in 2023-24, PSG in 2024-25 and 2025-26 \u2014 with each club's trophy contribution shown alongside its score.",
-      "UEFA country coefficients back to 1960 and club coefficients back to 2017-18 now underpin the rankings.",
+      "Coefficients now run back to 1960 for countries and 2017-18 for clubs; the live 2026-27 hub previews the seeding coefficients ahead of its September club ranking.",
     ],
   },
   {

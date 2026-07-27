@@ -103,6 +103,22 @@ function Sec({ title, children }: { title: string; children: ReactNode }) {
   return (<details className={detCls} style={{ borderColor: "var(--border)" }}><summary className="cursor-pointer select-none px-4 py-2 text-xs font-semibold text-[var(--text-muted)]">{title}</summary><div className="px-4 py-3 border-t" style={{ borderColor: "var(--border)" }}>{children}</div></details>);
 }
 
+const SEASONS_CHRON = ["2022-23", "2023-24", "2024-25", "2025-26", "2026-27"];
+const seasonLabel = (s: string) => (s === "2026-27" ? "2026-27 (live)" : s);
+function SeasonPager({ season }: { season: string }) {
+  const i = SEASONS_CHRON.indexOf(season);
+  const prev = i > 0 ? SEASONS_CHRON[i - 1] : null;
+  const next = i >= 0 && i < SEASONS_CHRON.length - 1 ? SEASONS_CHRON[i + 1] : null;
+  const btn = "inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 hover:text-[var(--accent)] transition-colors";
+  return (
+    <div className="flex items-center justify-between gap-3 text-xs">
+      {prev ? <Link href={`/teams/football/${prev}`} className={btn} style={cardStyle}><span className="text-[var(--text-dim)]">←</span> {seasonLabel(prev)}</Link> : <span />}
+      <Link href="/teams/football/seasons" className="text-[var(--text-muted)] hover:text-[var(--accent)]">All seasons</Link>
+      {next ? <Link href={`/teams/football/${next}`} className={btn} style={cardStyle}>{seasonLabel(next)} <span className="text-[var(--text-dim)]">→</span></Link> : <span />}
+    </div>
+  );
+}
+
 export default function SeasonHub({ hub }: { hub: Hub }) {
   const confs = buildConfs(hub.leagues);
   const ranked: RankedClub[] = hub.clubs.map((c) => { const r = resolveClub(c.name, c.lookup); return { rank: c.rank, name: r.name, slug: r.slug, country: c.country, mp: c.mp, w: c.w, d: c.d, l: c.l, form: c.form, ped: c.ped, tb: c.tb ?? 0, score: c.score }; });
@@ -116,6 +132,7 @@ export default function SeasonHub({ hub }: { hub: Hub }) {
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">The completed {hub.season} season: the club power ranking and UEFA country coefficients, the European and continental competitions with qualifying, group, league-phase and knockout results, every final domestic table across the confederations, and every cup final.</p>
         <p className="mt-2 text-xs text-[var(--text-dim)] tabular-nums">{hub.clubs.length} clubs ranked · {hub.leagues.length} leagues · {hub.cups.length} cup finals</p>
       </header>
+      <div className="mb-6"><SeasonPager season={hub.season} /></div>
       <HubNav items={nav} />
       <section id="clubs" className="scroll-mt-24 mb-10">
         <h2 className="text-lg font-semibold mb-1">Club power ranking</h2>
@@ -148,6 +165,7 @@ export default function SeasonHub({ hub }: { hub: Hub }) {
             <td className="py-1.5 px-2 whitespace-nowrap text-[var(--text-dim)]" style={mono}>{c.score} v {c.runnerup}</td></tr>))}</tbody></table>
         </div></div>
       </section>
+      <div className="my-6 border-t pt-6" style={{ borderColor: "var(--border)" }}><SeasonPager season={hub.season} /></div>
       <p className="text-[11px] text-[var(--text-dim)]">{hub.note}</p>
     </main>
   );

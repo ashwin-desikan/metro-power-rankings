@@ -9,8 +9,9 @@ const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const cardStyle = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
 const DASH = "—";
 
-export default function RankingTable({ clubs, countries, clubSeasons }: { clubs: RankedClub[]; countries: CoefCountry[]; clubSeasons: string[] }) {
-  const [tab, setTab] = useState<"clubs" | "countries">("clubs");
+export default function RankingTable({ clubs, countries, clubSeasons, pendingNote }: { clubs: RankedClub[]; countries: CoefCountry[]; clubSeasons: string[]; pendingNote?: string }) {
+  const clubsPending = clubs.length === 0;
+  const [tab, setTab] = useState<"clubs" | "countries">(clubsPending ? "countries" : "clubs");
   const [country, setCountry] = useState<string>("");
   const rankOf = new Map(countries.map((c) => [c.country, c.rank]));
   const filterCountries = Array.from(new Set(clubs.map((c) => c.country))).sort((a, b) => (rankOf.get(a) ?? 999) - (rankOf.get(b) ?? 999) || a.localeCompare(b));
@@ -27,6 +28,12 @@ export default function RankingTable({ clubs, countries, clubSeasons }: { clubs:
         {tabBtn("countries", "Country coefficients")}
       </div>
       {tab === "clubs" ? (
+        clubsPending ? (
+          <div className="rounded-xl border px-4 py-8 text-center" style={cardStyle}>
+            <p className="text-sm font-medium">Club power ranking opens with the season</p>
+            <p className="mt-1.5 text-xs text-[var(--text-muted)] max-w-md mx-auto">{pendingNote ?? "The club power ranking needs match results to compute. The first published ranking lands around the first September international break; in the meantime, the country coefficients that seed this season are in the tab above."}</p>
+          </div>
+        ) : (
         <>
           <div className="flex items-center gap-2 mb-3 text-xs">
             <label htmlFor="country" className="text-[var(--text-muted)]">Country</label>
@@ -56,6 +63,7 @@ export default function RankingTable({ clubs, countries, clubSeasons }: { clubs:
             </table>
           </div></div>
         </>
+        )
       ) : (
         <div className="rounded-xl border overflow-hidden" style={cardStyle}><div className="overflow-x-auto">
           <table className="w-full text-xs min-w-[440px]"><thead><tr className="text-left text-[var(--text-muted)]">
