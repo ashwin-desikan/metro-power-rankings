@@ -103,7 +103,7 @@ function Sec({ title, children }: { title: string; children: ReactNode }) {
   return (<details className={detCls} style={{ borderColor: "var(--border)" }}><summary className="cursor-pointer select-none px-4 py-2 text-xs font-semibold text-[var(--text-muted)]">{title}</summary><div className="px-4 py-3 border-t" style={{ borderColor: "var(--border)" }}>{children}</div></details>);
 }
 
-const SEASONS_CHRON = ["2022-23", "2023-24", "2024-25", "2025-26", "2026-27"];
+const SEASONS_CHRON = ["2016-17", "2017-18", "2018-19", "2019-20", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26", "2026-27"];
 const seasonLabel = (s: string) => (s === "2026-27" ? "2026-27 (live)" : s);
 function SeasonPager({ season }: { season: string }) {
   const i = SEASONS_CHRON.indexOf(season);
