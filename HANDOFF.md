@@ -488,3 +488,27 @@ Evening Cowork session, two prod commits both deployed: `d6e38ba9c` (main batch)
 - Confirm the Russian Premier League (api id 235, already tracked in leagues.json) now appears in `live-standings-2026.json` after today's `24452ce1a` standings run — it was absent only because the season had just kicked off.
 
 **⚠️ Lesson (my mistake this session):** a stale `device_stage_files` snapshot silently reverted the 2026-27 leagues edits, so `d6e38ba9c` shipped that page WITHOUT them (prod looked "reverted"). Fixed in `198ffb079`. If you re-edit an uncommitted file across steps, verify the on-disk base still has the earlier edits before building on it.
+
+## 2026-07-27 — windows → mini (European football rankings: 4 completed-season hubs + live 2026-27 preview shipped)
+
+Long Windows/Cowork session rebuilding Ashwin's European football rankings (the kassiesa-style coefficients + his own club power ranking) natively on the site. **Two prod commits, both real Vercel builds (NOT `[vercel skip]` — these touch `app/` and `lib/`, so they must rebuild):** `7493d7208` (go-live) then `a59e10e2a` (follow-up). Full `npm run verify` (typecheck / client-imports / public-data / table-scroll / vitest / `next build`) passed clean, run twice today.
+
+**Shipped — completed-season hubs 2022-23 → 2025-26:**
+- Shared `app/teams/football/SeasonHub.tsx` drives all four; per-season pages (`app/teams/football/<season>/page.tsx`) just `fs.readFileSync` `public/data/football/hub-YYYY-YY.json`. New `app/teams/football/seasons/page.tsx` index + a `Seasons` entry in `FootballHubNav`.
+- Club power ranking (`app/teams/football/2025-26/RankingTable.tsx`, reused by every hub): `score = 0.65 form + 0.35 five-year pedigree + 0.11 current-coef − losing-record penalty + trophy bonus`. Form is opponent- and stage-weighted quality PER MATCH (rate-based, so no-Europe clubs like Man Utd aren't over-punished). Tabbed with the 5-year UEFA country coefficients; country filter ordered by coefficient rank. Trophy bonus (CL 0.15 … domestic super cup 0.01) is what lets the CL winner top each year — City 2022-23 treble, Real Madrid 2023-24, PSG 2024-25 + 2025-26.
+- Old 7-team FIFA Club World Cup now shows in the SUPER-CUP section of 2022-23 (Real Madrid 5-3 Al Hilal) and 2023-24 (Man City 4-0 Fluminense), +0.03 trophy bonus, NOT as a European-competition card (`a59e10e2a`).
+- Previous/next season navigation on every yearly hub, top + bottom, including a back-link from the live 2026-27 hub to 2025-26.
+
+**Shipped — live 2026-27 hub gained a Club power ranking section:**
+- It opens on the country coefficients (the 2026 UEFA ranking, window 2021/22–2025/26) read from the new static `public/data/football/country-coeff-2026-27.json`. The `clubs` array is intentionally empty, so `RankingTable` defaults to the coefficients tab and the club tab shows a "publishes around the first September international break" note — matching Ashwin's stated publishing cadence.
+
+**Generator + reference data (in git, under `scripts/uefa/`):** `build_season_hub.py` (documented; produces the hub JSONs from api-football season bundles + the country/club coefficient dumps), `uefa_coefficients.py` (the kassiesa method-5 engine — reproduces his published figures 54/54 countries, 234/234 clubs, with `--self-test`/`--backtest`), `frozen_coefficients.json`, `club_coeff_full.json`.
+
+**Supabase (project `nmprqkmymrdknffwnuur`) — two NEW tables:** `public.uefa_country_coeff_history` (2,852 rows, year-by-year 1960-2026) and `public.uefa_club_coeff_history` (2,123 rows, 17/18-25/26). NOTE: the frontend does NOT read these live yet — all hubs read the static `public/data/football/*.json`. The tables are the durable store for future live recompute.
+
+### Housekeeping / open questions
+1. **Two untracked files in the working tree, not from this session's tracked work** — `public/data/football/uefa-coefficients.json` and `scripts/_apiprobe.py`. Left in place (device_bash can't delete; not mine to commit). Candidates for `.gitignore` / manual deletion or a quick look at what wrote them — flag if either is yours (mini) so we don't clobber WIP.
+2. **The live 2026-27 CLUB ranking is not populated yet — by design.** It correctly shows only country coefficients until ~September. To go live with club numbers, an equivalent of `build_season_hub.py`'s `build()` needs to emit a `clubs` array for the in-season 2026-27 hub from LIVE data (`lib/clubFootballLive.ts` already feeds the rest of that page: standings, comps, cups). The section renders clubs the moment the array is non-empty — no layout work left.
+3. **The 2026-27 country coefficients are a STATIC 2026 snapshot** (`country-coeff-2026-27.json`, window 21/22–25/26 that seeds this season). To make them roll live across 26/27 (window shifting toward 22/23–26/27 as European results accrue), recompute via `scripts/uefa/uefa_coefficients.py` against live results and refresh that JSON. This is a natural **mini weekly-job candidate** once 26/27 European matches start landing — but nothing is scheduled yet; the hub JSONs are all hand-generated in-session from api-football bundles, off-cadence. `build_season_hub.py` currently reads cloud `/tmp` paths + a mounted `_scratch`, so scheduling it on the mini would need repluming to the mini's paths first.
+4. **Confirm both deploys went green.** `7493d7208` and `a59e10e2a` are code changes (real builds). Check `deploy-status` / Vercel for the latest production deploy on `a59e10e2a`.
+5. **Nothing changes for the mini's existing weekly cadence** from this session.
