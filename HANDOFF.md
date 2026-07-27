@@ -469,3 +469,22 @@ Per Ashwin's call on the two findings above:
 - Both wrappers/plists run the REPO copy directly (no `~/metro-mini-jobs/` sync needed — no deploy gap).
 
 `refresh.py --write` had never actually run on the mini before today; it's now on the daily schedule. Standardising the Supabase key var on `SUPABASE_SERVICE_KEY` (vs the `SUPABASE_WRITE_KEY` your wrappers assumed) is still worth doing on your side for consistency.
+
+## 2026-07-26 — windows → mini (women's live hub + Club Football nav + champions single-source shipped)
+
+Evening Cowork session, two prod commits both deployed: `d6e38ba9c` (main batch) then `198ffb079` (leagues-restore fix). `deploy-status` PASS on `198ffb0`.
+
+**Shipped:**
+- **Women's 2026-27 live hub** on /teams/wfootball (Liga F/NWSL/WSL/UWCL) + live blocks on each women's country league-hub page and the UWCL page. Bundle-direct: `lib/wLive.ts` reads `public/data/football/wlive-2026.json` (ISR), names resolved at render by getWClubByName; NWSL has an ESPN fallback until the bundle fills. **Thank you — I can see you already populated `wlive-2026.json` from api-football (`93bc1eda`) and wired `refresh_women.py --write` into the daily standings job with the FA WSL auto-swap (`21e00c69`). Nothing more needed there.**
+- **Shared `app/teams/FootballHubNav.tsx`** (back button + section chips) on EVERY men's Club Football hub page.
+- **Men's 2026-27 hub:** UEFA split into three coefficient tabs (Primary/Secondary/Spring-Summer) + sections reordered + Copa Libertadores collapsed/renamed.
+- **Home page:** Club Football under Live Standings; In-Season board auto (World Cup label self-expires; added NFL/CFB/CBB, new `/teams/cbb` window in lib/leagueStatus.tsx); tournament/league hub cards on /teams/football now read Live/Offseason from `leagueStatusFor` (CL/EL/ECL live in July qualifying), page `revalidate=3600`.
+
+**Champions consolidated to ONE source — note for your pipeline:**
+- `lib/champions.ts` now reads the `isCurrent` rows of `champions-history.json` instead of `champions.json` (verified lossless: 92==92 current rows, 0 diffs). **`champions.json` + `build-champions-data.py` + `ZoneZero_Champions.xlsx` are now VESTIGIAL — the app no longer reads champions.json. Retire that step from the pipeline when convenient.**
+- `build-champions-history.py` now (a) emits `scope` (it was silently dropping the workbook's Scope column) and (b) maps the header-less next-title-date column right after "Is Current" → `nextAwardedDate`, so the "Next title" column on /sports/champions finally populates (it had always been blank). `_norm_date` now also parses `YYYY-MM-DD HH:MM:SS`. **Future regens need the OneDrive Champions_History.xlsx to keep the Scope column + that trailing next-date column.** Tour de France advanced to its 2026 winner (Tadej Pogačar, news-verified) via a fresh regen from the workbook.
+
+**Open for you:**
+- Confirm the Russian Premier League (api id 235, already tracked in leagues.json) now appears in `live-standings-2026.json` after today's `24452ce1a` standings run — it was absent only because the season had just kicked off.
+
+**⚠️ Lesson (my mistake this session):** a stale `device_stage_files` snapshot silently reverted the 2026-27 leagues edits, so `d6e38ba9c` shipped that page WITHOUT them (prod looked "reverted"). Fixed in `198ffb079`. If you re-edit an uncommitted file across steps, verify the on-disk base still has the earlier edits before building on it.
