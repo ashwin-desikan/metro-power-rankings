@@ -3,14 +3,15 @@ import Link from "next/link";
 // Shared cross-hub navigation for every Club Football page: a persistent "back
 // to Club Football" button plus a chip row linking the main sections, with the
 // current section highlighted. Kept in one place so every hub (index, 2026-27,
-// leagues, competitions, cups, worldwide table, and club pages) carries the same
-// nav and back affordance. Server component (no client state).
+// seasons, leagues, competitions, cups, worldwide table, and club pages) carries
+// the same nav and back affordance. Server component (no client state).
 
 type Dest = { key: string; label: string; href: string };
 
 const DESTS: Dest[] = [
   { key: "overview", label: "Overview", href: "/teams/football" },
   { key: "season", label: "2026-27", href: "/teams/football/2026-27" },
+  { key: "seasons", label: "Seasons", href: "/teams/football/seasons" },
   { key: "leagues", label: "Leagues", href: "/teams/football#leagues" },
   { key: "competitions", label: "Competitions", href: "/teams/football/tournaments" },
   { key: "domestic", label: "Worldwide Table", href: "/teams/football/domestic" },

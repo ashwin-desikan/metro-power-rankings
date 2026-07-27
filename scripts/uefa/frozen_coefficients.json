@@ -1,0 +1,4649 @@
+{
+"method": "kassiesa method5; UEFA country + club coefficients",
+"frozenSeasons": [
+"22/23",
+"23/24",
+"24/25",
+"25/26"
+],
+"note": "Values 2022/23-2025/26 are FINAL (extracted from workbook, == kassiesa). Current season recomputed from match data.",
+"countries": [
+{
+"country": "England",
+"seasons": {
+"22/23": 23,
+"23/24": 17.375,
+"24/25": 29.464,
+"25/26": 28.68
+}
+},
+{
+"country": "Italy",
+"seasons": {
+"22/23": 22.357,
+"23/24": 21,
+"24/25": 21.875,
+"25/26": 19
+}
+},
+{
+"country": "Spain",
+"seasons": {
+"22/23": 16.571,
+"23/24": 16.062,
+"24/25": 23.892,
+"25/26": 22.093
+}
+},
+{
+"country": "Germany",
+"seasons": {
+"22/23": 17.125,
+"23/24": 19.357,
+"24/25": 18.421,
+"25/26": 21.785
+}
+},
+{
+"country": "France",
+"seasons": {
+"22/23": 12.583,
+"23/24": 16.25,
+"24/25": 17.928,
+"25/26": 18.321
+}
+},
+{
+"country": "Portugal",
+"seasons": {
+"22/23": 12.5,
+"23/24": 11,
+"24/25": 16.25,
+"25/26": 20.5
+}
+},
+{
+"country": "Belgium",
+"seasons": {
+"22/23": 14.2,
+"23/24": 14.4,
+"24/25": 15.65,
+"25/26": 11.4
+}
+},
+{
+"country": "Netherlands",
+"seasons": {
+"22/23": 13.5,
+"23/24": 10,
+"24/25": 15.25,
+"25/26": 9.979
+}
+},
+{
+"country": "Türkiye",
+"seasons": {
+"22/23": 11.8,
+"23/24": 12,
+"24/25": 10.3,
+"25/26": 11.075
+}
+},
+{
+"country": "Czechia",
+"seasons": {
+"22/23": 6.75,
+"23/24": 13.5,
+"24/25": 10.55,
+"25/26": 11.025
+}
+},
+{
+"country": "Poland",
+"seasons": {
+"22/23": 7.75,
+"23/24": 6.875,
+"24/25": 11.75,
+"25/26": 15.75
+}
+},
+{
+"country": "Greece",
+"seasons": {
+"22/23": 2.125,
+"23/24": 11.4,
+"24/25": 12.687,
+"25/26": 14.2
+}
+},
+{
+"country": "Denmark",
+"seasons": {
+"22/23": 5.9,
+"23/24": 8.5,
+"24/25": 7.656,
+"25/26": 12.25
+}
+},
+{
+"country": "Norway",
+"seasons": {
+"22/23": 5.75,
+"23/24": 8,
+"24/25": 11.812,
+"25/26": 8.05
+}
+},
+{
+"country": "Cyprus",
+"seasons": {
+"22/23": 5.1,
+"23/24": 3.75,
+"24/25": 10.562,
+"25/26": 12.156
+}
+},
+{
+"country": "Switzerland",
+"seasons": {
+"22/23": 8.5,
+"23/24": 5.2,
+"24/25": 7.05,
+"25/26": 6.2
+}
+},
+{
+"country": "Hungary",
+"seasons": {
+"22/23": 5.875,
+"23/24": 4.5,
+"24/25": 6.625,
+"25/26": 7.437
+}
+},
+{
+"country": "Sweden",
+"seasons": {
+"22/23": 6.25,
+"23/24": 1.875,
+"24/25": 11.375,
+"25/26": 5
+}
+},
+{
+"country": "Scotland",
+"seasons": {
+"22/23": 3.5,
+"23/24": 6.4,
+"24/25": 9.25,
+"25/26": 5
+}
+},
+{
+"country": "Austria",
+"seasons": {
+"22/23": 4.9,
+"23/24": 4.8,
+"24/25": 9.65,
+"25/26": 4.1
+}
+},
+{
+"country": "Romania",
+"seasons": {
+"22/23": 6.25,
+"23/24": 3.25,
+"24/25": 7.75,
+"25/26": 5.75
+}
+},
+{
+"country": "Ukraine",
+"seasons": {
+"22/23": 5.7,
+"23/24": 4.1,
+"24/25": 3.6,
+"25/26": 8.312
+}
+},
+{
+"country": "Croatia",
+"seasons": {
+"22/23": 3.375,
+"23/24": 5.875,
+"24/25": 5.875,
+"25/26": 7.031
+}
+},
+{
+"country": "Slovenia",
+"seasons": {
+"22/23": 2.125,
+"23/24": 3.875,
+"24/25": 9.093,
+"25/26": 6.375
+}
+},
+{
+"country": "Israel",
+"seasons": {
+"22/23": 6.25,
+"23/24": 8.75,
+"24/25": 2.875,
+"25/26": 2.875
+}
+},
+{
+"country": "Azerbaijan",
+"seasons": {
+"22/23": 4,
+"23/24": 5.875,
+"24/25": 2.875,
+"25/26": 5.812
+}
+},
+{
+"country": "Slovakia",
+"seasons": {
+"22/23": 6,
+"23/24": 5,
+"24/25": 4.625,
+"25/26": 2.625
+}
+},
+{
+"country": "Bulgaria",
+"seasons": {
+"22/23": 4.5,
+"23/24": 4.375,
+"24/25": 3.625,
+"25/26": 5.187
+}
+},
+{
+"country": "Russia",
+"seasons": {
+"22/23": 4.333,
+"23/24": 4.333,
+"24/25": 4.333,
+"25/26": 4.333
+}
+},
+{
+"country": "Serbia",
+"seasons": {
+"22/23": 5.375,
+"23/24": 1.4,
+"24/25": 3.725,
+"25/26": 5.75
+}
+},
+{
+"country": "Iceland",
+"seasons": {
+"22/23": 3,
+"23/24": 3.833,
+"24/25": 4.562,
+"25/26": 3.625
+}
+},
+{
+"country": "Ireland",
+"seasons": {
+"22/23": 3.375,
+"23/24": 1.5,
+"24/25": 5.343,
+"25/26": 4.25
+}
+},
+{
+"country": "Armenia",
+"seasons": {
+"22/23": 2.375,
+"23/24": 2.25,
+"24/25": 4.375,
+"25/26": 4.187
+}
+},
+{
+"country": "Bosnia-Herzegovina",
+"seasons": {
+"22/23": 2,
+"23/24": 2.25,
+"24/25": 4.531,
+"25/26": 3.312
+}
+},
+{
+"country": "Kosovo",
+"seasons": {
+"22/23": 2.875,
+"23/24": 3,
+"24/25": 2,
+"25/26": 3.781
+}
+},
+{
+"country": "Latvia",
+"seasons": {
+"22/23": 2.75,
+"23/24": 1.625,
+"24/25": 3.875,
+"25/26": 2
+}
+},
+{
+"country": "Kazakhstan",
+"seasons": {
+"22/23": 1.125,
+"23/24": 3.125,
+"24/25": 3,
+"25/26": 3.625
+}
+},
+{
+"country": "Finland",
+"seasons": {
+"22/23": 2.625,
+"23/24": 1.75,
+"24/25": 2.25,
+"25/26": 3.625
+}
+},
+{
+"country": "Moldova",
+"seasons": {
+"22/23": 3.75,
+"23/24": 2,
+"24/25": 2.125,
+"25/26": 1.5
+}
+},
+{
+"country": "Liechtenstein",
+"seasons": {
+"22/23": 6.5,
+"23/24": 0.5,
+"24/25": 0.5,
+"25/26": 1
+}
+},
+{
+"country": "Faroe Islands",
+"seasons": {
+"22/23": 2.25,
+"23/24": 2.75,
+"24/25": 1.5,
+"25/26": 1.75
+}
+},
+{
+"country": "North Macedonia",
+"seasons": {
+"22/23": 1.625,
+"23/24": 1.5,
+"24/25": 0.666,
+"25/26": 3.343
+}
+},
+{
+"country": "Belarus",
+"seasons": {
+"22/23": 0.625,
+"23/24": 1.75,
+"24/25": 1.875,
+"25/26": 2.125
+}
+},
+{
+"country": "Albania",
+"seasons": {
+"22/23": 0.875,
+"23/24": 2.125,
+"24/25": 1.25,
+"25/26": 2.25
+}
+},
+{
+"country": "Malta",
+"seasons": {
+"22/23": 2.625,
+"23/24": 1.5,
+"24/25": 1,
+"25/26": 2
+}
+},
+{
+"country": "Lithuania",
+"seasons": {
+"22/23": 2.375,
+"23/24": 1.125,
+"24/25": 1.375,
+"25/26": 1.125
+}
+},
+{
+"country": "Andorra",
+"seasons": {
+"22/23": 0.666,
+"23/24": 1.666,
+"24/25": 1,
+"25/26": 2
+}
+},
+{
+"country": "Estonia",
+"seasons": {
+"22/23": 1.166,
+"23/24": 0.125,
+"24/25": 1.625,
+"25/26": 1.625
+}
+},
+{
+"country": "Gibraltar",
+"seasons": {
+"22/23": 0.875,
+"23/24": 0.166,
+"24/25": 1.5,
+"25/26": 3.333
+}
+},
+{
+"country": "Northern Ireland",
+"seasons": {
+"22/23": 1.25,
+"23/24": 1.125,
+"24/25": 1.5,
+"25/26": 1.75
+}
+},
+{
+"country": "Luxembourg",
+"seasons": {
+"22/23": 1.125,
+"23/24": 2.25,
+"24/25": 1.25,
+"25/26": 0.75
+}
+},
+{
+"country": "Georgia",
+"seasons": {
+"22/23": 1.125,
+"23/24": 1.25,
+"24/25": 1.25,
+"25/26": 1.125
+}
+},
+{
+"country": "Montenegro",
+"seasons": {
+"22/23": 1,
+"23/24": 1.333,
+"24/25": 2.5,
+"25/26": 1
+}
+},
+{
+"country": "Wales",
+"seasons": {
+"22/23": 1.166,
+"23/24": 0.625,
+"24/25": 2,
+"25/26": 0.333
+}
+},
+{
+"country": "San Marino",
+"seasons": {
+"22/23": 0.833,
+"23/24": 0.333,
+"24/25": 0.666,
+"25/26": 0.833
+}
+}
+],
+"clubs": [
+{
+"uefa_name": "Bayern München",
+"cc": "Ger",
+"seasons": {
+"22/23": 27,
+"23/24": 28,
+"24/25": 27.25,
+"25/26": 39.25
+}
+},
+{
+"uefa_name": "Arsenal",
+"cc": "Eng",
+"seasons": {
+"22/23": 17,
+"23/24": 22,
+"24/25": 36,
+"25/26": 44
+}
+},
+{
+"uefa_name": "Real Madrid",
+"cc": "Esp",
+"seasons": {
+"22/23": 29,
+"23/24": 34,
+"24/25": 24.5,
+"25/26": 27
+}
+},
+{
+"uefa_name": "Paris Saint-Germain",
+"cc": "Fra",
+"seasons": {
+"22/23": 19,
+"23/24": 23,
+"24/25": 33.5,
+"25/26": 37.5
+}
+},
+{
+"uefa_name": "Internazionale",
+"cc": "Ita",
+"seasons": {
+"22/23": 29,
+"23/24": 20,
+"24/25": 40.25,
+"25/26": 19.75
+}
+},
+{
+"uefa_name": "Manchester City",
+"cc": "Eng",
+"seasons": {
+"22/23": 33,
+"23/24": 28,
+"24/25": 14.75,
+"25/26": 22.75
+}
+},
+{
+"uefa_name": "FC Barcelona",
+"cc": "Esp",
+"seasons": {
+"22/23": 9,
+"23/24": 23,
+"24/25": 36.25,
+"25/26": 30
+}
+},
+{
+"uefa_name": "Liverpool",
+"cc": "Eng",
+"seasons": {
+"22/23": 19,
+"23/24": 20,
+"24/25": 29.5,
+"25/26": 28.5
+}
+},
+{
+"uefa_name": "Borussia Dortmund",
+"cc": "Ger",
+"seasons": {
+"22/23": 18,
+"23/24": 29,
+"24/25": 27.75,
+"25/26": 16
+}
+},
+{
+"uefa_name": "Bayer Leverkusen",
+"cc": "Ger",
+"seasons": {
+"22/23": 19,
+"23/24": 29,
+"24/25": 23.25,
+"25/26": 19.75
+}
+},
+{
+"uefa_name": "Atlético Madrid",
+"cc": "Esp",
+"seasons": {
+"22/23": 8,
+"23/24": 24,
+"24/25": 26.5,
+"25/26": 27.25
+}
+},
+{
+"uefa_name": "Aston Villa",
+"cc": "Eng",
+"seasons": {
+"22/23": null,
+"23/24": 17,
+"24/25": 30.25,
+"25/26": 35.75
+}
+},
+{
+"uefa_name": "AS Roma",
+"cc": "Ita",
+"seasons": {
+"22/23": 22,
+"23/24": 21,
+"24/25": 14.5,
+"25/26": 17.25
+}
+},
+{
+"uefa_name": "Tottenham Hotspur",
+"cc": "Eng",
+"seasons": {
+"22/23": 18,
+"23/24": null,
+"24/25": 32.25,
+"25/26": 26.75
+}
+},
+{
+"uefa_name": "FC Porto",
+"cc": "Por",
+"seasons": {
+"22/23": 18,
+"23/24": 19,
+"24/25": 9.75,
+"25/26": 24
+}
+},
+{
+"uefa_name": "Fiorentina",
+"cc": "Ita",
+"seasons": {
+"22/23": 20,
+"23/24": 22,
+"24/25": 20,
+"25/26": 14.25
+}
+},
+{
+"uefa_name": "Club Brugge",
+"cc": "Bel",
+"seasons": {
+"22/23": 17,
+"23/24": 21,
+"24/25": 15.75,
+"25/26": 14.5
+}
+},
+{
+"uefa_name": "Chelsea",
+"cc": "Eng",
+"seasons": {
+"22/23": 21,
+"23/24": null,
+"24/25": 30,
+"25/26": 23.25
+}
+},
+{
+"uefa_name": "Sporting CP Lisbon",
+"cc": "Por",
+"seasons": {
+"22/23": 14,
+"23/24": 12,
+"24/25": 14.5,
+"25/26": 27.5
+}
+},
+{
+"uefa_name": "Benfica",
+"cc": "Por",
+"seasons": {
+"22/23": 25,
+"23/24": 14,
+"24/25": 18.75,
+"25/26": 12.25
+}
+},
+{
+"uefa_name": "Atalanta",
+"cc": "Ita",
+"seasons": {
+"22/23": null,
+"23/24": 28,
+"24/25": 21,
+"25/26": 19
+}
+},
+{
+"uefa_name": "Real Betis",
+"cc": "Esp",
+"seasons": {
+"22/23": 16,
+"23/24": 6,
+"24/25": 19.25,
+"25/26": 22.25
+}
+},
+{
+"uefa_name": "PSV Eindhoven",
+"cc": "Ned",
+"seasons": {
+"22/23": 11,
+"23/24": 17,
+"24/25": 21.25,
+"25/26": 12
+}
+},
+{
+"uefa_name": "Manchester United",
+"cc": "Eng",
+"seasons": {
+"22/23": 19,
+"23/24": 7,
+"24/25": 32.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "AC Milan",
+"cc": "Ita",
+"seasons": {
+"22/23": 24,
+"23/24": 16,
+"24/25": 19,
+"25/26": null
+}
+},
+{
+"uefa_name": "Napoli",
+"cc": "Ita",
+"seasons": {
+"22/23": 25,
+"23/24": 17,
+"24/25": null,
+"25/26": 12
+}
+},
+{
+"uefa_name": "SC Freiburg",
+"cc": "Ger",
+"seasons": {
+"22/23": 15,
+"23/24": 13,
+"24/25": null,
+"25/26": 28.5
+}
+},
+{
+"uefa_name": "Lille OSC",
+"cc": "Fra",
+"seasons": {
+"22/23": null,
+"23/24": 17,
+"24/25": 24,
+"25/26": 10.75
+}
+},
+{
+"uefa_name": "Olympiakos Piraeus",
+"cc": "Gre",
+"seasons": {
+"22/23": 3,
+"23/24": 17,
+"24/25": 18.5,
+"25/26": 15.75
+}
+},
+{
+"uefa_name": "Shakhtar Donetsk",
+"cc": "Ukr",
+"seasons": {
+"22/23": 11,
+"23/24": 10,
+"24/25": 11,
+"25/26": 18.25
+}
+},
+{
+"uefa_name": "Juventus",
+"cc": "Ita",
+"seasons": {
+"22/23": 17,
+"23/24": null,
+"24/25": 16.25,
+"25/26": 19
+}
+},
+{
+"uefa_name": "Fenerbahçe",
+"cc": "Tur",
+"seasons": {
+"22/23": 17,
+"23/24": 14,
+"24/25": 11.25,
+"25/26": 10.5
+}
+},
+{
+"uefa_name": "Eintracht Frankfurt",
+"cc": "Ger",
+"seasons": {
+"22/23": 16,
+"23/24": 7,
+"24/25": 23,
+"25/26": 9
+}
+},
+{
+"uefa_name": "Feyenoord",
+"cc": "Ned",
+"seasons": {
+"22/23": 17,
+"23/24": 8,
+"24/25": 18,
+"25/26": 4
+}
+},
+{
+"uefa_name": "AZ Alkmaar",
+"cc": "Ned",
+"seasons": {
+"22/23": 19,
+"23/24": 4,
+"24/25": 12.5,
+"25/26": 14.38
+}
+},
+{
+"uefa_name": "Bodø/Glimt",
+"cc": "Nor",
+"seasons": {
+"22/23": 3,
+"23/24": 8,
+"24/25": 21,
+"25/26": 17
+}
+},
+{
+"uefa_name": "Union Saint-Gilloise",
+"cc": "Bel",
+"seasons": {
+"22/23": 19,
+"23/24": 8,
+"24/25": 9,
+"25/26": 12
+}
+},
+{
+"uefa_name": "Real Sociedad",
+"cc": "Esp",
+"seasons": {
+"22/23": 16,
+"23/24": 18,
+"24/25": 14,
+"25/26": null
+}
+},
+{
+"uefa_name": "Viktoria Plzen",
+"cc": "Cze",
+"seasons": {
+"22/23": 4,
+"23/24": 17,
+"24/25": 13.25,
+"25/26": 13.75
+}
+},
+{
+"uefa_name": "Ferencváros",
+"cc": "Hun",
+"seasons": {
+"22/23": 12,
+"23/24": 9,
+"24/25": 10,
+"25/26": 17.25
+}
+},
+{
+"uefa_name": "RB Leipzig",
+"cc": "Ger",
+"seasons": {
+"22/23": 18,
+"23/24": 18,
+"24/25": 8,
+"25/26": null
+}
+},
+{
+"uefa_name": "Lazio",
+"cc": "Ita",
+"seasons": {
+"22/23": 6,
+"23/24": 18,
+"24/25": 26,
+"25/26": null
+}
+},
+{
+"uefa_name": "Sporting Braga",
+"cc": "Por",
+"seasons": {
+"22/23": 7,
+"23/24": 7,
+"24/25": 7,
+"25/26": 26.75
+}
+},
+{
+"uefa_name": "West Ham United",
+"cc": "Eng",
+"seasons": {
+"22/23": 29,
+"23/24": 19,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Olympique Lyon",
+"cc": "Fra",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 22.75,
+"25/26": 22
+}
+},
+{
+"uefa_name": "Galatasaray",
+"cc": "Tur",
+"seasons": {
+"22/23": null,
+"23/24": 8,
+"24/25": 12.75,
+"25/26": 17.75
+}
+},
+{
+"uefa_name": "AS Monaco",
+"cc": "Fra",
+"seasons": {
+"22/23": 9,
+"23/24": null,
+"24/25": 17,
+"25/26": 15
+}
+},
+{
+"uefa_name": "FC Midtjylland",
+"cc": "Den",
+"seasons": {
+"22/23": 8,
+"23/24": 2.5,
+"24/25": 9.25,
+"25/26": 21.5
+}
+},
+{
+"uefa_name": "FC København",
+"cc": "Den",
+"seasons": {
+"22/23": 7,
+"23/24": 15,
+"24/25": 7.38,
+"25/26": 12
+}
+},
+{
+"uefa_name": "Glasgow Rangers",
+"cc": "Sco",
+"seasons": {
+"22/23": 4,
+"23/24": 14,
+"24/25": 19.25,
+"25/26": 3
+}
+},
+{
+"uefa_name": "Villarreal",
+"cc": "Esp",
+"seasons": {
+"22/23": 12,
+"23/24": 16,
+"24/25": null,
+"25/26": 7
+}
+},
+{
+"uefa_name": "Olympique Marseille",
+"cc": "Fra",
+"seasons": {
+"22/23": 8,
+"23/24": 18,
+"24/25": null,
+"25/26": 12
+}
+},
+{
+"uefa_name": "Celtic",
+"cc": "Sco",
+"seasons": {
+"22/23": 6,
+"23/24": 7,
+"24/25": 16,
+"25/26": 9
+}
+},
+{
+"uefa_name": "Slavia Praha",
+"cc": "Cze",
+"seasons": {
+"22/23": 6,
+"23/24": 15,
+"24/25": 4,
+"25/26": 9
+}
+},
+{
+"uefa_name": "Dinamo Zagreb",
+"cc": "Cro",
+"seasons": {
+"22/23": 7,
+"23/24": 9,
+"24/25": 14,
+"25/26": 7.5
+}
+},
+{
+"uefa_name": "Athletic Bilbao",
+"cc": "Esp",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 26.75,
+"25/26": 12
+}
+},
+{
+"uefa_name": "Ajax",
+"cc": "Ned",
+"seasons": {
+"22/23": 8,
+"23/24": 5,
+"24/25": 13.25,
+"25/26": 10
+}
+},
+{
+"uefa_name": "PAOK Thessaloniki",
+"cc": "Gre",
+"seasons": {
+"22/23": 1.5,
+"23/24": 15,
+"24/25": 7.75,
+"25/26": 11
+}
+},
+{
+"uefa_name": "Sparta Praha",
+"cc": "Cze",
+"seasons": {
+"22/23": 1.5,
+"23/24": 10,
+"24/25": 9,
+"25/26": 12.75
+}
+},
+{
+"uefa_name": "Qarabag FK",
+"cc": "Azb",
+"seasons": {
+"22/23": 6,
+"23/24": 11,
+"24/25": 3,
+"25/26": 13.75
+}
+},
+{
+"uefa_name": "Red Star Belgrade",
+"cc": "Srb",
+"seasons": {
+"22/23": 4,
+"23/24": 5,
+"24/25": 10,
+"25/26": 12.5
+}
+},
+{
+"uefa_name": "VfB Stuttgart",
+"cc": "Ger",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 13,
+"25/26": 14.5
+}
+},
+{
+"uefa_name": "Slovan Bratislava",
+"cc": "Svk",
+"seasons": {
+"22/23": 12,
+"23/24": 8,
+"24/25": 6,
+"25/26": 4
+}
+},
+{
+"uefa_name": "Djurgårdens IF",
+"cc": "Swe",
+"seasons": {
+"22/23": 13,
+"23/24": 1.5,
+"24/25": 17.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "Panathinaikos",
+"cc": "Gre",
+"seasons": {
+"22/23": 2,
+"23/24": 3,
+"24/25": 11,
+"25/26": 13.25
+}
+},
+{
+"uefa_name": "Bologna",
+"cc": "Ita",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 11,
+"25/26": 19.75
+}
+},
+{
+"uefa_name": "FC Salzburg",
+"cc": "Aut",
+"seasons": {
+"22/23": 9,
+"23/24": 7,
+"24/25": 8,
+"25/26": 4
+}
+},
+{
+"uefa_name": "Anderlecht",
+"cc": "Bel",
+"seasons": {
+"22/23": 12,
+"23/24": null,
+"24/25": 13.75,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "Lech Poznan",
+"cc": "Pol",
+"seasons": {
+"22/23": 14,
+"23/24": 2,
+"24/25": null,
+"25/26": 11.25
+}
+},
+{
+"uefa_name": "Newcastle United",
+"cc": "Eng",
+"seasons": {
+"22/23": null,
+"23/24": 8,
+"24/25": null,
+"25/26": 21.75
+}
+},
+{
+"uefa_name": "AA Gent",
+"cc": "Bel",
+"seasons": {
+"22/23": 11,
+"23/24": 10,
+"24/25": 7,
+"25/26": null
+}
+},
+{
+"uefa_name": "Legia Warsaw",
+"cc": "Pol",
+"seasons": {
+"22/23": null,
+"23/24": 9,
+"24/25": 15.5,
+"25/26": 4
+}
+},
+{
+"uefa_name": "Sturm Graz",
+"cc": "Aut",
+"seasons": {
+"22/23": 6,
+"23/24": 4,
+"24/25": 10,
+"25/26": 5
+}
+},
+{
+"uefa_name": "Ludogorets Razgrad",
+"cc": "Bul",
+"seasons": {
+"22/23": 5,
+"23/24": 9,
+"24/25": 4,
+"25/26": 7.75
+}
+},
+{
+"uefa_name": "Rapid Wien",
+"cc": "Aut",
+"seasons": {
+"22/23": 2.5,
+"23/24": 2.5,
+"24/25": 18.25,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "Sevilla",
+"cc": "Esp",
+"seasons": {
+"22/23": 21,
+"23/24": 6,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Pafos FC",
+"cc": "Cyp",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 11.12,
+"25/26": 13
+}
+},
+{
+"uefa_name": "AEK Athens",
+"cc": "Gre",
+"seasons": {
+"22/23": null,
+"23/24": 3,
+"24/25": 2,
+"25/26": 17.5
+}
+},
+{
+"uefa_name": "NK Celje",
+"cc": "Slo",
+"seasons": {
+"22/23": null,
+"23/24": 2.5,
+"24/25": 9.5,
+"25/26": 11
+}
+},
+{
+"uefa_name": "Maccabi Tel-Aviv",
+"cc": "Isr",
+"seasons": {
+"22/23": 2.5,
+"23/24": 14,
+"24/25": 4,
+"25/26": 3
+}
+},
+{
+"uefa_name": "FCSB",
+"cc": "Rom",
+"seasons": {
+"22/23": 2.5,
+"23/24": 2,
+"24/25": 14.5,
+"25/26": 5
+}
+},
+{
+"uefa_name": "Racing Genk",
+"cc": "Bel",
+"seasons": {
+"22/23": null,
+"23/24": 7,
+"24/25": null,
+"25/26": 18
+}
+},
+{
+"uefa_name": "Crystal Palace",
+"cc": "Eng",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 21.88
+}
+},
+{
+"uefa_name": "Jagiellonia Bialystok",
+"cc": "Pol",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 14,
+"25/26": 8
+}
+},
+{
+"uefa_name": "Stade Rennais",
+"cc": "Fra",
+"seasons": {
+"22/23": 11,
+"23/24": 10,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Nottingham Forest",
+"cc": "Eng",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 23
+}
+},
+{
+"uefa_name": "FC Lugano",
+"cc": "Sui",
+"seasons": {
+"22/23": 2,
+"23/24": 3,
+"24/25": 14.25,
+"25/26": 2
+}
+},
+{
+"uefa_name": "FC Basel",
+"cc": "Sui",
+"seasons": {
+"22/23": 17,
+"23/24": 1.5,
+"24/25": null,
+"25/26": 4
+}
+},
+{
+"uefa_name": "Rayo Vallecano",
+"cc": "Esp",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 22
+}
+},
+{
+"uefa_name": "AEK Larnaca",
+"cc": "Cyp",
+"seasons": {
+"22/23": 4,
+"23/24": 2,
+"24/25": 1.5,
+"25/26": 12.75
+}
+},
+{
+"uefa_name": "RC Strasbourg",
+"cc": "Fra",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 21.5
+}
+},
+{
+"uefa_name": "Young Boys",
+"cc": "Sui",
+"seasons": {
+"22/23": 2.5,
+"23/24": 7,
+"24/25": 6,
+"25/26": 6
+}
+},
+{
+"uefa_name": "Raków Czestochowa",
+"cc": "Pol",
+"seasons": {
+"22/23": 2.5,
+"23/24": 3,
+"24/25": null,
+"25/26": 14.25
+}
+},
+{
+"uefa_name": "Istanbul Basaksehir",
+"cc": "Tur",
+"seasons": {
+"22/23": 12,
+"23/24": null,
+"24/25": 5,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "AFC Bournemouth",
+"cc": "Eng",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Sunderland AFC",
+"cc": "Eng",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Brighton & Hove Albion",
+"cc": "Eng",
+"seasons": {
+"22/23": null,
+"23/24": 16,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "OGC Nice",
+"cc": "Fra",
+"seasons": {
+"22/23": 14,
+"23/24": null,
+"24/25": 3,
+"25/26": 3
+}
+},
+{
+"uefa_name": "Omonia Nicosia",
+"cc": "Cyp",
+"seasons": {
+"22/23": 3,
+"23/24": 2,
+"24/25": 5.38,
+"25/26": 6.88
+}
+},
+{
+"uefa_name": "Molde FK",
+"cc": "Nor",
+"seasons": {
+"22/23": 5,
+"23/24": 7,
+"24/25": 7.75,
+"25/26": null
+}
+},
+{
+"uefa_name": "Shamrock Rovers",
+"cc": "Irl",
+"seasons": {
+"22/23": 2.5,
+"23/24": 1.5,
+"24/25": 9.88,
+"25/26": 3
+}
+},
+{
+"uefa_name": "Celta de Vigo",
+"cc": "Esp",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 16.25
+}
+},
+{
+"uefa_name": "Vitória Guimarães",
+"cc": "Por",
+"seasons": {
+"22/23": 2,
+"23/24": 1.5,
+"24/25": 15.25,
+"25/26": null
+}
+},
+{
+"uefa_name": "RC Lens",
+"cc": "Fra",
+"seasons": {
+"22/23": null,
+"23/24": 10,
+"24/25": 2.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "Union Berlin",
+"cc": "Ger",
+"seasons": {
+"22/23": 12,
+"23/24": 6,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "NK Rijeka",
+"cc": "Cro",
+"seasons": {
+"22/23": 1.5,
+"23/24": 2.5,
+"24/25": 2.5,
+"25/26": 9.62
+}
+},
+{
+"uefa_name": "Como 1907",
+"cc": "Ita",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "FSV Mainz 05",
+"cc": "Ger",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 17.5
+}
+},
+{
+"uefa_name": "Stade Brestois",
+"cc": "Fra",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 16.75,
+"25/26": null
+}
+},
+{
+"uefa_name": "Partizan Belgrade",
+"cc": "Srb",
+"seasons": {
+"22/23": 8,
+"23/24": 2.5,
+"24/25": 2.5,
+"25/26": 2
+}
+},
+{
+"uefa_name": "Getafe",
+"cc": "Esp",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Girona FC",
+"cc": "Esp",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 8,
+"25/26": null
+}
+},
+{
+"uefa_name": "Osasuna",
+"cc": "Esp",
+"seasons": {
+"22/23": null,
+"23/24": 2.5,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Olimpija Ljubljana",
+"cc": "Slo",
+"seasons": {
+"22/23": 1.5,
+"23/24": 4,
+"24/25": 8.38,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "1899 Hoffenheim",
+"cc": "Ger",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 7,
+"25/26": null
+}
+},
+{
+"uefa_name": "1.FC Heidenheim",
+"cc": "Ger",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 8.12,
+"25/26": null
+}
+},
+{
+"uefa_name": "1.FC Köln",
+"cc": "Ger",
+"seasons": {
+"22/23": 6,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "CFR Cluj",
+"cc": "Rom",
+"seasons": {
+"22/23": 8,
+"23/24": 1.5,
+"24/25": 2.5,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "FC Twente Enschede",
+"cc": "Ned",
+"seasons": {
+"22/23": 2.5,
+"23/24": 2.5,
+"24/25": 8.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "Zrinjski Mostar",
+"cc": "Bos",
+"seasons": {
+"22/23": 2.5,
+"23/24": 3,
+"24/25": 2.5,
+"25/26": 5.25
+}
+},
+{
+"uefa_name": "APOEL Nicosia",
+"cc": "Cyp",
+"seasons": {
+"22/23": 2.5,
+"23/24": 2.5,
+"24/25": 9.75,
+"25/26": null
+}
+},
+{
+"uefa_name": "Dynamo Kyiv",
+"cc": "Ukr",
+"seasons": {
+"22/23": 3,
+"23/24": 2.5,
+"24/25": 3,
+"25/26": 4
+}
+},
+{
+"uefa_name": "Maccabi Haifa",
+"cc": "Isr",
+"seasons": {
+"22/23": 6,
+"23/24": 5,
+"24/25": 1.5,
+"25/26": 2
+}
+},
+{
+"uefa_name": "Vikingur Reykjavik",
+"cc": "Isl",
+"seasons": {
+"22/23": 2,
+"23/24": 1,
+"24/25": 6.75,
+"25/26": 2
+}
+},
+{
+"uefa_name": "KuPS Kuopio",
+"cc": "Fin",
+"seasons": {
+"22/23": 2,
+"23/24": 1.5,
+"24/25": 1.5,
+"25/26": 6.5
+}
+},
+{
+"uefa_name": "Hapoel Beer-Sheva",
+"cc": "Isr",
+"seasons": {
+"22/23": 6,
+"23/24": 2,
+"24/25": 2,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Hearts FC",
+"cc": "Sco",
+"seasons": {
+"22/23": 4,
+"23/24": 2.5,
+"24/25": 5,
+"25/26": null
+}
+},
+{
+"uefa_name": "SK Brann Bergen",
+"cc": "Nor",
+"seasons": {
+"22/23": null,
+"23/24": 2.5,
+"24/25": 2.5,
+"25/26": 7.25
+}
+},
+{
+"uefa_name": "FC Drita",
+"cc": "Kos",
+"seasons": {
+"22/23": 1.5,
+"23/24": 1.5,
+"24/25": 2.5,
+"25/26": 6.62
+}
+},
+{
+"uefa_name": "Toulouse FC",
+"cc": "Fra",
+"seasons": {
+"22/23": null,
+"23/24": 10,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "FC Nantes",
+"cc": "Fra",
+"seasons": {
+"22/23": 8,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Lincoln Red Imps",
+"cc": "Gib",
+"seasons": {
+"22/23": 1.5,
+"23/24": 2,
+"24/25": 2.5,
+"25/26": 5
+}
+},
+{
+"uefa_name": "Besiktas",
+"cc": "Tur",
+"seasons": {
+"22/23": null,
+"23/24": 3,
+"24/25": 6,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "Borac Banja Luka",
+"cc": "Bos",
+"seasons": {
+"22/23": 1,
+"23/24": 1.5,
+"24/25": 8.12,
+"25/26": 1
+}
+},
+{
+"uefa_name": "Sheriff Tiraspol",
+"cc": "Mol",
+"seasons": {
+"22/23": 4,
+"23/24": 3,
+"24/25": 2,
+"25/26": 2
+}
+},
+{
+"uefa_name": "Cercle Brugge",
+"cc": "Bel",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 12.75,
+"25/26": null
+}
+},
+{
+"uefa_name": "União Torreense",
+"cc": "Por",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "CD Santa Clara",
+"cc": "Por",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "FC Arouca",
+"cc": "Por",
+"seasons": {
+"22/23": null,
+"23/24": 2,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Gil Vicente",
+"cc": "Por",
+"seasons": {
+"22/23": 2.5,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "KI Klaksvik",
+"cc": "Far",
+"seasons": {
+"22/23": 2,
+"23/24": 3,
+"24/25": 2.5,
+"25/26": 2
+}
+},
+{
+"uefa_name": "RFS Riga",
+"cc": "Lat",
+"seasons": {
+"22/23": 2.5,
+"23/24": 1.5,
+"24/25": 4,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "SC Dnipro-1",
+"cc": "Ukr",
+"seasons": {
+"22/23": 8,
+"23/24": 2.5,
+"24/25": 1.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "Universitatea Craiova",
+"cc": "Rom",
+"seasons": {
+"22/23": 2.5,
+"23/24": null,
+"24/25": 1.5,
+"25/26": 5
+}
+},
+{
+"uefa_name": "FC Ballkani",
+"cc": "Kos",
+"seasons": {
+"22/23": 3,
+"23/24": 3,
+"24/25": 2,
+"25/26": 2
+}
+},
+{
+"uefa_name": "HJK Helsinki",
+"cc": "Fin",
+"seasons": {
+"22/23": 3,
+"23/24": 2.5,
+"24/25": 3,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Pyunik Yerevan",
+"cc": "Arm",
+"seasons": {
+"22/23": 4,
+"23/24": 2,
+"24/25": 2.5,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "FK Astana",
+"cc": "Kaz",
+"seasons": {
+"22/23": 1.5,
+"23/24": 3,
+"24/25": 4,
+"25/26": 2
+}
+},
+{
+"uefa_name": "Sint-Truiden",
+"cc": "Bel",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Charleroi",
+"cc": "Bel",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Royal Antwerp",
+"cc": "Bel",
+"seasons": {
+"22/23": 2.5,
+"23/24": 6,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "FC Noah",
+"cc": "Arm",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 3,
+"25/26": 6.75
+}
+},
+{
+"uefa_name": "Samsunspor",
+"cc": "Tur",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 11.12
+}
+},
+{
+"uefa_name": "Kairat Almaty",
+"cc": "Kaz",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": null,
+"25/26": 7
+}
+},
+{
+"uefa_name": "Trabzonspor",
+"cc": "Tur",
+"seasons": {
+"22/23": 6,
+"23/24": null,
+"24/25": 2.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "Zalgiris Vilnius",
+"cc": "Lit",
+"seasons": {
+"22/23": 4,
+"23/24": 2.5,
+"24/25": 1.5,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Servette FC Genève",
+"cc": "Sui",
+"seasons": {
+"22/23": null,
+"23/24": 6,
+"24/25": 2.5,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "Shkendija Tetovo",
+"cc": "Mac",
+"seasons": {
+"22/23": 2,
+"23/24": 1,
+"24/25": 1,
+"25/26": 5.38
+}
+},
+{
+"uefa_name": "Hajduk Split",
+"cc": "Cro",
+"seasons": {
+"22/23": 2.5,
+"23/24": 2,
+"24/25": 2,
+"25/26": 2
+}
+},
+{
+"uefa_name": "NEC Nijmegen",
+"cc": "Ned",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Go Ahead Eagles",
+"cc": "Ned",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 1.5,
+"25/26": 5
+}
+},
+{
+"uefa_name": "FC Utrecht",
+"cc": "Ned",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 3
+}
+},
+{
+"uefa_name": "Spartak Trnava",
+"cc": "Svk",
+"seasons": {
+"22/23": 2,
+"23/24": 2.5,
+"24/25": 2,
+"25/26": 2
+}
+},
+{
+"uefa_name": "Lausanne Sports",
+"cc": "Sui",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 10
+}
+},
+{
+"uefa_name": "Breidablik",
+"cc": "Isl",
+"seasons": {
+"22/23": 2,
+"23/24": 2.5,
+"24/25": 1.5,
+"25/26": 4
+}
+},
+{
+"uefa_name": "Malmö FF",
+"cc": "Swe",
+"seasons": {
+"22/23": 3,
+"23/24": null,
+"24/25": 4,
+"25/26": 3
+}
+},
+{
+"uefa_name": "Sivasspor",
+"cc": "Tur",
+"seasons": {
+"22/23": 10,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Levski Sofia",
+"cc": "Bul",
+"seasons": {
+"22/23": 2,
+"23/24": 2.5,
+"24/25": null,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "Larne FC",
+"cc": "Nir",
+"seasons": {
+"22/23": 1,
+"23/24": 1.5,
+"24/25": 2.5,
+"25/26": 2
+}
+},
+{
+"uefa_name": "Ararat-Armenia",
+"cc": "Arm",
+"seasons": {
+"22/23": 1.5,
+"23/24": 1.5,
+"24/25": 2,
+"25/26": 2
+}
+},
+{
+"uefa_name": "Riga FC",
+"cc": "Lat",
+"seasons": {
+"22/23": 2,
+"23/24": 2,
+"24/25": 1.5,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "Austria Wien",
+"cc": "Aut",
+"seasons": {
+"22/23": 2.5,
+"23/24": 2,
+"24/25": 1.5,
+"25/26": 2
+}
+},
+{
+"uefa_name": "Hamrun Spartans",
+"cc": "Mlt",
+"seasons": {
+"22/23": 2.5,
+"23/24": 2,
+"24/25": 1.5,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "Adana Demirspor",
+"cc": "Tur",
+"seasons": {
+"22/23": null,
+"23/24": 2.5,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Konyaspor",
+"cc": "Tur",
+"seasons": {
+"22/23": 2,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "LASK",
+"cc": "Aut",
+"seasons": {
+"22/23": null,
+"23/24": 3,
+"24/25": 3,
+"25/26": null
+}
+},
+{
+"uefa_name": "Petrocub Hîncesti",
+"cc": "Mol",
+"seasons": {
+"22/23": 2,
+"23/24": 1.5,
+"24/25": 2.5,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Hradec Kralove",
+"cc": "Cze",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "FK Jablonec",
+"cc": "Cze",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Sigma Olomouc",
+"cc": "Cze",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 6.62
+}
+},
+{
+"uefa_name": "Baník Ostrava",
+"cc": "Cze",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 2,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "Mladá Boleslav",
+"cc": "Cze",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 4,
+"25/26": null
+}
+},
+{
+"uefa_name": "Bohemians Praha",
+"cc": "Cze",
+"seasons": {
+"22/23": null,
+"23/24": 1.5,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "1.FC Slovácko",
+"cc": "Cze",
+"seasons": {
+"22/23": 4,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Górnik Zabrze",
+"cc": "Pol",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "GKS Katowice",
+"cc": "Pol",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Wisla Kraków",
+"cc": "Pol",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 2.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "Slask Wroclaw",
+"cc": "Pol",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 2,
+"25/26": null
+}
+},
+{
+"uefa_name": "Pogon Szczecin",
+"cc": "Pol",
+"seasons": {
+"22/23": 1.5,
+"23/24": 2,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Lechia Gdansk",
+"cc": "Pol",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Sabah FK",
+"cc": "Azb",
+"seasons": {
+"22/23": null,
+"23/24": 2,
+"24/25": 2,
+"25/26": 2
+}
+},
+{
+"uefa_name": "FC Vaduz",
+"cc": "Lie",
+"seasons": {
+"22/23": 2.5,
+"23/24": 1,
+"24/25": 1.5,
+"25/26": 2
+}
+},
+{
+"uefa_name": "The New Saints",
+"cc": "Wal",
+"seasons": {
+"22/23": 1.5,
+"23/24": 1.5,
+"24/25": 2.5,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "FC Nordsjælland",
+"cc": "Den",
+"seasons": {
+"22/23": null,
+"23/24": 7,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Linfield Belfast",
+"cc": "Nir",
+"seasons": {
+"22/23": 2.5,
+"23/24": 1.5,
+"24/25": 1,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "BK Häcken",
+"cc": "Swe",
+"seasons": {
+"22/23": null,
+"23/24": 3,
+"24/25": 2.5,
+"25/26": 3
+}
+},
+{
+"uefa_name": "NK Maribor",
+"cc": "Slo",
+"seasons": {
+"22/23": 2.5,
+"23/24": 2,
+"24/25": 2.5,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "IF Elfsborg",
+"cc": "Swe",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": 7,
+"25/26": null
+}
+},
+{
+"uefa_name": "OFI Heraklion",
+"cc": "Gre",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Aris Thessaloniki",
+"cc": "Gre",
+"seasons": {
+"22/23": 2,
+"23/24": 2,
+"24/25": null,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "TSC Backa Topola",
+"cc": "Srb",
+"seasons": {
+"22/23": null,
+"23/24": 3,
+"24/25": 5.12,
+"25/26": null
+}
+},
+{
+"uefa_name": "Inter Club d'Escaldes",
+"cc": "And",
+"seasons": {
+"22/23": 1.5,
+"23/24": 1.5,
+"24/25": 1.5,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Dinamo Minsk",
+"cc": "Bls",
+"seasons": {
+"22/23": 1.5,
+"23/24": 1,
+"24/25": 2.5,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Paide Linnameeskond",
+"cc": "Est",
+"seasons": {
+"22/23": 2,
+"23/24": 1,
+"24/25": 2,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Silkeborg IF",
+"cc": "Den",
+"seasons": {
+"22/23": 4,
+"23/24": null,
+"24/25": 2,
+"25/26": 2
+}
+},
+{
+"uefa_name": "Viking Stavanger",
+"cc": "Nor",
+"seasons": {
+"22/23": 2.5,
+"23/24": null,
+"24/25": null,
+"25/26": 2
+}
+},
+{
+"uefa_name": "Iberia 1999",
+"cc": "Geo",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": 2,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Levadia Tallinn",
+"cc": "Est",
+"seasons": {
+"22/23": 1.5,
+"23/24": 1,
+"24/25": 1.5,
+"25/26": 2
+}
+},
+{
+"uefa_name": "Flora Tallinn",
+"cc": "Est",
+"seasons": {
+"22/23": 1,
+"23/24": 2,
+"24/25": 2,
+"25/26": 1
+}
+},
+{
+"uefa_name": "Tobol Kustanai",
+"cc": "Kaz",
+"seasons": {
+"22/23": 2,
+"23/24": 2.5,
+"24/25": 1.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "Differdange 03",
+"cc": "Lux",
+"seasons": {
+"22/23": 1,
+"23/24": 1.5,
+"24/25": 1.5,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "Aberdeen",
+"cc": "Sco",
+"seasons": {
+"22/23": null,
+"23/24": 5,
+"24/25": null,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "St. Patrick's Athletic",
+"cc": "Irl",
+"seasons": {
+"22/23": 2,
+"23/24": 1,
+"24/25": 2.5,
+"25/26": 2
+}
+},
+{
+"uefa_name": "Egnatia Rrogozhinë",
+"cc": "Alb",
+"seasons": {
+"22/23": null,
+"23/24": 1,
+"24/25": 1.5,
+"25/26": 2
+}
+},
+{
+"uefa_name": "Kauno Zalgiris",
+"cc": "Lit",
+"seasons": {
+"22/23": 1,
+"23/24": 1.5,
+"24/25": null,
+"25/26": 2
+}
+},
+{
+"uefa_name": "Zira FK",
+"cc": "Azb",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": 2.5,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Milsami Orhei",
+"cc": "Mol",
+"seasons": {
+"22/23": 1.5,
+"23/24": 1,
+"24/25": 1.5,
+"25/26": 2
+}
+},
+{
+"uefa_name": "Víkingur",
+"cc": "Far",
+"seasons": {
+"22/23": 1.5,
+"23/24": 1,
+"24/25": 1.5,
+"25/26": 2
+}
+},
+{
+"uefa_name": "Zorya Luhansk",
+"cc": "Ukr",
+"seasons": {
+"22/23": 2,
+"23/24": 5,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "AGF Aarhus",
+"cc": "Den",
+"seasons": {
+"22/23": null,
+"23/24": 1.5,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Brøndby IF",
+"cc": "Den",
+"seasons": {
+"22/23": 2,
+"23/24": null,
+"24/25": 2,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "Viborg FF",
+"cc": "Den",
+"seasons": {
+"22/23": 2.5,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Lillestrøm SK",
+"cc": "Nor",
+"seasons": {
+"22/23": 2,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Tromsø IL",
+"cc": "Nor",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 2,
+"25/26": null
+}
+},
+{
+"uefa_name": "Rosenborg BK",
+"cc": "Nor",
+"seasons": {
+"22/23": null,
+"23/24": 2,
+"24/25": null,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "Fredrikstad FK",
+"cc": "Nor",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "Hibernian",
+"cc": "Sco",
+"seasons": {
+"22/23": null,
+"23/24": 2.5,
+"24/25": null,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "HB Torshavn",
+"cc": "Far",
+"seasons": {
+"22/23": 1,
+"23/24": 1,
+"24/25": 1.5,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Atlètic Club d'Escaldes",
+"cc": "And",
+"seasons": {
+"22/23": 1,
+"23/24": 1.5,
+"24/25": 1,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "FK Panevezys",
+"cc": "Lit",
+"seasons": {
+"22/23": 1,
+"23/24": 1.5,
+"24/25": 2.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "Apollon Limassol",
+"cc": "Cyp",
+"seasons": {
+"22/23": 5,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Aris Limassol",
+"cc": "Cyp",
+"seasons": {
+"22/23": 1.5,
+"23/24": 3,
+"24/25": null,
+"25/26": 2
+}
+},
+{
+"uefa_name": "F91 Dudelange",
+"cc": "Lux",
+"seasons": {
+"22/23": 2.5,
+"23/24": 1.5,
+"24/25": 1.5,
+"25/26": 1
+}
+},
+{
+"uefa_name": "FC Sankt Gallen",
+"cc": "Sui",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 4,
+"25/26": null
+}
+},
+{
+"uefa_name": "CSKA Sofia",
+"cc": "Bul",
+"seasons": {
+"22/23": 2.5,
+"23/24": 1.5,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Paksi FC",
+"cc": "Hun",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 2.5,
+"25/26": 2
+}
+},
+{
+"uefa_name": "Zimbru Chisinau",
+"cc": "Mol",
+"seasons": {
+"22/23": null,
+"23/24": 1.5,
+"24/25": 1.5,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Dila Gori",
+"cc": "Geo",
+"seasons": {
+"22/23": 1,
+"23/24": 2,
+"24/25": null,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Sutjeska Niksic",
+"cc": "Mon",
+"seasons": {
+"22/23": 1.5,
+"23/24": 1.5,
+"24/25": null,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "FK Auda",
+"cc": "Lat",
+"seasons": {
+"22/23": null,
+"23/24": 1.5,
+"24/25": 2,
+"25/26": 1
+}
+},
+{
+"uefa_name": "DAC Dunajska Streda",
+"cc": "Svk",
+"seasons": {
+"22/23": 2,
+"23/24": 1,
+"24/25": 1.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "Vllaznia Shkodër",
+"cc": "Alb",
+"seasons": {
+"22/23": 1.5,
+"23/24": 1,
+"24/25": 1,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "La Fiorita",
+"cc": "Sma",
+"seasons": {
+"22/23": 1.5,
+"23/24": 1,
+"24/25": 1.5,
+"25/26": 1
+}
+},
+{
+"uefa_name": "Neman Grodno",
+"cc": "Bls",
+"seasons": {
+"22/23": null,
+"23/24": 2,
+"24/25": 1.5,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "Buducnost Podgorica",
+"cc": "Mon",
+"seasons": {
+"22/23": 1.5,
+"23/24": 1.5,
+"24/25": 1.5,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Partizani Tirana",
+"cc": "Alb",
+"seasons": {
+"22/23": 1,
+"23/24": 2.5,
+"24/25": 1.5,
+"25/26": 1
+}
+},
+{
+"uefa_name": "FC Thun",
+"cc": "Sui",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "FC Sion",
+"cc": "Sui",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "FC Zürich",
+"cc": "Sui",
+"seasons": {
+"22/23": 3,
+"23/24": null,
+"24/25": 2,
+"25/26": null
+}
+},
+{
+"uefa_name": "FC Luzern",
+"cc": "Sui",
+"seasons": {
+"22/23": null,
+"23/24": 2,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Hammarby IF",
+"cc": "Swe",
+"seasons": {
+"22/23": null,
+"23/24": 1.5,
+"24/25": null,
+"25/26": 2
+}
+},
+{
+"uefa_name": "Polissya Zhytomyr",
+"cc": "Ukr",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 1.5,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "Shelbourne",
+"cc": "Irl",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 1.5,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "Floriana",
+"cc": "Mlt",
+"seasons": {
+"22/23": 1,
+"23/24": null,
+"24/25": 1.5,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Derry City",
+"cc": "Irl",
+"seasons": {
+"22/23": 1,
+"23/24": 2,
+"24/25": 1,
+"25/26": null
+}
+},
+{
+"uefa_name": "BATE Borisov",
+"cc": "Bls",
+"seasons": {
+"22/23": 1.5,
+"23/24": 2.5,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Neftchi Baku",
+"cc": "Azb",
+"seasons": {
+"22/23": 2,
+"23/24": 2,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Decic Tuzi",
+"cc": "Mon",
+"seasons": {
+"22/23": 1,
+"23/24": null,
+"24/25": 2,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Torpedo Kutaisi",
+"cc": "Geo",
+"seasons": {
+"22/23": null,
+"23/24": 1.5,
+"24/25": 1.5,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Puskás Akadémia",
+"cc": "Hun",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": 2.5,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "NK Osijek",
+"cc": "Cro",
+"seasons": {
+"22/23": 1.5,
+"23/24": 2,
+"24/25": 2,
+"25/26": null
+}
+},
+{
+"uefa_name": "ETO Györ",
+"cc": "Hun",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "DVSC Debrecen",
+"cc": "Hun",
+"seasons": {
+"22/23": null,
+"23/24": 2,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "FC Fehérvár",
+"cc": "Hun",
+"seasons": {
+"22/23": 2.5,
+"23/24": null,
+"24/25": 2,
+"25/26": null
+}
+},
+{
+"uefa_name": "Kecskeméti TE",
+"cc": "Hun",
+"seasons": {
+"22/23": null,
+"23/24": 1.5,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Zalaegerszegi TE",
+"cc": "Hun",
+"seasons": {
+"22/23": null,
+"23/24": 1.5,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Kisvárda FC",
+"cc": "Hun",
+"seasons": {
+"22/23": 2,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Mjällby AIF",
+"cc": "Swe",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "GAIS Göteborg",
+"cc": "Swe",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "IFK Göteborg",
+"cc": "Swe",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "AIK Stockholm",
+"cc": "Swe",
+"seasons": {
+"22/23": 2.5,
+"23/24": null,
+"24/25": null,
+"25/26": 2
+}
+},
+{
+"uefa_name": "Kalmar FF",
+"cc": "Swe",
+"seasons": {
+"22/23": null,
+"23/24": 1.5,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Beitar Jerusalem",
+"cc": "Isr",
+"seasons": {
+"22/23": null,
+"23/24": 1.5,
+"24/25": null,
+"25/26": 2
+}
+},
+{
+"uefa_name": "Ilves Tampere",
+"cc": "Fin",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 2,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "FC Santa Coloma",
+"cc": "And",
+"seasons": {
+"22/23": null,
+"23/24": 2,
+"24/25": null,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "CSKA 1948 Sofia",
+"cc": "Bul",
+"seasons": {
+"22/23": null,
+"23/24": 1.5,
+"24/25": 2,
+"25/26": null
+}
+},
+{
+"uefa_name": "Vojvodina Novi Sad",
+"cc": "Srb",
+"seasons": {
+"22/23": null,
+"23/24": 1.5,
+"24/25": 2,
+"25/26": null
+}
+},
+{
+"uefa_name": "Dinamo Tbilisi",
+"cc": "Geo",
+"seasons": {
+"22/23": 1,
+"23/24": 1.5,
+"24/25": 1,
+"25/26": null
+}
+},
+{
+"uefa_name": "AC Virtus",
+"cc": "Sma",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 1.5,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "FK Sarajevo",
+"cc": "Bos",
+"seasons": {
+"22/23": null,
+"23/24": 1,
+"24/25": 1.5,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "St Joseph's FC",
+"cc": "Gib",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": 1,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Wolfsberger AC",
+"cc": "Aut",
+"seasons": {
+"22/23": 2.5,
+"23/24": null,
+"24/25": null,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "B36 Torshavn",
+"cc": "Far",
+"seasons": {
+"22/23": 2,
+"23/24": 2,
+"24/25": 1,
+"25/26": null
+}
+},
+{
+"uefa_name": "Motherwell",
+"cc": "Sco",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Dundee United",
+"cc": "Sco",
+"seasons": {
+"22/23": 2,
+"23/24": null,
+"24/25": null,
+"25/26": 2
+}
+},
+{
+"uefa_name": "Kilmarnock",
+"cc": "Sco",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 2.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "St. Mirren",
+"cc": "Sco",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 2,
+"25/26": null
+}
+},
+{
+"uefa_name": "Universitatea Cluj",
+"cc": "Rom",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Corvinul Hunedoara",
+"cc": "Rom",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 2,
+"25/26": null
+}
+},
+{
+"uefa_name": "Sepsi OSK",
+"cc": "Rom",
+"seasons": {
+"22/23": 2,
+"23/24": 2.5,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Farul Constanta",
+"cc": "Rom",
+"seasons": {
+"22/23": null,
+"23/24": 2.5,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "LNZ Cherkasy",
+"cc": "Ukr",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "FC Oleksandriya",
+"cc": "Ukr",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Kryvbas Kryviy Rih",
+"cc": "Ukr",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 2.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "Vorskla Poltava",
+"cc": "Ukr",
+"seasons": {
+"22/23": 1.5,
+"23/24": 1.5,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "NK Varazdin",
+"cc": "Cro",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Tre Fiori",
+"cc": "Sma",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": null,
+"25/26": 1
+}
+},
+{
+"uefa_name": "Valur Reykjavik",
+"cc": "Isl",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 1.5,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "MSK Zilina",
+"cc": "Svk",
+"seasons": {
+"22/23": null,
+"23/24": 1.5,
+"24/25": null,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "NK Koper",
+"cc": "Slo",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": null,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "FK Aktobe",
+"cc": "Kaz",
+"seasons": {
+"22/23": null,
+"23/24": 2,
+"24/25": 1,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Ordabasy Shymkent",
+"cc": "Kaz",
+"seasons": {
+"22/23": null,
+"23/24": 1.5,
+"24/25": 2,
+"25/26": 1
+}
+},
+{
+"uefa_name": "FCB Magpies",
+"cc": "Gib",
+"seasons": {
+"22/23": 1,
+"23/24": 1,
+"24/25": 1.5,
+"25/26": 1
+}
+},
+{
+"uefa_name": "Cukaricki Belgrade",
+"cc": "Srb",
+"seasons": {
+"22/23": 2,
+"23/24": 2.5,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "NK Bravo",
+"cc": "Slo",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 1.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "NK Aluminij",
+"cc": "Slo",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "NK Domzale",
+"cc": "Slo",
+"seasons": {
+"22/23": null,
+"23/24": 1,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Mura Murska Sobota",
+"cc": "Slo",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Hapoel Tel-Aviv",
+"cc": "Isr",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Maccabi Petah-Tikva",
+"cc": "Isr",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 2,
+"25/26": null
+}
+},
+{
+"uefa_name": "Maccabi Netanya",
+"cc": "Isr",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Araz Nakhchivan",
+"cc": "Azb",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 2
+}
+},
+{
+"uefa_name": "Sumgayit FK",
+"cc": "Azb",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 1.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "Gabala FK",
+"cc": "Azb",
+"seasons": {
+"22/23": 1.5,
+"23/24": 1.5,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Dinamo Tirana",
+"cc": "Alb",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "UNA Strassen",
+"cc": "Lux",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 1,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Velez Mostar",
+"cc": "Bos",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": 1,
+"25/26": null
+}
+},
+{
+"uefa_name": "FK Liepaja",
+"cc": "Lat",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": 1,
+"25/26": null
+}
+},
+{
+"uefa_name": "Alashkert FC",
+"cc": "Arm",
+"seasons": {
+"22/23": 1,
+"23/24": 1.5,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Torpedo Zhodino",
+"cc": "Bls",
+"seasons": {
+"22/23": null,
+"23/24": 1.5,
+"24/25": 1,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Urartu FC",
+"cc": "Arm",
+"seasons": {
+"22/23": null,
+"23/24": 1.5,
+"24/25": 1.5,
+"25/26": 1
+}
+},
+{
+"uefa_name": "MFK Ruzomberok",
+"cc": "Svk",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": 2.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "FC Struga",
+"cc": "Mac",
+"seasons": {
+"22/23": null,
+"23/24": 2.5,
+"24/25": 1.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "Dinamo Batumi",
+"cc": "Geo",
+"seasons": {
+"22/23": 1.5,
+"23/24": 1,
+"24/25": 1.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "KF Tirana",
+"cc": "Alb",
+"seasons": {
+"22/23": 1.5,
+"23/24": 1.5,
+"24/25": 1,
+"25/26": null
+}
+},
+{
+"uefa_name": "Crusaders Belfast",
+"cc": "Nir",
+"seasons": {
+"22/23": 1.5,
+"23/24": 1.5,
+"24/25": 1,
+"25/26": null
+}
+},
+{
+"uefa_name": "Gzira United",
+"cc": "Mlt",
+"seasons": {
+"22/23": 2,
+"23/24": 2,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "FK Shkupi",
+"cc": "Mac",
+"seasons": {
+"22/23": 2.5,
+"23/24": 1.5,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "FC Kosice",
+"cc": "Svk",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Arda Kardzhali",
+"cc": "Bul",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 2.5
+}
+},
+{
+"uefa_name": "Cherno More Varna",
+"cc": "Bul",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 1.5,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Botev Plovdiv",
+"cc": "Bul",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": 2,
+"25/26": null
+}
+},
+{
+"uefa_name": "KF Malisheva",
+"cc": "Kos",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 1,
+"25/26": 1
+}
+},
+{
+"uefa_name": "KA Akureyri",
+"cc": "Isl",
+"seasons": {
+"22/23": null,
+"23/24": 2,
+"24/25": null,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Hibernians FC",
+"cc": "Mlt",
+"seasons": {
+"22/23": 2,
+"23/24": null,
+"24/25": null,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Cliftonville",
+"cc": "Nir",
+"seasons": {
+"22/23": 1,
+"23/24": null,
+"24/25": 1.5,
+"25/26": 1
+}
+},
+{
+"uefa_name": "UE Santa Coloma",
+"cc": "And",
+"seasons": {
+"22/23": 1,
+"23/24": null,
+"24/25": 2.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "Tre Penne",
+"cc": "Sma",
+"seasons": {
+"22/23": 1,
+"23/24": 1.5,
+"24/25": 1,
+"25/26": null
+}
+},
+{
+"uefa_name": "Valmieras FK",
+"cc": "Lat",
+"seasons": {
+"22/23": 1.5,
+"23/24": 2,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Zeleznicar Pancevo",
+"cc": "Srb",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Radnicki 1923",
+"cc": "Srb",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 1.5,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Novi Pazar",
+"cc": "Srb",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Radnicki Nis",
+"cc": "Srb",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Stjarnan FC",
+"cc": "Isl",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 1.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "IF Vestri",
+"cc": "Isl",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "KR Reykjavik",
+"cc": "Isl",
+"seasons": {
+"22/23": 1,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Bohemians Dublin",
+"cc": "Irl",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Dundalk",
+"cc": "Irl",
+"seasons": {
+"22/23": null,
+"23/24": 1.5,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Sligo Rovers",
+"cc": "Irl",
+"seasons": {
+"22/23": 2,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Vardar Skopje",
+"cc": "Mac",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Kalju Nomme",
+"cc": "Est",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "KF Dukagjini",
+"cc": "Kos",
+"seasons": {
+"22/23": null,
+"23/24": 1.5,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "FC Hegelmann",
+"cc": "Lit",
+"seasons": {
+"22/23": null,
+"23/24": 1,
+"24/25": null,
+"25/26": 1
+}
+},
+{
+"uefa_name": "Penybont",
+"cc": "Wal",
+"seasons": {
+"22/23": null,
+"23/24": 1,
+"24/25": null,
+"25/26": 1
+}
+},
+{
+"uefa_name": "Mornar Bar",
+"cc": "Mon",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 2,
+"25/26": null
+}
+},
+{
+"uefa_name": "Connah's Quay",
+"cc": "Wal",
+"seasons": {
+"22/23": null,
+"23/24": 1,
+"24/25": 1,
+"25/26": null
+}
+},
+{
+"uefa_name": "Europa FC",
+"cc": "Gib",
+"seasons": {
+"22/23": 1,
+"23/24": 1,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Progrès Niederkorn",
+"cc": "Lux",
+"seasons": {
+"22/23": null,
+"23/24": 1.5,
+"24/25": 1.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "Ararat Yerevan",
+"cc": "Arm",
+"seasons": {
+"22/23": 1,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Zeljeznicar Sarajevo",
+"cc": "Bos",
+"seasons": {
+"22/23": null,
+"23/24": 1.5,
+"24/25": null,
+"25/26": 1
+}
+},
+{
+"uefa_name": "Tuzla City",
+"cc": "Bos",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "FC Prishtina",
+"cc": "Kos",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "KF Llapi",
+"cc": "Kos",
+"seasons": {
+"22/23": 1,
+"23/24": null,
+"24/25": 1.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "SC Gjilani",
+"cc": "Kos",
+"seasons": {
+"22/23": 1,
+"23/24": 1,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "NSI Runavik",
+"cc": "Far",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 1
+}
+},
+{
+"uefa_name": "Inter Turku",
+"cc": "Fin",
+"seasons": {
+"22/23": 1,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Caernarfon Town",
+"cc": "Wal",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 1.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "Haverfordwest County",
+"cc": "Wal",
+"seasons": {
+"22/23": null,
+"23/24": 1.5,
+"24/25": null,
+"25/26": 1
+}
+},
+{
+"uefa_name": "SJK Seinäjoki",
+"cc": "Fin",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": null,
+"25/26": 1
+}
+},
+{
+"uefa_name": "Racing Union Luxembourg",
+"cc": "Lux",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": null,
+"25/26": 1
+}
+},
+{
+"uefa_name": "Makedonija GjP",
+"cc": "Mac",
+"seasons": {
+"22/23": 1.5,
+"23/24": 1,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "BFC Daugavpils",
+"cc": "Lat",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 1
+}
+},
+{
+"uefa_name": "FK Yelimay",
+"cc": "Kaz",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "FK Kyzylzhar",
+"cc": "Kaz",
+"seasons": {
+"22/23": 2,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "VPS Vaasa",
+"cc": "Fin",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 1,
+"25/26": null
+}
+},
+{
+"uefa_name": "Haka Valkeakoski",
+"cc": "Fin",
+"seasons": {
+"22/23": null,
+"23/24": 1,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Honka Espoo",
+"cc": "Fin",
+"seasons": {
+"22/23": null,
+"23/24": 1,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Sfântul Gheorghe",
+"cc": "Mol",
+"seasons": {
+"22/23": 1,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Sileks Kratovo",
+"cc": "Mac",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 1
+}
+},
+{
+"uefa_name": "Marsaxlokk",
+"cc": "Mlt",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 1,
+"25/26": null
+}
+},
+{
+"uefa_name": "Glentoran",
+"cc": "Nir",
+"seasons": {
+"22/23": null,
+"23/24": 1,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Birkirkara",
+"cc": "Mlt",
+"seasons": {
+"22/23": null,
+"23/24": 1,
+"24/25": null,
+"25/26": 1
+}
+},
+{
+"uefa_name": "Bala Town",
+"cc": "Wal",
+"seasons": {
+"22/23": 1,
+"23/24": null,
+"24/25": 1,
+"25/26": null
+}
+},
+{
+"uefa_name": "Swift Hesperange",
+"cc": "Lux",
+"seasons": {
+"22/23": null,
+"23/24": 2,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Shakhtior Saligorsk",
+"cc": "Bls",
+"seasons": {
+"22/23": 2,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Rabotnicki Skopje",
+"cc": "Mac",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 1
+}
+},
+{
+"uefa_name": "Tikves Kavadarci",
+"cc": "Mac",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 1,
+"25/26": null
+}
+},
+{
+"uefa_name": "Akademija Pandev",
+"cc": "Mac",
+"seasons": {
+"22/23": 1,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "ML Vitebsk",
+"cc": "Bls",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "AF Elbasani",
+"cc": "Alb",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Dynamo Brest",
+"cc": "Bls",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 1
+}
+},
+{
+"uefa_name": "Isloch Minsk Raion",
+"cc": "Bls",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 1,
+"25/26": null
+}
+},
+{
+"uefa_name": "FC Gomel",
+"cc": "Bls",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "KF Laçi",
+"cc": "Alb",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Valletta FC",
+"cc": "Mlt",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Sliema Wanderers",
+"cc": "Mlt",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 1.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "Balzan FC",
+"cc": "Mlt",
+"seasons": {
+"22/23": null,
+"23/24": 1.5,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Coleraine",
+"cc": "Nir",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Atert Bissen",
+"cc": "Lux",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Banga Gargzdai",
+"cc": "Lit",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Dungannon Swifts",
+"cc": "Nir",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Spaeri Tbilisi",
+"cc": "Geo",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": 1.5
+}
+},
+{
+"uefa_name": "Transinvest Vilnius",
+"cc": "Lit",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 1.5,
+"25/26": null
+}
+},
+{
+"uefa_name": "Suduva Marijampole",
+"cc": "Lit",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Newtown",
+"cc": "Wal",
+"seasons": {
+"22/23": 1.5,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "FA Siauliai",
+"cc": "Lit",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 1,
+"25/26": null
+}
+},
+{
+"uefa_name": "Kalev Tallinn",
+"cc": "Est",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": 1,
+"25/26": null
+}
+},
+{
+"uefa_name": "Trans Narva",
+"cc": "Est",
+"seasons": {
+"22/23": null,
+"23/24": 1,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "US Mondorf-les-Bains",
+"cc": "Lux",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "CS Fola Esch",
+"cc": "Lux",
+"seasons": {
+"22/23": 1,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "OFK Petrovac",
+"cc": "Mon",
+"seasons": {
+"22/23": null,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Arsenal Tivat",
+"cc": "Mon",
+"seasons": {
+"22/23": null,
+"23/24": 1,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Iskra Danilovgrad",
+"cc": "Mon",
+"seasons": {
+"22/23": 1,
+"23/24": null,
+"24/25": null,
+"25/26": null
+}
+},
+{
+"uefa_name": "Cosmos",
+"cc": "Sma",
+"seasons": {
+"22/23": null,
+"23/24": 1,
+"24/25": null,
+"25/26": null
+}
+}
+]
+}
