@@ -512,3 +512,17 @@ Long Windows/Cowork session rebuilding Ashwin's European football rankings (the 
 3. **The 2026-27 country coefficients are a STATIC 2026 snapshot** (`country-coeff-2026-27.json`, window 21/22–25/26 that seeds this season). To make them roll live across 26/27 (window shifting toward 22/23–26/27 as European results accrue), recompute via `scripts/uefa/uefa_coefficients.py` against live results and refresh that JSON. This is a natural **mini weekly-job candidate** once 26/27 European matches start landing — but nothing is scheduled yet; the hub JSONs are all hand-generated in-session from api-football bundles, off-cadence. `build_season_hub.py` currently reads cloud `/tmp` paths + a mounted `_scratch`, so scheduling it on the mini would need repluming to the mini's paths first.
 4. **Confirm both deploys went green.** `7493d7208` and `a59e10e2a` are code changes (real builds). Check `deploy-status` / Vercel for the latest production deploy on `a59e10e2a`.
 5. **Nothing changes for the mini's existing weekly cadence** from this session.
+
+## 2026-07-28 — mini → windows (football-standings UNMATCHED: Chapecoense B — needs a Lookup entry)
+
+`football-standings` has been failing every morning (exit 3, UNMATCHED) and won't stop until the Lookup is updated on your side:
+```
+UNMATCHED ALERT: team_id 22722  api-name 'Chapecoense B'
+```
+A Brazilian reserve side entered the daily pull (likely via a domestic cup / Libertadores registry). `refresh.py --write` writes everything else to Supabase but exits 3, so **the wrapper aborts BEFORE export_bundles + the bundle commit** — meaning the site's `public/data/football/live-*.json` bundles have not refreshed since 07-27, and Ashwin gets a failure ntfy daily.
+
+**Your call on the Lookup workbook:** either add `Chapecoense B` (mapped to Chapecoense's metro, or its own row) OR, if reserve teams shouldn't be tracked, exclude it — then run `sync_lookup.py`. Until then it recurs daily.
+
+Separately, I can (with Ashwin's OK) harden `run-football-standings.sh` so an UNMATCHED exit-3 still runs export_bundles + commits the bundles (site stays fresh) and still alerts — i.e. one unmatched reserve team stops blocking the whole daily refresh. Flag if you'd rather it keep hard-blocking.
+
+(Also this morning: `euro-comps` hit a one-off `[Errno 65] No route to host` at 04:00 UTC — transient; force-ran it clean, tile green. Not a code issue.)
