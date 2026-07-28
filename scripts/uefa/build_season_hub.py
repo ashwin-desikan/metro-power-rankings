@@ -91,12 +91,13 @@ def std_rows(grp):
         out.append({"rank":row["rank"],"name":t["name"],"lookup":lk(t["id"],t["name"]),"played":al["played"],"win":al["win"],
             "draw":al["draw"],"lose":al["lose"],"gf":g["for"],"ga":g["against"],"gd":row.get("goalsDiff"),"points":row["points"]})
     return out
-CUPMETA={48:("England","League Cup"),137:("Italy","Coppa Italia"),81:("Germany","DFB Pokal"),97:("Portugal","Taça da Liga"),185:("Scotland","League Cup"),90:("Netherlands","KNVB Beker"),143:("Spain","Copa del Rey"),45:("England","FA Cup"),66:("France","Coupe de France"),181:("Scotland","Scottish Cup"),96:("Portugal","Taça de Portugal"),531:("Europe","UEFA Super Cup"),528:("England","Community Shield"),526:("France","Trophée des Champions"),556:("Spain","Supercopa"),529:("Germany","Super Cup"),543:("Netherlands","Johan Cruyff Shield"),550:("Portugal","Supertaça"),547:("Italy","Supercoppa"),1168:("World","Intercontinental Cup")}
-DOMCUPS={48,137,81,97,185,90,143,45,66,181,96}
+CUPMETA={48:("England","League Cup"),137:("Italy","Coppa Italia"),81:("Germany","DFB Pokal"),97:("Portugal","Taça da Liga"),185:("Scotland","League Cup"),90:("Netherlands","KNVB Beker"),143:("Spain","Copa del Rey"),45:("England","FA Cup"),66:("France","Coupe de France"),181:("Scotland","Scottish Cup"),96:("Portugal","Taça de Portugal"),531:("Europe","UEFA Super Cup"),528:("England","Community Shield"),526:("France","Trophée des Champions"),556:("Spain","Supercopa"),529:("Germany","Super Cup"),543:("Netherlands","Johan Cruyff Shield"),550:("Portugal","Supertaça"),547:("Italy","Supercoppa"),1168:("World","Intercontinental Cup"),65:("France","Coupe de la Ligue"),15:("World","FIFA Club World Cup")}
+DOMCUPS={48,137,81,97,185,90,143,45,66,181,96,65}
 # Old 7-team FIFA Club World Cup (pre-2025 format) — shown in the super-cup section.
 # season key 2022 -> played Feb 2023 (2022-23 hub); 2023 -> played Dec 2023 (2023-24 hub).
 OLD_CWC={2022:{"wid":541,"winner":"Real Madrid","runnerup":"Al Hilal","score":"5–3"},
-         2023:{"wid":50,"winner":"Manchester City","runnerup":"Fluminense","score":"4–0"}}
+         2023:{"wid":50,"winner":"Manchester City","runnerup":"Fluminense","score":"4–0"},
+         2018:{"wid":541,"winner":"Real Madrid","runnerup":"Al Ain","score":"4–1","comp":"FIFA Club World Cup"}}
 
 def load(season):
     if season==2025:
@@ -113,12 +114,26 @@ def load(season):
            "europe":b["europe"],"libertadores":b["libertadores"],"cwc":(json.load(open(f"{SC}/cwc2025.json")) if season==2024 else None)}
         CFG={2024:("countries2025.json",["20/21","21/22","22/23","23/24","24/25"],"24/25"),
              2023:("countries2024.json",["19/20","20/21","21/22","22/23","23/24"],"23/24"),
-             2022:("countries2023.json",["18/19","19/20","20/21","21/22","22/23"],"22/23")}[season]
+             2022:("countries2023.json",["18/19","19/20","20/21","21/22","22/23"],"22/23"),
+             2021:("countries2022.json",["17/18","18/19","19/20","20/21","21/22"],"21/22"),
+             2020:("countries2021.json",["16/17","17/18","18/19","19/20","20/21"],"20/21"),
+             2019:("countries2020.json",["15/16","16/17","17/18","18/19","19/20"],"19/20"),
+             2018:("countries2019.json",["14/15","15/16","16/17","17/18","18/19"],"18/19"),
+             2017:("countries2018.json",["13/14","14/15","15/16","16/17","17/18"],"17/18"),
+             2016:("countries2017.json",["12/13","13/14","14/15","15/16","16/17"],"16/17")}[season]
         S["country_rows"]=json.load(open(f"{SC}/{CFG[0]}")); S["cseasons"]=CFG[1]; S["fr"]=list(CFG[1]); S["cur"]=CFG[2]
     return S
 
 def build(season):
     S=load(season)
+    NRND={"8th Finals":"Round of 16","Finals":"Final"}
+    def _nz(fx):
+        for f in (fx or []):
+            r=(f.get("league") or {}).get("round")
+            if r in NRND: f["league"]["round"]=NRND[r]
+    for _fx in list(S["league_fixtures"].values())+list(S["cup_fixtures"].values()): _nz(_fx)
+    for _l in S["europe"].values(): _nz(_l.get("fixtures"))
+    _nz(S.get("libertadores"))
     crow={r["league"]:float(r["score"]) for r in S["country_rows"]}
     ENG=crow["England"]
     def CF(c): v=crow.get(LAB.get(c,c),crow.get(c)); return math.sqrt(v/ENG) if v else 0.0
@@ -221,6 +236,7 @@ def build(season):
         cwc=S["cwc"]
         continental.append({"comp":"FIFA Club World Cup","scope":"FIFA","table":None,"groups":groups_from(GX["cwc"]),
             "knockout":rounds(cwc,{"KO"}),"qualifying":[],"final":winner(cwc)})
+    continental=[cc for cc in continental if (cc.get("table") or cc.get("groups") or cc.get("knockout") or cc.get("qualifying") or cc.get("final"))]
     # cups
     cups=[]
     for cid,fx in S["cup_fixtures"].items():
@@ -230,14 +246,14 @@ def build(season):
             "winner":w["winner"],"winner_lookup":w["winner_lookup"],"runnerup":w["runnerup"],"score":w["score"]})
     _oc=OLD_CWC.get(season)
     if _oc:
-        cups.append({"type":"Super cup","country":"World","comp":"Club World Cup",
+        cups.append({"type":"Super cup","country":"World","comp":_oc.get("comp","Club World Cup"),
             "winner":_oc["winner"],"winner_lookup":_oc["winner"],"runnerup":_oc["runnerup"],"score":_oc["score"]})
     cups.sort(key=lambda c:({"Domestic cup":0,"Super cup":1}[c["type"]],c["country"]))
-    label={2025:"2025-26",2024:"2024-25",2023:"2023-24",2022:"2022-23"}[season]
+    label={2025:"2025-26",2024:"2024-25",2023:"2023-24",2022:"2022-23",2021:"2021-22",2020:"2020-21",2019:"2019-20",2018:"2018-19",2017:"2017-18",2016:"2016-17"}[season]
     hub={"season":label,"clubSeasons":S["cseasons"],"note":"Club power ranking: 0.65 opponent- & stage-weighted quality per match + 0.35 pedigree + current-season coefficient, less a losing-record penalty. Country coefficients are the full 5-year UEFA window.","clubs":clubs,"countries":countries,"leagues":leagues,"continental":continental,"cups":cups}
     fn=f"/tmp/hub-{label}.json"; json.dump(hub,open(fn,"w"),ensure_ascii=False)
     print(f"{label}: clubs {len(clubs)} leagues {len(leagues)} continental {[c['comp'] for c in continental]} cups {len(cups)} MB {round(os.path.getsize(fn)/1e6,2)}")
     print("   KO rounds (reverse):", [(c['comp'],[r['round'] for r in c['knockout']]) for c in continental if c['knockout']][:2])
     print("   MUtd/Che/Tot:", [(c['rank'],c['name']) for c in clubs if c['name'] in ("Manchester United","Chelsea","Tottenham Hotspur")])
     print("   CWC winner:", [c['final'] for c in continental if c['comp']=="FIFA Club World Cup"])
-build(2025); build(2024); build(2023); build(2022)
+build(2025); build(2024); build(2023); build(2022); build(2021); build(2020); build(2019); build(2018); build(2017); build(2016)
