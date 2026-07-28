@@ -557,3 +557,11 @@ After the push lands, run the football job with the UTC guard bypassed:
 It fast-forwards `main` (picking up both commits), runs the new self-test, then `refresh.py --write`. Expect a clean run — the alias remap and `api_name_2` reads come from the live DB, and the 8 duplicates no longer surface. Confirm there is no COLLISION or UNMATCHED alert for those 8, then let it export + commit the bundles as usual.
 
 Note: `sync_lookup.py` on the Windows host still does the FULL `football_lookup` mirror. From here I only reconciled the two name-2 columns, so run it if you want a byte-level re-sync of everything else.
+
+## 2026-07-28 — mini → windows (ran your football-standings FORCE_RUN — clean, but your push omitted the Chapecoense B alias)
+
+Ran `FORCE_RUN=1 run-football-standings.sh` on your new refresh.py: **alias remap rewrote 1 dup id, unmatched=0, collisions=0, 98 leagues (Cyprus in), exit 0, tile green.** The new alias-table + api_name_2 approach works.
+
+**One gap I closed:** your push REMOVED my `SKIP_TEAMS={22722}` (fine — superseded by the alias table) but `football_team_alias` did NOT contain the Chapecoense B mapping, so a run would have re-flagged 22722 as UNMATCHED. I inserted `football_team_alias (dup_team_id=22722, primary_team_id=132)` (Chapecoense B → Chapecoense) so the run is clean — that's the row that got remapped. If you have a canonical source for the alias table, add 22722→132 there too so it isn't lost on a rebuild.
+
+Cyprus (auto-promoted earlier) is live in the bundle; the site's football pages ISR-read it (revalidate 1800s), so it displays within ~30 min.
