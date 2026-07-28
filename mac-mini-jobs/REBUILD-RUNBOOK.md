@@ -12,7 +12,7 @@ restores the *worker*: the scheduler, scripts, venv, and credentials. Budget ~30
 
 ---
 
-## What the mini runs (18 launchd agents)
+## What the mini runs (19 launchd agents)
 
 | Agent | Wrapper | Schedule (local) |
 |---|---|---|
@@ -29,16 +29,18 @@ restores the *worker*: the scheduler, scripts, venv, and credentials. Budget ~30
 | com.citizenofnowhere.egress-refresh | metro-mini-refresh.sh | Sun 10:00 |
 | com.citizenofnowhere.cricket-weekly | run-cricket-weekly.sh | Tue 10:00 |
 | com.citizenofnowhere.cricket-monthly | run-cricket-monthly.sh | 1st @ 11:00 |
+| com.citizenofnowhere.screen-number-ones | mac-mini-jobs/run-screen-number-ones.sh (repo) | Tue 14:00 |
 | com.citizenofnowhere.euro-comps | run-euro-comps.sh | 04:00 daily |
 | com.citizenofnowhere.football-standings | mac-mini-jobs/run-football-standings.sh (repo) | 05:00 UTC daily |
 | com.citizenofnowhere.gap-league-watch | mac-mini-jobs/run-gap-league-watch.sh (repo) | 05:00 UTC daily |
 | com.citizenofnowhere.f1-weekly | run-f1-weekly.sh | hourly (round-gated; syncs ~1h post-race) |
 | com.citizenofnowhere.heartbeat | run-heartbeat.sh | every 15 min |
 
-All except the two **apifootball** jobs run their wrapper from `~/metro-mini-jobs/`,
-where each `run-*.sh` is a **symlink to the repo copy** in `mac-mini-jobs/` (so the
-live copy can never drift from canonical — see §7). The apifootball plists run the
-repo copy directly. The `newsletter` agents come from `~/newsletter-podcast/` (see
+Most jobs run their wrapper from `~/metro-mini-jobs/`, where each `run-*.sh` is a
+**symlink to the repo copy** in `mac-mini-jobs/` (so the live copy can never drift
+from canonical — see §7). The three newer jobs (**football-standings**,
+**gap-league-watch**, **screen-number-ones**) run the repo copy directly from their
+plist (no symlink needed). The `newsletter` agents come from `~/newsletter-podcast/` (see
 its `SETUP.md`). Every scheduled job also reports to healthchecks.io via `hc-run.sh`
 (slug = the agent's short name), except `heartbeat` which pings the `mac-mini` check.
 

@@ -565,3 +565,11 @@ Ran `FORCE_RUN=1 run-football-standings.sh` on your new refresh.py: **alias rema
 **One gap I closed:** your push REMOVED my `SKIP_TEAMS={22722}` (fine — superseded by the alias table) but `football_team_alias` did NOT contain the Chapecoense B mapping, so a run would have re-flagged 22722 as UNMATCHED. I inserted `football_team_alias (dup_team_id=22722, primary_team_id=132)` (Chapecoense B → Chapecoense) so the run is clean — that's the row that got remapped. If you have a canonical source for the alias table, add 22722→132 there too so it isn't lost on a rebuild.
 
 Cyprus (auto-promoted earlier) is live in the bundle; the site's football pages ISR-read it (revalidate 1800s), so it displays within ~30 min.
+
+## 2026-07-28 — mini → windows (US number-ones moved to Tuesday + made ISR)
+
+Ashwin flagged that the screen number-ones data wasn't updating weekly. Two causes, both fixed:
+1. **Wrong day:** the refresh was a step in the Sunday egress job, but the US weekend number-one is only tallied Mon/Tue — so Sunday always saw last week's data. **Removed it from `metro-mini-refresh.sh`** and gave it its own agent: `com.citizenofnowhere.screen-number-ones` (`run-screen-number-ones.sh`, **Tue 14:00**, via hc-run.sh, healthchecks tile). Loaded + green; runs the repo copy directly.
+2. **Build-time read:** `/screen/number-ones` read the JSON via `readFileSync` (build-baked), so even a correctly-timed `[vercel skip]` commit never showed without a Vercel build. **Converted `getScreenNumberOnes()` to ISR-from-raw** (fetch GitHub raw, `revalidate 3600`, local fallback — mirrors `lib/powerRanking.ts`) and swapped the page's `force-static` for `revalidate=3600`. Local build verified: route is ISR (1h), compiles clean. Commit `2c008a36a` is the one-time build that deploys this; henceforth the Tuesday refresh surfaces within ~1h, no build.
+
+This week's data (2026 week 30) is committed (`92be0ae99`) and will show once that build lands.
