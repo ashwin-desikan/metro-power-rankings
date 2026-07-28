@@ -25195,7 +25195,7 @@
   {
    "date": "2026-05-24",
    "target": "The Mandalorian and Grogu",
-   "display": "The Mandalorian and Grogu",
+   "display": "Star Wars: The Mandalorian and Grogu",
    "gross": 81670433
   },
   {
@@ -25245,6 +25245,12 @@
    "target": "The Odyssey (2026 film)",
    "display": "The Odyssey",
    "gross": 123502900
+  },
+  {
+   "date": "2026-07-26",
+   "target": "The Odyssey (2026 film)",
+   "display": "The Odyssey",
+   "gross": 90022510
   }
  ]
 }
