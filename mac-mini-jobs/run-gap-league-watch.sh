@@ -37,4 +37,23 @@ git merge --ff-only origin/main --quiet || fail "cannot fast-forward (repo diver
 
 log "running daily gap-league watch (--write)"
 "$PY" scripts/apifootball/watch_gap_leagues.py --write 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "watch --write failed"
+
+# If a ready league auto-promoted, the script edited leagues.json / leagues_pending.json.
+# Commit + push them (script config -> [vercel skip], no build). Resilient to the concurrent
+# football-standings push at the same 05:00 UTC slot: rebase-and-retry on a non-fast-forward.
+PROMO="scripts/apifootball/leagues.json scripts/apifootball/leagues_pending.json"
+if ! git diff --quiet -- $PROMO; then
+  git config user.name  "metro-mini[bot]"
+  git config user.email "metro-mini-bot@users.noreply.github.com"
+  git add $PROMO
+  git commit -q -m "gap-watch: auto-promote ready league(s) into leagues.json [vercel skip]" || fail "promote commit failed"
+  pushed=0
+  for a in 1 2 3; do
+    if git fetch origin main --quiet && git rebase origin/main --quiet && git push -q origin HEAD:main; then
+      pushed=1; log "pushed auto-promotion"; break
+    fi
+    git rebase --abort 2>/dev/null || true; sleep 5
+  done
+  [ "$pushed" = 1 ] || fail "promote push failed after 3 retries"
+fi
 log "=== gap-league-watch done ==="

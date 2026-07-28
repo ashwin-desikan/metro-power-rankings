@@ -127,9 +127,45 @@ def resolver_report(lg, c, akey, skey):
     log("  teams=%d matched=%d unmatched=%d" % (len(teams), len(teams) - len(unmatched), len(unmatched)))
     for tid, nm in unmatched:
         log("    UNMATCHED team_id %s '%s' -- add to Lookup (level %s, %s) before promoting" % (tid, nm, lg["level"], lg["country"]))
-    if unmatched:
-        push("[gap-watch] %s ready, %d team(s) unmapped" % (lg["intended_name"], len(unmatched)),
-             "high", "warning", "\n".join(nm for _, nm in unmatched))
+    return unmatched  # [] = clean (caller may auto-promote); non-empty = needs Lookup; None (early returns) = can't check yet
+
+
+def _write_pending(path, rows):
+    """Rewrite leagues_pending.json in its on-disk style: array-indented, one compact object per line."""
+    body = ",\n".join("  " + json.dumps(r, ensure_ascii=False) for r in rows)
+    open(path, "w", encoding="utf-8").write(("[\n" + body + "\n]\n") if rows else "[]\n")
+
+
+def auto_promote(lg, c, skey):
+    """A ready league whose teams ALL resolve to the Lookup needs no human curation, so activate
+    it automatically: append to leagues.json (the daily refresh then pulls it) and drop it from
+    leagues_pending.json. The wrapper commits both files. Returns True if it changed files."""
+    lid = c.get("api_league_id")
+    if not lid:
+        return False
+    ljson = os.path.join(HERE, "leagues.json")
+    leagues = json.load(open(ljson, encoding="utf-8"))
+    if any(l.get("league_id") == lid for l in leagues):
+        log("  %s already in leagues.json -- not re-adding" % lg["intended_name"]); return False
+    leagues.append({"league_id": lid, "country": lg["country"], "name": lg["intended_name"],
+                    "season": c["season_used"], "level": lg["level"],
+                    "comp_type": "domestic", "has_standings": True})
+    json.dump(leagues, open(ljson, "w", encoding="utf-8"), ensure_ascii=False)  # one-line/compact, matches file
+    pjson = os.path.join(HERE, "leagues_pending.json")
+    _write_pending(pjson, [p for p in json.load(open(pjson, encoding="utf-8")) if p.get("api_league_id") != lid])
+    if skey:
+        try:
+            supa_upsert("football_league_watch", [{"country": lg["country"], "level": lg["level"],
+                "intended_name": lg["intended_name"], "api_league_id": lid, "target_season": lg.get("target_season"),
+                "covered": True, "standings_ready": True, "state": "promoted",
+                "notes": "auto-promoted: all teams mapped", "last_checked": NOW, "updated_at": NOW}],
+                "country,level", skey)
+        except Exception as e:
+            log("  (promote: watch-state update failed: %s)" % str(e)[:80])
+    push("[gap-watch] auto-promoted %s" % lg["intended_name"], "default", "soccer,white_check_mark",
+         "%s (%s) went ready with all teams already in the Lookup -- added to leagues.json; the daily standings job now tracks it. No action needed." % (lg["intended_name"], lg["country"]))
+    log("  AUTO-PROMOTED %s (api %s) -> leagues.json; removed from pending" % (lg["intended_name"], lid))
+    return True
 
 def main():
     if "--self-test" in sys.argv: return selftest()
@@ -173,12 +209,28 @@ def main():
 
     if not write:
         log("DRY RUN -- no writes. %d transition(s) vs stored state, %d ready." % (len(transitions), len(ready)))
-        for lg, c in ready: resolver_report(lg, c, akey, skey)
+        for lg, c in ready:
+            u = resolver_report(lg, c, akey, skey)
+            if u is not None:
+                log("  would %s" % ("AUTO-PROMOTE (0 unmatched)" if len(u) == 0 else "flag %d unmapped team(s)" % len(u)))
         return
 
     n = supa_upsert("football_league_watch", rows_out, "country,level", skey)
     log("wrote watch state for %d leagues" % n)
-    for lg, c in ready: resolver_report(lg, c, akey, skey)
+    promoted = []
+    for lg, c in ready:
+        unmatched = resolver_report(lg, c, akey, skey)
+        if unmatched is None:
+            continue  # can't check yet (no standings rows / no Supabase key)
+        if len(unmatched) == 0:
+            if auto_promote(lg, c, skey): promoted.append(lg["intended_name"])
+        else:
+            push("[gap-watch] %s ready -- %d team(s) need a Lookup entry" % (lg["intended_name"], len(unmatched)),
+                 "high", "warning",
+                 "Add these to the Lookup workbook + run sync_lookup.py, then it auto-promotes:\n"
+                 + "\n".join("%s  (level %s, %s)" % (nm, lg["level"], lg["country"]) for _, nm in unmatched))
+    if promoted:
+        log("=== AUTO-PROMOTED: %s ===" % ", ".join(promoted))
     if transitions:
         body = "\n".join("%s L%s %s: %s -> %s" % t for t in transitions)
         push("[gap-watch] %d league transition(s)" % len(transitions), "high", "soccer,bell", body)
