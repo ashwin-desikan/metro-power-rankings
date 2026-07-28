@@ -38,7 +38,21 @@ git merge --ff-only origin/main --quiet || fail "cannot fast-forward (repo diver
 "$PY" scripts/apifootball/refresh.py --self-test 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "refresh self-test failed"
 
 log "running daily refresh (--write)"
-"$PY" scripts/apifootball/refresh.py --write 2>&1 | tee -a "$LOG"; [ "${PIPESTATUS[0]}" -eq 0 ] || fail "refresh --write failed"
+# refresh.py exit codes: 0 = clean; 3 = data WRITTEN but one+ api teams don't map to the
+# Lookup (UNMATCHED); other = real failure. An unmatched team is a curation TODO (add it to
+# the Lookup workbook + sync_lookup.py) -- NOT a pipeline failure -- so on exit 3 we WARN
+# (so it gets fixed) but continue, letting export+commit still ship fresh bundles. One
+# obscure reserve side must not freeze the whole daily football refresh. Real failures (any
+# other nonzero) still hard-fail.
+"$PY" scripts/apifootball/refresh.py --write 2>&1 | tee -a "$LOG"; rc="${PIPESTATUS[0]}"
+if [ "$rc" -eq 3 ]; then
+  unmatched="$(grep 'UNMATCHED ALERT' -A6 "$LOG" | grep -E 'team_id' | sed 's/^\[football\][[:space:]]*//' | head -10)"
+  push "football: unmatched team(s) -- add to Lookup" default warning "Daily refresh wrote all other data; these api teams need a Lookup entry (then run sync_lookup.py):
+${unmatched:-see log}"
+  log "  UNMATCHED (non-fatal): warned; continuing to export + commit so the site stays fresh"
+elif [ "$rc" -ne 0 ]; then
+  fail "refresh --write failed (rc=$rc)"
+fi
 
 # Export Supabase -> committed ISR bundles the site reads (no Vercel build; [vercel skip]).
 log "exporting frontend bundles"
