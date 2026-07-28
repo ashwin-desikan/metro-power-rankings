@@ -80,6 +80,15 @@ const fmtDate = (d: string | null): string => {
   return Number.isNaN(dt.getTime()) ? DASH : dt.toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
 };
 
+// Calendar-year / spring-summer top flights whose 2026-27 season ends in 2026, not 2027.
+// (Regular autumn-spring leagues fall through to 2027.) J-League moves to an autumn-spring
+// calendar in 2026-27, so Japan is intentionally NOT listed here.
+const FIRST_YEAR_ENDERS = new Set([
+  "Argentina", "Belarus", "Brazil", "China", "Estonia", "Faroe Islands", "Finland", "Georgia",
+  "Iceland", "Ireland", "Kazakhstan", "Latvia", "Lithuania", "Norway", "South Korea", "Sweden",
+  "United States", "Uruguay",
+]);
+
 // ---- domestic: build confederation -> country -> leagues (resolved) -----
 function buildConfs(standings: Awaited<ReturnType<typeof getClubStandings>>): HubConf[] {
   const confMap = new Map<string, Map<string, HubLeague[]>>();
@@ -101,7 +110,7 @@ function buildConfs(standings: Awaited<ReturnType<typeof getClubStandings>>): Hu
     if (!confMap.has(conf)) confMap.set(conf, new Map());
     const byCountry = confMap.get(conf)!;
     if (!byCountry.has(country)) byCountry.set(country, []);
-    byCountry.get(country)!.push({ id: lg.league_id, name: lg.name ?? DASH, level: lg.level, groups });
+    byCountry.get(country)!.push({ id: lg.league_id, name: lg.name ?? DASH, level: lg.level, groups, end_year: FIRST_YEAR_ENDERS.has(lg.country ?? "") ? 2026 : 2027 });
   }
   const order = (c: string) => { const i = CONF_ORDER.indexOf(c); return i === -1 ? CONF_ORDER.length : i; };
   return [...confMap.entries()]
@@ -278,7 +287,7 @@ export default async function ClubFootball2027Page() {
         {confs.length === 0 ? (
           <p className="text-sm text-[var(--text-muted)] italic">No live league tables right now. Most European seasons begin in August.</p>
         ) : (
-          <Hub2027Client confs={confs} />
+          <Hub2027Client confs={confs} season="2026-27" />
         )}
       </section>
 

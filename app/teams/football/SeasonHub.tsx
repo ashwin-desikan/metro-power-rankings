@@ -15,8 +15,9 @@ const num = (v: number | null | undefined): number | string => (v === null || v 
 type TRow = { rank: number | null; name: string; lookup: string; played: number | null; win: number | null; draw: number | null; lose: number | null; gf: number | null; ga: number | null; gd: number | null; points: number | null; champ?: boolean };
 type SGroup = { label: string | null; rows: TRow[] };
 type KRound = { round: string; matches: { home: string; home_lookup: string; away: string; away_lookup: string; score: string }[] };
-type Cont = { comp: string; scope: string; table: TRow[] | null; groups: SGroup[] | null; knockout: KRound[]; qualifying: KRound[]; final: { winner: string; winner_lookup: string; runnerup: string; score: string } | null };
-type League = { league_id: number; name: string | null; country: string | null; level: number | null; confed: string; groups: SGroup[] };
+type ContEntry = { name: string; rnd: number | null; trophy?: boolean };
+type Cont = { comp: string; scope: string; section?: string; end_year?: number; entries?: ContEntry[]; table?: TRow[] | null; groups?: SGroup[] | null; knockout?: KRound[]; qualifying?: KRound[]; final?: { winner: string; winner_lookup: string; runnerup: string; score: string } | null };
+type League = { league_id: number; name: string | null; country: string | null; level: number | null; confed: string; groups: SGroup[]; end_year?: number };
 type Club = { rank: number; name: string; lookup: string; country: string; score: number; form: number; ped: number; tb: number; mp: number; w: number; d: number; l: number };
 type Country = { rank: number; country: string; seasons: Record<string, number | null>; coef: number };
 type Cup = { type: string; country: string; comp: string; winner: string; winner_lookup: string; runnerup: string; score: string };
@@ -52,7 +53,7 @@ const UEFA_TIERS: Record<string, { tier: UefaTier; rank: number }> = {
   Lithuania: { tier: "Spring-Summer", rank: 46 }, Estonia: { tier: "Spring-Summer", rank: 48 }, Georgia: { tier: "Spring-Summer", rank: 52 },
 };
 const CONF_ORDER = ["UEFA · Primary", "UEFA · Secondary", "UEFA · Spring-Summer", "CONMEBOL", "CONCACAF", "AFC", "CAF"];
-function buildConfs(leagues: League[]): HubConf[] {
+function buildConfs(leagues: League[], countryRank: Map<string, number>): HubConf[] {
   const byConf = new Map<string, Map<string, HubLeague[]>>();
   for (const lg of leagues) {
     const groups: HubGroup[] = lg.groups.map((g): HubGroup => ({
@@ -64,12 +65,12 @@ function buildConfs(leagues: League[]): HubConf[] {
     const country = lg.country ?? DASH;
     if (!byConf.has(conf)) byConf.set(conf, new Map());
     const m = byConf.get(conf)!; if (!m.has(country)) m.set(country, []);
-    m.get(country)!.push({ id: lg.league_id, name: lg.name ?? DASH, level: lg.level, groups });
+    m.get(country)!.push({ id: lg.league_id, name: lg.name ?? DASH, level: lg.level, groups, end_year: lg.end_year });
   }
   const ord = (c: string) => { const i = CONF_ORDER.indexOf(c); return i === -1 ? 99 : i; };
   return [...byConf.entries()].sort((a, b) => ord(a[0]) - ord(b[0])).map(([confederation, m]) => ({
     confederation, countries: [...m.entries()].sort((a, b) => {
-      const ra = UEFA_TIERS[a[0]]?.rank, rb = UEFA_TIERS[b[0]]?.rank;
+      const ra = countryRank.get(a[0]) ?? UEFA_TIERS[a[0]]?.rank, rb = countryRank.get(b[0]) ?? UEFA_TIERS[b[0]]?.rank;
       if (ra != null && rb != null) return ra - rb; if (ra != null) return -1; if (rb != null) return 1; return a[0].localeCompare(b[0]);
     }).map(([country, ls]) => ({ country, leagues: ls.sort((x, y) => (x.level ?? 99) - (y.level ?? 99)) })),
   }));
@@ -103,6 +104,107 @@ function Sec({ title, children }: { title: string; children: ReactNode }) {
   return (<details className={detCls} style={{ borderColor: "var(--border)" }}><summary className="cursor-pointer select-none px-4 py-2 text-xs font-semibold text-[var(--text-muted)]">{title}</summary><div className="px-4 py-3 border-t" style={{ borderColor: "var(--border)" }}>{children}</div></details>);
 }
 
+// Round-by-round continental view (workbook-sourced): who was eliminated at each round.
+// Rnd# 1=Final … 5=group/league phase, 6+ = qualifying. No match scores in this surface.
+const CONT_ROUNDS = (season: string): { key: string; label: string; match: (r: number | null) => boolean }[] => [
+  { key: "qual", label: "Qualifying", match: (r) => r != null && r >= 6 },
+  { key: "group", label: +season.slice(0, 4) >= 2024 ? "League phase" : "Group stage", match: (r) => r === 5 },
+  { key: "r16", label: "Round of 16", match: (r) => r === 4 },
+  { key: "qf", label: "Quarter-finals", match: (r) => r === 3 },
+  { key: "sf", label: "Semi-finals", match: (r) => r === 2 },
+  { key: "final", label: "Final", match: (r) => r === 1 },
+];
+function ContChip({ name, champ }: { name: string; champ?: boolean }) {
+  const r = resolveClub(name, name);
+  return (
+    <span className="inline-flex items-center gap-1 rounded-md border px-1.5 py-0.5 text-xs" style={champ ? { borderColor: "#f5b301", backgroundColor: "rgba(245,179,1,0.12)", fontWeight: 600 } : { borderColor: "var(--border)" }}>
+      <CrestIcon name={r.name} size={12} className="flex-shrink-0" />
+      {r.slug ? <Link href={`/teams/football/${r.slug}`} className="hover:text-[var(--accent)]">{r.name}</Link> : <span>{r.name}</span>}
+      {champ && <span style={{ color: "#f5b301" }}>★</span>}
+    </span>
+  );
+}
+function CompRounds({ comp, season }: { comp: Cont; season: string }) {
+  const entries = comp.entries ?? [];
+  const rounds = [...CONT_ROUNDS(season)].reverse()
+    .map((rd) => ({ ...rd, clubs: entries.filter((e) => rd.match(e.rnd)) }))
+    .filter((rd) => rd.clubs.length > 0);
+  return (
+    <div className="space-y-2">
+      {rounds.map((rd) => rd.key === "qual" ? (
+        <details key={rd.key} className="border-l-2 pl-3" style={{ borderColor: "var(--border)" }}>
+          <summary className="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden text-[10px] uppercase tracking-widest font-semibold text-[var(--text-muted)] flex items-baseline gap-2">
+            <span>{rd.label}</span><span className="text-[var(--text-dim)] tabular-nums">{rd.clubs.length}</span><span className="text-[var(--text-dim)]">▾</span>
+          </summary>
+          <div className="flex flex-wrap gap-1.5 mt-1.5">{rd.clubs.map((e, i) => <ContChip key={i} name={e.name} champ={e.trophy} />)}</div>
+        </details>
+      ) : (
+        <div key={rd.key} className="border-l-2 pl-3" style={{ borderColor: "var(--border)" }}>
+          <div className="text-[10px] uppercase tracking-widest font-semibold text-[var(--text-muted)] mb-1 flex items-baseline gap-2">
+            <span>{rd.label}</span><span className="text-[var(--text-dim)] tabular-nums">{rd.clubs.length}</span>
+          </div>
+          <div className="flex flex-wrap gap-1.5">{rd.clubs.map((e, i) => <ContChip key={i} name={e.name} champ={e.trophy} />)}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+function CompMeta({ comp }: { comp: Cont }) {
+  return <span className="font-semibold text-sm">{comp.comp}{comp.end_year != null && <span className="ml-2 font-normal text-[var(--text-dim)] tabular-nums">{comp.end_year}</span>}<span className="ml-2 text-[10px] text-[var(--text-dim)] font-normal">{comp.scope}</span></span>;
+}
+function compWinner(comp: Cont): string | null {
+  const c = comp.entries?.find((e) => e.trophy);
+  return c ? resolveClub(c.name, c.name).name : null;
+}
+function CompSection({ comp, season }: { comp: Cont; season: string }) {
+  const w = compWinner(comp);
+  return (
+    <details className="rounded-xl border overflow-hidden" style={cardStyle}>
+      <summary className="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden px-4 py-2.5 flex items-baseline justify-between gap-3">
+        <CompMeta comp={comp} />
+        {w && <span className="text-xs text-[var(--text-muted)]">Winner: <span className="font-semibold text-[var(--text)]">{w}</span></span>}
+      </summary>
+      <div className="border-t px-4 py-4" style={{ borderColor: "var(--border)" }}><CompRounds comp={comp} season={season} /></div>
+    </details>
+  );
+}
+function MultiSection({ title, comps, season }: { title: string; comps: Cont[]; season: string }) {
+  return (
+    <details className="rounded-xl border overflow-hidden" style={cardStyle}>
+      <summary className="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden px-4 py-2.5 flex items-baseline justify-between gap-3">
+        <span className="font-semibold text-sm">{title}</span>
+        <span className="text-xs text-[var(--text-muted)]">{comps.length} competition{comps.length === 1 ? "" : "s"}</span>
+      </summary>
+      <div className="border-t px-4 py-4 space-y-5" style={{ borderColor: "var(--border)" }}>
+        {comps.map((comp) => {
+          const w = compWinner(comp);
+          return (
+            <div key={comp.comp}>
+              <div className="flex items-baseline justify-between gap-3 flex-wrap mb-2">
+                <CompMeta comp={comp} />
+                {w && <span className="text-xs text-[var(--text-muted)]">Winner: <span className="font-semibold text-[var(--text)]">{w}</span></span>}
+              </div>
+              <CompRounds comp={comp} season={season} />
+            </div>
+          );
+        })}
+      </div>
+    </details>
+  );
+}
+function ContinentalSections({ comps, season }: { comps: Cont[]; season: string }) {
+  const byEndDesc = (a: Cont, b: Cont) => (b.end_year ?? 0) - (a.end_year ?? 0);
+  const conmebol = comps.filter((c) => c.section === "conmebol").slice().sort(byEndDesc);
+  const other = comps.filter((c) => (c.section ?? "other") === "other").slice().sort(byEndDesc);
+  return (
+    <div className="space-y-2.5">
+      {(["ucl", "uel", "uecl"] as const).map((k) => { const c = comps.find((x) => x.section === k); return c ? <CompSection key={k} comp={c} season={season} /> : null; })}
+      {conmebol.length > 0 && <MultiSection title={conmebol.map((c) => c.comp).join(" / ")} comps={conmebol} season={season} />}
+      {other.length > 0 && <MultiSection title="Other competitions" comps={other} season={season} />}
+    </div>
+  );
+}
+
 const SEASONS_CHRON = ["2013-14", "2014-15", "2015-16", "2016-17", "2017-18", "2018-19", "2019-20", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26", "2026-27"];
 const seasonLabel = (s: string) => (s === "2026-27" ? "2026-27 (live)" : s);
 function SeasonPager({ season }: { season: string }) {
@@ -120,7 +222,8 @@ function SeasonPager({ season }: { season: string }) {
 }
 
 export default function SeasonHub({ hub }: { hub: Hub }) {
-  const confs = buildConfs(hub.leagues);
+  const countryRank = new Map(hub.countries.map((c) => [c.country, c.rank] as const));
+  const confs = buildConfs(hub.leagues, countryRank);
   const ranked: RankedClub[] = hub.clubs.map((c) => { const r = resolveClub(c.name, c.lookup); return { rank: c.rank, name: r.name, slug: r.slug, country: c.country, mp: c.mp, w: c.w, d: c.d, l: c.l, form: c.form, ped: c.ped, tb: c.tb ?? 0, score: c.score }; });
   const nav = [{ label: "Power Ranking", href: "#clubs" }, { label: "Europe", href: "#europe" }, { label: "Leagues", href: "#leagues" }, { label: "Cups", href: "#cups" }];
   return (
@@ -141,19 +244,23 @@ export default function SeasonHub({ hub }: { hub: Hub }) {
       </section>
       <section id="europe" className="scroll-mt-24 mb-10">
         <h2 className="text-lg font-semibold mb-3">European &amp; continental competitions</h2>
+        {hub.continental.some((c) => c.entries) ? (
+          <ContinentalSections comps={hub.continental} season={hub.season} />
+        ) : (
         <div className="space-y-3">{hub.continental.map((comp) => (
           <div key={comp.comp} className="rounded-xl border overflow-hidden" style={cardStyle}>
             <div className="px-4 py-2.5 flex items-baseline justify-between gap-3 flex-wrap">
               <span className="font-semibold text-sm">{comp.comp}<span className="ml-2 text-[10px] text-[var(--text-dim)] font-normal">{comp.scope}</span></span>
               {comp.final && <span className="text-xs text-[var(--text-muted)]">Winner: <span className="font-semibold text-[var(--text)]">{resolveClub(comp.final.winner, comp.final.winner_lookup).name}</span> · {comp.final.score} v {comp.final.runnerup}</span>}
             </div>
-            {comp.knockout.length > 0 && <Sec title="Knockout stage"><Rounds rounds={comp.knockout} /></Sec>}
+            {comp.knockout && comp.knockout.length > 0 && <Sec title="Knockout stage"><Rounds rounds={comp.knockout} /></Sec>}
             {comp.table && <Sec title="League phase"><CTable table={comp.table} /></Sec>}
             {comp.groups && <Sec title="Group stage"><GroupTables groups={comp.groups} /></Sec>}
-            {comp.qualifying.length > 0 && <Sec title="Qualifying"><Rounds rounds={comp.qualifying} /></Sec>}
+            {comp.qualifying && comp.qualifying.length > 0 && <Sec title="Qualifying"><Rounds rounds={comp.qualifying} /></Sec>}
           </div>))}</div>
+        )}
       </section>
-      <section id="leagues" className="scroll-mt-24 mb-10"><h2 className="text-lg font-semibold mb-3">Final domestic tables</h2><Hub2027Client confs={confs} /></section>
+      <section id="leagues" className="scroll-mt-24 mb-10"><h2 className="text-lg font-semibold mb-3">Final domestic tables</h2><Hub2027Client confs={confs} season={hub.season} /></section>
       <section id="cups" className="scroll-mt-24 mb-10">
         <h2 className="text-lg font-semibold mb-3">Cup competitions</h2>
         <div className="rounded-xl border overflow-hidden" style={cardStyle}><div className="overflow-x-auto">

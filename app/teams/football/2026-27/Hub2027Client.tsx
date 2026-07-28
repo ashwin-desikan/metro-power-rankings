@@ -6,7 +6,7 @@ import CrestIcon from "@/app/teams/_shared/CrestIcon";
 
 export type HubRow = { rank: number | null; name: string; slug: string | null; cells: (number | string)[]; champ?: boolean };
 export type HubGroup = { label: string | null; rows: HubRow[] };
-export type HubLeague = { id: number; name: string; level: number | null; groups: HubGroup[] };
+export type HubLeague = { id: number; name: string; level: number | null; groups: HubGroup[]; end_year?: number };
 export type HubCountry = { country: string; leagues: HubLeague[] };
 export type HubConf = { confederation: string; countries: HubCountry[] };
 
@@ -53,11 +53,11 @@ function StandingsTable({ group }: { group: HubGroup }) {
   );
 }
 
-function LeagueCard({ league }: { league: HubLeague }) {
+function LeagueCard({ league, season }: { league: HubLeague; season?: string }) {
   return (
     <details className="rounded-xl border overflow-hidden" style={cardStyle}>
       <summary className="cursor-pointer select-none px-4 py-2.5 flex items-center justify-between gap-2">
-        <span className="font-semibold text-sm">{league.name}</span>
+        <span className="font-semibold text-sm">{league.name}{season && <span className="ml-2 font-normal text-[var(--text-dim)] tabular-nums">{league.end_year ?? +season.slice(0, 4) + 1}</span>}</span>
         {league.level != null && (
           <span className="text-[10px] px-2 py-0.5 rounded-full border text-[var(--text-muted)]" style={{ borderColor: "var(--border)" }}>
             Tier {league.level}
@@ -76,7 +76,7 @@ function LeagueCard({ league }: { league: HubLeague }) {
   );
 }
 
-export default function Hub2027Client({ confs }: { confs: HubConf[] }) {
+export default function Hub2027Client({ confs, season }: { confs: HubConf[]; season?: string }) {
   const [active, setActive] = useState(confs[0]?.confederation ?? "");
   const current = confs.find((c) => c.confederation === active) ?? confs[0];
 
@@ -111,7 +111,7 @@ export default function Hub2027Client({ confs }: { confs: HubConf[] }) {
             <section key={k.country}>
               <h3 className="text-sm font-semibold text-[var(--text-muted)] mb-2 uppercase tracking-wide">{k.country}</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 items-start">
-                {k.leagues.map((l) => <LeagueCard key={l.id} league={l} />)}
+                {k.leagues.map((l) => <LeagueCard key={l.id} league={l} season={season} />)}
               </div>
             </section>
           ))}

@@ -26,6 +26,24 @@ export const metadata: Metadata = {
   },
 };
 
+// Completed-season hubs, shown as a collapsible list under the live-season hero.
+// (2026-27 is the hero itself; the full seasons page adds trends and champions.)
+const PAST_SEASONS: { slug: string; note: string }[] = [
+  { slug: "2025-26", note: "Champions League: Paris Saint-Germain" },
+  { slug: "2024-25", note: "Champions League: Paris Saint-Germain · Club World Cup: Chelsea" },
+  { slug: "2023-24", note: "Champions League: Real Madrid" },
+  { slug: "2022-23", note: "The treble: Manchester City" },
+  { slug: "2021-22", note: "Champions League: Real Madrid" },
+  { slug: "2020-21", note: "Champions League: Chelsea · Club World Cup: Bayern Munich" },
+  { slug: "2019-20", note: "The treble: Bayern Munich" },
+  { slug: "2018-19", note: "Champions League: Liverpool" },
+  { slug: "2017-18", note: "Champions League: Real Madrid" },
+  { slug: "2016-17", note: "Champions League: Real Madrid" },
+  { slug: "2015-16", note: "Champions League: Real Madrid" },
+  { slug: "2014-15", note: "The treble: Barcelona" },
+  { slug: "2013-14", note: "Champions League: Real Madrid · La Décima" },
+];
+
 export default function FootballIndex() {
   const clubs = getAllClubs();
   const hubs = getAllLeagueHubs();
@@ -101,6 +119,45 @@ export default function FootballIndex() {
           <span className="text-sm text-[var(--accent)] font-medium whitespace-nowrap">Open the season hub →</span>
         </div>
       </Link>
+
+      <details className="group mb-8 rounded-xl border" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+        <summary className="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden px-5 py-3.5 flex items-center justify-between gap-3">
+          <span className="text-sm font-semibold">
+            Past seasons
+            <span className="font-normal text-[var(--text-muted)]"> · 2013-14 to 2025-26, each a full season hub</span>
+          </span>
+          <span className="text-xs text-[var(--text-muted)] transition-transform group-open:rotate-180">▾</span>
+        </summary>
+        <div className="border-t px-5 py-4" style={{ borderColor: "var(--border)" }}>
+          <div className="space-y-2.5">
+            {Array.from(new Set(PAST_SEASONS.map((s) => Math.floor((+s.slug.slice(0, 4) + 1) / 10) * 10)))
+              .sort((a, b) => b - a)
+              .map((dec) => (
+                <div key={dec} className="flex items-baseline gap-3">
+                  <div className="text-xs font-semibold text-[var(--text-dim)] w-11 flex-shrink-0 tabular-nums pt-0.5">{dec}s</div>
+                  <div className="flex flex-wrap gap-1.5">
+                    {PAST_SEASONS.filter((s) => Math.floor((+s.slug.slice(0, 4) + 1) / 10) * 10 === dec).map((s) => (
+                      <Link
+                        key={s.slug}
+                        href={`/teams/football/${s.slug}`}
+                        title={s.note}
+                        className="text-xs px-2.5 py-1 rounded-md border transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                        style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+                      >
+                        {s.slug}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ))}
+          </div>
+          <div className="mt-4 pt-3 border-t text-right" style={{ borderColor: "var(--border)" }}>
+            <Link href="/teams/football/seasons" className="text-xs text-[var(--accent)] font-medium hover:underline">
+              All seasons, trends &amp; champions →
+            </Link>
+          </div>
+        </div>
+      </details>
 
       <HubNav
         items={[

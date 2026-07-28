@@ -224,11 +224,21 @@ function ClubChart({ data }: { data: TrendsData }) {
             const on = hi === c.name;
             const faded = hi != null && !on;
             const col = colorOf(c.name);
-            const last = c.pts[c.pts.length - 1];
+            const ordered = [...c.pts].sort((a, b) => view.indexOf(a.season) - view.indexOf(b.season));
+            const last = ordered[ordered.length - 1];
+            // Only connect points in consecutive seasons; a skipped season ends the line.
+            const segs: KPoint[][] = [];
+            for (const p of ordered) {
+              const prev = segs[segs.length - 1];
+              if (prev && view.indexOf(p.season) === view.indexOf(prev[prev.length - 1].season) + 1) prev.push(p);
+              else segs.push([p]);
+            }
             return (
               <g key={c.name} opacity={faded ? 0.16 : 1} onMouseEnter={() => setHi(c.name)} style={{ cursor: "pointer" }}>
-                <polyline fill="none" stroke={col} strokeWidth={on ? 3 : 2} strokeLinejoin="round" strokeLinecap="round" points={c.pts.map((p) => `${px(p.season)},${py(p.rank)}`).join(" ")} />
-                {c.pts.map((p) => <circle key={p.season} cx={px(p.season)} cy={py(p.rank)} r={on ? 4 : 2.6} fill={col} stroke="var(--bg-card)" strokeWidth={1.2} />)}
+                {segs.map((seg, si) => seg.length > 1 ? (
+                  <polyline key={si} fill="none" stroke={col} strokeWidth={on ? 3 : 2} strokeLinejoin="round" strokeLinecap="round" points={seg.map((p) => `${px(p.season)},${py(p.rank)}`).join(" ")} />
+                ) : null)}
+                {ordered.map((p) => <circle key={p.season} cx={px(p.season)} cy={py(p.rank)} r={on ? 4 : 2.6} fill={col} stroke="var(--bg-card)" strokeWidth={1.2} />)}
                 <text x={px(last.season) + 6} y={py(last.rank) + 3} fontSize={9.5} fill={faded ? "var(--text-dim)" : col} fontWeight={on ? 700 : 400}>{c.name}</text>
               </g>
             );
