@@ -593,3 +593,18 @@ Proof: full `npm run verify` (typecheck + 25 vitest + `next build` of 4837 pages
 Deploy: this commit does NOT carry `[vercel skip]` — season pages read hub JSON at build time, so a real Vercel build is required to surface the stars + names. One necessary build. (HANDOFF entry folded into the same commit so the tip is not a skip-only commit.)
 
 Also folds in prior uncommitted device work that was sitting in the tree, all covered by the same green verify: 2013-15 season pages/hubs, `football-trends.json` + `club-history.json` regen, `load_cl_history.py` loader, `build_season_hub.py` CFG for 2013-15, ClubHistoryChart + lib/football helpers.
+
+
+## 2026-07-28 — windows → mini (champion stars rebuilt from workbook truth; wrong-team + Apertura/Clausura bugs fixed)
+
+Replaced the earlier rank-1-fallback champion logic (which starred Supporters' Shield winners and single Apertura/Clausura tables) with **workbook-truth placement**: a table gets a star only where a `champions='Y'` + `first_division='Y'` row from `cl_rows` matches a team physically in that table.
+
+- **Split tournaments fixed.** Mexico Liga MX now stars Toluca (Clausura) and CF América (Apertura, who finished **8th** — the playoff winner, not the table-topper). Group-gated by an apertura/clausura token so a club that won one tournament is never starred in the other's table.
+- **MLS fixed.** Stars LA Galaxy (the MLS Cup winner, Western Conf, finished 4th in the regular table) rather than Inter Miami (Supporters' Shield). The champion sits in whichever conference table contains them; the other conference correctly shows no star.
+- **Multi-round leagues** (Scotland, Belgium, etc.) star the champion in each sub-table it appears in (Premiership + Championship Round), never in Relegation/Qualifying rounds.
+- **Rename bridges** for six club-identity gaps so the champion still places: Nacional=Club Nacional, Shanghai SIPG=Shanghai Port, FC Urartu=Banants Yerevan, Al Ahli Dubai=Shabab Al Ahli, Sabah FK=Sabah FA, Atlético Kolkata=ATK.
+- Coverage: **1085 stars; 891 of 906 first-division league-seasons starred.** The 15 without: 5 legitimately championless (Netherlands 2019-20 COVID void, Ukraine 2021-22 abandoned, Argentina 2020-21 reorg, India 2014-15 no data, Iran 2025-26 in progress) and **10 where api-football returned the wrong-tier table** — Azerbaijan 2013-17 (2nd-tier teams), South Korea 2016-18 (K League 2), India 2021-22 (incomplete), Gibraltar 2022-23 (lower tier). Those need an api league-id fix, not a naming fix; they're listed in the reconciliation deliverable.
+
+Also produced (delivered to Ashwin, not committed): `team_reconciliation.xlsx` — per-season lists of api-football teams whose `team.id` has no `football_team` crosswalk row (55→5/season, decreasing) and canonical teams with no api match, reconciled within (country, level) so the two sides pair. This is the worklist to close the `football_team`/Lookup gaps; once linked, the 10 blocked champion tables and the residual unmatched rows resolve on the next build.
+
+Data only (`public/data/football/hub-*.json`) + earlier frontend star rendering already in tree. Full `npm run verify` green (4837 pages). Commit carries no `[vercel skip]` — hub JSON is read at build time.
