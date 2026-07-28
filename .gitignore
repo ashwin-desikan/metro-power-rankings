@@ -163,3 +163,10 @@ Overture-Per-Country-Raw/*.xlsx
 # api-football pipeline scratch (contains apikey.txt + local data dumps) — never commit
 scripts/apifootball/_scratch/
 scripts/apifootball/__pycache__/
+
+
+# uefa European-match archive: local scratch (regenerable crosswalk/dumps + parsed rows).
+# The parser, loader, dump scripts and data/*.txt sources ARE tracked; only _-prefixed
+# intermediates are ignored. Regenerate with dump_eursummary.py then parse_kassiesa.py.
+scripts/uefa/_*
+scripts/uefa/__pycache__/
