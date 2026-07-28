@@ -79,6 +79,17 @@ def main():
 
     league_list = pack(dom, False)
     league_list.sort(key=lambda x: (x.get("country") or "", x.get("level") or 99, x.get("name") or ""))
+    # Backstop: a watched league should always have metadata (refresh.py syncs football_league
+    # from leagues.json). If one still lacks country/name, DROP it rather than ship a blank
+    # dash-group to the page, and log loudly so the mini surfaces it.
+    blank = [e for e in league_list if not (e.get("country") or "").strip() or not (e.get("name") or "").strip()]
+    if blank:
+        print("=" * 64)
+        print("METADATA GAP: %d league(s) have standings but blank country/name -- DROPPED from bundle." % len(blank))
+        print("Repair their football_league row (refresh.py --write now syncs it from leagues.json):")
+        for e in blank: print("  league_id %s country=%r name=%r" % (e.get("league_id"), e.get("country"), e.get("name")))
+        print("=" * 64)
+        league_list = [e for e in league_list if e not in blank]
     comp_list = pack(comps, True)
 
     # Europe participation: a club is "alive" in a comp while it still has an unplayed

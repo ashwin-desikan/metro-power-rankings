@@ -241,7 +241,20 @@ def selftest():
     std = [{"league_id": 1, "season": 2020, "group_label": "", "team_id": 5304}]; ts = {5304: "Libertas"}
     apply_aliases(std, [], ts, {5304: 5303})
     assert std[0]["team_id"] == 5303 and 5303 in ts and 5304 not in ts   # alias folds dup -> primary
+    lm = league_meta_rows([{"league_id": 318, "country": "Cyprus", "name": "1. Division",
+                            "level": 1, "comp_type": "domestic", "season": 2026, "has_standings": True}])
+    assert lm == [{"league_id": 318, "name": "1. Division", "country": "Cyprus",
+                   "level": 1, "comp_type": "domestic", "season": 2026}], lm
     print("self-test OK")
+
+def league_meta_rows(leagues):
+    """football_league rows built 1:1 from the watched set (leagues.json is the source of
+    truth). Guarantees every watched league has a metadata row, so export_bundles.py can
+    never emit a blank country/name (the Cyprus 318 bug: standings present, no meta row)."""
+    return [{"league_id": lg["league_id"], "name": lg.get("name"), "country": lg.get("country"),
+             "level": lg.get("level"), "comp_type": lg.get("comp_type"), "season": lg.get("season")}
+            for lg in leagues]
+
 
 def main():
     if "--self-test" in sys.argv: return selftest()
@@ -276,6 +289,10 @@ def main():
         return
 
     skey = supa_key()
+    # Metadata parity protocol: sync a football_league row for EVERY watched league so a
+    # league can never have standings without matching metadata (fixes the Cyprus 318 gap).
+    nlg = supa_upsert("football_league", league_meta_rows(leagues), "league_id", skey)
+    log(f"WROTE: football_league={nlg} (metadata synced for every watched league)")
     alias = load_aliases(skey)
     remapped = apply_aliases(standings, fixtures, teams_seen, alias)
     if remapped:
