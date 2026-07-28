@@ -39,6 +39,20 @@ SC="/mnt/user-data/uploads/Desktop--Projects--Metro Area Project/scripts/apifoot
 by_id={r["team_id"]:r for r in json.load(open("/tmp/football_team.json"))}
 fr=json.load(open("/tmp/frozen_coefficients.json"))
 CCF=json.load(open("/tmp/club_coeff_full.json"))
+# Kassiesa coefficient aliases: a club may carry a second UEFA name (Lookup "UEFA Name 2") because
+# the coefficient feed spells it differently across seasons (rebrands/transliterations). Fold the
+# secondary key's seasons into the primary uefa_name so the club's full split-history pedigree
+# attaches via uf(); reindex when only the secondary key exists in the coefficient data.
+try: _LK=json.load(open("/tmp/football_lookup.json"))
+except Exception: _LK=[]
+for _r in _LK:
+    _a=(_r.get("uefa_name") or "").strip(); _b=(_r.get("uefa_name_2") or "").strip()
+    if not _b or _a==_b: continue
+    if _b in CCF and _a in CCF:
+        for _s,_v in CCF[_b].items(): CCF[_a][_s]=CCF[_a].get(_s,0)+_v
+        del CCF[_b]
+    elif _b in CCF and _a not in CCF:
+        CCF[_a]=CCF.pop(_b)
 LAB={"Czech Republic":"Czechia","Turkey":"Türkiye"}
 def canon(tid,api): r=by_id.get(tid); return (r.get("canonical_name") if r else None) or api
 def lk(tid,api): r=by_id.get(tid); return (r.get("lookup_name") if r else None) or (r.get("canonical_name") if r else None) or api

@@ -114,7 +114,7 @@ def build_resolver(lookup_rows):
             if k:
                 if k not in by_api: by_api[k] = rec
                 elif by_api[k] != "AMBIG" and ident(by_api[k]) != ident(rec): by_api[k] = "AMBIG"
-        for col in ("cur_name", "team", "lookup_name", "uefa_name", "efs_name"):
+        for col in ("cur_name", "team", "lookup_name", "uefa_name", "uefa_name_2", "efs_name"):
             v = rec.get(col)
             if not v: continue
             k = norm(v)
@@ -239,7 +239,7 @@ def main():
     new_ids = [tid for tid in teams_seen if tid not in existing]
     resolved_rows, unmatched, collisions = [], [], []
     if new_ids:
-        resolve = build_resolver(supa_get("/rest/v1/football_lookup?select=cur_name,team,lookup_name,uefa_name,efs_name,api_name,country,level", skey))
+        resolve = build_resolver(supa_get("/rest/v1/football_lookup?select=cur_name,team,lookup_name,uefa_name,uefa_name_2,efs_name,api_name,country,level", skey))
         for tid in new_ids:
             if tid in SKIP_TEAMS:
                 continue   # known upstream ghost/duplicate: skip silently (see SKIP_TEAMS)
