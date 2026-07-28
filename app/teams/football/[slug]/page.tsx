@@ -11,6 +11,10 @@ import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import FootballHubNav from "@/app/teams/FootballHubNav";
 import ClubHistoryChart from "../ClubHistoryChart";
 import { notFound } from "next/navigation";
+import { colorForFootballClub } from "@/lib/football-colors";
+import { FootballHero } from "@/app/teams/_shared/FootballHero";
+import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
+import { ResponsiveTable, MiniStat, MiniCardHeader } from "@/app/teams/_shared/ResponsiveTable";
 import {
   getAllClubs,
   getAllClubSlugs,
@@ -164,44 +168,46 @@ export default async function FootballClubPage({ params }: Props) {
 
       <FootballHubNav showBack={false} />
 
-      <header className="mb-6">
-        <div className="flex flex-wrap items-center gap-3">
-          <TeamCrest name={club.cur_name} size={40} fallback={<ColorBall slug={club.slug} name={club.cur_name} size={40} fontSize={14} />} />
-          <h1 className="text-3xl font-semibold tracking-tight">{club.cur_name}</h1>
-        <ChampionBadge items={getCurrentChampionships(club.cur_name, "Football")} />
-          <ValuationChip league="football" slug={club.slug} className="ml-1" />
-          <GhostFranchiseTag league="football" slug={club.slug} className="ml-1" />
-          <TopTeamChip names={[club.cur_name]} metro={club.metro} className="ml-1" />
-        </div>
-        <p className="mt-1 text-sm text-[var(--text-muted)]">
-          {club.city && <>{club.city}, </>}
-          {metroLink ? (
-            <Link href={metroLink} className="hover:underline">{club.metro}</Link>
-          ) : club.metro ? (
-            <>{club.metro}</>
-          ) : null}
-          {club.metro && club.country && " · "}
-          {club.country}
-          {currentLeagueLabel && <> · {currentLeagueLabel}</>}
-        </p>
-        {honors.length > 0 && (
-          <div className="mt-4 flex flex-wrap gap-2">
-            {honors.map((h) => (
-              <span
-                key={h.label}
-                className="inline-flex items-baseline gap-1.5 rounded-md border px-2.5 py-1 text-xs"
-                style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
-              >
-                <span className="font-semibold tabular-nums">{h.count}</span>
-                <span className="text-[var(--text-muted)]">{h.label}</span>
-                {h.lastYear && (
-                  <span className="text-[var(--text-muted)]">· last {h.lastYear}</span>
-                )}
-              </span>
-            ))}
-          </div>
-        )}
-      </header>
+      <FootballHero
+        accent={colorForFootballClub(club.slug).bg}
+        title={
+          <>
+            <TeamCrest name={club.cur_name} size={72} fallback={<ColorBall slug={club.slug} name={club.cur_name} size={72} fontSize={26} />} />
+            <h1 className="text-3xl font-semibold tracking-tight">{club.cur_name}</h1>
+            <ChampionBadge items={getCurrentChampionships(club.cur_name, "Football")} />
+            <ValuationChip league="football" slug={club.slug} className="ml-1" />
+            <GhostFranchiseTag league="football" slug={club.slug} className="ml-1" />
+            <TopTeamChip names={[club.cur_name]} metro={club.metro} className="ml-1" />
+          </>
+        }
+        subtitle={
+          <>
+            {club.city && <>{club.city}, </>}
+            {metroLink ? (
+              <Link href={metroLink} className="hover:underline">{club.metro}</Link>
+            ) : club.metro ? (
+              <>{club.metro}</>
+            ) : null}
+            {club.metro && club.country && " · "}
+            {club.country}
+            {currentLeagueLabel && <> · {currentLeagueLabel}</>}
+          </>
+        }
+        stats={
+          honors.length > 0 ? (
+            <StatGrid>
+              {honors.map((h) => (
+                <StatTile
+                  key={h.label}
+                  label={h.label}
+                  value={h.count}
+                  sub={h.lastYear ? `last ${h.lastYear}` : undefined}
+                />
+              ))}
+            </StatGrid>
+          ) : undefined
+        }
+      />
 
       {(club.wikipedia_url || club.wikidata_qid) && (
         <div className="mb-4 flex flex-wrap items-center gap-3 text-sm">
@@ -244,18 +250,18 @@ export default async function FootballClubPage({ params }: Props) {
         style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
       >
         <h2 className="text-base font-semibold">Footprint</h2>
-        <div className="mt-2 grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
-          <Stat label="Tiers played" value={club.tiers.length > 0 ? club.tiers.map((t) => `L${t}`).join(", ") : "-"} />
-          <Stat label="Top-flight (L1) seasons" value={String(club.top_flight_seasons)} />
+        <StatGrid className="mt-2">
+          <StatTile label="Tiers played" value={club.tiers.length > 0 ? club.tiers.map((t) => `L${t}`).join(", ") : "-"} />
+          <StatTile label="Top-flight (L1) seasons" value={String(club.top_flight_seasons)} />
           {club.lower_tier_seasons > 0 && (
-            <Stat label="Lower-tier league seasons" value={String(club.lower_tier_seasons)} />
+            <StatTile label="Lower-tier league seasons" value={String(club.lower_tier_seasons)} />
           )}
           {showPlayoffSplit && (
-            <Stat label="Pre-Bundesliga national playoff appearances" value={String(club.playoff_appearances)} />
+            <StatTile label="Pre-Bundesliga national playoff appearances" value={String(club.playoff_appearances)} />
           )}
-          <Stat label="First season" value={club.first_year ? String(club.first_year) : "-"} />
-          <Stat label="Most recent season" value={club.last_year ? String(club.last_year) : "-"} />
-        </div>
+          <StatTile label="First season" value={club.first_year ? String(club.first_year) : "-"} />
+          <StatTile label="Most recent season" value={club.last_year ? String(club.last_year) : "-"} />
+        </StatGrid>
       </section>
 
       <RivalriesSection rivals={rivalries} />
@@ -308,27 +314,6 @@ function ColorBall({
     >
       {m.mono}
     </span>
-  );
-}
-
-function Stat({ label, value }: { label: string; value: string }) {
-  return (
-    <div>
-      <div className="text-[var(--text-muted)] text-xs uppercase tracking-wide">{label}</div>
-      <div className="text-base font-semibold tabular-nums mt-0.5">{value}</div>
-    </div>
-  );
-}
-
-// Small labeled stat block used inside sm:hidden mobile cards for every
-// table on this page, so the desktop <table> can stay untouched while a
-// stacked card view carries the same data on narrow screens.
-function MiniStat({ label, value }: { label: string; value: string | number }) {
-  return (
-    <div>
-      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{label}</div>
-      <div className="tabular-nums">{value}</div>
-    </div>
   );
 }
 
@@ -421,27 +406,24 @@ function MlsClubSeasonsTable({ seasons }: { seasons: MlsClubSeason[] }) {
       <h2 className="text-base font-semibold">Season-by-season</h2>
       <p className="mt-1 text-xs text-[var(--text-muted)]">Major League Soccer. No promotion or relegation; the Supporters&apos; Shield (&#9733;) marks the best regular-season record and the MLS Cup is the playoff title.</p>
 
-      {/* Mobile: one card per season instead of a 10-column table. Same
-          `seasons` array, same MlsFinish badge logic as the desktop table. */}
-      <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
-        {seasons.map((s) => {
+      {/* Same `seasons` array and same MlsFinish badge logic power both the
+          mobile card grid and the desktop table via ResponsiveTable. */}
+      <ResponsiveTable
+        className=""
+        mobileRows={seasons.map((s) => {
           const isLive = s.is_live === true;
           return (
-            <div
-              key={`${s.year}-${s.conference}${isLive ? "-live" : ""}-card`}
-              className="rounded-lg border p-3"
-              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
-            >
-              <div className="flex items-start justify-between gap-2">
-                <div>
-                  <div className="text-base font-semibold tabular-nums">{s.year}</div>
-                  <div className="text-xs text-[var(--text-muted)] mt-0.5">{s.conference ?? "—"}</div>
-                </div>
-                <div className="flex-shrink-0 text-right">
-                  <MlsFinish s={s} />
-                </div>
-              </div>
-              <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+            <div key={`${s.year}-${s.conference}${isLive ? "-live" : ""}-card`}>
+              <MiniCardHeader
+                left={
+                  <>
+                    <div className="text-base font-semibold tabular-nums">{s.year}</div>
+                    <div className="text-xs text-[var(--text-muted)] mt-0.5 font-normal">{s.conference ?? "—"}</div>
+                  </>
+                }
+                right={<MlsFinish s={s} />}
+              />
+              <div className="grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
                 <MiniStat label="Pos" value={s.overall_pos ?? "—"} />
                 <MiniStat label="Conf Pos" value={s.conf_pos ?? "—"} />
                 <MiniStat label="W-D-L" value={`${s.w}-${s.d}-${s.l}`} />
@@ -451,9 +433,7 @@ function MlsClubSeasonsTable({ seasons }: { seasons: MlsClubSeason[] }) {
             </div>
           );
         })}
-      </div>
-
-      <div className="mt-4 overflow-x-auto hidden sm:block">
+      >
         <table className="w-full text-sm tabular-nums min-w-[560px]">
           <thead>
             <tr className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b" style={{ borderColor: "var(--border)" }}>
@@ -489,7 +469,7 @@ function MlsClubSeasonsTable({ seasons }: { seasons: MlsClubSeason[] }) {
             })}
           </tbody>
         </table>
-      </div>
+      </ResponsiveTable>
     </section>
   );
 }
@@ -776,11 +756,12 @@ function SeasonsTable({
         playoff participants, not round-robin standings.
       </p>
 
-      {/* Mobile: one card per season instead of a 16-column table. Same
-          `seasons` array and the same badge-rendering components as the
-          desktop table below, so no data or behavior forks between them. */}
-      <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
-        {seasons.map((s, i) => {
+      {/* Same `seasons` array and the same badge-rendering components power
+          both the mobile card grid and the desktop table below, via
+          ResponsiveTable, so no data or behavior forks between them. */}
+      <ResponsiveTable
+        className=""
+        mobileRows={seasons.map((s, i) => {
           const leagueLabel = s.league || "-";
           const cupEntries = (s.year !== null ? cupsByYear.get(s.year) : null) ?? [];
           const sfKinds = (s.year !== null ? sfByYear.get(s.year) : null) ?? new Set<"major" | "minor">();
@@ -789,11 +770,7 @@ function SeasonsTable({
           const hasCup = cupEntries.length > 0 || sfOnly.length > 0;
           const europeEntries = (s.year !== null ? europeByYear.get(s.year) : null) ?? [];
           return (
-            <div
-              key={`${s.year}-${s.level}-${i}-card`}
-              className="rounded-lg border p-3"
-              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
-            >
+            <div key={`${s.year}-${s.level}-${i}-card`}>
               <div className="flex items-start justify-between gap-2">
                 <div className="leading-tight min-w-0">
                   <div className="font-medium text-sm">
@@ -849,9 +826,7 @@ function SeasonsTable({
             </div>
           );
         })}
-      </div>
-
-      <div className="mt-4 overflow-x-auto hidden sm:block">
+      >
         <table className="w-full text-sm">
           <thead>
             <tr
@@ -940,7 +915,7 @@ function SeasonsTable({
             })}
           </tbody>
         </table>
-      </div>
+      </ResponsiveTable>
     </section>
   );
 }
@@ -979,14 +954,10 @@ function CupsBlock({ cups, country }: { cups: FootballCupFinal[]; country: strin
         Most recent first. Every domestic cup final the club has played, including losses. Scheduled finals (date not yet passed) are flagged.
       </p>
 
-      {/* Mobile: one card per final instead of a 3-column table. */}
-      <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
-        {sorted.map((c, i) => (
-          <div
-            key={`${i}-card`}
-            className="rounded-lg border p-3 flex items-center justify-between gap-3"
-            style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
-          >
+      <ResponsiveTable
+        className=""
+        mobileRows={sorted.map((c, i) => (
+          <div key={`${i}-card`} className="flex items-center justify-between gap-3">
             <div>
               <div className="text-sm font-medium">{names[c.kind]}</div>
               <div className="text-xs text-[var(--text-muted)] tabular-nums mt-0.5">{c.year ?? "-"}</div>
@@ -994,9 +965,7 @@ function CupsBlock({ cups, country }: { cups: FootballCupFinal[]; country: strin
             <CupFinalResult result={c.result} />
           </div>
         ))}
-      </div>
-
-      <div className="mt-4 overflow-x-auto hidden sm:block">
+      >
         <table className="w-full text-sm">
           <thead>
             <tr
@@ -1020,7 +989,7 @@ function CupsBlock({ cups, country }: { cups: FootballCupFinal[]; country: strin
             ))}
           </tbody>
         </table>
-      </div>
+      </ResponsiveTable>
     </section>
   );
 }
@@ -1056,16 +1025,12 @@ function EuropeBlock({ entries }: { entries: FootballEuropeEntry[] }) {
         Most recent first. One row per entry showing the deepest round reached. A Cup Winner badge marks tournaments the club won: gold for the European Cup / Champions League, silver for every other UEFA or Intercontinental trophy.
       </p>
 
-      {/* Mobile: one card per appearance instead of a 3-column table. */}
-      <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
-        {entries.map((e, i) => {
+      <ResponsiveTable
+        className=""
+        mobileRows={entries.map((e, i) => {
           const isUcl = e.code === "CL" || e.code === "CLB";
           return (
-            <div
-              key={`${i}-card`}
-              className="rounded-lg border p-3"
-              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
-            >
+            <div key={`${i}-card`}>
               <div className="flex items-start justify-between gap-2">
                 <div className="min-w-0">
                   <div className="text-sm font-medium">
@@ -1083,9 +1048,7 @@ function EuropeBlock({ entries }: { entries: FootballEuropeEntry[] }) {
             </div>
           );
         })}
-      </div>
-
-      <div className="mt-4 overflow-x-auto hidden sm:block">
+      >
         <table className="w-full text-sm">
           <thead>
             <tr
@@ -1117,7 +1080,7 @@ function EuropeBlock({ entries }: { entries: FootballEuropeEntry[] }) {
             })}
           </tbody>
         </table>
-      </div>
+      </ResponsiveTable>
     </section>
   );
 }
