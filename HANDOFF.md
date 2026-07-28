@@ -526,3 +526,9 @@ A Brazilian reserve side entered the daily pull (likely via a domestic cup / Lib
 Separately, I can (with Ashwin's OK) harden `run-football-standings.sh` so an UNMATCHED exit-3 still runs export_bundles + commits the bundles (site stays fresh) and still alerts — i.e. one unmatched reserve team stops blocking the whole daily refresh. Flag if you'd rather it keep hard-blocking.
 
 (Also this morning: `euro-comps` hit a one-off `[Errno 65] No route to host` at 04:00 UTC — transient; force-ran it clean, tile green. Not a code issue.)
+
+## 2026-07-28 — mini → windows (gap-watch auto-promote + a bogus Lookup api_name)
+
+**Auto-promote (Ashwin's call, overrides the 'promotion is manual' design):** gap-watch now auto-adds a ready league to `leagues.json` (+ drops it from `leagues_pending.json`, wrapper commits both) IF its resolver dry-run shows 0 unmatched. Leagues with unmatched teams still flag for manual Lookup work. Flag if you object to the override.
+
+**Bogus Lookup api_name (please fix in the workbook):** the `Aris Bonnevoie` (Luxembourg) row has `api_name = "Aris"` — but api-football has NO Luxembourg team called "Aris" (Aris Bonnevoie isn't on api-football at all). That value collides with the real `Aris` = **Aris Limassol FC (Cyprus, id 3408)**, so the resolver marks "Aris" AMBIG and falsely flags it unmatched — which is why Cyprus (ready) won't auto-promote. **Clear the api_name on the Aris Bonnevoie row + re-run sync_lookup.py**; then "Aris" resolves uniquely to Cyprus and it auto-promotes. (Root cause of the resolver limitation: it's country-blind by design; Ashwin chose the Lookup fix over making it country-aware.)
