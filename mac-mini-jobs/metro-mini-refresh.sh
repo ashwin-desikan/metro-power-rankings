@@ -162,14 +162,9 @@ run_step "election forecast build" "$PY" scripts/forecast/build_forecast.py
 # below sweeps it up). Silent unless there's a genuinely new update; a fetch or
 # empty-parse leaves the snapshot untouched and just marks the step failed.
 run_step "citypopulation watch" "$PY" scripts/citypopulation/watch_feed.py
-# US box-office number-ones (added 2026-07-23 per HANDOFF; Screen of the Metros).
-# Drops the current year from scripts/screen/data/number_ones.json, re-scrapes
-# that one Wikipedia page, re-resolves wikilink -> QID -> IMDb tt (both cached, so
-# the weekly delta is a handful of titles) and rewrites
-# public/data/screen/screen_number_ones.json. stdlib-only, ~2-3 min. A year that
-# fetches but parses to 0 rows shows as an empty-years warning rather than
-# overwriting good data -- if that fires, Wikipedia's table markup drifted.
-run_step "screen number ones"   "$PY" scripts/screen/refresh_number_ones.py
+# NB: the US box-office number-ones refresh MOVED OUT of this Sunday job (2026-07-28):
+# its data publishes Mon/Tue, so a Sunday run always saw last week's numbers. It now runs
+# in its own com.citizenofnowhere.screen-number-ones agent on Tuesday. See run-screen-number-ones.sh.
 
 # --- commit + push ---------------------------------------------------------
 # scripts/civic/city-qids.json is included alongside public/data: it's the

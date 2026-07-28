@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Screen of the Metros US box-office number-ones refresh. Weekly, TUESDAY 14:00 local:
+     the number-one for a weekend is only tallied Mon/Tue, so the old Sunday egress slot ran
+     a day early and never saw the new week. Runs the repo wrapper directly (no ~/metro-mini-jobs
+     copy) through hc-run.sh for a healthchecks tile.
+     Install:  cp this plist to ~/Library/LaunchAgents/ ; launchctl bootstrap it. -->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.citizenofnowhere.screen-number-ones</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-lc</string>
+    <string>exec "$HOME/metro-mini-jobs/hc-run.sh" screen-number-ones /bin/bash "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-screen-number-ones.sh"</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Weekday</key><integer>2</integer>
+    <key>Hour</key><integer>14</integer>
+    <key>Minute</key><integer>0</integer>
+  </dict>
+  <key>StandardOutPath</key>
+  <string>/tmp/screen-number-ones.out</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/screen-number-ones.err</string>
+</dict>
+</plist>
