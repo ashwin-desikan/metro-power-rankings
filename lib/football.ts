@@ -675,6 +675,15 @@ function normalizeTeamName(s: string): string {
   return s.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 }
 
+// Per-club power-ranking history (rank + current-score per season), built by
+// scripts/uefa/build_trends.py from the completed-season hubs and keyed by slug.
+export type ClubRankHistoryPoint = { season: string; rank: number; score: number };
+let _clubHistCache: Record<string, ClubRankHistoryPoint[]> | null = null;
+export function getClubRankHistory(slug: string): ClubRankHistoryPoint[] {
+  if (!_clubHistCache) _clubHistCache = loadJson<Record<string, ClubRankHistoryPoint[]>>("club-history.json", {});
+  return _clubHistCache[slug] ?? [];
+}
+
 // ESPN MLS standings use display names that differ from the workbook's
 // canonical club names. Map ESPN displayName -> canonical name so live MLS
 // rows resolve to the right club page (slug, colors, link) and display the

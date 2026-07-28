@@ -21,9 +21,9 @@ CLUB POWER-RANKING FORMULA (per club, UEFA first divisions only):
     pedigree/current= from the 1-year UEFA club coefficients (public.uefa_club_coeff_history,
                       17/18-25/26); five_year = sum of the five seasons ending that year.
     country factor  = sqrt(country 5-year coef / England's), from public.uefa_country_coeff_history.
-    trophy_bonus    = CL 0.15, Club World Cup 0.05, Europa League 0.05, UEFA Super Cup 0.04,
+    trophy_bonus    = CL 0.10, Club World Cup 0.05, Europa League 0.05, UEFA Super Cup 0.04,
                       Conference League 0.03, old 7-team Club World Cup 0.03, domestic league title
-                      0.03, Intercontinental 0.02, domestic cup 0.015, domestic super cup 0.01
+                      0.06 (top-5 league) else 0.03, Intercontinental 0.02, domestic cup 0.015, domestic super cup 0.01
                       (added to the winning club; the old Club World Cup shows in the super-cup section).
 
 DATA SOURCES (per season): the fetch scripts in scripts/apifootball/_scratch produce the season
@@ -93,6 +93,7 @@ def std_rows(grp):
     return out
 CUPMETA={48:("England","League Cup"),137:("Italy","Coppa Italia"),81:("Germany","DFB Pokal"),97:("Portugal","Taça da Liga"),185:("Scotland","League Cup"),90:("Netherlands","KNVB Beker"),143:("Spain","Copa del Rey"),45:("England","FA Cup"),66:("France","Coupe de France"),181:("Scotland","Scottish Cup"),96:("Portugal","Taça de Portugal"),531:("Europe","UEFA Super Cup"),528:("England","Community Shield"),526:("France","Trophée des Champions"),556:("Spain","Supercopa"),529:("Germany","Super Cup"),543:("Netherlands","Johan Cruyff Shield"),550:("Portugal","Supertaça"),547:("Italy","Supercoppa"),1168:("World","Intercontinental Cup"),65:("France","Coupe de la Ligue"),15:("World","FIFA Club World Cup")}
 DOMCUPS={48,137,81,97,185,90,143,45,66,181,96,65}
+TOP5={"England","Spain","Germany","Italy","France"}
 # Old 7-team FIFA Club World Cup (pre-2025 format) — shown in the super-cup section.
 # season key 2022 -> played Feb 2023 (2022-23 hub); 2023 -> played Dec 2023 (2023-24 hub).
 OLD_CWC={2022:{"wid":541,"winner":"Real Madrid","runnerup":"Al Hilal","score":"5–3"},
@@ -120,7 +121,10 @@ def load(season):
              2019:("countries2020.json",["15/16","16/17","17/18","18/19","19/20"],"19/20"),
              2018:("countries2019.json",["14/15","15/16","16/17","17/18","18/19"],"18/19"),
              2017:("countries2018.json",["13/14","14/15","15/16","16/17","17/18"],"17/18"),
-             2016:("countries2017.json",["12/13","13/14","14/15","15/16","16/17"],"16/17")}[season]
+             2016:("countries2017.json",["12/13","13/14","14/15","15/16","16/17"],"16/17"),
+             2015:("countries2016.json",["11/12","12/13","13/14","14/15","15/16"],"15/16"),
+             2014:("countries2015.json",["10/11","11/12","12/13","13/14","14/15"],"14/15"),
+             2013:("countries2014.json",["09/10","10/11","11/12","12/13","13/14"],"13/14")}[season]
         S["country_rows"]=json.load(open(f"{SC}/{CFG[0]}")); S["cseasons"]=CFG[1]; S["fr"]=list(CFG[1]); S["cur"]=CFG[2]
     return S
 
@@ -178,7 +182,7 @@ def build(season):
     TB={}
     def addb(tid,w):
         if tid is not None: TB[tid]=TB.get(tid,0)+w
-    addb(fwid(S["europe"]["2"]["fixtures"]),0.15)   # Champions League
+    addb(fwid(S["europe"]["2"]["fixtures"]),0.10)   # Champions League
     addb(fwid(S["europe"]["3"]["fixtures"]),0.05)   # Europa League
     addb(fwid(S["europe"]["848"]["fixtures"]),0.03) # Conference League
     if S["cwc"]: addb(fwid(S["cwc"]),0.05)          # Club World Cup (new 32-team format)
@@ -194,8 +198,11 @@ def build(season):
         if d["confed"]=="UEFA" and d.get("level")==1 and d["response"]:
             grps=d["response"][0]["league"].get("standings",[])
             if len(grps)==1:
+                # rank 1 is the champion for a completed season, or the CURRENT leader mid-season:
+                # for an in-progress season (e.g. 26/27) this title bump is PROVISIONAL and follows
+                # the league leader week to week, until the title is decided at season end.
                 r1=[row for row in grps[0] if row.get("rank")==1]
-                if r1: addb(r1[0]["team"]["id"],0.03)
+                if r1: addb(r1[0]["team"]["id"], 0.06 if d.get("country") in TOP5 else 0.03)
     clubs=[]
     for t,a in agg.items():
         if a["MP"]<8: continue
@@ -249,11 +256,11 @@ def build(season):
         cups.append({"type":"Super cup","country":"World","comp":_oc.get("comp","Club World Cup"),
             "winner":_oc["winner"],"winner_lookup":_oc["winner"],"runnerup":_oc["runnerup"],"score":_oc["score"]})
     cups.sort(key=lambda c:({"Domestic cup":0,"Super cup":1}[c["type"]],c["country"]))
-    label={2025:"2025-26",2024:"2024-25",2023:"2023-24",2022:"2022-23",2021:"2021-22",2020:"2020-21",2019:"2019-20",2018:"2018-19",2017:"2017-18",2016:"2016-17"}[season]
+    label={2025:"2025-26",2024:"2024-25",2023:"2023-24",2022:"2022-23",2021:"2021-22",2020:"2020-21",2019:"2019-20",2018:"2018-19",2017:"2017-18",2016:"2016-17",2015:"2015-16",2014:"2014-15",2013:"2013-14"}[season]
     hub={"season":label,"clubSeasons":S["cseasons"],"note":"Club power ranking: 0.65 opponent- & stage-weighted quality per match + 0.35 pedigree + current-season coefficient, less a losing-record penalty. Country coefficients are the full 5-year UEFA window.","clubs":clubs,"countries":countries,"leagues":leagues,"continental":continental,"cups":cups}
     fn=f"/tmp/hub-{label}.json"; json.dump(hub,open(fn,"w"),ensure_ascii=False)
     print(f"{label}: clubs {len(clubs)} leagues {len(leagues)} continental {[c['comp'] for c in continental]} cups {len(cups)} MB {round(os.path.getsize(fn)/1e6,2)}")
     print("   KO rounds (reverse):", [(c['comp'],[r['round'] for r in c['knockout']]) for c in continental if c['knockout']][:2])
     print("   MUtd/Che/Tot:", [(c['rank'],c['name']) for c in clubs if c['name'] in ("Manchester United","Chelsea","Tottenham Hotspur")])
     print("   CWC winner:", [c['final'] for c in continental if c['comp']=="FIFA Club World Cup"])
-build(2025); build(2024); build(2023); build(2022); build(2021); build(2020); build(2019); build(2018); build(2017); build(2016)
+build(2025); build(2024); build(2023); build(2022); build(2021); build(2020); build(2019); build(2018); build(2017); build(2016); build(2015); build(2014); build(2013)

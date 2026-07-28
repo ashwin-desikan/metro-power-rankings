@@ -573,3 +573,23 @@ Ashwin flagged that the screen number-ones data wasn't updating weekly. Two caus
 2. **Build-time read:** `/screen/number-ones` read the JSON via `readFileSync` (build-baked), so even a correctly-timed `[vercel skip]` commit never showed without a Vercel build. **Converted `getScreenNumberOnes()` to ISR-from-raw** (fetch GitHub raw, `revalidate 3600`, local fallback — mirrors `lib/powerRanking.ts`) and swapped the page's `force-static` for `revalidate=3600`. Local build verified: route is ISR (1h), compiles clean. Commit `2c008a36a` is the one-time build that deploys this; henceforth the Tuesday refresh surfaces within ~1h, no build.
 
 This week's data (2026 week 30) is committed (`92be0ae99`) and will show once that build lands.
+
+
+## 2026-07-28 — windows → mini (champion stars + full canonical naming across all 13 built season hubs; frontend renders the star)
+
+Shipped "mark every first-division champion with a star" + "convert every table to canonical (Lookup Cur. Name) naming" end-to-end.
+
+DATA (`public/data/football/hub-2013-14.json` … `hub-2025-26.json`, 13 files):
+- Champion flags: `row.champ=true` on the title winner of every first-division table. Group-aware, keyed (country, season, group) so split leagues (Apertura/Clausura by end-year; MLS/Mexico/Australia conferences) star the right winner, not a season-level bleed. Source = CL workbook `champions='Y'` (loaded into Supabase `cl_league_history`); fallback to table winner (rank 1, max points) where no explicit flag. Coverage verified: 100% of level-1 leagues in all 13 seasons carry exactly one champ (L1-without-champ = 0 every season; 72–85 flags/season, 996 total).
+- Canonical naming: every domestic-table row's `name`/`lookup` rewritten to Cur. Name via a resolver over football_team (canonical/lookup/uefa) + football_lookup (cur_name/team/lookup/uefa/uefa_2/efs/api/api_2). 18,030 rows renamed (Nantes→FC Nantes, Lyon→Olympique Lyonnais, Leicester→Leicester City, Fenerbahçe→Fenerbahçe SK, …). Structural check vs pre-enrichment hubs: 0 row adds/drops, 0 rank/points drift — a pure name+flag overlay.
+
+FRONTEND:
+- `Hub2027Client.tsx`: `HubRow` gained `champ?`; `StandingsTable` renders a gold star (#f5b301, title/aria "Champion") after the club name when `champ`.
+- `SeasonHub.tsx`: `TRow` gained `champ?`; `buildConfs` threads it through. (SEASONS_CHRON already spans 2013-14…2026-27.)
+- Live 2026-27 page unaffected — its buildConfs reads live standings and sets no champ until a title is decided (`champ?` optional, stays off).
+
+Proof: full `npm run verify` (typecheck + 25 vitest + `next build` of 4837 pages) passed clean on the exact committed tree.
+
+Deploy: this commit does NOT carry `[vercel skip]` — season pages read hub JSON at build time, so a real Vercel build is required to surface the stars + names. One necessary build. (HANDOFF entry folded into the same commit so the tip is not a skip-only commit.)
+
+Also folds in prior uncommitted device work that was sitting in the tree, all covered by the same green verify: 2013-15 season pages/hubs, `football-trends.json` + `club-history.json` regen, `load_cl_history.py` loader, `build_season_hub.py` CFG for 2013-15, ClubHistoryChart + lib/football helpers.

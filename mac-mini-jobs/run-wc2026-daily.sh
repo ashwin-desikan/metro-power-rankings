@@ -14,6 +14,19 @@ push(){ [ -n "${NTFY_TOPIC:-}" ] || return 0; curl -s -o /dev/null -H "Title: $1
 fail(){ log "ERROR: $1"; push "[ALERT] WC2026 sim FAILED -- $DATE" urgent rotating_light "$1"; exit 1; }
 
 log "=== WC2026 daily start ($DATE, DRY_RUN=$DRY_RUN) ==="
+
+# --- post-tournament self-skip -------------------------------------------
+# The 2026 World Cup final was 2026-07-19; the tournament is complete and this
+# daily sim has nothing left to refresh. Skip so the job stops making pointless
+# api-sports/Polymarket calls and can never produce a spurious commit. This is
+# belt-and-braces: the launchd agent com.citizenofnowhere.wc2026-daily should
+# also be unloaded (see mac-mini-jobs/REBUILD-RUNBOOK.md). Exit 0 keeps the
+# healthcheck green rather than firing a false failure alert.
+WC2026_FINAL="2026-07-19"
+if [[ "$(date +%F)" > "$WC2026_FINAL" ]]; then
+  log "WC2026 complete (final $WC2026_FINAL) — nothing to refresh, exiting 0."
+  exit 0
+fi
 cd "$REPO" || fail "repo not found"
 git fetch origin main --quiet || fail "git fetch failed"
 git merge --ff-only origin/main --quiet || fail "cannot fast-forward (repo diverged)"

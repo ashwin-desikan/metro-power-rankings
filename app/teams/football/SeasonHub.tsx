@@ -12,7 +12,7 @@ const cardStyle = { backgroundColor: "var(--bg-card)", borderColor: "var(--borde
 const DASH = "—";
 const num = (v: number | null | undefined): number | string => (v === null || v === undefined ? DASH : v);
 
-type TRow = { rank: number | null; name: string; lookup: string; played: number | null; win: number | null; draw: number | null; lose: number | null; gf: number | null; ga: number | null; gd: number | null; points: number | null };
+type TRow = { rank: number | null; name: string; lookup: string; played: number | null; win: number | null; draw: number | null; lose: number | null; gf: number | null; ga: number | null; gd: number | null; points: number | null; champ?: boolean };
 type SGroup = { label: string | null; rows: TRow[] };
 type KRound = { round: string; matches: { home: string; home_lookup: string; away: string; away_lookup: string; score: string }[] };
 type Cont = { comp: string; scope: string; table: TRow[] | null; groups: SGroup[] | null; knockout: KRound[]; qualifying: KRound[]; final: { winner: string; winner_lookup: string; runnerup: string; score: string } | null };
@@ -57,7 +57,7 @@ function buildConfs(leagues: League[]): HubConf[] {
   for (const lg of leagues) {
     const groups: HubGroup[] = lg.groups.map((g): HubGroup => ({
       label: lg.groups.length > 1 ? g.label : null,
-      rows: g.rows.map((r): HubRow => { const c = resolveClub(r.name, r.lookup); return { rank: r.rank, name: c.name, slug: c.slug, cells: [num(r.played), num(r.win), num(r.draw), num(r.lose), num(r.gf), num(r.ga), num(r.gd), num(r.points)] }; }),
+      rows: g.rows.map((r): HubRow => { const c = resolveClub(r.name, r.lookup); return { rank: r.rank, name: c.name, slug: c.slug, cells: [num(r.played), num(r.win), num(r.draw), num(r.lose), num(r.gf), num(r.ga), num(r.gd), num(r.points)], champ: r.champ }; }),
     })).filter((g) => g.rows.length > 0);
     if (!groups.length) continue;
     const conf = lg.confed === "UEFA" ? `UEFA · ${UEFA_TIERS[lg.country ?? ""]?.tier ?? "Secondary"}` : lg.confed;
@@ -103,7 +103,7 @@ function Sec({ title, children }: { title: string; children: ReactNode }) {
   return (<details className={detCls} style={{ borderColor: "var(--border)" }}><summary className="cursor-pointer select-none px-4 py-2 text-xs font-semibold text-[var(--text-muted)]">{title}</summary><div className="px-4 py-3 border-t" style={{ borderColor: "var(--border)" }}>{children}</div></details>);
 }
 
-const SEASONS_CHRON = ["2016-17", "2017-18", "2018-19", "2019-20", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26", "2026-27"];
+const SEASONS_CHRON = ["2013-14", "2014-15", "2015-16", "2016-17", "2017-18", "2018-19", "2019-20", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26", "2026-27"];
 const seasonLabel = (s: string) => (s === "2026-27" ? "2026-27 (live)" : s);
 function SeasonPager({ season }: { season: string }) {
   const i = SEASONS_CHRON.indexOf(season);

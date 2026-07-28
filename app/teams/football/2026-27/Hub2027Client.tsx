@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 
-export type HubRow = { rank: number | null; name: string; slug: string | null; cells: (number | string)[] };
+export type HubRow = { rank: number | null; name: string; slug: string | null; cells: (number | string)[]; champ?: boolean };
 export type HubGroup = { label: string | null; rows: HubRow[] };
 export type HubLeague = { id: number; name: string; level: number | null; groups: HubGroup[] };
 export type HubCountry = { country: string; leagues: HubLeague[] };
@@ -39,6 +39,7 @@ function StandingsTable({ group }: { group: HubGroup }) {
                   ) : (
                     <span>{r.name}</span>
                   )}
+                  {r.champ && <span title="Champion" aria-label="Champion" className="flex-shrink-0 leading-none" style={{ color: "#f5b301" }}>★</span>}
                 </span>
               </td>
               {r.cells.map((c, j) => (

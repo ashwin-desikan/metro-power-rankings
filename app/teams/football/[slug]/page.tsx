@@ -9,11 +9,13 @@ import GhostFranchiseTag from "@/app/teams/GhostFranchiseTag";
 import TopTeamChip from "@/app/teams/TopTeamChip";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import FootballHubNav from "@/app/teams/FootballHubNav";
+import ClubHistoryChart from "../ClubHistoryChart";
 import { notFound } from "next/navigation";
 import {
   getAllClubs,
   getAllClubSlugs,
   getClubBySlug,
+  getClubRankHistory,
   getSeasonsForClub,
   getMlsSeasonsForClub,
   getFootballClubByName,
@@ -90,6 +92,7 @@ export default async function FootballClubPage({ params }: Props) {
   const { slug } = await params;
   const club = getClubBySlug(slug);
   if (!club) notFound();
+  const rankHistory = getClubRankHistory(slug);
   const rivalries = getRivalries(club.cur_name, "Football");
 
   const seasons = getSeasonsForClub(slug);
@@ -231,6 +234,11 @@ export default async function FootballClubPage({ params }: Props) {
         </div>
       )}
 
+      {rankHistory.length > 0 && (
+        <section className="rounded-xl border p-5 mb-6" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+          <ClubHistoryChart history={rankHistory} />
+        </section>
+      )}
       <section
         className="rounded-xl border p-5 mb-6"
         style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}

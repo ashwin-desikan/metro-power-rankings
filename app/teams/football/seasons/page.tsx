@@ -26,6 +26,9 @@ const SEASONS: { slug: string; label: string; note: string; live?: boolean }[] =
   { slug: "2018-19", label: "2018-19", note: "Champions League: Liverpool" },
   { slug: "2017-18", label: "2017-18", note: "Champions League: Real Madrid" },
   { slug: "2016-17", label: "2016-17", note: "Champions League: Real Madrid" },
+  { slug: "2015-16", label: "2015-16", note: "Champions League: Real Madrid" },
+  { slug: "2014-15", label: "2014-15", note: "The treble: Barcelona" },
+  { slug: "2013-14", label: "2013-14", note: "Champions League: Real Madrid · La Décima" },
 ];
 const cardStyle = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
 
@@ -41,12 +44,14 @@ export default function SeasonsIndex() {
       </header>
       <SeasonTrends data={trends} />
       <h2 className="text-sm font-semibold text-[var(--text-muted)] mb-3">Browse a season</h2>
+      {/* Decade = the season's END year, so 2019-20 (ends 2020) sits in the 2020s and every
+          decade row starts with the season ending in a multiple of ten. */}
       <div className="space-y-2.5">
-        {Array.from(new Set(SEASONS.map((s) => Math.floor(+s.slug.slice(0, 4) / 10) * 10))).sort((a, b) => b - a).map((dec) => (
+        {Array.from(new Set(SEASONS.map((s) => Math.floor((+s.slug.slice(0, 4) + 1) / 10) * 10))).sort((a, b) => b - a).map((dec) => (
           <div key={dec} className="flex items-baseline gap-3">
             <div className="text-xs font-semibold text-[var(--text-dim)] w-11 flex-shrink-0 tabular-nums pt-0.5">{dec}s</div>
             <div className="flex flex-wrap gap-1.5">
-              {SEASONS.filter((s) => Math.floor(+s.slug.slice(0, 4) / 10) * 10 === dec).map((s) => (
+              {SEASONS.filter((s) => Math.floor((+s.slug.slice(0, 4) + 1) / 10) * 10 === dec).map((s) => (
                 <Link key={s.slug} href={`/teams/football/${s.slug}`} title={s.note}
                   className="text-xs px-2.5 py-1 rounded-md border transition hover:border-[var(--accent)] hover:text-[var(--accent)] inline-flex items-center gap-1.5" style={cardStyle}>
                   {s.label}{s.live && <span className="text-[9px] px-1 py-px rounded-full border" style={{ borderColor: "var(--accent)", color: "var(--accent)" }}>LIVE</span>}

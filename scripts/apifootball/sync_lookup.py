@@ -33,7 +33,7 @@ def extract(path):
     ws = wb["Lookup"]; it = ws.iter_rows(values_only=True)
     hdr = [str(h).strip() if h is not None else "" for h in next(it)]
     cols = {"cur_name": "Cur. Name", "team": "Team", "lookup_name": "Lookup", "uefa_name": "UEFA Name", "uefa_name_2": "UEFA Name 2",
-            "efs_name": "EFS Name", "api_name": "API Name", "country": "Country", "city": "City",
+            "efs_name": "EFS Name", "api_name": "API Name", "api_name_2": "API Name 2", "country": "Country", "city": "City",
             "metro_area": "Metro Area", "county": "County", "continent": "Continent", "league": "League",
             "level": "Level", "lat": "Lat", "long": "Long"}
     idx = {k: (hdr.index(v) if v in hdr else None) for k, v in cols.items()}
