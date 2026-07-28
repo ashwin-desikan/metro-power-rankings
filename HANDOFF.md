@@ -536,3 +536,24 @@ Separately, I can (with Ashwin's OK) harden `run-football-standings.sh` so an UN
 ## 2026-07-28 — mini → windows (Chapecoense B was an api-football DUPLICATE, not a missing Lookup entry — handled via SKIP_TEAMS)
 
 Correction to my earlier note asking you to add `Chapecoense B` to the Lookup: **don't.** api-football lists team **22722 'Chapecoense B'** as a *second* Brazil Serie A rank-20 row (10 pts) — the exact same slot as the real **Chapecoense (132, api_name `Chapecoense-sc`)**, which is already mapped and shown. It's a pure upstream duplicate. Adding it to Lookup would put two Chapecoense rows at Serie A rank 20 on the site. Instead I added `SKIP_TEAMS = {22722}` to `refresh.py` (mirrors `SKIP_STANDINGS`) — the ghost is dropped from resolution (no UNMATCHED alert) and the crosswalk join keeps it off the site. Remove the id from SKIP_TEAMS once api-football de-dups their Serie A table. Verified live: FORCE_RUN `unmatched=0`, clean.
+
+## 2026-07-28 — windows → mini (apifootball: API Name 2 resolver + duplicate-id alias + collision-guarded report)
+
+Cleared a long-running confusion over "unmatched / resolvable" api-football teams. Root cause: the ad-hoc report labelled 8 teams "Resolvable (not yet linked)" that are actually DUPLICATE api ids for clubs already mapped to a single primary id. The collision guard in `refresh.py` correctly refuses them (one canonical club -> one api team_id), so no Lookup edit ever links them — they belong in an alias, not on a to-do list.
+
+Changes are committed to `main` but NOT pushed from the sandbox (egress here blocks github.com). **Ashwin to `git push origin main`** from the Windows box, or re-run this on the mini/host. Two commits: the code change (`[vercel skip]`) and this handoff entry (`[vercel skip]`).
+
+- `refresh.py` `build_resolver` now reads `api_name_2` AND `uefa_name_2` (the workbook's "API Name 2" / "UEFA Name 2" columns were previously inert — the resolver only selected `api_name` + the five name columns). The `football_lookup` select was widened to carry both.
+- New `football_team_alias` table in Supabase (`dup_team_id -> primary_team_id`, 8 rows). `refresh.py` loads it and remaps dup->primary at ingest, before resolve/upsert, so a duplicate api id folds onto the primary instead of colliding or orphaning a standings row. Docstring + `--self-test` updated; self-test passes.
+- New `build_unmatched_report.py` — report generator applying the SAME collision guard. Three tabs: Unmatched (no Lookup club), Resolvable (not yet linked, collision-free only), Duplicate api id (already mapped). Run on the mini/host (needs Supabase egress). Live numbers right now: 1697 / 0 / 8.
+
+Supabase-side work is already done from here (via MCP, which has its own egress): alias table created + 8 rows; `football_lookup.api_name_2` / `uefa_name_2` reconciled to today's workbook (20 + 4 = 24 cells). The 8 dup ids have 0 rows in `football_standings` / `football_fixtures`, so no backfill was needed — the alias is purely forward-looking.
+
+The 8 pairs (dup -> primary): 860->24612 (Extremadura UD), 1648->1657 (TuS RW Koblenz), 1833->16992 (North Ferriby Utd), 4504->4486 (Hapoel Jerusalem), 5252->9581 (CD Calahorra), 5304->5303 (AC Libertas), 7492->4638 (FC Ungheni), 7524->5268 (Melilla CD).
+
+### For the mini
+After the push lands, run the football job with the UTC guard bypassed:
+`FORCE_RUN=1 "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-football-standings.sh"`
+It fast-forwards `main` (picking up both commits), runs the new self-test, then `refresh.py --write`. Expect a clean run — the alias remap and `api_name_2` reads come from the live DB, and the 8 duplicates no longer surface. Confirm there is no COLLISION or UNMATCHED alert for those 8, then let it export + commit the bundles as usual.
+
+Note: `sync_lookup.py` on the Windows host still does the FULL `football_lookup` mirror. From here I only reconciled the two name-2 columns, so run it if you want a byte-level re-sync of everything else.
