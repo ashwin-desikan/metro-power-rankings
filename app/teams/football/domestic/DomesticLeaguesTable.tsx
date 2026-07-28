@@ -3,6 +3,8 @@
 import { Fragment, useMemo, useState } from "react";
 import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
+import { Badge } from "@/app/teams/_shared/Badge";
+import { ResponsiveTable, MiniStat } from "@/app/teams/_shared/ResponsiveTable";
 import type { DomesticClub, EraHonours } from "@/lib/domesticFootball";
 
 type SortKey = "name" | "country" | "titles" | "majorTrophies" | "cups" | "contTitles" | "clTitles";
@@ -26,6 +28,10 @@ export default function DomesticLeaguesTable({
   const [asc, setAsc] = useState(false);
   const [open, setOpen] = useState<Set<string>>(new Set());
   const [announce, setAnnounce] = useState("");
+  // Confederation/country/scope controls collapse behind this on mobile so
+  // the card doesn't open with a wall of selects; search + reset stay
+  // visible since search is the highest-utility control on a phone.
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   const countryActive = country !== "";
 
@@ -91,36 +97,52 @@ export default function DomesticLeaguesTable({
       {label}{sortKey === k ? (asc ? " ▲" : " ▼") : ""}
     </th>
   );
-  const Stat = ({ label, v, strong }: { label: string; v: number; strong?: boolean }) => (
-    <div>
-      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{label}</div>
-      <div className={`tabular-nums ${strong ? "font-semibold" : "text-[var(--text-muted)]"}`} style={mono}>{v || "—"}</div>
-    </div>
-  );
+  const activeFilterCount = (conf ? 1 : 0) + (country ? 1 : 0) + (scope !== "current" ? 1 : 0);
 
   return (
     <div>
+      {/* Always-visible bar: search (primary control on a phone) + a
+          mobile-only toggle that reveals scope/confederation/country
+          filtering. Desktop skips the toggle and shows everything inline. */}
       <div className="flex flex-wrap items-center gap-2 mb-2">
-        <div className={`inline-flex rounded-md border border-[var(--border)] overflow-hidden ${countryActive ? "opacity-40 pointer-events-none" : ""}`}>
-          {(["current", "all"] as const).map((s) => (
-            <button
-              key={s}
-              onClick={() => setScope(s)}
-              className={`px-3 py-1 text-sm ${scope === s ? "bg-[var(--accent)] text-black font-semibold" : "bg-[var(--bg-card)] text-[var(--text-muted)]"}`}
-            >
-              {s === "current" ? "Current first division" : "Ever first division"}
-            </button>
-          ))}
+        <input
+          className={`${selStyle} flex-1 sm:flex-none sm:max-w-xs`}
+          placeholder="Search club or metro"
+          value={q}
+          onChange={(e) => setQ(e.target.value)}
+        />
+        <button
+          type="button"
+          onClick={() => setMobileFiltersOpen((v) => !v)}
+          aria-expanded={mobileFiltersOpen}
+          className="sm:hidden inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-md border transition flex-shrink-0"
+          style={{ background: "var(--bg-card-hover)", borderColor: "var(--border)", color: "var(--text)" }}
+        >
+          Filters
+          {activeFilterCount > 0 && <Badge variant="live">{activeFilterCount}</Badge>}
+          <span aria-hidden className={`transition-transform ${mobileFiltersOpen ? "rotate-180" : ""}`}>▾</span>
+        </button>
+        <div className={`${mobileFiltersOpen ? "flex" : "hidden"} sm:flex flex-wrap items-center gap-2 w-full sm:w-auto`}>
+          <div className={`inline-flex rounded-md border border-[var(--border)] overflow-hidden ${countryActive ? "opacity-40 pointer-events-none" : ""}`}>
+            {(["current", "all"] as const).map((s) => (
+              <button
+                key={s}
+                onClick={() => setScope(s)}
+                className={`px-3 py-1 text-sm ${scope === s ? "bg-[var(--accent)] text-black font-semibold" : "bg-[var(--bg-card)] text-[var(--text-muted)]"}`}
+              >
+                {s === "current" ? "Current first division" : "Ever first division"}
+              </button>
+            ))}
+          </div>
+          <select className={selStyle} value={conf} onChange={(e) => { setConf(e.target.value); setCountry(""); }}>
+            <option value="">All confederations</option>
+            {confederations.map((c) => <option key={c} value={c}>{c}</option>)}
+          </select>
+          <select className={selStyle} value={country} onChange={(e) => setCountry(e.target.value)}>
+            <option value="">All countries (current)</option>
+            {countryOpts.map((c) => <option key={c} value={c}>{c}</option>)}
+          </select>
         </div>
-        <select className={selStyle} value={conf} onChange={(e) => { setConf(e.target.value); setCountry(""); }}>
-          <option value="">All confederations</option>
-          {confederations.map((c) => <option key={c} value={c}>{c}</option>)}
-        </select>
-        <select className={selStyle} value={country} onChange={(e) => setCountry(e.target.value)}>
-          <option value="">All countries (current)</option>
-          {countryOpts.map((c) => <option key={c} value={c}>{c}</option>)}
-        </select>
-        <input className={selStyle} placeholder="Search club or metro" value={q} onChange={(e) => setQ(e.target.value)} />
         <button onClick={reset} className="px-2 py-1 text-sm text-[var(--text-muted)] hover:text-[var(--accent)]">Reset</button>
         <span className="text-xs text-[var(--text-dim)] tabular-nums ml-auto">{view.length} clubs</span>
       </div>
@@ -175,21 +197,19 @@ export default function DomesticLeaguesTable({
         <span aria-live="polite" className="sr-only">{announce}</span>
       </div>
 
-      {/* Mobile: one card per club instead of an 8-column table. Same
-          `view` array (filters + sort state above) drives both. */}
-      <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {view.map(({ c, h, displayCountry }) => {
+      {/* Same `view` array (filters + sort state above) drives both the
+          mobile card grid and the desktop table; each club's honours
+          breakdown expands in place (click the card, or the +/− cell). */}
+      <ResponsiveTable
+        className="rounded-lg border"
+        style={{ borderColor: "var(--border)" }}
+        mobileRows={view.map(({ c, h, displayCountry }) => {
           const id = c.name + "|" + (c.metro || "");
           const isOpen = open.has(id);
           const eras = Object.entries(c.byCountry).sort((a, b) => (b[1].lastYear || 0) - (a[1].lastYear || 0));
           return (
-            <div
-              key={id}
-              className="rounded-lg border p-3 cursor-pointer"
-              style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
-              onClick={() => toggle(id)}
-            >
-              <div className="flex items-start justify-between gap-2">
+            <div key={id} className="-m-3 p-3 cursor-pointer" onClick={() => toggle(id)}>
+              <div className="flex items-start justify-between gap-2 mb-2">
                 <div className="flex items-center gap-1.5 min-w-0">
                   <CrestIcon name={c.name} size={20} className="flex-shrink-0" />
                   <div className="min-w-0">
@@ -209,25 +229,25 @@ export default function DomesticLeaguesTable({
                 </div>
                 <span className="text-[var(--text-dim)] flex-shrink-0">{isOpen ? "−" : "+"}</span>
               </div>
-              <div className="mt-1 text-xs text-[var(--text-muted)]">
+              <div className="text-xs text-[var(--text-muted)] mb-2">
                 {displayCountry}
                 {countryActive && c.country !== country && (
                   <span className="ml-1 text-[10px] text-[var(--text-dim)]">now {c.country}</span>
                 )}
                 {!countryActive && c.status === "former" && (
-                  <span className="ml-1 text-[9px] uppercase tracking-wide text-[var(--text-dim)]">former</span>
+                  <Badge variant="defunct" className="ml-1.5">Former</Badge>
                 )}
               </div>
-              <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
-                <Stat label="Titles" v={h.titles} strong />
-                <Stat label="Major" v={h.majorTrophies} />
-                <Stat label="Cups" v={h.cups} />
-                <Stat label="Cont." v={h.contTitles} />
-                <Stat label="CL" v={h.clTitles} />
+              <div className="grid grid-cols-3 gap-2">
+                <MiniStat label="Titles" value={h.titles || "—"} />
+                <MiniStat label="Cups" value={h.cups || "—"} />
+                <MiniStat label="CL" value={h.clTitles || "—"} />
               </div>
               {isOpen && (
                 <div className="mt-2 pt-2 border-t text-xs text-[var(--text-muted)]" style={{ borderColor: "var(--border)" }}>
                   <div className="mb-1 space-y-0.5">
+                    <div>Major trophies: <b className="text-[var(--text)]">{h.majorTrophies || 0}</b></div>
+                    <div>Continental titles: <b className="text-[var(--text)]">{h.contTitles || 0}</b></div>
                     <div>Confederation: <b className="text-[var(--text)]">{c.confederation}</b></div>
                     <div>Status: <b className="text-[var(--text)]">{c.status === "current" ? "Current top flight" : "Former top flight"}</b></div>
                     {c.lastTopFlight != null && <div>Last top flight: <b className="text-[var(--text)]">{c.lastTopFlight}</b></div>}
@@ -257,9 +277,7 @@ export default function DomesticLeaguesTable({
             </div>
           );
         })}
-      </div>
-
-      <div className="overflow-x-auto rounded-lg border border-[var(--border)] hidden sm:block">
+      >
         <table className="w-full text-sm">
           <thead className="text-[var(--text-muted)] border-b border-[var(--border)] bg-[var(--bg-card)]">
             <tr>
@@ -299,7 +317,7 @@ export default function DomesticLeaguesTable({
                         <span className="ml-1 text-[10px] text-[var(--text-dim)]">now {c.country}</span>
                       )}
                       {!countryActive && c.status === "former" && (
-                        <span className="ml-1 text-[9px] uppercase tracking-wide text-[var(--text-dim)]">former</span>
+                        <Badge variant="defunct" className="ml-1.5">Former</Badge>
                       )}
                     </td>
                     <td className="px-3 py-2 text-right tabular-nums font-semibold" style={mono}>{h.titles || ""}</td>
@@ -337,7 +355,7 @@ export default function DomesticLeaguesTable({
             })}
           </tbody>
         </table>
-      </div>
+      </ResponsiveTable>
     </div>
   );
 }

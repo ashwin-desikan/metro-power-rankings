@@ -4,6 +4,8 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import HubNav from "@/app/teams/HubNav";
 import FootballHubNav from "@/app/teams/FootballHubNav";
 import { getDomesticCupCompetitions, getDomesticCupAggregate } from "@/lib/football";
+import { FootballHero } from "@/app/teams/_shared/FootballHero";
+import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
 import CupsClient from "./CupsClient";
 
 export const dynamicParams = false;
@@ -31,6 +33,10 @@ export default function DomesticCupsPage() {
   const present = ORDER.map((o) => ({ ...o, comp: comps[o.id] })).filter((o) => o.comp);
   const aggregate = getDomesticCupAggregate();
 
+  const earliestYear = Math.min(...present.map((p) => p.comp!.first_year));
+  const latestYear = Math.max(...present.map((p) => p.comp!.last_year));
+  const totalFinals = present.reduce((sum, p) => sum + p.comp!.seasons.length, 0);
+
   return (
     <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <nav className="text-xs text-[var(--text-muted)] mb-4">
@@ -43,14 +49,25 @@ export default function DomesticCupsPage() {
 
       <FootballHubNav current="cups" />
 
-      <header className="mb-6">
-        <h1 className="text-4xl font-bold tracking-tight mb-2">English Domestic Cups</h1>
-        <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
-          Every FA Cup and League Cup semifinal and final, season by season. The FA Cup runs from 1871-72,
-          the world&apos;s oldest knockout competition; the League Cup from 1960-61. Browse by decade, or sort the
-          all-time table below. Winners and runners-up link to their club pages.
-        </p>
-      </header>
+      <FootballHero
+        eyebrow="Club Football"
+        title={<h1 className="text-3xl font-semibold tracking-tight">English Domestic Cups</h1>}
+        subtitle={
+          <>
+            Every FA Cup and League Cup semifinal and final, season by season. The FA Cup runs from 1871-72,
+            the world&apos;s oldest knockout competition; the League Cup from 1960-61. Browse by decade, or sort
+            the all-time table below. Winners and runners-up link to their club pages.
+          </>
+        }
+        stats={
+          <StatGrid>
+            <StatTile label="Competitions" value={present.length} />
+            <StatTile label="Years of history" value={`${latestYear - earliestYear}+`} />
+            <StatTile label="Total finals" value={totalFinals.toLocaleString()} />
+            <StatTile label="Clubs in all-time table" value={aggregate.length.toLocaleString()} />
+          </StatGrid>
+        }
+      />
 
       <HubNav
         items={[

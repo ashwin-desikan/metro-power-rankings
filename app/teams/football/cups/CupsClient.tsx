@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { ResponsiveTable, MiniStat, MiniCardHeader } from "@/app/teams/_shared/ResponsiveTable";
 import type {
   DomesticCupCompetition,
   DomesticCupSeason,
@@ -196,47 +197,42 @@ function AggregateTable({ rows }: { rows: DomesticCupAggregateRow[] }) {
         <span aria-live="polite" className="sr-only">{announce}</span>
       </div>
 
-      {/* Mobile: one card per club instead of a 10-column table. Same
-          `sorted` array (and sort state) drives both presentations. */}
-      <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {sorted.map((r) => {
-          const groups: { label: string; v: number; last: number | null; strong?: boolean }[] = [
-            { label: "FA Cup SF", v: r.fa_sf, last: r.fa_sf_last },
-            { label: "FA Cup F", v: r.fa_f, last: r.fa_f_last },
-            { label: "FA Cup Won", v: r.fa_cups, last: r.fa_cups_last, strong: true },
-            { label: "Lg Cup SF", v: r.lg_sf, last: r.lg_sf_last },
-            { label: "Lg Cup F", v: r.lg_f, last: r.lg_f_last },
-            { label: "Lg Cup Won", v: r.lg_cups, last: r.lg_cups_last, strong: true },
-            { label: "Total SF", v: r.sf, last: r.sf_last },
-            { label: "Total F", v: r.f, last: r.f_last },
-            { label: "Total Cups", v: r.cups, last: r.cups_last, strong: true },
-          ];
-          return (
-            <div key={r.slug} className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
-              <div className="text-sm font-medium mb-2"><ClubName name={r.cur_name} slug={r.slug} /></div>
-              <div className="grid grid-cols-3 gap-x-2 gap-y-2 text-xs">
-                {groups.map((s) => (
-                  <div key={s.label}>
-                    <div className="text-[9px] uppercase tracking-wide text-[var(--text-dim)]">{s.label}</div>
-                    <div className="tabular-nums">
-                      {s.v ? (
-                        <>
-                          <span className={s.strong ? "font-semibold" : "text-[var(--text-muted)]"}>{s.v}</span>
-                          {s.last ? <span className="ml-1 text-[9px] text-[var(--text-dim)]">({s.last})</span> : null}
-                        </>
-                      ) : (
-                        <span className="text-[var(--text-dim)]">·</span>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
+      {/* Same `sorted` array (and sort state) drives both presentations.
+          The mobile card curates to the combined totals (semifinals,
+          finals, trophies); the FA Cup/League Cup breakdown stays on the
+          desktop table, where there's room for all nine columns. */}
+      <ResponsiveTable
+        className="rounded-xl border"
+        style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+        mobileRows={sorted.map((r) => (
+          <div key={r.slug}>
+            <MiniCardHeader
+              left={<ClubName name={r.cur_name} slug={r.slug} />}
+              right={
+                <span className="tabular-nums">
+                  <span className="font-semibold">{r.cups || 0}</span>
+                  {r.cups_last ? <span className="ml-1 text-[10px] text-[var(--text-dim)]">({r.cups_last})</span> : null}
+                  <span className="ml-1 text-[10px] text-[var(--text-dim)] uppercase tracking-wide">trophies</span>
+                </span>
+              }
+            />
+            <div className="grid grid-cols-3 gap-2">
+              <MiniStat
+                label="Semifinals"
+                value={r.sf ? <>{r.sf}{r.sf_last ? <span className="ml-1 text-[10px] text-[var(--text-dim)]">({r.sf_last})</span> : null}</> : "·"}
+              />
+              <MiniStat
+                label="Finals"
+                value={r.f ? <>{r.f}{r.f_last ? <span className="ml-1 text-[10px] text-[var(--text-dim)]">({r.f_last})</span> : null}</> : "·"}
+              />
+              <MiniStat
+                label="Trophies"
+                value={r.cups ? <>{r.cups}{r.cups_last ? <span className="ml-1 text-[10px] text-[var(--text-dim)]">({r.cups_last})</span> : null}</> : "·"}
+              />
             </div>
-          );
-        })}
-      </div>
-
-      <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+          </div>
+        ))}
+      >
         <table className="w-full text-sm min-w-[920px]">
           <thead>
             <tr className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] border-b" style={{ borderColor: "var(--border)" }}>
@@ -269,7 +265,7 @@ function AggregateTable({ rows }: { rows: DomesticCupAggregateRow[] }) {
             ))}
           </tbody>
         </table>
-      </div>
+      </ResponsiveTable>
     </section>
   );
 }

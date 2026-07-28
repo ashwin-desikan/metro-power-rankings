@@ -4,6 +4,8 @@ import HubNav from "@/app/teams/HubNav";
 import FootballHubNav from "@/app/teams/FootballHubNav";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { getDomesticClubs, getDomesticFacets } from "@/lib/domesticFootball";
+import { FootballHero } from "@/app/teams/_shared/FootballHero";
+import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
 import DomesticLeaguesTable from "./DomesticLeaguesTable";
 
 export const metadata: Metadata = {
@@ -39,22 +41,31 @@ export default function DomesticLeaguesPage() {
 
       <FootballHubNav current="domestic" />
 
-      <header className="mb-6">
-        <h1 className="text-3xl font-semibold tracking-tight">Domestic Leagues Worldwide</h1>
-        <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
-          Every tracked first-division league in one place, the nine marquee leagues with dedicated hubs
-          and the long tail beyond them: every club that has ever played in a tracked top flight across
-          {" "}{facets.countries.length} countries, with all-time league titles, domestic cups, and
-          continental and Champions League pedigree, plus home metro. Coverage includes every UEFA association in full, plus selected leagues from the other confederations (CONMEBOL, CONCACAF, AFC, CAF, OFC). Honours are split by country era,
-          so filtering to a former state (Soviet Union, Yugoslavia) shows only the trophies won under
-          that flag. The dedicated league hubs remain for depth; clubs with their own page are linked in
-          colour. Use the Ever first division toggle to include clubs no longer in their top flight.
-        </p>
-        <p className="mt-2 text-xs text-[var(--text-dim)] tabular-nums">
-          {clubs.length.toLocaleString()} clubs · {current.toLocaleString()} currently first division ·{" "}
-          {facets.countries.length} countries
-        </p>
-      </header>
+      <FootballHero
+        eyebrow="Club Football"
+        title={<h1 className="text-3xl font-semibold tracking-tight">Domestic Leagues Worldwide</h1>}
+        subtitle={
+          <>
+            Every tracked first-division league in one place, the nine marquee leagues with dedicated hubs
+            and the long tail beyond them: every club that has ever played in a tracked top flight across
+            {" "}{facets.countries.length} countries, with all-time league titles, domestic cups, and
+            continental and Champions League pedigree, plus home metro. Coverage includes every UEFA
+            association in full, plus selected leagues from the other confederations (CONMEBOL, CONCACAF,
+            AFC, CAF, OFC). Honours are split by country era, so filtering to a former state (Soviet Union,
+            Yugoslavia) shows only the trophies won under that flag. The dedicated league hubs remain for
+            depth; clubs with their own page are linked in colour. Use the Ever first division toggle to
+            include clubs no longer in their top flight.
+          </>
+        }
+        stats={
+          <StatGrid>
+            <StatTile label="Club entries" value={clubs.length.toLocaleString()} />
+            <StatTile label="Currently first division" value={current.toLocaleString()} />
+            <StatTile label="Countries" value={facets.countries.length} />
+            <StatTile label="Confederations" value={facets.confederations.length} />
+          </StatGrid>
+        }
+      />
 
       <HubNav items={[{ label: "Master Table", href: "#table" }]} />
 
