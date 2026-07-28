@@ -11,11 +11,16 @@ Modes:
 
 INVARIANT (hard rule): EVERY team in EVERY league/competition must map to a Lookup club.
 On --write, any api team not already in football_team is resolved against football_lookup
-(the mirror of the workbook Lookup sheet) by exact API-Name, else unambiguous name match.
-Resolved teams are inserted into football_team automatically. Anything that cannot be
-resolved is NEVER stubbed: the run writes what it can, then EXITS 3 with an UNMATCHED alert
-listing the teams, so they get added to Lookup (and picked up next sync). Keep Lookup current
-with scripts/apifootball/sync_lookup.py (workbook -> football_lookup).
+(the mirror of the workbook Lookup sheet) by exact API-Name (api_name OR api_name_2), else
+unambiguous name match (cur/team/lookup/uefa/uefa_name_2/efs). Resolved teams are inserted
+into football_team automatically. Anything that cannot be resolved is NEVER stubbed: the run
+writes what it can, then EXITS 3 with an UNMATCHED alert listing the teams, so they get added
+to Lookup (and picked up next sync). Keep Lookup current with sync_lookup.py.
+
+DUPLICATE api ids: api-football sometimes issues a second team_id for a club already mapped
+to a single primary id. Those are NOT force-linked (that would break one-club-one-id). They
+live in football_team_alias (dup_team_id -> primary_team_id) and are remapped to the primary
+at ingest, so a duplicate never collides in football_team nor orphans a standings row.
 
 Notes: leagues.json is id-corrected (Faroe 367, Iceland 164, Switzerland 208, Ukraine 334).
 Standings for every league; fixtures for the 5 continental comps. Brazil Serie D (76)
@@ -28,11 +33,6 @@ API = "https://v3.football.api-sports.io"
 SUPA = os.environ.get("SUPABASE_URL", "https://nmprqkmymrdknffwnuur.supabase.co")
 CONTINENTAL = {2, 3, 848, 13, 531}
 SKIP_STANDINGS = {76}
-# Known upstream api-football ghosts: a spurious team_id that duplicates a real club already in
-# the table (same slot/points, different id). Dropped from resolution -> not UNMATCHED, not written
-# to the crosswalk (so the standings join filters its row off the site). Remove an id here once
-# api-football cleans up. 22722 'Chapecoense B' = a 2nd copy of Chapecoense (132) at Serie A rank 20.
-SKIP_TEAMS = {22722}
 TRANS = str.maketrans({"ø":"o","Ø":"o","ł":"l","Ł":"l","æ":"ae","Æ":"ae","œ":"oe","ð":"d","þ":"th",
                        "ß":"ss","đ":"d","ı":"i","İ":"i","'":" ","’":" "})
 
@@ -108,12 +108,15 @@ def build_resolver(lookup_rows):
     by_api, by_name = {}, {}
     def ident(r): return (r.get("team"), r.get("country"))
     for rec in lookup_rows:
-        an = rec.get("api_name")
-        if an:
+        # api_name AND api_name_2 are both precise keys: the workbook carries an alternate
+        # api spelling in "API Name 2" (e.g. primary "Melilla" + alternate "Melilla CD").
+        for ancol in ("api_name", "api_name_2"):
+            an = rec.get(ancol)
+            if not an: continue
             k = norm(an)
-            if k:
-                if k not in by_api: by_api[k] = rec
-                elif by_api[k] != "AMBIG" and ident(by_api[k]) != ident(rec): by_api[k] = "AMBIG"
+            if not k: continue
+            if k not in by_api: by_api[k] = rec
+            elif by_api[k] != "AMBIG" and ident(by_api[k]) != ident(rec): by_api[k] = "AMBIG"
         for col in ("cur_name", "team", "lookup_name", "uefa_name", "uefa_name_2", "efs_name"):
             v = rec.get(col)
             if not v: continue
@@ -136,6 +139,38 @@ def check_collision(canon, country, tid, claim):
     Guards the invariant that one canonical Lookup club maps to exactly one api team_id."""
     owner = claim.get((canon, country))
     return owner if (owner is not None and owner != tid) else None
+
+def load_aliases(skey):
+    """dup_team_id -> primary_team_id map from football_team_alias. api-football sometimes
+    issues a second team_id for a club we already map to a single primary id; the alias table
+    folds those duplicates onto the primary so they never collide or orphan a standings row."""
+    try:
+        rows = supa_get("/rest/v1/football_team_alias?select=dup_team_id,primary_team_id", skey)
+    except Exception as e:
+        log(f"alias table unavailable ({str(e)[:60]}); skipping remap"); return {}
+    return {r["dup_team_id"]: r["primary_team_id"] for r in rows}
+
+def apply_aliases(standings, fixtures, teams_seen, alias):
+    """Rewrite every dup team_id to its primary across standings, fixtures and teams_seen,
+    then de-dup standings on its PK in case a dup and its primary both appeared. Returns the
+    number of references rewritten."""
+    if not alias: return 0
+    n = 0
+    for row in standings:
+        p = alias.get(row.get("team_id"))
+        if p: row["team_id"] = p; n += 1
+    for fx in fixtures:
+        for k in ("home_team_id", "away_team_id"):
+            p = alias.get(fx.get(k))
+            if p: fx[k] = p; n += 1
+    for dup, prim in alias.items():
+        if dup in teams_seen:
+            teams_seen.setdefault(prim, teams_seen[dup]); del teams_seen[dup]
+    seen = {}
+    for row in standings:
+        seen[(row["league_id"], row["season"], row["group_label"], row["team_id"])] = row
+    standings[:] = list(seen.values())
+    return n
 
 def parse_standings(doc, league_id, season):
     rows, teams = [], {}
@@ -198,6 +233,14 @@ def selftest():
     assert check_collision("Watford", "England", 8690, claim) == 38   # different id -> collision
     assert check_collision("Watford", "England", 38, claim) is None   # same id -> fine
     assert check_collision("Avro", "England", 8690, claim) is None    # unclaimed -> fine
+    a2 = build_resolver([{"team": "Melilla CD", "api_name": "Melilla", "api_name_2": "Melilla CD", "country": "Spain"}])
+    assert a2("Melilla CD")["team"] == "Melilla CD"   # resolves via api_name_2 alternate spelling
+    assert a2("Melilla")["team"] == "Melilla CD"       # and still via the primary api_name
+    u2 = build_resolver([{"team": "MOL Fehervar FC", "uefa_name_2": "Videoton Fehervar", "country": "Hungary"}])
+    assert u2("Videoton Fehervar")["team"] == "MOL Fehervar FC"   # resolves via uefa_name_2 alias
+    std = [{"league_id": 1, "season": 2020, "group_label": "", "team_id": 5304}]; ts = {5304: "Libertas"}
+    apply_aliases(std, [], ts, {5304: 5303})
+    assert std[0]["team_id"] == 5303 and 5303 in ts and 5304 not in ts   # alias folds dup -> primary
     print("self-test OK")
 
 def main():
@@ -233,16 +276,18 @@ def main():
         return
 
     skey = supa_key()
+    alias = load_aliases(skey)
+    remapped = apply_aliases(standings, fixtures, teams_seen, alias)
+    if remapped:
+        log(f"alias remap: rewrote {remapped} dup team_id reference(s) to primary id(s)")
     existing_rows = supa_get("/rest/v1/football_team?select=team_id,canonical_name,country&order=team_id", skey)
     existing = {row["team_id"] for row in existing_rows}
     claim = {(r.get("canonical_name"), r.get("country")): r["team_id"] for r in existing_rows}
     new_ids = [tid for tid in teams_seen if tid not in existing]
     resolved_rows, unmatched, collisions = [], [], []
     if new_ids:
-        resolve = build_resolver(supa_get("/rest/v1/football_lookup?select=cur_name,team,lookup_name,uefa_name,uefa_name_2,efs_name,api_name,country,level", skey))
+        resolve = build_resolver(supa_get("/rest/v1/football_lookup?select=cur_name,team,lookup_name,uefa_name,uefa_name_2,efs_name,api_name,api_name_2,country,level", skey))
         for tid in new_ids:
-            if tid in SKIP_TEAMS:
-                continue   # known upstream ghost/duplicate: skip silently (see SKIP_TEAMS)
             rec = resolve(teams_seen[tid])
             if not rec:
                 unmatched.append(tid); continue
