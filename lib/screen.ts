@@ -147,18 +147,36 @@ let cache: ScreenFile | null | undefined;
 let yearsCache: ScreenYearsFile | null | undefined;
 let canonCache: ScreenCanonFile | null | undefined;
 let oscarsCache: ScreenOscarsFile | null | undefined;
-let n1Cache: ScreenNumberOnesFile | null | undefined;
 
-export function getScreenNumberOnes(): ScreenNumberOnesFile | null {
-  if (n1Cache !== undefined) return n1Cache;
+const SCREEN_N1_GH_RAW =
+  "https://raw.githubusercontent.com/ashwin-desikan/metro-power-rankings/main/public/data/screen/screen_number_ones.json";
+
+function readLocalScreenNumberOnes(): ScreenNumberOnesFile | null {
   try {
-    n1Cache = JSON.parse(
+    return JSON.parse(
       readFileSync(join(process.cwd(), "public", "data", "screen", "screen_number_ones.json"), "utf-8"),
     ) as ScreenNumberOnesFile;
   } catch {
-    n1Cache = null;
+    return null;
   }
-  return n1Cache;
+}
+
+// ISR-from-raw (mirrors lib/powerRanking.ts): the Tuesday number-ones refresh commits the
+// JSON with [vercel skip], so the page must read the GitHub raw copy on its revalidate
+// interval rather than a build-baked readFileSync — otherwise weekly data never shows
+// without a Vercel build. Dev prefers the local working copy so unpushed data renders.
+export async function getScreenNumberOnes(): Promise<ScreenNumberOnesFile | null> {
+  if (process.env.NODE_ENV !== "production") {
+    const local = readLocalScreenNumberOnes();
+    if (local) return local;
+  }
+  try {
+    const r = await fetch(SCREEN_N1_GH_RAW, { next: { revalidate: 3600 } });
+    if (r.ok) return (await r.json()) as ScreenNumberOnesFile;
+  } catch {
+    /* fall through */
+  }
+  return readLocalScreenNumberOnes();
 }
 
 export function getScreenOscars(): ScreenOscarsFile | null {

@@ -4,7 +4,9 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import ScreenNav from "../ScreenNav";
 import NumberOnesView from "./NumberOnesView";
 
-export const dynamic = "force-static";
+// ISR: re-render hourly and re-fetch the number-ones JSON from GitHub raw, so the weekly
+// Tuesday [vercel skip] data refresh shows without a Vercel build (see lib/screen.ts).
+export const revalidate = 3600;
 
 const TITLE = "Screen of the Metros — US Number Ones";
 const DESC =
@@ -17,8 +19,8 @@ export const metadata: Metadata = {
   openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}/screen/number-ones`, type: "website" },
 };
 
-export default function ScreenNumberOnesPage() {
-  const d = getScreenNumberOnes();
+export default async function ScreenNumberOnesPage() {
+  const d = await getScreenNumberOnes();
   if (!d) return <main className="mx-auto max-w-6xl px-4 py-8"><p className="text-[var(--text-muted)]">Dataset not generated.</p></main>;
 
   return (
