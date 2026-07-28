@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 /**
- * Static guard: every <table> in app/ must be a direct JSX child of either
- * the shared <TableScroll> component (app/_shared/TableScroll.tsx) or an
- * element carrying overflow-x-auto / overflow-auto / overflow-hidden (via
- * className or an inline style overflowX/overflow), matching the sitewide
+ * Static guard: every <table> in app/ must be a direct JSX child of one of
+ * the shared scroll-wrapper components (<TableScroll>, app/_shared/TableScroll.tsx;
+ * or <ResponsiveTable>, app/teams/_shared/ResponsiveTable.tsx, which wraps its
+ * <table> child in <TableScroll> internally) or an element carrying
+ * overflow-x-auto / overflow-auto / overflow-hidden (via className or an
+ * inline style overflowX/overflow), matching the sitewide
  * `.overflow-x-auto:has(> table)` rule in app/globals.css that gives tables
  * their scroll container, sticky header, and (under 640px) sticky first
  * column and touch scrolling.
@@ -32,6 +34,10 @@ const REPO_ROOT = resolve(__dirname, "..");
 const SCAN_DIRS = ["app"];
 const EXTS = new Set([".tsx", ".jsx"]);
 const OVERFLOW_CLASSES = ["overflow-x-auto", "overflow-auto", "overflow-hidden"];
+// Components that guarantee their <table> child renders inside a
+// TableScroll-equivalent scroll container, so a literal <TableScroll>
+// ancestor isn't required.
+const SCROLL_WRAPPER_TAGS = new Set(["TableScroll", "ResponsiveTable"]);
 
 function walk(dir) {
   const out = [];
@@ -131,7 +137,7 @@ export function checkSource(src, filename) {
       let reason = "no wrapping element";
       if (parent && ts.isJsxElement(parent)) {
         const parentTag = jsxTagName(parent.openingElement);
-        if (parentTag === "TableScroll") {
+        if (SCROLL_WRAPPER_TAGS.has(parentTag)) {
           ok = true;
         } else if (attributeQualifies(parent.openingElement, sourceFile)) {
           ok = true;

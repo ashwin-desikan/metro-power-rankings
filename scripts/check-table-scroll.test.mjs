@@ -19,6 +19,19 @@ describe("checkSource", () => {
     expect(reasons(src)).toEqual([]);
   });
 
+  it("passes a table wrapped in <ResponsiveTable> (wraps TableScroll internally)", () => {
+    const src = `
+      function C() {
+        return (
+          <ResponsiveTable mobileRows={[]}>
+            <table><tbody><tr><td>x</td></tr></tbody></table>
+          </ResponsiveTable>
+        );
+      }
+    `;
+    expect(reasons(src)).toEqual([]);
+  });
+
   it("passes a table whose direct parent has className overflow-x-auto", () => {
     const src = `
       function C() {

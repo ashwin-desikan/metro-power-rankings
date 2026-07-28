@@ -3,6 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
+import { Tabs } from "@/app/teams/_shared/Tabs";
+import { Badge } from "@/app/teams/_shared/Badge";
+import { ResponsiveTable, MiniStat, MiniCardHeader } from "@/app/teams/_shared/ResponsiveTable";
 
 export type HubRow = { rank: number | null; name: string; slug: string | null; cells: (number | string)[]; champ?: boolean };
 export type HubGroup = { label: string | null; rows: HubRow[] };
@@ -14,9 +17,45 @@ const COLS = ["P", "W", "D", "L", "GF", "GA", "GD", "Pts"];
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const cardStyle = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
 
+function ClubLabel({ r }: { r: HubRow }) {
+  return (
+    <span className="inline-flex items-center gap-1.5 min-w-0">
+      <CrestIcon name={r.name} size={15} className="flex-shrink-0" />
+      {r.slug ? (
+        <Link href={`/teams/football/${r.slug}`} className="hover:text-[var(--accent)] truncate">{r.name}</Link>
+      ) : (
+        <span className="truncate">{r.name}</span>
+      )}
+      {r.champ && <span title="Champion" aria-label="Champion" className="flex-shrink-0 leading-none" style={{ color: "#f5b301" }}>★</span>}
+    </span>
+  );
+}
+
 function StandingsTable({ group }: { group: HubGroup }) {
   return (
-    <div className="overflow-x-auto">
+    <ResponsiveTable
+      compact
+      className="rounded-lg border"
+      style={cardStyle}
+      mobileRows={group.rows.map((r, i) => (
+        <div key={`${r.name}-${i}`}>
+          <MiniCardHeader
+            left={
+              <span className="inline-flex items-center gap-1.5 min-w-0">
+                <span className="text-[var(--text-dim)] flex-shrink-0 tabular-nums" style={mono}>{r.rank ?? i + 1}</span>
+                <ClubLabel r={r} />
+              </span>
+            }
+            right={<span className="tabular-nums font-semibold" style={mono}>{r.cells[7]} pts</span>}
+          />
+          <div className="grid grid-cols-3 gap-2">
+            <MiniStat label="P" value={r.cells[0]} />
+            <MiniStat label="W-D-L" value={`${r.cells[1]}-${r.cells[2]}-${r.cells[3]}`} />
+            <MiniStat label="GD" value={r.cells[6]} />
+          </div>
+        </div>
+      ))}
+    >
       <table className="w-full text-xs min-w-[360px]">
         <thead>
           <tr className="text-left text-[var(--text-muted)]">
@@ -32,15 +71,7 @@ function StandingsTable({ group }: { group: HubGroup }) {
             <tr key={`${r.name}-${i}`} className="border-t" style={{ borderColor: "var(--border)" }}>
               <td className="py-1 px-1.5 text-right tabular-nums text-[var(--text-dim)]" style={mono}>{r.rank ?? i + 1}</td>
               <td className="py-1 px-1.5 font-medium whitespace-nowrap">
-                <span className="inline-flex items-center gap-1.5">
-                  <CrestIcon name={r.name} size={15} className="flex-shrink-0" />
-                  {r.slug ? (
-                    <Link href={`/teams/football/${r.slug}`} className="hover:text-[var(--accent)]">{r.name}</Link>
-                  ) : (
-                    <span>{r.name}</span>
-                  )}
-                  {r.champ && <span title="Champion" aria-label="Champion" className="flex-shrink-0 leading-none" style={{ color: "#f5b301" }}>★</span>}
-                </span>
+                <ClubLabel r={r} />
               </td>
               {r.cells.map((c, j) => (
                 <td key={j} className="py-1 px-1.5 text-right tabular-nums" style={mono}>{c}</td>
@@ -49,7 +80,7 @@ function StandingsTable({ group }: { group: HubGroup }) {
           ))}
         </tbody>
       </table>
-    </div>
+    </ResponsiveTable>
   );
 }
 
@@ -58,11 +89,7 @@ function LeagueCard({ league, season }: { league: HubLeague; season?: string }) 
     <details className="rounded-xl border overflow-hidden" style={cardStyle}>
       <summary className="cursor-pointer select-none px-4 py-2.5 flex items-center justify-between gap-2">
         <span className="font-semibold text-sm">{league.name}{season && <span className="ml-2 font-normal text-[var(--text-dim)] tabular-nums">{league.end_year ?? +season.slice(0, 4) + 1}</span>}</span>
-        {league.level != null && (
-          <span className="text-[10px] px-2 py-0.5 rounded-full border text-[var(--text-muted)]" style={{ borderColor: "var(--border)" }}>
-            Tier {league.level}
-          </span>
-        )}
+        {league.level != null && <Badge variant="neutral">Tier {league.level}</Badge>}
       </summary>
       <div className="border-t px-3 py-3 space-y-4" style={{ borderColor: "var(--border)" }}>
         {league.groups.map((g, gi) => (
@@ -82,26 +109,20 @@ export default function Hub2027Client({ confs, season }: { confs: HubConf[]; sea
 
   return (
     <div>
-      <div className="flex flex-wrap gap-1.5 mb-4">
-        {confs.map((c) => {
+      <Tabs
+        className="mb-4"
+        aria-label="Confederation"
+        active={active}
+        onChange={setActive}
+        items={confs.map((c) => {
           const n = c.countries.reduce((a, k) => a + k.leagues.length, 0);
-          const on = c.confederation === active;
-          return (
-            <button
-              key={c.confederation}
-              onClick={() => setActive(c.confederation)}
-              className={`px-3 py-1.5 text-sm rounded-md border transition ${on ? "font-semibold" : "text-[var(--text-muted)]"}`}
-              style={{
-                borderColor: on ? "var(--accent)" : "var(--border)",
-                backgroundColor: on ? "var(--bg-card)" : "transparent",
-                color: on ? "var(--accent)" : undefined,
-              }}
-            >
-              {c.confederation} <span className="tabular-nums text-[var(--text-dim)]">{n}</span>
-            </button>
-          );
+          return {
+            key: c.confederation,
+            label: c.confederation,
+            badge: <span className="tabular-nums text-[var(--text-dim)] ml-1">{n}</span>,
+          };
         })}
-      </div>
+      />
 
       {!current || current.countries.length === 0 ? (
         <p className="text-sm text-[var(--text-muted)] italic">No live tables in this confederation yet.</p>

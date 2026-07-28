@@ -5,6 +5,9 @@ import Link from "next/link";
 import { getAllClubs, getAllLeagueHubs, getAllEuropeanTournamentHubs } from "@/lib/football";
 import { leagueStatusFor } from "@/lib/leagueStatus";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { FootballHero } from "@/app/teams/_shared/FootballHero";
+import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
+import { Badge } from "@/app/teams/_shared/Badge";
 import FootballIndexClient, { type IndexClub } from "./FootballIndexClient";
 
 // Re-render hourly so the auto month-window league/competition statuses
@@ -51,6 +54,12 @@ export default function FootballIndex() {
   // One-off finals and the continental aggregate have no in-season/offseason cycle.
   const NO_SEASON_STATE = new Set(["uefa-super-cup", "club-world-cup", "other-continental"]);
 
+  // Headline stats for the hero. Cheap to compute from data already in hand.
+  const countryCount = new Set(clubs.map((c) => c.country)).size;
+  let earliestYear = 9999;
+  for (const c of clubs) if (c.first_year && c.first_year < earliestYear) earliestYear = c.first_year;
+  const yearsOfHistory = earliestYear === 9999 ? null : new Date().getFullYear() - earliestYear;
+
   // Trim to the fields the client component needs (keeps the bundle compact).
   const clientClubs: IndexClub[] = clubs.map((c) => ({
     slug: c.slug,
@@ -77,48 +86,59 @@ export default function FootballIndex() {
 
       <FootballHubNav current="overview" backHref="/sports" backLabel="All Sports" />
 
-      <header className="mb-8">
-        <div className="flex items-baseline justify-between flex-wrap gap-3">
-          <h1 className="text-3xl font-semibold tracking-tight">Football</h1>
+      <FootballHero
+        eyebrow="Club Football"
+        title={<h1 className="text-3xl font-semibold tracking-tight">Football</h1>}
+        subtitle={
+          <>
+            Three layers of club football on one product surface, built for football obsessives
+            and first-time visitors alike. UEFA and FIFA tournament hubs carry every Champions
+            League, Europa League, Conference League, Cup Winners&apos; Cup, Inter-Cities Fairs
+            Cup, UEFA Super Cup, and Club World Cup edition, with a round-by-round bracket on
+            competitions still in flight. League hubs cover the top flights across eight
+            countries with current standings and all-time champions. And the canonical per-club
+            pages render season-by-season standings, cup finals, and European appearances,
+            reaching back to the 1870s.
+          </>
+        }
+        cta={
           <a
             href="/play/rules-lab.html"
-            className="inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-xs font-medium transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
-            style={{ background: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)" }}
+            className="inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-xs font-medium transition hover:border-[var(--accent)] hover:text-[var(--accent)] flex-shrink-0"
+            style={{ background: "var(--bg-card-hover)", borderColor: "var(--border)", color: "var(--text)" }}
           >
-            Football rules →
+            New to football? Rules →
           </a>
-        </div>
-        <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
-          Three layers of club football on one product surface. UEFA and FIFA tournament hubs
-          carry every Champions League, Europa League, Conference League, Cup Winners&apos; Cup,
-          Inter-Cities Fairs Cup, UEFA Super Cup, and Club World Cup edition, with a round-by-round
-          bracket on the 2025-26 competitions still in flight. League hubs cover the eight top
-          flights (England, Spain, Italy, Germany, France, Netherlands, Portugal, Scotland) with
-          current standings and all-time champions. And the canonical per-club pages render
-          season-by-season standings, cup finals, and European appearances, reaching back to the
-          1870s in England, the 1890s in France and Italy, and the 1880s in Scotland.
-        </p>
-      </header>
-
-      <Link
-        href="/teams/football/2026-27"
-        className="block rounded-xl border-2 p-5 mb-8 transition hover:brightness-110"
-        style={{ background: "var(--bg-card)", borderColor: "var(--accent)" }}
+        }
+        stats={
+          <StatGrid>
+            <StatTile label="Clubs tracked" value={clubs.length.toLocaleString("en-US")} />
+            <StatTile label="Countries" value={countryCount} />
+            <StatTile label="Tournament & league hubs" value={tournamentHubs.length + hubs.length} />
+            <StatTile label="Years of history" value={yearsOfHistory ? `${yearsOfHistory}+` : "-"} />
+          </StatGrid>
+        }
       >
-        <div className="flex items-center justify-between gap-3 flex-wrap">
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="inline-block rounded px-1.5 py-0.5 text-[9px] uppercase tracking-wide font-semibold" style={{ background: "rgba(16,185,129,0.18)", color: "#10b981" }}>Live</span>
-              <span className="text-lg font-semibold">2026-27 Club Football Hub</span>
+        <Link
+          href="/teams/football/2026-27"
+          className="block rounded-xl border-2 p-4 transition hover:brightness-110"
+          style={{ background: "var(--bg-card-hover)", borderColor: "var(--accent)" }}
+        >
+          <div className="flex items-center justify-between gap-3 flex-wrap">
+            <div>
+              <div className="flex items-center gap-2">
+                <Badge variant="live" dot>Live</Badge>
+                <span className="text-lg font-semibold">2026-27 Club Football Hub</span>
+              </div>
+              <p className="text-sm text-[var(--text-muted)] mt-1 max-w-2xl">
+                Live league tables for every domestic competition and tier tracked, grouped by confederation,
+                alongside the European club competitions and Copa Libertadores.
+              </p>
             </div>
-            <p className="text-sm text-[var(--text-muted)] mt-1 max-w-2xl">
-              Live league tables for every domestic competition and tier tracked, grouped by confederation,
-              alongside the European club competitions and Copa Libertadores.
-            </p>
+            <span className="text-sm text-[var(--accent)] font-medium whitespace-nowrap">Open the season hub →</span>
           </div>
-          <span className="text-sm text-[var(--accent)] font-medium whitespace-nowrap">Open the season hub →</span>
-        </div>
-      </Link>
+        </Link>
+      </FootballHero>
 
       <details className="group mb-8 rounded-xl border" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
         <summary className="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden px-5 py-3.5 flex items-center justify-between gap-3">
@@ -180,34 +200,15 @@ export default function FootballIndex() {
               <Link
                 key={t.slug}
                 href={`/teams/football/tournaments/${t.slug}`}
-                className="block rounded-xl border p-4 transition hover:border-[var(--accent)]"
+                className="block rounded-xl border p-4 transition hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]"
                 style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
               >
                 <div className="flex items-baseline justify-between gap-2">
                   <div className="font-semibold">{t.short_label}</div>
-                  {!t.active && (
-                    <span
-                      className="inline-block rounded px-1.5 py-0.5 text-[9px] uppercase tracking-wide font-semibold"
-                      style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-muted)" }}
-                    >
-                      Defunct
-                    </span>
-                  )}
-                  {isLive && (
-                    <span
-                      className="inline-block rounded px-1.5 py-0.5 text-[9px] uppercase tracking-wide font-semibold"
-                      style={{ background: "rgba(16,185,129,0.18)", color: "#10b981" }}
-                    >
-                      Live
-                    </span>
-                  )}
+                  {!t.active && <Badge variant="defunct">Defunct</Badge>}
+                  {isLive && <Badge variant="live" dot>Live</Badge>}
                   {t.active && !isLive && !NO_SEASON_STATE.has(t.slug) && (
-                    <span
-                      className="inline-block rounded px-1.5 py-0.5 text-[9px] uppercase tracking-wide font-semibold"
-                      style={{ background: "rgba(120,120,140,0.12)", color: "var(--text-dim)" }}
-                    >
-                      Offseason
-                    </span>
+                    <Badge variant="offseason">Offseason</Badge>
                   )}
                 </div>
                 <div className="text-xs text-[var(--text-muted)] mt-1 tabular-nums">
@@ -235,12 +236,12 @@ export default function FootballIndex() {
             <Link
               key={h.slug}
               href={`/teams/football/leagues/${h.slug}`}
-              className="block rounded-xl border p-4 transition hover:border-[var(--accent)]"
+              className="block rounded-xl border p-4 transition hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]"
               style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
             >
               <div className="flex items-baseline justify-between gap-2">
                 <div className="text-base font-semibold">{h.league}</div>
-                <span className="inline-block rounded px-1.5 py-0.5 text-[9px] uppercase tracking-wide font-semibold" style={live ? { background: "rgba(16,185,129,0.18)", color: "#10b981" } : { background: "rgba(120,120,140,0.12)", color: "var(--text-dim)" }}>{live ? "Live" : "Offseason"}</span>
+                <Badge variant={live ? "live" : "offseason"} dot={live}>{live ? "Live" : "Offseason"}</Badge>
               </div>
               <div className="text-xs text-[var(--text-muted)] mt-1">{h.country}</div>
               <div className="text-xs text-[var(--text-muted)] mt-2 tabular-nums">
@@ -256,7 +257,7 @@ export default function FootballIndex() {
         <h2 id="domestic" className="text-lg font-semibold mb-3">Domestic Leagues Worldwide</h2>
         <Link
           href="/teams/football/domestic"
-          className="block rounded-xl border p-4 transition hover:border-[var(--accent)]"
+          className="block rounded-xl border p-4 transition hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]"
           style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
         >
           <div className="text-base font-semibold">Every first-division club, all leagues together</div>
@@ -268,6 +269,23 @@ export default function FootballIndex() {
           </div>
           <div className="text-xs text-[var(--accent)] mt-2">Open the master table →</div>
         </Link>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-lg font-semibold mb-3">How club football works</h2>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 text-sm">
+          {[
+            ["Promotion & relegation", "Most leagues on this site are open pyramids: the bottom few clubs in a division swap places with the top few from the tier below each season. England's is the deepest tracked here, five levels from the Premier League down to the National League."],
+            ["Qualifying for Europe", "A club's league finish (and sometimes a domestic cup win) earns a spot in next season's Champions League, Europa League, or Conference League — UEFA's three continental club competitions, seeded by a country's five-year coefficient."],
+            ["Country coefficients", "UEFA ranks each of its 55 member associations by how their clubs perform in Europe over a rolling five years. A higher coefficient means more Champions League places and a easier route through qualifying — it's why a mid-table team in a strong country can outrank a champion elsewhere."],
+            ["Reading a club page", "Every club page stacks the same layers: honors and footprint at the top, a rank-history chart, then season-by-season league results, domestic cup runs, and European appearances — the full record in one scroll."],
+          ].map(([h, b]) => (
+            <div key={h} className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+              <p className="font-semibold text-[var(--text)] mb-1">{h}</p>
+              <p className="text-xs text-[var(--text-muted)]">{b}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       <FootballIndexClient clubs={clientClubs} />

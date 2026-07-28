@@ -11,6 +11,10 @@ import { getFootballClubByName } from "@/lib/football";
 import { getClubStandings, getClubCompetitions, getSuperCups, getDomesticCups, type LiveRow, type LiveComp } from "@/lib/clubFootballLive";
 import Hub2027Client, { type HubConf, type HubLeague, type HubGroup, type HubRow } from "./Hub2027Client";
 import { SuperCupsSection, DomesticCupsSection } from "./LiveCups";
+import { FootballHero } from "@/app/teams/_shared/FootballHero";
+import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
+import { Badge } from "@/app/teams/_shared/Badge";
+import { ResponsiveTable, MiniStat, MiniCardHeader } from "@/app/teams/_shared/ResponsiveTable";
 
 export const revalidate = 300;
 
@@ -133,8 +137,35 @@ function buildConfs(standings: Awaited<ReturnType<typeof getClubStandings>>): Hu
 // ---- continental competitions band --------------------------------------
 function CompGroupTable({ rows }: { rows: LiveRow[] }) {
   const cols = ["P", "W", "D", "L", "GD", "Pts"];
+  const sorted = rows.slice().sort(byPtsGd);
   return (
-    <div className="overflow-x-auto">
+    <ResponsiveTable
+      compact
+      className="rounded-lg border"
+      style={cardStyle}
+      mobileRows={sorted.map((r, i) => {
+        const c = resolveClub(r);
+        return (
+          <div key={i}>
+            <MiniCardHeader
+              left={
+                <span className="inline-flex items-center gap-1.5 min-w-0">
+                  <span className="text-[var(--text-dim)] flex-shrink-0 tabular-nums" style={mono}>{r.rank ?? i + 1}</span>
+                  <CrestIcon name={c.name} size={14} className="flex-shrink-0" />
+                  {c.slug ? <Link href={`/teams/football/${c.slug}`} className="hover:text-[var(--accent)] truncate">{c.name}</Link> : <span className="truncate">{c.name}</span>}
+                </span>
+              }
+              right={<span className="tabular-nums font-semibold" style={mono}>{num(r.points)} pts</span>}
+            />
+            <div className="grid grid-cols-3 gap-2">
+              <MiniStat label="P" value={num(r.played)} />
+              <MiniStat label="W-D-L" value={`${num(r.win)}-${num(r.draw)}-${num(r.lose)}`} />
+              <MiniStat label="GD" value={num(r.gd)} />
+            </div>
+          </div>
+        );
+      })}
+    >
       <table className="w-full text-xs min-w-[300px]">
         <thead>
           <tr className="text-left text-[var(--text-muted)]">
@@ -144,7 +175,7 @@ function CompGroupTable({ rows }: { rows: LiveRow[] }) {
           </tr>
         </thead>
         <tbody>
-          {rows.slice().sort(byPtsGd).map((r, i) => {
+          {sorted.map((r, i) => {
             const c = resolveClub(r);
             return (
               <tr key={i} className="border-t" style={{ borderColor: "var(--border)" }}>
@@ -163,7 +194,7 @@ function CompGroupTable({ rows }: { rows: LiveRow[] }) {
           })}
         </tbody>
       </table>
-    </div>
+    </ResponsiveTable>
   );
 }
 
@@ -243,23 +274,30 @@ export default async function ClubFootball2027Page() {
 
       <FootballHubNav current="season" />
 
-      <header className="mb-6">
-        <h1 className="text-3xl font-semibold tracking-tight">2026-27 Club Football</h1>
-        <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
-          Every domestic league and level the site tracks, live, grouped by confederation and tier, alongside
-          the European club competitions and Copa Libertadores. Tables refresh daily; leagues appear here once
-          their season is under way.
-        </p>
-        <p className="mt-2 text-xs text-[var(--text-dim)] tabular-nums">
-          {totalLeagues} live league{totalLeagues === 1 ? "" : "s"} · {orderedComps.length} continental competition{orderedComps.length === 1 ? "" : "s"}
-        </p>
-      </header>
-
-      <div className="mb-6 flex items-center justify-between gap-3 text-xs">
-        <Link href="/teams/football/2025-26" className="inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 hover:text-[var(--accent)] transition-colors" style={cardStyle}><span className="text-[var(--text-dim)]">←</span> 2025-26</Link>
-        <Link href="/teams/football/seasons" className="text-[var(--text-muted)] hover:text-[var(--accent)]">All seasons</Link>
-        <span />
-      </div>
+      <FootballHero
+        eyebrow={<span className="inline-flex items-center gap-1.5"><Badge variant="live" dot>Live</Badge> 2026-27 Season</span>}
+        title={<h1 className="text-3xl font-semibold tracking-tight">2026-27 Club Football</h1>}
+        subtitle={
+          <>
+            Every domestic league and level the site tracks, live, grouped by confederation and tier, alongside
+            the European club competitions and Copa Libertadores. Tables refresh daily; leagues appear here once
+            their season is under way.
+          </>
+        }
+        cta={
+          <div className="flex items-center gap-3 text-xs flex-shrink-0">
+            <Link href="/teams/football/2025-26" className="inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 hover:text-[var(--accent)] transition-colors" style={{ background: "var(--bg-card-hover)", borderColor: "var(--border)" }}><span className="text-[var(--text-dim)]">←</span> 2025-26</Link>
+            <Link href="/teams/football/seasons" className="text-[var(--text-muted)] hover:text-[var(--accent)]">All seasons</Link>
+          </div>
+        }
+        stats={
+          <StatGrid className="sm:grid-cols-3">
+            <StatTile label="Live leagues" value={totalLeagues} />
+            <StatTile label="Continental competitions" value={orderedComps.length} />
+            <StatTile label="Confederations" value={confs.length} />
+          </StatGrid>
+        }
+      />
 
       <HubNav items={nav} />
 

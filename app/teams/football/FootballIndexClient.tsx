@@ -10,6 +10,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
+import { Badge } from "@/app/teams/_shared/Badge";
 import { getCrest } from "@/lib/teamCrest";
 import type { FootballMapPoint } from "./FootballMapInner";
 
@@ -256,6 +257,10 @@ export default function FootballIndexClient({ clubs }: Props) {
   // the empty state.
   const [seasonYear, setSeasonYear] = useState<string>("");
   const [search, setSearch] = useState<string>("");
+  // Country/level/season controls collapse behind this on mobile so the
+  // card doesn't open with a wall of chips + a wide slider; search stays
+  // visible up top since it's the highest-utility control on a phone.
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   // Year bounds across the whole dataset, used for the season slider/select.
   const { minYear, maxYear } = useMemo(() => {
@@ -413,6 +418,7 @@ export default function FootballIndexClient({ clubs }: Props) {
   );
   const clearAll = () => { setCountries(new Set()); setLevels(new Set()); setSeasonYear(""); setSearch(""); };
   const anyActive = countries.size > 0 || levels.size > 0 || seasonYear !== "" || search !== "";
+  const activeFilterCount = countries.size + levels.size + (seasonYear !== "" ? 1 : 0);
 
   return (
     <div>
@@ -431,141 +437,170 @@ export default function FootballIndexClient({ clubs }: Props) {
         className="rounded-xl border p-4 mb-6"
         style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
       >
-        <div className="flex flex-wrap items-center gap-2 mb-3">
-          <span className="text-xs uppercase tracking-wide text-[var(--text-muted)] mr-1">Country</span>
-          {COUNTRY_ORDER.map((c) => {
-            const active = countries.has(c);
-            return (
-              <button
-                key={c}
-                onClick={() => toggleCountry(c)}
-                className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-md border transition"
-                style={{
-                  background: active ? "var(--accent)" : "transparent",
-                  color: active ? "#fff" : "var(--text)",
-                  borderColor: active ? "var(--accent)" : "var(--border)",
-                }}
-              >
-                <span
-                  className="inline-block rounded-full"
-                  style={{ background: COUNTRY_COLORS[c] ?? "#525252", width: 8, height: 8 }}
-                  aria-hidden
-                />
-                {c}
-              </button>
-            );
-          })}
-        </div>
-
-        {visibleLevels.length > 1 && (
-          <div className="flex flex-wrap items-center gap-2 mb-3">
-            <span className="text-xs uppercase tracking-wide text-[var(--text-muted)] mr-1">Level</span>
-            {visibleLevels.map((n) => {
-              const active = levels.has(n);
-              return (
-                <button
-                  key={n}
-                  onClick={() => toggleLevel(n)}
-                  className="text-xs px-2.5 py-1 rounded-md border transition tabular-nums"
-                  style={{
-                    background: active ? "var(--accent)" : "transparent",
-                    color: active ? "#fff" : "var(--text)",
-                    borderColor: active ? "var(--accent)" : "var(--border)",
-                  }}
-                  title={n === 1 ? "Top flight" : `Tier ${n} (English pyramid only outside Level 1)`}
-                >
-                  {n}
-                </button>
-              );
-            })}
-            <span className="text-[10px] text-[var(--text-dim)] ml-1">multi-select; Levels 2-5 are England-only in v0</span>
-          </div>
-        )}
-
-        <div className="flex flex-wrap items-center gap-3">
-          <label className="text-xs uppercase tracking-wide text-[var(--text-muted)]">
-            Active in season ending
-          </label>
-          <input
-            type="number"
-            min={minYear}
-            max={maxYear}
-            step={1}
-            value={seasonYear}
-            onChange={(e) => setSeasonYear(e.target.value)}
-            placeholder="ALL"
-            className="text-sm px-2 py-1 rounded-md border w-24 tabular-nums"
-            style={{ background: "var(--bg)", borderColor: "var(--border)", color: "var(--text)" }}
-          />
-          {/* Step buttons: -1 / +1 around the slider. Empty seasonYear is
-              the ALL sentinel which lives at the maxYear+1 slider position;
-              stepping backward from ALL lands on the most recent year,
-              stepping forward from maxYear lands back on ALL. */}
-          <button
-            type="button"
-            onClick={() => {
-              const cur = seasonYear ? parseInt(seasonYear, 10) : maxYear + 1;
-              const next = cur - 1;
-              if (next < minYear) setSeasonYear(String(minYear));
-              else if (next >= maxYear + 1) setSeasonYear("");
-              else setSeasonYear(String(next));
-            }}
-            disabled={seasonYear !== "" && parseInt(seasonYear, 10) <= minYear}
-            aria-label="Previous year"
-            title="Previous year"
-            className="text-sm px-2 py-1 rounded-md border transition hover:border-[var(--accent)] disabled:opacity-40 disabled:cursor-not-allowed"
-            style={{ borderColor: "var(--border)", background: "transparent", color: "var(--text)" }}
-          >
-            ◀
-          </button>
-          <input
-            type="range"
-            min={minYear}
-            max={maxYear + 1}
-            step={1}
-            value={seasonYear ? parseInt(seasonYear, 10) : maxYear + 1}
-            onChange={(e) => {
-              // Position maxYear+1 = ALL sentinel (slider all the way right).
-              const v = parseInt(e.target.value, 10);
-              if (v >= maxYear + 1) setSeasonYear("");
-              else setSeasonYear(String(v));
-            }}
-            className="flex-1 min-w-[180px] max-w-md accent-[var(--accent)]"
-            aria-label="Season year slider (rightmost position = ALL)"
-            title="Drag to a year to filter; slide all the way right for ALL eras"
-          />
-          <button
-            type="button"
-            onClick={() => {
-              const cur = seasonYear ? parseInt(seasonYear, 10) : maxYear + 1;
-              const next = cur + 1;
-              if (next >= maxYear + 1) setSeasonYear("");
-              else if (next < minYear) setSeasonYear(String(minYear));
-              else setSeasonYear(String(next));
-            }}
-            disabled={seasonYear === ""}
-            aria-label="Next year (or ALL)"
-            title="Next year (loops back to ALL past the most recent season)"
-            className="text-sm px-2 py-1 rounded-md border transition hover:border-[var(--accent)] disabled:opacity-40 disabled:cursor-not-allowed"
-            style={{ borderColor: "var(--border)", background: "transparent", color: "var(--text)" }}
-          >
-            ▶
-          </button>
+        {/* Always-visible bar: search (primary control on a phone) + a
+            mobile-only toggle that reveals country/level/season filtering.
+            Desktop skips the toggle and shows everything inline below. */}
+        <div className="flex items-center gap-2 mb-3">
           <input
             type="search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search club or metro"
-            className="text-sm px-2 py-1 rounded-md border w-48"
+            className="flex-1 sm:max-w-xs text-sm px-3 py-1.5 rounded-md border"
             style={{ background: "var(--bg)", borderColor: "var(--border)", color: "var(--text)" }}
           />
+          <button
+            type="button"
+            onClick={() => setMobileFiltersOpen((v) => !v)}
+            aria-expanded={mobileFiltersOpen}
+            className="sm:hidden inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-md border transition flex-shrink-0"
+            style={{ background: "var(--bg-card-hover)", borderColor: "var(--border)", color: "var(--text)" }}
+          >
+            Filters
+            {activeFilterCount > 0 && <Badge variant="live">{activeFilterCount}</Badge>}
+            <span aria-hidden className={`transition-transform ${mobileFiltersOpen ? "rotate-180" : ""}`}>▾</span>
+          </button>
           {anyActive && (
             <button
               onClick={clearAll}
-              className="text-xs px-2.5 py-1 rounded-md border hover:bg-[var(--bg-card-hover)] transition"
+              className="hidden sm:inline-flex text-xs px-2.5 py-1 rounded-md border hover:bg-[var(--bg-card-hover)] transition flex-shrink-0"
               style={{ borderColor: "var(--border)" }}
             >
               Clear
+            </button>
+          )}
+        </div>
+
+        <div className={`${mobileFiltersOpen ? "block" : "hidden"} sm:block`}>
+          <div className="flex flex-wrap items-center gap-2 mb-3">
+            <span className="text-xs uppercase tracking-wide text-[var(--text-muted)] mr-1">Country</span>
+            {COUNTRY_ORDER.map((c) => {
+              const active = countries.has(c);
+              return (
+                <button
+                  key={c}
+                  onClick={() => toggleCountry(c)}
+                  className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-md border transition"
+                  style={{
+                    background: active ? "var(--accent)" : "transparent",
+                    color: active ? "#fff" : "var(--text)",
+                    borderColor: active ? "var(--accent)" : "var(--border)",
+                  }}
+                >
+                  <span
+                    className="inline-block rounded-full"
+                    style={{ background: COUNTRY_COLORS[c] ?? "#525252", width: 8, height: 8 }}
+                    aria-hidden
+                  />
+                  {c}
+                </button>
+              );
+            })}
+          </div>
+
+          {visibleLevels.length > 1 && (
+            <div className="flex flex-wrap items-center gap-2 mb-3">
+              <span className="text-xs uppercase tracking-wide text-[var(--text-muted)] mr-1">Level</span>
+              {visibleLevels.map((n) => {
+                const active = levels.has(n);
+                return (
+                  <button
+                    key={n}
+                    onClick={() => toggleLevel(n)}
+                    className="text-xs px-2.5 py-1 rounded-md border transition tabular-nums"
+                    style={{
+                      background: active ? "var(--accent)" : "transparent",
+                      color: active ? "#fff" : "var(--text)",
+                      borderColor: active ? "var(--accent)" : "var(--border)",
+                    }}
+                    title={n === 1 ? "Top flight" : `Tier ${n} (English pyramid only outside Level 1)`}
+                  >
+                    {n}
+                  </button>
+                );
+              })}
+              <span className="text-[10px] text-[var(--text-dim)] ml-1">multi-select; Levels 2-5 are England-only in v0</span>
+            </div>
+          )}
+
+          <div className="flex flex-wrap items-center gap-3">
+            <label className="text-xs uppercase tracking-wide text-[var(--text-muted)]">
+              Active in season ending
+            </label>
+            <input
+              type="number"
+              min={minYear}
+              max={maxYear}
+              step={1}
+              value={seasonYear}
+              onChange={(e) => setSeasonYear(e.target.value)}
+              placeholder="ALL"
+              className="text-sm px-2 py-1 rounded-md border w-24 tabular-nums"
+              style={{ background: "var(--bg)", borderColor: "var(--border)", color: "var(--text)" }}
+            />
+            {/* Step buttons: -1 / +1 around the slider. Empty seasonYear is
+                the ALL sentinel which lives at the maxYear+1 slider position;
+                stepping backward from ALL lands on the most recent year,
+                stepping forward from maxYear lands back on ALL. */}
+            <button
+              type="button"
+              onClick={() => {
+                const cur = seasonYear ? parseInt(seasonYear, 10) : maxYear + 1;
+                const next = cur - 1;
+                if (next < minYear) setSeasonYear(String(minYear));
+                else if (next >= maxYear + 1) setSeasonYear("");
+                else setSeasonYear(String(next));
+              }}
+              disabled={seasonYear !== "" && parseInt(seasonYear, 10) <= minYear}
+              aria-label="Previous year"
+              title="Previous year"
+              className="text-sm px-2 py-1 rounded-md border transition hover:border-[var(--accent)] disabled:opacity-40 disabled:cursor-not-allowed"
+              style={{ borderColor: "var(--border)", background: "transparent", color: "var(--text)" }}
+            >
+              ◀
+            </button>
+            <input
+              type="range"
+              min={minYear}
+              max={maxYear + 1}
+              step={1}
+              value={seasonYear ? parseInt(seasonYear, 10) : maxYear + 1}
+              onChange={(e) => {
+                // Position maxYear+1 = ALL sentinel (slider all the way right).
+                const v = parseInt(e.target.value, 10);
+                if (v >= maxYear + 1) setSeasonYear("");
+                else setSeasonYear(String(v));
+              }}
+              className="flex-1 min-w-[180px] max-w-md accent-[var(--accent)]"
+              aria-label="Season year slider (rightmost position = ALL)"
+              title="Drag to a year to filter; slide all the way right for ALL eras"
+            />
+            <button
+              type="button"
+              onClick={() => {
+                const cur = seasonYear ? parseInt(seasonYear, 10) : maxYear + 1;
+                const next = cur + 1;
+                if (next >= maxYear + 1) setSeasonYear("");
+                else if (next < minYear) setSeasonYear(String(minYear));
+                else setSeasonYear(String(next));
+              }}
+              disabled={seasonYear === ""}
+              aria-label="Next year (or ALL)"
+              title="Next year (loops back to ALL past the most recent season)"
+              className="text-sm px-2 py-1 rounded-md border transition hover:border-[var(--accent)] disabled:opacity-40 disabled:cursor-not-allowed"
+              style={{ borderColor: "var(--border)", background: "transparent", color: "var(--text)" }}
+            >
+              ▶
+            </button>
+          </div>
+
+          {anyActive && (
+            <button
+              onClick={clearAll}
+              className="sm:hidden mt-3 text-xs px-2.5 py-1 rounded-md border hover:bg-[var(--bg-card-hover)] transition"
+              style={{ borderColor: "var(--border)" }}
+            >
+              Clear all filters
             </button>
           )}
         </div>
@@ -582,19 +617,19 @@ export default function FootballIndexClient({ clubs }: Props) {
         <p className="text-sm text-[var(--text-muted)] italic">No clubs match the current filters.</p>
       ) : (
         grouped.map((g) => (
-          <section key={g.country} className="mb-10">
-            <h2 className="text-xl font-semibold mb-3 flex items-baseline gap-2">
+          <section key={g.country} className="mb-8">
+            <h2 className="text-sm font-semibold mb-2 flex items-center gap-2 py-1.5">
               <span
-                className="inline-block rounded-full"
-                style={{ background: COUNTRY_COLORS[g.country] ?? "#525252", width: 12, height: 12 }}
+                className="inline-block rounded-full flex-shrink-0"
+                style={{ background: COUNTRY_COLORS[g.country] ?? "#525252", width: 10, height: 10 }}
                 aria-hidden
               />
-              {g.country}{" "}
-              <span className="text-sm text-[var(--text-muted)] font-normal tabular-nums">
-                ({g.clubs.length})
+              <span className="uppercase tracking-wide">{g.country}</span>
+              <span className="text-[var(--text-muted)] font-normal tabular-nums">
+                {g.clubs.length}
               </span>
             </h2>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-1.5 text-sm">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 text-sm">
               {g.clubs.map((c) => {
                 const sy = seasonYear ? parseInt(seasonYear, 10) : null;
                 // Show level for the selected year only. If no row exists
@@ -605,16 +640,19 @@ export default function FootballIndexClient({ clubs }: Props) {
                 // otherwise fall back to the colored dot. Never both.
                 const hasCrest = !!getCrest(c.cur_name);
                 return (
-                  <li key={c.slug} className="flex items-baseline gap-2">
-                    {!hasCrest && <Dot slug={c.slug} />}
-                    <Link href={`/teams/football/${c.slug}`} className="hover:underline">
-                      {hasCrest && <CrestIcon name={c.cur_name} size={16} className="mr-1.5 align-middle" />}
-                      {c.cur_name}
+                  <li key={c.slug}>
+                    <Link
+                      href={`/teams/football/${c.slug}`}
+                      className="flex items-baseline gap-2 rounded-md px-1.5 py-1 -mx-1.5 transition-colors hover:bg-[var(--bg-card-hover)]"
+                    >
+                      {!hasCrest && <Dot slug={c.slug} />}
+                      {hasCrest && <CrestIcon name={c.cur_name} size={16} className="flex-shrink-0" />}
+                      <span className="truncate">{c.cur_name}</span>
+                      {lvl !== undefined && (
+                        <span className="text-[var(--text-muted)] text-xs tabular-nums flex-shrink-0">({lvl})</span>
+                      )}
+                      <span className="text-[var(--text-muted)] text-xs ml-auto flex-shrink-0 truncate max-w-[40%]">{c.metro}</span>
                     </Link>
-                    {lvl !== undefined && (
-                      <span className="text-[var(--text-muted)] text-xs tabular-nums">({lvl})</span>
-                    )}
-                    <span className="text-[var(--text-muted)] text-xs ml-1">{c.metro}</span>
                   </li>
                 );
               })}
