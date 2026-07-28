@@ -28,6 +28,11 @@ API = "https://v3.football.api-sports.io"
 SUPA = os.environ.get("SUPABASE_URL", "https://nmprqkmymrdknffwnuur.supabase.co")
 CONTINENTAL = {2, 3, 848, 13, 531}
 SKIP_STANDINGS = {76}
+# Known upstream api-football ghosts: a spurious team_id that duplicates a real club already in
+# the table (same slot/points, different id). Dropped from resolution -> not UNMATCHED, not written
+# to the crosswalk (so the standings join filters its row off the site). Remove an id here once
+# api-football cleans up. 22722 'Chapecoense B' = a 2nd copy of Chapecoense (132) at Serie A rank 20.
+SKIP_TEAMS = {22722}
 TRANS = str.maketrans({"ø":"o","Ø":"o","ł":"l","Ł":"l","æ":"ae","Æ":"ae","œ":"oe","ð":"d","þ":"th",
                        "ß":"ss","đ":"d","ı":"i","İ":"i","'":" ","’":" "})
 
@@ -236,6 +241,8 @@ def main():
     if new_ids:
         resolve = build_resolver(supa_get("/rest/v1/football_lookup?select=cur_name,team,lookup_name,uefa_name,efs_name,api_name,country,level", skey))
         for tid in new_ids:
+            if tid in SKIP_TEAMS:
+                continue   # known upstream ghost/duplicate: skip silently (see SKIP_TEAMS)
             rec = resolve(teams_seen[tid])
             if not rec:
                 unmatched.append(tid); continue
