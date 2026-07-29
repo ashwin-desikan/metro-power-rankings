@@ -3,6 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
+import { Tabs } from "@/app/teams/_shared/Tabs";
+import { Badge } from "@/app/teams/_shared/Badge";
+import { ResponsiveTable, MiniStat, MiniCardHeader } from "@/app/teams/_shared/ResponsiveTable";
 
 // Live standings for a whole country: a switcher across every tracked league/level
 // (Premier League, Championship, League One … and, once wired, the domestic cups),
@@ -15,6 +18,7 @@ export type LiveCompTable = { id: number; name: string; level: number | null; gr
 
 const COLS = ["P", "W", "D", "L", "GF", "GA", "GD", "Pts"];
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
+const cardStyle = { background: "var(--bg-card)", borderColor: "var(--border)" } as const;
 const BADGES: Record<string, { label: string; bg: string; fg: string; title: string }> = {
   UCL: { label: "UCL", bg: "rgba(212,175,55,0.22)", fg: "#d4af37", title: "In the Champions League" },
   UEL: { label: "UEL", bg: "rgba(255,138,0,0.18)", fg: "#ff8a00", title: "In the Europa League" },
@@ -24,7 +28,41 @@ const BADGES: Record<string, { label: string; bg: string; fg: string; title: str
 
 function Table({ group }: { group: LiveTableGroup }) {
   return (
-    <div className="overflow-x-auto">
+    <ResponsiveTable
+      compact
+      className="rounded-lg border"
+      style={cardStyle}
+      mobileRows={group.rows.map((r, i) => {
+        const b = r.badge ? BADGES[r.badge] : undefined;
+        return (
+          <div key={i}>
+            <MiniCardHeader
+              left={
+                <span className="inline-flex items-center gap-1.5 min-w-0">
+                  <span className="text-[var(--text-dim)] flex-shrink-0 tabular-nums" style={mono}>{r.rank ?? i + 1}</span>
+                  <CrestIcon name={r.name} size={16} className="flex-shrink-0" />
+                  {r.slug ? <Link href={`/teams/football/${r.slug}`} className="hover:text-[var(--accent)] font-medium truncate">{r.name}</Link> : <span className="font-medium truncate">{r.name}</span>}
+                </span>
+              }
+              right={<span className="tabular-nums font-semibold" style={mono}>{r.cells[7]} pts</span>}
+            />
+            {(b || (r.cup && r.cup.length > 0)) && (
+              <div className="mb-1.5 flex flex-wrap gap-1">
+                {b && <Badge color={{ bg: b.bg, fg: b.fg }}>{b.label}</Badge>}
+                {r.cup && r.cup.length > 0 && (
+                  <Badge color={{ bg: "rgba(139,92,246,0.18)", fg: "#8b5cf6" }}>Cup{r.cup.length > 1 ? ` ×${r.cup.length}` : ""}</Badge>
+                )}
+              </div>
+            )}
+            <div className="grid grid-cols-3 gap-2">
+              <MiniStat label="P" value={r.cells[0]} />
+              <MiniStat label="W-D-L" value={`${r.cells[1]}-${r.cells[2]}-${r.cells[3]}`} />
+              <MiniStat label="GD" value={r.cells[6]} />
+            </div>
+          </div>
+        );
+      })}
+    >
       <table className="w-full text-sm min-w-[480px]">
         <thead>
           <tr className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b" style={{ borderColor: "var(--border)" }}>
@@ -50,12 +88,16 @@ function Table({ group }: { group: LiveTableGroup }) {
                   </span>
                 </td>
                 <td className="py-1.5 pl-2">
-                  {b && <span className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold tracking-wide" style={{ background: b.bg, color: b.fg }} title={b.title}>{b.label}</span>}
+                  {b && (
+                    <span title={b.title}>
+                      <Badge color={{ bg: b.bg, fg: b.fg }}>{b.label}</Badge>
+                    </span>
+                  )}
                 </td>
                 <td className="py-1.5 pl-2">
                   {r.cup && r.cup.length > 0 && (
-                    <span className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold tracking-wide" style={{ background: "rgba(139,92,246,0.18)", color: "#8b5cf6" }} title={`Still alive: ${r.cup.join(", ")}`}>
-                      Cup{r.cup.length > 1 ? ` ×${r.cup.length}` : ""}
+                    <span title={`Still alive: ${r.cup.join(", ")}`}>
+                      <Badge color={{ bg: "rgba(139,92,246,0.18)", fg: "#8b5cf6" }}>Cup{r.cup.length > 1 ? ` ×${r.cup.length}` : ""}</Badge>
                     </span>
                   )}
                 </td>
@@ -67,7 +109,7 @@ function Table({ group }: { group: LiveTableGroup }) {
           })}
         </tbody>
       </table>
-    </div>
+    </ResponsiveTable>
   );
 }
 
@@ -81,21 +123,17 @@ export default function LiveLeagueTable({ tables, defaultId, season }: { tables:
         <h2 className="text-base font-semibold">{season} standings <span className="text-[var(--text-muted)] font-normal text-sm">· live</span></h2>
       </div>
       {tables.length > 1 && (
-        <div className="flex flex-wrap gap-1.5 mb-4">
-          {tables.map((x) => {
-            const on = x.id === t.id;
-            return (
-              <button
-                key={x.id}
-                onClick={() => setActive(x.id)}
-                className={`px-2.5 py-1 text-xs rounded-md border transition ${on ? "font-semibold" : "text-[var(--text-muted)]"}`}
-                style={{ borderColor: on ? "var(--accent)" : "var(--border)", backgroundColor: on ? "var(--bg-card)" : "transparent", color: on ? "var(--accent)" : undefined }}
-              >
-                {x.name}{x.level != null ? <span className="text-[var(--text-dim)]"> · T{x.level}</span> : null}
-              </button>
-            );
-          })}
-        </div>
+        <Tabs
+          className="mb-4"
+          aria-label="League / tier"
+          active={String(t.id)}
+          onChange={(key) => setActive(Number(key))}
+          items={tables.map((x) => ({
+            key: String(x.id),
+            label: x.name,
+            badge: x.level != null ? <span className="text-[var(--text-dim)]"> · T{x.level}</span> : undefined,
+          }))}
+        />
       )}
       {t.groups.map((g, gi) => (
         <div key={gi} className={gi > 0 ? "mt-4" : ""}>

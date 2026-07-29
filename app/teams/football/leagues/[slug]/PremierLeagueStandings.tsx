@@ -4,6 +4,8 @@ import { monogramForFootball } from "@/lib/football-colors";
 import type { PlLiveRow, PlStandingsSnapshot } from "@/lib/premier-league-standings";
 import type { FootballLeagueHub, FootballCupFinal, FootballEuropeEntry } from "@/lib/football";
 import { europeanCompDisplayCode, europeanCompSortKey } from "@/lib/football";
+import { Badge } from "@/app/teams/_shared/Badge";
+import { ResponsiveTable, MiniStat, MiniCardHeader } from "@/app/teams/_shared/ResponsiveTable";
 
 // Fallback monogram badge when no crest is available
 function ColorBall({ slug, name }: { slug: string; name: string }) {
@@ -19,28 +21,18 @@ function ColorBall({ slug, name }: { slug: string; name: string }) {
   );
 }
 
-// Small labeled stat block used inside mobile standings cards.
-function Stat({ label, value }: { label: string; value: React.ReactNode }) {
-  return (
-    <div>
-      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{label}</div>
-      <div className="tabular-nums">{value}</div>
-    </div>
-  );
-}
-
 // Zone badge derived from ESPN note.description
 function ZoneBadge({ zone }: { zone: string }) {
   if (!zone) return null;
-  let style: React.CSSProperties;
+  let color: { bg: string; fg: string };
   if (zone.includes("Champions League")) {
-    style = { background: "rgba(129,214,172,0.18)", color: "#22c55e" };
+    color = { bg: "rgba(129,214,172,0.18)", fg: "#22c55e" };
   } else if (zone.includes("Europa League")) {
-    style = { background: "rgba(251,146,60,0.18)", color: "#f97316" };
+    color = { bg: "rgba(251,146,60,0.18)", fg: "#f97316" };
   } else if (zone.includes("Conference")) {
-    style = { background: "rgba(99,102,241,0.18)", color: "#818cf8" };
+    color = { bg: "rgba(99,102,241,0.18)", fg: "#818cf8" };
   } else if (zone.toLowerCase().includes("relegat")) {
-    style = { background: "rgba(220,38,38,0.14)", color: "#dc2626" };
+    color = { bg: "rgba(220,38,38,0.14)", fg: "#dc2626" };
   } else {
     return null;
   }
@@ -51,12 +43,8 @@ function ZoneBadge({ zone }: { zone: string }) {
     .replace("Conference League", "UECL")
     .replace("Relegation", "Relegated");
   return (
-    <span
-      className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
-      style={style}
-      title={zone}
-    >
-      {short}
+    <span title={zone}>
+      <Badge color={color}>{short}</Badge>
     </span>
   );
 }
@@ -93,67 +81,58 @@ function LiveTable({
         <span className="text-xs text-[var(--text-muted)]">Live from ESPN · updated every 30 min</span>
       </div>
 
-      {/* Mobile: one stacked card per club instead of a 12-column table. */}
-      <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {rows.map((row) => {
+      <ResponsiveTable
+        mobileRows={rows.map((row) => {
           const eurEntries = europeBySlug.get(row.slug ?? "") ?? [];
           return (
-            <div
-              key={row.name}
-              className="rounded-lg border p-3"
-              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
-            >
-              <div className="flex items-start justify-between gap-2">
-                <div className="flex items-center gap-2 min-w-0">
-                  <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0 w-4">{row.rank}</span>
-                  <TeamCrest
-                    name={row.name}
-                    size={22}
-                    fallback={<ColorBall slug={row.slug ?? row.abbr} name={row.name} />}
-                  />
-                  {row.slug ? (
-                    <Link href={`/teams/football/${row.slug}`} className="font-medium truncate hover:underline">
-                      {row.name}
-                    </Link>
-                  ) : (
-                    <span className="font-medium truncate">{row.name}</span>
-                  )}
-                </div>
-                <span className="flex-shrink-0 text-sm font-semibold tabular-nums">{row.points} pts</span>
-              </div>
+            <div key={row.name}>
+              <MiniCardHeader
+                left={
+                  <span className="inline-flex items-center gap-2 min-w-0">
+                    <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0 w-4">{row.rank}</span>
+                    <TeamCrest
+                      name={row.name}
+                      size={22}
+                      fallback={<ColorBall slug={row.slug ?? row.abbr} name={row.name} />}
+                    />
+                    {row.slug ? (
+                      <Link href={`/teams/football/${row.slug}`} className="font-medium truncate hover:underline">
+                        {row.name}
+                      </Link>
+                    ) : (
+                      <span className="font-medium truncate">{row.name}</span>
+                    )}
+                  </span>
+                }
+                right={<span className="text-sm font-semibold tabular-nums">{row.points} pts</span>}
+              />
               {row.zone && (
-                <div className="mt-1.5">
+                <div className="mb-1.5">
                   <ZoneBadge zone={row.zone} />
                 </div>
               )}
-              <div className="mt-2 grid grid-cols-4 gap-x-3 gap-y-1.5 text-xs">
-                <Stat label="P" value={row.played} />
-                <Stat label="W" value={row.wins} />
-                <Stat label="D" value={row.draws} />
-                <Stat label="L" value={row.losses} />
-                <Stat label="GF" value={row.gf} />
-                <Stat label="GA" value={row.ga} />
-                <Stat label="GD" value={row.gd > 0 ? `+${row.gd}` : row.gd} />
+              <div className="grid grid-cols-4 gap-x-3 gap-y-1.5 text-xs">
+                <MiniStat label="P" value={row.played} />
+                <MiniStat label="W" value={row.wins} />
+                <MiniStat label="D" value={row.draws} />
+                <MiniStat label="L" value={row.losses} />
+                <MiniStat label="GF" value={row.gf} />
+                <MiniStat label="GA" value={row.ga} />
+                <MiniStat label="GD" value={row.gd > 0 ? `+${row.gd}` : row.gd} />
               </div>
               {eurEntries.length > 0 && (
                 <div className="mt-2 flex flex-wrap gap-1">
                   {eurEntries.map((e, ei) => (
-                    <span
-                      key={ei}
-                      className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold"
-                      style={{ background: "rgba(99,102,241,0.12)", color: "#818cf8" }}
-                    >
+                    <Badge key={ei} color={{ bg: "rgba(99,102,241,0.12)", fg: "#818cf8" }}>
                       {europeanCompDisplayCode(e.code, null)}
-                    </span>
+                    </Badge>
                   ))}
                 </div>
               )}
             </div>
           );
         })}
-      </div>
-
-      <div className="overflow-x-auto hidden sm:block">
+      >
         <table className="w-full text-sm min-w-[540px]">
           <thead>
             <tr
@@ -209,13 +188,9 @@ function LiveTable({
                     {eurEntries.length > 0 ? (
                       <span className="inline-flex flex-wrap gap-1">
                         {eurEntries.map((e, ei) => (
-                          <span
-                            key={ei}
-                            className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold"
-                            style={{ background: "rgba(99,102,241,0.12)", color: "#818cf8" }}
-                          >
+                          <Badge key={ei} color={{ bg: "rgba(99,102,241,0.12)", fg: "#818cf8" }}>
                             {europeanCompDisplayCode(e.code, null)}
-                          </span>
+                          </Badge>
                         ))}
                       </span>
                     ) : (
@@ -227,12 +202,32 @@ function LiveTable({
             })}
           </tbody>
         </table>
-      </div>
+      </ResponsiveTable>
     </section>
   );
 }
 
 // ── Workbook fallback ─────────────────────────────────────────────────────────
+
+// Champion / promoted / relegated status pills, shared by the mobile card
+// and desktop table cells of the workbook-fallback standings table.
+function WorkbookBadges({ s, isChamp }: { s: FootballLeagueHub["current_standings"][number]; isChamp: boolean }) {
+  return (
+    <>
+      {isChamp && <Badge variant="champion">Champion</Badge>}
+      {s.promoted && (
+        <Badge color={{ bg: "rgba(34,197,94,0.16)", fg: "#22c55e" }}>
+          {s.playoffs ? "Promoted (PO)" : "Promoted"}
+        </Badge>
+      )}
+      {s.relegated && (
+        <Badge color={{ bg: "rgba(220,38,38,0.16)", fg: "#dc2626" }}>
+          {s.playoffs ? "Relegated (PO)" : "Relegated"}
+        </Badge>
+      )}
+    </>
+  );
+}
 
 function WorkbookTable({
   hub,
@@ -256,72 +251,51 @@ function WorkbookTable({
         </span>
       </h2>
 
-      {/* Mobile: one stacked card per club instead of a 12-column table. */}
-      <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
-        {hub.current_standings.map((s) => {
+      <ResponsiveTable
+        mobileRows={hub.current_standings.map((s) => {
           const isChamp = s.champion === true || s.place === 1;
           const eurEntries = europeBySlug.get(s.slug ?? "") ?? [];
           return (
-            <div
-              key={s.slug}
-              className="rounded-lg border p-3"
-              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
-            >
-              <div className="flex items-start justify-between gap-2">
-                <div className="flex items-center gap-2 min-w-0">
-                  <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0 w-4">{s.place ?? "–"}</span>
-                  <TeamCrest name={s.cur_name} size={22} fallback={<ColorBall slug={s.slug ?? ""} name={s.cur_name} />} />
-                  {s.slug ? (
-                    <Link href={`/teams/football/${s.slug}`} className="font-medium truncate hover:underline">{s.cur_name}</Link>
-                  ) : (
-                    <span className="font-medium truncate">{s.cur_name}</span>
-                  )}
-                </div>
-                <span className="flex-shrink-0 text-sm font-semibold tabular-nums">{s.pts ?? "–"} pts</span>
-              </div>
-              <div className="mt-1.5 flex flex-wrap gap-1">
-                {isChamp && (
-                  <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
-                        style={{ background: "rgba(245,215,110,0.18)", color: "#b58900" }}>Champion</span>
-                )}
-                {s.promoted && (
-                  <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
-                        style={{ background: "rgba(34,197,94,0.16)", color: "#22c55e" }}>
-                    {s.playoffs ? "Promoted (PO)" : "Promoted"}
+            <div key={s.slug}>
+              <MiniCardHeader
+                left={
+                  <span className="inline-flex items-center gap-2 min-w-0">
+                    <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0 w-4">{s.place ?? "–"}</span>
+                    <TeamCrest name={s.cur_name} size={22} fallback={<ColorBall slug={s.slug ?? ""} name={s.cur_name} />} />
+                    {s.slug ? (
+                      <Link href={`/teams/football/${s.slug}`} className="font-medium truncate hover:underline">{s.cur_name}</Link>
+                    ) : (
+                      <span className="font-medium truncate">{s.cur_name}</span>
+                    )}
                   </span>
-                )}
-                {s.relegated && (
-                  <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
-                        style={{ background: "rgba(220,38,38,0.16)", color: "#dc2626" }}>
-                    {s.playoffs ? "Relegated (PO)" : "Relegated"}
-                  </span>
-                )}
+                }
+                right={<span className="text-sm font-semibold tabular-nums">{s.pts ?? "–"} pts</span>}
+              />
+              <div className="flex flex-wrap gap-1">
+                <WorkbookBadges s={s} isChamp={isChamp} />
               </div>
               <div className="mt-2 grid grid-cols-4 gap-x-3 gap-y-1.5 text-xs">
-                <Stat label="P" value={s.matches ?? "–"} />
-                <Stat label="W" value={s.w ?? "–"} />
-                <Stat label="D" value={s.d ?? "–"} />
-                <Stat label="L" value={s.l ?? "–"} />
-                <Stat label="GF" value={s.gf ?? "–"} />
-                <Stat label="GA" value={s.ga ?? "–"} />
-                <Stat label="GD" value={s.gd != null ? (s.gd > 0 ? `+${s.gd}` : s.gd) : "–"} />
+                <MiniStat label="P" value={s.matches ?? "–"} />
+                <MiniStat label="W" value={s.w ?? "–"} />
+                <MiniStat label="D" value={s.d ?? "–"} />
+                <MiniStat label="L" value={s.l ?? "–"} />
+                <MiniStat label="GF" value={s.gf ?? "–"} />
+                <MiniStat label="GA" value={s.ga ?? "–"} />
+                <MiniStat label="GD" value={s.gd != null ? (s.gd > 0 ? `+${s.gd}` : s.gd) : "–"} />
               </div>
               {eurEntries.length > 0 && (
                 <div className="mt-2 flex flex-wrap gap-1">
                   {eurEntries.map((e, ei) => (
-                    <span key={ei} className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold"
-                          style={{ background: "rgba(99,102,241,0.12)", color: "#818cf8" }}>
+                    <Badge key={ei} color={{ bg: "rgba(99,102,241,0.12)", fg: "#818cf8" }}>
                       {europeanCompDisplayCode(e.code, null)}
-                    </span>
+                    </Badge>
                   ))}
                 </div>
               )}
             </div>
           );
         })}
-      </div>
-
-      <div className="mt-4 overflow-x-auto hidden sm:block">
+      >
         <table className="w-full text-sm min-w-[540px]">
           <thead>
             <tr
@@ -361,22 +335,7 @@ function WorkbookTable({
                   </td>
                   <td className="py-1.5">
                     <span className="inline-flex flex-wrap gap-1">
-                      {isChamp && (
-                        <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
-                              style={{ background: "rgba(245,215,110,0.18)", color: "#b58900" }}>Champion</span>
-                      )}
-                      {s.promoted && (
-                        <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
-                              style={{ background: "rgba(34,197,94,0.16)", color: "#22c55e" }}>
-                          {s.playoffs ? "Promoted (PO)" : "Promoted"}
-                        </span>
-                      )}
-                      {s.relegated && (
-                        <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
-                              style={{ background: "rgba(220,38,38,0.16)", color: "#dc2626" }}>
-                          {s.playoffs ? "Relegated (PO)" : "Relegated"}
-                        </span>
-                      )}
+                      <WorkbookBadges s={s} isChamp={isChamp} />
                     </span>
                   </td>
                   <td className="py-1.5 text-right tabular-nums">{s.matches ?? "–"}</td>
@@ -391,10 +350,9 @@ function WorkbookTable({
                     {eurEntries.length > 0 ? (
                       <span className="inline-flex flex-wrap gap-1">
                         {eurEntries.map((e, ei) => (
-                          <span key={ei} className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold"
-                                style={{ background: "rgba(99,102,241,0.12)", color: "#818cf8" }}>
+                          <Badge key={ei} color={{ bg: "rgba(99,102,241,0.12)", fg: "#818cf8" }}>
                             {europeanCompDisplayCode(e.code, null)}
-                          </span>
+                          </Badge>
                         ))}
                       </span>
                     ) : (
@@ -406,7 +364,7 @@ function WorkbookTable({
             })}
           </tbody>
         </table>
-      </div>
+      </ResponsiveTable>
     </section>
   );
 }

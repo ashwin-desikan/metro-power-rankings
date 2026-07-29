@@ -5,6 +5,7 @@ import Link from "next/link";
 import { monogramForFootball } from "@/lib/football-colors";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import type { ContinentalSection } from "@/lib/football";
+import { ResponsiveTable, MiniStat } from "@/app/teams/_shared/ResponsiveTable";
 
 type Row = {
   year: number | null;
@@ -123,36 +124,25 @@ export default function ContinentalTable({ sections }: { sections: ContinentalSe
         <span aria-live="polite" className="sr-only">{announce}</span>
       </div>
 
-      {/* Mobile: one stacked card per final instead of a 5-column table. */}
-      <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {sorted.map((r, i) => (
-          <div
-            key={`${r.year}-${r.continent}-${r.tournament}-${i}-card`}
-            className="rounded-lg border p-3"
-            style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
-          >
-            <div className="flex items-start justify-between gap-2">
+      <ResponsiveTable
+        className="rounded-xl border"
+        style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+        mobileRows={sorted.map((r, i) => (
+          <div key={`${r.year}-${r.continent}-${r.tournament}-${i}-card`}>
+            <div className="flex items-start justify-between gap-2 mb-2">
               <div className="min-w-0">
                 <div className="text-sm font-medium truncate">{r.tournament ?? "—"}</div>
                 <div className="text-xs text-[var(--text-muted)]">{r.continent}</div>
               </div>
               <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]">{r.year ?? "—"}</span>
             </div>
-            <div className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
-              <div>
-                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Champion</div>
-                <ClubCell name={r.champion} slug={r.champion_slug} />
-              </div>
-              <div>
-                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Runner-up</div>
-                <ClubCell name={r.runner_up} slug={r.runner_up_slug} />
-              </div>
+            <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
+              <MiniStat label="Champion" value={<ClubCell name={r.champion} slug={r.champion_slug} />} />
+              <MiniStat label="Runner-up" value={<ClubCell name={r.runner_up} slug={r.runner_up_slug} />} />
             </div>
           </div>
         ))}
-      </div>
-
-      <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+      >
         <table className="w-full text-sm tabular-nums min-w-[640px]">
           <thead>
             <tr className="border-b text-[11px] uppercase tracking-wide" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
@@ -175,7 +165,7 @@ export default function ContinentalTable({ sections }: { sections: ContinentalSe
             ))}
           </tbody>
         </table>
-      </div>
+      </ResponsiveTable>
     </div>
   );
 }

@@ -11,6 +11,9 @@ import Link from "next/link";
 import { monogramForFootball } from "@/lib/football-colors";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import type { MlsStanding } from "@/lib/football";
+import { Tabs } from "@/app/teams/_shared/Tabs";
+import { Badge } from "@/app/teams/_shared/Badge";
+import { ResponsiveTable, MiniStat, MiniCardHeader } from "@/app/teams/_shared/ResponsiveTable";
 
 const MLS_CREST_ALIAS: Record<string, string> = { "LA Galaxy": "Los Angeles Galaxy" };
 
@@ -31,17 +34,28 @@ function TeamCell({ row }: { row: MlsStanding }) {
 
 function Honors({ row }: { row: MlsStanding }) {
   const badges: React.ReactNode[] = [];
-  const gold = { background: "rgba(245,215,110,0.18)", color: "#b58900" } as const;
   if (row.supporters_shield) {
-    badges.push(<span key="ss" className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold whitespace-nowrap" style={gold} title="Supporters' Shield (best regular-season record)">★ Shield</span>);
+    badges.push(
+      <span key="ss" title="Supporters' Shield (best regular-season record)">
+        <Badge variant="champion">★ Shield</Badge>
+      </span>
+    );
   }
   // Deepest playoff result, most significant first.
   if (row.mls_cup) {
-    badges.push(<span key="cup" className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold whitespace-nowrap" style={gold} title="MLS Cup champion">★ MLS Cup</span>);
+    badges.push(
+      <span key="cup" title="MLS Cup champion">
+        <Badge variant="champion">★ MLS Cup</Badge>
+      </span>
+    );
   } else if (row.mls_cup_app) {
     badges.push(<span key="final" className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold whitespace-nowrap border" style={{ borderColor: "rgba(245,215,110,0.5)", color: "#b58900" }} title="Reached the MLS Cup final">MLS Cup Final</span>);
   } else if (row.playoff_sf) {
-    badges.push(<span key="sf" className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold whitespace-nowrap" style={{ background: "rgba(99,102,241,0.12)", color: "#818cf8" }} title="Reached the conference final (final four)">Conf Final</span>);
+    badges.push(
+      <span key="sf" title="Reached the conference final (final four)">
+        <Badge color={{ bg: "rgba(99,102,241,0.12)", fg: "#818cf8" }}>Conf Final</Badge>
+      </span>
+    );
   } else if (row.playoffs) {
     badges.push(<span key="po" className="inline-block rounded px-1.5 py-0.5 text-[10px] font-semibold whitespace-nowrap border" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }} title="Qualified for the MLS Cup Playoffs">Playoffs</span>);
   }
@@ -49,112 +63,94 @@ function Honors({ row }: { row: MlsStanding }) {
   return <span className="inline-flex flex-wrap gap-1">{badges}</span>;
 }
 
-function StandingStat({ label, v }: { label: string; v: React.ReactNode }) {
-  return (
-    <div>
-      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{label}</div>
-      <div className="tabular-nums">{v}</div>
-    </div>
-  );
-}
-
 function Table({ rows, showConf, showHonors }: { rows: MlsStanding[]; showConf: boolean; showHonors: boolean }) {
   return (
-    <>
-      {/* Mobile: one card per team instead of a dense, column-hiding table.
-          Every column from the desktop table is present on the card. */}
-      <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {rows.map((r, i) => (
-          <div
-            key={r.cur_name}
-            className="rounded-lg border p-3"
-            style={{ background: r.supporters_shield ? "rgba(245,215,110,0.06)" : "var(--bg-card)", borderColor: "var(--border)" }}
-          >
-            <div className="flex items-center justify-between gap-2">
-              <div className="flex items-center gap-2 min-w-0">
+    <ResponsiveTable
+      className="rounded-xl border"
+      style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+      mobileRows={rows.map((r, i) => (
+        <div key={r.cur_name}>
+          <MiniCardHeader
+            left={
+              <span className="inline-flex items-center gap-2 min-w-0">
                 <span className="text-xs tabular-nums text-[var(--text-muted)] w-4 flex-shrink-0">{i + 1}</span>
                 <TeamCell row={r} />
-              </div>
-              <span className="flex-shrink-0 text-sm font-semibold tabular-nums">{r.pts ?? "—"} <span className="text-[10px] font-normal text-[var(--text-dim)] uppercase">pts</span></span>
-            </div>
-            {showConf && r.conference && (
-              <div className="mt-0.5 ml-6 text-[11px] text-[var(--text-dim)]">{r.conference}</div>
-            )}
-            <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
-              <StandingStat label="W" v={r.w} />
-              <StandingStat label="D" v={r.d} />
-              <StandingStat label="L" v={r.l} />
-              <StandingStat label="GF" v={r.gs} />
-              <StandingStat label="GA" v={r.ga} />
-              <StandingStat label="GD" v={r.gd > 0 ? `+${r.gd}` : r.gd} />
-            </div>
-            {showHonors && (
-              <div className="mt-2">
-                <Honors row={r} />
-              </div>
-            )}
+              </span>
+            }
+            right={<span className="text-sm font-semibold tabular-nums">{r.pts ?? "—"} <span className="text-[10px] font-normal text-[var(--text-dim)] uppercase">pts</span></span>}
+          />
+          {showConf && r.conference && (
+            <div className="mb-1.5 text-[11px] text-[var(--text-dim)]">{r.conference}</div>
+          )}
+          <div className="grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+            <MiniStat label="W" value={r.w} />
+            <MiniStat label="D" value={r.d} />
+            <MiniStat label="L" value={r.l} />
+            <MiniStat label="GF" value={r.gs} />
+            <MiniStat label="GA" value={r.ga} />
+            <MiniStat label="GD" value={r.gd > 0 ? `+${r.gd}` : r.gd} />
           </div>
-        ))}
-      </div>
-
-      <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
-        <table className="w-full min-w-[640px] text-sm tabular-nums">
-          <thead>
-            <tr className="border-b text-[11px] uppercase tracking-wide" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
-              <th className="text-left py-2 px-3 font-medium">#</th>
-              <th className="text-left py-2 px-3 font-medium">Team</th>
-              {showConf && <th className="text-left py-2 px-2 font-medium">Conf</th>}
-              <th className="text-right py-2 px-2 font-medium">W</th>
-              <th className="text-right py-2 px-2 font-medium">D</th>
-              <th className="text-right py-2 px-2 font-medium">L</th>
-              <th className="text-right py-2 px-2 font-medium">Pts</th>
-              <th className="text-right py-2 px-2 font-medium">GF</th>
-              <th className="text-right py-2 px-2 font-medium">GA</th>
-              <th className="text-right py-2 px-2 font-medium">GD</th>
-              {showHonors && <th className="text-left py-2 px-3 font-medium">Honors</th>}
+          {showHonors && (
+            <div className="mt-2">
+              <Honors row={r} />
+            </div>
+          )}
+        </div>
+      ))}
+    >
+      <table className="w-full min-w-[640px] text-sm tabular-nums">
+        <thead>
+          <tr className="border-b text-[11px] uppercase tracking-wide" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
+            <th className="text-left py-2 px-3 font-medium">#</th>
+            <th className="text-left py-2 px-3 font-medium">Team</th>
+            {showConf && <th className="text-left py-2 px-2 font-medium">Conf</th>}
+            <th className="text-right py-2 px-2 font-medium">W</th>
+            <th className="text-right py-2 px-2 font-medium">D</th>
+            <th className="text-right py-2 px-2 font-medium">L</th>
+            <th className="text-right py-2 px-2 font-medium">Pts</th>
+            <th className="text-right py-2 px-2 font-medium">GF</th>
+            <th className="text-right py-2 px-2 font-medium">GA</th>
+            <th className="text-right py-2 px-2 font-medium">GD</th>
+            {showHonors && <th className="text-left py-2 px-3 font-medium">Honors</th>}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r, i) => (
+            <tr key={r.cur_name} className="border-b last:border-b-0" style={{ borderColor: "var(--border)", background: r.supporters_shield ? "rgba(245,215,110,0.06)" : undefined }}>
+              <td className="py-1.5 px-3 text-[var(--text-muted)]">{i + 1}</td>
+              <td className="py-1.5 px-3"><TeamCell row={r} /></td>
+              {showConf && <td className="py-1.5 px-2 text-[var(--text-muted)]">{r.conference ?? "—"}</td>}
+              <td className="py-1.5 px-2 text-right">{r.w}</td>
+              <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.d}</td>
+              <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.l}</td>
+              <td className="py-1.5 px-2 text-right font-semibold">{r.pts ?? "—"}</td>
+              <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.gs}</td>
+              <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.ga}</td>
+              <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.gd > 0 ? `+${r.gd}` : r.gd}</td>
+              {showHonors && <td className="py-1.5 px-3"><Honors row={r} /></td>}
             </tr>
-          </thead>
-          <tbody>
-            {rows.map((r, i) => (
-              <tr key={r.cur_name} className="border-b last:border-b-0" style={{ borderColor: "var(--border)", background: r.supporters_shield ? "rgba(245,215,110,0.06)" : undefined }}>
-                <td className="py-1.5 px-3 text-[var(--text-muted)]">{i + 1}</td>
-                <td className="py-1.5 px-3"><TeamCell row={r} /></td>
-                {showConf && <td className="py-1.5 px-2 text-[var(--text-muted)]">{r.conference ?? "—"}</td>}
-                <td className="py-1.5 px-2 text-right">{r.w}</td>
-                <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.d}</td>
-                <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.l}</td>
-                <td className="py-1.5 px-2 text-right font-semibold">{r.pts ?? "—"}</td>
-                <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.gs}</td>
-                <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.ga}</td>
-                <td className="py-1.5 px-2 text-right text-[var(--text-muted)]">{r.gd > 0 ? `+${r.gd}` : r.gd}</td>
-                {showHonors && <td className="py-1.5 px-3"><Honors row={r} /></td>}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </>
+          ))}
+        </tbody>
+      </table>
+    </ResponsiveTable>
   );
 }
 
 export default function MlsStandings({ standings, conferences, showHonors = true }: { standings: MlsStanding[]; conferences: string[]; showHonors?: boolean }) {
   const [view, setView] = useState<"combined" | "conference">("combined");
-  const btn = (active: boolean) =>
-    `text-xs px-3 py-1 rounded-md border transition ${active ? "" : "hover:border-[var(--accent)] hover:text-[var(--accent)]"}`;
   return (
     <section className="mb-8">
       <div className="flex items-center justify-between gap-3 mb-3 flex-wrap">
         <h2 className="text-lg font-semibold">Current standings</h2>
-        <div className="inline-flex gap-1.5">
-          <button type="button" onClick={() => setView("combined")} className={btn(view === "combined")}
-            style={{ background: view === "combined" ? "var(--accent)" : "var(--bg-card)", borderColor: view === "combined" ? "var(--accent)" : "var(--border)", color: view === "combined" ? "#0b0f17" : "var(--text)" }}>
-            Combined
-          </button>
-          <button type="button" onClick={() => setView("conference")} className={btn(view === "conference")}
-            style={{ background: view === "conference" ? "var(--accent)" : "var(--bg-card)", borderColor: view === "conference" ? "var(--accent)" : "var(--border)", color: view === "conference" ? "#0b0f17" : "var(--text)" }}>
-            By conference
-          </button>
-        </div>
+        <Tabs
+          aria-label="Standings view"
+          active={view}
+          onChange={(key) => setView(key as "combined" | "conference")}
+          items={[
+            { key: "combined", label: "Combined" },
+            { key: "conference", label: "By conference" },
+          ]}
+        />
       </div>
 
       {view === "combined" ? (

@@ -29,6 +29,11 @@ import MlsMostDecorated from "./MlsMostDecorated";
 import LiveLeagueTable, { type LiveCompTable } from "./LiveLeagueTable";
 import { getClubStandings, getEuropeBadges, getCupAlive, type LiveLeague, type LiveRow } from "@/lib/clubFootballLive";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
+import { leagueStatusFor } from "@/lib/leagueStatus";
+import { FootballHero } from "@/app/teams/_shared/FootballHero";
+import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
+import { Badge } from "@/app/teams/_shared/Badge";
+import { ResponsiveTable, MiniStat, MiniCardHeader } from "@/app/teams/_shared/ResponsiveTable";
 
 // api-football league ids for the hub countries' top flights, so the country
 // switcher can default to this hub's own league before falling back to tier 1.
@@ -65,6 +70,23 @@ function buildCountryTables(clubStandings: LiveLeague[], country: string, badges
         .filter((g) => g.rows.length > 0),
     }))
     .sort((a, b) => (a.level ?? 99) - (b.level ?? 99) || a.name.localeCompare(b.name));
+}
+
+// Tally champions by club, most titles first, for hero stats and the
+// All-time Champions section (both read from the same shape).
+function tallyChampions(champs: FootballLeagueHub["all_time_champions"]) {
+  const tally = new Map<string, { name: string; slug: string; count: number; last: number | null }>();
+  for (const ch of champs) {
+    const k = ch.champion;
+    const existing = tally.get(k);
+    if (existing) {
+      existing.count += 1;
+      if (ch.year && (existing.last === null || ch.year > existing.last)) existing.last = ch.year;
+    } else {
+      tally.set(k, { name: ch.champion, slug: ch.champion_slug, count: 1, last: ch.year });
+    }
+  }
+  return [...tally.values()].sort((a, b) => b.count - a.count || (b.last ?? 0) - (a.last ?? 0));
 }
 
 export const dynamicParams = false;
@@ -108,6 +130,16 @@ export default async function FootballLeagueHubPage({ params }: Props) {
   const defaultLeagueId = countryTables.some((t) => t.id === LEAGUE_ID_BY_SLUG[hub.slug])
     ? LEAGUE_ID_BY_SLUG[hub.slug]
     : (countryTables[0]?.id ?? 0);
+
+  // Hero stats: live/offseason status, most-decorated club, earliest title year.
+  const heroStatus = leagueStatusFor(`/teams/football/leagues/${hub.slug}`);
+  const isLive = heroStatus ? heroStatus.tone !== "offseason" : countryTables.length > 0;
+  const championTally = tallyChampions(hub.all_time_champions);
+  const topChampionClub = championTally[0] ?? null;
+  const earliestTitleYear = hub.all_time_champions.reduce<number | null>(
+    (min, c) => (c.year != null && (min === null || c.year < min) ? c.year : min),
+    null
+  );
 
   // All in-scope clubs for this hub's country, slimmed to the fields the
   // map needs. tier_by_year drives the year filter and tier coloring.
@@ -155,12 +187,24 @@ export default async function FootballLeagueHubPage({ params }: Props) {
 
       <FootballHubNav current="leagues" />
 
-      <header className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight">{hub.league}</h1>
-        <p className="mt-2 text-sm text-[var(--text-muted)]">
-          {hub.country} Level 1 (top-flight) history.
-        </p>
-      </header>
+      <FootballHero
+        eyebrow={hub.country}
+        title={
+          <>
+            <h1 className="text-3xl font-semibold tracking-tight">{hub.league}</h1>
+            <Badge variant={isLive ? "live" : "offseason"} dot={isLive}>{isLive ? "Live" : "Offseason"}</Badge>
+          </>
+        }
+        subtitle={`${hub.country} Level 1 (top-flight) history.`}
+        stats={
+          <StatGrid>
+            <StatTile label="All-time champions" value={hub.all_time_champions.length} sub="title entries" />
+            <StatTile label="Most titled" value={topChampionClub?.name ?? "-"} sub={topChampionClub ? `${topChampionClub.count} titles` : undefined} />
+            <StatTile label="First title" value={earliestTitleYear ?? "-"} />
+            <StatTile label="Clubs this season" value={hub.current_standings.length || countryTables.reduce((n, t) => n + t.groups.reduce((m, g) => m + g.rows.length, 0), 0)} />
+          </StatGrid>
+        }
+      />
 
       <HubNav
         items={[
@@ -232,6 +276,13 @@ async function MlsHubView({ hub, clubStandings }: { hub: MlsLeagueHub; clubStand
     metro: r.slug ? (metroBySlug.get(r.slug) ?? null) : null,
     defunct: r.slug ? !currentSlugs.has(r.slug) : true,
   }));
+  const mlsTopClub = [...hub.most_decorated].sort((a, b) => b.mls_cups - a.mls_cups)[0] ?? null;
+  const mlsFirstYear = finals.reduce<number | null>(
+    (min, c) => (c.year != null && (min === null || c.year < min) ? c.year : min),
+    null
+  );
+  const mlsStatus = leagueStatusFor("/teams/football/leagues/mls");
+  const mlsIsLive = mlsStatus ? mlsStatus.tone !== "offseason" : useLive;
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
       <nav className="text-xs text-[var(--text-muted)] mb-4">
@@ -239,13 +290,29 @@ async function MlsHubView({ hub, clubStandings }: { hub: MlsLeagueHub; clubStand
         <Link href="/teams/football" className="hover:underline">Football clubs</Link>{" / "}
         <span>{hub.league}</span>
       </nav>
-      <header className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight">{hub.league}</h1>
-        <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
-          {hub.country}. No promotion or relegation: the Supporters&apos; Shield goes to the best regular-season record across both conferences, and the MLS Cup is decided in the playoffs.
-          {standingsYear ? (useLive ? <> Live {standingsYear} standings, refreshed daily.</> : <> Standings shown for {standingsYear}.</>) : null}
-        </p>
-      </header>
+      <FootballHero
+        eyebrow={hub.country}
+        title={
+          <>
+            <h1 className="text-3xl font-semibold tracking-tight">{hub.league}</h1>
+            <Badge variant={mlsIsLive ? "live" : "offseason"} dot={mlsIsLive}>{mlsIsLive ? "Live" : "Offseason"}</Badge>
+          </>
+        }
+        subtitle={
+          <>
+            No promotion or relegation: the Supporters&apos; Shield goes to the best regular-season record across both conferences, and the MLS Cup is decided in the playoffs.
+            {standingsYear ? (useLive ? <> Live {standingsYear} standings, refreshed daily.</> : <> Standings shown for {standingsYear}.</>) : null}
+          </>
+        }
+        stats={
+          <StatGrid>
+            <StatTile label="MLS Cups awarded" value={finals.length} />
+            <StatTile label="Supporters' Shields" value={shields.length} />
+            <StatTile label="Most decorated" value={mlsTopClub?.cur_name ?? "-"} sub={mlsTopClub ? `${mlsTopClub.mls_cups} MLS Cups` : undefined} />
+            <StatTile label="First MLS Cup" value={mlsFirstYear ?? "-"} />
+          </StatGrid>
+        }
+      />
       <HubNav
         items={[
           { label: "Current Standings", href: "#standings" },
@@ -263,26 +330,25 @@ async function MlsHubView({ hub, clubStandings }: { hub: MlsLeagueHub; clubStand
         <div>
           <h2 className="text-lg font-semibold mb-3">MLS Cup champions</h2>
 
-          {/* Mobile: one stacked card per final instead of a 3-column table. */}
-          <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {finals.map((c) => (
-              <div
-                key={`${c.year}-${c.champion}-card`}
-                className="rounded-lg border p-3"
-                style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
-              >
-                <div className="flex items-center justify-between gap-2">
-                  <span className="inline-flex items-center gap-1.5 min-w-0">
-                    <TeamCrest name={c.champion} size={22} fallback={<ColorBall slug={c.champion_slug ?? ""} name={c.champion} />} />
-                    {c.champion_slug ? (
-                      <Link href={`/teams/football/${c.champion_slug}`} className="hover:underline font-medium truncate">{c.champion}</Link>
-                    ) : (
-                      <span className="font-medium truncate">{c.champion}</span>
-                    )}
-                  </span>
-                  <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]">{c.year}</span>
-                </div>
-                <div className="mt-1.5 text-xs">
+          <ResponsiveTable
+            className="rounded-xl border overflow-hidden"
+            style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            mobileRows={finals.map((c) => (
+              <div key={`${c.year}-${c.champion}-card`}>
+                <MiniCardHeader
+                  left={
+                    <span className="inline-flex items-center gap-1.5 min-w-0">
+                      <TeamCrest name={c.champion} size={22} fallback={<ColorBall slug={c.champion_slug ?? ""} name={c.champion} />} />
+                      {c.champion_slug ? (
+                        <Link href={`/teams/football/${c.champion_slug}`} className="hover:underline font-medium truncate">{c.champion}</Link>
+                      ) : (
+                        <span className="font-medium truncate">{c.champion}</span>
+                      )}
+                    </span>
+                  }
+                  right={<span className="text-xs tabular-nums text-[var(--text-muted)]">{c.year}</span>}
+                />
+                <div className="text-xs">
                   <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Runner-up</div>
                   {c.runner_up ? (
                     <span className="inline-flex items-center gap-1.5 mt-0.5">
@@ -295,9 +361,7 @@ async function MlsHubView({ hub, clubStandings }: { hub: MlsLeagueHub; clubStand
                 </div>
               </div>
             ))}
-          </div>
-
-          <div className="rounded-xl border overflow-hidden hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+          >
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b text-[11px] uppercase tracking-wide" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
@@ -316,19 +380,16 @@ async function MlsHubView({ hub, clubStandings }: { hub: MlsLeagueHub; clubStand
                 ))}
               </tbody>
             </table>
-          </div>
+          </ResponsiveTable>
         </div>
         <div>
           <h2 className="text-lg font-semibold mb-3">Supporters&apos; Shield winners</h2>
 
-          {/* Mobile: stacked cards instead of a 2-column table. */}
-          <div className="grid grid-cols-1 gap-2 sm:hidden">
-            {shields.map((s) => (
-              <div
-                key={`${s.year}-${s.winner}-card`}
-                className="rounded-lg border p-3 flex items-center justify-between gap-2"
-                style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
-              >
+          <ResponsiveTable
+            className="rounded-xl border overflow-hidden"
+            style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            mobileRows={shields.map((s) => (
+              <div key={`${s.year}-${s.winner}-card`} className="flex items-center justify-between gap-2">
                 {s.winner_slug ? (
                   <Link href={`/teams/football/${s.winner_slug}`} className="hover:underline font-medium truncate">{s.winner}</Link>
                 ) : (
@@ -337,9 +398,7 @@ async function MlsHubView({ hub, clubStandings }: { hub: MlsLeagueHub; clubStand
                 <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]">{s.year}</span>
               </div>
             ))}
-          </div>
-
-          <div className="rounded-xl border overflow-hidden hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+          >
             <table className="w-full text-sm">
               <tbody>
                 {shields.map((s) => (
@@ -350,7 +409,7 @@ async function MlsHubView({ hub, clubStandings }: { hub: MlsLeagueHub; clubStand
                 ))}
               </tbody>
             </table>
-          </div>
+          </ResponsiveTable>
         </div>
       </section>
     </main>
@@ -378,13 +437,28 @@ function ColorBall({ slug, name }: { slug: string; name: string }) {
   );
 }
 
-// Small labeled stat block used inside mobile standings/table cards.
-function Stat({ label, value }: { label: string; value: React.ReactNode }) {
+// Status pills for a standings row (champion / promoted / relegated /
+// playoffs), shared by the mobile card and desktop table cells.
+function StandingBadges({ s, isChamp }: { s: FootballLeagueHub["current_standings"][number]; isChamp: boolean }) {
   return (
-    <div>
-      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{label}</div>
-      <div className="tabular-nums">{value}</div>
-    </div>
+    <>
+      {isChamp && <Badge variant="champion">Champion</Badge>}
+      {s.promoted && (
+        <Badge color={{ bg: "rgba(34,197,94,0.16)", fg: "#22c55e" }}>
+          {s.playoffs ? "Promoted (PO)" : "Promoted"}
+        </Badge>
+      )}
+      {s.relegated && (
+        <Badge color={{ bg: "rgba(220,38,38,0.16)", fg: "#dc2626" }}>
+          {s.playoffs ? "Relegated (PO)" : "Relegated"}
+        </Badge>
+      )}
+      {s.playoffs && !s.promoted && !s.relegated && (
+        <Badge color={{ bg: "rgba(251,191,36,0.16)", fg: "#d97706" }}>
+          {s.playoff_final ? "Not Promoted (PO)" : "Playoffs"}
+        </Badge>
+      )}
+    </>
   );
 }
 
@@ -409,62 +483,38 @@ function CurrentStandings({
         Current standings <span className="text-[var(--text-muted)] font-normal text-sm tabular-nums">({hub.current_year ? `season ending ${hub.current_year}` : "latest"})</span>
       </h2>
 
-      {/* Mobile: one stacked card per club instead of a 13-column table. */}
-      <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
-        {hub.current_standings.map((s) => {
+      <ResponsiveTable
+        mobileRows={hub.current_standings.map((s) => {
           const isChamp = s.champion === true || s.place === 1;
           const cups = cupsBySlug.get(s.slug) ?? [];
           const euros = europeBySlug.get(s.slug) ?? [];
           return (
-            <div
-              key={`${s.slug}-card`}
-              className="rounded-lg border p-3"
-              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
-            >
-              <div className="flex items-start justify-between gap-2">
-                <div className="flex items-center gap-2 min-w-0">
-                  <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0 w-4">{s.place ?? "-"}</span>
-                  <TeamCrest name={s.cur_name} size={22} fallback={<ColorBall slug={s.slug} name={s.cur_name} />} />
-                  <Link href={`/teams/football/${s.slug}`} className="font-medium truncate hover:underline">
-                    {s.cur_name}
-                  </Link>
-                </div>
-                <span className="flex-shrink-0 text-sm font-semibold tabular-nums">{s.pts ?? "-"} pts</span>
-              </div>
+            <div key={`${s.slug}-card`}>
+              <MiniCardHeader
+                left={
+                  <span className="inline-flex items-center gap-2 min-w-0">
+                    <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0 w-4">{s.place ?? "-"}</span>
+                    <TeamCrest name={s.cur_name} size={22} fallback={<ColorBall slug={s.slug} name={s.cur_name} />} />
+                    <Link href={`/teams/football/${s.slug}`} className="font-medium truncate hover:underline">
+                      {s.cur_name}
+                    </Link>
+                  </span>
+                }
+                right={<span className="text-sm font-semibold tabular-nums">{s.pts ?? "-"} pts</span>}
+              />
 
-              <div className="mt-1.5 flex flex-wrap gap-1">
-                {isChamp && (
-                  <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
-                        style={{ background: "rgba(245,215,110,0.18)", color: "#b58900" }}>Champion</span>
-                )}
-                {s.promoted && (
-                  <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
-                        style={{ background: "rgba(34,197,94,0.16)", color: "#22c55e" }}>
-                    {s.playoffs ? "Promoted (PO)" : "Promoted"}
-                  </span>
-                )}
-                {s.relegated && (
-                  <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
-                        style={{ background: "rgba(220,38,38,0.16)", color: "#dc2626" }}>
-                    {s.playoffs ? "Relegated (PO)" : "Relegated"}
-                  </span>
-                )}
-                {s.playoffs && !s.promoted && !s.relegated && (
-                  <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
-                        style={{ background: "rgba(251,191,36,0.16)", color: "#d97706" }}>
-                    {s.playoff_final ? "Not Promoted (PO)" : "Playoffs"}
-                  </span>
-                )}
+              <div className="flex flex-wrap gap-1">
+                <StandingBadges s={s} isChamp={isChamp} />
               </div>
 
               <div className="mt-2 grid grid-cols-4 gap-x-3 gap-y-1.5 text-xs">
-                <Stat label="P" value={s.matches ?? "-"} />
-                <Stat label="W" value={s.w ?? "-"} />
-                <Stat label="D" value={s.d ?? "-"} />
-                <Stat label="L" value={s.l ?? "-"} />
-                <Stat label="GF" value={s.gf ?? "-"} />
-                <Stat label="GA" value={s.ga ?? "-"} />
-                <Stat label="GD" value={s.gd ?? "-"} />
+                <MiniStat label="P" value={s.matches ?? "-"} />
+                <MiniStat label="W" value={s.w ?? "-"} />
+                <MiniStat label="D" value={s.d ?? "-"} />
+                <MiniStat label="L" value={s.l ?? "-"} />
+                <MiniStat label="GF" value={s.gf ?? "-"} />
+                <MiniStat label="GA" value={s.ga ?? "-"} />
+                <MiniStat label="GD" value={s.gd ?? "-"} />
               </div>
 
               {cups.length > 0 && (
@@ -519,21 +569,17 @@ function CurrentStandings({
               {s.eur_qual && (
                 <div className="mt-2">
                   <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Eur qual (next yr)</div>
-                  <span
-                    className="inline-block mt-0.5 rounded px-1.5 py-0.5 text-xs font-semibold tracking-wide"
-                    style={{ background: "rgba(59,130,246,0.18)", color: "#3b82f6" }}
-                    title="Qualified for this European competition next season"
-                  >
-                    {europeanCompDisplayCode(s.eur_qual, s.year === null ? null : s.year + 1)}
+                  <span title="Qualified for this European competition next season" className="inline-block mt-0.5">
+                    <Badge color={{ bg: "rgba(59,130,246,0.18)", fg: "#3b82f6" }}>
+                      {europeanCompDisplayCode(s.eur_qual, s.year === null ? null : s.year + 1)}
+                    </Badge>
                   </span>
                 </div>
               )}
             </div>
           );
         })}
-      </div>
-
-      <div className="mt-4 overflow-x-auto hidden sm:block">
+      >
         <table className="w-full text-sm">
           <thead>
             <tr
@@ -578,28 +624,7 @@ function CurrentStandings({
                 {/* Notes: status pills */}
                 <td className="py-1.5">
                   <span className="inline-flex flex-wrap gap-1">
-                    {isChamp && (
-                      <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
-                            style={{ background: "rgba(245,215,110,0.18)", color: "#b58900" }}>Champion</span>
-                    )}
-                    {s.promoted && (
-                      <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
-                            style={{ background: "rgba(34,197,94,0.16)", color: "#22c55e" }}>
-                        {s.playoffs ? "Promoted (PO)" : "Promoted"}
-                      </span>
-                    )}
-                    {s.relegated && (
-                      <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
-                            style={{ background: "rgba(220,38,38,0.16)", color: "#dc2626" }}>
-                        {s.playoffs ? "Relegated (PO)" : "Relegated"}
-                      </span>
-                    )}
-                    {s.playoffs && !s.promoted && !s.relegated && (
-                      <span className="inline-block rounded px-1.5 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
-                            style={{ background: "rgba(251,191,36,0.16)", color: "#d97706" }}>
-                        {s.playoff_final ? "Not Promoted (PO)" : "Playoffs"}
-                      </span>
-                    )}
+                    <StandingBadges s={s} isChamp={isChamp} />
                   </span>
                 </td>
                 {/* Domestic Cup */}
@@ -653,12 +678,10 @@ function CurrentStandings({
                 <td className="py-1.5 text-right tabular-nums">{s.gd ?? "-"}</td>
                 <td className="py-1.5 pl-3 text-xs whitespace-nowrap hidden sm:table-cell">
                   {s.eur_qual && (
-                    <span
-                      className="inline-block rounded px-1.5 py-0.5 font-semibold tracking-wide"
-                      style={{ background: "rgba(59,130,246,0.18)", color: "#3b82f6" }}
-                      title="Qualified for this European competition next season"
-                    >
-                      {europeanCompDisplayCode(s.eur_qual, s.year === null ? null : s.year + 1)}
+                    <span title="Qualified for this European competition next season">
+                      <Badge color={{ bg: "rgba(59,130,246,0.18)", fg: "#3b82f6" }}>
+                        {europeanCompDisplayCode(s.eur_qual, s.year === null ? null : s.year + 1)}
+                      </Badge>
                     </span>
                   )}
                 </td>
@@ -667,25 +690,14 @@ function CurrentStandings({
             })}
           </tbody>
         </table>
-      </div>
+      </ResponsiveTable>
     </section>
   );
 }
 
 function AllTimeChampions({ hub }: { hub: FootballLeagueHub }) {
   // Tally champions by club for the summary block, then render the full list.
-  const tally = new Map<string, { name: string; slug: string; count: number; last: number | null }>();
-  for (const ch of hub.all_time_champions) {
-    const k = ch.champion;
-    const existing = tally.get(k);
-    if (existing) {
-      existing.count += 1;
-      if (ch.year && (existing.last === null || ch.year > existing.last)) existing.last = ch.year;
-    } else {
-      tally.set(k, { name: ch.champion, slug: ch.champion_slug, count: 1, last: ch.year });
-    }
-  }
-  const topClubs = [...tally.values()].sort((a, b) => b.count - a.count || (b.last ?? 0) - (a.last ?? 0));
+  const topClubs = tallyChampions(hub.all_time_champions);
 
   // Era break: Germany 1964 (Bundesliga founding) and Italy 1929 (Serie A founding)
   // and France 1933 (Division 1 founding) get a visual breakpoint inside the
@@ -743,48 +755,40 @@ function AllTimeChampions({ hub }: { hub: FootballLeagueHub }) {
       <div className="mt-6">
         <h3 className="text-sm font-semibold mb-2">Chronological (most recent first)</h3>
 
-        {/* Mobile: one stacked card per title instead of a 3-column table. */}
-        <div className="grid grid-cols-1 gap-2 sm:hidden">
-          {sortedChamps.map((ch, i, arr) => {
+        <ResponsiveTable
+          mobileRows={sortedChamps.map((ch, i, arr) => {
             const showBreak = breakYear && ch.year === breakYear &&
               (i === 0 || arr[i - 1].year !== breakYear);
             return (
-              <Fragment key={`${ch.year}-${i}-card`}>
+              <div key={`${ch.year}-${i}-card`}>
                 {showBreak && (
-                  <div className="py-2 text-center text-xs uppercase tracking-wider text-[var(--text-muted)]"
-                       style={{ borderTop: "2px solid var(--border)" }}>
+                  <div className="mb-2 pb-2 text-center text-[10px] uppercase tracking-wider text-[var(--text-muted)]"
+                       style={{ borderBottom: "2px solid var(--border)" }}>
                     {hub.league} era begins
                   </div>
                 )}
-                <div
-                  className="rounded-lg border p-3"
-                  style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
-                >
-                  <div className="flex items-start justify-between gap-2">
-                    <div className="flex items-center gap-2 min-w-0">
-                      <TeamCrest name={ch.champion} size={22} fallback={<ColorBall slug={ch.champion_slug} name={ch.champion} />} />
-                      <div className="min-w-0">
-                        <Link href={`/teams/football/${ch.champion_slug}`} className="hover:underline font-medium truncate block">
-                          {ch.champion}
-                        </Link>
-                        {ch.champion_team && ch.champion_team !== ch.champion && (
-                          <span className="text-[var(--text-muted)] text-xs">as {ch.champion_team}</span>
-                        )}
-                      </div>
+                <div className="flex items-start justify-between gap-2">
+                  <div className="flex items-center gap-2 min-w-0">
+                    <TeamCrest name={ch.champion} size={22} fallback={<ColorBall slug={ch.champion_slug} name={ch.champion} />} />
+                    <div className="min-w-0">
+                      <Link href={`/teams/football/${ch.champion_slug}`} className="hover:underline font-medium truncate block">
+                        {ch.champion}
+                      </Link>
+                      {ch.champion_team && ch.champion_team !== ch.champion && (
+                        <span className="text-[var(--text-muted)] text-xs">as {ch.champion_team}</span>
+                      )}
                     </div>
-                    <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]">{ch.year ?? "-"}</span>
                   </div>
-                  <div className="mt-1.5 text-xs text-[var(--text-muted)]">
-                    {ch.league_name}
-                    {ch.format === "playoff" && <span className="ml-1 italic">(playoff)</span>}
-                  </div>
+                  <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]">{ch.year ?? "-"}</span>
                 </div>
-              </Fragment>
+                <div className="mt-1.5 text-xs text-[var(--text-muted)]">
+                  {ch.league_name}
+                  {ch.format === "playoff" && <span className="ml-1 italic">(playoff)</span>}
+                </div>
+              </div>
             );
           })}
-        </div>
-
-        <div className="overflow-x-auto hidden sm:block">
+        >
           <table className="w-full text-sm">
             <thead>
               <tr
@@ -835,7 +839,7 @@ function AllTimeChampions({ hub }: { hub: FootballLeagueHub }) {
               })}
             </tbody>
           </table>
-        </div>
+        </ResponsiveTable>
       </div>
     </section>
   );

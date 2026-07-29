@@ -4,6 +4,9 @@ import { useState } from "react";
 import Link from "next/link";
 import { monogramForFootball } from "@/lib/football-colors";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
+import { Tabs } from "@/app/teams/_shared/Tabs";
+import { Badge } from "@/app/teams/_shared/Badge";
+import { ResponsiveTable, MiniCardHeader } from "@/app/teams/_shared/ResponsiveTable";
 
 // MLS all-time table: every franchise by honors, including defunct clubs.
 // A Current/All filter toggles defunct clubs; defunct clubs are tagged.
@@ -43,14 +46,15 @@ export default function MlsMostDecorated({ rows }: { rows: Row[] }) {
     <section className="mb-8">
       <header className="mb-3 flex items-center justify-between gap-4 flex-wrap">
         <h2 className="text-lg font-semibold">All-time table</h2>
-        <div className="flex items-center gap-1.5 text-xs">
-          {(["current", "all"] as View[]).map((v) => (
-            <button key={v} type="button" onClick={() => setView(v)} className="px-3 py-1 rounded-full border transition-colors"
-              style={view === v ? { background: "var(--accent-dim)", color: "var(--text)", borderColor: "var(--accent-dim)" } : { background: "var(--bg-card)", color: "var(--text-muted)", borderColor: "var(--border)" }}>
-              {v === "current" ? "Current" : `All (incl. ${defunctCount} defunct)`}
-            </button>
-          ))}
-        </div>
+        <Tabs
+          aria-label="Club scope"
+          active={view}
+          onChange={(key) => setView(key as View)}
+          items={[
+            { key: "current", label: "Current" },
+            { key: "all", label: `All (incl. ${defunctCount} defunct)` },
+          ]}
+        />
       </header>
       <p className="text-xs text-[var(--text-muted)] mb-3">All MLS franchises by honors. Switch to All to include defunct clubs. Tap a column to sort.</p>
 
@@ -87,26 +91,26 @@ export default function MlsMostDecorated({ rows }: { rows: Row[] }) {
         <span aria-live="polite" className="sr-only">{announce}</span>
       </div>
 
-      {/* Mobile: one card per club instead of a 7-column table. Same
-          `sorted` array drives both presentations. */}
-      <div className="grid grid-cols-1 gap-2 sm:hidden">
-        {sorted.map((r) => (
-          <div key={r.cur_name} className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
-            <div className="flex items-center justify-between gap-2">
-              <span className="inline-flex items-center gap-1.5 min-w-0">
-                <TeamCrest name={r.cur_name} size={20} fallback={<ColorBall slug={r.slug} name={r.cur_name} />} />
-                {r.slug ? (
-                  <Link href={`/teams/football/${r.slug}`} className="hover:underline font-medium truncate">{r.cur_name}</Link>
-                ) : (
-                  <span className="font-medium truncate">{r.cur_name}</span>
-                )}
-              </span>
-              {r.defunct && (
-                <span className="flex-shrink-0 text-[9px] uppercase tracking-wide font-semibold px-1.5 py-0.5 rounded" style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-dim)" }}>Defunct</span>
-              )}
-            </div>
-            <div className="mt-0.5 text-xs text-[var(--text-muted)]">{r.metro || "—"}</div>
-            <div className="mt-2 grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
+      <ResponsiveTable
+        className="rounded-xl border"
+        style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+        mobileRows={sorted.map((r) => (
+          <div key={r.cur_name}>
+            <MiniCardHeader
+              left={
+                <span className="inline-flex items-center gap-1.5 min-w-0">
+                  <TeamCrest name={r.cur_name} size={20} fallback={<ColorBall slug={r.slug} name={r.cur_name} />} />
+                  {r.slug ? (
+                    <Link href={`/teams/football/${r.slug}`} className="hover:underline font-medium truncate">{r.cur_name}</Link>
+                  ) : (
+                    <span className="font-medium truncate">{r.cur_name}</span>
+                  )}
+                </span>
+              }
+              right={r.defunct ? <Badge variant="defunct">Defunct</Badge> : undefined}
+            />
+            <div className="-mt-1 mb-1.5 text-xs text-[var(--text-muted)]">{r.metro || "—"}</div>
+            <div className="grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
               <Stat label="MLS Cups" v={r.mls_cups} strong />
               <Stat label="Shields" v={r.supporters_shields} />
               <Stat label="Cup Finals" v={r.finals} />
@@ -115,9 +119,7 @@ export default function MlsMostDecorated({ rows }: { rows: Row[] }) {
             </div>
           </div>
         ))}
-      </div>
-
-      <div className="rounded-xl border overflow-x-auto hidden sm:block" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+      >
         <table className="w-full text-sm tabular-nums min-w-[640px]">
           <thead>
             <tr className="border-b text-[11px] uppercase tracking-wide" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
@@ -137,7 +139,7 @@ export default function MlsMostDecorated({ rows }: { rows: Row[] }) {
                   <span className="inline-flex items-center gap-1.5">
                     <TeamCrest name={r.cur_name} size={18} fallback={<ColorBall slug={r.slug} name={r.cur_name} />} />
                     {r.slug ? <Link href={`/teams/football/${r.slug}`} className="hover:underline font-medium">{r.cur_name}</Link> : <span className="font-medium">{r.cur_name}</span>}
-                    {r.defunct && <span className="text-[9px] uppercase tracking-wide font-semibold px-1.5 py-0.5 rounded" style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-dim)" }}>Defunct</span>}
+                    {r.defunct && <Badge variant="defunct">Defunct</Badge>}
                   </span>
                 </td>
                 <td className="py-1.5 px-2 text-[var(--text-muted)]">{r.metro || <span className="text-[var(--text-dim)]">—</span>}</td>
@@ -150,7 +152,7 @@ export default function MlsMostDecorated({ rows }: { rows: Row[] }) {
             ))}
           </tbody>
         </table>
-      </div>
+      </ResponsiveTable>
     </section>
   );
 }

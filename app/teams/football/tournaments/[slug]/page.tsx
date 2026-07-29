@@ -16,6 +16,10 @@ import { getClubCompetitions } from "@/lib/clubFootballLive";
 import LiveCompGroups from "./LiveCompGroups";
 import LiveCompFixtures from "./LiveCompFixtures";
 import HubNav from "@/app/teams/HubNav";
+import { FootballHero } from "@/app/teams/_shared/FootballHero";
+import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
+import { Badge } from "@/app/teams/_shared/Badge";
+import { ResponsiveTable, MiniStat } from "@/app/teams/_shared/ResponsiveTable";
 
 // api-football competition ids for the tournament hubs that carry live standings.
 const COMP_ID_BY_SLUG: Record<string, number> = {
@@ -98,32 +102,28 @@ export default async function ClubTournamentHubPage({ params }: Props) {
 
       <FootballHubNav current="competitions" showBack={false} />
 
-      <header className="mb-6">
-        <div className="flex items-center gap-3 flex-wrap">
-          <h1 className="text-3xl font-semibold tracking-tight">{hub.label}</h1>
-          {!hub.active && (
-            <span
-              className="inline-block rounded px-2 py-0.5 text-[10px] uppercase tracking-wide font-semibold"
-              style={{ background: "rgba(120,120,140,0.18)", color: "var(--text-muted)" }}
-              title="Discontinued competition"
-            >
-              Defunct
-            </span>
-          )}
-        </div>
-        <p className="mt-1 text-sm text-[var(--text-muted)] max-w-3xl">{hub.era_notes}</p>
-        <p className="mt-3 text-xs text-[var(--text-muted)] tabular-nums">
-          {hub.editions} edition{hub.editions === 1 ? "" : "s"}
-          {hub.year_min && hub.year_max ? <> · {hub.year_min}–{hub.year_max}</> : null}
-          {hub.most_decorated.length > 0 && (
-            <>
-              {" · Most titled: "}
-              <span className="text-[var(--text)] font-medium">{hub.most_decorated[0].cur_name}</span>
-              {" "}({hub.most_decorated[0].champion_count})
-            </>
-          )}
-        </p>
-      </header>
+      <FootballHero
+        eyebrow={hub.active ? "Tournament Hub" : "Discontinued Competition"}
+        title={
+          <>
+            <h1 className="text-3xl font-semibold tracking-tight">{hub.label}</h1>
+            {!hub.active && <Badge variant="defunct">Defunct</Badge>}
+          </>
+        }
+        subtitle={hub.era_notes}
+        stats={
+          <StatGrid>
+            <StatTile label="Editions" value={hub.editions} />
+            <StatTile label="Years" value={hub.year_min && hub.year_max ? `${hub.year_min}–${hub.year_max}` : "-"} />
+            <StatTile
+              label="Most titled"
+              value={hub.most_decorated[0]?.cur_name ?? "-"}
+              sub={hub.most_decorated[0] ? `${hub.most_decorated[0].champion_count} titles` : undefined}
+            />
+            <StatTile label="Clubs with a title" value={new Set(hub.champions.map((c) => c.cur_name)).size} />
+          </StatGrid>
+        }
+      />
 
       {navItems.length > 1 && <HubNav items={navItems} />}
 
@@ -180,10 +180,26 @@ function ContinentalHubView({ hub }: { hub: NonNullable<ReturnType<typeof getEur
         <Link href="/teams/football/tournaments" className="hover:underline">Tournaments</Link>{" / "}
         <span>{hub.short_label}</span>
       </nav>
-      <header className="mb-6">
-        <h1 className="text-3xl font-semibold tracking-tight">{hub.label}</h1>
-        <p className="mt-1 text-sm text-[var(--text-muted)] max-w-3xl">{hub.era_notes}</p>
-      </header>
+      <FootballHero
+        eyebrow="Continental Finals"
+        title={<h1 className="text-3xl font-semibold tracking-tight">{hub.label}</h1>}
+        subtitle={hub.era_notes}
+        stats={
+          <StatGrid>
+            <StatTile label="Confederations" value={sections.length} />
+            <StatTile label="Total finals" value={sections.reduce((n, s) => n + s.finals.length, 0)} />
+            <StatTile
+              label="Years"
+              value={(() => {
+                const mins = sections.map((s) => s.year_min).filter((y): y is number => y != null);
+                const maxs = sections.map((s) => s.year_max).filter((y): y is number => y != null);
+                return mins.length && maxs.length ? `${Math.min(...mins)}–${Math.max(...maxs)}` : "-";
+              })()}
+            />
+            <StatTile label="Most titled" value={hub.most_decorated[0]?.cur_name ?? "-"} sub={hub.most_decorated[0] ? `${hub.most_decorated[0].champion_count} titles` : undefined} />
+          </StatGrid>
+        }
+      />
       <ContinentalTable sections={sections} />
     </main>
   );
@@ -229,58 +245,54 @@ function ChampionsTable({ hub }: { hub: NonNullable<ReturnType<typeof getEuropea
         Most recent first. Club links open the canonical Club Football page where one is available.
       </p>
 
-      {/* Mobile: one card per final instead of a 4-column table. Same
-          finalRows pairing as the desktop table below. */}
-      <div className="mt-4 grid grid-cols-1 gap-2 sm:hidden">
-        {finalRows.map(({ c, i, runnerUp }) => (
-          <div
-            key={`${c.year}-${i}-card`}
-            className="rounded-lg border p-3"
-            style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
-          >
-            <div className="flex items-center justify-between gap-2">
+      <ResponsiveTable
+        mobileRows={finalRows.map(({ c, i, runnerUp }) => (
+          <div key={`${c.year}-${i}-card`}>
+            <div className="flex items-center justify-between gap-2 mb-2">
               <span className="text-xs font-medium tabular-nums">{hub.calendar_year ? c.year : (c.season ?? c.year)}</span>
               {c.competition && (
                 <span className="text-[10px] text-[var(--text-dim)] truncate">{c.competition}</span>
               )}
             </div>
-            <div className="mt-2 grid grid-cols-1 gap-1.5 text-xs">
-              <div>
-                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Champion</div>
-                <span className="inline-flex items-center gap-1.5">
-                  <TeamCrest name={c.cur_name} size={18} fallback={<ColorBall slug={c.slug} name={c.cur_name} />} />
-                  {c.slug ? (
-                    <Link href={`/teams/football/${c.slug}`} className="hover:underline font-medium">
-                      {c.cur_name}
-                    </Link>
-                  ) : (
-                    <span className="font-medium">{c.cur_name}</span>
-                  )}
-                </span>
-              </div>
-              <div>
-                <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Runner-up</div>
-                {runnerUp ? (
-                  <span className="inline-flex items-center gap-1.5 text-[var(--text-muted)]">
-                    <TeamCrest name={runnerUp.cur_name} size={18} fallback={<ColorBall slug={runnerUp.slug} name={runnerUp.cur_name} />} />
-                    {runnerUp.slug ? (
-                      <Link href={`/teams/football/${runnerUp.slug}`} className="hover:underline">
-                        {runnerUp.cur_name}
+            <div className="grid grid-cols-1 gap-1.5">
+              <MiniStat
+                label="Champion"
+                value={
+                  <span className="inline-flex items-center gap-1.5">
+                    <TeamCrest name={c.cur_name} size={18} fallback={<ColorBall slug={c.slug} name={c.cur_name} />} />
+                    {c.slug ? (
+                      <Link href={`/teams/football/${c.slug}`} className="hover:underline font-medium">
+                        {c.cur_name}
                       </Link>
                     ) : (
-                      <span>{runnerUp.cur_name}</span>
+                      <span className="font-medium">{c.cur_name}</span>
                     )}
                   </span>
-                ) : (
-                  <span className="text-[var(--text-dim)]">—</span>
-                )}
-              </div>
+                }
+              />
+              <MiniStat
+                label="Runner-up"
+                value={
+                  runnerUp ? (
+                    <span className="inline-flex items-center gap-1.5 text-[var(--text-muted)]">
+                      <TeamCrest name={runnerUp.cur_name} size={18} fallback={<ColorBall slug={runnerUp.slug} name={runnerUp.cur_name} />} />
+                      {runnerUp.slug ? (
+                        <Link href={`/teams/football/${runnerUp.slug}`} className="hover:underline">
+                          {runnerUp.cur_name}
+                        </Link>
+                      ) : (
+                        <span>{runnerUp.cur_name}</span>
+                      )}
+                    </span>
+                  ) : (
+                    <span className="text-[var(--text-dim)]">—</span>
+                  )
+                }
+              />
             </div>
           </div>
         ))}
-      </div>
-
-      <div className="mt-4 overflow-x-auto hidden sm:block">
+      >
         <table className="w-full text-sm">
           <thead>
             <tr
@@ -330,7 +342,7 @@ function ChampionsTable({ hub }: { hub: NonNullable<ReturnType<typeof getEuropea
             ))}
           </tbody>
         </table>
-      </div>
+      </ResponsiveTable>
     </section>
   );
 }
