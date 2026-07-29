@@ -18,6 +18,23 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-07-29",
+    headline: "Collapsible sections for easier mobile browsing",
+    items: [
+      "Every section on a club page, the season-by-season record, cup finals and European appearances, now collapses with a tap, so long histories are easy to scan on a phone.",
+      "The club directory's country groups on the football home page collapse too, so you can jump between countries without endless scrolling.",
+    ],
+  },
+  {
+    date: "2026-07-28",
+    headline: "Champions starred, and Europe told round by round",
+    items: [
+      "Every domestic league table across the completed-season hubs now marks its champion with a gold star, from the top five leagues down to the smallest.",
+      "Each hub's European and continental competitions are retold round by round, final first, with qualifying, group and knockout stages laid out clearly.",
+      "Club names across those tables now appear in their canonical modern form for consistency.",
+    ],
+  },
+  {
     date: "2026-07-27",
     headline: "Completed-season club football hubs, a decade deep, with trends",
     items: [
