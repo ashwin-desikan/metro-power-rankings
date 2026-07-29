@@ -12,7 +12,7 @@ restores the *worker*: the scheduler, scripts, venv, and credentials. Budget ~30
 
 ---
 
-## What the mini runs (19 launchd agents)
+## What the mini runs (18 launchd agents)
 
 | Agent | Wrapper | Schedule (local) |
 |---|---|---|
@@ -20,7 +20,6 @@ restores the *worker*: the scheduler, scripts, venv, and credentials. Budget ~30
 | com.newsletter.weekly | ~/newsletter-podcast/run-weekly.sh | Sun 09:00 |
 | com.newsletter.watchdog | ~/newsletter-podcast/watchdog.sh | 09:30 daily |
 | com.citizenofnowhere.substack-daily | run-scraper-refresh.sh substack | 07:00 daily |
-| com.citizenofnowhere.wc2026-daily | run-wc2026-daily.sh | 07:30 daily |
 | com.citizenofnowhere.rugby-weekly | run-scraper-refresh.sh rugby | Tue 08:05 |
 | com.citizenofnowhere.fiba-weekly | run-scraper-refresh.sh fiba | Wed 08:10 |
 | com.citizenofnowhere.conflicts-monthly | run-scraper-refresh.sh conflicts | 1st @ 08:15 |
@@ -124,7 +123,7 @@ cp "$HOME/metro-mini-jobs/config.env.example" "$HOME/metro-mini-jobs/config.env"
 # repo edit instantly live. $DIR-relative deps (config.env, notify.py) still resolve
 # because $DIR = the symlink's own dir (~/metro-mini-jobs), not the link target.
 for w in metro-mini-refresh run-cricket-weekly run-cricket-monthly run-f1-weekly \
-         run-wc2026-daily run-sound-weekly run-scraper-refresh run-euro-comps run-heartbeat; do
+         run-sound-weekly run-scraper-refresh run-euro-comps run-heartbeat; do
   ln -sf "$REPO/mac-mini-jobs/$w.sh" "$HOME/metro-mini-jobs/$w.sh"
 done
 chmod +x "$REPO"/mac-mini-jobs/*.sh "$HOME/metro-mini-jobs/hc-run.sh" "$HOME/metro-mini-jobs/"*.py
@@ -155,3 +154,10 @@ bash ~/metro-mini-jobs/run-heartbeat.sh   # then check the healthchecks check go
 - **The dead-man's switch** (`heartbeat`) is what tells you the mini itself is down; make sure its healthchecks notification channel reaches you.
 - **One-runner rule** — the GitHub Actions `civic-data-refresh`, `f1-refresh`, `wc2026-daily` crons are disabled in-file because the mini owns those. If you ever retire the mini, re-enable them.
 - **Coordination log** — cross-machine decisions live in `HANDOFF.md` at the repo root.
+
+## Retired agents
+`mac-mini-jobs/retired/` holds wrappers + plists for jobs whose event is over, kept for
+reference but NOT loaded by §7 (the bootstrap glob only reads `launchd/`). Do not re-load
+them without a reason.
+- **wc2026-daily** — retired 2026-07-29, ~10 days after the World Cup 2026 final (2026-07-19).
+  Its GitHub Action cron stays disabled; the WC data files remain committed as the record.
