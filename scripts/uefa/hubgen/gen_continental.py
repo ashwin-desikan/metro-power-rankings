@@ -23,7 +23,7 @@ ORDER = {('CL','Europe'):1,('EL','Europe'):2,('EUCL','Europe'):3,('USC','Europe'
          ('CLB','South America'):5,('OTH','South America'):6,('RCSA','South America'):7,
          ('OTHC','North America'):8,('OTHC','Asia'):9,('OTHC','Africa'):10,('OTHC','Oceania'):11,
          ('IC','World'):12,('FCWC','World'):13}
-SEASONS = [f"{y}-{str(y+1)[2:]}" for y in range(2010, 2025)] + ["2025-26"]
+SEASONS = [f"{y}-{str(y+1)[2:]}" for y in range(2006, 2025)] + ["2025-26"]
 SEASET = set(SEASONS)
 buckets = defaultdict(lambda: defaultdict(lambda: {'rnd':None,'trophy':False}))
 names = defaultdict(Counter); seas = defaultdict(Counter)
@@ -33,7 +33,13 @@ for r in it:
     sv = I(g(r,'Seas'))
     if comp in SHIFT:
         if sv is None: continue
-        s = f"{sv}-{str(sv+1)[2:]}"
+        # Copa Libertadores pre-2017 ran to a June/July final, so edition YYYY belongs to the hub
+        # that began the previous autumn, (YYYY-1)-YYYY. From 2017 the final moved to November, so
+        # it stays in YYYY-(YY+1) like Copa Sudamericana (whose final is always Nov/Dec).
+        if comp == 'CLB' and sv <= 2016:
+            s = f"{sv-1}-{str(sv)[2:]}"
+        else:
+            s = f"{sv}-{str(sv+1)[2:]}"
     else:
         s = g(r,'Season')
     if s not in SEASET: continue

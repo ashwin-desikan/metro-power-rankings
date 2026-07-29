@@ -29,6 +29,13 @@ const SEASONS: { slug: string; label: string; note: string; live?: boolean }[] =
   { slug: "2015-16", label: "2015-16", note: "Champions League: Real Madrid" },
   { slug: "2014-15", label: "2014-15", note: "The treble: Barcelona" },
   { slug: "2013-14", label: "2013-14", note: "Champions League: Real Madrid · La Décima" },
+  { slug: "2012-13", label: "2012-13", note: "Champions League: Bayern Munich · all-German final" },
+  { slug: "2011-12", label: "2011-12", note: "Champions League: Chelsea" },
+  { slug: "2010-11", label: "2010-11", note: "Champions League: Barcelona" },
+  { slug: "2009-10", label: "2009-10", note: "Champions League: Internazionale · treble" },
+  { slug: "2008-09", label: "2008-09", note: "Champions League: Barcelona · treble" },
+  { slug: "2007-08", label: "2007-08", note: "Champions League: Manchester United" },
+  { slug: "2006-07", label: "2006-07", note: "Champions League: AC Milan" },
 ];
 const cardStyle = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
 

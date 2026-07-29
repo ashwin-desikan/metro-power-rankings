@@ -5,8 +5,8 @@ club power-ranking FORM term for the older season hubs. Canonical names are alre
 export (Cur. Name / Opp. Name). Emits scripts/uefa/data/domfix_<lo>_<hi>.json."""
 import csv, json, os
 SRC = r"C:\Users\ashwi\Desktop\New folder (2)\results93_23_primary.txt"
-OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "domfix_2011_2013.json")
-WANT = {"2011", "2012", "2013"}
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "domfix_2007_2013.json")
+WANT = {"2007", "2008", "2009", "2010", "2011", "2012", "2013"}
 out = {s: [] for s in WANT}
 with open(SRC, encoding="utf-8", errors="replace") as f:
     r = csv.reader(f, delimiter="\t")

@@ -45,6 +45,13 @@ const PAST_SEASONS: { slug: string; note: string }[] = [
   { slug: "2015-16", note: "Champions League: Real Madrid" },
   { slug: "2014-15", note: "The treble: Barcelona" },
   { slug: "2013-14", note: "Champions League: Real Madrid · La Décima" },
+  { slug: "2012-13", note: "Champions League: Bayern Munich · all-German final" },
+  { slug: "2011-12", note: "Champions League: Chelsea" },
+  { slug: "2010-11", note: "Champions League: Barcelona" },
+  { slug: "2009-10", note: "Champions League: Internazionale · treble" },
+  { slug: "2008-09", note: "Champions League: Barcelona · treble" },
+  { slug: "2007-08", note: "Champions League: Manchester United" },
+  { slug: "2006-07", note: "Champions League: AC Milan" },
 ];
 
 export default function FootballIndex() {
@@ -144,7 +151,7 @@ export default function FootballIndex() {
         <summary className="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden px-5 py-3.5 flex items-center justify-between gap-3">
           <span className="text-sm font-semibold">
             Past seasons
-            <span className="font-normal text-[var(--text-muted)]"> · 2013-14 to 2025-26, each a full season hub</span>
+            <span className="font-normal text-[var(--text-muted)]"> · 2006-07 to 2025-26, each a full season hub</span>
           </span>
           <span className="text-xs text-[var(--text-muted)] transition-transform group-open:rotate-180">▾</span>
         </summary>

@@ -53,7 +53,26 @@ const UEFA_TIERS: Record<string, { tier: UefaTier; rank: number }> = {
   Lithuania: { tier: "Spring-Summer", rank: 46 }, Estonia: { tier: "Spring-Summer", rank: 48 }, Georgia: { tier: "Spring-Summer", rank: 52 },
 };
 const CONF_ORDER = ["UEFA · Primary", "UEFA · Secondary", "UEFA · Spring-Summer", "CONMEBOL", "CONCACAF", "AFC", "CAF"];
-function buildConfs(leagues: League[], countryRank: Map<string, number>): HubConf[] {
+const PRIMARY_COUNTRIES = new Set(Object.entries(UEFA_TIERS).filter(([, v]) => v.tier === "Primary").map(([k]) => k));
+// A UEFA league's section follows its season calendar, read off end_year rather than a fixed country
+// map — countries like Russia, Armenia, Georgia and Moldova changed calendar mid-history. A spring-
+// summer / calendar-year season sits inside the hub's FIRST year, so end_year === startYear; an autumn-
+// spring season ends in the hub's SECOND year. Primary is the fixed elite eight (always autumn-spring).
+function uefaTier(country: string, endYear: number | undefined, startYear: number): UefaTier {
+  if (PRIMARY_COUNTRIES.has(country)) return "Primary";
+  if (endYear != null) return endYear === startYear ? "Spring-Summer" : "Secondary";
+  return UEFA_TIERS[country]?.tier ?? "Secondary";   // fallback only when end_year is absent
+}
+function buildConfs(leagues: League[], countryRank: Map<string, number>, season: string): HubConf[] {
+  const startYear = parseInt(season.slice(0, 4), 10);
+  // Classify each country by the calendar of its top-level (lowest level number) league so every
+  // division of a country lands in the same section.
+  const topEnd = new Map<string, number | undefined>(); const topLvl = new Map<string, number>();
+  for (const lg of leagues) {
+    if (lg.confed !== "UEFA" || !lg.country) continue;
+    const lvl = lg.level ?? 99;
+    if (!topLvl.has(lg.country) || lvl < topLvl.get(lg.country)!) { topLvl.set(lg.country, lvl); topEnd.set(lg.country, lg.end_year); }
+  }
   const byConf = new Map<string, Map<string, HubLeague[]>>();
   for (const lg of leagues) {
     const groups: HubGroup[] = lg.groups.map((g): HubGroup => ({
@@ -61,7 +80,7 @@ function buildConfs(leagues: League[], countryRank: Map<string, number>): HubCon
       rows: g.rows.map((r): HubRow => { const c = resolveClub(r.name, r.lookup); return { rank: r.rank, name: c.name, slug: c.slug, cells: [num(r.played), num(r.win), num(r.draw), num(r.lose), num(r.gf), num(r.ga), num(r.gd), num(r.points)], champ: r.champ }; }),
     })).filter((g) => g.rows.length > 0);
     if (!groups.length) continue;
-    const conf = lg.confed === "UEFA" ? `UEFA · ${UEFA_TIERS[lg.country ?? ""]?.tier ?? "Secondary"}` : lg.confed;
+    const conf = lg.confed === "UEFA" ? `UEFA · ${uefaTier(lg.country ?? "", topEnd.get(lg.country ?? ""), startYear)}` : lg.confed;
     const country = lg.country ?? DASH;
     if (!byConf.has(conf)) byConf.set(conf, new Map());
     const m = byConf.get(conf)!; if (!m.has(country)) m.set(country, []);
@@ -205,7 +224,7 @@ function ContinentalSections({ comps, season }: { comps: Cont[]; season: string 
   );
 }
 
-const SEASONS_CHRON = ["2013-14", "2014-15", "2015-16", "2016-17", "2017-18", "2018-19", "2019-20", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26", "2026-27"];
+const SEASONS_CHRON = ["2006-07", "2007-08", "2008-09", "2009-10", "2010-11", "2011-12", "2012-13", "2013-14", "2014-15", "2015-16", "2016-17", "2017-18", "2018-19", "2019-20", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26", "2026-27"];
 const seasonLabel = (s: string) => (s === "2026-27" ? "2026-27 (live)" : s);
 function SeasonPager({ season }: { season: string }) {
   const i = SEASONS_CHRON.indexOf(season);
@@ -223,7 +242,7 @@ function SeasonPager({ season }: { season: string }) {
 
 export default function SeasonHub({ hub }: { hub: Hub }) {
   const countryRank = new Map(hub.countries.map((c) => [c.country, c.rank] as const));
-  const confs = buildConfs(hub.leagues, countryRank);
+  const confs = buildConfs(hub.leagues, countryRank, hub.season);
   const ranked: RankedClub[] = hub.clubs.map((c) => { const r = resolveClub(c.name, c.lookup); return { rank: c.rank, name: r.name, slug: r.slug, country: c.country, mp: c.mp, w: c.w, d: c.d, l: c.l, form: c.form, ped: c.ped, tb: c.tb ?? 0, score: c.score }; });
   const nav = [{ label: "Power Ranking", href: "#clubs" }, { label: "Europe", href: "#europe" }, { label: "Leagues", href: "#leagues" }, { label: "Cups", href: "#cups" }];
   return (
