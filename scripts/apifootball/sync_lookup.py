@@ -32,7 +32,7 @@ def extract(path):
     wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
     ws = wb["Lookup"]; it = ws.iter_rows(values_only=True)
     hdr = [str(h).strip() if h is not None else "" for h in next(it)]
-    cols = {"cur_name": "Cur. Name", "team": "Team", "lookup_name": "Lookup", "uefa_name": "UEFA Name", "uefa_name_2": "UEFA Name 2",
+    cols = {"cur_name": "Cur. Name", "team": "Team", "lookup_name": "Lookup", "uefa_name": "UEFA Name", "uefa_name_2": "UEFA Name 2", "uefa_name_3": "UEFA Name 3",
             "efs_name": "EFS Name", "api_name": "API Name", "api_name_2": "API Name 2", "country": "Country", "city": "City",
             "metro_area": "Metro Area", "county": "County", "continent": "Continent", "league": "League",
             "level": "Level", "lat": "Lat", "long": "Long"}

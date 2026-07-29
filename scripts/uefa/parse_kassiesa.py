@@ -62,7 +62,7 @@ lk = json.load(open(LOOKUP, encoding='utf-8'))
 def canon(r): return r.get('cur_name') or r.get('team')
 idx = {}
 for r in lk:
-    for f in ('uefa_name','uefa_name_2','team','lookup_name','cur_name'):
+    for f in ('uefa_name','uefa_name_2','uefa_name_3','team','lookup_name','cur_name'):
         if r.get(f): idx.setdefault(norm(r[f]), []).append(r)
 xn = {}
 if os.path.exists(XW):
