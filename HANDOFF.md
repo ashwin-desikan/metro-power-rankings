@@ -646,3 +646,30 @@ Mapping: **95.9% of club slots** auto-resolved to canonical via Lookup **UEFA Na
 Ashwin flagged the daily WC2026 sim still running. The final was 2026-07-19; it's now 07-29, so it's been committing "daily sim + live odds refresh" for a concluded tournament (its bracket final even still shows "Winner Match 101" placeholders — the daily runs weren't resolving anything). **Retired it:** booted out `com.citizenofnowhere.wc2026-daily`, removed the live plist + the `~/metro-mini-jobs` symlink, PAUSED its healthchecks tile (so it doesn't false-alert as down), moved the wrapper + plist to `mac-mini-jobs/retired/` (out of the §7 bootstrap glob so a rebuild won't reload it), and dropped it from the runbook (19→18 agents). The `wc2026-daily.yml` Action cron stays disabled; the WC data files stay committed as the historical record. If you want a WC2030 job later, `retired/` has the template.
 
 Full job audit done: everything else maps to a live season / always-current dataset. `gap-league-watch` is the next natural retirement — once the remaining pending leagues publish 2026-27 (or clearly won't), it becomes a no-op.
+
+
+## 2026-07-30 — windows → next session (completed-season club hubs extended back to 1999-00; cup-match + coefficient archive gaps closed; season-hub UX)
+
+Large football session. All committed and pushed as ONE real build (app/ + build-time hub JSON). Nothing left parked. Full `npm run verify` green (exit 0, 261s, 4852 pages) on the committed tree.
+
+### A. NEW HUBS — seven completed seasons added: 1999-00 … 2005-06
+`gen_hub_early.py` (already built 2006-13 from Supabase `cl_league_history` + kassiesa + coefficient text files, NOT api-football) extended back to 1999-00. Each new `hub-YYYY-YY.json` + route `app/teams/football/<season>/page.tsx`; wired into `SEASONS_CHRON` (SeasonHub pager), the seasons index, the football landing "Past seasons" list, and `build_trends.py` (auto-globs — The Belt / boards / club-history now span 1999-2025). Feasibility was gated on data existing for every section; it did. Provenance: tables/universe/champions/end_year = Supabase `cl_league_history` (via `dump_cl_rows.py`, `cl_rows.json` now 1999-2013); continental round-by-round + trophies = "Eur RndbyRnd" workbook via NEW `build_continental_early.py` merging into `continental_rbr.json` (1999-00 carries BOTH the Intercontinental Cup and the first FIFA Club World Championship); European form = kassiesa `_kassiesa_all_rows.json.gz`; country/club coefficients = the era's method from `uefacountrycoeff_history.txt` / `uefateamcoeff_1956_2009.txt`; cups + trophy bonus = Cup History workbook + `cupresults93_23_primary.txt`.
+
+### B. TWO ARCHIVE-PARSING FIXES (official data, not reconstruction)
+1. 1995-1998 country coefficients live under "(method=1)" headers the parser skipped → `parse_country_coeff` regex made method-tolerant (additive; method pages exist ONLY for 1995-1998, so 1999+ untouched).
+2. 1996-1998 team-coeff pages are 9-col vs 10-col later; both put Team in col 1 and season Total in col 7 → `build_ccf` now reads those fixed columns (was negative-index, only aligned to 10-col). Also seeds pre-2008 clubs absent from the modern `club_coeff_full` (AC Parma etc.) and a minimal transliteration union (Dinamo Kiev ↔ Dynamo Kyiv, `_TRANSLIT` in gen_hub_early.py) so 1990s romanization drift doesn't orphan pedigree.
+
+### C. CUP MATCHES NOW COUNT PRE-2007 (fixes understated game counts)
+`extract_cup_fixtures.py` WANT was 2007+; source `cupresults93_23_primary.txt` goes to 1993. Extended to 2000-2025 (regenerated `cupfix_2007_2023.json`) and rebuilt all seven early hubs, so domestic-cup matches feed games/record/form exactly as 2006-07+. Chelsea 2000-01 went 40 → 45. Adding cup form shifts a few ranks (e.g. 1999-00 now Bayern — domestic double + CL semi — over CL-winner Real, who finished 5th in La Liga; consistent with the model being a holistic power ranking, not a CL-winner ranking).
+
+### D. FRONTEND (SeasonHub.tsx + charts)
+- Champion trophy badges: fixed a double-listing (continental "Super Cup" + cups "UEFA Super Cup" survived Set-dedup as different strings) by routing the trophy loop through the already-deduped `domesticCups`; UEFA Cup keeps its name (was mangled to "Cup" by the UEFA-prefix strip).
+- Champions League 1999-2003 continental view now labels the TWO group stages ("First/Second group stage") instead of "Round of 16" — scoped to CL (ucl) in that window only; UEFA Cup keeps knockout labels. `CONT_ROUNDS(season, section)`.
+- Trends chart (`SeasonTrends`) + club power-ranking history (`ClubHistoryChart`) x-axes thinned to half-decade labels (99/00, 04/05, …), decade fallback if crowded; all data points still render.
+- Sticky season bar in SeasonHub: keeps the season label + section jump-links pinned below the fixed site header (`top-14`; header measures 61px) while scrolling. Replaced the old static `HubNav` usage here (HubNav.tsx untouched, still used by other sports hubs).
+- Folded in the earlier parked batch too: double trophy-bonus score fix (`regen_shipped_clubs.py` → hub-2013-14…2025-26 regenerated), best-of-the-rest filter + two awards, symmetric biggest-riser, `SeasonSnapshot`/`SeasonSuperlatives`, RankingTable Δrank, MLS combined-standings ordering, collapsed per-country team lists, live-feed 2026-27 map/tables + league-cup labels.
+
+### Known limitations / next
+1. Pre-2007 hubs: big-8 domestic form is the aggregate standings path (no per-match `domfix` before 2007); cup + European form ARE per-match. Noted, not a data gap.
+2. A few deep-history mid-tier clubs show ped=0 where they genuinely had little UEFA coefficient in the window (correct); if more 1990s romanization variants surface, extend `_TRANSLIT` in gen_hub_early.py.
+3. Supabase RLS advisory (8 tables: `cl_league_history`, `uefa_team_coeff_history`, `football_team_alias`, 5 `football_*_bak*`) still open — enable-RLS + read-policy SQL was drafted and delivered to Ashwin in chat, NOT applied and NOT committed; awaiting his go-ahead.

@@ -27,7 +27,8 @@ import LeagueHubMap, { type HubClub } from "./LeagueHubMap";
 import MlsStandings from "./MlsStandings";
 import MlsMostDecorated from "./MlsMostDecorated";
 import LiveLeagueTable, { type LiveCompTable } from "./LiveLeagueTable";
-import { getClubStandings, getEuropeBadges, getCupAlive, type LiveLeague, type LiveRow } from "@/lib/clubFootballLive";
+import { getClubStandings, getEuropeBadges, getCupAlive, getDomesticCups, type LiveLeague, type LiveRow } from "@/lib/clubFootballLive";
+import { liveMembershipBySlug, LIVE_SEASON_END_YEAR } from "@/lib/footballLiveMembership";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { leagueStatusFor } from "@/lib/leagueStatus";
 import { FootballHero } from "@/app/teams/_shared/FootballHero";
@@ -45,7 +46,7 @@ const numCell = (v: number | null): number | string => (v == null ? "-" : v);
 const byPtsGd = (a: LiveRow, b: LiveRow) => (b.points ?? 0) - (a.points ?? 0) || (b.gd ?? 0) - (a.gd ?? 0);
 
 // Resolve every tracked league in a country into serializable tables for the switcher.
-function buildCountryTables(clubStandings: LiveLeague[], country: string, badges: Record<string, string>, cupAlive: Record<string, string[]>): LiveCompTable[] {
+function buildCountryTables(clubStandings: LiveLeague[], country: string, badges: Record<string, string>, cupAlive: Record<string, string[]>, cupLabel: (name: string) => "Cup" | "Lg Cup"): LiveCompTable[] {
   return clubStandings
     .filter((l) => l.country === country && l.groups.some((g) => g.rows.length > 0))
     .map((l): LiveCompTable => ({
@@ -62,7 +63,9 @@ function buildCountryTables(clubStandings: LiveLeague[], country: string, badges
               name: c?.cur_name ?? r.name ?? r.lookup ?? "-",
               slug: c?.slug ?? null,
               badge: r.team_id != null ? (badges[String(r.team_id)] ?? null) : null,
-              cup: r.team_id != null ? (cupAlive[String(r.team_id)] ?? null) : null,
+              cup: r.team_id != null && cupAlive[String(r.team_id)]?.length
+                ? cupAlive[String(r.team_id)].map((n) => ({ label: cupLabel(n), name: n }))
+                : null,
               cells: [numCell(r.played), numCell(r.win), numCell(r.draw), numCell(r.lose), numCell(r.gf), numCell(r.ga), numCell(r.gd), numCell(r.points)],
             };
           }),
@@ -119,14 +122,23 @@ export default async function FootballLeagueHubPage({ params }: Props) {
   const hub = getLeagueHub(slug);
   if (!hub) notFound();
 
-  const [clubStandings, europeBadges, cupAlive] = await Promise.all([getClubStandings(), getEuropeBadges(), getCupAlive()]);
+  const [clubStandings, europeBadges, cupAlive, domesticCups] = await Promise.all([getClubStandings(), getEuropeBadges(), getCupAlive(), getDomesticCups()]);
 
   if (hub.is_mls) {
     return <MlsHubView hub={hub as unknown as MlsLeagueHub} clubStandings={clubStandings} />;
   }
 
+  // Classify each live domestic cup a club is still alive in: a country's primary cup renders
+  // "Cup", its league cup renders "Lg Cup". Among the top-8 leagues only England, Scotland and
+  // Portugal run a league cup (api-football comp_ids 48 / 185 / 97); everything else is primary.
+  const LEAGUE_CUP_COMP_IDS = new Set([48, 185, 97]);
+  const leagueCupNames = new Set(
+    domesticCups.filter((c) => c.country === hub.country && LEAGUE_CUP_COMP_IDS.has(c.comp_id)).map((c) => c.name),
+  );
+  const cupLabel = (name: string): "Cup" | "Lg Cup" => (leagueCupNames.has(name) ? "Lg Cup" : "Cup");
+
   // Live tables for every tracked league in this hub's country, switchable in the UI.
-  const countryTables = buildCountryTables(clubStandings, hub.country, europeBadges, cupAlive);
+  const countryTables = buildCountryTables(clubStandings, hub.country, europeBadges, cupAlive, cupLabel);
   const defaultLeagueId = countryTables.some((t) => t.id === LEAGUE_ID_BY_SLUG[hub.slug])
     ? LEAGUE_ID_BY_SLUG[hub.slug]
     : (countryTables[0]?.id ?? 0);
@@ -143,18 +155,26 @@ export default async function FootballLeagueHubPage({ params }: Props) {
 
   // All in-scope clubs for this hub's country, slimmed to the fields the
   // map needs. tier_by_year drives the year filter and tier coloring.
+  // Inject the current 2026-27 membership from the SAME live feed the standings table uses, so
+  // the hub map and the /teams/football index map move together (workbook 2027 rows are still
+  // pre-season placeholders). Live-fed clubs get a 2027 tier and their last_year extended so the
+  // map's season slider reaches 2026-27.
+  const hubLive = liveMembershipBySlug(clubStandings, new Set([hub.country]));
   const hubClubs: HubClub[] = getAllClubs()
     .filter((c) => c.country === hub.country)
-    .map((c) => ({
-      slug: c.slug,
-      cur_name: c.cur_name,
-      metro: c.metro,
-      lat: c.lat,
-      lng: c.lng,
-      first_year: c.first_year,
-      last_year: c.last_year,
-      tier_by_year: c.tier_by_year ?? {},
-    }));
+    .map((c) => {
+      const inj = hubLive.get(c.slug);
+      return {
+        slug: c.slug,
+        cur_name: c.cur_name,
+        metro: c.metro,
+        lat: c.lat,
+        lng: c.lng,
+        first_year: c.first_year,
+        last_year: inj ? LIVE_SEASON_END_YEAR : c.last_year,
+        tier_by_year: inj ? { ...(c.tier_by_year ?? {}), [String(LIVE_SEASON_END_YEAR)]: inj.level } : (c.tier_by_year ?? {}),
+      };
+    });
 
   // Build per-club cup and european-competition data for current_year,
   // keyed by club slug, so CurrentStandings can render those columns.

@@ -12,7 +12,8 @@ import { ResponsiveTable, MiniStat, MiniCardHeader } from "@/app/teams/_shared/R
 // each table pre-resolved server-side and fed in as serializable data.
 
 export type LiveCell = number | string;
-export type LiveTableRow = { rank: number | null; name: string; slug: string | null; badge: string | null; cup: string[] | null; cells: LiveCell[] };
+export type LiveCupTag = { label: string; name: string };
+export type LiveTableRow = { rank: number | null; name: string; slug: string | null; badge: string | null; cup: LiveCupTag[] | null; cells: LiveCell[] };
 export type LiveTableGroup = { label: string | null; rows: LiveTableRow[] };
 export type LiveCompTable = { id: number; name: string; level: number | null; groups: LiveTableGroup[] };
 
@@ -24,6 +25,12 @@ const BADGES: Record<string, { label: string; bg: string; fg: string; title: str
   UEL: { label: "UEL", bg: "rgba(255,138,0,0.18)", fg: "#ff8a00", title: "In the Europa League" },
   UECL: { label: "UECL", bg: "rgba(16,185,129,0.18)", fg: "#10b981", title: "In the Conference League" },
   LIB: { label: "LIB", bg: "rgba(59,130,246,0.18)", fg: "#3b82f6", title: "In the Copa Libertadores" },
+};
+// Primary domestic cup ("Cup", violet) vs league cup ("Lg Cup", slate). Only England, Scotland
+// and Portugal run a league cup among the tracked top-8 leagues.
+const CUP_STYLE: Record<string, { bg: string; fg: string }> = {
+  "Cup": { bg: "rgba(139,92,246,0.18)", fg: "#8b5cf6" },
+  "Lg Cup": { bg: "rgba(148,163,184,0.18)", fg: "#94a3b8" },
 };
 
 function Table({ group }: { group: LiveTableGroup }) {
@@ -49,9 +56,11 @@ function Table({ group }: { group: LiveTableGroup }) {
             {(b || (r.cup && r.cup.length > 0)) && (
               <div className="mb-1.5 flex flex-wrap gap-1">
                 {b && <Badge color={{ bg: b.bg, fg: b.fg }}>{b.label}</Badge>}
-                {r.cup && r.cup.length > 0 && (
-                  <Badge color={{ bg: "rgba(139,92,246,0.18)", fg: "#8b5cf6" }}>Cup{r.cup.length > 1 ? ` ×${r.cup.length}` : ""}</Badge>
-                )}
+                {r.cup && r.cup.map((cp, ci) => (
+                  <span key={ci} title={cp.name}>
+                    <Badge color={CUP_STYLE[cp.label] ?? CUP_STYLE.Cup}>{cp.label}</Badge>
+                  </span>
+                ))}
               </div>
             )}
             <div className="grid grid-cols-3 gap-2">
@@ -96,8 +105,12 @@ function Table({ group }: { group: LiveTableGroup }) {
                 </td>
                 <td className="py-1.5 pl-2">
                   {r.cup && r.cup.length > 0 && (
-                    <span title={`Still alive: ${r.cup.join(", ")}`}>
-                      <Badge color={{ bg: "rgba(139,92,246,0.18)", fg: "#8b5cf6" }}>Cup{r.cup.length > 1 ? ` ×${r.cup.length}` : ""}</Badge>
+                    <span className="inline-flex flex-wrap gap-1">
+                      {r.cup.map((cp, ci) => (
+                        <span key={ci} title={`Still alive: ${cp.name}`}>
+                          <Badge color={CUP_STYLE[cp.label] ?? CUP_STYLE.Cup}>{cp.label}</Badge>
+                        </span>
+                      ))}
                     </span>
                   )}
                 </td>

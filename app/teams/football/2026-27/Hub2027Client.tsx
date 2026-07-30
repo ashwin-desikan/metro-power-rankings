@@ -9,7 +9,7 @@ import { ResponsiveTable, MiniStat, MiniCardHeader } from "@/app/teams/_shared/R
 
 export type HubRow = { rank: number | null; name: string; slug: string | null; cells: (number | string)[]; champ?: boolean };
 export type HubGroup = { label: string | null; rows: HubRow[] };
-export type HubLeague = { id: number; name: string; level: number | null; groups: HubGroup[]; end_year?: number };
+export type HubLeague = { id: number; name: string; level: number | null; groups: HubGroup[]; end_year?: number; hubSlug?: string | null };
 export type HubCountry = { country: string; leagues: HubLeague[] };
 export type HubConf = { confederation: string; countries: HubCountry[] };
 
@@ -88,7 +88,12 @@ function LeagueCard({ league, season }: { league: HubLeague; season?: string }) 
   return (
     <details className="rounded-xl border overflow-hidden" style={cardStyle}>
       <summary className="cursor-pointer select-none px-4 py-2.5 flex items-center justify-between gap-2">
-        <span className="font-semibold text-sm">{league.name}{season && <span className="ml-2 font-normal text-[var(--text-dim)] tabular-nums">{league.end_year ?? +season.slice(0, 4) + 1}</span>}</span>
+        <span className="font-semibold text-sm">
+          {league.hubSlug ? (
+            <Link href={`/teams/football/leagues/${league.hubSlug}`} onClick={(e) => e.stopPropagation()} className="hover:text-[var(--accent)] hover:underline">{league.name}</Link>
+          ) : league.name}
+          {season && <span className="ml-2 font-normal text-[var(--text-dim)] tabular-nums">{league.end_year ?? +season.slice(0, 4) + 1}</span>}
+        </span>
         {league.level != null && <Badge variant="neutral">Tier {league.level}</Badge>}
       </summary>
       <div className="border-t px-3 py-3 space-y-4" style={{ borderColor: "var(--border)" }}>

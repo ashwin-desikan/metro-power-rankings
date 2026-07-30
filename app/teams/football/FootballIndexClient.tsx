@@ -617,7 +617,7 @@ export default function FootballIndexClient({ clubs }: Props) {
         <p className="text-sm text-[var(--text-muted)] italic">No clubs match the current filters.</p>
       ) : (
         grouped.map((g) => (
-          <details open key={g.country} className="mb-8 group"><summary className="text-sm font-semibold mb-2 flex items-center gap-2 py-1.5 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden">
+          <details key={g.country} className="mb-8 group"><summary className="text-sm font-semibold mb-2 flex items-center gap-2 py-1.5 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden">
               <span
                 className="inline-block rounded-full flex-shrink-0"
                 style={{ background: COUNTRY_COLORS[g.country] ?? "#525252", width: 10, height: 10 }}

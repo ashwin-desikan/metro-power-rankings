@@ -138,6 +138,13 @@ function Table({ rows, showConf, showHonors }: { rows: MlsStanding[]; showConf: 
 
 export default function MlsStandings({ standings, conferences, showHonors = true }: { standings: MlsStanding[]; conferences: string[]; showHonors?: boolean }) {
   const [view, setView] = useState<"combined" | "conference">("combined");
+  // The rows arrive grouped by conference (Eastern block, then Western); the
+  // Combined view must rank across both. MLS tiebreakers: points, then wins,
+  // then goal difference, then goals for. Reused for the per-conference filter
+  // so each conference table stays point-ordered too.
+  const ordered = [...standings].sort(
+    (a, b) => (b.pts ?? 0) - (a.pts ?? 0) || b.w - a.w || b.gd - a.gd || b.gs - a.gs
+  );
   return (
     <section className="mb-8">
       <div className="flex items-center justify-between gap-3 mb-3 flex-wrap">
@@ -154,11 +161,11 @@ export default function MlsStandings({ standings, conferences, showHonors = true
       </div>
 
       {view === "combined" ? (
-        <Table rows={standings} showConf showHonors={showHonors} />
+        <Table rows={ordered} showConf showHonors={showHonors} />
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {conferences.map((conf) => {
-            const rows = standings.filter((r) => r.conference === conf);
+            const rows = ordered.filter((r) => r.conference === conf);
             return (
               <div key={conf}>
                 <h3 className="text-sm font-semibold mb-2">{conf} Conference</h3>

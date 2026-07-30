@@ -5,6 +5,7 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import fs from "fs";
 import path from "path";
 import SeasonTrends, { type TrendsData } from "../SeasonTrends";
+import SeasonSuperlatives from "../SeasonSuperlatives";
 
 const PATH = "/teams/football/seasons";
 const TITLE = "Club Football by Season";
@@ -36,6 +37,13 @@ const SEASONS: { slug: string; label: string; note: string; live?: boolean }[] =
   { slug: "2008-09", label: "2008-09", note: "Champions League: Barcelona · treble" },
   { slug: "2007-08", label: "2007-08", note: "Champions League: Manchester United" },
   { slug: "2006-07", label: "2006-07", note: "Champions League: AC Milan" },
+  { slug: "2005-06", label: "2005-06", note: "Champions League: Barcelona · La Liga & Europe double" },
+  { slug: "2004-05", label: "2004-05", note: "Champions League: Liverpool · the Miracle of Istanbul" },
+  { slug: "2003-04", label: "2003-04", note: "Champions League: FC Porto · Valencia's La Liga & UEFA Cup double" },
+  { slug: "2002-03", label: "2002-03", note: "Champions League: AC Milan · all-Italian final vs Juventus" },
+  { slug: "2001-02", label: "2001-02", note: "Champions League: Real Madrid · La Novena, Zidane's volley" },
+  { slug: "2000-01", label: "2000-01", note: "Champions League: Bayern Munich · UEFA Cup: Liverpool" },
+  { slug: "1999-00", label: "1999-00", note: "Champions League: Real Madrid · first FIFA Club World Championship: Corinthians" },
 ];
 const cardStyle = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
 
@@ -49,7 +57,6 @@ export default function SeasonsIndex() {
         <h1 className="text-3xl font-semibold tracking-tight">Club Football by Season</h1>
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-2xl">Each completed season as a full hub: the club power ranking (with trophy bonuses), UEFA country coefficients, the European and continental competitions, every final domestic table, and every cup result.</p>
       </header>
-      <SeasonTrends data={trends} />
       <h2 className="text-sm font-semibold text-[var(--text-muted)] mb-3">Browse a season</h2>
       {/* Decade = the season's END year, so 2019-20 (ends 2020) sits in the 2020s and every
           decade row starts with the season ending in a multiple of ten. */}
@@ -68,6 +75,8 @@ export default function SeasonsIndex() {
           </div>
         ))}
       </div>
+      <div className="mt-8"><SeasonTrends data={trends} /></div>
+      <SeasonSuperlatives data={trends} />
     </main>
   );
 }

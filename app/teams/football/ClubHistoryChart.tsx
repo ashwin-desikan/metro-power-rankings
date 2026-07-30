@@ -23,6 +23,13 @@ export default function ClubHistoryChart({ history }: { history: Pt[] }) {
   const years: number[] = [];
   for (let y = y0; y <= y1; y++) years.push(y);
   const byYear = new Map<number, Pt>(pts.map((p) => [yr(p.season), p]));
+  // Thin the season axis so a long history doesn't crowd: label only half-decade seasons (end year
+  // divisible by 5 — 99/00, 04/05, 09/10 …), falling back to decade only if even those are too many;
+  // if the span is short enough to yield none, label every season. Points/lines are unaffected.
+  const halfTicks = years.filter((y) => (y + 1) % 5 === 0);
+  const labelYears = new Set<number>(
+    halfTicks.length > 12 ? years.filter((y) => (y + 1) % 10 === 0) : halfTicks.length === 0 ? years : halfTicks,
+  );
   const maxRank = Math.max(10, ...pts.map((p) => p.rank));
   const maxScore = Math.max(1.4, ...pts.map((p) => p.score));
 
@@ -77,7 +84,7 @@ export default function ClubHistoryChart({ history }: { history: Pt[] }) {
         ))}
         {seg((p) => scoreY(p.score), "s")}
         {dots((p) => scoreY(p.score), "sd")}
-        {years.map((y) => (
+        {years.filter((y) => labelYears.has(y)).map((y) => (
           <text key={`x${y}`} x={px(y)} y={XL} textAnchor="middle" fontSize={9} fill={byYear.get(y) ? "var(--text-dim)" : "var(--border)"}>{ss(seasonLabel(y))}</text>
         ))}
         {hi != null && <line x1={px(hi)} x2={px(hi)} y1={RT} y2={SB} stroke="var(--text-dim)" strokeWidth={1} strokeDasharray="3 3" />}

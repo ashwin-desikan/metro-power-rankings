@@ -12,7 +12,7 @@ k = key()
 COLS = "season,country,league,division,level,grp,place,w,d,l,points,gs,ga,g_diff,matches,cur_name,team,champions,first_division,end_year"
 rows = []; off = 0
 while True:
-    q = urllib.parse.urlencode({"select": COLS, "season": 'in.("2006-07","2007-08","2008-09","2009-10","2010-11","2011-12","2012-13")', "order": "id", "limit": 1000, "offset": off})
+    q = urllib.parse.urlencode({"select": COLS, "season": 'in.("1999-00","2000-01","2001-02","2002-03","2003-04","2004-05","2005-06","2006-07","2007-08","2008-09","2009-10","2010-11","2011-12","2012-13")', "order": "id", "limit": 1000, "offset": off})
     req = urllib.request.Request(f"{SUPA}/rest/v1/cl_league_history?{q}",
                                  headers={"apikey": k, "Authorization": "Bearer " + k})
     with urllib.request.urlopen(req, timeout=90) as r: b = json.load(r)

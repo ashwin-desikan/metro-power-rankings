@@ -257,7 +257,13 @@ def assemble(year, label):
         if not w: continue
         for e in (sec.get("entries") or []):
             if e.get("trophy"): addb_name(e.get("name"), w)
+    # International one-off comps (UEFA Super Cup / Club World Cup / Intercontinental) are already
+    # bonused via the continental CONT_W loop above, so skip them here to avoid a double trophy bonus.
+    # Domestic super cups (Community Shield, DFL-Supercup, Supercopa, etc.) keep their 0.01.
+    CUPS_INTL_SKIP = {"UEFA Super Cup", "Super Cup", "FIFA Club World Cup", "Club World Cup",
+                      "Intercontinental Cup", "FIFA Intercontinental Cup"}
     for cp in hub["cups"]:
+        if cp.get("comp") in CUPS_INTL_SKIP: continue
         addb_name(cp.get("winner"), 0.015 if cp.get("type") == "Domestic cup" else 0.01)
     for nm, c in champs:
         addb_name(nm, 0.06 if c in TOP5 else 0.03)

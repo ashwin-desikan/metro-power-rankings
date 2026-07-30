@@ -35,8 +35,47 @@ def norm(s):
     s = unicodedata.normalize("NFKD", str(s)).encode("ascii", "ignore").decode().lower()
     return re.sub(r"[^a-z0-9]+", " ", s).strip()
 
+# Article-insensitive normalization for a best-effort coefficient-name fallback: bridges spelling
+# variants that differ only by connecting articles, e.g. cl_league_history's "Deportivo de La
+# Coruña" vs the UEFA/CCF "Deportivo La Coruña". Used ONLY when the exact crosswalk lookup misses.
+_ARTICLES = {"de", "la", "le", "el", "del", "di", "do", "da", "the", "of", "les", "los"}
+def loose_norm(s):
+    return " ".join(t for t in norm(s).split() if t not in _ARTICLES)
+
+# Transliteration normalization for the deep-history windows: club_coeff_full carries some 1990s
+# Eastern-European sides under both an old and a modern romanization (e.g. "Dinamo Kiev" holds the
+# late-90s coefficients while the crosswalk resolves the club to the empty modern "Dynamo Kyiv"
+# entry). Collapsing the well-known variant tokens lets the resolver UNION both entries and recover
+# the orphaned pedigree. Whole-word only, minimal set, so unrelated clubs never collide.
+_TRANSLIT = [("dynamo", "dinamo"), ("kyiv", "kiev"), ("kiew", "kiev"), ("moskva", "moscow")]
+def translit_norm(s):
+    t = loose_norm(s)
+    for a, b in _TRANSLIT: t = re.sub(rf"\b{a}\b", b, t)
+    return t
+
 # ---- per-season config: five-year windows (labels) + country-coeff window (end-years) ----
 SEASONS = [
+    {"key": "1999-00", "end": 2000, "domfix": "2000",
+     "five": ["95/96", "96/97", "97/98", "98/99", "99/00"], "cur": "99/00",
+     "cwin": [1996, 1997, 1998, 1999, 2000]},
+    {"key": "2000-01", "end": 2001, "domfix": "2001",
+     "five": ["96/97", "97/98", "98/99", "99/00", "00/01"], "cur": "00/01",
+     "cwin": [1997, 1998, 1999, 2000, 2001]},
+    {"key": "2001-02", "end": 2002, "domfix": "2002",
+     "five": ["97/98", "98/99", "99/00", "00/01", "01/02"], "cur": "01/02",
+     "cwin": [1998, 1999, 2000, 2001, 2002]},
+    {"key": "2002-03", "end": 2003, "domfix": "2003",
+     "five": ["98/99", "99/00", "00/01", "01/02", "02/03"], "cur": "02/03",
+     "cwin": [1999, 2000, 2001, 2002, 2003]},
+    {"key": "2003-04", "end": 2004, "domfix": "2004",
+     "five": ["99/00", "00/01", "01/02", "02/03", "03/04"], "cur": "03/04",
+     "cwin": [2000, 2001, 2002, 2003, 2004]},
+    {"key": "2004-05", "end": 2005, "domfix": "2005",
+     "five": ["00/01", "01/02", "02/03", "03/04", "04/05"], "cur": "04/05",
+     "cwin": [2001, 2002, 2003, 2004, 2005]},
+    {"key": "2005-06", "end": 2006, "domfix": "2006",
+     "five": ["01/02", "02/03", "03/04", "04/05", "05/06"], "cur": "05/06",
+     "cwin": [2002, 2003, 2004, 2005, 2006]},
     {"key": "2006-07", "end": 2007, "domfix": "2007",
      "five": ["02/03", "03/04", "04/05", "05/06", "06/07"], "cur": "06/07",
      "cwin": [2003, 2004, 2005, 2006, 2007]},
@@ -200,25 +239,37 @@ def build_ccf():
     ccf = jload(os.path.join(UEFA, "club_coeff_full.json"))
     ccf_norm = {norm(k): k for k in ccf}
     lines = open(os.path.join(DATA, "uefateamcoeff_1956_2009.txt"), encoding="utf-8").read().split("\n")
-    cur = None; added = 0; unmatched = 0
+    cur = None; added = 0; seeded = 0
     for l in lines:
         m = re.search(r"UEFA Team Coefficients.*?(\d{4})/(\d{4})", l)   # tolerate "(method=2/3)" tag
         if m:
             cur = int(m.group(2)); continue
         # 2003 (02/03) lives on a "(method=2)" page; setdefault + file order keep the default-method
         # pages authoritative for 03/04-07/08, so folding method=2/3 pages here is safe.
-        if cur not in (2003, 2004, 2005, 2006, 2007, 2008) or "\t" not in l: continue
+        if cur not in range(1996, 2009) or "\t" not in l: continue
         p = [x.strip() for x in l.split("\t")]
         if len(p) < 9: continue
-        try: total = float(p[-3])
+        # Column-stable across both eras: rank(0) Team(1) Country(2) Comp(3) ... Total(7). The 1990s
+        # "method=1" pages are 9-col and the 1999+ pages 10-col (an extra Country-part column before
+        # the cumulative coefficient), but Team is always col 1 and the season Total always col 7 —
+        # unlike the old negative-index parse, which only aligned on the 10-col layout and read rank
+        # (not the club) as the team on the 9-col 1996-1998 pages.
+        team = p[1]
+        if not team or re.fullmatch(r"[\d.]*", team): continue   # skip header / rank-only rows
+        try: total = float(p[7])
         except: continue
-        team = p[-9]; lab = f"{(cur - 1) % 100:02d}/{cur % 100:02d}"   # 2004 -> 03/04 ... 2008 -> 07/08
-        key = ccf_norm.get(norm(team))            # only fold into clubs already tracked in CCF
+        lab = f"{(cur - 1) % 100:02d}/{cur % 100:02d}"   # 1996 -> 95/96 ... 2008 -> 07/08
+        key = ccf_norm.get(norm(team))            # fold into an already-tracked CCF club when possible
         if key:
             ccf[key].setdefault(lab, total); added += 1
         else:
-            unmatched += 1
-    print(f"  CCF merge: added {added} kassiesa 02/03-07/08 season points; {unmatched} kassiesa clubs not in CCF (ignored)")
+            # club absent from the modern club_coeff_full (08/09+) — e.g. AC Parma, defunct/reformed
+            # sides that had real UEFA pedigree in the early-2000s window. Seed a new CCF entry from
+            # the kassiesa txt so their pedigree isn't silently zeroed. Keyed by the txt (uefa) name.
+            ccf.setdefault(team, {}).setdefault(lab, total)
+            ccf_norm.setdefault(norm(team), team)
+            added += 1; seeded += 1
+    print(f"  CCF merge: added {added} kassiesa 99/00-07/08 season points ({seeded} new pre-2008 clubs seeded)")
     return ccf
 
 def parse_country_coeff():
@@ -227,7 +278,10 @@ def parse_country_coeff():
     lines = open(os.path.join(DATA, "uefacountrycoeff_history.txt"), encoding="utf-8").read().split("\n")
     out = defaultdict(dict); end = None; expect = None
     for l in lines:
-        m = re.search(r"UEFA Country Coefficients (\d{4})/(\d{4})", l)
+        # ".*?" tolerates the "(method=1)" tag on the 1994/95-1997/98 pages, where the era's country
+        # coefficients live — without it those four seasons (needed for the 1999-2003 windows) are
+        # skipped. Method-tagged country pages exist ONLY for 1995-1998, so this is purely additive.
+        m = re.search(r"UEFA Country Coefficients.*?(\d{4})/(\d{4})", l)
         if m:
             end = int(m.group(2)); expect = None; continue
         if end is None: continue
@@ -268,9 +322,33 @@ def compute_clubs(cfg, uni, cur2uefa, cur2look, dommap, ccf, country5yr, domfix_
     five, curlab = cfg["five"], cfg["cur"]
     canon2cur = {norm(cur): cur for cur in uni}
     def uf(cur): return cur2uefa.get(norm(cur))
+    # Coefficient resolution: exact crosswalk uefa_name first; then an article-insensitive fallback
+    # against the CCF keys (catches cl_league_history spellings that differ only by articles, e.g.
+    # "Deportivo de La Coruña" -> CCF "Deportivo La Coruña").
+    ccf_alias = {}
+    for k in ccf: ccf_alias.setdefault(loose_norm(k), k)
+    translit_groups = defaultdict(list)
+    for k in ccf: translit_groups[translit_norm(k)].append(k)
+    def coeffs(cur):
+        u = uf(cur)
+        keys = set()
+        if u and u in ccf: keys.add(u)
+        for base in (cur, u):
+            if not base: continue
+            a = ccf_alias.get(loose_norm(base))
+            if a: keys.add(a)
+            keys.update(translit_groups.get(translit_norm(base), []))
+        if not keys: return {}
+        # union across the club's variant entries, filling gaps (first non-null wins); the primary
+        # crosswalk key is preferred where it has a value.
+        merged = dict(ccf.get(u, {})) if (u and u in ccf) else {}
+        for k in keys:
+            for lab, v in ccf[k].items():
+                if v is not None and merged.get(lab) is None: merged[lab] = v
+        return merged
     club_cur = {}; club_five = {}
     for cur in uni:
-        u = uf(cur); cs = ccf.get(u, {}) if u else {}
+        cs = coeffs(cur)
         club_cur[cur] = cs.get(curlab, 0) or 0
         club_five[cur] = sum((cs.get(s) or 0) for s in five)
     MAXCUR = max(club_cur.values()) if club_cur else 1; MAXCUR = MAXCUR or 1
@@ -316,9 +394,13 @@ def compute_clubs(cfg, uni, cur2uefa, cur2look, dommap, ccf, country5yr, domfix_
     by_country = defaultdict(list)
     for cur, ctry in uni.items(): by_country[ctry].append(strength(cur))
     avg_str = {c: (sum(v) / len(v) if v else 0.10) for c, v in by_country.items()}
+    # Exclude only leagues that actually carry per-match domfix data THIS season (their real
+    # per-match form was fed above — avoid double-counting). Pre-2007 seasons have no domfix, so the
+    # big-8 fall through to this aggregate standings-based form like every other league.
+    domfix_present = {m["country"] for m in domfix_year}
     for cur, (w, d, l) in dom_rec.items():
         ctry = uni.get(cur)
-        if ctry in DOMFIX_COUNTRIES or cur not in agg: continue
+        if ctry in domfix_present or cur not in agg: continue
         n = w + d + l
         if n <= 0: continue
         A = agg[cur]; A["MP"] += n; A["W"] += w; A["D"] += d; A["L"] += l
@@ -449,7 +531,7 @@ def validate_countries(core, ccountry):
     for b in bad[:12]: print("   ", b)
     print("   top5 reproduced:", [(g['country'], g['coef']) for g in got[:5]])
 
-def main(validate=False):
+def main(validate=False, only=None):
     core = load_core()
     cur2uefa, cur2look, dommap = build_name_maps(core)
     ccf = build_ccf()
@@ -461,7 +543,8 @@ def main(validate=False):
     eur_by = defaultdict(list)
     for r in core["eur"]: eur_by[r.get("season")].append(r)
     cup_rows = load_cup_rows()
-    for cfg in SEASONS:
+    seasons = [c for c in SEASONS if (not only or c["key"] in only)]
+    for cfg in seasons:
         key, end = cfg["key"], cfg["end"]
         uni, champs, dom_rec = universe_and_champs(core["cl"], key, confed_map)
         leagues, ey_warn = build_leagues(core["cl"], key, end, confed_map)
@@ -508,7 +591,7 @@ def load_cup_rows():
     ws = wb["Cup History"]; it = ws.iter_rows(values_only=True)
     hdr = [str(h).strip() if h is not None else "" for h in next(it)]
     ix = {h: i for i, h in enumerate(hdr)}
-    want = {"2006-07", "2007-08", "2008-09", "2009-10", "2010-11", "2011-12", "2012-13"}
+    want = {"1999-00", "2000-01", "2001-02", "2002-03", "2003-04", "2004-05", "2005-06", "2006-07", "2007-08", "2008-09", "2009-10", "2010-11", "2011-12", "2012-13"}
     out = []
     for r in it:
         s = r[ix["Season"]] if ix.get("Season") is not None else None
@@ -542,4 +625,8 @@ def build_cups(key, cup_rows):
     return out
 
 if __name__ == "__main__":
-    main(validate="--validate" in sys.argv)
+    only = None
+    for a in sys.argv:
+        if a.startswith("--seasons="):
+            only = set(a.split("=", 1)[1].split(","))
+    main(validate="--validate" in sys.argv, only=only)

@@ -41,6 +41,17 @@ const CLUB_COLOR: Record<string, string> = {
 const MUTED = "#55556A";
 // "2016-17" -> "16/17"
 const ss = (s: string) => (s.length >= 7 ? `${s.slice(2, 4)}/${s.slice(5, 7)}` : s);
+// Which season labels to print on a season x-axis, so a long range doesn't crowd. Every data point
+// still renders; only the tick text is thinned. Prefer half-decade seasons (end year divisible by 5:
+// 99/00, 04/05, 09/10 …); if even those are too many, fall back to decade only (…/00, …/10); if the
+// visible range is so short it yields none, just label them all (it's short enough not to crowd).
+const endYear = (s: string) => parseInt(s.slice(0, 4), 10) + 1;
+function axisTicks(view: string[]): Set<string> {
+  const half = view.filter((s) => endYear(s) % 5 === 0);
+  if (half.length > 12) return new Set(view.filter((s) => endYear(s) % 10 === 0));
+  if (half.length === 0) return new Set(view);
+  return new Set(half);
+}
 const cardStyle = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
 const selCls = "text-xs px-2 py-1 rounded-md border bg-transparent";
 const selStyle = { borderColor: "var(--border)", color: "var(--text)" } as const;
@@ -141,7 +152,7 @@ function CountryChart({ data }: { data: TrendsData }) {
             <text x={PL - 5} y={py(t) + 3} textAnchor="end" fontSize={9} fill="var(--text-dim)">{t}</text>
           </g>
         ))}
-        {view.map((s) => <text key={s} x={px(s)} y={H - 7} textAnchor="middle" fontSize={9} fill="var(--text-dim)">{ss(s)}</text>)}
+        {(() => { const ticks = axisTicks(view); return view.filter((s) => ticks.has(s)).map((s) => <text key={s} x={px(s)} y={H - 7} textAnchor="middle" fontSize={9} fill="var(--text-dim)">{ss(s)}</text>); })()}
         {hi && <line x1={px(hi)} x2={px(hi)} y1={PT} y2={H - PB} stroke="var(--text-dim)" strokeWidth={1} strokeDasharray="3 3" />}
         {data.countries.map((c) => {
           const col = COUNTRY_COLOR[c.country] ?? MUTED;
@@ -219,7 +230,7 @@ function ClubChart({ data }: { data: TrendsData }) {
               <text x={PL - 4} y={py(r) + 3} textAnchor="end" fontSize={9} fill="var(--text-dim)">{r}</text>
             </g>
           ))}
-          {view.map((s) => <text key={s} x={px(s)} y={H - 7} textAnchor="middle" fontSize={9} fill="var(--text-dim)">{ss(s)}</text>)}
+          {(() => { const ticks = axisTicks(view); return view.filter((s) => ticks.has(s)).map((s) => <text key={s} x={px(s)} y={H - 7} textAnchor="middle" fontSize={9} fill="var(--text-dim)">{ss(s)}</text>); })()}
           {vis.map((c) => {
             const on = hi === c.name;
             const faded = hi != null && !on;
