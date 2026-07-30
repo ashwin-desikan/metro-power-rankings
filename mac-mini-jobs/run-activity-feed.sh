@@ -3,9 +3,9 @@
 # history and commit it [vercel skip]. The /activity page + home "Latest updates"
 # rail read it via ISR-from-raw (lib/activity.ts), so no Vercel build is needed.
 #
-# Runs late in the day so it captures that day's data-job + manual commits.
-# Its own "chore(activity)" commits are skipped by the generator, so the feed
-# never lists itself.
+# Runs early each morning (03:30) so it captures the previous day's data-job +
+# manual commits. Its own "chore(activity)" commits are skipped by the generator,
+# so the feed never lists itself.
 set -uo pipefail
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 REPO="$HOME/Projects/Metro Area Project"
