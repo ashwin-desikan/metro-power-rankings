@@ -12,13 +12,14 @@ restores the *worker*: the scheduler, scripts, venv, and credentials. Budget ~30
 
 ---
 
-## What the mini runs (18 launchd agents)
+## What the mini runs (19 launchd agents)
 
 | Agent | Wrapper | Schedule (local) |
 |---|---|---|
 | com.newsletter.daily | ~/newsletter-podcast/run-daily.sh | 08:00 daily |
 | com.newsletter.weekly | ~/newsletter-podcast/run-weekly.sh | Sun 09:00 |
 | com.newsletter.watchdog | ~/newsletter-podcast/watchdog.sh | 09:30 daily |
+| com.newsletter.retention | ~/newsletter-podcast/retention-spotify.sh | 12:00 daily |
 | com.citizenofnowhere.substack-daily | run-scraper-refresh.sh substack | 07:00 daily |
 | com.citizenofnowhere.rugby-weekly | run-scraper-refresh.sh rugby | Tue 08:05 |
 | com.citizenofnowhere.fiba-weekly | run-scraper-refresh.sh fiba | Wed 08:10 |
