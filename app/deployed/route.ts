@@ -3,7 +3,7 @@
 // The deploy-watch job (mac-mini-jobs/run-deploy-watch.sh) polls this to reconcile
 // "what's live" vs "the newest app commit" and auto-heal builds that got canceled
 // by a concurrent [vercel skip] data push.
-export const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic"; // build-probe 1
 
 export function GET() {
   return Response.json(
