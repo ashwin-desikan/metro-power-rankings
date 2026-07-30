@@ -157,6 +157,12 @@ export default async function ActivityPage() {
               </Link>
               .
             </p>
+            {entries.length > 0 && (
+              <p className="mt-4 text-xs text-[var(--text-muted)]" style={MONO}>
+                {entries.length} changes logged
+                {feed?.generatedAt ? ` · updated ${formatDate(feed.generatedAt)}` : ""}
+              </p>
+            )}
           </header>
 
           {byDate.length === 0 ? (
