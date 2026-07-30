@@ -148,6 +148,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
+      url: `${BASE_URL}/activity`,
+      lastModified: stamp,
+      changeFrequency: "daily",
+      priority: 0.4,
+    },
+    {
       url: `${BASE_URL}/about`,
       lastModified: stamp,
       changeFrequency: "monthly",

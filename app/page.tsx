@@ -12,6 +12,7 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 import Link from 'next/link';
 import FollowingRail from './FollowingRail';
+import ActivityRail from './ActivityRail';
 
 // Directory-forward landing page. Surfaces the breadth of the site first —
 // four ranked indices (each with a live top-three preview), a Greatest Games
@@ -482,6 +483,9 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* Latest updates — a compact strip of the newest activity-feed entries. */}
+      <ActivityRail />
 
       {/* The Indices — each card previews its live top three, then a Greatest Games showcase. */}
       <section id="indices" className="py-16 px-4 sm:px-6 lg:px-8 border-b scroll-mt-20" style={{ borderColor: 'var(--border)' }}>

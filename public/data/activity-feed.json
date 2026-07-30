@@ -1,0 +1,3681 @@
+{
+  "generatedAt": "2026-07-30",
+  "count": 525,
+  "entries": [
+    {
+      "date": "2026-07-30",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball.",
+      "commit": "fcbae1864"
+    },
+    {
+      "date": "2026-07-29",
+      "category": "fix",
+      "hub": "Club Football",
+      "text": "Extend season hubs to 2006-07, fold full-season + cup form, and fix league/cup/Belgium data across all 20 hubs.",
+      "commit": "4afb25e57"
+    },
+    {
+      "date": "2026-07-29",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball, Sound of the Metros.",
+      "commit": "89da9f0ce"
+    },
+    {
+      "date": "2026-07-29",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Recover uncommitted hub-generation overlays + pipeline map.",
+      "commit": "8009fa958"
+    },
+    {
+      "date": "2026-07-29",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Make club-page sections and the main club-directory country groups collapsible for easier mobile browsing.",
+      "commit": "e2fa743e2"
+    },
+    {
+      "date": "2026-07-29",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Club football hub redesign: league + tournament hubs.",
+      "commit": "f7bf167ef"
+    },
+    {
+      "date": "2026-07-28",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Club football hub redesign: worldwide table + cups pages.",
+      "commit": "e8549c47a"
+    },
+    {
+      "date": "2026-07-28",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Club football hub redesign: club detail page.",
+      "commit": "362310997"
+    },
+    {
+      "date": "2026-07-28",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Club football hub redesign: shared primitives + overview and 2026-27 hub.",
+      "commit": "ddcfd7f7f"
+    },
+    {
+      "date": "2026-07-28",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Rebuild season-hub European/continental sections as round-by-round (workbook Eur RndbyRnd).",
+      "commit": "3970bf0d9"
+    },
+    {
+      "date": "2026-07-28",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Cricket, Screen of the Metros, Rugby.",
+      "commit": "4b45cdd6e"
+    },
+    {
+      "date": "2026-07-28",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Star every first-division champion + canonicalize all table names across built season hubs.",
+      "commit": "e3611d2b0"
+    },
+    {
+      "date": "2026-07-28",
+      "category": "hub",
+      "hub": "Screen of the Metros",
+      "text": "ISR-read from GitHub raw so weekly data shows without a build.",
+      "commit": "2c008a36a"
+    },
+    {
+      "date": "2026-07-27",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Canadian football.",
+      "commit": "63a7af2a7"
+    },
+    {
+      "date": "2026-07-27",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Extend completed-season club football hubs back to 2016-17 and add a cross-season Trends section.",
+      "commit": "b7dc8030b"
+    },
+    {
+      "date": "2026-07-27",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Add old Club World Cup, season nav, and 2026-27 ranking preview.",
+      "commit": "a59e10e2a"
+    },
+    {
+      "date": "2026-07-27",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Add completed-season club football hubs for 2022-23 through 2025-26.",
+      "commit": "7493d7208"
+    },
+    {
+      "date": "2026-07-27",
+      "category": "hub",
+      "hub": "Elections",
+      "text": "ISR the 35 election [id] routes (was 1,692 prerendered pages).",
+      "commit": "9d74e5e30"
+    },
+    {
+      "date": "2026-07-27",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Restore the 2026-27 hub leagues changes lost before the prior commit.",
+      "commit": "198ffb079"
+    },
+    {
+      "date": "2026-07-26",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, F1, Leaders, Billionaires, and 3 more.",
+      "commit": "b4a5514ba"
+    },
+    {
+      "date": "2026-07-26",
+      "category": "fix",
+      "hub": "Club Football",
+      "text": "Ship the women's 2026-27 live season hub, consistent Club Football navigation, and a single-source champions fix.",
+      "commit": "d6e38ba9c"
+    },
+    {
+      "date": "2026-07-26",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Canonical club names on live tournament + standings feeds; ship super/domestic cup sections.",
+      "commit": "a8947ad67"
+    },
+    {
+      "date": "2026-07-26",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Live group/league-phase tables on tournament hubs from the bundle.",
+      "commit": "953462bd7"
+    },
+    {
+      "date": "2026-07-26",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "League hubs use live bundle standings with a country league switcher + Europe badges.",
+      "commit": "649ce5a74"
+    },
+    {
+      "date": "2026-07-26",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "2026-27 club season hub + prominent link from the football landing.",
+      "commit": "02b95a3c7"
+    },
+    {
+      "date": "2026-07-26",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Remove World Cup, add live club football (European domestic tables + Copa Libertadores).",
+      "commit": "b798f3913"
+    },
+    {
+      "date": "2026-07-26",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Cap prerendered pages for football/states/cbb/cbb-w/cfb; long tail renders on-demand.",
+      "commit": "4d88b2b10"
+    },
+    {
+      "date": "2026-07-25",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Screen of the Metros, AFL, Canadian football.",
+      "commit": "ec141c791"
+    },
+    {
+      "date": "2026-07-25",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Screen of the Metros: pantheon scoring redesign, per-metro & per-country profiles, ~180 metro attributions.",
+      "commit": "83f21657d"
+    },
+    {
+      "date": "2026-07-24",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Leaders, Billionaires, AFL, and 1 more.",
+      "commit": "06b0e1656"
+    },
+    {
+      "date": "2026-07-23",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball, Leaders, Billionaires, and 1 more.",
+      "commit": "ee726727b"
+    },
+    {
+      "date": "2026-07-23",
+      "category": "new-hub",
+      "hub": "Screen of the Metros",
+      "text": "New hub: Screen of the Metros.",
+      "commit": "87ef1908a"
+    },
+    {
+      "date": "2026-07-23",
+      "category": "hub",
+      "hub": "Sound of the Metros",
+      "text": "Add Dataset JSON-LD for the Sound of the Metros pillar.",
+      "commit": "5cc9ee256"
+    },
+    {
+      "date": "2026-07-23",
+      "category": "fix",
+      "hub": null,
+      "text": "Make the home page's Election Atlas preview self-retiring.",
+      "commit": "fd97a94c9"
+    },
+    {
+      "date": "2026-07-23",
+      "category": "fix",
+      "hub": "Elections",
+      "text": "5 discovery/staleness gaps found while auditing the Election Atlas promotion.",
+      "commit": "ef54e938c"
+    },
+    {
+      "date": "2026-07-23",
+      "category": "fix",
+      "hub": "Geography",
+      "text": "Promote the Election Atlas on the home page, fix stale UK-only description on Geography.",
+      "commit": "f0b50dc7b"
+    },
+    {
+      "date": "2026-07-22",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball, Elections, Leaders, and 2 more.",
+      "commit": "ff3485f67"
+    },
+    {
+      "date": "2026-07-22",
+      "category": "fix",
+      "hub": "Elections",
+      "text": "Wrap SortableTable's <table> in TableScroll so check:table-scroll passes.",
+      "commit": "24f5df6ec"
+    },
+    {
+      "date": "2026-07-22",
+      "category": "hub",
+      "hub": "Elections",
+      "text": "Election forecasts: US 2026 House and Senate, the next UK general election, Brazil, Israel and New Zealand 2026 and France 2027, built on a…",
+      "commit": "065c7d258"
+    },
+    {
+      "date": "2026-07-22",
+      "category": "hub",
+      "hub": "Conflicts",
+      "text": "Election atlas mega-expansion: thirty-five polities, papal conclaves, the wartime layer, and sortable tables everywhere.",
+      "commit": "af4c2a596"
+    },
+    {
+      "date": "2026-07-21",
+      "category": "new-hub",
+      "hub": "Elections",
+      "text": "New hub: Elections.",
+      "commit": "c2acab315"
+    },
+    {
+      "date": "2026-07-21",
+      "category": "new-hub",
+      "hub": "UK Political Leadership",
+      "text": "New hub: UK Political Leadership.",
+      "commit": "82f51bee4"
+    },
+    {
+      "date": "2026-07-21",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball, Cricket, Leaders, and 2 more.",
+      "commit": "5cbfb2c15"
+    },
+    {
+      "date": "2026-07-21",
+      "category": "hub",
+      "hub": "US Political Leadership",
+      "text": "Secretary of Labor: Chavez-DeRemer resigned, Sonderling Acting since 2026-04-20.",
+      "commit": "40033fca0"
+    },
+    {
+      "date": "2026-07-21",
+      "category": "hub",
+      "hub": null,
+      "text": "Add F1 to the season-status lookup so it actually gets a green live dot.",
+      "commit": "782652956"
+    },
+    {
+      "date": "2026-07-20",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Read Zone Zero Cup from GitHub raw with ISR so the weekly regeneration needs no Vercel build.",
+      "commit": "0d4e99c22"
+    },
+    {
+      "date": "2026-07-20",
+      "category": "fix",
+      "hub": null,
+      "text": "Duplicate-header collapse in finals + womens WC; regenerate Zone Zero Cup weekly with preflight guard; release notes.",
+      "commit": "d0267deb9"
+    },
+    {
+      "date": "2026-07-20",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball, Leaders, Power Atlas, and 2 more.",
+      "commit": "9ab07bd6b"
+    },
+    {
+      "date": "2026-07-20",
+      "category": "hub",
+      "hub": null,
+      "text": "Finalize national-team tournament history - render workbook result (Champion/Final/round) instead of frozen live stage.",
+      "commit": "937924311"
+    },
+    {
+      "date": "2026-07-20",
+      "category": "hub",
+      "hub": "Leaders",
+      "text": "Auto-apply changes to _current + per-country history + /leaders/changes tracker + weekly change log.",
+      "commit": "ecf57c2a6"
+    },
+    {
+      "date": "2026-07-20",
+      "category": "hub",
+      "hub": "Power Rankings",
+      "text": "Nowhere 100: weekly week-over-week movement (up/down spots, NEW, dropped-off) + committed weekly snapshots.",
+      "commit": "b3462f6b2"
+    },
+    {
+      "date": "2026-07-19",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball, F1, Leaders, and 3 more.",
+      "commit": "825b93ace"
+    },
+    {
+      "date": "2026-07-18",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball, AFL, Canadian football.",
+      "commit": "912be3820"
+    },
+    {
+      "date": "2026-07-17",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball, AFL.",
+      "commit": "23b80a213"
+    },
+    {
+      "date": "2026-07-16",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball, AFL.",
+      "commit": "e61a8c84e"
+    },
+    {
+      "date": "2026-07-15",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Show each gender's own year in the tennis reigning-champions banner.",
+      "commit": "d6e7e8608"
+    },
+    {
+      "date": "2026-07-15",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball, Sound of the Metros, Tennis.",
+      "commit": "166580c7e"
+    },
+    {
+      "date": "2026-07-14",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball, Cricket, Rugby.",
+      "commit": "8181226aa"
+    },
+    {
+      "date": "2026-07-13",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball, Canadian football.",
+      "commit": "0e5dbe0e3"
+    },
+    {
+      "date": "2026-07-12",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball, Leaders, Billionaires, and 3 more.",
+      "commit": "8d68da815"
+    },
+    {
+      "date": "2026-07-11",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball, AFL, Canadian football.",
+      "commit": "59b109874"
+    },
+    {
+      "date": "2026-07-10",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball, AFL, Canadian football.",
+      "commit": "f69237271"
+    },
+    {
+      "date": "2026-07-10",
+      "category": "fix",
+      "hub": "Badges",
+      "text": "Add a Wikidata-sourced At a glance facts panel to country pages (flag, languages, currency, government, time zones, anthem, legislature, hi…",
+      "commit": "500025e1e"
+    },
+    {
+      "date": "2026-07-09",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball, AFL.",
+      "commit": "a10f698fa"
+    },
+    {
+      "date": "2026-07-09",
+      "category": "hub",
+      "hub": null,
+      "text": "Rebuild metro and champions data from the updated workbooks and bring the Tour de France into Champions.",
+      "commit": "c5dd19272"
+    },
+    {
+      "date": "2026-07-09",
+      "category": "hub",
+      "hub": "Leaders",
+      "text": "Add India's Shunga and Satavahana dynasties and modern-territory chips to Leaders.",
+      "commit": "b083e4d69"
+    },
+    {
+      "date": "2026-07-09",
+      "category": "hub",
+      "hub": "Play",
+      "text": "Add a curriculum-aligned Play and Learn kids games section.",
+      "commit": "d733c2910"
+    },
+    {
+      "date": "2026-07-09",
+      "category": "hub",
+      "hub": null,
+      "text": "Add mobile card-view release note to /updates.",
+      "commit": "f91b879e9"
+    },
+    {
+      "date": "2026-07-09",
+      "category": "fix",
+      "hub": "Billionaires",
+      "text": "Sticky mobile sort bars, screen-reader announcements, two overflow fixes (#18).",
+      "commit": "8dd0653ea"
+    },
+    {
+      "date": "2026-07-09",
+      "category": "hub",
+      "hub": "Billionaires",
+      "text": "Add mobile sort controls to card-view tables (#16).",
+      "commit": "c71a4089e"
+    },
+    {
+      "date": "2026-07-09",
+      "category": "hub",
+      "hub": "Badges",
+      "text": "Cut static page count 51% and convert virtually every table to mobile card-view (#15).",
+      "commit": "3f91a2889"
+    },
+    {
+      "date": "2026-07-09",
+      "category": "fix",
+      "hub": null,
+      "text": "Fix Following sign-in so sessions persist and follows sync across devices.",
+      "commit": "14cd27629"
+    },
+    {
+      "date": "2026-07-09",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "State of Origin: record 2026 NSW series win (2-1, shield to NSW) + release note.",
+      "commit": "6fa87bb1d"
+    },
+    {
+      "date": "2026-07-09",
+      "category": "hub",
+      "hub": "Badges",
+      "text": "Add Vitest and pytest suites for ranking logic and ETL helpers (#14).",
+      "commit": "d720b3892"
+    },
+    {
+      "date": "2026-07-08",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball, Sound of the Metros, AFL, and 1 more.",
+      "commit": "e37e6246c"
+    },
+    {
+      "date": "2026-07-08",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Time machine antiquity, dated org membership, and the Power Atlas to 1500.",
+      "commit": "d23ad2432"
+    },
+    {
+      "date": "2026-07-08",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "British rugby league honours: metro cards, defunct-team cards, and Super League ledger.",
+      "commit": "c4c18eb47"
+    },
+    {
+      "date": "2026-07-08",
+      "category": "hub",
+      "hub": null,
+      "text": "Refresh champions from the updated workbook, order the board and index by TierGuide within Tier (hidden), and derive region from the workbo…",
+      "commit": "0ec241e74"
+    },
+    {
+      "date": "2026-07-08",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Order the champions board and honour-roll index by TierGuide within each Tier, and pick up the updated tiers.",
+      "commit": "2471b3407"
+    },
+    {
+      "date": "2026-07-08",
+      "category": "hub",
+      "hub": null,
+      "text": "Migrate golf and tennis majors to Supabase as the source of record and automate future champions.",
+      "commit": "ccccdc53e"
+    },
+    {
+      "date": "2026-07-08",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Migrate golf and tennis majors to Supabase as the source of record and automate future champions.",
+      "commit": "3ac546922"
+    },
+    {
+      "date": "2026-07-08",
+      "category": "hub",
+      "hub": "Sound of the Metros",
+      "text": "Add European club competition fixtures and reorganize Live Standings football.",
+      "commit": "45b7f7f78"
+    },
+    {
+      "date": "2026-07-08",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "International cricket + rugby: live/upcoming/recent fixtures blocks (Pulselive + ESPN), schedule rugby results ingest on the mini.",
+      "commit": "0e1e7eed2"
+    },
+    {
+      "date": "2026-07-08",
+      "category": "hub",
+      "hub": null,
+      "text": "Keep header on one row at laptop widths (nowrap labels, tighter gaps, defer Updated badge to xl).",
+      "commit": "ddcaa8965"
+    },
+    {
+      "date": "2026-07-07",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball, Cricket.",
+      "commit": "e059b924a"
+    },
+    {
+      "date": "2026-07-07",
+      "category": "hub",
+      "hub": null,
+      "text": "Owner opt-out via ?notrack=1 localStorage flag so my own visits aren't counted.",
+      "commit": "11298b830"
+    },
+    {
+      "date": "2026-07-07",
+      "category": "hub",
+      "hub": null,
+      "text": "Fire page-view beacon as an inline HTML script (useEffect version never ran in prod); hooks pushState for client nav.",
+      "commit": "0a4f5dc1b"
+    },
+    {
+      "date": "2026-07-07",
+      "category": "hub",
+      "hub": null,
+      "text": "Write page views directly from the browser (Vercel route-handler fetch to Supabase never landed); public anon key with fallback.",
+      "commit": "e78d2bea3"
+    },
+    {
+      "date": "2026-07-07",
+      "category": "hub",
+      "hub": "Api",
+      "text": "Embed public Supabase anon URL+key in /api/v relay so page views persist (Turbopack does not expose NEXT_PUBLIC to route-handler runtime).",
+      "commit": "8b73b3ffb"
+    },
+    {
+      "date": "2026-07-07",
+      "category": "hub",
+      "hub": "Api",
+      "text": "Relay page views via same-origin /api/v so blockers stop dropping them; auth: harden Google OAuth redirectTo to origin+pathname.",
+      "commit": "e362360f4"
+    },
+    {
+      "date": "2026-07-06",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, F1, Sound of the Metros, Conflicts, and 1 more.",
+      "commit": "102027777"
+    },
+    {
+      "date": "2026-07-06",
+      "category": "hub",
+      "hub": "Sound of the Metros",
+      "text": "Velvet Rock: reframe as trans-Pacific with Tokyo as fourth primary capital + city pop in the Master Tape.",
+      "commit": "a68422fff"
+    },
+    {
+      "date": "2026-07-06",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Radial WC bracket: show QF/SF/final flags on mobile (were hidden below sm).",
+      "commit": "e1f62343c"
+    },
+    {
+      "date": "2026-07-05",
+      "category": "fix",
+      "hub": "Power Atlas",
+      "text": "Metro #1 singles sortable table (collapsible), Power Atlas year arrows, Privacy in About nav, UTF-8 fix for power-ranking build.",
+      "commit": "cbbd8e39b"
+    },
+    {
+      "date": "2026-07-05",
+      "category": "new-hub",
+      "hub": "Privacy",
+      "text": "New hub: Privacy.",
+      "commit": "739321916"
+    },
+    {
+      "date": "2026-07-05",
+      "category": "hub",
+      "hub": "Me",
+      "text": "Following: optional Google sign-in (Supabase Auth) with cross-device sync + merge-on-login; homepage masthead clearance.",
+      "commit": "e868356c6"
+    },
+    {
+      "date": "2026-07-05",
+      "category": "fix",
+      "hub": null,
+      "text": "Homepage: give the masthead a full clearance over the fixed nav (pt-28), so the eyebrow never crowds the menu.",
+      "commit": "b7e2c6b1a"
+    },
+    {
+      "date": "2026-07-05",
+      "category": "new-hub",
+      "hub": "Me",
+      "text": "New hub: Me.",
+      "commit": "4ce9adaec"
+    },
+    {
+      "date": "2026-07-05",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Cricket, F1, Leaders, and 1 more.",
+      "commit": "c9d45c7eb"
+    },
+    {
+      "date": "2026-07-05",
+      "category": "hub",
+      "hub": null,
+      "text": "First-party page analytics: VisitBeacon -> Supabase track_visit RPC.",
+      "commit": "e6ca2dcf9"
+    },
+    {
+      "date": "2026-07-05",
+      "category": "hub",
+      "hub": null,
+      "text": "Data refresh from MetroAreas.xlsx: metros, teams, and derived JSON.",
+      "commit": "2bd49dc6a"
+    },
+    {
+      "date": "2026-07-04",
+      "category": "hub",
+      "hub": null,
+      "text": "Homepage: per-item descriptions + tooltips on Explore launcher, roomier masthead on mobile, Live Music Charts divider; release note.",
+      "commit": "6c8403b51"
+    },
+    {
+      "date": "2026-07-04",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "1c01b9efb"
+    },
+    {
+      "date": "2026-07-04",
+      "category": "hub",
+      "hub": "Power Atlas",
+      "text": "Power Atlas: add 3 CINC German states; list every present state per year.",
+      "commit": "393aed19f"
+    },
+    {
+      "date": "2026-07-04",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Sports hub polish + fresher live standings.",
+      "commit": "99dd96204"
+    },
+    {
+      "date": "2026-07-04",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Blend the live league board back into the Sports hub.",
+      "commit": "e29c8c7ab"
+    },
+    {
+      "date": "2026-07-04",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Redesign Zone Zero Sports Hub: surfacing-first, map behind a toggle.",
+      "commit": "34b4ce64f"
+    },
+    {
+      "date": "2026-07-04",
+      "category": "new-hub",
+      "hub": "Geography",
+      "text": "New hub: Geography.",
+      "commit": "789d73baf"
+    },
+    {
+      "date": "2026-07-03",
+      "category": "fix",
+      "hub": "Countries",
+      "text": "Fix null-safety in power charts so the build type-checks.",
+      "commit": "9a1c88637"
+    },
+    {
+      "date": "2026-07-03",
+      "category": "new-hub",
+      "hub": "Great Powers",
+      "text": "New hub: Great Powers.",
+      "commit": "e91166c76"
+    },
+    {
+      "date": "2026-07-03",
+      "category": "hub",
+      "hub": "Leaders",
+      "text": "Leaders: /leaders directory (current, time machine, all-time) with era renames, date-aware flags, defunct states + League of Nations, and d…",
+      "commit": "8255a2038"
+    },
+    {
+      "date": "2026-07-03",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Leaders, Sound of the Metros.",
+      "commit": "7761f2201"
+    },
+    {
+      "date": "2026-07-03",
+      "category": "new-hub",
+      "hub": "Leaders",
+      "text": "New hub: Leaders.",
+      "commit": "4d9992ce5"
+    },
+    {
+      "date": "2026-07-03",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Cricket & Rugby Union Greatest Games: Game Score boards on the sport hubs, every national team page, /sports/games, and the homepage showca…",
+      "commit": "f90b1efee"
+    },
+    {
+      "date": "2026-07-03",
+      "category": "new-hub",
+      "hub": "Rankings",
+      "text": "New hub: Rankings.",
+      "commit": "afb5a22ec"
+    },
+    {
+      "date": "2026-07-02",
+      "category": "hub",
+      "hub": "Sound of the Metros",
+      "text": "Sound: multi-award prestige (Grammy + BRIT/AMA/VMA/EMA/ARIA/Juno + Rolling Stone 500), Awards History hub, RS500 list, 117 canon artists se…",
+      "commit": "2eb1359a2"
+    },
+    {
+      "date": "2026-07-02",
+      "category": "hub",
+      "hub": "Sound of the Metros",
+      "text": "Sound of the Metros: add Grammy prestige pillar, /sound/grammys hub, and award badges.",
+      "commit": "976b3dbf7"
+    },
+    {
+      "date": "2026-07-02",
+      "category": "new-hub",
+      "hub": "Sound of the Metros",
+      "text": "New hub: Sound of the Metros.",
+      "commit": "8cd17c694"
+    },
+    {
+      "date": "2026-07-02",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "72711b260"
+    },
+    {
+      "date": "2026-07-01",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "World Cup 2026 knockout UX: capture kickoff times from the live scoreboard by venue and show them in the reader's timezone via a picker, so…",
+      "commit": "baf83dbf3"
+    },
+    {
+      "date": "2026-07-01",
+      "category": "hub",
+      "hub": "Power Rankings",
+      "text": "Social cards: add default OG image site-wide and a bespoke card for The Nowhere 100.",
+      "commit": "9f0ce200f"
+    },
+    {
+      "date": "2026-07-01",
+      "category": "fix",
+      "hub": null,
+      "text": "WC2026: fix Round of 16 bracket order and drop eliminated teams from title odds.",
+      "commit": "02f402131"
+    },
+    {
+      "date": "2026-07-01",
+      "category": "hub",
+      "hub": "Organizations",
+      "text": "The Nowhere 100: rebrand and expand the world power ranking.",
+      "commit": "1aab234b5"
+    },
+    {
+      "date": "2026-07-01",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Cricket, Tennis.",
+      "commit": "973456df8"
+    },
+    {
+      "date": "2026-07-01",
+      "category": "hub",
+      "hub": null,
+      "text": "Nav: regroup Geography and rebuild the Sports menu into mega-menus on desktop and mobile.",
+      "commit": "e9c1d64e9"
+    },
+    {
+      "date": "2026-07-01",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "World Cup: live knockout results and bracket advancement from the ESPN scoreboard.",
+      "commit": "425a17d81"
+    },
+    {
+      "date": "2026-06-30",
+      "category": "fix",
+      "hub": null,
+      "text": "Fix /states production build: add the missing rank field to the StateRow type so the directory rows satisfy the StatesDirectory Row contrac…",
+      "commit": "e55334e4d"
+    },
+    {
+      "date": "2026-06-30",
+      "category": "new-hub",
+      "hub": "Power Rankings",
+      "text": "New hub: Power Rankings.",
+      "commit": "a1fcca60e"
+    },
+    {
+      "date": "2026-06-30",
+      "category": "new-hub",
+      "hub": "Mayors",
+      "text": "New hub: Mayors.",
+      "commit": "dc1d54171"
+    },
+    {
+      "date": "2026-06-30",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Leaders, Rugby.",
+      "commit": "f04a15981"
+    },
+    {
+      "date": "2026-06-30",
+      "category": "fix",
+      "hub": "Rankings",
+      "text": "Fix+feat(civic): revert bad overwrite, add-only+PR review, ISR for US-gov pages, mayors pipeline + metro card.",
+      "commit": "e64dd27cc"
+    },
+    {
+      "date": "2026-06-30",
+      "category": "new-hub",
+      "hub": "US Political Leadership",
+      "text": "New hub: US Political Leadership.",
+      "commit": "9c6c8ec2e"
+    },
+    {
+      "date": "2026-06-30",
+      "category": "fix",
+      "hub": "Governors",
+      "text": "US governors hub (sortable, metro scores) + state-page governors, territory governors, leader fixes.",
+      "commit": "bb7a40d59"
+    },
+    {
+      "date": "2026-06-30",
+      "category": "new-hub",
+      "hub": "Governors",
+      "text": "New hub: Governors.",
+      "commit": "cdd177bdf"
+    },
+    {
+      "date": "2026-06-30",
+      "category": "fix",
+      "hub": "Organizations",
+      "text": "Org leadership on /orgs (NATO/UN/EU), Palestine/Kosovo/Vatican histories, Commonwealth realm fixes; workflow [vercel skip] + WC cron.",
+      "commit": "ad0350990"
+    },
+    {
+      "date": "2026-06-30",
+      "category": "hub",
+      "hub": "Api",
+      "text": "Enforce admin auth, harden session + queue persistence, distributed rate limit, pin actions.",
+      "commit": "ffcb13cab"
+    },
+    {
+      "date": "2026-06-30",
+      "category": "hub",
+      "hub": "Admin",
+      "text": "Enforce admin auth, harden session + queue persistence, pin actions.",
+      "commit": "7558f10c1"
+    },
+    {
+      "date": "2026-06-29",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, F1, Billionaires.",
+      "commit": "8edae4080"
+    },
+    {
+      "date": "2026-06-29",
+      "category": "fix",
+      "hub": "Club Football",
+      "text": "Fix radial bracket topology: compute wheel order from the official FIFA feeder tree and a Round-of-32 venue-to-match map, so the Round of 1…",
+      "commit": "31ba4cecd"
+    },
+    {
+      "date": "2026-06-29",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Add radial World Cup knockout bracket on /teams/national: SVG wheel of 32 flags converging to the final with winners' paths in gold and off…",
+      "commit": "9b6b3dd6f"
+    },
+    {
+      "date": "2026-06-29",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Add radial World Cup knockout bracket on /teams/national: SVG wheel of 32 flags converging to the final, winners' paths highlighted in gold…",
+      "commit": "f2768d0c8"
+    },
+    {
+      "date": "2026-06-29",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Automate F1 hub refresh: per-race Jolpica fetch patches the current-season slice of data.json (winners, poles, fastest laps, standings) and…",
+      "commit": "7d4cd6b44"
+    },
+    {
+      "date": "2026-06-29",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Live Standings: read the World Cup bundle from the live feed (ISR) so completed knockout scores and recomputed standings appear without a r…",
+      "commit": "83fc4e2d9"
+    },
+    {
+      "date": "2026-06-29",
+      "category": "fix",
+      "hub": "Countries",
+      "text": "Fix WC2026 group tables and bracket (standings from the results feed, FIFA tiebreakers, official Round of 32, no stale-ESPN regression); fo…",
+      "commit": "831d9a0a4"
+    },
+    {
+      "date": "2026-06-29",
+      "category": "fix",
+      "hub": null,
+      "text": "Fix WC2026 group tables and bracket (recompute standings from the results feed, reorder by FIFA tiebreakers, pin the official Round of 32,…",
+      "commit": "80408cf79"
+    },
+    {
+      "date": "2026-06-29",
+      "category": "fix",
+      "hub": null,
+      "text": "Fix WC2026 group tables and bracket: derive Group Stage standings from the results feed instead of the workbook's double-counting W/D/L col…",
+      "commit": "fccee3d73"
+    },
+    {
+      "date": "2026-06-28",
+      "category": "fix",
+      "hub": null,
+      "text": "Billionaires country mapping (filter endpoints + real ISO2); shorten ISR windows to 1h.",
+      "commit": "4b4563aa4"
+    },
+    {
+      "date": "2026-06-28",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Billionaires.",
+      "commit": "e92d54906"
+    },
+    {
+      "date": "2026-06-28",
+      "category": "hub",
+      "hub": null,
+      "text": "Ship the country-data expansion plus refreshed metro and football feeds.",
+      "commit": "6a64e3d3d"
+    },
+    {
+      "date": "2026-06-28",
+      "category": "new-hub",
+      "hub": "Billionaires",
+      "text": "New hub: Billionaires.",
+      "commit": "7de8d3dbb"
+    },
+    {
+      "date": "2026-06-28",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Expand leadership to ~100 countries with weekly no-build auto-refresh, a warning-sign framework, and deep dynastic histories.",
+      "commit": "af72d38b8"
+    },
+    {
+      "date": "2026-06-28",
+      "category": "fix",
+      "hub": "Countries",
+      "text": "Expand leadership to ~100 countries with weekly no-build auto-refresh, a warning-sign audit, and fixes.",
+      "commit": "ac1be8bee"
+    },
+    {
+      "date": "2026-06-28",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Add leadership history for 23 more countries and lead the countries directory with the head of government.",
+      "commit": "aefb9ccb4"
+    },
+    {
+      "date": "2026-06-28",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Add leadership history for 23 more countries and lead the countries directory with the head of government.",
+      "commit": "e5852a928"
+    },
+    {
+      "date": "2026-06-28",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Leaders data depth + current leader on countries hub.",
+      "commit": "8ab0475c4"
+    },
+    {
+      "date": "2026-06-27",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Leaders.",
+      "commit": "65568bc3b"
+    },
+    {
+      "date": "2026-06-27",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Leaders data audit + US presidents home metro column.",
+      "commit": "847a23b1e"
+    },
+    {
+      "date": "2026-06-27",
+      "category": "fix",
+      "hub": "Countries",
+      "text": "Countries sort persistence, Germany era ordering, China leaders gap.",
+      "commit": "ba7b640b5"
+    },
+    {
+      "date": "2026-06-27",
+      "category": "new-hub",
+      "hub": "Organizations",
+      "text": "New hub: Organizations.",
+      "commit": "4c1f3fd73"
+    },
+    {
+      "date": "2026-06-27",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Premier League live standings from ESPN (eng.1, 30-min ISR) with zone coloring.",
+      "commit": "9f09dbd41"
+    },
+    {
+      "date": "2026-06-27",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "British Home Championship archive + intercontinental ETL patch (Mundialito/Artemio Franchi).",
+      "commit": "79455228c"
+    },
+    {
+      "date": "2026-06-27",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "WC2026 knockout bracket with live win probabilities.",
+      "commit": "bd546fab7"
+    },
+    {
+      "date": "2026-06-27",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Champions: deep-link competitions to hub champions sections; drop redundant honour rolls; incorporate Champions_History updates.",
+      "commit": "4e1a1dda3"
+    },
+    {
+      "date": "2026-06-27",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Champions: route 98 competitions to their hubs, drop redundant honour rolls; incorporate Champions_History updates.",
+      "commit": "0df92eb13"
+    },
+    {
+      "date": "2026-06-26",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Champions: link football competitions to their tournament hubs; incorporate Champions_History updates.",
+      "commit": "5ff40be1a"
+    },
+    {
+      "date": "2026-06-26",
+      "category": "fix",
+      "hub": "Countries",
+      "text": "All-Time champions: honour rolls + Current/All-Time toggle, metro & country Championship History (logos, dates, tier emphasis), former top-…",
+      "commit": "855cc943c"
+    },
+    {
+      "date": "2026-06-26",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Rugby.",
+      "commit": "5554ebc76"
+    },
+    {
+      "date": "2026-06-26",
+      "category": "fix",
+      "hub": "Rankings",
+      "text": "All-Time champions honour rolls + metro history; workbook refresh; queued fixes.",
+      "commit": "5e1779cc4"
+    },
+    {
+      "date": "2026-06-26",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Add NFL International hub (/teams/nfl/international), linked from the NFL page.",
+      "commit": "e5df1e47f"
+    },
+    {
+      "date": "2026-06-25",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Gate NHL live standings row to genuine mid-season.",
+      "commit": "d33d0cabf"
+    },
+    {
+      "date": "2026-06-25",
+      "category": "fix",
+      "hub": "Sports",
+      "text": "Fix F1 points type in live standings (coerce number | null to a cell).",
+      "commit": "27a4246bb"
+    },
+    {
+      "date": "2026-06-25",
+      "category": "fix",
+      "hub": "Play",
+      "text": "Add Live Standings hub (live golf, tennis, ICC WTC, NPB and every live league), NFL Rules Lab plus kids game, F1 fixes, and sports hub poli…",
+      "commit": "d0b4ea4b2"
+    },
+    {
+      "date": "2026-06-25",
+      "category": "fix",
+      "hub": "Club Football",
+      "text": "Fix /teams/football double marker; add live NPB standings via SPAIA (ISR, no rebuild).",
+      "commit": "da74920f0"
+    },
+    {
+      "date": "2026-06-25",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "5f79b8108"
+    },
+    {
+      "date": "2026-06-25",
+      "category": "fix",
+      "hub": null,
+      "text": "Fix truncated lib/releases.ts from prior commit (build was failing).",
+      "commit": "70475dd40"
+    },
+    {
+      "date": "2026-06-25",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Add College Baseball hub, ABA Oth Titles, State of Origin, Domestic crests.",
+      "commit": "b33db18d6"
+    },
+    {
+      "date": "2026-06-25",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Expand crest/flag coverage, enrich rivalries board, upgrade F1 hub.",
+      "commit": "ab1b863b8"
+    },
+    {
+      "date": "2026-06-24",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Club crests and national-team flags sitewide.",
+      "commit": "a161f97dd"
+    },
+    {
+      "date": "2026-06-24",
+      "category": "fix",
+      "hub": "Club Football",
+      "text": "Add club crests across team pages and tables; fix NBA/MLB/NHL logos.",
+      "commit": "f232bbf04"
+    },
+    {
+      "date": "2026-06-24",
+      "category": "hub",
+      "hub": "Play",
+      "text": "Add the Play & Learn rules layer and the Games arcade.",
+      "commit": "d3bb1fd6b"
+    },
+    {
+      "date": "2026-06-24",
+      "category": "hub",
+      "hub": "Play",
+      "text": "Add the Rules Lab to /play: an Offside or Onside?",
+      "commit": "9993f02c0"
+    },
+    {
+      "date": "2026-06-24",
+      "category": "hub",
+      "hub": null,
+      "text": "Add /play Play & Learn kids' games section with nav links.",
+      "commit": "5c6fd429d"
+    },
+    {
+      "date": "2026-06-24",
+      "category": "hub",
+      "hub": null,
+      "text": "Add /play Play & Learn kids' games section with nav links.",
+      "commit": "45b9a509d"
+    },
+    {
+      "date": "2026-06-24",
+      "category": "hub",
+      "hub": null,
+      "text": "Add /play Play & Learn kids' games section with nav links.",
+      "commit": "2766ee153"
+    },
+    {
+      "date": "2026-06-24",
+      "category": "new-hub",
+      "hub": "Play",
+      "text": "New hub: Play.",
+      "commit": "7f3aced60"
+    },
+    {
+      "date": "2026-06-24",
+      "category": "hub",
+      "hub": null,
+      "text": "Add weekly anomaly digest workflow; tighten standings ISR to 30m.",
+      "commit": "0112eea06"
+    },
+    {
+      "date": "2026-06-24",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "2608e18c3"
+    },
+    {
+      "date": "2026-06-23",
+      "category": "fix",
+      "hub": "Sports",
+      "text": "Add International Football greatest games, women's rivalries, and fix NBA arena naming.",
+      "commit": "b6d024f5a"
+    },
+    {
+      "date": "2026-06-23",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Rugby.",
+      "commit": "28fad80fb"
+    },
+    {
+      "date": "2026-06-22",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Add cross-sport Sports Rivalries feature and clamp WC2026 projected points.",
+      "commit": "6213afdb4"
+    },
+    {
+      "date": "2026-06-22",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "e5adc39f1"
+    },
+    {
+      "date": "2026-06-21",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Add the Formula 1 hub and Domestic Leagues Worldwide coverage note, expose champion tiers and award dates with corrected Gold Standard badg…",
+      "commit": "1ec0b1a0e"
+    },
+    {
+      "date": "2026-06-21",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Sports console and release notes.",
+      "commit": "0cbc032ad"
+    },
+    {
+      "date": "2026-06-21",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Enrich metro team cards.",
+      "commit": "21189ccb3"
+    },
+    {
+      "date": "2026-06-21",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Add the Domestic Leagues Worldwide hub.",
+      "commit": "3bd378cb3"
+    },
+    {
+      "date": "2026-06-21",
+      "category": "hub",
+      "hub": null,
+      "text": "Zone Zero Cup: boost Great Britain football and Athletics.",
+      "commit": "16f40e0c0"
+    },
+    {
+      "date": "2026-06-21",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "f279bb13b"
+    },
+    {
+      "date": "2026-06-21",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Metro pages: de-duplicate women's college basketball and place college teams behind the pros.",
+      "commit": "ec0b8c825"
+    },
+    {
+      "date": "2026-06-21",
+      "category": "fix",
+      "hub": null,
+      "text": "Refresh metro market caps and fix the World Cup group standings.",
+      "commit": "0ddf17245"
+    },
+    {
+      "date": "2026-06-20",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Zone Zero Cup: world rankings for men's volleyball and handball, a Netball World Cup pillar, and a wide round of weighting refinements.",
+      "commit": "a80bc7772"
+    },
+    {
+      "date": "2026-06-20",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Add golf and tennis majors hubs and expand the Zone Zero Cup.",
+      "commit": "a86f6c830"
+    },
+    {
+      "date": "2026-06-20",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Zone Zero Cup: per-sport breakdown table, national-sport token scoring, GB basketball on home nations, football/associate recalibration.",
+      "commit": "b99347cfa"
+    },
+    {
+      "date": "2026-06-20",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "aa62c18d1"
+    },
+    {
+      "date": "2026-06-19",
+      "category": "fix",
+      "hub": null,
+      "text": "Fix Zone Zero Cup release note: shorten the women's-football bullet under the 220-char /updates validator limit (the deploy build failed pr…",
+      "commit": "c9444ed20"
+    },
+    {
+      "date": "2026-06-19",
+      "category": "hub",
+      "hub": "Methodology",
+      "text": "Add the Zone Zero Cup: a national sporting-merit ranking, with world rankings on three sport hubs.",
+      "commit": "c6cfa5d9c"
+    },
+    {
+      "date": "2026-06-19",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "f1c6368f6"
+    },
+    {
+      "date": "2026-06-18",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Country economic profiles, UK home nations, and a full data refresh.",
+      "commit": "cfd2f97c9"
+    },
+    {
+      "date": "2026-06-18",
+      "category": "hub",
+      "hub": null,
+      "text": "Release notes: 2026-06-17 and 2026-06-18 (champions hub, WCBB/college hockey, champions filters, Studio launch).",
+      "commit": "c6c4c9bdd"
+    },
+    {
+      "date": "2026-06-18",
+      "category": "hub",
+      "hub": "Studio",
+      "text": "Studio depth: fan-level scores, NL audience query, distinctive signature, and lift/holdout measurement.",
+      "commit": "697a81c00"
+    },
+    {
+      "date": "2026-06-18",
+      "category": "new-hub",
+      "hub": "Studio",
+      "text": "New hub: Studio.",
+      "commit": "38832575f"
+    },
+    {
+      "date": "2026-06-18",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Champions hub: interdependent filters, reset button, tier-ranked default order, and Next title column.",
+      "commit": "00c4268c0"
+    },
+    {
+      "date": "2026-06-18",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "e54ce7e7a"
+    },
+    {
+      "date": "2026-06-18",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Add Current Champions hub with region column sortable tables and Gold Standard medals champion badges on metro and country cards and League…",
+      "commit": "03b40f38d"
+    },
+    {
+      "date": "2026-06-17",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Add current-champions badges from ZoneZero_Champions source of truth.",
+      "commit": "032d5d8bf"
+    },
+    {
+      "date": "2026-06-17",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Let women's basketball and college hockey programs be a metro Top Team.",
+      "commit": "6c020f497"
+    },
+    {
+      "date": "2026-06-17",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Preserve the canonical (W) suffix in women's program names.",
+      "commit": "b8a1aeb3d"
+    },
+    {
+      "date": "2026-06-17",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Add Women's College Basketball hub and wire women's + college hockey into metro cards.",
+      "commit": "bf543c1ab"
+    },
+    {
+      "date": "2026-06-17",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Include defunct and non-country teams in the Olympic all-time table; replace edition medalist lists with per-sport nation tables.",
+      "commit": "1d2bfabe6"
+    },
+    {
+      "date": "2026-06-17",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "1df78b972"
+    },
+    {
+      "date": "2026-06-16",
+      "category": "fix",
+      "hub": "Rankings",
+      "text": "Add Olympic edition pages, all-time medal filters, and WC2026 fix.",
+      "commit": "bc11944a6"
+    },
+    {
+      "date": "2026-06-16",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Add Most similar metros and dimension signature to metro pages.",
+      "commit": "dd3a39dfd"
+    },
+    {
+      "date": "2026-06-16",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Rugby.",
+      "commit": "031f44d23"
+    },
+    {
+      "date": "2026-06-15",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Unify metro college-team cards into Major League Teams/Venues.",
+      "commit": "3879165a9"
+    },
+    {
+      "date": "2026-06-15",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Restore NHL Cup presentation games and add College Basketball to the games hub.",
+      "commit": "64dc64df9"
+    },
+    {
+      "date": "2026-06-15",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Crown the Hurricanes and deepen the college-basketball layer.",
+      "commit": "8ad3984fc"
+    },
+    {
+      "date": "2026-06-15",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Wire College Basketball into the metro layer (task 27).",
+      "commit": "a7a80fbaf"
+    },
+    {
+      "date": "2026-06-15",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "8df200646"
+    },
+    {
+      "date": "2026-06-14",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Add Men's College Basketball portal (/teams/cbb).",
+      "commit": "023a78fc2"
+    },
+    {
+      "date": "2026-06-14",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Rebrand /sports as the Zone Zero Sports Hub; add /sports/about.",
+      "commit": "d5b4cb594"
+    },
+    {
+      "date": "2026-06-14",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "96030269e"
+    },
+    {
+      "date": "2026-06-14",
+      "category": "hub",
+      "hub": null,
+      "text": "Crown the Knicks 2026 NBA champions and add time-boxed champion banners to the Sports nav.",
+      "commit": "70d38f952"
+    },
+    {
+      "date": "2026-06-14",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Sports portals, nav board, Below the Line, Intl Rugby League, Women's International.",
+      "commit": "9d5bd14b1"
+    },
+    {
+      "date": "2026-06-14",
+      "category": "hub",
+      "hub": null,
+      "text": "Refresh metro + sports data from updated MetroAreas.xlsx.",
+      "commit": "8703fc633"
+    },
+    {
+      "date": "2026-06-13",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Add handball/volleyball national portals + 6 domestic winners-roll portals.",
+      "commit": "a7e8e5d5b"
+    },
+    {
+      "date": "2026-06-13",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "90c801434"
+    },
+    {
+      "date": "2026-06-13",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Add NPB/hockey/FIBA portals; country League Hubs + national-team ordering.",
+      "commit": "6d2b87355"
+    },
+    {
+      "date": "2026-06-12",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Add four international portals and two domestic honours layers in one release.",
+      "commit": "7c0ee6905"
+    },
+    {
+      "date": "2026-06-12",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Make WC2026 group tables live and add the rugby results stager.",
+      "commit": "b265c9e94"
+    },
+    {
+      "date": "2026-06-12",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "a6d5e9f56"
+    },
+    {
+      "date": "2026-06-11",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Add International Cricket and Rugby Union portals with country-hub wiring and a weekly rankings pipeline.",
+      "commit": "579f9f08a"
+    },
+    {
+      "date": "2026-06-11",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "National Teams on country hubs plus the recovered cricket engine.",
+      "commit": "9a4ad0147"
+    },
+    {
+      "date": "2026-06-10",
+      "category": "fix",
+      "hub": "Rankings",
+      "text": "College Football hub fixes, site-wide sticky tables, sports nav restructure, workbook refresh.",
+      "commit": "e6dc4fa58"
+    },
+    {
+      "date": "2026-06-09",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "College Football hub plus metro, Greatest Games, and nav integration.",
+      "commit": "1bf2427b0"
+    },
+    {
+      "date": "2026-06-09",
+      "category": "new-hub",
+      "hub": "Deep Dives",
+      "text": "New hub: Deep Dives.",
+      "commit": "98d3a1936"
+    },
+    {
+      "date": "2026-06-09",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "AFL ladders, season-by-season, all-time and live tables now read wins-losses-draws (W-L-D); NRL stays W-D-L.",
+      "commit": "69352621f"
+    },
+    {
+      "date": "2026-06-09",
+      "category": "hub",
+      "hub": null,
+      "text": "Match Perth and Adelaide Top Team picks to canonical club names so the Top Team crown links correctly on those club pages.",
+      "commit": "121d1263a"
+    },
+    {
+      "date": "2026-06-09",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Add AFL and NRL portals: hub and team pages for every VFL/AFL (1897-) and NSWRL/NRL (1908-) club, current and defunct, with all-time premie…",
+      "commit": "4db1c5b06"
+    },
+    {
+      "date": "2026-06-08",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Add a CFL portal with live standings and enrich defunct/relocated teams with per-era stats.",
+      "commit": "aa3e98b7f"
+    },
+    {
+      "date": "2026-06-08",
+      "category": "hub",
+      "hub": null,
+      "text": "Rebuild relocated/defunct team tiles from each league's season-by-season Year-by-Year sheet: every tile carries the franchise's per-city na…",
+      "commit": "69b48fe5d"
+    },
+    {
+      "date": "2026-06-07",
+      "category": "fix",
+      "hub": "Rankings",
+      "text": "Add Defunct/Relocated Teams to every metro page: each metro lists franchises that once played there (relocated or folded) with the era name…",
+      "commit": "184bdcbe9"
+    },
+    {
+      "date": "2026-06-07",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball.",
+      "commit": "abe2a7bba"
+    },
+    {
+      "date": "2026-06-07",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Make /rankings/[slug] ISR and its share card on-demand: pre-render only the top 250 metros by score and serve the rest (and all OG cards) o…",
+      "commit": "053a3bd52"
+    },
+    {
+      "date": "2026-06-07",
+      "category": "fix",
+      "hub": null,
+      "text": "Fix blank social previews and cut Vercel build cost.",
+      "commit": "71751827e"
+    },
+    {
+      "date": "2026-06-06",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "0e5eadb0f"
+    },
+    {
+      "date": "2026-06-06",
+      "category": "hub",
+      "hub": null,
+      "text": "Make the home page ISR (hourly revalidate) so the Substack feed refreshes without a full rebuild, retiring the daily-substack-refresh deplo…",
+      "commit": "c2241dabc"
+    },
+    {
+      "date": "2026-06-06",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Add World Cup 2026 Monte Carlo simulator.",
+      "commit": "12f87944f"
+    },
+    {
+      "date": "2026-06-05",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Add English Domestic Cups (FA Cup + League Cup).",
+      "commit": "3d3d2f73b"
+    },
+    {
+      "date": "2026-06-05",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Add the Ghost Franchises feature (The Geography of Erasure): a new /sports/geography-of-erasure deep-dive backed by lib/ghostFranchises.ts…",
+      "commit": "5fa7cc680"
+    },
+    {
+      "date": "2026-06-05",
+      "category": "fix",
+      "hub": "Club Football",
+      "text": "Fix build: drop react-dom createPortal from WatchButton (project ships no @types/react-dom); render the video modal inline, which is equiva…",
+      "commit": "e187d0f41"
+    },
+    {
+      "date": "2026-06-05",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Add the Greatest Games hub (/sports/games): cross-sport top games by Game Score plus Stanley Cup presentations, with rank-badged featured c…",
+      "commit": "546f635c1"
+    },
+    {
+      "date": "2026-06-04",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "NHL Cup presentation games show the clinching game number (col F); NBA all-time top games flag overtime with OT count (in-place enrichment,…",
+      "commit": "24ab2e4dd"
+    },
+    {
+      "date": "2026-06-04",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Refresh International ELO/FIFA from the workbook with workbook-driven 'as of' dates; fold international, club-football, women's-football an…",
+      "commit": "1d9baf22c"
+    },
+    {
+      "date": "2026-06-04",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Add Team Valuations board, per-team value chips, and Sports hub restructure.",
+      "commit": "060396dfa"
+    },
+    {
+      "date": "2026-06-03",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Show full NHL season-by-season history; drop the 20-row cap.",
+      "commit": "d57648118"
+    },
+    {
+      "date": "2026-06-03",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Add defunct franchise detail pages and link them from all-time tables.",
+      "commit": "2b2c0d9bc"
+    },
+    {
+      "date": "2026-06-03",
+      "category": "fix",
+      "hub": "Club Football",
+      "text": "Add shared HubNav component and nav to league and directory hubs; fix NFL standings width and add Champ App column.",
+      "commit": "df3f3663a"
+    },
+    {
+      "date": "2026-06-03",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Add on-this-page nav to club and international football sub-hubs.",
+      "commit": "4598efaea"
+    },
+    {
+      "date": "2026-06-03",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "f38426d34"
+    },
+    {
+      "date": "2026-06-03",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Wire NBA top games to Game Score; zero out NFL offseason standings.",
+      "commit": "2ab5f8afd"
+    },
+    {
+      "date": "2026-06-02",
+      "category": "hub",
+      "hub": null,
+      "text": "Publish top-team editorial refresh from the June 2 workbook.",
+      "commit": "c9778ec7b"
+    },
+    {
+      "date": "2026-06-02",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Expand Club Football: Copa Libertadores, Other Continental, and MLS hubs plus the full club universe.",
+      "commit": "7d797cd86"
+    },
+    {
+      "date": "2026-06-02",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Add Club Football hubs: Copa Libertadores, Other Continental, and MLS.",
+      "commit": "018d5a0f2"
+    },
+    {
+      "date": "2026-06-02",
+      "category": "fix",
+      "hub": null,
+      "text": "Fix /updates build failure: consolidate the 2026-06-02 entry to four bullets and a twelve-word headline.",
+      "commit": "8984f3a7d"
+    },
+    {
+      "date": "2026-06-02",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Add 2026 NFL Standings board to the NFL hub and refresh metro rankings from the latest workbook.",
+      "commit": "7683ee068"
+    },
+    {
+      "date": "2026-06-02",
+      "category": "fix",
+      "hub": null,
+      "text": "Fix /updates build: trim 2026-06-02 release to satisfy the brevity guard.",
+      "commit": "1ee5da53a"
+    },
+    {
+      "date": "2026-06-02",
+      "category": "fix",
+      "hub": "Rankings",
+      "text": "Live WNBA standings on team pages, compact metro Dimension Breakdown, football playoff label fixes, NWSL deep-links, mobile season-table sc…",
+      "commit": "602444709"
+    },
+    {
+      "date": "2026-06-01",
+      "category": "fix",
+      "hub": "Rankings",
+      "text": "Women's Football portal expansion, WNBA hub, and live standings.",
+      "commit": "8dd1f19db"
+    },
+    {
+      "date": "2026-06-01",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Workbook sync: refresh metro and sports data from MetroAreas.xlsx.",
+      "commit": "6d17f50e5"
+    },
+    {
+      "date": "2026-06-01",
+      "category": "fix",
+      "hub": "Sports",
+      "text": "Women's Football portal plus Women's World Cup, and Gold Standard fix.",
+      "commit": "a3189ae02"
+    },
+    {
+      "date": "2026-05-31",
+      "category": "fix",
+      "hub": "Sports",
+      "text": "IPL hub + franchise pages, football standings overhaul, playout pills, sports cleanup.",
+      "commit": "ae698c78b"
+    },
+    {
+      "date": "2026-05-31",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "a58f08dc7"
+    },
+    {
+      "date": "2026-05-31",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Wikidata QID + Wikipedia links on club pages, drop 2025-26 live bracket.",
+      "commit": "c21a7700e"
+    },
+    {
+      "date": "2026-05-31",
+      "category": "hub",
+      "hub": null,
+      "text": "Workbook sync: MktCap refresh May 31 + Wikidata QID fills.",
+      "commit": "3bfea9739"
+    },
+    {
+      "date": "2026-05-31",
+      "category": "hub",
+      "hub": null,
+      "text": "Refresh NBA data: Spurs into Finals after Thunder upset.",
+      "commit": "4cfe02ae0"
+    },
+    {
+      "date": "2026-05-30",
+      "category": "hub",
+      "hub": null,
+      "text": "Refresh football data: PSG named 2026 UCL champion.",
+      "commit": "4866b0ff7"
+    },
+    {
+      "date": "2026-05-30",
+      "category": "hub",
+      "hub": null,
+      "text": "Trim 2026-05-30 release notes bullet under 220 chars.",
+      "commit": "7eea10da1"
+    },
+    {
+      "date": "2026-05-30",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Add Other Tournaments hub, name intercontinental editions, refresh NHL.",
+      "commit": "13f022b14"
+    },
+    {
+      "date": "2026-05-28",
+      "category": "fix",
+      "hub": null,
+      "text": "Fix NHL CF-loser playoff state and refresh football data.",
+      "commit": "dbfa92400"
+    },
+    {
+      "date": "2026-05-27",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Club tournament hubs, international comparable programs + quiz.",
+      "commit": "8badafbcd"
+    },
+    {
+      "date": "2026-05-27",
+      "category": "fix",
+      "hub": null,
+      "text": "Add International Football entry to Sports menu.",
+      "commit": "f4ead1abd"
+    },
+    {
+      "date": "2026-05-26",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball.",
+      "commit": "58bc07a89"
+    },
+    {
+      "date": "2026-05-26",
+      "category": "fix",
+      "hub": null,
+      "text": "Include lib/international.ts WC2026 exports.",
+      "commit": "177feb2d7"
+    },
+    {
+      "date": "2026-05-26",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Historical-entity marker for predecessor identities.",
+      "commit": "fc20638a5"
+    },
+    {
+      "date": "2026-05-26",
+      "category": "fix",
+      "hub": null,
+      "text": "Add missing lib files that weren't staged in previous commit.",
+      "commit": "285cc0215"
+    },
+    {
+      "date": "2026-05-26",
+      "category": "fix",
+      "hub": "Club Football",
+      "text": "Real intercontinental names, country flags, ELO-ranked index table.",
+      "commit": "8302311f4"
+    },
+    {
+      "date": "2026-05-26",
+      "category": "fix",
+      "hub": "Club Football",
+      "text": "Era-correct European competition labels and intra-season sort.",
+      "commit": "f006bb4a2"
+    },
+    {
+      "date": "2026-05-26",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Expand canonical coverage to eight country leagues.",
+      "commit": "32689216e"
+    },
+    {
+      "date": "2026-05-26",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Space numeric columns; rename Lg Cup label.",
+      "commit": "67ef5ac18"
+    },
+    {
+      "date": "2026-05-26",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Unified finals signal across Domestic Cup and Eur Comp.",
+      "commit": "c4cfeaee1"
+    },
+    {
+      "date": "2026-05-26",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Add Domestic Cup column to club season tables.",
+      "commit": "9c45427b1"
+    },
+    {
+      "date": "2026-05-26",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Hide non-essential standings columns on mobile.",
+      "commit": "d4dae5e22"
+    },
+    {
+      "date": "2026-05-25",
+      "category": "fix",
+      "hub": "Sports",
+      "text": "Ship v0 plus polish — maps, filters, badges, deep links.",
+      "commit": "f2af29b4b"
+    },
+    {
+      "date": "2026-05-25",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Ship v0 club pages, league hubs, /sports and metro deep-links.",
+      "commit": "a8da9372f"
+    },
+    {
+      "date": "2026-05-25",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Ship v0 club pages, league hubs, /sports and metro deep-links.",
+      "commit": "78030f224"
+    },
+    {
+      "date": "2026-05-25",
+      "category": "hub",
+      "hub": null,
+      "text": "Workbook sync + wire seven countries + French Guiana sheet flip.",
+      "commit": "0299a1f4a"
+    },
+    {
+      "date": "2026-05-25",
+      "category": "hub",
+      "hub": null,
+      "text": "Workbook sync + wire 5 new countries.",
+      "commit": "bf7326a25"
+    },
+    {
+      "date": "2026-05-25",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Populations.",
+      "commit": "093e11a76"
+    },
+    {
+      "date": "2026-05-25",
+      "category": "fix",
+      "hub": null,
+      "text": "Mixed-region resolution, REGIONLESS-on-Municipality fix, mixed-Region sort fix.",
+      "commit": "72837207b"
+    },
+    {
+      "date": "2026-05-24",
+      "category": "fix",
+      "hub": null,
+      "text": "Bucket A wiring + REGIONLESS additions + cp1252 fix; 8 countries newly render polygons.",
+      "commit": "df186723b"
+    },
+    {
+      "date": "2026-05-24",
+      "category": "hub",
+      "hub": null,
+      "text": "Home overlay + verify: switch RankingsTable to useCombinedBoundaries and add scripts/check-public-data.mjs to npm run verify.",
+      "commit": "bb335fd3c"
+    },
+    {
+      "date": "2026-05-24",
+      "category": "hub",
+      "hub": null,
+      "text": "Drop cache: 'force-cache' on both fetch calls.",
+      "commit": "0a62d0406"
+    },
+    {
+      "date": "2026-05-24",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Populations.",
+      "commit": "ec4f291dc"
+    },
+    {
+      "date": "2026-05-24",
+      "category": "hub",
+      "hub": "Expandable Map",
+      "text": "Combined boundaries fetch, multi-select regions, viewport-preserving tier toggles, tier None button, polygon-first interaction polish.",
+      "commit": "14d07de1f"
+    },
+    {
+      "date": "2026-05-24",
+      "category": "hub",
+      "hub": "Expandable Map",
+      "text": "Synchronous primaryPins pane, polygon-first interaction model, scroll-wheel zoom on Expandable Map.",
+      "commit": "9e16d55b7"
+    },
+    {
+      "date": "2026-05-24",
+      "category": "fix",
+      "hub": null,
+      "text": "Pane race fix plus smaller pin and polygon-first interaction model.",
+      "commit": "15e5e6067"
+    },
+    {
+      "date": "2026-05-24",
+      "category": "fix",
+      "hub": "Expandable Map",
+      "text": "Eight polish fixes.",
+      "commit": "4c6499202"
+    },
+    {
+      "date": "2026-05-24",
+      "category": "fix",
+      "hub": null,
+      "text": "Stage missing MetroMap.tsx preferCanvas wiring.",
+      "commit": "9b7869967"
+    },
+    {
+      "date": "2026-05-24",
+      "category": "fix",
+      "hub": "Expandable Map",
+      "text": "Expandable-map + data: continent join, tier color markers, country picker.",
+      "commit": "7ee35d3e8"
+    },
+    {
+      "date": "2026-05-24",
+      "category": "hub",
+      "hub": null,
+      "text": "Wire forty-seven mid-size countries whose workbook fills shipped earlier today without builder entries.",
+      "commit": "36278c1ad"
+    },
+    {
+      "date": "2026-05-24",
+      "category": "new-hub",
+      "hub": "Expandable Map",
+      "text": "New hub: Expandable Map.",
+      "commit": "0df0f37db"
+    },
+    {
+      "date": "2026-05-24",
+      "category": "fix",
+      "hub": null,
+      "text": "Mass expansion across dependencies, UK overseas territories, French overseas, and the long Caribbean/Pacific tail.",
+      "commit": "3a09278ec"
+    },
+    {
+      "date": "2026-05-24",
+      "category": "fix",
+      "hub": null,
+      "text": "Cross-border join-key fix plus six countries newly resolve.",
+      "commit": "00b95ed44"
+    },
+    {
+      "date": "2026-05-23",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Leaders, Populations.",
+      "commit": "745c2d74f"
+    },
+    {
+      "date": "2026-05-23",
+      "category": "hub",
+      "hub": null,
+      "text": "Middle East expansion (Bahrain, Lebanon, Oman, Palestine, Saudi Arabia, Syria, UAE) plus cross-border routing infrastructure.",
+      "commit": "608f15e02"
+    },
+    {
+      "date": "2026-05-23",
+      "category": "hub",
+      "hub": null,
+      "text": "Afghanistan, Azerbaijan, Iran, Iraq newly resolve to administrative polygons.",
+      "commit": "e00243f21"
+    },
+    {
+      "date": "2026-05-22",
+      "category": "hub",
+      "hub": null,
+      "text": "42 more countries newly resolve to administrative polygons.",
+      "commit": "7a6415650"
+    },
+    {
+      "date": "2026-05-21",
+      "category": "hub",
+      "hub": null,
+      "text": "Puerto Rico polygons via generalized city-state path.",
+      "commit": "7656a9e3f"
+    },
+    {
+      "date": "2026-05-21",
+      "category": "hub",
+      "hub": null,
+      "text": "Ten more countries wire and resolve to administrative polygons.",
+      "commit": "a54653686"
+    },
+    {
+      "date": "2026-05-21",
+      "category": "hub",
+      "hub": null,
+      "text": "Ten more countries wired and resolved to administrative polygons.",
+      "commit": "41ec13f6a"
+    },
+    {
+      "date": "2026-05-21",
+      "category": "hub",
+      "hub": null,
+      "text": "Revert /updates edge-defense disclosure and soften llms.txt access policy.",
+      "commit": "013f26545"
+    },
+    {
+      "date": "2026-05-21",
+      "category": "hub",
+      "hub": null,
+      "text": "Drop ambiguous no-scraping line, add explicit Access policy listing verified AI crawlers (GPTBot, ClaudeBot, etc.) welcome under CC-BY with…",
+      "commit": "efe81ea65"
+    },
+    {
+      "date": "2026-05-20",
+      "category": "hub",
+      "hub": null,
+      "text": "Singapore, Malta, Liechtenstein wired and resolved to polygons.",
+      "commit": "fdf7feab2"
+    },
+    {
+      "date": "2026-05-20",
+      "category": "fix",
+      "hub": null,
+      "text": "2026-05-21 release notes for workbook sync.",
+      "commit": "a496183c3"
+    },
+    {
+      "date": "2026-05-20",
+      "category": "hub",
+      "hub": null,
+      "text": "Zoom and attribution out of the corners.",
+      "commit": "ce4897e97"
+    },
+    {
+      "date": "2026-05-20",
+      "category": "hub",
+      "hub": "Badges",
+      "text": "Badge maps: every badge page gets a filtered, tier-colored map; deeper zoom-out everywhere.",
+      "commit": "a3e10d6b7"
+    },
+    {
+      "date": "2026-05-20",
+      "category": "hub",
+      "hub": null,
+      "text": "Remove unused MetroSearch.tsx.",
+      "commit": "9becbece1"
+    },
+    {
+      "date": "2026-05-20",
+      "category": "hub",
+      "hub": null,
+      "text": "Tooltip floats above primary pin via a second custom pane.",
+      "commit": "1de9d3685"
+    },
+    {
+      "date": "2026-05-20",
+      "category": "hub",
+      "hub": null,
+      "text": "Drop Recently shipped, add full badge index, Sports leads Discover.",
+      "commit": "124a00987"
+    },
+    {
+      "date": "2026-05-20",
+      "category": "fix",
+      "hub": null,
+      "text": "World-wrap on.",
+      "commit": "0fc1f069e"
+    },
+    {
+      "date": "2026-05-20",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Side feed at lg+, map pin above polygon, tighter refit.",
+      "commit": "ef7579701"
+    },
+    {
+      "date": "2026-05-20",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Table-first layout.",
+      "commit": "f91e87246"
+    },
+    {
+      "date": "2026-05-20",
+      "category": "hub",
+      "hub": "About",
+      "text": "Metro replaces city across descriptive copy, tier names rename city to metro.",
+      "commit": "14f313087"
+    },
+    {
+      "date": "2026-05-20",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Filter-aware map, discovery strip, search hero.",
+      "commit": "0c72a5b99"
+    },
+    {
+      "date": "2026-05-20",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Compressed hero plus map/search/top-5 console.",
+      "commit": "5916b08ce"
+    },
+    {
+      "date": "2026-05-20",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Reshape stats grid from counts to positioning tiles.",
+      "commit": "ee59c8743"
+    },
+    {
+      "date": "2026-05-20",
+      "category": "fix",
+      "hub": "Sports",
+      "text": "Qualitative scope copy, sitemap completion, SportsTeam + Article JSON-LD, error pages, country-link fix.",
+      "commit": "78c78f38c"
+    },
+    {
+      "date": "2026-05-20",
+      "category": "fix",
+      "hub": "Admin",
+      "text": "Figures + structured data: qualitative scope language across the site, sitemap completion, SportsTeam + Article JSON-LD.",
+      "commit": "feeaa35f3"
+    },
+    {
+      "date": "2026-05-20",
+      "category": "fix",
+      "hub": "About",
+      "text": "Qualitative scope language across the site.",
+      "commit": "fa496c6f9"
+    },
+    {
+      "date": "2026-05-19",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Amend 2026-05-19 entry with the RU/IE/BE boundary expansion bullet.",
+      "commit": "a9a001f4d"
+    },
+    {
+      "date": "2026-05-19",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Basketball, Populations.",
+      "commit": "96a4d11c0"
+    },
+    {
+      "date": "2026-05-19",
+      "category": "fix",
+      "hub": "Methodology",
+      "text": "Consolidated catch-up commit.",
+      "commit": "94679ade6"
+    },
+    {
+      "date": "2026-05-17",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Trim Velvet Rock /updates bullets to satisfy the 220-char brevity validator.",
+      "commit": "90c70cd28"
+    },
+    {
+      "date": "2026-05-17",
+      "category": "hub",
+      "hub": "Methodology",
+      "text": "Velvet Rock Capital badge: 8-metro curated index of the 1974-89 producer-driven recording economy.",
+      "commit": "168a39c1d"
+    },
+    {
+      "date": "2026-05-17",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Large multi-area release.",
+      "commit": "06d1d3ea2"
+    },
+    {
+      "date": "2026-05-17",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Multi-area release.",
+      "commit": "794e7f84b"
+    },
+    {
+      "date": "2026-05-17",
+      "category": "hub",
+      "hub": null,
+      "text": "Rankings map + Primary City column.",
+      "commit": "ea0d8ba4c"
+    },
+    {
+      "date": "2026-05-17",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Countries, Populations.",
+      "commit": "994f13fda"
+    },
+    {
+      "date": "2026-05-17",
+      "category": "hub",
+      "hub": null,
+      "text": "Data+schema: workbook-driven Gold Standard.",
+      "commit": "05ddda945"
+    },
+    {
+      "date": "2026-05-16",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Basketball, NFL.",
+      "commit": "c978dab06"
+    },
+    {
+      "date": "2026-05-16",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "/sports: national-teams.tsv as definitive Federation source, FIFA + Active sub-filters, silver Major League.",
+      "commit": "c4966e613"
+    },
+    {
+      "date": "2026-05-16",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "/sports polish: tier definitions disclosure, Special Filter scoping, F1/NASCAR promotion, sport colors.",
+      "commit": "4ca36fbf5"
+    },
+    {
+      "date": "2026-05-16",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "/updates: 2026-05-16 entry rewritten to consolidate today's /sports overhaul — Gold Standard rename (replacing Crown Jewels), Special Filte…",
+      "commit": "6263606b1"
+    },
+    {
+      "date": "2026-05-16",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "/sports: Crown Jewels renamed to Gold Standard across the project.",
+      "commit": "6a9af6081"
+    },
+    {
+      "date": "2026-05-16",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "/updates: 2026-05-16 entry consolidated to cover today's full /sports work (preset row, additive Power Conferences, International Teams + F…",
+      "commit": "96344d665"
+    },
+    {
+      "date": "2026-05-16",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "/sports: International Teams + Federation filter, sport-scoped Crown Jewels, Level filter, richer tooltip.",
+      "commit": "ef03f67e8"
+    },
+    {
+      "date": "2026-05-16",
+      "category": "fix",
+      "hub": null,
+      "text": "NFT over-tracing fix on substack.ts + badges.ts.",
+      "commit": "002f142de"
+    },
+    {
+      "date": "2026-05-16",
+      "category": "hub",
+      "hub": null,
+      "text": "AbortSignal.timeout(5000) on all five build-time external fetches (ESPN standings x4, Substack feed).",
+      "commit": "ec6be6e42"
+    },
+    {
+      "date": "2026-05-16",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "/updates: 2026-05-16 entry covers /sports preset row + NBA Wikipedia playoff links.",
+      "commit": "26d9aea3b"
+    },
+    {
+      "date": "2026-05-16",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "/sports preset row replaces Crown Jewels toggle.",
+      "commit": "4cda27855"
+    },
+    {
+      "date": "2026-05-16",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "NBA team pages: playoff-state hero badge and in-progress season chip now link to the year's Wikipedia NBA playoffs page.",
+      "commit": "1ba701f54"
+    },
+    {
+      "date": "2026-05-15",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Sports map: UK consolidation + Crown Jewels filter.",
+      "commit": "d448405c5"
+    },
+    {
+      "date": "2026-05-15",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Sports polish round 6 plus workbook sync: Power 4 chip renamed to Power Conferences.",
+      "commit": "639b92aad"
+    },
+    {
+      "date": "2026-05-15",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "NHL franchises v1 + workbook sync: all 32 active NHL franchises ship at /teams/nhl with Stanley Cups from 1910 in gold (NHA, PCHA, WCHL, NH…",
+      "commit": "9ea406b48"
+    },
+    {
+      "date": "2026-05-15",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Sports polish round 5: drop Minor/Jr/Int'l Hockey from /sports so the map's non-major scope is exactly FBS football plus NCAA Division I ba…",
+      "commit": "cf3deb51d"
+    },
+    {
+      "date": "2026-05-15",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Sports polish round 4: Power 4 default-on gate restricts FBS football and NCAA basketball to Big Ten/SEC/Big 12/ACC at first paint (chip to…",
+      "commit": "9f4348ec0"
+    },
+    {
+      "date": "2026-05-15",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Sports polish round 3: /sports filters moved under map and legend dropped (chip row already carries sport color); sports map clicks now rou…",
+      "commit": "6f3bc1e9b"
+    },
+    {
+      "date": "2026-05-15",
+      "category": "fix",
+      "hub": "Sports",
+      "text": "Sports polish: Euroleague added to /sports (886 markers), Sport filter promoted to always-visible chip row above the map (More filters coll…",
+      "commit": "c79db0def"
+    },
+    {
+      "date": "2026-05-15",
+      "category": "fix",
+      "hub": "Sports",
+      "text": "Fix /sports prerender: wrap SportsExplorer in Suspense boundary so Next 16's static prerender contract is satisfied for useSearchParams() c…",
+      "commit": "a260dbd7e"
+    },
+    {
+      "date": "2026-05-15",
+      "category": "new-hub",
+      "hub": "Sports",
+      "text": "New hub: Sports.",
+      "commit": "31b261d4d"
+    },
+    {
+      "date": "2026-05-15",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Hotfix: truncate orphan JSX block in app/updates/page.tsx (lines 456-499) that survived the prior edit and broke the Vercel build at parse…",
+      "commit": "79b9d81d5"
+    },
+    {
+      "date": "2026-05-15",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Weave Substack publishes into /updates timeline.",
+      "commit": "bfde09b2f"
+    },
+    {
+      "date": "2026-05-14",
+      "category": "fix",
+      "hub": "Club Football",
+      "text": "NBA hotfix v1.1: metros + arena lat/lng from MetroAreas Team List, Season-by-season collapsible with Team / PF-PA per game, arena history s…",
+      "commit": "0a88bfe2c"
+    },
+    {
+      "date": "2026-05-14",
+      "category": "fix",
+      "hub": "Club Football",
+      "text": "NBA hotfix v1.1: metros + arena lat/lng from MetroAreas Team List, Season-by-season collapsible with Team / PF-PA per game, arena history s…",
+      "commit": "d5ccb448d"
+    },
+    {
+      "date": "2026-05-14",
+      "category": "fix",
+      "hub": "Club Football",
+      "text": "NBA hotfix v1.1: metros + arena lat/lng from MetroAreas Team List, Season-by-season now collapsible with Team column, All-NBA in 3-col colu…",
+      "commit": "712b265a3"
+    },
+    {
+      "date": "2026-05-14",
+      "category": "fix",
+      "hub": "Club Football",
+      "text": "NBA hotfix v1.1: metros + arena lat/lng now sourced from MetroAreas.xlsx Team List, seasonLabel '2025-25' off-by-one fixed, playoff elim in…",
+      "commit": "b3f8cb83c"
+    },
+    {
+      "date": "2026-05-14",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "NBA hotfix: trim /updates bullet under 220 char cap, gate playoff-state elim on result=L.",
+      "commit": "0d100c046"
+    },
+    {
+      "date": "2026-05-14",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "NBA team pages v1: 30 franchises with ABA cups, All-NBA block, live playoff status, league map.",
+      "commit": "e428b5e08"
+    },
+    {
+      "date": "2026-05-13",
+      "category": "fix",
+      "hub": "Club Football",
+      "text": "Team pages v1.5: Top Team lookup scans TOP_TEAMS by team name with metro-preference tie-break so cross-metro picks surface (Packers as Milw…",
+      "commit": "eb1742397"
+    },
+    {
+      "date": "2026-05-13",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Team pages v1.4: BR-standings year links + AA pre-1903 routing, prominent Season-by-season summary bar, reverse-chronological MLB stadium h…",
+      "commit": "2c0b013c7"
+    },
+    {
+      "date": "2026-05-13",
+      "category": "fix",
+      "hub": "Club Football",
+      "text": "Team pages v1.3: flip Season-by-Season above Awards, compact Awards via CSS columns, fix 2026 live-row gate (drop season_type, require curr…",
+      "commit": "d95ecd3f4"
+    },
+    {
+      "date": "2026-05-13",
+      "category": "fix",
+      "hub": "Rankings",
+      "text": "Team pages v1.2: hero says Founded+Metro Area separately, MLB Pennants block, tiebreaker badge for missed-playoffs cases, stadium hero link…",
+      "commit": "f33577877"
+    },
+    {
+      "date": "2026-05-13",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "MLB team pages v1.1: surface MVP/Cy/ROY/MOY by combining league+award, replace Division Titles with Pennants, brand-name display overrides…",
+      "commit": "84483ff2d"
+    },
+    {
+      "date": "2026-05-13",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "MLB team pages v1: /teams/mlb index, /teams/mlb/[slug] per-franchise, /teams/mlb/historical defunct index, sortable Season-by-season with R…",
+      "commit": "24b53e28e"
+    },
+    {
+      "date": "2026-05-13",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "NFL team pages: remove live hero block, fold ESPN current-season into a sortable Season-by-season table with PF/PA columns; in-progress row…",
+      "commit": "1adf9c99d"
+    },
+    {
+      "date": "2026-05-13",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — NFL.",
+      "commit": "12ef6ab29"
+    },
+    {
+      "date": "2026-05-13",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Live NFL standings on franchise pages: lib/standings.ts pulls ESPN at build time with hourly ISR, CurrentSeasonBlock shows record/division…",
+      "commit": "a41d2e688"
+    },
+    {
+      "date": "2026-05-13",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Sports + game-score table polish: top-teams logos and NFL links via lib/teamLinks; game-score scoreline with linked winner+loser, stadium a…",
+      "commit": "27b6c5f75"
+    },
+    {
+      "date": "2026-05-13",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "NFL pages: rankings/ metro link, inline scoreline match cell, SB 50 not SB L, show total championship appearances.",
+      "commit": "eb383029a"
+    },
+    {
+      "date": "2026-05-13",
+      "category": "fix",
+      "hub": "Club Football",
+      "text": "Fix client/server module boundary: server-only on lib/nfl, lib/badges, lib/substack; inline TITLE_COLORS in HistoricalTable; add check:clie…",
+      "commit": "f7575120a"
+    },
+    {
+      "date": "2026-05-13",
+      "category": "fix",
+      "hub": "Club Football",
+      "text": "NFL pages: fix metro link, drop Historical from Sports nav, attribute 1925 to Bulldogs (Boston), sortable defunct table with first/last yea…",
+      "commit": "f39a26ed0"
+    },
+    {
+      "date": "2026-05-13",
+      "category": "hub",
+      "hub": null,
+      "text": "Ship NFL historical-seasons data + ETL + logo fetcher stranded by recovery.",
+      "commit": "9d4b7f2ae"
+    },
+    {
+      "date": "2026-05-13",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Ship the 2026-05-12 nav refactor and FranchiseTable that never made it past recovery.",
+      "commit": "b87f18f59"
+    },
+    {
+      "date": "2026-05-13",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Restore formatDimensionName helper lost during prior recovery.",
+      "commit": "c1b83d6a1"
+    },
+    {
+      "date": "2026-05-13",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "NFL polish: ISO dates on top games, franchise badges on metro pages, ETL candidate path for NFL_all_copy.xlsx.",
+      "commit": "a4693d31d"
+    },
+    {
+      "date": "2026-05-13",
+      "category": "fix",
+      "hub": "Club Football",
+      "text": "Fix Vercel build: remove duplicate StatCell, scope logoUrlFor NFT trace to public/data/nfl/logos/.",
+      "commit": "3f281ea78"
+    },
+    {
+      "date": "2026-05-13",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "NFL team pages: Top 12 games per franchise plus Top 50 all-time league table with decade filter, ranked by DU Game Score.",
+      "commit": "f129fda51"
+    },
+    {
+      "date": "2026-05-13",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "NFL team pages v1: index, per-franchise pages, and historical index with the Pottsville stolen-title treatment.",
+      "commit": "0b85edd8b"
+    },
+    {
+      "date": "2026-05-10",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Boundary expansion: 498 new polygons across Brazil, China, Switzerland, Australia, Austria, South Korea.",
+      "commit": "6aff300fa"
+    },
+    {
+      "date": "2026-05-10",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Football clubs render as Major League markers; FootballClub_Data lat/lng backfill.",
+      "commit": "400bcdd15"
+    },
+    {
+      "date": "2026-05-10",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Populations.",
+      "commit": "c545b1990"
+    },
+    {
+      "date": "2026-05-10",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Workbook sync 2026-05-10: Armidale + Udupi, 20 new polygons, ETL refresh.",
+      "commit": "bbfba6c57"
+    },
+    {
+      "date": "2026-05-09",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Data refresh + university markers on metro maps, ETL university lat/lng.",
+      "commit": "0b1957d9c"
+    },
+    {
+      "date": "2026-05-09",
+      "category": "hub",
+      "hub": null,
+      "text": "Quiz V1 data layer: forward queue generator, render module, CI guard, ETL hook.",
+      "commit": "b8ce97161"
+    },
+    {
+      "date": "2026-05-09",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "/updates: 2026-05-09 - add internal entry for backlog reconciliation, news peg watchlist, GBA audit.",
+      "commit": "37c6f8f48"
+    },
+    {
+      "date": "2026-05-09",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "/updates: 2026-05-09 - add Substack auto-sync to today's entry.",
+      "commit": "e341f8df0"
+    },
+    {
+      "date": "2026-05-09",
+      "category": "hub",
+      "hub": null,
+      "text": "Featured Articles: drive home-page strip from Substack RSS + manual rebuild helper.",
+      "commit": "c41285a17"
+    },
+    {
+      "date": "2026-05-09",
+      "category": "hub",
+      "hub": "Badges",
+      "text": "Frozen Conurbations badge plus Greying Power Substack assets.",
+      "commit": "e6ae615a8"
+    },
+    {
+      "date": "2026-05-09",
+      "category": "hub",
+      "hub": "Badges",
+      "text": "Data refresh + UI polish across rankings, matchups, compare, and state/map components.",
+      "commit": "3025614db"
+    },
+    {
+      "date": "2026-05-08",
+      "category": "fix",
+      "hub": "Release Notes",
+      "text": "Fix /updates brevity violation on 2026-05-08 entry.",
+      "commit": "956895f35"
+    },
+    {
+      "date": "2026-05-08",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Boundary expansion: 43 new countries, 555 metros gain real polygons.",
+      "commit": "8cfef5523"
+    },
+    {
+      "date": "2026-05-07",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Promote three OEGCI-inspired archetype badges to live.",
+      "commit": "3c1c10a49"
+    },
+    {
+      "date": "2026-05-07",
+      "category": "hub",
+      "hub": "Methodology",
+      "text": "Add peer-index comparison to /methodology.",
+      "commit": "f61989771"
+    },
+    {
+      "date": "2026-05-06",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Wire JP+NL boundary builder; absorb 2026-05-06 xlsx; country-map selector below map.",
+      "commit": "174eb279a"
+    },
+    {
+      "date": "2026-05-05",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Country page: per-tier polygon toggle with All/None + xlsx refresh (Harrogate UK, 356 English mapping refinements).",
+      "commit": "1c0a49709"
+    },
+    {
+      "date": "2026-05-05",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Populations.",
+      "commit": "3ff74336d"
+    },
+    {
+      "date": "2026-05-05",
+      "category": "fix",
+      "hub": null,
+      "text": "Lib/badges: scope loadCsv path under public/data so Turbopack NFT does not over-trace the project root (fixes Vercel deploy bundle bloat).",
+      "commit": "0cac50279"
+    },
+    {
+      "date": "2026-05-05",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Country/state pages, team markers, six new boundary countries (IT/ES/PL/AD/SM/VA), region links across breadcrumbs.",
+      "commit": "850118827"
+    },
+    {
+      "date": "2026-05-05",
+      "category": "hub",
+      "hub": null,
+      "text": "Country-page state counts + state-page metro lists from Counties/Municipality cross-sheet aggregation.",
+      "commit": "4bfd6b8e1"
+    },
+    {
+      "date": "2026-05-05",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Country pages: group state chips by Type, show all subdivision types per country.",
+      "commit": "2a2ee0bcd"
+    },
+    {
+      "date": "2026-05-05",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Ensure states.json + state route artifacts are in the deploy.",
+      "commit": "b27130544"
+    },
+    {
+      "date": "2026-05-05",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Editorial override for additional states; London gains Surrey/Hertfordshire (Berkshire missing from sheet).",
+      "commit": "aff52abcf"
+    },
+    {
+      "date": "2026-05-05",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Map markers: gold/magenta/slate palette; unify Football and Soccer label everywhere.",
+      "commit": "3e0872375"
+    },
+    {
+      "date": "2026-05-05",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Map markers: Major League precedence, spread colocated, bigger icons, category filters, level in tooltip.",
+      "commit": "0fb6fe974"
+    },
+    {
+      "date": "2026-05-05",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Add team/venue markers to metro detail map (Major League / Other / Venues).",
+      "commit": "8b7e76028"
+    },
+    {
+      "date": "2026-05-04",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Data refresh, country boundary maps, release notes trim.",
+      "commit": "4ace6c61e"
+    },
+    {
+      "date": "2026-05-04",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Data refresh, country boundary maps, release notes trim.",
+      "commit": "7b6dc6875"
+    },
+    {
+      "date": "2026-05-04",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Data refresh + Germany boundaries: 1,137 metros across NA/UK/FR/DE; release notes trimmed.",
+      "commit": "7fbae35d2"
+    },
+    {
+      "date": "2026-05-04",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Populations.",
+      "commit": "4e515b3bc"
+    },
+    {
+      "date": "2026-05-04",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Boundary builder: add France via Municipality (113 metros), merge Lewes into Brighton & Hove.",
+      "commit": "61eb71a1c"
+    },
+    {
+      "date": "2026-05-04",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Boundary builder: add UK via Municipality (180 metros), fold four constituents into United Kingdom.",
+      "commit": "e72aa96c7"
+    },
+    {
+      "date": "2026-05-04",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Boundary builder: trim outlier multipolygon parts beyond 200 km from anchor.",
+      "commit": "55cde7722"
+    },
+    {
+      "date": "2026-05-03",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Populations.",
+      "commit": "266586cb6"
+    },
+    {
+      "date": "2026-05-03",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "MetroPageMap: render dissolved-county boundary layer from public/data/metro-boundaries/{slug}.geojson when present; falls back to pin-only…",
+      "commit": "f5b34695b"
+    },
+    {
+      "date": "2026-05-03",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Release notes: add map embed bullet to 2026-05-03 entry.",
+      "commit": "b5afea8f5"
+    },
+    {
+      "date": "2026-05-03",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Metro detail map: solo metros get a single-point Location pin; cluster members keep cluster context.",
+      "commit": "14e2ca44d"
+    },
+    {
+      "date": "2026-05-03",
+      "category": "hub",
+      "hub": "Badges",
+      "text": "Conurbations page: per-row Show map / Hide map toggle, mounts Leaflet on demand for one cluster at a time.",
+      "commit": "b2030554e"
+    },
+    {
+      "date": "2026-05-03",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Metro detail pages: embed conurbation cluster map for any metro that's part of a multi-metro cluster.",
+      "commit": "5d999c164"
+    },
+    {
+      "date": "2026-05-03",
+      "category": "hub",
+      "hub": "Matchups",
+      "text": "Matchup pages: embed two-point map between hero cards and editorial paragraph.",
+      "commit": "e37d402a6"
+    },
+    {
+      "date": "2026-05-03",
+      "category": "hub",
+      "hub": null,
+      "text": "MetroMap component: dark CARTO tiles, dashed connection line, auto-bounds, single-point zoom fallback.",
+      "commit": "25adcf6f7"
+    },
+    {
+      "date": "2026-05-03",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Release notes: 2026-05-03 conurbation overhaul + tier vocabulary update.",
+      "commit": "550d44671"
+    },
+    {
+      "date": "2026-05-03",
+      "category": "hub",
+      "hub": null,
+      "text": "Conurbations editorial overhaul: 60+ named regions globally, Tier B World renamed Continental, metro tier World City renamed Continental Ci…",
+      "commit": "d684f9684"
+    },
+    {
+      "date": "2026-05-03",
+      "category": "hub",
+      "hub": null,
+      "text": "Name 7 UK conurbations matching existing cluster memberships: Scottish Central Belt, English Midlands, Severnside, English South Coast, Nor…",
+      "commit": "4ebc3b97f"
+    },
+    {
+      "date": "2026-05-03",
+      "category": "hub",
+      "hub": null,
+      "text": "Mobile nav: add hamburger disclosure menu so phone users can reach all top-nav pages.",
+      "commit": "790c56a97"
+    },
+    {
+      "date": "2026-05-03",
+      "category": "hub",
+      "hub": "Badges",
+      "text": "Conurbations: client-side search by Country / State-Province / Metro / Cluster Name.",
+      "commit": "bbce4c3d9"
+    },
+    {
+      "date": "2026-05-03",
+      "category": "hub",
+      "hub": null,
+      "text": "Split Zurich conurbation: add Trinational Basel + Greater Zurich named megaregions; Sheffield/South Yorkshire override.",
+      "commit": "284af08b7"
+    },
+    {
+      "date": "2026-05-02",
+      "category": "hub",
+      "hub": null,
+      "text": "Greater South East, Haven Gateway named megaregions; New Haven joins Tri-State Area; clean stale c079 cluster row.",
+      "commit": "939392358"
+    },
+    {
+      "date": "2026-05-02",
+      "category": "hub",
+      "hub": "Badges",
+      "text": "Conurbations badge merging Twin Metros + Megaregions: 5 named megaregions (Pearl River Delta, Jing-Jin-Ji, Randstad, Flemish Diamond, North…",
+      "commit": "62a4b6b54"
+    },
+    {
+      "date": "2026-05-02",
+      "category": "hub",
+      "hub": null,
+      "text": "Conurbations badge merging Twin Metros + Megaregions with 4 named megaregions and 55 editorial overrides; tier scale aligned with metro tie…",
+      "commit": "47e5a493c"
+    },
+    {
+      "date": "2026-05-02",
+      "category": "hub",
+      "hub": "Badges",
+      "text": "Conurbations badge merging Twin Metros + Megaregions with 4 named megaregions and 55 editorial overrides; tier scale aligned with metro tie…",
+      "commit": "4904df147"
+    },
+    {
+      "date": "2026-05-02",
+      "category": "hub",
+      "hub": "Badges",
+      "text": "Add Conurbations badge merging Twin Metros + Megaregions: 4 named megaregions, 56 editorial overrides with creative names, recursive split…",
+      "commit": "c5dce2cf7"
+    },
+    {
+      "date": "2026-05-02",
+      "category": "hub",
+      "hub": "Badges",
+      "text": "Add Twin Metros (117 clusters) and Megaregions (24 clusters within 250 km) ranked by combined cluster score; Isolated Capital (133 capitals…",
+      "commit": "45ed0deff"
+    },
+    {
+      "date": "2026-05-02",
+      "category": "hub",
+      "hub": "Badges",
+      "text": "Add Twin Metros (118 clusters, pairs+triplets), Megaregions (32 clusters, 4+ metros), Isolated Capital (155 capitals, peer-comparability ru…",
+      "commit": "a96688ae1"
+    },
+    {
+      "date": "2026-05-02",
+      "category": "hub",
+      "hub": "Badges",
+      "text": "Add Twin Metros (119 clusters, pairs+triplets), Megaregions (32 clusters, 4+ metros), Isolated Capital (155 capitals, peer-comparability ru…",
+      "commit": "b569846a4"
+    },
+    {
+      "date": "2026-05-02",
+      "category": "hub",
+      "hub": null,
+      "text": "Pick up leftover edit from 2026-05-02: Regional Champions clickable on homepage.",
+      "commit": "33ed3817b"
+    },
+    {
+      "date": "2026-05-02",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Country page polish: continent-aware children filter, disputed territory rollup, capital/largest badges, scoped homepage search, Countries…",
+      "commit": "ccd90227a"
+    },
+    {
+      "date": "2026-05-02",
+      "category": "new-hub",
+      "hub": "Countries",
+      "text": "New hub: Countries.",
+      "commit": "248115a3b"
+    },
+    {
+      "date": "2026-05-02",
+      "category": "hub",
+      "hub": null,
+      "text": "Restructure top nav: new Data dropdown (Compare, Badges, Matchups, Random) separates analytical tools from Articles.",
+      "commit": "7eb506e7d"
+    },
+    {
+      "date": "2026-05-02",
+      "category": "fix",
+      "hub": null,
+      "text": "Memoize badge compute and getBadgesForMetro to fix build time (12min → baseline).",
+      "commit": "cc5e3dfe7"
+    },
+    {
+      "date": "2026-05-02",
+      "category": "new-hub",
+      "hub": "About",
+      "text": "New hub: About.",
+      "commit": "858c8a952"
+    },
+    {
+      "date": "2026-05-02",
+      "category": "fix",
+      "hub": "Rankings",
+      "text": "Six new live badges (Global Gateway, Finance Capital, Culture Capital, Sports Mecca, Rail Hub, Overperformer); badge chips on every metro p…",
+      "commit": "a0a768a34"
+    },
+    {
+      "date": "2026-05-02",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Badge chips: show name and emoji only, drop the value display.",
+      "commit": "751b5f730"
+    },
+    {
+      "date": "2026-05-02",
+      "category": "hub",
+      "hub": "Badges",
+      "text": "Overperformer badge live; badge chips on every metro detail page.",
+      "commit": "e49242a31"
+    },
+    {
+      "date": "2026-05-02",
+      "category": "fix",
+      "hub": "Badges",
+      "text": "Five live badges: Global Gateway, Finance Capital, Culture Capital, Sports Mecca, Rail Hub; St.",
+      "commit": "224b6beda"
+    },
+    {
+      "date": "2026-05-02",
+      "category": "new-hub",
+      "hub": "Badges",
+      "text": "New hub: Badges.",
+      "commit": "abf82506b"
+    },
+    {
+      "date": "2026-05-01",
+      "category": "new-hub",
+      "hub": "Admin",
+      "text": "New hub: Admin.",
+      "commit": "5e4b7d476"
+    },
+    {
+      "date": "2026-05-01",
+      "category": "fix",
+      "hub": "Release Notes",
+      "text": "Shorten 2026-05-01 release-notes bullet to satisfy build-time brevity cap.",
+      "commit": "ee1f87815"
+    },
+    {
+      "date": "2026-05-01",
+      "category": "hub",
+      "hub": "Api",
+      "text": "Methodology + tiers + share cards + matchup pages + insight engine; consolidate same-day release notes.",
+      "commit": "317839a19"
+    },
+    {
+      "date": "2026-05-01",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Per-metro OG share cards, Reddit and LinkedIn share buttons.",
+      "commit": "e5afb403c"
+    },
+    {
+      "date": "2026-05-01",
+      "category": "hub",
+      "hub": "Methodology",
+      "text": "Methodology page, score tiers, multi-sport bucket, eurovision/historical events, euroleague, top teams 312, wikidata top 156, venue refresh…",
+      "commit": "e9e39f818"
+    },
+    {
+      "date": "2026-05-01",
+      "category": "new-hub",
+      "hub": "Methodology",
+      "text": "New hub: Methodology.",
+      "commit": "9f9446e3a"
+    },
+    {
+      "date": "2026-05-01",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Enforce release notes brevity at build time (max 4 bullets, 220 chars, 12 word headline).",
+      "commit": "be7582522"
+    },
+    {
+      "date": "2026-05-01",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Notable + Historic Venues refresh (18 net new venues).",
+      "commit": "8bb2619c6"
+    },
+    {
+      "date": "2026-05-01",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Multi-Sport Events bucket, Eurovision/Historical events, Euroleague teams, Complete Event Timeline.",
+      "commit": "ad30b3006"
+    },
+    {
+      "date": "2026-05-01",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Multi-Sport Events bucket + Eurovision and Historical Events on metro pages.",
+      "commit": "03aa56429"
+    },
+    {
+      "date": "2026-05-01",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Data + content: 2026-05-01 - Top Teams 312 metros, Wikidata Top 156, Melbourne #26.",
+      "commit": "fe7d8ce44"
+    },
+    {
+      "date": "2026-05-01",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "2026-05-01 refresh - Wikidata Top 156, Melbourne #26, Miami #27, Boxing Day Test Match.",
+      "commit": "a1c13e19c"
+    },
+    {
+      "date": "2026-04-28",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Drop 200m+ Stretch StatCard, rename 300m+ from Megatall to Supertall (CTBUH terminology).",
+      "commit": "c121ecbea"
+    },
+    {
+      "date": "2026-04-28",
+      "category": "fix",
+      "hub": "Rankings",
+      "text": "Fix skyscraper aggregation bug: sum across municipalities per metro instead of overwriting; pick densest municipality as headline city; fix…",
+      "commit": "d2d85d617"
+    },
+    {
+      "date": "2026-04-28",
+      "category": "hub",
+      "hub": "Release Notes",
+      "text": "Surface Top Teams article in featured-articles, sitemap, llms.txt, and release notes; refresh Marylebones placeholder.",
+      "commit": "ffad9a642"
+    },
+    {
+      "date": "2026-04-28",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Surface Top Team card on metro detail pages with link to /top-teams.",
+      "commit": "a7a5f0c0a"
+    },
+    {
+      "date": "2026-04-28",
+      "category": "new-hub",
+      "hub": "Top Teams",
+      "text": "New hub: Top Teams.",
+      "commit": "c3cccadf6"
+    },
+    {
+      "date": "2026-04-28",
+      "category": "hub",
+      "hub": null,
+      "text": "Ship companiesAsOf source-freshness stamp; modernize tsconfig and gitignore for Next 16; OneDrive sync in update-site.sh.",
+      "commit": "c125f11b9"
+    },
+    {
+      "date": "2026-04-28",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Surface Wikipedia and Wikidata links on metro detail pages: Sources line in hero, tiny W mark next to teams.",
+      "commit": "568b1db5d"
+    },
+    {
+      "date": "2026-04-24",
+      "category": "hub",
+      "hub": null,
+      "text": "Structured data upgrades and canonical URL swap.",
+      "commit": "6c0fdc230"
+    },
+    {
+      "date": "2026-04-24",
+      "category": "hub",
+      "hub": null,
+      "text": "Correct author surname in schema and llms.txt.",
+      "commit": "9994da2aa"
+    },
+    {
+      "date": "2026-04-24",
+      "category": "fix",
+      "hub": "Rankings",
+      "text": "Add Wikidata/Wikipedia structured data for Top 25 metros and US major league teams; remove personal email from public schema and footer; fi…",
+      "commit": "defaf0399"
+    },
+    {
+      "date": "2026-04-23",
+      "category": "new-hub",
+      "hub": "Release Notes",
+      "text": "New hub: Release Notes.",
+      "commit": "fa2ada8ac"
+    },
+    {
+      "date": "2026-04-23",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Annual Event routing and Historic Venues section.",
+      "commit": "e42be9d12"
+    },
+    {
+      "date": "2026-04-23",
+      "category": "hub",
+      "hub": null,
+      "text": "Add Google Analytics 4 tracking (G-8BQVX0NFZZ).",
+      "commit": "4c7e25fb5"
+    },
+    {
+      "date": "2026-04-22",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Add All-Star Games category, refresh from latest xlsx.",
+      "commit": "2d6f55478"
+    },
+    {
+      "date": "2026-04-22",
+      "category": "fix",
+      "hub": "Rankings",
+      "text": "Fix: route NCAA minor-sport teams into College/University bucket.",
+      "commit": "6acf61647"
+    },
+    {
+      "date": "2026-04-22",
+      "category": "hub",
+      "hub": null,
+      "text": "Refresh 2026-04-22, add Citizen of Nowhere back-link, add BACKLOG.",
+      "commit": "fee9fd496"
+    },
+    {
+      "date": "2026-04-21",
+      "category": "fix",
+      "hub": null,
+      "text": "Fix: add supertallStructures field to MetroDetail interface.",
+      "commit": "0d88f6e87"
+    },
+    {
+      "date": "2026-04-21",
+      "category": "hub",
+      "hub": "Neighborhoods",
+      "text": "Surface Walkable Elite Quarters card on qualifying metro profiles.",
+      "commit": "20f8ca575"
+    },
+    {
+      "date": "2026-04-20",
+      "category": "new-hub",
+      "hub": "Neighborhoods",
+      "text": "New hub: Neighborhoods.",
+      "commit": "d5f4dd7f5"
+    },
+    {
+      "date": "2026-04-18",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Supertall Structures (350m+) section under Museums & Landmarks.",
+      "commit": "7f5791516"
+    },
+    {
+      "date": "2026-04-18",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Round 7: venue dedup, transit stations per entry, collapsible subgroups.",
+      "commit": "d0592b45f"
+    },
+    {
+      "date": "2026-04-18",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Round 7: venue dedup, transit stations per entry, collapsible subgroups.",
+      "commit": "343c10e1a"
+    },
+    {
+      "date": "2026-04-18",
+      "category": "hub",
+      "hub": "Compare",
+      "text": "Round 5: 4,200+ future-proofing, metro page restructure, annual events split.",
+      "commit": "e785aa849"
+    },
+    {
+      "date": "2026-04-17",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Add Boxing as Major Fights event group; extend events with type field.",
+      "commit": "85575535c"
+    },
+    {
+      "date": "2026-04-17",
+      "category": "hub",
+      "hub": null,
+      "text": "AI/LLM discoverability: robots, llms.txt, sitemap, JSON-LD (Dataset, ItemList, Place, AggregateRating, Breadcrumb) with CC-BY on composite…",
+      "commit": "29ac5cb6f"
+    },
+    {
+      "date": "2026-04-17",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "AI/LLM discoverability: robots, llms.txt, sitemap, full JSON-LD (Dataset, ItemList, Place, AggregateRating, Breadcrumb).",
+      "commit": "fe92e09b6"
+    },
+    {
+      "date": "2026-04-17",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Refresh data, swap Notable Venues label, retire 16 dimensions tile, harden rank bar scaling.",
+      "commit": "15897fd5a"
+    },
+    {
+      "date": "2026-04-17",
+      "category": "hub",
+      "hub": "Compare",
+      "text": "Add SiteNav with last-update chip; rename Major League Teams to Major League Teams/Venues with teams-before-venues ordering; lead with 70,0…",
+      "commit": "24f760aa3"
+    },
+    {
+      "date": "2026-04-17",
+      "category": "new-hub",
+      "hub": "Compare",
+      "text": "New hub: Compare.",
+      "commit": "e49331038"
+    },
+    {
+      "date": "2026-04-17",
+      "category": "fix",
+      "hub": null,
+      "text": "Wire real links, drop socials, add methodology section.",
+      "commit": "984bc147a"
+    },
+    {
+      "date": "2026-04-15",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Searchable states and dimension ranks in breakdown table.",
+      "commit": "1a05ab534"
+    },
+    {
+      "date": "2026-04-15",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Add primary city, football levels, continent filter, and metro profile enhancements.",
+      "commit": "c409406b3"
+    },
+    {
+      "date": "2026-04-15",
+      "category": "fix",
+      "hub": "Rankings",
+      "text": "Restructure sections, fix bugs, add events aggregation.",
+      "commit": "c48c0f4d9"
+    },
+    {
+      "date": "2026-04-14",
+      "category": "fix",
+      "hub": "Rankings",
+      "text": "Apply all bug fixes to correct page.tsx location.",
+      "commit": "8e2de90bc"
+    },
+    {
+      "date": "2026-04-13",
+      "category": "hub",
+      "hub": null,
+      "text": "Update data.ts.",
+      "commit": "23ebabe7b"
+    },
+    {
+      "date": "2026-04-13",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Update page.tsx.",
+      "commit": "9de544d4e"
+    },
+    {
+      "date": "2026-04-13",
+      "category": "fix",
+      "hub": "Rankings",
+      "text": "Top 12 companies, fix GDP display, fix number formatting, fix breadcrumb.",
+      "commit": "3c4c32415"
+    },
+    {
+      "date": "2026-04-13",
+      "category": "hub",
+      "hub": null,
+      "text": "Add clickable links from rankings table to city profiles.",
+      "commit": "129ce48db"
+    },
+    {
+      "date": "2026-04-13",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Move project to repo root for Vercel.",
+      "commit": "fcfb8fd31"
+    }
+  ]
+}
