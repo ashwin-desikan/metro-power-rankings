@@ -1,12 +1,12 @@
 {
   "generatedAt": "2026-07-30",
-  "count": 526,
+  "count": 525,
   "entries": [
     {
       "date": "2026-07-30",
       "category": "new-hub",
       "hub": "Site Activity",
-      "text": "New hub: Site Activity.",
+      "text": "New hub: Site Activity — a running log of every change on the site.",
       "commit": "c0fab11c8"
     },
     {
@@ -29,13 +29,6 @@
       "hub": null,
       "text": "Data refreshed — Football, Basketball, Sound of the Metros.",
       "commit": "89da9f0ce"
-    },
-    {
-      "date": "2026-07-29",
-      "category": "hub",
-      "hub": "Club Football",
-      "text": "Recover uncommitted hub-generation overlays + pipeline map.",
-      "commit": "8009fa958"
     },
     {
       "date": "2026-07-29",
@@ -265,7 +258,7 @@
       "date": "2026-07-22",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football, Basketball, Elections, Leaders, and 2 more.",
+      "text": "Data refreshed — Football, Basketball, Leaders, Sound of the Metros, and 1 more.",
       "commit": "ff3485f67"
     },
     {

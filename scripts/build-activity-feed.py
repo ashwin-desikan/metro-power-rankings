@@ -171,16 +171,22 @@ def main():
             if m and cur:
                 born.setdefault(cur, m.group(1))
 
-    # full log, newest first: hash \x1f isodate \x1f subject \x1f body(record sep \x1e)
+    # Full log, newest first. Records are separated by \x1e; within a record the
+    # fields are \x1f-separated: H, isodate, subject, body, then the --name-only
+    # file list. A trailing \x1f after %b is what lets the (multi-line) body be
+    # split cleanly from the file list — without it, later body lines leak into
+    # the file list and Feed: trailers are lost.
     raw = sh(["git", "log", "--no-merges", "--date=short",
-              "--pretty=format:%x1e%H%x1f%ad%x1f%s%x1f%b", "--name-only"])
+              "--pretty=format:%x1e%H%x1f%ad%x1f%s%x1f%b%x1f", "--name-only"])
     commits = []
     for rec in raw.split("\x1e"):
-        rec = rec.strip("\n")
-        if not rec:
+        if not rec.strip():
             continue
-        head, _, fileblock = rec.partition("\n")
-        h, date, subject, body = (head.split("\x1f") + ["", "", "", ""])[:4]
+        fields = rec.split("\x1f")
+        if len(fields) < 5:
+            continue
+        h, date, subject, body, fileblock = (
+            fields[0].strip(), fields[1].strip(), fields[2], fields[3], fields[4])
         files = [ln for ln in fileblock.splitlines() if ln.strip()]
         commits.append((h, date, subject, body, files))
 
