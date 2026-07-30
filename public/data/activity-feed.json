@@ -1,7 +1,14 @@
 {
   "generatedAt": "2026-07-30",
-  "count": 525,
+  "count": 526,
   "entries": [
+    {
+      "date": "2026-07-30",
+      "category": "new-hub",
+      "hub": "Site Activity",
+      "text": "New hub: Site Activity.",
+      "commit": "c0fab11c8"
+    },
     {
       "date": "2026-07-30",
       "category": "data",
