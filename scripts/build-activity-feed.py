@@ -35,7 +35,7 @@ INTERNAL_ONLY = ("scripts/", "mac-mini-jobs/", "internal/", ".github/", ".claude
 
 # commits we never surface (matched against the subject, case-insensitive)
 SKIP_SUBJECT = re.compile(
-    r"^(chore\(activity\)|docs?\(|handoff|runbook|pipeline:|merge\b)", re.I
+    r"^(chore\(activity\)|chore\(deploy\)|docs?\(|handoff|runbook|pipeline:|merge\b)", re.I
 )
 
 # The grouped daily DATA line names clean, recognizable TOPICS (never raw data-dir

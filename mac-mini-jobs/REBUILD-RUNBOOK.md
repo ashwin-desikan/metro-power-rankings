@@ -12,7 +12,7 @@ restores the *worker*: the scheduler, scripts, venv, and credentials. Budget ~30
 
 ---
 
-## What the mini runs (20 launchd agents)
+## What the mini runs (21 launchd agents)
 
 | Agent | Wrapper | Schedule (local) |
 |---|---|---|
@@ -31,6 +31,7 @@ restores the *worker*: the scheduler, scripts, venv, and credentials. Budget ~30
 | com.citizenofnowhere.cricket-monthly | run-cricket-monthly.sh | 1st @ 11:00 |
 | com.citizenofnowhere.screen-number-ones | mac-mini-jobs/run-screen-number-ones.sh (repo) | Tue 14:00 |
 | com.citizenofnowhere.activity-feed | mac-mini-jobs/run-activity-feed.sh (repo) | 03:30 daily |
+| com.citizenofnowhere.deploy-watch | mac-mini-jobs/run-deploy-watch.sh (repo) | every 10 min |
 | com.citizenofnowhere.euro-comps | run-euro-comps.sh | 04:00 daily |
 | com.citizenofnowhere.football-standings | mac-mini-jobs/run-football-standings.sh (repo) | 05:00 UTC daily |
 | com.citizenofnowhere.gap-league-watch | mac-mini-jobs/run-gap-league-watch.sh (repo) | 05:00 UTC daily |

@@ -1,7 +1,14 @@
 {
   "generatedAt": "2026-07-30",
-  "count": 525,
+  "count": 526,
   "entries": [
+    {
+      "date": "2026-07-30",
+      "category": "hub",
+      "hub": "Site Activity",
+      "text": "Show entry count + last-updated on the feed header.",
+      "commit": "368989678"
+    },
     {
       "date": "2026-07-30",
       "category": "new-hub",
