@@ -1,7 +1,35 @@
 {
   "generatedAt": "2026-07-30",
-  "count": 526,
+  "count": 529,
   "entries": [
+    {
+      "date": "2026-07-30",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball, AFL.",
+      "commit": "9715b6dce"
+    },
+    {
+      "date": "2026-07-30",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Extend completed-season club hubs back to 1999-00; close pre-2007 cup-match + 1990s coefficient archive gaps; season-hub UX.",
+      "commit": "f5e5445f5"
+    },
+    {
+      "date": "2026-07-30",
+      "category": "hub",
+      "hub": "Deployed",
+      "text": "Probe whether an app/ commit builds (diagnosing ignore step).",
+      "commit": "a71b137fe"
+    },
+    {
+      "date": "2026-07-30",
+      "category": "hub",
+      "hub": "Deployed",
+      "text": "Auto-heal canceled Vercel builds via a reconcile watcher.",
+      "commit": "8a9c1ff22"
+    },
     {
       "date": "2026-07-30",
       "category": "hub",
@@ -15,13 +43,6 @@
       "hub": "Site Activity",
       "text": "New hub: Site Activity — a running log of every change on the site.",
       "commit": "c0fab11c8"
-    },
-    {
-      "date": "2026-07-30",
-      "category": "data",
-      "hub": null,
-      "text": "Data refreshed — Football, Basketball.",
-      "commit": "fcbae1864"
     },
     {
       "date": "2026-07-29",
