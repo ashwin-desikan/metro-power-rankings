@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { COUNTRY_COLOR, MUTED, colorForClub } from "./_shared/clubColors";
 
 // Cross-season trends for /teams/football/seasons. Three customisable views over
 // every completed season we hold (auto-scales as hub-*.json files are added):
@@ -18,27 +19,7 @@ export type TrendsData = {
   clubs: { name: string; country: string | null; lookup?: string | null; best: number; series: KPoint[] }[];
 };
 
-const COUNTRY_COLOR: Record<string, string> = {
-  England: "#3987e5", Spain: "#e66767", Italy: "#199e70", Germany: "#c98500",
-  France: "#9085e9", Portugal: "#d55181", Netherlands: "#d95926", Russia: "#8888A0",
-};
-// Club primary (brand) colours, adjusted for the dark surface. Where brands
-// collide (the many reds), the direct labels and hover-isolation carry identity.
-const CLUB_COLOR: Record<string, string> = {
-  "Real Madrid": "#E6E6EC", "FC Barcelona": "#C4194F", "Bayern Munich": "#E8253F",
-  "Paris Saint-Germain": "#3A78C0", "Manchester City": "#6CABDD", "Liverpool": "#E23048",
-  "Juventus": "#C9C9D2", "Atlético de Madrid": "#E0463A", "Chelsea": "#2A6FC9",
-  "Arsenal": "#F03A46", "Internazionale": "#1E90D8", "SSC Napoli": "#29B3E6",
-  "Bayer Leverkusen": "#EE4A44", "Manchester United": "#E83A44", "Aston Villa": "#A83A63",
-  "Borussia Dortmund": "#F5D400", "Sevilla FC": "#E84A50", "Benfica": "#E83A3A",
-  "FC Porto": "#2E6BE0", "Atalanta": "#2E88D0", "AS Roma": "#C24354", "Ajax": "#E63A50",
-  "RB Leipzig": "#E83A66", "Tottenham Hotspur": "#6E7CB0", "Villarreal": "#EDD24D",
-  "AS Monaco": "#EE4A4F", "Sporting Clube de Portugal": "#16A06E", "FC Shakhtar Donetsk": "#F79A3A",
-  "PSV Eindhoven": "#F04A50", "AC Milan": "#ED3236", "Eintracht Frankfurt": "#E8404A",
-  "Olympique Lyonnais": "#2C6BD6", "Lazio": "#7BC7EE", "Valencia": "#F08A1E",
-  "FC Schalke 04": "#2E6BC0", "FC Red Bull Salzburg": "#E84048", "Zenit St. Petersburg": "#2E9AD6",
-};
-const MUTED = "#55556A";
+// Club + country colours live in ./_shared/clubColors (shared with SeasonSuperlatives).
 // "2016-17" -> "16/17"
 const ss = (s: string) => (s.length >= 7 ? `${s.slice(2, 4)}/${s.slice(5, 7)}` : s);
 // Which season labels to print on a season x-axis, so a long range doesn't crowd. Every data point
@@ -173,44 +154,125 @@ function CountryChart({ data }: { data: TrendsData }) {
   );
 }
 
-/* ---------------- Club power-ranking bump chart ---------------- */
+/* ---------------- Club power ranking — interactive multi-club chart ---------------- */
+type Metric = "rank" | "form" | "ped" | "tb";
+const CLUB_METRICS: { key: Metric; label: string }[] = [
+  { key: "rank", label: "Rank" }, { key: "form", label: "Form" },
+  { key: "ped", label: "Pedigree" }, { key: "tb", label: "Trophy" },
+];
+const metricVal = (p: KPoint, m: Metric): number =>
+  m === "rank" ? p.rank : m === "form" ? p.form : m === "ped" ? p.ped : p.tb;
+
 function ClubChart({ data }: { data: TrendsData }) {
   const seasons = data.seasons;
   const countries = useMemo(
     () => ["All", ...Array.from(new Set(data.clubs.map((c) => c.country).filter(Boolean) as string[])).sort()],
     [data]);
+  const allClubs = useMemo(() => [...data.clubs.map((c) => c.name)].sort((a, b) => a.localeCompare(b)), [data]);
+
+  const [metric, setMetric] = useState<Metric>("rank");
   const [topN, setTopN] = useState(10);
   const [ctry, setCtry] = useState("All");
   const [fromI, setFromI] = useState(0);
   const [toI, setToI] = useState(seasons.length - 1);
+  const [pinned, setPinned] = useState<string[]>([]);
+  const [hidden, setHidden] = useState<string[]>([]);
+  const [showLabels, setShowLabels] = useState(true);
   const [hi, setHi] = useState<string | null>(null);
+
+  // Shareable URL state: read once on mount, then mirror changes with replaceState (no router dep,
+  // so no Suspense boundary needed). Defaults render identically on server + client to avoid a
+  // hydration mismatch; the URL is applied after mount.
+  const ready = useRef(false);
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search);
+    const m = q.get("m"); if (m && ["rank", "form", "ped", "tb"].includes(m)) setMetric(m as Metric);
+    const n = q.get("n"); if (n && [5, 10, 15, 20].includes(+n)) setTopN(+n);
+    const c = q.get("c"); if (c) setCtry(c);
+    const f = q.get("f"); if (f && +f >= 0 && +f < seasons.length) setFromI(+f);
+    const t = q.get("t"); if (t && +t >= 0 && +t < seasons.length) setToI(+t);
+    const cl = q.get("clubs"); if (cl) setPinned(cl.split("~").filter((x) => data.clubs.some((d) => d.name === x)));
+    ready.current = true;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  useEffect(() => {
+    if (!ready.current) return;
+    const q = new URLSearchParams(window.location.search);
+    if (metric === "rank") q.delete("m"); else q.set("m", metric);
+    if (topN === 10) q.delete("n"); else q.set("n", String(topN));
+    if (ctry === "All") q.delete("c"); else q.set("c", ctry);
+    if (fromI === 0) q.delete("f"); else q.set("f", String(fromI));
+    if (toI === seasons.length - 1) q.delete("t"); else q.set("t", String(toI));
+    if (pinned.length) q.set("clubs", pinned.join("~")); else q.delete("clubs");
+    const qs = q.toString();
+    window.history.replaceState(null, "", `${window.location.pathname}${qs ? "?" + qs : ""}${window.location.hash}`);
+  }, [metric, topN, ctry, fromI, toI, pinned, seasons.length]);
+
   const view = seasons.slice(fromI, toI + 1);
+  const pinnedSet = useMemo(() => new Set(pinned), [pinned]);
+  const hiddenSet = useMemo(() => new Set(hidden), [hidden]);
 
+  // Visible clubs = country-filtered clubs that are pinned OR make the Top N by the current metric
+  // within the visible range. Pinned clubs are always traced, even outside the Top N.
   const vis = useMemo(() => {
-    return data.clubs
+    const scoped = data.clubs
       .filter((c) => ctry === "All" || c.country === ctry)
-      .map((c) => {
-        const pts = c.series.filter((p) => view.includes(p.season) && p.rank <= topN);
-        const best = Math.min(...pts.map((p) => p.rank), 999);
-        return { name: c.name, country: c.country, pts, best };
-      })
-      .filter((c) => c.pts.length > 0 && c.best <= topN)
-      .sort((a, b) => a.best - b.best);
-  }, [data, ctry, topN, view]);
+      .map((c) => ({ name: c.name, country: c.country, pts: c.series.filter((p) => view.includes(p.season)) }))
+      .filter((c) => c.pts.length > 0);
+    const peak = (pts: KPoint[]) => metric === "rank"
+      ? Math.min(...pts.map((p) => p.rank))
+      : Math.max(...pts.map((p) => metricVal(p, metric)));
+    let picked: typeof scoped;
+    if (metric === "rank") {
+      picked = scoped.filter((c) => pinnedSet.has(c.name) || c.pts.some((p) => p.rank <= topN));
+    } else {
+      const ranked = [...scoped].sort((a, b) => peak(b.pts) - peak(a.pts));
+      const top = new Set(ranked.slice(0, topN).map((c) => c.name));
+      picked = scoped.filter((c) => pinnedSet.has(c.name) || top.has(c.name));
+    }
+    return picked
+      .map((c) => ({ ...c, key: peak(c.pts) }))
+      .sort((a, b) => (metric === "rank" ? a.key - b.key : b.key - a.key));
+  }, [data, ctry, topN, view, metric, pinnedSet]);
 
-  const W = 760, H = Math.max(220, topN * 16 + 40), PL = 26, PR = 150, PT = 12, PB = 22;
+  const drawn = vis.filter((c) => !hiddenSet.has(c.name));
+
+  const W = 760, PL = 30, PR = 150, PT = 12, PB = 22;
+  const isRank = metric === "rank";
+  const H = isRank ? Math.max(220, topN * 16 + 40) : 260;
   const denom = Math.max(1, view.length - 1);
   const px = (s: string) => PL + (view.indexOf(s) / denom) * (W - PL - PR);
-  const py = (r: number) => PT + ((r - 1) / Math.max(1, topN - 1)) * (H - PT - PB);
-  const colorOf = (name: string) => CLUB_COLOR[name] ?? MUTED;
-  const ticks = [1, 5, 10, 15, 20].filter((r) => r <= topN);
-  if (!ticks.includes(topN)) ticks.push(topN);
+  const maxVal = isRank ? 0 : Math.max(0.0001, ...drawn.flatMap((c) => c.pts.map((p) => metricVal(p, metric))));
+  const py = (v: number) => isRank
+    ? PT + ((v - 1) / Math.max(1, topN - 1)) * (H - PT - PB)
+    : PT + (1 - v / maxVal) * (H - PT - PB);
+  const yTicks: { v: number; label: string }[] = isRank
+    ? (() => { const t = [1, 5, 10, 15, 20].filter((r) => r <= topN); if (!t.includes(topN)) t.push(topN); return t.map((r) => ({ v: r, label: String(r) })); })()
+    : [0, 0.25, 0.5, 0.75, 1].map((f) => ({ v: f * maxVal, label: (f * maxVal).toFixed(2) }));
+
+  const addClub = (name: string) => { if (name && !pinnedSet.has(name)) setPinned([...pinned, name]); };
+  const removeClub = (name: string) => setPinned(pinned.filter((n) => n !== name));
+  const toggleHidden = (name: string) => setHidden(hiddenSet.has(name) ? hidden.filter((n) => n !== name) : [...hidden, name]);
+
+  const metricNote = isRank
+    ? "Finishing position in the club power ranking each season (1 = top). Rank is comparable across the 2018 coefficient-method change; the raw score is not."
+    : metric === "form" ? "Earned form (opponent- and stage-weighted results) each season, scaled 0-1 within that year."
+    : metric === "ped" ? "Five-year UEFA pedigree each season, scaled 0-1 within that year."
+    : "Trophy bonus earned each season, from league, continental and cup honours.";
 
   return (
     <div>
-      <div className="flex items-center justify-between gap-2 flex-wrap mb-1">
-        <p className="text-xs text-[var(--text-muted)] max-w-md">Finishing position in the club power ranking each season (1 = top). Rank is comparable across the 2018 coefficient-method change; the raw score is not. Hover a club to trace it.</p>
-        <div className="flex items-center gap-1.5 flex-wrap">
+      <div className="flex items-start justify-between gap-2 flex-wrap mb-2">
+        <p className="text-xs text-[var(--text-muted)] max-w-sm">{metricNote} Hover to isolate a club; click a line to pin it across every season; use the legend to hide a series.</p>
+        <div className="flex items-center gap-1.5 flex-wrap justify-end">
+          <div className="inline-flex rounded-md border overflow-hidden" style={{ borderColor: "var(--border)" }}>
+            {CLUB_METRICS.map((m) => (
+              <button key={m.key} onClick={() => setMetric(m.key)} className="text-xs px-2 py-1 transition-colors"
+                style={{ background: metric === m.key ? "var(--accent)" : "transparent", color: metric === m.key ? "#fff" : "var(--text-muted)" }}>
+                {m.label}
+              </button>
+            ))}
+          </div>
           <select className={selCls} style={selStyle} value={topN} onChange={(e) => setTopN(+e.target.value)}>
             {[5, 10, 15, 20].map((n) => <option key={n} value={n} style={{ background: "var(--bg-card)" }}>Top {n}</option>)}
           </select>
@@ -220,21 +282,40 @@ function ClubChart({ data }: { data: TrendsData }) {
           <RangeSelect labels={seasons} fromI={fromI} toI={toI} setFrom={setFromI} setTo={setToI} />
         </div>
       </div>
-      {vis.length === 0 ? (
-        <p className="text-xs text-[var(--text-dim)] py-8 text-center">No clubs reached the Top {topN} in this range{ctry !== "All" ? ` for ${ctry}` : ""}.</p>
+
+      <div className="flex items-center gap-2 flex-wrap mb-2">
+        <select className={selCls} style={selStyle} value="" onChange={(e) => { addClub(e.target.value); e.currentTarget.value = ""; }}>
+          <option value="" style={{ background: "var(--bg-card)" }}>+ Add club…</option>
+          {allClubs.filter((n) => !pinnedSet.has(n)).map((n) => <option key={n} value={n} style={{ background: "var(--bg-card)" }}>{n}</option>)}
+        </select>
+        {pinned.map((n) => (
+          <span key={n} className="inline-flex items-center gap-1 text-xs rounded-full border pl-1.5 pr-1 py-0.5" style={{ borderColor: colorForClub(n), color: "var(--text)" }}>
+            <span className="inline-block w-2 h-2 rounded-full" style={{ background: colorForClub(n) }} />
+            {n}
+            <button onClick={() => removeClub(n)} className="ml-0.5 text-[var(--text-dim)] hover:text-[var(--text)]" aria-label={`Remove ${n}`}>×</button>
+          </span>
+        ))}
+        <button onClick={() => setShowLabels((v) => !v)} className="text-xs px-2 py-0.5 rounded-md border"
+          style={{ borderColor: "var(--border)", color: showLabels ? "var(--accent)" : "var(--text-muted)" }}>
+          {showLabels ? "Labels on" : "Labels off"}
+        </button>
+      </div>
+
+      {drawn.length === 0 ? (
+        <p className="text-xs text-[var(--text-dim)] py-8 text-center">Nothing to show for this filter{ctry !== "All" ? ` (${ctry})` : ""}. Widen the Top N, clear the country filter, or pin a club.</p>
       ) : (
         <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" onMouseLeave={() => setHi(null)}>
-          {ticks.map((r) => (
-            <g key={r}>
-              <line x1={PL} x2={W - PR} y1={py(r)} y2={py(r)} stroke="var(--border)" strokeWidth={1} />
-              <text x={PL - 4} y={py(r) + 3} textAnchor="end" fontSize={9} fill="var(--text-dim)">{r}</text>
+          {yTicks.map((t, i) => (
+            <g key={i}>
+              <line x1={PL} x2={W - PR} y1={py(t.v)} y2={py(t.v)} stroke="var(--border)" strokeWidth={1} />
+              <text x={PL - 4} y={py(t.v) + 3} textAnchor="end" fontSize={9} fill="var(--text-dim)">{t.label}</text>
             </g>
           ))}
-          {(() => { const ticks = axisTicks(view); return view.filter((s) => ticks.has(s)).map((s) => <text key={s} x={px(s)} y={H - 7} textAnchor="middle" fontSize={9} fill="var(--text-dim)">{ss(s)}</text>); })()}
-          {vis.map((c) => {
+          {(() => { const xt = axisTicks(view); return view.filter((s) => xt.has(s)).map((s) => <text key={s} x={px(s)} y={H - 7} textAnchor="middle" fontSize={9} fill="var(--text-dim)">{ss(s)}</text>); })()}
+          {drawn.map((c) => {
             const on = hi === c.name;
             const faded = hi != null && !on;
-            const col = colorOf(c.name);
+            const col = colorForClub(c.name);
             const ordered = [...c.pts].sort((a, b) => view.indexOf(a.season) - view.indexOf(b.season));
             const last = ordered[ordered.length - 1];
             // Only connect points in consecutive seasons; a skipped season ends the line.
@@ -245,16 +326,33 @@ function ClubChart({ data }: { data: TrendsData }) {
               else segs.push([p]);
             }
             return (
-              <g key={c.name} opacity={faded ? 0.16 : 1} onMouseEnter={() => setHi(c.name)} style={{ cursor: "pointer" }}>
+              <g key={c.name} opacity={faded ? 0.16 : 1} onMouseEnter={() => setHi(c.name)}
+                onClick={() => (pinnedSet.has(c.name) ? removeClub(c.name) : addClub(c.name))} style={{ cursor: "pointer" }}>
                 {segs.map((seg, si) => seg.length > 1 ? (
-                  <polyline key={si} fill="none" stroke={col} strokeWidth={on ? 3 : 2} strokeLinejoin="round" strokeLinecap="round" points={seg.map((p) => `${px(p.season)},${py(p.rank)}`).join(" ")} />
+                  <polyline key={si} fill="none" stroke={col} strokeWidth={on ? 3 : 2} strokeLinejoin="round" strokeLinecap="round" points={seg.map((p) => `${px(p.season)},${py(metricVal(p, metric))}`).join(" ")} />
                 ) : null)}
-                {ordered.map((p) => <circle key={p.season} cx={px(p.season)} cy={py(p.rank)} r={on ? 4 : 2.6} fill={col} stroke="var(--bg-card)" strokeWidth={1.2} />)}
-                <text x={px(last.season) + 6} y={py(last.rank) + 3} fontSize={9.5} fill={faded ? "var(--text-dim)" : col} fontWeight={on ? 700 : 400}>{c.name}</text>
+                {ordered.map((p) => <circle key={p.season} cx={px(p.season)} cy={py(metricVal(p, metric))} r={on ? 4 : 2.6} fill={col} stroke="var(--bg-card)" strokeWidth={1.2} />)}
+                {showLabels && <text x={px(last.season) + 6} y={py(metricVal(last, metric)) + 3} fontSize={9.5} fill={faded ? "var(--text-dim)" : col} fontWeight={on ? 700 : 400}>{c.name}{pinnedSet.has(c.name) ? " •" : ""}</text>}
               </g>
             );
           })}
         </svg>
+      )}
+
+      {vis.length > 0 && (
+        <div className="flex flex-wrap gap-x-3 gap-y-1 mt-2">
+          {vis.map((c) => {
+            const off = hiddenSet.has(c.name);
+            return (
+              <button key={c.name} onClick={() => toggleHidden(c.name)} onMouseEnter={() => setHi(c.name)} onMouseLeave={() => setHi(null)}
+                className="inline-flex items-center gap-1 text-[11px]"
+                style={{ color: off ? "var(--text-dim)" : "var(--text-muted)", textDecoration: off ? "line-through" : "none" }}>
+                <span className="inline-block w-2 h-2 rounded-full" style={{ background: off ? "var(--text-dim)" : colorForClub(c.name) }} />
+                {c.name}
+              </button>
+            );
+          })}
+        </div>
       )}
     </div>
   );

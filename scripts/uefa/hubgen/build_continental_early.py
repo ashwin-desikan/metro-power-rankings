@@ -14,11 +14,15 @@ OUT = os.path.join(HERE, "continental_rbr.json")
 CONF = {'Europe':'UEFA','South America':'CONMEBOL','North America':'CONCACAF','Asia':'AFC','Africa':'CAF','Oceania':'OFC','World':'FIFA'}
 SECTION_OF = {'CL':'ucl','EL':'uel','EUCL':'uecl','CWC':'uecl','CLB':'conmebol','OTH':'conmebol'}
 SHIFT = {'CLB','OTH'}   # bucket by the edition that ENDED in the season's first year (Seas)
-ORDER = {('CL','Europe'):1,('EL','Europe'):2,('EUCL','Europe'):3,('USC','Europe'):4,
+ORDER = {('CL','Europe'):1,('EL','Europe'):2,('CWC','Europe'):3,('EUCL','Europe'):3,('USC','Europe'):4,
          ('CLB','South America'):5,('OTH','South America'):6,('RCSA','South America'):7,
          ('OTHC','North America'):8,('OTHC','Asia'):9,('OTHC','Africa'):10,('OTHC','Oceania'):11,
          ('IC','World'):12,('FCWC','World'):13}
-SEASONS = ["1999-00","2000-01","2001-02","2002-03","2003-04","2004-05","2005-06"]
+# The 1959-60 .. 1991-92 deep-history hubs. CWC (Cup Winners' Cup, from 1960-61) shares the 'uecl'
+# section slot with the modern Conference League (never co-exist); the second UEFA competition is the
+# Inter-Cities Fairs Cup, carried under the EL code in this sheet with its own display name. Existing
+# 1992-2005 entries in continental_rbr.json are untouched (idempotent per-season merge below).
+SEASONS = [f"{y}-{str(y + 1)[2:]}" for y in range(1959, 1992)]
 SEASET = set(SEASONS)
 
 def I(v):

@@ -170,3 +170,8 @@ scripts/apifootball/__pycache__/
 # intermediates are ignored. Regenerate with dump_eursummary.py then parse_kassiesa.py.
 scripts/uefa/_*
 scripts/uefa/__pycache__/
+
+# Large raw source (18.7 MB) for the pre-1993 English cup artifact. The compact artifact
+# eng_cups_pre93.json and the builder build_eng_cups.py ARE tracked; keep this file locally to
+# regenerate. (The German raw sources dfbpokal6092.txt / germanoberliga6063.txt are small and tracked.)
+scripts/uefa/data/fa_league_cups.txt

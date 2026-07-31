@@ -26,8 +26,11 @@ type Cup = { type: string; country: string; comp: string; winner: string; winner
 export type Hub = { season: string; clubSeasons: string[]; note: string; clubs: Club[]; countries: Country[]; leagues: League[]; continental: Cont[]; cups: Cup[] };
 
 function resolveClub(name: string, lookup: string): { name: string; slug: string | null } {
+  // Display the name AS GIVEN: the season/team name in the per-season standings (e.g. "Wimbledon"
+  // in 1987-88), the canonical name on aggregate surfaces (power ranking, continental, cups) that
+  // pass it. The canonical `lookup` stays the join key, resolving the club page link (and crest).
   const c = getFootballClubByName(lookup) ?? getFootballClubByName(name);
-  return { name: c?.cur_name ?? name, slug: c?.slug ?? null };
+  return { name, slug: c?.slug ?? null };
 }
 const _norm = (s: string) => s.toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, " ").trim();
 // Previous season's finishing ranks (by canonical lookup) for year-over-year deltas.
@@ -244,7 +247,7 @@ function ContinentalSections({ comps, season }: { comps: Cont[]; season: string 
   );
 }
 
-const SEASONS_CHRON = ["1999-00", "2000-01", "2001-02", "2002-03", "2003-04", "2004-05", "2005-06", "2006-07", "2007-08", "2008-09", "2009-10", "2010-11", "2011-12", "2012-13", "2013-14", "2014-15", "2015-16", "2016-17", "2017-18", "2018-19", "2019-20", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26", "2026-27"];
+const SEASONS_CHRON = ["1959-60", "1960-61", "1961-62", "1962-63", "1963-64", "1964-65", "1965-66", "1966-67", "1967-68", "1968-69", "1969-70", "1970-71", "1971-72", "1972-73", "1973-74", "1974-75", "1975-76", "1976-77", "1977-78", "1978-79", "1979-80", "1980-81", "1981-82", "1982-83", "1983-84", "1984-85", "1985-86", "1986-87", "1987-88", "1988-89", "1989-90", "1990-91", "1991-92", "1992-93", "1993-94", "1994-95", "1995-96", "1996-97", "1997-98", "1998-99", "1999-00", "2000-01", "2001-02", "2002-03", "2003-04", "2004-05", "2005-06", "2006-07", "2007-08", "2008-09", "2009-10", "2010-11", "2011-12", "2012-13", "2013-14", "2014-15", "2015-16", "2016-17", "2017-18", "2018-19", "2019-20", "2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26", "2026-27"];
 const seasonLabel = (s: string) => (s === "2026-27" ? "2026-27 (live)" : s);
 function SeasonPager({ season }: { season: string }) {
   const i = SEASONS_CHRON.indexOf(season);

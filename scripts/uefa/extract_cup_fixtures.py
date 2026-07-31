@@ -13,7 +13,7 @@ and a loss for the runner-up (per Ashwin's preference); domestic cups keep the g
 import csv, json, os
 SRC = r"C:\Users\ashwi\Desktop\New folder (2)\cupresults93_23_primary.txt"
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "cupfix_2007_2023.json")
-WANT = {str(y) for y in range(2000, 2026)}   # 2000-2006 added for the 1999-00..2005-06 early hubs; thru 2025 (2024-25) for the summer-2025 FIFA Club World Cup
+WANT = {str(y) for y in range(1993, 2026)}   # 1993-1999 added for the 1992-93..1998-99 deep-history hubs; 2000-2006 for 1999-00..2005-06; thru 2025 (2024-25) for the summer-2025 FIFA Club World Cup
 INTL = {"UEFA Super Cup", "FIFA Club World Cup", "Intercontinental Cup"}
 out = {s: [] for s in WANT}
 with open(SRC, encoding="utf-8", errors="replace") as f:

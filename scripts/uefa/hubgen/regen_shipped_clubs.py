@@ -38,6 +38,39 @@ try:  # hand-wired recent international finals (post-2022-23, not in cupresults9
 except FileNotFoundError:
     pass
 INTL_CUPS = {"UEFA Super Cup", "FIFA Club World Cup", "Intercontinental Cup"}
+# Domestic cup honours, flag-driven, for EVERY UEFA nation (identical matrix to gen_hub_early). Super
+# cups stay on the hub's cups[] (0.01). Values kept small vs a league title (0.03-0.06).
+DOMFIX_COUNTRIES = {"England", "Spain", "Germany", "Italy", "France", "Netherlands", "Portugal", "Scotland"}
+CUP_TROPHY = {("top8", "major"): (0.015, 0.008), ("top8", "minor"): (0.010, 0.005),
+              ("other", "major"): (0.010, 0.005), ("other", "minor"): (0.006, 0.003)}
+# Opponent-strength blend, kept in sync with gen_hub_early.CF_WEIGHT: strength = CF_WEIGHT * country
+# factor + (1-CF_WEIGHT) * the opponent's own pedigree. Lowered from 0.5 to 0.4 so a strong league
+# doesn't flood the top of the table via every one of its clubs' inflated domestic form.
+CF_WEIGHT = 0.4
+# Pedigree normalization, kept in sync with gen_hub_early.PED_TOPK: normalize the 5-year window by the
+# MEAN of the top-K windows this season (cap 1.0) rather than the single max, so an exceptionally
+# sustained club doesn't become a lone pedigree outlier ~0.3 above the field. None reverts to max.
+PED_TOPK = 6
+def _Yb(v): return str(v).strip().upper() == "Y"
+# {season_label: {cur_name: (major_win, major_final, minor_win, minor_final, country)}} from cl_rows.json.
+# TEAM_NAMES: {season_label: {cur_name: season/team name}} so standings display the name a club had
+# THAT season (e.g. "Wimbledon" pre-2004), joined on the canonical cur_name.
+CUP_FLAGS = defaultdict(dict)
+TEAM_NAMES = defaultdict(dict)
+RU_CUR = set()   # Russian first-division clubs in the pre-ban 2021-22 season (for the ban carry-forward)
+try:
+    for _r in jload(os.path.join(HERE, "cl_rows.json")):
+        if _r.get("level") != 1 or _r.get("first_division") != "Y": continue
+        _cur = _r.get("cur_name")
+        if _cur:
+            CUP_FLAGS[_r.get("season")].setdefault(_cur, (_Yb(_r.get("cup_major")), _Yb(_r.get("cup_major_final")),
+                _Yb(_r.get("cup_minor")), _Yb(_r.get("cup_minor_final")), _r.get("country")))
+            if _r.get("team"):
+                TEAM_NAMES[_r.get("season")].setdefault(_cur, _r.get("team"))
+            if _r.get("season") == "2021-22" and _r.get("country") == "Russia":
+                RU_CUR.add(_cur)
+except Exception as _e:
+    print("cup flags unavailable:", _e)
 def cup_mult(comp):
     c = (comp or "").lower()
     if "uefa super" in c: return 1.3
@@ -60,6 +93,26 @@ for r in _lk:
         if r.get(f) and un: cur2uefa.setdefault(norm(r[f]), un)
     if r.get("cur_name") and r.get("lookup_name"):
         cur2look.setdefault(norm(r["cur_name"]), r["lookup_name"])
+
+# Russia European-ban imputation (banned since 2022-23). Mirror the England/Heysel treatment's two
+# split levers: FADE each Russian club's team coefficient (European pedigree) geometrically from the
+# pre-ban 2021-22 value across 2022-23..2025-26 (ban-year n -> preban * BAN_DECAY_TEAM**n), so a
+# locked-out side keeps a declining rather than frozen pedigree; but HOLD Russia's country
+# coefficient flat (domestic-league strength persists) in recompute below. A flat team-coeff hold
+# overstated Russian clubs the same way it did the English sides. Russian clubs identified from the
+# 2021-22 Premier League (RU_CUR) via the crosswalk.
+BAN_DECAY_TEAM = 0.6   # keep in sync with gen_hub_early.BAN_DECAY_TEAM
+RU_UEFA = {cur2uefa.get(norm(_c)) for _c in RU_CUR}; RU_UEFA.discard(None)
+for _u in RU_UEFA:
+    if _u in CCF and CCF[_u].get("21/22") is not None:
+        _b = CCF[_u]["21/22"]
+        for _n, _lab in enumerate(("22/23", "23/24", "24/25", "25/26"), 1):
+            CCF[_u][_lab] = _b * (BAN_DECAY_TEAM ** _n)
+try:
+    RU_PREBAN = next((_c["coef"] for _c in jload(os.path.join(FOUT, "hub-2021-22.json")).get("countries", [])
+                      if _c["country"] == "Russia"), None)
+except Exception:
+    RU_PREBAN = None
 
 canon2uefa = {}  # canonical_name -> uefa_name, the EXACT id-based join build_season_hub uses via uf(tid)
 for r in by_id.values():
@@ -157,17 +210,24 @@ def recompute(year, label):
                 hub_wdl.setdefault(nm, (row.get("win") or 0, row.get("draw") or 0, row.get("lose") or 0))
                 if row.get("champ"): champs.append((nm, lg["country"]))
     country5yr = {c["country"]: c["coef"] for c in hub["countries"]}
+    if year >= 2022 and RU_PREBAN is not None:   # hold Russia's coefficient at the pre-ban level
+        country5yr["Russia"] = RU_PREBAN
     def uf(nm): return canon2uefa.get(nm) if nm in api_names else cur2uefa.get(norm(nm))
     club_cur = {nm: (CCF.get(uf(nm), {}).get(curlab, 0) or 0) for nm in uni}
     club_five = {nm: sum((CCF.get(uf(nm), {}).get(s) or 0) for s in five) for nm in uni}
     MAXCUR = max((cs.get(curlab) or 0 for cs in CCF.values()), default=1) or 1
     MAX5 = max((sum((cs.get(s) or 0) for s in five) for cs in CCF.values()), default=1) or 1
-    def fiveN(nm): return club_five.get(nm, 0) / MAX5
+    if PED_TOPK:
+        _pv = sorted((v for v in club_five.values() if v > 0), reverse=True)[:PED_TOPK]
+        PED_REF = (sum(_pv) / len(_pv)) if _pv else 1.0; PED_REF = PED_REF or 1.0
+        def fiveN(nm): return min(club_five.get(nm, 0) / PED_REF, 1.0)
+    else:
+        def fiveN(nm): return club_five.get(nm, 0) / MAX5
     def curN(nm): return club_cur.get(nm, 0) / MAXCUR
     ENG = country5yr.get("England") or 1.0
     def CF(c):
         v = country5yr.get(c); return math.sqrt(v / ENG) if v else 0.0
-    def strength_real(nm): return max(0.5 * CF(uni[nm]) + 0.5 * fiveN(nm), 0.10)
+    def strength_real(nm): return max(CF_WEIGHT * CF(uni[nm]) + (1 - CF_WEIGHT) * fiveN(nm), 0.10)
     def strength(nm): return strength_real(nm) if nm in api_names else 0.10
     agg = {nm: {"MP": 0, "W": 0, "D": 0, "L": 0, "Q": 0.0} for nm in uni}
     def result(me, opp, gf, ga, mult, wdl=None):
@@ -262,9 +322,20 @@ def assemble(year, label):
     # Domestic super cups (Community Shield, DFL-Supercup, Supercopa, etc.) keep their 0.01.
     CUPS_INTL_SKIP = {"UEFA Super Cup", "Super Cup", "FIFA Club World Cup", "Club World Cup",
                       "Intercontinental Cup", "FIFA Intercontinental Cup"}
+    # Super cups only from the hub's cups[] (0.01); domestic cup trophy + final bonuses come from the
+    # all-UEFA flag matrix below (winners + finalists, top-8 nations above the rest).
     for cp in hub["cups"]:
         if cp.get("comp") in CUPS_INTL_SKIP: continue
-        addb_name(cp.get("winner"), 0.015 if cp.get("type") == "Domestic cup" else 0.01)
+        if cp.get("type") == "Super cup":
+            addb_name(cp.get("winner"), 0.01)
+    for cur, (mw, mf, nw, nf, ctry) in CUP_FLAGS.get(label, {}).items():
+        nm = cur if cur in agg else canon2.get(norm(cur))
+        if not nm: continue
+        tier = "top8" if ctry in DOMFIX_COUNTRIES else "other"
+        if mw: TB[nm] += CUP_TROPHY[(tier, "major")][0]
+        elif mf: TB[nm] += CUP_TROPHY[(tier, "major")][1]
+        if nw: TB[nm] += CUP_TROPHY[(tier, "minor")][0]
+        elif nf: TB[nm] += CUP_TROPHY[(tier, "minor")][1]
     for nm, c in champs:
         addb_name(nm, 0.06 if c in TOP5 else 0.03)
     clubs = []
@@ -299,6 +370,24 @@ def main():
         print("  top 12:", ", ".join(f"{c['rank']}.{c['name']}" for c in clubs[:12]))
         if write:
             hub["clubs"] = clubs
+            # Display the season/team name (e.g. "Wimbledon" pre-2004) in BOTH the standings and the
+            # club power ranking, joined on the canonical name; lookup stays canonical as the join key
+            # so build_trends / slug resolution are unaffected. Done here (post-comparison) so the
+            # score-reproduction diagnostic above stays keyed on canonical.
+            tn = TEAM_NAMES.get(label, {})
+            for lg in hub.get("leagues", []):
+                for g in lg.get("groups", []):
+                    for row in g.get("rows", []):
+                        canon = row.get("lookup") or row.get("name")
+                        t = tn.get(canon) or tn.get(row.get("name"))
+                        if t:
+                            row["name"] = t
+                            if canon: row["lookup"] = canon
+            # Club power ranking: name is the canonical cur_name at this point (the agg key); rewrite
+            # to the season name while leaving lookup (the coefficient lookup_name) intact.
+            for row in hub["clubs"]:
+                t = tn.get(row.get("name"))
+                if t: row["name"] = t
             with open(os.path.join(FOUT, f"hub-{label}.json"), "w", encoding="utf-8") as f:
                 json.dump(hub, f, ensure_ascii=False)
             print("  WROTE hub-" + label + ".json")

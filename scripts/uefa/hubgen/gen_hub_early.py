@@ -54,7 +54,36 @@ def translit_norm(s):
     return t
 
 # ---- per-season config: five-year windows (labels) + country-coeff window (end-years) ----
-SEASONS = [
+# Seasons 1959-60 .. 1991-92 are generated (the pattern is fully regular); 1992-93 onward stay
+# explicit below. _mk_season(end_year) yields the same shape used by hand: the five-year team-coeff
+# window (labels like 88/89) plus the 5-year country-coeff window (end-years).
+def _mk_season(end):
+    yy = lambda y: f"{(y - 1) % 100:02d}/{y % 100:02d}"
+    return {"key": f"{end - 1}-{str(end)[2:]}", "end": end, "domfix": str(end),
+            "five": [yy(y) for y in range(end - 4, end + 1)], "cur": yy(end),
+            "cwin": list(range(end - 4, end + 1))}
+SEASONS = [_mk_season(e) for e in range(1960, 1993)] + [
+    {"key": "1992-93", "end": 1993, "domfix": "1993",
+     "five": ["88/89", "89/90", "90/91", "91/92", "92/93"], "cur": "92/93",
+     "cwin": [1989, 1990, 1991, 1992, 1993]},
+    {"key": "1993-94", "end": 1994, "domfix": "1994",
+     "five": ["89/90", "90/91", "91/92", "92/93", "93/94"], "cur": "93/94",
+     "cwin": [1990, 1991, 1992, 1993, 1994]},
+    {"key": "1994-95", "end": 1995, "domfix": "1995",
+     "five": ["90/91", "91/92", "92/93", "93/94", "94/95"], "cur": "94/95",
+     "cwin": [1991, 1992, 1993, 1994, 1995]},
+    {"key": "1995-96", "end": 1996, "domfix": "1996",
+     "five": ["91/92", "92/93", "93/94", "94/95", "95/96"], "cur": "95/96",
+     "cwin": [1992, 1993, 1994, 1995, 1996]},
+    {"key": "1996-97", "end": 1997, "domfix": "1997",
+     "five": ["92/93", "93/94", "94/95", "95/96", "96/97"], "cur": "96/97",
+     "cwin": [1993, 1994, 1995, 1996, 1997]},
+    {"key": "1997-98", "end": 1998, "domfix": "1998",
+     "five": ["93/94", "94/95", "95/96", "96/97", "97/98"], "cur": "97/98",
+     "cwin": [1994, 1995, 1996, 1997, 1998]},
+    {"key": "1998-99", "end": 1999, "domfix": "1999",
+     "five": ["94/95", "95/96", "96/97", "97/98", "98/99"], "cur": "98/99",
+     "cwin": [1995, 1996, 1997, 1998, 1999]},
     {"key": "1999-00", "end": 2000, "domfix": "2000",
      "five": ["95/96", "96/97", "97/98", "98/99", "99/00"], "cur": "99/00",
      "cwin": [1996, 1997, 1998, 1999, 2000]},
@@ -107,6 +136,59 @@ FIRST_YEAR_ENDERS = {
     "United States", "Uruguay", "Japan",
 }
 TOP5 = {"England", "Spain", "Germany", "Italy", "France"}
+# Post-Heysel European ban (English clubs, 1985-86..1989-90). Two levers, deliberately split:
+#   BAN_DECAY_TEAM    fades the team coefficient (a club's EUROPEAN pedigree, the 0.35 ped term).
+#                     A flat hold overstated it (frozen peak despite no European football), so ban-
+#                     year n holds preban * BAN_DECAY_TEAM**n (n=1 for 85/86 .. 5 for 89/90). Real
+#                     pre-ban seasons still in the 5-yr window carry legitimately; only the lockout
+#                     slots fade. Net effect: the best English side is #1-5 in the early ban years
+#                     (earned trailing pedigree) and settles to ~#8 once the window is all lockout.
+#   BAN_DECAY_COUNTRY fades England's country coefficient (the DOMESTIC-league strength proxy that
+#                     weights opponents in the 0.65 form term). The English league genuinely stayed
+#                     strong through the lockout, so this is held flat (1.0) — cutting it as well
+#                     over-punishes form and buries sides that were dominating good opposition.
+BAN_DECAY_TEAM = 0.6
+BAN_DECAY_COUNTRY = 1.0
+# Pre-Bundesliga German Championship qualifiers (1959-60..1962-63). Only the ~9 championship
+# qualifiers per season enter the universe (not the ~80 regional Oberliga clubs), so the usual
+# per-country average opponent strength is unavailable and would be inflated by an elite-only field.
+# Their two form buckets are therefore weighted by fixed opponent strengths: the full regional
+# Oberliga league record at a modest regional level, the national championship-group games (elite vs
+# elite) at a high level. Tunable; calibrated so the qualifiers land sensibly against the rest of Europe.
+OBERLIGA_OPP_STR = 0.4
+CHAMP_OPP_STR = 0.85
+# Opponent-strength blend in the form engine: strength(opp) = CF_WEIGHT * country factor + (1-CF_WEIGHT)
+# * the opponent's own 5-year pedigree (fiveN), floored at 0.10. The country factor is sqrt(country_coef
+# / England_coef), optionally capped at CF_CAP. A temporarily dominant league (Spain early-60s, Germany
+# mid/late-70s) otherwise inflates EVERY one of its clubs' domestic form and floods the top of the table
+# (7 Spanish sides in the 1961-62 top 10; a German club #1 nearly every year 1974-81). Lowering CF_WEIGHT
+# shifts weight onto a club's OWN pedigree, and CF_CAP stops the strongest league running away.
+CF_WEIGHT = 0.4
+CF_CAP = None
+# Winner's trophy bonus for the top continental competition (European Cup / Champions League). The
+# ranking is otherwise heavily backward-looking (0.35 pedigree + country coefficient), so the actual
+# European champion can sit below a pedigree-heavy non-winner from a strong league — English clubs won
+# the European Cup 1977-81 yet German clubs ranked #1. Raising this surfaces the real winner. Also
+# governs the long-standing Red Star 1990-91 case (European Cup winners should be top-tier that year).
+TOP_TROPHY_BONUS = 0.10
+# Weight of the 5-year pedigree term in the club score (score = 0.65 form + PED_WEIGHT pedigree +
+# 0.11 current-coef - penalty + trophies). Pedigree is a TRAILING window, so a high value keeps a
+# fading dynasty (Gladbach 1979-80, mediocre that season but maxed on 1975-77 pedigree) at #1 over the
+# club that actually won Europe. Lowering it makes the table more current-season driven. Global lever.
+PED_WEIGHT = 0.35
+# Pedigree normalization. fiveN divides a club's 5-year coefficient window by a reference. Dividing by
+# the single MAX makes an exceptionally sustained club (Gladbach's 1975-79 window) a lone 1.0 outlier
+# ~0.3 clear of the field, which the pedigree weight then turns into a decisive edge over clubs with a
+# far better CURRENT season. Set PED_TOPK to normalize by the MEAN of the top-K windows instead (cap
+# 1.0): the genuine elite bunch near the top and pedigree spreads across many clubs, as it should.
+# None reverts to the old divide-by-max behaviour.
+PED_TOPK = 6
+# Manual, editorial one-off trophy-bonus adjustments, keyed by (season, canonical club name). Reserved
+# for genuinely exceptional cases the automatic model undersells. Ajax 1994-95 won the Champions League
+# losing a single match all season (37-11-1); the model placed them #2 behind a Juventus side that won
+# the lesser UEFA Cup with 10 losses, on higher opponent-weighted form. +0.05 lifts the actual European
+# champion to #1. Kept deliberately tiny and few; each entry is a documented editorial decision.
+MANUAL_TB = {("1994-95", "Ajax"): 0.05}
 # The eight leagues domfix carries as per-match fixtures (opponent-weighted domestic form). Every
 # OTHER UEFA top flight has only its standings table, so those clubs' domestic W/D/L is folded into
 # the ranking as an aggregate weighted by the league's average opponent strength (see compute_clubs).
@@ -114,6 +196,16 @@ DOMFIX_COUNTRIES = {"England", "Spain", "Germany", "Italy", "France", "Netherlan
 NOTE = ("Club power ranking: 0.65 opponent- & stage-weighted quality per match + 0.35 pedigree "
         "+ current-season coefficient, less a losing-record penalty. Country coefficients are the "
         "full 5-year UEFA window (the era's team-coefficient method).")
+# Domestic cup honours, flag-driven, for EVERY UEFA nation and all seasons. (tier, kind) -> (winner,
+# finalist). Top-8 nations score above the rest, majors above minors, winners above finalists; super
+# cups are separate (0.01, from the workbook). Values are deliberately small vs a league title (0.03-
+# 0.06) so cups stay a minor term.
+CUP_TROPHY = {("top8", "major"): (0.015, 0.008), ("top8", "minor"): (0.010, 0.005),
+              ("other", "major"): (0.010, 0.005), ("other", "minor"): (0.006, 0.003)}
+# Pre-1993 top-8 cup FORM imputation (there is no per-match cupfix before 1993): a light block of
+# opponent-weighted notional (wins, losses) folded into form so a cup run still counts. Winner
+# reaches and lifts the trophy; finalist wins the semis and loses the final.
+CUP_IMPUTE = {"major": {"win": (3, 0), "final": (2, 1)}, "minor": {"win": (2, 0), "final": (1, 1)}}
 
 # ================= STANDINGS BASE (build_groups, from rebuild_tables.py, verbatim math) ========
 def I(v):
@@ -175,7 +267,7 @@ def build_groups(wb_idx, season, country, level):
         rr = sorted(rr, key=lambda x: (I(x.get("place")) if I(x.get("place")) is not None else 99))
         out = []
         for r in rr:
-            out.append({"rank": I(r.get("place")), "name": r.get("cur_name"), "lookup": r.get("cur_name"),
+            out.append({"rank": I(r.get("place")), "name": r.get("team") or r.get("cur_name"), "lookup": r.get("cur_name"),
                 "played": I(r.get("matches")), "win": I(r.get("w")), "draw": I(r.get("d")), "lose": I(r.get("l")),
                 "gf": I(r.get("gs")), "ga": I(r.get("ga")), "gd": I(r.get("g_diff")), "points": I(r.get("points")),
                 **({"champ": True} if r.get("champions") == "Y" else {})})
@@ -197,6 +289,25 @@ def load_core():
     core["cont"] = jload(os.path.join(HERE, "continental_rbr.json"))
     core["domfix"] = jload(os.path.join(DATA, "domfix_2007_2013.json"))
     core["cupfix"] = jload(os.path.join(DATA, "cupfix_2007_2023.json"))
+    # Real domestic-cup per-match W/D/L for the pre-1992-93 seasons, replacing the imputed cup nudge
+    # for the covered nations: England FA/League Cup (build_eng_cups.py) and Germany DFB-Pokal
+    # (build_de_cups.py). Merged into ONE per-season list, each row tagged with its country so the
+    # imputation is switched off only for nations that actually have real cup data that season.
+    # Optional: any missing artifact simply leaves that nation on imputation.
+    natcup = defaultdict(list)
+    for fn, ctry in (("eng_cups_pre93.json", "England"), ("dfb_cups_pre93.json", "Germany")):
+        p = os.path.join(DATA, fn)
+        if os.path.exists(p):
+            for season, rows in jload(p).items():
+                for r in rows:
+                    rr = dict(r); rr["country"] = ctry
+                    natcup[season].append(rr)
+    core["natcup"] = natcup
+    # Pre-Bundesliga German Championship qualifiers 1959-60..1962-63 (build_de_champ.py): the only
+    # German clubs for those four seasons (the pipeline's German data otherwise starts at the 1963-64
+    # Bundesliga). Injected into the universe in main(). Optional.
+    dcp = os.path.join(DATA, "de_champ_5963.json")
+    core["dechamp"] = jload(dcp) if os.path.exists(dcp) else {}
     with gzip.open(os.path.join(UEFA, "_kassiesa_all_rows.json.gz"), "rt", encoding="utf-8") as f:
         core["eur"] = json.load(f)
     return core
@@ -233,20 +344,24 @@ def build_name_maps(core):
             if r.get(fld): dommap.setdefault((ctry, norm(r[fld])), can)
     return cur2uefa, cur2look, dommap
 
-def build_ccf():
+def build_ccf(decay=BAN_DECAY_TEAM):
     """club_coeff_full.json (08/09-25/26) merged with kassiesa team-coeff Totals for 06/07 & 07/08,
     so the 5-year pedigree windows for 2010-11 and 2011-12 are complete. Keyed by uefa_name."""
     ccf = jload(os.path.join(UEFA, "club_coeff_full.json"))
     ccf_norm = {norm(k): k for k in ccf}
     lines = open(os.path.join(DATA, "uefateamcoeff_1956_2009.txt"), encoding="utf-8").read().split("\n")
-    cur = None; added = 0; seeded = 0
+    cur = None; added = 0; seeded = 0; club_country = {}
     for l in lines:
         m = re.search(r"UEFA Team Coefficients.*?(\d{4})/(\d{4})", l)   # tolerate "(method=2/3)" tag
         if m:
             cur = int(m.group(2)); continue
         # 2003 (02/03) lives on a "(method=2)" page; setdefault + file order keep the default-method
         # pages authoritative for 03/04-07/08, so folding method=2/3 pages here is safe.
-        if cur not in range(1996, 2009) or "\t" not in l: continue
+        # Range starts at 1956 (label 55/56) so the deep-history hubs' 5-year pedigree windows fill
+        # all the way to the 1959-60 floor (needs 55/56..59/60). uefateamcoeff_1956_2009.txt carries
+        # these pages; Team is col 1 and season Total col 7 on the pre-1996 pages too (same
+        # column-stable layout as 1996-98).
+        if cur not in range(1956, 2009) or "\t" not in l: continue
         p = [x.strip() for x in l.split("\t")]
         if len(p) < 9: continue
         # Column-stable across both eras: rank(0) Team(1) Country(2) Comp(3) ... Total(7). The 1990s
@@ -268,11 +383,24 @@ def build_ccf():
             # the kassiesa txt so their pedigree isn't silently zeroed. Keyed by the txt (uefa) name.
             ccf.setdefault(team, {}).setdefault(lab, total)
             ccf_norm.setdefault(norm(team), team)
-            added += 1; seeded += 1
+            key = team; added += 1; seeded += 1
+        if len(p) > 2 and p[2]: club_country.setdefault(key, p[2])   # 3-letter code: Eng, Esp, Rus, ...
     print(f"  CCF merge: added {added} kassiesa 99/00-07/08 season points ({seeded} new pre-2008 clubs seeded)")
+    # English clubs' team coefficients cratered to zero during the post-Heysel European ban
+    # (1985-86..1989-90). A flat carry-forward of the last pre-ban 84/85 value overstated them
+    # (frozen peak pedigree despite no European football). Instead FADE it geometrically: ban-year n
+    # holds 84/85 * BAN_DECAY**n, so pedigree stays strong but declines through the lockout.
+    imp = 0
+    ban_labels = ("85/86", "86/87", "87/88", "88/89", "89/90")
+    for k, cc in club_country.items():
+        if cc == "Eng" and ccf.get(k, {}).get("84/85") is not None:
+            base = ccf[k]["84/85"]
+            for n, lab in enumerate(ban_labels, 1):
+                ccf[k][lab] = base * (decay ** n); imp += 1
+    print(f"  England ban team-coeff fade (decay={decay}): {imp} club-seasons faded")
     return ccf
 
-def parse_country_coeff():
+def parse_country_coeff(decay=BAN_DECAY_COUNTRY):
     """kassiesa country-coefficient pages -> {season_end: {country_name: coefficient}} using the
     per-season 'Average' value on each country's aggregate line."""
     lines = open(os.path.join(DATA, "uefacountrycoeff_history.txt"), encoding="utf-8").read().split("\n")
@@ -298,6 +426,15 @@ def parse_country_coeff():
             except: avg = None
             if avg is not None: out[end][cur_country] = avg
             expect = None
+    # European-ban imputation: a country locked out of Europe earns zero coefficient, cratering its
+    # 5-year window and burying its (still strong) domestic clubs. Treat the ban as MISSING data but
+    # FADE the last pre-ban value across the ban rather than freezing it, so the league's strength
+    # proxy eases toward the field. England: post-Heysel, seasons 1985-86..1989-90 (end-years 1986..
+    # 1990), starting from the 1984-85 (end-year 1985) value * BAN_DECAY**n.
+    if out.get(1985, {}).get("England") is not None:
+        base = out[1985]["England"]
+        for n, y in enumerate(range(1986, 1991), 1):
+            out[y]["England"] = base * (decay ** n)
     return out
 
 # ================= CLUB POWER RANKING (build_season_hub math, keyed by canonical name) =========
@@ -307,6 +444,16 @@ def stage_mult(comp, rnd):
     if comp == "CL":
         return {1: 1.5, 2: 1.45, 3: 1.4, 4: 1.35, 5: 1.2}.get(rnd, 1.0)
     if comp == "EL":
+        return {1: 1.25, 2: 1.25, 3: 1.25, 4: 1.25, 5: 1.1}.get(rnd, 1.0)
+    if comp == "CWC":
+        # European Cup Winners' Cup (1960-1999): pure knockout, prestige between the European Cup
+        # and the UEFA Cup. Weighted just below CL knockout, at/above EL; no group stage (round_num
+        # 1 Final .. 4 R16). Only appears in the pre-2000 hubs; a no-op for CL/EL-only seasons.
+        return {1: 1.35, 2: 1.3, 3: 1.3, 4: 1.25}.get(rnd, 1.0)
+    if comp == "ICFC":
+        # Inter-Cities Fairs Cup (1955-1971): the UEFA Cup's direct predecessor, same third-tier
+        # standing, so weighted exactly like the EL knockout. Only appears in the 1959-60..1970-71
+        # hubs. kassiesa labels it ICFC; the workbook carries it under the EL code (name differs).
         return {1: 1.25, 2: 1.25, 3: 1.25, 4: 1.25, 5: 1.1}.get(rnd, 1.0)
     return 1.0
 
@@ -318,7 +465,7 @@ def cup_mult(comp):
     if "intercontinental" in c or "club world" in c or "world club" in c or "toyota" in c: return 1.2
     return 1.0
 
-def compute_clubs(cfg, uni, cur2uefa, cur2look, dommap, ccf, country5yr, domfix_year, cupfix_year, eur_rows, cont_secs, cup_secs, champ_curs, dom_rec):
+def compute_clubs(cfg, uni, cur2uefa, cur2look, dommap, ccf, country5yr, domfix_year, cupfix_year, eur_rows, cont_secs, cup_secs, champ_curs, dom_rec, cup_flags, team_name=None, nat_cup_year=None, de_early=None):
     five, curlab = cfg["five"], cfg["cur"]
     canon2cur = {norm(cur): cur for cur in uni}
     def uf(cur): return cur2uefa.get(norm(cur))
@@ -353,14 +500,20 @@ def compute_clubs(cfg, uni, cur2uefa, cur2look, dommap, ccf, country5yr, domfix_
         club_five[cur] = sum((cs.get(s) or 0) for s in five)
     MAXCUR = max(club_cur.values()) if club_cur else 1; MAXCUR = MAXCUR or 1
     MAX5 = max(club_five.values()) if club_five else 1; MAX5 = MAX5 or 1
-    def fiveN(cur): return club_five.get(cur, 0) / MAX5
+    if PED_TOPK:
+        _pv = sorted((v for v in club_five.values() if v > 0), reverse=True)[:PED_TOPK]
+        PED_REF = (sum(_pv) / len(_pv)) if _pv else 1.0; PED_REF = PED_REF or 1.0
+        def fiveN(cur): return min(club_five.get(cur, 0) / PED_REF, 1.0)
+    else:
+        def fiveN(cur): return club_five.get(cur, 0) / MAX5
     def curN(cur): return club_cur.get(cur, 0) / MAXCUR
     ENG = country5yr.get("England") or 1.0
     def CF(country):
         v = country5yr.get(country)
-        return math.sqrt(v / ENG) if v else 0.0
+        c = math.sqrt(v / ENG) if v else 0.0
+        return min(c, CF_CAP) if CF_CAP else c
     def strength(cur):
-        return max(0.5 * CF(uni[cur]) + 0.5 * fiveN(cur), 0.10) if cur in uni else 0.10
+        return max(CF_WEIGHT * CF(uni[cur]) + (1 - CF_WEIGHT) * fiveN(cur), 0.10) if cur in uni else 0.10
     agg = {cur: {"MP": 0, "W": 0, "D": 0, "L": 0, "Q": 0.0} for cur in uni}
     def result(me, opp, gf, ga, mult, wdl=None):
         if me not in agg or gf is None or ga is None: return
@@ -379,10 +532,19 @@ def compute_clubs(cfg, uni, cur2uefa, cur2look, dommap, ccf, country5yr, domfix_
     for m in cupfix_year:
         me = canon2cur.get(norm(m["cur"])); opp = canon2cur.get(norm(m["opp"]))
         result(me, opp if opp else m.get("opp"), m.get("gf"), m.get("ga"), cup_mult(m.get("comp")), m.get("wdl"))
-    # European form (kassiesa CL/EL, both legs, stage-weighted)
+    # Real domestic-cup per-match form for the pre-1992-93 seasons (England FA/League Cup, Germany
+    # DFB-Pokal; see build_eng_cups.py / build_de_cups.py), fed through the SAME opponent-weighted
+    # engine as cupfix. Replaces the notional imputation for those nations below (see cup_flags loop).
+    # One row per club-match; cup opponents outside the top-flight universe are floored at 0.10.
+    for m in (nat_cup_year or []):
+        me = canon2cur.get(norm(m["cur"])); opp = canon2cur.get(norm(m["opp"]))
+        result(me, opp if opp else m.get("opp"), m.get("gf"), m.get("ga"), cup_mult(m.get("comp")), m.get("wdl"))
+    # European form (kassiesa CL/EL/CWC/ICFC, both legs, stage-weighted). CWC is the 1960-99 Cup
+    # Winners' Cup; ICFC is the 1955-71 Inter-Cities Fairs Cup (UEFA Cup predecessor). For a modern
+    # CL/EL-only season the extra codes simply match nothing.
     for r in eur_rows:
         comp = r.get("competition")
-        if comp not in ("CL", "EL"): continue
+        if comp not in ("CL", "EL", "CWC", "ICFC"): continue
         H, A = r.get("home_canon"), r.get("away_canon"); mult = stage_mult(comp, r.get("round_num"))
         if r.get("leg1_home") is not None:
             result(H, A, r["leg1_home"], r["leg1_away"], mult); result(A, H, r["leg1_away"], r["leg1_home"], mult)
@@ -405,6 +567,34 @@ def compute_clubs(cfg, uni, cur2uefa, cur2look, dommap, ccf, country5yr, domfix_
         if n <= 0: continue
         A = agg[cur]; A["MP"] += n; A["W"] += w; A["D"] += d; A["L"] += l
         A["Q"] += (w * 1.0 + d * 0.5) * avg_str.get(ctry, 0.10) * 1.0
+    # Pre-Bundesliga German Championship qualifiers (1959-60..1962-63): two form buckets — the full
+    # regional Oberliga league record weighted at a modest regional-opponent strength, and the
+    # national championship-group games weighted at an elite strength. European form, DFB-Pokal and
+    # pedigree flow via the universe (these clubs were injected into uni/champs in main()).
+    for q in (de_early or []):
+        cur = q["cur"]
+        if cur not in agg: continue
+        A = agg[cur]
+        ow, od, ol, cw, cd, cl = q["ow"], q["od"], q["ol"], q["cw"], q["cd"], q["cl"]
+        A["MP"] += ow + od + ol + cw + cd + cl
+        A["W"] += ow + cw; A["D"] += od + cd; A["L"] += ol + cl
+        A["Q"] += (ow * 1.0 + od * 0.5) * OBERLIGA_OPP_STR + (cw * 1.0 + cd * 0.5) * CHAMP_OPP_STR
+    # Pre-1993 domestic cup FORM imputation (top-8 only; there is no per-match cupfix before 1993).
+    # A light block of opponent-weighted notional results so a cup run still nudges form; skipped when
+    # per-match cups exist (1993+), so no double count with the cupfix feed above. A nation is ALSO
+    # skipped whenever real per-match cup results were fed for it this season (nat_cup_year, tagged by
+    # country), so those actual results replace the notional nudge for that nation only, leaving every
+    # other league on imputation.
+    real_cup_countries = {m.get("country") for m in (nat_cup_year or [])}
+    if not cupfix_year:
+        for cur, (mw, mf, nw, nf) in cup_flags.items():
+            if cur not in agg or uni.get(cur) not in DOMFIX_COUNTRIES: continue
+            if uni.get(cur) in real_cup_countries: continue
+            s = avg_str.get(uni[cur], 0.10)
+            for kind, won, fin in (("major", mw, mf), ("minor", nw, nf)):
+                w, l = CUP_IMPUTE[kind]["win"] if won else (CUP_IMPUTE[kind]["final"] if fin else (0, 0))
+                if w or l:
+                    A = agg[cur]; A["MP"] += w + l; A["W"] += w; A["L"] += l; A["Q"] += w * s
     rates = [a["Q"] / a["MP"] for a in agg.values() if a["MP"] >= 8]
     maxRate = max(rates) if rates else 1.0
     # trophy bonus
@@ -415,7 +605,14 @@ def compute_clubs(cfg, uni, cur2uefa, cur2look, dommap, ccf, country5yr, domfix_
         if cur: TB[cur] += w
     # "UEFA Cup" is the pre-2009 name for the same competition as the Europa League; credit it equally
     # so the 2006-07/07-08/08-09 UEFA Cup winners (Sevilla, Zenit, Shakhtar) are not silently missed.
-    BONUS = {"Champions League": 0.10, "Europa League": 0.05, "UEFA Cup": 0.05, "UEFA Super Cup": 0.04, "FIFA Club World Cup": 0.03}
+    # Trophy bonuses by the continental section's display comp name (keyed EXACTLY on the string in
+    # continental_rbr.json). "Cup Winners Cup" is the workbook's label for the 1960-99 CWC (no
+    # apostrophe) and gets 0.05, on a par with the UEFA Cup of the same era; "Intercontinental Cup"
+    # is the pre-2000 forerunner of the FIFA Club World Cup and gets the same 0.03.
+    BONUS = {"Champions League": TOP_TROPHY_BONUS, "European Cup": TOP_TROPHY_BONUS,
+             "Europa League": 0.05, "UEFA Cup": 0.05,
+             "Inter-Cities Fairs Cup": 0.05, "Cup Winners Cup": 0.05, "UEFA Super Cup": 0.04,
+             "Intercontinental Cup": 0.03, "FIFA Club World Cup": 0.03}
     for sec in cont_secs:
         w = BONUS.get(sec.get("comp"))
         if not w: continue
@@ -423,18 +620,32 @@ def compute_clubs(cfg, uni, cur2uefa, cur2look, dommap, ccf, country5yr, domfix_
             if e.get("trophy"): addb(e.get("name"), w)
     for cur, ctry in champ_curs:
         addb(cur, 0.06 if ctry in TOP5 else 0.03)
-    # domestic cup / super cup winners (top-8 leagues via build_cups), mirroring
-    # regen_shipped_clubs.py's weights: 0.015 for a domestic cup, 0.01 for a super cup.
+    # Domestic cup trophy + final bonuses for EVERY UEFA nation (flag-driven, all seasons). Top-8
+    # nations score above the rest, majors above minors, winners above finalists (see CUP_TROPHY).
+    for cur, (mw, mf, nw, nf) in cup_flags.items():
+        if cur not in agg: continue
+        tier = "top8" if uni.get(cur) in DOMFIX_COUNTRIES else "other"
+        if mw: TB[cur] += CUP_TROPHY[(tier, "major")][0]
+        elif mf: TB[cur] += CUP_TROPHY[(tier, "major")][1]
+        if nw: TB[cur] += CUP_TROPHY[(tier, "minor")][0]
+        elif nf: TB[cur] += CUP_TROPHY[(tier, "minor")][1]
+    # Super cups come from the workbook (not in the cup flags); domestic cups handled above.
     for cp in (cup_secs or []):
-        addb(cp.get("winner"), 0.015 if cp.get("type") == "Domestic cup" else 0.01)
+        if cp.get("type") == "Super cup":
+            addb(cp.get("winner"), 0.01)
+    # Editorial one-off trophy adjustments (see MANUAL_TB).
+    for (mkey, mname), mbonus in MANUAL_TB.items():
+        if mkey == cfg.get("key"):
+            addb(mname, mbonus)
     # assemble ranked clubs (MP>=8), dense rank on score
     clubs = []
     for cur, A in agg.items():
         if A["MP"] < 8: continue
         form = (A["Q"] / A["MP"]) / maxRate
         wp = (2 * A["W"] + A["D"]) / (2 * A["MP"])
-        score = 0.65 * form + 0.35 * fiveN(cur) + 0.11 * curN(cur) - max(0.0, 0.5 - wp) * 0.6 + TB.get(cur, 0)
-        clubs.append({"name": cur, "lookup": cur2look.get(norm(cur), cur), "country": uni[cur],
+        score = 0.65 * form + PED_WEIGHT * fiveN(cur) + 0.11 * curN(cur) - max(0.0, 0.5 - wp) * 0.6 + TB.get(cur, 0)
+        disp = (team_name or {}).get(cur, cur)   # season name for display (e.g. "Wimbledon"); canonical stays the join key
+        clubs.append({"name": disp, "lookup": cur2look.get(norm(cur), cur), "country": uni[cur],
             "score": round(score, 4), "form": round(form, 3), "ped": round(fiveN(cur), 3),
             "winpct": round(wp, 3), "mp": A["MP"], "w": A["W"], "d": A["D"], "l": A["L"], "tb": round(TB.get(cur, 0), 3)})
     clubs.sort(key=lambda c: -c["score"]); prev = None; rk = 0
@@ -452,6 +663,12 @@ def build_confed_map(ship):
     cm = {}
     for l in ship["leagues"]: cm.setdefault(l["country"], l["confed"])
     cm.setdefault("Macedonia", "UEFA")
+    # Defunct UEFA nations that appear pre-1992. Their clubs are ranked under the historical country
+    # label; the country race merges them into their successor (Soviet Union->Russia, Yugoslavia->
+    # Serbia, Czechoslovakia->Czech Republic) downstream in build_trends. East Germany stays its own
+    # line. (Saar folded into West Germany in 1956, below the 1959-60 floor, so it never appears.)
+    for c in ("Soviet Union", "Yugoslavia", "Czechoslovakia", "East Germany"):
+        cm.setdefault(c, "UEFA")
     return cm
 
 def build_leagues(cl_rows, key, end, confed_map):
@@ -502,16 +719,22 @@ def country5yr_map(cfg, ccountry, hub_country_set):
 
 # ================= DRIVER =====================================================================
 def universe_and_champs(cl_rows, key, confed_map):
-    uni = {}; champs = []; dom_rec = {}
+    uni = {}; champs = []; dom_rec = {}; cup_flags = {}; team_name = {}
     for r in cl_rows:
         if r.get("season") != key or r.get("level") != 1 or r.get("first_division") != "Y": continue
         if confed_map.get(r.get("country")) != "UEFA": continue
         cur = r.get("cur_name")
         uni[cur] = r.get("country")
+        # The name this club used THAT season (e.g. "Wimbledon" pre-2004), joined on the canonical
+        # cur_name. Displayed in standings AND the club power ranking; canonical stays the join key.
+        team_name.setdefault(cur, r.get("team") or cur)
         # domestic W/D/L straight from the standings row (the aggregate fed for non-domfix leagues)
         dom_rec.setdefault(cur, (I(r.get("w")) or 0, I(r.get("d")) or 0, I(r.get("l")) or 0))
+        # domestic cup outcome flags: (major win, major final, minor win, minor final)
+        cup_flags.setdefault(cur, (_Y(r.get("cup_major")), _Y(r.get("cup_major_final")),
+                                   _Y(r.get("cup_minor")), _Y(r.get("cup_minor_final"))))
         if r.get("champions") == "Y": champs.append((cur, r.get("country")))
-    return uni, champs, dom_rec
+    return uni, champs, dom_rec, cup_flags, team_name
 
 def validate_countries(core, ccountry):
     """Reproduce the shipped 2013-14 countries[] from the parsed country-coeff file."""
@@ -546,7 +769,27 @@ def main(validate=False, only=None):
     seasons = [c for c in SEASONS if (not only or c["key"] in only)]
     for cfg in seasons:
         key, end = cfg["key"], cfg["end"]
-        uni, champs, dom_rec = universe_and_champs(core["cl"], key, confed_map)
+        uni, champs, dom_rec, cup_flags, team_name = universe_and_champs(core["cl"], key, confed_map)
+        # Inject the pre-Bundesliga German clubs (1959-63) into the universe: they are the only German
+        # clubs for those seasons (no cl_rows before the 1963-64 Bundesliga). Base set = the ~9 German
+        # Championship qualifiers; PLUS any German club that played European football this season but
+        # was not a current-year qualifier (the reigning champion enters the European Cup a year later,
+        # e.g. 1960 EC finalist Eintracht Frankfurt), injected with its regional Oberliga record so the
+        # continental entrant isn't missing. European form + DFB-Pokal + pedigree flow via the universe.
+        dech = core["dechamp"].get(key) or {}
+        de_early = list(dech.get("qualifiers", []))
+        seen = {q["cur"] for q in de_early}
+        regional = dech.get("regional", {})
+        for r in eur_by.get(key, []):
+            for canon in (r.get("home_canon"), r.get("away_canon")):
+                if canon and canon not in seen and canon in regional:
+                    seen.add(canon)
+                    w, d, l = regional[canon]
+                    de_early.append({"cur": canon, "ow": w, "od": d, "ol": l, "cw": 0, "cd": 0, "cl": 0})
+        for q in de_early:
+            uni.setdefault(q["cur"], "Germany"); team_name.setdefault(q["cur"], q["cur"])
+        de_champion = dech.get("champion")
+        if de_champion: champs.append((de_champion, "Germany"))
         leagues, ey_warn = build_leagues(core["cl"], key, end, confed_map)
         countries = build_countries(cfg, ccountry, hubset)
         c5yr = {c["country"]: c["coef"] for c in countries}
@@ -554,7 +797,8 @@ def main(validate=False, only=None):
         clubs = compute_clubs(cfg, uni, cur2uefa, cur2look, dommap, ccf, c5yr,
                               core["domfix"].get(cfg["domfix"], []),
                               core["cupfix"].get(cfg["domfix"], []), eur_by.get(key, []),
-                              core["cont"].get(key, []), cups, champs, dom_rec)
+                              core["cont"].get(key, []), cups, champs, dom_rec, cup_flags, team_name,
+                              core["natcup"].get(key, []), de_early)
         hub = {"season": key, "clubSeasons": cfg["five"], "note": NOTE, "clubs": clubs,
                "countries": countries, "leagues": leagues, "continental": core["cont"].get(key, []), "cups": cups}
         print(f"\n=== {key}: {len(clubs)} clubs · {len(leagues)} leagues · {len(countries)} countries · "
@@ -591,7 +835,7 @@ def load_cup_rows():
     ws = wb["Cup History"]; it = ws.iter_rows(values_only=True)
     hdr = [str(h).strip() if h is not None else "" for h in next(it)]
     ix = {h: i for i, h in enumerate(hdr)}
-    want = {"1999-00", "2000-01", "2001-02", "2002-03", "2003-04", "2004-05", "2005-06", "2006-07", "2007-08", "2008-09", "2009-10", "2010-11", "2011-12", "2012-13"}
+    want = {f"{y}-{str(y + 1)[2:]}" for y in range(1959, 2013)}   # 1959-60 .. 2012-13
     out = []
     for r in it:
         s = r[ix["Season"]] if ix.get("Season") is not None else None

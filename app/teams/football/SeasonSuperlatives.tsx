@@ -1,6 +1,7 @@
 import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { getFootballClubByName } from "@/lib/football";
+import { CLUB_COLOR, colorForClub } from "./_shared/clubColors";
 import type { TrendsData } from "./SeasonTrends";
 
 // Cross-season superlatives for /teams/football/seasons, computed from football-trends.json.
@@ -14,7 +15,6 @@ import type { TrendsData } from "./SeasonTrends";
 const cardStyle = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
 const ss = (s: string) => (s.length >= 7 ? `${s.slice(2, 4)}/${s.slice(5, 7)}` : s);
 const BIG5 = new Set(["England", "Spain", "Italy", "Germany", "France"]);
-const PALETTE = ["#3987e5", "#e66767", "#199e70", "#c98500", "#9085e9", "#d55181", "#d95926", "#37a3c9", "#b98bd8", "#5bbf9a"];
 
 function slugOf(name: string): string | null {
   return getFootballClubByName(name)?.slug ?? null;
@@ -32,7 +32,7 @@ function Board({ title, rows, note }: { title: string; rows: { name: string; det
       <ol className="space-y-1">
         {rows.map((r, i) => (
           <li key={`${r.name}-${i}`} className="flex items-baseline justify-between gap-2 text-xs">
-            <span className="inline-flex items-baseline gap-1.5 min-w-0"><span className="text-[var(--text-dim)] tabular-nums w-4 flex-shrink-0">{i + 1}</span><CName name={r.name} /></span>
+            <span className="inline-flex items-baseline gap-1.5 min-w-0"><span className="text-[var(--text-dim)] tabular-nums w-4 flex-shrink-0">{i + 1}</span><CName name={r.name} color={CLUB_COLOR[r.name]} /></span>
             <span className="tabular-nums text-[var(--text-muted)] flex-shrink-0">{r.detail}</span>
           </li>
         ))}
@@ -49,9 +49,10 @@ export default function SeasonSuperlatives({ data }: { data: TrendsData }) {
     for (const c of data.clubs) { const p = c.series.find((s) => s.season === season); if (p && p.rank === 1) { champ = c.name; break; } }
     return { season, champ };
   });
+  // Shade each holder by its actual club colour (brand where we have one, a stable hue otherwise),
+  // single-sourced from _shared/clubColors so The Belt matches the club power-ranking chart above.
   const champColor = new Map<string, string>();
-  let ci = 0;
-  for (const b of belt) if (b.champ && !champColor.has(b.champ)) champColor.set(b.champ, PALETTE[ci++ % PALETTE.length]);
+  for (const b of belt) if (b.champ && !champColor.has(b.champ)) champColor.set(b.champ, colorForClub(b.champ));
 
   const titles = data.clubs
     .map((c) => ({ name: c.name, n: c.series.filter((s) => s.rank === 1).length }))
@@ -76,17 +77,17 @@ export default function SeasonSuperlatives({ data }: { data: TrendsData }) {
       <h2 className="text-lg font-semibold mb-1">Superlatives</h2>
       <p className="text-xs text-[var(--text-muted)] mb-3">All rank-based, so they hold across the 2018 coefficient-method change. The raw score is normalised per season and is not compared here.</p>
 
-      <div className="text-[11px] uppercase tracking-wide text-[var(--text-dim)] mb-1.5">The Belt · world #1, season by season</div>
+      <div className="text-[11px] uppercase tracking-wide text-[var(--text-dim)] mb-1.5">The Belt · European #1, season by season</div>
       <div className="flex flex-wrap gap-1.5 mb-4">
         {belt.map((b) => {
           const col = b.champ ? champColor.get(b.champ) : undefined;
           return (
-            <div key={b.season} title={b.champ ? `${b.season}: ${b.champ}` : b.season}
-              className="inline-flex flex-col items-center rounded-md border px-2 py-1 text-center min-w-[64px]"
+            <Link key={b.season} href={`/teams/football/${b.season}`} title={b.champ ? `${b.season}: ${b.champ}` : b.season}
+              className="inline-flex flex-col items-center rounded-md border px-2 py-1 text-center min-w-[64px] transition hover:border-[var(--accent)]"
               style={{ borderColor: col ?? "var(--border)", background: "var(--bg-card)", boxShadow: col ? `inset 3px 0 0 ${col}` : undefined }}>
               <span className="text-[9px] text-[var(--text-dim)] tabular-nums">{ss(b.season)}</span>
               <span className="text-[11px] font-semibold leading-tight" style={{ color: col ?? "var(--text-muted)" }}>{b.champ ?? "—"}</span>
-            </div>
+            </Link>
           );
         })}
       </div>
