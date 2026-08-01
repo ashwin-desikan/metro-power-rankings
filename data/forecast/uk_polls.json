@@ -4703,6 +4703,61 @@
    "ld": 10.0,
    "grn": 8.0,
    "snp": 3.0
+  },
+  {
+   "date": "2026-07-27",
+   "pollster": "YouGov",
+   "sample": 2328,
+   "lab": 22.0,
+   "con": 21.0,
+   "ref": 22.0,
+   "ld": 11.0,
+   "grn": 13.0,
+   "snp": 2.0
+  },
+  {
+   "date": "2026-07-27",
+   "pollster": "Survation",
+   "sample": 1012,
+   "lab": 26.0,
+   "con": 21.0,
+   "ref": 24.0,
+   "ld": 10.0,
+   "grn": 10.0,
+   "snp": 2.0
+  },
+  {
+   "date": "2026-07-27",
+   "pollster": "More in Common",
+   "sample": 2061,
+   "lab": 28.0,
+   "con": 22.0,
+   "ref": 24.0,
+   "ld": 12.0,
+   "grn": 8.0,
+   "snp": 2.0
+  },
+  {
+   "date": "2026-07-27",
+   "pollster": "Deltapoll",
+   "sample": 2021,
+   "lab": 27.0,
+   "con": 19.0,
+   "ref": 27.0,
+   "ld": 8.0,
+   "grn": 10.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2026-07-30",
+   "pollster": "BMG Research",
+   "sample": null,
+   "lab": 28.0,
+   "con": 20.0,
+   "ref": 23.0,
+   "ld": 10.0,
+   "grn": 10.0,
+   "snp": 3.0
   }
  ]
 }

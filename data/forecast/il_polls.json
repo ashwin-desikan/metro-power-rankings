@@ -98,6 +98,47 @@
     "Yashar": 0
    },
    "gov": null
+  },
+  {
+   "date": "2026-07-30",
+   "pollster": "Lazar",
+   "seats": {
+    "Likud": 22,
+    "Together": 15,
+    "RZP": 5,
+    "Otzma": 7,
+    "Blue & White": 0,
+    "Shas": 7,
+    "UTJ": 8,
+    "Yisrael Beiteinu": 10,
+    "Ra'am": 5,
+    "Hadash –Ta'al": 5,
+    "Balad": 0,
+    "Dems": 9,
+    "Yashar": 23,
+    "Zionist Home": 4
+   },
+   "gov": 49
+  },
+  {
+   "date": "2026-07-30",
+   "pollster": "Yossi Tatika",
+   "seats": {
+    "Likud": 20,
+    "Together": 13,
+    "RZP": 6,
+    "Otzma": 7,
+    "Blue & White": 4,
+    "Shas": 8,
+    "UTJ": 8,
+    "Yisrael Beiteinu": 10,
+    "Ra'am": 5,
+    "Hadash –Ta'al": 6,
+    "Balad": 8,
+    "Dems": 21,
+    "Yashar": 4
+   },
+   "gov": null
   }
  ]
 }
