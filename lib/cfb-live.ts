@@ -53,7 +53,7 @@ export type CfbStandingRow = {
 export type CfbConference = {
   name: string;            // "Big Ten Conference"
   short: string;           // "Big Ten"
-  power4: boolean;
+  power4: boolean;         // true = Power 4 tier (incl. Notre Dame via independents split)
   rows: CfbStandingRow[];
 };
 
@@ -186,12 +186,22 @@ export async function getCfbStandings(): Promise<CfbStandingsSnapshot> {
     if (rows.length === 0) continue;
     // Conference order: conference record pct, then overall wins.
     rows.sort((a, b) => b.conf_pct - a.conf_pct || b.wins - a.wins || a.school.localeCompare(b.school));
+    if (/independent/i.test(name)) {
+      // FBS Independents straddle the tiers: Notre Dame sits with the Power 4,
+      // everyone else (UConn, ...) with the Group of 5 (Ashwin's call, 2026-08-01).
+      const nd = rows.filter((r) => r.school === "Notre Dame");
+      const rest = rows.filter((r) => r.school !== "Notre Dame");
+      if (nd.length) conferences.push({ name, short: "Independents", power4: true, rows: nd });
+      if (rest.length) conferences.push({ name, short: "Independents", power4: false, rows: rest });
+      continue;
+    }
     conferences.push({ name, short: confShort(name), power4: isPower4(name), rows });
   }
 
   // Power 4 first (SEC, Big Ten, Big 12, ACC), then the rest A-Z, Independents last.
   const p4rank = (n: string) => { const i = POWER4.findIndex((re) => re.test(n)); return i === -1 ? 99 : i; };
   conferences.sort((a, b) => {
+    if (a.power4 !== b.power4) return a.power4 ? -1 : 1;
     const ia = p4rank(a.name), ib = p4rank(b.name);
     if (ia !== ib) return ia - ib;
     const indA = /independent/i.test(a.name) ? 1 : 0, indB = /independent/i.test(b.name) ? 1 : 0;

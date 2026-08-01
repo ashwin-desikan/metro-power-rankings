@@ -55,7 +55,7 @@ function PollTable({ poll }: { poll: CfbPoll }) {
 
 function ConferenceTable({ conf }: { conf: CfbConference }) {
   return (
-    <details open={conf.power4} className="rounded-lg border overflow-hidden" style={{ borderColor: "var(--border)", background: "var(--bg-card)" }}>
+    <details className="rounded-lg border overflow-hidden" style={{ borderColor: "var(--border)", background: "var(--bg-card)" }}>
       <summary className="cursor-pointer select-none px-3 py-2 flex items-center justify-between gap-2">
         <span className="text-sm font-semibold">{conf.short}</span>
         <span className="text-[10px] text-[var(--text-dim)]">{conf.rows.length} teams</span>
@@ -163,16 +163,24 @@ export default async function CfbHubPage() {
           <h2 className="text-lg font-semibold mb-1">Standings</h2>
           <p className="text-xs text-[var(--text-muted)] mb-4">
             {standings.season_year ? `FBS conference standings, ${standings.season_year} season. ` : "FBS conference standings. "}
-            Ordered by conference record; the Power 4 open expanded. Tap a school for its program page.
+            Ordered by conference record. Notre Dame sits with the Power 4; the other independents with the Group of 5. Tap a conference to open it, and a school for its program page.
           </p>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 items-start">
-            <div className="space-y-3">
-              {standings.conferences.filter((_, i) => i % 2 === 0).map((c) => <ConferenceTable key={c.name} conf={c} />)}
+          {[
+            { title: "Power 4", confs: standings.conferences.filter((c) => c.power4) },
+            { title: "Group of 5", confs: standings.conferences.filter((c) => !c.power4) },
+          ].filter((t) => t.confs.length > 0).map((tier) => (
+            <div key={tier.title} className="mb-5">
+              <div className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] mb-2">{tier.title}</div>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 items-start">
+                <div className="space-y-3">
+                  {tier.confs.filter((_, i) => i % 2 === 0).map((c) => <ConferenceTable key={`${c.short}-${c.power4}`} conf={c} />)}
+                </div>
+                <div className="space-y-3">
+                  {tier.confs.filter((_, i) => i % 2 === 1).map((c) => <ConferenceTable key={`${c.short}-${c.power4}`} conf={c} />)}
+                </div>
+              </div>
             </div>
-            <div className="space-y-3">
-              {standings.conferences.filter((_, i) => i % 2 === 1).map((c) => <ConferenceTable key={c.name} conf={c} />)}
-            </div>
-          </div>
+          ))}
         </section>
       )}
 

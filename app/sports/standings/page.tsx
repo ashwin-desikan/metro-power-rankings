@@ -9,7 +9,6 @@ import { getCurrentNbaStandings } from "@/lib/nba-standings";
 import { getCurrentNhlStandings } from "@/lib/nhl-standings";
 import { getCurrentMlbStandings } from "@/lib/mlb-standings";
 import { getCurrentMlsStandings } from "@/lib/mls-standings";
-import { getNwslStandings } from "@/lib/nwsl-standings";
 import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
 import { getLiveCflStandings } from "@/lib/cflStandings";
 import { getLiveF1Standings } from "@/lib/f1Standings";
@@ -22,6 +21,7 @@ import { f1ConstructorCrestName } from "@/lib/f1Crest";
 import { getWtcStandings } from "@/lib/wtcStandings";
 import { getRugbyFixtures, type RugbyMatch } from "@/lib/rugbyFixtures";
 import { getCfbRankings, cfbSeasonStarted } from "@/lib/cfb-live";
+import { getWLiveLeagues, getWLiveCompetition, type WLiveLeagueVM, type WLiveFixtureVM } from "@/lib/wLive";
 import { getCricketFixtures, type CricketMatch } from "@/lib/cricketFixtures";
 
 import { getAllFranchises as nflFranchises, logoUrlFor as nflLogo, monogramFor as nflMono } from "@/lib/nfl";
@@ -31,7 +31,6 @@ import { getAllFranchises as nhlFranchises, logoUrlFor as nhlLogo, monogramFor a
 import { getWnbaFranchiseByTeamName, monogramFor as wnbaMono } from "@/lib/wnba";
 import { getAllAflFranchises } from "@/lib/afl";
 import { getAllNrlFranchises } from "@/lib/nrl";
-import { getWClubByName } from "@/lib/wfootball";
 import { getFootballClubByName } from "@/lib/football";
 import { flagCdnUrl } from "@/lib/international-display";
 
@@ -40,7 +39,7 @@ export const revalidate = 120;
 const PATH = "/sports/standings";
 const TITLE = "Live Standings";
 const DESC =
-  "Every live league table the site tracks, in one place: European club football, Copa Libertadores, the four North American majors, college football rankings, MLS, NWSL, WNBA, CFL, NPB, AFL, NRL and F1. Refreshed through each season.";
+  "Every live league table the site tracks, in one place: European club football, Copa Libertadores, the four North American majors, college football rankings, MLS, the WSL, Liga F, NWSL and Women\u2019s Champions League, WNBA, CFL, NPB, AFL, NRL and F1. Refreshed through each season.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -75,7 +74,7 @@ const FOOTBALL_LEFT = [
 const FOOTBALL_RIGHT = [
   "Premier League", "La Liga", "Bundesliga", "Serie A", "Ligue 1",
   "Eredivisie", "Primeira Liga", "Scottish Premiership",
-  "MLS", "WSL", "NWSL",
+  "MLS",
 ];
 const orderBy = (list: string[]) => (a: Block, b: Block): number => {
   const ia = list.indexOf(a.league);
@@ -360,14 +359,52 @@ async function mlsBlock(): Promise<Block | null> {
   });
 }
 
-async function nwslBlock(): Promise<Block | null> {
-  const s = await getNwslStandings();
-  if (s.rows.length === 0) return null;
-  const rows: SRow[] = s.rows
-    .slice()
-    .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99))
-    .map((t) => { const c = getWClubByName(t.name); const nm = c?.name ?? t.name; return { rank: t.rank, name: nm, href: c ? `/teams/wfootball/clubs/${c.slug}` : null, crestName: nm, cells: [t.played, t.wins, t.draws, t.losses, t.gf, t.ga, t.gd, t.points] }; });
-  return { league: "NWSL", href: "/teams/wfootball", note: s.source_label, open: true, subTables: [{ title: null, columns: ["P", "W", "D", "L", "GF", "GA", "GD", "Pts"], rows }] };
+// ---- Women's club football (wlive bundle -> same source as /teams/wfootball) ----
+// One block per league (WSL / Liga F / NWSL) plus a UWCL fixtures block. All
+// collapsed by default; the green dot lights once a league has played games.
+function wLeagueBlock(l: WLiveLeagueVM | undefined, label: string): Block | null {
+  if (!l || !l.hasRows) return null;
+  const subTables: SubTable[] = l.groups
+    .map((g): SubTable => ({
+      title: l.groups.length > 1 ? g.label : null,
+      columns: ["P", "W", "D", "L", "GF", "GA", "GD", "Pts"],
+      rows: g.rows.map((r, i): SRow => ({
+        rank: r.rank ?? i + 1, name: r.name,
+        href: r.slug ? `/teams/wfootball/clubs/${r.slug}` : null,
+        crestName: r.name, cells: r.cells,
+      })),
+    }))
+    .filter((st) => st.rows.length > 0);
+  if (subTables.length === 0) return null;
+  const played = l.groups.some((g) => g.rows.some((r) => Number(r.cells[0]) > 0));
+  return { league: label, href: "/teams/wfootball", note: l.seasonLabel, open: false, live: played, subTables };
+}
+
+function uwclBlock(c: Awaited<ReturnType<typeof getWLiveCompetition>>): Block | null {
+  if (!c || !c.hasContent) return null;
+  const FIN = new Set(["FT", "AET", "PEN", "AWD", "WO"]);
+  const IN_PLAY = new Set(["1H", "HT", "2H", "ET", "BT", "P", "LIVE", "INT", "SUSP"]);
+  const dt = (iso: string | null) => (iso ? new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" }) : "");
+  const fx = c.fixtures;
+  const liveFx = fx.filter((f) => f.status && IN_PLAY.has(f.status));
+  const recent = fx.filter((f) => f.status && FIN.has(f.status)).sort((a, b) => String(b.date ?? "").localeCompare(String(a.date ?? ""))).slice(0, 10);
+  const upcoming = fx.filter((f) => !(f.status && (FIN.has(f.status) || IN_PLAY.has(f.status)))).sort((a, b) => String(a.date ?? "").localeCompare(String(b.date ?? ""))).slice(0, 12);
+  const mk = (title: string, items: WLiveFixtureVM[], score: boolean): SubTable | null =>
+    items.length ? {
+      title, columns: [score ? "Score" : "Date"],
+      rows: items.map((f): SRow => ({ rank: null, name: `${f.home.name} v ${f.away.name}`,
+        cells: [score && f.homeGoals != null && f.awayGoals != null ? `${f.homeGoals}\u2013${f.awayGoals}` : dt(f.date)] })),
+    } : null;
+  const groupTables: SubTable[] = c.groups
+    .map((g): SubTable => ({
+      title: g.label, columns: ["P", "W", "D", "L", "GF", "GA", "GD", "Pts"],
+      rows: g.rows.map((r, i): SRow => ({ rank: r.rank ?? i + 1, name: r.name, href: r.slug ? `/teams/wfootball/clubs/${r.slug}` : null, crestName: r.name, cells: r.cells })),
+    }))
+    .filter((st) => st.rows.length > 0);
+  const subTables = [...groupTables, mk("Live", liveFx, true), mk("Upcoming", upcoming, false), mk("Recent", recent, true)]
+    .filter((st): st is SubTable => st !== null);
+  if (subTables.length === 0) return null;
+  return { league: "Women's Champions League", href: "/teams/wfootball", note: c.seasonLabel, open: false, live: liveFx.length > 0 || upcoming.length > 0, subTables };
 }
 
 async function npbBlock(): Promise<Block | null> {
@@ -596,30 +633,56 @@ async function cfbBlock(): Promise<Block | null> {
   if (s.polls.length === 0) return null;
   const dt = (iso: string | null) =>
     iso ? new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }) : null;
-  const subTables: SubTable[] = s.polls.map((p) => ({
-    title: [p.name, p.week_label, dt(p.date)].filter(Boolean).join(" \u00b7 "),
-    columns: ["Rec"],
-    rows: p.rows.map((r): SRow => ({
-      rank: r.rank, name: r.school, href: r.slug ? `/teams/cfb/${r.slug}` : null,
-      crestName: r.school, cells: [r.record || DASH],
-    })),
+
+  // ONE combined comparison table instead of three stacked Top 25s (mobile:
+  // ~25 rows with a slim rank column per poll, not 75 rows of scrolling).
+  // Rows ordered by the lead poll (CFP when live, else AP); teams ranked only
+  // in a trailing poll append underneath, sorted by their best rank.
+  const COL: Record<string, string> = { cfp: "CFP", ap: "AP", coaches: "Coach" };
+  type Agg = { school: string; slug: string | null; record: string; ranks: (number | null)[] };
+  const bySchool = new Map<string, Agg>();
+  s.polls.forEach((p, pi) => {
+    for (const r of p.rows) {
+      let a = bySchool.get(r.school);
+      if (!a) { a = { school: r.school, slug: r.slug, record: r.record, ranks: s.polls.map(() => null) }; bySchool.set(r.school, a); }
+      a.ranks[pi] = r.rank;
+      if (r.record) a.record = r.record;
+    }
+  });
+  const best = (a: Agg) => Math.min(...a.ranks.map((x) => x ?? 99));
+  const teams = [...bySchool.values()].sort((a, b) =>
+    (a.ranks[0] ?? 99) - (b.ranks[0] ?? 99) || best(a) - best(b) || a.school.localeCompare(b.school));
+  const rows: SRow[] = teams.map((a): SRow => ({
+    rank: a.ranks[0] ?? DASH, name: a.school,
+    href: a.slug ? `/teams/cfb/${a.slug}` : null, crestName: a.school,
+    cells: [...a.ranks.slice(1).map((x) => x ?? DASH), a.record || DASH],
   }));
+  const columns = [...s.polls.slice(1).map((p) => COL[p.kind] ?? p.name), "Rec"];
+
   const started = cfbSeasonStarted();
   const lead = s.polls[0];
-  const note = [lead.week_label, dt(lead.date)].filter(Boolean).join(" \u00b7 ") || null;
+  const title = s.polls.length > 1
+    ? `# = ${COL[lead.kind] ?? lead.name} \u00b7 ${[lead.week_label, dt(lead.date)].filter(Boolean).join(" \u00b7 ")}`
+    : [lead.name, lead.week_label, dt(lead.date)].filter(Boolean).join(" \u00b7 ");
+  const note = [COL[lead.kind] ?? lead.name, lead.week_label, dt(lead.date)].filter(Boolean).join(" \u00b7 ") || null;
   return {
     league: "College Football", href: "/teams/cfb", note,
-    open: started, live: started, subTables,
+    open: started, live: started,
+    subTables: [{ title, columns, rows }],
   };
 }
 
 export default async function LiveStandingsPage() {
-  const [nfl, nba, wnba, nhl, mlb, npb, mls, nwsl, cfl, cfb, afl, nrl, f1, golf, tennis, wtc, rugbyFix, cricketFix, clubStandings, clubComps] = await Promise.all([
+  const [nfl, nba, wnba, nhl, mlb, npb, mls, cfl, cfb, afl, nrl, f1, golf, tennis, wtc, rugbyFix, cricketFix, clubStandings, clubComps, wLeagues, uwclComp] = await Promise.all([
     nflBlock(), nbaBlock(), wnbaBlock(), nhlBlock(), mlbBlock(), npbBlock(),
-    mlsBlock(), nwslBlock(), cflBlock(), cfbBlock(), footyBlock("afl"), footyBlock("nrl"), f1Block(),
+    mlsBlock(), cflBlock(), cfbBlock(), footyBlock("afl"), footyBlock("nrl"), f1Block(),
     golfBlock(), tennisBlock(), wtcBlock(), rugbyFixturesBlock(), cricketFixturesBlock(),
-    getClubStandings(), getClubCompetitions(),
+    getClubStandings(), getClubCompetitions(), getWLiveLeagues(), getWLiveCompetition("uwcl"),
   ]);
+  const wsl = wLeagueBlock(wLeagues.find((l) => l.compSlug === "wsl"), "WSL");
+  const ligaF = wLeagueBlock(wLeagues.find((l) => l.compSlug === "liga-f"), "Liga F");
+  const nwslW = wLeagueBlock(wLeagues.find((l) => l.compSlug === "nwsl"), "NWSL");
+  const uwcl = uwclBlock(uwclComp);
   const euro = euroFixturesBlocks(clubComps);
   const clubById = new Map(clubStandings.map((l) => [l.league_id, l]));
   const domestics = DOMESTIC_LIVE
@@ -630,6 +693,20 @@ export default async function LiveStandingsPage() {
   // Collapse a block so the user opens it on demand (keeps a busy section tidy),
   // but preserve its in-season state as `live` so the green dot still shows.
   const collapse = (b: Block | null): Block | null => (b ? { ...b, live: b.open, open: false } : b);
+  // Marquee exceptions (Ashwin, 2026-08-01): the Champions League and the Premier
+  // League stay OPEN by default once their season is underway (the PL bundle
+  // carries played games; CL fixtures exist from qualifying onward). NFL/NBA/NHL
+  // already open via their own `open: live` logic.
+  const KEEP_OPEN = new Set(["Champions League", "Premier League"]);
+  const collapseExcept = (b: Block | null): Block | null => {
+    if (!b) return b;
+    if (!KEEP_OPEN.has(b.league)) return collapse(b);
+    if (b.league === "Premier League") {
+      const played = b.subTables.some((st) => st.rows.some((r) => Number(r.cells[0]) > 0));
+      return played ? { ...b, live: true, open: true } : collapse(b);
+    }
+    return { ...b, live: b.open, open: b.open };
+  };
 
   // Ordered to match the League Hubs (lib/sportsCatalog FAMILY_ORDER), with
   // Football first for the World Cup. Olympics/Cricket/Rugby Union/Handball/
@@ -639,7 +716,10 @@ export default async function LiveStandingsPage() {
     // domestic league tables; all collapsed so the section stays tidy. Left/right
     // placement and order are enforced by FOOTBALL_LEFT/RIGHT in the normalization
     // step below.
-    { sport: "Football", blocks: [collapse(liber), ...euro.map(collapse), collapse(mls), collapse(nwsl), ...domestics.map(collapse)] },
+    { sport: "Football", blocks: [collapse(liber), ...euro.map(collapseExcept), collapse(mls), ...domestics.map(collapseExcept)] },
+    // Women's Football (below Football, all collapsed by default; feeds are the
+    // same wlive bundle that powers /teams/wfootball).
+    { sport: "Women's Football", blocks: [wsl, ligaF, nwslW, uwcl].map(collapse) },
     { sport: "Motorsport", blocks: [f1] },
     { sport: "Golf", blocks: [golf] },
     { sport: "Tennis", blocks: [tennis] },
