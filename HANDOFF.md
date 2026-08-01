@@ -836,3 +836,33 @@ All 7 games Playwright-tested END-TO-END at BOTH levels (14 runs to the finale, 
 - COMMITTED locally as `4f8551ce4` + follow-up `dce55485d` (Ashwin's curation: Trophy Count, Odd One Out and Bigger City DELISTED from Count & Think — files kept on disk like five-oceans; Match Day Money + League Table Detective retained). Push pending Ashwin's call (real build — app/play/page.tsx changed). Verify green ×2 over both commits.
 - Deferred from the syllabus: formal written column-method practice UI (the keypad flow teaches estimate/check instead), mirror-drawing (needs freehand input), measuring in cm/mm (needs physical ruler).
 - The shared shell lives inline in each game (generated from /tmp templates in-session); future games can copy any of the seven as a base.
+
+
+## 2026-08-01 (evening) — windows → next session (2026 champions + auto-trackers; Predictions/Activity home revamp)
+
+Continuing the day's Cowork work. Everything below is committed and pushed; production tip is `cdaa0253e`. Two threads.
+
+### A. SPORTS — 2026 champions recorded + four auto-trackers (live commit `2e81ba82a`)
+Immediate champions:
+- **Top 14 2026** — Stade Toulousain 28-20 Montpellier HR. Added a line to the France / "Finals since 1996" section of `scripts/rugby/domestic-winners.txt`, rebuilt via `python scripts/rugby/build_club_honours.py` → `public/data/rugby-union/{club-rolls,clubs}.json`. Shows on /teams/rugby-union/clubs (matched to Toulouse metro).
+- **T20 Blast 2026** — Northants Steelbacks def. Hampshire Hawks. Cricsheet lags live finals, so I added a MANUAL-SUPPLEMENT mechanism: NEW `scripts/cricket/manual-t20-champions.tsv` (cols: `league_key<TAB>season<TAB>winner<TAB>ru`, using roll BRAND names) + refactored `scripts/cricket/build_t20_leagues.py` to (a) base rolls on cricsheet if `data/cricket/matches.json` exists ELSE fall back to the committed `t20-leagues.json` (so it runs in CI), and (b) merge the supplement (cricsheet wins on conflict). Seeded `blast 2026`. Shows on /teams/cricket/t20.
+
+Auto-trackers — FOUR Cowork scheduled tasks (create_trigger). Each fires on a Wed/Sat cron around its final, uses the WebFetch TOOL to check the Wikipedia final, and ONLY when a champion is decided writes the source + rebuilds + commits + pushes + self-deletes (idempotent). IDs / crons (UTC) / finals:
+- `trig_015kDTzm3Re1Kj3KQRbWUGCb` Lanka Premier League — `0 8 * 8,9 3,6` — final 8 Aug — writes T20 supplement.
+- `trig_01DU62D85RRgW9X28Nid8e7Q` The Hundred — `0 9 * 8,9 3,6` — final 16 Aug — writes T20 supplement (2026 rebrands: MI London / Manchester Super Giants / Sunrisers Leeds).
+- `trig_015ScCiaqC48frWH1cudMKaM` Currie Cup — `0 8 * 9,10 3,6` — final ~12 Sep — writes `domestic-winners.txt` Currie section + build_club_honours.py.
+- `trig_011XDTRJMfRugi2r6xMEk2kj` Caribbean Premier League — `0 9 * 9,10 3,6` — final 20 Sep — writes T20 supplement.
+**CAVEAT (important):** these fire in a FRESH cloud session. The cloud sandbox is egress-blocked from Wikipedia for python/curl (that's why the county job runs in CI), so the tracker uses the WebFetch tool; and the COMMIT step needs Ashwin's DESKTOP APP OPEN so the Desktop Commander bridge to "ashgaming" is reachable. If the desktop is closed for a whole window a champion could be missed — the crons give several attempts and are idempotent, but to make them bulletproof port any to a GitHub Action mirroring `.github/workflows/honours-county-cricket.yml` (CI always runs + has egress).
+- **County Championship 2026** needs NOTHING new — the existing `honours-county-cricket.yml` Action appends the champion each 5 Oct from the Wikipedia winners list → `public/data/honours/cricket-county.json`, which /teams/cricket/county reads.
+
+### B. HOME — Activity relocated; new Predictions section + /predictions hub (live commit `cdaa0253e`, which also carried Ashwin's 3 kids-games commits)
+- **Activity relocated:** removed the "Activity" link from `app/DesktopNav.tsx` and the "Site activity" link from `app/MobileMenu.tsx`; removed `<ActivityRail />` from `app/page.tsx`. NEW `app/ActivityPreview.tsx` (compact "Recent activity" pane, latest 8 from `lib/activity`, links to /activity) now renders near the top of `app/updates/page.tsx`. NB `app/ActivityRail.tsx` is now ORPHANED/unused (left on disk; delete if you like).
+- **Predictions section:** NEW `app/PredictionsSection.tsx` replaces the ActivityRail slot on the home page — three cards: Election Forecasts (LIVE; pulls the generic-ballot line from `getForecast`), Prediction Hubs (→ /predictions), Beat the Model (→ /play/beat-the-model.html).
+- **NEW `/predictions` hub** (`app/predictions/page.tsx`, revalidate 21600): live US House/Senate/Governors stat tiles → /elections/forecast; four "coming soon" league hubs (NFL, CFB, Premier League, Champions League) modeled on the WC2026 simulator; live WC2026 simulator + Beat-the-Model as the working template.
+- **Design decision (Ashwin):** the league hubs + per-league Beat-the-Model are SCAFFOLD + COMING-SOON only — NO fake data. To light one up: produce a per-league sim JSON at `public/data/<key>-sim.json` (keys nfl/cfb/pl/ucl) shaped like `public/data/international/wc2026-sim.json` (per-team p_title/p_final/p_sf/…), then (1) build a simulator section like /teams/national#wc2026 and (2) duplicate `public/play/beat-the-model.html` per league pointing at that JSON. `npm run verify` green (26/26; /predictions static route).
+
+### Open threads / next
+1. **Build the real league prediction models** to light up /predictions (NFL/CFB/PL/UCL sim JSON → simulator + per-league Beat-the-Model), per the convention above.
+2. **Tracker robustness:** the 4 Cowork champion-trackers depend on the desktop app being open at fire time. If unreliable, port to GitHub Actions (honours-county pattern). If a fire didn't self-clean after landing a champion, delete the trigger by ID (list_triggers/delete_trigger).
+3. Housekeeping: `app/ActivityRail.tsx` orphaned; `tsconfig.clean.json` still an untracked stray in the repo root (unknown provenance — delete or claim).
+4. Carried over: Supabase RLS advisory on 8 tables (SQL drafted, not applied); the football "actual European Cup winner isn't always #1" thread (levers `TOP_TROPHY_BONUS` / `PED_WEIGHT`).
