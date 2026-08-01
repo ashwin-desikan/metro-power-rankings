@@ -1,7 +1,21 @@
 {
-  "generatedAt": "2026-07-30",
-  "count": 529,
+  "generatedAt": "2026-07-31",
+  "count": 531,
   "entries": [
+    {
+      "date": "2026-07-31",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball, AFL, Canadian football.",
+      "commit": "45dfdc67a"
+    },
+    {
+      "date": "2026-07-31",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Football hubs: deep-history coverage, real pre-93 cup data, ranking rebalance.",
+      "commit": "0414e1dc2"
+    },
     {
       "date": "2026-07-30",
       "category": "data",
