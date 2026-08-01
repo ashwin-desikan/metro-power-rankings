@@ -359,10 +359,6 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
       <Link href="/me" className="text-sm hover:text-[var(--accent)] transition-colors flex items-center gap-1 whitespace-nowrap" title="Metros and teams you follow">
         <span aria-hidden>★</span> Following
       </Link>
-      <Link href="/activity" className="hidden lg:inline-block text-sm hover:text-[var(--accent)] transition-colors" title="Everything that changed on the site, and when">
-        Activity
-      </Link>
-
       {updated && (
         <a
           href="/updates"

@@ -158,7 +158,6 @@ function buildSections(): Section[] {
     { kind: 'group', id: 'play', label: 'Play', groups: play },
     { kind: 'group', id: 'about', label: 'About', groups: about },
     { kind: 'link', href: '/studio', label: 'Studio' },
-    { kind: 'link', href: '/activity', label: 'Site activity' },
     { kind: 'link', href: '/updates', label: 'Release notes' },
   ];
 }

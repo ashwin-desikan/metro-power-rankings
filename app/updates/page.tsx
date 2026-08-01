@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ActivityPreview from "@/app/ActivityPreview";
 import { RELEASES, type Release } from "@/lib/releases";
 import {
   AUTHOR,
@@ -195,6 +196,8 @@ export default function UpdatesPage() {
               Same-day shipping collapses into one entry.
             </p>
           </header>
+
+          <ActivityPreview />
 
           <div className="space-y-12">
             {RELEASES.map((release) => (
