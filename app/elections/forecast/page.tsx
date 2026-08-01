@@ -12,7 +12,7 @@ export const revalidate = 21600; // pick up the weekly data refresh without a bu
 const PATH = "/elections/forecast";
 const TITLE = "Election Forecasts";
 const DESC =
-  "The road to the next elections, forecast honestly: weighted polling averages, seat ranges from thousands of simulations, and uncertainty stated as plainly as the numbers. Covering the 2026 US House and Senate midterms, the next UK general election, and the 2026 votes in Brazil, Israel and New Zealand — plus an early read on France 2027. Ranges first, probabilities second, humility throughout.";
+  "The road to the next elections, forecast honestly: weighted polling averages, seat ranges from thousands of simulations, and uncertainty stated as plainly as the numbers. Covering the 2026 US midterms — House, Senate and governors — the next UK general election, and the 2026 votes in Brazil, Israel and New Zealand — plus an early read on France 2027. Ranges first, probabilities second, humility throughout.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -135,6 +135,7 @@ export default async function ForecastPage() {
   }
   const { uk, us } = f;
   const sen = us?.senate ?? null;
+  const gov = us?.governors ?? null;
   const nz = f.nz ?? null;
   const il = f.il ?? null;
   const br = f.br ?? null;
@@ -292,6 +293,51 @@ export default async function ForecastPage() {
                     <p className="text-xs text-[var(--text-dim)] mt-3">
                       Consensus of the eight ratings agencies (Cook, Inside Elections, Sabato and
                       peers), converted to probabilities and simulated with a shared national swing.
+                    </p>
+                  </div>
+                </div>
+              </>
+            ) : null}
+
+            {gov ? (
+              <>
+                <h3 className="font-bold text-[var(--text)] mb-2 mt-6">The Governors <span className="font-normal text-xs text-[var(--text-dim)]">{gov.races} of 50 mansions on the ballot · 26 for a majority</span></h3>
+                <div className="grid gap-4 lg:grid-cols-2">
+                  <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+                    <RangeBar label="Democratic governors" color={FORECAST_COLORS.dem} range={gov.demSeats} max={50} extra={`majority ${gov.pDemMajority}%`} />
+                    <RangeBar
+                      label="Republican governors"
+                      color={FORECAST_COLORS.rep}
+                      range={{ median: 50 - gov.demSeats.median, lo: 50 - gov.demSeats.hi, hi: 50 - gov.demSeats.lo }}
+                      max={50}
+                      extra={`majority ${gov.pRepMajority}%`}
+                    />
+                    <p className="text-xs text-[var(--text-dim)] mt-3">
+                      From today&apos;s {gov.governorsNow.R}–{gov.governorsNow.D}: {gov.seatsUp.R} Republican and{" "}
+                      {gov.seatsUp.D} Democratic mansions are on the ballot; the other {gov.carryover.R + gov.carryover.D} carry
+                      over. Governorships are independent state offices, so &quot;majority&quot; means most of the fifty, not
+                      control of anything — and the two figures fall short of 100% by the odds of an exact 25–25 split.
+                    </p>
+                  </div>
+                  <div className="rounded-xl border p-4" style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}>
+                    <h4 className="font-semibold text-sm text-[var(--text)] mb-2">The races that decide it</h4>
+                    <div className="grid gap-1.5 text-xs">
+                      {gov.competitive.map((r) => (
+                        <div key={r.state} className="flex items-baseline justify-between gap-3">
+                          <span className="text-[var(--text)] font-semibold">
+                            {r.state}
+                            <span className="font-normal text-[var(--text-dim)]"> · {r.held === "D" ? "Dem-held" : "Rep-held"}{r.retiring ? ", open" : ""}</span>
+                          </span>
+                          <span className="tabular-nums" style={{ color: r.pDem >= 50 ? FORECAST_COLORS.dem : FORECAST_COLORS.rep }}>
+                            {r.pDem >= 50 ? `D ${r.pDem}%` : `R ${100 - r.pDem}%`}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="text-xs text-[var(--text-dim)] mt-3">
+                      Consensus of the ratings agencies (Cook, Inside Elections, Sabato, Race to the WH,
+                      RCP, Fox and VoteHub), converted to probabilities and simulated with a shared
+                      national swing.
                     </p>
                   </div>
                 </div>
@@ -534,9 +580,9 @@ export default async function ForecastPage() {
         title="How these forecasts work"
         cards={[
           ["The averages", "Each pollster's latest poll within 45 days, weighted by recency (14-day half-life) and sample size. A simple transparent average — validated on 22 past elections across four countries, where it called 87% of winners within 1.3 points."],
-          ["Seats from votes", "US House: the generic-ballot margin mapped through the 2012–2024 seats-votes relationship. US Senate: the eight ratings agencies' consensus per race, simulated with a shared national swing. UK: each party's national movement applied proportionally to its 2024 result in all 632 GB constituencies (Commons Library data). New Zealand: Sainte-Laguë over the simulated party vote. Israel: the pollsters' own seat projections, averaged. Brazil and France: round-by-round candidate averages."],
+          ["Seats from votes", "US House: the generic-ballot margin mapped through the 2012–2024 seats-votes relationship. US Senate and governors: the ratings agencies' consensus per race, converted to win probabilities and simulated with a shared national swing — the governors aggregated to mansions held out of 50, starting from today's 26–24 Republican edge. UK: each party's national movement applied proportionally to its 2024 result in all 632 GB constituencies (Commons Library data). New Zealand: Sainte-Laguë over the simulated party vote. Israel: the pollsters' own seat projections, averaged. Brazil and France: round-by-round candidate averages."],
           ["Why the ranges are wide", "Polls this far from polling day are weather, not prophecy: three years out, national surveys have missed final results by six points and more (FiveThirtyEight's raw-polls archive; Jennings & Wlezien). The error scales into every simulation, which is why the honest answer is a range."],
-          ["Sources and refresh", "Polling and ratings tables from Wikipedia (CC BY-SA 4.0); GE2024 constituency results from the House of Commons Library (Open Parliament Licence); historical calibration from FiveThirtyEight's open archive (CC BY 4.0). A weekly job re-scrapes, re-simulates and republishes."],
+          ["Sources and refresh", "Polling and ratings tables from Wikipedia (CC BY-SA 4.0); GE2024 constituency results from the House of Commons Library (Open Parliament Licence); historical calibration from FiveThirtyEight's open archive (CC BY 4.0). A scheduled job (Mon/Wed/Fri) re-scrapes, re-simulates and republishes."],
         ]}
       />
 

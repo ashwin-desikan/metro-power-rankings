@@ -398,6 +398,73 @@ def fetch_us_senate():
     comp = sorted(races, key=lambda r: abs(r["score"]))[:8]
     print("  most competitive:", [(r["state"], r["incumbentParty"], r["score"]) for r in comp])
 
+# ---------------- US Governors (ratings-based) ----------------
+
+def fetch_us_governors():
+    """Parse the race-ratings table on '2026 United States gubernatorial
+    elections': one row per state electing a governor in 2026, the incumbent
+    party and whether the seat is open, and the {{USRaceRating|...}} calls from
+    the ratings agencies (Cook, Inside Elections, Sabato, Race to the WH, RCP,
+    Fox, VoteHub). The consensus score (D-positive: Solid D = +3 ... Solid R =
+    -3) feeds the ratings-based governors simulation. Mirrors fetch_us_senate;
+    the only structural differences are the article title, the state-link
+    pattern ('2026 <State> gubernatorial election'), and 'term-limited' as an
+    open-seat marker."""
+    wt = wikitext("2026 United States gubernatorial elections")
+    block = None
+    for m in re.finditer(r"\{\|.*?\n\|\}", wt, flags=re.S):
+        b = m.group(0)
+        if "USRaceRating" in b and "Cook" in b and "Sabato" in b:
+            block = b
+            break
+    races = []
+    if block:
+        state, party, ratings, retiring = None, None, [], False
+        def flush():
+            nonlocal state, party, ratings, retiring
+            if state and ratings:
+                score = sum(ratings) / len(ratings)
+                races.append({"state": state, "incumbentParty": party or "?",
+                              "nRatings": len(ratings), "score": round(score, 2),
+                              "retiring": retiring})
+            state, party, ratings, retiring = None, None, [], False
+        for ln in block.split("\n"):
+            ln = re.sub(r"<!--.*?-->", "", ln).strip()  # '<!--Cook--> | {{USRaceRating...' rows
+            if ln.startswith("|-"):
+                flush(); continue
+            if ln.startswith("!"):
+                ms = re.search(r"\[\[2026 ([^|\]]+?) gubernatorial election", ln)
+                if ms:
+                    state = ms.group(1).strip()
+                continue
+            if not ln.startswith("|"):
+                continue
+            if re.search(r"Party shading/Republican", ln) and party is None:
+                party = "R"
+            if re.search(r"Party shading/(Democratic|DFL|Farmer)", ln) and party is None:
+                party = "D"
+            if re.search(r"term.?limited|retiring|resigning|not (?:running|seeking)", ln, re.I):
+                retiring = True
+            for mr in re.finditer(r"\{\{USRaceRating\|(\w+)(?:\|(\w))?", ln):
+                word = mr.group(1).lower()
+                pty = (mr.group(2) or "").upper()
+                if word in RATING_WORD:
+                    v = RATING_WORD[word]
+                    ratings.append(v if pty == "D" else (-v if pty == "R" else 0.0))
+        flush()
+    d_up = sum(1 for r in races if r["incumbentParty"] == "D")
+    r_up = sum(1 for r in races if r["incumbentParty"] == "R")
+    out = {"source": "Wikipedia: 2026 United States gubernatorial elections, race-ratings table citing Cook, Inside Elections, Sabato, Race to the WH, RCP, Fox and VoteHub (CC BY-SA 4.0)",
+           # Current nationwide split going into 2026 (R 26, D 24) after the 2025
+           # off-year elections (Virginia flipped D). Carryover = totals minus seats up.
+           "governorsNow": {"R": 26, "D": 24},
+           "seatsUp": {"D": d_up, "R": r_up},
+           "races": races}
+    json.dump(out, open(os.path.join(OUT, "us_governors.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    print(f"  US Governors races parsed: {len(races)} (D-held {d_up}, R-held {r_up})")
+    comp = sorted(races, key=lambda r: abs(r["score"]))[:8]
+    print("  most competitive:", [(r["state"], r["incumbentParty"], r["score"]) for r in comp])
+
 # ---------------- UK 2024 constituency base ----------------
 
 HOC_URL = "https://researchbriefings.files.parliament.uk/documents/CBP-10009/HoC-GE2024-results-by-constituency.csv"
@@ -614,6 +681,8 @@ if __name__ == "__main__":
     fetch_us()
     print("fetching US Senate ratings...")
     fetch_us_senate()
+    print("fetching US Governor ratings...")
+    fetch_us_governors()
     print("fetching UK 2024 constituency base...")
     fetch_uk_base()
     print("fetching NZ polls...")

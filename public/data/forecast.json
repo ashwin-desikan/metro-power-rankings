@@ -716,7 +716,8 @@
   "election": "2026-11-03",
   "sources": [
    "Wikipedia: 2026 United States House of Representatives elections, generic congressional ballot (CC BY-SA 4.0)",
-   "Wikipedia: 2026 United States Senate elections, race-ratings table citing Cook, Inside Elections, Sabato, The Economist, RCP, DDHQ, Race to the WH and Fox (CC BY-SA 4.0)"
+   "Wikipedia: 2026 United States Senate elections, race-ratings table citing Cook, Inside Elections, Sabato, The Economist, RCP, DDHQ, Race to the WH and Fox (CC BY-SA 4.0)",
+   "Wikipedia: 2026 United States gubernatorial elections, race-ratings table citing Cook, Inside Elections, Sabato, Race to the WH, RCP, Fox and VoteHub (CC BY-SA 4.0)"
   ],
   "senate": {
    "races": 35,
@@ -784,6 +785,88 @@
    ],
    "sims": 20000,
    "source": "Wikipedia: 2026 United States Senate elections, race-ratings table citing Cook, Inside Elections, Sabato, The Economist, RCP, DDHQ, Race to the WH and Fox (CC BY-SA 4.0)"
+  },
+  "governors": {
+   "races": 36,
+   "carryover": {
+    "D": 6,
+    "R": 8
+   },
+   "seatsUp": {
+    "D": 18,
+    "R": 18
+   },
+   "governorsNow": {
+    "R": 26,
+    "D": 24
+   },
+   "demSeats": {
+    "median": 24,
+    "lo": 21,
+    "hi": 28
+   },
+   "pDemMajority": 30.1,
+   "pRepMajority": 52.8,
+   "competitive": [
+    {
+     "state": "Georgia",
+     "held": "R",
+     "score": 0.07,
+     "retiring": true,
+     "pDem": 52.0
+    },
+    {
+     "state": "Wisconsin",
+     "held": "D",
+     "score": 0.07,
+     "retiring": true,
+     "pDem": 52.0
+    },
+    {
+     "state": "Ohio",
+     "held": "R",
+     "score": -0.29,
+     "retiring": true,
+     "pDem": 42.0
+    },
+    {
+     "state": "Iowa",
+     "held": "R",
+     "score": 0.36,
+     "retiring": true,
+     "pDem": 60.0
+    },
+    {
+     "state": "Nevada",
+     "held": "R",
+     "score": -0.36,
+     "retiring": false,
+     "pDem": 40.0
+    },
+    {
+     "state": "Kansas",
+     "held": "D",
+     "score": -0.79,
+     "retiring": true,
+     "pDem": 28.0
+    },
+    {
+     "state": "Michigan",
+     "held": "D",
+     "score": 0.79,
+     "retiring": true,
+     "pDem": 72.0
+    },
+    {
+     "state": "Arizona",
+     "held": "D",
+     "score": 0.86,
+     "retiring": false,
+     "pDem": 73.0
+    }
+   ],
+   "sims": 20000,
+   "source": "Wikipedia: 2026 United States gubernatorial elections, race-ratings table citing Cook, Inside Elections, Sabato, Race to the WH, RCP, Fox and VoteHub (CC BY-SA 4.0)"
   }
  },
  "nz": {
@@ -826,7 +909,7 @@
     "hi": 17
    },
    "tpm": {
-    "median": 4,
+    "median": 3,
     "lo": 0,
     "hi": 6
    },
@@ -837,8 +920,8 @@
    }
   },
   "pRightBloc": 55.3,
-  "pLeftBloc": 11.2,
-  "pNeither": 33.5,
+  "pLeftBloc": 10.8,
+  "pNeither": 33.9,
   "monthsOut": 2.5,
   "sims": 10000,
   "sources": [
@@ -938,7 +1021,7 @@
     "b": "F. Bolsonaro",
     "avgA": 46.7,
     "avgB": 42.1,
-    "pA": 86.0,
+    "pA": 85.8,
     "polls": 53,
     "latest": "2026-07-29"
    }
@@ -974,7 +1057,7 @@
     "b": "Philippe HOR",
     "avgA": 52.5,
     "avgB": 47.5,
-    "pA": 77.1,
+    "pA": 78.0,
     "polls": 4,
     "latest": "2026-07-08"
    },
@@ -983,7 +1066,7 @@
     "b": "Attal RE",
     "avgA": 54.9,
     "avgB": 45.1,
-    "pA": 93.9,
+    "pA": 93.3,
     "polls": 4,
     "latest": "2026-07-08"
    },
@@ -1001,7 +1084,7 @@
     "b": "Philippe HOR",
     "avgA": 52.9,
     "avgB": 47.1,
-    "pA": 81.6,
+    "pA": 81.2,
     "polls": 4,
     "latest": "2026-05-27"
    },
@@ -1010,7 +1093,7 @@
     "b": "Attal RE",
     "avgA": 57.0,
     "avgB": 43.0,
-    "pA": 98.6,
+    "pA": 98.7,
     "polls": 1,
     "latest": "2026-05-27"
    },

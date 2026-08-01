@@ -42,6 +42,18 @@ export type SenateForecast = {
   sims: number;
   source: string;
 };
+export type GovernorsForecast = {
+  races: number;
+  carryover: { D: number; R: number };
+  seatsUp: { D: number; R: number };
+  governorsNow: { D: number; R: number };
+  demSeats: SeatRange;
+  pDemMajority: number;
+  pRepMajority: number;
+  competitive: { state: string; held: string; score: number; retiring: boolean; pDem: number }[];
+  sims: number;
+  source: string;
+};
 export type UsForecast = {
   margin: number;
   sigma: number;
@@ -54,6 +66,7 @@ export type UsForecast = {
   election: string;
   sources: string[];
   senate?: SenateForecast | null;
+  governors?: GovernorsForecast | null;
 };
 export type NzForecast = {
   electionAssumed: string;

@@ -231,6 +231,53 @@ def senate_forecast(sen, sims=20000):
         "source": sen["source"],
     }
 
+# ---------------- US Governors ----------------
+
+def governors_forecast(gov, sims=20000):
+    """Ratings-based, mirroring senate_forecast. Aggregate is the number of
+    governorships each party HOLDS after November (out of 50): the carryover
+    governors not up this cycle plus the simulated winners of the 36 states on
+    the ballot. Unlike the Senate there is no single control threshold — the
+    natural summary is total mansions held and the odds of a majority (>=26)."""
+    races = gov.get("races", [])
+    if not races:
+        return None
+    carry_d = gov["governorsNow"]["D"] - gov["seatsUp"]["D"]
+    carry_r = gov["governorsNow"]["R"] - gov["seatsUp"]["R"]
+    K = 1.17          # logistic slope: Solid/Safe (|3|) -> ~97%
+    ENV_SD = 0.35     # correlated shift in score units between now and election day
+    RACE_SD = 0.30    # idiosyncratic per-race noise
+    def logistic(x):
+        return 1.0 / (1.0 + math.exp(-K * x))
+    d_tot, d_majority, r_majority = [], 0, 0
+    for _ in range(sims):
+        env = random.gauss(0, ENV_SD)
+        d = carry_d
+        for r in races:
+            p = logistic(r["score"] + env + random.gauss(0, RACE_SD))
+            if random.random() < p:
+                d += 1
+        d_tot.append(d)
+        if d >= 26:       # a majority of the 50 governorships
+            d_majority += 1
+        elif d <= 24:     # Republican majority (d == 25 is an exact 25-25 split)
+            r_majority += 1
+    d_tot.sort()
+    hot = sorted(races, key=lambda r: abs(r["score"]))[:8]
+    return {
+        "races": len(races), "carryover": {"D": carry_d, "R": carry_r},
+        "seatsUp": gov["seatsUp"], "governorsNow": gov["governorsNow"],
+        "demSeats": {"median": d_tot[len(d_tot) // 2],
+                     "lo": d_tot[int(sims * 0.05)], "hi": d_tot[int(sims * 0.95)]},
+        "pDemMajority": round(100.0 * d_majority / sims, 1),
+        "pRepMajority": round(100.0 * r_majority / sims, 1),
+        "competitive": [{"state": r["state"], "held": r["incumbentParty"],
+                         "score": r["score"], "retiring": r["retiring"],
+                         "pDem": round(100 * logistic(r["score"]), 0)} for r in hot],
+        "sims": sims,
+        "source": gov["source"],
+    }
+
 # ---------------- shared: recency-weighted average over share rows ----------------
 
 def weighted_recent(rows, window=45, half_life=14.0):
@@ -467,6 +514,14 @@ def main():
                 us["sources"].append(sen["source"])
                 print("US Senate: D seats", us["senate"]["demSeats"], "P(D control)", us["senate"]["pDemControl"],
                       "carryover", us["senate"]["carryover"])
+        gov_path = os.path.join(IN, "us_governors.json")
+        if os.path.exists(gov_path):
+            gov = json.load(open(gov_path, encoding="utf-8"))
+            us["governors"] = governors_forecast(gov)
+            if us["governors"]:
+                us["sources"].append(gov["source"])
+                print("US Governors: D seats", us["governors"]["demSeats"], "P(D majority)", us["governors"]["pDemMajority"],
+                      "carryover", us["governors"]["carryover"])
 
     def load_optional(fname, fn, label):
         path = os.path.join(IN, fname)
