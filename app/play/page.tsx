@@ -34,11 +34,9 @@ const GAMES: Game[] = [
   { title: "Shape & Flag Lab", emoji: "\u{1F4D0}", file: "shape-flag-lab.html", ages: "7–9", blurb: "Fold real flags to test symmetry, judge corner-kick angles, and spot parallel and perpendicular lines on the pitch.", group: "think" },
   { title: "Kick-Off Clock", emoji: "\u{1F570}\u{FE0F}", file: "kickoff-clock.html", ages: "7–9", blurb: "Stadium clocks with Roman numerals, 12-hour and 24-hour kick-offs, match durations and the pitch perimeter.", group: "think" },
   { title: "Chart Champions", emoji: "\u{1F4CA}", file: "chart-champions.html", ages: "7–9", blurb: "Real league titles and skyscraper skylines as bar charts, pictograms and tables. Read the scale, tap the right bar.", group: "think" },
-  { title: "Bigger City", emoji: "\u{1F3D9}\u{FE0F}", file: "bigger-city.html", ages: "5–9", blurb: "Tap the bigger metro: by people, skyscrapers or teams.", group: "think" },
-  { title: "Trophy Count", emoji: "\u{1F3C6}", file: "trophy-count.html", ages: "6–10", blurb: "Compare and add up real championship totals.", group: "think" },
   { title: "Match Day Money", emoji: "\u{1F4B7}", file: "match-day-money.html", ages: "5–8", blurb: "Making change and adding up, in pounds and dollars.", group: "think" },
   { title: "League Table Detective", emoji: "\u{1F50D}", file: "league-table-detective.html", ages: "6–10", blurb: "Read a real league table: points, point difference and bar charts.", group: "think" },
-  { title: "Odd One Out", emoji: "\u{1F914}", file: "odd-one-out.html", ages: "6–10", blurb: "Spot the team that does not belong.", group: "think" },
+
   { title: "Offside or Onside?", emoji: "\u{1F6A9}", file: "offside-or-onside.html", ages: "7–10", blurb: "Football: spot the offside, and see how the rule changed.", group: "rules" },
   { title: "How's That?", emoji: "\u{1F3CF}", file: "hows-that.html", ages: "7–10", blurb: "Cricket: spot the dismissal and learn LBW.", group: "rules" },
   { title: "Ball or Strike?", emoji: "\u{26BE}", file: "ball-or-strike.html", ages: "7–10", blurb: "Baseball: call the strike zone and the basics.", group: "rules" },
