@@ -6,7 +6,7 @@ import { monogramForFootball } from "@/lib/football-colors";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import { Tabs } from "@/app/teams/_shared/Tabs";
 import { Badge } from "@/app/teams/_shared/Badge";
-import { ResponsiveTable, MiniCardHeader } from "@/app/teams/_shared/ResponsiveTable";
+import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 
 // MLS all-time table: every franchise by honors, including defunct clubs.
 // A Current/All filter toggles defunct clubs; defunct clubs are tagged.
@@ -36,12 +36,10 @@ export default function MlsMostDecorated({ rows }: { rows: Row[] }) {
       <span className="inline-flex items-center gap-1 justify-end">{label}{sortKey === k && <span aria-hidden style={{ color: "var(--accent)" }}>▼</span>}</span>
     </th>
   );
-  const Stat = ({ label, v, strong }: { label: string; v: number; strong?: boolean }) => (
-    <div>
-      <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{label}</div>
-      <div className={`tabular-nums ${strong ? "font-semibold" : "text-[var(--text-muted)]"}`}>{v || "—"}</div>
-    </div>
-  );
+  // Short unit label for the mobile row's right metric, per sort key.
+  const SORT_UNIT: Record<SortKey, string> = {
+    mls_cups: "cups", supporters_shields: "shields", finals: "finals", playoffs: "PO", seasons: "seasons",
+  };
   return (
     <section className="mb-8">
       <header className="mb-3 flex items-center justify-between gap-4 flex-wrap">
@@ -92,32 +90,28 @@ export default function MlsMostDecorated({ rows }: { rows: Row[] }) {
       </div>
 
       <ResponsiveTable
+        variant="list"
         className="rounded-xl border"
         style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
-        mobileRows={sorted.map((r) => (
-          <div key={r.cur_name}>
-            <MiniCardHeader
-              left={
-                <span className="inline-flex items-center gap-1.5 min-w-0">
-                  <TeamCrest name={r.cur_name} size={20} fallback={<ColorBall slug={r.slug} name={r.cur_name} />} />
-                  {r.slug ? (
-                    <Link href={`/teams/football/${r.slug}`} className="hover:underline font-medium truncate">{r.cur_name}</Link>
-                  ) : (
-                    <span className="font-medium truncate">{r.cur_name}</span>
-                  )}
-                </span>
-              }
-              right={r.defunct ? <Badge variant="defunct">Defunct</Badge> : undefined}
-            />
-            <div className="-mt-1 mb-1.5 text-xs text-[var(--text-muted)]">{r.metro || "—"}</div>
-            <div className="grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
-              <Stat label="MLS Cups" v={r.mls_cups} strong />
-              <Stat label="Shields" v={r.supporters_shields} />
-              <Stat label="Cup Finals" v={r.finals} />
-              <Stat label="Playoffs" v={r.playoffs} />
-              <Stat label="Seasons" v={r.seasons} />
-            </div>
-          </div>
+        mobileRows={sorted.map((r, i) => (
+          <RankRow
+            key={r.cur_name}
+            rank={i + 1}
+            name={
+              <>
+                <TeamCrest name={r.cur_name} size={16} fallback={<ColorBall slug={r.slug} name={r.cur_name} />} />
+                {r.slug ? (
+                  <Link href={`/teams/football/${r.slug}`} className="hover:underline truncate">{r.cur_name}</Link>
+                ) : (
+                  <span className="truncate">{r.cur_name}</span>
+                )}
+                {r.defunct && <span className="flex-shrink-0"><Badge variant="defunct">Defunct</Badge></span>}
+              </>
+            }
+            sub={<>{r.metro || "—"} · {r.seasons} seasons</>}
+            right={r[sortKey] || "—"}
+            rightSub={SORT_UNIT[sortKey]}
+          />
         ))}
       >
         <table className="w-full text-sm tabular-nums min-w-[640px]">

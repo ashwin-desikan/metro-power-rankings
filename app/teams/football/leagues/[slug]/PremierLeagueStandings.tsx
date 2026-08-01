@@ -5,7 +5,7 @@ import type { PlLiveRow, PlStandingsSnapshot } from "@/lib/premier-league-standi
 import type { FootballLeagueHub, FootballCupFinal, FootballEuropeEntry } from "@/lib/football";
 import { europeanCompDisplayCode, europeanCompSortKey } from "@/lib/football";
 import { Badge } from "@/app/teams/_shared/Badge";
-import { ResponsiveTable, MiniStat, MiniCardHeader } from "@/app/teams/_shared/ResponsiveTable";
+import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 
 // Fallback monogram badge when no crest is available
 function ColorBall({ slug, name }: { slug: string; name: string }) {
@@ -82,58 +82,35 @@ function LiveTable({
       </div>
 
       <ResponsiveTable
-        mobileRows={rows.map((row) => {
-          const eurEntries = europeBySlug.get(row.slug ?? "") ?? [];
-          return (
-            <div key={row.name}>
-              <MiniCardHeader
-                left={
-                  <span className="inline-flex items-center gap-2 min-w-0">
-                    <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0 w-4">{row.rank}</span>
-                    <TeamCrest
-                      name={row.name}
-                      size={22}
-                      fallback={<ColorBall slug={row.slug ?? row.abbr} name={row.name} />}
-                    />
-                    {row.slug ? (
-                      <Link href={`/teams/football/${row.slug}`} className="font-medium truncate hover:underline">
-                        {row.name}
-                      </Link>
-                    ) : (
-                      <span className="font-medium truncate">{row.name}</span>
-                    )}
-                  </span>
-                }
-                right={<span className="text-sm font-semibold tabular-nums">{row.points} pts</span>}
-              />
-              {row.zone && (
-                <div className="mb-1.5">
-                  <ZoneBadge zone={row.zone} />
-                </div>
-              )}
-              <div className="grid grid-cols-4 gap-x-3 gap-y-1.5 text-xs">
-                <MiniStat label="P" value={row.played} />
-                <MiniStat label="W" value={row.wins} />
-                <MiniStat label="D" value={row.draws} />
-                <MiniStat label="L" value={row.losses} />
-                <MiniStat label="GF" value={row.gf} />
-                <MiniStat label="GA" value={row.ga} />
-                <MiniStat label="GD" value={row.gd > 0 ? `+${row.gd}` : row.gd} />
-              </div>
-              {eurEntries.length > 0 && (
-                <div className="mt-2 flex flex-wrap gap-1">
-                  {eurEntries.map((e, ei) => (
-                    <Badge key={ei} color={{ bg: "rgba(99,102,241,0.12)", fg: "#818cf8" }}>
-                      {europeanCompDisplayCode(e.code, null)}
-                    </Badge>
-                  ))}
-                </div>
-              )}
-            </div>
-          );
-        })}
+        variant="list"
+        mobileRows={rows.map((row) => (
+          <RankRow
+            key={row.name}
+            rank={row.rank}
+            name={
+              <>
+                <TeamCrest
+                  name={row.name}
+                  size={16}
+                  fallback={<ColorBall slug={row.slug ?? row.abbr} name={row.name} />}
+                />
+                {row.slug ? (
+                  <Link href={`/teams/football/${row.slug}`} className="truncate hover:underline">
+                    {row.name}
+                  </Link>
+                ) : (
+                  <span className="truncate">{row.name}</span>
+                )}
+                {row.zone && <span className="flex-shrink-0"><ZoneBadge zone={row.zone} /></span>}
+              </>
+            }
+            sub={<>{row.played} P · {row.wins}-{row.draws}-{row.losses} · {row.gd > 0 ? `+${row.gd}` : row.gd} GD</>}
+            right={row.points}
+            rightSub="pts"
+          />
+        ))}
       >
-        <table className="w-full text-sm min-w-[540px]">
+        <table className="w-full text-sm min-w-[540px]" data-sticky-col="2">
           <thead>
             <tr
               className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b"
@@ -252,51 +229,43 @@ function WorkbookTable({
       </h2>
 
       <ResponsiveTable
+        variant="list"
         mobileRows={hub.current_standings.map((s) => {
           const isChamp = s.champion === true || s.place === 1;
-          const eurEntries = europeBySlug.get(s.slug ?? "") ?? [];
           return (
-            <div key={s.slug}>
-              <MiniCardHeader
-                left={
-                  <span className="inline-flex items-center gap-2 min-w-0">
-                    <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0 w-4">{s.place ?? "–"}</span>
-                    <TeamCrest name={s.cur_name} size={22} fallback={<ColorBall slug={s.slug ?? ""} name={s.cur_name} />} />
-                    {s.slug ? (
-                      <Link href={`/teams/football/${s.slug}`} className="font-medium truncate hover:underline">{s.cur_name}</Link>
-                    ) : (
-                      <span className="font-medium truncate">{s.cur_name}</span>
-                    )}
-                  </span>
-                }
-                right={<span className="text-sm font-semibold tabular-nums">{s.pts ?? "–"} pts</span>}
-              />
-              <div className="flex flex-wrap gap-1">
-                <WorkbookBadges s={s} isChamp={isChamp} />
-              </div>
-              <div className="mt-2 grid grid-cols-4 gap-x-3 gap-y-1.5 text-xs">
-                <MiniStat label="P" value={s.matches ?? "–"} />
-                <MiniStat label="W" value={s.w ?? "–"} />
-                <MiniStat label="D" value={s.d ?? "–"} />
-                <MiniStat label="L" value={s.l ?? "–"} />
-                <MiniStat label="GF" value={s.gf ?? "–"} />
-                <MiniStat label="GA" value={s.ga ?? "–"} />
-                <MiniStat label="GD" value={s.gd != null ? (s.gd > 0 ? `+${s.gd}` : s.gd) : "–"} />
-              </div>
-              {eurEntries.length > 0 && (
-                <div className="mt-2 flex flex-wrap gap-1">
-                  {eurEntries.map((e, ei) => (
-                    <Badge key={ei} color={{ bg: "rgba(99,102,241,0.12)", fg: "#818cf8" }}>
-                      {europeanCompDisplayCode(e.code, null)}
-                    </Badge>
-                  ))}
-                </div>
-              )}
-            </div>
+            <RankRow
+              key={s.slug}
+              rank={s.place ?? "–"}
+              name={
+                <>
+                  <TeamCrest name={s.cur_name} size={16} fallback={<ColorBall slug={s.slug ?? ""} name={s.cur_name} />} />
+                  {s.slug ? (
+                    <Link href={`/teams/football/${s.slug}`} className="truncate hover:underline">{s.cur_name}</Link>
+                  ) : (
+                    <span className="truncate">{s.cur_name}</span>
+                  )}
+                  {isChamp && <span title="Champion" aria-label="Champion" className="flex-shrink-0 leading-none" style={{ color: "#f5b301" }}>★</span>}
+                  {s.promoted && (
+                    <span className="flex-shrink-0">
+                      <Badge color={{ bg: "rgba(34,197,94,0.16)", fg: "#22c55e" }}>{s.playoffs ? "Promoted (PO)" : "Promoted"}</Badge>
+                    </span>
+                  )}
+                  {s.relegated && (
+                    <span className="flex-shrink-0">
+                      <Badge color={{ bg: "rgba(220,38,38,0.16)", fg: "#dc2626" }}>{s.playoffs ? "Relegated (PO)" : "Relegated"}</Badge>
+                    </span>
+                  )}
+                </>
+              }
+              sub={<>{s.matches ?? "–"} P · {s.w ?? "–"}-{s.d ?? "–"}-{s.l ?? "–"} · {s.gd != null ? (s.gd > 0 ? `+${s.gd}` : s.gd) : "–"} GD</>}
+              right={s.pts ?? "–"}
+              rightSub="pts"
+              highlight={isChamp}
+            />
           );
         })}
       >
-        <table className="w-full text-sm min-w-[540px]">
+        <table className="w-full text-sm min-w-[540px]" data-sticky-col="2">
           <thead>
             <tr
               className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b"

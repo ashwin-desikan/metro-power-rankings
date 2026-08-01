@@ -5,7 +5,7 @@ import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { Tabs } from "@/app/teams/_shared/Tabs";
 import { Badge } from "@/app/teams/_shared/Badge";
-import { ResponsiveTable, MiniStat, MiniCardHeader } from "@/app/teams/_shared/ResponsiveTable";
+import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 
 // Live standings for a whole country: a switcher across every tracked league/level
 // (Premier League, Championship, League One … and, once wired, the domestic cups),
@@ -30,40 +30,30 @@ function Table({ group }: { group: LiveTableGroup }) {
   return (
     <ResponsiveTable
       compact
+      variant="list"
       className="rounded-lg border"
       style={cardStyle}
       mobileRows={group.rows.map((r, i) => {
         const b = r.badge ? BADGES[r.badge] : undefined;
         return (
-          <div key={i}>
-            <MiniCardHeader
-              left={
-                <span className="inline-flex items-center gap-1.5 min-w-0">
-                  <span className="text-[var(--text-dim)] flex-shrink-0 tabular-nums" style={mono}>{r.rank ?? i + 1}</span>
-                  <CrestIcon name={r.name} size={16} className="flex-shrink-0" />
-                  {r.slug ? <Link href={`/teams/football/${r.slug}`} className="hover:text-[var(--accent)] font-medium truncate">{r.name}</Link> : <span className="font-medium truncate">{r.name}</span>}
-                </span>
-              }
-              right={<span className="tabular-nums font-semibold" style={mono}>{r.cells[7]} pts</span>}
-            />
-            {(b || (r.cup && r.cup.length > 0)) && (
-              <div className="mb-1.5 flex flex-wrap gap-1">
-                {b && <Badge color={{ bg: b.bg, fg: b.fg }}>{b.label}</Badge>}
-                {r.cup && r.cup.length > 0 && (
-                  <Badge color={{ bg: "rgba(139,92,246,0.18)", fg: "#8b5cf6" }}>Cup{r.cup.length > 1 ? ` ×${r.cup.length}` : ""}</Badge>
-                )}
-              </div>
-            )}
-            <div className="grid grid-cols-3 gap-2">
-              <MiniStat label="P" value={r.cells[0]} />
-              <MiniStat label="W-D-L" value={`${r.cells[1]}-${r.cells[2]}-${r.cells[3]}`} />
-              <MiniStat label="GD" value={r.cells[6]} />
-            </div>
-          </div>
+          <RankRow
+            key={i}
+            rank={r.rank ?? i + 1}
+            name={
+              <>
+                <CrestIcon name={r.name} size={15} className="flex-shrink-0" />
+                {r.slug ? <Link href={`/teams/football/${r.slug}`} className="hover:text-[var(--accent)] truncate">{r.name}</Link> : <span className="truncate">{r.name}</span>}
+                {b && <span className="flex-shrink-0"><Badge color={{ bg: b.bg, fg: b.fg }}>{b.label}</Badge></span>}
+              </>
+            }
+            sub={<>{r.cells[0]} P · {r.cells[1]}-{r.cells[2]}-{r.cells[3]} · {typeof r.cells[6] === "number" && r.cells[6] > 0 ? `+${r.cells[6]}` : r.cells[6]} GD</>}
+            right={r.cells[7]}
+            rightSub="pts"
+          />
         );
       })}
     >
-      <table className="w-full text-sm min-w-[480px]">
+      <table className="w-full text-sm min-w-[480px]" data-sticky-col="2">
         <thead>
           <tr className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b" style={{ borderColor: "var(--border)" }}>
             <th className="py-2 text-left font-medium">Pos</th>

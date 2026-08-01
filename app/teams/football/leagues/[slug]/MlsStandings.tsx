@@ -13,7 +13,7 @@ import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import type { MlsStanding } from "@/lib/football";
 import { Tabs } from "@/app/teams/_shared/Tabs";
 import { Badge } from "@/app/teams/_shared/Badge";
-import { ResponsiveTable, MiniStat, MiniCardHeader } from "@/app/teams/_shared/ResponsiveTable";
+import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 
 const MLS_CREST_ALIAS: Record<string, string> = { "LA Galaxy": "Los Angeles Galaxy" };
 
@@ -21,13 +21,13 @@ function TeamCell({ row }: { row: MlsStanding }) {
   const name = row.cur_name;
   const m = monogramForFootball(name, row.slug ?? undefined);
   return (
-    <span className="inline-flex items-center gap-1.5">
+    <span className="inline-flex items-center gap-1.5 min-w-0">
       <TeamCrest
         name={MLS_CREST_ALIAS[name] ?? name}
         size={18}
         fallback={<span className="inline-grid place-items-center rounded-full flex-shrink-0" style={{ background: m.bg, color: m.fg, width: 18, height: 18, fontSize: 8, fontWeight: 700 }} aria-hidden>{m.mono}</span>}
       />
-      {row.slug ? <Link href={`/teams/football/${row.slug}`} className="hover:underline font-medium">{name}</Link> : <span className="font-medium">{name}</span>}
+      {row.slug ? <Link href={`/teams/football/${row.slug}`} className="hover:underline font-medium truncate">{name}</Link> : <span className="font-medium truncate">{name}</span>}
     </span>
   );
 }
@@ -66,39 +66,32 @@ function Honors({ row }: { row: MlsStanding }) {
 function Table({ rows, showConf, showHonors }: { rows: MlsStanding[]; showConf: boolean; showHonors: boolean }) {
   return (
     <ResponsiveTable
+      variant="list"
       className="rounded-xl border"
       style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
       mobileRows={rows.map((r, i) => (
-        <div key={r.cur_name}>
-          <MiniCardHeader
-            left={
-              <span className="inline-flex items-center gap-2 min-w-0">
-                <span className="text-xs tabular-nums text-[var(--text-muted)] w-4 flex-shrink-0">{i + 1}</span>
-                <TeamCell row={r} />
-              </span>
-            }
-            right={<span className="text-sm font-semibold tabular-nums">{r.pts ?? "—"} <span className="text-[10px] font-normal text-[var(--text-dim)] uppercase">pts</span></span>}
-          />
-          {showConf && r.conference && (
-            <div className="mb-1.5 text-[11px] text-[var(--text-dim)]">{r.conference}</div>
-          )}
-          <div className="grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
-            <MiniStat label="W" value={r.w} />
-            <MiniStat label="D" value={r.d} />
-            <MiniStat label="L" value={r.l} />
-            <MiniStat label="GF" value={r.gs} />
-            <MiniStat label="GA" value={r.ga} />
-            <MiniStat label="GD" value={r.gd > 0 ? `+${r.gd}` : r.gd} />
-          </div>
-          {showHonors && (
-            <div className="mt-2">
-              <Honors row={r} />
-            </div>
-          )}
-        </div>
+        <RankRow
+          key={r.cur_name}
+          rank={i + 1}
+          name={
+            <>
+              <TeamCell row={r} />
+              {showHonors && r.mls_cup && (
+                <span className="flex-shrink-0" title="MLS Cup champion"><Badge variant="champion">★ MLS Cup</Badge></span>
+              )}
+              {showHonors && r.supporters_shield && (
+                <span className="flex-shrink-0" title="Supporters' Shield (best regular-season record)"><Badge variant="champion">★ Shield</Badge></span>
+              )}
+            </>
+          }
+          sub={<>{showConf && r.conference ? <>{r.conference} · </> : null}{r.w}-{r.d}-{r.l} · {r.gd > 0 ? `+${r.gd}` : r.gd} GD</>}
+          right={r.pts ?? "—"}
+          rightSub="pts"
+          highlight={r.supporters_shield || r.mls_cup}
+        />
       ))}
     >
-      <table className="w-full min-w-[640px] text-sm tabular-nums">
+      <table className="w-full min-w-[640px] text-sm tabular-nums" data-sticky-col="2">
         <thead>
           <tr className="border-b text-[11px] uppercase tracking-wide" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
             <th className="text-left py-2 px-3 font-medium">#</th>

@@ -33,7 +33,7 @@ import { leagueStatusFor } from "@/lib/leagueStatus";
 import { FootballHero } from "@/app/teams/_shared/FootballHero";
 import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
 import { Badge } from "@/app/teams/_shared/Badge";
-import { ResponsiveTable, MiniStat, MiniCardHeader } from "@/app/teams/_shared/ResponsiveTable";
+import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 
 // api-football league ids for the hub countries' top flights, so the country
 // switcher can default to this hub's own league before falling back to tier 1.
@@ -331,38 +331,28 @@ async function MlsHubView({ hub, clubStandings }: { hub: MlsLeagueHub; clubStand
           <h2 className="text-lg font-semibold mb-3">MLS Cup champions</h2>
 
           <ResponsiveTable
+            variant="list"
             className="rounded-xl border overflow-hidden"
             style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
             mobileRows={finals.map((c) => (
-              <div key={`${c.year}-${c.champion}-card`}>
-                <MiniCardHeader
-                  left={
-                    <span className="inline-flex items-center gap-1.5 min-w-0">
-                      <TeamCrest name={c.champion} size={22} fallback={<ColorBall slug={c.champion_slug ?? ""} name={c.champion} />} />
-                      {c.champion_slug ? (
-                        <Link href={`/teams/football/${c.champion_slug}`} className="hover:underline font-medium truncate">{c.champion}</Link>
-                      ) : (
-                        <span className="font-medium truncate">{c.champion}</span>
-                      )}
-                    </span>
-                  }
-                  right={<span className="text-xs tabular-nums text-[var(--text-muted)]">{c.year}</span>}
-                />
-                <div className="text-xs">
-                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Runner-up</div>
-                  {c.runner_up ? (
-                    <span className="inline-flex items-center gap-1.5 mt-0.5">
-                      <TeamCrest name={c.runner_up} size={18} fallback={<ColorBall slug={c.runner_up_slug ?? ""} name={c.runner_up} />} />
-                      {c.runner_up_slug ? <Link href={`/teams/football/${c.runner_up_slug}`} className="hover:underline">{c.runner_up}</Link> : <span>{c.runner_up}</span>}
-                    </span>
-                  ) : (
-                    <span className="text-[var(--text-dim)]">—</span>
-                  )}
-                </div>
-              </div>
+              <RankRow
+                key={`${c.year}-${c.champion}-card`}
+                rank={c.year}
+                name={
+                  <>
+                    <TeamCrest name={c.champion} size={16} fallback={<ColorBall slug={c.champion_slug ?? ""} name={c.champion} />} />
+                    {c.champion_slug ? (
+                      <Link href={`/teams/football/${c.champion_slug}`} className="hover:underline truncate">{c.champion}</Link>
+                    ) : (
+                      <span className="truncate">{c.champion}</span>
+                    )}
+                  </>
+                }
+                sub={c.runner_up ? <>def. {c.runner_up}</> : undefined}
+              />
             ))}
           >
-            <table className="w-full text-sm">
+            <table className="w-full text-sm" data-sticky-col="2">
               <thead>
                 <tr className="border-b text-[11px] uppercase tracking-wide" style={{ borderColor: "var(--border)", color: "var(--text-muted)" }}>
                   <th className="text-left py-2 px-3 font-medium w-14">Year</th>
@@ -386,20 +376,24 @@ async function MlsHubView({ hub, clubStandings }: { hub: MlsLeagueHub; clubStand
           <h2 className="text-lg font-semibold mb-3">Supporters&apos; Shield winners</h2>
 
           <ResponsiveTable
+            variant="list"
             className="rounded-xl border overflow-hidden"
             style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
             mobileRows={shields.map((s) => (
-              <div key={`${s.year}-${s.winner}-card`} className="flex items-center justify-between gap-2">
-                {s.winner_slug ? (
-                  <Link href={`/teams/football/${s.winner_slug}`} className="hover:underline font-medium truncate">{s.winner}</Link>
-                ) : (
-                  <span className="font-medium truncate">{s.winner}</span>
-                )}
-                <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]">{s.year}</span>
-              </div>
+              <RankRow
+                key={`${s.year}-${s.winner}-card`}
+                rank={s.year}
+                name={
+                  s.winner_slug ? (
+                    <Link href={`/teams/football/${s.winner_slug}`} className="hover:underline truncate">{s.winner}</Link>
+                  ) : (
+                    <span className="truncate">{s.winner}</span>
+                  )
+                }
+              />
             ))}
           >
-            <table className="w-full text-sm">
+            <table className="w-full text-sm" data-sticky-col="2">
               <tbody>
                 {shields.map((s) => (
                   <tr key={`${s.year}-${s.winner}`} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
@@ -484,103 +478,41 @@ function CurrentStandings({
       </h2>
 
       <ResponsiveTable
+        variant="list"
         mobileRows={hub.current_standings.map((s) => {
           const isChamp = s.champion === true || s.place === 1;
-          const cups = cupsBySlug.get(s.slug) ?? [];
-          const euros = europeBySlug.get(s.slug) ?? [];
           return (
-            <div key={`${s.slug}-card`}>
-              <MiniCardHeader
-                left={
-                  <span className="inline-flex items-center gap-2 min-w-0">
-                    <span className="text-xs tabular-nums text-[var(--text-muted)] flex-shrink-0 w-4">{s.place ?? "-"}</span>
-                    <TeamCrest name={s.cur_name} size={22} fallback={<ColorBall slug={s.slug} name={s.cur_name} />} />
-                    <Link href={`/teams/football/${s.slug}`} className="font-medium truncate hover:underline">
-                      {s.cur_name}
-                    </Link>
-                  </span>
-                }
-                right={<span className="text-sm font-semibold tabular-nums">{s.pts ?? "-"} pts</span>}
-              />
-
-              <div className="flex flex-wrap gap-1">
-                <StandingBadges s={s} isChamp={isChamp} />
-              </div>
-
-              <div className="mt-2 grid grid-cols-4 gap-x-3 gap-y-1.5 text-xs">
-                <MiniStat label="P" value={s.matches ?? "-"} />
-                <MiniStat label="W" value={s.w ?? "-"} />
-                <MiniStat label="D" value={s.d ?? "-"} />
-                <MiniStat label="L" value={s.l ?? "-"} />
-                <MiniStat label="GF" value={s.gf ?? "-"} />
-                <MiniStat label="GA" value={s.ga ?? "-"} />
-                <MiniStat label="GD" value={s.gd ?? "-"} />
-              </div>
-
-              {cups.length > 0 && (
-                <div className="mt-2">
-                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Domestic cup</div>
-                  <div className="mt-0.5 flex flex-wrap gap-1">
-                    {cups.map((c, ci) => {
-                      const isWin = c.result === "won";
-                      const shortLabel = c.kind === "major" ? "Cup" : "Lg Cup";
-                      return (
-                        <span key={ci} className="inline-block rounded px-1.5 py-0.5 text-xs font-semibold"
-                              style={{ background: isWin ? "rgba(245,215,110,0.18)" : "transparent", color: isWin ? "#b58900" : "var(--text-muted)", boxShadow: isWin ? undefined : "inset 0 0 0 1px rgba(120,120,140,0.45)" }}>
-                          {isWin ? "★ " : "☆ "}{shortLabel}
-                        </span>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
-
-              {euros.length > 0 && (
-                <div className="mt-2">
-                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">European competition</div>
-                  <div className="mt-0.5 flex flex-wrap gap-1">
-                    {euros.map((e, ei) => {
-                      const isWinner = e.trophy_won;
-                      const isUcl = !!(e.code && (e.code === "CL" || e.code === "CLB"));
-                      const isFinalistLost = !isWinner && e.deepest_rnd === 1;
-                      let bg: string, fg: string, boxShadow: string | undefined, symbol: string | null = null;
-                      if (isWinner && isUcl)        { bg = "rgba(212,175,55,0.22)"; fg = "#d4af37"; symbol = "★"; }
-                      else if (isWinner)             { bg = "rgba(192,192,192,0.20)"; fg = "#c0c0c0"; symbol = "★"; }
-                      else if (isFinalistLost && isUcl) { bg = "transparent"; fg = "#d4af37"; boxShadow = "inset 0 0 0 1px rgba(212,175,55,0.55)"; symbol = "☆"; }
-                      else if (isFinalistLost)        { bg = "transparent"; fg = "#c0c0c0"; boxShadow = "inset 0 0 0 1px rgba(192,192,192,0.55)"; symbol = "☆"; }
-                      else                            { bg = "rgba(120,120,140,0.16)"; fg = "var(--text-muted)"; }
-                      const title = isWinner
-                        ? `${e.competition} winner this season`
-                        : isFinalistLost
-                          ? `${e.competition}: reached final, lost`
-                          : `${e.competition}: ${e.result_label}`;
-                      return (
-                        <span key={ei} className="inline-block rounded px-1.5 py-0.5 text-xs font-semibold tracking-wide"
-                              style={{ background: bg, color: fg, boxShadow }} title={title}>
-                          {symbol && <span aria-hidden className="mr-0.5">{symbol}</span>}
-                          {europeanCompDisplayCode(e.code, s.year ?? null)}
-                        </span>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
-
-              {s.eur_qual && (
-                <div className="mt-2">
-                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Eur qual (next yr)</div>
-                  <span title="Qualified for this European competition next season" className="inline-block mt-0.5">
-                    <Badge color={{ bg: "rgba(59,130,246,0.18)", fg: "#3b82f6" }}>
-                      {europeanCompDisplayCode(s.eur_qual, s.year === null ? null : s.year + 1)}
-                    </Badge>
-                  </span>
-                </div>
-              )}
-            </div>
+            <RankRow
+              key={`${s.slug}-card`}
+              rank={s.place ?? "-"}
+              name={
+                <>
+                  <TeamCrest name={s.cur_name} size={16} fallback={<ColorBall slug={s.slug} name={s.cur_name} />} />
+                  <Link href={`/teams/football/${s.slug}`} className="truncate hover:underline">
+                    {s.cur_name}
+                  </Link>
+                  {isChamp && <span title="Champion" aria-label="Champion" className="flex-shrink-0 leading-none" style={{ color: "#f5b301" }}>★</span>}
+                  {s.promoted && (
+                    <span className="flex-shrink-0">
+                      <Badge color={{ bg: "rgba(34,197,94,0.16)", fg: "#22c55e" }}>{s.playoffs ? "Promoted (PO)" : "Promoted"}</Badge>
+                    </span>
+                  )}
+                  {s.relegated && (
+                    <span className="flex-shrink-0">
+                      <Badge color={{ bg: "rgba(220,38,38,0.16)", fg: "#dc2626" }}>{s.playoffs ? "Relegated (PO)" : "Relegated"}</Badge>
+                    </span>
+                  )}
+                </>
+              }
+              sub={<>{s.matches ?? "-"} P · {s.w ?? "-"}-{s.d ?? "-"}-{s.l ?? "-"} · {s.gd != null ? (s.gd > 0 ? `+${s.gd}` : s.gd) : "-"} GD</>}
+              right={s.pts ?? "-"}
+              rightSub="pts"
+              highlight={isChamp}
+            />
           );
         })}
       >
-        <table className="w-full text-sm">
+        <table className="w-full text-sm" data-sticky-col="2">
           <thead>
             <tr
               className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b"
@@ -756,40 +688,41 @@ function AllTimeChampions({ hub }: { hub: FootballLeagueHub }) {
         <h3 className="text-sm font-semibold mb-2">Chronological (most recent first)</h3>
 
         <ResponsiveTable
+          variant="list"
           mobileRows={sortedChamps.map((ch, i, arr) => {
             const showBreak = breakYear && ch.year === breakYear &&
               (i === 0 || arr[i - 1].year !== breakYear);
             return (
               <div key={`${ch.year}-${i}-card`}>
                 {showBreak && (
-                  <div className="mb-2 pb-2 text-center text-[10px] uppercase tracking-wider text-[var(--text-muted)]"
+                  <div className="px-3 py-1.5 text-center text-[10px] uppercase tracking-wider text-[var(--text-muted)]"
                        style={{ borderBottom: "2px solid var(--border)" }}>
                     {hub.league} era begins
                   </div>
                 )}
-                <div className="flex items-start justify-between gap-2">
-                  <div className="flex items-center gap-2 min-w-0">
-                    <TeamCrest name={ch.champion} size={22} fallback={<ColorBall slug={ch.champion_slug} name={ch.champion} />} />
-                    <div className="min-w-0">
-                      <Link href={`/teams/football/${ch.champion_slug}`} className="hover:underline font-medium truncate block">
+                <RankRow
+                  rank={ch.year ?? "-"}
+                  name={
+                    <>
+                      <TeamCrest name={ch.champion} size={16} fallback={<ColorBall slug={ch.champion_slug} name={ch.champion} />} />
+                      <Link href={`/teams/football/${ch.champion_slug}`} className="hover:underline truncate">
                         {ch.champion}
                       </Link>
-                      {ch.champion_team && ch.champion_team !== ch.champion && (
-                        <span className="text-[var(--text-muted)] text-xs">as {ch.champion_team}</span>
-                      )}
-                    </div>
-                  </div>
-                  <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]">{ch.year ?? "-"}</span>
-                </div>
-                <div className="mt-1.5 text-xs text-[var(--text-muted)]">
-                  {ch.league_name}
-                  {ch.format === "playoff" && <span className="ml-1 italic">(playoff)</span>}
-                </div>
+                    </>
+                  }
+                  sub={
+                    <>
+                      {ch.champion_team && ch.champion_team !== ch.champion ? <>as {ch.champion_team} · </> : null}
+                      {ch.league_name}
+                      {ch.format === "playoff" ? " (playoff)" : ""}
+                    </>
+                  }
+                />
               </div>
             );
           })}
         >
-          <table className="w-full text-sm">
+          <table className="w-full text-sm" data-sticky-col="2">
             <thead>
               <tr
                 className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b"
