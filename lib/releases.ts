@@ -18,6 +18,25 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-07-29",
+    headline: "Club rankings reach back to 2006-07, cup matches included",
+    items: [
+      "The completed-season hubs now reach back to 2006-07: seven seasons from 2006-07 through 2012-13 join the run, each with country coefficients, round-by-round Europe, every league table and the cup finals.",
+      "Every season's power ranking now covers its full top-flight field. Clubs from leagues without match-by-match data are folded in from their final tables, so a season ranks around 700 clubs, not a partial few hundred.",
+      "A club's season record now folds in its domestic cup, super cup and intercontinental matches alongside league and Europe, and cup winners earn a trophy bonus, so results reflect the whole campaign.",
+      "The era's biggest winners lead their seasons: AC Milan in 2006-07, Manchester United in 2007-08, Barcelona's 2008-09 treble and Bayern Munich's 2012-13 treble.",
+    ],
+  },
+  {
+    date: "2026-07-28",
+    headline: "Champions starred, and Europe told round by round",
+    items: [
+      "Every domestic league table across the completed-season hubs now marks its champion with a gold star, from the top five leagues down to the smallest.",
+      "Each hub's European and continental competitions are retold round by round, final first, with qualifying, group and knockout stages laid out clearly.",
+      "Club names across those tables now appear in their canonical modern form for consistency.",
+    ],
+  },
+  {
     date: "2026-07-27",
     headline: "Completed-season club football hubs, a decade deep, with trends",
     items: [

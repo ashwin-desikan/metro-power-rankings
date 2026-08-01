@@ -16,6 +16,10 @@ def yr(lab): return int(lab[:4])
 SLUG = json.load(open(os.path.join(DD, "slug-lookup.json"), encoding="utf-8")) if os.path.exists(os.path.join(DD, "slug-lookup.json")) else {}
 def ntn(s): return re.sub(r"[^a-z0-9]+", " ", (s or "").lower()).strip()   # mirrors lib/football normalizeTeamName
 def resolve_slug(name, lookup): return SLUG.get(ntn(lookup)) or SLUG.get(ntn(name))
+# Merge defunct UEFA nations into their modern successor for the cross-season country race, so the
+# line runs continuously (Russia carries the Soviet years, Serbia the Yugoslav years, Czech Republic
+# the Czechoslovak years). The per-hub country table keeps the historical label; only the race merges.
+SUCCESSOR = {"Soviet Union": "Russia", "Yugoslavia": "Serbia", "Czechoslovakia": "Czech Republic"}
 
 hubs = sorted(glob.glob(os.path.join(DD, "hub-*.json")))
 seasons, countries, clubs = [], {}, {}
@@ -23,9 +27,22 @@ for p in hubs:
     h = json.load(open(p, encoding="utf-8"))
     lab = h["season"]; seasons.append(lab)
     for c in h.get("countries", []):
-        countries.setdefault(c["country"], {})[lab] = {"rank": c["rank"], "coef": round(float(c["coef"]), 2)}
+        cname = SUCCESSOR.get(c["country"], c["country"])
+        prev = countries.setdefault(cname, {}).get(lab)
+        # On a transition season both the old and new name can appear; keep the better (lower) rank.
+        if prev is None or c["rank"] < prev["rank"]:
+            countries[cname][lab] = {"rank": c["rank"], "coef": round(float(c["coef"]), 2)}
     for c in h.get("clubs", []):
-        d = clubs.setdefault(c["name"], {"name": c["name"], "country": c.get("country"), "lookup": c.get("lookup"), "pts": {}})
+        # Key the cross-season aggregation on the RESOLVED SLUG (the club-page identity), not the
+        # display name — clubs[].name is now the season name (e.g. "Wimbledon" pre-2004) and keying on
+        # it would split a renamed club into two timelines. Slug is stable across name changes AND the
+        # 2012-13/2013-14 generator boundary; fall back to lookup/name only when a club is unresolved.
+        # The display label is refreshed each hub so the most recent season's name wins (hubs globbed
+        # chronologically), giving aggregate surfaces the club's current name.
+        sl = resolve_slug(c["name"], c.get("lookup"))
+        key = sl or c.get("lookup") or c["name"]
+        d = clubs.setdefault(key, {"name": c["name"], "country": c.get("country"), "lookup": c.get("lookup"), "slug": sl, "pts": {}})
+        d["name"] = c["name"]
         d["pts"][lab] = {"rank": c["rank"], "score": round(c["score"], 3), "form": round(c["form"], 3), "ped": round(c["ped"], 3), "tb": round(c.get("tb", 0), 3)}
 seasons = sorted(set(seasons), key=yr)
 live = "2026-27"
@@ -43,10 +60,10 @@ for c in keep:
     country_out.append({"country": c, "series": ser, "latestRank": countries[c].get(country_seasons[-1], {}).get("rank", 99)})
 country_out.sort(key=lambda x: x["latestRank"])
 club_out = []
-for name, d in clubs.items():
+for key, d in clubs.items():
     best = min((v["rank"] for v in d["pts"].values()), default=99)
     if best <= 20:
-        club_out.append({"name": name, "country": d["country"], "lookup": d.get("lookup"), "best": best,
+        club_out.append({"name": d["name"], "country": d["country"], "lookup": d.get("lookup"), "best": best,
                          "series": [dict(season=lab, **d["pts"][lab]) for lab in seasons if lab in d["pts"]]})
 club_out.sort(key=lambda x: x["best"])
 json.dump({"seasons": seasons, "countrySeasons": country_seasons, "countries": country_out, "clubs": club_out},
@@ -55,8 +72,8 @@ json.dump({"seasons": seasons, "countrySeasons": country_seasons, "countries": c
 # ---- per-club rank/score history, keyed by club-page slug ----
 hist = {}
 unresolved = 0
-for name, d in clubs.items():
-    slug = resolve_slug(d["name"], d.get("lookup"))
+for key, d in clubs.items():
+    slug = d.get("slug")
     if not slug:
         unresolved += 1; continue
     h = hist.setdefault(slug, {})

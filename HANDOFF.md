@@ -640,3 +640,73 @@ Mapping: **95.9% of club slots** auto-resolved to canonical via Lookup **UEFA Na
 1. **Reconcile the 215:** apply the 119 high-confidence UEFA Names in Lookup (17 as UEFA Name 2), verify the single-season ones, hand-map the 95 leftovers; then re-sync + re-parse + reload and confirm the match rate climbs toward ~99%.
 2. **Wire the ranking to the archive?** The original motivation was to compute the per-year team ranking score from a durable match store instead of the ephemeral `scripts/apifootball/_scratch/uefahub*.json` bundles. `build_season_hub.py`'s form calc still reads those bundles — decide whether to repoint it at `eur_competition_matches`.
 3. Housekeeping: Supabase advisory flags RLS disabled on 8 pre-existing tables (`football_*_bak*`, `cl_league_history`, `uefa_team_coeff_history`, `football_team_alias`) — readable with the anon key; enable RLS + policies when convenient. Not introduced by this work; the new table has RLS on.
+
+## 2026-07-29 — mini → windows (retired wc2026-daily — World Cup is over)
+
+Ashwin flagged the daily WC2026 sim still running. The final was 2026-07-19; it's now 07-29, so it's been committing "daily sim + live odds refresh" for a concluded tournament (its bracket final even still shows "Winner Match 101" placeholders — the daily runs weren't resolving anything). **Retired it:** booted out `com.citizenofnowhere.wc2026-daily`, removed the live plist + the `~/metro-mini-jobs` symlink, PAUSED its healthchecks tile (so it doesn't false-alert as down), moved the wrapper + plist to `mac-mini-jobs/retired/` (out of the §7 bootstrap glob so a rebuild won't reload it), and dropped it from the runbook (19→18 agents). The `wc2026-daily.yml` Action cron stays disabled; the WC data files stay committed as the historical record. If you want a WC2030 job later, `retired/` has the template.
+
+Full job audit done: everything else maps to a live season / always-current dataset. `gap-league-watch` is the next natural retirement — once the remaining pending leagues publish 2026-27 (or clearly won't), it becomes a no-op.
+
+
+## 2026-07-30 — windows → next session (completed-season club hubs extended back to 1999-00; cup-match + coefficient archive gaps closed; season-hub UX)
+
+Large football session. All committed and pushed as ONE real build (app/ + build-time hub JSON). Nothing left parked. Full `npm run verify` green (exit 0, 261s, 4852 pages) on the committed tree.
+
+### A. NEW HUBS — seven completed seasons added: 1999-00 … 2005-06
+`gen_hub_early.py` (already built 2006-13 from Supabase `cl_league_history` + kassiesa + coefficient text files, NOT api-football) extended back to 1999-00. Each new `hub-YYYY-YY.json` + route `app/teams/football/<season>/page.tsx`; wired into `SEASONS_CHRON` (SeasonHub pager), the seasons index, the football landing "Past seasons" list, and `build_trends.py` (auto-globs — The Belt / boards / club-history now span 1999-2025). Feasibility was gated on data existing for every section; it did. Provenance: tables/universe/champions/end_year = Supabase `cl_league_history` (via `dump_cl_rows.py`, `cl_rows.json` now 1999-2013); continental round-by-round + trophies = "Eur RndbyRnd" workbook via NEW `build_continental_early.py` merging into `continental_rbr.json` (1999-00 carries BOTH the Intercontinental Cup and the first FIFA Club World Championship); European form = kassiesa `_kassiesa_all_rows.json.gz`; country/club coefficients = the era's method from `uefacountrycoeff_history.txt` / `uefateamcoeff_1956_2009.txt`; cups + trophy bonus = Cup History workbook + `cupresults93_23_primary.txt`.
+
+### B. TWO ARCHIVE-PARSING FIXES (official data, not reconstruction)
+1. 1995-1998 country coefficients live under "(method=1)" headers the parser skipped → `parse_country_coeff` regex made method-tolerant (additive; method pages exist ONLY for 1995-1998, so 1999+ untouched).
+2. 1996-1998 team-coeff pages are 9-col vs 10-col later; both put Team in col 1 and season Total in col 7 → `build_ccf` now reads those fixed columns (was negative-index, only aligned to 10-col). Also seeds pre-2008 clubs absent from the modern `club_coeff_full` (AC Parma etc.) and a minimal transliteration union (Dinamo Kiev ↔ Dynamo Kyiv, `_TRANSLIT` in gen_hub_early.py) so 1990s romanization drift doesn't orphan pedigree.
+
+### C. CUP MATCHES NOW COUNT PRE-2007 (fixes understated game counts)
+`extract_cup_fixtures.py` WANT was 2007+; source `cupresults93_23_primary.txt` goes to 1993. Extended to 2000-2025 (regenerated `cupfix_2007_2023.json`) and rebuilt all seven early hubs, so domestic-cup matches feed games/record/form exactly as 2006-07+. Chelsea 2000-01 went 40 → 45. Adding cup form shifts a few ranks (e.g. 1999-00 now Bayern — domestic double + CL semi — over CL-winner Real, who finished 5th in La Liga; consistent with the model being a holistic power ranking, not a CL-winner ranking).
+
+### D. FRONTEND (SeasonHub.tsx + charts)
+- Champion trophy badges: fixed a double-listing (continental "Super Cup" + cups "UEFA Super Cup" survived Set-dedup as different strings) by routing the trophy loop through the already-deduped `domesticCups`; UEFA Cup keeps its name (was mangled to "Cup" by the UEFA-prefix strip).
+- Champions League 1999-2003 continental view now labels the TWO group stages ("First/Second group stage") instead of "Round of 16" — scoped to CL (ucl) in that window only; UEFA Cup keeps knockout labels. `CONT_ROUNDS(season, section)`.
+- Trends chart (`SeasonTrends`) + club power-ranking history (`ClubHistoryChart`) x-axes thinned to half-decade labels (99/00, 04/05, …), decade fallback if crowded; all data points still render.
+- Sticky season bar in SeasonHub: keeps the season label + section jump-links pinned below the fixed site header (`top-14`; header measures 61px) while scrolling. Replaced the old static `HubNav` usage here (HubNav.tsx untouched, still used by other sports hubs).
+- Folded in the earlier parked batch too: double trophy-bonus score fix (`regen_shipped_clubs.py` → hub-2013-14…2025-26 regenerated), best-of-the-rest filter + two awards, symmetric biggest-riser, `SeasonSnapshot`/`SeasonSuperlatives`, RankingTable Δrank, MLS combined-standings ordering, collapsed per-country team lists, live-feed 2026-27 map/tables + league-cup labels.
+
+### Known limitations / next
+1. Pre-2007 hubs: big-8 domestic form is the aggregate standings path (no per-match `domfix` before 2007); cup + European form ARE per-match. Noted, not a data gap.
+2. A few deep-history mid-tier clubs show ped=0 where they genuinely had little UEFA coefficient in the window (correct); if more 1990s romanization variants surface, extend `_TRANSLIT` in gen_hub_early.py.
+3. Supabase RLS advisory (8 tables: `cl_league_history`, `uefa_team_coeff_history`, `football_team_alias`, 5 `football_*_bak*`) still open — enable-RLS + read-policy SQL was drafted and delivered to Ashwin in chat, NOT applied and NOT committed; awaiting his go-ahead.
+
+
+## 2026-07-31 — windows → next session (completed-season hubs pushed back to 1959-60; real pre-93 cup data; German pre-Bundesliga coverage; ranking-model rebalance + one Ajax one-off)
+
+Very large football session, continuing 07-30. Everything committed and pushed as ONE real build (`0414e1dc2`, no `[vercel skip]` — build-time hub JSON). Full `npm run verify` green (exit 0, 4892 static pages, 26/26 tests) on the committed tree. This HANDOFF entry is a separate `[vercel skip]` docs commit.
+
+### A. HUBS EXTENDED TO 1959-60 (all 40 seasons 1959-60 … 1998-99 now exist)
+`gen_hub_early.py` `SEASONS` runs 1959-60..2012-13 (`_mk_season(end)` generator for the regular pre-92/93 pattern + explicit 1992-2013). Route pages `app/teams/football/<season>/page.tsx` for every year down to 1959-60; wired into SEASONS_CHRON, the seasons index, the landing "Past seasons" list, and `build_trends.py` (auto-globs). Defunct nations map to successors in the country race only (`build_trends.SUCCESSOR`: Soviet Union→Russia, Yugoslavia→Serbia, Czechoslovakia→Czech Republic; East Germany standalone); per-hub country tables keep the historical label.
+
+### B. EUROPEAN-BAN COEFFICIENT IMPUTATION — split levers (recalibrated from an earlier over-correction)
+Post-Heysel England ban (1985-90) and Russia ban (2022+). A flat carry-forward of the pre-ban coefficient over-rewarded locked-out sides (Liverpool 1988-89 briefly hit #1). Fixed with TWO levers: `BAN_DECAY_TEAM=0.6` fades the **team** coefficient (European pedigree) geometrically through the ban; the **country** coefficient (domestic-league strength) is held flat (`BAN_DECAY_COUNTRY=1.0`). Net: the best English side is #1-5 in the early ban years (real trailing pedigree still in the 5-yr window) and settles ~#7-8 once the window is all lockout. Same split applied to Russia in `regen_shipped_clubs.py` (Zenit holds ~#40-65, not cratered).
+
+### C. REAL PRE-1993 DOMESTIC-CUP FORM (replaces the imputed nudge, per nation)
+- **England FA + League Cup 1959-92** — `build_eng_cups.py` parses `fa_league_cups.txt` → `eng_cups_pre93.json` (19,492 club-match rows). **NB the raw `fa_league_cups.txt` is 18.7 MB and is gitignored** (see `.gitignore`); the compact artifact + builder are committed. Keep the raw file locally to re-parse.
+- **Germany DFB-Pokal 1960-92** — `build_de_cups.py` parses `dfbpokal6092.txt` → `dfb_cups_pre93.json` (2,178 matches). Human-readable results dump; German umlaut/eszett name resolver + a curated `ALIAS` map (Bayern Muenchen→Bayern Munich, Bayer Uerdingen→KFC Uerdingen, …). Penalty-shootout lines skipped (the aet draw already counts); walkovers skipped.
+- Both artifacts merged into `core["natcup"]` (rows tagged by country) and fed through the SAME opponent-weighted `result()` engine as the 1993+ `cupfix`. The pre-93 imputation block now skips a nation only when real cup rows exist for it that season (`real_cup_countries`), so the other leagues stay on imputation. cupfix already covers 1992-93+, so no double-count.
+
+### D. PRE-BUNDESLIGA GERMAN COVERAGE 1959-60..1962-63 (Germany had ZERO clubs there before)
+`build_de_champ.py` parses `germanoberliga6063.txt` (Wikipedia dump) → `de_champ_5963.json`: per season the champion, the ~9 German Championship qualifiers (canonical-matched, full regional Oberliga W/D/L + championship-group record), and every canonical German club's Oberliga record. `gen_hub_early.main()` injects the qualifiers into the universe PLUS any German club that played that season's European competition but wasn't a current qualifier (so the reigning champion in the European Cup isn't missing — **Eintracht Frankfurt, 1960 EC finalist, now #9 in 1959-60**). Two form buckets weighted by `OBERLIGA_OPP_STR=0.4` (regional league, weak opponents) and `CHAMP_OPP_STR=0.85` (championship group, elite). Calibrated so champions land ~#10-26.
+
+### E. NAME DISPLAY — season name in BOTH standings and the club power ranking
+Standings and the club power ranking now display the name a club used THAT season (e.g. "Wimbledon" pre-2004), joined on the canonical name; `lookup` stays canonical. `build_trends.py` re-keyed to aggregate on the **resolved slug** (not the display name), so a renamed club keeps ONE continuous timeline and the most-recent name labels aggregate surfaces. Applied in both generators.
+
+### F. RANKING-MODEL REBALANCE (Ashwin flagged 60s/70s distortions)
+- **Country coefficient over-weighted the form term.** A temporarily dominant league inflated EVERY one of its clubs' domestic form (7 Spanish sides in the 1961-62 top 10). `CF_WEIGHT` 0.5→0.4 (opponent strength = CF_WEIGHT·country factor + (1-CF_WEIGHT)·own pedigree). Ashwin chose "country coefficient only" here after seeing that this alone does NOT fix the actual-EC-winner-not-#1 pattern (that's the trophy/pedigree levers — see next).
+- **Pedigree was a lone-outlier.** `fiveN` divided by the single MAX window, so an exceptionally sustained club (Gladbach 1975-79) sat at 1.0 ~0.3 clear of the field and rode it to #1 with 14 losses in 1979-80. Now normalized by the **mean of the top-6 windows** (`PED_TOPK=6`, cap 1.0): the elite bunch near the top, pedigree spreads. 1979-80 is now Bayern (perfect form, Bundesliga champs) #1, Gladbach #2. Modern era intact (Barça 2011-12, PSG 2024-25).
+- **Editorial one-off** (`MANUAL_TB`, keyed by (season, canonical)): Ajax 1994-95 **+0.05** → #1 (Champions League winners, one loss all season). NB factual note: Ajax 1971-72 (40-5-1) ALSO won the European Cup with one loss and is already #1 that year — so 1994-95 is one of two, not unique.
+
+### Files
+`gen_hub_early.py`, `regen_shipped_clubs.py`, `build_trends.py`, new `build_eng_cups.py` / `build_de_cups.py` / `build_de_champ.py`; artifacts `eng_cups_pre93.json`, `dfb_cups_pre93.json`, `de_champ_5963.json`, small raw `dfbpokal6092.txt` / `germanoberliga6063.txt` (tracked); `app/teams/football/*` route pages + `SeasonHub/SeasonTrends/SeasonSuperlatives/seasons` + `_shared/clubColors.ts`; all `hub-*.json` 1959-2025.
+
+### Open threads / next session — PICK UP HERE
+1. **The "actual European champion isn't #1" pattern is deliberately still open.** Forest 1978-79 (#2) & 1979-80 (#3), Liverpool 1980-81 (#2), Red Star 1990-91 all lose #1 to form+pedigree. Ashwin chose the minimal country-coef fix + the single Ajax one-off rather than fixing this globally. The knobs are IN PLACE and documented if he wants to revisit: `TOP_TROPHY_BONUS` (European Cup/CL winner bonus, currently 0.10 — raising to ~0.13-0.15 lifts every real winner at once) and `PED_WEIGHT` (0.35). My advice logged in chat: prefer the global `TOP_TROPHY_BONUS` nudge over a growing list of `MANUAL_TB` one-offs. Red Star 1990-91 is the strongest remaining candidate if he wants another one-off.
+2. **Keep the two generators in sync.** `CF_WEIGHT`, `PED_TOPK`, `BAN_DECAY_TEAM` are duplicated in `gen_hub_early.py` AND `regen_shipped_clubs.py` (2013-26). Change both together or the 2012-13/2013-14 boundary gets a seam.
+3. **Local dev caches.** `lib/football.ts` caches `club-history.json` etc. in module-level vars loaded once per process — a running `npm run dev` shows STALE data after a hub regen until restarted. (This is what made Arsenal 1989-80 look like #435 mid-session.)
+4. **Raw `fa_league_cups.txt` (18.7 MB) is gitignored.** Present locally now; needed only to re-run `build_eng_cups.py`.
+5. Pending from 07-30 still open: Supabase RLS advisory (8 tables) — SQL drafted, not applied; awaiting Ashwin.

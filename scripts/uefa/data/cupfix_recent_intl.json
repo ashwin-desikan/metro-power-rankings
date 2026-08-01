@@ -1,0 +1,16 @@
+{
+  "2024": [
+    {"cur": "Manchester City", "opp": "Sevilla FC", "gf": 1, "ga": 1, "comp": "UEFA Super Cup", "wdl": "W"},
+    {"cur": "Sevilla FC", "opp": "Manchester City", "gf": 1, "ga": 1, "comp": "UEFA Super Cup", "wdl": "L"},
+    {"cur": "Manchester City", "opp": "Urawa Red Diamonds", "gf": 3, "ga": 0, "comp": "FIFA Club World Cup", "wdl": "W"},
+    {"cur": "Manchester City", "opp": "Fluminense", "gf": 4, "ga": 0, "comp": "FIFA Club World Cup", "wdl": "W"}
+  ],
+  "2025": [
+    {"cur": "Real Madrid", "opp": "Atalanta", "gf": 2, "ga": 0, "comp": "UEFA Super Cup", "wdl": "W"},
+    {"cur": "Atalanta", "opp": "Real Madrid", "gf": 0, "ga": 2, "comp": "UEFA Super Cup", "wdl": "L"}
+  ],
+  "2026": [
+    {"cur": "Paris Saint-Germain", "opp": "Tottenham Hotspur", "gf": 2, "ga": 2, "comp": "UEFA Super Cup", "wdl": "W"},
+    {"cur": "Tottenham Hotspur", "opp": "Paris Saint-Germain", "gf": 2, "ga": 2, "comp": "UEFA Super Cup", "wdl": "L"}
+  ]
+}

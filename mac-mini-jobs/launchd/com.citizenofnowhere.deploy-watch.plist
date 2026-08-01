@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Vercel deploy auto-heal. Every 10 min: reconcile the newest build-triggering
+     commit on main against what production actually serves (/deployed), and
+     re-trigger a build if one was canceled by a concurrent [vercel skip] data
+     push. Runs the repo wrapper directly through hc-run.sh for a healthchecks tile.
+     Install:  cp this plist to ~/Library/LaunchAgents/ ; launchctl bootstrap it. -->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.citizenofnowhere.deploy-watch</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-lc</string>
+    <string>exec "$HOME/metro-mini-jobs/hc-run.sh" deploy-watch /bin/bash "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-deploy-watch.sh"</string>
+  </array>
+  <key>StartInterval</key>
+  <integer>600</integer>
+  <key>StandardOutPath</key>
+  <string>/tmp/deploy-watch.out</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/deploy-watch.err</string>
+</dict>
+</plist>

@@ -1,0 +1,137 @@
+UEFA Coefficients calculation method
+UEFA European Cup Football
+by Bert Kassies
+For history and details of the calculation method see below.
+
+
+UEFA coefficients are based on the performance of clubs in the European Cups during a five year period. During those 5 years match results (2 points for a win and 1 point for a draw) are awarded from the group stage onwards of the Champions League (CL), the Europa League (EL), and the Conference League (CO). However, in the knockout round play-offs, match results do count for the country ranking but not for the club ranking.
+
+In addition bonus points are allocated for reaching the round of 16, the quarter finals, the semi finals and the finals. For each stage in CL the bonus is 1.5 point, for each stage in EL the bonus is 1 point, and for each stage in CO the bonus is 0.5 point.
+
+Furthermore there are bonus points for the final ranking of the league stage. Clubs at ranks between 1-9, 9-17, 17-25 get bonus points on a linear scale between the indicated ranks. Clubs between rank 25-36 get the same bonus points as those at rank 25.
+
+Bonus points	CL	EL	CO
+League Stage winner	12	6	4
+League Stage rank 9	10	4	2
+League Stage rank 17	8	2	1
+League Stage rank 25	6	0	0
+Round of 16, Quarter Final, Semi Final and Final each	1.5	1.0	0.5
+Max bonus points per club	18	10	6
+Max match points	CL	EL	CO
+League Stage	16	16	12
+Round of 16, Quarter Final, and Semi Final each	4	4	4
+Final	2	2	2
+Max total match and bonus points per club	48	40	32
+Matches in qualifying rounds are awarded with 1 point for a win, and 0.5 point for a draw, but only for the country coefficient. Clubs that are eliminated in qualifying rounds of the Conference League are rewarded with a number of points for the club coefficient based on the reached (qualifying) round.
+
+UEFA Country Ranking
+For the calculation of the country ranking, points in qualification matches are halved: one point for a win and half a point for a draw.
+The so-called UEFA coefficients are calculated by taking an average, based on the total number of points divided by the total number of clubs of each country. See the country coefficients of 2020 for an example of such a calculation.
+
+The UEFA country ranking is computed by the sum of 5 coefficients in the last 5 years. See the country ranking of 2020 for an example of such a ranking list. To determine the participants in UEFA European club football last year's country ranking is used, because each country should know at the start of the season how many places it disposes. If countries (or clubs) have the same amount of points then the ranking is determined by the most recent season in which the yearly coefficients differ.
+
+UEFA Club Ranking
+The most recent club ranking is used for seeding of clubs for draws in the Champions League and the Europa League. For the club ranking match results in qualifying rounds do not count, but clubs get qualifying points in case they don't qualify for the group stage.
+Clubs that are eliminated in qualifying rounds and play-offs of the Conference League are rewarded with a number of points based on the reached (qualifying) round:
+Qualifying points Conference League
+CO-Q1	1.00
+CO-Q2	1.50
+CO-Q3	2.00
+CO-PO	2.50
+Qualifying points EL and CO league stages
+CO-LS	2.50 (minimum)
+EL-LS	3.00 (minimum)
+These qualification points are not cumulative. The group stage of the Champions League is already rewarded with bonus points (see above). The points for the group stages of the Europa League and the Conference League are a minimum and will not be added to the match points obtained during the group stage. So, all participating clubs get at least some bonus points, qualification points, or match points.
+
+Since 2018 the UEFA club ranking is computed by the sum of club points in the last 5 years, with a minimum of 20% of the country ranking. For the distribution of revenue there is also a 10-year club ranking, similar to the 5-year ranking. Since 2024 this 10-year club ranking no longer includes historic title points.
+History of the calculation of the UEFA Coeffcients
+In 2024 the introduction of the League Stage led to changes in the distribution of the bonus points.
+Bonus points before 2024
+One bonus point was allocated for reaching the quarter finals (but not for ECL-QF), the semi finals and the finals. Qualification for the group-stage of the Champions League was awarded with 4 bonus points, qualification for the round of 16 of the Champions League was awarded with 5 bonus points, and qualification for the round of 16 of the Europa League was awarded with 1 bonus point.
+Furthermore there were bonus points for the winners and runners-up of the EL and ECL group stages: 4 bonus points for the winners of the EL groups, 2 bonus points for the runners-up of the EL groups, 2 bonus points for the winners of the ECL groups, and 1 bonus point for the runners-up of the ECL groups.
+
+Before 2024 the 10-year UEFA club ranking included historic title points:
+TITLE POINTS	CL/CC	EL/UC/CWC
+Last 5 years	12	3
+From 1992/93	8	2
+Before 1992/93	4	1
+In 2021 the introduction of the Europa Conference League led to changes in the distribution of bonus points and qualification points.
+
+Bonus points before 2021
+Before 2021 there were no bonus points for the qualification for the round of 16 of the Europa League, and also not for the winners and runners-up of the EL group stages.
+From 2004-2009 qualification for the group-stage of the Champions League was awarded with 3 bonus points, from 1995-2004 with 1 bonus point, and before 1995 with 2 bonus points.
+From 2004-2009 qualification for the round of 16 of the Champions League was awarded with 1 bonus point, and before 2004 no bonus points were awarded.
+Country ranking
+Before 1999 the usual two points for a win and one point for a draw were also used in qualifying rounds.
+Club ranking
+From 2018 till 2021 qualifying rounds and play-offs of the Champions League were no longer rewarded with points because all eliminated clubs got a second chance in the Europa League. Clubs that were eliminated in the first rounds of the Europa League were rewarded with a number of points based on the reached (qualifying) round:
+2018-2021	Europa League
+P	0.50
+Q1	1.00
+Q2	1.50
+Q3	2.00
+Q4	2.50
+group stage	3.00 (minimum)
+From 2009 till 2018 the qualification for the Champions League and the Europa League was rewarded with a number of points based on the reached qualifying round. The 3rd and 4th qualifying round of the Champions League were not rewarded with points because losing clubs qualifed for the next stage in the Europa League.
+2009-2018	Champions League	Europa League
+Q1	0.50	0.25
+Q2	1.00	0.50
+Q3	-	1.00
+Q4	-	1.50
+group stage	-	2.00 (minimum)
+Before 2018 the UEFA club coefficients were calculated as the sum of the number of points of each individual club, and 20% of the country coefficient. From 2004-2008 the contribution of the country coefficient was 33%, and before 2004 the contribution of the country coefficient was 50%. The UEFA club ranking was then computed by the sum of 5 coefficients in the last 5 years.
+
+Before 1999 a number of strong clubs in the UEFA Cup were seeded such that those clubs did not meet in the first two rounds. To determine these clubs, the sum of the ratio of the number of points achieved, divided by the number of games played by each club, was calculated for the past five years.
+
+2020 - COVID-19 special rules
+Due to the coronavirus European football was interrupted in March 2020, and was resumed in August 2020 with mostly one-sided legs at neutral ground. Also the qualifying matches of the 2020/21 season (except the play-off round of the Champions league) were played as single-leg matches where a draw determined the home playing club.
+For these single-leg matches the calculation of coefficients were adapted as follows:
+- 3 points for a win in regular time or extra time (1.5 points for qualifying and play-off matches),
+- 2 points for a draw in extra time (1 point for qualifying and play-off matches),
+- 1 point for a defeat in regular time or extra time (0.5 points for qualifying and play-off matches).
+
+Details of the calculation of the UEFA Coeffcients
+Definition of terms.
+nclubs = number of clubs per country,
+tpoints = number of points per club (club coefficient method),
+tmatches = number of matches per club, and
+cpoints = number of points per country (country coefficient method).
+
+ccoef = country coefficient per year,
+crank = country ranking over 5 years,
+tcoef = club coefficient per year, and
+trank = club ranking over 5 years.
+1. Country Coefficients and Country Ranking
+ccoef = rounddown(cpoints/nclubs, 3)
+crank = sum(ccoef);
+2. Club Coefficients and Club Ranking
+from 2018:
+trank = max ( tpoints, rounddown( crank / 5 , 3) )
+10-year trank = max ( tpoints + title points, rounddown( 10year-crank / 5 , 3) )
+from 2009:
+tcoef = 0.20 * rounddown(cpoints/nclubs, 3) + tpoints = ccoef / 5 + tpoints
+trank = rounddown(sum(tcoef) , 3)
+from 2004 until 2008:
+tcoef = 0.5 * rounddown( 0.33 * (2*cpoints/nclubs), 3) + tpoints
+trank = rounddown(sum(tcoef) , 3)
+from 1999 until 2003:
+tcoef = 0.5 * rounddown( 0.50 * (2*cpoints/nclubs), 3) + tpoints
+trank = rounddown(sum(tcoef) , 3)
+until 1998:
+tcoef = rounddown(tpoints/tmatches, 3)
+trank = sum(tcoef)
+where
+sum = sum over 5 years, and
+rounddown(..., 3) = truncation to 3 significant digits after the decimal point.
+
+KEY:
+CL	=	Champions League
+EL	=	Europa League
+ECL	=	Europa Conference League
+GS	=	Group Stage
+KO	=	Knockout round play-offs after EL and ECL group stage
+R16	=	Round of 16
+PO	=	Play-off Round before the group stage
+Qx	=	Qualifying Round
+PR	=	Preliminary Round
+back to the UEFA European Cup Football pages

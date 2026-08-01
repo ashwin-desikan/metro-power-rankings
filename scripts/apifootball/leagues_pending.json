@@ -3,7 +3,6 @@
   {"country": "Gibraltar", "api_country": "Gibraltar", "api_league_id": 758, "intended_name": "Premier Division", "level": 1, "target_season": 2026},
   {"country": "Greece", "api_country": "Greece", "api_league_id": 494, "intended_name": "Super League 2", "level": 2, "target_season": 2026},
   {"country": "Italy", "api_country": "Italy", "api_league_id": 138, "intended_name": "Serie C", "level": 3, "target_season": 2026},
-  {"country": "Kosovo", "api_country": "Kosovo", "api_league_id": 664, "intended_name": "Superliga", "level": 1, "target_season": 2026},
   {"country": "San Marino", "api_country": "San-Marino", "api_league_id": 404, "intended_name": "Campionato Sammarinese", "level": 1, "target_season": 2026},
   {"country": "Egypt", "api_country": "Egypt", "api_league_id": 233, "intended_name": "Premier League", "level": 1, "target_season": 2026},
   {"country": "India", "api_country": "India", "api_league_id": 323, "intended_name": "Indian Super League", "level": 1, "target_season": 2026},

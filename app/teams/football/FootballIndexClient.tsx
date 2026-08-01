@@ -617,8 +617,7 @@ export default function FootballIndexClient({ clubs }: Props) {
         <p className="text-sm text-[var(--text-muted)] italic">No clubs match the current filters.</p>
       ) : (
         grouped.map((g) => (
-          <section key={g.country} className="mb-8">
-            <h2 className="text-sm font-semibold mb-2 flex items-center gap-2 py-1.5">
+          <details key={g.country} className="mb-8 group"><summary className="text-sm font-semibold mb-2 flex items-center gap-2 py-1.5 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden">
               <span
                 className="inline-block rounded-full flex-shrink-0"
                 style={{ background: COUNTRY_COLORS[g.country] ?? "#525252", width: 10, height: 10 }}
@@ -628,7 +627,7 @@ export default function FootballIndexClient({ clubs }: Props) {
               <span className="text-[var(--text-muted)] font-normal tabular-nums">
                 {g.clubs.length}
               </span>
-            </h2>
+            <span aria-hidden className="ml-auto text-[var(--text-muted)] text-xs transition-transform group-open:rotate-180">▾</span></summary>
             <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 text-sm">
               {g.clubs.map((c) => {
                 const sy = seasonYear ? parseInt(seasonYear, 10) : null;
@@ -657,7 +656,7 @@ export default function FootballIndexClient({ clubs }: Props) {
                 );
               })}
             </ul>
-          </section>
+          </details>
         ))
       )}
     </div>

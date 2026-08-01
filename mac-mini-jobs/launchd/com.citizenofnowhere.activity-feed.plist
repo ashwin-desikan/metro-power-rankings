@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Site Activity feed regeneration. Daily 03:30 local: rebuilds public/data/activity-feed.json
+     from git history and commits it [vercel skip]. Early-morning slot captures the previous
+     day's data-job and manual commits. Runs the repo wrapper directly (no ~/metro-mini-jobs
+     copy) through hc-run.sh for a healthchecks tile.
+     Install:  cp this plist to ~/Library/LaunchAgents/ ; launchctl bootstrap it. -->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.citizenofnowhere.activity-feed</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-lc</string>
+    <string>exec "$HOME/metro-mini-jobs/hc-run.sh" activity-feed /bin/bash "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-activity-feed.sh"</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key><integer>3</integer>
+    <key>Minute</key><integer>30</integer>
+  </dict>
+  <key>StandardOutPath</key>
+  <string>/tmp/activity-feed.out</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/activity-feed.err</string>
+</dict>
+</plist>

@@ -109,6 +109,9 @@ export type FootballSeason = {
   // EFL promotion playoff flags (England levels 2-5, workbook cols CF/CG).
   playoffs: boolean;
   playoff_final: boolean;
+  // Set only on a synthetic in-progress row injected from the live api feed
+  // (the current 2026-27 season); absent on workbook-sourced completed seasons.
+  is_live?: boolean;
 };
 
 export type FootballCupFinal = {

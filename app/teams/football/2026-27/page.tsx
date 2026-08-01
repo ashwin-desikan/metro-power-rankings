@@ -36,6 +36,13 @@ const cardStyle = { backgroundColor: "var(--bg-card)", borderColor: "var(--borde
 const CONF_ORDER = ["UEFA · Primary", "UEFA · Secondary", "UEFA · Spring-Summer", "CONMEBOL", "CONCACAF", "AFC", "CAF"];
 const COMP_ORDER = [2, 3, 848, 13]; // CL, EL, ECL, Libertadores (Super Cup lives in the Super Cups section)
 
+// api-football league_id -> the nine domestic leagues that have a dedicated hub page.
+// Standings rows for these link through to /teams/football/leagues/<slug>.
+const LEAGUE_HUB_BY_ID: Record<number, string> = {
+  39: "premier-league", 140: "la-liga", 135: "serie-a", 78: "bundesliga", 61: "ligue-1",
+  88: "eredivisie", 94: "primeira-liga", 179: "scottish-premiership", 253: "mls",
+};
+
 // UEFA association-coefficient tiers. `tier` decides which of the three UEFA tabs a country's
 // leagues sit under; `rank` orders countries within a tab (ascending = strongest coefficient
 // first) and orders the three tabs themselves. Countries absent here fall through to Secondary.
@@ -114,7 +121,7 @@ function buildConfs(standings: Awaited<ReturnType<typeof getClubStandings>>): Hu
     if (!confMap.has(conf)) confMap.set(conf, new Map());
     const byCountry = confMap.get(conf)!;
     if (!byCountry.has(country)) byCountry.set(country, []);
-    byCountry.get(country)!.push({ id: lg.league_id, name: lg.name ?? DASH, level: lg.level, groups, end_year: FIRST_YEAR_ENDERS.has(lg.country ?? "") ? 2026 : 2027 });
+    byCountry.get(country)!.push({ id: lg.league_id, name: lg.name ?? DASH, level: lg.level, groups, end_year: FIRST_YEAR_ENDERS.has(lg.country ?? "") ? 2026 : 2027, hubSlug: LEAGUE_HUB_BY_ID[lg.league_id] ?? null });
   }
   const order = (c: string) => { const i = CONF_ORDER.indexOf(c); return i === -1 ? CONF_ORDER.length : i; };
   return [...confMap.entries()]

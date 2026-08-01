@@ -3,6 +3,8 @@ import HubNav from "@/app/teams/HubNav";
 import FootballHubNav from "@/app/teams/FootballHubNav";
 import Link from "next/link";
 import { getAllClubs, getAllLeagueHubs, getAllEuropeanTournamentHubs } from "@/lib/football";
+import { getClubStandings } from "@/lib/clubFootballLive";
+import { liveMembershipBySlug, LIVE_MAP_COUNTRIES, LIVE_SEASON_END_YEAR } from "@/lib/footballLiveMembership";
 import { leagueStatusFor } from "@/lib/leagueStatus";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { FootballHero } from "@/app/teams/_shared/FootballHero";
@@ -45,12 +47,35 @@ const PAST_SEASONS: { slug: string; note: string }[] = [
   { slug: "2015-16", note: "Champions League: Real Madrid" },
   { slug: "2014-15", note: "The treble: Barcelona" },
   { slug: "2013-14", note: "Champions League: Real Madrid · La Décima" },
+  { slug: "2012-13", note: "Champions League: Bayern Munich · all-German final" },
+  { slug: "2011-12", note: "Champions League: Chelsea" },
+  { slug: "2010-11", note: "Champions League: Barcelona" },
+  { slug: "2009-10", note: "Champions League: Internazionale · treble" },
+  { slug: "2008-09", note: "Champions League: Barcelona · treble" },
+  { slug: "2007-08", note: "Champions League: Manchester United" },
+  { slug: "2006-07", note: "Champions League: AC Milan" },
+  { slug: "2005-06", note: "Champions League: Barcelona" },
+  { slug: "2004-05", note: "Champions League: Liverpool · Istanbul" },
+  { slug: "2003-04", note: "Champions League: FC Porto" },
+  { slug: "2002-03", note: "Champions League: AC Milan · all-Italian final" },
+  { slug: "2001-02", note: "Champions League: Real Madrid · La Novena" },
+  { slug: "2000-01", note: "Champions League: Bayern Munich" },
+  { slug: "1999-00", note: "Champions League: Real Madrid · Club World Cup: Corinthians" },
 ];
 
-export default function FootballIndex() {
+export default async function FootballIndex() {
   const clubs = getAllClubs();
   const hubs = getAllLeagueHubs();
   const tournamentHubs = getAllEuropeanTournamentHubs();
+
+  // 2026-27 map membership comes from the LIVE api feed (the SAME source as each league-hub
+  // map, via liveMembershipBySlug), not the OneDrive workbook whose 2027 rows are still
+  // pre-season placeholders — so all the maps update together. Workbook-sourced club tables
+  // stay clamped at MAX_DISPLAYED_YEAR until season end.
+  let live2027 = new Map<string, { level: number; country: string }>();
+  try {
+    live2027 = liveMembershipBySlug(await getClubStandings(), LIVE_MAP_COUNTRIES);
+  } catch { /* live feed optional; the map falls back to workbook years */ }
   // One-off finals and the continental aggregate have no in-season/offseason cycle.
   const NO_SEASON_STATE = new Set(["uefa-super-cup", "club-world-cup", "other-continental"]);
 
@@ -61,20 +86,24 @@ export default function FootballIndex() {
   const yearsOfHistory = earliestYear === 9999 ? null : new Date().getFullYear() - earliestYear;
 
   // Trim to the fields the client component needs (keeps the bundle compact).
-  const clientClubs: IndexClub[] = clubs.map((c) => ({
-    slug: c.slug,
-    cur_name: c.cur_name,
-    country: c.country,
-    metro: c.metro,
-    lat: c.lat,
-    lng: c.lng,
-    tiers: c.tiers,
-    first_year: c.first_year,
-    last_year: c.last_year,
-    league_seasons: c.league_seasons,
-    tier_by_year: c.tier_by_year ?? {},
-    country_by_year: c.country_by_year ?? {},
-  }));
+  const clientClubs: IndexClub[] = clubs.map((c) => {
+    const inj = live2027.get(c.slug);
+    return {
+      slug: c.slug,
+      cur_name: c.cur_name,
+      country: c.country,
+      metro: c.metro,
+      lat: c.lat,
+      lng: c.lng,
+      tiers: c.tiers,
+      first_year: c.first_year,
+      // Extend last_year to the live season so the map's season slider reaches 2026-27.
+      last_year: inj ? LIVE_SEASON_END_YEAR : c.last_year,
+      league_seasons: c.league_seasons,
+      tier_by_year: inj ? { ...(c.tier_by_year ?? {}), [String(LIVE_SEASON_END_YEAR)]: inj.level } : (c.tier_by_year ?? {}),
+      country_by_year: inj ? { ...(c.country_by_year ?? {}), [String(LIVE_SEASON_END_YEAR)]: inj.country } : (c.country_by_year ?? {}),
+    };
+  });
 
   return (
     <main className="mx-auto max-w-6xl px-4 py-8">
@@ -144,7 +173,7 @@ export default function FootballIndex() {
         <summary className="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden px-5 py-3.5 flex items-center justify-between gap-3">
           <span className="text-sm font-semibold">
             Past seasons
-            <span className="font-normal text-[var(--text-muted)]"> · 2013-14 to 2025-26, each a full season hub</span>
+            <span className="font-normal text-[var(--text-muted)]"> · 2006-07 to 2025-26, each a full season hub</span>
           </span>
           <span className="text-xs text-[var(--text-muted)] transition-transform group-open:rotate-180">▾</span>
         </summary>

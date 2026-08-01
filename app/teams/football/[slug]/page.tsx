@@ -39,6 +39,8 @@ import {
 } from "@/lib/football";
 import { slugify } from "@/lib/shared";
 import { getCurrentMlsStandings } from "@/lib/mls-standings";
+import { getClubStandings } from "@/lib/clubFootballLive";
+import { liveSeasonForClub, LIVE_SEASON_END_YEAR } from "@/lib/footballLiveMembership";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 // Pre-generate only clubs that have ever played top-flight (Level 1) football,
@@ -99,7 +101,7 @@ export default async function FootballClubPage({ params }: Props) {
   const rankHistory = getClubRankHistory(slug);
   const rivalries = getRivalries(club.cur_name, "Football");
 
-  const seasons = getSeasonsForClub(slug);
+  let seasons = getSeasonsForClub(slug);
   let mlsSeasons = club.is_mls ? getMlsSeasonsForClub(slug) : [];
   if (club.is_mls) {
     const live = await getCurrentMlsStandings();
@@ -116,6 +118,26 @@ export default async function FootballClubPage({ params }: Props) {
         mls_cup_app: false, mls_cup: false, finish: "In progress", is_live: true,
       };
       mlsSeasons = [liveSeason, ...mlsSeasons.filter((s) => s.year !== live.season_year)];
+    }
+  }
+  // Current 2026-27 season row from the SAME live api feed as the hub standings/maps (the
+  // OneDrive workbook stays clamped at MAX_DISPLAYED_YEAR until season end). Only injected once
+  // a club has actually played — matches the MLS live-row guard above and avoids an empty
+  // pre-season 0-0-0 row for European leagues that kick off in August.
+  if (!club.is_mls) {
+    const liveStandings = await getClubStandings();
+    const ls = liveSeasonForClub(liveStandings, slug);
+    if (ls && (ls.row.played ?? 0) > 0) {
+      const { league: lg, row: r } = ls;
+      const liveSeason: FootballSeason = {
+        slug, cur_name: club.cur_name, year: LIVE_SEASON_END_YEAR, country: club.country,
+        league: lg.name ?? null, division: null, level: lg.level, team: club.cur_name,
+        place: r.rank ?? null, w: r.win ?? null, d: r.draw ?? null, l: r.lose ?? null,
+        pts: r.points ?? null, gf: r.gf ?? null, ga: r.ga ?? null, gd: r.gd ?? null, matches: r.played ?? null,
+        format: "league", eur_qual: null, promoted: false, relegated: false,
+        champion: false, final: false, playoffs: false, playoff_final: false, is_live: true,
+      };
+      seasons = [liveSeason, ...seasons.filter((s) => s.year !== LIVE_SEASON_END_YEAR)];
     }
   }
   const cups = getCupsForClub(slug);
@@ -395,15 +417,13 @@ function MlsFinish({ s }: { s: MlsClubSeason }) {
 function MlsClubSeasonsTable({ seasons }: { seasons: MlsClubSeason[] }) {
   if (seasons.length === 0) {
     return (
-      <section className="rounded-xl border p-5 mb-6" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
-        <h2 className="text-base font-semibold">Season-by-season</h2>
+      <details open className="rounded-xl border p-5 mb-6 group" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}><summary className="text-base font-semibold cursor-pointer select-none list-none flex items-center justify-between gap-2 [&::-webkit-details-marker]:hidden"><span>Season-by-season</span><span aria-hidden className="text-[var(--text-muted)] text-xs font-normal transition-transform group-open:rotate-180">▾</span></summary>
         <p className="mt-2 text-sm text-[var(--text-muted)]">No season data on file.</p>
-      </section>
+      </details>
     );
   }
   return (
-    <section className="rounded-xl border p-5 mb-6" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
-      <h2 className="text-base font-semibold">Season-by-season</h2>
+    <details open className="rounded-xl border p-5 mb-6 group" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}><summary className="text-base font-semibold cursor-pointer select-none list-none flex items-center justify-between gap-2 [&::-webkit-details-marker]:hidden"><span>Season-by-season</span><span aria-hidden className="text-[var(--text-muted)] text-xs font-normal transition-transform group-open:rotate-180">▾</span></summary>
       <p className="mt-1 text-xs text-[var(--text-muted)]">Major League Soccer. No promotion or relegation; the Supporters&apos; Shield (&#9733;) marks the best regular-season record and the MLS Cup is the playoff title.</p>
 
       {/* Same `seasons` array and same MlsFinish badge logic power both the
@@ -473,7 +493,7 @@ function MlsClubSeasonsTable({ seasons }: { seasons: MlsClubSeason[] }) {
           </tbody>
         </table>
       </ResponsiveTable>
-    </section>
+    </details>
   );
 }
 // Notes badges (national playoff / champion / promoted / relegated /
@@ -736,21 +756,13 @@ function SeasonsTable({
   const cupFullNames = DOMESTIC_CUP_FULL_NAMES[country];
   if (seasons.length === 0) {
     return (
-      <section
-        className="rounded-xl border p-5 mb-6"
-        style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
-      >
-        <h2 className="text-base font-semibold">Season-by-season</h2>
+      <details open className="rounded-xl border p-5 mb-6 group" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}><summary className="text-base font-semibold cursor-pointer select-none list-none flex items-center justify-between gap-2 [&::-webkit-details-marker]:hidden"><span>Season-by-season</span><span aria-hidden className="text-[var(--text-muted)] text-xs font-normal transition-transform group-open:rotate-180">▾</span></summary>
         <p className="mt-2 text-sm text-[var(--text-muted)]">No standings rows on file.</p>
-      </section>
+      </details>
     );
   }
   return (
-    <section
-      className="rounded-xl border p-5 mb-6"
-      style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
-    >
-      <h2 className="text-base font-semibold">Season-by-season</h2>
+    <details open className="rounded-xl border p-5 mb-6 group" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}><summary className="text-base font-semibold cursor-pointer select-none list-none flex items-center justify-between gap-2 [&::-webkit-details-marker]:hidden"><span>Season-by-season</span><span aria-hidden className="text-[var(--text-muted)] text-xs font-normal transition-transform group-open:rotate-180">▾</span></summary>
       <p className="mt-1 text-xs text-[var(--text-muted)]">
         Most recent season first.{" "}
         {country === "England" && "Covers Levels 1 through 5 of the English pyramid. "}
@@ -782,8 +794,12 @@ function SeasonsTable({
                 <>
                   <span className="truncate">
                     {leagueLabel}
+                    {s.level != null && <span className="text-[var(--text-dim)] tabular-nums"> ({s.level})</span>}
                     {s.place != null && <span className="text-[var(--text-muted)]"> · P{s.place}</span>}
                   </span>
+                  {s.is_live && (
+                    <span className="flex-shrink-0 text-[10px] leading-none" style={{ color: "rgb(34,197,94)" }} title="Live season, in progress">&#9679; live</span>
+                  )}
                   {isChamp && (
                     <span title="Champion" aria-label="Champion" className="flex-shrink-0 leading-none" style={{ color: "#f5b301" }}>★</span>
                   )}
@@ -874,7 +890,10 @@ function SeasonsTable({
                   className="border-b"
                   style={{ borderColor: "var(--border)" }}
                 >
-                  <td className="py-1.5 pr-3 tabular-nums whitespace-nowrap">{s.year ?? "-"}</td>
+                  <td className="py-1.5 pr-3 tabular-nums whitespace-nowrap">
+                    {s.year ?? "-"}
+                    {s.is_live && <span className="ml-1.5 text-[10px] font-normal" style={{ color: "rgb(34,197,94)" }} title="In progress — live from the api feed">&#9679; live</span>}
+                  </td>
                   <td className="py-1.5">
                     <span>{leagueLabel}</span>
                     {s.level && (
@@ -921,7 +940,7 @@ function SeasonsTable({
           </tbody>
         </table>
       </ResponsiveTable>
-    </section>
+    </details>
   );
 }
 
@@ -950,11 +969,7 @@ function CupsBlock({ cups, country }: { cups: FootballCupFinal[]; country: strin
   const sorted = [...cups].sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
 
   return (
-    <section
-      className="rounded-xl border p-5 mb-6"
-      style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
-    >
-      <h2 className="text-base font-semibold">Cup finals</h2>
+    <details open className="rounded-xl border p-5 mb-6 group" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}><summary className="text-base font-semibold cursor-pointer select-none list-none flex items-center justify-between gap-2 [&::-webkit-details-marker]:hidden"><span>Domestic Cup Finals</span><span aria-hidden className="text-[var(--text-muted)] text-xs font-normal transition-transform group-open:rotate-180">▾</span></summary>
       <p className="mt-1 text-xs text-[var(--text-muted)]">
         Most recent first. Every domestic cup final the club has played, including losses. Scheduled finals (date not yet passed) are flagged.
       </p>
@@ -995,7 +1010,7 @@ function CupsBlock({ cups, country }: { cups: FootballCupFinal[]; country: strin
           </tbody>
         </table>
       </ResponsiveTable>
-    </section>
+    </details>
   );
 }
 
@@ -1019,13 +1034,15 @@ function EuropeAppearanceResult({ e, isUcl }: { e: FootballEuropeEntry; isUcl: b
 }
 
 function EuropeBlock({ entries }: { entries: FootballEuropeEntry[] }) {
-  // Already descending from the ETL (sort key: -(year), competition).
+  // Sort by season (desc), then End Year (desc) so e.g. 2026-27 leads 2025-26
+  // even when a live/ETL row's `year` field lags its season label.
+  const euStart = (e: FootballEuropeEntry) => {
+    if (e.season) { const m = /^(\d{4})/.exec(e.season); if (m) return parseInt(m[1], 10); }
+    return e.year != null ? e.year - 1 : -Infinity;
+  };
+  const sorted = [...entries].sort((a, b) => euStart(b) - euStart(a) || (b.year ?? 0) - (a.year ?? 0));
   return (
-    <section
-      className="rounded-xl border p-5 mb-6"
-      style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
-    >
-      <h2 className="text-base font-semibold">European competition appearances</h2>
+    <details open className="rounded-xl border p-5 mb-6 group" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}><summary className="text-base font-semibold cursor-pointer select-none list-none flex items-center justify-between gap-2 [&::-webkit-details-marker]:hidden"><span>European competition appearances</span><span aria-hidden className="text-[var(--text-muted)] text-xs font-normal transition-transform group-open:rotate-180">▾</span></summary>
       <p className="mt-1 text-xs text-[var(--text-muted)]">
         Most recent first. One row per entry showing the deepest round reached. A Cup Winner badge marks tournaments the club won: gold for the European Cup / Champions League, silver for every other UEFA or Intercontinental trophy.
       </p>
@@ -1033,12 +1050,12 @@ function EuropeBlock({ entries }: { entries: FootballEuropeEntry[] }) {
       <ResponsiveTable
         className=""
         variant="list"
-        mobileRows={entries.map((e, i) => {
+        mobileRows={sorted.map((e, i) => {
           const isUcl = e.code === "CL" || e.code === "CLB";
           return (
             <RankRow
               key={`${i}-row`}
-              rank={e.year ?? "-"}
+              rank={e.season ?? e.year ?? "-"}
               name={
                 <>
                   <span className="truncate">{e.competition}</span>
@@ -1064,7 +1081,7 @@ function EuropeBlock({ entries }: { entries: FootballEuropeEntry[] }) {
             </tr>
           </thead>
           <tbody>
-            {entries.map((e, i) => {
+            {sorted.map((e, i) => {
               const isUcl = e.code === "CL" || e.code === "CLB";
               return (
                 <tr key={i} className="border-b" style={{ borderColor: "var(--border)" }}>
@@ -1084,6 +1101,6 @@ function EuropeBlock({ entries }: { entries: FootballEuropeEntry[] }) {
           </tbody>
         </table>
       </ResponsiveTable>
-    </section>
+    </details>
   );
 }
