@@ -710,3 +710,28 @@ Standings and the club power ranking now display the name a club used THAT seaso
 3. **Local dev caches.** `lib/football.ts` caches `club-history.json` etc. in module-level vars loaded once per process — a running `npm run dev` shows STALE data after a hub regen until restarted. (This is what made Arsenal 1989-80 look like #435 mid-session.)
 4. **Raw `fa_league_cups.txt` (18.7 MB) is gitignored.** Present locally now; needed only to re-run `build_eng_cups.py`.
 5. Pending from 07-30 still open: Supabase RLS advisory (8 tables) — SQL drafted, not applied; awaiting Ashwin.
+
+
+## 2026-08-01 — windows → next session (forecast cadence fix + 2026 governors forecast + MetroAreas workbook sync)
+
+Cowork session. Three shipped changes plus a Supabase Lookup sync, all live. Deploy PASS on `8c28df991` (governors, tip) which also carries the MetroAreas sync `ea221d1e3`.
+
+### A. ELECTION FORECAST — un-stuck + moved to a 3x/week cadence
+The forecast had been frozen at `built: 2026-07-26` across ALL countries. Root cause was NOT a scrape break — the rebuild lived only in the mini's WEEKLY Sunday `metro-mini-refresh.sh`, so between Sunday runs it drifts up to 7 days. Re-ran the pipeline (every source scraped clean), refreshed prod (`b1eb4e86f`, data-only `[vercel skip]`, ISR-from-raw). Then moved the forecast OFF the mini Sunday job onto the `forecast-weekly.yml` GitHub Action, cron `10 6 * * 1,3,5` (Mon/Wed/Fri), and removed the two `election forecast fetch/build` run_steps from `metro-mini-refresh.sh` to avoid a double-run (`e30727ed6`). Both `[vercel skip]`. Alternative if you prefer everything on the mini: provision a launchd agent instead of the GH Action (couldn't do that from the Windows session).
+
+### B. 2026 US GOVERNORS FORECAST (live `8c28df991`)
+Third US block on `/elections/forecast` (House, Senate, Governors), aggregated by party like the others. Mirrors the Senate model:
+- `scripts/forecast/fetch_data.py::fetch_us_governors()` — parses the ratings table on "2026 United States gubernatorial elections" (`{{USRaceRating}}` across Cook/IE/Sabato/WH/RCP/Fox/VoteHub). Writes `data/forecast/us_governors.json`: 36 races (18 D-held, 18 R-held), `governorsNow` hardcoded **R26/D24** (post-2025 off-year; UPDATE after the 2026 election or any turnover).
+- `scripts/forecast/build_forecast.py::governors_forecast()` — 20k sims, aggregate = governorships HELD out of 50 (carryover-not-up + simulated winners of the 36 up). Emits `demSeats` (median 24, 21–28), `pDemMajority` 30.1%, `pRepMajority` 52.8%; the ~17% gap is the exact 25–25 split. Wired into `us["governors"]`.
+- `lib/forecast.ts` `GovernorsForecast` type + `us.governors?`; `app/elections/forecast/page.tsx` new "The Governors" block (mansions-of-50, honest "majority ≠ control" note). DESC + How-it-works + refresh copy (Mon/Wed/Fri) updated. `npm run verify` green (26/26 vitest + build). Real build.
+
+### C. METROAREAS WORKBOOK SYNC (live `ea221d1e3`)
+Ran the documented `python scripts/run-workbook-sync.py` (workbook-sync skill) after the OneDrive `MetroAreas.xlsx` update (08-01, 35.39MB). All 15 steps green. Diff vs the 07-26 baseline: `MktCap_Data` fresh 08-01 valuation snapshot (**+73 companies** incl. Frasers/Mazda/Rightmove/Bendigo), `Team List` +6 (and a re-sort), `FootballClub_Data` −2, `Country Populations` minor; **new `_ClubLevelSnapshot` sheet (9,701 rows) is read by NO script — no action**; culture/skyscrapers/hospitality/universities/stadiums UNCHANGED. Rebuilt **3,981 `public/data` files** (metros + 3,967 details reflect the global market-cap re-rank; states ×3; football index/europe/european-tournaments/domestic-cups/slug-lookup + international/index fold in the CL Lookup edits; sports/all-teams + league-summary; meta.json). Boundaries 0 changed; NFL/NBA/MLB/NHL/WNBA/CFL/wfootball/relocations/champion-banners unchanged. `forecast.json` was kept OUT of this commit (rode with governors).
+
+### D. CL LOOKUP → SUPABASE
+Ran `scripts/apifootball/sync_lookup.py` (full mirror of the CL workbook `Lookup` sheet → `public.football_lookup`): **9,955 rows** (was 9,952). Live to `refresh.py`'s resolver; no deploy.
+
+### Housekeeping / open threads
+- The local Windows checkout had a STALE merge residue on entry (6 `public/data/international/*.json` marked `UU` + `tsconfig.clean.json` staged) with NO active merge (no MERGE_HEAD). Cleaned by `git checkout HEAD -- <the 6 files>` + `git restore --staged tsconfig.clean.json`. `tsconfig.clean.json` is still an untracked stray of unknown provenance — left in place, delete if it's junk.
+- The Windows↔cloud bridge dropped once mid-push; Ashwin ran the final commits+push himself. `ea221d1e3` then `8c28df991` landed as intended, with a mini commit (`bc9ce3079`, football-standings now 4x/day) rebased in between.
+- Still open (carried from 07-30/07-31): Supabase RLS advisory on 8 tables (SQL drafted, not applied); the "actual European Cup/CL winner isn't always #1" ranking thread (levers `TOP_TROPHY_BONUS` / `PED_WEIGHT` documented in both generators).
