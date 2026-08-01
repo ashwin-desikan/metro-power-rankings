@@ -783,3 +783,21 @@ All four new games + multi-run offside/time-machine stress Playwright-tested to 
 - **THE PUSH** — now TWO local commits (wave 2 + wave 3) stacked on `ed4637efe`, one real build when pushed.
 - Deferred: visual rebuilds for the cricket/baseball/NFL kids rules games (offside pattern is the template); world-sports-tour untouched (already visual counting); match-day-money + league-table-detective untouched (inherently reading/maths).
 - Carried: RLS advisory; CL-winner ranking levers; tsconfig.clean.json stray; governorsNow R26/D24.
+
+## 2026-08-01 (night) — windows → next session (CFB LIVE WIRED FOR KICKOFF — third local commit, still NOT pushed)
+
+Third sitting today. College Football hub + live standings wired ahead of the 2026 season (Week 0 kicks off Thu **27 Aug 2026**; Week 1 = Sep 3-5). Ashwin's spec: ESPN standings + AP/Coaches/CFP rankings; hub gets both, Live Standings gets rankings only, closed until kickoff and showing the poll date; everything linked to canonical CFB team pages; Championship/League One/League Two/National League removed from the Football live standings.
+
+### What shipped
+- **NEW `lib/cfb-live.ts`** (server-only, registered in check-client-imports SERVER_ONLY_MODULES): `getCfbStandings()` + `getCfbRankings()` fetching ESPN's public site API with ISR (revalidate 1800, 5s timeout, empty-snapshot fallback) — the exact `lib/nba-standings.ts` pattern, NOT a new pipeline/cron. Standings parse: `overall` (type `total`, "12-2") + `vs. Conf.` (type `vsconf`, "7-1") record strings are authoritative; conference sort = conf pct → wins; conference order = Power 4 (SEC, Big Ten, Big 12, ACC) → rest A-Z → Independents. Rankings parse: polls keyed cfp/ap/coaches (FCS polls filtered), each carrying `date` + occurrence `week_label` ("Preseason"/"Week 6"/"Final Rankings"), ordered CFP→AP→Coaches (CFP appears late October). Canonical resolution via `getCfbTeamForName(ESPN team.location)` + `CANONICAL_OVERRIDE` map (Miami→Miami FL, Ole Miss→Mississippi, UTSA→TX-San Antonio, UCF→Central Florida, Sam Houston, Hawai'i, App State, Middle Tennessee, San José State…); unresolved schools render unlinked, never guessed. `CFB_KICKOFF_UTC = Date.UTC(2026,7,27)` — **update each season**.
+- **`app/teams/cfb/page.tsx`**: now async + `revalidate=1800`; NEW "Rankings" section (polls side-by-side, CFP first when live, first-place votes in parens, per-poll date) and NEW "Standings" section (11 FBS conference accordions in two columns, Power 4 open, Conf/Overall/PF/PA/Streak) at the top; HubNav entries added. Offseason behavior: shows the final polls + last season's final standings, labelled with season year from the feed.
+- **`app/sports/standings/page.tsx`**: NEW `cfbBlock()` — rankings-only accordion under Gridiron (NFL → **College Football** → CFL), `open`/`live` = `cfbSeasonStarted()` so it sits COLLAPSED until 27 Aug then auto-opens (page revalidates 120s), note always shows the lead poll's week + date ("Final Rankings · 20 Jan 2026" right now). **Championship (40), League One (41), League Two (42), National League (43) REMOVED** from `DOMESTIC_LIVE` + `FOOTBALL_RIGHT` (comment left explaining); the bundles still carry them, only this page stopped rendering them.
+
+### Verified
+Full `npm run verify` green (exit 0, 4,892 pages, 26/26). Prerendered HTML inspected: hub carries AP Top 25 + SEC standings + 1,642 `/teams/cfb/` links; live standings CFB block is `<details>` WITHOUT `open` (correct pre-kickoff), shows the poll date, League One absent.
+
+### Notes / next
+- Ashwin asked about `machina-sports/sports-skills` + sports-skills.sh as alternative sources — assessed: their cfb-data skill WRAPS the same ESPN endpoints (agent-skill layer, not a data upgrade); stayed on direct ESPN. Useful only as an endpoint catalog for future extensions (scores/schedules).
+- Around 10 Aug the preseason AP poll should replace the January final automatically; worth an eyeball. CFP joins ~late Oct and will auto-lead the hub + live-standings sub-tables.
+- `lib/leagueStatus` `/teams/cfb` month window still lights "Live - Season" from Aug 1 on /sports (house month-granularity convention, untouched); only the Live Standings block is kickoff-gated.
+- THE PUSH: now THREE local commits on `ed4637efe` (kids wave 2, kids wave 3, CFB live). One real build when pushed.

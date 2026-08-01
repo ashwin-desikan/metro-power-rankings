@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-08-01",
-    headline: "Kids games overhauled: penalties, leaders, flags and badges",
+    headline: "Kids games overhauled, and college football ready for kickoff",
     items: [
       "Seven new games on Play & Learn: Penalty Shootout, Crest Sort, Flag Flash, Champions Duel, and a Who Runs the Country? trio (Who's the Boss?, Leader Time Machine, US or UK?) built from real leaders, badges and finals.",
       "Offside or Onside? is now fully visual: pitch freeze-frames, make the linesman's call, and the offside line appears to show why. Capital Match adds a Quick trip mode.",
       "Count & Think games now show real club badges and country flags with shorter questions; Trophy Count counts real league titles. Eight previously unlisted games join the Play page.",
-      "The 2026 US governors forecast joins the House and Senate on the election forecast page, refreshed Monday, Wednesday and Friday.",
+      "College football is wired for kickoff: FBS conference standings and the AP, Coaches and CFP polls on the hub, with rankings joining Live Standings from 27 August. The 2026 US governors forecast joins the forecast page.",
     ],
   },
   {

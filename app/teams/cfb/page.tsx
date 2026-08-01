@@ -4,10 +4,13 @@ import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import HubNav from "@/app/teams/HubNav";
 import { getAllCfbTeams, getAllCfbSlugs, getCfbTopGames, getCfbGamesByDecade, getCfbNationalChampions, type CfbTeam } from "@/lib/cfb";
+import { getCfbStandings, getCfbRankings, type CfbPoll, type CfbConference } from "@/lib/cfb-live";
 import CfbAllTimeTable from "./CfbAllTimeTable";
 import CfbGames from "./CfbGames";
 
 export const dynamicParams = false;
+// Live standings/rankings ISR window (ESPN feeds via lib/cfb-live).
+export const revalidate = 1800;
 const PAGE_PATH = "/teams/cfb";
 const PAGE_TITLE = "College Football";
 const PAGE_DESCRIPTION =
@@ -18,6 +21,81 @@ export const metadata: Metadata = {
   openGraph: { title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION, url: `${BASE_URL}${PAGE_PATH}`, type: "website" },
   twitter: { card: "summary", title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION },
 };
+
+const pollDate = (iso: string | null) =>
+  iso ? new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }) : null;
+
+function PollTable({ poll }: { poll: CfbPoll }) {
+  return (
+    <div className="rounded-lg border" style={{ borderColor: "var(--border)", background: "var(--bg-card)" }}>
+      <div className="px-3 py-2 border-b" style={{ borderColor: "var(--border)" }}>
+        <div className="text-sm font-semibold">{poll.name}</div>
+        <div className="text-[10px] text-[var(--text-dim)]">
+          {[poll.week_label, pollDate(poll.date)].filter(Boolean).join(" \u00b7 ")}
+        </div>
+      </div>
+      <ol className="px-2 py-2 space-y-0.5">
+        {poll.rows.map((r) => (
+          <li key={r.rank} className="flex items-baseline gap-2 text-sm px-1">
+            <span className="w-5 text-[11px] tabular-nums text-[var(--text-dim)] text-right">{r.rank}</span>
+            <CrestIcon name={r.school} size={15} className="self-center" />
+            <span className="flex-1 truncate">
+              {r.slug
+                ? <Link href={`/teams/cfb/${r.slug}`} className="hover:text-[var(--accent)]">{r.school}</Link>
+                : r.school}
+              {r.first_place_votes > 0 && <span className="ml-1 text-[10px] text-[var(--text-dim)]">({r.first_place_votes})</span>}
+            </span>
+            <span className="tabular-nums text-xs text-[var(--text-muted)]">{r.record}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
+}
+
+function ConferenceTable({ conf }: { conf: CfbConference }) {
+  return (
+    <details open={conf.power4} className="rounded-lg border overflow-hidden" style={{ borderColor: "var(--border)", background: "var(--bg-card)" }}>
+      <summary className="cursor-pointer select-none px-3 py-2 flex items-center justify-between gap-2">
+        <span className="text-sm font-semibold">{conf.short}</span>
+        <span className="text-[10px] text-[var(--text-dim)]">{conf.rows.length} teams</span>
+      </summary>
+      <div className="border-t overflow-x-auto" style={{ borderColor: "var(--border)" }}>
+        <table className="w-full text-xs min-w-[300px]">
+          <thead>
+            <tr className="text-left text-[10px] uppercase tracking-wider text-[var(--text-dim)]">
+              <th className="px-2 py-1.5 text-right">#</th>
+              <th className="px-2 py-1.5">School</th>
+              <th className="px-2 py-1.5 text-right">Conf</th>
+              <th className="px-2 py-1.5 text-right">Overall</th>
+              <th className="px-2 py-1.5 text-right hidden sm:table-cell">PF</th>
+              <th className="px-2 py-1.5 text-right hidden sm:table-cell">PA</th>
+              <th className="px-2 py-1.5 text-right">Strk</th>
+            </tr>
+          </thead>
+          <tbody>
+            {conf.rows.map((t, i) => (
+              <tr key={t.espn_id || t.school} className="border-t hover:bg-[var(--bg-card-hover)]" style={{ borderColor: "var(--border)" }}>
+                <td className="px-2 py-1 text-right tabular-nums text-[var(--text-dim)]">{i + 1}</td>
+                <td className="px-2 py-1 font-medium whitespace-nowrap">
+                  <CrestIcon name={t.school} size={14} className="mr-1 align-[-2px]" />
+                  {t.slug
+                    ? <Link href={`/teams/cfb/${t.slug}`} className="hover:text-[var(--accent)]">{t.school}</Link>
+                    : t.school}
+                </td>
+                <td className="px-2 py-1 text-right tabular-nums">{t.conf || "\u2014"}</td>
+                <td className="px-2 py-1 text-right tabular-nums">{t.overall}</td>
+                <td className="px-2 py-1 text-right tabular-nums hidden sm:table-cell">{t.points_for || "\u2014"}</td>
+                <td className="px-2 py-1 text-right tabular-nums hidden sm:table-cell">{t.points_against || "\u2014"}</td>
+                <td className="px-2 py-1 text-right tabular-nums">{t.streak ?? "\u2014"}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </details>
+  );
+}
 
 function Leader({ title, rows }: { title: string; rows: { name: string; slug: string; val: number }[] }) {
   return (
@@ -36,7 +114,8 @@ function Leader({ title, rows }: { title: string; rows: { name: string; slug: st
   );
 }
 
-export default function CfbHubPage() {
+export default async function CfbHubPage() {
+  const [rankings, standings] = await Promise.all([getCfbRankings(), getCfbStandings()]);
   const teams = getAllCfbTeams();
   const slugs = getAllCfbSlugs();
   const topGames = getCfbTopGames();
@@ -62,7 +141,40 @@ export default function CfbHubPage() {
         </div>
       </header>
 
-      <HubNav items={[{ label: "All-time", href: "#all-time" }, { label: "National champions", href: "#champions" }, { label: "Greatest games", href: "#games" }, { label: "AP polls", href: "#polls" }]} />
+      <HubNav items={[
+        ...(rankings.polls.length ? [{ label: "Rankings", href: "#rankings" }] : []),
+        ...(standings.conferences.length ? [{ label: "Standings", href: "#standings" }] : []),
+        { label: "All-time", href: "#all-time" }, { label: "National champions", href: "#champions" }, { label: "Greatest games", href: "#games" }, { label: "AP polls", href: "#polls" }]} />
+
+      {rankings.polls.length > 0 && (
+        <section id="rankings" className="mb-12 scroll-mt-20">
+          <h2 className="text-lg font-semibold mb-1">Rankings</h2>
+          <p className="text-xs text-[var(--text-muted)] mb-4">
+            The current Top 25s, straight from the polls: the College Football Playoff ranking when it is live, the AP Top 25 and the Coaches Poll. First-place votes in parentheses; each poll shows its own date.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 items-start">
+            {rankings.polls.map((p) => <PollTable key={p.kind} poll={p} />)}
+          </div>
+        </section>
+      )}
+
+      {standings.conferences.length > 0 && (
+        <section id="standings" className="mb-12 scroll-mt-20">
+          <h2 className="text-lg font-semibold mb-1">Standings</h2>
+          <p className="text-xs text-[var(--text-muted)] mb-4">
+            {standings.season_year ? `FBS conference standings, ${standings.season_year} season. ` : "FBS conference standings. "}
+            Ordered by conference record; the Power 4 open expanded. Tap a school for its program page.
+          </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 items-start">
+            <div className="space-y-3">
+              {standings.conferences.filter((_, i) => i % 2 === 0).map((c) => <ConferenceTable key={c.name} conf={c} />)}
+            </div>
+            <div className="space-y-3">
+              {standings.conferences.filter((_, i) => i % 2 === 1).map((c) => <ConferenceTable key={c.name} conf={c} />)}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section id="all-time" className="mb-12 scroll-mt-20">
         <h2 className="text-lg font-semibold mb-1">All-time programs</h2>

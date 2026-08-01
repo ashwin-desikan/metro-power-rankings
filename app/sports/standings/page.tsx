@@ -21,6 +21,7 @@ import { getLiveTennisSlam } from "@/lib/tennisDraw";
 import { f1ConstructorCrestName } from "@/lib/f1Crest";
 import { getWtcStandings } from "@/lib/wtcStandings";
 import { getRugbyFixtures, type RugbyMatch } from "@/lib/rugbyFixtures";
+import { getCfbRankings, cfbSeasonStarted } from "@/lib/cfb-live";
 import { getCricketFixtures, type CricketMatch } from "@/lib/cricketFixtures";
 
 import { getAllFranchises as nflFranchises, logoUrlFor as nflLogo, monogramFor as nflMono } from "@/lib/nfl";
@@ -39,7 +40,7 @@ export const revalidate = 120;
 const PATH = "/sports/standings";
 const TITLE = "Live Standings";
 const DESC =
-  "Every live league table the site tracks, in one place: European club football, Copa Libertadores, the four North American majors, MLS, NWSL, WNBA, CFL, NPB, AFL, NRL and F1. Refreshed through each season.";
+  "Every live league table the site tracks, in one place: European club football, Copa Libertadores, the four North American majors, college football rankings, MLS, NWSL, WNBA, CFL, NPB, AFL, NRL and F1. Refreshed through each season.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -73,7 +74,6 @@ const FOOTBALL_LEFT = [
 ];
 const FOOTBALL_RIGHT = [
   "Premier League", "La Liga", "Bundesliga", "Serie A", "Ligue 1",
-  "Championship", "League One", "League Two", "National League",
   "Eredivisie", "Primeira Liga", "Scottish Premiership",
   "MLS", "WSL", "NWSL",
 ];
@@ -384,10 +384,12 @@ async function npbBlock(): Promise<Block | null> {
 
 // ---- club football (api-football -> Supabase -> committed bundles) ------
 
+// English lower divisions (Championship 40, League One 41, League Two 42,
+// National League 43) intentionally NOT surfaced here (2026-08-01): the top
+// five leagues plus the smaller national top flights keep the section tight.
 const DOMESTIC_LIVE: { label: string; id: number }[] = [
   { label: "Premier League", id: 39 }, { label: "La Liga", id: 140 }, { label: "Bundesliga", id: 78 },
-  { label: "Serie A", id: 135 }, { label: "Ligue 1", id: 61 }, { label: "Championship", id: 40 },
-  { label: "League One", id: 41 }, { label: "League Two", id: 42 }, { label: "National League", id: 43 },
+  { label: "Serie A", id: 135 }, { label: "Ligue 1", id: 61 },
   { label: "Eredivisie", id: 88 }, { label: "Primeira Liga", id: 94 }, { label: "Scottish Premiership", id: 179 },
 ];
 
@@ -584,10 +586,37 @@ function euroFixturesBlocks(comps: LiveComp[]): Block[] {
   return blocks;
 }
 
+// ---- College Football (rankings only on this page) ----------------------
+// The full FBS conference standings live on the /teams/cfb hub; here the block
+// carries the current AP / Coaches / CFP Top 25s, resolved to canonical program
+// pages. Collapsed until the 2026 kickoff (CFB_KICKOFF_UTC in lib/cfb-live),
+// with the poll date always visible in the accordion note.
+async function cfbBlock(): Promise<Block | null> {
+  const s = await getCfbRankings();
+  if (s.polls.length === 0) return null;
+  const dt = (iso: string | null) =>
+    iso ? new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }) : null;
+  const subTables: SubTable[] = s.polls.map((p) => ({
+    title: [p.name, p.week_label, dt(p.date)].filter(Boolean).join(" \u00b7 "),
+    columns: ["Rec"],
+    rows: p.rows.map((r): SRow => ({
+      rank: r.rank, name: r.school, href: r.slug ? `/teams/cfb/${r.slug}` : null,
+      crestName: r.school, cells: [r.record || DASH],
+    })),
+  }));
+  const started = cfbSeasonStarted();
+  const lead = s.polls[0];
+  const note = [lead.week_label, dt(lead.date)].filter(Boolean).join(" \u00b7 ") || null;
+  return {
+    league: "College Football", href: "/teams/cfb", note,
+    open: started, live: started, subTables,
+  };
+}
+
 export default async function LiveStandingsPage() {
-  const [nfl, nba, wnba, nhl, mlb, npb, mls, nwsl, cfl, afl, nrl, f1, golf, tennis, wtc, rugbyFix, cricketFix, clubStandings, clubComps] = await Promise.all([
+  const [nfl, nba, wnba, nhl, mlb, npb, mls, nwsl, cfl, cfb, afl, nrl, f1, golf, tennis, wtc, rugbyFix, cricketFix, clubStandings, clubComps] = await Promise.all([
     nflBlock(), nbaBlock(), wnbaBlock(), nhlBlock(), mlbBlock(), npbBlock(),
-    mlsBlock(), nwslBlock(), cflBlock(), footyBlock("afl"), footyBlock("nrl"), f1Block(),
+    mlsBlock(), nwslBlock(), cflBlock(), cfbBlock(), footyBlock("afl"), footyBlock("nrl"), f1Block(),
     golfBlock(), tennisBlock(), wtcBlock(), rugbyFixturesBlock(), cricketFixturesBlock(),
     getClubStandings(), getClubCompetitions(),
   ]);
@@ -614,7 +643,7 @@ export default async function LiveStandingsPage() {
     { sport: "Motorsport", blocks: [f1] },
     { sport: "Golf", blocks: [golf] },
     { sport: "Tennis", blocks: [tennis] },
-    { sport: "Gridiron", blocks: [nfl, cfl] },
+    { sport: "Gridiron", blocks: [nfl, cfb, cfl] },
     { sport: "Basketball", blocks: [nba, wnba] },
     { sport: "Baseball", blocks: [mlb, npb] },
     { sport: "Hockey", blocks: [nhl] },
