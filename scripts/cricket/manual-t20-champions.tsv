@@ -1,0 +1,9 @@
+# Manually-supplied T20 league champions not yet in the local cricsheet archive
+# (cricsheet publishes ball-by-ball data a while after a final). build_t20_leagues.py
+# merges these; a cricsheet-derived row for the same (league, season) takes precedence,
+# so an entry here is harmless once cricsheet catches up.
+#
+# Columns (tab-separated): league_key<TAB>season<TAB>winner<TAB>runner-up
+# league_key is one of: ipl bbl psl cpl bpl blast smash hundred sa20 ilt20 lpl
+# Use the roll BRAND names (e.g. "Northants Steelbacks", "Hampshire Hawks").
+blast	2026	Northants Steelbacks	Hampshire Hawks

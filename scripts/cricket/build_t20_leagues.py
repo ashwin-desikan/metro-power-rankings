@@ -18,12 +18,17 @@ Run from repo root: python scripts/cricket/build_t20_leagues.py
 import io
 import json
 import os
+import re
 from collections import defaultdict
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 MATCHES = os.path.join(ROOT, "data", "cricket", "matches.json")
 ALL_TEAMS = os.path.join(ROOT, "public", "data", "sports", "all-teams.json")
 OUT = os.path.join(ROOT, "public", "data", "cricket", "t20-leagues.json")
+HERE = os.path.dirname(os.path.abspath(__file__))
+# Manually-supplied champions for leagues/seasons cricsheet hasn't published yet
+# (e.g. a just-completed 2026 final). Merged in main(); cricsheet wins on conflict.
+SUPPLEMENT = os.path.join(HERE, "manual-t20-champions.tsv")
 
 # cricsheet event name -> (league key, Team List league name)
 EVENTS = {
@@ -97,25 +102,38 @@ BRAND_TO_TEAMLIST = {
 }
 
 
-def main():
+def load_supplement():
+    """Manually-supplied champions -> [(key, season, winner, ru)]."""
+    rows = []
+    if not os.path.exists(SUPPLEMENT):
+        return rows
+    for line in io.open(SUPPLEMENT, encoding="utf-8"):
+        line = line.rstrip("\n")
+        if not line.strip() or line.lstrip().startswith("#"):
+            continue
+        parts = [p.strip() for p in line.split("\t")]
+        if len(parts) < 3 or not (parts[0] and parts[1] and parts[2]):
+            continue
+        rows.append((parts[0], parts[1], parts[2], parts[3] if len(parts) > 3 else ""))
+    return rows
+
+
+def _year(s):
+    m = re.search(r"(\d{4})", str(s))
+    return int(m.group(1)) if m else 0
+
+
+def cricsheet_rolls():
+    """Champions from the local cricsheet archive: winners of Final-stage
+    matches per league+season. Returns {key: [{season, winner, ru}]}."""
     d = json.load(io.open(MATCHES, encoding="utf-8"))
     rows = d if isinstance(d, list) else d.get("matches", [])
-
-    teams_doc = json.load(io.open(ALL_TEAMS, encoding="utf-8"))
-    teams_doc = teams_doc if isinstance(teams_doc, list) else teams_doc.get("teams", [])
-    tl = {}  # (league, name) presence + name set per league
-    tl_names = defaultdict(set)
-    for t in teams_doc:
-        if "cricket" in str(t.get("sport", "")).lower():
-            tl_names[t.get("league")].add(t.get("team") or t.get("name"))
-
-    finals = defaultdict(dict)  # key -> season -> {winner, ru}
+    finals = defaultdict(dict)  # key -> season -> row (last final per season wins)
     for r in rows:
         ev = str(r.get("event") or "")
         if ev not in EVENTS:
             continue
-        stage = str(r.get("event_stage") or "").strip().lower()
-        if stage != "final":
+        if str(r.get("event_stage") or "").strip().lower() != "final":
             continue
         key, _tl_league = EVENTS[ev]
         season = str(r.get("season") or "")
@@ -128,21 +146,58 @@ def main():
         # Keep the LAST final per season (covers double-headers / replays).
         finals[key][season] = {"season": season, "winner": winner, "ru": ru,
                                "date": str(r.get("date") or "")}
-
     rolls = {}
-    honours = defaultdict(lambda: defaultdict(list))  # (name, tl_league) -> years
-    unmatched = defaultdict(list)
     for key, by_season in finals.items():
-        tl_league = next(v[1] for k, v in EVENTS.items() if v[0] == key)
         out = sorted(by_season.values(), key=lambda x: x["date"], reverse=True)
         for r in out:
             r.pop("date", None)
+        rolls[key] = out
+    return rolls
+
+
+def main():
+    teams_doc = json.load(io.open(ALL_TEAMS, encoding="utf-8"))
+    teams_doc = teams_doc if isinstance(teams_doc, list) else teams_doc.get("teams", [])
+    tl_names = defaultdict(set)
+    for t in teams_doc:
+        if "cricket" in str(t.get("sport", "")).lower():
+            tl_names[t.get("league")].add(t.get("team") or t.get("name"))
+
+    # Base rolls: cricsheet if the archive is present (full rebuild), else the
+    # committed t20-leagues.json, so this runs in CI / anywhere without the 17k
+    # gitignored match archive. The manual supplement is merged on top of either.
+    if os.path.exists(MATCHES):
+        rolls = cricsheet_rolls()
+        print("base: cricsheet archive")
+    else:
+        prev = json.load(io.open(OUT, encoding="utf-8")) if os.path.exists(OUT) else {"rolls": {}}
+        rolls = {k: [dict(r) for r in v] for k, v in prev.get("rolls", {}).items()}
+        print("base: committed t20-leagues.json (matches.json absent)")
+
+    for key, season, winner, ru in load_supplement():
+        if key not in LABELS:
+            print(f"supplement: unknown league key '{key}' skipped")
+            continue
+        roll = rolls.setdefault(key, [])
+        if any(str(r.get("season")) == season for r in roll):
+            continue  # cricsheet (or an earlier row) already has this season
+        roll.append({"season": season, "winner": winner, "ru": ru})
+        print(f"supplement: added {key} {season} {winner} (def. {ru or 'N/A'})")
+
+    for k in rolls:
+        rolls[k].sort(key=lambda r: -_year(r["season"]))
+
+    honours = defaultdict(lambda: defaultdict(list))  # (name, tl_league) -> years
+    unmatched = defaultdict(list)
+    key_to_league = {v[0]: v[1] for v in EVENTS.values()}
+    for key, rs in rolls.items():
+        tl_league = key_to_league.get(key)
+        for r in rs:
             tl_name = BRAND_TO_TEAMLIST.get(r["winner"], r["winner"])
-            if tl_name in tl_names.get(tl_league, set()):
+            if tl_league and tl_name in tl_names.get(tl_league, set()):
                 honours[(tl_name, tl_league)][key].append(r["season"])
             else:
-                unmatched[r["winner"]].append(f"{LABELS[key]} {r['season']}")
-        rolls[key] = out
+                unmatched[r["winner"]].append(f"{LABELS.get(key, key)} {r['season']}")
 
     most = {key: sorted(
         [{"winner": w, "titles": sum(1 for r in rs if r["winner"] == w)}
