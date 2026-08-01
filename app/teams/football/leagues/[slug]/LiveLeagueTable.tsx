@@ -43,7 +43,12 @@ function Table({ group }: { group: LiveTableGroup }) {
               <>
                 <CrestIcon name={r.name} size={15} className="flex-shrink-0" />
                 {r.slug ? <Link href={`/teams/football/${r.slug}`} className="hover:text-[var(--accent)] truncate">{r.name}</Link> : <span className="truncate">{r.name}</span>}
-                {b && <span className="flex-shrink-0"><Badge color={{ bg: b.bg, fg: b.fg }}>{b.label}</Badge></span>}
+                {b && <span className="flex-shrink-0" title={b.title}><Badge color={{ bg: b.bg, fg: b.fg }}>{b.label}</Badge></span>}
+                {r.cup && r.cup.length > 0 && (
+                  <span className="flex-shrink-0" title={`Still alive: ${r.cup.join(", ")}`}>
+                    <Badge color={{ bg: "rgba(139,92,246,0.18)", fg: "#8b5cf6" }}>Cup{r.cup.length > 1 ? ` ×${r.cup.length}` : ""}</Badge>
+                  </span>
+                )}
               </>
             }
             sub={<>{r.cells[0]} P · {r.cells[1]}-{r.cells[2]}-{r.cells[3]} · {typeof r.cells[6] === "number" && r.cells[6] > 0 ? `+${r.cells[6]}` : r.cells[6]} GD</>}

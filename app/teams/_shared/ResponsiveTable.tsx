@@ -105,7 +105,10 @@ export function RankRow({
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-1.5 text-[13px] font-medium leading-snug min-w-0">{name}</div>
         {sub && (
-          <div className="mt-0.5 text-[11px] leading-snug truncate" style={{ ...MONO, color: "var(--text-dim)" }}>
+          // line-clamp-2, not truncate: a data-rich row (historical club
+          // name, long trophy note) gets a second line rather than silently
+          // hiding fields; anything past two lines is genuinely desktop-only.
+          <div className="mt-0.5 text-[11px] leading-snug line-clamp-2" style={{ ...MONO, color: "var(--text-dim)" }}>
             {sub}
           </div>
         )}

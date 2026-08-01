@@ -83,32 +83,42 @@ function LiveTable({
 
       <ResponsiveTable
         variant="list"
-        mobileRows={rows.map((row) => (
-          <RankRow
-            key={row.name}
-            rank={row.rank}
-            name={
-              <>
-                <TeamCrest
-                  name={row.name}
-                  size={16}
-                  fallback={<ColorBall slug={row.slug ?? row.abbr} name={row.name} />}
-                />
-                {row.slug ? (
-                  <Link href={`/teams/football/${row.slug}`} className="truncate hover:underline">
-                    {row.name}
-                  </Link>
-                ) : (
-                  <span className="truncate">{row.name}</span>
-                )}
-                {row.zone && <span className="flex-shrink-0"><ZoneBadge zone={row.zone} /></span>}
-              </>
-            }
-            sub={<>{row.played} P · {row.wins}-{row.draws}-{row.losses} · {row.gd > 0 ? `+${row.gd}` : row.gd} GD</>}
-            right={row.points}
-            rightSub="pts"
-          />
-        ))}
+        mobileRows={rows.map((row) => {
+          const eurEntries = europeBySlug.get(row.slug ?? "") ?? [];
+          return (
+            <RankRow
+              key={row.name}
+              rank={row.rank}
+              name={
+                <>
+                  <TeamCrest
+                    name={row.name}
+                    size={16}
+                    fallback={<ColorBall slug={row.slug ?? row.abbr} name={row.name} />}
+                  />
+                  {row.slug ? (
+                    <Link href={`/teams/football/${row.slug}`} className="truncate hover:underline">
+                      {row.name}
+                    </Link>
+                  ) : (
+                    <span className="truncate">{row.name}</span>
+                  )}
+                  {row.zone && <span className="flex-shrink-0"><ZoneBadge zone={row.zone} /></span>}
+                  {eurEntries.map((e, ei) => (
+                    <span key={ei} className="flex-shrink-0">
+                      <Badge color={{ bg: "rgba(99,102,241,0.12)", fg: "#818cf8" }}>
+                        {europeanCompDisplayCode(e.code, null)}
+                      </Badge>
+                    </span>
+                  ))}
+                </>
+              }
+              sub={<>{row.played} P · {row.wins}-{row.draws}-{row.losses} · {row.gd > 0 ? `+${row.gd}` : row.gd} GD</>}
+              right={row.points}
+              rightSub="pts"
+            />
+          );
+        })}
       >
         <table className="w-full text-sm min-w-[540px]" data-sticky-col="2">
           <thead>
@@ -257,7 +267,14 @@ function WorkbookTable({
                   )}
                 </>
               }
-              sub={<>{s.matches ?? "–"} P · {s.w ?? "–"}-{s.d ?? "–"}-{s.l ?? "–"} · {s.gd != null ? (s.gd > 0 ? `+${s.gd}` : s.gd) : "–"} GD</>}
+              sub={
+                <>
+                  {s.matches ?? "–"} P · {s.w ?? "–"}-{s.d ?? "–"}-{s.l ?? "–"} · {s.gd != null ? (s.gd > 0 ? `+${s.gd}` : s.gd) : "–"} GD
+                  {(europeBySlug.get(s.slug ?? "") ?? []).map((e) => europeanCompDisplayCode(e.code, null)).filter(Boolean).length > 0 && (
+                    <> · {(europeBySlug.get(s.slug ?? "") ?? []).map((e) => europeanCompDisplayCode(e.code, null)).join(", ")}</>
+                  )}
+                </>
+              }
               right={s.pts ?? "–"}
               rightSub="pts"
               highlight={isChamp}

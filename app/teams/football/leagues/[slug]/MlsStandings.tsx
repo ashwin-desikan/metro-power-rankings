@@ -76,11 +76,8 @@ function Table({ rows, showConf, showHonors }: { rows: MlsStanding[]; showConf: 
           name={
             <>
               <TeamCell row={r} />
-              {showHonors && r.mls_cup && (
-                <span className="flex-shrink-0" title="MLS Cup champion"><Badge variant="champion">★ MLS Cup</Badge></span>
-              )}
-              {showHonors && r.supporters_shield && (
-                <span className="flex-shrink-0" title="Supporters' Shield (best regular-season record)"><Badge variant="champion">★ Shield</Badge></span>
+              {showHonors && (
+                <span className="flex-shrink-0 inline-flex items-center gap-1"><Honors row={r} /></span>
               )}
             </>
           }

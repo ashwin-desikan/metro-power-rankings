@@ -426,6 +426,7 @@ function MlsClubSeasonsTable({ seasons }: { seasons: MlsClubSeason[] }) {
               sub={
                 <>
                   {s.overall_pos != null && <>P{s.overall_pos} · </>}
+                  {s.conf_pos != null && <>C{s.conf_pos} · </>}
                   {s.w}-{s.d}-{s.l} · {s.gd > 0 ? `+${s.gd}` : s.gd} GD
                 </>
               }
@@ -800,11 +801,17 @@ function SeasonsTable({
               sub={
                 s.format === "league" ? (
                   <>
+                    {/* Historical playing name leads the line (pre-rename eras
+                        matter here) so truncation can never swallow it. */}
+                    {s.team && s.team !== s.cur_name && <>as {s.team} · </>}
                     {s.matches ?? "-"} P · {s.w ?? "-"}-{s.d ?? "-"}-{s.l ?? "-"} · {s.gf ?? "-"}:{s.ga ?? "-"}
                     {s.gd != null && <> · {s.gd > 0 ? `+${s.gd}` : s.gd}</>}
                   </>
                 ) : (
-                  <>national playoff · knockout format, no match data</>
+                  <>
+                    {s.team && s.team !== s.cur_name && <>as {s.team} · </>}
+                    national playoff · knockout format, no match data
+                  </>
                 )
               }
               right={s.format === "league" ? s.pts ?? "-" : undefined}

@@ -456,6 +456,55 @@ function StandingBadges({ s, isChamp }: { s: FootballLeagueHub["current_standing
   );
 }
 
+// Domestic-cup and European-campaign badge clusters, shared between the
+// desktop table cells and the mobile badge strip so neither view forks
+// the rendering rules (gold ★ winner, outlined ☆ lost finalist, etc.).
+function DomCupBadges({ cups }: { cups: FootballCupFinal[] }) {
+  return (
+    <>
+      {cups.map((c, ci) => {
+        const isWin = c.result === "won";
+        const shortLabel = c.kind === "major" ? "Cup" : "Lg Cup";
+        return (
+          <span key={ci} className="inline-block rounded px-1.5 py-0.5 font-semibold mr-1"
+                style={{ background: isWin ? "rgba(245,215,110,0.18)" : "transparent", color: isWin ? "#b58900" : "var(--text-muted)", boxShadow: isWin ? undefined : "inset 0 0 0 1px rgba(120,120,140,0.45)" }}>
+            {isWin ? "★ " : "☆ "}{shortLabel}
+          </span>
+        );
+      })}
+    </>
+  );
+}
+function EurCompBadges({ entries, year }: { entries: FootballEuropeEntry[]; year: number | null }) {
+  return (
+    <>
+      {entries.map((e, ei) => {
+        const isWinner = e.trophy_won;
+        const isUcl = !!(e.code && (e.code === "CL" || e.code === "CLB"));
+        const isFinalistLost = !isWinner && e.deepest_rnd === 1;
+        let bg: string, fg: string, boxShadow: string | undefined, symbol: string | null = null;
+        if (isWinner && isUcl)        { bg = "rgba(212,175,55,0.22)"; fg = "#d4af37"; symbol = "★"; }
+        else if (isWinner)             { bg = "rgba(192,192,192,0.20)"; fg = "#c0c0c0"; symbol = "★"; }
+        else if (isFinalistLost && isUcl) { bg = "transparent"; fg = "#d4af37"; boxShadow = "inset 0 0 0 1px rgba(212,175,55,0.55)"; symbol = "☆"; }
+        else if (isFinalistLost)        { bg = "transparent"; fg = "#c0c0c0"; boxShadow = "inset 0 0 0 1px rgba(192,192,192,0.55)"; symbol = "☆"; }
+        else                            { bg = "rgba(120,120,140,0.16)"; fg = "var(--text-muted)"; }
+        const title = isWinner
+          ? `${e.competition} winner this season`
+          : isFinalistLost
+            ? `${e.competition}: reached final, lost`
+            : `${e.competition}: ${e.result_label}`;
+        return (
+          <span key={ei} className="inline-block rounded px-1.5 py-0.5 font-semibold tracking-wide"
+                style={{ background: bg, color: fg, boxShadow }} title={title}>
+            {symbol && <span aria-hidden className="mr-0.5">{symbol}</span>}
+            {europeanCompDisplayCode(e.code, year)}
+          </span>
+        );
+      })}
+    </>
+  );
+}
+
 function CurrentStandings({
   hub,
   cupsBySlug,
@@ -481,9 +530,11 @@ function CurrentStandings({
         variant="list"
         mobileRows={hub.current_standings.map((s) => {
           const isChamp = s.champion === true || s.place === 1;
-          return (
+          const cups = cupsBySlug.get(s.slug) ?? [];
+          const eur = europeBySlug.get(s.slug) ?? [];
+          const hasStrip = cups.length > 0 || eur.length > 0 || !!s.eur_qual;
+          const row = (
             <RankRow
-              key={`${s.slug}-card`}
               rank={s.place ?? "-"}
               name={
                 <>
@@ -509,6 +560,23 @@ function CurrentStandings({
               rightSub="pts"
               highlight={isChamp}
             />
+          );
+          if (!hasStrip) return <div key={`${s.slug}-card`}>{row}</div>;
+          return (
+            <div key={`${s.slug}-card`}>
+              {row}
+              <div className="px-3 pb-2 -mt-1 flex flex-wrap items-center gap-1 text-[10px]" style={isChamp ? { background: "rgba(78,205,196,0.06)" } : undefined}>
+                <DomCupBadges cups={cups} />
+                <EurCompBadges entries={eur} year={s.year ?? null} />
+                {s.eur_qual && (
+                  <span title="Qualified for this European competition next season">
+                    <Badge color={{ bg: "rgba(59,130,246,0.18)", fg: "#3b82f6" }}>
+                      {europeanCompDisplayCode(s.eur_qual, s.year === null ? null : s.year + 1)}
+                    </Badge>
+                  </span>
+                )}
+              </div>
+            </div>
           );
         })}
       >
@@ -561,43 +629,12 @@ function CurrentStandings({
                 </td>
                 {/* Domestic Cup */}
                 <td className="py-1.5 pl-3 text-xs hidden md:table-cell">
-                  {(cupsBySlug.get(s.slug) ?? []).map((c, ci) => {
-                    const isWin = c.result === "won";
-                    const shortLabel = c.kind === "major" ? "Cup" : "Lg Cup";
-                    return (
-                      <span key={ci} className="inline-block rounded px-1.5 py-0.5 font-semibold mr-1"
-                            style={{ background: isWin ? "rgba(245,215,110,0.18)" : "transparent", color: isWin ? "#b58900" : "var(--text-muted)", boxShadow: isWin ? undefined : "inset 0 0 0 1px rgba(120,120,140,0.45)" }}>
-                        {isWin ? "★ " : "☆ "}{shortLabel}
-                      </span>
-                    );
-                  })}
+                  <DomCupBadges cups={cupsBySlug.get(s.slug) ?? []} />
                 </td>
                 {/* Eur Comp this season — full rendering matching season-by-season */}
                 <td className="py-1.5 pl-2 text-xs hidden md:table-cell">
                   <span className="inline-flex flex-wrap gap-1">
-                    {(europeBySlug.get(s.slug) ?? []).map((e, ei) => {
-                      const isWinner = e.trophy_won;
-                      const isUcl = !!(e.code && (e.code === "CL" || e.code === "CLB"));
-                      const isFinalistLost = !isWinner && e.deepest_rnd === 1;
-                      let bg: string, fg: string, boxShadow: string | undefined, symbol: string | null = null;
-                      if (isWinner && isUcl)        { bg = "rgba(212,175,55,0.22)"; fg = "#d4af37"; symbol = "★"; }
-                      else if (isWinner)             { bg = "rgba(192,192,192,0.20)"; fg = "#c0c0c0"; symbol = "★"; }
-                      else if (isFinalistLost && isUcl) { bg = "transparent"; fg = "#d4af37"; boxShadow = "inset 0 0 0 1px rgba(212,175,55,0.55)"; symbol = "☆"; }
-                      else if (isFinalistLost)        { bg = "transparent"; fg = "#c0c0c0"; boxShadow = "inset 0 0 0 1px rgba(192,192,192,0.55)"; symbol = "☆"; }
-                      else                            { bg = "rgba(120,120,140,0.16)"; fg = "var(--text-muted)"; }
-                      const title = isWinner
-                        ? `${e.competition} winner this season`
-                        : isFinalistLost
-                          ? `${e.competition}: reached final, lost`
-                          : `${e.competition}: ${e.result_label}`;
-                      return (
-                        <span key={ei} className="inline-block rounded px-1.5 py-0.5 font-semibold tracking-wide"
-                              style={{ background: bg, color: fg, boxShadow }} title={title}>
-                          {symbol && <span aria-hidden className="mr-0.5">{symbol}</span>}
-                          {europeanCompDisplayCode(e.code, s.year ?? null)}
-                        </span>
-                      );
-                    })}
+                    <EurCompBadges entries={europeBySlug.get(s.slug) ?? []} year={s.year ?? null} />
                   </span>
                 </td>
                 <td className="py-1.5 text-right tabular-nums text-[var(--text-muted)]">{s.matches ?? "-"}</td>
