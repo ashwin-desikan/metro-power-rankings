@@ -760,3 +760,26 @@ Full `npm run verify` green on the exact committed tree: exit 0, 4,892 static pa
 ### Open
 - **THE PUSH.** Everything above is local-only until Ashwin pushes (or asks a session to). One real Vercel build when it lands.
 - Carried: Supabase RLS advisory (8 tables, SQL drafted, not applied); "actual CL winner isn't #1" ranking levers; `tsconfig.clean.json` stray (still untracked, unknown provenance); governors `governorsNow` hardcoded R26/D24.
+
+## 2026-08-01 (late evening) — windows → next session (KIDS GAMES WAVE 3 — leadership games, visual offside, badge/flag enrichment; committed locally on top of wave 2, still NOT pushed)
+
+Second sitting, same day, driven by Ashwin's feedback on wave 2: Be the Ref and Count & Think were too text-heavy for his son; wants logos/flags everywhere; Five Oceans out; and NEW games on US/UK leadership history (Presidents / PMs / monarchs — he supplied a Gemini lesson plan; the games below adapt its concepts to picture-first mechanics).
+
+### New games (`public/play/games/`)
+- **offside-or-onside.html — FULL VISUAL REBUILD** (replaces the text version; Ashwin chose "football first" over rebuilding all four rules games). SVG pitch freeze-frames, procedurally generated scenarios covering the 5 teaching cases (past the line / level=onside / behind the line / own half / behind the ball), tap ONSIDE-OFFSIDE, then the yellow "last defender" line + animated pass reveal WHY. 8 rounds, all 5 cases guaranteed per run.
+- **whos-the-boss.html** — whose job is it: President 🦅 vs Prime Minister 🚪 vs The King 👑. 15 duty/fact cards (10/session), single-answer only, spoken.
+- **leader-time-machine.html** — REAL data from `us-executive-history.json` + `public/data/leaders/united-kingdom.json` (47 president terms, 80 PM terms, 13 sovereigns, embedded at build). Three question types: who-came-first duels, who was in charge in year X, and crossovers ("When Reagan was President, who was PM?" — overlap computed from actual terms; distractors guaranteed non-overlapping). Party-colored chips teach the US/UK color flip.
+- **us-or-uk.html** — sort 20 civics/geography items (12/session) to the US or UK flag: 50 states/4 nations, Congress/Parliament, Senate/Lords, D.C./London, Mississippi/Thames, governors/King, party colors, elections cadence.
+
+### Count & Think + rules enrichment (`pools/*.js` regenerated; engine.js/styles.css UNTOUCHED — they already support s.logo/opt.logo)
+- odd-one-out: real badges on 401/507 options; hint sentence moved to sub, question shortened. find-the-teams-home: club badge on 171/228 questions. north-or-south: every entry got a country flag or club badge (flags via flagcdn.com w160, same CDN the site already uses; onerror-hidden). bigger-city: country flags on both city options (520). trophy-count: REBUILT around 38 famous football clubs with real badges + `domestic-clubs.json` allTime.titles (210 generated compare/most questions, no more logo-less NFL/NBA counts — NB `/team-badges/` has NO US big-four badges, that's why). hows-that / ball-or-strike / catch-or-no-catch: every question hand-trimmed to ≤12 words (kept mechanics; full visual rebuilds deferred).
+- Pools are now emitted as `window.GAME={JSON}` (was IIFE) — same shape, engine-compatible.
+- **five-oceans.html DELISTED** from /play (file left on disk). `app/play/page.tsx` gained the "🏛️ Who Runs the Country?" section with the three leadership games.
+
+### Proof
+All four new games + multi-run offside/time-machine stress Playwright-tested to their finales (zero page errors); pools eval-validated (0 malformed of 1,151 entries). Full `npm run verify` green on the committed tree: exit 0, 4,892 pages, vitest 26/26. Release note 2026-08-01 entry AMENDED (one entry per shipping day).
+
+### Open
+- **THE PUSH** — now TWO local commits (wave 2 + wave 3) stacked on `ed4637efe`, one real build when pushed.
+- Deferred: visual rebuilds for the cricket/baseball/NFL kids rules games (offside pattern is the template); world-sports-tour untouched (already visual counting); match-day-money + league-table-detective untouched (inherently reading/maths).
+- Carried: RLS advisory; CL-winner ranking levers; tsconfig.clean.json stray; governorsNow R26/D24.

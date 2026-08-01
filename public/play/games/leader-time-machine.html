@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Leader Time Machine — Play &amp; Learn</title>
+<style>
+  :root{--ink:#16324f;--accent:#1f9e82;--gold:#f6b93b;--paper:#eef6fc;--dem:#3b6fd4;--rep:#d43b3b;--lab:#d43b3b;--con:#3b6fd4;--oth:#8a6fc9}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;height:100%}
+  body{font-family:"Baloo 2","Segoe UI",system-ui,sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden}
+  header{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;max-width:560px;margin:0 auto}
+  .logo{font-size:1.3rem;font-weight:900}
+  .hbtns{display:flex;gap:8px}
+  .snd,.backb{border:none;background:#fff;border-radius:14px;font-size:1.15rem;padding:6px 12px;box-shadow:0 4px 0 #cfe0ee;cursor:pointer;text-decoration:none;color:var(--ink);font-weight:900}
+  main{max-width:560px;margin:0 auto;padding:0 14px 20px;text-align:center}
+  .dial{display:inline-block;background:var(--ink);color:#fff;border-radius:14px;padding:6px 18px;font-weight:900;font-size:1.15rem;margin-bottom:4px;letter-spacing:1px}
+  .q{font-size:1.15rem;font-weight:900;margin:6px 0 4px}
+  .read{border:none;background:#fff;border-radius:12px;font-size:1rem;padding:5px 12px;cursor:pointer;font-weight:800;color:var(--ink);box-shadow:0 4px 0 #cfe0ee}
+  .opts{display:grid;gap:10px;margin-top:12px}
+  .opts.two{grid-template-columns:1fr 1fr}
+  .opts.three{grid-template-columns:1fr}
+  .card{position:relative;border:none;border-radius:18px;background:#fff;box-shadow:0 6px 0 #d7e6f2;cursor:pointer;padding:14px 10px;font-family:inherit;color:var(--ink);transition:transform .12s;display:flex;flex-direction:column;align-items:center;gap:6px}
+  .opts.three .card{flex-direction:row;justify-content:flex-start;gap:12px;padding:12px 16px;text-align:left}
+  .card:active{transform:scale(.96)}
+  .card img.fl{width:56px;height:38px;border-radius:6px;object-fit:cover;box-shadow:0 0 0 2px #dcebf6}
+  .card .nm{font-weight:900;font-size:1.05rem}
+  .card .chip{font-size:.8rem;font-weight:900;color:#fff;border-radius:10px;padding:2px 10px}
+  .card .yrs{font-size:.9rem;font-weight:800;color:#5b7b97;min-height:1.2em}
+  .card.win{background:#e8fbf4;box-shadow:0 6px 0 #bfe6da,0 0 0 4px var(--accent)}
+  .card.bad{animation:shake .4s}
+  @keyframes shake{25%{transform:translateX(-7px)}50%{transform:translateX(7px)}75%{transform:translateX(-4px)}}
+  .reveal{min-height:1.5em;font-weight:800;color:var(--accent);margin-top:10px}
+  .next{margin-top:8px;border:none;border-radius:16px;font-family:inherit;font-weight:900;font-size:1.05rem;padding:11px 26px;cursor:pointer;background:var(--accent);color:#fff;box-shadow:0 6px 0 #15705d}
+  .next:disabled{opacity:.35;cursor:default}
+  .pass{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+  .stamp{width:32px;height:32px;border-radius:10px;background:#fff;box-shadow:inset 0 0 0 3px #dcebf6;display:flex;align-items:center;justify-content:center;font-size:1rem;opacity:.4;filter:grayscale(1)}
+  .stamp.on{opacity:1;filter:none;box-shadow:inset 0 0 0 3px var(--gold);animation:pop .4s}
+  @keyframes pop{50%{transform:scale(1.3) rotate(-6deg)}}
+  .toast{position:fixed;left:50%;top:10%;transform:translateX(-50%);background:var(--ink);color:#fff;font-weight:900;font-size:1.1rem;padding:10px 18px;border-radius:16px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:9}
+  .toast.show{opacity:1}
+  .conf{position:fixed;top:-12px;font-size:1.3rem;pointer-events:none;z-index:15;animation:fall linear forwards}
+  @keyframes fall{to{transform:translateY(112vh) rotate(540deg)}}
+  .cover{position:fixed;inset:0;background:#eef6fcf2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:20}
+  .cover h1{font-size:2.1rem;margin:8px 0}
+  .cover p{font-size:1.08rem;font-weight:700;color:#5b7b97;max-width:430px;margin:4px 0 18px}
+  .big{border:none;border-radius:18px;font-family:inherit;font-weight:900;font-size:1.25rem;padding:15px 28px;cursor:pointer;background:var(--accent);color:#fff;box-shadow:0 7px 0 #15705d}
+  .hidden{display:none !important}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">🕰️ Leader Time Machine</div>
+  <div class="hbtns"><a class="backb" id="back" href="/play">←</a><button class="snd" id="snd">🔊</button></div>
+</header>
+<main>
+  <div class="dial" id="dial"></div>
+  <div class="q" id="q"></div>
+  <button class="read" id="read">🔊 Read it to me</button>
+  <div class="opts" id="opts"></div>
+  <div class="reveal" id="reveal"></div>
+  <button class="next" id="next" disabled>Next →</button>
+  <div class="pass" id="pass"></div>
+</main>
+<div class="toast" id="toast"></div>
+
+<div class="cover" id="start">
+  <div style="font-size:3.8rem">🕰️🇺🇸🇬🇧</div>
+  <h1>Leader Time Machine</h1>
+  <p>Travel through time with <b>real Presidents, Prime Ministers and Kings &amp; Queens</b>. Who came first? Who was in charge? Who ruled together?</p>
+  <button class="big" id="go">Start the machine! 🕰️</button>
+</div>
+
+<div class="cover hidden" id="finale">
+  <div style="font-size:4rem">🎩👑</div>
+  <h1>History Hero!</h1>
+  <p>You know your Presidents AND your Prime Ministers.</p>
+  <button class="big" id="again">Travel again 🔁</button>
+</div>
+
+<script>
+const DATA={"presidents":[{"n":"George Washington","p":"Unaffiliated","s":1789,"e":1797,"c":"us","sd":"1789-04-30","ed":"1797-03-04","fam":true},{"n":"John Adams","p":"Federalist","s":1797,"e":1801,"c":"us","sd":"1797-03-04","ed":"1801-03-04","fam":false},{"n":"Thomas Jefferson","p":"Democratic-Republican","s":1801,"e":1809,"c":"us","sd":"1801-03-04","ed":"1809-03-04","fam":true},{"n":"James Madison","p":"Democratic-Republican","s":1809,"e":1817,"c":"us","sd":"1809-03-04","ed":"1817-03-04","fam":false},{"n":"James Monroe","p":"Democratic-Republican","s":1817,"e":1825,"c":"us","sd":"1817-03-04","ed":"1825-03-04","fam":false},{"n":"John Quincy Adams","p":"National Republican","s":1825,"e":1829,"c":"us","sd":"1825-03-04","ed":"1829-03-04","fam":false},{"n":"Andrew Jackson","p":"Democratic","s":1829,"e":1837,"c":"us","sd":"1829-03-04","ed":"1837-03-04","fam":false},{"n":"Martin Van Buren","p":"Democratic","s":1837,"e":1841,"c":"us","sd":"1837-03-04","ed":"1841-03-04","fam":false},{"n":"William Henry Harrison","p":"Whig","s":1841,"e":1841,"c":"us","sd":"1841-03-04","ed":"1841-04-04","fam":false},{"n":"John Tyler","p":"Whig","s":1841,"e":1845,"c":"us","sd":"1841-04-04","ed":"1845-03-04","fam":false},{"n":"James K. Polk","p":"Democratic","s":1845,"e":1849,"c":"us","sd":"1845-03-04","ed":"1849-03-04","fam":false},{"n":"Zachary Taylor","p":"Whig","s":1849,"e":1850,"c":"us","sd":"1849-03-04","ed":"1850-07-09","fam":false},{"n":"Millard Fillmore","p":"Whig","s":1850,"e":1853,"c":"us","sd":"1850-07-09","ed":"1853-03-04","fam":false},{"n":"Franklin Pierce","p":"Democratic","s":1853,"e":1857,"c":"us","sd":"1853-03-04","ed":"1857-03-04","fam":false},{"n":"James Buchanan","p":"Democratic","s":1857,"e":1861,"c":"us","sd":"1857-03-04","ed":"1861-03-04","fam":false},{"n":"Abraham Lincoln","p":"Republican","s":1861,"e":1865,"c":"us","sd":"1861-03-04","ed":"1865-04-15","fam":true},{"n":"Andrew Johnson","p":"National Union","s":1865,"e":1869,"c":"us","sd":"1865-04-15","ed":"1869-03-04","fam":false},{"n":"Ulysses S. Grant","p":"Republican","s":1869,"e":1877,"c":"us","sd":"1869-03-04","ed":"1877-03-04","fam":false},{"n":"Rutherford B. Hayes","p":"Republican","s":1877,"e":1881,"c":"us","sd":"1877-03-04","ed":"1881-03-04","fam":false},{"n":"James A. Garfield","p":"Republican","s":1881,"e":1881,"c":"us","sd":"1881-03-04","ed":"1881-09-19","fam":false},{"n":"Chester A. Arthur","p":"Republican","s":1881,"e":1885,"c":"us","sd":"1881-09-19","ed":"1885-03-04","fam":false},{"n":"Grover Cleveland","p":"Democratic","s":1885,"e":1889,"c":"us","sd":"1885-03-04","ed":"1889-03-04","fam":false},{"n":"Benjamin Harrison","p":"Republican","s":1889,"e":1893,"c":"us","sd":"1889-03-04","ed":"1893-03-04","fam":false},{"n":"Grover Cleveland","p":"Democratic","s":1893,"e":1897,"c":"us","sd":"1893-03-04","ed":"1897-03-04","fam":false},{"n":"William McKinley","p":"Republican","s":1897,"e":1901,"c":"us","sd":"1897-03-04","ed":"1901-09-14","fam":false},{"n":"Theodore Roosevelt","p":"Republican","s":1901,"e":1909,"c":"us","sd":"1901-09-14","ed":"1909-03-04","fam":true},{"n":"William Howard Taft","p":"Republican","s":1909,"e":1913,"c":"us","sd":"1909-03-04","ed":"1913-03-04","fam":false},{"n":"Woodrow Wilson","p":"Democratic","s":1913,"e":1921,"c":"us","sd":"1913-03-04","ed":"1921-03-04","fam":false},{"n":"Warren G. Harding","p":"Republican","s":1921,"e":1923,"c":"us","sd":"1921-03-04","ed":"1923-08-02","fam":false},{"n":"Calvin Coolidge","p":"Republican","s":1923,"e":1929,"c":"us","sd":"1923-08-02","ed":"1929-03-04","fam":false},{"n":"Herbert Hoover","p":"Republican","s":1929,"e":1933,"c":"us","sd":"1929-03-04","ed":"1933-03-04","fam":false},{"n":"Franklin D. Roosevelt","p":"Democratic","s":1933,"e":1945,"c":"us","sd":"1933-03-04","ed":"1945-04-12","fam":true},{"n":"Harry S. Truman","p":"Democratic","s":1945,"e":1953,"c":"us","sd":"1945-04-12","ed":"1953-01-20","fam":false},{"n":"Dwight D. Eisenhower","p":"Republican","s":1953,"e":1961,"c":"us","sd":"1953-01-20","ed":"1961-01-20","fam":true},{"n":"John F. Kennedy","p":"Democratic","s":1961,"e":1963,"c":"us","sd":"1961-01-20","ed":"1963-11-22","fam":true},{"n":"Lyndon B. Johnson","p":"Democratic","s":1963,"e":1969,"c":"us","sd":"1963-11-22","ed":"1969-01-20","fam":false},{"n":"Richard Nixon","p":"Republican","s":1969,"e":1974,"c":"us","sd":"1969-01-20","ed":"1974-08-09","fam":true},{"n":"Gerald Ford","p":"Republican","s":1974,"e":1977,"c":"us","sd":"1974-08-09","ed":"1977-01-20","fam":false},{"n":"Jimmy Carter","p":"Democratic","s":1977,"e":1981,"c":"us","sd":"1977-01-20","ed":"1981-01-20","fam":true},{"n":"Ronald Reagan","p":"Republican","s":1981,"e":1989,"c":"us","sd":"1981-01-20","ed":"1989-01-20","fam":true},{"n":"George H. W. Bush","p":"Republican","s":1989,"e":1993,"c":"us","sd":"1989-01-20","ed":"1993-01-20","fam":false},{"n":"Bill Clinton","p":"Democratic","s":1993,"e":2001,"c":"us","sd":"1993-01-20","ed":"2001-01-20","fam":true},{"n":"George W. Bush","p":"Republican","s":2001,"e":2009,"c":"us","sd":"2001-01-20","ed":"2009-01-20","fam":true},{"n":"Barack Obama","p":"Democratic","s":2009,"e":2017,"c":"us","sd":"2009-01-20","ed":"2017-01-20","fam":true},{"n":"Donald Trump","p":"Republican","s":2017,"e":2021,"c":"us","sd":"2017-01-20","ed":"2021-01-20","fam":true},{"n":"Joe Biden","p":"Democratic","s":2021,"e":2025,"c":"us","sd":"2021-01-20","ed":"2025-01-20","fam":true},{"n":"Donald Trump","p":"Republican","s":2025,"e":null,"c":"us","sd":"2025-01-20","ed":null,"fam":true}],"pms":[{"n":"Robert Walpole","p":"Whig","s":1721,"e":1742,"c":"uk","sd":"1721-04-03","ed":"1742-02-11","fam":true},{"n":"Spencer Compton, Earl of Wilmington","p":"Whig","s":1742,"e":1743,"c":"uk","sd":"1742-02-16","ed":"1743-07-02","fam":false},{"n":"Henry Pelham","p":"Whig","s":1743,"e":1754,"c":"uk","sd":"1743-08-27","ed":"1754-03-06","fam":false},{"n":"Thomas Pelham-Holles, Duke of Newcastle","p":"Whig","s":1754,"e":1756,"c":"uk","sd":"1754-03-16","ed":"1756-11-11","fam":false},{"n":"William Cavendish, Duke of Devonshire","p":"Whig","s":1756,"e":1757,"c":"uk","sd":"1756-11-16","ed":"1757-06-29","fam":false},{"n":"Thomas Pelham-Holles, Duke of Newcastle","p":"Whig","s":1757,"e":1762,"c":"uk","sd":"1757-06-29","ed":"1762-05-26","fam":false},{"n":"John Stuart, Earl of Bute","p":"Tory","s":1762,"e":1763,"c":"uk","sd":"1762-05-26","ed":"1763-04-08","fam":false},{"n":"George Grenville","p":"Whig","s":1763,"e":1765,"c":"uk","sd":"1763-04-16","ed":"1765-07-10","fam":false},{"n":"Charles Watson-Wentworth, Marquess of Rockingham","p":"Whig","s":1765,"e":1766,"c":"uk","sd":"1765-07-13","ed":"1766-07-30","fam":false},{"n":"William Pitt the Elder, Earl of Chatham","p":"Whig","s":1766,"e":1768,"c":"uk","sd":"1766-07-30","ed":"1768-10-14","fam":false},{"n":"Augustus FitzRoy, Duke of Grafton","p":"Whig","s":1768,"e":1770,"c":"uk","sd":"1768-10-14","ed":"1770-01-28","fam":false},{"n":"Frederick North, Lord North","p":"Tory","s":1770,"e":1782,"c":"uk","sd":"1770-01-28","ed":"1782-03-27","fam":false},{"n":"Charles Watson-Wentworth, Marquess of Rockingham","p":"Whig","s":1782,"e":1782,"c":"uk","sd":"1782-03-27","ed":"1782-07-01","fam":false},{"n":"William Petty, Earl of Shelburne","p":"Whig","s":1782,"e":1783,"c":"uk","sd":"1782-07-04","ed":"1783-03-26","fam":false},{"n":"William Henry Cavendish-Bentinck","p":"Tory/Coalition","s":1783,"e":1783,"c":"uk","sd":"1783-04-02","ed":"1783-12-18","fam":false},{"n":"William Pitt the Younger","p":"Tory","s":1783,"e":1801,"c":"uk","sd":"1783-12-19","ed":"1801-03-14","fam":true},{"n":"Henry Addington, Viscount Sidmouth","p":"Tory","s":1801,"e":1804,"c":"uk","sd":"1801-03-17","ed":"1804-05-10","fam":false},{"n":"William Pitt the Younger","p":"Tory","s":1804,"e":1806,"c":"uk","sd":"1804-05-10","ed":"1806-01-23","fam":true},{"n":"William Wyndham Grenville, Baron Grenville","p":"Whig","s":1806,"e":1807,"c":"uk","sd":"1806-02-11","ed":"1807-03-25","fam":false},{"n":"William Henry Cavendish-Bentinck","p":"Tory","s":1807,"e":1809,"c":"uk","sd":"1807-03-31","ed":"1809-10-04","fam":false},{"n":"Spencer Perceval","p":"Tory","s":1809,"e":1812,"c":"uk","sd":"1809-10-04","ed":"1812-05-11","fam":false},{"n":"Robert Banks Jenkinson, Earl of Liverpool","p":"Tory","s":1812,"e":1827,"c":"uk","sd":"1812-06-08","ed":"1827-04-09","fam":false},{"n":"George Canning","p":"Tory","s":1827,"e":1827,"c":"uk","sd":"1827-04-12","ed":"1827-08-08","fam":false},{"n":"Frederick John Robinson, Viscount Goderich","p":"Tory","s":1827,"e":1828,"c":"uk","sd":"1827-08-31","ed":"1828-01-08","fam":false},{"n":"Arthur Wellesley, Duke of Wellington","p":"Tory","s":1828,"e":1830,"c":"uk","sd":"1828-01-22","ed":"1830-11-16","fam":false},{"n":"Charles Grey, Earl Grey","p":"Whig","s":1830,"e":1834,"c":"uk","sd":"1830-11-22","ed":"1834-07-09","fam":false},{"n":"William Lamb, Viscount Melbourne","p":"Whig","s":1834,"e":1834,"c":"uk","sd":"1834-07-16","ed":"1834-11-14","fam":false},{"n":"Robert Peel","p":"Conservative","s":1834,"e":1835,"c":"uk","sd":"1834-12-10","ed":"1835-04-08","fam":true},{"n":"William Lamb, Viscount Melbourne","p":"Whig","s":1835,"e":1841,"c":"uk","sd":"1835-04-18","ed":"1841-08-30","fam":false},{"n":"Robert Peel","p":"Conservative","s":1841,"e":1846,"c":"uk","sd":"1841-08-30","ed":"1846-06-29","fam":true},{"n":"John Russell, Lord Russell","p":"Whig/Liberal","s":1846,"e":1852,"c":"uk","sd":"1846-06-30","ed":"1852-02-21","fam":false},{"n":"Edward Henry Smith-Stanley, Earl of Derby","p":"Conservative","s":1852,"e":1852,"c":"uk","sd":"1852-02-23","ed":"1852-12-17","fam":false},{"n":"George Hamilton-Gordon, Earl of Aberdeen","p":"Conservative/Peelite","s":1852,"e":1855,"c":"uk","sd":"1852-12-19","ed":"1855-01-30","fam":false},{"n":"Henry John Temple, Viscount Palmerston","p":"Liberal","s":1855,"e":1858,"c":"uk","sd":"1855-02-06","ed":"1858-02-19","fam":false},{"n":"Edward Henry Smith-Stanley, Earl of Derby","p":"Conservative","s":1858,"e":1859,"c":"uk","sd":"1858-02-20","ed":"1859-06-11","fam":false},{"n":"Henry John Temple, Viscount Palmerston","p":"Liberal","s":1859,"e":1865,"c":"uk","sd":"1859-06-12","ed":"1865-10-18","fam":false},{"n":"John Russell, Lord Russell","p":"Liberal","s":1865,"e":1866,"c":"uk","sd":"1865-10-29","ed":"1866-06-26","fam":false},{"n":"Edward Henry Smith-Stanley, Earl of Derby","p":"Conservative","s":1866,"e":1868,"c":"uk","sd":"1866-06-28","ed":"1868-02-25","fam":false},{"n":"Benjamin Disraeli","p":"Conservative","s":1868,"e":1868,"c":"uk","sd":"1868-02-27","ed":"1868-12-01","fam":true},{"n":"William Ewart Gladstone","p":"Liberal","s":1868,"e":1874,"c":"uk","sd":"1868-12-03","ed":"1874-02-17","fam":true},{"n":"Benjamin Disraeli","p":"Conservative","s":1874,"e":1880,"c":"uk","sd":"1874-02-20","ed":"1880-04-21","fam":true},{"n":"William Ewart Gladstone","p":"Liberal","s":1880,"e":1885,"c":"uk","sd":"1880-04-23","ed":"1885-06-09","fam":true},{"n":"Robert Gascoyne-Cecil, Marquess of Salisbury","p":"Conservative","s":1885,"e":1886,"c":"uk","sd":"1885-06-23","ed":"1886-01-28","fam":false},{"n":"William Ewart Gladstone","p":"Liberal","s":1886,"e":1886,"c":"uk","sd":"1886-02-01","ed":"1886-07-20","fam":true},{"n":"Robert Gascoyne-Cecil, Marquess of Salisbury","p":"Conservative","s":1886,"e":1892,"c":"uk","sd":"1886-07-25","ed":"1892-08-11","fam":false},{"n":"William Ewart Gladstone","p":"Liberal","s":1892,"e":1894,"c":"uk","sd":"1892-08-15","ed":"1894-03-02","fam":true},{"n":"Archibald Primrose, Earl of Rosebery","p":"Liberal","s":1894,"e":1895,"c":"uk","sd":"1894-03-05","ed":"1895-06-22","fam":false},{"n":"Robert Gascoyne-Cecil, Marquess of Salisbury","p":"Conservative","s":1895,"e":1902,"c":"uk","sd":"1895-06-25","ed":"1902-07-11","fam":false},{"n":"Arthur James Balfour","p":"Conservative/Unionist","s":1902,"e":1905,"c":"uk","sd":"1902-07-12","ed":"1905-12-04","fam":false},{"n":"Henry Campbell-Bannerman","p":"Liberal","s":1905,"e":1908,"c":"uk","sd":"1905-12-05","ed":"1908-04-03","fam":false},{"n":"Herbert Henry Asquith","p":"Liberal","s":1908,"e":1916,"c":"uk","sd":"1908-04-08","ed":"1916-12-05","fam":false},{"n":"David Lloyd George","p":"Liberal/Coalition","s":1916,"e":1922,"c":"uk","sd":"1916-12-06","ed":"1922-10-19","fam":true},{"n":"Andrew Bonar Law","p":"Conservative","s":1922,"e":1923,"c":"uk","sd":"1922-10-23","ed":"1923-05-20","fam":false},{"n":"Stanley Baldwin","p":"Conservative","s":1923,"e":1924,"c":"uk","sd":"1923-05-22","ed":"1924-01-22","fam":false},{"n":"Ramsay MacDonald","p":"Labour","s":1924,"e":1924,"c":"uk","sd":"1924-01-22","ed":"1924-11-04","fam":false},{"n":"Stanley Baldwin","p":"Conservative","s":1924,"e":1929,"c":"uk","sd":"1924-11-04","ed":"1929-06-04","fam":false},{"n":"Ramsay MacDonald","p":"Labour/National","s":1929,"e":1935,"c":"uk","sd":"1929-06-05","ed":"1935-06-07","fam":false},{"n":"Stanley Baldwin","p":"Conservative","s":1935,"e":1937,"c":"uk","sd":"1935-06-07","ed":"1937-05-28","fam":false},{"n":"Neville Chamberlain","p":"Conservative","s":1937,"e":1940,"c":"uk","sd":"1937-05-28","ed":"1940-05-10","fam":false},{"n":"Winston Churchill","p":"Conservative","s":1940,"e":1945,"c":"uk","sd":"1940-05-10","ed":"1945-07-26","fam":true},{"n":"Clement Attlee","p":"Labour","s":1945,"e":1951,"c":"uk","sd":"1945-07-26","ed":"1951-10-26","fam":true},{"n":"Winston Churchill","p":"Conservative","s":1951,"e":1955,"c":"uk","sd":"1951-10-26","ed":"1955-04-05","fam":true},{"n":"Anthony Eden","p":"Conservative","s":1955,"e":1957,"c":"uk","sd":"1955-04-06","ed":"1957-01-09","fam":false},{"n":"Harold Macmillan","p":"Conservative","s":1957,"e":1963,"c":"uk","sd":"1957-01-10","ed":"1963-10-18","fam":false},{"n":"Alec Douglas-Home","p":"Conservative","s":1963,"e":1964,"c":"uk","sd":"1963-10-19","ed":"1964-10-16","fam":false},{"n":"Harold Wilson","p":"Labour","s":1964,"e":1970,"c":"uk","sd":"1964-10-16","ed":"1970-06-19","fam":true},{"n":"Edward Heath","p":"Conservative","s":1970,"e":1974,"c":"uk","sd":"1970-06-19","ed":"1974-03-04","fam":false},{"n":"Harold Wilson","p":"Labour","s":1974,"e":1976,"c":"uk","sd":"1974-03-04","ed":"1976-04-05","fam":true},{"n":"James Callaghan","p":"Labour","s":1976,"e":1979,"c":"uk","sd":"1976-04-05","ed":"1979-05-04","fam":false},{"n":"Margaret Thatcher","p":"Conservative","s":1979,"e":1990,"c":"uk","sd":"1979-05-04","ed":"1990-11-28","fam":true},{"n":"John Major","p":"Conservative","s":1990,"e":1997,"c":"uk","sd":"1990-11-28","ed":"1997-05-02","fam":true},{"n":"Tony Blair","p":"Labour","s":1997,"e":2007,"c":"uk","sd":"1997-05-02","ed":"2007-06-27","fam":true},{"n":"Gordon Brown","p":"Labour","s":2007,"e":2010,"c":"uk","sd":"2007-06-27","ed":"2010-05-11","fam":true},{"n":"David Cameron","p":"Conservative","s":2010,"e":2016,"c":"uk","sd":"2010-05-11","ed":"2016-07-13","fam":true},{"n":"Theresa May","p":"Conservative","s":2016,"e":2019,"c":"uk","sd":"2016-07-13","ed":"2019-07-24","fam":true},{"n":"Boris Johnson","p":"Conservative","s":2019,"e":2022,"c":"uk","sd":"2019-07-24","ed":"2022-09-06","fam":true},{"n":"Liz Truss","p":"Conservative","s":2022,"e":2022,"c":"uk","sd":"2022-09-06","ed":"2022-10-25","fam":false},{"n":"Rishi Sunak","p":"Conservative","s":2022,"e":2024,"c":"uk","sd":"2022-10-25","ed":"2024-07-05","fam":true},{"n":"Keir Starmer","p":"Labour","s":2024,"e":2026,"c":"uk","sd":"2024-07-05","ed":"2026-07-21","fam":true},{"n":"Andy Burnham","p":"Labour","s":2026,"e":null,"c":"uk","sd":"2026-07-21","ed":null,"fam":true}],"monarchs":[{"n":"Queen Anne","p":"Stuart","s":1707,"e":1714,"c":"king","sd":"1707-05-01","ed":"1714-08-01","fam":true},{"n":"King George I","p":"Hanover","s":1714,"e":1727,"c":"king","sd":"1714-08-01","ed":"1727-06-11","fam":false},{"n":"King George II","p":"Hanover","s":1727,"e":1760,"c":"king","sd":"1727-06-11","ed":"1760-10-25","fam":false},{"n":"King George III","p":"Hanover","s":1760,"e":1820,"c":"king","sd":"1760-10-25","ed":"1820-01-29","fam":true},{"n":"King George IV","p":"Hanover","s":1820,"e":1830,"c":"king","sd":"1820-01-29","ed":"1830-06-26","fam":false},{"n":"King William IV","p":"Hanover","s":1830,"e":1837,"c":"king","sd":"1830-06-26","ed":"1837-06-20","fam":false},{"n":"Queen Victoria","p":"Saxe-Coburg and Gotha","s":1837,"e":1901,"c":"king","sd":"1837-06-20","ed":"1901-01-22","fam":true},{"n":"King Edward VII","p":"Saxe-Coburg and Gotha","s":1901,"e":1910,"c":"king","sd":"1901-01-22","ed":"1910-05-06","fam":false},{"n":"King George V","p":"Windsor (renamed from Saxe-Coburg)","s":1910,"e":1936,"c":"king","sd":"1910-05-06","ed":"1936-01-20","fam":false},{"n":"King Edward VIII","p":"Windsor","s":1936,"e":1936,"c":"king","sd":"1936-01-20","ed":"1936-12-11","fam":false},{"n":"King George VI","p":"Windsor","s":1936,"e":1952,"c":"king","sd":"1936-12-11","ed":"1952-02-06","fam":true},{"n":"Queen Elizabeth II","p":"Windsor","s":1952,"e":2022,"c":"king","sd":"1952-02-06","ed":"2022-09-08","fam":true},{"n":"King Charles III","p":"Windsor","s":2022,"e":null,"c":"king","sd":"2022-09-08","ed":null,"fam":true}]};
+const FLAG={us:"https://flagcdn.com/w160/us.png",uk:"https://flagcdn.com/w160/gb.png",king:"https://flagcdn.com/w160/gb.png"};
+const ROLE={us:"President",uk:"Prime Minister",king:"Monarch"};
+const N=8;
+const $=id=>document.getElementById(id);
+let sound=true,idx=0,cur=null,done=false,rounds=[];
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function pick(a){return a[Math.floor(Math.random()*a.length)];}
+function speak(t){if(!sound)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.rate=.95;u.pitch=1.1;speechSynthesis.speak(u);}catch(e){}}
+function confetti(n){const em=["🕰️","⭐","🎉","👑"];for(let i=0;i<n;i++){const s=document.createElement("div");s.className="conf";s.textContent=em[i%em.length];s.style.left=Math.random()*100+"vw";s.style.animationDuration=(1.4+Math.random())+"s";document.body.appendChild(s);setTimeout(()=>s.remove(),2600);}}
+let tT;function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(tT);tT=setTimeout(()=>e.classList.remove("show"),1300);}
+function buildPass(){const el=$("pass");el.innerHTML="";for(let i=0;i<N;i++){const d=document.createElement("div");d.className="stamp"+(i<idx?" on":"");d.textContent="🕰️";el.appendChild(d);}}
+function partyColor(p,c){
+  if(c==="us") return p==="Democratic"?"var(--dem)":(p==="Republican"?"var(--rep)":"var(--oth)");
+  if(p==="Labour") return "var(--lab)"; if(p==="Conservative") return "var(--con)";
+  return "var(--oth)";
+}
+function yrs(e){return e.s+" – "+(e.e===null?"today":e.e);}
+function famous(list){const seen={};return list.filter(x=>x.fam&&!seen[x.n]&&(seen[x.n]=1));}
+const FP=famous(DATA.presidents), FM=famous(DATA.pms), FK=famous(DATA.monarchs);
+function overlap(a,b){const as=a.s,ae=a.e===null?9999:a.e,bs=b.s,be=b.e===null?9999:b.e;return Math.min(ae,be)-Math.max(as,bs);}
+
+/* ---- question builders ---- */
+function qDuel(){
+  const list=Math.random()<.5?FP:FM;
+  const two=shuffle(list).slice(0,2).filter(Boolean);
+  if(two.length<2||two[0].s===two[1].s)return qDuel();
+  const role=ROLE[two[0].c];
+  const first=two[0].s<two[1].s?two[0]:two[1];
+  return {kind:"duel",dial:"WHO CAME FIRST?",say:"Who was "+role+" first: "+two[0].n+", or "+two[1].n+"?",
+    q:"Who was "+role+" FIRST?",opts:two,ans:two.indexOf(first),
+    fact:first.n+" came first ("+yrs(first)+"). "+(two[two.indexOf(first)?0:1]).n+" was later ("+yrs(two[two.indexOf(first)?0:1])+").",
+    layout:"two",showYears:false};
+}
+function qYear(){
+  const list=Math.random()<.5?DATA.presidents:DATA.pms;
+  const flist=list===DATA.presidents?FP:FM;
+  const truthTerm=pick(list.filter(x=>x.fam));
+  const span=(truthTerm.e===null?2026:truthTerm.e)-truthTerm.s;
+  const year=truthTerm.s+1+Math.floor(Math.random()*Math.max(1,span-1));
+  const role=ROLE[truthTerm.c];
+  const wrong=shuffle(flist.filter(x=>x.n!==truthTerm.n&&!(x.s<=year&&(x.e===null?9999:x.e)>=year))).slice(0,2);
+  const opts=shuffle([truthTerm,...wrong]);
+  return {kind:"year",dial:"YEAR "+year,say:"The dial says "+year+". Who was "+role+" in "+year+"?",
+    q:"Who was "+role+" in "+year+"?",opts,ans:opts.indexOf(truthTerm),
+    fact:truthTerm.n+" was "+role+" from "+yrs(truthTerm)+".",layout:"three",showYears:false};
+}
+function qCross(useKing){
+  const pres=pick(FP.filter(p=>p.s>=1789));
+  const presTerms=DATA.presidents.filter(t=>t.n===pres.n);
+  const others=useKing?DATA.monarchs:DATA.pms;
+  let best=null,bestOv=-1;
+  for(const o of others){const t=presTerms.map(pt=>overlap(pt,o)).sort((a,b)=>b-a)[0];if(t>bestOv){bestOv=t;best=o;}}
+  if(!best||bestOv<1)return qCross(useKing);
+  const pool=(useKing?FK:FM).filter(x=>x.n!==best.n&&presTerms.every(pt=>overlap(pt,x)<0));
+  if(pool.length<2)return qCross(useKing);
+  const wrong=shuffle(pool).slice(0,2);
+  const opts=shuffle([best,...wrong]);
+  const role=useKing?"on the throne":"Prime Minister";
+  return {kind:"cross",dial:pres.n.toUpperCase(),say:"When "+pres.n+" was President, who was "+role+" in the UK?",
+    q:"When <b>"+pres.n+"</b> 🇺🇸 was President, who was "+(useKing?"on the throne 👑":"Prime Minister")+"?",
+    opts,ans:opts.indexOf(best),
+    fact:best.n+" ("+yrs(best)+") and "+pres.n+" ("+yrs(pres)+") were in charge at the same time.",
+    layout:"three",showYears:false};
+}
+function makeRounds(){
+  const r=[qDuel(),qDuel(),qDuel(),qYear(),qYear(),qCross(false),qCross(false),qCross(true)];
+  return shuffle(r);
+}
+function render(){
+  done=false; cur=rounds[idx];
+  $("dial").textContent="🕰️ "+cur.dial;
+  $("q").innerHTML=cur.q;
+  const o=$("opts"); o.innerHTML=""; o.className="opts "+cur.layout;
+  cur.opts.forEach((e,i)=>{
+    const b=document.createElement("button"); b.className="card";
+    b.innerHTML='<img class="fl" src="'+FLAG[e.c]+'" alt="" onerror="this.style.display=\'none\'">'
+      +'<span class="nm">'+(e.c==="king"?"👑 ":"")+e.n+'</span>'
+      +'<span class="chip" style="background:'+partyColor(e.p,e.c)+'">'+(e.p||"—")+'</span>'
+      +'<span class="yrs" data-y="'+yrs(e)+'"></span>';
+    b.onclick=()=>choose(i,b); o.appendChild(b);
+  });
+  $("reveal").textContent=""; $("next").disabled=true;
+  buildPass(); speak(cur.say);
+}
+function choose(i,b){
+  if(done)return;
+  if(i===cur.ans){
+    done=true; b.classList.add("win");
+    [...$("opts").children].forEach(c=>{const y=c.querySelector(".yrs");y.textContent=y.dataset.y;});
+    $("reveal").textContent="✅ "+cur.fact;
+    $("next").disabled=false;
+    toast(pick(["Time travel genius! 🕰️","Yes! ⭐","History hero! 🎉"]));
+    speak(cur.fact); confetti(10);
+    idx++; buildPass();
+  } else {
+    b.classList.add("bad"); setTimeout(()=>b.classList.remove("bad"),420);
+    toast("Try again 🤔"); speak("Not that one. Try again!");
+  }
+}
+$("next").onclick=()=>{ if(idx>=N){ $("finale").classList.remove("hidden"); confetti(24); speak("History hero! Amazing!"); } else render(); };
+$("go").onclick=()=>{ $("start").classList.add("hidden"); rounds=makeRounds(); idx=0; render(); };
+$("again").onclick=()=>{ $("finale").classList.add("hidden"); rounds=makeRounds(); idx=0; render(); };
+$("read").onclick=()=>{ if(cur)speak(cur.say); };
+$("snd").onclick=()=>{sound=!sound;$("snd").textContent=sound?"🔊":"🔇";if(!sound&&"speechSynthesis" in window)speechSynthesis.cancel();};
+if(location.protocol==="file:")$("back").setAttribute("href","index.html");
+buildPass();
+</script>
+</body>
+</html>

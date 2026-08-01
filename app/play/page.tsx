@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/play" },
 };
 
-type Group = "learn" | "think" | "rules" | "older";
+type Group = "learn" | "civics" | "think" | "rules" | "older";
 type Game = { title: string; emoji: string; file: string; ages: string; blurb: string; group: Group };
 
 const GAMES: Game[] = [
@@ -17,7 +17,6 @@ const GAMES: Game[] = [
   { title: "Champions Duel", emoji: "\u{1F3C6}", file: "champions-duel.html", ages: "6–10", blurb: "Two clubs, one final: tap the team that lifted the cup, from real Champions League finals.", group: "learn" },
   { title: "Then & Now", emoji: "\u{1F5FA}\u{FE0F}", file: "then-and-now.html", ages: "6–10", blurb: "Tap the country that sits on an ancient empire's land today, and travel through time. Ancient Egypt, Greece, Rome and more.", group: "learn" },
   { title: "Flag Sort", emoji: "\u{1F30D}", file: "flag-sort.html", ages: "5–8", blurb: "Sort each flag into its continent: the world's seven continents.", group: "learn" },
-  { title: "Five Oceans", emoji: "\u{1F30A}", file: "five-oceans.html", ages: "5–8", blurb: "Find all five of the world's oceans on the map.", group: "learn" },
   { title: "Capital Match", emoji: "\u{1F3D9}\u{FE0F}", file: "capital-match.html", ages: "5–8", blurb: "Match countries to capital cities. Pick a Quick trip of 8, or the full Grand tour.", group: "learn" },
   { title: "Crest Match", emoji: "\u{1F6E1}\u{FE0F}", file: "crest-match.html", ages: "5–9", blurb: "A memory game with real club badges, and the city each team calls home.", group: "learn" },
   { title: "Champions", emoji: "\u{1F3C5}", file: "champions.html", ages: "6–10", blurb: "Tap the sport each nation is best at in the world.", group: "learn" },
@@ -25,6 +24,9 @@ const GAMES: Game[] = [
   { title: "Find the Team's Home", emoji: "\u{1F50E}", file: "find-the-teams-home.html", ages: "5–9", blurb: "Match real clubs to their home city, country or continent.", group: "learn" },
   { title: "North or South?", emoji: "\u{1F9ED}", file: "north-or-south.html", ages: "6–10", blurb: "Is this team's city north or south of the equator?", group: "learn" },
   { title: "World Sports Tour", emoji: "\u{1F30F}", file: "world-sports-tour.html", ages: "5–8", blurb: "Tour real sporting cities: continents, money, reading and counting.", group: "learn" },
+  { title: "Who's the Boss?", emoji: "\u{1F3DB}\u{FE0F}", file: "whos-the-boss.html", ages: "6–10", blurb: "President, Prime Minister or King: whose job is it? America and Britain run things very differently.", group: "civics" },
+  { title: "Leader Time Machine", emoji: "\u{1F570}\u{FE0F}", file: "leader-time-machine.html", ages: "7–10", blurb: "Real Presidents, Prime Ministers and monarchs: who came first, who was in charge, and who ruled at the same time.", group: "civics" },
+  { title: "US or UK?", emoji: "\u{1F5FD}", file: "us-or-uk.html", ages: "6–10", blurb: "50 states or 4 nations? Congress or Parliament? Sort each one to the right flag, and mind the tricky ones.", group: "civics" },
   { title: "Bigger City", emoji: "\u{1F3D9}\u{FE0F}", file: "bigger-city.html", ages: "5–9", blurb: "Tap the bigger metro: by people, skyscrapers or teams.", group: "think" },
   { title: "Trophy Count", emoji: "\u{1F3C6}", file: "trophy-count.html", ages: "6–10", blurb: "Compare and add up real championship totals.", group: "think" },
   { title: "Match Day Money", emoji: "\u{1F4B7}", file: "match-day-money.html", ages: "5–8", blurb: "Making change and adding up, in pounds and dollars.", group: "think" },
@@ -77,6 +79,7 @@ function Grid({ games }: { games: Game[] }) {
 
 export default function PlayHub() {
   const learn = GAMES.filter((g) => g.group === "learn");
+  const civics = GAMES.filter((g) => g.group === "civics");
   const think = GAMES.filter((g) => g.group === "think");
   const rules = GAMES.filter((g) => g.group === "rules");
   const older = GAMES.filter((g) => g.group === "older");
@@ -98,6 +101,14 @@ export default function PlayHub() {
         Geography, history and the wider world, through real countries, empires and teams.
       </p>
       <Grid games={learn} />
+
+      <h2 style={{ fontSize: "1.4rem", fontWeight: 800, color: "#16324f", marginTop: 34 }}>
+        🏛️ Who Runs the Country?
+      </h2>
+      <p style={{ color: "#5b7b97", fontSize: ".95rem", margin: "4px 0 0" }}>
+        Presidents, Prime Ministers, Kings and Queens: how America and Britain are run, with real leaders from history.
+      </p>
+      <Grid games={civics} />
 
       <h2 style={{ fontSize: "1.4rem", fontWeight: 800, color: "#16324f", marginTop: 34 }}>
         🔢 Count &amp; Think

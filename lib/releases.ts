@@ -19,11 +19,11 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-08-01",
-    headline: "New kids games: penalty shootouts, flag races and final duels",
+    headline: "Kids games overhauled: penalties, leaders, flags and badges",
     items: [
-      "Four new games on Play & Learn: Penalty Shootout (answer, then score past a diving keeper), Crest Sort, Flag Flash and Champions Duel, built from real club badges, flags and Champions League finals.",
-      "Capital Match now opens with a choice: a Quick trip of eight capitals, or the full Grand tour.",
-      "Eight more games join the Play page, including Bigger City, Trophy Count, Match Day Money and League Table Detective, in a new Count & Think section.",
+      "Seven new games on Play & Learn: Penalty Shootout, Crest Sort, Flag Flash, Champions Duel, and a Who Runs the Country? trio (Who's the Boss?, Leader Time Machine, US or UK?) built from real leaders, badges and finals.",
+      "Offside or Onside? is now fully visual: pitch freeze-frames, make the linesman's call, and the offside line appears to show why. Capital Match adds a Quick trip mode.",
+      "Count & Think games now show real club badges and country flags with shorter questions; Trophy Count counts real league titles. Eight previously unlisted games join the Play page.",
       "The 2026 US governors forecast joins the House and Senate on the election forecast page, refreshed Monday, Wednesday and Friday.",
     ],
   },
