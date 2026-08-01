@@ -833,6 +833,6 @@ Fifth sitting of the day. Ashwin asked for the Count & Think section rebuilt aro
 All 7 games Playwright-tested END-TO-END at BOTH levels (14 runs to the finale, real interactions: keypad typing, block building, grid shading, card ordering, bar tapping; zero page errors); screenshots eyeballed (clock hands correct at 7:30, chart scale + badges clean). Full `npm run verify` green afterwards (exit 0, 4,892 pages, 26/26) — the dev server was stopped by then so the build step ran this time.
 
 ### Open / notes
-- COMMITTED locally; push pending Ashwin's call (real build — app/play/page.tsx changed).
+- COMMITTED locally as `4f8551ce4` + follow-up `dce55485d` (Ashwin's curation: Trophy Count, Odd One Out and Bigger City DELISTED from Count & Think — files kept on disk like five-oceans; Match Day Money + League Table Detective retained). Push pending Ashwin's call (real build — app/play/page.tsx changed). Verify green ×2 over both commits.
 - Deferred from the syllabus: formal written column-method practice UI (the keypad flow teaches estimate/check instead), mirror-drawing (needs freehand input), measuring in cm/mm (needs physical ruler).
 - The shared shell lives inline in each game (generated from /tmp templates in-session); future games can copy any of the seven as a base.
