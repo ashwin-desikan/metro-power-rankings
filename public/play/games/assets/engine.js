@@ -83,5 +83,15 @@
   if ($("again")) $("again").textContent = HEADER.again || "Play again 🔁";
   var back = $("back"); if (back) back.setAttribute("href", location.protocol === "file:" ? "index.html" : "/play");
 
+  // "All games" escape hatch on the finale, next to Play again (2026-08-01).
+  if ($("again") && !document.getElementById("allgames")) {
+    var _ag = document.createElement("a");
+    _ag.id = "allgames"; _ag.className = "next show";
+    _ag.href = location.protocol === "file:" ? "index.html" : "/play";
+    _ag.textContent = "All games 🎮";
+    _ag.style.textDecoration = "none"; _ag.style.marginLeft = "8px"; _ag.style.background = "#5b7b97"; _ag.style.boxShadow = "0 6px 0 #40566b";
+    $("again").parentNode.insertBefore(_ag, $("again").nextSibling);
+  }
+
   render();
 })();

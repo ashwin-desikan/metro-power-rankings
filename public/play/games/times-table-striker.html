@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Times-Table Striker — Play &amp; Learn</title>
+<style>
+  :root{--ink:#16324f;--accent:#1f9e82;--gold:#f6b93b;--paper:#eef6fc;--hot:#ff6b6b;--blue:#3b6fd4}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;height:100%}
+  body{font-family:"Baloo 2","Segoe UI",system-ui,sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden}
+  header{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;max-width:560px;margin:0 auto}
+  .logo{font-size:1.25rem;font-weight:900}
+  .hbtns{display:flex;gap:8px}
+  .snd,.backb{border:none;background:#fff;border-radius:14px;font-size:1.1rem;padding:6px 12px;box-shadow:0 4px 0 #cfe0ee;cursor:pointer;text-decoration:none;color:var(--ink);font-weight:900}
+  main{max-width:560px;margin:0 auto;padding:0 14px 20px;text-align:center}
+  .lvlchip{display:inline-block;background:#fff;border-radius:12px;padding:3px 12px;font-weight:900;font-size:.85rem;color:#5b7b97;box-shadow:0 3px 0 #cfe0ee;margin-bottom:6px}
+  .stage{background:#fff;border-radius:20px;box-shadow:0 8px 20px #16324f1c;padding:16px 12px}
+  .q{font-size:1.12rem;font-weight:900;margin:2px 0 6px}
+  .read{border:none;background:#eef6fc;border-radius:12px;font-size:.95rem;padding:5px 12px;cursor:pointer;font-weight:800;color:var(--ink)}
+  .reveal{min-height:1.5em;font-weight:800;color:var(--accent);margin-top:8px;font-size:1rem}
+  .opts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+  .opts.two{grid-template-columns:1fr 1fr}
+  .opt{border:none;border-radius:16px;background:#f6fbff;box-shadow:0 5px 0 #d7e6f2;cursor:pointer;padding:14px 6px;font-family:inherit;font-weight:900;color:var(--ink);font-size:1.15rem;transition:transform .12s}
+  .opt:active{transform:scale(.95)}
+  .opt.good{background:#e8fbf4;box-shadow:0 5px 0 #bfe6da,0 0 0 3px var(--accent)}
+  .opt.bad{animation:shake .4s}
+  @keyframes shake{25%{transform:translateX(-7px)}50%{transform:translateX(7px)}75%{transform:translateX(-4px)}}
+  .next{margin-top:12px;border:none;border-radius:16px;font-family:inherit;font-weight:900;font-size:1.05rem;padding:11px 26px;cursor:pointer;background:var(--accent);color:#fff;box-shadow:0 6px 0 #15705d}
+  .next:disabled{opacity:.35;cursor:default}
+  .check{margin-top:12px;border:none;border-radius:16px;font-family:inherit;font-weight:900;font-size:1.05rem;padding:11px 26px;cursor:pointer;background:var(--blue);color:#fff;box-shadow:0 6px 0 #24509e}
+  .pass{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+  .stamp{width:32px;height:32px;border-radius:10px;background:#fff;box-shadow:inset 0 0 0 3px #dcebf6;display:flex;align-items:center;justify-content:center;font-size:1rem;opacity:.4;filter:grayscale(1)}
+  .stamp.on{opacity:1;filter:none;box-shadow:inset 0 0 0 3px var(--gold);animation:pop .4s}
+  @keyframes pop{50%{transform:scale(1.3) rotate(-6deg)}}
+  .toast{position:fixed;left:50%;top:9%;transform:translateX(-50%);background:var(--ink);color:#fff;font-weight:900;font-size:1.05rem;padding:10px 18px;border-radius:16px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:30}
+  .toast.show{opacity:1}
+  .conf{position:fixed;top:-12px;font-size:1.3rem;pointer-events:none;z-index:40;animation:fall linear forwards}
+  @keyframes fall{to{transform:translateY(112vh) rotate(540deg)}}
+  .cover{position:fixed;inset:0;background:#eef6fcf2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:20;overflow:auto}
+  .cover h1{font-size:2rem;margin:8px 0}
+  .cover p{font-size:1.05rem;font-weight:700;color:#5b7b97;max-width:430px;margin:4px 0 14px}
+  .lvlbtn{display:block;width:min(330px,86vw);margin:7px auto;border:none;border-radius:18px;font-family:inherit;font-weight:900;font-size:1.18rem;padding:14px 20px;cursor:pointer;background:#fff;color:var(--ink);box-shadow:0 6px 0 #cfe0ee;text-align:center}
+  .lvlbtn.go{background:var(--accent);color:#fff;box-shadow:0 6px 0 #15705d}
+  .lvlbtn small{display:block;font-size:.82rem;font-weight:800;color:#5b7b97}
+  .lvlbtn.go small{color:#d6f5ec}
+  .bigbtn{border:none;border-radius:18px;font-family:inherit;font-weight:900;font-size:1.15rem;padding:14px 26px;cursor:pointer;background:var(--accent);color:#fff;box-shadow:0 7px 0 #15705d;margin:6px}
+  .homebtn{display:inline-block;border-radius:18px;font-family:inherit;font-weight:900;font-size:1.15rem;padding:14px 26px;cursor:pointer;background:#fff;color:var(--ink);box-shadow:0 7px 0 #cfe0ee;margin:6px;text-decoration:none}
+  .hidden{display:none !important}
+  .goalbox{position:relative;height:130px;border-radius:16px;overflow:hidden;background:linear-gradient(#9edcff 0 40%,#3fa34d 40%);margin-bottom:10px}
+  .goalnet{position:absolute;left:50%;top:14px;transform:translateX(-50%);width:220px;height:74px;border:5px solid #fff;border-bottom:none;border-radius:3px 3px 0 0;background:repeating-linear-gradient(0deg,#ffffff30 0 7px,transparent 7px 14px),repeating-linear-gradient(90deg,#ffffff30 0 7px,transparent 7px 14px)}
+  .goalnet.wob{animation:wob .5s}
+  @keyframes wob{30%{transform:translateX(-50%) skewX(4deg)}60%{transform:translateX(-50%) skewX(-3deg)}}
+  .keeper{position:absolute;left:50%;top:40px;transform:translateX(-50%);font-size:34px;transition:transform .4s cubic-bezier(.3,1.4,.5,1);z-index:2}
+  .tball{position:absolute;left:50%;bottom:6px;transform:translateX(-50%);font-size:30px;transition:transform .5s cubic-bezier(.18,.7,.35,1);z-index:3}
+  .goalflash{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2.2rem;font-weight:900;color:#fff;text-shadow:0 3px 0 #16324f66;opacity:0;pointer-events:none;z-index:5}
+  .goalflash.show{animation:bang 1.1s forwards}
+  @keyframes bang{20%{opacity:1;transform:scale(1.12)}80%{opacity:1}100%{opacity:0}}
+  .arr{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:10px;max-width:420px;margin-left:auto;margin-right:auto}
+  .grp{background:#f6fbff;border-radius:12px;box-shadow:0 3px 0 #d7e6f2;padding:6px 8px;font-size:1.05rem;letter-spacing:2px}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">⚽ Times-Table Striker</div>
+  <div class="hbtns"><a class="backb" id="back" href="/play">←</a><button class="snd" id="snd">🔊</button></div>
+</header>
+<main>
+  <div class="lvlchip" id="lvlchip"></div>
+  <div class="stage">
+    <div class="goalbox">
+      <div class="goalnet" id="goalnet"></div>
+      <div class="keeper" id="keeper">🧤</div>
+      <div class="tball" id="tball">⚽</div>
+      <div class="goalflash" id="goalflash">GOAL!</div>
+    </div>
+    <div class="q" id="q"></div>
+    <button class="read" id="read">🔊 Read it to me</button>
+    <div id="zone"></div>
+    <div class="reveal" id="reveal"></div>
+    <button class="next" id="next" disabled>Next →</button>
+  </div>
+  <div class="pass" id="pass"></div>
+</main>
+<div class="toast" id="toast"></div>
+
+<div class="cover" id="start">
+  <div style="font-size:3.6rem">⚽✖️</div>
+  <h1>Times-Table Striker</h1>
+  <p>Every right answer is a rocket into the top corner! Score with three-pointers, cricket fours and rowing eights.</p>
+  <button class="lvlbtn go" id="lvl3">⭐ Year 3<small>3, 4 and 8 times tables · division · 2-digit × 1-digit</small></button>
+  <button class="lvlbtn" id="lvl4">🌟 Year 4<small>All tables to 12 × 12 · 3-digit × 1-digit · three numbers together</small></button>
+</div>
+
+<div class="cover hidden" id="finale">
+  <div style="font-size:3.8rem">⚽🏆</div>
+  <h1>Hat-trick hero!</h1>
+  <p id="finp">Eight goals, no misses. The keeper never stood a chance!</p>
+  <div>
+    <button class="bigbtn" id="again">Play again 🔁</button>
+    <a class="homebtn" id="homelink" href="/play">All games 🎮</a>
+  </div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const N=8;
+let sound=true,LEVEL=3,idx=0,done=false,actx=null;
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function pick(a){return a[Math.floor(Math.random()*a.length)];}
+function speak(t){if(!sound)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.rate=.95;u.pitch=1.1;speechSynthesis.speak(u);}catch(e){}}
+function ctx(){try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();return actx;}catch(e){return null;}}
+function tone(f,d,type,when,g){if(!sound)return;const a=ctx();if(!a)return;const o=a.createOscillator(),gn=a.createGain();o.type=type||"sine";o.frequency.value=f;gn.gain.value=g||.12;o.connect(gn);gn.connect(a.destination);const t=a.currentTime+(when||0);o.start(t);gn.gain.setValueAtTime(gn.gain.value,t);gn.gain.exponentialRampToValueAtTime(.0001,t+d);o.stop(t+d);}
+function cheer(){[523,659,784,1047].forEach((f,k)=>tone(f,.24,"triangle",k*.09,.13));}
+function buzz(){tone(170,.2,"sine",0,.1);}
+function confetti(n){const em=["⚽","⭐","🎉","✖️"];for(let i=0;i<n;i++){const s=document.createElement("div");s.className="conf";s.textContent=em[i%em.length];s.style.left=Math.random()*100+"vw";s.style.animationDuration=(1.4+Math.random())+"s";document.body.appendChild(s);setTimeout(()=>s.remove(),2600);}}
+let tT;function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(tT);tT=setTimeout(()=>e.classList.remove("show"),1300);}
+function buildPass(){const el=$("pass");el.innerHTML="";for(let i=0;i<N;i++){const d=document.createElement("div");d.className="stamp"+(i<idx?" on":"");d.textContent="⚽";el.appendChild(d);}}
+function onCorrect(msg,sayMsg){
+  done=true;$("reveal").textContent="✅ "+msg;
+  toast(pick(["Yes! 🎉","Brilliant! ⭐","Maths star! 🙌"]));
+  cheer();confetti(9);speak(sayMsg||msg);
+  idx++;buildPass();
+  $("next").disabled=false;
+  $("next").textContent = idx>=N ? "See my score →" : "Next →";
+}
+function onWrong(hint){toast(hint||"Try again 🤔");buzz();speak("Not quite. Try again!");}
+function finish(){$("finale").classList.remove("hidden");confetti(24);cheer();speak("Hat trick hero! Times tables champion!");}
+$("next")&&($("next").onclick=()=>{ if(!done)return; if(idx>=N){finish();} else render(); });
+function startRun(lv){LEVEL=lv;$("lvlchip").textContent=(lv===3?"⭐ Year 3":"🌟 Year 4");$("start").classList.add("hidden");ctx();idx=0;makeRounds();render();}
+$("lvl3").onclick=()=>startRun(3);
+$("lvl4").onclick=()=>startRun(4);
+$("again").onclick=()=>{$("finale").classList.add("hidden");$("start").classList.remove("hidden");};
+$("snd").onclick=()=>{sound=!sound;$("snd").textContent=sound?"🔊":"🔇";if(!sound&&"speechSynthesis" in window)speechSynthesis.cancel();};
+if(location.protocol==="file:"){$("back").setAttribute("href","index.html");$("homelink").setAttribute("href","index.html");}
+buildPass();
+
+let rounds=[];
+function ri(a,b){return a+Math.floor(Math.random()*(b-a+1));}
+function shoot(){
+  const side=Math.random()<.5?-1:1;
+  $("keeper").style.transform="translateX(calc(-50% + "+(-side*70)+"px)) rotate("+(-side*40)+"deg)";
+  $("tball").style.transform="translate(calc(-50% + "+(side*72)+"px), -66px) scale(.6)";
+  $("goalnet").classList.add("wob");$("goalflash").classList.add("show");
+  setTimeout(()=>{
+    $("goalnet").classList.remove("wob");$("goalflash").classList.remove("show");
+    $("keeper").style.transform="translateX(-50%)";
+    $("tball").style.transition="none";$("tball").style.transform="translateX(-50%)";
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{$("tball").style.transition="transform .5s cubic-bezier(.18,.7,.35,1)";}));
+  },1300);
+}
+function mcq(options,ans,msg,say){
+  const o=document.createElement("div");o.className="opts";
+  options.forEach((t,i)=>{const b=document.createElement("button");b.className="opt";b.textContent=t;
+    b.onclick=()=>{if(done)return;
+      if(i===ans){b.classList.add("good");shoot();onCorrect(msg,say);}
+      else{b.classList.add("bad");setTimeout(()=>b.classList.remove("bad"),420);onWrong("Saved by the keeper! Try again 🧤");}};
+    o.appendChild(b);});
+  $("zone").appendChild(o);
+}
+function groups(n,per,emoji){
+  const w=document.createElement("div");w.className="arr";
+  for(let i=0;i<n;i++){const g=document.createElement("div");g.className="grp";g.textContent=emoji.repeat(per);w.appendChild(g);}
+  $("zone").appendChild(w);
+}
+/* scenario builders: [table, question(n), emoji, unit-for-fact] */
+const SCEN={
+ 3:[n=>["🏀 "+n+" three-pointers swish in! How many points?",n+" threes = "+(n*3)+" points","🏀"],
+    n=>["⚽ The team wins "+n+" games. 3 points each — total points?",n+" wins × 3 = "+(n*3)+" points","🏆"]],
+ 4:[n=>["🏏 "+n+" fours smashed to the boundary! How many runs?",n+" fours = "+(n*4)+" runs","🏏"],
+    n=>["🏎️ "+n+" cars, 4 tyres each. How many tyres?",n+" × 4 = "+(n*4)+" tyres","🛞"]],
+ 6:[n=>["🏏 "+n+" sixes over the ropes! How many runs?",n+" sixes = "+(n*6)+" runs","🏏"]],
+ 7:[n=>["🏈 "+n+" touchdowns with kicks — 7 points each. Total?",n+" × 7 = "+(n*7)+" points","🏈"]],
+ 8:[n=>["🚣 "+n+" rowing boats, 8 rowers each. How many rowers?",n+" × 8 = "+(n*8)+" rowers","🚣"],
+    n=>["🕷️ "+n+" spider mascots, 8 legs each! How many legs?",n+" × 8 = "+(n*8)+" legs","🕷️"]],
+ 9:[n=>["⚾ "+n+" innings, 9 players batting each. How many at-bats?",n+" × 9 = "+(n*9),"⚾"]],
+ 11:[n=>["⚽ "+n+" teams, 11 players each. How many players?",n+" × 11 = "+(n*11)+" players","⚽"]],
+ 12:[n=>["🏟️ "+n+" rows with 12 seats. How many seats?",n+" × 12 = "+(n*12)+" seats","💺"]],
+};
+function makeRounds(){
+  const kinds=LEVEL===3?["mul","mul","div","mul","two","mul","div","mul"]
+                       :["mul","mul","div","big","three","mul","div","big"];
+  rounds=shuffle(kinds);
+}
+function render(){
+  done=false;$("zone").innerHTML="";$("reveal").textContent="";$("next").disabled=true;$("next").textContent="Next →";buildPass();
+  const k=rounds[idx];
+  if(k==="mul")rMul(); else if(k==="div")rDiv(); else if(k==="two")rTwoDigit(); else if(k==="big")rBig(); else rThree();
+}
+function rMul(){
+  const table=LEVEL===3?pick([3,4,8]):pick([3,4,6,7,8,9,11,12]);
+  const n=ri(3,LEVEL===3?9:12);
+  const [q,fact,em]=pick(SCEN[table])(n);
+  const ans=n*table;
+  $("q").innerHTML=q; window._say=q.replace(/[🏀⚽🏏🏎️🚣🕷️🏈⚾🏟️]/g,"");speak(_say);
+  groups(n,Math.min(table,8),em);
+  const opts=shuffle([ans,ans+table,ans-table]);
+  mcq(opts.map(String),opts.indexOf(ans),fact,fact);
+}
+function rDiv(){
+  const per=LEVEL===3?pick([3,4,8]):pick([4,6,7,8,9]);
+  const teams=ri(3,8); const total=per*teams;
+  $("q").innerHTML="👥 "+total+" players split into teams of "+per+". How many teams?";
+  window._say=total+" players, teams of "+per+". How many teams?";speak(_say);
+  const opts=shuffle([teams,teams+1,teams-1]);
+  mcq(opts.map(String),opts.indexOf(teams),total+" ÷ "+per+" = "+teams+" (because "+teams+" × "+per+" = "+total+")","Division undoes multiplication!");
+}
+function rTwoDigit(){
+  const a=ri(12,25), b=pick([3,4]);
+  const ans=a*b;
+  $("q").innerHTML="🏟️ "+a+" rows of seats with "+b+" kids in each row. How many kids?";
+  window._say=a+" rows times "+b+". Partition it: "+Math.floor(a/10)*10+" times "+b+", plus "+(a%10)+" times "+b;speak(a+" times "+b+"?");
+  const opts=shuffle([ans,ans+b,ans-10]);
+  mcq(opts.map(String),opts.indexOf(ans),a+" × "+b+" = "+ans+"  ("+Math.floor(a/10)*10+"×"+b+" + "+(a%10)+"×"+b+")");
+}
+function rBig(){
+  const a=ri(110,240), b=pick([3,4]);
+  const ans=a*b;
+  $("q").innerHTML="🎟️ "+a+" tickets sold on "+b+" days. How many tickets?";
+  window._say=a+" times "+b+"?";speak(_say);
+  const opts=shuffle([ans,ans+b*10,ans-b]);
+  mcq(opts.map(String),opts.indexOf(ans),a+" × "+b+" = "+ans);
+}
+function rThree(){
+  const a=ri(2,4),b=ri(2,3),c=ri(2,5);
+  const ans=a*b*c;
+  $("q").innerHTML="🚩 "+a+" stands × "+b+" rows × "+c+" flags. How many flags?";
+  window._say=a+" times "+b+" times "+c+"?";speak(_say);
+  const opts=shuffle([ans,ans+a,a*b+c]);
+  const uniq=[...new Set(opts)];while(uniq.length<3)uniq.push(ans+7);
+  mcq(uniq.map(String),uniq.indexOf(ans),a+" × "+b+" × "+c+" = "+ans+" — multiply any order, same answer!");
+}
+$("read").onclick=()=>{if(window._say)speak(_say);};
+
+</script>
+</body>
+</html>

@@ -809,3 +809,30 @@ Full `npm run verify` green (exit 0, 4,892 pages, 26/26). Prerendered HTML inspe
 4. **CFB mobile fix**: the Live Standings block's three stacked Top 25s replaced by ONE combined comparison table — rows = union of ranked teams ordered by the lead poll (CFP when live, else AP), a slim rank column per trailing poll + Rec; `#` column = lead poll, spelled out in the sub-table title ("# = AP · …"). Hub keeps the three full side-by-side polls (dedicated page).
 
 Verified LIVE against Ashwin's running dev server on :3000 (he had `npm run dev` up, so the verify build step was SKIPPED — typecheck/client-imports/vitest all green, and a `next build` was already running/locked anyway): women's section + WSL/Liga F/UWCL render, League One absent, CFB combined table renders (ESPN currently serves 2 final polls → multi-poll path exercised), hub shows Power 4/Group of 5 headings, Independents in both tiers, Notre Dame + Connecticut present, ZERO open accordions. ⚠️ NOTE for the pusher: run the full `npm run verify` (with the dev server stopped) before pushing — the build step hasn't run over this fourth commit.
+
+[RESOLVED same night: Ashwin pushed the four-commit stack + his own Top 14/T20 commit `2e81ba82a`; both Vercel builds READY; production spot-checked (women's section, CFB block w/ poll date, League One gone). The stack above is LIVE.]
+
+## 2026-08-01 (small hours) — windows → next session (COUNT & THINK REVAMPED: seven Year 3/4 maths games + site-wide "All games" finale button)
+
+Fifth sitting of the day. Ashwin asked for the Count & Think section rebuilt around the Oxford Owl **Year 3 (and Year 4) maths syllabus** using site data, as fun as the day's games — and (mid-build) for an **"All games" button on EVERY game's finish screen**, old and new.
+
+### Seven new games (`public/play/games/`, all built on one shared shell: level picker cover ⭐ Year 3 / 🌟 Year 4, spoken prompts, stamps, confetti, retry-on-wrong, finale with Play again + All games)
+- **stadium-stacker.html** (number & place value) — tap-to-stack H/T/O blocks (Y4: thousands) to build crowd numbers with live total; 10/100 more-or-less; ORDER real skyscraper counts (metros.json, e.g. Hong Kong 569 > NY 347); count in 4/8/50/100s (Y4: 6/7/9/25/1000 + counting below zero via goal difference).
+- **big-match-adder.html** (add/sub) — the syllabus estimate-first flow: round-and-estimate (MCQ) → EXACT answer typed on a big keypad → inverse-check line shown and spoken. Y3 3-digit, Y4 4-digit + two-step problems. Club badges as flavour; crowd numbers are game-generated (NO real-attendance claims — no capacity data exists in the repo).
+- **times-table-striker.html** (×/÷) — every correct answer is an animated shot into the goal (keeper dives wrong way). Y3: 3/4/8 tables as 3-pointers/cricket fours/rowing eights + 2-digit×1-digit + sharing-into-teams division; Y4: tables to 12, 3-digit×1-digit, three-numbers-multiplied. Groups-of-emoji array visual under each question.
+- **fraction-football.html** — tap-to-shade n/d of a pitch grid (exact-count check), possession-bar fractions, shots-scored simplification (3/12 = 1/4), tenths on a goal-line number line (Y4: as decimals + hundredths), same-denominator add/sub with fraction bars, Y4 equivalents.
+- **shape-flag-lab.html** (geometry) — REAL-flag line symmetry with a dashed fold line (verified truth table: Japan/Nigeria/Austria/England both axes; Germany/Poland/Canada vertical only; France/Ireland/Italy/Denmark/Sweden horizontal only; USA/Union Jack neither — the Union Jack is the Y4 trick); corner-kick angles vs a right angle (SVG arc); parallel/perpendicular pitch lines; shape naming; Y4 quadrilaterals + (x, y) coordinates on a pitch grid.
+- **kickoff-clock.html** (measurement) — SVG stadium clock with ROMAN NUMERALS and real hand angles; 12h↔24h kick-off conversion; durations incl. added time; pitch perimeter (Y4: area + km/m/min conversions); Roman-numeral spotting.
+- **chart-champions.html** (statistics) — REAL data (English + European league titles from domestic-clubs.json, skyscrapers from metros.json) as: tap-the-bar bar charts with gridline scales in 4s (badges under bars), pictograms with half-symbols (🏆=2), tables with most/sum questions; Y4: line/time graph reading + two-step add-all-bars. Values reveal on the bars only AFTER answering (reading-the-scale is the skill).
+
+### Wiring + the finale sweep
+- `app/play/page.tsx`: the 7 maths games prepended to Count & Think (older five kept below); section subtitle now names the Y3/Y4 coverage.
+- **"All games 🎮" button on EVERY finale** (→ /play): injected ONCE in `assets/engine.js` + `assets/lt-engine.js` (covers all 11 pool-engine games incl. League Table Detective), added to the finale markup of 12 standalone games (crest-match, capital-match, flag-sort, champions, big-rivals, then-and-now, music-from, five-oceans + the wave-2/3 eight), built into the new-shell games, and `higher-or-lower.html` (arcade) got one → /play/arcade. Verified present in every file by findstr sweep + live DOM check.
+
+### Proof
+All 7 games Playwright-tested END-TO-END at BOTH levels (14 runs to the finale, real interactions: keypad typing, block building, grid shading, card ordering, bar tapping; zero page errors); screenshots eyeballed (clock hands correct at 7:30, chart scale + badges clean). Full `npm run verify` green afterwards (exit 0, 4,892 pages, 26/26) — the dev server was stopped by then so the build step ran this time.
+
+### Open / notes
+- COMMITTED locally; push pending Ashwin's call (real build — app/play/page.tsx changed).
+- Deferred from the syllabus: formal written column-method practice UI (the keypad flow teaches estimate/check instead), mirror-drawing (needs freehand input), measuring in cm/mm (needs physical ruler).
+- The shared shell lives inline in each game (generated from /tmp templates in-session); future games can copy any of the seven as a base.

@@ -27,6 +27,13 @@ const GAMES: Game[] = [
   { title: "Who's the Boss?", emoji: "\u{1F3DB}\u{FE0F}", file: "whos-the-boss.html", ages: "6–10", blurb: "President, Prime Minister or King: whose job is it? America and Britain run things very differently.", group: "civics" },
   { title: "Leader Time Machine", emoji: "\u{1F570}\u{FE0F}", file: "leader-time-machine.html", ages: "7–10", blurb: "Real Presidents, Prime Ministers and monarchs: who came first, who was in charge, and who ruled at the same time.", group: "civics" },
   { title: "US or UK?", emoji: "\u{1F5FD}", file: "us-or-uk.html", ages: "6–10", blurb: "50 states or 4 nations? Congress or Parliament? Sort each one to the right flag, and mind the tricky ones.", group: "civics" },
+  { title: "Stadium Stacker", emoji: "\u{1F3DF}\u{FE0F}", file: "stadium-stacker.html", ages: "7–9", blurb: "Build match-day crowds from hundreds, tens and ones, order real skyscraper skylines, and count the turnstiles.", group: "think" },
+  { title: "Big Match Adder", emoji: "\u2795", file: "big-match-adder.html", ages: "7–9", blurb: "Add and subtract crowds like a club accountant: estimate first, type the exact answer, prove it with the inverse check.", group: "think" },
+  { title: "Times-Table Striker", emoji: "\u2716\u{FE0F}", file: "times-table-striker.html", ages: "7–9", blurb: "The 3, 4 and 8 times tables (up to 12×12 in Year 4) through three-pointers, cricket fours and rowing eights. Every right answer is a goal.", group: "think" },
+  { title: "Fraction Football", emoji: "\u{1F355}", file: "fraction-football.html", ages: "7–9", blurb: "Shade fractions of the pitch, read possession bars, and find tenths on the goal-line.", group: "think" },
+  { title: "Shape & Flag Lab", emoji: "\u{1F4D0}", file: "shape-flag-lab.html", ages: "7–9", blurb: "Fold real flags to test symmetry, judge corner-kick angles, and spot parallel and perpendicular lines on the pitch.", group: "think" },
+  { title: "Kick-Off Clock", emoji: "\u{1F570}\u{FE0F}", file: "kickoff-clock.html", ages: "7–9", blurb: "Stadium clocks with Roman numerals, 12-hour and 24-hour kick-offs, match durations and the pitch perimeter.", group: "think" },
+  { title: "Chart Champions", emoji: "\u{1F4CA}", file: "chart-champions.html", ages: "7–9", blurb: "Real league titles and skyscraper skylines as bar charts, pictograms and tables. Read the scale, tap the right bar.", group: "think" },
   { title: "Bigger City", emoji: "\u{1F3D9}\u{FE0F}", file: "bigger-city.html", ages: "5–9", blurb: "Tap the bigger metro: by people, skyscrapers or teams.", group: "think" },
   { title: "Trophy Count", emoji: "\u{1F3C6}", file: "trophy-count.html", ages: "6–10", blurb: "Compare and add up real championship totals.", group: "think" },
   { title: "Match Day Money", emoji: "\u{1F4B7}", file: "match-day-money.html", ages: "5–8", blurb: "Making change and adding up, in pounds and dollars.", group: "think" },
@@ -114,7 +121,7 @@ export default function PlayHub() {
         🔢 Count &amp; Think
       </h2>
       <p style={{ color: "#5b7b97", fontSize: ".95rem", margin: "4px 0 0" }}>
-        Numbers, money and puzzles, with real teams, cities and standings.
+        A full Year 3 and Year 4 maths workout: place value, times tables, fractions, shapes, time and charts, built from real teams, stadiums and skylines. Every new game has a ⭐ Year 3 and 🌟 Year 4 level.
       </p>
       <Grid games={think} />
 

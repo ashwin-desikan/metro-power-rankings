@@ -19,11 +19,11 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-08-01",
-    headline: "Kids games overhauled, and college football ready for kickoff",
+    headline: "Fourteen new kids games, and college football ready for kickoff",
     items: [
-      "Seven new games on Play & Learn: Penalty Shootout, Crest Sort, Flag Flash, Champions Duel, and a Who Runs the Country? trio (Who's the Boss?, Leader Time Machine, US or UK?) built from real leaders, badges and finals.",
-      "Offside or Onside? is now fully visual: pitch freeze-frames, make the linesman's call, and the offside line appears to show why. Capital Match adds a Quick trip mode.",
-      "Count & Think games now show real club badges and country flags with shorter questions; Trophy Count counts real league titles. Eight previously unlisted games join the Play page.",
+      "Fourteen new games on Play & Learn: Penalty Shootout, Crest Sort, Flag Flash, Champions Duel, a Who Runs the Country? civics trio, and a seven-game Year 3–4 maths arcade built from real crowds, badges and skylines.",
+      "The maths games cover the full primary syllabus – place value, times tables, fractions, shapes, time and charts – each with a Year 3 and a Year 4 level. Offside or Onside? is now a fully visual linesman game.",
+      "Count & Think games now show real club badges and country flags; Trophy Count counts real league titles. Every game's finish screen gains an All games button, and Capital Match adds a Quick trip mode.",
       "College football is wired for kickoff: FBS conference standings and the AP, Coaches and CFP polls on the hub, with rankings joining Live Standings from 27 August. The 2026 US governors forecast joins the forecast page.",
     ],
   },

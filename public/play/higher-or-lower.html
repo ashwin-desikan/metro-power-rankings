@@ -121,7 +121,7 @@ function gameOver(){
   const o=$("over");o.className="over show";
   const sh="Metro Higher or Lower · streak "+streak+"\n"+results.slice(-12).join("")+"\nplay at /play/arcade";
   o.innerHTML=`<h2>Run over — streak ${streak}</h2><p class="sub">Best today: ${best}. ${left.name} had ${roundDim.fmt(left[roundDim.key])} ${roundDim.unit}; ${right.name} had ${roundDim.fmt(right[roundDim.key])}.</p>
-    <span class="pill" id="again">Play again 🔁</span><span class="pill share" id="share">Share 📋</span>`;
+    <span class="pill" id="again">Play again 🔁</span><a class="pill" href="/play/arcade" style="text-decoration:none;background:#5b7b97;color:#fff">All games 🎮</a><span class="pill share" id="share">Share 📋</span>`;
   $("again").onclick=()=>{results=[];start();};
   $("share").onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(sh);toast("Copied your result");};
 }

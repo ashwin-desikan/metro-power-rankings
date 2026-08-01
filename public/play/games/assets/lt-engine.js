@@ -59,6 +59,15 @@
   $("next").onclick = function () { i++; if (i >= QUESTIONS.length) { finale(); return; } render(); window.scrollTo({ top: 0, behavior: "smooth" }); };
   function finale() { ["q", "read", "opts", "toast", "reveal", "next"].forEach(function (id) { $(id).style.display = "none"; }); $("view").innerHTML = tableHTML(null); $("finale").className = "finale show"; buildProgress(); cheer(); confetti(); }
   $("again").onclick = function () { newGame(); ["q", "read", "opts", "toast", "reveal", "next"].forEach(function (id) { $(id).style.display = ""; }); $("finale").className = "finale"; render(); window.scrollTo({ top: 0 }); };
+  // "All games" escape hatch on the finale, next to New table (2026-08-01).
+  if ($("again") && !document.getElementById("allgames")) {
+    var _ag = document.createElement("a");
+    _ag.id = "allgames"; _ag.className = "next show";
+    _ag.href = location.protocol === "file:" ? "index.html" : "/play";
+    _ag.textContent = "All games 🎮";
+    _ag.style.textDecoration = "none"; _ag.style.marginLeft = "8px"; _ag.style.background = "#5b7b97"; _ag.style.boxShadow = "0 6px 0 #40566b";
+    $("again").parentNode.insertBefore(_ag, $("again").nextSibling);
+  }
   $("read").onclick = function () { speak(QUESTIONS[i].q); };
   $("snd").onclick = function () { soundOn = !soundOn; $("snd").textContent = soundOn ? "🔊" : "🔇"; if (!soundOn && "speechSynthesis" in window) speechSynthesis.cancel(); };
   var back = $("back"); if (back) back.setAttribute("href", location.protocol === "file:" ? "index.html" : "/play");

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Big Match Adder — Play &amp; Learn</title>
+<style>
+  :root{--ink:#16324f;--accent:#1f9e82;--gold:#f6b93b;--paper:#eef6fc;--hot:#ff6b6b;--blue:#3b6fd4}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;height:100%}
+  body{font-family:"Baloo 2","Segoe UI",system-ui,sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden}
+  header{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;max-width:560px;margin:0 auto}
+  .logo{font-size:1.25rem;font-weight:900}
+  .hbtns{display:flex;gap:8px}
+  .snd,.backb{border:none;background:#fff;border-radius:14px;font-size:1.1rem;padding:6px 12px;box-shadow:0 4px 0 #cfe0ee;cursor:pointer;text-decoration:none;color:var(--ink);font-weight:900}
+  main{max-width:560px;margin:0 auto;padding:0 14px 20px;text-align:center}
+  .lvlchip{display:inline-block;background:#fff;border-radius:12px;padding:3px 12px;font-weight:900;font-size:.85rem;color:#5b7b97;box-shadow:0 3px 0 #cfe0ee;margin-bottom:6px}
+  .stage{background:#fff;border-radius:20px;box-shadow:0 8px 20px #16324f1c;padding:16px 12px}
+  .q{font-size:1.12rem;font-weight:900;margin:2px 0 6px}
+  .read{border:none;background:#eef6fc;border-radius:12px;font-size:.95rem;padding:5px 12px;cursor:pointer;font-weight:800;color:var(--ink)}
+  .reveal{min-height:1.5em;font-weight:800;color:var(--accent);margin-top:8px;font-size:1rem}
+  .opts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+  .opts.two{grid-template-columns:1fr 1fr}
+  .opt{border:none;border-radius:16px;background:#f6fbff;box-shadow:0 5px 0 #d7e6f2;cursor:pointer;padding:14px 6px;font-family:inherit;font-weight:900;color:var(--ink);font-size:1.15rem;transition:transform .12s}
+  .opt:active{transform:scale(.95)}
+  .opt.good{background:#e8fbf4;box-shadow:0 5px 0 #bfe6da,0 0 0 3px var(--accent)}
+  .opt.bad{animation:shake .4s}
+  @keyframes shake{25%{transform:translateX(-7px)}50%{transform:translateX(7px)}75%{transform:translateX(-4px)}}
+  .next{margin-top:12px;border:none;border-radius:16px;font-family:inherit;font-weight:900;font-size:1.05rem;padding:11px 26px;cursor:pointer;background:var(--accent);color:#fff;box-shadow:0 6px 0 #15705d}
+  .next:disabled{opacity:.35;cursor:default}
+  .check{margin-top:12px;border:none;border-radius:16px;font-family:inherit;font-weight:900;font-size:1.05rem;padding:11px 26px;cursor:pointer;background:var(--blue);color:#fff;box-shadow:0 6px 0 #24509e}
+  .pass{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+  .stamp{width:32px;height:32px;border-radius:10px;background:#fff;box-shadow:inset 0 0 0 3px #dcebf6;display:flex;align-items:center;justify-content:center;font-size:1rem;opacity:.4;filter:grayscale(1)}
+  .stamp.on{opacity:1;filter:none;box-shadow:inset 0 0 0 3px var(--gold);animation:pop .4s}
+  @keyframes pop{50%{transform:scale(1.3) rotate(-6deg)}}
+  .toast{position:fixed;left:50%;top:9%;transform:translateX(-50%);background:var(--ink);color:#fff;font-weight:900;font-size:1.05rem;padding:10px 18px;border-radius:16px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:30}
+  .toast.show{opacity:1}
+  .conf{position:fixed;top:-12px;font-size:1.3rem;pointer-events:none;z-index:40;animation:fall linear forwards}
+  @keyframes fall{to{transform:translateY(112vh) rotate(540deg)}}
+  .cover{position:fixed;inset:0;background:#eef6fcf2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:20;overflow:auto}
+  .cover h1{font-size:2rem;margin:8px 0}
+  .cover p{font-size:1.05rem;font-weight:700;color:#5b7b97;max-width:430px;margin:4px 0 14px}
+  .lvlbtn{display:block;width:min(330px,86vw);margin:7px auto;border:none;border-radius:18px;font-family:inherit;font-weight:900;font-size:1.18rem;padding:14px 20px;cursor:pointer;background:#fff;color:var(--ink);box-shadow:0 6px 0 #cfe0ee;text-align:center}
+  .lvlbtn.go{background:var(--accent);color:#fff;box-shadow:0 6px 0 #15705d}
+  .lvlbtn small{display:block;font-size:.82rem;font-weight:800;color:#5b7b97}
+  .lvlbtn.go small{color:#d6f5ec}
+  .bigbtn{border:none;border-radius:18px;font-family:inherit;font-weight:900;font-size:1.15rem;padding:14px 26px;cursor:pointer;background:var(--accent);color:#fff;box-shadow:0 7px 0 #15705d;margin:6px}
+  .homebtn{display:inline-block;border-radius:18px;font-family:inherit;font-weight:900;font-size:1.15rem;padding:14px 26px;cursor:pointer;background:#fff;color:var(--ink);box-shadow:0 7px 0 #cfe0ee;margin:6px;text-decoration:none}
+  .hidden{display:none !important}
+  .duel{display:flex;justify-content:center;gap:12px;margin-top:10px}
+  .teamcard{background:#f6fbff;border-radius:16px;box-shadow:0 4px 0 #d7e6f2;padding:10px 14px;min-width:120px}
+  .teamcard img{width:44px;height:44px;object-fit:contain}
+  .teamcard .nm{font-size:.85rem;font-weight:900}
+  .teamcard .att{font-size:1.4rem;font-weight:900;color:var(--blue)}
+  .phase{display:inline-block;background:var(--gold);color:#5c4300;border-radius:12px;padding:3px 12px;font-weight:900;font-size:.85rem;margin-top:10px}
+  .disp{font-size:2rem;font-weight:900;letter-spacing:2px;background:#f6fbff;border-radius:14px;padding:8px 16px;margin:12px auto 0;min-width:170px;min-height:56px;box-shadow:inset 0 0 0 3px #dcebf6;display:flex;align-items:center;justify-content:center}
+  .pad{display:grid;grid-template-columns:repeat(3,72px);gap:8px;justify-content:center;margin-top:10px}
+  .pad button{border:none;border-radius:14px;background:#fff;box-shadow:0 4px 0 #cfe0ee;font-family:inherit;font-size:1.35rem;font-weight:900;padding:12px 0;cursor:pointer;color:var(--ink)}
+  .pad button:active{transform:translateY(2px)}
+  .pad .ok{background:var(--accent);color:#fff;box-shadow:0 4px 0 #15705d}
+  .pad .del{background:#ffe3e3;box-shadow:0 4px 0 #f3b6b6}
+  .inv{margin-top:10px;font-weight:900;color:#5b7b97;font-size:1.05rem}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">➕ Big Match Adder</div>
+  <div class="hbtns"><a class="backb" id="back" href="/play">←</a><button class="snd" id="snd">🔊</button></div>
+</header>
+<main>
+  <div class="lvlchip" id="lvlchip"></div>
+  <div class="stage">
+    <div class="q" id="q"></div>
+    <button class="read" id="read">🔊 Read it to me</button>
+    <div id="zone"></div>
+    <div class="reveal" id="reveal"></div>
+    <button class="next" id="next" disabled>Next →</button>
+  </div>
+  <div class="pass" id="pass"></div>
+</main>
+<div class="toast" id="toast"></div>
+
+<div class="cover" id="start">
+  <div style="font-size:3.6rem">➕🏟️</div>
+  <h1>Big Match Adder</h1>
+  <p>Add and subtract match-day crowds like a real club accountant: estimate first, type the exact answer on the keypad, then prove it with the inverse check!</p>
+  <button class="lvlbtn go" id="lvl3">⭐ Year 3<small>3-digit crowds · estimate by rounding · column method practice</small></button>
+  <button class="lvlbtn" id="lvl4">🌟 Year 4<small>4-digit crowds · two-step problems · estimate and check</small></button>
+</div>
+
+<div class="cover hidden" id="finale">
+  <div style="font-size:3.8rem">🧮🎉</div>
+  <h1>Calculation champion!</h1>
+  <p id="finp">Estimated, solved and checked. The club needs you in the ticket office!</p>
+  <div>
+    <button class="bigbtn" id="again">Play again 🔁</button>
+    <a class="homebtn" id="homelink" href="/play">All games 🎮</a>
+  </div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const N=8;
+let sound=true,LEVEL=3,idx=0,done=false,actx=null;
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function pick(a){return a[Math.floor(Math.random()*a.length)];}
+function speak(t){if(!sound)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.rate=.95;u.pitch=1.1;speechSynthesis.speak(u);}catch(e){}}
+function ctx(){try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();return actx;}catch(e){return null;}}
+function tone(f,d,type,when,g){if(!sound)return;const a=ctx();if(!a)return;const o=a.createOscillator(),gn=a.createGain();o.type=type||"sine";o.frequency.value=f;gn.gain.value=g||.12;o.connect(gn);gn.connect(a.destination);const t=a.currentTime+(when||0);o.start(t);gn.gain.setValueAtTime(gn.gain.value,t);gn.gain.exponentialRampToValueAtTime(.0001,t+d);o.stop(t+d);}
+function cheer(){[523,659,784,1047].forEach((f,k)=>tone(f,.24,"triangle",k*.09,.13));}
+function buzz(){tone(170,.2,"sine",0,.1);}
+function confetti(n){const em=["➕","⭐","🎉","🧮"];for(let i=0;i<n;i++){const s=document.createElement("div");s.className="conf";s.textContent=em[i%em.length];s.style.left=Math.random()*100+"vw";s.style.animationDuration=(1.4+Math.random())+"s";document.body.appendChild(s);setTimeout(()=>s.remove(),2600);}}
+let tT;function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(tT);tT=setTimeout(()=>e.classList.remove("show"),1300);}
+function buildPass(){const el=$("pass");el.innerHTML="";for(let i=0;i<N;i++){const d=document.createElement("div");d.className="stamp"+(i<idx?" on":"");d.textContent="🧮";el.appendChild(d);}}
+function onCorrect(msg,sayMsg){
+  done=true;$("reveal").textContent="✅ "+msg;
+  toast(pick(["Yes! 🎉","Brilliant! ⭐","Maths star! 🙌"]));
+  cheer();confetti(9);speak(sayMsg||msg);
+  idx++;buildPass();
+  $("next").disabled=false;
+  $("next").textContent = idx>=N ? "See my score →" : "Next →";
+}
+function onWrong(hint){toast(hint||"Try again 🤔");buzz();speak("Not quite. Try again!");}
+function finish(){$("finale").classList.remove("hidden");confetti(24);cheer();speak("Calculation champion!");}
+$("next")&&($("next").onclick=()=>{ if(!done)return; if(idx>=N){finish();} else render(); });
+function startRun(lv){LEVEL=lv;$("lvlchip").textContent=(lv===3?"⭐ Year 3":"🌟 Year 4");$("start").classList.add("hidden");ctx();idx=0;makeRounds();render();}
+$("lvl3").onclick=()=>startRun(3);
+$("lvl4").onclick=()=>startRun(4);
+$("again").onclick=()=>{$("finale").classList.add("hidden");$("start").classList.remove("hidden");};
+$("snd").onclick=()=>{sound=!sound;$("snd").textContent=sound?"🔊":"🔇";if(!sound&&"speechSynthesis" in window)speechSynthesis.cancel();};
+if(location.protocol==="file:"){$("back").setAttribute("href","index.html");$("homelink").setAttribute("href","index.html");}
+buildPass();
+
+const TEAMS=[["Liverpool","liverpool"],["Arsenal","arsenal"],["Chelsea","chelsea"],["Real Madrid","real-madrid"],["Barcelona","fc-barcelona"],["Bayern Munich","bayern-munich"],["Ajax","ajax"],["Celtic","celtic"],["PSG","paris-saint-germain"],["Inter Milan","internazionale"],["Boca Juniors","boca-juniors"],["Flamengo","flamengo"]];
+let rounds=[],entry="",target=0,phase="";
+function ri(a,b){return a+Math.floor(Math.random()*(b-a+1));}
+function fmt(n){return n.toLocaleString("en-GB");}
+function rd(n,to){return Math.round(n/to)*to;}
+function makeRounds(){
+  const kinds = LEVEL===3 ? ["add","add","sub","add","sub","add","sub","add"]
+                          : ["add","sub","add","two","sub","add","two","sub"];
+  rounds=shuffle(kinds);
+}
+function mcq(options,ans,onGood){
+  const o=document.createElement("div");o.className="opts";
+  options.forEach((t,i)=>{const b=document.createElement("button");b.className="opt";b.textContent=t;
+    b.onclick=()=>{if(done)return;
+      if(i===ans){b.classList.add("good");cheer();confetti(6);onGood();}
+      else{b.classList.add("bad");setTimeout(()=>b.classList.remove("bad"),420);onWrong("Round each number first, then add 👀");}};
+    o.appendChild(b);});
+  o.id="estopts";$("zone").appendChild(o);
+}
+function keypad(onSubmit){
+  entry="";
+  const disp=document.createElement("div");disp.className="disp";disp.id="disp";disp.textContent="_";$("zone").appendChild(disp);
+  const pad=document.createElement("div");pad.className="pad";
+  ["1","2","3","4","5","6","7","8","9","⌫","0","✓"].forEach(k=>{
+    const b=document.createElement("button");b.textContent=k;
+    if(k==="✓")b.className="ok"; if(k==="⌫")b.className="del";
+    b.onclick=()=>{if(done)return;
+      if(k==="⌫"){entry=entry.slice(0,-1);}
+      else if(k==="✓"){onSubmit(Number(entry||"-1"));return;}
+      else if(entry.length<6){entry+=k;tone(600,.05,"triangle",0,.07);}
+      disp.textContent=entry?fmt(Number(entry)):"_";};
+    pad.appendChild(b);});
+  $("zone").appendChild(pad);
+}
+function teamCards(a,b,va,vb){
+  const w=document.createElement("div");w.className="duel";
+  [[a,va],[b,vb]].forEach(([t,v])=>{
+    const c=document.createElement("div");c.className="teamcard";
+    c.innerHTML='<img src="/team-badges/'+t[1]+'.png" alt="" onerror="this.style.display=\'none\'"><div class="nm">'+t[0]+'</div><div class="att">'+fmt(v)+'</div>';
+    w.appendChild(c);});
+  $("zone").appendChild(w);
+}
+function phaseTag(t){const p=document.createElement("div");p.className="phase";p.textContent=t;$("zone").appendChild(p);}
+function render(){
+  done=false;$("zone").innerHTML="";$("reveal").textContent="";$("next").disabled=true;$("next").textContent="Next →";buildPass();
+  const kind=rounds[idx];
+  if(kind==="add")rAdd(); else if(kind==="sub")rSub(); else rTwo();
+}
+function rAdd(){
+  const hi=LEVEL===4?4999:499;
+  const [ta,tb]=shuffle(TEAMS).slice(0,2);
+  const a=ri(hi>999?1050:120,hi), b=ri(hi>999?1050:120,hi);
+  target=a+b;
+  const to=LEVEL===4?1000:100;
+  const est=rd(a,to)+rd(b,to);
+  $("q").innerHTML="Two kids' stands cheer today! <b>"+fmt(a)+"</b> fans + <b>"+fmt(b)+"</b> fans. How many altogether?";
+  window._say=a+" fans plus "+b+" fans. First, estimate by rounding to the nearest "+to+".";speak(_say);
+  teamCards(ta,tb,a,b);
+  phaseTag("Step 1 · ESTIMATE (round to the nearest "+fmt(to)+")");
+  const wrongs=[est+to,est-to];
+  const opts=shuffle([est,...wrongs]);
+  mcq(opts.map(n=>"≈ "+fmt(n)),opts.indexOf(est),()=>{
+    document.getElementById("estopts").remove();
+    document.querySelector(".phase").textContent="Step 2 · Now work it out EXACTLY";
+    speak("Good estimate! Now type the exact answer: "+a+" plus "+b);
+    keypad(v=>{
+      if(v===target){onCorrect(fmt(a)+" + "+fmt(b)+" = "+fmt(target)+". Check: "+fmt(target)+" − "+fmt(b)+" = "+fmt(a)+" ✓","Exactly right! And the inverse check works too!");
+        const inv=document.createElement("div");inv.className="inv";inv.textContent="Inverse check: "+fmt(target)+" − "+fmt(b)+" = "+fmt(a)+" ✓";$("zone").appendChild(inv);}
+      else onWrong(v>target?"A little too big — check your columns ✏️":"A little too small — check your columns ✏️");});
+  });
+}
+function rSub(){
+  const hi=LEVEL===4?4999:899;
+  const [ta,tb]=shuffle(TEAMS).slice(0,2);
+  const a=ri(hi>999?2000:400,hi); const b=ri(hi>999?1000:110,a-50);
+  target=a-b;
+  $("q").innerHTML="<b>"+fmt(a)+"</b> fans came, but <b>"+fmt(b)+"</b> support the away team. How many support the home team?";
+  window._say=a+" fans minus "+b+". Type the answer.";speak(_say);
+  teamCards(ta,tb,a,b);
+  phaseTag(fmt(a)+" − "+fmt(b)+" = ?");
+  keypad(v=>{
+    if(v===target){onCorrect(fmt(a)+" − "+fmt(b)+" = "+fmt(target)+". Check: "+fmt(target)+" + "+fmt(b)+" = "+fmt(a)+" ✓","Correct! Addition undoes subtraction — the check works!");}
+    else onWrong(v>target?"Too big 👀 try the column method":"Too small 👀 try the column method");});
+}
+function rTwo(){
+  const [ta,tb]=shuffle(TEAMS).slice(0,2);
+  const a=ri(1200,3800), b=ri(800,2400), leave=ri(150,600);
+  target=a+b-leave;
+  $("q").innerHTML="Two-step problem! <b>"+fmt(a)+"</b> home fans + <b>"+fmt(b)+"</b> away fans, then <b>"+fmt(leave)+"</b> leave early. How many are left?";
+  window._say=a+" plus "+b+", then take away "+leave+". Two steps!";speak(_say);
+  teamCards(ta,tb,a,b);
+  phaseTag("("+fmt(a)+" + "+fmt(b)+") − "+fmt(leave)+" = ?");
+  keypad(v=>{
+    if(v===target){onCorrect("("+fmt(a)+" + "+fmt(b)+") − "+fmt(leave)+" = "+fmt(target),"Two steps, both perfect!");}
+    else onWrong("Two steps: add first, then subtract 👀");});
+}
+$("read").onclick=()=>{if(window._say)speak(_say);};
+
+</script>
+</body>
+</html>
