@@ -14,7 +14,7 @@ import { SuperCupsSection, DomesticCupsSection } from "./LiveCups";
 import { FootballHero } from "@/app/teams/_shared/FootballHero";
 import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
 import { Badge } from "@/app/teams/_shared/Badge";
-import { ResponsiveTable, MiniStat, MiniCardHeader } from "@/app/teams/_shared/ResponsiveTable";
+import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 
 export const revalidate = 300;
 
@@ -141,28 +141,25 @@ function CompGroupTable({ rows }: { rows: LiveRow[] }) {
   return (
     <ResponsiveTable
       compact
+      variant="list"
       className="rounded-lg border"
       style={cardStyle}
       mobileRows={sorted.map((r, i) => {
         const c = resolveClub(r);
         return (
-          <div key={i}>
-            <MiniCardHeader
-              left={
-                <span className="inline-flex items-center gap-1.5 min-w-0">
-                  <span className="text-[var(--text-dim)] flex-shrink-0 tabular-nums" style={mono}>{r.rank ?? i + 1}</span>
-                  <CrestIcon name={c.name} size={14} className="flex-shrink-0" />
-                  {c.slug ? <Link href={`/teams/football/${c.slug}`} className="hover:text-[var(--accent)] truncate">{c.name}</Link> : <span className="truncate">{c.name}</span>}
-                </span>
-              }
-              right={<span className="tabular-nums font-semibold" style={mono}>{num(r.points)} pts</span>}
-            />
-            <div className="grid grid-cols-3 gap-2">
-              <MiniStat label="P" value={num(r.played)} />
-              <MiniStat label="W-D-L" value={`${num(r.win)}-${num(r.draw)}-${num(r.lose)}`} />
-              <MiniStat label="GD" value={num(r.gd)} />
-            </div>
-          </div>
+          <RankRow
+            key={i}
+            rank={r.rank ?? i + 1}
+            name={
+              <>
+                <CrestIcon name={c.name} size={14} className="flex-shrink-0" />
+                {c.slug ? <Link href={`/teams/football/${c.slug}`} className="hover:text-[var(--accent)] truncate">{c.name}</Link> : <span className="truncate">{c.name}</span>}
+              </>
+            }
+            sub={<>{num(r.played)} P · {num(r.win)}-{num(r.draw)}-{num(r.lose)} · {typeof r.gd === "number" && r.gd > 0 ? `+${r.gd}` : num(r.gd)} GD</>}
+            right={num(r.points)}
+            rightSub="pts"
+          />
         );
       })}
     >

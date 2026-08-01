@@ -2,6 +2,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
+import { Tabs } from "@/app/teams/_shared/Tabs";
+import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 
 export type RankedClub = { rank: number; name: string; slug: string | null; country: string; mp: number; w: number; d: number; l: number; form: number; ped: number; tb: number; score: number };
 export type CoefCountry = { rank: number; country: string; seasons: Record<string, number | null>; coef: number };
@@ -16,17 +18,18 @@ export default function RankingTable({ clubs, countries, clubSeasons, pendingNot
   const rankOf = new Map(countries.map((c) => [c.country, c.rank]));
   const filterCountries = Array.from(new Set(clubs.map((c) => c.country))).sort((a, b) => (rankOf.get(a) ?? 999) - (rankOf.get(b) ?? 999) || a.localeCompare(b));
   const rows = country ? clubs.filter((c) => c.country === country) : clubs.slice(0, 100);
-  const tabBtn = (id: "clubs" | "countries", label: string) => (
-    <button onClick={() => setTab(id)} aria-current={tab === id ? "page" : undefined}
-      className={`text-xs px-3 py-1.5 rounded-full border transition-colors ${tab === id ? "font-semibold" : "hover:text-[var(--text)]"}`}
-      style={{ background: "var(--bg-card)", color: tab === id ? "var(--accent)" : "var(--text-muted)", borderColor: tab === id ? "var(--accent)" : "var(--border)" }}>{label}</button>
-  );
   return (
     <div>
-      <div className="flex flex-wrap items-center gap-2 mb-3">
-        {tabBtn("clubs", "Club ranking")}
-        {tabBtn("countries", "Country coefficients")}
-      </div>
+      <Tabs
+        className="mb-3"
+        aria-label="Ranking view"
+        active={tab}
+        onChange={(k) => setTab(k as "clubs" | "countries")}
+        items={[
+          { key: "clubs", label: "Club ranking" },
+          { key: "countries", label: "Country coefficients" },
+        ]}
+      />
       {tab === "clubs" ? (
         clubsPending ? (
           <div className="rounded-xl border px-4 py-8 text-center" style={cardStyle}>
@@ -44,8 +47,28 @@ export default function RankingTable({ clubs, countries, clubSeasons, pendingNot
             </select>
             <span className="text-[var(--text-dim)]">{rows.length} shown</span>
           </div>
-          <div className="rounded-xl border overflow-hidden" style={cardStyle}><div className="overflow-x-auto">
-            <table className="w-full text-xs min-w-[540px]"><thead><tr className="text-left text-[var(--text-muted)]">
+          <ResponsiveTable
+            compact
+            variant="list"
+            className="rounded-xl border"
+            style={cardStyle}
+            mobileRows={rows.map((c) => (
+              <RankRow
+                key={`${c.rank}-${c.name}`}
+                rank={c.rank}
+                name={
+                  <>
+                    <CrestIcon name={c.name} size={14} className="flex-shrink-0" />
+                    {c.slug ? <Link href={`/teams/football/${c.slug}`} className="hover:text-[var(--accent)] truncate">{c.name}</Link> : <span className="truncate">{c.name}</span>}
+                  </>
+                }
+                sub={<>{c.country} · {c.mp} P · {c.w}-{c.d}-{c.l}{c.tb > 0 ? ` · +${c.tb.toFixed(2)} trophy` : ""}</>}
+                right={c.score.toFixed(3)}
+                rightSub="score"
+              />
+            ))}
+          >
+            <table className="w-full text-xs min-w-[540px]" data-sticky-col="2"><thead><tr className="text-left text-[var(--text-muted)]">
               <th className="py-2 px-2 font-medium text-right">#</th><th className="py-2 px-2 font-medium">Club</th><th className="py-2 px-2 font-medium">Country</th>
               <th className="py-2 px-2 font-medium text-right">P</th><th className="py-2 px-2 font-medium text-right">W</th><th className="py-2 px-2 font-medium text-right">D</th><th className="py-2 px-2 font-medium text-right">L</th>
               <th className="py-2 px-2 font-medium text-right">Form</th><th className="py-2 px-2 font-medium text-right">Ped</th><th className="py-2 px-2 font-medium text-right">Trophy</th><th className="py-2 px-2 font-medium text-right">Score</th></tr></thead>
@@ -61,12 +84,31 @@ export default function RankingTable({ clubs, countries, clubSeasons, pendingNot
                   <td className="py-1.5 px-2 text-right tabular-nums font-semibold" style={mono}>{c.score.toFixed(3)}</td>
                 </tr>))}</tbody>
             </table>
-          </div></div>
+          </ResponsiveTable>
         </>
         )
       ) : (
-        <div className="rounded-xl border overflow-hidden" style={cardStyle}><div className="overflow-x-auto">
-          <table className="w-full text-xs min-w-[440px]"><thead><tr className="text-left text-[var(--text-muted)]">
+        <ResponsiveTable
+          compact
+          variant="list"
+          className="rounded-xl border"
+          style={cardStyle}
+          mobileRows={countries.map((c) => {
+            const latest = clubSeasons[clubSeasons.length - 1];
+            const latestVal = latest != null ? c.seasons[latest] : null;
+            return (
+              <RankRow
+                key={c.country}
+                rank={c.rank}
+                name={<span className="truncate">{c.country}</span>}
+                sub={latestVal != null ? <>{latest}: {latestVal.toFixed(3)}</> : undefined}
+                right={c.coef.toFixed(3)}
+                rightSub="coef"
+              />
+            );
+          })}
+        >
+          <table className="w-full text-xs min-w-[440px]" data-sticky-col="2"><thead><tr className="text-left text-[var(--text-muted)]">
             <th className="py-2 px-2 font-medium text-right">#</th><th className="py-2 px-2 font-medium">Association</th>
             {clubSeasons.map((s) => <th key={s} className="py-2 px-2 font-medium text-right">{s}</th>)}<th className="py-2 px-2 font-medium text-right">Coef</th></tr></thead>
             <tbody>{countries.map((c) => (
@@ -77,7 +119,7 @@ export default function RankingTable({ clubs, countries, clubSeasons, pendingNot
                 <td className="py-1.5 px-2 text-right tabular-nums font-semibold" style={mono}>{c.coef.toFixed(3)}</td>
               </tr>))}</tbody>
           </table>
-        </div></div>
+        </ResponsiveTable>
       )}
     </div>
   );

@@ -95,4 +95,36 @@ table thead th {
     z-index: 30;
     box-shadow: inset -1px 0 0 var(--border);
   }
+
+  /* === Sticky-column override: data-sticky-col="2" ===
+     The default above pins the FIRST column, which is wrong for tables
+     whose first column is a rank number (#) — swiping sideways then hides
+     the row's actual identity (club/metro/person name) while pinning the
+     least useful cell. A table can declare data-sticky-col="2" to pin its
+     second column (the name) instead; the rank column simply scrolls
+     under it. Add higher numbers here only if a real table needs them. */
+  table[data-sticky-col="2"] tbody td:first-child,
+  table[data-sticky-col="2"] tfoot td:first-child,
+  table[data-sticky-col="2"] thead th:first-child {
+    position: static;
+    box-shadow: none;
+  }
+  table[data-sticky-col="2"] thead th:first-child {
+    position: sticky; /* keep the top-stick from the global thead rule */
+    top: 0;
+    left: auto;
+  }
+  table[data-sticky-col="2"] tbody td:nth-child(2),
+  table[data-sticky-col="2"] tfoot td:nth-child(2) {
+    position: sticky;
+    left: 0;
+    z-index: 15;
+    background: var(--bg-card);
+    box-shadow: inset -1px 0 0 var(--border);
+  }
+  table[data-sticky-col="2"] thead th:nth-child(2) {
+    left: 0;
+    z-index: 30;
+    box-shadow: inset -1px 0 0 var(--border);
+  }
 }

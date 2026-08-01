@@ -189,7 +189,9 @@ export default function FootballIndex() {
 
       <section className="mb-10">
         <h2 id="tournaments" className="text-lg font-semibold mb-3">European & world tournament hubs</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {/* 2-up tiles on phones (home-page Explore pattern); the most-titled
+            line is desktop-only so the mobile tile stays scannable. */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-3">
           {tournamentHubs.map((t) => {
             const topClub = t.most_decorated[0];
             // Prefer the auto month-window status (CL/EL/ECL/Libertadores are "live"
@@ -200,11 +202,11 @@ export default function FootballIndex() {
               <Link
                 key={t.slug}
                 href={`/teams/football/tournaments/${t.slug}`}
-                className="block rounded-xl border p-4 transition hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]"
+                className="block rounded-xl border p-3 sm:p-4 transition hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]"
                 style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
               >
-                <div className="flex items-baseline justify-between gap-2">
-                  <div className="font-semibold">{t.short_label}</div>
+                <div className="flex items-baseline justify-between gap-2 flex-wrap">
+                  <div className="font-semibold text-sm sm:text-base leading-snug">{t.short_label}</div>
                   {!t.active && <Badge variant="defunct">Defunct</Badge>}
                   {isLive && <Badge variant="live" dot>Live</Badge>}
                   {t.active && !isLive && !NO_SEASON_STATE.has(t.slug) && (
@@ -216,7 +218,7 @@ export default function FootballIndex() {
                   {t.year_min && t.year_max ? <> · {t.year_min}–{t.year_max}</> : null}
                 </div>
                 {topClub && (
-                  <div className="text-xs text-[var(--text-muted)] mt-2">
+                  <div className="text-xs text-[var(--text-muted)] mt-2 hidden sm:block">
                     Most titled: <span className="font-medium text-[var(--text)]">{topClub.cur_name}</span> ({topClub.champion_count})
                   </div>
                 )}
@@ -228,7 +230,7 @@ export default function FootballIndex() {
 
       <section className="mb-10">
         <h2 id="leagues" className="text-lg font-semibold mb-3">League hubs</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-3">
           {hubs.map((h) => {
             const s = leagueStatusFor(`/teams/football/leagues/${h.slug}`);
             const live = s ? s.tone !== "offseason" : h.is_mls;
@@ -236,15 +238,15 @@ export default function FootballIndex() {
             <Link
               key={h.slug}
               href={`/teams/football/leagues/${h.slug}`}
-              className="block rounded-xl border p-4 transition hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]"
+              className="block rounded-xl border p-3 sm:p-4 transition hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]"
               style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
             >
-              <div className="flex items-baseline justify-between gap-2">
-                <div className="text-base font-semibold">{h.league}</div>
+              <div className="flex items-baseline justify-between gap-2 flex-wrap">
+                <div className="text-sm sm:text-base font-semibold leading-snug">{h.league}</div>
                 <Badge variant={live ? "live" : "offseason"} dot={live}>{live ? "Live" : "Offseason"}</Badge>
               </div>
               <div className="text-xs text-[var(--text-muted)] mt-1">{h.country}</div>
-              <div className="text-xs text-[var(--text-muted)] mt-2 tabular-nums">
+              <div className="text-xs text-[var(--text-muted)] mt-2 tabular-nums hidden sm:block">
                 {h.all_time_champions.length} all-time Level 1 champion entries
               </div>
             </Link>

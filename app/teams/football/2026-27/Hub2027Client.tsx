@@ -5,7 +5,7 @@ import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { Tabs } from "@/app/teams/_shared/Tabs";
 import { Badge } from "@/app/teams/_shared/Badge";
-import { ResponsiveTable, MiniStat, MiniCardHeader } from "@/app/teams/_shared/ResponsiveTable";
+import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 
 export type HubRow = { rank: number | null; name: string; slug: string | null; cells: (number | string)[]; champ?: boolean };
 export type HubGroup = { label: string | null; rows: HubRow[] };
@@ -35,25 +35,19 @@ function StandingsTable({ group }: { group: HubGroup }) {
   return (
     <ResponsiveTable
       compact
+      variant="list"
       className="rounded-lg border"
       style={cardStyle}
       mobileRows={group.rows.map((r, i) => (
-        <div key={`${r.name}-${i}`}>
-          <MiniCardHeader
-            left={
-              <span className="inline-flex items-center gap-1.5 min-w-0">
-                <span className="text-[var(--text-dim)] flex-shrink-0 tabular-nums" style={mono}>{r.rank ?? i + 1}</span>
-                <ClubLabel r={r} />
-              </span>
-            }
-            right={<span className="tabular-nums font-semibold" style={mono}>{r.cells[7]} pts</span>}
-          />
-          <div className="grid grid-cols-3 gap-2">
-            <MiniStat label="P" value={r.cells[0]} />
-            <MiniStat label="W-D-L" value={`${r.cells[1]}-${r.cells[2]}-${r.cells[3]}`} />
-            <MiniStat label="GD" value={r.cells[6]} />
-          </div>
-        </div>
+        <RankRow
+          key={`${r.name}-${i}`}
+          rank={r.rank ?? i + 1}
+          name={<ClubLabel r={r} />}
+          sub={<>{r.cells[0]} P · {r.cells[1]}-{r.cells[2]}-{r.cells[3]} · {typeof r.cells[6] === "number" && r.cells[6] > 0 ? `+${r.cells[6]}` : r.cells[6]} GD</>}
+          right={r.cells[7]}
+          rightSub="pts"
+          highlight={r.champ}
+        />
       ))}
     >
       <table className="w-full text-xs min-w-[360px]">

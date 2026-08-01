@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import FootballHubNav from "@/app/teams/FootballHubNav";
 import HubNav from "@/app/teams/HubNav";
+import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 import { getFootballClubByName } from "@/lib/football";
 import Hub2027Client, { type HubConf, type HubLeague, type HubGroup, type HubRow } from "./2026-27/Hub2027Client";
 import RankingTable, { type RankedClub } from "./2025-26/RankingTable";
@@ -77,13 +78,33 @@ function buildConfs(leagues: League[], countryRank: Map<string, number>): HubCon
 }
 function CTable({ table }: { table: TRow[] }) {
   const cols: [string, keyof TRow][] = [["P", "played"], ["W", "win"], ["D", "draw"], ["L", "lose"], ["GD", "gd"], ["Pts", "points"]];
-  return (<div className="overflow-x-auto"><table className="w-full text-xs min-w-[300px]">
+  return (
+    <ResponsiveTable
+      compact
+      variant="list"
+      className="rounded-lg border"
+      style={cardStyle}
+      mobileRows={table.map((r, i) => (
+        <RankRow
+          key={i}
+          rank={r.rank ?? i + 1}
+          name={<ClubCell name={r.name} lookup={r.lookup} />}
+          sub={<>{num(r.played)} P · {num(r.win)}-{num(r.draw)}-{num(r.lose)} · {typeof r.gd === "number" && r.gd > 0 ? `+${r.gd}` : num(r.gd)} GD</>}
+          right={num(r.points)}
+          rightSub="pts"
+          highlight={r.champ}
+        />
+      ))}
+    >
+      <table className="w-full text-xs min-w-[300px]" data-sticky-col="2">
     <thead><tr className="text-left text-[var(--text-muted)]"><th className="py-1 px-1.5 font-medium text-right">#</th><th className="py-1 px-1.5 font-medium">Club</th>{cols.map(([c]) => <th key={c} className="py-1 px-1.5 font-medium text-right">{c}</th>)}</tr></thead>
     <tbody>{table.map((r, i) => (<tr key={i} className="border-t" style={{ borderColor: "var(--border)" }}>
       <td className="py-1 px-1.5 text-right tabular-nums text-[var(--text-dim)]" style={mono}>{r.rank ?? i + 1}</td>
       <td className="py-1 px-1.5 font-medium whitespace-nowrap"><ClubCell name={r.name} lookup={r.lookup} /></td>
       {cols.map(([, k]) => <td key={k} className="py-1 px-1.5 text-right tabular-nums" style={mono}>{num(r[k] as number)}</td>)}</tr>))}</tbody>
-  </table></div>);
+      </table>
+    </ResponsiveTable>
+  );
 }
 function GroupTables({ groups }: { groups: SGroup[] }) {
   return (<div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3">{groups.map((g, i) => (
@@ -263,14 +284,26 @@ export default function SeasonHub({ hub }: { hub: Hub }) {
       <section id="leagues" className="scroll-mt-24 mb-10"><h2 className="text-lg font-semibold mb-3">Final domestic tables</h2><Hub2027Client confs={confs} season={hub.season} /></section>
       <section id="cups" className="scroll-mt-24 mb-10">
         <h2 className="text-lg font-semibold mb-3">Cup competitions</h2>
-        <div className="rounded-xl border overflow-hidden" style={cardStyle}><div className="overflow-x-auto">
+        <ResponsiveTable
+          compact
+          variant="list"
+          className="rounded-xl border"
+          style={cardStyle}
+          mobileRows={hub.cups.map((c) => (
+            <RankRow
+              key={`${c.comp}-${c.country}`}
+              name={<ClubCell name={c.winner} lookup={c.winner_lookup} />}
+              sub={<>{c.comp} · {c.country} · {c.score} v {c.runnerup}</>}
+            />
+          ))}
+        >
           <table className="w-full text-xs min-w-[460px]"><thead><tr className="text-left text-[var(--text-muted)]"><th className="py-2 px-2 font-medium">Competition</th><th className="py-2 px-2 font-medium">Country</th><th className="py-2 px-2 font-medium">Winner</th><th className="py-2 px-2 font-medium">Final</th></tr></thead>
           <tbody>{hub.cups.map((c) => (<tr key={`${c.comp}-${c.country}`} className="border-t" style={{ borderColor: "var(--border)" }}>
             <td className="py-1.5 px-2 whitespace-nowrap font-medium">{c.comp}<span className="ml-1.5 text-[10px] text-[var(--text-dim)]">{c.type}</span></td>
             <td className="py-1.5 px-2 whitespace-nowrap text-[var(--text-muted)]">{c.country}</td>
             <td className="py-1.5 px-2 whitespace-nowrap font-medium"><ClubCell name={c.winner} lookup={c.winner_lookup} /></td>
             <td className="py-1.5 px-2 whitespace-nowrap text-[var(--text-dim)]" style={mono}>{c.score} v {c.runnerup}</td></tr>))}</tbody></table>
-        </div></div>
+        </ResponsiveTable>
       </section>
       <div className="my-6 border-t pt-6" style={{ borderColor: "var(--border)" }}><SeasonPager season={hub.season} /></div>
       <p className="text-[11px] text-[var(--text-dim)]">{hub.note}</p>
