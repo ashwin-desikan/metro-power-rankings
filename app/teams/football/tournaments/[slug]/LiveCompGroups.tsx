@@ -2,7 +2,7 @@ import Link from "next/link";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import { getFootballClubByName, monogramForFootball } from "@/lib/football";
 import type { LiveComp, LiveRow } from "@/lib/clubFootballLive";
-import { ResponsiveTable, MiniStat, MiniCardHeader } from "@/app/teams/_shared/ResponsiveTable";
+import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 
 // Live group / league-phase tables for a continental competition, fed from the
 // api-football -> Supabase -> ISR bundle. Server component (resolves crest + club
@@ -34,33 +34,30 @@ export default function LiveCompGroups({ comp, season }: { comp: LiveComp; seaso
             {comp.groups.length > 1 && <div className="text-[11px] font-semibold text-[var(--text-muted)] mb-1">{g.group_label}</div>}
             <ResponsiveTable
               compact
+              variant="list"
               className="rounded-lg border"
               style={cardStyle}
               mobileRows={g.rows.slice().sort(byPts).map((r, i) => {
                 const c = getFootballClubByName(r.lookup ?? "") ?? getFootballClubByName(r.name ?? "");
                 const nm = c?.cur_name ?? r.lookup ?? r.name ?? "-";
                 return (
-                  <div key={i}>
-                    <MiniCardHeader
-                      left={
-                        <span className="inline-flex items-center gap-1.5 min-w-0">
-                          <span className="text-[var(--text-dim)] flex-shrink-0 tabular-nums" style={mono}>{r.rank ?? i + 1}</span>
-                          <TeamCrest name={nm} size={16} fallback={<ColorBall slug={c?.slug ?? null} name={nm} />} />
-                          {c?.slug ? <Link href={`/teams/football/${c.slug}`} className="hover:underline font-medium truncate">{nm}</Link> : <span className="font-medium truncate">{nm}</span>}
-                        </span>
-                      }
-                      right={<span className="tabular-nums font-semibold" style={mono}>{n(r.points)} pts</span>}
-                    />
-                    <div className="grid grid-cols-3 gap-2">
-                      <MiniStat label="P" value={n(r.played)} />
-                      <MiniStat label="W-D-L" value={`${n(r.win)}-${n(r.draw)}-${n(r.lose)}`} />
-                      <MiniStat label="GD" value={n(r.gd)} />
-                    </div>
-                  </div>
+                  <RankRow
+                    key={i}
+                    rank={r.rank ?? i + 1}
+                    name={
+                      <>
+                        <TeamCrest name={nm} size={16} fallback={<ColorBall slug={c?.slug ?? null} name={nm} />} />
+                        {c?.slug ? <Link href={`/teams/football/${c.slug}`} className="hover:underline truncate">{nm}</Link> : <span className="truncate">{nm}</span>}
+                      </>
+                    }
+                    sub={<>{n(r.played)} P · {n(r.win)}-{n(r.draw)}-{n(r.lose)} · {typeof r.gd === "number" && r.gd > 0 ? `+${r.gd}` : n(r.gd)} GD</>}
+                    right={n(r.points)}
+                    rightSub="pts"
+                  />
                 );
               })}
             >
-              <table className="w-full text-sm min-w-[320px]">
+              <table className="w-full text-sm min-w-[320px]" data-sticky-col="2">
                 <thead>
                   <tr className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b" style={{ borderColor: "var(--border)" }}>
                     <th className="py-1.5 text-left font-medium">#</th>

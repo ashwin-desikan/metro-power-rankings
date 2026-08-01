@@ -98,7 +98,7 @@ export function RankRow({
       style={highlight ? { background: "rgba(78,205,196,0.06)" } : undefined}
     >
       {rank != null && (
-        <span className="w-6 flex-shrink-0 text-right text-[11px]" style={{ ...MONO, color: "var(--text-dim)" }}>
+        <span className="min-w-6 flex-shrink-0 text-right text-[11px]" style={{ ...MONO, color: "var(--text-dim)" }}>
           {rank}
         </span>
       )}

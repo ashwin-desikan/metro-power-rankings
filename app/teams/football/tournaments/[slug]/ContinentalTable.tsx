@@ -5,7 +5,7 @@ import Link from "next/link";
 import { monogramForFootball } from "@/lib/football-colors";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import type { ContinentalSection } from "@/lib/football";
-import { ResponsiveTable, MiniStat } from "@/app/teams/_shared/ResponsiveTable";
+import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 
 type Row = {
   year: number | null;
@@ -127,20 +127,27 @@ export default function ContinentalTable({ sections }: { sections: ContinentalSe
       <ResponsiveTable
         className="rounded-xl border"
         style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+        variant="list"
         mobileRows={sorted.map((r, i) => (
-          <div key={`${r.year}-${r.continent}-${r.tournament}-${i}-card`}>
-            <div className="flex items-start justify-between gap-2 mb-2">
-              <div className="min-w-0">
-                <div className="text-sm font-medium truncate">{r.tournament ?? "—"}</div>
-                <div className="text-xs text-[var(--text-muted)]">{r.continent}</div>
-              </div>
-              <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]">{r.year ?? "—"}</span>
-            </div>
-            <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
-              <MiniStat label="Champion" value={<ClubCell name={r.champion} slug={r.champion_slug} />} />
-              <MiniStat label="Runner-up" value={<ClubCell name={r.runner_up} slug={r.runner_up_slug} />} />
-            </div>
-          </div>
+          <RankRow
+            key={`${r.year}-${r.continent}-${r.tournament}-${i}`}
+            rank={r.year ?? "—"}
+            name={
+              r.champion ? (
+                <>
+                  <TeamCrest name={r.champion} size={16} fallback={<ColorBall slug={r.champion_slug} name={r.champion} />} />
+                  {r.champion_slug ? (
+                    <Link href={`/teams/football/${r.champion_slug}`} className="hover:underline truncate">{r.champion}</Link>
+                  ) : (
+                    <span className="truncate">{r.champion}</span>
+                  )}
+                </>
+              ) : (
+                <span className="text-[var(--text-dim)]">—</span>
+              )
+            }
+            sub={<>{r.tournament ?? "—"} · {r.continent} · v {r.runner_up ?? "—"}</>}
+          />
         ))}
       >
         <table className="w-full text-sm tabular-nums min-w-[640px]">

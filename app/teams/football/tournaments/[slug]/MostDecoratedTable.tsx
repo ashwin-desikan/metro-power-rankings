@@ -13,7 +13,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import type { EuropeanMostDecorated } from "@/lib/football";
-import { ResponsiveTable, MiniStat, MiniCardHeader } from "@/app/teams/_shared/ResponsiveTable";
+import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 
 type SortKey = "cups" | "finals" | "last_won" | "last_final" | "club";
 type SortDir = "asc" | "desc";
@@ -179,49 +179,31 @@ export default function MostDecoratedTable({ rows }: Props) {
       </div>
 
       <ResponsiveTable
+        variant="list"
         mobileRows={sorted.map((d, i) => (
-          <div key={`${d.cur_name}-card`}>
-            <MiniCardHeader
-              left={
-                <span className="inline-flex items-center gap-2 min-w-0">
-                  <span className="flex-shrink-0 text-xs tabular-nums text-[var(--text-muted)]">{i + 1}</span>
-                  {d.slug ? (
-                    <Link href={`/teams/football/${d.slug}`} className="font-medium hover:underline truncate">
-                      {d.cur_name}
-                    </Link>
-                  ) : (
-                    <span className="font-medium truncate">{d.cur_name}</span>
-                  )}
-                </span>
-              }
-            />
-            <div className="grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs">
-              <MiniStat
-                label="Cups"
-                value={
-                  <span className="font-semibold">
-                    {d.champion_count > 0 ? d.champion_count : <span className="text-[var(--text-dim)] font-normal">—</span>}
-                  </span>
-                }
-              />
-              <MiniStat
-                label="Finals"
-                value={
-                  <>
-                    {(d.finals_count ?? d.champion_count)}
-                    {(d.finals_lost ?? 0) > 0 && (
-                      <span className="text-[var(--text-muted)]"> ({d.finals_lost} L)</span>
-                    )}
-                  </>
-                }
-              />
-              <MiniStat label="Last won" value={d.last_won ?? <span className="text-[var(--text-dim)]">—</span>} />
-              <MiniStat label="Last final" value={d.last_final ?? <span className="text-[var(--text-dim)]">—</span>} />
-            </div>
-          </div>
+          <RankRow
+            key={d.cur_name}
+            rank={i + 1}
+            name={
+              d.slug ? (
+                <Link href={`/teams/football/${d.slug}`} className="hover:underline truncate">
+                  {d.cur_name}
+                </Link>
+              ) : (
+                <span className="truncate">{d.cur_name}</span>
+              )
+            }
+            sub={
+              <>
+                {(d.finals_count ?? d.champion_count)} finals{(d.finals_lost ?? 0) > 0 ? ` (${d.finals_lost} L)` : ""} · won {d.last_won ?? "—"} · final {d.last_final ?? "—"}
+              </>
+            }
+            right={d.champion_count > 0 ? d.champion_count : "—"}
+            rightSub="titles"
+          />
         ))}
       >
-        <table className="w-full text-sm">
+        <table className="w-full text-sm" data-sticky-col="2">
           <thead>
             <tr
               className="text-xs text-[var(--text-muted)] uppercase tracking-wide border-b"

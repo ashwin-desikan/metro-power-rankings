@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { ResponsiveTable, MiniStat, MiniCardHeader } from "@/app/teams/_shared/ResponsiveTable";
+import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 import type {
   DomesticCupCompetition,
   DomesticCupSeason,
@@ -202,35 +202,25 @@ function AggregateTable({ rows }: { rows: DomesticCupAggregateRow[] }) {
           finals, trophies); the FA Cup/League Cup breakdown stays on the
           desktop table, where there's room for all nine columns. */}
       <ResponsiveTable
+        variant="list"
         className="rounded-xl border"
         style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
         mobileRows={sorted.map((r) => (
-          <div key={r.slug}>
-            <MiniCardHeader
-              left={<ClubName name={r.cur_name} slug={r.slug} />}
-              right={
-                <span className="tabular-nums">
-                  <span className="font-semibold">{r.cups || 0}</span>
-                  {r.cups_last ? <span className="ml-1 text-[10px] text-[var(--text-dim)]">({r.cups_last})</span> : null}
-                  <span className="ml-1 text-[10px] text-[var(--text-dim)] uppercase tracking-wide">trophies</span>
-                </span>
-              }
-            />
-            <div className="grid grid-cols-3 gap-2">
-              <MiniStat
-                label="Semifinals"
-                value={r.sf ? <>{r.sf}{r.sf_last ? <span className="ml-1 text-[10px] text-[var(--text-dim)]">({r.sf_last})</span> : null}</> : "·"}
-              />
-              <MiniStat
-                label="Finals"
-                value={r.f ? <>{r.f}{r.f_last ? <span className="ml-1 text-[10px] text-[var(--text-dim)]">({r.f_last})</span> : null}</> : "·"}
-              />
-              <MiniStat
-                label="Trophies"
-                value={r.cups ? <>{r.cups}{r.cups_last ? <span className="ml-1 text-[10px] text-[var(--text-dim)]">({r.cups_last})</span> : null}</> : "·"}
-              />
-            </div>
-          </div>
+          <RankRow
+            key={r.slug}
+            name={
+              <span className="truncate">
+                <ClubName name={r.cur_name} slug={r.slug} />
+              </span>
+            }
+            sub={
+              <>
+                {r.sf || 0} SF{r.sf_last ? ` (${r.sf_last})` : ""} · {r.f || 0} F{r.f_last ? ` (${r.f_last})` : ""}
+              </>
+            }
+            right={r.cups || 0}
+            rightSub="cups"
+          />
         ))}
       >
         <table className="w-full text-sm min-w-[920px]">

@@ -14,7 +14,7 @@ import { notFound } from "next/navigation";
 import { colorForFootballClub } from "@/lib/football-colors";
 import { FootballHero } from "@/app/teams/_shared/FootballHero";
 import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
-import { ResponsiveTable, MiniStat, MiniCardHeader } from "@/app/teams/_shared/ResponsiveTable";
+import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 import {
   getAllClubs,
   getAllClubSlugs,
@@ -407,30 +407,32 @@ function MlsClubSeasonsTable({ seasons }: { seasons: MlsClubSeason[] }) {
       <p className="mt-1 text-xs text-[var(--text-muted)]">Major League Soccer. No promotion or relegation; the Supporters&apos; Shield (&#9733;) marks the best regular-season record and the MLS Cup is the playoff title.</p>
 
       {/* Same `seasons` array and same MlsFinish badge logic power both the
-          mobile card grid and the desktop table via ResponsiveTable. */}
+          mobile list rows and the desktop table via ResponsiveTable. */}
       <ResponsiveTable
         className=""
+        variant="list"
         mobileRows={seasons.map((s) => {
           const isLive = s.is_live === true;
           return (
-            <div key={`${s.year}-${s.conference}${isLive ? "-live" : ""}-card`}>
-              <MiniCardHeader
-                left={
-                  <>
-                    <div className="text-base font-semibold tabular-nums">{s.year}</div>
-                    <div className="text-xs text-[var(--text-muted)] mt-0.5 font-normal">{s.conference ?? "—"}</div>
-                  </>
-                }
-                right={<MlsFinish s={s} />}
-              />
-              <div className="grid grid-cols-3 gap-x-3 gap-y-1.5 text-xs">
-                <MiniStat label="Pos" value={s.overall_pos ?? "—"} />
-                <MiniStat label="Conf Pos" value={s.conf_pos ?? "—"} />
-                <MiniStat label="W-D-L" value={`${s.w}-${s.d}-${s.l}`} />
-                <MiniStat label="Pts" value={s.pts ?? "—"} />
-                <MiniStat label="GD" value={s.gd > 0 ? `+${s.gd}` : s.gd} />
-              </div>
-            </div>
+            <RankRow
+              key={`${s.year}-${s.conference}${isLive ? "-live" : ""}-row`}
+              rank={s.year}
+              name={
+                <>
+                  <span className="truncate">{s.conference ?? "—"}</span>
+                  <MlsFinish s={s} />
+                </>
+              }
+              sub={
+                <>
+                  {s.overall_pos != null && <>P{s.overall_pos} · </>}
+                  {s.w}-{s.d}-{s.l} · {s.gd > 0 ? `+${s.gd}` : s.gd} GD
+                </>
+              }
+              right={s.pts ?? "—"}
+              rightSub="pts"
+              highlight={s.supporters_shield || s.mls_cup}
+            />
           );
         })}
       >
@@ -757,10 +759,11 @@ function SeasonsTable({
       </p>
 
       {/* Same `seasons` array and the same badge-rendering components power
-          both the mobile card grid and the desktop table below, via
+          both the mobile list rows and the desktop table below, via
           ResponsiveTable, so no data or behavior forks between them. */}
       <ResponsiveTable
         className=""
+        variant="list"
         mobileRows={seasons.map((s, i) => {
           const leagueLabel = s.league || "-";
           const cupEntries = (s.year !== null ? cupsByYear.get(s.year) : null) ?? [];
@@ -769,60 +772,55 @@ function SeasonsTable({
           const sfOnly = Array.from(sfKinds).filter((k) => !finalKinds.has(k));
           const hasCup = cupEntries.length > 0 || sfOnly.length > 0;
           const europeEntries = (s.year !== null ? europeByYear.get(s.year) : null) ?? [];
-          return (
-            <div key={`${s.year}-${s.level}-${i}-card`}>
-              <div className="flex items-start justify-between gap-2">
-                <div className="leading-tight min-w-0">
-                  <div className="font-medium text-sm">
+          const hasBadges = hasCup || europeEntries.length > 0 || !!s.eur_qual;
+          const isChamp = s.champion === true;
+          const row = (
+            <RankRow
+              rank={s.year ?? "-"}
+              name={
+                <>
+                  <span className="truncate">
                     {leagueLabel}
-                    {s.level && (
-                      <span className="text-[var(--text-muted)] ml-1 tabular-nums">({s.level})</span>
-                    )}
-                  </div>
-                  <div className="text-xs text-[var(--text-muted)] mt-0.5 truncate">{s.team || s.cur_name}</div>
-                </div>
-                <div className="flex-shrink-0 text-right">
-                  <div className="text-sm font-semibold tabular-nums">{s.year ?? "-"}</div>
-                  <div className="text-xs text-[var(--text-muted)]">Pos {s.place ?? "-"}</div>
-                </div>
+                    {s.place != null && <span className="text-[var(--text-muted)]"> · P{s.place}</span>}
+                  </span>
+                  {isChamp && (
+                    <span title="Champion" aria-label="Champion" className="flex-shrink-0 leading-none" style={{ color: "#f5b301" }}>★</span>
+                  )}
+                  {s.promoted && (
+                    <span title={s.playoffs ? "Promoted (playoffs)" : "Promoted"} className="flex-shrink-0 text-[11px] font-semibold leading-none" style={{ color: "#22c55e" }}>↑</span>
+                  )}
+                  {s.relegated && (
+                    <span title={s.playoffs ? "Relegated (playoffs)" : "Relegated"} className="flex-shrink-0 text-[11px] font-semibold leading-none" style={{ color: "#dc2626" }}>↓</span>
+                  )}
+                  {s.playoffs && !s.promoted && !s.relegated && (
+                    <span title={s.playoff_final ? "Playoff final — not promoted" : "Playoffs"} className="flex-shrink-0 text-[9px] font-semibold uppercase tracking-wide leading-none" style={{ color: "#d97706" }}>PO</span>
+                  )}
+                </>
+              }
+              sub={
+                s.format === "league" ? (
+                  <>
+                    {s.matches ?? "-"} P · {s.w ?? "-"}-{s.d ?? "-"}-{s.l ?? "-"} · {s.gf ?? "-"}:{s.ga ?? "-"}
+                    {s.gd != null && <> · {s.gd > 0 ? `+${s.gd}` : s.gd}</>}
+                  </>
+                ) : (
+                  <>national playoff · knockout format, no match data</>
+                )
+              }
+              right={s.format === "league" ? s.pts ?? "-" : undefined}
+              rightSub={s.format === "league" ? "pts" : undefined}
+              highlight={isChamp}
+            />
+          );
+          if (!hasBadges) return <div key={`${s.year}-${s.level}-${i}-row`}>{row}</div>;
+          return (
+            <div key={`${s.year}-${s.level}-${i}-row`}>
+              {row}
+              <div className="px-3 pb-2 -mt-1 flex flex-wrap gap-1 text-[10px]" style={isChamp ? { background: "rgba(78,205,196,0.06)" } : undefined}>
+                <SeasonDomesticCupBadges s={s} cupsByYear={cupsByYear} sfByYear={sfByYear} cupShortLabels={cupShortLabels} cupFullNames={cupFullNames} />
+                <SeasonEuropeBadges s={s} europeByYear={europeByYear} />
+                <SeasonEurQualBadge s={s} />
               </div>
-              <div className="mt-1.5">
-                <SeasonNotesBadges s={s} />
-              </div>
-              {s.format === "league" ? (
-                <div className="mt-2 grid grid-cols-4 gap-x-3 gap-y-1.5 text-xs">
-                  <MiniStat label="P" value={s.matches ?? "-"} />
-                  <MiniStat label="W" value={s.w ?? "-"} />
-                  <MiniStat label="D" value={s.d ?? "-"} />
-                  <MiniStat label="L" value={s.l ?? "-"} />
-                  <MiniStat label="Pts" value={s.pts ?? "-"} />
-                  <MiniStat label="GF" value={s.gf ?? "-"} />
-                  <MiniStat label="GA" value={s.ga ?? "-"} />
-                  <MiniStat label="GD" value={s.gd ?? "-"} />
-                </div>
-              ) : (
-                <div className="mt-2 text-xs italic text-[var(--text-muted)]">
-                  knockout-format championship; per-match data not recorded
-                </div>
-              )}
-              {hasCup && (
-                <div className="mt-2 text-xs">
-                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] mb-0.5">Domestic Cup</div>
-                  <SeasonDomesticCupBadges s={s} cupsByYear={cupsByYear} sfByYear={sfByYear} cupShortLabels={cupShortLabels} cupFullNames={cupFullNames} />
-                </div>
-              )}
-              {europeEntries.length > 0 && (
-                <div className="mt-2 text-xs">
-                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] mb-0.5">Eur Comp</div>
-                  <SeasonEuropeBadges s={s} europeByYear={europeByYear} />
-                </div>
-              )}
-              {s.eur_qual && (
-                <div className="mt-2 text-xs">
-                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)] mb-0.5">Eur Qual (next yr)</div>
-                  <SeasonEurQualBadge s={s} />
-                </div>
-              )}
             </div>
           );
         })}
@@ -956,14 +954,14 @@ function CupsBlock({ cups, country }: { cups: FootballCupFinal[]; country: strin
 
       <ResponsiveTable
         className=""
+        variant="list"
         mobileRows={sorted.map((c, i) => (
-          <div key={`${i}-card`} className="flex items-center justify-between gap-3">
-            <div>
-              <div className="text-sm font-medium">{names[c.kind]}</div>
-              <div className="text-xs text-[var(--text-muted)] tabular-nums mt-0.5">{c.year ?? "-"}</div>
-            </div>
-            <CupFinalResult result={c.result} />
-          </div>
+          <RankRow
+            key={`${i}-row`}
+            rank={c.year ?? "-"}
+            name={<span className="truncate">{names[c.kind]}</span>}
+            right={<CupFinalResult result={c.result} />}
+          />
         ))}
       >
         <table className="w-full text-sm">
@@ -1027,25 +1025,23 @@ function EuropeBlock({ entries }: { entries: FootballEuropeEntry[] }) {
 
       <ResponsiveTable
         className=""
+        variant="list"
         mobileRows={entries.map((e, i) => {
           const isUcl = e.code === "CL" || e.code === "CLB";
           return (
-            <div key={`${i}-card`}>
-              <div className="flex items-start justify-between gap-2">
-                <div className="min-w-0">
-                  <div className="text-sm font-medium">
-                    {e.competition}
-                    {e.code && EUROPEAN_COMP_NAMES[e.code] && e.code !== "OTHC" && (
-                      <span className="ml-1.5 text-[var(--text-muted)] text-xs">({europeanCompDisplayCode(e.code, e.year)})</span>
-                    )}
-                  </div>
-                  <div className="text-xs text-[var(--text-muted)] tabular-nums mt-0.5">{e.season ?? e.year ?? "-"}</div>
-                </div>
-              </div>
-              <div className="mt-1.5 text-xs">
-                <EuropeAppearanceResult e={e} isUcl={isUcl} />
-              </div>
-            </div>
+            <RankRow
+              key={`${i}-row`}
+              rank={e.year ?? "-"}
+              name={
+                <>
+                  <span className="truncate">{e.competition}</span>
+                  {e.code && EUROPEAN_COMP_NAMES[e.code] && e.code !== "OTHC" && (
+                    <span className="flex-shrink-0 text-[var(--text-muted)] text-xs">({europeanCompDisplayCode(e.code, e.year)})</span>
+                  )}
+                </>
+              }
+              right={<EuropeAppearanceResult e={e} isUcl={isUcl} />}
+            />
           );
         })}
       >

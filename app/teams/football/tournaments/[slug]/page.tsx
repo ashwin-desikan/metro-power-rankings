@@ -19,7 +19,7 @@ import HubNav from "@/app/teams/HubNav";
 import { FootballHero } from "@/app/teams/_shared/FootballHero";
 import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
 import { Badge } from "@/app/teams/_shared/Badge";
-import { ResponsiveTable, MiniStat } from "@/app/teams/_shared/ResponsiveTable";
+import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 
 // api-football competition ids for the tournament hubs that carry live standings.
 const COMP_ID_BY_SLUG: Record<string, number> = {
@@ -246,51 +246,29 @@ function ChampionsTable({ hub }: { hub: NonNullable<ReturnType<typeof getEuropea
       </p>
 
       <ResponsiveTable
+        variant="list"
         mobileRows={finalRows.map(({ c, i, runnerUp }) => (
-          <div key={`${c.year}-${i}-card`}>
-            <div className="flex items-center justify-between gap-2 mb-2">
-              <span className="text-xs font-medium tabular-nums">{hub.calendar_year ? c.year : (c.season ?? c.year)}</span>
-              {c.competition && (
-                <span className="text-[10px] text-[var(--text-dim)] truncate">{c.competition}</span>
-              )}
-            </div>
-            <div className="grid grid-cols-1 gap-1.5">
-              <MiniStat
-                label="Champion"
-                value={
-                  <span className="inline-flex items-center gap-1.5">
-                    <TeamCrest name={c.cur_name} size={18} fallback={<ColorBall slug={c.slug} name={c.cur_name} />} />
-                    {c.slug ? (
-                      <Link href={`/teams/football/${c.slug}`} className="hover:underline font-medium">
-                        {c.cur_name}
-                      </Link>
-                    ) : (
-                      <span className="font-medium">{c.cur_name}</span>
-                    )}
-                  </span>
-                }
-              />
-              <MiniStat
-                label="Runner-up"
-                value={
-                  runnerUp ? (
-                    <span className="inline-flex items-center gap-1.5 text-[var(--text-muted)]">
-                      <TeamCrest name={runnerUp.cur_name} size={18} fallback={<ColorBall slug={runnerUp.slug} name={runnerUp.cur_name} />} />
-                      {runnerUp.slug ? (
-                        <Link href={`/teams/football/${runnerUp.slug}`} className="hover:underline">
-                          {runnerUp.cur_name}
-                        </Link>
-                      ) : (
-                        <span>{runnerUp.cur_name}</span>
-                      )}
-                    </span>
-                  ) : (
-                    <span className="text-[var(--text-dim)]">—</span>
-                  )
-                }
-              />
-            </div>
-          </div>
+          <RankRow
+            key={`${c.year}-${i}`}
+            rank={c.year}
+            name={
+              <>
+                <TeamCrest name={c.cur_name} size={16} fallback={<ColorBall slug={c.slug} name={c.cur_name} />} />
+                {c.slug ? (
+                  <Link href={`/teams/football/${c.slug}`} className="hover:underline truncate">
+                    {c.cur_name}
+                  </Link>
+                ) : (
+                  <span className="truncate">{c.cur_name}</span>
+                )}
+              </>
+            }
+            sub={
+              <>
+                {c.competition ? `${c.competition} · ` : ""}v {runnerUp?.cur_name ?? "—"}
+              </>
+            }
+          />
         ))}
       >
         <table className="w-full text-sm">

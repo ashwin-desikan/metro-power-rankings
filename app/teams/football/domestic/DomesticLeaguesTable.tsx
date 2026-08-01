@@ -4,7 +4,7 @@ import { Fragment, useMemo, useState } from "react";
 import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { Badge } from "@/app/teams/_shared/Badge";
-import { ResponsiveTable, MiniStat } from "@/app/teams/_shared/ResponsiveTable";
+import { ResponsiveTable, RankRow } from "@/app/teams/_shared/ResponsiveTable";
 import type { DomesticClub, EraHonours } from "@/lib/domesticFootball";
 
 type SortKey = "name" | "country" | "titles" | "majorTrophies" | "cups" | "contTitles" | "clTitles";
@@ -201,6 +201,7 @@ export default function DomesticLeaguesTable({
           mobile card grid and the desktop table; each club's honours
           breakdown expands in place (click the card, or the +/− cell). */}
       <ResponsiveTable
+        variant="list"
         className="rounded-lg border"
         style={{ borderColor: "var(--border)" }}
         mobileRows={view.map(({ c, h, displayCountry }) => {
@@ -208,44 +209,45 @@ export default function DomesticLeaguesTable({
           const isOpen = open.has(id);
           const eras = Object.entries(c.byCountry).sort((a, b) => (b[1].lastYear || 0) - (a[1].lastYear || 0));
           return (
-            <div key={id} className="-m-3 p-3 cursor-pointer" onClick={() => toggle(id)}>
-              <div className="flex items-start justify-between gap-2 mb-2">
-                <div className="flex items-center gap-1.5 min-w-0">
-                  <CrestIcon name={c.name} size={20} className="flex-shrink-0" />
-                  <div className="min-w-0">
+            <div key={id} className="cursor-pointer" onClick={() => toggle(id)}>
+              <RankRow
+                name={
+                  <>
+                    <CrestIcon name={c.name} size={16} className="flex-shrink-0" />
                     {c.slug ? (
                       <Link
                         href={`/teams/football/${c.slug}`}
-                        className="font-medium text-[var(--accent)] hover:underline"
+                        className="text-[var(--accent)] hover:underline truncate"
                         onClick={(e) => e.stopPropagation()}
                       >
                         {c.name}
                       </Link>
                     ) : (
-                      <span className="font-medium text-[var(--text)]">{c.name}</span>
+                      <span className="truncate">{c.name}</span>
                     )}
-                    {c.metro && <div className="text-[11px] text-[var(--text-dim)]">{c.metro}</div>}
-                  </div>
-                </div>
-                <span className="text-[var(--text-dim)] flex-shrink-0">{isOpen ? "−" : "+"}</span>
-              </div>
-              <div className="text-xs text-[var(--text-muted)] mb-2">
-                {displayCountry}
-                {countryActive && c.country !== country && (
-                  <span className="ml-1 text-[10px] text-[var(--text-dim)]">now {c.country}</span>
-                )}
-                {!countryActive && c.status === "former" && (
-                  <Badge variant="defunct" className="ml-1.5">Former</Badge>
-                )}
-              </div>
-              <div className="grid grid-cols-3 gap-2">
-                <MiniStat label="Titles" value={h.titles || "—"} />
-                <MiniStat label="Cups" value={h.cups || "—"} />
-                <MiniStat label="CL" value={h.clTitles || "—"} />
-              </div>
+                    <span className="text-[var(--text-dim)] flex-shrink-0" aria-hidden>{isOpen ? "−" : "+"}</span>
+                  </>
+                }
+                sub={
+                  <>
+                    {displayCountry}
+                    {countryActive && c.country !== country && (
+                      <span className="ml-1 text-[10px]">now {c.country}</span>
+                    )}
+                    {!countryActive && c.status === "former" && (
+                      <Badge variant="defunct" className="ml-1.5">Former</Badge>
+                    )}
+                  </>
+                }
+                right={h.titles || "—"}
+                rightSub="titles"
+              />
               {isOpen && (
-                <div className="mt-2 pt-2 border-t text-xs text-[var(--text-muted)]" style={{ borderColor: "var(--border)" }}>
+                <div className="px-3 pb-3 text-xs text-[var(--text-muted)]">
                   <div className="mb-1 space-y-0.5">
+                    {c.metro && <div>Metro: <b className="text-[var(--text)]">{c.metro}</b></div>}
+                    <div>Cups: <b className="text-[var(--text)]">{h.cups || 0}</b></div>
+                    <div>CL titles: <b className="text-[var(--text)]">{h.clTitles || 0}</b></div>
                     <div>Major trophies: <b className="text-[var(--text)]">{h.majorTrophies || 0}</b></div>
                     <div>Continental titles: <b className="text-[var(--text)]">{h.contTitles || 0}</b></div>
                     <div>Confederation: <b className="text-[var(--text)]">{c.confederation}</b></div>
