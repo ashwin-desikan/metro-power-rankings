@@ -7,17 +7,29 @@ export const metadata: Metadata = {
   alternates: { canonical: "/play" },
 };
 
-type Group = "learn" | "rules" | "older";
+type Group = "learn" | "think" | "rules" | "older";
 type Game = { title: string; emoji: string; file: string; ages: string; blurb: string; group: Group };
 
 const GAMES: Game[] = [
+  { title: "Penalty Shootout!", emoji: "\u{26BD}", file: "penalty-shootout.html", ages: "6–9", blurb: "Answer to take your shot: badges, flags and capital cities. Score five goals to win the cup!", group: "learn" },
+  { title: "Crest Sort", emoji: "\u{1F6E1}\u{FE0F}", file: "crest-sort.html", ages: "5–9", blurb: "Sort real club badges into the country each club plays in.", group: "learn" },
+  { title: "Flag Flash", emoji: "\u{1F6A6}", file: "flag-flash.html", ages: "5–9", blurb: "Tap the right flag before the timer runs out. How long can your streak burn?", group: "learn" },
+  { title: "Champions Duel", emoji: "\u{1F3C6}", file: "champions-duel.html", ages: "6–10", blurb: "Two clubs, one final: tap the team that lifted the cup, from real Champions League finals.", group: "learn" },
   { title: "Then & Now", emoji: "\u{1F5FA}\u{FE0F}", file: "then-and-now.html", ages: "6–10", blurb: "Tap the country that sits on an ancient empire's land today, and travel through time. Ancient Egypt, Greece, Rome and more.", group: "learn" },
   { title: "Flag Sort", emoji: "\u{1F30D}", file: "flag-sort.html", ages: "5–8", blurb: "Sort each flag into its continent: the world's seven continents.", group: "learn" },
   { title: "Five Oceans", emoji: "\u{1F30A}", file: "five-oceans.html", ages: "5–8", blurb: "Find all five of the world's oceans on the map.", group: "learn" },
-  { title: "Capital Match", emoji: "\u{1F3D9}\u{FE0F}", file: "capital-match.html", ages: "5–8", blurb: "Match every country to its capital city, including the four capitals of the United Kingdom.", group: "learn" },
+  { title: "Capital Match", emoji: "\u{1F3D9}\u{FE0F}", file: "capital-match.html", ages: "5–8", blurb: "Match countries to capital cities. Pick a Quick trip of 8, or the full Grand tour.", group: "learn" },
   { title: "Crest Match", emoji: "\u{1F6E1}\u{FE0F}", file: "crest-match.html", ages: "5–9", blurb: "A memory game with real club badges, and the city each team calls home.", group: "learn" },
   { title: "Champions", emoji: "\u{1F3C5}", file: "champions.html", ages: "6–10", blurb: "Tap the sport each nation is best at in the world.", group: "learn" },
   { title: "Big Rivals", emoji: "\u{1F525}", file: "big-rivals.html", ages: "7–10", blurb: "Spot each team's greatest rival, from El Clásico to the Old Firm.", group: "learn" },
+  { title: "Find the Team's Home", emoji: "\u{1F50E}", file: "find-the-teams-home.html", ages: "5–9", blurb: "Match real clubs to their home city, country or continent.", group: "learn" },
+  { title: "North or South?", emoji: "\u{1F9ED}", file: "north-or-south.html", ages: "6–10", blurb: "Is this team's city north or south of the equator?", group: "learn" },
+  { title: "World Sports Tour", emoji: "\u{1F30F}", file: "world-sports-tour.html", ages: "5–8", blurb: "Tour real sporting cities: continents, money, reading and counting.", group: "learn" },
+  { title: "Bigger City", emoji: "\u{1F3D9}\u{FE0F}", file: "bigger-city.html", ages: "5–9", blurb: "Tap the bigger metro: by people, skyscrapers or teams.", group: "think" },
+  { title: "Trophy Count", emoji: "\u{1F3C6}", file: "trophy-count.html", ages: "6–10", blurb: "Compare and add up real championship totals.", group: "think" },
+  { title: "Match Day Money", emoji: "\u{1F4B7}", file: "match-day-money.html", ages: "5–8", blurb: "Making change and adding up, in pounds and dollars.", group: "think" },
+  { title: "League Table Detective", emoji: "\u{1F50D}", file: "league-table-detective.html", ages: "6–10", blurb: "Read a real league table: points, point difference and bar charts.", group: "think" },
+  { title: "Odd One Out", emoji: "\u{1F914}", file: "odd-one-out.html", ages: "6–10", blurb: "Spot the team that does not belong.", group: "think" },
   { title: "Offside or Onside?", emoji: "\u{1F6A9}", file: "offside-or-onside.html", ages: "7–10", blurb: "Football: spot the offside, and see how the rule changed.", group: "rules" },
   { title: "How's That?", emoji: "\u{1F3CF}", file: "hows-that.html", ages: "7–10", blurb: "Cricket: spot the dismissal and learn LBW.", group: "rules" },
   { title: "Ball or Strike?", emoji: "\u{26BE}", file: "ball-or-strike.html", ages: "7–10", blurb: "Baseball: call the strike zone and the basics.", group: "rules" },
@@ -65,6 +77,7 @@ function Grid({ games }: { games: Game[] }) {
 
 export default function PlayHub() {
   const learn = GAMES.filter((g) => g.group === "learn");
+  const think = GAMES.filter((g) => g.group === "think");
   const rules = GAMES.filter((g) => g.group === "rules");
   const older = GAMES.filter((g) => g.group === "older");
   return (
@@ -85,6 +98,14 @@ export default function PlayHub() {
         Geography, history and the wider world, through real countries, empires and teams.
       </p>
       <Grid games={learn} />
+
+      <h2 style={{ fontSize: "1.4rem", fontWeight: 800, color: "#16324f", marginTop: 34 }}>
+        🔢 Count &amp; Think
+      </h2>
+      <p style={{ color: "#5b7b97", fontSize: ".95rem", margin: "4px 0 0" }}>
+        Numbers, money and puzzles, with real teams, cities and standings.
+      </p>
+      <Grid games={think} />
 
       <h2 style={{ fontSize: "1.4rem", fontWeight: 800, color: "#16324f", marginTop: 34 }}>
         🟨 Be the Ref

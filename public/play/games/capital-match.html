@@ -35,9 +35,24 @@
   .finale{position:fixed;inset:0;background:#fffef7;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:20}
   .finale.show{display:flex}
   .btn{border:none;border-radius:16px;font-weight:900;font-size:1.1rem;padding:12px 20px;cursor:pointer;background:var(--accent);color:#fff;box-shadow:0 6px 0 #15705d}
+  .mode{position:fixed;inset:0;background:#eef6fcf2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;z-index:30}
+  .mode.off{display:none}
+  .mode h1{font-size:2rem;margin:6px 0}
+  .mode p{font-size:1.05rem;font-weight:700;color:#5b7b97;margin:2px 0 16px}
+  .modebtn{display:block;width:min(320px,86vw);margin:7px auto;border:none;border-radius:18px;font-family:inherit;font-weight:900;font-size:1.2rem;padding:15px 20px;cursor:pointer;background:#fff;color:var(--ink);box-shadow:0 6px 0 #cfe0ee}
+  .modebtn.go{background:var(--accent);color:#fff;box-shadow:0 6px 0 #15705d}
+  .modebtn small{display:block;font-size:.85rem;font-weight:800;color:#5b7b97}
+  .modebtn.go small{color:#d6f5ec}
 </style>
 </head>
 <body>
+<div class="mode" id="mode">
+  <div style="font-size:3.6rem">🏙️🌍</div>
+  <h1>Capital Match</h1>
+  <p>How far do you want to travel today?</p>
+  <button class="modebtn go" id="mQuick">🚗 Quick trip<small>8 capitals · about 2 minutes</small></button>
+  <button class="modebtn" id="mGrand">🌍 Grand tour<small>All 57 capitals · the full journey</small></button>
+</div>
 <header><div class="logo">🏙️ Capital Match</div><button class="snd" id="snd">🔊</button></header>
 <main>
   <div class="ask">Tap a country, then tap its <b>capital city</b>.</div>
@@ -64,7 +79,7 @@ function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor
 function speak(t){if(!sound)return;try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.rate=.95;u.pitch=1.1;speechSynthesis.speak(u);}catch(e){}}
 function flag(i){return flagData(i);}
 
-function initRounds(){const s=shuffle(DATA);rounds=[];for(let i=0;i<s.length;i+=PER){rounds.push(s.slice(i,i+PER));}buildPass();}
+function initRounds(list){const s=shuffle(list||DATA);rounds=[];for(let i=0;i<s.length;i+=PER){rounds.push(s.slice(i,i+PER));}buildPass();}
 function buildPass(){const el=$("pass");el.innerHTML="";rounds.forEach((_,i)=>{const d=document.createElement("div");d.className="stamp"+(i<round?" on":"");d.textContent="⭐";el.appendChild(d);});}
 
 let sel=null, doneCount=0;
@@ -107,7 +122,9 @@ let tT;function toast(t){const e=$("toast");e.textContent=t;e.classList.add("sho
 function confetti(n){const em=["🎉","⭐","✨","🏙️"];for(let i=0;i<n;i++){const s=document.createElement("div");s.className="conf";s.textContent=em[i%em.length];s.style.left=Math.random()*100+"vw";s.style.animationDuration=(1.5+Math.random())+"s";document.body.appendChild(s);setTimeout(()=>s.remove(),2600);}}
 function finale(){buildPass();$("finale").classList.add("show");speak("Amazing! You are a Capital Champion!");confetti(20);}
 $("snd").onclick=()=>{sound=!sound;$("snd").textContent=sound?"🔊":"🔇";if(!sound)speechSynthesis.cancel();};
-initRounds();render();
+function startGame(list){document.getElementById("mode").classList.add("off");initRounds(list);render();}
+document.getElementById("mQuick").onclick=()=>startGame(shuffle(DATA).slice(0,8));
+document.getElementById("mGrand").onclick=()=>startGame(DATA);
 </script>
 </body>
 </html>

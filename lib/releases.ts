@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-01",
+    headline: "New kids games: penalty shootouts, flag races and final duels",
+    items: [
+      "Four new games on Play & Learn: Penalty Shootout (answer, then score past a diving keeper), Crest Sort, Flag Flash and Champions Duel, built from real club badges, flags and Champions League finals.",
+      "Capital Match now opens with a choice: a Quick trip of eight capitals, or the full Grand tour.",
+      "Eight more games join the Play page, including Bigger City, Trophy Count, Match Day Money and League Table Detective, in a new Count & Think section.",
+      "The 2026 US governors forecast joins the House and Senate on the election forecast page, refreshed Monday, Wednesday and Friday.",
+    ],
+  },
+  {
     date: "2026-07-29",
     headline: "Club rankings reach back to 2006-07, cup matches included",
     items: [

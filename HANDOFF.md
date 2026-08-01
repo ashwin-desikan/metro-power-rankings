@@ -735,3 +735,28 @@ Ran `scripts/apifootball/sync_lookup.py` (full mirror of the CL workbook `Lookup
 - The local Windows checkout had a STALE merge residue on entry (6 `public/data/international/*.json` marked `UU` + `tsconfig.clean.json` staged) with NO active merge (no MERGE_HEAD). Cleaned by `git checkout HEAD -- <the 6 files>` + `git restore --staged tsconfig.clean.json`. `tsconfig.clean.json` is still an untracked stray of unknown provenance — left in place, delete if it's junk.
 - The Windows↔cloud bridge dropped once mid-push; Ashwin ran the final commits+push himself. `ea221d1e3` then `8c28df991` landed as intended, with a mini commit (`bc9ce3079`, football-standings now 4x/day) rebased in between.
 - Still open (carried from 07-30/07-31): Supabase RLS advisory on 8 tables (SQL drafted, not applied); the "actual European Cup/CL winner isn't always #1" ranking thread (levers `TOP_TROPHY_BONUS` / `PED_WEIGHT` documented in both generators).
+
+## 2026-08-01 (evening) — windows → next session (KIDS GAMES WAVE 2 — committed locally, NOT pushed)
+
+Cowork session for Ashwin's son (7, nearly 8; developing reader — picture/sound-first, short sessions, no fail states). Four new kids games + two quick wins, all in ONE local commit that is **NOT pushed** — Ashwin chose commit-without-push, likely to playtest with his son first. When it goes: `git pull --rebase` then push; the commit carries NO `[vercel skip]` (touches app/ + public/ → one real build).
+
+### New games (`public/play/games/`, self-contained HTML in the house kid-game style)
+- **penalty-shootout.html** — flagship. Each correct answer earns an animated penalty (whistle → ball to a top corner, keeper 🦸 dives the wrong way, GOAL banner, WebAudio crowd roar); 5 goals wins the cup. Questions rotate tap-the-badge (28 famous clubs)/tap-the-flag/capital→country. Wrong answers: shake + retry, kick never spent.
+- **crest-sort.html** — Flag Sort mechanics with real badges into 6 country buckets (Eng/Esp/Ita/Ger/Fra/Por); 44-club pool, 12/session, max 3 per country.
+- **flag-flash.html** — reading-free speed game: spoken country name, 3 flags, draining timer (7s→5.5s→4.2s), streak 🔥, star finale (3★ = best streak ≥8). Timeout shows the answer gently and moves on.
+- **champions-duel.html** — two crests VS, tap the final's winner; 63 usable CL/European Cup finals from Supabase `eur_competition_matches` (round_num=1; winner derived score→pens; "European Cup Final" label ≤1992; kid display names). Sample/session: 5 modern (2005+), 2 90s-04, 1 classic. Speaks the real score on success.
+- **capital-match.html** — added mode picker: 🚗 Quick trip (8 capitals) vs 🌍 Grand tour (57). Fixes "capitals is way too long".
+- **app/play/page.tsx** — 4 new games added at the top of Learn & Play; NEW "🔢 Count & Think" section surfaces the 8 finished-but-never-linked games (they only existed in public/play/games/index.html): Bigger City, Trophy Count, Match Day Money, League Table Detective, Odd One Out (+ Find the Team's Home / North or South / World Sports Tour into Learn & Play).
+- **lib/releases.ts** — new 2026-08-01 entry (kids games + the morning's governors forecast, one entry per shipping day).
+
+### Implementation notes (future game work)
+- Badges referenced by path `/team-badges/<slug>.png` (1,520 files, avg ~94KB — do NOT embed). Slug via `slug-lookup.json` + aliases (ssc-napoli, athletic-bilbao, sporting-clube-de-portugal, santos, sao-paulo, los-angeles-galaxy…). No badge exists for Sampdoria/Steaua/Saint-Étienne/Stade Reims/Red Star/Partizan (8 finals dropped).
+- Flag SVG data-URLs + capitals/continents mined from the existing capital-match/flag-sort/champions.html embeds (57-60 countries) and re-embedded per game.
+- All four games + capital quick mode Playwright click-tested to their finales in the cloud container (badges mirrored locally), zero console errors.
+
+### Proof
+Full `npm run verify` green on the exact committed tree: exit 0, 4,892 static pages, vitest 26/26.
+
+### Open
+- **THE PUSH.** Everything above is local-only until Ashwin pushes (or asks a session to). One real Vercel build when it lands.
+- Carried: Supabase RLS advisory (8 tables, SQL drafted, not applied); "actual CL winner isn't #1" ranking levers; `tsconfig.clean.json` stray (still untracked, unknown provenance); governors `governorsNow` hardcoded R26/D24.
