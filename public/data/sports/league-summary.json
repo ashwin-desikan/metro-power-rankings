@@ -1,18 +1,18 @@
 {
-  "total_markers": 11124,
-  "major_markers": 1313,
-  "other_markers": 9811,
+  "total_markers": 11128,
+  "major_markers": 1310,
+  "other_markers": 9818,
   "by_sport": {
-    "Football": 7892,
+    "Football": 7894,
     "Basketball": 740,
-    "W Basketball": 454,
+    "W Basketball": 451,
     "Hockey": 344,
     "Baseball": 333,
     "American Football": 321,
-    "W Football": 190,
+    "W Football": 193,
     "T20 Cricket": 115,
-    "Volleyball": 108,
-    "Rugby Union": 101,
+    "Volleyball": 107,
+    "Rugby Union": 100,
     "Auto Racing": 98,
     "Handball": 91,
     "Rugby League": 51,
@@ -27,11 +27,11 @@
     "Sailing": 13,
     "W T20 Cricket": 13,
     "Kabaddi": 12,
+    "W Hockey": 12,
     "Canadian Football": 9,
     "W Rugby": 9,
     "W Volleyball": 9,
     "Powerboat Racing": 8,
-    "W Hockey": 8,
     "W Gymnastics": 3,
     "Wrestling": 3,
     "Skiing": 2,
@@ -46,11 +46,11 @@
   },
   "by_league_top": {
     "England": 598,
-    "Germany": 433,
+    "Germany": 419,
     "Brazil": 388,
-    "Spain": 380,
-    "Italy": 276,
-    "France": 261,
+    "Spain": 381,
+    "Italy": 267,
+    "France": 248,
     "International Teams": 239,
     "Portugal": 236,
     "Netherlands": 220,
@@ -60,57 +60,57 @@
     "Belgium": 145,
     "Poland": 141,
     "Scotland": 130,
-    "Ukraine": 130,
+    "Ukraine": 129,
     "Argentina": 125,
     "Greece": 111,
     "Turkey": 109,
     "China": 106,
-    "Mexico": 99,
-    "Austria": 95,
+    "Austria": 86,
+    "Mexico": 82,
     "Czech Republic": 78,
     "Finland": 73,
     "Bulgaria": 72,
     "Switzerland": 70,
     "Denmark": 68,
     "Israel": 68,
-    "Sweden": 68,
     "Japan": 65,
     "Hungary": 64,
     "Big Ten": 61,
     "Serbia": 61,
     "Norway": 54,
+    "Sweden": 54,
     "Atlantic Coast": 53,
     "Bosnia-Herzegovina": 52,
     "Iran": 52,
-    "Luxembourg": 52,
     "Azerbaijan": 51,
-    "Belarus": 51
+    "Belarus": 51,
+    "Luxembourg": 51
   },
   "by_country_top": {
-    "United States": 1783,
-    "United Kingdom": 976,
+    "United States": 1785,
+    "United Kingdom": 978,
     "Germany": 506,
-    "Spain": 468,
+    "Spain": 469,
     "Brazil": 427,
-    "France": 358,
-    "Italy": 316,
+    "France": 356,
+    "Italy": 319,
     "Russia": 269,
     "Netherlands": 260,
     "Portugal": 237,
-    "Poland": 209,
-    "Romania": 197,
+    "Poland": 207,
+    "Romania": 198,
     "Belgium": 172,
     "China": 154,
-    "Turkey": 151
+    "Turkey": 150
   },
-  "markers_with_team_page": 1419,
+  "markers_with_team_page": 1418,
   "sources": {
-    "team_list": 3238,
-    "football_club_data": 7886,
-    "team_list_excluded_no_coords": 21,
+    "team_list": 3240,
+    "football_club_data": 7888,
+    "team_list_excluded_no_coords": 25,
     "team_list_excluded_not_ml": 0,
     "team_list_excluded_notable_venues": 709,
-    "football_club_data_excluded_no_coords": 2066
+    "football_club_data_excluded_no_coords": 2062
   },
   "league_cards": [
     {
@@ -167,7 +167,7 @@
       "sport": "Football",
       "status": "coming",
       "page": null,
-      "team_count": 380
+      "team_count": 381
     },
     {
       "league": "Italy",
@@ -175,7 +175,7 @@
       "sport": "Football",
       "status": "coming",
       "page": null,
-      "team_count": 276
+      "team_count": 267
     },
     {
       "league": "Germany",
@@ -183,7 +183,7 @@
       "sport": "Football",
       "status": "coming",
       "page": null,
-      "team_count": 433
+      "team_count": 419
     },
     {
       "league": "France",
@@ -191,7 +191,7 @@
       "sport": "Football",
       "status": "coming",
       "page": null,
-      "team_count": 261
+      "team_count": 248
     },
     {
       "league": "AFL",
@@ -239,7 +239,7 @@
       "sport": "W Football",
       "status": "coming",
       "page": null,
-      "team_count": 12
+      "team_count": 14
     }
   ]
 }

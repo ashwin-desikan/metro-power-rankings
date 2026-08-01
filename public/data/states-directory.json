@@ -8,7 +8,7 @@
 "continent": "North America",
 "pop": 39431263,
 "metroCount": 22,
-"score": 327.4,
+"score": 327.5,
 "weighted": true,
 "rank": 1
 },
@@ -21,7 +21,7 @@
 "continent": "North America",
 "pop": 31290831,
 "metroCount": 48,
-"score": 210.97,
+"score": 210.87,
 "weighted": true,
 "rank": 2
 },
@@ -34,7 +34,7 @@
 "continent": "North America",
 "pop": 23372215,
 "metroCount": 18,
-"score": 171.16,
+"score": 171.46,
 "weighted": true,
 "rank": 3
 },
@@ -47,7 +47,7 @@
 "continent": "North America",
 "pop": 19867248,
 "metroCount": 17,
-"score": 164.3,
+"score": 164.37,
 "weighted": true,
 "rank": 4
 },
@@ -60,7 +60,7 @@
 "continent": "Asia",
 "pop": 84748016,
 "metroCount": 11,
-"score": 158.31,
+"score": 158.36,
 "weighted": true,
 "rank": 5
 },
@@ -73,7 +73,7 @@
 "continent": "Europe",
 "pop": 12380964,
 "metroCount": 1,
-"score": 137.96,
+"score": 138.06,
 "weighted": true,
 "rank": 6
 },
@@ -86,7 +86,7 @@
 "continent": "Asia",
 "pop": 126012510,
 "metroCount": 9,
-"score": 125.0,
+"score": 125.1,
 "weighted": true,
 "rank": 7
 },
@@ -99,7 +99,7 @@
 "continent": "North America",
 "pop": 16124116,
 "metroCount": 28,
-"score": 112.57,
+"score": 113.17,
 "weighted": true,
 "rank": 8
 },
@@ -112,7 +112,7 @@
 "continent": "Asia",
 "pop": 21893095,
 "metroCount": 1,
-"score": 109.85,
+"score": 109.95,
 "weighted": true,
 "rank": 9
 },
@@ -151,7 +151,7 @@
 "continent": "Europe",
 "pop": 8945309,
 "metroCount": 1,
-"score": 97.93,
+"score": 97.99,
 "weighted": true,
 "rank": 12
 },
@@ -177,7 +177,7 @@
 "continent": "North America",
 "pop": 13078751,
 "metroCount": 24,
-"score": 95.42,
+"score": 95.19,
 "weighted": true,
 "rank": 14
 },
@@ -190,7 +190,7 @@
 "continent": "Asia",
 "pop": 64567588,
 "metroCount": 7,
-"score": 93.1,
+"score": 93.2,
 "weighted": true,
 "rank": 15
 },
@@ -203,7 +203,7 @@
 "continent": "South America",
 "pop": 46081801,
 "metroCount": 29,
-"score": 90.53,
+"score": 90.63,
 "weighted": true,
 "rank": 16
 },
@@ -268,7 +268,7 @@
 "continent": "Europe",
 "pop": 18034454,
 "metroCount": 12,
-"score": 81.5,
+"score": 81.2,
 "weighted": true,
 "rank": 21
 },
@@ -281,7 +281,7 @@
 "continent": "Europe",
 "pop": 13248928,
 "metroCount": 18,
-"score": 81.14,
+"score": 81.16,
 "weighted": true,
 "rank": 22
 },
@@ -294,7 +294,7 @@
 "continent": "North America",
 "pop": 9500851,
 "metroCount": 3,
-"score": 77.14,
+"score": 77.2,
 "weighted": true,
 "rank": 23
 },
@@ -307,7 +307,7 @@
 "continent": "North America",
 "pop": 7958180,
 "metroCount": 13,
-"score": 74.47,
+"score": 76.07,
 "weighted": true,
 "rank": 24
 },
@@ -320,7 +320,7 @@
 "continent": "Europe",
 "pop": 10065694,
 "metroCount": 4,
-"score": 74.0,
+"score": 74.8,
 "weighted": true,
 "rank": 25
 },
@@ -372,7 +372,7 @@
 "continent": "Europe",
 "pop": 6779888,
 "metroCount": 1,
-"score": 65.61,
+"score": 65.71,
 "weighted": true,
 "rank": 29
 },
@@ -385,7 +385,7 @@
 "continent": "Asia",
 "pop": 6978719,
 "metroCount": 4,
-"score": 65.5,
+"score": 65.6,
 "weighted": true,
 "rank": 30
 },
@@ -450,7 +450,7 @@
 "continent": "Europe",
 "pop": 11245898,
 "metroCount": 9,
-"score": 59.38,
+"score": 59.58,
 "weighted": true,
 "rank": 35
 },
@@ -515,7 +515,7 @@
 "continent": "North America",
 "pop": 10140459,
 "metroCount": 19,
-"score": 57.14,
+"score": 57.44,
 "weighted": true,
 "rank": 40
 },
@@ -528,22 +528,9 @@
 "continent": "North America",
 "pop": 6924275,
 "metroCount": 20,
-"score": 56.78,
+"score": 56.68,
 "weighted": true,
 "rank": 41
-},
-{
-"slug": "hubei",
-"name": "Hubei",
-"country": "China",
-"countrySlug": "china",
-"type": "Province",
-"continent": "Asia",
-"pop": 57752557,
-"metroCount": 6,
-"score": 56.4,
-"weighted": true,
-"rank": 42
 },
 {
 "slug": "gyeonggi",
@@ -554,6 +541,19 @@
 "continent": "Asia",
 "pop": 13413459,
 "metroCount": 1,
+"score": 56.45,
+"weighted": true,
+"rank": 42
+},
+{
+"slug": "hubei",
+"name": "Hubei",
+"country": "China",
+"countrySlug": "china",
+"type": "Province",
+"continent": "Asia",
+"pop": 57752557,
+"metroCount": 6,
 "score": 56.4,
 "weighted": true,
 "rank": 43
@@ -593,7 +593,7 @@
 "continent": "North America",
 "pop": 7227750,
 "metroCount": 15,
-"score": 54.45,
+"score": 54.55,
 "weighted": true,
 "rank": 46
 },
@@ -619,7 +619,7 @@
 "continent": "Asia",
 "pop": 24870895,
 "metroCount": 1,
-"score": 53.29,
+"score": 53.34,
 "weighted": true,
 "rank": 48
 },
@@ -632,7 +632,7 @@
 "continent": "Europe",
 "pop": 5709444,
 "metroCount": 5,
-"score": 52.9,
+"score": 53.2,
 "weighted": true,
 "rank": 49
 },
@@ -728,6 +728,19 @@
 "rank": 56
 },
 {
+"slug": "nevada",
+"name": "Nevada",
+"country": "United States",
+"countrySlug": "united-states",
+"type": "State",
+"continent": "North America",
+"pop": 3267467,
+"metroCount": 5,
+"score": 47.3,
+"weighted": true,
+"rank": 57
+},
+{
 "slug": "queensland",
 "name": "Queensland",
 "country": "Australia",
@@ -737,19 +750,6 @@
 "pop": 5583833,
 "metroCount": 10,
 "score": 47.11,
-"weighted": true,
-"rank": 57
-},
-{
-"slug": "nevada",
-"name": "Nevada",
-"country": "United States",
-"countrySlug": "united-states",
-"type": "State",
-"continent": "North America",
-"pop": 3267467,
-"metroCount": 5,
-"score": 47.1,
 "weighted": true,
 "rank": 58
 },
@@ -762,7 +762,7 @@
 "continent": "Asia",
 "pop": 14047594,
 "metroCount": 1,
-"score": 46.41,
+"score": 46.48,
 "weighted": true,
 "rank": 59
 },
@@ -814,7 +814,7 @@
 "continent": "Europe",
 "pop": 2992016,
 "metroCount": 4,
-"score": 45.04,
+"score": 45.13,
 "weighted": true,
 "rank": 63
 },
@@ -827,9 +827,22 @@
 "continent": "Europe",
 "pop": 6280793,
 "metroCount": 4,
-"score": 43.43,
+"score": 43.68,
 "weighted": true,
 "rank": 64
+},
+{
+"slug": "stockholm",
+"name": "Stockholm",
+"country": "Sweden",
+"countrySlug": "sweden",
+"type": "County",
+"continent": "Europe",
+"pop": 2415139,
+"metroCount": 1,
+"score": 43.2,
+"weighted": true,
+"rank": 65
 },
 {
 "slug": "wisconsin",
@@ -841,19 +854,6 @@
 "pop": 5960975,
 "metroCount": 16,
 "score": 43.14,
-"weighted": true,
-"rank": 65
-},
-{
-"slug": "stockholm",
-"name": "Stockholm",
-"country": "Sweden",
-"countrySlug": "sweden",
-"type": "County",
-"continent": "Europe",
-"pop": 2415139,
-"metroCount": 1,
-"score": 43.1,
 "weighted": true,
 "rank": 66
 },
@@ -884,6 +884,19 @@
 "rank": 68
 },
 {
+"slug": "anhui",
+"name": "Anhui",
+"country": "China",
+"countrySlug": "china",
+"type": "Province",
+"continent": "Asia",
+"pop": 61027171,
+"metroCount": 9,
+"score": 42.1,
+"weighted": true,
+"rank": 69
+},
+{
 "slug": "rio-de-janeiro",
 "name": "Rio de Janeiro",
 "country": "Brazil",
@@ -894,7 +907,7 @@
 "metroCount": 13,
 "score": 41.6,
 "weighted": true,
-"rank": 69
+"rank": 70
 },
 {
 "slug": "minnesota",
@@ -907,20 +920,20 @@
 "metroCount": 19,
 "score": 41.5,
 "weighted": true,
-"rank": 70
+"rank": 71
 },
 {
-"slug": "anhui",
-"name": "Anhui",
-"country": "China",
-"countrySlug": "china",
-"type": "Province",
-"continent": "Asia",
-"pop": 61027171,
-"metroCount": 9,
-"score": 41.3,
+"slug": "veneto",
+"name": "Veneto",
+"country": "Italy",
+"countrySlug": "italy",
+"type": "Region",
+"continent": "Europe",
+"pop": 4857460,
+"metroCount": 4,
+"score": 40.9,
 "weighted": true,
-"rank": 71
+"rank": 72
 },
 {
 "slug": "berlin",
@@ -933,19 +946,6 @@
 "metroCount": 1,
 "score": 40.83,
 "weighted": true,
-"rank": 72
-},
-{
-"slug": "veneto",
-"name": "Veneto",
-"country": "Italy",
-"countrySlug": "italy",
-"type": "Region",
-"continent": "Europe",
-"pop": 4857460,
-"metroCount": 4,
-"score": 40.6,
-"weighted": true,
 "rank": 73
 },
 {
@@ -957,7 +957,7 @@
 "continent": "North America",
 "pop": 16992418,
 "metroCount": 1,
-"score": 40.21,
+"score": 40.4,
 "weighted": true,
 "rank": 74
 },
@@ -970,22 +970,9 @@
 "continent": "Asia",
 "pop": 9765869,
 "metroCount": 1,
-"score": 40.01,
+"score": 40.05,
 "weighted": true,
 "rank": 75
-},
-{
-"slug": "occitanie",
-"name": "Occitanie",
-"country": "France",
-"countrySlug": "france",
-"type": "Region",
-"continent": "Europe",
-"pop": 6080731,
-"metroCount": 13,
-"score": 39.94,
-"weighted": true,
-"rank": 76
 },
 {
 "slug": "andalusia",
@@ -998,7 +985,7 @@
 "metroCount": 16,
 "score": 39.9,
 "weighted": true,
-"rank": 77
+"rank": 76
 },
 {
 "slug": "riyadh",
@@ -1011,7 +998,7 @@
 "metroCount": 3,
 "score": 39.6,
 "weighted": true,
-"rank": 78
+"rank": 77
 },
 {
 "slug": "alberta",
@@ -1023,6 +1010,19 @@
 "pop": 4888723,
 "metroCount": 8,
 "score": 39.3,
+"weighted": true,
+"rank": 78
+},
+{
+"slug": "occitanie",
+"name": "Occitanie",
+"country": "France",
+"countrySlug": "france",
+"type": "Region",
+"continent": "Europe",
+"pop": 6080731,
+"metroCount": 13,
+"score": 39.14,
 "weighted": true,
 "rank": 79
 },
@@ -1087,7 +1087,7 @@
 "continent": "Asia",
 "pop": 235687000,
 "metroCount": 11,
-"score": 37.81,
+"score": 37.84,
 "weighted": true,
 "rank": 84
 },
@@ -1126,7 +1126,7 @@
 "continent": "Asia",
 "pop": 3984077,
 "metroCount": 1,
-"score": 36.87,
+"score": 36.93,
 "weighted": true,
 "rank": 87
 },
@@ -1178,7 +1178,7 @@
 "continent": "Europe",
 "pop": 2028289,
 "metroCount": 1,
-"score": 35.6,
+"score": 35.82,
 "weighted": true,
 "rank": 91
 },
@@ -1209,6 +1209,19 @@
 "rank": 93
 },
 {
+"slug": "basque-country",
+"name": "Basque Country",
+"country": "Spain",
+"countrySlug": "spain",
+"type": "Autonomous Community",
+"continent": "Europe",
+"pop": 2220504,
+"metroCount": 5,
+"score": 34.18,
+"weighted": true,
+"rank": 94
+},
+{
 "slug": "masovian",
 "name": "Masovian",
 "country": "Poland",
@@ -1219,7 +1232,7 @@
 "metroCount": 4,
 "score": 33.9,
 "weighted": true,
-"rank": 94
+"rank": 95
 },
 {
 "slug": "west-java",
@@ -1231,19 +1244,6 @@
 "pop": 48782400,
 "metroCount": 5,
 "score": 33.22,
-"weighted": true,
-"rank": 95
-},
-{
-"slug": "basque-country",
-"name": "Basque Country",
-"country": "Spain",
-"countrySlug": "spain",
-"type": "Autonomous Community",
-"continent": "Europe",
-"pop": 2220504,
-"metroCount": 5,
-"score": 33.18,
 "weighted": true,
 "rank": 96
 },
@@ -1313,19 +1313,6 @@
 "rank": 101
 },
 {
-"slug": "utah",
-"name": "Utah",
-"country": "United States",
-"countrySlug": "united-states",
-"type": "State",
-"continent": "North America",
-"pop": 3503613,
-"metroCount": 6,
-"score": 32.07,
-"weighted": true,
-"rank": 102
-},
-{
 "slug": "greater-manchester",
 "name": "Greater Manchester",
 "country": "United Kingdom",
@@ -1335,6 +1322,19 @@
 "pop": 2948633,
 "metroCount": 1,
 "score": 31.95,
+"weighted": true,
+"rank": 102
+},
+{
+"slug": "utah",
+"name": "Utah",
+"country": "United States",
+"countrySlug": "united-states",
+"type": "State",
+"continent": "North America",
+"pop": 3503613,
+"metroCount": 6,
+"score": 31.77,
 "weighted": true,
 "rank": 103
 },
@@ -1360,7 +1360,7 @@
 "continent": "Asia",
 "pop": 9237337,
 "metroCount": 1,
-"score": 30.52,
+"score": 30.56,
 "weighted": true,
 "rank": 105
 },
@@ -1373,7 +1373,7 @@
 "continent": "Europe",
 "pop": 4477009,
 "metroCount": 9,
-"score": 30.3,
+"score": 30.5,
 "weighted": true,
 "rank": 106
 },
@@ -1477,7 +1477,7 @@
 "continent": "Europe",
 "pop": 3659222,
 "metroCount": 7,
-"score": 28.2,
+"score": 28.4,
 "weighted": true,
 "rank": 114
 },
@@ -1521,19 +1521,6 @@
 "rank": 117
 },
 {
-"slug": "auckland",
-"name": "Auckland",
-"country": "New Zealand",
-"countrySlug": "new-zealand",
-"type": "Region",
-"continent": "Oceania",
-"pop": 1695200,
-"metroCount": 1,
-"score": 28.0,
-"weighted": true,
-"rank": 118
-},
-{
 "slug": "moscow-oblast",
 "name": "Moscow Oblast",
 "country": "Russia",
@@ -1544,7 +1531,7 @@
 "metroCount": 1,
 "score": 27.87,
 "weighted": true,
-"rank": 119
+"rank": 118
 },
 {
 "slug": "oklahoma",
@@ -1557,20 +1544,20 @@
 "metroCount": 19,
 "score": 27.52,
 "weighted": true,
-"rank": 120
+"rank": 119
 },
 {
-"slug": "grand-est",
-"name": "Grand Est",
-"country": "France",
-"countrySlug": "france",
+"slug": "auckland",
+"name": "Auckland",
+"country": "New Zealand",
+"countrySlug": "new-zealand",
 "type": "Region",
-"continent": "Europe",
-"pop": 5560079,
-"metroCount": 15,
-"score": 26.6,
+"continent": "Oceania",
+"pop": 1695200,
+"metroCount": 1,
+"score": 27.0,
 "weighted": true,
-"rank": 121
+"rank": 120
 },
 {
 "slug": "campania",
@@ -1581,7 +1568,20 @@
 "continent": "Europe",
 "pop": 5568703,
 "metroCount": 4,
-"score": 25.7,
+"score": 26.3,
+"weighted": true,
+"rank": 121
+},
+{
+"slug": "grand-est",
+"name": "Grand Est",
+"country": "France",
+"countrySlug": "france",
+"type": "Region",
+"continent": "Europe",
+"pop": 5560079,
+"metroCount": 15,
+"score": 25.6,
 "weighted": true,
 "rank": 122
 },
@@ -1664,6 +1664,19 @@
 "rank": 128
 },
 {
+"slug": "west-midlands",
+"name": "West Midlands",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Metropolitan County",
+"continent": "Europe",
+"pop": 2980936,
+"metroCount": 2,
+"score": 24.34,
+"weighted": true,
+"rank": 129
+},
+{
 "slug": "yunnan",
 "name": "Yunnan",
 "country": "China",
@@ -1674,7 +1687,7 @@
 "metroCount": 6,
 "score": 24.3,
 "weighted": true,
-"rank": 129
+"rank": 130
 },
 {
 "slug": "saitama",
@@ -1685,9 +1698,9 @@
 "continent": "Asia",
 "pop": 7344765,
 "metroCount": 1,
-"score": 24.27,
+"score": 24.3,
 "weighted": true,
-"rank": 130
+"rank": 131
 },
 {
 "slug": "heilongjiang",
@@ -1700,7 +1713,7 @@
 "metroCount": 6,
 "score": 24.2,
 "weighted": true,
-"rank": 131
+"rank": 132
 },
 {
 "slug": "national-capital-region",
@@ -1712,19 +1725,6 @@
 "pop": 13484462,
 "metroCount": 1,
 "score": 23.77,
-"weighted": true,
-"rank": 132
-},
-{
-"slug": "west-midlands",
-"name": "West Midlands",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Metropolitan County",
-"continent": "Europe",
-"pop": 2980936,
-"metroCount": 2,
-"score": 23.55,
 "weighted": true,
 "rank": 133
 },
@@ -1768,6 +1768,19 @@
 "rank": 136
 },
 {
+"slug": "distrito-federal-mexico",
+"name": "Distrito Federal",
+"country": "Mexico",
+"countrySlug": "mexico",
+"type": "District",
+"continent": "North America",
+"pop": 9209944,
+"metroCount": 1,
+"score": 21.9,
+"weighted": true,
+"rank": 137
+},
+{
 "slug": "flemish-brabant",
 "name": "Flemish Brabant",
 "country": "Belgium",
@@ -1777,19 +1790,6 @@
 "pop": 1204541,
 "metroCount": 3,
 "score": 21.82,
-"weighted": true,
-"rank": 137
-},
-{
-"slug": "distrito-federal-mexico",
-"name": "Distrito Federal",
-"country": "Mexico",
-"countrySlug": "mexico",
-"type": "District",
-"continent": "North America",
-"pop": 9209944,
-"metroCount": 1,
-"score": 21.79,
 "weighted": true,
 "rank": 138
 },
@@ -1802,9 +1802,22 @@
 "continent": "Asia",
 "pop": 21359000,
 "metroCount": 1,
-"score": 21.54,
+"score": 21.58,
 "weighted": true,
 "rank": 139
+},
+{
+"slug": "antwerp",
+"name": "Antwerp",
+"country": "Belgium",
+"countrySlug": "belgium",
+"type": "Province",
+"continent": "Europe",
+"pop": 1921189,
+"metroCount": 4,
+"score": 21.5,
+"weighted": true,
+"rank": 140
 },
 {
 "slug": "shanxi",
@@ -1817,7 +1830,7 @@
 "metroCount": 5,
 "score": 21.5,
 "weighted": true,
-"rank": 140
+"rank": 141
 },
 {
 "slug": "uusimaa",
@@ -1830,7 +1843,7 @@
 "metroCount": 1,
 "score": 21.2,
 "weighted": true,
-"rank": 141
+"rank": 142
 },
 {
 "slug": "guizhou",
@@ -1843,7 +1856,7 @@
 "metroCount": 3,
 "score": 21.0,
 "weighted": true,
-"rank": 142
+"rank": 143
 },
 {
 "slug": "schleswig-holstein",
@@ -1856,7 +1869,7 @@
 "metroCount": 3,
 "score": 20.93,
 "weighted": true,
-"rank": 143
+"rank": 144
 },
 {
 "slug": "chiba",
@@ -1867,9 +1880,9 @@
 "continent": "Asia",
 "pop": 6284480,
 "metroCount": 1,
-"score": 20.76,
+"score": 20.79,
 "weighted": true,
-"rank": 144
+"rank": 145
 },
 {
 "slug": "kowloon",
@@ -1880,9 +1893,9 @@
 "continent": "Asia",
 "pop": 2232339,
 "metroCount": 1,
-"score": 20.66,
+"score": 20.69,
 "weighted": true,
-"rank": 145
+"rank": 146
 },
 {
 "slug": "jalisco",
@@ -1895,7 +1908,7 @@
 "metroCount": 4,
 "score": 20.65,
 "weighted": true,
-"rank": 146
+"rank": 147
 },
 {
 "slug": "gujarat",
@@ -1907,19 +1920,6 @@
 "pop": 71507000,
 "metroCount": 6,
 "score": 20.6,
-"weighted": true,
-"rank": 147
-},
-{
-"slug": "antwerp",
-"name": "Antwerp",
-"country": "Belgium",
-"countrySlug": "belgium",
-"type": "Province",
-"continent": "Europe",
-"pop": 1921189,
-"metroCount": 4,
-"score": 20.5,
 "weighted": true,
 "rank": 148
 },
@@ -1989,19 +1989,6 @@
 "rank": 153
 },
 {
-"slug": "iowa",
-"name": "Iowa",
-"country": "United States",
-"countrySlug": "united-states",
-"type": "State",
-"continent": "North America",
-"pop": 3241488,
-"metroCount": 16,
-"score": 19.53,
-"weighted": true,
-"rank": 154
-},
-{
 "slug": "fukuoka",
 "name": "Fukuoka",
 "country": "Japan",
@@ -2011,6 +1998,19 @@
 "pop": 5135214,
 "metroCount": 3,
 "score": 19.35,
+"weighted": true,
+"rank": 154
+},
+{
+"slug": "iowa",
+"name": "Iowa",
+"country": "United States",
+"countrySlug": "united-states",
+"type": "State",
+"continent": "North America",
+"pop": 3241488,
+"metroCount": 16,
+"score": 19.33,
 "weighted": true,
 "rank": 155
 },
@@ -2075,7 +2075,7 @@
 "continent": "Europe",
 "pop": 1785405,
 "metroCount": 1,
-"score": 18.83,
+"score": 18.92,
 "weighted": true,
 "rank": 160
 },
@@ -2275,6 +2275,19 @@
 "rank": 175
 },
 {
+"slug": "nuevo-leon",
+"name": "Nuevo León",
+"country": "Mexico",
+"countrySlug": "mexico",
+"type": "State",
+"continent": "North America",
+"pop": 5784442,
+"metroCount": 1,
+"score": 17.5,
+"weighted": true,
+"rank": 176
+},
+{
 "slug": "xinbei-shi-new-taipei-city",
 "name": "Xinbei Shi [New Taipei City]",
 "country": "Taiwan",
@@ -2284,19 +2297,6 @@
 "pop": 4030954,
 "metroCount": 1,
 "score": 17.44,
-"weighted": true,
-"rank": 176
-},
-{
-"slug": "nuevo-leon",
-"name": "Nuevo León",
-"country": "Mexico",
-"countrySlug": "mexico",
-"type": "State",
-"continent": "North America",
-"pop": 5784442,
-"metroCount": 1,
-"score": 17.4,
 "weighted": true,
 "rank": 177
 },
@@ -2504,7 +2504,7 @@
 "continent": "North America",
 "pop": 2005465,
 "metroCount": 11,
-"score": 16.06,
+"score": 16.16,
 "weighted": true,
 "rank": 193
 },
@@ -2535,6 +2535,19 @@
 "rank": 195
 },
 {
+"slug": "new-mexico",
+"name": "New Mexico",
+"country": "United States",
+"countrySlug": "united-states",
+"type": "State",
+"continent": "North America",
+"pop": 2130256,
+"metroCount": 15,
+"score": 15.8,
+"weighted": true,
+"rank": 196
+},
+{
 "slug": "central-singapore",
 "name": "Central",
 "country": "Singapore",
@@ -2545,7 +2558,7 @@
 "metroCount": 1,
 "score": 15.79,
 "weighted": true,
-"rank": 196
+"rank": 197
 },
 {
 "slug": "tel-aviv",
@@ -2558,7 +2571,7 @@
 "metroCount": 1,
 "score": 15.56,
 "weighted": true,
-"rank": 197
+"rank": 198
 },
 {
 "slug": "vastra-gotaland",
@@ -2571,7 +2584,7 @@
 "metroCount": 3,
 "score": 15.53,
 "weighted": true,
-"rank": 198
+"rank": 199
 },
 {
 "slug": "midtjylland",
@@ -2584,7 +2597,7 @@
 "metroCount": 11,
 "score": 15.5,
 "weighted": true,
-"rank": 199
+"rank": 200
 },
 {
 "slug": "telangana",
@@ -2595,19 +2608,6 @@
 "continent": "Asia",
 "pop": 38090000,
 "metroCount": 2,
-"score": 15.5,
-"weighted": true,
-"rank": 200
-},
-{
-"slug": "new-mexico",
-"name": "New Mexico",
-"country": "United States",
-"countrySlug": "united-states",
-"type": "State",
-"continent": "North America",
-"pop": 2130256,
-"metroCount": 15,
 "score": 15.5,
 "weighted": true,
 "rank": 201
@@ -2660,7 +2660,7 @@
 "continent": "Europe",
 "pop": 2664047,
 "metroCount": 10,
-"score": 15.09,
+"score": 14.99,
 "weighted": true,
 "rank": 205
 },
@@ -2829,7 +2829,7 @@
 "continent": "Europe",
 "pop": 4129569,
 "metroCount": 7,
-"score": 13.95,
+"score": 13.98,
 "weighted": true,
 "rank": 218
 },
@@ -2847,6 +2847,19 @@
 "rank": 219
 },
 {
+"slug": "brittany",
+"name": "Brittany",
+"country": "France",
+"countrySlug": "france",
+"type": "Region",
+"continent": "Europe",
+"pop": 3422845,
+"metroCount": 7,
+"score": 13.8,
+"weighted": true,
+"rank": 220
+},
+{
 "slug": "johor",
 "name": "Johor",
 "country": "Malaysia",
@@ -2856,19 +2869,6 @@
 "pop": 3794000,
 "metroCount": 1,
 "score": 13.6,
-"weighted": true,
-"rank": 220
-},
-{
-"slug": "idaho",
-"name": "Idaho",
-"country": "United States",
-"countrySlug": "united-states",
-"type": "State",
-"continent": "North America",
-"pop": 2001619,
-"metroCount": 12,
-"score": 13.43,
 "weighted": true,
 "rank": 221
 },
@@ -2894,7 +2894,7 @@
 "continent": "Europe",
 "pop": 1228671,
 "metroCount": 1,
-"score": 13.39,
+"score": 13.4,
 "weighted": true,
 "rank": 223
 },
@@ -2907,20 +2907,20 @@
 "continent": "Europe",
 "pop": 1215387,
 "metroCount": 1,
-"score": 13.34,
+"score": 13.35,
 "weighted": true,
 "rank": 224
 },
 {
-"slug": "lower-austria",
-"name": "Lower Austria",
-"country": "Austria",
-"countrySlug": "austria",
+"slug": "idaho",
+"name": "Idaho",
+"country": "United States",
+"countrySlug": "united-states",
 "type": "State",
-"continent": "Europe",
-"pop": 1727514,
-"metroCount": 6,
-"score": 13.3,
+"continent": "North America",
+"pop": 2001619,
+"metroCount": 12,
+"score": 13.34,
 "weighted": true,
 "rank": 225
 },
@@ -2938,6 +2938,19 @@
 "rank": 226
 },
 {
+"slug": "lower-austria",
+"name": "Lower Austria",
+"country": "Austria",
+"countrySlug": "austria",
+"type": "State",
+"continent": "Europe",
+"pop": 1727514,
+"metroCount": 6,
+"score": 13.18,
+"weighted": true,
+"rank": 227
+},
+{
 "slug": "bern",
 "name": "Bern",
 "country": "Switzerland",
@@ -2948,20 +2961,20 @@
 "metroCount": 2,
 "score": 13.1,
 "weighted": true,
-"rank": 227
+"rank": 228
 },
 {
-"slug": "brittany",
-"name": "Brittany",
-"country": "France",
-"countrySlug": "france",
-"type": "Region",
-"continent": "Europe",
-"pop": 3422845,
-"metroCount": 7,
+"slug": "quintana-roo",
+"name": "Quintana Roo",
+"country": "Mexico",
+"countrySlug": "mexico",
+"type": "State",
+"continent": "North America",
+"pop": 1857985,
+"metroCount": 4,
 "score": 13.0,
 "weighted": true,
-"rank": 228
+"rank": 229
 },
 {
 "slug": "skane",
@@ -2974,7 +2987,7 @@
 "metroCount": 5,
 "score": 12.9,
 "weighted": true,
-"rank": 229
+"rank": 230
 },
 {
 "slug": "arkansas",
@@ -2987,7 +3000,7 @@
 "metroCount": 19,
 "score": 12.77,
 "weighted": true,
-"rank": 230
+"rank": 231
 },
 {
 "slug": "gaoxiong-shi-kaohsiung-shih",
@@ -2998,9 +3011,35 @@
 "continent": "Asia",
 "pop": 2765932,
 "metroCount": 1,
-"score": 12.6,
+"score": 12.5,
 "weighted": true,
-"rank": 231
+"rank": 232
+},
+{
+"slug": "apulia",
+"name": "Apulia",
+"country": "Italy",
+"countrySlug": "italy",
+"type": "Region",
+"continent": "Europe",
+"pop": 3865277,
+"metroCount": 6,
+"score": 12.4,
+"weighted": true,
+"rank": 233
+},
+{
+"slug": "incheon",
+"name": "Incheon",
+"country": "South Korea",
+"countrySlug": "south-korea",
+"type": "Metropolitan City",
+"continent": "Asia",
+"pop": 2954955,
+"metroCount": 1,
+"score": 12.31,
+"weighted": true,
+"rank": 234
 },
 {
 "slug": "galicia",
@@ -3013,20 +3052,7 @@
 "metroCount": 8,
 "score": 12.3,
 "weighted": true,
-"rank": 232
-},
-{
-"slug": "incheon",
-"name": "Incheon",
-"country": "South Korea",
-"countrySlug": "south-korea",
-"type": "Metropolitan City",
-"continent": "Asia",
-"pop": 2954955,
-"metroCount": 1,
-"score": 12.29,
-"weighted": true,
-"rank": 233
+"rank": 235
 },
 {
 "slug": "bali",
@@ -3039,7 +3065,7 @@
 "metroCount": 1,
 "score": 12.2,
 "weighted": true,
-"rank": 234
+"rank": 236
 },
 {
 "slug": "canary-islands",
@@ -3052,7 +3078,7 @@
 "metroCount": 5,
 "score": 12.2,
 "weighted": true,
-"rank": 235
+"rank": 237
 },
 {
 "slug": "central-bohemia",
@@ -3065,7 +3091,7 @@
 "metroCount": 5,
 "score": 12.18,
 "weighted": true,
-"rank": 236
+"rank": 238
 },
 {
 "slug": "hamburg",
@@ -3078,7 +3104,7 @@
 "metroCount": 1,
 "score": 12.03,
 "weighted": true,
-"rank": 237
+"rank": 239
 },
 {
 "slug": "kerala",
@@ -3091,7 +3117,7 @@
 "metroCount": 7,
 "score": 12.0,
 "weighted": true,
-"rank": 238
+"rank": 240
 },
 {
 "slug": "liguria",
@@ -3104,20 +3130,7 @@
 "metroCount": 4,
 "score": 12.0,
 "weighted": true,
-"rank": 239
-},
-{
-"slug": "quintana-roo",
-"name": "Quintana Roo",
-"country": "Mexico",
-"countrySlug": "mexico",
-"type": "State",
-"continent": "North America",
-"pop": 1857985,
-"metroCount": 4,
-"score": 12.0,
-"weighted": true,
-"rank": 240
+"rank": 241
 },
 {
 "slug": "utrecht",
@@ -3129,19 +3142,6 @@
 "pop": 1409144,
 "metroCount": 4,
 "score": 11.99,
-"weighted": true,
-"rank": 241
-},
-{
-"slug": "apulia",
-"name": "Apulia",
-"country": "Italy",
-"countrySlug": "italy",
-"type": "Region",
-"continent": "Europe",
-"pop": 3865277,
-"metroCount": 6,
-"score": 11.7,
 "weighted": true,
 "rank": 242
 },
@@ -3167,7 +3167,7 @@
 "continent": "Europe",
 "pop": 1536118,
 "metroCount": 5,
-"score": 11.69,
+"score": 11.7,
 "weighted": true,
 "rank": 244
 },
@@ -3258,7 +3258,7 @@
 "continent": "Asia",
 "pop": 30209000,
 "metroCount": 1,
-"score": 11.45,
+"score": 11.48,
 "weighted": true,
 "rank": 251
 },
@@ -3315,6 +3315,19 @@
 "rank": 255
 },
 {
+"slug": "bucuresti",
+"name": "București",
+"country": "Romania",
+"countrySlug": "romania",
+"type": "City",
+"continent": "Europe",
+"pop": 1716983,
+"metroCount": 1,
+"score": 11.09,
+"weighted": true,
+"rank": 256
+},
+{
 "slug": "hong-kong-island",
 "name": "Hong Kong Island",
 "country": "China",
@@ -3323,9 +3336,9 @@
 "continent": "Asia",
 "pop": 1195529,
 "metroCount": 1,
-"score": 11.07,
+"score": 11.08,
 "weighted": true,
-"rank": 256
+"rank": 257
 },
 {
 "slug": "east-flanders",
@@ -3338,7 +3351,7 @@
 "metroCount": 9,
 "score": 11.0,
 "weighted": true,
-"rank": 257
+"rank": 258
 },
 {
 "slug": "grand-casablanca-settat",
@@ -3351,7 +3364,7 @@
 "metroCount": 4,
 "score": 11.0,
 "weighted": true,
-"rank": 258
+"rank": 259
 },
 {
 "slug": "basel-landschaft",
@@ -3364,7 +3377,7 @@
 "metroCount": 1,
 "score": 10.98,
 "weighted": true,
-"rank": 259
+"rank": 260
 },
 {
 "slug": "bahia",
@@ -3377,7 +3390,7 @@
 "metroCount": 17,
 "score": 10.97,
 "weighted": true,
-"rank": 260
+"rank": 261
 },
 {
 "slug": "central-macedonia",
@@ -3390,7 +3403,7 @@
 "metroCount": 5,
 "score": 10.9,
 "weighted": true,
-"rank": 261
+"rank": 262
 },
 {
 "slug": "vestland",
@@ -3403,7 +3416,7 @@
 "metroCount": 2,
 "score": 10.9,
 "weighted": true,
-"rank": 262
+"rank": 263
 },
 {
 "slug": "setubal",
@@ -3416,7 +3429,7 @@
 "metroCount": 1,
 "score": 10.8,
 "weighted": true,
-"rank": 263
+"rank": 264
 },
 {
 "slug": "jerusalem",
@@ -3429,7 +3442,7 @@
 "metroCount": 1,
 "score": 10.69,
 "weighted": true,
-"rank": 264
+"rank": 265
 },
 {
 "slug": "kyoto",
@@ -3442,7 +3455,7 @@
 "metroCount": 1,
 "score": 10.68,
 "weighted": true,
-"rank": 265
+"rank": 266
 },
 {
 "slug": "buenos-aires-city",
@@ -3455,7 +3468,7 @@
 "metroCount": 1,
 "score": 10.6,
 "weighted": true,
-"rank": 266
+"rank": 267
 },
 {
 "slug": "kuala-lumpur",
@@ -3468,7 +3481,7 @@
 "metroCount": 1,
 "score": 10.6,
 "weighted": true,
-"rank": 267
+"rank": 268
 },
 {
 "slug": "liege",
@@ -3481,7 +3494,7 @@
 "metroCount": 6,
 "score": 10.5,
 "weighted": true,
-"rank": 268
+"rank": 269
 },
 {
 "slug": "syddanmark",
@@ -3494,7 +3507,7 @@
 "metroCount": 9,
 "score": 10.5,
 "weighted": true,
-"rank": 269
+"rank": 270
 },
 {
 "slug": "central-jordan",
@@ -3507,7 +3520,7 @@
 "metroCount": 2,
 "score": 10.47,
 "weighted": true,
-"rank": 270
+"rank": 271
 },
 {
 "slug": "south-yorkshire",
@@ -3519,19 +3532,6 @@
 "pop": 1407072,
 "metroCount": 3,
 "score": 10.4,
-"weighted": true,
-"rank": 271
-},
-{
-"slug": "bucuresti",
-"name": "București",
-"country": "Romania",
-"countrySlug": "romania",
-"type": "City",
-"continent": "Europe",
-"pop": 1716983,
-"metroCount": 1,
-"score": 10.33,
 "weighted": true,
 "rank": 272
 },
@@ -3562,19 +3562,6 @@
 "rank": 274
 },
 {
-"slug": "hampshire",
-"name": "Hampshire",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "County",
-"continent": "Europe",
-"pop": 1428559,
-"metroCount": 5,
-"score": 10.16,
-"weighted": true,
-"rank": 275
-},
-{
 "slug": "tyrol",
 "name": "Tyrol",
 "country": "Austria",
@@ -3585,7 +3572,7 @@
 "metroCount": 2,
 "score": 10.1,
 "weighted": true,
-"rank": 276
+"rank": 275
 },
 {
 "slug": "cardiff",
@@ -3598,7 +3585,7 @@
 "metroCount": 1,
 "score": 10.04,
 "weighted": true,
-"rank": 277
+"rank": 276
 },
 {
 "slug": "sverdlovsk-oblast",
@@ -3610,6 +3597,19 @@
 "pop": 4268998,
 "metroCount": 10,
 "score": 10.0,
+"weighted": true,
+"rank": 277
+},
+{
+"slug": "hampshire",
+"name": "Hampshire",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "County",
+"continent": "Europe",
+"pop": 1428559,
+"metroCount": 5,
+"score": 9.98,
 "weighted": true,
 "rank": 278
 },
@@ -3744,6 +3744,19 @@
 "rank": 288
 },
 {
+"slug": "styria",
+"name": "Styria",
+"country": "Austria",
+"countrySlug": "austria",
+"type": "State",
+"continent": "Europe",
+"pop": 1271716,
+"metroCount": 5,
+"score": 9.5,
+"weighted": true,
+"rank": 289
+},
+{
 "slug": "penang",
 "name": "Penang",
 "country": "Malaysia",
@@ -3754,7 +3767,7 @@
 "metroCount": 1,
 "score": 9.49,
 "weighted": true,
-"rank": 289
+"rank": 290
 },
 {
 "slug": "shizuoka",
@@ -3767,7 +3780,7 @@
 "metroCount": 5,
 "score": 9.42,
 "weighted": true,
-"rank": 290
+"rank": 291
 },
 {
 "slug": "tatarstan",
@@ -3780,7 +3793,7 @@
 "metroCount": 9,
 "score": 9.4,
 "weighted": true,
-"rank": 291
+"rank": 292
 },
 {
 "slug": "nossa-senhora-de-fatima",
@@ -3793,7 +3806,7 @@
 "metroCount": 1,
 "score": 9.37,
 "weighted": true,
-"rank": 292
+"rank": 293
 },
 {
 "slug": "chittagong",
@@ -3806,7 +3819,7 @@
 "metroCount": 3,
 "score": 9.3,
 "weighted": true,
-"rank": 293
+"rank": 294
 },
 {
 "slug": "southern-thailand",
@@ -3819,7 +3832,7 @@
 "metroCount": 5,
 "score": 9.3,
 "weighted": true,
-"rank": 294
+"rank": 295
 },
 {
 "slug": "nur-sultan",
@@ -3831,19 +3844,6 @@
 "pop": 1340782,
 "metroCount": 1,
 "score": 9.29,
-"weighted": true,
-"rank": 295
-},
-{
-"slug": "styria",
-"name": "Styria",
-"country": "Austria",
-"countrySlug": "austria",
-"type": "State",
-"continent": "Europe",
-"pop": 1271716,
-"metroCount": 5,
-"score": 9.2,
 "weighted": true,
 "rank": 296
 },
@@ -4004,6 +4004,19 @@
 "rank": 308
 },
 {
+"slug": "lancashire",
+"name": "Lancashire",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "County",
+"continent": "Europe",
+"pop": 1270162,
+"metroCount": 6,
+"score": 8.58,
+"weighted": true,
+"rank": 309
+},
+{
 "slug": "east-singapore",
 "name": "East",
 "country": "Singapore",
@@ -4013,19 +4026,6 @@
 "pop": 810070,
 "metroCount": 1,
 "score": 8.56,
-"weighted": true,
-"rank": 309
-},
-{
-"slug": "pomeranian",
-"name": "Pomeranian",
-"country": "Poland",
-"countrySlug": "poland",
-"type": "Province",
-"continent": "Europe",
-"pop": 2359573,
-"metroCount": 5,
-"score": 8.5,
 "weighted": true,
 "rank": 310
 },
@@ -4082,19 +4082,6 @@
 "rank": 314
 },
 {
-"slug": "lancashire",
-"name": "Lancashire",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "County",
-"continent": "Europe",
-"pop": 1270162,
-"metroCount": 6,
-"score": 8.38,
-"weighted": true,
-"rank": 315
-},
-{
 "slug": "centre-val-de-loire",
 "name": "Centre-Val de Loire",
 "country": "France",
@@ -4105,7 +4092,7 @@
 "metroCount": 6,
 "score": 8.34,
 "weighted": true,
-"rank": 316
+"rank": 315
 },
 {
 "slug": "ceara",
@@ -4118,7 +4105,7 @@
 "metroCount": 7,
 "score": 8.27,
 "weighted": true,
-"rank": 317
+"rank": 316
 },
 {
 "slug": "central-luzon",
@@ -4131,7 +4118,7 @@
 "metroCount": 3,
 "score": 8.24,
 "weighted": true,
-"rank": 318
+"rank": 317
 },
 {
 "slug": "qalyubia",
@@ -4144,7 +4131,7 @@
 "metroCount": 1,
 "score": 8.21,
 "weighted": true,
-"rank": 319
+"rank": 318
 },
 {
 "slug": "bourgogne-franche-comte",
@@ -4157,7 +4144,7 @@
 "metroCount": 9,
 "score": 8.2,
 "weighted": true,
-"rank": 320
+"rank": 319
 },
 {
 "slug": "gelderland",
@@ -4170,7 +4157,7 @@
 "metroCount": 7,
 "score": 8.2,
 "weighted": true,
-"rank": 321
+"rank": 320
 },
 {
 "slug": "castile-leon",
@@ -4183,7 +4170,7 @@
 "metroCount": 10,
 "score": 8.2,
 "weighted": true,
-"rank": 322
+"rank": 321
 },
 {
 "slug": "nova-scotia",
@@ -4196,7 +4183,7 @@
 "metroCount": 4,
 "score": 8.1,
 "weighted": true,
-"rank": 323
+"rank": 322
 },
 {
 "slug": "lucerne",
@@ -4209,7 +4196,7 @@
 "metroCount": 1,
 "score": 8.1,
 "weighted": true,
-"rank": 324
+"rank": 323
 },
 {
 "slug": "rajasthan",
@@ -4222,7 +4209,7 @@
 "metroCount": 4,
 "score": 8.0,
 "weighted": true,
-"rank": 325
+"rank": 324
 },
 {
 "slug": "overijssel",
@@ -4235,7 +4222,7 @@
 "metroCount": 5,
 "score": 7.94,
 "weighted": true,
-"rank": 326
+"rank": 325
 },
 {
 "slug": "pyongyang",
@@ -4248,7 +4235,7 @@
 "metroCount": 1,
 "score": 7.9,
 "weighted": true,
-"rank": 327
+"rank": 326
 },
 {
 "slug": "rogaland",
@@ -4261,7 +4248,7 @@
 "metroCount": 2,
 "score": 7.9,
 "weighted": true,
-"rank": 328
+"rank": 327
 },
 {
 "slug": "southampton-england",
@@ -4274,7 +4261,7 @@
 "metroCount": 1,
 "score": 7.82,
 "weighted": true,
-"rank": 329
+"rank": 328
 },
 {
 "slug": "west-flanders",
@@ -4287,7 +4274,7 @@
 "metroCount": 9,
 "score": 7.8,
 "weighted": true,
-"rank": 330
+"rank": 329
 },
 {
 "slug": "andhra-pradesh",
@@ -4300,7 +4287,7 @@
 "metroCount": 4,
 "score": 7.8,
 "weighted": true,
-"rank": 331
+"rank": 330
 },
 {
 "slug": "central-slovenia",
@@ -4313,7 +4300,7 @@
 "metroCount": 1,
 "score": 7.8,
 "weighted": true,
-"rank": 332
+"rank": 331
 },
 {
 "slug": "chungcheongnam",
@@ -4326,7 +4313,7 @@
 "metroCount": 1,
 "score": 7.8,
 "weighted": true,
-"rank": 333
+"rank": 332
 },
 {
 "slug": "aberdeen-city",
@@ -4339,7 +4326,7 @@
 "metroCount": 1,
 "score": 7.8,
 "weighted": true,
-"rank": 334
+"rank": 333
 },
 {
 "slug": "đa-nang",
@@ -4352,7 +4339,7 @@
 "metroCount": 1,
 "score": 7.8,
 "weighted": true,
-"rank": 335
+"rank": 334
 },
 {
 "slug": "saskatchewan",
@@ -4365,20 +4352,7 @@
 "metroCount": 5,
 "score": 7.7,
 "weighted": true,
-"rank": 336
-},
-{
-"slug": "thuringia",
-"name": "Thuringia",
-"country": "Germany",
-"countrySlug": "germany",
-"type": "State",
-"continent": "Europe",
-"pop": 2100277,
-"metroCount": 5,
-"score": 7.6,
-"weighted": true,
-"rank": 337
+"rank": 335
 },
 {
 "slug": "montevideo",
@@ -4391,7 +4365,7 @@
 "metroCount": 1,
 "score": 7.59,
 "weighted": true,
-"rank": 338
+"rank": 336
 },
 {
 "slug": "glasgow-city",
@@ -4404,7 +4378,7 @@
 "metroCount": 1,
 "score": 7.57,
 "weighted": true,
-"rank": 339
+"rank": 337
 },
 {
 "slug": "nottinghamshire",
@@ -4417,7 +4391,7 @@
 "metroCount": 3,
 "score": 7.54,
 "weighted": true,
-"rank": 340
+"rank": 338
 },
 {
 "slug": "walloon-brabant",
@@ -4430,7 +4404,7 @@
 "metroCount": 2,
 "score": 7.53,
 "weighted": true,
-"rank": 341
+"rank": 339
 },
 {
 "slug": "pichincha",
@@ -4443,7 +4417,20 @@
 "metroCount": 1,
 "score": 7.5,
 "weighted": true,
-"rank": 342
+"rank": 340
+},
+{
+"slug": "pomeranian",
+"name": "Pomeranian",
+"country": "Poland",
+"countrySlug": "poland",
+"type": "Province",
+"continent": "Europe",
+"pop": 2359573,
+"metroCount": 5,
+"score": 7.5,
+"weighted": true,
+"rank": 341
 },
 {
 "slug": "west-virginia",
@@ -4456,7 +4443,7 @@
 "metroCount": 13,
 "score": 7.5,
 "weighted": true,
-"rank": 343
+"rank": 342
 },
 {
 "slug": "delaware",
@@ -4467,9 +4454,9 @@
 "continent": "North America",
 "pop": 1051917,
 "metroCount": 3,
-"score": 7.45,
+"score": 7.46,
 "weighted": true,
-"rank": 344
+"rank": 343
 },
 {
 "slug": "baghdad",
@@ -4482,7 +4469,7 @@
 "metroCount": 1,
 "score": 7.43,
 "weighted": true,
-"rank": 345
+"rank": 344
 },
 {
 "slug": "addis-ababa",
@@ -4495,7 +4482,7 @@
 "metroCount": 1,
 "score": 7.37,
 "weighted": true,
-"rank": 346
+"rank": 345
 },
 {
 "slug": "valle-del-cauca",
@@ -4508,7 +4495,7 @@
 "metroCount": 3,
 "score": 7.35,
 "weighted": true,
-"rank": 347
+"rank": 346
 },
 {
 "slug": "limburg-netherlands",
@@ -4521,7 +4508,7 @@
 "metroCount": 7,
 "score": 7.35,
 "weighted": true,
-"rank": 348
+"rank": 347
 },
 {
 "slug": "basel-stadt",
@@ -4534,7 +4521,7 @@
 "metroCount": 1,
 "score": 7.34,
 "weighted": true,
-"rank": 349
+"rank": 348
 },
 {
 "slug": "jabal-lubnan-mount-lebanon",
@@ -4547,7 +4534,7 @@
 "metroCount": 1,
 "score": 7.33,
 "weighted": true,
-"rank": 350
+"rank": 349
 },
 {
 "slug": "saxony-anhalt",
@@ -4559,6 +4546,19 @@
 "pop": 2135597,
 "metroCount": 3,
 "score": 7.32,
+"weighted": true,
+"rank": 350
+},
+{
+"slug": "thuringia",
+"name": "Thuringia",
+"country": "Germany",
+"countrySlug": "germany",
+"type": "State",
+"continent": "Europe",
+"pop": 2100277,
+"metroCount": 5,
+"score": 7.3,
 "weighted": true,
 "rank": 351
 },
@@ -5169,7 +5169,7 @@
 "continent": "Asia",
 "pop": 1933146,
 "metroCount": 3,
-"score": 5.98,
+"score": 5.99,
 "weighted": true,
 "rank": 398
 },
@@ -5182,9 +5182,22 @@
 "continent": "Europe",
 "pop": 456395,
 "metroCount": 1,
-"score": 5.91,
+"score": 5.92,
 "weighted": true,
 "rank": 399
+},
+{
+"slug": "lublin",
+"name": "Lublin",
+"country": "Poland",
+"countrySlug": "poland",
+"type": "Province",
+"continent": "Europe",
+"pop": 2011047,
+"metroCount": 7,
+"score": 5.9,
+"weighted": true,
+"rank": 400
 },
 {
 "slug": "toshkent-shahri-tashkent-city",
@@ -5197,7 +5210,7 @@
 "metroCount": 1,
 "score": 5.86,
 "weighted": true,
-"rank": 400
+"rank": 401
 },
 {
 "slug": "mie",
@@ -5210,7 +5223,7 @@
 "metroCount": 2,
 "score": 5.85,
 "weighted": true,
-"rank": 401
+"rank": 402
 },
 {
 "slug": "isfahan",
@@ -5223,7 +5236,7 @@
 "metroCount": 1,
 "score": 5.8,
 "weighted": true,
-"rank": 402
+"rank": 403
 },
 {
 "slug": "malacca",
@@ -5236,7 +5249,7 @@
 "metroCount": 1,
 "score": 5.8,
 "weighted": true,
-"rank": 403
+"rank": 404
 },
 {
 "slug": "samara-oblast",
@@ -5249,7 +5262,7 @@
 "metroCount": 6,
 "score": 5.8,
 "weighted": true,
-"rank": 404
+"rank": 405
 },
 {
 "slug": "antalya",
@@ -5262,7 +5275,7 @@
 "metroCount": 2,
 "score": 5.8,
 "weighted": true,
-"rank": 405
+"rank": 406
 },
 {
 "slug": "santo-domingo",
@@ -5275,7 +5288,7 @@
 "metroCount": 1,
 "score": 5.79,
 "weighted": true,
-"rank": 406
+"rank": 407
 },
 {
 "slug": "luanda",
@@ -5288,7 +5301,7 @@
 "metroCount": 1,
 "score": 5.76,
 "weighted": true,
-"rank": 407
+"rank": 408
 },
 {
 "slug": "greater-accra",
@@ -5301,7 +5314,7 @@
 "metroCount": 1,
 "score": 5.75,
 "weighted": true,
-"rank": 408
+"rank": 409
 },
 {
 "slug": "marche",
@@ -5314,7 +5327,7 @@
 "metroCount": 5,
 "score": 5.7,
 "weighted": true,
-"rank": 409
+"rank": 410
 },
 {
 "slug": "canterbury",
@@ -5327,7 +5340,7 @@
 "metroCount": 1,
 "score": 5.7,
 "weighted": true,
-"rank": 410
+"rank": 411
 },
 {
 "slug": "kigali",
@@ -5340,7 +5353,7 @@
 "metroCount": 1,
 "score": 5.7,
 "weighted": true,
-"rank": 411
+"rank": 412
 },
 {
 "slug": "bratislava",
@@ -5353,7 +5366,7 @@
 "metroCount": 1,
 "score": 5.7,
 "weighted": true,
-"rank": 412
+"rank": 413
 },
 {
 "slug": "ras-al-khaimah",
@@ -5366,7 +5379,7 @@
 "metroCount": 1,
 "score": 5.7,
 "weighted": true,
-"rank": 413
+"rank": 414
 },
 {
 "slug": "west-lothian",
@@ -5379,7 +5392,7 @@
 "metroCount": 1,
 "score": 5.7,
 "weighted": true,
-"rank": 414
+"rank": 415
 },
 {
 "slug": "kiambu",
@@ -5392,7 +5405,7 @@
 "metroCount": 1,
 "score": 5.67,
 "weighted": true,
-"rank": 415
+"rank": 416
 },
 {
 "slug": "central-paraguay",
@@ -5405,7 +5418,7 @@
 "metroCount": 1,
 "score": 5.67,
 "weighted": true,
-"rank": 416
+"rank": 417
 },
 {
 "slug": "grad-zagreb",
@@ -5418,7 +5431,7 @@
 "metroCount": 1,
 "score": 5.61,
 "weighted": true,
-"rank": 417
+"rank": 418
 },
 {
 "slug": "limassol",
@@ -5431,7 +5444,7 @@
 "metroCount": 1,
 "score": 5.6,
 "weighted": true,
-"rank": 418
+"rank": 419
 },
 {
 "slug": "madhya-pradesh",
@@ -5444,7 +5457,7 @@
 "metroCount": 4,
 "score": 5.6,
 "weighted": true,
-"rank": 419
+"rank": 420
 },
 {
 "slug": "coastal",
@@ -5457,7 +5470,7 @@
 "metroCount": 5,
 "score": 5.6,
 "weighted": true,
-"rank": 420
+"rank": 421
 },
 {
 "slug": "madeira-islands",
@@ -5470,7 +5483,7 @@
 "metroCount": 1,
 "score": 5.6,
 "weighted": true,
-"rank": 421
+"rank": 422
 },
 {
 "slug": "xinzhu-hsinchu",
@@ -5483,7 +5496,7 @@
 "metroCount": 1,
 "score": 5.58,
 "weighted": true,
-"rank": 422
+"rank": 423
 },
 {
 "slug": "kedah",
@@ -5496,7 +5509,7 @@
 "metroCount": 3,
 "score": 5.51,
 "weighted": true,
-"rank": 423
+"rank": 424
 },
 {
 "slug": "south-aegean",
@@ -5509,7 +5522,7 @@
 "metroCount": 6,
 "score": 5.5,
 "weighted": true,
-"rank": 424
+"rank": 425
 },
 {
 "slug": "umbria",
@@ -5522,7 +5535,7 @@
 "metroCount": 2,
 "score": 5.5,
 "weighted": true,
-"rank": 425
+"rank": 426
 },
 {
 "slug": "groningen",
@@ -5535,7 +5548,7 @@
 "metroCount": 2,
 "score": 5.5,
 "weighted": true,
-"rank": 426
+"rank": 427
 },
 {
 "slug": "la-paz-bolivia",
@@ -5548,7 +5561,7 @@
 "metroCount": 1,
 "score": 5.4,
 "weighted": true,
-"rank": 427
+"rank": 428
 },
 {
 "slug": "nicosia",
@@ -5561,7 +5574,7 @@
 "metroCount": 1,
 "score": 5.4,
 "weighted": true,
-"rank": 428
+"rank": 429
 },
 {
 "slug": "haifa",
@@ -5574,7 +5587,7 @@
 "metroCount": 1,
 "score": 5.4,
 "weighted": true,
-"rank": 429
+"rank": 430
 },
 {
 "slug": "bursa",
@@ -5587,7 +5600,7 @@
 "metroCount": 1,
 "score": 5.4,
 "weighted": true,
-"rank": 430
+"rank": 431
 },
 {
 "slug": "absheron-khizi",
@@ -5600,7 +5613,7 @@
 "metroCount": 1,
 "score": 5.39,
 "weighted": true,
-"rank": 431
+"rank": 432
 },
 {
 "slug": "kocaeli",
@@ -5613,7 +5626,7 @@
 "metroCount": 2,
 "score": 5.39,
 "weighted": true,
-"rank": 432
+"rank": 433
 },
 {
 "slug": "daejeon",
@@ -5626,7 +5639,7 @@
 "metroCount": 1,
 "score": 5.33,
 "weighted": true,
-"rank": 433
+"rank": 434
 },
 {
 "slug": "tasmania",
@@ -5639,7 +5652,7 @@
 "metroCount": 2,
 "score": 5.3,
 "weighted": true,
-"rank": 434
+"rank": 435
 },
 {
 "slug": "north-sumatra",
@@ -5652,7 +5665,7 @@
 "metroCount": 1,
 "score": 5.3,
 "weighted": true,
-"rank": 435
+"rank": 436
 },
 {
 "slug": "city-of-bristol",
@@ -5665,7 +5678,7 @@
 "metroCount": 1,
 "score": 5.23,
 "weighted": true,
-"rank": 436
+"rank": 437
 },
 {
 "slug": "cusco-cuzco",
@@ -5678,7 +5691,7 @@
 "metroCount": 1,
 "score": 5.2,
 "weighted": true,
-"rank": 437
+"rank": 438
 },
 {
 "slug": "dakar",
@@ -5691,7 +5704,7 @@
 "metroCount": 1,
 "score": 5.2,
 "weighted": true,
-"rank": 438
+"rank": 439
 },
 {
 "slug": "ajman",
@@ -5704,7 +5717,7 @@
 "metroCount": 1,
 "score": 5.12,
 "weighted": true,
-"rank": 439
+"rank": 440
 },
 {
 "slug": "para-brazil",
@@ -5717,7 +5730,7 @@
 "metroCount": 15,
 "score": 5.1,
 "weighted": true,
-"rank": 440
+"rank": 441
 },
 {
 "slug": "al-farwaniyah-farwaniya",
@@ -5730,7 +5743,7 @@
 "metroCount": 1,
 "score": 5.1,
 "weighted": true,
-"rank": 441
+"rank": 442
 },
 {
 "slug": "tainan-shi",
@@ -5743,7 +5756,7 @@
 "metroCount": 1,
 "score": 5.1,
 "weighted": true,
-"rank": 442
+"rank": 443
 },
 {
 "slug": "riga",
@@ -5756,7 +5769,7 @@
 "metroCount": 1,
 "score": 5.07,
 "weighted": true,
-"rank": 443
+"rank": 444
 },
 {
 "slug": "distrito-capital",
@@ -5769,7 +5782,7 @@
 "metroCount": 1,
 "score": 5.05,
 "weighted": true,
-"rank": 444
+"rank": 445
 },
 {
 "slug": "siem-reap",
@@ -5782,7 +5795,7 @@
 "metroCount": 1,
 "score": 5.0,
 "weighted": true,
-"rank": 445
+"rank": 446
 },
 {
 "slug": "finland-proper",
@@ -5795,7 +5808,7 @@
 "metroCount": 1,
 "score": 5.0,
 "weighted": true,
-"rank": 446
+"rank": 447
 },
 {
 "slug": "chihuahua",
@@ -5808,7 +5821,7 @@
 "metroCount": 5,
 "score": 5.0,
 "weighted": true,
-"rank": 447
+"rank": 448
 },
 {
 "slug": "jeju",
@@ -5821,7 +5834,7 @@
 "metroCount": 1,
 "score": 5.0,
 "weighted": true,
-"rank": 448
+"rank": 449
 },
 {
 "slug": "york",
@@ -5834,7 +5847,7 @@
 "metroCount": 1,
 "score": 5.0,
 "weighted": true,
-"rank": 449
+"rank": 450
 },
 {
 "slug": "zhanghua-changhua",
@@ -5847,7 +5860,7 @@
 "metroCount": 1,
 "score": 4.99,
 "weighted": true,
-"rank": 450
+"rank": 451
 },
 {
 "slug": "nordjylland",
@@ -5860,7 +5873,7 @@
 "metroCount": 4,
 "score": 4.9,
 "weighted": true,
-"rank": 451
+"rank": 452
 },
 {
 "slug": "pahang",
@@ -5871,19 +5884,6 @@
 "continent": "Asia",
 "pop": 1684600,
 "metroCount": 2,
-"score": 4.9,
-"weighted": true,
-"rank": 452
-},
-{
-"slug": "lublin",
-"name": "Lublin",
-"country": "Poland",
-"countrySlug": "poland",
-"type": "Province",
-"continent": "Europe",
-"pop": 2011047,
-"metroCount": 7,
 "score": 4.9,
 "weighted": true,
 "rank": 453
@@ -6084,19 +6084,6 @@
 "rank": 468
 },
 {
-"slug": "leicestershire",
-"name": "Leicestershire",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "County",
-"continent": "Europe",
-"pop": 734015,
-"metroCount": 2,
-"score": 4.65,
-"weighted": true,
-"rank": 469
-},
-{
 "slug": "dundee-city",
 "name": "Dundee City",
 "country": "United Kingdom",
@@ -6107,20 +6094,7 @@
 "metroCount": 1,
 "score": 4.65,
 "weighted": true,
-"rank": 470
-},
-{
-"slug": "leicester",
-"name": "Leicester",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Unitary Authority",
-"continent": "Europe",
-"pop": 379780,
-"metroCount": 1,
-"score": 4.65,
-"weighted": true,
-"rank": 471
+"rank": 469
 },
 {
 "slug": "guayas-wayas",
@@ -6133,7 +6107,7 @@
 "metroCount": 2,
 "score": 4.6,
 "weighted": true,
-"rank": 472
+"rank": 470
 },
 {
 "slug": "otago",
@@ -6146,7 +6120,7 @@
 "metroCount": 1,
 "score": 4.6,
 "weighted": true,
-"rank": 473
+"rank": 471
 },
 {
 "slug": "ostergotland",
@@ -6159,7 +6133,7 @@
 "metroCount": 4,
 "score": 4.6,
 "weighted": true,
-"rank": 474
+"rank": 472
 },
 {
 "slug": "fife",
@@ -6172,7 +6146,7 @@
 "metroCount": 7,
 "score": 4.6,
 "weighted": true,
-"rank": 475
+"rank": 473
 },
 {
 "slug": "ash-shamaliyah-northern",
@@ -6185,7 +6159,7 @@
 "metroCount": 1,
 "score": 4.55,
 "weighted": true,
-"rank": 476
+"rank": 474
 },
 {
 "slug": "kabul",
@@ -6198,7 +6172,7 @@
 "metroCount": 1,
 "score": 4.5,
 "weighted": true,
-"rank": 477
+"rank": 475
 },
 {
 "slug": "new-providence",
@@ -6211,7 +6185,7 @@
 "metroCount": 1,
 "score": 4.5,
 "weighted": true,
-"rank": 478
+"rank": 476
 },
 {
 "slug": "valparaiso",
@@ -6224,7 +6198,7 @@
 "metroCount": 2,
 "score": 4.5,
 "weighted": true,
-"rank": 479
+"rank": 477
 },
 {
 "slug": "la-altagracia",
@@ -6237,20 +6211,7 @@
 "metroCount": 1,
 "score": 4.5,
 "weighted": true,
-"rank": 480
-},
-{
-"slug": "sinaloa",
-"name": "Sinaloa",
-"country": "Mexico",
-"countrySlug": "mexico",
-"type": "State",
-"continent": "North America",
-"pop": 3026943,
-"metroCount": 4,
-"score": 4.5,
-"weighted": true,
-"rank": 481
+"rank": 478
 },
 {
 "slug": "nizhny-novgorod-oblast",
@@ -6263,7 +6224,7 @@
 "metroCount": 4,
 "score": 4.5,
 "weighted": true,
-"rank": 482
+"rank": 479
 },
 {
 "slug": "panama-oeste-west-panama",
@@ -6276,7 +6237,7 @@
 "metroCount": 1,
 "score": 4.47,
 "weighted": true,
-"rank": 483
+"rank": 480
 },
 {
 "slug": "veracruz",
@@ -6289,7 +6250,7 @@
 "metroCount": 9,
 "score": 4.43,
 "weighted": true,
-"rank": 484
+"rank": 481
 },
 {
 "slug": "xinzhu-shi-hsinchu-shih",
@@ -6302,7 +6263,7 @@
 "metroCount": 1,
 "score": 4.42,
 "weighted": true,
-"rank": 485
+"rank": 482
 },
 {
 "slug": "ticino",
@@ -6315,7 +6276,7 @@
 "metroCount": 4,
 "score": 4.4,
 "weighted": true,
-"rank": 486
+"rank": 483
 },
 {
 "slug": "alaska",
@@ -6328,7 +6289,7 @@
 "metroCount": 7,
 "score": 4.4,
 "weighted": true,
-"rank": 487
+"rank": 484
 },
 {
 "slug": "maine",
@@ -6341,7 +6302,7 @@
 "metroCount": 3,
 "score": 4.4,
 "weighted": true,
-"rank": 488
+"rank": 485
 },
 {
 "slug": "al-ahmadi",
@@ -6354,7 +6315,7 @@
 "metroCount": 1,
 "score": 4.34,
 "weighted": true,
-"rank": 489
+"rank": 486
 },
 {
 "slug": "limburg-belgium",
@@ -6367,7 +6328,7 @@
 "metroCount": 4,
 "score": 4.3,
 "weighted": true,
-"rank": 490
+"rank": 487
 },
 {
 "slug": "mahe",
@@ -6380,20 +6341,7 @@
 "metroCount": 1,
 "score": 4.3,
 "weighted": true,
-"rank": 491
-},
-{
-"slug": "murcia",
-"name": "Murcia",
-"country": "Spain",
-"countrySlug": "spain",
-"type": "Autonomous Community",
-"continent": "Europe",
-"pop": 1511251,
-"metroCount": 4,
-"score": 4.3,
-"weighted": true,
-"rank": 492
+"rank": 488
 },
 {
 "slug": "anguilla",
@@ -6406,7 +6354,20 @@
 "metroCount": 1,
 "score": 4.3,
 "weighted": true,
-"rank": 493
+"rank": 489
+},
+{
+"slug": "worcestershire",
+"name": "Worcestershire",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "County",
+"continent": "Europe",
+"pop": 614185,
+"metroCount": 4,
+"score": 4.28,
+"weighted": true,
+"rank": 490
 },
 {
 "slug": "suffolk",
@@ -6419,7 +6380,20 @@
 "metroCount": 6,
 "score": 4.27,
 "weighted": true,
-"rank": 494
+"rank": 491
+},
+{
+"slug": "leicestershire",
+"name": "Leicestershire",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "County",
+"continent": "Europe",
+"pop": 734015,
+"metroCount": 2,
+"score": 4.26,
+"weighted": true,
+"rank": 492
 },
 {
 "slug": "aveiro",
@@ -6430,7 +6404,33 @@
 "continent": "Europe",
 "pop": 700787,
 "metroCount": 5,
-"score": 4.23,
+"score": 4.25,
+"weighted": true,
+"rank": 493
+},
+{
+"slug": "warwickshire",
+"name": "Warwickshire",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "County",
+"continent": "Europe",
+"pop": 617823,
+"metroCount": 3,
+"score": 4.24,
+"weighted": true,
+"rank": 494
+},
+{
+"slug": "leicester",
+"name": "Leicester",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Unitary Authority",
+"continent": "Europe",
+"pop": 379780,
+"metroCount": 1,
+"score": 4.24,
 "weighted": true,
 "rank": 495
 },
@@ -6474,19 +6474,6 @@
 "rank": 498
 },
 {
-"slug": "worcestershire",
-"name": "Worcestershire",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "County",
-"continent": "Europe",
-"pop": 614185,
-"metroCount": 4,
-"score": 4.2,
-"weighted": true,
-"rank": 499
-},
-{
 "slug": "providenciales",
 "name": "Providenciales",
 "country": "United Kingdom",
@@ -6497,7 +6484,7 @@
 "metroCount": 1,
 "score": 4.2,
 "weighted": true,
-"rank": 500
+"rank": 499
 },
 {
 "slug": "okayama",
@@ -6510,20 +6497,7 @@
 "metroCount": 1,
 "score": 4.18,
 "weighted": true,
-"rank": 501
-},
-{
-"slug": "warwickshire",
-"name": "Warwickshire",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "County",
-"continent": "Europe",
-"pop": 617823,
-"metroCount": 3,
-"score": 4.18,
-"weighted": true,
-"rank": 502
+"rank": 500
 },
 {
 "slug": "taipa",
@@ -6536,7 +6510,7 @@
 "metroCount": 1,
 "score": 4.1,
 "weighted": true,
-"rank": 503
+"rank": 501
 },
 {
 "slug": "castilla-la-mancha",
@@ -6549,7 +6523,7 @@
 "metroCount": 10,
 "score": 4.09,
 "weighted": true,
-"rank": 504
+"rank": 502
 },
 {
 "slug": "south-israel",
@@ -6562,7 +6536,7 @@
 "metroCount": 4,
 "score": 4.06,
 "weighted": true,
-"rank": 505
+"rank": 503
 },
 {
 "slug": "hawalli",
@@ -6575,7 +6549,7 @@
 "metroCount": 1,
 "score": 4.06,
 "weighted": true,
-"rank": 506
+"rank": 504
 },
 {
 "slug": "queretaro",
@@ -6588,7 +6562,7 @@
 "metroCount": 2,
 "score": 4.04,
 "weighted": true,
-"rank": 507
+"rank": 505
 },
 {
 "slug": "north-lanarkshire",
@@ -6601,7 +6575,7 @@
 "metroCount": 1,
 "score": 4.04,
 "weighted": true,
-"rank": 508
+"rank": 506
 },
 {
 "slug": "condamine",
@@ -6614,7 +6588,7 @@
 "metroCount": 1,
 "score": 4.03,
 "weighted": true,
-"rank": 509
+"rank": 507
 },
 {
 "slug": "gunma",
@@ -6627,7 +6601,7 @@
 "metroCount": 1,
 "score": 4.02,
 "weighted": true,
-"rank": 510
+"rank": 508
 },
 {
 "slug": "vermont",
@@ -6640,7 +6614,7 @@
 "metroCount": 5,
 "score": 4.02,
 "weighted": true,
-"rank": 511
+"rank": 509
 },
 {
 "slug": "guanacaste",
@@ -6653,7 +6627,7 @@
 "metroCount": 1,
 "score": 4.0,
 "weighted": true,
-"rank": 512
+"rank": 510
 },
 {
 "slug": "kaunas",
@@ -6666,7 +6640,7 @@
 "metroCount": 2,
 "score": 4.0,
 "weighted": true,
-"rank": 513
+"rank": 511
 },
 {
 "slug": "devon",
@@ -6679,7 +6653,7 @@
 "metroCount": 5,
 "score": 4.0,
 "weighted": true,
-"rank": 514
+"rank": 512
 },
 {
 "slug": "norfolk",
@@ -6692,7 +6666,7 @@
 "metroCount": 2,
 "score": 4.0,
 "weighted": true,
-"rank": 515
+"rank": 513
 },
 {
 "slug": "nara-japan",
@@ -6705,7 +6679,7 @@
 "metroCount": 1,
 "score": 3.99,
 "weighted": true,
-"rank": 516
+"rank": 514
 },
 {
 "slug": "belfast",
@@ -6718,7 +6692,7 @@
 "metroCount": 1,
 "score": 3.99,
 "weighted": true,
-"rank": 517
+"rank": 515
 },
 {
 "slug": "sjælland",
@@ -6731,7 +6705,7 @@
 "metroCount": 6,
 "score": 3.98,
 "weighted": true,
-"rank": 518
+"rank": 516
 },
 {
 "slug": "binh-duong",
@@ -6744,7 +6718,7 @@
 "metroCount": 1,
 "score": 3.94,
 "weighted": true,
-"rank": 519
+"rank": 517
 },
 {
 "slug": "north-dakota",
@@ -6757,7 +6731,7 @@
 "metroCount": 7,
 "score": 3.93,
 "weighted": true,
-"rank": 520
+"rank": 518
 },
 {
 "slug": "luxembourg-luxembourg",
@@ -6770,7 +6744,7 @@
 "metroCount": 1,
 "score": 3.91,
 "weighted": true,
-"rank": 521
+"rank": 519
 },
 {
 "slug": "mendoza",
@@ -6783,7 +6757,7 @@
 "metroCount": 3,
 "score": 3.9,
 "weighted": true,
-"rank": 522
+"rank": 520
 },
 {
 "slug": "thimphu",
@@ -6796,7 +6770,7 @@
 "metroCount": 1,
 "score": 3.9,
 "weighted": true,
-"rank": 523
+"rank": 521
 },
 {
 "slug": "krasnoyarsk-krai",
@@ -6809,7 +6783,7 @@
 "metroCount": 7,
 "score": 3.9,
 "weighted": true,
-"rank": 524
+"rank": 522
 },
 {
 "slug": "central-uganda",
@@ -6822,7 +6796,7 @@
 "metroCount": 2,
 "score": 3.84,
 "weighted": true,
-"rank": 525
+"rank": 523
 },
 {
 "slug": "fars",
@@ -6835,7 +6809,7 @@
 "metroCount": 1,
 "score": 3.8,
 "weighted": true,
-"rank": 526
+"rank": 524
 },
 {
 "slug": "northeastern",
@@ -6848,7 +6822,7 @@
 "metroCount": 6,
 "score": 3.8,
 "weighted": true,
-"rank": 527
+"rank": 525
 },
 {
 "slug": "city-of-kingston-upon-hull",
@@ -6861,7 +6835,7 @@
 "metroCount": 1,
 "score": 3.79,
 "weighted": true,
-"rank": 528
+"rank": 526
 },
 {
 "slug": "havana",
@@ -6874,7 +6848,7 @@
 "metroCount": 1,
 "score": 3.77,
 "weighted": true,
-"rank": 529
+"rank": 527
 },
 {
 "slug": "cheshire-west-and-chester",
@@ -6887,7 +6861,7 @@
 "metroCount": 1,
 "score": 3.74,
 "weighted": true,
-"rank": 530
+"rank": 528
 },
 {
 "slug": "al-wakrah",
@@ -6900,7 +6874,7 @@
 "metroCount": 1,
 "score": 3.72,
 "weighted": true,
-"rank": 531
+"rank": 529
 },
 {
 "slug": "south-dakota",
@@ -6913,7 +6887,7 @@
 "metroCount": 11,
 "score": 3.71,
 "weighted": true,
-"rank": 532
+"rank": 530
 },
 {
 "slug": "bihar",
@@ -6926,7 +6900,7 @@
 "metroCount": 2,
 "score": 3.7,
 "weighted": true,
-"rank": 533
+"rank": 531
 },
 {
 "slug": "nagasaki",
@@ -6939,7 +6913,7 @@
 "metroCount": 2,
 "score": 3.7,
 "weighted": true,
-"rank": 534
+"rank": 532
 },
 {
 "slug": "negeri-sembilan",
@@ -6952,20 +6926,7 @@
 "metroCount": 1,
 "score": 3.7,
 "weighted": true,
-"rank": 535
-},
-{
-"slug": "kharkiv",
-"name": "Kharkiv",
-"country": "Ukraine",
-"countrySlug": "ukraine",
-"type": "Oblast",
-"continent": "Europe",
-"pop": 2683000,
-"metroCount": 1,
-"score": 3.7,
-"weighted": true,
-"rank": 536
+"rank": 533
 },
 {
 "slug": "yerevan",
@@ -6978,7 +6939,7 @@
 "metroCount": 1,
 "score": 3.68,
 "weighted": true,
-"rank": 537
+"rank": 534
 },
 {
 "slug": "al-janubiyah-southern",
@@ -6991,7 +6952,7 @@
 "metroCount": 1,
 "score": 3.66,
 "weighted": true,
-"rank": 538
+"rank": 535
 },
 {
 "slug": "the-vale-of-glamorgan",
@@ -7004,7 +6965,7 @@
 "metroCount": 1,
 "score": 3.66,
 "weighted": true,
-"rank": 539
+"rank": 536
 },
 {
 "slug": "south-lanarkshire",
@@ -7017,7 +6978,7 @@
 "metroCount": 1,
 "score": 3.64,
 "weighted": true,
-"rank": 540
+"rank": 537
 },
 {
 "slug": "esch-sur-alzette",
@@ -7030,7 +6991,7 @@
 "metroCount": 1,
 "score": 3.62,
 "weighted": true,
-"rank": 541
+"rank": 538
 },
 {
 "slug": "mpumalanga",
@@ -7043,7 +7004,7 @@
 "metroCount": 3,
 "score": 3.6,
 "weighted": true,
-"rank": 542
+"rank": 539
 },
 {
 "slug": "saint-kitts",
@@ -7056,7 +7017,7 @@
 "metroCount": 1,
 "score": 3.6,
 "weighted": true,
-"rank": 543
+"rank": 540
 },
 {
 "slug": "northern-thailand",
@@ -7069,7 +7030,7 @@
 "metroCount": 5,
 "score": 3.6,
 "weighted": true,
-"rank": 544
+"rank": 541
 },
 {
 "slug": "west-northamptonshire",
@@ -7082,7 +7043,7 @@
 "metroCount": 1,
 "score": 3.6,
 "weighted": true,
-"rank": 545
+"rank": 542
 },
 {
 "slug": "vatican-city",
@@ -7095,7 +7056,7 @@
 "metroCount": 1,
 "score": 3.6,
 "weighted": true,
-"rank": 546
+"rank": 543
 },
 {
 "slug": "windward-islands-tahiti",
@@ -7108,7 +7069,20 @@
 "metroCount": 1,
 "score": 3.59,
 "weighted": true,
-"rank": 547
+"rank": 544
+},
+{
+"slug": "ilfov",
+"name": "Ilfov",
+"country": "Romania",
+"countrySlug": "romania",
+"type": "County",
+"continent": "Europe",
+"pop": 542686,
+"metroCount": 1,
+"score": 3.51,
+"weighted": true,
+"rank": 545
 },
 {
 "slug": "central-cameroon",
@@ -7121,7 +7095,7 @@
 "metroCount": 2,
 "score": 3.5,
 "weighted": true,
-"rank": 548
+"rank": 546
 },
 {
 "slug": "saarland",
@@ -7134,7 +7108,7 @@
 "metroCount": 3,
 "score": 3.5,
 "weighted": true,
-"rank": 549
+"rank": 547
 },
 {
 "slug": "chelyabinsk-oblast",
@@ -7147,7 +7121,20 @@
 "metroCount": 7,
 "score": 3.5,
 "weighted": true,
-"rank": 550
+"rank": 548
+},
+{
+"slug": "kharkiv",
+"name": "Kharkiv",
+"country": "Ukraine",
+"countrySlug": "ukraine",
+"type": "Oblast",
+"continent": "Europe",
+"pop": 2683000,
+"metroCount": 1,
+"score": 3.5,
+"weighted": true,
+"rank": 549
 },
 {
 "slug": "bath-and-north-east-somerset",
@@ -7160,7 +7147,7 @@
 "metroCount": 1,
 "score": 3.5,
 "weighted": true,
-"rank": 551
+"rank": 550
 },
 {
 "slug": "tunis",
@@ -7173,7 +7160,7 @@
 "metroCount": 1,
 "score": 3.46,
 "weighted": true,
-"rank": 552
+"rank": 551
 },
 {
 "slug": "vorarlberg",
@@ -7186,7 +7173,7 @@
 "metroCount": 3,
 "score": 3.4,
 "weighted": true,
-"rank": 553
+"rank": 552
 },
 {
 "slug": "mecklenburg-vorpommern",
@@ -7199,7 +7186,7 @@
 "metroCount": 4,
 "score": 3.4,
 "weighted": true,
-"rank": 554
+"rank": 553
 },
 {
 "slug": "jharkhand",
@@ -7212,7 +7199,7 @@
 "metroCount": 3,
 "score": 3.4,
 "weighted": true,
-"rank": 555
+"rank": 554
 },
 {
 "slug": "libya",
@@ -7225,7 +7212,7 @@
 "metroCount": 4,
 "score": 3.4,
 "weighted": true,
-"rank": 556
+"rank": 555
 },
 {
 "slug": "free-state",
@@ -7238,7 +7225,7 @@
 "metroCount": 3,
 "score": 3.4,
 "weighted": true,
-"rank": 557
+"rank": 556
 },
 {
 "slug": "st-gallen",
@@ -7251,7 +7238,7 @@
 "metroCount": 3,
 "score": 3.4,
 "weighted": true,
-"rank": 558
+"rank": 557
 },
 {
 "slug": "gaziantep",
@@ -7264,7 +7251,7 @@
 "metroCount": 1,
 "score": 3.4,
 "weighted": true,
-"rank": 559
+"rank": 558
 },
 {
 "slug": "abuja",
@@ -7277,7 +7264,7 @@
 "metroCount": 1,
 "score": 3.35,
 "weighted": true,
-"rank": 560
+"rank": 559
 },
 {
 "slug": "st-andrew-jamaica",
@@ -7290,7 +7277,7 @@
 "metroCount": 1,
 "score": 3.34,
 "weighted": true,
-"rank": 561
+"rank": 560
 },
 {
 "slug": "machakos",
@@ -7302,6 +7289,19 @@
 "pop": 1421932,
 "metroCount": 1,
 "score": 3.34,
+"weighted": true,
+"rank": 561
+},
+{
+"slug": "staffordshire",
+"name": "Staffordshire",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "County",
+"continent": "Europe",
+"pop": 898521,
+"metroCount": 5,
+"score": 3.33,
 "weighted": true,
 "rank": 562
 },
@@ -7371,6 +7371,19 @@
 "rank": 567
 },
 {
+"slug": "murcia",
+"name": "Murcia",
+"country": "Spain",
+"countrySlug": "spain",
+"type": "Autonomous Community",
+"continent": "Europe",
+"pop": 1511251,
+"metroCount": 4,
+"score": 3.3,
+"weighted": true,
+"rank": 568
+},
+{
 "slug": "konya",
 "name": "Konya",
 "country": "Turkey",
@@ -7381,7 +7394,7 @@
 "metroCount": 1,
 "score": 3.3,
 "weighted": true,
-"rank": 568
+"rank": 569
 },
 {
 "slug": "ashgabat",
@@ -7394,33 +7407,7 @@
 "metroCount": 1,
 "score": 3.3,
 "weighted": true,
-"rank": 569
-},
-{
-"slug": "ilfov",
-"name": "Ilfov",
-"country": "Romania",
-"countrySlug": "romania",
-"type": "County",
-"continent": "Europe",
-"pop": 542686,
-"metroCount": 1,
-"score": 3.27,
-"weighted": true,
 "rank": 570
-},
-{
-"slug": "staffordshire",
-"name": "Staffordshire",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "County",
-"continent": "Europe",
-"pop": 898521,
-"metroCount": 5,
-"score": 3.27,
-"weighted": true,
-"rank": 571
 },
 {
 "slug": "central-bedfordshire",
@@ -7431,9 +7418,9 @@
 "continent": "Europe",
 "pop": 308302,
 "metroCount": 1,
-"score": 3.27,
+"score": 3.28,
 "weighted": true,
-"rank": 572
+"rank": 571
 },
 {
 "slug": "littoral-cameroon",
@@ -7446,7 +7433,7 @@
 "metroCount": 5,
 "score": 3.26,
 "weighted": true,
-"rank": 573
+"rank": 572
 },
 {
 "slug": "harare",
@@ -7459,7 +7446,7 @@
 "metroCount": 1,
 "score": 3.26,
 "weighted": true,
-"rank": 574
+"rank": 573
 },
 {
 "slug": "brighton-and-hove",
@@ -7472,7 +7459,7 @@
 "metroCount": 1,
 "score": 3.25,
 "weighted": true,
-"rank": 575
+"rank": 574
 },
 {
 "slug": "oromia",
@@ -7485,7 +7472,7 @@
 "metroCount": 5,
 "score": 3.24,
 "weighted": true,
-"rank": 576
+"rank": 575
 },
 {
 "slug": "al-muharraq",
@@ -7498,7 +7485,7 @@
 "metroCount": 1,
 "score": 3.21,
 "weighted": true,
-"rank": 577
+"rank": 576
 },
 {
 "slug": "south-gloucestershire",
@@ -7511,7 +7498,7 @@
 "metroCount": 1,
 "score": 3.21,
 "weighted": true,
-"rank": 578
+"rank": 577
 },
 {
 "slug": "south-moravia",
@@ -7524,7 +7511,33 @@
 "metroCount": 3,
 "score": 3.2,
 "weighted": true,
+"rank": 578
+},
+{
+"slug": "abruzzo",
+"name": "Abruzzo",
+"country": "Italy",
+"countrySlug": "italy",
+"type": "Region",
+"continent": "Europe",
+"pop": 1267222,
+"metroCount": 4,
+"score": 3.2,
+"weighted": true,
 "rank": 579
+},
+{
+"slug": "sinaloa",
+"name": "Sinaloa",
+"country": "Mexico",
+"countrySlug": "mexico",
+"type": "State",
+"continent": "North America",
+"pop": 3026943,
+"metroCount": 4,
+"score": 3.2,
+"weighted": true,
+"rank": 580
 },
 {
 "slug": "kuyavian-pomeranian",
@@ -7537,7 +7550,7 @@
 "metroCount": 3,
 "score": 3.2,
 "weighted": true,
-"rank": 580
+"rank": 581
 },
 {
 "slug": "castries",
@@ -7550,7 +7563,7 @@
 "metroCount": 1,
 "score": 3.2,
 "weighted": true,
-"rank": 581
+"rank": 582
 },
 {
 "slug": "al-qassim",
@@ -7563,7 +7576,7 @@
 "metroCount": 2,
 "score": 3.2,
 "weighted": true,
-"rank": 582
+"rank": 583
 },
 {
 "slug": "carabobo",
@@ -7576,7 +7589,7 @@
 "metroCount": 2,
 "score": 3.2,
 "weighted": true,
-"rank": 583
+"rank": 584
 },
 {
 "slug": "aargau",
@@ -7589,7 +7602,7 @@
 "metroCount": 5,
 "score": 3.17,
 "weighted": true,
-"rank": 584
+"rank": 585
 },
 {
 "slug": "guatemala-san-miguel-petapa",
@@ -7602,7 +7615,7 @@
 "metroCount": 1,
 "score": 3.15,
 "weighted": true,
-"rank": 585
+"rank": 586
 },
 {
 "slug": "leningrad-oblast",
@@ -7615,7 +7628,7 @@
 "metroCount": 6,
 "score": 3.14,
 "weighted": true,
-"rank": 586
+"rank": 587
 },
 {
 "slug": "east-lothian",
@@ -7628,7 +7641,7 @@
 "metroCount": 1,
 "score": 3.14,
 "weighted": true,
-"rank": 587
+"rank": 588
 },
 {
 "slug": "george-town",
@@ -7641,7 +7654,7 @@
 "metroCount": 1,
 "score": 3.12,
 "weighted": true,
-"rank": 588
+"rank": 589
 },
 {
 "slug": "medway",
@@ -7652,9 +7665,9 @@
 "continent": "Europe",
 "pop": 286800,
 "metroCount": 1,
-"score": 3.11,
+"score": 3.12,
 "weighted": true,
-"rank": 589
+"rank": 590
 },
 {
 "slug": "moravia-silesia",
@@ -7667,7 +7680,7 @@
 "metroCount": 4,
 "score": 3.1,
 "weighted": true,
-"rank": 590
+"rank": 591
 },
 {
 "slug": "djibouti",
@@ -7680,7 +7693,7 @@
 "metroCount": 1,
 "score": 3.1,
 "weighted": true,
-"rank": 591
+"rank": 592
 },
 {
 "slug": "northern-ostrobothnia",
@@ -7693,7 +7706,7 @@
 "metroCount": 2,
 "score": 3.1,
 "weighted": true,
-"rank": 592
+"rank": 593
 },
 {
 "slug": "kagawa",
@@ -7706,7 +7719,7 @@
 "metroCount": 1,
 "score": 3.1,
 "weighted": true,
-"rank": 593
+"rank": 594
 },
 {
 "slug": "sabah",
@@ -7719,7 +7732,7 @@
 "metroCount": 1,
 "score": 3.1,
 "weighted": true,
-"rank": 594
+"rank": 595
 },
 {
 "slug": "aguascalientes",
@@ -7732,7 +7745,7 @@
 "metroCount": 1,
 "score": 3.1,
 "weighted": true,
-"rank": 595
+"rank": 596
 },
 {
 "slug": "gloucestershire",
@@ -7745,7 +7758,7 @@
 "metroCount": 3,
 "score": 3.1,
 "weighted": true,
-"rank": 596
+"rank": 597
 },
 {
 "slug": "san-jose-costa-rica",
@@ -7758,7 +7771,7 @@
 "metroCount": 1,
 "score": 3.08,
 "weighted": true,
-"rank": 597
+"rank": 598
 },
 {
 "slug": "st-catherine",
@@ -7771,7 +7784,7 @@
 "metroCount": 1,
 "score": 3.04,
 "weighted": true,
-"rank": 598
+"rank": 599
 },
 {
 "slug": "new-brunswick",
@@ -7784,7 +7797,7 @@
 "metroCount": 5,
 "score": 3.0,
 "weighted": true,
-"rank": 599
+"rank": 600
 },
 {
 "slug": "haut-katanga",
@@ -7797,7 +7810,7 @@
 "metroCount": 2,
 "score": 3.0,
 "weighted": true,
-"rank": 600
+"rank": 601
 },
 {
 "slug": "khorasan-razavi",
@@ -7808,19 +7821,6 @@
 "continent": "Asia",
 "pop": 7167000,
 "metroCount": 1,
-"score": 3.0,
-"weighted": true,
-"rank": 601
-},
-{
-"slug": "abruzzo",
-"name": "Abruzzo",
-"country": "Italy",
-"countrySlug": "italy",
-"type": "Region",
-"continent": "Europe",
-"pop": 1267222,
-"metroCount": 4,
 "score": 3.0,
 "weighted": true,
 "rank": 602
@@ -9009,19 +9009,6 @@
 "rank": 693
 },
 {
-"slug": "mersin",
-"name": "Mersin",
-"country": "Turkey",
-"countrySlug": "turkey",
-"type": "Province",
-"continent": "Europe",
-"pop": 1840425,
-"metroCount": 1,
-"score": 2.3,
-"weighted": true,
-"rank": 694
-},
-{
 "slug": "lviv",
 "name": "Lviv",
 "country": "Ukraine",
@@ -9032,7 +9019,7 @@
 "metroCount": 3,
 "score": 2.3,
 "weighted": true,
-"rank": 695
+"rank": 694
 },
 {
 "slug": "somerset",
@@ -9045,7 +9032,7 @@
 "metroCount": 5,
 "score": 2.3,
 "weighted": true,
-"rank": 696
+"rank": 695
 },
 {
 "slug": "lusaka",
@@ -9058,7 +9045,7 @@
 "metroCount": 1,
 "score": 2.3,
 "weighted": true,
-"rank": 697
+"rank": 696
 },
 {
 "slug": "kandal",
@@ -9071,7 +9058,7 @@
 "metroCount": 1,
 "score": 2.29,
 "weighted": true,
-"rank": 698
+"rank": 697
 },
 {
 "slug": "halland",
@@ -9084,7 +9071,7 @@
 "metroCount": 4,
 "score": 2.27,
 "weighted": true,
-"rank": 699
+"rank": 698
 },
 {
 "slug": "beheira",
@@ -9097,7 +9084,7 @@
 "metroCount": 2,
 "score": 2.24,
 "weighted": true,
-"rank": 700
+"rank": 699
 },
 {
 "slug": "piaui",
@@ -9110,7 +9097,7 @@
 "metroCount": 4,
 "score": 2.23,
 "weighted": true,
-"rank": 701
+"rank": 700
 },
 {
 "slug": "blida",
@@ -9123,7 +9110,7 @@
 "metroCount": 1,
 "score": 2.22,
 "weighted": true,
-"rank": 702
+"rank": 701
 },
 {
 "slug": "warrington",
@@ -9136,7 +9123,7 @@
 "metroCount": 1,
 "score": 2.21,
 "weighted": true,
-"rank": 703
+"rank": 702
 },
 {
 "slug": "ashanti",
@@ -9149,7 +9136,7 @@
 "metroCount": 2,
 "score": 2.2,
 "weighted": true,
-"rank": 704
+"rank": 703
 },
 {
 "slug": "west-greece",
@@ -9162,7 +9149,7 @@
 "metroCount": 4,
 "score": 2.2,
 "weighted": true,
-"rank": 705
+"rank": 704
 },
 {
 "slug": "chisinau",
@@ -9175,7 +9162,7 @@
 "metroCount": 1,
 "score": 2.2,
 "weighted": true,
-"rank": 706
+"rank": 705
 },
 {
 "slug": "skopje",
@@ -9188,7 +9175,7 @@
 "metroCount": 1,
 "score": 2.2,
 "weighted": true,
-"rank": 707
+"rank": 706
 },
 {
 "slug": "agder",
@@ -9201,7 +9188,7 @@
 "metroCount": 2,
 "score": 2.2,
 "weighted": true,
-"rank": 708
+"rank": 707
 },
 {
 "slug": "orenburg-oblast",
@@ -9214,7 +9201,7 @@
 "metroCount": 4,
 "score": 2.2,
 "weighted": true,
-"rank": 709
+"rank": 708
 },
 {
 "slug": "banadir",
@@ -9227,7 +9214,7 @@
 "metroCount": 1,
 "score": 2.2,
 "weighted": false,
-"rank": 710
+"rank": 709
 },
 {
 "slug": "central-madhyama",
@@ -9240,7 +9227,7 @@
 "metroCount": 2,
 "score": 2.2,
 "weighted": true,
-"rank": 711
+"rank": 710
 },
 {
 "slug": "zagreb",
@@ -9253,7 +9240,7 @@
 "metroCount": 1,
 "score": 2.19,
 "weighted": true,
-"rank": 712
+"rank": 711
 },
 {
 "slug": "perth-and-kinross",
@@ -9266,7 +9253,7 @@
 "metroCount": 2,
 "score": 2.19,
 "weighted": true,
-"rank": 713
+"rank": 712
 },
 {
 "slug": "bremen",
@@ -9279,7 +9266,7 @@
 "metroCount": 1,
 "score": 2.16,
 "weighted": true,
-"rank": 714
+"rank": 713
 },
 {
 "slug": "ariana",
@@ -9292,7 +9279,7 @@
 "metroCount": 1,
 "score": 2.16,
 "weighted": true,
-"rank": 715
+"rank": 714
 },
 {
 "slug": "managua",
@@ -9305,7 +9292,7 @@
 "metroCount": 1,
 "score": 2.15,
 "weighted": true,
-"rank": 716
+"rank": 715
 },
 {
 "slug": "maputo",
@@ -9318,7 +9305,7 @@
 "metroCount": 1,
 "score": 2.11,
 "weighted": true,
-"rank": 717
+"rank": 716
 },
 {
 "slug": "renfrewshire",
@@ -9331,7 +9318,7 @@
 "metroCount": 1,
 "score": 2.11,
 "weighted": true,
-"rank": 718
+"rank": 717
 },
 {
 "slug": "rio-grande-do-norte",
@@ -9344,7 +9331,7 @@
 "metroCount": 3,
 "score": 2.1,
 "weighted": true,
-"rank": 719
+"rank": 718
 },
 {
 "slug": "newfoundland",
@@ -9357,7 +9344,7 @@
 "metroCount": 3,
 "score": 2.1,
 "weighted": true,
-"rank": 720
+"rank": 719
 },
 {
 "slug": "distrito-nacional",
@@ -9370,7 +9357,7 @@
 "metroCount": 1,
 "score": 2.1,
 "weighted": true,
-"rank": 721
+"rank": 720
 },
 {
 "slug": "st-george-grenada",
@@ -9383,7 +9370,7 @@
 "metroCount": 1,
 "score": 2.1,
 "weighted": true,
-"rank": 722
+"rank": 721
 },
 {
 "slug": "east-kalimantan",
@@ -9396,7 +9383,7 @@
 "metroCount": 3,
 "score": 2.1,
 "weighted": true,
-"rank": 723
+"rank": 722
 },
 {
 "slug": "khammuane-khammouan",
@@ -9409,7 +9396,7 @@
 "metroCount": 1,
 "score": 2.1,
 "weighted": true,
-"rank": 724
+"rank": 723
 },
 {
 "slug": "southern-malawi",
@@ -9422,7 +9409,7 @@
 "metroCount": 1,
 "score": 2.1,
 "weighted": true,
-"rank": 725
+"rank": 724
 },
 {
 "slug": "hidalgo",
@@ -9435,7 +9422,7 @@
 "metroCount": 4,
 "score": 2.1,
 "weighted": true,
-"rank": 726
+"rank": 725
 },
 {
 "slug": "tanger-tetouan-al-hoceima",
@@ -9448,7 +9435,7 @@
 "metroCount": 2,
 "score": 2.1,
 "weighted": true,
-"rank": 727
+"rank": 726
 },
 {
 "slug": "hawke-s-bay",
@@ -9461,7 +9448,7 @@
 "metroCount": 1,
 "score": 2.1,
 "weighted": true,
-"rank": 728
+"rank": 727
 },
 {
 "slug": "oyo",
@@ -9474,7 +9461,7 @@
 "metroCount": 1,
 "score": 2.1,
 "weighted": true,
-"rank": 729
+"rank": 728
 },
 {
 "slug": "podlaskie",
@@ -9487,7 +9474,7 @@
 "metroCount": 3,
 "score": 2.1,
 "weighted": true,
-"rank": 730
+"rank": 729
 },
 {
 "slug": "umm-salal",
@@ -9500,7 +9487,7 @@
 "metroCount": 1,
 "score": 2.1,
 "weighted": true,
-"rank": 731
+"rank": 730
 },
 {
 "slug": "rostov-oblast",
@@ -9513,7 +9500,7 @@
 "metroCount": 12,
 "score": 2.1,
 "weighted": true,
-"rank": 732
+"rank": 731
 },
 {
 "slug": "chechnya",
@@ -9526,7 +9513,7 @@
 "metroCount": 4,
 "score": 2.1,
 "weighted": true,
-"rank": 733
+"rank": 732
 },
 {
 "slug": "kaliningrad-oblast",
@@ -9537,6 +9524,19 @@
 "continent": "Europe",
 "pop": 1029966,
 "metroCount": 1,
+"score": 2.1,
+"weighted": true,
+"rank": 733
+},
+{
+"slug": "extremadura",
+"name": "Extremadura",
+"country": "Spain",
+"countrySlug": "spain",
+"type": "Autonomous Community",
+"continent": "Europe",
+"pop": 1063987,
+"metroCount": 8,
 "score": 2.1,
 "weighted": true,
 "rank": 734
@@ -10101,6 +10101,19 @@
 "rank": 777
 },
 {
+"slug": "milton-keynes",
+"name": "Milton Keynes",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Unitary Authority",
+"continent": "Europe",
+"pop": 298270,
+"metroCount": 1,
+"score": 1.9,
+"weighted": true,
+"rank": 778
+},
+{
 "slug": "tortola",
 "name": "Tortola",
 "country": "United Kingdom",
@@ -10111,7 +10124,7 @@
 "metroCount": 1,
 "score": 1.9,
 "weighted": true,
-"rank": 778
+"rank": 779
 },
 {
 "slug": "zulia",
@@ -10124,7 +10137,7 @@
 "metroCount": 1,
 "score": 1.9,
 "weighted": true,
-"rank": 779
+"rank": 780
 },
 {
 "slug": "bayrut-beirut",
@@ -10137,7 +10150,7 @@
 "metroCount": 1,
 "score": 1.87,
 "weighted": true,
-"rank": 780
+"rank": 781
 },
 {
 "slug": "tamaulipas",
@@ -10150,7 +10163,7 @@
 "metroCount": 5,
 "score": 1.87,
 "weighted": true,
-"rank": 781
+"rank": 782
 },
 {
 "slug": "islamabad",
@@ -10163,7 +10176,7 @@
 "metroCount": 1,
 "score": 1.87,
 "weighted": true,
-"rank": 782
+"rank": 783
 },
 {
 "slug": "suez",
@@ -10176,7 +10189,7 @@
 "metroCount": 1,
 "score": 1.86,
 "weighted": true,
-"rank": 783
+"rank": 784
 },
 {
 "slug": "reclamation-areas",
@@ -10189,7 +10202,7 @@
 "metroCount": 1,
 "score": 1.86,
 "weighted": true,
-"rank": 784
+"rank": 785
 },
 {
 "slug": "analamanga",
@@ -10202,7 +10215,7 @@
 "metroCount": 1,
 "score": 1.83,
 "weighted": true,
-"rank": 785
+"rank": 786
 },
 {
 "slug": "pwani",
@@ -10215,7 +10228,7 @@
 "metroCount": 1,
 "score": 1.81,
 "weighted": true,
-"rank": 786
+"rank": 787
 },
 {
 "slug": "salta",
@@ -10228,7 +10241,7 @@
 "metroCount": 1,
 "score": 1.8,
 "weighted": true,
-"rank": 787
+"rank": 788
 },
 {
 "slug": "norte-de-santander",
@@ -10241,7 +10254,7 @@
 "metroCount": 1,
 "score": 1.8,
 "weighted": true,
-"rank": 788
+"rank": 789
 },
 {
 "slug": "dubrovnik-neretva",
@@ -10254,7 +10267,7 @@
 "metroCount": 1,
 "score": 1.8,
 "weighted": true,
-"rank": 789
+"rank": 790
 },
 {
 "slug": "gharbia",
@@ -10267,7 +10280,7 @@
 "metroCount": 2,
 "score": 1.8,
 "weighted": true,
-"rank": 790
+"rank": 791
 },
 {
 "slug": "chhattisgarh",
@@ -10280,7 +10293,7 @@
 "metroCount": 3,
 "score": 1.8,
 "weighted": true,
-"rank": 791
+"rank": 792
 },
 {
 "slug": "khuzestan",
@@ -10293,7 +10306,7 @@
 "metroCount": 3,
 "score": 1.8,
 "weighted": true,
-"rank": 792
+"rank": 793
 },
 {
 "slug": "ninawa",
@@ -10306,7 +10319,7 @@
 "metroCount": 1,
 "score": 1.8,
 "weighted": true,
-"rank": 793
+"rank": 794
 },
 {
 "slug": "innlandet",
@@ -10319,7 +10332,7 @@
 "metroCount": 4,
 "score": 1.8,
 "weighted": true,
-"rank": 794
+"rank": 795
 },
 {
 "slug": "constanta",
@@ -10330,19 +10343,6 @@
 "continent": "Europe",
 "pop": 655997,
 "metroCount": 1,
-"score": 1.8,
-"weighted": true,
-"rank": 795
-},
-{
-"slug": "extremadura",
-"name": "Extremadura",
-"country": "Spain",
-"countrySlug": "spain",
-"type": "Autonomous Community",
-"continent": "Europe",
-"pop": 1063987,
-"metroCount": 8,
 "score": 1.8,
 "weighted": true,
 "rank": 796
@@ -10400,19 +10400,6 @@
 "rank": 800
 },
 {
-"slug": "milton-keynes",
-"name": "Milton Keynes",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Unitary Authority",
-"continent": "Europe",
-"pop": 298270,
-"metroCount": 1,
-"score": 1.8,
-"weighted": true,
-"rank": 801
-},
-{
 "slug": "hai-phong",
 "name": "Hải Phòng",
 "country": "Vietnam",
@@ -10423,7 +10410,7 @@
 "metroCount": 1,
 "score": 1.8,
 "weighted": true,
-"rank": 802
+"rank": 801
 },
 {
 "slug": "boumerdes",
@@ -10436,7 +10423,7 @@
 "metroCount": 1,
 "score": 1.77,
 "weighted": true,
-"rank": 803
+"rank": 802
 },
 {
 "slug": "damascus",
@@ -10449,7 +10436,7 @@
 "metroCount": 1,
 "score": 1.77,
 "weighted": true,
-"rank": 804
+"rank": 803
 },
 {
 "slug": "slough",
@@ -10462,7 +10449,7 @@
 "metroCount": 1,
 "score": 1.76,
 "weighted": true,
-"rank": 805
+"rank": 804
 },
 {
 "slug": "karotegin",
@@ -10475,7 +10462,7 @@
 "metroCount": 2,
 "score": 1.73,
 "weighted": true,
-"rank": 806
+"rank": 805
 },
 {
 "slug": "lisburn-and-castlereagh",
@@ -10488,7 +10475,7 @@
 "metroCount": 1,
 "score": 1.72,
 "weighted": true,
-"rank": 807
+"rank": 806
 },
 {
 "slug": "windsor-and-maidenhead",
@@ -10501,7 +10488,7 @@
 "metroCount": 1,
 "score": 1.71,
 "weighted": true,
-"rank": 808
+"rank": 807
 },
 {
 "slug": "thai-nguyen",
@@ -10514,7 +10501,7 @@
 "metroCount": 1,
 "score": 1.71,
 "weighted": true,
-"rank": 809
+"rank": 808
 },
 {
 "slug": "tibet",
@@ -10527,7 +10514,7 @@
 "metroCount": 1,
 "score": 1.7,
 "weighted": true,
-"rank": 810
+"rank": 809
 },
 {
 "slug": "narino",
@@ -10540,7 +10527,7 @@
 "metroCount": 2,
 "score": 1.7,
 "weighted": true,
-"rank": 811
+"rank": 810
 },
 {
 "slug": "cordoba-colombia",
@@ -10553,7 +10540,7 @@
 "metroCount": 1,
 "score": 1.7,
 "weighted": true,
-"rank": 812
+"rank": 811
 },
 {
 "slug": "meta",
@@ -10566,7 +10553,7 @@
 "metroCount": 1,
 "score": 1.7,
 "weighted": true,
-"rank": 813
+"rank": 812
 },
 {
 "slug": "ionian-islands",
@@ -10579,7 +10566,7 @@
 "metroCount": 3,
 "score": 1.7,
 "weighted": true,
-"rank": 814
+"rank": 813
 },
 {
 "slug": "niigata",
@@ -10592,7 +10579,7 @@
 "metroCount": 3,
 "score": 1.7,
 "weighted": true,
-"rank": 815
+"rank": 814
 },
 {
 "slug": "sarawak",
@@ -10605,7 +10592,7 @@
 "metroCount": 2,
 "score": 1.7,
 "weighted": true,
-"rank": 816
+"rank": 815
 },
 {
 "slug": "cluj",
@@ -10618,7 +10605,7 @@
 "metroCount": 3,
 "score": 1.7,
 "weighted": true,
-"rank": 817
+"rank": 816
 },
 {
 "slug": "khanty-mansi-yugra",
@@ -10631,7 +10618,7 @@
 "metroCount": 6,
 "score": 1.7,
 "weighted": true,
-"rank": 818
+"rank": 817
 },
 {
 "slug": "tabuk",
@@ -10644,7 +10631,7 @@
 "metroCount": 1,
 "score": 1.7,
 "weighted": true,
-"rank": 819
+"rank": 818
 },
 {
 "slug": "zug",
@@ -10657,7 +10644,7 @@
 "metroCount": 1,
 "score": 1.7,
 "weighted": true,
-"rank": 820
+"rank": 819
 },
 {
 "slug": "aleppo",
@@ -10670,7 +10657,7 @@
 "metroCount": 1,
 "score": 1.7,
 "weighted": true,
-"rank": 821
+"rank": 820
 },
 {
 "slug": "plymouth",
@@ -10683,7 +10670,7 @@
 "metroCount": 1,
 "score": 1.7,
 "weighted": true,
-"rank": 822
+"rank": 821
 },
 {
 "slug": "northern-malta",
@@ -10696,7 +10683,7 @@
 "metroCount": 1,
 "score": 1.68,
 "weighted": true,
-"rank": 823
+"rank": 822
 },
 {
 "slug": "antrim-and-newtownabbey",
@@ -10709,7 +10696,7 @@
 "metroCount": 1,
 "score": 1.68,
 "weighted": true,
-"rank": 824
+"rank": 823
 },
 {
 "slug": "dushanbe",
@@ -10722,7 +10709,7 @@
 "metroCount": 1,
 "score": 1.67,
 "weighted": true,
-"rank": 825
+"rank": 824
 },
 {
 "slug": "angus",
@@ -10735,7 +10722,7 @@
 "metroCount": 5,
 "score": 1.66,
 "weighted": true,
-"rank": 826
+"rank": 825
 },
 {
 "slug": "rewa",
@@ -10748,7 +10735,7 @@
 "metroCount": 1,
 "score": 1.65,
 "weighted": true,
-"rank": 827
+"rank": 826
 },
 {
 "slug": "bishkek-city",
@@ -10761,7 +10748,7 @@
 "metroCount": 1,
 "score": 1.61,
 "weighted": true,
-"rank": 828
+"rank": 827
 },
 {
 "slug": "south-east",
@@ -10774,7 +10761,7 @@
 "metroCount": 1,
 "score": 1.6,
 "weighted": true,
-"rank": 829
+"rank": 828
 },
 {
 "slug": "usti-nad-labem",
@@ -10787,7 +10774,7 @@
 "metroCount": 6,
 "score": 1.6,
 "weighted": true,
-"rank": 830
+"rank": 829
 },
 {
 "slug": "olomouc",
@@ -10800,7 +10787,7 @@
 "metroCount": 3,
 "score": 1.6,
 "weighted": true,
-"rank": 831
+"rank": 830
 },
 {
 "slug": "pardubice",
@@ -10813,7 +10800,7 @@
 "metroCount": 2,
 "score": 1.6,
 "weighted": true,
-"rank": 832
+"rank": 831
 },
 {
 "slug": "red-sea-egypt",
@@ -10826,7 +10813,7 @@
 "metroCount": 2,
 "score": 1.6,
 "weighted": true,
-"rank": 833
+"rank": 832
 },
 {
 "slug": "asyut",
@@ -10839,7 +10826,7 @@
 "metroCount": 1,
 "score": 1.6,
 "weighted": true,
-"rank": 834
+"rank": 833
 },
 {
 "slug": "fukushima",
@@ -10852,7 +10839,7 @@
 "metroCount": 4,
 "score": 1.6,
 "weighted": true,
-"rank": 835
+"rank": 834
 },
 {
 "slug": "ehime",
@@ -10865,7 +10852,7 @@
 "metroCount": 2,
 "score": 1.6,
 "weighted": true,
-"rank": 836
+"rank": 835
 },
 {
 "slug": "fukui",
@@ -10878,7 +10865,7 @@
 "metroCount": 1,
 "score": 1.6,
 "weighted": true,
-"rank": 837
+"rank": 836
 },
 {
 "slug": "nakuru",
@@ -10891,7 +10878,7 @@
 "metroCount": 1,
 "score": 1.6,
 "weighted": true,
-"rank": 838
+"rank": 837
 },
 {
 "slug": "nakhon-luang-viengchan-vientiane-capital-city",
@@ -10904,7 +10891,7 @@
 "metroCount": 1,
 "score": 1.6,
 "weighted": true,
-"rank": 839
+"rank": 838
 },
 {
 "slug": "azores-islands",
@@ -10917,7 +10904,7 @@
 "metroCount": 2,
 "score": 1.6,
 "weighted": true,
-"rank": 840
+"rank": 839
 },
 {
 "slug": "dagestan",
@@ -10930,7 +10917,7 @@
 "metroCount": 6,
 "score": 1.6,
 "weighted": true,
-"rank": 841
+"rank": 840
 },
 {
 "slug": "perm-krai",
@@ -10943,7 +10930,7 @@
 "metroCount": 6,
 "score": 1.6,
 "weighted": true,
-"rank": 842
+"rank": 841
 },
 {
 "slug": "voronezh-oblast",
@@ -10956,7 +10943,7 @@
 "metroCount": 4,
 "score": 1.6,
 "weighted": true,
-"rank": 843
+"rank": 842
 },
 {
 "slug": "murmansk-oblast",
@@ -10969,7 +10956,7 @@
 "metroCount": 1,
 "score": 1.6,
 "weighted": true,
-"rank": 844
+"rank": 843
 },
 {
 "slug": "asir",
@@ -10982,7 +10969,7 @@
 "metroCount": 2,
 "score": 1.6,
 "weighted": true,
-"rank": 845
+"rank": 844
 },
 {
 "slug": "jeollabuk",
@@ -10995,7 +10982,7 @@
 "metroCount": 1,
 "score": 1.6,
 "weighted": true,
-"rank": 846
+"rank": 845
 },
 {
 "slug": "la-rioja-spain",
@@ -11008,7 +10995,7 @@
 "metroCount": 2,
 "score": 1.6,
 "weighted": true,
-"rank": 847
+"rank": 846
 },
 {
 "slug": "kalmar",
@@ -11021,7 +11008,7 @@
 "metroCount": 4,
 "score": 1.6,
 "weighted": true,
-"rank": 848
+"rank": 847
 },
 {
 "slug": "orebro",
@@ -11034,7 +11021,7 @@
 "metroCount": 2,
 "score": 1.6,
 "weighted": true,
-"rank": 849
+"rank": 848
 },
 {
 "slug": "ards-and-north-down",
@@ -11047,7 +11034,7 @@
 "metroCount": 1,
 "score": 1.6,
 "weighted": true,
-"rank": 850
+"rank": 849
 },
 {
 "slug": "cortes",
@@ -11060,7 +11047,7 @@
 "metroCount": 1,
 "score": 1.59,
 "weighted": true,
-"rank": 851
+"rank": 850
 },
 {
 "slug": "jilong-shi-chilung-keelung",
@@ -11073,7 +11060,7 @@
 "metroCount": 1,
 "score": 1.59,
 "weighted": true,
-"rank": 852
+"rank": 851
 },
 {
 "slug": "east-sussex",
@@ -11086,7 +11073,7 @@
 "metroCount": 3,
 "score": 1.57,
 "weighted": true,
-"rank": 853
+"rank": 852
 },
 {
 "slug": "christ-church",
@@ -11099,7 +11086,7 @@
 "metroCount": 1,
 "score": 1.55,
 "weighted": true,
-"rank": 854
+"rank": 853
 },
 {
 "slug": "east-riding-of-yorkshire",
@@ -11112,7 +11099,7 @@
 "metroCount": 2,
 "score": 1.55,
 "weighted": true,
-"rank": 855
+"rank": 854
 },
 {
 "slug": "alajuela",
@@ -11125,7 +11112,7 @@
 "metroCount": 2,
 "score": 1.54,
 "weighted": true,
-"rank": 856
+"rank": 855
 },
 {
 "slug": "southern-harbour",
@@ -11138,7 +11125,7 @@
 "metroCount": 1,
 "score": 1.54,
 "weighted": true,
-"rank": 857
+"rank": 856
 },
 {
 "slug": "bulawayo",
@@ -11151,7 +11138,7 @@
 "metroCount": 1,
 "score": 1.54,
 "weighted": true,
-"rank": 858
+"rank": 857
 },
 {
 "slug": "akmola",
@@ -11164,7 +11151,7 @@
 "metroCount": 2,
 "score": 1.51,
 "weighted": true,
-"rank": 859
+"rank": 858
 },
 {
 "slug": "barisal",
@@ -11177,7 +11164,7 @@
 "metroCount": 1,
 "score": 1.5,
 "weighted": true,
-"rank": 860
+"rank": 859
 },
 {
 "slug": "roraima",
@@ -11190,7 +11177,7 @@
 "metroCount": 2,
 "score": 1.5,
 "weighted": true,
-"rank": 861
+"rank": 860
 },
 {
 "slug": "centre-burkina-faso",
@@ -11203,7 +11190,7 @@
 "metroCount": 1,
 "score": 1.5,
 "weighted": true,
-"rank": 862
+"rank": 861
 },
 {
 "slug": "black-river-riviere-noire",
@@ -11216,7 +11203,7 @@
 "metroCount": 1,
 "score": 1.5,
 "weighted": true,
-"rank": 863
+"rank": 862
 },
 {
 "slug": "sonora",
@@ -11229,7 +11216,7 @@
 "metroCount": 5,
 "score": 1.5,
 "weighted": true,
-"rank": 864
+"rank": 863
 },
 {
 "slug": "fes-meknes",
@@ -11242,7 +11229,7 @@
 "metroCount": 2,
 "score": 1.5,
 "weighted": true,
-"rank": 865
+"rank": 864
 },
 {
 "slug": "enugu",
@@ -11255,7 +11242,7 @@
 "metroCount": 1,
 "score": 1.5,
 "weighted": true,
-"rank": 866
+"rank": 865
 },
 {
 "slug": "zamboanga-peninsula",
@@ -11268,7 +11255,7 @@
 "metroCount": 1,
 "score": 1.5,
 "weighted": true,
-"rank": 867
+"rank": 866
 },
 {
 "slug": "vologda-oblast",
@@ -11281,7 +11268,7 @@
 "metroCount": 2,
 "score": 1.5,
 "weighted": true,
-"rank": 868
+"rank": 867
 },
 {
 "slug": "sevastopol",
@@ -11294,7 +11281,7 @@
 "metroCount": 1,
 "score": 1.5,
 "weighted": true,
-"rank": 869
+"rank": 868
 },
 {
 "slug": "sfax",
@@ -11307,7 +11294,7 @@
 "metroCount": 1,
 "score": 1.5,
 "weighted": true,
-"rank": 870
+"rank": 869
 },
 {
 "slug": "samsun",
@@ -11320,7 +11307,7 @@
 "metroCount": 1,
 "score": 1.5,
 "weighted": true,
-"rank": 871
+"rank": 870
 },
 {
 "slug": "highland",
@@ -11333,7 +11320,7 @@
 "metroCount": 2,
 "score": 1.5,
 "weighted": true,
-"rank": 872
+"rank": 871
 },
 {
 "slug": "mombasa",
@@ -11346,7 +11333,7 @@
 "metroCount": 1,
 "score": 1.46,
 "weighted": true,
-"rank": 873
+"rank": 872
 },
 {
 "slug": "blackpool",
@@ -11359,7 +11346,7 @@
 "metroCount": 1,
 "score": 1.43,
 "weighted": true,
-"rank": 874
+"rank": 873
 },
 {
 "slug": "ad-d-ayan-al-daayen",
@@ -11372,7 +11359,7 @@
 "metroCount": 1,
 "score": 1.41,
 "weighted": true,
-"rank": 875
+"rank": 874
 },
 {
 "slug": "stoke-on-trent",
@@ -11385,7 +11372,7 @@
 "metroCount": 1,
 "score": 1.41,
 "weighted": true,
-"rank": 876
+"rank": 875
 },
 {
 "slug": "caldas",
@@ -11398,7 +11385,7 @@
 "metroCount": 1,
 "score": 1.4,
 "weighted": true,
-"rank": 877
+"rank": 876
 },
 {
 "slug": "cesar",
@@ -11411,7 +11398,7 @@
 "metroCount": 1,
 "score": 1.4,
 "weighted": true,
-"rank": 878
+"rank": 877
 },
 {
 "slug": "lampung",
@@ -11424,7 +11411,7 @@
 "metroCount": 1,
 "score": 1.4,
 "weighted": true,
-"rank": 879
+"rank": 878
 },
 {
 "slug": "hormozgan",
@@ -11437,7 +11424,7 @@
 "metroCount": 2,
 "score": 1.4,
 "weighted": true,
-"rank": 880
+"rank": 879
 },
 {
 "slug": "central-malawi",
@@ -11450,7 +11437,7 @@
 "metroCount": 1,
 "score": 1.4,
 "weighted": true,
-"rank": 881
+"rank": 880
 },
 {
 "slug": "south-eastern",
@@ -11463,7 +11450,7 @@
 "metroCount": 1,
 "score": 1.4,
 "weighted": true,
-"rank": 882
+"rank": 881
 },
 {
 "slug": "mandalay",
@@ -11476,7 +11463,7 @@
 "metroCount": 1,
 "score": 1.4,
 "weighted": true,
-"rank": 883
+"rank": 882
 },
 {
 "slug": "khomas",
@@ -11489,7 +11476,7 @@
 "metroCount": 1,
 "score": 1.4,
 "weighted": true,
-"rank": 884
+"rank": 883
 },
 {
 "slug": "balochistan",
@@ -11502,7 +11489,7 @@
 "metroCount": 1,
 "score": 1.4,
 "weighted": true,
-"rank": 885
+"rank": 884
 },
 {
 "slug": "kosice",
@@ -11515,7 +11502,7 @@
 "metroCount": 2,
 "score": 1.4,
 "weighted": true,
-"rank": 886
+"rank": 885
 },
 {
 "slug": "northern-vatakku-uturu",
@@ -11528,7 +11515,7 @@
 "metroCount": 1,
 "score": 1.4,
 "weighted": true,
-"rank": 887
+"rank": 886
 },
 {
 "slug": "arusha",
@@ -11541,7 +11528,7 @@
 "metroCount": 1,
 "score": 1.4,
 "weighted": true,
-"rank": 888
+"rank": 887
 },
 {
 "slug": "copperbelt",
@@ -11554,7 +11541,7 @@
 "metroCount": 2,
 "score": 1.4,
 "weighted": true,
-"rank": 889
+"rank": 888
 },
 {
 "slug": "bracknell-forest",
@@ -11567,7 +11554,7 @@
 "metroCount": 1,
 "score": 1.39,
 "weighted": true,
-"rank": 890
+"rank": 889
 },
 {
 "slug": "montserrado",
@@ -11580,7 +11567,7 @@
 "metroCount": 1,
 "score": 1.38,
 "weighted": true,
-"rank": 891
+"rank": 890
 },
 {
 "slug": "asuncion",
@@ -11593,7 +11580,7 @@
 "metroCount": 1,
 "score": 1.38,
 "weighted": true,
-"rank": 892
+"rank": 891
 },
 {
 "slug": "viseu",
@@ -11606,7 +11593,7 @@
 "metroCount": 2,
 "score": 1.38,
 "weighted": true,
-"rank": 893
+"rank": 892
 },
 {
 "slug": "manouba",
@@ -11619,7 +11606,7 @@
 "metroCount": 1,
 "score": 1.37,
 "weighted": true,
-"rank": 894
+"rank": 893
 },
 {
 "slug": "west-bay",
@@ -11632,7 +11619,7 @@
 "metroCount": 1,
 "score": 1.36,
 "weighted": true,
-"rank": 895
+"rank": 894
 },
 {
 "slug": "sergipe",
@@ -11645,7 +11632,7 @@
 "metroCount": 4,
 "score": 1.35,
 "weighted": true,
-"rank": 896
+"rank": 895
 },
 {
 "slug": "au-vent",
@@ -11658,7 +11645,7 @@
 "metroCount": 1,
 "score": 1.35,
 "weighted": true,
-"rank": 897
+"rank": 896
 },
 {
 "slug": "sous-le-vent",
@@ -11671,7 +11658,7 @@
 "metroCount": 1,
 "score": 1.35,
 "weighted": true,
-"rank": 898
+"rank": 897
 },
 {
 "slug": "halton",
@@ -11684,7 +11671,7 @@
 "metroCount": 1,
 "score": 1.34,
 "weighted": true,
-"rank": 899
+"rank": 898
 },
 {
 "slug": "coloane",
@@ -11697,7 +11684,7 @@
 "metroCount": 1,
 "score": 1.33,
 "weighted": true,
-"rank": 900
+"rank": 899
 },
 {
 "slug": "rif-dimashq",
@@ -11710,7 +11697,7 @@
 "metroCount": 1,
 "score": 1.33,
 "weighted": true,
-"rank": 901
+"rank": 900
 },
 {
 "slug": "serravalle",
@@ -11723,7 +11710,7 @@
 "metroCount": 1,
 "score": 1.32,
 "weighted": true,
-"rank": 902
+"rank": 901
 },
 {
 "slug": "rangpur",
@@ -11736,7 +11723,7 @@
 "metroCount": 1,
 "score": 1.3,
 "weighted": true,
-"rank": 903
+"rank": 902
 },
 {
 "slug": "west-cameroon",
@@ -11749,7 +11736,7 @@
 "metroCount": 5,
 "score": 1.3,
 "weighted": true,
-"rank": 904
+"rank": 903
 },
 {
 "slug": "lualaba",
@@ -11762,7 +11749,7 @@
 "metroCount": 1,
 "score": 1.3,
 "weighted": true,
-"rank": 905
+"rank": 904
 },
 {
 "slug": "larnaca",
@@ -11775,7 +11762,7 @@
 "metroCount": 2,
 "score": 1.3,
 "weighted": true,
-"rank": 906
+"rank": 905
 },
 {
 "slug": "hradec-kralove",
@@ -11788,7 +11775,7 @@
 "metroCount": 2,
 "score": 1.3,
 "weighted": true,
-"rank": 907
+"rank": 906
 },
 {
 "slug": "aswan",
@@ -11801,7 +11788,7 @@
 "metroCount": 2,
 "score": 1.3,
 "weighted": true,
-"rank": 908
+"rank": 907
 },
 {
 "slug": "kerman",
@@ -11814,7 +11801,7 @@
 "metroCount": 4,
 "score": 1.3,
 "weighted": true,
-"rank": 909
+"rank": 908
 },
 {
 "slug": "as-sulaymaniyah",
@@ -11827,7 +11814,7 @@
 "metroCount": 1,
 "score": 1.3,
 "weighted": true,
-"rank": 910
+"rank": 909
 },
 {
 "slug": "kumamoto",
@@ -11840,7 +11827,7 @@
 "metroCount": 1,
 "score": 1.3,
 "weighted": true,
-"rank": 911
+"rank": 910
 },
 {
 "slug": "kyzylorda",
@@ -11853,7 +11840,7 @@
 "metroCount": 2,
 "score": 1.3,
 "weighted": true,
-"rank": 912
+"rank": 911
 },
 {
 "slug": "atyray",
@@ -11866,7 +11853,7 @@
 "metroCount": 1,
 "score": 1.3,
 "weighted": true,
-"rank": 913
+"rank": 912
 },
 {
 "slug": "labuan",
@@ -11879,7 +11866,7 @@
 "metroCount": 1,
 "score": 1.3,
 "weighted": true,
-"rank": 914
+"rank": 913
 },
 {
 "slug": "chiapas",
@@ -11892,7 +11879,7 @@
 "metroCount": 3,
 "score": 1.3,
 "weighted": true,
-"rank": 915
+"rank": 914
 },
 {
 "slug": "campeche",
@@ -11905,7 +11892,7 @@
 "metroCount": 2,
 "score": 1.3,
 "weighted": true,
-"rank": 916
+"rank": 915
 },
 {
 "slug": "oriental",
@@ -11918,7 +11905,7 @@
 "metroCount": 3,
 "score": 1.3,
 "weighted": true,
-"rank": 917
+"rank": 916
 },
 {
 "slug": "timis",
@@ -11931,7 +11918,7 @@
 "metroCount": 1,
 "score": 1.3,
 "weighted": true,
-"rank": 918
+"rank": 917
 },
 {
 "slug": "jeollanam",
@@ -11944,7 +11931,7 @@
 "metroCount": 2,
 "score": 1.3,
 "weighted": true,
-"rank": 919
+"rank": 918
 },
 {
 "slug": "erzurum",
@@ -11954,6 +11941,19 @@
 "type": "Province",
 "continent": "Europe",
 "pop": 762062,
+"metroCount": 1,
+"score": 1.3,
+"weighted": true,
+"rank": 919
+},
+{
+"slug": "mersin",
+"name": "Mersin",
+"country": "Turkey",
+"countrySlug": "turkey",
+"type": "Province",
+"continent": "Europe",
+"pop": 1840425,
 "metroCount": 1,
 "score": 1.3,
 "weighted": true,
@@ -13962,19 +13962,6 @@
 "rank": 1074
 },
 {
-"slug": "portsmouth",
-"name": "Portsmouth",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Unitary Authority",
-"continent": "Europe",
-"pop": 210297,
-"metroCount": 1,
-"score": 0.83,
-"weighted": true,
-"rank": 1075
-},
-{
 "slug": "solothurn",
 "name": "Solothurn",
 "country": "Switzerland",
@@ -13983,6 +13970,19 @@
 "continent": "Europe",
 "pop": 289731,
 "metroCount": 3,
+"score": 0.82,
+"weighted": true,
+"rank": 1075
+},
+{
+"slug": "blackburn-with-darwen",
+"name": "Blackburn with Darwen",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Unitary Authority",
+"continent": "Europe",
+"pop": 157503,
+"metroCount": 1,
 "score": 0.82,
 "weighted": true,
 "rank": 1076
@@ -14287,19 +14287,6 @@
 "rank": 1099
 },
 {
-"slug": "sibiu",
-"name": "Sibiu",
-"country": "Romania",
-"countrySlug": "romania",
-"type": "County",
-"continent": "Europe",
-"pop": 388325,
-"metroCount": 2,
-"score": 0.8,
-"weighted": true,
-"rank": 1100
-},
-{
 "slug": "prahova",
 "name": "Prahova",
 "country": "Romania",
@@ -14310,7 +14297,7 @@
 "metroCount": 1,
 "score": 0.8,
 "weighted": true,
-"rank": 1101
+"rank": 1100
 },
 {
 "slug": "kemerovo-oblast",
@@ -14323,7 +14310,7 @@
 "metroCount": 9,
 "score": 0.8,
 "weighted": true,
-"rank": 1102
+"rank": 1101
 },
 {
 "slug": "irkutsk-oblast",
@@ -14336,7 +14323,7 @@
 "metroCount": 5,
 "score": 0.8,
 "weighted": true,
-"rank": 1103
+"rank": 1102
 },
 {
 "slug": "drava",
@@ -14349,7 +14336,7 @@
 "metroCount": 2,
 "score": 0.8,
 "weighted": true,
-"rank": 1104
+"rank": 1103
 },
 {
 "slug": "river-nile",
@@ -14362,7 +14349,7 @@
 "metroCount": 2,
 "score": 0.8,
 "weighted": false,
-"rank": 1105
+"rank": 1104
 },
 {
 "slug": "south-darfur",
@@ -14375,7 +14362,7 @@
 "metroCount": 1,
 "score": 0.8,
 "weighted": false,
-"rank": 1106
+"rank": 1105
 },
 {
 "slug": "norrbotten",
@@ -14388,7 +14375,7 @@
 "metroCount": 2,
 "score": 0.8,
 "weighted": true,
-"rank": 1107
+"rank": 1106
 },
 {
 "slug": "ar-raqqah",
@@ -14401,7 +14388,7 @@
 "metroCount": 1,
 "score": 0.8,
 "weighted": true,
-"rank": 1108
+"rank": 1107
 },
 {
 "slug": "latakia",
@@ -14414,7 +14401,7 @@
 "metroCount": 1,
 "score": 0.8,
 "weighted": true,
-"rank": 1109
+"rank": 1108
 },
 {
 "slug": "mbeya",
@@ -14427,7 +14414,7 @@
 "metroCount": 1,
 "score": 0.8,
 "weighted": true,
-"rank": 1110
+"rank": 1109
 },
 {
 "slug": "denizli",
@@ -14440,7 +14427,7 @@
 "metroCount": 1,
 "score": 0.8,
 "weighted": true,
-"rank": 1111
+"rank": 1110
 },
 {
 "slug": "luhansk",
@@ -14453,7 +14440,7 @@
 "metroCount": 5,
 "score": 0.8,
 "weighted": true,
-"rank": 1112
+"rank": 1111
 },
 {
 "slug": "khmelnytskyi",
@@ -14466,7 +14453,7 @@
 "metroCount": 2,
 "score": 0.8,
 "weighted": true,
-"rank": 1113
+"rank": 1112
 },
 {
 "slug": "poltava",
@@ -14479,7 +14466,7 @@
 "metroCount": 2,
 "score": 0.8,
 "weighted": true,
-"rank": 1114
+"rank": 1113
 },
 {
 "slug": "north-yorkshire",
@@ -14492,7 +14479,7 @@
 "metroCount": 4,
 "score": 0.8,
 "weighted": true,
-"rank": 1115
+"rank": 1114
 },
 {
 "slug": "conwy",
@@ -14505,7 +14492,7 @@
 "metroCount": 1,
 "score": 0.8,
 "weighted": true,
-"rank": 1116
+"rank": 1115
 },
 {
 "slug": "namangan-uzbekistan",
@@ -14518,7 +14505,7 @@
 "metroCount": 1,
 "score": 0.8,
 "weighted": true,
-"rank": 1117
+"rank": 1116
 },
 {
 "slug": "samarqand-samarkand",
@@ -14531,7 +14518,7 @@
 "metroCount": 1,
 "score": 0.8,
 "weighted": true,
-"rank": 1118
+"rank": 1117
 },
 {
 "slug": "redcar-and-cleveland",
@@ -14544,7 +14531,7 @@
 "metroCount": 1,
 "score": 0.77,
 "weighted": true,
-"rank": 1119
+"rank": 1118
 },
 {
 "slug": "centro-oeste-midwest",
@@ -14557,7 +14544,7 @@
 "metroCount": 1,
 "score": 0.75,
 "weighted": true,
-"rank": 1120
+"rank": 1119
 },
 {
 "slug": "conakry",
@@ -14570,7 +14557,7 @@
 "metroCount": 1,
 "score": 0.74,
 "weighted": true,
-"rank": 1121
+"rank": 1120
 },
 {
 "slug": "south-district",
@@ -14583,20 +14570,7 @@
 "metroCount": 1,
 "score": 0.73,
 "weighted": true,
-"rank": 1122
-},
-{
-"slug": "blackburn-with-darwen",
-"name": "Blackburn with Darwen",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Unitary Authority",
-"continent": "Europe",
-"pop": 157503,
-"metroCount": 1,
-"score": 0.71,
-"weighted": true,
-"rank": 1123
+"rank": 1121
 },
 {
 "slug": "neath-port-talbot",
@@ -14609,7 +14583,20 @@
 "metroCount": 1,
 "score": 0.71,
 "weighted": true,
-"rank": 1124
+"rank": 1122
+},
+{
+"slug": "portsmouth",
+"name": "Portsmouth",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Unitary Authority",
+"continent": "Europe",
+"pop": 210297,
+"metroCount": 1,
+"score": 0.71,
+"weighted": true,
+"rank": 1123
 },
 {
 "slug": "balkh",
@@ -14622,7 +14609,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1125
+"rank": 1124
 },
 {
 "slug": "kandahar",
@@ -14635,7 +14622,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1126
+"rank": 1125
 },
 {
 "slug": "mogilev",
@@ -14648,7 +14635,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1127
+"rank": 1126
 },
 {
 "slug": "rondonia",
@@ -14661,7 +14648,7 @@
 "metroCount": 4,
 "score": 0.7,
 "weighted": true,
-"rank": 1128
+"rank": 1127
 },
 {
 "slug": "tocantins",
@@ -14674,7 +14661,7 @@
 "metroCount": 4,
 "score": 0.7,
 "weighted": true,
-"rank": 1129
+"rank": 1128
 },
 {
 "slug": "amapa",
@@ -14687,7 +14674,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1130
+"rank": 1129
 },
 {
 "slug": "plovdiv",
@@ -14700,7 +14687,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1131
+"rank": 1130
 },
 {
 "slug": "bangui",
@@ -14713,7 +14700,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1132
+"rank": 1131
 },
 {
 "slug": "la-araucania",
@@ -14726,7 +14713,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1133
+"rank": 1132
 },
 {
 "slug": "magdalena",
@@ -14739,7 +14726,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1134
+"rank": 1133
 },
 {
 "slug": "pointe-noire",
@@ -14752,7 +14739,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1135
+"rank": 1134
 },
 {
 "slug": "azuay-asway",
@@ -14765,7 +14752,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1136
+"rank": 1135
 },
 {
 "slug": "sharqia",
@@ -14778,7 +14765,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1137
+"rank": 1136
 },
 {
 "slug": "northern-savonia",
@@ -14791,7 +14778,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1138
+"rank": 1137
 },
 {
 "slug": "kakheti",
@@ -14804,7 +14791,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1139
+"rank": 1138
 },
 {
 "slug": "markazi",
@@ -14817,7 +14804,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1140
+"rank": 1139
 },
 {
 "slug": "basilicata",
@@ -14830,7 +14817,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1141
+"rank": 1140
 },
 {
 "slug": "yamagata",
@@ -14843,7 +14830,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1142
+"rank": 1141
 },
 {
 "slug": "aktobe",
@@ -14856,7 +14843,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1143
+"rank": 1142
 },
 {
 "slug": "kostanay",
@@ -14869,7 +14856,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1144
+"rank": 1143
 },
 {
 "slug": "prizren",
@@ -14882,7 +14869,7 @@
 "metroCount": 3,
 "score": 0.7,
 "weighted": true,
-"rank": 1145
+"rank": 1144
 },
 {
 "slug": "terengganu",
@@ -14895,7 +14882,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1146
+"rank": 1145
 },
 {
 "slug": "nouakchott",
@@ -14908,7 +14895,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1147
+"rank": 1146
 },
 {
 "slug": "inhambane",
@@ -14921,7 +14908,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1148
+"rank": 1147
 },
 {
 "slug": "nampula",
@@ -14934,7 +14921,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1149
+"rank": 1148
 },
 {
 "slug": "madhesh-province-no-2",
@@ -14947,7 +14934,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1150
+"rank": 1149
 },
 {
 "slug": "marlborough",
@@ -14960,7 +14947,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1151
+"rank": 1150
 },
 {
 "slug": "plateau-nigeria",
@@ -14973,7 +14960,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1152
+"rank": 1151
 },
 {
 "slug": "svalbard",
@@ -14986,7 +14973,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1153
+"rank": 1152
 },
 {
 "slug": "colon-panama",
@@ -14999,7 +14986,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1154
+"rank": 1153
 },
 {
 "slug": "junin",
@@ -15012,7 +14999,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1155
+"rank": 1154
 },
 {
 "slug": "cagayan-valley",
@@ -15025,7 +15012,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1156
+"rank": 1155
 },
 {
 "slug": "southwestern-tagalog",
@@ -15038,7 +15025,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1157
+"rank": 1156
 },
 {
 "slug": "belgorod-oblast",
@@ -15051,7 +15038,7 @@
 "metroCount": 3,
 "score": 0.7,
 "weighted": true,
-"rank": 1158
+"rank": 1157
 },
 {
 "slug": "north-kordofan",
@@ -15064,7 +15051,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": false,
-"rank": 1159
+"rank": 1158
 },
 {
 "slug": "kronoberg",
@@ -15077,7 +15064,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1160
+"rank": 1159
 },
 {
 "slug": "schaffhausen",
@@ -15090,7 +15077,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1161
+"rank": 1160
 },
 {
 "slug": "tartus",
@@ -15103,7 +15090,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1162
+"rank": 1161
 },
 {
 "slug": "tekirdag",
@@ -15116,7 +15103,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1163
+"rank": 1162
 },
 {
 "slug": "zaporizhzhia",
@@ -15129,7 +15116,7 @@
 "metroCount": 3,
 "score": 0.7,
 "weighted": true,
-"rank": 1164
+"rank": 1163
 },
 {
 "slug": "chernihiv",
@@ -15142,7 +15129,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1165
+"rank": 1164
 },
 {
 "slug": "kirovohrad",
@@ -15155,7 +15142,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1166
+"rank": 1165
 },
 {
 "slug": "chernivtsi",
@@ -15168,7 +15155,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1167
+"rank": 1166
 },
 {
 "slug": "fermanagh-and-omagh",
@@ -15181,7 +15168,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1168
+"rank": 1167
 },
 {
 "slug": "east-falkland",
@@ -15194,7 +15181,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1169
+"rank": 1168
 },
 {
 "slug": "andijon-andizhan",
@@ -15207,7 +15194,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1170
+"rank": 1169
 },
 {
 "slug": "buxoro-bukhara",
@@ -15220,7 +15207,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1171
+"rank": 1170
 },
 {
 "slug": "aragua",
@@ -15233,7 +15220,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1172
+"rank": 1171
 },
 {
 "slug": "lara",
@@ -15246,7 +15233,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1173
+"rank": 1172
 },
 {
 "slug": "can-tho",
@@ -15259,7 +15246,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1174
+"rank": 1173
 },
 {
 "slug": "mersch",
@@ -15272,7 +15259,7 @@
 "metroCount": 1,
 "score": 0.68,
 "weighted": true,
-"rank": 1175
+"rank": 1174
 },
 {
 "slug": "kırıkkale",
@@ -15285,7 +15272,7 @@
 "metroCount": 1,
 "score": 0.66,
 "weighted": true,
-"rank": 1176
+"rank": 1175
 },
 {
 "slug": "armavir",
@@ -15298,7 +15285,7 @@
 "metroCount": 2,
 "score": 0.64,
 "weighted": true,
-"rank": 1177
+"rank": 1176
 },
 {
 "slug": "southwest-cameroon",
@@ -15311,7 +15298,7 @@
 "metroCount": 1,
 "score": 0.64,
 "weighted": true,
-"rank": 1178
+"rank": 1177
 },
 {
 "slug": "oberland",
@@ -15324,7 +15311,7 @@
 "metroCount": 1,
 "score": 0.64,
 "weighted": true,
-"rank": 1179
+"rank": 1178
 },
 {
 "slug": "mashonaland-east",
@@ -15337,7 +15324,7 @@
 "metroCount": 1,
 "score": 0.64,
 "weighted": true,
-"rank": 1180
+"rank": 1179
 },
 {
 "slug": "leeward-islands-tahiti",
@@ -15350,7 +15337,7 @@
 "metroCount": 1,
 "score": 0.61,
 "weighted": true,
-"rank": 1181
+"rank": 1180
 },
 {
 "slug": "bejaia",
@@ -15363,7 +15350,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1182
+"rank": 1181
 },
 {
 "slug": "chlef",
@@ -15376,7 +15363,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1183
+"rank": 1182
 },
 {
 "slug": "setif",
@@ -15389,7 +15376,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1184
+"rank": 1183
 },
 {
 "slug": "huila-angola",
@@ -15402,7 +15389,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1185
+"rank": 1184
 },
 {
 "slug": "misiones-argentina",
@@ -15415,7 +15402,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1186
+"rank": 1185
 },
 {
 "slug": "chaco",
@@ -15428,7 +15415,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1187
+"rank": 1186
 },
 {
 "slug": "ganja-dashkasan",
@@ -15441,7 +15428,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1188
+"rank": 1187
 },
 {
 "slug": "grodno",
@@ -15454,7 +15441,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1189
+"rank": 1188
 },
 {
 "slug": "namur",
@@ -15467,7 +15454,7 @@
 "metroCount": 4,
 "score": 0.6,
 "weighted": true,
-"rank": 1190
+"rank": 1189
 },
 {
 "slug": "oruro",
@@ -15480,7 +15467,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1191
+"rank": 1190
 },
 {
 "slug": "north-cameroon",
@@ -15493,7 +15480,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1192
+"rank": 1191
 },
 {
 "slug": "nunavut",
@@ -15506,7 +15493,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1193
+"rank": 1192
 },
 {
 "slug": "la-guajira",
@@ -15519,7 +15506,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1194
+"rank": 1193
 },
 {
 "slug": "sucre-colombia",
@@ -15532,7 +15519,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1195
+"rank": 1194
 },
 {
 "slug": "lomami",
@@ -15545,7 +15532,7 @@
 "metroCount": 3,
 "score": 0.6,
 "weighted": true,
-"rank": 1196
+"rank": 1195
 },
 {
 "slug": "tanganyika",
@@ -15558,7 +15545,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1197
+"rank": 1196
 },
 {
 "slug": "cartago",
@@ -15571,7 +15558,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1198
+"rank": 1197
 },
 {
 "slug": "ciego-de-avila",
@@ -15584,7 +15571,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1199
+"rank": 1198
 },
 {
 "slug": "matanzas",
@@ -15597,7 +15584,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1200
+"rank": 1199
 },
 {
 "slug": "camaguey",
@@ -15610,7 +15597,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1201
+"rank": 1200
 },
 {
 "slug": "cienfuegos",
@@ -15623,7 +15610,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1202
+"rank": 1201
 },
 {
 "slug": "holguin",
@@ -15636,7 +15623,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1203
+"rank": 1202
 },
 {
 "slug": "villa-clara",
@@ -15649,7 +15636,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1204
+"rank": 1203
 },
 {
 "slug": "south-bohemia",
@@ -15662,7 +15649,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1205
+"rank": 1204
 },
 {
 "slug": "el-oro-kuri",
@@ -15675,7 +15662,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1206
+"rank": 1205
 },
 {
 "slug": "faiyum",
@@ -15688,7 +15675,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1207
+"rank": 1206
 },
 {
 "slug": "matruh",
@@ -15701,7 +15688,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1208
+"rank": 1207
 },
 {
 "slug": "central-eritrea",
@@ -15714,7 +15701,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": false,
-"rank": 1209
+"rank": 1208
 },
 {
 "slug": "satakunta",
@@ -15727,7 +15714,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1210
+"rank": 1209
 },
 {
 "slug": "somogy",
@@ -15740,7 +15727,7 @@
 "metroCount": 4,
 "score": 0.6,
 "weighted": true,
-"rank": 1211
+"rank": 1210
 },
 {
 "slug": "szabolcs-szatmar-bereg",
@@ -15753,7 +15740,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1212
+"rank": 1211
 },
 {
 "slug": "zala",
@@ -15766,7 +15753,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1213
+"rank": 1212
 },
 {
 "slug": "baranya",
@@ -15779,7 +15766,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1214
+"rank": 1213
 },
 {
 "slug": "hajdu-bihar",
@@ -15792,7 +15779,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1215
+"rank": 1214
 },
 {
 "slug": "norðurland-eystra",
@@ -15805,7 +15792,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1216
+"rank": 1215
 },
 {
 "slug": "manipur",
@@ -15818,7 +15805,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1217
+"rank": 1216
 },
 {
 "slug": "north-sulawesi",
@@ -15831,7 +15818,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1218
+"rank": 1217
 },
 {
 "slug": "west-nusa-tenggara",
@@ -15844,7 +15831,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1219
+"rank": 1218
 },
 {
 "slug": "kermanshah",
@@ -15857,7 +15844,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1220
+"rank": 1219
 },
 {
 "slug": "najaf",
@@ -15870,7 +15857,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1221
+"rank": 1220
 },
 {
 "slug": "st-james-jamaica",
@@ -15883,7 +15870,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1222
+"rank": 1221
 },
 {
 "slug": "miyazaki",
@@ -15896,7 +15883,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1223
+"rank": 1222
 },
 {
 "slug": "mangystau",
@@ -15909,7 +15896,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1224
+"rank": 1223
 },
 {
 "slug": "pavlodar",
@@ -15922,7 +15909,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1225
+"rank": 1224
 },
 {
 "slug": "abai",
@@ -15935,7 +15922,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1226
+"rank": 1225
 },
 {
 "slug": "east-kazakhstan",
@@ -15948,7 +15935,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1227
+"rank": 1226
 },
 {
 "slug": "north-kazakhstan",
@@ -15961,7 +15948,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1228
+"rank": 1227
 },
 {
 "slug": "kisumu",
@@ -15974,7 +15961,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1229
+"rank": 1228
 },
 {
 "slug": "uasin-gishu",
@@ -15987,7 +15974,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1230
+"rank": 1229
 },
 {
 "slug": "diana",
@@ -16000,7 +15987,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1231
+"rank": 1230
 },
 {
 "slug": "perak",
@@ -16013,7 +16000,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1232
+"rank": 1231
 },
 {
 "slug": "bago",
@@ -16026,7 +16013,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1233
+"rank": 1232
 },
 {
 "slug": "irrawaddy",
@@ -16039,7 +16026,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1234
+"rank": 1233
 },
 {
 "slug": "pradesh-1-province-no-1",
@@ -16052,7 +16039,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1235
+"rank": 1234
 },
 {
 "slug": "sudurpashchim-far-west",
@@ -16065,7 +16052,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1236
+"rank": 1235
 },
 {
 "slug": "imo",
@@ -16078,7 +16065,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1237
+"rank": 1236
 },
 {
 "slug": "katsina",
@@ -16091,7 +16078,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1238
+"rank": 1237
 },
 {
 "slug": "kwara",
@@ -16104,7 +16091,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1239
+"rank": 1238
 },
 {
 "slug": "southwest-north-macedonia",
@@ -16117,7 +16104,7 @@
 "metroCount": 3,
 "score": 0.6,
 "weighted": true,
-"rank": 1240
+"rank": 1239
 },
 {
 "slug": "northeast",
@@ -16130,7 +16117,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1241
+"rank": 1240
 },
 {
 "slug": "polog",
@@ -16143,7 +16130,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1242
+"rank": 1241
 },
 {
 "slug": "chiriqui",
@@ -16156,7 +16143,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1243
+"rank": 1242
 },
 {
 "slug": "castelo-branco",
@@ -16169,7 +16156,7 @@
 "metroCount": 3,
 "score": 0.6,
 "weighted": true,
-"rank": 1244
+"rank": 1243
 },
 {
 "slug": "leiria",
@@ -16182,7 +16169,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1245
+"rank": 1244
 },
 {
 "slug": "arad",
@@ -16195,7 +16182,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1246
+"rank": 1245
 },
 {
 "slug": "bacau",
@@ -16208,7 +16195,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1247
+"rank": 1246
 },
 {
 "slug": "bihor",
@@ -16221,7 +16208,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1248
+"rank": 1247
 },
 {
 "slug": "dolj",
@@ -16234,7 +16221,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1249
+"rank": 1248
 },
 {
 "slug": "altai-krai",
@@ -16247,7 +16234,7 @@
 "metroCount": 4,
 "score": 0.6,
 "weighted": true,
-"rank": 1250
+"rank": 1249
 },
 {
 "slug": "ivanovo-oblast",
@@ -16260,7 +16247,7 @@
 "metroCount": 3,
 "score": 0.6,
 "weighted": true,
-"rank": 1251
+"rank": 1250
 },
 {
 "slug": "komi",
@@ -16273,7 +16260,7 @@
 "metroCount": 3,
 "score": 0.6,
 "weighted": true,
-"rank": 1252
+"rank": 1251
 },
 {
 "slug": "tyumen-oblast",
@@ -16286,7 +16273,7 @@
 "metroCount": 3,
 "score": 0.6,
 "weighted": true,
-"rank": 1253
+"rank": 1252
 },
 {
 "slug": "kursk-oblast",
@@ -16299,7 +16286,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1254
+"rank": 1253
 },
 {
 "slug": "ulyanovsk-oblast",
@@ -16312,7 +16299,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1255
+"rank": 1254
 },
 {
 "slug": "thies",
@@ -16325,7 +16312,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1256
+"rank": 1255
 },
 {
 "slug": "moravica",
@@ -16338,7 +16325,7 @@
 "metroCount": 3,
 "score": 0.6,
 "weighted": true,
-"rank": 1257
+"rank": 1256
 },
 {
 "slug": "raska",
@@ -16351,7 +16338,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1258
+"rank": 1257
 },
 {
 "slug": "nis",
@@ -16364,7 +16351,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1259
+"rank": 1258
 },
 {
 "slug": "banska-bystrica",
@@ -16377,7 +16364,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1260
+"rank": 1259
 },
 {
 "slug": "coastal-karst",
@@ -16390,7 +16377,7 @@
 "metroCount": 3,
 "score": 0.6,
 "weighted": true,
-"rank": 1261
+"rank": 1260
 },
 {
 "slug": "mura",
@@ -16403,7 +16390,7 @@
 "metroCount": 3,
 "score": 0.6,
 "weighted": true,
-"rank": 1262
+"rank": 1261
 },
 {
 "slug": "woqooyi-galbeed",
@@ -16416,7 +16403,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": false,
-"rank": 1263
+"rank": 1262
 },
 {
 "slug": "north-west-south-africa",
@@ -16429,7 +16416,7 @@
 "metroCount": 3,
 "score": 0.6,
 "weighted": true,
-"rank": 1264
+"rank": 1263
 },
 {
 "slug": "chungcheongbuk",
@@ -16442,7 +16429,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1265
+"rank": 1264
 },
 {
 "slug": "north-western-wayamba",
@@ -16455,7 +16442,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1266
+"rank": 1265
 },
 {
 "slug": "jonkoping",
@@ -16468,7 +16455,7 @@
 "metroCount": 4,
 "score": 0.6,
 "weighted": true,
-"rank": 1267
+"rank": 1266
 },
 {
 "slug": "vasternorrland",
@@ -16481,7 +16468,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1268
+"rank": 1267
 },
 {
 "slug": "balıkesir",
@@ -16494,7 +16481,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1269
+"rank": 1268
 },
 {
 "slug": "sakarya",
@@ -16507,7 +16494,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1270
+"rank": 1269
 },
 {
 "slug": "sumy",
@@ -16520,7 +16507,7 @@
 "metroCount": 4,
 "score": 0.6,
 "weighted": true,
-"rank": 1271
+"rank": 1270
 },
 {
 "slug": "wiltshire",
@@ -16533,7 +16520,7 @@
 "metroCount": 3,
 "score": 0.6,
 "weighted": true,
-"rank": 1272
+"rank": 1271
 },
 {
 "slug": "bedford",
@@ -16546,7 +16533,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1273
+"rank": 1272
 },
 {
 "slug": "north-east-lincolnshire",
@@ -16559,7 +16546,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1274
+"rank": 1273
 },
 {
 "slug": "maldonado",
@@ -16572,7 +16559,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1275
+"rank": 1274
 },
 {
 "slug": "jizzax-dzhizak",
@@ -16585,7 +16572,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1276
+"rank": 1275
 },
 {
 "slug": "surxondaryo-surkhandarya",
@@ -16598,7 +16585,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1277
+"rank": 1276
 },
 {
 "slug": "xorazm-khorezm",
@@ -16611,7 +16598,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1278
+"rank": 1277
 },
 {
 "slug": "portuguesa",
@@ -16624,7 +16611,7 @@
 "metroCount": 2,
 "score": 0.6,
 "weighted": true,
-"rank": 1279
+"rank": 1278
 },
 {
 "slug": "anzoategui",
@@ -16637,7 +16624,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1280
+"rank": 1279
 },
 {
 "slug": "tachira",
@@ -16650,7 +16637,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1281
+"rank": 1280
 },
 {
 "slug": "aden",
@@ -16663,7 +16650,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": false,
-"rank": 1282
+"rank": 1281
 },
 {
 "slug": "southern-zambia",
@@ -16676,7 +16663,7 @@
 "metroCount": 1,
 "score": 0.6,
 "weighted": true,
-"rank": 1283
+"rank": 1282
 },
 {
 "slug": "sidama",
@@ -16689,7 +16676,7 @@
 "metroCount": 1,
 "score": 0.59,
 "weighted": true,
-"rank": 1284
+"rank": 1283
 },
 {
 "slug": "schwyz",
@@ -16702,7 +16689,7 @@
 "metroCount": 1,
 "score": 0.59,
 "weighted": true,
-"rank": 1285
+"rank": 1284
 },
 {
 "slug": "jiayi-chiayi",
@@ -16715,7 +16702,7 @@
 "metroCount": 1,
 "score": 0.59,
 "weighted": true,
-"rank": 1286
+"rank": 1285
 },
 {
 "slug": "north-district",
@@ -16728,7 +16715,7 @@
 "metroCount": 1,
 "score": 0.58,
 "weighted": true,
-"rank": 1287
+"rank": 1286
 },
 {
 "slug": "ararat",
@@ -16741,7 +16728,7 @@
 "metroCount": 2,
 "score": 0.57,
 "weighted": true,
-"rank": 1288
+"rank": 1287
 },
 {
 "slug": "diyala",
@@ -16754,7 +16741,7 @@
 "metroCount": 1,
 "score": 0.57,
 "weighted": true,
-"rank": 1289
+"rank": 1288
 },
 {
 "slug": "vidzeme",
@@ -16767,7 +16754,7 @@
 "metroCount": 2,
 "score": 0.57,
 "weighted": true,
-"rank": 1290
+"rank": 1289
 },
 {
 "slug": "north-hwanghae",
@@ -16780,7 +16767,7 @@
 "metroCount": 1,
 "score": 0.56,
 "weighted": true,
-"rank": 1291
+"rank": 1290
 },
 {
 "slug": "dorset",
@@ -16793,7 +16780,7 @@
 "metroCount": 3,
 "score": 0.56,
 "weighted": true,
-"rank": 1292
+"rank": 1291
 },
 {
 "slug": "north-lincolnshire",
@@ -16806,7 +16793,7 @@
 "metroCount": 2,
 "score": 0.56,
 "weighted": true,
-"rank": 1293
+"rank": 1292
 },
 {
 "slug": "yamanashi",
@@ -16819,7 +16806,7 @@
 "metroCount": 2,
 "score": 0.55,
 "weighted": true,
-"rank": 1294
+"rank": 1293
 },
 {
 "slug": "masaya",
@@ -16832,7 +16819,7 @@
 "metroCount": 1,
 "score": 0.55,
 "weighted": true,
-"rank": 1295
+"rank": 1294
 },
 {
 "slug": "western-area-rural",
@@ -16845,7 +16832,7 @@
 "metroCount": 1,
 "score": 0.55,
 "weighted": true,
-"rank": 1296
+"rank": 1295
 },
 {
 "slug": "veszprem",
@@ -16858,7 +16845,7 @@
 "metroCount": 3,
 "score": 0.54,
 "weighted": true,
-"rank": 1297
+"rank": 1296
 },
 {
 "slug": "kingston",
@@ -16871,7 +16858,7 @@
 "metroCount": 1,
 "score": 0.53,
 "weighted": true,
-"rank": 1298
+"rank": 1297
 },
 {
 "slug": "western-area-urban",
@@ -16884,7 +16871,7 @@
 "metroCount": 1,
 "score": 0.51,
 "weighted": true,
-"rank": 1299
+"rank": 1298
 },
 {
 "slug": "herat",
@@ -16897,7 +16884,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1300
+"rank": 1299
 },
 {
 "slug": "entre-rios",
@@ -16910,7 +16897,7 @@
 "metroCount": 2,
 "score": 0.5,
 "weighted": true,
-"rank": 1301
+"rank": 1300
 },
 {
 "slug": "neuquen",
@@ -16923,7 +16910,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1302
+"rank": 1301
 },
 {
 "slug": "syunik",
@@ -16936,7 +16923,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1303
+"rank": 1302
 },
 {
 "slug": "cocos-keeling-islands",
@@ -16949,7 +16936,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1304
+"rank": 1303
 },
 {
 "slug": "nakhchivan",
@@ -16962,7 +16949,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1305
+"rank": 1304
 },
 {
 "slug": "amazonas-colombia",
@@ -16975,7 +16962,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1306
+"rank": 1305
 },
 {
 "slug": "san-andres-providencia-y-santa-catalina",
@@ -16988,7 +16975,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1307
+"rank": 1306
 },
 {
 "slug": "tshopo",
@@ -17001,7 +16988,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1308
+"rank": 1307
 },
 {
 "slug": "istria",
@@ -17014,7 +17001,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1309
+"rank": 1308
 },
 {
 "slug": "osijek-baranja",
@@ -17027,7 +17014,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1310
+"rank": 1309
 },
 {
 "slug": "zadar",
@@ -17040,7 +17027,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1311
+"rank": 1310
 },
 {
 "slug": "isla-de-la-juventud-isla-de-pinos",
@@ -17053,7 +17040,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1312
+"rank": 1311
 },
 {
 "slug": "santiago-de-cuba",
@@ -17066,7 +17053,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1313
+"rank": 1312
 },
 {
 "slug": "paphos",
@@ -17079,7 +17066,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1314
+"rank": 1313
 },
 {
 "slug": "karlovy-vary",
@@ -17092,7 +17079,7 @@
 "metroCount": 2,
 "score": 0.5,
 "weighted": true,
-"rank": 1315
+"rank": 1314
 },
 {
 "slug": "sermersooq",
@@ -17105,7 +17092,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1316
+"rank": 1315
 },
 {
 "slug": "la-romana",
@@ -17118,7 +17105,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1317
+"rank": 1316
 },
 {
 "slug": "qena",
@@ -17131,7 +17118,7 @@
 "metroCount": 2,
 "score": 0.5,
 "weighted": true,
-"rank": 1318
+"rank": 1317
 },
 {
 "slug": "sohag",
@@ -17144,7 +17131,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1319
+"rank": 1318
 },
 {
 "slug": "parnu",
@@ -17157,7 +17144,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1320
+"rank": 1319
 },
 {
 "slug": "tartu",
@@ -17170,7 +17157,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1321
+"rank": 1320
 },
 {
 "slug": "northern-ghana",
@@ -17183,7 +17170,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1322
+"rank": 1321
 },
 {
 "slug": "himachal-pradesh",
@@ -17196,7 +17183,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1323
+"rank": 1322
 },
 {
 "slug": "lorestan",
@@ -17209,7 +17196,7 @@
 "metroCount": 2,
 "score": 0.5,
 "weighted": true,
-"rank": 1324
+"rank": 1323
 },
 {
 "slug": "mazandaran",
@@ -17222,7 +17209,7 @@
 "metroCount": 2,
 "score": 0.5,
 "weighted": true,
-"rank": 1325
+"rank": 1324
 },
 {
 "slug": "ardabil",
@@ -17235,7 +17222,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1326
+"rank": 1325
 },
 {
 "slug": "hamadan",
@@ -17248,7 +17235,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1327
+"rank": 1326
 },
 {
 "slug": "sistan-and-baluchestan",
@@ -17261,7 +17248,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1328
+"rank": 1327
 },
 {
 "slug": "dhi-qar",
@@ -17274,7 +17261,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1329
+"rank": 1328
 },
 {
 "slug": "kirkuk",
@@ -17287,7 +17274,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1330
+"rank": 1329
 },
 {
 "slug": "karagandy",
@@ -17300,7 +17287,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1331
+"rank": 1330
 },
 {
 "slug": "kilifi",
@@ -17313,7 +17300,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1332
+"rank": 1331
 },
 {
 "slug": "gjilan-gnjilane",
@@ -17326,7 +17313,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1333
+"rank": 1332
 },
 {
 "slug": "latgale",
@@ -17339,7 +17326,7 @@
 "metroCount": 2,
 "score": 0.5,
 "weighted": true,
-"rank": 1334
+"rank": 1333
 },
 {
 "slug": "majuro",
@@ -17352,7 +17339,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1335
+"rank": 1334
 },
 {
 "slug": "morelos",
@@ -17365,7 +17352,7 @@
 "metroCount": 3,
 "score": 0.5,
 "weighted": true,
-"rank": 1336
+"rank": 1335
 },
 {
 "slug": "zacatecas",
@@ -17378,7 +17365,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1337
+"rank": 1336
 },
 {
 "slug": "sofala",
@@ -17391,7 +17378,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1338
+"rank": 1337
 },
 {
 "slug": "sagaing",
@@ -17404,7 +17391,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1339
+"rank": 1338
 },
 {
 "slug": "shan",
@@ -17417,7 +17404,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1340
+"rank": 1339
 },
 {
 "slug": "bauchi",
@@ -17430,7 +17417,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1341
+"rank": 1340
 },
 {
 "slug": "borno",
@@ -17443,7 +17430,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1342
+"rank": 1341
 },
 {
 "slug": "lambayeque",
@@ -17456,7 +17443,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1343
+"rank": 1342
 },
 {
 "slug": "ilocos",
@@ -17467,6 +17454,19 @@
 "continent": "Asia",
 "pop": 5301139,
 "metroCount": 1,
+"score": 0.5,
+"weighted": true,
+"rank": 1343
+},
+{
+"slug": "sibiu",
+"name": "Sibiu",
+"country": "Romania",
+"countrySlug": "romania",
+"type": "County",
+"continent": "Europe",
+"pop": 388325,
+"metroCount": 2,
 "score": 0.5,
 "weighted": true,
 "rank": 1344
@@ -17485,6 +17485,19 @@
 "rank": 1345
 },
 {
+"slug": "satu-mare",
+"name": "Satu Mare",
+"country": "Romania",
+"countrySlug": "romania",
+"type": "County",
+"continent": "Europe",
+"pop": 330668,
+"metroCount": 1,
+"score": 0.5,
+"weighted": true,
+"rank": 1346
+},
+{
 "slug": "suceava",
 "name": "Suceava",
 "country": "Romania",
@@ -17495,7 +17508,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1346
+"rank": 1347
 },
 {
 "slug": "yamalo-nenets",
@@ -17508,7 +17521,7 @@
 "metroCount": 2,
 "score": 0.5,
 "weighted": true,
-"rank": 1347
+"rank": 1348
 },
 {
 "slug": "diourbel",
@@ -17521,7 +17534,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1348
+"rank": 1349
 },
 {
 "slug": "sodermanland",
@@ -17534,7 +17547,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1349
+"rank": 1350
 },
 {
 "slug": "dodoma",
@@ -17547,7 +17560,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1350
+"rank": 1351
 },
 {
 "slug": "batman",
@@ -17560,7 +17573,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1351
+"rank": 1352
 },
 {
 "slug": "malatya",
@@ -17573,7 +17586,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1352
+"rank": 1353
 },
 {
 "slug": "ordu",
@@ -17586,7 +17599,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1353
+"rank": 1354
 },
 {
 "slug": "sivas",
@@ -17599,7 +17612,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1354
+"rank": 1355
 },
 {
 "slug": "van",
@@ -17612,7 +17625,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1355
+"rank": 1356
 },
 {
 "slug": "cherkasy",
@@ -17625,7 +17638,7 @@
 "metroCount": 2,
 "score": 0.5,
 "weighted": true,
-"rank": 1356
+"rank": 1357
 },
 {
 "slug": "mykolaiv",
@@ -17638,7 +17651,7 @@
 "metroCount": 2,
 "score": 0.5,
 "weighted": true,
-"rank": 1357
+"rank": 1358
 },
 {
 "slug": "rivne",
@@ -17651,7 +17664,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1358
+"rank": 1359
 },
 {
 "slug": "westmorland-and-furness",
@@ -17664,7 +17677,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1359
+"rank": 1360
 },
 {
 "slug": "saipan",
@@ -17677,7 +17690,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1360
+"rank": 1361
 },
 {
 "slug": "monagas",
@@ -17690,7 +17703,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1361
+"rank": 1362
 },
 {
 "slug": "nghe-an",
@@ -17703,7 +17716,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1362
+"rank": 1363
 },
 {
 "slug": "thanh-hoa",
@@ -17716,7 +17729,7 @@
 "metroCount": 1,
 "score": 0.5,
 "weighted": true,
-"rank": 1363
+"rank": 1364
 },
 {
 "slug": "hadramaut",
@@ -17729,7 +17742,7 @@
 "metroCount": 2,
 "score": 0.5,
 "weighted": false,
-"rank": 1364
+"rank": 1365
 },
 {
 "slug": "artemisa",
@@ -17742,7 +17755,7 @@
 "metroCount": 2,
 "score": 0.48,
 "weighted": true,
-"rank": 1365
+"rank": 1366
 },
 {
 "slug": "niamey",
@@ -17755,7 +17768,7 @@
 "metroCount": 1,
 "score": 0.48,
 "weighted": true,
-"rank": 1366
+"rank": 1367
 },
 {
 "slug": "citta-di-san-marino",
@@ -17768,7 +17781,7 @@
 "metroCount": 1,
 "score": 0.48,
 "weighted": true,
-"rank": 1367
+"rank": 1368
 },
 {
 "slug": "guernsey",
@@ -17781,7 +17794,7 @@
 "metroCount": 1,
 "score": 0.48,
 "weighted": true,
-"rank": 1368
+"rank": 1369
 },
 {
 "slug": "pointe-a-pitre",
@@ -17794,7 +17807,7 @@
 "metroCount": 1,
 "score": 0.47,
 "weighted": true,
-"rank": 1369
+"rank": 1370
 },
 {
 "slug": "koulikoro",
@@ -17807,7 +17820,7 @@
 "metroCount": 1,
 "score": 0.47,
 "weighted": true,
-"rank": 1370
+"rank": 1371
 },
 {
 "slug": "kongo-central",
@@ -17820,7 +17833,7 @@
 "metroCount": 3,
 "score": 0.46,
 "weighted": true,
-"rank": 1371
+"rank": 1372
 },
 {
 "slug": "remich",
@@ -17833,7 +17846,7 @@
 "metroCount": 1,
 "score": 0.46,
 "weighted": true,
-"rank": 1372
+"rank": 1373
 },
 {
 "slug": "port-loko",
@@ -17846,7 +17859,7 @@
 "metroCount": 1,
 "score": 0.44,
 "weighted": true,
-"rank": 1373
+"rank": 1374
 },
 {
 "slug": "town-area",
@@ -17859,7 +17872,7 @@
 "metroCount": 1,
 "score": 0.44,
 "weighted": true,
-"rank": 1374
+"rank": 1375
 },
 {
 "slug": "basse-terre",
@@ -17872,7 +17885,7 @@
 "metroCount": 1,
 "score": 0.43,
 "weighted": true,
-"rank": 1375
+"rank": 1376
 },
 {
 "slug": "tottori",
@@ -17885,7 +17898,7 @@
 "metroCount": 2,
 "score": 0.42,
 "weighted": true,
-"rank": 1376
+"rank": 1377
 },
 {
 "slug": "domagnano",
@@ -17898,7 +17911,7 @@
 "metroCount": 1,
 "score": 0.42,
 "weighted": true,
-"rank": 1377
+"rank": 1378
 },
 {
 "slug": "annaba",
@@ -17911,7 +17924,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1378
+"rank": 1379
 },
 {
 "slug": "benguela",
@@ -17924,7 +17937,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1379
+"rank": 1380
 },
 {
 "slug": "chubut",
@@ -17937,7 +17950,7 @@
 "metroCount": 2,
 "score": 0.4,
 "weighted": true,
-"rank": 1380
+"rank": 1381
 },
 {
 "slug": "rio-negro-argentina",
@@ -17950,7 +17963,7 @@
 "metroCount": 2,
 "score": 0.4,
 "weighted": true,
-"rank": 1381
+"rank": 1382
 },
 {
 "slug": "jujuy",
@@ -17963,7 +17976,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1382
+"rank": 1383
 },
 {
 "slug": "gazakh-tovuz",
@@ -17976,7 +17989,7 @@
 "metroCount": 2,
 "score": 0.4,
 "weighted": true,
-"rank": 1383
+"rank": 1384
 },
 {
 "slug": "lankaran-astara",
@@ -17989,7 +18002,7 @@
 "metroCount": 2,
 "score": 0.4,
 "weighted": true,
-"rank": 1384
+"rank": 1385
 },
 {
 "slug": "tarija",
@@ -18002,7 +18015,7 @@
 "metroCount": 2,
 "score": 0.4,
 "weighted": true,
-"rank": 1385
+"rank": 1386
 },
 {
 "slug": "chuquisaca",
@@ -18015,7 +18028,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1386
+"rank": 1387
 },
 {
 "slug": "burgas",
@@ -18028,7 +18041,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1387
+"rank": 1388
 },
 {
 "slug": "northwest",
@@ -18041,7 +18054,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1388
+"rank": 1389
 },
 {
 "slug": "nuble",
@@ -18054,7 +18067,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1389
+"rank": 1390
 },
 {
 "slug": "huila-colombia",
@@ -18067,7 +18080,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1390
+"rank": 1391
 },
 {
 "slug": "tolima",
@@ -18080,7 +18093,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1391
+"rank": 1392
 },
 {
 "slug": "maniema",
@@ -18093,7 +18106,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1392
+"rank": 1393
 },
 {
 "slug": "equateur",
@@ -18106,7 +18119,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1393
+"rank": 1394
 },
 {
 "slug": "vagar",
@@ -18119,7 +18132,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1394
+"rank": 1395
 },
 {
 "slug": "san-pedro-de-macoris",
@@ -18132,7 +18145,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1395
+"rank": 1396
 },
 {
 "slug": "dili",
@@ -18145,7 +18158,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1396
+"rank": 1397
 },
 {
 "slug": "dakahlia",
@@ -18158,7 +18171,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1397
+"rank": 1398
 },
 {
 "slug": "bioko-norte",
@@ -18171,7 +18184,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1398
+"rank": 1399
 },
 {
 "slug": "hhohho",
@@ -18184,7 +18197,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1399
+"rank": 1400
 },
 {
 "slug": "lapland",
@@ -18197,7 +18210,7 @@
 "metroCount": 2,
 "score": 0.4,
 "weighted": true,
-"rank": 1400
+"rank": 1401
 },
 {
 "slug": "southern-savonia",
@@ -18210,7 +18223,7 @@
 "metroCount": 2,
 "score": 0.4,
 "weighted": true,
-"rank": 1401
+"rank": 1402
 },
 {
 "slug": "south-karelia",
@@ -18223,7 +18236,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1402
+"rank": 1403
 },
 {
 "slug": "aland-islands",
@@ -18236,7 +18249,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1403
+"rank": 1404
 },
 {
 "slug": "volta",
@@ -18249,7 +18262,7 @@
 "metroCount": 2,
 "score": 0.4,
 "weighted": true,
-"rank": 1404
+"rank": 1405
 },
 {
 "slug": "bono",
@@ -18262,7 +18275,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1405
+"rank": 1406
 },
 {
 "slug": "western-ghana",
@@ -18275,7 +18288,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1406
+"rank": 1407
 },
 {
 "slug": "kankan",
@@ -18288,7 +18301,7 @@
 "metroCount": 2,
 "score": 0.4,
 "weighted": true,
-"rank": 1407
+"rank": 1408
 },
 {
 "slug": "csongrad",
@@ -18301,7 +18314,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1408
+"rank": 1409
 },
 {
 "slug": "suðurnes",
@@ -18314,7 +18327,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1409
+"rank": 1410
 },
 {
 "slug": "papua",
@@ -18327,7 +18340,7 @@
 "metroCount": 2,
 "score": 0.4,
 "weighted": true,
-"rank": 1410
+"rank": 1411
 },
 {
 "slug": "east-nusa-tenggara",
@@ -18340,7 +18353,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1411
+"rank": 1412
 },
 {
 "slug": "maluku",
@@ -18353,7 +18366,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1412
+"rank": 1413
 },
 {
 "slug": "golestan",
@@ -18366,7 +18379,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1413
+"rank": 1414
 },
 {
 "slug": "qom",
@@ -18379,7 +18392,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1414
+"rank": 1415
 },
 {
 "slug": "gaza-strip",
@@ -18392,7 +18405,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1415
+"rank": 1416
 },
 {
 "slug": "kochi",
@@ -18405,7 +18418,7 @@
 "metroCount": 2,
 "score": 0.4,
 "weighted": true,
-"rank": 1416
+"rank": 1417
 },
 {
 "slug": "jambyl",
@@ -18418,7 +18431,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1417
+"rank": 1418
 },
 {
 "slug": "west-kazakhstan",
@@ -18431,7 +18444,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1418
+"rank": 1419
 },
 {
 "slug": "maseru",
@@ -18444,7 +18457,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1419
+"rank": 1420
 },
 {
 "slug": "anosy",
@@ -18457,7 +18470,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1420
+"rank": 1421
 },
 {
 "slug": "atsinanana",
@@ -18470,7 +18483,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1421
+"rank": 1422
 },
 {
 "slug": "northern-malawi",
@@ -18483,7 +18496,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1422
+"rank": 1423
 },
 {
 "slug": "transnistria",
@@ -18496,7 +18509,7 @@
 "metroCount": 2,
 "score": 0.4,
 "weighted": true,
-"rank": 1423
+"rank": 1424
 },
 {
 "slug": "tete",
@@ -18509,7 +18522,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1424
+"rank": 1425
 },
 {
 "slug": "karnali",
@@ -18522,7 +18535,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1425
+"rank": 1426
 },
 {
 "slug": "akwa-ibom",
@@ -18535,7 +18548,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1426
+"rank": 1427
 },
 {
 "slug": "bayelsa",
@@ -18548,7 +18561,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1427
+"rank": 1428
 },
 {
 "slug": "cross-river",
@@ -18561,7 +18574,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1428
+"rank": 1429
 },
 {
 "slug": "osun",
@@ -18574,7 +18587,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1429
+"rank": 1430
 },
 {
 "slug": "alto-parana",
@@ -18587,7 +18600,7 @@
 "metroCount": 2,
 "score": 0.4,
 "weighted": true,
-"rank": 1430
+"rank": 1431
 },
 {
 "slug": "la-libertad-peru",
@@ -18600,7 +18613,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1431
+"rank": 1432
 },
 {
 "slug": "brasov",
@@ -18613,7 +18626,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1432
+"rank": 1433
 },
 {
 "slug": "iasi",
@@ -18626,7 +18639,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1433
+"rank": 1434
 },
 {
 "slug": "tula-oblast",
@@ -18639,7 +18652,7 @@
 "metroCount": 5,
 "score": 0.4,
 "weighted": true,
-"rank": 1434
+"rank": 1435
 },
 {
 "slug": "sakha",
@@ -18652,7 +18665,7 @@
 "metroCount": 3,
 "score": 0.4,
 "weighted": true,
-"rank": 1435
+"rank": 1436
 },
 {
 "slug": "bryansk-oblast",
@@ -18665,7 +18678,7 @@
 "metroCount": 2,
 "score": 0.4,
 "weighted": true,
-"rank": 1436
+"rank": 1437
 },
 {
 "slug": "zabaykalsky-krai",
@@ -18678,7 +18691,7 @@
 "metroCount": 2,
 "score": 0.4,
 "weighted": true,
-"rank": 1437
+"rank": 1438
 },
 {
 "slug": "astrakhan-oblast",
@@ -18691,7 +18704,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1438
+"rank": 1439
 },
 {
 "slug": "ha-il",
@@ -18704,7 +18717,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1439
+"rank": 1440
 },
 {
 "slug": "najran",
@@ -18717,7 +18730,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1440
+"rank": 1441
 },
 {
 "slug": "south-backa",
@@ -18730,7 +18743,7 @@
 "metroCount": 2,
 "score": 0.4,
 "weighted": true,
-"rank": 1441
+"rank": 1442
 },
 {
 "slug": "nitra",
@@ -18743,7 +18756,7 @@
 "metroCount": 3,
 "score": 0.4,
 "weighted": true,
-"rank": 1442
+"rank": 1443
 },
 {
 "slug": "presov",
@@ -18756,7 +18769,7 @@
 "metroCount": 3,
 "score": 0.4,
 "weighted": true,
-"rank": 1443
+"rank": 1444
 },
 {
 "slug": "central-equatoria",
@@ -18769,7 +18782,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1444
+"rank": 1445
 },
 {
 "slug": "al-qadarif",
@@ -18782,7 +18795,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": false,
-"rank": 1445
+"rank": 1446
 },
 {
 "slug": "kassala",
@@ -18795,7 +18808,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": false,
-"rank": 1446
+"rank": 1447
 },
 {
 "slug": "white-nile",
@@ -18808,7 +18821,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": false,
-"rank": 1447
+"rank": 1448
 },
 {
 "slug": "khatlon",
@@ -18821,7 +18834,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1448
+"rank": 1449
 },
 {
 "slug": "tabora",
@@ -18834,7 +18847,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1449
+"rank": 1450
 },
 {
 "slug": "tanga",
@@ -18847,7 +18860,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1450
+"rank": 1451
 },
 {
 "slug": "bolu",
@@ -18860,7 +18873,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1451
+"rank": 1452
 },
 {
 "slug": "elazıg",
@@ -18873,7 +18886,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1452
+"rank": 1453
 },
 {
 "slug": "kahramanmaras",
@@ -18886,7 +18899,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1453
+"rank": 1454
 },
 {
 "slug": "kutahya",
@@ -18899,7 +18912,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1454
+"rank": 1455
 },
 {
 "slug": "zonguldak",
@@ -18912,7 +18925,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1455
+"rank": 1456
 },
 {
 "slug": "sırnak",
@@ -18925,7 +18938,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1456
+"rank": 1457
 },
 {
 "slug": "zakarpattia",
@@ -18938,7 +18951,7 @@
 "metroCount": 2,
 "score": 0.4,
 "weighted": true,
-"rank": 1457
+"rank": 1458
 },
 {
 "slug": "ternopil",
@@ -18951,7 +18964,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1458
+"rank": 1459
 },
 {
 "slug": "cornwall",
@@ -18964,7 +18977,7 @@
 "metroCount": 2,
 "score": 0.4,
 "weighted": true,
-"rank": 1459
+"rank": 1460
 },
 {
 "slug": "qoraqalpog-ston-karakalpakstan",
@@ -18977,7 +18990,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1460
+"rank": 1461
 },
 {
 "slug": "barinas",
@@ -18990,7 +19003,7 @@
 "metroCount": 2,
 "score": 0.4,
 "weighted": true,
-"rank": 1461
+"rank": 1462
 },
 {
 "slug": "la-guaira",
@@ -19003,7 +19016,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1462
+"rank": 1463
 },
 {
 "slug": "gia-lai",
@@ -19016,7 +19029,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1463
+"rank": 1464
 },
 {
 "slug": "ha-tinh",
@@ -19029,7 +19042,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1464
+"rank": 1465
 },
 {
 "slug": "midlands",
@@ -19042,7 +19055,7 @@
 "metroCount": 2,
 "score": 0.4,
 "weighted": true,
-"rank": 1465
+"rank": 1466
 },
 {
 "slug": "manicaland",
@@ -19055,7 +19068,7 @@
 "metroCount": 1,
 "score": 0.4,
 "weighted": true,
-"rank": 1466
+"rank": 1467
 },
 {
 "slug": "kindia",
@@ -19068,7 +19081,7 @@
 "metroCount": 2,
 "score": 0.36,
 "weighted": true,
-"rank": 1467
+"rank": 1468
 },
 {
 "slug": "turkistan",
@@ -19081,7 +19094,7 @@
 "metroCount": 3,
 "score": 0.36,
 "weighted": true,
-"rank": 1468
+"rank": 1469
 },
 {
 "slug": "unterland",
@@ -19094,7 +19107,7 @@
 "metroCount": 1,
 "score": 0.36,
 "weighted": true,
-"rank": 1469
+"rank": 1470
 },
 {
 "slug": "eastern-uganda",
@@ -19107,7 +19120,7 @@
 "metroCount": 2,
 "score": 0.36,
 "weighted": true,
-"rank": 1470
+"rank": 1471
 },
 {
 "slug": "littoral-benin",
@@ -19120,7 +19133,7 @@
 "metroCount": 1,
 "score": 0.35,
 "weighted": true,
-"rank": 1471
+"rank": 1472
 },
 {
 "slug": "mayabeque",
@@ -19133,7 +19146,7 @@
 "metroCount": 2,
 "score": 0.35,
 "weighted": true,
-"rank": 1472
+"rank": 1473
 },
 {
 "slug": "brikama-western",
@@ -19146,7 +19159,7 @@
 "metroCount": 1,
 "score": 0.35,
 "weighted": true,
-"rank": 1473
+"rank": 1474
 },
 {
 "slug": "sacatepequez",
@@ -19159,7 +19172,7 @@
 "metroCount": 1,
 "score": 0.35,
 "weighted": true,
-"rank": 1474
+"rank": 1475
 },
 {
 "slug": "atlantique",
@@ -19172,7 +19185,7 @@
 "metroCount": 1,
 "score": 0.34,
 "weighted": true,
-"rank": 1475
+"rank": 1476
 },
 {
 "slug": "upper-town",
@@ -19185,7 +19198,7 @@
 "metroCount": 1,
 "score": 0.34,
 "weighted": true,
-"rank": 1476
+"rank": 1477
 },
 {
 "slug": "bissau-setor-autonomo-de-bissau-sab",
@@ -19198,7 +19211,7 @@
 "metroCount": 1,
 "score": 0.32,
 "weighted": true,
-"rank": 1477
+"rank": 1478
 },
 {
 "slug": "oueme",
@@ -19211,7 +19224,7 @@
 "metroCount": 2,
 "score": 0.31,
 "weighted": true,
-"rank": 1478
+"rank": 1479
 },
 {
 "slug": "dire-dawa",
@@ -19224,7 +19237,7 @@
 "metroCount": 1,
 "score": 0.31,
 "weighted": true,
-"rank": 1479
+"rank": 1480
 },
 {
 "slug": "fiorentino",
@@ -19237,7 +19250,7 @@
 "metroCount": 1,
 "score": 0.31,
 "weighted": true,
-"rank": 1480
+"rank": 1481
 },
 {
 "slug": "jiayi-shi-chiayi-shih",
@@ -19250,7 +19263,7 @@
 "metroCount": 1,
 "score": 0.31,
 "weighted": true,
-"rank": 1481
+"rank": 1482
 },
 {
 "slug": "khost",
@@ -19263,7 +19276,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1482
+"rank": 1483
 },
 {
 "slug": "nangarhar",
@@ -19276,7 +19289,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1483
+"rank": 1484
 },
 {
 "slug": "elbasan",
@@ -19289,7 +19302,7 @@
 "metroCount": 3,
 "score": 0.3,
 "weighted": true,
-"rank": 1484
+"rank": 1485
 },
 {
 "slug": "durres",
@@ -19302,7 +19315,7 @@
 "metroCount": 2,
 "score": 0.3,
 "weighted": true,
-"rank": 1485
+"rank": 1486
 },
 {
 "slug": "korce",
@@ -19315,7 +19328,7 @@
 "metroCount": 2,
 "score": 0.3,
 "weighted": true,
-"rank": 1486
+"rank": 1487
 },
 {
 "slug": "lezhe",
@@ -19328,7 +19341,7 @@
 "metroCount": 2,
 "score": 0.3,
 "weighted": true,
-"rank": 1487
+"rank": 1488
 },
 {
 "slug": "kukes",
@@ -19341,7 +19354,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1488
+"rank": 1489
 },
 {
 "slug": "shkoder",
@@ -19354,7 +19367,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1489
+"rank": 1490
 },
 {
 "slug": "vlore",
@@ -19367,7 +19380,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1490
+"rank": 1491
 },
 {
 "slug": "batna",
@@ -19380,7 +19393,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1491
+"rank": 1492
 },
 {
 "slug": "bechar",
@@ -19393,7 +19406,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1492
+"rank": 1493
 },
 {
 "slug": "el-bayadh",
@@ -19406,7 +19419,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1493
+"rank": 1494
 },
 {
 "slug": "jijel",
@@ -19419,7 +19432,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1494
+"rank": 1495
 },
 {
 "slug": "khenchela",
@@ -19432,7 +19445,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1495
+"rank": 1496
 },
 {
 "slug": "mostaganem",
@@ -19445,7 +19458,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1496
+"rank": 1497
 },
 {
 "slug": "ouargla",
@@ -19458,7 +19471,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1497
+"rank": 1498
 },
 {
 "slug": "tizi-ouzou",
@@ -19471,7 +19484,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1498
+"rank": 1499
 },
 {
 "slug": "huambo",
@@ -19484,7 +19497,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1499
+"rank": 1500
 },
 {
 "slug": "uige",
@@ -19497,7 +19510,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1500
+"rank": 1501
 },
 {
 "slug": "santa-cruz-argentina",
@@ -19510,7 +19523,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1501
+"rank": 1502
 },
 {
 "slug": "tierra-del-fuego",
@@ -19523,7 +19536,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1502
+"rank": 1503
 },
 {
 "slug": "gegharkunik",
@@ -19536,7 +19549,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1503
+"rank": 1504
 },
 {
 "slug": "christmas-island",
@@ -19549,7 +19562,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1504
+"rank": 1505
 },
 {
 "slug": "norfolk-island",
@@ -19562,7 +19575,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1505
+"rank": 1506
 },
 {
 "slug": "mil-mughan",
@@ -19575,7 +19588,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1506
+"rank": 1507
 },
 {
 "slug": "saint-paul-barbados",
@@ -19588,7 +19601,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": false,
-"rank": 1507
+"rank": 1508
 },
 {
 "slug": "luxembourg-belgium",
@@ -19601,7 +19614,7 @@
 "metroCount": 5,
 "score": 0.3,
 "weighted": true,
-"rank": 1508
+"rank": 1509
 },
 {
 "slug": "belize",
@@ -19614,7 +19627,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1509
+"rank": 1510
 },
 {
 "slug": "chobe",
@@ -19627,7 +19640,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1510
+"rank": 1511
 },
 {
 "slug": "north-east-botswana",
@@ -19640,7 +19653,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1511
+"rank": 1512
 },
 {
 "slug": "north-west-botswana",
@@ -19653,7 +19666,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1512
+"rank": 1513
 },
 {
 "slug": "kardzali",
@@ -19666,7 +19679,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1513
+"rank": 1514
 },
 {
 "slug": "lovech",
@@ -19679,7 +19692,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1514
+"rank": 1515
 },
 {
 "slug": "razgrad",
@@ -19692,7 +19705,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1515
+"rank": 1516
 },
 {
 "slug": "rousse",
@@ -19705,7 +19718,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1516
+"rank": 1517
 },
 {
 "slug": "vratsa",
@@ -19718,7 +19731,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1517
+"rank": 1518
 },
 {
 "slug": "centre-nord-burkina-faso",
@@ -19731,7 +19744,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1518
+"rank": 1519
 },
 {
 "slug": "nord-burkina-faso",
@@ -19744,7 +19757,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1519
+"rank": 1520
 },
 {
 "slug": "preah-sihanouk",
@@ -19757,7 +19770,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1520
+"rank": 1521
 },
 {
 "slug": "south-cameroon",
@@ -19770,7 +19783,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1521
+"rank": 1522
 },
 {
 "slug": "northwest-territories",
@@ -19783,7 +19796,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1522
+"rank": 1523
 },
 {
 "slug": "yukon",
@@ -19796,7 +19809,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1523
+"rank": 1524
 },
 {
 "slug": "santiago-cape-verde",
@@ -19809,7 +19822,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1524
+"rank": 1525
 },
 {
 "slug": "atacama",
@@ -19822,7 +19835,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1525
+"rank": 1526
 },
 {
 "slug": "magallanes-y-de-la-antartica-chilena",
@@ -19835,7 +19848,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1526
+"rank": 1527
 },
 {
 "slug": "caqueta",
@@ -19848,7 +19861,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1527
+"rank": 1528
 },
 {
 "slug": "casanare",
@@ -19861,7 +19874,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1528
+"rank": 1529
 },
 {
 "slug": "choco",
@@ -19874,7 +19887,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1529
+"rank": 1530
 },
 {
 "slug": "moroni-bambao",
@@ -19887,7 +19900,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1530
+"rank": 1531
 },
 {
 "slug": "kwilu",
@@ -19900,7 +19913,7 @@
 "metroCount": 2,
 "score": 0.3,
 "weighted": true,
-"rank": 1531
+"rank": 1532
 },
 {
 "slug": "ituri",
@@ -19913,7 +19926,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1532
+"rank": 1533
 },
 {
 "slug": "puntarenas",
@@ -19926,7 +19939,7 @@
 "metroCount": 2,
 "score": 0.3,
 "weighted": true,
-"rank": 1533
+"rank": 1534
 },
 {
 "slug": "gbeke-wawle",
@@ -19939,7 +19952,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1534
+"rank": 1535
 },
 {
 "slug": "koprivnica-krizevci",
@@ -19952,7 +19965,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1535
+"rank": 1536
 },
 {
 "slug": "varazdin",
@@ -19965,7 +19978,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1536
+"rank": 1537
 },
 {
 "slug": "granma",
@@ -19978,7 +19991,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1537
+"rank": 1538
 },
 {
 "slug": "guantanamo",
@@ -19991,7 +20004,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1538
+"rank": 1539
 },
 {
 "slug": "las-tunas",
@@ -20004,7 +20017,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1539
+"rank": 1540
 },
 {
 "slug": "pinar-del-rio",
@@ -20017,7 +20030,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1540
+"rank": 1541
 },
 {
 "slug": "sancti-spiritus",
@@ -20030,7 +20043,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1541
+"rank": 1542
 },
 {
 "slug": "vysocina",
@@ -20043,7 +20056,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1542
+"rank": 1543
 },
 {
 "slug": "klaksvik",
@@ -20056,7 +20069,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1543
+"rank": 1544
 },
 {
 "slug": "northern-streymoy",
@@ -20069,7 +20082,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1544
+"rank": 1545
 },
 {
 "slug": "saint-george-dominica",
@@ -20082,7 +20095,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1545
+"rank": 1546
 },
 {
 "slug": "barahona",
@@ -20095,7 +20108,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1546
+"rank": 1547
 },
 {
 "slug": "duarte",
@@ -20108,7 +20121,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1547
+"rank": 1548
 },
 {
 "slug": "samana",
@@ -20121,7 +20134,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1548
+"rank": 1549
 },
 {
 "slug": "carchi-karchi",
@@ -20134,7 +20147,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1549
+"rank": 1550
 },
 {
 "slug": "esmeraldas",
@@ -20147,7 +20160,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1550
+"rank": 1551
 },
 {
 "slug": "loja",
@@ -20160,7 +20173,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1551
+"rank": 1552
 },
 {
 "slug": "beni-suef",
@@ -20173,7 +20186,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1552
+"rank": 1553
 },
 {
 "slug": "minya",
@@ -20186,7 +20199,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1553
+"rank": 1554
 },
 {
 "slug": "north-sinai",
@@ -20199,7 +20212,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1554
+"rank": 1555
 },
 {
 "slug": "litoral",
@@ -20212,7 +20225,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1555
+"rank": 1556
 },
 {
 "slug": "ida-viru",
@@ -20225,7 +20238,7 @@
 "metroCount": 4,
 "score": 0.3,
 "weighted": true,
-"rank": 1556
+"rank": 1557
 },
 {
 "slug": "jarva",
@@ -20238,7 +20251,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1557
+"rank": 1558
 },
 {
 "slug": "saare",
@@ -20251,7 +20264,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1558
+"rank": 1559
 },
 {
 "slug": "somali",
@@ -20264,7 +20277,7 @@
 "metroCount": 2,
 "score": 0.3,
 "weighted": true,
-"rank": 1559
+"rank": 1560
 },
 {
 "slug": "kymenlaakso",
@@ -20277,7 +20290,7 @@
 "metroCount": 2,
 "score": 0.3,
 "weighted": true,
-"rank": 1560
+"rank": 1561
 },
 {
 "slug": "central-finland",
@@ -20290,7 +20303,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1561
+"rank": 1562
 },
 {
 "slug": "paijanne-tavastia",
@@ -20303,7 +20316,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1562
+"rank": 1563
 },
 {
 "slug": "southern-ostrobothnia",
@@ -20316,7 +20329,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1563
+"rank": 1564
 },
 {
 "slug": "tavastia-proper",
@@ -20329,7 +20342,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1564
+"rank": 1565
 },
 {
 "slug": "haut-ogooue",
@@ -20342,7 +20355,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1565
+"rank": 1566
 },
 {
 "slug": "ogooue-maritime",
@@ -20355,7 +20368,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1566
+"rank": 1567
 },
 {
 "slug": "kvemo-kartli",
@@ -20368,7 +20381,7 @@
 "metroCount": 2,
 "score": 0.3,
 "weighted": true,
-"rank": 1567
+"rank": 1568
 },
 {
 "slug": "shida-kartli",
@@ -20381,7 +20394,7 @@
 "metroCount": 2,
 "score": 0.3,
 "weighted": true,
-"rank": 1568
+"rank": 1569
 },
 {
 "slug": "abkhazia",
@@ -20394,7 +20407,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1569
+"rank": 1570
 },
 {
 "slug": "upper-west",
@@ -20407,7 +20420,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1570
+"rank": 1571
 },
 {
 "slug": "epirus",
@@ -20420,7 +20433,7 @@
 "metroCount": 3,
 "score": 0.3,
 "weighted": true,
-"rank": 1571
+"rank": 1572
 },
 {
 "slug": "chimaltenango",
@@ -20433,7 +20446,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1572
+"rank": 1573
 },
 {
 "slug": "quetzaltenango",
@@ -20446,7 +20459,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1573
+"rank": 1574
 },
 {
 "slug": "atlantida",
@@ -20459,7 +20472,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1574
+"rank": 1575
 },
 {
 "slug": "comayagua",
@@ -20472,7 +20485,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1575
+"rank": 1576
 },
 {
 "slug": "heves",
@@ -20485,7 +20498,7 @@
 "metroCount": 2,
 "score": 0.3,
 "weighted": true,
-"rank": 1576
+"rank": 1577
 },
 {
 "slug": "komarom-esztergom",
@@ -20498,7 +20511,7 @@
 "metroCount": 2,
 "score": 0.3,
 "weighted": true,
-"rank": 1577
+"rank": 1578
 },
 {
 "slug": "tolna",
@@ -20511,7 +20524,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1578
+"rank": 1579
 },
 {
 "slug": "austurland",
@@ -20524,7 +20537,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1579
+"rank": 1580
 },
 {
 "slug": "suðurland",
@@ -20537,7 +20550,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1580
+"rank": 1581
 },
 {
 "slug": "vesturland",
@@ -20550,7 +20563,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1581
+"rank": 1582
 },
 {
 "slug": "meghalaya",
@@ -20563,7 +20576,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1582
+"rank": 1583
 },
 {
 "slug": "puducherry",
@@ -20576,7 +20589,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1583
+"rank": 1584
 },
 {
 "slug": "central-kalimantan",
@@ -20589,7 +20602,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1584
+"rank": 1585
 },
 {
 "slug": "north-kalimantan",
@@ -20602,7 +20615,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1585
+"rank": 1586
 },
 {
 "slug": "north-maluku",
@@ -20615,7 +20628,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1586
+"rank": 1587
 },
 {
 "slug": "west-kalimantan",
@@ -20628,7 +20641,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1587
+"rank": 1588
 },
 {
 "slug": "bushehr",
@@ -20641,7 +20654,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1588
+"rank": 1589
 },
 {
 "slug": "ilam",
@@ -20654,7 +20667,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1589
+"rank": 1590
 },
 {
 "slug": "khorasan-south",
@@ -20667,7 +20680,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1590
+"rank": 1591
 },
 {
 "slug": "kohgiluyeh-and-boyer-ahmad",
@@ -20680,7 +20693,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1591
+"rank": 1592
 },
 {
 "slug": "babil",
@@ -20693,7 +20706,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1592
+"rank": 1593
 },
 {
 "slug": "molise",
@@ -20706,7 +20719,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1593
+"rank": 1594
 },
 {
 "slug": "tokushima",
@@ -20719,7 +20732,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1594
+"rank": 1595
 },
 {
 "slug": "south-jordan",
@@ -20732,7 +20745,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1595
+"rank": 1596
 },
 {
 "slug": "jetisu",
@@ -20745,7 +20758,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1596
+"rank": 1597
 },
 {
 "slug": "ulytau",
@@ -20758,7 +20771,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1597
+"rank": 1598
 },
 {
 "slug": "kakamega",
@@ -20771,7 +20784,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1598
+"rank": 1599
 },
 {
 "slug": "kisii",
@@ -20784,7 +20797,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1599
+"rank": 1600
 },
 {
 "slug": "migori",
@@ -20797,7 +20810,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1600
+"rank": 1601
 },
 {
 "slug": "gilbert",
@@ -20810,7 +20823,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1601
+"rank": 1602
 },
 {
 "slug": "mitrovice-kosovska-mitrovica",
@@ -20823,7 +20836,7 @@
 "metroCount": 2,
 "score": 0.3,
 "weighted": true,
-"rank": 1602
+"rank": 1603
 },
 {
 "slug": "ferizaj-urosevac",
@@ -20836,7 +20849,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1603
+"rank": 1604
 },
 {
 "slug": "peje-pec",
@@ -20849,7 +20862,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1604
+"rank": 1605
 },
 {
 "slug": "champasack-champasak",
@@ -20862,7 +20875,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1605
+"rank": 1606
 },
 {
 "slug": "savannakhet",
@@ -20875,7 +20888,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1606
+"rank": 1607
 },
 {
 "slug": "semigallia",
@@ -20888,7 +20901,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1607
+"rank": 1608
 },
 {
 "slug": "panevezys",
@@ -20901,7 +20914,7 @@
 "metroCount": 2,
 "score": 0.3,
 "weighted": true,
-"rank": 1608
+"rank": 1609
 },
 {
 "slug": "telsiai",
@@ -20914,7 +20927,7 @@
 "metroCount": 2,
 "score": 0.3,
 "weighted": true,
-"rank": 1609
+"rank": 1610
 },
 {
 "slug": "marijampole",
@@ -20927,7 +20940,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1610
+"rank": 1611
 },
 {
 "slug": "utena",
@@ -20940,7 +20953,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1611
+"rank": 1612
 },
 {
 "slug": "diekirch",
@@ -20953,7 +20966,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1612
+"rank": 1613
 },
 {
 "slug": "wiltz",
@@ -20966,7 +20979,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1613
+"rank": 1614
 },
 {
 "slug": "atsimo-andrefana",
@@ -20979,7 +20992,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1614
+"rank": 1615
 },
 {
 "slug": "boeny",
@@ -20992,7 +21005,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1615
+"rank": 1616
 },
 {
 "slug": "sikasso",
@@ -21005,7 +21018,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1616
+"rank": 1617
 },
 {
 "slug": "segou",
@@ -21018,7 +21031,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1617
+"rank": 1618
 },
 {
 "slug": "dakhlet-nouadhibou",
@@ -21031,7 +21044,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1618
+"rank": 1619
 },
 {
 "slug": "hincesti",
@@ -21044,7 +21057,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1619
+"rank": 1620
 },
 {
 "slug": "orhei",
@@ -21057,7 +21070,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1620
+"rank": 1621
 },
 {
 "slug": "straseni",
@@ -21070,7 +21083,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1621
+"rank": 1622
 },
 {
 "slug": "monaco-ville",
@@ -21083,7 +21096,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1622
+"rank": 1623
 },
 {
 "slug": "northern-montenegro",
@@ -21096,7 +21109,7 @@
 "metroCount": 4,
 "score": 0.3,
 "weighted": true,
-"rank": 1623
+"rank": 1624
 },
 {
 "slug": "cabo-delgado",
@@ -21109,7 +21122,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1624
+"rank": 1625
 },
 {
 "slug": "chin",
@@ -21122,7 +21135,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1625
+"rank": 1626
 },
 {
 "slug": "mon",
@@ -21135,7 +21148,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1626
+"rank": 1627
 },
 {
 "slug": "erongo",
@@ -21148,7 +21161,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1627
+"rank": 1628
 },
 {
 "slug": "drenthe",
@@ -21161,7 +21174,7 @@
 "metroCount": 3,
 "score": 0.3,
 "weighted": true,
-"rank": 1628
+"rank": 1629
 },
 {
 "slug": "zeeland",
@@ -21174,7 +21187,7 @@
 "metroCount": 2,
 "score": 0.3,
 "weighted": true,
-"rank": 1629
+"rank": 1630
 },
 {
 "slug": "bonaire",
@@ -21187,7 +21200,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1630
+"rank": 1631
 },
 {
 "slug": "alofi",
@@ -21200,7 +21213,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1631
+"rank": 1632
 },
 {
 "slug": "chinandega",
@@ -21213,7 +21226,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1632
+"rank": 1633
 },
 {
 "slug": "esteli",
@@ -21226,7 +21239,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1633
+"rank": 1634
 },
 {
 "slug": "leon",
@@ -21239,7 +21252,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1634
+"rank": 1635
 },
 {
 "slug": "rivas",
@@ -21252,7 +21265,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1635
+"rank": 1636
 },
 {
 "slug": "maradi",
@@ -21265,7 +21278,7 @@
 "metroCount": 2,
 "score": 0.3,
 "weighted": true,
-"rank": 1636
+"rank": 1637
 },
 {
 "slug": "gombe",
@@ -21278,7 +21291,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1637
+"rank": 1638
 },
 {
 "slug": "ondo",
@@ -21291,7 +21304,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1638
+"rank": 1639
 },
 {
 "slug": "south-hamgyong",
@@ -21304,7 +21317,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1639
+"rank": 1640
 },
 {
 "slug": "east-north-macedonia",
@@ -21317,7 +21330,7 @@
 "metroCount": 3,
 "score": 0.3,
 "weighted": true,
-"rank": 1640
+"rank": 1641
 },
 {
 "slug": "vardar",
@@ -21330,7 +21343,7 @@
 "metroCount": 2,
 "score": 0.3,
 "weighted": true,
-"rank": 1641
+"rank": 1642
 },
 {
 "slug": "shamal-al-batinah-al-batinah-north",
@@ -21343,7 +21356,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1642
+"rank": 1643
 },
 {
 "slug": "koror-incl-rock-islands-chelbacheb",
@@ -21356,7 +21369,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1643
+"rank": 1644
 },
 {
 "slug": "bocas-del-toro",
@@ -21369,7 +21382,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1644
+"rank": 1645
 },
 {
 "slug": "western-highlands",
@@ -21382,7 +21395,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1645
+"rank": 1646
 },
 {
 "slug": "amambay",
@@ -21395,7 +21408,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1646
+"rank": 1647
 },
 {
 "slug": "ancash",
@@ -21408,7 +21421,7 @@
 "metroCount": 2,
 "score": 0.3,
 "weighted": true,
-"rank": 1647
+"rank": 1648
 },
 {
 "slug": "apurimac",
@@ -21421,7 +21434,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1648
+"rank": 1649
 },
 {
 "slug": "moquegua",
@@ -21434,7 +21447,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1649
+"rank": 1650
 },
 {
 "slug": "santarem",
@@ -21447,7 +21460,7 @@
 "metroCount": 3,
 "score": 0.3,
 "weighted": true,
-"rank": 1650
+"rank": 1651
 },
 {
 "slug": "beja-portugal",
@@ -21460,7 +21473,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1651
+"rank": 1652
 },
 {
 "slug": "viana-do-castelo",
@@ -21473,7 +21486,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1652
+"rank": 1653
 },
 {
 "slug": "evora",
@@ -21486,7 +21499,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1653
+"rank": 1654
 },
 {
 "slug": "arges",
@@ -21499,7 +21512,7 @@
 "metroCount": 4,
 "score": 0.3,
 "weighted": true,
-"rank": 1654
+"rank": 1655
 },
 {
 "slug": "hunedoara",
@@ -21512,7 +21525,7 @@
 "metroCount": 3,
 "score": 0.3,
 "weighted": true,
-"rank": 1655
+"rank": 1656
 },
 {
 "slug": "olt",
@@ -21525,7 +21538,7 @@
 "metroCount": 3,
 "score": 0.3,
 "weighted": true,
-"rank": 1656
+"rank": 1657
 },
 {
 "slug": "dambovita",
@@ -21538,7 +21551,7 @@
 "metroCount": 2,
 "score": 0.3,
 "weighted": true,
-"rank": 1657
+"rank": 1658
 },
 {
 "slug": "ialomita",
@@ -21551,7 +21564,7 @@
 "metroCount": 2,
 "score": 0.3,
 "weighted": true,
-"rank": 1658
+"rank": 1659
 },
 {
 "slug": "bistrita-nasaud",
@@ -21564,7 +21577,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1659
+"rank": 1660
 },
 {
 "slug": "botosani",
@@ -21577,7 +21590,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1660
+"rank": 1661
 },
 {
 "slug": "buzau",
@@ -21590,7 +21603,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1661
+"rank": 1662
 },
 {
 "slug": "caras-severin",
@@ -21603,7 +21616,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1662
+"rank": 1663
 },
 {
 "slug": "covasna",
@@ -21616,7 +21629,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1663
+"rank": 1664
 },
 {
 "slug": "galati",
@@ -21629,7 +21642,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1664
+"rank": 1665
 },
 {
 "slug": "harghita",
@@ -21642,7 +21655,7 @@
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,
-"rank": 1665
+"rank": 1666
 },
 {
 "slug": "maramures",
@@ -21652,19 +21665,6 @@
 "type": "County",
 "continent": "Europe",
 "pop": 452475,
-"metroCount": 1,
-"score": 0.3,
-"weighted": true,
-"rank": 1666
-},
-{
-"slug": "satu-mare",
-"name": "Satu Mare",
-"country": "Romania",
-"countrySlug": "romania",
-"type": "County",
-"continent": "Europe",
-"pop": 330668,
 "metroCount": 1,
 "score": 0.3,
 "weighted": true,

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-26",
+  "generated_at": "2026-08-01",
   "source": "Champions League-201516.xlsx",
   "scope": {
     "countries": [
@@ -103,6 +103,37 @@
         "major_cups": 0,
         "minor_cups": 0,
         "last_trophy": 0
+      },
+      "tier_by_year": {},
+      "country_by_year": {}
+    },
+    {
+      "slug": "atlante",
+      "cur_name": "Atlante",
+      "country": null,
+      "federation_country": null,
+      "city": null,
+      "metro": null,
+      "county": null,
+      "continent": "Europe",
+      "lat": null,
+      "lng": null,
+      "tiers": [],
+      "first_year": null,
+      "last_year": null,
+      "top_flight_seasons": 0,
+      "lower_tier_seasons": 0,
+      "league_seasons": 0,
+      "playoff_appearances": 0,
+      "totals": {
+        "titles": 3,
+        "last_title": 2007,
+        "league_finals": 0,
+        "league_t4": 0,
+        "major_cups": 8,
+        "minor_cups": 10,
+        "last_trophy": 2009,
+        "cont_trophies": 2
       },
       "tier_by_year": {},
       "country_by_year": {}
@@ -57764,7 +57795,7 @@
       "cur_name": "Carpi FC",
       "country": "Italy",
       "federation_country": null,
-      "city": "Modena",
+      "city": "Carpi",
       "metro": "Modena",
       "county": "Emilia-Romagna",
       "continent": "Europe",
@@ -64534,37 +64565,6 @@
       "country_by_year": {}
     },
     {
-      "slug": "atlante",
-      "cur_name": "Atlante",
-      "country": "Mexico",
-      "federation_country": null,
-      "city": "Cancun",
-      "metro": "Cancun",
-      "county": "Quintana Roo",
-      "continent": "North America",
-      "lat": 21.174,
-      "lng": -86.846,
-      "tiers": [],
-      "first_year": null,
-      "last_year": null,
-      "top_flight_seasons": 0,
-      "lower_tier_seasons": 0,
-      "league_seasons": 0,
-      "playoff_appearances": 0,
-      "totals": {
-        "titles": 3,
-        "last_title": 2007,
-        "league_finals": 0,
-        "league_t4": 0,
-        "major_cups": 8,
-        "minor_cups": 10,
-        "last_trophy": 2009,
-        "cont_trophies": 2
-      },
-      "tier_by_year": {},
-      "country_by_year": {}
-    },
-    {
       "slug": "atlas",
       "cur_name": "Atlas",
       "country": "Mexico",
@@ -64621,6 +64621,36 @@
         "minor_cups": 1,
         "last_trophy": 1975,
         "cont_trophies": 1
+      },
+      "tier_by_year": {},
+      "country_by_year": {}
+    },
+    {
+      "slug": "atletico-morelia",
+      "cur_name": "Atlético Morelia",
+      "country": "Mexico",
+      "federation_country": null,
+      "city": "Morelia",
+      "metro": "Morelia",
+      "county": "Michoacán",
+      "continent": "North America",
+      "lat": 19.7008,
+      "lng": -101.1844,
+      "tiers": [],
+      "first_year": null,
+      "last_year": null,
+      "top_flight_seasons": 0,
+      "lower_tier_seasons": 0,
+      "league_seasons": 0,
+      "playoff_appearances": 0,
+      "totals": {
+        "titles": 1,
+        "last_title": 2000,
+        "league_finals": 0,
+        "league_t4": 0,
+        "major_cups": 3,
+        "minor_cups": 4,
+        "last_trophy": 2014
       },
       "tier_by_year": {},
       "country_by_year": {}
@@ -64867,36 +64897,6 @@
         "minor_cups": 2,
         "last_trophy": 1991,
         "cont_trophies": 1
-      },
-      "tier_by_year": {},
-      "country_by_year": {}
-    },
-    {
-      "slug": "monarcas-morelia",
-      "cur_name": "Monarcas Morelia",
-      "country": "Mexico",
-      "federation_country": null,
-      "city": "Morelia",
-      "metro": "Morelia",
-      "county": "Michoacán",
-      "continent": "North America",
-      "lat": 19.7,
-      "lng": -101.184,
-      "tiers": [],
-      "first_year": null,
-      "last_year": null,
-      "top_flight_seasons": 0,
-      "lower_tier_seasons": 0,
-      "league_seasons": 0,
-      "playoff_appearances": 0,
-      "totals": {
-        "titles": 1,
-        "last_title": 2000,
-        "league_finals": 0,
-        "league_t4": 0,
-        "major_cups": 3,
-        "minor_cups": 4,
-        "last_trophy": 2014
       },
       "tier_by_year": {},
       "country_by_year": {}
