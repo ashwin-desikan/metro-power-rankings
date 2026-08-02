@@ -18,10 +18,20 @@ function safePathname(input: string | null | undefined): string {
   return input;
 }
 
+// x-real-ip is set once by the edge and can't be appended to by the client,
+// so it's the trustworthy value when present. x-forwarded-for is a hop chain
+// that a client can prepend spoofed entries to; the last entry is the one
+// the edge itself added, so it's the only trustworthy part of that header.
+// Prefer x-real-ip and only fall back to the last x-forwarded-for hop.
 function clientIp(req: NextRequest): string {
+  const real = req.headers.get("x-real-ip");
+  if (real) return real.trim();
   const fwd = req.headers.get("x-forwarded-for");
-  if (fwd) return fwd.split(",")[0]!.trim();
-  return req.headers.get("x-real-ip") ?? "unknown";
+  if (fwd) {
+    const parts = fwd.split(",").map((s) => s.trim()).filter(Boolean);
+    if (parts.length) return parts[parts.length - 1]!;
+  }
+  return "unknown";
 }
 
 export async function POST(req: NextRequest) {

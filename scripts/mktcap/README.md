@@ -40,12 +40,19 @@ stamp E1/E2, confirm calc mode Automatic, save. Then the normal
 sync_source_xlsx.py → extract.py flow.
 
 ## Access + hardening
-Reads and writes use the anon key (public-by-design) with scoped RLS policies:
-insert/update on companies/valuations, insert geo stubs, update geo (curation).
-No deletes anywhere; overrides/private/unicorns/valid_metros/symbol_changes are
-read-only to anon and curated via the Supabase MCP. Key in `supabase_key.txt`
-(gitignored) or env MKTCAP_SUPABASE_KEY. Hardening option if abuse ever appears:
-swap anon policies for a dedicated key + postgres role.
+Reads are public (anon, RLS `USING (true)`). Writes require the **service_role**
+key: the anon role's insert/update grants and `WITH CHECK (true)` policies on
+companies/geo/valuations were revoked (migration `lock_down_mktcap_pipeline_writes`,
+2026-08-02) after a review found they let anyone holding the public anon key —
+which ships in every browser bundle — write directly to these tables via
+PostgREST, no app involved. service_role bypasses RLS by design, so no
+replacement policy is needed for the pipeline; put the service_role secret
+(Supabase dashboard -> Settings -> API) in `supabase_key.txt` (gitignored) or
+env MKTCAP_SUPABASE_KEY. No deletes anywhere; overrides/private/unicorns/
+valid_metros/symbol_changes remain read-only to anon and curated via the
+Supabase MCP. Treat this key like any other production secret: it bypasses
+RLS entirely, so it must never end up in a client bundle, a committed file,
+or a public CI log.
 
 ## Not automated by design
 Forbes private-companies list (~annual, curate mktcap_private via MCP);

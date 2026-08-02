@@ -75,6 +75,14 @@ function fallbackImage(message: string) {
   );
 }
 
+// Rendering is pure CPU work keyed only by the `m` query param, so a hit
+// with the same slugs always produces the same image. Cache at the CDN so
+// repeated/abusive requests for the same comparison don't re-render on
+// every hit; slug lookups against local JSON are cheap even on a miss.
+const CACHE_HEADERS = {
+  "Cache-Control": "public, max-age=3600, s-maxage=86400, stale-while-revalidate=2592000",
+};
+
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const slugs = parseSlugs(url.searchParams);
@@ -88,9 +96,12 @@ export async function GET(request: Request) {
     return fallbackImage("Comparison unavailable");
   }
 
-  return details.length === 2
-    ? renderTwoMetro(details[0], details[1])
-    : renderGrid(details);
+  const res =
+    details.length === 2
+      ? renderTwoMetro(details[0], details[1])
+      : renderGrid(details);
+  for (const [k, v] of Object.entries(CACHE_HEADERS)) res.headers.set(k, v);
+  return res;
 }
 
 // ============================================================================
