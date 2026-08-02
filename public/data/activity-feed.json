@@ -1,7 +1,105 @@
 {
-  "generatedAt": "2026-07-31",
-  "count": 531,
+  "generatedAt": "2026-08-02",
+  "count": 545,
   "entries": [
+    {
+      "date": "2026-08-02",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "15cabc42f"
+    },
+    {
+      "date": "2026-08-01",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, Basketball, Cricket, Elections, and 5 more.",
+      "commit": "19f70a437"
+    },
+    {
+      "date": "2026-08-01",
+      "category": "new-hub",
+      "hub": "Predictions",
+      "text": "New hub: Predictions.",
+      "commit": "cdaa0253e"
+    },
+    {
+      "date": "2026-08-01",
+      "category": "hub",
+      "hub": "Play",
+      "text": "Play page: delist Trophy Count, Odd One Out and Bigger City from Count and Think (files kept on disk); Match Day Money and League Table Det…",
+      "commit": "dce55485d"
+    },
+    {
+      "date": "2026-08-01",
+      "category": "hub",
+      "hub": "Play",
+      "text": "Count and Think revamp: seven Year 3-4 maths games (Stadium Stacker, Big Match Adder, Times-Table Striker, Fraction Football, Shape and Fla…",
+      "commit": "4f8551ce4"
+    },
+    {
+      "date": "2026-08-01",
+      "category": "fix",
+      "hub": "Sports",
+      "text": "Live standings fixes: Womens Football section (WSL, Liga F, NWSL, UWCL via wLive), CFB standings closed + Power 4 vs Group of 5 split (Notr…",
+      "commit": "f2d206331"
+    },
+    {
+      "date": "2026-08-01",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "CFB live for 2026 kickoff: ESPN FBS standings + AP-Coaches-CFP rankings on the hub, rankings-only block on Live Standings (collapsed until…",
+      "commit": "a1bcc4305"
+    },
+    {
+      "date": "2026-08-01",
+      "category": "hub",
+      "hub": "Play",
+      "text": "Kids games wave 3: US-UK leadership trio (Whos the Boss, Leader Time Machine, US or UK), visual Offside rebuild, badge-flag enrichment acro…",
+      "commit": "5bbf241b8"
+    },
+    {
+      "date": "2026-08-01",
+      "category": "hub",
+      "hub": "Play",
+      "text": "Kids games wave 2: Penalty Shootout, Crest Sort, Flag Flash, Champions Duel; Capital Match quick mode; surface hidden games in new Count an…",
+      "commit": "07c57f0b7"
+    },
+    {
+      "date": "2026-08-01",
+      "category": "hub",
+      "hub": "Elections",
+      "text": "Add 2026 US governors race forecast (ratings-based, aggregated by party).",
+      "commit": "8c28df991"
+    },
+    {
+      "date": "2026-08-01",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Club football mobile: restore dropped fields on list rows.",
+      "commit": "531d3157b"
+    },
+    {
+      "date": "2026-08-01",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Club football mobile: list rows for league hub standings and honours.",
+      "commit": "31cce1ebe"
+    },
+    {
+      "date": "2026-08-01",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Club football mobile: list rows for club page, tournaments, cups, domestic.",
+      "commit": "90a9bb0c6"
+    },
+    {
+      "date": "2026-08-01",
+      "category": "fix",
+      "hub": "Club Football",
+      "text": "Club football mobile: compact list rows, sticky-column fix, core pages.",
+      "commit": "ea9bbf3c0"
+    },
     {
       "date": "2026-07-31",
       "category": "data",
