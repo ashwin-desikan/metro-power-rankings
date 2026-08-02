@@ -205,7 +205,7 @@ export default function NeighborhoodsPage() {
   };
 
   return (
-    <main className="pt-24 pb-24 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "var(--bg)" }}>
+    <main className="pt-8 pb-24 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "var(--bg)" }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbLd) }}

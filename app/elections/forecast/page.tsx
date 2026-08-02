@@ -177,9 +177,36 @@ export default async function ForecastPage() {
 
       <header className="mb-6">
         <h1 className="text-3xl font-bold mb-2 text-[var(--text)]">{TITLE}</h1>
-        <p className="text-[var(--text-muted)] max-w-3xl">{DESC}</p>
-        <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] mt-2">
-          Updated {f.built} · refreshes weekly
+        <p className="text-[var(--text-muted)] max-w-3xl">
+          Weighted polling averages, seat ranges from thousands of simulations, uncertainty stated plainly.
+        </p>
+        {/* One chip per live forecast, derived from the data itself — races join
+            this row as their votes approach and drop off once counted; the US
+            and UK are permanent (Ashwin 2026-08-02). */}
+        <div className="flex flex-wrap items-center gap-2 mt-3">
+          {[
+            { id: "us", flag: "us", label: "United States", when: "midterms · 3 Nov 2026", show: true },
+            { id: "uk", flag: "gb", label: "United Kingdom", when: "next general election", show: true },
+            { id: "br", flag: "br", label: "Brazil", when: "4 Oct 2026", show: !!br },
+            { id: "il", flag: "il", label: "Israel", when: "2026", show: !!il },
+            { id: "nz", flag: "nz", label: "New Zealand", when: "2026", show: !!nz },
+            { id: "fr", flag: "fr", label: "France", when: "2027 · early read", show: !!fr },
+          ].filter((c) => c.show).map((c) => (
+            <a
+              key={c.id}
+              href={`#${c.id}`}
+              className="inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+              style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={flagUrlByCode(c.flag)} srcSet={flagSrcSetByCode(c.flag)} alt="" width={18} height={13} className="rounded-[2px]" />
+              <span className="font-semibold">{c.label}</span>
+              <span className="text-[var(--text-dim)]">{c.when}</span>
+            </a>
+          ))}
+        </div>
+        <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] mt-3">
+          US &amp; UK always on · other races join as votes near, retire once counted · updated {f.built} · refreshes weekly
         </p>
       </header>
 
@@ -194,7 +221,7 @@ export default async function ForecastPage() {
       </div>
 
       {/* ================= UNITED STATES ================= */}
-      <section className="mb-6 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
+      <section id="us" className="mb-6 rounded-2xl border p-5 sm:p-6 scroll-mt-20" style={{ borderColor: "var(--border)" }}>
         <CountryHeader
           flag="us"
           title="United States — the 2026 midterms"
@@ -348,7 +375,7 @@ export default async function ForecastPage() {
       </section>
 
       {/* ================= UNITED KINGDOM ================= */}
-      <section className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
+      <section id="uk" className="mb-10 rounded-2xl border p-5 sm:p-6 scroll-mt-20" style={{ borderColor: "var(--border)" }}>
         <CountryHeader
           flag="gb"
           title="United Kingdom — the next general election"
@@ -420,7 +447,7 @@ export default async function ForecastPage() {
 
       {/* ================= BRAZIL ================= */}
       {br ? (
-        <section className="mb-6 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
+        <section id="br" className="mb-6 rounded-2xl border p-5 sm:p-6 scroll-mt-20" style={{ borderColor: "var(--border)" }}>
           <CountryHeader
             flag="br"
             title="Brazil — the 2026 presidential election"
@@ -452,7 +479,7 @@ export default async function ForecastPage() {
 
       {/* ================= ISRAEL ================= */}
       {il ? (
-        <section className="mb-6 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
+        <section id="il" className="mb-6 rounded-2xl border p-5 sm:p-6 scroll-mt-20" style={{ borderColor: "var(--border)" }}>
           <CountryHeader
             flag="il"
             title="Israel — the 2026 Knesset election"
@@ -497,7 +524,7 @@ export default async function ForecastPage() {
 
       {/* ================= NEW ZEALAND ================= */}
       {nz ? (
-        <section className="mb-6 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
+        <section id="nz" className="mb-6 rounded-2xl border p-5 sm:p-6 scroll-mt-20" style={{ borderColor: "var(--border)" }}>
           <CountryHeader
             flag="nz"
             title="New Zealand — the 2026 general election"
@@ -545,7 +572,7 @@ export default async function ForecastPage() {
 
       {/* ================= FRANCE ================= */}
       {fr ? (
-        <section className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
+        <section id="fr" className="mb-10 rounded-2xl border p-5 sm:p-6 scroll-mt-20" style={{ borderColor: "var(--border)" }}>
           <CountryHeader
             flag="fr"
             title="France — the 2027 presidential election"

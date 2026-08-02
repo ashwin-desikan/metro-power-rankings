@@ -62,8 +62,12 @@ export default function SeasonSuperlatives({ data }: { data: TrendsData }) {
     .map((c) => ({ name: c.name, n: c.series.filter((s) => s.rank <= 5).length }))
     .filter((x) => x.n > 0).sort((a, b) => b.n - a.n).slice(0, 8)
     .map((x) => ({ name: x.name, detail: `${x.n}` }));
+  // Only seasons with an established pedigree baseline (≥0.10) qualify: ped=0 is
+  // usually a coefficient-record gap (pre-1971 Fairs Cup era etc.), not zero
+  // reputation, and form − 0 otherwise tops this board on an artifact (Újpest
+  // 68/69 at +1.00). Same floor as the per-hub Overachiever card in SeasonHub.
   const overs = data.clubs
-    .flatMap((c) => c.series.map((s) => ({ name: c.name, season: s.season, d: s.form - s.ped })))
+    .flatMap((c) => c.series.filter((s) => s.ped >= 0.10).map((s) => ({ name: c.name, season: s.season, d: s.form - s.ped })))
     .sort((a, b) => b.d - a.d).slice(0, 8)
     .map((x) => ({ name: x.name, detail: `+${x.d.toFixed(2)} · ${ss(x.season)}` }));
   const midMajors = data.clubs

@@ -48,7 +48,7 @@ export default async function ChampionRollPage(
   const dated = rows.filter((r) => r.date).length;
 
   return (
-    <main className="mx-auto max-w-4xl px-4 py-8 pt-24">
+    <main className="mx-auto max-w-4xl px-4 py-8">
       <nav className="text-xs text-[var(--text-muted)] mb-4">
         <Link href="/" className="hover:underline">Home</Link>
         {" / "}

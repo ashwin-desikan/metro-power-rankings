@@ -71,7 +71,7 @@ export default async function ZoneZeroCupPage() {
   const podium = [...nations].sort((a, b) => a.rank - b.rank).slice(0, 3);
 
   return (
-    <main className="mx-auto max-w-5xl px-4 py-8 pt-24">
+    <main className="mx-auto max-w-5xl px-4 py-8">
       <div className="mb-4"><IndexSwitcher current="countries" /></div>
       <nav className="text-xs text-[var(--text-muted)] mb-4">
         <Link href="/" className="hover:underline">Home</Link>

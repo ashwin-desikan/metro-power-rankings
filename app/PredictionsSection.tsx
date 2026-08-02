@@ -26,7 +26,8 @@ export default async function PredictionsSection() {
         <h2 className="text-2xl sm:text-3xl font-bold mb-3">Where the models are pointing</h2>
         <p className="text-[15px] text-[var(--text-muted)] max-w-3xl mb-8">
           Forecasts stated honestly: weighted averages, ranges from thousands of simulations, and the
-          odds laid out so you can take the other side. Elections now; the major sports leagues next.
+          odds laid out so you can take the other side. Elections, the Premier League and the NFL now;
+          College Football and the Champions League next.
         </p>
 
         <div className="grid gap-4" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>
@@ -54,15 +55,18 @@ export default async function PredictionsSection() {
           <Link href="/predictions" className="flex flex-col p-6 rounded-lg border transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]" style={CARD}>
             <div className="flex items-center justify-between mb-3">
               <span className="text-[11px] uppercase tracking-widest" style={{ ...MONO, color: "var(--text-muted)" }}>Sports</span>
-              <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ ...MONO, color: "var(--accent)", background: "rgba(78,205,196,0.16)" }}>SOON</span>
+              <span className="flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#10b981" }} aria-hidden />
+                <span className="text-[10px]" style={{ ...MONO, color: "#10b981" }}>PL + NFL LIVE</span>
+              </span>
             </div>
             <div className="flex items-center gap-2.5 mb-2">
               <span className="text-2xl leading-none" aria-hidden>&#127942;</span>
               <h3 className="text-lg font-bold">Prediction Hubs</h3>
             </div>
             <p className="text-[13px] text-[var(--text-muted)] leading-relaxed">
-              Simulated title races for the NFL, College Football, the Premier League and the Champions
-              League, modeled like the 2026 World Cup simulator.
+              The Premier League and NFL hubs are live: season odds from 20,000 simulations each, weekly
+              picks graded against results. College Football and the Champions League follow.
             </p>
             <div className="flex items-center justify-between mt-auto pt-3.5 border-t" style={{ borderColor: "var(--border)" }}>
               <span className="text-xs" style={{ ...MONO, color: "var(--accent)" }}>NFL - CFB - PL - UCL</span>

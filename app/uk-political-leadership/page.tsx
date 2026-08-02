@@ -116,6 +116,27 @@ export default async function UKPoliticalLeadershipPage() {
         <p className="text-[var(--text-muted)] max-w-3xl">{DESC}</p>
       </header>
 
+      <div className="grid gap-3 sm:grid-cols-2 mb-3">
+        <Link
+          href="/elections/uk"
+          className="block rounded-xl border p-4 transition-colors hover:border-[var(--accent)]"
+          style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
+        >
+          <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">Election history</p>
+          <p className="text-lg font-bold text-[var(--text)]">UK general elections →</p>
+          <p className="text-sm text-[var(--text-muted)]">Every general election: seats, vote share and the governments they made.</p>
+        </Link>
+        <Link
+          href="/elections/forecast#uk"
+          className="block rounded-xl border p-4 transition-colors hover:border-[var(--accent)]"
+          style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
+        >
+          <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">Forecast</p>
+          <p className="text-lg font-bold text-[var(--text)]">UK forecast model →</p>
+          <p className="text-sm text-[var(--text-muted)]">Weighted polling averages and simulated seat ranges for the next election.</p>
+        </Link>
+      </div>
+
       <Link
         href="/uk-political-leadership/time-machine"
         className="block mb-10 rounded-xl border p-4 transition-colors hover:border-[var(--accent)]"

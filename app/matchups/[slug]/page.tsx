@@ -260,7 +260,7 @@ export default async function MatchupPage({ params }: PageProps) {
   const shareTitle = `${detailA.metro.name} vs ${detailB.metro.name} - Global Metro Power Rankings`;
 
   return (
-    <main className="min-h-screen pt-24 pb-24 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen pt-8 pb-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <nav className="text-xs mb-8" aria-label="Breadcrumb">
           <Link

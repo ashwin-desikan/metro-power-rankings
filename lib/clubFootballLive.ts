@@ -41,9 +41,41 @@ async function load<T>(file: string): Promise<T | null> {
   }
 }
 
+// api-football sometimes serves the SAME table twice under two group-label
+// spellings ("Premier Division" + "Premier League", "K League 1" + "K-League",
+// seen across ~12 leagues 2026-08-02), and occasionally pads a table with a
+// nameless duplicate row (Brazil's double rank-20). Normalize at read time so
+// every consumer heals, whatever the refresh wrote: drop nameless rows, drop
+// same-team duplicate rows inside a group, then drop any group whose team
+// sheet duplicates an earlier group's (first label wins — it matches the
+// league's own name in the observed cases). Genuine multi-group leagues (MLS
+// conferences, Apertura/Clausura, promotion splits) have different sheets and
+// are untouched.
+function dedupeLeague(l: LiveLeague): LiveLeague {
+  const seenSheets = new Set<string>();
+  const groups: LiveGroup[] = [];
+  for (const g of l.groups ?? []) {
+    const seenTeams = new Set<string>();
+    const rows = (g.rows ?? []).filter((r) => {
+      const name = (r.name ?? "").trim();
+      if (!name) return false;
+      const key = name.toLowerCase();
+      if (seenTeams.has(key)) return false;
+      seenTeams.add(key);
+      return true;
+    });
+    if (rows.length === 0) continue;
+    const sheet = rows.map((r) => (r.name ?? "").toLowerCase()).sort().join("|");
+    if (seenSheets.has(sheet)) continue;
+    seenSheets.add(sheet);
+    groups.push({ ...g, rows });
+  }
+  return { ...l, groups };
+}
+
 export async function getClubStandings(): Promise<LiveLeague[]> {
   const doc = await load<{ leagues: LiveLeague[] }>("live-standings-2026.json");
-  return doc?.leagues ?? [];
+  return (doc?.leagues ?? []).map(dedupeLeague);
 }
 
 export async function getClubCompetitions(): Promise<LiveComp[]> {

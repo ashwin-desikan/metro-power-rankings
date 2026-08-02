@@ -42,7 +42,7 @@ export default function RivalriesHubPage() {
     }));
 
   return (
-    <main className="mx-auto max-w-7xl px-4 py-8 pt-24">
+    <main className="mx-auto max-w-7xl px-4 py-8">
       <nav className="text-xs text-[var(--text-muted)] mb-4">
         <Link href="/" className="hover:underline">Home</Link>
         {" / "}

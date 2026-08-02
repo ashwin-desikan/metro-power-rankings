@@ -67,7 +67,7 @@ export default function RankingsHubPage() {
       />
 
       {/* Header — sibling-index strip + title. */}
-      <section className="pt-16 pb-6 px-4 sm:px-6 lg:px-8">
+      <section className="pt-2 pb-6 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-4 text-xs" style={eyebrowFont}>
             <span style={{ color: 'var(--accent)' }} className="uppercase tracking-widest">

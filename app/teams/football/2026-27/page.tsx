@@ -212,9 +212,20 @@ function CompCard({ comp }: { comp: LiveComp }) {
   };
   const isLibertadores = comp.league_id === 13;
   const name = isLibertadores ? "Copa Libertadores" : (comp.name ?? "").replace(/^UEFA |^CONMEBOL /, "");
+  // Each competition's dedicated hub, linked from the card's first line (Ashwin 2026-08-02).
+  const COMP_HUB: Record<number, string> = {
+    2: "/teams/football/tournaments/champions-league",
+    3: "/teams/football/tournaments/europa-league",
+    848: "/teams/football/tournaments/conference-league",
+    13: "/teams/football/tournaments/copa-libertadores",
+  };
+  const hub = COMP_HUB[comp.league_id];
   return (
     <details className="rounded-xl border overflow-hidden" style={cardStyle} open={comp.groups.length > 0 && !isLibertadores}>
-      <summary className="cursor-pointer select-none px-4 py-2.5 font-semibold text-sm">{name}</summary>
+      <summary className="cursor-pointer select-none px-4 py-2.5 flex items-center justify-between gap-2">
+        <span className="font-semibold text-sm">{name}</span>
+        {hub && <Link href={hub} className="text-xs font-medium whitespace-nowrap text-[var(--accent)] hover:underline">Open hub →</Link>}
+      </summary>
       <div className="border-t px-3 py-3 space-y-3" style={{ borderColor: "var(--border)" }}>
         {comp.groups.length > 0 && (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -227,7 +238,9 @@ function CompCard({ comp }: { comp: LiveComp }) {
           </div>
         )}
         {(upcoming.length > 0 || recent.length > 0) && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          // Recent above Upcoming, stacked at EVERY width (Ashwin 2026-08-02):
+          // the two-column desktop split truncated long cup fixture lines.
+          <div className="space-y-3 text-xs">
             {recent.length > 0 && (
               <div>
                 <div className="text-[11px] font-semibold text-[var(--text-muted)] mb-1">Recent</div>

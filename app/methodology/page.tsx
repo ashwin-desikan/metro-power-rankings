@@ -272,7 +272,7 @@ export default function MethodologyPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(articleJsonLd) }}
       />
-      <main className="min-h-screen pt-24 pb-24 px-4 sm:px-6 lg:px-8">
+      <main className="min-h-screen pt-8 pb-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
           <nav className="text-xs mb-8" aria-label="Breadcrumb">
             <Link

@@ -519,21 +519,48 @@ function renderDecisions(){
 }
 
 /* ============ PENALTY GEOGRAPHY ============ */
+/* Real data: every major-tournament FINAL decided on penalties, from the same
+   finals dataset behind /teams/national (public/data/international/finals.json:
+   per-nation finals with result + penalty_kicks scored). No invented figures. */
 const penCard=document.getElementById("penCard");
+let PENDATA=null;
+const PEN_NAMES={"cote-d-ivoire":"Côte d’Ivoire","usa":"USA","united-arab-emirates":"United Arab Emirates","dr-congo":"DR Congo"};
+function titleSlug(s){return PEN_NAMES[s]||s.split("-").map(w=>w.charAt(0).toUpperCase()+w.slice(1)).join(" ");}
+function computePen(finals){
+  const recs={};const distinct=new Set();
+  for(const [slug,rows] of Object.entries(finals)){
+    for(const r of rows){
+      if(!r.penalty_kicks&&r.penalty_kicks!==0)continue;
+      const rec=recs[slug]||(recs[slug]={slug,w:0,l:0,moments:[]});
+      if(r.result==="W")rec.w++;else if(r.result==="L")rec.l++;else continue;
+      distinct.add(r.year+"|"+r.competition);
+      rec.moments.push({year:r.year,comp:r.competition,res:r.result,opp:r.opp_cur_name,pk:r.penalty_kicks});
+    }
+  }
+  const board=Object.values(recs).map(r=>({...r,n:r.w+r.l,rate:r.w/(r.w+r.l)}))
+    .filter(r=>r.n>0).sort((a,b)=>b.rate-a.rate||b.n-a.n);
+  return {board,totalFinals:distinct.size};
+}
 function renderPenalties(){
   const intro=APP.mode==="kids"
-    ? "A penalty is a one-on-one shot from the spot. When a knockout match is tied, teams take a shootout. Some countries have a reputation for being cool under that pressure, and others less so."
-    : "Law 14 governs the kick from the penalty mark. In knockouts, shootouts decide tied ties, and shootout temperament maps onto geography and football culture in ways worth exploring.";
-  const rows=[
-    {l:"Stronger shootout reputation",w:82},
-    {l:"Mixed record",w:58},
-    {l:"Painful history",w:34}
-  ];
+    ? "A penalty is a one-on-one shot from the spot. When a big final is still tied after extra time, a shootout decides it. This board shows how every country has ACTUALLY done when a major final went to penalties."
+    : "Law 14 governs the kick from the penalty mark. Below: every major international final decided by a shootout — World Cup, continental championships and Nations League — as won-lost records per nation, from the same finals dataset behind /teams/national.";
+  if(!PENDATA){
+    penCard.innerHTML=`<h3>Penalty Geography</h3><p class="sub">${intro}</p><p class="note">Loading the shootout records… (open this from the site, not as a local file).</p>`;
+    return;
+  }
+  const shown=PENDATA.board.filter(r=>r.n>=2);
+  const singles=PENDATA.board.filter(r=>r.n===1);
+  const total=PENDATA.totalFinals;
   penCard.innerHTML=`<h3>Penalty Geography</h3><p class="sub">${intro}</p>
-    <div style="margin-top:14px;">${rows.map(r=>`<div class="barrow"><span class="lab">${r.l}</span>
-      <span class="bartrack"><span class="barfill" style="width:${r.w}%"></span></span></div>`).join("")}</div>
-    <p class="note"><b>Illustrative bands only, not actual figures.</b> Per the project's content rules, real outputs use sourced records rather than invented numbers. In production this reads national-team data behind <a href="#" data-tab="penalties">/teams/national</a> and is scored in the Zone Zero Cup register, so a metro or nation's penalty character becomes another geographic signal.</p>`;
+    <div style="margin-top:14px;">${shown.map(r=>`<div class="barrow"><span class="lab">${titleSlug(r.slug)} <span style="color:var(--muted);">${r.w}–${r.l}</span></span>
+      <span class="bartrack"><span class="barfill" style="width:${Math.max(4,Math.round(r.rate*100))}%"></span></span></div>`).join("")}</div>
+    <p class="note" style="margin-top:12px;">${APP.mode==="kids"
+      ? "The bar is the share of shootout finals each country has won. Two or more shootouts to make the board."
+      : "Bar = share of shootout-decided finals won (nations with 2+; records follow national-team lineages, so Czechoslovakia’s 1976 win sits with the Czech Republic). One-shootout nations: "+singles.map(r=>`${titleSlug(r.slug)} ${r.w}–${r.l}`).join(" · ")+"."}</p>
+    <div class="ruling show" style="margin-top:10px;"><b>Real finals, real records.</b> ${total} major finals have gone to penalties, from Czechoslovakia’s Panenka in 1976 to Argentina’s 2022 World Cup win over France. Every record here is computed live from the sourced finals dataset — the full stories are on <a href="/teams/national">the national-team pages</a> and in <a href="/sports/games">the Greatest Games</a>.</div>`;
 }
+fetch("/data/international/finals.json").then(r=>r.json()).then(d=>{PENDATA=computePen(d);if(document.getElementById("penCard"))renderPenalties();}).catch(()=>{});
 
 /* ============ RULES THAT CHANGED ============ */
 const TIMELINE=[

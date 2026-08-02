@@ -87,7 +87,7 @@ export default function GeographyHubPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(ld) }} />
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16">
         <nav className="mb-8 flex flex-wrap gap-x-4 gap-y-1">
           <Link href="/" className="text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors" style={mono}>&larr; Back to rankings</Link>
           <Link href="/sports" className="text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors" style={mono}>Sports hub &rarr;</Link>

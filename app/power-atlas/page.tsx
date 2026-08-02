@@ -32,7 +32,7 @@ export default function GreatPowersPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(ld) }} />
-      <main className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+      <main className="min-h-screen pt-8 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <nav className="mb-8 flex flex-wrap gap-x-4 gap-y-1">
             <Link href="/" className="text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors" style={{ fontFamily: "'JetBrains Mono', monospace" }}>&larr; Back to rankings</Link>

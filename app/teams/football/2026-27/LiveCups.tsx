@@ -92,7 +92,8 @@ export function DomesticCupsSection({ cups }: { cups: DomesticCup[] }) {
           return (
             <details key={c.comp_id} className="rounded-xl border overflow-hidden" style={cardStyle}>
               <summary className="cursor-pointer select-none px-4 py-2.5 font-semibold text-sm">{c.country} · {c.name}</summary>
-              <div className="border-t px-3 py-3 grid grid-cols-1 sm:grid-cols-2 gap-3" style={{ borderColor: "var(--border)" }}>
+              {/* Recent above Upcoming, stacked at every width (Ashwin 2026-08-02) — matches CompCard. */}
+              <div className="border-t px-3 py-3 space-y-3" style={{ borderColor: "var(--border)" }}>
                 {recent.length > 0 && (
                   <div><div className="text-[11px] font-semibold text-[var(--text-muted)] mb-1">Recent</div>{recent.map((f) => <FixtureLine key={f.fixture_id} f={f} />)}</div>
                 )}

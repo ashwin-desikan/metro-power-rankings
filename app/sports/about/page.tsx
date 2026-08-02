@@ -48,7 +48,7 @@ const LINKS: { href: string; label: string }[] = [
 
 export default function ZoneZeroAboutPage() {
   return (
-    <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
+    <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16">
       <header className="mb-12">
         <div className="flex items-center gap-3 mb-3">
           {/* eslint-disable-next-line @next/next/no-img-element */}

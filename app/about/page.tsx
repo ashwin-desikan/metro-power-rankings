@@ -55,7 +55,7 @@ export default function AboutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(aboutLd) }}
       />
-      <main className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+      <main className="min-h-screen pt-8 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
           <nav className="mb-8">
             <Link

@@ -321,7 +321,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
         />
       ))}
 
-      <div className="max-w-6xl mx-auto px-4 pt-28 pb-8 space-y-12">
+      <div className="max-w-6xl mx-auto px-4 pt-12 pb-8 space-y-12">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-sm text-[var(--text-muted)]">
           <a href="/" className="hover:text-[var(--accent)] transition">

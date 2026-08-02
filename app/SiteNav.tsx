@@ -46,7 +46,14 @@ export default function SiteNav() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b"
+      // STICKY, not fixed, by design standard: the nav occupies its own layout space, so page
+      // content can never start underneath it — on any viewport, on any page, with zero per-page
+      // clearance padding. (The old fixed nav needed every page to hand-add pt-24-style offsets;
+      // ~180 newer pages used py-8 and their first lines sat under the bar on mobile.) Pages start
+      // their content with ordinary whitespace (pt-8/py-8); NEVER add nav-clearance padding, and
+      // never switch this back to `fixed`. Anchor jumps still need [id]{scroll-margin-top} in
+      // globals.css because the bar overlays scrolled content.
+      className="sticky top-0 z-50 backdrop-blur-md border-b"
       style={{
         backgroundColor: "rgba(8, 8, 13, 0.8)",
         borderColor: "var(--border)",

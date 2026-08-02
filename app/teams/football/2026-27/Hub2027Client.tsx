@@ -88,7 +88,19 @@ function LeagueCard({ league, season }: { league: HubLeague; season?: string }) 
           ) : league.name}
           {season && <span className="ml-2 font-normal text-[var(--text-dim)] tabular-nums">{league.end_year ?? +season.slice(0, 4) + 1}</span>}
         </span>
-        {league.level != null && <Badge variant="neutral">Tier {league.level}</Badge>}
+        <span className="flex items-center gap-2 flex-shrink-0">
+          {/* Visible hub link on the first line for leagues with a dedicated hub (Ashwin 2026-08-02). */}
+          {league.hubSlug && (
+            <Link
+              href={`/teams/football/leagues/${league.hubSlug}`}
+              onClick={(e) => e.stopPropagation()}
+              className="text-xs font-medium whitespace-nowrap text-[var(--accent)] hover:underline"
+            >
+              Open hub →
+            </Link>
+          )}
+          {league.level != null && <Badge variant="neutral">Tier {league.level}</Badge>}
+        </span>
       </summary>
       <div className="border-t px-3 py-3 space-y-4" style={{ borderColor: "var(--border)" }}>
         {league.groups.map((g, gi) => (

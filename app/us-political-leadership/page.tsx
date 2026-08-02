@@ -149,6 +149,27 @@ export default async function USPoliticalLeadershipPage() {
 
       <HubNav items={navItems} />
 
+      <div className="grid gap-3 sm:grid-cols-2 mb-3">
+        <Link
+          href="/elections/us"
+          className="block rounded-xl border p-4 transition-colors hover:border-[var(--accent)]"
+          style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
+        >
+          <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">Election history</p>
+          <p className="text-lg font-bold text-[var(--text)]">US elections →</p>
+          <p className="text-sm text-[var(--text-muted)]">Presidential and congressional elections: the electoral maps, the margins, the outcomes.</p>
+        </Link>
+        <Link
+          href="/elections/forecast#us"
+          className="block rounded-xl border p-4 transition-colors hover:border-[var(--accent)]"
+          style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
+        >
+          <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">Forecast</p>
+          <p className="text-lg font-bold text-[var(--text)]">US forecast model →</p>
+          <p className="text-sm text-[var(--text-muted)]">Weighted polling averages and thousands of simulations for the next cycle.</p>
+        </Link>
+      </div>
+
       <Link
         href="/us-political-leadership/time-machine"
         className="block mb-10 rounded-xl border p-4 transition-colors hover:border-[var(--accent)]"

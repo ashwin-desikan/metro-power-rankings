@@ -8,9 +8,9 @@ import { liveMembershipBySlug, LIVE_MAP_COUNTRIES, LIVE_SEASON_END_YEAR } from "
 import { leagueStatusFor } from "@/lib/leagueStatus";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import { FootballHero } from "@/app/teams/_shared/FootballHero";
-import { StatTile, StatGrid } from "@/app/teams/_shared/StatTile";
 import { Badge } from "@/app/teams/_shared/Badge";
 import FootballIndexClient, { type IndexClub } from "./FootballIndexClient";
+import { getPastSeasons } from "@/lib/footballSeasons";
 
 // Re-render hourly so the auto month-window league/competition statuses
 // (leagueStatusFor) flip in and out of season without a manual deploy.
@@ -19,9 +19,9 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Club Football",
   description:
-    "Three layers of club football: UEFA and FIFA tournament hubs (Champions League, Europa League, " +
-    "Conference League, Cup Winners' Cup, Fairs Cup, Super Cup, Club World Cup) with a live 2025-26 " +
-    "bracket; eight top-flight league hubs; and canonical per-club pages with season-by-season history.",
+    "Club football in four layers: every UEFA and FIFA tournament (Champions League to Club World Cup) " +
+    "with a live 2026-27 season hub; the great top-flight leagues; every first division worldwide; and " +
+    "per-club pages with season-by-season history back to the 1870s.",
   alternates: { canonical: "/teams/football" },
   openGraph: {
     title: `Club Football | ${SITE_NAME}`,
@@ -32,38 +32,12 @@ export const metadata: Metadata = {
 };
 
 // Completed-season hubs, shown as a collapsible list under the live-season hero.
-// (2026-27 is the hero itself; the full seasons page adds trends and champions.)
-const PAST_SEASONS: { slug: string; note: string }[] = [
-  { slug: "2025-26", note: "Champions League: Paris Saint-Germain" },
-  { slug: "2024-25", note: "Champions League: Paris Saint-Germain · Club World Cup: Chelsea" },
-  { slug: "2023-24", note: "Champions League: Real Madrid" },
-  { slug: "2022-23", note: "The treble: Manchester City" },
-  { slug: "2021-22", note: "Champions League: Real Madrid" },
-  { slug: "2020-21", note: "Champions League: Chelsea · Club World Cup: Bayern Munich" },
-  { slug: "2019-20", note: "The treble: Bayern Munich" },
-  { slug: "2018-19", note: "Champions League: Liverpool" },
-  { slug: "2017-18", note: "Champions League: Real Madrid" },
-  { slug: "2016-17", note: "Champions League: Real Madrid" },
-  { slug: "2015-16", note: "Champions League: Real Madrid" },
-  { slug: "2014-15", note: "The treble: Barcelona" },
-  { slug: "2013-14", note: "Champions League: Real Madrid · La Décima" },
-  { slug: "2012-13", note: "Champions League: Bayern Munich · all-German final" },
-  { slug: "2011-12", note: "Champions League: Chelsea" },
-  { slug: "2010-11", note: "Champions League: Barcelona" },
-  { slug: "2009-10", note: "Champions League: Internazionale · treble" },
-  { slug: "2008-09", note: "Champions League: Barcelona · treble" },
-  { slug: "2007-08", note: "Champions League: Manchester United" },
-  { slug: "2006-07", note: "Champions League: AC Milan" },
-  { slug: "2005-06", note: "Champions League: Barcelona" },
-  { slug: "2004-05", note: "Champions League: Liverpool · Istanbul" },
-  { slug: "2003-04", note: "Champions League: FC Porto" },
-  { slug: "2002-03", note: "Champions League: AC Milan · all-Italian final" },
-  { slug: "2001-02", note: "Champions League: Real Madrid · La Novena" },
-  { slug: "2000-01", note: "Champions League: Bayern Munich" },
-  { slug: "1999-00", note: "Champions League: Real Madrid · Club World Cup: Corinthians" },
-];
+// Derived from the hub data via lib/footballSeasons (same source as the full
+// seasons page), so a new hub-YYYY-YY.json + trends rebuild extends this
+// automatically. (2026-27 is the hero itself.)
 
 export default async function FootballIndex() {
+  const PAST_SEASONS = getPastSeasons();
   const clubs = getAllClubs();
   const hubs = getAllLeagueHubs();
   const tournamentHubs = getAllEuropeanTournamentHubs();
@@ -119,16 +93,7 @@ export default async function FootballIndex() {
         eyebrow="Club Football"
         title={<h1 className="text-3xl font-semibold tracking-tight">Football</h1>}
         subtitle={
-          <>
-            Three layers of club football on one product surface, built for football obsessives
-            and first-time visitors alike. UEFA and FIFA tournament hubs carry every Champions
-            League, Europa League, Conference League, Cup Winners&apos; Cup, Inter-Cities Fairs
-            Cup, UEFA Super Cup, and Club World Cup edition, with a round-by-round bracket on
-            competitions still in flight. League hubs cover the top flights across eight
-            countries with current standings and all-time champions. And the canonical per-club
-            pages render season-by-season standings, cup finals, and European appearances,
-            reaching back to the 1870s.
-          </>
+          <>Every European trophy, the great leagues, and every club&apos;s story — back to the 1870s.</>
         }
         cta={
           <a
@@ -138,14 +103,6 @@ export default async function FootballIndex() {
           >
             New to football? Rules →
           </a>
-        }
-        stats={
-          <StatGrid>
-            <StatTile label="Clubs tracked" value={clubs.length.toLocaleString("en-US")} />
-            <StatTile label="Countries" value={countryCount} />
-            <StatTile label="Tournament & league hubs" value={tournamentHubs.length + hubs.length} />
-            <StatTile label="Years of history" value={yearsOfHistory ? `${yearsOfHistory}+` : "-"} />
-          </StatGrid>
         }
       >
         <Link
@@ -160,20 +117,45 @@ export default async function FootballIndex() {
                 <span className="text-lg font-semibold">2026-27 Club Football Hub</span>
               </div>
               <p className="text-sm text-[var(--text-muted)] mt-1 max-w-2xl">
-                Live league tables for every domestic competition and tier tracked, grouped by confederation,
-                alongside the European club competitions and Copa Libertadores.
+                Every tracked league table, live — plus the European cups and the Libertadores.
               </p>
             </div>
             <span className="text-sm text-[var(--accent)] font-medium whitespace-nowrap">Open the season hub →</span>
           </div>
         </Link>
+
+        {/* The four layers, as stat-cards that double as section nav — the numbers ARE the pitch. */}
+        <div className="grid gap-2.5 grid-cols-2 lg:grid-cols-4">
+          {[
+            { href: "#tournaments", emoji: "🏆", stat: String(tournamentHubs.length), label: "tournament hubs", blurb: "Champions League to Club World Cup — every edition, every final." },
+            { href: "#leagues", emoji: "🏟️", stat: String(hubs.length), label: "league hubs", blurb: "The great top flights: live tables, all-time champions." },
+            { href: "#domestic", emoji: "🌍", stat: String(countryCount), label: "countries", blurb: "Domestic leagues worldwide — one master table of top-flight clubs." },
+            { href: "#clubs", emoji: "🗺️", stat: clubs.length.toLocaleString("en-US"), label: "clubs", blurb: `Pinned on the interactive world map, ${yearsOfHistory ? `${yearsOfHistory}+ years` : "150 years"} of history each.` },
+          ].map((c) => (
+            <a
+              key={c.href}
+              href={c.href}
+              className="rounded-xl border p-3.5 transition hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]"
+              style={{ background: "var(--bg)", borderColor: "var(--border)" }}
+            >
+              <div className="flex items-baseline gap-2">
+                <span className="text-lg leading-none" aria-hidden>{c.emoji}</span>
+                <span className="text-2xl font-bold tabular-nums tracking-tight">{c.stat}</span>
+                <span className="text-[11px] uppercase tracking-wide text-[var(--text-muted)]">{c.label}</span>
+              </div>
+              <p className="text-xs text-[var(--text-muted)] mt-1.5 leading-snug">{c.blurb}</p>
+            </a>
+          ))}
+        </div>
       </FootballHero>
 
       <details className="group mb-8 rounded-xl border" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
         <summary className="cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden px-5 py-3.5 flex items-center justify-between gap-3">
           <span className="text-sm font-semibold">
             Past seasons
-            <span className="font-normal text-[var(--text-muted)]"> · 2006-07 to 2025-26, each a full season hub</span>
+            <span className="font-normal text-[var(--text-muted)]">
+              {" "}· {PAST_SEASONS[PAST_SEASONS.length - 1]?.slug} to {PAST_SEASONS[0]?.slug}, each a full season hub
+            </span>
           </span>
           <span className="text-xs text-[var(--text-muted)] transition-transform group-open:rotate-180">▾</span>
         </summary>
@@ -319,7 +301,9 @@ export default async function FootballIndex() {
         </div>
       </section>
 
-      <FootballIndexClient clubs={clientClubs} />
+      <div id="clubs" className="scroll-mt-20">
+        <FootballIndexClient clubs={clientClubs} />
+      </div>
     </main>
   );
 }

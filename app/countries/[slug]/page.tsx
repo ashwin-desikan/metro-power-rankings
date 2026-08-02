@@ -326,7 +326,7 @@ export default async function CountryDetailPage({ params }: Props) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(collectionLd) }} />
-      <main className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+      <main className="min-h-screen pt-8 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <nav className="mb-6 flex items-center gap-3 text-xs text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
             <Link href="/" className="hover:text-[var(--accent)]">Rankings</Link>

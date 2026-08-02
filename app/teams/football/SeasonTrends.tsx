@@ -27,11 +27,29 @@ const ss = (s: string) => (s.length >= 7 ? `${s.slice(2, 4)}/${s.slice(5, 7)}` :
 // 99/00, 04/05, 09/10 …); if even those are too many, fall back to decade only (…/00, …/10); if the
 // visible range is so short it yields none, just label them all (it's short enough not to crowd).
 const endYear = (s: string) => parseInt(s.slice(0, 4), 10) + 1;
-function axisTicks(view: string[]): Set<string> {
+function axisTicks(view: string[], cap = 12): Set<string> {
   const half = view.filter((s) => endYear(s) % 5 === 0);
-  if (half.length > 12) return new Set(view.filter((s) => endYear(s) % 10 === 0));
+  if (half.length > cap) return new Set(view.filter((s) => endYear(s) % 10 === 0));
   if (half.length === 0) return new Set(view);
   return new Set(half);
+}
+
+// Physical readability on phones: these charts draw on a 760-wide viewBox, so
+// on a ~380px screen every 9px label scales to ~4.5px and the wide right-side
+// label gutters waste a fifth of the width. Below 640px we re-lay the SAME
+// chart on a 400-wide viewBox — bigger physical type, slim gutters, legends
+// instead of line-end labels, thinner ticks — rather than shrinking the
+// desktop drawing (Ashwin 2026-08-02).
+function useIsNarrow() {
+  const [narrow, setNarrow] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 640px)");
+    const on = () => setNarrow(mq.matches);
+    on();
+    mq.addEventListener("change", on);
+    return () => mq.removeEventListener("change", on);
+  }, []);
+  return narrow;
 }
 const cardStyle = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
 const selCls = "text-xs px-2 py-1 rounded-md border bg-transparent";
@@ -87,7 +105,8 @@ function CountryChart({ data }: { data: TrendsData }) {
   const [fromI, setFromI] = useState(0);
   const [toI, setToI] = useState(labels.length - 1);
   const view = labels.slice(fromI, toI + 1);
-  const W = 760, H = 260, PL = 30, PR = 100, PT = 12, PB = 22;
+  const narrow = useIsNarrow();
+  const W = narrow ? 400 : 760, H = narrow ? 240 : 260, PL = narrow ? 26 : 30, PR = narrow ? 12 : 100, PT = 12, PB = 22;
   const svgRef = useRef<SVGSVGElement | null>(null);
   const [hi, setHi] = useState<string | null>(null);
   const denom = Math.max(1, view.length - 1);
@@ -133,7 +152,7 @@ function CountryChart({ data }: { data: TrendsData }) {
             <text x={PL - 5} y={py(t) + 3} textAnchor="end" fontSize={9} fill="var(--text-dim)">{t}</text>
           </g>
         ))}
-        {(() => { const ticks = axisTicks(view); return view.filter((s) => ticks.has(s)).map((s) => <text key={s} x={px(s)} y={H - 7} textAnchor="middle" fontSize={9} fill="var(--text-dim)">{ss(s)}</text>); })()}
+        {(() => { const ticks = axisTicks(view, narrow ? 6 : 12); return view.filter((s) => ticks.has(s)).map((s) => <text key={s} x={px(s)} y={H - 7} textAnchor="middle" fontSize={9} fill="var(--text-dim)">{ss(s)}</text>); })()}
         {hi && <line x1={px(hi)} x2={px(hi)} y1={PT} y2={H - PB} stroke="var(--text-dim)" strokeWidth={1} strokeDasharray="3 3" />}
         {data.countries.map((c) => {
           const col = COUNTRY_COLOR[c.country] ?? MUTED;
@@ -144,12 +163,22 @@ function CountryChart({ data }: { data: TrendsData }) {
             <g key={c.country}>
               <polyline fill="none" stroke={col} strokeWidth={2} strokeLinejoin="round" points={psv.map((p) => `${px(p.season)},${py(p.coef)}`).join(" ")} />
               {psv.map((p) => <circle key={p.season} cx={px(p.season)} cy={py(p.coef)} r={hi === p.season ? 4 : 2.5} fill={col} stroke="var(--bg-card)" strokeWidth={1.2} />)}
-              <text x={px(last.season) + 6} y={py(last.coef) + 3} fontSize={9.5} fill={col}>{c.country}</text>
+              {!narrow && <text x={px(last.season) + 6} y={py(last.coef) + 3} fontSize={9.5} fill={col}>{c.country}</text>}
             </g>
           );
         })}
         <rect x={PL} y={PT} width={W - PL - PR} height={H - PT - PB} fill="transparent" />
       </svg>
+      {narrow && (
+        <div className="flex flex-wrap gap-x-3 gap-y-1 mt-2">
+          {data.countries.map((c) => (
+            <span key={c.country} className="inline-flex items-center gap-1 text-[11px] text-[var(--text-muted)]">
+              <span className="inline-block w-2 h-2 rounded-full" style={{ background: COUNTRY_COLOR[c.country] ?? MUTED }} />
+              {c.country}
+            </span>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -237,7 +266,8 @@ function ClubChart({ data }: { data: TrendsData }) {
 
   const drawn = vis.filter((c) => !hiddenSet.has(c.name));
 
-  const W = 760, PL = 30, PR = 150, PT = 12, PB = 22;
+  const narrow = useIsNarrow();
+  const W = narrow ? 400 : 760, PL = narrow ? 26 : 30, PR = narrow ? 16 : 150, PT = 12, PB = 22;
   const isRank = metric === "rank";
   const H = isRank ? Math.max(220, topN * 16 + 40) : 260;
   const denom = Math.max(1, view.length - 1);
@@ -311,7 +341,7 @@ function ClubChart({ data }: { data: TrendsData }) {
               <text x={PL - 4} y={py(t.v) + 3} textAnchor="end" fontSize={9} fill="var(--text-dim)">{t.label}</text>
             </g>
           ))}
-          {(() => { const xt = axisTicks(view); return view.filter((s) => xt.has(s)).map((s) => <text key={s} x={px(s)} y={H - 7} textAnchor="middle" fontSize={9} fill="var(--text-dim)">{ss(s)}</text>); })()}
+          {(() => { const xt = axisTicks(view, narrow ? 6 : 12); return view.filter((s) => xt.has(s)).map((s) => <text key={s} x={px(s)} y={H - 7} textAnchor="middle" fontSize={9} fill="var(--text-dim)">{ss(s)}</text>); })()}
           {drawn.map((c) => {
             const on = hi === c.name;
             const faded = hi != null && !on;
@@ -332,7 +362,7 @@ function ClubChart({ data }: { data: TrendsData }) {
                   <polyline key={si} fill="none" stroke={col} strokeWidth={on ? 3 : 2} strokeLinejoin="round" strokeLinecap="round" points={seg.map((p) => `${px(p.season)},${py(metricVal(p, metric))}`).join(" ")} />
                 ) : null)}
                 {ordered.map((p) => <circle key={p.season} cx={px(p.season)} cy={py(metricVal(p, metric))} r={on ? 4 : 2.6} fill={col} stroke="var(--bg-card)" strokeWidth={1.2} />)}
-                {showLabels && <text x={px(last.season) + 6} y={py(metricVal(last, metric)) + 3} fontSize={9.5} fill={faded ? "var(--text-dim)" : col} fontWeight={on ? 700 : 400}>{c.name}{pinnedSet.has(c.name) ? " •" : ""}</text>}
+                {showLabels && !narrow && <text x={px(last.season) + 6} y={py(metricVal(last, metric)) + 3} fontSize={9.5} fill={faded ? "var(--text-dim)" : col} fontWeight={on ? 700 : 400}>{c.name}{pinnedSet.has(c.name) ? " •" : ""}</text>}
               </g>
             );
           })}
@@ -366,7 +396,8 @@ function ScatterChart({ data }: { data: TrendsData }) {
     [data]);
   const [sel, setSel] = useState(seasons[seasons.length - 1]);
   const [ctry, setCtry] = useState("All");
-  const W = 760, H = 330, PL = 40, PR = 16, PT = 14, PB = 34;
+  const narrow = useIsNarrow();
+  const W = narrow ? 400 : 760, H = narrow ? 300 : 330, PL = narrow ? 34 : 40, PR = narrow ? 10 : 16, PT = 14, PB = 34;
   const px = (v: number) => PL + v * (W - PL - PR);
   const py = (v: number) => PT + (1 - v) * (H - PT - PB);
   const pts = useMemo(() =>
@@ -404,7 +435,7 @@ function ScatterChart({ data }: { data: TrendsData }) {
         <text x={12} y={(PT + H - PB) / 2} textAnchor="middle" fontSize={10} fill="var(--text-muted)" transform={`rotate(-90 12 ${(PT + H - PB) / 2})`}>Form this season →</text>
         {pts.map(({ name, p }) => {
           const on = hi === name;
-          const show = p.rank <= 4 || on;
+          const show = p.rank <= (narrow ? 2 : 4) || on;
           return (
             <g key={name} onMouseEnter={() => setHi(name)} style={{ cursor: "pointer" }}>
               <circle cx={px(p.ped)} cy={py(p.form)} r={rOf(p.tb)} fill="var(--accent)" fillOpacity={on ? 0.5 : 0.22} stroke="var(--accent)" strokeWidth={on ? 2 : 1} />

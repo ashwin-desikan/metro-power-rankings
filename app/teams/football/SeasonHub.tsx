@@ -34,14 +34,19 @@ function resolveClub(name: string, lookup: string): { name: string; slug: string
   return { name, slug: c?.slug ?? null };
 }
 const _norm = (s: string) => s.toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, " ").trim();
-// Previous season's finishing ranks (by canonical lookup) for year-over-year deltas.
-function loadPrevRanks(season: string): Map<string, number> {
+// Previous season's finishing ranks + form−pedigree gaps (by canonical lookup) for
+// year-over-year deltas: ranks feed the Biggest riser/faller movers, gaps feed the
+// Underachiever's "worsened this season" eligibility test.
+function loadPrevSeason(season: string): { ranks: Map<string, number>; gaps: Map<string, number> } {
   const sy = parseInt(season.slice(0, 4), 10);
   const prevSlug = `${sy - 1}-${String(sy).slice(2)}`;
   try {
     const prev = JSON.parse(fs.readFileSync(path.join(process.cwd(), "public", "data", "football", `hub-${prevSlug}.json`), "utf-8")) as Hub;
-    return new Map(prev.clubs.map((c) => [c.lookup, c.rank]));
-  } catch { return new Map<string, number>(); }
+    return {
+      ranks: new Map(prev.clubs.map((c) => [c.lookup, c.rank])),
+      gaps: new Map(prev.clubs.map((c) => [c.lookup, c.form - c.ped])),
+    };
+  } catch { return { ranks: new Map<string, number>(), gaps: new Map<string, number>() }; }
 }
 function ClubCell({ name, lookup }: { name: string; lookup: string }) {
   const r = resolveClub(name, lookup);
@@ -287,7 +292,7 @@ function SeasonPager({ season }: { season: string }) {
 export default function SeasonHub({ hub }: { hub: Hub }) {
   const countryRank = new Map(hub.countries.map((c) => [c.country, c.rank] as const));
   const confs = buildConfs(hub.leagues, countryRank, hub.season);
-  const prevRank = loadPrevRanks(hub.season);
+  const { ranks: prevRank, gaps: prevGap } = loadPrevSeason(hub.season);
   const deltaOf = (lookup: string, rank: number): number | null => { const p = prevRank.get(lookup); return p == null ? null : p - rank; };
   const ranked: RankedClub[] = hub.clubs.map((c) => { const r = resolveClub(c.name, c.lookup); return { rank: c.rank, name: r.name, slug: r.slug, country: c.country, mp: c.mp, w: c.w, d: c.d, l: c.l, form: c.form, ped: c.ped, tb: c.tb ?? 0, score: c.score, deltaRank: deltaOf(c.lookup, c.rank) }; });
 
@@ -323,8 +328,41 @@ export default function SeasonHub({ hub }: { hub: Hub }) {
     ? (wonByTop(clSec!.final!.winner, clSec!.final!.winner_lookup) ? "Ranked #1 and won the Champions League." : `Ranked #1 in the power ranking; the Champions League went to ${clWinnerName}.`)
     : "Ranked #1 in the season power ranking.";
   const played = hub.clubs.filter((c) => c.mp >= 20);
-  const over = played.reduce<Club | null>((b, c) => (b == null || (c.form - c.ped) > (b.form - b.ped) ? c : b), null);
-  const under = [...hub.clubs].sort((a, b) => b.ped - a.ped).slice(0, 30).reduce<Club | null>((w, c) => (w == null || (c.form - c.ped) < (w.form - w.ped) ? c : w), null);
+  // Overachievement (form − pedigree) needs a REAL pedigree baseline. ped=0 mostly
+  // means "no counted European history in the window" — endemic in the older hubs
+  // (the pre-1971 coefficient record covers the Fairs Cup only patchily, so 400+
+  // clubs a season carry ped 0.00, and the badge went to whichever of them had top
+  // form: Újpest 1968-69 at a meaningless +1.00). Requiring an established pedigree
+  // (≥0.10) makes the badge what it claims: results far above a measured standing.
+  const PED_FLOOR = 0.10;
+  const over = played.filter((c) => c.ped >= PED_FLOOR)
+    .reduce<Club | null>((b, c) => (b == null || (c.form - c.ped) > (b.form - b.ped) ? c : b), null);
+  // Underachiever: worst form-vs-pedigree gap among the top-30 pedigree clubs, subject to THREE
+  // eligibility rules (each fixing a real failure mode Ashwin flagged):
+  //  1. rank > 6 — an elite finish is not underachievement. Without it the badge landed on Benfica
+  //     in the season they WON the 1961-62 European Cup (weak-league form scale vs a maxed ped).
+  //  2. gap < 0 — form must actually sit BELOW pedigree; a club regressing from a huge over-
+  //     achievement to a small one is a faller, not an underachiever.
+  //  3. WORSENED this season — the gap must have widened by ≥ 0.05 vs last season (clubs new to
+  //     the hub count as worsened). Pedigree is a TRAILING window, so a one-time collapse used to
+  //     keep the same club on the badge for up to 5 straight years (Real Madrid 1969-74; Birmingham
+  //     pre-Fairs-discount) — "serial underachiever" reads as a bug, not a story. Requiring fresh
+  //     deterioration makes the badge a SEASON superlative: sweep-tested over all 67 hubs it
+  //     rotates every year except genuinely accelerating collapses (Juventus 1978-80, Hajduk
+  //     1986-88 — both two-year freefalls where the gap kept widening), while keeping the iconic
+  //     picks (Chelsea 2015-16 and 2022-23, post-Ronaldo Real 2018-19, fading Busby Man Utd).
+  // Fallback: if no club passes all three (rare, quiet seasons), drop rule 3 then rule 2.
+  const WORSEN = 0.05;
+  const underPool = [...hub.clubs].sort((a, b) => b.ped - a.ped).slice(0, 30).filter((c) => c.rank > 6);
+  const gapOf = (c: Club) => c.form - c.ped;
+  const worsened = (c: Club) => { const p = prevGap.get(c.lookup); return p == null || gapOf(c) < p - WORSEN; };
+  const underElig =
+    underPool.filter((c) => gapOf(c) < 0 && worsened(c)).length > 0
+      ? underPool.filter((c) => gapOf(c) < 0 && worsened(c))
+      : underPool.filter((c) => gapOf(c) < 0).length > 0
+        ? underPool.filter((c) => gapOf(c) < 0)
+        : underPool;
+  const under = underElig.reduce<Club | null>((w, c) => (w == null || gapOf(c) < gapOf(w) ? c : w), null);
   // Movers, restricted to clubs that were first division (ranked) in BOTH seasons. Symmetric top-50
   // anchor keeps them to elite-relevant moves, not volatile small-league swings: the Biggest faller
   // was a top-50 club last season that fell; the Biggest riser is a club that climbed INTO the top 50

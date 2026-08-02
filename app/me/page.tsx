@@ -100,7 +100,7 @@ export default function MePage() {
 
   return (
     <div style={{ backgroundColor: "var(--bg)", color: "var(--text)", minHeight: "100vh" }}>
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
         <h1 className="text-3xl font-bold mb-2">Following</h1>
         <p className="text-[15px] text-[var(--text-muted)] mb-8 max-w-xl">
           Metros and teams you follow. Signed out, they live only in this browser; sign in with Google to

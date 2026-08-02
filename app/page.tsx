@@ -12,7 +12,6 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 import Link from 'next/link';
 import FollowingRail from './FollowingRail';
-import PredictionsSection from './PredictionsSection';
 
 // Directory-forward landing page. Surfaces the breadth of the site first —
 // four ranked indices (each with a live top-three preview), a Greatest Games
@@ -262,7 +261,7 @@ const MASTHEAD_LAUNCH: { emoji: string; label: string; href: string; blurb: stri
 ];
 
 const LEAGUES: { name: string; href: string; emoji?: string }[] = [
-  { name: 'International', href: '/teams/national', emoji: '🏆' },
+  { name: 'International Football', href: '/teams/national', emoji: '🏆' },
   { name: 'Club Football', href: '/teams/football', emoji: '⚽' },
   { name: 'NFL', href: '/teams/nfl', emoji: '🏈' },
   { name: 'NBA', href: '/teams/nba', emoji: '🏀' },
@@ -275,6 +274,12 @@ const LEAGUES: { name: string; href: string; emoji?: string }[] = [
   { name: 'CFL', href: '/teams/cfl', emoji: '🏈' },
   { name: 'AFL', href: '/teams/afl', emoji: '🏉' },
   { name: 'NRL', href: '/teams/nrl', emoji: '🏉' },
+  // Year-round + season-window additions (Ashwin 2026-08-02): F1 shows only while
+  // the race season runs (its month window ends with the season); international
+  // cricket and rugby run year-round, so they sit green essentially always.
+  { name: 'F1', href: '/teams/f1', emoji: '🏎️' },
+  { name: 'Intl Cricket', href: '/teams/cricket', emoji: '🏏' },
+  { name: 'Intl Rugby', href: '/teams/rugby-union', emoji: '🏉' },
 ];
 
 const TONE_COLOR: Record<LeagueStatusTone, string> = {
@@ -402,7 +407,7 @@ export default async function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(dataset) }} />
 
       {/* Masthead — headline + live standings/badges + This Week rail. */}
-      <section className="pt-28 pb-14 px-4 sm:px-6 lg:px-8 border-b" style={{ borderColor: 'var(--border)' }}>
+      <section className="pt-12 pb-14 px-4 sm:px-6 lg:px-8 border-b" style={{ borderColor: 'var(--border)' }}>
         <div className="max-w-7xl mx-auto grid gap-10 lg:gap-16" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
           <div>
             <p className="text-xs uppercase tracking-widest mb-3" style={{ ...MONO, color: 'var(--accent)' }}>
@@ -419,6 +424,60 @@ export default async function Home() {
               than opinion.
             </p>
 
+            {/* Desktop fold promo (Ashwin 2026-08-02): the left column's dead space under the
+                intro now sells the two below-the-fold sections — the indices (the crux of the
+                site) and the Greatest Games — with CONTENT, not duplicate hub links: live #1s
+                from the boards themselves, anchoring DOWN the page (the Explore launcher's
+                links go OUT to hubs, so nothing is redundant). Hidden on mobile, where the
+                indices sit directly below and there is no dead space to fill. */}
+            <div className="hidden md:block max-w-lg">
+              <a href="#indices" className="block rounded-lg border p-4 transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)] group" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[11px] uppercase tracking-widest" style={{ ...MONO, color: 'var(--accent)' }}>The indices · №1 right now</span>
+                  <span className="text-xs text-[var(--text-dim)] group-hover:text-[var(--accent)] transition-colors" style={MONO} aria-hidden>↓</span>
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  {/* cleanName: data names can carry editorial markers (power-ranking.json ships
+                      "⚠️ Donald Trump"); the promo shows plain names (Ashwin 2026-08-02). */}
+                  {[
+                    { emoji: '🌐', board: 'Metro Power Rankings', top: INDICES[0].preview[0]?.name, second: INDICES[0].preview[1]?.name },
+                    { emoji: '👑', board: 'The Nowhere 100', top: INDICES[1].preview[0]?.name, second: INDICES[1].preview[1]?.name },
+                    { emoji: '🏆', board: 'Zone Zero Cup', top: INDICES[2].preview[0]?.name, second: INDICES[2].preview[1]?.name },
+                  ].filter((r) => r.top).map((r) => {
+                    const clean = (s?: string) => (s ?? '').replace(/^[\s⚠️]+/u, '');
+                    return (
+                      <div key={r.board} className="flex items-baseline justify-between gap-3">
+                        <span className="flex items-baseline gap-2 min-w-0">
+                          <span aria-hidden className="text-sm leading-none flex-shrink-0">{r.emoji}</span>
+                          <span className="text-[13px] text-[var(--text-muted)] truncate">{r.board}</span>
+                        </span>
+                        <span className="text-[13px] flex-shrink-0">
+                          <span className="font-semibold">{clean(r.top)}</span>
+                          {r.second && (
+                            <span className="text-[var(--text-muted)]"> · {clean(r.second)}</span>
+                          )}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="mt-3 pt-2.5 border-t text-[11px]" style={{ ...MONO, color: 'var(--text-muted)', borderColor: 'var(--border)' }}>
+                  Seven live boards — metros, people, nations, artists, power, elections, screen <span className="group-hover:text-[var(--accent)] transition-colors" aria-hidden>↓</span>
+                </div>
+              </a>
+              {games.length > 0 && (
+                <a href="#games" className="mt-3 flex items-baseline justify-between gap-3 rounded-lg border px-4 py-3 transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)] group" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                  <span className="flex items-baseline gap-2 min-w-0">
+                    <span aria-hidden className="text-sm leading-none flex-shrink-0">🎬</span>
+                    <span className="text-[13px] min-w-0">
+                      <span className="font-semibold">The Greatest Games</span>
+                      <span className="text-[var(--text-muted)]"> — every sport&rsquo;s all-time best, ranked by Game Score</span>
+                    </span>
+                  </span>
+                  <span className="text-xs text-[var(--text-dim)] group-hover:text-[var(--accent)] transition-colors flex-shrink-0" style={MONO} aria-hidden>↓</span>
+                </a>
+              )}
+            </div>
           </div>
 
           {/* Explore launcher — quick visual entry to every section + the games. */}
@@ -438,6 +497,51 @@ export default async function Home() {
             <Link href="/random" className="inline-flex items-center gap-1.5 mt-3 text-[13px]" style={{ ...MONO, color: 'var(--accent)' }}>
               🎲 Random metro <span aria-hidden>→</span>
             </Link>
+            {/* Who's in charge — live officeholder datasets (Ashwin 2026-08-02: card links to
+                World Leaders + Mayors between the Explore launcher and Predictions, both
+                marked live — the civic pipelines keep them current week to week). */}
+            <div className="mt-6 pt-5 border-t" style={{ borderColor: 'var(--border)' }}>
+              <p className="text-[11px] uppercase tracking-widest mb-2" style={{ ...MONO, color: 'var(--text-muted)' }}>Who&rsquo;s in charge</p>
+              <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))' }}>
+                {[
+                  { emoji: '🌍', label: 'World Leaders', href: '/leaders', blurb: 'Every head of state & government' },
+                  { emoji: '🏛️', label: 'Mayors', href: '/mayors', blurb: 'Who runs the major metros' },
+                ].map((t) => (
+                  <Link key={t.href} href={t.href} className="flex items-start gap-2.5 rounded-lg border px-3 py-2.5 transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]" style={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border)' }}>
+                    <span className="text-lg leading-none mt-0.5" aria-hidden>{t.emoji}</span>
+                    <span className="min-w-0 flex-1">
+                      <span className="flex items-center gap-1.5">
+                        <span className="text-[13px] font-medium leading-tight">{t.label}</span>
+                        <span className="flex items-center gap-1 ml-auto flex-shrink-0">
+                          <span className="w-1.5 h-1.5 rounded-full" style={{ background: '#10b981' }} aria-hidden />
+                          <span className="text-[10px]" style={{ ...MONO, color: '#10b981' }}>LIVE</span>
+                        </span>
+                      </span>
+                      <span className="block text-[11px] mt-0.5 leading-snug" style={{ color: 'var(--text-muted)' }}>{t.blurb}</span>
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+            {/* Predictions — compact hub links (Ashwin 2026-08-02: small, under the
+                explore launcher; add each new league hub here as its model ships). */}
+            <div className="mt-6 pt-5 border-t" style={{ borderColor: 'var(--border)' }}>
+              <Link href="/predictions" className="inline-flex items-center gap-1 text-xs mb-2 hover:opacity-80 transition-opacity" style={{ ...MONO, color: 'var(--accent)' }}>
+                🔮 Predictions <span aria-hidden>→</span>
+              </Link>
+              <div className="flex flex-wrap items-center gap-2">
+                {[
+                  { href: '/elections/forecast', label: 'Elections', emoji: '🗳️' },
+                  { href: '/predictions/pl', label: 'Premier League', emoji: '⚽' },
+                  { href: '/predictions/nfl', label: 'NFL', emoji: '🏈' },
+                ].map((p) => (
+                  <Link key={p.href} href={p.href} className="inline-flex items-center gap-1.5 rounded-full transition-colors" style={{ ...MONO, fontSize: 12, padding: '4px 11px', color: 'var(--text)', background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
+                    <span aria-hidden>{p.emoji}</span>
+                    <span>{p.label}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
             {/* Live now — standings + sport badges (moved here) + live music charts. */}
             <div className="mt-6 pt-5 border-t" style={{ borderColor: 'var(--border)' }}>
             {liveLeagues.length > 0 && (
@@ -484,10 +588,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Predictions — election forecasts, league prediction hubs, and Beat the Model. */}
-      <PredictionsSection />
-
-      {/* The Indices — each card previews its live top three, then a Greatest Games showcase. */}
+      {/* The Indices — the crux of the site — lead; everything else follows them. */}
       <section id="indices" className="py-16 px-4 sm:px-6 lg:px-8 border-b scroll-mt-20" style={{ borderColor: 'var(--border)' }}>
         <div className="max-w-7xl mx-auto">
           <p className="text-[11px] uppercase tracking-widest mb-2" style={{ ...MONO, color: 'var(--accent)' }}>The indices</p>
@@ -520,9 +621,10 @@ export default async function Home() {
             ))}
           </div>
 
-          {/* Greatest Games — the top two games in every sport (NHL excluded for now). */}
+          {/* Greatest Games — the top two games in every sport (NHL excluded for now).
+              id="games" is the target of the masthead fold-promo anchor. */}
           {games.length > 0 && (
-            <div className="mt-10 pt-8 border-t" style={{ borderColor: 'var(--border)' }}>
+            <div id="games" className="mt-10 pt-8 border-t scroll-mt-20" style={{ borderColor: 'var(--border)' }}>
               <div className="flex items-baseline justify-between gap-4 mb-5 flex-wrap">
                 <div><h3 className="text-lg font-bold flex items-center gap-2"><span aria-hidden>🎬</span> The Greatest Games</h3><p className="text-[11px] mt-1" style={{ ...MONO, color: 'var(--text-dim)' }}>Two per sport, with all-time Game Score rank</p></div>
                 <Link href="/sports/games" className="text-xs" style={{ ...MONO, color: 'var(--accent)' }}>The top games in every sport →</Link>

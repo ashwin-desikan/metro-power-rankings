@@ -84,7 +84,10 @@ const LEAGUE_SEASONS: Record<string, MonthWindow[]> = {
   "/teams/football/leagues/eredivisie": [{ label: "Live - Regular Season", tone: "regular", months: [8, 9, 10, 11, 12, 1, 2, 3, 4, 5] }],
   "/teams/football/leagues/primeira-liga": [{ label: "Live - Regular Season", tone: "regular", months: [8, 9, 10, 11, 12, 1, 2, 3, 4, 5] }],
   "/teams/football/leagues/scottish-premiership": [{ label: "Live - Regular Season", tone: "regular", months: [8, 9, 10, 11, 12, 1, 2, 3, 4, 5] }],
-  "/teams/rugby-union": [{ label: "Live - Six Nations", tone: "regular", months: [2, 3] }, { label: "Live - Internationals", tone: "regular", months: [6, 7, 8, 9, 10] }, { label: "Live - Autumn Internationals", tone: "regular", months: [11] }],
+  // Rugby runs year-round (Ashwin 2026-08-02): internationals cover Feb-Nov and the
+  // club season (URC/Top 14/Premiership/Champions Cup) fills Dec/Jan/Apr/May, so the
+  // portal stays green through the calendar with era-appropriate labels.
+  "/teams/rugby-union": [{ label: "Live - Six Nations", tone: "regular", months: [2, 3] }, { label: "Live - Internationals", tone: "regular", months: [6, 7, 8, 9, 10] }, { label: "Live - Autumn Internationals", tone: "regular", months: [11] }, { label: "Live - Club Season", tone: "regular", months: [12, 1, 4, 5] }],
   "/teams/football/tournaments/champions-league": [{ label: "Live - Qualifying", tone: "regular", months: [7, 8] }, { label: "Live - League Phase", tone: "regular", months: [9, 10, 11, 12, 1] }, { label: "Live - Knockouts", tone: "playoffs", months: [2, 3, 4, 5] }],
   "/teams/football/tournaments/europa-league": [{ label: "Live - Qualifying", tone: "regular", months: [7, 8] }, { label: "Live - League Phase", tone: "regular", months: [9, 10, 11, 12, 1] }, { label: "Live - Knockouts", tone: "playoffs", months: [2, 3, 4, 5] }],
   "/teams/football/tournaments/conference-league": [{ label: "Live - Qualifying", tone: "regular", months: [7, 8] }, { label: "Live - League Phase", tone: "regular", months: [9, 10, 11, 12, 1] }, { label: "Live - Knockouts", tone: "playoffs", months: [2, 3, 4, 5] }],

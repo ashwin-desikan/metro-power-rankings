@@ -31,7 +31,7 @@ export default async function PowerPage() {
   const rows = data?.ranking ?? [];
 
   return (
-    <main className="mx-auto max-w-4xl px-4 pb-8 pt-20">
+    <main className="mx-auto max-w-4xl px-4 pb-8 pt-4">
       <div className="mb-4"><IndexSwitcher current="people" /></div>
       <nav className="text-xs text-[var(--text-muted)] mb-4">
         <Link href="/" className="hover:underline">Home</Link>

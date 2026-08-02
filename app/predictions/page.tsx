@@ -21,14 +21,15 @@ export const metadata: Metadata = {
 
 const CARD = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
 
-// The four league prediction hubs, coming soon. Each will get a title-odds
-// simulator (like /teams/national#wc2026) and its own Beat-the-Model game that
-// reads a per-league sim JSON (/data/<key>-sim.json) once the model is built.
-const LEAGUE_HUBS: { key: string; emoji: string; name: string; season: string; blurb: string }[] = [
-  { key: "nfl", emoji: "\u{1F3C8}", name: "NFL", season: "2026 season", blurb: "Super Bowl LXI title odds, conference and division races, and a weekly Beat-the-Model card." },
-  { key: "cfb", emoji: "\u{1F3C8}", name: "College Football", season: "2026 season", blurb: "Playoff and national-title odds across the twelve-team field, conference by conference." },
-  { key: "pl", emoji: "⚽", name: "Premier League", season: "2026-27 season", blurb: "Title, top-four and relegation odds from a full-season simulation." },
-  { key: "ucl", emoji: "\u{1F3C6}", name: "Champions League", season: "2026-27 season", blurb: "Knockout-bracket odds from the league phase to the final, updated as it plays out." },
+// The four league prediction hubs. Each gets a title-odds simulator (like
+// /teams/national#wc2026) and its own Beat-the-Model game reading a per-league
+// sim JSON (/data/<key>-sim.json). `href` set = the model is built and the hub
+// is live; the rest stay coming-soon cards.
+const LEAGUE_HUBS: { key: string; emoji: string; name: string; season: string; blurb: string; href?: string }[] = [
+  { key: "nfl", emoji: "\u{1F3C8}", name: "NFL", season: "2026 season", blurb: "Super Bowl LXI, conference, division and playoff odds from the real 272-game schedule, with weekly game picks graded all season.", href: "/predictions/nfl" },
+  { key: "cfb", emoji: "\u{1F3C8}", name: "College Football", season: "2026 season", blurb: "Playoff and national-title odds across the twelve-team field, conference by conference. Arrives with the preseason AP poll." },
+  { key: "pl", emoji: "⚽", name: "Premier League", season: "2026-27 season", blurb: "Title, top-five and relegation odds from 20,000 simulated seasons blending site data with market odds, plus fixture picks graded all season.", href: "/predictions/pl" },
+  { key: "ucl", emoji: "\u{1F3C6}", name: "Champions League", season: "2026-27 season", blurb: "Knockout-bracket odds from the league phase to the final. Arrives once the late-August draw sets the field." },
 ];
 
 export default async function PredictionsPage() {
@@ -101,29 +102,48 @@ export default async function PredictionsPage() {
       <section className="mb-10">
         <div className="flex items-baseline justify-between gap-3 mb-1 flex-wrap">
           <h2 className="text-2xl font-bold flex items-center gap-2"><span aria-hidden>&#127942;</span> League Prediction Hubs</h2>
-          <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ ...MONO, color: "var(--accent)", background: "rgba(78,205,196,0.16)" }}>COMING SOON</span>
         </div>
         <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-5">
-          Each hub will run tens of thousands of simulated seasons and publish every team&apos;s title
-          odds at each stage, with a Beat-the-Model card, exactly like the 2026 World Cup simulator below.
+          Each hub runs tens of thousands of simulated seasons and publishes every team&apos;s odds
+          at each stage, with a Beat-the-Model card, exactly like the 2026 World Cup simulator below.
+          The Premier League and NFL are live; College Football arrives with the preseason poll and
+          the Champions League with the late-August draw.
         </p>
         <div className="grid gap-4" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>
-          {LEAGUE_HUBS.map((h) => (
-            <div key={h.key} className="flex flex-col p-6 rounded-lg border opacity-90" style={CARD}>
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-[11px] uppercase tracking-widest" style={{ ...MONO, color: "var(--text-muted)" }}>{h.season}</span>
-                <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ ...MONO, color: "var(--text-dim)", background: "var(--bg-card-hover)" }}>SOON</span>
+          {LEAGUE_HUBS.map((h) => {
+            const inner = (
+              <>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[11px] uppercase tracking-widest" style={{ ...MONO, color: "var(--text-muted)" }}>{h.season}</span>
+                  {h.href ? (
+                    <span className="flex items-center gap-1">
+                      <span className="w-1.5 h-1.5 rounded-full" style={{ background: "#10b981" }} aria-hidden />
+                      <span className="text-[10px]" style={{ ...MONO, color: "#10b981" }}>LIVE</span>
+                    </span>
+                  ) : (
+                    <span className="text-[10px] px-1.5 py-0.5 rounded" style={{ ...MONO, color: "var(--text-dim)", background: "var(--bg-card-hover)" }}>SOON</span>
+                  )}
+                </div>
+                <div className="flex items-center gap-2.5 mb-2">
+                  <span className="text-2xl leading-none" aria-hidden>{h.emoji}</span>
+                  <h3 className="text-lg font-bold">{h.name}</h3>
+                </div>
+                <p className="text-[13px] text-[var(--text-muted)] leading-relaxed">{h.blurb}</p>
+                <div className="mt-auto pt-3.5 border-t text-xs" style={{ ...MONO, color: h.href ? "var(--accent)" : "var(--text-dim)", borderColor: "var(--border)" }}>
+                  Simulator + Beat the Model{h.href ? <span aria-hidden> &rarr;</span> : null}
+                </div>
+              </>
+            );
+            return h.href ? (
+              <Link key={h.key} href={h.href} className="flex flex-col p-6 rounded-lg border transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]" style={CARD}>
+                {inner}
+              </Link>
+            ) : (
+              <div key={h.key} className="flex flex-col p-6 rounded-lg border opacity-90" style={CARD}>
+                {inner}
               </div>
-              <div className="flex items-center gap-2.5 mb-2">
-                <span className="text-2xl leading-none" aria-hidden>{h.emoji}</span>
-                <h3 className="text-lg font-bold">{h.name}</h3>
-              </div>
-              <p className="text-[13px] text-[var(--text-muted)] leading-relaxed">{h.blurb}</p>
-              <div className="mt-auto pt-3.5 border-t text-xs" style={{ ...MONO, color: "var(--text-dim)", borderColor: "var(--border)" }}>
-                Simulator + Beat the Model
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 

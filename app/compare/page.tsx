@@ -142,7 +142,7 @@ export default async function ComparePage({ searchParams }: PageProps) {
 
   return (
     <div style={{ backgroundColor: 'var(--bg)', color: 'var(--text)' }}>
-      <main className="pt-28 pb-20 px-4 sm:px-6 lg:px-8">
+      <main className="pt-12 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <p
             className="text-sm font-semibold tracking-widest mb-4 uppercase"

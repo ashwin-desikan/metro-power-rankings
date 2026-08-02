@@ -17,7 +17,7 @@ function H({ children }: { children: React.ReactNode }) {
 export default function PrivacyPage() {
   return (
     <div style={{ backgroundColor: "var(--bg)", color: "var(--text)", minHeight: "100vh" }}>
-      <article className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 text-[15px] leading-relaxed">
+      <article className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 text-[15px] leading-relaxed">
         <h1 className="text-3xl font-bold mb-1">Privacy Policy</h1>
         <p className="text-[13px] text-[var(--text-muted)] mb-6">Last updated {UPDATED}</p>
 
