@@ -238,7 +238,6 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
           <div>
             <MenuGroupLabel>Power &amp; people</MenuGroupLabel>
             <MenuLink href="/power" title="The Nowhere 100" />
-            <MenuLink href="/billionaires" title="Billionaires" />
             <MenuLink href="/leaders" title="World Leaders" />
             <MenuLink href="/power-atlas" title="The Power Atlas" />
             <MenuLink href="/us-political-leadership" title="US Political Leadership" />
@@ -330,6 +329,22 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
         </div>
       </Dropdown>
 
+      {/* Business: the money hub's tabs plus the money-adjacent directory pages.
+          Mirrors the Culture pattern - marquee destination first, tabs below. */}
+      <Dropdown id="business" label="Business" openId={openId} setOpenId={setOpenId}>
+        <DropdownItem href="/business" title="Business of the Metros →" />
+        <div className="border-t" style={{ borderColor: "var(--border)" }} />
+        <DropdownItem href="/business/companies" title="Companies" />
+        <DropdownItem href="/business/private" title="Private & Unicorns" />
+        <DropdownItem href="/business/sp500" title="S&P 500" />
+        <DropdownItem href="/business/markets" title="Markets" />
+        <DropdownItem href="/business/currencies" title="Currencies" />
+        <DropdownItem href="/business/leaders" title="Leaders" />
+        <DropdownItem href="/business/crossovers" title="Crossovers" />
+        <div className="border-t" style={{ borderColor: "var(--border)" }} />
+        <DropdownItem href="/billionaires" title="Billionaires" />
+      </Dropdown>
+
       <Dropdown id="articles" label="Deep Dives" openId={openId} setOpenId={setOpenId}>
         <DropdownItem href="/deep-dives" title="All deep dives →" />
         <div className="border-t" style={{ borderColor: "var(--border)" }} />
@@ -352,10 +367,8 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
         <DropdownItem href="/about" title="About" hint="The project, the author, and the why" />
         <DropdownItem href="/methodology" title="Methodology" hint="How the rankings are built" />
         <DropdownItem href="/privacy" title="Privacy" hint="How your data is handled" />
+        <DropdownItem href="/studio" title="Studio" />
       </Dropdown>
-      <Link href="/studio" className="text-sm hover:text-[var(--accent)] transition-colors">
-        Studio
-      </Link>
       <Link href="/me" className="text-sm hover:text-[var(--accent)] transition-colors flex items-center gap-1 whitespace-nowrap" title="Metros and teams you follow">
         <span aria-hidden>★</span> Following
       </Link>

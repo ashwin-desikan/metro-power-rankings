@@ -49,7 +49,6 @@ function buildSections(): Section[] {
       label: 'Power & people',
       items: [
         { href: '/power', label: 'The Nowhere 100' },
-        { href: '/billionaires', label: 'Billionaires' },
         { href: '/leaders', label: 'World Leaders' },
         { href: '/power-atlas', label: 'The Power Atlas' },
         { href: '/us-political-leadership', label: 'US Political Leadership' },
@@ -118,6 +117,7 @@ function buildSections(): Section[] {
         { href: '/about', label: 'About' },
         { href: '/methodology', label: 'Methodology' },
         { href: '/privacy', label: 'Privacy' },
+      { href: '/studio', label: 'Studio' },
       ],
     },
   ];
@@ -154,10 +154,28 @@ function buildSections(): Section[] {
     { kind: 'group', id: 'geography', label: 'Geography', groups: geography },
     { kind: 'group', id: 'sports', label: 'Sports', groups: sports },
     { kind: 'group', id: 'culture', label: 'Culture', groups: culture },
+    {
+      kind: 'group', id: 'business', label: 'Business',
+      groups: [
+        {
+          label: '💼 Money',
+          items: [
+            { href: '/business', label: 'Business of the Metros' },
+            { href: '/business/companies', label: 'Companies' },
+            { href: '/business/private', label: 'Private & Unicorns' },
+            { href: '/business/sp500', label: 'S&P 500' },
+            { href: '/business/markets', label: 'Markets' },
+            { href: '/business/currencies', label: 'Currencies' },
+            { href: '/business/leaders', label: 'Leaders' },
+            { href: '/business/crossovers', label: 'Crossovers' },
+            { href: '/billionaires', label: 'Billionaires' },
+          ],
+        },
+      ],
+    },
     { kind: 'group', id: 'deepdives', label: 'Deep Dives', groups: deepDives },
     { kind: 'group', id: 'play', label: 'Play', groups: play },
     { kind: 'group', id: 'about', label: 'About', groups: about },
-    { kind: 'link', href: '/studio', label: 'Studio' },
     { kind: 'link', href: '/updates', label: 'Release notes' },
   ];
 }

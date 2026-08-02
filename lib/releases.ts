@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-02",
+    headline: "Prediction hubs, and Business of the Metros: a full money hub",
+    items: [
+      "Prediction hubs go live: the Premier League simulated 20,000 times blending site data with market odds, and the NFL played through its real 272-game schedule to Super Bowl LXI - every pick frozen and graded all season.",
+      "Business of the Metros launches at /business: the Money Table ranks metros by headquartered market value, with the race to the first $5 trillion company, weekly movers, and country and region rollups.",
+      "Tabs for the top 500 companies (searchable to the full universe), 1,400 unicorns and their IPO graduates, the S&P 500 as a geography, benchmark indices tied to home metros, and every currency linked to its countries.",
+      "Business leaders tracked like political ones (CEOs, fund chiefs, central bankers, with a change log), plus crossovers: sporting vs corporate giants, state money with election links, and the owners of Sound and Screen.",
+    ],
+  },
+  {
     date: "2026-08-01",
     headline: "Fourteen new kids games, and college football ready for kickoff",
     items: [

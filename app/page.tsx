@@ -254,6 +254,7 @@ const MASTHEAD_LAUNCH: { emoji: string; label: string; href: string; blurb: stri
   { emoji: '🎵', label: 'Sound', href: '/sound', blurb: 'Where hits come from', tip: "The Sound of the Metros: cities ranked by their artists' chart success since 1958." },
   { emoji: '🎬', label: 'Screen', href: '/screen', blurb: 'Where films come from', tip: 'The Screen of the Metros: a century of box office and the Oscars, credited back to the metros behind the films.' },
   { emoji: '👑', label: 'People', href: '/power', blurb: 'The Nowhere 100', tip: 'The most powerful people on the planet, ranked and tied to their home metro and jurisdiction.' },
+  { emoji: '💼', label: 'Business', href: '/business', blurb: 'The money table', tip: "Business of the Metros: the world's public companies credited back to their home metros - money tables, the race to $5T, and the S&P 500 as a geography." },
   { emoji: '✍️', label: 'Essays', href: '/deep-dives', blurb: 'Long-form dives', tip: 'Deep dives and essays on cities, power, and the ideas behind the rankings.' },
   { emoji: '🏅', label: 'Badges', href: '/badges', blurb: 'Ranked, reframed', tip: 'Categorical lenses on the same data, from Finance Capitals to Greying Power.' },
   { emoji: '🧸', label: 'Kids Games', href: '/play', blurb: 'Learn by playing', tip: 'Geography and sports games for kids, including Be-the-Ref and find-the-teams.' },
