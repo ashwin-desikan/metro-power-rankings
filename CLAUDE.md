@@ -114,3 +114,15 @@ explicit — apply it before touching any refresh script:
   IP that Wikidata doesn't rate-limit as aggressively.
 - `package.json` scripts — `npm run verify` is the full local proof gate for
   frontend work.
+
+## Frontend design standards (non-negotiable)
+
+- **The site nav (`app/SiteNav.tsx`) is `sticky top-0`, never `fixed`.** It
+  occupies its own layout space, so page content can never render underneath
+  it — on any viewport. Consequence for every page, new or redesigned: start
+  content with ordinary whitespace (`pt-8`/`py-8` on the `<main>`); NEVER add
+  nav-clearance padding (the old `pt-24`-style offsets). If content ever
+  appears under the top menu again, someone reintroduced `fixed` or a
+  negative offset — fix the cause, not the page. Anchor targets still need
+  the global `[id] { scroll-margin-top }` rule in `globals.css`, because the
+  bar does overlay content once you scroll.

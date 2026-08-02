@@ -866,3 +866,421 @@ Auto-trackers — FOUR Cowork scheduled tasks (create_trigger). Each fires on a 
 2. **Tracker robustness:** the 4 Cowork champion-trackers depend on the desktop app being open at fire time. If unreliable, port to GitHub Actions (honours-county pattern). If a fire didn't self-clean after landing a champion, delete the trigger by ID (list_triggers/delete_trigger).
 3. Housekeeping: `app/ActivityRail.tsx` orphaned; `tsconfig.clean.json` still an untracked stray in the repo root (unknown provenance — delete or claim).
 4. Carried over: Supabase RLS advisory on 8 tables (SQL drafted, not applied); the football "actual European Cup winner isn't always #1" thread (levers `TOP_TROPHY_BONUS` / `PED_WEIGHT`).
+
+
+## 2026-08-02 — windows → next session (trackers→CI, RLS applied, EC winner bonus 0.12, PL + NFL PREDICTION HUBS LIVE)
+
+Cowork session, all four 2026-08-01 open threads plus Ashwin's same-day revisions.
+EVERYTHING BELOW IS UNCOMMITTED IN THE WORKING TREE — Ashwin explicitly chose to
+hold the commit/push. Verify state at the bottom.
+
+### A. Champion-trackers ported to CI (the 4 Cowork scheduled tasks retire on push)
+NEW `scripts/update-2026-champions.py` + `.github/workflows/honours-2026-champions.yml`
+(cron `10 8 * 8-10 3,6`, Wed+Sat Aug–Oct). Each run self-tests (13 offline cases,
+gates the job), checks the four Wikipedia season articles' infoboxes, and only
+when a champion is NAMED records it: LPL/Hundred/CPL → append
+`scripts/cricket/manual-t20-champions.tsv` (winner run through
+build_t20_leagues' own ALIASES map: Jaffna Kings→Jaffna, Oval Invincibles→MI
+London, etc.) + rebuild t20-leagues.json; Currie Cup → append the 2026 line to
+domestic-winners.txt (score/venue `—N/a`, build is winners-only) +
+build_club_honours.py. Commits `[vercel skip]`, county-cricket push-retry loop.
+Idempotent; the cron expires after October. VERIFIED live from the Windows box:
+`--self-test` green, `--probe` on the three 2025 pages parses the right
+champions (Trinbago / Oval Invincibles men / Griquas), `--dry` on the 2026
+pages says "not decided yet" ×4. The Hundred parser takes the men's side of the
+combined `'''W''':/'''M''':` field and WAITS if only the women's is decided.
+⚠️ The four Cowork triggers (trig_015kDTzm…/01DU62D…/015ScCia…/011XDTRJ…) STAY
+LIVE until this workflow reaches origin — delete them right after the push. LPL
+final is 8 Aug: if unpushed by then, the Cowork tracker needs the desktop open.
+
+### B. Supabase RLS advisory CLEARED (applied live, independent of the git hold)
+Via Supabase MCP: RLS enabled on cl_league_history, uefa_team_coeff_history,
+football_team_alias (each with a `"public read"` SELECT-true policy) and the
+five bak_* tables (no policy = service-role only). Safe: every reader/writer of
+those tables resolves SUPABASE_WRITE_KEY / SERVICE_KEY only (checked refresh.py,
+load_cl_history.py, dump_cl_rows.py, build_unmatched_report.py). Advisors re-run:
+zero rls_disabled_in_public. Remaining pre-existing, NOT actioned: 2 SECURITY
+DEFINER views (mktcap_merged, football_results), track_visit RPC WARNs, INFO
+"no policy" on the bak tables.
+
+### C. European Cup winner bonus 0.10 → 0.12 (Ashwin's call: incremental, not 0.25)
+First pass shipped TB 0.25 (56/67 winners #1); Ashwin pulled it back to 0.12 —
+a nudge, not a sledgehammer. Synced in THREE places: gen_hub_early.py
+TOP_TROPHY_BONUS, regen_shipped_clubs.py CONT_W["Champions League"],
+build_season_hub.py's 0.12 line (live builds). Full canonical regen ran TWICE
+today (0.25 then 0.12): gen_hub_early → splice_belgium --write → backfill_cups
+--write → regen_shipped_clubs --write → build_trends. Final state: winner #1 in
+**36/67** hubs (was 35 at 0.10; the sweep table for future reference: 0.15→39,
+0.20→46, 0.25→56). NEW tools committed: hubgen/audit_winner_rank.py (audit) and
+hubgen/whatif_levers.py (exact offline lever sweep; its BASE_TB constant must
+track gen_hub_early's value — currently 0.12). Diff verified hub-by-hub: clubs[]
+winner scores +0.02, cosmetic country-rank tie-swaps, and **Belgium 2009-10..
+2012-13 play-off splicing RESTORED** — the 0414e1dc2 deep-history rebuild had
+silently clobbered 4afb25e57's splices (gen_hub_early rewrites whole hubs;
+splice wasn't rerun). Lesson: ALWAYS rerun splice_belgium + backfill_cups after
+gen_hub_early.
+
+### D. PREMIER LEAGUE PREDICTION HUB — /predictions/pl LIVE (poisson-v2, "site data + market")
+Ashwin's spec: site data PLUS market data, a next-fixtures prediction table, and
+season-long tracking of predictions vs results. Also: table columns are TOP 5 /
+TOP 7 (fifth CL place, seventh European place), not top-4/6.
+- `scripts/predictions/build_pl_sim.py` (poisson-v2) writes TWO files:
+  `public/data/pl-sim.json` (season odds) + `public/data/pl-predictions.json`
+  (fixture ledger). Strength = hub goal rates (23-24/24-25/25-26, .55/.30/.15;
+  promoted trio via the hub-archive calibration, n=75: att ×0.637 def ×1.839)
+  BLENDED at weight 0.45 with market-implied ratings fitted by weighted least
+  squares on de-vigged football-data.co.uk closing odds (E0 2526 ×0.4 + E0 2627
+  as it accumulates; E1 for the promoted sides, tier-anchored to the model's
+  own promoted level). In-season: real results fold into ratings (weight grows
+  with games), actual standings seed the sim, only REMAINING fixtures simulate.
+  σ=0.15 humility noise; 20k sims. Fixture predictions: ESPN eng.1 schedule
+  (reach-ahead grabs the whole opening GW when the near window is quiet — 10
+  fixtures frozen now for 21-24 Aug), market W/D/A from fixtures.csv odds when
+  posted (none yet for E0; they appear closer to kickoff), 50/50 blend makes
+  the pick. Ledger grades vs E0 results: pick accuracy + Brier for model,
+  market, blend. Self-test 14 cases (devig, market fit recovers planted
+  ratings+HFA, grading, standings/remaining derivation).
+- Frontend: lib/plSim.ts (getPlSim + getPlPredictions, GH-raw ISR),
+  app/predictions/pl/page.tsx (title board, NEXT FIXTURES table, HOW WE'RE
+  DOING tracker w/ Brier tiles + recent graded, full club table w/ Title/Top 5/
+  Top 7/Relegated, BTM link, method prose), beat-the-model-pl.html (p_top5
+  dark-horse/fall picks, storage key pl2627-btm-card).
+- Current output: Arsenal 47.0 / City 38.6 / Liverpool 9.9; Hull 98.0 releg.
+
+### E. NFL PREDICTION HUB — /predictions/nfl LIVE (points-v1)
+Built to Ashwin's "equivalent pages for the NFL" ask. Neil Paine's market
+aggregate (CSV he supplied) used as a BENCHMARK ONLY, per his instruction:
+our data and models, his table as the sanity guide.
+- `scripts/predictions/build_nfl_sim.py` → `public/data/nfl-sim.json` +
+  `public/data/nfl-predictions.json`. Ratings = regressed (×0.55) recency-
+  weighted scoring margin from ESPN standings 2023/24/25; 2026 results fold in
+  as played. REAL 272-game schedule (ESPN per-team schedules, deduped by event
+  id, count verified = 272). Games as spread probabilities (HFA 1.6, σ_game
+  13.4); per-season rating noise σ 2.5. Division winners by record + in-sim
+  head-to-head (approximation of the tie-break ladder, documented), seeds 1-7,
+  real bracket (2v7 3v6 4v5, bye, reseeded divisional, championship, neutral
+  SB). Weekly ledger: ESPN scoreboard (seasontype 2/3 only — preseason games
+  excluded), market pH from de-vigged moneyline else spread; week 1's 16 games
+  frozen now (10-15 Sep). Grading from ESPN final scores; ties void the pick.
+  Self-test 14 cases.
+- Frontend: lib/nflSim.ts, app/predictions/nfl/page.tsx (SB LXI board, next
+  games table, tracker, EIGHT division tables w/ xW/Division/Playoffs/
+  Conference/SB, method), beat-the-model-nfl.html (p_sb champion / p_playoffs
+  dark horse+fall; nfl2026-btm-card).
+- Output vs Paine's aggregate: our Bills 9.3 / Lions 9.1 / Seahawks 7.4 /
+  Ravens 6.9 vs his Rams 14.7 / Bills 7.2 / Seahawks 6.7 / Ravens 6.4 —
+  contender set aligns; the two honest disagreements are the Rams (market
+  prices something beyond three seasons of margins) and the Lions (we're
+  higher). Noted on the page: "where the market disagrees, that gap is the
+  interesting part."
+- CFB waits for the first preseason AP poll (~10 Aug); UCL waits for the
+  late-August league-phase draw. /predictions cards + copy say exactly that;
+  PL + NFL cards are live links, home PredictionsSection says "PL + NFL LIVE".
+
+### F. Scheduled refresh — `.github/workflows/predictions-refresh.yml`
+Tue 06:40 + Fri 11:40 UTC through the season: self-tests gate, rebuild both
+models (grade ledgers, fold results, refresh odds, re-sim), commit the four
+JSONs `[vercel skip]` (pages read via ISR — no builds spent on refreshes).
+
+### Housekeeping (rode along)
+app/ActivityRail.tsx deleted (orphaned); tsconfig.clean.json stray removed.
+
+### Verify state + release plan
+Full `npm run verify` was GREEN over the morning tree (4,894 pages). The
+afternoon revisions (TB 0.12 regen, PL v2, NFL) re-verified with Ashwin's dev
+server RUNNING, so per the house rule the BUILD STEP WAS SKIPPED this time:
+typecheck / client-imports / public-data / table-scroll / vitest 26/26 all
+green, and all five new/changed routes probed live on :3000 (predictions/pl,
+predictions/nfl, /predictions, both BTM pages — every content check present).
+⚠️ Run the full verify (dev server stopped) before pushing. Release plan when
+Ashwin says go: data/CI commits `[vercel skip]` first, the app/lib/play commit
+last as the push head (ONE build), docs after; then delete the four Cowork
+triggers and spot-check production.
+
+### G. Afternoon fixes (Ashwin's review of the live dev server)
+1. **Home page: the indices lead.** `<PredictionsSection />` moved BELOW the
+   `#indices` section in app/page.tsx (was between the hero and the indices).
+   The rankings are the crux of the site; predictions follow them.
+2. **/teams/football "Past seasons" wired to the hub data.** The page had a
+   stale hardcoded 1999-00..2025-26 array with an even staler "2006-07 to
+   2025-26" label. NEW `lib/footballSeasons.ts`: slugs come from
+   football-trends.json (built from every hub-*.json), notes are an editorial
+   overlay map; BOTH /teams/football and /teams/football/seasons now derive
+   from it, so a new hub + build_trends run extends both automatically. The
+   browser now spans 1959-60 → 2025-26 with a dynamic label.
+3. **NFL model → points-v2 with a futures market blend.** Diagnosis of the
+   Rams gap: their 2023/24 margins were +1.6/-1.1 before the +10.1 title
+   season, so a three-season margin model sits ~+3 while the market prices
+   the CURRENT team (~+5.5; DraftKings 12.5% de-vigged SB favourites,
+   matching Paine). Fix mirrors the PL convention: ESPN's futures API
+   (core.api .../seasons/2026/futures, market id 1561, DraftKings, all 32
+   teams) → de-vig → mapped onto the points scale via the model's own
+   rating→title-odds curve (4k-sim calibration pass, log-odds regression) →
+   blended at MARKET_W_SEASON 0.45. Result: Bills 8.8 / **Rams 7.5 (2nd, was
+   6th)** / Ravens 7.0 / Lions 6.9 / Seahawks 6.9. Ledger refrozen (16 week-1
+   games, blended ratings) BEFORE anything was ever published, so nothing was
+   retroactively changed. Self-test now 17 cases; method prose + meta
+   (market/market_weight) updated; header shows the market note.
+4. **/play/arcade: WC Beat-the-Model retired, league BTMs listed.** New
+   "Beat the Model" section at the top of the arcade (one card per live
+   prediction hub — PL + NFL now, CFB/UCL slot in when their models ship);
+   the WC2026 card delisted (file stays reachable for locked cards).
+5. **Home page round 2 — Predictions now a COMPACT block in the hero.** Per
+   Ashwin: the big PredictionsSection band is OFF the home page entirely;
+   instead a small "🔮 Predictions →" row sits under the Explore-the-site
+   launcher (above Live standings), with chip links to Elections, Premier
+   League and NFL — add each new hub's chip there as its model ships.
+   app/PredictionsSection.tsx is now ORPHANED (kept on disk; delete or revive
+   later). /predictions itself unchanged.
+6. **/play/arcade** — WC2026 Beat-the-Model retired (delisted, file kept for
+   locked cards); new top "Beat the Model" section lists the PL and NFL cards,
+   one per live prediction hub (CFB/UCL slot in later).
+7. **Rules Lab: Penalty Geography is REAL now.** The placeholder ("illustrative
+   bands only") is replaced by a live board computed in-page from
+   /data/international/finals.json (the finals dataset behind /teams/national):
+   every major international final decided on penalties as per-nation W–L,
+   sorted by win rate (Chile/Saudi/US 2–0 up top, Argentina 2–3, France 0–2),
+   with one-shootout nations listed, a lineage note (Czechoslovakia 1976 →
+   Czech Republic), and a distinct-finals count. Kids + adults copy. DOM-tested
+   with Playwright in the sandbox (both modes, zero page errors) and probed on
+   the dev server. NOTE: totalFinals counts distinct (year, competition) pairs,
+   not row-pairs, so a finalist missing from the 69-nation dataset can't skew it.
+8. **Home Live standings + In-season-now: F1 / Intl Cricket / Intl Rugby added.**
+   Three new LEAGUES rows on app/page.tsx (F1 -> /teams/f1, Intl Cricket ->
+   /teams/cricket, Intl Rugby -> /teams/rugby-union) — they flow into BOTH the
+   hero chip row and the In-season-now list automatically. F1 rides its existing
+   Mar-Dec month window (drops off when the race season ends); cricket is the
+   static Year-round green; rugby's lib/leagueStatus windows were completed to
+   year-round (new Live - Club Season window for Dec/Jan/Apr/May — URC/Top 14/
+   Prem/Champions Cup months), so both sit green essentially always, per Ashwin.
+9. **/teams/football opening redesigned: punchy + visual, same content.** The
+   90-word three-layers paragraph is now a one-liner (Every European trophy,
+   the great leagues, and every club's story - back to the 1870s); the four
+   StatGrid tiles and the layer descriptions MERGED into four stat-cards that
+   double as section nav (trophy/#tournaments, stadium/#leagues, globe/#domestic, scroll/#clubs
+   - new #clubs anchor wraps FootballIndexClient), each led by its live number
+   (hub counts, country count, club count, years). Live-season card copy
+   tightened; stale 2025-26 metadata description refreshed to the four-layer
+   pitch. StatTile/StatGrid imports dropped. Visible hero ~108 words total. Round 2 polish: countries card reworded to Domestic leagues worldwide (no every-division-on-Earth over-claim), clubs card now leads with the map emoji and pitches the interactive world map; home In-season-now row renamed International -> International Football.
+10. **/teams/football/2026-27 cup cards: Recent/Upcoming now STACK at every
+   width.** The sm:grid-cols-2 splits inside CompCard (European comps incl.
+   Champions League) and DomesticCupsSection (Scottish League Cup etc.) became
+   space-y-3 stacks — the desktop two-column layout truncated fixture lines;
+   the mobile stacked form reads better everywhere (Ashwin). Card-level grids
+   (two cup cards side by side, group tables) untouched.
+11. **Live-standings dedupe (Ireland Premier Division shown twice; Brazil's
+   double rank-20).** Root cause: api-football serves the SAME table under two
+   group-label spellings (Premier Division + Premier League, K League 1 +
+   K-League... ~12 leagues in live-standings-2026.json) and occasionally pads
+   a nameless duplicate row (Brazil #20, a nameless Chapecoense twin). Fixed at
+   the READER (lib/clubFootballLive.getClubStandings -> dedupeLeague): drop
+   nameless rows, drop same-team dup rows in a group, drop any group whose
+   team sheet duplicates an earlier group's (first label wins). Genuine
+   multi-group leagues (MLS conferences, Apertura/Clausura, Uruguay tables)
+   untouched — verified live. Optional upstream cleanup: the mini's
+   apifootball refresh could dedupe at write time too; the reader now heals
+   either way.
+12. **/teams/football/2026-27 hub links on first lines.** The four continental
+   CompCards (CL/EL/ECL/Libertadores) got an Open hub -> link in their summary
+   row (map in CompCard); LeagueCard summaries now show a visible Open hub ->
+   next to the tier badge for the nine hub leagues (8 UEFA Primary + MLS) —
+   the name-only link existed but was invisible as a link.
+13. **/elections/forecast intro compressed + rotation-aware.** The 60-word DESC
+   paragraph off the page (stays as SEO meta); in its place a one-liner plus
+   flag-chip anchors, one per LIVE forecast (US and UK unconditional; BR/IL/
+   NZ/FR chips render only while their forecast object exists, so races join
+   and retire with the data), country sections got ids (us/uk/br/il/nz/fr),
+   and the mono meta line spells the policy: US & UK always on, other races
+   join as votes near, retire once counted.
+14. **SeasonTrends mobile re-layout.** All three charts drew on a 760-wide
+   viewBox, so phones scaled 9px type to ~4.5px with 100-150px label gutters.
+   New useIsNarrow() (matchMedia 640px): below it the SAME charts re-lay on a
+   400-wide viewBox — slim gutters, line-end labels replaced by a colour
+   legend (country chart) or the existing legend row (club chart), axis ticks
+   thinned (cap 6), scatter labels top-2 only. Desktop rendering unchanged.
+15. **Overachiever/Underachiever fixed (Ashwin: Újpest 68/69 +1.00 nonsense).**
+   Root cause: ped=0 usually means NO COUNTED European history in the window —
+   the pre-1971 Fairs Cup is absent from the UEFA coefficient record, so 400+
+   clubs per older hub carry ped 0.00 and form−ped crowned whichever had top
+   form (Újpest 68/69: real form 1.0 — league title + Fairs Cup final — but a
+   phantom 0.00 pedigree). Fix: PED_FLOOR 0.10 on the per-hub Overachiever
+   card (SeasonHub) and the seasons Biggest-overachievement board
+   (SeasonSuperlatives) — the badge now requires an established baseline.
+   Underachiever was already safe (top-30-by-pedigree pool). Verified: 68/69
+   card now AS Roma; the all-seasons board tops with Real Sociedad. DATA
+   thread for later: folding the Fairs Cup into the pedigree windows would fix
+   ped at the source for the 1955-71 era.
+16. **Birmingham City underachiever monopoly fixed AT THE SOURCE (Ashwin: "4
+   seasons in a row, doesn't seem possible").** Root cause was the opposite of
+   the Újpest gap: the kassiesa txt DOES credit the early Fairs Cup ("UC" rows),
+   and its 2-3-year editions land all points in one season label against weak
+   fields (city select XIs) — Birmingham's 1960+1961 final runs (totals 14/15)
+   rivalled Real Madrid's European Cup WINS, giving them the 3rd-5th biggest
+   pedigree window in Europe 1960-61..1964-65 (ped 0.73-0.93), hub rank #5 in
+   1960-61, and the badge four years running. Fix (Ashwin picked ×0.5 over
+   ×0.33): FAIRS_DISCOUNT = 0.5 in gen_hub_early.py build_ccf, applied to
+   comp "UC" rows with end-year ≤ 1971 (71/72+ UC = real UEFA Cup, full
+   weight). FULL canonical regen ran (third of the day): gen → splice_belgium
+   → backfill_cups → regen_shipped → build_trends; Belgium splices intact,
+   audit_winner_rank tail unchanged. Birmingham 1960-61: ped 0.930→0.576,
+   rank 5→13. SECOND fix in the same pass: the discount re-normalization
+   exposed Benfica as 1961-62 "underachiever" IN THE SEASON THEY WON THE
+   EUROPEAN CUP (weak-league form scale vs ped 1.0 cap) — added a rank>6
+   guard to the SeasonHub `under` pool (top-30 ped, excluding clubs that
+   finished top-6 in the hub; comment block explains). Result by season:
+   59-60 Man Utd, 60-61 Man Utd, 61-62 + 62-63 Birmingham (now a TRUE story —
+   two-time Fairs finalists at half-credit sliding to rank 32/35), 63-64
+   Nürnberg. If Ashwin wants Birmingham gone entirely, the dial is
+   FAIRS_DISCOUNT 0.33 (probe numbers in the session log).
+17. **UK/US political-leadership hubs → elections cross-links.** Two-card grid
+   (Election history + Forecast model) above the Time Machine card on both
+   /uk-political-leadership (→ /elections/uk, /elections/forecast#uk) and
+   /us-political-leadership (→ /elections/us, /elections/forecast#us).
+18. **Mobile content-under-menu fixed STRUCTURALLY (Ashwin: "ensure it never
+   happens again").** SiteNav was `fixed`, so all ~180 newer pages (py-8
+   mains) started under the bar; only ~25 legacy pages hand-carried pt-24-
+   style clearance. SiteNav.tsx is now `sticky top-0` — the bar owns its
+   layout space, overlap is impossible by construction, on any page current
+   or future. All 27 hand-clearance sites reduced by the 64px nav height for
+   visual fidelity (pt-28→pt-12 home hero/compare/me/privacy/rankings-slug,
+   pt-24→pt-8 twenty-one pages, pt-20→pt-4 power, pt-16→pt-2 rankings index).
+   [id]{scroll-margin-top} anchor rule in globals.css stays (bar still
+   overlays once scrolled). Standard written into CLAUDE.md ("Frontend design
+   standards") and design_handoff_homepage_revamp/README.md: sticky, never
+   fixed; pages start with plain pt-8/py-8, never nav-clearance padding.
+19. **Home masthead round 2 (Ashwin).** (a) "Who's in charge" block — World
+   Leaders (/leaders) + Mayors (/mayors) cards with green LIVE badges, sited
+   between the Explore launcher and the Predictions chips. (b) Desktop fold
+   promo fills the left column's dead space under the intro: a "The indices ·
+   №1 right now" card showing the LIVE leaders of the top three boards
+   (pulled from INDICES[n].preview, so it tracks the data) + a "Seven live
+   boards" footer anchoring to #indices, and a one-line Greatest Games teaser
+   ("{top game} leads the pantheon") anchoring to the new id="games" target.
+   Anchors scroll DOWN the page rather than duplicating the launcher's
+   outbound hub links (his no-redundancy constraint); hidden below md where
+   the indices sit directly under the masthead anyway. Round 3 (Ashwin):
+   promo rows show №1 AND №2 per board, names cleaned of editorial markers
+   (power-ranking.json ships "⚠️ Donald Trump" — promo strips the ⚠️); the
+   Greatest Games teaser DESCRIBES the section ("every sport's all-time
+   best, ranked by Game Score") instead of spotlighting one match.
+20. **Music-hub freshness AUDITED — pipeline healthy, page just never said
+   so.** Ashwin: /sound/artists 2026 "looks the same as a month ago." Facts:
+   the mini's run-sound-weekly.sh (Wed 08:30) HAS committed every week (Jul
+   8/15/22/29, all [vercel skip]; production picks them up on the daily
+   08:00 UTC build). Content verified current: the 2026 song set includes
+   the entire Billboard Jul-18 top 10 AND newer entries (Drake album-bomb
+   tracks at 1 week, Harry Styles "Ready, Steady, Go!") from the Jul-25/
+   Aug-1 charts. Why it LOOKS static: /sound/artists is an all-time,
+   era-normalized board of 2,579 artists — a summer of weeks barely moves
+   the visible top, and distinct-single counts only tick when something NEW
+   enters a top ten (bb 5296→5297, uk 8688→8692 across July). Fix shipped:
+   freshness line on /sound/artists ("Charts folded in through
+   {summary.generated} · BB Hot 100 + UK Official Singles refresh every
+   Wednesday") reading summary.json, which the weekly job stamps.
+21. **Chelsea 2006-07 manual TB +0.04 (Ashwin's editorial call) + serial-
+   underachiever pattern KILLED.** (a) MANUAL_TB gained ("2006-07",
+   "Chelsea"): 0.04 in gen_hub_early (comment documents the call); FOURTH
+   canonical regen of the day ran; Chelsea 1.013 #3 → 1.053 #1 over Milan
+   1.049 on /teams/football/2006-07. (b) Ashwin: repeat underachievers
+   "lessen the credibility of this work." The badge now has three
+   eligibility rules in SeasonHub.tsx (big comment block there): rank>6
+   (elite finish ≠ underachievement), gap<0 (form actually below pedigree),
+   and gap WORSENED ≥0.05 vs last season (prev hub's form−ped now loaded by
+   loadPrevSeason, which replaced loadPrevRanks). The worsening rule is the
+   killer: sweep-tested over all 67 hubs, repeat runs fell 12 → 2, and the
+   two survivors are genuinely accelerating collapses (Juventus 1978-80,
+   Hajduk Split 1986-88). Real Madrid's 1969-74 five-peat is gone (69-70
+   Real, 70-71 Man City); iconic picks kept (Chelsea 15-16 −0.452 AND 22-23
+   −0.538, post-Ronaldo Real 18-19, Busby-fade Man Utd 59-60/68-69).
+   NOTE: 1960-61 shows Birmingham again — a SINGLE, non-consecutive
+   appearance (their pedigree jumped with the 1961 Fairs final while form
+   sagged: a genuinely NEW gap that season; they also take 1962-63). The
+   probe sweep + rationale are in the session transcript; dial remains
+   FAIRS_DISCOUNT if Ashwin wants them out entirely.
+### SHIPPED 2026-08-02 evening — the hold is released
+Full `npm run verify` (dev server STOPPED, complete build, 4,895 pages) ran
+GREEN over the final tree, then everything went out per the release plan:
+- `2c3947904` data+pipeline `[vercel skip]` (67 hubs @ FAIRS 0.5 + TB 0.12 +
+  Chelsea 06-07/09-10 manual TB, PL/NFL sim JSONs, prediction + tracker
+  scripts, hubgen tools)
+- `f7c8f736e` ci `[vercel skip]` (honours-2026-champions.yml,
+  predictions-refresh.yml — both now LIVE on origin, watch their first runs)
+- `8a44fd8e9` app/lib/play as the push head → exactly ONE Vercel build
+- plus `e7fc00db2` security (mktcap lockdown — the pre-existing local Claude
+  Code commit, rebased in and pushed with the rest)
+Push required a `pull --rebase` first (mini's routine [vercel skip] refreshes
+had landed); rebase was clean. Docs commit followed after production
+spot-check. Earlier "verified live on dev server" notes for items 1-21 all
+still apply; every item also re-verified by the full build.
+
+### Open threads / next
+1. CFB model (~10 Aug, preseason AP poll) and UCL model (late Aug, post-draw)
+   to complete the four hubs. PL/NFL set the two conventions (league table sim
+   w/ market blend; schedule+bracket sim w/ per-game lines).
+2. PL fixtures.csv odds for E0 appear closer to 21 Aug — the Friday refresh
+   will pick them up automatically (market column + blended picks).
+3. Watch the first predictions-refresh.yml and honours-2026-champions.yml runs.
+4. Carried over: summer-2025 FIFA CWC hub folding; preseason AP poll watch;
+   CFP ~late Oct; SECURITY DEFINER views (out of scope today).
+
+## NEXT SESSION — START HERE (written 2026-08-02, session closed shipped)
+
+Copy-paste brief for the next working session. Read this, then the 2026-08-02
+entry above for depth; project memory (project_session_2026_08_02.md) mirrors it.
+
+**State you inherit.** origin/main carries the ENTIRE 2026-08-02 day (items
+1-21 above), shipped through one Vercel build (`8a44fd8e9`) + docs. Everything
+below assumes that baseline: sticky nav standard (CLAUDE.md "Frontend design
+standards" — never `fixed`, never nav-clearance padding), FAIRS_DISCOUNT 0.5 +
+TOP_TROPHY_BONUS 0.12 + MANUAL_TB {Ajax 94-95, Chelsea 06-07 +0.04, Chelsea
+09-10 +0.01} in gen_hub_early, over/underachiever eligibility rules in
+SeasonHub.tsx, PL + NFL prediction hubs live with graded ledgers.
+
+**Immediate checks (do first, ~10 min).**
+- Confirm the four Cowork champion-tracker triggers are GONE (they were
+  deleted at ship time; if any survive — list_triggers — delete: they are
+  superseded by .github/workflows/honours-2026-champions.yml). LPL final is
+  8 Aug: verify the workflow's Wed/Sat cron fired and parsed (Actions tab).
+- Check the first predictions-refresh.yml run (Tue 06:40 / Fri 11:40 UTC):
+  both self-tests green, 4 JSONs committed [vercel skip], /predictions/pl +
+  /predictions/nfl pages picked them up via ISR.
+- Eyeball production once on a PHONE: home masthead (promo hidden below md),
+  a couple of former pt-24 pages, /teams/football/1960-61 badges.
+
+**Main work queue (in order).**
+1. **CFB prediction hub** — first preseason AP poll ~10 Aug. Convention:
+   NFL-style (schedule + rating sim; ESPN CFB endpoints mirror NFL's).
+   Ratings seed: AP poll + last-season margins regressed; market blend from
+   ESPN futures if the market id exists for CFB (probe seasons/2026/futures).
+   New-hub checklist (memory "Conventions"): sim JSON pair, page under
+   app/predictions/cfb, BTM html + arcade card, /predictions LEAGUE_HUBS
+   href flip to live, home Predictions chip, predictions-refresh.yml step.
+2. **UCL prediction hub** — after the late-August league-phase draw. PL-style
+   but competition format: league-phase sim from the drawn fixtures; club
+   strengths from hub data (2025-26 hub + coefficient window), market blend
+   from CL outright odds (football-data or ESPN futures).
+3. **Season-hub deep threads (deferred today, all noted in items 15-16):**
+   fold the pre-1971 Fairs Cup PROPERLY into pedigree at source (per-edition
+   spreading rather than the blunt ×0.5 — would let the discount retire);
+   Birmingham still takes the 1960-61 + 1962-63 underachiever badges
+   (defensible, Ashwin aware; dial = FAIRS_DISCOUNT 0.33 if he changes his
+   mind).
+4. **Carried over:** summer-2025 FIFA CWC folding into a hub; CFP watch
+   (~late Oct); Supabase SECURITY DEFINER views (mktcap_merged,
+   football_results) + track_visit WARNs.
+
+**House rules that bit us today (respect them).**
+- NEVER `next build` while the dev server holds :3000 (Next 16 hard-lock).
+  Full `npm run verify` requires the dev server stopped.
+- gen_hub_early rewrites WHOLE hubs: ALWAYS rerun splice_belgium --write +
+  backfill_cups --write + regen_shipped_clubs --write + build_trends after.
+- Commit specific paths, never `git add -A`; data/CI commits `[vercel skip]`
+  first, app commit as push head (one build), docs after; expect a
+  `pull --rebase` before push (the mini commits routinely).
+- device_commit_files rejects .github/workflows/* — write via DC write_file.
+- PowerShell: no multi-line `python -c` (write temp .py files);
+  PYTHONIOENCODING=utf-8.
+- Ashwin's editorial dials all live in gen_hub_early.py with decision
+  comments: TOP_TROPHY_BONUS, FAIRS_DISCOUNT, MANUAL_TB, PED_WEIGHT/PED_TOPK.
+  When he asks for a rank intervention, prefer MANUAL_TB (documented one-off)
+  over weight changes; sweep + show him numbers before regenerating.
