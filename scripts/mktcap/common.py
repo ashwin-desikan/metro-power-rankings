@@ -55,6 +55,15 @@ def select_all(path, order, key=None, page=1000):
         if len(batch) < page: return rows
         offset += page
 
+def in_list(ids):
+    """PostgREST `in.(...)` value for a list of ids: each double-quoted, the whole
+    thing URL-encoded. company_ids can contain spaces, '&' and '#' ("Koch
+    Industries", "Ernst & Young", "Bolt(Uni)#2") — raw, they either split the
+    query string or trip http.client's control-character check (bit us on the
+    first real --write, 2026-08-02)."""
+    from urllib.parse import quote
+    return quote(",".join('"' + i.replace('"', '') + '"' for i in ids), safe='",().-_')
+
 def fetch_url(url, timeout=120, ua="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) CitizenOfNowhere-data/1.0"):
     req = urllib.request.Request(url, headers={"User-Agent": ua, "Accept": "*/*"})
     with urllib.request.urlopen(req, timeout=timeout) as r:

@@ -1,0 +1,430 @@
+{
+ "NVIDIA": {
+  "entityQid": "Q182477",
+  "matchedLabel": "Nvidia"
+ },
+ "Apple": {
+  "entityQid": "Q312",
+  "matchedLabel": "Apple Inc."
+ },
+ "Alphabet (Google)": {
+  "entityQid": "Q20800404",
+  "matchedLabel": "Alphabet Inc."
+ },
+ "Microsoft": {
+  "entityQid": "Q2283",
+  "matchedLabel": "Microsoft"
+ },
+ "Amazon": {
+  "entityQid": "Q3884",
+  "matchedLabel": "Amazon"
+ },
+ "TSMC": {
+  "entityQid": "Q713418",
+  "matchedLabel": "TSMC"
+ },
+ "Broadcom": {
+  "entityQid": "Q555925",
+  "matchedLabel": "Broadcom"
+ },
+ "Saudi Aramco": {
+  "entityQid": "Q679322",
+  "matchedLabel": "Saudi Aramco"
+ },
+ "SpaceX": {
+  "entityQid": "Q193701",
+  "matchedLabel": "SpaceX"
+ },
+ "Meta Platforms (Facebook)": {
+  "entityQid": "Q380",
+  "matchedLabel": "Meta"
+ },
+ "Tesla": {
+  "entityQid": "Q478214",
+  "matchedLabel": "Tesla"
+ },
+ "Samsung": {
+  "entityQid": "Q20718",
+  "matchedLabel": "Samsung Electronics"
+ },
+ "Berkshire Hathaway": {
+  "entityQid": "Q217583",
+  "matchedLabel": "Berkshire Hathaway"
+ },
+ "Eli Lilly": {
+  "entityQid": "Q632240",
+  "matchedLabel": "Eli Lilly and Company"
+ },
+ "JPMorgan Chase": {
+  "entityQid": "Q192314",
+  "matchedLabel": "JPMorgan Chase"
+ },
+ "Micron Technology": {
+  "entityQid": "Q1197548",
+  "matchedLabel": "Micron Technology"
+ },
+ "Walmart": {
+  "entityQid": "Q483551",
+  "matchedLabel": "Walmart"
+ },
+ "SK Hynix": {
+  "entityQid": "Q370719",
+  "matchedLabel": "SK Hynix"
+ },
+ "AMD": {
+  "entityQid": "Q128896",
+  "matchedLabel": "AMD"
+ },
+ "Visa": {
+  "entityQid": "Q328840",
+  "matchedLabel": "Visa Inc."
+ },
+ "Exxon Mobil": {
+  "entityQid": "Q156238",
+  "matchedLabel": "ExxonMobil"
+ },
+ "ASML": {
+  "entityQid": "Q297879",
+  "matchedLabel": "ASML Holding"
+ },
+ "Johnson & Johnson": {
+  "entityQid": "Q333718",
+  "matchedLabel": "Johnson & Johnson"
+ },
+ "CXMT": {
+  "entityQid": "Q60787452",
+  "matchedLabel": "Changxin Memory Technologies"
+ },
+ "Tencent": {
+  "entityQid": "Q860580",
+  "matchedLabel": "Tencent"
+ },
+ "Mastercard": {
+  "entityQid": "Q489921",
+  "matchedLabel": "Mastercard"
+ },
+ "Cisco": {
+  "entityQid": "Q173395",
+  "matchedLabel": "Cisco"
+ },
+ "Intel": {
+  "entityQid": "Q248",
+  "matchedLabel": "Intel"
+ },
+ "AbbVie": {
+  "entityQid": "Q14662364",
+  "matchedLabel": "AbbVie"
+ },
+ "Bank of America": {
+  "entityQid": "Q487907",
+  "matchedLabel": "Bank of America"
+ },
+ "Costco": {
+  "entityQid": "Q715583",
+  "matchedLabel": "Costco"
+ },
+ "China Construction Bank": {
+  "entityQid": "Q26299",
+  "matchedLabel": "China Construction Bank"
+ },
+ "Applied Materials": {
+  "entityQid": "Q621610",
+  "matchedLabel": "Applied Materials"
+ },
+ "Chevron": {
+  "entityQid": "Q319642",
+  "matchedLabel": "Chevron Corporation"
+ },
+ "Coca-Cola": {
+  "entityQid": "Q3295867",
+  "matchedLabel": "The Coca-Cola Company"
+ },
+ "UnitedHealth": {
+  "entityQid": "Q2103926",
+  "matchedLabel": "UnitedHealth Group"
+ },
+ "Caterpillar": {
+  "entityQid": "Q459965",
+  "matchedLabel": "Caterpillar Inc."
+ },
+ "Oracle": {
+  "entityQid": "Q19900",
+  "matchedLabel": "Oracle Corporation"
+ },
+ "General Electric": {
+  "entityQid": "Q54173",
+  "matchedLabel": "General Electric"
+ },
+ "Lam Research": {
+  "entityQid": "Q1342041",
+  "matchedLabel": "Lam Research"
+ },
+ "HSBC": {
+  "entityQid": "Q190464",
+  "matchedLabel": "HSBC"
+ },
+ "Agricultural Bank of China": {
+  "entityQid": "Q26298",
+  "matchedLabel": "Agricultural Bank of China"
+ },
+ "Roche": {
+  "entityQid": "Q2160221",
+  "matchedLabel": "Roche"
+ },
+ "ICBC": {
+  "entityQid": "Q26463",
+  "matchedLabel": "Industrial and Commercial Bank of China"
+ },
+ "Procter & Gamble": {
+  "entityQid": "Q212405",
+  "matchedLabel": "Procter & Gamble"
+ },
+ "Home Depot": {
+  "entityQid": "Q864407",
+  "matchedLabel": "The Home Depot"
+ },
+ "Morgan Stanley": {
+  "entityQid": "Q334204",
+  "matchedLabel": "Morgan Stanley"
+ },
+ "Merck": {
+  "entityQid": "Q156959",
+  "matchedLabel": "Merck KGaA"
+ },
+ "Goldman Sachs": {
+  "entityQid": "Q193326",
+  "matchedLabel": "Goldman Sachs"
+ },
+ "Netflix": {
+  "entityQid": "Q907311",
+  "matchedLabel": "Netflix"
+ },
+ "BlackRock": {
+  "entityQid": "Q219635",
+  "matchedLabel": "BlackRock"
+ },
+ "The Vanguard Group": {
+  "entityQid": "Q849363",
+  "matchedLabel": "The Vanguard Group"
+ },
+ "State Street Global Advisors": {
+  "entityQid": "Q7603552",
+  "matchedLabel": "State Street Global Advisors"
+ },
+ "Fidelity Investments": {
+  "entityQid": "Q1411292",
+  "matchedLabel": "Fidelity Investments"
+ },
+ "T. Rowe Price": {
+  "entityQid": "Q3511946",
+  "matchedLabel": "T. Rowe Price"
+ },
+ "Franklin Templeton": {
+  "entityQid": "Q744683",
+  "matchedLabel": "Franklin Templeton Investments"
+ },
+ "Invesco": {
+  "entityQid": "Q522617",
+  "matchedLabel": "Invesco"
+ },
+ "Amundi": {
+  "entityQid": "Q2844522",
+  "matchedLabel": "Amundi"
+ },
+ "Schroders": {
+  "entityQid": "Q1142797",
+  "matchedLabel": "Schroders"
+ },
+ "Bridgewater Associates": {
+  "entityQid": "Q652431",
+  "matchedLabel": "Bridgewater Associates"
+ },
+ "Citadel LLC": {
+  "entityQid": "Q2974366",
+  "matchedLabel": "Citadel Enterprise Americas LLC"
+ },
+ "Millennium Management": {
+  "entityQid": "Q65089884",
+  "matchedLabel": "Millennium Management"
+ },
+ "Renaissance Technologies": {
+  "entityQid": "Q3424738",
+  "matchedLabel": "Renaissance Technologies"
+ },
+ "Two Sigma": {
+  "entityQid": "Q18355352",
+  "matchedLabel": "Two Sigma"
+ },
+ "AQR Capital Management": {
+  "entityQid": null,
+  "matchedLabel": ""
+ },
+ "Man Group": {
+  "entityQid": "Q1407658",
+  "matchedLabel": "Man Group"
+ },
+ "Blackstone Inc.": {
+  "entityQid": "Q880942",
+  "matchedLabel": "Blackstone Inc."
+ },
+ "KKR & Co.": {
+  "entityQid": "Q1570773",
+  "matchedLabel": "Kohlberg Kravis Roberts"
+ },
+ "Apollo Global Management": {
+  "entityQid": "Q619121",
+  "matchedLabel": "Apollo Global Management"
+ },
+ "The Carlyle Group": {
+  "entityQid": "Q926806",
+  "matchedLabel": "Carlyle Group"
+ },
+ "Brookfield Asset Management": {
+  "entityQid": "Q133824445",
+  "matchedLabel": "Brookfield Asset Management"
+ },
+ "Ares Management": {
+  "entityQid": "Q4789079",
+  "matchedLabel": "Ares Management"
+ },
+ "Norges Bank Investment Management": {
+  "entityQid": "Q11992019",
+  "matchedLabel": "Norges Bank Investment Management"
+ },
+ "GIC (Singaporean sovereign wealth fund)": {
+  "entityQid": "Q539627",
+  "matchedLabel": "GIC Private Limited"
+ },
+ "Temasek Holdings": {
+  "entityQid": "Q762479",
+  "matchedLabel": "Temasek Holdings"
+ },
+ "Abu Dhabi Investment Authority": {
+  "entityQid": "Q334956",
+  "matchedLabel": "Abu Dhabi Investment Authority"
+ },
+ "Public Investment Fund": {
+  "entityQid": "Q12220298",
+  "matchedLabel": "Public Investment Fund"
+ },
+ "Qatar Investment Authority": {
+  "entityQid": "Q1571175",
+  "matchedLabel": "Qatar Investment Authority"
+ },
+ "Mubadala Investment Company": {
+  "entityQid": "Q55645212",
+  "matchedLabel": "Mubadala Investment Company"
+ },
+ "CPP Investments": {
+  "entityQid": "Q5013693",
+  "matchedLabel": "CPP Investment Board"
+ },
+ "CalPERS": {
+  "entityQid": "Q2933412",
+  "matchedLabel": "CalPERS"
+ },
+ "Federal Reserve": {
+  "entityQid": "Q53536",
+  "matchedLabel": "Federal Reserve System"
+ },
+ "European Central Bank": {
+  "entityQid": "Q8901",
+  "matchedLabel": "European Central Bank"
+ },
+ "Bank of England": {
+  "entityQid": "Q183231",
+  "matchedLabel": "Bank of England"
+ },
+ "Bank of Japan": {
+  "entityQid": "Q333101",
+  "matchedLabel": "Bank of Japan"
+ },
+ "People's Bank of China": {
+  "entityQid": "Q249203",
+  "matchedLabel": "People's Bank of China"
+ },
+ "Reserve Bank of India": {
+  "entityQid": "Q944085",
+  "matchedLabel": "Reserve Bank of India"
+ },
+ "Swiss National Bank": {
+  "entityQid": "Q597394",
+  "matchedLabel": "Swiss National Bank"
+ },
+ "Bank of Canada": {
+  "entityQid": "Q806703",
+  "matchedLabel": "Bank of Canada"
+ },
+ "Reserve Bank of Australia": {
+  "entityQid": "Q1506724",
+  "matchedLabel": "Reserve Bank of Australia"
+ },
+ "Central Bank of Brazil": {
+  "entityQid": "Q806186",
+  "matchedLabel": "Central Bank of Brazil"
+ },
+ "Bank of Mexico": {
+  "entityQid": "Q806208",
+  "matchedLabel": "Bank of Mexico"
+ },
+ "Bank of Korea": {
+  "entityQid": "Q485531",
+  "matchedLabel": "Bank of Korea"
+ },
+ "Central Bank of Russia": {
+  "entityQid": "Q806651",
+  "matchedLabel": "Central Bank of Russia"
+ },
+ "Central Bank of the Republic of Turkey": {
+  "entityQid": "Q580829",
+  "matchedLabel": "Central Bank of the Republic of Turkey"
+ },
+ "Saudi Central Bank": {
+  "entityQid": "Q2605574",
+  "matchedLabel": "Saudi Central Bank"
+ },
+ "Monetary Authority of Singapore": {
+  "entityQid": "Q2661296",
+  "matchedLabel": "Monetary Authority of Singapore"
+ },
+ "Hong Kong Monetary Authority": {
+  "entityQid": "Q1595286",
+  "matchedLabel": "Hong Kong Monetary Authority"
+ },
+ "South African Reserve Bank": {
+  "entityQid": "Q912920",
+  "matchedLabel": "South African Reserve Bank"
+ },
+ "Central Bank of Nigeria": {
+  "entityQid": "Q1627120",
+  "matchedLabel": "Central Bank of Nigeria"
+ },
+ "Bank Indonesia": {
+  "entityQid": "Q1906161",
+  "matchedLabel": "Bank Indonesia"
+ },
+ "Bank of Israel": {
+  "entityQid": "Q244411",
+  "matchedLabel": "Bank of Israel"
+ },
+ "Sveriges Riksbank": {
+  "entityQid": "Q564652",
+  "matchedLabel": "Sveriges Riksbank"
+ },
+ "Norges Bank": {
+  "entityQid": "Q970769",
+  "matchedLabel": "Norges Bank"
+ },
+ "Narodowy Bank Polski": {
+  "entityQid": "Q168844",
+  "matchedLabel": "Narodowy Bank Polski"
+ },
+ "Central Bank of Argentina": {
+  "entityQid": "Q642444",
+  "matchedLabel": "Central Bank of Argentina"
+ },
+ "Central Bank of Egypt": {
+  "entityQid": "Q920699",
+  "matchedLabel": "Central Bank of Egypt"
+ }
+}

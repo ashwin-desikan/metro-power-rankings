@@ -1,0 +1,1047 @@
+{
+ "meta": {
+  "generated_at": "2026-08-02T21:11:23Z",
+  "as_of": "2026-08-02",
+  "source": "Wikidata (P169/P488 current-officeholder claims)",
+  "total": 107,
+  "resolved": 77
+ },
+ "ceos": [
+  {
+   "entity": "NVIDIA",
+   "person": "Jensen Huang",
+   "personQid": "Q305177",
+   "since": "1993-01-01",
+   "via": "P169",
+   "symbol": "NVDA",
+   "cap": 4862365925376.0,
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose"
+  },
+  {
+   "entity": "Apple",
+   "person": "Tim Cook",
+   "personQid": "Q265852",
+   "since": "2011-08-24",
+   "via": "P169",
+   "symbol": "AAPL",
+   "cap": 4537070911488.0,
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose"
+  },
+  {
+   "entity": "Alphabet (Google)",
+   "person": "Sundar Pichai",
+   "personQid": "Q3503829",
+   "since": "2019-12-03",
+   "via": "P169",
+   "symbol": "GOOG",
+   "cap": 4361806151680.0,
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose"
+  },
+  {
+   "entity": "Microsoft",
+   "person": "Satya Nadella",
+   "personQid": "Q7426870",
+   "since": "2014-02-04",
+   "via": "P169",
+   "symbol": "MSFT",
+   "cap": 3450799652864.0,
+   "metro": "Seattle",
+   "metroSlug": "seattle"
+  },
+  {
+   "entity": "Amazon",
+   "person": "Andy Jassy",
+   "personQid": "Q41812531",
+   "since": "2021-07-06",
+   "via": "P169",
+   "symbol": "AMZN",
+   "cap": 2921415835648.0,
+   "metro": "Seattle",
+   "metroSlug": "seattle"
+  },
+  {
+   "entity": "TSMC",
+   "person": "C. C. Wei",
+   "personQid": "Q115649193",
+   "since": "",
+   "via": "P169",
+   "symbol": "TSM",
+   "cap": 2096632168448.0,
+   "metro": "Hsinchu",
+   "metroSlug": "hsinchu"
+  },
+  {
+   "entity": "Broadcom",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "symbol": "AVGO",
+   "cap": 1852030844928.0,
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose"
+  },
+  {
+   "entity": "Saudi Aramco",
+   "person": "Amin H. Al-Nasser",
+   "personQid": "Q19938961",
+   "since": "2015-01-01",
+   "via": "P169",
+   "symbol": "2222.SR",
+   "cap": 1705777891407.0,
+   "metro": "Dammam",
+   "metroSlug": "dammam"
+  },
+  {
+   "entity": "SpaceX",
+   "person": "Elon Musk",
+   "personQid": "Q317521",
+   "since": "2002-01-01",
+   "via": "P169",
+   "symbol": "SPCX",
+   "cap": 1427686686720.0,
+   "metro": "Brownsville",
+   "metroSlug": "brownsville"
+  },
+  {
+   "entity": "Meta Platforms (Facebook)",
+   "person": "Mark Zuckerberg",
+   "personQid": "Q36215",
+   "since": "2004-02-04",
+   "via": "P169",
+   "symbol": "META",
+   "cap": 1418222239744.0,
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose"
+  },
+  {
+   "entity": "Tesla",
+   "person": "Elon Musk",
+   "personQid": "Q317521",
+   "since": "2008-10-01",
+   "via": "P169",
+   "symbol": "TSLA",
+   "cap": 1229138690048.0,
+   "metro": "Austin",
+   "metroSlug": "austin"
+  },
+  {
+   "entity": "Samsung",
+   "person": "Lee Jae-yong",
+   "personQid": "Q624109",
+   "since": "2022-01-01",
+   "via": "P169",
+   "symbol": "005930.KS",
+   "cap": 1196506279462.0,
+   "metro": "Seoul",
+   "metroSlug": "seoul"
+  },
+  {
+   "entity": "Berkshire Hathaway",
+   "person": "Greg Abel",
+   "personQid": "Q47168572",
+   "since": "2026-01-01",
+   "via": "P169",
+   "symbol": "BRK-B",
+   "cap": 1103317041152.0,
+   "metro": "Omaha-Lincoln",
+   "metroSlug": "omaha-lincoln"
+  },
+  {
+   "entity": "Eli Lilly",
+   "person": "David A. Ricks",
+   "personQid": "Q118706826",
+   "since": "2017-01-01",
+   "via": "P169",
+   "symbol": "LLY",
+   "cap": 1024468123648.0,
+   "metro": "Indianapolis",
+   "metroSlug": "indianapolis"
+  },
+  {
+   "entity": "JPMorgan Chase",
+   "person": "Jamie Dimon",
+   "personQid": "Q922169",
+   "since": "2004-01-01",
+   "via": "P169",
+   "symbol": "JPM",
+   "cap": 935128203264.0,
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "entity": "Micron Technology",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "symbol": "MU",
+   "cap": 929524482048.0,
+   "metro": "Boise",
+   "metroSlug": "boise"
+  },
+  {
+   "entity": "Walmart",
+   "person": "Doug McMillon",
+   "personQid": "Q16196595",
+   "since": "2014-01-01",
+   "via": "P169",
+   "symbol": "WMT",
+   "cap": 884938375168.0,
+   "metro": "Fayetteville",
+   "metroSlug": "fayetteville"
+  },
+  {
+   "entity": "SK Hynix",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "symbol": "000660.KS",
+   "cap": 846525982822.0,
+   "metro": "Seoul",
+   "metroSlug": "seoul"
+  },
+  {
+   "entity": "AMD",
+   "person": "Lisa Su",
+   "personQid": "Q18207172",
+   "since": "2014-10-08",
+   "via": "P169",
+   "symbol": "AMD",
+   "cap": 776410431488.0,
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose"
+  },
+  {
+   "entity": "Visa",
+   "person": "Ryan McInerney",
+   "personQid": "Q114837486",
+   "since": "2023-02-01",
+   "via": "P169",
+   "symbol": "V",
+   "cap": 683582029824.0,
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose"
+  },
+  {
+   "entity": "Exxon Mobil",
+   "person": "Darren Woods",
+   "personQid": "Q28018191",
+   "since": "2017-01-01",
+   "via": "P169",
+   "symbol": "XOM",
+   "cap": 644290576384.0,
+   "metro": "Houston",
+   "metroSlug": "houston"
+  },
+  {
+   "entity": "ASML",
+   "person": "Peter Wennink",
+   "personQid": "Q96654591",
+   "since": "",
+   "via": "P169",
+   "symbol": "ASML",
+   "cap": 625698930688.0,
+   "metro": "Eindhoven",
+   "metroSlug": "eindhoven"
+  },
+  {
+   "entity": "Johnson & Johnson",
+   "person": "Joaquin Duato",
+   "personQid": "Q113356474",
+   "since": "2022-01-03",
+   "via": "P169",
+   "symbol": "JNJ",
+   "cap": 617777463296.0,
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "entity": "CXMT",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "symbol": "688825.SS",
+   "cap": 566877572406.0,
+   "metro": "Hefei",
+   "metroSlug": "hefei"
+  },
+  {
+   "entity": "Tencent",
+   "person": "Ma Huateng",
+   "personQid": "Q1739008",
+   "since": "1998-01-01",
+   "via": "P169",
+   "symbol": "TCEHY",
+   "cap": 553060073472.0,
+   "metro": "Guangzhou",
+   "metroSlug": "guangzhou"
+  },
+  {
+   "entity": "Mastercard",
+   "person": "Michael Miebach",
+   "personQid": "Q115735747",
+   "since": "2021-01-01",
+   "via": "P169",
+   "symbol": "MA",
+   "cap": 506381893632.0,
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "entity": "Cisco",
+   "person": "Chuck Robbins",
+   "personQid": "Q21041473",
+   "since": "2015-07-01",
+   "via": "P169",
+   "symbol": "CSCO",
+   "cap": 457166979072.0,
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose"
+  },
+  {
+   "entity": "Intel",
+   "person": "Michelle Johnston Holthaus",
+   "personQid": "Q131981722",
+   "since": "",
+   "via": "P169",
+   "symbol": "INTC",
+   "cap": 454968770560.0,
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose"
+  },
+  {
+   "entity": "AbbVie",
+   "person": "Robert A. Michael",
+   "personQid": "Q125257078",
+   "since": "2024-07-01",
+   "via": "P169",
+   "symbol": "ABBV",
+   "cap": 443359002624.0,
+   "metro": "Chicago",
+   "metroSlug": "chicago"
+  },
+  {
+   "entity": "Bank of America",
+   "person": "Brian Moynihan",
+   "personQid": "Q912811",
+   "since": "",
+   "via": "P169",
+   "symbol": "BAC",
+   "cap": 434763104256.0,
+   "metro": "Charlotte",
+   "metroSlug": "charlotte"
+  },
+  {
+   "entity": "Costco",
+   "person": "Ron Vachris",
+   "personQid": "Q114361370",
+   "since": "2023-12-31",
+   "via": "P169",
+   "symbol": "COST",
+   "cap": 422143066112.0,
+   "metro": "Seattle",
+   "metroSlug": "seattle"
+  },
+  {
+   "entity": "China Construction Bank",
+   "person": "Wang Hongzhang",
+   "personQid": "Q1526821",
+   "since": "",
+   "via": "P1037",
+   "symbol": "601939.SS",
+   "cap": 420997347469.0,
+   "metro": "Beijing",
+   "metroSlug": "beijing"
+  },
+  {
+   "entity": "Applied Materials",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "symbol": "AMAT",
+   "cap": 403069403136.0,
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose"
+  },
+  {
+   "entity": "Chevron",
+   "person": "Mike Wirth",
+   "personQid": "Q48562446",
+   "since": "2018-01-01",
+   "via": "P169",
+   "symbol": "CVX",
+   "cap": 392006172672.0,
+   "metro": "Houston",
+   "metroSlug": "houston"
+  },
+  {
+   "entity": "Coca-Cola",
+   "person": "James Quincey",
+   "personQid": "Q27839505",
+   "since": "2018-01-01",
+   "via": "P169",
+   "symbol": "KO",
+   "cap": 376860246016.0,
+   "metro": "Atlanta",
+   "metroSlug": "atlanta"
+  },
+  {
+   "entity": "UnitedHealth",
+   "person": "Andrew Witty",
+   "personQid": "Q18121649",
+   "since": "2021-02-04",
+   "via": "P169",
+   "symbol": "UNH",
+   "cap": 376335040512.0,
+   "metro": "Minneapolis",
+   "metroSlug": "minneapolis"
+  },
+  {
+   "entity": "Caterpillar",
+   "person": "Jim Umpleby",
+   "personQid": "Q27735066",
+   "since": "2017-01-01",
+   "via": "P169",
+   "symbol": "CAT",
+   "cap": 375294951424.0,
+   "metro": "Dallas",
+   "metroSlug": "dallas"
+  },
+  {
+   "entity": "Oracle",
+   "person": "Larry Ellison",
+   "personQid": "Q92759",
+   "since": "",
+   "via": "P488",
+   "symbol": "ORCL",
+   "cap": 374086762496.0,
+   "metro": "Austin",
+   "metroSlug": "austin"
+  },
+  {
+   "entity": "General Electric",
+   "person": "H. Lawrence Culp Jr.",
+   "personQid": "Q56868014",
+   "since": "2018-10-01",
+   "via": "P169",
+   "symbol": "GE",
+   "cap": 373595144192.0,
+   "metro": "Boston",
+   "metroSlug": "boston"
+  },
+  {
+   "entity": "Lam Research",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "symbol": "LRCX",
+   "cap": 366649442304.0,
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose"
+  },
+  {
+   "entity": "HSBC",
+   "person": "Noel Quinn",
+   "personQid": "Q66477676",
+   "since": "2020-03-01",
+   "via": "P169",
+   "symbol": "HSBC",
+   "cap": 364982501376.0,
+   "metro": "London",
+   "metroSlug": "london"
+  },
+  {
+   "entity": "Agricultural Bank of China",
+   "person": "Jiang Chaoliang",
+   "personQid": "Q1553706",
+   "since": "",
+   "via": "P488",
+   "symbol": "601288.SS",
+   "cap": 358184970931.0,
+   "metro": "Beijing",
+   "metroSlug": "beijing"
+  },
+  {
+   "entity": "Roche",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "symbol": "RO.SW",
+   "cap": 353855036929.0,
+   "metro": "Basel",
+   "metroSlug": "basel"
+  },
+  {
+   "entity": "ICBC",
+   "person": "Jiang Jianqing",
+   "personQid": "Q718052",
+   "since": "",
+   "via": "P1037",
+   "symbol": "1398.HK",
+   "cap": 341330459222.0,
+   "metro": "Beijing",
+   "metroSlug": "beijing"
+  },
+  {
+   "entity": "Procter & Gamble",
+   "person": "Jon Moeller",
+   "personQid": "Q16195693",
+   "since": "2021-11-01",
+   "via": "P169",
+   "symbol": "PG",
+   "cap": 336459300864.0,
+   "metro": "Cincinnati",
+   "metroSlug": "cincinnati"
+  },
+  {
+   "entity": "Home Depot",
+   "person": "Ted Decker",
+   "personQid": "Q113632708",
+   "since": "2022-03-01",
+   "via": "P169",
+   "symbol": "HD",
+   "cap": 331002839040.0,
+   "metro": "Atlanta",
+   "metroSlug": "atlanta"
+  },
+  {
+   "entity": "Morgan Stanley",
+   "person": "Ted Pick",
+   "personQid": "Q123531962",
+   "since": "2024-01-01",
+   "via": "P169",
+   "symbol": "MS",
+   "cap": 330780246016.0,
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "entity": "Merck",
+   "person": "Belén Garijo",
+   "personQid": "Q27882872",
+   "since": "2021-05-01",
+   "via": "P169",
+   "symbol": "MRK",
+   "cap": 321571160064.0,
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "entity": "Goldman Sachs",
+   "person": "David M. Solomon",
+   "personQid": "Q29641838",
+   "since": "2018-10-01",
+   "via": "P169",
+   "symbol": "GS",
+   "cap": 300429672448.0,
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "entity": "Netflix",
+   "person": "Ted Sarandos",
+   "personQid": "Q19661212",
+   "since": "2020-01-01",
+   "via": "P488",
+   "symbol": "NFLX",
+   "cap": 298596106240.0,
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose"
+  }
+ ],
+ "funds": [
+  {
+   "entity": "BlackRock",
+   "person": "Larry Fink",
+   "personQid": "Q3218882",
+   "since": "1988-01-01",
+   "via": "P169",
+   "kind": "Asset manager"
+  },
+  {
+   "entity": "The Vanguard Group",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "kind": "Asset manager"
+  },
+  {
+   "entity": "State Street Global Advisors",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "kind": "Asset manager"
+  },
+  {
+   "entity": "Fidelity Investments",
+   "person": "Abigail Johnson",
+   "personQid": "Q321125",
+   "since": "2014-10-01",
+   "via": "P169",
+   "kind": "Asset manager"
+  },
+  {
+   "entity": "T. Rowe Price",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "kind": "Asset manager"
+  },
+  {
+   "entity": "Franklin Templeton",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "kind": "Asset manager"
+  },
+  {
+   "entity": "Invesco",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "kind": "Asset manager"
+  },
+  {
+   "entity": "Amundi",
+   "person": "Valérie Baudson",
+   "personQid": "Q106805862",
+   "since": "2021-05-01",
+   "via": "P169",
+   "kind": "Asset manager"
+  },
+  {
+   "entity": "Schroders",
+   "person": "Richard Oldfield",
+   "personQid": "Q75814485",
+   "since": "2024-11-08",
+   "via": "P169",
+   "kind": "Asset manager"
+  },
+  {
+   "entity": "Bridgewater Associates",
+   "person": "Mark T. Bertolini",
+   "personQid": "Q6766732",
+   "since": "2022-01-03",
+   "via": "P169",
+   "kind": "Hedge fund"
+  },
+  {
+   "entity": "Citadel LLC",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "kind": "Hedge fund"
+  },
+  {
+   "entity": "Millennium Management",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "kind": "Hedge fund"
+  },
+  {
+   "entity": "Renaissance Technologies",
+   "person": "Peter Brown",
+   "personQid": "Q102215124",
+   "since": "",
+   "via": "P169",
+   "kind": "Hedge fund"
+  },
+  {
+   "entity": "Two Sigma",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "kind": "Hedge fund"
+  },
+  {
+   "entity": "AQR Capital Management",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "kind": "Hedge fund"
+  },
+  {
+   "entity": "Man Group",
+   "person": "Emmanuel Roman",
+   "personQid": "Q17508950",
+   "since": "",
+   "via": "P169",
+   "kind": "Hedge fund"
+  },
+  {
+   "entity": "Blackstone Inc.",
+   "person": "Stephen A. Schwarzman",
+   "personQid": "Q552465",
+   "since": "",
+   "via": "P169",
+   "kind": "Private equity"
+  },
+  {
+   "entity": "KKR & Co.",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "kind": "Private equity"
+  },
+  {
+   "entity": "Apollo Global Management",
+   "person": "Marc Rowan",
+   "personQid": "Q16194777",
+   "since": "2021-03-01",
+   "via": "P169",
+   "kind": "Private equity"
+  },
+  {
+   "entity": "The Carlyle Group",
+   "person": "Harvey Schwartz",
+   "personQid": "Q16204576",
+   "since": "2023-02-15",
+   "via": "P169",
+   "kind": "Private equity"
+  },
+  {
+   "entity": "Brookfield Asset Management",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "kind": "Private equity"
+  },
+  {
+   "entity": "Ares Management",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "kind": "Private equity"
+  },
+  {
+   "entity": "Norges Bank Investment Management",
+   "person": "Nicolai Tangen",
+   "personQid": "Q56408252",
+   "since": "2020-09-01",
+   "via": "P1037",
+   "kind": "Sovereign wealth"
+  },
+  {
+   "entity": "GIC (Singaporean sovereign wealth fund)",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "kind": "Sovereign wealth"
+  },
+  {
+   "entity": "Temasek Holdings",
+   "person": "Chia Song Hwee",
+   "personQid": "Q114972811",
+   "since": "2025-01-01",
+   "via": "P169",
+   "kind": "Sovereign wealth"
+  },
+  {
+   "entity": "Abu Dhabi Investment Authority",
+   "person": "Mohammed Bin Zayed Al Nahyan",
+   "personQid": "Q1951896",
+   "since": "",
+   "via": "P169",
+   "kind": "Sovereign wealth"
+  },
+  {
+   "entity": "Public Investment Fund",
+   "person": "Yasir Al-Rumayyan",
+   "personQid": "Q64853380",
+   "since": "2015-09-01",
+   "via": "P169",
+   "kind": "Sovereign wealth"
+  },
+  {
+   "entity": "Qatar Investment Authority",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "kind": "Sovereign wealth"
+  },
+  {
+   "entity": "Mubadala Investment Company",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "kind": "Sovereign wealth"
+  },
+  {
+   "entity": "CPP Investments",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "kind": "Pension"
+  },
+  {
+   "entity": "CalPERS",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "kind": "Pension"
+  }
+ ],
+ "centralBanks": [
+  {
+   "entity": "Federal Reserve",
+   "person": "Kevin Warsh",
+   "personQid": "Q6397725",
+   "since": "2026-05-22",
+   "via": "P488",
+   "country": "United States",
+   "countrySlug": "united-states"
+  },
+  {
+   "entity": "European Central Bank",
+   "person": "Christine Lagarde",
+   "personQid": "Q484605",
+   "since": "2019-11-01",
+   "via": "P488",
+   "country": "Eurozone",
+   "countrySlug": ""
+  },
+  {
+   "entity": "Bank of England",
+   "person": "Andrew Bailey",
+   "personQid": "Q4756258",
+   "since": "2020-03-16",
+   "via": "P488",
+   "country": "United Kingdom",
+   "countrySlug": "united-kingdom"
+  },
+  {
+   "entity": "Bank of Japan",
+   "person": "Kazuo Ueda",
+   "personQid": "Q11540681",
+   "since": "2023-04-09",
+   "via": "P488",
+   "country": "Japan",
+   "countrySlug": "japan"
+  },
+  {
+   "entity": "People's Bank of China",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "country": "China",
+   "countrySlug": "china"
+  },
+  {
+   "entity": "Reserve Bank of India",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "country": "India",
+   "countrySlug": "india"
+  },
+  {
+   "entity": "Swiss National Bank",
+   "person": "Thomas Jordan",
+   "personQid": "Q2425188",
+   "since": "",
+   "via": "P488",
+   "country": "Switzerland",
+   "countrySlug": "switzerland"
+  },
+  {
+   "entity": "Bank of Canada",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "country": "Canada",
+   "countrySlug": "canada"
+  },
+  {
+   "entity": "Reserve Bank of Australia",
+   "person": "Michele Bullock",
+   "personQid": "Q112491545",
+   "since": "2023-09-18",
+   "via": "P488",
+   "country": "Australia",
+   "countrySlug": "australia"
+  },
+  {
+   "entity": "Central Bank of Brazil",
+   "person": "Roberto Campos Neto",
+   "personQid": "Q58812288",
+   "since": "",
+   "via": "P488",
+   "country": "Brazil",
+   "countrySlug": "brazil"
+  },
+  {
+   "entity": "Bank of Mexico",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "country": "Mexico",
+   "countrySlug": "mexico"
+  },
+  {
+   "entity": "Bank of Korea",
+   "person": "Lee Ju-yeol",
+   "personQid": "Q16091117",
+   "since": "2014-04-01",
+   "via": "P488",
+   "country": "South Korea",
+   "countrySlug": "south-korea"
+  },
+  {
+   "entity": "Central Bank of Russia",
+   "person": "Elvira Nabiullina",
+   "personQid": "Q74746",
+   "since": "2013-06-24",
+   "via": "P488",
+   "country": "Russia",
+   "countrySlug": "russia"
+  },
+  {
+   "entity": "Central Bank of the Republic of Turkey",
+   "person": "Murat Çetinkaya",
+   "personQid": "Q23817662",
+   "since": "2016-04-19",
+   "via": "P488",
+   "country": "Turkey",
+   "countrySlug": "turkey"
+  },
+  {
+   "entity": "Saudi Central Bank",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "country": "Saudi Arabia",
+   "countrySlug": "saudi-arabia"
+  },
+  {
+   "entity": "Monetary Authority of Singapore",
+   "person": "Tharman Shanmugaratnam",
+   "personQid": "Q983752",
+   "since": "",
+   "via": "P488",
+   "country": "Singapore",
+   "countrySlug": "singapore"
+  },
+  {
+   "entity": "Hong Kong Monetary Authority",
+   "person": "Eddie Yue Wai-man",
+   "personQid": "Q67932795",
+   "since": "2019-10-01",
+   "via": "P488",
+   "country": "Hong Kong",
+   "countrySlug": "hong-kong"
+  },
+  {
+   "entity": "South African Reserve Bank",
+   "person": "Lesetja Kganyago",
+   "personQid": "Q19666670",
+   "since": "2014-11-09",
+   "via": "P488",
+   "country": "South Africa",
+   "countrySlug": "south-africa"
+  },
+  {
+   "entity": "Central Bank of Nigeria",
+   "person": "Olayemi Cardoso",
+   "personQid": "Q118903030",
+   "since": "2023-01-01",
+   "via": "P488",
+   "country": "Nigeria",
+   "countrySlug": "nigeria"
+  },
+  {
+   "entity": "Bank Indonesia",
+   "person": "",
+   "personQid": "",
+   "since": "",
+   "via": "",
+   "country": "Indonesia",
+   "countrySlug": "indonesia"
+  },
+  {
+   "entity": "Bank of Israel",
+   "person": "Amir Yaron",
+   "personQid": "Q41800340",
+   "since": "2018-12-24",
+   "via": "P488",
+   "country": "Israel",
+   "countrySlug": "israel"
+  },
+  {
+   "entity": "Sveriges Riksbank",
+   "person": "Erik Thedéen",
+   "personQid": "Q6207027",
+   "since": "2023-01-01",
+   "via": "P488",
+   "country": "Sweden",
+   "countrySlug": "sweden"
+  },
+  {
+   "entity": "Norges Bank",
+   "person": "Ida Wolden Bache",
+   "personQid": "Q110126862",
+   "since": "2022-03-01",
+   "via": "P488",
+   "country": "Norway",
+   "countrySlug": "norway"
+  },
+  {
+   "entity": "Narodowy Bank Polski",
+   "person": "Adam Glapiński",
+   "personQid": "Q9139594",
+   "since": "",
+   "via": "P488",
+   "country": "Poland",
+   "countrySlug": "poland"
+  },
+  {
+   "entity": "Central Bank of Argentina",
+   "person": "Santiago Bausili",
+   "personQid": "Q123764093",
+   "since": "",
+   "via": "P488",
+   "country": "Argentina",
+   "countrySlug": "argentina"
+  },
+  {
+   "entity": "Central Bank of Egypt",
+   "person": "Hassan Abdullah",
+   "personQid": "Q16193623",
+   "since": "2022-08-18",
+   "via": "P488",
+   "country": "Egypt",
+   "countrySlug": "egypt"
+  }
+ ]
+}

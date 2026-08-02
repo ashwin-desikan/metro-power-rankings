@@ -1,0 +1,173 @@
+{
+ "meta": {
+  "generated_at": "2026-08-02T20:44:46Z",
+  "as_of": "2026-08-02",
+  "source": "Yahoo Finance chart API",
+  "indices": 13,
+  "commodities": 6,
+  "missing": []
+ },
+ "indices": [
+  {
+   "symbol": "^GSPC",
+   "name": "S&P 500",
+   "country": "United States",
+   "metro": "New York",
+   "metroSlug": "new-york",
+   "value": 7489.72,
+   "date": "2026-07-31"
+  },
+  {
+   "symbol": "^DJI",
+   "name": "Dow Jones Industrial",
+   "country": "United States",
+   "metro": "New York",
+   "metroSlug": "new-york",
+   "value": 52485.03,
+   "date": "2026-07-31"
+  },
+  {
+   "symbol": "^IXIC",
+   "name": "Nasdaq Composite",
+   "country": "United States",
+   "metro": "New York",
+   "metroSlug": "new-york",
+   "value": 25373.854,
+   "date": "2026-07-31"
+  },
+  {
+   "symbol": "^FTSE",
+   "name": "FTSE 100",
+   "country": "United Kingdom",
+   "metro": "London",
+   "metroSlug": "london",
+   "value": 10868.05,
+   "date": "2026-07-31"
+  },
+  {
+   "symbol": "^GDAXI",
+   "name": "DAX",
+   "country": "Germany",
+   "metro": "Frankfurt",
+   "metroSlug": "frankfurt",
+   "value": 25629.24,
+   "date": "2026-07-31"
+  },
+  {
+   "symbol": "^FCHI",
+   "name": "CAC 40",
+   "country": "France",
+   "metro": "Paris",
+   "metroSlug": "paris",
+   "value": 8509.64,
+   "date": "2026-07-31"
+  },
+  {
+   "symbol": "^N225",
+   "name": "Nikkei 225",
+   "country": "Japan",
+   "metro": "Tokyo",
+   "metroSlug": "tokyo",
+   "value": 64362.02,
+   "date": "2026-07-31"
+  },
+  {
+   "symbol": "^HSI",
+   "name": "Hang Seng",
+   "country": "Hong Kong",
+   "metro": "Hong Kong",
+   "metroSlug": "hong-kong",
+   "value": 25884.43,
+   "date": "2026-07-31"
+  },
+  {
+   "symbol": "^BSESN",
+   "name": "Sensex",
+   "country": "India",
+   "metro": "Mumbai",
+   "metroSlug": "mumbai",
+   "value": 78094.64,
+   "date": "2026-07-31"
+  },
+  {
+   "symbol": "000001.SS",
+   "name": "Shanghai Composite",
+   "country": "China",
+   "metro": "Shanghai",
+   "metroSlug": "shanghai",
+   "value": 3832.262,
+   "date": "2026-07-31"
+  },
+  {
+   "symbol": "^KS11",
+   "name": "KOSPI",
+   "country": "South Korea",
+   "metro": "Seoul",
+   "metroSlug": "seoul",
+   "value": 6595.45,
+   "date": "2026-07-31"
+  },
+  {
+   "symbol": "^GSPTSE",
+   "name": "S&P/TSX Composite",
+   "country": "Canada",
+   "metro": "Toronto",
+   "metroSlug": "toronto",
+   "value": 35226.14,
+   "date": "2026-07-31"
+  },
+  {
+   "symbol": "^BVSP",
+   "name": "Bovespa",
+   "country": "Brazil",
+   "metro": "São Paulo",
+   "metroSlug": "",
+   "value": 177999.0,
+   "date": "2026-07-31"
+  }
+ ],
+ "commodities": [
+  {
+   "symbol": "GC=F",
+   "name": "Gold",
+   "unit": "USD/oz",
+   "value": 4107.0,
+   "date": "2026-07-31"
+  },
+  {
+   "symbol": "SI=F",
+   "name": "Silver",
+   "unit": "USD/oz",
+   "value": 57.786,
+   "date": "2026-07-31"
+  },
+  {
+   "symbol": "CL=F",
+   "name": "Crude Oil (WTI)",
+   "unit": "USD/bbl",
+   "value": 84.67,
+   "date": "2026-07-31"
+  },
+  {
+   "symbol": "BZ=F",
+   "name": "Brent Crude",
+   "unit": "USD/bbl",
+   "value": 90.12,
+   "date": "2026-07-31"
+  },
+  {
+   "symbol": "HG=F",
+   "name": "Copper",
+   "unit": "USD/lb",
+   "value": 6.4655,
+   "date": "2026-07-31"
+  },
+  {
+   "symbol": "NG=F",
+   "name": "Natural Gas",
+   "unit": "USD/MMBtu",
+   "value": 2.747,
+   "date": "2026-07-31"
+  }
+ ]
+}

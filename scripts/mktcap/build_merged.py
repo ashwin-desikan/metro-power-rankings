@@ -5,7 +5,7 @@ overrides applied, sorted by valuation, geo-joined. Dry-run by default;
 pass --write to persist. Report always printed and written to out/report.md.
 """
 import csv, datetime, json, os, sys
-from common import rest, select, select_all, log
+from common import rest, select, select_all, log, in_list
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "out")
@@ -115,12 +115,11 @@ def main(write=False):
         rest("POST", "/rest/v1/mktcap_companies", up[i:i+500])
     existing = [m["company_id"] for m in merged if m["company_id"] in cur_ids]
     for i in range(0, len(existing), 200):
-        ids = ",".join('"' + e.replace('"', '') + '"' for e in existing[i:i+200])
-        rest("PATCH", f'/rest/v1/mktcap_companies?company_id=in.({ids})',
+        rest("PATCH", f'/rest/v1/mktcap_companies?company_id=in.({in_list(existing[i:i+200])})',
              dict(last_seen=TODAY, is_active=True))
     for i in range(0, len(removed), 200):
-        ids = ",".join('"' + e.replace('"', '') + '"' for e in removed[i:i+200])
-        rest("PATCH", f'/rest/v1/mktcap_companies?company_id=in.({ids})', dict(is_active=False))
+        rest("PATCH", f'/rest/v1/mktcap_companies?company_id=in.({in_list(removed[i:i+200])})',
+             dict(is_active=False))
     # 2) snapshot
     snap = [dict(company_id=m["company_id"], as_of=TODAY, marketcap=m["marketcap"],
                  price=m["price"], rank=m["rank"]) for m in merged]

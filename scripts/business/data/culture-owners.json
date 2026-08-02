@@ -1,0 +1,19 @@
+{
+  "note": "Curated: the public companies behind the site's Sound and Screen layers. symbol is the primary join key into mktcap_merged; altNames helps when a symbol drifts (e.g. relisting). Update owns/labels as the industry reshuffles; this file is hand-maintained.",
+  "companies": [
+    { "symbol": "DIS", "altNames": ["Walt Disney"], "label": "Walt Disney", "kind": "Film & TV", "owns": "Disney, Pixar, Marvel, Lucasfilm, 20th Century, Disney+, ESPN", "screen": true, "sound": false },
+    { "symbol": "NFLX", "altNames": ["Netflix"], "label": "Netflix", "kind": "Streaming", "owns": "The biggest subscription screen on Earth", "screen": true, "sound": false },
+    { "symbol": "CMCSA", "altNames": ["Comcast"], "label": "Comcast", "kind": "Film & TV", "owns": "NBCUniversal, Universal Pictures, DreamWorks, Sky", "screen": true, "sound": false },
+    { "symbol": "WBD", "altNames": ["Warner Bros. Discovery"], "label": "Warner Bros. Discovery", "kind": "Film & TV", "owns": "Warner Bros., HBO, DC Studios, CNN", "screen": true, "sound": false },
+    { "symbol": "PSKY", "altNames": ["Paramount Skydance", "Paramount Global"], "label": "Paramount Skydance", "kind": "Film & TV", "owns": "Paramount Pictures, CBS, Nickelodeon", "screen": true, "sound": false },
+    { "symbol": "SONY", "altNames": ["Sony"], "label": "Sony", "kind": "Film & music", "owns": "Sony Pictures, Columbia, Sony Music - the only giant on both boards by design", "screen": true, "sound": true },
+    { "symbol": "AAPL", "altNames": ["Apple"], "label": "Apple", "kind": "Streaming", "owns": "Apple TV+, Apple Music", "screen": true, "sound": true },
+    { "symbol": "AMZN", "altNames": ["Amazon"], "label": "Amazon", "kind": "Streaming", "owns": "Prime Video, MGM, Amazon Music", "screen": true, "sound": true },
+    { "symbol": "GOOG", "altNames": ["Alphabet (Google)"], "label": "Alphabet", "kind": "Streaming", "owns": "YouTube and YouTube Music - the world's default video player", "screen": true, "sound": true },
+    { "symbol": "UMG.AS", "altNames": ["Universal Music Group"], "label": "Universal Music Group", "kind": "Music", "owns": "The largest label group: Interscope, Republic, Def Jam, Capitol", "screen": false, "sound": true },
+    { "symbol": "WMG", "altNames": ["Warner Music Group"], "label": "Warner Music Group", "kind": "Music", "owns": "Atlantic, Warner Records, Parlophone", "screen": false, "sound": true },
+    { "symbol": "SPOT", "altNames": ["Spotify"], "label": "Spotify", "kind": "Music", "owns": "The stream count behind half the charts", "screen": false, "sound": true },
+    { "symbol": "LYV", "altNames": ["Live Nation Entertainment", "Live Nation"], "label": "Live Nation", "kind": "Live music", "owns": "Ticketmaster and the global tour circuit", "screen": false, "sound": true },
+    { "symbol": "TME", "altNames": ["Tencent Music Entertainment", "Tencent Music"], "label": "Tencent Music", "kind": "Music", "owns": "QQ Music, Kugou, Kuwo - China's listening layer", "screen": false, "sound": true }
+  ]
+}
