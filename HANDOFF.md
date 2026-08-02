@@ -1388,6 +1388,65 @@ typecheck/client-imports/public-data/table-scroll/vitest all green; full verify
   sections; nav dropdown contents render on open (not in SSR HTML — by design).
 - BusinessNav now has EIGHT tabs (Leaders between Currencies and Crossovers).
 
+## NEXT SESSION — START HERE v2 (written 2026-08-02 night, SUPERSEDES the brief below)
+
+STATE: origin/main fully shipped TWICE on 2026-08-02, tree CLEAN. Second ship:
+`fe0749341` data+pipeline [vercel skip] → `816ebe55c` app (push head, the day's
+2nd and final Vercel build, READY, aliased) → `d52a5f82a` docs [vercel skip].
+Live: **/business is an EIGHT-TAB hub** (Overview, Companies w/ full-universe
+drill-down, Private & Unicorns, S&P 500, Markets, Currencies, Leaders,
+Crossovers) + top-level Business nav menu (Billionaires moved in, Studio moved
+to About). Production spot-checked: /business, /business/leaders (Warsh/
+Lagarde/Bailey rendering = Wikidata pipeline current). **BEACON REVIVED**:
+SUPABASE_SERVICE_ROLE_KEY landed with this build; end-to-end selftest wrote a
+page_visits row; residual track_visit 401s in Supabase logs are stale cached
+bundles — ignore them. Release note dated 2026-08-02 now covers BOTH ships
+(predictions + business). Honest note: this tree shipped on gates + dev probes
++ a clean Vercel compile, at Ashwin's explicit call — no full local verify ran;
+treat it as validated but don't cite a 4,9xx-page count for this tree.
+
+FIRST (~15 min):
+1) Tue 4 Aug 06:40 UTC predictions-refresh.yml first run: self-tests green,
+   4 JSONs [vercel skip], /predictions/pl + /predictions/nfl pick up via ISR.
+2) Wed 5 Aug 08:10 UTC honours-2026-champions.yml first run (LPL champion
+   likely records Wed 12 Aug — the Sat 08:10 run lands before the final ends).
+3) LEADERS CURATION PASS (~10 min, high visual payoff): /business/leaders sits
+   at 77/107 seats. Open scripts/business/data/leader-qids.json, eyeball every
+   matchedLabel, fix wrong entityQids, add personQid overrides for seats
+   Wikidata lacks (Broadcom, Micron, SK Hynix, Vanguard, State Street, T. Rowe
+   Price, Franklin Templeton, Invesco, PBoC, RBI, Bank of Canada...), rerun
+   build_leaders.py, commit leaders.json + cache [vercel skip].
+
+MAIN QUEUE:
+1) **13F "Owners" tab** — agreed next build. Data connected: folder
+   "01mar2026-31may2026_form13f" (SUMMARYPAGE = filer totals, COVERPAGE =
+   filer city/state, INFOTABLE 396MB holdings). One-off reducer → small JSONs:
+   manager league table by 13F value, ASSET-MANAGER CAPITALS by metro,
+   most-widely-held issuers, who-owns-the-giants (issuer-name→universe match;
+   CUSIP mapping is the design question). Quarterly cadence. New tab follows
+   the BusinessNav + ui.tsx idiom; add nav entries (Desktop+Mobile) + releases.
+2) **Saturday 8 Aug drill** (reminder trig_01YRJcP8… fires 08:00Z, push):
+   ritual → sync_geo_from_excel --write → refresh.py --write → export_csv →
+   compare_excel → then the business chain: build_business_data → build_sp500
+   → build_fx → build_markets → build_leaders → commit
+   public/data/business/*.json [vercel skip]. Counts as green Saturday #2
+   (Sunday's write+parity was #1). Movers/fx/markets weekly changes all go
+   properly weekly from this run.
+3) **CFB prediction hub** ~10 Aug (preseason AP poll), NFL convention; then
+   UCL hub after the late-Aug draw, PL convention (checklist in memory
+   "Conventions"). PL E0 fixture odds ~21 Aug fold in automatically.
+4) At mktcap CUTOVER (after green Saturday #3): the mini inherits the WHOLE
+   Saturday chain above; it needs the Supabase service key + exchangerate key
+   copied (both gitignored on the Windows box).
+5) Deep threads: per-edition Fairs Cup folding; FIFA CWC 2025 hub; CFP ~late
+   Oct; retire corporate-power CEO_MAP by reading business leaders.json.
+
+HOUSE RULES: unchanged (sticky nav standard; no next build vs dev server;
+canonical hub regen order; specific-path commits, [vercel skip] discipline,
+app commit as push head; .github/workflows via DC write_file; PYTHONIOENCODING;
+MANUAL_TB w/ sweep numbers). Wikidata via REST API not WDQS; Yahoo v8 for
+markets (Stooq dead); GitHub API public via WebFetch; gh CLI absent.
+
 ## NEXT SESSION — START HERE (written 2026-08-02, session closed shipped)
 
 Copy-paste brief for the next working session. Read this, then the 2026-08-02
