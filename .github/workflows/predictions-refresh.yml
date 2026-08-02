@@ -1,0 +1,68 @@
+name: Prediction models refresh (PL + NFL)
+
+# Twice a week through the 2026-27 season this re-runs the /predictions
+# league models: grades any played fixtures in the ledgers, folds real
+# results into the ratings, refreshes market odds, re-simulates the season
+# and freezes picks for the next round of fixtures.
+#   Tue 06:40 UTC - grade the weekend's games with final results
+#   Fri 11:40 UTC - fresh odds + picks ahead of the weekend
+# Data-only commit riding [vercel skip]; the pages read the JSONs via ISR
+# from GitHub raw, so no build is needed. Self-tests gate every run.
+
+on:
+  schedule:
+    - cron: "40 6 * * 2"
+    - cron: "40 11 * * 5"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: predictions-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
+        with:
+          python-version: "3.12"
+
+      - name: Install numpy (fast sim path)
+        run: pip install numpy
+
+      - name: Self-tests (offline decision logic)
+        run: |
+          python3 scripts/predictions/build_pl_sim.py --self-test
+          python3 scripts/predictions/build_nfl_sim.py --self-test
+
+      - name: Rebuild the Premier League model
+        run: python3 scripts/predictions/build_pl_sim.py
+
+      - name: Rebuild the NFL model
+        run: python3 scripts/predictions/build_nfl_sim.py
+
+      - name: Commit if anything changed
+        run: |
+          git add public/data/pl-sim.json public/data/pl-predictions.json \
+                  public/data/nfl-sim.json public/data/nfl-predictions.json
+          if git diff --cached --quiet; then
+            echo "No changes; nothing to commit."
+            exit 0
+          fi
+          git config user.name "predictions-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "Auto: refresh PL + NFL prediction models [vercel skip]"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "Pushed on attempt $attempt."; exit 0
+            fi
+            sleep $((attempt * 5))
+          done
+          echo "Failed to push after retries." >&2; exit 1

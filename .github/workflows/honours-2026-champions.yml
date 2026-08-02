@@ -1,0 +1,75 @@
+name: 2026 champions tracker (LPL / Hundred / Currie Cup / CPL)
+
+# CI port of the four Cowork champion-trackers (HANDOFF 2026-08-01) so they no
+# longer need Ashwin's desktop app open at fire time. Twice a week during the
+# finals window this checks each Wikipedia season article and, only when a
+# champion is actually named, records it (T20 manual supplement + rebuild, or
+# the Currie Cup line in domestic-winners.txt + rebuild) and commits.
+# Idempotent: recorded seasons are skipped, so once all four are in every run
+# is a no-op; the schedule expires naturally after October. Finals: LPL 8 Aug,
+# The Hundred 16 Aug, Currie Cup ~12 Sep, CPL 20 Sep.
+#
+# The pages are ISR-read from GitHub raw, so the commit rides [vercel skip]
+# (no build). Self-test gates every run, per the repo's pipeline discipline.
+
+on:
+  schedule:
+    - cron: "10 8 * 8-10 3,6"   # Wed + Sat 08:10 UTC, Aug-Oct
+  workflow_dispatch:
+    inputs:
+      dry:
+        description: "Dry run (fetch + report, write nothing)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: honours-2026-champions
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
+        with:
+          python-version: "3.12"
+
+      - name: Self-test (offline decision logic)
+        run: python3 scripts/update-2026-champions.py --self-test
+
+      - name: Record any newly-decided champions
+        run: |
+          if [ "${{ inputs.dry }}" = "true" ]; then
+            python3 scripts/update-2026-champions.py --dry
+          else
+            python3 scripts/update-2026-champions.py
+          fi
+
+      - name: Commit if anything changed
+        run: |
+          git add scripts/cricket/manual-t20-champions.tsv \
+                  public/data/cricket/t20-leagues.json \
+                  scripts/rugby/domestic-winners.txt \
+                  public/data/rugby-union/club-rolls.json \
+                  public/data/rugby-union/clubs.json
+          if git diff --cached --quiet; then
+            echo "No new champion; nothing to commit."
+            exit 0
+          fi
+          git config user.name "honours-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "Auto: record newly-decided 2026 champions [vercel skip]"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "Pushed on attempt $attempt."; exit 0
+            fi
+            sleep $((attempt * 5))
+          done
+          echo "Failed to push after retries." >&2; exit 1
