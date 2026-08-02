@@ -21,7 +21,7 @@ CLUB POWER-RANKING FORMULA (per club, UEFA first divisions only):
     pedigree/current= from the 1-year UEFA club coefficients (public.uefa_club_coeff_history,
                       17/18-25/26); five_year = sum of the five seasons ending that year.
     country factor  = sqrt(country 5-year coef / England's), from public.uefa_country_coeff_history.
-    trophy_bonus    = CL 0.10, Club World Cup 0.05, Europa League 0.05, UEFA Super Cup 0.04,
+    trophy_bonus    = CL 0.12 (0.10 pre-2026-08-02), Club World Cup 0.05, Europa League 0.05, UEFA Super Cup 0.04,
                       Conference League 0.03, old 7-team Club World Cup 0.03, domestic league title
                       0.06 (top-5 league) else 0.03, Intercontinental 0.02, domestic cup 0.015, domestic super cup 0.01
                       (added to the winning club; the old Club World Cup shows in the super-cup section).
@@ -182,7 +182,7 @@ def build(season):
     TB={}
     def addb(tid,w):
         if tid is not None: TB[tid]=TB.get(tid,0)+w
-    addb(fwid(S["europe"]["2"]["fixtures"]),0.10)   # Champions League
+    addb(fwid(S["europe"]["2"]["fixtures"]),0.12)   # Champions League (0.10->0.12 2026-08-02, sync w/ gen_hub_early.TOP_TROPHY_BONUS)
     addb(fwid(S["europe"]["3"]["fixtures"]),0.05)   # Europa League
     addb(fwid(S["europe"]["848"]["fixtures"]),0.03) # Conference League
     if S["cwc"]: addb(fwid(S["cwc"]),0.05)          # Club World Cup (new 32-team format)

@@ -310,7 +310,9 @@ def assemble(year, label):
     # winners are identical to the api finals build_season_hub used - the round-by-round data was
     # built from the same workbook - so this reproduces the shipped bonuses AND fixes 2013-14, whose
     # api Europa fixtures are missing on disk).
-    CONT_W = {"Champions League": 0.10, "Europa League": 0.05, "Conference League": 0.03,
+    # CL winner 0.10 -> 0.12 on 2026-08-02, in sync with gen_hub_early.TOP_TROPHY_BONUS (see the
+    # decision note there): an incremental nudge for the actual European champion, not a guarantee.
+    CONT_W = {"Champions League": 0.12, "Europa League": 0.05, "Conference League": 0.03,
               "UEFA Super Cup": 0.04, "FIFA Club World Cup": 0.05 if year >= 2024 else 0.03}
     for sec in hub["continental"]:
         w = CONT_W.get(sec.get("comp"))

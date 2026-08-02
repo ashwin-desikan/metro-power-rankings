@@ -170,7 +170,13 @@ CF_CAP = None
 # European champion can sit below a pedigree-heavy non-winner from a strong league — English clubs won
 # the European Cup 1977-81 yet German clubs ranked #1. Raising this surfaces the real winner. Also
 # governs the long-standing Red Star 1990-91 case (European Cup winners should be top-tier that year).
-TOP_TROPHY_BONUS = 0.10
+# 2026-08-02 (Ashwin): raised 0.10 -> 0.12 — a deliberately incremental step, not a sledgehammer.
+# The sweep (audit_winner_rank.py / whatif_levers.py) shows the tradeoff: 0.10 put the actual
+# European champion #1 in 35/67 seasons, 0.15 -> 39, 0.20 -> 46, 0.25 -> 56 but at the cost of
+# e.g. 2011-12 Chelsea (6th in the PL) leapfrogging prime Barcelona. 0.12 nudges only the
+# nearest-miss winners over the line and keeps the ranking a power ranking, not an honours list.
+# Kept PED_WEIGHT at 0.35: a TB-only change touches nobody but winners.
+TOP_TROPHY_BONUS = 0.12
 # Weight of the 5-year pedigree term in the club score (score = 0.65 form + PED_WEIGHT pedigree +
 # 0.11 current-coef - penalty + trophies). Pedigree is a TRAILING window, so a high value keeps a
 # fading dynasty (Gladbach 1979-80, mediocre that season but maxed on 1975-77 pedigree) at #1 over the
@@ -183,12 +189,21 @@ PED_WEIGHT = 0.35
 # 1.0): the genuine elite bunch near the top and pedigree spreads across many clubs, as it should.
 # None reverts to the old divide-by-max behaviour.
 PED_TOPK = 6
+# Weight on pre-1971 Inter-Cities Fairs Cup coefficient totals ("UC" rows through 70/71) before
+# they enter the pedigree windows. See the decision comment at the discount site in build_ccf().
+FAIRS_DISCOUNT = 0.5
 # Manual, editorial one-off trophy-bonus adjustments, keyed by (season, canonical club name). Reserved
 # for genuinely exceptional cases the automatic model undersells. Ajax 1994-95 won the Champions League
 # losing a single match all season (37-11-1); the model placed them #2 behind a Juventus side that won
 # the lesser UEFA Cup with 10 losses, on higher opponent-weighted form. +0.05 lifts the actual European
 # champion to #1. Kept deliberately tiny and few; each entry is a documented editorial decision.
-MANUAL_TB = {("1994-95", "Ajax"): 0.05}
+# Chelsea 2006-07 (Ashwin, 2026-08-02): FA Cup + League Cup double, PL runners-up by
+# fine margins, CL semifinal — his editorial call: "the best team in the world that
+# season". +0.04 lifts them from #3 (1.013) past AC Milan (1.049) to #1 (1.053).
+# Chelsea 2009-10 (Ashwin, 2026-08-02): Premier League + FA Cup double (103 league goals,
+# the first 100-goal top-flight season since 1963) — his call: they belong above a United
+# side that won only the League Cup. +0.01 nudges 1.0266 → 1.0366 past United's 1.0330 (#3).
+MANUAL_TB = {("1994-95", "Ajax"): 0.05, ("2006-07", "Chelsea"): 0.04, ("2009-10", "Chelsea"): 0.01}
 # The eight leagues domfix carries as per-match fixtures (opponent-weighted domestic form). Every
 # OTHER UEFA top flight has only its standings table, so those clubs' domestic W/D/L is folded into
 # the ranking as an aggregate weighted by the league's average opponent strength (see compute_clubs).
@@ -373,6 +388,17 @@ def build_ccf(decay=BAN_DECAY_TEAM):
         if not team or re.fullmatch(r"[\d.]*", team): continue   # skip header / rank-only rows
         try: total = float(p[7])
         except: continue
+        # Pre-1971 Inter-Cities Fairs Cup ("UC" rows through 70/71; from 71/72 UC = the real UEFA
+        # Cup, full weight) is discounted: early editions ran 2-3 YEARS with all points landing in
+        # one season label, against fields padded with city select XIs — so a Fairs finalist's
+        # single-season total rivals a European Cup WINNER's. Untreated, Birmingham City (Fairs
+        # finalists 1960 + 1961, never in the European Cup) carried the 3rd-5th biggest pedigree
+        # window in Europe from 1960-61 to 1964-65 (ped 0.73-0.93), ranked #5 in the 1960-61 hub,
+        # and monopolized the Underachiever badge four seasons running. At ×0.5 their 1960-61 ped
+        # falls to ~0.58 and the pedigree elite reverts to the European Cup sides (Real, Benfica,
+        # Milan), while Barcelona/Valencia keep meaningful credit for actually winning the Fairs.
+        # Ashwin picked 0.5 over 0.33 (2026-08-02).
+        if cur <= 1971 and len(p) > 3 and p[3] == "UC": total *= FAIRS_DISCOUNT
         lab = f"{(cur - 1) % 100:02d}/{cur % 100:02d}"   # 1996 -> 95/96 ... 2008 -> 07/08
         key = ccf_norm.get(norm(team))            # fold into an already-tracked CCF club when possible
         if key:
