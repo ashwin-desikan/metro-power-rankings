@@ -1223,6 +1223,171 @@ still apply; every item also re-verified by the full build.
 4. Carried over: summer-2025 FIFA CWC hub folding; preseason AP poll watch;
    CFP ~late Oct; SECURITY DEFINER views (out of scope today).
 
+## 2026-08-02 (late evening) — windows → next session (BUSINESS OF THE METROS: /business hub built, UNCOMMITTED)
+
+Cowork session, second sitting of the day (after the ship recorded above). Ashwin:
+"do all three phases" of the business/finance section plan. EVERYTHING IN THIS
+ENTRY IS UNCOMMITTED in the working tree — do not commit/push without his word.
+
+### What exists now
+- **/business — "Business of the Metros"** (app/business/page.tsx + lib/business.ts):
+  Money Table (top 40 metros by aggregated market cap), race to $5T bar board,
+  weekly movers (renders an explainer until mktcap_valuations holds ≥2 snapshots,
+  then arms automatically), countries + regions rollups, S&P 500 section (seats by
+  metro / sectors by value / longest-tenured / latest index changes feed),
+  sport-vs-business crossover boards, US state money board w/ election links,
+  Fortune Global 500 employers, curated "Who owns culture" board, method prose.
+  Reads via GH-raw ISR (lib/plSim.ts pattern), so weekly [vercel skip] data
+  commits appear without spending builds.
+- **Pipeline** scripts/business/: build_business_data.py (Supabase mktcap_* →
+  public/data/business/business.json; reuses scripts/mktcap/common.py + the
+  service key file; self-test 5/5) and build_sp500.py (Wikipedia constituents +
+  changes wikitext parser, self-test 9/9, sanity gate 480-520 rows → sp500.json;
+  live run parsed 503, joined 494/503 by symbol with .↔- normalization;
+  {{NyseSymbol|X}}/{{NasdaqSymbol|X}} template forms handled). Curated inputs in
+  scripts/business/data/: global500.json (Fortune Global 500, 2022 list, with
+  employees; 294 matched to mktcap names) and culture-owners.json (14 Sound/
+  Screen owners, 14/14 matched — build logs any future unmatched symbols).
+- Wiring: DesktopNav + MobileMenu → "Business of the Metros" under Power &
+  people (after Billionaires); home MASTHEAD_LAUNCH 💼 Business chip;
+  lib/releases.ts entry DATED 2026-08-03 — ⚠️ set it to the real ship day
+  before pushing.
+- Two data vintages by design: crossover + state boards compute from metros.json
+  (workbook ETL) so they always agree with metro pages; company-level boards use
+  the Supabase snapshot, as_of stamped on the page (2026-07-18 seed until the
+  first Shadow Saturday --write). Both cadences are explained in the method box.
+
+### Verify state
+Native typecheck clean; check:client-imports / check:public-data (pre-existing
+boundary warning only) / check:table-scroll OK; vitest 26/26; dev-server probes:
+/business 200 with all section content checks, home chip present, /updates
+renders the new entry with no brevity violations. FULL `npm run verify` (dev
+server STOPPED, real build) NOT run — required before push.
+
+### Refresh wiring (deliberately not CI yet)
+Saturdays, after `refresh.py --write`: run build_business_data.py then
+build_sp500.py in scripts/business, commit public/data/business/*.json
+[vercel skip]. Fold into the mini's weekly job at mktcap cutover. Movers light
+up on their own after the second Saturday write.
+
+### Also this session (before the build)
+- Post-ship checks ALL GREEN: four Cowork triggers confirmed deleted; both new
+  workflows active on GitHub with 0 runs (correct — first windows Tue 4 Aug
+  06:40 / Wed 5 Aug 08:10 UTC; LPL champion likely records Wed 12 Aug run);
+  production spot-checks 4/4; memory index reconciled to SHIPPED.
+- ⚠️ **Page-view beacon DEAD in prod since ~14:00 UTC**: e7fc00db2 made /api/v
+  require SUPABASE_SERVICE_ROLE_KEY and it is NOT set in Vercel (Supabase API
+  logs: every track_visit POST is a 401 from stale client bundles, zero relay
+  calls; page_visits frozen at 801 for the day). Fix: add the env var (value =
+  scripts/mktcap/supabase_key.txt) in Vercel → Project → Settings → Environment
+  Variables, production, server-only, then redeploy. Full note in memory
+  project_page_visits_analytics.md.
+- Shadow Saturday reminder re-scheduled (old one-shot expired unfired-drill):
+  trig_01YRJcP8rFqFoDebRzqb46TL, Sat 8 Aug 08:00Z, push on.
+
+### Addendum (Sunday night): FIRST REAL --write DONE + geo re-sync + parity GREEN
+Ashwin asked why the hub said "snapshot 2026-07-18" (Supabase was frozen at the
+seed) and chose "run the write now and compare with the spreadsheet". Results:
+- **First `refresh.py --write` landed**: 12,929 snapshot rows as_of 2026-08-02,
+  118 new companies, 5 deactivated. It CRASHED once first — company_ids with
+  spaces/&/# ("Koch Industries", "Ernst & Young") in a PostgREST `in.(...)`
+  filter trip http.client. FIX: `in_list()` in common.py (URL-encodes the id
+  list), both PATCH sites in build_merged.py now use it. The crash had inserted
+  the 118 companies but skipped their geo stubs; backfilled 117 stubs via SQL
+  (insert-missing-symbols, mapped_by='auto-stub').
+- **Parity vs the workbook: effectively a GREEN shadow test.** Markets were
+  closed all weekend, so Ashwin's Sat paste and Sunday's fetch are the same
+  data: totals $177.469T vs $177.472T, identical source counts
+  (11,159/372/1,398), median value drift 0.00%, only 4 names >5%. The 18/19
+  names-only-on-one-side rows are source display-name drift (Allegiant Air vs
+  Allegiant Travel Company), not row loss. NEW TOOL scripts/mktcap/
+  compare_excel.py prints this whole diff — use it as the Saturday drill's
+  step 3.
+- **Root cause of the stale hub: mktcap_geo had fallen behind Excel curation**
+  (Excel mapped 501 metros, Supabase 444; 890 metro assignments missing —
+  Ashwin kept curating after the 07-23 seed). NEW TOOL scripts/mktcap/
+  sync_geo_from_excel.py (dry-run default) pulls City Lookup → mktcap_geo;
+  ran --write: 894 rows updated (892 net-new), 0 invalid, 0 cases of Excel
+  blank vs Supabase mapped. compare_excel now shows **0 metro mismatches**.
+  Run the sync before each Saturday drill until cutover.
+- business.json + sp500.json regenerated: 501 metros, **2 snapshots, movers
+  ON** (07-18 → 08-02 window, a fortnight this once; weekly from Saturday),
+  S&P join 496/503. /business dev-probed: as_of 2026-08-02, movers tables
+  rendering. NOTE: this consumed the "first --write" moment — Saturday 8 Aug
+  is now shadow drill #2 in effect; the 2-3-green-Saturdays clock has its
+  first green tick (same-data parity, 0 mismatches).
+
+### Addendum 2 (Sunday night): HUB V2 — /business is now a SEVEN-TAB hub (still UNCOMMITTED)
+Ashwin: "build business into a proper hub" like Sound/Screen — tab nav, real depth,
+top 500 companies w/ drill-down, separate private/unicorn world, currencies (his
+exchangerate-api.com account), + his picks from my ideas list: stock indices +
+commodities (crypto rejected). Everything below verified on the dev server;
+typecheck/client-imports/public-data/table-scroll/vitest all green; full verify
+(dev stopped) still owed before push.
+- **Structure** (SoundNav idiom): app/business/BusinessNav.tsx + ui.tsx (shared
+  presentational bits) + seven routes: Overview (/business — Money Table, $5T race,
+  movers, countries/regions, method), /companies (top 500 server-rendered;
+  CompaniesExplorer client lazy-fetches the FULL 12,929-row
+  /data/business/companies.json on first filter — search/country/type down to the
+  tail), /private (🦄 1,398 unicorns w/ industry+dateJoined+investors from the CB
+  fetch CSV: biggest/capitals/industries/newest/top investors + THE GRADUATES
+  (last private valuation vs public cap now — 6 rows incl. Netskope/Navan) + 372
+  private giants), /sp500 (seats-by-metro, sectors, filterable 503-row client
+  table, survivors, full changes feed), /markets (13 indices tied to home metros
+  NY→Mumbai→São Paulo + 6 commodities; weekly-change column arms at 2nd
+  snapshot), /currencies (165 currencies vs USD from exchangerate-api, majors
+  tiles, every currency linked to its countries via country-facts currencyIso,
+  + MARKET-CAP-TO-GDP board from country-indicators gdpUsd), /crossovers (the
+  four boards moved from v1). Client components carry LOCAL type mirrors (lib/
+  business is server-only; check:client-imports enforces).
+- **New pipeline** scripts/business/: build_fx.py (key in gitignored
+  exchangerate_key.txt — Ashwin's account, free tier, 1 call/run; sanity gate;
+  fx.json + append-only fx-history.json) and build_markets.py (⚠️ STOOQ IS DEAD —
+  CSV endpoint 404s + anti-bot HTML, probed; rewritten on Yahoo Finance v8 chart
+  API, per-symbol, 0.4s spacing, ≥6-indices gate; markets.json + markets-history
+  .json). build_business_data.py now ALSO emits companies.json (full universe,
+  ~1.7MB) + unicorns.json. All self-tested; all ran live (165 currencies, 13+6
+  markets, S&P 500 at 7489.72).
+- Saturday flow gains two steps: build_fx.py + build_markets.py after
+  build_business_data.py; commit public/data/business/*.json [vercel skip].
+- releases entry REWRITTEN for the full hub (bullets length-checked); Ashwin
+  set the date to 2026-08-02 DELIBERATELY — do not "correct" it at ship time.
+  Note: the same day's prediction-hubs ship has no release entry of its own
+  (flagged to Ashwin; his call whether to add a bullet).
+- **NEXT WAVE agreed material**: Ashwin has SEC Form 13F quarterly data sets
+  (sec.gov/data-research → connected folder "01mar2026-31may2026_form13f":
+  COVERPAGE/SUMMARYPAGE/INFOTABLE 396MB etc.). Plan an "Owners" tab: biggest
+  institutional managers by 13F value (SUMMARYPAGE), ASSET-MANAGER CAPITALS by
+  metro (COVERPAGE city/state → metro join), most-widely-held issuers + who owns
+  the giants (INFOTABLE aggregation; needs issuer-name→our-universe matching).
+  Quarterly cadence, one-off reducer script → small JSONs. Not built yet.
+
+### Addendum 3 (small hours): BUSINESS LEADERS tab + nav reshuffle (still UNCOMMITTED)
+- **/business/leaders** — the corporate cousin of the civic leaders pipeline.
+  scripts/business/build_leaders.py resolves current officeholders from Wikidata
+  (REST API not WDQS; polite UA + 429 backoff; self-test 5/5): CEOs of the top 50
+  public companies (P169), 31 curated funds (asset managers/hedge/PE/sovereign/
+  pension; scripts/business/data/leader-entities.json), 26 central banks
+  (P488→P169→P1037). QIDs resolved by name ONCE and cached in
+  scripts/business/data/leader-qids.json (committed, hand-correctable; supports
+  personQid overrides). Every run diffs against public/data/business/leaders.json
+  and appends person-level changes to leaders-changes.json — the "revolving door"
+  feed starts recording from tonight's first snapshot. First run: **77/107 seats
+  resolved** — the ~30 unresolved (Broadcom, Vanguard, T. Rowe Price, some Asian
+  chipmakers...) are missing/ended P169 claims or search mismatches; CURATION
+  PASS WANTED: eyeball leader-qids.json matchedLabels + add personQid overrides.
+  Page renders dashes for gaps and says so. Weekly step: run build_leaders.py
+  with the rest of the Saturday chain. FOLLOW-UP idea: point scripts/corporate/
+  build-corporate-power.py's CEO_MAP at this JSON instead of hand-curation.
+- **Nav reshuffle (Ashwin)**: NEW top-level "Business" dropdown after Culture in
+  DesktopNav + a Business section in MobileMenu — hub marquee link + all eight
+  tabs + Billionaires (MOVED out of Geography/Power & people). Studio MOVED from
+  a top-level link into the About dropdown (both navs). The stopgap "Business of
+  the Metros" MenuLink under Power & people is gone.
+- Verified: typecheck + client-imports green; /business/leaders 200 w/ all
+  sections; nav dropdown contents render on open (not in SSR HTML — by design).
+- BusinessNav now has EIGHT tabs (Leaders between Currencies and Crossovers).
+
 ## NEXT SESSION — START HERE (written 2026-08-02, session closed shipped)
 
 Copy-paste brief for the next working session. Read this, then the 2026-08-02
