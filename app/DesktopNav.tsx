@@ -337,6 +337,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
         <DropdownItem href="/business/companies" title="Companies" />
         <DropdownItem href="/business/private" title="Private & Unicorns" />
         <DropdownItem href="/business/sp500" title="S&P 500" />
+        <DropdownItem href="/business/owners" title="Owners" />
         <DropdownItem href="/business/markets" title="Markets" />
         <DropdownItem href="/business/currencies" title="Currencies" />
         <DropdownItem href="/business/leaders" title="Leaders" />

@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-03",
+    headline: "The Owners: who actually holds the market",
+    items: [
+      "A ninth Business tab reduces every quarterly SEC 13F filing - 8,760 of them, $65 trillion reported - to a manager league table, from BlackRock's $5.7T down.",
+      "Asset-manager capitals rank metros by the money their institutions run: New York's $16T vault, then Boston and Vanguard's Philadelphia ahead of Chicago and London.",
+      "Who owns the giants shows the top holders of each of the world's biggest companies, and the most-widely-held board counts which stocks nearly every institution owns.",
+      "The business leaders board is now complete: all 107 seats resolved, with every CEO, fund chief and central banker verified and current.",
+    ],
+  },
+  {
     date: "2026-08-02",
     headline: "Prediction hubs, and Business of the Metros: a full money hub",
     items: [

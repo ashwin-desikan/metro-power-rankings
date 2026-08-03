@@ -164,6 +164,7 @@ function buildSections(): Section[] {
             { href: '/business/companies', label: 'Companies' },
             { href: '/business/private', label: 'Private & Unicorns' },
             { href: '/business/sp500', label: 'S&P 500' },
+            { href: '/business/owners', label: 'Owners' },
             { href: '/business/markets', label: 'Markets' },
             { href: '/business/currencies', label: 'Currencies' },
             { href: '/business/leaders', label: 'Leaders' },

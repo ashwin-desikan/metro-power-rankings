@@ -427,6 +427,66 @@ export type BizLeadersFile = {
 
 export type BizLeaderChange = { date: string; group: string; entity: string; from: string; to: string };
 
+// ---------------------------------------------------------------------------
+// Institutional owners (SEC Form 13F) - reduced quarterly by
+// scripts/business/build_owners.py from the ~400MB EDGAR structured data set.
+
+export type OwnerManager = {
+  name: string;
+  cik: string;
+  value: number;
+  positions: number;
+  city: string;
+  state: string;
+  metro: string | null;
+  metroSlug: string;
+};
+
+export type OwnerCapital = {
+  metro: string;
+  metroSlug: string;
+  country: string;
+  value: number;
+  filers: number;
+};
+
+export type OwnerWidelyHeld = { issuer: string; cusip: string; holders: number; value: number };
+
+export type OwnerGiant = {
+  name: string;
+  symbol: string;
+  cap: number;
+  metro: string | null;
+  metroSlug: string;
+  reported: number;
+  pctOfCap: number | null;
+  holders: number;
+  top: { name: string; cik: string; value: number }[];
+};
+
+export type OwnersFile = {
+  meta: {
+    generated_at: string;
+    as_of: string;
+    period: string;
+    source: string;
+    filings: number;
+    managers: number;
+    totalValue: number;
+    mappedValue: number;
+    unmappedManagers: number;
+    topManagers: number;
+  };
+  managers: OwnerManager[];
+  capitals: OwnerCapital[];
+  widelyHeld: OwnerWidelyHeld[];
+  giants: OwnerGiant[];
+};
+
+export async function getOwners(): Promise<OwnersFile | null> {
+  return load<OwnersFile>("owners.json");
+}
+
 export async function getBizLeaders(): Promise<BizLeadersFile | null> {
   return load<BizLeadersFile>("leaders.json");
 }
