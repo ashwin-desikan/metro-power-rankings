@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Women's Football — ${hub.country}`,
     description: desc,
     alternates: { canonical: `/teams/wfootball/leagues/${hub.slug}` },
-    openGraph: { title: `Women's Football — ${hub.country} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}/teams/wfootball/leagues/${hub.slug}`, type: "website" },
+    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `Women's Football — ${hub.country} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}/teams/wfootball/leagues/${hub.slug}`, type: "website" },
   };
 }
 

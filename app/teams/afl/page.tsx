@@ -11,8 +11,8 @@ const TITLE = "AFL";
 const DESC = "Every VFL/AFL club since 1897: all-time premierships and minor premierships, the latest-season ladder, an all-time honours table, and the full Grand Final roll. Sourced from afltables.com.";
 export const metadata: Metadata = {
   title: TITLE, description: DESC, alternates: { canonical: PATH },
-  openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
-  twitter: { card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
+  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
+  twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
 };
 
 export default async function AflPage() {

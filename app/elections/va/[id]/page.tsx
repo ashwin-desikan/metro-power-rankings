@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     title,
     description: c.summary,
     alternates: { canonical: path },
-    openGraph: { title: `${title} | ${SITE_NAME}`, description: c.summary, url: `${BASE_URL}${path}`, type: "article" },
+    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description: c.summary, url: `${BASE_URL}${path}`, type: "article" },
   };
 }
 

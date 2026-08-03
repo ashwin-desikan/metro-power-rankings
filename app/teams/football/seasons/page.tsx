@@ -13,8 +13,8 @@ const TITLE = "Club Football by Season";
 const DESC = "Completed-season club football hubs: the Citizen of Nowhere power ranking, UEFA coefficients, European competitions, final league tables and cup results, season by season.";
 export const metadata: Metadata = {
   title: TITLE, description: DESC, alternates: { canonical: PATH },
-  openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
-  twitter: { card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
+  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
+  twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
 };
 // Season list derived from the hub data via lib/footballSeasons (single source
 // with /teams/football), plus the live season on top. A new hub + trends

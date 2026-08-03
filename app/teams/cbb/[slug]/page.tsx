@@ -30,8 +30,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const desc = `${t.name} men's college basketball: ${titles}all-time ${t.w}-${t.l} (${t.pct.toFixed(3)}), ${t.tour_app} NCAA tournament appearances, ${t.final4} Final Fours. Conference: ${t.conference}.`;
   return {
     title: `${t.name} — Men's College Basketball`, description: desc, alternates: { canonical: path },
-    openGraph: { title: `${t.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },
-    twitter: { card: "summary_large_image", title: `${t.name} | ${SITE_NAME}`, description: desc },
+    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${t.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },
+    twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${t.name} | ${SITE_NAME}`, description: desc },
   };
 }
 

@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: hub.label,
     description: desc,
     alternates: { canonical: `/teams/football/tournaments/${hub.slug}` },
-    openGraph: {
+    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
       title: `${hub.label} | ${SITE_NAME}`,
       description: desc,
       url: `${BASE_URL}/teams/football/tournaments/${hub.slug}`,

@@ -42,8 +42,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${f.name}${f.active ? "" : " (defunct)"}`,
     description: desc,
     alternates: { canonical: path },
-    openGraph: { title: `${f.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },
-    twitter: { card: "summary_large_image", title: `${f.name} | ${SITE_NAME}`, description: desc },
+    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${f.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },
+    twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${f.name} | ${SITE_NAME}`, description: desc },
   };
 }
 

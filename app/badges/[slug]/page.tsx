@@ -46,13 +46,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description: badge.shortDesc,
     alternates: { canonical: `/badges/${badge.slug}` },
-    openGraph: {
+    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
       title: `${badge.name} | ${SITE_NAME}`,
       description: badge.shortDesc,
       url,
       type: "website",
     },
-    twitter: {
+    twitter: { images: ["/og-default.png"],
       card: "summary_large_image",
       title: `${badge.name} | ${SITE_NAME}`,
       description: badge.shortDesc,

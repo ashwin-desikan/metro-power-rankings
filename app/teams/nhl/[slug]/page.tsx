@@ -66,8 +66,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${name} (defunct)`,
       description: hDesc,
       alternates: { canonical: `/teams/nhl/${h.slug}` },
-      openGraph: { title: `${name} (defunct) | ${SITE_NAME}`, description: hDesc, url: hUrl, type: "website" },
-      twitter: { card: "summary_large_image", title: `${name} (defunct) | ${SITE_NAME}`, description: hDesc },
+      openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${name} (defunct) | ${SITE_NAME}`, description: hDesc, url: hUrl, type: "website" },
+      twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${name} (defunct) | ${SITE_NAME}`, description: hDesc },
     };
   }
   const url = `${BASE_URL}/teams/nhl/${f.slug}`;
@@ -77,8 +77,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: f.display_name,
     description: desc,
     alternates: { canonical: `/teams/nhl/${f.slug}` },
-    openGraph: { title: `${f.display_name} | ${SITE_NAME}`, description: desc, url, type: "website" },
-    twitter: { card: "summary_large_image", title: `${f.display_name} | ${SITE_NAME}`, description: desc },
+    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${f.display_name} | ${SITE_NAME}`, description: desc, url, type: "website" },
+    twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${f.display_name} | ${SITE_NAME}`, description: desc },
   };
 }
 

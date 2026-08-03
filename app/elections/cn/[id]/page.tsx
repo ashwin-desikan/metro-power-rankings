@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     title: `${e.label}, ${e.year}`,
     description: e.summary,
     alternates: { canonical: path },
-    openGraph: { title: `${e.label}, ${e.year} | ${SITE_NAME}`, description: e.summary, url: `${BASE_URL}${path}`, type: "article" },
+    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${e.label}, ${e.year} | ${SITE_NAME}`, description: e.summary, url: `${BASE_URL}${path}`, type: "article" },
   };
 }
 

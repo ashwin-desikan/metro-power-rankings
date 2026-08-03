@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "with a live 2026-27 season hub; the great top-flight leagues; every first division worldwide; and " +
     "per-club pages with season-by-season history back to the 1870s.",
   alternates: { canonical: "/teams/football" },
-  openGraph: {
+  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
     title: `Club Football | ${SITE_NAME}`,
     description: "European and world club football: tournaments, leagues, and per-club history from the 1870s on.",
     url: `${BASE_URL}/teams/football`,

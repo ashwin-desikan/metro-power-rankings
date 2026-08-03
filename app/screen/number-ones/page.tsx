@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESC,
   alternates: { canonical: "/screen/number-ones" },
-  openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}/screen/number-ones`, type: "website" },
+  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}/screen/number-ones`, type: "website" },
 };
 
 export default async function ScreenNumberOnesPage() {

@@ -65,8 +65,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: f.display_name,
       description: desc,
       alternates: { canonical: `/teams/mlb/${f.slug}` },
-      openGraph: { title: `${f.display_name} | ${SITE_NAME}`, description: desc, url, type: "website" },
-      twitter: { card: "summary_large_image", title: `${f.display_name} | ${SITE_NAME}`, description: desc },
+      openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${f.display_name} | ${SITE_NAME}`, description: desc, url, type: "website" },
+      twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${f.display_name} | ${SITE_NAME}`, description: desc },
     };
   }
   const h = getHistoricalBySlug(slug);
@@ -79,8 +79,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${name} (defunct)`,
       description: desc,
       alternates: { canonical: `/teams/mlb/${slug}` },
-      openGraph: { title: `${name} | ${SITE_NAME}`, description: desc, url, type: "website" },
-      twitter: { card: "summary_large_image", title: `${name} | ${SITE_NAME}`, description: desc },
+      openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${name} | ${SITE_NAME}`, description: desc, url, type: "website" },
+      twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${name} | ${SITE_NAME}`, description: desc },
     };
   }
   return { title: "Franchise not found" };

@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: club.name,
     description: desc,
     alternates: { canonical: `/teams/wfootball/clubs/${club.slug}` },
-    openGraph: { title: `${club.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}/teams/wfootball/clubs/${club.slug}`, type: "website" },
+    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${club.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}/teams/wfootball/clubs/${club.slug}`, type: "website" },
   };
 }
 

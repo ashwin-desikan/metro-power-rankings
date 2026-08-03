@@ -20,13 +20,13 @@ export const metadata: Metadata = {
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
   alternates: { canonical: PAGE_PATH },
-  openGraph: {
+  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
     title: `${PAGE_TITLE} | ${SITE_NAME}`,
     description: PAGE_DESCRIPTION,
     url: PAGE_URL,
     type: "website",
   },
-  twitter: {
+  twitter: { images: ["/og-default.png"],
     card: "summary_large_image",
     title: `${PAGE_TITLE} | ${SITE_NAME}`,
     description: PAGE_DESCRIPTION,

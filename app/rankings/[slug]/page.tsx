@@ -195,13 +195,13 @@ export async function generateMetadata({
     alternates: {
       canonical: `/rankings/${slug}`,
     },
-    openGraph: {
+    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
       title,
       description,
       type: "website",
       url: `${BASE_URL}/rankings/${slug}`,
     },
-    twitter: {
+    twitter: { images: ["/og-default.png"],
       card: "summary_large_image",
       title,
       description,

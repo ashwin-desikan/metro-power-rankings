@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Full results for the British Home Championship (1884–1984) and Rous Cup (1985–1989), with all shared titles and tied placings.",
   alternates: { canonical: "/teams/national/tournaments/british-home-championship" },
-  openGraph: {
+  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
     title: `British Home Championship & Rous Cup | ${SITE_NAME}`,
     description: "Complete results 1884–1989.",
     url: `${BASE_URL}/teams/national/tournaments/british-home-championship`,

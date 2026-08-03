@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESC,
   alternates: { canonical: "/screen/canon" },
-  openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}/screen/canon`, type: "website" },
+  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}/screen/canon`, type: "website" },
 };
 
 export default function ScreenCanonPage() {

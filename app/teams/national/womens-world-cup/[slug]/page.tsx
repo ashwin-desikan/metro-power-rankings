@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${n.name} — Women's World Cup`,
     description: desc,
     alternates: { canonical: `/teams/national/womens-world-cup/${n.slug}` },
-    openGraph: { title: `${n.name} — Women's World Cup | ${SITE_NAME}`, description: desc, url: `${BASE_URL}/teams/national/womens-world-cup/${n.slug}`, type: "website" },
+    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${n.name} — Women's World Cup | ${SITE_NAME}`, description: desc, url: `${BASE_URL}/teams/national/womens-world-cup/${n.slug}`, type: "website" },
   };
 }
 

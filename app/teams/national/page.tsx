@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   description:
     "Canonical pages for every senior men's national football team with tournament history on file, plus hubs for the FIFA World Cup, all six continental cups, and intercontinental tournaments. A sibling product to the metro-anchored Club Football pages.",
   alternates: { canonical: "/teams/national" },
-  openGraph: {
+  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
     title: `International Football | ${SITE_NAME}`,
     description:
       "Senior national-team pages, all-time tournament hubs, and trophy history sourced from the grand football workbook.",

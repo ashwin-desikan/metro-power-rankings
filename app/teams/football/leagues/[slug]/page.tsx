@@ -108,7 +108,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: h.league,
     description: `${h.league} (${h.country}): current-season standings and complete all-time Level 1 champions list.`,
     alternates: { canonical: `/teams/football/leagues/${h.slug}` },
-    openGraph: {
+    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
       title: `${h.league} | ${SITE_NAME}`,
       description: `${h.league} (${h.country}) current standings and all-time champions.`,
       url: `${BASE_URL}/teams/football/leagues/${h.slug}`,

@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: c.name,
     description: desc,
     alternates: { canonical: path },
-    openGraph: { title: `${c.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },
-    twitter: { card: "summary_large_image", title: `${c.name} | ${SITE_NAME}`, description: desc },
+    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${c.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },
+    twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${c.name} | ${SITE_NAME}`, description: desc },
   };
 }
 

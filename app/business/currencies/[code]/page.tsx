@@ -63,8 +63,8 @@ export async function generateMetadata({ params }: { params: Promise<{ code: str
     title,
     description,
     alternates: { canonical: `/business/currencies/${code}` },
-    openGraph: { title: `${title} | ${SITE_NAME}`, description, url: `${BASE_URL}/business/currencies/${code}`, type: "website" },
-    twitter: { card: "summary_large_image", title: `${title} | ${SITE_NAME}`, description },
+    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${title} | ${SITE_NAME}`, description, url: `${BASE_URL}/business/currencies/${code}`, type: "website" },
+    twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${title} | ${SITE_NAME}`, description },
   };
 }
 

@@ -46,13 +46,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${s.name} (${s.country})`,
     description: desc,
     alternates: { canonical: `/states/${s.slug}` },
-    openGraph: {
+    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
       title: `${s.name}, ${s.country} | ${SITE_NAME}`,
       description: desc,
       url,
       type: "website",
     },
-    twitter: {
+    twitter: { images: ["/og-default.png"],
       card: "summary_large_image",
       title: `${s.name}, ${s.country} | ${SITE_NAME}`,
       description: desc,

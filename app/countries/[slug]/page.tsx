@@ -102,8 +102,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: c.name,
     description: desc,
     alternates: { canonical: `/countries/${c.slug}` },
-    openGraph: { title: `${c.name} | ${SITE_NAME}`, description: desc, url, type: "website" },
-    twitter: { card: "summary_large_image", title: `${c.name} | ${SITE_NAME}`, description: desc },
+    openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${c.name} | ${SITE_NAME}`, description: desc, url, type: "website" },
+    twitter: { images: ["/og-default.png"], card: "summary_large_image", title: `${c.name} | ${SITE_NAME}`, description: desc },
   };
 }
 

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESC,
   alternates: { canonical: PATH },
-  openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
+  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
 };
 
 const pct = (n: number | null) => (n == null ? "—" : `${n.toFixed(n >= 90 ? 1 : 2).replace(/\.?0+$/, "")}%`);

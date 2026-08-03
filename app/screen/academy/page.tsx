@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESC,
   alternates: { canonical: "/screen/academy" },
-  openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}/screen/academy`, type: "website" },
+  openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }], title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}/screen/academy`, type: "website" },
 };
 
 const DEC_COLORS: Record<string, string> = { us: "#5B8DEF", ukie: "#E06C75", europe: "#02A95B", world: "#D9A038" };
