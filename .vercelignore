@@ -1,0 +1,6 @@
+# Files excluded from the Vercel build container. These are pipeline inputs
+# and local-only assets that `next build` never reads - excluding them cuts
+# ~185 MB from every build's input (including the dozens of daily deployments
+# that only run the ignore step).
+Overture-Per-Country-Raw/
+Overture-Match-Suggestions/

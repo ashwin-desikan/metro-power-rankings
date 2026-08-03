@@ -37,7 +37,9 @@ while IFS=$'\x1f' read -r sha subj; do
 done < <(git log -100 --format='%H%x1f%s' origin/main -- "${BUILD_PATHS[@]}")
 [ -n "$TARGET" ] || { echo "no build-relevant commit in the last 100 — nothing to do"; exit 0; }
 
-LIVE="$(curl -fsS --max-time 15 "$PROD_URL" \
+# Cache-bust: PROD_URL sits behind Cloudflare's HTML edge cache, and a stale
+# cached sha here caused a duplicate re-trigger of a completed build (2026-08-03).
+LIVE="$(curl -fsS --max-time 15 "${PROD_URL}?cb=$(date +%s)" \
   | python3 -c 'import sys,json;print(json.load(sys.stdin).get("sha") or "")' 2>/dev/null || true)"
 [ -n "$LIVE" ] || { echo "could not read live sha from $PROD_URL — next run"; exit 0; }
 git cat-file -e "${LIVE}^{commit}" 2>/dev/null || { echo "live sha ${LIVE:0:9} not in local history yet — next run"; exit 0; }
@@ -50,6 +52,34 @@ fi
 NOW=$(date +%s); TARGET_TS=$(git log -1 --format=%ct "$TARGET"); AGE_MIN=$(( (NOW - TARGET_TS) / 60 ))
 if [ "$AGE_MIN" -lt "$STALE_MIN" ]; then
   echo "TARGET ${TARGET:0:9} not live but only ${AGE_MIN}m old (<${STALE_MIN}m) — a build is likely still running"
+  exit 0
+fi
+
+# Duplicate-build guard: before spending a build, ask GitHub whether TARGET
+# already has a successful Vercel production deployment. If it does, the build
+# finished and only the live check lagged (alias flip, edge cache) — a
+# re-trigger would just duplicate a completed build (burned ~8 min on
+# 2026-08-03). Repo is public; unauthenticated API is fine at this rate.
+DEPLOY_OK="$(curl -fsS --max-time 15 \
+  "https://api.github.com/repos/ashwin-desikan/metro-power-rankings/deployments?sha=$TARGET&environment=Production&per_page=5" \
+  | python3 -c '
+import sys, json, urllib.request
+ok = ""
+try:
+    deps = json.load(sys.stdin)
+    for d in (deps if isinstance(deps, list) else []):
+        try:
+            with urllib.request.urlopen(d.get("statuses_url", ""), timeout=15) as r:
+                if any(s.get("state") == "success" for s in json.load(r)):
+                    ok = "yes"
+                    break
+        except Exception:
+            pass
+except Exception:
+    pass
+print(ok)' 2>/dev/null || true)"
+if [ "$DEPLOY_OK" = "yes" ]; then
+  echo "TARGET ${TARGET:0:9} already has a successful production deployment — live check lag, not a canceled build; no re-trigger"
   exit 0
 fi
 
