@@ -69,7 +69,16 @@ BUNDLES="public/data/football/live-standings-2026.json public/data/football/live
 if ! git diff --quiet -- $BUNDLES; then
   git add $BUNDLES
   git commit -q -m "football: refresh live bundles [vercel skip]" || fail "bundle commit failed"
-  git push -q origin main || fail "bundle push failed"
+  # Push with rebase-retry: another machine/job commonly lands a commit on main
+  # between our start-of-run ff-merge and this push, rejecting it non-fast-forward.
+  # A single push then hard-failed and cried wolf (2026-08-03). Rebase + retry instead.
+  pushed=0
+  for attempt in 1 2 3; do
+    if git push -q origin main 2>/dev/null; then pushed=1; break; fi
+    log "push rejected (attempt $attempt) — rebasing on origin/main and retrying"
+    git pull --rebase --autostash -q origin main || fail "rebase after push-reject failed"
+  done
+  [ "$pushed" = 1 ] || fail "bundle push failed after 3 attempts"
   log "pushed updated football bundles"
 else
   log "bundles unchanged"
