@@ -283,6 +283,16 @@
     "name": "Sabah Al-Khalid Al-Sabah",
     "role": "Prime Minister",
     "start": "2026-07-24",
+    "end": "2024-05-15",
+    "current": false,
+    "tenure": "",
+    "party": "",
+    "era": "Al Sabah Emirate"
+  },
+  {
+    "name": "Ahmad Al-Abdullah Al-Sabah",
+    "role": "Prime Minister",
+    "start": "2024-05-15",
     "end": null,
     "current": true,
     "tenure": "in office",

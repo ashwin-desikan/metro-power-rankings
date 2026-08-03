@@ -2,6 +2,24 @@
   "updated": "2026-08-03",
   "changes": [
     {
+      "date": "2024-09-15",
+      "slug": "jordan",
+      "country": "Jordan",
+      "office": "Prime Minister",
+      "from": "Abdullah II of Jordan",
+      "to": "Jafar Hassan",
+      "source": "wikidata"
+    },
+    {
+      "date": "2024-05-15",
+      "slug": "kuwait",
+      "country": "Kuwait",
+      "office": "Prime Minister",
+      "from": "Sabah Al-Khalid Al-Sabah",
+      "to": "Ahmad Al-Abdullah Al-Sabah",
+      "source": "wikidata"
+    },
+    {
       "date": "2025-11-08",
       "slug": "bolivia",
       "country": "Bolivia",

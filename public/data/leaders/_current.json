@@ -166,8 +166,9 @@
     "since": "2023-01-01"
   },
   "brunei": {
-    "name": "Hassanal Bolkiah I of Brunei",
-    "role": "Pres."
+    "name": "👑 Hassanal Bolkiah I of Brunei",
+    "role": "Monarch",
+    "since": "1967-10-05"
   },
   "bulgaria": {
     "name": "Rumen Radev",
@@ -557,6 +558,10 @@
   "italy": {
     "name": "Giorgia Meloni",
     "role": "PM",
+    "second": {
+      "name": "Sergio Mattarella",
+      "role": "Pres."
+    },
     "since": "2022-10-22"
   },
   "jamaica": {
@@ -571,11 +576,20 @@
   "japan": {
     "name": "Sanae Takaichi",
     "role": "PM",
+    "second": {
+      "name": "👑 Naruhito",
+      "role": "Monarch"
+    },
     "since": "2024-11-11"
   },
   "jordan": {
-    "name": "Abdullah II of Jordan",
-    "role": "Pres."
+    "name": "Jafar Hassan",
+    "role": "PM",
+    "second": {
+      "name": "👑 Abdullah II of Jordan",
+      "role": "Monarch"
+    },
+    "since": "2024-09-15"
   },
   "kazakhstan": {
     "name": "Qasym-Zhomart Toqaev",
@@ -602,12 +616,13 @@
     "since": "2021-03-22"
   },
   "kuwait": {
-    "name": "Sabah Al-Khalid Al-Sabah",
+    "name": "Ahmad Al-Abdullah Al-Sabah",
     "role": "PM",
     "second": {
       "name": "👑 Mishal Al-Ahmad Al-Jaber Al-Sabah",
       "role": "Monarch"
-    }
+    },
+    "since": "2024-05-15"
   },
   "kyrgyzstan": {
     "name": "Adylbek Kasymaliev",
@@ -1033,6 +1048,10 @@
   "singapore": {
     "name": "Lawrence Wong",
     "role": "PM",
+    "second": {
+      "name": "Tharman Shanmugaratnam",
+      "role": "Pres."
+    },
     "since": "2024-05-15"
   },
   "slovakia": {
@@ -1225,7 +1244,8 @@
     "second": {
       "name": "👑 Mohammed Bin Zayed Al Nahyan",
       "role": "Monarch"
-    }
+    },
+    "since": "2006-02-11"
   },
   "united-kingdom": {
     "name": "Andy Burnham",
