@@ -1,0 +1,3301 @@
+{
+ "meta": {
+  "generated_at": "2026-08-03T06:41:29Z",
+  "as_of": "2026-03-31",
+  "period": "31-MAR-2026",
+  "source": "SEC Form 13F structured data set",
+  "filings": 8760,
+  "managers": 8741,
+  "totalValue": 65622927772600,
+  "mappedValue": 61744792943440,
+  "unmappedManagers": 4392,
+  "topManagers": 100
+ },
+ "managers": [
+  {
+   "name": "BlackRock, Inc.",
+   "cik": "0002012383",
+   "value": 5723531457401,
+   "positions": 50651,
+   "city": "New York",
+   "state": "NY",
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "name": "Vanguard Capital Management LLC",
+   "cik": "0002100119",
+   "value": 3995910438125,
+   "positions": 3982,
+   "city": "Malvern",
+   "state": "PA",
+   "metro": "Philadelphia",
+   "metroSlug": "philadelphia"
+  },
+  {
+   "name": "State Street Corp",
+   "cik": "0000093751",
+   "value": 2896359015041,
+   "positions": 4269,
+   "city": "Boston",
+   "state": "MA",
+   "metro": "Boston",
+   "metroSlug": "boston"
+  },
+  {
+   "name": "Vanguard Portfolio Management LLC",
+   "cik": "0002100121",
+   "value": 1914090912542,
+   "positions": 3094,
+   "city": "Malvern",
+   "state": "PA",
+   "metro": "Philadelphia",
+   "metroSlug": "philadelphia"
+  },
+  {
+   "name": "FMR LLC",
+   "cik": "0000315066",
+   "value": 1898434661409,
+   "positions": 13282,
+   "city": "Boston",
+   "state": "MA",
+   "metro": "Boston",
+   "metroSlug": "boston"
+  },
+  {
+   "name": "Morgan Stanley",
+   "cik": "0000895421",
+   "value": 1659786624056,
+   "positions": 45985,
+   "city": "New York",
+   "state": "NY",
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "name": "Geode Capital Management, LLC",
+   "cik": "0001214717",
+   "value": 1607536611643,
+   "positions": 8577,
+   "city": "Boston",
+   "state": "MA",
+   "metro": "Boston",
+   "metroSlug": "boston"
+  },
+  {
+   "name": "JPMorgan Chase & Co",
+   "cik": "0000019617",
+   "value": 1557139501048,
+   "positions": 33063,
+   "city": "New York",
+   "state": "NY",
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "name": "Bank of America Corp",
+   "cik": "0000070858",
+   "value": 1367983567206,
+   "positions": 17872,
+   "city": "Charlotte",
+   "state": "NC",
+   "metro": "Charlotte",
+   "metroSlug": "charlotte"
+  },
+  {
+   "name": "Susquehanna International Group, Llp",
+   "cik": "0001446194",
+   "value": 893325416442,
+   "positions": 14878,
+   "city": "Bala Cynwyd",
+   "state": "PA",
+   "metro": "Philadelphia",
+   "metroSlug": "philadelphia"
+  },
+  {
+   "name": "Goldman Sachs Group Inc",
+   "cik": "0000886982",
+   "value": 870939686922,
+   "positions": 13579,
+   "city": "New York",
+   "state": "NY",
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "name": "Jane Street Group, LLC",
+   "cik": "0001595888",
+   "value": 777217056890,
+   "positions": 19058,
+   "city": "New York",
+   "state": "NY",
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "name": "Northern Trust Corp",
+   "cik": "0000073124",
+   "value": 756584776538,
+   "positions": 19864,
+   "city": "Chicago",
+   "state": "IL",
+   "metro": "Chicago",
+   "metroSlug": "chicago"
+  },
+  {
+   "name": "Capital World Investors",
+   "cik": "0001422849",
+   "value": 732939702989,
+   "positions": 620,
+   "city": "Los Angeles",
+   "state": "CA",
+   "metro": "Los Angeles",
+   "metroSlug": "los-angeles"
+  },
+  {
+   "name": "UBS Group AG",
+   "cik": "0001610520",
+   "value": 666317424467,
+   "positions": 22771,
+   "city": "Zurich",
+   "state": "V8",
+   "metro": "Zurich",
+   "metroSlug": "zurich"
+  },
+  {
+   "name": "Charles Schwab Investment Management Inc",
+   "cik": "0000884546",
+   "value": 654472719006,
+   "positions": 3645,
+   "city": "San Francisco",
+   "state": "CA",
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose"
+  },
+  {
+   "name": "Invesco Ltd.",
+   "cik": "0000914208",
+   "value": 653293862960,
+   "positions": 23552,
+   "city": "Atlanta",
+   "state": "GA",
+   "metro": "Atlanta",
+   "metroSlug": "atlanta"
+  },
+  {
+   "name": "Capital Research Global Investors",
+   "cik": "0001422848",
+   "value": 644560214942,
+   "positions": 459,
+   "city": "Los Angeles",
+   "state": "CA",
+   "metro": "Los Angeles",
+   "metroSlug": "los-angeles"
+  },
+  {
+   "name": "Citadel Advisors LLC",
+   "cik": "0001423053",
+   "value": 618473172395,
+   "positions": 15589,
+   "city": "Miami",
+   "state": "FL",
+   "metro": "Miami",
+   "metroSlug": "miami"
+  },
+  {
+   "name": "Royal Bank of Canada",
+   "cik": "0001000275",
+   "value": 570144452000,
+   "positions": 25608,
+   "city": "Toronto",
+   "state": "A6",
+   "metro": "Toronto",
+   "metroSlug": "toronto"
+  },
+  {
+   "name": "Bank of New York Mellon Corp",
+   "cik": "0001390777",
+   "value": 543905795593,
+   "positions": 33728,
+   "city": "New York",
+   "state": "NY",
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "name": "Wellington Management Group Llp",
+   "cik": "0000902219",
+   "value": 535462965059,
+   "positions": 7458,
+   "city": "Boston",
+   "state": "MA",
+   "metro": "Boston",
+   "metroSlug": "boston"
+  },
+  {
+   "name": "Wells Fargo & Company",
+   "cik": "0000072971",
+   "value": 530336323912,
+   "positions": 17971,
+   "city": "San Francisco",
+   "state": "CA",
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose"
+  },
+  {
+   "name": "Dimensional Fund Advisors LP",
+   "cik": "0000354204",
+   "value": 481393484929,
+   "positions": 13635,
+   "city": "Austin",
+   "state": "TX",
+   "metro": "Austin",
+   "metroSlug": "austin"
+  },
+  {
+   "name": "UBS AM, a distinct business unit of UBS ASSET MANAGEMENT AMERICAS LLC",
+   "cik": "0000861177",
+   "value": 480979588152,
+   "positions": 19242,
+   "city": "New York",
+   "state": "NY",
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "name": "Legal & General Group PLC",
+   "cik": "0000764068",
+   "value": 432387351077,
+   "positions": 8115,
+   "city": "London",
+   "state": "X0",
+   "metro": "London",
+   "metroSlug": "london"
+  },
+  {
+   "name": "Ameriprise Financial Inc",
+   "cik": "0000820027",
+   "value": 431759920597,
+   "positions": 11197,
+   "city": "Minneapolis",
+   "state": "MN",
+   "metro": "Minneapolis",
+   "metroSlug": "minneapolis"
+  },
+  {
+   "name": "Capital International Investors",
+   "cik": "0001562230",
+   "value": 426517500633,
+   "positions": 438,
+   "city": "Los Angeles",
+   "state": "CA",
+   "metro": "Los Angeles",
+   "metroSlug": "los-angeles"
+  },
+  {
+   "name": "Barclays PLC",
+   "cik": "0000312069",
+   "value": 416251795927,
+   "positions": 12241,
+   "city": "London",
+   "state": "X0",
+   "metro": "London",
+   "metroSlug": "london"
+  },
+  {
+   "name": "Franklin Resources Inc",
+   "cik": "0000038777",
+   "value": 408304941435,
+   "positions": 14782,
+   "city": "San Mateo",
+   "state": "CA",
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose"
+  },
+  {
+   "name": "Vanguard Fiduciary Trust Co",
+   "cik": "0000933478",
+   "value": 396135252084,
+   "positions": 4063,
+   "city": "Malvern",
+   "state": "PA",
+   "metro": "Philadelphia",
+   "metroSlug": "philadelphia"
+  },
+  {
+   "name": "LPL Financial LLC",
+   "cik": "0001403438",
+   "value": 376559619414,
+   "positions": 5964,
+   "city": "Fort Mill",
+   "state": "SC",
+   "metro": "Charlotte",
+   "metroSlug": "charlotte"
+  },
+  {
+   "name": "Envestnet Asset Management Inc",
+   "cik": "0001407543",
+   "value": 373578215836,
+   "positions": 4703,
+   "city": "Berwyn",
+   "state": "PA",
+   "metro": "Philadelphia",
+   "metroSlug": "philadelphia"
+  },
+  {
+   "name": "Nuveen, LLC",
+   "cik": "0001871926",
+   "value": 369267896892,
+   "positions": 7665,
+   "city": "Charlotte",
+   "state": "NC",
+   "metro": "Charlotte",
+   "metroSlug": "charlotte"
+  },
+  {
+   "name": "Amundi",
+   "cik": "0001330387",
+   "value": 367104449326,
+   "positions": 5406,
+   "city": "Paris",
+   "state": "I0",
+   "metro": "Paris",
+   "metroSlug": "paris"
+  },
+  {
+   "name": "Raymond James Financial Inc",
+   "cik": "0000720005",
+   "value": 324416575405,
+   "positions": 13521,
+   "city": "St. Petersburg",
+   "state": "FL",
+   "metro": "Tampa",
+   "metroSlug": "tampa"
+  },
+  {
+   "name": "Alliancebernstein L.P.",
+   "cik": "0001109448",
+   "value": 308814873835,
+   "positions": 3251,
+   "city": "Nashville",
+   "state": "TN",
+   "metro": "Nashville",
+   "metroSlug": "nashville"
+  },
+  {
+   "name": "Deutsche Bank AG\\",
+   "cik": "0000948046",
+   "value": 302654388471,
+   "positions": 13982,
+   "city": "Frankfurt Am Main",
+   "state": "2M",
+   "metro": "Frankfurt",
+   "metroSlug": "frankfurt"
+  },
+  {
+   "name": "Mirae Asset Global Investments Co., Ltd.",
+   "cik": "0001569395",
+   "value": 299330923653,
+   "positions": 2356,
+   "city": "Seoul",
+   "state": "M5",
+   "metro": "Seoul",
+   "metroSlug": "seoul"
+  },
+  {
+   "name": "Massachusetts Financial Services Co",
+   "cik": "0000912938",
+   "value": 297515992264,
+   "positions": 3996,
+   "city": "Boston",
+   "state": "MA",
+   "metro": "Boston",
+   "metroSlug": "boston"
+  },
+  {
+   "name": "Fisher Asset Management, LLC",
+   "cik": "0000850529",
+   "value": 294892645875,
+   "positions": 1016,
+   "city": "Plano",
+   "state": "TX",
+   "metro": "Dallas",
+   "metroSlug": "dallas"
+  },
+  {
+   "name": "Optiver Holding B.V.",
+   "cik": "0001859606",
+   "value": 289476263092,
+   "positions": 2361,
+   "city": "Amsterdam",
+   "state": "P7",
+   "metro": "Amsterdam",
+   "metroSlug": "amsterdam"
+  },
+  {
+   "name": "IMC-Chicago, LLC",
+   "cik": "0001452861",
+   "value": 278360745305,
+   "positions": 6112,
+   "city": "Chicago",
+   "state": "IL",
+   "metro": "Chicago",
+   "metroSlug": "chicago"
+  },
+  {
+   "name": "Bank of Montreal",
+   "cik": "0000927971",
+   "value": 268538461023,
+   "positions": 13875,
+   "city": "Toronto",
+   "state": "A6",
+   "metro": "Toronto",
+   "metroSlug": "toronto"
+  },
+  {
+   "name": "Berkshire Hathaway Inc",
+   "cik": "0001067983",
+   "value": 263095703570,
+   "positions": 90,
+   "city": "Omaha",
+   "state": "NE",
+   "metro": "Omaha-Lincoln",
+   "metroSlug": "omaha-lincoln"
+  },
+  {
+   "name": "Millennium Management LLC",
+   "cik": "0001273087",
+   "value": 240290955946,
+   "positions": 5624,
+   "city": "New York",
+   "state": "NY",
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "name": "Citigroup Inc",
+   "cik": "0000831001",
+   "value": 234544210576,
+   "positions": 11050,
+   "city": "New York",
+   "state": "NY",
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "name": "AQR Capital Management LLC",
+   "cik": "0001167557",
+   "value": 218373976700,
+   "positions": 20832,
+   "city": "Greenwich",
+   "state": "CT",
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "name": "Ctc LLC",
+   "cik": "0001445893",
+   "value": 217174693933,
+   "positions": 112,
+   "city": "Chicago",
+   "state": "IL",
+   "metro": "Chicago",
+   "metroSlug": "chicago"
+  },
+  {
+   "name": "Janus Henderson Group PLC",
+   "cik": "0001274173",
+   "value": 209438171063,
+   "positions": 4333,
+   "city": "London",
+   "state": "X0",
+   "metro": "London",
+   "metroSlug": "london"
+  },
+  {
+   "name": "Jones Financial Companies Lllp",
+   "cik": "0000815917",
+   "value": 208074644811,
+   "positions": 5771,
+   "city": "Des Peres",
+   "state": "MO",
+   "metro": "St. Louis",
+   "metroSlug": "st-louis"
+  },
+  {
+   "name": "Bnp Paribas Financial Markets",
+   "cik": "0001166588",
+   "value": 205808838912,
+   "positions": 17681,
+   "city": "Paris",
+   "state": "I0",
+   "metro": "Paris",
+   "metroSlug": "paris"
+  },
+  {
+   "name": "American Century Companies Inc",
+   "cik": "0000748054",
+   "value": 194272707761,
+   "positions": 2830,
+   "city": "Kansas City",
+   "state": "MO",
+   "metro": "Kansas City",
+   "metroSlug": "kansas-city"
+  },
+  {
+   "name": "HSBC Holdings PLC",
+   "cik": "0000873630",
+   "value": 191563765070,
+   "positions": 8884,
+   "city": "London",
+   "state": "X0",
+   "metro": "London",
+   "metroSlug": "london"
+  },
+  {
+   "name": "Principal Financial Group Inc",
+   "cik": "0001126328",
+   "value": 187242031356,
+   "positions": 4452,
+   "city": "Des Moines",
+   "state": "IA",
+   "metro": "Des Moines",
+   "metroSlug": "des-moines"
+  },
+  {
+   "name": "Vanguard Global Advisers, LLC",
+   "cik": "0001811242",
+   "value": 186501527184,
+   "positions": 3683,
+   "city": "Malvern",
+   "state": "PA",
+   "metro": "Philadelphia",
+   "metroSlug": "philadelphia"
+  },
+  {
+   "name": "Arrowstreet Capital, Limited Partnership",
+   "cik": "0001164508",
+   "value": 184751608360,
+   "positions": 1810,
+   "city": "Boston",
+   "state": "MA",
+   "metro": "Boston",
+   "metroSlug": "boston"
+  },
+  {
+   "name": "Dodge & Cox",
+   "cik": "0000200217",
+   "value": 181976456224,
+   "positions": 222,
+   "city": "San Francisco",
+   "state": "CA",
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose"
+  },
+  {
+   "name": "Swiss National Bank",
+   "cik": "0001582202",
+   "value": 173794645390,
+   "positions": 2301,
+   "city": "Zurich",
+   "state": "V8",
+   "metro": "Zurich",
+   "metroSlug": "zurich"
+  },
+  {
+   "name": "Pnc Financial Services Group, Inc.",
+   "cik": "0000713676",
+   "value": 173208242438,
+   "positions": 17145,
+   "city": "Pittsburgh",
+   "state": "PA",
+   "metro": "Pittsburgh",
+   "metroSlug": "pittsburgh"
+  },
+  {
+   "name": "D. E. Shaw & Co., Inc.",
+   "cik": "0001009207",
+   "value": 166309063072,
+   "positions": 5804,
+   "city": "New York",
+   "state": "NY",
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "name": "California Public Employees Retirement System",
+   "cik": "0000919079",
+   "value": 162486869017,
+   "positions": 1064,
+   "city": "Sacramento",
+   "state": "CA",
+   "metro": "Sacramento",
+   "metroSlug": "sacramento"
+  },
+  {
+   "name": "Northwestern Mutual Wealth Management Co",
+   "cik": "0001141802",
+   "value": 162425866743,
+   "positions": 4113,
+   "city": "Milwaukee",
+   "state": "WI",
+   "metro": "Milwaukee",
+   "metroSlug": "milwaukee"
+  },
+  {
+   "name": "Victory Capital Management Inc",
+   "cik": "0001040188",
+   "value": 156118346060,
+   "positions": 2565,
+   "city": "San Antonio",
+   "state": "TX",
+   "metro": "San Antonio",
+   "metroSlug": "san-antonio"
+  },
+  {
+   "name": "Canada Pension Plan Investment Board",
+   "cik": "0001283718",
+   "value": 155030955991,
+   "positions": 1680,
+   "city": "Toronto Ontario",
+   "state": "A6",
+   "metro": "Toronto",
+   "metroSlug": "toronto"
+  },
+  {
+   "name": "Sumitomo Mitsui Trust Group, Inc.",
+   "cik": "0001475365",
+   "value": 154473528107,
+   "positions": 1047,
+   "city": "Chiyoda-Ku, Tokyo",
+   "state": "M0",
+   "metro": "Tokyo",
+   "metroSlug": "tokyo"
+  },
+  {
+   "name": "Simplex Trading, LLC",
+   "cik": "0001488542",
+   "value": 149077957641,
+   "positions": 10161,
+   "city": "Chicago",
+   "state": "IL",
+   "metro": "Chicago",
+   "metroSlug": "chicago"
+  },
+  {
+   "name": "Mitsubishi UFJ Asset Management Co., Ltd.",
+   "cik": "0001466546",
+   "value": 148963755717,
+   "positions": 1618,
+   "city": "Tokyo",
+   "state": "M0",
+   "metro": "Tokyo",
+   "metroSlug": "tokyo"
+  },
+  {
+   "name": "Creative Planning",
+   "cik": "0001540235",
+   "value": 147424828352,
+   "positions": 4753,
+   "city": "Overland Park",
+   "state": "KS",
+   "metro": "Kansas City",
+   "metroSlug": "kansas-city"
+  },
+  {
+   "name": "Jennison Associates LLC",
+   "cik": "0000053417",
+   "value": 145414174219,
+   "positions": 780,
+   "city": "New York",
+   "state": "NY",
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "name": "First Trust Advisors LP",
+   "cik": "0001125816",
+   "value": 139951861780,
+   "positions": 2882,
+   "city": "Wheaton",
+   "state": "IL",
+   "metro": "Chicago",
+   "metroSlug": "chicago"
+  },
+  {
+   "name": "National Pension Service",
+   "cik": "0001608046",
+   "value": 131679039771,
+   "positions": 562,
+   "city": "Jeonju-Si, Jeollabuk-Do",
+   "state": "M5",
+   "metro": "Jeonju",
+   "metroSlug": "jeonju"
+  },
+  {
+   "name": "Neuberger Berman Group LLC",
+   "cik": "0001465109",
+   "value": 131405810688,
+   "positions": 3889,
+   "city": "New York",
+   "state": "NY",
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "name": "FIL Ltd",
+   "cik": "0000318989",
+   "value": 128745647808,
+   "positions": 1826,
+   "city": "Hamilton",
+   "state": "D0",
+   "metro": null,
+   "metroSlug": ""
+  },
+  {
+   "name": "Primecap Management Co",
+   "cik": "0000763212",
+   "value": 127010591624,
+   "positions": 320,
+   "city": "Pasadena",
+   "state": "CA",
+   "metro": "Los Angeles",
+   "metroSlug": "los-angeles"
+  },
+  {
+   "name": "State Farm Mutual Automobile Insurance Co",
+   "cik": "0000315032",
+   "value": 126857699157,
+   "positions": 197,
+   "city": "Bloomington",
+   "state": "IL",
+   "metro": null,
+   "metroSlug": ""
+  },
+  {
+   "name": "Two Sigma Investments, LP",
+   "cik": "0001179392",
+   "value": 123930684213,
+   "positions": 4546,
+   "city": "New York",
+   "state": "NY",
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "name": "TD Asset Management Inc",
+   "cik": "0001056053",
+   "value": 123246079294,
+   "positions": 1702,
+   "city": "Toronto",
+   "state": "A6",
+   "metro": "Toronto",
+   "metroSlug": "toronto"
+  },
+  {
+   "name": "Schroder Investment Management Group",
+   "cik": "0001086619",
+   "value": 121959993039,
+   "positions": 3326,
+   "city": "London",
+   "state": "X0",
+   "metro": "London",
+   "metroSlug": "london"
+  },
+  {
+   "name": "VANGUARD ASSET MANAGEMENT, Ltd",
+   "cik": "0001680208",
+   "value": 116988336298,
+   "positions": 2433,
+   "city": "London, EC4N 8AF",
+   "state": "X0",
+   "metro": "London",
+   "metroSlug": "london"
+  },
+  {
+   "name": "Rhumbline Advisers",
+   "cik": "0001115418",
+   "value": 116896704389,
+   "positions": 4151,
+   "city": "Boston",
+   "state": "MA",
+   "metro": "Boston",
+   "metroSlug": "boston"
+  },
+  {
+   "name": "Manufacturers Life Insurance Company, The",
+   "cik": "0000928047",
+   "value": 116281493500,
+   "positions": 2805,
+   "city": "Toronto",
+   "state": "A6",
+   "metro": "Toronto",
+   "metroSlug": "toronto"
+  },
+  {
+   "name": "Clearbridge Investments, LLC",
+   "cik": "0001348883",
+   "value": 114887821297,
+   "positions": 794,
+   "city": "New York",
+   "state": "NY",
+   "metro": "New York",
+   "metroSlug": "new-york"
+  },
+  {
+   "name": "DZ BANK AG Deutsche Zentral Genossenschafts Bank, Frankfurt am Main",
+   "cik": "0001694217",
+   "value": 112723757548,
+   "positions": 2354,
+   "city": "Frankfurt Am Main",
+   "state": "2M",
+   "metro": "Frankfurt",
+   "metroSlug": "frankfurt"
+  },
+  {
+   "name": "National Bank of Canada",
+   "cik": "0000926171",
+   "value": 111519109286,
+   "positions": 5484,
+   "city": "Montreal",
+   "state": "A8",
+   "metro": "Montreal",
+   "metroSlug": "montreal"
+  },
+  {
+   "name": "Stifel Financial Corp",
+   "cik": "0000720672",
+   "value": 108790749397,
+   "positions": 8981,
+   "city": "St. Louis",
+   "state": "MO",
+   "metro": "St. Louis",
+   "metroSlug": "st-louis"
+  },
+  {
+   "name": "1832 Asset Management L.P.",
+   "cik": "0000944388",
+   "value": 108781236673,
+   "positions": 647,
+   "city": "Toronto",
+   "state": "A6",
+   "metro": "Toronto",
+   "metroSlug": "toronto"
+  },
+  {
+   "name": "Sei Investments Co",
+   "cik": "0000350894",
+   "value": 108447233183,
+   "positions": 6108,
+   "city": "Oaks",
+   "state": "PA",
+   "metro": "Philadelphia",
+   "metroSlug": "philadelphia"
+  },
+  {
+   "name": "Nordea Investment Management Ab",
+   "cik": "0001218210",
+   "value": 107196694526,
+   "positions": 1994,
+   "city": "Stockholm",
+   "state": "V7",
+   "metro": "Stockholm",
+   "metroSlug": "stockholm"
+  },
+  {
+   "name": "Marshall Wace, Llp",
+   "cik": "0001318757",
+   "value": 100406703814,
+   "positions": 6623,
+   "city": "London",
+   "state": "X0",
+   "metro": "London",
+   "metroSlug": "london"
+  },
+  {
+   "name": "Baillie Gifford & Co",
+   "cik": "0001088875",
+   "value": 97893043995,
+   "positions": 906,
+   "city": "Edinburgh",
+   "state": "X0",
+   "metro": "Edinburgh",
+   "metroSlug": "edinburgh"
+  },
+  {
+   "name": "Voya Investment Management LLC",
+   "cik": "0001068837",
+   "value": 96095926027,
+   "positions": 3717,
+   "city": "Atlanta",
+   "state": "GA",
+   "metro": "Atlanta",
+   "metroSlug": "atlanta"
+  },
+  {
+   "name": "Boston Partners",
+   "cik": "0001386060",
+   "value": 95466692778,
+   "positions": 1772,
+   "city": "Boston",
+   "state": "MA",
+   "metro": "Boston",
+   "metroSlug": "boston"
+  },
+  {
+   "name": "Allianz Asset Management GmbH",
+   "cik": "0001535323",
+   "value": 95382460511,
+   "positions": 3758,
+   "city": "Munich",
+   "state": "2M",
+   "metro": "Munich",
+   "metroSlug": "munich"
+  },
+  {
+   "name": "Swedbank AB",
+   "cik": "0000946431",
+   "value": 95148529369,
+   "positions": 1062,
+   "city": "Stockholm",
+   "state": "V7",
+   "metro": "Stockholm",
+   "metroSlug": "stockholm"
+  },
+  {
+   "name": "Pictet Asset Management Holding SA",
+   "cik": "0001993888",
+   "value": 94789815111,
+   "positions": 2102,
+   "city": "Carouge",
+   "state": "V8",
+   "metro": "Geneva",
+   "metroSlug": "geneva"
+  },
+  {
+   "name": "California State Teachers Retirement System",
+   "cik": "0001081019",
+   "value": 94490983194,
+   "positions": 2925,
+   "city": "West Sacramento",
+   "state": "CA",
+   "metro": "Sacramento",
+   "metroSlug": "sacramento"
+  },
+  {
+   "name": "HighTower Advisors, LLC",
+   "cik": "0001462245",
+   "value": 94218797148,
+   "positions": 3796,
+   "city": "Chicago",
+   "state": "IL",
+   "metro": "Chicago",
+   "metroSlug": "chicago"
+  },
+  {
+   "name": "Cetera Investment Advisers",
+   "cik": "0001666741",
+   "value": 94004697745,
+   "positions": 4790,
+   "city": "Schaumburg",
+   "state": "IL",
+   "metro": "Chicago",
+   "metroSlug": "chicago"
+  },
+  {
+   "name": "Russell Investments Group, Ltd.",
+   "cik": "0001692234",
+   "value": 93065955967,
+   "positions": 24600,
+   "city": "Seattle",
+   "state": "WA",
+   "metro": "Seattle",
+   "metroSlug": "seattle"
+  }
+ ],
+ "capitals": [
+  {
+   "metro": "New York",
+   "metroSlug": "new-york",
+   "country": "United States",
+   "value": 16228172882204,
+   "filers": 997
+  },
+  {
+   "metro": "Boston",
+   "metroSlug": "boston",
+   "country": "United States",
+   "value": 8266658412138,
+   "filers": 196
+  },
+  {
+   "metro": "Philadelphia",
+   "metroSlug": "philadelphia",
+   "country": "United States",
+   "value": 8180388460444,
+   "filers": 84
+  },
+  {
+   "metro": "Chicago",
+   "metroSlug": "chicago",
+   "country": "United States",
+   "value": 2559403395374,
+   "filers": 173
+  },
+  {
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose",
+   "country": "United States",
+   "value": 2405360896455,
+   "filers": 260
+  },
+  {
+   "metro": "London",
+   "metroSlug": "london",
+   "country": "United Kingdom",
+   "value": 2381364753182,
+   "filers": 187
+  },
+  {
+   "metro": "Charlotte",
+   "metroSlug": "charlotte",
+   "country": "United States",
+   "value": 2341461179386,
+   "filers": 45
+  },
+  {
+   "metro": "Los Angeles",
+   "metroSlug": "los-angeles",
+   "country": "United States",
+   "value": 2328639704686,
+   "filers": 140
+  },
+  {
+   "metro": "Toronto",
+   "metroSlug": "toronto",
+   "country": "Canada",
+   "value": 2076222625788,
+   "filers": 91
+  },
+  {
+   "metro": "Miami",
+   "metroSlug": "miami",
+   "country": "United States",
+   "value": 1007872510981,
+   "filers": 138
+  },
+  {
+   "metro": "Zurich",
+   "metroSlug": "zurich",
+   "country": "Switzerland",
+   "value": 1001726779022,
+   "filers": 23
+  },
+  {
+   "metro": "Atlanta",
+   "metroSlug": "atlanta",
+   "country": "United States",
+   "value": 940447174148,
+   "filers": 117
+  },
+  {
+   "metro": "Paris",
+   "metroSlug": "paris",
+   "country": "France",
+   "value": 810625453754,
+   "filers": 41
+  },
+  {
+   "metro": "Minneapolis",
+   "metroSlug": "minneapolis",
+   "country": "United States",
+   "value": 646462019802,
+   "filers": 51
+  },
+  {
+   "metro": "Austin",
+   "metroSlug": "austin",
+   "country": "United States",
+   "value": 639821412409,
+   "filers": 83
+  },
+  {
+   "metro": "Tokyo",
+   "metroSlug": "tokyo",
+   "country": "Japan",
+   "value": 638265625682,
+   "filers": 41
+  },
+  {
+   "metro": "Dallas",
+   "metroSlug": "dallas",
+   "country": "United States",
+   "value": 521815413131,
+   "filers": 176
+  },
+  {
+   "metro": "Kansas City",
+   "metroSlug": "kansas-city",
+   "country": "United States",
+   "value": 519477732817,
+   "filers": 57
+  },
+  {
+   "metro": "St. Louis",
+   "metroSlug": "st-louis",
+   "country": "United States",
+   "value": 490416253654,
+   "filers": 43
+  },
+  {
+   "metro": "Frankfurt",
+   "metroSlug": "frankfurt",
+   "country": "Germany",
+   "value": 478187378890,
+   "filers": 4
+  },
+  {
+   "metro": "Tampa",
+   "metroSlug": "tampa",
+   "country": "United States",
+   "value": 389960019954,
+   "filers": 46
+  },
+  {
+   "metro": "Nashville",
+   "metroSlug": "nashville",
+   "country": "United States",
+   "value": 378917618814,
+   "filers": 27
+  },
+  {
+   "metro": "Milwaukee",
+   "metroSlug": "milwaukee",
+   "country": "United States",
+   "value": 374193700634,
+   "filers": 29
+  },
+  {
+   "metro": "Amsterdam",
+   "metroSlug": "amsterdam",
+   "country": "Netherlands",
+   "value": 363980448314,
+   "filers": 9
+  },
+  {
+   "metro": "Seoul",
+   "metroSlug": "seoul",
+   "country": "South Korea",
+   "value": 351900175813,
+   "filers": 6
+  },
+  {
+   "metro": "Omaha-Lincoln",
+   "metroSlug": "omaha-lincoln",
+   "country": "United States",
+   "value": 350432756254,
+   "filers": 43
+  },
+  {
+   "metro": "Washington-Baltimore",
+   "metroSlug": "washington-baltimore",
+   "country": "United States",
+   "value": 336890431724,
+   "filers": 93
+  },
+  {
+   "metro": "Stockholm",
+   "metroSlug": "stockholm",
+   "country": "Sweden",
+   "value": 329416802223,
+   "filers": 18
+  },
+  {
+   "metro": "Sacramento",
+   "metroSlug": "sacramento",
+   "country": "United States",
+   "value": 284250359881,
+   "filers": 12
+  },
+  {
+   "metro": "Montreal",
+   "metroSlug": "montreal",
+   "country": "Canada",
+   "value": 278944120704,
+   "filers": 21
+  },
+  {
+   "metro": "Pittsburgh",
+   "metroSlug": "pittsburgh",
+   "country": "United States",
+   "value": 249631040010,
+   "filers": 31
+  },
+  {
+   "metro": "Des Moines",
+   "metroSlug": "des-moines",
+   "country": "United States",
+   "value": 197582080071,
+   "filers": 7
+  },
+  {
+   "metro": "Denver",
+   "metroSlug": "denver",
+   "country": "United States",
+   "value": 196227902245,
+   "filers": 89
+  },
+  {
+   "metro": "Seattle",
+   "metroSlug": "seattle",
+   "country": "United States",
+   "value": 195767252895,
+   "filers": 74
+  },
+  {
+   "metro": "Edinburgh",
+   "metroSlug": "edinburgh",
+   "country": "United Kingdom",
+   "value": 178737549962,
+   "filers": 8
+  },
+  {
+   "metro": "San Antonio",
+   "metroSlug": "san-antonio",
+   "country": "United States",
+   "value": 177567533351,
+   "filers": 26
+  },
+  {
+   "metro": "Cincinnati",
+   "metroSlug": "cincinnati",
+   "country": "United States",
+   "value": 159416315136,
+   "filers": 47
+  },
+  {
+   "metro": "Houston",
+   "metroSlug": "houston",
+   "country": "United States",
+   "value": 135885407278,
+   "filers": 106
+  },
+  {
+   "metro": "Phoenix",
+   "metroSlug": "phoenix",
+   "country": "United States",
+   "value": 135083388571,
+   "filers": 68
+  },
+  {
+   "metro": "Jeonju",
+   "metroSlug": "jeonju",
+   "country": "South Korea",
+   "value": 131679039771,
+   "filers": 1
+  },
+  {
+   "metro": "Hong Kong",
+   "metroSlug": "hong-kong",
+   "country": "Hong Kong",
+   "value": 126982716373,
+   "filers": 66
+  },
+  {
+   "metro": "Indianapolis",
+   "metroSlug": "indianapolis",
+   "country": "United States",
+   "value": 122388085845,
+   "filers": 25
+  },
+  {
+   "metro": "Munich",
+   "metroSlug": "munich",
+   "country": "Germany",
+   "value": 110486297922,
+   "filers": 5
+  },
+  {
+   "metro": "Columbus",
+   "metroSlug": "columbus",
+   "country": "United States",
+   "value": 102784810752,
+   "filers": 29
+  },
+  {
+   "metro": "Cleveland",
+   "metroSlug": "cleveland",
+   "country": "United States",
+   "value": 101863833462,
+   "filers": 34
+  },
+  {
+   "metro": "Oslo",
+   "metroSlug": "oslo",
+   "country": "Norway",
+   "value": 95336875197,
+   "filers": 8
+  },
+  {
+   "metro": "Geneva",
+   "metroSlug": "geneva",
+   "country": "Switzerland",
+   "value": 94789815111,
+   "filers": 1
+  },
+  {
+   "metro": "Salt Lake City-Provo",
+   "metroSlug": "salt-lake-city-provo",
+   "country": "United States",
+   "value": 91721501519,
+   "filers": 24
+  },
+  {
+   "metro": "Copenhagen",
+   "metroSlug": "copenhagen",
+   "country": "Denmark",
+   "value": 86743968837,
+   "filers": 5
+  },
+  {
+   "metro": "Albany",
+   "metroSlug": "albany",
+   "country": "United States",
+   "value": 76313335951,
+   "filers": 10
+  }
+ ],
+ "widelyHeld": [
+  {
+   "issuer": "Microsoft Corp",
+   "cusip": "594918104",
+   "holders": 6125,
+   "value": 1883343692272
+  },
+  {
+   "issuer": "Apple Inc",
+   "cusip": "037833100",
+   "holders": 6015,
+   "value": 2262531111884
+  },
+  {
+   "issuer": "Amazon Com Inc",
+   "cusip": "023135106",
+   "holders": 5930,
+   "value": 1375807287499
+  },
+  {
+   "issuer": "Nvidia Corporation",
+   "cusip": "67066G104",
+   "holders": 5729,
+   "value": 2676476915259
+  },
+  {
+   "issuer": "Alphabet Inc",
+   "cusip": "02079K305",
+   "holders": 5507,
+   "value": 1232163015449
+  },
+  {
+   "issuer": "Alphabet Inc",
+   "cusip": "02079K107",
+   "holders": 5018,
+   "value": 862263345124
+  },
+  {
+   "issuer": "Meta Platforms Inc",
+   "cusip": "30303M102",
+   "holders": 4982,
+   "value": 893576049391
+  },
+  {
+   "issuer": "JPMorgan Chase & Co",
+   "cusip": "46625H100",
+   "holders": 4955,
+   "value": 543063101287
+  },
+  {
+   "issuer": "Berkshire Hathaway Inc Del",
+   "cusip": "084670702",
+   "holders": 4803,
+   "value": 422558187544
+  },
+  {
+   "issuer": "Exxon Mobil Corp",
+   "cusip": "30231G102",
+   "holders": 4681,
+   "value": 447811313606
+  },
+  {
+   "issuer": "Johnson & Johnson",
+   "cusip": "478160104",
+   "holders": 4581,
+   "value": 417936998699
+  },
+  {
+   "issuer": "Broadcom Inc",
+   "cusip": "11135F101",
+   "holders": 4569,
+   "value": 1050538583903
+  },
+  {
+   "issuer": "State Str Spdr S&P 500 Etf T",
+   "cusip": "78462F103",
+   "holders": 4479,
+   "value": 341715706873
+  },
+  {
+   "issuer": "Walmart Inc",
+   "cusip": "931142103",
+   "holders": 4389,
+   "value": 337417605517
+  },
+  {
+   "issuer": "Visa Inc",
+   "cusip": "92826C839",
+   "holders": 4365,
+   "value": 418613288054
+  },
+  {
+   "issuer": "Eli Lilly & Co",
+   "cusip": "532457108",
+   "holders": 4323,
+   "value": 687135802153
+  },
+  {
+   "issuer": "Chevron Corporation",
+   "cusip": "166764100",
+   "holders": 4237,
+   "value": 287385512222
+  },
+  {
+   "issuer": "Costco Wholesale Corporation",
+   "cusip": "22160K105",
+   "holders": 4158,
+   "value": 290600407951
+  },
+  {
+   "issuer": "Tesla Inc",
+   "cusip": "88160R101",
+   "holders": 4107,
+   "value": 562853796730
+  },
+  {
+   "issuer": "Home Depot Inc",
+   "cusip": "437076102",
+   "holders": 4087,
+   "value": 231049465411
+  },
+  {
+   "issuer": "Abbvie Inc",
+   "cusip": "00287Y109",
+   "holders": 3998,
+   "value": 271241079903
+  },
+  {
+   "issuer": "Procter & Gamble Co",
+   "cusip": "742718109",
+   "holders": 3954,
+   "value": 221437153112
+  },
+  {
+   "issuer": "Ishares Tr",
+   "cusip": "464287200",
+   "holders": 3947,
+   "value": 541482595929
+  },
+  {
+   "issuer": "Vanguard Index Fds",
+   "cusip": "922908363",
+   "holders": 3797,
+   "value": 300973630008
+  },
+  {
+   "issuer": "Invesco Qqq Tr",
+   "cusip": "46090E103",
+   "holders": 3758,
+   "value": 127125050739
+  },
+  {
+   "issuer": "Caterpillar Inc",
+   "cusip": "149123101",
+   "holders": 3705,
+   "value": 223194302543
+  },
+  {
+   "issuer": "Merck & Co Inc",
+   "cusip": "58933Y105",
+   "holders": 3696,
+   "value": 221817960050
+  },
+  {
+   "issuer": "Cisco Sys Inc",
+   "cusip": "17275R102",
+   "holders": 3649,
+   "value": 224264235020
+  },
+  {
+   "issuer": "Netflix Inc.",
+   "cusip": "64110L106",
+   "holders": 3552,
+   "value": 302674319509
+  },
+  {
+   "issuer": "Mastercard Incorporated",
+   "cusip": "57636Q104",
+   "holders": 3542,
+   "value": 366364650367
+  },
+  {
+   "issuer": "Mcdonalds Corp",
+   "cusip": "580135101",
+   "holders": 3536,
+   "value": 156345813796
+  },
+  {
+   "issuer": "Coca Cola Co",
+   "cusip": "191216100",
+   "holders": 3530,
+   "value": 235261235512
+  },
+  {
+   "issuer": "Vanguard Index Fds",
+   "cusip": "922908769",
+   "holders": 3521,
+   "value": 167788933420
+  },
+  {
+   "issuer": "Pepsico Inc",
+   "cusip": "713448108",
+   "holders": 3504,
+   "value": 153494118351
+  },
+  {
+   "issuer": "International Business Machs",
+   "cusip": "459200101",
+   "holders": 3441,
+   "value": 138916671970
+  },
+  {
+   "issuer": "Bank America Corp",
+   "cusip": "060505104",
+   "holders": 3433,
+   "value": 248911955195
+  },
+  {
+   "issuer": "Oracle Corp",
+   "cusip": "68389X105",
+   "holders": 3406,
+   "value": 171277542019
+  },
+  {
+   "issuer": "Rtx Corporation",
+   "cusip": "75513E101",
+   "holders": 3369,
+   "value": 182250210834
+  },
+  {
+   "issuer": "Taiwan Semiconductor Manufac",
+   "cusip": "874039100",
+   "holders": 3235,
+   "value": 243384876183
+  },
+  {
+   "issuer": "Verizon Communications Inc",
+   "cusip": "92343V104",
+   "holders": 3197,
+   "value": 134812891021
+  },
+  {
+   "issuer": "Ge Aerospace",
+   "cusip": "369604301",
+   "holders": 3164,
+   "value": 220058967350
+  },
+  {
+   "issuer": "Advanced Micro Devices Inc",
+   "cusip": "007903107",
+   "holders": 3142,
+   "value": 203825922871
+  },
+  {
+   "issuer": "Amgen Inc",
+   "cusip": "031162100",
+   "holders": 3102,
+   "value": 146896041535
+  },
+  {
+   "issuer": "Spdr Gold Tr",
+   "cusip": "78463V107",
+   "holders": 3100,
+   "value": 56207813068
+  },
+  {
+   "issuer": "Ge Vernova Inc",
+   "cusip": "36828A101",
+   "holders": 3062,
+   "value": 172681714060
+  },
+  {
+   "issuer": "Abbott Laboratories",
+   "cusip": "002824100",
+   "holders": 3059,
+   "value": 136187058459
+  },
+  {
+   "issuer": "Unitedhealth Group Inc",
+   "cusip": "91324P102",
+   "holders": 2976,
+   "value": 191747460904
+  },
+  {
+   "issuer": "Nextera Energy Inc",
+   "cusip": "65339F101",
+   "holders": 2974,
+   "value": 153552186070
+  },
+  {
+   "issuer": "Micron Technology Inc",
+   "cusip": "595112103",
+   "holders": 2973,
+   "value": 271755855108
+  },
+  {
+   "issuer": "Disney Walt Co",
+   "cusip": "254687106",
+   "holders": 2965,
+   "value": 120725741248
+  }
+ ],
+ "giants": [
+  {
+   "name": "NVIDIA",
+   "symbol": "NVDA",
+   "cap": 4862365925376.0,
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose",
+   "reported": 2674430148210,
+   "pctOfCap": 55.0,
+   "holders": 5746,
+   "top": [
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 335812985602
+    },
+    {
+     "name": "Vanguard Capital Management LLC",
+     "cik": "0002100119",
+     "value": 268324177197
+    },
+    {
+     "name": "State Street Corp",
+     "cik": "0000093751",
+     "value": 173343323230
+    },
+    {
+     "name": "FMR LLC",
+     "cik": "0000315066",
+     "value": 173327957590
+    },
+    {
+     "name": "Geode Capital Management, LLC",
+     "cik": "0001214717",
+     "value": 104562529968
+    },
+    {
+     "name": "Vanguard Portfolio Management LLC",
+     "cik": "0002100121",
+     "value": 88966100143
+    },
+    {
+     "name": "JPMorgan Chase & Co",
+     "cik": "0000019617",
+     "value": 73962942086
+    },
+    {
+     "name": "Morgan Stanley",
+     "cik": "0000895421",
+     "value": 59811238475
+    },
+    {
+     "name": "Northern Trust Corp",
+     "cik": "0000073124",
+     "value": 44078176199
+    },
+    {
+     "name": "UBS AM, a distinct business unit of UBS ASSET MANAGEMENT AMERICAS LLC",
+     "cik": "0000861177",
+     "value": 34701281683
+    }
+   ]
+  },
+  {
+   "name": "Apple",
+   "symbol": "AAPL",
+   "cap": 4537070911488.0,
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose",
+   "reported": 2251659291380,
+   "pctOfCap": 49.6,
+   "holders": 5928,
+   "top": [
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 290512251859
+    },
+    {
+     "name": "Vanguard Capital Management LLC",
+     "cik": "0002100119",
+     "value": 242076924860
+    },
+    {
+     "name": "State Street Corp",
+     "cik": "0000093751",
+     "value": 152868226190
+    },
+    {
+     "name": "Geode Capital Management, LLC",
+     "cik": "0001214717",
+     "value": 93304547364
+    },
+    {
+     "name": "Vanguard Portfolio Management LLC",
+     "cik": "0002100121",
+     "value": 84115410189
+    },
+    {
+     "name": "FMR LLC",
+     "cik": "0000315066",
+     "value": 78025715113
+    },
+    {
+     "name": "Morgan Stanley",
+     "cik": "0000895421",
+     "value": 62045240497
+    },
+    {
+     "name": "Berkshire Hathaway Inc",
+     "cik": "0001067983",
+     "value": 57843260493
+    },
+    {
+     "name": "JPMorgan Chase & Co",
+     "cik": "0000019617",
+     "value": 57124969118
+    },
+    {
+     "name": "Northern Trust Corp",
+     "cik": "0000073124",
+     "value": 40420022970
+    }
+   ]
+  },
+  {
+   "name": "Alphabet (Google)",
+   "symbol": "GOOG",
+   "cap": 4361806151680.0,
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose",
+   "reported": 2066997979742,
+   "pctOfCap": 47.4,
+   "holders": 5574,
+   "top": [
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 233168420614
+    },
+    {
+     "name": "Vanguard Capital Management LLC",
+     "cik": "0002100119",
+     "value": 195479827464
+    },
+    {
+     "name": "State Street Corp",
+     "cik": "0000093751",
+     "value": 118337209757
+    },
+    {
+     "name": "FMR LLC",
+     "cik": "0000315066",
+     "value": 99162319573
+    },
+    {
+     "name": "Geode Capital Management, LLC",
+     "cik": "0001214717",
+     "value": 75438590055
+    },
+    {
+     "name": "Morgan Stanley",
+     "cik": "0000895421",
+     "value": 55340551123
+    },
+    {
+     "name": "JPMorgan Chase & Co",
+     "cik": "0000019617",
+     "value": 52123402642
+    },
+    {
+     "name": "Vanguard Portfolio Management LLC",
+     "cik": "0002100121",
+     "value": 49805109192
+    },
+    {
+     "name": "Northern Trust Corp",
+     "cik": "0000073124",
+     "value": 33704715273
+    },
+    {
+     "name": "Capital World Investors",
+     "cik": "0001422849",
+     "value": 31628010759
+    }
+   ]
+  },
+  {
+   "name": "Microsoft",
+   "symbol": "MSFT",
+   "cap": 3450799652864.0,
+   "metro": "Seattle",
+   "metroSlug": "seattle",
+   "reported": 1879567257201,
+   "pctOfCap": 54.5,
+   "holders": 6088,
+   "top": [
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 219632437522
+    },
+    {
+     "name": "Vanguard Capital Management LLC",
+     "cik": "0002100119",
+     "value": 178628526693
+    },
+    {
+     "name": "State Street Corp",
+     "cik": "0000093751",
+     "value": 113534207339
+    },
+    {
+     "name": "FMR LLC",
+     "cik": "0000315066",
+     "value": 70410541716
+    },
+    {
+     "name": "Geode Capital Management, LLC",
+     "cik": "0001214717",
+     "value": 69604826731
+    },
+    {
+     "name": "Vanguard Portfolio Management LLC",
+     "cik": "0002100121",
+     "value": 62000087205
+    },
+    {
+     "name": "Morgan Stanley",
+     "cik": "0000895421",
+     "value": 46227307160
+    },
+    {
+     "name": "JPMorgan Chase & Co",
+     "cik": "0000019617",
+     "value": 45634226358
+    },
+    {
+     "name": "Capital Research Global Investors",
+     "cik": "0001422848",
+     "value": 35567494203
+    },
+    {
+     "name": "Northern Trust Corp",
+     "cik": "0000073124",
+     "value": 29501421832
+    }
+   ]
+  },
+  {
+   "name": "Amazon",
+   "symbol": "AMZN",
+   "cap": 2921415835648.0,
+   "metro": "Seattle",
+   "metroSlug": "seattle",
+   "reported": 1373503754606,
+   "pctOfCap": 47.0,
+   "holders": 5893,
+   "top": [
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 153196120950
+    },
+    {
+     "name": "Vanguard Capital Management LLC",
+     "cik": "0002100119",
+     "value": 131455068216
+    },
+    {
+     "name": "State Street Corp",
+     "cik": "0000093751",
+     "value": 81319088355
+    },
+    {
+     "name": "FMR LLC",
+     "cik": "0000315066",
+     "value": 74706176222
+    },
+    {
+     "name": "Geode Capital Management, LLC",
+     "cik": "0001214717",
+     "value": 48415245678
+    },
+    {
+     "name": "Morgan Stanley",
+     "cik": "0000895421",
+     "value": 36223539022
+    },
+    {
+     "name": "JPMorgan Chase & Co",
+     "cik": "0000019617",
+     "value": 33948006659
+    },
+    {
+     "name": "Vanguard Portfolio Management LLC",
+     "cik": "0002100121",
+     "value": 26452966061
+    },
+    {
+     "name": "Capital Research Global Investors",
+     "cik": "0001422848",
+     "value": 24663743959
+    },
+    {
+     "name": "Northern Trust Corp",
+     "cik": "0000073124",
+     "value": 19812034061
+    }
+   ]
+  },
+  {
+   "name": "TSMC",
+   "symbol": "TSM",
+   "cap": 2096632168448.0,
+   "metro": "Hsinchu",
+   "metroSlug": "hsinchu",
+   "reported": 233744144566,
+   "pctOfCap": 11.1,
+   "holders": 3044,
+   "top": [
+    {
+     "name": "FMR LLC",
+     "cik": "0000315066",
+     "value": 20409878325
+    },
+    {
+     "name": "Capital World Investors",
+     "cik": "0001422849",
+     "value": 11109756005
+    },
+    {
+     "name": "Sanders Capital, LLC",
+     "cik": "0001508097",
+     "value": 9482908091
+    },
+    {
+     "name": "JPMorgan Chase & Co",
+     "cik": "0000019617",
+     "value": 7591140111
+    },
+    {
+     "name": "Fisher Asset Management, LLC",
+     "cik": "0000850529",
+     "value": 6291848786
+    },
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 6158863554
+    },
+    {
+     "name": "Morgan Stanley",
+     "cik": "0000895421",
+     "value": 4990738541
+    },
+    {
+     "name": "Bank of America Corp",
+     "cik": "0000070858",
+     "value": 4767721198
+    },
+    {
+     "name": "Jennison Associates LLC",
+     "cik": "0000053417",
+     "value": 4062775674
+    },
+    {
+     "name": "Capital International Investors",
+     "cik": "0001562230",
+     "value": 3787721882
+    }
+   ]
+  },
+  {
+   "name": "Broadcom",
+   "symbol": "AVGO",
+   "cap": 1852030844928.0,
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose",
+   "reported": 1050100269704,
+   "pctOfCap": 56.7,
+   "holders": 4554,
+   "top": [
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 119453766785
+    },
+    {
+     "name": "Vanguard Capital Management LLC",
+     "cik": "0002100119",
+     "value": 95333990376
+    },
+    {
+     "name": "State Street Corp",
+     "cik": "0000093751",
+     "value": 59234095606
+    },
+    {
+     "name": "Vanguard Portfolio Management LLC",
+     "cik": "0002100121",
+     "value": 39748186325
+    },
+    {
+     "name": "FMR LLC",
+     "cik": "0000315066",
+     "value": 38414176558
+    },
+    {
+     "name": "Capital World Investors",
+     "cik": "0001422849",
+     "value": 35955619875
+    },
+    {
+     "name": "Capital Research Global Investors",
+     "cik": "0001422848",
+     "value": 35905127498
+    },
+    {
+     "name": "Geode Capital Management, LLC",
+     "cik": "0001214717",
+     "value": 35282186681
+    },
+    {
+     "name": "JPMorgan Chase & Co",
+     "cik": "0000019617",
+     "value": 26929994418
+    },
+    {
+     "name": "Capital International Investors",
+     "cik": "0001562230",
+     "value": 25994164504
+    }
+   ]
+  },
+  {
+   "name": "Meta Platforms (Facebook)",
+   "symbol": "META",
+   "cap": 1418222239744.0,
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose",
+   "reported": 890805697161,
+   "pctOfCap": 62.8,
+   "holders": 4922,
+   "top": [
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 96600307735
+    },
+    {
+     "name": "Vanguard Capital Management LLC",
+     "cik": "0002100119",
+     "value": 81321503763
+    },
+    {
+     "name": "FMR LLC",
+     "cik": "0000315066",
+     "value": 66718799159
+    },
+    {
+     "name": "State Street Corp",
+     "cik": "0000093751",
+     "value": 50647144579
+    },
+    {
+     "name": "Geode Capital Management, LLC",
+     "cik": "0001214717",
+     "value": 30880025420
+    },
+    {
+     "name": "JPMorgan Chase & Co",
+     "cik": "0000019617",
+     "value": 26915984229
+    },
+    {
+     "name": "Capital World Investors",
+     "cik": "0001422849",
+     "value": 23485842950
+    },
+    {
+     "name": "Morgan Stanley",
+     "cik": "0000895421",
+     "value": 21786119180
+    },
+    {
+     "name": "Vanguard Portfolio Management LLC",
+     "cik": "0002100121",
+     "value": 21658916583
+    },
+    {
+     "name": "Capital Research Global Investors",
+     "cik": "0001422848",
+     "value": 17681587406
+    }
+   ]
+  },
+  {
+   "name": "Tesla",
+   "symbol": "TSLA",
+   "cap": 1229138690048.0,
+   "metro": "Austin",
+   "metroSlug": "austin",
+   "reported": 561886458052,
+   "pctOfCap": 45.7,
+   "holders": 3970,
+   "top": [
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 77359319545
+    },
+    {
+     "name": "Vanguard Capital Management LLC",
+     "cik": "0002100119",
+     "value": 67974778582
+    },
+    {
+     "name": "State Street Corp",
+     "cik": "0000093751",
+     "value": 42638036512
+    },
+    {
+     "name": "Geode Capital Management, LLC",
+     "cik": "0001214717",
+     "value": 25176995635
+    },
+    {
+     "name": "Vanguard Portfolio Management LLC",
+     "cik": "0002100121",
+     "value": 18309774870
+    },
+    {
+     "name": "JPMorgan Chase & Co",
+     "cik": "0000019617",
+     "value": 16369584018
+    },
+    {
+     "name": "Capital World Investors",
+     "cik": "0001422849",
+     "value": 15948144653
+    },
+    {
+     "name": "Morgan Stanley",
+     "cik": "0000895421",
+     "value": 14564199417
+    },
+    {
+     "name": "FMR LLC",
+     "cik": "0000315066",
+     "value": 13393400259
+    },
+    {
+     "name": "Goldman Sachs Group Inc",
+     "cik": "0000886982",
+     "value": 10928815969
+    }
+   ]
+  },
+  {
+   "name": "Samsung",
+   "symbol": "005930.KS",
+   "cap": 1196506279462.0,
+   "metro": "Seoul",
+   "metroSlug": "seoul",
+   "reported": 237860805,
+   "pctOfCap": 0.0,
+   "holders": 9,
+   "top": [
+    {
+     "name": "Aristotle Capital Management, LLC",
+     "cik": "0000860644",
+     "value": 108789684
+    },
+    {
+     "name": "Sprucegrove Investment Management Ltd",
+     "cik": "0001234074",
+     "value": 91835352
+    },
+    {
+     "name": "Generali Investments CEE, investicni spolecnost, a.s.",
+     "cik": "0002047540",
+     "value": 14857804
+    },
+    {
+     "name": "Pacer Advisors, Inc.",
+     "cik": "0001616667",
+     "value": 8549458
+    },
+    {
+     "name": "Paradigm Asset Management Co LLC",
+     "cik": "0001034549",
+     "value": 6003983
+    },
+    {
+     "name": "Aubrey Capital Management Ltd",
+     "cik": "0001730754",
+     "value": 4778660
+    },
+    {
+     "name": "Systematic Alpha Investments, LLC",
+     "cik": "0001806755",
+     "value": 2183266
+    },
+    {
+     "name": "Calydon Capital",
+     "cik": "0001759271",
+     "value": 816768
+    },
+    {
+     "name": "Wesleyan Assurance Society",
+     "cik": "0001773368",
+     "value": 45830
+    }
+   ]
+  },
+  {
+   "name": "Berkshire Hathaway",
+   "symbol": "BRK-B",
+   "cap": 1103317041152.0,
+   "metro": "Omaha-Lincoln",
+   "metroSlug": "omaha-lincoln",
+   "reported": 738685449379,
+   "pctOfCap": 67.0,
+   "holders": 4868,
+   "top": [
+    {
+     "name": "Mirae Asset Global Investments Co., Ltd.",
+     "cik": "0001569395",
+     "value": 264600258727
+    },
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 58418629680
+    },
+    {
+     "name": "Vanguard Capital Management LLC",
+     "cik": "0002100119",
+     "value": 57255839432
+    },
+    {
+     "name": "State Street Corp",
+     "cik": "0000093751",
+     "value": 35712222270
+    },
+    {
+     "name": "Geode Capital Management, LLC",
+     "cik": "0001214717",
+     "value": 19683991574
+    },
+    {
+     "name": "FMR LLC",
+     "cik": "0000315066",
+     "value": 19374191922
+    },
+    {
+     "name": "Morgan Stanley",
+     "cik": "0000895421",
+     "value": 13410844694
+    },
+    {
+     "name": "Vanguard Portfolio Management LLC",
+     "cik": "0002100121",
+     "value": 12845045329
+    },
+    {
+     "name": "First Manhattan Co. LLC.",
+     "cik": "0000728083",
+     "value": 10895982780
+    },
+    {
+     "name": "Gates Foundation Trust",
+     "cik": "0001166559",
+     "value": 8169547277
+    }
+   ]
+  },
+  {
+   "name": "Eli Lilly",
+   "symbol": "LLY",
+   "cap": 1024468123648.0,
+   "metro": "Indianapolis",
+   "metroSlug": "indianapolis",
+   "reported": 684457545594,
+   "pctOfCap": 66.8,
+   "holders": 4282,
+   "top": [
+    {
+     "name": "Lilly Endowment Inc",
+     "cik": "0000316011",
+     "value": 84524083455
+    },
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 61055106883
+    },
+    {
+     "name": "Vanguard Capital Management LLC",
+     "cik": "0002100119",
+     "value": 49080558872
+    },
+    {
+     "name": "Pnc Financial Services Group, Inc.",
+     "cik": "0000713676",
+     "value": 47210789263
+    },
+    {
+     "name": "State Street Corp",
+     "cik": "0000093751",
+     "value": 32753011540
+    },
+    {
+     "name": "FMR LLC",
+     "cik": "0000315066",
+     "value": 24227689049
+    },
+    {
+     "name": "Capital Research Global Investors",
+     "cik": "0001422848",
+     "value": 22654650101
+    },
+    {
+     "name": "Vanguard Portfolio Management LLC",
+     "cik": "0002100121",
+     "value": 19294040124
+    },
+    {
+     "name": "Geode Capital Management, LLC",
+     "cik": "0001214717",
+     "value": 18507233484
+    },
+    {
+     "name": "Capital World Investors",
+     "cik": "0001422849",
+     "value": 14366511228
+    }
+   ]
+  },
+  {
+   "name": "JPMorgan Chase",
+   "symbol": "JPM",
+   "cap": 935128203264.0,
+   "metro": "New York",
+   "metroSlug": "new-york",
+   "reported": 532694241039,
+   "pctOfCap": 57.0,
+   "holders": 4757,
+   "top": [
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 61250081514
+    },
+    {
+     "name": "Vanguard Capital Management LLC",
+     "cik": "0002100119",
+     "value": 48618392099
+    },
+    {
+     "name": "State Street Corp",
+     "cik": "0000093751",
+     "value": 36557222600
+    },
+    {
+     "name": "Morgan Stanley",
+     "cik": "0000895421",
+     "value": 20163033832
+    },
+    {
+     "name": "Bank of America Corp",
+     "cik": "0000070858",
+     "value": 19314681112
+    },
+    {
+     "name": "Vanguard Portfolio Management LLC",
+     "cik": "0002100121",
+     "value": 19291255776
+    },
+    {
+     "name": "Geode Capital Management, LLC",
+     "cik": "0001214717",
+     "value": 18341199479
+    },
+    {
+     "name": "FMR LLC",
+     "cik": "0000315066",
+     "value": 9246616475
+    },
+    {
+     "name": "Northern Trust Corp",
+     "cik": "0000073124",
+     "value": 9183981714
+    },
+    {
+     "name": "Capital Research Global Investors",
+     "cik": "0001422848",
+     "value": 8063379367
+    }
+   ]
+  },
+  {
+   "name": "Micron Technology",
+   "symbol": "MU",
+   "cap": 929524482048.0,
+   "metro": "Boise",
+   "metroSlug": "boise",
+   "reported": 271419335375,
+   "pctOfCap": 29.2,
+   "holders": 2938,
+   "top": [
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 34847380573
+    },
+    {
+     "name": "Vanguard Capital Management LLC",
+     "cik": "0002100119",
+     "value": 24708699690
+    },
+    {
+     "name": "State Street Corp",
+     "cik": "0000093751",
+     "value": 17656292509
+    },
+    {
+     "name": "Capital World Investors",
+     "cik": "0001422849",
+     "value": 14207287527
+    },
+    {
+     "name": "FMR LLC",
+     "cik": "0000315066",
+     "value": 10829313960
+    },
+    {
+     "name": "Geode Capital Management, LLC",
+     "cik": "0001214717",
+     "value": 9239026337
+    },
+    {
+     "name": "Vanguard Portfolio Management LLC",
+     "cik": "0002100121",
+     "value": 7778635594
+    },
+    {
+     "name": "Primecap Management Co",
+     "cik": "0000763212",
+     "value": 7389981079
+    },
+    {
+     "name": "Morgan Stanley",
+     "cik": "0000895421",
+     "value": 5689904889
+    },
+    {
+     "name": "JPMorgan Chase & Co",
+     "cik": "0000019617",
+     "value": 5076491185
+    }
+   ]
+  },
+  {
+   "name": "Walmart",
+   "symbol": "WMT",
+   "cap": 884938375168.0,
+   "metro": "Fayetteville",
+   "metroSlug": "fayetteville",
+   "reported": 334255239803,
+   "pctOfCap": 37.8,
+   "holders": 4145,
+   "top": [
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 43881484430
+    },
+    {
+     "name": "Vanguard Capital Management LLC",
+     "cik": "0002100119",
+     "value": 35401502876
+    },
+    {
+     "name": "State Street Corp",
+     "cik": "0000093751",
+     "value": 23152665890
+    },
+    {
+     "name": "JPMorgan Chase & Co",
+     "cik": "0000019617",
+     "value": 15125018828
+    },
+    {
+     "name": "Geode Capital Management, LLC",
+     "cik": "0001214717",
+     "value": 13100438198
+    },
+    {
+     "name": "Vanguard Portfolio Management LLC",
+     "cik": "0002100121",
+     "value": 11644635571
+    },
+    {
+     "name": "Morgan Stanley",
+     "cik": "0000895421",
+     "value": 10676456642
+    },
+    {
+     "name": "Bank of America Corp",
+     "cik": "0000070858",
+     "value": 8183123032
+    },
+    {
+     "name": "Invesco Ltd.",
+     "cik": "0000914208",
+     "value": 5410065898
+    },
+    {
+     "name": "Northern Trust Corp",
+     "cik": "0000073124",
+     "value": 5190591981
+    }
+   ]
+  },
+  {
+   "name": "SK Hynix",
+   "symbol": "000660.KS",
+   "cap": 846525982822.0,
+   "metro": "Seoul",
+   "metroSlug": "seoul",
+   "reported": 13220977,
+   "pctOfCap": 0.0,
+   "holders": 2,
+   "top": [
+    {
+     "name": "Generali Investments CEE, investicni spolecnost, a.s.",
+     "cik": "0002047540",
+     "value": 8500107
+    },
+    {
+     "name": "Pacer Advisors, Inc.",
+     "cik": "0001616667",
+     "value": 4720870
+    }
+   ]
+  },
+  {
+   "name": "AMD",
+   "symbol": "AMD",
+   "cap": 776410431488.0,
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose",
+   "reported": 202491169065,
+   "pctOfCap": 26.1,
+   "holders": 3090,
+   "top": [
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 29614176633
+    },
+    {
+     "name": "Vanguard Capital Management LLC",
+     "cik": "0002100119",
+     "value": 21551428312
+    },
+    {
+     "name": "State Street Corp",
+     "cik": "0000093751",
+     "value": 15210709285
+    },
+    {
+     "name": "Geode Capital Management, LLC",
+     "cik": "0001214717",
+     "value": 8075070324
+    },
+    {
+     "name": "Vanguard Portfolio Management LLC",
+     "cik": "0002100121",
+     "value": 7649715605
+    },
+    {
+     "name": "Morgan Stanley",
+     "cik": "0000895421",
+     "value": 4837893359
+    },
+    {
+     "name": "JPMorgan Chase & Co",
+     "cik": "0000019617",
+     "value": 4753685344
+    },
+    {
+     "name": "UBS AM, a distinct business unit of UBS ASSET MANAGEMENT AMERICAS LLC",
+     "cik": "0000861177",
+     "value": 3904383981
+    },
+    {
+     "name": "Northern Trust Corp",
+     "cik": "0000073124",
+     "value": 3341788753
+    },
+    {
+     "name": "Invesco Ltd.",
+     "cik": "0000914208",
+     "value": 3300591472
+    }
+   ]
+  },
+  {
+   "name": "Visa",
+   "symbol": "V",
+   "cap": 683582029824.0,
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose",
+   "reported": 386880763077,
+   "pctOfCap": 56.6,
+   "holders": 4311,
+   "top": [
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 41162351853
+    },
+    {
+     "name": "Vanguard Capital Management LLC",
+     "cik": "0002100119",
+     "value": 32341241975
+    },
+    {
+     "name": "State Street Corp",
+     "cik": "0000093751",
+     "value": 24876169974
+    },
+    {
+     "name": "Morgan Stanley",
+     "cik": "0000895421",
+     "value": 13896981623
+    },
+    {
+     "name": "FMR LLC",
+     "cik": "0000315066",
+     "value": 13573063003
+    },
+    {
+     "name": "Vanguard Portfolio Management LLC",
+     "cik": "0002100121",
+     "value": 11365679286
+    },
+    {
+     "name": "TCI Fund Management Ltd",
+     "cik": "0001647251",
+     "value": 9208688518
+    },
+    {
+     "name": "Capital World Investors",
+     "cik": "0001422849",
+     "value": 7609631813
+    },
+    {
+     "name": "Capital International Investors",
+     "cik": "0001562230",
+     "value": 7165094041
+    },
+    {
+     "name": "Bank of America Corp",
+     "cik": "0000070858",
+     "value": 6915775100
+    }
+   ]
+  },
+  {
+   "name": "Exxon Mobil",
+   "symbol": "XOM",
+   "cap": 644290576384.0,
+   "metro": "Houston",
+   "metroSlug": "houston",
+   "reported": 447774120477,
+   "pctOfCap": 69.5,
+   "holders": 4679,
+   "top": [
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 54756261397
+    },
+    {
+     "name": "Vanguard Capital Management LLC",
+     "cik": "0002100119",
+     "value": 46011556682
+    },
+    {
+     "name": "State Street Corp",
+     "cik": "0000093751",
+     "value": 36291017111
+    },
+    {
+     "name": "FMR LLC",
+     "cik": "0000315066",
+     "value": 23754174612
+    },
+    {
+     "name": "Vanguard Portfolio Management LLC",
+     "cik": "0002100121",
+     "value": 19617624114
+    },
+    {
+     "name": "Geode Capital Management, LLC",
+     "cik": "0001214717",
+     "value": 16130047103
+    },
+    {
+     "name": "JPMorgan Chase & Co",
+     "cik": "0000019617",
+     "value": 14677748150
+    },
+    {
+     "name": "Morgan Stanley",
+     "cik": "0000895421",
+     "value": 12167845678
+    },
+    {
+     "name": "Bank of America Corp",
+     "cik": "0000070858",
+     "value": 11618963786
+    },
+    {
+     "name": "Bank of New York Mellon Corp",
+     "cik": "0001390777",
+     "value": 7514094403
+    }
+   ]
+  },
+  {
+   "name": "ASML",
+   "symbol": "ASML",
+   "cap": 625698930688.0,
+   "metro": "Eindhoven",
+   "metroSlug": "eindhoven",
+   "reported": 75632830627,
+   "pctOfCap": 12.1,
+   "holders": 1867,
+   "top": [
+    {
+     "name": "Capital World Investors",
+     "cik": "0001422849",
+     "value": 4927487516
+    },
+    {
+     "name": "FMR LLC",
+     "cik": "0000315066",
+     "value": 4158509806
+    },
+    {
+     "name": "State Farm Mutual Automobile Insurance Co",
+     "cik": "0000315032",
+     "value": 3643077643
+    },
+    {
+     "name": "JPMorgan Chase & Co",
+     "cik": "0000019617",
+     "value": 2673418398
+    },
+    {
+     "name": "Morgan Stanley",
+     "cik": "0000895421",
+     "value": 2358169611
+    },
+    {
+     "name": "Capital International Investors",
+     "cik": "0001562230",
+     "value": 2304222028
+    },
+    {
+     "name": "Arrowstreet Capital, Limited Partnership",
+     "cik": "0001164508",
+     "value": 2168227225
+    },
+    {
+     "name": "Bank of America Corp",
+     "cik": "0000070858",
+     "value": 2060833041
+    },
+    {
+     "name": "Wcm Investment Management, LLC",
+     "cik": "0001061186",
+     "value": 1910779702
+    },
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 1622377332
+    }
+   ]
+  },
+  {
+   "name": "Johnson & Johnson",
+   "symbol": "JNJ",
+   "cap": 617777463296.0,
+   "metro": "New York",
+   "metroSlug": "new-york",
+   "reported": 414414302220,
+   "pctOfCap": 67.1,
+   "holders": 4538,
+   "top": [
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 52159962657
+    },
+    {
+     "name": "Vanguard Capital Management LLC",
+     "cik": "0002100119",
+     "value": 38280616643
+    },
+    {
+     "name": "State Street Corp",
+     "cik": "0000093751",
+     "value": 32626943839
+    },
+    {
+     "name": "Vanguard Portfolio Management LLC",
+     "cik": "0002100121",
+     "value": 15525468737
+    },
+    {
+     "name": "JPMorgan Chase & Co",
+     "cik": "0000019617",
+     "value": 15300233008
+    },
+    {
+     "name": "Geode Capital Management, LLC",
+     "cik": "0001214717",
+     "value": 14422987278
+    },
+    {
+     "name": "Morgan Stanley",
+     "cik": "0000895421",
+     "value": 10931642638
+    },
+    {
+     "name": "State Farm Mutual Automobile Insurance Co",
+     "cik": "0000315032",
+     "value": 7722092307
+    },
+    {
+     "name": "Northern Trust Corp",
+     "cik": "0000073124",
+     "value": 7166899890
+    },
+    {
+     "name": "Bank of America Corp",
+     "cik": "0000070858",
+     "value": 6237301324
+    }
+   ]
+  },
+  {
+   "name": "Tencent",
+   "symbol": "TCEHY",
+   "cap": 553060073472.0,
+   "metro": "Guangzhou",
+   "metroSlug": "guangzhou",
+   "reported": 73165272,
+   "pctOfCap": 0.0,
+   "holders": 31,
+   "top": [
+    {
+     "name": "DRW Securities, LLC",
+     "cik": "0001481986",
+     "value": 15529803
+    },
+    {
+     "name": "Cortland Associates Inc",
+     "cik": "0001014315",
+     "value": 12501000
+    },
+    {
+     "name": "Raiffeisen Bank International AG",
+     "cik": "0002044885",
+     "value": 12211371
+    },
+    {
+     "name": "Ramirez Asset Management, Inc.",
+     "cik": "0001992110",
+     "value": 10297313
+    },
+    {
+     "name": "Triglav Investments, D.O.O.",
+     "cik": "0002056690",
+     "value": 5491796
+    },
+    {
+     "name": "Pacer Advisors, Inc.",
+     "cik": "0001616667",
+     "value": 3299311
+    },
+    {
+     "name": "Generali Investments CEE, investicni spolecnost, a.s.",
+     "cik": "0002047540",
+     "value": 3291486
+    },
+    {
+     "name": "Madison Asset Management, LLC",
+     "cik": "0001299351",
+     "value": 2429861
+    },
+    {
+     "name": "Russell Investments Group, Ltd.",
+     "cik": "0001692234",
+     "value": 2240355
+    },
+    {
+     "name": "Rhumbline Advisers",
+     "cik": "0001115418",
+     "value": 1411445
+    }
+   ]
+  },
+  {
+   "name": "Mastercard",
+   "symbol": "MA",
+   "cap": 506381893632.0,
+   "metro": "New York",
+   "metroSlug": "new-york",
+   "reported": 366217717710,
+   "pctOfCap": 72.3,
+   "holders": 3553,
+   "top": [
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 33483209935
+    },
+    {
+     "name": "Mastercard Foundation Asset Management Corp",
+     "cik": "0002006397",
+     "value": 32595171201
+    },
+    {
+     "name": "Vanguard Capital Management LLC",
+     "cik": "0002100119",
+     "value": 26150932266
+    },
+    {
+     "name": "State Street Corp",
+     "cik": "0000093751",
+     "value": 18226608473
+    },
+    {
+     "name": "JPMorgan Chase & Co",
+     "cik": "0000019617",
+     "value": 16132312301
+    },
+    {
+     "name": "FMR LLC",
+     "cik": "0000315066",
+     "value": 12123705707
+    },
+    {
+     "name": "Geode Capital Management, LLC",
+     "cik": "0001214717",
+     "value": 10498414672
+    },
+    {
+     "name": "Vanguard Portfolio Management LLC",
+     "cik": "0002100121",
+     "value": 9710664256
+    },
+    {
+     "name": "Morgan Stanley",
+     "cik": "0000895421",
+     "value": 7576134727
+    },
+    {
+     "name": "Capital Research Global Investors",
+     "cik": "0001422848",
+     "value": 6937429037
+    }
+   ]
+  },
+  {
+   "name": "Cisco",
+   "symbol": "CSCO",
+   "cap": 457166979072.0,
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose",
+   "reported": 224274131790,
+   "pctOfCap": 49.1,
+   "holders": 3654,
+   "top": [
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 28324995670
+    },
+    {
+     "name": "Vanguard Capital Management LLC",
+     "cik": "0002100119",
+     "value": 18914906106
+    },
+    {
+     "name": "State Street Corp",
+     "cik": "0000093751",
+     "value": 15020934950
+    },
+    {
+     "name": "Vanguard Portfolio Management LLC",
+     "cik": "0002100121",
+     "value": 9143955974
+    },
+    {
+     "name": "Geode Capital Management, LLC",
+     "cik": "0001214717",
+     "value": 7910463470
+    },
+    {
+     "name": "Morgan Stanley",
+     "cik": "0000895421",
+     "value": 6031150965
+    },
+    {
+     "name": "FMR LLC",
+     "cik": "0000315066",
+     "value": 5228445822
+    },
+    {
+     "name": "Capital Research Global Investors",
+     "cik": "0001422848",
+     "value": 4961797384
+    },
+    {
+     "name": "Franklin Resources Inc",
+     "cik": "0000038777",
+     "value": 4516694740
+    },
+    {
+     "name": "Invesco Ltd.",
+     "cik": "0000914208",
+     "value": 4405774492
+    }
+   ]
+  },
+  {
+   "name": "Intel",
+   "symbol": "INTC",
+   "cap": 454968770560.0,
+   "metro": "San Francisco-San Jose",
+   "metroSlug": "san-francisco-san-jose",
+   "reported": 136686810211,
+   "pctOfCap": 30.0,
+   "holders": 2527,
+   "top": [
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 19750448321
+    },
+    {
+     "name": "Vanguard Capital Management LLC",
+     "cik": "0002100119",
+     "value": 12445550965
+    },
+    {
+     "name": "Nvidia Corp",
+     "cik": "0001045810",
+     "value": 9478092770
+    },
+    {
+     "name": "State Street Corp",
+     "cik": "0000093751",
+     "value": 9457986524
+    },
+    {
+     "name": "Geode Capital Management, LLC",
+     "cik": "0001214717",
+     "value": 4821517323
+    },
+    {
+     "name": "Softbank Group Corp.",
+     "cik": "0001065521",
+     "value": 3837391316
+    },
+    {
+     "name": "Vanguard Portfolio Management LLC",
+     "cik": "0002100121",
+     "value": 3769905558
+    },
+    {
+     "name": "Capital World Investors",
+     "cik": "0001422849",
+     "value": 3524920638
+    },
+    {
+     "name": "Capital Research Global Investors",
+     "cik": "0001422848",
+     "value": 3411206879
+    },
+    {
+     "name": "Primecap Management Co",
+     "cik": "0000763212",
+     "value": 3343375647
+    }
+   ]
+  },
+  {
+   "name": "AbbVie",
+   "symbol": "ABBV",
+   "cap": 443359002624.0,
+   "metro": "Chicago",
+   "metroSlug": "chicago",
+   "reported": 271183319490,
+   "pctOfCap": 61.2,
+   "holders": 4009,
+   "top": [
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 32775334997
+    },
+    {
+     "name": "Vanguard Capital Management LLC",
+     "cik": "0002100119",
+     "value": 24985321667
+    },
+    {
+     "name": "State Street Corp",
+     "cik": "0000093751",
+     "value": 17663997555
+    },
+    {
+     "name": "JPMorgan Chase & Co",
+     "cik": "0000019617",
+     "value": 12092789708
+    },
+    {
+     "name": "Vanguard Portfolio Management LLC",
+     "cik": "0002100121",
+     "value": 10770774234
+    },
+    {
+     "name": "Geode Capital Management, LLC",
+     "cik": "0001214717",
+     "value": 10142501458
+    },
+    {
+     "name": "Morgan Stanley",
+     "cik": "0000895421",
+     "value": 8268268958
+    },
+    {
+     "name": "Capital Research Global Investors",
+     "cik": "0001422848",
+     "value": 6797322062
+    },
+    {
+     "name": "Bank of America Corp",
+     "cik": "0000070858",
+     "value": 5206045739
+    },
+    {
+     "name": "FMR LLC",
+     "cik": "0000315066",
+     "value": 4733170285
+    }
+   ]
+  },
+  {
+   "name": "Bank of America",
+   "symbol": "BAC",
+   "cap": 434763104256.0,
+   "metro": "Charlotte",
+   "metroSlug": "charlotte",
+   "reported": 250401144600,
+   "pctOfCap": 57.6,
+   "holders": 3417,
+   "top": [
+    {
+     "name": "BlackRock, Inc.",
+     "cik": "0002012383",
+     "value": 26480715283
+    },
+    {
+     "name": "Berkshire Hathaway Inc",
+     "cik": "0001067983",
+     "value": 25039178044
+    },
+    {
+     "name": "Vanguard Capital Management LLC",
+     "cik": "0002100119",
+     "value": 19973102420
+    },
+    {
+     "name": "State Street Corp",
+     "cik": "0000093751",
+     "value": 14425199498
+    },
+    {
+     "name": "FMR LLC",
+     "cik": "0000315066",
+     "value": 9716329588
+    },
+    {
+     "name": "Vanguard Portfolio Management LLC",
+     "cik": "0002100121",
+     "value": 7967300885
+    },
+    {
+     "name": "Geode Capital Management, LLC",
+     "cik": "0001214717",
+     "value": 7668315489
+    },
+    {
+     "name": "Capital World Investors",
+     "cik": "0001422849",
+     "value": 7032504289
+    },
+    {
+     "name": "JPMorgan Chase & Co",
+     "cik": "0000019617",
+     "value": 6261531513
+    },
+    {
+     "name": "Morgan Stanley",
+     "cik": "0000895421",
+     "value": 5345096641
+    }
+   ]
+  }
+ ]
+}

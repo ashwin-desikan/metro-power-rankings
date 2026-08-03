@@ -1,0 +1,727 @@
+{
+ "NEW YORK|NY": {
+  "metro": "New York",
+  "metroSlug": "new-york",
+  "country": "United States"
+ },
+ "GREENWICH|CT": {
+  "metro": "New York",
+  "metroSlug": "new-york",
+  "country": "United States"
+ },
+ "STAMFORD|CT": {
+  "metro": "New York",
+  "metroSlug": "new-york",
+  "country": "United States"
+ },
+ "WESTPORT|CT": {
+  "metro": "New York",
+  "metroSlug": "new-york",
+  "country": "United States"
+ },
+ "RYE|NY": {
+  "metro": "New York",
+  "metroSlug": "new-york",
+  "country": "United States"
+ },
+ "SUMMIT|NJ": {
+  "metro": "New York",
+  "metroSlug": "new-york",
+  "country": "United States"
+ },
+ "NEWARK|NJ": {
+  "metro": "New York",
+  "metroSlug": "new-york",
+  "country": "United States"
+ },
+ "MORRISTOWN|NJ": {
+  "metro": "New York",
+  "metroSlug": "new-york",
+  "country": "United States"
+ },
+ "FLORHAM PARK|NJ": {
+  "metro": "New York",
+  "metroSlug": "new-york",
+  "country": "United States"
+ },
+ "ENGLEWOOD|NJ": {
+  "metro": "New York",
+  "metroSlug": "new-york",
+  "country": "United States"
+ },
+ "TRENTON|NJ": {
+  "metro": "New York",
+  "metroSlug": "new-york",
+  "country": "United States"
+ },
+ "PRINCETON|NJ": {
+  "metro": "New York",
+  "metroSlug": "new-york",
+  "country": "United States"
+ },
+ "PHILADELPHIA|PA": {
+  "metro": "Philadelphia",
+  "metroSlug": "philadelphia",
+  "country": "United States"
+ },
+ "MALVERN|PA": {
+  "metro": "Philadelphia",
+  "metroSlug": "philadelphia",
+  "country": "United States"
+ },
+ "BALA CYNWYD|PA": {
+  "metro": "Philadelphia",
+  "metroSlug": "philadelphia",
+  "country": "United States"
+ },
+ "BERWYN|PA": {
+  "metro": "Philadelphia",
+  "metroSlug": "philadelphia",
+  "country": "United States"
+ },
+ "RADNOR|PA": {
+  "metro": "Philadelphia",
+  "metroSlug": "philadelphia",
+  "country": "United States"
+ },
+ "OAKS|PA": {
+  "metro": "Philadelphia",
+  "metroSlug": "philadelphia",
+  "country": "United States"
+ },
+ "WILMINGTON|DE": {
+  "metro": "Philadelphia",
+  "metroSlug": "philadelphia",
+  "country": "United States"
+ },
+ "BOSTON|MA": {
+  "metro": "Boston",
+  "metroSlug": "boston",
+  "country": "United States"
+ },
+ "WALTHAM|MA": {
+  "metro": "Boston",
+  "metroSlug": "boston",
+  "country": "United States"
+ },
+ "CHICAGO|IL": {
+  "metro": "Chicago",
+  "metroSlug": "chicago",
+  "country": "United States"
+ },
+ "SCHAUMBURG|IL": {
+  "metro": "Chicago",
+  "metroSlug": "chicago",
+  "country": "United States"
+ },
+ "NAPERVILLE|IL": {
+  "metro": "Chicago",
+  "metroSlug": "chicago",
+  "country": "United States"
+ },
+ "WHEATON|IL": {
+  "metro": "Chicago",
+  "metroSlug": "chicago",
+  "country": "United States"
+ },
+ "LOS ANGELES|CA": {
+  "metro": "Los Angeles",
+  "metroSlug": "los-angeles",
+  "country": "United States"
+ },
+ "PASADENA|CA": {
+  "metro": "Los Angeles",
+  "metroSlug": "los-angeles",
+  "country": "United States"
+ },
+ "NEWPORT BEACH|CA": {
+  "metro": "Los Angeles",
+  "metroSlug": "los-angeles",
+  "country": "United States"
+ },
+ "LAGUNA BEACH|CA": {
+  "metro": "Los Angeles",
+  "metroSlug": "los-angeles",
+  "country": "United States"
+ },
+ "SAN FRANCISCO|CA": {
+  "metro": "San Francisco-San Jose",
+  "metroSlug": "san-francisco-san-jose",
+  "country": "United States"
+ },
+ "SAN MATEO|CA": {
+  "metro": "San Francisco-San Jose",
+  "metroSlug": "san-francisco-san-jose",
+  "country": "United States"
+ },
+ "PALO ALTO|CA": {
+  "metro": "San Francisco-San Jose",
+  "metroSlug": "san-francisco-san-jose",
+  "country": "United States"
+ },
+ "MENLO PARK|CA": {
+  "metro": "San Francisco-San Jose",
+  "metroSlug": "san-francisco-san-jose",
+  "country": "United States"
+ },
+ "SANTA CLARA|CA": {
+  "metro": "San Francisco-San Jose",
+  "metroSlug": "san-francisco-san-jose",
+  "country": "United States"
+ },
+ "FOSTER CITY|CA": {
+  "metro": "San Francisco-San Jose",
+  "metroSlug": "san-francisco-san-jose",
+  "country": "United States"
+ },
+ "CONCORD|CA": {
+  "metro": "San Francisco-San Jose",
+  "metroSlug": "san-francisco-san-jose",
+  "country": "United States"
+ },
+ "OAKLAND|CA": {
+  "metro": "San Francisco-San Jose",
+  "metroSlug": "san-francisco-san-jose",
+  "country": "United States"
+ },
+ "CHARLOTTE|NC": {
+  "metro": "Charlotte",
+  "metroSlug": "charlotte",
+  "country": "United States"
+ },
+ "FORT MILL|SC": {
+  "metro": "Charlotte",
+  "metroSlug": "charlotte",
+  "country": "United States"
+ },
+ "ATLANTA|GA": {
+  "metro": "Atlanta",
+  "metroSlug": "atlanta",
+  "country": "United States"
+ },
+ "ALPHARETTA|GA": {
+  "metro": "Atlanta",
+  "metroSlug": "atlanta",
+  "country": "United States"
+ },
+ "MIAMI|FL": {
+  "metro": "Miami",
+  "metroSlug": "miami",
+  "country": "United States"
+ },
+ "WEST PALM BEACH|FL": {
+  "metro": "Miami",
+  "metroSlug": "miami",
+  "country": "United States"
+ },
+ "PALM BEACH GARDENS|FL": {
+  "metro": "Miami",
+  "metroSlug": "miami",
+  "country": "United States"
+ },
+ "BOCA RATON|FL": {
+  "metro": "Miami",
+  "metroSlug": "miami",
+  "country": "United States"
+ },
+ "JUPITER|FL": {
+  "metro": "Miami",
+  "metroSlug": "miami",
+  "country": "United States"
+ },
+ "FT. LAUDERDALE|FL": {
+  "metro": "Miami",
+  "metroSlug": "miami",
+  "country": "United States"
+ },
+ "AUSTIN|TX": {
+  "metro": "Austin",
+  "metroSlug": "austin",
+  "country": "United States"
+ },
+ "MINNEAPOLIS|MN": {
+  "metro": "Minneapolis",
+  "metroSlug": "minneapolis",
+  "country": "United States"
+ },
+ "PLYMOUTH|MN": {
+  "metro": "Minneapolis",
+  "metroSlug": "minneapolis",
+  "country": "United States"
+ },
+ "NASHVILLE|TN": {
+  "metro": "Nashville",
+  "metroSlug": "nashville",
+  "country": "United States"
+ },
+ "MILWAUKEE|WI": {
+  "metro": "Milwaukee",
+  "metroSlug": "milwaukee",
+  "country": "United States"
+ },
+ "OMAHA|NE": {
+  "metro": "Omaha-Lincoln",
+  "metroSlug": "omaha-lincoln",
+  "country": "United States"
+ },
+ "PLANO|TX": {
+  "metro": "Dallas",
+  "metroSlug": "dallas",
+  "country": "United States"
+ },
+ "DALLAS|TX": {
+  "metro": "Dallas",
+  "metroSlug": "dallas",
+  "country": "United States"
+ },
+ "FORT WORTH|TX": {
+  "metro": "Dallas",
+  "metroSlug": "dallas",
+  "country": "United States"
+ },
+ "OVERLAND PARK|KS": {
+  "metro": "Kansas City",
+  "metroSlug": "kansas-city",
+  "country": "United States"
+ },
+ "KANSAS CITY|MO": {
+  "metro": "Kansas City",
+  "metroSlug": "kansas-city",
+  "country": "United States"
+ },
+ "PITTSBURGH|PA": {
+  "metro": "Pittsburgh",
+  "metroSlug": "pittsburgh",
+  "country": "United States"
+ },
+ "DES PERES|MO": {
+  "metro": "St. Louis",
+  "metroSlug": "st-louis",
+  "country": "United States"
+ },
+ "ST. LOUIS|MO": {
+  "metro": "St. Louis",
+  "metroSlug": "st-louis",
+  "country": "United States"
+ },
+ "ST LOUIS|MO": {
+  "metro": "St. Louis",
+  "metroSlug": "st-louis",
+  "country": "United States"
+ },
+ "DES MOINES|IA": {
+  "metro": "Des Moines",
+  "metroSlug": "des-moines",
+  "country": "United States"
+ },
+ "SAN ANTONIO|TX": {
+  "metro": "San Antonio",
+  "metroSlug": "san-antonio",
+  "country": "United States"
+ },
+ "SACRAMENTO|CA": {
+  "metro": "Sacramento",
+  "metroSlug": "sacramento",
+  "country": "United States"
+ },
+ "WEST SACRAMENTO|CA": {
+  "metro": "Sacramento",
+  "metroSlug": "sacramento",
+  "country": "United States"
+ },
+ "FOLSOM|CA": {
+  "metro": "Sacramento",
+  "metroSlug": "sacramento",
+  "country": "United States"
+ },
+ "CINCINNATI|OH": {
+  "metro": "Cincinnati",
+  "metroSlug": "cincinnati",
+  "country": "United States"
+ },
+ "DENVER|CO": {
+  "metro": "Denver",
+  "metroSlug": "denver",
+  "country": "United States"
+ },
+ "GREENWOOD VILLAGE|CO": {
+  "metro": "Denver",
+  "metroSlug": "denver",
+  "country": "United States"
+ },
+ "HOUSTON|TX": {
+  "metro": "Houston",
+  "metroSlug": "houston",
+  "country": "United States"
+ },
+ "WASHINGTON|DC": {
+  "metro": "Washington-Baltimore",
+  "metroSlug": "washington-baltimore",
+  "country": "United States"
+ },
+ "BETHESDA|MD": {
+  "metro": "Washington-Baltimore",
+  "metroSlug": "washington-baltimore",
+  "country": "United States"
+ },
+ "BALTIMORE|MD": {
+  "metro": "Washington-Baltimore",
+  "metroSlug": "washington-baltimore",
+  "country": "United States"
+ },
+ "ARLINGTON|VA": {
+  "metro": "Washington-Baltimore",
+  "metroSlug": "washington-baltimore",
+  "country": "United States"
+ },
+ "SEATTLE|WA": {
+  "metro": "Seattle",
+  "metroSlug": "seattle",
+  "country": "United States"
+ },
+ "BELLEVUE|WA": {
+  "metro": "Seattle",
+  "metroSlug": "seattle",
+  "country": "United States"
+ },
+ "KIRKLAND|WA": {
+  "metro": "Seattle",
+  "metroSlug": "seattle",
+  "country": "United States"
+ },
+ "INDIANAPOLIS|IN": {
+  "metro": "Indianapolis",
+  "metroSlug": "indianapolis",
+  "country": "United States"
+ },
+ "COLUMBUS|OH": {
+  "metro": "Columbus",
+  "metroSlug": "columbus",
+  "country": "United States"
+ },
+ "SALT LAKE CITY|UT": {
+  "metro": "Salt Lake City-Provo",
+  "metroSlug": "salt-lake-city-provo",
+  "country": "United States"
+ },
+ "SCOTTSDALE|AZ": {
+  "metro": "Phoenix",
+  "metroSlug": "phoenix",
+  "country": "United States"
+ },
+ "PHOENIX|AZ": {
+  "metro": "Phoenix",
+  "metroSlug": "phoenix",
+  "country": "United States"
+ },
+ "ALBANY|NY": {
+  "metro": "Albany",
+  "metroSlug": "albany",
+  "country": "United States"
+ },
+ "RALEIGH|NC": {
+  "metro": "Raleigh-Durham",
+  "metroSlug": "raleigh-durham",
+  "country": "United States"
+ },
+ "MADISON|WI": {
+  "metro": "Madison",
+  "metroSlug": "madison",
+  "country": "United States"
+ },
+ "RICHMOND|VA": {
+  "metro": "Richmond",
+  "metroSlug": "richmond",
+  "country": "United States"
+ },
+ "TALLAHASSEE|FL": {
+  "metro": "Tallahassee",
+  "metroSlug": "tallahassee",
+  "country": "United States"
+ },
+ "BIRMINGHAM|AL": {
+  "metro": "Birmingham (AL)",
+  "metroSlug": "birmingham-al",
+  "country": "United States"
+ },
+ "SAN DIEGO|CA": {
+  "metro": "San Diego",
+  "metroSlug": "san-diego",
+  "country": "United States"
+ },
+ "LOUISVILLE|KY": {
+  "metro": "Louisville",
+  "metroSlug": "louisville",
+  "country": "United States"
+ },
+ "MEMPHIS|TN": {
+  "metro": "Memphis",
+  "metroSlug": "memphis",
+  "country": "United States"
+ },
+ "TUCSON|AZ": {
+  "metro": "Tucson",
+  "metroSlug": "tucson",
+  "country": "United States"
+ },
+ "LITTLE ROCK|AR": {
+  "metro": "Little Rock",
+  "metroSlug": "little-rock",
+  "country": "United States"
+ },
+ "OKLAHOMA CITY|OK": {
+  "metro": "Oklahoma City",
+  "metroSlug": "oklahoma-city",
+  "country": "United States"
+ },
+ "BUFFALO|NY": {
+  "metro": "Buffalo",
+  "metroSlug": "buffalo",
+  "country": "United States"
+ },
+ "AKRON|OH": {
+  "metro": "Cleveland",
+  "metroSlug": "cleveland",
+  "country": "United States"
+ },
+ "INDEPENDENCE|OH": {
+  "metro": "Cleveland",
+  "metroSlug": "cleveland",
+  "country": "United States"
+ },
+ "BROOKLYN|OH": {
+  "metro": "Cleveland",
+  "metroSlug": "cleveland",
+  "country": "United States"
+ },
+ "MONTGOMERY|AL": {
+  "metro": "Montgomery",
+  "metroSlug": "montgomery",
+  "country": "United States"
+ },
+ "TAMPA|FL": {
+  "metro": "Tampa",
+  "metroSlug": "tampa",
+  "country": "United States"
+ },
+ "ST. PETERSBURG|FL": {
+  "metro": "Tampa",
+  "metroSlug": "tampa",
+  "country": "United States"
+ },
+ "PORTLAND|OR": {
+  "metro": "Portland",
+  "metroSlug": "portland",
+  "country": "United States"
+ },
+ "CLEVELAND|OH": {
+  "metro": "Cleveland",
+  "metroSlug": "cleveland",
+  "country": "United States"
+ },
+ "DETROIT|MI": {
+  "metro": "Detroit",
+  "metroSlug": "detroit",
+  "country": "United States"
+ },
+ "GRAND RAPIDS|MI": {
+  "metro": "Grand Rapids",
+  "metroSlug": "grand-rapids",
+  "country": "United States"
+ },
+ "LONDON|X0": {
+  "metro": "London",
+  "metroSlug": "london",
+  "country": "United Kingdom"
+ },
+ "LONDON, EC4N 8AF|X0": {
+  "metro": "London",
+  "metroSlug": "london",
+  "country": "United Kingdom"
+ },
+ "EDINBURGH|X0": {
+  "metro": "Edinburgh",
+  "metroSlug": "edinburgh",
+  "country": "United Kingdom"
+ },
+ "LIVERPOOL|X0": {
+  "metro": "Liverpool",
+  "metroSlug": "liverpool",
+  "country": "United Kingdom"
+ },
+ "TORONTO|A6": {
+  "metro": "Toronto",
+  "metroSlug": "toronto",
+  "country": "Canada"
+ },
+ "TORONTO ONTARIO|A6": {
+  "metro": "Toronto",
+  "metroSlug": "toronto",
+  "country": "Canada"
+ },
+ "TORONTO, ONTARIO|A6": {
+  "metro": "Toronto",
+  "metroSlug": "toronto",
+  "country": "Canada"
+ },
+ "TORONTO|Z4": {
+  "metro": "Toronto",
+  "metroSlug": "toronto",
+  "country": "Canada"
+ },
+ "MONTREAL|A8": {
+  "metro": "Montreal",
+  "metroSlug": "montreal",
+  "country": "Canada"
+ },
+ "LEVIS|A8": {
+  "metro": "Quebec City",
+  "metroSlug": "quebec-city",
+  "country": "Canada"
+ },
+ "VANCOUVER|A1": {
+  "metro": "Vancouver",
+  "metroSlug": "vancouver",
+  "country": "Canada"
+ },
+ "CALGARY|A0": {
+  "metro": "Calgary",
+  "metroSlug": "calgary",
+  "country": "Canada"
+ },
+ "ZURICH|V8": {
+  "metro": "Zurich",
+  "metroSlug": "zurich",
+  "country": "Switzerland"
+ },
+ "CAROUGE|V8": {
+  "metro": "Geneva",
+  "metroSlug": "geneva",
+  "country": "Switzerland"
+ },
+ "PARIS|I0": {
+  "metro": "Paris",
+  "metroSlug": "paris",
+  "country": "France"
+ },
+ "MONTROUGE CEDEX|I0": {
+  "metro": "Paris",
+  "metroSlug": "paris",
+  "country": "France"
+ },
+ "FRANKFURT AM MAIN|2M": {
+  "metro": "Frankfurt",
+  "metroSlug": "frankfurt",
+  "country": "Germany"
+ },
+ "MUNICH|2M": {
+  "metro": "Munich",
+  "metroSlug": "munich",
+  "country": "Germany"
+ },
+ "TOKYO|M0": {
+  "metro": "Tokyo",
+  "metroSlug": "tokyo",
+  "country": "Japan"
+ },
+ "CHIYODA-KU, TOKYO|M0": {
+  "metro": "Tokyo",
+  "metroSlug": "tokyo",
+  "country": "Japan"
+ },
+ "CHIYODA-KU,TOKYO|M0": {
+  "metro": "Tokyo",
+  "metroSlug": "tokyo",
+  "country": "Japan"
+ },
+ "SEOUL|M5": {
+  "metro": "Seoul",
+  "metroSlug": "seoul",
+  "country": "South Korea"
+ },
+ "JEONJU-SI, JEOLLABUK-DO|M5": {
+  "metro": "Jeonju",
+  "metroSlug": "jeonju",
+  "country": "South Korea"
+ },
+ "AMSTERDAM|P7": {
+  "metro": "Amsterdam",
+  "metroSlug": "amsterdam",
+  "country": "Netherlands"
+ },
+ "ROTTERDAM|P7": {
+  "metro": "Rotterdam-The Hague",
+  "metroSlug": "rotterdam-the-hague",
+  "country": "Netherlands"
+ },
+ "STOCKHOLM|V7": {
+  "metro": "Stockholm",
+  "metroSlug": "stockholm",
+  "country": "Sweden"
+ },
+ "OSLO|Q8": {
+  "metro": "Oslo",
+  "metroSlug": "oslo",
+  "country": "Norway"
+ },
+ "LYSAKER|Q8": {
+  "metro": "Oslo",
+  "metroSlug": "oslo",
+  "country": "Norway"
+ },
+ "COPENHAGEN|G7": {
+  "metro": "Copenhagen",
+  "metroSlug": "copenhagen",
+  "country": "Denmark"
+ },
+ "COPENHAGEN V|G7": {
+  "metro": "Copenhagen",
+  "metroSlug": "copenhagen",
+  "country": "Denmark"
+ },
+ "SENNINGERBERG|N4": {
+  "metro": "Luxembourg City",
+  "metroSlug": "luxembourg-city",
+  "country": "Luxembourg"
+ },
+ "HONG KONG|K3": {
+  "metro": "Hong Kong",
+  "metroSlug": "hong-kong",
+  "country": "Hong Kong"
+ },
+ "CAUSEWAY BAY|K3": {
+  "metro": "Hong Kong",
+  "metroSlug": "hong-kong",
+  "country": "Hong Kong"
+ },
+ "SINGAPORE|U0": {
+  "metro": "Singapore",
+  "metroSlug": "singapore",
+  "country": "Singapore"
+ },
+ "MELBOURNE|C3": {
+  "metro": "Melbourne",
+  "metroSlug": "melbourne",
+  "country": "Australia"
+ },
+ "SYDNEY|C3": {
+  "metro": "Sydney",
+  "metroSlug": "sydney",
+  "country": "Australia"
+ },
+ "MADRID|U3": {
+  "metro": "Madrid",
+  "metroSlug": "madrid",
+  "country": "Spain"
+ },
+ "MILAN|L6": {
+  "metro": "Milan",
+  "metroSlug": "milan",
+  "country": "Italy"
+ },
+ "RAMAT GAN|L3": {
+  "metro": "Tel-Aviv",
+  "metroSlug": "tel-aviv",
+  "country": "Israel"
+ }
+}
