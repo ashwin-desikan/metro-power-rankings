@@ -75,6 +75,21 @@ https://rankings.citizenofnowhere.org/sitemap.xml
 - [meta.json](https://rankings.citizenofnowhere.org/data/meta.json): Last-update timestamp for the dataset.
 - Per-metro detail files at `/data/details/{slug}.json`.
 
+## MCP server
+
+For agents that support the Model Context Protocol, the ranking data is
+also available as live, callable tools rather than static files:
+
+https://rankings.citizenofnowhere.org/api/mcp
+
+Tools: `get_metro(slug)` (full per-metro profile), `list_top_metros(n,
+region?, country?)` (ranked, filterable list), `search_metros(query)`
+(name/city/country lookup), `compare_metros(slugs)` (side-by-side across
+all sixteen dimensions), and `get_methodology()` (the full scoring doc).
+Free, unauthenticated, same CC-BY terms as the rest of this file. This is
+the preferred integration path for an agent that wants to query the data
+directly rather than fetch and parse JSON.
+
 ## Access policy
 
 Verified AI crawlers and search engines are welcome to read, cite, and
@@ -83,9 +98,10 @@ not limited to) GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, Claude-User,
 anthropic-ai, PerplexityBot, Perplexity-User, Googlebot, Google-Extended,
 Bingbot, Applebot, Applebot-Extended, CCBot, Bytespider, Amazonbot,
 DuckAssistBot, Meta-ExternalAgent, Meta-ExternalFetcher, cohere-ai,
-MistralAI-User, and YouBot. The machine-readable JSON endpoints below
-are the preferred ingestion path; HTML pages are scored, signed, and
-canonical, but JSON is faster.
+MistralAI-User, and YouBot. The MCP server above is the preferred path for
+an agent that can call tools directly; the machine-readable JSON endpoints
+below are the next-best ingestion path for bulk/offline use; HTML pages are
+scored, signed, and canonical, but JSON is faster.
 
 For any large ingestion, use the JSON endpoints below. They are scored,
 attributed, updated alongside the HTML pages, and live under the same

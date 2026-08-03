@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { getAllMetros, getMetroDetail, formatDimValue, formatPop, formatMarketCap, formatGdp, type MetroDetail } from '@/lib/data';
+import { getAllMetros, getMetroDetail, formatDimValue, formatPop, formatGdp, type MetroDetail } from '@/lib/data';
 import { BASE_URL } from '@/lib/seo';
+import { DIMENSION_ORDER, MAX_COMPARE_METROS, computeWinners } from '@/lib/compare';
 import MetroPicker from './MetroPicker';
 
 const PAGE_TITLE = 'Compare Metros | Global Metro Power Rankings';
@@ -58,52 +59,7 @@ export async function generateMetadata({
 }
 
 const DEFAULT_SLUGS = ['new-york', 'london', 'tokyo', 'paris'];
-const MAX_METROS = 4;
-
-const DIMENSION_ORDER: { key: string; label: string; group: string }[] = [
-  { key: 'marketCap', label: 'Market Cap', group: 'Economy' },
-  { key: 'companies', label: 'Major Companies', group: 'Economy' },
-  { key: 'majorLeagueTeams', label: 'Major League Teams/Venues', group: 'Sports' },
-  { key: 'totalTeams', label: 'Total Teams', group: 'Sports' },
-  { key: 'majorSportingEvents', label: 'Major Sporting Events', group: 'Sports' },
-  { key: 'universities', label: 'Universities', group: 'Education' },
-  { key: 'topUniHospResearch', label: 'Top Universities, Hospitals, & Research', group: 'Education' },
-  { key: 'culturalEvents', label: 'Annual Cultural Events', group: 'Culture' },
-  { key: 'museumsLandmarks', label: 'Notable Museums & Landmarks', group: 'Culture' },
-  { key: 'luxuryStars', label: 'Michelin & Luxury Stars', group: 'Culture' },
-  { key: 'airportScore', label: 'Airport Score', group: 'Notable Infrastructure' },
-  { key: 'portsExchangesInfra', label: 'Ports, Exchanges, Infra', group: 'Notable Infrastructure' },
-  { key: 'metroStations', label: 'Metro Stations', group: 'Notable Infrastructure' },
-  { key: 'suburbStations', label: 'Commuter Rail', group: 'Notable Infrastructure' },
-  { key: 'trainHubs', label: 'Intercity Train Hubs', group: 'Notable Infrastructure' },
-  { key: 'skyscrapers', label: 'Skyscrapers (150m+)', group: 'Notable Infrastructure' },
-];
-
-function parseRank(rankStr: string | null | undefined): number {
-  if (!rankStr) return Infinity;
-  const clean = rankStr.replace(/^T-/, '');
-  const n = parseInt(clean, 10);
-  return Number.isFinite(n) ? n : Infinity;
-}
-
-function computeWinners(details: MetroDetail[]): Record<string, Set<string>> {
-  const winners: Record<string, Set<string>> = {};
-  if (details.length < 2) return winners;
-  for (const { key } of DIMENSION_ORDER) {
-    let bestRank = Infinity;
-    for (const d of details) {
-      const r = parseRank(d.dimRanks?.[key]);
-      if (r < bestRank) bestRank = r;
-    }
-    if (!Number.isFinite(bestRank)) continue;
-    const set = new Set<string>();
-    for (const d of details) {
-      if (parseRank(d.dimRanks?.[key]) === bestRank) set.add(d.metro.slug);
-    }
-    winners[key] = set;
-  }
-  return winners;
-}
+const MAX_METROS = MAX_COMPARE_METROS;
 
 function normalizeSlugs(raw: string | string[] | undefined): string[] {
   if (!raw) return DEFAULT_SLUGS;
