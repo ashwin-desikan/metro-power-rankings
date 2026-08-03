@@ -1734,3 +1734,79 @@ long inline string (256-char cap), and stays FAIL-OPEN; $-sign variables get
 eaten by the DC start_process layer (write .py helper files); the Credential
 Manager PAT works headlessly via `git credential fill` piped to the GitHub
 API (used to close PR #20 — never print it).
+
+
+---
+
+## 2026-08-03 LATE SESSION (Cowork cloud, Windows box) — five-wave ship: phones, FX history, share cards, UNL, leaders
+
+Shipped as four commits (data + ci [vercel skip], ONE app build, docs); full verify
+GREEN pre-push (typecheck non-incremental, all gates, vitest 26/26, build ~4,900 pages,
+dev server stopped). Detail lives in memory `project_session_2026_08_03_evening.md`;
+the short version:
+
+1. **/business mobile pass** — min-w-0 on grid children (four tabs had page-level
+   horizontal scroll at 390px), TableBox stickyCol={2} on every rank-first table,
+   value-before-metadata column order, SMCOL demotion for Country columns.
+2. **DESIGN-STANDARDS.md (repo root — docs/ is gitignored) + CLAUDE.md non-negotiables**
+   — phone-clean 390px, rank-first sticky col, value-first, share-card rules.
+   check-table-scroll gained RULE 2 (rank-first needs data-sticky-col) with a ratchet
+   baseline (scripts/table-scroll-rank-baseline.json, 45 files — shrink only), and a
+   FIX: its main-guard never matched on Windows, the gate was a silent no-op here.
+3. **Currency history** — /business/currencies/[code] for the 20 major cards; series
+   seeded from Ashwin's long-run dataset by scripts/business/build_fx_series.py
+   (era-clamped at redenominations, downsampled), extended daily by build_fx.py;
+   time-proportional SVG chart, era stats, peg notes. fx-series/*.json committed.
+4. **Daily refresh** — .github/workflows/business-daily-refresh.yml (05:50 UTC):
+   markets (Yahoo, keyless) + FX (EXCHANGERATE_API_KEY secret, 1 call/day). First
+   scheduled run: Tue 4 Aug 05:50 UTC. Markets "Week" column is now date-aware.
+5. **Share-card consistency** — app/opengraph-image.png + twitter-image.png file-
+   convention fallback (Next merges metadata SHALLOWLY: page og replaced layout og
+   incl. images — most pages shared imageless), 178 pages summary→summary_large_image,
+   expandable-map doubled title fixed.
+6. **CL + UNL (Ashwin's fixes)** — /sports/standings: Champions League CLOSED until
+   UCL_DRAW_UTC (27 Aug 2026 16:00 UTC, Nyon — verified); UEFA Nations League wired
+   end-to-end: api-football league 5 (VERIFIED live; 156 fixtures from 24 Sep),
+   INTERNATIONAL set + nation passthrough in refresh.py (nations bypass the club-
+   Lookup invariant, map to themselves), "international" key in the comps bundle,
+   NEW "International Football" standings section + /teams/national #nations-league
+   section (banner until data). **Arms on the mini's next refresh+export after pull.**
+7. **/leaders Since fix** — SINCE_FALLBACK (Brunei 1967, Jordan 1999, UAE 2006,
+   name-prefix keyed), FORCE_MONARCHY {brunei, jordan}, Kuwait CURATED_OVERRIDE
+   (real PM Ahmad Al-Abdullah Al-Sabah since 2024-05-15; Wikidata P6 stale), and the
+   same-person guard now FILL-ONLY merges instead of freezing entries. 203/204 dated;
+   Switzerland dateless by design. MCP server code review (task from v4): CLEAN;
+   compare-title dedupe + metros parse-once shipped.
+
+---
+
+# NEXT SESSION — START HERE v5 (supersedes v4)
+
+State at close: origin/main pushed (four commits, tip = the docs commit; the app
+commit is the ONE Vercel build). Verify was green pre-push. Overnight/first-thing
+checks, ~15 minutes:
+
+1. **Deploy**: confirm the app commit built READY + aliased (deploy-watch or Vercel
+   MCP). Spot-check production: /business on a phone width (no sideways scroll,
+   Money Table pins the metro name), /business/currencies/eur (chart renders, JPY
+   Max shows the 360 era), /sports/standings (CL collapsed), /teams/football
+   (Season archive banner), /leaders (Brunei/Jordan/Kuwait/UAE now dated — overlay
+   revalidates ~1h after push), share preview of any page (og image present,
+   large card, single title suffix).
+2. **business-daily-refresh** maiden run Tue 4 Aug 05:50 UTC — check Actions log +
+   the [vercel skip] data commit (markets/fx/fx-series). Then predictions 06:40,
+   honours Wed 08:10 (from the previous brief).
+3. **Mini**: after its next pull, refresh.py picks up UNL (league 5) — watch for
+   the "international" key in live-competitions-2026.json and the section arming
+   on /sports/standings + /teams/national. Nation passthrough means NO unmatched
+   alerts for national teams; if exit 3 fires anyway, read the alert list first.
+4. **Queue (unchanged from v4 otherwise)**: Sat 8 Aug drill = green Saturday #2
+   (mktcap ritual → full business chain; leaders should hold 107/107 and now
+   203/204 sinces); CFB hub ~10 Aug (preseason AP); UCL hub after the 27 Aug draw
+   (the standings gate opens itself); 13F CUSIP deep thread; ISR revalidate
+   stretch; Fairs Cup folding; FIFA CWC hub; CEO_MAP retirement.
+5. **House rules added this session**: DESIGN-STANDARDS.md governs every new hub
+   (mobile checklist + share cards); table-scroll baseline shrinks only; a gate
+   that prints nothing is broken, not passing (the Windows no-op lesson);
+   fx-series files are extended daily by build_fx.py — never hand-edit them
+   (reseed via build_fx_series.py --src if the deep history changes).
