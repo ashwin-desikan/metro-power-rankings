@@ -25,7 +25,9 @@
  },
  "Broadcom": {
   "entityQid": "Q555925",
-  "matchedLabel": "Broadcom"
+  "matchedLabel": "Broadcom",
+  "personQid": "Q47672827",
+  "personName": "Hock Tan"
  },
  "Saudi Aramco": {
   "entityQid": "Q679322",
@@ -61,7 +63,8 @@
  },
  "Micron Technology": {
   "entityQid": "Q1197548",
-  "matchedLabel": "Micron Technology"
+  "matchedLabel": "Micron Technology",
+  "personQid": "Q20714493"
  },
  "Walmart": {
   "entityQid": "Q483551",
@@ -69,7 +72,8 @@
  },
  "SK Hynix": {
   "entityQid": "Q370719",
-  "matchedLabel": "SK Hynix"
+  "matchedLabel": "SK Hynix",
+  "personName": "Kwak Noh-jung"
  },
  "AMD": {
   "entityQid": "Q128896",
@@ -85,7 +89,8 @@
  },
  "ASML": {
   "entityQid": "Q297879",
-  "matchedLabel": "ASML Holding"
+  "matchedLabel": "ASML Holding",
+  "personQid": "Q138786664"
  },
  "Johnson & Johnson": {
   "entityQid": "Q333718",
@@ -93,7 +98,8 @@
  },
  "CXMT": {
   "entityQid": "Q60787452",
-  "matchedLabel": "Changxin Memory Technologies"
+  "matchedLabel": "Changxin Memory Technologies",
+  "personQid": "Q140590016"
  },
  "Tencent": {
   "entityQid": "Q860580",
@@ -109,7 +115,8 @@
  },
  "Intel": {
   "entityQid": "Q248",
-  "matchedLabel": "Intel"
+  "matchedLabel": "Intel",
+  "personQid": "Q19561225"
  },
  "AbbVie": {
   "entityQid": "Q14662364",
@@ -125,11 +132,13 @@
  },
  "China Construction Bank": {
   "entityQid": "Q26299",
-  "matchedLabel": "China Construction Bank"
+  "matchedLabel": "China Construction Bank",
+  "personQid": "Q105717775"
  },
  "Applied Materials": {
   "entityQid": "Q621610",
-  "matchedLabel": "Applied Materials"
+  "matchedLabel": "Applied Materials",
+  "personQid": "Q18685726"
  },
  "Chevron": {
   "entityQid": "Q319642",
@@ -141,15 +150,18 @@
  },
  "UnitedHealth": {
   "entityQid": "Q2103926",
-  "matchedLabel": "UnitedHealth Group"
+  "matchedLabel": "UnitedHealth Group",
+  "personQid": "Q2344783"
  },
  "Caterpillar": {
   "entityQid": "Q459965",
-  "matchedLabel": "Caterpillar Inc."
+  "matchedLabel": "Caterpillar Inc.",
+  "personName": "Joe Creed"
  },
  "Oracle": {
   "entityQid": "Q19900",
-  "matchedLabel": "Oracle Corporation"
+  "matchedLabel": "Oracle Corporation",
+  "personName": "Clay Magouyrk & Mike Sicilia"
  },
  "General Electric": {
   "entityQid": "Q54173",
@@ -157,27 +169,33 @@
  },
  "Lam Research": {
   "entityQid": "Q1342041",
-  "matchedLabel": "Lam Research"
+  "matchedLabel": "Lam Research",
+  "personName": "Tim Archer"
  },
  "HSBC": {
   "entityQid": "Q190464",
-  "matchedLabel": "HSBC"
+  "matchedLabel": "HSBC",
+  "personQid": "Q130464757"
  },
  "Agricultural Bank of China": {
   "entityQid": "Q26298",
-  "matchedLabel": "Agricultural Bank of China"
+  "matchedLabel": "Agricultural Bank of China",
+  "personQid": "Q28412923"
  },
  "Roche": {
   "entityQid": "Q2160221",
-  "matchedLabel": "Roche"
+  "matchedLabel": "Roche",
+  "personQid": "Q117122728"
  },
  "ICBC": {
   "entityQid": "Q26463",
-  "matchedLabel": "Industrial and Commercial Bank of China"
+  "matchedLabel": "Industrial and Commercial Bank of China",
+  "personQid": "Q105717721"
  },
  "Procter & Gamble": {
   "entityQid": "Q212405",
-  "matchedLabel": "Procter & Gamble"
+  "matchedLabel": "Procter & Gamble",
+  "personQid": "Q139042808"
  },
  "Home Depot": {
   "entityQid": "Q864407",
@@ -188,8 +206,8 @@
   "matchedLabel": "Morgan Stanley"
  },
  "Merck": {
-  "entityQid": "Q156959",
-  "matchedLabel": "Merck KGaA"
+  "entityQid": "Q247489",
+  "matchedLabel": "Merck & Co."
  },
  "Goldman Sachs": {
   "entityQid": "Q193326",
@@ -205,11 +223,13 @@
  },
  "The Vanguard Group": {
   "entityQid": "Q849363",
-  "matchedLabel": "The Vanguard Group"
+  "matchedLabel": "The Vanguard Group",
+  "personName": "Salim Ramji"
  },
  "State Street Global Advisors": {
   "entityQid": "Q7603552",
-  "matchedLabel": "State Street Global Advisors"
+  "matchedLabel": "State Street Global Advisors",
+  "personName": "Yie-Hsin Hung"
  },
  "Fidelity Investments": {
   "entityQid": "Q1411292",
@@ -217,15 +237,18 @@
  },
  "T. Rowe Price": {
   "entityQid": "Q3511946",
-  "matchedLabel": "T. Rowe Price"
+  "matchedLabel": "T. Rowe Price",
+  "personName": "Rob Sharps"
  },
  "Franklin Templeton": {
   "entityQid": "Q744683",
-  "matchedLabel": "Franklin Templeton Investments"
+  "matchedLabel": "Franklin Templeton Investments",
+  "personQid": "Q116858077"
  },
  "Invesco": {
   "entityQid": "Q522617",
-  "matchedLabel": "Invesco"
+  "matchedLabel": "Invesco",
+  "personQid": "Q115655498"
  },
  "Amundi": {
   "entityQid": "Q2844522",
@@ -237,15 +260,18 @@
  },
  "Bridgewater Associates": {
   "entityQid": "Q652431",
-  "matchedLabel": "Bridgewater Associates"
+  "matchedLabel": "Bridgewater Associates",
+  "personQid": "Q123434602"
  },
  "Citadel LLC": {
   "entityQid": "Q2974366",
-  "matchedLabel": "Citadel Enterprise Americas LLC"
+  "matchedLabel": "Citadel Enterprise Americas LLC",
+  "personQid": "Q3195170"
  },
  "Millennium Management": {
   "entityQid": "Q65089884",
-  "matchedLabel": "Millennium Management"
+  "matchedLabel": "Millennium Management",
+  "personQid": "Q16120832"
  },
  "Renaissance Technologies": {
   "entityQid": "Q3424738",
@@ -253,15 +279,18 @@
  },
  "Two Sigma": {
   "entityQid": "Q18355352",
-  "matchedLabel": "Two Sigma"
+  "matchedLabel": "Two Sigma",
+  "personQid": "Q115671576"
  },
  "AQR Capital Management": {
-  "entityQid": null,
-  "matchedLabel": ""
+  "entityQid": "Q4653518",
+  "matchedLabel": "AQR Capital Management",
+  "personQid": "Q5132528"
  },
  "Man Group": {
   "entityQid": "Q1407658",
-  "matchedLabel": "Man Group"
+  "matchedLabel": "Man Group",
+  "personName": "Robyn Grew"
  },
  "Blackstone Inc.": {
   "entityQid": "Q880942",
@@ -269,7 +298,8 @@
  },
  "KKR & Co.": {
   "entityQid": "Q1570773",
-  "matchedLabel": "Kohlberg Kravis Roberts"
+  "matchedLabel": "Kohlberg Kravis Roberts",
+  "personName": "Joseph Bae & Scott Nuttall"
  },
  "Apollo Global Management": {
   "entityQid": "Q619121",
@@ -281,11 +311,13 @@
  },
  "Brookfield Asset Management": {
   "entityQid": "Q133824445",
-  "matchedLabel": "Brookfield Asset Management"
+  "matchedLabel": "Brookfield Asset Management",
+  "personQid": "Q138289362"
  },
  "Ares Management": {
   "entityQid": "Q4789079",
-  "matchedLabel": "Ares Management"
+  "matchedLabel": "Ares Management",
+  "personName": "Michael Arougheti"
  },
  "Norges Bank Investment Management": {
   "entityQid": "Q11992019",
@@ -293,15 +325,18 @@
  },
  "GIC (Singaporean sovereign wealth fund)": {
   "entityQid": "Q539627",
-  "matchedLabel": "GIC Private Limited"
+  "matchedLabel": "GIC Private Limited",
+  "personQid": "Q115558341"
  },
  "Temasek Holdings": {
   "entityQid": "Q762479",
-  "matchedLabel": "Temasek Holdings"
+  "matchedLabel": "Temasek Holdings",
+  "personQid": "Q108752201"
  },
  "Abu Dhabi Investment Authority": {
   "entityQid": "Q334956",
-  "matchedLabel": "Abu Dhabi Investment Authority"
+  "matchedLabel": "Abu Dhabi Investment Authority",
+  "personQid": "Q5644454"
  },
  "Public Investment Fund": {
   "entityQid": "Q12220298",
@@ -309,19 +344,23 @@
  },
  "Qatar Investment Authority": {
   "entityQid": "Q1571175",
-  "matchedLabel": "Qatar Investment Authority"
+  "matchedLabel": "Qatar Investment Authority",
+  "personQid": "Q115671544"
  },
  "Mubadala Investment Company": {
   "entityQid": "Q55645212",
-  "matchedLabel": "Mubadala Investment Company"
+  "matchedLabel": "Mubadala Investment Company",
+  "personQid": "Q515133"
  },
  "CPP Investments": {
   "entityQid": "Q5013693",
-  "matchedLabel": "CPP Investment Board"
+  "matchedLabel": "CPP Investment Board",
+  "personName": "John Graham"
  },
  "CalPERS": {
   "entityQid": "Q2933412",
-  "matchedLabel": "CalPERS"
+  "matchedLabel": "CalPERS",
+  "personQid": "Q117221905"
  },
  "Federal Reserve": {
   "entityQid": "Q53536",
@@ -341,19 +380,23 @@
  },
  "People's Bank of China": {
   "entityQid": "Q249203",
-  "matchedLabel": "People's Bank of China"
+  "matchedLabel": "People's Bank of China",
+  "personQid": "Q9309080"
  },
  "Reserve Bank of India": {
   "entityQid": "Q944085",
-  "matchedLabel": "Reserve Bank of India"
+  "matchedLabel": "Reserve Bank of India",
+  "personQid": "Q131417042"
  },
  "Swiss National Bank": {
   "entityQid": "Q597394",
-  "matchedLabel": "Swiss National Bank"
+  "matchedLabel": "Swiss National Bank",
+  "personQid": "Q117352902"
  },
  "Bank of Canada": {
   "entityQid": "Q806703",
-  "matchedLabel": "Bank of Canada"
+  "matchedLabel": "Bank of Canada",
+  "personQid": "Q15127104"
  },
  "Reserve Bank of Australia": {
   "entityQid": "Q1506724",
@@ -361,15 +404,18 @@
  },
  "Central Bank of Brazil": {
   "entityQid": "Q806186",
-  "matchedLabel": "Central Bank of Brazil"
+  "matchedLabel": "Central Bank of Brazil",
+  "personQid": "Q118333955"
  },
  "Bank of Mexico": {
   "entityQid": "Q806208",
-  "matchedLabel": "Bank of Mexico"
+  "matchedLabel": "Bank of Mexico",
+  "personQid": "Q109911726"
  },
  "Bank of Korea": {
   "entityQid": "Q485531",
-  "matchedLabel": "Bank of Korea"
+  "matchedLabel": "Bank of Korea",
+  "personQid": "Q5962488"
  },
  "Central Bank of Russia": {
   "entityQid": "Q806651",
@@ -377,15 +423,18 @@
  },
  "Central Bank of the Republic of Turkey": {
   "entityQid": "Q580829",
-  "matchedLabel": "Central Bank of the Republic of Turkey"
+  "matchedLabel": "Central Bank of the Republic of Turkey",
+  "personQid": "Q102691647"
  },
  "Saudi Central Bank": {
   "entityQid": "Q2605574",
-  "matchedLabel": "Saudi Central Bank"
+  "matchedLabel": "Saudi Central Bank",
+  "personQid": "Q112875024"
  },
  "Monetary Authority of Singapore": {
   "entityQid": "Q2661296",
-  "matchedLabel": "Monetary Authority of Singapore"
+  "matchedLabel": "Monetary Authority of Singapore",
+  "personName": "Chia Der Jiun"
  },
  "Hong Kong Monetary Authority": {
   "entityQid": "Q1595286",
@@ -401,7 +450,8 @@
  },
  "Bank Indonesia": {
   "entityQid": "Q1906161",
-  "matchedLabel": "Bank Indonesia"
+  "matchedLabel": "Bank Indonesia",
+  "personQid": "Q85990660"
  },
  "Bank of Israel": {
   "entityQid": "Q244411",

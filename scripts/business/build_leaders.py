@@ -14,7 +14,9 @@ QID resolution happens by name ONCE via wbsearchentities and is cached in
 scripts/business/data/leader-qids.json (committed): review the log line for
 each first-time match and hand-correct that file if the search grabbed the
 wrong entity ("entityQid" for the org, optional "personQid" to force a
-holder). Uses the Wikidata REST API, not WDQS, so SPARQL outages don't bite.
+holder, or "personName" to force a display name for people who have no
+Wikidata item at all - co-CEO pairs go here too). Uses the Wikidata REST
+API, not WDQS, so SPARQL outages don't bite.
 
 Every run diffs current holders against public/data/business/leaders.json and
 appends person-level changes to leaders-changes.json before overwriting - the
@@ -137,7 +139,11 @@ def build_rows(targets, kind, cache, extra_fields):
     rows = []
     for t in targets:
         pq, since, prop = t["_p"]
-        person = label_of(people.get(pq, {})) if pq else ""
+        manual_name = cache.get(t["name"], {}).get("personName")
+        if manual_name:
+            person, pq, since, prop = manual_name, None, "", "manual"
+        else:
+            person = label_of(people.get(pq, {})) if pq else ""
         row = {"entity": t["name"], "person": person, "personQid": pq or "",
                "since": since, "via": prop}
         for f in extra_fields:
