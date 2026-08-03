@@ -1,18 +1,18 @@
 {
- "built": "2026-08-01",
+ "built": "2026-08-03",
  "method": "Recency-weighted poll averages; UK proportional swing on GE2024 constituency results with Monte Carlo error; US seats-votes fit on 2012-2024; NZ Sainte-Laguë; IL seat-poll averages; BR/FR round averages. Full method notes on the page.",
  "uk": {
   "electionAssumed": "2029-05-03",
   "average": {
-   "con": 20.5,
-   "lab": 23.1,
-   "ld": 11.5,
-   "ref": 23.7,
-   "grn": 11.5,
+   "con": 20.1,
+   "lab": 23.7,
+   "ld": 11.6,
+   "ref": 23.6,
+   "grn": 11.4,
    "snp": 3.1
   },
   "pollsters": 14,
-  "latestPollDate": "2026-07-30",
+  "latestPollDate": "2026-07-31",
   "trend": [
    {
     "date": "2024-07-12",
@@ -535,45 +535,45 @@
     "snp": 2.6
    },
    {
-    "date": "2026-07-30",
-    "n": 1,
-    "con": 20.0,
-    "lab": 28.0,
-    "ld": 10.0,
+    "date": "2026-07-31",
+    "n": 2,
+    "con": 18.5,
+    "lab": 27.5,
+    "ld": 11.0,
     "ref": 23.0,
-    "grn": 10.0,
+    "grn": 11.0,
     "snp": 3.0
    }
   ],
   "sim": {
    "seats": {
     "con": {
-     "median": 102,
+     "median": 94,
      "lo": 0,
-     "hi": 356
+     "hi": 347
     },
     "lab": {
-     "median": 147,
-     "lo": 2,
-     "hi": 418
+     "median": 158,
+     "lo": 4,
+     "hi": 428
     },
     "ld": {
-     "median": 71,
+     "median": 72,
      "lo": 0,
-     "hi": 115
+     "hi": 116
     },
     "ref": {
-     "median": 174,
+     "median": 171,
      "lo": 2,
-     "hi": 400
+     "hi": 399
     },
     "grn": {
-     "median": 17,
+     "median": 15,
      "lo": 1,
-     "hi": 103
+     "hi": 101
     },
     "snp": {
-     "median": 39,
+     "median": 38,
      "lo": 0,
      "hi": 57
     },
@@ -591,19 +591,19 @@
    "niSeats": 18,
    "majorityNeeds": 326,
    "pLargest": {
-    "con": 26.9,
-    "lab": 30.8,
+    "con": 24.9,
+    "lab": 33.6,
     "ld": 0.1,
-    "ref": 41.8,
+    "ref": 41.0,
     "grn": 0.4
    },
    "pMajority": {
-    "con": 8.9,
-    "lab": 15.0,
-    "ref": 18.7,
+    "con": 7.8,
+    "lab": 17.0,
+    "ref": 18.3,
     "grn": 0.0
    },
-   "pHung": 57.4,
+   "pHung": 56.9,
    "monthsOut": 33.0,
    "sims": 4000,
    "nat2024": {
@@ -711,7 +711,7 @@
     ]
    ]
   },
-  "monthsOut": 3.1,
+  "monthsOut": 3.0,
   "sims": 20000,
   "election": "2026-11-03",
   "sources": [
@@ -738,7 +738,7 @@
     "lo": 46,
     "hi": 53
    },
-   "pDemControl": 34.9,
+   "pDemControl": 35.1,
    "competitive": [
     {
      "state": "Ohio",
@@ -764,9 +764,9 @@
     {
      "state": "Michigan",
      "held": "D",
-     "score": 0.44,
+     "score": 0.5,
      "retiring": true,
-     "pDem": 63.0
+     "pDem": 64.0
     },
     {
      "state": "Texas",
@@ -919,9 +919,9 @@
     "hi": 8
    }
   },
-  "pRightBloc": 55.3,
-  "pLeftBloc": 10.8,
-  "pNeither": 33.9,
+  "pRightBloc": 55.4,
+  "pLeftBloc": 10.7,
+  "pNeither": 34.0,
   "monthsOut": 2.5,
   "sims": 10000,
   "sources": [
@@ -995,7 +995,7 @@
    "avg": 49.0,
    "pMajority": 0.0
   },
-  "monthsOut": 2.9,
+  "monthsOut": 2.8,
   "sims": 8000,
   "sources": [
    "Wikipedia: Opinion polling for the 2026 Israeli legislative election (CC BY-SA 4.0)"
@@ -1006,13 +1006,13 @@
   "firstRound": {
    "shares": {
     "Lula": 41.2,
-    "F. Bolsonaro": 33.1,
-    "Caiado": 4.8,
-    "Santos": 4.5,
+    "F. Bolsonaro": 33.2,
+    "Caiado": 4.9,
+    "Santos": 4.6,
     "Zema": 3.0,
     "Cury": 1.7
    },
-   "polls": 18,
+   "polls": 17,
    "latest": "2026-07-29"
   },
   "runoffs": [
@@ -1021,12 +1021,12 @@
     "b": "F. Bolsonaro",
     "avgA": 46.7,
     "avgB": 42.1,
-    "pA": 85.8,
-    "polls": 53,
+    "pA": 85.9,
+    "polls": 52,
     "latest": "2026-07-29"
    }
   ],
-  "monthsOut": 2.1,
+  "monthsOut": 2.0,
   "sources": [
    "Wikipedia: Opinion polling for the 2026 Brazilian presidential election (CC BY-SA 4.0)"
   ]
@@ -1125,7 +1125,7 @@
     "latest": "2026-03-27"
    }
   ],
-  "monthsOut": 8.3,
+  "monthsOut": 8.2,
   "sources": [
    "Wikipedia: Opinion polling for the 2027 French presidential election (CC BY-SA 4.0)"
   ]
