@@ -117,6 +117,29 @@ explicit — apply it before touching any refresh script:
 
 ## Frontend design standards (non-negotiable)
 
+- **Read `DESIGN-STANDARDS.md` before building or redesigning any hub or
+  page.** It is the full look-and-feel contract (skeleton, nav idioms,
+  theme tokens, table rules, mobile checklist). The bullets here are only
+  the non-negotiable core.
+- **Phone-clean at 390px, always: no page-level horizontal scroll.** Any
+  grid child containing a table needs `min-w-0` (grid items default to
+  `min-width:auto`, so a wide table otherwise drags the whole page
+  sideways — /business shipped this broken on four tabs, 2026-08-03).
+- **Rank-first tables pin the identity column on phones.** A table whose
+  first header is `#` must declare `data-sticky-col="2"` (or
+  `stickyCol={2}` on TableBox) so swiping keeps the name visible, not the
+  rank. Enforced by `check:table-scroll` rule 2 against the ratchet
+  baseline `scripts/table-scroll-rank-baseline.json` — shrink it as files
+  get fixed, never grow it.
+- **Value before metadata on ranked boards.** The headline value column
+  sits right after the identity column; low-priority columns (Country and
+  similar) take `hidden sm:table-cell` (`SMCOL`), and never in a table's
+  first two columns.
+- **One share card everywhere.** Titles never hardcode the site-name suffix
+  (the layout template appends it); twitter card is `summary_large_image`,
+  never `summary`; `app/opengraph-image.png`/`twitter-image.png` are the
+  sitewide fallback share image and must not be deleted. Full rules in
+  DESIGN-STANDARDS.md "Link sharing / social cards".
 - **The site nav (`app/SiteNav.tsx`) is `sticky top-0`, never `fixed`.** It
   occupies its own layout space, so page content can never render underneath
   it — on any viewport. Consequence for every page, new or redesigned: start

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getOwners, type OwnerGiant } from "@/lib/business";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import BusinessNav from "../BusinessNav";
-import { MONO, CARD, TH, THR, TD, TDR, fmtCap, MetroLink, SectionHead, Crumbs, TabHeader, TableBox } from "../ui";
+import { MONO, CARD, TH, THR, TD, TDR, SMCOL, fmtCap, MetroLink, SectionHead, Crumbs, TabHeader, TableBox } from "../ui";
 
 export const revalidate = 21600;
 
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description: DESC,
   alternates: { canonical: PATH },
   openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
-  twitter: { card: "summary", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
+  twitter: { card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
 };
 
 function quarterLabel(asOf: string): string {
@@ -94,14 +94,14 @@ export default async function OwnersPage() {
               title="Asset-manager capitals"
               sub="Metros ranked by the 13F value their institutions manage. New York is the vault of the world; the surprise is how much of it sits in Vanguard's Philadelphia and fund-country Boston."
             />
-            <TableBox>
+            <TableBox stickyCol={2}>
               <thead>
                 <tr className="text-left" style={{ background: "var(--bg-card)" }}>
                   <th className={THR}>#</th>
                   <th className={TH}>Metro</th>
-                  <th className={TH}>Country</th>
                   <th className={THR}>Managed value</th>
                   <th className={THR}>Filers</th>
+                  <th className={`${TH} ${SMCOL}`}>Country</th>
                 </tr>
               </thead>
               <tbody>
@@ -109,9 +109,9 @@ export default async function OwnersPage() {
                   <tr key={c.metroSlug} className="border-t" style={{ borderColor: "var(--border)" }}>
                     <td className={TDR} style={{ ...MONO, color: "var(--text-dim)" }}>{i + 1}</td>
                     <td className={`${TD} font-semibold whitespace-nowrap`}><MetroLink name={c.metro} slug={c.metroSlug} /></td>
-                    <td className={`${TD} text-[var(--text-muted)] whitespace-nowrap`}>{c.country}</td>
                     <td className={TDR} style={MONO}>{fmtCap(c.value)}</td>
                     <td className={TDR} style={MONO}>{c.filers.toLocaleString()}</td>
+                    <td className={`${TD} ${SMCOL} text-[var(--text-muted)] whitespace-nowrap`}>{c.country}</td>
                   </tr>
                 ))}
               </tbody>
@@ -123,14 +123,14 @@ export default async function OwnersPage() {
               title="The manager league table"
               sub="The biggest institutional managers on Earth by reported 13F value, with the metro each files from. A consolidated filing counts once, at headquarters."
             />
-            <TableBox>
+            <TableBox stickyCol={2}>
               <thead>
                 <tr className="text-left" style={{ background: "var(--bg-card)" }}>
                   <th className={THR}>#</th>
                   <th className={TH}>Manager</th>
-                  <th className={TH}>Metro</th>
                   <th className={THR}>Reported value</th>
                   <th className={THR}>Positions</th>
+                  <th className={TH}>Metro</th>
                 </tr>
               </thead>
               <tbody>
@@ -138,11 +138,11 @@ export default async function OwnersPage() {
                   <tr key={m.cik} className="border-t" style={{ borderColor: "var(--border)" }}>
                     <td className={TDR} style={{ ...MONO, color: "var(--text-dim)" }}>{i + 1}</td>
                     <td className={`${TD} font-semibold`}>{m.name}</td>
+                    <td className={TDR} style={MONO}>{fmtCap(m.value)}</td>
+                    <td className={TDR} style={MONO}>{m.positions.toLocaleString()}</td>
                     <td className={`${TD} whitespace-nowrap`}>
                       {m.metro ? <MetroLink name={m.metro} slug={m.metroSlug} /> : <span className="text-[var(--text-muted)]">{m.city}</span>}
                     </td>
-                    <td className={TDR} style={MONO}>{fmtCap(m.value)}</td>
-                    <td className={TDR} style={MONO}>{m.positions.toLocaleString()}</td>
                   </tr>
                 ))}
               </tbody>
@@ -154,7 +154,7 @@ export default async function OwnersPage() {
               title="What everyone owns"
               sub="Stocks ranked by how many separate institutions report a position. Share classes count separately - both Alphabet lines make the list on their own."
             />
-            <TableBox>
+            <TableBox stickyCol={2}>
               <thead>
                 <tr className="text-left" style={{ background: "var(--bg-card)" }}>
                   <th className={THR}>#</th>

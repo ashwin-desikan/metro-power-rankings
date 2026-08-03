@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: desc,
     alternates: { canonical: `/teams/ipl/${f.slug}` },
     openGraph: { title: `${f.name} | ${SITE_NAME}`, description: desc, url, type: "website" },
-    twitter: { card: "summary", title: `${f.name} | ${SITE_NAME}`, description: desc },
+    twitter: { card: "summary_large_image", title: `${f.name} | ${SITE_NAME}`, description: desc },
   };
 }
 

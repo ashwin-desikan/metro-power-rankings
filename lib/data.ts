@@ -58,9 +58,18 @@ export interface MetroDetail {
 
 const dataDir = join(process.cwd(), "public", "data");
 
+// Parsed once per process (same idea as _relocations below): metros.json is
+// ~1.6MB and the MCP route otherwise re-parses it on every list/search call.
+// The bundle ships a fixed snapshot per deploy, so caching adds no staleness.
+// Callers get a fresh top-level array (some sort in place); row objects are
+// shared and must not be mutated.
+let _metros: import("./shared").Metro[] | null = null;
 export function getAllMetros() {
-  const raw = readFileSync(join(dataDir, "metros.json"), "utf-8");
-  return JSON.parse(raw) as import("./shared").Metro[];
+  if (_metros === null) {
+    const raw = readFileSync(join(dataDir, "metros.json"), "utf-8");
+    _metros = JSON.parse(raw) as import("./shared").Metro[];
+  }
+  return _metros.slice();
 }
 
 export function getRegions() {

@@ -67,7 +67,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: hDesc,
       alternates: { canonical: `/teams/nhl/${h.slug}` },
       openGraph: { title: `${name} (defunct) | ${SITE_NAME}`, description: hDesc, url: hUrl, type: "website" },
-      twitter: { card: "summary", title: `${name} (defunct) | ${SITE_NAME}`, description: hDesc },
+      twitter: { card: "summary_large_image", title: `${name} (defunct) | ${SITE_NAME}`, description: hDesc },
     };
   }
   const url = `${BASE_URL}/teams/nhl/${f.slug}`;

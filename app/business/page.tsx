@@ -3,7 +3,7 @@ import { getBusiness } from "@/lib/business";
 import { formatMarketCap } from "@/lib/shared";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import BusinessNav from "./BusinessNav";
-import { MONO, CARD, TH, THR, TD, TDR, fmtT, MetroLink, SectionHead, Crumbs, TabHeader, TableBox } from "./ui";
+import { MONO, CARD, TH, THR, TD, TDR, SMCOL, fmtT, MetroLink, SectionHead, Crumbs, TabHeader, TableBox } from "./ui";
 
 // Business of the Metros - hub overview. The Money Table, the race to $5T,
 // weekly movers and country/region rollups; the deeper boards live in the
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description: DESC,
   alternates: { canonical: PATH },
   openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
-  twitter: { card: "summary", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
+  twitter: { card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
 };
 
 export default async function BusinessOverview() {
@@ -70,14 +70,14 @@ export default async function BusinessOverview() {
               title="The Money Table"
               sub="Metros ranked by the combined market value of the companies headquartered there - the corporate league table to sit beside the sporting one."
             />
-            <TableBox>
+            <TableBox stickyCol={2}>
               <thead>
                 <tr className="text-left" style={{ background: "var(--bg-card)" }}>
                   <th className={THR}>#</th>
                   <th className={TH}>Metro</th>
-                  <th className={TH}>Country</th>
                   <th className={THR}>Market cap</th>
                   <th className={THR}>Companies</th>
+                  <th className={`${TH} ${SMCOL}`}>Country</th>
                   <th className={TH}>Led by</th>
                 </tr>
               </thead>
@@ -86,9 +86,9 @@ export default async function BusinessOverview() {
                   <tr key={m.name} className="border-t" style={{ borderColor: "var(--border)" }}>
                     <td className={TDR} style={{ ...MONO, color: "var(--text-dim)" }}>{i + 1}</td>
                     <td className={`${TD} font-semibold whitespace-nowrap`}><MetroLink name={m.name} slug={m.slug} /></td>
-                    <td className={`${TD} text-[var(--text-muted)] whitespace-nowrap`}>{m.country}</td>
                     <td className={TDR} style={{ ...MONO, color: i < 3 ? "var(--accent)" : undefined }}>{formatMarketCap(m.cap)}</td>
                     <td className={TDR} style={MONO}>{m.count.toLocaleString()}</td>
+                    <td className={`${TD} ${SMCOL} text-[var(--text-muted)] whitespace-nowrap`}>{m.country}</td>
                     <td className={`${TD} text-[var(--text-muted)]`}>{m.top.slice(0, 2).map((t) => t.name).join(" · ")}</td>
                   </tr>
                 ))}
@@ -169,7 +169,7 @@ export default async function BusinessOverview() {
                 </span>
               ))}
             </div>
-            <TableBox>
+            <TableBox stickyCol={2}>
               <thead>
                 <tr className="text-left" style={{ background: "var(--bg-card)" }}>
                   <th className={THR}>#</th>

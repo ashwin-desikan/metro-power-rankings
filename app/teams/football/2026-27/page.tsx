@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   description: DESC,
   alternates: { canonical: PATH },
   openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
-  twitter: { card: "summary", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
+  twitter: { card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
 };
 
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;

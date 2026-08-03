@@ -80,7 +80,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: desc,
       alternates: { canonical: `/teams/mlb/${slug}` },
       openGraph: { title: `${name} | ${SITE_NAME}`, description: desc, url, type: "website" },
-      twitter: { card: "summary", title: `${name} | ${SITE_NAME}`, description: desc },
+      twitter: { card: "summary_large_image", title: `${name} | ${SITE_NAME}`, description: desc },
     };
   }
   return { title: "Franchise not found" };

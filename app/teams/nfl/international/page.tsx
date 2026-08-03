@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     url: PAGE_URL,
     type: "website",
   },
-  twitter: { card: "summary", title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION },
+  twitter: { card: "summary_large_image", title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION },
 };
 
 function rec(w: number, l: number, t: number) {

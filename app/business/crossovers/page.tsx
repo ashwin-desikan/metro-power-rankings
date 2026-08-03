@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description: DESC,
   alternates: { canonical: PATH },
   openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
-  twitter: { card: "summary", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
+  twitter: { card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
 };
 
 export default async function CrossoversPage() {
@@ -49,7 +49,7 @@ export default async function CrossoversPage() {
             { title: "Sporting giants, corporate minnows", rows: cross.sportsOverBusiness },
             { title: "Corporate giants, sporting minnows", rows: cross.businessOverSports },
           ].map((board) => (
-            <div key={board.title}>
+            <div key={board.title} className="min-w-0">
               <h3 className="text-sm font-bold mb-2">{board.title}</h3>
               <TableBox>
                 <thead>
@@ -86,7 +86,7 @@ export default async function CrossoversPage() {
           title="The state of money"
           sub="US states by the market value headquartered in their metros (each metro counts toward its primary state). The same states whose politics this site tracks all year."
         />
-        <TableBox>
+        <TableBox stickyCol={2}>
           <thead>
             <tr className="text-left" style={{ background: "var(--bg-card)" }}>
               <th className={THR}>#</th>

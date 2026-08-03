@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description: PAGE_DESCRIPTION,
   alternates: { canonical: PAGE_PATH },
   openGraph: { title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION, url: `${BASE_URL}${PAGE_PATH}`, type: "website" },
-  twitter: { card: "summary", title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION },
+  twitter: { card: "summary_large_image", title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION },
 };
 
 function natLink(name: string | null, slug: string | null, opts?: { star?: boolean }) {

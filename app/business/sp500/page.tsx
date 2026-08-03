@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: DESC,
   alternates: { canonical: PATH },
   openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
-  twitter: { card: "summary", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
+  twitter: { card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
 };
 
 export default async function Sp500Page() {
@@ -58,7 +58,7 @@ export default async function Sp500Page() {
       ) : (
         <>
           <section className="mb-10 grid gap-4 lg:grid-cols-2">
-            <div>
+            <div className="min-w-0">
               <h3 className="text-sm font-bold mb-2">Seats by metro</h3>
               <TableBox>
                 <thead>
@@ -81,7 +81,7 @@ export default async function Sp500Page() {
                 </tbody>
               </TableBox>
             </div>
-            <div>
+            <div className="min-w-0">
               <h3 className="text-sm font-bold mb-2">Value by sector</h3>
               <TableBox>
                 <thead>
@@ -113,7 +113,7 @@ export default async function Sp500Page() {
           </section>
 
           <section className="mb-6 grid gap-4 lg:grid-cols-2">
-            <div>
+            <div className="min-w-0">
               <h3 className="text-sm font-bold mb-2">The survivors</h3>
               <p className="text-xs text-[var(--text-muted)] mb-2">Longest-tenured members, by date added.</p>
               <TableBox>
@@ -128,7 +128,7 @@ export default async function Sp500Page() {
                 </tbody>
               </TableBox>
             </div>
-            <div>
+            <div className="min-w-0">
               <h3 className="text-sm font-bold mb-2">The turnstile</h3>
               <p className="text-xs text-[var(--text-muted)] mb-2">Index changes, newest first ({changes.length} on record).</p>
               <div className="rounded-xl border divide-y max-h-[480px] overflow-y-auto" style={{ borderColor: "var(--border)" }}>

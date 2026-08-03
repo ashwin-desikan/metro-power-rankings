@@ -13,7 +13,7 @@ import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
 import { getLiveCflStandings } from "@/lib/cflStandings";
 import { getLiveF1Standings } from "@/lib/f1Standings";
 import { getNpbStandings } from "@/lib/npbStandings";
-import { getClubStandings, getClubCompetitions, type LiveLeague, type LiveComp, type LiveRow, type LiveFixture, type LiveTeamRef } from "@/lib/clubFootballLive";
+import { getClubStandings, getClubCompetitions, getInternationalComps, type LiveLeague, type LiveComp, type LiveRow, type LiveFixture, type LiveTeamRef } from "@/lib/clubFootballLive";
 import { getFootyLiveStandings } from "@/lib/_footyStandings";
 import { getLiveGolfMajor } from "@/lib/golfLeaderboard";
 import { getLiveTennisSlam } from "@/lib/tennisDraw";
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   description: DESC,
   alternates: { canonical: PATH },
   openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
-  twitter: { card: "summary", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
+  twitter: { card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
 };
 
 const cardStyle = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
@@ -189,7 +189,7 @@ function LeagueAccordion({ block }: { block: Block }) {
             </div>
 
             <div className="overflow-x-auto hidden sm:block">
-              <table className="w-full text-xs min-w-[320px]">
+              <table className="w-full text-xs min-w-[320px]" data-sticky-col="2">
                 <thead>
                   <tr className="text-left text-[var(--text-muted)]">
                     <th className="py-1 px-1.5 font-medium text-right">#</th>
@@ -454,6 +454,51 @@ function domesticLiveBlock(league: LiveLeague | undefined, label: string): Block
   return { league: label, href: "/teams/football/2026-27", note: "live", open: true, subTables };
 }
 
+// ---- UEFA Nations League (International Football section) ---------------
+// Fed by the same api-football bundle as the club comps (league_id 5,
+// "international" key). Group tables once the 2026 league phase starts
+// (24 Sep); fixtures before and between matchdays. Nations render with
+// flags, not club crests; names come straight from the bundle (nation
+// passthrough — no Lookup involved).
+function unlBlock(comp: LiveComp | undefined): Block | null {
+  if (!comp) return null;
+  const FIN = new Set(["FT", "AET", "PEN", "AWD", "WO"]);
+  const IN_PLAY = new Set(["1H", "HT", "2H", "ET", "BT", "P", "LIVE", "INT", "SUSP"]);
+  const dt = (d: string | null) => (d ? new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" }) : "");
+  const nation = (t: LiveTeamRef) => t.name ?? t.lookup ?? "TBD";
+  const groupTables: SubTable[] = comp.groups
+    .slice().sort((a, b) => a.group_label.localeCompare(b.group_label))
+    .map((g): SubTable => ({
+      title: g.group_label,
+      columns: ["P", "W", "D", "L", "GD", "Pts"],
+      rows: g.rows.slice().sort(byPtsGd).map((r, i): SRow => ({
+        rank: r.rank ?? i + 1, name: r.name ?? "", flagUrl: _crFlag(r.name ?? ""),
+        cells: [num(r.played), num(r.win), num(r.draw), num(r.lose), num(r.gd), num(r.points)],
+      })),
+    }))
+    .filter((st) => st.rows.length > 0);
+  const fx = comp.fixtures ?? [];
+  const byKo = (dir: number) => (a: LiveFixture, b: LiveFixture) => dir * String(a.kickoff ?? "").localeCompare(String(b.kickoff ?? ""));
+  const live = fx.filter((f) => f.status && IN_PLAY.has(f.status)).sort(byKo(1));
+  const recent = fx.filter((f) => f.status && FIN.has(f.status)).sort(byKo(-1)).slice(0, 12);
+  const upcoming = fx.filter((f) => !(f.status && (FIN.has(f.status) || IN_PLAY.has(f.status)))).sort(byKo(1)).slice(0, 20);
+  const mkFx = (title: string, items: LiveFixture[], score: boolean): SubTable | null =>
+    items.length ? {
+      title, columns: [score ? "Score" : "Date"],
+      rows: items.map((f): SRow => ({ rank: null, name: `${nation(f.home)} v ${nation(f.away)}`, flagUrl: _crFlag(nation(f.home)),
+        cells: [score && f.home_goals != null && f.away_goals != null ? `${f.home_goals}–${f.away_goals}` : dt(f.kickoff)] })),
+    } : null;
+  const subTables = [...groupTables,
+    ...[mkFx("Live", live, true), mkFx("Upcoming", upcoming, false), mkFx("Recent", recent, true)]
+      .filter((st): st is SubTable => st !== null)];
+  if (subTables.length === 0) return null;
+  return {
+    league: "UEFA Nations League", href: "/teams/national",
+    note: groupTables.length ? "league phase" : "Sept–Nov 2026",
+    open: false, live: live.length > 0, subTables,
+  };
+}
+
 function libertadoresBlock(comp: LiveComp | undefined): Block | null {
   if (!comp || comp.groups.length === 0) return null;
   const subTables: SubTable[] = comp.groups
@@ -679,6 +724,8 @@ export default async function LiveStandingsPage() {
     golfBlock(), tennisBlock(), wtcBlock(), rugbyFixturesBlock(), cricketFixturesBlock(),
     getClubStandings(), getClubCompetitions(), getWLiveLeagues(), getWLiveCompetition("uwcl"),
   ]);
+  const intlComps = await getInternationalComps();
+  const unl = unlBlock(intlComps.find((c) => c.league_id === 5));
   const wsl = wLeagueBlock(wLeagues.find((l) => l.compSlug === "wsl"), "WSL");
   const ligaF = wLeagueBlock(wLeagues.find((l) => l.compSlug === "liga-f"), "Liga F");
   const nwslW = wLeagueBlock(wLeagues.find((l) => l.compSlug === "nwsl"), "NWSL");
@@ -697,7 +744,12 @@ export default async function LiveStandingsPage() {
   // League stay OPEN by default once their season is underway (the PL bundle
   // carries played games; CL fixtures exist from qualifying onward). NFL/NBA/NHL
   // already open via their own `open: live` logic.
-  const KEEP_OPEN = new Set(["Champions League", "Premier League"]);
+  // Amendment (Ashwin, 2026-08-03): the CL stays CLOSED until the 2026-27
+  // league-phase draw — Nyon, Thu 27 Aug 2026 17:00 BST (16:00 UTC), verified
+  // via UEFA.com. Before then the block only carries qualifying fixtures.
+  const UCL_DRAW_UTC = Date.UTC(2026, 7, 27, 16, 0, 0);
+  const uclDrawn = Date.now() >= UCL_DRAW_UTC;
+  const KEEP_OPEN = new Set(["Premier League", ...(uclDrawn ? ["Champions League"] : [])]);
   const collapseExcept = (b: Block | null): Block | null => {
     if (!b) return b;
     if (!KEEP_OPEN.has(b.league)) return collapse(b);
@@ -717,6 +769,9 @@ export default async function LiveStandingsPage() {
     // placement and order are enforced by FOOTBALL_LEFT/RIGHT in the normalization
     // step below.
     { sport: "Football", blocks: [collapse(liber), ...euro.map(collapseExcept), collapse(mls), ...domestics.map(collapseExcept)] },
+    // International (national-team) football — UEFA Nations League for now;
+    // World Cup qualifiers and more can join the same bundle-fed section.
+    { sport: "International Football", blocks: [unl] },
     // Women's Football (below Football, all collapsed by default; feeds are the
     // same wlive bundle that powers /teams/wfootball).
     { sport: "Women's Football", blocks: [wsl, ligaF, nwslW, uwcl].map(collapse) },

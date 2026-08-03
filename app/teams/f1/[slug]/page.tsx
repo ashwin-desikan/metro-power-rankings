@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title, description: desc,
     alternates: { canonical: `/teams/f1/${slug}` },
     openGraph: { title: `${title} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}/teams/f1/${slug}`, type: "website" },
-    twitter: { card: "summary", title: `${title} | ${SITE_NAME}`, description: desc },
+    twitter: { card: "summary_large_image", title: `${title} | ${SITE_NAME}`, description: desc },
   };
 }
 

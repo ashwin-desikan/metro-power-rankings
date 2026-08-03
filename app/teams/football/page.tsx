@@ -124,6 +124,22 @@ export default async function FootballIndex() {
           </div>
         </Link>
 
+        {/* Season archive: the past-seasons library is a first-class destination,
+            not a footer link buried inside the collapsed accordion below. */}
+        <Link
+          href="/teams/football/seasons"
+          className="block rounded-xl border p-3 transition hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]"
+          style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}
+        >
+          <div className="flex items-center justify-between gap-3 flex-wrap">
+            <span className="text-sm font-semibold">
+              Season archive
+              <span className="font-normal text-[var(--text-muted)]"> · every campaign since 1959-60, with trends and all-time champions</span>
+            </span>
+            <span className="text-sm text-[var(--accent)] font-medium whitespace-nowrap">Browse all seasons →</span>
+          </div>
+        </Link>
+
         {/* The four layers, as stat-cards that double as section nav — the numbers ARE the pitch. */}
         <div className="grid gap-2.5 grid-cols-2 lg:grid-cols-4">
           {[

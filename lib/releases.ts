@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-04",
+    headline: "Currency history charts, and the Business hub rebuilt for phones",
+    items: [
+      "Every major currency card now opens a full history page: the euro from launch, the yen from its 360-to-the-dollar era, each charted daily against the dollar with its highs, lows and the countries that spend it.",
+      "Every Business board now reads properly on a phone: pages never scroll sideways, the metro or company name stays pinned while you swipe across a table, and the headline number sits right beside the name.",
+      "Markets and Currencies refresh daily, the UEFA Nations League joins Live Standings and International Football ahead of its September league phase, and club football's season archive gets a front-door link.",
+      "Sharing any page now produces one consistent card - the brand image, a clean title and a large preview - wherever the link lands, governed by a new sitewide design standard.",
+    ],
+  },
+  {
     date: "2026-08-03",
     headline: "The Owners: who actually holds the market",
     items: [

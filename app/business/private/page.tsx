@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getUnicorns } from "@/lib/business";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import BusinessNav from "../BusinessNav";
-import { MONO, CARD, TH, THR, TD, TDR, fmtCap, fmtT, MetroLink, SectionHead, Crumbs, TabHeader, TableBox } from "../ui";
+import { MONO, CARD, TH, THR, TD, TDR, SMCOL, fmtCap, fmtT, MetroLink, SectionHead, Crumbs, TabHeader, TableBox } from "../ui";
 
 export const revalidate = 21600;
 
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description: DESC,
   alternates: { canonical: PATH },
   openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
-  twitter: { card: "summary", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
+  twitter: { card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
 };
 
 export default async function PrivatePage() {
@@ -82,7 +82,7 @@ export default async function PrivatePage() {
 
           <section className="mb-10">
             <SectionHead title="The biggest unicorns" sub="Last-raise valuations, with the industry and the metro each is run from." />
-            <TableBox>
+            <TableBox stickyCol={2}>
               <thead>
                 <tr className="text-left" style={{ background: "var(--bg-card)" }}>
                   <th className={THR}>#</th>
@@ -109,10 +109,10 @@ export default async function PrivatePage() {
           </section>
 
           <section className="mb-10 grid gap-4 lg:grid-cols-2">
-            <div>
+            <div className="min-w-0">
               <h3 className="text-sm font-bold mb-2">Unicorn capitals</h3>
               <p className="text-xs text-[var(--text-muted)] mb-2">Metros by number of resident unicorns.</p>
-              <TableBox>
+              <TableBox stickyCol={2}>
                 <tbody>
                   {capitals.map((m, i) => (
                     <tr key={m.metro} className="border-t first:border-t-0" style={{ borderColor: "var(--border)" }}>
@@ -125,7 +125,7 @@ export default async function PrivatePage() {
                 </tbody>
               </TableBox>
             </div>
-            <div>
+            <div className="min-w-0">
               <h3 className="text-sm font-bold mb-2">Where the money believes</h3>
               <p className="text-xs text-[var(--text-muted)] mb-2">Industries by combined unicorn valuation.</p>
               <TableBox>
@@ -143,7 +143,7 @@ export default async function PrivatePage() {
           </section>
 
           <section className="mb-10 grid gap-4 lg:grid-cols-2">
-            <div>
+            <div className="min-w-0">
               <h3 className="text-sm font-bold mb-2">The newest members</h3>
               <p className="text-xs text-[var(--text-muted)] mb-2">Most recent arrivals at a $1B valuation.</p>
               <TableBox>
@@ -159,7 +159,7 @@ export default async function PrivatePage() {
                 </tbody>
               </TableBox>
             </div>
-            <div>
+            <div className="min-w-0">
               <h3 className="text-sm font-bold mb-2">The graduates</h3>
               <p className="text-xs text-[var(--text-muted)] mb-2">
                 Unicorns that reached the public markets - last private valuation against what the market says now.
@@ -194,13 +194,13 @@ export default async function PrivatePage() {
               title="The private giants"
               sub="The biggest companies that never listed - family firms, trading houses, state-adjacent groups. Values are estimates (revenue-based), which is exactly why they live on their own board."
             />
-            <TableBox>
+            <TableBox stickyCol={2}>
               <thead>
                 <tr className="text-left" style={{ background: "var(--bg-card)" }}>
                   <th className={THR}>#</th>
                   <th className={TH}>Company</th>
                   <th className={THR}>Est. value</th>
-                  <th className={TH}>Country</th>
+                  <th className={`${TH} ${SMCOL}`}>Country</th>
                   <th className={TH}>Metro</th>
                 </tr>
               </thead>
@@ -210,7 +210,7 @@ export default async function PrivatePage() {
                     <td className={TDR} style={{ ...MONO, color: "var(--text-dim)" }}>{i + 1}</td>
                     <td className={`${TD} font-semibold whitespace-nowrap`}>{p.name}</td>
                     <td className={TDR} style={MONO}>{fmtCap(p.cap)}</td>
-                    <td className={`${TD} text-[var(--text-muted)] whitespace-nowrap`}>{p.country}</td>
+                    <td className={`${TD} ${SMCOL} text-[var(--text-muted)] whitespace-nowrap`}>{p.country}</td>
                     <td className={`${TD} whitespace-nowrap`}><MetroLink name={p.metro} slug={p.metroSlug} /></td>
                   </tr>
                 ))}

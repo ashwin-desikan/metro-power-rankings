@@ -40,7 +40,10 @@ export async function generateMetadata({
       : `${BASE_URL}/opengraph-image`;
 
   return {
-    title: `${PAGE_TITLE.replace(' | Global Metro Power Rankings', '')}${titleSuffix} | Global Metro Power Rankings`,
+    // app/layout.tsx applies the "%s | Global Metro Power Rankings" template;
+    // appending the site name here too doubled it in the tab title (caught in
+    // the 2026-08-03 MCP-commit review).
+    title: `${PAGE_TITLE.replace(' | Global Metro Power Rankings', '')}${titleSuffix}`,
     description: PAGE_DESCRIPTION,
     openGraph: {
       title: `Metro comparison${titleSuffix}`,

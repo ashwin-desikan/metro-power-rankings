@@ -114,14 +114,14 @@ export default function CompaniesExplorer({ initial, total }: { initial: BizComp
         </span>
       </div>
 
-      <div className="overflow-x-auto rounded-xl border" style={{ borderColor: 'var(--border)' }}>
-        <table className="w-full text-sm">
+      <div className="overflow-x-auto rounded-xl border min-w-0" style={{ borderColor: 'var(--border)' }}>
+        <table className="w-full text-sm" data-sticky-col="2">
           <thead>
             <tr className="text-left" style={{ background: 'var(--bg-card)' }}>
               <th className="px-3 py-2 text-right font-semibold">#</th>
               <th className="px-3 py-2 font-semibold">Company</th>
               <th className="px-3 py-2 text-right font-semibold">Market cap</th>
-              <th className="px-3 py-2 font-semibold">Country</th>
+              <th className="px-3 py-2 font-semibold hidden sm:table-cell">Country</th>
               <th className="px-3 py-2 font-semibold">Metro</th>
               <th className="px-3 py-2 font-semibold">Type</th>
             </tr>
@@ -135,7 +135,7 @@ export default function CompaniesExplorer({ initial, total }: { initial: BizComp
                   {c.symbol && <span className="text-xs font-normal" style={{ ...MONO, color: 'var(--text-dim)' }}>{c.symbol}</span>}
                 </td>
                 <td className="px-3 py-1.5 text-right" style={MONO}>{fmtCap(c.cap)}</td>
-                <td className="px-3 py-1.5 text-[var(--text-muted)] whitespace-nowrap">{c.country}</td>
+                <td className="px-3 py-1.5 text-[var(--text-muted)] whitespace-nowrap hidden sm:table-cell">{c.country}</td>
                 <td className="px-3 py-1.5 whitespace-nowrap">
                   {c.metro ? (
                     c.metroSlug

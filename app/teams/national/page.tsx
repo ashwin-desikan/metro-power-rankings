@@ -17,6 +17,8 @@ import {
 } from "@/lib/international-display";
 import { getAllCountrySlugs } from "@/lib/countries";
 import { getWc2026LiveStandings, mergeWc2026Live, mergeWc2026Knockout, getWc2026LiveScores, fetchWc2026Bundle, getWc2026Kickoffs, attachWc2026Kickoffs } from "@/lib/wc2026Standings";
+import { getInternationalComps } from "@/lib/clubFootballLive";
+import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import NationalIndexClient, { type IndexTeam } from "./NationalIndexClient";
 import WorldCup2026 from "./WorldCup2026";
@@ -47,6 +49,12 @@ export default async function NationalIndexPage() {
   const wc2026Kickoffs = wc2026 ? await getWc2026Kickoffs() : [];
   const snapshots = getRankSnapshots();
   const countrySlugSet = new Set(getAllCountrySlugs());
+  // UEFA Nations League live groups (api-football bundle, league_id 5).
+  // Empty until the 2026 league phase (24 Sep–17 Nov); the section shows a
+  // schedule banner until then and arms itself when tables arrive.
+  const unl = (await getInternationalComps()).find((c) => c.league_id === 5) ?? null;
+  const teamByName = new Map(teams.flatMap((t) => [[t.name.toLowerCase(), t.slug] as const, [t.cur_name.toLowerCase(), t.slug] as const]));
+  const unlFlag = (n: string) => flagCdnUrl(n.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""));
 
   const clientTeams: IndexTeam[] = teams.map((t) => {
     const resolvedCountrySlug = countryPageSlugFor(t.slug);
@@ -113,6 +121,7 @@ export default async function NationalIndexPage() {
 
       <HubNav
         items={[
+          { label: "Nations League", href: "#nations-league" },
           { label: "Tournament Hubs", href: "#tournaments" },
           { label: "National Teams", href: "#national-teams" },
           { label: "Top Games", href: "#top-games" },
@@ -121,6 +130,76 @@ export default async function NationalIndexPage() {
       />
 
       {wc2026 && <WorldCup2026 wc={attachWc2026Kickoffs(mergeWc2026Knockout(mergeWc2026Live(wc2026, wc2026Live), wc2026Scores), wc2026Kickoffs)} />}
+
+      {/* UEFA Nations League — live group tables from the api-football bundle
+          (same daily refresh as the club competitions). Before the league
+          phase kicks off the section carries the schedule banner instead. */}
+      <section id="nations-league" className="mb-10">
+        <h2 className="text-lg font-semibold mb-3">UEFA Nations League 2026-27</h2>
+        {unl && unl.groups.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 items-start">
+            {unl.groups
+              .slice()
+              .sort((a, b) => a.group_label.localeCompare(b.group_label))
+              .map((g) => (
+                <div key={g.group_label} className="rounded-xl border p-3 min-w-0" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+                  <div className="text-[11px] font-semibold text-[var(--text-muted)] mb-1.5">{g.group_label}</div>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-xs" data-sticky-col="2">
+                      <thead>
+                        <tr className="text-left text-[var(--text-muted)]">
+                          <th className="py-1 px-1.5 font-medium text-right">#</th>
+                          <th className="py-1 px-1.5 font-medium">Team</th>
+                          <th className="py-1 px-1.5 font-medium text-right">P</th>
+                          <th className="py-1 px-1.5 font-medium text-right">GD</th>
+                          <th className="py-1 px-1.5 font-medium text-right">Pts</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {g.rows
+                          .slice()
+                          .sort((a, b) => (b.points ?? 0) - (a.points ?? 0) || (b.gd ?? 0) - (a.gd ?? 0))
+                          .map((r, i) => {
+                            const nm = r.name ?? "";
+                            const slug = teamByName.get(nm.toLowerCase());
+                            const flag = unlFlag(nm);
+                            return (
+                              <tr key={`${g.group_label}-${nm}-${i}`} className="border-t" style={{ borderColor: "var(--border)" }}>
+                                <td className="py-1 px-1.5 text-right tabular-nums text-[var(--text-dim)]">{r.rank ?? i + 1}</td>
+                                <td className="py-1 px-1.5 font-medium whitespace-nowrap">
+                                  <span className="inline-flex items-center gap-1.5">
+                                    {flag && (
+                                      /* eslint-disable-next-line @next/next/no-img-element */
+                                      <img src={flag} alt="" className="w-4 h-3 rounded-[2px] object-cover" loading="lazy" />
+                                    )}
+                                    {slug ? <Link href={`/teams/national/${slug}`} className="hover:underline">{nm}</Link> : nm}
+                                  </span>
+                                </td>
+                                <td className="py-1 px-1.5 text-right tabular-nums">{r.played ?? 0}</td>
+                                <td className="py-1 px-1.5 text-right tabular-nums">{r.gd ?? 0}</td>
+                                <td className="py-1 px-1.5 text-right tabular-nums font-semibold">{r.points ?? 0}</td>
+                              </tr>
+                            );
+                          })}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              ))}
+          </div>
+        ) : (
+          <div className="rounded-xl border p-4" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+            <p className="text-sm text-[var(--text-muted)] max-w-3xl">
+              The 2026-27 league phase runs 24 September to 17 November. Live group tables appear
+              here — and in the International Football section of{" "}
+              <Link href="/sports/standings#international-football" className="hover:underline" style={{ color: "var(--accent)" }}>
+                Live Standings
+              </Link>
+              {" "}— from the first matchday, fed by the same daily refresh as the club competitions.
+            </p>
+          </div>
+        )}
+      </section>
 
       <section className="mb-10">
         <h2 id="tournaments" className="text-lg font-semibold mb-3">Tournament hubs</h2>

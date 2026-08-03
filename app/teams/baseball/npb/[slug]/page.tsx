@@ -27,7 +27,7 @@ export async function generateMetadata(
     description: desc,
     alternates: { canonical: path },
     openGraph: { title: `${team.name} | ${SITE_NAME}`, description: desc, url: `${BASE_URL}${path}`, type: "website" },
-    twitter: { card: "summary", title: `${team.name} | ${SITE_NAME}`, description: desc },
+    twitter: { card: "summary_large_image", title: `${team.name} | ${SITE_NAME}`, description: desc },
   };
 }
 

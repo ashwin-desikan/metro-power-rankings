@@ -83,6 +83,14 @@ export async function getClubCompetitions(): Promise<LiveComp[]> {
   return doc?.competitions ?? [];
 }
 
+// International (national-team) competitions — UEFA Nations League (league_id 5)
+// — exported by the same bundle under their own key. Empty until the mini's
+// refresh first sees the comp; the frontend sections arm themselves from it.
+export async function getInternationalComps(): Promise<LiveComp[]> {
+  const doc = await load<{ international?: LiveComp[] }>("live-competitions-2026.json");
+  return doc?.international ?? [];
+}
+
 // team_id (as string) -> current European/Libertadores badge ("UCL"|"UEL"|"UECL"|"LIB")
 // for clubs still alive in a competition; eliminated clubs are absent.
 export async function getEuropeBadges(): Promise<Record<string, string>> {

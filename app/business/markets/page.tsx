@@ -9,14 +9,14 @@ export const revalidate = 21600;
 const PATH = "/business/markets";
 const TITLE = "Markets";
 const DESC =
-  "The world's benchmark stock indices tied to their home metros - New York to Mumbai to São Paulo - plus gold, oil and the other commodities that move economies, tracked weekly.";
+  "The world's benchmark stock indices tied to their home metros - New York to Mumbai to São Paulo - plus gold, oil and the other commodities that move economies, tracked daily.";
 
 export const metadata: Metadata = {
   title: `${TITLE} | Business of the Metros`,
   description: DESC,
   alternates: { canonical: PATH },
   openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
-  twitter: { card: "summary", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
+  twitter: { card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
 };
 
 function fmtLevel(n: number): string {
@@ -27,7 +27,20 @@ export default async function MarketsPage() {
   const data = await getMarkets();
   const history = getMarketsHistory();
   const snaps = history?.snapshots ?? [];
-  const prev = snaps.length >= 2 ? snaps[snaps.length - 2] : null;
+  // Snapshots are daily since 2026-08 (business-daily-refresh.yml), so the
+  // "Week" column compares against the newest snapshot at least six days
+  // older than the latest - not simply the previous entry, which would be
+  // yesterday. While the daily history is younger than a week, fall back to
+  // the oldest snapshot so the column still shows real tracked movement.
+  const latest = snaps.length ? snaps[snaps.length - 1] : null;
+  let prev: (typeof snaps)[number] | null = null;
+  if (latest && snaps.length >= 2) {
+    const cutoff = new Date(new Date(`${latest.date}T00:00:00Z`).getTime() - 6 * 86400000)
+      .toISOString()
+      .slice(0, 10);
+    const eligible = snaps.filter((s) => s.date <= cutoff);
+    prev = eligible.length ? eligible[eligible.length - 1] : snaps[0];
+  }
 
   function change(symbol: string, value: number): number | null {
     const old = prev?.values[symbol];
@@ -41,7 +54,7 @@ export default async function MarketsPage() {
         emoji="🌐"
         title="Markets"
         sub="Every major stock market is a metro institution: the S&P 500 and Nasdaq belong to New York the way the Nikkei belongs to Tokyo and the Bovespa to São Paulo. The world's benchmark indices tied back to their home metros, plus the commodities that move economies."
-        stamp={data ? `as of ${data.meta.as_of} · ${data.meta.indices} indices · ${data.meta.commodities} commodities · refreshed weekly` : null}
+        stamp={data ? `as of ${data.meta.as_of} · ${data.meta.indices} indices · ${data.meta.commodities} commodities · refreshed daily` : null}
       />
       <BusinessNav />
 
@@ -50,7 +63,7 @@ export default async function MarketsPage() {
       ) : (
         <>
           <section className="mb-10">
-            <SectionHead title="The world's benchmarks" sub="Index levels at the latest weekly snapshot, tied to their home markets." />
+            <SectionHead title="The world's benchmarks" sub="Index levels at the latest daily snapshot, tied to their home markets." />
             <TableBox>
               <thead>
                 <tr className="text-left" style={{ background: "var(--bg-card)" }}>

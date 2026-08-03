@@ -14,7 +14,7 @@ const DESC = "Completed-season club football hubs: the Citizen of Nowhere power 
 export const metadata: Metadata = {
   title: TITLE, description: DESC, alternates: { canonical: PATH },
   openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
-  twitter: { card: "summary", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
+  twitter: { card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
 };
 // Season list derived from the hub data via lib/footballSeasons (single source
 // with /teams/football), plus the live season on top. A new hub + trends

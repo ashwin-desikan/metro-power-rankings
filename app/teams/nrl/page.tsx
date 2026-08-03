@@ -13,7 +13,7 @@ const DESC = "Every NSWRL/ARL/NRL club since 1908: all-time premierships and min
 export const metadata: Metadata = {
   title: TITLE, description: DESC, alternates: { canonical: PATH },
   openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
-  twitter: { card: "summary", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
+  twitter: { card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
 };
 
 export default async function NrlPage() {

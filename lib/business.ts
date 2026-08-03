@@ -353,6 +353,28 @@ export async function getFx(): Promise<FxFile | null> {
   return load<FxFile>("fx.json");
 }
 
+// Per-currency USD-rate history for /business/currencies/[code] (the 20
+// majors). Seeded from a long-run dataset by scripts/business/
+// build_fx_series.py, appended daily by build_fx.py; era-clamped at
+// introductions/redenominations. Same GH-raw ISR read as fx.json.
+export type FxSeriesFile = {
+  meta: {
+    code: string;
+    base: string;
+    generated_at: string;
+    start: string;
+    end: string;
+    points: number;
+    era_start: string | null;
+    source: string;
+  };
+  series: [string, number][];
+};
+
+export async function getFxSeries(code: string): Promise<FxSeriesFile | null> {
+  return load<FxSeriesFile>(`fx-series/${code.toLowerCase()}.json`);
+}
+
 export async function getMarkets(): Promise<MarketsFile | null> {
   return load<MarketsFile>("markets.json");
 }

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: DESC,
   alternates: { canonical: PATH },
   openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
-  twitter: { card: "summary", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
+  twitter: { card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
 };
 
 function fmtRate(n: number): string {
@@ -43,7 +43,7 @@ export default async function CurrenciesPage() {
       <TabHeader
         emoji="💱"
         title="Currencies"
-        sub="Every market cap on this site is a dollar number, so here is the dollar's relationship with everyone else - each currency tied back to the countries that use it, with the site's own weekly history building movement over time."
+        sub="Every market cap on this site is a dollar number, so here is the dollar's relationship with everyone else - each currency tied back to the countries that use it, with the site's own daily history building movement over time."
         stamp={fx ? `as of ${fx.meta.as_of} · ${fx.meta.count} currencies vs USD · source: exchangerate-api.com` : null}
       />
       <BusinessNav />
@@ -53,17 +53,23 @@ export default async function CurrenciesPage() {
       ) : (
         <>
           <section className="mb-10">
-            <SectionHead title="The majors" sub="Units per US dollar at the latest refresh (and what one unit buys back)." />
+            <SectionHead title="The majors" sub="Units per US dollar at the latest refresh (and what one unit buys back). Every card opens that currency's full history against the dollar." />
             <div className="grid gap-2" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))" }}>
               {majors.map((c) => (
-                <div key={c.code} className="rounded-xl border p-3" style={CARD}>
+                <Link
+                  key={c.code}
+                  href={`/business/currencies/${c.code.toLowerCase()}`}
+                  className="rounded-xl border p-3 transition hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]"
+                  style={CARD}
+                >
                   <div className="flex items-baseline justify-between">
                     <span className="font-bold" style={MONO}>{c.code}</span>
                     <span className="text-[10px] text-[var(--text-dim)] truncate ml-1">{c.name}</span>
                   </div>
                   <div className="text-lg font-bold mt-1" style={MONO}>{fmtRate(c.perUsd)}</div>
                   <div className="text-[11px] text-[var(--text-muted)]" style={MONO}>1 {c.code} = ${c.usdPer.toFixed(4)}</div>
-                </div>
+                  <div className="text-[10px] mt-1.5 font-medium" style={{ color: "var(--accent)" }}>History →</div>
+                </Link>
               ))}
             </div>
           </section>
@@ -112,7 +118,7 @@ export default async function CurrenciesPage() {
                 title="Market cap vs GDP"
                 sub="The Buffett indicator, per country: the value of a country's listed companies against the size of its economy. High ratios mean expensive markets or global companies that happen to be listed there - Amsterdam hosts giants that sell everywhere, which is exactly the caveat."
               />
-              <TableBox>
+              <TableBox stickyCol={2}>
                 <thead>
                   <tr className="text-left" style={{ background: "var(--bg-card)" }}>
                     <th className={THR}>#</th>
@@ -144,9 +150,9 @@ export default async function CurrenciesPage() {
           <section className="mb-6 rounded-2xl border p-5 sm:p-6" style={CARD}>
             <h2 className="text-lg font-bold mb-2">About this board</h2>
             <p className="text-[13.5px] text-[var(--text-muted)] leading-relaxed max-w-3xl">
-              Rates come from exchangerate-api.com (updated daily at source; snapshotted here with each
-              weekly refresh, and the site keeps its own history so movement boards grow from real
-              tracked weeks rather than backfilled data). Currency-to-country ties come from this
+              Rates come from exchangerate-api.com (updated daily at source and snapshotted here
+              daily, and the site keeps its own history so movement boards grow from real
+              tracked days rather than backfilled data). Currency-to-country ties come from this
               site&apos;s country dataset. GDP is the World Bank current-dollar series from the country
               indicators pipeline. None of this is investment advice; all of it is geography.
             </p>

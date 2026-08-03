@@ -16,7 +16,7 @@ const PAGE_DESCRIPTION =
 export const metadata: Metadata = {
   title: PAGE_TITLE, description: PAGE_DESCRIPTION, alternates: { canonical: PAGE_PATH },
   openGraph: { title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION, url: `${BASE_URL}${PAGE_PATH}`, type: "website" },
-  twitter: { card: "summary", title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION },
+  twitter: { card: "summary_large_image", title: `${PAGE_TITLE} | ${SITE_NAME}`, description: PAGE_DESCRIPTION },
 };
 
 function Leader({ title, rows }: { title: string; rows: { name: string; slug: string; val: number }[] }) {

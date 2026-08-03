@@ -10,6 +10,10 @@ export const TH = "px-3 py-2 font-semibold";
 export const THR = "px-3 py-2 text-right font-semibold";
 export const TD = "px-3 py-2";
 export const TDR = "px-3 py-2 text-right";
+// Demote a low-priority column (e.g. Country) on phones. Apply to BOTH the
+// th and the td, and never to a table's first two columns (the sticky-col
+// CSS in globals.css counts children by position).
+export const SMCOL = "hidden sm:table-cell";
 
 export function fmtT(n: number): string {
   return `$${(n / 1e12).toFixed(2)}T`;
@@ -82,10 +86,15 @@ export function TabHeader({ emoji, title, sub, stamp }: {
   );
 }
 
-export function TableBox({ children }: { children: ReactNode }) {
+// stickyCol: which column stays pinned while the table scrolls sideways on
+// phones (the data-sticky-col rule in globals.css). Rank-first tables MUST
+// pass 2 so the row's identity, not the rank number, stays visible.
+// min-w-0 lets the box shrink inside CSS grids instead of forcing the whole
+// page to scroll sideways. See DESIGN-STANDARDS.md.
+export function TableBox({ children, stickyCol }: { children: ReactNode; stickyCol?: number }) {
   return (
-    <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
-      <table className="w-full text-sm">{children}</table>
+    <div className="overflow-x-auto rounded-xl border min-w-0" style={{ borderColor: "var(--border)" }}>
+      <table className="w-full text-sm" data-sticky-col={stickyCol}>{children}</table>
     </div>
   );
 }

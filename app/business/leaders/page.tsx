@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: DESC,
   alternates: { canonical: PATH },
   openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
-  twitter: { card: "summary", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
+  twitter: { card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
 };
 
 function Person({ r }: { r: BizLeaderRow }) {
@@ -119,7 +119,7 @@ export default async function BizLeadersPage() {
                 const rows = data.funds.filter((f) => f.kind === kind);
                 if (rows.length === 0) return null;
                 return (
-                  <div key={kind}>
+                  <div key={kind} className="min-w-0">
                     <h3 className="text-sm font-bold mb-2">{kind}s</h3>
                     <TableBox>
                       <tbody>
@@ -142,7 +142,7 @@ export default async function BizLeadersPage() {
               title="The corner offices"
               sub="Chief executives of the biggest public companies on Earth, with the metro each runs from."
             />
-            <TableBox>
+            <TableBox stickyCol={2}>
               <thead>
                 <tr className="text-left" style={{ background: "var(--bg-card)" }}>
                   <th className={THR}>#</th>

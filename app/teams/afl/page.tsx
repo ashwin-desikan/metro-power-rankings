@@ -12,7 +12,7 @@ const DESC = "Every VFL/AFL club since 1897: all-time premierships and minor pre
 export const metadata: Metadata = {
   title: TITLE, description: DESC, alternates: { canonical: PATH },
   openGraph: { title: `${TITLE} | ${SITE_NAME}`, description: DESC, url: `${BASE_URL}${PATH}`, type: "website" },
-  twitter: { card: "summary", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
+  twitter: { card: "summary_large_image", title: `${TITLE} | ${SITE_NAME}`, description: DESC },
 };
 
 export default async function AflPage() {
