@@ -1663,3 +1663,74 @@ Shipped instead as `fd862d475` [vercel skip]:
   3-6h, trading data-commit surface latency. Not urgent.
 - PAT note: closing PR #20 used the Credential Manager token via
   `git credential fill` piped straight to the API (never printed).
+
+
+## 2026-08-03 (evening) - SESSION CLOSE (day recap; mini shipped an MCP server solo)
+
+The day's three work blocks are documented above: leaders curation 107/107 +
+The Owners ninth tab (morning), the Vercel cost pass (late morning). All live.
+
+EVENING, NOT THIS SESSION'S WORK: the mac mini autonomously shipped an MCP
+server — `890de84a8` (app/api/mcp/route.ts via mcp-handler: get_metro,
+list_top_metros, search_metros, compare_metros, get_methodology; compare-winner
+logic + methodology table extracted to lib/compare.ts + lib/methodology.ts so
+page and tool share one source; rate-limited 60 req/min/IP via lib/rateLimit;
+documented in llms.txt) and `ce69a5565` (server.json declaring
+org.citizenofnowhere.rankings at /api/mcp + public/.well-known/
+mcp-registry-auth for registry.modelcontextprotocol.io listing). Both built
+READY; `ce69a5565` is the production tip, aliased. The new
+scripts/vercel-ignore.sh gate is proven in the wild: the [vercel skip]
+football refresh between those two commits was CANCELED, both real commits
+built. Note the mini now does autonomous FEATURE commits, not just data
+refreshes — expect non-skip mini pushes.
+
+Session totals: 5 commits from this session (0a3107b01, b4dee74d5, 492253504,
+fd862d475 + two docs), ONE intentional Vercel build spent, full verify green,
+production spot-checked, vercel[bot] PR #20 closed, memory reconciled
+([[project_business_hub]], [[reference_vercel_ignore_setup]], MEMORY.md).
+
+## NEXT SESSION — START HERE v4 (written 2026-08-03 evening, SUPERSEDES v3)
+
+STATE: tree CLEAN; production tip `ce69a5565` (mini's MCP registry commit,
+READY + aliased). Everything from 2026-08-03 is LIVE: /business as a NINE-tab
+hub (Owners: 13F manager league $65.6T, capitals, widely-held, giants),
+leaders 107/107 (⚠️ overrides PIN holders — semantics in the morning
+section; watch Bank Indonesia, Damayanti is ACTING), owners.json on the
+GH-raw ISR path, Vercel gating via scripts/vercel-ignore.sh (fail-open,
+proven), .vercelignore (-184MB), deploy-watch duplicate guard. Mac-mini bots
+push all day — pull --rebase before working.
+
+FIRST (~10 min):
+1) Tue 4 Aug 06:40 UTC predictions-refresh.yml FIRST RUN: self-tests green,
+   4 JSONs [vercel skip], /predictions/pl + /predictions/nfl pick up via ISR.
+2) Wed 5 Aug 08:10 UTC honours-2026-champions.yml FIRST RUN.
+3) Sanity-check the mini's MCP server (not this session's code): POST
+   /api/mcp handshake or at least a non-5xx response; llms.txt entry; whether
+   the registry.modelcontextprotocol.io listing went through (server.json =
+   org.citizenofnowhere.rankings). Give the route a proper code review when
+   convenient — it went out without this pipeline's usual verify.
+
+MAIN QUEUE (v3 carried forward, minus what shipped):
+1) **Saturday 8 Aug drill** (reminder trigger 08:00Z): ritual →
+   sync_geo_from_excel --write → refresh.py --write → export_csv →
+   compare_excel → business chain: build_business_data → sp500 → fx →
+   markets → leaders → commit public/data/business/*.json [vercel skip].
+   Green Saturday #2. Leaders should hold 107/107 (pinned seats stable).
+2) **CFB prediction hub** ~10 Aug (preseason AP poll), NFL convention; then
+   UCL hub after the late-Aug draw, PL convention. PL E0 fixture odds ~21 Aug
+   fold in automatically.
+3) At mktcap CUTOVER (after green Saturday #3): mini inherits the Saturday
+   chain + needs Supabase service key + exchangerate key copied.
+4) Deep threads: 13F CUSIP mapping + Q2 EDGAR drop ~Sep (extract → --src →
+   --report-cities city-map pass); ISR-writes cost pass (stretch 1h
+   revalidate on rankings/countries/leaders/states to 3-6h — trade against
+   data-freshness latency); per-edition Fairs Cup; FIFA CWC 2025 hub; CFP
+   ~late Oct; retire corporate-power CEO_MAP by reading business
+   leaders.json.
+
+HOUSE RULES: as v3, plus today's additions — leaders overrides PIN (delete
+override when Wikidata catches up); ignoreCommand stays a SCRIPT, never a
+long inline string (256-char cap), and stays FAIL-OPEN; $-sign variables get
+eaten by the DC start_process layer (write .py helper files); the Credential
+Manager PAT works headlessly via `git credential fill` piped to the GitHub
+API (used to close PR #20 — never print it).
