@@ -1508,3 +1508,120 @@ SeasonHub.tsx, PL + NFL prediction hubs live with graded ledgers.
   comments: TOP_TROPHY_BONUS, FAIRS_DISCOUNT, MANUAL_TB, PED_WEIGHT/PED_TOPK.
   When he asks for a rank intervention, prefer MANUAL_TB (documented one-off)
   over weight changes; sweep + show him numbers before regenerating.
+
+
+## 2026-08-03 - windows (LEADERS 107/107 + THE OWNERS: ninth Business tab SHIPPED)
+
+Morning session, both first-jobs-plus-main-queue items done and live.
+
+**Ship record (three commits, ONE Vercel build):**
+- `0a3107b01` business: leaders curation pass - 107/107 seats [vercel skip]
+- `b4dee74d5` business data: 13F owners pipeline - Q1 2026 reduced, city-metro map [vercel skip]
+- `492253504` The Owners: ninth Business tab (PUSH HEAD -> Vercel build READY,
+  aliased to rankings.citizenofnowhere.org). Production spot-checked:
+  /business/owners renders all four boards; /business/leaders confirmed
+  107/107 fresh at build (the bare URL briefly served a stale CDN copy of the
+  previous deploy - cache-busted check showed the new page; settles with ISR).
+- Full verify green BEFORE push: typecheck + client-imports + public-data +
+  table-scroll + vitest 26/26 + next build 4,904 pages (dev server stopped).
+
+**Leaders curation (77 -> 107/107):**
+- Every seat verified against Aug 2026 sources (three parallel research agents,
+  web-verified; QIDs cross-checked against Wikidata labels at build time).
+  30 empty seats filled, 18 stale holders corrected (ASML Fouquet, HSBC
+  Elhedery, Intel Lip-Bu Tan, UNH Hemsley returned, P&G Jejurikar, Oracle
+  Magouyrk+Sicilia co-CEOs, Caterpillar Creed, BoK Hyun Song Shin, Turkey
+  Karahan, Brazil Galipolo, SNB Schlegel, MAS Chia Der Jiun (MD, not the
+  chairman), Bank Indonesia Damayanti, Bridgewater Bar Dea, Man Group Grew,
+  Temasek still Pillay (Chia Song Hwee runs subsidiaries, NOT group CEO),
+  ADIA Hamed bin Zayed (MD), big-4 Chinese bank chairs). Entity fixes: Merck
+  was matched to Merck KGaA -> now Q247489 Merck & Co. (Rob Davis resolves
+  via P169); AQR entity was null -> Q4653518.
+- build_leaders.py gained a **personName manual override** (cache field next to
+  personQid) for people with NO Wikidata item: SK Hynix Kwak Noh-jung, Lam
+  Research Tim Archer, Caterpillar Joe Creed, Vanguard Salim Ramji, SSGA
+  Yie-Hsin Hung, T. Rowe Rob Sharps, Ares Arougheti, CPP John Graham, Man
+  Group Robyn Grew, MAS Chia Der Jiun - and for co-CEO pairs (Oracle "Clay
+  Magouyrk & Mike Sicilia", KKR "Joseph Bae & Scott Nuttall") and display
+  names (Broadcom "Hock Tan", Wikidata label is "Tan Hock Eng"). Self-test
+  still 5/5.
+- ⚠️ OVERRIDE SEMANTICS: personQid/personName PIN the holder - the weekly
+  refresh will NOT auto-detect a real succession at an overridden seat.
+  When Wikidata catches up on a seat, delete its override so P169/P488
+  resolution takes over. Two seats to watch: Bank Indonesia (Damayanti is
+  ACTING after Warjiyo's 27 Jul resignation - update override when the
+  permanent governor is named) and any co-CEO breakup.
+- leaders-changes.json deliberately RESET TO EMPTY after the rerun: the 21
+  diffs were data corrections, not successions; the revolving-door feed
+  accrues honestly from this corrected baseline.
+
+**The Owners (/business/owners) - 13F institutional money, ninth tab:**
+- scripts/business/build_owners.py (self-test 15/15) reduces the SEC Form 13F
+  structured data set: zip in Downloads extracted to data/form13f-2026q1/
+  (gitignored; INFOTABLE.tsv 396MB). 8,760 filings selected for period
+  31-MAR-2026 (latest RESTATEMENT per CIK wins, else original + NEW HOLDINGS
+  amendments), 3.24M holdings rows, $65.62T reported. Values are whole
+  dollars. Put/call rows excluded from ownership boards, kept in manager
+  totals.
+- Outputs one 67KB owners.json: top-100 manager league table (BlackRock $5.7T
+  -> down), asset-manager capitals (NY $16.2T, Boston $8.3T, Philadelphia
+  $8.2T - the two Vanguard filers - Chicago, SF, London, Charlotte, LA,
+  Toronto), 50 most-widely-held CUSIPs (share classes separate; both Alphabet
+  lines chart), who-owns-the-giants: top-10 holders for 27/30 site giants.
+  Saudi Aramco/SpaceX/CXMT unmatched (not US-listed), Samsung/SK Hynix/
+  Tencent ~0 - the page's "invisible giants" footnote is the honest story.
+- Issuer matching is by TRUNCATION-TOLERANT positional tokens, not CUSIP:
+  EDGAR issuer names cut off ~28 chars ("TAIWAN SEMICONDUCTOR MANUFAC" was
+  $262B of the TSMC total), spellings vary (LILLY ELI vs ELI LILLY, CISCO
+  SYS, BANK AMER, MASTERCARD INCORPORATED). CANON abbrev folding + DROP
+  suffix tokens + sorted-set OR positional-prefix match; extra tokens reject
+  (APPLE HOSPITALITY REIT is not Apple). CUSIP-level mapping stays the open
+  design question for a future quarter.
+- Filer city -> metro via NEW curated scripts/business/data/filer-city-metros.json
+  (146 "CITY|ST" keys, validated against metros.json slugs at run time).
+  Covers 94% of reported value; CT fund belt (Greenwich/Stamford/Westport) ->
+  new-york, Vanguard's Malvern/Bala Cynwyd belt -> philadelphia, NPS's Jeonju
+  -> jeonju. After the NEXT quarterly drop: run `build_owners.py
+  --report-cities` to print biggest unmapped cities, extend the table, rerun.
+- QUARTERLY CADENCE, manual: next EDGAR drop (filings Jun-Aug, Q2 holdings)
+  lands ~early Sep. Run: extract zip to data/form13f-2026qN, build_owners.py
+  --src that folder, then --report-cities pass. NOT part of the Saturday
+  chain.
+- App: app/business/owners/page.tsx (SoundNav idiom, ui.tsx primitives),
+  BusinessNav + Business dropdown (Desktop+Mobile) gain Owners after S&P 500,
+  lib/business.ts gains OwnersFile + getOwners() on the same GH-raw ISR load
+  path, releases.ts gains the 2026-08-03 entry (brevity rules respected).
+
+## NEXT SESSION — START HERE v3 (written 2026-08-03, SUPERSEDES v2)
+
+STATE: tree clean at the docs commit on top of `492253504` (Vercel READY,
+aliased). /business is a NINE-tab hub; leaders board 107/107 with overrides
+pinned (see semantics above); owners.json live. Mac-mini refresh bots pushed
+overnight commits - pull --rebase before working.
+
+FIRST (~5 min):
+1) Tue 4 Aug 06:40 UTC predictions-refresh.yml FIRST RUN: self-tests green,
+   4 JSONs [vercel skip], /predictions/pl + /predictions/nfl pick up via ISR.
+2) Wed 5 Aug 08:10 UTC honours-2026-champions.yml FIRST RUN.
+
+MAIN QUEUE (unchanged from v2 except Owners done):
+1) **Saturday 8 Aug drill** (reminder trigger fires 08:00Z): ritual ->
+   sync_geo_from_excel --write -> refresh.py --write -> export_csv ->
+   compare_excel -> business chain: build_business_data -> sp500 -> fx ->
+   markets -> leaders -> commit public/data/business/*.json [vercel skip].
+   Green Saturday #2. (Leaders now runs with pinned overrides - expect
+   107/107, changes only at unpinned seats.)
+2) **CFB prediction hub** ~10 Aug (preseason AP poll), NFL convention; then
+   UCL hub after the late-Aug draw, PL convention (memory "Conventions").
+   PL E0 fixture odds ~21 Aug fold in automatically.
+3) At mktcap CUTOVER (after green Saturday #3): mini inherits the whole
+   Saturday chain + needs Supabase service key + exchangerate key copied.
+4) Deep threads: 13F CUSIP mapping + Q2 drop (~Sep); per-edition Fairs Cup;
+   FIFA CWC 2025 hub; CFP ~late Oct; retire corporate-power CEO_MAP by
+   reading business leaders.json.
+
+HOUSE RULES: unchanged (sticky nav; no next build vs dev server; specific-path
+commits, [vercel skip] discipline, app commit as push head; PYTHONIOENCODING;
+Wikidata REST not WDQS; Yahoo v8 for markets). NEW: leaders override
+semantics above; $-sign variables get eaten by the DC start_process layer -
+write .py helper files instead of powershell/python one-liners.
