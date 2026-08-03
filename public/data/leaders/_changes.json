@@ -1,6 +1,24 @@
 {
-  "updated": "2026-07-26",
+  "updated": "2026-08-03",
   "changes": [
+    {
+      "date": "2025-11-08",
+      "slug": "bolivia",
+      "country": "Bolivia",
+      "office": "President",
+      "from": "Rodrigo Paz Pereira",
+      "to": "Rodrigo Paz",
+      "source": "wikidata"
+    },
+    {
+      "date": "2026-07-28",
+      "slug": "peru",
+      "country": "Peru",
+      "office": "President",
+      "from": "José María Balcázar",
+      "to": "Keiko Fujimori",
+      "source": "wikidata"
+    },
     {
       "date": "2024-02-26",
       "slug": "tuvalu",

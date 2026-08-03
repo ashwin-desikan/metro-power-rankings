@@ -283,10 +283,20 @@
     "name": "José María Balcázar",
     "role": "President",
     "start": "2026-02-18",
+    "end": "2026-07-28",
+    "current": false,
+    "tenure": "0y 5m 10d",
+    "party": "Free Peru",
+    "era": null
+  },
+  {
+    "name": "Keiko Fujimori",
+    "role": "President",
+    "start": "2026-07-28",
     "end": null,
     "current": true,
-    "tenure": "2026–present (interim)",
-    "party": "Free Peru",
+    "tenure": "in office",
+    "party": "",
     "era": null
   }
 ]

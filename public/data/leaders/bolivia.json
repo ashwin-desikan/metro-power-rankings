@@ -233,6 +233,16 @@
     "name": "Rodrigo Paz Pereira",
     "role": "President",
     "start": "2025-11-08",
+    "end": "2025-11-08",
+    "current": false,
+    "tenure": "0y 0m 0d",
+    "party": "",
+    "era": "Post-MAS Era"
+  },
+  {
+    "name": "Rodrigo Paz",
+    "role": "President",
+    "start": "2025-11-08",
     "end": null,
     "current": true,
     "tenure": "in office",
