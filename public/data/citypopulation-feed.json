@@ -1,6 +1,15 @@
 {
   "entries": [
     {
+      "date": "2026-07-30",
+      "title": "UK (local authorities)",
+      "url": "https://www.citypopulation.de/en/uk/",
+      "countries": [
+        "uk",
+        "UK"
+      ]
+    },
+    {
       "date": "2026-07-01",
       "title": "Austria",
       "url": "https://www.citypopulation.de/en/austria/",
@@ -1483,51 +1492,6 @@
       "countries": [
         "austria",
         "Austria"
-      ]
-    },
-    {
-      "date": "2024-07-25",
-      "title": "UK (England & Wales, Northern Ireland)",
-      "url": "https://www.citypopulation.de/en/uk/",
-      "countries": [
-        "uk",
-        "UK"
-      ]
-    },
-    {
-      "date": "2024-07-24",
-      "title": "Dominican Republic (2022 census)",
-      "url": "https://www.citypopulation.de/en/domrep/",
-      "countries": [
-        "domrep",
-        "Dominican Republic"
-      ]
-    },
-    {
-      "date": "2024-07-22",
-      "title": "Zambia (2022 census)",
-      "url": "https://www.citypopulation.de/en/zambia/",
-      "countries": [
-        "zambia",
-        "Zambia"
-      ]
-    },
-    {
-      "date": "2024-07-16",
-      "title": "Senegal (2023 census)",
-      "url": "https://www.citypopulation.de/en/senegal/",
-      "countries": [
-        "senegal",
-        "Senegal"
-      ]
-    },
-    {
-      "date": "2024-07-12",
-      "title": "Greece (settlements)",
-      "url": "https://www.citypopulation.de/en/greece/",
-      "countries": [
-        "greece",
-        "Greece"
       ]
     }
   ]

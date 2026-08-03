@@ -33254,7 +33254,7 @@
     "name": "Ian Wood & family",
     "networth": 2022.499,
     "rank": 2061,
-    "countryCode": "gb",
+    "countryCode": null,
     "industries": [
       "Energy"
     ],
@@ -39557,7 +39557,7 @@
     "name": "Chang Chung-Hsing",
     "networth": 1665.971,
     "rank": 2452,
-    "countryCode": "tw",
+    "countryCode": null,
     "industries": [
       "Manufacturing"
     ],
@@ -41311,7 +41311,7 @@
     "name": "Yu Kai",
     "networth": 1559.859,
     "rank": 2561,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Technology"
     ],
@@ -44079,7 +44079,7 @@
     "name": "Cao Yuhua & family",
     "networth": 1423.484,
     "rank": 2733,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Automotive"
     ],
@@ -44995,7 +44995,7 @@
     "name": "Michael Cagney",
     "networth": 1386.04,
     "rank": 2790,
-    "countryCode": "us",
+    "countryCode": null,
     "industries": [
       "Technology"
     ],
@@ -45752,7 +45752,7 @@
     "name": "Zhong Huaijun",
     "networth": 1353.342,
     "rank": 2837,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Food & Beverage"
     ],
@@ -48441,7 +48441,7 @@
     "name": "Zhu Weisong",
     "networth": 1237.002,
     "rank": 3004,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Media & Entertainment"
     ],
@@ -48507,7 +48507,7 @@
     "name": "Ali Erdemoglu",
     "networth": 1234.042,
     "rank": 3008,
-    "countryCode": "tr",
+    "countryCode": null,
     "industries": [
       "Manufacturing"
     ],
@@ -48635,7 +48635,7 @@
     "name": "Li Jianguo",
     "networth": 1226.45,
     "rank": 3016,
-    "countryCode": "cn",
+    "countryCode": null,
     "industries": [
       "Telecom"
     ],
@@ -50080,7 +50080,7 @@
     "name": "He Yamin & family",
     "networth": 1170.475,
     "rank": 3107,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Manufacturing"
     ],
@@ -50450,7 +50450,7 @@
     "name": "Zhu Jiangming",
     "networth": 1160.098,
     "rank": 3130,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Manufacturing"
     ],
@@ -50917,7 +50917,7 @@
     "name": "Zhang Xuewu",
     "networth": 1144.399,
     "rank": 3159,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Food & Beverage"
     ],
@@ -52316,7 +52316,7 @@
     "name": "Qi Xiangdong",
     "networth": 1095.08,
     "rank": 3247,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Technology"
     ],
@@ -53345,7 +53345,7 @@
     "name": "Shintaro Yamada",
     "networth": 1043.979,
     "rank": 3311,
-    "countryCode": null,
+    "countryCode": "jp",
     "industries": [
       "Technology"
     ],
@@ -53377,7 +53377,7 @@
     "name": "Wei Lidong & family",
     "networth": 1042.836,
     "rank": 3313,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Technology"
     ],
@@ -53441,7 +53441,7 @@
     "name": "Chen Xueli",
     "networth": 1039.89,
     "rank": 3317,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Healthcare"
     ],
@@ -53700,7 +53700,7 @@
     "name": "Kristina Hollweg",
     "networth": 1029.654,
     "rank": 3333,
-    "countryCode": null,
+    "countryCode": "de",
     "industries": [
       "Manufacturing"
     ],
@@ -53928,7 +53928,7 @@
     "name": "Yuri Shefler",
     "networth": 1019.867,
     "rank": 3347,
-    "countryCode": null,
+    "countryCode": "ru",
     "industries": [
       "Food & Beverage"
     ],
@@ -54316,7 +54316,7 @@
     "name": "Marc Samwer",
     "networth": 1004.89,
     "rank": 3371,
-    "countryCode": null,
+    "countryCode": "de",
     "industries": [
       "Technology"
     ],
