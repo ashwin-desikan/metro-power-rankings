@@ -1625,3 +1625,41 @@ commits, [vercel skip] discipline, app commit as push head; PYTHONIOENCODING;
 Wikidata REST not WDQS; Yahoo v8 for markets). NEW: leaders override
 semantics above; $-sign variables get eaten by the DC start_process layer -
 write .py helper files instead of powershell/python one-liners.
+
+
+## 2026-08-03 (late morning) - windows (VERCEL COST PASS: ignore script, .vercelignore, retry guard)
+
+Prompted by Vercel's cost bot ($10.43 MTD Aug 1-3, $5.75 of it build CPU —
+mostly intentional ship-day builds plus ONE duplicate retry). Its PR #20 was
+CLOSED WITH COMMENT, not merged: its inline ignoreCommand was 546 chars against
+Vercel's 256-char schema cap (the PR's own deployment failed validation —
+merging would have frozen ALL deploys), and its `git diff HEAD^ HEAD` rule
+only inspects the head commit of a push, so an app commit under a data commit
+in one push would silently never build.
+
+Shipped instead as `fd862d475` [vercel skip]:
+- **vercel.json ignoreCommand → `sh scripts/vercel-ignore.sh`** (dodges the
+  256-char cap forever). Same semantics as before plus: [deploy-retry]
+  force-builds, and a push-range path check
+  (VERCEL_GIT_PREVIOUS_SHA..HEAD over app/lib/public/proxy.ts/configs) that
+  skips untagged docs/automation-only commits. FAIL-OPEN: unknown/absent base
+  sha → build. Tested against 10 real-history cases (incl. the span-push and
+  fail-open paths); verified live — fd862d475's own deployment shows
+  CANCELED via the ignored-build-step.
+- **.vercelignore**: drops Overture-Per-Country-Raw/ + Overture-Match-
+  Suggestions/ (184MB of the repo's 654MB tracked) from build input. No xlsx
+  are tracked; public/ (400MB) is needed. scripts/ exclusion considered and
+  NOT done — unverified whether pruning runs before the ignore step, and the
+  ignore script lives there.
+- **run-deploy-watch.sh** (root cause of today's duplicate): /deployed sits
+  behind Cloudflare's HTML edge cache and served a stale sha, so the watcher
+  re-triggered a COMPLETED build of a277c4a35 (~8 wasted minutes). Fixes:
+  cache-busted `?cb=` on the /deployed read + a GitHub deployments-API guard
+  (public repo, unauthenticated) that skips the re-trigger when TARGET
+  already has a successful production deployment. Mini picks this up on its
+  next pull; mode 100755 preserved via update-index --chmod=+x.
+- OPEN (cost, later pass): ISR writes $1.88 MTD — revalidate windows on the
+  big 1h SSG families (rankings/countries/leaders/states) could stretch to
+  3-6h, trading data-commit surface latency. Not urgent.
+- PAT note: closing PR #20 used the Credential Manager token via
+  `git credential fill` piped straight to the API (never printed).
