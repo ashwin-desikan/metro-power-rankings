@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "ignoreCommand": "git log -1 --pretty=%B | grep -q '\\[vercel skip\\]' && exit 0; if [ \"$VERCEL_GIT_COMMIT_REF\" != \"main\" ]; then git log -1 --pretty=%B | grep -q '\\[preview\\]' || exit 0; fi; exit 1",
+  "ignoreCommand": "git log -1 --pretty=%B | grep -q '\\[vercel skip\\]' && exit 0; if [ \"$VERCEL_GIT_COMMIT_REF\" != \"main\" ]; then git log -1 --pretty=%B | grep -q '\\[preview\\]' || exit 0; fi; git log -1 --pretty=%B | grep -q '\\[deploy-retry\\]' && exit 1; git diff --quiet HEAD^ HEAD -- app lib package.json package-lock.json next.config.ts vercel.json ':(exclude)public/data/**' public && git diff --quiet HEAD^ HEAD -- public/data/leaders && exit 0; exit 1",
   "headers": [
     {
       "source": "/data/(.*)",

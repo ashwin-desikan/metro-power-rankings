@@ -1,0 +1,3 @@
+# Raw pipeline inputs are not read by Next.js at build or runtime.
+Overture-Per-Country-Raw/
+Overture-Match-Suggestions/
