@@ -1,13 +1,48 @@
 {
-  "generatedAt": "2026-08-02",
-  "count": 545,
+  "generatedAt": "2026-08-03",
+  "count": 550,
   "entries": [
+    {
+      "date": "2026-08-03",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "b295b2d9b"
+    },
     {
       "date": "2026-08-02",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "15cabc42f"
+      "text": "Data refreshed — Football, Basketball, Leaders, AFL, and 1 more.",
+      "commit": "953be4341"
+    },
+    {
+      "date": "2026-08-02",
+      "category": "new-hub",
+      "hub": "Business",
+      "text": "New hub: Business.",
+      "commit": "816ebe55c"
+    },
+    {
+      "date": "2026-08-02",
+      "category": "fix",
+      "hub": "About",
+      "text": "PL + NFL prediction hubs, sticky-nav design standard, home masthead promos, hub fixes.",
+      "commit": "8a44fd8e9"
+    },
+    {
+      "date": "2026-08-02",
+      "category": "hub",
+      "hub": null,
+      "text": "Data+pipeline: EC winner TB 0.12, pre-1971 Fairs Cup x0.5 pedigree discount, Chelsea 06-07 (+0.04) and 09-10 (+0.01) manual TB, all 67 hubs…",
+      "commit": "2c3947904"
+    },
+    {
+      "date": "2026-08-02",
+      "category": "hub",
+      "hub": "Api",
+      "text": "Lock down anon-writable mktcap tables, harden admin/og/beacon routes.",
+      "commit": "e7fc00db2"
     },
     {
       "date": "2026-08-01",
