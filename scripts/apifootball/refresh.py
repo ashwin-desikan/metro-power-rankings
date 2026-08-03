@@ -32,6 +32,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 API = "https://v3.football.api-sports.io"
 SUPA = os.environ.get("SUPABASE_URL", "https://nmprqkmymrdknffwnuur.supabase.co")
 CONTINENTAL = {2, 3, 848, 13, 531}
+# International (national-team) competitions: fetched like the continental
+# comps (standings + fixtures), but the teams are NATIONS, not clubs — they
+# BYPASS the club-Lookup invariant and map to themselves (canonical_name =
+# api nation name). 5 = UEFA Nations League (2026 league phase 24 Sep–17 Nov).
+INTERNATIONAL = {5}
+FIXTURE_COMPS = CONTINENTAL | INTERNATIONAL
 SKIP_STANDINGS = {76}
 TRANS = str.maketrans({"ø":"o","Ø":"o","ł":"l","Ł":"l","æ":"ae","Æ":"ae","œ":"oe","ð":"d","þ":"th",
                        "ß":"ss","đ":"d","ı":"i","İ":"i","'":" ","’":" "})
@@ -245,7 +251,20 @@ def selftest():
                             "level": 1, "comp_type": "domestic", "season": 2026, "has_standings": True}])
     assert lm == [{"league_id": 318, "name": "1. Division", "country": "Cyprus",
                    "level": 1, "comp_type": "domestic", "season": 2026}], lm
+    # International passthrough: nations map to themselves and never hit the
+    # club Lookup; UNL fixtures are fetched like the continental comps.
+    nr = nation_row(777, "Spain")
+    assert nr["canonical_name"] == "Spain" and nr["country"] == "Spain" and nr["lookup_name"] is None, nr
+    assert 5 in INTERNATIONAL and 5 in FIXTURE_COMPS and 5 not in CONTINENTAL
+    assert check_collision("Spain", "Spain", 777, {("Spain", "Spain"): 777}) is None
     print("self-test OK")
+
+def nation_row(tid, name):
+    """football_team row for a national side (INTERNATIONAL comps): the nation
+    maps to itself. lookup/uefa/efs stay None — those columns are club identity."""
+    return {"team_id": tid, "canonical_name": name, "country": name,
+            "lookup_name": None, "uefa_name": None, "efs_name": None}
+
 
 def league_meta_rows(leagues):
     """football_league rows built 1:1 from the watched set (leagues.json is the source of
@@ -262,6 +281,7 @@ def main():
     leagues = json.load(open(os.path.join(HERE, "leagues.json"), encoding="utf-8"))
     akey = api_key()
     standings, fixtures, teams_seen = [], [], {}
+    national_ids = set()   # api team_ids seen in INTERNATIONAL comps -> nation passthrough
     empty, errors = [], []
     log(f"refresh start ({len(leagues)} leagues, write={write})")
     for lg in leagues:
@@ -274,12 +294,14 @@ def main():
                 s, tm = parse_standings(doc, lid, season)
                 if s: standings += s; teams_seen.update(tm)
                 else: empty.append(lid)
+                if lid in INTERNATIONAL: national_ids.update(tm)
             time.sleep(0.2)
-        if lid in CONTINENTAL:
+        if lid in FIXTURE_COMPS:
             doc = api_get("/fixtures", akey, league=lid, season=season)
             if not (doc.get("_error") or doc.get("errors")):
                 f, tm = parse_fixtures(doc, lid, season)
                 if f: fixtures += f; teams_seen.update(tm)
+                if lid in INTERNATIONAL: national_ids.update(tm)
             time.sleep(0.2)
     log(f"fetched: standings={len(standings)} fixtures={len(fixtures)} teams_seen={len(teams_seen)} "
         f"empty={len(empty)} errors={len(errors)}")
@@ -305,6 +327,17 @@ def main():
     if new_ids:
         resolve = build_resolver(supa_get("/rest/v1/football_lookup?select=cur_name,team,lookup_name,uefa_name,uefa_name_2,efs_name,api_name,api_name_2,country,level", skey))
         for tid in new_ids:
+            if tid in national_ids:
+                # Nations League etc.: national teams are not Lookup clubs.
+                # They map to themselves — canonical/country = api nation name —
+                # so the club invariant is untouched and no alert fires.
+                row = nation_row(tid, teams_seen[tid])
+                owner = check_collision(row["canonical_name"], row["country"], tid, claim)
+                if owner is not None:
+                    collisions.append((tid, teams_seen[tid], row["canonical_name"], row["country"], owner)); continue
+                claim[(row["canonical_name"], row["country"])] = tid
+                resolved_rows.append(row)
+                continue
             rec = resolve(teams_seen[tid])
             if not rec:
                 unmatched.append(tid); continue

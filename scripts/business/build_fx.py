@@ -125,6 +125,39 @@ def main(argv):
               indent=1, ensure_ascii=False)
     n = append_history(today, rates)
     common.log(f"fx: {len(currencies)} currencies written; history now {n} snapshot(s)")
+    update_series(today, rates)
+
+
+def update_series(today, rates):
+    """Extend the per-currency history files behind /business/currencies/[code].
+
+    Seeded by build_fx_series.py from the long-run historical dataset; this
+    keeps them current with one row per day. A missing file is skipped, not
+    created - seeding (with era clamps and downsampling) is the seeder's job.
+    Dedupe-by-date makes same-day reruns safe, mirroring append_history.
+    """
+    sdir = os.path.join(OUT_DIR, "fx-series")
+    gen = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    n = 0
+    for code in MAJORS:
+        rate = rates.get(code)
+        if not isinstance(rate, (int, float)) or rate <= 0:
+            continue
+        path = os.path.join(sdir, f"{code.lower()}.json")
+        try:
+            doc = json.load(open(path, encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        series = [p for p in doc.get("series", []) if p[0] != today]
+        series.append([today, round(float(f"{rate:.6g}"), 12)])
+        series.sort()
+        doc["series"] = series
+        doc["meta"]["end"] = series[-1][0]
+        doc["meta"]["points"] = len(series)
+        doc["meta"]["generated_at"] = gen
+        json.dump(doc, open(path, "w", encoding="utf-8"), separators=(",", ":"))
+        n += 1
+    common.log(f"fx-series: {n} series extended to {today}")
 
 
 def self_test():

@@ -24,9 +24,9 @@
  */
 
 import ts from "typescript";
-import { readFileSync, readdirSync, statSync } from "node:fs";
+import { readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
 import { dirname, extname, join, relative, resolve, sep } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = resolve(__dirname, "..");
@@ -158,6 +158,70 @@ export function checkSource(src, filename) {
   return violations;
 }
 
+/**
+ * Rule 2 - rank-first tables must pin the identity column on phones.
+ * A <table> (or <TableBox>) whose FIRST header cell is the literal "#" is a
+ * ranked board; the default mobile sticky column would pin that rank number
+ * while the row's name scrolls away (this shipped in /business 2026-08-03).
+ * Such tables must declare data-sticky-col (<table>) / stickyCol (<TableBox>);
+ * the CSS lives in app/globals.css, the standard in DESIGN-STANDARDS.md.
+ *
+ * Ratchet: scripts/table-scroll-rank-baseline.json freezes pre-existing
+ * offender counts per file; a file may never EXCEED its baselined count.
+ * Regenerate with --write-rank-baseline only after FIXING files (shrinking
+ * the baseline), never to grandfather new violations in.
+ */
+const RANK_TABLE_TAGS = new Set(["table", "TableBox"]);
+const STICKY_ATTRS = { table: "data-sticky-col", TableBox: "stickyCol" };
+
+function firstThText(node) {
+  let found;
+  function walkTh(n) {
+    if (found !== undefined) return;
+    const isTh =
+      (ts.isJsxElement(n) && jsxTagName(n.openingElement) === "th") ||
+      (ts.isJsxSelfClosingElement(n) && jsxTagName(n) === "th");
+    if (isTh) {
+      let text = "";
+      if (ts.isJsxElement(n)) {
+        for (const c of n.children) {
+          if (ts.isJsxText(c)) text += c.text;
+        }
+      }
+      found = text.trim();
+      return;
+    }
+    ts.forEachChild(n, walkTh);
+  }
+  ts.forEachChild(node, walkTh);
+  return found;
+}
+
+export function checkRankSticky(src, filename) {
+  const violations = [];
+  if (!src.includes("<table") && !src.includes("<TableBox")) return violations;
+  const scriptKind = filename.endsWith(".tsx") ? ts.ScriptKind.TSX : ts.ScriptKind.JSX;
+  const sourceFile = ts.createSourceFile(filename, src, ts.ScriptTarget.Latest, true, scriptKind);
+  function visit(node) {
+    if (ts.isJsxElement(node)) {
+      const tag = jsxTagName(node.openingElement);
+      if (tag && RANK_TABLE_TAGS.has(tag) && firstThText(node) === "#") {
+        const attr = STICKY_ATTRS[tag];
+        if (!findAttribute(node.openingElement.attributes, attr)) {
+          const { line } = sourceFile.getLineAndCharacterOfPosition(node.getStart(sourceFile));
+          violations.push({
+            line: line + 1,
+            reason: `rank-first <${tag}> needs ${attr}={2}: pin the name column, not the rank, on phones`,
+          });
+        }
+      }
+    }
+    ts.forEachChild(node, visit);
+  }
+  visit(sourceFile);
+  return violations;
+}
+
 function checkFile(file, violations) {
   const src = readFileSync(file, "utf8");
   for (const v of checkSource(src, file)) {
@@ -169,6 +233,46 @@ function main() {
   const files = SCAN_DIRS.flatMap((d) => walk(join(REPO_ROOT, d)));
   const violations = [];
   for (const file of files) checkFile(file, violations);
+
+  // Rule 2 (rank-first sticky column), ratcheted against the baseline.
+  const BASELINE_PATH = join(__dirname, "table-scroll-rank-baseline.json");
+  const rankByFile = new Map();
+  for (const file of files) {
+    const v = checkRankSticky(readFileSync(file, "utf8"), file);
+    if (v.length) rankByFile.set(relative(REPO_ROOT, file).split(sep).join("/"), v);
+  }
+  if (process.argv.includes("--write-rank-baseline")) {
+    const counts = {};
+    for (const f of [...rankByFile.keys()].sort()) counts[f] = rankByFile.get(f).length;
+    writeFileSync(BASELINE_PATH, JSON.stringify(counts, null, 2) + "\n");
+    console.log(`check:table-scroll - wrote rank baseline (${rankByFile.size} files, ${[...rankByFile.values()].reduce((s, v) => s + v.length, 0)} tables)`);
+    return;
+  }
+  let baseline = {};
+  try { baseline = JSON.parse(readFileSync(BASELINE_PATH, "utf8")); } catch { /* first run: no baseline */ }
+  const rankViolations = [];
+  for (const [f, v] of rankByFile) {
+    if (v.length > (baseline[f] ?? 0)) {
+      for (const item of v) rankViolations.push({ file: f, ...item });
+    }
+  }
+  if (rankViolations.length > 0) {
+    console.error("");
+    console.error("check:table-scroll - FAIL (rank-first sticky column)");
+    console.error("");
+    console.error("These ranked tables lead with a '#' column but don't declare which column");
+    console.error("stays pinned during sideways scroll on phones, so the rank number sticks");
+    console.error("while the row's name scrolls out of view. Add data-sticky-col=\"2\" to the");
+    console.error("<table> (or stickyCol={2} to <TableBox>). See DESIGN-STANDARDS.md.");
+    console.error("(Files listed exceed their count in scripts/table-scroll-rank-baseline.json.)");
+    console.error("");
+    for (const v of rankViolations) {
+      console.error(`  ${v.file}:${v.line}`);
+      console.error(`    ${v.reason}`);
+    }
+    console.error("");
+    process.exit(1);
+  }
 
   if (violations.length === 0) {
     console.log(`check:table-scroll - OK (${files.length} files scanned)`);
@@ -192,6 +296,9 @@ function main() {
   process.exit(1);
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+// pathToFileURL handles Windows paths (backslashes, drive letters); the old
+// `file://${argv[1]}` comparison never matched on Windows, so the check was
+// silently a no-op there (found 2026-08-03).
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   main();
 }

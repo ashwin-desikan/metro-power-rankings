@@ -1,0 +1,80 @@
+name: Business daily refresh (markets + FX)
+
+# Daily refresh for the two /business datasets that actually move daily:
+#   - markets.json      (index + commodity levels, Yahoo chart API, keyless)
+#   - fx.json           (USD rates, exchangerate-api.com free plan - its own
+#                        rates refresh once daily upstream; one call per run
+#                        = ~30 of the 1,500 monthly requests)
+# Everything else in the hub stays on its slower cadence by design: the
+# mktcap universe + movers belong to the Saturday drill's parity discipline,
+# S&P 500 membership churns a few times a quarter, Leaders follows the
+# weekly Wikidata cycle, Owners is quarterly (SEC 13F calendar), Crossovers
+# derives from the weekly snapshot. Decision 2026-08-03 with Ashwin.
+#
+# Cost: zero marginal. Data-only commit riding [vercel skip] (and the
+# vercel-ignore.sh path check as backstop) - the pages read these JSONs via
+# ISR from GitHub raw, so no build ever triggers. Both scripts keep
+# append-only history files (deduped by date), so week-over-week movement
+# on the pages is computed from our own tracked days.
+#
+# 05:50 UTC daily - after Asia's close, before the European open, and clear
+# of predictions (Tue 06:40) and honours (Wed 08:10). Self-tests gate every
+# run; a failing Yahoo symbol degrades gracefully, fewer than six indices
+# aborts the write.
+
+on:
+  schedule:
+    - cron: "50 5 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: business-daily-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
+        with:
+          python-version: "3.12"
+
+      - name: Self-tests (offline decision logic)
+        run: |
+          python3 scripts/business/build_markets.py --self-test
+          python3 scripts/business/build_fx.py --self-test
+
+      - name: Refresh markets (Yahoo, keyless)
+        run: python3 scripts/business/build_markets.py
+
+      - name: Refresh FX (exchangerate-api)
+        env:
+          EXCHANGERATE_API_KEY: ${{ secrets.EXCHANGERATE_API_KEY }}
+        run: python3 scripts/business/build_fx.py
+
+      - name: Commit if anything changed
+        run: |
+          git add public/data/business/markets.json public/data/business/markets-history.json \
+                  public/data/business/fx.json public/data/business/fx-history.json \
+                  public/data/business/fx-series
+          if git diff --cached --quiet; then
+            echo "No changes; nothing to commit."
+            exit 0
+          fi
+          git config user.name "business-refresh-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "Auto: daily markets + FX refresh [vercel skip]"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "Pushed on attempt $attempt."; exit 0
+            fi
+            sleep $((attempt * 5))
+          done
+          echo "Failed to push after retries." >&2; exit 1

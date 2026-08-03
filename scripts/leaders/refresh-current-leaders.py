@@ -44,6 +44,13 @@ PM_LED = {
     "ethiopia","iraq","georgia","croatia","bulgaria","bosnia-herzegovina",
     "montenegro","slovenia","slovakia","lithuania","india","israel",
 }
+# Windows consoles default to cp1252, which cannot print the crown/warn glyphs
+# and crashed a live run mid-loop (2026-08-03). Harmless no-op elsewhere.
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 # Curated overrides for countries where Wikidata is stale or wrong about the
 # office holder. Applied verbatim in main() (still glyph-processed by apply_warn),
 # and preserved across re-scrapes. Update deliberately, by hand, with a real change.
@@ -61,7 +68,36 @@ CURATED_OVERRIDES = {
     # resigned the presidency and was elected PM on 2026-05-08 (news-verified).
     # Remove this override once Wikidata catches up.
     "bulgaria": {"name": "Rumen Radev", "role": "PM", "since": "2026-05-08"},
+    # Wikidata's P6 for Kuwait still lists Sabah Al-Khalid Al-Sabah, who left the
+    # premiership in 2022 and has been CROWN PRINCE since 1 Jun 2024. Ahmad
+    # Al-Abdullah Al-Sabah has been PM since 15 May 2024 (Wikipedia/news-verified
+    # 2026-08-03). Remove once Wikidata's claim is corrected.
+    "kuwait": {"name": "Ahmad Al-Abdullah Al-Sabah", "role": "PM", "since": "2024-05-15",
+               "second": {"name": "👑 Mishal Al-Ahmad Al-Jaber Al-Sabah", "role": "Monarch"}},
 }
+# Monarchies whose Wikidata P122 label doesn't say "monarchy" (missing or an
+# unusual label), which degraded their sovereign to a bare "President" row.
+# These are structural facts, not current events — safe to curate.
+FORCE_MONARCHY = {"brunei", "jordan"}
+# Curated accession/appointment dates for leaders whose CURRENT Wikidata claim
+# carries no P580 start qualifier (checked 2026-08-03; all Wikipedia-verified).
+# Keyed by (slug, name prefix) — matched against the bare primary name via
+# prefix, so labels like "Abdullah II of Jordan" match and a SUCCESSION
+# automatically invalidates the fallback instead of mislabeling the new
+# leader's tenure. Switzerland is deliberately absent: the Federal Council is
+# collective and carries no single accession date (Ashwin, 2026-08-03).
+SINCE_FALLBACK = {
+    ("brunei", "Hassanal Bolkiah"): "1967-10-05",                        # Sultan since 5 Oct 1967
+    ("jordan", "Abdullah II"): "1999-02-07",                             # King since 7 Feb 1999
+    ("united-arab-emirates", "Mohammed bin Rashid Al Maktoum"): "2006-02-11",  # PM since 11 Feb 2006
+}
+
+def since_fallback(slug, name):
+    b = bare(name)
+    for (s, prefix), d in SINCE_FALLBACK.items():
+        if s == slug and b.startswith(prefix):
+            return d
+    return None
 # Executive monarchies where the sovereign (not the appointed head of government) leads.
 MONARCH_LED = {"monaco","eswatini","oman","brunei"}
 # Commonwealth realms: share King Charles III as head of state (crowned monarch),
@@ -108,7 +144,11 @@ def pick(slug, cands, pm_led):
         m = next((c for c in cands if role in c["role"]), None)
         if m: primary = m; break
     out = {"name": primary["name"], "role": short_role(primary["role"])}
-    if primary.get("start"): out["since"] = primary["start"]
+    if primary.get("start"):
+        out["since"] = primary["start"]
+    else:
+        fb = since_fallback(slug, primary["name"])
+        if fb: out["since"] = fb
     if any(r in primary["role"] for r in GOV_ROLES):
         for tok in HOS_TOKENS:
             hs = next((c for c in cands if tok in c["role"] and bare(c["name"]) != bare(primary["name"])), None)
@@ -138,7 +178,7 @@ def hog_role_token(office_label):
 
 def build_entry(slug, hos_name, hog_name, hog_office, form, hos_start=None, hog_start=None):
     form_l = (form or "").lower()
-    is_monarchy = "monarchy" in form_l
+    is_monarchy = "monarchy" in form_l or slug in FORCE_MONARCHY
     # Parliamentary republics (and the curated PM-led set) lead with the head of
     # government; presidential and semi-presidential systems lead with the
     # president; monarchies fall through to default (a sitting PM outranks the
@@ -347,13 +387,34 @@ def main(add_only=False):
         # --add-only: never touch a country that already has a (curated) entry.
         if add_only and prev:
             continue
+        # Same person still leads: never a succession, but MERGE in fields the
+        # refresh can now supply — a missing since, a monarch crown/role fix, a
+        # newly resolvable second — keeping any prev-only fields (e.g. a curated
+        # since the new fetch lacks). Nothing is logged to _changes.json: same
+        # leader = curation, not succession. (Brunei/Jordan/UAE sat since-less
+        # for weeks because this branch used to freeze name-only entries.)
+        # MUST run before the realm safeguard: a same-person Pres.→Monarch fix
+        # (Brunei, Jordan) is a correction, not the regression it guards against.
+        if prev and bare(prev["name"]) == bare(entry["name"]):
+            # FILL-ONLY: the fresh entry supplies fields prev lacks (since,
+            # second); prev wins every conflict so curated values are never
+            # clobbered by a Wikidata flap. One deliberate exception: the
+            # Pres.→Monarch mislabel correction takes the fresh role AND name
+            # (crown glyph) — that's the Brunei/Jordan fix, not a flap.
+            merged = {**{k: v for k, v in entry.items() if v}, **prev}
+            if entry.get("role") == "Monarch" and prev.get("role") in ("Pres.", "President"):
+                merged["role"] = entry["role"]
+                merged["name"] = entry["name"]
+            if merged != prev:
+                existing[slug] = merged
+                changed += 1
+                print(f"  refreshed {slug}: same leader, fields filled ({bare(entry['name'])})")
+            continue
         # Realm safeguard: if Wikidata dropped the head of government and we'd
-        # regress a curated PM entry to a monarch-only one, keep the curated entry.
+        # regress a curated PM entry to a DIFFERENT monarch-only one, keep the
+        # curated entry (same-person corrections were already handled above).
         if prev and not add_only and entry.get("role") == "Monarch" \
            and "second" not in entry and prev.get("role") != "Monarch":
-            continue
-        # Keep curated entry if the same person still leads; else replace.
-        if prev and bare(prev["name"]) == bare(entry["name"]):
             continue
         existing[slug] = entry
         changed += 1
@@ -414,6 +475,16 @@ def self_test():
     # curated override entries are well-formed and glyph-processed (MBS is warn-listed)
     assert "saudi-arabia" in CURATED_OVERRIDES
     assert apply_warn(dict(CURATED_OVERRIDES["saudi-arabia"]))["name"] == f"{WARN} Mohammed bin Salman"
+    # SINCE_FALLBACK: prefix-matches decorated/qualified labels, dies with succession
+    assert since_fallback("jordan", f"{CROWN} Abdullah II of Jordan") == "1999-02-07"
+    assert since_fallback("jordan", "Hussein bin Abdullah") is None       # next king: no stale date
+    assert since_fallback("switzerland", "Swiss Federal Council") is None  # collective: no date by design
+    # FORCE_MONARCHY: Brunei's sultan crowns + dates even with a blank P122 form
+    e = build_entry("brunei", "Hassanal Bolkiah I of Brunei", None, None, "")
+    assert e["role"] == "Monarch" and e["name"].startswith(CROWN) and e["since"] == "1967-10-05", e
+    # Kuwait override is well-formed: PM + emir second + verified date
+    kw = CURATED_OVERRIDES["kuwait"]
+    assert kw["since"] == "2024-05-15" and kw["second"]["role"] == "Monarch"
     # change side-effects helpers
     assert _office_family("PM") == "gov" and _office_family("Pres.") == "state" and _office_family("Monarch") == "monarch"
     assert _office_family("Federal Chanc.") == "gov" and _office_family("Sup. Leader") == "state"

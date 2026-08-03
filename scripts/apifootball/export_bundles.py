@@ -16,7 +16,7 @@ from datetime import datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from refresh import supa_get, supa_key, CONTINENTAL
+from refresh import supa_get, supa_key, CONTINENTAL, INTERNATIONAL
 
 OUT = os.path.abspath(os.path.join(HERE, "..", "..", "public", "data", "football"))
 
@@ -52,16 +52,23 @@ def main():
     standings = supa_get("/rest/v1/football_standings?select=*&order=league_id,group_label,rank", key)
     fixtures = supa_get("/rest/v1/football_fixtures?select=*&order=league_id,kickoff", key)
 
-    dom, comps = {}, {}
+    # Three buckets: domestic league tables, continental CLUB comps, and
+    # INTERNATIONAL (national-team) comps — UEFA Nations League — which ship
+    # in their own key so the frontend can build an International Football
+    # section without club assumptions.
+    dom, comps, intl = {}, {}, {}
+    def bucket_for(lid):
+        if lid in CONTINENTAL: return comps
+        if lid in INTERNATIONAL: return intl
+        return dom
     for s in standings:
         lid = s["league_id"]
-        bucket = comps if lid in CONTINENTAL else dom
-        L = bucket.setdefault(lid, {"groups": {}, "fixtures": []})
+        L = bucket_for(lid).setdefault(lid, {"groups": {}, "fixtures": []})
         L["groups"].setdefault(s.get("group_label") or "", []).append(srow(s, teams))
     for f in fixtures:
         lid = f["league_id"]
-        if lid not in CONTINENTAL: continue
-        comps.setdefault(lid, {"groups": {}, "fixtures": []})["fixtures"].append({
+        if lid not in CONTINENTAL and lid not in INTERNATIONAL: continue
+        bucket_for(lid).setdefault(lid, {"groups": {}, "fixtures": []})["fixtures"].append({
             "fixture_id": f.get("fixture_id"), "round": f.get("round"), "kickoff": f.get("kickoff"),
             "home": tref(teams, f.get("home_team_id")), "away": tref(teams, f.get("away_team_id")),
             "home_goals": f.get("home_goals"), "away_goals": f.get("away_goals"), "status": f.get("status")})
@@ -91,6 +98,7 @@ def main():
         print("=" * 64)
         league_list = [e for e in league_list if e not in blank]
     comp_list = pack(comps, True)
+    intl_list = pack(intl, True)
 
     # Europe participation: a club is "alive" in a comp while it still has an unplayed
     # fixture. Once eliminated, its remaining fixtures are all finished, so it drops out.
@@ -118,10 +126,11 @@ def main():
     os.makedirs(OUT, exist_ok=True)
     json.dump({"generated_at": ts, "leagues": league_list},
               open(os.path.join(OUT, "live-standings-2026.json"), "w", encoding="utf-8"), ensure_ascii=False)
-    json.dump({"generated_at": ts, "competitions": comp_list, "europe_badges": europe_badges},
+    json.dump({"generated_at": ts, "competitions": comp_list, "international": intl_list,
+               "europe_badges": europe_badges},
               open(os.path.join(OUT, "live-competitions-2026.json"), "w", encoding="utf-8"), ensure_ascii=False)
-    print("wrote %d domestic leagues (%d standings rows), %d competitions (%d fixtures)" % (
-        len(league_list), len(standings), len(comp_list), len(fixtures)))
+    print("wrote %d domestic leagues (%d standings rows), %d competitions + %d international (%d fixtures)" % (
+        len(league_list), len(standings), len(comp_list), len(intl_list), len(fixtures)))
 
 if __name__ == "__main__":
     main()
