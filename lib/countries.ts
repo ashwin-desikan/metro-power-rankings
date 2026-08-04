@@ -107,7 +107,19 @@ export function getCountryByName(name: string): Country | undefined {
 // the build never breaks before build-country-indicators.py has been run;
 // returns null for any slug the World Bank does not publish.
 let _indicators: Record<string, CountryIndicators> | null = null;
+let _indicatorsMeta: IndicatorsMeta | null = null;
 let _indicatorsTried = false;
+
+// The file carries provenance in `_meta` (fetchedAt, sources, license) which
+// this loader used to drop on the floor. DESIGN-STANDARDS requires every data
+// page to state its source and as-of date, and country data is baked at build
+// time, so without this the page cannot tell a reader how old it is - which is
+// exactly how countries.json sat three months stale unnoticed (2026-08-04).
+export type IndicatorsMeta = {
+  fetchedAt: string | null;
+  sources: string | null;
+  license: string | null;
+};
 
 function loadIndicators(): Record<string, CountryIndicators> {
   if (!_indicatorsTried) {
@@ -119,13 +131,28 @@ function loadIndicators(): Record<string, CountryIndicators> {
       );
       const parsed = JSON.parse(raw) as {
         countries?: Record<string, CountryIndicators>;
+        _meta?: { fetchedAt?: string; sources?: string; license?: string };
       };
       _indicators = parsed.countries ?? {};
+      _indicatorsMeta = parsed._meta
+        ? {
+            fetchedAt: parsed._meta.fetchedAt ?? null,
+            sources: parsed._meta.sources ?? null,
+            license: parsed._meta.license ?? null,
+          }
+        : null;
     } catch {
       _indicators = {};
+      _indicatorsMeta = null;
     }
   }
   return _indicators ?? {};
+}
+
+/** Provenance for the indicator set, or null if the file is absent/older. */
+export function getIndicatorsMeta(): IndicatorsMeta | null {
+  loadIndicators();
+  return _indicatorsMeta;
 }
 
 export function getCountryIndicators(slug: string): CountryIndicators | null {

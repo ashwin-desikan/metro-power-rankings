@@ -1,24 +1,21 @@
 // Per-country "Billionaires" section. Server component.
 import { fmtWorth, forbesUrl, type Billionaire } from "@/lib/billionaires";
+import Collapsible from "./Collapsible";
 
 export default function BillionairesSection({ list }: { list: Billionaire[] }) {
   if (!list.length) return null;
   const total = list.reduce((s, b) => s + (b.networth ?? 0), 0);
   return (
-    <section className="mb-12" id="billionaires">
-      <details>
-        <summary className="cursor-pointer list-none flex items-center gap-2 group mb-4">
-          <span className="text-xl font-bold text-[var(--text)] group-hover:text-[var(--accent)] transition-colors">
-            Billionaires
-          </span>
-          <span className="text-xs text-[var(--text-dim)] ml-1">
-            {list.length} · {fmtWorth(total)} combined · click to expand
-          </span>
-          <svg className="w-4 h-4 text-[var(--text-dim)] transition-transform details-chevron ml-auto"
-               fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </summary>
+    <Collapsible
+      id="billionaires"
+      title="Billionaires"
+      defaultOpen={false}
+      right={
+        <span className="text-xs text-[var(--text-dim)]">
+          {list.length} · {fmtWorth(total)} combined · click to expand
+        </span>
+      }
+    >
         {/* Mobile: stacked cards */}
         <div className="mt-2 grid grid-cols-1 gap-2 sm:hidden">
           {list.map((b) => (
@@ -71,7 +68,6 @@ export default function BillionairesSection({ list }: { list: Billionaire[] }) {
         <p className="text-xs text-[var(--text-dim)] mt-3">
           Source: Forbes real-time billionaires (via the rtb-api project). Net worth as of the latest monthly snapshot.
         </p>
-      </details>
-    </section>
+    </Collapsible>
   );
 }

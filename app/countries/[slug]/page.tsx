@@ -9,6 +9,7 @@ import {
   getCountryFacts,
   getIndicatorRank,
   getMetrosForCountry,
+  getIndicatorsMeta,
   isTop5pct,
   type CountryIndicators,
 } from "@/lib/countries";
@@ -18,7 +19,9 @@ import Collapsible from "./Collapsible";
 import CountryFactsSection from "./CountryFactsSection";
 import NationalTeamsSection, { countryHasNationalTeams } from "./NationalTeamsSection";
 import LeagueHubsSection from "./LeagueHubsSection";
-import HubNav from "@/app/teams/HubNav";
+import CountryNav, { type CountryNavItem } from "./CountryNav";
+import MetrosExplorer from "./MetrosExplorer";
+import SubdivisionsExplorer from "./SubdivisionsExplorer";
 import { getCountryTitles } from "@/lib/championsHistory";
 import { competitionHref } from "@/lib/competitionLinks";
 import { sportIcon } from "@/lib/sportLabels";
@@ -34,7 +37,6 @@ import { getConflicts, conflictsForCountry } from "@/lib/conflicts";
 import BillionairesSection from "./BillionairesSection";
 import { getBillionaires, billionairesForCountry } from "@/lib/billionaires";
 import { countryHasOrgs } from "@/lib/orgs";
-import { computeTier, tierAnchor } from "@/lib/tiers";
 import { formatPop, regionColors, fmtArea } from "@/lib/shared";
 import { flagUrl, flagSrcSet } from "@/lib/flags";
 import {
@@ -235,21 +237,8 @@ const ECON_INDICATORS: { key: keyof CountryIndicators["indicators"]; label: stri
   { key: "inflationPct", label: "Inflation", fmt: (n) => `${n.toFixed(1)}%` },
 ];
 
-function CapitalBadge() {
-  return (
-    <span className="ml-2 inline-flex items-center text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded"
-          style={{ backgroundColor: "rgba(245, 158, 11, 0.18)", color: "#f59e0b", fontFamily: "'JetBrains Mono', monospace" }}
-          title="National capital">★ Capital</span>
-  );
-}
-
-function LargestBadge() {
-  return (
-    <span className="ml-2 inline-flex items-center text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded"
-          style={{ backgroundColor: "rgba(96, 165, 250, 0.18)", color: "#60a5fa", fontFamily: "'JetBrains Mono', monospace" }}
-          title="Largest metro by population">▲ Largest</span>
-  );
-}
+// CapitalBadge / LargestBadge moved into MetrosExplorer.tsx with the metros
+// list; they had no other caller on this page.
 
 export default async function CountryDetailPage({ params }: Props) {
   const { slug } = await params;
@@ -259,7 +248,11 @@ export default async function CountryDetailPage({ params }: Props) {
   if (!country) notFound();
 
   const metros = getMetrosForCountry(slug);
+  // Hoisted: the nav needs to know whether a Power section will render, and
+  // PowerSection needs the series itself. Called once either way.
+  const powerSeries = getCountryPowerSeries(slug);
   const indicators = getCountryIndicators(slug);
+  const indicatorsMeta = getIndicatorsMeta();
   const facts = getCountryFacts(slug);
   const metroSlugByName = new Map(metros.map((m) => [m.name, m.slug] as const));
   const children = getChildrenOf(country.name);
@@ -312,16 +305,8 @@ export default async function CountryDetailPage({ params }: Props) {
     author: AUTHOR,
   };
 
-  // Capital / Largest match — checked against multiple shapes since the
-  // xlsx capital/biggestMetro fields contain metro-level names.
-  function isCapital(metroName: string): boolean {
-    if (!country) return false;
-    return country.capital != null && metroName === country.capital;
-  }
-  function isLargest(metroName: string): boolean {
-    if (!country) return false;
-    return country.biggestMetro != null && metroName === country.biggestMetro;
-  }
+  // Capital / Largest matching now lives in MetrosExplorer, which receives
+  // country.capital and country.biggestMetro as plain strings.
 
   return (
     <>
@@ -427,23 +412,51 @@ export default async function CountryDetailPage({ params }: Props) {
                 sub={country.scoreRank != null ? `Rank #${country.scoreRank} globally` : undefined}
               />
             </div>
+
+            {/* Provenance stamp, per the TabHeader idiom in app/business/ui.tsx
+                and the DESIGN-STANDARDS rule that every data page states its
+                source and as-of date. Country pages are built at build time, so
+                without this a reader cannot tell how old the numbers are. */}
+            {(() => {
+              const bits = [
+                country.source ? `population: ${country.source}` : null,
+                indicatorsMeta?.fetchedAt
+                  ? `indicators as of ${indicatorsMeta.fetchedAt.slice(0, 10)}`
+                  : null,
+                metros.length > 0 ? `${metros.length.toLocaleString()} metros tracked` : null,
+              ].filter(Boolean);
+              return bits.length > 0 ? (
+                <p
+                  className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] mt-4"
+                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                >
+                  {bits.join(" · ")}
+                </p>
+              ) : null;
+            })()}
           </header>
 
           {(() => {
-            const navItems = [
-              ...(facts ? [{ label: "At a glance", href: "#at-a-glance" }] : []),
-              ...(indicators ? [{ label: "Economy", href: "#economy" }] : []),
-              ...(countryHasNationalTeams(country.name) ? [{ label: "National Teams", href: "#national-teams" }] : []),
-              ...(countryHasOrgs(slug) ? [{ label: "Alliances & Orgs", href: "#orgs" }] : []),
-              ...(countryHasLeaders(slug) ? [{ label: "Leadership", href: "#leaders" }] : []),
-              ...(conflictWars.length ? [{ label: "Conflicts", href: "#conflicts" }] : []),
-              ...(billionaires.length ? [{ label: "Billionaires", href: "#billionaires" }] : []),
-              ...(getLeagueHubsForCountry(slug).length > 0 ? [{ label: "League Hubs", href: "#league-hubs" }] : []),
-              ...(children.length > 0 ? [{ label: "Constituents", href: "#constituents" }] : []),
-              ...(stateGroups.length > 0 ? [{ label: "Subdivisions", href: "#subdivisions" }] : []),
-              ...(metros.length > 0 ? [{ label: "Geography", href: "#geography" }, { label: "Metros", href: "#metros" }] : []),
+            // Order below MATCHES DOM ORDER. It previously did not - National
+            // Teams sat 3rd in the nav but 11th on the page - which made the
+            // chips useless as a map of the page. #power also rendered with an
+            // id but had no chip at all, so the section was unreachable from
+            // here. Both fixed 2026-08-04.
+            const navItems: CountryNavItem[] = [
+              ...(facts ? [{ label: "At a glance", href: "#at-a-glance", group: "Overview" }] : []),
+              ...(indicators ? [{ label: "Economy", href: "#economy", group: "Overview" }] : []),
+              ...(countryHasOrgs(slug) ? [{ label: "Alliances & Orgs", href: "#orgs", group: "Governance" }] : []),
+              ...(countryHasLeaders(slug) ? [{ label: "Leadership", href: "#leaders", group: "Governance" }] : []),
+              ...(powerSeries.length > 0 ? [{ label: "Power", href: "#power", group: "Governance" }] : []),
+              ...(conflictWars.length ? [{ label: "Conflicts", href: "#conflicts", group: "Governance" }] : []),
+              ...(billionaires.length ? [{ label: "Billionaires", href: "#billionaires", group: "Society" }] : []),
+              ...(countryHasNationalTeams(country.name) ? [{ label: "National Teams", href: "#national-teams", group: "Society" }] : []),
+              ...(getLeagueHubsForCountry(slug).length > 0 ? [{ label: "League Hubs", href: "#league-hubs", group: "Society" }] : []),
+              ...(children.length > 0 ? [{ label: "Constituents", href: "#constituents", group: "Regions" }] : []),
+              ...(stateGroups.length > 0 ? [{ label: "Subdivisions", href: "#subdivisions", group: "Regions" }] : []),
+              ...(metros.length > 0 ? [{ label: "Geography", href: "#geography", group: "Regions" }, { label: "Metros", href: "#metros", group: "Regions" }] : []),
             ];
-            return navItems.length > 1 ? <HubNav items={navItems} /> : null;
+            return navItems.length > 1 ? <CountryNav items={navItems} /> : null;
           })()}
 
           <CountryFactsSection facts={facts} />
@@ -490,7 +503,7 @@ export default async function CountryDetailPage({ params }: Props) {
 
           <LeadersSection countrySlug={slug} />
 
-          <PowerSection series={getCountryPowerSeries(slug)} name={country.name} />
+          <PowerSection series={powerSeries} name={country.name} />
           <ConflictsSection wars={conflictWars} />
           <BillionairesSection list={billionaires} />
 
@@ -617,55 +630,22 @@ export default async function CountryDetailPage({ params }: Props) {
 
           {stateGroups.length > 0 ? (
             <Collapsible id="subdivisions" title={stateSectionTitle}>
-              <p className="text-sm text-[var(--text-muted)] mb-4">
-                {states.length} {states.length === 1 ? "entry" : "entries"} listed under {country.name}
-                {stateGroups.length > 1 ? ` across ${stateGroups.length} types` : ""}
-                . Click any to see its metros and footprint.
-              </p>
-              {stateGroups.map((group) => (
-                <div key={group.type} className="mb-5 last:mb-0">
-                  {stateGroups.length > 1 ? (
-                    <h3
-                      className="text-[11px] uppercase tracking-wider font-semibold mb-2"
-                      style={{
-                        color: "var(--text-muted)",
-                        fontFamily: "'JetBrains Mono', monospace",
-                      }}
-                    >
-                      {group.label}{" "}
-                      <span style={{ color: "var(--text-dim)" }}>
-                        ({group.rows.length})
-                      </span>
-                    </h3>
-                  ) : null}
-                  <div className="flex flex-wrap gap-2">
-                    {group.rows.map((s) => (
-                      <Link
-                        key={s.slug}
-                        href={`/states/${s.slug}`}
-                        className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full border transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
-                        style={{
-                          backgroundColor: "var(--bg-card)",
-                          borderColor: "var(--border)",
-                          color: "var(--text)",
-                          fontFamily: "'JetBrains Mono', monospace",
-                        }}
-                        title={s.iso ? `${s.type} · ${s.iso}` : s.type}
-                      >
-                        {s.name}
-                        {s.metroCount > 0 ? (
-                          <span
-                            className="text-[10px]"
-                            style={{ color: "var(--text-dim)" }}
-                          >
-                            {s.metroCount}
-                          </span>
-                        ) : null}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ))}
+              <SubdivisionsExplorer
+                intro={`${states.length} ${states.length === 1 ? "entry" : "entries"} listed under ${country.name}${
+                  stateGroups.length > 1 ? ` across ${stateGroups.length} types` : ""
+                }. Click any to see its metros and footprint.`}
+                groups={stateGroups.map((g) => ({
+                  type: g.type,
+                  label: g.label,
+                  rows: g.rows.map((s) => ({
+                    slug: s.slug,
+                    name: s.name,
+                    iso: s.iso ?? null,
+                    type: s.type,
+                    metroCount: s.metroCount,
+                  })),
+                }))}
+              />
             </Collapsible>
           ) : null}
 
@@ -680,135 +660,24 @@ export default async function CountryDetailPage({ params }: Props) {
             title={metros.length > 0 ? `${metros.length} tracked ${metros.length === 1 ? "metro" : "metros"}` : "No metros tracked yet"}
           >
             {metros.length > 0 ? (
-              <div className="border rounded-lg overflow-hidden" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
-                {/* Mobile: stacked cards */}
-                <div className="sm:hidden divide-y divide-[var(--border)]">
-                  {metros.map((m) => {
-                    const tier = computeTier(m.score);
-                    const state2Slug = m.state2Slug;
-                    const state3Slug = m.state3Slug;
-                    const extraStates = [
-                      m.state2 ? { name: m.state2, slug: state2Slug } : null,
-                      m.state3 ? { name: m.state3, slug: state3Slug } : null,
-                      ...(m.additionalStates ?? []),
-                    ].filter((s): s is { name: string; slug?: string } => s !== null);
-                    return (
-                      <div key={`${m.slug}-card`} className="px-4 py-3">
-                        <div className="flex items-start justify-between gap-2">
-                          <div className="min-w-0">
-                            <span className="text-xs text-[var(--text-dim)] tabular-nums mr-1.5" style={{ fontFamily: "'JetBrains Mono', monospace" }}>#{m.rank}</span>
-                            <Link href={`/rankings/${m.slug}`} className="font-semibold hover:text-[var(--accent)]">{m.name}</Link>
-                            {isCapital(m.name) ? <CapitalBadge /> : null}
-                            {isLargest(m.name) ? <LargestBadge /> : null}
-                          </div>
-                          <span className="flex-shrink-0 font-bold tabular-nums" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>{m.score.toFixed(1)}</span>
-                        </div>
-                        <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[var(--text-muted)]">
-                          <span className="tabular-nums" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{formatPop(m.pop)}</span>
-                          <Link href={`/methodology${tierAnchor(m.score)}`} className="hover:text-[var(--accent)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{tier.name}</Link>
-                        </div>
-                        {(m.primaryState || extraStates.length > 0) ? (
-                          <div className="mt-1 text-xs text-[var(--text-dim)]">
-                            {m.primaryState ? (
-                              m.stateSlug ? (
-                                <Link href={`/states/${m.stateSlug}`} className="text-[var(--text-muted)] hover:text-[var(--accent)]">{m.primaryState}</Link>
-                              ) : (
-                                <span className="text-[var(--text-muted)]">{m.primaryState}</span>
-                              )
-                            ) : null}
-                            {extraStates.map((s, idx) => (
-                              <span key={`${s.name}-${idx}`}>
-                                {(m.primaryState || idx > 0) ? " · " : ""}
-                                {s.slug ? (
-                                  <Link href={`/states/${s.slug}`} className="hover:text-[var(--accent)]">{s.name}</Link>
-                                ) : (
-                                  <span>{s.name}</span>
-                                )}
-                              </span>
-                            ))}
-                          </div>
-                        ) : null}
-                      </div>
-                    );
-                  })}
-                </div>
-                {/* Desktop: table */}
-                <div className="hidden sm:block overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="text-left text-xs text-[var(--text-dim)] uppercase tracking-wider"
-                        style={{ borderBottom: "1px solid var(--border)", fontFamily: "'JetBrains Mono', monospace" }}>
-                      <th className="py-2 pl-4 pr-4">Rank</th>
-                      <th className="py-2 pr-4">Metro</th>
-                      <th className="hidden md:table-cell py-2 pr-4">State</th>
-                      <th className="hidden sm:table-cell py-2 pr-4 text-right">Population</th>
-                      <th className="py-2 pr-4 text-right">Score</th>
-                      <th className="py-2 pr-4 text-right">Tier</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {metros.map((m) => {
-                      const tier = computeTier(m.score);
-                      // State column reads ETL-resolved stateSlug, state2Slug,
-                      // state3Slug directly off metros.json. Multi-state metros
-                      // (NYC, Washington-Baltimore, Cincinnati) can link to all
-                      // three constituent states.
-                      const state2Slug = m.state2Slug;
-                      const state3Slug = m.state3Slug;
-                      return (
-                        <tr key={m.slug} style={{ borderBottom: "1px solid var(--border)" }}>
-                          <td className="py-3 pl-4 pr-4 text-xs text-[var(--text-dim)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>#{m.rank}</td>
-                          <td className="py-3 pr-4">
-                            <Link href={`/rankings/${m.slug}`} className="font-semibold hover:text-[var(--accent)]">{m.name}</Link>
-                            {isCapital(m.name) ? <CapitalBadge /> : null}
-                            {isLargest(m.name) && !isCapital(m.name) ? <LargestBadge /> : null}
-                            {isLargest(m.name) && isCapital(m.name) ? <LargestBadge /> : null}
-                          </td>
-                          <td className="hidden md:table-cell py-3 pr-4 text-xs">
-                            {m.primaryState ? (
-                              m.stateSlug ? (
-                                <Link href={`/states/${m.stateSlug}`} className="text-[var(--text)] hover:text-[var(--accent)]">
-                                  {m.primaryState}
-                                </Link>
-                              ) : (
-                                <span className="text-[var(--text)]">{m.primaryState}</span>
-                              )
-                            ) : (
-                              <span className="text-[var(--text-dim)]">—</span>
-                            )}
-                            {(m.state2 || m.state3 || (m.additionalStates && m.additionalStates.length > 0)) ? (
-                              <div className="text-[10px] text-[var(--text-dim)] mt-0.5">
-                                {[
-                                  m.state2 ? { name: m.state2, slug: state2Slug } : null,
-                                  m.state3 ? { name: m.state3, slug: state3Slug } : null,
-                                  ...(m.additionalStates ?? []),
-                                ]
-                                  .filter((s): s is { name: string; slug?: string } => s !== null)
-                                  .map((s, idx, arr) => (
-                                    <span key={`${s.name}-${idx}`}>
-                                      {s.slug ? (
-                                        <Link href={`/states/${s.slug}`} className="hover:text-[var(--accent)]">{s.name}</Link>
-                                      ) : (
-                                        <span>{s.name}</span>
-                                      )}
-                                      {idx < arr.length - 1 ? <span> · </span> : null}
-                                    </span>
-                                  ))}
-                              </div>
-                            ) : null}
-                          </td>
-                          <td className="hidden sm:table-cell py-3 pr-4 text-right text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>{formatPop(m.pop)}</td>
-                          <td className="py-3 pr-4 text-right font-bold" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--accent)" }}>{m.score.toFixed(1)}</td>
-                          <td className="py-3 pr-4 text-right text-xs" style={{ fontFamily: "'JetBrains Mono', monospace", color: "var(--text-muted)" }}>
-                            <Link href={`/methodology${tierAnchor(m.score)}`} className="hover:text-[var(--accent)]">{tier.name}</Link>
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
-                </div>
-              </div>
+              <MetrosExplorer
+                metros={metros.map((m) => ({
+                  slug: m.slug,
+                  name: m.name,
+                  rank: m.rank,
+                  pop: m.pop,
+                  score: m.score,
+                  primaryState: m.primaryState ?? null,
+                  stateSlug: m.stateSlug ?? null,
+                  state2: m.state2 ?? null,
+                  state2Slug: m.state2Slug ?? null,
+                  state3: m.state3 ?? null,
+                  state3Slug: m.state3Slug ?? null,
+                  additionalStates: m.additionalStates ?? null,
+                }))}
+                capital={country.capital ?? null}
+                biggestMetro={country.biggestMetro ?? null}
+              />
             ) : (
               <div className="border rounded-lg p-8 text-center" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
                 <p className="text-[var(--text-muted)] mb-2">No metros are currently tracked for {country.name} in the dataset.</p>
@@ -824,7 +693,8 @@ export default async function CountryDetailPage({ params }: Props) {
               read the <Link href="/methodology" className="text-[var(--accent)] hover:underline">composite methodology</Link>,
               or jump back to the <Link href="/" className="text-[var(--accent)] hover:underline">global rankings</Link>.
             </p>
-            {country.source ? (<p className="text-xs text-[var(--text-dim)] mt-2">Population source: {country.source}</p>) : null}
+            {/* Population source moved into the header provenance stamp so the
+                page states its as-of date up front rather than 800 lines down. */}
           </footer>
         </div>
       </main>

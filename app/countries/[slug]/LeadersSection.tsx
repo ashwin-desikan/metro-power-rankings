@@ -5,6 +5,7 @@
 
 import Link from "next/link";
 import { getLeaders, leaderYear, type Leader } from "@/lib/leaders";
+import Collapsible from "./Collapsible";
 
 type Props = { countrySlug: string };
 
@@ -180,26 +181,29 @@ export default function LeadersSection({ countrySlug }: Props) {
   })() : <LeaderTable leaders={leaders} showMetros={showMetros} />;
 
   return (
-    <section className="mb-12" id="leaders">
-      <details>
-        <summary className="cursor-pointer list-none flex items-center gap-2 group mb-4">
-          <span className="text-xl font-bold text-[var(--text)] group-hover:text-[var(--accent)] transition-colors">
-            Leadership History
-          </span>
-          <span className="text-xs text-[var(--text-dim)] ml-1">
-            {leaders.length} leaders · click to expand
-          </span>
-          <svg
-            className="w-4 h-4 text-[var(--text-dim)] transition-transform details-chevron ml-auto"
-            fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </summary>
-        <div className="mt-2">
-          {inner}
-        </div>
-      </details>
-    </section>
+    <Collapsible
+      id="leaders"
+      title="Leadership History"
+      defaultOpen={false}
+      right={
+        <span className="text-xs text-[var(--text-dim)]">
+          {leaders.length} leaders · click to expand
+        </span>
+      }
+    >
+      {/* The ⚠️ and 👑 glyphs are prefixed into the leader's name in the source
+          data (public/data/leaders/*.json), so nothing in the UI can derive
+          their meaning. Without this legend a reader sees an unexplained
+          warning symbol beside a named person. Criteria per BACKLOG.md. */}
+      <p className="text-xs text-[var(--text-muted)] mb-4 max-w-3xl">
+        <span aria-hidden>⚠️</span> marks a leader associated with atrocities or
+        defiance of law, systemic subversion of democratic institutions, or a
+        criminal conviction. Convictions arising from political persecution, and
+        annulled convictions, are excluded. <span aria-hidden>👑</span> denotes a
+        monarch. These are editorial designations, applied per entry rather than
+        derived automatically.
+      </p>
+      {inner}
+    </Collapsible>
   );
 }

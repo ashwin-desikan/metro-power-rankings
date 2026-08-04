@@ -1,6 +1,7 @@
 // Per-country "Conflicts since 1945" section. Server component.
 import Link from "next/link";
 import { warYears, fmtDeaths, type CountryWar, type Belligerent } from "@/lib/conflicts";
+import Collapsible from "./Collapsible";
 
 function Bel({ b }: { b: Belligerent }) {
   const inner = b.principal ? <strong>{b.name}</strong> : <>{b.name}</>;
@@ -29,20 +30,16 @@ function Opponents({ list }: { list: Belligerent[] }) {
 export default function ConflictsSection({ wars }: { wars: CountryWar[] }) {
   if (!wars.length) return null;
   return (
-    <section className="mb-12" id="conflicts">
-      <details>
-        <summary className="cursor-pointer list-none flex items-center gap-2 group mb-4">
-          <span className="text-xl font-bold text-[var(--text)] group-hover:text-[var(--accent)] transition-colors">
-            Conflicts since 1945
-          </span>
-          <span className="text-xs text-[var(--text-dim)] ml-1">
-            {wars.length} interstate {wars.length === 1 ? "war" : "wars"} · click to expand
-          </span>
-          <svg className="w-4 h-4 text-[var(--text-dim)] transition-transform details-chevron ml-auto"
-               fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </summary>
+    <Collapsible
+      id="conflicts"
+      title="Conflicts since 1945"
+      defaultOpen={false}
+      right={
+        <span className="text-xs text-[var(--text-dim)]">
+          {wars.length} interstate {wars.length === 1 ? "war" : "wars"} · click to expand
+        </span>
+      }
+    >
         {/* Mobile: stacked cards */}
         <div className="mt-2 grid grid-cols-1 gap-2 sm:hidden">
           {wars.map(({ war, opponents }) => (
@@ -92,7 +89,6 @@ export default function ConflictsSection({ wars }: { wars: CountryWar[] }) {
         <p className="text-xs text-[var(--text-dim)] mt-3">
           Bold = principal belligerent. Source: Wikipedia, “List of interstate wars since 1945.”
         </p>
-      </details>
-    </section>
+    </Collapsible>
   );
 }
