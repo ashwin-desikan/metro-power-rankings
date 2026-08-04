@@ -29,7 +29,7 @@ restores the *worker*: the scheduler, scripts, venv, and credentials. Budget ~30
 | com.citizenofnowhere.egress-refresh | metro-mini-refresh.sh | Sun 10:00 |
 | com.citizenofnowhere.cricket-weekly | run-cricket-weekly.sh | Tue 10:00 |
 | com.citizenofnowhere.cricket-monthly | run-cricket-monthly.sh | 1st @ 11:00 |
-| com.citizenofnowhere.screen-number-ones | mac-mini-jobs/run-screen-number-ones.sh (repo) | Tue 14:00 |
+| com.citizenofnowhere.screen-number-ones | mac-mini-jobs/run-screen-number-ones.sh (repo) | Mon–Wed 06/14/22 |
 | com.citizenofnowhere.activity-feed | mac-mini-jobs/run-activity-feed.sh (repo) | 03:30 daily |
 | com.citizenofnowhere.deploy-watch | mac-mini-jobs/run-deploy-watch.sh (repo) | every 10 min |
 | com.citizenofnowhere.euro-comps | run-euro-comps.sh | 04:00 daily |

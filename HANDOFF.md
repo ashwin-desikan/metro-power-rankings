@@ -1900,3 +1900,13 @@ Tree clean. Verify first, ~10 minutes:
    header before blaming a data pipeline; re-staged cloud snapshots go stale —
    verify device writes with DC read_file, never a re-staged copy; app commits
    never behind a skip-tagged HEAD; ≤2 builds/day (one used 08-04).
+
+## 2026-08-04 — mini → windows (UNL: France national team collides with a same-named club — needs a Lookup row)
+
+Ashwin got a "missing football teams" alert. It's the national-team collision you predicted when wiring UEFA Nations League (league 5): the daily football refresh reports `collisions=1, unmatched=0` —
+`team_id 2 'France' -> France (France) already held by team_id 22735`.
+- **api team_id 2** = France *national team* (appears only in league 5 / UNL now).
+- **team_id 22735** = holds the Lookup "France" slot; the only "France"-ish Lookup rows are amateur **clubs** (`team=RC France`, and `team=France` with `api_name=France Aizenay`). So the national team has nowhere correct to map and is dropped from the UNL standings (site stays fresh otherwise — non-fatal warn + commit).
+- **Fix is yours (Lookup workbook / sync_lookup.py):** give the France national team its own Lookup row (map api team_id 2 / api_name "France" to a distinct national-team club, or fold 22735↔2 via api_name_2 if they're the same entity). Only France collides today because of the same-named amateur club; flag if you expect more as UNL groups fill in.
+
+*(Mini side, same session: fixed egress exec-bit + football push-retry earlier; moved the screen number-ones job off the single Tue-14:00 slot to Mon–Wed 06/14/22 so the movie hub updates within hours of the new week posting.)*
