@@ -1954,3 +1954,108 @@ probably also have, since the mini job will otherwise reintroduce the same rows
 from Wikipedia on its own next Wednesday and could re-clobber the credit-split
 overrides if `~/som-pipeline`'s `credit_split_config.json` doesn't already have
 them.
+
+## 2026-08-04 -- windows -> next session (MLB playoff-odds model shipped; two bugs found, one already published)
+
+Long Windows session, five commits pushed with `a09e764b4` at HEAD (app commit,
+so it triggered a real Vercel build -- intended, and it is build 4 of the day).
+Everything below is live on main.
+
+### 1. New model: `scripts/predictions/build_mlb_sim.py` (+ `/predictions/mlb`)
+
+Ashwin asked for MLB playoff percentages. There is no free licensable source:
+FanGraphs and Baseball-Reference both publish postseason odds but serve them
+from undocumented internal endpoints under terms that forbid scraping, ESPN's
+BPI has no public odds feed, and the commercial APIs (The Odds API, Sports Game
+Odds) sell betting lines rather than postseason probabilities. So we compute our
+own, on the `build_nfl_sim.py` pattern.
+
+Model `rundiff-v1`: regressed run differential per game (ESPN standings
+2024/2025 at .40/.60, current season folded in at a weight climbing to .88),
+converted to a true-talent win pct on the ten-runs-per-win scale, held as
+log-odds so each game is exactly log5 + home field (.535). The real remaining
+schedule is simulated 20,000 times, then the full 2022-format bracket with real
+home patterns (1-2 bye, WC Bo3 all at the higher seed, LDS 2-2-1, LCS/WS 2-3-2).
+ESPN World Series futures blend in at a weight scaled by the share of season
+unplayed (0.35 preseason max; 0.11 today).
+
+Runs daily Mar-Nov via a NEW workflow, `.github/workflows/mlb-sim-refresh.yml`.
+It is deliberately SEPARATE from `predictions-refresh.yml` rather than a third
+step inside it: that workflow runs Tue/Fri because its ledgers freeze a pick the
+first time a fixture enters the 8-day window, so moving it to daily would
+quietly freeze NFL picks earlier on less information, mid-season. Baseball has
+no ledger and plays every day. **Do not merge the two workflows.**
+
+### 2. READ THIS IF YOU TOUCH ANY SIM SCRIPT: a silent-failure gate exists now
+
+The first working version of `build_mlb_sim.py` parsed ZERO games and did not
+error. Competitors on ESPN's per-team schedule endpoint carry only
+`id`/`displayName`/`location`/`shortDisplayName` -- there is NO `name` field,
+unlike the teams and standings endpoints -- so every game was silently
+discarded. The script then produced a complete, plausible-looking table in which
+all 30 clubs sat near 40% to reach the playoffs, because the model had been
+handed an unplayed season. Nothing looked wrong.
+
+`build()` now calls `verify_wins()`, which hard-fails if the W-L it derives from
+30 team schedules disagrees with ESPN's own standings (currently 30/30). It
+distinguishes a legitimate preseason zero from a broken parse by asking ESPN
+whether the league has actually played. `--self-test` covers 30 cases of pure
+decision logic. Keep both gates if you refactor; the failure they catch is the
+kind that ships wrong numbers rather than crashing.
+
+### 3. A REAL BUG FIXED IN `build_nfl_sim.py` -- affects data already published
+
+`rank_division()` sorted a list using a key that closed over that same list.
+CPython empties a list while it computes sort keys (its guard against mutation
+during sorting), so every head-to-head sum evaluated to 0 and **the NFL division
+tie-break has been silently falling back to a coin flip**. Its self-test passed
+only by luck of the seed. Fixed in both scripts (`members = list(group)` before
+the sort). The NFL sim output currently on `/predictions/nfl` was built with the
+broken tie-break and **will correct itself on the next `predictions-refresh` run
+(Tue 06:40 or Fri 11:40 UTC)** -- no action needed, but do not be surprised if
+NFL division odds shift more than a routine refresh would explain.
+
+### 4. Also shipped this session (all pushed)
+
+- **AFC Asian Cup 2027 + Serie C girone.** `leagues.json`: 138 renamed to
+  "Serie C - Girone A", 942 (B) and 943 (C) added, plus league 7 season 2027.
+  `refresh.py` `INTERNATIONAL = {5, 7}`. **These stay invisible until the next
+  `run-football-standings.sh` pass on the mini picks up the new league ids** --
+  if Serie C still shows one table or the Asian Cup section is empty a day from
+  now, check that job's log first, not the frontend.
+- **New shared `TournamentSection` component** in `app/teams/national/page.tsx`
+  and `intlCompBlock(comp, opts)` in `app/sports/standings/page.tsx`, replacing
+  the Nations-League-specific versions. Adding a third international comp is now
+  a three-line call, not a copy-paste.
+- **Flags**: `SUBDIVISION_CDN_CODES` gained turkiye, kosovo, fyr-macedonia,
+  rep-of-ireland (the Nations League entrants whose api-football names do not
+  slugify to a `COUNTRY_FLAGS` key).
+- **Mobile**: capped every uncapped `sm:hidden` card fallback. Root cause was
+  one rule -- `globals.css` `:has(> table)` caps table wrappers at 80vh, and
+  nothing that is not a `<table>` inherits it. `/countries/[slug]` went from ~80
+  screens to ~8 at 390px. DESIGN-STANDARDS.md gained the rule plus checklist
+  items 1b/1c (compare mobile vs desktop scrollHeight; actually scroll the page)
+  -- the two probes that would have caught it.
+- **Team links on all three prediction hubs.** Every club name on
+  `/predictions/mlb`, `/nfl` and `/pl` now links to its team page. Resolution is
+  verified, never assumed: the sims mint slugs by slugifying an ESPN display
+  name while routes come from the workbooks, so each hub resolves against the
+  real slug set and renders plain text for anything unresolved rather than
+  linking to a 404. Confirmed in the built HTML: 30/30 MLB, 32/32 NFL, 20/20 PL.
+
+### Open questions for whoever picks this up next
+
+1. **MLB Beat-the-Model card.** Every other league hub has one
+   (`/play/beat-the-model-<league>.html`); MLB ships the simulator alone, and
+   `LEAGUE_HUBS` in `app/predictions/page.tsx` carries a `game: false` flag so
+   its footer does not promise one. Building it is the obvious next step, and
+   the natural MLB picks differ from the NFL's: champion, a bubble club that
+   makes it, a favourite that misses October.
+2. **No per-game MLB ledger, deliberately.** The method section on
+   `/predictions/mlb` says so and says why (fifteen games a day, almost none
+   decisive; the honest unit of prediction in baseball is the season). If that
+   is ever revisited, the design has to answer the volume problem first -- a
+   naive port of the NFL ledger would be ~900 rows over two months.
+3. **Still open from the sound entry above:** whether the OneDrive
+   `_sound_of_metros_pipeline` and the mini's `~/som-pipeline` have drifted.
+   Unchanged by this session.
