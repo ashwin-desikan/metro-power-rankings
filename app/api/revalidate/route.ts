@@ -17,7 +17,14 @@ import { checkRateLimit } from "@/lib/rateLimit";
 // secret configured this returns 503 and does nothing, the same
 // degrade-silently posture as /api/v.
 
-const ALLOWED_TAGS = new Set(["business-daily"]);
+// One tag per data-refresh workflow. "predictions-daily" covers BOTH sim
+// loaders (lib/plSim.ts, lib/nflSim.ts) because predictions-refresh.yml writes
+// both models in one run, so a single flush is enough.
+const ALLOWED_TAGS = new Set([
+  "business-daily",     // business-daily-refresh.yml, 05:50 UTC daily
+  "predictions-daily",  // predictions-refresh.yml, Tue 06:40 + Fri 11:40 UTC
+  "forecast-weekly",    // forecast-weekly.yml, 06:10 UTC Mon/Wed/Fri
+]);
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";

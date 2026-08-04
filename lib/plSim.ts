@@ -97,7 +97,14 @@ async function load<T extends { meta: { generated_at: string } }>(
     /* no build-time copy */
   }
   try {
-    const res = await fetch(`${GH_BASE}/${file}`, { next: { revalidate: 21600 } }); // 6 hours
+    // Tagged so predictions-refresh.yml can flush this the moment it pushes a
+    // new model, instead of the hubs showing yesterday's numbers until the 6h
+    // window rolls (Friday's 11:40 UTC push would otherwise sit stale until
+    // ~17:40). The time-based window stays as the backstop: if the ping is
+    // skipped or fails, behaviour is exactly what it was before the tag.
+    const res = await fetch(`${GH_BASE}/${file}`, {
+      next: { revalidate: 21600, tags: ["predictions-daily"] }, // 6h backstop
+    });
     if (res.ok) {
       const remote = (await res.json()) as T;
       if (

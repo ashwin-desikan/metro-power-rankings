@@ -100,7 +100,11 @@ async function load<T extends { meta: { generated_at: string } }>(
     /* no build-time copy */
   }
   try {
-    const res = await fetch(`${GH_BASE}/${file}`, { next: { revalidate: 21600 } }); // 6 hours
+    // Same "predictions-daily" tag as lib/plSim.ts: one workflow writes both
+    // models, so one flush covers both hubs. 6h window stays as the backstop.
+    const res = await fetch(`${GH_BASE}/${file}`, {
+      next: { revalidate: 21600, tags: ["predictions-daily"] }, // 6h backstop
+    });
     if (res.ok) {
       const remote = (await res.json()) as T;
       if (

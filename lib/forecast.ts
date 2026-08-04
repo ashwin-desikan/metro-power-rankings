@@ -121,7 +121,12 @@ export async function getForecast(): Promise<ForecastFile | null> {
     /* no build-time copy */
   }
   try {
-    const res = await fetch(GH_RAW, { next: { revalidate: 21600 } }); // 6 hours
+    // Tagged so forecast-weekly.yml flushes this right after its Mon/Wed/Fri
+    // 06:10 UTC push rather than leaving a fresh forecast unseen for up to 6h.
+    // The window stays as the backstop if the ping is skipped or fails.
+    const res = await fetch(GH_RAW, {
+      next: { revalidate: 21600, tags: ["forecast-weekly"] }, // 6h backstop
+    });
     if (res.ok) {
       const remote = (await res.json()) as ForecastFile;
       if (remote?.built && (!local || remote.built >= local.built)) return remote;
