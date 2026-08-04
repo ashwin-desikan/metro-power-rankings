@@ -50,3 +50,34 @@ jobs:
             git pull --rebase origin main
             git push origin main
           fi
+
+      - name: Revalidate site caches (on-demand ISR)
+        env:
+          REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
+        run: |
+          # Fail-open by design: the 6h ISR window on lib/forecast.ts is the
+          # backstop, so a missing secret or a failed ping must never fail the
+          # data run. See app/api/revalidate/route.ts. Runs even on no-change
+          # days; a redundant flush is harmless.
+          if [ -z "$REVALIDATE_SECRET" ]; then
+            echo "REVALIDATE_SECRET not set; skipping (6h ISR backstop applies)."
+            exit 0
+          fi
+          # raw.githubusercontent serves from a ~5-min CDN cache; flushing
+          # before it expires would re-render from the previous forecast and
+          # re-cache THAT for 6h. Wait out the raw TTL, then flush.
+          echo "Waiting out the GitHub raw CDN TTL before flushing..."
+          sleep 300
+          for attempt in 1 2 3; do
+            code="$(curl -s -o /tmp/reval.out -w '%{http_code}' -X POST \
+              -H "x-revalidate-secret: $REVALIDATE_SECRET" \
+              "https://rankings.citizenofnowhere.org/api/revalidate?tag=forecast-weekly")" || code=000
+            if [ "$code" = "200" ]; then
+              cat /tmp/reval.out; echo
+              echo "Revalidated on attempt $attempt."
+              exit 0
+            fi
+            echo "revalidate ping attempt $attempt returned HTTP $code"
+            sleep $((attempt * 5))
+          done
+          echo "WARN: on-demand revalidation failed; pages refresh via the 6h ISR window instead." >&2
