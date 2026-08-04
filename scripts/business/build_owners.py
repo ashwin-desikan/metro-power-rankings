@@ -15,9 +15,15 @@ Design notes:
 - Ownership boards (widely held, giants) exclude put/call rows; the manager
   league table keeps every reported row so totals match what managers filed.
 - Giants are matched by normalized NAMEOFISSUER (suffix-token stripping plus
-  a small alias map), not CUSIP: one issuer spans many CUSIPs (share classes)
-  and name folding handles that well enough for a leaderboard. CUSIP-level
-  mapping stays an open design question.
+  a small alias map), not CUSIP. This was measured on the 2026Q1 drop rather
+  than assumed: name matching already recovers 96.5-100% of the dominant-CUSIP
+  total for 21 of the 30 giants, and CUSIP-keying would IMPORT filer errors it
+  currently rejects - 15,033 of 35,649 CUSIPs carry more than one NAMEOFISSUER
+  string, including "AIRBNB INC" filed against Visa's CUSIP and "ACUITY INC"
+  against Meta's. The CUSIP is authoritative but the giants universe is keyed
+  by name, so switching keys trades a small recall gain for a real precision
+  loss. The residual misses were never truncation - they were HTML entities and
+  share-class descriptor tails, both handled in issuer_tokens() below.
 - Filer city -> metro is a curated committed table
   (scripts/business/data/filer-city-metros.json, keys "CITY|ST"). After a new
   quarterly drop run with --report-cities to print the biggest unmapped
@@ -28,7 +34,7 @@ Design notes:
 
 usage: build_owners.py [--src data/form13f-2026q1] [--report-cities] [--self-test]
 """
-import argparse, collections, csv, datetime, json, os, re, sys
+import argparse, collections, csv, datetime, html, json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
@@ -78,9 +84,38 @@ CANON = {"MFG": "MANUFACTURING", "SYS": "SYSTEMS", "AMER": "AMERICA",
          "HLDGS": "HOLDINGS", "HLDG": "HOLDING"}
 
 
+# Filers write the same issuer many ways, so normalize the raw NAMEOFISSUER
+# string BEFORE tokenizing. EDGAR's TSVs carry unescaped HTML entities, and some
+# filers still use a superseded corporate name. Measured on 2026Q1: entity
+# encoding alone misattributed $16.6B of JPMorgan and $12.1B of Johnson &
+# Johnson, and "FACEBOOK INC" held $9.7B against Meta's CUSIP.
+ISSUER_PREFOLD = [(re.compile(p), r) for p, r in [
+    (r"&amp(?!;)", "&"),                 # semicolon-less entity, seen in the wild
+    (r"\bJP\s+MORGAN\b", "JPMORGAN"),    # "JP MORGAN CHASE" vs "JPMORGAN CHASE"
+    (r"\bFACEBOOK\b", "META PLATFORMS"),
+    (r"\bAPPLE\s+COMPUTER\b", "APPLE"),
+]]
+
+# Instrument and share-class descriptors that ride along on the issuer name
+# ("VISA INC-CLASS A SHARES", "ASML HLDG NV NYS", "APPLE INC COM STK").
+# match_tokens rejects any issuer token beyond the giant's, so these have to be
+# stripped or the row is dropped. Widening DROP only makes matching more
+# permissive, which is why the self-test keeps adversarial negatives.
+DESCRIPTOR = {"SHARES", "SHRS", "ORD", "STK", "STOCK", "COMMON", "REG",
+              "REGISTRY", "NPV", "NYS", "NY", "REPRESENTING", "QUOTED"}
+
+# Denomination noise: "USD1", "USD0.0001" (tokenizes to USD0 + 0001), bare digits.
+JUNK_TOKEN = re.compile(r"^(?:USD\d*|\d+)$")
+
+
 def issuer_tokens(name):
-    toks = [CANON.get(t, t) for t in re.sub(r"[^A-Z0-9 ]", " ", name.upper()).split()]
-    return ([t for t in toks if t not in DROP and len(t) > 1] or toks)[:6]
+    name = html.unescape(name).upper()
+    for pat, rep in ISSUER_PREFOLD:
+        name = pat.sub(rep, name)
+    toks = [CANON.get(t, t) for t in re.sub(r"[^A-Z0-9 ]", " ", name).split()]
+    keep = [t for t in toks if t not in DROP and t not in DESCRIPTOR
+            and len(t) > 1 and not JUNK_TOKEN.match(t)]
+    return (keep or toks)[:6]
 
 
 def tok_eq(a, b):
@@ -336,9 +371,31 @@ def self_test():
     assert m("CISCO SYS INC", "CISCO SYSTEMS")
     assert m("BANK AMER CORP", "Bank of America")
     assert m("TAIWAN SEMICONDUCTOR MANUFAC", "TAIWAN SEMICONDUCTOR MANUFACTURING")
+    # Real 2026Q1 strings that the pre-normalizer pass was built for. Every one
+    # of these sat on the right CUSIP and was being dropped: HTML entities,
+    # share-class/instrument tails, denomination noise, superseded names.
+    assert m("JPMORGAN CHASE &#38; CO", "JPMorgan Chase")
+    assert m("JPMORGAN CHASE &amp CO.", "JPMorgan Chase")
+    assert m("JP MORGAN CHASE & CO USD1 Common S", "JPMorgan Chase")
+    assert m("JOHNSON &#38; JOHNSON", "Johnson & Johnson")
+    assert m("JOHNSON & JOHNSON COM USD1", "Johnson & Johnson")
+    assert m("VISA INC-CLASS A SHARES", "Visa")
+    assert m("VISA INC USD0.0001 Common Stock", "Visa")
+    assert m("APPLE INC COM STK", "Apple") and m("APPLE ORD", "Apple")
+    assert m("APPLE COMPUTER INC", "Apple")
+    assert m("ASML HLDG NV NYS", "ASML") and m("ASML HOLDING NV-NY REG SHS", "ASML")
+    assert m("FACEBOOK INC", "Meta Platforms")
+    assert m("META PLATFORMS CL A ORD", "Meta Platforms")
+    # Adversarial negatives. Widening the drop sets makes matching more
+    # permissive, so these guard the precision the name key exists to protect -
+    # AIRBNB and ACUITY are real filer errors sitting on Visa's and Meta's own
+    # CUSIPs, i.e. exactly what a CUSIP-keyed join would have swallowed.
     assert not m("APPLE HOSPITALITY REIT INC", "Apple")
     assert not m("TENCENT MUSIC ENTMT GROUP", "Tencent")
     assert not m("TAIWAN FD INC", "TAIWAN SEMICONDUCTOR MANUFACTURING")
+    assert not m("AIRBNB INC", "Visa")
+    assert not m("ACUITY INC", "Meta Platforms")
+    assert not m("VISTA OUTDOOR INC", "Visa")
     assert display_name("GEODE CAPITAL MANAGEMENT, LLC") == "Geode Capital Management, LLC"
     assert display_name("JPMORGAN CHASE & CO") == "JPMorgan Chase & Co"
     subs = [{"acc": "A1", "cik": "1", "date": datetime.date(2026, 4, 1)},
@@ -351,7 +408,7 @@ def self_test():
     covers["A2"]["amendtype"] = "NEW HOLDINGS"
     assert pick_accessions(subs, covers) == {"A1", "A2", "A3"}
     assert parse_date("31-MAR-2026") == datetime.date(2026, 3, 31)
-    print("self-test: 15/15 PASS")
+    print("self-test: 37/37 PASS")
     return 0
 
 

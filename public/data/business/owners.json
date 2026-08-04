@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-08-03T06:41:29Z",
+  "generated_at": "2026-08-04T13:24:21Z",
   "as_of": "2026-03-31",
   "period": "31-MAR-2026",
   "source": "SEC Form 13F structured data set",
@@ -1674,9 +1674,9 @@
    "cap": 4862365925376.0,
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
-   "reported": 2674430148210,
-   "pctOfCap": 55.0,
-   "holders": 5746,
+   "reported": 2677027956094,
+   "pctOfCap": 55.1,
+   "holders": 5766,
    "top": [
     {
      "name": "BlackRock, Inc.",
@@ -1736,9 +1736,9 @@
    "cap": 4537070911488.0,
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
-   "reported": 2251659291380,
-   "pctOfCap": 49.6,
-   "holders": 5928,
+   "reported": 2261702576731,
+   "pctOfCap": 49.8,
+   "holders": 6001,
    "top": [
     {
      "name": "BlackRock, Inc.",
@@ -1798,9 +1798,9 @@
    "cap": 4361806151680.0,
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
-   "reported": 2066997979742,
+   "reported": 2068071869217,
    "pctOfCap": 47.4,
-   "holders": 5574,
+   "holders": 5592,
    "top": [
     {
      "name": "BlackRock, Inc.",
@@ -1860,9 +1860,9 @@
    "cap": 3450799652864.0,
    "metro": "Seattle",
    "metroSlug": "seattle",
-   "reported": 1879567257201,
-   "pctOfCap": 54.5,
-   "holders": 6088,
+   "reported": 1882466879131,
+   "pctOfCap": 54.6,
+   "holders": 6108,
    "top": [
     {
      "name": "BlackRock, Inc.",
@@ -1922,9 +1922,9 @@
    "cap": 2921415835648.0,
    "metro": "Seattle",
    "metroSlug": "seattle",
-   "reported": 1373503754606,
-   "pctOfCap": 47.0,
-   "holders": 5893,
+   "reported": 1375078213856,
+   "pctOfCap": 47.1,
+   "holders": 5910,
    "top": [
     {
      "name": "BlackRock, Inc.",
@@ -2046,9 +2046,9 @@
    "cap": 1852030844928.0,
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
-   "reported": 1050100269704,
-   "pctOfCap": 56.7,
-   "holders": 4554,
+   "reported": 1051875629479,
+   "pctOfCap": 56.8,
+   "holders": 4582,
    "top": [
     {
      "name": "BlackRock, Inc.",
@@ -2108,9 +2108,9 @@
    "cap": 1418222239744.0,
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
-   "reported": 890805697161,
-   "pctOfCap": 62.8,
-   "holders": 4922,
+   "reported": 891828175015,
+   "pctOfCap": 62.9,
+   "holders": 4987,
    "top": [
     {
      "name": "BlackRock, Inc.",
@@ -2170,9 +2170,9 @@
    "cap": 1229138690048.0,
    "metro": "Austin",
    "metroSlug": "austin",
-   "reported": 561886458052,
+   "reported": 562272017624,
    "pctOfCap": 45.7,
-   "holders": 3970,
+   "holders": 3985,
    "top": [
     {
      "name": "BlackRock, Inc.",
@@ -2289,9 +2289,9 @@
    "cap": 1103317041152.0,
    "metro": "Omaha-Lincoln",
    "metroSlug": "omaha-lincoln",
-   "reported": 738685449379,
+   "reported": 738908095253,
    "pctOfCap": 67.0,
-   "holders": 4868,
+   "holders": 4887,
    "top": [
     {
      "name": "Mirae Asset Global Investments Co., Ltd.",
@@ -2351,9 +2351,9 @@
    "cap": 1024468123648.0,
    "metro": "Indianapolis",
    "metroSlug": "indianapolis",
-   "reported": 684457545594,
-   "pctOfCap": 66.8,
-   "holders": 4282,
+   "reported": 686481637892,
+   "pctOfCap": 67.0,
+   "holders": 4304,
    "top": [
     {
      "name": "Lilly Endowment Inc",
@@ -2413,9 +2413,9 @@
    "cap": 935128203264.0,
    "metro": "New York",
    "metroSlug": "new-york",
-   "reported": 532694241039,
-   "pctOfCap": 57.0,
-   "holders": 4757,
+   "reported": 542320290298,
+   "pctOfCap": 58.0,
+   "holders": 4902,
    "top": [
     {
      "name": "BlackRock, Inc.",
@@ -2475,9 +2475,9 @@
    "cap": 929524482048.0,
    "metro": "Boise",
    "metroSlug": "boise",
-   "reported": 271419335375,
+   "reported": 271610143073,
    "pctOfCap": 29.2,
-   "holders": 2938,
+   "holders": 2958,
    "top": [
     {
      "name": "BlackRock, Inc.",
@@ -2537,9 +2537,9 @@
    "cap": 884938375168.0,
    "metro": "Fayetteville",
    "metroSlug": "fayetteville",
-   "reported": 334255239803,
+   "reported": 334361513446,
    "pctOfCap": 37.8,
-   "holders": 4145,
+   "holders": 4153,
    "top": [
     {
      "name": "BlackRock, Inc.",
@@ -2621,9 +2621,9 @@
    "cap": 776410431488.0,
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
-   "reported": 202491169065,
+   "reported": 202704611616,
    "pctOfCap": 26.1,
-   "holders": 3090,
+   "holders": 3102,
    "top": [
     {
      "name": "BlackRock, Inc.",
@@ -2683,9 +2683,9 @@
    "cap": 683582029824.0,
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
-   "reported": 386880763077,
-   "pctOfCap": 56.6,
-   "holders": 4311,
+   "reported": 418771270432,
+   "pctOfCap": 61.3,
+   "holders": 4399,
    "top": [
     {
      "name": "BlackRock, Inc.",
@@ -2713,6 +2713,11 @@
      "value": 13573063003
     },
     {
+     "name": "Geode Capital Management, LLC",
+     "cik": "0001214717",
+     "value": 13542503341
+    },
+    {
      "name": "Vanguard Portfolio Management LLC",
      "cik": "0002100121",
      "value": 11365679286
@@ -2731,11 +2736,6 @@
      "name": "Capital International Investors",
      "cik": "0001562230",
      "value": 7165094041
-    },
-    {
-     "name": "Bank of America Corp",
-     "cik": "0000070858",
-     "value": 6915775100
     }
    ]
   },
@@ -2745,9 +2745,9 @@
    "cap": 644290576384.0,
    "metro": "Houston",
    "metroSlug": "houston",
-   "reported": 447774120477,
-   "pctOfCap": 69.5,
-   "holders": 4679,
+   "reported": 448252352490,
+   "pctOfCap": 69.6,
+   "holders": 4688,
    "top": [
     {
      "name": "BlackRock, Inc.",
@@ -2807,10 +2807,15 @@
    "cap": 625698930688.0,
    "metro": "Eindhoven",
    "metroSlug": "eindhoven",
-   "reported": 75632830627,
-   "pctOfCap": 12.1,
-   "holders": 1867,
+   "reported": 86668120001,
+   "pctOfCap": 13.9,
+   "holders": 2104,
    "top": [
+    {
+     "name": "Fisher Asset Management, LLC",
+     "cik": "0000850529",
+     "value": 6076495515
+    },
     {
      "name": "Capital World Investors",
      "cik": "0001422849",
@@ -2855,11 +2860,6 @@
      "name": "Wcm Investment Management, LLC",
      "cik": "0001061186",
      "value": 1910779702
-    },
-    {
-     "name": "BlackRock, Inc.",
-     "cik": "0002012383",
-     "value": 1622377332
     }
    ]
   },
@@ -2869,9 +2869,9 @@
    "cap": 617777463296.0,
    "metro": "New York",
    "metroSlug": "new-york",
-   "reported": 414414302220,
-   "pctOfCap": 67.1,
-   "holders": 4538,
+   "reported": 417886219897,
+   "pctOfCap": 67.6,
+   "holders": 4567,
    "top": [
     {
      "name": "BlackRock, Inc.",
@@ -2993,9 +2993,9 @@
    "cap": 506381893632.0,
    "metro": "New York",
    "metroSlug": "new-york",
-   "reported": 366217717710,
-   "pctOfCap": 72.3,
-   "holders": 3553,
+   "reported": 366819073560,
+   "pctOfCap": 72.4,
+   "holders": 3565,
    "top": [
     {
      "name": "BlackRock, Inc.",
@@ -3055,9 +3055,9 @@
    "cap": 457166979072.0,
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
-   "reported": 224274131790,
+   "reported": 224680808822,
    "pctOfCap": 49.1,
-   "holders": 3654,
+   "holders": 3665,
    "top": [
     {
      "name": "BlackRock, Inc.",
@@ -3117,9 +3117,9 @@
    "cap": 454968770560.0,
    "metro": "San Francisco-San Jose",
    "metroSlug": "san-francisco-san-jose",
-   "reported": 136686810211,
-   "pctOfCap": 30.0,
-   "holders": 2527,
+   "reported": 136767813406,
+   "pctOfCap": 30.1,
+   "holders": 2542,
    "top": [
     {
      "name": "BlackRock, Inc.",
@@ -3179,9 +3179,9 @@
    "cap": 443359002624.0,
    "metro": "Chicago",
    "metroSlug": "chicago",
-   "reported": 271183319490,
-   "pctOfCap": 61.2,
-   "holders": 4009,
+   "reported": 272524450506,
+   "pctOfCap": 61.5,
+   "holders": 4034,
    "top": [
     {
      "name": "BlackRock, Inc.",
@@ -3241,9 +3241,9 @@
    "cap": 434763104256.0,
    "metro": "Charlotte",
    "metroSlug": "charlotte",
-   "reported": 250401144600,
+   "reported": 250551207477,
    "pctOfCap": 57.6,
-   "holders": 3417,
+   "holders": 3430,
    "top": [
     {
      "name": "BlackRock, Inc.",
