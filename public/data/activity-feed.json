@@ -1,13 +1,48 @@
 {
-  "generatedAt": "2026-08-03",
-  "count": 550,
+  "generatedAt": "2026-08-04",
+  "count": 555,
   "entries": [
+    {
+      "date": "2026-08-04",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "91c4ec834"
+    },
+    {
+      "date": "2026-08-03",
+      "category": "fix",
+      "hub": "About",
+      "text": "Og/twitter images on every page-level metadata block - file-convention fallback loses to config openGraph, so 294 pages still shared imagel…",
+      "commit": "06d1e9213"
+    },
+    {
+      "date": "2026-08-03",
+      "category": "hub",
+      "hub": "About",
+      "text": "Currency history pages, Business hub mobile pass, sitewide share cards, Nations League sections, CL draw gate.",
+      "commit": "3cf6963b0"
+    },
     {
       "date": "2026-08-03",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "b295b2d9b"
+      "text": "Data refreshed — Football, Basketball, Elections, Leaders, and 3 more.",
+      "commit": "b89f142bf"
+    },
+    {
+      "date": "2026-08-03",
+      "category": "hub",
+      "hub": "Api",
+      "text": "New MCP server exposes the ranking data as live, callable tools for AI agents.",
+      "commit": "890de84a8"
+    },
+    {
+      "date": "2026-08-03",
+      "category": "hub",
+      "hub": "Business",
+      "text": "The Owners: ninth Business tab - 13F manager league, capitals, giants.",
+      "commit": "492253504"
     },
     {
       "date": "2026-08-02",
