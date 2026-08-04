@@ -70,12 +70,28 @@ export default function CountryNav({ items }: { items: CountryNavItem[] }) {
   }, [ids]);
 
   // Keep the active chip in view on phones, where the row scrolls sideways.
+  //
+  // ⚠️ This MUST only ever move the nav's own scrollLeft. The first version
+  // called el.scrollIntoView({block:"nearest"}), which walks up to the nearest
+  // SCROLLABLE ANCESTOR - and on >=sm this row is `overflow-visible`, so that
+  // ancestor is the document. Every time the observer changed the active
+  // section it dragged the page back to the nav, making country pages
+  // impossible to scroll past the header. Shipped and reverted 2026-08-04.
+  // Never reintroduce scrollIntoView here.
   useEffect(() => {
-    if (!active || !navRef.current) return;
-    const el = navRef.current.querySelector<HTMLAnchorElement>(
-      `a[href="#${CSS.escape(active)}"]`,
-    );
-    el?.scrollIntoView({ block: "nearest", inline: "nearest" });
+    const nav = navRef.current;
+    if (!active || !nav) return;
+    if (nav.scrollWidth <= nav.clientWidth) return; // not scrollable: do nothing
+    const el = nav.querySelector<HTMLAnchorElement>(`a[href="#${CSS.escape(active)}"]`);
+    if (!el) return;
+    const navBox = nav.getBoundingClientRect();
+    const elBox = el.getBoundingClientRect();
+    const pad = 12;
+    if (elBox.left < navBox.left) {
+      nav.scrollLeft -= navBox.left - elBox.left + pad;
+    } else if (elBox.right > navBox.right) {
+      nav.scrollLeft += elBox.right - navBox.right + pad;
+    }
   }, [active]);
 
   if (!items || items.length < 2) return null;
