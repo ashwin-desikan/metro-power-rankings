@@ -157,7 +157,13 @@ async function load<T extends { meta: { generated_at: string } }>(
     /* no build-time copy */
   }
   try {
-    const res = await fetch(`${GH_BASE}/${file}`, { next: { revalidate: 21600 } }); // 6 hours
+    const res = await fetch(`${GH_BASE}/${file}`, {
+      // 6h time-based backstop + "business-daily" tag: POST /api/revalidate
+      // (pinged by business-daily-refresh.yml after each data push) flushes
+      // these fetches and the pages built from them on demand, so the site
+      // picks up the 05:50 UTC refresh in seconds instead of at the window.
+      next: { revalidate: 21600, tags: ["business-daily"] },
+    });
     if (res.ok) {
       const remote = (await res.json()) as T;
       if (

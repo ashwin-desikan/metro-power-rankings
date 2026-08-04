@@ -1,9 +1,11 @@
 "use client";
 
 // NFL league map. Renders the 32 active franchises as markers at their
-// home-stadium coordinates. Mirrors the NBA LeagueMap pattern; coords
-// hardcoded for the 32 current stadiums as of 2025. v2 should pull these
-// from the workbook's Team List columns so the ETL keeps them fresh.
+// home-stadium coordinates. Mirrors the NBA LeagueMap pattern. Coords are
+// a hand-maintained snapshot of each club's current stadium; they only go
+// stale on a relocation or a new venue, so update on franchise news rather
+// than annually. v2 should pull these from the workbook's Team List
+// columns so the ETL keeps them fresh.
 
 import { useMemo, useState } from "react";
 import MetroMap, { type MapPoint } from "../../MetroMap";

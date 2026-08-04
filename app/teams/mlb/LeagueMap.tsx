@@ -1,10 +1,11 @@
 "use client";
 
 // MLB league map. Renders the 30 active franchises as markers at their
-// home-ballpark coordinates. Mirrors the NBA LeagueMap pattern; coords
-// hardcoded for the 30 current ballparks as of 2025. v2 should pull these
-// from the workbook's Team List / Stadiums columns so the ETL keeps them
-// fresh automatically.
+// home-ballpark coordinates. Mirrors the NBA LeagueMap pattern. Coords are
+// a hand-maintained snapshot of each club's current ballpark; they only go
+// stale on a relocation or a new venue, so update on franchise news rather
+// than annually. v2 should pull these from the workbook's Team List /
+// Stadiums columns so the ETL keeps them fresh automatically.
 
 import { useMemo, useState } from "react";
 import MetroMap, { type MapPoint } from "../../MetroMap";
