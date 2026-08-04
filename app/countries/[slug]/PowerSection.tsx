@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { PowerPoint } from "@/lib/powerHistory";
 import Collapsible from "./Collapsible";
+import { withIcon } from "./sectionIcons";
 
 const TIER_COLOR: Record<string, string> = {
   "Superpower": "#f5c518", "Great Power": "#e8833a", "Middle Power": "#4a9edb", "Regional": "#7a8a99", "Minor": "#464659",
@@ -54,7 +55,7 @@ export default function PowerSection({ series, name }: { series: PowerPoint[]; n
   return (
     <Collapsible
       id="power"
-      title="Power over time"
+      title={withIcon("power", "Power over time")}
       titleClassName="text-2xl font-bold tracking-tight"
       right={
         <Link href="/power-atlas" className="ml-auto text-xs text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors" style={{ fontFamily: "'JetBrains Mono', monospace" }}>

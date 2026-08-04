@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getLeagueHubsForCountry } from "@/lib/leagueHubs";
 import Collapsible from "./Collapsible";
+import { withIcon } from "./sectionIcons";
 
 // Renders the domestic league hubs we have built that operate in this country.
 // Pure-data lookup (no fs), so this stays a server component. Renders nothing
@@ -16,7 +17,7 @@ export default function LeagueHubsSection({
   if (hubs.length === 0) return null;
 
   return (
-    <Collapsible id="league-hubs" title="League Hubs">
+    <Collapsible id="league-hubs" title={withIcon("league-hubs", "League Hubs")}>
       <p className="text-sm text-[var(--text-muted)] mb-4">
         Domestic league portals that operate in {countryName}:{" "}
         {hubs.length} {hubs.length === 1 ? "league" : "leagues"}.

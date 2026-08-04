@@ -1,6 +1,7 @@
 // Per-country "Billionaires" section. Server component.
 import { fmtWorth, forbesUrl, type Billionaire } from "@/lib/billionaires";
 import Collapsible from "./Collapsible";
+import { withIcon } from "./sectionIcons";
 
 export default function BillionairesSection({ list }: { list: Billionaire[] }) {
   if (!list.length) return null;
@@ -8,7 +9,7 @@ export default function BillionairesSection({ list }: { list: Billionaire[] }) {
   return (
     <Collapsible
       id="billionaires"
-      title="Billionaires"
+      title={withIcon("billionaires", "Billionaires")}
       defaultOpen={false}
       right={
         <span className="text-xs text-[var(--text-dim)]">

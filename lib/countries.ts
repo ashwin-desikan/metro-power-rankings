@@ -63,6 +63,11 @@ export type CountryIndicators = {
     popGrowthPct?: IndicatorValue;
     migrantStockPct?: IndicatorValue;
     ruleOfLaw?: IndicatorValue;
+    co2PerCapita?: IndicatorValue;
+    energyPerCapita?: IndicatorValue;
+    /** Renewables' share of ELECTRICITY, not of primary energy — see the note
+     *  in scripts/build-country-indicators.py. Label it accordingly. */
+    renewableElecPct?: IndicatorValue;
   };
 };
 
@@ -249,6 +254,14 @@ const INDICATOR_RANK_DIR: Record<string, "asc" | "desc"> = {
   hdi: "desc",
   migrantStockPct: "desc",
   ruleOfLaw: "desc",
+  // Energy + emissions, added 2026-08-04. Direction is the arguable part, so
+  // it is stated explicitly: rank 1 is the LOWEST emitter and the LOWEST energy
+  // consumer per head, and the HIGHEST renewable share. That treats low
+  // emissions as the favourable end, consistent with giniIndex and inflationPct
+  // already being "asc".
+  co2PerCapita: "asc",
+  energyPerCapita: "asc",
+  renewableElecPct: "desc",
 };
 
 let _indicatorRanks: Record<string, Map<string, IndicatorRank>> | null = null;

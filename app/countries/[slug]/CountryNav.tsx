@@ -16,6 +16,7 @@
 // sticky-header offset exactly as it does for HubNav.
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { sectionIcon } from "./sectionIcons";
 
 export type CountryNavItem = { label: string; href: string; group: string };
 
@@ -119,6 +120,7 @@ export default function CountryNav({ items }: { items: CountryNavItem[] }) {
             {g.items.map((it) => {
               const id = it.href.replace(/^#/, "");
               const on = id === active;
+              const icon = sectionIcon(id);
               return (
                 <a
                   key={it.href}
@@ -131,6 +133,7 @@ export default function CountryNav({ items }: { items: CountryNavItem[] }) {
                     borderColor: on ? "var(--accent)" : "var(--border)",
                   }}
                 >
+                  {icon ? <span aria-hidden className="mr-1">{icon}</span> : null}
                   {it.label}
                 </a>
               );

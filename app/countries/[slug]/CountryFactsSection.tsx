@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Collapsible from "./Collapsible";
+import { withIcon } from "./sectionIcons";
 import type { CountryFacts } from "@/lib/countries";
 import { fmtElevation } from "@/lib/shared";
 
@@ -66,7 +67,7 @@ export default function CountryFactsSection({ facts }: { facts: CountryFacts | n
   if (rows.length === 0) return null;
 
   return (
-    <Collapsible id="at-a-glance" title="At a glance">
+    <Collapsible id="at-a-glance" title={withIcon("at-a-glance", "At a glance")}>
       <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-0">
         {rows.map((r) => (
           <div

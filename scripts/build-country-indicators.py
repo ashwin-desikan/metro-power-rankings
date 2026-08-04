@@ -45,6 +45,18 @@ OWID_SERIES = {
     "hdi":       ("human-development-index", "hdi__sex_total", "Human Development Index (UNDP)"),
     "medianAge": ("median-age", "median_age__sex_all__age_all__variant_estimates", "Median age (UN WPP)"),
     "ruleOfLaw": ("rule-of-law-index", "rule_of_law_vdem__estimate_best", "Rule of Law index 0-1 (V-Dem)"),
+    # Energy + emissions, added 2026-08-04. Column short names and coverage were
+    # probed live before wiring, not guessed.
+    "co2PerCapita":    ("co2-emissions-per-capita", "emissions_total_per_capita",
+                        "CO2 emissions per capita, tonnes (Global Carbon Budget)"),
+    "energyPerCapita": ("energy-use-per-capita", "primary_energy_consumption_per_capita__kwh",
+                        "Primary energy use per capita, kWh (Energy Institute)"),
+    # NOTE: this is renewables' share of ELECTRICITY, not of primary energy.
+    # The primary-energy series (renewable-share-energy) covers only 91 ISO3
+    # codes against this one's 226, which would leave most of a 247-country page
+    # blank. They are different claims, so the UI label must say "electricity".
+    "renewableElecPct": ("share-electricity-renewables", "renewable_share_of_electricity__pct",
+                         "Renewable share of electricity, % (Ember)"),
 }
 
 OVERRIDES = {
@@ -73,25 +85,32 @@ def norm(s):
     return " ".join(s.split())
 
 
-def fetch_json(url, retries=3):
+# NOTE on the except clauses: a socket READ timeout raises the builtin
+# TimeoutError (socket.timeout), which is NOT a subclass of urllib.error.URLError.
+# Both loops used to catch URLError only, so the retries never applied to the one
+# failure that actually happens here - the run died on the first slow response
+# instead of retrying. Catching OSError covers TimeoutError, ConnectionReset and
+# URLError alike. Timeouts raised to match how slow the WB API and the larger
+# OWID CSVs can be from a residential line (2026-08-04).
+def fetch_json(url, retries=4):
     for attempt in range(retries):
         try:
             req = urllib.request.Request(url, headers={"User-Agent": "metro-rankings-etl/1.0"})
-            with urllib.request.urlopen(req, timeout=30) as r:
+            with urllib.request.urlopen(req, timeout=90) as r:
                 return json.loads(r.read())
-        except (urllib.error.URLError, json.JSONDecodeError):
+        except (OSError, json.JSONDecodeError):
             if attempt == retries - 1:
                 raise
             time.sleep(2 * (attempt + 1))
 
 
-def fetch_text(url, retries=3):
+def fetch_text(url, retries=4):
     for attempt in range(retries):
         try:
             req = urllib.request.Request(url, headers={"User-Agent": "metro-rankings-etl/1.0"})
-            with urllib.request.urlopen(req, timeout=60) as r:
+            with urllib.request.urlopen(req, timeout=180) as r:
                 return r.read().decode("utf-8")
-        except urllib.error.URLError:
+        except OSError:
             if attempt == retries - 1:
                 raise
             time.sleep(2 * (attempt + 1))
@@ -196,8 +215,23 @@ def main():
         series[key] = fetch_indicator(code)
         labels[key] = ("World Bank", code, label)
         print(f"       WB   {code:<20} {len(series[key])} obs")
+    # A literal 0 is a real, meaningful value for some series and a data gap for
+    # others. renewableElecPct legitimately hits 0 (Gibraltar, Grenada, Gambia,
+    # Guinea-Bissau and others generate essentially no renewable electricity),
+    # so zeros there are kept. energyPerCapita cannot truly be 0 - no country
+    # consumes no primary energy - and because that indicator ranks ASCENDING
+    # (lowest is best), a spurious 0 would rank that country #1 in the world for
+    # efficiency. Observed 2026-08-04 for Northern Mariana Islands and Tuvalu.
+    DROP_ZERO = {"energyPerCapita"}
+
     for key, (slug, col, label) in OWID_SERIES.items():
         series[key] = fetch_owid(slug, col)
+        if key in DROP_ZERO:
+            dropped = [i for i, v in series[key].items() if v[0] == 0]
+            for i in dropped:
+                del series[key][i]
+            if dropped:
+                print(f"       drop {key}: {len(dropped)} zero value(s) treated as missing")
         labels[key] = ("Our World in Data", slug, label)
         print(f"       OWID {slug:<26} {len(series[key])} obs")
 

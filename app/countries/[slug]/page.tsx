@@ -22,6 +22,7 @@ import LeagueHubsSection from "./LeagueHubsSection";
 import CountryNav, { type CountryNavItem } from "./CountryNav";
 import MetrosExplorer from "./MetrosExplorer";
 import SubdivisionsExplorer from "./SubdivisionsExplorer";
+import { withIcon } from "./sectionIcons";
 import { getCountryTitles } from "@/lib/championsHistory";
 import { competitionHref } from "@/lib/competitionLinks";
 import { sportIcon } from "@/lib/sportLabels";
@@ -202,7 +203,7 @@ function IncomeBadge({ level }: { level: string }) {
   );
 }
 
-function StatCard({ label, value, sub, rank, gold }: { label: string; value: string; sub?: string; rank?: string; gold?: boolean }) {
+function StatCard({ label, value, sub, rank, gold, percentile }: { label: string; value: string; sub?: string; rank?: string; gold?: boolean; percentile?: number | null }) {
   return (
     <div className="border rounded-lg p-4" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
       <div className="flex items-start justify-between gap-2">
@@ -214,27 +215,56 @@ function StatCard({ label, value, sub, rank, gold }: { label: string; value: str
         ) : null}
       </div>
       <div className="text-2xl font-bold mt-1 text-[var(--text)]">{value}</div>
+      {/* Percentile bar: turns "#9 / 194" into something readable at a glance.
+          Derived from the rank we already have (getIndicatorRank returns
+          {rank,total}), so no new data. Rank 1 fills the bar; last place leaves
+          it nearly empty. Rendered only where a rank exists - medianAge and
+          popGrowthPct have no entry in INDICATOR_RANK_DIR, so they show no bar
+          rather than a misleading one. Purely decorative, hence aria-hidden;
+          the rank text above is the accessible value. */}
+      {percentile != null ? (
+        <div className="mt-2 h-1 w-full rounded-full overflow-hidden" style={{ backgroundColor: "var(--border)" }} aria-hidden>
+          <div
+            className="h-full rounded-full"
+            style={{
+              width: `${Math.max(2, Math.round(percentile * 100))}%`,
+              backgroundColor: gold ? "#f59e0b" : "var(--accent)",
+              opacity: gold ? 1 : 0.55,
+            }}
+          />
+        </div>
+      ) : null}
       {sub ? <div className="text-xs text-[var(--text-muted)] mt-1">{sub}</div> : null}
     </div>
   );
 }
 
-const ECON_INDICATORS: { key: keyof CountryIndicators["indicators"]; label: string; fmt: (n: number) => string }[] = [
-  { key: "hdi", label: "Human Dev. Index", fmt: (n) => n.toFixed(3) },
-  { key: "gdpUsd", label: "GDP", fmt: (n) => fmtUsdLarge(n) },
-  { key: "gdpPerCapitaUsd", label: "GDP per capita", fmt: (n) => fmtUsd(n) },
-  { key: "gdpPerCapitaPpp", label: "GDP/capita (PPP)", fmt: (n) => fmtUsd(n) },
-  { key: "gniPerCapitaAtlas", label: "GNI/capita (Atlas)", fmt: (n) => fmtUsd(n) },
-  { key: "lifeExpectancy", label: "Life expectancy", fmt: (n) => `${n.toFixed(1)} yrs` },
-  { key: "medianAge", label: "Median age", fmt: (n) => `${n.toFixed(1)} yrs` },
-  { key: "urbanPopPct", label: "Urban population", fmt: (n) => `${n.toFixed(0)}%` },
-  { key: "popGrowthPct", label: "Pop. growth", fmt: (n) => `${n.toFixed(1)}%` },
-  { key: "popDensity", label: "Pop. density", fmt: (n) => `${n.toFixed(0)}/km²` },
-  { key: "migrantStockPct", label: "Foreign-born", fmt: (n) => `${n.toFixed(1)}%` },
-  { key: "ruleOfLaw", label: "Rule of law", fmt: (n) => n.toFixed(2) },
-  { key: "giniIndex", label: "Gini index", fmt: (n) => n.toFixed(1) },
-  { key: "internetPct", label: "Internet users", fmt: (n) => `${n.toFixed(0)}%` },
-  { key: "inflationPct", label: "Inflation", fmt: (n) => `${n.toFixed(1)}%` },
+// `src` is the ORIGINATING body, not the aggregator. Every card previously read
+// "World Bank · {year}", including HDI, median age and rule of law, which are
+// UNDP, UN WPP and V-Dem republished by Our World in Data. These are CC BY
+// series, so crediting the wrong body is a licence issue, not a nitpick.
+const ECON_INDICATORS: { key: keyof CountryIndicators["indicators"]; label: string; src: string; fmt: (n: number) => string }[] = [
+  { key: "hdi", label: "Human Dev. Index", src: "UNDP", fmt: (n) => n.toFixed(3) },
+  { key: "gdpUsd", label: "GDP", src: "World Bank", fmt: (n) => fmtUsdLarge(n) },
+  { key: "gdpPerCapitaUsd", label: "GDP per capita", src: "World Bank", fmt: (n) => fmtUsd(n) },
+  { key: "gdpPerCapitaPpp", label: "GDP/capita (PPP)", src: "World Bank", fmt: (n) => fmtUsd(n) },
+  { key: "gniPerCapitaAtlas", label: "GNI/capita (Atlas)", src: "World Bank", fmt: (n) => fmtUsd(n) },
+  { key: "lifeExpectancy", label: "Life expectancy", src: "World Bank", fmt: (n) => `${n.toFixed(1)} yrs` },
+  { key: "medianAge", label: "Median age", src: "UN WPP", fmt: (n) => `${n.toFixed(1)} yrs` },
+  { key: "urbanPopPct", label: "Urban population", src: "World Bank", fmt: (n) => `${n.toFixed(0)}%` },
+  { key: "popGrowthPct", label: "Pop. growth", src: "World Bank", fmt: (n) => `${n.toFixed(1)}%` },
+  { key: "popDensity", label: "Pop. density", src: "World Bank", fmt: (n) => `${n.toFixed(0)}/km²` },
+  { key: "migrantStockPct", label: "Foreign-born", src: "World Bank", fmt: (n) => `${n.toFixed(1)}%` },
+  { key: "ruleOfLaw", label: "Rule of law", src: "V-Dem", fmt: (n) => n.toFixed(2) },
+  { key: "giniIndex", label: "Gini index", src: "World Bank", fmt: (n) => n.toFixed(1) },
+  { key: "internetPct", label: "Internet users", src: "World Bank", fmt: (n) => `${n.toFixed(0)}%` },
+  { key: "inflationPct", label: "Inflation", src: "World Bank", fmt: (n) => `${n.toFixed(1)}%` },
+  // "Renewable electricity", NOT "renewable energy" — the series is renewables'
+  // share of electricity generation. The primary-energy equivalent covers only
+  // 91 countries against this one's 226, so it was rejected.
+  { key: "co2PerCapita", label: "CO₂ per capita", src: "Global Carbon Budget", fmt: (n) => `${n.toFixed(1)} t` },
+  { key: "renewableElecPct", label: "Renewable electricity", src: "Ember", fmt: (n) => `${n.toFixed(0)}%` },
+  { key: "energyPerCapita", label: "Energy per capita", src: "Energy Institute", fmt: (n) => (n >= 1000 ? `${(n / 1000).toFixed(1)} MWh` : `${n.toFixed(0)} kWh`) },
 ];
 
 // CapitalBadge / LargestBadge moved into MetrosExplorer.tsx with the metros
@@ -464,23 +494,27 @@ export default async function CountryDetailPage({ params }: Props) {
           {indicators ? (
             <Collapsible
               id="economy"
-              title="Economy and development"
+              title={withIcon("economy", "Economy and development")}
               right={indicators.incomeLevel ? <IncomeBadge level={indicators.incomeLevel} /> : null}
             >
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-                {ECON_INDICATORS.map(({ key, label, fmt }) => {
+                {ECON_INDICATORS.map(({ key, label, src, fmt }) => {
                   const iv = indicators.indicators[key];
                   if (!iv) return null;
                   const r = getIndicatorRank(country.slug, key);
                   const gold = isTop5pct(r);
+                  // Percentile: 1 = best. Derived from the rank we already
+                  // have, so no new data and no new pass over the indicators.
+                  const percentile = r && r.total > 1 ? (r.total - r.rank) / (r.total - 1) : null;
                   return (
                     <StatCard
                       key={key}
                       label={label}
                       value={fmt(iv.value)}
-                      sub={`World Bank · ${iv.year}`}
+                      sub={`${src} · ${iv.year}`}
                       rank={r ? `#${r.rank} / ${r.total}` : undefined}
                       gold={gold}
+                      percentile={percentile}
                     />
                   );
                 })}
@@ -494,7 +528,9 @@ export default async function CountryDetailPage({ params }: Props) {
                 <a href="https://ourworldindata.org" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent)]">
                   Our World in Data
                 </a>{" "}
-                (UNDP, UN, V-Dem; CC BY 4.0). Each figure is the most recent year available.
+                (UNDP, UN WPP, V-Dem, Global Carbon Budget, Ember, Energy Institute; CC BY 4.0). Each card
+                credits its originating body. Renewable share is of electricity generation, not of primary
+                energy. Each figure is the most recent year available.
               </p>
             </Collapsible>
           ) : null}
@@ -508,7 +544,7 @@ export default async function CountryDetailPage({ params }: Props) {
           <BillionairesSection list={billionaires} />
 
           {(countryHasNationalTeams(country.name) || champTitles.length > 0) ? (
-            <Collapsible id="national-teams" title="National Teams">
+            <Collapsible id="national-teams" title={withIcon("national-teams", "National Teams")}>
               <NationalTeamsSection countryName={country.name} bare />
               {champTitles.length > 0 ? (
                 <div className="mt-8">
@@ -582,7 +618,7 @@ export default async function CountryDetailPage({ params }: Props) {
           <LeagueHubsSection countrySlug={slug} countryName={country.name} />
 
           {children.length > 0 ? (
-            <Collapsible id="constituents" title="Constituents and territories">
+            <Collapsible id="constituents" title={withIcon("constituents", "Constituents and territories")}>
               <p className="text-sm text-[var(--text-muted)] mb-4">{children.length} entries listed under {country.name}. Click any to see its own metros.</p>
               <div className="flex flex-wrap gap-2">
                 {children.map((c) => (
@@ -629,7 +665,7 @@ export default async function CountryDetailPage({ params }: Props) {
           ) : null}
 
           {stateGroups.length > 0 ? (
-            <Collapsible id="subdivisions" title={stateSectionTitle}>
+            <Collapsible id="subdivisions" title={withIcon("subdivisions", stateSectionTitle)}>
               <SubdivisionsExplorer
                 intro={`${states.length} ${states.length === 1 ? "entry" : "entries"} listed under ${country.name}${
                   stateGroups.length > 1 ? ` across ${stateGroups.length} types` : ""
@@ -649,15 +685,15 @@ export default async function CountryDetailPage({ params }: Props) {
             </Collapsible>
           ) : null}
 
+          {/* CountryMap now owns its own Collapsible + id="geography" so it
+              matches every other section (and its nav chip). No wrapper div. */}
           {metros.length > 0 ? (
-            <div id="geography" className="scroll-mt-20">
-              <CountryMap slug={country.slug} countryName={country.name} />
-            </div>
+            <CountryMap slug={country.slug} countryName={country.name} />
           ) : null}
 
           <Collapsible
             id="metros"
-            title={metros.length > 0 ? `${metros.length} tracked ${metros.length === 1 ? "metro" : "metros"}` : "No metros tracked yet"}
+            title={withIcon("metros", metros.length > 0 ? `${metros.length} tracked ${metros.length === 1 ? "metro" : "metros"}` : "No metros tracked yet")}
           >
             {metros.length > 0 ? (
               <MetrosExplorer

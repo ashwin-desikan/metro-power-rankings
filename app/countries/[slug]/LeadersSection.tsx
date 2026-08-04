@@ -6,6 +6,7 @@
 import Link from "next/link";
 import { getLeaders, leaderYear, type Leader } from "@/lib/leaders";
 import Collapsible from "./Collapsible";
+import { withIcon } from "./sectionIcons";
 
 type Props = { countrySlug: string };
 
@@ -183,7 +184,7 @@ export default function LeadersSection({ countrySlug }: Props) {
   return (
     <Collapsible
       id="leaders"
-      title="Leadership History"
+      title={withIcon("leaders", "Leadership History")}
       defaultOpen={false}
       right={
         <span className="text-xs text-[var(--text-dim)]">

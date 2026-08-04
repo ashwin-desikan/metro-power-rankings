@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { warYears, fmtDeaths, type CountryWar, type Belligerent } from "@/lib/conflicts";
 import Collapsible from "./Collapsible";
+import { withIcon } from "./sectionIcons";
 
 function Bel({ b }: { b: Belligerent }) {
   const inner = b.principal ? <strong>{b.name}</strong> : <>{b.name}</>;
@@ -32,7 +33,7 @@ export default function ConflictsSection({ wars }: { wars: CountryWar[] }) {
   return (
     <Collapsible
       id="conflicts"
-      title="Conflicts since 1945"
+      title={withIcon("conflicts", "Conflicts since 1945")}
       defaultOpen={false}
       right={
         <span className="text-xs text-[var(--text-dim)]">

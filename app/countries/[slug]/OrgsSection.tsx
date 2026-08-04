@@ -5,6 +5,7 @@
 
 import Link from "next/link";
 import Collapsible from "./Collapsible";
+import { sectionIcon } from "./sectionIcons";
 import {
   getOrgsForCountry,
   ORG_DEFS,
@@ -83,7 +84,7 @@ export default function OrgsSection({ countrySlug }: Props) {
       id="orgs"
       title={
         <Link href="/orgs" className="hover:text-[var(--accent)] hover:underline">
-          Alliances &amp; Organisations
+          <span aria-hidden>{sectionIcon("orgs")}</span> Alliances &amp; Organisations
         </Link>
       }
       right={
