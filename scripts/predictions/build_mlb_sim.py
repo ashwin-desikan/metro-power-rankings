@@ -530,13 +530,14 @@ def build(sims, today=None):
     ratings = base_ratings(per_season, played)
 
     base_wins = {t: 0 for t in TEAMS}
+    base_losses = {t: 0 for t in TEAMS}
     played_h2h = {t: {} for t in TEAMS}
     for h, a, hs, as_ in played:
         if hs > as_:
-            base_wins[h] += 1
+            base_wins[h] += 1; base_losses[a] += 1
             played_h2h[h][a] = played_h2h[h].get(a, 0) + 1
         elif as_ > hs:
-            base_wins[a] += 1
+            base_wins[a] += 1; base_losses[h] += 1
             played_h2h[a][h] = played_h2h[a].get(h, 0) + 1
         # A regular-season tie is not a thing in modern MLB; a suspended game
         # simply is not `completed` yet, so it lands in `remaining`.
@@ -578,7 +579,7 @@ def build(sims, today=None):
             "league": TEAM_LG[t], "division": TEAM_DIV[t],
             "rating": round(ratings[t], 4),
             "true_wpct": round(1.0 / (1.0 + math.exp(-ratings[t])), 3),
-            "wins": base_wins[t],
+            "wins": base_wins[t], "losses": base_losses[t],
             "exp_wins": round(a["wins"] / sims, 1),
             "p_division": round(100.0 * a["division"] / sims, 2),
             "p_playoffs": round(100.0 * a["playoffs"] / sims, 2),

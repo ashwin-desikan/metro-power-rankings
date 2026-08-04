@@ -21,6 +21,7 @@ export type MlbSimRow = {
   rating: number;
   true_wpct: number;
   wins: number;
+  losses: number;
   exp_wins: number;
   p_division: number;
   p_playoffs: number;

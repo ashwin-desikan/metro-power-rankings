@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getNflSim, getNflPredictions, type NflPredictionEntry, type NflSimRow } from "@/lib/nflSim";
+import { getAllFranchises as nflFranchises, logoUrlFor as nflLogo } from "@/lib/nfl";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 // NFL 2026 prediction hub on /predictions - the NFL sibling of
@@ -43,7 +44,39 @@ function fmtDate(iso: string): string {
   }
 }
 
-function DivisionTable({ rows, division }: { rows: NflSimRow[]; division: string }) {
+/** Sim slug -> /teams/nfl/<slug>, but only when the slug actually names a
+ *  franchise page. The sim builds its slug by slugifying ESPN's display name
+ *  while the routes come from the workbook, so the two agreeing is a fact to
+ *  verify at render, not to assume. An unresolved club renders as plain text
+ *  rather than a link to a 404. */
+function nflTeamLinks(): { href: (slug: string) => string | null; logo: (slug: string) => string | null } {
+  const slugs = new Set(nflFranchises().map((f) => f.slug));
+  return {
+    href: (s) => (slugs.has(s) ? `/teams/nfl/${s}` : null),
+    logo: (s) => (slugs.has(s) ? nflLogo(s) : null),
+  };
+}
+
+function TeamLabel({ name, href, logo }: { name: string; href: string | null; logo: string | null }) {
+  const inner = (
+    <span className="inline-flex items-center gap-1.5 min-w-0">
+      {logo ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={logo} alt="" className="w-4 h-4 flex-shrink-0 object-contain" loading="lazy" decoding="async" />
+      ) : null}
+      <span className="truncate">{name}</span>
+    </span>
+  );
+  return href ? (
+    <Link href={href} className="font-semibold hover:text-[var(--accent)] transition-colors">{inner}</Link>
+  ) : (
+    <span className="font-semibold">{inner}</span>
+  );
+}
+
+function DivisionTable({
+  rows, division, href, logo,
+}: { rows: NflSimRow[]; division: string; href: (s: string) => string | null; logo: (s: string) => string | null }) {
   const ts = rows.filter((r) => r.division === division).sort((a, b) => b.exp_wins - a.exp_wins);
   return (
     <div className="overflow-x-auto rounded-xl border" style={{ borderColor: "var(--border)" }}>
@@ -61,7 +94,9 @@ function DivisionTable({ rows, division }: { rows: NflSimRow[]; division: string
         <tbody>
           {ts.map((r) => (
             <tr key={r.slug} className="border-t" style={{ borderColor: "var(--border)" }}>
-              <td className="px-3 py-2 font-semibold whitespace-nowrap">{r.name}</td>
+              <td className="px-3 py-2 whitespace-nowrap">
+                <TeamLabel name={r.name} href={href(r.slug)} logo={logo(r.slug)} />
+              </td>
               <td className="px-3 py-2 text-right" style={MONO}>{r.exp_wins.toFixed(1)}</td>
               <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_division)}</td>
               <td className="px-3 py-2 text-right" style={MONO}>{pct(r.p_playoffs)}</td>
@@ -79,6 +114,7 @@ const PICK_LABEL = (e: NflPredictionEntry) => (e.pick === "H" ? e.home : e.away)
 
 export default async function NflPredictionsPage() {
   const [sim, preds] = await Promise.all([getNflSim(), getNflPredictions()]);
+  const { href: teamHref, logo: teamLogo } = nflTeamLinks();
   const rows = sim?.table ?? [];
   const meta = sim?.meta ?? null;
   const maxSb = rows.length ? rows[0].p_sb || 1 : 1;
@@ -142,7 +178,9 @@ export default async function NflPredictionsPage() {
               {rows.filter((r) => r.p_sb >= 1.5).map((r, i) => (
                 <div key={r.slug} className="flex items-center gap-3">
                   <span className="w-6 text-right text-[13px]" style={{ ...MONO, color: "var(--text-dim)" }}>{i + 1}</span>
-                  <span className="w-44 sm:w-56 font-semibold text-[14.5px] truncate">{r.name}</span>
+                  <span className="w-44 sm:w-56 text-[14.5px] truncate">
+                    <TeamLabel name={r.name} href={teamHref(r.slug)} logo={teamLogo(r.slug)} />
+                  </span>
                   <span className="flex-1 h-2 rounded" style={{ background: "var(--bg-card)" }}>
                     <span
                       className="block h-2 rounded"
@@ -266,7 +304,7 @@ export default async function NflPredictionsPage() {
             </p>
             <div className="grid gap-4 lg:grid-cols-2">
               {divisions.map((d) => (
-                <DivisionTable key={d} rows={rows} division={d} />
+                <DivisionTable key={d} rows={rows} division={d} href={teamHref} logo={teamLogo} />
               ))}
             </div>
           </section>

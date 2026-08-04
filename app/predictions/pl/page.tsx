@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getAllClubSlugs } from "@/lib/football";
 import { getPlSim, getPlPredictions, type PlPredictionEntry } from "@/lib/plSim";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
@@ -9,6 +10,23 @@ import { BASE_URL, SITE_NAME } from "@/lib/seo";
 // pl-predictions.json; both re-run without a build via lib/plSim's ISR read.
 
 export const revalidate = 21600;
+
+/** Sim slug -> /teams/football/<slug>, only when that club page exists.
+ *  pl-sim.json slugs are generated from club names by the model script, while
+ *  the routes come from the football workbook; a club that does not resolve
+ *  renders as plain text rather than a link to a 404 (a newly promoted side
+ *  is the likely case). */
+function clubLink(slugs: Set<string>, slug: string): string | null {
+  return slugs.has(slug) ? `/teams/football/${slug}` : null;
+}
+
+function ClubLabel({ name, href }: { name: string; href: string | null }) {
+  return href ? (
+    <Link href={href} className="font-semibold hover:text-[var(--accent)] transition-colors">{name}</Link>
+  ) : (
+    <span className="font-semibold">{name}</span>
+  );
+}
 
 const MONO = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const CARD = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
@@ -51,6 +69,7 @@ const PICK_LABEL: Record<string, (e: PlPredictionEntry) => string> = {
 
 export default async function PlPredictionsPage() {
   const [sim, preds] = await Promise.all([getPlSim(), getPlPredictions()]);
+  const clubSlugs = new Set(getAllClubSlugs());
   const rows = sim?.table ?? [];
   const meta = sim?.meta ?? null;
   const maxTitle = rows.length ? rows[0].p_title || 1 : 1;
@@ -112,7 +131,9 @@ export default async function PlPredictionsPage() {
               {rows.filter((r) => r.p_title >= 0.1).map((r, i) => (
                 <div key={r.slug} className="flex items-center gap-3">
                   <span className="w-6 text-right text-[13px]" style={{ ...MONO, color: "var(--text-dim)" }}>{i + 1}</span>
-                  <span className="w-44 sm:w-56 font-semibold text-[14.5px] truncate">{r.name}</span>
+                  <span className="w-44 sm:w-56 text-[14.5px] truncate">
+                    <ClubLabel name={r.name} href={clubLink(clubSlugs, r.slug)} />
+                  </span>
                   <span className="flex-1 h-2 rounded" style={{ background: "var(--bg-card)" }}>
                     <span
                       className="block h-2 rounded"
@@ -254,7 +275,9 @@ export default async function PlPredictionsPage() {
                 <tbody>
                   {rows.map((r) => (
                     <tr key={r.slug} className="border-t" style={{ borderColor: "var(--border)" }}>
-                      <td className="px-3 py-2 font-semibold whitespace-nowrap">{r.name}</td>
+                      <td className="px-3 py-2 whitespace-nowrap">
+                        <ClubLabel name={r.name} href={clubLink(clubSlugs, r.slug)} />
+                      </td>
                       <td className="px-3 py-2 text-right" style={MONO}>{r.exp_pts.toFixed(1)}</td>
                       <td className="px-3 py-2 text-right whitespace-nowrap" style={MONO}>
                         {r.pos.p50}<span style={{ color: "var(--text-dim)" }}> ({r.pos.p5}-{r.pos.p95})</span>

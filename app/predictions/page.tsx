@@ -21,12 +21,14 @@ export const metadata: Metadata = {
 
 const CARD = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" } as const;
 
-// The four league prediction hubs. Each gets a title-odds simulator (like
-// /teams/national#wc2026) and its own Beat-the-Model game reading a per-league
-// sim JSON (/data/<key>-sim.json). `href` set = the model is built and the hub
-// is live; the rest stay coming-soon cards.
-const LEAGUE_HUBS: { key: string; emoji: string; name: string; season: string; blurb: string; href?: string }[] = [
+// The league prediction hubs. Each gets a title-odds simulator (like
+// /teams/national#wc2026) reading a per-league sim JSON (/data/<key>-sim.json).
+// `href` set = the model is built and the hub is live; the rest stay
+// coming-soon cards. `game: false` = no Beat-the-Model card yet, so the footer
+// must not promise one (MLB ships the simulator first).
+const LEAGUE_HUBS: { key: string; emoji: string; name: string; season: string; blurb: string; href?: string; game?: boolean }[] = [
   { key: "nfl", emoji: "\u{1F3C8}", name: "NFL", season: "2026 season", blurb: "Super Bowl LXI, conference, division and playoff odds from the real 272-game schedule, with weekly game picks graded all season.", href: "/predictions/nfl" },
+  { key: "mlb", emoji: "⚾", name: "MLB", season: "2026 season", blurb: "World Series, pennant, division and playoff odds from the real remaining schedule and the full twelve-team bracket, refreshed daily, with every race still open called out.", href: "/predictions/mlb", game: false },
   { key: "cfb", emoji: "\u{1F3C8}", name: "College Football", season: "2026 season", blurb: "Playoff and national-title odds across the twelve-team field, conference by conference. Arrives with the preseason AP poll." },
   { key: "pl", emoji: "⚽", name: "Premier League", season: "2026-27 season", blurb: "Title, top-five and relegation odds from 20,000 simulated seasons blending site data with market odds, plus fixture picks graded all season.", href: "/predictions/pl" },
   { key: "ucl", emoji: "\u{1F3C6}", name: "Champions League", season: "2026-27 season", blurb: "Knockout-bracket odds from the league phase to the final. Arrives once the late-August draw sets the field." },
@@ -105,9 +107,9 @@ export default async function PredictionsPage() {
         </div>
         <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-5">
           Each hub runs tens of thousands of simulated seasons and publishes every team&apos;s odds
-          at each stage, with a Beat-the-Model card, exactly like the 2026 World Cup simulator below.
-          The Premier League and NFL are live; College Football arrives with the preseason poll and
-          the Champions League with the late-August draw.
+          at each stage, most with a Beat-the-Model card, exactly like the 2026 World Cup simulator
+          below. The NFL, MLB and the Premier League are live; College Football arrives with the
+          preseason poll and the Champions League with the late-August draw.
         </p>
         <div className="grid gap-4" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>
           {LEAGUE_HUBS.map((h) => {
@@ -130,7 +132,8 @@ export default async function PredictionsPage() {
                 </div>
                 <p className="text-[13px] text-[var(--text-muted)] leading-relaxed">{h.blurb}</p>
                 <div className="mt-auto pt-3.5 border-t text-xs" style={{ ...MONO, color: h.href ? "var(--accent)" : "var(--text-dim)", borderColor: "var(--border)" }}>
-                  Simulator + Beat the Model{h.href ? <span aria-hidden> &rarr;</span> : null}
+                  {h.game === false ? "Simulator" : "Simulator + Beat the Model"}
+                  {h.href ? <span aria-hidden> &rarr;</span> : null}
                 </div>
               </>
             );
