@@ -3,12 +3,21 @@
 // Era grouping is shown only when the data has non-null era fields (Russia,
 // China, Germany).
 
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { getLeaders, leaderYear, type Leader } from "@/lib/leaders";
 import Collapsible from "./Collapsible";
 import { withIcon } from "./sectionIcons";
 
-type Props = { countrySlug: string };
+type Props = {
+  countrySlug: string;
+  /** Companion cards (Political leadership / Elections) rendered inside this
+   *  section, below the collapsible. Passed in rather than rendered as a
+   *  sibling in page.tsx so a future reorder cannot strand them somewhere
+   *  unrelated - which is exactly what happened on 2026-08-04, when they ended
+   *  up between League Hubs and Subdivisions. */
+  aside?: ReactNode;
+};
 
 function formatYear(d: string | null): string {
   const y = leaderYear(d);
@@ -158,9 +167,11 @@ function LeaderTable({ leaders, showMetros }: { leaders: Leader[]; showMetros: b
   );
 }
 
-export default function LeadersSection({ countrySlug }: Props) {
+export default function LeadersSection({ countrySlug, aside }: Props) {
   const leadersAsc = getLeaders(countrySlug);
-  if (leadersAsc.length === 0) return null;
+  // No leadership history, but the companion cards must still render - never
+  // let a missing history swallow the Political leadership / Elections links.
+  if (leadersAsc.length === 0) return aside ? <>{aside}</> : null;
 
   // Most recent first
   const leaders = [...leadersAsc].reverse();
@@ -186,6 +197,7 @@ export default function LeadersSection({ countrySlug }: Props) {
       id="leaders"
       title={withIcon("leaders", "Leadership History")}
       defaultOpen={false}
+      aside={aside}
       right={
         <span className="text-xs text-[var(--text-dim)]">
           {leaders.length} leaders · click to expand

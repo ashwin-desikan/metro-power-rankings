@@ -72,12 +72,32 @@ Positive/negative deltas: #10b981 / #E2628B. Cards: rounded-xl border with
   cards) need it explicitly.
 - Headerless tables (tbody-only key/value boards) are fine, but if they
   lead with a rank cell, still pass stickyCol={2}.
+- **CAP THE MOBILE CARD FALLBACK TOO.** The globals.css `:has(> table)` rule
+  caps any wrapper directly holding a `<table>` at `max-height: 80vh` with its
+  own scroll box. A `sm:hidden` card list is NOT a table, so it inherits none
+  of that and renders every row at full height. Measured 2026-08-04: the US
+  country page ran to **80 screens on a 390px viewport, 68 of them the metros
+  card list alone (85% of the page)** — against 0.9 screens for the identical
+  596 rows on desktop, which the table rule had already contained. A card
+  fallback for a long list needs `max-h-[80vh] overflow-y-auto
+  overscroll-contain` (or a smaller cap where it suits, as the National Teams
+  champions list does with `max-h-[32rem]`). Check the page height at 390px,
+  not just its width — a page can pass the no-sideways-scroll rule and still be
+  unusable vertically.
 
 ## Mobile acceptance checklist (before calling any hub done)
 
 At 390px CSS width (device toolbar, or the iframe trick below):
 1. `document.scrollingElement.scrollWidth <= 390` on EVERY tab — no
    page-level sideways scroll, ever.
+1b. Measure `scrollHeight` too, and compare it against the same page on
+   desktop. A ratio far above ~2x means a long list lost its containment in
+   the mobile fallback (see "cap the mobile card fallback"). The country page
+   was 9.3x before this was caught.
+1c. Scroll the page. The static probes above measure a document that is never
+   scrolled, so they cannot see scroll-jacking — a `scrollIntoView` in a
+   scrollspy made country pages unscrollable on 2026-08-04 and passed every
+   gate. Jump to a few offsets, wait, and confirm the position holds.
 2. Swipe every wide table: the name column stays pinned, values scroll.
 3. The headline value of each ranked board is visible without swiping.
 4. Tab nav rows wrap acceptably (three rows max); hero/stat card grids

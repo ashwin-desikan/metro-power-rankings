@@ -14,6 +14,8 @@ export default function Collapsible({
   title,
   right,
   defaultOpen = true,
+  collapseOnMobile = false,
+  aside,
   className = "mb-12",
   titleClassName = "text-xl font-bold",
   children,
@@ -22,13 +24,24 @@ export default function Collapsible({
   title: ReactNode;
   right?: ReactNode;
   defaultOpen?: boolean;
+  /** Start closed on phones, open on >=sm. See MobileCollapse.tsx. */
+  collapseOnMobile?: boolean;
+  /** Rendered INSIDE this <section> but OUTSIDE the <details>, so it stays
+   *  visible when the section is collapsed and cannot be separated from it by
+   *  a reorder. Use for companion cards that belong to the section. */
+  aside?: ReactNode;
   className?: string;
   titleClassName?: string;
   children: ReactNode;
 }) {
   return (
     <section className={className} id={id}>
-      <details open={defaultOpen}>
+      {/* Always server-rendered OPEN when defaultOpen: the content stays in the
+          HTML for crawlers and for no-JS readers. MobileCollapse closes the
+          data-collapse-mobile ones on phones after mount. Doing it the other
+          way round - shipping them closed - would hide this content from the
+          initial render on every viewport. */}
+      <details open={defaultOpen} data-collapse-mobile={collapseOnMobile ? "1" : undefined}>
         <summary className="cursor-pointer list-none flex items-baseline gap-3 mb-3 group">
           <span
             className={`${titleClassName} text-[var(--text)] group-hover:text-[var(--accent)] transition-colors`}
@@ -49,6 +62,7 @@ export default function Collapsible({
         </summary>
         {children}
       </details>
+      {aside}
     </section>
   );
 }

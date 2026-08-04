@@ -32,10 +32,20 @@ export default async function LiveChartsPage() {
         <p className="text-[11px] uppercase tracking-widest mb-2" style={{ ...MONO, color: "var(--accent)" }}>
            Updated daily
         </p>
-        <h1 className="text-2xl font-bold tracking-tight">Live Charts</h1>
-        <p className="mt-2 max-w-2xl text-sm" style={{ color: "var(--text-muted)" }}>
+        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">Live Charts</h1>
+        <p className="mt-2 max-w-2xl text-[15px]" style={{ color: "var(--text-muted)" }}>
           The most-played songs on Apple Music right now, in the US and the UK.
         </p>
+        {/* MONO uppercase provenance stamp, per the TabHeader idiom in
+            app/business/ui.tsx and the DESIGN-STANDARDS rule that every data
+            page states its source and as-of date. */}
+        {charts.length > 0 ? (
+          <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)] mt-3" style={MONO}>
+            {charts.length} {charts.length === 1 ? "chart" : "charts"} ·{" "}
+            {charts.reduce((n, c) => n + c.tracks.length, 0)} tracks
+            {charts[0]?.updated ? ` · as of ${fmtUpdated(charts[0].updated)}` : ""} · source: Apple Music
+          </p>
+        ) : null}
       </header>
 
       {/* What this is / is not — labeling + links to the official charts. */}
@@ -78,7 +88,8 @@ export default async function LiveChartsPage() {
           {charts.map((chart) => (
             <section
               key={chart.code}
-              className="rounded-lg border overflow-hidden"
+              id={`chart-${chart.code}`}
+              className="rounded-lg border overflow-hidden min-w-0"
               style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}
             >
               <div className="flex items-center justify-between gap-3 px-4 py-3 border-b" style={{ borderColor: "var(--border)" }}>
@@ -111,7 +122,15 @@ export default async function LiveChartsPage() {
                 </a>
               </div>
 
-              <ol>
+              {/* HEIGHT-CAPPED per DESIGN-STANDARDS ("cap the mobile card
+                  fallback too"). Each chart is 100 tracks and the grid stacks
+                  to one column on a phone, so uncapped you had to scroll past
+                  all 100 US tracks to reach the UK chart at all - 15.5 screens
+                  against 7.8 on desktop. Capping gives each chart its own
+                  scroll area with its header pinned above it, so both charts
+                  are reachable without a scroll marathon. overscroll-contain
+                  stops a flick inside a chart running on into the page. */}
+              <ol className="max-h-[70vh] overflow-y-auto overscroll-contain">
                 {chart.tracks.map((t) => (
                   <li key={t.rank}>
                     <a

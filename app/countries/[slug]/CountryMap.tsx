@@ -35,6 +35,7 @@ export default function CountryMap({
   return (
     <Collapsible
       id="geography"
+      collapseOnMobile
       title={withIcon("geography", "Geography")}
       right={
         <span

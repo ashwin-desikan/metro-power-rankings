@@ -168,8 +168,19 @@ export default function MetrosExplorer({
         </div>
       ) : (
         <div className="border rounded-lg overflow-hidden min-w-0" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
-          {/* Mobile: stacked cards */}
-          <div className="sm:hidden divide-y divide-[var(--border)]">
+          {/* Mobile: stacked cards, HEIGHT-CAPPED.
+              globals.css caps any wrapper directly holding a <table> at 80vh
+              with its own scroll box, which is why the desktop table renders
+              596 rows in under one screen. The mobile card fallback is not a
+              table, so it inherited none of that and rendered all 596 at full
+              height: measured 2026-08-04, the US metros section was 68 screens
+              of a 80-screen page, 85% of the whole thing, against 0.9 screens
+              for the identical data on desktop. Capping here matches both the
+              desktop rule and the champions card list in page.tsx, which
+              already caps itself at max-h-[32rem].
+              overscroll-contain stops a flick inside the list from running on
+              into the page once it hits the end. */}
+          <div className="sm:hidden divide-y divide-[var(--border)] max-h-[80vh] overflow-y-auto overscroll-contain">
             {shown.map((m) => {
               const tier = computeTier(m.score);
               const extra = statesOf(m);

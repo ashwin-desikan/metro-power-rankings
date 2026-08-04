@@ -23,6 +23,7 @@ import CountryNav, { type CountryNavItem } from "./CountryNav";
 import MetrosExplorer from "./MetrosExplorer";
 import SubdivisionsExplorer from "./SubdivisionsExplorer";
 import { withIcon } from "./sectionIcons";
+import MobileCollapse from "./MobileCollapse";
 import { getCountryTitles } from "@/lib/championsHistory";
 import { competitionHref } from "@/lib/competitionLinks";
 import { sportIcon } from "@/lib/sportLabels";
@@ -473,6 +474,12 @@ export default async function CountryDetailPage({ params }: Props) {
             // id but had no chip at all, so the section was unreachable from
             // here. Both fixed 2026-08-04.
             const navItems: CountryNavItem[] = [
+              // REGIONS FIRST, matching DOM order exactly. Keep these two lists
+              // in step: the chips are a map of the page, and they stopped
+              // being one the last time they drifted.
+              ...(metros.length > 0 ? [{ label: "Geography", href: "#geography", group: "Regions" }, { label: "Metros", href: "#metros", group: "Regions" }] : []),
+              ...(stateGroups.length > 0 ? [{ label: "Subdivisions", href: "#subdivisions", group: "Regions" }] : []),
+              ...(children.length > 0 ? [{ label: "Constituents", href: "#constituents", group: "Regions" }] : []),
               ...(facts ? [{ label: "At a glance", href: "#at-a-glance", group: "Overview" }] : []),
               ...(indicators ? [{ label: "Economy", href: "#economy", group: "Overview" }] : []),
               ...(countryHasOrgs(slug) ? [{ label: "Alliances & Orgs", href: "#orgs", group: "Governance" }] : []),
@@ -482,13 +489,99 @@ export default async function CountryDetailPage({ params }: Props) {
               ...(billionaires.length ? [{ label: "Billionaires", href: "#billionaires", group: "Society" }] : []),
               ...(countryHasNationalTeams(country.name) ? [{ label: "National Teams", href: "#national-teams", group: "Society" }] : []),
               ...(getLeagueHubsForCountry(slug).length > 0 ? [{ label: "League Hubs", href: "#league-hubs", group: "Society" }] : []),
-              ...(children.length > 0 ? [{ label: "Constituents", href: "#constituents", group: "Regions" }] : []),
-              ...(stateGroups.length > 0 ? [{ label: "Subdivisions", href: "#subdivisions", group: "Regions" }] : []),
-              ...(metros.length > 0 ? [{ label: "Geography", href: "#geography", group: "Regions" }, { label: "Metros", href: "#metros", group: "Regions" }] : []),
             ];
             return navItems.length > 1 ? <CountryNav items={navItems} /> : null;
           })()}
 
+          {/* Renders nothing; closes the collapseOnMobile sections on phones. */}
+          <MobileCollapse />
+
+          {/* ================= REGIONS ==================================
+              Deliberately first (2026-08-04). This is what the site is
+              uniquely about, and it was previously LAST - metros rendered
+              13th of 13 on a site called Global Metro Power Rankings.
+              It only became affordable to lead with once the metros card
+              list was height-capped: before that, Regions-first meant 68
+              screens of cards before a mobile reader reached anything else.
+              Contained, the whole cluster is about 3 screens.
+              Map first because it is a one-screen visual that answers "what
+              does this country look like" faster than any table; metros next
+              as the payoff; the drier administrative lists at the back.
+              Order here MUST match the nav order in CountryNav/navItems. */}
+          {metros.length > 0 ? (
+            <CountryMap slug={country.slug} countryName={country.name} />
+          ) : null}
+
+          <Collapsible
+            id="metros"
+            collapseOnMobile
+            title={withIcon("metros", metros.length > 0 ? `${metros.length} tracked ${metros.length === 1 ? "metro" : "metros"}` : "No metros tracked yet")}
+          >
+            {metros.length > 0 ? (
+              <MetrosExplorer
+                metros={metros.map((m) => ({
+                  slug: m.slug,
+                  name: m.name,
+                  rank: m.rank,
+                  pop: m.pop,
+                  score: m.score,
+                  primaryState: m.primaryState ?? null,
+                  stateSlug: m.stateSlug ?? null,
+                  state2: m.state2 ?? null,
+                  state2Slug: m.state2Slug ?? null,
+                  state3: m.state3 ?? null,
+                  state3Slug: m.state3Slug ?? null,
+                  additionalStates: m.additionalStates ?? null,
+                }))}
+                capital={country.capital ?? null}
+                biggestMetro={country.biggestMetro ?? null}
+              />
+            ) : (
+              <div className="border rounded-lg p-8 text-center" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
+                <p className="text-[var(--text-muted)] mb-2">No metros are currently tracked for {country.name} in the dataset.</p>
+                <p className="text-xs text-[var(--text-dim)]">This page will populate automatically when metros are added.</p>
+              </div>
+            )}
+          </Collapsible>
+
+          {stateGroups.length > 0 ? (
+            <Collapsible id="subdivisions" collapseOnMobile title={withIcon("subdivisions", stateSectionTitle)}>
+              <SubdivisionsExplorer
+                intro={`${states.length} ${states.length === 1 ? "entry" : "entries"} listed under ${country.name}${
+                  stateGroups.length > 1 ? ` across ${stateGroups.length} types` : ""
+                }. Click any to see its metros and footprint.`}
+                groups={stateGroups.map((g) => ({
+                  type: g.type,
+                  label: g.label,
+                  rows: g.rows.map((s) => ({
+                    slug: s.slug,
+                    name: s.name,
+                    iso: s.iso ?? null,
+                    type: s.type,
+                    metroCount: s.metroCount,
+                  })),
+                }))}
+              />
+            </Collapsible>
+          ) : null}
+
+          {children.length > 0 ? (
+            <Collapsible id="constituents" title={withIcon("constituents", "Constituents and territories")}>
+              <p className="text-sm text-[var(--text-muted)] mb-4">{children.length} entries listed under {country.name}. Click any to see its own metros.</p>
+              <div className="flex flex-wrap gap-2">
+                {children.map((c) => (
+                  <Link key={c.slug} href={`/countries/${c.slug}`}
+                        className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full border transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                        style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)", fontFamily: "'JetBrains Mono', monospace" }}>
+                    {c.name}
+                    {c.disputed ? <span className="text-[10px] italic text-[var(--text-dim)]" title="Disputed">disputed</span> : null}
+                  </Link>
+                ))}
+              </div>
+            </Collapsible>
+          ) : null}
+
+          {/* ================= OVERVIEW ================================= */}
           <CountryFactsSection facts={facts} />
 
           {indicators ? (
@@ -537,14 +630,53 @@ export default async function CountryDetailPage({ params }: Props) {
 
           <OrgsSection countrySlug={slug} />
 
-          <LeadersSection countrySlug={slug} />
+          {/* The Political leadership / Elections cards are passed INTO the
+              Leadership section rather than rendered as a sibling here, so they
+              live inside <section id="leaders"> and cannot be stranded by a
+              future reorder. They sit outside the <details>, so they stay
+              visible even though Leadership History starts collapsed. */}
+          <LeadersSection
+            countrySlug={slug}
+            aside={
+              ELECTION_CARD[slug] ? (
+                <div className="grid gap-3 sm:grid-cols-2 mt-4">
+                  {slug === "united-states" || slug === "united-kingdom" ? (
+                    <Link
+                      href={slug === "united-states" ? "/us-political-leadership" : "/uk-political-leadership"}
+                      className="block rounded-xl border p-4 transition-colors hover:border-[var(--accent)] min-w-0"
+                      style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
+                    >
+                      <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">Political leadership</p>
+                      <p className="font-bold text-[var(--text)]">
+                        {slug === "united-states"
+                          ? "President, Supreme Court, Cabinet, governors & Congress →"
+                          : "The Crown, Prime Minister, Cabinet & Parliament →"}
+                      </p>
+                      <p className="text-xs text-[var(--text-muted)] mt-1">
+                        Who holds power today, with a time machine back through history.
+                      </p>
+                    </Link>
+                  ) : null}
+                  <Link
+                    href={ELECTION_CARD[slug].href}
+                    className="block rounded-xl border p-4 transition-colors hover:border-[var(--accent)] min-w-0"
+                    style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
+                  >
+                    <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">Elections</p>
+                    <p className="font-bold text-[var(--text)]">{ELECTION_CARD[slug].head}</p>
+                    <p className="text-xs text-[var(--text-muted)] mt-1">{ELECTION_CARD[slug].sub}</p>
+                  </Link>
+                </div>
+              ) : null
+            }
+          />
 
           <PowerSection series={powerSeries} name={country.name} />
           <ConflictsSection wars={conflictWars} />
           <BillionairesSection list={billionaires} />
 
           {(countryHasNationalTeams(country.name) || champTitles.length > 0) ? (
-            <Collapsible id="national-teams" title={withIcon("national-teams", "National Teams")}>
+            <Collapsible id="national-teams" collapseOnMobile title={withIcon("national-teams", "National Teams")}>
               <NationalTeamsSection countryName={country.name} bare />
               {champTitles.length > 0 ? (
                 <div className="mt-8">
@@ -616,112 +748,6 @@ export default async function CountryDetailPage({ params }: Props) {
           ) : null}
 
           <LeagueHubsSection countrySlug={slug} countryName={country.name} />
-
-          {children.length > 0 ? (
-            <Collapsible id="constituents" title={withIcon("constituents", "Constituents and territories")}>
-              <p className="text-sm text-[var(--text-muted)] mb-4">{children.length} entries listed under {country.name}. Click any to see its own metros.</p>
-              <div className="flex flex-wrap gap-2">
-                {children.map((c) => (
-                  <Link key={c.slug} href={`/countries/${c.slug}`}
-                        className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full border transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
-                        style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)", color: "var(--text)", fontFamily: "'JetBrains Mono', monospace" }}>
-                    {c.name}
-                    {c.disputed ? <span className="text-[10px] italic text-[var(--text-dim)]" title="Disputed">disputed</span> : null}
-                  </Link>
-                ))}
-              </div>
-            </Collapsible>
-          ) : null}
-
-          {ELECTION_CARD[slug] ? (
-            <div className="grid gap-3 sm:grid-cols-2 mb-6">
-              {slug === "united-states" || slug === "united-kingdom" ? (
-              <Link
-                href={slug === "united-states" ? "/us-political-leadership" : "/uk-political-leadership"}
-                className="block rounded-xl border p-4 transition-colors hover:border-[var(--accent)]"
-                style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
-              >
-                <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">Political leadership</p>
-                <p className="font-bold text-[var(--text)]">
-                  {slug === "united-states"
-                    ? "President, Supreme Court, Cabinet, governors & Congress →"
-                    : "The Crown, Prime Minister, Cabinet & Parliament →"}
-                </p>
-                <p className="text-xs text-[var(--text-muted)] mt-1">
-                  Who holds power today, with a time machine back through history.
-                </p>
-              </Link>
-              ) : null}
-              <Link
-                href={ELECTION_CARD[slug].href}
-                className="block rounded-xl border p-4 transition-colors hover:border-[var(--accent)]"
-                style={{ borderColor: "var(--border)", backgroundColor: "var(--bg-card)" }}
-              >
-                <p className="text-[10px] uppercase tracking-widest text-[var(--text-dim)]">Elections</p>
-                <p className="font-bold text-[var(--text)]">{ELECTION_CARD[slug].head}</p>
-                <p className="text-xs text-[var(--text-muted)] mt-1">{ELECTION_CARD[slug].sub}</p>
-              </Link>
-            </div>
-          ) : null}
-
-          {stateGroups.length > 0 ? (
-            <Collapsible id="subdivisions" title={withIcon("subdivisions", stateSectionTitle)}>
-              <SubdivisionsExplorer
-                intro={`${states.length} ${states.length === 1 ? "entry" : "entries"} listed under ${country.name}${
-                  stateGroups.length > 1 ? ` across ${stateGroups.length} types` : ""
-                }. Click any to see its metros and footprint.`}
-                groups={stateGroups.map((g) => ({
-                  type: g.type,
-                  label: g.label,
-                  rows: g.rows.map((s) => ({
-                    slug: s.slug,
-                    name: s.name,
-                    iso: s.iso ?? null,
-                    type: s.type,
-                    metroCount: s.metroCount,
-                  })),
-                }))}
-              />
-            </Collapsible>
-          ) : null}
-
-          {/* CountryMap now owns its own Collapsible + id="geography" so it
-              matches every other section (and its nav chip). No wrapper div. */}
-          {metros.length > 0 ? (
-            <CountryMap slug={country.slug} countryName={country.name} />
-          ) : null}
-
-          <Collapsible
-            id="metros"
-            title={withIcon("metros", metros.length > 0 ? `${metros.length} tracked ${metros.length === 1 ? "metro" : "metros"}` : "No metros tracked yet")}
-          >
-            {metros.length > 0 ? (
-              <MetrosExplorer
-                metros={metros.map((m) => ({
-                  slug: m.slug,
-                  name: m.name,
-                  rank: m.rank,
-                  pop: m.pop,
-                  score: m.score,
-                  primaryState: m.primaryState ?? null,
-                  stateSlug: m.stateSlug ?? null,
-                  state2: m.state2 ?? null,
-                  state2Slug: m.state2Slug ?? null,
-                  state3: m.state3 ?? null,
-                  state3Slug: m.state3Slug ?? null,
-                  additionalStates: m.additionalStates ?? null,
-                }))}
-                capital={country.capital ?? null}
-                biggestMetro={country.biggestMetro ?? null}
-              />
-            ) : (
-              <div className="border rounded-lg p-8 text-center" style={{ backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }}>
-                <p className="text-[var(--text-muted)] mb-2">No metros are currently tracked for {country.name} in the dataset.</p>
-                <p className="text-xs text-[var(--text-dim)]">This page will populate automatically when metros are added.</p>
-              </div>
-            )}
-          </Collapsible>
-
 
           <footer className="mt-12 pt-8 border-t border-[var(--border)] text-sm text-[var(--text-muted)]">
             <p>

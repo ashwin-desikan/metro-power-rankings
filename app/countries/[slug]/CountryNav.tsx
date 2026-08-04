@@ -21,7 +21,10 @@ import { sectionIcon } from "./sectionIcons";
 export type CountryNavItem = { label: string; href: string; group: string };
 
 // Render order. Within a group, chip order follows DOM order; see page.tsx.
-export const NAV_GROUPS = ["Overview", "Governance", "Regions", "Society"] as const;
+// REGIONS leads: it is what the site is uniquely about, and the page now opens
+// with it. These four must stay in the same order as the sections themselves,
+// or the chips stop being a map of the page.
+export const NAV_GROUPS = ["Regions", "Overview", "Governance", "Society"] as const;
 
 export default function CountryNav({ items }: { items: CountryNavItem[] }) {
   const [active, setActive] = useState<string | null>(null);
