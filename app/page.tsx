@@ -535,6 +535,7 @@ export default async function Home() {
                   { href: '/elections/forecast', label: 'Elections', emoji: '🗳️' },
                   { href: '/predictions/pl', label: 'Premier League', emoji: '⚽' },
                   { href: '/predictions/nfl', label: 'NFL', emoji: '🏈' },
+                  { href: '/predictions/mlb', label: 'MLB', emoji: '⚾' },
                 ].map((p) => (
                   <Link key={p.href} href={p.href} className="inline-flex items-center gap-1.5 rounded-full transition-colors" style={{ ...MONO, fontSize: 12, padding: '4px 11px', color: 'var(--text)', background: 'var(--bg-card)', border: '1px solid var(--border)' }}>
                     <span aria-hidden>{p.emoji}</span>
