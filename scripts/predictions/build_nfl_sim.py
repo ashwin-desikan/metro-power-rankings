@@ -360,7 +360,14 @@ def rank_division(teams, wins, h2h, rng):
             j += 1
         group = ts[i:j]
         if len(group) > 1:
-            group.sort(key=lambda t: (-sum(h2h[t].get(u, 0) for u in group if u != t), rng.random()))
+            # `members` MUST be a separate list: CPython's list.sort() empties
+            # the list while computing keys, so a key closing over `group`
+            # itself sees an empty list, every h2h sum is 0, and the tie-break
+            # silently degrades to the random fallback. This shipped broken;
+            # the check below passed only by luck of the seed. Found while
+            # porting this helper to build_mlb_sim.py (2026-08-04).
+            members = list(group)
+            group.sort(key=lambda t: (-sum(h2h[t].get(u, 0) for u in members if u != t), rng.random()))
         out.extend(group)
         i = j
     return out

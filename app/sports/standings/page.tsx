@@ -8,6 +8,7 @@ import { getCurrentNflStandings } from "@/lib/standings";
 import { getCurrentNbaStandings } from "@/lib/nba-standings";
 import { getCurrentNhlStandings } from "@/lib/nhl-standings";
 import { getCurrentMlbStandings } from "@/lib/mlb-standings";
+import { getMlbSim, playoffOddsByCanonical, fmtOdds } from "@/lib/mlbSim";
 import { getCurrentMlsStandings } from "@/lib/mls-standings";
 import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
 import { getLiveCflStandings } from "@/lib/cflStandings";
@@ -288,9 +289,15 @@ async function nhlBlock(): Promise<Block | null> {
 }
 
 async function mlbBlock(): Promise<Block | null> {
-  const s = await getCurrentMlbStandings();
+  const [s, sim] = await Promise.all([getCurrentMlbStandings(), getMlbSim()]);
   const teams = Object.values(s.by_canonical);
   if (teams.length === 0) return null;
+  // Playoff odds from our own Monte Carlo (scripts/predictions/build_mlb_sim.py).
+  // Column appears only when the sim covers all 30 clubs and the season is
+  // under way, so an offseason or a stale/absent file leaves the table exactly
+  // as it was rather than printing a row of dashes.
+  const odds = playoffOddsByCanonical(sim);
+  const showOdds = odds.size >= 30 && (sim?.meta.games_played ?? 0) > 0;
   const fr = new Map(mlbFranchises().map((f) => [f.canonical, f]));
   const live = inSeasonFromGames(teams.map((t) => t.games_played), 162);
   const nameOf = (t: (typeof teams)[number]) => fr.get(t.canonical)?.name ?? t.display_name;
@@ -316,11 +323,16 @@ async function mlbBlock(): Promise<Block | null> {
     const f = fr.get(t.canonical); const m = f ? mlbMono(f.slug) : null;
     return { rank: live ? i + 1 : null, name: nameOf(t), href: f ? `/teams/mlb/${f.slug}` : null,
       logoUrl: f ? mlbLogo(f.slug) : null, monogram: m ? { text: m.mono, bg: m.bg, fg: m.fg } : null,
-      cells: live ? [t.wins, t.losses, pct3(t.win_pct), gb.get(t.canonical) ?? DASH] : [DASH, DASH, DASH, DASH] };
+      cells: live
+        ? [t.wins, t.losses, pct3(t.win_pct), gb.get(t.canonical) ?? DASH,
+           ...(showOdds ? [fmtOdds(odds.get(t.canonical))] : [])]
+        : [DASH, DASH, DASH, DASH, ...(showOdds ? [DASH] : [])] };
   };
   return buildBlock({
-    league: "MLB", href: "/teams/mlb", note: live ? s.source_label : "Offseason", open: live,
-    items: teams, columns: ["W", "L", "PCT", "GB"],
+    league: "MLB", href: "/teams/mlb",
+    note: live ? (showOdds ? `${s.source_label} · playoff odds simulated` : s.source_label) : "Offseason",
+    open: live,
+    items: teams, columns: ["W", "L", "PCT", "GB", ...(showOdds ? ["PO%"] : [])],
     sort: live ? (a, b) => b.win_pct - a.win_pct || b.wins - a.wins : (a, b) => nameOf(a).localeCompare(nameOf(b)),
     groups: [{ title: "American League", pick: (t) => leagueOf(t) === "AL" }, { title: "National League", pick: (t) => leagueOf(t) === "NL" }],
     row,

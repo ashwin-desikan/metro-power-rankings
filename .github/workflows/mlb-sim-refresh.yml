@@ -1,0 +1,97 @@
+name: MLB playoff odds refresh
+
+# Deliberately SEPARATE from predictions-refresh.yml (PL + NFL) rather than a
+# third step inside it. That workflow runs Tue/Fri because its ledgers freeze
+# a pick the first time a fixture enters the 8-day window; moving it to daily
+# would quietly freeze NFL picks earlier, on less information, mid-season.
+# Baseball has no ledger and plays every day, so a September pennant race
+# wants daily odds. Two cadences, two workflows.
+#
+# Months restricted to March-November: the regular season runs late March to
+# early October and the postseason to early November. Out of season the script
+# exits clean without writing (see main()), but there is no reason to burn a
+# run every winter morning.
+#
+# Data-only commit riding [vercel skip]; /teams/mlb and /sports/standings read
+# mlb-sim.json via ISR from GitHub raw, so no Vercel build is needed.
+
+on:
+  schedule:
+    - cron: "40 9 * 3-11 *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mlb-sim-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
+        with:
+          python-version: "3.12"
+
+      - name: Self-test (offline decision logic)
+        run: python3 scripts/predictions/build_mlb_sim.py --self-test
+
+      - name: Rebuild the MLB model
+        # build() hard-fails if the derived W-L disagrees with ESPN's own
+        # standings, so a silent schedule-parse break stops the run rather
+        # than publishing a plausible-looking wrong table.
+        run: python3 scripts/predictions/build_mlb_sim.py
+
+      - name: Commit if anything changed
+        run: |
+          git add public/data/mlb-sim.json
+          if git diff --cached --quiet; then
+            echo "No changes; nothing to commit."
+            exit 0
+          fi
+          git config user.name "predictions-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "Auto: refresh MLB playoff odds [vercel skip]"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "Pushed on attempt $attempt."; exit 0
+            fi
+            sleep $((attempt * 5))
+          done
+          echo "Failed to push after retries." >&2; exit 1
+
+      - name: Revalidate site caches (on-demand ISR)
+        env:
+          REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
+        run: |
+          # Fail-open by design, exactly as in predictions-refresh.yml: the 6h
+          # ISR window on lib/mlbSim.ts is the backstop, so a missing secret or
+          # a failed ping must never fail the data run.
+          if [ -z "$REVALIDATE_SECRET" ]; then
+            echo "REVALIDATE_SECRET not set; skipping (6h ISR backstop applies)."
+            exit 0
+          fi
+          # raw.githubusercontent serves from a ~5-min CDN cache; flushing
+          # before it expires would re-render from the previous model and
+          # re-cache THAT for 6h. Wait out the raw TTL, then flush.
+          echo "Waiting out the GitHub raw CDN TTL before flushing..."
+          sleep 300
+          for attempt in 1 2 3; do
+            code="$(curl -s -o /tmp/reval.out -w '%{http_code}' -X POST \
+              -H "x-revalidate-secret: $REVALIDATE_SECRET" \
+              "https://rankings.citizenofnowhere.org/api/revalidate?tag=predictions-daily")" || code=000
+            if [ "$code" = "200" ]; then
+              cat /tmp/reval.out; echo
+              echo "Revalidated on attempt $attempt."
+              exit 0
+            fi
+            echo "revalidate ping attempt $attempt returned HTTP $code"
+            sleep $((attempt * 5))
+          done
+          echo "WARN: on-demand revalidation failed; pages refresh via the 6h ISR window instead." >&2

@@ -12,6 +12,7 @@
 import Link from "next/link";
 import { getCurrentMlbStandings, type TeamStanding } from "@/lib/mlb-standings";
 import { getAllFranchises, logoUrlFor, monogramFor } from "@/lib/mlb";
+import { getMlbSim, playoffOddsByCanonical, fmtOdds } from "@/lib/mlbSim";
 
 type Region = "East" | "Central" | "West" | "Other";
 
@@ -81,11 +82,18 @@ function gamesBack(team: TeamStanding, leader: TeamStanding): number | null {
 }
 
 export default async function MlbStandings() {
-  const standings = await getCurrentMlbStandings();
+  const [standings, sim] = await Promise.all([getCurrentMlbStandings(), getMlbSim()]);
   if (Object.keys(standings.by_canonical).length === 0) {
     // ESPN unreachable or feed empty — hide rather than ship a broken block.
     return null;
   }
+  // Playoff odds from our own Monte Carlo (scripts/predictions/build_mlb_sim.py).
+  // The column only appears when the sim has data AND the season is actually
+  // under way; preseason odds on a 0-0 table are noise, and an empty map keeps
+  // the table identical to what shipped before.
+  const odds = playoffOddsByCanonical(sim);
+  const showOdds = odds.size >= 30 && (sim?.meta.games_played ?? 0) > 0;
+  const oddsAsOf = showOdds ? sim!.meta.generated_at : null;
 
   const franchises = getAllFranchises();
   const bySlug = new Map(franchises.map((f) => [f.slug, f]));
@@ -143,6 +151,15 @@ export default async function MlbStandings() {
           <h2 className="text-lg font-bold tracking-tight">{standings.season_year} MLB Standings</h2>
           <p className="text-xs text-[var(--text-muted)]">
             Live from ESPN, refreshed hourly{fetchedDate ? `. As of ${fetchedDate}.` : "."}
+            {oddsAsOf && (
+              <>
+                {" "}Playoff odds are our own simulation of the remaining schedule
+                ({sim!.meta.sims.toLocaleString()} runs, {oddsAsOf}) —{" "}
+                <Link href="/predictions" className="text-[var(--accent)] hover:underline">
+                  how it works
+                </Link>.
+              </>
+            )}
           </p>
         </div>
         <a
@@ -183,7 +200,8 @@ export default async function MlbStandings() {
                   const gb = gamesBack(t, leader);
                   const pct = t.win_pct ? t.win_pct.toFixed(3).replace(/^0/, "") : "—";
                   const gbLabel = gb === null ? "—" : gb % 1 === 0 ? gb.toFixed(0) : gb.toFixed(1);
-                  return { t, slug, logo, mono, displayShort, pct, gbLabel };
+                  const po = showOdds ? (odds.get(t.canonical) ?? null) : null;
+                  return { t, slug, logo, mono, displayShort, pct, gbLabel, po };
                 });
 
                 const TeamIdentity = ({ slug, logo, mono, displayShort }: (typeof rowsData)[number]) => (
@@ -227,14 +245,32 @@ export default async function MlbStandings() {
                               <span className="block text-[8px] uppercase tracking-wide text-[var(--text-dim)]">L</span>
                               <span className="block font-semibold">{row.t.losses}</span>
                             </span>
-                            <span className="text-center w-8">
-                              <span className="block text-[8px] uppercase tracking-wide text-[var(--text-dim)]">Pct</span>
-                              <span className="block text-[var(--text-muted)]">{row.pct}</span>
-                            </span>
+                            {/* Win pct is dropped on phones, not playoff odds:
+                                Pct is exactly W/(W+L) and both are already on
+                                this card, so it is the one metric here that
+                                carries no information the reader cannot see.
+                                Keeping five numeric columns at 390px would
+                                squeeze the team name past legibility. */}
+                            {!showOdds && (
+                              <span className="text-center w-8">
+                                <span className="block text-[8px] uppercase tracking-wide text-[var(--text-dim)]">Pct</span>
+                                <span className="block text-[var(--text-muted)]">{row.pct}</span>
+                              </span>
+                            )}
                             <span className="text-center w-6">
                               <span className="block text-[8px] uppercase tracking-wide text-[var(--text-dim)]">GB</span>
                               <span className="block text-[var(--text-muted)]">{row.gbLabel}</span>
                             </span>
+                            {showOdds && (
+                              <span className="text-center w-9">
+                                <span className="block text-[8px] uppercase tracking-wide text-[var(--text-dim)]">Playoff</span>
+                                <span
+                                  className={`block ${(row.po ?? 0) >= 50 ? "font-semibold text-[var(--text)]" : "text-[var(--text-muted)]"}`}
+                                >
+                                  {fmtOdds(row.po)}
+                                </span>
+                              </span>
+                            )}
                           </div>
                         </div>
                       ))}
@@ -249,6 +285,14 @@ export default async function MlbStandings() {
                             <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider">L</th>
                             <th className="text-right py-1 px-1 font-medium text-[9px] uppercase tracking-wider">Pct</th>
                             <th className="text-right py-1 pl-1 font-medium text-[9px] uppercase tracking-wider">GB</th>
+                            {showOdds && (
+                              <th
+                                className="text-right py-1 pl-1 font-medium text-[9px] uppercase tracking-wider whitespace-nowrap"
+                                title="Our simulation's chance this team reaches the postseason"
+                              >
+                                Playoff
+                              </th>
+                            )}
                           </tr>
                         </thead>
                         <tbody>
@@ -261,6 +305,13 @@ export default async function MlbStandings() {
                               <td className="py-1 px-1 text-right">{row.t.losses}</td>
                               <td className="py-1 px-1 text-right text-[var(--text-muted)]">{row.pct}</td>
                               <td className="py-1 pl-1 text-right text-[var(--text-muted)]">{row.gbLabel}</td>
+                              {showOdds && (
+                                <td
+                                  className={`py-1 pl-1 text-right ${(row.po ?? 0) >= 50 ? "font-semibold text-[var(--text)]" : "text-[var(--text-muted)]"}`}
+                                >
+                                  {fmtOdds(row.po)}
+                                </td>
+                              )}
                             </tr>
                           ))}
                         </tbody>

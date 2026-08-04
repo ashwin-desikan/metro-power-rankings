@@ -57,6 +57,7 @@ const SERVER_ONLY_MODULES = [
   "@/lib/rugbyFixtures",
   "@/lib/cricketFixtures",
   "@/lib/mlb-standings",
+  "@/lib/mlbSim",
   "@/lib/nba-standings",
   "@/lib/cfb-live",
   "@/lib/nhl",
