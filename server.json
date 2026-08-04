@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "org.citizenofnowhere.rankings/global-metro-power-rankings",
   "title": "Global Metro Power Rankings",
-  "description": "Query the Global Metro Power Rankings: 4,300+ metros scored across sixteen dimensions (market cap, teams, universities, culture, infrastructure, and more). Tools to look up a metro's full profile, list/filter the ranked list, search by name, compare metros head-to-head, and read the scoring methodology.",
+  "description": "Query 4,300+ ranked metros across sixteen dimensions: profiles, search, and head-to-head comparisons",
   "version": "1.0.0",
   "repository": {
     "url": "https://github.com/ashwin-desikan/metro-power-rankings",
