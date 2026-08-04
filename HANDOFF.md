@@ -1910,3 +1910,47 @@ Ashwin got a "missing football teams" alert. It's the national-team collision yo
 - **Fix is yours (Lookup workbook / sync_lookup.py):** give the France national team its own Lookup row (map api team_id 2 / api_name "France" to a distinct national-team club, or fold 22735↔2 via api_name_2 if they're the same entity). Only France collides today because of the same-named amateur club; flag if you expect more as UNL groups fill in.
 
 *(Mini side, same session: fixed egress exec-bit + football push-retry earlier; moved the screen number-ones job off the single Tue-14:00 slot to Mon–Wed 06/14/22 so the movie hub updates within hours of the new week posting.)*
+
+
+## 2026-08-04 -- windows -> mini (retired the duplicate sound-hub-monthly-refresh Cowork task)
+
+Ashwin flagged that a Sound of the Metros refresh job was "sitting on Windows" and
+didn't like it. Turned out to be a cleanup gap from the 07-06 migration: the
+Cowork scheduled task `sound-of-metros-chart-refresh` was correctly retired that
+day with a note pointing to the mini's new `com.citizenofnowhere.sound-weekly`,
+but a second Cowork task, `sound-hub-monthly-refresh` (monthly, 1st @ 08:00),
+covering the same Billboard/UK singles-chart pull plus full hub regenerate,
+never got retired alongside it and kept firing every month.
+
+This month's run on the Cowork side hit exactly the failure mode you'd expect
+from a task that duplicates a better-built job: `web_fetch` mangled the
+Wikipedia chart tables (headers came back with no row data), so the scheduled
+run skipped the re-parse per its own fallback and just re-published stale JSON.
+Ashwin pasted the two Wikipedia pages in manually afterward; from that I spliced
+fresh 2026 rows into `billboard_rows.json`/`uk_rows.json` (via the OneDrive copy
+of the pipeline, not `~/som-pipeline`), added attribution for 5 new artists
+(Stella Lefty->Chicago, Prospa->Leeds-Bradford, Cloonee->Sheffield, Anotr->Amsterdam,
+Hugel->Marseille; skipped Imael Angel, an undisclosed-identity AI-persona credit
+with no real hometown), added two `credit_split_config.json` overrides so
+"Prospa & Cloonee" and "Hugel, Imael Angel & Ultra Naté" split into individual
+artists instead of fusing into one pseudo-artist, fixed an "Ultra Nate" ->
+"Ultra Naté" (missing-accent) mismatch, and reran `refresh_all.py`. That data is
+committed locally on Windows (`14ba26c55`, not yet pushed -- Ashwin's call on
+timing).
+
+**Fix:** disabled `sound-hub-monthly-refresh` and relabeled its description to
+match the retirement pattern of its sibling. The mini's `sound-weekly` (Wed
+08:30, `sound_ingest.py` + dry-run overlap gate + auto-commit/push) is now the
+sole owner of the singles-chart refresh going forward -- no Cowork-side job
+duplicates it. `sound-hub-quarterly-albums` is untouched; that one's the
+separate chartmasters album re-pull and has no mini equivalent.
+
+**Open question for whoever picks this up next:** the OneDrive
+`_sound_of_metros_pipeline` folder (used by the now-retired Cowork task) and the
+mini's relocated `~/som-pipeline` are two separate copies of the same pipeline.
+Worth confirming they haven't drifted -- the OneDrive copy just got a manual
+Aug-2026 chart update and 5 new attributions that `~/som-pipeline` should
+probably also have, since the mini job will otherwise reintroduce the same rows
+from Wikipedia on its own next Wednesday and could re-clobber the credit-split
+overrides if `~/som-pipeline`'s `credit_split_config.json` doesn't already have
+them.
