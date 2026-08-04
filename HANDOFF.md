@@ -1810,3 +1810,93 @@ checks, ~15 minutes:
    that prints nothing is broken, not passing (the Windows no-op lesson);
    fx-series files are extended daily by build_fx.py — never hand-edit them
    (reseed via build_fx_series.py --src if the deep history changes).
+
+---
+
+# SESSION CLOSE — 2026-08-04 morning/midday (cloud session)
+
+**Production tip `54ea4615b` (feat(isr), READY + aliased ~11:14 UTC — the day's
+ONE build). Tree clean bar untracked .commit-msg files. All v5 checks GREEN;
+on-demand revalidation shipped the same session.**
+
+1. **v5 overnight checks — ALL GREEN.** Share metas verified by view-source on
+   /business (og-default 1200x630, summary_large_image, single title suffix).
+   /leaders prod-verified: Kuwait PM Ahmad Al-Abdullah Al-Sabah (since
+   2024-05-15) with the Emir second; Jordan Jafar Hassan (2024-09-15); Brunei
+   1967-10-05; UAE 2006-02-11. UNL: the mini's 05:00:57 pull emitted
+   "international" (league 5, 14 groups, 156 fixtures) and production RENDERS
+   it — /sports/standings International Football + League A tables,
+   /teams/national#nations-league. No unmatched alerts (nation passthrough
+   held). Caution: WebFetch's summarizer truncated the 180KB bundle and the
+   key looked missing — verify tail keys of big JSON with a browser fetch.
+2. **Cron-skip lesson (memory: feedback_new_workflow_first_cron).** GitHub
+   skipped the FIRST cron slots of BOTH new workflows — business-daily (05:50)
+   and predictions (06:40) showed "0 workflow runs" at 07:15 while AFL+NRL's
+   schedule fired fine. Scheduler registers new crons lazily; not a YAML bug.
+   With Ashwin's OK both were dispatched manually (workflow_dispatch via
+   Chrome; the GitHub API 403s from the cloud box): business #1 green 45s →
+   `65352cd0e` (fx as_of 08-04, EXCHANGERATE_API_KEY works; markets through
+   the 08-04 Asia close, TSX 07-31 = Civic Holiday; fx-series/eur.json
+   2,456→2,457 pts — the daily tail-append is proven); predictions #1 green
+   1m03s → `4b4544e5`. Both data commits Vercel-CANCELED as designed.
+3. **ISR staleness diagnosed (memory: reference_business_isr_freshness).** At
+   10:27 /business/markets + /currencies still stamped 08-02: stacked 6h
+   caches (page revalidate 21600 AND the lib/business.ts fetch revalidate
+   21600). The age header (13684s) predated the 07:23 data commit;
+   cf-cache-status DYNAMIC, so Cloudflare was innocent. Rule: check the age
+   header before suspecting the pipeline, and never spend a build on it.
+4. **REVALIDATION SHIPPED — `54ea4615b`.** lib/business.ts load() fetch tagged
+   "business-daily" (6h backstop stays); NEW app/api/revalidate/route.ts
+   (POST-only, x-revalidate-secret header, timingSafeEqual, 10/min/IP via
+   lib/rateLimit, tag whitelist, revalidateTag(tag, "max")); the daily
+   workflow gained a final fail-open step: sleep 300 FIRST (raw
+   githubusercontent CDN TTL — flushing earlier would re-cache yesterday's
+   JSON for 6h), then curl POST with 3 retries; missing secret = skip, failed
+   ping = WARN, the data run never fails. .env.example documents
+   REVALIDATE_SECRET; Ashwin set it in Vercel env + GH Actions secrets.
+   ⚠️ Next 16: revalidateTag REQUIRES the profile arg — (tag, "max") is the
+   migration of the old 1-arg call; verify caught it (TS2554). Same commit:
+   NFL/MLB LeagueMap header comments became standing notes (update on
+   relocation, not annually). Full verify green (26/26) pre-push; rebased over
+   the mini's data commits so the app commit sat at push HEAD. Post-deploy:
+   both pages stamp 08-04; /api/revalidate returns 401 on wrong/missing key
+   (proves the route is live AND the Vercel env var took; unset would 503).
+5. **Owed:** the lib/releases.ts entry for 2026-08-04 — fold into the NEXT app
+   commit (one entry per shipping day, amend not duplicate; no build for it
+   alone).
+
+# NEXT SESSION — START HERE v6 (supersedes v5)
+
+State at close: origin/main tip = this docs commit; production build
+`54ea4615b` (on-demand revalidation LIVE, secret configured both sides).
+Tree clean. Verify first, ~10 minutes:
+
+1. **Wed 5 Aug 05:50 UTC is double-duty proof.** business-daily-refresh must
+   (a) fire ON ITS OWN — Monday's first slots were skipped by GitHub's
+   scheduler (feedback_new_workflow_first_cron) — and (b) end with
+   "Revalidated on attempt 1" in the Actions log (~6 min after the push; the
+   step sleeps out the raw CDN TTL first). /business/markets + /currencies
+   should stamp 05 Aug by ~06:05 UTC. That is the end-to-end proof of the
+   revalidation ship. If the cron didn't fire, dispatch manually and expect
+   the same for honours.
+2. **honours-2026-champions Wed 08:10 is a MAIDEN** — same first-slot skip
+   risk; if no run appears, dispatch it. predictions' first SCHEDULED slot is
+   Fri 11:40.
+3. **Fold the 2026-08-04 releases entry (lib/releases.ts) into the next app
+   commit** — amend the existing 08-04 date line with the revalidation ship;
+   don't add a second entry for the same day, don't spend a build on it alone.
+4. **Queue (otherwise unchanged from v5):** Sat 8 Aug drill = green Saturday
+   #2 (mktcap ritual → full business chain; leaders hold 107/107 and 203/204
+   sinces); CFB hub ~10 Aug — FIRST hub built under DESIGN-STANDARDS.md,
+   follow it exactly (min-w-0 grid children, stickyCol on rank-first tables,
+   SMCOL demotions, value-before-metadata, og images in every metadata
+   config); UCL hub after the 27 Aug 16:00 UTC draw (standings gate
+   self-opens); 13F CUSIP thread; ISR revalidate stretch — the business-daily
+   tag + /api/revalidate pattern is the template if other daily feeds deserve
+   the same treatment.
+5. **House rules that mattered today:** new scheduled workflows skip their
+   first cron slot ("0 runs" is not a broken workflow — dispatch, then watch
+   the next slot); Next 16 revalidateTag takes (tag, "max"); check the age
+   header before blaming a data pipeline; re-staged cloud snapshots go stale —
+   verify device writes with DC read_file, never a re-staged copy; app commits
+   never behind a skip-tagged HEAD; ≤2 builds/day (one used 08-04).
