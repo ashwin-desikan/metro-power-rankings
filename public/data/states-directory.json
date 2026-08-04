@@ -151,7 +151,7 @@
 "continent": "Europe",
 "pop": 8945309,
 "metroCount": 1,
-"score": 97.99,
+"score": 97.7,
 "weighted": true,
 "rank": 12
 },
@@ -1321,7 +1321,7 @@
 "continent": "Europe",
 "pop": 2948633,
 "metroCount": 1,
-"score": 31.95,
+"score": 32.07,
 "weighted": true,
 "rank": 102
 },
@@ -1651,6 +1651,19 @@
 "rank": 127
 },
 {
+"slug": "west-midlands",
+"name": "West Midlands",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Metropolitan County",
+"continent": "Europe",
+"pop": 2980936,
+"metroCount": 2,
+"score": 24.44,
+"weighted": true,
+"rank": 128
+},
+{
 "slug": "aichi",
 "name": "Aichi",
 "country": "Japan",
@@ -1660,19 +1673,6 @@
 "pop": 7542415,
 "metroCount": 1,
 "score": 24.35,
-"weighted": true,
-"rank": 128
-},
-{
-"slug": "west-midlands",
-"name": "West Midlands",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Metropolitan County",
-"continent": "Europe",
-"pop": 2980936,
-"metroCount": 2,
-"score": 24.34,
 "weighted": true,
 "rank": 129
 },
@@ -2634,7 +2634,7 @@
 "continent": "Europe",
 "pop": 1610251,
 "metroCount": 5,
-"score": 15.31,
+"score": 15.44,
 "weighted": true,
 "rank": 203
 },
@@ -2673,7 +2673,7 @@
 "continent": "Europe",
 "pop": 1456562,
 "metroCount": 1,
-"score": 14.89,
+"score": 14.91,
 "weighted": true,
 "rank": 206
 },
@@ -2712,7 +2712,7 @@
 "continent": "Europe",
 "pop": 1153212,
 "metroCount": 2,
-"score": 14.76,
+"score": 14.78,
 "weighted": true,
 "rank": 209
 },
@@ -2873,6 +2873,19 @@
 "rank": 221
 },
 {
+"slug": "surrey",
+"name": "Surrey",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "County",
+"continent": "Europe",
+"pop": 1228671,
+"metroCount": 1,
+"score": 13.42,
+"weighted": true,
+"rank": 222
+},
+{
 "slug": "izmir",
 "name": "İzmir",
 "country": "Turkey",
@@ -2883,33 +2896,7 @@
 "metroCount": 1,
 "score": 13.4,
 "weighted": true,
-"rank": 222
-},
-{
-"slug": "surrey",
-"name": "Surrey",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "County",
-"continent": "Europe",
-"pop": 1228671,
-"metroCount": 1,
-"score": 13.4,
-"weighted": true,
 "rank": 223
-},
-{
-"slug": "hertfordshire",
-"name": "Hertfordshire",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "County",
-"continent": "Europe",
-"pop": 1215387,
-"metroCount": 1,
-"score": 13.35,
-"weighted": true,
-"rank": 224
 },
 {
 "slug": "idaho",
@@ -2921,6 +2908,19 @@
 "pop": 2001619,
 "metroCount": 12,
 "score": 13.34,
+"weighted": true,
+"rank": 224
+},
+{
+"slug": "hertfordshire",
+"name": "Hertfordshire",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "County",
+"continent": "Europe",
+"pop": 1215387,
+"metroCount": 1,
+"score": 13.29,
 "weighted": true,
 "rank": 225
 },
@@ -3146,19 +3146,6 @@
 "rank": 242
 },
 {
-"slug": "miyagi",
-"name": "Miyagi",
-"country": "Japan",
-"countrySlug": "japan",
-"type": "Prefecture",
-"continent": "Asia",
-"pop": 2301996,
-"metroCount": 1,
-"score": 11.7,
-"weighted": true,
-"rank": 243
-},
-{
 "slug": "essex",
 "name": "Essex",
 "country": "United Kingdom",
@@ -3167,6 +3154,19 @@
 "continent": "Europe",
 "pop": 1536118,
 "metroCount": 5,
+"score": 11.78,
+"weighted": true,
+"rank": 243
+},
+{
+"slug": "miyagi",
+"name": "Miyagi",
+"country": "Japan",
+"countrySlug": "japan",
+"type": "Prefecture",
+"continent": "Asia",
+"pop": 2301996,
+"metroCount": 1,
 "score": 11.7,
 "weighted": true,
 "rank": 244
@@ -3562,15 +3562,15 @@
 "rank": 274
 },
 {
-"slug": "tyrol",
-"name": "Tyrol",
-"country": "Austria",
-"countrySlug": "austria",
-"type": "State",
+"slug": "hampshire",
+"name": "Hampshire",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "County",
 "continent": "Europe",
-"pop": 777660,
-"metroCount": 2,
-"score": 10.1,
+"pop": 1428559,
+"metroCount": 5,
+"score": 10.13,
 "weighted": true,
 "rank": 275
 },
@@ -3583,9 +3583,22 @@
 "continent": "Europe",
 "pop": 383536,
 "metroCount": 1,
-"score": 10.04,
+"score": 10.12,
 "weighted": true,
 "rank": 276
+},
+{
+"slug": "tyrol",
+"name": "Tyrol",
+"country": "Austria",
+"countrySlug": "austria",
+"type": "State",
+"continent": "Europe",
+"pop": 777660,
+"metroCount": 2,
+"score": 10.1,
+"weighted": true,
+"rank": 277
 },
 {
 "slug": "sverdlovsk-oblast",
@@ -3598,19 +3611,6 @@
 "metroCount": 10,
 "score": 10.0,
 "weighted": true,
-"rank": 277
-},
-{
-"slug": "hampshire",
-"name": "Hampshire",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "County",
-"continent": "Europe",
-"pop": 1428559,
-"metroCount": 5,
-"score": 9.98,
-"weighted": true,
 "rank": 278
 },
 {
@@ -3622,7 +3622,7 @@
 "continent": "Europe",
 "pop": 699573,
 "metroCount": 3,
-"score": 9.93,
+"score": 9.92,
 "weighted": true,
 "rank": 279
 },
@@ -3991,6 +3991,19 @@
 "rank": 307
 },
 {
+"slug": "lancashire",
+"name": "Lancashire",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "County",
+"continent": "Europe",
+"pop": 1270162,
+"metroCount": 6,
+"score": 8.61,
+"weighted": true,
+"rank": 308
+},
+{
 "slug": "munster",
 "name": "Munster",
 "country": "Ireland",
@@ -4000,19 +4013,6 @@
 "pop": 1373346,
 "metroCount": 5,
 "score": 8.6,
-"weighted": true,
-"rank": 308
-},
-{
-"slug": "lancashire",
-"name": "Lancashire",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "County",
-"continent": "Europe",
-"pop": 1270162,
-"metroCount": 6,
-"score": 8.58,
 "weighted": true,
 "rank": 309
 },
@@ -4251,19 +4251,6 @@
 "rank": 327
 },
 {
-"slug": "southampton-england",
-"name": "Southampton",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Unitary Authority",
-"continent": "Europe",
-"pop": 256110,
-"metroCount": 1,
-"score": 7.82,
-"weighted": true,
-"rank": 328
-},
-{
 "slug": "west-flanders",
 "name": "West Flanders",
 "country": "Belgium",
@@ -4274,7 +4261,7 @@
 "metroCount": 9,
 "score": 7.8,
 "weighted": true,
-"rank": 329
+"rank": 328
 },
 {
 "slug": "andhra-pradesh",
@@ -4287,7 +4274,7 @@
 "metroCount": 4,
 "score": 7.8,
 "weighted": true,
-"rank": 330
+"rank": 329
 },
 {
 "slug": "central-slovenia",
@@ -4300,7 +4287,7 @@
 "metroCount": 1,
 "score": 7.8,
 "weighted": true,
-"rank": 331
+"rank": 330
 },
 {
 "slug": "chungcheongnam",
@@ -4313,7 +4300,7 @@
 "metroCount": 1,
 "score": 7.8,
 "weighted": true,
-"rank": 332
+"rank": 331
 },
 {
 "slug": "aberdeen-city",
@@ -4323,6 +4310,19 @@
 "type": "Council Area",
 "continent": "Europe",
 "pop": 227750,
+"metroCount": 1,
+"score": 7.8,
+"weighted": true,
+"rank": 332
+},
+{
+"slug": "southampton-england",
+"name": "Southampton",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Unitary Authority",
+"continent": "Europe",
+"pop": 256110,
 "metroCount": 1,
 "score": 7.8,
 "weighted": true,
@@ -4368,6 +4368,19 @@
 "rank": 336
 },
 {
+"slug": "nottinghamshire",
+"name": "Nottinghamshire",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "County",
+"continent": "Europe",
+"pop": 844494,
+"metroCount": 3,
+"score": 7.58,
+"weighted": true,
+"rank": 337
+},
+{
 "slug": "glasgow-city",
 "name": "Glasgow City",
 "country": "United Kingdom",
@@ -4377,19 +4390,6 @@
 "pop": 631970,
 "metroCount": 1,
 "score": 7.57,
-"weighted": true,
-"rank": 337
-},
-{
-"slug": "nottinghamshire",
-"name": "Nottinghamshire",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "County",
-"continent": "Europe",
-"pop": 844494,
-"metroCount": 3,
-"score": 7.54,
 "weighted": true,
 "rank": 338
 },
@@ -4727,7 +4727,7 @@
 "continent": "Europe",
 "pop": 900862,
 "metroCount": 5,
-"score": 6.94,
+"score": 6.98,
 "weighted": true,
 "rank": 364
 },
@@ -5031,6 +5031,19 @@
 "rank": 387
 },
 {
+"slug": "buckinghamshire",
+"name": "Buckinghamshire",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Unitary Authority",
+"continent": "Europe",
+"pop": 566694,
+"metroCount": 2,
+"score": 6.22,
+"weighted": true,
+"rank": 388
+},
+{
 "slug": "ibaraki",
 "name": "Ibaraki",
 "country": "Japan",
@@ -5041,7 +5054,7 @@
 "metroCount": 2,
 "score": 6.18,
 "weighted": true,
-"rank": 388
+"rank": 389
 },
 {
 "slug": "west-singapore",
@@ -5053,19 +5066,6 @@
 "pop": 584820,
 "metroCount": 1,
 "score": 6.18,
-"weighted": true,
-"rank": 389
-},
-{
-"slug": "buckinghamshire",
-"name": "Buckinghamshire",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Unitary Authority",
-"continent": "Europe",
-"pop": 566694,
-"metroCount": 2,
-"score": 6.16,
 "weighted": true,
 "rank": 390
 },
@@ -5928,19 +5928,6 @@
 "rank": 456
 },
 {
-"slug": "nottingham",
-"name": "Nottingham",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Unitary Authority",
-"continent": "Europe",
-"pop": 329276,
-"metroCount": 1,
-"score": 4.83,
-"weighted": true,
-"rank": 457
-},
-{
 "slug": "cantabria",
 "name": "Cantabria",
 "country": "Spain",
@@ -5951,7 +5938,7 @@
 "metroCount": 3,
 "score": 4.82,
 "weighted": true,
-"rank": 458
+"rank": 457
 },
 {
 "slug": "mugla",
@@ -5963,6 +5950,19 @@
 "pop": 1000773,
 "metroCount": 1,
 "score": 4.8,
+"weighted": true,
+"rank": 458
+},
+{
+"slug": "nottingham",
+"name": "Nottingham",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Unitary Authority",
+"continent": "Europe",
+"pop": 329276,
+"metroCount": 1,
+"score": 4.79,
 "weighted": true,
 "rank": 459
 },
@@ -5988,7 +5988,7 @@
 "continent": "Europe",
 "pop": 532182,
 "metroCount": 4,
-"score": 4.74,
+"score": 4.72,
 "weighted": true,
 "rank": 461
 },
@@ -6357,19 +6357,6 @@
 "rank": 489
 },
 {
-"slug": "worcestershire",
-"name": "Worcestershire",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "County",
-"continent": "Europe",
-"pop": 614185,
-"metroCount": 4,
-"score": 4.28,
-"weighted": true,
-"rank": 490
-},
-{
 "slug": "suffolk",
 "name": "Suffolk",
 "country": "United Kingdom",
@@ -6378,19 +6365,32 @@
 "continent": "Europe",
 "pop": 776442,
 "metroCount": 6,
+"score": 4.28,
+"weighted": true,
+"rank": 490
+},
+{
+"slug": "leicester",
+"name": "Leicester",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Unitary Authority",
+"continent": "Europe",
+"pop": 379780,
+"metroCount": 1,
 "score": 4.27,
 "weighted": true,
 "rank": 491
 },
 {
-"slug": "leicestershire",
-"name": "Leicestershire",
+"slug": "worcestershire",
+"name": "Worcestershire",
 "country": "United Kingdom",
 "countrySlug": "united-kingdom",
 "type": "County",
 "continent": "Europe",
-"pop": 734015,
-"metroCount": 2,
+"pop": 614185,
+"metroCount": 4,
 "score": 4.26,
 "weighted": true,
 "rank": 492
@@ -6417,20 +6417,20 @@
 "continent": "Europe",
 "pop": 617823,
 "metroCount": 3,
-"score": 4.24,
+"score": 4.25,
 "weighted": true,
 "rank": 494
 },
 {
-"slug": "leicester",
-"name": "Leicester",
+"slug": "leicestershire",
+"name": "Leicestershire",
 "country": "United Kingdom",
 "countrySlug": "united-kingdom",
-"type": "Unitary Authority",
+"type": "County",
 "continent": "Europe",
-"pop": 379780,
-"metroCount": 1,
-"score": 4.24,
+"pop": 734015,
+"metroCount": 2,
+"score": 4.23,
 "weighted": true,
 "rank": 495
 },
@@ -6825,19 +6825,6 @@
 "rank": 525
 },
 {
-"slug": "city-of-kingston-upon-hull",
-"name": "City of Kingston upon Hull",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Unitary Authority",
-"continent": "Europe",
-"pop": 271942,
-"metroCount": 1,
-"score": 3.79,
-"weighted": true,
-"rank": 526
-},
-{
 "slug": "havana",
 "name": "Havana",
 "country": "Cuba",
@@ -6847,6 +6834,19 @@
 "pop": 2132183,
 "metroCount": 1,
 "score": 3.77,
+"weighted": true,
+"rank": 526
+},
+{
+"slug": "city-of-kingston-upon-hull",
+"name": "City of Kingston upon Hull",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Unitary Authority",
+"continent": "Europe",
+"pop": 271942,
+"metroCount": 1,
+"score": 3.76,
 "weighted": true,
 "rank": 527
 },
@@ -6859,7 +6859,7 @@
 "continent": "Europe",
 "pop": 365061,
 "metroCount": 1,
-"score": 3.74,
+"score": 3.75,
 "weighted": true,
 "rank": 528
 },
@@ -6955,19 +6955,6 @@
 "rank": 535
 },
 {
-"slug": "the-vale-of-glamorgan",
-"name": "The Vale of Glamorgan",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "District",
-"continent": "Europe",
-"pop": 134733,
-"metroCount": 1,
-"score": 3.66,
-"weighted": true,
-"rank": 536
-},
-{
 "slug": "south-lanarkshire",
 "name": "South Lanarkshire",
 "country": "United Kingdom",
@@ -6978,7 +6965,7 @@
 "metroCount": 1,
 "score": 3.64,
 "weighted": true,
-"rank": 537
+"rank": 536
 },
 {
 "slug": "esch-sur-alzette",
@@ -6991,7 +6978,7 @@
 "metroCount": 1,
 "score": 3.62,
 "weighted": true,
-"rank": 538
+"rank": 537
 },
 {
 "slug": "mpumalanga",
@@ -7004,7 +6991,7 @@
 "metroCount": 3,
 "score": 3.6,
 "weighted": true,
-"rank": 539
+"rank": 538
 },
 {
 "slug": "saint-kitts",
@@ -7017,7 +7004,7 @@
 "metroCount": 1,
 "score": 3.6,
 "weighted": true,
-"rank": 540
+"rank": 539
 },
 {
 "slug": "northern-thailand",
@@ -7030,7 +7017,7 @@
 "metroCount": 5,
 "score": 3.6,
 "weighted": true,
-"rank": 541
+"rank": 540
 },
 {
 "slug": "west-northamptonshire",
@@ -7043,7 +7030,7 @@
 "metroCount": 1,
 "score": 3.6,
 "weighted": true,
-"rank": 542
+"rank": 541
 },
 {
 "slug": "vatican-city",
@@ -7056,7 +7043,7 @@
 "metroCount": 1,
 "score": 3.6,
 "weighted": true,
-"rank": 543
+"rank": 542
 },
 {
 "slug": "windward-islands-tahiti",
@@ -7068,6 +7055,19 @@
 "pop": 207333,
 "metroCount": 1,
 "score": 3.59,
+"weighted": true,
+"rank": 543
+},
+{
+"slug": "the-vale-of-glamorgan",
+"name": "The Vale of Glamorgan",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "District",
+"continent": "Europe",
+"pop": 134733,
+"metroCount": 1,
+"score": 3.58,
 "weighted": true,
 "rank": 544
 },
@@ -7254,6 +7254,19 @@
 "rank": 558
 },
 {
+"slug": "central-bedfordshire",
+"name": "Central Bedfordshire",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Unitary Authority",
+"continent": "Europe",
+"pop": 308302,
+"metroCount": 1,
+"score": 3.4,
+"weighted": true,
+"rank": 559
+},
+{
 "slug": "abuja",
 "name": "Abuja",
 "country": "Nigeria",
@@ -7264,7 +7277,7 @@
 "metroCount": 1,
 "score": 3.35,
 "weighted": true,
-"rank": 559
+"rank": 560
 },
 {
 "slug": "st-andrew-jamaica",
@@ -7277,7 +7290,7 @@
 "metroCount": 1,
 "score": 3.34,
 "weighted": true,
-"rank": 560
+"rank": 561
 },
 {
 "slug": "machakos",
@@ -7290,7 +7303,7 @@
 "metroCount": 1,
 "score": 3.34,
 "weighted": true,
-"rank": 561
+"rank": 562
 },
 {
 "slug": "staffordshire",
@@ -7303,7 +7316,7 @@
 "metroCount": 5,
 "score": 3.33,
 "weighted": true,
-"rank": 562
+"rank": 563
 },
 {
 "slug": "canelones",
@@ -7316,7 +7329,7 @@
 "metroCount": 1,
 "score": 3.31,
 "weighted": true,
-"rank": 563
+"rank": 564
 },
 {
 "slug": "tirana",
@@ -7329,7 +7342,7 @@
 "metroCount": 1,
 "score": 3.3,
 "weighted": true,
-"rank": 564
+"rank": 565
 },
 {
 "slug": "st-john-antigua-barbuda",
@@ -7342,7 +7355,7 @@
 "metroCount": 1,
 "score": 3.3,
 "weighted": true,
-"rank": 565
+"rank": 566
 },
 {
 "slug": "goa",
@@ -7355,7 +7368,7 @@
 "metroCount": 2,
 "score": 3.3,
 "weighted": true,
-"rank": 566
+"rank": 567
 },
 {
 "slug": "møre-og-romsdal",
@@ -7368,7 +7381,7 @@
 "metroCount": 4,
 "score": 3.3,
 "weighted": true,
-"rank": 567
+"rank": 568
 },
 {
 "slug": "murcia",
@@ -7381,7 +7394,7 @@
 "metroCount": 4,
 "score": 3.3,
 "weighted": true,
-"rank": 568
+"rank": 569
 },
 {
 "slug": "konya",
@@ -7394,7 +7407,7 @@
 "metroCount": 1,
 "score": 3.3,
 "weighted": true,
-"rank": 569
+"rank": 570
 },
 {
 "slug": "ashgabat",
@@ -7406,19 +7419,6 @@
 "pop": 1030063,
 "metroCount": 1,
 "score": 3.3,
-"weighted": true,
-"rank": 570
-},
-{
-"slug": "central-bedfordshire",
-"name": "Central Bedfordshire",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Unitary Authority",
-"continent": "Europe",
-"pop": 308302,
-"metroCount": 1,
-"score": 3.28,
 "weighted": true,
 "rank": 571
 },
@@ -7449,19 +7449,6 @@
 "rank": 573
 },
 {
-"slug": "brighton-and-hove",
-"name": "Brighton and Hove",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Unitary Authority",
-"continent": "Europe",
-"pop": 279637,
-"metroCount": 1,
-"score": 3.25,
-"weighted": true,
-"rank": 574
-},
-{
 "slug": "oromia",
 "name": "Oromia",
 "country": "Ethiopia",
@@ -7472,20 +7459,20 @@
 "metroCount": 5,
 "score": 3.24,
 "weighted": true,
-"rank": 575
+"rank": 574
 },
 {
-"slug": "al-muharraq",
-"name": "Al-Muḥarraq",
-"country": "Bahrain",
-"countrySlug": "bahrain",
-"type": "Governate",
-"continent": "Asia",
-"pop": 289155,
+"slug": "brighton-and-hove",
+"name": "Brighton and Hove",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Unitary Authority",
+"continent": "Europe",
+"pop": 279637,
 "metroCount": 1,
-"score": 3.21,
+"score": 3.24,
 "weighted": true,
-"rank": 576
+"rank": 575
 },
 {
 "slug": "south-gloucestershire",
@@ -7495,6 +7482,19 @@
 "type": "Unitary Authority",
 "continent": "Europe",
 "pop": 299439,
+"metroCount": 1,
+"score": 3.24,
+"weighted": true,
+"rank": 576
+},
+{
+"slug": "al-muharraq",
+"name": "Al-Muḥarraq",
+"country": "Bahrain",
+"countrySlug": "bahrain",
+"type": "Governate",
+"continent": "Asia",
+"pop": 289155,
 "metroCount": 1,
 "score": 3.21,
 "weighted": true,
@@ -7618,6 +7618,19 @@
 "rank": 586
 },
 {
+"slug": "medway",
+"name": "Medway",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Unitary Authority",
+"continent": "Europe",
+"pop": 286800,
+"metroCount": 1,
+"score": 3.15,
+"weighted": true,
+"rank": 587
+},
+{
 "slug": "leningrad-oblast",
 "name": "Leningrad Oblast",
 "country": "Russia",
@@ -7628,7 +7641,7 @@
 "metroCount": 6,
 "score": 3.14,
 "weighted": true,
-"rank": 587
+"rank": 588
 },
 {
 "slug": "east-lothian",
@@ -7641,7 +7654,7 @@
 "metroCount": 1,
 "score": 3.14,
 "weighted": true,
-"rank": 588
+"rank": 589
 },
 {
 "slug": "george-town",
@@ -7651,19 +7664,6 @@
 "type": "District",
 "continent": "North America",
 "pop": 34399,
-"metroCount": 1,
-"score": 3.12,
-"weighted": true,
-"rank": 589
-},
-{
-"slug": "medway",
-"name": "Medway",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Unitary Authority",
-"continent": "Europe",
-"pop": 286800,
 "metroCount": 1,
 "score": 3.12,
 "weighted": true,
@@ -8198,7 +8198,7 @@
 "continent": "Europe",
 "pop": 412458,
 "metroCount": 2,
-"score": 2.75,
+"score": 2.73,
 "weighted": true,
 "rank": 631
 },
@@ -8502,6 +8502,19 @@
 "rank": 654
 },
 {
+"slug": "luton",
+"name": "Luton",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Unitary Authority",
+"continent": "Europe",
+"pop": 231028,
+"metroCount": 1,
+"score": 2.57,
+"weighted": true,
+"rank": 655
+},
+{
 "slug": "maranhao",
 "name": "Maranhão",
 "country": "Brazil",
@@ -8512,7 +8525,7 @@
 "metroCount": 8,
 "score": 2.55,
 "weighted": true,
-"rank": 655
+"rank": 656
 },
 {
 "slug": "st-michael",
@@ -8525,7 +8538,7 @@
 "metroCount": 1,
 "score": 2.53,
 "weighted": true,
-"rank": 656
+"rank": 657
 },
 {
 "slug": "chandigarh",
@@ -8538,7 +8551,7 @@
 "metroCount": 1,
 "score": 2.52,
 "weighted": true,
-"rank": 657
+"rank": 658
 },
 {
 "slug": "pamplemousses",
@@ -8551,7 +8564,7 @@
 "metroCount": 1,
 "score": 2.52,
 "weighted": true,
-"rank": 658
+"rank": 659
 },
 {
 "slug": "bournemouth-christchurch-and-poole",
@@ -8562,20 +8575,7 @@
 "continent": "Europe",
 "pop": 404050,
 "metroCount": 1,
-"score": 2.51,
-"weighted": true,
-"rank": 659
-},
-{
-"slug": "luton",
-"name": "Luton",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Unitary Authority",
-"continent": "Europe",
-"pop": 231028,
-"metroCount": 1,
-"score": 2.51,
+"score": 2.52,
 "weighted": true,
 "rank": 660
 },
@@ -9113,19 +9113,6 @@
 "rank": 701
 },
 {
-"slug": "warrington",
-"name": "Warrington",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Unitary Authority",
-"continent": "Europe",
-"pop": 212389,
-"metroCount": 1,
-"score": 2.21,
-"weighted": true,
-"rank": 702
-},
-{
 "slug": "ashanti",
 "name": "Ashanti",
 "country": "Ghana",
@@ -9136,7 +9123,7 @@
 "metroCount": 2,
 "score": 2.2,
 "weighted": true,
-"rank": 703
+"rank": 702
 },
 {
 "slug": "west-greece",
@@ -9149,7 +9136,7 @@
 "metroCount": 4,
 "score": 2.2,
 "weighted": true,
-"rank": 704
+"rank": 703
 },
 {
 "slug": "chisinau",
@@ -9162,7 +9149,7 @@
 "metroCount": 1,
 "score": 2.2,
 "weighted": true,
-"rank": 705
+"rank": 704
 },
 {
 "slug": "skopje",
@@ -9175,7 +9162,7 @@
 "metroCount": 1,
 "score": 2.2,
 "weighted": true,
-"rank": 706
+"rank": 705
 },
 {
 "slug": "agder",
@@ -9188,7 +9175,7 @@
 "metroCount": 2,
 "score": 2.2,
 "weighted": true,
-"rank": 707
+"rank": 706
 },
 {
 "slug": "orenburg-oblast",
@@ -9201,7 +9188,7 @@
 "metroCount": 4,
 "score": 2.2,
 "weighted": true,
-"rank": 708
+"rank": 707
 },
 {
 "slug": "banadir",
@@ -9214,7 +9201,7 @@
 "metroCount": 1,
 "score": 2.2,
 "weighted": false,
-"rank": 709
+"rank": 708
 },
 {
 "slug": "central-madhyama",
@@ -9227,7 +9214,7 @@
 "metroCount": 2,
 "score": 2.2,
 "weighted": true,
-"rank": 710
+"rank": 709
 },
 {
 "slug": "zagreb",
@@ -9240,7 +9227,7 @@
 "metroCount": 1,
 "score": 2.19,
 "weighted": true,
-"rank": 711
+"rank": 710
 },
 {
 "slug": "perth-and-kinross",
@@ -9252,6 +9239,19 @@
 "pop": 152560,
 "metroCount": 2,
 "score": 2.19,
+"weighted": true,
+"rank": 711
+},
+{
+"slug": "warrington",
+"name": "Warrington",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Unitary Authority",
+"continent": "Europe",
+"pop": 212389,
+"metroCount": 1,
+"score": 2.18,
 "weighted": true,
 "rank": 712
 },
@@ -9685,13 +9685,13 @@
 "rank": 745
 },
 {
-"slug": "southend-on-sea",
-"name": "Southend-on-Sea",
+"slug": "wokingham",
+"name": "Wokingham",
 "country": "United Kingdom",
 "countrySlug": "united-kingdom",
 "type": "Unitary Authority",
 "continent": "Europe",
-"pop": 182271,
+"pop": 183870,
 "metroCount": 1,
 "score": 2.01,
 "weighted": true,
@@ -9854,15 +9854,15 @@
 "rank": 758
 },
 {
-"slug": "wokingham",
-"name": "Wokingham",
+"slug": "southend-on-sea",
+"name": "Southend-on-Sea",
 "country": "United Kingdom",
 "countrySlug": "united-kingdom",
 "type": "Unitary Authority",
 "continent": "Europe",
-"pop": 183870,
+"pop": 182271,
 "metroCount": 1,
-"score": 1.98,
+"score": 1.99,
 "weighted": true,
 "rank": 759
 },
@@ -9880,19 +9880,6 @@
 "rank": 760
 },
 {
-"slug": "thurrock",
-"name": "Thurrock",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Unitary Authority",
-"continent": "Europe",
-"pop": 178201,
-"metroCount": 1,
-"score": 1.96,
-"weighted": true,
-"rank": 761
-},
-{
 "slug": "reading",
 "name": "Reading",
 "country": "United Kingdom",
@@ -9901,7 +9888,20 @@
 "continent": "Europe",
 "pop": 178196,
 "metroCount": 1,
-"score": 1.94,
+"score": 1.97,
+"weighted": true,
+"rank": 761
+},
+{
+"slug": "thurrock",
+"name": "Thurrock",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Unitary Authority",
+"continent": "Europe",
+"pop": 178201,
+"metroCount": 1,
+"score": 1.95,
 "weighted": true,
 "rank": 762
 },
@@ -10400,6 +10400,19 @@
 "rank": 800
 },
 {
+"slug": "slough",
+"name": "Slough",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Unitary Authority",
+"continent": "Europe",
+"pop": 160713,
+"metroCount": 1,
+"score": 1.8,
+"weighted": true,
+"rank": 801
+},
+{
 "slug": "hai-phong",
 "name": "Hải Phòng",
 "country": "Vietnam",
@@ -10410,7 +10423,7 @@
 "metroCount": 1,
 "score": 1.8,
 "weighted": true,
-"rank": 801
+"rank": 802
 },
 {
 "slug": "boumerdes",
@@ -10423,7 +10436,7 @@
 "metroCount": 1,
 "score": 1.77,
 "weighted": true,
-"rank": 802
+"rank": 803
 },
 {
 "slug": "damascus",
@@ -10435,19 +10448,6 @@
 "pop": 2103000,
 "metroCount": 1,
 "score": 1.77,
-"weighted": true,
-"rank": 803
-},
-{
-"slug": "slough",
-"name": "Slough",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Unitary Authority",
-"continent": "Europe",
-"pop": 160713,
-"metroCount": 1,
-"score": 1.76,
 "weighted": true,
 "rank": 804
 },
@@ -11063,6 +11063,19 @@
 "rank": 851
 },
 {
+"slug": "east-riding-of-yorkshire",
+"name": "East Riding of Yorkshire",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Unitary Authority",
+"continent": "Europe",
+"pop": 350119,
+"metroCount": 2,
+"score": 1.59,
+"weighted": true,
+"rank": 852
+},
+{
 "slug": "east-sussex",
 "name": "East Sussex",
 "country": "United Kingdom",
@@ -11073,7 +11086,7 @@
 "metroCount": 3,
 "score": 1.57,
 "weighted": true,
-"rank": 852
+"rank": 853
 },
 {
 "slug": "christ-church",
@@ -11084,19 +11097,6 @@
 "continent": "North America",
 "pop": 54336,
 "metroCount": 1,
-"score": 1.55,
-"weighted": true,
-"rank": 853
-},
-{
-"slug": "east-riding-of-yorkshire",
-"name": "East Riding of Yorkshire",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Unitary Authority",
-"continent": "Europe",
-"pop": 350119,
-"metroCount": 2,
 "score": 1.55,
 "weighted": true,
 "rank": 854
@@ -11336,15 +11336,15 @@
 "rank": 872
 },
 {
-"slug": "blackpool",
-"name": "Blackpool",
+"slug": "stoke-on-trent",
+"name": "Stoke-on-Trent",
 "country": "United Kingdom",
 "countrySlug": "united-kingdom",
 "type": "Unitary Authority",
 "continent": "Europe",
-"pop": 142708,
+"pop": 263157,
 "metroCount": 1,
-"score": 1.43,
+"score": 1.42,
 "weighted": true,
 "rank": 873
 },
@@ -11362,17 +11362,30 @@
 "rank": 874
 },
 {
-"slug": "stoke-on-trent",
-"name": "Stoke-on-Trent",
+"slug": "blackpool",
+"name": "Blackpool",
 "country": "United Kingdom",
 "countrySlug": "united-kingdom",
 "type": "Unitary Authority",
 "continent": "Europe",
-"pop": 263157,
+"pop": 142708,
 "metroCount": 1,
 "score": 1.41,
 "weighted": true,
 "rank": 875
+},
+{
+"slug": "bracknell-forest",
+"name": "Bracknell Forest",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Unitary Authority",
+"continent": "Europe",
+"pop": 128351,
+"metroCount": 1,
+"score": 1.41,
+"weighted": true,
+"rank": 876
 },
 {
 "slug": "caldas",
@@ -11385,7 +11398,7 @@
 "metroCount": 1,
 "score": 1.4,
 "weighted": true,
-"rank": 876
+"rank": 877
 },
 {
 "slug": "cesar",
@@ -11398,7 +11411,7 @@
 "metroCount": 1,
 "score": 1.4,
 "weighted": true,
-"rank": 877
+"rank": 878
 },
 {
 "slug": "lampung",
@@ -11411,7 +11424,7 @@
 "metroCount": 1,
 "score": 1.4,
 "weighted": true,
-"rank": 878
+"rank": 879
 },
 {
 "slug": "hormozgan",
@@ -11424,7 +11437,7 @@
 "metroCount": 2,
 "score": 1.4,
 "weighted": true,
-"rank": 879
+"rank": 880
 },
 {
 "slug": "central-malawi",
@@ -11437,7 +11450,7 @@
 "metroCount": 1,
 "score": 1.4,
 "weighted": true,
-"rank": 880
+"rank": 881
 },
 {
 "slug": "south-eastern",
@@ -11450,7 +11463,7 @@
 "metroCount": 1,
 "score": 1.4,
 "weighted": true,
-"rank": 881
+"rank": 882
 },
 {
 "slug": "mandalay",
@@ -11463,7 +11476,7 @@
 "metroCount": 1,
 "score": 1.4,
 "weighted": true,
-"rank": 882
+"rank": 883
 },
 {
 "slug": "khomas",
@@ -11476,7 +11489,7 @@
 "metroCount": 1,
 "score": 1.4,
 "weighted": true,
-"rank": 883
+"rank": 884
 },
 {
 "slug": "balochistan",
@@ -11489,7 +11502,7 @@
 "metroCount": 1,
 "score": 1.4,
 "weighted": true,
-"rank": 884
+"rank": 885
 },
 {
 "slug": "kosice",
@@ -11502,7 +11515,7 @@
 "metroCount": 2,
 "score": 1.4,
 "weighted": true,
-"rank": 885
+"rank": 886
 },
 {
 "slug": "northern-vatakku-uturu",
@@ -11515,7 +11528,7 @@
 "metroCount": 1,
 "score": 1.4,
 "weighted": true,
-"rank": 886
+"rank": 887
 },
 {
 "slug": "arusha",
@@ -11528,7 +11541,7 @@
 "metroCount": 1,
 "score": 1.4,
 "weighted": true,
-"rank": 887
+"rank": 888
 },
 {
 "slug": "copperbelt",
@@ -11540,19 +11553,6 @@
 "pop": 2757539,
 "metroCount": 2,
 "score": 1.4,
-"weighted": true,
-"rank": 888
-},
-{
-"slug": "bracknell-forest",
-"name": "Bracknell Forest",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Unitary Authority",
-"continent": "Europe",
-"pop": 128351,
-"metroCount": 1,
-"score": 1.39,
 "weighted": true,
 "rank": 889
 },
@@ -11661,19 +11661,6 @@
 "rank": 897
 },
 {
-"slug": "halton",
-"name": "Halton",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Unitary Authority",
-"continent": "Europe",
-"pop": 129587,
-"metroCount": 1,
-"score": 1.34,
-"weighted": true,
-"rank": 898
-},
-{
 "slug": "coloane",
 "name": "Coloane",
 "country": "China",
@@ -11684,7 +11671,7 @@
 "metroCount": 1,
 "score": 1.33,
 "weighted": true,
-"rank": 899
+"rank": 898
 },
 {
 "slug": "rif-dimashq",
@@ -11694,6 +11681,19 @@
 "type": "Governate",
 "continent": "Asia",
 "pop": 3372000,
+"metroCount": 1,
+"score": 1.33,
+"weighted": true,
+"rank": 899
+},
+{
+"slug": "halton",
+"name": "Halton",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Unitary Authority",
+"continent": "Europe",
+"pop": 129587,
 "metroCount": 1,
 "score": 1.33,
 "weighted": true,
@@ -12051,19 +12051,6 @@
 "rank": 927
 },
 {
-"slug": "north-somerset",
-"name": "North Somerset",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Unitary Authority",
-"continent": "Europe",
-"pop": 221146,
-"metroCount": 2,
-"score": 1.26,
-"weighted": true,
-"rank": 928
-},
-{
 "slug": "south-sinai",
 "name": "South Sinai",
 "country": "Egypt",
@@ -12074,7 +12061,7 @@
 "metroCount": 3,
 "score": 1.24,
 "weighted": true,
-"rank": 929
+"rank": 928
 },
 {
 "slug": "sofia-bulgaria",
@@ -12087,7 +12074,7 @@
 "metroCount": 1,
 "score": 1.23,
 "weighted": true,
-"rank": 930
+"rank": 929
 },
 {
 "slug": "fontvielle",
@@ -12098,6 +12085,19 @@
 "continent": "Europe",
 "pop": 4420,
 "metroCount": 1,
+"score": 1.23,
+"weighted": true,
+"rank": 930
+},
+{
+"slug": "north-somerset",
+"name": "North Somerset",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Unitary Authority",
+"continent": "Europe",
+"pop": 221146,
+"metroCount": 2,
 "score": 1.23,
 "weighted": true,
 "rank": 931
@@ -12129,6 +12129,19 @@
 "rank": 933
 },
 {
+"slug": "swansea",
+"name": "Swansea",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "District",
+"continent": "Europe",
+"pop": 246742,
+"metroCount": 1,
+"score": 1.21,
+"weighted": true,
+"rank": 934
+},
+{
 "slug": "shirak",
 "name": "Shirak",
 "country": "Armenia",
@@ -12139,7 +12152,7 @@
 "metroCount": 1,
 "score": 1.2,
 "weighted": true,
-"rank": 934
+"rank": 935
 },
 {
 "slug": "northern-territory",
@@ -12152,7 +12165,7 @@
 "metroCount": 1,
 "score": 1.2,
 "weighted": true,
-"rank": 935
+"rank": 936
 },
 {
 "slug": "potosi",
@@ -12165,7 +12178,7 @@
 "metroCount": 1,
 "score": 1.2,
 "weighted": true,
-"rank": 936
+"rank": 937
 },
 {
 "slug": "prince-edward-island",
@@ -12178,7 +12191,7 @@
 "metroCount": 1,
 "score": 1.2,
 "weighted": true,
-"rank": 937
+"rank": 938
 },
 {
 "slug": "los-lagos",
@@ -12191,7 +12204,7 @@
 "metroCount": 2,
 "score": 1.2,
 "weighted": true,
-"rank": 938
+"rank": 939
 },
 {
 "slug": "kasai-oriental",
@@ -12204,7 +12217,7 @@
 "metroCount": 1,
 "score": 1.2,
 "weighted": true,
-"rank": 939
+"rank": 940
 },
 {
 "slug": "damietta",
@@ -12217,7 +12230,7 @@
 "metroCount": 1,
 "score": 1.2,
 "weighted": true,
-"rank": 940
+"rank": 941
 },
 {
 "slug": "ismailia",
@@ -12230,7 +12243,7 @@
 "metroCount": 1,
 "score": 1.2,
 "weighted": true,
-"rank": 941
+"rank": 942
 },
 {
 "slug": "southern-snnpr",
@@ -12243,7 +12256,7 @@
 "metroCount": 4,
 "score": 1.2,
 "weighted": true,
-"rank": 942
+"rank": 943
 },
 {
 "slug": "imereti",
@@ -12256,7 +12269,7 @@
 "metroCount": 6,
 "score": 1.2,
 "weighted": true,
-"rank": 943
+"rank": 944
 },
 {
 "slug": "jammu-kashmir",
@@ -12269,7 +12282,7 @@
 "metroCount": 2,
 "score": 1.2,
 "weighted": true,
-"rank": 944
+"rank": 945
 },
 {
 "slug": "uttarakhand",
@@ -12282,7 +12295,7 @@
 "metroCount": 2,
 "score": 1.2,
 "weighted": true,
-"rank": 945
+"rank": 946
 },
 {
 "slug": "riau",
@@ -12295,7 +12308,7 @@
 "metroCount": 1,
 "score": 1.2,
 "weighted": true,
-"rank": 946
+"rank": 947
 },
 {
 "slug": "west-sumatra",
@@ -12308,7 +12321,7 @@
 "metroCount": 1,
 "score": 1.2,
 "weighted": true,
-"rank": 947
+"rank": 948
 },
 {
 "slug": "pristina",
@@ -12321,7 +12334,7 @@
 "metroCount": 2,
 "score": 1.2,
 "weighted": true,
-"rank": 948
+"rank": 949
 },
 {
 "slug": "souss-massa",
@@ -12334,7 +12347,7 @@
 "metroCount": 1,
 "score": 1.2,
 "weighted": true,
-"rank": 949
+"rank": 950
 },
 {
 "slug": "abia",
@@ -12347,7 +12360,7 @@
 "metroCount": 2,
 "score": 1.2,
 "weighted": true,
-"rank": 950
+"rank": 951
 },
 {
 "slug": "warmian-masurian",
@@ -12360,7 +12373,7 @@
 "metroCount": 2,
 "score": 1.2,
 "weighted": true,
-"rank": 951
+"rank": 952
 },
 {
 "slug": "crimea",
@@ -12373,7 +12386,7 @@
 "metroCount": 5,
 "score": 1.2,
 "weighted": true,
-"rank": 952
+"rank": 953
 },
 {
 "slug": "arkhangelsk-oblast",
@@ -12386,7 +12399,7 @@
 "metroCount": 4,
 "score": 1.2,
 "weighted": true,
-"rank": 953
+"rank": 954
 },
 {
 "slug": "kayseri",
@@ -12399,7 +12412,7 @@
 "metroCount": 1,
 "score": 1.2,
 "weighted": true,
-"rank": 954
+"rank": 955
 },
 {
 "slug": "thua-thien-hue",
@@ -12412,7 +12425,7 @@
 "metroCount": 1,
 "score": 1.2,
 "weighted": true,
-"rank": 955
+"rank": 956
 },
 {
 "slug": "acre",
@@ -12425,7 +12438,7 @@
 "metroCount": 2,
 "score": 1.19,
 "weighted": true,
-"rank": 956
+"rank": 957
 },
 {
 "slug": "la-libertad-el-salvador",
@@ -12438,7 +12451,7 @@
 "metroCount": 1,
 "score": 1.19,
 "weighted": true,
-"rank": 957
+"rank": 958
 },
 {
 "slug": "maputo-city",
@@ -12448,19 +12461,6 @@
 "type": "Province",
 "continent": "Africa",
 "pop": 1101170,
-"metroCount": 1,
-"score": 1.19,
-"weighted": true,
-"rank": 958
-},
-{
-"slug": "swansea",
-"name": "Swansea",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "District",
-"continent": "Europe",
-"pop": 246742,
 "metroCount": 1,
 "score": 1.19,
 "weighted": true,
@@ -13949,6 +13949,19 @@
 "rank": 1073
 },
 {
+"slug": "middlesbrough",
+"name": "Middlesbrough",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Unitary Authority",
+"continent": "Europe",
+"pop": 152650,
+"metroCount": 1,
+"score": 0.84,
+"weighted": true,
+"rank": 1074
+},
+{
 "slug": "borgo-maggiore",
 "name": "Borgo Maggiore",
 "country": "San Marino",
@@ -13959,7 +13972,7 @@
 "metroCount": 1,
 "score": 0.83,
 "weighted": true,
-"rank": 1074
+"rank": 1075
 },
 {
 "slug": "solothurn",
@@ -13972,7 +13985,7 @@
 "metroCount": 3,
 "score": 0.82,
 "weighted": true,
-"rank": 1075
+"rank": 1076
 },
 {
 "slug": "blackburn-with-darwen",
@@ -13985,7 +13998,7 @@
 "metroCount": 1,
 "score": 0.82,
 "weighted": true,
-"rank": 1076
+"rank": 1077
 },
 {
 "slug": "st-james-barbados",
@@ -13995,19 +14008,6 @@
 "type": "Parish",
 "continent": "North America",
 "pop": 28498,
-"metroCount": 1,
-"score": 0.81,
-"weighted": true,
-"rank": 1077
-},
-{
-"slug": "middlesbrough",
-"name": "Middlesbrough",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Unitary Authority",
-"continent": "Europe",
-"pop": 152650,
 "metroCount": 1,
 "score": 0.81,
 "weighted": true,
@@ -14521,19 +14521,6 @@
 "rank": 1117
 },
 {
-"slug": "redcar-and-cleveland",
-"name": "Redcar and Cleveland",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Unitary Authority",
-"continent": "Europe",
-"pop": 137938,
-"metroCount": 1,
-"score": 0.77,
-"weighted": true,
-"rank": 1118
-},
-{
 "slug": "centro-oeste-midwest",
 "name": "Centro Oeste [Midwest]",
 "country": "São Tomé and Príncipe",
@@ -14541,6 +14528,19 @@
 "type": "Region",
 "continent": "Africa",
 "pop": 131344,
+"metroCount": 1,
+"score": 0.75,
+"weighted": true,
+"rank": 1118
+},
+{
+"slug": "redcar-and-cleveland",
+"name": "Redcar and Cleveland",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Unitary Authority",
+"continent": "Europe",
+"pop": 137938,
 "metroCount": 1,
 "score": 0.75,
 "weighted": true,
@@ -14573,19 +14573,6 @@
 "rank": 1121
 },
 {
-"slug": "neath-port-talbot",
-"name": "Neath Port Talbot",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "District",
-"continent": "Europe",
-"pop": 142898,
-"metroCount": 1,
-"score": 0.71,
-"weighted": true,
-"rank": 1122
-},
-{
 "slug": "portsmouth",
 "name": "Portsmouth",
 "country": "United Kingdom",
@@ -14596,7 +14583,7 @@
 "metroCount": 1,
 "score": 0.71,
 "weighted": true,
-"rank": 1123
+"rank": 1122
 },
 {
 "slug": "balkh",
@@ -14609,7 +14596,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1124
+"rank": 1123
 },
 {
 "slug": "kandahar",
@@ -14622,7 +14609,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1125
+"rank": 1124
 },
 {
 "slug": "mogilev",
@@ -14635,7 +14622,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1126
+"rank": 1125
 },
 {
 "slug": "rondonia",
@@ -14648,7 +14635,7 @@
 "metroCount": 4,
 "score": 0.7,
 "weighted": true,
-"rank": 1127
+"rank": 1126
 },
 {
 "slug": "tocantins",
@@ -14661,7 +14648,7 @@
 "metroCount": 4,
 "score": 0.7,
 "weighted": true,
-"rank": 1128
+"rank": 1127
 },
 {
 "slug": "amapa",
@@ -14674,7 +14661,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1129
+"rank": 1128
 },
 {
 "slug": "plovdiv",
@@ -14687,7 +14674,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1130
+"rank": 1129
 },
 {
 "slug": "bangui",
@@ -14700,7 +14687,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1131
+"rank": 1130
 },
 {
 "slug": "la-araucania",
@@ -14713,7 +14700,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1132
+"rank": 1131
 },
 {
 "slug": "magdalena",
@@ -14726,7 +14713,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1133
+"rank": 1132
 },
 {
 "slug": "pointe-noire",
@@ -14739,7 +14726,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1134
+"rank": 1133
 },
 {
 "slug": "azuay-asway",
@@ -14752,7 +14739,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1135
+"rank": 1134
 },
 {
 "slug": "sharqia",
@@ -14765,7 +14752,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1136
+"rank": 1135
 },
 {
 "slug": "northern-savonia",
@@ -14778,7 +14765,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1137
+"rank": 1136
 },
 {
 "slug": "kakheti",
@@ -14791,7 +14778,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1138
+"rank": 1137
 },
 {
 "slug": "markazi",
@@ -14804,7 +14791,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1139
+"rank": 1138
 },
 {
 "slug": "basilicata",
@@ -14817,7 +14804,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1140
+"rank": 1139
 },
 {
 "slug": "yamagata",
@@ -14830,7 +14817,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1141
+"rank": 1140
 },
 {
 "slug": "aktobe",
@@ -14843,7 +14830,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1142
+"rank": 1141
 },
 {
 "slug": "kostanay",
@@ -14856,7 +14843,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1143
+"rank": 1142
 },
 {
 "slug": "prizren",
@@ -14869,7 +14856,7 @@
 "metroCount": 3,
 "score": 0.7,
 "weighted": true,
-"rank": 1144
+"rank": 1143
 },
 {
 "slug": "terengganu",
@@ -14882,7 +14869,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1145
+"rank": 1144
 },
 {
 "slug": "nouakchott",
@@ -14895,7 +14882,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1146
+"rank": 1145
 },
 {
 "slug": "inhambane",
@@ -14908,7 +14895,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1147
+"rank": 1146
 },
 {
 "slug": "nampula",
@@ -14921,7 +14908,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1148
+"rank": 1147
 },
 {
 "slug": "madhesh-province-no-2",
@@ -14934,7 +14921,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1149
+"rank": 1148
 },
 {
 "slug": "marlborough",
@@ -14947,7 +14934,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1150
+"rank": 1149
 },
 {
 "slug": "plateau-nigeria",
@@ -14960,7 +14947,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1151
+"rank": 1150
 },
 {
 "slug": "svalbard",
@@ -14973,7 +14960,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1152
+"rank": 1151
 },
 {
 "slug": "colon-panama",
@@ -14986,7 +14973,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1153
+"rank": 1152
 },
 {
 "slug": "junin",
@@ -14999,7 +14986,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1154
+"rank": 1153
 },
 {
 "slug": "cagayan-valley",
@@ -15012,7 +14999,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1155
+"rank": 1154
 },
 {
 "slug": "southwestern-tagalog",
@@ -15025,7 +15012,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1156
+"rank": 1155
 },
 {
 "slug": "belgorod-oblast",
@@ -15038,7 +15025,7 @@
 "metroCount": 3,
 "score": 0.7,
 "weighted": true,
-"rank": 1157
+"rank": 1156
 },
 {
 "slug": "north-kordofan",
@@ -15051,7 +15038,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": false,
-"rank": 1158
+"rank": 1157
 },
 {
 "slug": "kronoberg",
@@ -15064,7 +15051,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1159
+"rank": 1158
 },
 {
 "slug": "schaffhausen",
@@ -15077,7 +15064,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1160
+"rank": 1159
 },
 {
 "slug": "tartus",
@@ -15090,7 +15077,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1161
+"rank": 1160
 },
 {
 "slug": "tekirdag",
@@ -15103,7 +15090,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1162
+"rank": 1161
 },
 {
 "slug": "zaporizhzhia",
@@ -15116,7 +15103,7 @@
 "metroCount": 3,
 "score": 0.7,
 "weighted": true,
-"rank": 1163
+"rank": 1162
 },
 {
 "slug": "chernihiv",
@@ -15129,7 +15116,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1164
+"rank": 1163
 },
 {
 "slug": "kirovohrad",
@@ -15142,7 +15129,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1165
+"rank": 1164
 },
 {
 "slug": "chernivtsi",
@@ -15155,7 +15142,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1166
+"rank": 1165
 },
 {
 "slug": "fermanagh-and-omagh",
@@ -15168,7 +15155,7 @@
 "metroCount": 2,
 "score": 0.7,
 "weighted": true,
-"rank": 1167
+"rank": 1166
 },
 {
 "slug": "east-falkland",
@@ -15181,7 +15168,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1168
+"rank": 1167
 },
 {
 "slug": "andijon-andizhan",
@@ -15194,7 +15181,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1169
+"rank": 1168
 },
 {
 "slug": "buxoro-bukhara",
@@ -15207,7 +15194,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1170
+"rank": 1169
 },
 {
 "slug": "aragua",
@@ -15220,7 +15207,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1171
+"rank": 1170
 },
 {
 "slug": "lara",
@@ -15233,7 +15220,7 @@
 "metroCount": 1,
 "score": 0.7,
 "weighted": true,
-"rank": 1172
+"rank": 1171
 },
 {
 "slug": "can-tho",
@@ -15245,6 +15232,19 @@
 "pop": 1235171,
 "metroCount": 1,
 "score": 0.7,
+"weighted": true,
+"rank": 1172
+},
+{
+"slug": "neath-port-talbot",
+"name": "Neath Port Talbot",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "District",
+"continent": "Europe",
+"pop": 142898,
+"metroCount": 1,
+"score": 0.69,
 "weighted": true,
 "rank": 1173
 },
@@ -16783,19 +16783,6 @@
 "rank": 1291
 },
 {
-"slug": "north-lincolnshire",
-"name": "North Lincolnshire",
-"country": "United Kingdom",
-"countrySlug": "united-kingdom",
-"type": "Unitary Authority",
-"continent": "Europe",
-"pop": 170087,
-"metroCount": 2,
-"score": 0.56,
-"weighted": true,
-"rank": 1292
-},
-{
 "slug": "yamanashi",
 "name": "Yamanashi",
 "country": "Japan",
@@ -16806,7 +16793,7 @@
 "metroCount": 2,
 "score": 0.55,
 "weighted": true,
-"rank": 1293
+"rank": 1292
 },
 {
 "slug": "masaya",
@@ -16819,7 +16806,7 @@
 "metroCount": 1,
 "score": 0.55,
 "weighted": true,
-"rank": 1294
+"rank": 1293
 },
 {
 "slug": "western-area-rural",
@@ -16830,6 +16817,19 @@
 "continent": "Africa",
 "pop": 662156,
 "metroCount": 1,
+"score": 0.55,
+"weighted": true,
+"rank": 1294
+},
+{
+"slug": "north-lincolnshire",
+"name": "North Lincolnshire",
+"country": "United Kingdom",
+"countrySlug": "united-kingdom",
+"type": "Unitary Authority",
+"continent": "Europe",
+"pop": 170087,
+"metroCount": 2,
 "score": 0.55,
 "weighted": true,
 "rank": 1295

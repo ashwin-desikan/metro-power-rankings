@@ -2036,7 +2036,7 @@
   },
   "blackpool": {
     "metros": 1,
-    "score": 1.43,
+    "score": 1.41,
     "weighted": true
   },
   "blaenau-gwent": {
@@ -2291,7 +2291,7 @@
   },
   "bournemouth-christchurch-and-poole": {
     "metros": 1,
-    "score": 2.51,
+    "score": 2.52,
     "weighted": true
   },
   "boyaca": {
@@ -2301,7 +2301,7 @@
   },
   "bracknell-forest": {
     "metros": 1,
-    "score": 1.39,
+    "score": 1.41,
     "weighted": true
   },
   "braga": {
@@ -2381,7 +2381,7 @@
   },
   "brighton-and-hove": {
     "metros": 1,
-    "score": 3.25,
+    "score": 3.24,
     "weighted": true
   },
   "brikama-western": {
@@ -2436,7 +2436,7 @@
   },
   "buckinghamshire": {
     "metros": 1,
-    "score": 6.16,
+    "score": 6.22,
     "weighted": true
   },
   "bucuresti": {
@@ -2661,7 +2661,7 @@
   },
   "cambridgeshire": {
     "metros": 2,
-    "score": 9.93,
+    "score": 9.92,
     "weighted": true
   },
   "campania": {
@@ -2781,7 +2781,7 @@
   },
   "cardiff": {
     "metros": 1,
-    "score": 10.04,
+    "score": 10.12,
     "weighted": true
   },
   "carinthia": {
@@ -2901,7 +2901,7 @@
   },
   "central-bedfordshire": {
     "metros": 1,
-    "score": 3.28,
+    "score": 3.4,
     "weighted": true
   },
   "central-bohemia": {
@@ -3211,12 +3211,12 @@
   },
   "cheshire-east": {
     "metros": 2,
-    "score": 2.75,
+    "score": 2.73,
     "weighted": true
   },
   "cheshire-west-and-chester": {
     "metros": 1,
-    "score": 3.74,
+    "score": 3.75,
     "weighted": true
   },
   "chhattisgarh": {
@@ -3426,7 +3426,7 @@
   },
   "city-of-kingston-upon-hull": {
     "metros": 1,
-    "score": 3.79,
+    "score": 3.76,
     "weighted": true
   },
   "clackmannanshire": {
@@ -3691,7 +3691,7 @@
   },
   "county-durham": {
     "metros": 2,
-    "score": 4.74,
+    "score": 4.72,
     "weighted": true
   },
   "county-of-herefordshire": {
@@ -4371,7 +4371,7 @@
   },
   "east-riding-of-yorkshire": {
     "metros": 2,
-    "score": 1.55,
+    "score": 1.59,
     "weighted": true
   },
   "east-sepik": {
@@ -4696,7 +4696,7 @@
   },
   "essex": {
     "metros": 5,
-    "score": 11.7,
+    "score": 11.78,
     "weighted": true
   },
   "est-burkina-faso": {
@@ -5591,12 +5591,12 @@
   },
   "greater-london": {
     "metros": 1,
-    "score": 97.99,
+    "score": 97.7,
     "weighted": true
   },
   "greater-manchester": {
     "metros": 1,
-    "score": 31.95,
+    "score": 32.07,
     "weighted": true
   },
   "greater-poland": {
@@ -5926,7 +5926,7 @@
   },
   "halton": {
     "metros": 1,
-    "score": 1.34,
+    "score": 1.33,
     "weighted": true
   },
   "hama": {
@@ -5966,7 +5966,7 @@
   },
   "hampshire": {
     "metros": 5,
-    "score": 9.98,
+    "score": 10.13,
     "weighted": true
   },
   "hanoi": {
@@ -6161,7 +6161,7 @@
   },
   "hertfordshire": {
     "metros": 1,
-    "score": 13.35,
+    "score": 13.29,
     "weighted": true
   },
   "hesse": {
@@ -7386,7 +7386,7 @@
   },
   "kent": {
     "metros": 5,
-    "score": 15.31,
+    "score": 15.44,
     "weighted": true
   },
   "kentucky": {
@@ -8171,7 +8171,7 @@
   },
   "lancashire": {
     "metros": 6,
-    "score": 8.58,
+    "score": 8.61,
     "weighted": true
   },
   "lang-son": {
@@ -8271,12 +8271,12 @@
   },
   "leicester": {
     "metros": 1,
-    "score": 4.24,
+    "score": 4.27,
     "weighted": true
   },
   "leicestershire": {
     "metros": 2,
-    "score": 4.26,
+    "score": 4.23,
     "weighted": true
   },
   "leinster": {
@@ -8721,7 +8721,7 @@
   },
   "luton": {
     "metros": 1,
-    "score": 2.51,
+    "score": 2.57,
     "weighted": true
   },
   "luxembourg-belgium": {
@@ -9381,7 +9381,7 @@
   },
   "medway": {
     "metros": 1,
-    "score": 3.12,
+    "score": 3.15,
     "weighted": true
   },
   "meemu-mulakatholhu": {
@@ -9456,7 +9456,7 @@
   },
   "merseyside": {
     "metros": 1,
-    "score": 14.89,
+    "score": 14.91,
     "weighted": true
   },
   "mersin": {
@@ -9546,7 +9546,7 @@
   },
   "middlesbrough": {
     "metros": 1,
-    "score": 0.81,
+    "score": 0.84,
     "weighted": true
   },
   "midlands": {
@@ -10306,7 +10306,7 @@
   },
   "neath-port-talbot": {
     "metros": 1,
-    "score": 0.71,
+    "score": 0.69,
     "weighted": true
   },
   "nebraska": {
@@ -10836,7 +10836,7 @@
   },
   "north-lincolnshire": {
     "metros": 2,
-    "score": 0.56,
+    "score": 0.55,
     "weighted": true
   },
   "north-maluku": {
@@ -10881,7 +10881,7 @@
   },
   "north-somerset": {
     "metros": 2,
-    "score": 1.26,
+    "score": 1.23,
     "weighted": true
   },
   "north-sulawesi": {
@@ -11076,12 +11076,12 @@
   },
   "nottingham": {
     "metros": 1,
-    "score": 4.83,
+    "score": 4.79,
     "weighted": true
   },
   "nottinghamshire": {
     "metros": 3,
-    "score": 7.54,
+    "score": 7.58,
     "weighted": true
   },
   "nouakchott": {
@@ -12586,7 +12586,7 @@
   },
   "reading": {
     "metros": 1,
-    "score": 1.94,
+    "score": 1.97,
     "weighted": true
   },
   "reclamation-areas": {
@@ -12611,7 +12611,7 @@
   },
   "redcar-and-cleveland": {
     "metros": 1,
-    "score": 0.77,
+    "score": 0.75,
     "weighted": true
   },
   "redonda": {
@@ -14126,7 +14126,7 @@
   },
   "slough": {
     "metros": 1,
-    "score": 1.76,
+    "score": 1.8,
     "weighted": true
   },
   "slovenian-carinthia": {
@@ -14371,7 +14371,7 @@
   },
   "south-gloucestershire": {
     "metros": 1,
-    "score": 3.21,
+    "score": 3.24,
     "weighted": true
   },
   "south-hamgyong": {
@@ -14481,7 +14481,7 @@
   },
   "southampton-england": {
     "metros": 1,
-    "score": 7.82,
+    "score": 7.8,
     "weighted": true
   },
   "southeast": {
@@ -14496,7 +14496,7 @@
   },
   "southend-on-sea": {
     "metros": 1,
-    "score": 2.01,
+    "score": 1.99,
     "weighted": true
   },
   "southern-botswana": {
@@ -14846,7 +14846,7 @@
   },
   "stoke-on-trent": {
     "metros": 1,
-    "score": 1.41,
+    "score": 1.42,
     "weighted": true
   },
   "straseni": {
@@ -14946,7 +14946,7 @@
   },
   "suffolk": {
     "metros": 6,
-    "score": 4.27,
+    "score": 4.28,
     "weighted": true
   },
   "sughd": {
@@ -14971,7 +14971,7 @@
   },
   "surrey": {
     "metros": 1,
-    "score": 13.4,
+    "score": 13.42,
     "weighted": true
   },
   "surxondaryo-surkhandarya": {
@@ -15021,7 +15021,7 @@
   },
   "swansea": {
     "metros": 1,
-    "score": 1.19,
+    "score": 1.21,
     "weighted": true
   },
   "swietokrzyskie": {
@@ -15456,7 +15456,7 @@
   },
   "the-vale-of-glamorgan": {
     "metros": 1,
-    "score": 3.66,
+    "score": 3.58,
     "weighted": true
   },
   "thessaly": {
@@ -15491,7 +15491,7 @@
   },
   "thurrock": {
     "metros": 1,
-    "score": 1.96,
+    "score": 1.95,
     "weighted": true
   },
   "tianjin": {
@@ -15951,7 +15951,7 @@
   },
   "tyne-and-wear": {
     "metros": 2,
-    "score": 14.76,
+    "score": 14.78,
     "weighted": true
   },
   "tyrol": {
@@ -16651,7 +16651,7 @@
   },
   "warrington": {
     "metros": 1,
-    "score": 2.21,
+    "score": 2.18,
     "weighted": true
   },
   "warwick": {
@@ -16661,7 +16661,7 @@
   },
   "warwickshire": {
     "metros": 3,
-    "score": 4.24,
+    "score": 4.25,
     "weighted": true
   },
   "washington": {
@@ -16781,7 +16781,7 @@
   },
   "west-midlands": {
     "metros": 2,
-    "score": 24.34,
+    "score": 24.44,
     "weighted": true
   },
   "west-new-britain": {
@@ -16831,7 +16831,7 @@
   },
   "west-sussex": {
     "metros": 5,
-    "score": 6.94,
+    "score": 6.98,
     "weighted": true
   },
   "west-virginia": {
@@ -16981,7 +16981,7 @@
   },
   "wokingham": {
     "metros": 1,
-    "score": 1.98,
+    "score": 2.01,
     "weighted": true
   },
   "woleu-ntem": {
@@ -16996,7 +16996,7 @@
   },
   "worcestershire": {
     "metros": 4,
-    "score": 4.28,
+    "score": 4.26,
     "weighted": true
   },
   "worodougou": {
