@@ -168,10 +168,10 @@
   "confidence": "Review",
   "bb_top10": 70,
   "bb_no1": 15,
-  "bb_score": 31.91,
+  "bb_score": 31.93,
   "uk_top10": 34,
   "uk_no1": 7,
-  "uk_score": 13.11,
+  "uk_score": 13.09,
   "album_raw": 259.5,
   "album_est": false,
   "prestige": 55.21,
@@ -451,7 +451,7 @@
     "album": "1989"
    }
   ],
-  "combined": 397.04,
+  "combined": 397.08,
   "active": "2008-2026",
   "peak_decade": "2020s"
  },
@@ -468,7 +468,7 @@
   "bb_score": 13.96,
   "uk_top10": 49,
   "uk_no1": 7,
-  "uk_score": 12.99,
+  "uk_score": 12.96,
   "album_raw": 335.9,
   "album_est": false,
   "prestige": 24.74,
@@ -558,7 +558,7 @@
     "album": "Bad"
    }
   ],
-  "combined": 315.76,
+  "combined": 315.73,
   "active": "1971-2026",
   "peak_decade": "1980s"
  },
@@ -1112,10 +1112,10 @@
   "confidence": "High",
   "bb_top10": 88,
   "bb_no1": 14,
-  "bb_score": 27.5,
+  "bb_score": 27.42,
   "uk_top10": 49,
   "uk_no1": 6,
-  "uk_score": 11.37,
+  "uk_score": 11.35,
   "album_raw": 123.0,
   "album_est": false,
   "prestige": 11.67,
@@ -1184,7 +1184,7 @@
     "album": "If You're Reading This It's Too Late"
    }
   ],
-  "combined": 195.68,
+  "combined": 195.44,
   "active": "2009-2026",
   "peak_decade": "2020s"
  },
@@ -1516,149 +1516,6 @@
   "peak_decade": "1980s"
  },
  {
-  "name": "Bruno Mars",
-  "slug": "bruno-mars",
-  "metro": "Honolulu",
-  "metro_slug": "honolulu",
-  "country": "USA",
-  "city_of_origin": "Honolulu, HI",
-  "confidence": "High",
-  "bb_top10": 22,
-  "bb_no1": 10,
-  "bb_score": 18.84,
-  "uk_top10": 14,
-  "uk_no1": 5,
-  "uk_score": 6.08,
-  "album_raw": 77.5,
-  "album_est": false,
-  "prestige": 29.75,
-  "gram_wins": 6,
-  "gram_noms": 7,
-  "gram_awards": [
-   {
-    "year": 2016,
-    "award": "Record of the Year",
-    "work": "Uptown Funk"
-   },
-   {
-    "year": 2018,
-    "award": "Album of the Year",
-    "work": "24K Magic"
-   },
-   {
-    "year": 2018,
-    "award": "Record of the Year",
-    "work": "24K Magic"
-   },
-   {
-    "year": 2018,
-    "award": "Song of the Year",
-    "work": "That's What I Like"
-   },
-   {
-    "year": 2022,
-    "award": "Record of the Year",
-    "work": "Leave the Door Open"
-   },
-   {
-    "year": 2022,
-    "award": "Song of the Year",
-    "work": "Leave the Door Open"
-   }
-  ],
-  "gram_nom_awards": [
-   {
-    "year": 2011,
-    "award": "Record of the Year",
-    "work": "Nothin' on You"
-   },
-   {
-    "year": 2012,
-    "award": "Album of the Year",
-    "work": "Doo-Wops & Hooligans"
-   },
-   {
-    "year": 2012,
-    "award": "Record of the Year",
-    "work": "Grenade"
-   },
-   {
-    "year": 2012,
-    "award": "Song of the Year",
-    "work": "Grenade"
-   },
-   {
-    "year": 2014,
-    "award": "Record of the Year",
-    "work": "Locked Out of Heaven"
-   },
-   {
-    "year": 2014,
-    "award": "Song of the Year",
-    "work": "Locked Out of Heaven"
-   },
-   {
-    "year": 2025,
-    "award": "Song of the Year",
-    "work": "Die With a Smile"
-   }
-  ],
-  "other_awards": [
-   {
-    "award": "AMA",
-    "year": 2017,
-    "category": "Artist of the Year",
-    "work": null
-   },
-   {
-    "award": "AMA",
-    "year": 2025,
-    "category": "Collaboration of the Year",
-    "work": "Die with a Smile"
-   },
-   {
-    "award": "BRIT",
-    "year": 2012,
-    "category": "International Male Solo Artist",
-    "work": null
-   },
-   {
-    "award": "BRIT",
-    "year": 2014,
-    "category": "International Male Solo Artist",
-    "work": null
-   },
-   {
-    "award": "BRIT",
-    "year": 2022,
-    "category": "International Group",
-    "work": null
-   },
-   {
-    "award": "EMA",
-    "year": 2011,
-    "category": "Best New",
-    "work": null
-   },
-   {
-    "award": "EMA",
-    "year": 2013,
-    "category": "Best Song",
-    "work": "Locked Out of Heaven"
-   },
-   {
-    "award": "VMA",
-    "year": 2025,
-    "category": "Song of the Year",
-    "work": "APT."
-   }
-  ],
-  "rs_albums": [],
-  "combined": 180.48,
-  "active": "2010-2026",
-  "peak_decade": "2010s"
- },
- {
   "name": "Frank Sinatra",
   "slug": "frank-sinatra",
   "metro": "New York",
@@ -1796,6 +1653,149 @@
   "combined": 180.41,
   "active": "1959-1986",
   "peak_decade": "1960s"
+ },
+ {
+  "name": "Bruno Mars",
+  "slug": "bruno-mars",
+  "metro": "Honolulu",
+  "metro_slug": "honolulu",
+  "country": "USA",
+  "city_of_origin": "Honolulu, HI",
+  "confidence": "High",
+  "bb_top10": 22,
+  "bb_no1": 10,
+  "bb_score": 18.78,
+  "uk_top10": 14,
+  "uk_no1": 5,
+  "uk_score": 6.07,
+  "album_raw": 77.5,
+  "album_est": false,
+  "prestige": 29.75,
+  "gram_wins": 6,
+  "gram_noms": 7,
+  "gram_awards": [
+   {
+    "year": 2016,
+    "award": "Record of the Year",
+    "work": "Uptown Funk"
+   },
+   {
+    "year": 2018,
+    "award": "Album of the Year",
+    "work": "24K Magic"
+   },
+   {
+    "year": 2018,
+    "award": "Record of the Year",
+    "work": "24K Magic"
+   },
+   {
+    "year": 2018,
+    "award": "Song of the Year",
+    "work": "That's What I Like"
+   },
+   {
+    "year": 2022,
+    "award": "Record of the Year",
+    "work": "Leave the Door Open"
+   },
+   {
+    "year": 2022,
+    "award": "Song of the Year",
+    "work": "Leave the Door Open"
+   }
+  ],
+  "gram_nom_awards": [
+   {
+    "year": 2011,
+    "award": "Record of the Year",
+    "work": "Nothin' on You"
+   },
+   {
+    "year": 2012,
+    "award": "Album of the Year",
+    "work": "Doo-Wops & Hooligans"
+   },
+   {
+    "year": 2012,
+    "award": "Record of the Year",
+    "work": "Grenade"
+   },
+   {
+    "year": 2012,
+    "award": "Song of the Year",
+    "work": "Grenade"
+   },
+   {
+    "year": 2014,
+    "award": "Record of the Year",
+    "work": "Locked Out of Heaven"
+   },
+   {
+    "year": 2014,
+    "award": "Song of the Year",
+    "work": "Locked Out of Heaven"
+   },
+   {
+    "year": 2025,
+    "award": "Song of the Year",
+    "work": "Die With a Smile"
+   }
+  ],
+  "other_awards": [
+   {
+    "award": "AMA",
+    "year": 2017,
+    "category": "Artist of the Year",
+    "work": null
+   },
+   {
+    "award": "AMA",
+    "year": 2025,
+    "category": "Collaboration of the Year",
+    "work": "Die with a Smile"
+   },
+   {
+    "award": "BRIT",
+    "year": 2012,
+    "category": "International Male Solo Artist",
+    "work": null
+   },
+   {
+    "award": "BRIT",
+    "year": 2014,
+    "category": "International Male Solo Artist",
+    "work": null
+   },
+   {
+    "award": "BRIT",
+    "year": 2022,
+    "category": "International Group",
+    "work": null
+   },
+   {
+    "award": "EMA",
+    "year": 2011,
+    "category": "Best New",
+    "work": null
+   },
+   {
+    "award": "EMA",
+    "year": 2013,
+    "category": "Best Song",
+    "work": "Locked Out of Heaven"
+   },
+   {
+    "award": "VMA",
+    "year": 2025,
+    "category": "Song of the Year",
+    "work": "APT."
+   }
+  ],
+  "rs_albums": [],
+  "combined": 180.29,
+  "active": "2010-2026",
+  "peak_decade": "2010s"
  },
  {
   "name": "The Rolling Stones",
@@ -2498,7 +2498,7 @@
   "bb_score": 16.54,
   "uk_top10": 27,
   "uk_no1": 8,
-  "uk_score": 9.37,
+  "uk_score": 9.36,
   "album_raw": 99.8,
   "album_est": false,
   "prestige": 13.33,
@@ -2627,7 +2627,7 @@
    }
   ],
   "rs_albums": [],
-  "combined": 150.88,
+  "combined": 150.87,
   "active": "2010-2026",
   "peak_decade": "2010s"
  },
@@ -4158,10 +4158,10 @@
   "confidence": "High",
   "bb_top10": 21,
   "bb_no1": 10,
-  "bb_score": 13.63,
+  "bb_score": 13.65,
   "uk_top10": 25,
   "uk_no1": 8,
-  "uk_score": 9.68,
+  "uk_score": 9.7,
   "album_raw": 75.6,
   "album_est": false,
   "prestige": 7.05,
@@ -4231,7 +4231,7 @@
    }
   ],
   "rs_albums": [],
-  "combined": 112.89,
+  "combined": 112.95,
   "active": "2013-2026",
   "peak_decade": "2010s"
  },
@@ -4760,10 +4760,10 @@
   "confidence": "High",
   "bb_top10": 9,
   "bb_no1": 6,
-  "bb_score": 4.59,
+  "bb_score": 4.57,
   "uk_top10": 5,
   "uk_no1": 0,
-  "uk_score": 0.98,
+  "uk_score": 0.97,
   "album_raw": 120.2,
   "album_est": false,
   "prestige": 4.0,
@@ -4822,7 +4822,7 @@
    }
   ],
   "rs_albums": [],
-  "combined": 96.43,
+  "combined": 96.37,
   "active": "2018-2026",
   "peak_decade": "2020s"
  },
@@ -5925,7 +5925,7 @@
   "bb_score": 3.16,
   "uk_top10": 1,
   "uk_no1": 0,
-  "uk_score": 0.23,
+  "uk_score": 0.22,
   "album_raw": 81.8,
   "album_est": false,
   "prestige": 9.72,
@@ -5973,7 +5973,7 @@
     "album": "X 100pre"
    }
   ],
-  "combined": 82.11,
+  "combined": 82.1,
   "active": "2018-2026",
   "peak_decade": "2020s"
  },
@@ -6336,6 +6336,46 @@
   "peak_decade": "2000s"
  },
  {
+  "name": "Cliff Richard",
+  "slug": "cliff-richard",
+  "metro": "London",
+  "metro_slug": "london",
+  "country": "",
+  "city_of_origin": "London",
+  "confidence": "Est",
+  "bb_top10": 3,
+  "bb_no1": 0,
+  "bb_score": 0.57,
+  "uk_top10": 40,
+  "uk_no1": 6,
+  "uk_score": 11.53,
+  "album_raw": 100.0,
+  "album_est": true,
+  "prestige": 1.6,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [
+   {
+    "award": "BRIT",
+    "year": 1977,
+    "category": "British Male Solo Artist",
+    "work": null
+   },
+   {
+    "award": "BRIT",
+    "year": 1982,
+    "category": "British Male Solo Artist",
+    "work": null
+   }
+  ],
+  "rs_albums": [],
+  "combined": 77.09,
+  "active": "1961-2008",
+  "peak_decade": "1980s"
+ },
+ {
   "name": "Olivia Rodrigo",
   "slug": "olivia-rodrigo",
   "metro": "Los Angeles",
@@ -6345,10 +6385,10 @@
   "confidence": "Review",
   "bb_top10": 10,
   "bb_no1": 4,
-  "bb_score": 7.17,
+  "bb_score": 7.12,
   "uk_top10": 11,
   "uk_no1": 4,
-  "uk_score": 5.64,
+  "uk_score": 5.65,
   "album_raw": 34.1,
   "album_est": false,
   "prestige": 12.32,
@@ -6419,49 +6459,9 @@
     "album": "Sour"
    }
   ],
-  "combined": 77.17,
+  "combined": 77.04,
   "active": "2021-2026",
   "peak_decade": "2020s"
- },
- {
-  "name": "Cliff Richard",
-  "slug": "cliff-richard",
-  "metro": "London",
-  "metro_slug": "london",
-  "country": "",
-  "city_of_origin": "London",
-  "confidence": "Est",
-  "bb_top10": 3,
-  "bb_no1": 0,
-  "bb_score": 0.57,
-  "uk_top10": 40,
-  "uk_no1": 6,
-  "uk_score": 11.53,
-  "album_raw": 100.0,
-  "album_est": true,
-  "prestige": 1.6,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [
-   {
-    "award": "BRIT",
-    "year": 1977,
-    "category": "British Male Solo Artist",
-    "work": null
-   },
-   {
-    "award": "BRIT",
-    "year": 1982,
-    "category": "British Male Solo Artist",
-    "work": null
-   }
-  ],
-  "rs_albums": [],
-  "combined": 77.09,
-  "active": "1961-2008",
-  "peak_decade": "1980s"
  },
  {
   "name": "TLC",
@@ -7533,10 +7533,10 @@
   "confidence": "Review",
   "bb_top10": 9,
   "bb_no1": 3,
-  "bb_score": 5.58,
+  "bb_score": 5.55,
   "uk_top10": 10,
   "uk_no1": 4,
-  "uk_score": 5.78,
+  "uk_score": 5.74,
   "album_raw": 38.5,
   "album_est": false,
   "prestige": 9.46,
@@ -7587,7 +7587,7 @@
     "album": "Harry's House"
    }
   ],
-  "combined": 68.33,
+  "combined": 68.22,
   "active": "2017-2026",
   "peak_decade": "2020s"
  },
@@ -9217,6 +9217,33 @@
   "peak_decade": "1980s"
  },
  {
+  "name": "Morgan Wallen",
+  "slug": "morgan-wallen",
+  "metro": "Knoxville",
+  "metro_slug": "knoxville",
+  "country": "USA",
+  "city_of_origin": "Sneedville, TN",
+  "confidence": "High",
+  "bb_top10": 20,
+  "bb_no1": 4,
+  "bb_score": 10.32,
+  "uk_top10": 1,
+  "uk_no1": 0,
+  "uk_score": 0.39,
+  "album_raw": 42.1,
+  "album_est": false,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 56.63,
+  "active": "2020-2026",
+  "peak_decade": "2020s"
+ },
+ {
   "name": "Neil Young",
   "slug": "neil-young",
   "metro": "Winnipeg",
@@ -9396,33 +9423,6 @@
   "peak_decade": "1960s"
  },
  {
-  "name": "Morgan Wallen",
-  "slug": "morgan-wallen",
-  "metro": "Knoxville",
-  "metro_slug": "knoxville",
-  "country": "USA",
-  "city_of_origin": "Sneedville, TN",
-  "confidence": "High",
-  "bb_top10": 19,
-  "bb_no1": 4,
-  "bb_score": 10.1,
-  "uk_top10": 1,
-  "uk_no1": 0,
-  "uk_score": 0.39,
-  "album_raw": 42.1,
-  "album_est": false,
-  "prestige": 0.0,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 55.97,
-  "active": "2020-2026",
-  "peak_decade": "2020s"
- },
- {
   "name": "Sheryl Crow",
   "slug": "sheryl-crow",
   "metro": "Kennett (MO)",
@@ -9599,7 +9599,7 @@
   "bb_score": 1.32,
   "uk_top10": 7,
   "uk_no1": 2,
-  "uk_score": 2.15,
+  "uk_score": 2.17,
   "album_raw": 80.7,
   "album_est": false,
   "prestige": 0.36,
@@ -9614,7 +9614,7 @@
     "album": "\u00bfD\u00f3nde Est\u00e1n los Ladrones?"
    }
   ],
-  "combined": 55.42,
+  "combined": 55.44,
   "active": "2001-2026",
   "peak_decade": "2000s"
  },
@@ -10372,7 +10372,7 @@
   "bb_score": 0.11,
   "uk_top10": 26,
   "uk_no1": 8,
-  "uk_score": 6.51,
+  "uk_score": 6.5,
   "album_raw": 51.6,
   "album_est": false,
   "prestige": 5.42,
@@ -10416,7 +10416,7 @@
     "album": "Definitely Maybe"
    }
   ],
-  "combined": 50.79,
+  "combined": 50.78,
   "active": "1994-2026",
   "peak_decade": "2000s"
  },
@@ -11788,7 +11788,7 @@
   "bb_score": 6.51,
   "uk_top10": 13,
   "uk_no1": 1,
-  "uk_score": 2.78,
+  "uk_score": 2.77,
   "album_raw": 31.5,
   "album_est": false,
   "prestige": 1.2,
@@ -11811,7 +11811,7 @@
    }
   ],
   "rs_albums": [],
-  "combined": 44.09,
+  "combined": 44.08,
   "active": "2010-2026",
   "peak_decade": "2010s"
  },
@@ -19869,7 +19869,7 @@
   "confidence": "High",
   "bb_top10": 2,
   "bb_no1": 0,
-  "bb_score": 2.2,
+  "bb_score": 2.19,
   "uk_top10": 4,
   "uk_no1": 2,
   "uk_score": 3.35,
@@ -19901,7 +19901,7 @@
    }
   ],
   "rs_albums": [],
-  "combined": 20.02,
+  "combined": 20.01,
   "active": "2025-2026",
   "peak_decade": "2020s"
  },
@@ -20343,7 +20343,7 @@
   "bb_score": 0.23,
   "uk_top10": 1,
   "uk_no1": 0,
-  "uk_score": 0.58,
+  "uk_score": 0.56,
   "album_raw": 8.6,
   "album_est": false,
   "prestige": 5.12,
@@ -20401,7 +20401,7 @@
     "album": "Currents"
    }
   ],
-  "combined": 18.7,
+  "combined": 18.69,
   "active": "2026-2026",
   "peak_decade": "2020s"
  },
@@ -21588,7 +21588,7 @@
   "bb_score": 2.37,
   "uk_top10": 4,
   "uk_no1": 1,
-  "uk_score": 1.86,
+  "uk_score": 1.85,
   "album_raw": 6.8,
   "album_est": false,
   "prestige": 1.2,
@@ -21611,7 +21611,7 @@
    }
   ],
   "rs_albums": [],
-  "combined": 15.9,
+  "combined": 15.89,
   "active": "2025-2026",
   "peak_decade": "2020s"
  },
@@ -25901,46 +25901,6 @@
   "peak_decade": "1960s"
  },
  {
-  "name": "Zara Larsson",
-  "slug": "zara-larsson",
-  "metro": "Stockholm",
-  "metro_slug": "stockholm",
-  "country": "Sweden",
-  "city_of_origin": "",
-  "confidence": "High",
-  "bb_top10": 1,
-  "bb_no1": 0,
-  "bb_score": 0.17,
-  "uk_top10": 7,
-  "uk_no1": 1,
-  "uk_score": 3.27,
-  "album_raw": 8.8,
-  "album_est": false,
-  "prestige": 0.75,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [
-   {
-    "award": "AMA",
-    "year": 2026,
-    "category": "Collaboration of the Year",
-    "work": "Stateside"
-   },
-   {
-    "award": "EMA",
-    "year": 2016,
-    "category": "Best New",
-    "work": null
-   }
-  ],
-  "rs_albums": [],
-  "combined": 10.88,
-  "active": "2016-2026",
-  "peak_decade": "2010s"
- },
- {
   "name": "Shaggy",
   "slug": "shaggy",
   "metro": "Kingston",
@@ -25975,6 +25935,46 @@
   "peak_decade": "2000s"
  },
  {
+  "name": "Zara Larsson",
+  "slug": "zara-larsson",
+  "metro": "Stockholm",
+  "metro_slug": "stockholm",
+  "country": "Sweden",
+  "city_of_origin": "",
+  "confidence": "High",
+  "bb_top10": 1,
+  "bb_no1": 0,
+  "bb_score": 0.16,
+  "uk_top10": 7,
+  "uk_no1": 1,
+  "uk_score": 3.24,
+  "album_raw": 8.8,
+  "album_est": false,
+  "prestige": 0.75,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [
+   {
+    "award": "AMA",
+    "year": 2026,
+    "category": "Collaboration of the Year",
+    "work": "Stateside"
+   },
+   {
+    "award": "EMA",
+    "year": 2016,
+    "category": "Best New",
+    "work": null
+   }
+  ],
+  "rs_albums": [],
+  "combined": 10.83,
+  "active": "2016-2026",
+  "peak_decade": "2010s"
+ },
+ {
   "name": "The Bangles",
   "slug": "the-bangles",
   "metro": "Los Angeles",
@@ -26007,39 +26007,6 @@
   "combined": 10.8,
   "active": "1986-1989",
   "peak_decade": "1980s"
- },
- {
-  "name": "Judy Garland",
-  "slug": "judy-garland",
-  "metro": "Los Angeles",
-  "metro_slug": "los-angeles",
-  "country": "USA",
-  "city_of_origin": "Los Angeles, CA (career; b. Grand Rapids, MN)",
-  "confidence": "High",
-  "bb_top10": 0,
-  "bb_no1": 0,
-  "bb_score": 0.0,
-  "uk_top10": 0,
-  "uk_no1": 0,
-  "uk_score": 0.0,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 4.5,
-  "gram_wins": 1,
-  "gram_noms": 0,
-  "gram_awards": [
-   {
-    "year": 1962,
-    "award": "Album of the Year",
-    "work": "Judy at Carnegie Hall"
-   }
-  ],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 10.8,
-  "active": "1962-1962",
-  "peak_decade": "1960s"
  },
  {
   "name": "Styx",
@@ -26640,39 +26607,6 @@
   "peak_decade": "1960s"
  },
  {
-  "name": "Noah Kahan",
-  "slug": "noah-kahan",
-  "metro": "Boston",
-  "metro_slug": "boston",
-  "country": "USA",
-  "city_of_origin": "Vermont",
-  "confidence": "Review",
-  "bb_top10": 3,
-  "bb_no1": 0,
-  "bb_score": 0.29,
-  "uk_top10": 3,
-  "uk_no1": 1,
-  "uk_score": 1.62,
-  "album_raw": 10.3,
-  "album_est": false,
-  "prestige": 0.7,
-  "gram_wins": 0,
-  "gram_noms": 1,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 2024,
-    "award": "Best New Artist",
-    "work": null
-   }
-  ],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 10.33,
-  "active": "2023-2026",
-  "peak_decade": "2020s"
- },
- {
   "name": "Gracie Abrams",
   "slug": "gracie-abrams",
   "metro": "Los Angeles",
@@ -26776,6 +26710,39 @@
   "combined": 10.31,
   "active": "1982-1987",
   "peak_decade": "1980s"
+ },
+ {
+  "name": "Noah Kahan",
+  "slug": "noah-kahan",
+  "metro": "Boston",
+  "metro_slug": "boston",
+  "country": "USA",
+  "city_of_origin": "Vermont",
+  "confidence": "Review",
+  "bb_top10": 3,
+  "bb_no1": 0,
+  "bb_score": 0.28,
+  "uk_top10": 3,
+  "uk_no1": 1,
+  "uk_score": 1.62,
+  "album_raw": 10.3,
+  "album_est": false,
+  "prestige": 0.7,
+  "gram_wins": 0,
+  "gram_noms": 1,
+  "gram_awards": [],
+  "gram_nom_awards": [
+   {
+    "year": 2024,
+    "award": "Best New Artist",
+    "work": null
+   }
+  ],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 10.31,
+  "active": "2023-2026",
+  "peak_decade": "2020s"
  },
  {
   "name": "Jody Watley",
@@ -27589,7 +27556,7 @@
   "gram_nom_awards": [],
   "other_awards": [],
   "rs_albums": [],
-  "combined": 9.63,
+  "combined": 9.61,
   "active": "2013-2026",
   "peak_decade": "2020s"
  },
@@ -29442,10 +29409,10 @@
   "confidence": "Auto",
   "bb_top10": 3,
   "bb_no1": 1,
-  "bb_score": 2.51,
+  "bb_score": 2.47,
   "uk_top10": 1,
   "uk_no1": 0,
-  "uk_score": 0.25,
+  "uk_score": 0.35,
   "album_raw": 1.0,
   "album_est": true,
   "prestige": 0.0,
@@ -29455,7 +29422,7 @@
   "gram_nom_awards": [],
   "other_awards": [],
   "rs_albums": [],
-  "combined": 8.38,
+  "combined": 8.37,
   "active": "2026-2026",
   "peak_decade": "2020s"
  },
@@ -33698,39 +33665,6 @@
   "peak_decade": "1990s"
  },
  {
-  "name": "The Tony Rich Project",
-  "slug": "the-tony-rich-project",
-  "metro": "Detroit",
-  "metro_slug": "detroit",
-  "country": "USA",
-  "city_of_origin": "Detroit, Michigan",
-  "confidence": "High",
-  "bb_top10": 1,
-  "bb_no1": 0,
-  "bb_score": 1.52,
-  "uk_top10": 0,
-  "uk_no1": 0,
-  "uk_score": 0.0,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.7,
-  "gram_wins": 0,
-  "gram_noms": 1,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 1997,
-    "award": "Best New Artist",
-    "work": null
-   }
-  ],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 6.24,
-  "active": "1996-1996",
-  "peak_decade": "1990s"
- },
- {
   "name": "Duane Eddy",
   "slug": "duane-eddy",
   "metro": "Phoenix",
@@ -37039,105 +36973,6 @@
   "peak_decade": "1960s"
  },
  {
-  "name": "Robert Goulet",
-  "slug": "robert-goulet",
-  "metro": "Edmonton",
-  "metro_slug": "edmonton",
-  "country": "Canada",
-  "city_of_origin": "Edmonton, AB (raised; b. Lawrence, MA)",
-  "confidence": "High",
-  "bb_top10": 0,
-  "bb_no1": 0,
-  "bb_score": 0.0,
-  "uk_top10": 0,
-  "uk_no1": 0,
-  "uk_score": 0.0,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 2.1,
-  "gram_wins": 1,
-  "gram_noms": 0,
-  "gram_awards": [
-   {
-    "year": 1963,
-    "award": "Best New Artist",
-    "work": null
-   }
-  ],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 5.04,
-  "active": "1963-1963",
-  "peak_decade": "1960s"
- },
- {
-  "name": "The Swingle Singers",
-  "slug": "the-swingle-singers",
-  "metro": "Paris",
-  "metro_slug": "paris",
-  "country": "France",
-  "city_of_origin": "Paris (vocal group formed)",
-  "confidence": "High",
-  "bb_top10": 0,
-  "bb_no1": 0,
-  "bb_score": 0.0,
-  "uk_top10": 0,
-  "uk_no1": 0,
-  "uk_score": 0.0,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 2.1,
-  "gram_wins": 1,
-  "gram_noms": 0,
-  "gram_awards": [
-   {
-    "year": 1964,
-    "award": "Best New Artist",
-    "work": null
-   }
-  ],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 5.04,
-  "active": "1964-1964",
-  "peak_decade": "1960s"
- },
- {
-  "name": "Shelby Lynne",
-  "slug": "shelby-lynne",
-  "metro": "Mobile",
-  "metro_slug": "mobile",
-  "country": "USA",
-  "city_of_origin": "Jackson, AL (raised)",
-  "confidence": "High",
-  "bb_top10": 0,
-  "bb_no1": 0,
-  "bb_score": 0.0,
-  "uk_top10": 0,
-  "uk_no1": 0,
-  "uk_score": 0.0,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 2.1,
-  "gram_wins": 1,
-  "gram_noms": 0,
-  "gram_awards": [
-   {
-    "year": 2001,
-    "award": "Best New Artist",
-    "work": null
-   }
-  ],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 5.04,
-  "active": "2001-2001",
-  "peak_decade": "2000s"
- },
- {
   "name": "Zac Brown Band",
   "slug": "zac-brown-band",
   "metro": "Atlanta",
@@ -38742,6 +38577,33 @@
   "combined": 4.57,
   "active": "1985-1986",
   "peak_decade": "1980s"
+ },
+ {
+  "name": "The Tony Rich Project",
+  "slug": "the-tony-rich-project",
+  "metro": "Detroit",
+  "metro_slug": "detroit",
+  "country": "USA",
+  "city_of_origin": "Detroit, Michigan",
+  "confidence": "High",
+  "bb_top10": 1,
+  "bb_no1": 0,
+  "bb_score": 1.52,
+  "uk_top10": 0,
+  "uk_no1": 0,
+  "uk_score": 0.0,
+  "album_raw": 0.0,
+  "album_est": false,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 4.56,
+  "active": "1996-1996",
+  "peak_decade": "1990s"
  },
  {
   "name": "Jason Mraz",
@@ -40769,39 +40631,6 @@
   "peak_decade": "1990s"
  },
  {
-  "name": "Sombr",
-  "slug": "sombr",
-  "metro": "New York",
-  "metro_slug": "new-york",
-  "country": "USA",
-  "city_of_origin": "",
-  "confidence": "Auto",
-  "bb_top10": 1,
-  "bb_no1": 0,
-  "bb_score": 0.39,
-  "uk_top10": 4,
-  "uk_no1": 0,
-  "uk_score": 1.27,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.7,
-  "gram_wins": 0,
-  "gram_noms": 1,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 2026,
-    "award": "Best New Artist",
-    "work": null
-   }
-  ],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 4.11,
-  "active": "2025-2026",
-  "peak_decade": "2020s"
- },
- {
   "name": "Jan and Dean",
   "slug": "jan-and-dean",
   "metro": "Los Angeles",
@@ -40854,6 +40683,39 @@
   "combined": 4.1,
   "active": "1996-1996",
   "peak_decade": "1990s"
+ },
+ {
+  "name": "Sombr",
+  "slug": "sombr",
+  "metro": "New York",
+  "metro_slug": "new-york",
+  "country": "USA",
+  "city_of_origin": "",
+  "confidence": "Auto",
+  "bb_top10": 1,
+  "bb_no1": 0,
+  "bb_score": 0.39,
+  "uk_top10": 4,
+  "uk_no1": 0,
+  "uk_score": 1.25,
+  "album_raw": 0.0,
+  "album_est": false,
+  "prestige": 0.7,
+  "gram_wins": 0,
+  "gram_noms": 1,
+  "gram_awards": [],
+  "gram_nom_awards": [
+   {
+    "year": 2026,
+    "award": "Best New Artist",
+    "work": null
+   }
+  ],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 4.1,
+  "active": "2025-2026",
+  "peak_decade": "2020s"
  },
  {
   "name": "C+C Music Factory",
@@ -41519,40 +41381,6 @@
   "peak_decade": "2020s"
  },
  {
-  "name": "PinkPantheress",
-  "slug": "pinkpantheress",
-  "metro": "Bristol",
-  "metro_slug": "bristol",
-  "country": "UK",
-  "city_of_origin": "Bristol",
-  "confidence": "Review",
-  "bb_top10": 2,
-  "bb_no1": 0,
-  "bb_score": 0.71,
-  "uk_top10": 2,
-  "uk_no1": 0,
-  "uk_score": 1.21,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.25,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [
-   {
-    "award": "AMA",
-    "year": 2026,
-    "category": "Collaboration of the Year",
-    "work": "Stateside"
-   }
-  ],
-  "rs_albums": [],
-  "combined": 3.94,
-  "active": "2023-2026",
-  "peak_decade": "2020s"
- },
- {
   "name": "Steve Lawrence",
   "slug": "steve-lawrence",
   "metro": "New York",
@@ -41751,6 +41579,40 @@
   "combined": 3.91,
   "active": "1991-1991",
   "peak_decade": "1990s"
+ },
+ {
+  "name": "PinkPantheress",
+  "slug": "pinkpantheress",
+  "metro": "Bristol",
+  "metro_slug": "bristol",
+  "country": "UK",
+  "city_of_origin": "Bristol",
+  "confidence": "Review",
+  "bb_top10": 2,
+  "bb_no1": 0,
+  "bb_score": 0.7,
+  "uk_top10": 2,
+  "uk_no1": 0,
+  "uk_score": 1.2,
+  "album_raw": 0.0,
+  "album_est": false,
+  "prestige": 0.25,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [
+   {
+    "award": "AMA",
+    "year": 2026,
+    "category": "Collaboration of the Year",
+    "work": "Stateside"
+   }
+  ],
+  "rs_albums": [],
+  "combined": 3.91,
+  "active": "2023-2026",
+  "peak_decade": "2020s"
  },
  {
   "name": "Rick Nelson",
@@ -49293,40 +49155,6 @@
   "peak_decade": "1990s"
  },
  {
-  "name": "The Chemical Brothers",
-  "slug": "the-chemical-brothers",
-  "metro": "Manchester",
-  "metro_slug": "manchester",
-  "country": "UK",
-  "city_of_origin": "",
-  "confidence": "Auto",
-  "bb_top10": 0,
-  "bb_no1": 0,
-  "bb_score": 0.0,
-  "uk_top10": 8,
-  "uk_no1": 2,
-  "uk_score": 1.6,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.5,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [
-   {
-    "award": "EMA",
-    "year": 2005,
-    "category": "Best Video",
-    "work": "Believe"
-   }
-  ],
-  "rs_albums": [],
-  "combined": 2.8,
-  "active": "1996-2026",
-  "peak_decade": "1990s"
- },
- {
   "name": "Manfred Mann's Earth Band",
   "slug": "manfred-mann-s-earth-band",
   "metro": "London",
@@ -49406,6 +49234,40 @@
   "combined": 2.79,
   "active": "2022-2022",
   "peak_decade": "2020s"
+ },
+ {
+  "name": "The Chemical Brothers",
+  "slug": "the-chemical-brothers",
+  "metro": "Manchester",
+  "metro_slug": "manchester",
+  "country": "UK",
+  "city_of_origin": "",
+  "confidence": "Auto",
+  "bb_top10": 0,
+  "bb_no1": 0,
+  "bb_score": 0.0,
+  "uk_top10": 8,
+  "uk_no1": 2,
+  "uk_score": 1.59,
+  "album_raw": 0.0,
+  "album_est": false,
+  "prestige": 0.5,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [
+   {
+    "award": "EMA",
+    "year": 2005,
+    "category": "Best Video",
+    "work": "Believe"
+   }
+  ],
+  "rs_albums": [],
+  "combined": 2.79,
+  "active": "1996-2026",
+  "peak_decade": "1990s"
  },
  {
   "name": "Ronan Keating",
@@ -61721,33 +61583,6 @@
   "peak_decade": "1990s"
  },
  {
-  "name": "Djo",
-  "slug": "djo",
-  "metro": "Boston",
-  "metro_slug": "boston",
-  "country": "USA",
-  "city_of_origin": "Joe Keery, Newburyport MA",
-  "confidence": "Review",
-  "bb_top10": 1,
-  "bb_no1": 0,
-  "bb_score": 0.22,
-  "uk_top10": 2,
-  "uk_no1": 1,
-  "uk_score": 0.97,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.0,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 1.62,
-  "active": "2024-2026",
-  "peak_decade": "2020s"
- },
- {
   "name": "Smokie",
   "slug": "smokie",
   "metro": "Leeds-Bradford",
@@ -62016,6 +61851,33 @@
   "combined": 1.58,
   "active": "1988-1989",
   "peak_decade": "1980s"
+ },
+ {
+  "name": "Djo",
+  "slug": "djo",
+  "metro": "Boston",
+  "metro_slug": "boston",
+  "country": "USA",
+  "city_of_origin": "Joe Keery, Newburyport MA",
+  "confidence": "Review",
+  "bb_top10": 1,
+  "bb_no1": 0,
+  "bb_score": 0.21,
+  "uk_top10": 2,
+  "uk_no1": 1,
+  "uk_score": 0.96,
+  "album_raw": 0.0,
+  "album_est": false,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 1.58,
+  "active": "2024-2026",
+  "peak_decade": "2020s"
  },
  {
   "name": "The Main Ingredient",
@@ -65640,33 +65502,6 @@
   "peak_decade": "2000s"
  },
  {
-  "name": "Dominic Fike",
-  "slug": "dominic-fike",
-  "metro": "Miami",
-  "metro_slug": "miami",
-  "country": "USA",
-  "city_of_origin": "Naples FL",
-  "confidence": "Review",
-  "bb_top10": 0,
-  "bb_no1": 0,
-  "bb_score": 0.0,
-  "uk_top10": 3,
-  "uk_no1": 0,
-  "uk_score": 1.13,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.0,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 1.13,
-  "active": "2019-2026",
-  "peak_decade": "2020s"
- },
- {
   "name": "Cobra Starship",
   "slug": "cobra-starship",
   "metro": "New York",
@@ -65746,6 +65581,33 @@
   "combined": 1.12,
   "active": "2009-2011",
   "peak_decade": "2000s"
+ },
+ {
+  "name": "Dominic Fike",
+  "slug": "dominic-fike",
+  "metro": "Miami",
+  "metro_slug": "miami",
+  "country": "USA",
+  "city_of_origin": "Naples FL",
+  "confidence": "Review",
+  "bb_top10": 0,
+  "bb_no1": 0,
+  "bb_score": 0.0,
+  "uk_top10": 3,
+  "uk_no1": 0,
+  "uk_score": 1.12,
+  "album_raw": 0.0,
+  "album_est": false,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 1.12,
+  "active": "2019-2026",
+  "peak_decade": "2020s"
  },
  {
   "name": "Ace",
@@ -65913,6 +65775,33 @@
   "combined": 1.1,
   "active": "1986-1987",
   "peak_decade": "1980s"
+ },
+ {
+  "name": "Burna Boy",
+  "slug": "burna-boy",
+  "metro": "Lagos",
+  "metro_slug": "lagos",
+  "country": "Nigeria",
+  "city_of_origin": "",
+  "confidence": "Review",
+  "bb_top10": 0,
+  "bb_no1": 0,
+  "bb_score": 0.0,
+  "uk_top10": 5,
+  "uk_no1": 1,
+  "uk_score": 1.1,
+  "album_raw": 0.0,
+  "album_est": false,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 1.1,
+  "active": "2019-2026",
+  "peak_decade": "2010s"
  },
  {
   "name": "The Stranglers",
@@ -66129,33 +66018,6 @@
   "combined": 1.07,
   "active": "1988-2006",
   "peak_decade": "2000s"
- },
- {
-  "name": "Burna Boy",
-  "slug": "burna-boy",
-  "metro": "Lagos",
-  "metro_slug": "lagos",
-  "country": "Nigeria",
-  "city_of_origin": "",
-  "confidence": "Review",
-  "bb_top10": 0,
-  "bb_no1": 0,
-  "bb_score": 0.0,
-  "uk_top10": 5,
-  "uk_no1": 1,
-  "uk_score": 1.07,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.0,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 1.07,
-  "active": "2019-2026",
-  "peak_decade": "2010s"
  },
  {
   "name": "Gigi Perez",
@@ -66750,6 +66612,33 @@
   "combined": 1.0,
   "active": "1973-2003",
   "peak_decade": "1970s"
+ },
+ {
+  "name": "Stella Lefty",
+  "slug": "stella-lefty",
+  "metro": "Chicago",
+  "metro_slug": "chicago",
+  "country": "USA",
+  "city_of_origin": "Glencoe, IL",
+  "confidence": "High",
+  "bb_top10": 1,
+  "bb_no1": 0,
+  "bb_score": 0.33,
+  "uk_top10": 0,
+  "uk_no1": 0,
+  "uk_score": 0.0,
+  "album_raw": 0.0,
+  "album_est": false,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 1.0,
+  "active": "2026-2026",
+  "peak_decade": "2020s"
  },
  {
   "name": "Marc Almond",
@@ -70510,6 +70399,33 @@
   "peak_decade": "2010s"
  },
  {
+  "name": "Jennie",
+  "slug": "jennie",
+  "metro": "Seoul",
+  "metro_slug": "seoul",
+  "country": "",
+  "city_of_origin": "Seoul",
+  "confidence": "High",
+  "bb_top10": 1,
+  "bb_no1": 0,
+  "bb_score": 0.23,
+  "uk_top10": 0,
+  "uk_no1": 0,
+  "uk_score": 0.0,
+  "album_raw": 0.0,
+  "album_est": false,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 0.69,
+  "active": "2026-2026",
+  "peak_decade": "2020s"
+ },
+ {
   "name": "Marti Webb",
   "slug": "marti-webb",
   "metro": "London",
@@ -70616,33 +70532,6 @@
   "combined": 0.69,
   "active": "2014-2014",
   "peak_decade": "2010s"
- },
- {
-  "name": "Jennie",
-  "slug": "jennie",
-  "metro": "Seoul",
-  "metro_slug": "seoul",
-  "country": "",
-  "city_of_origin": "Seoul",
-  "confidence": "High",
-  "bb_top10": 1,
-  "bb_no1": 0,
-  "bb_score": 0.23,
-  "uk_top10": 0,
-  "uk_no1": 0,
-  "uk_score": 0.0,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.0,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 0.68,
-  "active": "2026-2026",
-  "peak_decade": "2020s"
  },
  {
   "name": "Mr. Acker Bilk & His Paramount Jazz Band",
@@ -73075,6 +72964,33 @@
   "peak_decade": "1970s"
  },
  {
+  "name": "Ultra Nat\u00e9",
+  "slug": "ultra-nat",
+  "metro": "Washington-Baltimore",
+  "metro_slug": "washington-baltimore",
+  "country": "USA",
+  "city_of_origin": "",
+  "confidence": "Review",
+  "bb_top10": 0,
+  "bb_no1": 0,
+  "bb_score": 0.0,
+  "uk_top10": 3,
+  "uk_no1": 0,
+  "uk_score": 0.58,
+  "album_raw": 0.0,
+  "album_est": false,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 0.58,
+  "active": "1997-2026",
+  "peak_decade": "1990s"
+ },
+ {
   "name": "Basement Jaxx",
   "slug": "basement-jaxx",
   "metro": "London",
@@ -73882,33 +73798,6 @@
   "rs_albums": [],
   "combined": 0.54,
   "active": "1990-1991",
-  "peak_decade": "1990s"
- },
- {
-  "name": "Ultra Nat\u00e9",
-  "slug": "ultra-nat",
-  "metro": "Washington-Baltimore",
-  "metro_slug": "washington-baltimore",
-  "country": "USA",
-  "city_of_origin": "",
-  "confidence": "Review",
-  "bb_top10": 0,
-  "bb_no1": 0,
-  "bb_score": 0.0,
-  "uk_top10": 2,
-  "uk_no1": 0,
-  "uk_score": 0.54,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.0,
-  "gram_wins": 0,
-  "gram_noms": 0,
-  "gram_awards": [],
-  "gram_nom_awards": [],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 0.54,
-  "active": "1997-1998",
   "peak_decade": "1990s"
  },
  {
@@ -82876,6 +82765,33 @@
   "peak_decade": "2010s"
  },
  {
+  "name": "Anotr",
+  "slug": "anotr",
+  "metro": "Amsterdam",
+  "metro_slug": "amsterdam",
+  "country": "Netherlands",
+  "city_of_origin": "Amsterdam",
+  "confidence": "High",
+  "bb_top10": 0,
+  "bb_no1": 0,
+  "bb_score": 0.0,
+  "uk_top10": 1,
+  "uk_no1": 0,
+  "uk_score": 0.13,
+  "album_raw": 0.0,
+  "album_est": false,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 0.13,
+  "active": "2026-2026",
+  "peak_decade": "2020s"
+ },
+ {
   "name": "The Jesus and Mary Chain",
   "slug": "the-jesus-and-mary-chain",
   "metro": "Glasgow",
@@ -83360,6 +83276,60 @@
   "combined": 0.1,
   "active": "2012-2014",
   "peak_decade": "2010s"
+ },
+ {
+  "name": "Prospa",
+  "slug": "prospa",
+  "metro": "Leeds-Bradford",
+  "metro_slug": "leeds-bradford",
+  "country": "UK",
+  "city_of_origin": "Leeds",
+  "confidence": "High",
+  "bb_top10": 0,
+  "bb_no1": 0,
+  "bb_score": 0.0,
+  "uk_top10": 1,
+  "uk_no1": 0,
+  "uk_score": 0.1,
+  "album_raw": 0.0,
+  "album_est": false,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 0.1,
+  "active": "2026-2026",
+  "peak_decade": "2020s"
+ },
+ {
+  "name": "Cloonee",
+  "slug": "cloonee",
+  "metro": "Sheffield",
+  "metro_slug": "sheffield",
+  "country": "UK",
+  "city_of_origin": "Sheffield",
+  "confidence": "High",
+  "bb_top10": 0,
+  "bb_no1": 0,
+  "bb_score": 0.0,
+  "uk_top10": 1,
+  "uk_no1": 0,
+  "uk_score": 0.1,
+  "album_raw": 0.0,
+  "album_est": false,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 0.1,
+  "active": "2026-2026",
+  "peak_decade": "2020s"
  },
  {
   "name": "Shakatak",
@@ -83954,6 +83924,33 @@
   "combined": 0.04,
   "active": "1996-1996",
   "peak_decade": "1990s"
+ },
+ {
+  "name": "Hugel",
+  "slug": "hugel",
+  "metro": "Marseille",
+  "metro_slug": "marseille",
+  "country": "France",
+  "city_of_origin": "Marseille",
+  "confidence": "High",
+  "bb_top10": 0,
+  "bb_no1": 0,
+  "bb_score": 0.0,
+  "uk_top10": 1,
+  "uk_no1": 0,
+  "uk_score": 0.04,
+  "album_raw": 0.0,
+  "album_est": false,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 0.04,
+  "active": "2026-2026",
+  "peak_decade": "2020s"
  },
  {
   "name": "Ruby Murray",

@@ -4394,7 +4394,7 @@
     "metro": "Los Angeles",
     "us": 29.2,
     "uk": 20.8,
-    "combined": 108.4,
+    "combined": 108.3,
     "rank": 1
    },
    {
@@ -4418,7 +4418,7 @@
     "metro": "Toronto",
     "us": 19.0,
     "uk": 7.8,
-    "combined": 65.0,
+    "combined": 64.7,
     "rank": 4
    },
    {
@@ -4448,9 +4448,9 @@
    {
     "slug": "knoxville",
     "metro": "Knoxville",
-    "us": 10.1,
+    "us": 10.3,
     "uk": 0.4,
-    "combined": 30.7,
+    "combined": 31.4,
     "rank": 8
    },
    {
@@ -4474,7 +4474,7 @@
     "metro": "Manchester",
     "us": 5.3,
     "uk": 6.3,
-    "combined": 22.3,
+    "combined": 22.2,
     "rank": 11
    },
    {
@@ -4494,19 +4494,19 @@
     "rank": 13
    },
    {
+    "slug": "chicago",
+    "metro": "Chicago",
+    "us": 4.7,
+    "uk": 3.0,
+    "combined": 17.2,
+    "rank": 14
+   },
+   {
     "slug": "louisville",
     "metro": "Louisville",
     "us": 4.8,
     "uk": 2.2,
     "combined": 16.6,
-    "rank": 14
-   },
-   {
-    "slug": "chicago",
-    "metro": "Chicago",
-    "us": 4.4,
-    "uk": 3.0,
-    "combined": 16.2,
     "rank": 15
    },
    {
@@ -4521,8 +4521,8 @@
     "slug": "washington-baltimore",
     "metro": "Washington-Baltimore",
     "us": 3.8,
-    "uk": 1.3,
-    "combined": 12.8,
+    "uk": 1.4,
+    "combined": 12.9,
     "rank": 17
    },
    {
@@ -4538,7 +4538,7 @@
     "metro": "Honolulu",
     "us": 3.1,
     "uk": 1.3,
-    "combined": 10.7,
+    "combined": 10.5,
     "rank": 19
    },
    {
@@ -4569,7 +4569,7 @@
     "slug": "montgomery",
     "metro": "Montgomery",
     "us": 2.5,
-    "uk": 0.3,
+    "uk": 0.4,
     "combined": 7.8,
     "rank": 23
    },
@@ -4658,7 +4658,7 @@
     "metro": "Bristol",
     "us": 0.7,
     "uk": 2.1,
-    "combined": 4.3,
+    "combined": 4.2,
     "rank": 34
    },
    {
@@ -4666,7 +4666,7 @@
     "metro": "Boston",
     "us": 0.5,
     "uk": 2.6,
-    "combined": 4.1,
+    "combined": 4.0,
     "rank": 35
    },
    {
@@ -4721,19 +4721,19 @@
     "name": "Drake",
     "slug": "drake",
     "metro": "Toronto",
-    "combined": 45.6
+    "combined": 45.4
    },
    {
     "name": "Morgan Wallen",
     "slug": "morgan-wallen",
     "metro": "Knoxville",
-    "combined": 30.7
+    "combined": 31.4
    },
    {
     "name": "Olivia Rodrigo",
     "slug": "olivia-rodrigo",
     "metro": "Los Angeles",
-    "combined": 27.1
+    "combined": 27.0
    },
    {
     "name": "Ariana Grande",
@@ -4751,7 +4751,7 @@
     "name": "Harry Styles",
     "slug": "harry-styles",
     "metro": "Manchester",
-    "combined": 20.7
+    "combined": 20.6
    },
    {
     "name": "SZA",
@@ -4799,7 +4799,7 @@
     "name": "BTS",
     "slug": "bts",
     "metro": "Seoul",
-    "combined": 14.5
+    "combined": 14.4
    },
    {
     "name": "Dua Lipa",
@@ -4820,16 +4820,16 @@
     "combined": 12.1
    },
    {
-    "name": "Bruno Mars",
-    "slug": "bruno-mars",
-    "metro": "Honolulu",
-    "combined": 10.7
-   },
-   {
     "name": "Teddy Swims",
     "slug": "teddy-swims",
     "metro": "Atlanta",
     "combined": 10.7
+   },
+   {
+    "name": "Bruno Mars",
+    "slug": "bruno-mars",
+    "metro": "Honolulu",
+    "combined": 10.5
    }
   ],
   "top_songs": [
