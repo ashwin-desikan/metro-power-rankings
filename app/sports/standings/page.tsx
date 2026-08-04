@@ -454,13 +454,20 @@ function domesticLiveBlock(league: LiveLeague | undefined, label: string): Block
   return { league: label, href: "/teams/football/2026-27", note: "live", open: true, subTables };
 }
 
-// ---- UEFA Nations League (International Football section) ---------------
-// Fed by the same api-football bundle as the club comps (league_id 5,
-// "international" key). Group tables once the 2026 league phase starts
-// (24 Sep); fixtures before and between matchdays. Nations render with
-// flags, not club crests; names come straight from the bundle (nation
-// passthrough — no Lookup involved).
-function unlBlock(comp: LiveComp | undefined): Block | null {
+// ---- International Football section -------------------------------------
+// Fed by the same api-football bundle as the club comps ("international" key:
+// league_id 5 = UEFA Nations League, 7 = AFC Asian Cup). Group tables once a
+// tournament's group stage starts; fixtures before and between matchdays.
+// Nations render with flags, not club crests; names come straight from the
+// bundle (nation passthrough — no Lookup involved).
+// Generic over the international comps carried in the bundle: the Nations
+// League and the AFC Asian Cup are structurally identical here (group tables
+// plus a fixture list), so the label, hub anchor and the two notes are the
+// only things that vary.
+function intlCompBlock(
+  comp: LiveComp | undefined,
+  opts: { label: string; href: string; liveNote: string; closedNote: string },
+): Block | null {
   if (!comp) return null;
   const FIN = new Set(["FT", "AET", "PEN", "AWD", "WO"]);
   const IN_PLAY = new Set(["1H", "HT", "2H", "ET", "BT", "P", "LIVE", "INT", "SUSP"]);
@@ -493,8 +500,8 @@ function unlBlock(comp: LiveComp | undefined): Block | null {
       .filter((st): st is SubTable => st !== null)];
   if (subTables.length === 0) return null;
   return {
-    league: "UEFA Nations League", href: "/teams/national",
-    note: groupTables.length ? "league phase" : "Sept–Nov 2026",
+    league: opts.label, href: opts.href,
+    note: groupTables.length ? opts.liveNote : opts.closedNote,
     open: false, live: live.length > 0, subTables,
   };
 }
@@ -725,7 +732,14 @@ export default async function LiveStandingsPage() {
     getClubStandings(), getClubCompetitions(), getWLiveLeagues(), getWLiveCompetition("uwcl"),
   ]);
   const intlComps = await getInternationalComps();
-  const unl = unlBlock(intlComps.find((c) => c.league_id === 5));
+  const unl = intlCompBlock(intlComps.find((c) => c.league_id === 5), {
+    label: "UEFA Nations League", href: "/teams/national#nations-league",
+    liveNote: "league phase", closedNote: "Sept–Nov 2026",
+  });
+  const asianCup = intlCompBlock(intlComps.find((c) => c.league_id === 7), {
+    label: "AFC Asian Cup", href: "/teams/national#asian-cup",
+    liveNote: "group stage", closedNote: "Jan 2027",
+  });
   const wsl = wLeagueBlock(wLeagues.find((l) => l.compSlug === "wsl"), "WSL");
   const ligaF = wLeagueBlock(wLeagues.find((l) => l.compSlug === "liga-f"), "Liga F");
   const nwslW = wLeagueBlock(wLeagues.find((l) => l.compSlug === "nwsl"), "NWSL");
@@ -769,9 +783,11 @@ export default async function LiveStandingsPage() {
     // placement and order are enforced by FOOTBALL_LEFT/RIGHT in the normalization
     // step below.
     { sport: "Football", blocks: [collapse(liber), ...euro.map(collapseExcept), collapse(mls), ...domestics.map(collapseExcept)] },
-    // International (national-team) football — UEFA Nations League for now;
-    // World Cup qualifiers and more can join the same bundle-fed section.
-    { sport: "International Football", blocks: [unl] },
+    // International (national-team) football — Nations League and the AFC
+    // Asian Cup; World Cup qualifiers and more can join the same bundle-fed
+    // section. Blocks with no subTables are dropped downstream, so an
+    // out-of-window tournament costs nothing here.
+    { sport: "International Football", blocks: [unl, asianCup] },
     // Women's Football (below Football, all collapsed by default; feeds are the
     // same wlive bundle that powers /teams/wfootball).
     { sport: "Women's Football", blocks: [wsl, ligaF, nwslW, uwcl].map(collapse) },

@@ -138,6 +138,31 @@ async function nwslFromEspn(): Promise<WLiveLeagueVM | null> {
   };
 }
 
+// Display order for the women's hub tabs. The bundle's array order comes from
+// scripts/apifootball/wleagues.json, which is maintained for the ETL rather
+// than for the UI, and the first entry also becomes the DEFAULT SELECTED TAB in
+// WLiveHub. Pinning the order here means the hub cannot silently reorder itself
+// when that file is edited or when the ESPN fallback appends NWSL at the end.
+// FA WSL (44) leads by editorial choice; anything unlisted keeps bundle order
+// behind the pinned ones.
+const LEAGUE_ORDER: number[] = [
+  44,  // FA WSL (England)
+  254, // NWSL (United States)
+  142, // Liga F (Spain)
+];
+
+function orderLeagues(list: WLiveLeagueVM[]): WLiveLeagueVM[] {
+  const rank = (id: number) => {
+    const i = LEAGUE_ORDER.indexOf(id);
+    return i === -1 ? LEAGUE_ORDER.length : i;
+  };
+  // Stable: equal ranks keep their original relative order.
+  return list
+    .map((l, i) => ({ l, i }))
+    .sort((a, b) => rank(a.l.leagueId) - rank(b.l.leagueId) || a.i - b.i)
+    .map((x) => x.l);
+}
+
 // All live league tables for the 2026-27 hub, NWSL resolved via bundle-then-ESPN.
 export async function getWLiveLeagues(): Promise<WLiveLeagueVM[]> {
   const bundle = await loadBundle();
@@ -157,7 +182,7 @@ export async function getWLiveLeagues(): Promise<WLiveLeagueVM[]> {
     const espn = await nwslFromEspn();
     if (espn) out.push(espn);
   }
-  return out;
+  return orderLeagues(out);
 }
 
 // Live league table for one country hub (england | united-states | spain).

@@ -36,7 +36,9 @@ CONTINENTAL = {2, 3, 848, 13, 531}
 # comps (standings + fixtures), but the teams are NATIONS, not clubs — they
 # BYPASS the club-Lookup invariant and map to themselves (canonical_name =
 # api nation name). 5 = UEFA Nations League (2026 league phase 24 Sep–17 Nov).
-INTERNATIONAL = {5}
+# 7 = AFC Asian Cup (season 2027, 7-20 Jan 2027 in Saudi Arabia). Added
+# 2026-08-04; api-football confirms standings coverage for season 2027.
+INTERNATIONAL = {5, 7}
 FIXTURE_COMPS = CONTINENTAL | INTERNATIONAL
 SKIP_STANDINGS = {76}
 TRANS = str.maketrans({"ø":"o","Ø":"o","ł":"l","Ł":"l","æ":"ae","Æ":"ae","œ":"oe","ð":"d","þ":"th",
@@ -256,6 +258,10 @@ def selftest():
     nr = nation_row(777, "Spain")
     assert nr["canonical_name"] == "Spain" and nr["country"] == "Spain" and nr["lookup_name"] is None, nr
     assert 5 in INTERNATIONAL and 5 in FIXTURE_COMPS and 5 not in CONTINENTAL
+    # Asian Cup must route the same way: nations bypass the club-Lookup
+    # invariant, so a missing entry here would make every AFC nation an
+    # UNMATCHED "club" and exit 3.
+    assert 7 in INTERNATIONAL and 7 in FIXTURE_COMPS and 7 not in CONTINENTAL
     assert check_collision("Spain", "Spain", 777, {("Spain", "Spain"): 777}) is None
     print("self-test OK")
 

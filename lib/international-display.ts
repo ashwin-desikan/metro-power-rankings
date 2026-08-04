@@ -153,6 +153,25 @@ const SUBDIVISION_CDN_CODES: Record<string, string> = {
   // competes under the Chinese Taipei Olympic flag, which flagcdn lacks.
   "great-britain": "gb",
   czechia: "cz",
+
+  // === api-football national-team name variants (added 2026-08-04) =========
+  // These render flagless in the UEFA Nations League / Asian Cup standings
+  // because COUNTRY_FLAGS is keyed by OUR slug while these rows carry
+  // api-football's own spelling, which slugifies differently. Fixing it here
+  // rather than in COUNTRY_FLAGS because this table is consulted first and
+  // takes a direct flagcdn code, which also covers entities that have no
+  // regional-indicator emoji at all.
+  //
+  // Türkiye: api-football uses the post-2021 endonym, so the slug is
+  // "turkiye" while COUNTRY_FLAGS has "turkey".
+  turkiye: "tr",
+  // Kosovo has NO ISO 3166-1 alpha-2 code and therefore no flag emoji, so it
+  // can never resolve via COUNTRY_FLAGS. flagcdn serves the user-assigned
+  // "xk", which lib/flags.ts already uses for the same country.
+  kosovo: "xk",
+  // Legacy/abbreviated forms still used by the feed.
+  "fyr-macedonia": "mk",
+  "rep-of-ireland": "ie",
 };
 
 // Convert a team slug to a flagcdn.com PNG URL.

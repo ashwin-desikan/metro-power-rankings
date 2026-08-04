@@ -83,9 +83,11 @@ export async function getClubCompetitions(): Promise<LiveComp[]> {
   return doc?.competitions ?? [];
 }
 
-// International (national-team) competitions — UEFA Nations League (league_id 5)
-// — exported by the same bundle under their own key. Empty until the mini's
-// refresh first sees the comp; the frontend sections arm themselves from it.
+// International (national-team) competitions — UEFA Nations League (league_id
+// 5) and AFC Asian Cup (league_id 7) — exported by the same bundle under their
+// own key. The set is INTERNATIONAL in scripts/apifootball/refresh.py; keep the
+// two in step. Empty until the mini's refresh first sees the comp; the frontend
+// sections arm themselves from it.
 export async function getInternationalComps(): Promise<LiveComp[]> {
   const doc = await load<{ international?: LiveComp[] }>("live-competitions-2026.json");
   return doc?.international ?? [];
