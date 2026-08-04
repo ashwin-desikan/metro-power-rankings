@@ -79,18 +79,46 @@ def build_country_continent_map(wb):
     and carries the right continent (col 13). Subsequent rows for
     constituents may have stale or contradictory continent values, so we
     take only the first occurrence per country name.
+
+    Verified by dry run 2026-08-04: 199 entries -> 247, the junk header entry
+    gone, every territory keyed under its own name, 'United Kingdom' retained,
+    and the metros relying on the col-41 fallback drop from 50 to 0. No metro
+    changes continent today - col 41 happened to agree for all 50 - so this is
+    a latent-bug fix, not a data correction.
     """
     ws = wb["Country Populations"]
+    # The sheet's header is on ROW 3 (row 1 holds stray working cells, row 2 is
+    # blank), so data starts at row 4. min_row=2 previously ingested the header
+    # itself as data, leaving a junk {"Parent Country": "Continent"} entry.
+    #
+    # Col A is PARENT Country and col H is Country. They match for the 197
+    # sovereign states that parent themselves, but differ for the 49
+    # constituents and territories (England, Hong Kong, Puerto Rico, Cayman
+    # Islands...). Keying on col A alone therefore never gave those territories
+    # an entry under their own name and they fell through to the untrusted
+    # Metro Areas col 41. Keying on col H ALONE is also wrong: the UK has no
+    # self row, so 'United Kingdom' would vanish and every UK metro would fall
+    # back instead.
+    #
+    # So: pass 1 keys on the real country name, pass 2 backfills any parent
+    # that has no entry of its own. Two passes, not one, so a real country row
+    # always beats a parent-derived one. First occurrence still wins within
+    # each pass, which keeps the sovereign-state summary ahead of any stale
+    # constituent rows.
+    rows = [r for r in ws.iter_rows(min_row=4, values_only=True) if r]
     out = {}
-    for row in ws.iter_rows(min_row=2, values_only=True):
-        if not row or not row[0]:
+    for row in rows:                       # pass 1: Country (col H)
+        if len(row) <= 13:
             continue
-        country = row[0]
-        if country in out:
-            continue  # first-occurrence wins
-        cont = row[13] if len(row) > 13 else None
-        if cont:
+        country, cont = row[7], row[13]
+        if country and cont and country not in out:
             out[country] = str(cont).strip()
+    for row in rows:                       # pass 2: backfill Parent (col A)
+        if len(row) <= 13:
+            continue
+        parent, cont = row[0], row[13]
+        if parent and cont and parent not in out:
+            out[parent] = str(cont).strip()
     return out
 
 
