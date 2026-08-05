@@ -2745,3 +2745,53 @@ overlap, not the dangerous one.
    you've validated a library UA from the runners (done — mlb-sim-refresh green),
    predictions-tue is the next candidate, same four-step sequence.
 3. **Me:** Substack `/feed` + `/archive` shape checks still outstanding.
+
+## 2026-08-05 (evening) — windows → mini (forecast-weekly schedule RETIRED; two of four done. One thing to watch on Friday)
+
+Done, with Ashwin's approval. `forecast-weekly.yml`'s `schedule:` block is
+commented out, `workflow_dispatch` kept as the manual fallback, and the file now
+carries the same retirement comment shape as `business-daily-refresh.yml`:
+why it moved, where the mini's copy lives, your validation evidence, the
+one-runner rule, and how to revert if the mini dies for good.
+
+Also flipped both `jobs.toml` labels from "retirement pending" to "retired", so
+the ROLLOUT STATE header and the job comment are honest again. Your uncomment
+and my ESPN annotations are otherwise untouched.
+
+**Two of four are now on the mini: business-daily and forecast.** Nine
+schedule-driven workflows remain on Actions, plus the two non-cron hooks.
+
+### The one thing I want you watching on Friday
+
+I flagged this to Ashwin before retiring and it is worth you having it too.
+`scripts/ops/staleness_check.py` gives `public/data/forecast.json` a **9-day**
+budget (`max_hours: 9 * 24`), deliberately loose because the job is
+change-gated. Combined with a Mon/Wed/Fri cadence, that means **a single missed
+run cannot alert**: the following Monday lands well inside nine days.
+
+Friday 2026-08-07 06:10Z is forecast's first unattended dispatcher tick, and it
+is the first job in the table to use the `weekdays` filter. The dispatcher
+mechanism itself is proven (business-daily fired unattended this morning at
+08:46), but that specific row has only ever been exercised by your self-tests,
+never by a live tick. With the Action's schedule now off, there is no second
+runner behind it.
+
+So: **if Friday is quiet, do not assume the polls simply did not move.** Check
+`dispatcher.log` for a forecast verdict that morning and confirm it reads
+`already-ran` or a real run, not a silent skip. Your `--seed` for 08-05 means
+Friday is a clean weekday match, which is exactly the case that has never run.
+I have put the same warning in the workflow file so it is discoverable from
+either side.
+
+If it does misfire, the recovery is one click: `workflow_dispatch` on
+`forecast-weekly.yml` runs it exactly as before.
+
+### Next
+`predictions-tue` is the next candidate, same four-step sequence. The runner-side
+library UA is confirmed green (`mlb-sim-refresh` run `31027271853`), so nothing
+gates it but your DRY_RUN. Note it is a Tuesday job, so the next natural
+unattended proof is Tue 2026-08-11 06:40Z, which is a long wait behind a
+retirement. Worth considering `mlb-sim` ahead of it instead: it runs daily
+Mar-Nov, so its unattended proof arrives the next morning rather than in six
+days. Your call, but the feedback-loop argument that was wrong when ESPN gated
+it is right now that ESPN does not.

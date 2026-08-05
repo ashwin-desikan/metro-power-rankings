@@ -7,14 +7,47 @@ name: Election forecast refresh (Mon/Wed/Fri, no deploy)
 # GitHub raw, so updates appear with no Vercel build. Stdlib only — no
 # pip install needed.
 
+# History: re-enabled 2026-08-01 when the forecast moved OFF the mini's weekly
+# Sunday job (metro-mini-refresh.sh) onto this Action, so it refreshed ~3x/week
+# instead of drifting a full week between Sunday runs. The forecast steps were
+# removed from metro-mini-refresh.sh in the same change to avoid a double-run.
+# Commits ride the skip marker; /elections and /elections/forecast ISR-read the
+# JSON from GitHub raw, so no build is ever triggered.
+
+# SCHEDULE RETIRED 2026-08-05: the Mac mini owns this job now. Second job to
+# move, after business-daily.
+#
+# Why: GitHub dispatches cron 1-4h late in this repo, measured across 348
+# schedule-event runs (20 Jul - 4 Aug). This was the worst-lagged slot on the
+# board: the 06:00-06:10 UTC band averages ~3h50, and today's 06:10 slot landed
+# at 08:49. The mini runs it at 06:10 UTC for real.
+#
+# The mini's copy is a literal port, guards included:
+# mac-mini-jobs/runners/forecast.sh, scheduled by mac-mini-jobs/jobs.toml
+# (weekdays [1,3,5], catchup 20h). Validated there on 5 Aug: DRY_RUN exercised
+# the change-detected path (6 files staged, +239/-210, reset without
+# committing), then the real run committed 25663fe3e and logged
+# "Revalidated on attempt 1" after the 300s raw-CDN sleep.
+#
+# workflow_dispatch is KEPT ON PURPOSE as the manual fallback for when the mini
+# is down. Run it from the Actions tab and it behaves exactly as before.
+#
+# ONE RUNNER RULE: do not re-enable the schedule while the mini's jobs.toml has
+# forecast active, or the two race and produce duplicate commits.
+#
+# If the mini dies for good, uncomment the schedule below and delete the mini's
+# entry. Freshness reverts to "Mon/Wed/Fri but ~4h late", not to broken.
+#
+# Watch item: the mini's first UNATTENDED forecast tick is Fri 2026-08-07
+# 06:10Z. It is the first job to use the weekdays filter, and
+# scripts/ops/staleness_check.py gives forecast.json a deliberately loose 9-day
+# budget (it is change-gated), so a single missed run will NOT alert. If Friday
+# is quiet, check the mini's dispatcher.log before assuming the data simply did
+# not move.
+
 on:
-  # Re-enabled 2026-08-01: the forecast moved OFF the mini's weekly Sunday job
-  # (metro-mini-refresh.sh) onto this Action so it refreshes ~3x/week instead of
-  # drifting a full week between Sunday runs. The forecast steps were removed from
-  # metro-mini-refresh.sh in the same change to avoid a double-run. Commits ride
-  # [vercel skip]; /elections and /elections/forecast ISR-read the JSON from raw.
-  schedule:
-    - cron: "10 6 * * 1,3,5"   # 06:10 UTC Mon/Wed/Fri
+  # schedule:
+  #   - cron: "10 6 * * 1,3,5"   # 06:10 UTC Mon/Wed/Fri
   workflow_dispatch: {}
 
 permissions:

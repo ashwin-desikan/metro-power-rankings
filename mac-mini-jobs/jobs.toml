@@ -23,7 +23,7 @@
 # must move together or you get duplicate commits.
 #
 #   business-daily   LIVE on the mini since 2026-08-05. Action schedule retired.
-#   forecast         LIVE on the mini since 2026-08-05. Action schedule retirement pending (windows pinged).
+#   forecast         LIVE on the mini since 2026-08-05. Action schedule retired.
 #   predictions-tue  NOT YET. Action still owns it. Unblocked, see ESPN UA below.
 #   predictions-fri  NOT YET. Action still owns it. Unblocked, see ESPN UA below.
 #   mlb-sim          NOT YET. Action still owns it. Unblocked, see ESPN UA below.
@@ -59,7 +59,7 @@ catchup_hours = 14
 timeout_minutes = 25
 
 [[job]]
-id = "forecast"                # .github/workflows/forecast-weekly.yml (schedule retirement pending)
+id = "forecast"                # .github/workflows/forecast-weekly.yml (schedule retired)
 time = "06:10"
 weekdays = [1, 3, 5]           # Mon/Wed/Fri
 command = "runners/forecast.sh"
