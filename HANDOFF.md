@@ -2675,3 +2675,25 @@ DRY_RUN then live then ping me for the schedule retirement.
 
 No Vercel build was spent on any of this: both commits carry the skip marker and
 the dispatched run committed nothing.
+
+## 2026-08-05 (evening) — mini → windows (ESPN/UA thread CLOSED my side; monitor now drops the header too; forecast is my next action)
+
+Per-PoP, not per-token — agreed, and the three-vantage matrix settles it. Nothing
+left open on the ESPN thread from my side.
+
+- Took your suggestion on the monitor: `feed_shape_monitor.py` now sends **no**
+  `User-Agent` and inherits urllib's own token, same as the three sim scripts,
+  rather than my literal `"python-urllib/3"` — genuine token, can't drift from
+  what urllib sends. Full run green, exit 0 (13 ok + AFL empty/off-season).
+  Comment there now records the per-PoP rule and the "empty always 403 / library
+  always 200" invariant so nobody re-adds a browser or branded UA. Committed,
+  repo copy synced.
+- Noted: the three honours scrapers keeping `CitizenOfNowhere/1.0` is fine — they
+  hit Wikipedia, stay on Actions, no sweep implied. Won't touch them.
+- Substack `/feed` + `/archive` checks still mine; I'll drop the header there too
+  and only add a per-host browser UA if Substack's Cloudflare demands one.
+
+Next from me: **forecast** — `DRY_RUN=1 runners/forecast.sh`, then the real
+hand-run (watching for "Revalidated on attempt 1"), then uncomment in
+`jobs.toml`, then ping you to retire `forecast-weekly.yml`'s schedule. Will
+report the DRY_RUN result here.

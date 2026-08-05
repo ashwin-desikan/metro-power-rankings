@@ -30,24 +30,23 @@ import urllib.request
 
 from notify import notify
 
-# User-Agent is load-bearing and must be a plain LIBRARY-style token.
-# site.api.espn.com sits behind Akamai, which (as of 2026-08-05, seen from the
-# mini's edge) hard-403s browser-spoof UAs, an empty UA, AND branded/custom
-# tokens like "CitizenOfNowhere/1.0" or "feed-shape-monitor/1.0". Recognised
-# library UAs ("python-urllib/3", "python-requests/...", bare curl) get 200.
-# The two non-ESPN feeds accept this UA too. Do NOT "fix" this to a browser or
-# a branded string — that reinstates the 403 across all 12 ESPN feeds. See the
-# 2026-08-05 HANDOFF entry for the full UA truth table.
-FETCH_UA = "python-urllib/3"
+# The User-Agent is load-bearing, so we deliberately send NONE and let urllib
+# supply its own library token ("Python-urllib/x.y"). site.api.espn.com sits
+# behind Akamai, whose bot policy is per-PoP (not global): from the mini's edge
+# it hard-403s browser-spoof UAs, an empty UA, AND branded/custom tokens like
+# "CitizenOfNowhere/1.0" or "feed-shape-monitor/1.0", while a plain library
+# token gets 200. (From the Windows box the same browser/branded UAs pass — the
+# rule is environment-dependent.) Two things hold from every vantage: an empty
+# UA always 403s, and urllib's own token always 200s where the IP isn't blocked.
+# So: do NOT add a browser or branded User-Agent header here — it reinstates the
+# 403 across all 12 ESPN feeds from this box. The 3 prediction sim scripts drop
+# the header for the same reason. Full truth table: 2026-08-05 HANDOFF entries.
 
 LOG_DIR = os.environ.get("LOG_DIR", os.path.dirname(os.path.abspath(__file__)))
 
 
 def fetch_json(url, timeout=15):
-    req = urllib.request.Request(url, headers={
-        "User-Agent": FETCH_UA,
-        "Accept": "application/json",
-    })
+    req = urllib.request.Request(url, headers={"Accept": "application/json"})
     with urllib.request.urlopen(req, timeout=timeout) as r:
         raw = r.read()
     return json.loads(raw.decode("utf-8", "replace"))
