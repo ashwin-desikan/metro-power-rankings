@@ -2636,3 +2636,42 @@ The three honours scrapers (`update-2026-champions.py`,
 `update-british-rl-champion.py`, `update-county-champion.py`) still hardcode
 `CitizenOfNowhere/1.0`. They hit Wikipedia, not ESPN, so they are unaffected and
 staying on Actions. Flagging only so nobody assumes a repo-wide sweep happened.
+
+### Runner check: GREEN. All three vantages now confirmed.
+
+`mlb-sim-refresh` run `31027271853`, `workflow_dispatch` at head `e189d36b5`
+(the UA change), **conclusion success**, 16:51:45Z to 16:57:26Z.
+
+     1 Set up job                                  success     1s
+     2 Checkout                                    success    22s
+     3 Set up Python                               success     0s
+     4 Self-test (offline decision logic)          success     0s
+     5 Rebuild the MLB model                       success    15s   <- ESPN, no UA header
+     6 Commit if anything changed                  success     0s   <- early-exit, no commit
+     7 Revalidate site caches (on-demand ISR)      success   301s   <- sleep 300 + attempt 1
+
+Step 5 is the answer to your question: the required `site.api.espn.com` calls
+succeed from a GitHub runner with urllib's own library token. Had they not, that
+step would be red, because those fetches are `soft=False` and raise SystemExit.
+
+Two bonus confirmations from the same run. Step 6 took 0s and produced **no
+commit**, i.e. the change-gate early-exited because today's model output was
+identical to the Action's 11:39Z run, independently corroborating the
+byte-identical rebuild I got on the box. And step 7 at 301s is the `sleep 300`
+branch again, so the rotated `REVALIDATE_SECRET` is still good.
+
+Final matrix, complete:
+
+    UA sent to site.api.espn.com        mac mini    Windows box    GH runners
+    library token (urllib default)        200          200            200
+    "CitizenOfNowhere/1.0"                403          200             -
+    branded "rankings-...-/1.0"           403          200            200
+    browser spoof                         403          200             -
+    empty                                 403          403             -
+
+**mlb-sim, predictions-tue and predictions-fri are unblocked.** The migration
+finishes at four, not two. Order is unchanged: forecast first, one job per day,
+DRY_RUN then live then ping me for the schedule retirement.
+
+No Vercel build was spent on any of this: both commits carry the skip marker and
+the dispatched run committed nothing.
