@@ -2337,3 +2337,19 @@ the auto-close path is broken and that is worth a look.
 Confirm the mini's first unattended 05:50Z run tomorrow, then we do forecast
 next, one job per day, same sequence: DRY_RUN, real hand-run, uncomment in
 `jobs.toml`, then ping me to retire its Action schedule.
+
+## 2026-08-05 — mini → windows (newsletter + feed-monitor both went red this morning — both were false alarms, both now fixed)
+
+Ashwin asked why `newsletter-daily` and `feed-monitor` failed today. Neither actually broke anything; both were exit-code false alarms on work that succeeded or lives elsewhere. Diagnosed and fixed both.
+
+**1. newsletter-daily — episode published fine; a transient Spotify blip crashed the poller.**
+Today's episode built and uploaded: `spotify:episode:7aFZcq1Ur3CRpiuL1wVg8l` ("Daily Newsletter Digest — Wednesday, August 5, 2026"), and it is sitting at `readiness: READY` on Spotify right now. What killed the run: at 08:25, one `save-to-spotify --json episodes status <ep_id>` call in the READY-poll loop returned exit 1 (transient Spotify API error). `daily.py`'s `run()` is `subprocess.check_output`, which raises on any non-zero exit — so a single flaky status call crashed the whole job *after* the episode was already live. Re-running that exact command returns `READY` cleanly.
+- **Fix:** `~/newsletter-podcast/daily.py` READY-poll loop now wraps the status call in `try/except (CalledProcessError, JSONDecodeError)` → logs "will retry" and `continue`s instead of crashing. A published episode can no longer be reported as a failure because of one transient poll error. (`daily.py` is not in this repo, so no commit — noted here for the record.)
+
+**2. feed-monitor — ESPN's Akamai edge now blocks the mini's IP; the site's ESPN data is unaffected.**
+All 12 ESPN feeds FAILed at once; the 2 non-ESPN feeds stayed `ok`. Not shape drift — `site.api.espn.com` returns an Akamai `Access Denied` (403) to the mini for *every* path, header/UA-independent (full Safari UA + Accept/Referer/Origin all still 403). Started between Aug 4 (ok) and Aug 5. **The live site is fine:** the real standings pipeline is the `espn-standings-snapshot` GitHub Action (runner IPs are not blocked), which committed fresh nfl/mlb/nba/nhl/mls/cfb snapshots today at 07:51 (`464212184`). The mini was just probing ESPN from a now-blocked vantage point and guarding data this box never fetches. (Note: `sports.core.api.espn.com` still returns 200 from the mini, if we ever want to re-point.)
+- **Fix (this repo, mac-mini-jobs copy — sync to the mini):** dropped all 12 ESPN entries from `feed_shape_monitor.py`'s `FEEDS`, keeping the two feeds the mini genuinely ingests (SPAIA NPB, Sportz ICC WTC). The ESPN `check_*` validators are left in place for a possible core-api re-point. Ran it after: green, exit 0. Reason is documented inline above `FEEDS`.
+
+### For windows / open items
+- The ESPN Akamai block is IP-reputation on the mini's residential IP, not global — your GH-Actions `external-url-monitor` already covers `site.api.espn.com` from runner IPs and should stay the source of truth for those feeds. Flag if you see the Action's runners start getting 403s too (would mean a broader ESPN tightening, not just our IP).
+- The Substack `/feed` + `/archive` shape checks you handed over (previous entry) are still pending on my side; will add them to the trimmed `feed_shape_monitor.py` next.

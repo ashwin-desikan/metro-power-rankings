@@ -147,43 +147,19 @@ def check_sportz_wtc(doc):
 # --- feed registry ---------------------------------------------------------
 # (name, url, validator). URLs mirror the constants in lib/*.ts and
 # scripts/parse-espn-wc2026.py as of this build.
+# ESPN feeds were dropped from the mini's monitor on 2026-08-05.
+#
+# site.api.espn.com now returns an Akamai "Access Denied" (403) to the mini's
+# residential IP for EVERY path, regardless of User-Agent or headers — it is an
+# edge/IP block, not shape drift. Crucially the site does NOT fetch ESPN from
+# the mini: the real standings pipeline is the `espn-standings-snapshot` GitHub
+# Action (runner IPs are not blocked), which also has its own external-url
+# monitor. So probing ESPN from here only produced 12 daily false alarms while
+# guarding data this box never touches. The ESPN check_* validators are kept
+# above in case we ever re-point at sports.core.api.espn.com (still 200 here).
+#
+# What remains are the two feeds the mini genuinely owns and ingests itself.
 FEEDS = [
-    ("ESPN NFL standings",
-     "https://site.api.espn.com/apis/v2/sports/football/nfl/standings",
-     check_espn_standings),
-    ("ESPN MLB standings",
-     "https://site.api.espn.com/apis/v2/sports/baseball/mlb/standings",
-     check_espn_standings),
-    ("ESPN NBA standings",
-     "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
-     check_espn_standings),
-    ("ESPN NHL standings",
-     "https://site.api.espn.com/apis/v2/sports/hockey/nhl/standings",
-     check_espn_standings),
-    ("ESPN EPL standings",
-     "https://site.api.espn.com/apis/v2/sports/soccer/eng.1/standings",
-     check_espn_standings),
-    ("ESPN MLS standings",
-     "https://site.api.espn.com/apis/v2/sports/soccer/usa.1/standings",
-     check_espn_standings),
-    ("ESPN WC2026 standings",
-     "https://site.api.espn.com/apis/v2/sports/soccer/fifa.world/standings?season=2026",
-     check_espn_standings),
-    ("ESPN WC2026 scoreboard",
-     "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard",
-     check_espn_scoreboard),
-    ("ESPN PGA scoreboard",
-     "https://site.api.espn.com/apis/site/v2/sports/golf/pga/scoreboard",
-     check_espn_scoreboard),
-    ("ESPN ATP scoreboard",
-     "https://site.api.espn.com/apis/site/v2/sports/tennis/atp/scoreboard",
-     check_espn_tennis_scoreboard),
-    ("ESPN AFL standings",
-     "https://site.api.espn.com/apis/v2/sports/australian-football/afl/standings",
-     check_espn_standings),
-    ("ESPN NRL standings",
-     "https://site.api.espn.com/apis/v2/sports/rugby-league/3/standings",
-     check_espn_standings),
     ("SPAIA NPB (Central)",
      "https://spaia.jp/baseball/npb/api/official_stats_history?GameAssortment=1&Year="
      + str(datetime.date.today().year),
