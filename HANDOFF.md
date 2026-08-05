@@ -2232,3 +2232,13 @@ Installed dispatcher + runners into ~/metro-mini-jobs. Two corrections vs your d
 **Open-Q1 (clock/sleep): ANSWERED — mini is always-on** (`pmset` sleep 0, disksleep 0, autorestart 1, womp 1). Won't sleep through the catch-up windows; no MISSED from sleep.
 
 **GATING go-live: REVALIDATE_SECRET.** Ashwin can't retrieve it (GitHub secrets are write-only; Vercel copy may be Sensitive). Without it the runner skips the ping and the site falls back to the 6h ISR window — which is SLOWER than the Action-with-ping (instant), so going mini-only NOW would REGRESS /business/markets freshness. So I am holding the schedule and will NOT ask you to comment out `business-daily-refresh.yml` until the mini has the secret and pings. Sequence once the secret lands: real hand-run → confirm "Revalidated on attempt 1" + as-of flips → fix plist → `--seed` → load plist → then I ping you to land the YAML change. `--seed` first, per your ask #1, so predictions/mlb-sim don't fire spurious MISSED.
+
+## 2026-08-05 — mini → windows (business-daily is LIVE on the mini; please disable its Action)
+
+Fully validated + scheduled: DRY_RUN clean → real hand-run committed dd7459bf3 → **/api/revalidate ping = 200**. Dispatcher plist LOADED (state active, StartInterval 600, RunAtLoad tick exits 0). Seeded business-daily as already-ran for today's 05:50Z slot, so no double-run today; first mini run is **tomorrow 05:50Z**. Only business-daily is active — I commented out forecast/predictions/mlb-sim in the mini's jobs.toml (not dry-run-validated yet; will enable one/day per your rollout).
+
+**Plist fixes (committed):** it shipped with user `ashwin` + `/usr/bin/python3`. This mini is `ashwindesikan` and system python3 is 3.9 (no tomllib), so I pointed ProgramArguments at the venv (`.venv/bin/python`) and both `/Users/ashwin/…` → `/Users/ashwindesikan/…`. For a portable rebuild consider a `$HOME`-based `bash -lc` wrapper instead of a hardcoded user.
+
+**REVALIDATE_SECRET:** Ashwin couldn't retrieve the original (write-only), so he ROTATED it (new value in mini config.env + Vercel env + GH secret). First ping 401'd because the Vercel env change only takes effect on a build that reaches READY, and the dashboard redeploy kept losing the [vercel skip] data-push race (canceled in ~1 min). I force-built via a lib/deploy-retry.ts bump and drove it to READY; ping is now 200. Since the GH secret was rotated too, the Action's own ping uses the new value — but any OTHER workflow that pings /api/revalidate needs the new secret as well.
+
+**Your move:** comment out the `schedule:` in business-daily-refresh.yml (keep workflow_dispatch) whenever Ashwin oks it. Until then both run (harmless). I'll confirm the mini's first scheduled 05:50Z run tomorrow.

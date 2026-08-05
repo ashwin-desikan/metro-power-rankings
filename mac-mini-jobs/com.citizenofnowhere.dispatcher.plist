@@ -28,12 +28,12 @@
 
     <key>ProgramArguments</key>
     <array>
-        <string>/usr/bin/python3</string>
-        <string>/Users/ashwin/metro-mini-jobs/dispatcher.py</string>
+        <string>/Users/ashwindesikan/Projects/Metro Area Project/.venv/bin/python</string>
+        <string>/Users/ashwindesikan/metro-mini-jobs/dispatcher.py</string>
     </array>
 
     <key>WorkingDirectory</key>
-    <string>/Users/ashwin/metro-mini-jobs</string>
+    <string>/Users/ashwindesikan/metro-mini-jobs</string>
 
     <key>StartInterval</key>
     <integer>600</integer>
