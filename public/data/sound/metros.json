@@ -669,7 +669,7 @@
    }
   ],
   "signature_decade": "1990s",
-  "distinctiveness": 1.36,
+  "distinctiveness": 1.35,
   "score_per_artist": 15.6,
   "rank": 2
  },
@@ -681,9 +681,9 @@
   "us_score": 310.0,
   "uk_score": 130.2,
   "album_score": 2301.5,
-  "prestige_score": 373.5,
-  "combined": 3337.4,
-  "artist_count": 243,
+  "prestige_score": 378.0,
+  "combined": 3348.2,
+  "artist_count": 244,
   "by_decade": {
    "1950s": {
     "us": 15.2,
@@ -1018,8 +1018,8 @@
   "us_score": 113.7,
   "uk_score": 68.4,
   "album_score": 691.6,
-  "prestige_score": 74.8,
-  "combined": 1004.0,
+  "prestige_score": 75.5,
+  "combined": 1005.6,
   "artist_count": 64,
   "by_decade": {
    "1950s": {
@@ -1135,8 +1135,8 @@
     "combined": 8.6
    },
    {
-    "name": "The Stooges",
-    "slug": "the-stooges",
+    "name": "Jack Scott",
+    "slug": "jack-scott",
     "combined": 7.0
    }
   ],
@@ -1352,12 +1352,12 @@
   "metro": "Chicago",
   "country": "United States",
   "state": "Illinois",
-  "us_score": 88.5,
+  "us_score": 88.2,
   "uk_score": 46.3,
   "album_score": 661.0,
   "prestige_score": 101.8,
-  "combined": 952.7,
-  "artist_count": 66,
+  "combined": 951.7,
+  "artist_count": 65,
   "by_decade": {
    "1950s": {
     "us": 0.1,
@@ -1395,9 +1395,9 @@
     "combined": 15.4
    },
    "2020s": {
-    "us": 4.7,
+    "us": 4.4,
     "uk": 3.0,
-    "combined": 17.2
+    "combined": 16.2
    }
   },
   "top_artists": [
@@ -1467,13 +1467,13 @@
     "combined": 10.3
    },
    {
-    "name": "Jody Watley",
-    "slug": "jody-watley",
+    "name": "The Smashing Pumpkins",
+    "slug": "the-smashing-pumpkins",
     "combined": 10.3
    },
    {
-    "name": "The Smashing Pumpkins",
-    "slug": "the-smashing-pumpkins",
+    "name": "Jody Watley",
+    "slug": "jody-watley",
     "combined": 10.3
    }
   ],
@@ -1680,8 +1680,8 @@
    }
   ],
   "signature_decade": "1980s",
-  "distinctiveness": 1.82,
-  "score_per_artist": 14.4,
+  "distinctiveness": 1.83,
+  "score_per_artist": 14.6,
   "rank": 5
  },
  {
@@ -1794,13 +1794,13 @@
     "combined": 29.9
    },
    {
-    "name": "En Vogue",
-    "slug": "en-vogue",
+    "name": "Grateful Dead",
+    "slug": "grateful-dead",
     "combined": 24.7
    },
    {
-    "name": "Grateful Dead",
-    "slug": "grateful-dead",
+    "name": "En Vogue",
+    "slug": "en-vogue",
     "combined": 24.7
    },
    {
@@ -3132,23 +3132,23 @@
     "combined": 5.1
    },
    {
-    "name": "Glass Tiger",
-    "slug": "glass-tiger",
-    "combined": 5.0
-   },
-   {
     "name": "Magic!",
     "slug": "magic",
     "combined": 5.0
    },
    {
-    "name": "Snow",
-    "slug": "snow",
-    "combined": 4.4
+    "name": "Glass Tiger",
+    "slug": "glass-tiger",
+    "combined": 5.0
    },
    {
     "name": "Deborah Cox",
     "slug": "deborah-cox",
+    "combined": 4.4
+   },
+   {
+    "name": "Snow",
+    "slug": "snow",
     "combined": 4.4
    }
   ],
@@ -3355,7 +3355,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 3.77,
+  "distinctiveness": 3.78,
   "score_per_artist": 24.2,
   "rank": 10
  },
@@ -3464,13 +3464,13 @@
     "combined": 3.5
    },
    {
-    "name": "Archie Bell & the Drells",
-    "slug": "archie-bell-and-the-drells",
+    "name": "H-Town",
+    "slug": "h-town",
     "combined": 2.8
    },
    {
-    "name": "H-Town",
-    "slug": "h-town",
+    "name": "Archie Bell & the Drells",
+    "slug": "archie-bell-and-the-drells",
     "combined": 2.8
    },
    {
@@ -5798,13 +5798,13 @@
     "combined": 4.5
    },
    {
-    "name": "New Order",
-    "slug": "new-order",
+    "name": "Buzzcocks",
+    "slug": "buzzcocks",
     "combined": 3.8
    },
    {
-    "name": "Buzzcocks",
-    "slug": "buzzcocks",
+    "name": "New Order",
+    "slug": "new-order",
     "combined": 3.8
    },
    {
@@ -6809,11 +6809,6 @@
     "combined": 2.6
    },
    {
-    "name": "Ernie K-Doe",
-    "slug": "ernie-k-doe",
-    "combined": 2.1
-   },
-   {
     "name": "Jean Knight",
     "slug": "jean-knight",
     "combined": 2.1
@@ -6821,6 +6816,11 @@
    {
     "name": "The Dixie Cups",
     "slug": "the-dixie-cups",
+    "combined": 2.1
+   },
+   {
+    "name": "Ernie K-Doe",
+    "slug": "ernie-k-doe",
     "combined": 2.1
    }
   ],
@@ -7040,7 +7040,7 @@
   "uk_score": 11.4,
   "album_score": 126.4,
   "prestige_score": 34.1,
-  "combined": 273.9,
+  "combined": 273.8,
   "artist_count": 25,
   "by_decade": {
    "1960s": {
@@ -7075,8 +7075,8 @@
    },
    "2020s": {
     "us": 3.8,
-    "uk": 1.4,
-    "combined": 12.9
+    "uk": 1.3,
+    "combined": 12.8
    }
   },
   "top_artists": [
@@ -7641,7 +7641,7 @@
    }
   ],
   "signature_decade": "1990s",
-  "distinctiveness": 4.78,
+  "distinctiveness": 4.77,
   "score_per_artist": 35.0,
   "rank": 23
  },
@@ -9682,8 +9682,8 @@
     "combined": 0.4
    },
    {
-    "name": "Sian Evans",
-    "slug": "sian-evans",
+    "name": "Feeder",
+    "slug": "feeder",
     "combined": 0.3
    }
   ],
@@ -10538,11 +10538,6 @@
     "combined": 1.5
    },
    {
-    "name": "John Martin",
-    "slug": "john-martin",
-    "combined": 1.2
-   },
-   {
     "name": "Swedish House Mafia",
     "slug": "swedish-house-mafia",
     "combined": 1.2
@@ -10553,13 +10548,18 @@
     "combined": 1.2
    },
    {
-    "name": "Basshunter",
-    "slug": "basshunter",
-    "combined": 0.9
+    "name": "John Martin",
+    "slug": "john-martin",
+    "combined": 1.2
    },
    {
     "name": "Icona Pop",
     "slug": "icona-pop",
+    "combined": 0.9
+   },
+   {
+    "name": "Basshunter",
+    "slug": "basshunter",
     "combined": 0.9
    }
   ],
@@ -10855,13 +10855,13 @@
     "combined": 5.3
    },
    {
-    "name": "J-Kwon",
-    "slug": "j-kwon",
+    "name": "Michael McDonald",
+    "slug": "michael-mcdonald",
     "combined": 3.5
    },
    {
-    "name": "Michael McDonald",
-    "slug": "michael-mcdonald",
+    "name": "J-Kwon",
+    "slug": "j-kwon",
     "combined": 3.5
    },
    {
@@ -11306,7 +11306,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 9.48,
+  "distinctiveness": 9.49,
   "score_per_artist": 14.9,
   "rank": 35
  },
@@ -12108,13 +12108,13 @@
     "combined": 6.0
    },
    {
-    "name": "Ini Kamoze",
-    "slug": "ini-kamoze",
+    "name": "Toots and the Maytals",
+    "slug": "toots-and-the-maytals",
     "combined": 4.7
    },
    {
-    "name": "Toots and the Maytals",
-    "slug": "toots-and-the-maytals",
+    "name": "Ini Kamoze",
+    "slug": "ini-kamoze",
     "combined": 4.7
    },
    {
@@ -12148,11 +12148,6 @@
     "combined": 0.9
    },
    {
-    "name": "Althea & Donna",
-    "slug": "althea-and-donna",
-    "combined": 0.6
-   },
-   {
     "name": "Ken Boothe",
     "slug": "ken-boothe",
     "combined": 0.6
@@ -12160,6 +12155,11 @@
    {
     "name": "Boris Gardiner",
     "slug": "boris-gardiner",
+    "combined": 0.6
+   },
+   {
+    "name": "Althea & Donna",
+    "slug": "althea-and-donna",
     "combined": 0.6
    }
   ],
@@ -13132,11 +13132,11 @@
   "country": "United Kingdom",
   "state": "South Yorkshire",
   "us_score": 6.0,
-  "uk_score": 15.7,
+  "uk_score": 15.6,
   "album_score": 102.7,
   "prestige_score": 9.3,
-  "combined": 117.6,
-  "artist_count": 15,
+  "combined": 117.5,
+  "artist_count": 14,
   "by_decade": {
    "1960s": {
     "us": 0.0,
@@ -13164,11 +13164,6 @@
     "combined": 2.2
    },
    "2010s": {
-    "us": 0.0,
-    "uk": 0.1,
-    "combined": 0.1
-   },
-   "2020s": {
     "us": 0.0,
     "uk": 0.1,
     "combined": 0.1
@@ -13216,13 +13211,13 @@
     "combined": 1.9
    },
    {
-    "name": "Ace",
-    "slug": "ace",
+    "name": "Heaven 17",
+    "slug": "heaven-17",
     "combined": 1.1
    },
    {
-    "name": "Heaven 17",
-    "slug": "heaven-17",
+    "name": "Ace",
+    "slug": "ace",
     "combined": 1.1
    },
    {
@@ -13244,11 +13239,6 @@
     "name": "Moloko",
     "slug": "moloko",
     "combined": 0.4
-   },
-   {
-    "name": "Cloonee",
-    "slug": "cloonee",
-    "combined": 0.1
    }
   ],
   "top_songs": [
@@ -13454,8 +13444,8 @@
    }
   ],
   "signature_decade": "1980s",
-  "distinctiveness": 4.71,
-  "score_per_artist": 7.8,
+  "distinctiveness": 4.72,
+  "score_per_artist": 8.4,
   "rank": 43
  },
  {
@@ -14005,7 +13995,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 4.95,
+  "distinctiveness": 4.96,
   "score_per_artist": 22.5,
   "rank": 45
  },
@@ -15378,9 +15368,9 @@
   "us_score": 6.0,
   "uk_score": 9.1,
   "album_score": 44.0,
-  "prestige_score": 10.1,
-  "combined": 77.7,
-  "artist_count": 12,
+  "prestige_score": 12.2,
+  "combined": 82.8,
+  "artist_count": 13,
   "by_decade": {
    "1960s": {
     "us": 0.9,
@@ -15435,6 +15425,11 @@
     "combined": 6.9
    },
    {
+    "name": "The Swingle Singers",
+    "slug": "the-swingle-singers",
+    "combined": 5.0
+   },
+   {
     "name": "DJ Snake",
     "slug": "dj-snake",
     "combined": 4.8
@@ -15465,13 +15460,13 @@
     "combined": 0.5
    },
    {
-    "name": "Mr. Oizo",
-    "slug": "mr-oizo",
+    "name": "Modjo",
+    "slug": "modjo",
     "combined": 0.4
    },
    {
-    "name": "Modjo",
-    "slug": "modjo",
+    "name": "Mr. Oizo",
+    "slug": "mr-oizo",
     "combined": 0.4
    },
    {
@@ -15684,7 +15679,7 @@
   ],
   "signature_decade": "2010s",
   "distinctiveness": 4.44,
-  "score_per_artist": 6.5,
+  "score_per_artist": 6.4,
   "rank": 52
  },
  {
@@ -15927,7 +15922,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 9.33,
+  "distinctiveness": 9.34,
   "score_per_artist": 25.9,
   "rank": 53
  },
@@ -16731,7 +16726,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 8.84,
+  "distinctiveness": 8.85,
   "score_per_artist": 24.4,
   "rank": 59
  },
@@ -17290,7 +17285,7 @@
    }
   ],
   "signature_decade": "2000s",
-  "distinctiveness": 3.49,
+  "distinctiveness": 3.48,
   "score_per_artist": 11.4,
   "rank": 61
  },
@@ -17460,13 +17455,13 @@
     "combined": 3.6
    },
    {
-    "name": "The Wurzels",
-    "slug": "the-wurzels",
+    "name": "Racey",
+    "slug": "racey",
     "combined": 1.0
    },
    {
-    "name": "Racey",
-    "slug": "racey",
+    "name": "The Wurzels",
+    "slug": "the-wurzels",
     "combined": 1.0
    },
    {
@@ -17485,13 +17480,13 @@
     "combined": 0.4
    },
    {
-    "name": "Blonde",
-    "slug": "blonde",
+    "name": "Kosheen",
+    "slug": "kosheen",
     "combined": 0.2
    },
    {
-    "name": "Kosheen",
-    "slug": "kosheen",
+    "name": "Blonde",
+    "slug": "blonde",
     "combined": 0.2
    }
   ],
@@ -17708,11 +17703,11 @@
   "country": "United Kingdom",
   "state": "West Yorkshire",
   "us_score": 4.9,
-  "uk_score": 18.4,
+  "uk_score": 18.3,
   "album_score": 1.0,
   "prestige_score": 9.9,
-  "combined": 57.5,
-  "artist_count": 24,
+  "combined": 57.4,
+  "artist_count": 23,
   "by_decade": {
    "1970s": {
     "us": 0.4,
@@ -17738,11 +17733,6 @@
     "us": 2.2,
     "uk": 3.7,
     "combined": 10.2
-   },
-   "2020s": {
-    "us": 0.0,
-    "uk": 0.1,
-    "combined": 0.1
    }
   },
   "top_artists": [
@@ -17807,13 +17797,13 @@
     "combined": 1.4
    },
    {
-    "name": "Marc Almond",
-    "slug": "marc-almond",
+    "name": "Sigma",
+    "slug": "sigma",
     "combined": 1.0
    },
    {
-    "name": "Sigma",
-    "slug": "sigma",
+    "name": "Marc Almond",
+    "slug": "marc-almond",
     "combined": 1.0
    },
    {
@@ -18025,8 +18015,8 @@
    }
   ],
   "signature_decade": "2010s",
-  "distinctiveness": 2.06,
-  "score_per_artist": 2.4,
+  "distinctiveness": 2.07,
+  "score_per_artist": 2.5,
   "rank": 64
  },
  {
@@ -19328,7 +19318,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 3.05,
+  "distinctiveness": 3.06,
   "score_per_artist": 7.6,
   "rank": 74
  },
@@ -19589,13 +19579,13 @@
     "combined": 4.0
    },
    {
-    "name": "Nate Ruess",
-    "slug": "nate-ruess",
+    "name": "Alec Benjamin",
+    "slug": "alec-benjamin",
     "combined": 3.6
    },
    {
-    "name": "Alec Benjamin",
-    "slug": "alec-benjamin",
+    "name": "Nate Ruess",
+    "slug": "nate-ruess",
     "combined": 3.6
    },
    {
@@ -19609,13 +19599,13 @@
     "combined": 2.7
    },
    {
-    "name": "Jimmy Eat World",
-    "slug": "jimmy-eat-world",
+    "name": "CeCe Peniston",
+    "slug": "cece-peniston",
     "combined": 2.1
    },
    {
-    "name": "CeCe Peniston",
-    "slug": "cece-peniston",
+    "name": "Jimmy Eat World",
+    "slug": "jimmy-eat-world",
     "combined": 2.1
    }
   ],
@@ -19956,7 +19946,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 8.09,
+  "distinctiveness": 8.1,
   "score_per_artist": 10.0,
   "rank": 78
  },
@@ -20634,13 +20624,13 @@
     "combined": 0.9
    },
    {
-    "name": "ArrDee",
-    "slug": "arrdee",
+    "name": "The Kooks",
+    "slug": "the-kooks",
     "combined": 0.7
    },
    {
-    "name": "The Kooks",
-    "slug": "the-kooks",
+    "name": "ArrDee",
+    "slug": "arrdee",
     "combined": 0.7
    },
    {
@@ -21324,7 +21314,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 11.11,
+  "distinctiveness": 11.12,
   "score_per_artist": 35.9,
   "rank": 87
  },
@@ -22650,13 +22640,13 @@
     "combined": 3.2
    },
    {
-    "name": "Quarterflash",
-    "slug": "quarterflash",
+    "name": "The Raiders",
+    "slug": "the-raiders",
     "combined": 2.5
    },
    {
-    "name": "The Raiders",
-    "slug": "the-raiders",
+    "name": "Quarterflash",
+    "slug": "quarterflash",
     "combined": 2.5
    }
   ],
@@ -22795,13 +22785,13 @@
     "combined": 4.8
    },
    {
-    "name": "The Edgar Winter Group",
-    "slug": "the-edgar-winter-group",
+    "name": "The Big Bopper",
+    "slug": "the-big-bopper",
     "combined": 2.0
    },
    {
-    "name": "The Big Bopper",
-    "slug": "the-big-bopper",
+    "name": "The Edgar Winter Group",
+    "slug": "the-edgar-winter-group",
     "combined": 2.0
    }
   ],
@@ -23134,7 +23124,7 @@
    }
   ],
   "signature_decade": "1950s",
-  "distinctiveness": 33.96,
+  "distinctiveness": 33.95,
   "score_per_artist": 28.5,
   "rank": 99
  },
@@ -23676,7 +23666,7 @@
    }
   ],
   "signature_decade": "2010s",
-  "distinctiveness": 5.42,
+  "distinctiveness": 5.41,
   "score_per_artist": 13.6,
   "rank": 103
  },
@@ -24339,7 +24329,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 11.11,
+  "distinctiveness": 11.12,
   "score_per_artist": 22.4,
   "rank": 108
  },
@@ -25619,7 +25609,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 11.11,
+  "distinctiveness": 11.12,
   "score_per_artist": 19.4,
   "rank": 119
  },
@@ -25949,7 +25939,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 5.87,
+  "distinctiveness": 5.88,
   "score_per_artist": 17.7,
   "rank": 122
  },
@@ -26835,7 +26825,7 @@
    }
   ],
   "signature_decade": "1970s",
-  "distinctiveness": 3.35,
+  "distinctiveness": 3.34,
   "score_per_artist": 4.0,
   "rank": 130
  },
@@ -26997,13 +26987,13 @@
     "combined": 1.7
    },
    {
-    "name": "Aaron Carter",
-    "slug": "aaron-carter",
+    "name": "Donna Allen",
+    "slug": "donna-allen",
     "combined": 0.1
    },
    {
-    "name": "Donna Allen",
-    "slug": "donna-allen",
+    "name": "Aaron Carter",
+    "slug": "aaron-carter",
     "combined": 0.1
    }
   ],
@@ -27777,7 +27767,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 7.65,
+  "distinctiveness": 7.66,
   "score_per_artist": 2.3,
   "rank": 137
  },
@@ -27930,11 +27920,11 @@
   "country": "Netherlands",
   "state": "North Holland",
   "us_score": 0.8,
-  "uk_score": 2.9,
+  "uk_score": 2.8,
   "album_score": 12.4,
   "prestige_score": 0.0,
-  "combined": 12.9,
-  "artist_count": 7,
+  "combined": 12.8,
+  "artist_count": 6,
   "by_decade": {
    "1980s": {
     "us": 0.8,
@@ -27948,8 +27938,8 @@
    },
    "2020s": {
     "us": 0.0,
-    "uk": 0.9,
-    "combined": 0.9
+    "uk": 0.8,
+    "combined": 0.8
    }
   },
   "top_artists": [
@@ -27982,11 +27972,6 @@
     "name": "Eva Simons",
     "slug": "eva-simons",
     "combined": 0.2
-   },
-   {
-    "name": "Anotr",
-    "slug": "anotr",
-    "combined": 0.1
    }
   ],
   "top_songs": [
@@ -28047,14 +28032,6 @@
     "chart": "UK"
    },
    {
-    "single": "Talk to You",
-    "artist": "Anotr",
-    "score": 0.125,
-    "peak": 3,
-    "year": 2026,
-    "chart": "UK"
-   },
-   {
     "single": "Wasted",
     "artist": "Ti\u00ebsto",
     "score": 0.124,
@@ -28088,8 +28065,8 @@
    }
   ],
   "signature_decade": "1980s",
-  "distinctiveness": 3.09,
-  "score_per_artist": 1.8,
+  "distinctiveness": 3.15,
+  "score_per_artist": 2.1,
   "rank": 140
  },
  {
@@ -28203,7 +28180,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 11.11,
+  "distinctiveness": 11.12,
   "score_per_artist": 6.0,
   "rank": 142
  },
@@ -29253,7 +29230,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 5.98,
+  "distinctiveness": 5.99,
   "score_per_artist": 2.3,
   "rank": 153
  },
@@ -29390,7 +29367,7 @@
    }
   ],
   "signature_decade": "2010s",
-  "distinctiveness": 5.81,
+  "distinctiveness": 5.8,
   "score_per_artist": 3.0,
   "rank": 154
  },
@@ -30261,7 +30238,7 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 11.11,
+  "distinctiveness": 11.12,
   "score_per_artist": 7.4,
   "rank": 166
  },
@@ -30987,6 +30964,56 @@
   "rank": 175
  },
  {
+  "slug": "edmonton",
+  "metro": "Edmonton",
+  "country": "Canada",
+  "state": "Alberta",
+  "us_score": 0.0,
+  "uk_score": 0.0,
+  "album_score": 0.0,
+  "prestige_score": 2.1,
+  "combined": 5.0,
+  "artist_count": 1,
+  "by_decade": {},
+  "top_artists": [
+   {
+    "name": "Robert Goulet",
+    "slug": "robert-goulet",
+    "combined": 5.0
+   }
+  ],
+  "top_songs": [],
+  "signature_decade": null,
+  "distinctiveness": null,
+  "score_per_artist": 5.0,
+  "rank": 176
+ },
+ {
+  "slug": "mobile",
+  "metro": "Mobile",
+  "country": "United States",
+  "state": "Alabama",
+  "us_score": 0.0,
+  "uk_score": 0.0,
+  "album_score": 0.0,
+  "prestige_score": 2.1,
+  "combined": 5.0,
+  "artist_count": 1,
+  "by_decade": {},
+  "top_artists": [
+   {
+    "name": "Shelby Lynne",
+    "slug": "shelby-lynne",
+    "combined": 5.0
+   }
+  ],
+  "top_songs": [],
+  "signature_decade": null,
+  "distinctiveness": null,
+  "score_per_artist": 5.0,
+  "rank": 177
+ },
+ {
   "slug": "tupelo",
   "metro": "Tupelo",
   "country": "United States",
@@ -31037,7 +31064,7 @@
   "signature_decade": "2010s",
   "distinctiveness": 6.7,
   "score_per_artist": 2.4,
-  "rank": 176
+  "rank": 178
  },
  {
   "slug": "bergen",
@@ -31077,7 +31104,7 @@
   "signature_decade": "2010s",
   "distinctiveness": 6.7,
   "score_per_artist": 4.8,
-  "rank": 177
+  "rank": 179
  },
  {
   "slug": "nottingham",
@@ -31206,7 +31233,7 @@
   "signature_decade": "1970s",
   "distinctiveness": 3.8,
   "score_per_artist": 1.6,
-  "rank": 178
+  "rank": 180
  },
  {
   "slug": "stillwater",
@@ -31262,7 +31289,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 4.7,
-  "rank": 179
+  "rank": 181
  },
  {
   "slug": "coventry",
@@ -31481,7 +31508,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 4.97,
   "score_per_artist": 0.7,
-  "rank": 180
+  "rank": 182
  },
  {
   "slug": "florence-al",
@@ -31531,7 +31558,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 5.66,
   "score_per_artist": 2.1,
-  "rank": 181
+  "rank": 183
  },
  {
   "slug": "birmingham-al",
@@ -31647,7 +31674,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 5.06,
   "score_per_artist": 1.4,
-  "rank": 182
+  "rank": 184
  },
  {
   "slug": "road-town",
@@ -31700,7 +31727,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 5.51,
   "score_per_artist": 4.2,
-  "rank": 183
+  "rank": 185
  },
  {
   "slug": "waco",
@@ -31756,7 +31783,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 6.82,
   "score_per_artist": 4.1,
-  "rank": 184
+  "rank": 186
  },
  {
   "slug": "mcallen",
@@ -31781,7 +31808,7 @@
   "signature_decade": null,
   "distinctiveness": null,
   "score_per_artist": 4.1,
-  "rank": 185
+  "rank": 187
  },
  {
   "slug": "havana",
@@ -31819,9 +31846,9 @@
    }
   ],
   "signature_decade": "1950s",
-  "distinctiveness": 33.96,
+  "distinctiveness": 33.95,
   "score_per_artist": 3.9,
-  "rank": 186
+  "rank": 188
  },
  {
   "slug": "southampton",
@@ -32022,7 +32049,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 4.12,
   "score_per_artist": 1.2,
-  "rank": 187
+  "rank": 189
  },
  {
   "slug": "rockford",
@@ -32083,7 +32110,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 5.2,
   "score_per_artist": 3.5,
-  "rank": 188
+  "rank": 190
  },
  {
   "slug": "peoria",
@@ -32147,7 +32174,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 6.68,
   "score_per_artist": 3.4,
-  "rank": 189
+  "rank": 191
  },
  {
   "slug": "greenville-nc",
@@ -32195,7 +32222,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 3.4,
-  "rank": 190
+  "rank": 192
  },
  {
   "slug": "hamburg",
@@ -32261,7 +32288,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 5.48,
   "score_per_artist": 1.6,
-  "rank": 191
+  "rank": 193
  },
  {
   "slug": "corpus-christi",
@@ -32299,9 +32326,9 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 11.11,
+  "distinctiveness": 11.12,
   "score_per_artist": 3.3,
-  "rank": 192
+  "rank": 194
  },
  {
   "slug": "lexington",
@@ -32341,7 +32368,7 @@
   "signature_decade": "1970s",
   "distinctiveness": 6.88,
   "score_per_artist": 3.2,
-  "rank": 193
+  "rank": 195
  },
  {
   "slug": "new-london",
@@ -32381,7 +32408,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 3.2,
-  "rank": 194
+  "rank": 196
  },
  {
   "slug": "johannesburg",
@@ -32447,7 +32474,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 5.14,
   "score_per_artist": 1.6,
-  "rank": 195
+  "rank": 197
  },
  {
   "slug": "toledo",
@@ -32516,7 +32543,7 @@
   "signature_decade": "1950s",
   "distinctiveness": 23.42,
   "score_per_artist": 2.9,
-  "rank": 196
+  "rank": 198
  },
  {
   "slug": "lincoln",
@@ -32564,7 +32591,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 7.01,
   "score_per_artist": 2.9,
-  "rank": 197
+  "rank": 199
  },
  {
   "slug": "fort-wayne",
@@ -32612,7 +32639,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 7.01,
   "score_per_artist": 2.8,
-  "rank": 198
+  "rank": 200
  },
  {
   "slug": "prague",
@@ -32660,7 +32687,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 6.68,
   "score_per_artist": 2.7,
-  "rank": 199
+  "rank": 201
  },
  {
   "slug": "vienna",
@@ -32708,7 +32735,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 6.68,
   "score_per_artist": 2.6,
-  "rank": 200
+  "rank": 202
  },
  {
   "slug": "rome",
@@ -32754,9 +32781,9 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 11.11,
+  "distinctiveness": 11.12,
   "score_per_artist": 2.5,
-  "rank": 201
+  "rank": 203
  },
  {
   "slug": "shrewsbury",
@@ -32812,7 +32839,7 @@
   "signature_decade": "1980s",
   "distinctiveness": 6.68,
   "score_per_artist": 2.2,
-  "rank": 202
+  "rank": 204
  },
  {
   "slug": "reggio-emilia",
@@ -32889,7 +32916,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 4.34,
   "score_per_artist": 2.2,
-  "rank": 203
+  "rank": 205
  },
  {
   "slug": "waterford",
@@ -32961,7 +32988,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 7.01,
   "score_per_artist": 2.2,
-  "rank": 204
+  "rank": 206
  },
  {
   "slug": "saginaw",
@@ -33001,7 +33028,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 7.01,
   "score_per_artist": 2.1,
-  "rank": 205
+  "rank": 207
  },
  {
   "slug": "durham",
@@ -33039,9 +33066,9 @@
    }
   ],
   "signature_decade": "2020s",
-  "distinctiveness": 11.11,
+  "distinctiveness": 11.12,
   "score_per_artist": 2.1,
-  "rank": 206
+  "rank": 208
  },
  {
   "slug": "gold-coast",
@@ -33150,7 +33177,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 4.87,
   "score_per_artist": 2.1,
-  "rank": 207
+  "rank": 209
  },
  {
   "slug": "sao-paulo",
@@ -33198,7 +33225,7 @@
   "signature_decade": "1960s",
   "distinctiveness": 7.01,
   "score_per_artist": 1.9,
-  "rank": 208
+  "rank": 210
  },
  {
   "slug": "monroe",
@@ -33223,7 +33250,7 @@
   "signature_decade": null,
   "distinctiveness": null,
   "score_per_artist": 1.9,
-  "rank": 209
+  "rank": 211
  },
  {
   "slug": "lafayette",
@@ -33261,9 +33288,9 @@
    }
   ],
   "signature_decade": "1950s",
-  "distinctiveness": 33.96,
+  "distinctiveness": 33.95,
   "score_per_artist": 1.8,
-  "rank": 210
+  "rank": 212
  },
  {
   "slug": "turin",
@@ -33316,7 +33343,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 4.8,
   "score_per_artist": 1.7,
-  "rank": 211
+  "rank": 213
  },
  {
   "slug": "florence",
@@ -33341,7 +33368,7 @@
   "signature_decade": null,
   "distinctiveness": null,
   "score_per_artist": 1.7,
-  "rank": 212
+  "rank": 214
  },
  {
   "slug": "bournemouth",
@@ -33389,7 +33416,7 @@
   "signature_decade": "1970s",
   "distinctiveness": 6.88,
   "score_per_artist": 1.0,
-  "rank": 213
+  "rank": 215
  },
  {
   "slug": "fort-myers",
@@ -33437,7 +33464,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 0.6,
-  "rank": 214
+  "rank": 216
  },
  {
   "slug": "nassau-bah",
@@ -33477,7 +33504,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 0.6,
-  "rank": 215
+  "rank": 217
  },
  {
   "slug": "moscow",
@@ -33533,7 +33560,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 0.6,
-  "rank": 216
+  "rank": 218
  },
  {
   "slug": "modena",
@@ -33581,7 +33608,7 @@
   "signature_decade": "1990s",
   "distinctiveness": 6.82,
   "score_per_artist": 0.5,
-  "rank": 217
+  "rank": 219
  },
  {
   "slug": "lisbon",
@@ -33621,7 +33648,7 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 0.2,
-  "rank": 218
+  "rank": 220
  },
  {
   "slug": "helsinki",
@@ -33669,46 +33696,6 @@
   "signature_decade": "2000s",
   "distinctiveness": 6.8,
   "score_per_artist": 0.1,
-  "rank": 219
- },
- {
-  "slug": "marseille",
-  "metro": "Marseille",
-  "country": "France",
-  "state": "Provence-Alpes-C\u00f4te d'Azur",
-  "us_score": 0.0,
-  "uk_score": 0.0,
-  "album_score": 0.0,
-  "prestige_score": 0.0,
-  "combined": 0.0,
-  "artist_count": 1,
-  "by_decade": {
-   "2020s": {
-    "us": 0.0,
-    "uk": 0.0,
-    "combined": 0.0
-   }
-  },
-  "top_artists": [
-   {
-    "name": "Hugel",
-    "slug": "hugel",
-    "combined": 0.0
-   }
-  ],
-  "top_songs": [
-   {
-    "single": "Movin' to the Sun",
-    "artist": "Hugel",
-    "score": 0.036,
-    "peak": 7,
-    "year": 2026,
-    "chart": "UK"
-   }
-  ],
-  "signature_decade": null,
-  "distinctiveness": null,
-  "score_per_artist": 0.0,
-  "rank": 220
+  "rank": 221
  }
 ]
