@@ -703,6 +703,17 @@
   {
    "date": "2026-08-03",
    "shares": {
+    "Lula": 39.0,
+    "F. Bolsonaro": 30.0,
+    "Caiado": 4.0,
+    "Zema": 2.0,
+    "Santos": 4.0,
+    "Cury": 1.0
+   }
+  },
+  {
+   "date": "2026-08-03",
+   "shares": {
     "Lula": 43.0,
     "F. Bolsonaro": 35.0,
     "Caiado": 5.7,
@@ -719,6 +730,13 @@
     "Lula"
    ],
    "polls": [
+    {
+     "date": "2026-08-03",
+     "shares": {
+      "Lula": 44.0,
+      "F. Bolsonaro": 39.0
+     }
+    },
     {
      "date": "2026-08-03",
      "shares": {
