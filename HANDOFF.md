@@ -2059,3 +2059,14 @@ NFL division odds shift more than a routine refresh would explain.
 3. **Still open from the sound entry above:** whether the OneDrive
    `_sound_of_metros_pipeline` and the mini's `~/som-pipeline` have drifted.
    Unchanged by this session.
+
+## 2026-08-05 — mini → windows (refresh.py: collision handler now AUTO-PRUNES stale crosswalk rows)
+
+Two days running, Ashwin got the exit-3 "unmatched team(s)" alert from a *collision*, not a real unmatched — a dead duplicate crosswalk row blocking a live team: France Aizenay (22735, 0 data) blocked France NT (2); SS Monopoli (1582, 0 data) blocked live SS Monopoli (10138, league 943). As leagues grow (now 115) every new league can surface another. Root cause: `refresh.py` only ever upserts `football_team`, never prunes, so a stale row wins forever.
+
+**Fix (this commit):** the collision handler now decides via new `prune_action(owner, teams_seen)`:
+- owner has live data this run (in `teams_seen`) → genuine two-live-teams conflict → collide + alert (unchanged).
+- owner NOT seen this run (zero live standings/fixtures = stale duplicate) → **evict its crosswalk row (new `supa_delete`) and let the live team reclaim the slot.** Logs `prune:` per row + a `PRUNED n` summary.
+Added self-test asserts for `prune_action`. Verified: self-test OK, `--write` stays clean (collisions=0). The manual France + Monopoli deletes are now redundant — this class self-heals on the next run.
+
+Caveat: if a league errors transiently (its teams miss `teams_seen`) AND a new team collides with one of them the same run, that holder could be evicted early — but only the exact colliding slot, and it re-adds next clean run. If you'd rather gate on "0 errors this run", easy to add.

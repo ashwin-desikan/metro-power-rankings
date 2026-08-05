@@ -108,6 +108,19 @@ def supa_upsert(table, rows, on_conflict, key, resolution="merge-duplicates", ch
                 time.sleep(3)
     return n
 
+def supa_delete(table, filt, key):
+    """DELETE rows matching a PostgREST filter (e.g. filt='team_id=in.(1,2,3)'). Used to prune
+    a stale crosswalk row: a dead duplicate team_id with zero live standings/fixtures this run
+    that is blocking the live team from claiming its Lookup club (see the collision handler)."""
+    req = urllib.request.Request(f"{SUPA}/rest/v1/{table}?{filt}", method="DELETE",
+        headers={"apikey": key, "Authorization": "Bearer " + key, "Prefer": "return=minimal"})
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=60): return
+        except urllib.error.HTTPError as e:
+            if attempt == 2: raise RuntimeError(f"{table} delete: HTTP {e.code} {e.read().decode()[:200]}")
+            time.sleep(3)
+
 def build_resolver(lookup_rows):
     # Match against the FULL mirrored Lookup, exactly as it is in the sheet (NO level filter).
     # api_name is the precise key. If the same api_name (or name alias) maps to two DIFFERENT
@@ -147,6 +160,16 @@ def check_collision(canon, country, tid, claim):
     Guards the invariant that one canonical Lookup club maps to exactly one api team_id."""
     owner = claim.get((canon, country))
     return owner if (owner is not None and owner != tid) else None
+
+def prune_action(owner, teams_seen):
+    """Given the team_id currently holding a Lookup slot that a resolving team wants, decide:
+      'claim'   - owner is None: slot is free.
+      'collide' - owner has live data this run (in teams_seen): a genuine two-live-teams conflict -> alert.
+      'evict'   - owner is a STALE duplicate (not seen this run => zero live standings/fixtures): drop its
+                  crosswalk row and let the live team reclaim the slot. Auto-heals the api-football
+                  duplicate-id churn (France Aizenay, SS Monopoli, ...) that previously needed manual SQL."""
+    if owner is None: return "claim"
+    return "collide" if owner in teams_seen else "evict"
 
 def load_aliases(skey):
     """dup_team_id -> primary_team_id map from football_team_alias. api-football sometimes
@@ -263,6 +286,10 @@ def selftest():
     # UNMATCHED "club" and exit 3.
     assert 7 in INTERNATIONAL and 7 in FIXTURE_COMPS and 7 not in CONTINENTAL
     assert check_collision("Spain", "Spain", 777, {("Spain", "Spain"): 777}) is None
+    # prune_action: the stale-crosswalk auto-eviction decision (regression guard).
+    assert prune_action(None, {}) == "claim"                          # free slot
+    assert prune_action(38, {38: "Watford"}) == "collide"             # holder is live this run -> genuine conflict, alert
+    assert prune_action(1582, {10138: "SS Monopoli"}) == "evict"      # holder stale (not seen) -> evict + reclaim
     print("self-test OK")
 
 def nation_row(tid, name):
@@ -329,7 +356,7 @@ def main():
     existing = {row["team_id"] for row in existing_rows}
     claim = {(r.get("canonical_name"), r.get("country")): r["team_id"] for r in existing_rows}
     new_ids = [tid for tid in teams_seen if tid not in existing]
-    resolved_rows, unmatched, collisions = [], [], []
+    resolved_rows, unmatched, collisions, evicted = [], [], [], set()
     if new_ids:
         resolve = build_resolver(supa_get("/rest/v1/football_lookup?select=cur_name,team,lookup_name,uefa_name,uefa_name_2,efs_name,api_name,api_name_2,country,level", skey))
         for tid in new_ids:
@@ -339,8 +366,12 @@ def main():
                 # so the club invariant is untouched and no alert fires.
                 row = nation_row(tid, teams_seen[tid])
                 owner = check_collision(row["canonical_name"], row["country"], tid, claim)
-                if owner is not None:
+                act = prune_action(owner, teams_seen)
+                if act == "collide":
                     collisions.append((tid, teams_seen[tid], row["canonical_name"], row["country"], owner)); continue
+                if act == "evict":
+                    evicted.add(owner); claim.pop((row["canonical_name"], row["country"]), None)
+                    log(f"  prune: stale crosswalk team_id {owner} evicted so live {tid} claims {row['canonical_name']} ({row['country']})")
                 claim[(row["canonical_name"], row["country"])] = tid
                 resolved_rows.append(row)
                 continue
@@ -349,12 +380,19 @@ def main():
                 unmatched.append(tid); continue
             canon, country = rec.get("team"), rec.get("country")   # Team is the canonical column
             owner = check_collision(canon, country, tid, claim)
-            if owner is not None:
+            act = prune_action(owner, teams_seen)
+            if act == "collide":
                 collisions.append((tid, teams_seen[tid], canon, country, owner)); continue
+            if act == "evict":
+                evicted.add(owner); claim.pop((canon, country), None)
+                log(f"  prune: stale crosswalk team_id {owner} evicted so live {tid} claims {canon} ({country})")
             claim[(canon, country)] = tid
             resolved_rows.append({"team_id": tid, "canonical_name": canon,
                 "country": country, "lookup_name": rec.get("lookup_name"),
                 "uefa_name": rec.get("uefa_name"), "efs_name": rec.get("efs_name")})
+    if evicted:
+        supa_delete("football_team", f"team_id=in.({','.join(str(t) for t in sorted(evicted))})", skey)
+        log(f"PRUNED {len(evicted)} stale crosswalk row(s) reclaimed by a live team: {sorted(evicted)}")
     supa_upsert("football_team", resolved_rows, "team_id", skey)
     ns = supa_upsert("football_standings", standings, "league_id,season,group_label,team_id", skey)
     nf = supa_upsert("football_fixtures", fixtures, "fixture_id", skey)
