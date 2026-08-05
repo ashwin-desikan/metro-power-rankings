@@ -1,5 +1,7 @@
 import "server-only";
 
+import { fetchEspnJson } from "@/lib/espnFetch";
+
 // Live NBA standings layer.
 //
 // Mirrors lib/mlb-standings.ts and lib/standings.ts. Pulls ESPN's public
@@ -68,23 +70,9 @@ const CANONICAL_OVERRIDE: Record<string, string> = {
 };
 
 export async function getCurrentNbaStandings(): Promise<StandingsSnapshot> {
-  let raw: unknown = null;
-  try {
-    // 5-second timeout caps the failure cost when ESPN is slow / down.
-    // The existing try/catch handles AbortError identically to a 5xx.
-    const res = await fetch(ESPN_STANDINGS_URL, {
-      signal: AbortSignal.timeout(5000),
-      next: { revalidate: REVALIDATE_SECONDS },
-      headers: {
-        "User-Agent": "rankings-citizen-of-nowhere/1.0",
-        Accept: "application/json",
-      },
-    });
-    if (!res.ok) throw new Error(`espn http ${res.status}`);
-    raw = await res.json();
-  } catch {
-    return emptySnapshot();
-  }
+  // Live ESPN first, committed snapshot on failure -- see lib/espnFetch.ts.
+  const raw = await fetchEspnJson(ESPN_STANDINGS_URL, "nba", REVALIDATE_SECONDS);
+  if (raw == null) return emptySnapshot();
   return shapeStandings(raw);
 }
 

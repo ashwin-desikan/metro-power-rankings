@@ -1,5 +1,7 @@
 import "server-only";
 
+import { fetchEspnJson } from "@/lib/espnFetch";
+
 // Live MLS standings layer (ESPN soccer endpoint usa.1). Mirrors
 // lib/nwsl-standings.ts but groups by conference (Eastern/Western) like
 // lib/wnba-standings.ts. Build-time fetch with hourly ISR; on any failure it
@@ -32,18 +34,9 @@ const ESPN_STANDINGS_URL = "https://site.api.espn.com/apis/v2/sports/soccer/usa.
 const REVALIDATE_SECONDS = 1800;
 
 export async function getCurrentMlsStandings(): Promise<MlsStandingsSnapshot> {
-  let raw: unknown = null;
-  try {
-    const res = await fetch(ESPN_STANDINGS_URL, {
-      signal: AbortSignal.timeout(5000),
-      next: { revalidate: REVALIDATE_SECONDS },
-      headers: { "User-Agent": "rankings-citizen-of-nowhere/1.0", Accept: "application/json" },
-    });
-    if (!res.ok) throw new Error(`espn http ${res.status}`);
-    raw = await res.json();
-  } catch {
-    return empty();
-  }
+  // Live ESPN first, committed snapshot on failure -- see lib/espnFetch.ts.
+  const raw = await fetchEspnJson(ESPN_STANDINGS_URL, "mls", REVALIDATE_SECONDS);
+  if (raw == null) return empty();
   return shape(raw);
 }
 

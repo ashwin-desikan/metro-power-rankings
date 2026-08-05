@@ -1,5 +1,7 @@
 import "server-only";
 
+import { fetchEspnJson } from "@/lib/espnFetch";
+
 // Live WNBA standings layer. Mirrors lib/nba-standings.ts: pulls ESPN's public
 // /wnba/standings endpoint at build time (hourly ISR) so the hub can show the
 // current (in-progress) season instead of the last completed workbook season.
@@ -32,18 +34,9 @@ const ESPN_STANDINGS_URL = "https://site.api.espn.com/apis/v2/sports/basketball/
 const REVALIDATE_SECONDS = 1800;
 
 export async function getCurrentWnbaStandings(): Promise<WnbaStandingsSnapshot> {
-  let raw: unknown = null;
-  try {
-    const res = await fetch(ESPN_STANDINGS_URL, {
-      signal: AbortSignal.timeout(5000),
-      next: { revalidate: REVALIDATE_SECONDS },
-      headers: { "User-Agent": "rankings-citizen-of-nowhere/1.0", Accept: "application/json" },
-    });
-    if (!res.ok) throw new Error(`espn http ${res.status}`);
-    raw = await res.json();
-  } catch {
-    return empty();
-  }
+  // Live ESPN first, committed snapshot on failure -- see lib/espnFetch.ts.
+  const raw = await fetchEspnJson(ESPN_STANDINGS_URL, "wnba", REVALIDATE_SECONDS);
+  if (raw == null) return empty();
   return shape(raw);
 }
 

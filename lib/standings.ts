@@ -1,5 +1,7 @@
 import "server-only";
 
+import { fetchEspnJson } from "@/lib/espnFetch";
+
 // Live NFL standings layer.
 //
 // Source: ESPN's public /standings endpoint (the same one wrapped by the
@@ -85,25 +87,11 @@ const ESPN_STANDINGS_URL =
 const REVALIDATE_SECONDS = 1800;
 
 export async function getCurrentNflStandings(): Promise<StandingsSnapshot> {
-  let raw: unknown = null;
-  try {
-    // 5-second timeout caps the failure cost when ESPN is slow / down.
-    // The existing try/catch handles AbortError identically to a 5xx.
-    const res = await fetch(ESPN_STANDINGS_URL, {
-      signal: AbortSignal.timeout(5000),
-      next: { revalidate: REVALIDATE_SECONDS },
-      headers: {
-        "User-Agent": "rankings-citizen-of-nowhere/1.0",
-        Accept: "application/json",
-      },
-    });
-    if (!res.ok) throw new Error(`espn http ${res.status}`);
-    raw = await res.json();
-  } catch {
-    // ESPN unreachable, blocked, or returned a non-JSON body. The franchise
-    // page renders without the live block in that case.
-    return emptySnapshot();
-  }
+  // Live ESPN first, committed snapshot on failure -- see lib/espnFetch.ts.
+  // A null return means both paths failed; the franchise page renders
+  // without the live block in that case.
+  const raw = await fetchEspnJson(ESPN_STANDINGS_URL, "nfl", REVALIDATE_SECONDS);
+  if (raw == null) return emptySnapshot();
   return shapeStandings(raw);
 }
 

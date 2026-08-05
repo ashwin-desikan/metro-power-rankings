@@ -1,5 +1,7 @@
 import "server-only";
 
+import { fetchEspnJson } from "@/lib/espnFetch";
+
 // Live College Football (FBS) layer: current-season standings + AP/Coaches/CFP
 // rankings from ESPN's public site API, resolved to the canonical CFB team
 // database (lib/cfb) so every row links to its /teams/cfb/[slug] program page.
@@ -96,18 +98,9 @@ const asArr = (v: unknown): unknown[] => (Array.isArray(v) ? v : []);
 const asNum = (v: unknown, fb = 0): number => (Number.isFinite(Number(v)) ? Number(v) : fb);
 const asStr = (v: unknown): string => (typeof v === "string" ? v : "");
 
-async function fetchJson(url: string): Promise<unknown | null> {
-  try {
-    const res = await fetch(url, {
-      signal: AbortSignal.timeout(5000),
-      next: { revalidate: REVALIDATE_SECONDS },
-      headers: { "User-Agent": "rankings-citizen-of-nowhere/1.0", Accept: "application/json" },
-    });
-    if (!res.ok) return null;
-    return await res.json();
-  } catch {
-    return null;
-  }
+// Live ESPN first, committed snapshot on failure -- see lib/espnFetch.ts.
+function fetchJson(url: string, snapshotKey: string): Promise<unknown | null> {
+  return fetchEspnJson(url, snapshotKey, REVALIDATE_SECONDS);
 }
 
 function resolve(location: string, fallback: string): { school: string; slug: string | null } {
@@ -128,7 +121,7 @@ const confShort = (name: string) =>
     .trim() || name;
 
 export async function getCfbStandings(): Promise<CfbStandingsSnapshot> {
-  const raw = await fetchJson(STANDINGS_URL);
+  const raw = await fetchJson(STANDINGS_URL, "cfb-standings");
   const root = asObj(raw);
   const empty: CfbStandingsSnapshot = {
     season_year: 0, fetched_at: new Date().toISOString(), conferences: [], source_label: "",
@@ -231,7 +224,7 @@ const POLL_LABEL: Record<CfbPoll["kind"], string> = {
 };
 
 export async function getCfbRankings(): Promise<CfbRankingsSnapshot> {
-  const raw = await fetchJson(RANKINGS_URL);
+  const raw = await fetchJson(RANKINGS_URL, "cfb-rankings");
   const root = asObj(raw);
   const empty: CfbRankingsSnapshot = {
     fetched_at: new Date().toISOString(), polls: [], latest_date: null, source_label: "",

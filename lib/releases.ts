@@ -18,6 +18,13 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-05",
+    headline: "Live standings stay up even when the feed goes down",
+    items: [
+      "The US league boards - MLB, NFL, WNBA, MLS and the college football polls - now fall back to a snapshot refreshed every three hours, so an upstream outage no longer empties whole sections of Live Standings.",
+    ],
+  },
+  {
     date: "2026-08-04",
     headline: "MLB playoff odds, currency history, and country pages rebuilt",
     items: [
