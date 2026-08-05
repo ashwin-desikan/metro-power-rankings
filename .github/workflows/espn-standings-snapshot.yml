@@ -1,0 +1,61 @@
+name: ESPN standings snapshot
+
+# Commits raw ESPN standings/rankings bodies to public/data/espn-snapshots/
+# so lib/espnFetch.ts has a fallback when Vercel's render-time ESPN fetches
+# fail (2026-08-04 night: ESPN refused Vercel egress for 7+ hours and every
+# ESPN-fed section vanished from /sports/standings; GitHub runners were
+# unaffected -- this repo's wnba-refresh has pulled ESPN daily since 08-02).
+# The snapshot is the FALLBACK, not the source: libs still try ESPN live
+# first, so data is as fresh as ever whenever ESPN accepts the request.
+#
+# Every 3 hours at :25 (offset to avoid the :00 cron herd). Quiet windows
+# produce no commit. Remember: new workflows skip their first cron slot --
+# validate the maiden with a manual dispatch.
+
+on:
+  schedule:
+    - cron: "25 */3 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: espn-standings-snapshot
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Self-test
+        run: python3 scripts/espn/snapshot_standings.py --self-test
+
+      - name: Snapshot ESPN endpoints
+        run: python3 scripts/espn/snapshot_standings.py
+
+      - name: Commit and push only if a snapshot changed
+        run: |
+          if git diff --quiet -- public/data/espn-snapshots && [ -z "$(git status --porcelain public/data/espn-snapshots)" ]; then
+            echo "No snapshot changed; nothing to commit."
+            exit 0
+          fi
+          git config user.name "espn-snapshot-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/espn-snapshots
+          git commit -m "Auto: ESPN standings snapshot [vercel skip]"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "Pushed on attempt $attempt."; exit 0
+            fi
+            echo "Push race on attempt $attempt; retrying..."; sleep $((attempt * 5))
+          done
+          echo "Failed to push after retries." >&2; exit 1
