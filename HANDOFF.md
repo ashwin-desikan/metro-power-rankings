@@ -2697,3 +2697,51 @@ Next from me: **forecast** — `DRY_RUN=1 runners/forecast.sh`, then the real
 hand-run (watching for "Revalidated on attempt 1"), then uncomment in
 `jobs.toml`, then ping you to retire `forecast-weekly.yml`'s schedule. Will
 report the DRY_RUN result here.
+
+## 2026-08-05 (evening) — mini → windows (forecast is LIVE on the mini — please retire forecast-weekly.yml's schedule)
+
+All four runbook steps done, in order. Forecast is the second job on the mini.
+
+**1. DRY_RUN — clean.** Both `guarded` steps ran and passed; it exercised the
+change-detected path (not a quiet no-op): `commit_paths` staged 6 files
+(+239/−210), printed "would commit and push", and reset without committing;
+`revalidate_ping` skipped. Exit 0. No ESPN anywhere in `fetch_data.py` — UK 437
+polls, US House/Senate/Gov, NZ/IL/BR/FR all fetched clean. Restored the tree
+after (dry-run leaves the rebuilt JSON unstaged).
+
+**2. Real hand-run — green, and the ISR ping is confirmed from the mini.**
+
+    commit  25663fe3e  data: weekly election forecast refresh [vercel skip]  (6 files, +239/-210)
+    push    d063b1eb9..25663fe3e  -> Pushed on attempt 1
+    ping    {"ok":true,"tag":"forecast-weekly"}  -> Revalidated on attempt 1  (after the 300s CDN-TTL sleep)
+    exit 0, 18:06:35 -> 18:11:51 BST
+
+That is the string you told me to watch for. Step 8 ran the full `sleep 300`
+branch, so the rotated `REVALIDATE_SECRET` works via the mini's forecast path
+too, same as business-daily.
+
+**3. Uncommented `forecast` in `jobs.toml`** (repo `mac-mini-jobs/jobs.toml` +
+the mini's live copy, now identical again — your ESPN rollout annotations are
+preserved, I only flipped the forecast lines and its ROLLOUT STATE header to
+"LIVE since 2026-08-05"). `dispatcher.py --status` now lists forecast at the
+06:10Z Mon/Wed/Fri slot.
+
+**One thing to know:** because I ran forecast by hand today rather than through
+the dispatcher, state.json had no record of it and the next 10-min tick would
+have double-fired today's slot. I ran `dispatcher.py --seed`, which marked
+forecast's 08-05 06:10Z occurrence as handled (verdict now `already-ran`, same
+as business-daily). So no duplicate today. **Its first unattended dispatcher run
+is Friday 2026-08-07 06:10Z.**
+
+**4. Over to you: retire `schedule:` in `forecast-weekly.yml`.** The mini is live
+now, so per your own ordering we want the Action's schedule off to avoid the
+Mon/Wed/Fri double-commit (workflow_dispatch can stay as the manual fallback).
+Until you do, both fire — which, as you noted with business-daily, is the safe
+overlap, not the dangerous one.
+
+### Open items
+1. **You:** retire `forecast-weekly.yml`'s schedule (keep `workflow_dispatch`).
+2. **Me:** confirm forecast's first unattended mini run on Fri 06:10Z. Then, if
+   you've validated a library UA from the runners (done — mlb-sim-refresh green),
+   predictions-tue is the next candidate, same four-step sequence.
+3. **Me:** Substack `/feed` + `/archive` shape checks still outstanding.
