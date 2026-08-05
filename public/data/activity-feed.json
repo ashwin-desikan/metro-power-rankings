@@ -1,13 +1,90 @@
 {
-  "generatedAt": "2026-08-04",
-  "count": 555,
+  "generatedAt": "2026-08-05",
+  "count": 566,
   "entries": [
+    {
+      "date": "2026-08-05",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "676b937a4"
+    },
+    {
+      "date": "2026-08-04",
+      "category": "hub",
+      "hub": null,
+      "text": "MLB prediction chip, and today's release note.",
+      "commit": "a09e764b4"
+    },
+    {
+      "date": "2026-08-04",
+      "category": "hub",
+      "hub": "Predictions",
+      "text": "MLB hub at /predictions/mlb, and team links across every hub.",
+      "commit": "8327c8d6e"
+    },
+    {
+      "date": "2026-08-04",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Playoff odds from our own season simulation.",
+      "commit": "df7b363ea"
+    },
+    {
+      "date": "2026-08-04",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "AFC Asian Cup 2027, Serie C girone B/C, FA WSL first, UNL collapsed.",
+      "commit": "8fcf5112a"
+    },
+    {
+      "date": "2026-08-04",
+      "category": "fix",
+      "hub": "Countries",
+      "text": "Cap uncapped card fallbacks and collapse country sections on phones.",
+      "commit": "f33971bcb"
+    },
+    {
+      "date": "2026-08-04",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Section icons, surfaced map, percentile bars, and three energy indicators.",
+      "commit": "9cf9ccfa7"
+    },
     {
       "date": "2026-08-04",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "91c4ec834"
+      "text": "Data refreshed — Football, Basketball, Cricket, Sound of the Metros, and 5 more.",
+      "commit": "0f56b6cc7"
+    },
+    {
+      "date": "2026-08-04",
+      "category": "fix",
+      "hub": "Countries",
+      "text": "Scrollspy made country pages unscrollable - never call scrollIntoView from the nav.",
+      "commit": "71ba795c9"
+    },
+    {
+      "date": "2026-08-04",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Filterable metros and subdivisions, scrollspy nav, provenance stamp, warning legend.",
+      "commit": "95bb75d70"
+    },
+    {
+      "date": "2026-08-04",
+      "category": "hub",
+      "hub": "Api",
+      "text": "On-demand revalidation for the prediction hubs and the election forecast.",
+      "commit": "02aacf3f8"
+    },
+    {
+      "date": "2026-08-04",
+      "category": "hub",
+      "hub": "Api",
+      "text": "On-demand business-data revalidation + league-map standing notes.",
+      "commit": "54ea4615b"
     },
     {
       "date": "2026-08-03",
