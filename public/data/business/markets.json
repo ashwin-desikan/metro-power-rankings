@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated_at": "2026-08-05T08:09:26Z",
+  "generated_at": "2026-08-05T08:46:52Z",
   "as_of": "2026-08-05",
   "source": "Yahoo Finance chart API",
   "indices": 13,
@@ -41,7 +41,7 @@
    "country": "United Kingdom",
    "metro": "London",
    "metroSlug": "london",
-   "value": 10916.89,
+   "value": 10899.75,
    "date": "2026-08-05"
   },
   {
@@ -50,7 +50,7 @@
    "country": "Germany",
    "metro": "Frankfurt",
    "metroSlug": "frankfurt",
-   "value": 26308.77,
+   "value": 26235.16,
    "date": "2026-08-05"
   },
   {
@@ -59,7 +59,7 @@
    "country": "France",
    "metro": "Paris",
    "metroSlug": "paris",
-   "value": 8677.32,
+   "value": 8668.23,
    "date": "2026-08-05"
   },
   {
@@ -77,7 +77,7 @@
    "country": "Hong Kong",
    "metro": "Hong Kong",
    "metroSlug": "hong-kong",
-   "value": 25898.78,
+   "value": 25915.82,
    "date": "2026-08-05"
   },
   {
@@ -86,7 +86,7 @@
    "country": "India",
    "metro": "Mumbai",
    "metroSlug": "mumbai",
-   "value": 78432.58,
+   "value": 78365.91,
    "date": "2026-08-05"
   },
   {
@@ -131,42 +131,42 @@
    "symbol": "GC=F",
    "name": "Gold",
    "unit": "USD/oz",
-   "value": 4230.3,
+   "value": 4224.0,
    "date": "2026-08-05"
   },
   {
    "symbol": "SI=F",
    "name": "Silver",
    "unit": "USD/oz",
-   "value": 62.11,
+   "value": 61.79,
    "date": "2026-08-05"
   },
   {
    "symbol": "CL=F",
    "name": "Crude Oil (WTI)",
    "unit": "USD/bbl",
-   "value": 76.15,
+   "value": 76.19,
    "date": "2026-08-05"
   },
   {
    "symbol": "BZ=F",
    "name": "Brent Crude",
    "unit": "USD/bbl",
-   "value": 80.22,
+   "value": 80.38,
    "date": "2026-08-05"
   },
   {
    "symbol": "HG=F",
    "name": "Copper",
    "unit": "USD/lb",
-   "value": 6.6565,
+   "value": 6.638,
    "date": "2026-08-05"
   },
   {
    "symbol": "NG=F",
    "name": "Natural Gas",
    "unit": "USD/MMBtu",
-   "value": 2.693,
+   "value": 2.697,
    "date": "2026-08-05"
   }
  ]
