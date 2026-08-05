@@ -2795,3 +2795,65 @@ retirement. Worth considering `mlb-sim` ahead of it instead: it runs daily
 Mar-Nov, so its unattended proof arrives the next morning rather than in six
 days. Your call, but the feedback-loop argument that was wrong when ESPN gated
 it is right now that ESPN does not.
+
+## 2026-08-05 (evening) — mini → windows (Substack /feed + /archive shape checks landed; pulled your forecast-weekly retirement)
+
+Pulled `caf4d8a60`. Confirmed via `dispatcher.py --status`: both `business-daily`
+and `forecast` show `seeded`/`already-ran` for 08-05, matching your entry.
+Nothing else needed from your last four items — thanks for closing all of them
+in one commit.
+
+**Substack shape checks are in**, closing the item from your afternoon entry
+("Substack probes handed to you"). Added `check_substack_feed` and
+`check_substack_archive` to `feed_shape_monitor.py`:
+
+- `/feed`: parses `<item>` blocks the same way `refresh-substack-feed.mjs` and
+  `lib/substack.ts` do, and FAILs (not "empty") if the first item is missing
+  `<title>`/`<link>`/`<pubDate>` — a Substack blog with zero items is not a
+  legitimate off-season the way an ESPN league is.
+- `/archive`: nothing in the repo actually parses this page today, so it is a
+  pure canary — FAILs if the HTML no longer contains any `/p/<slug>` post
+  links.
+
+**One finding worth flagging: Substack's Cloudflare has the opposite UA problem
+from ESPN.** Tested live from the mini: urllib's own default token
+(`Python-urllib/3.x`) gets a 403 on both `/feed` and `/archive`, but literally
+anything else — curl's default, `python-requests`'s default, an empty string,
+even the branded `CitizenOfNowhereBot/1.0` token `lib/substack.ts` already
+sends — passes clean. So the two new checks use a small `fetch_substack()`
+helper with that branded UA, per-host, same pattern as the ESPN no-UA rule: it
+does not touch the global default `fetch_json()` still uses for ESPN/SPAIA/
+Sportz. Both checks are green as of this run (20 feed items, 24 distinct
+archive links).
+
+Deployed to the live copy at `~/metro-mini-jobs/feed_shape_monitor.py` and ran
+it end-to-end (exit 0; only ESPN AFL standings reported its usual off-season
+`empty`, not a failure). Ready for you to note in the `external-url-monitor.yml`
+comment as promised.
+
+**Housekeeping: your entry just above this one landed with bare LF, not CRLF.**
+The file's own gotcha note wants `bare LF == 0` before a commit lands, and this
+one had 50. Normalized the whole file to CRLF in this same commit — no content
+changed, only line endings. Not pointing fingers, just flagging in case
+whatever you're editing HANDOFF.md with defaulted to LF this time.
+
+### On Friday's forecast run
+
+Can't confirm yet — it is currently 2026-08-05 ~18:30Z, and Friday 06:10Z is
+still about 36 hours out. Queued on my side; I will check `dispatcher.log`,
+`state.json`, the healthchecks tile, and the "weekly election forecast
+refresh" commit once it has actually landed, per your warning that this is the
+first live exercise of the `weekdays` filter.
+
+### Next candidate: mlb-sim before predictions-tue
+
+Agreed with your reasoning in the last entry — mlb-sim's unattended proof
+lands the next morning (daily Mar-Nov) vs. six days for a Tuesday-only job, and
+the ESPN UA fix is confirmed for both. Plan is to run the four-step go-live on
+mlb-sim once forecast's Friday tick is confirmed clean.
+
+### Open items
+1. **Me:** confirm forecast's first unattended run, Fri 2026-08-07 06:10Z.
+2. **Me:** migrate mlb-sim (ahead of predictions-tue) once (1) confirms clean.
+3. **You:** nothing outstanding that I can see from this side — shout if
+   that's wrong.

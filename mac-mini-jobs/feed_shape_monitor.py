@@ -22,6 +22,7 @@ ALERTS
   are silent. Every run appends a status line to $LOG_DIR/feed-monitor.log.
 """
 import os
+import re
 import sys
 import json
 import time
@@ -50,6 +51,32 @@ def fetch_json(url, timeout=15):
     with urllib.request.urlopen(req, timeout=timeout) as r:
         raw = r.read()
     return json.loads(raw.decode("utf-8", "replace"))
+
+
+def fetch_text(url, headers=None, timeout=15):
+    req = urllib.request.Request(url, headers=headers or {})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        raw = r.read()
+    return raw.decode("utf-8", "replace")
+
+
+# Substack's Cloudflare has the OPPOSITE problem from ESPN: it specifically
+# blocks urllib's own default token ("Python-urllib/x.y") with a 403, while a
+# curl-like token, python-requests's default, an empty string, and even a
+# branded token all pass clean. Measured live from the mini 2026-08-05. So
+# Substack needs *some* explicit User-Agent, just not the bare urllib default
+# — it does not need a browser UA the way GitHub Actions runners once did
+# (that block was the runner IP range itself, not the UA; see HANDOFF #9).
+# This is a per-host override, not a change to the no-UA default above, which
+# stays correct for ESPN.
+SUBSTACK_UA = "CitizenOfNowhereBot/1.0 (+https://rankings.citizenofnowhere.org)"
+
+
+def fetch_substack(url, timeout=15):
+    return fetch_text(url, timeout=timeout, headers={
+        "Accept": "application/rss+xml, application/xml;q=0.9, text/html;q=0.8, */*;q=0.5",
+        "User-Agent": SUBSTACK_UA,
+    })
 
 
 # --- structural validators -------------------------------------------------
@@ -125,6 +152,37 @@ def check_spaia_npb(doc):
     if not isinstance(row, dict) or "TeamCD" not in row:
         return "FAIL", "row missing 'TeamCD' key"
     return "ok", f"{len(doc)} rows"
+
+
+def check_substack_feed(text):
+    # Mirrors what scripts/refresh-substack-feed.mjs and lib/substack.ts
+    # actually parse: <item> blocks with <title>/<link>/<pubDate>. A blog
+    # with zero items is not a legitimate off-season, unlike the sports
+    # feeds below, so this is a FAIL, not "empty" (refresh-substack-feed.mjs
+    # treats 0 posts as a hard failure too, exit 2, "refusing to overwrite").
+    if "<rss" not in text[:500]:
+        return "FAIL", "response is not RSS (missing '<rss' near the top)"
+    items = re.findall(r"<item\b[\s\S]*?</item>", text)
+    if not items:
+        return "FAIL", "no <item> elements (feed parser will render nothing)"
+    first = items[0]
+    for tag in ("title", "link", "pubDate"):
+        if f"<{tag}" not in first:
+            return "FAIL", f"first <item> missing <{tag}> (parser reads this key)"
+    return "ok", f"{len(items)} items"
+
+
+def check_substack_archive(text):
+    # Nothing in the codebase parses the archive page today; this is a pure
+    # canary that the page still renders real post links, so a future
+    # consumer (or a human checking it manually) has a shape to trust.
+    if "<html" not in text[:2000].lower():
+        return "FAIL", "response is not HTML (missing '<html' near the top)"
+    links = set(re.findall(
+        r'href="https://citizenofnowhere\.substack\.com/p/[^"?#]+"', text))
+    if not links:
+        return "FAIL", "no /p/<slug> post links found (archive markup changed?)"
+    return "ok", f"{len(links)} distinct post links"
 
 
 def check_sportz_wtc(doc):
@@ -203,15 +261,29 @@ FEEDS = [
      "https://assets-icc.sportz.io/cricket/v1/championship_standing?championship_id=8"
      "&client_id=tPZJbRgIub3Vua93%2FDWtyQ%3D%3D&feed_format=json&lang=en",
      check_sportz_wtc),
+    # These two replace the status-only probes removed from
+    # external-url-monitor.yml on 2026-08-05 (HANDOFF, issue #9): that
+    # workflow's GitHub Actions runner IPs are Cloudflare-blocked outright on
+    # substack.com, a probe that can never pass. The mini's egress is clean,
+    # and a shape check here is strictly better than the status check was —
+    # it catches Substack quietly renaming a key, not just an outage.
+    ("Substack RSS feed",
+     "https://citizenofnowhere.substack.com/feed",
+     check_substack_feed, fetch_substack),
+    ("Substack archive page",
+     "https://citizenofnowhere.substack.com/archive",
+     check_substack_archive, fetch_substack),
 ]
 
 
 def main():
     results = []
     failures = []
-    for name, url, validator in FEEDS:
+    for entry in FEEDS:
+        name, url, validator = entry[0], entry[1], entry[2]
+        fetcher = entry[3] if len(entry) > 3 else fetch_json
         try:
-            doc = fetch_json(url)
+            doc = fetcher(url)
         except Exception as e:
             state, detail = "FAIL", f"fetch/parse error: {e}"
         else:
