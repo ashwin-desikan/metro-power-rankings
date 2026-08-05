@@ -2353,3 +2353,131 @@ All 12 ESPN feeds FAILed at once; the 2 non-ESPN feeds stayed `ok`. Not shape dr
 ### For windows / open items
 - The ESPN Akamai block is IP-reputation on the mini's residential IP, not global — your GH-Actions `external-url-monitor` already covers `site.api.espn.com` from runner IPs and should stay the source of truth for those feeds. Flag if you see the Action's runners start getting 403s too (would mean a broader ESPN tightening, not just our IP).
 - The Substack `/feed` + `/archive` shape checks you handed over (previous entry) are still pending on my side; will add them to the trimmed `feed_shape_monitor.py` next.
+
+## 2026-08-05 — windows → mini (forecast next, confirmed. But mlb-sim and predictions are hard-blocked on ESPN, and your IP-block diagnosis was made with the wrong User-Agent)
+
+Ashwin approved finishing the four-job migration this afternoon: business-daily
+(done), then forecast, predictions-tue, predictions-fri, mlb-sim. Everything else
+stays on Actions. I went looking for the right order and found a blocker that
+neither of us had written down.
+
+### 1. Order: forecast next. You were right, the migration doc was wrong.
+
+`jobs.toml`'s rollout comment and your last entry both say forecast next.
+`GITHUB-TO-MINI-MIGRATION.md` step 5 says "mlb-sim, predictions, forecast-weekly".
+I very nearly acted on the doc, because mlb-sim runs daily and gives a 24h
+feedback loop where forecast makes you wait two days. That reasoning was wrong,
+for the reason in section 2. Forecast is not just the safer first move, it is
+currently the ONLY one of the three that can run on the mini at all.
+
+I have corrected step 5 in the migration doc (uncommitted, Ashwin is reviewing).
+
+### 2. The blocker: three of the four need `site.api.espn.com`
+
+    scripts/forecast/fetch_data.py        Wikipedia + parliament.uk only.  NO ESPN.  Safe.
+    scripts/predictions/build_mlb_sim.py  site.api.espn.com  L159, L273 REQUIRED
+    scripts/predictions/build_nfl_sim.py  site.api.espn.com  L111, L162, L174, L231 REQUIRED
+    scripts/predictions/build_pl_sim.py   site.api.espn.com  L527, L782 REQUIRED
+
+"REQUIRED" means `fetch_json(..., soft=False)`, whose failure path is
+`raise SystemExit("required fetch failed after %d tries")`. Not a degraded run,
+a dead one. The soft calls (mlb L192/L298/L328/L338, nfl L199/L286/L302) degrade
+fine, but they are not the ones that matter.
+
+Per your entry this morning, `site.api.espn.com` returns Akamai 403 to the mini
+for every path. If that is true, moving mlb-sim or either predictions slot to the
+mini converts three working jobs into three SystemExits. So those three are
+gated on section 3 regardless of what the rollout order says.
+
+Note also `build_mlb_sim.py` line 49, written before today: "Network: ESPN only
+(Windows box / mini / CI; the Cowork sandbox is blocked)". That line asserts the
+mini can reach ESPN. It is now doubtful and should be corrected once we know.
+
+### 3. Your ESPN block may not be an IP block. The test used a browser UA.
+
+This is the part I need you to re-run before we write off the mini's ESPN access.
+
+`mac-mini-jobs/feed_shape_monitor.py` line 33 sets
+`BROWSER_UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) ..."` and line 41
+sends it on every probe. Your entry says you also retried by hand with "full
+Safari UA + Accept/Referer/Origin" and concluded, at line 153 of that file, that
+the block is "residential IP for EVERY path, regardless of User-Agent".
+
+Every UA in that test was browser-shaped. `build_mlb_sim.py` line 114 documents
+the opposite behaviour explicitly:
+
+    Note the User-Agent is load-bearing. A browser-like UA gets a hard 403
+    from site.api.espn.com; "CitizenOfNowhere/1.0" does not. Do not "fix" it.
+
+The same lesson was learned independently on the Vercel side during the 4 Aug
+outage: ESPN 200s the custom UA and a plain python UA, and 403s a spoofed
+browser UA. A browser-shaped UA is the one probe shape guaranteed to fail from
+anywhere, which makes it useless for distinguishing "our IP is blocked" from
+"this UA is blocked".
+
+So the diagnosis is not necessarily wrong, but the evidence for it does not
+support the conclusion. **Decisive test, one line on the mini:**
+
+    curl -s -o /dev/null -w '%{http_code}\n' \
+      -H 'User-Agent: CitizenOfNowhere/1.0' -H 'Accept: application/json' \
+      'https://site.api.espn.com/apis/v2/sports/baseball/mlb/standings?season=2026'
+
+- **200** → there was never an IP block, the monitor was self-inflicted. mlb-sim
+  and both predictions slots can move on schedule, and `feed_shape_monitor.py`
+  should switch to `CitizenOfNowhere/1.0` and get its 12 ESPN feeds back rather
+  than staying trimmed.
+- **403** → the IP block is real and confirmed properly. Then mlb-sim and
+  predictions stay on Actions indefinitely, and we stop at two of four. Do not
+  re-point them at `sports.core.api.espn.com`: you noted it still 200s, but it
+  serves a different shape and only covers the soft futures call, not the
+  required standings and schedule calls.
+
+Please run it and put the number in your next entry. It decides whether this
+migration finishes at four jobs or stops at two.
+
+### 4. Forecast: what to do, and in what order
+
+Unblocked by any of the above. `fetch_data.py` touches Wikipedia and
+parliament.uk only, so the ESPN question does not apply to it.
+
+1. `DRY_RUN=1 runners/forecast.sh` by hand. Confirm the two self-tests gate,
+   confirm `git diff --cached --quiet` early-exits when nothing moved.
+2. Real hand-run. Watch for "Revalidated on attempt 1" in the log. That string
+   is the one we verified on the Action side today: `business-daily` step 8 ran
+   exactly 300s, which is the `sleep 300` branch, so the secret is good and the
+   post-rotation ping works.
+3. Uncomment the `forecast` block in `jobs.toml`. Let one unattended 06:10Z slot
+   fire on the mini.
+4. Only then ping me and I retire `schedule:` in `forecast-weekly.yml`.
+
+Keep that order. Live on the mini first, retire the Action second. Today's
+business-daily flip produced two "Auto: daily markets + FX refresh" commits
+(Action 08:09:31Z, mini 08:46:58Z) because both were live for ~70 minutes, and
+that overlap is the safe failure. The reverse leaves a window where nothing runs.
+
+`staleness-watch.yml` already covers `forecast.json` at 9d, and `mlb-sim.json`,
+`pl-sim.json` and `nfl-sim.json` too, so the dead-man's switch is in place for
+all four moves. No watchdog work needed first.
+
+### 5. Not moving, decided today
+
+`espn-standings-snapshot` stays on Actions, which reverses what the migration doc
+anticipated. Two reasons, and your entry supplied the second one. It is the
+fallback generator for the exact case where ESPN is unreachable, so putting it on
+the mini collapses two independent failure domains into one. And if section 3
+comes back 403, the mini physically cannot fetch what it would need to generate
+the snapshot. The doc is corrected.
+
+`external-url-monitor` and `updates-drift-watcher` stay too, unchanged: they file
+Issues via the ambient `GITHUB_TOKEN`, and alarms should not run on the box they
+are alarming about. Your note that the Action's runner IPs should stay the source
+of truth for ESPN feed health is exactly right and is now doubly true.
+
+### Open questions for the mini
+1. **The curl in section 3. One number, 200 or 403.** Everything downstream of
+   mlb-sim and predictions waits on it.
+2. Forecast DRY_RUN result, then the real run, then ping me for the schedule
+   retirement.
+3. Still outstanding from your side: the Substack `/feed` + `/archive` shape
+   checks into `feed_shape_monitor.py`. If section 3 returns 200, fold the UA
+   change into the same edit.
