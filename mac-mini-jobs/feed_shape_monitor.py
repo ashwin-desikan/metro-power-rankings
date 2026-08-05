@@ -30,15 +30,22 @@ import urllib.request
 
 from notify import notify
 
-BROWSER_UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-              "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36")
+# User-Agent is load-bearing and must be a plain LIBRARY-style token.
+# site.api.espn.com sits behind Akamai, which (as of 2026-08-05, seen from the
+# mini's edge) hard-403s browser-spoof UAs, an empty UA, AND branded/custom
+# tokens like "CitizenOfNowhere/1.0" or "feed-shape-monitor/1.0". Recognised
+# library UAs ("python-urllib/3", "python-requests/...", bare curl) get 200.
+# The two non-ESPN feeds accept this UA too. Do NOT "fix" this to a browser or
+# a branded string — that reinstates the 403 across all 12 ESPN feeds. See the
+# 2026-08-05 HANDOFF entry for the full UA truth table.
+FETCH_UA = "python-urllib/3"
 
 LOG_DIR = os.environ.get("LOG_DIR", os.path.dirname(os.path.abspath(__file__)))
 
 
 def fetch_json(url, timeout=15):
     req = urllib.request.Request(url, headers={
-        "User-Agent": BROWSER_UA,
+        "User-Agent": FETCH_UA,
         "Accept": "application/json",
     })
     with urllib.request.urlopen(req, timeout=timeout) as r:
@@ -147,19 +154,48 @@ def check_sportz_wtc(doc):
 # --- feed registry ---------------------------------------------------------
 # (name, url, validator). URLs mirror the constants in lib/*.ts and
 # scripts/parse-espn-wc2026.py as of this build.
-# ESPN feeds were dropped from the mini's monitor on 2026-08-05.
-#
-# site.api.espn.com now returns an Akamai "Access Denied" (403) to the mini's
-# residential IP for EVERY path, regardless of User-Agent or headers — it is an
-# edge/IP block, not shape drift. Crucially the site does NOT fetch ESPN from
-# the mini: the real standings pipeline is the `espn-standings-snapshot` GitHub
-# Action (runner IPs are not blocked), which also has its own external-url
-# monitor. So probing ESPN from here only produced 12 daily false alarms while
-# guarding data this box never touches. The ESPN check_* validators are kept
-# above in case we ever re-point at sports.core.api.espn.com (still 200 here).
-#
-# What remains are the two feeds the mini genuinely owns and ingests itself.
+# NB: the 2026-08-05 ESPN "403 for everything" was self-inflicted — the monitor
+# was sending a browser UA, which Akamai blocks (see FETCH_UA above). With a
+# library UA all 12 ESPN feeds return 200 again, so they are kept here rather
+# than trimmed. (The site's own ESPN data still comes from the
+# espn-standings-snapshot GitHub Action; this is a shape canary, not that path.)
 FEEDS = [
+    ("ESPN NFL standings",
+     "https://site.api.espn.com/apis/v2/sports/football/nfl/standings",
+     check_espn_standings),
+    ("ESPN MLB standings",
+     "https://site.api.espn.com/apis/v2/sports/baseball/mlb/standings",
+     check_espn_standings),
+    ("ESPN NBA standings",
+     "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings",
+     check_espn_standings),
+    ("ESPN NHL standings",
+     "https://site.api.espn.com/apis/v2/sports/hockey/nhl/standings",
+     check_espn_standings),
+    ("ESPN EPL standings",
+     "https://site.api.espn.com/apis/v2/sports/soccer/eng.1/standings",
+     check_espn_standings),
+    ("ESPN MLS standings",
+     "https://site.api.espn.com/apis/v2/sports/soccer/usa.1/standings",
+     check_espn_standings),
+    ("ESPN WC2026 standings",
+     "https://site.api.espn.com/apis/v2/sports/soccer/fifa.world/standings?season=2026",
+     check_espn_standings),
+    ("ESPN WC2026 scoreboard",
+     "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard",
+     check_espn_scoreboard),
+    ("ESPN PGA scoreboard",
+     "https://site.api.espn.com/apis/site/v2/sports/golf/pga/scoreboard",
+     check_espn_scoreboard),
+    ("ESPN ATP scoreboard",
+     "https://site.api.espn.com/apis/site/v2/sports/tennis/atp/scoreboard",
+     check_espn_tennis_scoreboard),
+    ("ESPN AFL standings",
+     "https://site.api.espn.com/apis/v2/sports/australian-football/afl/standings",
+     check_espn_standings),
+    ("ESPN NRL standings",
+     "https://site.api.espn.com/apis/v2/sports/rugby-league/3/standings",
+     check_espn_standings),
     ("SPAIA NPB (Central)",
      "https://spaia.jp/baseball/npb/api/official_stats_history?GameAssortment=1&Year="
      + str(datetime.date.today().year),

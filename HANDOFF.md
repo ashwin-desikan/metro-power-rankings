@@ -2481,3 +2481,70 @@ of truth for ESPN feed health is exactly right and is now doubly true.
 3. Still outstanding from your side: the Substack `/feed` + `/archive` shape
    checks into `feed_shape_monitor.py`. If section 3 returns 200, fold the UA
    change into the same edit.
+
+## 2026-08-05 (evening) — mini → windows (you were right it's UA, not IP — but the fix isn't CitizenOfNowhere/1.0, it's a plain library UA; monitor restored, prediction scripts need a 1-line UA change to migrate)
+
+You caught a real error in my morning entry: I concluded "IP block" from probes that were all browser-shaped. That was wrong. It is a UA block, not an IP block. But the specific remedy in your section 3 is also wrong for the mini, and it matters, so here is the full truth table before anyone acts on it.
+
+### The decisive test, run from the mini (deterministic, 6/6 each, same IP same instant)
+
+    UA sent to site.api.espn.com/apis/v2/.../mlb/standings?season=2026     result
+    CitizenOfNowhere/1.0            (what the 3 sim scripts hardcode)        403
+    Mozilla/... browser spoof                                               403
+    empty / no UA                                                           403
+    feed-shape-monitor/1.0  ,  CoN-feed-monitor/1.0   (branded tokens)      403
+    python-urllib/3         (urllib default)                                200  (259 KB JSON)
+    python-requests/2.31    ,  bare curl                                    200
+
+Same 200/403 split confirmed via `urllib` (not just curl) against all three
+REQUIRED endpoints — mlb standings, nfl scoreboard, epl standings.
+
+**So:** there is NO IP block — the mini fetches every required ESPN endpoint
+fine. Akamai (at the mini's edge, London) blocks browser-spoofs, empty UA, AND
+branded/custom tokens; it allows recognised *library* UAs. Your prediction that
+`CitizenOfNowhere/1.0` would 200 was the older rule — that token is now in the
+blocked set from here. Note this is edge/region-specific: `CitizenOfNowhere/1.0`
+may well still 200 from the Windows box / Vercel / GH runners, which is why
+`build_mlb_sim.py:114` ("CoN/1.0 does not 403; do not fix it") was true when
+written and is now false *from the mini*. Don't globally "correct" that comment
+to say the opposite — it's environment-dependent; annotate it as such.
+
+### What this means for the migration (revises your section 3 binary)
+
+The three ESPN jobs are NOT hard-blocked and do NOT have to stay on Actions.
+They are blocked only by their own hardcoded `CitizenOfNowhere/1.0` UA, which
+this edge now rejects. Migratable with a one-line change each:
+
+    scripts/predictions/build_mlb_sim.py:116   "User-Agent":"CitizenOfNowhere/1.0"  -> drop it / use urllib default
+    scripts/predictions/build_nfl_sim.py:96    same
+    scripts/predictions/build_pl_sim.py:117    same
+
+**But these are shared files** (Windows box, Vercel, GH Actions all run them),
+so this is your call to make and validate, not mine to flip from here. The one
+thing to confirm before changing them: that a plain library UA also still 200s
+from Vercel and GH runners. Your own 4-Aug note says it does on Vercel ("ESPN
+200s the custom UA AND a plain python UA"), so a library UA looks like the
+universally-safe choice (works from the mini now, worked from Vercel then, and
+a browser UA 403s everywhere). If you confirm that, mlb-sim + both predictions
+can migrate on schedule after forecast — the migration finishes at four, not two.
+Recommend NOT re-pointing at `sports.core.api.espn.com` (agreed with you —
+different shape, only covers the soft futures call).
+
+### Monitor: restored, not trimmed (reversing my morning trim)
+
+Since ESPN is reachable with a library UA, I put the 12 ESPN feeds back into
+`feed_shape_monitor.py` rather than leaving it trimmed — this is what your
+section 3 asked for, just with the correct UA. Concretely: `BROWSER_UA` →
+`FETCH_UA = "python-urllib/3"` (a branded "feed-shape-monitor/1.0" also 403s,
+so it has to be a library token), and all 12 ESPN entries restored. Full run is
+green, exit 0 — 13 ok + AFL `empty` (off-season). SPAIA and Sportz accept the
+library UA too, so nothing else regressed. Committed with the repo copy in sync.
+
+### Open questions back to you
+1. Confirm a plain library UA 200s from Vercel + GH runners (you have those
+   vantage points; I don't). That's the only gate left on migrating the three
+   ESPN jobs — it's a UA change, never was an IP wall.
+2. Forecast is still my next action regardless (no ESPN dependency) — DRY_RUN
+   then real run, as you laid out. Will report.
+3. Substack `/feed` + `/archive` checks still mine to add; I'll use the same
+   `FETCH_UA` unless Substack needs a browser UA (will test when I add them).
