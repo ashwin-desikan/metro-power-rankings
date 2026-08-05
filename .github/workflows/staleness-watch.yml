@@ -1,0 +1,105 @@
+name: Data staleness watch (dead-man's switch)
+
+# The one scheduled job that must NOT move to the Mac mini.
+#
+# As of 2026-08 the daily and weekly data refreshes are migrating from GitHub
+# Actions onto the mini's dispatcher, because GitHub dispatches cron 1-4h late
+# (measured 2026-08-05 across 348 schedule runs: every run succeeded, every run
+# was late; the 06:00-06:10 UTC band is worst at ~3h50). Punctuality is the
+# reason to move. The cost of moving is that the fleet loses its second
+# machine: a mini that sleeps stops every refresh on the site and nothing
+# anywhere says so.
+#
+# This job is the answer to that. It checks how long ago each auto-refreshed
+# dataset was last committed and opens a single rolling Issue when one goes
+# past its budget. A watchdog must not share a failure domain with the thing it
+# watches, so it stays here -- and a 6-hourly check does not care about a 3h
+# dispatch lag, which makes Actions the correct home for exactly this one job.
+#
+# Needs no secrets beyond the ambient GITHUB_TOKEN. Never commits, never pushes.
+# Decision logic lives in scripts/ops/staleness_check.py behind --self-test.
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: staleness-watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (full history, we read commit dates per path)
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
+        with:
+          python-version: "3.12"
+
+      - name: Self-test (offline decision logic)
+        run: python3 scripts/ops/staleness_check.py --self-test
+
+      - name: Check dataset freshness
+        id: check
+        run: |
+          set -o pipefail
+          python3 scripts/ops/staleness_check.py > /tmp/staleness.md
+          cat /tmp/staleness.md
+          if grep -q 'STALE\|unknown' /tmp/staleness.md; then
+            echo "stale=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "stale=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open or update the tracking issue
+        if: steps.check.outputs.stale == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TITLE: "Data staleness: a scheduled refresh has stopped landing"
+        run: |
+          set -e
+          gh label create data-staleness \
+            --description "Opened by staleness-watch.yml" \
+            --color B60205 2>/dev/null || true
+          num="$(gh issue list --label data-staleness --state open \
+                   --json number --jq '.[0].number // empty')"
+          {
+            echo "$(cat /tmp/staleness.md)"
+            echo
+            echo "---"
+            echo "Opened by \`staleness-watch.yml\`. This issue is edited in place on"
+            echo "each 6-hourly run and closes itself once every dataset is inside its"
+            echo "budget, so it is safe to leave open."
+          } > /tmp/issue-body.md
+          if [ -n "$num" ]; then
+            gh issue edit "$num" --body-file /tmp/issue-body.md
+            echo "Updated issue #$num."
+          else
+            gh issue create --title "$TITLE" --label data-staleness \
+              --body-file /tmp/issue-body.md
+          fi
+
+      - name: Close the tracking issue once everything is fresh
+        if: steps.check.outputs.stale == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          num="$(gh issue list --label data-staleness --state open \
+                   --json number --jq '.[0].number // empty')"
+          if [ -n "$num" ]; then
+            gh issue close "$num" --comment "All datasets are back inside their budgets."
+            echo "Closed issue #$num."
+          else
+            echo "Nothing stale, no open issue. Silent."
+          fi
