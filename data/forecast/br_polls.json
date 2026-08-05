@@ -688,6 +688,28 @@
     "Santos": 4.0,
     "Cury": 3.0
    }
+  },
+  {
+   "date": "2026-08-02",
+   "shares": {
+    "Lula": 41.0,
+    "F. Bolsonaro": 37.0,
+    "Caiado": 5.0,
+    "Zema": 3.0,
+    "Santos": 4.0,
+    "Cury": 1.0
+   }
+  },
+  {
+   "date": "2026-08-03",
+   "shares": {
+    "Lula": 43.0,
+    "F. Bolsonaro": 35.0,
+    "Caiado": 5.7,
+    "Zema": 2.6,
+    "Santos": 4.7,
+    "Cury": 1.7
+   }
   }
  ],
  "matchups": [
@@ -697,6 +719,20 @@
     "Lula"
    ],
    "polls": [
+    {
+     "date": "2026-08-03",
+     "shares": {
+      "Lula": 48.5,
+      "F. Bolsonaro": 43.0
+     }
+    },
+    {
+     "date": "2026-08-02",
+     "shares": {
+      "Lula": 46.0,
+      "F. Bolsonaro": 45.0
+     }
+    },
     {
      "date": "2026-07-29",
      "shares": {

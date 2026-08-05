@@ -4751,13 +4751,24 @@
   {
    "date": "2026-07-30",
    "pollster": "BMG Research",
-   "sample": null,
+   "sample": 974,
    "lab": 28.0,
    "con": 20.0,
    "ref": 23.0,
    "ld": 10.0,
    "grn": 10.0,
    "snp": 3.0
+  },
+  {
+   "date": "2026-07-30",
+   "pollster": "Convergent Opinion",
+   "sample": 10919,
+   "lab": 26.0,
+   "con": 21.0,
+   "ref": 23.0,
+   "ld": 11.0,
+   "grn": 10.0,
+   "snp": 2.0
   },
   {
    "date": "2026-07-31",
@@ -4769,6 +4780,27 @@
    "ld": 12.0,
    "grn": 12.0,
    "snp": 3.0
+  },
+  {
+   "date": "2026-08-03",
+   "pollster": "YouGov",
+   "sample": 2300,
+   "lab": 22.0,
+   "con": 19.0,
+   "ref": 23.0,
+   "ld": 12.0,
+   "grn": 13.0,
+   "snp": 3.0
+  },
+  {
+   "date": "2026-08-03",
+   "pollster": "JL Partners",
+   "sample": 2048,
+   "lab": 27.0,
+   "con": 21.0,
+   "ref": 25.0,
+   "ld": 12.0,
+   "grn": 10.0
   }
  ]
 }
