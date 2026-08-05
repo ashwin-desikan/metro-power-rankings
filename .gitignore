@@ -175,3 +175,12 @@ scripts/uefa/__pycache__/
 # eng_cups_pre93.json and the builder build_eng_cups.py ARE tracked; keep this file locally to
 # regenerate. (The German raw sources dfbpokal6092.txt / germanoberliga6063.txt are small and tracked.)
 scripts/uefa/data/fa_league_cups.txt
+
+# Mac mini job runtime. config.env holds real secrets (Supabase write key,
+# EXCHANGERATE_API_KEY, REVALIDATE_SECRET) and needs its OWN line: the `.env*`
+# rule above matches basenames starting with ".env", which "config.env" does
+# not. config.env.example is the tracked template. state.json and the lock file
+# are per-machine runtime state; dispatcher.log is already covered by *.log.
+mac-mini-jobs/config.env
+mac-mini-jobs/state.json
+mac-mini-jobs/.dispatcher.lock

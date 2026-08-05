@@ -2070,3 +2070,155 @@ Two days running, Ashwin got the exit-3 "unmatched team(s)" alert from a *collis
 Added self-test asserts for `prune_action`. Verified: self-test OK, `--write` stays clean (collisions=0). The manual France + Monopoli deletes are now redundant — this class self-heals on the next run.
 
 Caveat: if a league errors transiently (its teams miss `teams_seen`) AND a new team collides with one of them the same run, that holder could be evicted early — but only the exact colliding slot, and it re-adds next clean run. If you'd rather gate on "0 errors this run", easy to add.
+
+## 2026-08-05 — windows → mini (four Actions are moving to you; here is the dispatcher, and here is the measurement that says why)
+
+### First, a correction that matters more than the migration
+
+For three mornings running (3, 4, 5 Aug) a cloud session reported that
+`business-daily-refresh` and friends had "no-showed" their cron slots. That was
+wrong, and it was wrong in a way worth writing down, because the same method
+would have produced the same wrong answer forever.
+
+I read the real Actions API this morning (unauthenticated, from the Windows box
+— the cloud sandbox proxy 403s `api.github.com` even for this public repo, and
+`gh` is not installed here). **348 schedule-event runs, 20 Jul to 4 Aug, every
+single one `conclusion: success`.** Nothing has ever been skipped. What GitHub
+does is dispatch the run 1 to 4 hours after the cron minute:
+
+| workflow | cron (UTC) | typical actual | lag |
+|---|---|---|---|
+| majors-ingest | 05:30 | ~07:45 | 2h15 |
+| business-daily-refresh | 05:50 | 08:10 (4 Aug) | 2h20 |
+| anomaly-digest | 06:00 Mon | ~09:55 | 3h55 |
+| forecast-weekly | 06:10 M/W/F | ~10:02 | 3h50 |
+| predictions-refresh | 06:40 Tue | 09:26 (4 Aug) | 2h45 |
+| external-url-monitor | 07:30 | ~09:50 | 2h20 |
+| wnba-refresh | 08:00 | ~10:25 | 2h25 |
+| updates-drift-watcher | 09:00 | ~11:10 | 2h10 |
+| cfl-refresh | 12:00 | ~14:20 | 2h20 |
+| footy-refresh | 22:00 | ~23:05 | 1h05 |
+
+`created_at == run_started_at` on the late runs, so this is GitHub's dispatcher,
+not job queueing and not our YAML. The 06:00-06:10 band is the worst in the day;
+22:00 is the cleanest.
+
+Concretely: `business-daily-refresh` has exactly **two** runs ever — the manual
+dispatch on 4 Aug at 07:22, and a **scheduled run at 08:10:10Z that succeeded**.
+That 08:10 run is what stamped `markets.json generated_at 2026-08-04T08:10:45Z`,
+which an earlier note mis-attributed to the manual dispatch. The dispatch was
+unnecessary.
+
+**Two rules out of this, please apply them:** never call a cron a no-show before
+cron + 3h, and read the Actions runs API rather than inferring from commit
+absence or `x-vercel-cache: age` — absence of a commit is equally consistent
+with "not fired yet", "fired and failed" and "ran, no changes", and only the run
+list separates them.
+
+### What is moving to you, and what is not
+
+Ashwin's call, after the above: move the jobs whose lateness is actually visible
+to a reader, leave the rest. Four move:
+
+- `business-daily-refresh` (05:50) — markets/FX carry a visible `as of` date and
+  drive the revalidate ping; the site sat on yesterday until mid-morning
+- `forecast-weekly` (06:10 M/W/F) — worst-lagged job on the board
+- `predictions-refresh` (Tue 06:40, Fri 11:40) — the Friday slot is the NFL freeze
+- `mlb-sim-refresh` (09:40, Mar-Nov)
+
+Nine stay on Actions, deliberately, and I would push back on moving them later:
+the ingests (`majors`, `footy`, `cfl`, `wnba`) are idempotent no-ops most days,
+the honours scrapers are seasonal, `anomaly-digest` is weekly, and the lag costs
+nothing in any of those cases. Keeping them there also keeps a **second machine**
+in the fleet, which is the thing a full migration would throw away. Two more I
+would keep on Actions on principle: `external-url-monitor` and
+`updates-drift-watcher` open Issues via the ambient `GITHUB_TOKEN` (on the mini
+that becomes a PAT with `issues: write`), and they are the two jobs whose entire
+job is to tell you something else broke. Alarms should not share a failure
+domain with the thing they watch.
+
+### What I have built for you (in the repo, not yet pushed)
+
+    mac-mini-jobs/dispatcher.py                          10-minute tick
+    mac-mini-jobs/jobs.toml                              UTC schedule table
+    mac-mini-jobs/runners/_common.sh                     sync/guard/commit/ping helpers
+    mac-mini-jobs/runners/{business-daily,forecast,predictions,mlb-sim}.sh
+    mac-mini-jobs/com.citizenofnowhere.dispatcher.plist  StartInterval 600
+    mac-mini-jobs/GITHUB-TO-MINI-MIGRATION.md            the full argument
+    scripts/ops/staleness_check.py                       watchdog logic
+    .github/workflows/staleness-watch.yml                the watchdog itself
+
+Install steps are in `mac-mini-jobs/README.md` section 3. Two design choices you
+should not undo:
+
+**One dispatcher, not one plist per job.** launchd `StartCalendarInterval` is
+*local* time, so every slot would shift an hour at the DST change, and these
+slots were chosen against market and fixture clocks. It also fires a missed
+interval only on wake, not if the box was powered off across the window, and
+leaves no record. The dispatcher compares the most recent scheduled occurrence
+against a per-job last-run date, so asleep at 05:50 and awake at 07:30 still
+runs, and off-all-day records a `MISSED` and ntfy's you.
+
+**The runners are literal ports.** Same step order, same `--self-test` gate,
+same early-exit when nothing changed, same five-attempt pull-rebase-push loop,
+same fail-open revalidate ping after the 300s GitHub-raw CDN sleep. Every one of
+those guards exists because of a specific incident; the YAML comments say which.
+Please do not tidy them.
+
+`dispatcher.py --self-test` is 19 cases and passes. It earned its keep: the
+first version walked back 400 days looking for a live occurrence, so on the
+first tick of March a Mar-Nov job would have "found" the previous November's
+slot and fired a spurious `MISSED`. The lookback is now bounded to 8 days
+(`lookback_days` per job for anything rarer than weekly).
+
+### What I need from you
+
+1. **Do the install in the README's order**, and do not skip
+   `dispatcher.py --seed` before loading the plist. Without it the first tick
+   alerts `MISSED` on every job for slots the Actions already covered, which is
+   exactly how an alert channel stops being read.
+2. **`DRY_RUN=1 bash runners/business-daily.sh` first**, read the staged diff,
+   and report it back here before anything goes live. That runner is the one
+   with a real API key (`EXCHANGERATE_API_KEY`) and the revalidate ping.
+3. **`PYTHON_BIN` must point at the venv**, not system python3 —
+   `runners/predictions.sh` hard-refuses if numpy is missing rather than taking
+   a silently slower or broken path.
+4. **One runner per job.** As each goes live on your side, the `schedule:` block
+   in its workflow gets commented out (keeping `workflow_dispatch` as the manual
+   fallback). I have NOT done that yet — it needs Ashwin's approval and a push,
+   and doing it before your side works would leave the job with no runner at
+   all. Tell me when each is proven and I will land the YAML change.
+5. **One at a time, never two in the same day.** business-daily first.
+
+### Open questions
+
+1. **Is the mini's clock and sleep behaviour going to cooperate?** The whole
+   design assumes the box is awake, or wakes, within the catch-up window (14h
+   for the daily jobs, 20h for the Tue/Fri ones). If it routinely sleeps through
+   mornings, tell me and we will add a `pmset` wake schedule rather than quietly
+   accumulating `MISSED` records.
+2. **`staleness-watch.yml` thresholds.** I set 30h for markets/fx, 36h for
+   mlb-sim, 9 days for the change-gated ones (pl-sim, nfl-sim, forecast). The
+   change-gated ones can trip on a genuinely quiet upstream. If it turns out
+   noisy in practice, the fix is a longer budget, not switching the alarm off.
+3. **The ESPN bundle migration, which landed mid-session.** When I started, the
+   answer to the 4 Aug night outage was sitting uncommitted in the working tree:
+   `espn-standings-snapshot.yml` (cron `25 */3 * * *`, untracked),
+   `lib/espnFetch.ts`, `scripts/espn/`, `public/data/espn-snapshots/` and edits
+   to all seven standings libs. Ashwin committed it while I was writing this:
+   `464212184` (ci: snapshot ESPN standings from GitHub runners) and
+   `e2801ca8b` (fix: ESPN live fetches fall back to committed snapshots). So
+   there is now a fifteenth scheduled workflow, and it stays on Actions, which
+   is right: it is a snapshot-taker, eight runs a day, and a 2h dispatch lag on
+   a 3-hourly job is noise.
+
+   Less obvious, and worth saying out loud: now that the standings libs fall
+   back to committed snapshots, **that path going stale silently re-arms the
+   exact outage it was built to fix.** The fallback would be present but old, so
+   the pages would render confidently wrong rather than visibly empty, which is
+   strictly worse than the failure just fixed. I have added
+   `public/data/espn-snapshots` to `staleness_check.py` on a deliberately loose
+   24h budget, because I do not yet know how often that job actually commits
+   overnight when no standings move, and a watchdog that cries wolf in its first
+   week gets muted forever. Report its real rhythm after a week so the budget
+   can be tightened to something that would genuinely catch a dead runner.

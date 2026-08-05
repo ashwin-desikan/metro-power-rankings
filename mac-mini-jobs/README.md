@@ -95,3 +95,103 @@ Then set `DRY_RUN="0"` for the real run.
 
 launchd stdout/stderr go to `/tmp/con-*.log`; the monitor's own history is in
 `feed-monitor.log`.
+
+---
+
+## 3. Scheduled-data dispatcher (`dispatcher.py`) — added 2026-08-05
+
+The mini now owns four data refreshes that used to run as GitHub Actions:
+business-daily, forecast, predictions (Tue + Fri) and mlb-sim. The reasoning,
+the per-job verdicts and what deliberately stayed on Actions are in
+[`GITHUB-TO-MINI-MIGRATION.md`](GITHUB-TO-MINI-MIGRATION.md). Short version:
+GitHub dispatches cron 1-4 hours late (measured across 348 runs; every run
+succeeded, every run was late), and these four are the ones whose lateness a
+reader can actually see.
+
+### Why one dispatcher instead of one plist per job
+
+- **DST.** launchd `StartCalendarInterval` is *local* time, so a 06:50 plist
+  fires at 05:50 UTC in summer and 06:50 UTC in winter. These slots were chosen
+  against market and fixture clocks. Every time in `jobs.toml` is UTC.
+- **Missed runs.** launchd fires a missed calendar interval once on wake, but
+  not if the machine was powered off across the window, and it leaves no record.
+  The dispatcher compares the most recent scheduled occurrence against a per-job
+  last-run date: asleep at 05:50 and awake at 07:30 still runs; off all day
+  records a `MISSED` and ntfy's instead of failing silently.
+- Adding or retiming a job is a `jobs.toml` edit, not a new plist and a reload.
+
+### Files
+
+    dispatcher.py                            the 10-minute tick
+    jobs.toml                                schedule table (UTC), one [[job]] per slot
+    state.json                               last-run date per job (gitignored, machine-local)
+    dispatcher.log                           append-only run log (gitignored)
+    runners/_common.sh                       shared sync / guard / commit / revalidate helpers
+    runners/business-daily.sh                port of business-daily-refresh.yml
+    runners/forecast.sh                      port of forecast-weekly.yml
+    runners/predictions.sh                   port of predictions-refresh.yml (both slots)
+    runners/mlb-sim.sh                       port of mlb-sim-refresh.yml
+    com.citizenofnowhere.dispatcher.plist    StartInterval 600
+
+Each runner is a **literal** port of its workflow: same step order, same
+self-test gate, same early-exit when nothing changed, same five-attempt
+pull-rebase-push loop, same fail-open revalidate ping after the 300 second
+GitHub-raw CDN sleep. Do not paraphrase those guards; each exists because of a
+specific incident documented in the YAML.
+
+### Install
+
+    cd ~/metro-mini-jobs
+    cp config.env.example config.env        # fill in EXCHANGERATE_API_KEY + REVALIDATE_SECRET
+    chmod +x runners/*.sh
+    python3 dispatcher.py --self-test       # 19 cases, no side effects
+    python3 dispatcher.py --status          # what is scheduled and when it last ran
+
+`PYTHON_BIN` must point at the venv (`metro-venv-requirements.txt` pins
+numpy 2.5.1) or `runners/predictions.sh` refuses to run.
+
+Then a dry run of one job, before anything is scheduled:
+
+    DRY_RUN=1 bash runners/business-daily.sh
+
+That fetches for real, shows the staged diff and commits nothing. Read the diff.
+When it looks right, run it once for real by hand, confirm
+`Revalidated on attempt 1` in the output and the `as of` date changing on
+`/business/markets`, and only then schedule it.
+
+    python3 dispatcher.py --seed            # <- do not skip this
+    cp com.citizenofnowhere.dispatcher.plist ~/Library/LaunchAgents/
+    launchctl load ~/Library/LaunchAgents/com.citizenofnowhere.dispatcher.plist
+
+`--seed` marks each job's current occurrence as already handled. Without it the
+first tick sees every job's last slot as unrun and past its catch-up window, and
+fires a `MISSED` alert per job for slots the Actions had in fact already
+covered. An alarm channel only works while it is trusted.
+
+### The one-runner rule
+
+For every job moved here, **comment out the `schedule:` block in its workflow
+and keep `workflow_dispatch`**. That leaves the Action as a one-click manual
+fallback when the mini is down, and guarantees the two never race and produce
+duplicate commits. Same discipline `civic-data-refresh.yml`,
+`leaders-refresh.yml` and `billionaires-refresh.yml` already follow.
+
+### What watches the watchman
+
+`.github/workflows/staleness-watch.yml` stays on GitHub deliberately: it checks
+every 6 hours how long ago each auto-refreshed dataset was last committed and
+opens a single rolling Issue when one goes past its budget. A watchdog must not
+share a failure domain with the thing it watches, and a 6-hourly check does not
+care about a 3-hour dispatch lag. Its thresholds live in
+`scripts/ops/staleness_check.py` (also `--self-test`-gated). If you add a job
+here, add its output path there.
+
+### Day-to-day
+
+    python3 dispatcher.py --status      # table: slot, last run, status, verdict
+    tail -f dispatcher.log              # what the ticks did
+    tail -f /tmp/con-dispatcher.err     # launchd-level failures
+
+A failed run alerts once and is **not** retried every 10 minutes; the next slot
+is the retry, and the GitHub staleness watch is the backstop if the data goes
+genuinely stale.

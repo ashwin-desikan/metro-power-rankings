@@ -1,0 +1,415 @@
+#!/usr/bin/env python3
+"""Ten-minute tick that owns the mini's scheduled data jobs.
+
+Replaces one launchd StartCalendarInterval plist per job. Two reasons that
+pattern is wrong here:
+
+  1. DST. launchd calendar intervals are LOCAL time. A plist set to 06:50 fires
+     at 05:50 UTC in summer and 06:50 UTC in winter, so market data keyed to the
+     Asia close silently shifts an hour twice a year. Every time in jobs.toml is
+     UTC and is compared in UTC.
+
+  2. Missed runs. launchd fires a missed calendar interval once on wake, but not
+     if the machine was powered off across the window, and it leaves no record
+     that nothing happened. This dispatcher compares the most recent scheduled
+     occurrence against a per-job last-run date, so a mini that was asleep at
+     05:50 and woke at 07:30 still runs the job, and a mini that was off all day
+     records a MISSED and alerts instead of failing silently.
+
+State lives in state.json next to this file. Config in jobs.toml (stdlib
+tomllib, Python 3.11+). Runner scripts do the actual work and are literal ports
+of the GitHub workflows they replace.
+
+    python3 dispatcher.py --self-test    # pure scheduling logic, no side effects
+    python3 dispatcher.py --dry-run      # decide and log, run nothing
+    python3 dispatcher.py --status       # what is scheduled and when it last ran
+    python3 dispatcher.py                # the real tick (launchd calls this)
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import subprocess
+import sys
+import tomllib
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+JOBS_FILE = HERE / "jobs.toml"
+STATE_FILE = HERE / "state.json"
+LOG_FILE = HERE / "dispatcher.log"
+LOCK_FILE = HERE / ".dispatcher.lock"
+
+DEFAULT_CATCHUP_HOURS = 12
+DEFAULT_TIMEOUT_MINUTES = 30
+# How far back to look for a live occurrence. Must exceed the longest gap any
+# configured job has between runs (daily = 1 day, Tue-only = 7), and must NOT be
+# so large that it reaches across a seasonal gap: on 10 February a Mar-Nov job
+# would otherwise "find" last November's slot and fire a spurious MISSED alert.
+# Raise it per job via lookback_days for anything monthly or rarer.
+DEFAULT_LOOKBACK_DAYS = 8
+
+
+# --- pure scheduling logic (covered by --self-test) -------------------------
+
+def previous_occurrence(now, job):
+    """The most recent scheduled datetime at or before `now`, or None.
+
+    Walks back day by day (bounded) looking for a date that satisfies the job's
+    weekday and month filters, at the job's UTC time. Handles the weekday case
+    correctly: on a Wednesday, a Tuesday-only job's previous occurrence is
+    yesterday, not today.
+    """
+    hh, mm = (int(x) for x in job["time"].split(":"))
+    weekdays = job.get("weekdays") or []
+    months = job.get("months") or []
+    lookback = job.get("lookback_days", DEFAULT_LOOKBACK_DAYS)
+    for back in range(0, lookback + 1):
+        day = (now - timedelta(days=back)).date()
+        if months and day.month not in months:
+            continue
+        if weekdays and day.isoweekday() not in weekdays:
+            continue
+        occ = datetime(day.year, day.month, day.day, hh, mm, tzinfo=timezone.utc)
+        if occ <= now:
+            return occ
+    return None
+
+
+def decide(now, job, last_run_date):
+    """Returns (verdict, occurrence, lateness).
+
+    verdict is one of:
+      "due"          run it now
+      "already-ran"  this occurrence is already accounted for
+      "missed"       too far past the slot to be useful; record and alert
+      "off-schedule" no occurrence found inside the lookback window
+    """
+    occ = previous_occurrence(now, job)
+    if occ is None:
+        return "off-schedule", None, None
+    if last_run_date and last_run_date >= occ.date().isoformat():
+        return "already-ran", occ, None
+    late = now - occ
+    catchup = timedelta(hours=job.get("catchup_hours", DEFAULT_CATCHUP_HOURS))
+    if late > catchup:
+        return "missed", occ, late
+    return "due", occ, late
+
+
+# --- state, logging, notification -------------------------------------------
+
+def load_state():
+    if not STATE_FILE.exists():
+        return {}
+    try:
+        return json.loads(STATE_FILE.read_text())
+    except (json.JSONDecodeError, OSError):
+        # A corrupt state file must not wedge the fleet. Losing it means at
+        # worst one duplicate run, and every runner is idempotent or
+        # change-gated, so that is cheap. Wedging is not.
+        log("WARN state.json unreadable; starting from empty state")
+        return {}
+
+
+def save_state(state):
+    tmp = STATE_FILE.with_suffix(".json.tmp")
+    tmp.write_text(json.dumps(state, indent=2, sort_keys=True))
+    tmp.replace(STATE_FILE)
+
+
+def log(msg):
+    line = f"{datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')} {msg}"
+    print(line, flush=True)
+    try:
+        with LOG_FILE.open("a") as fh:
+            fh.write(line + "\n")
+    except OSError:
+        pass
+
+
+def notify(title, body):
+    """Best effort. notify.py already owns ntfy/pushover config."""
+    script = HERE / "notify.py"
+    if not script.exists():
+        log(f"NOTIFY (no notify.py) {title}: {body}")
+        return
+    try:
+        subprocess.run([sys.executable, str(script), title, body],
+                       timeout=30, capture_output=True)
+    except Exception as exc:  # notification failure must never fail a run
+        log(f"WARN notify failed: {exc}")
+
+
+# --- execution ---------------------------------------------------------------
+
+def acquire_lock():
+    """Refuse to overlap ticks. A long business-daily run (the revalidate step
+    sleeps 300s) must not be re-entered by the next 10-minute tick."""
+    if LOCK_FILE.exists():
+        try:
+            pid = int(LOCK_FILE.read_text().strip())
+            os.kill(pid, 0)          # signal 0 = liveness probe only
+            return False
+        except (ValueError, OSError, ProcessLookupError):
+            log("stale lock file; taking it over")
+    LOCK_FILE.write_text(str(os.getpid()))
+    return True
+
+
+def release_lock():
+    try:
+        LOCK_FILE.unlink()
+    except OSError:
+        pass
+
+
+def run_job(job):
+    cmd = job["command"]
+    timeout = job.get("timeout_minutes", DEFAULT_TIMEOUT_MINUTES) * 60
+    path = HERE / cmd if not os.path.isabs(cmd) else Path(cmd)
+    started = datetime.now(timezone.utc)
+    try:
+        proc = subprocess.run(["/bin/bash", str(path)], cwd=str(HERE),
+                              capture_output=True, text=True, timeout=timeout)
+    except subprocess.TimeoutExpired:
+        return "timeout", f"exceeded {timeout // 60}m"
+    dur = (datetime.now(timezone.utc) - started).total_seconds()
+    tail = (proc.stdout or "").strip().splitlines()[-12:]
+    for line in tail:
+        log(f"    | {line}")
+    if proc.returncode != 0:
+        err = (proc.stderr or "").strip().splitlines()[-6:]
+        for line in err:
+            log(f"    ! {line}")
+        return "failed", f"exit {proc.returncode} after {dur:.0f}s"
+    return "ok", f"{dur:.0f}s"
+
+
+def tick(now, jobs, state, dry_run=False):
+    """One pass over the fleet. Returns the updated state."""
+    for job in jobs:
+        jid = job["id"]
+        last = (state.get(jid) or {}).get("last_run_date", "")
+        verdict, occ, late = decide(now, job, last)
+
+        if verdict in ("already-ran", "off-schedule"):
+            continue
+
+        stamp = occ.date().isoformat()
+        late_str = f"{late.total_seconds() / 60:.0f}m late" if late else ""
+
+        if verdict == "missed":
+            log(f"MISSED {jid} (slot {occ:%Y-%m-%d %H:%M}Z, {late_str}) "
+                f"- past its {job.get('catchup_hours', DEFAULT_CATCHUP_HOURS)}h "
+                f"catch-up window; skipping to the next slot")
+            notify("Metro: scheduled job missed",
+                   f"{jid} did not run for its {occ:%Y-%m-%d %H:%M}Z slot "
+                   f"({late_str}). The mini was probably off. The GitHub "
+                   f"staleness watch will confirm whether the data went stale.")
+            state[jid] = {"last_run_date": stamp, "last_status": "missed",
+                          "last_slot": occ.isoformat()}
+            continue
+
+        if dry_run:
+            log(f"WOULD RUN {jid} (slot {occ:%Y-%m-%d %H:%M}Z, {late_str})")
+            continue
+
+        log(f"RUN {jid} (slot {occ:%Y-%m-%d %H:%M}Z, {late_str})")
+        status, detail = run_job(job)
+        log(f"{'DONE' if status == 'ok' else 'FAIL'} {jid}: {status} {detail}")
+        if status != "ok":
+            notify(f"Metro: {jid} {status}",
+                   f"Slot {occ:%Y-%m-%d %H:%M}Z. {detail}. See dispatcher.log "
+                   f"on the mini. The Action still exists as a manual fallback.")
+        # Record the slot either way. A job that failed should not be retried
+        # every 10 minutes for the rest of the day; the alert is the signal,
+        # and the next slot is the retry.
+        state[jid] = {"last_run_date": stamp, "last_status": status,
+                      "last_slot": occ.isoformat()}
+    return state
+
+
+# --- self-test ---------------------------------------------------------------
+
+def self_test():
+    cases = []
+
+    def check(label, got, want):
+        cases.append((label, got, want))
+
+    daily = {"id": "d", "time": "05:50"}
+    tue = {"id": "t", "time": "06:40", "weekdays": [2]}
+    seasonal = {"id": "s", "time": "09:40", "months": list(range(3, 12))}
+
+    # 2026-08-05 is a Wednesday.
+    at0600 = datetime(2026, 8, 5, 6, 0, tzinfo=timezone.utc)
+
+    # basic daily behaviour
+    check("daily due", decide(at0600, daily, "")[0], "due")
+    check("daily already ran", decide(at0600, daily, "2026-08-05")[0], "already-ran")
+
+    # before today's slot, yesterday's occurrence is the live one
+    at0500 = datetime(2026, 8, 5, 5, 0, tzinfo=timezone.utc)
+    check("before slot uses yesterday",
+          decide(at0500, daily, "2026-08-04")[0], "already-ran")
+    # yesterday's slot skipped AND today's is 50 minutes away: running a 23h-old
+    # slot now is pointless, so it is recorded as missed rather than fired late
+    check("stale slot with the next one imminent",
+          decide(at0500, daily, "2026-08-03")[0], "missed")
+
+    # THE POINT OF THE WHOLE DESIGN: mini asleep at 05:50, wakes at 07:30,
+    # job still runs. launchd with StartCalendarInterval would too, but only
+    # on wake, and not if the box was powered off.
+    at0730 = datetime(2026, 8, 5, 7, 30, tzinfo=timezone.utc)
+    check("catch-up after sleep", decide(at0730, daily, "2026-08-04")[0], "due")
+
+    # ... but not 18h later, when the next slot is nearly here
+    at2359 = datetime(2026, 8, 5, 23, 59, tzinfo=timezone.utc)
+    check("too late to be useful", decide(at2359, daily, "2026-08-04")[0], "missed")
+
+    # weekday filter: on Wednesday, a Tuesday job's live occurrence is Tuesday,
+    # so having run Tuesday means nothing is owed
+    check("tue job on wed, ran tue",
+          decide(at0600, tue, "2026-08-04")[0], "already-ran")
+    # and if it did NOT run Tuesday, Wednesday 06:00 is 23h20 past the slot,
+    # so it is correctly reported missed rather than run a day late
+    check("tue job on wed, skipped tue",
+          decide(at0600, tue, "2026-07-28")[0], "missed")
+    # on Tuesday itself it is simply due
+    tue_0700 = datetime(2026, 8, 4, 7, 0, tzinfo=timezone.utc)
+    check("tue job on tue", decide(tue_0700, tue, "")[0], "due")
+
+    # month filter: in February a Mar-Nov job has no occurrence in the lookback
+    feb = datetime(2026, 2, 10, 12, 0, tzinfo=timezone.utc)
+    check("seasonal out of season", decide(feb, seasonal, "")[0], "off-schedule")
+    check("seasonal in season",
+          decide(datetime(2026, 8, 5, 10, 0, tzinfo=timezone.utc), seasonal, "")[0],
+          "due")
+    # THE SEASON-BOUNDARY BUG the lookback bound exists to prevent: before the
+    # bound, an unbounded walk-back from 1 March 00:30 reached last November's
+    # slot and fired a spurious MISSED alert on the first tick of the season.
+    mar1_early = datetime(2026, 3, 1, 0, 30, tzinfo=timezone.utc)
+    check("season boundary finds nothing owed",
+          previous_occurrence(mar1_early, seasonal), None)
+    check("season boundary is off-schedule, not missed",
+          decide(mar1_early, seasonal, "")[0], "off-schedule")
+    mar1 = datetime(2026, 3, 1, 9, 45, tzinfo=timezone.utc)
+    check("season opens on its own slot",
+          previous_occurrence(mar1, seasonal).date().isoformat(), "2026-03-01")
+    # a weekly job still resolves across a 7-day gap inside the 8-day lookback
+    check("weekly gap inside lookback",
+          previous_occurrence(datetime(2026, 8, 10, 12, 0, tzinfo=timezone.utc),
+                              tue).date().isoformat(), "2026-08-04")
+
+    # exact boundary: at the slot minute it is due, one minute before it is not
+    check("exactly at slot",
+          decide(datetime(2026, 8, 5, 5, 50, tzinfo=timezone.utc), daily, "2026-08-04")[0],
+          "due")
+    check("one minute before slot",
+          decide(datetime(2026, 8, 5, 5, 49, tzinfo=timezone.utc), daily, "2026-08-04")[0],
+          "already-ran")
+
+    # DST is a non-event because everything is UTC: the same wall-clock UTC slot
+    # is chosen either side of the European clock change
+    for d in (datetime(2026, 10, 24, 6, 0, tzinfo=timezone.utc),
+              datetime(2026, 10, 26, 6, 0, tzinfo=timezone.utc)):
+        check(f"utc slot stable {d:%d %b}",
+              previous_occurrence(d, daily).strftime("%H:%M"), "05:50")
+
+    failed = [c for c in cases if c[1] != c[2]]
+    for label, got, want in cases:
+        print(f"  {'PASS' if got == want else 'FAIL'}  {label}: got {got!r}, want {want!r}")
+    if failed:
+        print(f"\n{len(failed)}/{len(cases)} FAILED", file=sys.stderr)
+        return 1
+    print(f"\nself-test OK ({len(cases)} cases)")
+    return 0
+
+
+# --- entry point -------------------------------------------------------------
+
+def load_jobs():
+    with JOBS_FILE.open("rb") as fh:
+        return tomllib.load(fh).get("job", [])
+
+
+def show_status(now, jobs, state):
+    print(f"now {now:%Y-%m-%d %H:%M}Z\n")
+    print(f"{'job':<20} {'slot (UTC)':<12} {'last run':<12} {'status':<9} verdict")
+    print("-" * 72)
+    for job in jobs:
+        st = state.get(job["id"]) or {}
+        verdict, occ, _ = decide(now, job, st.get("last_run_date", ""))
+        occ_s = f"{occ:%m-%d %H:%M}" if occ else "-"
+        print(f"{job['id']:<20} {occ_s:<12} {st.get('last_run_date', '-'):<12} "
+              f"{st.get('last_status', '-'):<9} {verdict}")
+
+
+def seed(now, jobs, state):
+    """Mark every job's live occurrence as handled, without running anything.
+
+    Run this once at install. Without it, the first real tick on a cold state
+    file sees every job's most recent slot as unrun and past its catch-up
+    window, and fires a MISSED alert per job for slots that were in fact
+    covered by the GitHub Actions the mini is replacing. That is a noisy,
+    untrue first impression for an alarm channel that only works if it is
+    trusted.
+    """
+    for job in jobs:
+        occ = previous_occurrence(now, job)
+        if occ is None:
+            print(f"  {job['id']}: no live occurrence (off-season); left unseeded")
+            continue
+        state[job["id"]] = {"last_run_date": occ.date().isoformat(),
+                            "last_status": "seeded",
+                            "last_slot": occ.isoformat()}
+        print(f"  {job['id']}: seeded at {occ:%Y-%m-%d %H:%M}Z")
+    save_state(state)
+    print(f"\nWrote {STATE_FILE.name}. The next genuine slot for each job runs normally.")
+    return 0
+
+
+def main():
+    ap = argparse.ArgumentParser(description="mini scheduled-job dispatcher")
+    ap.add_argument("--self-test", action="store_true")
+    ap.add_argument("--dry-run", action="store_true",
+                    help="decide and log, but run nothing and write no state")
+    ap.add_argument("--status", action="store_true")
+    ap.add_argument("--seed", action="store_true",
+                    help="mark every job's current occurrence as handled without "
+                         "running it; use once at install so a cold start does not "
+                         "alert on historic slots the Actions already covered")
+    args = ap.parse_args()
+
+    if args.self_test:
+        return self_test()
+
+    now = datetime.now(timezone.utc)
+    jobs = load_jobs()
+    state = load_state()
+
+    if args.status:
+        show_status(now, jobs, state)
+        return 0
+
+    if args.seed:
+        return seed(now, jobs, state)
+
+    if not args.dry_run and not acquire_lock():
+        log("previous tick still running; skipping")
+        return 0
+    try:
+        state = tick(now, jobs, state, dry_run=args.dry_run)
+        if not args.dry_run:
+            save_state(state)
+    finally:
+        if not args.dry_run:
+            release_lock()
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  The ONLY launchd job for the migrated data fleet.
+
+  StartInterval, not StartCalendarInterval, on purpose. Calendar intervals are
+  local time (so every slot shifts an hour at the DST change) and leave no
+  record when the machine was powered off across a window. A plain 10-minute
+  tick plus dispatcher.py's own UTC schedule table and last-run state solves
+  both, and adding or retiming a job becomes a jobs.toml edit instead of a new
+  plist and a launchctl reload.
+
+  Install:
+    cp com.citizenofnowhere.dispatcher.plist ~/Library/LaunchAgents/
+    launchctl load ~/Library/LaunchAgents/com.citizenofnowhere.dispatcher.plist
+    launchctl start com.citizenofnowhere.dispatcher     # force one tick
+
+  Check: run dispatcher.py with the status flag, and tail dispatcher.log.
+  (XML comments cannot contain a double hyphen, so the flags are spelled out
+  in mac-mini-jobs/README.md rather than shown here.)
+
+  Fix the two paths below if the folder is not ~/metro-mini-jobs.
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.citizenofnowhere.dispatcher</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/python3</string>
+        <string>/Users/ashwin/metro-mini-jobs/dispatcher.py</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/ashwin/metro-mini-jobs</string>
+
+    <key>StartInterval</key>
+    <integer>600</integer>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/con-dispatcher.log</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/con-dispatcher.err</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <!-- launchd agents get a minimal PATH; git and curl need to be findable. -->
+        <key>PATH</key>
+        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    </dict>
+</dict>
+</plist>
