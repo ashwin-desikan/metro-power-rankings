@@ -1,5 +1,5 @@
-// Bumped by mac-mini-jobs/run-deploy-watch.sh to re-trigger a Vercel build that a
-// concurrent [vercel skip] data push canceled. NOT imported anywhere — it exists
-// only so a re-trigger commit touches a build-relevant path (lib/) and Vercel's
-// ignoreCommand rebuilds the latest code. See run-deploy-watch.sh.
-export const DEPLOY_RETRY = "a277c4a35-1";
+// Bumped by hand to force a production rebuild that picks up the rotated
+// REVALIDATE_SECRET env var (env changes only apply to a build that reaches READY;
+// the dashboard redeploy kept losing the race to [vercel skip] data pushes).
+// Not imported anywhere. See mac-mini-jobs/run-deploy-watch.sh.
+export const DEPLOY_RETRY = "reval-secret-rebuild";
