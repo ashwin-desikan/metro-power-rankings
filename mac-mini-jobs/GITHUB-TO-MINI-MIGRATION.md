@@ -196,8 +196,32 @@ symptom is a stale date on a public page.
    `/business/markets`.
 4. Only then comment out `schedule:` in `business-daily-refresh.yml` and push
    with the skip marker.
-5. Repeat 2-4 for mlb-sim, predictions, forecast-weekly, one at a time, never
-   two in the same day.
+5. Repeat 2-4 for **forecast-weekly first**, then predictions, then mlb-sim, one
+   at a time, never two in the same day.
+
+   **Corrected 2026-08-05.** This step originally read "mlb-sim, predictions,
+   forecast-weekly", which was wrong, and `jobs.toml` disagreed with it. The
+   order is a dependency, not a preference: `scripts/forecast/fetch_data.py`
+   touches Wikipedia and parliament.uk only, while `build_mlb_sim.py`,
+   `build_nfl_sim.py` and `build_pl_sim.py` all make **required** (`soft=False`)
+   calls to `site.api.espn.com` whose failure path is `SystemExit`.
+
+   **Resolved the same evening: all four are movable.** The mini's Akamai 403s
+   were a User-Agent problem, not an IP block. Akamai's ESPN edge applies
+   different UA policy per PoP, so the same token can 200 from one machine and
+   403 from another. Measured on 2026-08-05 across three vantages, the only
+   shape that passed everywhere is a plain library token, so the three scripts
+   now send no `User-Agent` and inherit urllib's own. The full matrix lives in
+   `build_mlb_sim.py`'s `fetch_json` docstring, which is the one place to
+   update if any of this changes.
+
+   Regression evidence for the change: `build_mlb_sim.py` rebuilt locally with
+   the new UA produced a file **byte-identical** to the one the Action's 11:39Z
+   run produced with the old one (`git diff` empty), with the `verify_wins()`
+   gate green at 30/30. Self-tests 30/17/14 across the three scripts.
+
+   Still keep forecast first. It is the only one of the four with no ESPN
+   exposure at all, which makes it the cleanest proof of the mini pattern.
 6. Decide about the remaining nine once the pattern has run clean for a week.
 
 ## Also found while looking
@@ -213,3 +237,16 @@ symptom is a stale date on a public page.
   finished or discarded before it rots, and if it ships it is a fifteenth
   scheduled job that should go straight onto the mini pattern rather than onto
   Actions.
+
+  **Shipped 2026-08-05 (`464212184`, then `e2801ca8b`), onto Actions, and the
+  recommendation above is now reversed: it should STAY on Actions.** Two
+  reasons. It is the fallback generator for the case where ESPN is unreachable
+  from Vercel, so hosting it on the mini collapses two independent failure
+  domains into one, and a sleeping mini plus an ESPN block would take the
+  standings down with nothing left to serve. And the mini itself started getting
+  Akamai 403s from `site.api.espn.com` the same day, so depending on the UA test
+  in HANDOFF.md it may be physically unable to generate the snapshot at all.
+  Measured lag on its first two runs was +2h08 and +2h15 against a 3h cadence,
+  which is real but invisible: standings do not move fast enough for a ~5h
+  worst-case snapshot age to matter, and the repo is public so the Actions
+  minutes are free.

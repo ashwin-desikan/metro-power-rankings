@@ -110,11 +110,30 @@ def fetch_json(url, soft=False, retries=3):
     timeout. That exact mistake killed two pipeline runs in this repo
     (scripts/build-country-indicators.py, 2026-08-04).
 
-    Note the User-Agent is load-bearing. A browser-like UA gets a hard 403
-    from site.api.espn.com; "CitizenOfNowhere/1.0" does not. Do not "fix" it.
+    The User-Agent is load-bearing, and the rule is NOT global: Akamai's ESPN
+    edge applies different UA policy per PoP, so a token that works from one
+    machine 403s from another. Measured 2026-08-05, same four endpoints, same
+    instant, from each vantage:
+
+        UA sent                           mac mini (London)  Windows box (UK)  GH runners
+        (none) -> "Python-urllib/3.x"           200                200          see below
+        "python-requests/2.31", bare curl       200                200             -
+        "CitizenOfNowhere/1.0"                  403                200             -
+        branded "rankings-...-nowhere/1.0"      403                200            200
+        browser spoof (Safari 17)               403                200             -
+        empty string                            403                403             -
+
+    So we send NO User-Agent and let urllib supply its own library token: the
+    only shape that passed from every vantage tested. Do NOT "fix" this by
+    adding a browser UA (403s at the mini's edge) and do NOT restore
+    "CitizenOfNowhere/1.0" (403s at the mini's edge, which is precisely what
+    blocked this job from migrating off GitHub Actions).
+
+    Vercel is a separate problem and no UA solves it: ESPN scores Vercel's
+    egress IPs regardless of headers, which is why lib/espnFetch.ts carries a
+    committed-snapshot fallback. Do not copy this comment's conclusion there.
     """
-    req = urllib.request.Request(url, headers={"User-Agent": "CitizenOfNowhere/1.0",
-                                               "Accept": "application/json"})
+    req = urllib.request.Request(url, headers={"Accept": "application/json"})
     last = None
     for attempt in range(retries):
         try:

@@ -114,7 +114,13 @@ def hub_name(fd):
 # ------------------------------------------------------------------ fetching
 
 def fetch(url, timeout=25):
-    req = urllib.request.Request(url, headers={"User-Agent": "CitizenOfNowhere/1.0"})
+    # No User-Agent on purpose: urllib's own library token is the only shape
+    # that passed from every vantage we tested on 2026-08-05. The mini's edge
+    # 403s "CitizenOfNowhere/1.0", branded tokens and browser spoofs alike.
+    # Full measured matrix and the reasoning live in build_mlb_sim.py's
+    # fetch_json docstring. Do not add a UA back here without re-measuring.
+    # (This helper also fetches football-data.co.uk CSVs, which are UA-agnostic.)
+    req = urllib.request.Request(url)
     with urllib.request.urlopen(req, timeout=timeout) as r:
         return r.read().decode("utf-8", "replace")
 

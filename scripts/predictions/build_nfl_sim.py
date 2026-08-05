@@ -93,7 +93,12 @@ def slugify(name):
 
 
 def fetch_json(url, soft=False):
-    req = urllib.request.Request(url, headers={"User-Agent": "CitizenOfNowhere/1.0"})
+    # No User-Agent on purpose: urllib's own library token is the only shape
+    # that passed from every vantage we tested on 2026-08-05. The mini's edge
+    # 403s "CitizenOfNowhere/1.0", branded tokens and browser spoofs alike.
+    # Full measured matrix and the reasoning live in build_mlb_sim.py's
+    # fetch_json docstring. Do not add a UA back here without re-measuring.
+    req = urllib.request.Request(url, headers={"Accept": "application/json"})
     try:
         with urllib.request.urlopen(req, timeout=25) as r:
             return json.load(r)

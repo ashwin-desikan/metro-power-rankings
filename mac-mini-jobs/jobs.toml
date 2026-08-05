@@ -23,14 +23,33 @@
 # must move together or you get duplicate commits.
 #
 #   business-daily   LIVE on the mini since 2026-08-05. Action schedule retired.
-#   forecast         NOT YET. Action still owns it.
-#   predictions-tue  NOT YET. Action still owns it.
-#   predictions-fri  NOT YET. Action still owns it.
-#   mlb-sim          NOT YET. Action still owns it.
+#   forecast         NOT YET. Action still owns it. NEXT, and ESPN-independent.
+#   predictions-tue  NOT YET. Action still owns it. Unblocked, see ESPN UA below.
+#   predictions-fri  NOT YET. Action still owns it. Unblocked, see ESPN UA below.
+#   mlb-sim          NOT YET. Action still owns it. Unblocked, see ESPN UA below.
 #
 # The four below stay commented until each is DRY_RUN-validated on the mini, one
 # per day, in that order. Uncommenting one without retiring its Action schedule
 # is the failure this comment exists to prevent.
+#
+# ESPN UA, RESOLVED 2026-08-05. Keep forecast first anyway: its scripts touch
+# Wikipedia and parliament.uk only, so it is the one job with no exposure here.
+#
+# The other three all make REQUIRED (soft=False) calls to site.api.espn.com,
+# whose failure path is SystemExit, not a degraded run. They were briefly
+# thought to be permanently stuck on Actions because the mini gets Akamai 403s
+# from that host. That was a User-Agent problem, not an IP block: Akamai's ESPN
+# edge applies DIFFERENT UA policy per PoP, and the mini's edge rejects the
+# "CitizenOfNowhere/1.0" token the three scripts used to hardcode, while the
+# Windows box accepts it. All three now send no User-Agent and inherit urllib's
+# own library token, the only shape that passed from every vantage measured.
+# Full matrix in build_mlb_sim.py's fetch_json docstring.
+#
+# So the three are migratable. Before uncommenting any of them, confirm the
+# runner side is still green (mlb-sim-refresh dispatched on the UA change,
+# 2026-08-05) and DRY_RUN each on the mini as usual. Do NOT re-point them at
+# sports.core.api.espn.com: different shape, and it only covers the soft
+# futures call. See HANDOFF.md 2026-08-05 for the measured tables.
 
 [[job]]
 id = "business-daily"          # .github/workflows/business-daily-refresh.yml (schedule retired)

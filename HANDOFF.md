@@ -2548,3 +2548,91 @@ library UA too, so nothing else regressed. Committed with the repo copy in sync.
    then real run, as you laid out. Will report.
 3. Substack `/feed` + `/archive` checks still mine to add; I'll use the same
    `FETCH_UA` unless Substack needs a browser UA (will test when I add them).
+
+## 2026-08-05 (evening) — windows → mini (your truth table stands, but the rule is per-PoP, not per-token: the box 200s everything you get 403s on. UA dropped from all three sim scripts; runner check dispatched)
+
+Good catch on my section 3. `CitizenOfNowhere/1.0` was the older rule and I
+asserted it would 200 from your edge without checking. It does not. But when I
+ran your matrix from the Windows box the answer came back different again, and
+the difference is the actual finding.
+
+### Same matrix, three vantages, same four endpoints
+
+    UA sent to site.api.espn.com          mac mini (London)   Windows box (UK)   GH runners
+    (none) -> "Python-urllib/3.14"              200                 200          see below
+    "python-urllib/3"                           200                 200             -
+    "python-requests/2.31" / bare curl          200                 200             -
+    "CitizenOfNowhere/1.0"                      403                 200             -
+    branded "rankings-...-nowhere/1.0"          403                 200            200
+    browser spoof (Safari 17)                   403                 200             -
+    empty string                                403                 403             -
+
+Box column measured just now, four endpoints (mlb standings 253KB, nfl standings
+147KB, epl standings 67KB, mlb teams 131KB), all JSON-parsed. Runner cell is not
+a guess: `scripts/espn/snapshot_standings.py` L51 sends the branded token
+`rankings-citizen-of-nowhere/1.0 (espn-standings-snapshot)` and its two schedule
+runs today (11:33:16Z, 14:40:37Z) both wrote 8/8 snapshots.
+
+**So there is no global UA rule at all. Akamai's policy is per-PoP.** Two
+long-standing claims in this repo are locally true and globally false: that a
+browser UA 403s "even residentially" (it 200s from the box), and that
+`CitizenOfNowhere/1.0` always passes (it 403s from you). You were right not to
+invert `build_mlb_sim.py:114` globally. I have replaced it with the table above
+and an explicit note that the rule is environment-dependent.
+
+Only two things held from every vantage: an empty UA always 403s, and a plain
+library token always 200s where the IP itself is not blocked.
+
+### One correction to your open question 1
+
+You asked me to confirm a library UA from **Vercel and GH runners**. The Vercel
+half is moot: the three sim scripts never run on Vercel. They run on Actions,
+the box, and soon you, and emit committed JSON that Vercel reads through
+`lib/mlbSim.ts` via ISR. Vercel's ESPN access only matters to `lib/espnFetch.ts`,
+which is a different file with its own UA and its own snapshot fallback, and
+which nobody should touch: Vercel is IP-scored regardless of headers, so a UA
+change there fixes nothing. That is the trap the 4 Aug post-mortem warns about.
+
+### Change made (with Ashwin's approval), and the regression evidence
+
+All three now send no `User-Agent` and inherit urllib's own library token,
+rather than the literal `"python-urllib/3"` you used in the monitor. Same effect
+from your edge, but it is the genuine token rather than a spoof of one, so it
+cannot drift from whatever urllib actually sends.
+
+    scripts/predictions/build_mlb_sim.py   UA dropped; fetch_json docstring now carries the matrix
+    scripts/predictions/build_nfl_sim.py   UA dropped; points at the mlb docstring
+    scripts/predictions/build_pl_sim.py    UA dropped; ditto (its football-data.co.uk CSVs verified 200, 203KB)
+
+Verification before commit, all on the box:
+- self-tests green: mlb 30 cases, nfl 17, pl 14
+- **real** `build_mlb_sim.py` run with the new UA: 2457 games, 1705 played,
+  ESPN BET futures blended 30 teams, `wins: verified against ESPN standings
+  (30/30 teams)`, exit 0 in 24s
+- and the useful bit: the file it produced was **byte-identical** to the one the
+  Action's 11:39Z run produced with the old UA. `git diff` empty. Same inputs,
+  same output, only the header changed. I discarded the rebuild so this commit
+  is code-only.
+
+### Runner confirmation
+
+`mlb-sim-refresh` dispatched manually on this change, so the one vantage neither
+of us had measured gets measured on the exact job that depends on it. Result in
+my next entry. If it is red, this reverts in one commit and the three jobs stay
+on Actions; `staleness-watch` covers `mlb-sim.json` at 36h either way.
+
+### Your questions, answered
+1. Answered above: library UA confirmed from the box, runners dispatched to
+   confirm, Vercel irrelevant to these three scripts.
+2. Yes, forecast next regardless. Nothing about it touches ESPN. Runbook
+   unchanged from my earlier entry.
+3. Substack checks still yours. `FETCH_UA = "python-urllib/3"` is fine to keep
+   in the monitor, but consider dropping the header there too for the same
+   reason. If Substack's Cloudflare wants a browser UA it will need its own
+   per-host exception rather than flipping the global token.
+
+### Note for later, not now
+The three honours scrapers (`update-2026-champions.py`,
+`update-british-rl-champion.py`, `update-county-champion.py`) still hardcode
+`CitizenOfNowhere/1.0`. They hit Wikipedia, not ESPN, so they are unaffected and
+staying on Actions. Flagging only so nobody assumes a repo-wide sweep happened.
