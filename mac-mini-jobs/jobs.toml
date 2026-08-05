@@ -18,41 +18,55 @@
 # commented out when the job goes live here. Keep workflow_dispatch in the YAML
 # as the manual fallback for when the mini is down. ONE runner per job.
 
+# ROLLOUT STATE (keep this file honest: it is what a fresh clone would run).
+# Enabled here == the GitHub schedule for the same job is commented out. The two
+# must move together or you get duplicate commits.
+#
+#   business-daily   LIVE on the mini since 2026-08-05. Action schedule retired.
+#   forecast         NOT YET. Action still owns it.
+#   predictions-tue  NOT YET. Action still owns it.
+#   predictions-fri  NOT YET. Action still owns it.
+#   mlb-sim          NOT YET. Action still owns it.
+#
+# The four below stay commented until each is DRY_RUN-validated on the mini, one
+# per day, in that order. Uncommenting one without retiring its Action schedule
+# is the failure this comment exists to prevent.
+
 [[job]]
-id = "business-daily"          # .github/workflows/business-daily-refresh.yml
+id = "business-daily"          # .github/workflows/business-daily-refresh.yml (schedule retired)
 time = "05:50"                 # after Asia's close, before the European open
 command = "runners/business-daily.sh"
 catchup_hours = 14
 timeout_minutes = 25
 
-[[job]]
-id = "forecast"                # .github/workflows/forecast-weekly.yml
-time = "06:10"
-weekdays = [1, 3, 5]           # Mon/Wed/Fri
-command = "runners/forecast.sh"
-catchup_hours = 20
-timeout_minutes = 45
+# [[job]]
+# id = "forecast"                # .github/workflows/forecast-weekly.yml
+# time = "06:10"
+# weekdays = [1, 3, 5]           # Mon/Wed/Fri
+# command = "runners/forecast.sh"
+# catchup_hours = 20
+# timeout_minutes = 45
 
-[[job]]
-id = "predictions-tue"         # .github/workflows/predictions-refresh.yml, slot 1
-time = "06:40"                 # grade the weekend's games with final results
-weekdays = [2]
-command = "runners/predictions.sh"
-catchup_hours = 20
-timeout_minutes = 45
+# [[job]]
+# id = "predictions-tue"         # .github/workflows/predictions-refresh.yml, slot 1
+# time = "06:40"                 # grade the weekend's games with final results
+# weekdays = [2]
+# command = "runners/predictions.sh"
+# catchup_hours = 20
+# timeout_minutes = 45
 
-[[job]]
-id = "predictions-fri"         # .github/workflows/predictions-refresh.yml, slot 2
-time = "11:40"                 # fresh odds + picks ahead of the weekend
-weekdays = [5]
-command = "runners/predictions.sh"
-catchup_hours = 20
-timeout_minutes = 45
+# [[job]]
+# id = "predictions-fri"         # .github/workflows/predictions-refresh.yml, slot 2
+# time = "11:40"                 # fresh odds + picks ahead of the weekend
+# weekdays = [5]
+# command = "runners/predictions.sh"
+# catchup_hours = 20
+# timeout_minutes = 45
 
-[[job]]
-id = "mlb-sim"                 # .github/workflows/mlb-sim-refresh.yml
-time = "09:40"
-months = [3, 4, 5, 6, 7, 8, 9, 10, 11]   # regular season + postseason
-command = "runners/mlb-sim.sh"
-catchup_hours = 14
-timeout_minutes = 25
+# [[job]]
+# id = "mlb-sim"                 # .github/workflows/mlb-sim-refresh.yml
+# time = "09:40"
+# months = [3, 4, 5, 6, 7, 8, 9, 10, 11]   # regular season + postseason
+# command = "runners/mlb-sim.sh"
+# catchup_hours = 14
+# timeout_minutes = 25

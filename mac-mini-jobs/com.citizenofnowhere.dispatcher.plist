@@ -19,21 +19,37 @@
   (XML comments cannot contain a double hyphen, so the flags are spelled out
   in mac-mini-jobs/README.md rather than shown here.)
 
-  Fix the two paths below if the folder is not ~/metro-mini-jobs.
+  Nothing in here is machine-specific. It assumes the jobs folder is
+  ~/metro-mini-jobs and takes the interpreter from config.env's PYTHON_BIN.
+  Change those two things there, not here.
 -->
 <plist version="1.0">
 <dict>
     <key>Label</key>
     <string>com.citizenofnowhere.dispatcher</string>
 
+    <!--
+      No hardcoded user, and no hardcoded interpreter.
+
+      It first shipped with /Users/ashwin and /usr/bin/python3; the mini is
+      ashwindesikan and its system python is 3.9, which has no tomllib, so both
+      were wrong and had to be patched by hand on the box. launchd does not
+      expand variables in ProgramArguments or WorkingDirectory, so the fix is a
+      shell wrapper: bash resolves HOME, and PYTHON_BIN comes from config.env,
+      which is already the single source of truth for which interpreter the
+      runners use. Sourcing it here means the plist can never disagree with them.
+
+      config.env is sourced WITHOUT set -a, so its values stay shell variables
+      rather than exported ones. exec does not pass unexported variables on, so
+      the secrets in that file never reach the dispatcher's environment. The
+      runners source it themselves, with set -a, when they need the keys.
+    -->
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/ashwindesikan/Projects/Metro Area Project/.venv/bin/python</string>
-        <string>/Users/ashwindesikan/metro-mini-jobs/dispatcher.py</string>
+        <string>/bin/bash</string>
+        <string>-lc</string>
+        <string>set -e; cd "$HOME/metro-mini-jobs"; if [ -f config.env ]; then . ./config.env; fi; exec "${PYTHON_BIN:-python3}" dispatcher.py</string>
     </array>
-
-    <key>WorkingDirectory</key>
-    <string>/Users/ashwindesikan/metro-mini-jobs</string>
 
     <key>StartInterval</key>
     <integer>600</integer>

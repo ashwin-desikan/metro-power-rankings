@@ -54,15 +54,28 @@ jobs:
             "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings|ESPN NBA standings|"
             "https://site.api.espn.com/apis/v2/sports/hockey/nhl/standings|ESPN NHL standings|"
             "https://site.api.espn.com/apis/v2/sports/football/nfl/standings|ESPN NFL standings|"
-            "https://citizenofnowhere.substack.com/feed|Substack RSS feed|Hot path: lib/substack.ts on rankings + brand site"
-            "https://citizenofnowhere.substack.com/archive|Substack archive page|"
+            # SUBSTACK PROBES REMOVED 2026-08-05. They cannot pass from here, and
+            # a probe that can never pass is worse than no probe: issue #9 sat
+            # open for 47 days on these two lines and taught everyone to ignore
+            # this channel, which is the channel staleness-watch.yml now also
+            # uses. Substack's Cloudflare blocks GitHub runner IPs outright, so
+            # the browser-shaped UA below (added as a fix attempt) did not help
+            # and never will. The feed itself is fine: the mini fetches it every
+            # day from residential egress and commits the snapshot the site
+            # reads. Coverage moves there, to feed_shape_monitor.py, which is
+            # also a better test since it checks response SHAPE, not just status.
+            # Do not re-add these here without first proving a 200 from a runner.
           )
 
           FAILURES=""
           ALL_RESULTS=""
           UA="CitizenOfNowhereBot/1.0 (+https://rankings.citizenofnowhere.org)"
-          # Substack sits behind Cloudflare and 403s unrecognized bot UAs.
-          # A browser-shaped UA passes through; the request is read-only.
+          # Kept, currently unused: this was the attempted fix for the Substack
+          # 403s on the theory that Cloudflare was rejecting the bot UA. It was
+          # not the UA, it is the runner IP range, so the probes moved to the
+          # mini (see the URLS block above). Left in place because the branch
+          # below is harmless and the next Cloudflare-fronted probe added here
+          # will want it.
           BROWSER_UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 
           for entry in "${URLS[@]}"; do

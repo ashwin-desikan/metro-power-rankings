@@ -22,9 +22,35 @@ name: Business daily refresh (markets + FX)
 # run; a failing Yahoo symbol degrades gracefully, fewer than six indices
 # aborts the write.
 
+# SCHEDULE RETIRED 2026-08-05: the Mac mini owns this job now.
+#
+# Why: GitHub dispatches cron 1-4h late in this repo. Measured across 348
+# schedule-event runs (20 Jul - 4 Aug), every run succeeded and every run was
+# late; this workflow's 05:50 slot landed at 08:10 on 4 Aug and 08:08 on 5 Aug.
+# For most of the fleet that is harmless, but markets.json and fx.json carry a
+# visible "as of" date, so /business/markets sat on yesterday until mid-morning
+# every single day. The mini runs it at 05:50 UTC for real.
+#
+# The mini's copy is a literal port, guards included:
+# mac-mini-jobs/runners/business-daily.sh, scheduled by mac-mini-jobs/jobs.toml.
+# Validated there on 5 Aug: dispatcher self-test 19/19, DRY_RUN diff clean, real
+# run committed dd7459bf3, /api/revalidate ping 200.
+#
+# workflow_dispatch is KEPT ON PURPOSE as the manual fallback for when the mini
+# is down. Run it from the Actions tab and it behaves exactly as before.
+#
+# ONE RUNNER RULE: do not re-enable the schedule while the mini's jobs.toml has
+# business-daily active, or the two race and produce duplicate commits (which is
+# what happened on 5 Aug, harmlessly, while both were live).
+#
+# If the mini dies for good, uncomment the schedule below and delete the mini's
+# entry. Freshness reverts to "yesterday until ~08:10", not to broken.
+#
+# The dead-man's switch that catches a silently dead mini is
+# .github/workflows/staleness-watch.yml (markets.json and fx.json, 30h budget).
 on:
-  schedule:
-    - cron: "50 5 * * *"
+  # schedule:
+  #   - cron: "50 5 * * *"
   workflow_dispatch: {}
 
 permissions:
