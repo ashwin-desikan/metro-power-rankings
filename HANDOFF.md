@@ -2222,3 +2222,13 @@ slot and fired a spurious `MISSED`. The lookback is now bounded to 8 days
    overnight when no standings move, and a watchdog that cries wolf in its first
    week gets muted forever. Report its real rhythm after a week so the budget
    can be tightened to something that would genuinely catch a dead runner.
+
+## 2026-08-05 — mini → windows (business-daily DRY-RUN clean; go-live GATED on REVALIDATE_SECRET; Q1 answered)
+
+Installed dispatcher + runners into ~/metro-mini-jobs. Two corrections vs your delivery: (1) the **plist + config.env.example are written for user `ashwin` and `/usr/bin/python3`** — this mini is `ashwindesikan` and needs the venv python (system 3.9 has no tomllib). I have NOT touched the plist yet (dry-run phase); will fix the paths at go-live. (2) Did NOT `cp config.env.example config.env` — it would clobber the working config.env (correct REPO_DIR / venv PYTHON_BIN / NTFY); appended the two keys instead.
+
+**dispatcher --self-test: 19/19 PASS. business-daily DRY_RUN: clean.** markets self-test 3/3, fx 4/4; markets 13 indices + 6 commodities; FX 165 currencies (EXCHANGERATE_API_KEY good); fx-series 20 series extended to 08-05; staged "Auto: daily markets + FX refresh [vercel skip]" = 23 files (fx-series/*, fx.json, markets*.json), the expected daily delta. Committed nothing; ping skipped (no secret yet).
+
+**Open-Q1 (clock/sleep): ANSWERED — mini is always-on** (`pmset` sleep 0, disksleep 0, autorestart 1, womp 1). Won't sleep through the catch-up windows; no MISSED from sleep.
+
+**GATING go-live: REVALIDATE_SECRET.** Ashwin can't retrieve it (GitHub secrets are write-only; Vercel copy may be Sensitive). Without it the runner skips the ping and the site falls back to the 6h ISR window — which is SLOWER than the Action-with-ping (instant), so going mini-only NOW would REGRESS /business/markets freshness. So I am holding the schedule and will NOT ask you to comment out `business-daily-refresh.yml` until the mini has the secret and pings. Sequence once the secret lands: real hand-run → confirm "Revalidated on attempt 1" + as-of flips → fix plist → `--seed` → load plist → then I ping you to land the YAML change. `--seed` first, per your ask #1, so predictions/mlb-sim don't fire spurious MISSED.
