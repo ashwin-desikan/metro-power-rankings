@@ -34,6 +34,9 @@ import { getAllAflFranchises } from "@/lib/afl";
 import { getAllNrlFranchises } from "@/lib/nrl";
 import { getFootballClubByName } from "@/lib/football";
 import { flagCdnUrl } from "@/lib/international-display";
+// Season gating: see lib/seasonWindows.ts for why a calendar window sits
+// alongside the games check rather than replacing it.
+import { isLeagueLive, inSeasonWindow, tournamentIsCurrent } from "@/lib/seasonWindows";
 
 export const revalidate = 120;
 
@@ -88,10 +91,9 @@ const slugId = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 const pct3 = (v: number | null | undefined): Cell => (v === null || v === undefined ? DASH : v.toFixed(3).replace(/^0/, ""));
 const num = (v: number | null | undefined): Cell => (v === null || v === undefined ? DASH : v);
 
-function inSeasonFromGames(gamesPlayed: number[], fullSeason: number): boolean {
-  if (gamesPlayed.length === 0) return false;
-  return Math.max(...gamesPlayed) > 0 && Math.min(...gamesPlayed) < fullSeason;
-}
+// inSeasonFromGames used to live here. It now sits in lib/seasonWindows.ts
+// paired with a calendar window, because on its own it cannot close a board:
+// a club that ends on 161 of 162 keeps min < fullSeason true forever.
 
 function buildBlock<T>(opts: {
   league: string; href: string; note: string | null; open: boolean;
@@ -227,7 +229,7 @@ async function nflBlock(): Promise<Block | null> {
   const teams = Object.values(s.by_canonical);
   if (teams.length === 0) return null;
   const fr = new Map(nflFranchises().map((f) => [f.canonical, f]));
-  const live = inSeasonFromGames(teams.map((t) => t.games_played), 17);
+  const live = isLeagueLive("nfl", teams.map((t) => t.games_played), 17);
   const nameOf = (t: (typeof teams)[number]) => fr.get(t.canonical)?.name ?? t.display_name;
   const row = (t: (typeof teams)[number], i: number): SRow => {
     const f = fr.get(t.canonical); const m = f ? nflMono(f.slug) : null;
@@ -249,7 +251,7 @@ async function nbaBlock(): Promise<Block | null> {
   const teams = Object.values(s.by_canonical);
   if (teams.length === 0) return null;
   const fr = new Map(nbaFranchises().map((f) => [f.canonical, f]));
-  const live = inSeasonFromGames(teams.map((t) => t.games_played), 82);
+  const live = isLeagueLive("nba", teams.map((t) => t.games_played), 82);
   const nameOf = (t: (typeof teams)[number]) => fr.get(t.canonical)?.name ?? t.display_name;
   const row = (t: (typeof teams)[number], i: number): SRow => {
     const f = fr.get(t.canonical); const m = f ? nbaMono(f.slug) : null;
@@ -271,7 +273,7 @@ async function nhlBlock(): Promise<Block | null> {
   const teams = Object.values(s.by_canonical);
   if (teams.length === 0) return null;
   const fr = new Map(nhlFranchises().map((f) => [f.canonical, f]));
-  const live = inSeasonFromGames(teams.map((t) => t.games_played), 82);
+  const live = isLeagueLive("nhl", teams.map((t) => t.games_played), 82);
   const nameOf = (t: (typeof teams)[number]) => fr.get(t.canonical)?.name ?? t.display_name;
   const row = (t: (typeof teams)[number], i: number): SRow => {
     const f = fr.get(t.canonical); const m = f ? nhlMono(f.slug) : null;
@@ -299,7 +301,7 @@ async function mlbBlock(): Promise<Block | null> {
   const odds = playoffOddsByCanonical(sim);
   const showOdds = odds.size >= 30 && (sim?.meta.games_played ?? 0) > 0;
   const fr = new Map(mlbFranchises().map((f) => [f.canonical, f]));
-  const live = inSeasonFromGames(teams.map((t) => t.games_played), 162);
+  const live = isLeagueLive("mlb", teams.map((t) => t.games_played), 162);
   const nameOf = (t: (typeof teams)[number]) => fr.get(t.canonical)?.name ?? t.display_name;
   const leagueOf = (t: (typeof teams)[number]): "AL" | "NL" | "" => {
     if (t.league === "AL" || t.league === "NL") return t.league;
@@ -342,7 +344,7 @@ async function mlbBlock(): Promise<Block | null> {
 async function wnbaBlock(): Promise<Block | null> {
   const s = await getCurrentWnbaStandings();
   if (s.rows.length === 0) return null;
-  const live = inSeasonFromGames(s.rows.map((t) => t.games_played), 44);
+  const live = isLeagueLive("wnba", s.rows.map((t) => t.games_played), 44);
   const row = (t: (typeof s.rows)[number], i: number): SRow => {
     const f = getWnbaFranchiseByTeamName(t.name); const m = f ? wnbaMono(f) : null;
     return { rank: live ? i + 1 : null, name: f?.name ?? t.name, href: f ? `/teams/wnba/${f.slug}` : null,
@@ -363,7 +365,7 @@ async function wnbaBlock(): Promise<Block | null> {
 async function mlsBlock(): Promise<Block | null> {
   const s = await getCurrentMlsStandings();
   return buildBlock({
-    league: "MLS", href: "/teams/football", note: s.source_label, open: true,
+    league: "MLS", href: "/teams/football", note: s.source_label, open: inSeasonWindow("mls"),
     items: s.rows, columns: ["P", "W", "D", "L", "GF", "GA", "GD", "Pts"],
     sort: (a, b) => b.points - a.points || b.gd - a.gd,
     groups: [{ title: "Eastern Conference", pick: (t) => t.conf === "Eastern" }, { title: "Western Conference", pick: (t) => t.conf === "Western" }],
@@ -428,7 +430,10 @@ async function npbBlock(): Promise<Block | null> {
     { title: "Central League", columns: ["W", "L", "T", "PCT", "GB"], rows: toRows(s.central) },
     { title: "Pacific League", columns: ["W", "L", "T", "PCT", "GB"], rows: toRows(s.pacific) },
   ].filter((st) => st.rows.length > 0);
-  return { league: "NPB", href: "/teams/baseball/npb", note: `${s.year}`, open: true, subTables };
+  // Closes for the Japanese offseason. The feed keeps serving the final table
+  // all winter, so without the window this sat open showing a finished season.
+  const npbLive = inSeasonWindow("npb");
+  return { league: "NPB", href: "/teams/baseball/npb", note: npbLive ? `${s.year}` : `${s.year} final`, open: npbLive, live: npbLive, subTables };
 }
 
 // ---- club football (api-football -> Supabase -> committed bundles) ------
@@ -511,6 +516,22 @@ function intlCompBlock(
     ...[mkFx("Live", live, true), mkFx("Upcoming", upcoming, false), mkFx("Recent", recent, true)]
       .filter((st): st is SubTable => st !== null)];
   if (subTables.length === 0) return null;
+
+  // DATE GATE (Ashwin, 2026-08-06): show an international competition only
+  // while it is actually happening. The bundle carries a tournament's whole
+  // fixture list from the moment the draw is made, so "do we have data" left
+  // the AFC Asian Cup on this page from August with a first kickoff in
+  // January. Data-driven rather than a hardcoded calendar, so a tournament
+  // that moves needs no code change: in play now, or group games already
+  // played, or a kickoff within a fortnight, or a result in the last ten days.
+  const current = tournamentIsCurrent({
+    hasLive: live.length > 0,
+    hasPlayedGroupGames: comp.groups.some((g) => g.rows.some((r) => Number(r.played ?? 0) > 0)),
+    nextKickoff: upcoming[0]?.kickoff ?? null,
+    lastFinished: recent[0]?.kickoff ?? null,
+  });
+  if (!current) return null;
+
   return {
     league: opts.label, href: opts.href,
     note: groupTables.length ? opts.liveNote : opts.closedNote,
@@ -543,7 +564,8 @@ async function cflBlock(): Promise<Block | null> {
     rows: d.rows.map((t): SRow => ({ rank: null, name: t.name, href: t.slug ? `/teams/cfl/${t.slug}` : null, crestName: t.name, cells: [t.gp, t.w, t.l, t.t, t.pts, t.pf, t.pa] })),
   })).filter((st) => st.rows.length > 0);
   if (subTables.length === 0) return null;
-  return { league: "CFL", href: "/teams/cfl", note: `${s.year}`, open: true, subTables };
+  const cflLive = inSeasonWindow("cfl");
+  return { league: "CFL", href: "/teams/cfl", note: cflLive ? `${s.year}` : `${s.year} final`, open: cflLive, live: cflLive, subTables };
 }
 
 async function footyBlock(league: "afl" | "nrl"): Promise<Block | null> {
@@ -565,7 +587,8 @@ async function footyBlock(league: "afl" | "nrl"): Promise<Block | null> {
         : [num(t.played), num(t.w), num(t.d), num(t.l), num(t.pf), num(t.pa), num(t.pts)],
     };
   });
-  return { league: league.toUpperCase(), href: `/teams/${league}`, note: `${s.year}`, open: true, subTables: [{ title: null, columns: cols, rows }] };
+  const footyLive = inSeasonWindow(league); // "afl" | "nrl" are both SeasonKeys
+  return { league: league.toUpperCase(), href: `/teams/${league}`, note: footyLive ? `${s.year}` : `${s.year} final`, open: footyLive, live: footyLive, subTables: [{ title: null, columns: cols, rows }] };
 }
 
 async function f1Block(): Promise<Block | null> {
@@ -581,7 +604,8 @@ async function f1Block(): Promise<Block | null> {
     columns: ["Pts", "Wins"],
     rows: s.constructors.map((c): SRow => ({ rank: c.pos, name: c.constructor, crestName: f1ConstructorCrestName(c.constructor), cells: [num(c.points), num(c.wins)] })),
   };
-  return { league: "Formula 1", href: "/teams/f1", note: s.source === "espn" ? "live" : `${s.season}`, open: true, cols: true, subTables: [drivers, constructors] };
+  const f1Live = inSeasonWindow("f1");
+  return { league: "Formula 1", href: "/teams/f1", note: f1Live ? (s.source === "espn" ? "live" : `${s.season}`) : `${s.season} final`, open: f1Live, live: f1Live, cols: true, subTables: [drivers, constructors] };
 }
 
 async function wtcBlock(): Promise<Block | null> {
