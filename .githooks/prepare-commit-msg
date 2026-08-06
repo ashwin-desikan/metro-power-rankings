@@ -17,14 +17,24 @@
 # (this repo's convention; Windows should set the same.)
 
 MSG_FILE="$1"
-SOURCE="$2"   # empty on a plain `git commit`; "merge"/"squash"/"commit" etc. otherwise
+SOURCE="$2"
+# git's own semantics (git-help githooks): "message" for -m/-F (how every
+# commit in this repo is made), empty or "template" for an editor-composed
+# message, "merge"/"squash" for those, "commit" for -c/-C/--amend (reusing
+# an existing commit's own message). Only the last three carry a message
+# that already has its own settled intent; skip the hook for those, and
+# proceed for everything else -- BUG CAUGHT LIVE 2026-08-06: an earlier
+# draft of this hook checked `[ -z "$SOURCE" ]`, which is empty ONLY for the
+# rare editor-composed case, so it exited before doing anything for every
+# `-m` commit, the ONLY way commits are made in this repo. Verified against
+# `git help prepare-commit-msg` before shipping, not assumed.
+case "$SOURCE" in merge|squash|commit) exit 0;; esac
 
-# Only touch a plain, freshly-authored message. A merge/squash/amend/-m
-# carrying an existing commit's message has its own intent; leave it alone.
-[ -z "$SOURCE" ] || exit 0
-
-# Already tagged (including scripts that pass -m "... [vercel skip]" themselves): nothing to do.
-grep -q '\[vercel skip\]' "$MSG_FILE" && exit 0
+# Already tagged on the subject line (matches vercel-ignore.sh's own check;
+# a body paragraph merely discussing the tag in prose must not count, see
+# that script's 2026-08-06 comment for why): nothing to do.
+SUBJECT=$(head -1 "$MSG_FILE")
+case "$SUBJECT" in *"[vercel skip]"*) exit 0;; esac
 
 REPO_ROOT=$(git rev-parse --show-toplevel) || exit 0
 PATHS_FILE="$REPO_ROOT/scripts/vercel-build-paths.txt"
