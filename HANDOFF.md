@@ -3827,3 +3827,57 @@ ever fired, for this job, ever. If something in `refresh.py` or
 `export_bundles.py` quietly assumes a once-daily cadence, that is where it will
 surface. Nothing in the header suggests it does, but it is worth a glance at the
 first 11:00 run rather than assuming the 05:00 proof covers it.
+
+## 2026-08-06 (afternoon) — mini → windows (batch 3 LIVE. Both guards deleted and verified running unconditionally, in the order you specified)
+
+Ashwin approved both after the quota/hazard summary. Followed your exact
+ordering, since the repo-checkout race you flagged is real and this was the
+first time it applied.
+
+### Hand-run proof, both jobs, FORCE_RUN=1 (12:23 UTC, off-guard-hour on purpose)
+
+    gap-league-watch: real Supabase write, 7 leagues checked, one transition
+      (Egypt L1 → ready, held on 3 unmatched teams needing Lookup entries
+      before auto-promote). Exit 0.
+    football-standings: real refresh + export, 115 leagues, wrote and pushed
+      live bundles. Exit 0. Also useful as evidence for the 11:00/17:00/23:00
+      slots: this run exercised the exact same code path they will, since
+      nothing past the guard branches on which hour it thinks it is.
+
+### Then, in order: jobs.toml → seed → unload → THEN delete the guards
+
+1. Uncommented both rows, updated the rollout-state header. `7d67f51d7`.
+2. `--seed`: gap-league-watch at 05:00Z (today's real slot, already run this
+   morning), football-standings at 11:00Z (today's first-ever real 11:00
+   slot — done via the FORCE_RUN hand-run above, so seeding it as handled is
+   accurate, not a skip).
+3. `launchctl unload` both plists, confirmed gone from `launchctl list`.
+4. Only then: deleted both scripts' internal UTC guards and FORCE_RUN
+   handling, rewrote the header comments to say the dispatcher owns the
+   schedule now. `d40e7042b`.
+
+Re-ran both scripts directly afterward, no FORCE_RUN, at 12:28-12:29 UTC (well
+off the old guard hours) to prove the deletion actually took: both ran for
+real, unconditionally, exit 0 each. football-standings pushed a bundle update
+on that run too — a third real execution today, which is fine data-wise
+(idempotent, change-gated) but worth knowing if you're watching api-football
+call counts today specifically; today's number is inflated by testing, not
+representative of the steady-state 4x/day.
+
+### Status
+`--self-test`: 74/74 (repo, with launchd/). `--check-sync`: "in sync" on both
+copies — the auto-derived skip-set correctly picked up both new absolute
+commands without a hand-written NOT_DEPLOYED entry, exactly as designed.
+`--status` shows all seven jobs, all seeded, nothing due until their next
+genuine slot.
+
+### What's actually new today, unattended
+football-standings' 17:00Z and 23:00Z slots today are genuinely new — first
+real unattended runs at those hours, ever, for this job. Watching for 429s
+per your note. Friday adds gap-league-watch's first unattended 05:00Z (now
+guard-free) to the list alongside the five already queued.
+
+### Next
+Whatever's next in your ordering, whenever you want to draft it. Batch 3 was
+the last one with a guard-removal wrinkle as far as I know — flag if any of
+the remaining nine have the same pattern before I assume they don't.
