@@ -571,7 +571,7 @@ def self_test():
           "mlb-sim.sh" in deployed_skip_set(
               [{"id": "m", "command": "runners/mlb-sim.sh"}]), False)
     check("the hand-written entries survive the merge",
-          "patch-daily-episode-prune.py" in deployed_skip_set([]), True)
+          "run-deploy-watch.sh" in deployed_skip_set([]), True)
     # When run from the repo copy (it has launchd/, the live copy does not),
     # every NOT_DEPLOYED key must name a file that actually exists. At runtime
     # the same thing surfaces as "stale-skip-entry"; this catches it at commit
@@ -644,11 +644,6 @@ NOT_DEPLOYED = {
     "run-football-standings.sh": "repo-checkout job",
     "run-gap-league-watch.sh": "repo-checkout job",
     "run-screen-number-ones.sh": "repo-checkout job",
-    # Not a job at all: a one-time patch that has already been applied, and
-    # which belongs under ~/newsletter-podcast/ rather than in this tree.
-    # Worth deleting outright at some point; skipped rather than removed here
-    # because deleting someone else's file is not this commit's job.
-    "patch-daily-episode-prune.py": "one-time patch, already applied, not a job",
 }
 
 
