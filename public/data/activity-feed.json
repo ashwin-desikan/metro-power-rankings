@@ -1,13 +1,27 @@
 {
-  "generatedAt": "2026-08-05",
-  "count": 566,
+  "generatedAt": "2026-08-06",
+  "count": 568,
   "entries": [
+    {
+      "date": "2026-08-06",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "6ea3be14d"
+    },
     {
       "date": "2026-08-05",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "676b937a4"
+      "text": "Data refreshed — Football, Basketball, Elections, Sound of the Metros.",
+      "commit": "8c491520c"
+    },
+    {
+      "date": "2026-08-05",
+      "category": "fix",
+      "hub": null,
+      "text": "ESPN live fetches fall back to committed snapshots.",
+      "commit": "e2801ca8b"
     },
     {
       "date": "2026-08-04",
