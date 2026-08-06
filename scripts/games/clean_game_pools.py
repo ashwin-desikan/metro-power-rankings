@@ -24,7 +24,8 @@ VENUE = {"Notable Venues", "Historic Venues", "Major Venues"}
 # league-tables is NFL-only (clean by construction); mini rules-lab games have no teams;
 # higher-or-lower is a ROUNDS-based binary-search game (window.HLGAME, no team names)
 SKIP = {"league-tables.js", "ball-or-strike.js", "catch-or-no-catch.js",
-        "hows-that.js", "offside-or-onside.js", "higher-or-lower.js"}
+        "hows-that.js", "offside-or-onside.js", "higher-or-lower.js",
+        "champions-duel-data.js"}  # finals data (window.DUEL), not an MCQ pool
 
 def non_team_names():
     non, team = set(), set()

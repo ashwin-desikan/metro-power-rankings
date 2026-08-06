@@ -63,16 +63,18 @@
   <button class="next" id="next" disabled>Next final →</button>
   <div class="pass" id="pass"></div>
 </main>
+<p style="font-size:.8rem;color:#5b7b97;margin:14px auto 8px;text-align:center;max-width:640px;padding:0 16px">For grown-ups: real finals from eight competitions — the Champions League and European Cup, World Cup and Euros, Super Bowl, NBA Finals, World Series and Stanley Cup. History, recall and reasoning from real results. Ages 6–10.</p>
 <div class="toast" id="toast"></div>
 <div class="finale" id="finale">
   <div style="font-size:4rem">🏆✨</div>
   <h1 style="font-size:2.2rem">Duel Champion!</h1>
-  <p style="font-size:1.15rem;font-weight:800">You know your Champions League finals!</p>
+  <p style="font-size:1.15rem;font-weight:800">Football, gridiron, hoops, baseball, hockey — you know your finals!</p>
   <button class="btn" onclick="location.reload()">Play again 🔁</button>
   <a href="/play" style="display:inline-block;margin:10px 6px 0;padding:12px 22px;border-radius:16px;background:#5b7b97;color:#fff;font-weight:900;text-decoration:none;font-family:inherit;font-size:1.05rem;box-shadow:0 6px 0 #40566b">All games 🎮</a>
 </div>
+<script src="pools/champions-duel-data.js"></script>
 <script>
-const FINALS=[{"end":1957,"h":"Real Madrid","a":"Fiorentina","hslug":"real-madrid","aslug":"fiorentina","s":"2-0","p":null},{"end":1958,"h":"Real Madrid","a":"AC Milan","hslug":"real-madrid","aslug":"ac-milan","s":"3-2","p":null},{"end":1960,"h":"Real Madrid","a":"Frankfurt","hslug":"real-madrid","aslug":"eintracht-frankfurt","s":"7-3","p":null},{"end":1961,"h":"Benfica","a":"Barcelona","hslug":"benfica","aslug":"fc-barcelona","s":"3-2","p":null},{"end":1962,"h":"Benfica","a":"Real Madrid","hslug":"benfica","aslug":"real-madrid","s":"5-3","p":null},{"end":1963,"h":"AC Milan","a":"Benfica","hslug":"ac-milan","aslug":"benfica","s":"2-1","p":null},{"end":1964,"h":"Inter Milan","a":"Real Madrid","hslug":"internazionale","aslug":"real-madrid","s":"3-1","p":null},{"end":1965,"h":"Inter Milan","a":"Benfica","hslug":"internazionale","aslug":"benfica","s":"1-0","p":null},{"end":1967,"h":"Celtic","a":"Inter Milan","hslug":"celtic","aslug":"internazionale","s":"2-1","p":null},{"end":1968,"h":"Manchester United","a":"Benfica","hslug":"manchester-united","aslug":"benfica","s":"4-1","p":null},{"end":1969,"h":"AC Milan","a":"Ajax","hslug":"ac-milan","aslug":"ajax","s":"4-1","p":null},{"end":1970,"h":"Feyenoord","a":"Celtic","hslug":"feyenoord","aslug":"celtic","s":"2-1","p":null},{"end":1971,"h":"Ajax","a":"Panathinaikos","hslug":"ajax","aslug":"panathinaikos","s":"2-0","p":null},{"end":1972,"h":"Ajax","a":"Inter Milan","hslug":"ajax","aslug":"internazionale","s":"2-0","p":null},{"end":1973,"h":"Ajax","a":"Juventus","hslug":"ajax","aslug":"juventus","s":"1-0","p":null},{"end":1974,"h":"Bayern Munich","a":"Atlético Madrid","hslug":"bayern-munich","aslug":"atletico-de-madrid","s":"1-1","p":null},{"end":1975,"h":"Bayern Munich","a":"Leeds United","hslug":"bayern-munich","aslug":"leeds-united","s":"2-0","p":null},{"end":1977,"h":"Liverpool","a":"Mönchengladbach","hslug":"liverpool","aslug":"borussia-monchengladbach","s":"3-1","p":null},{"end":1978,"h":"Liverpool","a":"Club Brugge","hslug":"liverpool","aslug":"club-brugge","s":"1-0","p":null},{"end":1979,"h":"Nottingham Forest","a":"Malmö FF","hslug":"nottingham-forest","aslug":"malmo-ff","s":"1-0","p":null},{"end":1980,"h":"Nottingham Forest","a":"Hamburg","hslug":"nottingham-forest","aslug":"hamburger-sv","s":"1-0","p":null},{"end":1981,"h":"Liverpool","a":"Real Madrid","hslug":"liverpool","aslug":"real-madrid","s":"1-0","p":null},{"end":1982,"h":"Aston Villa","a":"Bayern Munich","hslug":"aston-villa","aslug":"bayern-munich","s":"1-0","p":null},{"end":1983,"h":"Hamburg","a":"Juventus","hslug":"hamburger-sv","aslug":"juventus","s":"1-0","p":null},{"end":1984,"h":"Liverpool","a":"AS Roma","hslug":"liverpool","aslug":"as-roma","s":"1-1","p":"4-2"},{"end":1985,"h":"Juventus","a":"Liverpool","hslug":"juventus","aslug":"liverpool","s":"1-0","p":null},{"end":1987,"h":"FC Porto","a":"Bayern Munich","hslug":"fc-porto","aslug":"bayern-munich","s":"2-1","p":null},{"end":1988,"h":"PSV","a":"Benfica","hslug":"psv-eindhoven","aslug":"benfica","s":"0-0","p":"6-5"},{"end":1990,"h":"AC Milan","a":"Benfica","hslug":"ac-milan","aslug":"benfica","s":"1-0","p":null},{"end":1993,"h":"Marseille","a":"AC Milan","hslug":"olympique-marseille","aslug":"ac-milan","s":"1-0","p":null},{"end":1994,"h":"AC Milan","a":"Barcelona","hslug":"ac-milan","aslug":"fc-barcelona","s":"4-0","p":null},{"end":1995,"h":"Ajax","a":"AC Milan","hslug":"ajax","aslug":"ac-milan","s":"1-0","p":null},{"end":1996,"h":"Ajax","a":"Juventus","hslug":"ajax","aslug":"juventus","s":"1-1","p":"2-4"},{"end":1997,"h":"Borussia Dortmund","a":"Juventus","hslug":"borussia-dortmund","aslug":"juventus","s":"3-1","p":null},{"end":1998,"h":"Juventus","a":"Real Madrid","hslug":"juventus","aslug":"real-madrid","s":"0-1","p":null},{"end":1999,"h":"Manchester United","a":"Bayern Munich","hslug":"manchester-united","aslug":"bayern-munich","s":"2-1","p":null},{"end":2000,"h":"Real Madrid","a":"Valencia","hslug":"real-madrid","aslug":"valencia","s":"3-0","p":null},{"end":2001,"h":"Valencia","a":"Bayern Munich","hslug":"valencia","aslug":"bayern-munich","s":"1-1","p":"4-5"},{"end":2002,"h":"Leverkusen","a":"Real Madrid","hslug":"bayer-leverkusen","aslug":"real-madrid","s":"1-2","p":null},{"end":2003,"h":"AC Milan","a":"Juventus","hslug":"ac-milan","aslug":"juventus","s":"0-0","p":"3-2"},{"end":2004,"h":"AS Monaco","a":"FC Porto","hslug":"as-monaco","aslug":"fc-porto","s":"0-3","p":null},{"end":2005,"h":"Liverpool","a":"AC Milan","hslug":"liverpool","aslug":"ac-milan","s":"3-3","p":"3-2"},{"end":2006,"h":"Barcelona","a":"Arsenal","hslug":"fc-barcelona","aslug":"arsenal","s":"2-1","p":null},{"end":2007,"h":"Liverpool","a":"AC Milan","hslug":"liverpool","aslug":"ac-milan","s":"1-2","p":null},{"end":2008,"h":"Manchester United","a":"Chelsea","hslug":"manchester-united","aslug":"chelsea","s":"1-1","p":"6-5"},{"end":2009,"h":"Barcelona","a":"Manchester United","hslug":"fc-barcelona","aslug":"manchester-united","s":"2-0","p":null},{"end":2010,"h":"Inter Milan","a":"Bayern Munich","hslug":"internazionale","aslug":"bayern-munich","s":"2-0","p":null},{"end":2011,"h":"Barcelona","a":"Manchester United","hslug":"fc-barcelona","aslug":"manchester-united","s":"3-1","p":null},{"end":2012,"h":"Bayern Munich","a":"Chelsea","hslug":"bayern-munich","aslug":"chelsea","s":"1-1","p":"3-4"},{"end":2013,"h":"Borussia Dortmund","a":"Bayern Munich","hslug":"borussia-dortmund","aslug":"bayern-munich","s":"1-2","p":null},{"end":2014,"h":"Real Madrid","a":"Atlético Madrid","hslug":"real-madrid","aslug":"atletico-de-madrid","s":"4-1","p":null},{"end":2015,"h":"Juventus","a":"Barcelona","hslug":"juventus","aslug":"fc-barcelona","s":"1-3","p":null},{"end":2016,"h":"Real Madrid","a":"Atlético Madrid","hslug":"real-madrid","aslug":"atletico-de-madrid","s":"1-1","p":"5-3"},{"end":2017,"h":"Juventus","a":"Real Madrid","hslug":"juventus","aslug":"real-madrid","s":"1-4","p":null},{"end":2018,"h":"Real Madrid","a":"Liverpool","hslug":"real-madrid","aslug":"liverpool","s":"3-1","p":null},{"end":2019,"h":"Tottenham Hotspur","a":"Liverpool","hslug":"tottenham-hotspur","aslug":"liverpool","s":"0-2","p":null},{"end":2020,"h":"Paris Saint-Germain","a":"Bayern Munich","hslug":"paris-saint-germain","aslug":"bayern-munich","s":"0-1","p":null},{"end":2021,"h":"Manchester City","a":"Chelsea","hslug":"manchester-city","aslug":"chelsea","s":"0-1","p":null},{"end":2022,"h":"Liverpool","a":"Real Madrid","hslug":"liverpool","aslug":"real-madrid","s":"0-1","p":null},{"end":2023,"h":"Manchester City","a":"Inter Milan","hslug":"manchester-city","aslug":"internazionale","s":"1-0","p":null},{"end":2024,"h":"Borussia Dortmund","a":"Real Madrid","hslug":"borussia-dortmund","aslug":"real-madrid","s":"0-2","p":null},{"end":2025,"h":"Paris Saint-Germain","a":"Inter Milan","hslug":"paris-saint-germain","aslug":"internazionale","s":"5-0","p":null},{"end":2026,"h":"Paris Saint-Germain","a":"Arsenal","hslug":"paris-saint-germain","aslug":"arsenal","s":"1-1","p":"4-3"}];
+const FINALS=(window.DUEL||{FINALS:[]}).FINALS;
 const N=8;
 const $=id=>document.getElementById(id);
 let sound=true, order=[], idx=0, solved=0, cur=null, done=false, actx=null;
@@ -83,66 +85,70 @@ function ctx(){try{actx=actx||new (window.AudioContext||window.webkitAudioContex
 function tone(f,d,type,when,g){if(!sound)return;const a=ctx();if(!a)return;const o=a.createOscillator(),gn=a.createGain();o.type=type||"sine";o.frequency.value=f;gn.gain.value=g||.12;o.connect(gn);gn.connect(a.destination);const t=a.currentTime+(when||0);o.start(t);gn.gain.setValueAtTime(gn.gain.value,t);gn.gain.exponentialRampToValueAtTime(.0001,t+d);o.stop(t+d);}
 function cheer(){[523,659,784,1047].forEach((f,k)=>tone(f,.25,"triangle",k*.09,.14));}
 function buzz(){tone(170,.22,"sine",0,.12);}
-function confetti(n){const em=["🏆","⭐","🎉","⚽"];for(let i=0;i<n;i++){const s=document.createElement("div");s.className="conf";s.textContent=em[i%em.length];s.style.left=Math.random()*100+"vw";s.style.animationDuration=(1.5+Math.random())+"s";document.body.appendChild(s);setTimeout(()=>s.remove(),2600);}}
+function confetti(n){const em=["🏆","⭐","🎉","⚽","🏈","🏀","⚾","🏒"];for(let i=0;i<n;i++){const s=document.createElement("div");s.className="conf";s.textContent=em[i%em.length];s.style.left=Math.random()*100+"vw";s.style.animationDuration=(1.5+Math.random())+"s";document.body.appendChild(s);setTimeout(()=>s.remove(),2600);}}
 let tT;function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(tT);tT=setTimeout(()=>e.classList.remove("show"),1300);}
-function buildPass(){const el=$("pass");el.innerHTML="";order.forEach((_,i)=>{const d=document.createElement("div");d.className="stamp"+(i<solved?" on":"");d.textContent="🏆";el.appendChild(d);});}
-function compName(f){return f.end<=1992?"European Cup Final":"Champions League Final";}
-function winner(f){
- const [h,a]=f.s.split("-").map(Number);
- if(h!==a) return h>a?0:1;
- const [ph,pa]=f.p.split("-").map(Number);
- return ph>pa?0:1;
-}
-function scoreLine(f,wName){
- const [h,a]=f.s.split("-").map(Number);
- if(h===a&&f.p){const [ph,pa]=f.p.split("-").map(Number);
-   return wName+" won on penalties, "+Math.max(ph,pa)+"–"+Math.min(ph,pa)+", after a "+h+"–"+a+" draw!";}
- return wName+" won "+Math.max(h,a)+"–"+Math.min(h,a)+"!";
+function buildPass(){const el=$("pass");el.innerHTML="";order.forEach((f,i)=>{const d=document.createElement("div");d.className="stamp"+(i<solved?" on":"");d.textContent=i<solved?f.sport:"🏆";el.appendChild(d);});}
+function scoreLine(f){
+ const wName=f.w===0?f.h:f.a, lName=f.w===0?f.a:f.h;
+ if(f.note)return f.note;
+ if(!f.s)return wName+" beat the "+lName.split(" ").slice(-1)[0]+" to lift the trophy!";
+ const [hg,ag]=f.s.split("-").map(Number);
+ if(hg===ag&&f.p){const [pw,pl]=f.p.split("-").map(Number);
+   return wName+" won on penalties, "+Math.max(pw,pl)+"–"+Math.min(pw,pl)+", after a "+hg+"–"+ag+" draw!";}
+ if(hg===ag)return wName+" came out on top after a "+hg+"–"+ag+" thriller!";
+ return wName+" won "+Math.max(hg,ag)+"–"+Math.min(hg,ag)+"!";
 }
 function render(){
  done=false; cur=order[idx];
  const flip=Math.random()<.5;
  cur.disp=flip?[1,0]:[0,1];   // disp[buttonIdx] = final side index (0=h,1=a)
- const names=[cur.h,cur.a], slugs=[cur.hslug,cur.aslug];
+ const names=[cur.h,cur.a], logos=[cur.hlogo,cur.alogo];
  [0,1].forEach(b=>{
    const side=cur.disp[b];
-   $("i"+b).src="/team-badges/"+slugs[side]+".png";
+   const im=$("i"+b); im.style.display="";
+   im.onerror=function(){im.style.display="none";};
+   im.src=logos[side]||""; if(!logos[side])im.style.display="none";
    $("n"+b).textContent=names[side];
    $("c"+b).classList.remove("win","bad");
  });
  $("year").textContent=cur.end;
- $("comp").textContent=compName(cur);
+ $("comp").textContent=cur.sport+" "+cur.comp;
  $("reveal").textContent=""; $("next").disabled=true;
  buildPass();
- speak("The "+cur.end+" "+compName(cur)+". "+cur.h+", or "+cur.a+". Who won?");
+ speak("The "+cur.end+" "+cur.comp+". "+cur.h+", or "+cur.a+". Who won?");
 }
 function choose(b){
  if(done)return;
  const side=cur.disp[b];
- const w=winner(cur);
- const wName=w===0?cur.h:cur.a;
- if(side===w){
+ if(side===cur.w){
    done=true; $("c"+b).classList.add("win");
-   $("reveal").textContent="🏆 "+scoreLine(cur,wName);
+   $("reveal").textContent="🏆 "+scoreLine(cur);
    $("next").disabled=false; solved=Math.max(solved,idx+1);
    cheer(); confetti(12); toast(pick(["Champion! 🏆","Yes! 🎉","You knew it! ⭐"]));
-   speak(scoreLine(cur,wName)); buildPass();
+   speak(scoreLine(cur)); buildPass();
  } else {
    $("c"+b).classList.add("bad"); setTimeout(()=>$("c"+b).classList.remove("bad"),420);
    buzz(); toast("Not this time — try again! 💪"); speak("Not this time. Try again!");
  }
 }
 $("c0").onclick=()=>choose(0); $("c1").onclick=()=>choose(1);
-$("next").onclick=()=>{ if(idx<order.length-1){idx++;render();} else {$("finale").classList.add("show");confetti(24);speak("Amazing! You are the Duel Champion!");} };
-$("read").onclick=()=>{ if(cur)speak("The "+cur.end+" "+compName(cur)+". "+cur.h+", or "+cur.a+". Who won?"); };
+$("next").onclick=()=>{ if(idx<order.length-1){idx++;render();} else {$("finale").classList.add("show");confetti(24);speak("Amazing! You are the Duel Champion of every sport!");} };
+$("read").onclick=()=>{ if(cur)speak("The "+cur.end+" "+cur.comp+". "+cur.h+", or "+cur.a+". Who won?"); };
 $("snd").onclick=()=>{sound=!sound;$("snd").textContent=sound?"🔊":"🔇";if(!sound)speechSynthesis.cancel();};
 if(location.protocol==="file:")$("back").setAttribute("href","index.html");
-/* sample: 5 modern (2005+), 2 middle (1990-2004), 1 classic */
+/* Balanced sampling: one final from each competition (8 comps = 8 rounds),
+   weighted toward the modern era so most names are recognisable. */
 (function(){
- const modern=shuffle(FINALS.filter(f=>f.end>=2005)).slice(0,5);
- const mid=shuffle(FINALS.filter(f=>f.end>=1990&&f.end<2005)).slice(0,2);
- const classic=shuffle(FINALS.filter(f=>f.end<1990)).slice(0,1);
- order=shuffle(modern.concat(mid,classic)).slice(0,N);
+ const groups={};
+ FINALS.forEach(f=>{(groups[f.comp]=groups[f.comp]||[]).push(f);});
+ const picks=[];
+ shuffle(Object.keys(groups)).forEach(k=>{
+   const g=groups[k];
+   const modern=g.filter(f=>f.end>=2000);
+   const pool=(modern.length&&Math.random()<.7)?modern:g;
+   picks.push(pick(pool));
+ });
+ order=shuffle(picks).slice(0,N);
 })();
 render();
 </script>

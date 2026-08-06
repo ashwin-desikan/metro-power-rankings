@@ -55,7 +55,14 @@
   <button class="next" id="next" disabled>Next ▶</button>
   <div class="pass" id="pass"></div>
 </main>
+<p style="font-size:.8rem;color:#5b7b97;margin:14px auto 8px;text-align:center;max-width:640px;padding:0 16px">For grown-ups: which sport each nation is best at in the world, from the Zone Zero Cup rankings. Expert mode reverses the question, adds odd-one-out logic and widens the options. Ages 6–10.</p>
 <div class="toast" id="toast"></div>
+<div class="finale show" id="modepick">
+  <h1 style="font-size:2.1rem">🏅 Champions</h1>
+  <p style="font-size:1.05rem;font-weight:800;max-width:420px">Every nation is best in the world at something. Do you know what?</p>
+  <button class="next" style="margin-top:10px" id="mClassic">🏅 Classic — tap the sport</button>
+  <button class="next" style="margin-top:10px;background:#8a6fc9" id="mExpert">🚀 Expert — reversed questions, odd one out, more choices</button>
+</div>
 <div class="finale" id="finale">
   <h1 style="font-size:2.2rem">🏆 World Sports Expert!</h1>
   <p style="font-size:1.15rem;font-weight:800">You know what every nation is best at.</p>
@@ -74,42 +81,130 @@ function speak(t){if(!sound)return;try{speechSynthesis.cancel();const u=new Spee
 function pick(a){return a[Math.floor(Math.random()*a.length)];}
 function buildPass(){const el=$("pass");el.innerHTML="";order.forEach((_,i)=>{const d=document.createElement("div");d.className="stamp"+(i<solved?" on":"");d.textContent="🏅";el.appendChild(d);});}
 
-function render(){
- const nn=order[idx];
+function sportsWithAtLeast(n){
+ const cnt={}; NAT.forEach(x=>cnt[x.best]=(cnt[x.best]||0)+1);
+ return Object.keys(SPORTS).filter(sp=>(cnt[sp]||0)>=n);
+}
+function flagBtnHTML(nn){
+ return '<img src="'+flagData(nn.iso)+'" alt="" style="height:22px;border-radius:3px;margin-right:8px;vertical-align:middle;box-shadow:0 1px 2px #0003">'+nn.n;
+}
+function showFlag(nn){
  $("flag").style.backgroundImage="url("+flagData(nn.iso)+")";
- $("name").textContent=nn.n;
+ $("flag").textContent=""; $("flag").style.fontSize="";
+}
+function showSportBadge(sp){
+ $("flag").style.backgroundImage="none";
+ $("flag").textContent=SPORTS[sp];
+ $("flag").style.fontSize="64px"; $("flag").style.display="flex";
+ $("flag").style.alignItems="center"; $("flag").style.justifyContent="center";
+}
+function render(){
+ const r=order[idx];
  $("reveal").textContent=""; $("next").disabled=true;
- const others=shuffle(Object.keys(SPORTS).filter(s=>s!==nn.best)).slice(0,3);
- const opts=shuffle([nn.best,...others]);
  const box=$("opts"); box.innerHTML="";
- opts.forEach(s=>{
-   const b=document.createElement("button"); b.className="opt";
-   b.innerHTML='<span class="em">'+SPORTS[s]+'</span>'+s;
-   b.onclick=()=>choose(s,b,nn); box.appendChild(b);
- });
- speak("What is "+nn.n+" best at?");
+ if(r.type==="fwd"){
+   const nn=r.nn;
+   showFlag(nn); $("name").textContent=nn.n;
+   $("ask").textContent="Which sport are they best at?";
+   const extra=MODE==="expert"?5:3;
+   const others=shuffle(Object.keys(SPORTS).filter(s=>s!==nn.best)).slice(0,extra);
+   const opts=shuffle([nn.best,...others]);
+   opts.forEach(sp=>{
+     const b=document.createElement("button"); b.className="opt";
+     b.innerHTML='<span class="em">'+SPORTS[sp]+'</span>'+sp;
+     b.onclick=()=>chooseFwd(sp,b,nn); box.appendChild(b);
+   });
+   speak("What is "+nn.n+" best at?");
+ } else if(r.type==="rev"){
+   showSportBadge(r.sport); $("name").textContent=r.sport;
+   $("ask").textContent="Which nation is the BEST in the world at "+r.sport+"?";
+   const opts=shuffle([r.nn,...r.wrong]);
+   opts.forEach(nn=>{
+     const b=document.createElement("button"); b.className="opt";
+     b.innerHTML=flagBtnHTML(nn);
+     b.onclick=()=>chooseRev(nn,b,r); box.appendChild(b);
+   });
+   speak("Which nation is the best in the world at "+r.sport+"?");
+ } else { // odd one out
+   showSportBadge(r.sport); $("name").textContent=r.sport;
+   $("ask").textContent="Which of these is NOT best at "+r.sport+"? Find the odd one out!";
+   const opts=shuffle([r.odd,...r.match]);
+   opts.forEach(nn=>{
+     const b=document.createElement("button"); b.className="opt";
+     b.innerHTML=flagBtnHTML(nn);
+     b.onclick=()=>chooseOdd(nn,b,r); box.appendChild(b);
+   });
+   speak("Two of these nations are best at "+r.sport+". Tap the one that is NOT!");
+ }
  buildPass();
 }
-function choose(s,b,nn){
+function win(msg,say){
+ $("next").disabled=false; solved=Math.max(solved,idx+1);
+ $("reveal").textContent="✅ "+msg;
+ toast(pick(["Yes! 🎉","Champion! 🏆","Nice! ⭐"])); speak(say||msg);
+ confetti(8); buildPass();
+}
+function chooseFwd(sp,b,nn){
  if($("next").disabled===false)return;
- if(s===nn.best){
+ if(sp===nn.best){
    [...$("opts").children].forEach(x=>{const lab=x.textContent.replace(/^[^A-Za-z]+/,"");if(lab===nn.best)x.classList.add("good");else x.classList.add("dim");});
-   $("reveal").textContent="✅ "+nn.n+" is world-class at "+nn.best+" "+SPORTS[nn.best];
-   $("next").disabled=false; solved=Math.max(solved,idx+1);
-   toast(pick(["Yes! 🎉","Champion! 🏆","Nice! ⭐"])); speak("Yes! "+nn.n+" is best at "+nn.best);
-   confetti(8); buildPass();
- } else {
-   b.classList.add("bad"); setTimeout(()=>b.classList.remove("bad"),400);
-   toast("Try again 🤔"); speak("Not quite.");
- }
+   win(nn.n+" is world-class at "+nn.best+" "+SPORTS[nn.best],"Yes! "+nn.n+" is best at "+nn.best);
+ } else { b.classList.add("bad"); setTimeout(()=>b.classList.remove("bad"),400); toast("Try again 🤔"); speak("Not quite."); }
+}
+function chooseRev(nn,b,r){
+ if($("next").disabled===false)return;
+ if(nn===r.nn){
+   b.classList.add("good"); [...$("opts").children].forEach(x=>{if(x!==b)x.classList.add("dim");});
+   win(r.nn.n+" is the world's best at "+r.sport+" "+SPORTS[r.sport]+" — "+r.wrong.map(w=>w.n).join(" and ")+" shine at other sports","Yes! "+r.nn.n+"!");
+ } else { b.classList.add("bad"); setTimeout(()=>b.classList.remove("bad"),400); toast(nn.n+" is best at "+nn.best+" 👀"); speak(nn.n+" is best at "+nn.best+". Try again!"); }
+}
+function chooseOdd(nn,b,r){
+ if($("next").disabled===false)return;
+ if(nn===r.odd){
+   b.classList.add("good"); [...$("opts").children].forEach(x=>{if(x!==b)x.classList.add("dim");});
+   win(r.odd.n+" is best at "+r.odd.best+" "+SPORTS[r.odd.best]+" — the others really are "+r.sport+" nations","Yes! "+r.odd.n+" is the odd one out — they are best at "+r.odd.best+"!");
+ } else { b.classList.add("bad"); setTimeout(()=>b.classList.remove("bad"),400); toast(nn.n+" really is best at "+r.sport+" 👀"); speak("No — "+nn.n+" is best at "+r.sport+". Find the odd one!"); }
 }
 let tT;function toast(t){const e=$("toast");e.textContent=t;e.classList.add("show");clearTimeout(tT);tT=setTimeout(()=>e.classList.remove("show"),1200);}
 function confetti(n){const em=["🎉","⭐","🏆","🏅"];for(let i=0;i<n;i++){const s=document.createElement("div");s.className="conf";s.textContent=em[i%em.length];s.style.left=Math.random()*100+"vw";s.style.animationDuration=(1.5+Math.random())+"s";document.body.appendChild(s);setTimeout(()=>s.remove(),2600);}}
 function finale(){$("finale").classList.add("show");speak("Amazing! You are a World Sports Expert!");confetti(20);}
 $("next").onclick=()=>{ if(idx<order.length-1){idx++;render();} else {finale();} };
-$("say").onclick=()=>speak(order[idx].n+". Which sport are they best at?");
+$("say").onclick=()=>{const r=order[idx];
+ if(r.type==="fwd")speak(r.nn.n+". Which sport are they best at?");
+ else if(r.type==="rev")speak("Which nation is the best in the world at "+r.sport+"?");
+ else speak("Two of these are best at "+r.sport+". Tap the odd one out!");};
 $("snd").onclick=()=>{sound=!sound;$("snd").textContent=sound?"🔊":"🔇";if(!sound)speechSynthesis.cancel();};
-order=shuffle(NAT).slice(0,10); render();
+let MODE="classic";
+function buildOrder(){
+ if(MODE==="classic"){
+   order=shuffle(NAT).slice(0,10).map(nn=>({type:"fwd",nn:nn}));
+   return;
+ }
+ const rounds=[];
+ const revSports=shuffle(sportsWithAtLeast(1));
+ revSports.slice(0,5).forEach(sp=>{
+   const match=NAT.filter(x=>x.best===sp);
+   const nn=pick(match);
+   const wrong=shuffle(NAT.filter(x=>x.best!==sp)).slice(0,3);
+   rounds.push({type:"rev",sport:sp,nn:nn,wrong:wrong});
+ });
+ shuffle(sportsWithAtLeast(2)).slice(0,3).forEach(sp=>{
+   const match=shuffle(NAT.filter(x=>x.best===sp)).slice(0,2);
+   const odd=pick(NAT.filter(x=>x.best!==sp));
+   rounds.push({type:"odd",sport:sp,match:match,odd:odd});
+ });
+ shuffle(NAT).slice(0,4).forEach(nn=>rounds.push({type:"fwd",nn:nn}));
+ order=shuffle(rounds).slice(0,12);
+}
+function startMode(m){
+ MODE=m; idx=0; solved=0;
+ document.getElementById("modepick").classList.remove("show");
+ document.getElementById("modepick").style.display="none";
+ buildOrder(); render();
+}
+$("mClassic").onclick=()=>startMode("classic");
+$("mExpert").onclick=()=>startMode("expert");
+buildOrder();
 </script>
 </body>
 </html>

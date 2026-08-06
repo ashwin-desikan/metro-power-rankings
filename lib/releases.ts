@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-08-06",
-    headline: "Play & Learn levels up: think like a coder",
+    headline: "Play & Learn grows up: harder games, real finals, filters",
     items: [
       "Four new games for players who've outgrown the easy tier: In the Club turns UN, EU and NATO membership into AND / OR / NOT logic; Higher or Lower turns the number line into binary search - first ideas behind coding.",
-      "How Many Times Bigger? teaches ratio and estimation on real city data, from simple comparisons to the level-3 flip: more people doesn't always mean more money.",
-      "Champion Challenge mixes the hardest questions from across the arcade into one ramping run, and the quiz games now ramp easy-to-hard inside every session.",
-      "The core maths games gain a rocket-grade Expert level: place value in the millions on real metro populations, division with remainders, five-digit crowds and a 60-second blitz - and wrong answers are no longer giveaways.",
+      "How Many Times Bigger? teaches ratio on real city data, Champion Challenge mixes the arcade's hardest questions into one ramping run, and the maths core four gain a rocket-grade Expert level with a 60-second blitz.",
+      "Champions Duel now spans 459 real finals across eight competitions - Champions League, World Cup, Euros, Super Bowl, NBA Finals, World Series, Stanley Cup - and Champions gains an Expert mode that flips its questions.",
+      "The games hub is rebuilt around challenge-level and topic filters with a surprise-me button; the easiest games retire to a little-kids corner inside the classic view.",
     ],
   },
   {
