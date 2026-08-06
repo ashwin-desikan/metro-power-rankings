@@ -31,13 +31,14 @@ BASE="${VERCEL_GIT_PREVIOUS_SHA:-}"
 [ -n "$BASE" ] || exit 1
 git cat-file -e "$BASE^{commit}" 2>/dev/null || exit 1
 
-# Paths that feed `next build`. Docs, workbooks, mac-mini-jobs, the rest of
-# scripts/, and raw pipeline dirs never need a deploy on their own.
-if git diff --quiet "$BASE" "$SHA" -- \
-  app lib public proxy.ts \
-  next.config.ts postcss.config.mjs tsconfig.json \
-  package.json package-lock.json .npmrc \
-  vercel.json .vercelignore scripts/vercel-ignore.sh; then
+# Paths that feed `next build`, read from the single source of truth also
+# used by .githooks/prepare-commit-msg (see that file's own comment for why
+# this moved out of an inline list on 2026-08-06).
+PATHS_FILE="$(dirname "$0")/vercel-build-paths.txt"
+[ -f "$PATHS_FILE" ] || exit 1
+BUILD_PATHS=$(grep -v '^#' "$PATHS_FILE" | grep -v '^[[:space:]]*$')
+
+if git diff --quiet "$BASE" "$SHA" -- $BUILD_PATHS; then
   exit 0
 fi
 exit 1

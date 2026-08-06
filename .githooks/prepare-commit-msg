@@ -1,0 +1,43 @@
+#!/bin/sh
+# Auto-append "[vercel skip]" to a commit message when nothing staged
+# touches a build-relevant path (scripts/vercel-build-paths.txt, the same
+# list scripts/vercel-ignore.sh reads).
+#
+# WHY THIS EXISTS: 2026-08-06, 13 real Vercel builds fired in one session
+# for commits that only touched mac-mini-jobs/ and HANDOFF.md, because the
+# tag was missing and vercel-ignore.sh's fallback (by design, so it can't
+# miss an app change hidden behind a skipped data commit) built rather than
+# guess. The tag itself was never unreliable -- rule 1 in vercel-ignore.sh
+# always works. What failed was a human/agent remembering to type it, by
+# hand, on every commit, all day. This removes that dependency: the hook
+# runs deterministically on every `git commit`, and "did I remember" is no
+# longer a question that has an answer worth checking.
+#
+# Enable once per clone:  git config core.hooksPath .githooks
+# (this repo's convention; Windows should set the same.)
+
+MSG_FILE="$1"
+SOURCE="$2"   # empty on a plain `git commit`; "merge"/"squash"/"commit" etc. otherwise
+
+# Only touch a plain, freshly-authored message. A merge/squash/amend/-m
+# carrying an existing commit's message has its own intent; leave it alone.
+[ -z "$SOURCE" ] || exit 0
+
+# Already tagged (including scripts that pass -m "... [vercel skip]" themselves): nothing to do.
+grep -q '\[vercel skip\]' "$MSG_FILE" && exit 0
+
+REPO_ROOT=$(git rev-parse --show-toplevel) || exit 0
+PATHS_FILE="$REPO_ROOT/scripts/vercel-build-paths.txt"
+[ -f "$PATHS_FILE" ] || exit 0   # fail open: no list, don't touch the message
+
+BUILD_PATHS=$(grep -v '^#' "$PATHS_FILE" | grep -v '^[[:space:]]*$')
+
+# Any staged file under a build-relevant path? Leave the message alone --
+# this commit plausibly needs a real deploy, and auto-skipping it silently
+# would be the exact class of mistake this hook exists to prevent, just
+# inverted.
+if git diff --cached --name-only -- $BUILD_PATHS 2>/dev/null | grep -q .; then
+  exit 0
+fi
+
+printf '\n[vercel skip]\n' >> "$MSG_FILE"
