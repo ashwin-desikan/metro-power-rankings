@@ -27,5 +27,5 @@ guarded "rebuild the MLB model" "$PY" scripts/predictions/build_mlb_sim.py
 commit_paths "Auto: refresh MLB playoff odds [vercel skip]" \
   public/data/mlb-sim.json
 
-revalidate_ping "predictions-daily"
+revalidate_ping "predictions-daily" "/predictions/mlb"
 note "done"

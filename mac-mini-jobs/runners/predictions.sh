@@ -31,5 +31,5 @@ commit_paths "Auto: refresh PL + NFL prediction models [vercel skip]" \
   public/data/nfl-sim.json \
   public/data/nfl-predictions.json
 
-revalidate_ping "predictions-daily"
+revalidate_ping "predictions-daily" "/predictions/pl" "/predictions/nfl"
 note "done"

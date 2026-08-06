@@ -28,5 +28,5 @@ commit_paths "Auto: daily markets + FX refresh [vercel skip]" \
   public/data/business/fx-series
 
 # Runs even on no-change days; a redundant flush is harmless.
-revalidate_ping "business-daily"
+revalidate_ping "business-daily" "/business" "/business/markets" "/business/currencies"
 note "done"

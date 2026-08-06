@@ -104,14 +104,25 @@ commit_paths() {
   fail "Failed to push after retries."
 }
 
-# revalidate_ping <tag>
+# revalidate_ping <tag> [warm_path...]
 # Fail-open by design: the 6h ISR window is the backstop, so a missing secret or
 # a failed ping must never fail the data run. See app/api/revalidate/route.ts.
 # raw.githubusercontent serves from a ~5-min CDN cache; flushing before it
 # expires would re-render from the PREVIOUS commit's JSON and re-cache THAT for
 # 6h, which is the exact bug the sleep exists to avoid.
+#
+# revalidateTag() only marks a route's cache entry dirty -- it does not
+# regenerate it. Vercel serves the OLD copy (cache=STALE) to whichever request
+# hits that route first after invalidation, while it regenerates in the
+# background; only the request AFTER THAT sees fresh content. Measured
+# 2026-08-06: nobody visited /business/markets for 67 minutes after a
+# confirmed-200 ping, so a real visitor at 07:04:37Z ate that stale hit and saw
+# yesterday's data. warm_path(s), if given, are GETted right after a
+# successful ping so THIS job eats the stale-while-revalidate hit instead of a
+# visitor.
 revalidate_ping() {
-  local tag="$1"
+  local tag="$1"; shift
+  local warm_paths=("$@")
   if [ "$DRY_RUN" = "1" ]; then
     note "DRY_RUN=1: skipping revalidate ping (tag=$tag)"
     return 0
@@ -130,6 +141,7 @@ revalidate_ping() {
     if [ "$code" = "200" ]; then
       cat /tmp/reval.out; echo
       note "Revalidated on attempt $attempt."
+      _warm_paths "${warm_paths[@]}"
       return 0
     fi
     note "revalidate ping attempt $attempt returned HTTP $code"
@@ -137,4 +149,20 @@ revalidate_ping() {
   done
   note "WARN: on-demand revalidation failed; pages refresh via the 6h ISR window instead."
   return 0
+}
+
+# _warm_paths path...
+# Fire-and-forget GETs, in parallel, capped at 20s each so a hung route can't
+# hold the runner open. Best-effort: a warm failing is not a job failure, same
+# fail-open posture as the ping itself -- the 6h window is still the backstop.
+_warm_paths() {
+  [ "$#" -eq 0 ] && return 0
+  local path pids=()
+  for path in "$@"; do
+    ( code="$(curl -s -o /dev/null -m 20 -w '%{http_code}' "$SITE_ORIGIN$path")" || code=000
+      note "warm $path -> HTTP $code" ) &
+    pids+=($!)
+  done
+  local pid
+  for pid in "${pids[@]}"; do wait "$pid" 2>/dev/null; done
 }

@@ -25,5 +25,5 @@ commit_paths "data: weekly election forecast refresh [vercel skip]" \
   public/data/forecast.json \
   data/forecast
 
-revalidate_ping "forecast-weekly"
+revalidate_ping "forecast-weekly" "/elections/forecast" "/predictions"
 note "done"
