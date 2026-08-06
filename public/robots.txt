@@ -77,4 +77,23 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
+# -------------------------------------------------------------------
+# Denied. The allowlist above exists because this dataset is meant to be
+# cited: those agents feed answers that credit the source. The agents
+# below do not. They surfaced in the 2026-08-05/06 crawl (ShapBot 23.8k
+# requests, SleepBot 3.3k) and the permissive "User-agent: *" rule at the
+# top was letting them through.
+#
+# robots.txt is advisory, so this is a statement of policy, not an
+# enforcement mechanism. Enforcement is a Cloudflare WAF custom rule
+# matching the same two agents. Keep the two in sync: an agent added here
+# and not there is decorative.
+# -------------------------------------------------------------------
+
+User-agent: ShapBot
+Disallow: /
+
+User-agent: SleepBot
+Disallow: /
+
 Sitemap: https://rankings.citizenofnowhere.org/sitemap.xml

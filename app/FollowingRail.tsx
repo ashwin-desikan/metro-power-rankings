@@ -16,7 +16,13 @@ export default function FollowingRail() {
         <p className="text-[11px] uppercase tracking-widest" style={{ ...MONO, color: "var(--text-muted)" }}>
           Following
         </p>
-        <Link href="/me" className="text-[11px]" style={{ ...MONO, color: "var(--accent)" }}>
+        {/* prefetch={false}: a "Manage" affordance next to the rail, rarely the
+            thing the reader actually came for. Under Next 16's segment cache one
+            prefetch costs four edge requests (_tree, _head, the segment,
+            __PAGE__), so prefetching it is a poor trade. The chips below keep
+            their prefetch: those are things the reader deliberately followed and
+            is likely to click. */}
+        <Link href="/me" prefetch={false} className="text-[11px]" style={{ ...MONO, color: "var(--accent)" }}>
           Manage <span aria-hidden>→</span>
         </Link>
       </div>

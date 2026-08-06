@@ -29,7 +29,33 @@ cd "$REPO" || { echo "repo missing at $REPO"; exit 1; }
 git fetch -q origin main || { echo "git fetch failed (transient) — next run"; exit 0; }
 
 # TARGET: newest origin/main commit that Vercel's ignoreCommand would build.
-BUILD_PATHS=(app lib public next.config.ts postcss.config.mjs tsconfig.json package.json package-lock.json)
+#
+# Read the path list from the same file the guard itself reads, at origin/main
+# rather than from the working tree, so this always answers the question "what
+# would Vercel build?" using Vercel's own current answer.
+#
+# This was a hardcoded copy until 2026-08-06 and had silently drifted: it was
+# missing proxy.ts, .npmrc, vercel.json and .vercelignore. The failure mode is
+# quiet and bad. A commit touching only proxy.ts (the /admin auth gate) WOULD be
+# built by the guard, but this watcher would not count it as a TARGET, would
+# pick an older commit instead, find that one live, and report "up to date"
+# while the auth change sat undeployed. Two copies of one list is the same class
+# of bug as the two divergent plists and the inert githooks.
+PATHS_BLOB="$(git show origin/main:scripts/vercel-build-paths.txt 2>/dev/null || true)"
+if [ -n "$PATHS_BLOB" ]; then
+  IFS=$'\n' read -r -d '' -a BUILD_PATHS < <(
+    printf '%s\n' "$PATHS_BLOB" | grep -v '^#' | grep -v '^[[:space:]]*$' && printf '\0'
+  )
+else
+  # Fail loud rather than silently narrowing the list: a truncated list makes
+  # this watcher under-report work and go quiet, which is worse than not running.
+  echo "WARNING: could not read scripts/vercel-build-paths.txt from origin/main; skipping this run"
+  exit 0
+fi
+[ "${#BUILD_PATHS[@]}" -ge 8 ] || {
+  echo "WARNING: build-path list looks truncated (${#BUILD_PATHS[@]} entries); skipping this run"
+  exit 0
+}
 TARGET=""; TARGET_SUBJ=""
 while IFS=$'\x1f' read -r sha subj; do
   case "$subj" in *"[vercel skip]"*) continue;; esac

@@ -370,7 +370,18 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
         <DropdownItem href="/privacy" title="Privacy" hint="How your data is handled" />
         <DropdownItem href="/studio" title="Studio" />
       </Dropdown>
-      <Link href="/me" className="text-sm hover:text-[var(--accent)] transition-colors flex items-center gap-1 whitespace-nowrap" title="Metros and teams you follow">
+      {/* The only <Link> in this nav; every other item is a plain <a>. That made
+          it, on its own, the most-requested path on the whole site: /me drew
+          47.9k requests at the Cloudflare edge over the 2026-08-05/06 crawl,
+          roughly double the next path, and ~99% of them were prefetches rather
+          than page loads. Under Next 16's segment cache one prefetch is four
+          separate edge requests (_tree, _head, the segment, __PAGE__), and this
+          link renders on every desktop page, so a JS-executing crawler paid that
+          toll on every page it walked. /me is a personal follows page that is
+          worthless to a crawler and cheap to load on click for a real reader.
+          prefetch={false} is the whole fix. Do not remove without re-reading the
+          2026-08-06 edge-request incident in HANDOFF.md. */}
+      <Link href="/me" prefetch={false} className="text-sm hover:text-[var(--accent)] transition-colors flex items-center gap-1 whitespace-nowrap" title="Metros and teams you follow">
         <span aria-hidden>★</span> Following
       </Link>
       {updated && (

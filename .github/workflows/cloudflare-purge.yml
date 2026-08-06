@@ -2,17 +2,43 @@ name: Purge Cloudflare cache on deploy
 
 # Root fix for stale HTML at the edge: the citizenofnowhere.org zone caches
 # whole pages ("Cache Everything"), so a fresh Vercel deploy is not visible
-# until the edge cache is cleared. This purges the zone when a PRODUCTION
-# deploy succeeds, and can also be run on demand from the Actions tab
-# (Run workflow) to purge immediately / test the credentials.
+# until the edge cache is cleared. This purges when a PRODUCTION deploy
+# succeeds, and can also be run on demand from the Actions tab (Run workflow)
+# to purge immediately / test the credentials.
 #
 # One-time setup (repo Settings > Secrets and variables > Actions):
 #   CLOUDFLARE_ZONE_ID    - Zone ID for citizenofnowhere.org (zone Overview).
 #   CLOUDFLARE_API_TOKEN  - token with "Zone > Cache Purge" for that zone.
+#
+# 2026-08-06: narrowed from purge_everything to purge-by-hostname, and made
+# concurrent runs collapse. Two reasons, both learned from the edge-request
+# incident of that day.
+#
+# 1. purge_everything is ZONE-wide. The zone is citizenofnowhere.org, so a
+#    deploy of THIS site was also dumping the cache for the apex brand site and
+#    every other hostname in the zone. Those have nothing to do with a Vercel
+#    deploy here. Purge by hostname is scoped to what actually changed, and has
+#    been available on every Cloudflare plan since April 2025, so there is no
+#    longer a reason to reach for the blunt instrument.
+#
+# 2. Each purge leaves the edge cold, and a cold edge under a live crawl sends
+#    the whole sweep to Vercel. On 2026-08-06 thirteen production builds meant
+#    thirteen zone purges, and the traffic spikes tracked them: the 11:00 UTC
+#    burst of 58,278 requests in fifteen minutes followed a deploy at ~10:58.
+#    The build guard now stops most of those deploys, but `concurrency` below is
+#    the belt to that braces: a burst of deploys collapses to one purge instead
+#    of one per deploy. Purge-by-hostname is idempotent, so cancelling a
+#    superseded run loses nothing.
 
 on:
   deployment_status:
   workflow_dispatch:
+
+# Collapse a burst of production deploys into a single purge. The last run wins
+# and covers everything the cancelled ones would have.
+concurrency:
+  group: cloudflare-purge
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -50,11 +76,11 @@ jobs:
             "https://api.cloudflare.com/client/v4/zones/${CF_ZONE}/purge_cache" \
             -H "Authorization: Bearer ${CF_TOKEN}" \
             -H "Content-Type: application/json" \
-            --data '{"purge_everything":true}')"
+            --data '{"hosts":["rankings.citizenofnowhere.org"]}')"
           echo "Cloudflare response: ${resp}"
           if echo "${resp}" | grep -q '"success":true'; then
-            echo "Purged Cloudflare cache for the zone."
+            echo "Purged rankings.citizenofnowhere.org from the Cloudflare cache."
           else
-            echo "::error::Cloudflare purge failed (check the token Cache Purge permission and the zone ID above)."
+            echo "::error::Cloudflare purge failed. Check the token has Zone > Cache Purge, the zone ID above is correct, and that rankings.citizenofnowhere.org is a hostname in THAT zone (purge by hostname only accepts hostnames belonging to the zone being purged)."
             exit 1
           fi
