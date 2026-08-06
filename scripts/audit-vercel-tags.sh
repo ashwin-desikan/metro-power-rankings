@@ -28,6 +28,15 @@
 # silently skipped lives in app/, lib/, and the config paths; that is what
 # MISSING is for.
 #
+# scripts/vercel-ignore.sh and scripts/vercel-build-paths.txt are ALSO
+# excluded from MISSING, for a different reason: they are Vercel platform
+# config, evaluated fresh from the pushed commit on every single push
+# regardless of whether that push builds or skips. A tagged change to either
+# one takes effect immediately -- there is no "stale until the next real
+# build" risk the way there is for app/ or lib/. Same-day evidence: this
+# check's first run after the 2026-08-06 fix landed flagged Windows's own
+# verified, deliberately-tagged fix to this exact file as MISSING.
+#
 # Usage:
 #   scripts/audit-vercel-tags.sh                 # today's commits on HEAD
 #   scripts/audit-vercel-tags.sh <since>..<until> # any git revision range
@@ -58,7 +67,8 @@ fi
 PATHS_FILE="scripts/vercel-build-paths.txt"
 [ -f "$PATHS_FILE" ] || { echo "missing $PATHS_FILE" >&2; exit 1; }
 BUILD_PATHS=$(grep -v '^#' "$PATHS_FILE" | grep -v '^[[:space:]]*$')
-CODE_PATHS=$(printf '%s\n' "$BUILD_PATHS" | grep -vx 'public')
+CODE_PATHS=$(printf '%s\n' "$BUILD_PATHS" | grep -vx 'public' | \
+  grep -vx 'scripts/vercel-ignore.sh' | grep -vx 'scripts/vercel-build-paths.txt')
 
 COMMITS=$(git rev-list $REVLIST_ARGS)
 [ -n "$COMMITS" ] || { echo "no commits in range"; exit 0; }
