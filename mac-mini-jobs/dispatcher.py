@@ -544,17 +544,58 @@ def self_test():
         check("a missing repo dir is reported, not crashed",
               sync_report(live, Path(td) / "nope")[0][1], "missing-repo")
 
+        # --- the skip list (bug 2, found by the mini on the first real run) --
+        # Five scripts run from the repo checkout and are never copied live, so
+        # without this the check cried missing-live on every --status.
+        (repo / "run-repo-job.sh").write_text("echo repo\n")
+        check("a repo-only script is reported without a skip",
+              sync_report(live, repo), [("run-repo-job.sh", "missing-live")])
+        check("and is silent with one",
+              sync_report(live, repo, {"run-repo-job.sh": "why"}), [])
+        (live / "jobs.toml").write_text("a = 9\n")
+        check("a skip entry does not hide a DIFFERENT file's drift",
+              sync_report(live, repo, {"run-repo-job.sh": "why"}),
+              [("jobs.toml", "differs")])
+        (live / "jobs.toml").write_text("a = 1\n")
+        check("a stale skip entry is reported, not ignored",
+              sync_report(live, repo,
+                          {"run-repo-job.sh": "why", "gone.sh": "stale"}),
+              [("gone.sh", "stale-skip-entry")])
+        (repo / "run-repo-job.sh").unlink()
+
+    # jobs.toml with an absolute command auto-skips its script
+    check("an absolute jobs.toml command auto-skips its basename",
+          "run-activity-feed.sh" in deployed_skip_set(
+              [{"id": "a", "command": "$HOME/x/run-activity-feed.sh"}]), True)
+    check("a relative jobs.toml command does not auto-skip",
+          "mlb-sim.sh" in deployed_skip_set(
+              [{"id": "m", "command": "runners/mlb-sim.sh"}]), False)
+    check("the hand-written entries survive the merge",
+          "patch-daily-episode-prune.py" in deployed_skip_set([]), True)
+    # When run from the repo copy (it has launchd/, the live copy does not),
+    # every NOT_DEPLOYED key must name a file that actually exists. At runtime
+    # the same thing surfaces as "stale-skip-entry"; this catches it at commit
+    # time on whichever box the self-test is run from.
+    if (HERE / "launchd").is_dir():
+        check("no NOT_DEPLOYED entry names a file that is gone",
+              sorted(k for k in NOT_DEPLOYED if not (HERE / k).exists()), [])
+
     # repo_dir_guess() must always land on .../mac-mini-jobs, even though
     # REPO_DIR in config.env is the repo ROOT (2026-08-06 bug: it wasn't, and
     # --check-sync compared against the wrong directory on its first real run).
     old_repo_dir = os.environ.get("REPO_DIR")
     try:
+        # Build the expectation with os.path.join too. Asserting a literal
+        # "/tmp/x/mac-mini-jobs" passes on the mini and fails on the Windows
+        # box, where join uses a backslash -- which is how this was caught.
+        # The mini is the only machine this function runs on for real, but the
+        # self-test runs on both and must mean the same thing on both.
         os.environ["REPO_DIR"] = "/tmp/some-repo-root"
         check("REPO_DIR=repo-root still resolves to the subfolder",
-              repo_dir_guess(), "/tmp/some-repo-root/mac-mini-jobs")
-        os.environ["REPO_DIR"] = "/tmp/some-repo-root/mac-mini-jobs"
+              repo_dir_guess(), os.path.join("/tmp/some-repo-root", "mac-mini-jobs"))
+        os.environ["REPO_DIR"] = os.path.join("/tmp/some-repo-root", "mac-mini-jobs")
         check("REPO_DIR already pointing at the subfolder is not doubled",
-              repo_dir_guess(), "/tmp/some-repo-root/mac-mini-jobs")
+              repo_dir_guess(), os.path.join("/tmp/some-repo-root", "mac-mini-jobs"))
     finally:
         if old_repo_dir is None:
             os.environ.pop("REPO_DIR", None)
@@ -583,7 +624,53 @@ def self_test():
 
 # --- entry point -------------------------------------------------------------
 
-def sync_report(live_dir, repo_dir):
+# Files that live in the repo's mac-mini-jobs/ but are deliberately NOT copied
+# to ~/metro-mini-jobs/, so --check-sync must not report them as missing.
+#
+# The default is the other way round on purpose: a file added to the repo IS
+# expected live until something says otherwise. A wrong entry here produces a
+# visible false alarm; a missing one produces silent unchecked drift, which is
+# the failure this whole check exists to catch. Prefer the noisy direction.
+#
+# Entries are validated: a key that no longer exists in the repo is reported as
+# "stale-skip-entry" rather than quietly ignored, so this list cannot rot.
+NOT_DEPLOYED = {
+    # The repo-checkout jobs. Their plists (and, once migrated, their jobs.toml
+    # rows) call "$HOME/Projects/Metro Area Project/mac-mini-jobs/..." directly,
+    # so the live copy would never be the one that runs. See DST-MIGRATION.md,
+    # "the mini keeps jobs in two places".
+    "run-activity-feed.sh": "repo-checkout job",
+    "run-deploy-watch.sh": "repo-checkout job",
+    "run-football-standings.sh": "repo-checkout job",
+    "run-gap-league-watch.sh": "repo-checkout job",
+    "run-screen-number-ones.sh": "repo-checkout job",
+    # Not a job at all: a one-time patch that has already been applied, and
+    # which belongs under ~/newsletter-podcast/ rather than in this tree.
+    # Worth deleting outright at some point; skipped rather than removed here
+    # because deleting someone else's file is not this commit's job.
+    "patch-daily-episode-prune.py": "one-time patch, already applied, not a job",
+}
+
+
+def deployed_skip_set(jobs=None):
+    """NOT_DEPLOYED, plus anything jobs.toml itself says runs from elsewhere.
+
+    A job whose `command` resolves to an absolute path is by definition not
+    executed from the live directory, so its script does not need to be there.
+    Deriving that from the table means this shrinks by itself as jobs migrate:
+    a repo-checkout job moving from a plist to a jobs.toml row stops needing a
+    hand-written entry above.
+    """
+    skip = dict(NOT_DEPLOYED)
+    for job in (jobs or []):
+        cmd = os.path.expandvars(os.path.expanduser(job.get("command", "")))
+        if cmd and os.path.isabs(cmd):
+            skip.setdefault(os.path.basename(cmd),
+                            "jobs.toml runs it from an absolute path")
+    return skip
+
+
+def sync_report(live_dir, repo_dir, skip=None):
     """Compare the LIVE copy of the job code against the repo copy.
 
     The mini runs from ~/metro-mini-jobs/, which is a manual copy of the repo's
@@ -606,6 +693,7 @@ def sync_report(live_dir, repo_dir):
     def digest(p):
         return hashlib.sha256(p.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
 
+    skip = {} if skip is None else skip
     out = []
     candidates = sorted(
         [p for p in repo.glob("*") if p.is_file() and p.suffix in (".py", ".sh", ".toml")]
@@ -613,11 +701,19 @@ def sync_report(live_dir, repo_dir):
     )
     for src in candidates:
         rel = src.relative_to(repo).as_posix()
+        if rel in skip:
+            continue
         dst = live / rel
         if not dst.exists():
             out.append((rel, "missing-live"))
         elif digest(src) != digest(dst):
             out.append((rel, "differs"))
+    # A skip entry for a file that no longer exists is worse than useless: it
+    # is an exemption with nothing behind it, quietly widening what is not
+    # checked. Report it rather than letting the list rot.
+    for rel in skip:
+        if not (repo / rel).exists():
+            out.append((rel, "stale-skip-entry"))
     return sorted(out)
 
 
@@ -702,7 +798,7 @@ def show_status(now, jobs, state):
         print(f"{job['id']:<20} {occ_s:<12} {st.get('last_run_date', '-'):<12} "
               f"{st.get('last_status', '-'):<9} {verdict}")
     repo = repo_dir_guess()
-    drift = sync_report(HERE, repo)
+    drift = sync_report(HERE, repo, deployed_skip_set(jobs))
     if drift and drift[0][1] == "missing-repo":
         # Not a warning worth shouting about: this is what you get when the
         # dispatcher is run from a checkout rather than from the mini's live
@@ -760,7 +856,14 @@ def main():
 
     if args.check_sync:
         repo = repo_dir_guess()
-        drift = sync_report(HERE, repo)
+        # Load the table defensively: --check-sync should still work when the
+        # reason you are running it is that jobs.toml is the broken file.
+        try:
+            with JOBS_FILE.open("rb") as fh:
+                sync_jobs = tomllib.load(fh).get("job", [])
+        except Exception:
+            sync_jobs = []
+        drift = sync_report(HERE, repo, deployed_skip_set(sync_jobs))
         if not drift:
             print(f"in sync with {repo}")
             return 0
