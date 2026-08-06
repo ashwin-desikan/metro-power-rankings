@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import SiteNav from "./SiteNav";
 import VisitBeacon from "./VisitBeacon";
@@ -138,6 +139,29 @@ export default function RootLayout({
         <VisitBeacon />
         {children}
         <BackToTop />
+        {/* Third page-view counter on this site, deliberately, because each
+            answers a different question and none of them answers all three.
+
+            GoogleAnalytics  - sessions, acquisition, the conventional view.
+            VisitBeacon      - our own path+day counts in Supabase. Counts every
+                               page load that runs JavaScript, which INCLUDES
+                               headless crawlers: the 2026-08-05/06 crawl
+                               executed JS (that is how it triggered segment
+                               prefetch) and so it ran the beacon too. On
+                               2026-08-06 that produced 133 views across 115
+                               distinct paths with a busiest page of 3, which is
+                               a crawl signature rather than a human one.
+            Analytics (this) - Vercel Web Analytics, which EXCLUDES bot traffic.
+
+            That last property is the whole reason for adding it. The beacon
+            cannot separate people from crawlers retrospectively, so the gap
+            between this number and the beacon's is itself the bot signal.
+            Keep both; they are not redundant.
+
+            Needs BOTH halves to work: the project toggle in Vercel AND this
+            component. The toggle alone collects nothing and the dashboard just
+            reads empty, which is exactly how it sat unnoticed until now. */}
+        <Analytics />
       </body>
       <GoogleAnalytics gaId="G-8BQVX0NFZZ" />
     </html>
