@@ -236,13 +236,99 @@ from 2 August and has not run since. Migrating a job whose current health is
 unknown means debugging two variables at once if it fails. Let Sunday 9 August
 settle whether it is healthy first.
 
+## 🔴 MAJOR CORRECTION (2026-08-06): three jobs already solved DST, and one has been running a quarter as often as it should
+
+Found while drafting batch 3, off the back of the mini's euro-comps guard
+discovery. Three of the legacy runners carry their own **internal UTC guard**:
+
+    run-euro-comps.sh          runs only when `date -u +%H` == 04
+    run-gap-league-watch.sh    runs only when `date -u +%H` == 05
+    run-football-standings.sh  runs only when the UTC hour is in {05, 11, 17, 23}
+
+Their plists bracket a pair of LOCAL hours on purpose, and the guard picks
+whichever firing is the intended UTC hour. That is a deliberate, working
+DST-proofing trick, documented in each script's header. It means **the paired
+slots were never two runs a day — they are one run, fired twice and filtered.**
+
+Three things follow, and two of them contradict what this document said.
+
+**1. My proposed slots for those three were wrong.** I derived them by
+subtracting an hour from each local time, which produced a spurious extra slot:
+
+    job                  I proposed              correct
+    euro-comps           times 03:00, 04:00      time 04:00
+    gap-league-watch     times 04:00, 05:00      time 05:00
+    football-standings   times 04:00, 05:00      see item 3
+
+euro-comps went live with the redundant pair before this was understood. It is
+harmless — the 03:00 firing hits the guard and exits 0 — but it should be
+simplified to a single 04:00 row.
+
+**2. The "urgency" framing in this document was overstated.** The three jobs I
+named as most at risk from the clock change are precisely the three that had
+already solved it. Re-checking every job: on 26 October the guarded three keep
+running at exactly the same UTC time, and of the unguarded ones an hour's shift
+is invisible in every case I can find. `screen-number-ones` at local 22:00 goes
+from 21:00 to 22:00 UTC, which does not cross midnight, so the double-count
+worry I raised was also wrong.
+
+**The migration is still worth doing, but not primarily for DST.** The real
+case is the one `dispatcher.plist` makes: catch-up after sleep or downtime, a
+recorded MISSED instead of silence, one log and one alert path, and a job table
+you edit instead of a plist you reload. Those hold regardless of the date. This
+document should not have led with a deadline that three jobs had already
+defused.
+
+**3. `run-football-standings.sh` is running once a day when it is meant to run
+four times.** Its header says "Scheduled 4x/day at 05:00, 11:00, 17:00, 23:00
+UTC" and its guard allows all four. But its plist only fires at local 05:00 and
+06:00, so the only UTC hour it can ever reach is **05:00**. The 11:00, 17:00 and
+23:00 runs have never happened.
+
+That is a live production gap, not a migration concern: the site's football
+standings and continental fixtures refresh once a day rather than four times.
+The migration is the natural place to fix it, but it is a real decision rather
+than a mechanical port, because api-football has request quotas and the header's
+own note about "spread the api-football load" suggests the 4x cadence was costed
+deliberately. Either restore the documented intent with
+`times = ["05:00", "11:00", "17:00", "23:00"]`, or accept 1x/day as the real
+behaviour and correct the header and guard to match. **Needs Ashwin's call.**
+
+## Delete the guards as each job migrates
+
+Once a job is on the dispatcher the guard is not just redundant, it is a second
+and invisible schedule. Change a slot in `jobs.toml` without changing the guard
+and the job silently stops doing anything, exit 0, healthchecks green. That is
+the failure mode this whole system exists to prevent, reintroduced by a leftover.
+
+So for each guarded job: set the `jobs.toml` slot to the guard's UTC hour, then
+**delete the guard** and update the header. `FORCE_RUN` goes with it; a manual
+run should just run. The dispatcher already guarantees UTC, which is the only
+thing the guard was ever for.
+
 ## What would happen if we did nothing
 
-Not an outage. On 26 October every job in the table above starts running an hour
-later in UTC than it does today, permanently until March. For most of them that
-is invisible. The ones where it is not are `euro-comps` and
-`football-standings`, whose 04:00/05:00 and 05:00/06:00 pairs were chosen to
-land after overnight fixture settlement, and `screen-number-ones`, whose 22:00
-slot is close enough to midnight that a shift pushes it into the next UTC day
-and could double-count or skip a chart day. Those three are the ones worth
-moving even if the rest slips.
+**Superseded by the correction above — the original text is kept here struck
+through, because being wrong in a specific way is worth remembering.**
+
+> ~~The ones where it is not are `euro-comps` and `football-standings`, whose
+> pairs were chosen to land after overnight fixture settlement, and
+> `screen-number-ones`, whose 22:00 slot is close enough to midnight that a
+> shift pushes it into the next UTC day.~~
+
+All three of those are wrong. The two pairs are a DST-proofing bracket rather
+than two meaningful runs, so those jobs do not move at all on 26 October, and
+`screen-number-ones` shifts 21:00 to 22:00 UTC, which crosses nothing.
+
+The honest version: **doing nothing costs very little.** The guarded jobs are
+already correct year-round. The unguarded ones shift by an hour into times that
+are, as far as I can tell from each script's purpose, equally fine. Nothing here
+is an outage and nothing is even clearly degraded.
+
+What doing nothing does cost is everything the dispatcher gives you that launchd
+does not, and none of it is seasonal: a job missed because the mini was asleep
+is re-run rather than skipped, a job missed entirely is recorded and alerted
+rather than passing in silence, there is one log and one alert path instead of
+seventeen, and adding or retiming a job is a table edit rather than a new plist
+and a `launchctl` reload. That is the case for finishing this. The clock change
+is a convenient forcing date, not the reason.

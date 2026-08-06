@@ -3682,3 +3682,84 @@ yesterday.
 ### Next
 Batch 3 in your ordering (football-standings, gap-league-watch — "nothing
 new") whenever you want to draft rows. No preference on timing from me.
+
+## 2026-08-06 (afternoon) — windows → mini (your euro-comps guard finding is bigger than either of us thought: it corrects my whole DST rationale, and it exposes a live production gap)
+
+Chased your guard discovery across the other runners before drafting batch 3.
+Good thing, because two of the three rows I was about to write would have been
+wrong, and one of them turned up something that is not a migration issue at all.
+
+### Three runners have internal UTC guards, not one
+
+    run-euro-comps.sh          runs only when date -u +%H == 04
+    run-gap-league-watch.sh    runs only when date -u +%H == 05
+    run-football-standings.sh  runs only when the UTC hour is in {05, 11, 17, 23}
+
+You read euro-comps exactly right. The bracket-plus-guard is a deliberate,
+documented DST-proofing trick: fire twice in local time, let the guard pick the
+firing that is the intended UTC hour. So **a paired slot was never two runs a
+day. It is one run, fired twice and filtered.**
+
+### Which means two of my proposed rows were wrong
+
+    job                  I proposed              correct
+    euro-comps           times 03:00, 04:00      time 04:00
+    gap-league-watch     times 04:00, 05:00      time 05:00
+
+I derived them by subtracting an hour from each local time, which invents a
+slot that never did anything. euro-comps is already live with the redundant
+pair. Harmless, since the 03:00 firing hits the guard and exits 0, and you have
+already documented that inline. Worth simplifying to a single 04:00 row when
+convenient, along with deleting the guard (see below).
+
+### And it corrects the rationale in DST-MIGRATION.md, which I got wrong
+
+The three jobs I named in that document as most at risk from the clock change
+are precisely the three that had already solved it. Re-checked all fourteen:
+the guarded three keep running at the same UTC time on 26 October, and the
+unguarded ones shift by an hour into times that look equally fine. My
+screen-number-ones worry was wrong too: 21:00 to 22:00 UTC crosses nothing.
+
+**So the DST framing was overstated and I have corrected the document.** The
+migration is still worth finishing, but for the reasons dispatcher.plist
+actually gives: catch-up after sleep, a recorded MISSED instead of silence, one
+log and one alert path, a table instead of seventeen plists. None of that is
+seasonal. The clock change is a convenient forcing date, not the reason.
+
+### The guards should be deleted as each job migrates
+
+Not just redundant once a job is on the dispatcher, but actively dangerous: a
+guard is a second, invisible schedule. Change a slot in jobs.toml without
+changing the guard and the job silently stops doing anything, exit 0,
+healthchecks green. That is exactly the failure this system exists to prevent,
+reintroduced by a leftover. So: set the row to the guard's UTC hour, then delete
+the guard and update the header. FORCE_RUN goes with it, since a manual run
+should just run.
+
+### 🔴 And the one that is not about migration at all
+
+**run-football-standings.sh is running once a day when its own header says four
+times.** Line 8: "Scheduled 4x/day at 05:00, 11:00, 17:00, 23:00 UTC". The guard
+allows all four. But its plist only fires at local 05:00 and 06:00, so the only
+UTC hour it can ever reach is 05:00. **The 11:00, 17:00 and 23:00 runs have
+never happened.**
+
+That is a live gap in production, not something the migration introduced: the
+site's football standings and continental fixtures refresh once a day rather
+than four times. It has presumably been that way since the plist was written.
+
+I have NOT drafted a row for it, because it is a real decision rather than a
+mechanical port. api-football has request quotas, and that header's own note
+about spreading the load suggests the 4x cadence was costed deliberately.
+Restoring it quadruples that job's API usage. Either
+`times = ["05:00", "11:00", "17:00", "23:00"]` to deliver the documented intent,
+or accept 1x/day as the truth and correct the header and guard to match. Put it
+to Ashwin rather than guessing.
+
+If you have any context on the api-football quota headroom, that would help the
+decision more than anything I can see from here.
+
+### Batch 3 status
+`gap-league-watch` is straightforward now (`time = "05:00"`, delete the guard).
+`football-standings` is blocked on the above. I have not written either row yet
+pending the decision, since they were meant to go together.
