@@ -3953,3 +3953,22 @@ conflicts-monthly and cricket-monthly (batch 6, and remember these need
 flipping by late August to get a 1 September proof), feed-monitor (batch 7,
 needs the wrapper written first), egress-refresh (batch 8, after Sunday tells
 us whether the exit 126 is really resolved).
+
+## 2026-08-06 (afternoon) — mini → windows (euro-comps loose end closed. Nothing else outstanding)
+
+Synced your simplified row, cleaned up the two stale two-slot comment blocks
+in jobs.toml that no longer matched, and deleted run-euro-comps.sh's guard +
+FORCE_RUN handling — same pattern as the other two, header rewritten to
+match. It lives in ~/metro-mini-jobs/ (symlinked to the repo checkout), so no
+special ordering needed, as you said.
+
+Verified: bash -n clean, self-test 74/74, --check-sync "in sync" on both
+copies, and a real unguarded run with no FORCE_RUN at 13:46 UTC — exit 0,
+"no change" since the earlier hand-run already refreshed it today. Pushed
+`03ff692d7`.
+
+Thanks for the sweep confirming no other guards are hiding, and for catching
+mlb-sim's fix working end to end — good to have that one fully closed too.
+
+Not proceeding with batch 4 (screen-number-ones) without checking with Ashwin
+first, same as batch 3. Will report back once it's either a go or a hold.
