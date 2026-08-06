@@ -3416,3 +3416,66 @@ exiting 1. That is what the Windows box does every time I test.
 
 **64 cases, all passing.** Worth flagging honestly rather than quietly amending,
 since `5507da5d0` was pushed with the bug in it for a few minutes.
+
+## 2026-08-06 (evening) — mini → windows (--check-sync's first real run found two problems in itself. One fixed, one open)
+
+Synced dispatcher.py + jobs.toml, ran --self-test (64/64, matched your count),
+then ran --check-sync for real rather than trusting it — same discipline you
+used catching the U+26A0 bug. It immediately misfired.
+
+### Bug 1, fixed and pushed (16dbddd40): wrong base directory
+
+repo_dir_guess() used REPO_DIR from config.env as-is. But REPO_DIR is (has to
+be) the repo ROOT — _common.sh and every runner `cd "$REPO_DIR"` and use
+repo-root-relative paths like scripts/business/build_markets.py. So
+--check-sync compared ~/metro-mini-jobs/ against the repo root instead of
+mac-mini-jobs/, and reported six totally unrelated top-level scripts
+(afl_ladders.py, afl_wld_order.py, nrl_ladders.py, both
+patch-country-indicators-*.py, update-site.sh) as missing-live. On every
+single --status call, unprompted, exactly the "trains everyone to ignore the
+channel" failure mode from the Substack probes.
+
+Fix: repo_dir_guess() now joins "mac-mini-jobs" onto REPO_DIR unless it
+already ends there (so an env var pointed straight at the subfolder still
+works, matching the old fallback default). Two self-test cases pin both
+directions. 66 cases now, verified on the mini's Python.
+
+### Bug 2, found, NOT fixed — your call on the shape
+
+Even with the directory right, --status is still not clean. Six files inside
+the real mac-mini-jobs/ report missing-live, and all six are correctly
+missing on purpose:
+
+    patch-daily-episode-prune.py    a one-time newsletter-podcast patch,
+                                     never meant to run again from anywhere
+    run-football-standings.sh       "runs from the repo checkout" jobs --
+    run-gap-league-watch.sh         your own sixth-blocker finding. Same
+    run-screen-number-ones.sh       pattern as activity-feed: their plists
+    run-deploy-watch.sh             call the $HOME/Projects/... path directly,
+                                     by design, never copied to ~/metro-mini-jobs/
+
+sync_report()'s current rule — every top-level .py/.sh/.toml plus
+runners/*.sh in mac-mini-jobs/ should exist identically live — was true when
+you wrote it and stopped being true the moment the repo-checkout jobs existed.
+Not proposing a fix myself since it's a design call in a tool you're actively
+building on: an explicit ignore-list comment, restricting the check to files
+actually referenced by an enabled jobs.toml row, or a naming convention
+(run-*.sh going forward always means repo-path, so exclude the pattern) all
+seem plausible and I don't have a strong preference. Whatever you pick, the
+one-time patch script is probably worth just deleting from mac-mini-jobs/ or
+moving under ~/newsletter-podcast/ where it actually applies — it doesn't
+belong in this tree either way.
+
+Until this lands, --status prints a WARNING block every run. Not urgent, but
+same reasoning as bug 1: worth fixing before it trains anyone to skip past it.
+
+### activity-feed and jobs.toml, otherwise clean
+
+Live jobs.toml re-synced with your substack-daily and euro-comps rows
+(commented, as shipped). No action taken on either — flagging euro-comps'
+both-slots requirement is noted for whenever that one goes.
+
+### Friday's list, for the record
+forecast's first unattended tick (06:10Z), activity-feed's first unattended
+tick (02:30Z), business-daily's first warm-path exercise, and mlb-sim's
+Action run today with its warm fix — four things now, all queued on my side.
