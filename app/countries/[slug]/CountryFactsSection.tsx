@@ -1,7 +1,9 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 import Collapsible from "./Collapsible";
 import { withIcon } from "./sectionIcons";
 import type { CountryFacts } from "@/lib/countries";
+import { currencyHref } from "@/lib/currencyPages";
 import { fmtElevation } from "@/lib/shared";
 
 // "At a glance" infobox on country hub pages: the Wikidata-sourced facts that
@@ -39,7 +41,17 @@ export default function CountryFactsSection({ facts }: { facts: CountryFacts | n
     );
   if (facts.currencyName) {
     const tag = facts.currencySymbol || facts.currencyIso;
-    push("Currency", `${cap(facts.currencyName)}${tag ? ` (${tag})` : ""}`);
+    // Deep-link to the currency's own chart where one exists (the twenty
+    // majors); everything else, including the dollar, goes to the index.
+    push(
+      "Currency",
+      <Link
+        href={currencyHref(facts.currencyIso)}
+        className="underline decoration-dotted underline-offset-2 hover:text-[var(--accent)]"
+      >
+        {`${cap(facts.currencyName)}${tag ? ` (${tag})` : ""}`}
+      </Link>,
+    );
   }
   if (facts.governmentForm) push("Government", cap(facts.governmentForm));
   if (facts.legislature) push("Legislature", facts.legislature);

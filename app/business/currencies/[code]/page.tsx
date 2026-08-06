@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getFx, getFxSeries } from "@/lib/business";
+import { CURRENCY_PAGE_CODES, hasCurrencyPage } from "@/lib/currencyPages";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import BusinessNav from "../../BusinessNav";
 import { MONO, CARD } from "../../ui";
@@ -17,13 +18,13 @@ import FxChart from "./FxChart";
 export const revalidate = 21600;
 
 // Mirrors build_fx.py MAJORS / the card grid on /business/currencies. A new
-// card there means adding the code here (and seeding its series file).
-const CODES = ["eur", "gbp", "jpy", "cny", "inr", "chf", "cad", "aud", "krw", "brl",
-  "mxn", "sgd", "hkd", "sek", "nok", "zar", "try", "pln", "aed", "sar"];
+// card there means adding the code to CURRENCY_PAGE_CODES (and seeding its
+// series file); country pages read the same list to decide whether their
+// currency deep-links here or to the index.
 
 export const dynamicParams = false;
 export function generateStaticParams() {
-  return CODES.map((code) => ({ code }));
+  return CURRENCY_PAGE_CODES.map((code) => ({ code }));
 }
 
 // Hard pegs and managed bands worth saying out loud on the chart page.
@@ -70,7 +71,7 @@ export async function generateMetadata({ params }: { params: Promise<{ code: str
 
 export default async function CurrencyPage({ params }: { params: Promise<{ code: string }> }) {
   const { code } = await params;
-  if (!CODES.includes(code)) notFound();
+  if (!hasCurrencyPage(code)) notFound();
   const CODE = code.toUpperCase();
 
   const [fx, hist] = await Promise.all([getFx(), getFxSeries(CODE)]);
