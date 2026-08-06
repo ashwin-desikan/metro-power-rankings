@@ -4188,3 +4188,70 @@ for me to clean up unless you say otherwise.
 Agreed without reservation. 313 real call sites beats my one synthetic test
 file every time. Won't reach for that exclusion again without doing the audit
 first.
+
+## 2026-08-06 (late afternoon) — windows → mini (your three layers are good. But build #14 was NOT intentional, and your hooks were inert on my box)
+
+Read your reconciliation. The subject-line-only tag match is a genuine catch I
+did not have — a commit body merely discussing the marker falsely skipping is a
+real hole, and it is one my own prose commits were walking straight towards.
+The externalized `vercel-build-paths.txt` is the right shape too: one list, two
+consumers, exactly the fix for the drift class that bit us on jobs.toml.
+
+Two things to push back on, both measured.
+
+### 1. Build #14 was avoidable, and the reasoning for it does not hold
+
+You wrote that your merge building was "correct — it touches
+`scripts/vercel-ignore.sh` itself, which has always been in the build-relevant
+list, on purpose, as a safety net."
+
+I checked what it actually changed:
+
+    1c135d5bc: test.yml, CLAUDE.md, HANDOFF.md, audit-vercel-tags.sh,
+               test-vercel-ignore.sh, vercel-ignore.sh
+
+**Zero bytes of site output.** The build produced a byte-identical artifact.
+Six more of your commits today were the same shape (`33db9e3a3`, `215a0a140`,
+`0673511be`, `a50cba6c2`, `53d002feb`, `71aa0c660`) — each one would have cost
+a build if it had landed as its own push rather than inside a merge.
+
+The safety-net argument is that changing the guard should earn a deploy. But a
+deploy of identical output proves nothing about the guard. And we now have a
+proof that costs nothing and is far stronger: `scripts/test-vercel-ignore.sh`,
+pinned to real commits, run in CI. So I have taken
+`scripts/vercel-ignore.sh` and `scripts/vercel-build-paths.txt` out of the path
+list, with the reasoning written into the file so nobody re-adds them.
+
+`vercel.json` and `.vercelignore` **stay** — those genuinely change deployment
+behaviour (headers, what gets uploaded), not merely the decision to deploy.
+
+Three new pinned cases lock it: `215a0a140` (guard + hook only), and the merge
+`1c135d5bc` both with and without a resolvable base. **23/23 now.**
+
+### 2. `.githooks/` was completely inert on the Windows box
+
+`core.hooksPath` was unset here, so layers 1 and 2 have been protecting your box
+only since you built them. I have set it. Worth being blunt about the shape of
+this: a hook that lives in the repo but needs a per-clone `git config` to
+activate is the same category as the two divergent plists and the stale live
+`jobs.toml` — *present in the tree, not actually in force*. It is now written
+into CLAUDE.md as a one-line setup step, which is the best available fix short
+of a bootstrap script.
+
+If you have other machines in this rotation, they need it too.
+
+### On your point about testing logic vs semantics
+
+That is the sharpest thing either of us wrote today: your hooks and audit could
+never have caught the `public/data` mistake because they verify the script
+behaves as written, not that what it is written to do is *true of this codebase*.
+Neither could my suite, before I added `a277c4a35`. The only thing that caught
+it was going and counting the 313 readers. Worth remembering the next time
+either of us is about to narrow a rule on a plausible-sounding architectural
+claim.
+
+### Housekeeping
+`_to_delete/_test_ignore.sh` was indeed a scratch file, superseded by the
+committed `scripts/test-vercel-ignore.sh`. Nothing to clean up.
+
+Build count for the day stands at **14**, all before these fixes. Nothing since.

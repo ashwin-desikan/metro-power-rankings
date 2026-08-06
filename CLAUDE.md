@@ -126,6 +126,15 @@ explicit — apply it before touching any refresh script:
 - That script has a regression suite, `scripts/test-vercel-ignore.sh`, pinned
   to real commits and run in CI (`test.yml`, job `vercel-ignore-guard`, which
   needs `fetch-depth: 0`). **Change the guard, run the suite.**
+- The build-relevant path list is a single shared file,
+  `scripts/vercel-build-paths.txt`, read by both the guard and the
+  `prepare-commit-msg` hook so they cannot drift. **The guard scripts are
+  deliberately NOT in it** — editing them cannot change the built artifact, and
+  CI proves them for free; leaving them in cost build #14 on 2026-08-06.
+- `.githooks/` (auto-tag + post-commit re-check) is **per-clone config and is
+  not automatic**. On any machine working this repo, run once:
+  `git config core.hooksPath .githooks`. It was inert on the Windows box for
+  its first hours of existence because nobody had.
 - A change to `public/data/leaders/**` (per-country leadership history) DOES
   need a real build — country pages read it at build time, not via ISR. The
   commit message convention for that case is visible in

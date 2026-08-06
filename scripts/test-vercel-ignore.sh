@@ -74,6 +74,13 @@ echo "workflow-only and data-only changes need no build"
 run SKIP  b4ea470c3 b4ea470c3^ ".github/workflows only"
 
 echo
+echo "editing the GUARD ITSELF must not cost a build (build #14 of 2026-08-06)"
+echo "(it cannot change the built artifact; CI proves the guard instead)"
+run SKIP  215a0a140 215a0a140^ "vercel-ignore.sh + hook only"
+run SKIP  1c135d5bc 1c135d5bc^ "the merge that built: guard+hooks+CI+docs, zero site output"
+run SKIP  1c135d5bc ""         "same merge, base unreachable"
+
+echo
 printf '%d passed, %d failed, %d commits not in this clone\n' "$pass" "$fail" "$missing"
 [ "$fail" -eq 0 ] || exit 1
 if [ $((pass)) -lt "$MIN_CASES" ]; then

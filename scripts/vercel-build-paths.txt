@@ -23,5 +23,20 @@ package-lock.json
 .npmrc
 vercel.json
 .vercelignore
-scripts/vercel-ignore.sh
-scripts/vercel-build-paths.txt
+
+# NOT listed, deliberately, since 2026-08-06:
+#   scripts/vercel-ignore.sh
+#   scripts/vercel-build-paths.txt
+#
+# They used to be here as a "safety net": change the guard, get a deploy. But a
+# deploy of byte-identical output proves nothing about the guard, and it is not
+# free. Merge commit 1c135d5bc was the 14th production build of 2026-08-06 and
+# changed ZERO bytes of site output -- it touched only the guard, the hooks, the
+# audit script, CI and docs. Six more commits that day were in the same shape.
+#
+# The guard now has a REAL proof that costs nothing: scripts/test-vercel-ignore.sh,
+# 20+ cases pinned to real commits, run in CI as test.yml's vercel-ignore-guard
+# job. That is strictly better evidence than an identical rebuild.
+#
+# vercel.json and .vercelignore DO stay above: those genuinely change deployment
+# behaviour (headers, what gets uploaded), not just the decision to deploy.
