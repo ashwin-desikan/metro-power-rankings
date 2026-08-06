@@ -2974,3 +2974,74 @@ staging. It should stop recurring.
 3. Starting the DST work on the 17 legacy `StartCalendarInterval` plists next.
    Inventory and proposed UTC slots to follow in a separate entry; nothing will
    change on your side without you seeing it first.
+
+## 2026-08-06 (morning) — windows → mini (DST work started: it is a dispatcher feature, not a data-entry job. New doc, four blockers, two questions for you)
+
+Started the legacy-plist thread. Written up in a new
+`mac-mini-jobs/DST-MIGRATION.md`. **Nothing touched on your side, no plist
+edited, no jobs.toml row added.** Summary and the bits I need from you:
+
+### The reframe
+
+It is not "move all 17". Local time is the CORRECT semantic for anything
+human-facing, so the newsletter three (daily 08:00, watchdog 09:30, weekly Sun
+09:00) should STAY on launchd calendar intervals and get a comment saying that
+is deliberate. They also live in `~/newsletter-podcast/`, outside this repo.
+Everything whose slot was chosen against a market, fixture or upstream clock
+moves. That is **14 jobs**.
+
+### Four blockers, all dispatcher-side
+
+None of these showed up for the first four jobs because those were the easy
+shape.
+
+1. **One `time` per job.** `dispatcher.py:65` splits a single string. Four jobs
+   have multiple slots: euro-comps (2), football-standings (2), gap-league-watch
+   (2), screen-number-ones (9 = 06/14/22 on Mon/Tue/Wed). Wants a `times` list.
+2. **`command` takes no arguments.** Line 170-175 runs
+   `["/bin/bash", str(path)]`, a bare path. But four jobs are the same script
+   distinguished ONLY by an argument: `run-scraper-refresh.sh` with
+   `conflicts`, `fiba`, `rugby`, `substack`. Those cannot be expressed at all
+   today. Wants `args`.
+3. **No day-of-month filter.** conflicts-monthly and cricket-monthly fire on the
+   1st; `decide()` handles weekdays and months only. Wants `days`.
+4. **The healthchecks tiles.** Every legacy plist wraps its command in
+   `hc-run.sh <slug>`, giving a per-job hc-ping.com green/red dashboard. The
+   dispatcher does not use it, it alerts via `notify.py`. Migrating as-is
+   silently trades a per-job tile for a per-fleet notification. My preference is
+   to have the dispatcher wrap every command in `hc-run.sh` with the job id as
+   the slug, since the ids and the existing slugs already match.
+
+So the honest sequencing is: **add `times`, `args`, `days` and the hc wrap to
+the dispatcher first, with self-tests, and with no job using them yet.** That
+step changes nothing operationally. Then the moves are mechanical.
+
+### Two questions for you
+
+1. **Stale duplicates.** `com.citizenofnowhere.egress-refresh.plist` and
+   `com.citizenofnowhere.feed-monitor.plist` exist at BOTH `mac-mini-jobs/` root
+   and `mac-mini-jobs/launchd/`, and they DIFFER. The root copies are older
+   pre-healthchecks templates, still carrying
+   `<!-- EDIT this path to where you copied the folder on the mini -->` and no
+   hc wrap. The `launchd/` copies are hc-wrapped and launchctl-normalised. I
+   read that as: `launchd/` is live, root is a leftover to delete. **Please
+   confirm against `~/Library/LaunchAgents/` before I delete anything.**
+2. **Does `run-scraper-refresh.sh` take only the one positional argument?** I
+   inferred `conflicts|fiba|rugby|substack` from the four plists. If it accepts
+   more, the `args` design should account for it.
+
+### Proposed slots
+
+Full table in the doc. Default rule is preserve the CURRENT effective UTC time,
+i.e. subtract one hour from the local slot, because that is what these jobs have
+actually been doing all summer and it keeps 26 October behaviour identical
+rather than changing it. Worth your eye on three in particular: euro-comps and
+football-standings, whose paired slots look chosen to land after overnight
+fixture settlement, and screen-number-ones, whose 22:00 local slot is close
+enough to midnight that an hour's shift moves it into the next UTC day and could
+double-count or skip a chart day. If the rest of this slips past October, those
+three are still worth doing.
+
+### What doing nothing costs
+Not an outage. On 26 October the 14 jobs simply start running an hour later in
+UTC, permanently until March. Mostly invisible, except the three above.
