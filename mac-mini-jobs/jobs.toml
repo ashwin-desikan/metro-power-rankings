@@ -12,7 +12,33 @@
 # lookback_days: how far back to search for a live occurrence. Leave at the
 #   default (8) unless a job runs rarer than weekly. It must not span a seasonal
 #   gap or the first tick of a new season fires a spurious MISSED for the last
-#   slot of the previous one.
+#   slot of the previous one. Monthly jobs are fine on the default: they resolve
+#   the 1st for the first week and then read off-schedule, which is correct.
+#
+# The four keys below were added 2026-08-06 for the legacy-launchd migration
+# (see DST-MIGRATION.md). Nothing uses them yet; they are here so the moves are
+# mechanical rather than blocked.
+#
+# times:    a list, for the jobs with more than one slot a day, e.g.
+#             times = ["04:00", "05:00"]
+#           Use `time` OR `times`, never both; the dispatcher refuses to start
+#           on a table that sets both. State is compared against the exact slot
+#           rather than the date, so the second run of a day is not swallowed.
+# days:     day-of-month filter, for the two monthly jobs, e.g. days = [1].
+#           Composes with weekdays and months.
+# args:     positional arguments for the command, e.g. args = ["conflicts"].
+#           Four legacy jobs are the SAME script (run-scraper-refresh.sh)
+#           distinguished only by one of conflicts|fiba|rugby|substack.
+# hc_slug:  opt this job into hc-run.sh, which pings hc-ping.com start/success/
+#           fail and gives the job its own tile on the healthchecks dashboard.
+#           Every legacy plist wraps its command this way, so a job that moves
+#           here WITHOUT hc_slug silently trades a per-job tile for the
+#           fleet-wide notify.py alert. Opt-in on purpose: the four jobs that
+#           migrated before this existed have no tiles provisioned.
+#
+# A malformed table is now a hard startup failure rather than a silently
+# skipped job. Run `dispatcher.py --self-test` after any edit here; it
+# validates this file as its last case.
 #
 # Each of these mirrors a GitHub workflow whose schedule: block must be
 # commented out when the job goes live here. Keep workflow_dispatch in the YAML

@@ -54,17 +54,37 @@ DEFAULT_LOOKBACK_DAYS = 8
 
 # --- pure scheduling logic (covered by --self-test) -------------------------
 
+def job_times(job):
+    """Every UTC slot a job has in a day, as (hh, mm), earliest first.
+
+    `time = "05:50"` and `times = ["04:00", "05:00"]` are both accepted; a job
+    must use exactly one of them. The list form exists because four of the
+    legacy launchd jobs have more than one slot a day (euro-comps and
+    football-standings run twice, screen-number-ones three times).
+    """
+    raw = job.get("times") or ([job["time"]] if job.get("time") else [])
+    out = []
+    for t in raw:
+        hh, mm = (int(x) for x in str(t).split(":"))
+        out.append((hh, mm))
+    return sorted(out)
+
+
 def previous_occurrence(now, job):
     """The most recent scheduled datetime at or before `now`, or None.
 
     Walks back day by day (bounded) looking for a date that satisfies the job's
-    weekday and month filters, at the job's UTC time. Handles the weekday case
-    correctly: on a Wednesday, a Tuesday-only job's previous occurrence is
-    yesterday, not today.
+    weekday, month and day-of-month filters, then takes the LATEST of that
+    day's slots that is not in the future. Handles the weekday case correctly:
+    on a Wednesday, a Tuesday-only job's previous occurrence is yesterday, not
+    today. Handles the multi-slot case correctly too: at 04:30 for a job with
+    04:00 and 05:00 slots the answer is 04:00 today, and at 03:00 it is 05:00
+    yesterday, not 04:00 today.
     """
-    hh, mm = (int(x) for x in job["time"].split(":"))
     weekdays = job.get("weekdays") or []
     months = job.get("months") or []
+    days = job.get("days") or []          # day-of-month, for the monthly jobs
+    times = job_times(job)
     lookback = job.get("lookback_days", DEFAULT_LOOKBACK_DAYS)
     for back in range(0, lookback + 1):
         day = (now - timedelta(days=back)).date()
@@ -72,13 +92,19 @@ def previous_occurrence(now, job):
             continue
         if weekdays and day.isoweekday() not in weekdays:
             continue
-        occ = datetime(day.year, day.month, day.day, hh, mm, tzinfo=timezone.utc)
-        if occ <= now:
-            return occ
+        if days and day.day not in days:
+            continue
+        best = None
+        for hh, mm in times:
+            occ = datetime(day.year, day.month, day.day, hh, mm, tzinfo=timezone.utc)
+            if occ <= now and (best is None or occ > best):
+                best = occ
+        if best is not None:
+            return best
     return None
 
 
-def decide(now, job, last_run_date):
+def decide(now, job, last_run_date, last_slot=""):
     """Returns (verdict, occurrence, lateness).
 
     verdict is one of:
@@ -86,11 +112,21 @@ def decide(now, job, last_run_date):
       "already-ran"  this occurrence is already accounted for
       "missed"       too far past the slot to be useful; record and alert
       "off-schedule" no occurrence found inside the lookback window
+
+    `last_slot` is the ISO timestamp of the last slot accounted for, and is the
+    authoritative comparison when present: a date alone cannot tell the 04:00
+    slot from the 05:00 slot on a multi-slot job, so it would swallow the second
+    run of the day. `last_run_date` remains the fallback for a state file
+    written before slots were tracked, and is exactly equivalent for the
+    single-slot jobs.
     """
     occ = previous_occurrence(now, job)
     if occ is None:
         return "off-schedule", None, None
-    if last_run_date and last_run_date >= occ.date().isoformat():
+    if last_slot:
+        if last_slot >= occ.isoformat():
+            return "already-ran", occ, None
+    elif last_run_date and last_run_date >= occ.date().isoformat():
         return "already-ran", occ, None
     late = now - occ
     catchup = timedelta(hours=job.get("catchup_hours", DEFAULT_CATCHUP_HOURS))
@@ -166,13 +202,42 @@ def release_lock():
         pass
 
 
-def run_job(job):
+def build_argv(job):
+    """The argv for a job, including its arguments and healthchecks wrapper.
+
+    `args` exists because four of the legacy launchd jobs are the SAME script
+    distinguished only by one positional: run-scraper-refresh.sh takes exactly
+    one of conflicts|fiba|rugby|substack and fails on anything else.
+
+    `hc_slug` opts a job into hc-run.sh, which pings hc-ping.com start/success/
+    fail and gives that job its own green/red tile on the healthchecks
+    dashboard, viewable remotely with no login. Every legacy plist wraps its
+    command this way, so a job that moves here without it would silently trade
+    a per-job tile for the fleet-wide notify.py alert. Deliberately OPT-IN
+    rather than defaulted to the job id: the four jobs that migrated before
+    this existed have no tiles provisioned, and inventing pings for them would
+    be noise. hc-run.sh no-ops silently when HC_PING_KEY is unset and never
+    changes the wrapped command's exit code.
+    """
     cmd = job["command"]
-    timeout = job.get("timeout_minutes", DEFAULT_TIMEOUT_MINUTES) * 60
     path = HERE / cmd if not os.path.isabs(cmd) else Path(cmd)
+    argv = ["/bin/bash", str(path)] + [str(a) for a in (job.get("args") or [])]
+    slug = job.get("hc_slug")
+    if slug:
+        wrapper = HERE / "hc-run.sh"
+        if wrapper.exists():
+            argv = ["/bin/bash", str(wrapper), str(slug)] + argv
+        else:
+            log(f"WARN {job['id']}: hc_slug set but hc-run.sh missing; running unwrapped")
+    return argv
+
+
+def run_job(job):
+    timeout = job.get("timeout_minutes", DEFAULT_TIMEOUT_MINUTES) * 60
+    argv = build_argv(job)
     started = datetime.now(timezone.utc)
     try:
-        proc = subprocess.run(["/bin/bash", str(path)], cwd=str(HERE),
+        proc = subprocess.run(argv, cwd=str(HERE),
                               capture_output=True, text=True, timeout=timeout)
     except subprocess.TimeoutExpired:
         return "timeout", f"exceeded {timeout // 60}m"
@@ -192,8 +257,9 @@ def tick(now, jobs, state, dry_run=False):
     """One pass over the fleet. Returns the updated state."""
     for job in jobs:
         jid = job["id"]
-        last = (state.get(jid) or {}).get("last_run_date", "")
-        verdict, occ, late = decide(now, job, last)
+        st = state.get(jid) or {}
+        verdict, occ, late = decide(now, job, st.get("last_run_date", ""),
+                                    st.get("last_slot", ""))
 
         if verdict in ("already-ran", "off-schedule"):
             continue
@@ -319,6 +385,99 @@ def self_test():
         check(f"utc slot stable {d:%d %b}",
               previous_occurrence(d, daily).strftime("%H:%M"), "05:50")
 
+    # --- multi-slot jobs (times), added 2026-08-06 for the DST migration -----
+    # euro-comps and football-standings run twice a day, screen-number-ones
+    # three times. A single "time" cannot express that.
+    twice = {"id": "x", "times": ["04:00", "05:00"]}
+    def occ_at(h, m, job=twice, d=5):
+        o = previous_occurrence(datetime(2026, 8, d, h, m, tzinfo=timezone.utc), job)
+        return o.strftime("%m-%d %H:%M") if o else None
+
+    check("two slots: between them picks the earlier", occ_at(4, 30), "08-05 04:00")
+    check("two slots: after both picks the later", occ_at(5, 30), "08-05 05:00")
+    check("two slots: before both falls to yesterday's LAST slot",
+          occ_at(3, 0), "08-04 05:00")
+    check("times parse and sort", job_times({"times": ["05:00", "04:00"]}),
+          [(4, 0), (5, 0)])
+    check("time and times are interchangeable for one slot",
+          job_times({"time": "06:10"}), job_times({"times": ["06:10"]}))
+
+    # THE REASON last_slot EXISTS: having run the 04:00 slot, the 05:00 slot on
+    # the SAME DAY is still due. A date-only comparison swallows it.
+    at0530 = datetime(2026, 8, 5, 5, 30, tzinfo=timezone.utc)
+    check("second slot of the day is still due",
+          decide(at0530, twice, "2026-08-05", "2026-08-05T04:00:00+00:00")[0], "due")
+    check("second slot not re-run once done",
+          decide(at0530, twice, "2026-08-05", "2026-08-05T05:00:00+00:00")[0],
+          "already-ran")
+    check("date-only would have swallowed it (documents the bug)",
+          decide(at0530, twice, "2026-08-05")[0], "already-ran")
+    # and last_slot must not break the single-slot jobs
+    check("last_slot on a single-slot job still already-ran",
+          decide(at0600, daily, "2026-08-05", "2026-08-05T05:50:00+00:00")[0],
+          "already-ran")
+    check("last_slot from yesterday leaves today due",
+          decide(at0600, daily, "2026-08-04", "2026-08-04T05:50:00+00:00")[0], "due")
+
+    # --- day-of-month filter (days), for conflicts- and cricket-monthly ------
+    monthly = {"id": "m", "time": "07:15", "days": [1]}
+    check("monthly due on the 1st",
+          decide(datetime(2026, 9, 1, 8, 0, tzinfo=timezone.utc), monthly, "")[0], "due")
+    check("monthly resolves back to the 1st a few days later",
+          previous_occurrence(datetime(2026, 9, 3, 12, 0, tzinfo=timezone.utc),
+                              monthly).date().isoformat(), "2026-09-01")
+    check("monthly is off-schedule mid-month, not missed",
+          decide(datetime(2026, 9, 20, 12, 0, tzinfo=timezone.utc), monthly, "")[0],
+          "off-schedule")
+    check("monthly ignores the 2nd", previous_occurrence(
+        datetime(2026, 9, 2, 7, 20, tzinfo=timezone.utc), monthly).day, 1)
+
+    # --- argv: args and the healthchecks wrapper -----------------------------
+    plain = build_argv({"id": "p", "command": "runners/forecast.sh"})
+    check("plain argv is bash + one path", len(plain), 2)
+    check("plain argv is not hc-wrapped", "hc-run.sh" in " ".join(plain), False)
+    witharg = build_argv({"id": "a", "command": "run-scraper-refresh.sh",
+                          "args": ["conflicts"]})
+    check("args are appended", witharg[-1], "conflicts")
+    check("args land after the script path",
+          witharg[-2].endswith("run-scraper-refresh.sh"), True)
+    wrapped = build_argv({"id": "w", "command": "run-activity-feed.sh",
+                          "hc_slug": "activity-feed"})
+    check("hc wrap puts hc-run.sh first", wrapped[1].endswith("hc-run.sh"), True)
+    check("hc wrap passes the slug next", wrapped[2], "activity-feed")
+    check("hc wrap still ends with the real script",
+          wrapped[-1].endswith("run-activity-feed.sh"), True)
+    both = build_argv({"id": "b", "command": "run-scraper-refresh.sh",
+                       "args": ["fiba"], "hc_slug": "fiba-weekly"})
+    check("hc wrap and args compose", (both[2], both[-1]), ("fiba-weekly", "fiba"))
+
+    # --- jobs.toml validation ------------------------------------------------
+    good = [{"id": "g", "command": "runners/x.sh", "time": "05:50",
+             "weekdays": [1, 3, 5]}]
+    check("valid table has no problems", validate_jobs(good), [])
+    check("time and times together is rejected", len(validate_jobs(
+        [{"id": "g", "command": "x.sh", "time": "05:50", "times": ["06:00"]}])), 1)
+    check("neither time nor times is rejected", len(validate_jobs(
+        [{"id": "g", "command": "x.sh"}])), 1)
+    check("duplicate id is rejected", len(validate_jobs(
+        [{"id": "g", "command": "x.sh", "time": "05:50"},
+         {"id": "g", "command": "y.sh", "time": "06:00"}])), 1)
+    check("missing command is rejected", len(validate_jobs(
+        [{"id": "g", "time": "05:50"}])), 1)
+    check("weekday 8 is rejected", len(validate_jobs(
+        [{"id": "g", "command": "x.sh", "time": "05:50", "weekdays": [8]}])), 1)
+    check("day-of-month 32 is rejected", len(validate_jobs(
+        [{"id": "g", "command": "x.sh", "time": "05:50", "days": [32]}])), 1)
+    check("args must be a list", len(validate_jobs(
+        [{"id": "g", "command": "x.sh", "time": "05:50", "args": "conflicts"}])), 1)
+    check("garbage time is rejected", len(validate_jobs(
+        [{"id": "g", "command": "x.sh", "time": "half past four"}])), 1)
+
+    # the real jobs.toml must always validate
+    with JOBS_FILE.open("rb") as fh:
+        check("shipped jobs.toml validates",
+              validate_jobs(tomllib.load(fh).get("job", [])), [])
+
     failed = [c for c in cases if c[1] != c[2]]
     for label, got, want in cases:
         print(f"  {'PASS' if got == want else 'FAIL'}  {label}: got {got!r}, want {want!r}")
@@ -331,9 +490,55 @@ def self_test():
 
 # --- entry point -------------------------------------------------------------
 
+def validate_jobs(jobs):
+    """Fail loudly on a malformed jobs.toml rather than skipping a job quietly.
+
+    A typo here is a job that silently never runs, which is the exact failure
+    mode this whole dispatcher exists to make impossible. Returns a list of
+    problems; empty means the table is usable.
+    """
+    problems, seen = [], set()
+    for i, job in enumerate(jobs):
+        where = job.get("id") or f"job #{i + 1}"
+        if not job.get("id"):
+            problems.append(f"{where}: missing id")
+        elif job["id"] in seen:
+            problems.append(f"{where}: duplicate id")
+        else:
+            seen.add(job["id"])
+        if not job.get("command"):
+            problems.append(f"{where}: missing command")
+        has_t, has_ts = bool(job.get("time")), bool(job.get("times"))
+        if has_t and has_ts:
+            problems.append(f"{where}: set time OR times, not both")
+        elif not has_t and not has_ts:
+            problems.append(f"{where}: needs time or times")
+        else:
+            try:
+                for hh, mm in job_times(job):
+                    if not (0 <= hh <= 23 and 0 <= mm <= 59):
+                        problems.append(f"{where}: time {hh:02d}:{mm:02d} out of range")
+            except (ValueError, AttributeError):
+                problems.append(f"{where}: unparseable time; want \"HH:MM\"")
+        for key, lo, hi in (("weekdays", 1, 7), ("months", 1, 12), ("days", 1, 31)):
+            for v in (job.get(key) or []):
+                if not isinstance(v, int) or not (lo <= v <= hi):
+                    problems.append(f"{where}: {key} value {v!r} outside {lo}-{hi}")
+        if job.get("args") is not None and not isinstance(job["args"], list):
+            problems.append(f"{where}: args must be a list")
+    return problems
+
+
 def load_jobs():
     with JOBS_FILE.open("rb") as fh:
-        return tomllib.load(fh).get("job", [])
+        jobs = tomllib.load(fh).get("job", [])
+    problems = validate_jobs(jobs)
+    if problems:
+        for p in problems:
+            log(f"CONFIG ERROR {p}")
+        raise SystemExit(f"{JOBS_FILE.name} is invalid; refusing to run "
+                         f"({len(problems)} problem(s) above)")
+    return jobs
 
 
 def show_status(now, jobs, state):
@@ -342,7 +547,8 @@ def show_status(now, jobs, state):
     print("-" * 72)
     for job in jobs:
         st = state.get(job["id"]) or {}
-        verdict, occ, _ = decide(now, job, st.get("last_run_date", ""))
+        verdict, occ, _ = decide(now, job, st.get("last_run_date", ""),
+                                 st.get("last_slot", ""))
         occ_s = f"{occ:%m-%d %H:%M}" if occ else "-"
         print(f"{job['id']:<20} {occ_s:<12} {st.get('last_run_date', '-'):<12} "
               f"{st.get('last_status', '-'):<9} {verdict}")

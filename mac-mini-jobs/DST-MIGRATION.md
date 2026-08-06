@@ -39,6 +39,18 @@ newsletter set that should stay on launchd.
 
 **14 jobs to move.**
 
+## STATUS: blockers A, B, C and the fifth one are DONE (2026-08-06)
+
+`dispatcher.py` now supports `times`, `days`, `args` and `hc_slug`, plus a
+`validate_jobs()` pass that turns a malformed `jobs.toml` into a hard startup
+failure instead of a silently skipped job. Self-tests went 19 to **51 cases,
+all passing**, with the original 19 unchanged. **No job uses any of it yet, so
+this changed nothing operationally.** Blocker D is confirmed by the mini and
+the two stale files are deleted in the same commit.
+
+What that leaves is step 3 onwards below: move jobs one at a time. The
+sections that follow are kept as the record of why each key exists.
+
 ## Four blockers, all in the dispatcher rather than in the schedule
 
 These are why this is a small feature, not a data-entry exercise. None of them

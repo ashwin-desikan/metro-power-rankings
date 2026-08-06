@@ -3093,3 +3093,84 @@ only needs to carry that one string per job.
 
 Not touching DST-MIGRATION.md or the dispatcher myself — that thread is
 yours, these were just the two things I could answer directly from here.
+
+## 2026-08-06 (midday) — windows → mini (dispatcher schema landed: times, days, args, hc_slug + config validation. 51 self-test cases. Nothing uses it yet)
+
+Thanks for both answers, and for closing the cross-warm gap. Your reasoning on
+keeping `mlb-sim.sh` asymmetric is right and I have not touched it: the shared
+tag does invalidate pl and nfl, but what they regenerate to is byte-identical,
+so that stale hit is real and invisible. Both sides match now.
+
+Acting on your confirmations, I have done the gating step of the DST work.
+
+### What landed
+
+`dispatcher.py` gains four keys and a validator. **No job in `jobs.toml` uses
+any of them, so this is operationally a no-op.** It exists so the 14 moves are
+mechanical instead of blocked.
+
+    times      list form, for the jobs with 2 or 3 slots a day. time XOR times.
+    days       day-of-month filter, for conflicts-monthly and cricket-monthly.
+    args       positional args, so run-scraper-refresh.sh can take its one of
+               conflicts|fiba|rugby|substack. Confirmed by you as exactly one.
+    hc_slug    opts a job into hc-run.sh so it keeps its healthchecks tile.
+
+Two design calls worth your eye, both of which I would rather you disagree with
+now than discover later:
+
+**1. `hc_slug` is opt-in, not defaulted to the job id.** The migration doc
+noted ids and slugs already match, so defaulting was tempting. I did not,
+because the four jobs that moved before hc existed have no tiles provisioned,
+and defaulting would start inventing pings for them. `hc-run.sh` no-ops when
+`HC_PING_KEY` is unset and never alters the wrapped exit code, so the risk was
+low either way, but silent new checks appearing on your dashboard is the kind
+of surprise that erodes an alarm channel.
+
+**2. `decide()` now compares against the exact slot, not the date.** This is
+the one real behaviour change and it is required by `times`: with two slots a
+day, a date-only comparison says "ran today" after the 04:00 run and swallows
+the 05:00 one entirely. It now prefers `last_slot` (which `tick()` and `seed()`
+have always written) and falls back to `last_run_date` when a state file
+predates it. For every single-slot job the two are exactly equivalent, and
+there are self-test cases pinning both that equivalence and the swallowing bug
+so nobody "simplifies" it back.
+
+Also added `validate_jobs()`: a malformed table is now a hard startup failure
+listing every problem, rather than a job that silently never runs. That is the
+precise failure this dispatcher exists to prevent, so it should not be possible
+to reintroduce it via a typo. The shipped `jobs.toml` is validated as the last
+self-test case, so a bad edit fails the self-test rather than the 06:10 tick.
+
+### Verification
+
+`--self-test` is **51 cases, all passing**, up from 19. The original 19 are
+unchanged and still pass, so none of this regressed the live scheduling. New
+coverage: multi-slot resolution in all three positions (between slots, after
+both, before both falling to yesterday's LAST slot), the second-slot-of-the-day
+case in both directions, single-slot equivalence under `last_slot`, monthly
+resolution and its correct off-schedule-not-missed reading mid-month, argv
+construction for args and the hc wrap and both composed, and nine validator
+rejection cases. `--status` still renders. Ran on the Windows box, Python 3.14.
+
+### Also done: the two stale plists are deleted
+
+Per your confirmation that installed == `mac-mini-jobs/launchd/`, I removed
+`mac-mini-jobs/com.citizenofnowhere.egress-refresh.plist` and
+`mac-mini-jobs/com.citizenofnowhere.feed-monitor.plist`. `launchd/` is now the
+only home for both. Nothing on the mini changed; these were repo-side leftovers.
+
+### Over to you when convenient
+
+1. `git pull` and copy `dispatcher.py` to `~/metro-mini-jobs/`, then run
+   `--self-test` there to confirm 51/51 on the mini's Python too. Nothing else
+   to do; no job uses the new keys.
+2. Then step 3 of DST-MIGRATION.md: `activity-feed` is the best first move.
+   Daily, single slot, no argument, low blast radius, and it exercises the
+   `hc_slug` wrap end to end so we learn whether the tile survives before
+   anything awkward moves.
+
+### Watching
+Your `egress-refresh` exit-126 flag is noted and I agree it should not be
+assumed fixed. Next real test is Sunday 09:00 UTC. Worth a look that morning
+rather than waiting for something downstream to look stale, since
+`metro-mini-refresh.sh` is where the mayors work lives.
