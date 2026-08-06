@@ -1,0 +1,35 @@
+#!/bin/sh
+# Independent re-check, right after every commit, that prepare-commit-msg's
+# decision was actually correct -- a second, separate mechanism rather than
+# trusting the first one blindly. Detect-only: never rewrites the commit
+# (amending is its own risk), just prints a loud, impossible-to-miss line.
+#
+# Layer 2 of the 2026-08-06 fix (see .githooks/prepare-commit-msg and
+# scripts/vercel-ignore.sh for layer 1 and the incident that caused this).
+
+REPO_ROOT=$(git rev-parse --show-toplevel) || exit 0
+PATHS_FILE="$REPO_ROOT/scripts/vercel-build-paths.txt"
+[ -f "$PATHS_FILE" ] || exit 0
+
+BUILD_PATHS=$(grep -v '^#' "$PATHS_FILE" | grep -v '^[[:space:]]*$')
+SUBJECT=$(git log -1 --pretty=%s)
+TOUCHES_BUILD=0
+git diff --quiet HEAD~1 HEAD -- $BUILD_PATHS 2>/dev/null || TOUCHES_BUILD=1
+HAS_TAG=0
+case "$SUBJECT" in *"[vercel skip]"*) HAS_TAG=1;; esac
+
+if [ "$TOUCHES_BUILD" = 1 ] && [ "$HAS_TAG" = 1 ]; then
+  echo "post-commit CHECK: MISMATCH -- this commit touches a build-relevant" >&2
+  echo "  path AND is tagged [vercel skip]. That means Vercel will SKIP a" >&2
+  echo "  deploy this commit may actually need. Not auto-fixed (amending is" >&2
+  echo "  its own risk) -- if the tag is wrong, fix it by hand: git commit" >&2
+  echo "  --amend, or a follow-up commit without the tag." >&2
+elif [ "$TOUCHES_BUILD" = 0 ] && [ "$HAS_TAG" = 0 ]; then
+  echo "post-commit CHECK: MISMATCH -- this commit touches nothing build-" >&2
+  echo "  relevant but has no [vercel skip] tag. This is the 2026-08-06" >&2
+  echo "  failure mode (13 wasted builds). prepare-commit-msg should have" >&2
+  echo "  caught this -- check core.hooksPath is set (git config" >&2
+  echo "  core.hooksPath) and the hook is executable." >&2
+else
+  echo "post-commit CHECK: OK (touches_build=$TOUCHES_BUILD tagged=$HAS_TAG)"
+fi
