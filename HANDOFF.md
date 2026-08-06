@@ -3619,3 +3619,66 @@ The only note on euro-comps remains: confirm BOTH slots fire, not just the first
 Still not dispatched as of 11:20Z, 1h40 past its 09:40 cron. Well inside the
 measured 1-4h band, and yesterday's landed at 11:38Z, so nothing to read into
 yet. Per the standing rule I will not call it a no-show before 12:40Z.
+
+## 2026-08-06 (midday) — mini → windows (substack-daily and euro-comps both LIVE. euro-comps' own guard is worth knowing about)
+
+Ashwin gave the go-ahead for both in one sitting. Ran the full sequence twice.
+
+### substack-daily: clean, nothing to report beyond the proof
+
+Hand-ran the exact invocation for real:
+
+    /bin/bash ~/metro-mini-jobs/hc-run.sh substack-daily /bin/bash \
+      ~/metro-mini-jobs/run-scraper-refresh.sh substack
+
+Exit 0, "no change... nothing to commit" (feed unchanged since the day's
+earlier snapshot). Confirms relative-command resolution, the args
+passthrough, and the hc_slug wrap all work as built. Uncommented, seeded 06:00Z, plist unloaded. Pushed as `c45eee29f`.
+
+### euro-comps: live, but its own script has a guard worth documenting
+
+Hand-ran twice on purpose, once forced and once not:
+
+    FORCE_RUN=1 /bin/bash ~/metro-mini-jobs/hc-run.sh euro-comps /bin/bash \
+      ~/metro-mini-jobs/run-euro-comps.sh
+    → real run, committed + pushed, exit 0
+
+    /bin/bash ~/metro-mini-jobs/hc-run.sh euro-comps /bin/bash \
+      ~/metro-mini-jobs/run-euro-comps.sh          # no FORCE_RUN, 11:27 UTC
+    → "guard: UTC hour 11 != 04; skipping", exit 0
+
+The second one is the finding: `run-euro-comps.sh` has its own internal
+`date -u +%H == "04"` guard, left over from when the plist bracketed local
+04:00+05:00 to survive the DST switch. With the dispatcher now firing at
+fixed UTC 03:00 and 04:00, that guard means the 03:00 slot will ALWAYS
+no-op — every day, forever, not just today. I don't think this is a bug:
+the dispatcher genuinely fires both slots, which is what `times` needed to
+prove, and the guard is what keeps the real effective behavior (one actual
+run) pinned to true UTC instead of drifting with local time the way the old
+plist did. But it means "verify both fire" tomorrow will look like one real
+run and one clean skip, not two real runs — documented inline in the row's
+comment so that doesn't read as a failure to whoever checks it. Also noted
+that the guard is now vestigial (UTC times don't drift, so bracketing them
+serves no purpose) and could be deleted in favour of a single `time = "04:00"`
+row whenever someone wants to tidy it — not urgent, purely cosmetic once the
+guard's harmless.
+
+Seeded both at the LATEST slot (04:00Z, since today's real occurrences of both
+had already happened via the old plist before I started), so tomorrow's
+03:00Z and 04:00Z are both genuinely new — that's the actual test of
+`times` + `last_slot`, not today's hand-runs.
+
+### Both unloaded, both pushed
+`c45eee29f` (substack-daily), `8af382f03` (euro-comps). `--self-test` and
+`--status` confirmed clean on the mini after each. Rollout state header
+updated in the same commits.
+
+### Friday's list, updated
+Five first-unattended-run checks now: forecast, business-daily's warm-path,
+activity-feed, substack-daily, and euro-comps (both slots, watch for the
+guard-skip on 03:00 being expected). Plus whatever mlb-sim's Action did
+yesterday.
+
+### Next
+Batch 3 in your ordering (football-standings, gap-league-watch — "nothing
+new") whenever you want to draft rows. No preference on timing from me.
