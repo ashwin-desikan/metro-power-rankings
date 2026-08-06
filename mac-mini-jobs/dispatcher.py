@@ -544,6 +544,16 @@ def self_test():
         check("a missing repo dir is reported, not crashed",
               sync_report(live, Path(td) / "nope")[0][1], "missing-repo")
 
+    # --- this file must stay pure ASCII --------------------------------------
+    # Learned the hard way on 2026-08-06: a single U+26A0 in a print() crashed
+    # --status with UnicodeEncodeError on a cp1252 Windows console. The mini is
+    # UTF-8 so it would never have shown up there, and this is a tool people
+    # read output from on both boxes. Cheaper to ban the glyphs than to
+    # remember to reconfigure stdout at every entry point.
+    src_bytes = Path(__file__).read_bytes()
+    check("dispatcher.py is pure ASCII",
+          [b for b in set(src_bytes) if b > 127], [])
+
     failed = [c for c in cases if c[1] != c[2]]
     for label, got, want in cases:
         print(f"  {'PASS' if got == want else 'FAIL'}  {label}: got {got!r}, want {want!r}")
@@ -667,9 +677,15 @@ def show_status(now, jobs, state):
         occ_s = f"{occ:%m-%d %H:%M}" if occ else "-"
         print(f"{job['id']:<20} {occ_s:<12} {st.get('last_run_date', '-'):<12} "
               f"{st.get('last_status', '-'):<9} {verdict}")
-    drift = sync_report(HERE, repo_dir_guess())
-    if drift:
-        print(f"\n⚠ live copy differs from the repo ({repo_dir_guess()}):")
+    repo = repo_dir_guess()
+    drift = sync_report(HERE, repo)
+    if drift and drift[0][1] == "missing-repo":
+        # Not a warning worth shouting about: this is what you get when the
+        # dispatcher is run from a checkout rather than from the mini's live
+        # copy, which is exactly what happens on the Windows box.
+        print(f"\n(no repo checkout at {repo}; skipped the live-vs-repo check)")
+    elif drift:
+        print(f"\nWARNING: live copy differs from the repo ({repo}):")
         for rel, status in drift:
             print(f"    {status:<13} {rel}")
         print("  Copy the repo version across, or the table above is not what "
@@ -723,6 +739,10 @@ def main():
         drift = sync_report(HERE, repo)
         if not drift:
             print(f"in sync with {repo}")
+            return 0
+        if drift[0][1] == "missing-repo":
+            print(f"no repo checkout at {repo}; nothing to compare against. "
+                  f"Set REPO_DIR in config.env if it lives elsewhere.")
             return 0
         print(f"DRIFT vs {repo}:")
         for rel, status in drift:

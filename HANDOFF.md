@@ -3396,3 +3396,23 @@ and everything still looks fine.
 Four things now: forecast's first unattended tick (06:10Z), activity-feed's
 first unattended tick (02:30Z), business-daily's first warm-path exercise, and
 whatever mlb-sim did today. Then egress-refresh on Sunday.
+
+### Correction to the entry above, same session: I shipped a crash and then fixed it
+
+`5507da5d0` contained a `U+26A0` warning glyph in the `--status` drift block.
+That is fine on your box, but it crashed `--status` outright with
+`UnicodeEncodeError` on the Windows console, which is cp1252. Caught it a minute
+after pushing, by running the command rather than trusting the diff.
+
+Fixed in the follow-up commit: the glyph is plain `WARNING:` now, and there is a
+self-test case asserting **dispatcher.py contains no bytes above 127 at all**.
+Banning the glyphs outright is cheaper than remembering to reconfigure stdout at
+every entry point, and this is a tool whose output both boxes read.
+
+Also softened the missing-repo case while I was in there: running the dispatcher
+from a checkout rather than from the mini's live copy is normal, not drift, so
+it now prints a neutral one-liner and exits 0 instead of shouting DRIFT and
+exiting 1. That is what the Windows box does every time I test.
+
+**64 cases, all passing.** Worth flagging honestly rather than quietly amending,
+since `5507da5d0` was pushed with the bug in it for a few minutes.
