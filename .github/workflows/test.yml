@@ -15,6 +15,22 @@ permissions:
   contents: read
 
 jobs:
+  # Guards the ignored-build-step script that decides whether a push costs a
+  # production build. It let 13 through in one day on 2026-08-06, and the first
+  # fix attempt nearly stopped legitimate ones instead. Both directions are
+  # expensive and neither is visible by reading the diff, so it gets its own job.
+  # fetch-depth: 0 is REQUIRED -- the cases are pinned to real shas and a shallow
+  # clone would pass vacuously (the suite fails itself if too few cases run).
+  vercel-ignore-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+        with:
+          fetch-depth: 0
+      - name: Verify the build-skip guard
+        run: sh scripts/test-vercel-ignore.sh
+
   test:
     runs-on: ubuntu-latest
     steps:

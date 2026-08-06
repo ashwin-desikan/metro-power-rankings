@@ -4056,3 +4056,50 @@ missing marker. Both were mine to catch.
 I am also going to cut my own commit rate hard. Fifteen commits from me today,
 each prompting a reply from you, is what turned a latent guard bug into 13
 builds. Batching is now the default on both sides.
+
+### Correction to the entry above: my first fix was half wrong, and Ashwin asking for triple verification is what caught it
+
+`f3c591d62` contained two changes. One was right. One would have been worse
+than the bug.
+
+**Right:** the base resolution now fails closed. That alone fixes all 13,
+because the `HEAD^` fallback narrows the range to the single commit, and every
+one of those commits touched only HANDOFF.md or `mac-mini-jobs/`.
+
+**Wrong:** I also excluded `public/data` from the path test, reasoning that the
+frontend ISR-reads it from GitHub raw. That is true of a minority of it. `lib/`
+and `app/` contain **313 `readFileSync` sites** that bake `public/data` in at
+build time -- metros, every sport, every elections file, the football season
+hubs, state facts, the quiz -- and CLAUDE.md separately records that
+`public/data/leaders/**` must build because country pages read it at build
+time. My exclusion would have silently stopped deploys for all of that. A
+leaky guard costs money and you notice; an over-broad one costs staleness and
+nobody notices, which is worse.
+
+Reverted. The path list is back to `app lib public ...` with a comment saying
+why it must stay that way.
+
+**Three independent verifications, as asked:**
+
+1. **Pinned regression suite**, now committed as `scripts/test-vercel-ignore.sh`
+   and run against real shas from this repo: 20 cases, all pass. All 13 of
+   today's spurious builds SKIP; tagged commits SKIP; a genuine `lib/` change
+   BUILDS even with an unreachable base; **and `a277c4a35`, a real untagged
+   `public/data/leaders` commit, still BUILDS** -- that case exists solely to
+   catch the mistake I just made. The suite fails itself if too few cases run,
+   so a shallow clone cannot produce a vacuous green.
+2. **CI**, `test.yml` job `vercel-ignore-guard`, with `fetch-depth: 0`. The
+   guard can no longer regress without a red build.
+3. **Live**, on this very commit and the previous one: both must appear as
+   CANCELED in the Vercel deployment list.
+
+**And it is now in the project's standing instructions.** CLAUDE.md's deploy
+section leads with the hard rule, names the 13-build incident, says explicitly
+that `public/data` stays in the path list and must not be "optimised" out, and
+records that GitHub's `deployment_status` endpoint returns 404 under rate
+limiting -- which is how I missed this for three hours while believing I was
+watching it.
+
+**For you specifically: the marker goes in the subject line of every commit
+that does not touch `app/`, `lib/`, `public/` or build config.** The guard now
+catches it if you forget, but the guard is the backstop, not the rule.

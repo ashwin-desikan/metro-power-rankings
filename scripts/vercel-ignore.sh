@@ -82,26 +82,29 @@ fi
 # used by .githooks/prepare-commit-msg (see that file's own comment for why
 # this moved out of an inline list on 2026-08-06).
 #
-# public/data is EXCLUDED here on top of the shared list, via a pathspec, not
-# by removing "public" from vercel-build-paths.txt itself: the hook's job is
-# "does this commit look definitely unrelated to a build", and it's fine for
-# that to stay conservative about public/, because a real data-refresh commit
-# never depends on the hook anyway -- every one of those scripts writes its
-# own "... [vercel skip]" tag directly. Here, though, the exclusion is a
-# correctness fix, not a loosening: every page that reads public/data does so
-# at runtime via ISR from GitHub raw (lib/business.ts, lib/mlbSim.ts, and the
-# rest); the build-time copies are fallbacks the runtime fetch supersedes, and
-# every data commit already carries the tag and is already skipped by rule 1.
-# Including public/data here never caused a wanted build, only unwanted ones,
-# by making a LATER commit's push range look build-relevant purely because a
-# skipped data commit sat inside it -- rule 1 and rule 4 disagreeing about the
-# same files, which is exactly what put six of 2026-08-06's thirteen spurious
-# builds past a base-resolution fix alone.
+# public/data STAYS IN, and that is deliberate -- read from the shared list
+# below, unmodified, no exclusion pathspec. I added one on this same file
+# earlier today reasoning that the frontend ISR-reads public/data from GitHub
+# raw; Windows caught that it's true of only a minority of it before either
+# of us shipped it further. `lib/` and `app/` contain 313 `readFileSync` sites
+# reading public/data AT BUILD TIME -- metros, every sport, every elections
+# file, the football season hubs, state facts, the quiz -- and CLAUDE.md
+# separately records that public/data/leaders/** must build because country
+# pages bake it in. Excluding public/data would have silently stopped deploys
+# for all of that. The ISR-backed files (business, mlb-sim, the espn
+# snapshots, the football live bundles) are the exception, not the rule, and
+# are already handled by rule 1, since their commits carry the marker.
+# Narrowing this list would need a real audit of all 313 call sites first, not
+# a plausible-sounding architectural assumption -- which is exactly what my
+# version was, verified only against a synthetic test file, never against
+# what the app actually reads at build time. Pinned regression case for this:
+# scripts/test-vercel-ignore.sh, a real untagged public/data/leaders commit
+# that must still build.
 PATHS_FILE="$(dirname "$0")/vercel-build-paths.txt"
 [ -f "$PATHS_FILE" ] || exit 1
 BUILD_PATHS=$(grep -v '^#' "$PATHS_FILE" | grep -v '^[[:space:]]*$')
 
-if git diff --quiet "$BASE" "$SHA" -- $BUILD_PATHS ':(exclude)public/data'; then
+if git diff --quiet "$BASE" "$SHA" -- $BUILD_PATHS; then
   echo "vercel-ignore: no build-relevant change in $BASE..$SHA; skipping"
   exit 0
 fi

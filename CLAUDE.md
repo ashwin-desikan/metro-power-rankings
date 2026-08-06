@@ -85,13 +85,47 @@ explicit — apply it before touching any refresh script:
 
 ## Deploy discipline (this one costs real money — see below)
 
-- The frontend reads `public/data/**` via ISR straight from GitHub raw, so
-  **routine data refreshes need no Vercel build**. Every automated commit
+> **HARD RULE, no exceptions.** Every commit that does **not** change `app/`,
+> `lib/`, `public/` or build config carries the skip marker in its SUBJECT
+> line. That means every handoff entry, every `mac-mini-jobs/` change, every
+> `scripts/` change, every doc. This applies to the Mac mini's commits exactly
+> as much as to yours. **On 2026-08-06 thirteen production builds ran in one
+> day** against a 2/day budget, every one of them an untagged
+> HANDOFF.md/`mac-mini-jobs/` commit. See
+> `feedback_vercel_build_budget_incident` and the HANDOFF entry of that date.
+>
+> **Check, don't assume.** Count builds with the Vercel MCP
+> (`list_deployments`, count `state: READY` — `CANCELED` is free) at the start
+> and end of any session with more than ~3 pushes. Do **not** count GitHub
+> `deployment_status` events: that endpoint returns **404 under secondary rate
+> limiting**, which reads as "no builds" when it means "no answer". That is
+> exactly how the 13 went unnoticed for three hours.
+>
+> **Batch.** One commit per work item, not one per exchange. A handoff entry is
+> not worth its own push if another change is ten minutes behind it. Commit
+> volume is what turns a latent guard bug into a bill.
+
+- The frontend reads *some* of `public/data/**` via ISR straight from GitHub
+  raw, so **those data refreshes need no Vercel build**. Every automated commit
   that only touches data/scripts/docs must carry `[vercel skip]` in the
   message.
 - `vercel.json`'s `ignoreCommand` also path-checks the diff (`app/`, `lib/`,
   `public/`, and build config files) as a backstop in case `[vercel skip]`
   gets forgotten on a commit that doesn't actually need a build.
+- **The path check includes `public/data` on purpose. Do not "optimise" it
+  out.** It looks redundant, because the ISR-from-raw pattern is the one people
+  read about first. It is not: `lib/` and `app/` hold **313 `readFileSync`
+  sites** that bake `public/data` in at build time — metros, every sport, every
+  elections file, the football season hubs, state facts, the quiz. The
+  ISR-backed files are the minority. Excluding `public/data` would silently
+  stop deploys for all the rest, and silence is the expensive failure here.
+- `scripts/vercel-ignore.sh` **fails closed**: if it cannot resolve the base
+  commit it skips rather than builds, because a missed deploy is auto-healed by
+  `mac-mini-jobs/run-deploy-watch.sh` and a spurious deploy is healed by
+  nothing. It used to fail open, which is what caused the 13.
+- That script has a regression suite, `scripts/test-vercel-ignore.sh`, pinned
+  to real commits and run in CI (`test.yml`, job `vercel-ignore-guard`, which
+  needs `fetch-depth: 0`). **Change the guard, run the suite.**
 - A change to `public/data/leaders/**` (per-country leadership history) DOES
   need a real build — country pages read it at build time, not via ISR. The
   commit message convention for that case is visible in
