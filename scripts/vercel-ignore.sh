@@ -61,17 +61,19 @@ fi
 # Paths that feed `next build`. Docs, workbooks, mac-mini-jobs, the rest of
 # scripts/, and raw pipeline dirs never need a deploy on their own.
 #
-# public/data is EXCLUDED deliberately, and this is a correctness fix rather
-# than a loosening. Every page that reads public/data does so at runtime via
-# ISR from GitHub raw (lib/business.ts, lib/mlbSim.ts, lib/espnFetch.ts and the
-# rest); the build-time copies are fallbacks that the runtime fetch supersedes.
-# Every data commit in this repo already carries [vercel skip] and is already
-# skipped by rule 1 above, so including public/data here never once caused a
-# wanted build -- it only caused unwanted ones, by making a LATER commit's push
-# range look build-relevant because a skipped data commit sat inside it. Rule 1
-# and rule 4 disagreed about the same files; now they agree.
+# public/data STAYS IN, and that is deliberate. It is tempting to exclude it on
+# the grounds that the frontend ISR-reads it from GitHub raw, and on 2026-08-06
+# I very nearly did. That is true of only a minority of it. `lib/` and `app/`
+# contain 313 `readFileSync` sites reading public/data AT BUILD TIME -- metros,
+# every sport, every elections file, the football season hubs, state facts, the
+# quiz -- and CLAUDE.md separately records that public/data/leaders/** must
+# build because country pages bake it in. Excluding public/data would silently
+# stop deploys for all of that. The ISR-backed files (business, mlb-sim, the
+# espn snapshots, the football live bundles) are the exception, not the rule,
+# and they are already handled by rule 1, since their commits carry the marker.
+# Narrowing this list would need a real audit of all 313 call sites first.
 if git diff --quiet "$BASE" "$SHA" -- \
-  app lib public ':(exclude)public/data' proxy.ts \
+  app lib public proxy.ts \
   next.config.ts postcss.config.mjs tsconfig.json \
   package.json package-lock.json .npmrc \
   vercel.json .vercelignore scripts/vercel-ignore.sh; then
