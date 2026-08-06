@@ -158,9 +158,40 @@ additions in total: `times`, `args`, `days` (plus the `hc-run.sh` wrap).
    single slot, no argument, and low blast radius if it misfires.
 4. Then the rest in increasing awkwardness: single-slot weeklies, then the
    argument jobs, then multi-slot, then the two monthlies.
-5. Same one-runner discipline as the Actions migration: the plist gets
-   `launchctl unload`ed only AFTER the dispatcher has run the job successfully
-   once, never before.
+5. **Corrected 2026-08-06: the one-runner discipline here is NOT the Actions
+   one.** For the Actions migration, letting both runners live briefly is the
+   safe failure, and business-daily proved it on 5 Aug: the Action fired at
+   08:09 and the mini at 08:46, harmlessly, because GitHub's 1-4h dispatch lag
+   separates them in practice. That does not carry over. Here BOTH runners are
+   the mini, and both fire at the same UTC minute, so an overlap is a genuine
+   race: two copies of the same script running `git pull` / `commit` / `push`
+   against one working tree, with the dispatcher's lock file offering no
+   protection because it only guards against overlapping *ticks*.
+
+   So for each legacy job: DRY_RUN, then a real hand-run to prove the
+   invocation, then **uncomment the `jobs.toml` row and `launchctl unload` the
+   plist in the SAME sitting**. Never leave both loaded overnight.
+
+## Two more things found while drafting the first move (2026-08-06)
+
+**Sixth blocker, now fixed: the mini keeps jobs in two places.** Most legacy
+jobs run from `~/metro-mini-jobs/`, but four run straight out of the repo
+checkout at `$HOME/Projects/Metro Area Project/mac-mini-jobs/`:
+`activity-feed`, `football-standings`, `gap-league-watch` and
+`screen-number-ones` (plus `deploy-watch`, which is `StartInterval` and not
+moving). Their plists write that as `$HOME/...`, which is **not**
+`os.path.isabs`, so the dispatcher would have silently resolved it under
+`HERE` and the job would never have started. `build_argv()` now expands `~`
+and `$VARS` before the absolute test. Note the repo path contains spaces,
+which is safe because argv is a list, and is the reason it must never be
+flattened into a shell string. Self-test cases pin all of that.
+
+This is exactly what "move the simplest job first" is for: the sixth blocker
+was invisible until the first row was actually drafted.
+
+**`activity-feed` is drafted and commented in `jobs.toml`**, with its slot
+(02:30 UTC, preserving today's effective time), its `hc_slug`, and notes for
+whoever flips it.
 
 Nothing here needs to land in a hurry. The real deadline is 25 October, and the
 useful sequencing is to get step 2 in early so the rest is mechanical.

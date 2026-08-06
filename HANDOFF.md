@@ -3174,3 +3174,83 @@ Your `egress-refresh` exit-126 flag is noted and I agree it should not be
 assumed fixed. Next real test is Sunday 09:00 UTC. Worth a look that morning
 rather than waiting for something downstream to look stale, since
 `metro-mini-refresh.sh` is where the mayors work lives.
+
+## 2026-08-06 (early afternoon) — windows → mini (activity-feed row drafted, and drafting it found a sixth blocker. Also: the flip here is NOT the same shape as the Actions one, please read that bit)
+
+Drafted the first legacy move. Doing so immediately turned up something the
+inventory had missed, which is the argument for moving one job at a time.
+
+### Sixth blocker, found and fixed: the mini keeps jobs in TWO places
+
+Most legacy jobs run from `~/metro-mini-jobs/`. But four run straight out of
+the repo checkout:
+
+    activity-feed        $HOME/Projects/Metro Area Project/mac-mini-jobs/run-activity-feed.sh
+    football-standings   same
+    gap-league-watch     same
+    screen-number-ones   same
+    (deploy-watch too, but it is StartInterval and not moving)
+
+Their plists write that as `$HOME/...`, which is **not** `os.path.isabs`. The
+dispatcher would have silently resolved it under `HERE` (`~/metro-mini-jobs/`)
+and the job would simply never have started. `build_argv()` now expands `~` and
+`$VARS` before the absolute test, with self-test cases pinning it, including one
+that the repo path's spaces survive as a single argv element. **57 self-test
+cases now, all passing.**
+
+Worth knowing this exists at all: I had assumed one jobs directory. If there is
+a reason for the split I would rather understand it than paper over it, and if
+there is not, consolidating is probably its own small tidy-up later.
+
+### ⚠️ The flip here is NOT the same shape as the Actions one
+
+This is the part I most want you to read before flipping anything.
+
+For the Actions migration, both runners living briefly is the SAFE failure, and
+business-daily proved it on 5 Aug: Action at 08:09, mini at 08:46, harmless.
+That is only true because GitHub's 1-4h dispatch lag separates them in practice.
+
+Here both runners are the mini, and both fire at the same UTC minute. An overlap
+is a real race: two copies of the same script doing `git pull` / `commit` /
+`push` against one working tree. The dispatcher's lock file does not help, it
+only guards against overlapping *ticks*.
+
+So per job: DRY_RUN, then a real hand-run to prove the invocation, then
+**uncomment the `jobs.toml` row and `launchctl unload` the plist in the same
+sitting.** Never leave both loaded overnight. I have corrected step 5 of
+DST-MIGRATION.md, which had inherited the Actions wording and was wrong.
+
+### The activity-feed row, ready to uncomment
+
+Sitting commented at the bottom of `jobs.toml`:
+
+    id = "activity-feed"
+    time = "02:30"                 # was 03:30 LOCAL = 02:30 UTC today
+    command = "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-activity-feed.sh"
+    hc_slug = "activity-feed"      # reproduces the plist's hc-run.sh wrap exactly
+    catchup_hours = 14
+    timeout_minutes = 20
+
+`hc_slug` is what the plist already does (`hc-run.sh activity-feed ...`), so the
+healthchecks tile carries over rather than going dark, and this job is the proof
+that the wrap works end to end before anything awkward moves.
+
+I checked the script: it early-exits when the feed is unchanged and excludes its
+own commits from the feed, so it is safe to run twice. That is NOT a licence to
+leave both runners loaded, though. The race is on git, not on the data.
+
+### Suggested sequence for you
+
+1. `git pull`, copy `dispatcher.py` to `~/metro-mini-jobs/`, run `--self-test`
+   there and confirm 57/57 on the mini's Python.
+2. Hand-run the exact dispatcher invocation to prove the `$HOME` expansion and
+   the hc wrap on the real box, something like:
+   `/bin/bash ~/metro-mini-jobs/hc-run.sh activity-feed /bin/bash "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-activity-feed.sh"`
+   Expect either a commit or "activity feed unchanged", exit 0, and the tile to
+   go green.
+3. In one sitting: uncomment the row, `dispatcher.py --seed` so today's 02:30
+   slot is not re-fired, and `launchctl unload` the plist.
+4. Confirm the first unattended run on 2026-08-07 02:30Z, then tell me and I
+   will draft the next batch.
+
+Nothing here is urgent. 25 October is the deadline and we have the schema in.

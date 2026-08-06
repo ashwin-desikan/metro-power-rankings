@@ -115,3 +115,44 @@ timeout_minutes = 45
 # command = "runners/mlb-sim.sh"
 # catchup_hours = 14
 # timeout_minutes = 25
+
+# ---------------------------------------------------------------------------
+# LEGACY LAUNCHD MIGRATION (see DST-MIGRATION.md). Separate thread from the
+# GitHub-Actions rollout above: these jobs already run on the mini, just on
+# their own StartCalendarInterval plists in LOCAL time, which shifts them an
+# hour against UTC when the clocks go back on 25 October 2026.
+#
+# Rollout state:
+#   activity-feed   NOT YET. Its plist still owns it. Row below is ready.
+#   the other 13    not drafted yet; activity-feed goes first as the proof.
+#
+# ⚠️ THE FLIP IS NOT THE SAME SHAPE AS THE ACTIONS ONE. For those, both
+# runners live briefly and the overlap is harmless, because GitHub's 1-4h
+# dispatch lag separates them in practice. Here BOTH runners are the mini and
+# both fire at the same UTC minute, so an overlap is a genuine race: two
+# copies of the same script doing git pull / commit / push against one
+# working tree. So uncomment the row below and `launchctl unload` the plist
+# in the SAME sitting, having proved the invocation by hand first.
+
+# [[job]]
+# id = "activity-feed"           # launchd/com.citizenofnowhere.activity-feed.plist
+# time = "02:30"                 # was 03:30 LOCAL, which is 02:30 UTC today
+# command = "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-activity-feed.sh"
+# hc_slug = "activity-feed"      # keep the existing healthchecks tile
+# catchup_hours = 14
+# timeout_minutes = 20
+#
+# Notes for whoever flips this:
+#  - The command is a $HOME path ON PURPOSE. Unlike most jobs, this one runs
+#    from the repo checkout, not from ~/metro-mini-jobs/. The dispatcher
+#    expands ~ and $VARS before deciding whether a path is absolute, so both
+#    styles work, but the path contains spaces and must stay quoted here.
+#  - hc_slug reproduces exactly what the plist does today
+#    (hc-run.sh activity-feed ...), so the healthchecks tile carries over
+#    rather than going dark.
+#  - 02:30 UTC preserves today's effective time. After 25 October the plist
+#    would have drifted to 03:30 UTC; this row will not.
+#  - The script is already safe to run twice (it early-exits when the feed is
+#    unchanged, and its own commits are excluded from the feed), but that is
+#    not a licence to leave both runners live: the race is on git, not on the
+#    data.

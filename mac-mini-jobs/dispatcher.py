@@ -219,8 +219,17 @@ def build_argv(job):
     be noise. hc-run.sh no-ops silently when HC_PING_KEY is unset and never
     changes the wrapped command's exit code.
     """
-    cmd = job["command"]
-    path = HERE / cmd if not os.path.isabs(cmd) else Path(cmd)
+    # `~` and $VARS are expanded before the absolute test, because the mini
+    # keeps its jobs in TWO places and about a third of the legacy plists point
+    # at the second one: most run from ~/metro-mini-jobs/, but activity-feed,
+    # football-standings, gap-league-watch and screen-number-ones run straight
+    # out of the repo checkout at "$HOME/Projects/Metro Area Project/
+    # mac-mini-jobs/". Without expansion, "$HOME/..." is not os.path.isabs, so
+    # it would be silently resolved under HERE and the job would fail to start.
+    # Note the repo path contains spaces; argv is a list, so that is safe, but
+    # it is the reason this must never be flattened into a shell string.
+    cmd = os.path.expandvars(os.path.expanduser(job["command"]))
+    path = Path(cmd) if os.path.isabs(cmd) else HERE / cmd
     argv = ["/bin/bash", str(path)] + [str(a) for a in (job.get("args") or [])]
     slug = job.get("hc_slug")
     if slug:
@@ -450,6 +459,26 @@ def self_test():
     both = build_argv({"id": "b", "command": "run-scraper-refresh.sh",
                        "args": ["fiba"], "hc_slug": "fiba-weekly"})
     check("hc wrap and args compose", (both[2], both[-1]), ("fiba-weekly", "fiba"))
+
+    # The mini keeps jobs in TWO places: most under ~/metro-mini-jobs/, but
+    # activity-feed, football-standings, gap-league-watch and screen-number-ones
+    # run from "$HOME/Projects/Metro Area Project/mac-mini-jobs/". Their plists
+    # write that as $HOME/..., which is NOT os.path.isabs, so without expansion
+    # it would be resolved under HERE and the job would never start.
+    os.environ["MINI_TEST_ROOT"] = "/tmp/minitest"
+    ev = build_argv({"id": "e", "command": "$MINI_TEST_ROOT/run-x.sh"})
+    check("env var in command is expanded", "$MINI_TEST_ROOT" in ev[-1], False)
+    check("env var resolves to its value", "minitest" in ev[-1], True)
+    sp = build_argv({"id": "s",
+                     "command": "$MINI_TEST_ROOT/Metro Area Project/run-z.sh"})
+    check("a path with spaces stays ONE argv element", len(sp), 2)
+    check("the spaced path is not split", sp[-1].endswith("run-z.sh"), True)
+    del os.environ["MINI_TEST_ROOT"]
+    th = build_argv({"id": "t", "command": "~/metro-mini-jobs/run-y.sh"})
+    check("tilde is expanded", "~" in th[-1], False)
+    rel = build_argv({"id": "r", "command": "runners/mlb-sim.sh"})
+    check("a relative command still resolves under HERE",
+          str(HERE) in rel[-1], True)
 
     # --- jobs.toml validation ------------------------------------------------
     good = [{"id": "g", "command": "runners/x.sh", "time": "05:50",
