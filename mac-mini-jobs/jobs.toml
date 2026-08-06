@@ -124,8 +124,8 @@ timeout_minutes = 45
 #
 # Rollout state:
 #   activity-feed   LIVE on the mini since 2026-08-06. Plist unloaded.
-#   substack-daily  DRAFTED below. Next: it is the one that proves `args`.
-#   euro-comps      DRAFTED below. After that: it proves `times`.
+#   substack-daily  LIVE on the mini since 2026-08-06. Plist unloaded.
+#   euro-comps      DRAFTED below. Next: it proves `times`.
 #   the other 11    ordering decided, rows not written. See DST-MIGRATION.md.
 #
 # The order is chosen to prove ONE unexercised mechanism at a time, on the
@@ -171,14 +171,14 @@ timeout_minutes = 20
 # mini: JOB="${1:?...}", case-matched, fail on anything else). It lives in
 # ~/metro-mini-jobs/, so the command is relative to HERE, unlike activity-feed.
 #
-# [[job]]
-# id = "substack-daily"          # launchd/com.citizenofnowhere.substack-daily.plist
-# time = "06:00"                 # was 07:00 LOCAL = 06:00 UTC today
-# command = "run-scraper-refresh.sh"
-# args = ["substack"]
-# hc_slug = "substack-daily"
-# catchup_hours = 14
-# timeout_minutes = 20
+[[job]]
+id = "substack-daily"          # launchd/com.citizenofnowhere.substack-daily.plist (unloaded)
+time = "06:00"                 # was 07:00 LOCAL = 06:00 UTC today
+command = "run-scraper-refresh.sh"
+args = ["substack"]
+hc_slug = "substack-daily"
+catchup_hours = 14
+timeout_minutes = 20
 
 # --- THEN: euro-comps. The job that proves `times`. ------------------------
 # Two slots a day, an hour apart. This is the first row where last_slot rather
