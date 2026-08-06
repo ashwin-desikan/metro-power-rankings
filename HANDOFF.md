@@ -3763,3 +3763,67 @@ decision more than anything I can see from here.
 `gap-league-watch` is straightforward now (`time = "05:00"`, delete the guard).
 `football-standings` is blocked on the above. I have not written either row yet
 pending the decision, since they were meant to go together.
+
+## 2026-08-06 (afternoon) — windows → mini (Ashwin's call on football-standings: restore 4x/day. Both batch 3 rows drafted, with one sequencing hazard specific to repo-checkout jobs)
+
+Asked Ashwin about the football-standings cadence rather than guessing.
+**Decision: restore the documented 4x/day.** Both rows are now drafted and
+commented in `jobs.toml`.
+
+### gap-league-watch: straightforward
+
+    time = "05:00"    # NOT a pair
+    command = "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-gap-league-watch.sh"
+    hc_slug = "gap-league-watch"
+
+Single slot, because the plist's local 05:00+06:00 bracket plus the script's
+05:00 UTC guard has always meant one run. Like-for-like port, no behaviour
+change.
+
+### football-standings: deliberately NOT like-for-like
+
+    times = ["05:00", "11:00", "17:00", "23:00"]
+    catchup_hours = 4
+
+This is the one row in the whole migration that changes what the site does. It
+delivers the cadence the script's own header has claimed all along, and it
+**quadruples this job's api-football usage**. Please watch for 429s or quota
+warnings in the first few days. If they show up, step down to
+`["05:00", "17:00"]` rather than reverting to one run a day: half the staleness
+at double rather than quadruple the cost. Recorded in DST-MIGRATION.md too.
+
+`catchup_hours = 4` is deliberately short. The slots are 6h apart, so a slot
+missed by more than 4h should be recorded MISSED rather than fired just before
+the next one makes it redundant. That is the same reasoning as the existing
+daily jobs, scaled to a 6h gap.
+
+### ⚠ One sequencing hazard that does NOT apply to the jobs we have moved so far
+
+Both of these are **repo-checkout** jobs, so the mini runs them straight out of
+`$HOME/Projects/Metro Area Project/mac-mini-jobs/`. That means an edit to the
+script takes effect on your next `git pull`, with no copy step in between.
+
+So: **do not delete the UTC guard while the plist is still loaded.** If you do,
+the plist's bracketed local 05:00 AND 06:00 firings both become real runs, and
+the job doubles for as long as the plist is up. Everything we have moved so far
+lived in `~/metro-mini-jobs/`, where the manual copy step gave you a natural
+buffer against exactly this. These two do not have it.
+
+The safe order per job:
+
+1. Uncomment the row in `jobs.toml` (both copies).
+2. `dispatcher.py --seed` so today's already-fired slots are not re-run.
+3. `launchctl unload` the plist.
+4. **Then** delete the guard from the script and update its header, and push.
+
+Worth noting the slots in both rows match the guard exactly, so steps 1 to 3
+are safe whether or not step 4 ever happens. The guard removal is hygiene, not
+correctness: it exists so that a future `jobs.toml` edit cannot be silently
+overruled by a second schedule nobody remembers is there.
+
+### Batch 3 caveat on the 4x change
+The first 11:00, 17:00 and 23:00 runs will be the first time those slots have
+ever fired, for this job, ever. If something in `refresh.py` or
+`export_bundles.py` quietly assumes a once-daily cadence, that is where it will
+surface. Nothing in the header suggests it does, but it is worth a glance at the
+first 11:00 run rather than assuming the 05:00 proof covers it.

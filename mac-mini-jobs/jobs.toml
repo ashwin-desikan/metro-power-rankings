@@ -211,3 +211,48 @@ timeout_minutes = 30
 # a fixed UTC pair rather than a DST-drifting local pair. If this bothers a
 # future reader, the guard could be deleted and the row trimmed to a single
 # `time = "04:00"` -- functionally identical, just tidier.
+
+# --- BATCH 3: gap-league-watch and football-standings ----------------------
+# Both are repo-checkout jobs, so their commands are $HOME paths. Both carry an
+# internal UTC-hour guard today; see DST-MIGRATION.md, "delete the guards as
+# each job migrates". In both rows below the slots MATCH the guard exactly, so
+# the flip is safe whether or not the guard is removed first. Remove it anyway,
+# for hygiene, in the SAME sitting as unloading the plist and never before:
+# these scripts run straight from the repo checkout, so a guard deleted while
+# the plist is still loaded takes effect on the mini's next git pull and the
+# job starts firing at BOTH bracketed local hours.
+
+# [[job]]
+# id = "gap-league-watch"        # launchd/com.citizenofnowhere.gap-league-watch.plist
+# time = "05:00"                 # NOT a pair. The plist brackets local 05:00+06:00
+#                                # and the script's guard picks 05:00 UTC; one run.
+# command = "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-gap-league-watch.sh"
+# hc_slug = "gap-league-watch"
+# catchup_hours = 14
+# timeout_minutes = 20
+
+# --- football-standings: this one CHANGES behaviour, deliberately ----------
+# Ashwin's call, 2026-08-06: restore the documented cadence. The script's own
+# header says "Scheduled 4x/day at 05:00, 11:00, 17:00, 23:00 UTC" and its guard
+# allows all four, but the plist only ever fires local 05:00+06:00, so 05:00 is
+# the only UTC hour it can reach. The 11:00, 17:00 and 23:00 runs have never
+# happened, and the site's live standings and continental fixtures have been
+# refreshing once a day rather than four times.
+#
+# This row is therefore NOT a like-for-like port. It quadruples this job's
+# api-football request usage. Watch for 429s or quota warnings in the first few
+# days; if they appear, drop to ["05:00", "17:00"] rather than reverting to one.
+#
+# [[job]]
+# id = "football-standings"      # launchd/com.citizenofnowhere.football-standings.plist
+# times = ["05:00", "11:00", "17:00", "23:00"]
+# command = "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-football-standings.sh"
+# hc_slug = "football-standings"
+# catchup_hours = 4              # deliberately short: slots are 6h apart, so a
+#                                # slot missed by more than 4h should be recorded
+#                                # MISSED rather than fired just before the next.
+# timeout_minutes = 30
+#
+# Note both jobs sit at 05:00 alongside each other, as they do today. The
+# dispatcher runs a tick's due jobs sequentially, so they will not race, and
+# euro-comps at 04:00 still leads them by an hour as its header intends.

@@ -292,7 +292,14 @@ than a mechanical port, because api-football has request quotas and the header's
 own note about "spread the api-football load" suggests the 4x cadence was costed
 deliberately. Either restore the documented intent with
 `times = ["05:00", "11:00", "17:00", "23:00"]`, or accept 1x/day as the real
-behaviour and correct the header and guard to match. **Needs Ashwin's call.**
+behaviour and correct the header and guard to match. ~~Needs Ashwin's call.~~
+
+**DECIDED 2026-08-06 (Ashwin): restore the documented 4x/day.** The row is
+drafted in `jobs.toml` accordingly. This is the one migration row that is not a
+like-for-like port, so it carries its own risk note: it quadruples this job's
+api-football usage. Watch for 429s or quota warnings in the first few days after
+the flip, and if they appear step down to `["05:00", "17:00"]` rather than
+reverting all the way to one run a day.
 
 ## Delete the guards as each job migrates
 
