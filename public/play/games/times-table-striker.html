@@ -90,6 +90,8 @@
   <p>Every right answer is a rocket into the top corner! Score with three-pointers, cricket fours and rowing eights.</p>
   <button class="lvlbtn go" id="lvl3">⭐ Year 3<small>3, 4 and 8 times tables · division · 2-digit × 1-digit</small></button>
   <button class="lvlbtn" id="lvl4">🌟 Year 4<small>All tables to 12 × 12 · 3-digit × 1-digit · three numbers together</small></button>
+  <button class="lvlbtn" id="lvl5">🚀 Expert<small>Division with remainders · missing numbers · 2-digit × 2-digit</small></button>
+  <button class="lvlbtn" id="blitzbtn">⚡ Blitz<small>60 seconds on the clock · how many goals can you score?</small></button>
 </div>
 
 <div class="cover hidden" id="finale">
@@ -127,10 +129,12 @@ function onCorrect(msg,sayMsg){
 function onWrong(hint){toast(hint||"Try again 🤔");buzz();speak("Not quite. Try again!");}
 function finish(){$("finale").classList.remove("hidden");confetti(24);cheer();speak("Hat trick hero! Times tables champion!");}
 $("next")&&($("next").onclick=()=>{ if(!done)return; if(idx>=N){finish();} else render(); });
-function startRun(lv){LEVEL=lv;$("lvlchip").textContent=(lv===3?"⭐ Year 3":"🌟 Year 4");$("start").classList.add("hidden");ctx();idx=0;makeRounds();render();}
+function startRun(lv){blitz=false;$("next").style.display="";LEVEL=lv;$("lvlchip").textContent=(lv===3?"⭐ Year 3":lv===4?"🌟 Year 4":"🚀 Expert");$("start").classList.add("hidden");ctx();idx=0;makeRounds();render();}
 $("lvl3").onclick=()=>startRun(3);
 $("lvl4").onclick=()=>startRun(4);
-$("again").onclick=()=>{$("finale").classList.add("hidden");$("start").classList.remove("hidden");};
+$("lvl5").onclick=()=>startRun(5);
+$("blitzbtn").onclick=()=>startBlitz();
+$("again").onclick=()=>{if(blitzTimer){clearInterval(blitzTimer);blitzTimer=null;}blitz=false;$("finale").classList.add("hidden");$("start").classList.remove("hidden");$("finale").querySelector("h1").textContent="Hat-trick hero!";};
 $("snd").onclick=()=>{sound=!sound;$("snd").textContent=sound?"🔊":"🔇";if(!sound&&"speechSynthesis" in window)speechSynthesis.cancel();};
 if(location.protocol==="file:"){$("back").setAttribute("href","index.html");$("homelink").setAttribute("href","index.html");}
 buildPass();
@@ -150,13 +154,31 @@ function shoot(){
   },1300);
 }
 function mcq(options,ans,msg,say){
+  window.__last={opts:options.map(String),ans:ans}; // test/debug hook
   const o=document.createElement("div");o.className="opts";
   options.forEach((t,i)=>{const b=document.createElement("button");b.className="opt";b.textContent=t;
     b.onclick=()=>{if(done)return;
-      if(i===ans){b.classList.add("good");shoot();onCorrect(msg,say);}
-      else{b.classList.add("bad");setTimeout(()=>b.classList.remove("bad"),420);onWrong("Saved by the keeper! Try again 🧤");}};
+      if(i===ans){
+        if(blitz){b.classList.add("good");blitzScore++;tone(880,.1,"triangle",0,.12);updateBlitzChip();renderBlitz();return;}
+        b.classList.add("good");shoot();onCorrect(msg,say);
+      }
+      else{b.classList.add("bad");setTimeout(()=>b.classList.remove("bad"),420);if(!blitz)onWrong("Saved by the keeper! Try again 🧤");else{buzz();}}};
     o.appendChild(b);});
   $("zone").appendChild(o);
+}
+/* Plausible-error option builder: two wrongs drawn at random from a slip pool,
+   never a symmetric ans±k pair (that makes the answer the median every time). */
+function opts3(ans,cands){
+  const uniq=[...new Set(cands.filter(c=>c!==ans&&c>0&&Number.isFinite(c)))];
+  const above=uniq.filter(c=>c>ans), below=uniq.filter(c=>c<ans);
+  // Deliberately vary which SIDE the wrongs land on: if one wrong always sat
+  // above and one below, the answer would still be the median every time.
+  let w; const roll=Math.random();
+  if(roll<0.35&&above.length>=2)w=shuffle(above).slice(0,2);
+  else if(roll<0.7&&below.length>=2)w=shuffle(below).slice(0,2);
+  else w=shuffle(uniq).slice(0,2);
+  while(w.length<2)w.push(ans+7+w.length*4);
+  return shuffle([ans,...w]);
 }
 function groups(n,per,emoji){
   const w=document.createElement("div");w.className="arr";
@@ -179,13 +201,98 @@ const SCEN={
 };
 function makeRounds(){
   const kinds=LEVEL===3?["mul","mul","div","mul","two","mul","div","mul"]
-                       :["mul","mul","div","big","three","mul","div","big"];
+             :LEVEL===4?["mul","mul","div","big","three","mul","div","big"]
+                       :["rem","miss","tt","bus","miss","tt","rem","tt"];
   rounds=shuffle(kinds);
 }
 function render(){
   done=false;$("zone").innerHTML="";$("reveal").textContent="";$("next").disabled=true;$("next").textContent="Next →";buildPass();
   const k=rounds[idx];
-  if(k==="mul")rMul(); else if(k==="div")rDiv(); else if(k==="two")rTwoDigit(); else if(k==="big")rBig(); else rThree();
+  if(k==="mul")rMul(); else if(k==="div")rDiv(); else if(k==="two")rTwoDigit(); else if(k==="big")rBig();
+  else if(k==="rem")rRem(); else if(k==="bus")rBus(); else if(k==="miss")rMiss(); else if(k==="tt")rTT();
+  else rThree();
+}
+/* ---- Expert rounds ---- */
+function rRem(){
+  const per=pick([4,6,7,8,9]);
+  const teams=ri(4,9); const rem=ri(1,per-1); const total=per*teams+rem;
+  $("q").innerHTML="👥 "+total+" players arrive. Teams of "+per+". How many FULL teams — and how many left over?";
+  window._say=total+" players in teams of "+per+". Full teams and left over?";speak(_say);
+  const good=teams+" teams · "+rem+" spare";
+  const wrongPool=shuffle([(teams+1)+" teams · "+rem+" spare",teams+" teams · "+(rem===1?rem+1:rem-1)+" spare",(teams-1)+" teams · "+(rem+per)+" spare"]).slice(0,2);
+  const opts=shuffle([good,...wrongPool]);
+  window.__last={opts:opts,ans:opts.indexOf(good)};
+  mcq(opts,opts.indexOf(good),total+" ÷ "+per+" = "+teams+" remainder "+rem+" (because "+teams+" × "+per+" = "+(per*teams)+", and "+rem+" more)","Division with a remainder!");
+}
+function rBus(){
+  const seat=pick([6,8,9,12]); const fans=seat*ri(4,9)+ri(1,seat-1);
+  const full=Math.floor(fans/seat), need=full+1;
+  $("q").innerHTML="🚌 "+fans+" fans, minibuses seat "+seat+". How many buses are NEEDED so everyone rides?";
+  window._say=fans+" fans, "+seat+" seats per bus. How many buses are needed?";speak(_say);
+  const opts=opts3(need,[full,need+1,fans%seat,full-1]);
+  mcq(opts.map(String),opts.indexOf(need),fans+" ÷ "+seat+" = "+full+" remainder "+(fans%seat)+" — so you must ROUND UP to "+need+" buses, or someone walks!","Round up when everyone must fit!");
+}
+function rMiss(){
+  const b=pick([3,4,6,7,8,9,11,12]); const q=ri(4,12); const prod=b*q;
+  if(Math.random()<.5){
+    $("q").innerHTML="🔍 Missing number: <b>"+b+" × ▢ = "+prod+"</b>";
+    window._say=b+" times what makes "+prod+"?";speak(_say);
+    const opts=opts3(q,[q+1,q-1,prod-b,b]);
+    mcq(opts.map(String),opts.indexOf(q),b+" × "+q+" = "+prod+" — find it by dividing: "+prod+" ÷ "+b+" = "+q,"Division finds the missing number!");
+  } else {
+    $("q").innerHTML="🔍 Missing number: <b>▢ ÷ "+b+" = "+q+"</b>";
+    window._say="What number divided by "+b+" makes "+q+"?";speak(_say);
+    const ans=prod;
+    const opts=opts3(ans,[ans+b,ans-b,q+b,b*(q+1)]);
+    mcq(opts.map(String),opts.indexOf(ans),ans+" ÷ "+b+" = "+q+" — multiply back: "+q+" × "+b+" = "+ans,"Multiplying undoes dividing!");
+  }
+}
+function rTT(){
+  const a=ri(12,29), b=ri(11,19);
+  const ans=a*b;
+  $("q").innerHTML="🏟️ "+a+" rows with "+b+" seats each. How many seats?";
+  const t=Math.floor(a/10)*10, o=a%10;
+  window._say=a+" times "+b+". Partition: "+a+" times 10 is "+(a*10)+", then "+a+" times "+(b-10)+" more.";speak(a+" times "+b+"?");
+  const opts=opts3(ans,[a*(b+1),(a+1)*b,a*(b-1),ans+100,a*10+b]);
+  mcq(opts.map(String),opts.indexOf(ans),a+" × "+b+" = "+ans+"  ("+a+"×10 = "+(a*10)+", plus "+a+"×"+(b-10)+" = "+(a*(b-10))+")");
+}
+/* ---- Blitz: 60 seconds, quickfire facts, streak scoring ---- */
+let blitz=false,blitzScore=0,blitzLeft=60,blitzTimer=null;
+function updateBlitzChip(){$("lvlchip").textContent="⚡ "+Math.floor(blitzLeft/60)+":"+String(blitzLeft%60).padStart(2,"0")+" · "+blitzScore+" ⚽";}
+function startBlitz(){
+  blitz=true;blitzScore=0;blitzLeft=60;ctx();
+  $("start").classList.add("hidden");idx=0;buildPass();
+  $("next").style.display="none";
+  updateBlitzChip();
+  blitzTimer=setInterval(()=>{
+    blitzLeft--;updateBlitzChip();
+    if(blitzLeft<=0){clearInterval(blitzTimer);blitzTimer=null;endBlitz();}
+  },1000);
+  renderBlitz();
+}
+function renderBlitz(){
+  done=false;$("zone").innerHTML="";$("reveal").textContent="";$("next").disabled=true;
+  const t=pick([3,4,6,7,8,9,11,12]), n=ri(3,12);
+  if(Math.random()<.6){
+    const ans=t*n;
+    $("q").innerHTML="⚡ "+t+" × "+n+" = ?";window._say=t+" times "+n;
+    const opts=opts3(ans,[t*(n+1),t*(n-1),(t+1)*n,ans+t]);
+    mcq(opts.map(String),opts.indexOf(ans),"");
+  } else {
+    const ans=n;
+    $("q").innerHTML="⚡ "+(t*n)+" ÷ "+t+" = ?";window._say=(t*n)+" divided by "+t;
+    const opts=opts3(ans,[n+1,n-1,t,n+2]);
+    mcq(opts.map(String),opts.indexOf(ans),"");
+  }
+}
+function endBlitz(){
+  done=true;blitz=false;
+  let best=0;try{best=Number(localStorage.getItem("striker-blitz-best")||0);}catch(e){}
+  const newBest=blitzScore>best;
+  if(newBest){best=blitzScore;try{localStorage.setItem("striker-blitz-best",String(best));}catch(e){}}
+  $("finale").querySelector("h1").textContent="⚡ Full time!";
+  $("finp").textContent="You scored "+blitzScore+" goal"+(blitzScore===1?"":"s")+" in 60 seconds."+(newBest?" NEW RECORD! 🏅":" Your record: "+best+".");
+  $("finale").classList.remove("hidden");confetti(24);cheer();speak("Full time! "+blitzScore+" goals!"+(newBest?" A new record!":""));
 }
 function rMul(){
   const table=LEVEL===3?pick([3,4,8]):pick([3,4,6,7,8,9,11,12]);
@@ -194,7 +301,8 @@ function rMul(){
   const ans=n*table;
   $("q").innerHTML=q; window._say=q.replace(/[🏀⚽🏏🏎️🚣🕷️🏈⚾🏟️]/g,"");speak(_say);
   groups(n,Math.min(table,8),em);
-  const opts=shuffle([ans,ans+table,ans-table]);
+  // Slips: neighbour table, off-by-one factor.
+  const opts=opts3(ans,[(n+1)*table,(n-1)*table,n*(table+1),n*(table-1)]);
   mcq(opts.map(String),opts.indexOf(ans),fact,fact);
 }
 function rDiv(){
@@ -202,7 +310,7 @@ function rDiv(){
   const teams=ri(3,8); const total=per*teams;
   $("q").innerHTML="👥 "+total+" players split into teams of "+per+". How many teams?";
   window._say=total+" players, teams of "+per+". How many teams?";speak(_say);
-  const opts=shuffle([teams,teams+1,teams-1]);
+  const opts=opts3(teams,[teams+1,teams-1,per,teams+2]);
   mcq(opts.map(String),opts.indexOf(teams),total+" ÷ "+per+" = "+teams+" (because "+teams+" × "+per+" = "+total+")","Division undoes multiplication!");
 }
 function rTwoDigit(){
@@ -210,7 +318,7 @@ function rTwoDigit(){
   const ans=a*b;
   $("q").innerHTML="🏟️ "+a+" rows of seats with "+b+" kids in each row. How many kids?";
   window._say=a+" rows times "+b+". Partition it: "+Math.floor(a/10)*10+" times "+b+", plus "+(a%10)+" times "+b;speak(a+" times "+b+"?");
-  const opts=shuffle([ans,ans+b,ans-10]);
+  const opts=opts3(ans,[(a+1)*b,(a-1)*b,a*(b+1),ans-10]);
   mcq(opts.map(String),opts.indexOf(ans),a+" × "+b+" = "+ans+"  ("+Math.floor(a/10)*10+"×"+b+" + "+(a%10)+"×"+b+")");
 }
 function rBig(){
@@ -218,7 +326,7 @@ function rBig(){
   const ans=a*b;
   $("q").innerHTML="🎟️ "+a+" tickets sold on "+b+" days. How many tickets?";
   window._say=a+" times "+b+"?";speak(_say);
-  const opts=shuffle([ans,ans+b*10,ans-b]);
+  const opts=opts3(ans,[(a+10)*b,(a-10)*b,a*(b+1),ans-b]);
   mcq(opts.map(String),opts.indexOf(ans),a+" × "+b+" = "+ans);
 }
 function rThree(){
@@ -226,9 +334,8 @@ function rThree(){
   const ans=a*b*c;
   $("q").innerHTML="🚩 "+a+" stands × "+b+" rows × "+c+" flags. How many flags?";
   window._say=a+" times "+b+" times "+c+"?";speak(_say);
-  const opts=shuffle([ans,ans+a,a*b+c]);
-  const uniq=[...new Set(opts)];while(uniq.length<3)uniq.push(ans+7);
-  mcq(uniq.map(String),uniq.indexOf(ans),a+" × "+b+" × "+c+" = "+ans+" — multiply any order, same answer!");
+  const opts=opts3(ans,[a*b+c,a+b*c,ans+a,a*b*(c+1)]);
+  mcq(opts.map(String),opts.indexOf(ans),a+" × "+b+" × "+c+" = "+ans+" — multiply any order, same answer!");
 }
 $("read").onclick=()=>{if(window._say)speak(_say);};
 

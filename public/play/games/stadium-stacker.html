@@ -21,6 +21,8 @@
   .reveal{min-height:1.5em;font-weight:800;color:var(--accent);margin-top:8px;font-size:1rem}
   .opts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
   .opts.two{grid-template-columns:1fr 1fr}
+  .opts.wide{grid-template-columns:1fr}
+  .opts.wide .opt{font-size:1.3rem}
   .opt{border:none;border-radius:16px;background:#f6fbff;box-shadow:0 5px 0 #d7e6f2;cursor:pointer;padding:14px 6px;font-family:inherit;font-weight:900;color:var(--ink);font-size:1.15rem;transition:transform .12s}
   .opt:active{transform:scale(.95)}
   .opt.good{background:#e8fbf4;box-shadow:0 5px 0 #bfe6da,0 0 0 3px var(--accent)}
@@ -93,6 +95,7 @@
   <p>Build match-day crowds from hundreds, tens and ones, order real skyscraper skylines, and count the turnstiles!</p>
   <button class="lvlbtn go" id="lvl3">⭐ Year 3<small>Numbers to 1,000 · 10 or 100 more/less · count in 4s, 8s, 50s, 100s</small></button>
   <button class="lvlbtn" id="lvl4">🌟 Year 4<small>Numbers past 1,000 · rounding · count in 6s, 7s, 9s, 25s · below zero</small></button>
+  <button class="lvlbtn" id="lvl5">🚀 Expert<small>Real metro populations to 50 million · place value in the millions · order five · missing terms · through zero</small></button>
 </div>
 
 <div class="cover hidden" id="finale">
@@ -130,9 +133,10 @@ function onCorrect(msg,sayMsg){
 function onWrong(hint){toast(hint||"Try again 🤔");buzz();speak("Not quite. Try again!");}
 function finish(){$("finale").classList.remove("hidden");confetti(24);cheer();speak("Stadium full! Place value champion!");}
 $("next")&&($("next").onclick=()=>{ if(!done)return; if(idx>=N){finish();} else render(); });
-function startRun(lv){LEVEL=lv;$("lvlchip").textContent=(lv===3?"⭐ Year 3":"🌟 Year 4");$("start").classList.add("hidden");ctx();idx=0;makeRounds();render();}
+function startRun(lv){LEVEL=lv;$("lvlchip").textContent=(lv===3?"⭐ Year 3":lv===4?"🌟 Year 4":"🚀 Expert");$("start").classList.add("hidden");ctx();idx=0;makeRounds();render();}
 $("lvl3").onclick=()=>startRun(3);
 $("lvl4").onclick=()=>startRun(4);
+$("lvl5").onclick=()=>startRun(5);
 $("again").onclick=()=>{$("finale").classList.add("hidden");$("start").classList.remove("hidden");};
 $("snd").onclick=()=>{sound=!sound;$("snd").textContent=sound?"🔊":"🔇";if(!sound&&"speechSynthesis" in window)speechSynthesis.cancel();};
 if(location.protocol==="file:"){$("back").setAttribute("href","index.html");$("homelink").setAttribute("href","index.html");}
@@ -144,17 +148,39 @@ const CLUBS=["Liverpool","Arsenal","Real Madrid","Barcelona","Bayern Munich","Aj
 let rounds=[];
 function ri(a,b){return a+Math.floor(Math.random()*(b-a+1));}
 function mcq(options,ans,msg,say){
-  const o=document.createElement("div");o.className="opts"+(options.length===2?" two":"");
+  window.__last={opts:options.map(String),ans:ans}; // test/debug hook
+  const wide=options.some(t=>String(t).length>=8);
+  const o=document.createElement("div");o.className="opts"+(options.length===2?" two":"")+(wide?" wide":"");
   options.forEach((t,i)=>{const b=document.createElement("button");b.className="opt";b.textContent=t;
     b.onclick=()=>{if(done)return; if(i===ans){b.classList.add("good");onCorrect(msg,say);}else{b.classList.add("bad");setTimeout(()=>b.classList.remove("bad"),420);onWrong();}};
     o.appendChild(b);});
   $("zone").appendChild(o);
 }
+/* Build a 3-option set from PLAUSIBLE-ERROR candidates. Never `ans ± step`
+   symmetric pairs: that makes the correct answer the median of the three,
+   which a pattern-spotting kid learns to exploit in one session. Two wrongs
+   are drawn at random from the slip pool, so the answer's position (and its
+   rank among the values) is unpredictable. */
+function opts3(ans,cands){
+  const uniq=[...new Set(cands.filter(c=>c!==ans&&Number.isFinite(c)))];
+  const above=uniq.filter(c=>c>ans), below=uniq.filter(c=>c<ans);
+  // Deliberately vary which SIDE the wrongs land on: if one wrong always sat
+  // above and one below, the answer would still be the median every time.
+  let w; const roll=Math.random();
+  if(roll<0.35&&above.length>=2)w=shuffle(above).slice(0,2);
+  else if(roll<0.7&&below.length>=2)w=shuffle(below).slice(0,2);
+  else w=shuffle(uniq).slice(0,2);
+  while(w.length<2)w.push(ans+7+w.length*4);
+  return shuffle([ans,...w]);
+}
 function makeRounds(){
   const kinds = LEVEL===3 ? ["build","build","more","order","steps","build","more","steps"]
-                          : ["build","build","round","order","steps","build","round","neg"];
+              : LEVEL===4 ? ["build","build","round","order","steps","build","round","neg"]
+                          : ["pv","pv","biground","order5","gap","negx","biground","gap"];
   rounds=shuffle(kinds);
 }
+/* Real metro-area populations from the site's metros.json (Expert level). */
+const METROS=[["Tokyo","🏙️",40317972],["Delhi","🏙️",36790184],["Jakarta","🏙️",36157354],["Mexico City","🏙️",26370664],["Seoul","🏙️",26043325],["Cairo","🏙️",23708237],["New York","🏙️",22342624],["Sao Paulo","🏙️",22305115],["Moscow","🏙️",21534777],["Los Angeles","🏙️",18507255],["London","🏙️",16821649],["Paris","🏙️",12878104],["Chicago","🏙️",9941597],["Hong Kong","🏙️",7411945],["Madrid","🏙️",6930703],["Sydney","🏙️",5497131]];
 function fmt(n){return n.toLocaleString("en-GB");}
 function render(){
   done=false;$("zone").innerHTML="";$("reveal").textContent="";$("next").disabled=true;$("next").textContent="Next →";buildPass();
@@ -165,6 +191,80 @@ function render(){
   else if(kind==="order") rOrder();
   else if(kind==="steps") rSteps();
   else if(kind==="neg") rNeg();
+  else if(kind==="pv") rPV();
+  else if(kind==="biground") rBigRound();
+  else if(kind==="order5") rOrder5();
+  else if(kind==="gap") rGap();
+  else if(kind==="negx") rNegX();
+}
+/* ---- Expert rounds: real metro populations, place value into the millions ---- */
+function rPV(){
+  const m=pick(METROS);
+  const digits=String(m[2]).split("").map(Number);
+  const places=digits.length; // 7 or 8
+  let di=ri(0,places-4); // only the millions/hundred-thousands end, and never a zero digit
+  let guard=0; while(digits[di]===0&&guard++<10)di=ri(0,places-4);
+  if(digits[di]===0)di=0;
+  const place=Math.pow(10,places-1-di);
+  const ans=digits[di]*place;
+  $("q").innerHTML=m[1]+" "+m[0]+" metro has <b>"+fmt(m[2])+"</b> people. What is the VALUE of the digit <b>"+digits[di]+"</b>?";
+  window._say=m[0]+" has "+m[2]+" people. What is the value of the digit "+digits[di]+"?";speak(_say);
+  const opts=opts3(ans,[ans/10,ans*10,digits[di],digits[di]*Math.pow(10,Math.max(0,places-2-di))]);
+  mcq(opts.map(fmt),opts.indexOf(ans),"In "+fmt(m[2])+", that "+digits[di]+" is worth "+fmt(ans),"That digit means "+ans);
+}
+function rBigRound(){
+  const m=pick(METROS);
+  const to=pick([100000,1000000]);
+  const ans=Math.round(m[2]/to)*to;
+  $("q").innerHTML="Round "+m[1]+" "+m[0]+" — <b>"+fmt(m[2])+"</b> people — to the nearest <b>"+fmt(to)+"</b>";
+  window._say="Round "+m[0]+"'s population, "+m[2]+", to the nearest "+(to===1000000?"million":"hundred thousand");speak(_say);
+  const trunc=Math.floor(m[2]/to)*to;
+  const wrongPow=Math.round(m[2]/(to*10))*(to*10);
+  const opts=opts3(ans,[trunc,ans+to,ans-to,wrongPow]);
+  mcq(opts.map(fmt),opts.indexOf(ans),fmt(m[2])+" rounds to "+fmt(ans),"It rounds to "+ans);
+}
+function rOrder5(){
+  const cards=shuffle(METROS).slice(0,5);
+  const sorted=cards.slice().sort((a,b)=>a[2]-b[2]);
+  $("q").innerHTML="Real metro populations! Tap the metros from <b>smallest to biggest</b>";
+  window._say="Five real metro areas. Tap them in order, smallest population first.";speak(_say);
+  const wrap=document.createElement("div");wrap.className="ordwrap";
+  let pos=0;
+  shuffle(cards).forEach(c=>{
+    const b=document.createElement("button");b.className="ordcard";
+    b.innerHTML="<span>"+c[1]+" "+c[0]+"</span><span class='n'>"+fmt(c[2])+"</span>";
+    b.onclick=()=>{if(done||b.classList.contains("pick"))return;
+      if(c===sorted[pos]){b.classList.add("pick");b.innerHTML="<span>"+(pos+1)+"️⃣ "+c[1]+" "+c[0]+"</span><span class='n'>"+fmt(c[2])+"</span>";pos++;tone(600+pos*120,.08,"triangle",0,.1);
+        if(pos===5)onCorrect(sorted.map(x=>x[0]).join(" → "),"Perfect ordering — five metros, smallest to biggest!");}
+      else onWrong("Compare the millions digits first 👀");};
+    wrap.appendChild(b);});
+  $("zone").appendChild(wrap);
+}
+function rGap(){
+  const step=pick([6,7,9,25,250,1000]);
+  const start=step*ri(2,9);
+  const ans=start+step; // the MISSING middle term
+  $("q").innerHTML="The turnstile counts in <b>"+fmt(step)+"s</b> — but one number is smudged! What is it?";
+  window._say="Counting in "+step+"s: "+start+", something, "+(start+step*2)+", "+(start+step*3)+". What is the missing number?";speak(_say);
+  const w=document.createElement("div");w.className="seq";
+  w.innerHTML='<span class="step">'+fmt(start)+'</span><span class="step gap">?</span><span class="step">'+fmt(start+step*2)+'</span><span class="step">'+fmt(start+step*3)+'</span>';
+  $("zone").appendChild(w);
+  const off=step>=250?step/5:step>25?5:1;
+  const opts=opts3(ans,[ans+off,ans-off,start+step*2,ans+step]);
+  mcq(opts.map(fmt),opts.indexOf(ans),fmt(start)+", "+fmt(ans)+", "+fmt(start+step*2)+", "+fmt(start+step*3)+" — counting in "+fmt(step)+"s!");
+}
+function rNegX(){
+  const step=pick([3,4,5]);
+  const start=step*pick([1,2])+ (Math.random()<.5?0:step===3?1:2);
+  const seq=[start,start-step,start-2*step];
+  const ans=start-3*step; // negative or crossing zero
+  $("q").innerHTML="Goal difference is sliding — count back in <b>"+step+"s</b>, straight through zero!";
+  window._say="Count back in "+step+"s. "+seq.join(", ")+". What comes next?";speak(_say);
+  const w=document.createElement("div");w.className="seq";
+  w.innerHTML=seq.map(n=>'<span class="step">'+n+'</span>').join("")+'<span class="step gap">?</span>';
+  $("zone").appendChild(w);
+  const opts=opts3(ans,[Math.abs(ans),ans-step,ans+1,ans-1,0]);
+  mcq(opts.map(String),opts.indexOf(ans),seq.join(", ")+", "+ans+" — below zero is negative, and the step stays "+step+"!");
 }
 /* build the crowd from place-value blocks */
 function rBuild(){
@@ -212,7 +312,9 @@ function rMore(){
   const ans=base+dir*step;
   $("q").innerHTML=(dir>0?step+" more fans arrive! ":step+" fans go home. ")+"What is "+fmt(base)+(dir>0?" + ":" − ")+step+"?";
   window._say=(dir>0?"What is "+step+" more than "+base+"?":"What is "+step+" less than "+base+"?");speak(_say);
-  const opts=shuffle([ans,ans+(dir>0?-step:step),ans+dir*step]);
+  // Slips: forgot to change anything; changed the wrong column; off by one.
+  const wrongCol=base+dir*(step===10?100:10);
+  const opts=opts3(ans,[base,wrongCol,ans+1,ans-1]);
   mcq(opts.map(fmt),opts.indexOf(ans),fmt(base)+(dir>0?" + ":" − ")+step+" = "+fmt(ans));
 }
 /* Y4: rounding */
@@ -222,8 +324,10 @@ function rRound(){
   const ans=Math.round(n/to)*to;
   $("q").innerHTML="Round the crowd of <b>"+fmt(n)+"</b> to the nearest "+fmt(to);
   window._say="Round "+n+" to the nearest "+to;speak(_say);
-  const wrongs=[ans+to,ans-to].filter(x=>x>=0&&x!==ans);
-  const opts=shuffle([ans,...wrongs.slice(0,2)]);
+  // Slips: truncated instead of rounding; rounded to the wrong power; a step off.
+  const trunc=Math.floor(n/to)*to;
+  const wrongPow=Math.round(n/(to*10))*(to*10);
+  const opts=opts3(ans,[trunc,wrongPow,ans+to,ans-to].filter(x=>x>=0));
   mcq(opts.map(fmt),opts.indexOf(ans),fmt(n)+" rounds to "+fmt(ans));
 }
 /* order real skyscraper counts, smallest first */
@@ -255,7 +359,9 @@ function rSteps(){
   const w=document.createElement("div");w.className="seq";
   w.innerHTML=seq.map(n=>'<span class="step">'+fmt(n)+'</span>').join("")+'<span class="step gap">?</span>';
   $("zone").appendChild(w);
-  const opts=shuffle([ans,ans+step,ans-step]);
+  // Slips: off by one; repeated the last term; overshot by a step.
+  const off=step>=50?10:1;
+  const opts=opts3(ans,[ans+off,ans-off,seq[2],ans+step]);
   mcq(opts.map(fmt),opts.indexOf(ans),seq.join(", ")+", "+fmt(ans)+" — counting in "+fmt(step)+"s!");
 }
 /* Y4: counting back through zero (goal difference) */
@@ -268,9 +374,8 @@ function rNeg(){
   const w=document.createElement("div");w.className="seq";
   w.innerHTML=seq.map(n=>'<span class="step">'+n+'</span>').join("")+'<span class="step gap">?</span>';
   $("zone").appendChild(w);
-  const opts=shuffle([ans,ans-1,Math.abs(ans)]).map(String);
-  const uniq=[...new Set(opts)];while(uniq.length<3)uniq.push(String(ans+2));
-  mcq(uniq,uniq.indexOf(String(ans)),seq.join(", ")+", "+ans+" — below zero is a negative number!");
+  const opts=opts3(ans,[Math.abs(ans),ans-1,ans+1,0]);
+  mcq(opts.map(String),opts.indexOf(ans),seq.join(", ")+", "+ans+" — below zero is a negative number!");
 }
 $("read").onclick=()=>{if(window._say)speak(_say);};
 

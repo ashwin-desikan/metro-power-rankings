@@ -59,8 +59,8 @@ for slug in POP_CITIES:
         continue
     mm = m["pop"] / 1e6
     add(m["name"], flag(m.get("countrySlug")), "👥", "population",
-        "How many people live in the %s metro area? Somewhere between 1 and 40 million…" % m["name"],
-        "million people", 1, 40, 1, mm,
+        "How many people live in the %s metro area? Somewhere between 1 and 55 million…" % m["name"],
+        "million people", 1, 55, 1, mm,
         "about %.1f million people" % mm,
         "That counts the whole metro area — the city plus all its suburbs. %s ranks #%d in the world metro power rankings!" % (m["name"], m.get("rank", 0)),
         "%s/rankings/%s" % (BASE, m["slug"]),
@@ -72,8 +72,8 @@ SKY = sorted([m for m in metros if (m.get("skyscrapers") or 0) >= 40 and m.get("
 for m in SKY:
     v = m["skyscrapers"]
     add(m["name"], flag(m.get("countrySlug")), "🏙️", "skyscrapers",
-        "How many skyscrapers does %s have? Somewhere between 0 and 400…" % m["name"],
-        "skyscrapers", 0, 400, 10, v,
+        "How many skyscrapers does %s have? Somewhere between 0 and 900…" % m["name"],
+        "skyscrapers", 0, 900, 20, v,
         "%d skyscrapers" % v,
         "%s has %d skyscrapers — that's a serious skyline!" % (m["name"], v),
         "%s/rankings/%s" % (BASE, m["slug"]),
@@ -85,8 +85,8 @@ STN = sorted([m for m in metros if (m.get("metroStations") or 0) >= 120 and m.ge
 for m in STN:
     v = m["metroStations"]
     add(m["name"], flag(m.get("countrySlug")), "🚇", "metro stations",
-        "How many metro stations does %s have? Somewhere between 0 and 500…" % m["name"],
-        "stations", 0, 500, 10, v,
+        "How many metro stations does %s have? Somewhere between 0 and 900…" % m["name"],
+        "stations", 0, 900, 20, v,
         "%d metro stations" % v,
         "%s has %d metro stations on its underground railway network." % (m["name"], v),
         "%s/rankings/%s" % (BASE, m["slug"]),
@@ -97,8 +97,8 @@ for b in billionaires[:8]:
     nm = b["name"].replace("⚠️", "").strip()
     bn = b["networth"] / 1000.0  # data is $ millions
     add(nm, flag(b.get("countrySlug")), "💰", "net worth",
-        "%s is one of the richest people on Earth. How many BILLION dollars? Between 0 and 800…" % nm,
-        "billion dollars", 0, 800, 25, bn,
+        "%s is one of the richest people on Earth. How many BILLION dollars? Between 0 and 900…" % nm,
+        "billion dollars", 0, 900, 25, bn,
         "about $%d billion" % int(round(bn)),
         "%s has about $%d billion. One billion is a thousand millions — these numbers are for practising BIG place value, not a shopping list!" % (nm, int(round(bn))),
         "%s/billionaires" % BASE,
@@ -121,4 +121,6 @@ HL = {
 out = os.path.join(ROOT, "public/play/games/pools/higher-or-lower.js")
 with open(out, "w", encoding="utf-8") as f:
     f.write("window.HLGAME=" + json.dumps(HL, ensure_ascii=False) + ";\n")
-print("higher-or-lower.js: %d rounds (%d hard)" % (len(rounds), sum(1 for r in rounds if r["hard"])))
+bad = [r for r in rounds if abs(r["target"] - snap((r["min"] + r["max"]) / 2, r["step"])) >= 0 and not (r["min"] < r["target"] < r["max"])]
+clamped = [r["name"] for r in rounds if r["target"] in (r["min"] + r["step"], r["max"] - r["step"])]
+print("higher-or-lower.js: %d rounds (%d hard); edge-targets (check ranges!): %s" % (len(rounds), sum(1 for r in rounds if r["hard"]), clamped or "none"))

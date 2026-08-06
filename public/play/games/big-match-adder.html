@@ -21,6 +21,8 @@
   .reveal{min-height:1.5em;font-weight:800;color:var(--accent);margin-top:8px;font-size:1rem}
   .opts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
   .opts.two{grid-template-columns:1fr 1fr}
+  .opts.wide{grid-template-columns:1fr}
+  .opts.wide .opt{font-size:1.3rem}
   .opt{border:none;border-radius:16px;background:#f6fbff;box-shadow:0 5px 0 #d7e6f2;cursor:pointer;padding:14px 6px;font-family:inherit;font-weight:900;color:var(--ink);font-size:1.15rem;transition:transform .12s}
   .opt:active{transform:scale(.95)}
   .opt.good{background:#e8fbf4;box-shadow:0 5px 0 #bfe6da,0 0 0 3px var(--accent)}
@@ -86,6 +88,7 @@
   <p>Add and subtract match-day crowds like a real club accountant: estimate first, type the exact answer on the keypad, then prove it with the inverse check!</p>
   <button class="lvlbtn go" id="lvl3">⭐ Year 3<small>3-digit crowds · estimate by rounding · column method practice</small></button>
   <button class="lvlbtn" id="lvl4">🌟 Year 4<small>4-digit crowds · two-step problems · estimate and check</small></button>
+  <button class="lvlbtn" id="lvl5">🚀 Expert<small>5-digit crowds · missing-number puzzles · multiply then subtract</small></button>
 </div>
 
 <div class="cover hidden" id="finale">
@@ -123,9 +126,10 @@ function onCorrect(msg,sayMsg){
 function onWrong(hint){toast(hint||"Try again 🤔");buzz();speak("Not quite. Try again!");}
 function finish(){$("finale").classList.remove("hidden");confetti(24);cheer();speak("Calculation champion!");}
 $("next")&&($("next").onclick=()=>{ if(!done)return; if(idx>=N){finish();} else render(); });
-function startRun(lv){LEVEL=lv;$("lvlchip").textContent=(lv===3?"⭐ Year 3":"🌟 Year 4");$("start").classList.add("hidden");ctx();idx=0;makeRounds();render();}
+function startRun(lv){LEVEL=lv;$("lvlchip").textContent=(lv===3?"⭐ Year 3":lv===4?"🌟 Year 4":"🚀 Expert");$("start").classList.add("hidden");ctx();idx=0;makeRounds();render();}
 $("lvl3").onclick=()=>startRun(3);
 $("lvl4").onclick=()=>startRun(4);
+$("lvl5").onclick=()=>startRun(5);
 $("again").onclick=()=>{$("finale").classList.add("hidden");$("start").classList.remove("hidden");};
 $("snd").onclick=()=>{sound=!sound;$("snd").textContent=sound?"🔊":"🔇";if(!sound&&"speechSynthesis" in window)speechSynthesis.cancel();};
 if(location.protocol==="file:"){$("back").setAttribute("href","index.html");$("homelink").setAttribute("href","index.html");}
@@ -138,11 +142,28 @@ function fmt(n){return n.toLocaleString("en-GB");}
 function rd(n,to){return Math.round(n/to)*to;}
 function makeRounds(){
   const kinds = LEVEL===3 ? ["add","add","sub","add","sub","add","sub","add"]
-                          : ["add","sub","add","two","sub","add","two","sub"];
+              : LEVEL===4 ? ["add","sub","add","two","sub","add","two","sub"]
+                          : ["add","miss","twox","sub","miss","twox","add","miss"];
   rounds=shuffle(kinds);
 }
+/* Plausible-error estimate options: two wrongs drawn at random from a slip
+   pool, never a symmetric est±to pair (median-answer exploit). */
+function opts3(ans,cands){
+  const uniq=[...new Set(cands.filter(c=>c!==ans&&c>0&&Number.isFinite(c)))];
+  const above=uniq.filter(c=>c>ans), below=uniq.filter(c=>c<ans);
+  // Deliberately vary which SIDE the wrongs land on: if one wrong always sat
+  // above and one below, the answer would still be the median every time.
+  let w; const roll=Math.random();
+  if(roll<0.35&&above.length>=2)w=shuffle(above).slice(0,2);
+  else if(roll<0.7&&below.length>=2)w=shuffle(below).slice(0,2);
+  else w=shuffle(uniq).slice(0,2);
+  while(w.length<2)w.push(ans+3000+w.length*1000);
+  return shuffle([ans,...w]);
+}
 function mcq(options,ans,onGood){
-  const o=document.createElement("div");o.className="opts";
+  window.__last={opts:options.map(String),ans:ans}; // test/debug hook
+  const wide=options.some(t=>String(t).length>=9);
+  const o=document.createElement("div");o.className="opts"+(wide?" wide":"");
   options.forEach((t,i)=>{const b=document.createElement("button");b.className="opt";b.textContent=t;
     b.onclick=()=>{if(done)return;
       if(i===ans){b.classList.add("good");cheer();confetti(6);onGood();}
@@ -177,21 +198,22 @@ function phaseTag(t){const p=document.createElement("div");p.className="phase";p
 function render(){
   done=false;$("zone").innerHTML="";$("reveal").textContent="";$("next").disabled=true;$("next").textContent="Next →";buildPass();
   const kind=rounds[idx];
-  if(kind==="add")rAdd(); else if(kind==="sub")rSub(); else rTwo();
+  if(kind==="add")rAdd(); else if(kind==="sub")rSub(); else if(kind==="miss")rMiss(); else if(kind==="twox")rTwoX(); else rTwo();
 }
 function rAdd(){
-  const hi=LEVEL===4?4999:499;
+  const hi=LEVEL===5?49999:LEVEL===4?4999:499;
   const [ta,tb]=shuffle(TEAMS).slice(0,2);
-  const a=ri(hi>999?1050:120,hi), b=ri(hi>999?1050:120,hi);
+  const lo=LEVEL===5?10500:hi>999?1050:120;
+  const a=ri(lo,hi), b=ri(lo,hi);
   target=a+b;
-  const to=LEVEL===4?1000:100;
+  const to=LEVEL===3?100:1000;
   const est=rd(a,to)+rd(b,to);
   $("q").innerHTML="Two kids' stands cheer today! <b>"+fmt(a)+"</b> fans + <b>"+fmt(b)+"</b> fans. How many altogether?";
   window._say=a+" fans plus "+b+" fans. First, estimate by rounding to the nearest "+to+".";speak(_say);
   teamCards(ta,tb,a,b);
   phaseTag("Step 1 · ESTIMATE (round to the nearest "+fmt(to)+")");
-  const wrongs=[est+to,est-to];
-  const opts=shuffle([est,...wrongs]);
+  // Slips: a step off either way, two steps off, doubled the bigger number.
+  const opts=opts3(est,[est+to,est-to,est+2*to,rd(Math.max(a,b),to)*2]);
   mcq(opts.map(n=>"≈ "+fmt(n)),opts.indexOf(est),()=>{
     document.getElementById("estopts").remove();
     document.querySelector(".phase").textContent="Step 2 · Now work it out EXACTLY";
@@ -203,9 +225,9 @@ function rAdd(){
   });
 }
 function rSub(){
-  const hi=LEVEL===4?4999:899;
+  const hi=LEVEL===5?49999:LEVEL===4?4999:899;
   const [ta,tb]=shuffle(TEAMS).slice(0,2);
-  const a=ri(hi>999?2000:400,hi); const b=ri(hi>999?1000:110,a-50);
+  const a=ri(LEVEL===5?20000:hi>999?2000:400,hi); const b=ri(LEVEL===5?10000:hi>999?1000:110,a-50);
   target=a-b;
   $("q").innerHTML="<b>"+fmt(a)+"</b> fans came, but <b>"+fmt(b)+"</b> support the away team. How many support the home team?";
   window._say=a+" fans minus "+b+". Type the answer.";speak(_say);
@@ -226,6 +248,54 @@ function rTwo(){
   keypad(v=>{
     if(v===target){onCorrect("("+fmt(a)+" + "+fmt(b)+") − "+fmt(leave)+" = "+fmt(target),"Two steps, both perfect!");}
     else onWrong("Two steps: add first, then subtract 👀");});
+}
+/* ---- Expert rounds ---- */
+function rMiss(){
+  const [ta,tb]=shuffle(TEAMS).slice(0,2);
+  const kind=pick(["subLeft","addRight","addLeft"]);
+  if(kind==="subLeft"){
+    // ▢ − b = c  →  the crowd BEFORE some fans left
+    const b=ri(2000,9500), c=ri(5000,30000); target=b+c;
+    $("q").innerHTML="Mystery crowd! Some fans went home — <b>"+fmt(b)+"</b> of them — and <b>"+fmt(c)+"</b> stayed. How many were there at kick-off?";
+    window._say="Box minus "+b+" equals "+c+". What number is in the box? Work backwards!";speak(_say);
+    teamCards(ta,tb,b,c);
+    phaseTag("▢ − "+fmt(b)+" = "+fmt(c)+"   →   type ▢");
+    keypad(v=>{
+      if(v===target){onCorrect("▢ = "+fmt(c)+" + "+fmt(b)+" = "+fmt(target)+" — work BACKWARDS with the inverse!","Yes! Add back what left to find the start!");}
+      else onWrong("Work backwards: add the leavers back on 👀");});
+  } else if(kind==="addRight"){
+    // a + ▢ = t
+    const a=ri(8000,30000), t=a+ri(3000,15000); target=t-a;
+    $("q").innerHTML="<b>"+fmt(a)+"</b> home fans are in. The stadium total hits <b>"+fmt(t)+"</b>. How many AWAY fans came?";
+    window._say=a+" plus box equals "+t+". What goes in the box?";speak(_say);
+    teamCards(ta,tb,a,t);
+    phaseTag(fmt(a)+" + ▢ = "+fmt(t)+"   →   type ▢");
+    keypad(v=>{
+      if(v===target){onCorrect("▢ = "+fmt(t)+" − "+fmt(a)+" = "+fmt(target)+" — subtraction finds the missing part!","Subtract to find the missing part!");}
+      else onWrong("The missing part is total minus what you know 👀");});
+  } else {
+    // ▢ + b = t
+    const b=ri(8000,30000), t=b+ri(3000,15000); target=t-b;
+    $("q").innerHTML="Some home fans and <b>"+fmt(b)+"</b> away fans make <b>"+fmt(t)+"</b> altogether. How many HOME fans?";
+    window._say="Box plus "+b+" equals "+t+". What goes in the box?";speak(_say);
+    teamCards(ta,tb,b,t);
+    phaseTag("▢ + "+fmt(b)+" = "+fmt(t)+"   →   type ▢");
+    keypad(v=>{
+      if(v===target){onCorrect("▢ = "+fmt(t)+" − "+fmt(b)+" = "+fmt(target),"The inverse cracks every missing number!");}
+      else onWrong("Total minus the part you know 👀");});
+  }
+}
+function rTwoX(){
+  const [ta,tb]=shuffle(TEAMS).slice(0,2);
+  const per=ri(8000,15000), stands=pick([3,4]), empty=ri(500,4500);
+  target=stands*per-empty;
+  $("q").innerHTML="Two steps, big numbers! <b>"+stands+"</b> stands hold <b>"+fmt(per)+"</b> each, but <b>"+fmt(empty)+"</b> seats are empty. How many fans?";
+  window._say=stands+" stands times "+per+", minus "+empty+" empty seats. Multiply first, then subtract!";speak(_say);
+  teamCards(ta,tb,per,empty);
+  phaseTag("("+stands+" × "+fmt(per)+") − "+fmt(empty)+" = ?");
+  keypad(v=>{
+    if(v===target){onCorrect("("+stands+" × "+fmt(per)+") − "+fmt(empty)+" = "+fmt(target),"Multiply, then subtract — champion of the two-step!");}
+    else onWrong("Step 1: "+stands+" × "+fmt(per)+". Step 2: subtract the empties 👀");});
 }
 $("read").onclick=()=>{if(window._say)speak(_say);};
 

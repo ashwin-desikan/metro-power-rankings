@@ -21,6 +21,8 @@
   .reveal{min-height:1.5em;font-weight:800;color:var(--accent);margin-top:8px;font-size:1rem}
   .opts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
   .opts.two{grid-template-columns:1fr 1fr}
+  .opts.wide{grid-template-columns:1fr}
+  .opts.wide .opt{font-size:1.3rem}
   .opt{border:none;border-radius:16px;background:#f6fbff;box-shadow:0 5px 0 #d7e6f2;cursor:pointer;padding:14px 6px;font-family:inherit;font-weight:900;color:var(--ink);font-size:1.15rem;transition:transform .12s}
   .opt:active{transform:scale(.95)}
   .opt.good{background:#e8fbf4;box-shadow:0 5px 0 #bfe6da,0 0 0 3px var(--accent)}
@@ -94,6 +96,7 @@
   <p>Real league titles and real skyscraper skylines, turned into bar charts, pictograms and tables. Read the scale, tap the right bar!</p>
   <button class="lvlbtn go" id="lvl3">⭐ Year 3<small>Bar charts · pictograms with half-symbols · tables · one-step questions</small></button>
   <button class="lvlbtn" id="lvl4">🌟 Year 4<small>Time graphs · two-step chart problems · trickier scales</small></button>
+  <button class="lvlbtn" id="lvl5">🚀 Expert<small>Real city scales to 600 · big differences · millions on the axis</small></button>
 </div>
 
 <div class="cover hidden" id="finale">
@@ -131,9 +134,10 @@ function onCorrect(msg,sayMsg){
 function onWrong(hint){toast(hint||"Try again 🤔");buzz();speak("Not quite. Try again!");}
 function finish(){$("finale").classList.remove("hidden");confetti(24);cheer();speak("Data detective! Charts cracked!");}
 $("next")&&($("next").onclick=()=>{ if(!done)return; if(idx>=N){finish();} else render(); });
-function startRun(lv){LEVEL=lv;$("lvlchip").textContent=(lv===3?"⭐ Year 3":"🌟 Year 4");$("start").classList.add("hidden");ctx();idx=0;makeRounds();render();}
+function startRun(lv){LEVEL=lv;$("lvlchip").textContent=(lv===3?"⭐ Year 3":lv===4?"🌟 Year 4":"🚀 Expert");$("start").classList.add("hidden");ctx();idx=0;makeRounds();render();}
 $("lvl3").onclick=()=>startRun(3);
 $("lvl4").onclick=()=>startRun(4);
+$("lvl5").onclick=()=>startRun(5);
 $("again").onclick=()=>{$("finale").classList.add("hidden");$("start").classList.remove("hidden");};
 $("snd").onclick=()=>{sound=!sound;$("snd").textContent=sound?"🔊":"🔇";if(!sound&&"speechSynthesis" in window)speechSynthesis.cancel();};
 if(location.protocol==="file:"){$("back").setAttribute("href","index.html");$("homelink").setAttribute("href","index.html");}
@@ -144,11 +148,16 @@ buildPass();
 const TITLES=[["Liverpool","liverpool",20],["Man United","manchester-united",20],["Arsenal","arsenal",14],["Man City","manchester-city",10],["Everton","everton",9],["Aston Villa","aston-villa",7],["Chelsea","chelsea",6],["Newcastle","newcastle-united",4]];
 const EURO=[["Real Madrid","real-madrid",36],["Benfica","benfica",38],["Ajax","ajax",36],["Bayern","bayern-munich",35],["Juventus","juventus",36],["Porto","fc-porto",31],["Barcelona","fc-barcelona",29]];
 const SKY=[["Hong Kong",569],["New York",347],["Shanghai",245],["Tokyo",212],["Chicago",137],["Toronto",123],["Mumbai",113],["Singapore",101],["Miami",88],["Sydney",54],["London",44]];
+/* Expert data: same real numbers, chart-ready [name, id, value]. Populations in millions (metros.json). */
+const SKYC=SKY.map(d=>[d[0],d[0].toLowerCase().replace(/ /g,"-"),d[1]]);
+const POPM=[["Tokyo","tokyo",40],["Jakarta","jakarta",36],["Seoul","seoul",26],["Cairo","cairo",24],["New York","new-york",22],["Moscow","moscow",22],["London","london",17],["Paris","paris",13],["Chicago","chicago",10],["Hong Kong","hong-kong",7]];
 let rounds=[];
 function ri(a,b){return a+Math.floor(Math.random()*(b-a+1));}
 function fmt(n){return n.toLocaleString("en-GB");}
 function mcq(options,ans,msg,say){
-  const o=document.createElement("div");o.className="opts";
+  window.__last={opts:options.map(String),ans:ans}; // test/debug hook
+  const wide=options.some(t=>String(t).length>=8);
+  const o=document.createElement("div");o.className="opts"+(wide?" wide":"");
   options.forEach((t,i)=>{const b=document.createElement("button");b.className="opt";b.innerHTML=t;
     b.onclick=()=>{if(done)return;
       if(i===ans){b.classList.add("good");onCorrect(msg,say);}
@@ -158,12 +167,26 @@ function mcq(options,ans,msg,say){
 }
 function makeRounds(){
   const kinds=LEVEL===3?["tapbar","diff","picto","table","tapbar","picto","diff","table"]
-                       :["tapbar","diff","picto","table","time","two","time","diff"];
+             :LEVEL===4?["tapbar","diff","picto","table","time","two","time","diff"]
+                       :["skybar","skydiff","popbar","two5","skydiff","popbar","skybar","two5"];
   rounds=shuffle(kinds);
+}
+/* Plausible-error options, randomized position — never symmetric ans±k. */
+function opts3(ans,cands){
+  const uniq=[...new Set(cands.filter(c=>c!==ans&&c>0&&Number.isFinite(c)))];
+  const above=uniq.filter(c=>c>ans), below=uniq.filter(c=>c<ans);
+  // Deliberately vary which SIDE the wrongs land on: if one wrong always sat
+  // above and one below, the answer would still be the median every time.
+  let w; const roll=Math.random();
+  if(roll<0.35&&above.length>=2)w=shuffle(above).slice(0,2);
+  else if(roll<0.7&&below.length>=2)w=shuffle(below).slice(0,2);
+  else w=shuffle(uniq).slice(0,2);
+  while(w.length<2)w.push(ans+7+w.length*4);
+  return shuffle([ans,...w]);
 }
 function render(){
   done=false;$("zone").innerHTML="";$("reveal").textContent="";$("next").disabled=true;$("next").textContent="Next →";buildPass();
-  ({tapbar:rTapBar,diff:rDiff,picto:rPicto,table:rTable,time:rTime,two:rTwo})[rounds[idx]]();
+  ({tapbar:rTapBar,diff:rDiff,picto:rPicto,table:rTable,time:rTime,two:rTwo,skybar:rSkyBar,skydiff:rSkyDiff,popbar:rPopBar,two5:rTwoFive})[rounds[idx]]();
 }
 function drawBars(data,maxV,step,clickable,onPick){
   const wrap=document.createElement("div");
@@ -207,8 +230,7 @@ function rDiff(){
   window._say=hi[0]+" have "+hi[2]+", "+lo[0]+" have "+lo[2]+". How many more?";speak(_say);
   drawBars([hi,lo],Math.max(hi[2],24),4,false);
   revealVals();
-  const opts=shuffle([...new Set([ans,ans+2,Math.max(1,ans-2)])]);
-  while(opts.length<3)opts.push(ans+4);
+  const opts=opts3(ans,[ans+2,ans-2,hi[2]+lo[2],ans+1]);
   mcq(opts.map(String),opts.indexOf(ans),hi[2]+" − "+lo[2]+" = "+ans+" more titles","Subtract to compare!");
 }
 /* pictogram with half symbols */
@@ -227,8 +249,7 @@ function rPicto(){
   $("zone").appendChild(p);
   $("zone").insertAdjacentHTML("beforeend",'<div class="pkey">KEY: 🏆 = '+per+' titles (half = 1)</div>');
   const ans=target[2];
-  const opts=shuffle([...new Set([ans,ans+per,Math.ceil(ans/per)])]);
-  while(opts.length<3)opts.push(ans+1);
+  const opts=opts3(ans,[ans+per,ans-per,Math.ceil(ans/per),ans+1]);
   mcq(opts.map(String),opts.indexOf(ans),target[0]+": "+(Math.floor(ans/per))+(ans%per?"½":"")+" trophies × "+per+" = "+ans+" titles","Count the trophies and multiply by two!");
 }
 /* real table, 1-step */
@@ -250,7 +271,7 @@ function rTable(){
     $("q").innerHTML="Add <b>"+twoRows[0][0]+"</b> and <b>"+twoRows[1][0]+"</b> together: how many skyscrapers?";
     window._say=twoRows[0][0]+" plus "+twoRows[1][0]+": add their skyscrapers.";speak(_say);
     $("zone").appendChild(t);
-    const opts=shuffle([ans,ans+10,ans-10]);
+    const opts=opts3(ans,[ans+10,ans-10,ans+100,Math.abs(twoRows[0][1]-twoRows[1][1])]);
     mcq(opts.map(fmt),opts.indexOf(ans),fmt(twoRows[0][1])+" + "+fmt(twoRows[1][1])+" = "+fmt(ans),"Add the two rows!");
   }
 }
@@ -271,8 +292,7 @@ function rTime(){
   svg+='</svg>';
   $("zone").insertAdjacentHTML("beforeend",svg);
   const ans=vals[qi];
-  const opts=shuffle([...new Set([ans,ans+10,Math.max(10,ans-10)])]);
-  while(opts.length<3)opts.push(ans+20);
+  const opts=opts3(ans,[ans+10,ans-10,ans+20,ans-20]);
   mcq(opts.map(String),opts.indexOf(ans),"At "+hours[qi]+" the gold point sits at "+ans+" pies","Read across from the gold point!");
 }
 /* Y4: two-step from the chart */
@@ -282,9 +302,54 @@ function rTwo(){
   $("q").innerHTML="Two-step! Add up ALL the titles on this chart";
   window._say="Add all three clubs' titles together.";speak(_say);
   drawBars(data,24,4,false);revealVals();
-  const opts=shuffle([...new Set([total,total+3,total-2])]);
-  while(opts.length<3)opts.push(total+5);
+  const opts=opts3(total,[total+3,total-2,total-data[2][2],total+10]);
   mcq(opts.map(String),opts.indexOf(total),data.map(d=>d[2]).join(" + ")+" = "+total+" titles between them","Add all three!");
+}
+/* ---- Expert rounds: real city magnitudes ---- */
+function rSkyBar(){
+  const data=shuffle(SKYC).slice(0,5);
+  const target=pick(data);
+  $("q").innerHTML="Real skyscraper counts, big scale! Read the gridlines, then <b>tap the metro with about "+target[2]+" skyscrapers</b>";
+  window._say="The scale goes up in hundreds. Tap the metro with about "+target[2]+" skyscrapers.";speak(_say);
+  drawBars(data,600,100,true,(d,b)=>{
+    if(d[2]===target[2]){b.classList.add("hl");revealVals();onCorrect(d[0]+" has "+d[2]+" skyscrapers","Yes! "+d[0]+"!");}
+    else onWrong("That bar is about "+(Math.round(d[2]/50)*50)+" 👀 check the scale");
+  });
+}
+function rSkyDiff(){
+  const two=shuffle(SKYC).slice(0,2);
+  const hi=two[0][2]>two[1][2]?two[0]:two[1], lo=hi===two[0]?two[1]:two[0];
+  if(hi[2]-lo[2]<30)return rSkyDiff();
+  const ans=hi[2]-lo[2];
+  $("q").innerHTML="How many MORE skyscrapers does <b>"+hi[0]+"</b> ("+hi[2]+") have than <b>"+lo[0]+"</b> ("+lo[2]+")?";
+  window._say=hi[0]+" has "+hi[2]+", "+lo[0]+" has "+lo[2]+". How many more?";speak(_say);
+  drawBars([hi,lo],600,100,false);revealVals();
+  // Slips: added instead of subtracting; column slip of 10 or 100.
+  const opts=opts3(ans,[hi[2]+lo[2],ans+10,ans-10,ans+100,ans-100]);
+  mcq(opts.map(fmt),opts.indexOf(ans),fmt(hi[2])+" − "+fmt(lo[2])+" = "+fmt(ans)+" more","Subtract the real counts!");
+}
+function rPopBar(){
+  const data=shuffle(POPM).slice(0,5);
+  const target=pick(data);
+  $("q").innerHTML="The axis is in MILLIONS of people! About how many million live in <b>"+target[0]+"</b>?";
+  window._say="The bars show metro populations in millions. Read "+target[0]+"'s bar against the scale.";speak(_say);
+  drawBars(data,45,5,false);
+  // Distractors stay a full gridline (5M) or more away — the bar can be READ to the nearest line.
+  const opts=opts3(target[2],[target[2]+5,target[2]-5,target[2]+10,target[2]*2]);
+  mcq(opts.map(n=>n+" million"),opts.indexOf(target[2]),target[0]+"'s metro area holds about "+target[2]+" million people","About "+target[2]+" million!");
+}
+function rTwoFive(){
+  const data=shuffle(SKYC).slice(0,3);
+  const ans=data[0][2]+data[1][2]-data[2][2];
+  if(ans<=0)return rTwoFive();
+  $("q").innerHTML="Two steps, real numbers! <b>"+data[0][0]+"</b> + <b>"+data[1][0]+"</b> − <b>"+data[2][0]+"</b> skyscrapers = ?";
+  window._say="Add "+data[0][0]+" and "+data[1][0]+"'s skyscrapers, then subtract "+data[2][0]+"'s.";speak(_say);
+  const t=document.createElement("table");t.className="mtable";
+  t.innerHTML="<tr><th>Metro</th><th>Skyscrapers</th></tr>"+data.map(d=>"<tr><td>"+d[0]+"</td><td class='num'>"+d[2]+"</td></tr>").join("");
+  $("zone").appendChild(t);
+  const sum=data[0][2]+data[1][2];
+  const opts=opts3(ans,[sum,ans+10,ans-10,ans+100,sum+data[2][2]]);
+  mcq(opts.map(fmt),opts.indexOf(ans),"("+data[0][2]+" + "+data[1][2]+") − "+data[2][2]+" = "+fmt(ans),"Add first, then subtract!");
 }
 $("read").onclick=()=>{if(window._say)speak(_say);};
 
