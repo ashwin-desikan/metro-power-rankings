@@ -196,6 +196,46 @@ whoever flips it.
 Nothing here needs to land in a hurry. The real deadline is 25 October, and the
 useful sequencing is to get step 2 in early so the rest is mechanical.
 
+## The decided order for the remaining 13 (2026-08-06)
+
+The mini asked for a call on ordering. The principle: **prove one unexercised
+mechanism at a time, on the fastest-feedback job that uses it**, so a mistake
+shows up the next morning rather than next month. Once a mechanism is proven,
+every other job using it is mechanical and can move in a batch.
+
+| # | job(s) | proves | feedback | UTC slot(s) |
+|---|---|---|---|---|
+| ✅ | activity-feed | `hc_slug`, `$HOME` expansion | next day | 02:30 |
+| 1 | substack-daily | **`args`** | next day | 06:00 |
+| 2 | euro-comps | **`times`** (2 slots) | next day | 03:00, 04:00 |
+| 3 | football-standings, gap-league-watch | nothing new | next day | 04:00, 05:00 each |
+| 4 | screen-number-ones | `times` at scale (9 slots) | next day | 05:00, 13:00, 21:00 Mon-Wed |
+| 5 | cricket-weekly, rugby-weekly, fiba-weekly, sound-weekly | nothing new | weekly | Tue 09:00, Tue 07:05, Wed 07:10, Wed 07:30 |
+| 6 | conflicts-monthly, cricket-monthly | **`days`** | monthly | 1st 07:15, 1st 10:00 |
+| 7 | feed-monitor | needs a wrapper first | next day | 07:20 |
+| 8 | egress-refresh | nothing new | weekly | Sun 09:00 |
+
+Three notes on why the tail is ordered that way.
+
+**Batch 6 has a deadline inside the deadline.** Monthly jobs only get an
+unattended run on the 1st, so to get any real-world proof before 25 October
+they must be flipped by **late August** (proving on 1 September, with 1 October
+as the second chance). Left to last they would go into the clock change never
+having fired from the dispatcher.
+
+**Batch 7 needs code first.** `feed-monitor` is the only one of the fourteen
+that is not a plain script: its plist runs an inline `bash -lc` string that
+sources `config.env` and then execs `${PYTHON_BIN:-python3}` against
+`feed_shape_monitor.py`. The dispatcher runs `/bin/bash <path> [args]`, so this
+needs a small `run-feed-monitor.sh` wrapper in the repo, matching the existing
+`run-*.sh` convention, before its row can be written. Every other job checked
+clean on this.
+
+**Batch 8 is last on purpose.** `egress-refresh` has an unexplained exit 126
+from 2 August and has not run since. Migrating a job whose current health is
+unknown means debugging two variables at once if it fails. Let Sunday 9 August
+settle whether it is healthy first.
+
 ## What would happen if we did nothing
 
 Not an outage. On 26 October every job in the table above starts running an hour

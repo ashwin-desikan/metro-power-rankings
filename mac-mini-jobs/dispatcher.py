@@ -507,6 +507,43 @@ def self_test():
         check("shipped jobs.toml validates",
               validate_jobs(tomllib.load(fh).get("job", [])), [])
 
+    # --- live-vs-repo drift detection ----------------------------------------
+    # The mini's live jobs.toml was found a full day stale on 2026-08-06 and
+    # nothing failed, which is why this exists.
+    import tempfile, shutil
+    with tempfile.TemporaryDirectory() as td:
+        repo, live = Path(td) / "repo", Path(td) / "live"
+        (repo / "runners").mkdir(parents=True)
+        live.mkdir()
+        (repo / "jobs.toml").write_text("a = 1\n")
+        (repo / "hc-run.sh").write_text("echo hi\n")
+        (repo / "runners" / "x.sh").write_text("echo x\n")
+        (repo / "README.md").write_text("not compared\n")
+        shutil.copy(repo / "jobs.toml", live / "jobs.toml")
+        shutil.copy(repo / "hc-run.sh", live / "hc-run.sh")
+        (live / "runners").mkdir()
+        shutil.copy(repo / "runners" / "x.sh", live / "runners" / "x.sh")
+        check("identical trees report no drift", sync_report(live, repo), [])
+
+        (live / "config.env").write_text("SECRET=x\n")
+        (live / "state.json").write_text("{}\n")
+        check("live-only files are ignored", sync_report(live, repo), [])
+
+        (live / "jobs.toml").write_text("a = 2\n")
+        check("a changed file is reported",
+              sync_report(live, repo), [("jobs.toml", "differs")])
+
+        (live / "jobs.toml").write_text("a = 1\n")
+        (live / "runners" / "x.sh").unlink()
+        check("a missing runner is reported",
+              sync_report(live, repo), [("runners/x.sh", "missing-live")])
+
+        shutil.copy(repo / "runners" / "x.sh", live / "runners" / "x.sh")
+        (live / "hc-run.sh").write_bytes(b"echo hi\r\n")
+        check("CRLF alone is not drift", sync_report(live, repo), [])
+        check("a missing repo dir is reported, not crashed",
+              sync_report(live, Path(td) / "nope")[0][1], "missing-repo")
+
     failed = [c for c in cases if c[1] != c[2]]
     for label, got, want in cases:
         print(f"  {'PASS' if got == want else 'FAIL'}  {label}: got {got!r}, want {want!r}")
@@ -518,6 +555,55 @@ def self_test():
 
 
 # --- entry point -------------------------------------------------------------
+
+def sync_report(live_dir, repo_dir):
+    """Compare the LIVE copy of the job code against the repo copy.
+
+    The mini runs from ~/metro-mini-jobs/, which is a manual copy of the repo's
+    mac-mini-jobs/. That copy step has no verification, and on 2026-08-06 the
+    live jobs.toml was found stale by a full day: it still described forecast's
+    Action schedule as "retirement pending" hours after it had been retired.
+    Nothing failed, which is the problem. Drift here is silent by construction,
+    so it needs a way to be seen.
+
+    Returns a sorted list of (relative_path, status) where status is one of
+    "differs" or "missing-live". Files that exist only live are ignored on
+    purpose: config.env, state.json, dispatcher.log and the lock all belong
+    there and must never be copied back.
+    """
+    import hashlib
+    live, repo = Path(live_dir), Path(repo_dir)
+    if not repo.is_dir():
+        return [("(repo dir not found)", "missing-repo")]
+
+    def digest(p):
+        return hashlib.sha256(p.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
+
+    out = []
+    candidates = sorted(
+        [p for p in repo.glob("*") if p.is_file() and p.suffix in (".py", ".sh", ".toml")]
+        + [p for p in (repo / "runners").glob("*.sh") if p.is_file()]
+    )
+    for src in candidates:
+        rel = src.relative_to(repo).as_posix()
+        dst = live / rel
+        if not dst.exists():
+            out.append((rel, "missing-live"))
+        elif digest(src) != digest(dst):
+            out.append((rel, "differs"))
+    return sorted(out)
+
+
+def repo_dir_guess():
+    """Where the repo checkout lives on the mini.
+
+    REPO_DIR in the environment wins (config.env is the single source of truth
+    for this kind of thing). Otherwise fall back to the path four of the legacy
+    jobs already hardcode in their plists.
+    """
+    return os.environ.get("REPO_DIR") or os.path.expanduser(
+        "~/Projects/Metro Area Project/mac-mini-jobs")
+
 
 def validate_jobs(jobs):
     """Fail loudly on a malformed jobs.toml rather than skipping a job quietly.
@@ -581,6 +667,13 @@ def show_status(now, jobs, state):
         occ_s = f"{occ:%m-%d %H:%M}" if occ else "-"
         print(f"{job['id']:<20} {occ_s:<12} {st.get('last_run_date', '-'):<12} "
               f"{st.get('last_status', '-'):<9} {verdict}")
+    drift = sync_report(HERE, repo_dir_guess())
+    if drift:
+        print(f"\n⚠ live copy differs from the repo ({repo_dir_guess()}):")
+        for rel, status in drift:
+            print(f"    {status:<13} {rel}")
+        print("  Copy the repo version across, or the table above is not what "
+              "a fresh clone would run.")
 
 
 def seed(now, jobs, state):
@@ -613,6 +706,9 @@ def main():
     ap.add_argument("--dry-run", action="store_true",
                     help="decide and log, but run nothing and write no state")
     ap.add_argument("--status", action="store_true")
+    ap.add_argument("--check-sync", action="store_true",
+                    help="report any file where this live copy differs from the "
+                         "repo checkout; exit 1 if anything has drifted")
     ap.add_argument("--seed", action="store_true",
                     help="mark every job's current occurrence as handled without "
                          "running it; use once at install so a cold start does not "
@@ -621,6 +717,17 @@ def main():
 
     if args.self_test:
         return self_test()
+
+    if args.check_sync:
+        repo = repo_dir_guess()
+        drift = sync_report(HERE, repo)
+        if not drift:
+            print(f"in sync with {repo}")
+            return 0
+        print(f"DRIFT vs {repo}:")
+        for rel, status in drift:
+            print(f"  {status:<13} {rel}")
+        return 1
 
     now = datetime.now(timezone.utc)
     jobs = load_jobs()

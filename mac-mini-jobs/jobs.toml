@@ -124,7 +124,15 @@ timeout_minutes = 45
 #
 # Rollout state:
 #   activity-feed   LIVE on the mini since 2026-08-06. Plist unloaded.
-#   the other 13    not drafted yet; activity-feed went first as the proof.
+#   substack-daily  DRAFTED below. Next: it is the one that proves `args`.
+#   euro-comps      DRAFTED below. After that: it proves `times`.
+#   the other 11    ordering decided, rows not written. See DST-MIGRATION.md.
+#
+# The order is chosen to prove ONE unexercised mechanism at a time, on the
+# fastest-feedback job available, so a mistake shows up the next morning
+# rather than next month. activity-feed proved hc_slug and $HOME expansion;
+# substack-daily proves args; euro-comps proves times. After those three
+# nothing else is new and the remaining eleven are mechanical.
 #
 # ⚠️ THE FLIP IS NOT THE SAME SHAPE AS THE ACTIONS ONE. For those, both
 # runners live briefly and the overlap is harmless, because GitHub's 1-4h
@@ -156,3 +164,38 @@ timeout_minutes = 20
 #    unchanged, and its own commits are excluded from the feed), but that is
 #    not a licence to leave both runners live: the race is on git, not on the
 #    data.
+
+# --- NEXT: substack-daily. The job that proves `args`. ---------------------
+# Daily, single slot, one positional. run-scraper-refresh.sh is shared by four
+# jobs and reads exactly one of conflicts|fiba|rugby|substack (confirmed by the
+# mini: JOB="${1:?...}", case-matched, fail on anything else). It lives in
+# ~/metro-mini-jobs/, so the command is relative to HERE, unlike activity-feed.
+#
+# [[job]]
+# id = "substack-daily"          # launchd/com.citizenofnowhere.substack-daily.plist
+# time = "06:00"                 # was 07:00 LOCAL = 06:00 UTC today
+# command = "run-scraper-refresh.sh"
+# args = ["substack"]
+# hc_slug = "substack-daily"
+# catchup_hours = 14
+# timeout_minutes = 20
+
+# --- THEN: euro-comps. The job that proves `times`. ------------------------
+# Two slots a day, an hour apart. This is the first row where last_slot rather
+# than last_run_date does the work: after the 03:00 run, the 04:00 run must
+# still be seen as due, and a date-only comparison would swallow it. Verify on
+# the mini that BOTH fire, not just the first — that is the whole point of the
+# move and the one thing a single morning's glance could miss.
+#
+# [[job]]
+# id = "euro-comps"              # launchd/com.citizenofnowhere.euro-comps.plist
+# times = ["03:00", "04:00"]     # was 04:00 + 05:00 LOCAL
+# command = "run-euro-comps.sh"
+# hc_slug = "euro-comps"
+# catchup_hours = 12
+# timeout_minutes = 30
+#
+# Note on catchup with two slots: if the mini is off all night and comes up at
+# 14:00, previous_occurrence resolves to 04:00 and the job runs ONCE, not
+# twice. That is deliberate. Running the 03:00 slot retroactively at 14:00
+# would refresh the same fixtures the 04:00 run is about to.

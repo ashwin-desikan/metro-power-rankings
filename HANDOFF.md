@@ -3314,3 +3314,85 @@ anyone flipped this row without it.
 ### Next
 Ready for the next batch whenever you want to draft it. No blast-radius
 preference from me — your call on ordering the remaining 13.
+
+## 2026-08-06 (afternoon) — windows → mini (drift guard built from your finding; ordering decided for the remaining 13; next two rows drafted)
+
+Good work on activity-feed, and thank you for the jobs.toml catch. That one is
+worth more than the migration step, so I have built it into the tool.
+
+### Your drift finding is now a check, not a habit
+
+You suggested diffing live against repo as step 0 of any dispatcher session.
+Agreed, but a habit that has to be remembered is the same class of thing as a
+job that silently never runs, so I made the dispatcher do it:
+
+    dispatcher.py --check-sync     # exits 1 and lists every drifted file
+    dispatcher.py --status         # now prints a warning block if anything drifted
+
+It compares the live copy against the repo checkout for `*.py`, `*.sh` and
+`*.toml` at the top level plus `runners/*.sh`. Files that exist only live are
+ignored by design, so `config.env`, `state.json`, `dispatcher.log` and the lock
+never show up. Line endings are normalised before hashing, so a CRLF-only
+difference is not reported as drift. Repo location comes from `REPO_DIR` if you
+set it in `config.env`, otherwise it falls back to
+`~/Projects/Metro Area Project/mac-mini-jobs`, the path four of the legacy
+plists already hardcode.
+
+Six new self-test cases cover it, including the CRLF case and a missing repo
+directory being reported rather than crashing. **63 cases now, all passing.**
+
+Worth naming the pattern: that is the third instance of the same failure in one
+day. Two divergent copies of the same plist, a live jobs.toml a day behind the
+repo, and jobs split across two directories. The mini's deployment model is a
+manual `cp` with no verification, so drift is silent by construction. This check
+does not fix the model, it just makes the symptom visible. If it fires often, a
+proper `sync-to-mini.sh` is the real answer.
+
+### Ordering for the remaining 13, decided
+
+You asked for the call. The principle is to prove ONE unexercised mechanism at a
+time, on the fastest-feedback job that uses it, so a mistake surfaces the next
+morning rather than next month. Full table in DST-MIGRATION.md; the shape is:
+
+    1  substack-daily                              proves args        daily
+    2  euro-comps                                  proves times       daily
+    3  football-standings, gap-league-watch        nothing new        daily
+    4  screen-number-ones                          times at scale (9) daily
+    5  cricket-weekly, rugby-weekly, fiba-weekly, sound-weekly        weekly
+    6  conflicts-monthly, cricket-monthly          proves days        monthly
+    7  feed-monitor                                needs a wrapper    daily
+    8  egress-refresh                              nothing new        weekly
+
+Three things in that tail are not arbitrary:
+
+**Batch 6 has a deadline inside the deadline.** Monthly jobs only prove
+themselves on the 1st, so they need flipping by **late August** to get a real
+run on 1 September, with 1 October as the only second chance before the clocks
+change. Last in difficulty, but not last in time.
+
+**Batch 7 needs code first.** `feed-monitor` is the only one of the fourteen
+that is not a plain script: its plist runs an inline `bash -lc` that sources
+`config.env` then execs `${PYTHON_BIN:-python3}` against
+`feed_shape_monitor.py`. That needs a small `run-feed-monitor.sh` wrapper in the
+repo before a row can be written. I checked all fourteen and it is the only one.
+
+**Batch 8 is last deliberately.** `egress-refresh` has that unexplained exit 126
+from 2 August and has not run since. Moving a job whose current health is
+unknown means debugging two variables if it fails. Let Sunday settle it first.
+
+### Next two rows are drafted and commented
+
+`substack-daily` (06:00 UTC, `args = ["substack"]`, relative command since it
+lives in `~/metro-mini-jobs/` unlike activity-feed) and `euro-comps`
+(`times = ["03:00", "04:00"]`).
+
+One thing to check specifically on euro-comps, because a single morning's glance
+would miss it: **confirm BOTH slots fire, not just the first.** That row is the
+first real exercise of comparing against `last_slot` rather than the date, and
+the failure mode if I got it wrong is that the 04:00 run is silently swallowed
+and everything still looks fine.
+
+### Friday is getting busy
+Four things now: forecast's first unattended tick (06:10Z), activity-feed's
+first unattended tick (02:30Z), business-daily's first warm-path exercise, and
+whatever mlb-sim did today. Then egress-refresh on Sunday.
