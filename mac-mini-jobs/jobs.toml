@@ -125,7 +125,7 @@ timeout_minutes = 45
 # Rollout state:
 #   activity-feed   LIVE on the mini since 2026-08-06. Plist unloaded.
 #   substack-daily  LIVE on the mini since 2026-08-06. Plist unloaded.
-#   euro-comps      DRAFTED below. Next: it proves `times`.
+#   euro-comps      LIVE on the mini since 2026-08-06. Plist unloaded.
 #   the other 11    ordering decided, rows not written. See DST-MIGRATION.md.
 #
 # The order is chosen to prove ONE unexercised mechanism at a time, on the
@@ -187,15 +187,27 @@ timeout_minutes = 20
 # the mini that BOTH fire, not just the first — that is the whole point of the
 # move and the one thing a single morning's glance could miss.
 #
-# [[job]]
-# id = "euro-comps"              # launchd/com.citizenofnowhere.euro-comps.plist
-# times = ["03:00", "04:00"]     # was 04:00 + 05:00 LOCAL
-# command = "run-euro-comps.sh"
-# hc_slug = "euro-comps"
-# catchup_hours = 12
-# timeout_minutes = 30
+[[job]]
+id = "euro-comps"              # launchd/com.citizenofnowhere.euro-comps.plist (unloaded)
+times = ["03:00", "04:00"]     # was 04:00 + 05:00 LOCAL
+command = "run-euro-comps.sh"
+hc_slug = "euro-comps"
+catchup_hours = 12
+timeout_minutes = 30
 #
 # Note on catchup with two slots: if the mini is off all night and comes up at
 # 14:00, previous_occurrence resolves to 04:00 and the job runs ONCE, not
 # twice. That is deliberate. Running the 03:00 slot retroactively at 14:00
 # would refresh the same fixtures the 04:00 run is about to.
+#
+# Note on the two slots and the script's OWN guard: run-euro-comps.sh has its
+# own internal `[ "$(date -u +%H)" != "04" ] && skip` check, a leftover from
+# when the plist bracketed local 04:00/05:00 to survive the DST switch. That
+# guard now means the dispatcher's 03:00 UTC slot ALWAYS logs "guard: UTC hour
+# 03 != 04; skipping" and does no real work, every day, forever -- confirmed
+# 2026-08-06 by hand-running it at a non-04 hour. This is NOT a bug: the
+# dispatcher genuinely fires both slots (proving `times`), and the guard is
+# what preserves today's real effective behavior (one real run, one no-op) as
+# a fixed UTC pair rather than a DST-drifting local pair. If this bothers a
+# future reader, the guard could be deleted and the row trimmed to a single
+# `time = "04:00"` -- functionally identical, just tidier.
