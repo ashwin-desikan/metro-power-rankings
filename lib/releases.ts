@@ -19,12 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-08-06",
-    headline: "Play & Learn grows up: harder games, real finals, filters",
+    headline: "The Ground Floor, and Play & Learn grows up",
     items: [
-      "Four new games for players who've outgrown the easy tier: In the Club turns UN, EU and NATO membership into AND / OR / NOT logic; Higher or Lower turns the number line into binary search - first ideas behind coding.",
-      "How Many Times Bigger? teaches ratio on real city data, Champion Challenge mixes the arcade's hardest questions into one ramping run, and the maths core four gain a rocket-grade Expert level with a 60-second blitz.",
-      "Champions Duel now spans 459 real finals across eight competitions - Champions League, World Cup, Euros, Super Bowl, NBA Finals, World Series, Stanley Cup - and Champions gains an Expert mode that flips its questions.",
-      "Be the Ref goes fully visual - call the strike zone pitch by pitch, judge DRS-style lbw reviews and sideline toe-taps - and the hub gains challenge and topic filters, with the easiest games in a little-kids corner.",
+      "A second scoreboard opens. The Ground Floor ranks 4,269 metros not on what they have accumulated but on what they deliver: clean air, breathable streets, water you can count on.",
+      "Every metro now carries a gap - its power ranking against its ground ranking. The two are never merged, because the distance between them is the finding.",
+      "Play & Learn grows up: four new games past the easy tier, from Boolean logic on world alliances to binary search on a number line, plus an Expert level on the maths core four.",
+      "Champions Duel now spans 459 real finals across eight competitions, Be the Ref goes fully visual, and the games hub gains challenge and topic filters.",
     ],
   },
   {

@@ -38,6 +38,7 @@ function buildSections(): Section[] {
       items: [
         { href: '/geography', label: 'Geography Hub' },
         { href: '/rankings', label: 'Metro Power Rankings' },
+        { href: '/ground-floor', label: 'The Ground Floor' },
         { href: '/countries', label: 'Countries' },
         { href: '/states', label: 'States & Provinces' },
         { href: '/expandable-map', label: 'Expandable Map' },

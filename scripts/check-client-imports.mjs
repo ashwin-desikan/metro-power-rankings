@@ -51,6 +51,7 @@ const SERVER_ONLY_MODULES = [
   "@/lib/wnational",
   "@/lib/wnba",
   "@/lib/espnFetch",
+  "@/lib/groundFloor",
   "@/lib/wnba-standings",
   "@/lib/nwsl-standings",
   "@/lib/mls-standings",

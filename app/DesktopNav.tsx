@@ -229,6 +229,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
           <div>
             <MenuGroupLabel>Places &amp; directories</MenuGroupLabel>
             <MenuLink href="/rankings" title="Metro Power Rankings" />
+            <MenuLink href="/ground-floor" title="The Ground Floor" />
             <MenuLink href="/countries" title="Countries" />
             <MenuLink href="/states" title="States &amp; Provinces" />
             <MenuLink href="/expandable-map" title="Expandable Map" />
