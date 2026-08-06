@@ -4286,3 +4286,229 @@ Egypt's league. Re-ran gap-league-watch by hand — Premier League (api 233)
 now matches 20/20 teams (was 17/20) and auto-promoted into leagues.json,
 pushed as `cd98a5250`. Will show up in football-standings' next scheduled run,
 17:00Z today.
+
+## 2026-08-06 (evening) - windows -> mini (edge-request incident: cause, fixes shipped, what is still open)
+
+ASCII only in this entry on purpose; earlier entries have mangled em-dashes and
+arrows in the file, same class of problem as the U+26A0 that crashed
+dispatcher.py --status on cp1252.
+
+Ashwin got two Vercel Medium Severity anomaly alerts: Edge Requests up 62x
+(423 -> 26.3k per 5 min) and Function CPU Duration up 8.75x, both from 11:00
+UTC. Investigated end to end. Summary of what was actually true, because
+several plausible explanations were wrong.
+
+### What it was
+
+A sustained whole-site crawl by a JS-executing client, amplified roughly 4x by
+Next 16's client Segment Cache.
+
+Measured: 221,488 requests in six hours across 10,292 distinct paths, 98% of it
+edge cache hits. Hourly on 2026-08-06 UTC: 09:00 = 71,946, 10:00 = 25,077,
+11:00 = 82,932, 12:00 = 6,521, 13:00 = 14,668. Of the 11:00 hour, 58,278
+landed inside 11:00-11:15. The quiet baseline is 820-1,800/hour, so against
+real baseline the peak is ~175x, not 62x (Vercel's 7-day average was already
+dragged up by the crawl itself).
+
+Cloudflare firewall data settled the attribution: one JA4 digest covering
+401.5k of ~403k requests (that is CLOUDFLARE's TLS fingerprint, not the bot's,
+because the whole zone is proxied), UA `Chrome/145.0.0.0` on macOS at 358.5k,
+plus self-declared ShapBot 23.8k and SleepBot 3.3k.
+
+### The amplifier, which was ours
+
+`/me` was the most-requested path on the entire site: 47.9k at the Cloudflare
+edge, roughly double the next path. ~99% of it was PREFETCH, not page loads.
+Route-level grouping made it unambiguous:
+
+    /me.segments/me.segment          2,805
+    /me.segments/me/__PAGE__.segment 2,803
+    /me.segments/_head.segment       2,799
+    /me.segments/_tree.segment       2,789
+
+That is 11,196 of /me's 11,316 requests in one hour.
+
+Cause: `DesktopNav` contains exactly ONE `<Link>` out of 34 nav items. Every
+other item is a plain `<a>`. That single `<Link href="/me">` renders on every
+desktop page, and under Next 16 one prefetch is four separate edge requests.
+So a JS-executing crawler paid a four-request toll on every page it walked,
+for a personal follows page that is worthless to it.
+
+Worth recording how nearly I got this wrong. I recommended changing
+DesktopNav, MobileMenu and FollowingRail BEFORE reading them. Reading them
+changed the answer: MobileMenu uses plain `<a>` throughout and has never
+prefetched anything, and FollowingRail returns null until localStorage has
+follows so it renders nothing at all for a crawler. `<Link>` appears in ~250
+files in this app. Acting on my own recommendation unread would have been a
+large risky diff for a one-line problem. Same failure shape as the public/data
+exclusion two days ago: logic reasoned about, semantics unverified.
+
+### Shipped in 3b6a60d5d (one commit, one build, no skip marker - it changes app/ and public/)
+
+- `prefetch={false}` on the /me links in DesktopNav and FollowingRail.
+  FollowingRail's followed-item chips deliberately KEEP prefetch: those are
+  things the reader chose and is likely to click, and crawlers never see them.
+- `cloudflare-purge.yml`: purge_everything -> purge-by-hostname, plus a
+  `concurrency` group. Two reasons. The zone is citizenofnowhere.org, so every
+  deploy of THIS site was also dumping the apex brand site's cache. And each
+  purge leaves the edge cold, so a cold edge under a live crawl sends the whole
+  sweep to Vercel; thirteen builds on 2026-08-06 meant thirteen zone purges,
+  and the 11:00 burst followed a deploy at ~10:58. Purge by hostname has been
+  on every Cloudflare plan since April 2025.
+- `robots.txt`: ShapBot and SleepBot denied. Advisory only, so the file says
+  explicitly that the real enforcement is a matching Cloudflare WAF rule and
+  the two must be kept in sync.
+- `run-deploy-watch.sh`: its hardcoded BUILD_PATHS had drifted from
+  scripts/vercel-build-paths.txt, missing proxy.ts, .npmrc, vercel.json and
+  .vercelignore. Now reads the canonical list from origin/main and refuses to
+  run on a truncated one.
+
+Verified before push: test-vercel-ignore.sh 23/23 on both machines, guard
+simulated on the real commit (exit 1 = BUILD, correct), esbuild parses both
+TSX files, committed blobs confirmed LF-clean at byte level, diffstat matched
+byte for byte across the Linux checkout and the Windows box.
+
+### Supabase (two migrations, both applied and verified as the anon role)
+
+1. `restore_anon_execute_on_track_visit`. THE VISIT BEACON HAD BEEN DEAD SINCE
+   2026-08-02 and nothing told us. page_visits had zero rows for Aug 3, 4 and
+   5. Cause was not app code: EXECUTE on `public.track_visit(text)` had been
+   revoked from the `anon` role (proacl was
+   `{postgres=X/postgres,service_role=X/postgres}`), so every beacon call was
+   rejected and VisitBeacon's `.catch(function(){})` swallowed it silently.
+   Grant restored, proven end to end by running the RPC under `set role anon`.
+   Recording started again immediately; 135 views on 2026-08-06.
+
+   Standing lesson: a fail-open catch on a WRITE path is invisible until
+   someone goes looking. There is still no alert on this.
+
+2. `add_get_visit_stats_rpc_for_dashboard`. New read-only SECURITY DEFINER
+   function returning one shaped aggregate payload, EXECUTE granted to anon,
+   so the analytics dashboard can read without an MCP connector. page_visits
+   keeps RLS on with zero policies; confirmed anon still gets 0 rows querying
+   the table directly, so the function is the only door. Ashwin explicitly
+   accepted that aggregate traffic (path, day, count) is now readable by
+   anyone holding the anon key, which was already public in the site bundle.
+
+### Vercel firewall
+
+Ashwin published a custom rule via Vercel's agent: DENY any production request
+whose Host is not rankings.citizenofnowhere.org. This closes the
+metro-power-rankings.vercel.app bypass (4.4k requests during the crawl).
+Checked before it went live: nothing in this repo hardcodes a vercel.app host,
+`_common.sh` SITE_ORIGIN and run-deploy-watch.sh PROD_URL both use the
+canonical domain, and /deployed returns 200 after the rule. Side effect worth
+knowing: there is no longer a direct-to-origin path for debugging whether a
+problem is Cloudflare's or Vercel's. Disable the rule temporarily if you ever
+need that A/B.
+
+Vercel's agent correctly DECLINED to publish an IP/JA4 rate-limit rule, and it
+was right: the whole zone is proxied through Cloudflare, so every visitor and
+every bot arrives on the same few hundred Cloudflare IPs with one shared TLS
+fingerprint. Vercel's WAF is structurally blind here. Enforcement has to be at
+Cloudflare. BotID is also the wrong tool for this: it guards browser-initiated
+API/action calls, not public page and RSC requests. If it is ever enabled,
+EXCLUDE /api/mcp - that endpoint exists specifically to serve non-browser
+agents.
+
+### Cloudflare: NOT DONE, and it is the only thing that actually stops the crawl
+
+Everything above reduces cost per request and restores visibility. None of it
+stops the crawler. That is a Cloudflare job and it was still outstanding when
+this session ended.
+
+The zone is on the FREE plan, which allows exactly ONE rate limiting rule, a
+10-second period only, and Block as the only action. Settings worked out for
+those constraints:
+
+    Expression:
+      http.host eq "rankings.citizenofnowhere.org"
+      and not cf.client.bot
+      and not starts_with(http.request.uri.path, "/_next/")
+      and not http.request.uri.path.extension in {"js" "css" "map" "png" "jpg"
+        "jpeg" "gif" "svg" "webp" "avif" "ico" "woff" "woff2" "ttf" "otf"
+        "json" "xml" "txt"}
+    Characteristics: IP
+    Rate: 200 requests per 10 seconds
+    Action: Block, duration 1 minute
+    Status: Active
+
+Do NOT naively convert "120 per minute" to "20 per 10 seconds". Because of our
+own prefetch behaviour one human page view can fire 30-50 counted requests in
+about two seconds (`/rankings/[slug]` alone has 34 `<Link>` elements), so a
+tight 10-second threshold blocks real readers. Excluding /_next/ and static
+extensions is what makes the count meaningful. `not cf.client.bot` keeps
+verified crawlers (Googlebot, Bingbot, verified AI agents) out of the limit so
+a legitimate deep crawl cannot trip it.
+
+Also free and zero-risk, and it does NOT consume the single rate-limit slot
+because WAF custom rules are a separate allowance (5 on Free):
+
+    (http.user_agent contains "ShapBot") or (http.user_agent contains "SleepBot")
+    Action: Block
+
+Held in reserve, not deployed: a Managed Challenge on
+`http.user_agent contains "Chrome/145.0.0.0"` (358.5k requests, a pinned
+five-versions-stale Chrome is a strong automation tell). It is the one rule
+with real false-positive risk, so it should sit behind the rate limit.
+
+DO NOT enable Bot Fight Mode on this zone. I recommended it and then withdrew
+that: per Cloudflare's own docs it cannot be bypassed or skipped by custom
+rules, so it would challenge the ~20 AI crawlers robots.txt deliberately
+allowlists and /api/mcp along with them. Super Bot Fight Mode (Pro) is the
+version that supports verified-bot allowlisting and Skip.
+
+My recommendation to Ashwin was Cloudflare Pro at ~$20/month, primarily for
+Managed Challenge (Block on a false positive is silent and you will not hear
+about it) and 10 rules instead of 1. Undecided when the session closed.
+
+### Open items for the mini
+
+1. **Verify run-deploy-watch.sh is actually the repo copy.** I changed
+   `mac-mini-jobs/run-deploy-watch.sh` to read the canonical build-path list.
+   I could NOT verify from Windows whether the copy that actually RUNS on the
+   mini is this file or a divergent one under `~/metro-mini-jobs/`. If it is
+   divergent my edit is inert and the drift is still live. This is the same
+   present-in-the-tree-but-not-in-force pattern as the two plists and the
+   inert githooks. Please confirm and report back.
+
+2. **Watch the prefetch fix land.** Early signal at 15:20Z was right but the
+   sample was tiny: the new deployment had served 17 requests, all real page
+   loads, with ZERO /me and ZERO .segments, while the old deployment served
+   3,596 in the same window dominated by /me. Check again with real volume.
+
+3. **Test workflow is RED on 3b6a60d5d and it is NOT our code.** The `test`
+   job failed at step 1 "Set up job" with `Bad Gateway` / `Failed to resolve
+   action download info` - GitHub's action-resolution service 502'd before
+   checkout ran. `vercel-ignore-guard` in the SAME run used the same pinned
+   checkout SHA and passed. I re-ran the job's steps locally against the
+   committed tree: Vitest 26/26, check:table-scroll OK across 546 files.
+   pytest was not run locally (not installed) but this commit touches nothing
+   under scripts/, which is all pytest covers. Someone needs to click "Re-run
+   failed jobs"; it was still red at session close.
+
+4. **Vercel Web Analytics is still not enabled.** The API returns
+   `Web Analytics not found`. It is a dashboard toggle neither of us can set
+   remotely. Until then the only traffic instrument is the beacon.
+
+5. **The beacon counts bots.** Discovered while checking the fix: on
+   2026-08-06 there were 133 views across 115 distinct paths, busiest single
+   path 3 views, 98 paths viewed exactly once. That is a crawl signature, not
+   a human distribution. The crawler executes JS (that is how it triggered
+   segment prefetch), so it runs VisitBeacon too. This also explains the
+   nonsense in top_metros: Gunnison, Dolisie and Ekibastuz ranking above
+   London. Historic totals (25,236 views over 28 days) are contaminated to an
+   unknown degree and cannot be separated retrospectively. Fixable going
+   forward (a signal the crawler will not reproduce, or rejecting flat
+   high-cardinality bursts in track_visit) but that is real work and was not
+   scoped. Do not make product decisions off top_metros as it stands.
+
+### Still-live watch items from earlier today (unchanged)
+
+forecast's first unattended tick (Fri 06:10Z); activity-feed 02:30Z;
+substack-daily 06:00Z; euro-comps 04:00Z; gap-league-watch 05:00Z;
+football-standings' first-ever 17:00Z and 23:00Z runs, watching for
+api-football 429s given the 4x increase; egress-refresh Sunday 09:00 UTC.
+Batch 4 (screen-number-ones) is drafted in jobs.toml and still needs flipping.
+Housekeeping: four football_lookup_bak_* tables worth pruning; cross-country
+duplicate api_name "Noah Jurmala" (Latvia/Armenia).
