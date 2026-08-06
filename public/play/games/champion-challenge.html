@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Champion Challenge — Play and Learn</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header>
+  <div class="logo"><span class="ball" id="logoEmoji">🏆</span> <span id="logoText">Champion Challenge</span></div>
+  <div class="hgroup">
+    <a class="back" id="back" href="/play">← All games</a>
+    <button class="sound" id="snd" aria-label="sound on or off">🔊</button>
+  </div>
+</header>
+<div class="passport" id="passport"></div>
+<main>
+  <div class="card" id="card">
+    <div class="scene" id="scene">
+      <span class="flag" id="flag"></span>
+      <span class="city" id="city">🏆</span>
+      <svg class="pip" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#ffd23f" stroke="#16324f" stroke-width="4"/><path d="M30 34h40v10a20 20 0 0 1-40 0z" fill="#fff" stroke="#16324f" stroke-width="3"/><path d="M30 38h-8a10 10 0 0 0 10 12M70 38h8a10 10 0 0 1-10 12" fill="none" stroke="#16324f" stroke-width="3"/><rect x="44" y="62" width="12" height="10" fill="#16324f"/><rect x="36" y="72" width="28" height="6" rx="3" fill="#16324f"/><circle cx="42" cy="42" r="3" fill="#16324f"/><circle cx="58" cy="42" r="3" fill="#16324f"/><path d="M42 50q8 6 16 0" fill="none" stroke="#16324f" stroke-width="3" stroke-linecap="round"/></svg>
+    </div>
+    <div class="place" id="place">—<small id="sub">—</small></div>
+    <div class="q" id="q">Loading…</div>
+    <button class="readbtn" id="read">🔊 Read it to me</button>
+    <div class="opts" id="opts"></div>
+    <div class="toast" id="toast"></div>
+    <div class="reveal" id="reveal"><div class="fact" id="fact"></div><a class="golink" id="golink" target="_blank" rel="noopener">See on the site →</a></div>
+    <button class="next" id="next">Next →</button>
+    <div class="finale" id="finale">
+      <h2 id="finaleH">🏆 You did it!</h2>
+      <p id="finaleP" style="font-size:1.2rem;font-weight:700;color:#16324f">Great playing!</p>
+      <div class="stamps" id="finalStamps"></div>
+      <button class="next show" id="again">Play again 🔁</button>
+    </div>
+  </div>
+</main>
+<p class="grown" id="grownText"></p>
+
+<!-- Cross-game mixer: load each source pool, grab its items, then hand a merged,
+     difficulty-tagged pool to the standard MCQ engine. Levels ramp 1->3 via the
+     engine's stratified `lvl` sampling. -->
+<script>
+  var __CH = [];
+  function grab(name, lvl, cap, keep) {
+    var g = window.GAME; window.GAME = undefined;
+    if (!g || !g.POOL) return;
+    var items = [];
+    for (var i = 0; i < g.POOL.length; i++) {
+      var x = g.POOL[i];
+      var L = keep ? keep(x) : lvl;          // keep() returns a level or null to skip
+      if (L == null) continue;
+      var c = {}; for (var k in x) c[k] = x[k];
+      c.lvl = L; c.sub = name;               // show which game each question visits
+      items.push(c);
+    }
+    // shuffle, cap per source so every game shows up
+    for (var a = items.length - 1; a > 0; a--) { var b = Math.floor(Math.random() * (a + 1)); var t = items[a]; items[a] = items[b]; items[b] = t; }
+    __CH.push.apply(__CH, items.slice(0, cap));
+  }
+</script>
+<script src="pools/north-or-south.js"></script>
+<script>grab("North or South?", 1, 8);</script>
+<script src="pools/find-the-teams-home.js"></script>
+<script>grab("Find the Team's Home", 1, 8);</script>
+<script src="pools/trophy-count.js"></script>
+<script>grab("Trophy Count", 1, 8);</script>
+<script src="pools/odd-one-out.js"></script>
+<script>grab("Odd One Out", 2, 8);</script>
+<script src="pools/match-day-money.js"></script>
+<script>grab("Match Day Money", 2, 8);</script>
+<script src="pools/times-bigger.js"></script>
+<script>grab("How Many Times Bigger?", null, 10, function (x) { return x.lvl >= 2 ? x.lvl : null; });</script>
+<script src="pools/in-the-club.js"></script>
+<script>grab("In the Club", null, 10, function (x) { return x.lvl >= 3 ? x.lvl - 1 : null; });</script>
+<script>
+  window.GAME = {
+    BASE: "https://rankings.citizenofnowhere.org",
+    HEADER: {
+      logoEmoji: "🏆", logoText: "Champion Challenge",
+      title: "Champion Challenge — Play and Learn",
+      grown: "For grown-ups: the decathlon of the arcade — a mixed run of the harder questions from across the Play & Learn games: club logic (and/or/not), ratios, geography, rivalries, money and more, ramping from warm-up to expert. For players who find the single games easy. Ages 7–10.",
+      finaleH: "🏆 Champion of champions!",
+      finaleP: "You beat the hardest questions from every game in the arcade!",
+      again: "Play again 🔁"
+    },
+    POOL_PICK: 10,
+    POOL: __CH
+  };
+</script>
+<script src="assets/engine.js"></script>
+</body>
+</html>

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/play" },
 };
 
-type Group = "learn" | "civics" | "think" | "rules" | "older";
+type Group = "learn" | "civics" | "think" | "coder" | "rules" | "older";
 type Game = { title: string; emoji: string; file: string; ages: string; blurb: string; group: Group };
 
 const GAMES: Game[] = [
@@ -36,6 +36,10 @@ const GAMES: Game[] = [
   { title: "Chart Champions", emoji: "\u{1F4CA}", file: "chart-champions.html", ages: "7–9", blurb: "Real league titles and skyscraper skylines as bar charts, pictograms and tables. Read the scale, tap the right bar.", group: "think" },
   { title: "Match Day Money", emoji: "\u{1F4B7}", file: "match-day-money.html", ages: "5–8", blurb: "Making change and adding up, in pounds and dollars.", group: "think" },
   { title: "League Table Detective", emoji: "\u{1F50D}", file: "league-table-detective.html", ages: "6–10", blurb: "Read a real league table: points, point difference and bar charts.", group: "think" },
+  { title: "How Many Times Bigger?", emoji: "\u{1F4CF}", file: "times-bigger.html", ages: "7–10", blurb: "Ratio and estimation with real city data: compare, then divide — and watch out for level 3, where more people doesn't mean more money.", group: "think" },
+  { title: "In the Club", emoji: "\u{1F9E9}", file: "in-the-club.html", ages: "7–10", blurb: "AND, OR and NOT with the world's real clubs: the UN, EU, NATO, G7 and more. Set logic in disguise — the thinking behind every line of code.", group: "coder" },
+  { title: "Higher or Lower", emoji: "\u{1F3AF}", file: "higher-or-lower.html", ages: "7–10", blurb: "Hunt a hidden number on the number line in as few guesses as you can. Split the middle every time and you've invented binary search.", group: "coder" },
+  { title: "Champion Challenge", emoji: "\u{1F3C6}", file: "champion-challenge.html", ages: "7–10", blurb: "The decathlon: the hardest questions from across the arcade in one run, ramping from warm-up to expert.", group: "coder" },
 
   { title: "Offside or Onside?", emoji: "\u{1F6A9}", file: "offside-or-onside.html", ages: "7–10", blurb: "Football: spot the offside, and see how the rule changed.", group: "rules" },
   { title: "How's That?", emoji: "\u{1F3CF}", file: "hows-that.html", ages: "7–10", blurb: "Cricket: spot the dismissal and learn LBW.", group: "rules" },
@@ -86,10 +90,11 @@ export default function PlayHub() {
   const learn = GAMES.filter((g) => g.group === "learn");
   const civics = GAMES.filter((g) => g.group === "civics");
   const think = GAMES.filter((g) => g.group === "think");
+  const coder = GAMES.filter((g) => g.group === "coder");
   const rules = GAMES.filter((g) => g.group === "rules");
   const older = GAMES.filter((g) => g.group === "older");
   return (
-    <main style={{ maxWidth: 960, margin: "0 auto", padding: "96px 20px 40px" }}>
+    <main style={{ maxWidth: 960, margin: "0 auto", padding: "32px 20px 40px" }}>
       <h1 style={{ fontSize: "2rem", fontWeight: 800, color: "#16324f", marginBottom: 6 }}>
         Play &amp; Learn
       </h1>
@@ -122,6 +127,16 @@ export default function PlayHub() {
         A full Year 3 and Year 4 maths workout: place value, times tables, fractions, shapes, time and charts, built from real teams, stadiums and skylines. Every new game has a ⭐ Year 3 and 🌟 Year 4 level.
       </p>
       <Grid games={think} />
+
+      <h2 style={{ fontSize: "1.4rem", fontWeight: 800, color: "#16324f", marginTop: 34 }}>
+        🧠 Think Like a Coder
+      </h2>
+      <p style={{ color: "#5b7b97", fontSize: ".95rem", margin: "4px 0 0" }}>
+        Games that secretly teach the big ideas behind computing: AND / OR / NOT logic with real
+        country clubs, binary search on the number line, and a mixed champion&apos;s gauntlet.
+        For players who have outgrown the easier games.
+      </p>
+      <Grid games={coder} />
 
       <h2 style={{ fontSize: "1.4rem", fontWeight: 800, color: "#16324f", marginTop: 34 }}>
         🟨 Be the Ref

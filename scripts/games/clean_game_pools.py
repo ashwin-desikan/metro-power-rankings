@@ -21,9 +21,10 @@ ROOT = os.path.abspath(sys.argv[1]) if len(sys.argv) > 1 else os.path.abspath(os
 DETAILS = os.path.join(ROOT, "public/data/details")
 POOLS = os.path.join(ROOT, "public/play/games/pools")
 VENUE = {"Notable Venues", "Historic Venues", "Major Venues"}
-# league-tables is NFL-only (clean by construction); mini rules-lab games have no teams
+# league-tables is NFL-only (clean by construction); mini rules-lab games have no teams;
+# higher-or-lower is a ROUNDS-based binary-search game (window.HLGAME, no team names)
 SKIP = {"league-tables.js", "ball-or-strike.js", "catch-or-no-catch.js",
-        "hows-that.js", "offside-or-onside.js"}
+        "hows-that.js", "offside-or-onside.js", "higher-or-lower.js"}
 
 def non_team_names():
     non, team = set(), set()
@@ -41,7 +42,16 @@ def non_team_names():
     return set(n for n in non if n not in team)
 
 def slice_pool(s):
-    i = s.find("const POOL="); j = s.find("[", i); d = 0
+    # Two authored formats: `const POOL=[...]` (older hand-built pools) and
+    # `window.GAME={..., "POOL": [...]}` (JSON pools from scripts/games builders).
+    i = s.find("const POOL=")
+    if i < 0:
+        i = s.find('"POOL":')
+    if i < 0:
+        i = s.find("POOL:")
+    if i < 0:
+        raise RuntimeError("no POOL array")
+    j = s.find("[", i); d = 0
     for k in range(j, len(s)):
         if s[k] == "[": d += 1
         elif s[k] == "]":

@@ -18,6 +18,15 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-06",
+    headline: "Play & Learn levels up: think like a coder",
+    items: [
+      "Four new games for players who've outgrown the easy tier: In the Club turns UN, EU and NATO membership into AND / OR / NOT logic; Higher or Lower turns the number line into binary search - first ideas behind coding.",
+      "How Many Times Bigger? teaches ratio and estimation on real city data, from simple comparisons to the level-3 flip: more people doesn't always mean more money.",
+      "Champion Challenge mixes the hardest questions from across the arcade into one ramping run, and the quiz games now ramp easy-to-hard inside every session.",
+    ],
+  },
+  {
     date: "2026-08-05",
     headline: "Live standings stay up even when the feed goes down",
     items: [

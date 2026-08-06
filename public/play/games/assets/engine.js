@@ -8,7 +8,28 @@
   var i = 0, soundOn = true, locked = false, actx = null;
 
   function sample(arr, n) { var a = arr.slice(); for (var k = a.length - 1; k > 0; k--) { var j = Math.floor(Math.random() * (k + 1)); var t = a[k]; a[k] = a[j]; a[j] = t; } return a.slice(0, Math.min(n, a.length)); }
-  var STOPS = sample(POOL, PICK);
+  /* Level ramp (2026-08-06): pools may tag items with a numeric `lvl`.
+     When present, sampling is stratified across levels and the run is ordered
+     easy -> hard. Pools without `lvl` behave exactly as before. */
+  function pickStops() {
+    var hasLvl = false, byLvl = {}, k;
+    for (k = 0; k < POOL.length; k++) { if (POOL[k].lvl != null) { hasLvl = true; break; } }
+    if (!hasLvl) return sample(POOL, PICK);
+    POOL.forEach(function (x) { var l = x.lvl || 0; (byLvl[l] = byLvl[l] || []).push(x); });
+    var keys = Object.keys(byLvl).map(Number).sort(function (a, b) { return a - b; });
+    var per = Math.floor(PICK / keys.length), extra = PICK - per * keys.length, out = [];
+    keys.forEach(function (l, i) {
+      var want = per + (i >= keys.length - extra ? 1 : 0);
+      out = out.concat(sample(byLvl[l], want));
+    });
+    if (out.length < PICK) {
+      var rest = POOL.filter(function (x) { return out.indexOf(x) < 0; });
+      out = out.concat(sample(rest, PICK - out.length));
+    }
+    out.sort(function (a, b) { return (a.lvl || 0) - (b.lvl || 0); });
+    return out.slice(0, Math.min(PICK, out.length));
+  }
+  var STOPS = pickStops();
 
   function tone(freq, dur, type, when, gain) {
     if (!soundOn) return;
@@ -69,7 +90,7 @@
     $("finale").className = "finale show"; $("finalStamps").textContent = STOPS.map(function (s) { return s.stamp; }).join(" "); buildPassport(); cheer(); confetti();
   }
   $("next").onclick = function () { i++; if (i >= STOPS.length) { finale(); return; } render(); window.scrollTo({ top: 0, behavior: "smooth" }); };
-  $("again").onclick = function () { i = 0; STOPS = sample(POOL, PICK); $("scene").style.display = ""; ["place", "q", "read", "opts", "toast", "reveal", "next"].forEach(function (id) { $(id).style.display = ""; }); $("finale").className = "finale"; render(); window.scrollTo({ top: 0 }); };
+  $("again").onclick = function () { i = 0; STOPS = pickStops(); $("scene").style.display = ""; ["place", "q", "read", "opts", "toast", "reveal", "next"].forEach(function (id) { $(id).style.display = ""; }); $("finale").className = "finale"; render(); window.scrollTo({ top: 0 }); };
   $("read").onclick = function () { var s = STOPS[i]; speak(s.place + ". " + s.q); };
   $("snd").onclick = function () { soundOn = !soundOn; $("snd").textContent = soundOn ? "🔊" : "🔇"; if (!soundOn && "speechSynthesis" in window) speechSynthesis.cancel(); };
 
