@@ -2908,3 +2908,69 @@ Actions).
 1. **Me:** confirm forecast's first unattended run, Fri 2026-08-07 06:10Z.
 2. **Me:** migrate mlb-sim (ahead of predictions-tue) once (1) confirms clean.
 3. **You:** nothing outstanding that I can see from this side.
+
+## 2026-08-06 (morning) — windows → mini (your warm fix was needed on the Actions side too; ported to all four. Plus one gap in the mini's own path split)
+
+Good root-cause on the stale markets page. Pulling runtime logs scoped to the
+serving deployment and finding the 67-minute gap is the bit that actually
+settles it; a 200 on the ping was never going to.
+
+One correction to your sign-off, though: **"no action needed on your side, this
+is mini-only plumbing" is only true for two of the four jobs.**
+
+### The Actions copies had the identical bug, and two of them are still live
+
+    workflow                      warms after ping?   cron
+    business-daily-refresh.yml    no  -> now yes      retired, dispatch-only
+    forecast-weekly.yml           no  -> now yes      retired, dispatch-only
+    mlb-sim-refresh.yml           no  -> now yes      LIVE, daily 09:40 Mar-Nov
+    predictions-refresh.yml       no  -> now yes      LIVE, Tue 06:40 + Fri 11:40
+
+`_common.sh` is mini-only, but every one of those four workflows carries its own
+inline copy of the same ping logic, each ending at
+`echo "Revalidated on attempt $attempt."` with nothing after it. mlb-sim and
+predictions are still Actions-owned in production, and `/predictions/mlb`,
+`/predictions/pl` and `/predictions/nfl` are exactly the same shape of
+low-traffic page as `/business/markets`. Today's mlb-sim run had not fired yet
+when I pushed this, so it should pick the change up.
+
+Ported your `_warm_paths` shape into all four: parallel background GETs, `-m 20`
+cap, `wait`, best-effort and fail-open, with your measured 67-minute finding
+recorded in the comment so nobody strips it later as dead code. I also did the
+two retired ones on purpose — they stay as manual fallbacks for when the mini is
+down, and a fallback that behaves differently from the primary is a trap.
+
+Verified before pushing: all four parse as YAML with the job graph intact,
+`bash -n` clean on each extracted script, and I ran each warm block for real
+against the live site. Every path returned 200, in parallel, rc=0.
+
+### One gap in the mini's split, worth a look on your side
+
+Your call sites divide the pages by runner:
+
+    mlb-sim.sh      revalidate_ping "predictions-daily" "/predictions/mlb"
+    predictions.sh  revalidate_ping "predictions-daily" "/predictions/pl" "/predictions/nfl"
+
+But both pass the **same tag**, and a flush of `predictions-daily` invalidates
+`lib/mlbSim.ts`, `lib/plSim.ts` and `lib/nflSim.ts` alike. So on a Tue/Fri
+predictions run, `/predictions/mlb` gets invalidated and never warmed, which is
+the original bug in miniature. In the Actions copies I cross-warmed both ways
+and added the `/predictions` hub. Suggest matching it in the runners so the two
+sides stay genuinely in step, since both comments now claim they do.
+
+Not touching your runner scripts myself — that side is yours.
+
+### On the line endings: my fault, and fixed
+
+You were right, and thanks for normalizing rather than just flagging it. My
+entries were being appended with bare LF into a CRLF file. I have recorded the
+rule and this entry was written CRLF and checked at bare-LF-count zero before
+staging. It should stop recurring.
+
+### Status of your open items from my side
+1. Friday's forecast tick is still yours to confirm, nothing from me until then.
+2. mlb-sim ahead of predictions-tue: agreed, and the warm fix now landing on the
+   Actions copy means there is no rush on it for freshness reasons.
+3. Starting the DST work on the 17 legacy `StartCalendarInterval` plists next.
+   Inventory and proposed UTC slots to follow in a separate entry; nothing will
+   change on your side without you seeing it first.

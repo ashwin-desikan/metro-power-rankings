@@ -89,6 +89,24 @@ jobs:
             if [ "$code" = "200" ]; then
               cat /tmp/reval.out; echo
               echo "Revalidated on attempt $attempt."
+              # revalidateTag() invalidates but does NOT regenerate: Vercel
+              # serves the OLD copy (cache=STALE) to the first request after
+              # the flush and rebuilds behind it, so only the request AFTER
+              # THAT sees fresh data. Measured 2026-08-06 on /business/markets,
+              # where a real visitor ate the stale hit 67 minutes later.
+              # /predictions/mlb is the same shape of low-traffic page, so warm
+              # it here and let this job take the hit. Best-effort, fail-open,
+              # parallel, 20s cap. Mirrors _warm_paths() in
+              # mac-mini-jobs/runners/_common.sh -- keep the two in step.
+              # NOTE: predictions-refresh.yml shares the predictions-daily tag
+              # but warms /predictions/pl and /predictions/nfl instead, because
+              # a flush of the tag invalidates all three.
+              for p in /predictions/mlb /predictions; do
+                ( wcode="$(curl -s -o /dev/null -m 20 -w '%{http_code}' \
+                    "https://rankings.citizenofnowhere.org$p")" || wcode=000
+                  echo "warm $p -> HTTP $wcode" ) &
+              done
+              wait
               exit 0
             fi
             echo "revalidate ping attempt $attempt returned HTTP $code"

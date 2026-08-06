@@ -129,6 +129,25 @@ jobs:
             if [ "$code" = "200" ]; then
               cat /tmp/reval.out; echo
               echo "Revalidated on attempt $attempt."
+              # revalidateTag() only marks the cache entry dirty; it does NOT
+              # regenerate it. Vercel serves the OLD copy (cache=STALE) to the
+              # first request after invalidation and regenerates behind it, so
+              # only the request AFTER THAT sees fresh content. Measured
+              # 2026-08-06: nobody hit /business/markets for 67 minutes after a
+              # confirmed-200 ping, so a real visitor ate the stale hit and saw
+              # yesterday's data. Warm the hub pages here so THIS job eats it.
+              # Best-effort and fail-open, same posture as the ping: parallel,
+              # capped at 20s each, a failure never fails the run. Mirrors
+              # _warm_paths() in mac-mini-jobs/runners/_common.sh -- keep the
+              # two in step. Detail pages under /business/currencies/<code> are
+              # deliberately NOT warmed: they have real traffic and the 6h ISR
+              # window covers a rare miss.
+              for p in /business /business/markets /business/currencies; do
+                ( wcode="$(curl -s -o /dev/null -m 20 -w '%{http_code}' \
+                    "https://rankings.citizenofnowhere.org$p")" || wcode=000
+                  echo "warm $p -> HTTP $wcode" ) &
+              done
+              wait
               exit 0
             fi
             echo "revalidate ping attempt $attempt returned HTTP $code"
