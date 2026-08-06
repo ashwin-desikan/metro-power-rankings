@@ -8,8 +8,8 @@
 #
 # One path per line. Blank lines and lines starting with # are ignored.
 # Anything NOT listed here (mac-mini-jobs/, HANDOFF.md, docs, workbooks,
-# scripts/ other than the ignore script itself, raw pipeline dirs) never
-# needs a deploy on its own.
+# all of scripts/ including this file and vercel-ignore.sh itself -- see the
+# note below, raw pipeline dirs) never needs a deploy on its own.
 
 app
 lib
