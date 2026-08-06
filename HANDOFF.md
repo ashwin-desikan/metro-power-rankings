@@ -3254,3 +3254,63 @@ leave both runners loaded, though. The race is on git, not on the data.
    will draft the next batch.
 
 Nothing here is urgent. 25 October is the deadline and we have the schema in.
+
+## 2026-08-06 (later afternoon) — mini → windows (activity-feed LIVE. 57/57 confirmed on the mini. jobs.toml was independently stale on the live side — found and fixed)
+
+Ashwin gave an explicit go on the activity-feed flip when I raised the "never
+leave both loaded overnight" warning with him directly, so did the whole
+sequence in one sitting rather than deferring.
+
+### Step 1: 57/57 confirmed on the mini's own Python
+
+Copied `dispatcher.py`, ran `--self-test`: 57 cases, all pass (mini's Python,
+not your 3.14 — now proven on both boxes). `--status` unchanged before any
+job flip, exactly the no-op you designed.
+
+### Found on the way: the live jobs.toml had drifted independently of today's work
+
+Diffed live against repo before copying yours in. It was stale beyond just
+today's additions — still read forecast's Action schedule as "retirement
+pending (windows pinged)", wrong since `caf4d8a60` this morning. The repo copy
+had been edited and the live copy never resynced after that specific change.
+Copied repo → live wholesale (safe: identical active-job set, only comments
++ the new commented stub differed) and re-ran `--self-test` + `--status`
+against the synced copy. Both clean. Might be worth diffing the two copies as
+step 0 of any dispatcher session, not just when a job-list edit is expected --
+this one sat silently wrong until someone read `--status` closely.
+
+### activity-feed: live, plist unloaded
+
+1. Hand-ran the exact invocation:
+   `/bin/bash ~/metro-mini-jobs/hc-run.sh activity-feed /bin/bash "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-activity-feed.sh"`.
+   `HC_PING_KEY` is configured, so this pinged the real tile, not a no-op.
+   Found real new activity (my own commits today hadn't been captured by this
+   morning's 03:30-local plist run yet), wrote 568 entries, committed + pushed
+   `1428279fd`, exit 0. Proves the `$HOME`-with-spaces path and the hc wrap on
+   the actual box.
+2. Uncommented the row in both `jobs.toml` copies, flipped the ROLLOUT STATE
+   comment, re-ran `--self-test` (still 57/57) and `--status` (showed
+   activity-feed as `due`, correctly — the hand-run isn't dispatcher state).
+3. `dispatcher.py --seed` — today's 02:30Z slot now reads `already-ran`, so
+   the next 10-min tick won't double-fire it.
+4. `launchctl unload ~/Library/LaunchAgents/com.citizenofnowhere.activity-feed.plist`,
+   confirmed gone from `launchctl list`. File left on disk, just unloaded, same
+   rollback posture as the Actions jobs.
+5. Committed + pushed `e78fd7683` (jobs.toml only; the data commit from the
+   hand-run is separate, `1428279fd`).
+
+**First unattended run: tomorrow, 2026-08-07 02:30Z.** I'll check it same as
+the other two Friday items already queued (forecast's first unattended tick,
+business-daily's first warm-path exercise) — three things to look at Friday
+morning now, not two.
+
+### Answering your $HOME question
+
+Caught by inspection, not live-exercised — nothing had been uncommented with
+that path before your fix landed, so there's no stale state or bad commit to
+clean up. Good catch regardless; it would have failed silently the moment
+anyone flipped this row without it.
+
+### Next
+Ready for the next batch whenever you want to draft it. No blast-radius
+preference from me — your call on ordering the remaining 13.
