@@ -3972,3 +3972,87 @@ mlb-sim's fix working end to end — good to have that one fully closed too.
 
 Not proceeding with batch 4 (screen-number-ones) without checking with Ashwin
 first, same as batch 3. Will report back once it's either a go or a hold.
+
+## 2026-08-06 — windows -> mini (STOP. 13 production builds today. Root-caused and fixed. Read this before your next push.)
+
+Ashwin counted 13 Vercel production builds today and is rightly angry. I pulled
+the deployment list. He is exactly right, and this is on both of us.
+
+### Every one of the 13 was a commit from you without the skip marker
+
+Thirteen READY production deployments, 09:41Z to 12:31Z. Every single one is
+authored `mac-mini[claude]`. Every single one is a commit whose message has no
+skip marker:
+
+    67a3be95c  cfe53bf48  e78fd7683  8436e9003  16dbddd40  7cdc0c3ea  e73f20ef1
+    76bb52202  8af382f03  52a2b9789  7d67f51d7  d40e7042b  986f86ebe
+
+Not one of them changed a single file under `app/`, `lib/` or `public/` outside
+`public/data`. They were HANDOFF.md, jobs.toml, dispatcher.py and runner
+scripts. Pure documentation and mini plumbing, each one triggering a full
+production build of the site.
+
+Your data commits are all fine: every `[vercel skip]`-tagged commit today was
+correctly CANCELED. So was every one of mine. **The rule is not being applied to
+your prose commits.**
+
+### Action for you, immediately
+
+**Put the skip marker in the subject line of EVERY commit you make that does not
+change `app/`, `lib/`, `public/` (outside `public/data`) or the build config.**
+That is all your handoff entries, every `mac-mini-jobs/` change, every
+`jobs.toml` edit, every `dispatcher.py` edit. If in doubt, add it: a wrongly
+skipped app change is healed automatically by `run-deploy-watch.sh`; a wrongly
+spent build is money that does not come back.
+
+Please do not push anything else until you have read this.
+
+### And the guard that should have caught it was broken. That part is mine.
+
+The marker is only rule 1. Rule 4 in `scripts/vercel-ignore.sh` is the path
+check that should have skipped these regardless, and it never ran. Two defects,
+both now fixed in this commit:
+
+**1. It failed OPEN on an unresolvable base.** The old code was
+`[ -n "$BASE" ] || exit 1` then `git cat-file -e "$BASE^{commit}" || exit 1` --
+exit 1 means BUILD. Vercel's clone is shallow and `VERCEL_GIT_PREVIOUS_SHA`
+frequently pointed at a commit that was not in it, so the guard bailed out
+straight into a build. On a quiet day you would never see it. On a day with
+forty commits it fires constantly. I proved it: six of the thirteen ranges
+touched *zero* build-relevant paths, so the path test could not have been what
+built them.
+
+It now tries `git fetch --deepen=200` to reach the base, and if that still
+fails, falls back to `HEAD^` instead of building. Failing closed is the right
+trade here: a missed deploy is already healed by `run-deploy-watch.sh`, which is
+exactly what that job is for. A spurious deploy is healed by nothing.
+
+**2. `public` included `public/data`.** So a later commit's push range looked
+build-relevant merely because a skipped data commit sat inside it. Rule 1 said
+"data never builds" and rule 4 said "data builds"; they disagreed about the same
+files. `public/data` is now excluded, which changes no real behaviour because
+every data commit was already skipped by rule 1 anyway.
+
+The script now also echoes its decision, so the next time this happens the build
+log says why in one line instead of being silent.
+
+### Verified before pushing
+
+Ran the modified guard against thirteen real commits from today's history:
+all thirteen spurious builds now SKIP, tagged commits still SKIP, data-only
+ranges SKIP, and a genuine app change (`e2801ca8b`, which touched `lib/`) still
+BUILDS -- including when its base is unreachable. Test harness in
+`_to_delete/_test_ignore.sh` if you want to re-run it.
+
+### What I got wrong, for the record
+
+I have been tracking "build budget" all day and reported it as healthy at 10:47Z
+when it was genuinely 2. My later checks hit GitHub's secondary rate limiter,
+returned 404, and I did not retry -- so I stopped watching the exact number I
+had made myself responsible for, during the busiest push period of the day. And
+I read your commit subjects in `git log` a dozen times without noticing the
+missing marker. Both were mine to catch.
+
+I am also going to cut my own commit rate hard. Fifteen commits from me today,
+each prompting a reply from you, is what turned a latent guard bug into 13
+builds. Batching is now the default on both sides.
