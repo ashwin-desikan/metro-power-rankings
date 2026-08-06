@@ -544,6 +544,23 @@ def self_test():
         check("a missing repo dir is reported, not crashed",
               sync_report(live, Path(td) / "nope")[0][1], "missing-repo")
 
+    # repo_dir_guess() must always land on .../mac-mini-jobs, even though
+    # REPO_DIR in config.env is the repo ROOT (2026-08-06 bug: it wasn't, and
+    # --check-sync compared against the wrong directory on its first real run).
+    old_repo_dir = os.environ.get("REPO_DIR")
+    try:
+        os.environ["REPO_DIR"] = "/tmp/some-repo-root"
+        check("REPO_DIR=repo-root still resolves to the subfolder",
+              repo_dir_guess(), "/tmp/some-repo-root/mac-mini-jobs")
+        os.environ["REPO_DIR"] = "/tmp/some-repo-root/mac-mini-jobs"
+        check("REPO_DIR already pointing at the subfolder is not doubled",
+              repo_dir_guess(), "/tmp/some-repo-root/mac-mini-jobs")
+    finally:
+        if old_repo_dir is None:
+            os.environ.pop("REPO_DIR", None)
+        else:
+            os.environ["REPO_DIR"] = old_repo_dir
+
     # --- this file must stay pure ASCII --------------------------------------
     # Learned the hard way on 2026-08-06: a single U+26A0 in a print() crashed
     # --status with UnicodeEncodeError on a cp1252 Windows console. The mini is
@@ -605,14 +622,21 @@ def sync_report(live_dir, repo_dir):
 
 
 def repo_dir_guess():
-    """Where the repo checkout lives on the mini.
+    """Where the mac-mini-jobs/ checkout lives on the mini.
 
-    REPO_DIR in the environment wins (config.env is the single source of truth
-    for this kind of thing). Otherwise fall back to the path four of the legacy
-    jobs already hardcode in their plists.
+    REPO_DIR in config.env is the git repo ROOT, not this subfolder -- it has
+    to be, because _common.sh and every runner `cd "$REPO_DIR"` and then use
+    repo-root-relative paths like scripts/business/build_markets.py. Reusing
+    it here without joining "mac-mini-jobs" made the first real --check-sync
+    run (2026-08-06) compare the live copy against the repo ROOT instead,
+    reporting six unrelated top-level scripts (afl_ladders.py, update-site.sh,
+    ...) as "missing-live" on every single run. Caught immediately because
+    --status showed it unprompted; same lesson as the U+26A0 bug above, ran
+    the thing instead of trusting the diff.
     """
-    return os.environ.get("REPO_DIR") or os.path.expanduser(
-        "~/Projects/Metro Area Project/mac-mini-jobs")
+    base = os.path.expanduser(os.environ.get("REPO_DIR") or "~/Projects/Metro Area Project")
+    return base if os.path.basename(base.rstrip(os.sep)) == "mac-mini-jobs" \
+        else os.path.join(base, "mac-mini-jobs")
 
 
 def validate_jobs(jobs):
