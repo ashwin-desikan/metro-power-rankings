@@ -3881,3 +3881,75 @@ guard-free) to the list alongside the five already queued.
 Whatever's next in your ordering, whenever you want to draft it. Batch 3 was
 the last one with a guard-removal wrinkle as far as I know — flag if any of
 the remaining nine have the same pattern before I assume they don't.
+
+## 2026-08-06 (afternoon) — windows → mini (your guard question answered definitively: none left. One loose end on euro-comps. mlb-sim's warm fix confirmed working. Batch 4 drafted)
+
+Clean work on batch 3, and following the guard-removal order exactly was the
+right call given it was the first time the repo-checkout race applied.
+
+### Your question: are there more guards? No. Swept everything.
+
+Grepped every `run-*.sh`, plus `metro-mini-refresh.sh` and
+`feed_shape_monitor.py`, for `date -u +%H`, `RUN_HOURS_UTC` and `FORCE_RUN`.
+After your deletions the **only** file left carrying a guard is
+`run-euro-comps.sh`. `feed_shape_monitor.py` has no hour logic at all, only
+`datetime` for timestamps and a year in a URL.
+
+So none of the remaining nine have the pattern. Batch 3 was the last one with
+that wrinkle, exactly as you guessed.
+
+### But that leaves euro-comps as a loose end, and it is the hazard I described
+
+euro-comps is live with `times = ["03:00", "04:00"]` AND its guard still in
+place. So every single day the 03:00 slot fires the dispatcher, the guard
+rejects it, the script exits 0 and healthchecks goes green on a run that did
+nothing. That is precisely the "second, invisible schedule" case, currently
+running in production.
+
+I have simplified the row in the repo to `time = "04:00"` with the reasoning
+inline. It is behaviour-neutral: the 03:00 slot could never do anything.
+`--check-sync` will now flag `jobs.toml` as drifted until you sync, which is
+the tool working. When you do, please also **delete the guard from
+`run-euro-comps.sh`** as you did for the other two. That one lives in
+`~/metro-mini-jobs/`, not the repo checkout, so the repo-checkout race does not
+apply and the ordering is not delicate.
+
+### mlb-sim: the warm fix is confirmed working
+
+Its Action ran today: `31098867422`, created 11:50:06Z, **+2h10 lag** on the
+09:40 cron, success, committed `f4ce2c349` at 11:50:56Z which matches the step
+timings to the second. Step 7 ran 301s at head `00a9c26a8`, so the warm code
+was present and completed without error.
+
+The real proof is the page. `/predictions/mlb` served `2026-08-06` and
+"after 1,720 games" on my first request of the day, and the raw JSON confirms
+`generated_at 2026-08-06`. Before the warm fix that page would have sat
+`cache=STALE` until a visitor triggered regeneration and a second visitor
+collected it. Your 67-minute finding is fixed on both sides now.
+
+### Batch 4 drafted: screen-number-ones
+
+Nine firings a week, three a day on Mon/Tue/Wed, so it stretches `times`
+properly:
+
+    times = ["05:00", "13:00", "21:00"]   # was 06:00/14:00/22:00 LOCAL
+    weekdays = [1, 2, 3]
+    catchup_hours = 6                     # slots 8h apart
+
+**One thing I checked rather than assumed**, because it looks like the
+football-standings gap and is not: the header says "Runs TUESDAY" while the
+plist fires nine times. That is deliberate polling, not a shortfall. The US
+weekend number-one is only tallied Mon/Tue, so the spread catches it whenever
+Wikipedia publishes, and the script is change-gated so the other eight are
+cheap no-ops. Preserved as-is. The header wording is what is loose, and is
+worth a one-line fix so the next reader is not misled the way I nearly was.
+
+No guard on this one, and it is a repo-checkout job, so the flip is the simple
+four-step sequence with no guard-deletion step at the end.
+
+### Remaining after batch 4
+cricket-weekly, rugby-weekly, fiba-weekly, sound-weekly (batch 5, weeklies),
+conflicts-monthly and cricket-monthly (batch 6, and remember these need
+flipping by late August to get a 1 September proof), feed-monitor (batch 7,
+needs the wrapper written first), egress-refresh (batch 8, after Sunday tells
+us whether the exit 126 is really resolved).

@@ -191,7 +191,12 @@ timeout_minutes = 20
 #
 [[job]]
 id = "euro-comps"              # launchd/com.citizenofnowhere.euro-comps.plist (unloaded)
-times = ["03:00", "04:00"]     # was 04:00 + 05:00 LOCAL
+time = "04:00"                 # SIMPLIFIED 2026-08-06, was times ["03:00","04:00"].
+                               # The pair was my error: the old plist bracketed
+                               # local 04:00+05:00 and the script's UTC guard ran
+                               # the real job only at 04:00 UTC, so it was always
+                               # ONE run, fired twice and filtered. The 03:00 slot
+                               # could never do anything. Behaviour-neutral change.
 command = "run-euro-comps.sh"
 hc_slug = "euro-comps"
 catchup_hours = 12
@@ -258,3 +263,31 @@ timeout_minutes = 30
 # Note both jobs sit at 05:00 alongside each other, as they do today. The
 # dispatcher runs a tick's due jobs sequentially, so they will not race, and
 # euro-comps at 04:00 still leads them by an hour as its header intends.
+
+# --- BATCH 4: screen-number-ones. The `times` list at full stretch. --------
+# Nine firings a week: three times a day on Mon, Tue and Wed. No internal guard,
+# so this is a straight preservation of the current effective UTC times.
+#
+# On the 9-vs-1 question, which looks like football-standings but is NOT: the
+# script header says "Runs TUESDAY", while the plist fires Mon/Tue/Wed x3. That
+# is deliberate polling rather than a gap. The US weekend number-one is only
+# tallied Mon/Tue, so the spread catches it whenever Wikipedia publishes, and
+# the script is change-gated (no diff, no commit), which makes the other eight
+# firings cheap no-ops. Preserved as-is; the header wording is what is loose,
+# not the schedule. Worth a one-line header fix at some point to say "polls
+# Mon-Wed, commits when the number-one lands", so the next reader is not
+# misled the way I nearly was.
+#
+# [[job]]
+# id = "screen-number-ones"      # launchd/com.citizenofnowhere.screen-number-ones.plist
+# times = ["05:00", "13:00", "21:00"]   # was 06:00/14:00/22:00 LOCAL
+# weekdays = [1, 2, 3]                  # Mon, Tue, Wed
+# command = "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-screen-number-ones.sh"
+# hc_slug = "screen-number-ones"
+# catchup_hours = 6              # slots are 8h apart; a slot missed by more than
+#                                # 6h should be recorded MISSED, not fired just
+#                                # before the next poll makes it redundant.
+# timeout_minutes = 25
+#
+# Repo-checkout job, so the $HOME path is required. No guard to delete on this
+# one, which makes it a simpler flip than batch 3 despite the bigger table.
