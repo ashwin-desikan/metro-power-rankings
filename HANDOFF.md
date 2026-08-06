@@ -2857,3 +2857,54 @@ mlb-sim once forecast's Friday tick is confirmed clean.
 2. **Me:** migrate mlb-sim (ahead of predictions-tue) once (1) confirms clean.
 3. **You:** nothing outstanding that I can see from this side — shout if
    that's wrong.
+
+## 2026-08-06 (morning) — mini → windows (business-daily: revalidate ping succeeds, page still stale for over an hour — root-caused and fixed)
+
+Ashwin flagged the markets page still reading "as of 2026-08-05" this morning
+well after business-daily's push. Ran it down before touching anything.
+
+**Not the rotated secret.** The 05:52Z run's `dispatcher.log` shows the ping
+got `{"ok":true,"tag":"business-daily"}` on attempt 1 at 05:57:39 UTC (the
+log's own bracketed timestamps are local BST, not UTC — worth normalizing at
+some point, tripped me up for a minute). A hand re-run with the current
+`config.env` secret also came back 200. Two independent 200s with the live
+secret; the rotation theory is dead.
+
+**Actual cause: `revalidateTag()` doesn't regenerate, it only invalidates.**
+Pulled Vercel runtime logs for `/business/markets` scoped to the serving
+deployment. Zero requests to that path between the 05:57:39 ping and 07:04:37
+UTC. That one request — right when Ashwin checked — came back
+`cache=STALE`: Vercel served the old cached HTML while regenerating in the
+background, and nobody hit the page again to collect the fresh copy. A ping
+succeeding is necessary but not sufficient; somebody has to make the *next*
+request too, and on a low-traffic page like this one that can sit for over an
+hour.
+
+**Fix, committed and pushed (`67a3be95c`):** `revalidate_ping()` in
+`_common.sh` now takes optional `warm_path` args and fires parallel,
+best-effort GETs at them right after a successful ping, so the job eats its
+own stale-while-revalidate hit instead of a visitor. Fail-open, same posture
+as the ping itself — a warm failing doesn't fail the run, 6h ISR is still the
+backstop. Wired up the hub page(s) per tag, not every derived page:
+
+- `business-daily` → `/business`, `/business/markets`, `/business/currencies`
+- `forecast-weekly` → `/elections/forecast`, `/predictions`
+- `predictions-daily` → `/predictions/mlb` (mlb-sim.sh), `/predictions/pl` +
+  `/predictions/nfl` (predictions.sh)
+
+Skipped the 20 currency detail pages under business-daily on purpose — real
+traffic there, and the 6h backstop covers a rare miss; hardcoding all 20 codes
+into a runner script felt like the wrong place to own that list.
+
+Verified `_warm_paths` directly against live URLs (200s, ran in parallel) and
+ran a full `DRY_RUN=1 business-daily.sh` end to end to exercise the new
+call-site signature — no errors, hits the DRY_RUN skip path correctly before
+ever calling `_warm_paths`. Live copy at `~/metro-mini-jobs/runners/` already
+matches the repo. Takes effect on tomorrow's 05:50Z run; no action needed on
+your side, this is mini-only plumbing (`_common.sh` isn't mirrored to
+Actions).
+
+### Open items unchanged from my last entry
+1. **Me:** confirm forecast's first unattended run, Fri 2026-08-07 06:10Z.
+2. **Me:** migrate mlb-sim (ahead of predictions-tue) once (1) confirms clean.
+3. **You:** nothing outstanding that I can see from this side.
