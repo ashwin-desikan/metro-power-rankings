@@ -4512,3 +4512,67 @@ api-football 429s given the 4x increase; egress-refresh Sunday 09:00 UTC.
 Batch 4 (screen-number-ones) is drafted in jobs.toml and still needs flipping.
 Housekeeping: four football_lookup_bak_* tables worth pruning; cross-country
 duplicate api_name "Noah Jurmala" (Latvia/Armenia).
+
+## 2026-08-06 (evening) — mini → windows (three of your five open items checked from here)
+
+Read the edge-request incident writeup in full. Big session — worked through
+your explicit "open items for the mini" list.
+
+### 1. run-deploy-watch.sh: confirmed live, no divergence
+
+Checked whether it's a repo-checkout job or has a separate ~/metro-mini-jobs/
+copy that could be running something stale. It's the former: the plist calls
+"$HOME/Projects/Metro Area Project/mac-mini-jobs/run-deploy-watch.sh" directly,
+same shape as activity-feed/football-standings/gap-league-watch. No divergent
+copy exists at all. Your edit is live the moment `git pull` lands, same as the
+other repo-checkout jobs. Confirmed from /tmp/deploy-watch.out: it correctly
+tracked the site through 986f86ebe → 1c135d5bc → 3b6a60d5d as each became
+live, no errors in stderr.
+
+### 2. Prefetch fix: holding up under real volume
+
+Checked Vercel runtime logs for the last 30 minutes, grouped by path. /me
+doesn't appear anywhere in the top 25 busiest paths — it was the single
+busiest path on the whole site before the fix, by a wide margin. Real logs
+timed out when I tried to query /me or .segments specifically (crawl volume is
+still high enough that full-text search across the window is slow), but the
+group_by result is unambiguous on its own.
+
+### 3. GitHub Actions test workflow: confirmed pure infra, not code, re-ran
+
+Checked both failing runs (3b6a60d5d and the close-out commit 9f8bc1952).
+Same shape both times: "test" job fails at "Set up job" with "Bad Gateway" /
+"Failed to resolve action download info" / "Service Unavailable" — before
+checkout ever runs. vercel-ignore-guard, same commit, same pinned checkout
+SHA, either passed clean or is still queued — never failed the same way. This
+is GitHub's action-resolution service, not our code, matching what you found
+locally (Vitest 26/26, table-scroll OK).
+
+Re-ran 3b6a60d5d's failed job (`gh run rerun 31114520120 --failed`) — it's
+queued as of this writing, GitHub's runner availability looks constrained
+right now, not just the one commit. Tried the close-out commit's run too
+(31118656774) but it can't be re-run yet: its own vercel-ignore-guard job was
+still in_progress after 11+ minutes when the normal runtime is ~47s, so the
+whole run isn't in a rerun-able state. Will check both again once GitHub's
+infra recovers rather than keep polling now.
+
+### 4 & 5 (Web Analytics, beacon counting bots): nothing actionable from here
+
+Noticed Ashwin has a PR open from Vercel's own agent, "feat(analytics): add
+Vercel Web Analytics" on `vercel-agent/enable-web-analytics`, branch not
+main — looks like he's already working item 4 through that channel. Nothing
+for me to do until it merges. Item 5 (beacon counting bots, top_metros
+contaminated) is real work you already scoped as not-scoped-today; agreed,
+nothing to add.
+
+### Housekeeping noted, not yet done
+Four football_lookup_bak_* tables and the Latvia/Armenia "Noah Jurmala"
+duplicate — on my list, not urgent, will get to them alongside the next
+migration batch unless you want them sooner.
+
+### One more: your edge-request entry landed with bare LF
+
+Same pattern as the 5507da5d0 entry from earlier today — 225 bare-LF lines,
+all inside your "edge-request incident" writeup. Normalized the whole file
+back to CRLF in this commit; no content changed. Worth a second look at
+whatever you're composing these in, since this is the second time today.
