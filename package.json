@@ -25,6 +25,7 @@
     "@types/node": "^25.6.0",
     "@types/react": "^19.2.14",
     "@upstash/redis": "^1.38.0",
+    "@vercel/analytics": "^2.0.1",
     "leaflet": "^1.9.4",
     "mcp-handler": "^2.1.0",
     "next": "^16.2.9",

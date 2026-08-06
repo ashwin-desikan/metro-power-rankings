@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import SiteNav from "./SiteNav";
 import VisitBeacon from "./VisitBeacon";
@@ -138,6 +139,7 @@ export default function RootLayout({
         <VisitBeacon />
         {children}
         <BackToTop />
+        <Analytics />
       </body>
       <GoogleAnalytics gaId="G-8BQVX0NFZZ" />
     </html>
