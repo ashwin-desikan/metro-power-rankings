@@ -123,8 +123,8 @@ timeout_minutes = 45
 # hour against UTC when the clocks go back on 25 October 2026.
 #
 # Rollout state:
-#   activity-feed   NOT YET. Its plist still owns it. Row below is ready.
-#   the other 13    not drafted yet; activity-feed goes first as the proof.
+#   activity-feed   LIVE on the mini since 2026-08-06. Plist unloaded.
+#   the other 13    not drafted yet; activity-feed went first as the proof.
 #
 # ⚠️ THE FLIP IS NOT THE SAME SHAPE AS THE ACTIONS ONE. For those, both
 # runners live briefly and the overlap is harmless, because GitHub's 1-4h
@@ -134,13 +134,13 @@ timeout_minutes = 45
 # working tree. So uncomment the row below and `launchctl unload` the plist
 # in the SAME sitting, having proved the invocation by hand first.
 
-# [[job]]
-# id = "activity-feed"           # launchd/com.citizenofnowhere.activity-feed.plist
-# time = "02:30"                 # was 03:30 LOCAL, which is 02:30 UTC today
-# command = "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-activity-feed.sh"
-# hc_slug = "activity-feed"      # keep the existing healthchecks tile
-# catchup_hours = 14
-# timeout_minutes = 20
+[[job]]
+id = "activity-feed"           # launchd/com.citizenofnowhere.activity-feed.plist (unloaded)
+time = "02:30"                 # was 03:30 LOCAL, which is 02:30 UTC today
+command = "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-activity-feed.sh"
+hc_slug = "activity-feed"      # keep the existing healthchecks tile
+catchup_hours = 14
+timeout_minutes = 20
 #
 # Notes for whoever flips this:
 #  - The command is a $HOME path ON PURPOSE. Unlike most jobs, this one runs
