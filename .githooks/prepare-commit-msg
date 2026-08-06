@@ -50,4 +50,19 @@ if git diff --cached --name-only -- $BUILD_PATHS 2>/dev/null | grep -q .; then
   exit 0
 fi
 
-printf '\n[vercel skip]\n' >> "$MSG_FILE"
+# Append to the SUBJECT LINE itself, matching every real tag observed in
+# this repo's history (always inline at the end of line 1, never a separate
+# trailing paragraph). BUG CAUGHT LIVE 2026-08-06, by the layer-2 post-commit
+# hook: an earlier draft did `printf '\n[vercel skip]\n' >> "$MSG_FILE"`,
+# which puts the tag on its OWN line in the body -- invisible to
+# vercel-ignore.sh's subject-line-only check (the very check added earlier
+# today to close a different bug), so the auto-tag would only ever have
+# "worked" by coincidence, whenever rule 4's path check happened to agree.
+# Plain stream sed (no -i) so this stays portable between the mini's BSD sed
+# and Windows's GNU-flavoured one -- BSD requires `-i ''`, GNU doesn't, and
+# getting that wrong here would be exactly the kind of box-specific breakage
+# this whole file exists to eliminate.
+{
+  head -1 "$MSG_FILE" | sed 's/$/ [vercel skip]/'
+  tail -n +2 "$MSG_FILE"
+} > "$MSG_FILE.tmp" && mv "$MSG_FILE.tmp" "$MSG_FILE"
