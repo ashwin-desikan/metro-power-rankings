@@ -31,5 +31,9 @@ commit_paths "Auto: refresh PL + NFL prediction models [vercel skip]" \
   public/data/nfl-sim.json \
   public/data/nfl-predictions.json
 
-revalidate_ping "predictions-daily" "/predictions/pl" "/predictions/nfl"
+# /predictions/mlb is warmed by mlb-sim.sh, which shares the predictions-daily
+# tag -- a flush here invalidates all three, so include it too rather than
+# leave it cold on Tue/Fri (the gap windows flagged 2026-08-06). Mirrors
+# predictions-refresh.yml -- keep the two in step.
+revalidate_ping "predictions-daily" "/predictions/pl" "/predictions/nfl" "/predictions/mlb" "/predictions"
 note "done"
