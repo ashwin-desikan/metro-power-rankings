@@ -5,12 +5,16 @@
 # writes public/data/football/live-*.json and commits them with [vercel skip] (ISR from GitHub
 # raw, so NO Vercel build -- vercel.json's ignoreCommand short-circuits on the [vercel skip] tag).
 #
-# Scheduled 4x/day at 05:00, 11:00, 17:00, 23:00 UTC (05:00 after run-euro-comps at
-# 04:00, to spread the api-football load).
-# launchd fires in LOCAL time, so the plist wakes this twice per target hour (e.g. both
-# 05:00 and 06:00 local); the UTC guard below runs the real job only at those UTC hours,
-# correct year-round across the GMT/BST switch. If the mini is NOT on UK time, change the
-# plist Hours to bracket your local target UTC hours.
+# Scheduled 4x/day at 05:00, 11:00, 17:00, 23:00 UTC by mac-mini-jobs/jobs.toml (dispatcher.py),
+# which owns the schedule -- 05:00 after run-euro-comps at 04:00, to spread the api-football load.
+#
+# RESTORED 2026-08-06 (Ashwin's call): the old plist only ever reached the 05:00 UTC slot (its
+# local 05:00+06:00 bracket, filtered by a guard that used to live here, could never reach 11:00/
+# 17:00/23:00), so this header's documented cadence had never actually been delivered -- the site
+# ran on 1x/day standings, not 4x. No internal hour guard now: it was a second, invisible schedule
+# that a jobs.toml edit could be silently overridden by, the exact failure this migration exists
+# to prevent. If 429s or quota warnings show up, step down jobs.toml's `times` to
+# ["05:00", "17:00"] rather than reintroducing a guard here.
 set -uo pipefail
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 REPO="$HOME/Projects/Metro Area Project"; PY="$REPO/.venv/bin/python"
@@ -19,13 +23,6 @@ log(){ echo "$(date +%T) $*" | tee -a "$LOG"; }
 [ -f "$HOME/.config/metro-supabase/env" ] && { set -a; source "$HOME/.config/metro-supabase/env"; set +a; }
 push(){ [ -n "${NTFY_TOPIC:-}" ] || return 0; curl -s -o /dev/null -H "Title: $1" -H "Priority: $2" -H "Tags: $3" -d "$4" "https://ntfy.sh/$NTFY_TOPIC" || true; }
 fail(){ log "ERROR: $1"; push "[ALERT] football-standings FAILED -- $DATE" urgent rotating_light "$1"; exit 1; }
-
-# --- UTC guard (see header); FORCE_RUN=1 bypasses for manual tests ---
-RUN_HOURS_UTC="05 11 17 23"
-if [ "${FORCE_RUN:-0}" != "1" ] && [[ " $RUN_HOURS_UTC " != *" $(date -u +%H) "* ]]; then
-  log "guard: UTC hour $(date -u +%H) not in {$RUN_HOURS_UTC}; skipping (set FORCE_RUN=1 to override)"
-  exit 0
-fi
 
 log "=== football-standings start ($DATE) ==="
 [ -n "${APISPORTS_KEY:-}" ]      || fail "APISPORTS_KEY not set (expected in ~/.config/metro-supabase/env)"

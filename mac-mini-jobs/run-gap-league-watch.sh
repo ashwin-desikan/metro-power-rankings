@@ -3,9 +3,11 @@
 # not yet available for 2026-27 (scripts/apifootball/leagues_pending.json) and records coverage
 # state in Supabase (football_league_watch). Writes ONLY to Supabase -- no git commit, no build.
 #
-# Scheduled daily 05:00 UTC. launchd fires in LOCAL time, so the plist wakes this at BOTH 05:00
-# and 06:00 local; the UTC guard runs the real job only at 05:00 UTC (GMT/BST safe).
-# If the mini is NOT on UK time, change the plist Hours to bracket your local 05:00 UTC.
+# Scheduled daily 05:00 UTC by mac-mini-jobs/jobs.toml (dispatcher.py), which owns the schedule.
+# No internal hour guard: one was here through 2026-08-06 to filter the old plist's local-time
+# 05:00+06:00 bracket down to one real UTC run, DST-proofing it against launchd's local-time
+# StartCalendarInterval. The dispatcher's schedule is UTC-native, so that trick is gone rather
+# than kept as a second, invisible schedule a jobs.toml edit could be silently overridden by.
 set -uo pipefail
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 REPO="$HOME/Projects/Metro Area Project"; PY="$REPO/.venv/bin/python"
@@ -14,12 +16,6 @@ log(){ echo "$(date +%T) $*" | tee -a "$LOG"; }
 [ -f "$HOME/.config/metro-supabase/env" ] && { set -a; source "$HOME/.config/metro-supabase/env"; set +a; }
 push(){ [ -n "${NTFY_TOPIC:-}" ] || return 0; curl -s -o /dev/null -H "Title: $1" -H "Priority: $2" -H "Tags: $3" -d "$4" "https://ntfy.sh/$NTFY_TOPIC" || true; }
 fail(){ log "ERROR: $1"; push "[ALERT] gap-league-watch FAILED -- $DATE" urgent rotating_light "$1"; exit 1; }
-
-# --- 05:00 UTC guard (see header); FORCE_RUN=1 bypasses for manual tests ---
-if [ "${FORCE_RUN:-0}" != "1" ] && [ "$(date -u +%H)" != "05" ]; then
-  log "guard: UTC hour $(date -u +%H) != 05; skipping (set FORCE_RUN=1 to override)"
-  exit 0
-fi
 
 log "=== gap-league-watch start ($DATE) ==="
 [ -n "${APISPORTS_KEY:-}" ]      || fail "APISPORTS_KEY not set (expected in ~/.config/metro-supabase/env)"
