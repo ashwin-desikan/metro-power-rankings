@@ -47,10 +47,10 @@ const GAMES: Game[] = [
   { title: "Champion Challenge", emoji: "\u{1F3C6}", file: "champion-challenge.html", ages: "7–10", blurb: "The decathlon: the hardest questions from across the arcade in one run, ramping from warm-up to expert.", group: "coder", level: 3, topics: ["logic-coding", "sports", "geography"] },
 
   // ---- Be the Ref
-  { title: "Offside or Onside?", emoji: "\u{1F6A9}", file: "offside-or-onside.html", ages: "7–10", blurb: "Football: spot the offside, and see how the rule changed.", group: "rules", level: 2, topics: ["rules", "sports"] },
-  { title: "How's That?", emoji: "\u{1F3CF}", file: "hows-that.html", ages: "7–10", blurb: "Cricket: spot the dismissal and learn LBW.", group: "rules", level: 2, topics: ["rules", "sports"] },
-  { title: "Ball or Strike?", emoji: "\u{26BE}", file: "ball-or-strike.html", ages: "7–10", blurb: "Baseball: call the strike zone and the basics.", group: "rules", level: 2, topics: ["rules", "sports"] },
-  { title: "Catch or No Catch?", emoji: "\u{1F3C8}", file: "catch-or-no-catch.html", ages: "7–10", blurb: "NFL: make the catch ruling and learn the basics.", group: "rules", level: 2, topics: ["rules", "sports"] },
+  { title: "Offside or Onside?", emoji: "\u{1F6A9}", file: "offside-or-onside.html", ages: "7–10", blurb: "You\u2019re the linesman: read the freeze-frame against the last defender and raise the flag. The yellow line proves every call.", group: "rules", level: 2, topics: ["rules", "sports"] },
+  { title: "How's That?", emoji: "\u{1F3CF}", file: "hows-that.html", ages: "7–10", blurb: "HOWZAT?! Watch the delivery, raise the finger or shake it off, then let the DRS-style ball-tracking prove your call. Bowled, caught behind, LBW and the outside-leg rule.", group: "rules", level: 2, topics: ["rules", "sports"] },
+  { title: "Ball or Strike?", emoji: "\u{26BE}", file: "ball-or-strike.html", ages: "7–10", blurb: "You\u2019re the umpire behind the plate: watch each pitch fly in and call the zone \u2014 corners and edges count. Three strikes is an out, four balls a walk.", group: "rules", level: 2, topics: ["rules", "sports"] },
+  { title: "Catch or No Catch?", emoji: "\u{1F3C8}", file: "catch-or-no-catch.html", ages: "7–10", blurb: "Sideline freeze-frames: two feet in, toe-taps, a foot on the line, bobbles and surviving the ground. Rule it like an NFL referee.", group: "rules", level: 2, topics: ["rules", "sports"] },
 
   // ---- Older fans
   { title: "Where's the Music From?", emoji: "\u{1F3B5}", file: "music-from.html", ages: "9+", blurb: "Match famous bands and singers to the city they came from.", group: "older", level: 2, topics: ["music", "geography"] },

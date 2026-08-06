@@ -24,7 +24,7 @@ export const RELEASES: Release[] = [
       "Four new games for players who've outgrown the easy tier: In the Club turns UN, EU and NATO membership into AND / OR / NOT logic; Higher or Lower turns the number line into binary search - first ideas behind coding.",
       "How Many Times Bigger? teaches ratio on real city data, Champion Challenge mixes the arcade's hardest questions into one ramping run, and the maths core four gain a rocket-grade Expert level with a 60-second blitz.",
       "Champions Duel now spans 459 real finals across eight competitions - Champions League, World Cup, Euros, Super Bowl, NBA Finals, World Series, Stanley Cup - and Champions gains an Expert mode that flips its questions.",
-      "The games hub is rebuilt around challenge-level and topic filters with a surprise-me button; the easiest games retire to a little-kids corner inside the classic view.",
+      "Be the Ref goes fully visual - call the strike zone pitch by pitch, judge DRS-style lbw reviews and sideline toe-taps - and the hub gains challenge and topic filters, with the easiest games in a little-kids corner.",
     ],
   },
   {
