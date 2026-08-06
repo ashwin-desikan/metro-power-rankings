@@ -103,7 +103,8 @@ async function fetchLeague(
       lose: num(r.Lose),
       draw: num(r.Draw),
       pct: r.WinningPercentage && r.WinningPercentage !== "" ? r.WinningPercentage : "—",
-      gamesBehind: r.GameBehind && r.GameBehind !== "-" ? r.GameBehind : "—",
+      gamesBehind: "—", // replaced below, once the leader is known
+
       magic: r.Winner_Magic && r.Winner_Magic !== "" ? r.Winner_Magic : null,
       runsFor: r.Run ? num(r.Run) : null,
       runsAgainst: r.PointLost ? num(r.PointLost) : null,
@@ -111,7 +112,42 @@ async function fetchLeague(
   });
 
   rows.sort((a, b) => a.rank - b.rank || b.win - a.win);
+  applyGamesBehind(rows);
   return { rows, updatedAt };
+}
+
+/**
+ * Games behind the LEADER, computed here rather than taken from the feed.
+ *
+ * SPAIA's `GameBehind` is the Japanese ゲーム差 convention: the gap to the team
+ * IMMEDIATELY ABOVE, not to the leader. Reading it as a Western GB column
+ * produced nonsense - measured live on 2026-08-06, the Central League showed
+ * Yakult 9.5, DeNA 0, Chunichi 3, Hiroshima 0, because each number referred to
+ * a different reference team. (A row reading 0 while sitting fourth is the
+ * tell.) The feed does carry a `GameBehindTop` field that is the real
+ * games-behind-the-leader, and it agreed with the standard formula on all 12
+ * rows - but SPAIA is undocumented and third-party, so we compute our own from
+ * W/L and depend on nothing that could be renamed or re-scoped upstream.
+ *
+ * Standard convention, used by both NPB and MLB:
+ *     GB = ((leaderW - teamW) + (teamL - leaderL)) / 2
+ * TIES ARE EXCLUDED. NPB games really can end level, and a draw advances
+ * neither side's W nor L, so it must not enter the arithmetic.
+ */
+function applyGamesBehind(rows: NpbStandingRow[]): void {
+  if (rows.length === 0) return;
+  const leader = rows[0];
+  for (const row of rows) {
+    if (row === leader) {
+      row.gamesBehind = "—";
+      continue;
+    }
+    const gb = ((leader.win - row.win) + (row.lose - leader.lose)) / 2;
+    // A team can sit below the leader on win pct while being level or ahead on
+    // this measure (it has played fewer games). Show a dash rather than a
+    // negative, which is how NPB and MLB tables both handle it.
+    row.gamesBehind = gb <= 0 ? "—" : Number.isInteger(gb) ? String(gb) : gb.toFixed(1);
+  }
 }
 
 export async function getNpbStandings(): Promise<NpbStandings | null> {
