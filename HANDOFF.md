@@ -4523,3 +4523,97 @@ Migration closed. Still open on the dispatcher: feed-monitor (needs a wrapper),
 egress-refresh (Sunday health confirmation), conflicts-monthly and cricket-monthly
 (the `days` key flip by late August for a 1 September proof).
 
+
+## 2026-08-07 (evening) -- mini -> windows (legacy-launchd batch 6+7: feed-monitor, conflicts-monthly, cricket-monthly LIVE; egress-refresh diagnostic, not migrated)
+
+Ashwin asked for the remaining open DST-MIGRATION.md work. Three of the four
+moved; the fourth is deliberately still parked, per the plan you both wrote.
+
+### feed-monitor, conflicts-monthly, cricket-monthly: all live, plists unloaded
+
+`649dde505`, pushed. feed-monitor needed `run-feed-monitor.sh` written first
+(the only one of the 14 whose plist ran an inline `bash -lc` string rather
+than a file) -- carries the exact inline command as a tracked file, symlinked
+into ~/metro-mini-jobs/. Real hand-run: all 16 shape checks green, including
+the two Substack checks from earlier today.
+
+conflicts-monthly and cricket-monthly prove the `days` key. Flipped now
+rather than waiting for 1 September -- DST-MIGRATION.md's own warning is that
+monthly jobs only get a real unattended proof on the 1st, so left any later
+they would hit 25 October never having fired from the dispatcher for real.
+Both DRY_RUN + real hand-run clean. One thing worth recording: cricket-
+monthly's DRY_RUN only gates the derived portal-JSON commit, not the
+Supabase rankings write (append-only, validation-gated by the script's own
+design) -- the dry run's write re-baselined 124 rows for real (7 teams' July
+ODI ratings had drifted from late in-period matches landing after the month
+was first stored). That is the script working as intended, not a side
+effect I caused; the follow-up real run correctly found "Validation OK,
+nothing to append" and committed the now-settled portal JSON.
+
+Both real commits (conflicts.json, cricket portal JSON) tripped the post-
+commit hook's MISMATCH check. Checked both before calling them noise:
+lib/conflicts.ts and lib/cricket.ts already read via runtime fetch /
+loadLiveJson (cricket.ts via this morning's ISR conversion) -- correct false
+positives from the static path list, not real staleness. Worth naming since
+it is exactly the class of bug from this morning, so I did not want to wave
+it through on assumption twice in one day.
+
+jobs.toml: --self-test 79/79 repo, 78/78 live, --check-sync clean. All three
+plists unloaded in the same sitting as the jobs.toml flip. Seeded --
+conflicts-monthly/cricket-monthly correctly resolved to 08-01 (already
+happened this month), not today.
+
+### egress-refresh: diagnosed, not migrated -- and a near-miss worth flagging
+
+Left alone on purpose, per DST-MIGRATION.md ("let Sunday 9 August settle
+whether it is healthy first"). Did a read-only diagnostic pass instead of
+migrating it blind:
+
+- Confirmed the exit 126 is a real, reproducible exec() failure: `/bin/bash:
+  .../metro-mini-refresh.sh: Permission denied` / `cannot execute: Undefined
+  error: 0`, both historical runs (`runs=2`, `last exit code=126` per
+  `launchctl print`).
+- Ruled out every POSIX-level cause I could check: file permissions
+  (rwxr-xr-x, correct), ownership, ACLs (only the standard home-directory
+  deny-delete/deny-writeextattr, unrelated), quarantine xattr (none, only a
+  benign com.apple.provenance), UID match between my shell and the agent's
+  domain (both 501/ashwindesikan, confirmed via `launchctl print
+  gui/501/...`), and an unset-HOME theory (would produce "No such file or
+  directory", not "Permission denied" -- tested and ruled out explicitly).
+- Direct exec of the identical absolute path, both via the repo file and via
+  the exact ~/metro-mini-jobs/ symlink, succeeded cleanly from an
+  interactive shell as the same user.
+- No TCC/sandboxd denial found in the retained unified log around the exact
+  failure timestamp (2026-08-02 10:00:03), though the log may simply have
+  rotated past debug-level entries for a 5-day-old event -- inconclusive,
+  not a clean negative.
+
+Best hypothesis, not confirmed: a macOS Privacy & Security (TCC) restriction
+specific to launchd-spawned background processes, distinct from an
+interactive-shell exec as the same UID. That is a System Settings fix, not a
+code fix, and not something I can grant myself. If you have a faster way to
+confirm or rule this out, or Ashwin wants to check Privacy & Security ->
+Full Disk Access before Sunday, that would settle it before the natural
+09:00Z slot rather than after a third silent failure.
+
+**Near-miss worth naming plainly.** While testing exec via the symlink path
+interactively, the command was NOT `--help`-gated the way I intended -- the
+script has no such flag, so it ignored the argument and started running for
+real (self-tests began executing). I had it piped through `head -5`; the
+pipe closing killed it via SIGPIPE within about a second, before it reached
+any git/commit step. Checked immediately after: no new commit, no new push,
+no new log file under ~/metro-mini-jobs/logs/ -- confirmed nothing was
+written. But it was luck (the SIGPIPE timing), not design, that stopped it
+before a live civic-data refresh outside the planned Sunday validation
+window. Should have used `DRY_RUN=1` and no pipe for that test regardless of
+which path I was probing. Recording this so the same mistake does not repeat
+on either side of this project -- testing an unhealthy job's execution path
+is not the same as testing its logic, and the former still needs the same
+DRY_RUN discipline as everything else.
+
+### Status
+
+github-to-mini-migration: closed (prior entry). legacy-launchd: 17 of 18
+jobs live on the dispatcher (activity-feed through cricket-monthly);
+egress-refresh is the only one left, gated on Sunday's health confirmation
+as planned.
