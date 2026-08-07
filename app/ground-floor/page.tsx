@@ -230,18 +230,37 @@ export default function GroundFloorPage() {
             {typeof accCorr === "number" && (
               <>
                 {" "}Across the whole set the correlation between accumulation rank and conditions
-                rank is {accCorr.toFixed(2)}: the more a metro accumulates, the worse its conditions
-                tend to be.
+                rank is {accCorr.toFixed(2)}, which reads as though gathering more means living
+                worse. Do not trust it. Accumulation is largely a measure of size, and larger
+                metros have worse measured air; hold population constant and the relationship
+                reverses sign, so that among metros of similar size the ones that accumulate more
+                have better conditions, not worse. The gap is a sound description of an individual
+                metro. It is not evidence of a general rule, and we would rather say so here than
+                let the number imply one.
               </>
             )}
           </p>
           <p>
-            <strong>Limits worth knowing.</strong> Each dimension is sampled at the metro&apos;s
-            centre point rather than averaged across its whole area. The water and sanitation
-            figures are survey-derived and resolve to province level, so they are coarser than the
-            two satellite measures and produce more ties. A small number of remote island metros
-            have no water data and are not ranked. Figures are shown rounded; the stored values
-            carry the source grid&apos;s precision, which is not the same as measurement accuracy.
+            <strong>How every dimension is averaged.</strong> All three are population-weighted
+            across the whole metro: each square kilometre inside the boundary contributes in
+            proportion to the people living in it, so a figure describes what a typical resident
+            experiences rather than what the geographic centre point happens to record. That
+            distinction is not cosmetic. A metro&apos;s centre point sits on its traffic core
+            more or less by construction, and before this change the value recorded for most
+            large metros fell in the worst tenth of anything their own residents breathe.
+            Population comes from GHS-POP, the European Commission&apos;s gridded population
+            surface.
+          </p>
+          <p>
+            <strong>Limits worth knowing.</strong> The concentration grids resolve to about
+            eleven kilometres, so weighting redistributes within that grid rather than seeing
+            below it. PM2.5 is total particulate mass and includes desert dust, which counts
+            against arid metros for their geology rather than their governance. The water and
+            sanitation figures are survey-derived and resolve to province level, so they are
+            coarser than the two satellite measures and produce more ties. A small number of
+            remote island metros have no water data and are not ranked. Figures are shown
+            rounded; the stored values carry the source grid&apos;s precision, which is not the
+            same as measurement accuracy.
           </p>
         </div>
       </section>

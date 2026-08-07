@@ -198,9 +198,45 @@ Country values are identical for every metro in a country.
 
 Existing per-metro counts: display only, per correction 1.
 
+### How every dimension is averaged — REVISED 2026-08-07
+
+All three dimensions are **population-weighted over the metro boundary**:
+
+    E = sum(pop_i * value_i) / sum(pop_i)
+
+over every 30 arcsec GHS-POP cell inside the Overture-derived boundary, source
+value read at its own native resolution. `scripts/groundfloor/build_exposure.py`
+does the two air dimensions, `scripts/groundfloor/build_water_exposure.py` does
+water. Both rewrite the dimension files in place, so the engine and the frontend
+are unchanged. Population is GHS-POP R2023A epoch 2025, JRC, CC BY 4.0.
+
+> **HARD REQUIREMENT: do not go back to a centroid sample.** Every builder below
+> originally read its source at ONE POINT, the metro centroid, and each said so
+> in its own `_meta.limitation`. Measured 2026-08-07: **that value sat at the
+> 98.5th to 100th percentile of the population-weighted distribution** — for
+> Bangkok, San Francisco, Atlanta, Munich and Mexico City it was the single
+> dirtiest cell anyone in the metro is exposed to. This is structural, not a bug:
+> a metro's centroid and its traffic core are the same place. Correcting it moved
+> 1,720 metros more than a hundred rank places.
+
+> **HARD REQUIREMENT: the error scales with the sharpness of the field, so never
+> generalise one dimension's correction to another.** NO2 is combustion-only and
+> sharply peaked, so 29.5% of metros moved by 20% or more. PM2.5 is a smooth
+> regional field, so only 1.7% did. Water is province-level, so 1,629 metros
+> could not move at all. Same pipeline, same boundaries, three magnitudes.
+
+> **HARD REQUIREMENT: H3 is a join key and a presentation grid, NEVER the
+> analysis unit.** Binning 1 km population and 11 km concentration onto hexagons
+> before averaging inserts a resampling step that costs accuracy it cannot give
+> back. Read every source at native resolution and weight ONCE. The r6 cell layer
+> built by `scripts/build_metro_grid.py` exists to attach external datasets to
+> metros by set intersection, and for drawing. It must not enter this integral.
+
 ### Acquiring, in order
 
-**PM2.5 — SHIPPED 2026-08-06.** `scripts/groundfloor/build_air_quality.py`.
+**PM2.5 — SHIPPED 2026-08-06, population-weighted 2026-08-07.**
+`scripts/groundfloor/build_air_quality.py` (original centroid build, retained for
+comparison; `build_exposure.py` now produces the shipped values).
 Annual mean for calendar **2024** from **SatPM2.5 V6GL03** (Atmospheric
 Composition Analysis Group, Washington University in St. Louis), 0.1°, CC BY
 4.0, pulled unsigned from the AWS Registry of Open Data bucket `satpmdata`,
@@ -224,7 +260,11 @@ the IQAir World Air Quality Report.
 > `_to_delete/build_air_quality_CAMS_rejected.py`. See the header of
 > `scripts/groundfloor/build_air_quality.py` for the full evidence table.
 
-**NO2 — SHIPPED 2026-08-06.** `scripts/groundfloor/build_no2.py`. Annual mean
+**NO2 — SHIPPED 2026-08-06, population-weighted 2026-08-07.**
+`scripts/groundfloor/build_no2.py` (original centroid build;
+`build_exposure.py` now produces the shipped values). **This is the dimension
+the centroid was worst on** — 74.3% of metros moved by 5% or more and 29.5% by
+20% or more, because NO2 peaks exactly where a centroid lands. Annual mean
 for **2023** from **GlobalNO2_AiT** (Mu & Tao, ESSD 2026), 0.1°, CC BY 4.0,
 Zenodo 10.5281/zenodo.13842191, about 100 MB, 2005–2023. 37-case self-test.
 Earns its place on the collinearity test: Spearman 0.53 against PM2.5.
@@ -235,10 +275,24 @@ Earns its place on the collinearity test: Spearman 0.53 against PM2.5.
 > and only the coverage floor caught it. Note also that this raster fills with
 > NaN, unlike SatPM2.5's `-999`; a sampler shared between them must test both.
 
-**Water and sanitation — SHIPPED 2026-08-06.**
-`scripts/groundfloor/build_water_sanitation.py`. WRI **Aqueduct 4.0** baseline
+**Water and sanitation — SHIPPED 2026-08-06, population-weighted 2026-08-07.**
+`scripts/groundfloor/build_water_sanitation.py` (original centroid build);
+`scripts/groundfloor/build_water_exposure.py` now produces the shipped values.
+Aqueduct is polygons rather than a raster, so the weighted build **rasterises
+`udw`, `usa` and a polygon id onto a 0.05° global grid once** (cached at
+`_to_delete/aqueduct_udw_usa_005deg.npz`) and then reuses the exposure path
+unchanged. `combine()` is applied PER CELL so a cell missing either
+sub-indicator leaves both numerator and denominator instead of contributing half
+a measure. Rasterisation fidelity was **measured, not assumed**: against exact
+point-in-polygon at 600 sampled centroids, 97.0% exact agreement, median
+disagreement 0.0021 and max 0.0951 on a 0–1 share, an order of magnitude below
+the weighting effect it sits inside (`_to_delete/verify_water_raster.py`).
+61.9% of metros changed; **1,629 could not, because they sit wholly inside one
+polygon.** `detail` now reports the polygon holding the largest share of the
+metro's population, and that share, rather than implying one region covers the
+whole metro. WRI **Aqueduct 4.0** baseline
 annual, indicators `udw` (unimproved drinking water) and `usa` (unimproved
-sanitation) as population shares, point-in-polygon over the basin geometry.
+sanitation) as population shares.
 ESRI FileGDB, needs `pyogrio` — the published CSV carries no geometry. 27-case
 self-test. `udw` and `usa` correlate at 0.818 but diverge usefully (Dhaka: water
 0.015, sanitation 0.305), so they are combined into **one** dimension with both
