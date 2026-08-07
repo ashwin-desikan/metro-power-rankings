@@ -716,7 +716,7 @@
   },
   "andalusia": {
     "metros": 16,
-    "score": 39.9,
+    "score": 40.7,
     "weighted": true
   },
   "andaman-nicobar-islands": {
@@ -921,7 +921,7 @@
   },
   "aragon": {
     "metros": 4,
-    "score": 4.7,
+    "score": 4.8,
     "weighted": true
   },
   "aragua": {
@@ -996,7 +996,7 @@
   },
   "arkhangelsk-oblast": {
     "metros": 4,
-    "score": 1.2,
+    "score": 1.4,
     "weighted": true
   },
   "armagh-city-banbridge-and-craigavon": {
@@ -1251,7 +1251,7 @@
   },
   "aveiro": {
     "metros": 5,
-    "score": 4.25,
+    "score": 4.28,
     "weighted": true
   },
   "awdal": {
@@ -1376,7 +1376,7 @@
   },
   "baden-wurttemberg": {
     "metros": 9,
-    "score": 59.58,
+    "score": 61.58,
     "weighted": true
   },
   "badghis": {
@@ -1466,7 +1466,7 @@
   },
   "balearic-islands": {
     "metros": 3,
-    "score": 11.5,
+    "score": 11.8,
     "weighted": true
   },
   "bali": {
@@ -1576,7 +1576,7 @@
   },
   "baranya": {
     "metros": 1,
-    "score": 0.6,
+    "score": 0.3,
     "weighted": true
   },
   "barbuda": {
@@ -2286,7 +2286,7 @@
   },
   "bourgogne-franche-comte": {
     "metros": 9,
-    "score": 8.2,
+    "score": 7.9,
     "weighted": true
   },
   "bournemouth-christchurch-and-poole": {
@@ -2306,7 +2306,7 @@
   },
   "braga": {
     "metros": 1,
-    "score": 6.0,
+    "score": 6.3,
     "weighted": true
   },
   "braganca": {
@@ -2816,7 +2816,7 @@
   },
   "castelo-branco": {
     "metros": 3,
-    "score": 0.6,
+    "score": 0.9,
     "weighted": true
   },
   "castile-leon": {
@@ -2826,7 +2826,7 @@
   },
   "castilla-la-mancha": {
     "metros": 10,
-    "score": 4.09,
+    "score": 4.3,
     "weighted": true
   },
   "castries": {
@@ -2841,7 +2841,7 @@
   },
   "catalonia": {
     "metros": 7,
-    "score": 61.3,
+    "score": 61.8,
     "weighted": true
   },
   "catamarca": {
@@ -2881,7 +2881,7 @@
   },
   "ceara": {
     "metros": 7,
-    "score": 8.27,
+    "score": 8.3,
     "weighted": true
   },
   "center": {
@@ -2936,7 +2936,7 @@
   },
   "central-finland": {
     "metros": 1,
-    "score": 0.3,
+    "score": 0.5,
     "weighted": true
   },
   "central-ghana": {
@@ -3101,7 +3101,7 @@
   },
   "centre-val-de-loire": {
     "metros": 6,
-    "score": 8.34,
+    "score": 8.64,
     "weighted": true
   },
   "centro-oeste-midwest": {
@@ -3856,7 +3856,7 @@
   },
   "dalarna": {
     "metros": 3,
-    "score": 0.3,
+    "score": 0.0,
     "weighted": true
   },
   "damascus": {
@@ -4876,7 +4876,7 @@
   },
   "faro": {
     "metros": 1,
-    "score": 4.2,
+    "score": 4.7,
     "weighted": true
   },
   "fars": {
@@ -5141,7 +5141,7 @@
   },
   "galicia": {
     "metros": 8,
-    "score": 12.3,
+    "score": 12.7,
     "weighted": true
   },
   "gambela": {
@@ -5205,8 +5205,8 @@
     "weighted": true
   },
   "gavleborg": {
-    "metros": 2,
-    "score": 0.3,
+    "metros": 4,
+    "score": 1.2,
     "weighted": true
   },
   "gaza": {
@@ -5921,7 +5921,7 @@
   },
   "halland": {
     "metros": 4,
-    "score": 2.27,
+    "score": 2.29,
     "weighted": true
   },
   "halton": {
@@ -6171,7 +6171,7 @@
   },
   "heves": {
     "metros": 2,
-    "score": 0.3,
+    "score": 0.6,
     "weighted": true
   },
   "hhohho": {
@@ -6286,7 +6286,7 @@
   },
   "hovedstaden": {
     "metros": 2,
-    "score": 29.82,
+    "score": 29.55,
     "weighted": true
   },
   "hradec-kralove": {
@@ -6921,7 +6921,7 @@
   },
   "jonkoping": {
     "metros": 4,
-    "score": 0.6,
+    "score": 0.9,
     "weighted": true
   },
   "jost-van-dyke": {
@@ -7371,7 +7371,7 @@
   },
   "kemerovo-oblast": {
     "metros": 9,
-    "score": 0.8,
+    "score": 1.1,
     "weighted": true
   },
   "kemo": {
@@ -7436,12 +7436,12 @@
   },
   "khabarovsk-krai": {
     "metros": 2,
-    "score": 2.0,
+    "score": 2.3,
     "weighted": true
   },
   "khakassia": {
     "metros": 2,
-    "score": 0.3,
+    "score": 0.6,
     "weighted": true
   },
   "khammuane-khammouan": {
@@ -7606,7 +7606,7 @@
   },
   "kirov-oblast": {
     "metros": 2,
-    "score": 0.2,
+    "score": 0.4,
     "weighted": true
   },
   "kirovohrad": {
@@ -7791,7 +7791,7 @@
   },
   "krasnoyarsk-krai": {
     "metros": 7,
-    "score": 3.9,
+    "score": 4.2,
     "weighted": true
   },
   "kratie": {
@@ -8461,7 +8461,7 @@
   },
   "lisbon": {
     "metros": 1,
-    "score": 28.1,
+    "score": 28.96,
     "weighted": true
   },
   "lisburn-and-castlereagh": {
@@ -8666,7 +8666,7 @@
   },
   "lublin": {
     "metros": 7,
-    "score": 5.9,
+    "score": 5.6,
     "weighted": true
   },
   "lubnan-al-janubi-south-lebanon": {
@@ -8796,7 +8796,7 @@
   },
   "madrid": {
     "metros": 1,
-    "score": 65.71,
+    "score": 65.9,
     "weighted": true
   },
   "madriz": {
@@ -9561,7 +9561,7 @@
   },
   "midtjylland": {
     "metros": 11,
-    "score": 15.5,
+    "score": 15.8,
     "weighted": true
   },
   "mie": {
@@ -9601,7 +9601,7 @@
   },
   "minas-gerais": {
     "metros": 29,
-    "score": 18.03,
+    "score": 18.53,
     "weighted": true
   },
   "minnesota": {
@@ -9881,12 +9881,12 @@
   },
   "moscow": {
     "metros": 1,
-    "score": 42.53,
+    "score": 42.65,
     "weighted": true
   },
   "moscow-oblast": {
     "metros": 1,
-    "score": 27.87,
+    "score": 27.95,
     "weighted": true
   },
   "mostaganem": {
@@ -9996,7 +9996,7 @@
   },
   "murcia": {
     "metros": 4,
-    "score": 3.3,
+    "score": 3.8,
     "weighted": true
   },
   "mures": {
@@ -10271,7 +10271,7 @@
   },
   "navarre": {
     "metros": 3,
-    "score": 6.8,
+    "score": 7.4,
     "weighted": true
   },
   "navoiy-navoi": {
@@ -10601,7 +10601,7 @@
   },
   "nizhny-novgorod-oblast": {
     "metros": 4,
-    "score": 4.5,
+    "score": 4.7,
     "weighted": true
   },
   "njombe": {
@@ -10681,7 +10681,7 @@
   },
   "normandy": {
     "metros": 5,
-    "score": 6.7,
+    "score": 6.9,
     "weighted": true
   },
   "norrbotten": {
@@ -10861,7 +10861,7 @@
   },
   "north-rhine-westphalia": {
     "metros": 12,
-    "score": 81.2,
+    "score": 80.5,
     "weighted": true
   },
   "north-side": {
@@ -10981,7 +10981,7 @@
   },
   "northern-ostrobothnia": {
     "metros": 2,
-    "score": 3.1,
+    "score": 3.4,
     "weighted": true
   },
   "northern-region": {
@@ -10995,8 +10995,8 @@
     "weighted": true
   },
   "northern-savonia": {
-    "metros": 1,
-    "score": 0.7,
+    "metros": 2,
+    "score": 1.0,
     "weighted": true
   },
   "northern-streymoy": {
@@ -11106,7 +11106,7 @@
   },
   "novosibirsk-oblast": {
     "metros": 3,
-    "score": 4.7,
+    "score": 5.0,
     "weighted": true
   },
   "nuble": {
@@ -11491,7 +11491,7 @@
   },
   "oslo": {
     "metros": 1,
-    "score": 11.56,
+    "score": 11.48,
     "weighted": true
   },
   "osmaniye": {
@@ -11501,7 +11501,7 @@
   },
   "ostergotland": {
     "metros": 4,
-    "score": 4.6,
+    "score": 4.8,
     "weighted": true
   },
   "ostrobothnia": {
@@ -11760,8 +11760,8 @@
     "weighted": true
   },
   "parana": {
-    "metros": 14,
-    "score": 11.24,
+    "metros": 17,
+    "score": 12.61,
     "weighted": true
   },
   "pardubice": {
@@ -12141,7 +12141,7 @@
   },
   "portalegre": {
     "metros": 2,
-    "score": 0.0,
+    "score": 0.3,
     "weighted": true
   },
   "portland": {
@@ -12151,7 +12151,7 @@
   },
   "porto": {
     "metros": 1,
-    "score": 18.92,
+    "score": 19.08,
     "weighted": true
   },
   "portsmouth": {
@@ -12261,7 +12261,7 @@
   },
   "provence-alpes-cote-d-azur": {
     "metros": 6,
-    "score": 51.2,
+    "score": 50.9,
     "weighted": true
   },
   "providenciales": {
@@ -12711,7 +12711,7 @@
   },
   "rio-grande-do-sul": {
     "metros": 11,
-    "score": 13.2,
+    "score": 13.7,
     "weighted": true
   },
   "rio-negro-argentina": {
@@ -13446,7 +13446,7 @@
   },
   "santa-catarina": {
     "metros": 10,
-    "score": 14.8,
+    "score": 15.7,
     "weighted": true
   },
   "santa-cruz-argentina": {
@@ -13491,7 +13491,7 @@
   },
   "santarem": {
     "metros": 3,
-    "score": 0.3,
+    "score": 0.5,
     "weighted": true
   },
   "santiago-cape-verde": {
@@ -13556,7 +13556,7 @@
   },
   "sao-paulo": {
     "metros": 28,
-    "score": 90.63,
+    "score": 91.63,
     "weighted": true
   },
   "sao-vicente-incl-santa-luzia-branco-raso": {
@@ -13611,7 +13611,7 @@
   },
   "satakunta": {
     "metros": 2,
-    "score": 0.6,
+    "score": 0.8,
     "weighted": true
   },
   "satu-mare": {
@@ -13661,12 +13661,12 @@
   },
   "saxony": {
     "metros": 4,
-    "score": 18.38,
+    "score": 17.55,
     "weighted": true
   },
   "saxony-anhalt": {
     "metros": 3,
-    "score": 7.32,
+    "score": 7.01,
     "weighted": true
   },
   "schaffhausen": {
@@ -13781,7 +13781,7 @@
   },
   "setubal": {
     "metros": 1,
-    "score": 10.8,
+    "score": 11.14,
     "weighted": true
   },
   "sevastopol": {
@@ -14101,7 +14101,7 @@
   },
   "sj\u00e6lland": {
     "metros": 6,
-    "score": 3.98,
+    "score": 3.95,
     "weighted": true
   },
   "skane": {
@@ -14406,7 +14406,7 @@
   },
   "south-karelia": {
     "metros": 1,
-    "score": 0.4,
+    "score": 0.6,
     "weighted": true
   },
   "south-kivu": {
@@ -14546,7 +14546,7 @@
   },
   "southern-savonia": {
     "metros": 2,
-    "score": 0.4,
+    "score": 0.6,
     "weighted": true
   },
   "southern-snnpr": {
@@ -14836,7 +14836,7 @@
   },
   "stockholm": {
     "metros": 1,
-    "score": 43.2,
+    "score": 43.4,
     "weighted": true
   },
   "stockton-on-tees": {
@@ -15011,7 +15011,7 @@
   },
   "sverdlovsk-oblast": {
     "metros": 10,
-    "score": 10.0,
+    "score": 10.3,
     "weighted": true
   },
   "swains-island": {
@@ -15306,7 +15306,7 @@
   },
   "tatarstan": {
     "metros": 9,
-    "score": 9.4,
+    "score": 9.6,
     "weighted": true
   },
   "taurage": {
@@ -15486,7 +15486,7 @@
   },
   "thuringia": {
     "metros": 5,
-    "score": 7.3,
+    "score": 7.24,
     "weighted": true
   },
   "thurrock": {
@@ -16011,7 +16011,7 @@
   },
   "ulyanovsk-oblast": {
     "metros": 2,
-    "score": 0.6,
+    "score": 0.8,
     "weighted": true
   },
   "ulytau": {
@@ -16096,7 +16096,7 @@
   },
   "uppsala": {
     "metros": 2,
-    "score": 7.3,
+    "score": 7.6,
     "weighted": true
   },
   "uri": {
@@ -16156,7 +16156,7 @@
   },
   "uusimaa": {
     "metros": 1,
-    "score": 21.2,
+    "score": 22.2,
     "weighted": true
   },
   "uva": {
@@ -16246,7 +16246,7 @@
   },
   "valencia": {
     "metros": 10,
-    "score": 38.3,
+    "score": 38.8,
     "weighted": true
   },
   "valga": {
@@ -16311,7 +16311,7 @@
   },
   "vasterbotten": {
     "metros": 2,
-    "score": 2.8,
+    "score": 3.0,
     "weighted": true
   },
   "vasternorrland": {
@@ -16321,12 +16321,12 @@
   },
   "vastmanland": {
     "metros": 1,
-    "score": 1.1,
+    "score": 1.6,
     "weighted": true
   },
   "vastra-gotaland": {
-    "metros": 3,
-    "score": 15.53,
+    "metros": 6,
+    "score": 16.61,
     "weighted": true
   },
   "vatican-city": {
@@ -16466,7 +16466,7 @@
   },
   "viken": {
     "metros": 5,
-    "score": 17.64,
+    "score": 17.82,
     "weighted": true
   },
   "vila-real": {
