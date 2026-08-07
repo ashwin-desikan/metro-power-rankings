@@ -4054,3 +4054,70 @@ quiz generator fix, badge redirects) — all outside anything the mini side
 needs to act on, so not re-litigating it here. Batch 4 (screen-number-ones)
 is still just sitting drafted, untouched since yesterday; will pick it up
 once things are calmer.
+
+## 2026-08-07 (midday) — mini → windows (real finding: 4 verticals' weekly refreshes never go live via their own commit. Scoped, not fixed — deferred to a dedicated session)
+
+Migrating batch 4/5 (screen-number-ones + the four weeklies) surfaced this via
+the new post-commit hook, which flagged a MISMATCH on the real rugby-weekly
+hand-run: it pushed a [vercel skip]-tagged commit touching a build-relevant
+path.
+
+### The bug, confirmed for real, not inferred
+
+rugby-union, cricket, sound, and basketball(fiba) all read their public/data/
+via build-time `readFileSync`, with ZERO runtime `fetch()` calls anywhere in
+lib/rugbyUnion.ts, lib/cricket.ts, lib/sound.ts, lib/basketball.ts (checked
+directly, not assumed — this is the exact class of mistake from the
+public/data/leaders thread two days ago, so I verified rather than pattern-
+matched). Their weekly refresh scripts (run-scraper-refresh.sh rugby/fiba,
+run-cricket-weekly.sh, run-sound-weekly.sh) all self-tag `[vercel skip]` on
+their auto-generated commits. So every week, for as long as this pattern has
+existed (predates today, not something the migration introduced), these four
+verticals' data updates sit committed in the repo and never go live until
+some UNRELATED real build happens to land afterward.
+
+**screen-number-ones is the control case that shows the fix, and that it's
+known territory.** lib/screen.ts already has a proper ISR-fetch-from-raw
+path for screen_number_ones.json specifically, with a comment reading
+"otherwise weekly data never shows without a Vercel build" — so someone
+already hit and fixed exactly this bug for that one file. It just never got
+applied to the other four verticals.
+
+### Why this isn't a quick patch, on inspection
+
+Checked lib/basketball.ts as the representative case: getAllBasketballNations,
+getBasketballHub, getEuroleague, getFibaRanking, getBasketballNationBySlug,
+getAllBasketballSlugs, getBasketballNationDetail — 10 exported functions,
+reading 5+ distinct files (nations.json, hub.json, euroleague.json,
+fiba_ranking.json, nation-detail/<slug>.json, the last being one file per
+nation). getAllBasketballSlugs almost certainly feeds generateStaticParams
+for the nation detail pages — if so, ISR-fetch alone does not fully solve
+staleness even once added: it would surface score/ranking updates for
+EXISTING nations, but a genuinely NEW nation entry still would not get a
+pre-rendered detail page until a real build runs, same limitation as before.
+cricket.ts (8 exports) and rugbyUnion.ts (8 exports) are the same shape;
+sound.ts is smaller (1 export) but unconfirmed whether it has the same
+generateStaticParams dependency.
+
+Ashwin's call: scope it properly as dedicated follow-up work rather than try
+to convert four verticals correctly under time pressure this session. Not
+fixed today. Options on the table when someone picks this up: the full
+lib/screen.ts-pattern conversion (correct, needs the generateStaticParams
+question answered per vertical first), or the cheaper stopgap of just
+dropping [vercel skip] from these four scripts' commit messages (four extra
+real builds/week, ships immediately, no code risk).
+
+### One real commit already landed under the old, broken behavior
+
+The rugby-weekly hand-run (proving the dispatcher invocation, part of today's
+migration) pushed a genuine data refresh, `aa75c9a3a`, tagged [vercel skip]
+per the existing script. Not reverting it — the data itself is correct, it's
+just sitting stale until a real build. Flagging so nobody's surprised the
+rugby page doesn't reflect it immediately.
+
+### Batch 4/5 migration: continuing as planned
+
+This finding doesn't block the scheduling migration itself — moving these
+jobs from launchd to the dispatcher changes WHEN they run, not whether their
+commits deploy, and that second problem exists identically on the old plists
+today. Proceeding with screen-number-ones + the four weeklies.
