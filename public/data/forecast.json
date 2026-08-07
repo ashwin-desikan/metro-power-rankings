@@ -1,5 +1,5 @@
 {
- "built": "2026-08-05",
+ "built": "2026-08-07",
  "method": "Recency-weighted poll averages; UK proportional swing on GE2024 constituency results with Monte Carlo error; US seats-votes fit on 2012-2024; NZ Sainte-Laguë; IL seat-poll averages; BR/FR round averages. Full method notes on the page.",
  "uk": {
   "electionAssumed": "2029-05-03",
@@ -711,7 +711,7 @@
     ]
    ]
   },
-  "monthsOut": 3.0,
+  "monthsOut": 2.9,
   "sims": 20000,
   "election": "2026-11-03",
   "sources": [
@@ -735,52 +735,52 @@
    },
    "demSeats": {
     "median": 50,
-    "lo": 46,
+    "lo": 47,
     "hi": 53
    },
-   "pDemControl": 36.1,
+   "pDemControl": 38.0,
    "competitive": [
-    {
-     "state": "Ohio",
-     "held": "R",
-     "score": 0.0,
-     "retiring": false,
-     "pDem": 50.0
-    },
     {
      "state": "Alaska",
      "held": "R",
-     "score": -0.11,
+     "score": -0.09,
      "retiring": false,
      "pDem": 47.0
     },
     {
-     "state": "Maine",
+     "state": "Ohio",
      "held": "R",
-     "score": 0.22,
+     "score": 0.09,
      "retiring": false,
-     "pDem": 56.0
+     "pDem": 53.0
     },
     {
-     "state": "Iowa",
+     "state": "Maine",
      "held": "R",
-     "score": -0.44,
-     "retiring": true,
-     "pDem": 37.0
+     "score": 0.32,
+     "retiring": false,
+     "pDem": 59.0
     },
     {
      "state": "Michigan",
      "held": "D",
-     "score": 0.5,
+     "score": 0.32,
      "retiring": true,
-     "pDem": 64.0
+     "pDem": 59.0
     },
     {
      "state": "Texas",
      "held": "R",
-     "score": -0.5,
+     "score": -0.41,
      "retiring": false,
-     "pDem": 36.0
+     "pDem": 38.0
+    },
+    {
+     "state": "Iowa",
+     "held": "R",
+     "score": -0.55,
+     "retiring": true,
+     "pDem": 34.0
     }
    ],
    "sims": 20000,
@@ -805,64 +805,64 @@
     "lo": 21,
     "hi": 28
    },
-   "pDemMajority": 26.6,
-   "pRepMajority": 56.3,
+   "pDemMajority": 29.8,
+   "pRepMajority": 53.1,
    "competitive": [
     {
      "state": "Georgia",
      "held": "R",
-     "score": 0.0,
+     "score": 0.07,
      "retiring": true,
-     "pDem": 50.0
+     "pDem": 52.0
     },
     {
      "state": "Wisconsin",
      "held": "D",
-     "score": -0.08,
+     "score": 0.07,
      "retiring": true,
-     "pDem": 48.0
+     "pDem": 52.0
+    },
+    {
+     "state": "Ohio",
+     "held": "R",
+     "score": -0.29,
+     "retiring": true,
+     "pDem": 42.0
     },
     {
      "state": "Iowa",
      "held": "R",
-     "score": 0.33,
+     "score": 0.36,
      "retiring": true,
      "pDem": 60.0
     },
     {
      "state": "Nevada",
      "held": "R",
-     "score": -0.33,
+     "score": -0.43,
      "retiring": false,
-     "pDem": 40.0
-    },
-    {
-     "state": "Ohio",
-     "held": "R",
-     "score": -0.33,
-     "retiring": true,
-     "pDem": 40.0
-    },
-    {
-     "state": "Arizona",
-     "held": "D",
-     "score": 0.67,
-     "retiring": false,
-     "pDem": 69.0
+     "pDem": 38.0
     },
     {
      "state": "Kansas",
      "held": "D",
-     "score": -0.75,
+     "score": -0.79,
      "retiring": true,
-     "pDem": 29.0
+     "pDem": 28.0
     },
     {
      "state": "Michigan",
      "held": "D",
-     "score": 0.75,
+     "score": 0.79,
      "retiring": true,
-     "pDem": 71.0
+     "pDem": 72.0
+    },
+    {
+     "state": "Arizona",
+     "held": "D",
+     "score": 0.86,
+     "retiring": false,
+     "pDem": 73.0
     }
    ],
    "sims": 20000,
@@ -872,29 +872,29 @@
  "nz": {
   "electionAssumed": "2026-10-17",
   "average": {
-   "nat": 30.5,
-   "lab": 31.0,
-   "grn": 11.0,
+   "nat": 30.7,
+   "lab": 29.9,
+   "grn": 10.8,
    "act": 7.5,
-   "nzf": 10.7,
-   "tpm": 2.5,
-   "top": 5.4
+   "nzf": 10.2,
+   "tpm": 2.1,
+   "top": 5.9
   },
-  "pollsters": 7,
-  "latestPollDate": "2026-07-26",
+  "pollsters": 6,
+  "latestPollDate": "2026-08-04",
   "seats": {
    "nat": {
-    "median": 38,
-    "lo": 33,
-    "hi": 42
-   },
-   "lab": {
     "median": 38,
     "lo": 34,
     "hi": 43
    },
+   "lab": {
+    "median": 37,
+    "lo": 33,
+    "hi": 42
+   },
    "grn": {
-    "median": 14,
+    "median": 13,
     "lo": 11,
     "hi": 16
    },
@@ -905,8 +905,8 @@
    },
    "nzf": {
     "median": 13,
-    "lo": 11,
-    "hi": 16
+    "lo": 10,
+    "hi": 15
    },
    "tpm": {
     "median": 3,
@@ -916,91 +916,19 @@
    "top": {
     "median": 7,
     "lo": 0,
-    "hi": 9
+    "hi": 10
    }
   },
-  "pRightBloc": 46.3,
-  "pLeftBloc": 5.0,
-  "pNeither": 48.7,
-  "monthsOut": 2.4,
+  "pRightBloc": 47.5,
+  "pLeftBloc": 1.7,
+  "pNeither": 50.8,
+  "monthsOut": 2.3,
   "sims": 10000,
   "sources": [
    "Wikipedia: Opinion polling for the 2026 New Zealand general election (CC BY-SA 4.0)"
   ]
  },
- "il": {
-  "electionAssumed": "2026-10-27",
-  "parties": [
-   {
-    "name": "Likud",
-    "seats": 20.7
-   },
-   {
-    "name": "Dems",
-    "seats": 14.8
-   },
-   {
-    "name": "Together",
-    "seats": 13.8
-   },
-   {
-    "name": "Yashar",
-    "seats": 13.3
-   },
-   {
-    "name": "Yisrael Beiteinu",
-    "seats": 9.8
-   },
-   {
-    "name": "UTJ",
-    "seats": 7.9
-   },
-   {
-    "name": "Shas",
-    "seats": 7.4
-   },
-   {
-    "name": "Otzma",
-    "seats": 6.9
-   },
-   {
-    "name": "RZP",
-    "seats": 5.4
-   },
-   {
-    "name": "Hadash –Ta'al",
-    "seats": 5.4
-   },
-   {
-    "name": "Ra'am",
-    "seats": 4.9
-   },
-   {
-    "name": "Balad",
-    "seats": 3.9
-   },
-   {
-    "name": "Zionist Home",
-    "seats": 3.9
-   },
-   {
-    "name": "Blue & White",
-    "seats": 2.0
-   }
-  ],
-  "polls": 6,
-  "pollsters": 2,
-  "latestPollDate": "2026-07-30",
-  "gov": {
-   "avg": 49.0,
-   "pMajority": 0.0
-  },
-  "monthsOut": 2.7,
-  "sims": 8000,
-  "sources": [
-   "Wikipedia: Opinion polling for the 2026 Israeli legislative election (CC BY-SA 4.0)"
-  ]
- },
+ "il": null,
  "br": {
   "election": "2026-10-04",
   "firstRound": {
@@ -1021,12 +949,12 @@
     "b": "F. Bolsonaro",
     "avgA": 46.6,
     "avgB": 42.2,
-    "pA": 85.1,
-    "polls": 54,
+    "pA": 85.8,
+    "polls": 53,
     "latest": "2026-08-03"
    }
   ],
-  "monthsOut": 2.0,
+  "monthsOut": 1.9,
   "sources": [
    "Wikipedia: Opinion polling for the 2026 Brazilian presidential election (CC BY-SA 4.0)"
   ]
@@ -1057,7 +985,7 @@
     "b": "Philippe HOR",
     "avgA": 52.5,
     "avgB": 47.5,
-    "pA": 78.1,
+    "pA": 78.2,
     "polls": 4,
     "latest": "2026-07-08"
    },
@@ -1066,7 +994,7 @@
     "b": "Attal RE",
     "avgA": 54.9,
     "avgB": 45.1,
-    "pA": 93.3,
+    "pA": 93.4,
     "polls": 4,
     "latest": "2026-07-08"
    },
@@ -1084,7 +1012,7 @@
     "b": "Philippe HOR",
     "avgA": 52.9,
     "avgB": 47.1,
-    "pA": 81.3,
+    "pA": 82.0,
     "polls": 4,
     "latest": "2026-05-27"
    },
@@ -1093,7 +1021,7 @@
     "b": "Attal RE",
     "avgA": 57.0,
     "avgB": 43.0,
-    "pA": 98.7,
+    "pA": 98.4,
     "polls": 1,
     "latest": "2026-05-27"
    },
@@ -1111,7 +1039,7 @@
     "b": "Glucksmann PP",
     "avgA": 58.5,
     "avgB": 41.5,
-    "pA": 99.6,
+    "pA": 99.7,
     "polls": 1,
     "latest": "2026-03-27"
    },
@@ -1120,12 +1048,12 @@
     "b": "Retailleau LR",
     "avgA": 58.0,
     "avgB": 42.0,
-    "pA": 99.3,
+    "pA": 99.4,
     "polls": 1,
     "latest": "2026-03-27"
    }
   ],
-  "monthsOut": 8.2,
+  "monthsOut": 8.1,
   "sources": [
    "Wikipedia: Opinion polling for the 2027 French presidential election (CC BY-SA 4.0)"
   ]

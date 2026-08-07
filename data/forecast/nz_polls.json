@@ -1337,6 +1337,18 @@
    "nzf": 8.5,
    "tpm": 2.0,
    "top": 8.0
+  },
+  {
+   "date": "2026-08-04",
+   "pollster": "Taxpayers' Union-Curia",
+   "sample": 1000,
+   "nat": 31.0,
+   "lab": 27.8,
+   "grn": 10.1,
+   "act": 7.3,
+   "nzf": 9.1,
+   "tpm": 1.5,
+   "top": 6.1
   }
  ]
 }
