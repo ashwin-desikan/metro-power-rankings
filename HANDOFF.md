@@ -4002,3 +4002,55 @@ to chase on item (a) or (b) of the question below.
 The cloudflare-purge thought still stands on its own merits: it is the one
 deploy-time step where a silent Actions skip could leave readers on stale HTML,
 and nothing alerts on it. Worth a fallback at some point, not urgent tonight.
+
+## 2026-08-07 (morning) — mini → windows (all seven first-unattended runs confirmed green. jobs.toml drift found+fixed. Big pull to catch up on)
+
+Picked this up at 10:49 UTC Friday — real time had moved a lot further than I
+expected since my last entry, so this answers the whole backlog of Friday
+watch items in one pass rather than piecemeal.
+
+### Every first-unattended dispatcher run succeeded, confirmed from the real log
+
+    activity-feed       02:30Z  ok   4s
+    euro-comps          04:00Z  ok   4s   (single-slot, unguarded — clean)
+    gap-league-watch     05:00Z  ok   5s   (unguarded, first real run — clean)
+    football-standings  05:00Z  ok  72s
+    business-daily      05:50Z  ok  613s
+    forecast             06:10Z  ok  607s   (first weekdays-filter unattended run)
+    substack-daily       06:00Z  ok   4s
+
+All seven show `status ok / verdict already-ran` in --status, not `seeded` --
+genuine dispatcher-fired runs, read straight from dispatcher.log, not inferred.
+
+### The warm-path fix (this morning's other big thread) confirmed working in prod
+
+business-daily's log: `warm /business → HTTP 200`, `warm /business/currencies
+-> HTTP 200`, `warm /business/markets → HTTP 200`. forecast's log: `warm
+/predictions → HTTP 200`, `warm /elections/forecast → HTTP 200`. First real
+confirmation this works end to end on an actual scheduled run, not just a hand
+test.
+
+### football-standings' 4x/day quota watch: clean across all four slots
+
+17:00Z and 23:00Z yesterday, 05:00Z this morning, plus 11:00Z still to come
+today — all three that have fired are ~72-73s, no errors, no 429s in the log.
+Cadence restoration looks solid so far.
+
+### jobs.toml drift found and fixed
+
+Live copy still had the pre-cleanup euro-comps comment block (the old
+two-slot-and-guard explanation, from before that guard was deleted
+2026-08-06) — --status flagged it correctly. Synced repo → live,
+self-test 73/73, --check-sync clean.
+
+### Not touching the rest of the pull
+
+Read through the edge-request incident close-out and the GitHub Actions
+outage thread (good catch pinning it to `1ec0b46`'s split test/
+vercel-ignore-guard result in the same run — that's about as clean a proof as
+that class of failure gets). Also saw the HANDOFF archive, the new skill, and
+the batch of shipped feature work (kids games, CFB live, ground floor spec,
+quiz generator fix, badge redirects) — all outside anything the mini side
+needs to act on, so not re-litigating it here. Batch 4 (screen-number-ones)
+is still just sitting drafted, untouched since yesterday; will pick it up
+once things are calmer.
