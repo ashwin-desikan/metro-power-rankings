@@ -4687,3 +4687,104 @@ human-facing publication times, and they live outside this repo anyway.
 
 Nothing open on this thread. [[legacy-launchd-migration]] memory updated on
 my side to reflect closure.
+
+---
+
+## 2026-08-07 - windows -> mac mini + next session (Ground Floor population-weighting, and a deploy race you are half of)
+
+Shipped `30166fd6d` + `3a7241df0`, live. Full detail in memory
+[[project_exposure_rebuild_2026_08_07]]; this entry carries only what the
+other machine needs.
+
+### What changed on the site
+
+All three Ground Floor dimensions moved from a single sample at the metro
+centroid to a population-weighted mean across the metro boundary, using
+GHS-POP at 30 arcsec. The centroid was not a neutral choice: measured across
+the set, the old value sat at the 98.5th to 100th percentile of the
+population-weighted distribution. For Bangkok, San Francisco, Atlanta, Munich
+and Mexico City it was the single dirtiest cell anyone in the metro is exposed
+to. Structural rather than a bug, because a metro's centroid and its traffic
+core are the same place.
+
+The size of the error tracks how sharply the field varies. NO2 is combustion
+only and sharply peaked, so 29.5% of metros moved by a fifth or more. PM2.5 is
+a smooth regional field, so 1.7% did. Water is province level, so 1,629 metros
+could not move at all. 1,720 metros changed rank by more than a hundred places.
+Coverage rose: 4,273 metros ranked, up from 4,269.
+
+New: `scripts/groundfloor/build_exposure.py`, `scripts/groundfloor/build_water_exposure.py`,
+`scripts/build_metro_grid.py`, `public/data/metro-footprint.json`. Metro pages
+now show measured land area and density. `GROUND-FLOOR-SPEC.md` revised.
+
+The old centroid builders are retained for comparison but no longer produce the
+shipped values. If you re-run `build_air_quality.py --write` or
+`build_no2.py --write` you will silently revert the board to centroid sampling.
+Use the `build_exposure.py` pair instead.
+
+### 🔴 THE DEPLOY RACE, which needs both machines to fix
+
+Two separate mechanisms bit in one afternoon, and the mini is on one side of
+both. Neither involved anyone making a mistake.
+
+**1. A skip-tagged commit landing on top of app commits kills the whole push.**
+`prepare-commit-msg` correctly auto-tags any commit staging no build path. But
+`vercel-ignore.sh` rule 1 skips the ENTIRE push on a tagged HEAD, before the
+range path-diff in rule 4 ever runs. So when the mini's data commit lands on
+top of Windows app commits and Windows then pushes, the site takes the data and
+never rebuilds. Fix used: an untagged empty commit at HEAD. Note the hook
+re-tags an empty commit too, and `--amend` does not escape it, so it needs
+`git -c core.hooksPath=<empty dir> commit --amend --allow-empty -F msg.txt`.
+Prove it before pushing, do not reason about it:
+
+    $env:VERCEL_GIT_COMMIT_SHA=(git rev-parse HEAD)
+    $env:VERCEL_GIT_PREVIOUS_SHA=(git rev-parse origin/main)
+    $env:VERCEL_GIT_COMMIT_REF="main"
+    & "C:\Program Files\Git\bin\bash.exe" "scripts/vercel-ignore.sh"
+
+Exit 1 = BUILD. Exit 0 = SKIP. The post-commit hook's `CHECK: OK` does NOT
+catch this case; it only warns on the inverse.
+
+**2. Vercel auto-cancels a superseded production build.** The build that DID
+start for the un-skip commit was cancelled 104 seconds in when the mini pushed
+`c1c895c55`. In a six-minute window this afternoon there were eight production
+deployments and seven cancellations. A five-minute build of 4,930 pages will
+lose that race most times it is run against normal mini traffic.
+
+Today it self-corrected only by luck: `c1c895c55` happened to be untagged
+(leadership change, country pages needed rebuilding) and descends from the
+Windows commits, so it carried them. Had it been tagged like the two commits
+after it, nothing would have shipped and the only backstop would have been
+`run-deploy-watch.sh`.
+
+**Question for the mini, and the reason this is in HANDOFF rather than memory:**
+does `run-deploy-watch.sh` already cover case 2? It is documented as comparing
+the newest build-relevant commit against what is actually live and re-triggering
+with `[deploy-retry]`, which sounds exactly right, but I have not read it this
+session and did not want to assert it. If it does, the whole thing is a
+non-event and the only change needed is "check Vercel, not git log". If it does
+not, the cheap fix is a dispatcher pause around a hand push.
+
+### Two sessions were writing the same working tree
+
+Worth naming because it will recur. Mid-session `git status` jumped from 6
+modified files to 4,146; another Claude session was running the workbook ETL in
+the same checkout and committed it as `4ef249df0`. My session-open HEAD was no
+longer the parent by commit time. Nothing was lost, because every commit staged
+explicit paths via `git commit --only -- <paths>`. **Never `git add -A` or
+`git commit -a` in this repo.** Same applies to `MEMORY.md`: re-read it
+immediately before writing, or a whole-file write silently reverts the other
+session.
+
+### Open
+
+- The 11.3 MB H3 r6 cell index is built but deliberately not shipped (652,714
+  cells; house max for a public data file is ~2.5 MB). When something consumes
+  it, ship per-metro files under `public/data/h3/<slug>.json` to match the
+  `metro-boundaries/` convention.
+- `public/data/metro-footprint.json` flags 540 metros high and 257 low on
+  gridded-vs-workbook population. That is an audit prompt about the BOUNDARY,
+  never a licence to overwrite the workbook. Median ratio is 1.030, which is the
+  first real external validation the Overture boundary set has had.
+- Substack piece drafted and unpublished: "The grid is the easy half".
+- 18 `.commit-msg-*.txt` scratch files at repo root are litter, left in place.
