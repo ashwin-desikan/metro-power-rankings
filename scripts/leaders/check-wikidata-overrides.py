@@ -32,7 +32,6 @@ RL = os.path.join(REPO, "scripts", "leaders", "refresh-current-leaders.py")
 # WD returns anything else. Keep this in sync with CURATED_OVERRIDES.
 WD_SEEN = {
     "saudi-arabia": "Salman bin Abdulaziz Al Saud",  # the King, mislabeled PM
-    "hungary":      "Q124488292",                    # Magyar's item, missing en label
     "bulgaria":     "Kiril Petkov",                  # stale (2021)
     "kuwait":       "Sabah Al-Khalid Al-Sabah",      # stale (left PM role 2022)
 }

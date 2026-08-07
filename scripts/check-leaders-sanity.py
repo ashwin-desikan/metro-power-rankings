@@ -31,7 +31,9 @@ PINS = {
     "india":        "Narendra Modi",         # WD head-of-state label was vandalized ("Ganesh rajput")
     "saudi-arabia": "Mohammed bin Salman",   # WD returns King Salman for both P35/P6
     "israel":       "Benjamin Netanyahu",    # PM_LED fix; WD would otherwise lead with ceremonial Pres.
-    "hungary":      "Péter Magyar",          # WD P6 is an unresolved QID -> regresses to acting Pres.
+    "hungary":      "Péter Magyar",          # no more CURATED_OVERRIDES backstop (2026-08-07, WD
+                                              # resolved its own label + start date) -- pin stays as
+                                              # the regression guard now that WD is load-bearing here
     "bulgaria":     "Rumen Radev",           # WD P6 stale (still Petkov, 2021)
 }
 PARTICLES = {"bin","bint","ibn","al","van","von","de","da","del","dos","di","der",

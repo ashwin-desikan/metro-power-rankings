@@ -60,10 +60,6 @@ CURATED_OVERRIDES = {
     # Mohammed bin Salman has been Prime Minister (head of government) since
     # 2022-09-27; we track heads of government, so this is the PM, not the King.
     "saudi-arabia": {"name": "Mohammed bin Salman", "role": "PM", "since": "2022-09-27"},
-    # Wikidata's P6 for Hungary is an unresolved QID (Q124488292, no en label), so
-    # it degrades to acting-President Forsthoffer. Péter Magyar has been PM since
-    # 2026-05-09 (news-verified). Remove this override once Wikidata resolves the label.
-    "hungary": {"name": "Péter Magyar", "role": "PM", "since": "2026-05-09"},
     # Wikidata's P6 for Bulgaria is stale (still Kiril Petkov, 2021). Rumen Radev
     # resigned the presidency and was elected PM on 2026-05-08 (news-verified).
     # Remove this override once Wikidata catches up.
