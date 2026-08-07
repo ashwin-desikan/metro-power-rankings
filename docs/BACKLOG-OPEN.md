@@ -459,22 +459,6 @@ registrations already document forward-looking commerce intent; (c) confirm the 
 first-use date, not the May 1, 2020 origination date. See the audit note for the broken
 evidence trail, which must be resolved first.
 
-**Pearl River Delta / Greater Bay Area conurbation audit (P1).** The audit is complete
-(`docs/audits/gba_conurbation_audit.md`) and the finding is that seven GBA metros, roughly
-53 million people, are simply not in the corpus. Needed: add shenzhen, foshan, dongguan,
-zhuhai, zhongshan, jiangmen and zhaoqing to the MetroAreas.xlsx Team List sheet with full
-dimension data. Shenzhen first, plausibly a top-30 metro on its own. Everything downstream
-is mechanical once the rows exist. Confirmed still blocked: a content search of
-`public/data/conurbations.csv` for `shenzhen|foshan|dongguan|Greater Bay` returns 0 matches.
-Meanwhile `lib/badges.ts:1189` ships "Pearl River Delta at 188.5" to the public
-`/badges/conurbations` page for a cluster the data does not contain.
-
-**Siena workbook coordinate fix (P2).** Siena carries Albany NY's coordinates
-(`42.716238, -73.750008`) in both MetroAreas.xlsx FootballClub_Data cols 9/10 and the grand
-football workbook Lookup cols U/V. Needed: correct both to `43.321667, 11.326111`. A
-temporary override at `scripts/build-football-data.py:76` is holding the site together and
-cannot be removed until the workbook is fixed.
-
 **Map provider, the 3D globe call.** Whether the game UI defaults to a 3D globe
 (react-globe.gl, Cesium, Three.js) or inherits the flat Leaflet stack. Materially affects
 cost and timeline. Needed: pick one.
