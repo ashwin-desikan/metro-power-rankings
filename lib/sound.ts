@@ -1,8 +1,12 @@
-import fs from 'fs';
-import path from 'path';
+import { loadLiveJson } from '@/lib/liveData';
 
-// Sound of the Metros data for the main metro page. Reads the pre-built JSON
-// in public/data/sound once and caches it for the process.
+// Sound of the Metros data for the main metro page.
+//
+// Read at RUNTIME via lib/liveData, not with a build-time readFileSync. The
+// weekly sound refresh (mac-mini-jobs/run-sound-weekly.sh) commits this JSON
+// with [vercel skip], so a build-baked read means the refresh never reaches a
+// reader until an unrelated deploy lands. See scripts/check-live-data.mjs,
+// which fails CI if this file goes back to readFileSync.
 let _uni: Record<string, UnifiedMetro> | null = null;
 let _no1: Record<string, No1Doc> | null = null;
 
@@ -18,12 +22,11 @@ interface UnifiedMetro {
 }
 interface No1Doc { metro: string; count: number; number_ones: { single: string; artist: string; charts: string; year: number }[] }
 
-function load() {
+async function load() {
   if (_uni) return;
-  const base = path.join(process.cwd(), 'public', 'data', 'sound');
-  const arr = JSON.parse(fs.readFileSync(path.join(base, 'metros_unified.json'), 'utf8')) as UnifiedMetro[];
+  const arr = (await loadLiveJson<UnifiedMetro[]>('sound/metros_unified.json')) ?? [];
+  _no1 = (await loadLiveJson<Record<string, No1Doc>>('sound/metro_number_ones.json')) ?? {};
   _uni = Object.fromEntries(arr.map((m) => [m.slug, m]));
-  _no1 = JSON.parse(fs.readFileSync(path.join(base, 'metro_number_ones.json'), 'utf8')) as Record<string, No1Doc>;
 }
 
 export interface MetroSound {
@@ -38,8 +41,8 @@ export interface MetroSound {
   numberOnesCount: number;
 }
 
-export function getSoundForMetro(slug: string): MetroSound | null {
-  load();
+export async function getSoundForMetro(slug: string): Promise<MetroSound | null> {
+  await load();
   const m = _uni![slug];
   if (!m || !m.lenses?.origin) return null;
   const n = _no1![slug];

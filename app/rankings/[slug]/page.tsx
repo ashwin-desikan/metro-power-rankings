@@ -216,7 +216,7 @@ interface PageProps {
 export default async function MetroDetailPage({ params }: PageProps) {
   const { slug } = await params;
   const detail = getMetroDetail(slug);
-  const sound = getSoundForMetro(slug);
+  const sound = await getSoundForMetro(slug);
   const screen = getScreenForMetro(slug);
   const mayor = await getMayor(slug);
 
