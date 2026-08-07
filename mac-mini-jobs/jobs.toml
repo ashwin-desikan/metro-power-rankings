@@ -128,7 +128,12 @@ timeout_minutes = 45
 #   euro-comps         LIVE on the mini since 2026-08-06. Plist unloaded.
 #   gap-league-watch   LIVE on the mini since 2026-08-06. Plist unloaded.
 #   football-standings LIVE on the mini since 2026-08-06. Plist unloaded.
-#   the other 9        ordering decided, rows not written. See DST-MIGRATION.md.
+#   screen-number-ones LIVE on the mini since 2026-08-07. Plist unloaded.
+#   rugby-weekly       LIVE on the mini since 2026-08-07. Plist unloaded.
+#   cricket-weekly     LIVE on the mini since 2026-08-07. Plist unloaded.
+#   fiba-weekly        LIVE on the mini since 2026-08-07. Plist unloaded.
+#   sound-weekly       LIVE on the mini since 2026-08-07. Plist unloaded.
+#   the other 4        ordering decided, rows not written. See DST-MIGRATION.md.
 #
 # The order is chosen to prove ONE unexercised mechanism at a time, on the
 # fastest-feedback job available, so a mistake shows up the next morning
@@ -266,16 +271,63 @@ timeout_minutes = 30
 # Mon-Wed, commits when the number-one lands", so the next reader is not
 # misled the way I nearly was.
 #
-# [[job]]
-# id = "screen-number-ones"      # launchd/com.citizenofnowhere.screen-number-ones.plist
-# times = ["05:00", "13:00", "21:00"]   # was 06:00/14:00/22:00 LOCAL
-# weekdays = [1, 2, 3]                  # Mon, Tue, Wed
-# command = "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-screen-number-ones.sh"
-# hc_slug = "screen-number-ones"
-# catchup_hours = 6              # slots are 8h apart; a slot missed by more than
-#                                # 6h should be recorded MISSED, not fired just
-#                                # before the next poll makes it redundant.
-# timeout_minutes = 25
+[[job]]
+id = "screen-number-ones"      # launchd/com.citizenofnowhere.screen-number-ones.plist (unloaded)
+times = ["05:00", "13:00", "21:00"]   # was 06:00/14:00/22:00 LOCAL
+weekdays = [1, 2, 3]                  # Mon, Tue, Wed
+command = "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-screen-number-ones.sh"
+hc_slug = "screen-number-ones"
+catchup_hours = 6              # slots are 8h apart; a slot missed by more than
+                               # 6h should be recorded MISSED, not fired just
+                               # before the next poll makes it redundant.
+timeout_minutes = 25
 #
 # Repo-checkout job, so the $HOME path is required. No guard to delete on this
 # one, which makes it a simpler flip than batch 3 despite the bigger table.
+
+# --- BATCH 5: the four weeklies. Nothing new; relative commands via HERE. ---
+# All four live in ~/metro-mini-jobs/ (symlinked to the repo checkout), same
+# shape as substack-daily and euro-comps: no $HOME path, no guard, no
+# repo-checkout unload-ordering hazard. rugby-weekly and fiba-weekly share
+# run-scraper-refresh.sh with substack-daily and conflicts-monthly, taking
+# their scoped job name as the one positional arg.
+#
+[[job]]
+id = "rugby-weekly"             # launchd/com.citizenofnowhere.rugby-weekly.plist (unloaded)
+time = "07:05"                  # was 08:05 LOCAL, Tue
+weekdays = [2]
+command = "run-scraper-refresh.sh"
+args = ["rugby"]
+hc_slug = "rugby-weekly"
+catchup_hours = 24              # weekly cadence: worth catching up within a
+                               # day, not worth reaching back toward last week.
+timeout_minutes = 20
+
+[[job]]
+id = "cricket-weekly"           # launchd/com.citizenofnowhere.cricket-weekly.plist (unloaded)
+time = "09:00"                  # was 10:00 LOCAL, Tue
+weekdays = [2]
+command = "run-cricket-weekly.sh"
+hc_slug = "cricket-weekly"
+catchup_hours = 24
+timeout_minutes = 30            # cricsheet zip fetch + Supabase staging is
+                               # heavier than the other three
+
+[[job]]
+id = "fiba-weekly"              # launchd/com.citizenofnowhere.fiba-weekly.plist (unloaded)
+time = "07:10"                  # was 08:10 LOCAL, Wed
+weekdays = [3]
+command = "run-scraper-refresh.sh"
+args = ["fiba"]
+hc_slug = "fiba-weekly"
+catchup_hours = 24
+timeout_minutes = 20
+
+[[job]]
+id = "sound-weekly"             # launchd/com.citizenofnowhere.sound-weekly.plist (unloaded)
+time = "07:30"                  # was 08:30 LOCAL, Wed
+weekdays = [3]
+command = "run-sound-weekly.sh"
+hc_slug = "sound-weekly"
+catchup_hours = 24
+timeout_minutes = 20
