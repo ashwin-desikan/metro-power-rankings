@@ -502,6 +502,10 @@
   "hungary": {
     "name": "Péter Magyar",
     "role": "PM",
+    "second": {
+      "name": "Ágnes Forsthoffer",
+      "role": "Pres."
+    },
     "since": "2026-05-09"
   },
   "iceland": {
