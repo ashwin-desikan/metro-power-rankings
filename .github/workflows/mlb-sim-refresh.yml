@@ -15,9 +15,20 @@ name: MLB playoff odds refresh
 # Data-only commit riding [vercel skip]; /teams/mlb and /sports/standings read
 # mlb-sim.json via ISR from GitHub raw, so no Vercel build is needed.
 
+# SCHEDULE RETIRED 2026-08-07: the Mac mini's dispatcher owns this job now
+# (mac-mini-jobs/jobs.toml, id "mlb-sim", 09:40 UTC). Retired because GitHub
+# dispatches cron 1-4 hours late, measured across 348 runs, and a pennant race
+# is exactly where that lateness is visible to a reader. Validated on the mini
+# first: self-test 30/30, ESPN standings 30/30 teams, both warm pings 200.
+#
+# workflow_dispatch stays as the manual fallback. If the mini dies for good,
+# uncomment the schedule below and comment out the mini's jobs.toml row --
+# never both at once, or two runners race the same commit.
+#
+# jobs.toml's ROLLOUT STATE block is the authority for who owns what.
 on:
-  schedule:
-    - cron: "40 9 * 3-11 *"
+  # schedule:
+  #   - cron: "40 9 * 3-11 *"
   workflow_dispatch: {}
 
 permissions:
