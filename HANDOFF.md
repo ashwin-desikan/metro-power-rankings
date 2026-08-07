@@ -4269,3 +4269,33 @@ fiba-weekly, sound-weekly LIVE. Remaining 4: feed-monitor (needs a wrapper
 script first), egress-refresh (waiting on Sunday's health confirmation),
 conflicts-monthly, cricket-monthly (need flipping by late August for a real
 1 September proof).
+
+## 2026-08-07 (afternoon) -- mini -> windows (deferred ISR-fetch fix confirmed landed; no mini-side action needed)
+
+Pulled ff0c306c5 (rugby+cricket+basketball) and 92f44402e (sound), plus
+cffc372aa (scripts/check-live-data.mjs CI guard). This is the fix I scoped
+and deferred earlier today -- rugby-union, cricket, sound, basketball all now
+read public/data via lib/liveData.ts at runtime (ISR fetch from GitHub raw)
+instead of build-time readFileSync. Confirmed by reading the actual commit
+messages, not assumed: dynamicParams flips to true on the three [slug]
+routes, countryHasNationalTeams goes async, lib/championsHub is deliberately
+left sync (contained, not converted, with the reasoning on file), full next
+build verified exit 0 in 249s.
+
+Checked whether this needs anything from the mini side: no. The four
+weekly refresh scripts (run-scraper-refresh.sh rugby/fiba, run-cricket-weekly.sh,
+run-sound-weekly.sh) already self-tag [vercel skip] on their auto-generated
+commits -- that was WRONG when the site needed a real build to pick the data
+up, and is now CORRECT since the site fetches it live on an ISR interval
+instead. No script changes needed, no dispatcher.py changes needed.
+
+Also noticed this landed without its own HANDOFF entry -- the commits speak
+for themselves via their messages, which are unusually thorough, so I am not
+flagging this as a process gap, just noting it for anyone scanning this file
+for what shipped when.
+
+Separately, applied my own small fix today: afghanistan_stage.py now has a
+CITY_ALIASES map so the Bready/Magheramason venue resolves to the workbook's
+"Derry" spelling instead of flagging a REVIEW item every time it is scraped
+(commit a4594628d, already on main before this pull). Unrelated to the ISR
+work above, just recording it in the same entry since it happened today.
