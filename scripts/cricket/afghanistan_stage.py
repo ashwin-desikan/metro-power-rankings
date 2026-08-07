@@ -50,6 +50,15 @@ CODE = {
 
 def norm(s): return "".join(ch for ch in (s or "").lower() if ch.isalnum())
 
+# Wikipedia infobox venue-city spelling -> workbook spelling, where they
+# diverge. Applied before the workbook lookup in venue_fields() so a scrape-
+# time spelling difference never blocks auto-resolution. Keyed by norm().
+# Extend as new mismatches surface (venue_fields flags anything it can't
+# resolve, alias or not).
+CITY_ALIASES = {
+    "magheramason": "Derry",  # Bready Cricket Club; workbook uses "Derry"
+}
+
 def api_get(params):
     params = dict(params); params.update(format="json", formatversion="2")
     url = API + "?" + urllib.parse.urlencode(params)
@@ -257,7 +266,8 @@ def result_fields(result, t1, t2):
 
 def venue_fields(venue, idx):
     city = venue.rsplit(",", 1)[-1].strip() if "," in venue else ""
-    hit = idx["venue_by_city"].get(norm(city))
+    canon = CITY_ALIASES.get(norm(city), city)
+    hit = idx["venue_by_city"].get(norm(canon))
     if hit:
         return hit[0], hit[1], hit[2], hit[3], []
     return venue, city, "", "", ([f"venue city {city!r} not in workbook"] if city else ["venue unresolved"])
