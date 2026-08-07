@@ -68,8 +68,8 @@ def main() -> int:
         print(f"ERROR: quiz queue not found at {QUEUE_PATH}", file=sys.stderr)
         return 2
 
-    queue = json.loads(QUEUE_PATH.read_text())
-    metros = json.loads((DATA / "metros.json").read_text())
+    queue = json.loads(QUEUE_PATH.read_text(encoding="utf-8"))
+    metros = json.loads((DATA / "metros.json").read_text(encoding="utf-8"))
     by_slug = {m["slug"]: m for m in metros}
 
     # Load badges
@@ -77,7 +77,9 @@ def main() -> int:
     for b in BADGE_FILES:
         p = DATA / f"{b}.csv"
         if not p.exists(): continue
-        with p.open() as fh:
+        # Explicit encoding: cp1252 is the Windows default and blows up on accented
+        # metro names. Same defect as generate_quiz_questions.py. Fixed 2026-08-07.
+        with p.open(encoding="utf-8") as fh:
             for row in csv.DictReader(fh):
                 if row.get("slug"):
                     badges_by_metro[row["slug"]].add(b)
@@ -85,7 +87,7 @@ def main() -> int:
     # Load conurbation cluster slug -> cluster_id
     slug_to_cluster: dict[str, str] = {}
     cluster_sizes: dict[str, int] = {}
-    with (DATA / "conurbations.csv").open() as fh:
+    with (DATA / "conurbations.csv").open(encoding="utf-8") as fh:
         for row in csv.DictReader(fh):
             cid = row["cluster_id"]
             cluster_sizes[cid] = int(row["cluster_size"])
@@ -140,7 +142,7 @@ def main() -> int:
                 if not detail_path.exists():
                     errors.append(f"{d} Q{q_idx}: details/{slug}.json missing for dimension-capital validation")
                     continue
-                detail = json.loads(detail_path.read_text())
+                detail = json.loads(detail_path.read_text(encoding="utf-8"))
                 rank = parse_dim_rank(detail.get("dimRanks", {}).get(hook))
                 band_max = {"top-3": 3, "top-10": 10, "top-50": 50}.get(band)
                 if band_max is None:
@@ -208,7 +210,7 @@ def main() -> int:
                     continue
                 detail_path = DETAILS / f"{slug}.json"
                 if detail_path.exists():
-                    detail = json.loads(detail_path.read_text())
+                    detail = json.loads(detail_path.read_text(encoding="utf-8"))
                     teams = detail.get("teams", [])
                     if not any(t.get("team") == team for t in teams):
                         warnings.append(

@@ -130,7 +130,7 @@ DIM_LABELS = {
 # --- Loading -------------------------------------------------------------
 
 def load_metros() -> tuple[list[dict], dict[str, dict]]:
-    metros = json.loads((DATA / "metros.json").read_text())
+    metros = json.loads((DATA / "metros.json").read_text(encoding="utf-8"))
     by_slug = {m["slug"]: m for m in metros}
     return metros, by_slug
 
@@ -138,7 +138,7 @@ def load_details(slug: str) -> dict | None:
     p = DETAILS / f"{slug}.json"
     if not p.exists(): return None
     try:
-        return json.loads(p.read_text())
+        return json.loads(p.read_text(encoding="utf-8"))
     except Exception:
         return None
 
@@ -155,7 +155,7 @@ def parse_dim_rank(raw) -> int | None:
 def load_clusters() -> dict[str, dict]:
     """Returns {cluster_id: {tier, members: [...], score_sum, name}}."""
     out: dict[str, dict] = {}
-    with (DATA / "conurbations.csv").open() as fh:
+    with (DATA / "conurbations.csv").open(encoding="utf-8") as fh:
         for row in csv.DictReader(fh):
             cid = row["cluster_id"]
             members = [s for s in row["cluster_member_slugs"].split(";") if s]
@@ -198,7 +198,11 @@ def load_badges() -> dict[str, list[str]]:
     for badge_slug in BADGE_FILES:
         p = DATA / f"{badge_slug}.csv"
         if not p.exists(): continue
-        with p.open() as fh:
+        # encoding is explicit: Python on Windows defaults to cp1252, and a badge CSV
+        # carrying any non-ASCII metro name (accented characters are routine here) then
+        # raises UnicodeDecodeError and kills the whole generator. That is what silently
+        # stopped the daily queue: its last issue is 2026-07-10. Found 2026-08-07.
+        with p.open(encoding="utf-8") as fh:
             for row in csv.DictReader(fh):
                 s = row.get("slug")
                 if s: out[s].append(badge_slug)
@@ -483,7 +487,7 @@ def generate_issue(
 def load_existing_queue() -> dict:
     if QUEUE_PATH.exists():
         try:
-            return json.loads(QUEUE_PATH.read_text())
+            return json.loads(QUEUE_PATH.read_text(encoding="utf-8"))
         except Exception:
             return {"issues": []}
     return {"issues": []}
