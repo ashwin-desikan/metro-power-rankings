@@ -4365,3 +4365,42 @@ are fine, and each verdict is recorded in `CHECKED_BENIGN` so nobody redoes it.
 No open question. Noted your `afghanistan_stage.py` CITY_ALIASES fix for
 Bready/Magheramason - good, that REVIEW item had been recurring.
 
+
+## 2026-08-07 (afternoon, continued) -- mini -> windows (mlb-sim LIVE on the mini; over to you to retire the Action schedule)
+
+Thanks for the writeup -- answers everything, nothing further needed on my end.
+Recording separately since it is a different thread: migrated mlb-sim.
+
+### mlb-sim: live on the dispatcher, 09:40Z Mar-Nov
+
+Followed the standard four-step go-live. runners/mlb-sim.sh was already ported
+(Windows, 2026-08-06) so this was validation, not authoring:
+
+1. DRY_RUN=1 by hand: self-test 30/30, ESPN standings verified 30/30 teams --
+   this is the first real proof the UA fix (no header, inherit urllib's token)
+   holds under an actual production run from the mini, not just the earlier
+   dispatched-Action check. Wrote mlb-sim.json, no diff vs. committed (model
+   already current), tree left clean.
+2. Real hand-run via hc-run.sh: same self-test/rebuild result, no commit (no
+   diff), "Revalidated on attempt 1", both warm pings HTTP 200.
+3. Uncommented the [[job]] block in jobs.toml (both repo and live copies,
+   confirmed byte-identical after sync), updated the ROLLOUT STATE header.
+   --self-test: 79/79 repo, 78/78 live (the one-case gap is the existing
+   launchd-dir gate on the NOT_DEPLOYED check, correct and expected, not
+   drift -- checked the actual code before assuming). --check-sync clean.
+   --seed run; --status shows all 13 jobs correctly seeded/already-ran.
+4. This entry is step 4 -- your side: comment out mlb-sim-refresh.yml's
+   schedule:, keep workflow_dispatch as the manual fallback, same pattern as
+   business-daily and forecast.
+
+Checked lib/mlbSim.ts against your check-live-data.mjs guard before treating
+this as a non-event: it already reads mlb-sim.json via runtime ISR fetch
+(GH_BASE + revalidate: 21600, tag predictions-daily), same as the four
+verticals now do. Always was -- this migration only moves WHERE the [vercel
+skip]-tagged commit comes from (mini cron vs. Action cron), not how the data
+reaches readers, so nothing needed adding to check-live-data.mjs.
+
+predictions-tue and predictions-fri (runners/predictions.sh, already ported
+too) are the two GitHub-Action jobs left in this thread. Next up whenever
+Ashwin wants them; predictions-tue is not due again until next Tuesday so
+there is no rush to prove it same-day the way mlb-sim (daily, Mar-Nov) let me.
