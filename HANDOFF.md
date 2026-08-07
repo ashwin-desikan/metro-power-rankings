@@ -4199,3 +4199,73 @@ This finding doesn't block the scheduling migration itself — moving these
 jobs from launchd to the dispatcher changes WHEN they run, not whether their
 commits deploy, and that second problem exists identically on the old plists
 today. Proceeding with screen-number-ones + the four weeklies.
+
+## 2026-08-07 (midday, continued) — mini → windows (batch 4+5 LIVE, six jobs. A real --seed/tick race hit production and is now fixed in dispatcher.py)
+
+Ashwin approved batch 4 and 5 together. Longer entry than usual — three
+things happened, not one.
+
+### screen-number-ones + the four weeklies: all six live, plists unloaded
+
+Hand-ran all five scripts for real first (screen-number-ones, rugby-weekly,
+cricket-weekly, fiba-weekly, sound-weekly). Three pushed real data
+(`aa75c9a3a`, `dcca3c1a2`, `cc8964280`); two found no change since last week
+(fiba, screen-number-ones), which is correct, not a failure. Uncommented all
+five rows, updated the ROLLOUT STATE header, unloaded all five plists.
+
+### Real finding along the way: 4 verticals never actually deploy their weekly data
+
+The rugby-weekly hand-run tripped the new post-commit hook's MISMATCH check --
+a real, correct alert, not noise. Checked properly rather than assuming:
+rugby-union, cricket, sound and basketball(fiba) all read public/data via
+build-time readFileSync with ZERO runtime fetch() calls anywhere in their lib
+files, while their refresh scripts self-tag [vercel skip]. Pre-existing,
+not something today's migration introduced — screen-number-ones already has
+the correct ISR-fetch fix in lib/screen.ts (comment there says exactly why),
+it just was never applied to the other four.
+
+Scoped the real fix (lib/basketball.ts alone has 10 exported functions
+reading 5+ files, and getAllBasketballSlugs almost certainly feeds
+generateStaticParams for nation-detail pages, which ISR-fetch alone can't
+solve for brand-new entities). Ashwin's call: proper fix deferred to a
+dedicated session rather than rushed through this one. Full detail two
+entries up. Not fixed today, on purpose.
+
+### The bigger thing: a real --seed/tick race hit production during the migration
+
+Running --seed to mark the 5 new jobs' already-happened weekly occurrences
+landed at the same moment the background 600s tick genuinely had
+football-standings' 11:00Z slot due. The tick ran it for real (146s, real
+data pushed), then wrote save_state() from a state.json snapshot it had read
+BEFORE my --seed added the 5 new jobs — clobbering them on write. My first
+hand-fix (before I'd found the real cause) made it worse by reverting the
+tick's legitimate 11:00Z update back to a stale value.
+
+Root cause: --seed never acquired the lock tick() uses. Fixed in
+dispatcher.py: --seed now holds the same lock, refuses cleanly (exit 1, clear
+message) if a tick is mid-run rather than racing it, and re-reads state AFTER
+acquiring the lock rather than trusting what main() loaded before the lock
+existed. acquire_lock()/release_lock() had zero test coverage before this --
+5 new self-test cases pin the primitive directly (fresh acquire, blocked
+second acquire against a live PID, release-then-reacquire, releasing nothing
+doesn't raise, a corrupt lock file is taken over not fatal). 79 cases now.
+Verified live against the real lock file, both the refuse-path and the
+normal-success path, and confirmed the actual production state.json is fully
+correct afterward.
+
+Worth naming since it is the second time today a manual command and the
+background tick have interacted in a way neither of us designed for
+(activity-feed's original --seed-before-unload sequencing was the first,
+different shape but same family): anything that touches state.json by hand
+needs to assume the tick could fire at any moment, not just avoid overlapping
+with itself.
+
+### Status
+self-test 79/79 (up from 74), --check-sync clean on both copies, --status
+shows all 11 live jobs correctly seeded/already-ran. Rollout state:
+activity-feed, substack-daily, euro-comps, gap-league-watch,
+football-standings, screen-number-ones, rugby-weekly, cricket-weekly,
+fiba-weekly, sound-weekly LIVE. Remaining 4: feed-monitor (needs a wrapper
+script first), egress-refresh (waiting on Sunday's health confirmation),
+conflicts-monthly, cricket-monthly (need flipping by late August for a real
+1 September proof).
