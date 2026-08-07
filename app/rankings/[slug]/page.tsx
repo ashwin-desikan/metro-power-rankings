@@ -18,6 +18,8 @@ import {
   getMetroDetail,
   getRelocationsForMetro,
   getSimilarMetrosForMetro,
+  getMetroFootprint,
+  metroDensity,
   formatPop,
   formatMarketCap,
   formatGdp,
@@ -447,6 +449,34 @@ export default async function MetroDetailPage({ params }: PageProps) {
               <p className="text-lg">
                 Population: <span className="text-[var(--text)]">{formatPop(metro.pop)}</span>
               </p>
+              {/* Measured land area inside the metro's own Overture boundary,
+                  summed from 30 arcsec cells with a cos(latitude) correction,
+                  plus the density that follows. Density deliberately uses the
+                  WORKBOOK population, which stays ground truth; the gridded
+                  GHS-POP figure in the same file is an internal boundary audit
+                  and is not shown. Renders nothing when a metro has no usable
+                  boundary rather than printing a zero. */}
+              {(() => {
+                const fp = getMetroFootprint(slug);
+                if (!fp?.areaKm2) return null;
+                const density = metroDensity(metro.pop, fp.areaKm2);
+                return (
+                  <p className="text-lg">
+                    Land area:{" "}
+                    <span className="text-[var(--text)]">
+                      {Math.round(fp.areaKm2).toLocaleString()} km²
+                    </span>
+                    {density !== null && (
+                      <>
+                        {" • Density: "}
+                        <span className="text-[var(--text)]">
+                          {Math.round(density).toLocaleString()} people/km²
+                        </span>
+                      </>
+                    )}
+                  </p>
+                );
+              })()}
               <p className="text-lg">
                 GDP: <span className="text-[var(--text)]">{formatGdp(metro.gdp)}</span> • GDP per capita:{" "}
                 <span className="text-[var(--text)]">${metro.gdpPerCapita.toLocaleString()}</span>

@@ -132,6 +132,46 @@ export function getSimilarMetrosForMetro(slug: string): MetroSimilarity | null {
   return (_similar ?? {})[slug] ?? null;
 }
 
+export type MetroFootprint = {
+  cellsR6: number;
+  areaKm2?: number;
+  ghsPop?: number;
+  popRatio?: number | null;
+  popFlag?: "ok" | "low" | "high" | "unknown";
+};
+
+let _footprint: Record<string, MetroFootprint> | null = null;
+// Measured land area and an independent gridded population per metro, summed
+// inside the Overture boundary from GHS-POP. Built by scripts/build_metro_grid.py.
+//
+// areaKm2 is the only field the site displays. ghsPop / popRatio / popFlag are an
+// INTERNAL AUDIT of the boundary, not a correction: the workbook stays ground
+// truth for population (see feedback_workbook_is_ground_truth). Do not render the
+// gridded figure next to the workbook one as if they were rival estimates.
+export function getMetroFootprint(slug: string): MetroFootprint | null {
+  if (_footprint === null) {
+    try {
+      _footprint = JSON.parse(
+        readFileSync(join(dataDir, "metro-footprint.json"), "utf-8")
+      ).metros;
+    } catch {
+      _footprint = {};
+    }
+  }
+  return (_footprint ?? {})[slug] ?? null;
+}
+
+// People per square kilometre of measured land area. Returns null unless both
+// inputs are usable, so a metro with no boundary simply shows nothing rather
+// than an infinity or a zero.
+export function metroDensity(
+  pop: number | null | undefined,
+  areaKm2: number | null | undefined
+): number | null {
+  if (!pop || !areaKm2 || pop <= 0 || areaKm2 <= 0) return null;
+  return pop / areaKm2;
+}
+
 export function getMetroDetail(slug: string): MetroDetail | null {
   try {
     const raw = readFileSync(join(dataDir, "details", `${slug}.json`), "utf-8");

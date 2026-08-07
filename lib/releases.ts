@@ -19,10 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-08-07",
-    headline: "Older essay links to two badge pages now work",
+    headline: "Every Ground Floor measure now follows the people",
     items: [
-      "Two badges were renamed after the essays that cite them were published, so those links had been dead. University Town and Skyline City now answer to their old addresses as well as their new ones.",
-      "Sound of the Metros, international rugby, international cricket and international basketball now all refresh on the site the week they are rebuilt, instead of waiting for an unrelated deploy to carry them.",
+      "Air, nitrogen dioxide and water were each read at one point, the metro's centre. All three are now averaged across the whole metro, weighted by where its people actually live.",
+      "That point flattered nobody. For most large metros the old centre reading sat in the worst tenth of anything residents breathe, and 1,720 metros have moved more than a hundred places.",
+      "Every metro page now carries its measured land area and the population density that follows, taken from its own mapped boundary rather than an administrative figure.",
+      "Two badge links from older essays work again, and Sound of the Metros, international rugby, cricket and basketball now refresh the week they are rebuilt.",
     ],
   },
   {
