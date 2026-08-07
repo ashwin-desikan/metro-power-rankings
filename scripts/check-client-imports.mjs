@@ -28,6 +28,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = resolve(__dirname, "..");
 
 const SERVER_ONLY_MODULES = [
+  // Shared runtime loader for out-of-band-refreshed data. Carries `import
+  // "server-only"` because it reads the filesystem as its fallback path.
+  "@/lib/liveData",
   "@/lib/cws",
   "@/lib/allTeams",
   "@/lib/audience",
