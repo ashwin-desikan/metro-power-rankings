@@ -4054,3 +4054,82 @@ quiz generator fix, badge redirects) — all outside anything the mini side
 needs to act on, so not re-litigating it here. Batch 4 (screen-number-ones)
 is still just sitting drafted, untouched since yesterday; will pick it up
 once things are calmer.
+
+## 2026-08-07 - windows -> mini (documentation audit: seven commits, `0880154c2..15108a61f`, pushed and live)
+
+Ashwin asked for a full audit of every document in the project, then for it to be
+fixed, committed and pushed. Five things below change what YOUR clone sees, so
+read them before your next run. Full detail is in project memory under
+`project_doc_audit_2026_08_07`.
+
+### Things that change your clone
+
+1. **`.auto-memory/` is deleted** (`0880154c2`). It was a tracked second memory
+   store from April using the same `feedback_*.md` naming as live project memory,
+   with zero inbound references. Two of its four entries contradicted live memory
+   files of identical filename - notably its `feedback_qa_before_deploy.md`, which
+   prescribed a bare `npx tsc --noEmit` and would have routed you away from
+   `npm run verify` and its six checks. If you were reading anything out of that
+   folder, stop.
+
+2. **`docs/` is now TRACKED** (`f65f0adfe`). `.gitignore` narrowed from `/docs/`
+   to `/docs/lens/`. You will pull about a dozen new files, including the
+   operating playbooks, the GBA conurbation audit and the quiz scoping docs. They
+   had no version history at all until today.
+
+3. **`docs/BACKLOG-OPEN.md` replaces BACKLOG.md as the work queue.** An
+   item-by-item pass over all 126 entries found 33 already shipped, ten of them
+   still listed open with no marker. What survives is 78 verified-open items plus
+   eight blocked on Ashwin. BACKLOG.md is frozen and stays only because four
+   source files cite it by path. Do not act on an "open" item in the old file.
+
+4. **`HANDOFF.md` lost its July block** (`88ef1d0c7`). 19-31 July moved to
+   `HANDOFF-ARCHIVE-2026-07b.md`; the file went 363 KB to 265 KB. Also worth your
+   attention: **this file is 100% CRLF and nothing enforces it.** `.gitattributes`
+   has no `*.md` rule, so your appends have been landing as bare LF and surfacing
+   as whole-file renormalisations - three times now. The rule is now written into
+   `.claude/skills/handoff/SKILL.md`. Please write CRLF.
+
+5. **`scripts/generate_quiz_questions.py` was broken and is fixed** (`528cd6533`).
+   It opened badge CSVs with no `encoding=`, so on Windows it died on the first
+   accented metro name. `extract.py` calls it on every ETL run, so it had been
+   failing silently since 25 June. If you run the ETL, this is why the quiz queue
+   never moved. Regenerated: 92 issues, 30 days forward.
+
+### Three corrections that would have cost you a rebuild
+
+`mac-mini-jobs/REBUILD-RUNBOOK.md` section 7 used to bootstrap **every**
+`com.citizenofnowhere` plist with a blanket glob. Five of those are dispatcher-owned
+now and their plists must stay unloaded; loading one alongside its dispatcher row
+races two copies of the same script through `git pull` / `commit` / `push` on one
+working tree, and the lock file does not help. It also never installed the
+dispatcher at all, which would have left business-daily and forecast with no runner
+anywhere, since their Action schedules are commented out. Both fixed in `48a169d85`.
+
+`mac-mini-jobs/README.md` said you own four data refreshes. You own **two**.
+`jobs.toml` and its ROLLOUT STATE block are now named as the single authority, here
+and everywhere else. Please do not comment out the `predictions-refresh.yml` or
+`mlb-sim-refresh.yml` schedules on the strength of any doc - those Actions still own
+those jobs.
+
+`f1-refresh.yml` must **not** be re-enabled. Two July handoffs said the Action owns
+`public/data/f1/data.json`; that inverted, and `run-f1-weekly.sh` claims and commits
+that file now. Both handoffs carry banners saying so.
+
+### Also
+
+`scripts/supabase/OTHER-LEAGUES-SUPABASE.md` prescribed adding a temporary anon
+insert policy as the load path. That is the pattern `lock_down_mktcap_pipeline_writes`
+was written to revoke, because the public anon key ships in every browser bundle. The
+recipe is kept behind a details block as a record only; the credential is the
+`sb_secret_` service key.
+
+`GROUND-FLOOR-SPEC.md` was committed unrevised on 06 Aug and for a day instructed the
+reader to rebuild PM2.5 on CAMS, the source that had already been measured wrong and
+rejected. It is now a decision record, not a build spec (`617a18e5e`).
+
+### Nothing needed from you
+
+No open question. This is a heads-up, not a request. Noted your entry above: all
+seven first-unattended runs green is good news and closes that watch item.
+
