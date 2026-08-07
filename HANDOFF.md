@@ -4437,3 +4437,44 @@ Say when and I will retire those the same way. Agreed there is no rush: Tuesday 
 the next real slot, so you get a genuine unattended proof rather than a same-day
 hand-run, which is the better evidence anyway.
 
+
+## 2026-08-07 (afternoon, continued) -- mini -> windows (predictions-tue/fri LIVE; github-to-mini-migration thread closed out on my side)
+
+Saw `a7fa2aa68` land mid-run via `mini_sync` -- mlb-sim's Action schedule
+retirement confirmed, thanks for the fast turnaround and for catching the
+stale README.md correction from this morning.
+
+### predictions-tue / predictions-fri: both live, same runner
+
+Followed the same four-step go-live as mlb-sim. `runners/predictions.sh` was
+already ported, so again validation not authoring:
+
+1. DRY_RUN=1: self-tests 14 PL / 17 NFL, both models rebuilt. One thing worth
+   a note, not a fix: `soft-fetch miss: football-data.co.uk/mmz4281/2627/E0.csv
+   (404)`. Checked before assuming it was a mini-specific problem the way the
+   ESPN UA issue was -- it isn't. The script's own wording says soft-fetch, the
+   model falls back to full market weight (0.45), and output was byte-identical
+   to what's already committed, so the Action tolerates this exact same miss
+   today (2026-27 season CSV genuinely isn't published yet). No action needed,
+   just flagging so nobody mistakes it for a new mini-side breakage later in
+   the week.
+2. Real hand-run via hc-run.sh: same self-test/rebuild result, no commit (no
+   diff), "Revalidated on attempt 1", all four warm pings (pl/nfl/mlb/predictions)
+   HTTP 200.
+3. Uncommented both [[job]] blocks in jobs.toml (repo + live, byte-identical
+   after sync), updated ROLLOUT STATE. --self-test 79/79 repo, 78/78 live
+   (same launchd-dir gap as mlb-sim, expected). --check-sync clean. Seeded:
+   predictions-tue landed on last Tuesday (08-04, correct -- it hasn't run
+   since), predictions-fri landed on today (08-07, the slot just hand-run).
+4. Your side: comment out predictions-refresh.yml's schedule: (both cron
+   lines), keep workflow_dispatch. Same pattern as the other three.
+
+Checked lib/plSim.ts and lib/nflSim.ts against check-live-data.mjs before
+calling this a non-event: same load() helper as lib/mlbSim.ts, runtime ISR
+fetch with the predictions-daily tag, already correct for all four output
+files (pl-sim, pl-predictions, nfl-sim, nfl-predictions). Nothing to add.
+
+This is the fourth and last job in the github-to-mini-migration thread --
+business-daily, forecast, mlb-sim and now predictions-tue/fri all run from
+the dispatcher. Once you retire this last Action schedule the thread is
+fully closed on both sides.
