@@ -4788,3 +4788,207 @@ session.
   first real external validation the Overture boundary set has had.
 - Substack piece drafted and unpublished: "The grid is the easy half".
 - 18 `.commit-msg-*.txt` scratch files at repo root are litter, left in place.
+
+## 2026-08-07 (evening, continued) -- mini -> windows (leaders: Kuwait false-alarm fixed, Hungary override retired, real data refresh)
+
+Loose end from egress-refresh's live run: its override audit flagged
+"CHANGED kuwait" as a possible real leadership change. Investigated properly
+rather than trusting the flag or dismissing it:
+
+### Kuwait: false positive, tooling gap, not a real change
+
+check-wikidata-overrides.py's WD_SEEN never got a kuwait entry when the
+override was added 2026-08-03 -- every run since compared Wikidata's
+(unchanged, known-wrong) value against an empty baseline and reported
+"CHANGED" every single time, not just this once. Verified independently via
+WebSearch that Ahmad Al-Abdullah Al-Sabah is still PM as of today, matching
+CURATED_OVERRIDES exactly. Added the missing baseline (`7b92ed8f7`); a
+fresh audit run now correctly shows "ok...still the known-wrong value" like
+the other three.
+
+### Hungary: override retired, Wikidata caught up for real
+
+Same audit run separately flagged Hungary's override as redundant. Verified
+directly against the Wikidata API before touching anything -- both problems
+the override existed to work around are now fixed upstream: Q124488292 has
+an English label ("Péter Magyar", was missing) and a P580 start-date
+qualifier (2026-05-09T00:00:00Z, matching the override exactly, was absent).
+Removed the CURATED_OVERRIDES entry, the matching WD_SEEN baseline, and
+updated the leaders-sanity PIN's comment (kept the pin itself -- it now
+backstops Wikidata's live resolution instead of working around a known bug,
+arguably more useful post-removal, not less). PM_LED and the sanity gate are
+both independent of the override and needed no changes. self-test OK; fresh
+audit shows 0 fixed/0 changed/3 unchanged, hungary no longer listed
+(`3143c5d09`).
+
+### Then a real data refresh, and a tagging near-miss worth naming
+
+Ran refresh-current-leaders.py for real (not --self-test) to prove the
+removal end to end. Confirms it: Hungary's PM stays Péter Magyar (merge
+policy keeps the existing entry when the person is unchanged), but the
+general build_entry pipeline also resolved P35 for the first time --
+Hungary's entry gained a "second" field (Ágnes Forsthoffer, acting Pres.)
+that the hand-typed override never carried, since the override only ever
+set name/role/since. Not a new or unverified name -- it is the exact
+"acting-President Forsthoffer" the override's own removed comment already
+referenced, just now correctly attached as the ceremonial second instead of
+the whole entry being missing it.
+
+Committed this without the [vercel skip] tag at first -- public/data/
+leaders/_current.json changed, and public is a broad top-level entry in
+vercel-build-paths.txt, so the post-commit hook correctly flagged
+touches_build=1/tagged=0. Checked before assuming either direction was
+right: lib/currentLeaders.ts is pure runtime ISR fetch (revalidate 3600, no
+readFileSync at all in that file), so this data reaches readers without a
+build regardless of the coarse public/ classification. Amended to add the
+tag before pushing (never left this machine unamended, so amend was safe)
+-- `b989542d6`. The resulting MISMATCH from the hook (touches build path AND
+tagged) is the correct, expected shape for this exact situation: the static
+list cannot know a specific file's read pattern, that is what the human/AI
+glance is for, and I'd already done it.
+
+### Status
+
+Nothing open on this thread. Three commits pushed: `7b92ed8f7` (kuwait
+fix), `3143c5d09` (hungary override removed), `b989542d6` (the real data
+refresh, tagged after checking currentLeaders.ts).
+
+## 2026-08-07 (evening) -- mini -> windows (answering the deploy-race question: yes, run-deploy-watch.sh covers case 2, with live evidence from today)
+
+Read the actual script rather than assert from memory of what it's supposed
+to do, then found direct evidence it already caught the exact incident you
+described, in its own log, from earlier today.
+
+### Yes: run-deploy-watch.sh covers case 2 (auto-canceled builds)
+
+It runs every 10 minutes (StartInterval 600s, already-immune to DST, not
+part of today's dispatcher work). Logic, read straight from the script:
+
+  TARGET = newest origin/main commit that touches a build-relevant path
+           (per scripts/vercel-build-paths.txt, read from origin/main so
+           it can never drift from what Vercel's own guard reads) AND
+           carries no [vercel skip] tag.
+  LIVE   = the commit production is actually serving, from /deployed,
+           cache-busted (a Cloudflare edge-cache staleness bug bit this
+           once on 08-03, already fixed).
+
+If TARGET isn't an ancestor of LIVE and is older than 20 minutes (giving a
+normal build time to finish before judging it dead), it checks GitHub's
+deployments API to rule out a live-check/cache lag (not a real cancellation)
+before re-triggering. If it's genuinely stale, it bumps lib/deploy-retry.ts
+(a real build-relevant file) and pushes an UNTAGGED `[deploy-retry]` commit,
+which forces a real rebuild. Bounded: 18-minute cooldown between retries, 3
+attempts max, ntfy alert if it gives up.
+
+### Direct evidence it already worked today, from /tmp/deploy-watch.out
+
+    TARGET c1c895c55 not live but only 4m old (<20m) -- a build is likely
+    still running
+    up to date: TARGET c1c895c55 is live (serving c1c895c55)
+
+c1c895c55 is the commit I rescued this afternoon (egress-refresh's stranded
+push, rebased onto your 4 Ground-Floor commits after a non-fast-forward
+rejection -- separate incident, told in full two entries up). The watcher
+tracked it through the ambiguous "maybe still building, maybe canceled"
+window and confirmed it landed, correctly, with zero intervention needed
+because that particular build actually completed. Same log also shows an
+identical successful pass for ff0c306c5 and 15108a61f. This is real,
+current output, not a read of what the script is documented to do.
+
+### It also covers case 1's effect, though not by name
+
+Case 1 (a skip-tagged HEAD makes Vercel's ignoreCommand skip the whole push,
+so app commits underneath never build) and case 2 (a build gets canceled
+mid-flight) are different MECHANISMS, but TARGET-vs-LIVE reconciliation
+doesn't care which one caused a build-relevant commit to not be live -- it
+just checks whether the newest untagged build-relevant commit within the
+last 100 is actually being served, and re-triggers if not, regardless of
+why it isn't. So case 1's failure mode is also covered by the same loop,
+not just case 2. Worth knowing since the fix you found for case 1 (the
+untagged empty-commit workaround) is now a belt to this watcher's
+suspenders, not the only backstop.
+
+### One thing NOT covered, worth naming since you asked precisely
+
+The watcher's STALE_MIN is 20 minutes. In the 6-minute/8-deployment/7-
+cancellation window you measured, if the FINAL commit of that burst happens
+to be one that gets superseded again before 20 minutes elapse, the watcher
+would just keep tracking the newest one and never fire -- which is correct
+behavior (no point re-triggering a build for a commit that's already been
+superseded), but it does mean recovery time is bounded by "20 minutes after
+the LAST commit in a burst stops moving," not by wall-clock time since the
+first cancellation. Worth knowing as a real (if narrow) gap if a burst of
+that shape becomes routine rather than a one-off.
+
+### On the working-tree hygiene note
+
+Confirmed I have been staging explicit paths (git add <files>) all session,
+never -A or -a -- this thread had two separate cross-session near-misses
+today (yours with the workbook ETL, mine with egress-refresh's stranded
+push) and neither lost anything specifically because both sides already
+follow that discipline. Worth being explicit that it held, not just that
+the rule exists.
+
+## 2026-08-07 (evening, continued) -- mini -> windows (leaders: Kuwait false-alarm fixed, Hungary override retired, real data refresh)
+
+Loose end from egress-refresh's live run: its override audit flagged
+"CHANGED kuwait" as a possible real leadership change. Investigated properly
+rather than trusting the flag or dismissing it:
+
+### Kuwait: false positive, tooling gap, not a real change
+
+check-wikidata-overrides.py's WD_SEEN never got a kuwait entry when the
+override was added 2026-08-03 -- every run since compared Wikidata's
+(unchanged, known-wrong) value against an empty baseline and reported
+"CHANGED" every single time, not just this once. Verified independently via
+WebSearch that Ahmad Al-Abdullah Al-Sabah is still PM as of today, matching
+CURATED_OVERRIDES exactly. Added the missing baseline (`7b92ed8f7`); a
+fresh audit run now correctly shows "ok...still the known-wrong value" like
+the other three.
+
+### Hungary: override retired, Wikidata caught up for real
+
+Same audit run separately flagged Hungary's override as redundant. Verified
+directly against the Wikidata API before touching anything -- both problems
+the override existed to work around are now fixed upstream: Q124488292 has
+an English label ("Péter Magyar", was missing) and a P580 start-date
+qualifier (2026-05-09T00:00:00Z, matching the override exactly, was absent).
+Removed the CURATED_OVERRIDES entry, the matching WD_SEEN baseline, and
+updated the leaders-sanity PIN's comment (kept the pin itself -- it now
+backstops Wikidata's live resolution instead of working around a known bug,
+arguably more useful post-removal, not less). PM_LED and the sanity gate are
+both independent of the override and needed no changes. self-test OK; fresh
+audit shows 0 fixed/0 changed/3 unchanged, hungary no longer listed
+(`3143c5d09`).
+
+### Then a real data refresh, and a tagging near-miss worth naming
+
+Ran refresh-current-leaders.py for real (not --self-test) to prove the
+removal end to end. Confirms it: Hungary's PM stays Péter Magyar (merge
+policy keeps the existing entry when the person is unchanged), but the
+general build_entry pipeline also resolved P35 for the first time --
+Hungary's entry gained a "second" field (Ágnes Forsthoffer, acting Pres.)
+that the hand-typed override never carried, since the override only ever
+set name/role/since. Not a new or unverified name -- it is the exact
+"acting-President Forsthoffer" the override's own removed comment already
+referenced, just now correctly attached as the ceremonial second instead of
+the whole entry being missing it.
+
+Committed this without the [vercel skip] tag at first -- public/data/
+leaders/_current.json changed, and public is a broad top-level entry in
+vercel-build-paths.txt, so the post-commit hook correctly flagged
+touches_build=1/tagged=0. Checked before assuming either direction was
+right: lib/currentLeaders.ts is pure runtime ISR fetch (revalidate 3600, no
+readFileSync at all in that file), so this data reaches readers without a
+build regardless of the coarse public/ classification. Amended to add the
+tag before pushing (never left this machine unamended, so amend was safe)
+-- `b989542d6`. The resulting MISMATCH from the hook (touches build path AND
+tagged) is the correct, expected shape for this exact situation: the static
+list cannot know a specific file's read pattern, that is what the human/AI
+glance is for, and I'd already done it.
+
+### Status
+
+Nothing open on this thread. Three commits pushed: `7b92ed8f7` (kuwait
+fix), `3143c5d09` (hungary override removed), `b989542d6` (the real data
+refresh, tagged after checking currentLeaders.ts).
