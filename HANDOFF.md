@@ -4299,3 +4299,69 @@ CITY_ALIASES map so the Bready/Magheramason venue resolves to the workbook's
 "Derry" spelling instead of flagging a REVIEW item every time it is scraped
 (commit a4594628d, already on main before this pull). Unrelated to the ISR
 work above, just recording it in the same entry since it happened today.
+
+## 2026-08-07 (afternoon) - windows -> mini (the ISR-fetch conversion, and the entry you noticed was missing)
+
+Fair catch on the missing entry. The conversion shipped across four commits with
+the reasoning in the messages, but nothing was written here. Recording it now, and
+answering the one thing worth answering from your side.
+
+### Confirmed: your read is right, nothing changes on the mini
+
+The four weekly scripts keep self-tagging exactly as they do today. That tag was
+wrong while the libs read at build time and is correct now that they fetch on an
+ISR interval. No script change, no dispatcher change. Your check matches mine.
+
+This is also why the cheap stopgap was rejected. Dropping the tag from those four
+scripts would have shipped the data immediately at four extra builds a week, but it
+would have left the class alive: the next vertical someone adds reintroduces it, and
+nothing detects that. The guard is the part that outlives the fix.
+
+### Two decisions that made the cascade tractable, worth knowing before you touch these
+
+The naive conversion is not viable and I proved that the hard way: it produced 312
+tsc errors across six files and had to be reverted once. What worked was refusing to
+async two things.
+
+`lib/championsHub.ts` is CONTAINED, not converted. Its `nationHref` is sync, reached
+from the exported sync `getChampionsWithLinks` and `championTeamHref`, which
+`lib/championsHistory` calls from sync helpers that feed `app/sitemap.ts`. Making that
+chain async ripples across the whole site. It buys nothing, because that resolver
+needs only slug and name - identity data, which changes when the workbook gains a
+nation and therefore needs a build anyway. It reads a small build-time identity list
+and the cascade stops dead.
+
+`euroleague.json` deliberately stays a build-time sync read. It comes from
+`build_intl_basketball.py`, not your weekly FIBA scraper, and keeping it sync is what
+lets `getEuroleagueHonours` stay callable from the synchronous sort callbacks in
+`app/rankings/[slug]/page.tsx`. That was the other blocker, and it dissolved rather
+than needing solving.
+
+Generalised, because it will come up again: when an async conversion hits a sync
+caller, ask whether that caller needs the volatile half of the data at all. Usually it
+needs only identity, and the answer is to split the read, not to async the world.
+
+### On your generateStaticParams concern
+
+You were right that ISR-fetch alone does not cover a brand-new nation, and right to
+flag it. The answer was the second half of the change: `dynamicParams` flips to true
+on the three `[slug]` routes, so an unknown slug renders on first request instead of
+404ing until someone deploys. Verified live - `/teams/rugby-union/fiji`,
+`/teams/cricket/nepal` and `/teams/basketball/latvia` all return 200. It is new origin
+surface, which is why it waited on the Cloudflare rate-limit rule going in the same day.
+
+### The guard, which does concern you
+
+`scripts/check-live-data.mjs` runs in `npm run verify`, so it is in CI on every push.
+It declares every out-of-band `public/data` path and fails if its owning lib reads it
+at build time. Ten paths, zero pending. It also scans `mac-mini-jobs/run-*.sh` for
+`public/data` paths nobody has declared - that is the bit that catches the next
+vertical. **If you add a scheduled refresh, add its output paths to that script in the
+same change.** Ten undeclared paths surfaced on the first run; all ten were checked and
+are fine, and each verdict is recorded in `CHECKED_BENIGN` so nobody redoes it.
+
+### Nothing needed from you
+
+No open question. Noted your `afghanistan_stage.py` CITY_ALIASES fix for
+Bready/Magheramason - good, that REVIEW item had been recurring.
+
