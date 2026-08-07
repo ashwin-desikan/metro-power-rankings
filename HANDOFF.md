@@ -4576,3 +4576,108 @@ Same pattern as the 5507da5d0 entry from earlier today — 225 bare-LF lines,
 all inside your "edge-request incident" writeup. Normalized the whole file
 back to CRLF in this commit; no content changed. Worth a second look at
 whatever you're composing these in, since this is the second time today.
+
+## 2026-08-06 (night) — windows/cloud -> mini (THE SHIP: nine commits, one build; and your item 3 is now settled with hard data)
+
+Ashwin approved a full push tonight. `0ec6e19c5..23f33cc1d` went out as a
+fast-forward: four new commits plus the five that had been sitting local and
+unpushed (the four play commits and the Vercel Web Analytics commit off
+`vercel-agent/enable-web-analytics`, which answers your item 4 -- it is merged
+and live now, not just a PR). The rebase flattened the merge commit
+`ea6d2ef7f`. All nine untagged, so the whole push produced exactly ONE
+production build, `dpl_H48WHy2oGFRfxfcfCmyGNLJt42Ro`, READY and aliased.
+
+Tonight's four:
+
+- `0d18abf37` **The Ground Floor** -- a second scoreboard, deliberately never
+  merged with the power ranking. 4,269 metros ranked on measured living
+  conditions: annual-mean PM2.5 (SatPM2.5 V6GL03, 2024), annual-mean NO2
+  (GlobalNO2_AiT, 2023) and unmet basic water service (Aqueduct 4.0 basin
+  polygons, 2023), each sampled at the metro's own coordinates so nothing
+  inherits a country average. Median of dimension ranks, no weights, no
+  normalisation. The gap against the accumulation rank is in PERCENTILE points,
+  not raw ranks -- raw differences are bounded by position and made Brisbane
+  read +91 despite being the best-delivering major metro. Method and the four
+  measured corrections are in GROUND-FLOOR-SPEC.md, now committed at repo root.
+- `e573d1567` NPB games behind. The board was rendering the feed's `GameBehind`,
+  which is the Japanese convention of gap-to-the-team-above, so every row below
+  second understated its deficit. Computed from records now; verified live as
+  1 / 10.5 / 10.5 / 13.5 / 13.5 in the Central League.
+- `9b736b2e1` Live Standings date-gating. New `lib/seasonWindows.ts`, eleven
+  leagues, wrap-aware. The old gate was games-played evidence alone, which can
+  never close a board -- one team finishing 161 of 162 keeps it open forever.
+  NFL/NBA/NHL now open by themselves at kickoff; the summer leagues close on
+  schedule. International football renders only when `tournamentIsCurrent()`.
+- `23f33cc1d` Country Currency value links through to its chart. The twenty
+  paged majors now live in `lib/currencyPages.ts` as a single source of truth
+  -- **if you add a major, it needs all three: MAJORS in build_fx.py, a seeded
+  series file, and that constant.**
+
+### Your item 3, settled: it was never our code, and it is still happening
+
+I pulled the Actions API from the box rather than infer. Six failures 15:09 to
+17:03 UTC, and **every single one failed at step #1, "Set up job"** -- 2.5 to
+3.0 minutes each against a normal ~2 seconds, with queue times of 1.2 to 4.9
+minutes. Two jobs never got a runner at all (`runner=` empty, cancelled at
+exactly 15.0 minutes, which is the acquisition timeout).
+
+The clincher is commit `1ec0b46`: `test` SUCCEEDED and `vercel-ignore-guard`
+FAILED in the same run, same commit, same pinned SHAs. Identical code cannot
+produce both. 74 of 80 runs that day passed.
+
+**It has not recovered.** After tonight's push GitHub created **no workflow run
+at all** for `23f33cc1d` -- not queued, not failed, absent -- while the Supabase
+Preview check (a GitHub App, not Actions) completed successfully on the same
+SHA. So webhooks are healthy and the Actions dispatcher specifically is not.
+Vercel deploys through its own integration and was unaffected, which is why the
+ship landed anyway.
+
+### Two consequences for you to pick up
+
+1. **The 18:03 local ESPN standings snapshot never ran** -- its job was
+   cancelled without acquiring a runner. Last good snapshot is 15:40 on
+   `782c384`. Should self-heal on the next tick, but if standings look stale
+   that is the reason, not espnFetch.
+2. **`cloudflare-purge.yml` did not fire on this deploy**, for the same reason.
+   I checked the edge directly and Cloudflare returned `cf-cache-status=DYNAMIC`
+   on `/`, `/rankings`, `/ground-floor` and `/countries/france`, with fresh
+   `x-vercel-cache` ages, so nothing was actually stale. But do not assume the
+   purge happened on any deploy landing in this window.
+
+### One trap worth writing down, since it cost me twenty minutes
+
+`href="/ground-floor"` does not appear in fetched production HTML, and neither
+does the menu group label. That is CORRECT and not a bug: `app/DesktopNav.tsx`
+renders its dropdown panel behind `{isOpen && (...)}`, so no mega-menu link is
+ever server-rendered. `/countries`, `/states` and `/expandable-map` DO appear
+in the HTML, but from footer and homepage tiles, not the menu -- which is
+exactly what makes the false negative convincing.
+
+The check that actually works: regex every `/_next/static/**.js` reference off
+the page and grep the chunks. `layout-ee47800cd5a1cf56.js` contains "The Ground
+Floor". Note also that Playwright is **not installed on the Windows box**
+despite older commit messages citing Playwright runs, and the cloud sandbox
+proxy blocks `rankings.citizenofnowhere.org`, so neither can reach prod.
+
+### Also: /updates has a build-time brevity gate, and it bit me
+
+`app/updates/page.tsx` runs `enforceReleaseBrevity(RELEASES)` at module load,
+so a violation is a hard `next build` failure, not a lint warning. Limits are
+4 bullets per release, 220 chars per bullet, 12-word headline. I appended three
+Ground Floor bullets to the existing four play bullets and the build died with
+`RELEASE_NOTES_VIOLATION (2026-08-06): 7 bullets exceeds max 4`. Two features
+shipping the same day have to SHARE the four. Worth knowing before you amend a
+day's entry from your side.
+
+Separately: an earlier amendment of mine to `lib/releases.ts` had been silently
+overwritten by a later play commit touching the same entry. Re-read that file
+before assuming an edit survived.
+
+### Open question for the mini
+
+Once GitHub's dispatcher recovers, could you confirm two things and note them
+here: (a) that a `Test` run eventually appears for `23f33cc1d` and passes, and
+(b) that the ESPN standings snapshot has caught up past `782c384`. If Actions
+is still not creating runs by tomorrow morning, the cloudflare-purge dependency
+is the one worth thinking about a fallback for, since it is the only piece
+where a silent skip could leave readers on stale HTML.
