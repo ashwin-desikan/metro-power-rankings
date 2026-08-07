@@ -33698,39 +33698,6 @@
   "peak_decade": "1990s"
  },
  {
-  "name": "The Tony Rich Project",
-  "slug": "the-tony-rich-project",
-  "metro": "Detroit",
-  "metro_slug": "detroit",
-  "country": "USA",
-  "city_of_origin": "Detroit, Michigan",
-  "confidence": "High",
-  "bb_top10": 1,
-  "bb_no1": 0,
-  "bb_score": 1.52,
-  "uk_top10": 0,
-  "uk_no1": 0,
-  "uk_score": 0.0,
-  "album_raw": 0.0,
-  "album_est": false,
-  "prestige": 0.7,
-  "gram_wins": 0,
-  "gram_noms": 1,
-  "gram_awards": [],
-  "gram_nom_awards": [
-   {
-    "year": 1997,
-    "award": "Best New Artist",
-    "work": null
-   }
-  ],
-  "other_awards": [],
-  "rs_albums": [],
-  "combined": 6.24,
-  "active": "1996-1996",
-  "peak_decade": "1990s"
- },
- {
   "name": "Duane Eddy",
   "slug": "duane-eddy",
   "metro": "Phoenix",
@@ -38742,6 +38709,33 @@
   "combined": 4.57,
   "active": "1985-1986",
   "peak_decade": "1980s"
+ },
+ {
+  "name": "The Tony Rich Project",
+  "slug": "the-tony-rich-project",
+  "metro": "Detroit",
+  "metro_slug": "detroit",
+  "country": "USA",
+  "city_of_origin": "Detroit, Michigan",
+  "confidence": "High",
+  "bb_top10": 1,
+  "bb_no1": 0,
+  "bb_score": 1.52,
+  "uk_top10": 0,
+  "uk_no1": 0,
+  "uk_score": 0.0,
+  "album_raw": 0.0,
+  "album_est": false,
+  "prestige": 0.0,
+  "gram_wins": 0,
+  "gram_noms": 0,
+  "gram_awards": [],
+  "gram_nom_awards": [],
+  "other_awards": [],
+  "rs_albums": [],
+  "combined": 4.56,
+  "active": "1996-1996",
+  "peak_decade": "1990s"
  },
  {
   "name": "Jason Mraz",

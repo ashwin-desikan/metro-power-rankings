@@ -1018,8 +1018,8 @@
   "us_score": 113.7,
   "uk_score": 68.4,
   "album_score": 691.6,
-  "prestige_score": 75.5,
-  "combined": 1005.6,
+  "prestige_score": 74.8,
+  "combined": 1004.0,
   "artist_count": 64,
   "by_decade": {
    "1950s": {
@@ -3142,13 +3142,13 @@
     "combined": 5.0
    },
    {
-    "name": "Deborah Cox",
-    "slug": "deborah-cox",
+    "name": "Snow",
+    "slug": "snow",
     "combined": 4.4
    },
    {
-    "name": "Snow",
-    "slug": "snow",
+    "name": "Deborah Cox",
+    "slug": "deborah-cox",
     "combined": 4.4
    }
   ],
@@ -3464,13 +3464,13 @@
     "combined": 3.5
    },
    {
-    "name": "H-Town",
-    "slug": "h-town",
+    "name": "Archie Bell & the Drells",
+    "slug": "archie-bell-and-the-drells",
     "combined": 2.8
    },
    {
-    "name": "Archie Bell & the Drells",
-    "slug": "archie-bell-and-the-drells",
+    "name": "H-Town",
+    "slug": "h-town",
     "combined": 2.8
    },
    {
@@ -3796,13 +3796,13 @@
     "combined": 6.5
    },
    {
-    "name": "Expos\u00e9",
-    "slug": "expos",
+    "name": "Fifth Harmony",
+    "slug": "fifth-harmony",
     "combined": 5.2
    },
    {
-    "name": "Fifth Harmony",
-    "slug": "fifth-harmony",
+    "name": "Expos\u00e9",
+    "slug": "expos",
     "combined": 5.2
    },
    {
@@ -4802,13 +4802,13 @@
     "combined": 5.6
    },
    {
-    "name": "New Edition",
-    "slug": "new-edition",
+    "name": "Freddy Cannon",
+    "slug": "freddy-cannon",
     "combined": 5.1
    },
    {
-    "name": "Freddy Cannon",
-    "slug": "freddy-cannon",
+    "name": "New Edition",
+    "slug": "new-edition",
     "combined": 5.1
    },
    {
@@ -5481,8 +5481,8 @@
     "combined": 3.1
    },
    {
-    "name": "Bruce Channel",
-    "slug": "bruce-channel",
+    "name": "Demi Lovato",
+    "slug": "demi-lovato",
     "combined": 2.9
    }
   ],
@@ -5798,13 +5798,13 @@
     "combined": 4.5
    },
    {
-    "name": "Buzzcocks",
-    "slug": "buzzcocks",
+    "name": "New Order",
+    "slug": "new-order",
     "combined": 3.8
    },
    {
-    "name": "New Order",
-    "slug": "new-order",
+    "name": "Buzzcocks",
+    "slug": "buzzcocks",
     "combined": 3.8
    },
    {
@@ -6789,13 +6789,13 @@
     "combined": 7.0
    },
    {
-    "name": "Dr. John",
-    "slug": "dr-john",
+    "name": "Aaron Neville",
+    "slug": "aaron-neville",
     "combined": 4.4
    },
    {
-    "name": "Aaron Neville",
-    "slug": "aaron-neville",
+    "name": "Dr. John",
+    "slug": "dr-john",
     "combined": 4.4
    },
    {
@@ -6814,13 +6814,13 @@
     "combined": 2.1
    },
    {
-    "name": "The Dixie Cups",
-    "slug": "the-dixie-cups",
+    "name": "Ernie K-Doe",
+    "slug": "ernie-k-doe",
     "combined": 2.1
    },
    {
-    "name": "Ernie K-Doe",
-    "slug": "ernie-k-doe",
+    "name": "The Dixie Cups",
+    "slug": "the-dixie-cups",
     "combined": 2.1
    }
   ],
@@ -8746,8 +8746,8 @@
     "combined": 2.9
    },
    {
-    "name": "Samantha Sang",
-    "slug": "samantha-sang",
+    "name": "Daniel Merriweather",
+    "slug": "daniel-merriweather",
     "combined": 2.1
    }
   ],
@@ -9682,8 +9682,8 @@
     "combined": 0.4
    },
    {
-    "name": "Feeder",
-    "slug": "feeder",
+    "name": "Sian Evans",
+    "slug": "sian-evans",
     "combined": 0.3
    }
   ],
@@ -10528,13 +10528,13 @@
     "combined": 2.1
    },
    {
-    "name": "Galantis",
-    "slug": "galantis",
+    "name": "Eagle-Eye Cherry",
+    "slug": "eagle-eye-cherry",
     "combined": 1.5
    },
    {
-    "name": "Eagle-Eye Cherry",
-    "slug": "eagle-eye-cherry",
+    "name": "Galantis",
+    "slug": "galantis",
     "combined": 1.5
    },
    {
@@ -10855,13 +10855,13 @@
     "combined": 5.3
    },
    {
-    "name": "Michael McDonald",
-    "slug": "michael-mcdonald",
+    "name": "J-Kwon",
+    "slug": "j-kwon",
     "combined": 3.5
    },
    {
-    "name": "J-Kwon",
-    "slug": "j-kwon",
+    "name": "Michael McDonald",
+    "slug": "michael-mcdonald",
     "combined": 3.5
    },
    {
@@ -11152,13 +11152,13 @@
     "combined": 4.1
    },
    {
-    "name": "Enhypen",
-    "slug": "enhypen",
+    "name": "NewJeans",
+    "slug": "newjeans",
     "combined": 3.5
    },
    {
-    "name": "NewJeans",
-    "slug": "newjeans",
+    "name": "Enhypen",
+    "slug": "enhypen",
     "combined": 3.5
    },
    {
@@ -12148,8 +12148,8 @@
     "combined": 0.9
    },
    {
-    "name": "Ken Boothe",
-    "slug": "ken-boothe",
+    "name": "Althea & Donna",
+    "slug": "althea-and-donna",
     "combined": 0.6
    },
    {
@@ -12158,8 +12158,8 @@
     "combined": 0.6
    },
    {
-    "name": "Althea & Donna",
-    "slug": "althea-and-donna",
+    "name": "Ken Boothe",
+    "slug": "ken-boothe",
     "combined": 0.6
    }
   ],
@@ -14099,13 +14099,13 @@
     "combined": 0.6
    },
    {
-    "name": "Gerry Monroe",
-    "slug": "gerry-monroe",
+    "name": "Joe McElderry",
+    "slug": "joe-mcelderry",
     "combined": 0.5
    },
    {
-    "name": "Joe McElderry",
-    "slug": "joe-mcelderry",
+    "name": "Gerry Monroe",
+    "slug": "gerry-monroe",
     "combined": 0.5
    },
    {
@@ -14119,8 +14119,8 @@
     "combined": 0.4
    },
    {
-    "name": "Hank Marvin",
-    "slug": "hank-marvin",
+    "name": "Dave Stewart",
+    "slug": "dave-stewart",
     "combined": 0.3
    }
   ],
@@ -15450,13 +15450,13 @@
     "combined": 0.6
    },
    {
-    "name": "Vanessa Paradis",
-    "slug": "vanessa-paradis",
+    "name": "Lilly Wood and the Prick & Robin Schulz",
+    "slug": "lilly-wood-and-the-prick-and-robin-schulz",
     "combined": 0.5
    },
    {
-    "name": "Lilly Wood and the Prick & Robin Schulz",
-    "slug": "lilly-wood-and-the-prick-and-robin-schulz",
+    "name": "Vanessa Paradis",
+    "slug": "vanessa-paradis",
     "combined": 0.5
    },
    {
@@ -17445,13 +17445,13 @@
     "combined": 3.9
    },
    {
-    "name": "Mr. Acker Bilk",
-    "slug": "mr-acker-bilk",
+    "name": "Russ Conway",
+    "slug": "russ-conway",
     "combined": 3.6
    },
    {
-    "name": "Russ Conway",
-    "slug": "russ-conway",
+    "name": "Mr. Acker Bilk",
+    "slug": "mr-acker-bilk",
     "combined": 3.6
    },
    {
@@ -17480,13 +17480,13 @@
     "combined": 0.4
    },
    {
-    "name": "Kosheen",
-    "slug": "kosheen",
+    "name": "Blonde",
+    "slug": "blonde",
     "combined": 0.2
    },
    {
-    "name": "Blonde",
-    "slug": "blonde",
+    "name": "Kosheen",
+    "slug": "kosheen",
     "combined": 0.2
    }
   ],
@@ -17777,13 +17777,13 @@
     "combined": 2.5
    },
    {
-    "name": "Kiki Dee",
-    "slug": "kiki-dee",
+    "name": "Gareth Gates",
+    "slug": "gareth-gates",
     "combined": 1.8
    },
    {
-    "name": "Gareth Gates",
-    "slug": "gareth-gates",
+    "name": "Kiki Dee",
+    "slug": "kiki-dee",
     "combined": 1.8
    },
    {
@@ -19579,13 +19579,13 @@
     "combined": 4.0
    },
    {
-    "name": "Alec Benjamin",
-    "slug": "alec-benjamin",
+    "name": "Nate Ruess",
+    "slug": "nate-ruess",
     "combined": 3.6
    },
    {
-    "name": "Nate Ruess",
-    "slug": "nate-ruess",
+    "name": "Alec Benjamin",
+    "slug": "alec-benjamin",
     "combined": 3.6
    },
    {
@@ -22640,13 +22640,13 @@
     "combined": 3.2
    },
    {
-    "name": "The Raiders",
-    "slug": "the-raiders",
+    "name": "Quarterflash",
+    "slug": "quarterflash",
     "combined": 2.5
    },
    {
-    "name": "Quarterflash",
-    "slug": "quarterflash",
+    "name": "The Raiders",
+    "slug": "the-raiders",
     "combined": 2.5
    }
   ],
@@ -26788,13 +26788,13 @@
     "combined": 3.9
    },
    {
-    "name": "Deodato",
-    "slug": "deodato",
+    "name": "S\u00e9rgio Mendes",
+    "slug": "s-rgio-mendes",
     "combined": 1.8
    },
    {
-    "name": "S\u00e9rgio Mendes",
-    "slug": "s-rgio-mendes",
+    "name": "Deodato",
+    "slug": "deodato",
     "combined": 1.8
    }
   ],
@@ -31326,13 +31326,13 @@
     "combined": 1.9
    },
    {
-    "name": "Lieutenant Pigeon",
-    "slug": "lieutenant-pigeon",
+    "name": "King",
+    "slug": "king",
     "combined": 0.7
    },
    {
-    "name": "King",
-    "slug": "king",
+    "name": "Lieutenant Pigeon",
+    "slug": "lieutenant-pigeon",
     "combined": 0.7
    },
    {
