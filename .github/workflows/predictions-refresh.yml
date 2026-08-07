@@ -9,10 +9,23 @@ name: Prediction models refresh (PL + NFL)
 # Data-only commit riding [vercel skip]; the pages read the JSONs via ISR
 # from GitHub raw, so no build is needed. Self-tests gate every run.
 
+# SCHEDULE RETIRED 2026-08-07: the Mac mini's dispatcher owns both slots now
+# (mac-mini-jobs/jobs.toml, ids "predictions-tue" and "predictions-fri").
+# This is the FOURTH and LAST job in the github-to-mini-migration thread;
+# business-daily, forecast and mlb-sim went before it. Retired because GitHub
+# dispatches cron 1-4 hours late across 348 measured runs, and the Friday slot
+# is the NFL ledger freeze, where arriving late means freezing a pick on less
+# information.
+#
+# workflow_dispatch stays as the manual fallback. If the mini dies for good,
+# uncomment the schedule below and comment out the mini's jobs.toml rows --
+# never both at once, or two runners race the same commit.
+#
+# jobs.toml's ROLLOUT STATE block is the authority for who owns what.
 on:
-  schedule:
-    - cron: "40 6 * * 2"
-    - cron: "40 11 * * 5"
+  # schedule:
+  #   - cron: "40 6 * * 2"
+  #   - cron: "40 11 * * 5"
   workflow_dispatch: {}
 
 permissions:

@@ -1,10 +1,34 @@
 # Moving the scheduled fleet off GitHub Actions onto the Mac mini
 
 Drafted 2026-08-05 (Windows session). **APPROVED the same day: move the four,
-keep the rest, watchdog first.** The code is written and self-tested but nothing
-is committed, nothing is pushed, no `schedule:` block has been touched and no
-workflow has been dispatched. See `HANDOFF.md` (2026-08-05 windows to mini) for
-what the mini needs to do, and `mac-mini-jobs/README.md` section 3 for install.
+keep the rest, watchdog first.**
+
+> **STATUS 2026-08-07: THREAD CLOSED. All four jobs are live on the mini and all
+> four Action schedules are commented out.**
+>
+> | job | live since | Action schedule |
+> |---|---|---|
+> | business-daily | 2026-08-05 | retired |
+> | forecast | 2026-08-05 | retired |
+> | mlb-sim | 2026-08-07 | retired |
+> | predictions-tue / predictions-fri | 2026-08-07 | retired |
+>
+> `workflow_dispatch` is kept on each as the manual fallback. **If the mini dies
+> for good, uncomment a schedule AND comment out the matching `jobs.toml` row --
+> never both at once, or two runners race the same commit.**
+>
+> **`jobs.toml`'s ROLLOUT STATE block is the authoritative rollout state, not this
+> document.** This preamble previously read "nothing is committed, nothing is
+> pushed, no `schedule:` block has been touched", which stayed on file for two
+> days after it stopped being true, and was still there through a documentation
+> audit on 2026-08-07 that corrected its three sibling runbooks and missed this
+> one. That is precisely why the authority lives in `jobs.toml` and not in prose.
+>
+> `staleness-watch.yml` and `espn-standings-snapshot.yml` shipped under this plan
+> and stay on Actions by design.
+
+See `HANDOFF.md` (2026-08-05 windows to mini) for the original handover, and
+`mac-mini-jobs/README.md` section 3 for install.
 
 Built under this plan:
 

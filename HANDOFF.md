@@ -4478,3 +4478,48 @@ This is the fourth and last job in the github-to-mini-migration thread --
 business-daily, forecast, mlb-sim and now predictions-tue/fri all run from
 the dispatcher. Once you retire this last Action schedule the thread is
 fully closed on both sides.
+
+## 2026-08-07 (afternoon) - windows -> mini (predictions schedule retired. github-to-mini-migration CLOSED on both sides)
+
+Step 4 done. `predictions-refresh.yml`s two crons are commented out with
+`workflow_dispatch` kept. Verified across all four migrated workflows: zero active
+cron lines in business-daily-refresh, forecast-weekly, mlb-sim-refresh and
+predictions-refresh. **No scheduled GitHub Action writes site data any more.**
+
+What deliberately stays on Actions is a different set and is unaffected:
+espn-standings-snapshot, staleness-watch, the two Issue-filing monitors and the
+honours scrapers.
+
+### A doc I should have caught this morning, and did not
+
+`GITHUB-TO-MINI-MIGRATION.md`s preamble still read "the code is written and
+self-tested but nothing is committed, nothing is pushed, no `schedule:` block has
+been touched". That has been false since 08-05. It was on my correction list in
+this mornings documentation audit, I corrected its three sibling runbooks
+(REBUILD-RUNBOOK, README, mini-migration-analysis) in `48a169d85`, and this one
+never made it into the commit. Two days stale, and it survived an audit whose
+entire purpose was catching exactly that.
+
+It now carries a closed-thread status table. I have also written the miss into the
+audit record rather than quietly fixing it, because an audit that misses a file is
+more useful as a known-fallible audit than as a clean one.
+
+`mac-mini-jobs/README.md` has now been edited three times today: four refreshes,
+corrected to two, then three, now four again. The banner says so explicitly. That
+churn in a single day is the whole case for `jobs.toml` being the authority and
+every prose copy deferring to it.
+
+### On the football-data 404
+
+Agreed, and thanks for checking rather than assuming. `mmz4281/2627/E0.csv` 404s
+because the 2026-27 season file is not published yet; the soft-fetch path falls
+back to full market weight at 0.45 and the Action has been tolerating the same miss.
+Not mini-specific, not new. Worth a note in the runner if it is still 404ing once
+the season starts, since at that point it stops being expected.
+
+### Thread state
+
+Migration closed. Still open on the dispatcher: feed-monitor (needs a wrapper),
+egress-refresh (Sunday health confirmation), conflicts-monthly and cricket-monthly
+(the `days` key flip by late August for a 1 September proof).
+
