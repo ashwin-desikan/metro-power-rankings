@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-03",
+  "generated": "2026-08-07",
   "source": "Forbes real-time billionaires via komed3/rtb-api (MIT)",
   "count": 3381,
   "billionaires": [
@@ -4795,9 +4795,9 @@
       "name": "Qi Shi & family",
       "uri": "qi-shi",
       "networth": 11412.138,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Technology"
       ],
@@ -42011,9 +42011,9 @@
       "name": "Chang Chung-Hsing",
       "uri": "chang-chung-hsing",
       "networth": 1665.971,
-      "countryCode": null,
+      "countryCode": "TW",
       "countrySlug": null,
-      "countryName": null,
+      "countryName": "TW",
       "industries": [
         "Manufacturing"
       ],
@@ -47787,9 +47787,9 @@
       "name": "Michael Cagney",
       "uri": "michael-cagney",
       "networth": 1386.04,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "US",
+      "countrySlug": "united-states",
+      "countryName": "United States",
       "industries": [
         "Technology"
       ],
@@ -47872,9 +47872,9 @@
       "name": "Lin Por-Fong",
       "uri": "lin-por-fong",
       "networth": 1381.432,
-      "countryCode": null,
+      "countryCode": "TW",
       "countrySlug": null,
-      "countryName": null,
+      "countryName": "TW",
       "industries": [
         "Manufacturing"
       ],
@@ -49603,9 +49603,9 @@
       "name": "Zhu Xingliang",
       "uri": "zhu-xingliang",
       "networth": 1310.384,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "CN",
+      "countrySlug": "china",
+      "countryName": "China",
       "industries": [
         "Construction & Engineering"
       ],
@@ -51517,9 +51517,9 @@
       "name": "Ali Erdemoglu",
       "uri": "ali-erdemoglu",
       "networth": 1234.042,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "TR",
+      "countrySlug": "turkey",
+      "countryName": "Turkey",
       "industries": [
         "Manufacturing"
       ],
@@ -51653,9 +51653,9 @@
       "name": "Li Jianguo",
       "uri": "li-jianguo",
       "networth": 1226.45,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "CN",
+      "countrySlug": "china",
+      "countryName": "China",
       "industries": [
         "Telecom"
       ],
@@ -52709,9 +52709,9 @@
       "name": "Xiong Xiaochuan",
       "uri": "xiong-xiaochuan",
       "networth": 1190.458,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "CN",
+      "countrySlug": "china",
+      "countryName": "China",
       "industries": [
         "Healthcare"
       ],
@@ -54060,9 +54060,9 @@
       "name": "Wang Xinyang",
       "uri": "wang-xinyang",
       "networth": 1144.946,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "CN",
+      "countrySlug": "china",
+      "countryName": "China",
       "industries": [
         "Technology"
       ],
@@ -54436,9 +54436,9 @@
       "name": "Jiang Xuefei & family",
       "uri": "jiang-xuefei",
       "networth": 1132.009,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "CN",
+      "countrySlug": "china",
+      "countryName": "China",
       "industries": [
         "Technology"
       ],
@@ -55373,9 +55373,9 @@
       "name": "Shyam Sankar",
       "uri": "shyam-sankar",
       "networth": 1099.266,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "US",
+      "countrySlug": "united-states",
+      "countryName": "United States",
       "industries": [
         "Technology"
       ],
@@ -56605,9 +56605,9 @@
       "name": "Zhang Tianyu",
       "uri": "zhang-tianyu",
       "networth": 1047.489,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "CN",
+      "countrySlug": "china",
+      "countryName": "China",
       "industries": [
         "Telecom"
       ],
@@ -57566,9 +57566,9 @@
       "name": "Luc Tack",
       "uri": "luc-tack",
       "networth": 1009.68,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "BE",
+      "countrySlug": "belgium",
+      "countryName": "Belgium",
       "industries": [
         "Manufacturing"
       ],
@@ -57670,9 +57670,9 @@
       "name": "Wang Yue",
       "uri": "wang-yue",
       "networth": 1005.121,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "CN",
+      "countrySlug": "china",
+      "countryName": "China",
       "industries": [
         "Technology"
       ],
@@ -57687,9 +57687,9 @@
       "name": "Marc Samwer",
       "uri": "marc-samwer",
       "networth": 1004.89,
-      "countryCode": "DE",
-      "countrySlug": "germany",
-      "countryName": "Germany",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Technology"
       ],

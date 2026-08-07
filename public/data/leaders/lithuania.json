@@ -403,10 +403,20 @@
     "name": "Inga Ruginienė",
     "role": "Prime Minister",
     "start": "2025-08-26",
+    "end": "2026-07-14",
+    "current": false,
+    "tenure": "0y 10m 22d",
+    "party": "LSDP",
+    "era": null
+  },
+  {
+    "name": "Mindaugas Sinkevičius",
+    "role": "Prime Minister",
+    "start": "2026-07-14",
     "end": null,
     "current": true,
-    "tenure": "2025-present (caretaker; resigned 23 Jun 2026, serving until successor sworn in)",
-    "party": "LSDP",
+    "tenure": "in office",
+    "party": "",
     "era": null
   }
 ]

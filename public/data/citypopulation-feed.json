@@ -1,6 +1,24 @@
 {
   "entries": [
     {
+      "date": "2026-08-07",
+      "title": "Thailand (202 census)",
+      "url": "https://www.citypopulation.de/en/thailand/prov/admin/",
+      "countries": [
+        "thailand",
+        "Thailand"
+      ]
+    },
+    {
+      "date": "2026-08-05",
+      "title": "South Korea",
+      "url": "https://www.citypopulation.de/en/southkorea/",
+      "countries": [
+        "southkorea",
+        "South Korea"
+      ]
+    },
+    {
       "date": "2026-07-30",
       "title": "UK (local authorities)",
       "url": "https://www.citypopulation.de/en/uk/",
@@ -1483,15 +1501,6 @@
       "countries": [
         "albania",
         "Albania"
-      ]
-    },
-    {
-      "date": "2024-08-01",
-      "title": "Austria",
-      "url": "https://www.citypopulation.de/en/austria/",
-      "countries": [
-        "austria",
-        "Austria"
       ]
     }
   ]

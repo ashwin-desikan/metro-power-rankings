@@ -4513,7 +4513,7 @@
     "name": "Qi Shi & family",
     "networth": 11412.138,
     "rank": 279,
-    "countryCode": "cn",
+    "countryCode": null,
     "industries": [
       "Technology"
     ],
@@ -39557,7 +39557,7 @@
     "name": "Chang Chung-Hsing",
     "networth": 1665.971,
     "rank": 2452,
-    "countryCode": null,
+    "countryCode": "tw",
     "industries": [
       "Manufacturing"
     ],
@@ -44995,7 +44995,7 @@
     "name": "Michael Cagney",
     "networth": 1386.04,
     "rank": 2790,
-    "countryCode": null,
+    "countryCode": "us",
     "industries": [
       "Technology"
     ],
@@ -45075,7 +45075,7 @@
     "name": "Lin Por-Fong",
     "networth": 1381.432,
     "rank": 2795,
-    "countryCode": null,
+    "countryCode": "tw",
     "industries": [
       "Manufacturing"
     ],
@@ -46705,7 +46705,7 @@
     "name": "Zhu Xingliang",
     "networth": 1310.384,
     "rank": 2896,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Construction & Engineering"
     ],
@@ -48507,7 +48507,7 @@
     "name": "Ali Erdemoglu",
     "networth": 1234.042,
     "rank": 3008,
-    "countryCode": null,
+    "countryCode": "tr",
     "industries": [
       "Manufacturing"
     ],
@@ -48635,7 +48635,7 @@
     "name": "Li Jianguo",
     "networth": 1226.45,
     "rank": 3016,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Telecom"
     ],
@@ -49629,7 +49629,7 @@
     "name": "Xiong Xiaochuan",
     "networth": 1190.458,
     "rank": 3079,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Healthcare"
     ],
@@ -50901,7 +50901,7 @@
     "name": "Wang Xinyang",
     "networth": 1144.946,
     "rank": 3158,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Technology"
     ],
@@ -51255,7 +51255,7 @@
     "name": "Jiang Xuefei & family",
     "networth": 1132.009,
     "rank": 3180,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Technology"
     ],
@@ -52137,7 +52137,7 @@
     "name": "Shyam Sankar",
     "networth": 1099.266,
     "rank": 3236,
-    "countryCode": null,
+    "countryCode": "us",
     "industries": [
       "Technology"
     ],
@@ -53297,7 +53297,7 @@
     "name": "Zhang Tianyu",
     "networth": 1047.489,
     "rank": 3308,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Telecom"
     ],
@@ -54202,7 +54202,7 @@
     "name": "Luc Tack",
     "networth": 1009.68,
     "rank": 3364,
-    "countryCode": null,
+    "countryCode": "be",
     "industries": [
       "Manufacturing"
     ],
@@ -54300,7 +54300,7 @@
     "name": "Wang Yue",
     "networth": 1005.121,
     "rank": 3370,
-    "countryCode": null,
+    "countryCode": "cn",
     "industries": [
       "Technology"
     ],
@@ -54316,7 +54316,7 @@
     "name": "Marc Samwer",
     "networth": 1004.89,
     "rank": 3371,
-    "countryCode": "de",
+    "countryCode": null,
     "industries": [
       "Technology"
     ],

@@ -1,0 +1,805 @@
+{
+  "asOf": "2026-08-07",
+  "ranking": [
+    {
+      "rank": 1,
+      "name": "⚠️ Donald Trump",
+      "bare": "donald trump",
+      "category": "National",
+      "jurisdiction": "United States",
+      "power": 1638.0
+    },
+    {
+      "rank": 2,
+      "name": "Xi Jinping",
+      "bare": "xi jinping",
+      "category": "National",
+      "jurisdiction": "China",
+      "power": 1412.6
+    },
+    {
+      "rank": 3,
+      "name": "⚠️ Vladimir Putin",
+      "bare": "vladimir putin",
+      "category": "National",
+      "jurisdiction": "Russia",
+      "power": 493.4
+    },
+    {
+      "rank": 4,
+      "name": "Christine Lagarde",
+      "bare": "christine lagarde",
+      "category": "Central bank",
+      "jurisdiction": "Eurozone",
+      "power": 426.4
+    },
+    {
+      "rank": 5,
+      "name": "Kevin Warsh",
+      "bare": "kevin warsh",
+      "category": "Central bank",
+      "jurisdiction": "United States",
+      "power": 419.7
+    },
+    {
+      "rank": 6,
+      "name": "Narendra Modi",
+      "bare": "narendra modi",
+      "category": "National",
+      "jurisdiction": "India",
+      "power": 408.4
+    },
+    {
+      "rank": 7,
+      "name": "Andy Burnham",
+      "bare": "andy burnham",
+      "category": "National",
+      "jurisdiction": "England",
+      "power": 357.2
+    },
+    {
+      "rank": 8,
+      "name": "⚠️ Elon Musk",
+      "bare": "elon musk",
+      "category": "Billionaire",
+      "jurisdiction": "United States",
+      "power": 355.5
+    },
+    {
+      "rank": 9,
+      "name": "⚠️ Mohammed bin Salman",
+      "bare": "mohammed bin salman",
+      "category": "National",
+      "jurisdiction": "Saudi Arabia",
+      "power": 347.7
+    },
+    {
+      "rank": 10,
+      "name": "Ursula von der Leyen",
+      "bare": "ursula von der leyen",
+      "category": "Org",
+      "jurisdiction": "EU",
+      "power": 346.5
+    },
+    {
+      "rank": 11,
+      "name": "Kristalina Georgieva",
+      "bare": "kristalina georgieva",
+      "category": "Org",
+      "jurisdiction": "IMF",
+      "power": 285.4
+    },
+    {
+      "rank": 12,
+      "name": "Larry Fink",
+      "bare": "larry fink",
+      "category": "Finance",
+      "jurisdiction": "BlackRock",
+      "power": 278.0
+    },
+    {
+      "rank": 13,
+      "name": "Friedrich Merz",
+      "bare": "friedrich merz",
+      "category": "National",
+      "jurisdiction": "Germany",
+      "power": 275.5
+    },
+    {
+      "rank": 14,
+      "name": "JD Vance",
+      "bare": "jd vance",
+      "category": "US federal",
+      "jurisdiction": "United States",
+      "power": 262.3
+    },
+    {
+      "rank": 15,
+      "name": "Pope Leo XIV",
+      "bare": "pope leo xiv",
+      "category": "Faith",
+      "jurisdiction": "Holy See",
+      "power": 260.0
+    },
+    {
+      "rank": 16,
+      "name": "Pan Gongsheng",
+      "bare": "pan gongsheng",
+      "category": "Central bank",
+      "jurisdiction": "China",
+      "power": 259.1
+    },
+    {
+      "rank": 17,
+      "name": "Emmanuel Macron",
+      "bare": "emmanuel macron",
+      "category": "National",
+      "jurisdiction": "France",
+      "power": 255.2
+    },
+    {
+      "rank": 18,
+      "name": "Jensen Huang",
+      "bare": "jensen huang",
+      "category": "Corporate",
+      "jurisdiction": "NVIDIA",
+      "power": 245.6
+    },
+    {
+      "rank": 19,
+      "name": "Tim Cook",
+      "bare": "tim cook",
+      "category": "Corporate",
+      "jurisdiction": "Apple",
+      "power": 245.1
+    },
+    {
+      "rank": 20,
+      "name": "António Guterres",
+      "bare": "antónio guterres",
+      "category": "Org",
+      "jurisdiction": "UN",
+      "power": 242.6
+    },
+    {
+      "rank": 21,
+      "name": "Giorgia Meloni",
+      "bare": "giorgia meloni",
+      "category": "National",
+      "jurisdiction": "Italy",
+      "power": 241.7
+    },
+    {
+      "rank": 22,
+      "name": "Salim Ramji",
+      "bare": "salim ramji",
+      "category": "Finance",
+      "jurisdiction": "Vanguard",
+      "power": 240.0
+    },
+    {
+      "rank": 23,
+      "name": "John Roberts",
+      "bare": "john roberts",
+      "category": "Judiciary",
+      "jurisdiction": "United States",
+      "power": 236.1
+    },
+    {
+      "rank": 24,
+      "name": "Luiz Inácio Lula da Silva",
+      "bare": "luiz inácio lula da silva",
+      "category": "National",
+      "jurisdiction": "Brazil",
+      "power": 233.5
+    },
+    {
+      "rank": 25,
+      "name": "Sanae Takaichi",
+      "bare": "sanae takaichi",
+      "category": "National",
+      "jurisdiction": "Japan",
+      "power": 230.9
+    },
+    {
+      "rank": 26,
+      "name": "Ajay Banga",
+      "bare": "ajay banga",
+      "category": "Org",
+      "jurisdiction": "World Bank",
+      "power": 220.5
+    },
+    {
+      "rank": 27,
+      "name": "Sundar Pichai",
+      "bare": "sundar pichai",
+      "category": "Corporate",
+      "jurisdiction": "Alphabet (Google)",
+      "power": 211.2
+    },
+    {
+      "rank": 28,
+      "name": "Mike Johnson",
+      "bare": "mike johnson",
+      "category": "US federal",
+      "jurisdiction": "United States",
+      "power": 209.8
+    },
+    {
+      "rank": 29,
+      "name": "Claudia Sheinbaum",
+      "bare": "claudia sheinbaum",
+      "category": "National",
+      "jurisdiction": "Mexico",
+      "power": 205.4
+    },
+    {
+      "rank": 30,
+      "name": "Pedro Sánchez",
+      "bare": "pedro sánchez",
+      "category": "National",
+      "jurisdiction": "Spain",
+      "power": 197.8
+    },
+    {
+      "rank": 31,
+      "name": "⚠️ Benjamin Netanyahu",
+      "bare": "benjamin netanyahu",
+      "category": "National",
+      "jurisdiction": "Israel",
+      "power": 184.9
+    },
+    {
+      "rank": 32,
+      "name": "John Thune",
+      "bare": "john thune",
+      "category": "US federal",
+      "jurisdiction": "United States",
+      "power": 183.6
+    },
+    {
+      "rank": 33,
+      "name": "Mark Carney",
+      "bare": "mark carney",
+      "category": "National",
+      "jurisdiction": "Canada",
+      "power": 183.3
+    },
+    {
+      "rank": 34,
+      "name": "Gavin Newsom",
+      "bare": "gavin newsom",
+      "category": "Sub-national",
+      "jurisdiction": "California",
+      "power": 180.1
+    },
+    {
+      "rank": 35,
+      "name": "⚠️ Kim Jong-un",
+      "bare": "kim jong-un",
+      "category": "National",
+      "jurisdiction": "North Korea",
+      "power": 180.0
+    },
+    {
+      "rank": 36,
+      "name": "Josh D'Amaro",
+      "bare": "josh d'amaro",
+      "category": "Media",
+      "jurisdiction": "Disney",
+      "power": 176.0
+    },
+    {
+      "rank": 37,
+      "name": "Gianni Infantino",
+      "bare": "gianni infantino",
+      "category": "Sport",
+      "jurisdiction": "FIFA",
+      "power": 175.0
+    },
+    {
+      "rank": 38,
+      "name": "Cristiano Ronaldo",
+      "bare": "cristiano ronaldo",
+      "category": "Culture",
+      "jurisdiction": "Al Nassr",
+      "power": 168.0
+    },
+    {
+      "rank": 39,
+      "name": "Mohammed bin Rashid Al Maktoum",
+      "bare": "mohammed bin rashid al maktoum",
+      "category": "National",
+      "jurisdiction": "United Arab Emirates",
+      "power": 161.1
+    },
+    {
+      "rank": 40,
+      "name": "⚠️ Mojtaba Khamenei",
+      "bare": "mojtaba khamenei",
+      "category": "National",
+      "jurisdiction": "Iran",
+      "power": 159.2
+    },
+    {
+      "rank": 41,
+      "name": "Anthony Albanese",
+      "bare": "anthony albanese",
+      "category": "National",
+      "jurisdiction": "Australia",
+      "power": 156.0
+    },
+    {
+      "rank": 42,
+      "name": "Ngozi Okonjo-Iweala",
+      "bare": "ngozi okonjo-iweala",
+      "category": "Org",
+      "jurisdiction": "WTO",
+      "power": 155.6
+    },
+    {
+      "rank": 43,
+      "name": "Mark Rutte",
+      "bare": "mark rutte",
+      "category": "Org",
+      "jurisdiction": "NATO",
+      "power": 155.3
+    },
+    {
+      "rank": 44,
+      "name": "Kirsty Coventry",
+      "bare": "kirsty coventry",
+      "category": "Sport",
+      "jurisdiction": "IOC",
+      "power": 150.0
+    },
+    {
+      "rank": 45,
+      "name": "Satya Nadella",
+      "bare": "satya nadella",
+      "category": "Corporate",
+      "jurisdiction": "Microsoft",
+      "power": 146.3
+    },
+    {
+      "rank": 46,
+      "name": "⚠️ Recep Tayyip Erdoğan",
+      "bare": "recep tayyip erdoğan",
+      "category": "National",
+      "jurisdiction": "Turkey",
+      "power": 141.7
+    },
+    {
+      "rank": 47,
+      "name": "Larry Page",
+      "bare": "larry page",
+      "category": "Billionaire",
+      "jurisdiction": "United States",
+      "power": 140.3
+    },
+    {
+      "rank": 48,
+      "name": "Sergio Ermotti",
+      "bare": "sergio ermotti",
+      "category": "Finance",
+      "jurisdiction": "UBS",
+      "power": 138.0
+    },
+    {
+      "rank": 49,
+      "name": "Prabowo Subianto",
+      "bare": "prabowo subianto",
+      "category": "National",
+      "jurisdiction": "Indonesia",
+      "power": 137.4
+    },
+    {
+      "rank": 50,
+      "name": "Abigail Johnson",
+      "bare": "abigail johnson",
+      "category": "Finance",
+      "jurisdiction": "Fidelity",
+      "power": 136.0
+    },
+    {
+      "rank": 51,
+      "name": "👑 Charles III",
+      "bare": "charles iii",
+      "category": "Crown",
+      "jurisdiction": "United Kingdom",
+      "power": 135.0
+    },
+    {
+      "rank": 52,
+      "name": "Lee Jae Myung",
+      "bare": "lee jae myung",
+      "category": "National",
+      "jurisdiction": "South Korea",
+      "power": 134.2
+    },
+    {
+      "rank": 53,
+      "name": "Andy Jassy",
+      "bare": "andy jassy",
+      "category": "Corporate",
+      "jurisdiction": "Amazon",
+      "power": 133.0
+    },
+    {
+      "rank": 54,
+      "name": "Ted Sarandos",
+      "bare": "ted sarandos",
+      "category": "Media",
+      "jurisdiction": "Netflix",
+      "power": 132.0
+    },
+    {
+      "rank": 55,
+      "name": "Zohran Mamdani",
+      "bare": "zohran mamdani",
+      "category": "Mayor",
+      "jurisdiction": "New York",
+      "power": 131.5
+    },
+    {
+      "rank": 56,
+      "name": "Sadiq Khan",
+      "bare": "sadiq khan",
+      "category": "Mayor",
+      "jurisdiction": "London",
+      "power": 130.2
+    },
+    {
+      "rank": 57,
+      "name": "Sergey Brin",
+      "bare": "sergey brin",
+      "category": "Billionaire",
+      "jurisdiction": "United States",
+      "power": 129.3
+    },
+    {
+      "rank": 58,
+      "name": "Xin Changxing",
+      "bare": "xin changxing",
+      "category": "Sub-national",
+      "jurisdiction": "Jiangsu",
+      "power": 126.7
+    },
+    {
+      "rank": 59,
+      "name": "Volodymyr Zelenskyy",
+      "bare": "volodymyr zelenskyy",
+      "category": "National",
+      "jurisdiction": "Ukraine",
+      "power": 126.5
+    },
+    {
+      "rank": 60,
+      "name": "Jeff Bezos",
+      "bare": "jeff bezos",
+      "category": "Billionaire",
+      "jurisdiction": "United States",
+      "power": 125.3
+    },
+    {
+      "rank": 61,
+      "name": "MrBeast",
+      "bare": "mrbeast",
+      "category": "Culture",
+      "jurisdiction": "Culture",
+      "power": 120.0
+    },
+    {
+      "rank": 62,
+      "name": "Greg Abbott",
+      "bare": "greg abbott",
+      "category": "Sub-national",
+      "jurisdiction": "Texas",
+      "power": 116.0
+    },
+    {
+      "rank": 63,
+      "name": "Ron O'Hanley",
+      "bare": "ron o'hanley",
+      "category": "Finance",
+      "jurisdiction": "State Street",
+      "power": 114.0
+    },
+    {
+      "rank": 64,
+      "name": "Brian Roberts",
+      "bare": "brian roberts",
+      "category": "Media",
+      "jurisdiction": "Comcast / NBCUniversal",
+      "power": 110.0
+    },
+    {
+      "rank": 65,
+      "name": "Lionel Messi",
+      "bare": "lionel messi",
+      "category": "Culture",
+      "jurisdiction": "Inter Miami",
+      "power": 108.0
+    },
+    {
+      "rank": 66,
+      "name": "Emmanuel Grégoire",
+      "bare": "emmanuel grégoire",
+      "category": "Mayor",
+      "jurisdiction": "Paris",
+      "power": 103.4
+    },
+    {
+      "rank": 67,
+      "name": "C.C. Wei",
+      "bare": "c.c. wei",
+      "category": "Corporate",
+      "jurisdiction": "TSMC",
+      "power": 103.3
+    },
+    {
+      "rank": 68,
+      "name": "Larry Ellison",
+      "bare": "larry ellison",
+      "category": "Billionaire",
+      "jurisdiction": "United States",
+      "power": 101.8
+    },
+    {
+      "rank": 69,
+      "name": "Huang Kunming",
+      "bare": "huang kunming",
+      "category": "Sub-national",
+      "jurisdiction": "Guangdong",
+      "power": 100.1
+    },
+    {
+      "rank": 70,
+      "name": "Roger Goodell",
+      "bare": "roger goodell",
+      "category": "Sport",
+      "jurisdiction": "NFL",
+      "power": 100.1
+    },
+    {
+      "rank": 71,
+      "name": "Aleksander Čeferin",
+      "bare": "aleksander čeferin",
+      "category": "Sport",
+      "jurisdiction": "UEFA",
+      "power": 100.0
+    },
+    {
+      "rank": 72,
+      "name": "Lachlan Murdoch",
+      "bare": "lachlan murdoch",
+      "category": "Media",
+      "jurisdiction": "News Corp / Fox",
+      "power": 99.0
+    },
+    {
+      "rank": 73,
+      "name": "Yuriko Koike",
+      "bare": "yuriko koike",
+      "category": "Mayor",
+      "jurisdiction": "Tokyo",
+      "power": 96.0
+    },
+    {
+      "rank": 74,
+      "name": "Taylor Swift",
+      "bare": "taylor swift",
+      "category": "Culture",
+      "jurisdiction": "Culture",
+      "power": 96.0
+    },
+    {
+      "rank": 75,
+      "name": "Rob Jetten",
+      "bare": "rob jetten",
+      "category": "National",
+      "jurisdiction": "Netherlands",
+      "power": 94.7
+    },
+    {
+      "rank": 76,
+      "name": "Ron DeSantis",
+      "bare": "ron desantis",
+      "category": "Sub-national",
+      "jurisdiction": "Florida",
+      "power": 94.3
+    },
+    {
+      "rank": 77,
+      "name": "Mark Zuckerberg",
+      "bare": "mark zuckerberg",
+      "category": "Billionaire",
+      "jurisdiction": "United States",
+      "power": 94.3
+    },
+    {
+      "rank": 78,
+      "name": "⚠️ Abdel Fattah el-Sisi",
+      "bare": "abdel fattah el-sisi",
+      "category": "National",
+      "jurisdiction": "Egypt",
+      "power": 93.4
+    },
+    {
+      "rank": 79,
+      "name": "Kathy Hochul",
+      "bare": "kathy hochul",
+      "category": "Sub-national",
+      "jurisdiction": "New York",
+      "power": 90.4
+    },
+    {
+      "rank": 80,
+      "name": "👑 Naruhito",
+      "bare": "naruhito",
+      "category": "Crown",
+      "jurisdiction": "Japan",
+      "power": 90.0
+    },
+    {
+      "rank": 81,
+      "name": "Daniel Lurie",
+      "bare": "daniel lurie",
+      "category": "Mayor",
+      "jurisdiction": "San Francisco",
+      "power": 89.1
+    },
+    {
+      "rank": 82,
+      "name": "Asif Ali Zardari",
+      "bare": "asif ali zardari",
+      "category": "National",
+      "jurisdiction": "Pakistan",
+      "power": 88.7
+    },
+    {
+      "rank": 83,
+      "name": "Hock Tan",
+      "bare": "hock tan",
+      "category": "Corporate",
+      "jurisdiction": "Broadcom",
+      "power": 88.2
+    },
+    {
+      "rank": 84,
+      "name": "David Zaslav",
+      "bare": "david zaslav",
+      "category": "Media",
+      "jurisdiction": "Warner Bros",
+      "power": 88.0
+    },
+    {
+      "rank": 85,
+      "name": "Ahmed el-Tayeb",
+      "bare": "ahmed el-tayeb",
+      "category": "Faith",
+      "jurisdiction": "Sunni Islam",
+      "power": 88.0
+    },
+    {
+      "rank": 86,
+      "name": "Andrew Bailey",
+      "bare": "andrew bailey",
+      "category": "Central bank",
+      "jurisdiction": "United Kingdom",
+      "power": 87.3
+    },
+    {
+      "rank": 87,
+      "name": "Amin H. Nasser",
+      "bare": "amin h. nasser",
+      "category": "Corporate",
+      "jurisdiction": "Saudi Aramco",
+      "power": 85.9
+    },
+    {
+      "rank": 88,
+      "name": "Jamie Dimon",
+      "bare": "jamie dimon",
+      "category": "Finance",
+      "jurisdiction": "JPMorgan Chase",
+      "power": 84.0
+    },
+    {
+      "rank": 89,
+      "name": "Donald Tusk",
+      "bare": "donald tusk",
+      "category": "National",
+      "jurisdiction": "Poland",
+      "power": 83.1
+    },
+    {
+      "rank": 90,
+      "name": "Anwar Ibrahim",
+      "bare": "anwar ibrahim",
+      "category": "National",
+      "jurisdiction": "Malaysia",
+      "power": 81.6
+    },
+    {
+      "rank": 91,
+      "name": "Lin Wu",
+      "bare": "lin wu",
+      "category": "Sub-national",
+      "jurisdiction": "Shandong",
+      "power": 81.6
+    },
+    {
+      "rank": 92,
+      "name": "Yin Yong",
+      "bare": "yin yong",
+      "category": "Mayor",
+      "jurisdiction": "Beijing",
+      "power": 81.6
+    },
+    {
+      "rank": 93,
+      "name": "Swiss Federal Council",
+      "bare": "swiss federal council",
+      "category": "National",
+      "jurisdiction": "Switzerland",
+      "power": 81.1
+    },
+    {
+      "rank": 94,
+      "name": "Michael Dell",
+      "bare": "michael dell",
+      "category": "Billionaire",
+      "jurisdiction": "United States",
+      "power": 79.8
+    },
+    {
+      "rank": 95,
+      "name": "Oh Se-hoon",
+      "bare": "oh se-hoon",
+      "category": "Mayor",
+      "jurisdiction": "Seoul",
+      "power": 78.3
+    },
+    {
+      "rank": 96,
+      "name": "Karen Bass",
+      "bare": "karen bass",
+      "category": "Mayor",
+      "jurisdiction": "Los Angeles",
+      "power": 78.2
+    },
+    {
+      "rank": 97,
+      "name": "Gong Zheng",
+      "bare": "gong zheng",
+      "category": "Mayor",
+      "jurisdiction": "Shanghai",
+      "power": 77.8
+    },
+    {
+      "rank": 98,
+      "name": "Valérie Pécresse",
+      "bare": "valérie pécresse",
+      "category": "Sub-national",
+      "jurisdiction": "Île-de-France",
+      "power": 75.9
+    },
+    {
+      "rank": 99,
+      "name": "Cyril Ramaphosa",
+      "bare": "cyril ramaphosa",
+      "category": "National",
+      "jurisdiction": "South Africa",
+      "power": 75.3
+    },
+    {
+      "rank": 100,
+      "name": "Wang Hao",
+      "bare": "wang hao",
+      "category": "Sub-national",
+      "jurisdiction": "Zhejiang",
+      "power": 74.6
+    }
+  ]
+}

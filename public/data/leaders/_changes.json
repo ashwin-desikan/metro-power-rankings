@@ -1,6 +1,24 @@
 {
-  "updated": "2026-08-03",
+  "updated": "2026-08-07",
   "changes": [
+    {
+      "date": "2020-12-24",
+      "slug": "moldova",
+      "country": "Moldova",
+      "office": "President",
+      "from": "Vasile Tofan",
+      "to": "Maia Sandu",
+      "source": "wikidata"
+    },
+    {
+      "date": "2026-07-14",
+      "slug": "lithuania",
+      "country": "Lithuania",
+      "office": "Prime Minister",
+      "from": "Inga Ruginienė",
+      "to": "Mindaugas Sinkevičius",
+      "source": "wikidata"
+    },
     {
       "date": "2024-09-15",
       "slug": "jordan",

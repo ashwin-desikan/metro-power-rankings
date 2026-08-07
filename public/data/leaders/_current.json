@@ -516,6 +516,10 @@
   "india": {
     "name": "Narendra Modi",
     "role": "PM",
+    "second": {
+      "name": "Droupadi Murmu",
+      "role": "Pres."
+    },
     "since": "2014-05-26"
   },
   "indonesia": {
@@ -681,13 +685,13 @@
     "since": "2021-03-25"
   },
   "lithuania": {
-    "name": "Inga Ruginienė",
+    "name": "Mindaugas Sinkevičius",
     "role": "PM",
     "second": {
       "name": "Gitanas Nausėda",
       "role": "Pres."
     },
-    "since": "2025-08-26"
+    "since": "2026-07-14"
   },
   "luxembourg": {
     "name": "Émile Reuter",
@@ -761,13 +765,9 @@
     "since": "2024-10-01"
   },
   "moldova": {
-    "name": "Vasile Tofan",
-    "role": "PM",
-    "second": {
-      "name": "Maia Sandu",
-      "role": "Pres."
-    },
-    "since": "2026-07-22"
+    "name": "Maia Sandu",
+    "role": "Pres.",
+    "since": "2020-12-24"
   },
   "monaco": {
     "name": "👑 Albert II, Prince of Monaco",
