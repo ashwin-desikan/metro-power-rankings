@@ -133,7 +133,12 @@ timeout_minutes = 25
 #   cricket-weekly     LIVE on the mini since 2026-08-07. Plist unloaded.
 #   fiba-weekly        LIVE on the mini since 2026-08-07. Plist unloaded.
 #   sound-weekly       LIVE on the mini since 2026-08-07. Plist unloaded.
-#   the other 4        ordering decided, rows not written. See DST-MIGRATION.md.
+#   feed-monitor       LIVE on the mini since 2026-08-07. Plist unloaded.
+#   conflicts-monthly  LIVE on the mini since 2026-08-07. Plist unloaded.
+#   cricket-monthly    LIVE on the mini since 2026-08-07. Plist unloaded.
+#   egress-refresh     NOT YET. Exit-126 since 2026-08-02; waiting on Sunday
+#                      2026-08-09's run to confirm health before migrating a
+#                      job whose current state is unknown. See DST-MIGRATION.md.
 #
 # The order is chosen to prove ONE unexercised mechanism at a time, on the
 # fastest-feedback job available, so a mistake shows up the next morning
@@ -330,4 +335,47 @@ weekdays = [3]
 command = "run-sound-weekly.sh"
 hc_slug = "sound-weekly"
 catchup_hours = 24
+timeout_minutes = 20
+
+# --- BATCH 6: feed-monitor. The only job needing a wrapper written first. ---
+# The legacy plist ran an inline `bash -lc` string (source config.env, exec
+# python) rather than a file; the dispatcher requires `/bin/bash <path>`, so
+# run-feed-monitor.sh was authored to carry that exact inline string as a
+# tracked file. feed_shape_monitor.py itself is unchanged and does its own
+# alerting via notify.py -- this row and hc_slug only add the healthchecks
+# tile, same as every other job.
+#
+[[job]]
+id = "feed-monitor"             # launchd/com.citizenofnowhere.feed-monitor.plist (unloaded)
+time = "07:20"                  # was 08:20 LOCAL
+command = "run-feed-monitor.sh"
+hc_slug = "feed-monitor"
+catchup_hours = 14
+timeout_minutes = 20
+
+# --- conflicts-monthly, cricket-monthly: the `days` key, day-of-month. ------
+# Both fire on the 1st. Flipped now (2026-08-07) rather than waiting for
+# 1 September, per DST-MIGRATION.md's own warning: monthly jobs only get a
+# real unattended proof on the 1st, so left to the last minute they would
+# enter the 25 October clock change never having fired from the dispatcher.
+# catchup_hours is deliberately generous (monthly cadence; a slot worth
+# catching up within most of a day, unlike the daily/weekly jobs above).
+#
+[[job]]
+id = "conflicts-monthly"        # launchd/com.citizenofnowhere.conflicts-monthly.plist (unloaded)
+time = "07:15"                  # was 08:15 LOCAL
+days = [1]
+command = "run-scraper-refresh.sh"
+args = ["conflicts"]
+hc_slug = "conflicts-monthly"
+catchup_hours = 20
+timeout_minutes = 20
+
+[[job]]
+id = "cricket-monthly"          # launchd/com.citizenofnowhere.cricket-monthly.plist (unloaded)
+time = "10:00"                  # was 11:00 LOCAL
+days = [1]
+command = "run-cricket-monthly.sh"
+hc_slug = "cricket-monthly"
+catchup_hours = 20
 timeout_minutes = 20
