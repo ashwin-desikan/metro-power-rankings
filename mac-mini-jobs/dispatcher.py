@@ -602,6 +602,33 @@ def self_test():
         else:
             os.environ["REPO_DIR"] = old_repo_dir
 
+    # --- acquire_lock()/release_lock() -----------------------------------------
+    # Had zero coverage before 2026-08-07, when --seed and a concurrent real
+    # tick landed at the same time with no lock protecting --seed at all: the
+    # tick's own save_state() clobbered --seed's addition of newly-migrated
+    # jobs, because it worked from a state.json snapshot read before --seed
+    # wrote them. --seed now holds the same lock as tick(); these pin the
+    # primitive both stand on. Uses this process's own PID (always alive) to
+    # simulate a live holder without spawning a second process.
+    global LOCK_FILE
+    _real_lock_file = LOCK_FILE
+    LOCK_FILE = Path(tempfile.mkstemp(prefix="dispatcher-test-lock-")[1])
+    LOCK_FILE.unlink()  # mkstemp creates it; acquire_lock must create its own
+    try:
+        check("a fresh lock acquires", acquire_lock(), True)
+        check("a live PID's lock blocks a second acquire", acquire_lock(), False)
+        release_lock()
+        check("release then acquire succeeds again", acquire_lock(), True)
+        release_lock()
+        check("release when nothing is locked does not raise", release_lock(), None)
+        LOCK_FILE.write_text("not-a-pid")
+        check("a corrupt lock file is taken over, not fatal", acquire_lock(), True)
+        release_lock()
+    finally:
+        if LOCK_FILE.exists():
+            LOCK_FILE.unlink()
+        LOCK_FILE = _real_lock_file
+
     # --- this file must stay pure ASCII --------------------------------------
     # Learned the hard way on 2026-08-06: a single U+26A0 in a print() crashed
     # --status with UnicodeEncodeError on a cp1252 Windows console. The mini is
@@ -880,7 +907,22 @@ def main():
         return 0
 
     if args.seed:
-        return seed(now, jobs, state)
+        # Hold the SAME lock as a real tick. 2026-08-07: a manual --seed and
+        # the background 600s tick landed concurrently -- the tick genuinely
+        # ran a due job, then wrote its own save_state() from a state.json
+        # snapshot it had read BEFORE --seed added new jobs, clobbering them
+        # on write. Locking makes the two mutually exclusive; the state
+        # re-read below (not the `state` loaded above, before the lock) is
+        # what's actually current once the lock is held, in case a tick ran
+        # and wrote in the gap between that load and acquiring this lock.
+        if not acquire_lock():
+            log("a tick is currently running; wait for it to finish and retry --seed")
+            return 1
+        try:
+            state = load_state()
+            return seed(now, jobs, state)
+        finally:
+            release_lock()
 
     if not args.dry_run and not acquire_lock():
         log("previous tick still running; skipping")
