@@ -49,27 +49,22 @@ const OUT_OF_BAND = [
     paths: ["power-ranking.json"],
     refreshedBy: "the weekly power-ranking refresh",
   },
-  // --- STILL BROKEN as of 2026-08-07. Converting these is the open work.
-  //     Listed with `pending: true` so this script reports them as KNOWN rather
-  //     than failing the build on day one. Remove the flag as each is converted;
-  //     the check then enforces it permanently.
+  // Converted 2026-08-07. No pending flags remain: every path below is now
+  // enforced, so a regression to readFileSync fails CI rather than being noted.
   {
     lib: "lib/rugbyUnion.ts",
     paths: ["rugby-union/teams.json", "rugby-union/hub.json"],
     refreshedBy: "mac-mini-jobs/run-scraper-refresh.sh rugby",
-    pending: true,
   },
   {
     lib: "lib/cricket.ts",
     paths: ["cricket/teams.json", "cricket/hub.json"],
     refreshedBy: "mac-mini-jobs/run-cricket-weekly.sh",
-    pending: true,
   },
   {
     lib: "lib/basketball.ts",
     paths: ["basketball/nations.json", "basketball/hub.json"],
     refreshedBy: "mac-mini-jobs/run-scraper-refresh.sh fiba",
-    pending: true,
   },
 ];
 

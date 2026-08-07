@@ -24,11 +24,11 @@ const card = { backgroundColor: "var(--bg-card)", borderColor: "var(--border)" }
 const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 const GOLD = "#d4af37";
 
-export default function BasketballHubPage() {
-  const hub = getBasketballHub();
-  const nations = getAllBasketballNations();
+export default async function BasketballHubPage() {
+  const hub = await getBasketballHub();
+  const nations = await getAllBasketballNations();
   const el = getEuroleague();
-  const fiba = getFibaRanking();
+  const fiba = await getFibaRanking();
   if (!hub) return null;
 
   const slugByName = new Map(nations.map((t) => [t.name, t.slug]));

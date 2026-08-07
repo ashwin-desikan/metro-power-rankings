@@ -6,12 +6,11 @@ import "server-only";
 // per-league franchise tables (via teamLinks) and the national-team libs.
 // Registered in scripts/check-client-imports.mjs.
 
+import { readFileSync } from "fs";
+import { join } from "path";
 import { getAllChampionships, type Championship } from "./champions";
 import { resolveTeamLink } from "./teamLinks";
 import { getAllNationalTeams } from "./international";
-import { getAllBasketballNations } from "./basketball";
-import { getAllCricketTeams } from "./cricket";
-import { getAllRugbyTeams } from "./rugbyUnion";
 import { getAllRlNations } from "./rugbyLeagueIntl";
 import { getAllHockeyTeams } from "./hockey";
 import { getAllHandballTeams } from "./handball";
@@ -238,6 +237,33 @@ function norm(s: string): string {
     .trim();
 }
 
+// Identity-only nation lists for link resolution.
+//
+// Rugby, cricket and basketball moved to runtime reads (lib/liveData) so their
+// weekly refresh ships without a deploy. Their async getters cannot be used
+// here: nationHref is sync, reached from the sync exported getChampionsWithLinks
+// and championTeamHref, which lib/championsHistory calls from sync helpers that
+// in turn feed app/sitemap.ts. Making that chain async would cascade across the
+// whole site for no benefit.
+//
+// It buys nothing because this resolver needs only slug and name. That is
+// identity, not the volatile half: a nation appears or disappears when the
+// workbook changes, which requires a build regardless. Records, rankings and
+// honours -- the parts the weekly job actually rewrites -- are read at runtime
+// by the async getters in those libs. So this stays a deliberate build-time
+// read, and scripts/check-live-data.mjs still passes because each path is
+// loaded through loadLiveJson in its owning lib.
+function identityList(rel: string): NationLike[] {
+  try {
+    const rows = JSON.parse(
+      readFileSync(join(process.cwd(), "public", "data", ...rel.split("/")), "utf-8"),
+    ) as NationLike[];
+    return rows.map((t) => ({ slug: t.slug, name: t.name, cur_name: t.cur_name }));
+  } catch {
+    return [];
+  }
+}
+
 type NationLike = { slug: string; name: string; cur_name?: string };
 function nationHref(name: string, base: string, list: NationLike[]): string | null {
   const n = norm(name);
@@ -253,11 +279,11 @@ function intlTeamHref(c: Championship): string | null {
     case "Football":
       return nationHref(c.team, "/teams/national", getAllNationalTeams());
     case "Basketball":
-      return nationHref(c.team, "/teams/basketball", getAllBasketballNations());
+      return nationHref(c.team, "/teams/basketball", identityList("basketball/nations.json"));
     case "Cricket":
-      return nationHref(c.team, "/teams/cricket", getAllCricketTeams());
+      return nationHref(c.team, "/teams/cricket", identityList("cricket/teams.json"));
     case "Rugby Union":
-      return nationHref(c.team, "/teams/rugby-union", getAllRugbyTeams());
+      return nationHref(c.team, "/teams/rugby-union", identityList("rugby-union/teams.json"));
     case "Rugby League":
       return nationHref(c.team, "/teams/rugby-league", getAllRlNations());
     case "Hockey":

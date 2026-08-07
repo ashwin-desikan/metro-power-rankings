@@ -50,9 +50,9 @@ function fmtSpan(first: string | null, last: string | null): string {
 }
 
 export default async function CricketHubPage() {
-  const hub = getCricketHub();
+  const hub = await getCricketHub();
   const cg = getCricketGames();
-  const teams = getAllCricketTeams();
+  const teams = await getAllCricketTeams();
   const wtc = await getWtcStandings();
   const fixtures = await getCricketFixtures();
   const hasWtc = !!wtc && wtc.rows.length > 0;

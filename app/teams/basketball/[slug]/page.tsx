@@ -12,17 +12,23 @@ import {
 import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
-export const dynamicParams = false;
+// dynamicParams=true since 2026-08-07: this portal's data is now read at runtime
+// (lib/liveData), so the weekly refresh can introduce a nation between builds.
+// With dynamicParams=false that nation 404'd until someone happened to deploy.
+// Unknown slugs now render on first request, same posture as /rankings/[slug],
+// /states/[slug], /teams/cfb/[slug] and the rest. Safe on origin load because
+// the Cloudflare rate-limit rule went in the same day.
+export const dynamicParams = true;
 
-export function generateStaticParams() {
-  return getAllBasketballSlugs().map((slug) => ({ slug }));
+export async function generateStaticParams() {
+  return (await getAllBasketballSlugs()).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata(
   { params }: { params: Promise<{ slug: string }> },
 ): Promise<Metadata> {
   const { slug } = await params;
-  const team = getBasketballNationBySlug(slug);
+  const team = await getBasketballNationBySlug(slug);
   if (!team) return {};
   const path = `/teams/basketball/${slug}`;
   const desc = `${team.name} in international basketball: FIBA World Cup campaigns, Olympic medals, and finals history.`;
@@ -43,8 +49,8 @@ export default async function BasketballNationPage(
   { params }: { params: Promise<{ slug: string }> },
 ) {
   const { slug } = await params;
-  const team = getBasketballNationBySlug(slug);
-  const detail = getBasketballNationDetail(slug);
+  const team = await getBasketballNationBySlug(slug);
+  const detail = await getBasketballNationDetail(slug);
   if (!team || !detail) notFound();
 
   const countrySlug = getCountrySlugForBasketballNation(team);

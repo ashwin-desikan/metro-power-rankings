@@ -1,4 +1,4 @@
-﻿﻿import "server-only";
+﻿import "server-only";
 
 // Shared release-notes data. Single source of truth, imported by both the
 // /updates page renderer (full list, brevity-validated) and the home-page
@@ -22,7 +22,7 @@ export const RELEASES: Release[] = [
     headline: "Older essay links to two badge pages now work",
     items: [
       "Two badges were renamed after the essays that cite them were published, so those links had been dead. University Town and Skyline City now answer to their old addresses as well as their new ones.",
-      "Sound of the Metros now refreshes on the site the week it is rebuilt, instead of waiting for an unrelated deploy to carry it. The same fix is coming for rugby, cricket and basketball.",
+      "Sound of the Metros, international rugby, international cricket and international basketball now all refresh on the site the week they are rebuilt, instead of waiting for an unrelated deploy to carry them.",
     ],
   },
   {

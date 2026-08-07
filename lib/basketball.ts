@@ -9,6 +9,13 @@ import "server-only";
 //
 // Server-only. Listed in scripts/check-client-imports.mjs SERVER_ONLY_MODULES.
 
+// nations/hub/fiba/nation-detail are runtime reads (weekly FIBA refresh commits
+// them with the skip marker). euroleague.json deliberately stays a BUILD-TIME
+// read: it is produced by scripts/basketball/build_intl_basketball.py from the
+// workbook/Supabase, not by the weekly scraper, and keeping it sync keeps
+// getEuroleagueHonours() callable from the synchronous sort callbacks in
+// app/rankings/[slug]/page.tsx. Enforced by scripts/check-live-data.mjs.
+import { loadLiveJson } from "@/lib/liveData";
 import { existsSync, readFileSync } from "fs";
 import { join } from "path";
 import { getAllCountries } from "@/lib/countries";
@@ -61,52 +68,56 @@ export type EuroleagueData = {
   seasons: number;
 };
 
-const DATA_DIR = join(process.cwd(), "public", "data", "basketball");
-
-function loadJson<T>(rel: string): T | null {
-  const p = join(DATA_DIR, rel);
-  if (!existsSync(p)) return null;
-  return JSON.parse(readFileSync(p, "utf-8")) as T;
-}
-
 let _nations: BasketballNation[] | null = null;
 let _hub: BasketballHub | null = null;
 let _el: EuroleagueData | null = null;
 let _bySlug: Map<string, BasketballNation> | null = null;
 
-export function getAllBasketballNations(): BasketballNation[] {
-  if (!_nations) _nations = loadJson<BasketballNation[]>("nations.json") ?? [];
+export async function getAllBasketballNations(): Promise<BasketballNation[]> {
+  if (!_nations) _nations = (await loadLiveJson<BasketballNation[]>("basketball/nations.json")) ?? [];
   return _nations;
 }
 
-export function getBasketballHub(): BasketballHub | null {
-  if (!_hub) _hub = loadJson<BasketballHub>("hub.json");
+export async function getBasketballHub(): Promise<BasketballHub | null> {
+  if (!_hub) _hub = await loadLiveJson<BasketballHub>("basketball/hub.json");
   return _hub;
 }
 
+// Deliberately build-time and synchronous, unlike the four readers above.
+// euroleague.json comes from scripts/basketball/build_intl_basketball.py
+// (workbook + Supabase), not the weekly FIBA scraper, so it only ever changes
+// on a run that needs a deploy anyway. Keeping it sync is what lets
+// getEuroleagueHonours() stay callable from the synchronous sort callbacks in
+// app/rankings/[slug]/page.tsx.
+function readEuroleague(): EuroleagueData | null {
+  const p = join(process.cwd(), "public", "data", "basketball", "euroleague.json");
+  if (!existsSync(p)) return null;
+  return JSON.parse(readFileSync(p, "utf-8")) as EuroleagueData;
+}
+
 export function getEuroleague(): EuroleagueData | null {
-  if (!_el) _el = loadJson<EuroleagueData>("euroleague.json");
+  if (!_el) _el = readEuroleague();
   return _el;
 }
 
 let _fiba: FibaRanking | null = null;
 
-export function getFibaRanking(): FibaRanking | null {
-  if (!_fiba) _fiba = loadJson<FibaRanking>("fiba_ranking.json");
+export async function getFibaRanking(): Promise<FibaRanking | null> {
+  if (!_fiba) _fiba = await loadLiveJson<FibaRanking>("basketball/fiba_ranking.json");
   return _fiba;
 }
 
-export function getBasketballNationBySlug(slug: string): BasketballNation | null {
-  if (!_bySlug) _bySlug = new Map(getAllBasketballNations().map((t) => [t.slug, t]));
+export async function getBasketballNationBySlug(slug: string): Promise<BasketballNation | null> {
+  if (!_bySlug) _bySlug = new Map((await getAllBasketballNations()).map((t) => [t.slug, t]));
   return _bySlug.get(slug) ?? null;
 }
 
-export function getAllBasketballSlugs(): string[] {
-  return getAllBasketballNations().map((t) => t.slug);
+export async function getAllBasketballSlugs(): Promise<string[]> {
+  return (await getAllBasketballNations()).map((t) => t.slug);
 }
 
-export function getBasketballNationDetail(slug: string): BasketballNationDetail | null {
-  return loadJson<BasketballNationDetail>(join("nation-detail", `${slug}.json`));
+export async function getBasketballNationDetail(slug: string): Promise<BasketballNationDetail | null> {
+  return loadLiveJson<BasketballNationDetail>(`basketball/nation-detail/${slug}.json`);
 }
 
 // ---------- Country join (same norm/alias machinery as the other sports) ----------
@@ -133,26 +144,28 @@ function norm(s: string): string {
 
 let _byName: Map<string, BasketballNation> | null = null;
 
-function nationsByName(): Map<string, BasketballNation> {
+async function nationsByName(): Promise<Map<string, BasketballNation>> {
   if (_byName) return _byName;
-  _byName = new Map();
-  for (const t of getAllBasketballNations()) _byName.set(norm(t.name), t);
+  const m = new Map<string, BasketballNation>();
+  for (const t of await getAllBasketballNations()) m.set(norm(t.name), t);
+  _byName = m;
   return _byName;
 }
 
 let _fibaByName: Map<string, FibaTeam> | null = null;
 
-function fibaByName(): Map<string, FibaTeam> {
+async function fibaByName(): Promise<Map<string, FibaTeam>> {
   if (_fibaByName) return _fibaByName;
-  _fibaByName = new Map();
-  for (const t of getFibaRanking()?.teams ?? []) _fibaByName.set(norm(t.country), t);
+  const m = new Map<string, FibaTeam>();
+  for (const t of (await getFibaRanking())?.teams ?? []) m.set(norm(t.country), t);
+  _fibaByName = m;
   return _fibaByName;
 }
 
-export function getBasketballTeamForCountry(countryName: string): BasketballNation | null {
+export async function getBasketballTeamForCountry(countryName: string): Promise<BasketballNation | null> {
   const n = norm(countryName);
   const key = COUNTRY_ALIASES[n] ?? n;
-  const honoured = nationsByName().get(key);
+  const honoured = (await nationsByName()).get(key);
   if (honoured) return honoured;
   // Fallback: a FIBA-ranked side with no medal/World-Cup honours, built from the
   // full FIBA ranking so the team still appears (with its current rank) even
@@ -160,9 +173,10 @@ export function getBasketballTeamForCountry(countryName: string): BasketballNati
   // (FIBA lists it as "United Kingdom"); like Olympics/baseball/hockey it must
   // surface on the UK page AND on each home nation it represents.
   const isGB = key === "great britain";
+  const fiba = await fibaByName();
   const ft = isGB
-    ? fibaByName().get("united kingdom")
-    : (fibaByName().get(n) ?? fibaByName().get(key));
+    ? fiba.get("united kingdom")
+    : (fiba.get(n) ?? fiba.get(key));
   if (!ft) return null;
   return {
     slug: isGB ? "great-britain" : (ft.country_slug ?? norm(ft.country).replace(/ /g, "-")),

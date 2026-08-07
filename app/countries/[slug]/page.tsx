@@ -292,6 +292,10 @@ export default async function CountryDetailPage({ params }: Props) {
   // constituents (UK -> England/Scotland/Wales/Northern Ireland + Great Britain).
   const champNations = [country.name, ...children.map((c) => c.name), ...(country.name === "United Kingdom" ? ["Great Britain"] : [])];
   const champTitles = getCountryTitles([], champNations); // national-team titles only
+  // Hoisted: countryHasNationalTeams became async when the rugby, cricket and
+  // basketball libs moved to runtime reads, and the section-nav chip list below
+  // is built inside a synchronous IIFE that cannot await.
+  const hasNationalTeams = await countryHasNationalTeams(country.name);
   // States listed under this country in the States sheet (col 4 = Country
   // exact match). UK gets zero hits because UK subdivisions live under
   // England / Scotland / Wales / Northern Ireland; those constituent
@@ -487,7 +491,7 @@ export default async function CountryDetailPage({ params }: Props) {
               ...(powerSeries.length > 0 ? [{ label: "Power", href: "#power", group: "Governance" }] : []),
               ...(conflictWars.length ? [{ label: "Conflicts", href: "#conflicts", group: "Governance" }] : []),
               ...(billionaires.length ? [{ label: "Billionaires", href: "#billionaires", group: "Society" }] : []),
-              ...(countryHasNationalTeams(country.name) ? [{ label: "National Teams", href: "#national-teams", group: "Society" }] : []),
+              ...(hasNationalTeams ? [{ label: "National Teams", href: "#national-teams", group: "Society" }] : []),
               ...(getLeagueHubsForCountry(slug).length > 0 ? [{ label: "League Hubs", href: "#league-hubs", group: "Society" }] : []),
             ];
             return navItems.length > 1 ? <CountryNav items={navItems} /> : null;
@@ -675,7 +679,7 @@ export default async function CountryDetailPage({ params }: Props) {
           <ConflictsSection wars={conflictWars} />
           <BillionairesSection list={billionaires} />
 
-          {(countryHasNationalTeams(country.name) || champTitles.length > 0) ? (
+          {(hasNationalTeams || champTitles.length > 0) ? (
             <Collapsible id="national-teams" collapseOnMobile title={withIcon("national-teams", "National Teams")}>
               <NationalTeamsSection countryName={country.name} bare />
               {champTitles.length > 0 ? (

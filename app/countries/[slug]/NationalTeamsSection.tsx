@@ -152,15 +152,15 @@ function Card({
 
 // Whether this country has any national-team card (used by the page's section
 // nav to decide whether to show the "National Teams" anchor).
-export function countryHasNationalTeams(countryName: string): boolean {
+export async function countryHasNationalTeams(countryName: string): Promise<boolean> {
   const { men, women } = getNationalTeamsForCountry(countryName);
   return !!(
     men || women ||
-    getCricketTeamForCountry(countryName) ||
-    getRugbyTeamForCountry(countryName) ||
+    await getCricketTeamForCountry(countryName) ||
+    await getRugbyTeamForCountry(countryName) ||
     getBaseballTeamForCountry(countryName) ||
     getOlympicTeamForCountry(countryName) ||
-    getBasketballTeamForCountry(countryName) ||
+    await getBasketballTeamForCountry(countryName) ||
     getHockeyTeamForCountry(countryName) ||
     getHandballTeamForCountry(countryName) ||
     getVolleyballTeamForCountry(countryName) ||
@@ -168,17 +168,17 @@ export function countryHasNationalTeams(countryName: string): boolean {
   );
 }
 
-function buildEntries(
+async function buildEntries(
   countryName: string,
   opts: { includeOlympics?: boolean; excludeGreatBritain?: boolean } = {},
-): { key: SportKey; node: React.ReactNode }[] {
+): Promise<{ key: SportKey; node: React.ReactNode }[]> {
   const { includeOlympics = true, excludeGreatBritain = false } = opts;
   const { men, women } = getNationalTeamsForCountry(countryName);
-  const cricket = getCricketTeamForCountry(countryName);
-  const rugby = getRugbyTeamForCountry(countryName);
+  const cricket = await getCricketTeamForCountry(countryName);
+  const rugby = await getRugbyTeamForCountry(countryName);
   const baseball = getBaseballTeamForCountry(countryName);
   const olympics = getOlympicTeamForCountry(countryName);
-  const basketball = getBasketballTeamForCountry(countryName);
+  const basketball = await getBasketballTeamForCountry(countryName);
   const hockey = getHockeyTeamForCountry(countryName);
   const handball = getHandballTeamForCountry(countryName);
   const volleyball = getVolleyballTeamForCountry(countryName);
@@ -502,20 +502,22 @@ const UK_HOME_NATIONS = ["England", "Scotland", "Wales", "Northern Ireland"];
 
 const NT_GRID = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5";
 
-export default function NationalTeamsSection({
+export default async function NationalTeamsSection({
   countryName,
   bare = false,
 }: {
   countryName: string;
   bare?: boolean;
 }) {
-  const main = buildEntries(countryName);
+  const main = await buildEntries(countryName);
   const homeBlocks =
     countryName === "United Kingdom"
-      ? UK_HOME_NATIONS.map((n) => ({
-          name: n,
-          nodes: buildEntries(n, { includeOlympics: false, excludeGreatBritain: true }),
-        })).filter((b) => b.nodes.length > 0)
+      ? (await Promise.all(
+          UK_HOME_NATIONS.map(async (n) => ({
+            name: n,
+            nodes: await buildEntries(n, { includeOlympics: false, excludeGreatBritain: true }),
+          })),
+        )).filter((b) => b.nodes.length > 0)
       : [];
 
   if (main.length === 0 && homeBlocks.length === 0) return null;

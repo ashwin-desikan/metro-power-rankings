@@ -34,8 +34,8 @@ function spanStr(first: string | null, last: string | null): string {
 }
 
 export default async function RugbyUnionHubPage() {
-  const hub = getRugbyHub();
-  const teams = getAllRugbyTeams();
+  const hub = await getRugbyHub();
+  const teams = await getAllRugbyTeams();
   const rg = getRugbyGames();
   const fixtures = await getRugbyFixtures();
   if (!hub) return null;

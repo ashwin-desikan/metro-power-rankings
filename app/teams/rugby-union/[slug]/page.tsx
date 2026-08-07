@@ -18,17 +18,23 @@ import { getRugbyGamesForTeam } from "@/lib/rugbyGames";
 import { flagCdnUrl } from "@/lib/international-display";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
-export const dynamicParams = false;
+// dynamicParams=true since 2026-08-07: this portal's data is now read at runtime
+// (lib/liveData), so the weekly refresh can introduce a nation between builds.
+// With dynamicParams=false that nation 404'd until someone happened to deploy.
+// Unknown slugs now render on first request, same posture as /rankings/[slug],
+// /states/[slug], /teams/cfb/[slug] and the rest. Safe on origin load because
+// the Cloudflare rate-limit rule went in the same day.
+export const dynamicParams = true;
 
-export function generateStaticParams() {
-  return getAllRugbySlugs().map((slug) => ({ slug }));
+export async function generateStaticParams() {
+  return (await getAllRugbySlugs()).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata(
   { params }: { params: Promise<{ slug: string }> },
 ): Promise<Metadata> {
   const { slug } = await params;
-  const team = getRugbyTeamBySlug(slug);
+  const team = await getRugbyTeamBySlug(slug);
   if (!team) return {};
   const path = `/teams/rugby-union/${slug}`;
   const desc = `${team.name} test rugby: all-time record, championship and World Cup honours, season-by-season standings, head-to-head ledgers and recent results.`;
@@ -75,8 +81,8 @@ export default async function RugbyTeamPage(
   { params }: { params: Promise<{ slug: string }> },
 ) {
   const { slug } = await params;
-  const team = getRugbyTeamBySlug(slug);
-  const detail = getRugbyTeamDetail(slug);
+  const team = await getRugbyTeamBySlug(slug);
+  const detail = await getRugbyTeamDetail(slug);
   if (!team || !detail) notFound();
 
   const countrySlug = getCountrySlugForRugbyTeam(team);

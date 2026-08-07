@@ -11,8 +11,10 @@ import "server-only";
 //
 // Server-only. Listed in scripts/check-client-imports.mjs SERVER_ONLY_MODULES.
 
-import { existsSync, readFileSync } from "fs";
-import { join } from "path";
+// Runtime reads via lib/liveData: the weekly rugby refresh commits these JSONs
+// with the skip marker, so a build-baked read would never reach a reader.
+// Enforced by scripts/check-live-data.mjs.
+import { loadLiveJson } from "@/lib/liveData";
 import { getAllCountries } from "@/lib/countries";
 
 export type RugbyRecord = {
@@ -83,39 +85,31 @@ export type RugbyHub = {
   }[];
 };
 
-const DATA_DIR = join(process.cwd(), "public", "data", "rugby-union");
-
-function loadJson<T>(rel: string): T | null {
-  const p = join(DATA_DIR, rel);
-  if (!existsSync(p)) return null;
-  return JSON.parse(readFileSync(p, "utf-8")) as T;
-}
-
 let _teams: RugbyTeam[] | null = null;
 let _hub: RugbyHub | null = null;
 let _bySlug: Map<string, RugbyTeam> | null = null;
 
-export function getAllRugbyTeams(): RugbyTeam[] {
-  if (!_teams) _teams = loadJson<RugbyTeam[]>("teams.json") ?? [];
+export async function getAllRugbyTeams(): Promise<RugbyTeam[]> {
+  if (!_teams) _teams = (await loadLiveJson<RugbyTeam[]>("rugby-union/teams.json")) ?? [];
   return _teams;
 }
 
-export function getRugbyHub(): RugbyHub | null {
-  if (!_hub) _hub = loadJson<RugbyHub>("hub.json");
+export async function getRugbyHub(): Promise<RugbyHub | null> {
+  if (!_hub) _hub = await loadLiveJson<RugbyHub>("rugby-union/hub.json");
   return _hub;
 }
 
-export function getRugbyTeamBySlug(slug: string): RugbyTeam | null {
-  if (!_bySlug) _bySlug = new Map(getAllRugbyTeams().map((t) => [t.slug, t]));
+export async function getRugbyTeamBySlug(slug: string): Promise<RugbyTeam | null> {
+  if (!_bySlug) _bySlug = new Map((await getAllRugbyTeams()).map((t) => [t.slug, t]));
   return _bySlug.get(slug) ?? null;
 }
 
-export function getAllRugbySlugs(): string[] {
-  return getAllRugbyTeams().map((t) => t.slug);
+export async function getAllRugbySlugs(): Promise<string[]> {
+  return (await getAllRugbyTeams()).map((t) => t.slug);
 }
 
-export function getRugbyTeamDetail(slug: string): RugbyTeamDetail | null {
-  return loadJson<RugbyTeamDetail>(join("team-detail", `${slug}.json`));
+export async function getRugbyTeamDetail(slug: string): Promise<RugbyTeamDetail | null> {
+  return loadLiveJson<RugbyTeamDetail>(`rugby-union/team-detail/${slug}.json`);
 }
 
 // ---------- Country-hub join ----------
@@ -148,16 +142,17 @@ function norm(s: string): string {
 
 let _byName: Map<string, RugbyTeam> | null = null;
 
-function teamsByName(): Map<string, RugbyTeam> {
+async function teamsByName(): Promise<Map<string, RugbyTeam>> {
   if (_byName) return _byName;
-  _byName = new Map();
-  for (const t of getAllRugbyTeams()) _byName.set(norm(t.name), t);
+  const m = new Map<string, RugbyTeam>();
+  for (const t of await getAllRugbyTeams()) m.set(norm(t.name), t);
+  _byName = m;
   return _byName;
 }
 
-export function getRugbyTeamForCountry(countryName: string): RugbyTeam | null {
+export async function getRugbyTeamForCountry(countryName: string): Promise<RugbyTeam | null> {
   const key = COUNTRY_ALIASES[norm(countryName)] ?? norm(countryName);
-  return teamsByName().get(key) ?? null;
+  return (await teamsByName()).get(key) ?? null;
 }
 
 let _countryByNorm: Map<string, string> | null = null;
