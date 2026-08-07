@@ -3,9 +3,28 @@
 Response to *Citizen of Nowhere: Practical Progressive Implementation Blueprint*
 (Gemini, 2026-08). Decisions taken with Ashwin, 2026-08-06.
 
-**Revision 2, same day.** Two claims in revision 1 were disproved by measurement
-within an hour of writing them. Both corrections are marked MEASURED below.
-Nothing here is inferred where it could be counted.
+**Revision 3, 2026-08-07.** This is a **decision record**, not a build spec. The
+feature shipped on 2026-08-06 in commit `0d18abf37`, and this file was committed
+in that same commit **unrevised**, so for a day it instructed anyone reading it
+to build the PM2.5 dimension on a source that had already been measured wrong
+and thrown out. That is corrected below. Read the code as authoritative:
+`scripts/groundfloor/*.py` for method, `public/data/ground-floor/index.json`
+`_meta` for the shipped parameters, `app/ground-floor/page.tsx` for the surface.
+
+Four claims from earlier revisions were disproved by measurement. Corrections 1
+and 2 are marked MEASURED below; corrections 3 and 4 are stated inline where
+they bite — the rejection of CAMS/Open-Meteo for PM2.5, and the exclusion of
+Aqueduct's `ucw` (untreated wastewater: 105 distinct values worldwide, 0 of 206
+countries with more than one, i.e. country-level, not metro-level) and `bws`
+(baseline water stress: passes the variation test but is rainfall-driven).
+
+**One finding that governs how this board may be written about.** The published
+`_meta.correlations.accumulationVsConditionsRank` of −0.21 reads as "the more a
+metro accumulates, the worse its conditions." It does not survive a population
+control: the partial correlation is **+0.33**, and within every population band
+above roughly 150,000 the sign is positive (+0.36 to +0.56). At equal size,
+metros that accumulate more have *better* measured conditions. The per-metro gap
+remains a sound descriptive claim. The general one does not.
 
 ---
 
@@ -181,23 +200,61 @@ Existing per-metro counts: display only, per correction 1.
 
 ### Acquiring, in order
 
-**PM2.5 — BUILT 2026-08-06.** `scripts/groundfloor/build_air_quality.py`.
-Annual mean for calendar 2025 from the Open-Meteo Air Quality API serving
-Copernicus CAMS reanalysis. No API key. Complete by construction: every land
-coordinate returns a value, confirmed against Nuuk, Ulaanbaatar and Alice
-Springs. Dry-run by default, resumable cache, 95% coverage floor before write,
-23-case self-test.
+**PM2.5 — SHIPPED 2026-08-06.** `scripts/groundfloor/build_air_quality.py`.
+Annual mean for calendar **2024** from **SatPM2.5 V6GL03** (Atmospheric
+Composition Analysis Group, Washington University in St. Louis), 0.1°, CC BY
+4.0, pulled unsigned from the AWS Registry of Open Data bucket `satpmdata`,
+about 5 MB per year, 1998–2024. 28-case self-test, 10-case validation against
+the IQAir World Air Quality Report.
 
-> **HARD REQUIREMENT: `domains=cams_global`, always.** Open-Meteo defaults to
-> `auto`, which serves CAMS-Europe inside Europe and CAMS-global elsewhere.
-> Measured on the same London coordinate and hours: Jan 2025 mean 13.92 under
-> auto versus 12.25 forced global; on a two-day sample, 4.39 versus 7.04.
-> Defaulting would measure European metros on one instrument and the rest of the
-> world on another, then rank them against each other. Never switch it to auto
-> for "better European accuracy." Accuracy is not the goal. Comparability is.
+> **HARD REQUIREMENT: test for the `-999` sentinel, not for NaN.** The raster
+> contains no NaNs at all. Ocean and no-data cells carry `-999`, and they are
+> 63% of the grid. A NaN-only guard silently ranks ocean cells as the cleanest
+> air on earth.
 
-**Satellite vegetation / tree canopy, and built-up density.** Gridded, observed,
-global, no contributor bias. The natural second and third dimensions.
+> **DO NOT substitute CAMS / Open-Meteo. It was built, measured, and rejected on
+> 2026-08-06.** An earlier revision of this spec made `domains=cams_global` a
+> hard requirement; that instruction is **withdrawn**. CAMS is right on London
+> and wrong on rank order, because its total PM2.5 includes sea salt and dust:
+> it put Delhi at 80.3 against Beijing 83.4 when reality is roughly two to one
+> the other way, and Los Angeles at 23.7, above El Paso's 11.4 — El Paso being
+> the most polluted US city in the reference data. The tell was a near-neighbour
+> check: coastal Jeddah 79.2 against inland Mecca 44.7, where the correct source
+> gives 44.0 against 61.5. The rejected build is parked at
+> `_to_delete/build_air_quality_CAMS_rejected.py`. See the header of
+> `scripts/groundfloor/build_air_quality.py` for the full evidence table.
+
+**NO2 — SHIPPED 2026-08-06.** `scripts/groundfloor/build_no2.py`. Annual mean
+for **2023** from **GlobalNO2_AiT** (Mu & Tao, ESSD 2026), 0.1°, CC BY 4.0,
+Zenodo 10.5281/zenodo.13842191, about 100 MB, 2005–2023. 37-case self-test.
+Earns its place on the collinearity test: Spearman 0.53 against PM2.5.
+
+> **HARD REQUIREMENT: binary-search the latitude axis.** It is **not** uniformly
+> spaced — 1,394 steps of 0.1° plus jumps of 0.4, 0.6, 0.7 and 1.9° where empty
+> southern rows were dropped. Arithmetic indexing put London at latitude −28.55
+> and only the coverage floor caught it. Note also that this raster fills with
+> NaN, unlike SatPM2.5's `-999`; a sampler shared between them must test both.
+
+**Water and sanitation — SHIPPED 2026-08-06.**
+`scripts/groundfloor/build_water_sanitation.py`. WRI **Aqueduct 4.0** baseline
+annual, indicators `udw` (unimproved drinking water) and `usa` (unimproved
+sanitation) as population shares, point-in-polygon over the basin geometry.
+ESRI FileGDB, needs `pyogrio` — the published CSV carries no geometry. 27-case
+self-test. `udw` and `usa` correlate at 0.818 but diverge usefully (Dhaka: water
+0.015, sanitation 0.305), so they are combined into **one** dimension with both
+raw values kept in `detail`; registering them separately would have given water
+half the median's weight by accident. 31 metros unresolved (remote islands
+Aqueduct does not cover), and because `dimensionsRequired: 3` they are dropped
+from the board entirely rather than merely unranked — Honolulu among them.
+
+**Satellite vegetation / tree canopy, and built-up density — REJECTED, not
+deferred.** Built-up density fails the unambiguous-direction test: dense is
+arguably good, which is Zone Zero's own thesis. Vegetation is rainfall-driven,
+the same biome confound that ruled out Aqueduct's `bws` water stress. Ozone was
+rejected too: urban NOx titrates O3, so high-traffic metros read *lower*, which
+would reward exactly what the NO2 dimension penalises. Ookla broadband was
+rejected on licence (CC BY-NC-SA 4.0, non-commercial and share-alike). Urban
+heat island was rejected by Ashwin.
 
 **Deep layer, top 100 metros only, hand-curated with a source per row.** Fare
 cap existence and level, rent regulation in force, municipal utility ownership.
@@ -244,15 +301,20 @@ not persons, consistent with the wide-tent principle.
 
 ## Build phases, revised
 
-**Phase 1. PM2.5 ingest.** BUILT, self-test green, full run executing.
+**Phase 1. PM2.5 ingest. SHIPPED 2026-08-06, commit `0d18abf37`.**
 One honest, complete, objectively-measured dimension, end to end.
 
-**Phase 2. Satellite vegetation and built-up density.** The second and third
-objective dimensions. Only after phase 1 has a shipped shape to copy.
+**Phase 2. The second and third dimensions. SHIPPED 2026-08-06, commit
+`0d18abf37`** — as NO2 and water+sanitation, not as the vegetation and
+built-up density this spec originally proposed. Both of those were rejected on
+the grounds recorded above.
 
-**Phase 3. The Ground Floor rank and the gap surface.** Median-of-ranks over
-whatever dimensions exist by then, the standalone view, and the gap presentation
-on metro pages. Needs at least three dimensions to be worth calling a rank.
+**Phase 3. The Ground Floor rank and the gap surface. SHIPPED 2026-08-06,
+commit `0d18abf37`.** Median-of-ranks with average ties over three dimensions,
+`dimensionsRequired: 3`, **4,269 metros ranked**, `provisional: false`, at the
+standalone route `/ground-floor`, wired into `app/DesktopNav.tsx` and
+`app/MobileMenu.tsx`. The gap is reported in **percentile points**;
+`gapRanks` is display-only and is not comparable across the table.
 
 **Phase 4. Deep layer, top 100.** Curated policy records attached to metros.
 Feeds the editorial programme rather than the rank.
