@@ -130,12 +130,31 @@ for w in metro-mini-refresh run-cricket-weekly run-cricket-monthly run-f1-weekly
   ln -sf "$REPO/mac-mini-jobs/$w.sh" "$HOME/metro-mini-jobs/$w.sh"
 done
 chmod +x "$REPO"/mac-mini-jobs/*.sh "$HOME/metro-mini-jobs/hc-run.sh" "$HOME/metro-mini-jobs/"*.py
-# load ALL citizenofnowhere agents (the two apifootball plists run the repo copy directly):
-cp "$REPO"/mac-mini-jobs/launchd/com.citizenofnowhere.*.plist "$HOME/Library/LaunchAgents/"
-for p in "$HOME/Library/LaunchAgents/com.citizenofnowhere."*.plist; do
-  launchctl bootstrap gui/$(id -u) "$p"
+# --- DISPATCHER FIRST. Without this, business-daily and forecast never run again:
+# their GitHub Action schedules are commented out, so they have NO fallback runner.
+cp "$REPO"/mac-mini-jobs/dispatcher.py "$REPO"/mac-mini-jobs/jobs.toml "$HOME/metro-mini-jobs/"
+cp -R "$REPO"/mac-mini-jobs/runners "$HOME/metro-mini-jobs/"
+chmod +x "$HOME/metro-mini-jobs/runners/"*.sh
+python3 "$HOME/metro-mini-jobs/dispatcher.py" --self-test
+python3 "$HOME/metro-mini-jobs/dispatcher.py" --seed
+cp "$REPO"/mac-mini-jobs/com.citizenofnowhere.dispatcher.plist "$HOME/Library/LaunchAgents/"
+launchctl bootstrap gui/$(id -u) "$HOME/Library/LaunchAgents/com.citizenofnowhere.dispatcher.plist"
+
+# --- Legacy launchd agents. DO NOT use a blanket glob here.
+# Five jobs are dispatcher-owned and their plists MUST stay unloaded:
+#   activity-feed, substack-daily, euro-comps, gap-league-watch, football-standings
+# Loading one alongside its dispatcher row is a genuine race: two copies of the same
+# script running git pull / commit / push against one working tree in the same minute,
+# and the dispatcher's lock file offers no protection.
+# ALWAYS check jobs.toml before adding any plist back to this list.
+for a in cricket-weekly cricket-monthly f1-weekly sound-weekly scraper-refresh \
+         heartbeat feed-monitor egress-refresh; do
+  cp "$REPO/mac-mini-jobs/launchd/com.citizenofnowhere.$a.plist" "$HOME/Library/LaunchAgents/" 2>/dev/null || continue
+  launchctl bootstrap gui/$(id -u) "$HOME/Library/LaunchAgents/com.citizenofnowhere.$a.plist"
 done
 ```
+**Verify before walking away:** `python3 ~/metro-mini-jobs/dispatcher.py --status`,
+and confirm none of the five dispatcher-owned labels appear in `launchctl list | grep citizenofnowhere`.
 For the `com.newsletter.*` agents, follow `~/newsletter-podcast/SETUP.md` Phase 5.
 
 **Healthchecks tiles:** each job pings a check named by its slug. On a rebuild, either

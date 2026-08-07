@@ -42,7 +42,15 @@ the Cowork bash sandbox has none; the Supabase MCP does).
   Then: `python scripts/build-cws-data.py` and commit `public/data/baseball/cws.json`.
   (Automatable later via an NCAA results scraper on the mini with the approved alert-gate.)
 
-## Load mechanism (IMPORTANT — this project's service_role key is rejected)
+## Load mechanism — ⚠️ CORRECTED 2026-08-07. DO NOT USE THE RECIPE BELOW.
+
+**The write credential is the `sb_secret_…` service key** (Supabase dashboard → Settings → API), which bypasses RLS. See `mac-mini-jobs/REBUILD-RUNBOOK.md` §5 and `scripts/mktcap/README.md`. The 401 recorded here on 2026-07-08 was a *legacy* service key on this project's newer key system, not a property of service keys as such.
+
+**The temporary-anon-insert-policy workaround below is exactly the pattern that migration `lock_down_mktcap_pipeline_writes` (2026-08-02) was written to eliminate**, after a review found that the public anon key ships in every browser bundle, so a temporary anon write grant is a temporary write grant to the entire internet. Those grants have been revoked. Do not re-create them. The paragraph is kept only as a record of what was done in July.
+
+<details><summary>Superseded July 2026 recipe (record only)</summary>
+
+### Load mechanism (IMPORTANT — this project's service_role key is rejected)
 Writes with a `service_role` key 401 ("Invalid API key"): this project is on
 Supabase's newer key system and the legacy service key is disabled. Working load
 path: (a) create table + anon read policy (MCP); (b) add a TEMPORARY anon
@@ -51,6 +59,8 @@ anon key: `python scripts/supabase/load_other_leagues.py <key>`; (d) drop the
 temp policy (MCP). Tiny tables (<~25 rows) are inserted directly via MCP
 `execute_sql` (privileged, bypasses RLS — no policy or loader needed). Build read
 path uses the public anon key + the RLS read policy.
+
+</details>
 
 ## Phase 2 — Basketball — DONE
 - `euroleague_seasons` (1047 rows); `scripts/basketball/build_intl_basketball.py`

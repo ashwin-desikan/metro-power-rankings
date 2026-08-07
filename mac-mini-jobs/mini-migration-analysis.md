@@ -1,5 +1,13 @@
 # Scheduled tasks: what should move to the Mac mini
 
+> **⚠️ FROZEN 2026-07-02. Historical record of the July task split, not current guidance. Banner added 2026-08-07.**
+> Superseded on two points, both of which would cause damage if followed:
+> 1. **F1.** This document says to leave `f1-refresh.yml` alone because the Action owns `public/data/f1/data.json`. **Inverted.** Both crons are commented out; `mac-mini-jobs/run-f1-weekly.sh:10` states "Mini owns public/data/f1/data.json", builds it via `build-f1-data.py` and commits it. Re-enabling the Action creates a duplicate-commit race on one file. **Do NOT re-enable it.**
+> 2. **WC2026.** The `wc2026-sim-daily-refresh` row is spent — the tournament finished 2026-07-19 and the mini agent was retired 2026-07-29 (`mac-mini-jobs/retired/`). `wc2026-daily.yml`'s cron is commented out; the job does not run at all.
+>
+> Still standing: the "opt-in `update-tennis-golf-majors`" recommendation (`majors-ingest.yml`, `30 5 * * *`, active; `Majors.xlsx` remains gitignored).
+> **The current mini schedule is `mac-mini-jobs/jobs.toml`, and its ROLLOUT STATE block is the authority for what the mini owns.**
+
 ## Summary
 
 | Task | Cadence | Verdict | Gating factor |
