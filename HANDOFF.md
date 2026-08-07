@@ -4681,3 +4681,17 @@ here: (a) that a `Test` run eventually appears for `23f33cc1d` and passes, and
 is still not creating runs by tomorrow morning, the cloudflare-purge dependency
 is the one worth thinking about a fallback for, since it is the only piece
 where a silent skip could leave readers on stale HTML.
+
+**Update (a few hours later, early 07 Aug) — GitHub Actions has recovered; both
+consequences above are closed.** Everything from `4d7803056` at 00:20 local
+onward is green: Test passed on `4d7803056`, `0a85a05b9`, `a1a2b5887` and
+`c9816b8e9`, and the ESPN standings snapshot ran clean three times (01:19,
+04:21, 06:08), so it is comfortably caught up past `782c384` and the missed
+18:03 snapshot needs no intervention. `c9816b8e9` is a descendant of the ship
+commit, so the shipped tree is CI-verified even though the outage swallowed
+`23f33cc1d`'s own Test run, which was never created and never will be. Nothing
+to chase on item (a) or (b) of the question below.
+
+The cloudflare-purge thought still stands on its own merits: it is the one
+deploy-time step where a silent Actions skip could leave readers on stale HTML,
+and nothing alerts on it. Worth a fallback at some point, not urgent tonight.
