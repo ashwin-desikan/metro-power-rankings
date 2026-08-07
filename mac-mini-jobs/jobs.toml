@@ -52,7 +52,7 @@
 #   forecast         LIVE on the mini since 2026-08-05. Action schedule retired.
 #   predictions-tue  NOT YET. Action still owns it. Unblocked, see ESPN UA below.
 #   predictions-fri  NOT YET. Action still owns it. Unblocked, see ESPN UA below.
-#   mlb-sim          NOT YET. Action still owns it. Unblocked, see ESPN UA below.
+#   mlb-sim          LIVE on the mini since 2026-08-07. Action schedule retirement pending Windows.
 #
 # The four below stay commented until each is DRY_RUN-validated on the mini, one
 # per day, in that order. Uncommenting one without retiring its Action schedule
@@ -108,13 +108,13 @@ timeout_minutes = 45
 # catchup_hours = 20
 # timeout_minutes = 45
 
-# [[job]]
-# id = "mlb-sim"                 # .github/workflows/mlb-sim-refresh.yml
-# time = "09:40"
-# months = [3, 4, 5, 6, 7, 8, 9, 10, 11]   # regular season + postseason
-# command = "runners/mlb-sim.sh"
-# catchup_hours = 14
-# timeout_minutes = 25
+[[job]]
+id = "mlb-sim"                 # .github/workflows/mlb-sim-refresh.yml (schedule to be retired by Windows)
+time = "09:40"
+months = [3, 4, 5, 6, 7, 8, 9, 10, 11]   # regular season + postseason
+command = "runners/mlb-sim.sh"
+catchup_hours = 14
+timeout_minutes = 25
 
 # ---------------------------------------------------------------------------
 # LEGACY LAUNCHD MIGRATION (see DST-MIGRATION.md). Separate thread from the
