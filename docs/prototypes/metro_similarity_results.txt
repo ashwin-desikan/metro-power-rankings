@@ -1,0 +1,172 @@
+﻿Loaded 4285 metros, 16 dimensions.
+
+================================================================
+Austin (United States)  -  overall #72
+  Nearest metros (equal-weighted, z-scored Euclidean):
+    Charlotte                      United States    #91     d=6.91
+    Calgary                        Canada           #117    d=7.59
+    Nashville                      United States    #113    d=7.89
+    Columbus                       United States    #144    d=8.36
+    Riyadh                         Saudi Arabia     #67     d=8.39
+    Oklahoma City                  United States    #203    d=8.94
+    Las Vegas                      United States    #64     d=9.29
+    Milwaukee                      United States    #152    d=9.30
+  Distinctive signature (most over-indexed dimensions, z vs the field):
+    companies               z=+6.28  dim-score=0.87
+    luxuryStars             z=+5.35  dim-score=0.80
+    marketCap               z=+5.25  dim-score=0.97
+    culturalEvents          z=+4.83  dim-score=0.51
+
+================================================================
+Nashville (United States)  -  overall #113
+  Nearest metros (equal-weighted, z-scored Euclidean):
+    Cincinnati                     United States    #134    d=4.55
+    Orlando                        United States    #114    d=4.75
+    Milwaukee                      United States    #152    d=5.53
+    Charlotte                      United States    #91     d=6.22
+    Columbus                       United States    #144    d=6.27
+    Oklahoma City                  United States    #203    d=6.29
+    Wellington                     New Zealand      #270    d=6.29
+    Bogota                         Colombia         #120    d=6.31
+  Distinctive signature (most over-indexed dimensions, z vs the field):
+    majorLeagueTeams        z=+5.10  dim-score=0.81
+    museumsLandmarks        z=+4.35  dim-score=0.53
+    companies               z=+4.34  dim-score=0.61
+    marketCap               z=+3.73  dim-score=0.71
+
+================================================================
+London (United Kingdom)  -  overall #2
+  Nearest metros (equal-weighted, z-scored Euclidean):
+    Paris                          France           #3      d=1.20
+    Tokyo                          Japan            #4      d=1.65
+    New York                       United States    #1      d=3.12
+    Chicago                        United States    #12     d=5.88
+    San Francisco-San Jose         United States    #5      d=6.56
+    Beijing                        China            #6      d=6.56
+    Madrid                         Spain            #19     d=6.70
+    Sydney                         Australia        #16     d=7.44
+  Distinctive signature (most over-indexed dimensions, z vs the field):
+    trainHubs               z=+13.42  dim-score=0.98
+    majorSportingEvents     z=+10.09  dim-score=1.00
+    topUniHospResearch      z=+9.66  dim-score=0.98
+    culturalEvents          z=+9.32  dim-score=0.98
+
+================================================================
+Dubai-Sharjah (United Arab Emirates)  -  overall #31
+  Nearest metros (equal-weighted, z-scored Euclidean):
+    Las Vegas                      United States    #64     d=5.46
+    Manila                         Philippines      #43     d=6.66
+    Abu Dhabi                      United Arab Emir #68     d=7.66
+    Istanbul                       Turkey           #22     d=7.72
+    Vancouver                      Canada           #59     d=8.53
+    Seattle                        United States    #32     d=8.66
+    Miami                          United States    #27     d=8.82
+    Singapore                      Singapore        #24     d=9.43
+  Distinctive signature (most over-indexed dimensions, z vs the field):
+    skyscrapers             z=+7.10  dim-score=0.99
+    portsExchangesInfra     z=+6.97  dim-score=0.87
+    luxuryStars             z=+6.75  dim-score=1.00
+    museumsLandmarks        z=+6.62  dim-score=0.79
+
+================================================================
+Singapore (Singapore)  -  overall #24
+  Nearest metros (equal-weighted, z-scored Euclidean):
+    Hong Kong                      Hong Kong        #18     d=5.36
+    Sao Paulo                      Brazil           #25     d=7.24
+    Chengdu                        China            #49     d=8.17
+    Taipei                         Taiwan           #60     d=8.55
+    Bangkok                        Thailand         #36     d=8.86
+    Boston                         United States    #13     d=8.89
+    Toronto                        Canada           #15     d=9.08
+    Mexico City                    Mexico           #26     d=9.19
+  Distinctive signature (most over-indexed dimensions, z vs the field):
+    portsExchangesInfra     z=+7.87  dim-score=0.98
+    museumsLandmarks        z=+7.51  dim-score=0.89
+    skyscrapers             z=+6.59  dim-score=0.92
+    culturalEvents          z=+6.55  dim-score=0.69
+
+================================================================
+Detroit (United States)  -  overall #62
+  Nearest metros (equal-weighted, z-scored Euclidean):
+    St. Louis                      United States    #69     d=3.07
+    Denver                         United States    #57     d=7.64
+    Auckland                       New Zealand      #101    d=7.91
+    Cleveland                      United States    #95     d=7.93
+    Dallas                         United States    #33     d=8.06
+    Helsinki                       Finland          #136    d=8.84
+    Minneapolis                    United States    #65     d=8.95
+    Perth                          Australia        #100    d=8.96
+  Distinctive signature (most over-indexed dimensions, z vs the field):
+    companies               z=+5.89  dim-score=0.82
+    majorLeagueTeams        z=+5.64  dim-score=0.89
+    majorSportingEvents     z=+5.26  dim-score=0.53
+    museumsLandmarks        z=+5.24  dim-score=0.63
+
+================================================================
+Zurich (Switzerland)  -  overall #84
+  Nearest metros (equal-weighted, z-scored Euclidean):
+    Dublin                         Ireland          #88     d=5.93
+    Copenhagen                     Denmark          #85     d=6.37
+    Hamburg                        Germany          #93     d=7.96
+    Stuttgart                      Germany          #99     d=10.88
+    Cape Town                      South Africa     #102    d=10.99
+    Frankfurt                      Germany          #51     d=11.84
+    Calcutta                       India            #94     d=12.29
+    Vienna                         Austria          #47     d=12.44
+  Distinctive signature (most over-indexed dimensions, z vs the field):
+    trainHubs               z=+10.59  dim-score=0.77
+    suburbStations          z=+6.55  dim-score=0.90
+    topUniHospResearch      z=+6.39  dim-score=0.65
+    companies               z=+5.79  dim-score=0.81
+
+================================================================
+Boston (United States)  -  overall #13
+  Nearest metros (equal-weighted, z-scored Euclidean):
+    Philadelphia                   United States    #28     d=4.24
+    Toronto                        Canada           #15     d=4.29
+    Sao Paulo                      Brazil           #25     d=4.77
+    Seoul                          South Korea      #8      d=5.02
+    Hong Kong                      Hong Kong        #18     d=5.92
+    Barcelona                      Spain            #34     d=6.27
+    Dallas                         United States    #33     d=7.36
+    Los Angeles                    United States    #7      d=7.40
+  Distinctive signature (most over-indexed dimensions, z vs the field):
+    topUniHospResearch      z=+9.25  dim-score=0.94
+    culturalEvents          z=+7.51  dim-score=0.79
+    museumsLandmarks        z=+7.34  dim-score=0.87
+    companies               z=+7.07  dim-score=0.98
+
+================================================================
+Las Vegas (United States)  -  overall #64
+  Nearest metros (equal-weighted, z-scored Euclidean):
+    Dubai-Sharjah                  United Arab Emir #31     d=5.46
+    Abu Dhabi                      United Arab Emir #68     d=6.23
+    Manila                         Philippines      #43     d=7.95
+    Jacksonville                   United States    #163    d=8.57
+    Seattle                        United States    #32     d=9.18
+    Tampa                          United States    #92     d=9.28
+    Austin                         United States    #72     d=9.29
+    Vancouver                      Canada           #59     d=9.39
+  Distinctive signature (most over-indexed dimensions, z vs the field):
+    portsExchangesInfra     z=+6.47  dim-score=0.81
+    luxuryStars             z=+6.32  dim-score=0.93
+    majorLeagueTeams        z=+5.84  dim-score=0.92
+    culturalEvents          z=+4.83  dim-score=0.51
+
+================================================================
+Oxford (United Kingdom)  -  overall #298
+  Nearest metros (equal-weighted, z-scored Euclidean):
+    Uppsala                        Sweden           #341    d=2.77
+    Montpellier                    France           #291    d=4.12
+    Strasbourg                     France           #230    d=4.36
+    Campinas                       Brazil           #248    d=4.40
+    Nantes                         France           #240    d=5.17
+    Albuquerque                    United States    #223    d=5.26
+    Utrecht                        Netherlands      #276    d=5.57
+    Leiden                         Netherlands      #388    d=5.58
+  Distinctive signature (most over-indexed dimensions, z vs the field):
+    topUniHospResearch      z=+4.86  dim-score=0.50
+    museumsLandmarks        z=+2.59  dim-score=0.32
+    universities            z=+2.43  dim-score=0.45
+    totalTeams              z=+1.15  dim-score=0.42
+

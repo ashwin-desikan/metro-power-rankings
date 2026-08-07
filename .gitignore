@@ -67,7 +67,12 @@ desktop.ini
 # internal planning artifacts (kept local, never published to the public repo)
 BACKLOG.md
 CONTENT.md
-/docs/
+# /docs/ is TRACKED as of 2026-08-07. It was ignored wholesale, which meant the
+# operating playbooks that CONTENT.md depends on (linkedin, reddit), the GBA
+# conurbation audit and the quiz scoping docs had zero version history, no blame
+# and no backup. Only the internal lens stays out: it assigns named real metros to
+# judgemental cells and is not a public taxonomy.
+/docs/lens/
 /digests/
 /experiments/
 /internal/

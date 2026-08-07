@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CoN Prototype — Top-in-View Leaderboard + Face-off</title>
+<style>
+  :root{--bg:#0b1220;--panel:#121a2b;--panel2:#0e1626;--line:#22304a;
+    --ink:#e8eef9;--muted:#90a0bd;--accent:#5b8cff}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
+    font:14px/1.45 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;overflow:hidden}
+  #stage{position:absolute;inset:0}
+  svg{width:100%;height:100%;display:block;cursor:grab;background:
+    radial-gradient(1200px 700px at 60% 40%,#0f1a30,#0a0f1c)}
+  svg.drag{cursor:grabbing}
+  .card{position:absolute;z-index:10;background:var(--panel);
+    border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 28px rgba(0,0,0,.45)}
+  #controls{top:14px;left:14px;width:266px;padding:14px}
+  #controls h1{font-size:14px;margin:0 0 2px}
+  .sub{color:var(--muted);font-size:11px;margin:0 0 12px}
+  .mock{display:inline-block;font-size:10px;letter-spacing:.6px;color:#ffd479;
+    border:1px solid #5a4a1f;background:#2a2310;padding:1px 6px;border-radius:999px;margin-left:6px}
+  .lbl{font-size:10px;letter-spacing:.8px;color:var(--muted);text-transform:uppercase;margin:12px 0 6px}
+  .seg{display:flex;background:var(--panel2);border:1px solid var(--line);border-radius:9px;overflow:hidden}
+  .seg button{flex:1;background:none;border:0;color:var(--muted);padding:7px 6px;font-size:12px;cursor:pointer}
+  .seg button.on{background:var(--accent);color:#fff;font-weight:600}
+  select{width:100%;background:var(--panel2);color:var(--ink);border:1px solid var(--line);
+    border-radius:8px;padding:7px 8px;font-size:13px}
+  .row2{display:flex;gap:8px}.row2>div{flex:1}
+  .hint{color:var(--muted);font-size:11px;margin-top:10px}
+  #board{top:14px;right:14px;width:248px;padding:12px 14px}
+  #board .bhead{display:flex;justify-content:space-between;align-items:baseline}
+  #board .bhead b{font-size:13px}#board .bhead span{color:var(--muted);font-size:11px}
+  .lirow{display:grid;grid-template-columns:14px 1fr auto;gap:8px;align-items:center;margin:9px 0 2px}
+  .swatch{width:11px;height:11px;border-radius:3px}
+  .lname{font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .lbar{height:4px;border-radius:3px;opacity:.9}
+  .lcount{font-variant-numeric:tabular-nums;color:var(--muted);font-size:12px}
+  .empty{color:var(--muted);font-size:12px;padding:8px 0}
+  #fo{bottom:14px;left:14px;width:266px;padding:12px 14px;display:none}
+  #fo .vs{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  #fo .tag{font-weight:700}
+  .fobar{display:flex;height:10px;border-radius:6px;overflow:hidden;background:#2a3550}
+  .fometa{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-top:6px}
+  #zoom{position:absolute;left:14px;bottom:14px;z-index:10;display:flex;gap:6px}
+  #zoom button{width:34px;height:34px;border-radius:9px;background:var(--panel);
+    border:1px solid var(--line);color:var(--ink);font-size:18px;cursor:pointer}
+  #zoom.foShift{bottom:120px}
+  .tip{position:absolute;z-index:20;pointer-events:none;background:#0b1220ee;border:1px solid var(--line);
+    border-radius:8px;padding:6px 9px;font-size:12px;display:none;white-space:nowrap}
+  .legend{position:absolute;bottom:14px;right:14px;z-index:10;color:var(--muted);font-size:10px;
+    background:rgba(11,18,32,.7);padding:4px 8px;border-radius:8px}
+  text.lab{fill:#9fb0cc;font-size:9px;pointer-events:none}
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg id="map" viewBox="0 0 1000 580" preserveAspectRatio="xMidYMid meet">
+    <g id="grid"></g>
+    <g id="dots"></g>
+    <g id="labels"></g>
+  </svg>
+</div>
+
+<div id="controls" class="card">
+  <h1>Fan Geography <span class="mock">MOCK DATA</span></h1>
+  <p class="sub">Prototype for citizenofnowhere — patterns borrowed from nfl-fan-map. Self-contained, no live data, no dependencies.</p>
+  <div class="lbl">View</div>
+  <div class="seg" id="viewSeg">
+    <button data-v="regions" class="on">Regions</button>
+    <button data-v="centroids">Centroids</button>
+  </div>
+  <div class="lbl">Mode</div>
+  <div class="seg" id="modeSeg">
+    <button data-m="all" class="on">All teams</button>
+    <button data-m="faceoff">Face-off</button>
+  </div>
+  <div id="foPick" style="display:none">
+    <div class="lbl">Match-up</div>
+    <div class="row2"><div><select id="teamA"></select></div><div><select id="teamB"></select></div></div>
+  </div>
+  <p class="hint">Drag to pan, scroll or use +/- to zoom. The <b>Top in view</b> panel recomputes from whatever metros are inside the current viewport.</p>
+</div>
+
+<div id="board" class="card">
+  <div class="bhead"><b>Top in view</b><span id="regionCount">—</span></div>
+  <div id="boardList"></div>
+</div>
+
+<div id="fo" class="card">
+  <div class="vs"><span class="tag" id="foA">A</span><span style="color:var(--muted)">vs</span><span class="tag" id="foB">B</span></div>
+  <div class="fobar"><div id="foBarA" style="width:50%"></div><div id="foBarB" style="width:50%"></div></div>
+  <div class="fometa"><span id="foCountA">0 metros</span><span id="foCountB">0 metros</span></div>
+</div>
+
+<div id="zoom"><button id="zin">+</button><button id="zout">&minus;</button><button id="zreset" style="font-size:12px">reset</button></div>
+<div id="tip" class="tip"></div>
+<div class="legend">Self-contained SVG · mock allegiance data · prototype only</div>
+
+<script>
+/* ---------------------------------------------------------------------------
+   Self-contained prototype — NO external libraries, NO network, NO tiles.
+   Swap MOCK_METROS for a join of public/data/sports/all-teams.json against
+   metro centroids; territory polygons come from the existing Overture layer.
+   The viewport-reactive leaderboard + face-off logic is the takeaway.
+--------------------------------------------------------------------------- */
+const TEAMS={Packers:"#1f9d57",Seahawks:"#69BE28",Eagles:"#16b39a",Bills:"#2f6fe0",
+ Patriots:"#5a73a0",Bears:"#ef6a1a",Steelers:"#FFB612",Broncos:"#FB4F14",
+ "49ers":"#d04040",Vikings:"#9a6fe0",Cowboys:"#9fb0c8",Chiefs:"#E31837",Dolphins:"#19b3bd"};
+const MOCK_METROS=[
+ ["Seattle",47.61,-122.33,{Seahawks:540,"49ers":120,Broncos:60}],
+ ["Portland",45.52,-122.68,{Seahawks:210,"49ers":140,Packers:70}],
+ ["San Francisco",37.77,-122.42,{"49ers":430,Seahawks:90,Cowboys:70}],
+ ["Los Angeles",34.05,-118.24,{Cowboys:260,"49ers":230,Steelers:180,Broncos:150}],
+ ["Las Vegas",36.17,-115.14,{Cowboys:160,"49ers":150,Steelers:130}],
+ ["Denver",39.74,-104.99,{Broncos:520,Cowboys:90,Packers:70}],
+ ["Phoenix",33.45,-112.07,{Cowboys:200,Steelers:160,Packers:120,Broncos:120}],
+ ["Dallas",32.78,-96.80,{Cowboys:610,Steelers:90,Packers:60}],
+ ["Houston",29.76,-95.37,{Cowboys:300,Steelers:150,Packers:110}],
+ ["Kansas City",39.10,-94.58,{Chiefs:560,Cowboys:80,Broncos:70}],
+ ["Minneapolis",44.98,-93.27,{Vikings:520,Packers:230,Bears:80}],
+ ["Green Bay",44.51,-88.02,{Packers:690,Bears:70,Vikings:60}],
+ ["Milwaukee",43.04,-87.91,{Packers:430,Bears:120,Vikings:90}],
+ ["Chicago",41.88,-87.63,{Bears:560,Packers:180,Steelers:120}],
+ ["Detroit",42.33,-83.05,{Packers:160,Steelers:150,Cowboys:120,Bears:110}],
+ ["St. Louis",38.63,-90.20,{Chiefs:190,Cowboys:160,Packers:120,Bears:110}],
+ ["Nashville",36.16,-86.78,{Cowboys:170,Steelers:160,Packers:120}],
+ ["Atlanta",33.75,-84.39,{Cowboys:230,Steelers:170,Packers:130}],
+ ["Miami",25.76,-80.19,{Dolphins:380,Cowboys:160,Steelers:140,Bills:90}],
+ ["Tampa",27.95,-82.46,{Steelers:200,Cowboys:170,Packers:130,Bills:110}],
+ ["Charlotte",35.23,-80.84,{Steelers:240,Cowboys:160,Packers:120}],
+ ["Pittsburgh",40.44,-79.99,{Steelers:680,Eagles:90,Bills:70}],
+ ["Philadelphia",39.95,-75.17,{Eagles:610,Steelers:140,Cowboys:120}],
+ ["Washington",38.90,-77.04,{Eagles:180,Cowboys:200,Steelers:160,Bills:60}],
+ ["New York",40.71,-74.01,{Cowboys:240,Bills:220,Eagles:210,Steelers:180,Patriots:160}],
+ ["Buffalo",42.89,-78.88,{Bills:700,Steelers:80,Cowboys:60}],
+ ["Boston",42.36,-71.06,{Patriots:560,Bills:120,Cowboys:90}],
+ ["Cleveland",41.50,-81.69,{Steelers:230,Cowboys:150,Packers:120,Bears:110}]
+];
+const W=1000,H=580,BB={w:-125,e:-66,s:24,n:50};
+const proj=(lon,lat)=>[ (lon-BB.w)/(BB.e-BB.w)*W, (BB.n-lat)/(BB.n-BB.s)*H ];
+const dominant=c=>Object.entries(c).sort((a,b)=>b[1]-a[1])[0];
+const total=c=>Object.values(c).reduce((a,b)=>a+b,0);
+const METROS=MOCK_METROS.map(([name,lat,lng,c])=>{const[x,y]=proj(lng,lat);return{name,x,y,c}});
+
+const svg=document.getElementById('map'),gDots=document.getElementById('dots'),
+ gGrid=document.getElementById('grid'),gLab=document.getElementById('labels');
+let view='regions',mode='all',A=null,B=null,vb={x:0,y:0,w:W,h:H};
+const NS='http://www.w3.org/2000/svg';
+const el=(t,a)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;};
+
+// faint graticule so it reads as geography
+for(let gx=0;gx<=W;gx+=100)gGrid.appendChild(el('line',{x1:gx,y1:0,x2:gx,y2:H,stroke:'#15203a','stroke-width':1}));
+for(let gy=0;gy<=H;gy+=100)gGrid.appendChild(el('line',{x1:0,y1:gy,x2:W,y2:gy,stroke:'#15203a','stroke-width':1}));
+
+function colorFor(m){
+  if(mode==='faceoff'){const a=m.c[A]||0,b=m.c[B]||0;if(!a&&!b)return'#2a3550';return a>=b?TEAMS[A]:TEAMS[B];}
+  return TEAMS[dominant(m.c)[0]]||'#888';
+}
+const k=()=>vb.w/W; // zoom scale (smaller = zoomed in)
+function radiusFor(m){const t=total(m.c);const base=view==='regions'?Math.max(9,Math.sqrt(t)*1.6):Math.max(3.5,Math.sqrt(t)*0.55);return base*k();}
+
+function drawDots(){
+  gDots.textContent='';gLab.textContent='';
+  METROS.forEach(m=>{
+    const fill=colorFor(m),dim=mode==='faceoff'&&fill==='#2a3550';
+    const c=el('circle',{cx:m.x,cy:m.y,r:radiusFor(m),fill,
+      'fill-opacity':dim?0.16:(view==='regions'?0.55:0.95),
+      stroke:'#0b1220','stroke-width':1*k()});
+    c.style.cursor='pointer';
+    c.addEventListener('mousemove',ev=>showTip(ev,m));
+    c.addEventListener('mouseleave',hideTip);
+    gDots.appendChild(c);
+    if(view==='centroids'||radiusFor(m)>14){
+      gLab.appendChild(el('text',Object.assign({x:m.x+radiusFor(m)+2,y:m.y+3,class:'lab'},{}))).textContent=m.name;
+    }
+  });
+}
+function applyVB(){svg.setAttribute('viewBox',`${vb.x} ${vb.y} ${vb.w} ${vb.h}`);drawDots();updateBoard();}
+
+function updateBoard(){
+  const inView=METROS.filter(m=>m.x>=vb.x&&m.x<=vb.x+vb.w&&m.y>=vb.y&&m.y<=vb.y+vb.h);
+  document.getElementById('regionCount').textContent=inView.length+' metros';
+  const tally={};inView.forEach(m=>Object.entries(m.c).forEach(([t,n])=>tally[t]=(tally[t]||0)+n));
+  const rows=Object.entries(tally).sort((a,b)=>b[1]-a[1]).slice(0,6);
+  const max=rows.length?rows[0][1]:1,box=document.getElementById('boardList');
+  if(!rows.length){box.innerHTML='<div class="empty">No metros in view</div>';updateFaceoff();return;}
+  box.innerHTML=rows.map(([t,n])=>`<div><div class="lirow">
+     <span class="swatch" style="background:${TEAMS[t]||'#888'}"></span>
+     <span class="lname">${t}</span><span class="lcount">${n.toLocaleString()}</span></div>
+     <div class="lbar" style="width:${Math.max(6,100*n/max)}%;background:${TEAMS[t]||'#888'}"></div></div>`).join('');
+  updateFaceoff();
+}
+function updateFaceoff(){
+  const fo=document.getElementById('fo'),zoom=document.getElementById('zoom');
+  if(mode!=='faceoff'){fo.style.display='none';zoom.classList.remove('foShift');return;}
+  fo.style.display='block';zoom.classList.add('foShift');
+  let aw=0,bw=0;METROS.forEach(m=>{const a=m.c[A]||0,b=m.c[B]||0;if(a||b)a>=b?aw++:bw++;});
+  const tot=Math.max(1,aw+bw);
+  foA.textContent=A;foB.textContent=B;foA.style.color=TEAMS[A];foB.style.color=TEAMS[B];
+  foBarA.style.cssText=`width:${100*aw/tot}%;background:${TEAMS[A]}`;
+  foBarB.style.cssText=`width:${100*bw/tot}%;background:${TEAMS[B]}`;
+  foCountA.textContent=aw+' metros';foCountB.textContent=bw+' metros';
+}
+
+// tooltip
+const tip=document.getElementById('tip');
+function showTip(ev,m){tip.style.display='block';tip.style.left=(ev.clientX+12)+'px';tip.style.top=(ev.clientY+12)+'px';
+  tip.innerHTML=`<b>${m.name}</b> &middot; ${dominant(m.c)[0]} lead<br><span style="color:#90a0bd">${total(m.c).toLocaleString()} responses</span>`;}
+function hideTip(){tip.style.display='none';}
+
+// pan + zoom (pure SVG viewBox math)
+let dragging=false,last=null;
+function clientToVB(ev){const r=svg.getBoundingClientRect();
+  return{x:vb.x+(ev.clientX-r.left)/r.width*vb.w, y:vb.y+(ev.clientY-r.top)/r.height*vb.h};}
+svg.addEventListener('mousedown',ev=>{dragging=true;last=clientToVB(ev);svg.classList.add('drag');});
+window.addEventListener('mouseup',()=>{dragging=false;svg.classList.remove('drag');});
+window.addEventListener('mousemove',ev=>{if(!dragging)return;const p=clientToVB(ev);
+  vb.x-=(p.x-last.x);vb.y-=(p.y-last.y);applyVB();});
+svg.addEventListener('wheel',ev=>{ev.preventDefault();const f=ev.deltaY>0?1.12:0.89;zoomAt(clientToVB(ev),f);},{passive:false});
+function zoomAt(p,f){let nw=Math.min(W*1.1,Math.max(110,vb.w*f)),nh=nw*(H/W);
+  vb.x=p.x-(p.x-vb.x)*(nw/vb.w);vb.y=p.y-(p.y-vb.y)*(nh/vb.h);vb.w=nw;vb.h=nh;applyVB();}
+document.getElementById('zin').onclick=()=>zoomAt({x:vb.x+vb.w/2,y:vb.y+vb.h/2},0.8);
+document.getElementById('zout').onclick=()=>zoomAt({x:vb.x+vb.w/2,y:vb.y+vb.h/2},1.25);
+document.getElementById('zreset').onclick=()=>{vb={x:0,y:0,w:W,h:H};applyVB();};
+
+// toggles
+document.querySelectorAll('#viewSeg button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#viewSeg button').forEach(x=>x.classList.remove('on'));b.classList.add('on');view=b.dataset.v;drawDots();});
+document.querySelectorAll('#modeSeg button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#modeSeg button').forEach(x=>x.classList.remove('on'));b.classList.add('on');mode=b.dataset.m;
+  document.getElementById('foPick').style.display=mode==='faceoff'?'block':'none';drawDots();updateBoard();});
+
+// face-off selectors
+const names=Object.keys(TEAMS),selA=document.getElementById('teamA'),selB=document.getElementById('teamB');
+names.forEach(n=>{selA.add(new Option(n,n));selB.add(new Option(n,n));});
+A=names[0];B=names[6];selA.value=A;selB.value=B;
+selA.onchange=()=>{A=selA.value;drawDots();updateBoard();};
+selB.onchange=()=>{B=selB.value;drawDots();updateBoard();};
+
+applyVB();
+</script>
+</body>
+</html>
