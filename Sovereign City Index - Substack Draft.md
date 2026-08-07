@@ -87,7 +87,7 @@ Second, the governance autonomy dimension matters less for whether a project get
 
 Third, the index suggests a category of urbanism that the conventional "city rankings" debate systematically under-discusses: the planned city as a deliberately scaled-down version of its own announcement. The most successful cases on this list are the ones whose ten-year residents represent thirty to fifty percent of the original target. The least successful are the ones still claiming the original target. Modesty is structural protection in this category. The next round of planned-city announcements would benefit from announcing a target at the realism-discounted level rather than at the marketing-grade aspiration level.
 
-The Sovereign City Index is the [Academic Gravity Wells](https://rankings.citizenofnowhere.org/badges/academic-gravity-wells) move applied to a different category: take a class of cities the conventional rankings under-frame, build a single-purpose lens that surfaces what they actually have in common, and rank them on the dimension that the announcement copy obscures. The realism gap is the dimension. The index will refresh annually, and the cohort will expand as new projects clear the inclusion thresholds.
+The Sovereign City Index is the [Academic Gravity Wells](https://rankings.citizenofnowhere.org/badges/university-town) move applied to a different category: take a class of cities the conventional rankings under-frame, build a single-purpose lens that surfaces what they actually have in common, and rank them on the dimension that the announcement copy obscures. The realism gap is the dimension. The index will refresh annually, and the cohort will expand as new projects clear the inclusion thresholds.
 
 ---
 

@@ -1,6 +1,6 @@
 # The Global Neighborhoods: Full List and Rationales
 
-*The complete reference list from the Substack essay [Where Marylebone Still Exists](https://citizenofnowhere.substack.com/p/where-marylebone-still-exists). Every neighborhood call, every hard skip, every rationale.*
+*The complete reference list from the Substack essay [Where Marylebone Still Exists](https://citizenofnowhere.substack.com/p/the-last-of-the-marylebones). Every neighborhood call, every hard skip, every rationale.*
 
 ---
 

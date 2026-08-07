@@ -45,6 +45,23 @@ const nextConfig: NextConfig = {
         destination: "/power-atlas",
         permanent: true,
       },
+      // Badge slug renames that never got migrated into published writing.
+      // Three published Substack essays (Greying Power, and both Sovereign City
+      // Index drafts) link /badges/academic-gravity-wells, and Greying Power also
+      // links /badges/skyline-cities. Both 404'd until 2026-08-07. The essay names
+      // and the badge slugs diverged: "Academic Gravity Wells" is the essay title,
+      // "University Town" is the badge (lib/badges.ts). Redirecting is the durable
+      // fix, because the copies live in published posts we do not control.
+      {
+        source: "/badges/academic-gravity-wells",
+        destination: "/badges/university-town",
+        permanent: true,
+      },
+      {
+        source: "/badges/skyline-cities",
+        destination: "/badges/skyline-city",
+        permanent: true,
+      },
     ];
   },
 };

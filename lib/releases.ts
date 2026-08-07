@@ -18,6 +18,13 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-07",
+    headline: "Older essay links to two badge pages now work",
+    items: [
+      "Two badges were renamed after the essays that cite them were published, so those links had been dead. University Town and Skyline City now answer to their old addresses as well as their new ones.",
+    ],
+  },
+  {
     date: "2026-08-06",
     headline: "The Ground Floor, and Play & Learn grows up",
     items: [
