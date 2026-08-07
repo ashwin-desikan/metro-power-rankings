@@ -136,9 +136,10 @@ timeout_minutes = 25
 #   feed-monitor       LIVE on the mini since 2026-08-07. Plist unloaded.
 #   conflicts-monthly  LIVE on the mini since 2026-08-07. Plist unloaded.
 #   cricket-monthly    LIVE on the mini since 2026-08-07. Plist unloaded.
-#   egress-refresh     NOT YET. Exit-126 since 2026-08-02; waiting on Sunday
-#                      2026-08-09's run to confirm health before migrating a
-#                      job whose current state is unknown. See DST-MIGRATION.md.
+#   egress-refresh     LIVE on the mini since 2026-08-07. Plist unloaded. Was
+#                      exit-126 since 2026-08-02 (macOS Full Disk Access gate
+#                      on launchd, fixed by Ashwin); migrated same-day on a
+#                      real successful full-pipeline run, not Sunday's slot.
 #
 # The order is chosen to prove ONE unexercised mechanism at a time, on the
 # fastest-feedback job available, so a mistake shows up the next morning
@@ -379,3 +380,28 @@ command = "run-cricket-monthly.sh"
 hc_slug = "cricket-monthly"
 catchup_hours = 20
 timeout_minutes = 20
+
+# --- BATCH 8: egress-refresh. Last of the 14, "nothing new". ---------------
+# Health was unknown before today (exit 126 since 2026-08-02, unexplained).
+# RESOLVED 2026-08-07: root cause was a macOS Full Disk Access gate on
+# launchd-spawned processes -- fixed by Ashwin in System Settings, confirmed
+# by force-firing the job for real via `launchctl kickstart`: the full
+# 15+ step pipeline ran clean end to end (self-tests through leaders,
+# governors, congress, mayors, cabinet, zone-zero-cup, citypopulation watch,
+# sanity gate), producing a genuine data commit. The ONLY failure that run
+# was the final push, rejected non-fast-forward because Windows pushed 4
+# commits (Ground Floor land-area) during the ~5-minute run -- a one-off git
+# race unrelated to egress-refresh's own health, rescued by hand (rebase +
+# push, no file overlap with Windows's commits). Migrated same-day rather
+# than waiting for Sunday's slot, since the actual uncertainty (is the
+# script healthy) now has a definitive positive answer with real evidence,
+# not a calendar date whose only purpose was resolving that exact question.
+#
+[[job]]
+id = "egress-refresh"           # launchd/com.citizenofnowhere.egress-refresh.plist (unloaded)
+time = "09:00"                  # was 10:00 LOCAL, Sun
+weekdays = [7]
+command = "metro-mini-refresh.sh"    # predates the run-*.sh naming convention
+hc_slug = "egress-refresh"
+catchup_hours = 20
+timeout_minutes = 45
