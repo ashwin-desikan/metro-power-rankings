@@ -4617,3 +4617,73 @@ github-to-mini-migration: closed (prior entry). legacy-launchd: 17 of 18
 jobs live on the dispatcher (activity-feed through cricket-monthly);
 egress-refresh is the only one left, gated on Sunday's health confirmation
 as planned.
+
+## 2026-08-07 (evening, continued) -- mini -> windows (egress-refresh LIVE. DST-MIGRATION.md's 14-to-move is done)
+
+Ashwin asked me to check Full Disk Access for Terminal ahead of Sunday's
+health-confirmation slot. That turned into resolving and migrating the job
+same-day rather than waiting -- full story below since it involved a real
+production near-incident worth having on record.
+
+### Root cause found and fixed: macOS Full Disk Access, not the script
+
+I could not confirm the TCC hypothesis myself (querying TCC.db directly hit
+the identical "authorization denied" wall it would need to check -- a neat,
+if unhelpful, self-demonstrating proof of the restriction). Ashwin granted
+Terminal Full Disk Access in System Settings. To verify, I force-fired the
+real job via `launchctl kickstart -k gui/501/com.citizenofnowhere.egress-
+refresh` rather than trust an interactive-shell exec test again (that
+already worked before and was never the actual question).
+
+Result: the full pipeline ran clean end to end for the first time since
+2026-08-02 -- self-tests, leaders (auto-apply, surfaced a real finding:
+Kuwait's PM possibly changed, "Sabah Al-Khalid Al-Sabah" vs our forced
+"Ahmad Al-Abdullah Al-Sabah" -- worth a look when someone has a minute),
+leaders override audit (Hungary's override is now redundant, Wikidata
+caught up), governors, congress, mayors, cabinet, house-leadership, power-
+ranking history, zone-zero-cup, citypopulation watch, sanity gate. Produced
+a real commit, 10 files, 1204 insertions.
+
+### The one real failure, and it was not egress-refresh's fault
+
+The final `git push` was rejected non-fast-forward: your 4 Ground-Floor
+commits landed on origin/main during the ~5-minute run. Checked for file
+overlap before touching anything (`comm -12` on both commits' diff-stats --
+empty, zero shared files), rebased clean, pushed (`c1c895c55`). A git race
+from two things pushing around the same time, not a sign the job itself is
+unhealthy.
+
+### A near-miss on my side, worth naming plainly
+
+The Monitor I set up to watch the run's log initially used `tail -F`
+without `-n0`, which replayed the OLD 2026-08-02 "Permission denied" lines
+from err.log as if they were fresh events -- a false alarm I caught by
+checking file mtimes directly (err.log untouched since 08-02, out.log
+updating live) before reacting to it. No harm done, but worth a beat: when
+tailing a log that already contains a known historical failure, start the
+tail with `-n0` or you will re-trigger on stale content.
+
+### egress-refresh: migrated same-day, not Sunday
+
+Given a definitive positive health result backed by a real run rather than
+a calendar date whose only purpose was answering that same question, I
+migrated it today instead of waiting. jobs.toml row uses `command =
+"metro-mini-refresh.sh"` (not the run-*.sh convention the other 13 use --
+this script predates that convention and was already symlinked into
+~/metro-mini-jobs/ from the 2026-07-26 drift-elimination pass, so no new
+file was needed, unlike feed-monitor). --self-test 79/79 repo, 78/78 live,
+--check-sync clean. Plist unloaded in the same sitting as the flip. Seeded
+-- resolved to last Sunday (08-02) as the most recent past slot; the next
+real dispatcher-fired occurrence is 08-09, which will now just be a normal
+healthy weekly run.
+
+### DST-MIGRATION.md's 14-to-move is complete
+
+All 18 dispatcher jobs are live: the 14 that needed moving, plus the 4
+already-immune StartInterval jobs (dispatcher, deploy-watch, f1-weekly,
+heartbeat) accounted for. Only the 3 newsletter jobs remain on launchd,
+deliberately, per the document's own reframe -- local time is correct for
+human-facing publication times, and they live outside this repo anyway.
+
+Nothing open on this thread. [[legacy-launchd-migration]] memory updated on
+my side to reflect closure.
