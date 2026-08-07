@@ -1,13 +1,90 @@
 {
-  "generatedAt": "2026-08-06",
-  "count": 568,
+  "generatedAt": "2026-08-07",
+  "count": 579,
   "entries": [
+    {
+      "date": "2026-08-07",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football, AFL.",
+      "commit": "5d9b8b409"
+    },
+    {
+      "date": "2026-08-06",
+      "category": "hub",
+      "hub": "Business",
+      "text": "Link the Currency fact through to its own chart.",
+      "commit": "23f33cc1d"
+    },
+    {
+      "date": "2026-08-06",
+      "category": "hub",
+      "hub": "Sports",
+      "text": "Date-gate Live Standings so hubs open and close on their own seasons.",
+      "commit": "9b736b2e1"
+    },
+    {
+      "date": "2026-08-06",
+      "category": "fix",
+      "hub": null,
+      "text": "Fix games behind on the NPB standings.",
+      "commit": "e573d1567"
+    },
+    {
+      "date": "2026-08-06",
+      "category": "new-hub",
+      "hub": "Ground Floor",
+      "text": "New hub: Ground Floor.",
+      "commit": "0d18abf37"
+    },
+    {
+      "date": "2026-08-06",
+      "category": "hub",
+      "hub": "Play",
+      "text": "Be the Ref goes fully visual.",
+      "commit": "67cd11d41"
+    },
+    {
+      "date": "2026-08-06",
+      "category": "fix",
+      "hub": "Play",
+      "text": "Multi-sport Champions Duel, Champions Expert mode, and a filterable games hub.",
+      "commit": "1e44204a7"
+    },
+    {
+      "date": "2026-08-06",
+      "category": "fix",
+      "hub": "Play",
+      "text": "Expert levels for the Count and Think core four, and honest wrong answers everywhere.",
+      "commit": "03e6c343b"
+    },
+    {
+      "date": "2026-08-06",
+      "category": "hub",
+      "hub": "Play",
+      "text": "Next-tier kids games - In the Club, How Many Times Bigger?, Higher or Lower, Champion Challenge.",
+      "commit": "21be7ef97"
+    },
+    {
+      "date": "2026-08-06",
+      "category": "hub",
+      "hub": null,
+      "text": "Add Vercel Web Analytics, for the bot-filtered number.",
+      "commit": "882acdfe4"
+    },
     {
       "date": "2026-08-06",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "f46ca9549"
+      "text": "Data refreshed — Football, Basketball.",
+      "commit": "0ec6e19c5"
+    },
+    {
+      "date": "2026-08-06",
+      "category": "fix",
+      "hub": null,
+      "text": "Stop the prefetch amplifier, scope the purge, restore the beacon.",
+      "commit": "3b6a60d5d"
     },
     {
       "date": "2026-08-05",
