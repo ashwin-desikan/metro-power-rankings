@@ -42,6 +42,19 @@ Do NOT use this for release notes, user-facing changelogs, or single-session
 work with no cross-instance dependency — that's just noise in a channel
 meant for two AI instances coordinating blind.
 
+## Line endings: HANDOFF.md is CRLF, and nothing enforces it
+
+`HANDOFF.md` is 100% CRLF. `.gitattributes` has no `*.md` rule, so git will not
+normalise it for you, and appends written from the mini land as bare LF and then
+show up as a whole-file renormalisation in the next diff. This has happened at
+least three times (once at 50 lines, once at 225). **Write your append with CRLF
+line endings**, or check the diff before committing and fix it there.
+
+Two related facts worth knowing when you archive:
+`HANDOFF-ARCHIVE-2026-07.md` (2026-07-02 to 07-12) is LF, and
+`HANDOFF-ARCHIVE-2026-07b.md` (2026-07-19 to 07-31, cut 2026-08-07) is CRLF.
+Entries for 2026-07-13 to 07-18 exist in neither file.
+
 ## What this skill assumes
 
 - The repo is `github.com/ashwin-desikan/metro-power-rankings`, default
