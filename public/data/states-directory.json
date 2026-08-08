@@ -8,7 +8,7 @@
 "continent": "North America",
 "pop": 39431263,
 "metroCount": 22,
-"score": 327.5,
+"score": 329.6,
 "weighted": true,
 "rank": 1
 },
@@ -21,7 +21,7 @@
 "continent": "North America",
 "pop": 31290831,
 "metroCount": 48,
-"score": 210.87,
+"score": 211.67,
 "weighted": true,
 "rank": 2
 },
@@ -47,7 +47,7 @@
 "continent": "North America",
 "pop": 19867248,
 "metroCount": 17,
-"score": 164.37,
+"score": 164.55,
 "weighted": true,
 "rank": 4
 },
@@ -73,7 +73,7 @@
 "continent": "Europe",
 "pop": 12380964,
 "metroCount": 1,
-"score": 138.06,
+"score": 138.15,
 "weighted": true,
 "rank": 6
 },
@@ -86,7 +86,7 @@
 "continent": "Asia",
 "pop": 126012510,
 "metroCount": 9,
-"score": 125.1,
+"score": 125.2,
 "weighted": true,
 "rank": 7
 },
@@ -99,7 +99,7 @@
 "continent": "North America",
 "pop": 16124116,
 "metroCount": 28,
-"score": 113.17,
+"score": 113.27,
 "weighted": true,
 "rank": 8
 },
@@ -112,7 +112,7 @@
 "continent": "Asia",
 "pop": 21893095,
 "metroCount": 1,
-"score": 109.95,
+"score": 109.85,
 "weighted": true,
 "rank": 9
 },
@@ -125,7 +125,7 @@
 "continent": "North America",
 "pop": 12710158,
 "metroCount": 21,
-"score": 104.27,
+"score": 104.36,
 "weighted": true,
 "rank": 10
 },
@@ -151,7 +151,7 @@
 "continent": "Europe",
 "pop": 8945309,
 "metroCount": 1,
-"score": 97.7,
+"score": 97.75,
 "weighted": true,
 "rank": 12
 },
@@ -164,7 +164,7 @@
 "continent": "North America",
 "pop": 702250,
 "metroCount": 1,
-"score": 96.2,
+"score": 96.4,
 "weighted": false,
 "rank": 13
 },
@@ -177,7 +177,7 @@
 "continent": "North America",
 "pop": 13078751,
 "metroCount": 24,
-"score": 95.19,
+"score": 95.29,
 "weighted": true,
 "rank": 14
 },
@@ -203,7 +203,7 @@
 "continent": "South America",
 "pop": 46081801,
 "metroCount": 29,
-"score": 91.63,
+"score": 91.53,
 "weighted": true,
 "rank": 16
 },
@@ -216,7 +216,7 @@
 "continent": "North America",
 "pop": 7136171,
 "metroCount": 6,
-"score": 86.17,
+"score": 86.34,
 "weighted": true,
 "rank": 17
 },
@@ -229,7 +229,7 @@
 "continent": "Asia",
 "pop": 8479314,
 "metroCount": 11,
-"score": 84.13,
+"score": 84.23,
 "weighted": true,
 "rank": 18
 },
@@ -242,7 +242,7 @@
 "continent": "North America",
 "pop": 11046024,
 "metroCount": 19,
-"score": 83.38,
+"score": 83.47,
 "weighted": true,
 "rank": 19
 },
@@ -255,7 +255,7 @@
 "continent": "North America",
 "pop": 11883304,
 "metroCount": 17,
-"score": 83.22,
+"score": 83.13,
 "weighted": true,
 "rank": 20
 },
@@ -268,7 +268,7 @@
 "continent": "Europe",
 "pop": 13248928,
 "metroCount": 18,
-"score": 81.16,
+"score": 81.26,
 "weighted": true,
 "rank": 21
 },
@@ -294,7 +294,7 @@
 "continent": "North America",
 "pop": 9500851,
 "metroCount": 3,
-"score": 77.2,
+"score": 77.3,
 "weighted": true,
 "rank": 23
 },
@@ -307,7 +307,7 @@
 "continent": "North America",
 "pop": 7958180,
 "metroCount": 13,
-"score": 76.07,
+"score": 76.47,
 "weighted": true,
 "rank": 24
 },
@@ -320,7 +320,7 @@
 "continent": "Europe",
 "pop": 10065694,
 "metroCount": 4,
-"score": 74.8,
+"score": 74.9,
 "weighted": true,
 "rank": 25
 },
@@ -333,7 +333,7 @@
 "continent": "Asia",
 "pop": 126385000,
 "metroCount": 5,
-"score": 70.9,
+"score": 71.0,
 "weighted": true,
 "rank": 26
 },
@@ -346,7 +346,7 @@
 "continent": "North America",
 "pop": 8811195,
 "metroCount": 15,
-"score": 69.62,
+"score": 69.68,
 "weighted": true,
 "rank": 27
 },
@@ -359,7 +359,7 @@
 "continent": "North America",
 "pop": 11180878,
 "metroCount": 22,
-"score": 68.79,
+"score": 68.89,
 "weighted": true,
 "rank": 28
 },
@@ -424,7 +424,7 @@
 "continent": "Europe",
 "pop": 11245898,
 "metroCount": 9,
-"score": 61.58,
+"score": 61.63,
 "weighted": true,
 "rank": 33
 },
@@ -455,6 +455,19 @@
 "rank": 35
 },
 {
+"slug": "colorado",
+"name": "Colorado",
+"country": "United States",
+"countrySlug": "united-states",
+"type": "State",
+"continent": "North America",
+"pop": 5957493,
+"metroCount": 14,
+"score": 59.4,
+"weighted": true,
+"rank": 36
+},
+{
 "slug": "fujian",
 "name": "Fujian",
 "country": "China",
@@ -464,19 +477,6 @@
 "pop": 41540086,
 "metroCount": 7,
 "score": 59.3,
-"weighted": true,
-"rank": 36
-},
-{
-"slug": "colorado",
-"name": "Colorado",
-"country": "United States",
-"countrySlug": "united-states",
-"type": "State",
-"continent": "North America",
-"pop": 5957493,
-"metroCount": 14,
-"score": 59.2,
 "weighted": true,
 "rank": 37
 },
@@ -533,19 +533,6 @@
 "rank": 41
 },
 {
-"slug": "gyeonggi",
-"name": "Gyeonggi",
-"country": "South Korea",
-"countrySlug": "south-korea",
-"type": "Province",
-"continent": "Asia",
-"pop": 13413459,
-"metroCount": 1,
-"score": 56.45,
-"weighted": true,
-"rank": 42
-},
-{
 "slug": "hubei",
 "name": "Hubei",
 "country": "China",
@@ -556,7 +543,33 @@
 "metroCount": 6,
 "score": 56.4,
 "weighted": true,
+"rank": 42
+},
+{
+"slug": "gyeonggi",
+"name": "Gyeonggi",
+"country": "South Korea",
+"countrySlug": "south-korea",
+"type": "Province",
+"continent": "Asia",
+"pop": 13413459,
+"metroCount": 1,
+"score": 56.34,
+"weighted": true,
 "rank": 43
+},
+{
+"slug": "maryland-united-states",
+"name": "Maryland",
+"country": "United States",
+"countrySlug": "united-states",
+"type": "State",
+"continent": "North America",
+"pop": 6263220,
+"metroCount": 5,
+"score": 56.23,
+"weighted": true,
+"rank": 44
 },
 {
 "slug": "quebec",
@@ -568,19 +581,6 @@
 "pop": 9056044,
 "metroCount": 15,
 "score": 56.13,
-"weighted": true,
-"rank": 44
-},
-{
-"slug": "maryland-united-states",
-"name": "Maryland",
-"country": "United States",
-"countrySlug": "united-states",
-"type": "State",
-"continent": "North America",
-"pop": 6263220,
-"metroCount": 5,
-"score": 56.11,
 "weighted": true,
 "rank": 45
 },
@@ -637,6 +637,19 @@
 "rank": 49
 },
 {
+"slug": "british-columbia",
+"name": "British Columbia",
+"country": "Canada",
+"countrySlug": "canada",
+"type": "Province",
+"continent": "North America",
+"pop": 5698430,
+"metroCount": 13,
+"score": 51.4,
+"weighted": true,
+"rank": 50
+},
+{
 "slug": "missouri",
 "name": "Missouri",
 "country": "United States",
@@ -646,19 +659,6 @@
 "pop": 6245466,
 "metroCount": 21,
 "score": 51.33,
-"weighted": true,
-"rank": 50
-},
-{
-"slug": "british-columbia",
-"name": "British Columbia",
-"country": "Canada",
-"countrySlug": "canada",
-"type": "Province",
-"continent": "North America",
-"pop": 5698430,
-"metroCount": 13,
-"score": 51.3,
 "weighted": true,
 "rank": 51
 },
@@ -684,7 +684,7 @@
 "continent": "Asia",
 "pop": 16255900,
 "metroCount": 1,
-"score": 50.71,
+"score": 50.8,
 "weighted": true,
 "rank": 53
 },
@@ -697,7 +697,7 @@
 "continent": "North America",
 "pop": 7582384,
 "metroCount": 10,
-"score": 50.3,
+"score": 50.4,
 "weighted": true,
 "rank": 54
 },
@@ -736,7 +736,7 @@
 "continent": "North America",
 "pop": 3267467,
 "metroCount": 5,
-"score": 47.3,
+"score": 47.4,
 "weighted": true,
 "rank": 57
 },
@@ -762,7 +762,7 @@
 "continent": "Asia",
 "pop": 14047594,
 "metroCount": 1,
-"score": 46.48,
+"score": 46.65,
 "weighted": true,
 "rank": 59
 },
@@ -827,7 +827,7 @@
 "continent": "Europe",
 "pop": 6280793,
 "metroCount": 4,
-"score": 43.68,
+"score": 43.69,
 "weighted": true,
 "rank": 64
 },
@@ -840,7 +840,7 @@
 "continent": "Europe",
 "pop": 2415139,
 "metroCount": 1,
-"score": 43.4,
+"score": 43.5,
 "weighted": true,
 "rank": 65
 },
@@ -879,7 +879,7 @@
 "continent": "Europe",
 "pop": 13010112,
 "metroCount": 1,
-"score": 42.65,
+"score": 42.71,
 "weighted": true,
 "rank": 68
 },
@@ -944,7 +944,7 @@
 "continent": "Europe",
 "pop": 3886791,
 "metroCount": 1,
-"score": 40.83,
+"score": 40.89,
 "weighted": true,
 "rank": 73
 },
@@ -983,7 +983,7 @@
 "continent": "Asia",
 "pop": 9765869,
 "metroCount": 1,
-"score": 40.05,
+"score": 39.97,
 "weighted": true,
 "rank": 76
 },
@@ -1009,7 +1009,7 @@
 "continent": "North America",
 "pop": 4888723,
 "metroCount": 8,
-"score": 39.3,
+"score": 39.2,
 "weighted": true,
 "rank": 78
 },
@@ -1048,7 +1048,7 @@
 "continent": "North America",
 "pop": 5478831,
 "metroCount": 10,
-"score": 38.26,
+"score": 38.28,
 "weighted": true,
 "rank": 81
 },
@@ -1100,7 +1100,7 @@
 "continent": "Asia",
 "pop": 6555400,
 "metroCount": 1,
-"score": 37.4,
+"score": 37.47,
 "weighted": true,
 "rank": 85
 },
@@ -1139,7 +1139,7 @@
 "continent": "Asia",
 "pop": 8837685,
 "metroCount": 1,
-"score": 36.61,
+"score": 36.66,
 "weighted": true,
 "rank": 88
 },
@@ -1191,7 +1191,7 @@
 "continent": "Europe",
 "pop": 8004489,
 "metroCount": 7,
-"score": 35.58,
+"score": 35.6,
 "weighted": true,
 "rank": 92
 },
@@ -1230,7 +1230,7 @@
 "continent": "Europe",
 "pop": 5510527,
 "metroCount": 4,
-"score": 33.9,
+"score": 34.0,
 "weighted": true,
 "rank": 95
 },
@@ -1243,7 +1243,7 @@
 "continent": "Asia",
 "pop": 48782400,
 "metroCount": 5,
-"score": 33.22,
+"score": 33.27,
 "weighted": true,
 "rank": 96
 },
@@ -1308,7 +1308,7 @@
 "continent": "North America",
 "pop": 3675069,
 "metroCount": 5,
-"score": 32.45,
+"score": 32.46,
 "weighted": true,
 "rank": 101
 },
@@ -1360,7 +1360,7 @@
 "continent": "Asia",
 "pop": 9237337,
 "metroCount": 1,
-"score": 30.56,
+"score": 30.68,
 "weighted": true,
 "rank": 105
 },
@@ -1503,7 +1503,7 @@
 "continent": "Africa",
 "pop": 7433022,
 "metroCount": 2,
-"score": 28.2,
+"score": 28.3,
 "weighted": true,
 "rank": 116
 },
@@ -1529,7 +1529,7 @@
 "continent": "Europe",
 "pop": 8524665,
 "metroCount": 1,
-"score": 27.95,
+"score": 27.99,
 "weighted": true,
 "rank": 118
 },
@@ -1607,7 +1607,7 @@
 "continent": "Europe",
 "pop": 854912,
 "metroCount": 3,
-"score": 24.79,
+"score": 24.81,
 "weighted": true,
 "rank": 124
 },
@@ -1672,22 +1672,9 @@
 "continent": "Asia",
 "pop": 7542415,
 "metroCount": 1,
-"score": 24.35,
+"score": 24.42,
 "weighted": true,
 "rank": 129
-},
-{
-"slug": "yunnan",
-"name": "Yunnan",
-"country": "China",
-"countrySlug": "china",
-"type": "Province",
-"continent": "Asia",
-"pop": 47209277,
-"metroCount": 6,
-"score": 24.3,
-"weighted": true,
-"rank": 130
 },
 {
 "slug": "saitama",
@@ -1698,6 +1685,19 @@
 "continent": "Asia",
 "pop": 7344765,
 "metroCount": 1,
+"score": 24.39,
+"weighted": true,
+"rank": 130
+},
+{
+"slug": "yunnan",
+"name": "Yunnan",
+"country": "China",
+"countrySlug": "china",
+"type": "Province",
+"continent": "Asia",
+"pop": 47209277,
+"metroCount": 6,
 "score": 24.3,
 "weighted": true,
 "rank": 131
@@ -1867,7 +1867,7 @@
 "continent": "Europe",
 "pop": 2959517,
 "metroCount": 3,
-"score": 20.93,
+"score": 20.97,
 "weighted": true,
 "rank": 144
 },
@@ -1880,7 +1880,7 @@
 "continent": "Asia",
 "pop": 6284480,
 "metroCount": 1,
-"score": 20.79,
+"score": 20.87,
 "weighted": true,
 "rank": 145
 },
@@ -2002,6 +2002,19 @@
 "rank": 154
 },
 {
+"slug": "hyogo",
+"name": "Hyogo",
+"country": "Japan",
+"countrySlug": "japan",
+"type": "Prefecture",
+"continent": "Asia",
+"pop": 5465002,
+"metroCount": 1,
+"score": 19.33,
+"weighted": true,
+"rank": 155
+},
+{
 "slug": "iowa",
 "name": "Iowa",
 "country": "United States",
@@ -2011,19 +2024,6 @@
 "pop": 3241488,
 "metroCount": 16,
 "score": 19.33,
-"weighted": true,
-"rank": 155
-},
-{
-"slug": "hyogo",
-"name": "Hyogo",
-"country": "Japan",
-"countrySlug": "japan",
-"type": "Prefecture",
-"continent": "Asia",
-"pop": 5465002,
-"metroCount": 1,
-"score": 19.3,
 "weighted": true,
 "rank": 156
 },
@@ -2036,7 +2036,7 @@
 "continent": "Europe",
 "pop": 530999,
 "metroCount": 1,
-"score": 19.21,
+"score": 19.29,
 "weighted": true,
 "rank": 157
 },
@@ -2049,7 +2049,7 @@
 "continent": "Europe",
 "pop": 2556747,
 "metroCount": 3,
-"score": 19.17,
+"score": 19.21,
 "weighted": true,
 "rank": 158
 },
@@ -2179,7 +2179,7 @@
 "continent": "North America",
 "pop": 1409032,
 "metroCount": 4,
-"score": 18.25,
+"score": 18.29,
 "weighted": true,
 "rank": 168
 },
@@ -2275,19 +2275,6 @@
 "rank": 175
 },
 {
-"slug": "nuevo-leon",
-"name": "Nuevo León",
-"country": "Mexico",
-"countrySlug": "mexico",
-"type": "State",
-"continent": "North America",
-"pop": 5784442,
-"metroCount": 1,
-"score": 17.5,
-"weighted": true,
-"rank": 176
-},
-{
 "slug": "xinbei-shi-new-taipei-city",
 "name": "Xinbei Shi [New Taipei City]",
 "country": "Taiwan",
@@ -2297,6 +2284,19 @@
 "pop": 4030954,
 "metroCount": 1,
 "score": 17.44,
+"weighted": true,
+"rank": 176
+},
+{
+"slug": "nuevo-leon",
+"name": "Nuevo León",
+"country": "Mexico",
+"countrySlug": "mexico",
+"type": "State",
+"continent": "North America",
+"pop": 5784442,
+"metroCount": 1,
+"score": 17.4,
 "weighted": true,
 "rank": 177
 },
@@ -2647,7 +2647,7 @@
 "continent": "Europe",
 "pop": 1610251,
 "metroCount": 5,
-"score": 15.44,
+"score": 15.45,
 "weighted": true,
 "rank": 204
 },
@@ -2673,7 +2673,7 @@
 "continent": "Europe",
 "pop": 2664047,
 "metroCount": 10,
-"score": 14.99,
+"score": 15.09,
 "weighted": true,
 "rank": 206
 },
@@ -2743,6 +2743,19 @@
 "rank": 211
 },
 {
+"slug": "gyeongsangbuk",
+"name": "Gyeongsangbuk",
+"country": "South Korea",
+"countrySlug": "south-korea",
+"type": "Province",
+"continent": "Asia",
+"pop": 2700328,
+"metroCount": 5,
+"score": 14.37,
+"weighted": true,
+"rank": 212
+},
+{
 "slug": "baku",
 "name": "Baku",
 "country": "Azerbaijan",
@@ -2752,19 +2765,6 @@
 "pop": 2616948,
 "metroCount": 1,
 "score": 14.31,
-"weighted": true,
-"rank": 212
-},
-{
-"slug": "gyeongsangbuk",
-"name": "Gyeongsangbuk",
-"country": "South Korea",
-"countrySlug": "south-korea",
-"type": "Province",
-"continent": "Asia",
-"pop": 2700328,
-"metroCount": 5,
-"score": 14.27,
 "weighted": true,
 "rank": 213
 },
@@ -2777,7 +2777,7 @@
 "continent": "Asia",
 "pop": 10609700,
 "metroCount": 1,
-"score": 14.17,
+"score": 14.2,
 "weighted": true,
 "rank": 214
 },
@@ -2808,6 +2808,19 @@
 "rank": 216
 },
 {
+"slug": "rhineland-palatinate",
+"name": "Rhineland-Palatinate",
+"country": "Germany",
+"countrySlug": "germany",
+"type": "State",
+"continent": "Europe",
+"pop": 4129569,
+"metroCount": 7,
+"score": 14.02,
+"weighted": true,
+"rank": 217
+},
+{
 "slug": "busan",
 "name": "Busan",
 "country": "South Korea",
@@ -2817,19 +2830,6 @@
 "pop": 3411829,
 "metroCount": 1,
 "score": 14.01,
-"weighted": true,
-"rank": 217
-},
-{
-"slug": "rhineland-palatinate",
-"name": "Rhineland-Palatinate",
-"country": "Germany",
-"countrySlug": "germany",
-"type": "State",
-"continent": "Europe",
-"pop": 4129569,
-"metroCount": 7,
-"score": 13.98,
 "weighted": true,
 "rank": 218
 },
@@ -2894,9 +2894,22 @@
 "continent": "Europe",
 "pop": 1228671,
 "metroCount": 1,
-"score": 13.42,
+"score": 13.43,
 "weighted": true,
 "rank": 223
+},
+{
+"slug": "idaho",
+"name": "Idaho",
+"country": "United States",
+"countrySlug": "united-states",
+"type": "State",
+"continent": "North America",
+"pop": 2001619,
+"metroCount": 12,
+"score": 13.43,
+"weighted": true,
+"rank": 224
 },
 {
 "slug": "izmir",
@@ -2908,19 +2921,6 @@
 "pop": 4367251,
 "metroCount": 1,
 "score": 13.4,
-"weighted": true,
-"rank": 224
-},
-{
-"slug": "idaho",
-"name": "Idaho",
-"country": "United States",
-"countrySlug": "united-states",
-"type": "State",
-"continent": "North America",
-"pop": 2001619,
-"metroCount": 12,
-"score": 13.34,
 "weighted": true,
 "rank": 225
 },
@@ -3037,7 +3037,7 @@
 "continent": "Asia",
 "pop": 2765932,
 "metroCount": 1,
-"score": 12.5,
+"score": 12.6,
 "weighted": true,
 "rank": 234
 },
@@ -3063,7 +3063,7 @@
 "continent": "Asia",
 "pop": 2954955,
 "metroCount": 1,
-"score": 12.31,
+"score": 12.28,
 "weighted": true,
 "rank": 236
 },
@@ -3115,7 +3115,7 @@
 "continent": "Europe",
 "pop": 1973896,
 "metroCount": 1,
-"score": 12.03,
+"score": 12.07,
 "weighted": true,
 "rank": 240
 },
@@ -3159,6 +3159,19 @@
 "rank": 243
 },
 {
+"slug": "miyagi",
+"name": "Miyagi",
+"country": "Japan",
+"countrySlug": "japan",
+"type": "Prefecture",
+"continent": "Asia",
+"pop": 2301996,
+"metroCount": 1,
+"score": 11.8,
+"weighted": true,
+"rank": 244
+},
+{
 "slug": "balearic-islands",
 "name": "Balearic Islands",
 "country": "Spain",
@@ -3169,7 +3182,7 @@
 "metroCount": 3,
 "score": 11.8,
 "weighted": true,
-"rank": 244
+"rank": 245
 },
 {
 "slug": "essex",
@@ -3181,19 +3194,6 @@
 "pop": 1536118,
 "metroCount": 5,
 "score": 11.78,
-"weighted": true,
-"rank": 245
-},
-{
-"slug": "miyagi",
-"name": "Miyagi",
-"country": "Japan",
-"countrySlug": "japan",
-"type": "Prefecture",
-"continent": "Asia",
-"pop": 2301996,
-"metroCount": 1,
-"score": 11.7,
 "weighted": true,
 "rank": 246
 },
@@ -3354,6 +3354,19 @@
 "rank": 258
 },
 {
+"slug": "basel-landschaft",
+"name": "Basel-Landschaft",
+"country": "Switzerland",
+"countrySlug": "switzerland",
+"type": "Canton",
+"continent": "Europe",
+"pop": 301280,
+"metroCount": 1,
+"score": 11.03,
+"weighted": true,
+"rank": 259
+},
+{
 "slug": "east-flanders",
 "name": "East Flanders",
 "country": "Belgium",
@@ -3364,7 +3377,7 @@
 "metroCount": 9,
 "score": 11.0,
 "weighted": true,
-"rank": 259
+"rank": 260
 },
 {
 "slug": "grand-casablanca-settat",
@@ -3376,19 +3389,6 @@
 "pop": 7408213,
 "metroCount": 4,
 "score": 11.0,
-"weighted": true,
-"rank": 260
-},
-{
-"slug": "basel-landschaft",
-"name": "Basel-Landschaft",
-"country": "Switzerland",
-"countrySlug": "switzerland",
-"type": "Canton",
-"continent": "Europe",
-"pop": 301280,
-"metroCount": 1,
-"score": 10.98,
 "weighted": true,
 "rank": 261
 },
@@ -3432,6 +3432,19 @@
 "rank": 264
 },
 {
+"slug": "kyoto",
+"name": "Kyoto",
+"country": "Japan",
+"countrySlug": "japan",
+"type": "Prefecture",
+"continent": "Asia",
+"pop": 2578087,
+"metroCount": 1,
+"score": 10.7,
+"weighted": true,
+"rank": 265
+},
+{
 "slug": "jerusalem",
 "name": "Jerusalem",
 "country": "Israel",
@@ -3442,33 +3455,7 @@
 "metroCount": 1,
 "score": 10.69,
 "weighted": true,
-"rank": 265
-},
-{
-"slug": "kyoto",
-"name": "Kyoto",
-"country": "Japan",
-"countrySlug": "japan",
-"type": "Prefecture",
-"continent": "Asia",
-"pop": 2578087,
-"metroCount": 1,
-"score": 10.68,
-"weighted": true,
 "rank": 266
-},
-{
-"slug": "buenos-aires-city",
-"name": "Buenos Aires City",
-"country": "Argentina",
-"countrySlug": "argentina",
-"type": "City",
-"continent": "South America",
-"pop": 3068043,
-"metroCount": 1,
-"score": 10.6,
-"weighted": true,
-"rank": 267
 },
 {
 "slug": "kuala-lumpur",
@@ -3478,6 +3465,19 @@
 "type": "Federal Territory",
 "continent": "Asia",
 "pop": 1746600,
+"metroCount": 1,
+"score": 10.62,
+"weighted": true,
+"rank": 267
+},
+{
+"slug": "buenos-aires-city",
+"name": "Buenos Aires City",
+"country": "Argentina",
+"countrySlug": "argentina",
+"type": "City",
+"continent": "South America",
+"pop": 3068043,
 "metroCount": 1,
 "score": 10.6,
 "weighted": true,
@@ -3752,7 +3752,7 @@
 "continent": "Asia",
 "pop": 12061500,
 "metroCount": 2,
-"score": 9.51,
+"score": 9.53,
 "weighted": true,
 "rank": 289
 },
@@ -4511,6 +4511,19 @@
 "rank": 347
 },
 {
+"slug": "basel-stadt",
+"name": "Basel-Stadt",
+"country": "Switzerland",
+"countrySlug": "switzerland",
+"type": "Canton",
+"continent": "Europe",
+"pop": 201333,
+"metroCount": 1,
+"score": 7.37,
+"weighted": true,
+"rank": 348
+},
+{
 "slug": "valle-del-cauca",
 "name": "Valle del Cauca",
 "country": "Colombia",
@@ -4521,7 +4534,7 @@
 "metroCount": 3,
 "score": 7.35,
 "weighted": true,
-"rank": 348
+"rank": 349
 },
 {
 "slug": "limburg-netherlands",
@@ -4533,19 +4546,6 @@
 "pop": 1135328,
 "metroCount": 7,
 "score": 7.35,
-"weighted": true,
-"rank": 349
-},
-{
-"slug": "basel-stadt",
-"name": "Basel-Stadt",
-"country": "Switzerland",
-"countrySlug": "switzerland",
-"type": "Canton",
-"continent": "Europe",
-"pop": 201333,
-"metroCount": 1,
-"score": 7.34,
 "weighted": true,
 "rank": 350
 },
@@ -4740,7 +4740,7 @@
 "continent": "Europe",
 "pop": 900862,
 "metroCount": 5,
-"score": 6.98,
+"score": 6.99,
 "weighted": true,
 "rank": 365
 },
@@ -5065,7 +5065,7 @@
 "continent": "Asia",
 "pop": 2867009,
 "metroCount": 2,
-"score": 6.18,
+"score": 6.2,
 "weighted": true,
 "rank": 390
 },
@@ -5187,6 +5187,19 @@
 "rank": 399
 },
 {
+"slug": "mie",
+"name": "Mie",
+"country": "Japan",
+"countrySlug": "japan",
+"type": "Prefecture",
+"continent": "Asia",
+"pop": 1770254,
+"metroCount": 2,
+"score": 5.86,
+"weighted": true,
+"rank": 400
+},
+{
 "slug": "toshkent-shahri-tashkent-city",
 "name": "Toshkent shahri [Tashkent City]",
 "country": "Uzbekistan",
@@ -5196,19 +5209,6 @@
 "pop": 2862420,
 "metroCount": 1,
 "score": 5.86,
-"weighted": true,
-"rank": 400
-},
-{
-"slug": "mie",
-"name": "Mie",
-"country": "Japan",
-"countrySlug": "japan",
-"type": "Prefecture",
-"continent": "Asia",
-"pop": 1770254,
-"metroCount": 2,
-"score": 5.85,
 "weighted": true,
 "rank": 401
 },
@@ -5408,6 +5408,19 @@
 "rank": 416
 },
 {
+"slug": "xinzhu-hsinchu",
+"name": "Xinzhu [Hsinchu]",
+"country": "Taiwan",
+"countrySlug": "taiwan",
+"type": "County (Xian)",
+"continent": "Asia",
+"pop": 570775,
+"metroCount": 1,
+"score": 5.64,
+"weighted": true,
+"rank": 417
+},
+{
 "slug": "grad-zagreb",
 "name": "Grad Zagreb",
 "country": "Croatia",
@@ -5418,7 +5431,7 @@
 "metroCount": 1,
 "score": 5.61,
 "weighted": true,
-"rank": 417
+"rank": 418
 },
 {
 "slug": "limassol",
@@ -5431,7 +5444,7 @@
 "metroCount": 1,
 "score": 5.6,
 "weighted": true,
-"rank": 418
+"rank": 419
 },
 {
 "slug": "madhya-pradesh",
@@ -5444,7 +5457,7 @@
 "metroCount": 4,
 "score": 5.6,
 "weighted": true,
-"rank": 419
+"rank": 420
 },
 {
 "slug": "coastal",
@@ -5457,7 +5470,7 @@
 "metroCount": 5,
 "score": 5.6,
 "weighted": true,
-"rank": 420
+"rank": 421
 },
 {
 "slug": "lublin",
@@ -5470,7 +5483,7 @@
 "metroCount": 7,
 "score": 5.6,
 "weighted": true,
-"rank": 421
+"rank": 422
 },
 {
 "slug": "madeira-islands",
@@ -5482,19 +5495,6 @@
 "pop": 250744,
 "metroCount": 1,
 "score": 5.6,
-"weighted": true,
-"rank": 422
-},
-{
-"slug": "xinzhu-hsinchu",
-"name": "Xinzhu [Hsinchu]",
-"country": "Taiwan",
-"countrySlug": "taiwan",
-"type": "County (Xian)",
-"continent": "Asia",
-"pop": 570775,
-"metroCount": 1,
-"score": 5.58,
 "weighted": true,
 "rank": 423
 },
@@ -6019,6 +6019,19 @@
 "rank": 463
 },
 {
+"slug": "gifu",
+"name": "Gifu",
+"country": "Japan",
+"countrySlug": "japan",
+"type": "Prefecture",
+"continent": "Asia",
+"pop": 1978742,
+"metroCount": 1,
+"score": 4.72,
+"weighted": true,
+"rank": 464
+},
+{
 "slug": "county-durham",
 "name": "County Durham",
 "country": "United Kingdom",
@@ -6029,7 +6042,7 @@
 "metroCount": 4,
 "score": 4.72,
 "weighted": true,
-"rank": 464
+"rank": 465
 },
 {
 "slug": "harju",
@@ -6042,7 +6055,7 @@
 "metroCount": 1,
 "score": 4.7,
 "weighted": true,
-"rank": 465
+"rank": 466
 },
 {
 "slug": "hofuðborgarsvæði",
@@ -6052,19 +6065,6 @@
 "type": "Region",
 "continent": "Europe",
 "pop": 236528,
-"metroCount": 1,
-"score": 4.7,
-"weighted": true,
-"rank": 466
-},
-{
-"slug": "gifu",
-"name": "Gifu",
-"country": "Japan",
-"countrySlug": "japan",
-"type": "Prefecture",
-"continent": "Asia",
-"pop": 1978742,
 "metroCount": 1,
 "score": 4.7,
 "weighted": true,
@@ -6253,6 +6253,19 @@
 "rank": 481
 },
 {
+"slug": "xinzhu-shi-hsinchu-shih",
+"name": "Xinzhu Shi [Hsinchu Shih]",
+"country": "Taiwan",
+"countrySlug": "taiwan",
+"type": "Provincial City",
+"continent": "Asia",
+"pop": 451412,
+"metroCount": 1,
+"score": 4.46,
+"weighted": true,
+"rank": 482
+},
+{
 "slug": "veracruz",
 "name": "Veracruz",
 "country": "Mexico",
@@ -6262,19 +6275,6 @@
 "pop": 8062579,
 "metroCount": 9,
 "score": 4.43,
-"weighted": true,
-"rank": 482
-},
-{
-"slug": "xinzhu-shi-hsinchu-shih",
-"name": "Xinzhu Shi [Hsinchu Shih]",
-"country": "Taiwan",
-"countrySlug": "taiwan",
-"type": "Provincial City",
-"continent": "Asia",
-"pop": 451412,
-"metroCount": 1,
-"score": 4.42,
 "weighted": true,
 "rank": 483
 },
@@ -6565,6 +6565,19 @@
 "rank": 505
 },
 {
+"slug": "gunma",
+"name": "Gunma",
+"country": "Japan",
+"countrySlug": "japan",
+"type": "Prefecture",
+"continent": "Asia",
+"pop": 1939110,
+"metroCount": 1,
+"score": 4.04,
+"weighted": true,
+"rank": 506
+},
+{
 "slug": "queretaro",
 "name": "Querétaro",
 "country": "Mexico",
@@ -6575,7 +6588,7 @@
 "metroCount": 2,
 "score": 4.04,
 "weighted": true,
-"rank": 506
+"rank": 507
 },
 {
 "slug": "north-lanarkshire",
@@ -6588,7 +6601,7 @@
 "metroCount": 1,
 "score": 4.04,
 "weighted": true,
-"rank": 507
+"rank": 508
 },
 {
 "slug": "condamine",
@@ -6600,19 +6613,6 @@
 "pop": 14453,
 "metroCount": 1,
 "score": 4.03,
-"weighted": true,
-"rank": 508
-},
-{
-"slug": "gunma",
-"name": "Gunma",
-"country": "Japan",
-"countrySlug": "japan",
-"type": "Prefecture",
-"continent": "Asia",
-"pop": 1939110,
-"metroCount": 1,
-"score": 4.02,
 "weighted": true,
 "rank": 509
 },
@@ -6643,6 +6643,19 @@
 "rank": 511
 },
 {
+"slug": "nara-japan",
+"name": "Nara",
+"country": "Japan",
+"countrySlug": "japan",
+"type": "Prefecture",
+"continent": "Asia",
+"pop": 1324473,
+"metroCount": 1,
+"score": 4.0,
+"weighted": true,
+"rank": 512
+},
+{
 "slug": "kaunas",
 "name": "Kaunas",
 "country": "Lithuania",
@@ -6653,7 +6666,7 @@
 "metroCount": 2,
 "score": 4.0,
 "weighted": true,
-"rank": 512
+"rank": 513
 },
 {
 "slug": "devon",
@@ -6666,7 +6679,7 @@
 "metroCount": 5,
 "score": 4.0,
 "weighted": true,
-"rank": 513
+"rank": 514
 },
 {
 "slug": "norfolk",
@@ -6678,19 +6691,6 @@
 "pop": 931943,
 "metroCount": 2,
 "score": 4.0,
-"weighted": true,
-"rank": 514
-},
-{
-"slug": "nara-japan",
-"name": "Nara",
-"country": "Japan",
-"countrySlug": "japan",
-"type": "Prefecture",
-"continent": "Asia",
-"pop": 1324473,
-"metroCount": 1,
-"score": 3.99,
 "weighted": true,
 "rank": 515
 },
@@ -6721,6 +6721,19 @@
 "rank": 517
 },
 {
+"slug": "luxembourg-luxembourg",
+"name": "Luxembourg",
+"country": "Luxembourg",
+"countrySlug": "luxembourg",
+"type": "Canton",
+"continent": "Europe",
+"pop": 198476,
+"metroCount": 1,
+"score": 3.95,
+"weighted": true,
+"rank": 518
+},
+{
 "slug": "binh-duong",
 "name": "Bình Dương",
 "country": "Vietnam",
@@ -6731,7 +6744,7 @@
 "metroCount": 1,
 "score": 3.94,
 "weighted": true,
-"rank": 518
+"rank": 519
 },
 {
 "slug": "north-dakota",
@@ -6743,19 +6756,6 @@
 "pop": 796568,
 "metroCount": 7,
 "score": 3.93,
-"weighted": true,
-"rank": 519
-},
-{
-"slug": "luxembourg-luxembourg",
-"name": "Luxembourg",
-"country": "Luxembourg",
-"countrySlug": "luxembourg",
-"type": "Canton",
-"continent": "Europe",
-"pop": 198476,
-"metroCount": 1,
-"score": 3.91,
 "weighted": true,
 "rank": 520
 },
@@ -6799,6 +6799,19 @@
 "rank": 523
 },
 {
+"slug": "bihar",
+"name": "Bihar",
+"country": "India",
+"countrySlug": "india",
+"type": "State",
+"continent": "Asia",
+"pop": 126756000,
+"metroCount": 2,
+"score": 3.8,
+"weighted": true,
+"rank": 524
+},
+{
 "slug": "fars",
 "name": "Fars",
 "country": "Iran",
@@ -6809,7 +6822,7 @@
 "metroCount": 1,
 "score": 3.8,
 "weighted": true,
-"rank": 524
+"rank": 525
 },
 {
 "slug": "murcia",
@@ -6822,7 +6835,7 @@
 "metroCount": 4,
 "score": 3.8,
 "weighted": true,
-"rank": 525
+"rank": 526
 },
 {
 "slug": "northeastern",
@@ -6835,7 +6848,7 @@
 "metroCount": 6,
 "score": 3.8,
 "weighted": true,
-"rank": 526
+"rank": 527
 },
 {
 "slug": "havana",
@@ -6848,7 +6861,7 @@
 "metroCount": 1,
 "score": 3.77,
 "weighted": true,
-"rank": 527
+"rank": 528
 },
 {
 "slug": "city-of-kingston-upon-hull",
@@ -6861,7 +6874,7 @@
 "metroCount": 1,
 "score": 3.76,
 "weighted": true,
-"rank": 528
+"rank": 529
 },
 {
 "slug": "cheshire-west-and-chester",
@@ -6874,7 +6887,7 @@
 "metroCount": 1,
 "score": 3.75,
 "weighted": true,
-"rank": 529
+"rank": 530
 },
 {
 "slug": "al-wakrah",
@@ -6887,7 +6900,20 @@
 "metroCount": 1,
 "score": 3.72,
 "weighted": true,
-"rank": 530
+"rank": 531
+},
+{
+"slug": "negeri-sembilan",
+"name": "Negeri Sembilan",
+"country": "Malaysia",
+"countrySlug": "malaysia",
+"type": "State",
+"continent": "Asia",
+"pop": 1129100,
+"metroCount": 1,
+"score": 3.71,
+"weighted": true,
+"rank": 532
 },
 {
 "slug": "south-dakota",
@@ -6900,20 +6926,7 @@
 "metroCount": 11,
 "score": 3.71,
 "weighted": true,
-"rank": 531
-},
-{
-"slug": "bihar",
-"name": "Bihar",
-"country": "India",
-"countrySlug": "india",
-"type": "State",
-"continent": "Asia",
-"pop": 126756000,
-"metroCount": 2,
-"score": 3.7,
-"weighted": true,
-"rank": 532
+"rank": 533
 },
 {
 "slug": "nagasaki",
@@ -6924,19 +6937,6 @@
 "continent": "Asia",
 "pop": 1312317,
 "metroCount": 2,
-"score": 3.7,
-"weighted": true,
-"rank": 533
-},
-{
-"slug": "negeri-sembilan",
-"name": "Negeri Sembilan",
-"country": "Malaysia",
-"countrySlug": "malaysia",
-"type": "State",
-"continent": "Asia",
-"pop": 1129100,
-"metroCount": 1,
 "score": 3.7,
 "weighted": true,
 "rank": 534
@@ -6968,6 +6968,19 @@
 "rank": 536
 },
 {
+"slug": "esch-sur-alzette",
+"name": "Esch-sur-Alzette",
+"country": "Luxembourg",
+"countrySlug": "luxembourg",
+"type": "Canton",
+"continent": "Europe",
+"pop": 186468,
+"metroCount": 1,
+"score": 3.66,
+"weighted": true,
+"rank": 537
+},
+{
 "slug": "south-lanarkshire",
 "name": "South Lanarkshire",
 "country": "United Kingdom",
@@ -6977,19 +6990,6 @@
 "pop": 330280,
 "metroCount": 1,
 "score": 3.64,
-"weighted": true,
-"rank": 537
-},
-{
-"slug": "esch-sur-alzette",
-"name": "Esch-sur-Alzette",
-"country": "Luxembourg",
-"countrySlug": "luxembourg",
-"type": "Canton",
-"continent": "Europe",
-"pop": 186468,
-"metroCount": 1,
-"score": 3.62,
 "weighted": true,
 "rank": 538
 },
@@ -7613,7 +7613,7 @@
 "continent": "Europe",
 "pop": 735619,
 "metroCount": 5,
-"score": 3.17,
+"score": 3.18,
 "weighted": true,
 "rank": 586
 },
@@ -8367,7 +8367,7 @@
 "continent": "Asia",
 "pop": 3134800,
 "metroCount": 1,
-"score": 2.69,
+"score": 2.7,
 "weighted": true,
 "rank": 644
 },
@@ -12987,6 +12987,19 @@
 "rank": 999
 },
 {
+"slug": "capellen",
+"name": "Capellen",
+"country": "Luxembourg",
+"countrySlug": "luxembourg",
+"type": "Canton",
+"continent": "Europe",
+"pop": 51691,
+"metroCount": 1,
+"score": 1.04,
+"weighted": true,
+"rank": 1000
+},
+{
 "slug": "south-banat",
 "name": "South Banat",
 "country": "Serbia",
@@ -12997,7 +13010,7 @@
 "metroCount": 1,
 "score": 1.04,
 "weighted": true,
-"rank": 1000
+"rank": 1001
 },
 {
 "slug": "west-dunbartonshire",
@@ -13009,19 +13022,6 @@
 "pop": 88750,
 "metroCount": 1,
 "score": 1.04,
-"weighted": true,
-"rank": 1001
-},
-{
-"slug": "capellen",
-"name": "Capellen",
-"country": "Luxembourg",
-"countrySlug": "luxembourg",
-"type": "Canton",
-"continent": "Europe",
-"pop": 51691,
-"metroCount": 1,
-"score": 1.03,
 "weighted": true,
 "rank": 1002
 },
@@ -15301,6 +15301,19 @@
 "rank": 1177
 },
 {
+"slug": "mersch",
+"name": "Mersch",
+"country": "Luxembourg",
+"countrySlug": "luxembourg",
+"type": "Canton",
+"continent": "Europe",
+"pop": 34721,
+"metroCount": 1,
+"score": 0.69,
+"weighted": true,
+"rank": 1178
+},
+{
 "slug": "neath-port-talbot",
 "name": "Neath Port Talbot",
 "country": "United Kingdom",
@@ -15310,19 +15323,6 @@
 "pop": 142898,
 "metroCount": 1,
 "score": 0.69,
-"weighted": true,
-"rank": 1178
-},
-{
-"slug": "mersch",
-"name": "Mersch",
-"country": "Luxembourg",
-"countrySlug": "luxembourg",
-"type": "Canton",
-"continent": "Europe",
-"pop": 34721,
-"metroCount": 1,
-"score": 0.68,
 "weighted": true,
 "rank": 1179
 },

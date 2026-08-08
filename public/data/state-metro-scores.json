@@ -21,7 +21,7 @@
   },
   "aargau": {
     "metros": 5,
-    "score": 3.17,
+    "score": 3.18,
     "weighted": true
   },
   "abaco": {
@@ -246,7 +246,7 @@
   },
   "aichi": {
     "metros": 1,
-    "score": 24.35,
+    "score": 24.42,
     "weighted": true
   },
   "aiga-i-le-tai": {
@@ -511,7 +511,7 @@
   },
   "alberta": {
     "metros": 8,
-    "score": 39.3,
+    "score": 39.2,
     "weighted": true
   },
   "alborz": {
@@ -986,7 +986,7 @@
   },
   "arizona": {
     "metros": 10,
-    "score": 50.3,
+    "score": 50.4,
     "weighted": true
   },
   "arkansas": {
@@ -1376,7 +1376,7 @@
   },
   "baden-wurttemberg": {
     "metros": 9,
-    "score": 61.58,
+    "score": 61.63,
     "weighted": true
   },
   "badghis": {
@@ -1531,7 +1531,7 @@
   },
   "bangkok-metropolitan": {
     "metros": 1,
-    "score": 50.71,
+    "score": 50.8,
     "weighted": true
   },
   "bangsamoro": {
@@ -1561,7 +1561,7 @@
   },
   "banten": {
     "metros": 2,
-    "score": 9.51,
+    "score": 9.53,
     "weighted": true
   },
   "baoruco": {
@@ -1636,12 +1636,12 @@
   },
   "basel-landschaft": {
     "metros": 1,
-    "score": 10.98,
+    "score": 11.03,
     "weighted": true
   },
   "basel-stadt": {
     "metros": 1,
-    "score": 7.34,
+    "score": 7.37,
     "weighted": true
   },
   "bashkortostan": {
@@ -1721,7 +1721,7 @@
   },
   "bavaria": {
     "metros": 18,
-    "score": 81.16,
+    "score": 81.26,
     "weighted": true
   },
   "bay": {
@@ -1766,7 +1766,7 @@
   },
   "beijing": {
     "metros": 1,
-    "score": 109.95,
+    "score": 109.85,
     "weighted": true
   },
   "beja-portugal": {
@@ -1896,7 +1896,7 @@
   },
   "berlin": {
     "metros": 1,
-    "score": 40.83,
+    "score": 40.89,
     "weighted": true
   },
   "bern": {
@@ -1926,7 +1926,7 @@
   },
   "bihar": {
     "metros": 2,
-    "score": 3.7,
+    "score": 3.8,
     "weighted": true
   },
   "bihor": {
@@ -2326,7 +2326,7 @@
   },
   "brandenburg": {
     "metros": 3,
-    "score": 19.17,
+    "score": 19.21,
     "weighted": true
   },
   "branicevo": {
@@ -2391,7 +2391,7 @@
   },
   "british-columbia": {
     "metros": 13,
-    "score": 51.3,
+    "score": 51.4,
     "weighted": true
   },
   "brittany": {
@@ -2646,7 +2646,7 @@
   },
   "california": {
     "metros": 22,
-    "score": 327.5,
+    "score": 329.6,
     "weighted": true
   },
   "callao-provincia-constitutional-del-callao": {
@@ -2741,7 +2741,7 @@
   },
   "capellen": {
     "metros": 1,
-    "score": 1.03,
+    "score": 1.04,
     "weighted": true
   },
   "capital-territory": {
@@ -3041,7 +3041,7 @@
   },
   "central-thailand": {
     "metros": 1,
-    "score": 2.69,
+    "score": 2.7,
     "weighted": true
   },
   "central-uganda": {
@@ -3231,7 +3231,7 @@
   },
   "chiba": {
     "metros": 1,
-    "score": 20.79,
+    "score": 20.87,
     "weighted": true
   },
   "chiesanuova": {
@@ -3521,7 +3521,7 @@
   },
   "colorado": {
     "metros": 14,
-    "score": 59.2,
+    "score": 59.4,
     "weighted": true
   },
   "comarca-embera": {
@@ -3576,7 +3576,7 @@
   },
   "connecticut": {
     "metros": 5,
-    "score": 32.45,
+    "score": 32.46,
     "weighted": true
   },
   "constanta": {
@@ -3926,7 +3926,7 @@
   },
   "dc": {
     "metros": 1,
-    "score": 96.2,
+    "score": 96.4,
     "weighted": false
   },
   "debubawi-keyih-bahri": {
@@ -4661,7 +4661,7 @@
   },
   "esch-sur-alzette": {
     "metros": 1,
-    "score": 3.62,
+    "score": 3.66,
     "weighted": true
   },
   "escuintla": {
@@ -5176,7 +5176,7 @@
   },
   "gaoxiong-shi-kaohsiung-shih": {
     "metros": 1,
-    "score": 12.5,
+    "score": 12.6,
     "weighted": true
   },
   "garff": {
@@ -5271,7 +5271,7 @@
   },
   "geneva": {
     "metros": 1,
-    "score": 19.21,
+    "score": 19.29,
     "weighted": true
   },
   "george-town": {
@@ -5281,7 +5281,7 @@
   },
   "georgia": {
     "metros": 22,
-    "score": 68.79,
+    "score": 68.89,
     "weighted": true
   },
   "ghanzi": {
@@ -5316,7 +5316,7 @@
   },
   "gifu": {
     "metros": 1,
-    "score": 4.7,
+    "score": 4.72,
     "weighted": true
   },
   "gilan": {
@@ -5591,7 +5591,7 @@
   },
   "greater-london": {
     "metros": 1,
-    "score": 97.7,
+    "score": 97.75,
     "weighted": true
   },
   "greater-manchester": {
@@ -5666,7 +5666,7 @@
   },
   "guangdong": {
     "metros": 9,
-    "score": 125.1,
+    "score": 125.2,
     "weighted": true
   },
   "guangxi": {
@@ -5766,7 +5766,7 @@
   },
   "gunma": {
     "metros": 1,
-    "score": 4.02,
+    "score": 4.04,
     "weighted": true
   },
   "guria": {
@@ -5791,12 +5791,12 @@
   },
   "gyeonggi": {
     "metros": 1,
-    "score": 56.45,
+    "score": 56.34,
     "weighted": true
   },
   "gyeongsangbuk": {
     "metros": 5,
-    "score": 14.27,
+    "score": 14.37,
     "weighted": true
   },
   "gyeongsangnam": {
@@ -5956,7 +5956,7 @@
   },
   "hamburg": {
     "metros": 1,
-    "score": 12.03,
+    "score": 12.07,
     "weighted": true
   },
   "hamilton": {
@@ -6166,7 +6166,7 @@
   },
   "hesse": {
     "metros": 4,
-    "score": 43.68,
+    "score": 43.69,
     "weighted": true
   },
   "heves": {
@@ -6356,7 +6356,7 @@
   },
   "hyogo": {
     "metros": 1,
-    "score": 19.3,
+    "score": 19.33,
     "weighted": true
   },
   "ialomita": {
@@ -6376,7 +6376,7 @@
   },
   "ibaraki": {
     "metros": 2,
-    "score": 6.18,
+    "score": 6.2,
     "weighted": true
   },
   "ibb": {
@@ -6401,7 +6401,7 @@
   },
   "idaho": {
     "metros": 12,
-    "score": 13.34,
+    "score": 13.43,
     "weighted": true
   },
   "idlib": {
@@ -6436,7 +6436,7 @@
   },
   "ile-de-france": {
     "metros": 1,
-    "score": 138.06,
+    "score": 138.15,
     "weighted": true
   },
   "ilfov": {
@@ -6446,7 +6446,7 @@
   },
   "illinois": {
     "metros": 21,
-    "score": 104.27,
+    "score": 104.36,
     "weighted": true
   },
   "illizi": {
@@ -6501,7 +6501,7 @@
   },
   "incheon": {
     "metros": 1,
-    "score": 12.31,
+    "score": 12.28,
     "weighted": true
   },
   "inchiri": {
@@ -6721,7 +6721,7 @@
   },
   "jakarta": {
     "metros": 1,
-    "score": 14.17,
+    "score": 14.2,
     "weighted": true
   },
   "jalal-abad": {
@@ -7111,7 +7111,7 @@
   },
   "kanagawa": {
     "metros": 1,
-    "score": 30.56,
+    "score": 30.68,
     "weighted": true
   },
   "kandahar": {
@@ -7386,7 +7386,7 @@
   },
   "kent": {
     "metros": 5,
-    "score": 15.44,
+    "score": 15.45,
     "weighted": true
   },
   "kentucky": {
@@ -7806,7 +7806,7 @@
   },
   "kuala-lumpur": {
     "metros": 1,
-    "score": 10.6,
+    "score": 10.62,
     "weighted": true
   },
   "kujalleq": {
@@ -7941,7 +7941,7 @@
   },
   "kyoto": {
     "metros": 1,
-    "score": 10.68,
+    "score": 10.7,
     "weighted": true
   },
   "kyzylorda": {
@@ -8536,7 +8536,7 @@
   },
   "lombardy": {
     "metros": 4,
-    "score": 74.8,
+    "score": 74.9,
     "weighted": true
   },
   "long-an": {
@@ -8621,7 +8621,7 @@
   },
   "lower-saxony": {
     "metros": 7,
-    "score": 35.58,
+    "score": 35.6,
     "weighted": true
   },
   "lower-shabelle": {
@@ -8731,7 +8731,7 @@
   },
   "luxembourg-luxembourg": {
     "metros": 1,
-    "score": 3.91,
+    "score": 3.95,
     "weighted": true
   },
   "luxor": {
@@ -8836,7 +8836,7 @@
   },
   "maharashtra": {
     "metros": 4,
-    "score": 70.9,
+    "score": 71.0,
     "weighted": true
   },
   "mahdia": {
@@ -9191,7 +9191,7 @@
   },
   "maryland-united-states": {
     "metros": 5,
-    "score": 56.11,
+    "score": 56.23,
     "weighted": true
   },
   "masaya": {
@@ -9226,7 +9226,7 @@
   },
   "masovian": {
     "metros": 4,
-    "score": 33.9,
+    "score": 34.0,
     "weighted": true
   },
   "masqat-muscat": {
@@ -9236,7 +9236,7 @@
   },
   "massachusetts": {
     "metros": 6,
-    "score": 86.17,
+    "score": 86.34,
     "weighted": true
   },
   "masvingo": {
@@ -9451,7 +9451,7 @@
   },
   "mersch": {
     "metros": 1,
-    "score": 0.68,
+    "score": 0.69,
     "weighted": true
   },
   "merseyside": {
@@ -9566,7 +9566,7 @@
   },
   "mie": {
     "metros": 2,
-    "score": 5.85,
+    "score": 5.86,
     "weighted": true
   },
   "migori": {
@@ -9666,7 +9666,7 @@
   },
   "miyagi": {
     "metros": 1,
-    "score": 11.7,
+    "score": 11.8,
     "weighted": true
   },
   "miyazaki": {
@@ -9881,12 +9881,12 @@
   },
   "moscow": {
     "metros": 1,
-    "score": 42.65,
+    "score": 42.71,
     "weighted": true
   },
   "moscow-oblast": {
     "metros": 1,
-    "score": 27.95,
+    "score": 27.99,
     "weighted": true
   },
   "mostaganem": {
@@ -10221,7 +10221,7 @@
   },
   "nara-japan": {
     "metros": 1,
-    "score": 3.99,
+    "score": 4.0,
     "weighted": true
   },
   "nara-mali": {
@@ -10321,7 +10321,7 @@
   },
   "negeri-sembilan": {
     "metros": 1,
-    "score": 3.7,
+    "score": 3.71,
     "weighted": true
   },
   "nelson": {
@@ -10346,7 +10346,7 @@
   },
   "nevada": {
     "metros": 5,
-    "score": 47.3,
+    "score": 47.4,
     "weighted": true
   },
   "nevis": {
@@ -10366,7 +10366,7 @@
   },
   "new-hampshire": {
     "metros": 4,
-    "score": 18.25,
+    "score": 18.29,
     "weighted": true
   },
   "new-ireland": {
@@ -10376,7 +10376,7 @@
   },
   "new-jersey": {
     "metros": 3,
-    "score": 77.2,
+    "score": 77.3,
     "weighted": true
   },
   "new-mexico": {
@@ -10391,7 +10391,7 @@
   },
   "new-south-wales": {
     "metros": 11,
-    "score": 84.13,
+    "score": 84.23,
     "weighted": true
   },
   "new-territories": {
@@ -10406,7 +10406,7 @@
   },
   "new-york": {
     "metros": 17,
-    "score": 164.37,
+    "score": 164.55,
     "weighted": true
   },
   "newfoundland": {
@@ -10721,7 +10721,7 @@
   },
   "north-brabant": {
     "metros": 10,
-    "score": 14.99,
+    "score": 15.09,
     "weighted": true
   },
   "north-caicos": {
@@ -10736,7 +10736,7 @@
   },
   "north-carolina": {
     "metros": 19,
-    "score": 83.38,
+    "score": 83.47,
     "weighted": true
   },
   "north-central-uturumeda": {
@@ -11126,7 +11126,7 @@
   },
   "nuevo-leon": {
     "metros": 1,
-    "score": 17.5,
+    "score": 17.4,
     "weighted": true
   },
   "nugaal": {
@@ -11281,7 +11281,7 @@
   },
   "ohio": {
     "metros": 17,
-    "score": 83.22,
+    "score": 83.13,
     "weighted": true
   },
   "oichili-dimani": {
@@ -11361,7 +11361,7 @@
   },
   "ontario": {
     "metros": 28,
-    "score": 113.17,
+    "score": 113.27,
     "weighted": true
   },
   "opole": {
@@ -11461,7 +11461,7 @@
   },
   "osaka": {
     "metros": 1,
-    "score": 36.61,
+    "score": 36.66,
     "weighted": true
   },
   "osh": {
@@ -11881,7 +11881,7 @@
   },
   "pennsylvania": {
     "metros": 24,
-    "score": 95.19,
+    "score": 95.29,
     "weighted": true
   },
   "penrhyn": {
@@ -12666,7 +12666,7 @@
   },
   "rhineland-palatinate": {
     "metros": 7,
-    "score": 13.98,
+    "score": 14.02,
     "weighted": true
   },
   "rhode-island": {
@@ -13136,7 +13136,7 @@
   },
   "saitama": {
     "metros": 1,
-    "score": 24.3,
+    "score": 24.39,
     "weighted": true
   },
   "sakarya": {
@@ -13556,7 +13556,7 @@
   },
   "sao-paulo": {
     "metros": 28,
-    "score": 91.63,
+    "score": 91.53,
     "weighted": true
   },
   "sao-vicente-incl-santa-luzia-branco-raso": {
@@ -13676,7 +13676,7 @@
   },
   "schleswig-holstein": {
     "metros": 3,
-    "score": 20.93,
+    "score": 20.97,
     "weighted": true
   },
   "schwyz": {
@@ -13721,7 +13721,7 @@
   },
   "selangor": {
     "metros": 1,
-    "score": 37.4,
+    "score": 37.47,
     "weighted": true
   },
   "selenge-selenge": {
@@ -13751,7 +13751,7 @@
   },
   "seoul": {
     "metros": 1,
-    "score": 40.05,
+    "score": 39.97,
     "weighted": true
   },
   "sergipe": {
@@ -14336,7 +14336,7 @@
   },
   "south-carolina": {
     "metros": 10,
-    "score": 38.26,
+    "score": 38.28,
     "weighted": true
   },
   "south-dakota": {
@@ -14836,7 +14836,7 @@
   },
   "stockholm": {
     "metros": 1,
-    "score": 43.4,
+    "score": 43.5,
     "weighted": true
   },
   "stockton-on-tees": {
@@ -14971,7 +14971,7 @@
   },
   "surrey": {
     "metros": 1,
-    "score": 13.42,
+    "score": 13.43,
     "weighted": true
   },
   "surxondaryo-surkhandarya": {
@@ -15421,7 +15421,7 @@
   },
   "texas": {
     "metros": 48,
-    "score": 210.87,
+    "score": 211.67,
     "weighted": true
   },
   "thaa-kolhumadulu": {
@@ -15631,7 +15631,7 @@
   },
   "tokyo": {
     "metros": 1,
-    "score": 46.48,
+    "score": 46.65,
     "weighted": true
   },
   "toledo": {
@@ -16341,7 +16341,7 @@
   },
   "vaud": {
     "metros": 3,
-    "score": 24.79,
+    "score": 24.81,
     "weighted": true
   },
   "vaupes": {
@@ -16516,7 +16516,7 @@
   },
   "virginia": {
     "metros": 15,
-    "score": 69.62,
+    "score": 69.68,
     "weighted": true
   },
   "virovitica-podravina": {
@@ -16666,7 +16666,7 @@
   },
   "washington": {
     "metros": 13,
-    "score": 76.07,
+    "score": 76.47,
     "weighted": true
   },
   "wasit": {
@@ -16751,7 +16751,7 @@
   },
   "west-java": {
     "metros": 5,
-    "score": 33.22,
+    "score": 33.27,
     "weighted": true
   },
   "west-kalimantan": {
@@ -16831,7 +16831,7 @@
   },
   "west-sussex": {
     "metros": 5,
-    "score": 6.98,
+    "score": 6.99,
     "weighted": true
   },
   "west-virginia": {
@@ -16876,7 +16876,7 @@
   },
   "western-cape": {
     "metros": 2,
-    "score": 28.2,
+    "score": 28.3,
     "weighted": true
   },
   "western-equatoria": {
@@ -17051,12 +17051,12 @@
   },
   "xinzhu-hsinchu": {
     "metros": 1,
-    "score": 5.58,
+    "score": 5.64,
     "weighted": true
   },
   "xinzhu-shi-hsinchu-shih": {
     "metros": 1,
-    "score": 4.42,
+    "score": 4.46,
     "weighted": true
   },
   "xorazm-khorezm": {

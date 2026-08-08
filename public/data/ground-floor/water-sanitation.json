@@ -14,12 +14,12 @@
   "combination": "mean of udw and usa, registered as ONE Ground Floor dimension so water does not silently take half the weight of the median. Combined per cell, so a cell missing either sub-indicator leaves both numerator and denominator rather than contributing half a measure.",
   "region": "the polygon holding the LARGEST share of the metro's population, with that share; a weighted metro can span several polygons and the old single-point answer hid that",
   "excluded": "ucw untreated wastewater EXCLUDED: 0 of 206 countries with more than one distinct value. bws water stress excluded as rainfall-driven.",
-  "subIndicatorCorrelation": 0.8184,
+  "subIndicatorCorrelation": 0.8177,
   "methodCounts": {
-   "popWeighted": 4201,
+   "popWeighted": 4210,
    "centroid": 77
   },
-  "metrosCovered": 4278,
+  "metrosCovered": 4287,
   "omittedSlugs": [
    "alofi",
    "apia",
@@ -49,12 +49,8 @@
    "reunion",
    "victoria-sey"
   ],
-  "comparisonWithCentroid": {
-   "shared": 4274,
-   "changed": 2645,
-   "unchangedBecauseSinglePolygon": 1629
-  },
-  "generatedAt": "2026-08-07T14:55:08+00:00"
+  "comparisonWithCentroid": null,
+  "generatedAt": "2026-08-08T14:55:53+00:00"
  },
  "metros": {
   "aachen": 2.6e-05,
@@ -142,11 +138,11 @@
   "al-qunaytrah": 0.024439,
   "al-qunfudhah": 3.6e-05,
   "al-ubayyid": 0.256945,
-  "alagoinhas": 0.258457,
+  "alagoinhas": 0.157786,
   "alamogordo": 0.016705,
   "alanya": 0.036847,
   "alba-iulia": 0.112064,
-  "albacete": 9.2e-05,
+  "albacete": 9.4e-05,
   "albany": 0.011297,
   "albany-ga": 0.013594,
   "albert-lea-mn": 0.015012,
@@ -157,7 +153,7 @@
   "albury": 8.8e-05,
   "alchevsk": 0.008127,
   "alcobaca": 0.001823,
-  "alcoy": 0.000122,
+  "alcoy": 0.00014,
   "aldan": 0.156277,
   "aleksin": 0.116571,
   "aleppo": 0.028321,
@@ -171,17 +167,17 @@
   "alexandrov": 0.095579,
   "alfreton": 0.000916,
   "algeciras": 0.000177,
-  "algiers": 0.029962,
-  "alicante": 0.000122,
+  "algiers": 0.029959,
+  "alicante": 0.000144,
   "aligarh": 0.327761,
   "alkmaar": 1.3e-05,
   "allahabad": 0.332575,
   "allentown": 0.006946,
   "alloa": 0.000993,
-  "almansa": 9.2e-05,
-  "almaty": 0.014736,
+  "almansa": 9.1e-05,
+  "almaty": 0.015397,
   "almelo": 2e-05,
-  "almendralejo": 0.000482,
+  "almendralejo": 0.000466,
   "almeria": 0.000139,
   "almetyevsk": 0.111843,
   "alor-setar": 0.034134,
@@ -192,7 +188,7 @@
   "altena": 1.2e-05,
   "altoona": 0.014018,
   "altus-ok": 0.012625,
-  "alytus": 0.038251,
+  "alytus": 0.034609,
   "amarillo": 0.010752,
   "ambato": 0.13589,
   "amberg": 4e-06,
@@ -207,12 +203,12 @@
   "anadia": 0.00181,
   "anadyr": 0.0,
   "anapa": 0.099151,
-  "anapolis": 0.130005,
+  "anapolis": 0.131668,
   "anchorage": 0.016617,
   "ancona": 0.003159,
   "andahuaylas": 0.31761,
   "andizhan": 0.029302,
-  "andorra": 0.00013,
+  "andorra": 6.7e-05,
   "andorra-la-vella": 6.3e-05,
   "andrews-tx": 0.009604,
   "andy": 0.0,
@@ -275,14 +271,14 @@
   "armenia": 0.1595,
   "armidale": 9e-06,
   "arnhem-nijmegen": 1e-05,
-  "arnsberg": 2e-06,
+  "arnsberg": 3e-06,
   "arrecife": 0.000265,
   "artemisa": 0.04523,
   "artyom": 0.120654,
-  "arua": 0.508654,
-  "arusha": 0.63727,
+  "arua": 0.503576,
+  "arusha": 0.637802,
   "arzamas": 0.118402,
-  "as-suwayda": 0.023886,
+  "as-suwayda": 0.024795,
   "asahikawa": 0.005119,
   "asansol": 0.292836,
   "asbest": 0.108452,
@@ -298,7 +294,7 @@
   "astana": 0.015015,
   "astoria-or": 0.014457,
   "astrakhan": 0.113972,
-  "asuncion": 0.065084,
+  "asuncion": 0.064993,
   "aswan": 0.030772,
   "asyut": 0.025373,
   "atbara": 0.461675,
@@ -321,10 +317,10 @@
   "avesta": 1.4e-05,
   "avignon": 0.0,
   "avila": 9.7e-05,
-  "aviles": 0.000183,
+  "aviles": 0.000207,
   "avranches": 0.0,
   "awassa": 0.675508,
-  "awubere": 0.683486,
+  "awubere": 0.68926,
   "ayacucho": 0.251172,
   "aydn": 0.033034,
   "ayia-napa": 0.002829,
@@ -332,13 +328,13 @@
   "ayr": 0.001065,
   "azogues": 0.144872,
   "azov": 0.074408,
-  "babati": 0.637402,
+  "babati": 0.638701,
   "babolsar": 0.042794,
   "babruysk": 0.009291,
   "bacabal": 0.254311,
   "bacolod": 0.109886,
   "bacu": 0.105446,
-  "badajoz": 0.000482,
+  "badajoz": 0.000686,
   "baden": 0.0001,
   "baden-baden": 8e-06,
   "bafang": 0.334661,
@@ -347,12 +343,12 @@
   "bage": 0.202718,
   "baghdad": 0.04747,
   "bago": 0.22067,
-  "bahawalpur": 0.278413,
+  "bahawalpur": 0.288171,
   "bahia-blanca": 0.024527,
-  "bahir-dar": 0.691531,
+  "bahir-dar": 0.691952,
   "baia-mare": 0.110279,
   "baie-comeau": 0.012188,
-  "baikonur": 0.014402,
+  "baikonur": 0.038635,
   "bainbridge-ga": 0.013824,
   "baise": 0.183741,
   "baka-topola": 0.048892,
@@ -367,12 +363,12 @@
   "balkanabat": 0.005588,
   "balkesir": 0.026459,
   "ballarat": 0.000101,
-  "ballsh": 0.022772,
+  "ballsh": 0.023756,
   "ballymena": 0.003853,
   "balti": 0.166801,
   "bamako": 0.199672,
   "bamberg": 0.0,
-  "bamenda": 0.456238,
+  "bamenda": 0.456364,
   "banbury": 0.000885,
   "banda-aceh": 0.195378,
   "bandar-abbas": 0.05166,
@@ -386,7 +382,7 @@
   "bandung": 0.145174,
   "bangalore": 0.303664,
   "bangangte": 0.421411,
-  "bangkok": 0.007065,
+  "bangkok": 0.006836,
   "bangor": 0.013999,
   "bangor-wal": 0.000995,
   "bangui": 0.394056,
@@ -395,7 +391,7 @@
   "banjul": 0.240291,
   "banovii": 0.024952,
   "banska-bystrica": 0.000277,
-  "baoding": 0.150456,
+  "baoding": 0.143555,
   "baoji": 0.145999,
   "baotou": 0.13345,
   "bar": 0.017356,
@@ -406,10 +402,10 @@
   "bareilly": 0.328153,
   "bari": 0.003183,
   "bariloche": 0.031652,
-  "barinas": 0.157366,
+  "barinas": 0.154537,
   "barisal": 0.194305,
   "barkam": 0.163768,
-  "barletta": 0.00321,
+  "barletta": 0.003167,
   "barnaul": 0.106117,
   "barnsley": 0.000917,
   "barnstaple": 0.000991,
@@ -455,7 +451,7 @@
   "beer-sheva": 0.031748,
   "beeville-tx": 0.016064,
   "beihai": 0.158966,
-  "beijing": 0.115878,
+  "beijing": 0.103127,
   "beira": 0.534114,
   "beirut": 0.015138,
   "beja": 0.046026,
@@ -474,12 +470,12 @@
   "bellinzona": 0.002575,
   "belluno": 0.00325,
   "belmopan": 0.181365,
-  "belo-horizonte": 0.225693,
+  "belo-horizonte": 0.219748,
   "belogorsk": 0.143923,
   "beloit": 0.009502,
   "belorechensk": 0.107205,
   "beloretsk": 0.124757,
-  "belovo": 0.095229,
+  "belovo": 0.095137,
   "beltinci": 0.001042,
   "bemidji": 0.016769,
   "ben-guerdane": 0.035993,
@@ -491,7 +487,7 @@
   "benghazi": 0.017849,
   "benguela": 0.265344,
   "beni-suef": 0.020007,
-  "benidorm": 0.000122,
+  "benidorm": 0.000144,
   "benin-city": 0.340711,
   "bennettsville-sc": 0.015963,
   "bennington-vt": 0.0128,
@@ -536,7 +532,7 @@
   "bijelo-polje": 0.03837,
   "bijie": 0.18952,
   "bilaspur": 0.312721,
-  "bilbao": 0.000216,
+  "bilbao": 0.000217,
   "bilbeis": 0.024811,
   "billings": 0.011563,
   "billund": 0.0,
@@ -565,7 +561,7 @@
   "blacksburg": 0.014948,
   "blagoevgrad": 0.006074,
   "blagoveshchensk": 0.101092,
-  "blanes": 0.000157,
+  "blanes": 0.000281,
   "blantyre": 0.256825,
   "bloemfontein": 0.090622,
   "blois": 0.0,
@@ -578,14 +574,15 @@
   "bo": 0.509341,
   "boa-vista": 0.256479,
   "bobo-dioulasso": 0.482239,
-  "bocholt": 1.9e-05,
+  "bocholt": 2e-05,
   "bodo": 0.0,
   "bognor-regis": 0.000949,
-  "bogota": 0.065221,
+  "bogota": 0.045087,
   "bogra": 0.213873,
   "bohicon": 0.403227,
   "boise": 0.011293,
   "bokhtar": 0.143962,
+  "bollnas": 1.4e-05,
   "bolnisi": 0.103726,
   "bologna": 0.003217,
   "bolu": 0.036165,
@@ -619,7 +616,7 @@
   "braintree": 0.000979,
   "brandon": 0.013,
   "branson": 0.012099,
-  "brantford": 0.01261,
+  "brantford": 0.012883,
   "braov": 0.112775,
   "brasilia": 0.163379,
   "bratislava": 0.000495,
@@ -654,7 +651,7 @@
   "brownwood": 0.017055,
   "bruges": 2e-05,
   "brunswick": 0.015738,
-  "brusque": 0.152281,
+  "brusque": 0.168729,
   "brussels": 1.5e-05,
   "bryansk": 0.112245,
   "brzesko": 0.017397,
@@ -676,7 +673,7 @@
   "bukoba": 0.624927,
   "bulawayo": 0.363289,
   "bulle": 0.0001,
-  "bunia": 0.645372,
+  "bunia": 0.646573,
   "buon-ma-thut": 0.152685,
   "buraidah": 3.6e-05,
   "burgas": 0.03478,
@@ -689,7 +686,7 @@
   "burton": 0.000916,
   "bury-st-edmunds": 0.001005,
   "busan-ulsan": 0.029242,
-  "bushehr": 0.041299,
+  "bushehr": 0.037184,
   "butembo": 0.622105,
   "butte-silver-bow-mt": 0.016098,
   "buxton": 0.000898,
@@ -700,10 +697,10 @@
   "bytow": 0.018709,
   "cabinda": 0.616837,
   "cabo-frio": 0.096171,
-  "caceres": 0.000293,
+  "caceres": 0.000546,
   "cachoeiro-de-itapemirim": 0.196575,
   "cadillac": 0.014028,
-  "cadiz": 0.000177,
+  "cadiz": 0.000183,
   "caen": 0.0,
   "caernarfon": 0.000995,
   "cagayan": 0.110782,
@@ -712,7 +709,7 @@
   "cairo": 0.021156,
   "cajamarca": 0.313063,
   "calabar": 0.364345,
-  "calahorra": 0.000145,
+  "calahorra": 0.00015,
   "calais": 1e-06,
   "calama": 0.005119,
   "calcutta": 0.308946,
@@ -730,6 +727,7 @@
   "campina-grande": 0.22654,
   "campinas": 0.105625,
   "campo-grande": 0.250302,
+  "campo-mourao": 0.171871,
   "campobasso": 0.003283,
   "campos-dos-goytacazes": 0.145012,
   "campulung": 0.079839,
@@ -746,7 +744,7 @@
   "cape-town": 0.052196,
   "caracal": 0.112764,
   "caracarai": 0.243615,
-  "caracas": 0.104603,
+  "caracas": 0.104602,
   "carbondale": 0.014079,
   "carbonia": 0.00325,
   "carcassonne": 0.0,
@@ -758,13 +756,13 @@
   "carmarthen": 0.000995,
   "carroll-ia": 0.013281,
   "cartagena": 0.068857,
-  "cartagena-es": 0.000102,
+  "cartagena-es": 0.00014,
   "caruaru": 0.188921,
   "casablanca": 0.083148,
   "cascavel": 0.200551,
   "casper": 0.015381,
   "castanhal": 0.169575,
-  "castellon": 0.000256,
+  "castellon": 0.000258,
   "castelo-branco": 0.001678,
   "castlebar": 0.007852,
   "castres": 0.0,
@@ -776,7 +774,7 @@
   "catanzaro": 0.003089,
   "catu": 0.157786,
   "caxias": 0.190768,
-  "caxias-do-sul": 0.15048,
+  "caxias-do-sul": 0.137532,
   "cayenne": 0.0,
   "cazin": 0.015982,
   "ceadir-lunga": 0.144817,
@@ -813,7 +811,7 @@
   "charlotte": 0.012895,
   "charlotte-amalie": 0.025624,
   "charlottesville": 0.012586,
-  "charlottetown": 0.012629,
+  "charlottetown": 0.012644,
   "charolles": 0.0,
   "chateauroux": 0.0,
   "chatellerault": 0.0,
@@ -841,7 +839,7 @@
   "chestertown": 0.014625,
   "chetumal": 0.052173,
   "cheyenne": 0.006382,
-  "chiang-mai": 0.012867,
+  "chiang-mai": 0.009915,
   "chiasso": 0.002885,
   "chicago": 0.003812,
   "chichester": 0.000944,
@@ -887,7 +885,7 @@
   "ciudad-juarez": 0.014808,
   "ciudad-obregon": 0.066809,
   "ciudad-quesada": 0.032949,
-  "ciudad-real": 0.000106,
+  "ciudad-real": 0.0001,
   "ciudad-victoria": 0.038469,
   "clacton-on-sea": 0.000979,
   "clarksburg": 0.011611,
@@ -946,16 +944,16 @@
   "cordoba-mexico": 0.05604,
   "cordova": 0.000114,
   "corfu": 0.000538,
-  "coria": 0.000293,
+  "coria": 6.4e-05,
   "corinth": 0.000538,
   "cork": 0.008183,
   "corner-brook-nf": 0.012671,
-  "cornwall-on": 0.013484,
+  "cornwall-on": 0.013739,
   "corpus-christi": 0.011119,
   "corrientes": 0.013867,
   "corum": 0.042486,
   "corumba": 0.250393,
-  "corunna": 0.000131,
+  "corunna": 0.000128,
   "coruripe": 0.243594,
   "cosenza": 0.003089,
   "coshocton-oh": 0.012943,
@@ -1022,7 +1020,7 @@
   "dashoguz": 0.002083,
   "datong": 0.142661,
   "daugavpils": 0.077872,
-  "davao": 0.10379,
+  "davao": 0.103792,
   "davenport": 0.010948,
   "david-city": 0.189871,
   "davos": 7.1e-05,
@@ -1046,7 +1044,7 @@
   "den-bosch": 2.6e-05,
   "den-helder": 1.3e-05,
   "dendermonde": 1.5e-05,
-  "denia": 0.000122,
+  "denia": 0.000144,
   "denison": 0.012583,
   "denizli": 0.032893,
   "denpasar": 0.177072,
@@ -1081,7 +1079,7 @@
   "djibouti": 0.595164,
   "djougou": 0.515872,
   "dnipro": 0.009943,
-  "doboj": 0.024952,
+  "doboj": 0.024957,
   "dobrich": 0.071457,
   "doctor-jlm": 0.106527,
   "dodge-city-ks": 0.01447,
@@ -1089,7 +1087,7 @@
   "doetinchem": 2e-05,
   "doha": 1e-06,
   "dolisie": 0.557868,
-  "don-benito": 0.000482,
+  "don-benito": 4.7e-05,
   "doncaster": 0.000917,
   "donetsk": 0.009885,
   "donghae": 0.050802,
@@ -1147,7 +1145,7 @@
   "east-stroudsburg": 0.006946,
   "eastbourne": 0.000961,
   "eau-claire": 0.013306,
-  "edea": 0.540485,
+  "edea": 0.522005,
   "edfu": 0.027397,
   "edinburgh": 0.000993,
   "edmonton": 0.013,
@@ -1165,7 +1163,7 @@
   "el-bayadh": 0.044704,
   "el-centro": 0.038044,
   "el-dorado-ar": 0.016574,
-  "el-ejido": 0.000139,
+  "el-ejido": 0.00014,
   "el-jadida": 0.150375,
   "el-mahalla-el-kubra": 0.024811,
   "el-manaqil": 0.461675,
@@ -1175,8 +1173,8 @@
   "elaz": 0.042662,
   "elbasan": 0.022074,
   "elblg": 0.057006,
-  "elche": 0.000122,
-  "elda": 0.000122,
+  "elche": 0.0001,
+  "elda": 8.4e-05,
   "eldoret": 0.481451,
   "elgin": 0.00107,
   "elista": 0.160211,
@@ -1220,7 +1218,7 @@
   "eufaula-al-ga": 0.016665,
   "eugene": 0.006673,
   "eunapolis": 0.195271,
-  "eupen": 3.5e-05,
+  "eupen": 3.6e-05,
   "eureka": 0.012161,
   "evanston-wy": 0.016441,
   "evansville": 0.009959,
@@ -1251,11 +1249,11 @@
   "ferizaj": 0.0289,
   "fermo": 0.003159,
   "ferrara": 0.003244,
-  "ferrol": 0.000131,
+  "ferrol": 0.000128,
   "fez": 0.106041,
   "fier": 0.024121,
   "figueira-da-foz": 0.00181,
-  "figueres": 0.000157,
+  "figueres": 3.6e-05,
   "fitzgerald-ga": 0.015179,
   "fjallabygg": 0.0,
   "flagstaff": 0.017207,
@@ -1266,7 +1264,7 @@
   "florence-sc": 0.01616,
   "florencia": 0.169885,
   "flores": 0.192945,
-  "florianopolis": 0.147208,
+  "florianopolis": 0.147381,
   "focani": 0.1105,
   "foggia": 0.00328,
   "folkestone": 0.000961,
@@ -1289,12 +1287,13 @@
   "foz-do-iguacu": 0.162477,
   "franca": 0.257035,
   "franceville": 0.341816,
+  "francisco-beltrao": 0.209333,
   "francistown": 0.326151,
   "frankfurt": 0.0,
   "frankfurt-oder": 0.005749,
   "frdek-mistek": 0.009243,
   "fredericia": 0.0,
-  "fredericton": 0.013367,
+  "fredericton": 0.013366,
   "fredrikstad": 0.0,
   "freeport-bah": 0.027732,
   "freetown": 0.380434,
@@ -1344,7 +1343,7 @@
   "gelendzhik": 0.099138,
   "gemena": 0.666655,
   "general-roca": 0.026173,
-  "general-santos": 0.107967,
+  "general-santos": 0.103787,
   "geneva": 2.7e-05,
   "geneva-fr": 2.7e-05,
   "genk": 1.5e-05,
@@ -1357,7 +1356,7 @@
   "georgiyevsk": 0.131963,
   "gera": 1e-06,
   "gibraltar": 0.00014,
-  "gijon": 0.000183,
+  "gijon": 0.000217,
   "gilboa": 0.019127,
   "gillette": 0.01721,
   "gimcheon": 0.002588,
@@ -1390,10 +1389,10 @@
   "gorgan": 0.050259,
   "gori": 0.092051,
   "gorizia": 0.003432,
-  "gorlitz": 0.003021,
+  "gorlitz": 0.002442,
   "gorno-altaysk": 0.15619,
   "gorzow-wielkopolski": 0.017144,
-  "gostivar": 0.038029,
+  "gostivar": 0.038053,
   "gota": 0.044877,
   "gothenburg": 1.5e-05,
   "gottingen": 0.0,
@@ -1419,7 +1418,7 @@
   "greenville-nc": 0.013573,
   "greenville-spartanburg": 0.013321,
   "greenwood": 0.017156,
-  "greifswald": 0.000994,
+  "greifswald": 0.000895,
   "grenada-ms": 0.017154,
   "grenoble": 1e-06,
   "gretna": 0.001065,
@@ -1432,7 +1431,7 @@
   "grozny": 0.145725,
   "grudzidz": 0.019984,
   "guadalajara": 0.031912,
-  "guadalajara-es": 0.00031,
+  "guadalajara-es": 0.000321,
   "guanajuato": 0.040813,
   "guanare": 0.176594,
   "guangzhou": 0.103716,
@@ -1446,14 +1445,14 @@
   "guaymas": 0.080322,
   "gubkin": 0.090379,
   "gudermes": 0.14872,
-  "guelph": 0.013006,
+  "guelph": 0.013003,
   "guigang": 0.173078,
   "guilin": 0.179058,
   "guingamp": 0.0,
   "guiyang": 0.156822,
   "gujranwala": 0.245314,
   "gukovo": 0.085199,
-  "gulu": 0.497615,
+  "gulu": 0.488528,
   "gummersbach": 3e-06,
   "gunnison": 0.01721,
   "gurdaspur": 0.261785,
@@ -1479,7 +1478,7 @@
   "haikou": 0.161436,
   "hail": 3.6e-05,
   "hailey-id": 0.017163,
-  "haiphong": 0.149363,
+  "haiphong": 0.149364,
   "hakha": 0.313881,
   "hakodate": 0.005119,
   "halden": 1e-05,
@@ -1495,7 +1494,7 @@
   "hamhung": 0.050802,
   "hamilton": 0.013,
   "hamilton-nz": 0.0,
-  "handan": 0.148339,
+  "handan": 0.150279,
   "hangzhou": 0.130779,
   "hannover-brunswick": 0.0,
   "hanoi": 0.134442,
@@ -1546,7 +1545,7 @@
   "hillah": 0.070678,
   "hillsdale": 0.008281,
   "hilton-head": 0.012503,
-  "hinceti": 0.105374,
+  "hinceti": 0.119447,
   "hiroshima": 0.005168,
   "hjrring": 0.0,
   "hnefoss": 0.0,
@@ -1583,7 +1582,7 @@
   "hrazdan": 0.044459,
   "hsinchu": 0.0,
   "hu": 0.121029,
-  "huaian": 0.156443,
+  "huaian": 0.156749,
   "huaibei": 0.177548,
   "huainan": 0.182507,
   "huambo": 0.401181,
@@ -1594,8 +1593,8 @@
   "hubli-dharwar": 0.32575,
   "huelva": 0.000291,
   "huesca": 7.7e-05,
-  "huiyang": 0.1279,
-  "huizhou": 0.1279,
+  "huiyang": 0.120395,
+  "huizhou": 0.130303,
   "hull": 0.000939,
   "hultsfred": 1.4e-05,
   "huludao": 0.151249,
@@ -1715,7 +1714,7 @@
   "jaragua-do-sul": 0.113713,
   "jasper": 0.013354,
   "jatai": 0.258454,
-  "jau": 0.081329,
+  "jau": 0.191287,
   "jayapura": 0.23685,
   "jeddah": 3.5e-05,
   "jefferson-city": 0.014473,
@@ -1727,7 +1726,7 @@
   "jeonju": 0.002575,
   "jepara": 0.192463,
   "jequie": 0.132107,
-  "jerez": 0.000177,
+  "jerez": 0.000184,
   "jerusalem": 0.023379,
   "jessore": 0.219422,
   "jezkazgan": 0.027931,
@@ -1741,9 +1740,9 @@
   "jijiga": 0.683486,
   "jilin": 0.135209,
   "jimma": 0.689567,
-  "jinan": 0.172858,
+  "jinan": 0.13832,
   "jingdezhen": 0.171053,
-  "jingzhou": 0.168853,
+  "jingzhou": 0.153174,
   "jinhua": 0.166092,
   "jining": 0.175781,
   "jinja": 0.471393,
@@ -1781,7 +1780,7 @@
   "kagoshima": 0.005139,
   "kahama": 0.626006,
   "kahramanmara": 0.035413,
-  "kaifeng": 0.163087,
+  "kaifeng": 0.167395,
   "kairouan": 0.045045,
   "kaiserslautern": 1.7e-05,
   "kakamega": 0.481311,
@@ -1859,7 +1858,7 @@
   "keene": 0.009103,
   "kelowna": 0.013278,
   "kelty": 0.000993,
-  "kemerovo": 0.106103,
+  "kemerovo": 0.104485,
   "kempten": 5e-06,
   "kenai-ak": 0.016776,
   "kenema": 0.492818,
@@ -1910,7 +1909,7 @@
   "kineshma": 0.115154,
   "kings-lynn": 0.001,
   "kingston": 0.032759,
-  "kingston-on": 0.013073,
+  "kingston-on": 0.013028,
   "kingstown-stv": 0.030505,
   "kinshasa": 0.396151,
   "kirishi": 0.134935,
@@ -2036,7 +2035,7 @@
   "kuressaare": 0.005562,
   "kurgan": 0.118747,
   "kursk": 0.091391,
-  "kurume": 0.005243,
+  "kurume": 0.005251,
   "kurunegala": 0.040796,
   "kushiro": 0.005119,
   "kutahya": 0.02517,
@@ -2091,7 +2090,7 @@
   "lancaster-pa": 0.009699,
   "lanchkhuti": 0.097523,
   "langkawi": 0.05038,
-  "langreo": 0.000183,
+  "langreo": 0.000163,
   "lankaran": 0.070101,
   "lansing": 0.010212,
   "lanzhou": 0.129124,
@@ -2136,7 +2135,7 @@
   "lemvig": 0.0,
   "lendava": 0.001042,
   "leninogorsk": 0.122251,
-  "leninsk-kuznetsky": 0.096024,
+  "leninsk-kuznetsky": 0.095137,
   "lens": 1.5e-05,
   "leoben": 0.000959,
   "leogane": 0.25303,
@@ -2147,7 +2146,7 @@
   "leskovac": 0.032225,
   "lesosibirsk": 0.15992,
   "leszno": 0.023252,
-  "lethbridge": 0.013017,
+  "lethbridge": 0.013015,
   "leticia": 0.158494,
   "letterkenny": 0.003656,
   "lewiston": 0.014384,
@@ -2163,6 +2162,7 @@
   "liberec": 0.004605,
   "liberia": 0.021523,
   "libreville": 0.199564,
+  "lidkoping": 1.4e-05,
   "liege": 2.9e-05,
   "liepaja": 0.06713,
   "lijiang": 0.183165,
@@ -2177,7 +2177,7 @@
   "limerick-city": 0.007997,
   "limoges": 0.0,
   "limon": 0.019249,
-  "linares": 8.4e-05,
+  "linares": 7.9e-05,
   "linares-chile": 0.005067,
   "lincoln": 0.00099,
   "lindi": 0.628078,
@@ -2210,13 +2210,13 @@
   "lome": 0.349944,
   "london": 0.000896,
   "london-ky": 0.01679,
-  "london-on": 0.010078,
+  "london-on": 0.012189,
   "londrina": 0.169464,
   "longford": 0.00775,
   "longview": 0.014542,
   "longyan": 0.161796,
   "longyearbyen": 0.0,
-  "lorca": 0.000102,
+  "lorca": 0.000105,
   "lorient": 0.0,
   "lorman": 0.01721,
   "los-angeles": 0.00394,
@@ -2232,7 +2232,7 @@
   "loznica": 0.03837,
   "luan": 0.177528,
   "luanda": 0.20308,
-  "luang-prabang": 0.123708,
+  "luang-prabang": 0.317446,
   "lubango": 0.234829,
   "lubbock": 0.009279,
   "lubin": 0.019456,
@@ -2241,7 +2241,7 @@
   "lucani": 0.039825,
   "lucas-do-rio-verde": 0.258457,
   "lucca": 0.003188,
-  "lucena": 0.000114,
+  "lucena": 0.000135,
   "lucerne": 0.0001,
   "lucknow": 0.336283,
   "ludenscheid": 3e-06,
@@ -2249,10 +2249,10 @@
   "ludington-mi": 0.015207,
   "lufkin": 0.014361,
   "lugano": 0.002575,
-  "lugo": 0.00026,
+  "lugo": 0.000317,
   "luhansk": 0.009424,
   "lulea": 1.4e-05,
-  "luohe": 0.173243,
+  "luohe": 0.173244,
   "luoyang": 0.165653,
   "lupeni": 0.112041,
   "lurgan": 0.002178,
@@ -2375,7 +2375,7 @@
   "martin-tn": 0.016377,
   "martinsville": 0.014531,
   "martuni": 0.044459,
-  "mary": 0.005925,
+  "mary": 0.005999,
   "maryville-mo": 0.01432,
   "masally": 0.070101,
   "maseru": 0.29036,
@@ -2403,9 +2403,9 @@
   "mazatlan": 0.035883,
   "mazyr": 0.018818,
   "mbabane": 0.22957,
-  "mbale": 0.491857,
-  "mbandaka": 0.439111,
-  "mbeya": 0.591808,
+  "mbale": 0.491958,
+  "mbandaka": 0.439176,
+  "mbeya": 0.590528,
   "mbombela": 0.164221,
   "mbouda": 0.438638,
   "mbour": 0.316419,
@@ -2423,7 +2423,7 @@
   "media": 0.122392,
   "medicine-hat": 0.013,
   "medina": 3.6e-05,
-  "meizhou": 0.161243,
+  "meizhou": 0.161244,
   "mekelle": 0.691647,
   "meknes": 0.169329,
   "melbourne": 0.000152,
@@ -2437,10 +2437,10 @@
   "memphis": 0.015468,
   "mendoza": 0.022001,
   "menorca": 0.00014,
-  "meppen": 2e-06,
+  "meppen": 0.0,
   "merced": 0.0108,
   "merida": 0.043094,
-  "merida-spain": 0.000482,
+  "merida-spain": 0.000607,
   "meridian": 0.014056,
   "merowe": 0.461675,
   "mersa-matruh": 0.024629,
@@ -2464,7 +2464,7 @@
   "midland-odessa": 0.00963,
   "mielec": 0.017397,
   "miercurea-ciuc": 0.112764,
-  "mieres": 0.000183,
+  "mieres": 0.000163,
   "migori": 0.487588,
   "mikhaylovka": 0.111484,
   "mikhaylovsk": 0.137967,
@@ -2482,7 +2482,7 @@
   "minna": 0.496434,
   "minneapolis": 0.008238,
   "minot": 0.017061,
-  "minsk": 0.010518,
+  "minsk": 0.0094,
   "minusinsk": 0.101682,
   "minya": 0.023799,
   "mioveni": 0.079839,
@@ -2510,7 +2510,7 @@
   "mombasa": 0.387103,
   "monaco": 1.1e-05,
   "monclovafrontera": 0.05025,
-  "moncton": 0.012986,
+  "moncton": 0.012984,
   "monroe": 0.016699,
   "monrovia": 0.351782,
   "mons": 1.5e-05,
@@ -2556,7 +2556,7 @@
   "mostar": 0.028538,
   "mosul": 0.052558,
   "motala": 1.4e-05,
-  "motril": 0.000124,
+  "motril": 0.00014,
   "moultrie": 0.016094,
   "mount-hagen": 0.767741,
   "mount-isa": 2e-06,
@@ -2574,7 +2574,7 @@
   "mumbai": 0.184902,
   "munich": 8e-06,
   "munster": 3e-06,
-  "murcia": 0.000102,
+  "murcia": 8.7e-05,
   "muriae": 0.236331,
   "murmansk": 0.124659,
   "murom": 0.102888,
@@ -2583,7 +2583,7 @@
   "murtal": 0.001089,
   "muscat": 0.000284,
   "mutare": 0.428842,
-  "mwanza": 0.636353,
+  "mwanza": 0.62132,
   "mwene-ditu": 0.545589,
   "myjava": 0.000712,
   "mykolaiv": 0.010263,
@@ -2618,7 +2618,7 @@
   "nakhon-ratchasima": 0.009994,
   "nakuru": 0.484938,
   "nalchik": 0.113506,
-  "namangan": 0.00853,
+  "namangan": 0.010954,
   "nampula": 0.528791,
   "namur": 2.6e-05,
   "nanaimo": 0.01261,
@@ -2648,7 +2648,7 @@
   "navoi": 0.0,
   "navoiy": 0.0,
   "navojoa": 0.06629,
-  "naypyidaw": 0.282187,
+  "naypyidaw": 0.282493,
   "nazareth": 0.015471,
   "nazran": 0.145725,
   "ndjamena": 0.435344,
@@ -2660,7 +2660,7 @@
   "neryungri": 0.1566,
   "nestos": 0.001558,
   "netanya": 0.015138,
-  "neubrandenburg": 1.8e-05,
+  "neubrandenburg": 0.0,
   "neuchatel": 7.5e-05,
   "neunkirchen": 0.00023,
   "neuquen": 0.022949,
@@ -2712,7 +2712,7 @@
   "norfolk": 0.006746,
   "norfolk-island": 0.0,
   "norfolk-ne": 0.013852,
-  "norfolk-on": 0.011667,
+  "norfolk-on": 0.009319,
   "norilsk": 0.159926,
   "norrkoping": 1.4e-05,
   "north-bay": 0.013,
@@ -2740,7 +2740,7 @@
   "novocheboksarsk": 0.100036,
   "novocherkassk": 0.06785,
   "novokuybyshevsk": 0.116716,
-  "novokuznetsk": 0.105993,
+  "novokuznetsk": 0.104504,
   "novomoskovsk": 0.098727,
   "novorossiysk": 0.100428,
   "novoshakhtinsk": 0.070779,
@@ -2753,7 +2753,7 @@
   "nstved": 0.0,
   "nueva-cajamarca": 0.25143,
   "nuevo-laredo": 0.01995,
-  "nukus": 0.000138,
+  "nukus": 0.000191,
   "numazu": 0.005209,
   "nuremberg": 0.0,
   "nusantara": 0.189773,
@@ -2809,15 +2809,15 @@
   "orebro": 1.5e-05,
   "orenburg": 0.097586,
   "orhei": 0.153402,
-  "orihuela": 0.000122,
+  "orihuela": 0.000111,
   "orizaba": 0.059185,
   "orlando": 0.008122,
   "orleans": 0.0,
   "orsk": 0.088563,
-  "oruro": 0.283481,
+  "oruro": 0.283495,
   "oryol": 0.08829,
   "osaka-kyoto-kobe": 0.005168,
-  "osh": 0.028606,
+  "osh": 0.028584,
   "oshogbo": 0.28096,
   "osijek": 0.008178,
   "oskarshamn": 1.4e-05,
@@ -2839,9 +2839,9 @@
   "oudenaarde": 1.5e-05,
   "oujda": 0.047947,
   "oulu": 0.000337,
-  "ourense": 0.000589,
+  "ourense": 0.000317,
   "ourinhos": 0.215068,
-  "oviedo": 0.000183,
+  "oviedo": 0.000165,
   "owen-sound": 0.013031,
   "owensboro": 0.012431,
   "owerri": 0.383533,
@@ -2860,7 +2860,7 @@
   "pakruojis": 0.076509,
   "paks": 0.000168,
   "pakse": 0.320334,
-  "palamos": 0.000157,
+  "palamos": 0.000248,
   "palanga": 0.038674,
   "palangka-raya": 0.228056,
   "palembang": 0.149551,
@@ -2878,7 +2878,7 @@
   "panaji": 0.174907,
   "panama-city": 0.131257,
   "panama-city-fl": 0.011997,
-  "paneveys": 0.063962,
+  "paneveys": 0.061237,
   "panjakent": 0.017724,
   "panjin": 0.139562,
   "papa": 0.000153,
@@ -2902,12 +2902,13 @@
   "parnu": 0.004684,
   "parsons-ks": 0.013758,
   "passau": 3.4e-05,
-  "passo-fundo": 0.228445,
+  "passo-fundo": 0.20441,
   "passos": 0.249531,
   "pasto": 0.140576,
   "pasvalys": 0.076515,
   "pathein": 0.280162,
   "patna": 0.324683,
+  "pato-branco": 0.209338,
   "patos-alb": 0.023938,
   "patos-de-minas": 0.225789,
   "patos-prb": 0.218902,
@@ -2915,7 +2916,7 @@
   "pattani": 0.013407,
   "pau": 0.0,
   "paulo-afonso": 0.258457,
-  "pavlodar": 0.041156,
+  "pavlodar": 0.04728,
   "pavlohrad": 0.013623,
   "pavlovo": 0.116442,
   "paysandu": 0.018532,
@@ -2986,10 +2987,10 @@
   "pittsburgh": 0.011478,
   "pittsfield": 0.0071,
   "piura": 0.314808,
-  "plasencia": 0.000293,
+  "plasencia": 6.5e-05,
   "platteville-wi": 0.01162,
   "plattsburgh": 0.013756,
-  "plauen": 1.6e-05,
+  "plauen": 0.000118,
   "plav": 0.038308,
   "playa-del-carmen": 0.043911,
   "pleiku": 0.16854,
@@ -3007,7 +3008,7 @@
   "poega": 0.023077,
   "pogradec": 0.016188,
   "pohang": 0.050232,
-  "pointe-noire": 0.6638,
+  "pointe-noire": 0.616837,
   "poipet": 0.279049,
   "poitiers": 0.0,
   "pokhara": 0.301551,
@@ -3018,7 +3019,7 @@
   "poltava": 0.024655,
   "ponca-city": 0.011588,
   "ponce": 0.025624,
-  "ponferrada": 0.000152,
+  "ponferrada": 0.000317,
   "ponta-grossa": 0.161735,
   "pontevedra": 0.000266,
   "pontianak": 0.155618,
@@ -3029,14 +3030,14 @@
   "pordenone": 0.00325,
   "pori": 5e-06,
   "porlamar": 0.030505,
-  "porrentruy": 1.3e-05,
+  "porrentruy": 1.4e-05,
   "port-angeles": 0.008396,
   "port-au-prince": 0.25303,
   "port-elizabeth": 0.039355,
   "port-gentil": 0.20204,
   "port-harcourt": 0.383533,
-  "port-hedland": 8.5e-05,
-  "port-moresby": 0.572023,
+  "port-hedland": 8.7e-05,
+  "port-moresby": 0.571839,
   "port-of-spain": 0.030505,
   "port-said": 0.024875,
   "port-st-lucie": 0.00307,
@@ -3085,7 +3086,7 @@
   "pristina": 0.001364,
   "prizren": 0.014736,
   "prokhladny": 0.113506,
-  "prokopyevsk": 0.109516,
+  "prokopyevsk": 0.114684,
   "prostjov": 0.000743,
   "providence": 0.006886,
   "providenciales": 0.027732,
@@ -3104,7 +3105,7 @@
   "puerto-montt": 0.004139,
   "puerto-princesa": 0.108374,
   "puerto-vallarta": 0.050602,
-  "puertollano": 0.000106,
+  "puertollano": 0.000133,
   "pula": 0.007183,
   "pullman-moscow": 0.01689,
   "pune": 0.272002,
@@ -3139,7 +3140,7 @@
   "quincy": 0.011127,
   "quito": 0.059993,
   "qujing": 0.186458,
-  "qusar": 0.127819,
+  "qusar": 0.119707,
   "quy-nhon": 0.141252,
   "rabat": 0.0836,
   "radom": 0.019269,
@@ -3147,7 +3148,7 @@
   "rafaela": 0.021792,
   "rafsanjan": 0.046145,
   "ragusa": 0.002935,
-  "rahim-yar-khan": 0.278345,
+  "rahim-yar-khan": 0.265051,
   "raipur": 0.281346,
   "rajkot": 0.293192,
   "rajshahi": 0.212489,
@@ -3178,7 +3179,7 @@
   "reggio-calabria": 0.003089,
   "reggio-emilia": 0.003284,
   "regina": 0.013,
-  "rehoboth-nam": 0.498185,
+  "rehoboth-nam": 0.536782,
   "reia": 0.066507,
   "reims": 0.0,
   "renfrew": 0.013,
@@ -3196,7 +3197,7 @@
   "rhodes": 0.000777,
   "rhyl": 0.000995,
   "riachao-do-jacuipe": 0.151277,
-  "ribeirao-preto": 0.232064,
+  "ribeirao-preto": 0.21307,
   "ribnia": 0.053287,
   "richards-bay": 0.170259,
   "richmond": 0.012041,
@@ -3210,7 +3211,7 @@
   "ringkbing-skjern": 0.0,
   "ringsted": 0.0,
   "rio-branco": 0.176503,
-  "rio-claro": 0.138197,
+  "rio-claro": 0.126329,
   "rio-cuarto": 0.022971,
   "rio-das-ostras": 0.096171,
   "rio-de-janeiro": 0.097196,
@@ -3372,7 +3373,7 @@
   "sandviken": 1.4e-05,
   "sangju": 0.002604,
   "sangmelima": 0.567884,
-  "sanlucar": 0.000177,
+  "sanlucar": 0.000192,
   "sanmenxia": 0.173557,
   "santa-ana-el-sal": 0.077728,
   "santa-barbara": 0.003224,
@@ -3388,11 +3389,11 @@
   "santa-marta": 0.100105,
   "santa-per": 0.148297,
   "santa-rosa-arg": 0.021725,
-  "santander": 0.000215,
+  "santander": 0.000217,
   "santarem": 0.128313,
   "santarem-por": 0.002426,
   "santiago": 0.001429,
-  "santiago-de-compostela": 0.000131,
+  "santiago-de-compostela": 0.000145,
   "santiago-de-cuba": 0.048871,
   "santiago-de-los-caballeros": 0.25303,
   "santiago-del-estero": 0.02283,
@@ -3402,7 +3403,7 @@
   "santorini": 0.000777,
   "santos": 0.116814,
   "sanya": 0.161436,
-  "sao-carlos": 0.081329,
+  "sao-carlos": 0.165235,
   "sao-felix-do-xingu": 0.244297,
   "sao-joao-del-rei": 0.23153,
   "sao-jose-do-rio-preto": 0.239626,
@@ -3415,7 +3416,7 @@
   "sape": 0.228384,
   "sapporo": 0.005119,
   "saquarema": 0.096171,
-  "sarajevo": 0.025081,
+  "sarajevo": 0.02503,
   "saransk": 0.119013,
   "sarapul": 0.146714,
   "sarasota": 0.004881,
@@ -3492,7 +3493,7 @@
   "sheboygan": 0.009614,
   "sheffield": 0.000916,
   "shendi": 0.461675,
-  "shenyang": 0.116924,
+  "shenyang": 0.11725,
   "sherbrooke": 0.013153,
   "sheridan-wy": 0.01721,
   "shijiazhuang": 0.145493,
@@ -3513,7 +3514,7 @@
   "shuya": 0.094548,
   "shymkent": 0.018953,
   "sialkot": 0.27001,
-  "siauliai": 0.083636,
+  "siauliai": 0.077925,
   "sibay": 0.103353,
   "sibiu": 0.112764,
   "sidi-bel-abbes": 0.039015,
@@ -3574,6 +3575,7 @@
   "sobral": 0.236277,
   "sochi": 0.098792,
   "socorro": 0.014191,
+  "soderhamn": 1.3e-05,
   "sofia": 0.004765,
   "sogndal": 0.0,
   "sohag": 0.024915,
@@ -3612,7 +3614,7 @@
   "st-johns-ant": 0.025624,
   "st-louis": 0.008209,
   "st-marys-pa": 0.013544,
-  "st-moritz": 0.000242,
+  "st-moritz": 0.000241,
   "st-peter-port": 0.0,
   "st-petersburg": 0.07587,
   "st-polten": 0.000103,
@@ -3683,7 +3685,7 @@
   "suva": 0.058526,
   "suva-reka": 0.014714,
   "suwaki": 0.036878,
-  "suzhou": 0.171342,
+  "suzhou": 0.178233,
   "svendborg": 0.0,
   "sverdlovsk": 0.062289,
   "swansea": 0.000995,
@@ -3708,7 +3710,7 @@
   "tabuk": 0.000682,
   "tacna": 0.224455,
   "tacuarembo": 0.024112,
-  "tafalla": 0.000192,
+  "tafalla": 0.000226,
   "taganrog": 0.052208,
   "tagbilaran": 0.110784,
   "tahlequah": 0.011718,
@@ -3723,7 +3725,7 @@
   "taizhou": 0.149559,
   "taizz": 0.300065,
   "takamatsu": 0.005173,
-  "talavera-de-la-reina": 0.000153,
+  "talavera-de-la-reina": 0.000151,
   "talca": 0.004847,
   "taldykorgan": 0.034864,
   "talinn": 0.004034,
@@ -3754,7 +3756,7 @@
   "targu-jiu": 0.112041,
   "targu-mure": 0.101394,
   "tari": 0.767741,
-  "tarija": 0.283481,
+  "tarija": 0.300236,
   "tarinkot": 0.510916,
   "tarma": 0.317535,
   "tarnobrzeg": 0.017496,
@@ -3791,19 +3793,19 @@
   "teramo": 0.003159,
   "teresina": 0.154067,
   "teresopolis": 0.170559,
-  "termez": 0.04982,
+  "termez": 0.036632,
   "ternate": 0.182224,
   "terni": 0.003176,
   "ternopil": 0.014016,
   "terre-haute": 0.009976,
-  "teruel": 0.00013,
+  "teruel": 0.000258,
   "tessaoua": 0.510258,
   "tete": 0.580957,
   "tetouan": 0.172633,
   "tetovo": 0.038053,
   "texarkana": 0.014852,
   "teziutlan": 0.067485,
-  "thanh-hoa": 0.163291,
+  "thanh-hoa": 0.17242,
   "the-bottom": 0.025624,
   "the-dalles-or": 0.00743,
   "the-valley": 0.025624,
@@ -3855,13 +3857,13 @@
   "tokyo": 0.005218,
   "tolanaro": 0.744931,
   "toledo": 0.010421,
-  "toledo-es": 0.000153,
+  "toledo-es": 0.000155,
   "toledo-par": 0.149269,
   "toliara": 0.699483,
   "tolyatti": 0.100054,
   "tomar": 0.002427,
   "tombos": 0.236455,
-  "tomelloso": 0.000106,
+  "tomelloso": 0.000103,
   "tomsk": 0.104485,
   "tongeren": 2.1e-05,
   "tongliao": 0.178194,
@@ -3869,7 +3871,7 @@
   "topeka": 0.007146,
   "toronto": 0.013045,
   "torquay": 0.000991,
-  "torrelavega": 0.000215,
+  "torrelavega": 0.000217,
   "torreon": 0.059104,
   "torres-novas": 0.002426,
   "torrington": 0.00622,
@@ -3900,8 +3902,9 @@
   "tripoli-gre": 0.000538,
   "tripoli-leb": 0.015138,
   "trnava": 0.00058,
-  "trois-rivieres": 0.012683,
+  "trois-rivieres": 0.012706,
   "troitsk": 0.131687,
+  "trollhattan": 1.4e-05,
   "tromso": 0.0,
   "trondheim": 0.0,
   "troy": 0.016684,
@@ -3909,7 +3912,7 @@
   "trujillo": 0.317548,
   "truro": 0.000991,
   "truro-ns": 0.01297,
-  "tshikapa": 0.619964,
+  "tshikapa": 0.604733,
   "tskhinvali": 0.092051,
   "tsqaltubo": 0.119303,
   "tuapse": 0.098815,
@@ -3917,7 +3920,7 @@
   "tucson": 0.014028,
   "tucuman": 0.017481,
   "tucurui": 0.19163,
-  "tudela": 0.000192,
+  "tudela": 3.4e-05,
   "tula": 0.09387,
   "tula-de-allende": 0.0712,
   "tulancingo": 0.072273,
@@ -3953,7 +3956,7 @@
   "uchaly": 0.08561,
   "udaipur": 0.301895,
   "udine": 0.003211,
-  "udon-thani": 0.027035,
+  "udon-thani": 0.009817,
   "udupi": 0.29843,
   "ufa": 0.087064,
   "uherske-hradit": 0.000735,
@@ -3961,7 +3964,7 @@
   "uige": 0.64087,
   "ukhta": 0.15577,
   "ukiah": 0.008929,
-  "ulan-bator": 0.125648,
+  "ulan-bator": 0.117656,
   "ulan-ude": 0.108234,
   "ulanhad": 0.163507,
   "ulcinj": 0.017231,
@@ -3986,7 +3989,7 @@
   "ushuaia": 0.031959,
   "usolye-sibirskoye": 0.099151,
   "ussuriysk": 0.169896,
-  "ust-ilimsk": 0.153222,
+  "ust-ilimsk": 0.160126,
   "usti-nad-labem": 0.000204,
   "utena": 0.059125,
   "uthai-thani": 0.009936,
@@ -4021,14 +4024,16 @@
   "van": 0.035028,
   "vanadzor": 0.103726,
   "vancouver": 0.012749,
+  "vanersborg": 1.4e-05,
   "vannes": 0.0,
   "varanasi": 0.329963,
   "varazdin": 0.00523,
   "varberg": 1.5e-05,
   "varginha": 0.215367,
+  "varkaus": 5e-06,
   "varna": 0.038525,
   "varnamo": 1.4e-05,
-  "varzea-grande": 0.258457,
+  "varzea-grande": 0.149168,
   "vaslui": 0.117499,
   "vasteras": 1.5e-05,
   "vastervik": 1.4e-05,
@@ -4069,23 +4074,23 @@
   "vidalia-ga": 0.016944,
   "vidin": 0.070788,
   "vienna": 0.000122,
-  "vientiane": 0.163461,
-  "vigo": 0.000266,
+  "vientiane": 0.16346,
+  "vigo": 0.000277,
   "vijayawada": 0.304207,
   "vila-real": 0.002083,
-  "vilagarcia-de-arousa": 0.000266,
+  "vilagarcia-de-arousa": 0.000268,
   "vilankulo": 0.656766,
   "vilhena": 0.176095,
   "viljandi": 0.00603,
   "villahermosa": 0.069331,
   "villarrica": 0.103516,
   "villavicencio": 0.128933,
-  "villena": 0.000122,
+  "villena": 8.4e-05,
   "villingen-schwenningen": 4e-06,
-  "vilnius": 0.050701,
+  "vilnius": 0.052857,
   "vincennes-in": 0.010606,
   "vineyard-haven": 0.006886,
-  "vinh": 0.15781,
+  "vinh": 0.15808,
   "vinkovci": 0.028253,
   "vinnytsia": 0.011273,
   "virton": 2.6e-05,
@@ -4178,9 +4183,9 @@
   "wilmington": 0.013044,
   "wiltz": 0.00023,
   "winchester": 0.000949,
-  "windhoek": 0.406889,
-  "windsor": 0.009582,
-  "winkler-mb": 0.013001,
+  "windhoek": 0.369244,
+  "windsor": 0.007558,
+  "winkler-mb": 0.013005,
   "winnemucca-nv": 0.016902,
   "winnipeg": 0.013,
   "winona": 0.012469,
@@ -4232,8 +4237,8 @@
   "yamoussoukro": 0.373543,
   "yanbu": 3.5e-05,
   "yancheng": 0.169104,
-  "yangon": 0.218536,
-  "yangzhou": 0.161161,
+  "yangon": 0.218365,
+  "yangzhou": 0.14666,
   "yanji": 0.148108,
   "yankton-sd": 0.012966,
   "yantai": 0.168315,
@@ -4242,7 +4247,7 @@
   "yaroslavl": 0.117628,
   "yauco": 0.025624,
   "yazd": 0.053679,
-  "yecla": 0.000102,
+  "yecla": 8.4e-05,
   "yekaterinburg": 0.096837,
   "yelabuga": 0.129786,
   "yelets": 0.126023,
@@ -4269,14 +4274,14 @@
   "yulin": 0.173162,
   "yuma": 0.039702,
   "yuncheng": 0.181968,
-  "yurga": 0.104356,
+  "yurga": 0.104485,
   "yuxi": 0.165957,
   "yuzhno-sakhalinsk": 0.12036,
   "yverdon-les-bains": 0.0001,
   "zacatecasguadalupe": 0.057585,
   "zacatepec": 0.053509,
   "zadar": 0.007183,
-  "zafra": 0.000482,
+  "zafra": 0.000665,
   "zagazig": 0.024811,
   "zagreb": 0.005845,
   "zahedan": 0.081334,
@@ -4295,7 +4300,7 @@
   "zaragoza": 0.000174,
   "zarate": 0.013817,
   "zarechny": 0.084522,
-  "zaria": 0.372887,
+  "zaria": 0.371712,
   "zarqa": 0.018785,
   "zarzis": 0.027804,
   "zawiercie": 0.018751,
@@ -4307,7 +4312,7 @@
   "zestafoni": 0.119303,
   "zhanaozen": 0.038635,
   "zhangjiajie": 0.189537,
-  "zhangzhou": 0.160287,
+  "zhangzhou": 0.152486,
   "zhanjiang": 0.157773,
   "zheleznogorsk": 0.091391,
   "zhengzhou": 0.142367,
@@ -4848,8 +4853,8 @@
    "regionShare": null
   },
   "alagoinhas": {
-   "unimprovedWater": 0.10578,
-   "unimprovedSanitation": 0.411133,
+   "unimprovedWater": 0.05934,
+   "unimprovedSanitation": 0.256233,
    "region": "Brazil / Bahia",
    "regionShare": 1.0
   },
@@ -4872,10 +4877,10 @@
    "regionShare": 1.0
   },
   "albacete": {
-   "unimprovedWater": 0.000144,
+   "unimprovedWater": 0.000147,
    "unimprovedSanitation": 4.1e-05,
    "region": "Spain / Castilla-La Mancha",
-   "regionShare": 0.993
+   "regionShare": 1.0
   },
   "albany": {
    "unimprovedWater": 0.021585,
@@ -4938,10 +4943,10 @@
    "regionShare": 0.98
   },
   "alcoy": {
-   "unimprovedWater": 0.00019,
-   "unimprovedSanitation": 5.4e-05,
+   "unimprovedWater": 0.000218,
+   "unimprovedSanitation": 6.2e-05,
    "region": "Spain / Comunidad Valenciana",
-   "regionShare": 0.998
+   "regionShare": 1.0
   },
   "aldan": {
    "unimprovedWater": 0.07947,
@@ -5022,16 +5027,16 @@
    "regionShare": 0.887
   },
   "algiers": {
-   "unimprovedWater": 0.015197,
-   "unimprovedSanitation": 0.044727,
+   "unimprovedWater": 0.015195,
+   "unimprovedSanitation": 0.044722,
    "region": "Algeria / Alger",
-   "regionShare": 0.55
+   "regionShare": 0.548
   },
   "alicante": {
-   "unimprovedWater": 0.00019,
-   "unimprovedSanitation": 5.4e-05,
+   "unimprovedWater": 0.000224,
+   "unimprovedSanitation": 6.3e-05,
    "region": "Spain / Comunidad Valenciana",
-   "regionShare": 0.998
+   "regionShare": 1.0
   },
   "aligarh": {
    "unimprovedWater": 0.096415,
@@ -5064,14 +5069,14 @@
    "regionShare": 1.0
   },
   "almansa": {
-   "unimprovedWater": 0.000144,
-   "unimprovedSanitation": 4.1e-05,
+   "unimprovedWater": 0.000143,
+   "unimprovedSanitation": 4e-05,
    "region": "Spain / Castilla-La Mancha",
-   "regionShare": 0.993
+   "regionShare": 0.956
   },
   "almaty": {
-   "unimprovedWater": 0.027189,
-   "unimprovedSanitation": 0.002284,
+   "unimprovedWater": 0.028484,
+   "unimprovedSanitation": 0.002311,
    "region": "Kazakhstan / Almaty",
    "regionShare": 1.0
   },
@@ -5082,10 +5087,10 @@
    "regionShare": 1.0
   },
   "almendralejo": {
-   "unimprovedWater": 0.000515,
-   "unimprovedSanitation": 0.000448,
+   "unimprovedWater": 0.000497,
+   "unimprovedSanitation": 0.000435,
    "region": "Spain / Extremadura",
-   "regionShare": 0.998
+   "regionShare": 1.0
   },
   "almeria": {
    "unimprovedWater": 0.000217,
@@ -5148,10 +5153,10 @@
    "regionShare": 1.0
   },
   "alytus": {
-   "unimprovedWater": 0.029349,
-   "unimprovedSanitation": 0.047153,
+   "unimprovedWater": 0.026722,
+   "unimprovedSanitation": 0.042496,
    "region": "Lithuania / Alytaus",
-   "regionShare": 0.992
+   "regionShare": 1.0
   },
   "amarillo": {
    "unimprovedWater": 0.02076,
@@ -5238,8 +5243,8 @@
    "regionShare": 1.0
   },
   "anapolis": {
-   "unimprovedWater": 0.046249,
-   "unimprovedSanitation": 0.213762,
+   "unimprovedWater": 0.04702,
+   "unimprovedSanitation": 0.216316,
    "region": "Brazil / Goi\u00e1s",
    "regionShare": 1.0
   },
@@ -5268,10 +5273,10 @@
    "regionShare": 1.0
   },
   "andorra": {
-   "unimprovedWater": 0.000203,
-   "unimprovedSanitation": 5.7e-05,
+   "unimprovedWater": 0.000104,
+   "unimprovedSanitation": 2.9e-05,
    "region": "Spain / Arag\u00f3n",
-   "regionShare": 0.991
+   "regionShare": 1.0
   },
   "andorra-la-vella": {
    "unimprovedWater": 9.7e-05,
@@ -5647,9 +5652,9 @@
   },
   "arnsberg": {
    "unimprovedWater": 0.0,
-   "unimprovedSanitation": 4e-06,
+   "unimprovedSanitation": 5e-06,
    "region": "Germany / Nordrhein-Westfalen",
-   "regionShare": 0.983
+   "regionShare": 1.0
   },
   "arrecife": {
    "unimprovedWater": 0.000257,
@@ -5670,16 +5675,16 @@
    "regionShare": 1.0
   },
   "arua": {
-   "unimprovedWater": 0.296665,
-   "unimprovedSanitation": 0.720644,
+   "unimprovedWater": 0.285623,
+   "unimprovedSanitation": 0.721529,
    "region": "Uganda / Arua",
-   "regionShare": 0.901
+   "regionShare": 0.959
   },
   "arusha": {
-   "unimprovedWater": 0.487925,
-   "unimprovedSanitation": 0.786615,
+   "unimprovedWater": 0.488242,
+   "unimprovedSanitation": 0.787361,
    "region": "Tanzania / Arusha",
-   "regionShare": 0.969
+   "regionShare": 0.981
   },
   "arzamas": {
    "unimprovedWater": 0.057276,
@@ -5688,10 +5693,10 @@
    "regionShare": 1.0
   },
   "as-suwayda": {
-   "unimprovedWater": 0.012231,
-   "unimprovedSanitation": 0.035541,
-   "region": "Syria / Hamah",
-   "regionShare": 0.978
+   "unimprovedWater": 0.018211,
+   "unimprovedSanitation": 0.031378,
+   "region": "Syria / As Suwayda'",
+   "regionShare": 0.984
   },
   "asahikawa": {
    "unimprovedWater": 0.010237,
@@ -5784,10 +5789,10 @@
    "regionShare": 1.0
   },
   "asuncion": {
-   "unimprovedWater": 0.011591,
-   "unimprovedSanitation": 0.118577,
+   "unimprovedWater": 0.011581,
+   "unimprovedSanitation": 0.118405,
    "region": "Paraguay / Central",
-   "regionShare": 0.733
+   "regionShare": 0.761
   },
   "aswan": {
    "unimprovedWater": 0.016432,
@@ -5922,10 +5927,10 @@
    "regionShare": 0.988
   },
   "aviles": {
-   "unimprovedWater": 0.000284,
-   "unimprovedSanitation": 8e-05,
+   "unimprovedWater": 0.000322,
+   "unimprovedSanitation": 9.1e-05,
    "region": "Spain / Principado de Asturias",
-   "regionShare": 0.994
+   "regionShare": 1.0
   },
   "avranches": {
    "unimprovedWater": 0.0,
@@ -5940,10 +5945,10 @@
    "regionShare": 0.617
   },
   "awubere": {
-   "unimprovedWater": 0.45294,
-   "unimprovedSanitation": 0.914031,
+   "unimprovedWater": 0.439301,
+   "unimprovedSanitation": 0.939219,
    "region": "Ethiopia / Somali",
-   "regionShare": 0.944
+   "regionShare": 0.998
   },
   "ayacucho": {
    "unimprovedWater": 0.201493,
@@ -5988,10 +5993,10 @@
    "regionShare": 1.0
   },
   "babati": {
-   "unimprovedWater": 0.487662,
-   "unimprovedSanitation": 0.787142,
+   "unimprovedWater": 0.488779,
+   "unimprovedSanitation": 0.788623,
    "region": "Tanzania / Manyara",
-   "regionShare": 0.983
+   "regionShare": 1.0
   },
   "babolsar": {
    "unimprovedWater": 0.051857,
@@ -6024,8 +6029,8 @@
    "regionShare": 0.989
   },
   "badajoz": {
-   "unimprovedWater": 0.000515,
-   "unimprovedSanitation": 0.000448,
+   "unimprovedWater": 0.000726,
+   "unimprovedSanitation": 0.000646,
    "region": "Spain / Extremadura",
    "regionShare": 0.998
   },
@@ -6078,10 +6083,10 @@
    "regionShare": 0.997
   },
   "bahawalpur": {
-   "unimprovedWater": 0.098618,
-   "unimprovedSanitation": 0.458208,
+   "unimprovedWater": 0.098104,
+   "unimprovedSanitation": 0.478239,
    "region": "Pakistan / Punjab",
-   "regionShare": 0.998
+   "regionShare": 1.0
   },
   "bahia-blanca": {
    "unimprovedWater": 0.001335,
@@ -6090,8 +6095,8 @@
    "regionShare": 0.996
   },
   "bahir-dar": {
-   "unimprovedWater": 0.439201,
-   "unimprovedSanitation": 0.94386,
+   "unimprovedWater": 0.439605,
+   "unimprovedSanitation": 0.9443,
    "region": "Ethiopia / Amhara",
    "regionShare": 1.0
   },
@@ -6108,9 +6113,9 @@
    "regionShare": 0.61
   },
   "baikonur": {
-   "unimprovedWater": 0.026534,
-   "unimprovedSanitation": 0.00227,
-   "region": "Kazakhstan / Aqmola",
+   "unimprovedWater": 0.073995,
+   "unimprovedSanitation": 0.003275,
+   "region": "Kazakhstan / Qyzylorda",
    "regionShare": 1.0
   },
   "bainbridge-ga": {
@@ -6198,10 +6203,10 @@
    "regionShare": 1.0
   },
   "ballsh": {
-   "unimprovedWater": 0.04235,
-   "unimprovedSanitation": 0.003195,
-   "region": "Albania / Elbasan",
-   "regionShare": 0.977
+   "unimprovedWater": 0.04345,
+   "unimprovedSanitation": 0.004062,
+   "region": "Albania / Fier",
+   "regionShare": 0.894
   },
   "ballymena": {
    "unimprovedWater": 0.00363,
@@ -6228,8 +6233,8 @@
    "regionShare": 1.0
   },
   "bamenda": {
-   "unimprovedWater": 0.336983,
-   "unimprovedSanitation": 0.575494,
+   "unimprovedWater": 0.337038,
+   "unimprovedSanitation": 0.57569,
    "region": "Cameroon / Nord-Ouest",
    "regionShare": 1.0
   },
@@ -6312,10 +6317,10 @@
    "regionShare": 1.0
   },
   "bangkok": {
-   "unimprovedWater": 0.010024,
-   "unimprovedSanitation": 0.004104,
+   "unimprovedWater": 0.009705,
+   "unimprovedSanitation": 0.003967,
    "region": "Thailand / Bangkok Metropolis",
-   "regionShare": 0.533
+   "regionShare": 0.771
   },
   "bangor": {
    "unimprovedWater": 0.026991,
@@ -6366,10 +6371,10 @@
    "regionShare": 1.0
   },
   "baoding": {
-   "unimprovedWater": 0.030498,
-   "unimprovedSanitation": 0.270414,
+   "unimprovedWater": 0.030979,
+   "unimprovedSanitation": 0.256131,
    "region": "China / Hebei",
-   "regionShare": 0.996
+   "regionShare": 1.0
   },
   "baoji": {
    "unimprovedWater": 0.030809,
@@ -6432,10 +6437,10 @@
    "regionShare": 0.999
   },
   "barinas": {
-   "unimprovedWater": 0.103743,
-   "unimprovedSanitation": 0.21099,
+   "unimprovedWater": 0.10189,
+   "unimprovedSanitation": 0.207184,
    "region": "Venezuela / Barinas",
-   "regionShare": 0.975
+   "regionShare": 0.998
   },
   "barisal": {
    "unimprovedWater": 0.016785,
@@ -6451,9 +6456,9 @@
   },
   "barletta": {
    "unimprovedWater": 0.0,
-   "unimprovedSanitation": 0.00642,
+   "unimprovedSanitation": 0.006334,
    "region": "Italy / Apulia",
-   "regionShare": 0.756
+   "regionShare": 0.694
   },
   "barnaul": {
    "unimprovedWater": 0.050421,
@@ -6669,7 +6674,7 @@
    "unimprovedWater": 0.000338,
    "unimprovedSanitation": 9.6e-05,
    "region": "Spain / Pa\u00eds Vasco",
-   "regionShare": 0.933
+   "regionShare": 1.0
   },
   "beaumont": {
    "unimprovedWater": 0.020281,
@@ -6726,10 +6731,10 @@
    "regionShare": 0.996
   },
   "beijing": {
-   "unimprovedWater": 0.03291,
-   "unimprovedSanitation": 0.198846,
+   "unimprovedWater": 0.033799,
+   "unimprovedSanitation": 0.172455,
    "region": "China / Beijing",
-   "regionShare": 0.711
+   "regionShare": 0.972
   },
   "beira": {
    "unimprovedWater": 0.367485,
@@ -6840,8 +6845,8 @@
    "regionShare": 0.874
   },
   "belo-horizonte": {
-   "unimprovedWater": 0.090595,
-   "unimprovedSanitation": 0.360789,
+   "unimprovedWater": 0.08784,
+   "unimprovedSanitation": 0.351655,
    "region": "Brazil / Minas Gerais",
    "regionShare": 1.0
   },
@@ -6870,10 +6875,10 @@
    "regionShare": 1.0
   },
   "belovo": {
-   "unimprovedWater": 0.043923,
-   "unimprovedSanitation": 0.146535,
+   "unimprovedWater": 0.04387,
+   "unimprovedSanitation": 0.146404,
    "region": "Russia / Kemerovo",
-   "regionShare": 0.998
+   "regionShare": 1.0
   },
   "beltinci": {
    "unimprovedWater": 0.000898,
@@ -6942,10 +6947,10 @@
    "regionShare": 1.0
   },
   "benidorm": {
-   "unimprovedWater": 0.00019,
-   "unimprovedSanitation": 5.4e-05,
+   "unimprovedWater": 0.000224,
+   "unimprovedSanitation": 6.3e-05,
    "region": "Spain / Comunidad Valenciana",
-   "regionShare": 0.998
+   "regionShare": 1.0
   },
   "benin-city": {
    "unimprovedWater": 0.230955,
@@ -7212,10 +7217,10 @@
    "regionShare": 1.0
   },
   "bilbao": {
-   "unimprovedWater": 0.000337,
-   "unimprovedSanitation": 9.5e-05,
+   "unimprovedWater": 0.000338,
+   "unimprovedSanitation": 9.6e-05,
    "region": "Spain / Pa\u00eds Vasco",
-   "regionShare": 0.667
+   "regionShare": 0.968
   },
   "bilbeis": {
    "unimprovedWater": 0.013945,
@@ -7309,7 +7314,7 @@
   },
   "biskra": {
    "unimprovedWater": 0.020418,
-   "unimprovedSanitation": 0.05518,
+   "unimprovedSanitation": 0.055179,
    "region": "Algeria / Biskra",
    "regionShare": 1.0
   },
@@ -7386,10 +7391,10 @@
    "regionShare": 0.989
   },
   "blanes": {
-   "unimprovedWater": 0.000245,
-   "unimprovedSanitation": 6.9e-05,
+   "unimprovedWater": 0.000438,
+   "unimprovedSanitation": 0.000124,
    "region": "Spain / Catalu\u00f1a",
-   "regionShare": 0.998
+   "regionShare": 1.0
   },
   "blantyre": {
    "unimprovedWater": 0.14997,
@@ -7465,9 +7470,9 @@
   },
   "bocholt": {
    "unimprovedWater": 0.0,
-   "unimprovedSanitation": 3.8e-05,
+   "unimprovedSanitation": 4e-05,
    "region": "Germany / Nordrhein-Westfalen",
-   "regionShare": 0.938
+   "regionShare": 0.927
   },
   "bodo": {
    "unimprovedWater": 0.0,
@@ -7482,10 +7487,10 @@
    "regionShare": 1.0
   },
   "bogota": {
-   "unimprovedWater": 0.043882,
-   "unimprovedSanitation": 0.086561,
+   "unimprovedWater": 0.027972,
+   "unimprovedSanitation": 0.062203,
    "region": "Colombia / Cundinamarca",
-   "regionShare": 0.98
+   "regionShare": 0.994
   },
   "bogra": {
    "unimprovedWater": 0.026774,
@@ -7509,6 +7514,12 @@
    "unimprovedWater": 0.272269,
    "unimprovedSanitation": 0.015656,
    "region": "Tajikistan / Khatlon",
+   "regionShare": 1.0
+  },
+  "bollnas": {
+   "unimprovedWater": 0.0,
+   "unimprovedSanitation": 2.8e-05,
+   "region": "Sweden / G\u00e4vleborg",
    "regionShare": 1.0
   },
   "bolnisi": {
@@ -7710,8 +7721,8 @@
    "regionShare": 1.0
   },
   "brantford": {
-   "unimprovedWater": 0.01117,
-   "unimprovedSanitation": 0.01405,
+   "unimprovedWater": 0.011051,
+   "unimprovedSanitation": 0.014716,
    "region": "Canada / Ontario",
    "regionShare": 1.0
   },
@@ -7920,8 +7931,8 @@
    "regionShare": 0.99
   },
   "brusque": {
-   "unimprovedWater": 0.056573,
-   "unimprovedSanitation": 0.24799,
+   "unimprovedWater": 0.064196,
+   "unimprovedSanitation": 0.273263,
    "region": "Brazil / Santa Catarina",
    "regionShare": 1.0
   },
@@ -8052,10 +8063,10 @@
    "regionShare": 0.993
   },
   "bunia": {
-   "unimprovedWater": 0.611568,
-   "unimprovedSanitation": 0.679177,
+   "unimprovedWater": 0.61771,
+   "unimprovedSanitation": 0.675435,
    "region": "Democratic Republic of the Congo / Ituri",
-   "regionShare": 0.992
+   "regionShare": 0.996
   },
   "buon-ma-thut": {
    "unimprovedWater": 0.076031,
@@ -8130,10 +8141,10 @@
    "regionShare": 0.399
   },
   "bushehr": {
-   "unimprovedWater": 0.050099,
-   "unimprovedSanitation": 0.032499,
-   "region": "Iran / Kohgiluyeh and Buyer Ahmad",
-   "regionShare": 0.985
+   "unimprovedWater": 0.045251,
+   "unimprovedSanitation": 0.029116,
+   "region": "Iran / Bushehr",
+   "regionShare": 1.0
   },
   "butembo": {
    "unimprovedWater": 0.589852,
@@ -8196,10 +8207,10 @@
    "regionShare": 0.983
   },
   "caceres": {
-   "unimprovedWater": 0.000325,
-   "unimprovedSanitation": 0.000261,
+   "unimprovedWater": 0.000583,
+   "unimprovedSanitation": 0.000508,
    "region": "Spain / Extremadura",
-   "regionShare": 0.994
+   "regionShare": 1.0
   },
   "cachoeiro-de-itapemirim": {
    "unimprovedWater": 0.077449,
@@ -8214,10 +8225,10 @@
    "regionShare": 1.0
   },
   "cadiz": {
-   "unimprovedWater": 0.000276,
-   "unimprovedSanitation": 7.8e-05,
+   "unimprovedWater": 0.000285,
+   "unimprovedSanitation": 8.1e-05,
    "region": "Spain / Andaluc\u00eda",
-   "regionShare": 0.887
+   "regionShare": 0.698
   },
   "caen": {
    "unimprovedWater": 0.0,
@@ -8268,10 +8279,10 @@
    "regionShare": 0.83
   },
   "calahorra": {
-   "unimprovedWater": 0.000226,
-   "unimprovedSanitation": 6.4e-05,
+   "unimprovedWater": 0.000234,
+   "unimprovedSanitation": 6.6e-05,
    "region": "Spain / La Rioja",
-   "regionShare": 0.963
+   "regionShare": 0.993
   },
   "calais": {
    "unimprovedWater": 0.0,
@@ -8375,6 +8386,12 @@
    "region": "Brazil / Mato Grosso do Sul",
    "regionShare": 1.0
   },
+  "campo-mourao": {
+   "unimprovedWater": 0.065652,
+   "unimprovedSanitation": 0.278091,
+   "region": "Brazil / Paran\u00e1",
+   "regionShare": 1.0
+  },
   "campobasso": {
    "unimprovedWater": 0.0,
    "unimprovedSanitation": 0.006565,
@@ -8472,10 +8489,10 @@
    "regionShare": 1.0
   },
   "caracas": {
-   "unimprovedWater": 0.069228,
-   "unimprovedSanitation": 0.139978,
+   "unimprovedWater": 0.069227,
+   "unimprovedSanitation": 0.139976,
    "region": "Venezuela / Miranda",
-   "regionShare": 0.508
+   "regionShare": 0.589
   },
   "carbondale": {
    "unimprovedWater": 0.02719,
@@ -8487,7 +8504,7 @@
    "unimprovedWater": 0.0,
    "unimprovedSanitation": 0.006501,
    "region": "Italy / Sardegna",
-   "regionShare": 0.997
+   "regionShare": 1.0
   },
   "carcassonne": {
    "unimprovedWater": 0.0,
@@ -8544,10 +8561,10 @@
    "regionShare": 0.993
   },
   "cartagena-es": {
-   "unimprovedWater": 0.000159,
-   "unimprovedSanitation": 4.5e-05,
+   "unimprovedWater": 0.000219,
+   "unimprovedSanitation": 6.2e-05,
    "region": "Spain / Regi\u00f3n de Murcia",
-   "regionShare": 0.971
+   "regionShare": 0.92
   },
   "caruaru": {
    "unimprovedWater": 0.073558,
@@ -8580,10 +8597,10 @@
    "regionShare": 1.0
   },
   "castellon": {
-   "unimprovedWater": 0.000399,
-   "unimprovedSanitation": 0.000113,
+   "unimprovedWater": 0.000402,
+   "unimprovedSanitation": 0.000114,
    "region": "Spain / Comunidad Valenciana",
-   "regionShare": 0.993
+   "regionShare": 1.0
   },
   "castelo-branco": {
    "unimprovedWater": 0.00165,
@@ -8652,8 +8669,8 @@
    "regionShare": 0.995
   },
   "caxias-do-sul": {
-   "unimprovedWater": 0.055739,
-   "unimprovedSanitation": 0.245221,
+   "unimprovedWater": 0.049737,
+   "unimprovedSanitation": 0.225326,
    "region": "Brazil / Rio Grande do Sul",
    "regionShare": 1.0
   },
@@ -8739,7 +8756,7 @@
    "unimprovedWater": 0.02298,
    "unimprovedSanitation": 0.03803,
    "region": "Trinidad and Tobago / Couva-Tabaquite-Talparo",
-   "regionShare": 0.477
+   "regionShare": 0.499
   },
   "chalcis": {
    "unimprovedWater": 0.000773,
@@ -8874,10 +8891,10 @@
    "regionShare": 1.0
   },
   "charlottetown": {
-   "unimprovedWater": 0.010686,
-   "unimprovedSanitation": 0.014572,
+   "unimprovedWater": 0.010698,
+   "unimprovedSanitation": 0.014588,
    "region": "Canada / Prince Edward Island",
-   "regionShare": 1.0
+   "regionShare": 0.932
   },
   "charolles": {
    "unimprovedWater": 0.0,
@@ -9042,10 +9059,10 @@
    "regionShare": 1.0
   },
   "chiang-mai": {
-   "unimprovedWater": 0.016575,
-   "unimprovedSanitation": 0.009158,
+   "unimprovedWater": 0.013998,
+   "unimprovedSanitation": 0.005832,
    "region": "Thailand / Chiang Mai",
-   "regionShare": 0.977
+   "regionShare": 1.0
   },
   "chiasso": {
    "unimprovedWater": 0.0,
@@ -9171,7 +9188,7 @@
    "unimprovedWater": 0.022846,
    "unimprovedSanitation": 0.060034,
    "region": "Algeria / Chlef",
-   "regionShare": 0.999
+   "regionShare": 1.0
   },
   "chojnice": {
    "unimprovedWater": 0.030496,
@@ -9318,10 +9335,10 @@
    "regionShare": 0.999
   },
   "ciudad-real": {
-   "unimprovedWater": 0.000165,
-   "unimprovedSanitation": 4.7e-05,
+   "unimprovedWater": 0.000156,
+   "unimprovedSanitation": 4.4e-05,
    "region": "Spain / Castilla-La Mancha",
-   "regionShare": 0.999
+   "regionShare": 1.0
   },
   "ciudad-victoria": {
    "unimprovedWater": 0.021682,
@@ -9672,10 +9689,10 @@
    "regionShare": 0.772
   },
   "coria": {
-   "unimprovedWater": 0.000325,
-   "unimprovedSanitation": 0.000261,
+   "unimprovedWater": 0.0001,
+   "unimprovedSanitation": 2.8e-05,
    "region": "Spain / Extremadura",
-   "regionShare": 0.994
+   "regionShare": 1.0
   },
   "corinth": {
    "unimprovedWater": 0.000773,
@@ -9696,10 +9713,10 @@
    "regionShare": null
   },
   "cornwall-on": {
-   "unimprovedWater": 0.015411,
-   "unimprovedSanitation": 0.011556,
+   "unimprovedWater": 0.016706,
+   "unimprovedSanitation": 0.010772,
    "region": "Canada / Ontario",
-   "regionShare": 0.905
+   "regionShare": 0.882
   },
   "corpus-christi": {
    "unimprovedWater": 0.021469,
@@ -9726,10 +9743,10 @@
    "regionShare": 0.972
   },
   "corunna": {
-   "unimprovedWater": 0.000205,
-   "unimprovedSanitation": 5.8e-05,
+   "unimprovedWater": 0.0002,
+   "unimprovedSanitation": 5.7e-05,
    "region": "Spain / Galicia",
-   "regionShare": 0.982
+   "regionShare": 0.974
   },
   "coruripe": {
    "unimprovedWater": 0.098892,
@@ -10128,10 +10145,10 @@
    "regionShare": 0.996
   },
   "davao": {
-   "unimprovedWater": 0.098007,
-   "unimprovedSanitation": 0.109574,
+   "unimprovedWater": 0.098008,
+   "unimprovedSanitation": 0.109575,
    "region": "Philippines / Davao del Sur",
-   "regionShare": 0.921
+   "regionShare": 0.894
   },
   "davenport": {
    "unimprovedWater": 0.021138,
@@ -10272,10 +10289,10 @@
    "regionShare": 1.0
   },
   "denia": {
-   "unimprovedWater": 0.00019,
-   "unimprovedSanitation": 5.4e-05,
+   "unimprovedWater": 0.000224,
+   "unimprovedSanitation": 6.3e-05,
    "region": "Spain / Comunidad Valenciana",
-   "regionShare": 0.998
+   "regionShare": 1.0
   },
   "denison": {
    "unimprovedWater": 0.024299,
@@ -10482,9 +10499,9 @@
    "regionShare": 0.998
   },
   "doboj": {
-   "unimprovedWater": 0.001184,
-   "unimprovedSanitation": 0.04872,
-   "region": "Bosnia and Herzegovina / Federacija Bosna i Hercegovina",
+   "unimprovedWater": 0.001186,
+   "unimprovedSanitation": 0.048728,
+   "region": "Bosnia and Herzegovina / Repuplika Srpska",
    "regionShare": 0.779
   },
   "dobrich": {
@@ -10530,10 +10547,10 @@
    "regionShare": 1.0
   },
   "don-benito": {
-   "unimprovedWater": 0.000515,
-   "unimprovedSanitation": 0.000448,
+   "unimprovedWater": 7.3e-05,
+   "unimprovedSanitation": 2.1e-05,
    "region": "Spain / Extremadura",
-   "regionShare": 0.998
+   "regionShare": 1.0
   },
   "doncaster": {
    "unimprovedWater": 0.0,
@@ -10621,7 +10638,7 @@
   },
   "draguignan": {
    "unimprovedWater": 0.0,
-   "unimprovedSanitation": 2.2e-05,
+   "unimprovedSanitation": 2.3e-05,
    "region": "France / Provence-Alpes-C\u00f4te d'Azur",
    "regionShare": 1.0
   },
@@ -10878,10 +10895,10 @@
    "regionShare": 1.0
   },
   "edea": {
-   "unimprovedWater": 0.412978,
-   "unimprovedSanitation": 0.667992,
+   "unimprovedWater": 0.397786,
+   "unimprovedSanitation": 0.646223,
    "region": "Cameroon / Littoral",
-   "regionShare": 1.0
+   "regionShare": 0.971
   },
   "edfu": {
    "unimprovedWater": 0.015025,
@@ -10929,7 +10946,7 @@
    "unimprovedWater": 0.000338,
    "unimprovedSanitation": 9.6e-05,
    "region": "Spain / Pa\u00eds Vasco",
-   "regionShare": 0.933
+   "regionShare": 1.0
   },
   "eilat": {
    "unimprovedWater": 0.011032,
@@ -10986,10 +11003,10 @@
    "regionShare": 1.0
   },
   "el-ejido": {
-   "unimprovedWater": 0.000217,
-   "unimprovedSanitation": 6.1e-05,
+   "unimprovedWater": 0.000219,
+   "unimprovedSanitation": 6.2e-05,
    "region": "Spain / Andaluc\u00eda",
-   "regionShare": 0.994
+   "regionShare": 1.0
   },
   "el-jadida": {
    "unimprovedWater": 0.160911,
@@ -11001,7 +11018,7 @@
    "unimprovedWater": 0.013945,
    "unimprovedSanitation": 0.035678,
    "region": "Egypt / Al Gharbiyah",
-   "regionShare": 0.98
+   "regionShare": 1.0
   },
   "el-manaqil": {
    "unimprovedWater": 0.216048,
@@ -11046,16 +11063,16 @@
    "regionShare": 0.995
   },
   "elche": {
-   "unimprovedWater": 0.00019,
-   "unimprovedSanitation": 5.4e-05,
+   "unimprovedWater": 0.000156,
+   "unimprovedSanitation": 4.4e-05,
    "region": "Spain / Comunidad Valenciana",
-   "regionShare": 0.998
+   "regionShare": 1.0
   },
   "elda": {
-   "unimprovedWater": 0.00019,
-   "unimprovedSanitation": 5.4e-05,
+   "unimprovedWater": 0.000132,
+   "unimprovedSanitation": 3.7e-05,
    "region": "Spain / Comunidad Valenciana",
-   "regionShare": 0.998
+   "regionShare": 0.992
   },
   "eldoret": {
    "unimprovedWater": 0.384478,
@@ -11319,7 +11336,7 @@
    "unimprovedWater": 3.3e-05,
    "unimprovedSanitation": 3.8e-05,
    "region": "Belgium / Wallonie",
-   "regionShare": 0.949
+   "regionShare": 0.948
   },
   "eureka": {
    "unimprovedWater": 0.023483,
@@ -11475,7 +11492,7 @@
    "unimprovedWater": 0.017107,
    "unimprovedSanitation": 9e-06,
    "region": "Uzbekistan / Ferghana",
-   "regionShare": 0.974
+   "regionShare": 1.0
   },
   "fergus-falls": {
    "unimprovedWater": 0.02531,
@@ -11502,10 +11519,10 @@
    "regionShare": 0.975
   },
   "ferrol": {
-   "unimprovedWater": 0.000205,
-   "unimprovedSanitation": 5.8e-05,
+   "unimprovedWater": 0.0002,
+   "unimprovedSanitation": 5.7e-05,
    "region": "Spain / Galicia",
-   "regionShare": 0.982
+   "regionShare": 0.951
   },
   "fez": {
    "unimprovedWater": 0.114575,
@@ -11526,10 +11543,10 @@
    "regionShare": 0.972
   },
   "figueres": {
-   "unimprovedWater": 0.000245,
-   "unimprovedSanitation": 6.9e-05,
+   "unimprovedWater": 5.7e-05,
+   "unimprovedSanitation": 1.6e-05,
    "region": "Spain / Catalu\u00f1a",
-   "regionShare": 0.998
+   "regionShare": 0.995
   },
   "fitzgerald-ga": {
    "unimprovedWater": 0.029318,
@@ -11592,10 +11609,10 @@
    "regionShare": 1.0
   },
   "florianopolis": {
-   "unimprovedWater": 0.054657,
-   "unimprovedSanitation": 0.239759,
+   "unimprovedWater": 0.054742,
+   "unimprovedSanitation": 0.24002,
    "region": "Brazil / Santa Catarina",
-   "regionShare": 0.967
+   "regionShare": 0.972
   },
   "focani": {
    "unimprovedWater": 0.0,
@@ -11729,6 +11746,12 @@
    "region": "Gabon / Haut-Ogoou\u00e9",
    "regionShare": 1.0
   },
+  "francisco-beltrao": {
+   "unimprovedWater": 0.083018,
+   "unimprovedSanitation": 0.335649,
+   "region": "Brazil / Paran\u00e1",
+   "regionShare": 1.0
+  },
   "francistown": {
    "unimprovedWater": 0.202343,
    "unimprovedSanitation": 0.449958,
@@ -11760,10 +11783,10 @@
    "regionShare": 0.984
   },
   "fredericton": {
-   "unimprovedWater": 0.013215,
-   "unimprovedSanitation": 0.01352,
+   "unimprovedWater": 0.013207,
+   "unimprovedSanitation": 0.013525,
    "region": "Canada / New Brunswick",
-   "regionShare": 1.0
+   "regionShare": 0.996
   },
   "fredrikstad": {
    "unimprovedWater": 0.0,
@@ -11791,7 +11814,7 @@
   },
   "frejus": {
    "unimprovedWater": 0.0,
-   "unimprovedSanitation": 2.2e-05,
+   "unimprovedSanitation": 2.3e-05,
    "region": "France / Provence-Alpes-C\u00f4te d'Azur",
    "regionShare": 1.0
   },
@@ -11823,7 +11846,7 @@
    "unimprovedWater": 0.000257,
    "unimprovedSanitation": 0.000273,
    "region": "Spain / Islas Canarias",
-   "regionShare": 0.995
+   "regionShare": 0.972
   },
   "fuglafjrur": {
    "unimprovedWater": 0.0,
@@ -12060,10 +12083,10 @@
    "regionShare": 0.983
   },
   "general-santos": {
-   "unimprovedWater": 0.102566,
-   "unimprovedSanitation": 0.113369,
+   "unimprovedWater": 0.098003,
+   "unimprovedSanitation": 0.109571,
    "region": "Philippines / South Cotabato",
-   "regionShare": 0.958
+   "regionShare": 0.997
   },
   "geneva": {
    "unimprovedWater": 0.0,
@@ -12138,10 +12161,10 @@
    "regionShare": 1.0
   },
   "gijon": {
-   "unimprovedWater": 0.000284,
-   "unimprovedSanitation": 8e-05,
+   "unimprovedWater": 0.000338,
+   "unimprovedSanitation": 9.6e-05,
    "region": "Spain / Principado de Asturias",
-   "regionShare": 0.994
+   "regionShare": 1.0
   },
   "gilboa": {
    "unimprovedWater": 0.017278,
@@ -12336,10 +12359,10 @@
    "regionShare": 0.993
   },
   "gorlitz": {
-   "unimprovedWater": 0.00477,
-   "unimprovedSanitation": 0.001271,
+   "unimprovedWater": 0.00386,
+   "unimprovedSanitation": 0.001022,
    "region": "Germany / Sachsen",
-   "regionShare": 0.879
+   "regionShare": 0.902
   },
   "gorno-altaysk": {
    "unimprovedWater": 0.079472,
@@ -12354,10 +12377,10 @@
    "regionShare": 0.97
   },
   "gostivar": {
-   "unimprovedWater": 0.006871,
-   "unimprovedSanitation": 0.069187,
+   "unimprovedWater": 0.006863,
+   "unimprovedSanitation": 0.069242,
    "region": "Macedonia / Gostivar",
-   "regionShare": 0.777
+   "regionShare": 0.736
   },
   "gota": {
    "unimprovedWater": 0.0,
@@ -12375,7 +12398,7 @@
    "unimprovedWater": 0.0,
    "unimprovedSanitation": 0.0,
    "region": "Germany / Niedersachsen",
-   "regionShare": 0.95
+   "regionShare": 1.0
   },
   "governador-valadares": {
    "unimprovedWater": 0.095743,
@@ -12510,10 +12533,10 @@
    "regionShare": 1.0
   },
   "greifswald": {
-   "unimprovedWater": 0.001523,
-   "unimprovedSanitation": 0.000464,
+   "unimprovedWater": 0.001333,
+   "unimprovedSanitation": 0.000456,
    "region": "Germany / Mecklenburg-Vorpommern",
-   "regionShare": 0.983
+   "regionShare": 1.0
   },
   "grenada-ms": {
    "unimprovedWater": 0.033138,
@@ -12588,10 +12611,10 @@
    "regionShare": 1.0
   },
   "guadalajara-es": {
-   "unimprovedWater": 0.000484,
-   "unimprovedSanitation": 0.000137,
+   "unimprovedWater": 0.000501,
+   "unimprovedSanitation": 0.000142,
    "region": "Spain / Castilla-La Mancha",
-   "regionShare": 0.907
+   "regionShare": 0.971
   },
   "guanajuato": {
    "unimprovedWater": 0.023111,
@@ -12672,8 +12695,8 @@
    "regionShare": 1.0
   },
   "guelph": {
-   "unimprovedWater": 0.01103,
-   "unimprovedSanitation": 0.014981,
+   "unimprovedWater": 0.011016,
+   "unimprovedSanitation": 0.01499,
    "region": "Canada / Ontario",
    "regionShare": 1.0
   },
@@ -12714,16 +12737,16 @@
    "regionShare": 1.0
   },
   "gulu": {
-   "unimprovedWater": 0.265203,
-   "unimprovedSanitation": 0.730027,
+   "unimprovedWater": 0.260195,
+   "unimprovedSanitation": 0.716862,
    "region": "Uganda / Gulu",
-   "regionShare": 0.994
+   "regionShare": 1.0
   },
   "gummersbach": {
    "unimprovedWater": 0.0,
    "unimprovedSanitation": 5e-06,
    "region": "Germany / Nordrhein-Westfalen",
-   "regionShare": 0.993
+   "regionShare": 1.0
   },
   "gunnison": {
    "unimprovedWater": 0.033246,
@@ -12819,7 +12842,7 @@
    "unimprovedWater": 0.048104,
    "unimprovedSanitation": 0.242504,
    "region": "Vietnam / Qu\u1ea3ng Ninh",
-   "regionShare": 0.506
+   "regionShare": 1.0
   },
   "ha-tinh": {
    "unimprovedWater": 0.078274,
@@ -12831,7 +12854,7 @@
    "unimprovedWater": 0.010371,
    "unimprovedSanitation": 0.0,
    "region": "Japan / Aomori",
-   "regionShare": 1.0
+   "regionShare": 0.967
   },
   "haderslev": {
    "unimprovedWater": 0.0,
@@ -12870,8 +12893,8 @@
    "regionShare": 1.0
   },
   "haiphong": {
-   "unimprovedWater": 0.062194,
-   "unimprovedSanitation": 0.236532,
+   "unimprovedWater": 0.062199,
+   "unimprovedSanitation": 0.236529,
    "region": "Vietnam / H\u1ea3i D\u01b0\u01a1ng",
    "regionShare": 0.488
   },
@@ -12921,7 +12944,7 @@
    "unimprovedWater": 0.010417,
    "unimprovedSanitation": 0.0,
    "region": "Japan / Shizuoka",
-   "regionShare": 0.958
+   "regionShare": 0.961
   },
   "hamar": {
    "unimprovedWater": 0.0,
@@ -12966,10 +12989,10 @@
    "regionShare": 0.99
   },
   "handan": {
-   "unimprovedWater": 0.030645,
-   "unimprovedSanitation": 0.266034,
+   "unimprovedWater": 0.03051,
+   "unimprovedSanitation": 0.270047,
    "region": "China / Hebei",
-   "regionShare": 0.992
+   "regionShare": 0.988
   },
   "hangzhou": {
    "unimprovedWater": 0.031852,
@@ -13272,10 +13295,10 @@
    "regionShare": 0.932
   },
   "hinceti": {
-   "unimprovedWater": 0.065376,
-   "unimprovedSanitation": 0.145371,
+   "unimprovedWater": 0.101605,
+   "unimprovedSanitation": 0.137288,
    "region": "Moldova / H\u00eencesti",
-   "regionShare": 0.897
+   "regionShare": 1.0
   },
   "hiroshima": {
    "unimprovedWater": 0.010336,
@@ -13494,8 +13517,8 @@
    "regionShare": null
   },
   "huaian": {
-   "unimprovedWater": 0.030079,
-   "unimprovedSanitation": 0.282808,
+   "unimprovedWater": 0.030057,
+   "unimprovedSanitation": 0.28344,
    "region": "China / Jiangsu",
    "regionShare": 0.998
   },
@@ -13560,16 +13583,16 @@
    "regionShare": 0.991
   },
   "huiyang": {
-   "unimprovedWater": 0.031315,
-   "unimprovedSanitation": 0.224486,
+   "unimprovedWater": 0.031568,
+   "unimprovedSanitation": 0.209222,
    "region": "China / Guangdong",
-   "regionShare": 0.998
+   "regionShare": 1.0
   },
   "huizhou": {
-   "unimprovedWater": 0.031315,
-   "unimprovedSanitation": 0.224486,
+   "unimprovedWater": 0.031904,
+   "unimprovedSanitation": 0.228702,
    "region": "China / Guangdong",
-   "regionShare": 0.998
+   "regionShare": 1.0
   },
   "hull": {
    "unimprovedWater": 0.0,
@@ -13695,7 +13718,7 @@
    "unimprovedWater": 0.000219,
    "unimprovedSanitation": 6.2e-05,
    "region": "Spain / Islas Baleares",
-   "regionShare": 0.989
+   "regionShare": 0.972
   },
   "idaho-falls": {
    "unimprovedWater": 0.033182,
@@ -14286,8 +14309,8 @@
    "regionShare": 1.0
   },
   "jau": {
-   "unimprovedWater": 0.02369,
-   "unimprovedSanitation": 0.138968,
+   "unimprovedWater": 0.07465,
+   "unimprovedSanitation": 0.307924,
    "region": "Brazil / S\u00e3o Paulo",
    "regionShare": 1.0
   },
@@ -14358,10 +14381,10 @@
    "regionShare": 1.0
   },
   "jerez": {
-   "unimprovedWater": 0.000276,
-   "unimprovedSanitation": 7.8e-05,
+   "unimprovedWater": 0.000287,
+   "unimprovedSanitation": 8.1e-05,
    "region": "Spain / Andaluc\u00eda",
-   "regionShare": 0.887
+   "regionShare": 1.0
   },
   "jerusalem": {
    "unimprovedWater": 0.034837,
@@ -14409,7 +14432,7 @@
    "unimprovedWater": 0.0,
    "unimprovedSanitation": 0.0,
    "region": "Taiwan / Taiwan",
-   "regionShare": 0.99
+   "regionShare": 0.992
   },
   "jihlava": {
    "unimprovedWater": 0.001326,
@@ -14442,10 +14465,10 @@
    "regionShare": 0.995
   },
   "jinan": {
-   "unimprovedWater": 0.028935,
-   "unimprovedSanitation": 0.316781,
+   "unimprovedWater": 0.031344,
+   "unimprovedSanitation": 0.245295,
    "region": "China / Shandong",
-   "regionShare": 0.96
+   "regionShare": 1.0
   },
   "jingdezhen": {
    "unimprovedWater": 0.029061,
@@ -14454,10 +14477,10 @@
    "regionShare": 0.999
   },
   "jingzhou": {
-   "unimprovedWater": 0.029214,
-   "unimprovedSanitation": 0.308491,
+   "unimprovedWater": 0.030308,
+   "unimprovedSanitation": 0.276041,
    "region": "China / Hubei",
-   "regionShare": 0.985
+   "regionShare": 1.0
   },
   "jinhua": {
    "unimprovedWater": 0.029406,
@@ -14682,10 +14705,10 @@
    "regionShare": 0.981
   },
   "kaifeng": {
-   "unimprovedWater": 0.029617,
-   "unimprovedSanitation": 0.296557,
+   "unimprovedWater": 0.029316,
+   "unimprovedSanitation": 0.305475,
    "region": "China / Henan",
-   "regionShare": 0.998
+   "regionShare": 0.997
   },
   "kairouan": {
    "unimprovedWater": 0.035464,
@@ -15150,8 +15173,8 @@
    "regionShare": 0.964
   },
   "kemerovo": {
-   "unimprovedWater": 0.050189,
-   "unimprovedSanitation": 0.162018,
+   "unimprovedWater": 0.049257,
+   "unimprovedSanitation": 0.159714,
    "region": "Russia / Kemerovo",
    "regionShare": 1.0
   },
@@ -15456,16 +15479,16 @@
    "regionShare": 0.793
   },
   "kingston-on": {
-   "unimprovedWater": 0.011517,
-   "unimprovedSanitation": 0.014628,
+   "unimprovedWater": 0.011197,
+   "unimprovedSanitation": 0.014859,
    "region": "Canada / Ontario",
-   "regionShare": 0.999
+   "regionShare": 1.0
   },
   "kingstown-stv": {
    "unimprovedWater": 0.02298,
    "unimprovedSanitation": 0.03803,
    "region": "Saint Vincent and the Grenadines / Saint George",
-   "regionShare": 0.457
+   "regionShare": 0.694
   },
   "kinshasa": {
    "unimprovedWater": 0.267005,
@@ -16011,7 +16034,7 @@
    "unimprovedWater": 0.006863,
    "unimprovedSanitation": 0.069242,
    "region": "Macedonia / Kratovo",
-   "regionShare": 0.894
+   "regionShare": 1.0
   },
   "kremenchuk": {
    "unimprovedWater": 0.006124,
@@ -16212,10 +16235,10 @@
    "regionShare": 1.0
   },
   "kurume": {
-   "unimprovedWater": 0.010487,
+   "unimprovedWater": 0.010502,
    "unimprovedSanitation": 0.0,
-   "region": "Japan / Saga",
-   "regionShare": 0.5
+   "region": "Japan / Fukuoka",
+   "regionShare": 0.619
   },
   "kurunegala": {
    "unimprovedWater": 0.052057,
@@ -16542,10 +16565,10 @@
    "regionShare": 0.896
   },
   "langreo": {
-   "unimprovedWater": 0.000284,
-   "unimprovedSanitation": 8e-05,
+   "unimprovedWater": 0.000254,
+   "unimprovedSanitation": 7.2e-05,
    "region": "Spain / Principado de Asturias",
-   "regionShare": 0.994
+   "regionShare": 0.999
   },
   "lankaran": {
    "unimprovedWater": 0.085294,
@@ -16629,7 +16652,7 @@
    "unimprovedWater": 0.000257,
    "unimprovedSanitation": 0.000273,
    "region": "Spain / Islas Canarias",
-   "regionShare": 0.995
+   "regionShare": 0.997
   },
   "las-tablas": {
    "unimprovedWater": 0.093531,
@@ -16812,8 +16835,8 @@
    "regionShare": 1.0
   },
   "leninsk-kuznetsky": {
-   "unimprovedWater": 0.044381,
-   "unimprovedSanitation": 0.147668,
+   "unimprovedWater": 0.04387,
+   "unimprovedSanitation": 0.146404,
    "region": "Russia / Kemerovo",
    "regionShare": 1.0
   },
@@ -16878,8 +16901,8 @@
    "regionShare": 0.994
   },
   "lethbridge": {
-   "unimprovedWater": 0.011087,
-   "unimprovedSanitation": 0.014946,
+   "unimprovedWater": 0.011075,
+   "unimprovedSanitation": 0.014953,
    "region": "Canada / Alberta",
    "regionShare": 1.0
   },
@@ -16973,6 +16996,12 @@
    "region": "Gabon / Estuaire",
    "regionShare": 1.0
   },
+  "lidkoping": {
+   "unimprovedWater": 0.0,
+   "unimprovedSanitation": 2.8e-05,
+   "region": "Sweden / V\u00e4stra G\u00f6taland",
+   "regionShare": 1.0
+  },
   "liege": {
    "unimprovedWater": 2.2e-05,
    "unimprovedSanitation": 3.5e-05,
@@ -17058,10 +17087,10 @@
    "regionShare": 0.993
   },
   "linares": {
-   "unimprovedWater": 0.000132,
-   "unimprovedSanitation": 3.7e-05,
+   "unimprovedWater": 0.000124,
+   "unimprovedSanitation": 3.5e-05,
    "region": "Spain / Andaluc\u00eda",
-   "regionShare": 0.999
+   "regionShare": 1.0
   },
   "linares-chile": {
    "unimprovedWater": 0.0,
@@ -17204,8 +17233,8 @@
   "lloydminster": {
    "unimprovedWater": 0.011,
    "unimprovedSanitation": 0.015,
-   "region": "Canada / Alberta",
-   "regionShare": 1.0
+   "region": "Canada / Saskatchewan",
+   "regionShare": 0.561
   },
   "logan": {
    "unimprovedWater": 0.031086,
@@ -17256,8 +17285,8 @@
    "regionShare": 0.996
   },
   "london-on": {
-   "unimprovedWater": 0.011975,
-   "unimprovedSanitation": 0.008181,
+   "unimprovedWater": 0.011271,
+   "unimprovedSanitation": 0.013106,
    "region": "Canada / Ontario",
    "regionShare": 1.0
   },
@@ -17292,10 +17321,10 @@
    "regionShare": null
   },
   "lorca": {
-   "unimprovedWater": 0.000159,
-   "unimprovedSanitation": 4.5e-05,
+   "unimprovedWater": 0.000164,
+   "unimprovedSanitation": 4.6e-05,
    "region": "Spain / Regi\u00f3n de Murcia",
-   "regionShare": 0.971
+   "regionShare": 0.979
   },
   "lorient": {
    "unimprovedWater": 0.0,
@@ -17361,7 +17390,7 @@
    "unimprovedWater": 0.0,
    "unimprovedSanitation": 0.0,
    "region": "France / Occitanie",
-   "regionShare": 0.973
+   "regionShare": 1.0
   },
   "lovech": {
    "unimprovedWater": 0.00746,
@@ -17388,10 +17417,10 @@
    "regionShare": 0.974
   },
   "luang-prabang": {
-   "unimprovedWater": 0.102107,
-   "unimprovedSanitation": 0.145309,
-   "region": "Laos / Khammouan",
-   "regionShare": 0.786
+   "unimprovedWater": 0.249422,
+   "unimprovedSanitation": 0.385469,
+   "region": "Laos / Louangphrabang",
+   "regionShare": 1.0
   },
   "lubango": {
    "unimprovedWater": 0.255081,
@@ -17442,10 +17471,10 @@
    "regionShare": 1.0
   },
   "lucena": {
-   "unimprovedWater": 0.000178,
-   "unimprovedSanitation": 5e-05,
+   "unimprovedWater": 0.000211,
+   "unimprovedSanitation": 6e-05,
    "region": "Spain / Andaluc\u00eda",
-   "regionShare": 0.999
+   "regionShare": 1.0
   },
   "lucerne": {
    "unimprovedWater": 0.0,
@@ -17490,10 +17519,10 @@
    "regionShare": 0.98
   },
   "lugo": {
-   "unimprovedWater": 0.000318,
-   "unimprovedSanitation": 0.000203,
+   "unimprovedWater": 0.000371,
+   "unimprovedSanitation": 0.000263,
    "region": "Spain / Galicia",
-   "regionShare": 0.982
+   "regionShare": 1.0
   },
   "luhansk": {
    "unimprovedWater": 0.004096,
@@ -17509,7 +17538,7 @@
   },
   "luohe": {
    "unimprovedWater": 0.028908,
-   "unimprovedSanitation": 0.317577,
+   "unimprovedSanitation": 0.317579,
    "region": "China / Henan",
    "regionShare": 1.0
   },
@@ -17565,7 +17594,7 @@
    "unimprovedWater": 0.015025,
    "unimprovedSanitation": 0.039769,
    "region": "Egypt / Al Uqsur",
-   "regionShare": 0.935
+   "regionShare": 0.923
   },
   "luzhou": {
    "unimprovedWater": 0.028159,
@@ -18075,7 +18104,7 @@
    "unimprovedWater": 0.000219,
    "unimprovedSanitation": 6.2e-05,
    "region": "Spain / Andaluc\u00eda",
-   "regionShare": 0.922
+   "regionShare": 0.736
   },
   "marburg": {
    "unimprovedWater": 0.0,
@@ -18246,8 +18275,8 @@
    "regionShare": 1.0
   },
   "mary": {
-   "unimprovedWater": 0.008153,
-   "unimprovedSanitation": 0.003698,
+   "unimprovedWater": 0.008216,
+   "unimprovedSanitation": 0.003783,
    "region": "Turkmenistan / Mary",
    "regionShare": 1.0
   },
@@ -18414,20 +18443,20 @@
    "regionShare": 0.952
   },
   "mbale": {
-   "unimprovedWater": 0.272653,
-   "unimprovedSanitation": 0.711062,
+   "unimprovedWater": 0.2722,
+   "unimprovedSanitation": 0.711716,
    "region": "Uganda / Mbale",
-   "regionShare": 0.927
+   "regionShare": 0.865
   },
   "mbandaka": {
-   "unimprovedWater": 0.341216,
-   "unimprovedSanitation": 0.537007,
+   "unimprovedWater": 0.341304,
+   "unimprovedSanitation": 0.537048,
    "region": "Democratic Republic of the Congo / \u00c9quateur",
    "regionShare": 1.0
   },
   "mbeya": {
-   "unimprovedWater": 0.448297,
-   "unimprovedSanitation": 0.735319,
+   "unimprovedWater": 0.447505,
+   "unimprovedSanitation": 0.733552,
    "region": "Tanzania / Mbeya",
    "regionShare": 1.0
   },
@@ -18615,13 +18644,13 @@
    "unimprovedWater": 0.000219,
    "unimprovedSanitation": 6.2e-05,
    "region": "Spain / Islas Baleares",
-   "regionShare": 0.994
+   "regionShare": 1.0
   },
   "meppen": {
    "unimprovedWater": 0.0,
-   "unimprovedSanitation": 4e-06,
+   "unimprovedSanitation": 0.0,
    "region": "Germany / Niedersachsen",
-   "regionShare": 0.991
+   "regionShare": 1.0
   },
   "merced": {
    "unimprovedWater": 0.020851,
@@ -18636,10 +18665,10 @@
    "regionShare": 1.0
   },
   "merida-spain": {
-   "unimprovedWater": 0.000515,
-   "unimprovedSanitation": 0.000448,
+   "unimprovedWater": 0.000646,
+   "unimprovedSanitation": 0.000568,
    "region": "Spain / Extremadura",
-   "regionShare": 0.998
+   "regionShare": 1.0
   },
   "meridian": {
    "unimprovedWater": 0.027147,
@@ -18780,10 +18809,10 @@
    "regionShare": 1.0
   },
   "mieres": {
-   "unimprovedWater": 0.000284,
-   "unimprovedSanitation": 8e-05,
+   "unimprovedWater": 0.000254,
+   "unimprovedSanitation": 7.2e-05,
    "region": "Spain / Principado de Asturias",
-   "regionShare": 0.994
+   "regionShare": 0.998
   },
   "migori": {
    "unimprovedWater": 0.398104,
@@ -18888,8 +18917,8 @@
    "regionShare": 1.0
   },
   "minsk": {
-   "unimprovedWater": 0.005304,
-   "unimprovedSanitation": 0.015732,
+   "unimprovedWater": 0.004554,
+   "unimprovedSanitation": 0.014245,
    "region": "Belarus / Minsk",
    "regionShare": 1.0
   },
@@ -19056,10 +19085,10 @@
    "regionShare": 0.997
   },
   "moncton": {
-   "unimprovedWater": 0.010988,
-   "unimprovedSanitation": 0.014984,
+   "unimprovedWater": 0.010987,
+   "unimprovedSanitation": 0.014982,
    "region": "Canada / New Brunswick",
-   "regionShare": 1.0
+   "regionShare": 0.994
   },
   "monroe": {
    "unimprovedWater": 0.032257,
@@ -19316,8 +19345,8 @@
   "mostar": {
    "unimprovedWater": 0.000934,
    "unimprovedSanitation": 0.056142,
-   "region": "Bosnia and Herzegovina / Repuplika Srpska",
-   "regionShare": 0.968
+   "region": "Bosnia and Herzegovina / Federacija Bosna i Hercegovina",
+   "regionShare": 0.998
   },
   "mosul": {
    "unimprovedWater": 0.062134,
@@ -19332,10 +19361,10 @@
    "regionShare": 0.998
   },
   "motril": {
-   "unimprovedWater": 0.000193,
-   "unimprovedSanitation": 5.5e-05,
+   "unimprovedWater": 0.000219,
+   "unimprovedSanitation": 6.2e-05,
    "region": "Spain / Andaluc\u00eda",
-   "regionShare": 0.992
+   "regionShare": 0.928
   },
   "moultrie": {
    "unimprovedWater": 0.031088,
@@ -19440,10 +19469,10 @@
    "regionShare": 1.0
   },
   "murcia": {
-   "unimprovedWater": 0.000159,
-   "unimprovedSanitation": 4.5e-05,
+   "unimprovedWater": 0.000137,
+   "unimprovedSanitation": 3.9e-05,
    "region": "Spain / Regi\u00f3n de Murcia",
-   "regionShare": 0.971
+   "regionShare": 0.991
   },
   "muriae": {
    "unimprovedWater": 0.095526,
@@ -19494,10 +19523,10 @@
    "regionShare": 0.996
   },
   "mwanza": {
-   "unimprovedWater": 0.486761,
-   "unimprovedSanitation": 0.785946,
+   "unimprovedWater": 0.473839,
+   "unimprovedSanitation": 0.768802,
    "region": "Tanzania / Mwanza",
-   "regionShare": 0.964
+   "regionShare": 0.989
   },
   "mwene-ditu": {
    "unimprovedWater": 0.48591,
@@ -19704,10 +19733,10 @@
    "regionShare": 1.0
   },
   "namangan": {
-   "unimprovedWater": 0.017056,
-   "unimprovedSanitation": 3e-06,
+   "unimprovedWater": 0.021904,
+   "unimprovedSanitation": 5e-06,
    "region": "Uzbekistan / Namangan",
-   "regionShare": 0.999
+   "regionShare": 1.0
   },
   "nampula": {
    "unimprovedWater": 0.362265,
@@ -19884,10 +19913,10 @@
    "regionShare": 1.0
   },
   "naypyidaw": {
-   "unimprovedWater": 0.251195,
-   "unimprovedSanitation": 0.313179,
+   "unimprovedWater": 0.251479,
+   "unimprovedSanitation": 0.313509,
    "region": "Myanmar / Mandalay",
-   "regionShare": 0.927
+   "regionShare": 0.684
   },
   "nazareth": {
    "unimprovedWater": 0.012547,
@@ -19956,10 +19985,10 @@
    "regionShare": 0.752
   },
   "neubrandenburg": {
-   "unimprovedWater": 2.8e-05,
-   "unimprovedSanitation": 7e-06,
+   "unimprovedWater": 0.0,
+   "unimprovedSanitation": 0.0,
    "region": "Germany / Mecklenburg-Vorpommern",
-   "regionShare": 0.995
+   "regionShare": 1.0
   },
   "neuchatel": {
    "unimprovedWater": 0.0,
@@ -20268,8 +20297,8 @@
    "regionShare": 1.0
   },
   "norfolk-on": {
-   "unimprovedWater": 0.011593,
-   "unimprovedSanitation": 0.011741,
+   "unimprovedWater": 0.012605,
+   "unimprovedSanitation": 0.006032,
    "region": "Canada / Ontario",
    "regionShare": 1.0
   },
@@ -20436,8 +20465,8 @@
    "regionShare": 1.0
   },
   "novokuznetsk": {
-   "unimprovedWater": 0.050125,
-   "unimprovedSanitation": 0.161861,
+   "unimprovedWater": 0.049267,
+   "unimprovedSanitation": 0.159741,
    "region": "Russia / Kemerovo",
    "regionShare": 1.0
   },
@@ -20514,8 +20543,8 @@
    "regionShare": 0.858
   },
   "nukus": {
-   "unimprovedWater": 0.000197,
-   "unimprovedSanitation": 7.9e-05,
+   "unimprovedWater": 0.000273,
+   "unimprovedSanitation": 0.000109,
    "region": "Uzbekistan / Karakalpakstan",
    "regionShare": 1.0
   },
@@ -20637,7 +20666,7 @@
    "unimprovedWater": 0.0,
    "unimprovedSanitation": 1.5e-05,
    "region": "Germany / Baden-W\u00fcrttemberg",
-   "regionShare": 0.992
+   "regionShare": 0.989
   },
   "ogdensburg": {
    "unimprovedWater": 0.018661,
@@ -20850,10 +20879,10 @@
    "regionShare": 0.901
   },
   "orihuela": {
-   "unimprovedWater": 0.00019,
-   "unimprovedSanitation": 5.4e-05,
+   "unimprovedWater": 0.000173,
+   "unimprovedSanitation": 4.9e-05,
    "region": "Spain / Comunidad Valenciana",
-   "regionShare": 0.998
+   "regionShare": 0.993
   },
   "orizaba": {
    "unimprovedWater": 0.034319,
@@ -20880,10 +20909,10 @@
    "regionShare": 0.999
   },
   "oruro": {
-   "unimprovedWater": 0.125737,
-   "unimprovedSanitation": 0.441225,
+   "unimprovedWater": 0.125744,
+   "unimprovedSanitation": 0.441246,
    "region": "Bolivia / Oruro",
-   "regionShare": 0.999
+   "regionShare": 1.0
   },
   "oryol": {
    "unimprovedWater": 0.039924,
@@ -20898,10 +20927,10 @@
    "regionShare": 0.481
   },
   "osh": {
-   "unimprovedWater": 0.056852,
+   "unimprovedWater": 0.056809,
    "unimprovedSanitation": 0.00036,
    "region": "Kyrgyzstan / Osh",
-   "regionShare": 0.493
+   "regionShare": 0.487
   },
   "oshogbo": {
    "unimprovedWater": 0.177504,
@@ -21030,10 +21059,10 @@
    "regionShare": 1.0
   },
   "ourense": {
-   "unimprovedWater": 0.000575,
-   "unimprovedSanitation": 0.000604,
+   "unimprovedWater": 0.000371,
+   "unimprovedSanitation": 0.000264,
    "region": "Spain / Galicia",
-   "regionShare": 0.997
+   "regionShare": 1.0
   },
   "ourinhos": {
    "unimprovedWater": 0.085672,
@@ -21042,10 +21071,10 @@
    "regionShare": 0.994
   },
   "oviedo": {
-   "unimprovedWater": 0.000284,
-   "unimprovedSanitation": 8e-05,
+   "unimprovedWater": 0.000256,
+   "unimprovedSanitation": 7.2e-05,
    "region": "Spain / Principado de Asturias",
-   "regionShare": 0.994
+   "regionShare": 1.0
   },
   "owen-sound": {
    "unimprovedWater": 0.011166,
@@ -21156,10 +21185,10 @@
    "regionShare": 1.0
   },
   "palamos": {
-   "unimprovedWater": 0.000245,
-   "unimprovedSanitation": 6.9e-05,
+   "unimprovedWater": 0.000387,
+   "unimprovedSanitation": 0.000109,
    "region": "Spain / Catalu\u00f1a",
-   "regionShare": 0.998
+   "regionShare": 1.0
   },
   "palanga": {
    "unimprovedWater": 0.028572,
@@ -21213,7 +21242,7 @@
    "unimprovedWater": 0.000219,
    "unimprovedSanitation": 6.2e-05,
    "region": "Spain / Islas Baleares",
-   "regionShare": 0.99
+   "regionShare": 0.994
   },
   "palmas": {
    "unimprovedWater": 0.101862,
@@ -21264,10 +21293,10 @@
    "regionShare": 0.956
   },
   "paneveys": {
-   "unimprovedWater": 0.042562,
-   "unimprovedSanitation": 0.085363,
+   "unimprovedWater": 0.04432,
+   "unimprovedSanitation": 0.078155,
    "region": "Lithuania / Panevezio",
-   "regionShare": 0.983
+   "regionShare": 1.0
   },
   "panjakent": {
    "unimprovedWater": 0.033498,
@@ -21408,8 +21437,8 @@
    "regionShare": 0.99
   },
   "passo-fundo": {
-   "unimprovedWater": 0.091915,
-   "unimprovedSanitation": 0.364975,
+   "unimprovedWater": 0.080732,
+   "unimprovedSanitation": 0.32809,
    "region": "Brazil / Rio Grande do Sul",
    "regionShare": 1.0
   },
@@ -21441,6 +21470,12 @@
    "unimprovedWater": 0.095819,
    "unimprovedSanitation": 0.553547,
    "region": "India / Bihar",
+   "regionShare": 1.0
+  },
+  "pato-branco": {
+   "unimprovedWater": 0.083016,
+   "unimprovedSanitation": 0.33566,
+   "region": "Brazil / Paran\u00e1",
    "regionShare": 1.0
   },
   "patos-alb": {
@@ -21486,8 +21521,8 @@
    "regionShare": 0.986
   },
   "pavlodar": {
-   "unimprovedWater": 0.037306,
-   "unimprovedSanitation": 0.045005,
+   "unimprovedWater": 0.038626,
+   "unimprovedSanitation": 0.055933,
    "region": "Kazakhstan / Pavlodar",
    "regionShare": 1.0
   },
@@ -21690,8 +21725,8 @@
    "regionShare": 1.0
   },
   "peterborough-on": {
-   "unimprovedWater": 0.011001,
-   "unimprovedSanitation": 0.014999,
+   "unimprovedWater": 0.011,
+   "unimprovedSanitation": 0.015,
    "region": "Canada / Ontario",
    "regionShare": 1.0
   },
@@ -21765,7 +21800,7 @@
    "unimprovedWater": 0.038551,
    "unimprovedSanitation": 0.038197,
    "region": "Thailand / Phuket",
-   "regionShare": 0.952
+   "regionShare": 1.0
   },
   "pia": {
    "unimprovedWater": 0.036437,
@@ -21912,10 +21947,10 @@
    "regionShare": 1.0
   },
   "plasencia": {
-   "unimprovedWater": 0.000325,
-   "unimprovedSanitation": 0.000261,
+   "unimprovedWater": 0.000102,
+   "unimprovedSanitation": 2.9e-05,
    "region": "Spain / Extremadura",
-   "regionShare": 0.994
+   "regionShare": 1.0
   },
   "platteville-wi": {
    "unimprovedWater": 0.022439,
@@ -21930,10 +21965,10 @@
    "regionShare": 0.995
   },
   "plauen": {
-   "unimprovedWater": 2.9e-05,
-   "unimprovedSanitation": 4e-06,
+   "unimprovedWater": 0.000208,
+   "unimprovedSanitation": 2.7e-05,
    "region": "Germany / Sachsen",
-   "regionShare": 0.964
+   "regionShare": 0.998
   },
   "plav": {
    "unimprovedWater": 0.005524,
@@ -22011,7 +22046,7 @@
    "unimprovedWater": 0.01477,
    "unimprovedSanitation": 0.014664,
    "region": "Montenegro / Podgorica",
-   "regionShare": 0.994
+   "regionShare": 0.999
   },
   "podujeve": {
    "unimprovedWater": 0.000103,
@@ -22038,10 +22073,10 @@
    "regionShare": 0.993
   },
   "pointe-noire": {
-   "unimprovedWater": 0.475722,
-   "unimprovedSanitation": 0.851877,
-   "region": "Republic of Congo / Cuvette",
-   "regionShare": 0.987
+   "unimprovedWater": 0.571227,
+   "unimprovedSanitation": 0.662447,
+   "region": "Republic of Congo / Kouilou",
+   "regionShare": 0.728
   },
   "poipet": {
    "unimprovedWater": 0.202332,
@@ -22104,10 +22139,10 @@
    "regionShare": 0.629
   },
   "ponferrada": {
-   "unimprovedWater": 0.000204,
-   "unimprovedSanitation": 0.000101,
+   "unimprovedWater": 0.000371,
+   "unimprovedSanitation": 0.000264,
    "region": "Spain / Castilla y Le\u00f3n",
-   "regionShare": 0.996
+   "regionShare": 1.0
   },
   "ponta-grossa": {
    "unimprovedWater": 0.060954,
@@ -22171,9 +22206,9 @@
   },
   "porrentruy": {
    "unimprovedWater": 0.0,
-   "unimprovedSanitation": 2.6e-05,
+   "unimprovedSanitation": 2.8e-05,
    "region": "Switzerland / Jura",
-   "regionShare": 0.901
+   "regionShare": 0.899
   },
   "port-angeles": {
    "unimprovedWater": 0.016205,
@@ -22206,16 +22241,16 @@
    "regionShare": 0.984
   },
   "port-hedland": {
-   "unimprovedWater": 0.00017,
+   "unimprovedWater": 0.000174,
    "unimprovedSanitation": 0.0,
    "region": "Australia / Western Australia",
-   "regionShare": 0.954
+   "regionShare": 0.86
   },
   "port-moresby": {
-   "unimprovedWater": 0.481942,
-   "unimprovedSanitation": 0.662104,
+   "unimprovedWater": 0.481741,
+   "unimprovedSanitation": 0.661938,
    "region": "Papua New Guinea / National Capital District",
-   "regionShare": 0.938
+   "regionShare": 0.94
   },
   "port-of-spain": {
    "unimprovedWater": 0.02298,
@@ -22506,8 +22541,8 @@
    "regionShare": 1.0
   },
   "prokopyevsk": {
-   "unimprovedWater": 0.052155,
-   "unimprovedSanitation": 0.166877,
+   "unimprovedWater": 0.055133,
+   "unimprovedSanitation": 0.174235,
    "region": "Russia / Kemerovo",
    "regionShare": 1.0
   },
@@ -22620,10 +22655,10 @@
    "regionShare": 0.745
   },
   "puertollano": {
-   "unimprovedWater": 0.000165,
-   "unimprovedSanitation": 4.7e-05,
+   "unimprovedWater": 0.000207,
+   "unimprovedSanitation": 5.9e-05,
    "region": "Spain / Castilla-La Mancha",
-   "regionShare": 0.999
+   "regionShare": 1.0
   },
   "pula": {
    "unimprovedWater": 0.003286,
@@ -22809,7 +22844,7 @@
    "unimprovedWater": 0.0,
    "unimprovedSanitation": 0.0,
    "region": "France / Bretagne",
-   "regionShare": 0.987
+   "regionShare": 1.0
   },
   "quincy": {
    "unimprovedWater": 0.021485,
@@ -22830,10 +22865,10 @@
    "regionShare": 0.986
   },
   "qusar": {
-   "unimprovedWater": 0.134937,
-   "unimprovedSanitation": 0.120701,
+   "unimprovedWater": 0.146499,
+   "unimprovedSanitation": 0.092915,
    "region": "Azerbaijan / Quba-Khachmaz",
-   "regionShare": 0.981
+   "regionShare": 1.0
   },
   "quy-nhon": {
    "unimprovedWater": 0.069311,
@@ -22878,10 +22913,10 @@
    "regionShare": 1.0
   },
   "rahim-yar-khan": {
-   "unimprovedWater": 0.098623,
-   "unimprovedSanitation": 0.458067,
+   "unimprovedWater": 0.099462,
+   "unimprovedSanitation": 0.43064,
    "region": "Pakistan / Punjab",
-   "regionShare": 0.993
+   "regionShare": 1.0
   },
   "raipur": {
    "unimprovedWater": 0.08743,
@@ -23064,10 +23099,10 @@
    "regionShare": 1.0
   },
   "rehoboth-nam": {
-   "unimprovedWater": 0.23805,
-   "unimprovedSanitation": 0.75832,
-   "region": "Namibia / Otjozondjupa",
-   "regionShare": 0.966
+   "unimprovedWater": 0.260997,
+   "unimprovedSanitation": 0.812567,
+   "region": "Namibia / Hardap",
+   "regionShare": 1.0
   },
   "reia": {
    "unimprovedWater": 0.005661,
@@ -23172,8 +23207,8 @@
    "regionShare": 1.0
   },
   "ribeirao-preto": {
-   "unimprovedWater": 0.093548,
-   "unimprovedSanitation": 0.37058,
+   "unimprovedWater": 0.084745,
+   "unimprovedSanitation": 0.341393,
    "region": "Brazil / S\u00e3o Paulo",
    "regionShare": 1.0
   },
@@ -23256,8 +23291,8 @@
    "regionShare": 1.0
   },
   "rio-claro": {
-   "unimprovedWater": 0.050046,
-   "unimprovedSanitation": 0.226349,
+   "unimprovedWater": 0.044545,
+   "unimprovedSanitation": 0.208113,
    "region": "Brazil / S\u00e3o Paulo",
    "regionShare": 1.0
   },
@@ -23778,10 +23813,10 @@
    "regionShare": null
   },
   "saint-john": {
-   "unimprovedWater": 0.01107,
-   "unimprovedSanitation": 0.014901,
+   "unimprovedWater": 0.011065,
+   "unimprovedSanitation": 0.014905,
    "region": "Canada / New Brunswick",
-   "regionShare": 1.0
+   "regionShare": 0.945
   },
   "saint-louis": {
    "unimprovedWater": 0.260731,
@@ -23865,7 +23900,7 @@
    "unimprovedWater": 0.0,
    "unimprovedSanitation": 0.006177,
    "region": "Italy / Campania",
-   "regionShare": 0.998
+   "regionShare": 1.0
   },
   "salgotarjan": {
    "unimprovedWater": 0.000573,
@@ -24177,7 +24212,7 @@
    "unimprovedWater": 0.000338,
    "unimprovedSanitation": 9.6e-05,
    "region": "Spain / Pa\u00eds Vasco",
-   "regionShare": 0.933
+   "regionShare": 0.891
   },
   "sanaa": {
    "unimprovedWater": 0.058659,
@@ -24228,10 +24263,10 @@
    "regionShare": 1.0
   },
   "sanlucar": {
-   "unimprovedWater": 0.000276,
-   "unimprovedSanitation": 7.8e-05,
+   "unimprovedWater": 0.000299,
+   "unimprovedSanitation": 8.5e-05,
    "region": "Spain / Andaluc\u00eda",
-   "regionShare": 0.887
+   "regionShare": 1.0
   },
   "sanmenxia": {
    "unimprovedWater": 0.028886,
@@ -24261,7 +24296,7 @@
    "unimprovedWater": 0.000257,
    "unimprovedSanitation": 0.000273,
    "region": "Spain / Islas Canarias",
-   "regionShare": 0.996
+   "regionShare": 1.0
   },
   "santa-cruz-de-la-sierra": {
    "unimprovedWater": 0.121805,
@@ -24324,10 +24359,10 @@
    "regionShare": 1.0
   },
   "santander": {
-   "unimprovedWater": 0.000336,
-   "unimprovedSanitation": 9.5e-05,
+   "unimprovedWater": 0.000338,
+   "unimprovedSanitation": 9.6e-05,
    "region": "Spain / Cantabria",
-   "regionShare": 0.92
+   "regionShare": 0.872
   },
   "santarem": {
    "unimprovedWater": 0.045465,
@@ -24348,10 +24383,10 @@
    "regionShare": 0.999
   },
   "santiago-de-compostela": {
-   "unimprovedWater": 0.000205,
-   "unimprovedSanitation": 5.8e-05,
+   "unimprovedWater": 0.000226,
+   "unimprovedSanitation": 6.4e-05,
    "region": "Spain / Galicia",
-   "regionShare": 0.982
+   "regionShare": 1.0
   },
   "santiago-de-cuba": {
    "unimprovedWater": 0.046546,
@@ -24408,8 +24443,8 @@
    "regionShare": 1.0
   },
   "sao-carlos": {
-   "unimprovedWater": 0.02369,
-   "unimprovedSanitation": 0.138968,
+   "unimprovedWater": 0.062576,
+   "unimprovedSanitation": 0.267894,
    "region": "Brazil / S\u00e3o Paulo",
    "regionShare": 1.0
   },
@@ -24486,10 +24521,10 @@
    "regionShare": 1.0
   },
   "sarajevo": {
-   "unimprovedWater": 0.001224,
-   "unimprovedSanitation": 0.048938,
+   "unimprovedWater": 0.001208,
+   "unimprovedSanitation": 0.048852,
    "region": "Bosnia and Herzegovina / Federacija Bosna i Hercegovina",
-   "regionShare": 0.818
+   "regionShare": 0.866
   },
   "saransk": {
    "unimprovedWater": 0.057628,
@@ -24948,8 +24983,8 @@
    "regionShare": null
   },
   "shenyang": {
-   "unimprovedWater": 0.032829,
-   "unimprovedSanitation": 0.20102,
+   "unimprovedWater": 0.032814,
+   "unimprovedSanitation": 0.201687,
    "region": "China / Liaoning",
    "regionShare": 0.999
   },
@@ -25074,10 +25109,10 @@
    "regionShare": null
   },
   "siauliai": {
-   "unimprovedWater": 0.04513,
-   "unimprovedSanitation": 0.122142,
+   "unimprovedWater": 0.037586,
+   "unimprovedSanitation": 0.118264,
    "region": "Lithuania / \u0160iauliai",
-   "regionShare": 0.999
+   "regionShare": 1.0
   },
   "sibay": {
    "unimprovedWater": 0.048604,
@@ -25105,9 +25140,9 @@
   },
   "siegen": {
    "unimprovedWater": 0.0,
-   "unimprovedSanitation": 4e-06,
+   "unimprovedSanitation": 5e-06,
    "region": "Germany / Nordrhein-Westfalen",
-   "regionShare": 0.935
+   "regionShare": 0.908
   },
   "siem-reap": {
    "unimprovedWater": 0.282337,
@@ -25439,6 +25474,12 @@
    "region": "United States / New Mexico",
    "regionShare": 1.0
   },
+  "soderhamn": {
+   "unimprovedWater": 0.0,
+   "unimprovedSanitation": 2.7e-05,
+   "region": "Sweden / G\u00e4vleborg",
+   "regionShare": 0.976
+  },
   "sofia": {
    "unimprovedWater": 0.009176,
    "unimprovedSanitation": 0.000353,
@@ -25629,7 +25670,7 @@
    "unimprovedWater": 0.0,
    "unimprovedSanitation": 0.000142,
    "region": "Switzerland / Sankt Gallen",
-   "regionShare": 0.963
+   "regionShare": 0.959
   },
   "st-george": {
    "unimprovedWater": 0.033246,
@@ -26007,7 +26048,7 @@
    "unimprovedWater": 0.0,
    "unimprovedSanitation": 2.8e-05,
    "region": "Sweden / V\u00e4sternorrland",
-   "regionShare": 0.997
+   "regionShare": 0.932
   },
   "sunshine-coast": {
    "unimprovedWater": 0.000234,
@@ -26094,10 +26135,10 @@
    "regionShare": 0.992
   },
   "suzhou": {
-   "unimprovedWater": 0.029041,
-   "unimprovedSanitation": 0.313644,
+   "unimprovedWater": 0.02856,
+   "unimprovedSanitation": 0.327907,
    "region": "China / Anhui",
-   "regionShare": 0.974
+   "regionShare": 0.997
   },
   "svendborg": {
    "unimprovedWater": 0.0,
@@ -26244,10 +26285,10 @@
    "regionShare": 0.816
   },
   "tafalla": {
-   "unimprovedWater": 0.0003,
-   "unimprovedSanitation": 8.5e-05,
+   "unimprovedWater": 0.000353,
+   "unimprovedSanitation": 0.0001,
    "region": "Spain / Comunidad Foral de Navarra",
-   "regionShare": 0.976
+   "regionShare": 1.0
   },
   "taganrog": {
    "unimprovedWater": 0.019835,
@@ -26334,10 +26375,10 @@
    "regionShare": 0.968
   },
   "talavera-de-la-reina": {
-   "unimprovedWater": 0.000239,
+   "unimprovedWater": 0.000236,
    "unimprovedSanitation": 6.7e-05,
    "region": "Spain / Castilla-La Mancha",
-   "regionShare": 0.968
+   "regionShare": 1.0
   },
   "talca": {
    "unimprovedWater": 0.0,
@@ -26520,10 +26561,10 @@
    "regionShare": 1.0
   },
   "tarija": {
-   "unimprovedWater": 0.125737,
-   "unimprovedSanitation": 0.441225,
-   "region": "Bolivia / Oruro",
-   "regionShare": 0.999
+   "unimprovedWater": 0.136002,
+   "unimprovedSanitation": 0.46447,
+   "region": "Bolivia / Tarija",
+   "regionShare": 1.0
   },
   "tarinkot": {
    "unimprovedWater": 0.404571,
@@ -26742,10 +26783,10 @@
    "regionShare": 1.0
   },
   "termez": {
-   "unimprovedWater": 0.044554,
-   "unimprovedSanitation": 0.055087,
+   "unimprovedWater": 0.031754,
+   "unimprovedSanitation": 0.04151,
    "region": "Uzbekistan / Surkhandarya",
-   "regionShare": 0.974
+   "regionShare": 0.988
   },
   "ternate": {
    "unimprovedWater": 0.137897,
@@ -26772,10 +26813,10 @@
    "regionShare": 0.999
   },
   "teruel": {
-   "unimprovedWater": 0.000203,
-   "unimprovedSanitation": 5.7e-05,
+   "unimprovedWater": 0.000402,
+   "unimprovedSanitation": 0.000114,
    "region": "Spain / Arag\u00f3n",
-   "regionShare": 0.991
+   "regionShare": 1.0
   },
   "tessaoua": {
    "unimprovedWater": 0.366082,
@@ -26814,10 +26855,10 @@
    "regionShare": 1.0
   },
   "thanh-hoa": {
-   "unimprovedWater": 0.082849,
-   "unimprovedSanitation": 0.243734,
+   "unimprovedWater": 0.092645,
+   "unimprovedSanitation": 0.252195,
    "region": "Vietnam / Thanh H\u00f3a",
-   "regionShare": 0.871
+   "regionShare": 0.946
   },
   "the-bottom": {
    "unimprovedWater": 0.024054,
@@ -26895,7 +26936,7 @@
    "unimprovedWater": 0.0,
    "unimprovedSanitation": 0.0,
    "region": "France / Nouvelle-Aquitaine",
-   "regionShare": 0.962
+   "regionShare": 1.0
   },
   "thrissur": {
    "unimprovedWater": 0.093552,
@@ -27003,13 +27044,13 @@
    "unimprovedWater": 0.041203,
    "unimprovedSanitation": 0.002826,
    "region": "Albania / Tiran\u00eb",
-   "regionShare": 0.988
+   "regionShare": 0.991
   },
   "tiraspol": {
    "unimprovedWater": 0.086681,
    "unimprovedSanitation": 0.101598,
    "region": "Moldova / Transnistria",
-   "regionShare": 0.999
+   "regionShare": 0.617
   },
   "tiruchirappalli": {
    "unimprovedWater": 0.098088,
@@ -27087,7 +27128,7 @@
    "unimprovedWater": 0.0,
    "unimprovedSanitation": 0.089755,
    "region": "nan / nan",
-   "regionShare": 0.985
+   "regionShare": 0.871
   },
   "tokat": {
    "unimprovedWater": 0.003933,
@@ -27126,10 +27167,10 @@
    "regionShare": 0.978
   },
   "toledo-es": {
-   "unimprovedWater": 0.000239,
-   "unimprovedSanitation": 6.7e-05,
+   "unimprovedWater": 0.000241,
+   "unimprovedSanitation": 6.8e-05,
    "region": "Spain / Castilla-La Mancha",
-   "regionShare": 0.968
+   "regionShare": 0.997
   },
   "toledo-par": {
    "unimprovedWater": 0.047811,
@@ -27162,10 +27203,10 @@
    "regionShare": 0.983
   },
   "tomelloso": {
-   "unimprovedWater": 0.000165,
-   "unimprovedSanitation": 4.7e-05,
+   "unimprovedWater": 0.000161,
+   "unimprovedSanitation": 4.5e-05,
    "region": "Spain / Castilla-La Mancha",
-   "regionShare": 0.999
+   "regionShare": 1.0
   },
   "tomsk": {
    "unimprovedWater": 0.049257,
@@ -27210,10 +27251,10 @@
    "regionShare": 1.0
   },
   "torrelavega": {
-   "unimprovedWater": 0.000336,
-   "unimprovedSanitation": 9.5e-05,
+   "unimprovedWater": 0.000338,
+   "unimprovedSanitation": 9.6e-05,
    "region": "Spain / Cantabria",
-   "regionShare": 0.92
+   "regionShare": 1.0
   },
   "torreon": {
    "unimprovedWater": 0.034269,
@@ -27396,16 +27437,22 @@
    "regionShare": 0.996
   },
   "trois-rivieres": {
-   "unimprovedWater": 0.010733,
-   "unimprovedSanitation": 0.014634,
+   "unimprovedWater": 0.010752,
+   "unimprovedSanitation": 0.014661,
    "region": "Canada / Qu\u00e9bec",
-   "regionShare": 0.994
+   "regionShare": 0.925
   },
   "troitsk": {
    "unimprovedWater": 0.070199,
    "unimprovedSanitation": 0.193175,
    "region": "Russia / Chelyabinsk",
    "regionShare": 0.967
+  },
+  "trollhattan": {
+   "unimprovedWater": 0.0,
+   "unimprovedSanitation": 2.9e-05,
+   "region": "Sweden / V\u00e4stra G\u00f6taland",
+   "regionShare": 1.0
   },
   "tromso": {
    "unimprovedWater": 0.0,
@@ -27450,10 +27497,10 @@
    "regionShare": 1.0
   },
   "tshikapa": {
-   "unimprovedWater": 0.58446,
-   "unimprovedSanitation": 0.655468,
+   "unimprovedWater": 0.563869,
+   "unimprovedSanitation": 0.645596,
    "region": "Democratic Republic of the Congo / Kasa\u00ef",
-   "regionShare": 0.993
+   "regionShare": 0.994
   },
   "tskhinvali": {
    "unimprovedWater": 0.022748,
@@ -27465,7 +27512,7 @@
    "unimprovedWater": 0.02969,
    "unimprovedSanitation": 0.208917,
    "region": "Georgia / Imereti",
-   "regionShare": 1.0
+   "regionShare": 0.992
   },
   "tuapse": {
    "unimprovedWater": 0.044879,
@@ -27498,10 +27545,10 @@
    "regionShare": 1.0
   },
   "tudela": {
-   "unimprovedWater": 0.0003,
-   "unimprovedSanitation": 8.5e-05,
+   "unimprovedWater": 5.4e-05,
+   "unimprovedSanitation": 1.5e-05,
    "region": "Spain / Comunidad Foral de Navarra",
-   "regionShare": 0.976
+   "regionShare": 0.995
   },
   "tula": {
    "unimprovedWater": 0.04314,
@@ -27714,10 +27761,10 @@
    "regionShare": 0.965
   },
   "udon-thani": {
-   "unimprovedWater": 0.028017,
-   "unimprovedSanitation": 0.026053,
+   "unimprovedWater": 0.013868,
+   "unimprovedSanitation": 0.005766,
    "region": "Thailand / Udon Thani",
-   "regionShare": 0.974
+   "regionShare": 1.0
   },
   "udupi": {
    "unimprovedWater": 0.090642,
@@ -27762,10 +27809,10 @@
    "regionShare": 0.991
   },
   "ulan-bator": {
-   "unimprovedWater": 0.128509,
-   "unimprovedSanitation": 0.122788,
+   "unimprovedWater": 0.12015,
+   "unimprovedSanitation": 0.115163,
    "region": "Mongolia / Ulaanbaatar",
-   "regionShare": 0.981
+   "regionShare": 0.991
   },
   "ulan-ude": {
    "unimprovedWater": 0.051416,
@@ -27912,8 +27959,8 @@
    "regionShare": 1.0
   },
   "ust-ilimsk": {
-   "unimprovedWater": 0.07734,
-   "unimprovedSanitation": 0.229104,
+   "unimprovedWater": 0.081318,
+   "unimprovedSanitation": 0.238934,
    "region": "Russia / Irkutsk",
    "regionShare": 1.0
   },
@@ -28121,6 +28168,12 @@
    "region": "Canada / British Columbia",
    "regionShare": 0.939
   },
+  "vanersborg": {
+   "unimprovedWater": 0.0,
+   "unimprovedSanitation": 2.9e-05,
+   "region": "Sweden / V\u00e4stra G\u00f6taland",
+   "regionShare": 1.0
+  },
   "vannes": {
    "unimprovedWater": 0.0,
    "unimprovedSanitation": 0.0,
@@ -28151,6 +28204,12 @@
    "region": "Brazil / Minas Gerais",
    "regionShare": 1.0
   },
+  "varkaus": {
+   "unimprovedWater": 0.0,
+   "unimprovedSanitation": 1.1e-05,
+   "region": "Finland / Eastern Finland",
+   "regionShare": 1.0
+  },
   "varna": {
    "unimprovedWater": 0.005277,
    "unimprovedSanitation": 0.071772,
@@ -28164,9 +28223,9 @@
    "regionShare": 0.997
   },
   "varzea-grande": {
-   "unimprovedWater": 0.10578,
-   "unimprovedSanitation": 0.411133,
-   "region": "Brazil / Piau\u00ed",
+   "unimprovedWater": 0.05513,
+   "unimprovedSanitation": 0.243205,
+   "region": "Brazil / Mato Grosso",
    "regionShare": 1.0
   },
   "vaslui": {
@@ -28410,16 +28469,16 @@
    "regionShare": 0.697
   },
   "vientiane": {
-   "unimprovedWater": 0.135153,
+   "unimprovedWater": 0.135152,
    "unimprovedSanitation": 0.191768,
    "region": "Laos / Vientiane [prefecture]",
    "regionShare": 0.92
   },
   "vigo": {
-   "unimprovedWater": 0.000397,
-   "unimprovedSanitation": 0.000134,
+   "unimprovedWater": 0.000409,
+   "unimprovedSanitation": 0.000144,
    "region": "Spain / Galicia",
-   "regionShare": 0.918
+   "regionShare": 0.883
   },
   "vijayawada": {
    "unimprovedWater": 0.09185,
@@ -28434,10 +28493,10 @@
    "regionShare": 1.0
   },
   "vilagarcia-de-arousa": {
-   "unimprovedWater": 0.000397,
-   "unimprovedSanitation": 0.000134,
+   "unimprovedWater": 0.000418,
+   "unimprovedSanitation": 0.000118,
    "region": "Spain / Galicia",
-   "regionShare": 0.918
+   "regionShare": 0.832
   },
   "vilankulo": {
    "unimprovedWater": 0.493352,
@@ -28476,10 +28535,10 @@
    "regionShare": 1.0
   },
   "villena": {
-   "unimprovedWater": 0.00019,
-   "unimprovedSanitation": 5.4e-05,
+   "unimprovedWater": 0.000132,
+   "unimprovedSanitation": 3.7e-05,
    "region": "Spain / Comunidad Valenciana",
-   "regionShare": 0.998
+   "regionShare": 0.984
   },
   "villingen-schwenningen": {
    "unimprovedWater": 0.0,
@@ -28488,10 +28547,10 @@
    "regionShare": 1.0
   },
   "vilnius": {
-   "unimprovedWater": 0.038218,
-   "unimprovedSanitation": 0.063182,
+   "unimprovedWater": 0.039848,
+   "unimprovedSanitation": 0.065866,
    "region": "Lithuania / Vilniaus",
-   "regionShare": 0.973
+   "regionShare": 0.988
   },
   "vincennes-in": {
    "unimprovedWater": 0.020477,
@@ -28506,8 +28565,8 @@
    "regionShare": 0.83
   },
   "vinh": {
-   "unimprovedWater": 0.078682,
-   "unimprovedSanitation": 0.236937,
+   "unimprovedWater": 0.080431,
+   "unimprovedSanitation": 0.235728,
    "region": "Vietnam / Ngh\u1ec7 An",
    "regionShare": 1.0
   },
@@ -29064,20 +29123,20 @@
    "regionShare": 1.0
   },
   "windhoek": {
-   "unimprovedWater": 0.183771,
-   "unimprovedSanitation": 0.630008,
+   "unimprovedWater": 0.161389,
+   "unimprovedSanitation": 0.577099,
    "region": "Namibia / Khomas",
-   "regionShare": 0.621
+   "regionShare": 0.833
   },
   "windsor": {
-   "unimprovedWater": 0.012553,
-   "unimprovedSanitation": 0.006611,
+   "unimprovedWater": 0.010804,
+   "unimprovedSanitation": 0.004313,
    "region": "Canada / Ontario",
-   "regionShare": 0.96
+   "regionShare": 0.861
   },
   "winkler-mb": {
-   "unimprovedWater": 0.011003,
-   "unimprovedSanitation": 0.014998,
+   "unimprovedWater": 0.011026,
+   "unimprovedSanitation": 0.014984,
    "region": "Canada / Manitoba",
    "regionShare": 1.0
   },
@@ -29388,14 +29447,14 @@
    "regionShare": 1.0
   },
   "yangon": {
-   "unimprovedWater": 0.192418,
-   "unimprovedSanitation": 0.244655,
+   "unimprovedWater": 0.19226,
+   "unimprovedSanitation": 0.24447,
    "region": "Myanmar / Yangon",
-   "regionShare": 0.952
+   "regionShare": 0.951
   },
   "yangzhou": {
-   "unimprovedWater": 0.029748,
-   "unimprovedSanitation": 0.292574,
+   "unimprovedWater": 0.030763,
+   "unimprovedSanitation": 0.262557,
    "region": "China / Jiangsu",
    "regionShare": 0.999
   },
@@ -29448,10 +29507,10 @@
    "regionShare": 0.999
   },
   "yecla": {
-   "unimprovedWater": 0.000159,
-   "unimprovedSanitation": 4.5e-05,
+   "unimprovedWater": 0.000132,
+   "unimprovedSanitation": 3.7e-05,
    "region": "Spain / Regi\u00f3n de Murcia",
-   "regionShare": 0.971
+   "regionShare": 0.984
   },
   "yekaterinburg": {
    "unimprovedWater": 0.04485,
@@ -29505,7 +29564,7 @@
    "unimprovedWater": 0.136421,
    "unimprovedSanitation": 0.085593,
    "region": "Azerbaijan / Aran",
-   "regionShare": 0.975
+   "regionShare": 1.0
   },
   "yevpatoria": {
    "unimprovedWater": 0.003421,
@@ -29610,10 +29669,10 @@
    "regionShare": 0.994
   },
   "yurga": {
-   "unimprovedWater": 0.049183,
-   "unimprovedSanitation": 0.159531,
+   "unimprovedWater": 0.049257,
+   "unimprovedSanitation": 0.159714,
    "region": "Russia / Kemerovo",
-   "regionShare": 0.93
+   "regionShare": 1.0
   },
   "yuxi": {
    "unimprovedWater": 0.029416,
@@ -29652,10 +29711,10 @@
    "regionShare": 0.999
   },
   "zafra": {
-   "unimprovedWater": 0.000515,
-   "unimprovedSanitation": 0.000448,
+   "unimprovedWater": 0.000705,
+   "unimprovedSanitation": 0.000624,
    "region": "Spain / Extremadura",
-   "regionShare": 0.998
+   "regionShare": 1.0
   },
   "zagazig": {
    "unimprovedWater": 0.013945,
@@ -29766,8 +29825,8 @@
    "regionShare": 1.0
   },
   "zaria": {
-   "unimprovedWater": 0.259306,
-   "unimprovedSanitation": 0.486469,
+   "unimprovedWater": 0.25826,
+   "unimprovedSanitation": 0.485164,
    "region": "Nigeria / Kaduna",
    "regionShare": 1.0
   },
@@ -29838,10 +29897,10 @@
    "regionShare": 1.0
   },
   "zhangzhou": {
-   "unimprovedWater": 0.029645,
-   "unimprovedSanitation": 0.29093,
+   "unimprovedWater": 0.030231,
+   "unimprovedSanitation": 0.274743,
    "region": "China / Fujian",
-   "regionShare": 0.986
+   "regionShare": 1.0
   },
   "zhanjiang": {
    "unimprovedWater": 0.029877,
