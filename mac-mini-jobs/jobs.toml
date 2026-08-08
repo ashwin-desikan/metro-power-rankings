@@ -405,3 +405,34 @@ command = "metro-mini-refresh.sh"    # predates the run-*.sh naming convention
 hc_slug = "egress-refresh"
 catchup_hours = 20
 timeout_minutes = 45
+
+# --- mktcap-refresh: NEW 2026-08-08. Not a legacy-launchd port -- a fresh --
+# cutover of the Supabase-only half of the CompaniesMarketCap Saturday ritual.
+# Ashwin's call: skip waiting for the 2-3-consecutive-green Shadow Saturday
+# gate the cloud/Windows session had proposed (next gates were 8/15, 8/22) --
+# today's drill (2026-08-08) was already GREEN, and the two prior weeks were
+# clean too, so the wait was adding calendar time without adding evidence.
+#
+# Deliberately scoped to refresh.py --write only (which also runs
+# export_csv.py internally -- confirmed by reading refresh.py, not the
+# README's 3-separate-scripts description, which predates that). Excluded:
+# sync_city_lookup.py and compare_excel.py both need Excel workbooks that
+# only exist on Ashwin's Windows machine (OneDrive paths; MetroAreas.xlsx
+# confirmed absent from this checkout). Ashwin chose to keep those two as his
+# own manual Saturday steps rather than set up OneDrive sync to the mini.
+# Running refresh.py before he's done that week's workbook update is safe by
+# design -- unmapped new companies just queue as geo stubs (metro=null),
+# never guessed, never wrong on the site.
+#
+[[job]]
+id = "mktcap-refresh"
+time = "09:00"                  # Saturday; matches cricket-weekly's slot on a
+                                 # different weekday, same early-UTC pattern
+                                 # as the other weeklies. No hard timing
+                                 # dependency -- the auto-stub queue makes
+                                 # ordering vs. Ashwin's own ritual safe either way.
+weekdays = [6]                  # Saturday
+command = "run-mktcap-refresh.sh"
+hc_slug = "mktcap-refresh"
+catchup_hours = 24              # weekly cadence
+timeout_minutes = 20
