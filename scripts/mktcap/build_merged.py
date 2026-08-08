@@ -18,8 +18,24 @@ def load_sources():
     return pub, uni
 
 def merge(pub, uni, private_rows, changes, overrides):
-    """Returns sorted merged rows: dicts with source,name,symbol,marketcap,price,country."""
-    remap = {c["old_symbol"]: c["new_symbol"] for c in changes}
+    """Returns (merged, ipo_dedup, skipped_renames).
+
+    merged: sorted rows, dicts with source,name,symbol,marketcap,price,country."""
+    # Recycled-ticker guard (Shadow Saturday 2, 2026-08-08): if BOTH sides of a
+    # symbol_changes rename appear in this week's feed (with live mcap), they are
+    # two distinct companies sharing a ticker's history (PHNX.L->PHX.AE,
+    # LIFE->ATYR class), NOT a rename. Applying it folds one company into the
+    # other's id and deactivates a live company. Skip it and surface a warning.
+    feed_syms = {r["Symbol"] for r in pub if r["Symbol"] and float(r["marketcap"] or 0) > 0}
+    remap, skipped = {}, []
+    for c in changes:
+        if c["old_symbol"] in feed_syms and c["new_symbol"] in feed_syms:
+            skipped.append((c["old_symbol"], c["new_symbol"]))
+        else:
+            remap[c["old_symbol"]] = c["new_symbol"]
+    for old, new in skipped:
+        log(f"WARNING: rename {old} -> {new} SKIPPED: both symbols live in this "
+            f"week's feed (recycled-ticker signature). Fix mktcap_symbol_changes.")
     ov = {o["symbol"]: float(o["value"]) for o in overrides if o["field"] == "marketcap"}
     merged, public_names = [], set()
     for r in pub:
@@ -54,7 +70,7 @@ def merge(pub, uni, private_rows, changes, overrides):
         m["rank"] = i
         n = seen.get(m["symbol"], 0) + 1; seen[m["symbol"]] = n
         m["company_id"] = m["symbol"] if n == 1 else f'{m["symbol"]}#{n}'
-    return merged, ipo_dedup
+    return merged, ipo_dedup, skipped
 
 def main(write=False):
     pub, uni = load_sources()
@@ -68,7 +84,7 @@ def main(write=False):
     for c in current:
         if c["is_active"]: prev[c["source"]] = prev.get(c["source"], 0) + 1
 
-    merged, ipo_dedup = merge(pub, uni, private_rows, changes, overrides)
+    merged, ipo_dedup, skipped_renames = merge(pub, uni, private_rows, changes, overrides)
     counts = {}
     for m in merged: counts[m["source"]] = counts.get(m["source"], 0) + 1
 
@@ -84,7 +100,19 @@ def main(write=False):
     active_ids = {c["company_id"] for c in current if c["is_active"]}
     new_ids = [m for m in merged if m["company_id"] not in cur_ids]
     this_ids = {m["company_id"] for m in merged}
-    removed = sorted(active_ids - this_ids)
+    # Deactivation guard (belt to merge()'s rename guard): never deactivate a
+    # primary company (company_id == symbol) whose symbol is still live in the
+    # feed — its id vanishing from this week's merge means a rename/collision
+    # rerouted it, not that it fell off. Collision shells (#N ids) are exempt:
+    # their symbol staying in the feed is exactly how a shell legitimately dies.
+    feed_syms = {r["Symbol"] for r in pub if r["Symbol"] and float(r["marketcap"] or 0) > 0}
+    cur_sym = {c["company_id"]: c["symbol"] for c in current}
+    removed_all = sorted(active_ids - this_ids)
+    spared = [cid for cid in removed_all if cid == cur_sym.get(cid) and cid in feed_syms]
+    removed = [cid for cid in removed_all if cid not in spared]
+    for cid in spared:
+        log(f"WARNING: NOT deactivating {cid}: symbol still live in feed but id "
+            f"missing from merge (rename/collision suspect). Investigate before trusting this write.")
     unmapped_new = [m for m in new_ids if m["symbol"] not in geo_map]
     invalid = sorted({v for v in (geo_map.get(m["symbol"]) for m in merged) if v and v not in metros})
     mapped = sum(1 for m in merged if geo_map.get(m["symbol"]))
@@ -99,6 +127,8 @@ def main(write=False):
            f"- new companies: {len(new_ids)}  | removed (fell off): {len(removed)} {removed[:8]}",
            f"- IPO dedup (unicorn suppressed, public wins): {len(ipo_dedup)} {ipo_dedup[:8]}",
            f"- possible ticker renames (REVIEW, not auto-applied): {renames[:8]}",
+           f"- rename guard: {len(skipped_renames)} recycled-ticker renames skipped: {skipped_renames[:8]}",
+           f"- deactivation guard: {len(spared)} kept active (symbol live in feed): {spared[:8]}",
            f"- METRO QUEUE (new, unmapped — for Ashwin): " +
            (", ".join(f'{m["name"]} [{m["symbol"]}] ({m["country"]})' for m in unmapped_new[:40]) or "none")]
     report = "\n".join(rep)

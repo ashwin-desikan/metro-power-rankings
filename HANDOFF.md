@@ -4992,3 +4992,86 @@ glance is for, and I'd already done it.
 Nothing open on this thread. Three commits pushed: `7b92ed8f7` (kuwait
 fix), `3143c5d09` (hungary override removed), `b989542d6` (the real data
 refresh, tagged after checking currentLeaders.ts).
+
+## 2026-08-08 — cloud+windows → next session (mktcap SHADOW SATURDAY 2: GREEN, recycled-ticker guard landed, workbook rename rows purged, Mambu rule decided)
+
+Shadow Saturday drill #2 for the CompaniesMarketCap → Supabase migration.
+**Verdict: GREEN — first of the 2-3 consecutive greens gating the Mac mini
+cutover** (next gates: 8/15, 8/22). Full report lives in project memory
+(`project_mktcap_supabase_migration.md`); the operational facts a next
+session needs are below.
+
+### NEW SATURDAY RUN ORDER (supersedes the 08-02 runbook)
+
+1. Ashwin's Excel ritual as usual (workbook = ground truth).
+2. `python scripts/mktcap/sync_city_lookup.py --write` — NEW script, one-way
+   mirror, workbook wins: City Lookup → mktcap_geo, Valid Metros →
+   mktcap_valid_metros. Preserves auto-stub queue rows and provenance;
+   dry-run by default; `--wipe` for strict reload. Invariant: every City
+   Lookup metro must exist in Valid Metros or it aborts. Supersedes
+   `sync_geo_from_excel.py` (geo-only, no Valid Metros mirror).
+3. `python scripts/mktcap/refresh.py --write`, then `export_csv.py`,
+   `compare_excel.py`, and the /business builds as before.
+
+The morning run was amber on a 369-row blank-metro export gap (seed had NULL
+metros; the 8/02 excel-sync only diffed recent changes). sync_city_lookup.py
+fixed it same-day: first --write = 435 rows added/updated, valid metros
+4,283 → 4,314, geo 14,092 rows / 5,720 mapped. Re-run achieved parity: 0
+valuation mismatches, 0 metro mismatches, 521/524 per-metro aggregates
+identical, all 3 residuals attributed (Mambu, Phoenix collision, aTyr/LIFE
+collision). The 141-row auto-stub queue is the live mapping to-do list (91
+Japan small caps; the row whose symbol is literally "X (formerly Twitter)"
+needs a proper key before it's mapped).
+
+### Recycled-ticker guard (this machine, today — approved by Ashwin, diff reviewed)
+
+Two poisoned rows in mktcap_symbol_changes (PHNX.L→PHX.AE, LIFE→ATYR — both
+recycled/conflated tickers, fixed in Supabase by the cloud session) exposed
+a class bug: a "rename" whose old AND new symbols are both live in the same
+week's feed is two distinct companies sharing ticker history, not a rename.
+Applying it folds one company into the other's id and deactivates a live
+company. Landed in `scripts/mktcap/build_merged.py`:
+
+- `merge()` now skips any symbol_changes rename where both sides appear in
+  the feed with marketcap > 0, logs a WARNING, and reports the skip count.
+  Zero-mcap shells (GIXXU class) don't count as "live", so legit renames
+  past a delisting shell still apply.
+- Deactivation belt in `main()`: a primary company (company_id == symbol)
+  whose symbol is still live in the feed is never deactivated by falling out
+  of the merge — that shape means a rename/collision rerouted it. Collision
+  shells (#N ids) are exempt, or they'd be immortal.
+- `merge()` returns a third value (skipped renames); selftest.py updated
+  accordingly, +3 real-pathology cases. `refresh.py --self-test` = 20/20
+  PASS, verified on this machine after landing.
+
+The two poisoned rename rows were also deleted from Sheet1 of the CMC
+workbook in OneDrive (317 → 315) so a future re-migration can't re-poison
+the table. Done via surgical XML edit of sheet9.xml only — an openpyxl
+re-save would have stripped ~67k cached formula values, including the 28k on
+City Lookup that sync_city_lookup.py reads with data_only=True. "Fell off" /
+"Valid Metros" columns sharing those rows untouched; verified via data_only
+re-read.
+
+### Mambu / exited-unicorn rule — DECIDED (Ashwin, 2026-08-08): follow CB
+
+The CB list is the universe authority. Exited/retired unicorns drop from the
+pipeline (Mambu already inactive since 7/18); the workbook side self-heals
+at the next Unicorn sheet paste in the Saturday ritual. Consequence to
+verify next drill: the grand-total delta (was exactly Mambu's $5.5B) should
+go to ~0.
+
+### Before Saturday 3 (2026-08-15)
+
+1. Fix ingest symbol assignment for name collisions so distinct companies
+   keep their own symbols (Phoenix plc should carry PHNX.L; the guard now
+   prevents the poisoning, but the feed's own collision rows still export
+   under one symbol — an mktcap_overrides entry is the stopgap if the ingest
+   fix is bigger than a week). This is the one collision with real aggregate
+   impact ($10.43B off London).
+2. Confirm the 141-row auto-stub queue drains through the normal ritual.
+3. Watch the two new report lines (rename guard / deactivation guard) —
+   both should read 0 on a clean week.
+
+Commits this session: this HANDOFF entry + the two mktcap scripts, one
+commit, `[vercel skip]` (scripts/docs only — no build). Workbook edit is
+OneDrive-side, not in this repo.

@@ -42,8 +42,10 @@ pub_rows.append(dict(Rank="6", Name="SpaceX", Symbol="SPCX", marketcap=2.1e12, p
 priv = [dict(name="Vitol", revenue=4e11, country="Switzerland"), dict(name="NVIDIA", revenue=1e9, country="US"),
         dict(name="Bolt", revenue=5e9, country="Estonia")]
 overrides = [dict(symbol="ByteDance(Uni)", field="marketcap", value="480000000000")]
-changes = [dict(old_symbol="GOOG", new_symbol="GOOGL")]
-merged, ipo = merge(pub_rows, uni_rows, priv, changes, overrides)
+changes = [dict(old_symbol="GOOG", new_symbol="GOOGL"),           # legit rename: GOOGL absent from feed
+           dict(old_symbol="NVDA", new_symbol="MSTR"),            # recycled-ticker class: both live in feed (PHNX.L->PHX.AE, LIFE->ATYR)
+           dict(old_symbol="GIXXU", new_symbol="NVDA")]           # old side is a zero-mcap delisting shell: not "live", rename passes through as a no-op
+merged, ipo, skipped = merge(pub_rows, uni_rows, priv, changes, overrides)
 syms = {m["symbol"]: m for m in merged}
 check("merge: SpaceX unicorn suppressed (public SPCX wins)", "SpaceX(Uni)" not in syms and ipo == ["SpaceX"])
 check("merge: unicorn suffix + valuation Bn->USD", syms["Anthropic(Uni)"]["marketcap"] == 965e9)
@@ -53,6 +55,12 @@ check("merge: private name-matching public suppressed", sum(1 for m in merged if
 check("merge: private name-matching unicorn suppressed (OpenAI/ByteDance class)",
       not any(m["source"]=="Private" and m["name"]=="Bolt" for m in merged))
 check("merge: symbol change applied (GOOG->GOOGL)", "GOOGL" in syms and "GOOG" not in syms)
+check("merge: recycled-ticker rename SKIPPED (NVDA->MSTR, both live in feed)",
+      skipped == [("NVDA", "MSTR")] and "NVDA" in syms and "MSTR" in syms)
+check("merge: recycled guard keeps both companies distinct (no collision id minted)",
+      not any(m["company_id"].startswith("MSTR#") for m in merged))
+check("merge: zero-mcap old side does not trip the guard (GIXXU->NVDA not skipped)",
+      ("GIXXU", "NVDA") not in skipped and sum(1 for m in merged if m["symbol"] == "NVDA") == 1)
 check("merge: zero-mcap public filtered", "GIXXU" not in syms)
 bolts = sorted(m["company_id"] for m in merged if m["symbol"] == "Bolt(Uni)")
 check("merge: Bolt collision -> Bolt(Uni) + Bolt(Uni)#2", bolts == ["Bolt(Uni)", "Bolt(Uni)#2"])
