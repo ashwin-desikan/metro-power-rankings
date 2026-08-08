@@ -11,7 +11,16 @@ import "server-only";
 import { existsSync, readFileSync } from "fs";
 import { join } from "path";
 
-export type HonourRollRow = { season: string; winner: string; ru: string | null };
+// `era` names the competition a season belongs to, for rolls that span more
+// than one (Spain's Liga Española before the Liga ACB, the Yugoslav First
+// League before the ABA). HonourRolls draws a labelled rule wherever it
+// changes. Optional: rolls covering a single competition omit it entirely.
+export type HonourRollRow = {
+  season: string;
+  winner: string;
+  ru: string | null;
+  era?: string | null;
+};
 
 export type HonourPortal = {
   labels: Record<string, string>;

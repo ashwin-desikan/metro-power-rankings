@@ -143,8 +143,9 @@ export default async function BasketballHubPage() {
           <div>
             <div className="font-semibold text-base">Domestic Basketball →</div>
             <div className="text-xs text-[var(--text-muted)] mt-1">
-              Club basketball beyond the NBA and EuroLeague: the Chinese Basketball
-              Association champions roll.
+              Club basketball beyond the NBA and EuroLeague: champions and runners-up
+              from Spain, Italy, Greece, Turkey, France, Russia, Lithuania, Israel,
+              the Adriatic League and China.
             </div>
           </div>
         </div>

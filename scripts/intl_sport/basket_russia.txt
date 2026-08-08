@@ -1,0 +1,104 @@
+Champions
+Key
+§	Denotes the team won the Russian Cup as well
+Team (X)	Denotes the number of times the club won the title
+Season	League	1st place, gold medalist(s) Champion	Score	2nd place, silver medalist(s) Runner-up	3rd place, bronze medalist(s) Third place
+1991–92	Russia Super League A
+(national)	CSKA Moscow (1)		Stroitel Samara	Avtodor Saratov
+1992–93	CSKA Moscow (2)		Spartak Saint Petersburg	Stroitel Samara
+1993–94	CSKA Moscow (3)		Avtodor Saratov	CSK VVS Samara
+1994–95	CSKA Moscow (4)	3–0	Dynamo Moscow	CSK VVS Samara
+1995–96	CSKA Moscow (5)	3–2	Dynamo Moscow	Avtodor Saratov
+1996–97	CSKA Moscow (6)	3–2	Avtodor Saratov	BC Samara
+1997–98	CSKA Moscow (7)	3–1	Avtodor Saratov	BC Samara
+1998–99	CSKA Moscow (8)	2–0	Avtodor Saratov	Arsenal
+1999–2000	CSKA Moscow (9)	3–0	Ural Great Perm	UNICS
+2000–01	Ural Great Perm (1)	3–0	UNICS	Lokomotiv-Kuban
+2001–02	Ural Great Perm (2)	3–1	UNICS	Lokomotiv-Kuban
+2002–03	CSKA Moscow§ (10)	3–1	Ural Great Perm	UNICS
+2003–04	CSKA Moscow (11)	3–1	UNICS	Dynamo Moscow
+2004–05	CSKA Moscow§ (12)	3–1	Dynamo Moscow	UNICS
+2005–06	CSKA Moscow§ (13)	3–0	Khimki	Dynamo Saint Petersburg
+2006–07	CSKA Moscow§ (14)	3–0	UNICS	Khimki
+2007–08	CSKA Moscow (15)	3–0	Khimki	Dynamo Moscow
+2008–09	CSKA Moscow (16)	3–1	Khimki	UNICS
+2009–10	CSKA Moscow§ (17)	3–0	Khimki	UNICS
+2010–11	Russia PBL
+(national)	CSKA Moscow (18)	3–1	Khimki	UNICS
+2011–12	CSKA Moscow (19)	2–0	Khimki	Lokomotiv-Kuban
+2012–13	CSKA Moscow (20)	—N/a	Khimki	Spartak Saint Petersburg
+2013–14	VTB United League
+(international)	CSKA Moscow (21)	3–0	Nizhny Novgorod	UNICS
+2014–15	CSKA Moscow (22)	3–0	Khimki	Lokomotiv-Kuban
+2015–16	CSKA Moscow (23)	3–1	UNICS	Zenit Saint Petersburg
+2016–17	CSKA Moscow (24)	3–0	Khimki	Zenit Saint Petersburg
+2017–18	CSKA Moscow (25)	95:84	Khimki	Zenit Saint Petersburg
+2018–19	CSKA Moscow (26)	3–0	Khimki	UNICS
+2019–20	Cancelled due to the COVID-19 pandemic - no champion announced.
+2020–21	CSKA Moscow (27)	3–0	UNICS	Zenit Saint Petersburg
+2021–22	Zenit Saint Petersburg (1)	4–3	CSKA Moscow	UNICS
+2022–23	UNICS (1)	4–1	Lokomotiv Kuban	CSKA Moscow
+2023–24	CSKA Moscow (28)	4–1	UNICS	BC Zenit Saint Petersburg
+2024–25	CSKA Moscow (29)	4–2	Zenit Saint Petersburg	UNICS
+
+Soviet Union League medalists
+Year	 Champions	 Finalists	 3rd Place	Notes
+1924	Team Moscow	Team Ural		
+1928	Team Moscow	Team Ukraine SSR		
+1934	Team Leningrad	Team Moscow	Team Odessa	
+1935	Team Moscow	Team Leningrad	Team Tiflis	
+1936	Team Leningrad	Team Moscow	Team Odessa	
+1937	Dynamo Moscow	Red Dawn Leningrad	Lokomotiv Moscow	The First club Championship of the USSR
+1938	Burevestnik Leningrad	Lokomotiv Moscow	GOLIFK Leningrad	
+1939	Lokomotiv Moscow	GOLIFK Leningrad	Lokomotiv Tbilisi	
+1940	Burevestnik Leningrad	Lokomotiv Tbilisi	Lokomotiv Moscow	
+1944	Armia Tbilisi	Dynamo Moscow	Lokomotiv Moscow	
+1945	CSKA Moscow	Armia Tbilisi	Kalev Tallinn	
+1946	Armia Tbilisi	CSKA Moscow	Dynamo Moscow	
+1947	SKIF Kaunas	Dinamo Tbilisi	CSKA Moscow	
+1948	Dynamo Moscow	Stroitel Moscow	Dinamo Tbilisi	
+1949	USK Tartu	Žalgiris Kaunas	VVS Moscow	
+1950	Dinamo Tbilisi	USK Tartu	VVS Moscow	
+1951	Žalgiris Kaunas	VVS Moscow	USK Tartu	
+1952	VVS Moscow	Žalgiris Kaunas	Dinamo Tbilisi	
+1953	Dinamo Tbilisi	CSKA Moscow	Žalgiris Kaunas	
+1954	Dinamo Tbilisi	CSKA Moscow	Žalgiris Kaunas	
+1955	Rīgas ASK	CSKA Moscow	Žalgiris Kaunas	
+1956	Latvian SSR Team	Team Moscow	Lithuanian SSR Team	USSR Spartakiad
+1957	Rīgas ASK	CSKA Moscow	Dynamo Moscow	
+1958	Rīgas ASK	CSKA Moscow	Dynamo Moscow	
+1959	Team Moscow	Georgian SSR Team	Latvian SSR Team	USSR Spartakiad
+1960	CSKA Moscow	Dinamo Tbilisi	VEF Riga	
+1961	CSKA Moscow	Dinamo Tbilisi	Rīgas ASK	
+1962	CSKA Moscow	Rīgas ASK	Budivelnyk Kyiv	
+1963	Team Moscow	Ukrainian SSR Team	Latvian SSR Team	USSR Spartakiad
+1964	CSKA Moscow	Rīgas ASK	Budivelnyk Kyiv	
+1965	CSKA Moscow	Budivelnyk Kyiv	Dinamo Tbilisi	
+1966	CSKA Moscow	Budivelnyk Kyiv	VEF Riga	
+1967	Ukrainian SSR Team	Estonian SSR Team	Team Moscow	USSR Spartakiad
+1968	Dinamo Tbilisi	CSKA Kyiv	CSKA Moscow	
+1969	CSKA Moscow	Dinamo Tbilisi	Spartak Leningrad	
+1970	CSKA Moscow	Spartak Leningrad	Budivelnyk Kyiv	
+1971	CSKA Moscow	Spartak Leningrad	Žalgiris Kaunas	
+1972	CSKA Moscow	Spartak Leningrad	CSKA Kyiv	
+1973	CSKA Moscow	Spartak Leningrad	Žalgiris Kaunas	
+1974	CSKA Moscow	Spartak Leningrad	Budivelnyk Kyiv	
+1975	Spartak Leningrad	CSKA Moscow	Dynamo Moscow	
+1976	CSKA Moscow	Spartak Leningrad	Dynamo Moscow	
+1977	CSKA Moscow	Budivelnyk Kyiv	Dinamo Tbilisi	
+1978	CSKA Moscow	Spartak Leningrad	Žalgiris Kaunas	
+1979	CSKA Moscow	Budivelnyk Kyiv	Statyba Vilnius (Rytas Vilnius)	
+1980	CSKA Moscow	Žalgiris Kaunas	Dynamo Moscow	
+1981	CSKA Moscow	Budivelnyk Kyiv	Spartak Leningrad	
+1982	CSKA Moscow	Budivelnyk Kyiv	Dynamo Moscow	
+1983	CSKA Moscow	Žalgiris Kaunas	Budivelnyk Kyiv	
+1984	CSKA Moscow	Žalgiris Kaunas	Budivelnyk Kyiv	
+1985	Žalgiris Kaunas	CSKA Moscow	Spartak Leningrad	
+1986	Žalgiris Kaunas	CSKA Moscow	Spartak Leningrad	
+1987 [3]	Žalgiris Kaunas	CSKA Moscow	Spartak Leningrad	
+1988 [4]	CSKA Moscow	Žalgiris Kaunas	Budivelnyk Kyiv	
+1989 [5]	Budivelnyk Kyiv	Žalgiris Kaunas	CSKA Moscow	
+1990 [6]	CSKA Moscow	Dynamo Moscow	Budivelnyk Kyiv	
+1991 [7]	Kalev Tallinn	Spartak Leningrad	VEF Riga	
+1992 [8]	Spartak Saint Petersburg	Alma-Ata	Dynamo Moscow	The club championship of the CIS
+

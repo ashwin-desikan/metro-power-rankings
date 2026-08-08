@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 
@@ -6,7 +7,16 @@ import CrestIcon from "@/app/teams/_shared/CrestIcon";
 // county, British rugby league). Takes plain data props, so it imports nothing
 // server-only and can live next to any hub. Mirrors the Domestic Rugby grid.
 
-type Row = { season: string; winner: string; ru: string | null };
+type Row = { season: string; winner: string; ru: string | null; era?: string | null };
+
+// Rolls are stored oldest-first and grouped into era blocks (oldest block
+// first), so reversing yields newest season of the newest competition down to
+// the oldest season of the oldest. An era changes exactly at a block boundary,
+// which is where the labelled rule goes.
+function eraChanged(rows: Row[], i: number) {
+  if (i === 0) return false;
+  return (rows[i].era ?? null) !== (rows[i - 1].era ?? null);
+}
 type Portal = {
   labels: Record<string, string>;
   rolls: Record<string, Row[]>;
@@ -52,8 +62,16 @@ export default function HonourRolls({
           {/* Mobile: one row-card per season instead of a table that hides
               the runner-up entirely below sm. Same reversed rolls array. */}
           <div className="sm:hidden overflow-y-auto space-y-1" style={{ maxHeight: 340 }}>
-            {[...portal.rolls[k]].reverse().map((r, i) => (
-              <div key={`${r.season}-${i}-card`} className="flex items-start justify-between gap-2 py-1 border-t text-xs" style={{ borderColor: "var(--border)" }}>
+            {[...portal.rolls[k]].reverse().map((r, i, rows) => (
+              <div key={`${r.season}-${i}-card`}>
+              {eraChanged(rows, i) ? (
+                <div className="flex items-center gap-2 pt-2.5 pb-1" aria-hidden={false}>
+                  <span className="h-px flex-1" style={{ background: "var(--border)" }} />
+                  <span className="text-[10px] uppercase tracking-wider text-[var(--text-dim)]">{r.era}</span>
+                  <span className="h-px flex-1" style={{ background: "var(--border)" }} />
+                </div>
+              ) : null}
+              <div className="flex items-start justify-between gap-2 py-1 border-t text-xs" style={{ borderColor: "var(--border)" }}>
                 <span className="tabular-nums whitespace-nowrap text-[var(--text-dim)] flex-shrink-0" style={mono}>{r.season}</span>
                 <span className="flex-1 min-w-0 text-right">
                   <span className="inline-flex items-center gap-1.5 font-medium justify-end">
@@ -71,6 +89,7 @@ export default function HonourRolls({
                   )}
                 </span>
               </div>
+              </div>
             ))}
           </div>
 
@@ -79,8 +98,20 @@ export default function HonourRolls({
               <tbody>
                 {/* Rolls are stored oldest-first in the ETL; render newest-first
                     to match every other season-by-season table on the site. */}
-                {[...portal.rolls[k]].reverse().map((r, i) => (
-                  <tr key={`${r.season}-${i}`} className="border-t" style={{ borderColor: "var(--border)" }}>
+                {[...portal.rolls[k]].reverse().map((r, i, rows) => (
+                  <Fragment key={`${r.season}-${i}`}>
+                  {eraChanged(rows, i) ? (
+                    <tr>
+                      <td colSpan={3} className="pt-3 pb-1">
+                        <span className="flex items-center gap-2">
+                          <span className="h-px flex-1" style={{ background: "var(--border)" }} />
+                          <span className="text-[10px] uppercase tracking-wider text-[var(--text-dim)] whitespace-nowrap">{r.era}</span>
+                          <span className="h-px flex-1" style={{ background: "var(--border)" }} />
+                        </span>
+                      </td>
+                    </tr>
+                  ) : null}
+                  <tr className="border-t" style={{ borderColor: "var(--border)" }}>
                     <td className="py-1 pr-2 tabular-nums whitespace-nowrap align-top" style={mono}>{r.season}</td>
                     <td className="py-2 pr-2 font-medium">
                       <span className="inline-flex items-center gap-1.5">
@@ -101,6 +132,7 @@ export default function HonourRolls({
                       ) : ""}
                     </td>
                   </tr>
+                  </Fragment>
                 ))}
               </tbody>
             </table>

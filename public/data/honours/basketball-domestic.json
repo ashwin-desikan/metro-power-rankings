@@ -1,1 +1,5084 @@
-{"labels":{"cba":"Chinese Basketball Association"},"rolls":{"cba":[{"season":"1995–96","winner":"Bayi Rockets","ru":"Guangdong Southern Tigers"},{"season":"1996–97","winner":"Bayi Rockets","ru":"Liaoning Hunters"},{"season":"1997–98","winner":"Bayi Rockets","ru":"Liaoning Hunters"},{"season":"1998–99","winner":"Bayi Rockets","ru":"Liaoning Hunters"},{"season":"1999–00","winner":"Bayi Rockets","ru":"Shanghai Sharks"},{"season":"2000–01","winner":"Bayi Rockets","ru":"Shanghai Sharks"},{"season":"2001–02","winner":"Shanghai Sharks","ru":"Bayi Rockets"},{"season":"2002–03","winner":"Bayi Rockets","ru":"Guangdong Southern Tigers"},{"season":"2003–04","winner":"Guangdong Southern Tigers","ru":"Bayi Rockets"},{"season":"2004–05","winner":"Guangdong Southern Tigers","ru":"Jiangsu Dragons"},{"season":"2005–06","winner":"Guangdong Southern Tigers","ru":"Bayi Rockets"},{"season":"2006–07","winner":"Bayi Rockets","ru":"Guangdong Southern Tigers"},{"season":"2007–08","winner":"Guangdong Southern Tigers","ru":"Liaoning Hunters"},{"season":"2008–09","winner":"Guangdong Southern Tigers","ru":"Xinjiang Flying Tigers"},{"season":"2009–10","winner":"Guangdong Southern Tigers","ru":"Xinjiang Flying Tigers"},{"season":"2010–11","winner":"Guangdong Southern Tigers","ru":"Xinjiang Flying Tigers"},{"season":"2011–12","winner":"Beijing Ducks","ru":"Guangdong Southern Tigers"},{"season":"2012–13","winner":"Guangdong Southern Tigers","ru":"Shandong Gold Lions"},{"season":"2013–14","winner":"Beijing Ducks","ru":"Xinjiang Flying Tigers"},{"season":"2014–15","winner":"Beijing Ducks","ru":"Liaoning Flying Leopards"},{"season":"2015–16","winner":"Sichuan Blue Whales","ru":"Liaoning Flying Leopards"},{"season":"2016–17","winner":"Xinjiang Flying Tigers","ru":"Guangdong Southern Tigers"},{"season":"2017–18","winner":"Liaoning Flying Leopards","ru":"Zhejiang Guangsha Lions"},{"season":"2018–19","winner":"Guangdong Southern Tigers","ru":"Xinjiang Flying Tigers"},{"season":"2019–20","winner":"Guangdong Southern Tigers","ru":"Liaoning Flying Leopards"},{"season":"2020–21","winner":"Guangdong Southern Tigers","ru":"Liaoning Flying Leopards"},{"season":"2021–22","winner":"Liaoning Flying Leopards","ru":"Zhejiang Guangsha Lions"},{"season":"2022–23","winner":"Liaoning Flying Leopards","ru":"Zhejiang Golden Bulls"},{"season":"2023–24","winner":"Liaoning Flying Leopards","ru":"Xinjiang Flying Tigers"},{"season":"2024–25","winner":"Zhejiang Guangsha Lions","ru":"Beijing Ducks"},{"season":"2025–26","winner":"Shanghai Sharks","ru":"Zhejiang Guangsha Lions"}]},"most_titled":{"cba":[{"winner":"Guangdong Southern Tigers","titles":11},{"winner":"Bayi Rockets","titles":8},{"winner":"Liaoning Flying Leopards","titles":4},{"winner":"Beijing Ducks","titles":3},{"winner":"Shanghai Sharks","titles":2},{"winner":"Sichuan Blue Whales","titles":1},{"winner":"Xinjiang Flying Tigers","titles":1},{"winner":"Zhejiang Lions","titles":1}]}}
+{
+ "labels": {
+  "cba": "China — Chinese Basketball Association",
+  "acb": "Spain — Liga ACB",
+  "lba": "Italy — Lega Basket Serie A",
+  "greek": "Greece — Basket League",
+  "bsl": "Turkey — Basketbol Süper Ligi",
+  "aba": "Adriatic — ABA League",
+  "vtb": "Russia — VTB United League",
+  "israel": "Israel — Basketball Premier League",
+  "lnb": "France — LNB Élite",
+  "lkl": "Lithuania — LKL"
+ },
+ "rolls": {
+  "cba": [
+   {
+    "season": "1995–96",
+    "winner": "Bayi Rockets",
+    "ru": "Guangdong Southern Tigers",
+    "era": null
+   },
+   {
+    "season": "1996–97",
+    "winner": "Bayi Rockets",
+    "ru": "Liaoning Hunters",
+    "era": null
+   },
+   {
+    "season": "1997–98",
+    "winner": "Bayi Rockets",
+    "ru": "Liaoning Hunters",
+    "era": null
+   },
+   {
+    "season": "1998–99",
+    "winner": "Bayi Rockets",
+    "ru": "Liaoning Hunters",
+    "era": null
+   },
+   {
+    "season": "1999–00",
+    "winner": "Bayi Rockets",
+    "ru": "Shanghai Sharks",
+    "era": null
+   },
+   {
+    "season": "2000–01",
+    "winner": "Bayi Rockets",
+    "ru": "Shanghai Sharks",
+    "era": null
+   },
+   {
+    "season": "2001–02",
+    "winner": "Shanghai Sharks",
+    "ru": "Bayi Rockets",
+    "era": null
+   },
+   {
+    "season": "2002–03",
+    "winner": "Bayi Rockets",
+    "ru": "Guangdong Southern Tigers",
+    "era": null
+   },
+   {
+    "season": "2003–04",
+    "winner": "Guangdong Southern Tigers",
+    "ru": "Bayi Rockets",
+    "era": null
+   },
+   {
+    "season": "2004–05",
+    "winner": "Guangdong Southern Tigers",
+    "ru": "Jiangsu Dragons",
+    "era": null
+   },
+   {
+    "season": "2005–06",
+    "winner": "Guangdong Southern Tigers",
+    "ru": "Bayi Rockets",
+    "era": null
+   },
+   {
+    "season": "2006–07",
+    "winner": "Bayi Rockets",
+    "ru": "Guangdong Southern Tigers",
+    "era": null
+   },
+   {
+    "season": "2007–08",
+    "winner": "Guangdong Southern Tigers",
+    "ru": "Liaoning Hunters",
+    "era": null
+   },
+   {
+    "season": "2008–09",
+    "winner": "Guangdong Southern Tigers",
+    "ru": "Xinjiang Flying Tigers",
+    "era": null
+   },
+   {
+    "season": "2009–10",
+    "winner": "Guangdong Southern Tigers",
+    "ru": "Xinjiang Flying Tigers",
+    "era": null
+   },
+   {
+    "season": "2010–11",
+    "winner": "Guangdong Southern Tigers",
+    "ru": "Xinjiang Flying Tigers",
+    "era": null
+   },
+   {
+    "season": "2011–12",
+    "winner": "Beijing Ducks",
+    "ru": "Guangdong Southern Tigers",
+    "era": null
+   },
+   {
+    "season": "2012–13",
+    "winner": "Guangdong Southern Tigers",
+    "ru": "Shandong Gold Lions",
+    "era": null
+   },
+   {
+    "season": "2013–14",
+    "winner": "Beijing Ducks",
+    "ru": "Xinjiang Flying Tigers",
+    "era": null
+   },
+   {
+    "season": "2014–15",
+    "winner": "Beijing Ducks",
+    "ru": "Liaoning Flying Leopards",
+    "era": null
+   },
+   {
+    "season": "2015–16",
+    "winner": "Sichuan Blue Whales",
+    "ru": "Liaoning Flying Leopards",
+    "era": null
+   },
+   {
+    "season": "2016–17",
+    "winner": "Xinjiang Flying Tigers",
+    "ru": "Guangdong Southern Tigers",
+    "era": null
+   },
+   {
+    "season": "2017–18",
+    "winner": "Liaoning Flying Leopards",
+    "ru": "Zhejiang Guangsha Lions",
+    "era": null
+   },
+   {
+    "season": "2018–19",
+    "winner": "Guangdong Southern Tigers",
+    "ru": "Xinjiang Flying Tigers",
+    "era": null
+   },
+   {
+    "season": "2019–20",
+    "winner": "Guangdong Southern Tigers",
+    "ru": "Liaoning Flying Leopards",
+    "era": null
+   },
+   {
+    "season": "2020–21",
+    "winner": "Guangdong Southern Tigers",
+    "ru": "Liaoning Flying Leopards",
+    "era": null
+   },
+   {
+    "season": "2021–22",
+    "winner": "Liaoning Flying Leopards",
+    "ru": "Zhejiang Guangsha Lions",
+    "era": null
+   },
+   {
+    "season": "2022–23",
+    "winner": "Liaoning Flying Leopards",
+    "ru": "Zhejiang Golden Bulls",
+    "era": null
+   },
+   {
+    "season": "2023–24",
+    "winner": "Liaoning Flying Leopards",
+    "ru": "Xinjiang Flying Tigers",
+    "era": null
+   },
+   {
+    "season": "2024–25",
+    "winner": "Zhejiang Guangsha Lions",
+    "ru": "Beijing Ducks",
+    "era": null
+   },
+   {
+    "season": "2025–26",
+    "winner": "Shanghai Sharks",
+    "ru": "Zhejiang Guangsha Lions",
+    "era": null
+   }
+  ],
+  "acb": [
+   {
+    "season": "1957",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1958",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "Joventut Badalona",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1958–59",
+    "winner": "FC Barcelona Basquet",
+    "ru": "Real Madrid Baloncesto",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1959–60",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "Joventut Badalona",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1960–61",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "Orillo Verde Sabadell",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1961–62",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "Joventut Badalona",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1962–63",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "CB Estudiantes",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1963–64",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "Picadero JC",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1964–65",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "Picadero JC",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1965–66",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "Picadero JC",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1966–67",
+    "winner": "Joventut Badalona",
+    "ru": "Real Madrid Baloncesto",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1967–68",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "CB Estudiantes",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1968–69",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "Joventut Badalona",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1969–70",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "Picadero JC",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1970–71",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "Joventut Badalona",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1971–72",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1972–73",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "Joventut Badalona",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1973–74",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1974–75",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1975–76",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1976–77",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1977–78",
+    "winner": "Joventut Badalona",
+    "ru": "Real Madrid Baloncesto",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1978–79",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1979–80",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1980–81",
+    "winner": "FC Barcelona Basquet",
+    "ru": "CB Estudiantes",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1981–82",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1982–83",
+    "winner": "FC Barcelona Basquet",
+    "ru": "Real Madrid Baloncesto",
+    "era": "Liga Española de Baloncesto · 1957–1983"
+   },
+   {
+    "season": "1983–84",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "1984–85",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "Joventut Badalona",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "1985–86",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "1986–87",
+    "winner": "FC Barcelona Basquet",
+    "ru": "Joventut Badalona",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "1987–88",
+    "winner": "FC Barcelona Basquet",
+    "ru": "Real Madrid Baloncesto",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "1988–89",
+    "winner": "FC Barcelona Basquet",
+    "ru": "Real Madrid Baloncesto",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "1989–90",
+    "winner": "FC Barcelona Basquet",
+    "ru": "Joventut Badalona",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "1990–91",
+    "winner": "Joventut Badalona",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "1991–92",
+    "winner": "Joventut Badalona",
+    "ru": "Real Madrid Baloncesto",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "1992–93",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "Joventut Badalona",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "1993–94",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "1994–95",
+    "winner": "FC Barcelona Basquet",
+    "ru": "Unicaja Málaga",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "1995–96",
+    "winner": "FC Barcelona Basquet",
+    "ru": "Real Betis Baloncesto",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "1996–97",
+    "winner": "FC Barcelona Basquet",
+    "ru": "Real Madrid Baloncesto",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "1997–98",
+    "winner": "Bàsquet Manresa",
+    "ru": "Saski Baskonia",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "1998–99",
+    "winner": "FC Barcelona Basquet",
+    "ru": "Real Betis Baloncesto",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "1999–00",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2000–01",
+    "winner": "FC Barcelona Basquet",
+    "ru": "Real Madrid Baloncesto",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2001–02",
+    "winner": "Saski Baskonia",
+    "ru": "Unicaja Málaga",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2002–03",
+    "winner": "FC Barcelona Basquet",
+    "ru": "Valencia Basket",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2003–04",
+    "winner": "FC Barcelona Basquet",
+    "ru": "CB Estudiantes",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2004–05",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "Saski Baskonia",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2005–06",
+    "winner": "Unicaja Málaga",
+    "ru": "Saski Baskonia",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2006–07",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2007–08",
+    "winner": "Saski Baskonia",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2008–09",
+    "winner": "FC Barcelona Basquet",
+    "ru": "Saski Baskonia",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2009–10",
+    "winner": "Saski Baskonia",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2010–11",
+    "winner": "FC Barcelona Basquet",
+    "ru": "Bilbao Basket",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2011–12",
+    "winner": "FC Barcelona Basquet",
+    "ru": "Real Madrid Baloncesto",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2012–13",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2013–14",
+    "winner": "FC Barcelona Basquet",
+    "ru": "Real Madrid Baloncesto",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2014–15",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2015–16",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2016–17",
+    "winner": "Valencia Basket",
+    "ru": "Real Madrid Baloncesto",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2017–18",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "Saski Baskonia",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2018–19",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2019–20",
+    "winner": "Saski Baskonia",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2020–21",
+    "winner": "FC Barcelona Basquet",
+    "ru": "Real Madrid Baloncesto",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2021–22",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2022–23",
+    "winner": "FC Barcelona Basquet",
+    "ru": "Real Madrid Baloncesto",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2023–24",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "UCAM Murcia",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2024–25",
+    "winner": "Real Madrid Baloncesto",
+    "ru": "Valencia Basket",
+    "era": "Liga ACB"
+   },
+   {
+    "season": "2025–26",
+    "winner": "Valencia Basket",
+    "ru": "FC Barcelona Basquet",
+    "era": "Liga ACB"
+   }
+  ],
+  "lba": [
+   {
+    "season": "1920",
+    "winner": "Costanza",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1921",
+    "winner": "Assi Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1922",
+    "winner": "Assi Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1923",
+    "winner": "Internazionale Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1924",
+    "winner": "Assi Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1925",
+    "winner": "Assi Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1926",
+    "winner": "Assi Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1927",
+    "winner": "Assi Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1928",
+    "winner": "Ginnastica Roma",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1930",
+    "winner": "Pallacanestro Trieste",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1931",
+    "winner": "Ginnastica Roma",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1932",
+    "winner": "Pallacanestro Trieste",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1933",
+    "winner": "Ginnastica Roma",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1934",
+    "winner": "Pallacanestro Trieste",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1935",
+    "winner": "Ginnastica Roma",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1935–36",
+    "winner": "Olimpia Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1936–37",
+    "winner": "Olimpia Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1937–38",
+    "winner": "Olimpia Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1938–39",
+    "winner": "Olimpia Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1939–40",
+    "winner": "Pallacanestro Trieste",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1940–41",
+    "winner": "Pallacanestro Trieste",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1941–42",
+    "winner": "Reyer Venezia",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1942–43",
+    "winner": "Reyer Venezia",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1945–46",
+    "winner": "Virtus Bologna",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1946–47",
+    "winner": "Virtus Bologna",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1947–48",
+    "winner": "Virtus Bologna",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1948–49",
+    "winner": "Virtus Bologna",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1949–50",
+    "winner": "Olimpia Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1950–51",
+    "winner": "Olimpia Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1951–52",
+    "winner": "Olimpia Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1952–53",
+    "winner": "Olimpia Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1953–54",
+    "winner": "Olimpia Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1954–55",
+    "winner": "Virtus Bologna",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1955–56",
+    "winner": "Virtus Bologna",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1956–57",
+    "winner": "Olimpia Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1957–58",
+    "winner": "Olimpia Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1958–59",
+    "winner": "Olimpia Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1959–60",
+    "winner": "Olimpia Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1960–61",
+    "winner": "Pallacanestro Varese",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1961–62",
+    "winner": "Olimpia Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1962–63",
+    "winner": "Olimpia Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1963–64",
+    "winner": "Pallacanestro Varese",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1964–65",
+    "winner": "Olimpia Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1965–66",
+    "winner": "Olimpia Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1966–67",
+    "winner": "Olimpia Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1967–68",
+    "winner": "Pallacanestro Cantù",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1968–69",
+    "winner": "Pallacanestro Varese",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1969–70",
+    "winner": "Pallacanestro Varese",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1970–71",
+    "winner": "Pallacanestro Varese",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1971–72",
+    "winner": "Olimpia Milano",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1972–73",
+    "winner": "Pallacanestro Varese",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1973–74",
+    "winner": "Pallacanestro Varese",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1974–75",
+    "winner": "Pallacanestro Cantù",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1975–76",
+    "winner": "Virtus Bologna",
+    "ru": null,
+    "era": "Italian Championship · 1920–1976"
+   },
+   {
+    "season": "1976–77",
+    "winner": "Pallacanestro Varese",
+    "ru": "Virtus Bologna",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "1977–78",
+    "winner": "Pallacanestro Varese",
+    "ru": "Virtus Bologna",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "1978–79",
+    "winner": "Virtus Bologna",
+    "ru": "Olimpia Milano",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "1979–80",
+    "winner": "Virtus Bologna",
+    "ru": "Pallacanestro Cantù",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "1980–81",
+    "winner": "Pallacanestro Cantù",
+    "ru": "Virtus Bologna",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "1981–82",
+    "winner": "Olimpia Milano",
+    "ru": "Victoria Libertas",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "1982–83",
+    "winner": "Virtus Roma",
+    "ru": "Olimpia Milano",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "1983–84",
+    "winner": "Virtus Bologna",
+    "ru": "Olimpia Milano",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "1984–85",
+    "winner": "Olimpia Milano",
+    "ru": "Victoria Libertas",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "1985–86",
+    "winner": "Olimpia Milano",
+    "ru": "JuveCaserta Basket",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "1986–87",
+    "winner": "Olimpia Milano",
+    "ru": "JuveCaserta Basket",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "1987–88",
+    "winner": "Victoria Libertas",
+    "ru": "Olimpia Milano",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "1988–89",
+    "winner": "Olimpia Milano",
+    "ru": "Libertas Livorno",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "1989–90",
+    "winner": "Victoria Libertas",
+    "ru": "Pallacanestro Varese",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "1990–91",
+    "winner": "JuveCaserta Basket",
+    "ru": "Olimpia Milano",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "1991–92",
+    "winner": "Benetton Treviso",
+    "ru": "Victoria Libertas",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "1992–93",
+    "winner": "Virtus Bologna",
+    "ru": "Benetton Treviso",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "1993–94",
+    "winner": "Virtus Bologna",
+    "ru": "Victoria Libertas",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "1994–95",
+    "winner": "Virtus Bologna",
+    "ru": "Benetton Treviso",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "1995–96",
+    "winner": "Olimpia Milano",
+    "ru": "Fortitudo Bologna",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "1996–97",
+    "winner": "Benetton Treviso",
+    "ru": "Fortitudo Bologna",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "1997–98",
+    "winner": "Virtus Bologna",
+    "ru": "Fortitudo Bologna",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "1998–99",
+    "winner": "Pallacanestro Varese",
+    "ru": "Benetton Treviso",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "1999–00",
+    "winner": "Fortitudo Bologna",
+    "ru": "Benetton Treviso",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2000–01",
+    "winner": "Virtus Bologna",
+    "ru": "Fortitudo Bologna",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2001–02",
+    "winner": "Benetton Treviso",
+    "ru": "Virtus Bologna",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2002–03",
+    "winner": "Benetton Treviso",
+    "ru": "Virtus Bologna",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2003–04",
+    "winner": "Mens Sana Basketball Siena",
+    "ru": "Virtus Bologna",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2004–05",
+    "winner": "Fortitudo Bologna",
+    "ru": "Olimpia Milano",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2005–06",
+    "winner": "Benetton Treviso",
+    "ru": "Fortitudo Bologna",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2006–07",
+    "winner": "Mens Sana Basketball Siena",
+    "ru": "Virtus Bologna",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2007–08",
+    "winner": "Mens Sana Basketball Siena",
+    "ru": "Virtus Roma",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2008–09",
+    "winner": "Mens Sana Basketball Siena",
+    "ru": "Olimpia Milano",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2009–10",
+    "winner": "Mens Sana Basketball Siena",
+    "ru": "Olimpia Milano",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2010–11",
+    "winner": "Mens Sana Basketball Siena",
+    "ru": "Pallacanestro Cantù",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2011–12",
+    "winner": "Mens Sana Basketball Siena",
+    "ru": "Olimpia Milano",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2012–13",
+    "winner": "Mens Sana Basketball Siena",
+    "ru": "Virtus Roma",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2013–14",
+    "winner": "Olimpia Milano",
+    "ru": "Mens Sana Basketball Siena",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2014–15",
+    "winner": "Dinamo Sassari",
+    "ru": "Pallacanestro Reggiana",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2015–16",
+    "winner": "Olimpia Milano",
+    "ru": "Pallacanestro Reggiana",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2016–17",
+    "winner": "Reyer Venezia",
+    "ru": "Aquila Basket Trento",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2017–18",
+    "winner": "Olimpia Milano",
+    "ru": "Aquila Basket Trento",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2018–19",
+    "winner": "Reyer Venezia",
+    "ru": "Dinamo Sassari",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2020–21",
+    "winner": "Virtus Bologna",
+    "ru": "Olimpia Milano",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2021–22",
+    "winner": "Olimpia Milano",
+    "ru": "Virtus Bologna",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2022–23",
+    "winner": "Olimpia Milano",
+    "ru": "Virtus Bologna",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2023–24",
+    "winner": "Olimpia Milano",
+    "ru": "Virtus Bologna",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2024–25",
+    "winner": "Virtus Bologna",
+    "ru": "Pallacanestro Brescia",
+    "era": "Serie A, playoff era"
+   },
+   {
+    "season": "2025–26",
+    "winner": "Olimpia Milano",
+    "ru": null,
+    "era": "Serie A, playoff era"
+   }
+  ],
+  "greek": [
+   {
+    "season": "1927–28",
+    "winner": "Iraklis BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1928–29",
+    "winner": "Panellinios BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1929–30",
+    "winner": "Aris BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1934–35",
+    "winner": "Iraklis BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1935–36",
+    "winner": "Near East",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1936–37",
+    "winner": "Athens University",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1938–39",
+    "winner": "Panellinios BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1939–40",
+    "winner": "Panellinios BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1945–46",
+    "winner": "Panathinaikos BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1946–47",
+    "winner": "Panathinaikos BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1948–49",
+    "winner": "Olympiacos BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1949–50",
+    "winner": "Panathinaikos BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1950–51",
+    "winner": "Panathinaikos BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1952–53",
+    "winner": "Panellinios BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1953–54",
+    "winner": "Panathinaikos BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1954–55",
+    "winner": "Panellinios BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1956–57",
+    "winner": "Panellinios BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1957–58",
+    "winner": "AEK BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1958–59",
+    "winner": "PAOK BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1959–60",
+    "winner": "Olympiacos BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1960–61",
+    "winner": "Panathinaikos BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1961–62",
+    "winner": "Panathinaikos BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1962–63",
+    "winner": "AEK BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1963–64",
+    "winner": "AEK BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1964–65",
+    "winner": "AEK BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1965–66",
+    "winner": "AEK BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1966–67",
+    "winner": "Panathinaikos BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1967–68",
+    "winner": "AEK BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1968–69",
+    "winner": "Panathinaikos BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1969–70",
+    "winner": "AEK BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1970–71",
+    "winner": "Panathinaikos BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1971–72",
+    "winner": "Panathinaikos BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1972–73",
+    "winner": "Panathinaikos BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1973–74",
+    "winner": "Panathinaikos BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1974–75",
+    "winner": "Panathinaikos BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1975–76",
+    "winner": "Olympiacos BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1976–77",
+    "winner": "Panathinaikos BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1977–78",
+    "winner": "Olympiacos BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1978–79",
+    "winner": "Aris BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1979–80",
+    "winner": "Panathinaikos BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1980–81",
+    "winner": "Panathinaikos BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1981–82",
+    "winner": "Panathinaikos BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1982–83",
+    "winner": "Aris BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1983–84",
+    "winner": "Panathinaikos BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1984–85",
+    "winner": "Aris BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1985–86",
+    "winner": "Aris BC",
+    "ru": null,
+    "era": "Panhellenic Championship · 1927–1986"
+   },
+   {
+    "season": "1986–87",
+    "winner": "Aris BC",
+    "ru": "Panionios BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "1987–88",
+    "winner": "Aris BC",
+    "ru": "PAOK BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "1988–89",
+    "winner": "Aris BC",
+    "ru": "PAOK BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "1989–90",
+    "winner": "Aris BC",
+    "ru": "PAOK BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "1990–91",
+    "winner": "Aris BC",
+    "ru": "PAOK BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "1991–92",
+    "winner": "PAOK BC",
+    "ru": "Olympiacos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "1992–93",
+    "winner": "Olympiacos BC",
+    "ru": "Panathinaikos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "1993–94",
+    "winner": "Olympiacos BC",
+    "ru": "PAOK BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "1994–95",
+    "winner": "Olympiacos BC",
+    "ru": "Panathinaikos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "1995–96",
+    "winner": "Olympiacos BC",
+    "ru": "Panathinaikos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "1996–97",
+    "winner": "Olympiacos BC",
+    "ru": "AEK BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "1997–98",
+    "winner": "Panathinaikos BC",
+    "ru": "PAOK BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "1998–99",
+    "winner": "Panathinaikos BC",
+    "ru": "Olympiacos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "1999–00",
+    "winner": "Panathinaikos BC",
+    "ru": "PAOK BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2000–01",
+    "winner": "Panathinaikos BC",
+    "ru": "Olympiacos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2001–02",
+    "winner": "AEK BC",
+    "ru": "Olympiacos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2002–03",
+    "winner": "Panathinaikos BC",
+    "ru": "AEK BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2003–04",
+    "winner": "Panathinaikos BC",
+    "ru": "Maroussi BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2004–05",
+    "winner": "Panathinaikos BC",
+    "ru": "AEK BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2005–06",
+    "winner": "Panathinaikos BC",
+    "ru": "Olympiacos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2006–07",
+    "winner": "Panathinaikos BC",
+    "ru": "Olympiacos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2007–08",
+    "winner": "Panathinaikos BC",
+    "ru": "Olympiacos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2008–09",
+    "winner": "Panathinaikos BC",
+    "ru": "Olympiacos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2009–10",
+    "winner": "Panathinaikos BC",
+    "ru": "Olympiacos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2010–11",
+    "winner": "Panathinaikos BC",
+    "ru": "Olympiacos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2011–12",
+    "winner": "Olympiacos BC",
+    "ru": "Panathinaikos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2012–13",
+    "winner": "Panathinaikos BC",
+    "ru": "Olympiacos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2013–14",
+    "winner": "Panathinaikos BC",
+    "ru": "Olympiacos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2014–15",
+    "winner": "Olympiacos BC",
+    "ru": "Panathinaikos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2015–16",
+    "winner": "Olympiacos BC",
+    "ru": "Panathinaikos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2016–17",
+    "winner": "Panathinaikos BC",
+    "ru": "Olympiacos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2017–18",
+    "winner": "Panathinaikos BC",
+    "ru": "Olympiacos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2018–19",
+    "winner": "Panathinaikos BC",
+    "ru": "Promitheas Patras",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2019–20",
+    "winner": "Panathinaikos BC",
+    "ru": null,
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2020–21",
+    "winner": "Panathinaikos BC",
+    "ru": "Lavrio BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2021–22",
+    "winner": "Olympiacos BC",
+    "ru": "Panathinaikos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2022–23",
+    "winner": "Olympiacos BC",
+    "ru": "Panathinaikos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2023–24",
+    "winner": "Panathinaikos BC",
+    "ru": "Olympiacos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2024–25",
+    "winner": "Olympiacos BC",
+    "ru": "Panathinaikos BC",
+    "era": "Basket League, playoff era"
+   },
+   {
+    "season": "2025–26",
+    "winner": "Olympiacos BC",
+    "ru": "Panathinaikos BC",
+    "era": "Basket League, playoff era"
+   }
+  ],
+  "bsl": [
+   {
+    "season": "1943",
+    "winner": "Harp Okulu",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1944",
+    "winner": "Galatasaray Basketball",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1945",
+    "winner": "Galatasaray Basketball",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1946",
+    "winner": "Beykoz",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1947",
+    "winner": "Galatasaray Basketball",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1948",
+    "winner": "Galatasaray Basketball",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1949",
+    "winner": "Galatasaray Basketball",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1950",
+    "winner": "Galatasaray Basketball",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1951",
+    "winner": "Harp Okulu",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1952",
+    "winner": "Harp Okulu",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1953",
+    "winner": "Galatasaray Basketball",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1954",
+    "winner": "Modaspor",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1955",
+    "winner": "Galatasaray Basketball & Modaspor",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1956",
+    "winner": "Galatasaray Basketball",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1957",
+    "winner": "Fenerbahçe Basketball",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1958",
+    "winner": "Modaspor",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1959",
+    "winner": "Fenerbahçe Basketball",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1960",
+    "winner": "Galatasaray Basketball",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1961",
+    "winner": "Daçka Basketbol",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1962",
+    "winner": "Daçka Basketbol",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1963",
+    "winner": "Galatasaray Basketball",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1964",
+    "winner": "Galatasaray Basketball",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1965",
+    "winner": "Fenerbahçe Basketball",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1966",
+    "winner": "Galatasaray Basketball",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1967",
+    "winner": "Altınordu",
+    "ru": null,
+    "era": "Turkish Basketball Championship · 1943–1967"
+   },
+   {
+    "season": "1966–67",
+    "winner": "Altınordu",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1967–68",
+    "winner": "İTÜ",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1968–69",
+    "winner": "Galatasaray Basketball",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1969–70",
+    "winner": "İTÜ",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1970–71",
+    "winner": "İTÜ",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1971–72",
+    "winner": "İTÜ",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1972–73",
+    "winner": "İTÜ",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1973–74",
+    "winner": "Muhafızgücü",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1974–75",
+    "winner": "Beşiktaş Basketbol",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1975–76",
+    "winner": "Eczacıbaşı SK",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1976–77",
+    "winner": "Eczacıbaşı SK",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1977–78",
+    "winner": "Eczacıbaşı SK",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1978–79",
+    "winner": "Anadolu Efes",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1979–80",
+    "winner": "Eczacıbaşı SK",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1980–81",
+    "winner": "Eczacıbaşı SK",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1981–82",
+    "winner": "Eczacıbaşı SK",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1982–83",
+    "winner": "Anadolu Efes",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1983–84",
+    "winner": "Anadolu Efes",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1984–85",
+    "winner": "Galatasaray Basketball",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1985–86",
+    "winner": "Galatasaray Basketball",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1986–87",
+    "winner": "Karşıyaka Basket",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1987–88",
+    "winner": "Eczacıbaşı SK",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1988–89",
+    "winner": "Eczacıbaşı SK",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1989–90",
+    "winner": "Galatasaray Basketball",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1990–91",
+    "winner": "Fenerbahçe Basketball",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1991–92",
+    "winner": "Anadolu Efes",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1992–93",
+    "winner": "Anadolu Efes",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1993–94",
+    "winner": "Anadolu Efes",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1994–95",
+    "winner": "Ülker",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1995–96",
+    "winner": "Anadolu Efes",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1996–97",
+    "winner": "Anadolu Efes",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1997–98",
+    "winner": "Ülker",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1998–99",
+    "winner": "Tofaş SK",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "1999–00",
+    "winner": "Tofaş SK",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2000–01",
+    "winner": "Ülker",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2001–02",
+    "winner": "Anadolu Efes",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2002–03",
+    "winner": "Anadolu Efes",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2003–04",
+    "winner": "Anadolu Efes",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2004–05",
+    "winner": "Anadolu Efes",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2005–06",
+    "winner": "Ülker",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2006–07",
+    "winner": "Fenerbahçe Basketball",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2007–08",
+    "winner": "Fenerbahçe Basketball",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2008–09",
+    "winner": "Anadolu Efes",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2009–10",
+    "winner": "Fenerbahçe Basketball",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2010–11",
+    "winner": "Fenerbahçe Basketball",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2011–12",
+    "winner": "Beşiktaş Basketbol",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2012–13",
+    "winner": "Galatasaray Basketball",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2013–14",
+    "winner": "Fenerbahçe Basketball",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2014–15",
+    "winner": "Karşıyaka Basket",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2015–16",
+    "winner": "Fenerbahçe Basketball",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2016–17",
+    "winner": "Fenerbahçe Basketball",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2017–18",
+    "winner": "Fenerbahçe Basketball",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2018–19",
+    "winner": "Anadolu Efes",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2020–21",
+    "winner": "Anadolu Efes",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2021–22",
+    "winner": "Fenerbahçe Basketball",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2022–23",
+    "winner": "Anadolu Efes",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2023–24",
+    "winner": "Fenerbahçe Basketball",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2024–25",
+    "winner": "Fenerbahçe Basketball",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   },
+   {
+    "season": "2025–26",
+    "winner": "Fenerbahçe Basketball",
+    "ru": null,
+    "era": "Basketbol Süper Ligi"
+   }
+  ],
+  "aba": [
+   {
+    "season": "1945",
+    "winner": "Yugoslav Army",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1946",
+    "winner": "KK Crvena zvezda",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1947",
+    "winner": "KK Crvena zvezda",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1948",
+    "winner": "KK Crvena zvezda",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1949",
+    "winner": "KK Crvena zvezda",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1950",
+    "winner": "KK Crvena zvezda",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1951",
+    "winner": "KK Crvena zvezda",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1952",
+    "winner": "KK Crvena zvezda",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1953",
+    "winner": "KK Crvena zvezda",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1954",
+    "winner": "KK Crvena zvezda",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1955",
+    "winner": "KK Crvena zvezda",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1956",
+    "winner": "KK Proleter Zrenjanin",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1957",
+    "winner": "KK Cedevita Olimpija",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1958",
+    "winner": "OKK Beograd",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1959",
+    "winner": "KK Cedevita Olimpija",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1960",
+    "winner": "OKK Beograd",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1961",
+    "winner": "KK Cedevita Olimpija",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1962",
+    "winner": "KK Cedevita Olimpija",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1963",
+    "winner": "OKK Beograd",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1964",
+    "winner": "OKK Beograd",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1965",
+    "winner": "KK Zadar",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1966",
+    "winner": "KK Cedevita Olimpija",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1967",
+    "winner": "KK Zadar",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1967–68",
+    "winner": "KK Zadar",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1968–69",
+    "winner": "KK Crvena zvezda",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1969–70",
+    "winner": "KK Cedevita Olimpija",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1970–71",
+    "winner": "KK Split",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1971–72",
+    "winner": "KK Crvena zvezda",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1972–73",
+    "winner": "KK Radnički Belgrade",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1973–74",
+    "winner": "KK Zadar",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1974–75",
+    "winner": "KK Zadar",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1975–76",
+    "winner": "KK Partizan",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1976–77",
+    "winner": "KK Split",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1977–78",
+    "winner": "KK Bosna",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1978–79",
+    "winner": "KK Partizan",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1979–80",
+    "winner": "KK Bosna",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1980–81",
+    "winner": "KK Partizan",
+    "ru": null,
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1981–82",
+    "winner": "KK Cibona",
+    "ru": "KK Partizan",
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1982–83",
+    "winner": "KK Bosna",
+    "ru": "KK Šibenik",
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1983–84",
+    "winner": "KK Cibona",
+    "ru": "KK Crvena zvezda",
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1984–85",
+    "winner": "KK Cibona",
+    "ru": "KK Crvena zvezda",
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1985–86",
+    "winner": "KK Zadar",
+    "ru": "KK Cibona",
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1986–87",
+    "winner": "KK Partizan",
+    "ru": "KK Crvena zvezda",
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1987–88",
+    "winner": "KK Split",
+    "ru": "KK Partizan",
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1988–89",
+    "winner": "KK Split",
+    "ru": "KK Partizan",
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1989–90",
+    "winner": "KK Split",
+    "ru": "KK Crvena zvezda",
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1990–91",
+    "winner": "KK Split",
+    "ru": "KK Partizan",
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "1991–92",
+    "winner": "KK Partizan",
+    "ru": "KK Crvena zvezda",
+    "era": "Yugoslav First League · 1945–1992"
+   },
+   {
+    "season": "2001–02",
+    "winner": "KK Cedevita Olimpija",
+    "ru": "KK Krka",
+    "era": "ABA League"
+   },
+   {
+    "season": "2002–03",
+    "winner": "KK Zadar",
+    "ru": "Maccabi Tel Aviv BC",
+    "era": "ABA League"
+   },
+   {
+    "season": "2003–04",
+    "winner": "KK FMP",
+    "ru": "KK Cibona",
+    "era": "ABA League"
+   },
+   {
+    "season": "2004–05",
+    "winner": "KK Vršac",
+    "ru": "KK Partizan",
+    "era": "ABA League"
+   },
+   {
+    "season": "2005–06",
+    "winner": "KK FMP",
+    "ru": "KK Partizan",
+    "era": "ABA League"
+   },
+   {
+    "season": "2006–07",
+    "winner": "KK Partizan",
+    "ru": "KK FMP",
+    "era": "ABA League"
+   },
+   {
+    "season": "2007–08",
+    "winner": "KK Partizan",
+    "ru": "KK Vršac",
+    "era": "ABA League"
+   },
+   {
+    "season": "2008–09",
+    "winner": "KK Partizan",
+    "ru": "KK Cibona",
+    "era": "ABA League"
+   },
+   {
+    "season": "2009–10",
+    "winner": "KK Partizan",
+    "ru": "KK Cibona",
+    "era": "ABA League"
+   },
+   {
+    "season": "2010–11",
+    "winner": "KK Partizan",
+    "ru": "KK Cedevita Olimpija",
+    "era": "ABA League"
+   },
+   {
+    "season": "2011–12",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "KK Cedevita Junior",
+    "era": "ABA League"
+   },
+   {
+    "season": "2012–13",
+    "winner": "KK Partizan",
+    "ru": "KK Crvena zvezda",
+    "era": "ABA League"
+   },
+   {
+    "season": "2013–14",
+    "winner": "KK Cibona",
+    "ru": "KK Cedevita Junior",
+    "era": "ABA League"
+   },
+   {
+    "season": "2014–15",
+    "winner": "KK Crvena zvezda",
+    "ru": "KK Cedevita Junior",
+    "era": "ABA League"
+   },
+   {
+    "season": "2015–16",
+    "winner": "KK Crvena zvezda",
+    "ru": "KK Mega Basket",
+    "era": "ABA League"
+   },
+   {
+    "season": "2016–17",
+    "winner": "KK Crvena zvezda",
+    "ru": "KK Cedevita Junior",
+    "era": "ABA League"
+   },
+   {
+    "season": "2017–18",
+    "winner": "KK Budućnost",
+    "ru": "KK Crvena zvezda",
+    "era": "ABA League"
+   },
+   {
+    "season": "2018–19",
+    "winner": "KK Crvena zvezda",
+    "ru": "KK Budućnost",
+    "era": "ABA League"
+   },
+   {
+    "season": "2020–21",
+    "winner": "KK Crvena zvezda",
+    "ru": "KK Budućnost",
+    "era": "ABA League"
+   },
+   {
+    "season": "2021–22",
+    "winner": "KK Crvena zvezda",
+    "ru": "KK Partizan",
+    "era": "ABA League"
+   },
+   {
+    "season": "2022–23",
+    "winner": "KK Partizan",
+    "ru": "KK Crvena zvezda",
+    "era": "ABA League"
+   },
+   {
+    "season": "2023–24",
+    "winner": "KK Crvena zvezda",
+    "ru": "KK Partizan",
+    "era": "ABA League"
+   },
+   {
+    "season": "2024–25",
+    "winner": "KK Partizan",
+    "ru": "KK Budućnost",
+    "era": "ABA League"
+   },
+   {
+    "season": "2025–26",
+    "winner": "Dubai Basketball",
+    "ru": "KK Partizan",
+    "era": "ABA League"
+   }
+  ],
+  "vtb": [
+   {
+    "season": "1924",
+    "winner": "Team Moscow",
+    "ru": "Team Ural",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1928",
+    "winner": "Team Moscow",
+    "ru": "Team Ukraine SSR",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1934",
+    "winner": "Team Leningrad",
+    "ru": "Team Moscow",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1935",
+    "winner": "Team Moscow",
+    "ru": "Team Leningrad",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1936",
+    "winner": "Team Leningrad",
+    "ru": "Team Moscow",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1937",
+    "winner": "MBC Dynamo Moscow",
+    "ru": "Red Dawn Leningrad",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1938",
+    "winner": "Burevestnik Leningrad",
+    "ru": "Lokomotiv Moscow",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1939",
+    "winner": "Lokomotiv Moscow",
+    "ru": "GOLIFK Leningrad",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1940",
+    "winner": "Burevestnik Leningrad",
+    "ru": "Lokomotiv Tbilisi",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1944",
+    "winner": "Armia Tbilisi",
+    "ru": "MBC Dynamo Moscow",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1945",
+    "winner": "PBC CSKA Moscow",
+    "ru": "Armia Tbilisi",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1946",
+    "winner": "Armia Tbilisi",
+    "ru": "PBC CSKA Moscow",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1947",
+    "winner": "SKIF Kaunas",
+    "ru": "BC Dinamo Tbilisi",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1948",
+    "winner": "MBC Dynamo Moscow",
+    "ru": "Stroitel Moscow",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1949",
+    "winner": "USK Tartu",
+    "ru": "BC Žalgiris",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1950",
+    "winner": "BC Dinamo Tbilisi",
+    "ru": "USK Tartu",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1951",
+    "winner": "BC Žalgiris",
+    "ru": "VVS Moscow",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1952",
+    "winner": "VVS Moscow",
+    "ru": "BC Žalgiris",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1953",
+    "winner": "BC Dinamo Tbilisi",
+    "ru": "PBC CSKA Moscow",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1954",
+    "winner": "BC Dinamo Tbilisi",
+    "ru": "PBC CSKA Moscow",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1955",
+    "winner": "Rīgas ASK",
+    "ru": "PBC CSKA Moscow",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1956",
+    "winner": "Latvian SSR Team",
+    "ru": "Team Moscow",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1957",
+    "winner": "Rīgas ASK",
+    "ru": "PBC CSKA Moscow",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1958",
+    "winner": "Rīgas ASK",
+    "ru": "PBC CSKA Moscow",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1959",
+    "winner": "Team Moscow",
+    "ru": "Georgian SSR Team",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1960",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Dinamo Tbilisi",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1961",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Dinamo Tbilisi",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1962",
+    "winner": "PBC CSKA Moscow",
+    "ru": "Rīgas ASK",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1963",
+    "winner": "Team Moscow",
+    "ru": "Ukrainian SSR Team",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1964",
+    "winner": "PBC CSKA Moscow",
+    "ru": "Rīgas ASK",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1965",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Budivelnyk",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1966",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Budivelnyk",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1967",
+    "winner": "Ukrainian SSR Team",
+    "ru": "Estonian SSR Team",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1968",
+    "winner": "BC Dinamo Tbilisi",
+    "ru": "CSKA Kyiv",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1969",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Dinamo Tbilisi",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1970",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Spartak Saint Petersburg",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1971",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Spartak Saint Petersburg",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1972",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Spartak Saint Petersburg",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1973",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Spartak Saint Petersburg",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1974",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Spartak Saint Petersburg",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1975",
+    "winner": "BC Spartak Saint Petersburg",
+    "ru": "PBC CSKA Moscow",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1976",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Spartak Saint Petersburg",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1977",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Budivelnyk",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1978",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Spartak Saint Petersburg",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1979",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Budivelnyk",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1980",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Žalgiris",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1981",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Budivelnyk",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1982",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Budivelnyk",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1983",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Žalgiris",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1984",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Žalgiris",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1985",
+    "winner": "BC Žalgiris",
+    "ru": "PBC CSKA Moscow",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1986",
+    "winner": "BC Žalgiris",
+    "ru": "PBC CSKA Moscow",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1987",
+    "winner": "BC Žalgiris",
+    "ru": "PBC CSKA Moscow",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1988",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Žalgiris",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1989",
+    "winner": "BC Budivelnyk",
+    "ru": "BC Žalgiris",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1990",
+    "winner": "PBC CSKA Moscow",
+    "ru": "MBC Dynamo Moscow",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1991",
+    "winner": "BC Kalev",
+    "ru": "BC Spartak Saint Petersburg",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1992",
+    "winner": "BC Spartak Saint Petersburg",
+    "ru": "Alma-Ata",
+    "era": "Soviet Union Championship · 1924–1992"
+   },
+   {
+    "season": "1991–92",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Samara",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "1992–93",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Spartak Saint Petersburg",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "1993–94",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Avtodor",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "1994–95",
+    "winner": "PBC CSKA Moscow",
+    "ru": "MBC Dynamo Moscow",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "1995–96",
+    "winner": "PBC CSKA Moscow",
+    "ru": "MBC Dynamo Moscow",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "1996–97",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Avtodor",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "1997–98",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Avtodor",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "1998–99",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Avtodor",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "1999–00",
+    "winner": "PBC CSKA Moscow",
+    "ru": "Ural Great Perm",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2000–01",
+    "winner": "Ural Great Perm",
+    "ru": "BC UNICS Kazan",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2001–02",
+    "winner": "Ural Great Perm",
+    "ru": "BC UNICS Kazan",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2002–03",
+    "winner": "PBC CSKA Moscow",
+    "ru": "Ural Great Perm",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2003–04",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC UNICS Kazan",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2004–05",
+    "winner": "PBC CSKA Moscow",
+    "ru": "MBC Dynamo Moscow",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2005–06",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Khimki",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2006–07",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC UNICS Kazan",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2007–08",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Khimki",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2008–09",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Khimki",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2009–10",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Khimki",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2010–11",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Khimki",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2011–12",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Khimki",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2012–13",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Khimki",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2013–14",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Nizhny Novgorod",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2014–15",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Khimki",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2015–16",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC UNICS Kazan",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2016–17",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Khimki",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2017–18",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Khimki",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2018–19",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Khimki",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2020–21",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC UNICS Kazan",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2021–22",
+    "winner": "BC Zenit Saint Petersburg",
+    "ru": "PBC CSKA Moscow",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2022–23",
+    "winner": "BC UNICS Kazan",
+    "ru": "PBC Lokomotiv Kuban",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2023–24",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC UNICS Kazan",
+    "era": "Russian Championship / VTB United League"
+   },
+   {
+    "season": "2024–25",
+    "winner": "PBC CSKA Moscow",
+    "ru": "BC Zenit Saint Petersburg",
+    "era": "Russian Championship / VTB United League"
+   }
+  ],
+  "israel": [
+   {
+    "season": "1953–54",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Holon",
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1954–55",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": null,
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1956–57",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Tel Aviv BC",
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1957–58",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": null,
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1958–59",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": null,
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1959–60",
+    "winner": "Hapoel Tel Aviv BC",
+    "ru": "Maccabi Tel Aviv BC",
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1960–61",
+    "winner": "Hapoel Tel Aviv BC",
+    "ru": null,
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1961–62",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Haifa BC",
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1962–63",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Tel Aviv BC",
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1963–64",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": null,
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1964–65",
+    "winner": "Hapoel Tel Aviv BC",
+    "ru": "Maccabi Tel Aviv BC",
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1965–66",
+    "winner": "Hapoel Tel Aviv BC",
+    "ru": null,
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1966–67",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Tel Aviv BC",
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1967–68",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": null,
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1968–69",
+    "winner": "Hapoel Tel Aviv BC",
+    "ru": "Maccabi Tel Aviv BC",
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1969–70",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Tel Aviv BC",
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1970–71",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": null,
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1971–72",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Gvat/Yagur",
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1972–73",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Ironi Ramat Gan",
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1973–74",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": null,
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1974–75",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Ramat Gan",
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1975–76",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Gvat/Yagur",
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1976–77",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Ramat Gan",
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1977–78",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Gvat/Yagur",
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1978–79",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Tel Aviv BC",
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1979–80",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": null,
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1980–81",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Ramat Gan",
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1981–82",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": null,
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1982–83",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": null,
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1983–84",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": null,
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1984–85",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Tel Aviv BC",
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1985–86",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Elitzur Netanya",
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1986–87",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Tel Aviv BC",
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1987–88",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": null,
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1988–89",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": null,
+    "era": "Israeli Championship · 1954–1989"
+   },
+   {
+    "season": "1989–90",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Galil Elyon BC",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "1990–91",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Maccabi Rishon LeZion BC",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "1991–92",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Tel Aviv BC",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "1992–93",
+    "winner": "Hapoel Galil Elyon BC",
+    "ru": null,
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "1993–94",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": null,
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "1994–95",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Galil Elyon BC",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "1995–96",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Jerusalem BC",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "1996–97",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": null,
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "1997–98",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Eilat",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "1998–99",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Jerusalem BC",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "1999–00",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Maccabi Ra'anana BC",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2000–01",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Jerusalem BC",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2001–02",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Ironi Ramat Gan",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2002–03",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Ironi Nahariya",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2003–04",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Tel Aviv BC",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2004–05",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": null,
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2005–06",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Jerusalem BC",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2006–07",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": null,
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2007–08",
+    "winner": "Hapoel Holon",
+    "ru": "Maccabi Tel Aviv BC",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2008–09",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Maccabi Haifa BC",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2009–10",
+    "winner": "Hapoel Gilboa Galil",
+    "ru": "Maccabi Tel Aviv BC",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2010–11",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Gilboa Galil",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2011–12",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Maccabi Ashdod",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2012–13",
+    "winner": "Maccabi Haifa BC",
+    "ru": "Maccabi Tel Aviv BC",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2013–14",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Maccabi Haifa BC",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2014–15",
+    "winner": "Hapoel Jerusalem BC",
+    "ru": "Hapoel Eilat",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2015–16",
+    "winner": "Maccabi Rishon LeZion BC",
+    "ru": "Hapoel Jerusalem BC",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2016–17",
+    "winner": "Hapoel Jerusalem BC",
+    "ru": "Maccabi Haifa BC",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2017–18",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Holon",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2018–19",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Maccabi Rishon LeZion BC",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2019–20",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": null,
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2020–21",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Gilboa Galil",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2021–22",
+    "winner": "Hapoel Holon",
+    "ru": "Bnei Herzliya",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2022–23",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Tel Aviv BC",
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2023–24",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": null,
+    "era": "Premier League, playoff era"
+   },
+   {
+    "season": "2025–26",
+    "winner": "Maccabi Tel Aviv BC",
+    "ru": "Hapoel Tel Aviv BC",
+    "era": "Premier League, playoff era"
+   }
+  ],
+  "lnb": [
+   {
+    "season": "1920–21",
+    "winner": "Stade Français",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1921–22",
+    "winner": "ICAM Lille",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1922–23",
+    "winner": "École Normale Arras",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1923–24",
+    "winner": "FAM",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1924–25",
+    "winner": "FAM",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1925–26",
+    "winner": "FAM",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1926–27",
+    "winner": "Stade Français",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1927–28",
+    "winner": "FAM",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1928–29",
+    "winner": "FAM",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1929–30",
+    "winner": "FAM",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1930–31",
+    "winner": "FAM",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1931–32",
+    "winner": "CAUFA Reims",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1932–33",
+    "winner": "CAUFA Reims",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1933–34",
+    "winner": "Olympique Lillois",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1934–35",
+    "winner": "CAM",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1935–36",
+    "winner": "SCPO",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1936–37",
+    "winner": "CAM",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1937–38",
+    "winner": "SCPO",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1938–39",
+    "winner": "Métro",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1941–42",
+    "winner": "Métro",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1942–43",
+    "winner": "Grenoble",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1943–44",
+    "winner": "Grenoble",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1944–45",
+    "winner": "Championnet Sports",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1945–46",
+    "winner": "ESSMG Lyon",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1946–47",
+    "winner": "PUC",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1947–48",
+    "winner": "Union athlétique de Marseille",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1948–49",
+    "winner": "ASVEL Basket",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1949–50",
+    "winner": "ASVEL Basket",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1950–51",
+    "winner": "Paris Basket Racing",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1951–52",
+    "winner": "ASVEL Basket",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1952–53",
+    "winner": "Paris Basket Racing",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1953–54",
+    "winner": "Paris Basket Racing",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1954–55",
+    "winner": "ASVEL Basket",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1955–56",
+    "winner": "ASVEL Basket",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1956–57",
+    "winner": "ASVEL Basket",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1957–58",
+    "winner": "Étoile Charleville-Mézières",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1958–59",
+    "winner": "Chorale Roanne",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1959–60",
+    "winner": "Étoile Charleville-Mézières",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1960–61",
+    "winner": "Alsace de Bagnolet",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1961–62",
+    "winner": "Alsace de Bagnolet",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1962–63",
+    "winner": "PUC",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1963–64",
+    "winner": "ASVEL Basket",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1964–65",
+    "winner": "Denain Voltaire",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1965–66",
+    "winner": "ASVEL Basket",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1966–67",
+    "winner": "Alsace de Bagnolet",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1967–68",
+    "winner": "ASVEL Basket",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1968–69",
+    "winner": "ASVEL Basket",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1969–70",
+    "winner": "Olympique Antibes",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1970–71",
+    "winner": "ASVEL Basket",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1971–72",
+    "winner": "ASVEL Basket",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1972–73",
+    "winner": "Berck",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1973–74",
+    "winner": "Berck",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1974–75",
+    "winner": "ASVEL Basket",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1975–76",
+    "winner": "ASPO Tours",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1976–77",
+    "winner": "ASVEL Basket",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1977–78",
+    "winner": "Le Mans Sarthe Basket",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1978–79",
+    "winner": "Le Mans Sarthe Basket",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1979–80",
+    "winner": "ASPO Tours",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1980–81",
+    "winner": "ASVEL Basket",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1981–82",
+    "winner": "Le Mans Sarthe Basket",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1982–83",
+    "winner": "Limoges CSP",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1983–84",
+    "winner": "Limoges CSP",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1984–85",
+    "winner": "Limoges CSP",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1985–86",
+    "winner": "Élan Béarnais",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1986–87",
+    "winner": "Élan Béarnais",
+    "ru": null,
+    "era": "French Championship · 1920–1987"
+   },
+   {
+    "season": "1987–88",
+    "winner": "Limoges CSP",
+    "ru": "Cholet Basket",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "1988–89",
+    "winner": "Limoges CSP",
+    "ru": "Élan Béarnais",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "1989–90",
+    "winner": "Limoges CSP",
+    "ru": "Olympique Antibes",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "1990–91",
+    "winner": "Olympique Antibes",
+    "ru": "Limoges CSP",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "1991–92",
+    "winner": "Élan Béarnais",
+    "ru": "Limoges CSP",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "1992–93",
+    "winner": "Limoges CSP",
+    "ru": "Élan Béarnais",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "1993–94",
+    "winner": "Limoges CSP",
+    "ru": "Olympique Antibes",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "1994–95",
+    "winner": "Olympique Antibes",
+    "ru": "Élan Béarnais",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "1995–96",
+    "winner": "Élan Béarnais",
+    "ru": "ASVEL Basket",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "1996–97",
+    "winner": "Paris Basket Racing",
+    "ru": "ASVEL Basket",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "1997–98",
+    "winner": "Élan Béarnais",
+    "ru": "Limoges CSP",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "1998–99",
+    "winner": "Élan Béarnais",
+    "ru": "ASVEL Basket",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "1999–00",
+    "winner": "Limoges CSP",
+    "ru": "ASVEL Basket",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2000–01",
+    "winner": "Élan Béarnais",
+    "ru": "ASVEL Basket",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2001–02",
+    "winner": "ASVEL Basket",
+    "ru": "Élan Béarnais",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2002–03",
+    "winner": "Élan Béarnais",
+    "ru": "ASVEL Basket",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2003–04",
+    "winner": "Élan Béarnais",
+    "ru": "BCM Gravelines",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2004–05",
+    "winner": "SIG Strasbourg",
+    "ru": "SLUC Nancy Basket",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2005–06",
+    "winner": "Le Mans Sarthe Basket",
+    "ru": "SLUC Nancy Basket",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2006–07",
+    "winner": "Chorale Roanne",
+    "ru": "SLUC Nancy Basket",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2007–08",
+    "winner": "SLUC Nancy Basket",
+    "ru": "Chorale Roanne",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2008–09",
+    "winner": "ASVEL Basket",
+    "ru": "Orléans Loiret Basket",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2009–10",
+    "winner": "Cholet Basket",
+    "ru": "Le Mans Sarthe Basket",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2010–11",
+    "winner": "SLUC Nancy Basket",
+    "ru": "Cholet Basket",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2011–12",
+    "winner": "Élan Chalon",
+    "ru": "Le Mans Sarthe Basket",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2012–13",
+    "winner": "Nanterre 92",
+    "ru": "SIG Strasbourg",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2013–14",
+    "winner": "Limoges CSP",
+    "ru": "SIG Strasbourg",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2014–15",
+    "winner": "Limoges CSP",
+    "ru": "SIG Strasbourg",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2015–16",
+    "winner": "ASVEL Basket",
+    "ru": "SIG Strasbourg",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2016–17",
+    "winner": "Élan Chalon",
+    "ru": "SIG Strasbourg",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2017–18",
+    "winner": "Le Mans Sarthe Basket",
+    "ru": "AS Monaco Basket",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2018–19",
+    "winner": "ASVEL Basket",
+    "ru": "AS Monaco Basket",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2020–21",
+    "winner": "ASVEL Basket",
+    "ru": "JDA Dijon",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2021–22",
+    "winner": "ASVEL Basket",
+    "ru": "AS Monaco Basket",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2022–23",
+    "winner": "AS Monaco Basket",
+    "ru": "Metropolitans 92",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2023–24",
+    "winner": "AS Monaco Basket",
+    "ru": "Paris Basketball",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2024–25",
+    "winner": "Paris Basketball",
+    "ru": "AS Monaco Basket",
+    "era": "LNB Élite, playoff era"
+   },
+   {
+    "season": "2025–26",
+    "winner": "AS Monaco Basket",
+    "ru": "Paris Basketball",
+    "era": "LNB Élite, playoff era"
+   }
+  ],
+  "lkl": [
+   {
+    "season": "1990–91",
+    "winner": "BC Žalgiris",
+    "ru": null,
+    "era": "Lithuanian League · 1990–1993"
+   },
+   {
+    "season": "1991–92",
+    "winner": "BC Žalgiris",
+    "ru": null,
+    "era": "Lithuanian League · 1990–1993"
+   },
+   {
+    "season": "1992–93",
+    "winner": "BC Žalgiris",
+    "ru": null,
+    "era": "Lithuanian League · 1990–1993"
+   },
+   {
+    "season": "1993–94",
+    "winner": "BC Žalgiris",
+    "ru": "BC Atletas",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "1994–95",
+    "winner": "BC Žalgiris",
+    "ru": "BC Atletas",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "1995–96",
+    "winner": "BC Žalgiris",
+    "ru": "BC Atletas",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "1996–97",
+    "winner": "BC Žalgiris",
+    "ru": "BC Olimpas",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "1997–98",
+    "winner": "BC Žalgiris",
+    "ru": "BC Atletas",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "1998–99",
+    "winner": "BC Žalgiris",
+    "ru": "BC Rytas",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "1999–00",
+    "winner": "BC Rytas",
+    "ru": "BC Žalgiris",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2000–01",
+    "winner": "BC Žalgiris",
+    "ru": "BC Rytas",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2001–02",
+    "winner": "BC Rytas",
+    "ru": "BC Žalgiris",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2002–03",
+    "winner": "BC Žalgiris",
+    "ru": "BC Rytas",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2003–04",
+    "winner": "BC Žalgiris",
+    "ru": "BC Rytas",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2004–05",
+    "winner": "BC Žalgiris",
+    "ru": "BC Rytas",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2005–06",
+    "winner": "BC Rytas",
+    "ru": "BC Žalgiris",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2006–07",
+    "winner": "BC Žalgiris",
+    "ru": "BC Rytas",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2007–08",
+    "winner": "BC Žalgiris",
+    "ru": "BC Rytas",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2008–09",
+    "winner": "BC Rytas",
+    "ru": "BC Žalgiris",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2009–10",
+    "winner": "BC Rytas",
+    "ru": "BC Žalgiris",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2010–11",
+    "winner": "BC Žalgiris",
+    "ru": "BC Rytas",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2011–12",
+    "winner": "BC Žalgiris",
+    "ru": "BC Rytas",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2012–13",
+    "winner": "BC Žalgiris",
+    "ru": "BC Rytas",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2013–14",
+    "winner": "BC Žalgiris",
+    "ru": "Neptūnas Klaipėda",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2014–15",
+    "winner": "BC Žalgiris",
+    "ru": "BC Rytas",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2015–16",
+    "winner": "BC Žalgiris",
+    "ru": "Neptūnas Klaipėda",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2016–17",
+    "winner": "BC Žalgiris",
+    "ru": "BC Lietkabelis",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2017–18",
+    "winner": "BC Žalgiris",
+    "ru": "BC Rytas",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2018–19",
+    "winner": "BC Žalgiris",
+    "ru": "BC Rytas",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2019–20",
+    "winner": "BC Žalgiris",
+    "ru": "BC Rytas",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2020–21",
+    "winner": "BC Žalgiris",
+    "ru": "BC Rytas",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2021–22",
+    "winner": "BC Rytas",
+    "ru": "BC Lietkabelis",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2022–23",
+    "winner": "BC Žalgiris",
+    "ru": "BC Rytas",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2023–24",
+    "winner": "BC Rytas",
+    "ru": "BC Žalgiris",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2024–25",
+    "winner": "BC Žalgiris",
+    "ru": "BC Rytas",
+    "era": "Lietuvos krepšinio lyga"
+   },
+   {
+    "season": "2025–26",
+    "winner": "BC Žalgiris",
+    "ru": "BC Juventus",
+    "era": "Lietuvos krepšinio lyga"
+   }
+  ]
+ },
+ "most_titled": {
+  "cba": [
+   {
+    "winner": "Guangdong Southern Tigers",
+    "titles": 11
+   },
+   {
+    "winner": "Bayi Rockets",
+    "titles": 8
+   },
+   {
+    "winner": "Liaoning Flying Leopards",
+    "titles": 4
+   },
+   {
+    "winner": "Beijing Ducks",
+    "titles": 3
+   },
+   {
+    "winner": "Shanghai Sharks",
+    "titles": 2
+   },
+   {
+    "winner": "Sichuan Blue Whales",
+    "titles": 1
+   },
+   {
+    "winner": "Xinjiang Flying Tigers",
+    "titles": 1
+   },
+   {
+    "winner": "Zhejiang Guangsha Lions",
+    "titles": 1
+   }
+  ],
+  "acb": [
+   {
+    "winner": "Real Madrid Baloncesto",
+    "titles": 38
+   },
+   {
+    "winner": "FC Barcelona Basquet",
+    "titles": 20
+   },
+   {
+    "winner": "Joventut Badalona",
+    "titles": 4
+   },
+   {
+    "winner": "Saski Baskonia",
+    "titles": 4
+   },
+   {
+    "winner": "Valencia Basket",
+    "titles": 2
+   },
+   {
+    "winner": "Bàsquet Manresa",
+    "titles": 1
+   },
+   {
+    "winner": "Unicaja Málaga",
+    "titles": 1
+   }
+  ],
+  "lba": [
+   {
+    "winner": "Olimpia Milano",
+    "titles": 32
+   },
+   {
+    "winner": "Virtus Bologna",
+    "titles": 17
+   },
+   {
+    "winner": "Pallacanestro Varese",
+    "titles": 10
+   },
+   {
+    "winner": "Mens Sana Basketball Siena",
+    "titles": 8
+   },
+   {
+    "winner": "Assi Milano",
+    "titles": 6
+   },
+   {
+    "winner": "Benetton Treviso",
+    "titles": 5
+   },
+   {
+    "winner": "Pallacanestro Trieste",
+    "titles": 5
+   },
+   {
+    "winner": "Ginnastica Roma",
+    "titles": 4
+   },
+   {
+    "winner": "Reyer Venezia",
+    "titles": 4
+   },
+   {
+    "winner": "Pallacanestro Cantù",
+    "titles": 3
+   },
+   {
+    "winner": "Fortitudo Bologna",
+    "titles": 2
+   },
+   {
+    "winner": "Victoria Libertas",
+    "titles": 2
+   },
+   {
+    "winner": "Costanza",
+    "titles": 1
+   },
+   {
+    "winner": "Dinamo Sassari",
+    "titles": 1
+   },
+   {
+    "winner": "Internazionale Milano",
+    "titles": 1
+   },
+   {
+    "winner": "JuveCaserta Basket",
+    "titles": 1
+   },
+   {
+    "winner": "Virtus Roma",
+    "titles": 1
+   }
+  ],
+  "greek": [
+   {
+    "winner": "Panathinaikos BC",
+    "titles": 40
+   },
+   {
+    "winner": "Olympiacos BC",
+    "titles": 16
+   },
+   {
+    "winner": "Aris BC",
+    "titles": 10
+   },
+   {
+    "winner": "AEK BC",
+    "titles": 8
+   },
+   {
+    "winner": "Panellinios BC",
+    "titles": 6
+   },
+   {
+    "winner": "Iraklis BC",
+    "titles": 2
+   },
+   {
+    "winner": "PAOK BC",
+    "titles": 2
+   },
+   {
+    "winner": "Athens University",
+    "titles": 1
+   },
+   {
+    "winner": "Near East",
+    "titles": 1
+   }
+  ],
+  "bsl": [
+   {
+    "winner": "Galatasaray Basketball",
+    "titles": 18
+   },
+   {
+    "winner": "Anadolu Efes",
+    "titles": 16
+   },
+   {
+    "winner": "Fenerbahçe Basketball",
+    "titles": 16
+   },
+   {
+    "winner": "Eczacıbaşı SK",
+    "titles": 8
+   },
+   {
+    "winner": "İTÜ",
+    "titles": 5
+   },
+   {
+    "winner": "Ülker",
+    "titles": 4
+   },
+   {
+    "winner": "Harp Okulu",
+    "titles": 3
+   },
+   {
+    "winner": "Modaspor",
+    "titles": 3
+   },
+   {
+    "winner": "Altınordu",
+    "titles": 2
+   },
+   {
+    "winner": "Beşiktaş Basketbol",
+    "titles": 2
+   },
+   {
+    "winner": "Daçka Basketbol",
+    "titles": 2
+   },
+   {
+    "winner": "Karşıyaka Basket",
+    "titles": 2
+   },
+   {
+    "winner": "Tofaş SK",
+    "titles": 2
+   },
+   {
+    "winner": "Beykoz",
+    "titles": 1
+   },
+   {
+    "winner": "Muhafızgücü",
+    "titles": 1
+   }
+  ],
+  "aba": [
+   {
+    "winner": "KK Crvena zvezda",
+    "titles": 19
+   },
+   {
+    "winner": "KK Partizan",
+    "titles": 13
+   },
+   {
+    "winner": "KK Cedevita Olimpija",
+    "titles": 7
+   },
+   {
+    "winner": "KK Zadar",
+    "titles": 7
+   },
+   {
+    "winner": "KK Split",
+    "titles": 6
+   },
+   {
+    "winner": "KK Cibona",
+    "titles": 4
+   },
+   {
+    "winner": "OKK Beograd",
+    "titles": 4
+   },
+   {
+    "winner": "KK Bosna",
+    "titles": 3
+   },
+   {
+    "winner": "KK FMP",
+    "titles": 2
+   },
+   {
+    "winner": "Dubai Basketball",
+    "titles": 1
+   },
+   {
+    "winner": "KK Budućnost",
+    "titles": 1
+   },
+   {
+    "winner": "KK Proleter Zrenjanin",
+    "titles": 1
+   },
+   {
+    "winner": "KK Radnički Belgrade",
+    "titles": 1
+   },
+   {
+    "winner": "KK Vršac",
+    "titles": 1
+   },
+   {
+    "winner": "Maccabi Tel Aviv BC",
+    "titles": 1
+   },
+   {
+    "winner": "Yugoslav Army",
+    "titles": 1
+   }
+  ],
+  "vtb": [
+   {
+    "winner": "PBC CSKA Moscow",
+    "titles": 53
+   },
+   {
+    "winner": "Team Moscow",
+    "titles": 5
+   },
+   {
+    "winner": "BC Dinamo Tbilisi",
+    "titles": 4
+   },
+   {
+    "winner": "BC Žalgiris",
+    "titles": 4
+   },
+   {
+    "winner": "Rīgas ASK",
+    "titles": 3
+   },
+   {
+    "winner": "Armia Tbilisi",
+    "titles": 2
+   },
+   {
+    "winner": "BC Spartak Saint Petersburg",
+    "titles": 2
+   },
+   {
+    "winner": "Burevestnik Leningrad",
+    "titles": 2
+   },
+   {
+    "winner": "MBC Dynamo Moscow",
+    "titles": 2
+   },
+   {
+    "winner": "Team Leningrad",
+    "titles": 2
+   },
+   {
+    "winner": "Ural Great Perm",
+    "titles": 2
+   },
+   {
+    "winner": "BC Budivelnyk",
+    "titles": 1
+   },
+   {
+    "winner": "BC Kalev",
+    "titles": 1
+   },
+   {
+    "winner": "BC UNICS Kazan",
+    "titles": 1
+   },
+   {
+    "winner": "BC Zenit Saint Petersburg",
+    "titles": 1
+   },
+   {
+    "winner": "Latvian SSR Team",
+    "titles": 1
+   },
+   {
+    "winner": "Lokomotiv Moscow",
+    "titles": 1
+   },
+   {
+    "winner": "SKIF Kaunas",
+    "titles": 1
+   },
+   {
+    "winner": "USK Tartu",
+    "titles": 1
+   },
+   {
+    "winner": "Ukrainian SSR Team",
+    "titles": 1
+   },
+   {
+    "winner": "VVS Moscow",
+    "titles": 1
+   }
+  ],
+  "israel": [
+   {
+    "winner": "Maccabi Tel Aviv BC",
+    "titles": 58
+   },
+   {
+    "winner": "Hapoel Tel Aviv BC",
+    "titles": 5
+   },
+   {
+    "winner": "Hapoel Holon",
+    "titles": 2
+   },
+   {
+    "winner": "Hapoel Jerusalem BC",
+    "titles": 2
+   },
+   {
+    "winner": "Hapoel Galil Elyon BC",
+    "titles": 1
+   },
+   {
+    "winner": "Hapoel Gilboa Galil",
+    "titles": 1
+   },
+   {
+    "winner": "Maccabi Haifa BC",
+    "titles": 1
+   },
+   {
+    "winner": "Maccabi Rishon LeZion BC",
+    "titles": 1
+   }
+  ],
+  "lnb": [
+   {
+    "winner": "ASVEL Basket",
+    "titles": 21
+   },
+   {
+    "winner": "Limoges CSP",
+    "titles": 11
+   },
+   {
+    "winner": "Élan Béarnais",
+    "titles": 9
+   },
+   {
+    "winner": "FAM",
+    "titles": 7
+   },
+   {
+    "winner": "Le Mans Sarthe Basket",
+    "titles": 5
+   },
+   {
+    "winner": "Paris Basket Racing",
+    "titles": 4
+   },
+   {
+    "winner": "AS Monaco Basket",
+    "titles": 3
+   },
+   {
+    "winner": "Alsace de Bagnolet",
+    "titles": 3
+   },
+   {
+    "winner": "Olympique Antibes",
+    "titles": 3
+   },
+   {
+    "winner": "ASPO Tours",
+    "titles": 2
+   },
+   {
+    "winner": "Berck",
+    "titles": 2
+   },
+   {
+    "winner": "CAM",
+    "titles": 2
+   },
+   {
+    "winner": "CAUFA Reims",
+    "titles": 2
+   },
+   {
+    "winner": "Chorale Roanne",
+    "titles": 2
+   },
+   {
+    "winner": "Grenoble",
+    "titles": 2
+   },
+   {
+    "winner": "Métro",
+    "titles": 2
+   },
+   {
+    "winner": "PUC",
+    "titles": 2
+   },
+   {
+    "winner": "SCPO",
+    "titles": 2
+   },
+   {
+    "winner": "SLUC Nancy Basket",
+    "titles": 2
+   },
+   {
+    "winner": "Stade Français",
+    "titles": 2
+   },
+   {
+    "winner": "Élan Chalon",
+    "titles": 2
+   },
+   {
+    "winner": "Étoile Charleville-Mézières",
+    "titles": 2
+   },
+   {
+    "winner": "Championnet Sports",
+    "titles": 1
+   },
+   {
+    "winner": "Cholet Basket",
+    "titles": 1
+   },
+   {
+    "winner": "Denain Voltaire",
+    "titles": 1
+   },
+   {
+    "winner": "ESSMG Lyon",
+    "titles": 1
+   },
+   {
+    "winner": "ICAM Lille",
+    "titles": 1
+   },
+   {
+    "winner": "Nanterre 92",
+    "titles": 1
+   },
+   {
+    "winner": "Olympique Lillois",
+    "titles": 1
+   },
+   {
+    "winner": "Paris Basketball",
+    "titles": 1
+   },
+   {
+    "winner": "SIG Strasbourg",
+    "titles": 1
+   },
+   {
+    "winner": "Union athlétique de Marseille",
+    "titles": 1
+   },
+   {
+    "winner": "École Normale Arras",
+    "titles": 1
+   }
+  ],
+  "lkl": [
+   {
+    "winner": "BC Žalgiris",
+    "titles": 29
+   },
+   {
+    "winner": "BC Rytas",
+    "titles": 7
+   }
+  ]
+ }
+}
