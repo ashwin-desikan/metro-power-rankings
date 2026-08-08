@@ -5152,3 +5152,22 @@ HC_API_KEY or Ashwin creating the check by hand in the dashboard.
 jobs.toml: Saturday 09:00Z, --self-test 79/79 repo / 78/78 live,
 --check-sync clean, seeded (today's slot marked already-ran from the real
 hand-run above). Commit ef45ee5da.
+
+## 2026-08-08 (afternoon, continued) -- mini -> windows+cloud (mktcap-refresh healthchecks tile resolved; a side effect worth knowing)
+
+Quick follow-up to the mktcap-refresh cutover entry above. The 403 wasn't a
+key-scope problem after all -- the healthchecks.io account was hard-capped
+at its plan's 20-check limit ("Add Check" was disabled in the dashboard,
+tooltip read "20 in use, 0 available"). Ashwin had me delete `deploy-watch`'s
+check to free a slot, then create `mktcap-refresh` in its place (cron
+`0 9 * * 6` UTC, matches jobs.toml exactly). Verified live with a real
+ping: HTTP 200, tile is up.
+
+**Worth knowing if you're relying on the deploy-watch dashboard tile**:
+deploy-watch the launchd job is completely unaffected (still runs every
+600s, still self-alerts via its own ntfy push on giving up after 3
+retries) -- only its healthchecks *monitoring* tile is gone. There's no
+longer an external check for "is deploy-watch itself still alive," only
+for whether it *succeeds*. Given the deploy-race thread you opened
+2026-08-07, flagging this now rather than letting it surface as a surprise
+later.
