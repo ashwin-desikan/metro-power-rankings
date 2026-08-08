@@ -170,8 +170,18 @@ def main():
             "dateAwarded":     _norm_date(opt("Date Awarded")) or date or None,  # fallback to Date col
             "nextAwardedDate": _norm_date(opt("Next Awarded Date")) or None,
         })
-    with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(out, f, ensure_ascii=False, separators=(",", ":"))
+    # 2026-08-08: the workbook no longer writes this file directly. It now
+    # feeds public.champions, and the JSON is regenerated FROM the table, so
+    # every champion the site tracks lives in one place. The workbook still
+    # wins for these rows (push() is delete-then-insert, same contract as
+    # sync_city_lookup.py), and the generator is proven byte-identical, so
+    # this swap changes no site output.
+    sys.path.insert(0, os.path.join(ROOT, "scripts", "champions"))
+    from sync_history import push, emit
+    pushed = push(out)
+    print(f"champions: synced {pushed:,} rows to public.champions")
+    emit()
+
     dated = sum(1 for x in out if x["date"])
     current = sum(1 for x in out if x["isCurrent"])
     comps = len({x["competition"] for x in out})

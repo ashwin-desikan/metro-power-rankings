@@ -36,6 +36,22 @@ function all(): ChampHistoryRow[] {
   return _data;
 }
 
+// Club titles that champions-history.json never carried, because they came
+// from the honour rolls, club rugby, domestic T20 and the football workbook
+// rather than Champions_History.xlsx. Generated from public.champions by
+// scripts/champions/build_champions.py.
+//
+// Scoped to METRO PAGES ONLY on purpose. /sports/champions and the
+// per-competition roll pages keep reading champions-history.json alone, so
+// their contents and ordering are untouched by this.
+let _extra: ChampHistoryRow[] | null = null;
+function extra(): ChampHistoryRow[] {
+  if (_extra) return _extra;
+  const p = join(process.cwd(), "public", "data", "champions-metro-extra.json");
+  _extra = existsSync(p) ? (JSON.parse(readFileSync(p, "utf-8")) as ChampHistoryRow[]) : [];
+  return _extra;
+}
+
 function hrefFor(r: ChampHistoryRow): string | null {
   return championTeamHref({
     sport: r.sport,
@@ -152,8 +168,26 @@ export type MetroTitle = {
 };
 export function getMetroTitles(metroSlug: string): MetroTitle[] {
   if (!metroSlug) return [];
-  return all()
-    .filter((r) => r.metroSlug === metroSlug)
+  // The union of the workbook ledger and the club titles it never carried.
+  //
+  // Cross-source duplicates (the same competition carried under two slugs, e.g.
+  // KHL and "KHL — Gagarin Cup") are already removed when
+  // champions-metro-extra.json is generated, using the alias groups in
+  // champion_competitions. This is only a guard against a literal repeat.
+  //
+  // Keyed on compSlug, NOT on sport: a club can genuinely win two competitions
+  // in one season in one sport. Saracens took the Premiership and the Champions
+  // Cup in 2016, and a sport-level key would silently delete one of them.
+  const seen = new Set<string>();
+  const rows: ChampHistoryRow[] = [];
+  for (const r of [...all(), ...extra()]) {
+    if (r.metroSlug !== metroSlug) continue;
+    const k = `${r.compSlug}|${r.season}|${(r.canonical || r.champion).toLowerCase()}`;
+    if (seen.has(k)) continue;
+    seen.add(k);
+    rows.push(r);
+  }
+  return rows
     .sort(byYearDesc)
     .map((r) => ({
       year: r.year,
