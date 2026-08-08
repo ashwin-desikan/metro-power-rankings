@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generated_at": "2026-08-07T05:56:58Z",
-  "as_of": "2026-08-07",
+  "generated_at": "2026-08-08T05:54:10Z",
+  "as_of": "2026-08-08",
   "source": "Yahoo Finance chart API",
   "indices": 13,
   "commodities": 6,
@@ -14,8 +14,8 @@
    "country": "United States",
    "metro": "New York",
    "metroSlug": "new-york",
-   "value": 7709.96,
-   "date": "2026-08-06"
+   "value": 7757.64,
+   "date": "2026-08-07"
   },
   {
    "symbol": "^DJI",
@@ -23,8 +23,8 @@
    "country": "United States",
    "metro": "New York",
    "metroSlug": "new-york",
-   "value": 53885.1,
-   "date": "2026-08-06"
+   "value": 54036.93,
+   "date": "2026-08-07"
   },
   {
    "symbol": "^IXIC",
@@ -32,8 +32,8 @@
    "country": "United States",
    "metro": "New York",
    "metroSlug": "new-york",
-   "value": 26348.352,
-   "date": "2026-08-06"
+   "value": 26690.615,
+   "date": "2026-08-07"
   },
   {
    "symbol": "^FTSE",
@@ -41,8 +41,8 @@
    "country": "United Kingdom",
    "metro": "London",
    "metroSlug": "london",
-   "value": 10867.89,
-   "date": "2026-08-06"
+   "value": 10901.09,
+   "date": "2026-08-07"
   },
   {
    "symbol": "^GDAXI",
@@ -50,8 +50,8 @@
    "country": "Germany",
    "metro": "Frankfurt",
    "metroSlug": "frankfurt",
-   "value": 26140.13,
-   "date": "2026-08-06"
+   "value": 26319.45,
+   "date": "2026-08-07"
   },
   {
    "symbol": "^FCHI",
@@ -59,8 +59,8 @@
    "country": "France",
    "metro": "Paris",
    "metroSlug": "paris",
-   "value": 8699.71,
-   "date": "2026-08-06"
+   "value": 8714.93,
+   "date": "2026-08-07"
   },
   {
    "symbol": "^N225",
@@ -68,7 +68,7 @@
    "country": "Japan",
    "metro": "Tokyo",
    "metroSlug": "tokyo",
-   "value": 65423.36,
+   "value": 65606.71,
    "date": "2026-08-07"
   },
   {
@@ -77,7 +77,7 @@
    "country": "Hong Kong",
    "metro": "Hong Kong",
    "metroSlug": "hong-kong",
-   "value": 25568.26,
+   "value": 25668.03,
    "date": "2026-08-07"
   },
   {
@@ -86,7 +86,7 @@
    "country": "India",
    "metro": "Mumbai",
    "metroSlug": "mumbai",
-   "value": 78526.85,
+   "value": 78499.17,
    "date": "2026-08-07"
   },
   {
@@ -95,7 +95,7 @@
    "country": "China",
    "metro": "Shanghai",
    "metroSlug": "shanghai",
-   "value": 3930.447,
+   "value": 3940.037,
    "date": "2026-08-07"
   },
   {
@@ -104,7 +104,7 @@
    "country": "South Korea",
    "metro": "Seoul",
    "metroSlug": "seoul",
-   "value": 6248.3,
+   "value": 6258.77,
    "date": "2026-08-07"
   },
   {
@@ -113,8 +113,8 @@
    "country": "Canada",
    "metro": "Toronto",
    "metroSlug": "toronto",
-   "value": 36136.31,
-   "date": "2026-08-06"
+   "value": 36381.23,
+   "date": "2026-08-07"
   },
   {
    "symbol": "^BVSP",
@@ -122,8 +122,8 @@
    "country": "Brazil",
    "metro": "São Paulo",
    "metroSlug": "",
-   "value": 175546.36,
-   "date": "2026-08-06"
+   "value": 172513.42,
+   "date": "2026-08-07"
   }
  ],
  "commodities": [
@@ -131,42 +131,42 @@
    "symbol": "GC=F",
    "name": "Gold",
    "unit": "USD/oz",
-   "value": 4333.2,
+   "value": 4399.7,
    "date": "2026-08-07"
   },
   {
    "symbol": "SI=F",
    "name": "Silver",
    "unit": "USD/oz",
-   "value": 62.705,
+   "value": 63.499,
    "date": "2026-08-07"
   },
   {
    "symbol": "CL=F",
    "name": "Crude Oil (WTI)",
    "unit": "USD/bbl",
-   "value": 78.31,
+   "value": 78.18,
    "date": "2026-08-07"
   },
   {
    "symbol": "BZ=F",
    "name": "Brent Crude",
    "unit": "USD/bbl",
-   "value": 83.76,
+   "value": 83.55,
    "date": "2026-08-07"
   },
   {
    "symbol": "HG=F",
    "name": "Copper",
    "unit": "USD/lb",
-   "value": 6.745,
+   "value": 6.591,
    "date": "2026-08-07"
   },
   {
    "symbol": "NG=F",
    "name": "Natural Gas",
    "unit": "USD/MMBtu",
-   "value": 2.644,
+   "value": 2.662,
    "date": "2026-08-07"
   }
  ]
