@@ -5075,3 +5075,80 @@ go to ~0.
 Commits this session: this HANDOFF entry + the two mktcap scripts, one
 commit, `[vercel skip]` (scripts/docs only — no build). Workbook edit is
 OneDrive-side, not in this repo.
+
+## 2026-08-08 (afternoon) -- mini -> windows+cloud (mktcap-refresh cut over to the mini TODAY -- Ashwin overrode the Shadow Saturday gate)
+
+Ashwin's explicit call, after reading your Shadow Saturday drill #2 entry:
+"we are not gating the Mac mini cutover, let's do it now." Not waiting for
+8/15 or 8/22 -- today's drill was GREEN and the prior weeks were clean too,
+so the wait was adding calendar time without adding new evidence. Recording
+the full scope and reasoning here since this changes who runs what going
+forward.
+
+### Scope: refresh.py --write only, not the full four-step ritual
+
+Read the actual scripts before deciding what could move, rather than
+assuming "cutover" meant all four steps in the runbook:
+
+- `refresh.py --write` (which also runs `export_csv.py` internally --
+  confirmed by reading refresh.py's own code, not the README's "3 separate
+  scripts" description, which predates that internal call) is Supabase-only,
+  no local file dependency. **This moved to the mini today.**
+- `sync_city_lookup.py` and `compare_excel.py` both need Excel workbooks
+  that only exist on Ashwin's Windows machine.
+  `sync_city_lookup.py`'s DEFAULT_WORKBOOK is literally
+  `C:\Users\ashwi\OneDrive\Excel Files\...xlsx`; `compare_excel.py` wants
+  `MetroAreas.xlsx`, which I confirmed is not present anywhere in this
+  checkout on the mini. **These stay Ashwin's own manual Saturday steps.**
+  Asked him directly whether to set up OneDrive sync to the mini instead --
+  he chose to keep the workbook-dependent steps manual rather than take that
+  on right now.
+
+Running refresh.py before Ashwin's done that week's workbook update is safe
+by design, not a race: unmapped new companies just queue as geo stubs
+(metro=null) for him to curate whenever, same as any other week -- "the
+pipeline NEVER guesses" per scripts/mktcap/README.md. No hard ordering
+dependency, so the mini's Saturday 09:00Z slot doesn't need to coordinate
+with whenever Ashwin does his own ritual that day.
+
+### Practical consequence for you: stop running refresh.py --write manually
+
+If future Shadow Saturday drills (or just checking in on the pipeline) call
+for refresh.py --write, the mini already does that every Saturday now --
+running it again manually would just be a redundant, idempotent-ish
+duplicate (not harmful -- no deletes, upsert + weekly snapshot -- but
+wasteful and would make the weekly snapshot table's cadence confusing).
+sync_city_lookup.py and compare_excel.py are unaffected -- still yours/
+Ashwin's to run against the Windows-local workbooks as before.
+
+### Verified before scheduling, not assumed
+
+- `refresh.py --self-test`: 20/20 PASS on this machine (independently
+  confirmed, not just trusted from your report).
+- Credential: MKTCAP_SUPABASE_KEY wasn't set on the mini. Tried the existing
+  SUPABASE_SERVICE_KEY (same Supabase project, nmprqkmymrdknffwnuur, as the
+  cricket/football pipelines already here) rather than asking Ashwin to
+  paste a new secret -- confirmed correct by actually running against it
+  successfully, not assumed from the shared project id alone.
+- Dry-run then real `--write`, both clean: 12968 merged, 5705 mapped
+  metros, 0 new companies, 0 rename-guard skips, 0 deactivation-guard
+  flags, METRO QUEUE: none -- the "clean week" signature from your report,
+  reproduced independently here.
+- Full wrapper (run-mktcap-refresh.sh) hand-run via hc-run.sh: exit 0.
+
+### One open item, not blocking
+
+healthchecks.io wouldn't create a check for the new "mktcap-refresh" slug
+via API -- 403 on create, though the same HC_API_KEY can still list/read
+existing checks fine. Slug-based auto-provisioning (the mechanism that
+normally creates a check on first ping) also didn't fire. All the mini's
+OTHER checks are pinging fine, so this looks specific to this project's
+auto-provisioning setting or this key's write scope, not a systemic
+problem. Not blocking -- the job is fully monitored via dispatcher.py's own
+MISSED-tracking and the wrapper's ntfy fail() alert -- but there's no
+healthchecks dashboard tile for it yet. Would need either a read-write
+HC_API_KEY or Ashwin creating the check by hand in the dashboard.
+
+jobs.toml: Saturday 09:00Z, --self-test 79/79 repo / 78/78 live,
+--check-sync clean, seeded (today's slot marked already-ran from the real
+hand-run above). Commit ef45ee5da.
