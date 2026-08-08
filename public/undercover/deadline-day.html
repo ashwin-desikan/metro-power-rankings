@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deadline Day — a decision game concept</title>
+<style>
+  :root{--bg:#0c1116;--panel:#141c24;--edge:#22303c;--ink:#e8eef4;--dim:#8fa4b5;
+        --lime:#b7f36b;--red:#ff7a6b;--amber:#ffd166;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font:16px/1.55 Georgia,'Times New Roman',serif;min-width:0}
+  header{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;
+         border-bottom:1px solid var(--edge);font-family:ui-monospace,Consolas,monospace}
+  header .brand{font-weight:700;letter-spacing:.12em;font-size:.85rem}
+  header .brand b{color:var(--lime)}
+  header .beatno{color:var(--dim);font-size:.75rem;letter-spacing:.15em}
+  .wrap{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:18px;max-width:1080px;
+        margin:0 auto;padding:18px}
+  @media (max-width:860px){.wrap{grid-template-columns:minmax(0,1fr)}}
+  .clock{font-family:ui-monospace,Consolas,monospace;color:var(--lime);font-size:.85rem;
+         letter-spacing:.18em;margin-bottom:10px}
+  .story{background:var(--panel);border:1px solid var(--edge);border-radius:10px;padding:20px 22px}
+  .story p{margin:0 0 14px;color:#cfdbe5}
+  .story p.you{color:var(--ink)}
+  .kicker{font-family:ui-monospace,Consolas,monospace;font-size:.7rem;letter-spacing:.2em;
+          color:var(--dim);text-transform:uppercase;margin-bottom:10px}
+  .choices{margin-top:18px;display:grid;gap:10px}
+  button.choice{display:block;width:100%;text-align:left;background:#0f1720;color:var(--ink);
+    border:1px solid var(--edge);border-radius:8px;padding:13px 15px;font:inherit;cursor:pointer}
+  button.choice:hover{border-color:var(--lime)}
+  button.choice small{display:block;color:var(--dim);margin-top:3px;font-size:.85rem}
+  button.choice.ghost{color:var(--dim);border-style:dashed}
+  .meters{background:var(--panel);border:1px solid var(--edge);border-radius:10px;padding:16px}
+  .meters h3,.wire h3{font-family:ui-monospace,Consolas,monospace;font-size:.72rem;
+    letter-spacing:.2em;color:var(--dim);text-transform:uppercase;margin-bottom:12px}
+  .meter{margin-bottom:12px}
+  .meter .row{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:4px}
+  .meter .delta{font-family:ui-monospace,Consolas,monospace}
+  .meter .delta.up{color:var(--lime)} .meter .delta.down{color:var(--red)}
+  .bar{height:5px;background:#0a0f14;border-radius:3px;overflow:hidden}
+  .bar i{display:block;height:100%;background:var(--lime);transition:width .6s}
+  .bar i.low{background:var(--red)} .bar i.mid{background:var(--amber)}
+  .why{font-size:.74rem;color:var(--dim);margin-top:3px;font-style:italic;min-height:0}
+  .wire{background:var(--panel);border:1px solid var(--edge);border-radius:10px;padding:16px;margin-top:16px}
+  .wire .item{font-size:.82rem;border-left:2px solid var(--lime);padding-left:9px;margin-bottom:10px}
+  .wire .item time{display:block;font-family:ui-monospace,Consolas,monospace;font-size:.68rem;color:var(--dim)}
+  .wire .none{color:var(--dim);font-size:.82rem;font-style:italic}
+  .task{margin-top:16px;border:1px solid var(--edge);border-radius:8px;overflow:hidden}
+  .task table{width:100%;border-collapse:collapse;font-size:.9rem}
+  .task th,.task td{border-bottom:1px solid var(--edge);padding:8px 12px;text-align:left}
+  .task th{font-family:ui-monospace,Consolas,monospace;font-size:.7rem;letter-spacing:.15em;
+           color:var(--dim);text-transform:uppercase}
+  .task input{width:110px;background:#0a1218;border:1px solid #2c4256;border-radius:5px;
+              color:var(--lime);padding:6px 8px;font:inherit}
+  .task input.bad{border-color:var(--red)}
+  .task input.good{border-color:var(--lime)}
+  .endcard{border:1px solid var(--lime);border-radius:10px;padding:22px;margin-top:4px}
+  .endcard h2{font-size:1.5rem;margin-bottom:10px}
+  .endcard .verdict{color:var(--dim);font-size:.9rem;margin-top:12px}
+  .again{margin-top:16px;display:inline-block;background:var(--lime);color:#0c1116;border:none;
+         border-radius:7px;padding:11px 18px;font:inherit;font-weight:700;cursor:pointer}
+  .concept{max-width:1080px;margin:0 auto;padding:0 18px 30px;color:var(--dim);font-size:.78rem;
+           font-family:ui-monospace,Consolas,monospace;letter-spacing:.03em}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">ZONE ZERO FC · <b>DEADLINE DAY</b></div>
+  <div class="beatno" id="beatno">BEAT 1 / 8</div>
+</header>
+<div class="wrap">
+  <main>
+    <div class="clock" id="clock"></div>
+    <div class="story" id="story"></div>
+  </main>
+  <aside>
+    <div class="meters" id="meters"><h3>Where you stand</h3></div>
+    <div class="wire"><h3>The wire · live</h3><div id="wireItems"><div class="none">Nothing yet. It won't stay quiet.</div></div></div>
+  </aside>
+</div>
+<p class="concept">A concept demo of a scenario decision engine: authored beats, stakeholder meters that
+always explain their movement, a news wire that reacts, one embedded numbers task, and endings decided by
+where you stand. Fictional club, fictional people, real-shaped decisions. Best played twice.</p>
+
+<script>
+"use strict";
+/* ============================== SCENARIO DATA ==============================
+   The engine below reads only this object. A new scenario = a new object. */
+var SCENARIO = {
+  role: "You are the Sporting Director of Zone Zero FC.",
+  meters: [
+    {id:"board", label:"Board"},
+    {id:"fans",  label:"Fans"},
+    {id:"squad", label:"Dressing room"},
+    {id:"bank",  label:"War chest"}
+  ],
+  beats: [
+  { clock:"TRANSFER DEADLINE DAY · 07:10",
+    text:["Your phone has been ringing since six. Kwame Osei's agent, finally: 'Meridiana have triggered the release clause. Forty million. Kwame flies at nine — he wanted you to hear it from me, not the radio.'",
+          "The clause is valid. You cannot stop this. You can only decide what kind of day it becomes."],
+    choices:[
+      {t:"Confirm it quietly and start working the replacement list now.", s:"Speed over sentiment.",
+       fx:{board:+8,fans:-4,squad:0,bank:+10}, why:{board:"acted like an executive, not a fan", fans:"they heard it from the radio after all"},
+       wire:{t:"08:02", h:"Osei to Meridiana: clause met, medical booked"}},
+      {t:"Call the chairman and try to fight the clause in the courts.", s:"Buy time, whatever it costs.",
+       fx:{board:-10,fans:+6,squad:+4,bank:0}, why:{board:"counsel says you'll lose in a week", fans:"at least someone fought"},
+       wire:{t:"08:14", h:"Zone Zero to contest Osei clause; lawyers instructed"}},
+      {t:"Get ahead of it: club statement before the story breaks.", s:"Control the narrative.",
+       fx:{board:-3,fans:+8,squad:+2,bank:+10}, why:{board:"they wanted it handled privately", fans:"honesty, for once"},
+       wire:{t:"07:58", h:"CLUB STATEMENT: Osei departure confirmed before rumours land"}}]},
+
+  { clock:"09:05 · THE BOARDROOM CALL",
+    text:["The chairman doesn't do good mornings. 'Forty million is a roof repair, a training-ground debt, and a decade of bad contracts fixed. I want fifteen banked. Tell me you agree.'"],
+    choices:[
+      {t:"Agree: bank £15m, work with what's left.", s:"Peace with the board has a price.",
+       fx:{board:+12,fans:-8,squad:-6,bank:-15}, why:{fans:"'ambition' trending, not kindly", squad:"players read the papers too"},
+       wire:{t:"09:40", h:"Sources: chunk of Osei fee to be held back from squad rebuild"}},
+      {t:"Refuse: every penny goes back on the pitch.", s:"Pick this fight in the morning.",
+       fx:{board:-12,fans:+10,squad:+8,bank:0}, why:{board:"you spent political capital before breakfast", fans:"war chest intact"},
+       wire:{t:"09:48", h:"Boardroom rift over Osei money — sporting director digs in"}},
+      {t:"Stall: 'Let's decide when we see tonight's deals.'", s:"Neither yes nor no.",
+       fx:{board:-5,fans:0,squad:0,bank:0}, why:{board:"chairmen remember fence-sitters"},
+       wire:{t:"09:55", h:"No decision yet on Osei windfall, insiders say"}}]},
+
+  { clock:"10:30 · THE NUMBERS",
+    text:["Finance need the real figure before you bid for anyone. The fee is £40m, but it is not £40m: Osei's old club kept a 10% sell-on clause, the agent takes £2m, and the transfer levy is 5% of the fee.",
+          "Fill in the three numbers. Or wave it away and let someone else own the maths."],
+    task:{cols:["Item","£m"],
+      rows:[["Fee agreed", "40", null],
+            ["Sell-on clause (10% of fee)", null, 4],
+            ["Agent + levy (£2m + 5% of fee)", null, 4],
+            ["Net available", null, 32]],
+      okFx:{board:+8,fans:0,squad:0,bank:0}, okWhy:{board:"you knew the number before they did"},
+      okWire:{t:"11:12", h:"Zone Zero working to a £32m net budget, per sources"},
+      skipT:"Wave it away — 'finance can do it.'",
+      skipFx:{board:-8,fans:0,squad:0,bank:0}, skipWhy:{board:"the CFO now owns your budget"},
+      skipWire:{t:"11:12", h:"Confusion at Zone Zero over what's actually left to spend"}}},
+
+  { clock:"12:00 · THE SHORTLIST",
+    text:["Three names survived the morning. Rafa Contez, 29, proven, £28m and big wages — the safe headline. Teo Brandt, 19, the wonderkid your scouts have tracked for two years, £14m — the bet. Or Luca Marin on loan with an obligation, £4m now — the accountant's answer."],
+    choices:[
+      {t:"Sign Contez. Proven goals, tomorrow's back page.", s:"£28m · flag: the safe bet", flag:"striker_proven",
+       fx:{board:+4,fans:+8,squad:+4,bank:-28}, why:{fans:"a name they know", bank:"most of the chest, gone"},
+       wire:{t:"12:44", h:"Zone Zero move for Contez — talks at advanced stage"}},
+      {t:"Sign Brandt. The scouts have never been this sure.", s:"£14m · flag: the bet", flag:"striker_kid",
+       fx:{board:-3,fans:-4,squad:+2,bank:-14}, why:{board:"'we sold a star and bought a teenager?'", fans:"who?"},
+       wire:{t:"12:44", h:"Surprise: Zone Zero bid for teenager Brandt"}},
+      {t:"Take Marin on loan. Keep the powder dry.", s:"£4m · flag: the rental", flag:"striker_loan",
+       fx:{board:+6,fans:-6,squad:0,bank:-4}, why:{board:"prudent", fans:"a loan? after selling Osei?"},
+       wire:{t:"12:44", h:"Zone Zero close on Marin loan with obligation"}}]},
+
+  { clock:"14:30 · THE DRESSING ROOM",
+    text:["Your captain texts: 'Lads are rattled. Two agents told their players this is a fire sale. Say something — to us, not to the cameras.'"],
+    choices:[
+      {t:"Go down to the training ground. Face them, no notes.", s:"Twenty minutes, door closed.",
+       fx:{board:0,fans:+2,squad:+12,bank:0}, why:{squad:"you showed up in person"},
+       wire:{t:"15:20", h:"Squad meeting at Zone Zero training ground — mood 'settled'"}},
+      {t:"Put out a fan-facing video instead.", s:"Reassure the paying public.",
+       fx:{board:-4,fans:+8,squad:-6,bank:0}, why:{board:"showbusiness", squad:"they wanted it face to face"},
+       wire:{t:"15:20", h:"Sporting director's video address divides opinion"}},
+      {t:"Say nothing. Deals first, feelings later.", s:"The window shuts at eleven.",
+       fx:{board:+2,fans:-4,squad:-10,bank:0}, why:{squad:"silence reads as guilt"},
+       wire:{t:"15:20", h:"No comment from Zone Zero as unrest rumours swirl"}}]},
+
+  { clock:"17:00 · THE DOMINO",
+    text:["Of course. Atlantico just bid £25m for Ines Duarte, your playmaker and the captain's best friend. She's worth more; they know the day weakens you. Her agent is 'listening'."],
+    choices:[
+      {t:"Hard no. Not today, not at that price.", s:"Hold the line.",
+       fx:{board:-4,fans:+8,squad:+10,bank:0}, why:{board:"£25m refused makes them nervous", squad:"the line held"},
+       wire:{t:"17:31", h:"Zone Zero reject Atlantico's £25m Duarte bid out of hand"}},
+      {t:"'£38m or nothing.' Price the panic out of it.", s:"Everyone has a number.", flag:"duarte_priced",
+       fx:{board:+6,fans:-6,squad:-8,bank:0}, why:{board:"cold, correct", squad:"everyone learns they're for sale"},
+       wire:{t:"17:31", h:"Duarte available 'at the right price', sources claim"}},
+      {t:"Counter with a new contract for Duarte tonight.", s:"Turn the bid into a signing.",
+       fx:{board:-2,fans:+6,squad:+8,bank:-6}, why:{bank:"improved terms cost real money", squad:"a statement of intent"},
+       wire:{t:"17:31", h:"Zone Zero open contract talks with Duarte amid Atlantico interest"}}]},
+
+  { clock:"19:30 · THE MEDICAL",
+    text:["Your head of medicine calls, and he only calls with bad news: the striker deal's medical flagged a knee. 'Manageable, probably. I can't promise you thirty games.' The selling club knows you're out of time."],
+    choices:[
+      {t:"Proceed anyway. Deadline days don't offer perfect.", s:"flag: the gamble", flag:"knee_gamble",
+       fx:{board:-4,fans:+4,squad:+2,bank:0}, why:{board:"they saw the medical file too"},
+       wire:{t:"20:05", h:"Zone Zero pressing ahead despite medical 'discussion point'"}},
+      {t:"Renegotiate: £3m off or no deal.", s:"Use the knee, coldly.",
+       fx:{board:+8,fans:0,squad:0,bank:+3}, why:{board:"you turned bad news into a discount", bank:"£3m back"},
+       wire:{t:"20:41", h:"Late twist: Zone Zero force price cut after medical"}},
+      {t:"Walk away. Trust the kids until January.", s:"flag: empty number nine", flag:"no_striker",
+       fx:{board:+2,fans:-12,squad:-6,bank:0}, why:{fans:"sold a star, signed nobody", board:"at least it's cheap"},
+       wire:{t:"20:41", h:"Zone Zero WALK AWAY — no striker signing tonight"}}]},
+
+  { clock:"22:50 · THE LAST HOUR",
+    text:["Fax machines, in this century. Lawyers reading clauses out loud. The window shuts at 23:00 and what you did today is already done; the last hour only reveals it.",
+          "The board group chat is typing. The fan forums are typing. Kwame Osei, classy to the end, posts a thank-you to the academy that made him."],
+    choices:[
+      {t:"Submit the paperwork and stand by the window.", s:"See what kind of day it was.",
+       fx:{board:0,fans:0,squad:0,bank:0}, why:{},
+       wire:{t:"23:00", h:"WINDOW SHUT: Zone Zero's deadline day is over"}}]}
+  ],
+  endings: [
+    {id:"disaster", test:function(m,f){return f.no_striker || avg(m)<40;},
+     h:"🕳️ The Hole Where a Striker Was",
+     p:"You sold your best player and the number nine shirt is empty. January is a long way away, and every goalless Saturday between now and then has your name on it. The chairman's silence is worse than his calls.",
+     v:"Endings are earned. Refusing the medical gamble was defensible; having no plan B was not."},
+    {id:"gamble", test:function(m,f){return f.knee_gamble && f.striker_kid;},
+     h:"🎲 The Double Gamble",
+     p:"A teenager with a flagged knee, bought with a legend's money. If Brandt's scan is clean in May you are a genius; if not, this was the night the project died. Nobody in the building is neutral about you now.",
+     v:"High variance is a strategy. It is just never a comfortable one."},
+    {id:"banked", test:function(m,f){return m.board>=65 && m.fans<40;},
+     h:"🏦 Banked and Booed",
+     p:"The board loves you: the accounts have never looked healthier. The stands do not: banners are already being painted. You won the boardroom and lost the ground, and only one of those sings on Saturday.",
+     v:"Every meter you maxed was paid for by one you emptied. That was a choice, even when it didn't feel like one."},
+    {id:"master", test:function(m,f){return avg(m)>=63 && !f.no_striker;},
+     h:"🎩 The Masterstroke",
+     p:"A star sold at full price, a replacement through the door, the dressing room settled and the board onside. Nobody gets deadline day this right. Enjoy tonight; by Monday they'll say it was easy.",
+     v:"You kept four constituencies happy at once. That is the whole job, and almost nobody does it."},
+    {id:"steady", test:function(){return true;},
+     h:"🧭 Steady Hands",
+     p:"No triumph, no catastrophe. The club that woke up richer and weaker went to bed intact, which on a day like this is quietly heroic. The real verdict arrives over the next thirty matchdays.",
+     v:"Most real deadline days end exactly here. The interesting question is which meter you'd trade next time."}
+  ]
+};
+function avg(m){ return (m.board+m.fans+m.squad+m.bank)/4; }
+
+/* ============================== ENGINE ==============================
+   Generic: clock, beats, choices with explained meter deltas, one table-task
+   type, a reactive wire, flags, threshold endings. */
+var M = {board:50, fans:50, squad:50, bank:50}, FLAGS = {}, BEAT = 0, WIRE = [];
+var $ = function(id){ return document.getElementById(id); };
+
+function meterClass(v){ return v<35 ? "low" : v<55 ? "mid" : ""; }
+function renderMeters(deltas, whys){
+  var el = $("meters"); el.innerHTML = "<h3>Where you stand</h3>";
+  SCENARIO.meters.forEach(function(mt){
+    var v = Math.max(0, Math.min(100, M[mt.id]));
+    var d = deltas && deltas[mt.id] ? deltas[mt.id] : 0;
+    var w = whys && whys[mt.id] ? whys[mt.id] : "";
+    var div = document.createElement("div"); div.className = "meter";
+    div.innerHTML = '<div class="row"><span>' + mt.label + '</span><span class="delta ' +
+      (d>0?"up":d<0?"down":"") + '">' + (d>0?"+"+d:d<0?d:"—") + '</span></div>' +
+      '<div class="bar"><i class="' + meterClass(v) + '" style="width:' + v + '%"></i></div>' +
+      (w ? '<div class="why">' + w + '</div>' : '');
+    el.appendChild(div);
+  });
+}
+function renderWire(){
+  var el = $("wireItems");
+  if (!WIRE.length) { el.innerHTML = '<div class="none">Nothing yet. It won\'t stay quiet.</div>'; return; }
+  el.innerHTML = "";
+  WIRE.slice().reverse().forEach(function(w){
+    var d = document.createElement("div"); d.className = "item";
+    d.innerHTML = "<time>" + w.t + "</time>" + w.h;
+    el.appendChild(d);
+  });
+}
+function applyFx(fx){
+  var deltas = {};
+  SCENARIO.meters.forEach(function(mt){
+    var d = fx && fx[mt.id] ? fx[mt.id] : 0;
+    M[mt.id] = Math.max(0, Math.min(100, M[mt.id] + d));
+    deltas[mt.id] = d;
+  });
+  return deltas;
+}
+function choiceBtn(label, sub, ghost, onclick){
+  var b = document.createElement("button");
+  b.className = "choice" + (ghost ? " ghost" : "");
+  b.innerHTML = label + (sub ? "<small>" + sub + "</small>" : "");
+  b.onclick = onclick; return b;
+}
+function renderBeat(){
+  var beat = SCENARIO.beats[BEAT];
+  $("beatno").textContent = "BEAT " + (BEAT+1) + " / " + SCENARIO.beats.length;
+  $("clock").textContent = beat.clock;
+  var story = $("story"); story.innerHTML = "";
+  if (BEAT === 0) { var k = document.createElement("div"); k.className="kicker"; k.textContent = SCENARIO.role; story.appendChild(k); }
+  beat.text.forEach(function(t){ var p = document.createElement("p"); p.textContent = t; story.appendChild(p); });
+  var box = document.createElement("div"); box.className = "choices";
+  story.appendChild(box);
+  if (beat.task) renderTask(beat, box); else renderChoices(beat, box);
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+function renderChoices(beat, box){
+  beat.choices.forEach(function(c){
+    box.appendChild(choiceBtn(c.t, c.s, false, function(){
+      if (c.flag) FLAGS[c.flag] = true;
+      var deltas = applyFx(c.fx);
+      if (c.wire) WIRE.push(c.wire);
+      renderMeters(deltas, c.why); renderWire();
+      next();
+    }));
+  });
+}
+function renderTask(beat, box){
+  var t = beat.task, div = document.createElement("div"); div.className = "task";
+  var html = "<table><tr>" + t.cols.map(function(c){return "<th>"+c+"</th>";}).join("") + "</tr>";
+  t.rows.forEach(function(r, i){
+    html += "<tr><td>" + r[0] + "</td><td>" +
+      (r[1] !== null ? r[1] : '<input inputmode="numeric" id="cell'+i+'" data-want="'+r[2]+'" placeholder="?">') +
+      "</td></tr>";
+  });
+  html += "</table>";
+  div.innerHTML = html;
+  box.parentNode.insertBefore(div, box);
+  box.appendChild(choiceBtn("Lock the numbers →", "Right numbers move the Board.", false, function(){
+    var inputs = div.querySelectorAll("input"), allGood = true;
+    inputs.forEach(function(inp){
+      var ok = parseFloat(inp.value) === parseFloat(inp.getAttribute("data-want"));
+      inp.className = ok ? "good" : "bad";
+      if (!ok) allGood = false;
+    });
+    if (!allGood) return; // keep trying — the clock, mercifully, waits
+    var deltas = applyFx(t.okFx); WIRE.push(t.okWire);
+    renderMeters(deltas, t.okWhy); renderWire(); next();
+  }));
+  box.appendChild(choiceBtn(t.skipT, "There is always a cost.", true, function(){
+    var deltas = applyFx(t.skipFx); WIRE.push(t.skipWire);
+    renderMeters(deltas, t.skipWhy); renderWire(); next();
+  }));
+}
+function next(){
+  BEAT++;
+  if (BEAT >= SCENARIO.beats.length) { ending(); return; }
+  setTimeout(renderBeat, 650);
+}
+function ending(){
+  var e = null;
+  for (var i = 0; i < SCENARIO.endings.length; i++) {
+    if (SCENARIO.endings[i].test(M, FLAGS)) { e = SCENARIO.endings[i]; break; }
+  }
+  $("beatno").textContent = "FULL TIME";
+  $("clock").textContent = "23:01 · THE WINDOW IS SHUT";
+  var story = $("story"); story.innerHTML = "";
+  var d = document.createElement("div"); d.className = "endcard";
+  d.innerHTML = "<h2>" + e.h + "</h2><p>" + e.p + "</p><p class='verdict'>" + e.v + "</p>";
+  var again = document.createElement("button"); again.className = "again"; again.textContent = "Run the day again ↻";
+  again.onclick = function(){
+    M = {board:50, fans:50, squad:50, bank:50}; FLAGS = {}; BEAT = 0; WIRE = [];
+    renderMeters(null, null); renderWire(); renderBeat();
+  };
+  d.appendChild(again); story.appendChild(d);
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+renderMeters(null, null); renderWire(); renderBeat();
+</script>
+</body>
+</html>

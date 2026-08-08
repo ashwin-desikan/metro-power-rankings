@@ -24,6 +24,7 @@ export const RELEASES: Release[] = [
       "An audit of every mapped boundary found metros measured over the wrong ground - a ring around the city, a namesake province far away, a shared county. Hundreds of boundaries are redrawn from better matches.",
       "The Ground Floor follows the fix: air, nitrogen dioxide and water are now averaged over corrected territory, from Bogota and Minsk to Sarajevo, Windhoek and Davao.",
       "Measured land area and population density update on every corrected metro page.",
+      "Three new reasoning games join Play & Learn: letter puzzles in Word Machine, number trains in Spot the Pattern and match-day logic in Riddle Stadium - every puzzle machine-checked to a single right answer.",
     ],
   },
   {

@@ -1,0 +1,123 @@
+/* vq-engine.js — the VISUAL variant of the shared MCQ engine (engine.js fork).
+   Adds three optional pool-item fields: `vis` (HTML rendered in the #vis pane:
+   letter tiles, number trains, character cards), `tile` (big centred option
+   tiles instead of full-width rows) and `say` (TTS override so the read-aloud
+   can spell letters / read digits the visual pane shows). Everything else —
+   sampling, level ramp, sounds, confetti, passport, finale — is identical. */
+(function () {
+  "use strict";
+  var G = window.GAME || {};
+  var BASE = G.BASE, HEADER = G.HEADER || {}, POOL = G.POOL || [], PICK = G.POOL_PICK || 8;
+  var $ = function (id) { return document.getElementById(id); };
+  var i = 0, soundOn = true, locked = false, actx = null;
+
+  function sample(arr, n) { var a = arr.slice(); for (var k = a.length - 1; k > 0; k--) { var j = Math.floor(Math.random() * (k + 1)); var t = a[k]; a[k] = a[j]; a[j] = t; } return a.slice(0, Math.min(n, a.length)); }
+  /* Level ramp (2026-08-06): pools may tag items with a numeric `lvl`.
+     When present, sampling is stratified across levels and the run is ordered
+     easy -> hard. Pools without `lvl` behave exactly as before. */
+  function pickStops() {
+    var hasLvl = false, byLvl = {}, k;
+    for (k = 0; k < POOL.length; k++) { if (POOL[k].lvl != null) { hasLvl = true; break; } }
+    if (!hasLvl) return sample(POOL, PICK);
+    POOL.forEach(function (x) { var l = x.lvl || 0; (byLvl[l] = byLvl[l] || []).push(x); });
+    var keys = Object.keys(byLvl).map(Number).sort(function (a, b) { return a - b; });
+    var per = Math.floor(PICK / keys.length), extra = PICK - per * keys.length, out = [];
+    keys.forEach(function (l, i) {
+      var want = per + (i >= keys.length - extra ? 1 : 0);
+      out = out.concat(sample(byLvl[l], want));
+    });
+    if (out.length < PICK) {
+      var rest = POOL.filter(function (x) { return out.indexOf(x) < 0; });
+      out = out.concat(sample(rest, PICK - out.length));
+    }
+    out.sort(function (a, b) { return (a.lvl || 0) - (b.lvl || 0); });
+    return out.slice(0, Math.min(PICK, out.length));
+  }
+  var STOPS = pickStops();
+
+  function tone(freq, dur, type, when, gain) {
+    if (!soundOn) return;
+    try {
+      actx = actx || new (window.AudioContext || window.webkitAudioContext)();
+      var o = actx.createOscillator(), g = actx.createGain();
+      o.type = type || "sine"; o.frequency.value = freq; g.gain.value = gain || 0.12;
+      o.connect(g); g.connect(actx.destination);
+      var t = actx.currentTime + (when || 0);
+      o.start(t); g.gain.setValueAtTime(g.gain.value, t); g.gain.exponentialRampToValueAtTime(0.0001, t + dur); o.stop(t + dur);
+    } catch (e) {}
+  }
+  function cheer() { [523, 659, 784, 1047].forEach(function (f, k) { tone(f, 0.25, "triangle", k * 0.09, 0.14); }); }
+  function nope() { tone(180, 0.25, "sine", 0, 0.12); }
+  function speak(txt) { if (!("speechSynthesis" in window)) return; speechSynthesis.cancel(); var u = new SpeechSynthesisUtterance(txt); u.rate = 0.92; u.pitch = 1.12; speechSynthesis.speak(u); }
+  function confetti() {
+    var cols = ["#ffd23f", "#34d3b0", "#ff6b6b", "#7fd1ff", "#a7f0a0"];
+    for (var k = 0; k < 26; k++) { var c = document.createElement("div"); c.className = "confetti"; c.style.left = Math.random() * 100 + "vw"; c.style.background = cols[k % cols.length]; c.style.animation = "fall " + (1.1 + Math.random() * 0.9) + "s ease-in " + (Math.random() * 0.2) + "s forwards"; c.style.opacity = 0; document.body.appendChild(c); (function (el) { setTimeout(function () { el.remove(); }, 2400); })(c); }
+  }
+  function buildPassport() {
+    var p = $("passport"); if (!p) return; p.innerHTML = "";
+    STOPS.forEach(function (s, k) { var d = document.createElement("div"); d.className = "stamp" + (k < i ? " got" : ""); d.id = "stamp" + k; d.textContent = k < i ? s.stamp : ""; p.appendChild(d); });
+  }
+  function render() {
+    locked = false; var s = STOPS[i];
+    $("scene").style.background = s.bg;
+    var _c = $("city"); _c.textContent = "";
+    if (s.logo) { var _im = document.createElement("img"); _im.className = "crest"; _im.src = s.logo; _im.alt = s.place || ""; _im.onerror = function(){ _c.textContent = s.city || ""; }; _c.appendChild(_im); } else { _c.textContent = s.city; }
+    $("flag").textContent = s.flag || "";
+    $("place").firstChild.textContent = s.place; $("sub").textContent = s.sub; $("q").textContent = s.q;
+    var _v = $("vis"); if (_v) { _v.innerHTML = s.vis || ""; _v.style.display = s.vis ? "" : "none"; }
+    $("toast").textContent = ""; $("reveal").className = "reveal"; $("next").className = "next";
+    var o = $("opts"); o.innerHTML = ""; o.className = "opts" + (s.tile ? " tiles" : "");
+    var order = s.opts.map(function (x, k) { return k; });
+    for (var a = order.length - 1; a > 0; a--) { var b = Math.floor(Math.random() * (a + 1)); var t = order[a]; order[a] = order[b]; order[b] = t; }
+    order.forEach(function (idx) {
+      var opt = s.opts[idx]; var btn = document.createElement("button"); btn.className = "opt";
+      btn.innerHTML = (opt.logo ? '<img class="crest" src="' + opt.logo + '" alt="" onerror="this.style.display=&#39;none&#39;">' : (opt.e ? '<span class="em">' + opt.e + '</span>' : '')) + '<span>' + opt.t + '</span>';
+      btn.onclick = function () { choose(btn, idx === s.ans); }; o.appendChild(btn);
+    });
+    buildPassport();
+  }
+  function choose(btn, correct) {
+    if (locked) return;
+    if (correct) {
+      locked = true; btn.classList.add("right");
+      document.querySelectorAll(".opt").forEach(function (b) { if (b !== btn) b.classList.add("dim"); });
+      $("toast").textContent = "🌟 Well done!"; cheer(); confetti();
+      var s = STOPS[i]; $("fact").textContent = s.fact;
+      if (s.url) { $("golink").style.display = "inline-block"; $("golink").href = s.url; $("golink").textContent = s.linkLabel || "See on the site →"; } else { $("golink").style.display = "none"; }
+      $("reveal").className = "reveal show";
+      var st = $("stamp" + i); if (st) { st.textContent = s.stamp; st.className = "stamp got"; }
+      $("next").textContent = i === STOPS.length - 1 ? "See my stamps →" : "Next →"; $("next").className = "next show";
+    } else { btn.classList.add("wrong"); $("toast").textContent = "Not quite — try again! 💪"; nope(); setTimeout(function () { btn.classList.remove("wrong"); }, 450); }
+  }
+  function finale() {
+    $("scene").style.display = "none";
+    ["place", "vis", "q", "read", "opts", "toast", "reveal", "next"].forEach(function (id) { var el = $(id); if (el) el.style.display = "none"; });
+    $("finale").className = "finale show"; $("finalStamps").textContent = STOPS.map(function (s) { return s.stamp; }).join(" "); buildPassport(); cheer(); confetti();
+  }
+  $("next").onclick = function () { i++; if (i >= STOPS.length) { finale(); return; } render(); window.scrollTo({ top: 0, behavior: "smooth" }); };
+  $("again").onclick = function () { i = 0; STOPS = pickStops(); $("scene").style.display = ""; ["place", "vis", "q", "read", "opts", "toast", "reveal", "next"].forEach(function (id) { var el = $(id); if (el) el.style.display = ""; }); $("finale").className = "finale"; render(); window.scrollTo({ top: 0 }); };
+  $("read").onclick = function () { var s = STOPS[i]; speak(s.place + ". " + (s.say || s.q)); };
+  $("snd").onclick = function () { soundOn = !soundOn; $("snd").textContent = soundOn ? "🔊" : "🔇"; if (!soundOn && "speechSynthesis" in window) speechSynthesis.cancel(); };
+
+  // header + back nav
+  if (HEADER.title) document.title = HEADER.title;
+  if ($("logoEmoji")) $("logoEmoji").textContent = HEADER.logoEmoji || "🎮";
+  if ($("logoText")) $("logoText").textContent = HEADER.logoText || "Play & Learn";
+  if ($("grownText")) $("grownText").textContent = HEADER.grown || "";
+  if ($("finaleH")) $("finaleH").textContent = HEADER.finaleH || "🏆 You did it!";
+  if ($("finaleP")) $("finaleP").textContent = HEADER.finaleP || "Great playing!";
+  if ($("again")) $("again").textContent = HEADER.again || "Play again 🔁";
+  var back = $("back"); if (back) back.setAttribute("href", location.protocol === "file:" ? "index.html" : "/play");
+
+  // "All games" escape hatch on the finale, next to Play again (2026-08-01).
+  if ($("again") && !document.getElementById("allgames")) {
+    var _ag = document.createElement("a");
+    _ag.id = "allgames"; _ag.className = "next show";
+    _ag.href = location.protocol === "file:" ? "index.html" : "/play";
+    _ag.textContent = "All games 🎮";
+    _ag.style.textDecoration = "none"; _ag.style.marginLeft = "8px"; _ag.style.background = "#5b7b97"; _ag.style.boxShadow = "0 6px 0 #40566b";
+    $("again").parentNode.insertBefore(_ag, $("again").nextSibling);
+  }
+
+  render();
+})();

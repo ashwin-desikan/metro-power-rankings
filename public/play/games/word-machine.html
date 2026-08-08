@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Play and Learn</title>
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  /* visual-quiz additions for the vq engine */
+  .vis{margin:6px 0 0}
+  .opts.tiles{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+  .opts.tiles .opt{flex:0 1 auto;min-width:76px;min-height:70px;font-size:1.7rem;border-radius:16px;padding:12px 18px}
+  .wrow{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center;margin-top:8px}
+  .wgroup{display:inline-flex;gap:5px}
+  .wt{min-width:40px;height:50px;padding:0 6px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.4rem;color:var(--navy);background:#f3f7fb;border-radius:10px;box-shadow:0 4px 0 #c9d8e6;text-transform:uppercase}
+  .wt.gap{background:#fff3d6;box-shadow:0 4px 0 #eccb84;color:#c98a00;animation:bob 1.8s ease-in-out infinite}
+  .wt.mid{background:#e3f9f2;box-shadow:0 4px 0 #86dcc6;color:#06372c}
+  .warrow{font-size:1.6rem}
+  .strain{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;align-items:center;margin-top:8px}
+  .sloco{font-size:2.1rem}
+  .swag{min-width:50px;padding:10px 8px;background:#f3f7fb;border-radius:12px 12px 8px 8px;box-shadow:0 4px 0 #c9d8e6;font-weight:800;font-size:1.25rem;color:var(--navy)}
+  .swag.q{background:#fff3d6;box-shadow:0 4px 0 #eccb84;color:#c98a00;animation:bob 1.6s ease-in-out infinite}
+  .rrow{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:8px}
+  .rcard{background:#f3f7fb;border-radius:14px;box-shadow:0 4px 0 #c9d8e6;padding:8px 10px;min-width:78px}
+  .rface{font-size:1.7rem;line-height:1.2}
+  .rname{font-weight:800;color:var(--navy);font-size:.88rem}
+  .ritems{font-size:.82rem;margin-top:2px;font-weight:800;color:#1f9e82;min-height:1.1em;word-break:break-all}
+  .ritems.unk{color:#c98a00;font-size:1.05rem}
+  .rchip{display:inline-block;background:#fff3d6;color:#c98a00;border-radius:8px;padding:1px 7px;font-size:.78rem;font-weight:800;margin-top:3px}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><span class="ball" id="logoEmoji">🎮</span> <span id="logoText">Play &amp; Learn</span></div>
+  <div class="hgroup">
+    <a class="back" id="back" href="/play">← All games</a>
+    <button class="sound" id="snd" aria-label="sound on or off">🔊</button>
+  </div>
+</header>
+<div class="passport" id="passport"></div>
+<main>
+  <div class="card" id="card">
+    <div class="scene" id="scene">
+      <span class="flag" id="flag"></span>
+      <span class="city" id="city">🔤</span>
+      <svg class="pip" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#34d3b0" stroke="#16324f" stroke-width="4"/><path d="M14 50h72M50 8c16 14 16 70 0 84M50 8c-16 14-16 70 0 84" fill="none" stroke="#16324f" stroke-width="3" opacity=".5"/><circle cx="38" cy="46" r="6" fill="#16324f"/><circle cx="62" cy="46" r="6" fill="#16324f"/><circle cx="40" cy="44" r="2" fill="#fff"/><circle cx="64" cy="44" r="2" fill="#fff"/><path d="M36 64q14 14 28 0" fill="none" stroke="#16324f" stroke-width="4" stroke-linecap="round"/></svg>
+    </div>
+    <div class="place" id="place">—<small id="sub">—</small></div>
+    <div class="vis" id="vis"></div>
+    <div class="q" id="q">Loading…</div>
+    <button class="readbtn" id="read">🔊 Read it to me</button>
+    <div class="opts" id="opts"></div>
+    <div class="toast" id="toast"></div>
+    <div class="reveal" id="reveal"><div class="fact" id="fact"></div><a class="golink" id="golink" target="_blank" rel="noopener">See on the site →</a></div>
+    <button class="next" id="next">Next →</button>
+    <div class="finale" id="finale">
+      <h2 id="finaleH">🏆 You did it!</h2>
+      <p id="finaleP" style="font-size:1.2rem;font-weight:700;color:#16324f">Great playing!</p>
+      <div class="stamps" id="finalStamps"></div>
+      <button class="next show" id="again">Play again 🔁</button>
+    </div>
+  </div>
+</main>
+<p class="grown" id="grownText"></p>
+<script src="pools/word-machine.js"></script>
+<script src="assets/vq-engine.js"></script>
+</body>
+</html>

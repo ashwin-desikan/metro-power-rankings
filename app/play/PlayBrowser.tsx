@@ -27,6 +27,7 @@ const TOPICS: { key: string; label: string }[] = [
   { key: "sports", label: "⚽ Sports" },
   { key: "history-civics", label: "🏛️ History & Civics" },
   { key: "logic-coding", label: "🧠 Logic & Coding" },
+  { key: "words", label: "🔤 Words" },
   { key: "rules", label: "🟨 Be the Ref" },
   { key: "music", label: "🎵 Music" },
 ];

@@ -189,3 +189,4 @@ scripts/uefa/data/fa_league_cups.txt
 mac-mini-jobs/config.env
 mac-mini-jobs/state.json
 mac-mini-jobs/.dispatcher.lock
+betatestkeys.txt

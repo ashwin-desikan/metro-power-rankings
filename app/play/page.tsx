@@ -4,7 +4,7 @@ import PlayBrowser, { type Game } from "./PlayBrowser";
 export const metadata: Metadata = {
   title: "Play & Learn",
   description:
-    "Free learning games built from the Citizen of Nowhere data: capitals and flags, empires and leaders, real finals across five sports, big-number maths, and the logic behind coding. Filter by challenge level and topic. For ages 5 to 10.",
+    "Free learning games built from the Citizen of Nowhere data: capitals and flags, empires and leaders, real finals across five sports, big-number maths, word and number reasoning puzzles, and the logic behind coding. Filter by challenge level and topic. For ages 5 to 11.",
   alternates: { canonical: "/play" },
 };
 
@@ -43,6 +43,9 @@ const GAMES: Game[] = [
 
   // ---- Think Like a Coder
   { title: "In the Club", emoji: "\u{1F9E9}", file: "in-the-club.html", ages: "7–10", blurb: "AND, OR and NOT with the world's real clubs: the UN, EU, NATO, G7 and more. Set logic in disguise — the thinking behind every line of code.", group: "coder", level: 3, topics: ["logic-coding", "geography"] },
+  { title: "Word Machine", emoji: "\u{1F524}", file: "word-machine.html", ages: "8–11", blurb: "Move a letter between words, find the one letter that completes FOUR words, and crack letter codes. Classic verbal-reasoning puzzles as a game — every puzzle has exactly one answer.", group: "coder", level: 3, topics: ["words", "logic-coding"] },
+  { title: "Spot the Pattern", emoji: "\u{1F50D}", file: "spot-the-pattern.html", ages: "7–11", blurb: "What number comes next? One-step rules, growing gaps, doubling — then two sequences hiding inside one, squares and triangle numbers. Every reveal teaches the rule.", group: "think", level: 3, topics: ["maths", "logic-coding"] },
+  { title: "Riddle Stadium", emoji: "\u{1F9E0}", file: "riddle-stadium.html", ages: "7–11", blurb: "Match-day logic: follow the scoring chain, untangle the finishing order from clues, and work out who plays what by crossing things out. Detective thinking, one riddle at a time.", group: "coder", level: 3, topics: ["logic-coding", "maths", "sports"] },
   { title: "Higher or Lower", emoji: "\u{1F3AF}", file: "higher-or-lower.html", ages: "7–10", blurb: "Hunt a hidden number on the number line in as few guesses as you can. Split the middle every time and you've invented binary search.", group: "coder", level: 3, topics: ["logic-coding", "maths"] },
   { title: "Champion Challenge", emoji: "\u{1F3C6}", file: "champion-challenge.html", ages: "7–10", blurb: "The decathlon: the hardest questions from across the arcade in one run, ramping from warm-up to expert.", group: "coder", level: 3, topics: ["logic-coding", "sports", "geography"] },
 
