@@ -1,13 +1,62 @@
 {
-  "generatedAt": "2026-08-07",
-  "count": 579,
+  "generatedAt": "2026-08-08",
+  "count": 586,
   "entries": [
+    {
+      "date": "2026-08-08",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "48f6c9ad4"
+    },
     {
       "date": "2026-08-07",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football, AFL.",
-      "commit": "5d9b8b409"
+      "text": "Data refreshed — Football, Basketball, Cricket, Elections, and 9 more.",
+      "commit": "5340eb5c2"
+    },
+    {
+      "date": "2026-08-07",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Publish measured land area and density from each metro's own boundary.",
+      "commit": "3a7241df0"
+    },
+    {
+      "date": "2026-08-07",
+      "category": "hub",
+      "hub": "Ground Floor",
+      "text": "Ground floor: measure conditions where people live, not at the centre point.",
+      "commit": "30166fd6d"
+    },
+    {
+      "date": "2026-08-07",
+      "category": "hub",
+      "hub": "Countries",
+      "text": "Rugby, cricket and basketball now ship their weekly data without a deploy.",
+      "commit": "ff0c306c5"
+    },
+    {
+      "date": "2026-08-07",
+      "category": "hub",
+      "hub": null,
+      "text": "Stop publishing conurbation figures the data does not contain.",
+      "commit": "4584e4fbe"
+    },
+    {
+      "date": "2026-08-07",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Read Sound of the Metros at runtime so its weekly refresh actually ships.",
+      "commit": "92f44402e"
+    },
+    {
+      "date": "2026-08-07",
+      "category": "hub",
+      "hub": null,
+      "text": "Redirect two badge slugs that published essays still link to.",
+      "commit": "15108a61f"
     },
     {
       "date": "2026-08-06",
