@@ -1,13 +1,48 @@
 {
-  "generatedAt": "2026-08-08",
-  "count": 586,
+  "generatedAt": "2026-08-09",
+  "count": 591,
   "entries": [
+    {
+      "date": "2026-08-09",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "cf8778ceb"
+    },
     {
       "date": "2026-08-08",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "48f6c9ad4"
+      "text": "Data refreshed — Football, Basketball, Populations, AFL, and 1 more.",
+      "commit": "576634c7f"
+    },
+    {
+      "date": "2026-08-08",
+      "category": "new-hub",
+      "hub": "Banter",
+      "text": "New hub: Banter.",
+      "commit": "69bfeec99"
+    },
+    {
+      "date": "2026-08-08",
+      "category": "fix",
+      "hub": null,
+      "text": "One table for every champion the site tracks, and fix 855 misdated titles.",
+      "commit": "6eb43132a"
+    },
+    {
+      "date": "2026-08-08",
+      "category": "hub",
+      "hub": "Club Football",
+      "text": "Domestic hub covering ten leagues, one section per country.",
+      "commit": "4de3a2153"
+    },
+    {
+      "date": "2026-08-08",
+      "category": "hub",
+      "hub": null,
+      "text": "Release notes for the boundary accuracy campaign.",
+      "commit": "dd74819dd"
     },
     {
       "date": "2026-08-07",
