@@ -1,0 +1,408 @@
+{
+  "generated_at": "2026-08-09T07:45:10.437389+00:00",
+  "jobs": [
+    {
+      "id": "egress-refresh",
+      "label": "Civic data (leaders, governors, congress, mayors)",
+      "schedule_text": "Sun at 09:00 UTC",
+      "cadence": "weekly",
+      "times": [
+        "09:00"
+      ],
+      "weekdays": [
+        7
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-09T09:00:00+00:00",
+      "last_run": {
+        "date": "2026-08-02",
+        "status": "seeded",
+        "slot": "2026-08-02T09:00:00+00:00"
+      }
+    },
+    {
+      "id": "mlb-sim",
+      "label": "MLB playoff odds",
+      "schedule_text": "Daily at 09:40 UTC (Mar/Apr/May/Jun/Jul/Aug/Sep/Oct/Nov)",
+      "cadence": "daily",
+      "times": [
+        "09:40"
+      ],
+      "weekdays": [],
+      "months": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "days_of_month": [],
+      "next_run": "2026-08-09T09:40:00+00:00",
+      "last_run": {
+        "date": "2026-08-08",
+        "status": "seeded",
+        "slot": "2026-08-08T09:40:00+00:00"
+      }
+    },
+    {
+      "id": "football-standings",
+      "label": "Football live standings",
+      "schedule_text": "Daily at 05:00, 11:00, 17:00, 23:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "05:00",
+        "11:00",
+        "17:00",
+        "23:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-09T11:00:00+00:00",
+      "last_run": {
+        "date": "2026-08-09",
+        "status": "ok",
+        "slot": "2026-08-09T05:00:00+00:00"
+      }
+    },
+    {
+      "id": "activity-feed",
+      "label": "Site activity feed",
+      "schedule_text": "Daily at 02:30 UTC",
+      "cadence": "daily",
+      "times": [
+        "02:30"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-10T02:30:00+00:00",
+      "last_run": {
+        "date": "2026-08-09",
+        "status": "ok",
+        "slot": "2026-08-09T02:30:00+00:00"
+      }
+    },
+    {
+      "id": "euro-comps",
+      "label": "UEFA club competitions",
+      "schedule_text": "Daily at 04:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "04:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-10T04:00:00+00:00",
+      "last_run": {
+        "date": "2026-08-09",
+        "status": "ok",
+        "slot": "2026-08-09T04:00:00+00:00"
+      }
+    },
+    {
+      "id": "gap-league-watch",
+      "label": "Football gap-league watch",
+      "schedule_text": "Daily at 05:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "05:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-10T05:00:00+00:00",
+      "last_run": {
+        "date": "2026-08-09",
+        "status": "ok",
+        "slot": "2026-08-09T05:00:00+00:00"
+      }
+    },
+    {
+      "id": "screen-number-ones",
+      "label": "US box office #1s",
+      "schedule_text": "Mon/Tue/Wed at 05:00, 13:00, 21:00 UTC",
+      "cadence": "weekly",
+      "times": [
+        "05:00",
+        "13:00",
+        "21:00"
+      ],
+      "weekdays": [
+        1,
+        2,
+        3
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-10T05:00:00+00:00",
+      "last_run": {
+        "date": "2026-08-05",
+        "status": "seeded",
+        "slot": "2026-08-05T21:00:00+00:00"
+      }
+    },
+    {
+      "id": "business-daily",
+      "label": "Business markets + FX",
+      "schedule_text": "Daily at 05:50 UTC",
+      "cadence": "daily",
+      "times": [
+        "05:50"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-10T05:50:00+00:00",
+      "last_run": {
+        "date": "2026-08-09",
+        "status": "ok",
+        "slot": "2026-08-09T05:50:00+00:00"
+      }
+    },
+    {
+      "id": "substack-daily",
+      "label": "Substack feed sync",
+      "schedule_text": "Daily at 06:00 UTC",
+      "cadence": "daily",
+      "times": [
+        "06:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-10T06:00:00+00:00",
+      "last_run": {
+        "date": "2026-08-09",
+        "status": "ok",
+        "slot": "2026-08-09T06:00:00+00:00"
+      }
+    },
+    {
+      "id": "forecast",
+      "label": "Election forecast",
+      "schedule_text": "Mon/Wed/Fri at 06:10 UTC",
+      "cadence": "weekly",
+      "times": [
+        "06:10"
+      ],
+      "weekdays": [
+        1,
+        3,
+        5
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-10T06:10:00+00:00",
+      "last_run": {
+        "date": "2026-08-07",
+        "status": "seeded",
+        "slot": "2026-08-07T06:10:00+00:00"
+      }
+    },
+    {
+      "id": "feed-monitor",
+      "label": "Feed shape monitor",
+      "schedule_text": "Daily at 07:20 UTC",
+      "cadence": "daily",
+      "times": [
+        "07:20"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-10T07:20:00+00:00",
+      "last_run": {
+        "date": "2026-08-09",
+        "status": "ok",
+        "slot": "2026-08-09T07:20:00+00:00"
+      }
+    },
+    {
+      "id": "predictions-tue",
+      "label": "PL + NFL predictions (grade the weekend)",
+      "schedule_text": "Tue at 06:40 UTC",
+      "cadence": "weekly",
+      "times": [
+        "06:40"
+      ],
+      "weekdays": [
+        2
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-11T06:40:00+00:00",
+      "last_run": {
+        "date": "2026-08-04",
+        "status": "seeded",
+        "slot": "2026-08-04T06:40:00+00:00"
+      }
+    },
+    {
+      "id": "rugby-weekly",
+      "label": "Rugby union rankings",
+      "schedule_text": "Tue at 07:05 UTC",
+      "cadence": "weekly",
+      "times": [
+        "07:05"
+      ],
+      "weekdays": [
+        2
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-11T07:05:00+00:00",
+      "last_run": {
+        "date": "2026-08-04",
+        "status": "seeded",
+        "slot": "2026-08-04T07:05:00+00:00"
+      }
+    },
+    {
+      "id": "cricket-weekly",
+      "label": "Cricket results + rankings",
+      "schedule_text": "Tue at 09:00 UTC",
+      "cadence": "weekly",
+      "times": [
+        "09:00"
+      ],
+      "weekdays": [
+        2
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-11T09:00:00+00:00",
+      "last_run": {
+        "date": "2026-08-04",
+        "status": "seeded",
+        "slot": "2026-08-04T09:00:00+00:00"
+      }
+    },
+    {
+      "id": "fiba-weekly",
+      "label": "FIBA basketball rankings",
+      "schedule_text": "Wed at 07:10 UTC",
+      "cadence": "weekly",
+      "times": [
+        "07:10"
+      ],
+      "weekdays": [
+        3
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-12T07:10:00+00:00",
+      "last_run": {
+        "date": "2026-08-05",
+        "status": "seeded",
+        "slot": "2026-08-05T07:10:00+00:00"
+      }
+    },
+    {
+      "id": "sound-weekly",
+      "label": "Sound of the Metros (music charts)",
+      "schedule_text": "Wed at 07:30 UTC",
+      "cadence": "weekly",
+      "times": [
+        "07:30"
+      ],
+      "weekdays": [
+        3
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-12T07:30:00+00:00",
+      "last_run": {
+        "date": "2026-08-05",
+        "status": "seeded",
+        "slot": "2026-08-05T07:30:00+00:00"
+      }
+    },
+    {
+      "id": "predictions-fri",
+      "label": "PL + NFL predictions (fresh odds)",
+      "schedule_text": "Fri at 11:40 UTC",
+      "cadence": "weekly",
+      "times": [
+        "11:40"
+      ],
+      "weekdays": [
+        5
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-14T11:40:00+00:00",
+      "last_run": {
+        "date": "2026-08-07",
+        "status": "seeded",
+        "slot": "2026-08-07T11:40:00+00:00"
+      }
+    },
+    {
+      "id": "mktcap-refresh",
+      "label": "Company market caps",
+      "schedule_text": "Sat at 09:00 UTC",
+      "cadence": "weekly",
+      "times": [
+        "09:00"
+      ],
+      "weekdays": [
+        6
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-15T09:00:00+00:00",
+      "last_run": {
+        "date": "2026-08-08",
+        "status": "seeded",
+        "slot": "2026-08-08T09:00:00+00:00"
+      }
+    },
+    {
+      "id": "conflicts-monthly",
+      "label": "Armed conflicts data",
+      "schedule_text": "1st of the month at 07:15 UTC",
+      "cadence": "monthly",
+      "times": [
+        "07:15"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [
+        1
+      ],
+      "next_run": "2026-09-01T07:15:00+00:00",
+      "last_run": {
+        "date": "2026-08-01",
+        "status": "seeded",
+        "slot": "2026-08-01T07:15:00+00:00"
+      }
+    },
+    {
+      "id": "cricket-monthly",
+      "label": "Cricket ICC rankings",
+      "schedule_text": "1st of the month at 10:00 UTC",
+      "cadence": "monthly",
+      "times": [
+        "10:00"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [
+        1
+      ],
+      "next_run": "2026-09-01T10:00:00+00:00",
+      "last_run": {
+        "date": "2026-08-01",
+        "status": "seeded",
+        "slot": "2026-08-01T10:00:00+00:00"
+      }
+    }
+  ]
+}
