@@ -2,19 +2,6 @@
  "note": "Ratchet for scripts/check-team-placement.mjs. Each entry is a known-misplaced team row awaiting a workbook correction. SHRINK this as rows are fixed; never grow it. See \"Misplaced Team Rows 2026-08-09.xlsx\".",
  "generated": "measured against the tree at the time of writing",
  "entries": [
-  "bangor|Bangor FC",
-  "bristol|Bristol Motor Speedway",
-  "delhi|SC Delhi",
-  "faro|FC Famalicão Futsal",
-  "hickory|Down East Bird Dawgs",
-  "leon|Club León (women)",
-  "lewiston|Niagara",
-  "lucknow|UP Yoddha",
-  "merida|Estudiantes de Mérida",
-  "norfolk|Salem RidgeYaks",
-  "san-juan|San Martín de San Juan",
-  "victoria|Correcaminos UAT",
-  "yamagata|Saga Ballooners",
-  "zamora|Zamora CF"
+  "delhi|SC Delhi"
  ]
 }
