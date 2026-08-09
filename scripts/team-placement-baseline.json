@@ -1,7 +1,5 @@
 {
  "note": "Ratchet for scripts/check-team-placement.mjs. Each entry is a known-misplaced team row awaiting a workbook correction. SHRINK this as rows are fixed; never grow it. See \"Misplaced Team Rows 2026-08-09.xlsx\".",
  "generated": "measured against the tree at the time of writing",
- "entries": [
-  "delhi|SC Delhi"
- ]
+ "entries": []
 }
