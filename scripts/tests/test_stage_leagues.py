@@ -84,7 +84,12 @@ class TestFindSource:
     def test_returns_none_when_nothing_exists(self, tmp_path, monkeypatch):
         monkeypatch.setenv("NBA_SOURCE_XLSX", str(tmp_path / "does-not-exist.xlsx"))
         monkeypatch.delenv("WORKBOOK_SOURCE_DIR", raising=False)
+        # Path.home() reads HOME on POSIX and USERPROFILE on Windows, so
+        # setting only HOME left this test passing in CI and failing on the
+        # Windows dev machine, where the fallback found the real
+        # ~/OneDrive/Excel Files/NBA.xlsx. Redirect both.
         monkeypatch.setenv("HOME", str(tmp_path))
+        monkeypatch.setenv("USERPROFILE", str(tmp_path))
         assert stage_leagues.find_source("nba") is None
 
     def test_finds_env_var_source_when_present(self, tmp_path, monkeypatch):

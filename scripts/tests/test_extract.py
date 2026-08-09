@@ -18,9 +18,32 @@ class TestSlugify:
         assert slugify("Zürich") == "zurich"
         assert slugify("Köln") == "koln"
 
+    def test_transliterates_beyond_latin1(self):
+        """The 2026-08-09 repair. slugify used to hand-list about thirty
+        Latin-1 characters and DELETE everything else, so Łódź became `od` and
+        Huế became `hu` - live URLs for metros of nearly a million people. The
+        damage clustered in Poland, Romania, Turkey, Czechia and Bosnia, which
+        made it a coverage bias rather than a typo. These cases exist so the
+        hand-list can never come back."""
+        assert slugify("Łódź") == "lodz"
+        assert slugify("Huế") == "hue"
+        assert slugify("Niš") == "nis"
+        assert slugify("Częstochowa") == "czestochowa"
+        assert slugify("Diyarbakır") == "diyarbakir"
+        assert slugify("Muğla") == "mugla"
+
     def test_collapses_whitespace_and_punctuation(self):
         assert slugify("  Washington -- Baltimore  ") == "washington-baltimore"
-        assert slugify("Dallas/Fort Worth") == "dallasfort-worth"
+
+    def test_separators_become_hyphens_not_nothing(self):
+        """Also the 2026-08-09 repair. A slash or en dash used to be deleted
+        rather than replaced, running compound names together: `bielbienne`,
+        `bloomingtonnormal`, `bydgoszcztorun`. This assertion previously
+        encoded the bug - it expected `dallasfort-worth` - and so kept failing
+        CI after the fix landed."""
+        assert slugify("Dallas/Fort Worth") == "dallas-fort-worth"
+        assert slugify("Biel/Bienne") == "biel-bienne"
+        assert slugify("Bloomington–Normal") == "bloomington-normal"
 
     def test_lowercases(self):
         assert slugify("SAN FRANCISCO") == "san-francisco"
