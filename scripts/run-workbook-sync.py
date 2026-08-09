@@ -115,6 +115,11 @@ def steps_plan(args) -> List[Step]:
                            "workbooks/NHL.xlsx",
                            "workbooks/MLB.xlsx",
                            "workbooks/Champions League-201516.xlsx"]),
+        # Must precede extract: extract.py reads public/data/skyscrapers.json and
+        # falls back to the stale workbook sheet if it is absent.
+        Step("skyscrapers",   "2.5/15 build per-metro skyscraper counts from SKYDB",
+             ["python3", str(SCRIPTS / "build-skyscrapers.py")],
+             output_globs=["public/data/skyscrapers.json"]),
         Step("extract",       "3/15  extract metros + regions + details",
              ["python3", str(SCRIPTS / "extract.py")],
              output_globs=["public/data/metros.json",

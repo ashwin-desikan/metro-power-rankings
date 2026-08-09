@@ -534,8 +534,53 @@ def extract_culture(wb):
     return culture
 
 
-def extract_skyscrapers(wb):
-    """Extract skyscraper data grouped by metro.
+def load_skyscrapers(wb, metros):
+    """Per-metro 150m+/200m+/300m+ counts, keyed by SLUG.
+
+    Source of record is public/data/skyscrapers.json, built from SKYDB by
+    scripts/build-skyscrapers.py. The hand-curated Skyscrapers sheet remains in
+    the workbook as the regression test that check-skyscrapers.mjs runs the API
+    pull against, and as the fallback here.
+
+    Why the swap: the sheet holds 7,727 buildings at 150m+, SKYDB 9,863. The
+    gap is almost entirely in the 150-200 m band, which is where a manually
+    maintained list quietly falls behind - at 300m+ the two are within 14%,
+    because supertall buildings are famous and get noticed. SKYDB also refreshes
+    monthly instead of whenever someone remembers.
+
+    The fallback is loud on purpose. Silently reverting to a stale sheet is how
+    a data regression ships without anyone noticing, so if the generated file is
+    missing this says so in capitals and check-skyscrapers.mjs fails the build.
+    """
+    path = Path(__file__).resolve().parent.parent / "public" / "data" / "skyscrapers.json"
+    if path.exists():
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        data = payload.get("metros") or {}
+        known = {m['slug'] for m in metros}
+        # A slug in the file that no longer exists as a metro means the boundary
+        # set and the metro list have drifted apart. Report it; do not emit it.
+        orphans = [s for s in data if s not in known]
+        if orphans:
+            print(f"  WARNING: {len(orphans)} slug(s) in skyscrapers.json match no "
+                  f"metro: {orphans[:8]}")
+        out = {s: dict(v) for s, v in data.items() if s in known}
+        print(f"  source: SKYDB via public/data/skyscrapers.json "
+              f"(generated {payload.get('generated', '?')})")
+        return out
+
+    print("  *** WARNING: public/data/skyscrapers.json IS MISSING ***")
+    print("  *** falling back to the hand-curated Skyscrapers sheet.      ***")
+    print("  *** Run: python scripts/build-skyscrapers.py                 ***")
+    by_name = extract_skyscrapers_sheet(wb)
+    name_to_slug = {m['name']: m['slug'] for m in metros}
+    return {name_to_slug[n]: v for n, v in by_name.items() if n in name_to_slug}
+
+
+def extract_skyscrapers_sheet(wb):
+    """Extract skyscraper data grouped by metro, from the workbook sheet.
+
+    Kept as the fallback for load_skyscrapers and as the input to the
+    divergence guard. Returns a dict keyed by metro NAME.
 
     The Skyscrapers sheet has one row per municipality, and a single metro can
     span multiple municipalities (NYC + Jersey City + Fort Lee, Tokyo +
@@ -1248,8 +1293,15 @@ def find_companies_source(explicit_path=None):
     return None
 
 
-def build_detail(metro_name, teams, unis, culture, scrapers, luxury, events, mktcap, football, towers, mktcap_as_of=None):
-    """Build a detail JSON object for a single metro."""
+def build_detail(metro_name, teams, unis, culture, scrapers, luxury, events, mktcap, football, towers, mktcap_as_of=None, metro_slug=None):
+    """Build a detail JSON object for a single metro.
+
+    Note the mixed keys. Everything the workbook produces is keyed by metro
+    NAME, because that is what the sheets carry. `scrapers` is the exception:
+    it comes from SKYDB via point-in-polygon, so it is keyed by SLUG, which is
+    the actual identifier. The two are 1:1 today (4,314 metros, 4,314 distinct
+    names), but slug is the one that survives a rename.
+    """
     detail = {}
 
     if metro_name in teams:
@@ -1266,8 +1318,8 @@ def build_detail(metro_name, teams, unis, culture, scrapers, luxury, events, mkt
             by_type.setdefault(t, []).append(item)
         detail['culture'] = by_type
 
-    if metro_name in scrapers:
-        detail['skyscrapers'] = scrapers[metro_name]
+    if metro_slug and metro_slug in scrapers:
+        detail['skyscrapers'] = scrapers[metro_slug]
 
     if metro_name in luxury:
         detail['luxury'] = luxury[metro_name]
@@ -1375,8 +1427,8 @@ def main():
     print(f"  {sum(len(v) for v in culture_data.values())} assets")
 
     print("Extracting skyscrapers...")
-    scrapers = extract_skyscrapers(wb)
-    print(f"  {len(scrapers)} cities with skyscrapers")
+    scrapers = load_skyscrapers(wb, metros)
+    print(f"  {len(scrapers)} metros with skyscrapers")
 
     print("Extracting luxury hospitality...")
     luxury = extract_luxury(wb)
@@ -1574,7 +1626,7 @@ def main():
         detail = build_detail(
             m['name'], teams, unis, culture_data, scrapers,
             luxury, events, mktcap, football, towers,
-            mktcap_as_of=mktcap_as_of,
+            mktcap_as_of=mktcap_as_of, metro_slug=slug,
         )
 
         # Add the full metro data to the detail file
