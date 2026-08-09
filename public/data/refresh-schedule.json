@@ -1,26 +1,6 @@
 {
-  "generated_at": "2026-08-09T07:45:10.437389+00:00",
+  "generated_at": "2026-08-09T09:31:14.802886+00:00",
   "jobs": [
-    {
-      "id": "egress-refresh",
-      "label": "Civic data (leaders, governors, congress, mayors)",
-      "schedule_text": "Sun at 09:00 UTC",
-      "cadence": "weekly",
-      "times": [
-        "09:00"
-      ],
-      "weekdays": [
-        7
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-09T09:00:00+00:00",
-      "last_run": {
-        "date": "2026-08-02",
-        "status": "seeded",
-        "slot": "2026-08-02T09:00:00+00:00"
-      }
-    },
     {
       "id": "mlb-sim",
       "label": "MLB playoff odds",
@@ -362,6 +342,26 @@
         "date": "2026-08-08",
         "status": "seeded",
         "slot": "2026-08-08T09:00:00+00:00"
+      }
+    },
+    {
+      "id": "egress-refresh",
+      "label": "Civic data (leaders, governors, congress, mayors)",
+      "schedule_text": "Sun at 09:00 UTC",
+      "cadence": "weekly",
+      "times": [
+        "09:00"
+      ],
+      "weekdays": [
+        7
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-16T09:00:00+00:00",
+      "last_run": {
+        "date": "2026-08-09",
+        "status": "ok",
+        "slot": "2026-08-09T09:00:00+00:00"
       }
     },
     {
