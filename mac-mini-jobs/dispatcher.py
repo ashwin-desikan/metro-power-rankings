@@ -934,7 +934,33 @@ def main():
     finally:
         if not args.dry_run:
             release_lock()
+
+    if not args.dry_run:
+        export_schedule()
     return 0
+
+
+def export_schedule():
+    """Regenerate public/data/refresh-schedule.json, unconditionally, after
+    every real tick -- not a jobs.toml entry, so it is never gated by decide()
+    or a schedule of its own. This is what keeps the /refresh-schedule
+    calendar page within ~10 minutes of any jobs.toml or state.json change,
+    with nothing to remember to re-run by hand. Outside the tick lock on
+    purpose: export_schedule.py does its own fresh state read and git
+    fetch/commit/push, and serializing it against the tick lock would only
+    protect a display-only read that is already refreshed every 10 minutes
+    regardless.
+    """
+    script = HERE / "export_schedule.py"
+    if not script.exists():
+        return
+    try:
+        subprocess.run([sys.executable, str(script)], cwd=HERE,
+                       timeout=120, capture_output=True, text=True, check=True)
+    except subprocess.CalledProcessError as e:
+        log(f"WARN export_schedule.py failed: {e.stderr.strip()[-500:]}")
+    except subprocess.TimeoutExpired:
+        log("WARN export_schedule.py timed out after 120s")
 
 
 if __name__ == "__main__":

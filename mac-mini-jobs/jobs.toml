@@ -79,6 +79,7 @@
 
 [[job]]
 id = "business-daily"          # .github/workflows/business-daily-refresh.yml (schedule retired)
+label = "Business markets + FX"
 time = "05:50"                 # after Asia's close, before the European open
 command = "runners/business-daily.sh"
 catchup_hours = 14
@@ -86,6 +87,7 @@ timeout_minutes = 25
 
 [[job]]
 id = "forecast"                # .github/workflows/forecast-weekly.yml (schedule retired)
+label = "Election forecast"
 time = "06:10"
 weekdays = [1, 3, 5]           # Mon/Wed/Fri
 command = "runners/forecast.sh"
@@ -94,6 +96,7 @@ timeout_minutes = 45
 
 [[job]]
 id = "predictions-tue"         # .github/workflows/predictions-refresh.yml, slot 1 (schedule retirement pending Windows)
+label = "PL + NFL predictions (grade the weekend)"
 time = "06:40"                 # grade the weekend's games with final results
 weekdays = [2]
 command = "runners/predictions.sh"
@@ -102,6 +105,7 @@ timeout_minutes = 45
 
 [[job]]
 id = "predictions-fri"         # .github/workflows/predictions-refresh.yml, slot 2 (schedule retirement pending Windows)
+label = "PL + NFL predictions (fresh odds)"
 time = "11:40"                 # fresh odds + picks ahead of the weekend
 weekdays = [5]
 command = "runners/predictions.sh"
@@ -110,6 +114,7 @@ timeout_minutes = 45
 
 [[job]]
 id = "mlb-sim"                 # .github/workflows/mlb-sim-refresh.yml (schedule to be retired by Windows)
+label = "MLB playoff odds"
 time = "09:40"
 months = [3, 4, 5, 6, 7, 8, 9, 10, 11]   # regular season + postseason
 command = "runners/mlb-sim.sh"
@@ -157,6 +162,7 @@ timeout_minutes = 25
 
 [[job]]
 id = "activity-feed"           # launchd/com.citizenofnowhere.activity-feed.plist (unloaded)
+label = "Site activity feed"
 time = "02:30"                 # was 03:30 LOCAL, which is 02:30 UTC today
 command = "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-activity-feed.sh"
 hc_slug = "activity-feed"      # keep the existing healthchecks tile
@@ -186,6 +192,7 @@ timeout_minutes = 20
 #
 [[job]]
 id = "substack-daily"          # launchd/com.citizenofnowhere.substack-daily.plist (unloaded)
+label = "Substack feed sync"
 time = "06:00"                 # was 07:00 LOCAL = 06:00 UTC today
 command = "run-scraper-refresh.sh"
 args = ["substack"]
@@ -202,6 +209,7 @@ timeout_minutes = 20
 #
 [[job]]
 id = "euro-comps"              # launchd/com.citizenofnowhere.euro-comps.plist (unloaded)
+label = "UEFA club competitions"
 time = "04:00"                 # SIMPLIFIED 2026-08-06, was times ["03:00","04:00"].
                                # The pair was my error: the old plist bracketed
                                # local 04:00+05:00 and the script's UTC guard ran
@@ -230,6 +238,7 @@ timeout_minutes = 30
 
 [[job]]
 id = "gap-league-watch"        # launchd/com.citizenofnowhere.gap-league-watch.plist (unloaded)
+label = "Football gap-league watch"
 time = "05:00"                 # NOT a pair. The plist brackets local 05:00+06:00
                                 # and the script's guard picks 05:00 UTC; one run.
 command = "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-gap-league-watch.sh"
@@ -251,6 +260,7 @@ timeout_minutes = 20
 #
 [[job]]
 id = "football-standings"      # launchd/com.citizenofnowhere.football-standings.plist (unloaded)
+label = "Football live standings"
 times = ["05:00", "11:00", "17:00", "23:00"]
 command = "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-football-standings.sh"
 hc_slug = "football-standings"
@@ -279,6 +289,7 @@ timeout_minutes = 30
 #
 [[job]]
 id = "screen-number-ones"      # launchd/com.citizenofnowhere.screen-number-ones.plist (unloaded)
+label = "US box office #1s"
 times = ["05:00", "13:00", "21:00"]   # was 06:00/14:00/22:00 LOCAL
 weekdays = [1, 2, 3]                  # Mon, Tue, Wed
 command = "$HOME/Projects/Metro Area Project/mac-mini-jobs/run-screen-number-ones.sh"
@@ -300,6 +311,7 @@ timeout_minutes = 25
 #
 [[job]]
 id = "rugby-weekly"             # launchd/com.citizenofnowhere.rugby-weekly.plist (unloaded)
+label = "Rugby union rankings"
 time = "07:05"                  # was 08:05 LOCAL, Tue
 weekdays = [2]
 command = "run-scraper-refresh.sh"
@@ -311,6 +323,7 @@ timeout_minutes = 20
 
 [[job]]
 id = "cricket-weekly"           # launchd/com.citizenofnowhere.cricket-weekly.plist (unloaded)
+label = "Cricket results + rankings"
 time = "09:00"                  # was 10:00 LOCAL, Tue
 weekdays = [2]
 command = "run-cricket-weekly.sh"
@@ -321,6 +334,7 @@ timeout_minutes = 30            # cricsheet zip fetch + Supabase staging is
 
 [[job]]
 id = "fiba-weekly"              # launchd/com.citizenofnowhere.fiba-weekly.plist (unloaded)
+label = "FIBA basketball rankings"
 time = "07:10"                  # was 08:10 LOCAL, Wed
 weekdays = [3]
 command = "run-scraper-refresh.sh"
@@ -331,6 +345,7 @@ timeout_minutes = 20
 
 [[job]]
 id = "sound-weekly"             # launchd/com.citizenofnowhere.sound-weekly.plist (unloaded)
+label = "Sound of the Metros (music charts)"
 time = "07:30"                  # was 08:30 LOCAL, Wed
 weekdays = [3]
 command = "run-sound-weekly.sh"
@@ -348,6 +363,7 @@ timeout_minutes = 20
 #
 [[job]]
 id = "feed-monitor"             # launchd/com.citizenofnowhere.feed-monitor.plist (unloaded)
+label = "Feed shape monitor"
 time = "07:20"                  # was 08:20 LOCAL
 command = "run-feed-monitor.sh"
 hc_slug = "feed-monitor"
@@ -364,6 +380,7 @@ timeout_minutes = 20
 #
 [[job]]
 id = "conflicts-monthly"        # launchd/com.citizenofnowhere.conflicts-monthly.plist (unloaded)
+label = "Armed conflicts data"
 time = "07:15"                  # was 08:15 LOCAL
 days = [1]
 command = "run-scraper-refresh.sh"
@@ -374,6 +391,7 @@ timeout_minutes = 20
 
 [[job]]
 id = "cricket-monthly"          # launchd/com.citizenofnowhere.cricket-monthly.plist (unloaded)
+label = "Cricket ICC rankings"
 time = "10:00"                  # was 11:00 LOCAL
 days = [1]
 command = "run-cricket-monthly.sh"
@@ -399,6 +417,7 @@ timeout_minutes = 20
 #
 [[job]]
 id = "egress-refresh"           # launchd/com.citizenofnowhere.egress-refresh.plist (unloaded)
+label = "Civic data (leaders, governors, congress, mayors)"
 time = "09:00"                  # was 10:00 LOCAL, Sun
 weekdays = [7]
 command = "metro-mini-refresh.sh"    # predates the run-*.sh naming convention
@@ -426,6 +445,7 @@ timeout_minutes = 45
 #
 [[job]]
 id = "mktcap-refresh"
+label = "Company market caps"
 time = "09:00"                  # Saturday; matches cricket-weekly's slot on a
                                  # different weekday, same early-UTC pattern
                                  # as the other weeklies. No hard timing

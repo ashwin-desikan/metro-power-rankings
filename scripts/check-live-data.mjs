@@ -66,6 +66,11 @@ const OUT_OF_BAND = [
     paths: ["basketball/nations.json", "basketball/hub.json"],
     refreshedBy: "mac-mini-jobs/run-scraper-refresh.sh fiba",
   },
+  {
+    lib: "lib/refreshSchedule.ts",
+    paths: ["refresh-schedule.json"],
+    refreshedBy: "mac-mini-jobs/export_schedule.py (run after every dispatcher tick, not a jobs.toml entry)",
+  },
 ];
 
 /** Deliberate exemptions, each with the reason it is safe. */
