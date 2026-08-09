@@ -1,0 +1,5 @@
+# The SKYDB API token. Same pattern as scripts/mktcap/supabase_key.txt:
+# the credential lives beside the code that uses it and is never committed.
+skydb_key.txt
+*.raw.json
+__pycache__/
