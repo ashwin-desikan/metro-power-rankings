@@ -505,6 +505,15 @@ def extract_culture(wb):
             'type': safe_str(v[11]),
             'majorType': safe_str(v[10]),
         }
+        # Columns T/U (19/20) = Lat/Long. Empty until 2026-08-09: airports and
+        # stations resolve by IATA code against OurAirports, everything else by
+        # name+category against FSQ OS Places. Emitted only when BOTH are
+        # present. Provenance lives in Supabase public.place_ids.
+        clat = safe_float(v[19]) if len(v) > 19 else 0
+        clng = safe_float(v[20]) if len(v) > 20 else 0
+        if clat and clng:
+            entry['lat'] = clat
+            entry['lng'] = clng
         # Column O (index 14) = "Annual Event" flag, marked "Y" for recurring events
         annual_flag = safe_str(v[14]) if len(v) > 14 else ''
         if annual_flag.upper() == 'Y':
@@ -582,11 +591,21 @@ def extract_luxury(wb):
         metro = safe_str(v[6])
         if not metro:
             continue
-        luxury.setdefault(metro, []).append({
+        entry = {
             'name': safe_str(v[4]),
             'city': safe_str(v[5]),
             'type': safe_str(v[8]),
-        })
+        }
+        # Columns P/Q (15/16) = Lat/Long. Empty until 2026-08-09, when they were
+        # filled from FSQ OS Places. Emitted only when BOTH are present, so a
+        # half-resolved row never renders as a pin at (0, 0) off West Africa.
+        # Provenance for every value lives in Supabase public.place_ids.
+        lat = safe_float(v[15]) if len(v) > 15 else 0
+        lng = safe_float(v[16]) if len(v) > 16 else 0
+        if lat and lng:
+            entry['lat'] = lat
+            entry['lng'] = lng
+        luxury.setdefault(metro, []).append(entry)
     return luxury
 
 
