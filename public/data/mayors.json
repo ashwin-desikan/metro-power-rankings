@@ -563,14 +563,6 @@
     "since": "2025-01-01",
     "title": "Mayor"
   },
-  "prague": {
-    "city": "Prague",
-    "country": "Czech Republic",
-    "mayor": "Bohuslav Svoboda",
-    "party": "Civic Democratic Party",
-    "since": "2023-02-16",
-    "title": "Mayor"
-  },
   "qingdao": {
     "city": "Qingdao",
     "country": "China",
@@ -722,6 +714,14 @@
     "party": "Social Democrats (SAP)",
     "since": "2022-10-18",
     "title": "Mayor (Finance Commissioner)"
+  },
+  "stuttgart": {
+    "city": "Stuttgart",
+    "country": "Germany",
+    "mayor": "Frank Nopper",
+    "party": "Christian Democratic Union",
+    "since": "2022-01-04",
+    "title": "Mayor"
   },
   "sydney": {
     "city": "Sydney",

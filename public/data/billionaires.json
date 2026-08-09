@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-07",
+  "generated": "2026-08-09",
   "source": "Forbes real-time billionaires via komed3/rtb-api (MIT)",
   "count": 3381,
   "billionaires": [
@@ -10736,9 +10736,9 @@
       "name": "Martha Ingram & family",
       "uri": "martha-ingram",
       "networth": 6584.41,
-      "countryCode": "US",
-      "countrySlug": "united-states",
-      "countryName": "United States",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Media & Entertainment"
       ],
@@ -47872,9 +47872,9 @@
       "name": "Lin Por-Fong",
       "uri": "lin-por-fong",
       "networth": 1381.432,
-      "countryCode": "TW",
+      "countryCode": null,
       "countrySlug": null,
-      "countryName": "TW",
+      "countryName": null,
       "industries": [
         "Manufacturing"
       ],
@@ -49603,9 +49603,9 @@
       "name": "Zhu Xingliang",
       "uri": "zhu-xingliang",
       "networth": 1310.384,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Construction & Engineering"
       ],
@@ -54077,9 +54077,9 @@
       "name": "Zhang Xuewu",
       "uri": "zhang-xuewu",
       "networth": 1144.399,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Food & Beverage"
       ],
@@ -56554,9 +56554,9 @@
       "name": "Abigail Bennett",
       "uri": "abigail-bennett",
       "networth": 1051.79,
-      "countryCode": null,
-      "countrySlug": null,
-      "countryName": null,
+      "countryCode": "US",
+      "countrySlug": "united-states",
+      "countryName": "United States",
       "industries": [
         "Food & Beverage"
       ],
@@ -56605,9 +56605,9 @@
       "name": "Zhang Tianyu",
       "uri": "zhang-tianyu",
       "networth": 1047.489,
-      "countryCode": "CN",
-      "countrySlug": "china",
-      "countryName": "China",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Telecom"
       ],
@@ -56741,9 +56741,9 @@
       "name": "Maria Frias",
       "uri": "maria-frias",
       "networth": 1039.95,
-      "countryCode": "BR",
-      "countrySlug": "brazil",
-      "countryName": "Brazil",
+      "countryCode": null,
+      "countrySlug": null,
+      "countryName": null,
       "industries": [
         "Media & Entertainment"
       ],
@@ -57721,9 +57721,9 @@
       "name": "Muhammed Aziz Khan",
       "uri": "muhammed-aziz-khan",
       "networth": 1003.64,
-      "countryCode": "SG",
-      "countrySlug": "singapore",
-      "countryName": "Singapore",
+      "countryCode": "BD",
+      "countrySlug": "bangladesh",
+      "countryName": "Bangladesh",
       "industries": [
         "Energy"
       ],

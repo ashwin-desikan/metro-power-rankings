@@ -10108,7 +10108,7 @@
     "name": "Martha Ingram & family",
     "networth": 6584.41,
     "rank": 625,
-    "countryCode": "us",
+    "countryCode": null,
     "industries": [
       "Media & Entertainment"
     ],
@@ -45075,7 +45075,7 @@
     "name": "Lin Por-Fong",
     "networth": 1381.432,
     "rank": 2795,
-    "countryCode": "tw",
+    "countryCode": null,
     "industries": [
       "Manufacturing"
     ],
@@ -46705,7 +46705,7 @@
     "name": "Zhu Xingliang",
     "networth": 1310.384,
     "rank": 2896,
-    "countryCode": "cn",
+    "countryCode": null,
     "industries": [
       "Construction & Engineering"
     ],
@@ -50917,7 +50917,7 @@
     "name": "Zhang Xuewu",
     "networth": 1144.399,
     "rank": 3159,
-    "countryCode": "cn",
+    "countryCode": null,
     "industries": [
       "Food & Beverage"
     ],
@@ -53249,7 +53249,7 @@
     "name": "Abigail Bennett",
     "networth": 1051.79,
     "rank": 3305,
-    "countryCode": null,
+    "countryCode": "us",
     "industries": [
       "Food & Beverage"
     ],
@@ -53297,7 +53297,7 @@
     "name": "Zhang Tianyu",
     "networth": 1047.489,
     "rank": 3308,
-    "countryCode": "cn",
+    "countryCode": null,
     "industries": [
       "Telecom"
     ],
@@ -53425,7 +53425,7 @@
     "name": "Maria Frias",
     "networth": 1039.95,
     "rank": 3316,
-    "countryCode": "br",
+    "countryCode": null,
     "industries": [
       "Media & Entertainment"
     ],
@@ -54348,7 +54348,7 @@
     "name": "Muhammed Aziz Khan",
     "networth": 1003.64,
     "rank": 3373,
-    "countryCode": "sg",
+    "countryCode": "bd",
     "industries": [
       "Energy"
     ],

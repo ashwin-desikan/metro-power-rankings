@@ -21,8 +21,8 @@
     "commissioner_factor": 0.44,
     "judiciary": 0.09
   },
-  "asOf": "2026-08-07",
-  "prevSnapshotDate": "2026-08-03",
+  "asOf": "2026-08-09",
+  "prevSnapshotDate": "2026-08-07",
   "ranking": [
     {
       "name": "⚠️ Donald Trump",
@@ -100,9 +100,9 @@
       "power": 419.7,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 6,
+      "prevRank": 5,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Narendra Modi",
@@ -116,9 +116,9 @@
       "power": 408.4,
       "jurisdictionHref": "/countries/india",
       "transition": "",
-      "prevRank": 5,
+      "prevRank": 6,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Andy Burnham",
@@ -132,9 +132,9 @@
       "power": 357.2,
       "jurisdictionHref": "/countries/england",
       "transition": "",
-      "prevRank": 9,
+      "prevRank": 7,
       "isNew": false,
-      "delta": 2
+      "delta": 0
     },
     {
       "name": "⚠️ Elon Musk",
@@ -148,9 +148,9 @@
       "power": 355.5,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 7,
+      "prevRank": 8,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "⚠️ Mohammed bin Salman",
@@ -164,9 +164,9 @@
       "power": 347.7,
       "jurisdictionHref": "/countries/saudi-arabia",
       "transition": "",
-      "prevRank": 8,
+      "prevRank": 9,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Ursula von der Leyen",
@@ -244,9 +244,9 @@
       "power": 262.3,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 16,
+      "prevRank": 14,
       "isNew": false,
-      "delta": 2
+      "delta": 0
     },
     {
       "name": "Pope Leo XIV",
@@ -260,9 +260,9 @@
       "power": 260.0,
       "jurisdictionHref": "/countries/vatican-city",
       "transition": "",
-      "prevRank": 14,
+      "prevRank": 15,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Pan Gongsheng",
@@ -276,9 +276,9 @@
       "power": 259.1,
       "jurisdictionHref": "/countries/china",
       "transition": "",
-      "prevRank": 15,
+      "prevRank": 16,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Emmanuel Macron",
@@ -340,9 +340,9 @@
       "power": 242.6,
       "jurisdictionHref": "/orgs",
       "transition": "UN Secretary-General term ends 31 Dec 2026",
-      "prevRank": 21,
+      "prevRank": 20,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Giorgia Meloni",
@@ -356,9 +356,9 @@
       "power": 241.7,
       "jurisdictionHref": "/countries/italy",
       "transition": "",
-      "prevRank": 22,
+      "prevRank": 21,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Salim Ramji",
@@ -372,9 +372,9 @@
       "power": 240.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 20,
+      "prevRank": 22,
       "isNew": false,
-      "delta": -2
+      "delta": 0
     },
     {
       "name": "John Roberts",
@@ -388,9 +388,9 @@
       "power": 236.1,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 24,
+      "prevRank": 23,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Luiz Inácio Lula da Silva",
@@ -404,9 +404,9 @@
       "power": 233.5,
       "jurisdictionHref": "/countries/brazil",
       "transition": "Brazil general election, 4 Oct 2026",
-      "prevRank": 23,
+      "prevRank": 24,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Sanae Takaichi",
@@ -468,9 +468,9 @@
       "power": 209.8,
       "jurisdictionHref": "/countries/united-states",
       "transition": "US midterms, 3 Nov 2026 (House control)",
-      "prevRank": 29,
+      "prevRank": 28,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Claudia Sheinbaum",
@@ -484,9 +484,9 @@
       "power": 205.4,
       "jurisdictionHref": "/countries/mexico",
       "transition": "",
-      "prevRank": 28,
+      "prevRank": 29,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Pedro Sánchez",
@@ -532,9 +532,9 @@
       "power": 183.6,
       "jurisdictionHref": "/countries/united-states",
       "transition": "US midterms, 3 Nov 2026 (Senate control)",
-      "prevRank": 35,
+      "prevRank": 32,
       "isNew": false,
-      "delta": 3
+      "delta": 0
     },
     {
       "name": "Mark Carney",
@@ -548,9 +548,9 @@
       "power": 183.3,
       "jurisdictionHref": "/countries/canada",
       "transition": "",
-      "prevRank": 32,
+      "prevRank": 33,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Gavin Newsom",
@@ -559,14 +559,14 @@
       "jurisdiction": "California",
       "metro": "Sacramento",
       "metroSlug": "sacramento",
-      "jscore": 327.5,
+      "jscore": 329.6,
       "weight": 0.55,
-      "power": 180.1,
+      "power": 181.3,
       "jurisdictionHref": "/states/california",
       "transition": "Term-limited; leaves office Jan 2027 (California gubernatorial election, 3 Nov 2026)",
-      "prevRank": 33,
+      "prevRank": 34,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "⚠️ Kim Jong-un",
@@ -580,9 +580,9 @@
       "power": 180.0,
       "jurisdictionHref": "/countries/north-korea",
       "transition": "",
-      "prevRank": 34,
+      "prevRank": 35,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Josh D'Amaro",
@@ -644,9 +644,9 @@
       "power": 161.1,
       "jurisdictionHref": "/countries/united-arab-emirates",
       "transition": "",
-      "prevRank": 40,
+      "prevRank": 39,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "⚠️ Mojtaba Khamenei",
@@ -660,9 +660,9 @@
       "power": 159.2,
       "jurisdictionHref": "/countries/iran",
       "transition": "",
-      "prevRank": 39,
+      "prevRank": 40,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Anthony Albanese",
@@ -895,9 +895,9 @@
       "jurisdiction": "New York",
       "metro": "New York",
       "metroSlug": "new-york",
-      "jscore": 182.6,
+      "jscore": 182.9,
       "weight": 0.72,
-      "power": 131.5,
+      "power": 131.7,
       "jurisdictionHref": "/rankings/new-york",
       "transition": "",
       "prevRank": 55,
@@ -911,7 +911,7 @@
       "jurisdiction": "London",
       "metro": "London",
       "metroSlug": "london",
-      "jscore": 180.8,
+      "jscore": 180.9,
       "weight": 0.72,
       "power": 130.2,
       "jurisdictionHref": "/rankings/london",
@@ -1007,9 +1007,9 @@
       "jurisdiction": "Texas",
       "metro": "Austin",
       "metroSlug": "austin",
-      "jscore": 210.9,
+      "jscore": 211.7,
       "weight": 0.55,
-      "power": 116.0,
+      "power": 116.4,
       "jurisdictionHref": "/states/texas",
       "transition": "Seeking a 4th term; Texas gubernatorial election, 3 Nov 2026",
       "prevRank": 62,
@@ -1071,9 +1071,9 @@
       "jurisdiction": "Paris",
       "metro": "Paris",
       "metroSlug": "paris",
-      "jscore": 143.6,
+      "jscore": 143.7,
       "weight": 0.72,
-      "power": 103.4,
+      "power": 103.5,
       "jurisdictionHref": "/rankings/paris",
       "transition": "",
       "prevRank": 66,
@@ -1119,9 +1119,9 @@
       "jurisdiction": "Guangdong",
       "metro": "Guangzhou",
       "metroSlug": "guangzhou",
-      "jscore": 125.1,
+      "jscore": 125.2,
       "weight": 0.8,
-      "power": 100.1,
+      "power": 100.2,
       "jurisdictionHref": "/states/guangdong",
       "transition": "",
       "prevRank": 69,
@@ -1183,9 +1183,9 @@
       "jurisdiction": "Tokyo",
       "metro": "Tokyo",
       "metroSlug": "tokyo",
-      "jscore": 133.4,
+      "jscore": 133.9,
       "weight": 0.72,
-      "power": 96.0,
+      "power": 96.4,
       "jurisdictionHref": "/rankings/tokyo",
       "transition": "",
       "prevRank": 73,
@@ -1220,9 +1220,9 @@
       "power": 94.7,
       "jurisdictionHref": "/countries/netherlands",
       "transition": "",
-      "prevRank": 78,
+      "prevRank": 75,
       "isNew": false,
-      "delta": 3
+      "delta": 0
     },
     {
       "name": "Ron DeSantis",
@@ -1268,9 +1268,9 @@
       "power": 93.4,
       "jurisdictionHref": "/countries/egypt",
       "transition": "",
-      "prevRank": 75,
+      "prevRank": 78,
       "isNew": false,
-      "delta": -3
+      "delta": 0
     },
     {
       "name": "Kathy Hochul",
@@ -1279,14 +1279,30 @@
       "jurisdiction": "New York",
       "metro": "New York",
       "metroSlug": "new-york",
-      "jscore": 164.4,
+      "jscore": 164.6,
       "weight": 0.55,
-      "power": 90.4,
+      "power": 90.5,
       "jurisdictionHref": "/states/new-york",
       "transition": "Seeking re-election; New York gubernatorial election, 3 Nov 2026",
       "prevRank": 79,
       "isNew": false,
       "delta": 0
+    },
+    {
+      "name": "Daniel Lurie",
+      "role": "Mayor of San Francisco",
+      "category": "Mayor",
+      "jurisdiction": "San Francisco",
+      "metro": "San Francisco-San Jose",
+      "metroSlug": "san-francisco-san-jose",
+      "jscore": 125.7,
+      "weight": 0.72,
+      "power": 90.5,
+      "jurisdictionHref": "/rankings/san-francisco-san-jose",
+      "transition": "",
+      "prevRank": 81,
+      "isNew": false,
+      "delta": 1
     },
     {
       "name": "👑 Naruhito",
@@ -1302,23 +1318,7 @@
       "transition": "",
       "prevRank": 80,
       "isNew": false,
-      "delta": 0
-    },
-    {
-      "name": "Daniel Lurie",
-      "role": "Mayor of San Francisco",
-      "category": "Mayor",
-      "jurisdiction": "San Francisco",
-      "metro": "San Francisco-San Jose",
-      "metroSlug": "san-francisco-san-jose",
-      "jscore": 123.8,
-      "weight": 0.72,
-      "power": 89.1,
-      "jurisdictionHref": "/rankings/san-francisco-san-jose",
-      "transition": "",
-      "prevRank": 81,
-      "isNew": false,
-      "delta": 0
+      "delta": -1
     },
     {
       "name": "Asif Ali Zardari",
@@ -1332,9 +1332,9 @@
       "power": 88.7,
       "jurisdictionHref": "/countries/pakistan",
       "transition": "",
-      "prevRank": 92,
+      "prevRank": 82,
       "isNew": false,
-      "delta": 10
+      "delta": 0
     },
     {
       "name": "Hock Tan",
@@ -1348,9 +1348,9 @@
       "power": 88.2,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 82,
+      "prevRank": 83,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "David Zaslav",
@@ -1364,9 +1364,9 @@
       "power": 88.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 83,
+      "prevRank": 84,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Ahmed el-Tayeb",
@@ -1380,9 +1380,9 @@
       "power": 88.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 84,
+      "prevRank": 85,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Andrew Bailey",
@@ -1396,9 +1396,9 @@
       "power": 87.3,
       "jurisdictionHref": "/countries/united-kingdom",
       "transition": "",
-      "prevRank": 85,
+      "prevRank": 86,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Amin H. Nasser",
@@ -1412,9 +1412,9 @@
       "power": 85.9,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 86,
+      "prevRank": 87,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Jamie Dimon",
@@ -1428,9 +1428,9 @@
       "power": 84.0,
       "jurisdictionHref": "",
       "transition": "",
-      "prevRank": 87,
+      "prevRank": 88,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     },
     {
       "name": "Donald Tusk",
@@ -1444,9 +1444,9 @@
       "power": 83.1,
       "jurisdictionHref": "/countries/poland",
       "transition": "",
-      "prevRank": 94,
+      "prevRank": 89,
       "isNew": false,
-      "delta": 5
+      "delta": 0
     },
     {
       "name": "Anwar Ibrahim",
@@ -1460,9 +1460,9 @@
       "power": 81.6,
       "jurisdictionHref": "/countries/malaysia",
       "transition": "",
-      "prevRank": 88,
+      "prevRank": 90,
       "isNew": false,
-      "delta": -2
+      "delta": 0
     },
     {
       "name": "Lin Wu",
@@ -1476,9 +1476,9 @@
       "power": 81.6,
       "jurisdictionHref": "/states/shandong",
       "transition": "",
-      "prevRank": 89,
+      "prevRank": 91,
       "isNew": false,
-      "delta": -2
+      "delta": 0
     },
     {
       "name": "Yin Yong",
@@ -1487,14 +1487,14 @@
       "jurisdiction": "Beijing",
       "metro": "Beijing",
       "metroSlug": "beijing",
-      "jscore": 113.3,
+      "jscore": 113.2,
       "weight": 0.72,
-      "power": 81.6,
+      "power": 81.5,
       "jurisdictionHref": "/rankings/beijing",
       "transition": "",
-      "prevRank": 90,
+      "prevRank": 92,
       "isNew": false,
-      "delta": -2
+      "delta": 0
     },
     {
       "name": "Swiss Federal Council",
@@ -1508,9 +1508,9 @@
       "power": 81.1,
       "jurisdictionHref": "/countries/switzerland",
       "transition": "",
-      "prevRank": 91,
+      "prevRank": 93,
       "isNew": false,
-      "delta": -2
+      "delta": 0
     },
     {
       "name": "Michael Dell",
@@ -1524,23 +1524,7 @@
       "power": 79.8,
       "jurisdictionHref": "/countries/united-states",
       "transition": "",
-      "prevRank": 93,
-      "isNew": false,
-      "delta": -1
-    },
-    {
-      "name": "Oh Se-hoon",
-      "role": "Mayor of Seoul",
-      "category": "Mayor",
-      "jurisdiction": "Seoul",
-      "metro": "Seoul",
-      "metroSlug": "seoul",
-      "jscore": 108.8,
-      "weight": 0.72,
-      "power": 78.3,
-      "jurisdictionHref": "/rankings/seoul",
-      "transition": "",
-      "prevRank": 95,
+      "prevRank": 94,
       "isNew": false,
       "delta": 0
     },
@@ -1551,14 +1535,30 @@
       "jurisdiction": "Los Angeles",
       "metro": "Los Angeles",
       "metroSlug": "los-angeles",
-      "jscore": 108.6,
+      "jscore": 108.7,
       "weight": 0.72,
-      "power": 78.2,
+      "power": 78.3,
       "jurisdictionHref": "/rankings/los-angeles",
       "transition": "In a runoff for re-election; LA mayoral election, 3 Nov 2026",
       "prevRank": 96,
       "isNew": false,
-      "delta": 0
+      "delta": 1
+    },
+    {
+      "name": "Oh Se-hoon",
+      "role": "Mayor of Seoul",
+      "category": "Mayor",
+      "jurisdiction": "Seoul",
+      "metro": "Seoul",
+      "metroSlug": "seoul",
+      "jscore": 108.6,
+      "weight": 0.72,
+      "power": 78.2,
+      "jurisdictionHref": "/rankings/seoul",
+      "transition": "",
+      "prevRank": 95,
+      "isNew": false,
+      "delta": -1
     },
     {
       "name": "Gong Zheng",
@@ -1583,9 +1583,9 @@
       "jurisdiction": "Île-de-France",
       "metro": "Paris",
       "metroSlug": "paris",
-      "jscore": 138.1,
+      "jscore": 138.2,
       "weight": 0.55,
-      "power": 75.9,
+      "power": 76.0,
       "jurisdictionHref": "/states/ile-de-france",
       "transition": "",
       "prevRank": 98,
@@ -1604,9 +1604,9 @@
       "power": 75.3,
       "jurisdictionHref": "/countries/south-africa",
       "transition": "",
-      "prevRank": 100,
+      "prevRank": 99,
       "isNew": false,
-      "delta": 1
+      "delta": 0
     },
     {
       "name": "Wang Hao",
@@ -1620,9 +1620,9 @@
       "power": 74.6,
       "jurisdictionHref": "/states/zhejiang",
       "transition": "",
-      "prevRank": 99,
+      "prevRank": 100,
       "isNew": false,
-      "delta": -1
+      "delta": 0
     }
   ],
   "dropped": []
