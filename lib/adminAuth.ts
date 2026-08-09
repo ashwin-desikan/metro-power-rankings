@@ -7,6 +7,13 @@
 // changes, and expires after SESSION_TTL_SECONDS.
 
 export const ADMIN_COOKIE = "mc_session";
+// Separate cookie/credential pair from ADMIN_COOKIE on purpose: /activity is
+// reachable by more people than Mission Control ever was (it's linked from
+// the public-facing /updates page), and it has no write access, so it
+// shouldn't share a password with the panel that does. Same signing/
+// verification primitives below, just parameterized with a different
+// secret and cookie name -- see app/api/activity/login/route.ts.
+export const ACTIVITY_COOKIE = "activity_session";
 export const SESSION_TTL_SECONDS = 60 * 60 * 24 * 14; // 14 days
 
 function toHex(buf: ArrayBuffer): string {

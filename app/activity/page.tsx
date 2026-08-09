@@ -24,6 +24,12 @@ const PAGE_DESCRIPTION =
 export const metadata: Metadata = {
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
+  // Gated by proxy.ts now (ACTIVITY_COOKIE) -- an unauthenticated request
+  // never reaches this component at all, it's redirected to /activity/login
+  // before Next.js renders anything. This is defense in depth to match every
+  // other gated page's convention (app/admin/page.tsx, app/refresh-schedule),
+  // not the actual protection.
+  robots: { index: false, follow: false },
   alternates: { canonical: PAGE_PATH },
   openGraph: { images: [{ url: "/og-default.png", width: 1200, height: 630 }],
     title: `${PAGE_TITLE} | ${SITE_NAME}`,
