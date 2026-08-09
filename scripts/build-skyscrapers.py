@@ -56,7 +56,7 @@ def fetch(key):
     rows, off = [], 0
     while True:
         url = (f"{SUPA}/rest/v1/skydb_structures?select=skydb_id,metro_slug,"
-               f"city_name,height_m,floors,structural_kind"
+               f"city_name,height_m,floors,structural_kind,metro_source"
                f"&order=skydb_id&limit=1000&offset={off}")
         req = urllib.request.Request(url, headers=h)
         with urllib.request.urlopen(req, timeout=120) as r:
@@ -139,6 +139,15 @@ def main():
             "over200m": sum(v["over200m"] for v in metros.values()),
             "over300m": sum(v["over300m"] for v in metros.values()),
             "buildingsWithoutMetro": len(buildings) - len(placed),
+            # How the metro was decided, kept visible rather than averaged away.
+            # 'polygon' is containment against the real boundary. 'city-consensus'
+            # is a coordinate-less row placed because every other building SKYDB
+            # labels with that city lands in one metro - a weaker claim, and it
+            # stays labelled as one.
+            "placedByPolygon": sum(1 for r in placed
+                                   if (r.get("metro_source") or "polygon") == "polygon"),
+            "placedByCityConsensus": sum(1 for r in placed
+                                         if r.get("metro_source") == "city-consensus"),
         },
         "metros": metros,
     }

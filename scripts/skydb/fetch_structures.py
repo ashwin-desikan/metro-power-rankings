@@ -43,14 +43,27 @@ BASE = {"height_from": HEIGHT_FROM, "status": "status.4.1",
         "height_measure": "height_architectural", "sort": "height", "sortdirection": "desc"}
 
 
-def read_key(path, label):
+def read_key(path, label, env=None):
+    """Environment first, then the file beside the code.
+
+    The file is the convenient shape on a dev box; the environment variable is
+    the only shape that works on the mac mini, where this runs monthly and the
+    key file is gitignored and therefore absent from the clone. Same posture as
+    REVALIDATE_SECRET in mac-mini-jobs/config.env.
+    """
+    if env:
+        v = os.environ.get(env, "").strip()
+        if v:
+            return v
     if not os.path.exists(path):
-        sys.exit(f"missing {label} at {path}")
+        sys.exit(f"missing {label}: set ${env} or create {path}" if env
+                 else f"missing {label} at {path}")
     return open(path, encoding="utf-8").read().strip()
 
 
-SKY_KEY = read_key(os.path.join(HERE, "skydb_key.txt"), "SKYDB token")
-SUPA_KEY = read_key(os.path.join(ROOT, "scripts", "mktcap", "supabase_key.txt"), "Supabase key")
+SKY_KEY = read_key(os.path.join(HERE, "skydb_key.txt"), "SKYDB token", env="SKYDB_TOKEN")
+SUPA_KEY = read_key(os.path.join(ROOT, "scripts", "mktcap", "supabase_key.txt"),
+                    "Supabase key", env="SUPABASE_SERVICE_KEY")
 
 
 class Throttled(Exception):
