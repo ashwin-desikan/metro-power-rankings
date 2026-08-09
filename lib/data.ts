@@ -47,7 +47,23 @@ export interface MetroDetail {
   teams?: { sport: string; league: string; team: string; city: string; major: boolean; level?: string; annual?: boolean; qid?: string; wikipediaUrl?: string; lat?: number; lng?: number }[];
   universities?: { rank: number; name: string; city: string; country: string }[];
   culture?: Record<string, { name: string; city: string; subtype: string; type: string; annual?: boolean; stations?: number }[]>;
-  skyscrapers?: { city: string; over150m: number; over200m: number; over300m: number };
+  // The era fields are optional per metro, not just optional on the type:
+  // build-skyscrapers.py withholds them below 5 dated buildings or 60% year
+  // coverage, because a median completion year drawn from two buildings looks
+  // authoritative and means nothing. Treat their absence as "not enough data",
+  // never as zero.
+  skyscrapers?: {
+    city: string;
+    over150m: number;
+    over200m: number;
+    over300m: number;
+    medianYear?: number;
+    earliest?: number;
+    pctSince2000?: number;
+    pctSince2010?: number;
+    datedCount?: number;
+    decades?: Record<string, number>;
+  };
   luxury?: { name: string; city: string; type: string }[];
   events?: { sport: string; event: string; year: string; venue: string; type?: string }[];
   marketCap?: { total: number; count: number; top12: { name: string; valuation: number; source: string }[]; asOf?: string };

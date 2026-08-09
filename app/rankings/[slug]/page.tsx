@@ -649,7 +649,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
             ...(((detail.teams && detail.teams.length > 0) || (detail.events && detail.events.length > 0) || (detail.culture && detail.culture[sportsEventType]) || getRelocationsForMetro(slug).length > 0 || getFormerTopFlightForMetro(slug).length > 0 || getFormerMajorCfbForMetro(slug).length > 0 || getFormerMajorCbbForMetro(slug).length > 0 || getFormerWcbbForMetro(slug).length > 0 || getDefunctBritishRLForMetro(slug).length > 0) ? [{ label: "Sports", href: "#sports" }] : []),
             ...(getMetroTitles(slug).length > 0 ? [{ label: "Championships", href: "#championships" }] : []),
             ...(detail.marketCap && detail.marketCap.top12 && detail.marketCap.top12.length > 0 ? [{ label: "Companies", href: "#companies" }] : []),
-            ...(((detail.culture && culturalAssetOrder.some((type) => detail.culture?.[type] && (detail.culture[type]?.length ?? 0) > 0)) || (detail.supertallStructures && detail.supertallStructures.length > 0)) ? [{ label: "Culture", href: "#culture" }] : []),
+            ...(((detail.culture && culturalAssetOrder.some((type) => detail.culture?.[type] && (detail.culture[type]?.length ?? 0) > 0)) || (detail.supertallStructures && detail.supertallStructures.length > 0) || Boolean(detail.skyscrapers?.medianYear)) ? [{ label: "Culture", href: "#culture" }] : []),
             ...(((detail.universities && detail.universities.length > 0) || (detail.culture && (((detail.culture["Hospital"]?.length ?? 0) > 0) || ((detail.culture["Research Institution"]?.length ?? 0) > 0)))) ? [{ label: "Education", href: "#education" }] : []),
             ...((detail.culture && infrastructureOrder.some((type) => detail.culture?.[type] && (detail.culture[type]?.length ?? 0) > 0)) ? [{ label: "Infrastructure", href: "#infrastructure" }] : []),
             ...(detail.luxury && detail.luxury.length > 0 ? [{ label: "Luxury", href: "#luxury" }] : []),
@@ -1129,7 +1129,8 @@ export default async function MetroDetailPage({ params }: PageProps) {
 
         {/* Cultural Assets Section (Cultural Events + Museums/Landmarks) */}
         {((detail.culture && culturalAssetOrder.some((type) => detail.culture?.[type] && detail.culture[type].length > 0)) ||
-          (detail.supertallStructures && detail.supertallStructures.length > 0)) && (
+          (detail.supertallStructures && detail.supertallStructures.length > 0) ||
+          Boolean(detail.skyscrapers?.medianYear)) && (
           <section>
             <h2 id="culture" className="text-2xl font-bold mb-6">Cultural Assets</h2>
             <div className="space-y-8">
@@ -1202,7 +1203,8 @@ export default async function MetroDetailPage({ params }: PageProps) {
                 if (type === "Museum/Landmark") {
                   const all = detail.culture?.[type] ?? [];
                   const supertallCount = detail.supertallStructures?.length ?? 0;
-                  if (all.length === 0 && supertallCount === 0) return null;
+                  const hasEra = Boolean(detail.skyscrapers?.medianYear);
+                  if (all.length === 0 && supertallCount === 0 && !hasEra) return null;
                   // 4 smart buckets across the 20 subtypes. Unknown subtypes fall
                   // into "Landmarks & Civic" so future xlsx additions don't break.
                   const buckets: Array<{ name: string; subtypes: string[] }> = [
@@ -1247,8 +1249,75 @@ export default async function MetroDetailPage({ params }: PageProps) {
                             </details>
                           );
                         })}
+                        {/* The #skyline anchor lives on this wrapper rather than on
+                            the supertall list, because 156 metros have era stats and
+                            only about 60 have a 350m+ structure. Anchored to the list,
+                            the Dimension Breakdown link would dead-end for most of
+                            them. */}
+                        <div id="skyline" className="space-y-3">
+                        {(() => {
+                          const sky = detail.skyscrapers;
+                          if (!sky?.medianYear || !sky.decades) return null;
+                          const keys = Object.keys(sky.decades).map(Number).sort((a, b) => a - b);
+                          const first = keys[0];
+                          const last = keys[keys.length - 1];
+                          // Fill the gaps: a decade with nothing built is a fact about
+                          // the skyline, and dropping it would compress the timeline
+                          // into a lie.
+                          const series: { decade: number; n: number }[] = [];
+                          for (let d = first; d <= last; d += 10) {
+                            series.push({ decade: d, n: sky.decades[String(d)] ?? 0 });
+                          }
+                          const max = Math.max(...series.map((s) => s.n), 1);
+                          return (
+                            <div className={`${COLLAPSIBLE_CARD_CLASS} px-4 py-3`}>
+                              <div className="flex items-baseline justify-between gap-3 flex-wrap">
+                                <span className="font-semibold text-[var(--text)]">Skyline Era</span>
+                                <span className="text-sm text-[var(--text-muted)]">
+                                  median completion {sky.medianYear}
+                                </span>
+                              </div>
+                              <div className="flex flex-wrap gap-x-5 gap-y-1 mt-2 text-sm text-[var(--text-muted)]">
+                                <span>
+                                  <strong className="text-[var(--text)]">{sky.pctSince2000}%</strong> built since 2000
+                                </span>
+                                <span>
+                                  <strong className="text-[var(--text)]">{sky.pctSince2010}%</strong> since 2010
+                                </span>
+                                <span>
+                                  earliest <strong className="text-[var(--text)]">{sky.earliest}</strong>
+                                </span>
+                              </div>
+                              {/* Single series, so one hue and no legend: the heading
+                                  names it. 2px gaps between bars, rounded data-ends,
+                                  and the numbers repeated in the caption and in each
+                                  bar's title so identity never rests on colour. */}
+                              <div className="flex items-end gap-[2px] h-12 mt-3" aria-hidden="true">
+                                {series.map((s) => (
+                                  <div
+                                    key={s.decade}
+                                    className="flex-1 min-w-[3px] rounded-t-[4px] bg-[var(--accent)]"
+                                    style={{
+                                      height: `${Math.max((s.n / max) * 100, s.n > 0 ? 6 : 2)}%`,
+                                      opacity: s.n > 0 ? 1 : 0.18,
+                                    }}
+                                    title={`${s.decade}s: ${s.n} building${s.n === 1 ? "" : "s"}`}
+                                  />
+                                ))}
+                              </div>
+                              <div className="flex justify-between text-[10px] text-[var(--text-muted)] mt-1">
+                                <span>{first}s</span>
+                                <span>{last}s</span>
+                              </div>
+                              <p className="text-xs text-[var(--text-muted)] mt-2">
+                                Completion decade of {sky.datedCount?.toLocaleString()} of{" "}
+                                {sky.over150m.toLocaleString()} buildings at 150m+ with a known year.
+                              </p>
+                            </div>
+                          );
+                        })()}
                         {towers.length > 0 && (
-                          <details id="skyline" className={COLLAPSIBLE_CARD_CLASS}>
+                          <details className={COLLAPSIBLE_CARD_CLASS}>
                             <summary className={COLLAPSIBLE_SUMMARY_CLASS}>
                               <span className="font-semibold text-[var(--text)]">Supertall Structures (350m+)</span>
                               <span className="text-sm text-[var(--text-muted)]">
@@ -1299,6 +1368,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                             </div>
                           </details>
                         )}
+                        </div>
                       </div>
                     </div>
                   );

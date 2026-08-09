@@ -82,6 +82,46 @@ for (const [slug, v] of Object.entries(metros)) {
     );
 }
 
+// Era stats. These are the numbers a reader will quote back ("Detroit's skyline
+// is a 1976 skyline"), so they get checked rather than trusted. Every rule here
+// is a shape that would render as a confident sentence while being nonsense.
+const YEAR_FLOOR = 1850;
+const YEAR_CEIL = new Date().getFullYear() + 10;
+let eraCount = 0;
+for (const [slug, v] of Object.entries(metros)) {
+  if (v.medianYear === undefined) {
+    // Partial era data is worse than none: the UI keys off medianYear, so a
+    // stray pctSince2000 with no median means the generator changed shape.
+    for (const k of ["pctSince2000", "pctSince2010", "decades", "datedCount", "earliest"])
+      if (v[k] !== undefined) fail.push(`${slug}: has ${k} but no medianYear`);
+    continue;
+  }
+  eraCount++;
+  if (v.medianYear < YEAR_FLOOR || v.medianYear > YEAR_CEIL)
+    fail.push(`${slug}: medianYear ${v.medianYear} is outside ${YEAR_FLOOR}-${YEAR_CEIL}`);
+  if (v.earliest !== undefined && v.earliest > v.medianYear)
+    fail.push(`${slug}: earliest ${v.earliest} is after the median ${v.medianYear}`);
+  for (const k of ["pctSince2000", "pctSince2010"]) {
+    if (typeof v[k] !== "number" || v[k] < 0 || v[k] > 100)
+      fail.push(`${slug}: ${k} is ${v[k]}, expected 0-100`);
+  }
+  // Everything since 2010 is also since 2000. If this inverts, the two filters
+  // have been swapped.
+  if (v.pctSince2010 > v.pctSince2000)
+    fail.push(
+      `${slug}: pctSince2010 ${v.pctSince2010} exceeds pctSince2000 ${v.pctSince2000}`,
+    );
+  if (v.datedCount > v.over150m)
+    fail.push(`${slug}: datedCount ${v.datedCount} exceeds over150m ${v.over150m}`);
+  const decadeSum = Object.values(v.decades ?? {}).reduce((a, b) => a + b, 0);
+  if (decadeSum !== v.datedCount)
+    fail.push(
+      `${slug}: decades sum to ${decadeSum} but datedCount is ${v.datedCount}`,
+    );
+}
+if (eraCount < 100)
+  fail.push(`only ${eraCount} metros carry era stats, expected at least 100`);
+
 // Per-metro divergence against the curated sheet.
 if (fs.existsSync(BASELINE)) {
   const base = JSON.parse(fs.readFileSync(BASELINE, "utf8"));
@@ -115,6 +155,6 @@ if (fail.length) {
 
 console.log(
   `check:skyscrapers OK  ${Object.keys(metros).length} metros, ` +
-    `${t.over150m} at 150m+, ${t.over200m} at 200m+, ${t.over300m} at 300m+ ` +
-    `(generated ${payload.generated})`,
+    `${t.over150m} at 150m+, ${t.over200m} at 200m+, ${t.over300m} at 300m+, ` +
+    `${eraCount} with era stats (generated ${payload.generated})`,
 );
