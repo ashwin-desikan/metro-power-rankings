@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-09",
+    headline: "Metros with accented names get their real addresses back",
+    items: [
+      "Metro pages whose names carry accents had web addresses that silently dropped them: Lodz was reachable only as /od, Hue as /hu. All 142 now read properly, and every old link redirects.",
+      "The damage clustered in Poland, Romania, Turkey, Czechia and Bosnia, because the rule behind it only ever handled Western European spelling.",
+      "Six competition pages are corrected the same way, among them Copa America and Brasileiro Serie A.",
+      "Six metros that share a name with another, Kochi and Cordoba among them, were missing their dimension rankings entirely. Those now show correctly.",
+    ],
+  },
+  {
     date: "2026-08-08",
     headline: "The map gets honest: hundreds of metro boundaries corrected",
     items: [

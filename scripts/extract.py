@@ -18,6 +18,7 @@ import math
 import os
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 try:
@@ -29,17 +30,52 @@ except ImportError:
     import openpyxl
 
 
+# Characters that Unicode decomposition does NOT split into base + combining
+# mark. Without these, NFKD leaves them whole and the ASCII filter deletes
+# them outright.
+_SLUG_CHAR_MAP = {
+    'ł': 'l',   # l with stroke  (Łódź)
+    'ø': 'o',   # o with stroke  (Andøy)
+    'đ': 'd',   # d with stroke
+    'ß': 'ss',  # sharp s
+    'æ': 'ae',
+    'œ': 'oe',
+    'þ': 'th',  # thorn
+    'ð': 'd',   # eth
+    'ı': 'i',   # dotless i     (Diyarbakır)
+    'ħ': 'h',
+    'ŋ': 'n',
+    'ŧ': 't',
+}
+
+# Separators that must survive as a hyphen. Deleting them ran compound names
+# together: "Bydgoszcz–Toruń" became "bydgoszcztoru", "Biel/Bienne" became
+# "bielbienne".
+_SLUG_SEPARATORS = '‐‑‒–—―−·•/'
+
+
 def slugify(name):
-    """Convert metro name to URL-safe slug."""
+    """Convert metro name to URL-safe slug.
+
+    Decomposes Unicode and drops combining marks, so any accented Latin script
+    transliterates instead of losing characters. The version this replaced
+    hand-listed about thirty Latin-1 characters and deleted everything else,
+    which silently mangled 133 metros — overwhelmingly Polish, Romanian,
+    Turkish, Czech and Bosnian, because the hand-written list covered Western
+    European orthography and stopped at the Oder. Łódź became "od" and Huế
+    became "hu".
+
+    Slugs ARE live URLs. Any change here moves indexed pages, so it is gated by
+    scripts/check-slug-drift.mjs against lib/metroRedirects.json: a slug cannot
+    leave the build without a redirect covering it.
+    """
     s = name.lower().strip()
-    s = re.sub(r'[àáâãäå]', 'a', s)
-    s = re.sub(r'[èéêë]', 'e', s)
-    s = re.sub(r'[ìíîï]', 'i', s)
-    s = re.sub(r'[òóôõö]', 'o', s)
-    s = re.sub(r'[ùúûü]', 'u', s)
-    s = re.sub(r'[ñ]', 'n', s)
-    s = re.sub(r'[ç]', 'c', s)
-    s = re.sub(r'[ß]', 'ss', s)
+    for ch in _SLUG_SEPARATORS:
+        s = s.replace(ch, ' ')
+    for ch, repl in _SLUG_CHAR_MAP.items():
+        s = s.replace(ch, repl)
+    s = unicodedata.normalize('NFKD', s)
+    s = ''.join(c for c in s if not unicodedata.combining(c))
     s = re.sub(r'[^a-z0-9\s-]', '', s)
     s = re.sub(r'[\s]+', '-', s)
     s = re.sub(r'-+', '-', s)
@@ -206,6 +242,28 @@ def extract_metros(wb):
     metros.sort(key=lambda x: x['score'], reverse=True)
     for i, m in enumerate(metros):
         m['rank'] = i + 1
+
+    # Resolve slug collisions HERE, before anything downstream keys off a slug.
+    # Two metros can transliterate to the same slug — Kochi/Kōchi,
+    # Cordoba/Córdoba, Leon/León, Macon/Mâcon, Merida/Mérida, Beja/Béja — and
+    # the rule is that the higher-ranked one keeps the bare slug while the other
+    # takes a country suffix.
+    #
+    # This used to happen much later, inside the detail-writing loop, by which
+    # point compute_dimension_ranks() had already built its dict keyed on the
+    # UNRESOLVED slug. So both colliding metros shared one entry: the loser
+    # silently overwrote the winner's dimension ranks, and the suffixed metro
+    # got none at all. Every existing collision was shipping with that damage.
+    #
+    # NOTE the tie-break is RANK, so a ranking change alone can move a live
+    # URL with no code change. scripts/check-slug-drift.mjs exists to catch it.
+    seen = {}
+    for m in metros:
+        slug = m['slug']
+        if slug in seen:
+            slug = f"{slug}-{m['country'].lower().replace(' ', '-')}"
+            m['slug'] = slug
+        seen[slug] = m
 
     return metros
 
@@ -1487,15 +1545,12 @@ def main():
     print("Writing detail files...")
     detail_count = 0
     total_detail_size = 0
-    slug_map = {}  # Track slugs to handle duplicates
 
     for m in metros:
+        # Slugs were made final (and collision-resolved) in extract_metros, so
+        # every downstream lookup — dim_ranks included — keys off the same
+        # value the URL uses.
         slug = m['slug']
-        # Handle duplicate slugs
-        if slug in slug_map:
-            slug = f"{slug}-{m['country'].lower().replace(' ', '-')}"
-            m['slug'] = slug
-        slug_map[slug] = True
 
         detail = build_detail(
             m['name'], teams, unis, culture_data, scrapers,

@@ -1,4 +1,36 @@
 import type { NextConfig } from "next";
+import fs from "node:fs";
+import path from "node:path";
+
+// Slugs that have moved. lib/metroRedirects.json is the single source of
+// truth, shared with scripts/check-slug-drift.mjs, which fails `npm run
+// verify` if a slug leaves the build without an entry here. Read rather than
+// imported so the guard and the config can never diverge on module resolution.
+const slugRedirects = JSON.parse(
+  fs.readFileSync(path.join(process.cwd(), "lib/metroRedirects.json"), "utf8"),
+) as {
+  metros: Record<string, string>;
+  screenMetros: Record<string, string>;
+  competitions: Record<string, string>;
+};
+
+const movedSlugRedirects = [
+  ...Object.entries(slugRedirects.metros).map(([from, to]) => ({
+    source: `/rankings/${from}`,
+    destination: `/rankings/${to}`,
+    permanent: true,
+  })),
+  ...Object.entries(slugRedirects.screenMetros).map(([from, to]) => ({
+    source: `/screen/metros/${from}`,
+    destination: `/screen/metros/${to}`,
+    permanent: true,
+  })),
+  ...Object.entries(slugRedirects.competitions).map(([from, to]) => ({
+    source: `/sports/champions/${from}`,
+    destination: `/sports/champions/${to}`,
+    permanent: true,
+  })),
+];
 
 const nextConfig: NextConfig = {
   experimental: {
@@ -19,6 +51,7 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      ...movedSlugRedirects,
       // Metro renamed: Tula, Mexico slug changed from tula-mexico to
       // tula-de-allende (formal metro name). Preserve the old indexed URL.
       {

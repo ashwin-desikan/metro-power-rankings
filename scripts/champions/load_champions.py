@@ -26,6 +26,7 @@ import json
 import os
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 import requests
@@ -80,9 +81,25 @@ def split_names(v):
     return [x.strip() for x in re.split(r"\s*&\s*|,\s*", str(v)) if x.strip()]
 
 
+_SLUG_CHAR_MAP = {"ł": "l", "ø": "o", "đ": "d", "ß": "ss", "æ": "ae", "œ": "oe",
+                  "þ": "th", "ð": "d", "ı": "i", "ħ": "h", "ŋ": "n", "ŧ": "t"}
+
+
 def slugify(s):
-    s = re.sub(r"[^a-z0-9]+", "-", (s or "").lower()).strip("-")
-    return s
+    """Slug for a competition. Transliterates before collapsing separators.
+
+    Without the decomposition step every accented character became its own
+    hyphen, which is how "Argentina Primera División" became
+    argentina-primera-divisi-n and "Úrvalsdeild" became
+    football--rvalsdeild-iceland. These are live /sports/champions/[comp]
+    URLs, so changes here need a redirect in lib/metroRedirects.json.
+    """
+    s = (s or "").lower()
+    for ch, repl in _SLUG_CHAR_MAP.items():
+        s = s.replace(ch, repl)
+    s = unicodedata.normalize("NFKD", s)
+    s = "".join(c for c in s if not unicodedata.combining(c))
+    return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
 
 
 def main():

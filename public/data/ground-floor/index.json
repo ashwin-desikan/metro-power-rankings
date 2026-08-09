@@ -49,7 +49,7 @@
    "gapRanks": 638.0,
    "dimensions": 3
   },
-  "aak": {
+  "cacak": {
    "conditionsRank": 2600.5,
    "accumulationRank": 2477,
    "conditionsPct": 60.72,
@@ -103,7 +103,7 @@
    "gapRanks": 2572.0,
    "dimensions": 3
   },
-  "abac": {
+  "sabac": {
    "conditionsRank": 3551.5,
    "accumulationRank": 2474,
    "conditionsPct": 82.94,
@@ -328,7 +328,7 @@
    "gapRanks": 2824.0,
    "dimensions": 3
   },
-  "adapazar": {
+  "adapazari": {
    "conditionsRank": 3594.0,
    "accumulationRank": 1710,
    "conditionsPct": 83.93,
@@ -373,7 +373,7 @@
    "gapRanks": 1457.0,
    "dimensions": 3
   },
-  "adyaman": {
+  "adiyaman": {
    "conditionsRank": 3892.0,
    "accumulationRank": 3103,
    "conditionsPct": 90.89,
@@ -571,7 +571,7 @@
    "gapRanks": 511.0,
    "dimensions": 3
   },
-  "ajdovina": {
+  "ajdovscina": {
    "conditionsRank": 893.0,
    "accumulationRank": 4235,
    "conditionsPct": 20.84,
@@ -598,7 +598,7 @@
    "gapRanks": -301.0,
    "dimensions": 3
   },
-  "akovec": {
+  "cakovec": {
    "conditionsRank": 2376.0,
    "accumulationRank": 4163,
    "conditionsPct": 55.48,
@@ -1462,7 +1462,7 @@
    "gapRanks": -3109.5,
    "dimensions": 3
   },
-  "andy": {
+  "andoy": {
    "conditionsRank": 40.5,
    "accumulationRank": 1640,
    "conditionsPct": 0.92,
@@ -1534,7 +1534,7 @@
    "gapRanks": 3385.5,
    "dimensions": 3
   },
-  "anlurfa": {
+  "sanliurfa": {
    "conditionsRank": 3973.5,
    "accumulationRank": 2190,
    "conditionsPct": 92.79,
@@ -1687,7 +1687,7 @@
    "gapRanks": -1564.0,
    "dimensions": 3
   },
-  "apljina": {
+  "capljina": {
    "conditionsRank": 2222.0,
    "accumulationRank": 4188,
    "conditionsPct": 51.88,
@@ -1840,7 +1840,7 @@
    "gapRanks": -2091.5,
    "dimensions": 3
   },
-  "ardabl": {
+  "ardabil": {
    "conditionsRank": 3617.5,
    "accumulationRank": 1952,
    "conditionsPct": 84.48,
@@ -2461,7 +2461,7 @@
    "gapRanks": 793.5,
    "dimensions": 3
   },
-  "aydn": {
+  "aydin": {
    "conditionsRank": 3970.5,
    "accumulationRank": 3115,
    "conditionsPct": 92.72,
@@ -2560,7 +2560,7 @@
    "gapRanks": 1842.5,
    "dimensions": 3
   },
-  "bacu": {
+  "bacau": {
    "conditionsRank": 3082.0,
    "accumulationRank": 1724,
    "conditionsPct": 71.97,
@@ -2722,7 +2722,7 @@
    "gapRanks": 2468.0,
    "dimensions": 3
   },
-  "baka-topola": {
+  "backa-topola": {
    "conditionsRank": 2608.5,
    "accumulationRank": 4142,
    "conditionsPct": 60.91,
@@ -2812,7 +2812,7 @@
    "gapRanks": -1371.0,
    "dimensions": 3
   },
-  "balkesir": {
+  "balikesir": {
    "conditionsRank": 3384.5,
    "accumulationRank": 2213,
    "conditionsPct": 79.04,
@@ -2956,7 +2956,7 @@
    "gapRanks": -954.0,
    "dimensions": 3
   },
-  "bandrma": {
+  "bandirma": {
    "conditionsRank": 3241.5,
    "accumulationRank": 2157,
    "conditionsPct": 75.69,
@@ -3064,7 +3064,7 @@
    "gapRanks": 2100.0,
    "dimensions": 3
   },
-  "banovii": {
+  "banovici": {
    "conditionsRank": 3438.5,
    "accumulationRank": 4210,
    "conditionsPct": 80.3,
@@ -3586,7 +3586,7 @@
    "gapRanks": -286.0,
    "dimensions": 3
   },
-  "beej": {
+  "becej": {
    "conditionsRank": 2679.5,
    "accumulationRank": 4102,
    "conditionsPct": 62.57,
@@ -3892,7 +3892,7 @@
    "gapRanks": -3128.5,
    "dimensions": 3
   },
-  "beneov": {
+  "benesov": {
    "conditionsRank": 1080.0,
    "accumulationRank": 2509,
    "conditionsPct": 25.2,
@@ -4225,7 +4225,7 @@
    "gapRanks": 3293.0,
    "dimensions": 3
   },
-  "biaa-podlaska": {
+  "biala-podlaska": {
    "conditionsRank": 2117.5,
    "accumulationRank": 3343,
    "conditionsPct": 49.44,
@@ -4243,7 +4243,7 @@
    "gapRanks": -2619.5,
    "dimensions": 3
   },
-  "biaystok": {
+  "bialystok": {
    "conditionsRank": 2215.5,
    "accumulationRank": 1238,
    "conditionsPct": 51.73,
@@ -4252,7 +4252,7 @@
    "gapRanks": 977.5,
    "dimensions": 3
   },
-  "bielbienne": {
+  "biel-bienne": {
    "conditionsRank": 1095.5,
    "accumulationRank": 1783,
    "conditionsPct": 25.57,
@@ -4279,7 +4279,7 @@
    "gapRanks": -812.0,
    "dimensions": 3
   },
-  "bielsko-biaa": {
+  "bielsko-biala": {
    "conditionsRank": 2634.5,
    "accumulationRank": 1931,
    "conditionsPct": 61.52,
@@ -4306,7 +4306,7 @@
    "gapRanks": -3698.0,
    "dimensions": 3
   },
-  "biha": {
+  "bihac": {
    "conditionsRank": 2317.0,
    "accumulationRank": 3909,
    "conditionsPct": 54.1,
@@ -4522,7 +4522,7 @@
    "gapRanks": 1769.0,
    "dimensions": 3
   },
-  "bistria": {
+  "bistrita": {
    "conditionsRank": 3138.0,
    "accumulationRank": 2584,
    "conditionsPct": 73.28,
@@ -4657,7 +4657,7 @@
    "gapRanks": 315.5,
    "dimensions": 3
   },
-  "bloomingtonnormal": {
+  "bloomington-normal": {
    "conditionsRank": 783.0,
    "accumulationRank": 897,
    "conditionsPct": 18.27,
@@ -4954,7 +4954,7 @@
    "gapRanks": -569.0,
    "dimensions": 3
   },
-  "botoani": {
+  "botosani": {
    "conditionsRank": 2992.0,
    "accumulationRank": 2405,
    "conditionsPct": 69.87,
@@ -5116,7 +5116,7 @@
    "gapRanks": -1329.5,
    "dimensions": 3
   },
-  "braov": {
+  "brasov": {
    "conditionsRank": 3159.5,
    "accumulationRank": 2035,
    "conditionsPct": 73.78,
@@ -5296,7 +5296,7 @@
    "gapRanks": 831.5,
    "dimensions": 3
   },
-  "brila": {
+  "braila": {
    "conditionsRank": 2861.5,
    "accumulationRank": 3352,
    "conditionsPct": 66.82,
@@ -5341,7 +5341,7 @@
    "gapRanks": -1448.5,
    "dimensions": 3
   },
-  "brko": {
+  "brcko": {
    "conditionsRank": 2329.0,
    "accumulationRank": 3716,
    "conditionsPct": 54.38,
@@ -5629,7 +5629,7 @@
    "gapRanks": 1318.0,
    "dimensions": 3
   },
-  "buon-ma-thut": {
+  "buon-ma-thuot": {
    "conditionsRank": 3269.5,
    "accumulationRank": 3042,
    "conditionsPct": 76.35,
@@ -5782,7 +5782,7 @@
    "gapRanks": -386.5,
    "dimensions": 3
   },
-  "buzu": {
+  "buzau": {
    "conditionsRank": 3163.0,
    "accumulationRank": 2496,
    "conditionsPct": 73.86,
@@ -5800,7 +5800,7 @@
    "gapRanks": -639.5,
    "dimensions": 3
   },
-  "bydgoszcztoru": {
+  "bydgoszcz-torun": {
    "conditionsRank": 2454.5,
    "accumulationRank": 738,
    "conditionsPct": 57.31,
@@ -6970,7 +6970,7 @@
    "gapRanks": 2027.0,
    "dimensions": 3
   },
-  "chem": {
+  "chelm": {
    "conditionsRank": 2322.0,
    "accumulationRank": 1304,
    "conditionsPct": 54.22,
@@ -7438,7 +7438,7 @@
    "gapRanks": -802.5,
    "dimensions": 3
   },
-  "cimilia": {
+  "cimislia": {
    "conditionsRank": 2384.5,
    "accumulationRank": 4130,
    "conditionsPct": 55.68,
@@ -7771,7 +7771,7 @@
    "gapRanks": -2397.0,
    "dimensions": 3
   },
-  "colimavilla-de-alvarez": {
+  "colima-villa-de-alvarez": {
    "conditionsRank": 2698.0,
    "accumulationRank": 3038,
    "conditionsPct": 63.0,
@@ -7951,7 +7951,7 @@
    "gapRanks": -843.0,
    "dimensions": 3
   },
-  "constana": {
+  "constanta": {
    "conditionsRank": 2578.0,
    "accumulationRank": 946,
    "conditionsPct": 60.2,
@@ -8464,7 +8464,7 @@
    "gapRanks": 2730.5,
    "dimensions": 3
   },
-  "curtea-de-arge": {
+  "curtea-de-arges": {
    "conditionsRank": 2619.5,
    "accumulationRank": 4179,
    "conditionsPct": 61.17,
@@ -8500,7 +8500,7 @@
    "gapRanks": -2468.5,
    "dimensions": 3
   },
-  "czna": {
+  "leczna": {
    "conditionsRank": 2094.0,
    "accumulationRank": 3914,
    "conditionsPct": 48.89,
@@ -8509,7 +8509,7 @@
    "gapRanks": -1820.0,
    "dimensions": 3
   },
-  "czstochowa": {
+  "czestochowa": {
    "conditionsRank": 2588.5,
    "accumulationRank": 871,
    "conditionsPct": 60.44,
@@ -9166,7 +9166,7 @@
    "gapRanks": -1325.5,
    "dimensions": 3
   },
-  "din": {
+  "decin": {
    "conditionsRank": 1887.5,
    "accumulationRank": 3473,
    "conditionsPct": 44.07,
@@ -9220,7 +9220,7 @@
    "gapRanks": -3226.0,
    "dimensions": 3
   },
-  "diyarbakr": {
+  "diyarbakir": {
    "conditionsRank": 3952.0,
    "accumulationRank": 926,
    "conditionsPct": 92.29,
@@ -9931,7 +9931,7 @@
    "gapRanks": -650.0,
    "dimensions": 3
   },
-  "egilsstair": {
+  "egilsstadir": {
    "conditionsRank": 50.0,
    "accumulationRank": 2869,
    "conditionsPct": 1.14,
@@ -10093,7 +10093,7 @@
    "gapRanks": -487.5,
    "dimensions": 3
   },
-  "elaz": {
+  "elazig": {
    "conditionsRank": 3873.0,
    "accumulationRank": 1966,
    "conditionsPct": 90.45,
@@ -10111,7 +10111,7 @@
    "gapRanks": 478.5,
    "dimensions": 3
   },
-  "elblg": {
+  "elblag": {
    "conditionsRank": 1956.5,
    "accumulationRank": 3320,
    "conditionsPct": 45.68,
@@ -10426,7 +10426,7 @@
    "gapRanks": 3717.0,
    "dimensions": 3
   },
-  "eske-budjovice": {
+  "ceske-budejovice": {
    "conditionsRank": 1437.0,
    "accumulationRank": 2247,
    "conditionsPct": 33.54,
@@ -10435,7 +10435,7 @@
    "gapRanks": -810.0,
    "dimensions": 3
   },
-  "eskiehir": {
+  "eskisehir": {
    "conditionsRank": 3447.0,
    "accumulationRank": 2381,
    "conditionsPct": 80.5,
@@ -10858,7 +10858,7 @@
    "gapRanks": -3333.0,
    "dimensions": 3
   },
-  "fjallabygg": {
+  "fjallabyggd": {
    "conditionsRank": 40.5,
    "accumulationRank": 4308,
    "conditionsPct": 0.92,
@@ -10948,7 +10948,7 @@
    "gapRanks": 1707.5,
    "dimensions": 3
   },
-  "focani": {
+  "focsani": {
    "conditionsRank": 3007.0,
    "accumulationRank": 3821,
    "conditionsPct": 70.22,
@@ -11182,7 +11182,7 @@
    "gapRanks": -1955.5,
    "dimensions": 3
   },
-  "frdek-mistek": {
+  "frydek-mistek": {
    "conditionsRank": 2008.5,
    "accumulationRank": 1739,
    "conditionsPct": 46.89,
@@ -11299,7 +11299,7 @@
    "gapRanks": -1185.5,
    "dimensions": 3
   },
-  "fuglafjrur": {
+  "fuglafjordur": {
    "conditionsRank": 12.0,
    "accumulationRank": 4311,
    "conditionsPct": 0.26,
@@ -11434,7 +11434,7 @@
    "gapRanks": -1138.0,
    "dimensions": 3
   },
-  "galai": {
+  "galati": {
    "conditionsRank": 2725.0,
    "accumulationRank": 2210,
    "conditionsPct": 63.63,
@@ -11866,7 +11866,7 @@
    "gapRanks": -1837.0,
    "dimensions": 3
   },
-  "gjvik": {
+  "gjovik": {
    "conditionsRank": 198.5,
    "accumulationRank": 4140,
    "conditionsPct": 4.61,
@@ -11938,7 +11938,7 @@
    "gapRanks": -872.0,
    "dimensions": 3
   },
-  "gogow": {
+  "glogow": {
    "conditionsRank": 2135.0,
    "accumulationRank": 1844,
    "conditionsPct": 49.85,
@@ -12415,7 +12415,7 @@
    "gapRanks": 2635.0,
    "dimensions": 3
   },
-  "grudzidz": {
+  "grudziadz": {
    "conditionsRank": 2390.0,
    "accumulationRank": 2418,
    "conditionsPct": 55.8,
@@ -12775,7 +12775,7 @@
    "gapRanks": 2552.0,
    "dimensions": 3
   },
-  "h-long": {
+  "ha-long": {
    "conditionsRank": 3410.0,
    "accumulationRank": 3139,
    "conditionsPct": 79.63,
@@ -13459,7 +13459,7 @@
    "gapRanks": 373.5,
    "dimensions": 3
   },
-  "hinceti": {
+  "hincesti": {
    "conditionsRank": 2408.0,
    "accumulationRank": 2845,
    "conditionsPct": 56.23,
@@ -13477,7 +13477,7 @@
    "gapRanks": 2012.5,
    "dimensions": 3
   },
-  "hjrring": {
+  "hjorring": {
    "conditionsRank": 715.5,
    "accumulationRank": 2638,
    "conditionsPct": 16.69,
@@ -13486,7 +13486,7 @@
    "gapRanks": -1922.5,
    "dimensions": 3
   },
-  "hnefoss": {
+  "honefoss": {
    "conditionsRank": 741.5,
    "accumulationRank": 2891,
    "conditionsPct": 17.3,
@@ -13495,7 +13495,7 @@
    "gapRanks": -2149.5,
    "dimensions": 3
   },
-  "hng-yen": {
+  "hung-yen": {
    "conditionsRank": 3678.5,
    "accumulationRank": 3514,
    "conditionsPct": 85.9,
@@ -13567,7 +13567,7 @@
    "gapRanks": 3527.0,
    "dimensions": 3
   },
-  "holbk": {
+  "holbaek": {
    "conditionsRank": 878.0,
    "accumulationRank": 3758,
    "conditionsPct": 20.49,
@@ -13783,7 +13783,7 @@
    "gapRanks": 2585.0,
    "dimensions": 3
   },
-  "hu": {
+  "hue": {
    "conditionsRank": 3243.5,
    "accumulationRank": 1218,
    "conditionsPct": 75.74,
@@ -14044,7 +14044,7 @@
    "gapRanks": 2642.0,
    "dimensions": 3
   },
-  "iai": {
+  "iasi": {
    "conditionsRank": 2981.0,
    "accumulationRank": 2027,
    "conditionsPct": 69.61,
@@ -14080,7 +14080,7 @@
    "gapRanks": 1176.5,
    "dimensions": 3
   },
-  "ibenik": {
+  "sibenik": {
    "conditionsRank": 1978.0,
    "accumulationRank": 4024,
    "conditionsPct": 46.18,
@@ -14116,7 +14116,7 @@
    "gapRanks": 594.0,
    "dimensions": 3
   },
-  "idr": {
+  "igdir": {
    "conditionsRank": 4054.5,
    "accumulationRank": 2373,
    "conditionsPct": 94.69,
@@ -14377,7 +14377,7 @@
    "gapRanks": 939.0,
    "dimensions": 3
   },
-  "iroki-brijeg": {
+  "siroki-brijeg": {
    "conditionsRank": 2217.5,
    "accumulationRank": 1891,
    "conditionsPct": 51.78,
@@ -14404,7 +14404,7 @@
    "gapRanks": -3384.0,
    "dimensions": 3
   },
-  "isafjararbr": {
+  "isafjardarbaer": {
    "conditionsRank": 40.5,
    "accumulationRank": 4304,
    "conditionsPct": 0.92,
@@ -15565,7 +15565,7 @@
    "gapRanks": 364.0,
    "dimensions": 3
   },
-  "kahramanmara": {
+  "kahramanmaras": {
    "conditionsRank": 3840.0,
    "accumulationRank": 2039,
    "conditionsPct": 89.68,
@@ -16204,7 +16204,7 @@
    "gapRanks": 2479.5,
    "dimensions": 3
   },
-  "kchi": {
+  "kochi-japan": {
    "conditionsRank": 1079.0,
    "accumulationRank": 2012,
    "conditionsPct": 25.18,
@@ -16213,7 +16213,7 @@
    "gapRanks": -933.0,
    "dimensions": 3
   },
-  "kdainiai": {
+  "kedainiai": {
    "conditionsRank": 1074.5,
    "accumulationRank": 2698,
    "conditionsPct": 25.08,
@@ -16924,7 +16924,7 @@
    "gapRanks": 1040.0,
    "dimensions": 3
   },
-  "klaipda": {
+  "klaipeda": {
    "conditionsRank": 2509.0,
    "accumulationRank": 1740,
    "conditionsPct": 58.58,
@@ -16996,7 +16996,7 @@
    "gapRanks": 1048.0,
    "dimensions": 3
   },
-  "koani": {
+  "kocani": {
    "conditionsRank": 2630.5,
    "accumulationRank": 4124,
    "conditionsPct": 61.42,
@@ -17617,7 +17617,7 @@
    "gapRanks": -1308.0,
    "dimensions": 3
   },
-  "kromi": {
+  "kromeriz": {
    "conditionsRank": 1740.5,
    "accumulationRank": 2505,
    "conditionsPct": 40.63,
@@ -18076,7 +18076,7 @@
    "gapRanks": -356.5,
    "dimensions": 3
   },
-  "la-piedadpenjamo": {
+  "la-piedad-penjamo": {
    "conditionsRank": 2764.0,
    "accumulationRank": 3155,
    "conditionsPct": 64.54,
@@ -18292,7 +18292,7 @@
    "gapRanks": -1935.0,
    "dimensions": 3
   },
-  "laktai": {
+  "laktasi": {
    "conditionsRank": 2504.0,
    "accumulationRank": 2751,
    "conditionsPct": 58.47,
@@ -19228,7 +19228,7 @@
    "gapRanks": -100.0,
    "dimensions": 3
   },
-  "liptovsk-mikula": {
+  "liptovsky-mikulas": {
    "conditionsRank": 1952.0,
    "accumulationRank": 3777,
    "conditionsPct": 45.57,
@@ -20137,7 +20137,7 @@
    "gapRanks": 2755.0,
    "dimensions": 3
   },
-  "maeikiai": {
+  "mazeikiai": {
    "conditionsRank": 770.0,
    "accumulationRank": 3945,
    "conditionsPct": 17.96,
@@ -20731,7 +20731,7 @@
    "gapRanks": -1863.0,
    "dimensions": 3
   },
-  "marijampol": {
+  "marijampole": {
    "conditionsRank": 1479.5,
    "accumulationRank": 2378,
    "conditionsPct": 34.54,
@@ -21325,7 +21325,7 @@
    "gapRanks": -61.0,
    "dimensions": 3
   },
-  "media": {
+  "medias": {
    "conditionsRank": 3075.5,
    "accumulationRank": 4057,
    "conditionsPct": 71.82,
@@ -21622,7 +21622,7 @@
    "gapRanks": -816.5,
    "dimensions": 3
   },
-  "mezkovesd": {
+  "mezokovesd": {
    "conditionsRank": 2015.5,
    "accumulationRank": 4047,
    "conditionsPct": 47.06,
@@ -22045,7 +22045,7 @@
    "gapRanks": -125.5,
    "dimensions": 3
   },
-  "modria": {
+  "modrica": {
    "conditionsRank": 2241.5,
    "accumulationRank": 4199,
    "conditionsPct": 52.34,
@@ -22126,7 +22126,7 @@
    "gapRanks": 1267.0,
    "dimensions": 3
   },
-  "monclovafrontera": {
+  "monclova-frontera": {
    "conditionsRank": 2617.0,
    "accumulationRank": 2063,
    "conditionsPct": 61.11,
@@ -22441,7 +22441,7 @@
    "gapRanks": 335.0,
    "dimensions": 3
   },
-  "moroleonuriangato": {
+  "moroleon-uriangato": {
    "conditionsRank": 2655.0,
    "accumulationRank": 3562,
    "conditionsPct": 61.99,
@@ -22657,7 +22657,7 @@
    "gapRanks": -915.0,
    "dimensions": 3
   },
-  "mula": {
+  "mugla": {
    "conditionsRank": 3702.5,
    "accumulationRank": 496,
    "conditionsPct": 86.46,
@@ -23521,7 +23521,7 @@
    "gapRanks": 268.5,
    "dimensions": 3
   },
-  "nevehir": {
+  "nevsehir": {
    "conditionsRank": 3592.0,
    "accumulationRank": 2227,
    "conditionsPct": 83.88,
@@ -23710,7 +23710,7 @@
    "gapRanks": 2487.5,
    "dimensions": 3
   },
-  "ni": {
+  "nis": {
    "conditionsRank": 3147.0,
    "accumulationRank": 1713,
    "conditionsPct": 73.49,
@@ -24277,7 +24277,7 @@
    "gapRanks": -967.5,
    "dimensions": 3
   },
-  "nowy-scz": {
+  "nowy-sacz": {
    "conditionsRank": 2238.5,
    "accumulationRank": 3113,
    "conditionsPct": 52.27,
@@ -24295,7 +24295,7 @@
    "gapRanks": -2903.5,
    "dimensions": 3
   },
-  "nstved": {
+  "naestved": {
    "conditionsRank": 1116.5,
    "accumulationRank": 3695,
    "conditionsPct": 26.06,
@@ -24475,7 +24475,7 @@
    "gapRanks": -767.5,
    "dimensions": 3
   },
-  "od": {
+  "lodz": {
    "conditionsRank": 3158.0,
    "accumulationRank": 522,
    "conditionsPct": 73.74,
@@ -24628,7 +24628,7 @@
    "gapRanks": 909.0,
    "dimensions": 3
   },
-  "oltenzofingen": {
+  "olten-zofingen": {
    "conditionsRank": 1426.0,
    "accumulationRank": 3262,
    "conditionsPct": 33.29,
@@ -24637,7 +24637,7 @@
    "gapRanks": -1836.0,
    "dimensions": 3
   },
-  "oma": {
+  "lomza": {
    "conditionsRank": 2139.0,
    "accumulationRank": 3557,
    "conditionsPct": 49.94,
@@ -25015,7 +25015,7 @@
    "gapRanks": 680.0,
    "dimensions": 3
   },
-  "ostrowiec-witokrzyski": {
+  "ostrowiec-swietokrzyski": {
    "conditionsRank": 2175.5,
    "accumulationRank": 3615,
    "conditionsPct": 50.79,
@@ -25150,7 +25150,7 @@
    "gapRanks": 2392.0,
    "dimensions": 3
   },
-  "owicim": {
+  "oswiecim": {
    "conditionsRank": 2485.5,
    "accumulationRank": 876,
    "conditionsPct": 58.04,
@@ -25447,7 +25447,7 @@
    "gapRanks": -158.0,
    "dimensions": 3
   },
-  "paneveys": {
+  "panevezys": {
    "conditionsRank": 2045.0,
    "accumulationRank": 2429,
    "conditionsPct": 47.75,
@@ -25987,7 +25987,7 @@
    "gapRanks": -262.5,
    "dimensions": 3
   },
-  "perov": {
+  "prerov": {
    "conditionsRank": 2219.0,
    "accumulationRank": 3471,
    "conditionsPct": 51.81,
@@ -26113,7 +26113,7 @@
    "gapRanks": -2128.5,
    "dimensions": 3
   },
-  "petroani": {
+  "petrosani": {
    "conditionsRank": 3136.5,
    "accumulationRank": 4129,
    "conditionsPct": 73.24,
@@ -26212,7 +26212,7 @@
    "gapRanks": 1175.0,
    "dimensions": 3
   },
-  "pia": {
+  "pila": {
    "conditionsRank": 2195.5,
    "accumulationRank": 2406,
    "conditionsPct": 51.26,
@@ -26230,7 +26230,7 @@
    "gapRanks": 2006.0,
    "dimensions": 3
   },
-  "piatra-neam": {
+  "piatra-neamt": {
    "conditionsRank": 2447.0,
    "accumulationRank": 3733,
    "conditionsPct": 57.14,
@@ -26239,7 +26239,7 @@
    "gapRanks": -1286.0,
    "dimensions": 3
   },
-  "pibram": {
+  "pribram": {
    "conditionsRank": 1531.5,
    "accumulationRank": 2456,
    "conditionsPct": 35.75,
@@ -26383,7 +26383,7 @@
    "gapRanks": -2561.5,
    "dimensions": 3
   },
-  "piteti": {
+  "pitesti": {
    "conditionsRank": 2826.0,
    "accumulationRank": 2328,
    "conditionsPct": 65.99,
@@ -26527,7 +26527,7 @@
    "gapRanks": 1040.0,
    "dimensions": 3
   },
-  "ploieti": {
+  "ploiesti": {
    "conditionsRank": 3204.0,
    "accumulationRank": 1499,
    "conditionsPct": 74.82,
@@ -26590,7 +26590,7 @@
    "gapRanks": -258.0,
    "dimensions": 3
   },
-  "poega": {
+  "pozega": {
    "conditionsRank": 2810.0,
    "accumulationRank": 4211,
    "conditionsPct": 65.62,
@@ -27076,7 +27076,7 @@
    "gapRanks": 56.5,
    "dimensions": 3
   },
-  "posuje": {
+  "posusje": {
    "conditionsRank": 1936.5,
    "accumulationRank": 4228,
    "conditionsPct": 45.21,
@@ -27139,7 +27139,7 @@
    "gapRanks": 589.5,
    "dimensions": 3
   },
-  "povaska-bystrica": {
+  "povazska-bystrica": {
    "conditionsRank": 2157.5,
    "accumulationRank": 3863,
    "conditionsPct": 50.37,
@@ -27328,7 +27328,7 @@
    "gapRanks": -110.5,
    "dimensions": 3
   },
-  "prostjov": {
+  "prostejov": {
    "conditionsRank": 1633.0,
    "accumulationRank": 2482,
    "conditionsPct": 38.12,
@@ -27355,7 +27355,7 @@
    "gapRanks": -396.0,
    "dimensions": 3
   },
-  "przemyl": {
+  "przemysl": {
    "conditionsRank": 2143.0,
    "accumulationRank": 3450,
    "conditionsPct": 50.04,
@@ -27382,7 +27382,7 @@
    "gapRanks": -499.5,
    "dimensions": 3
   },
-  "puawy": {
+  "pulawy": {
    "conditionsRank": 2169.5,
    "accumulationRank": 3369,
    "conditionsPct": 50.65,
@@ -28165,7 +28165,7 @@
    "gapRanks": -2808.0,
    "dimensions": 3
   },
-  "reia": {
+  "resita": {
    "conditionsRank": 2579.0,
    "accumulationRank": 2657,
    "conditionsPct": 60.22,
@@ -28327,7 +28327,7 @@
    "gapRanks": 2225.0,
    "dimensions": 3
   },
-  "ribnia": {
+  "ribnita": {
    "conditionsRank": 2662.0,
    "accumulationRank": 3824,
    "conditionsPct": 62.16,
@@ -28417,7 +28417,7 @@
    "gapRanks": -2508.0,
    "dimensions": 3
   },
-  "ringkbing-skjern": {
+  "ringkobing-skjern": {
    "conditionsRank": 140.5,
    "accumulationRank": 2569,
    "conditionsPct": 3.26,
@@ -28606,7 +28606,7 @@
    "gapRanks": 3670.5,
    "dimensions": 3
   },
-  "rnak": {
+  "sirnak": {
    "conditionsRank": 4003.5,
    "accumulationRank": 1985,
    "conditionsPct": 93.49,
@@ -28615,7 +28615,7 @@
    "gapRanks": 2018.5,
    "dimensions": 3
   },
-  "rnne": {
+  "ronne": {
    "conditionsRank": 170.0,
    "accumulationRank": 4065,
    "conditionsPct": 3.95,
@@ -28759,7 +28759,7 @@
    "gapRanks": -1548.5,
    "dimensions": 3
   },
-  "rogaka-slatina": {
+  "rogaska-slatina": {
    "conditionsRank": 1021.0,
    "accumulationRank": 4287,
    "conditionsPct": 23.83,
@@ -28975,7 +28975,7 @@
    "gapRanks": -959.5,
    "dimensions": 3
   },
-  "ruomberok": {
+  "ruzomberok": {
    "conditionsRank": 1976.0,
    "accumulationRank": 2666,
    "conditionsPct": 46.13,
@@ -30523,7 +30523,7 @@
    "gapRanks": -2265.0,
    "dimensions": 3
   },
-  "scorniceti": {
+  "scornicesti": {
    "conditionsRank": 2629.0,
    "accumulationRank": 4289,
    "conditionsPct": 61.39,
@@ -30568,7 +30568,7 @@
    "gapRanks": -855.0,
    "dimensions": 3
   },
-  "seana": {
+  "sezana": {
    "conditionsRank": 1331.0,
    "accumulationRank": 4271,
    "conditionsPct": 31.07,
@@ -30838,7 +30838,7 @@
    "gapRanks": -857.0,
    "dimensions": 3
   },
-  "shahr-e-bbak": {
+  "shahr-e-babak": {
    "conditionsRank": 2664.0,
    "accumulationRank": 2493,
    "conditionsPct": 62.21,
@@ -31666,7 +31666,7 @@
    "gapRanks": -386.0,
    "dimensions": 3
   },
-  "snderborg": {
+  "sonderborg": {
    "conditionsRank": 1200.0,
    "accumulationRank": 2599,
    "conditionsPct": 28.01,
@@ -32368,7 +32368,7 @@
    "gapRanks": -1261.5,
    "dimensions": 3
   },
-  "streni": {
+  "straseni": {
    "conditionsRank": 2482.0,
    "accumulationRank": 2789,
    "conditionsPct": 57.95,
@@ -32611,7 +32611,7 @@
    "gapRanks": -424.5,
    "dimensions": 3
   },
-  "supsk": {
+  "slupsk": {
    "conditionsRank": 1578.5,
    "accumulationRank": 2268,
    "conditionsPct": 36.85,
@@ -32701,7 +32701,7 @@
    "gapRanks": 319.5,
    "dimensions": 3
   },
-  "suwaki": {
+  "suwalki": {
    "conditionsRank": 1787.5,
    "accumulationRank": 1318,
    "conditionsPct": 41.73,
@@ -33124,7 +33124,7 @@
    "gapRanks": 1037.0,
    "dimensions": 3
   },
-  "tam-k": {
+  "tam-ky": {
    "conditionsRank": 2941.5,
    "accumulationRank": 2149,
    "conditionsPct": 68.69,
@@ -33304,7 +33304,7 @@
    "gapRanks": -2927.0,
    "dimensions": 3
   },
-  "targovite": {
+  "targoviste": {
    "conditionsRank": 3056.0,
    "accumulationRank": 2623,
    "conditionsPct": 71.36,
@@ -33322,7 +33322,7 @@
    "gapRanks": -630.5,
    "dimensions": 3
   },
-  "targu-mure": {
+  "targu-mures": {
    "conditionsRank": 3023.0,
    "accumulationRank": 1813,
    "conditionsPct": 70.59,
@@ -33547,7 +33547,7 @@
    "gapRanks": -2753.0,
    "dimensions": 3
   },
-  "tekirda": {
+  "tekirdag": {
    "conditionsRank": 2832.5,
    "accumulationRank": 1568,
    "conditionsPct": 66.14,
@@ -33583,7 +33583,7 @@
    "gapRanks": 228.5,
    "dimensions": 3
   },
-  "teliai": {
+  "telsiai": {
    "conditionsRank": 682.5,
    "accumulationRank": 2725,
    "conditionsPct": 15.92,
@@ -34024,7 +34024,7 @@
    "gapRanks": -433.5,
    "dimensions": 3
   },
-  "timioara": {
+  "timisoara": {
    "conditionsRank": 2772.5,
    "accumulationRank": 1118,
    "conditionsPct": 64.74,
@@ -34141,7 +34141,7 @@
    "gapRanks": -90.0,
    "dimensions": 3
   },
-  "tlaxcalaapizaco": {
+  "tlaxcala-apizaco": {
    "conditionsRank": 3510.5,
    "accumulationRank": 1933,
    "conditionsPct": 81.98,
@@ -34150,7 +34150,7 @@
    "gapRanks": 1577.5,
    "dimensions": 3
   },
-  "tnsberg": {
+  "tonsberg": {
    "conditionsRank": 435.5,
    "accumulationRank": 3700,
    "conditionsPct": 10.15,
@@ -35032,7 +35032,7 @@
    "gapRanks": -116.5,
    "dimensions": 3
   },
-  "tvroyri": {
+  "tvoroyri": {
    "conditionsRank": 8.0,
    "accumulationRank": 4310,
    "conditionsPct": 0.16,
@@ -35068,7 +35068,7 @@
    "gapRanks": 1446.5,
    "dimensions": 3
   },
-  "uak": {
+  "usak": {
    "conditionsRank": 3508.5,
    "accumulationRank": 3159,
    "conditionsPct": 81.93,
@@ -35167,7 +35167,7 @@
    "gapRanks": 2182.5,
    "dimensions": 3
   },
-  "uherske-hradit": {
+  "uherske-hradiste": {
    "conditionsRank": 2198.5,
    "accumulationRank": 1303,
    "conditionsPct": 51.33,
@@ -35176,7 +35176,7 @@
    "gapRanks": 895.5,
    "dimensions": 3
   },
-  "uice": {
+  "uzice": {
    "conditionsRank": 2855.5,
    "accumulationRank": 3835,
    "conditionsPct": 66.68,
@@ -36526,7 +36526,7 @@
    "gapRanks": -1587.5,
    "dimensions": 3
   },
-  "vng-tau": {
+  "vung-tau": {
    "conditionsRank": 3334.5,
    "accumulationRank": 1322,
    "conditionsPct": 77.87,
@@ -36661,7 +36661,7 @@
    "gapRanks": -2631.5,
    "dimensions": 3
   },
-  "vykov": {
+  "vyskov": {
    "conditionsRank": 1704.0,
    "accumulationRank": 3663,
    "conditionsPct": 39.78,
@@ -36697,7 +36697,7 @@
    "gapRanks": -3649.5,
    "dimensions": 3
   },
-  "wabrzych": {
+  "walbrzych": {
    "conditionsRank": 2110.0,
    "accumulationRank": 2115,
    "conditionsPct": 49.26,
@@ -37084,7 +37084,7 @@
    "gapRanks": -1643.5,
    "dimensions": 3
   },
-  "widnik": {
+  "swidnik": {
    "conditionsRank": 2099.5,
    "accumulationRank": 3794,
    "conditionsPct": 49.02,
@@ -37228,7 +37228,7 @@
    "gapRanks": -2754.0,
    "dimensions": 3
   },
-  "winoujcie": {
+  "swinoujscie": {
    "conditionsRank": 1339.5,
    "accumulationRank": 3717,
    "conditionsPct": 31.27,
@@ -37246,7 +37246,7 @@
    "gapRanks": 572.5,
    "dimensions": 3
   },
-  "wocawek": {
+  "wloclawek": {
    "conditionsRank": 2349.5,
    "accumulationRank": 2262,
    "conditionsPct": 54.86,
@@ -37390,7 +37390,7 @@
    "gapRanks": -1169.0,
    "dimensions": 3
   },
-  "wrocaw": {
+  "wroclaw": {
    "conditionsRank": 2748.0,
    "accumulationRank": 343,
    "conditionsPct": 64.17,
@@ -38020,7 +38020,7 @@
    "gapRanks": -1594.0,
    "dimensions": 3
   },
-  "zacatecasguadalupe": {
+  "zacatecas-guadalupe": {
    "conditionsRank": 2585.5,
    "accumulationRank": 1888,
    "conditionsPct": 60.37,
@@ -38101,7 +38101,7 @@
    "gapRanks": -474.5,
    "dimensions": 3
   },
-  "zalu": {
+  "zalau": {
    "conditionsRank": 2770.0,
    "accumulationRank": 3940,
    "conditionsPct": 64.68,
@@ -38119,7 +38119,7 @@
    "gapRanks": 2049.5,
    "dimensions": 3
   },
-  "zamo": {
+  "zamosc": {
    "conditionsRank": 2093.0,
    "accumulationRank": 3344,
    "conditionsPct": 48.87,

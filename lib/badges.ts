@@ -518,7 +518,7 @@ const _NAMED_MEGAREGIONS: {
     slug: "silesian-industrial-belt",
     displayName: "Silesian Industrial Belt",
     leadSlug: "krakow",
-    memberSlugs: ["krakow", "upper-silesian", "czstochowa", "owicim", "ostrava", "karvina", "zawiercie"],
+    memberSlugs: ["krakow", "upper-silesian", "czestochowa", "oswiecim", "ostrava", "karvina", "zawiercie"],
     extraSatellites: ["Katowice", "Gliwice", "Sosnowiec", "Bytom", "Tychy", "Bielsko-Biała"],
   },
   {
@@ -574,7 +574,7 @@ const _NAMED_MEGAREGIONS: {
     slug: "southeast-vietnam",
     displayName: "Southeast Vietnam",
     leadSlug: "ho-chi-minh-city",
-    memberSlugs: ["ho-chi-minh-city", "vng-tau"],
+    memberSlugs: ["ho-chi-minh-city", "vung-tau"],
     extraSatellites: ["Biên Hòa", "Thủ Dầu Một", "Long Thành", "Phan Thiết", "Mỹ Tho"],
   },
   {

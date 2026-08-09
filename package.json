@@ -11,11 +11,12 @@
     "typecheck": "tsc --noEmit",
     "check:client-imports": "node scripts/check-client-imports.mjs",
     "check:public-data": "node scripts/check-public-data.mjs",
+    "check:slug-drift": "node scripts/check-slug-drift.mjs",
     "check:table-scroll": "node scripts/check-table-scroll.mjs",
     "check:live-data": "node scripts/check-live-data.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
-    "verify": "npm run typecheck && npm run check:client-imports && npm run check:public-data && npm run check:table-scroll && npm run check:live-data && npm run test && next build --webpack",
+    "verify": "npm run typecheck && npm run check:client-imports && npm run check:public-data && npm run check:slug-drift && npm run check:table-scroll && npm run check:live-data && npm run test && next build --webpack",
     "deploy-status": "node scripts/deploy-status.mjs"
   },
   "dependencies": {

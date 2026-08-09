@@ -872,7 +872,7 @@
 "cap": 246600000000.0,
 "country": "United States",
 "metro": "Bloomington–Normal",
-"metroSlug": "bloomingtonnormal",
+"metroSlug": "bloomington-normal",
 "source": "Private"
 },
 {
@@ -20192,7 +20192,7 @@
 "cap": 12851241659.0,
 "country": "Switzerland",
 "metro": "Olten–Zofingen",
-"metroSlug": "oltenzofingen",
+"metroSlug": "olten-zofingen",
 "source": "Public"
 },
 {
@@ -21182,7 +21182,7 @@
 "cap": 12167611645.0,
 "country": "Switzerland",
 "metro": "Biel/Bienne",
-"metroSlug": "bielbienne",
+"metroSlug": "biel-bienne",
 "source": "Public"
 },
 {
@@ -32472,7 +32472,7 @@
 "cap": 6582202026.0,
 "country": "Denmark",
 "metro": "Ringkøbing-Skjern",
-"metroSlug": "ringkbing-skjern",
+"metroSlug": "ringkobing-skjern",
 "source": "Public"
 },
 {
@@ -41482,7 +41482,7 @@
 "cap": 4319187907.0,
 "country": "Switzerland",
 "metro": "Olten–Zofingen",
-"metroSlug": "oltenzofingen",
+"metroSlug": "olten-zofingen",
 "source": "Public"
 },
 {
@@ -47212,7 +47212,7 @@
 "cap": 3375514218.0,
 "country": "Poland",
 "metro": "Oświęcim",
-"metroSlug": "owicim",
+"metroSlug": "oswiecim",
 "source": "Public"
 },
 {
@@ -56582,7 +56582,7 @@
 "cap": 2261665917.0,
 "country": "Poland",
 "metro": "Wrocław",
-"metroSlug": "wrocaw",
+"metroSlug": "wroclaw",
 "source": "Public"
 },
 {

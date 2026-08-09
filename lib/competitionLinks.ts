@@ -11,7 +11,7 @@
 const COMP_TO_HUB: Record<string, string> = {
   "fifa-world-cup": "/teams/national/tournaments/world-cup#champions",
   "uefa-european-championship": "/teams/national/tournaments/euros#champions",
-  "copa-am-rica": "/teams/national/tournaments/copa-america#champions",
+  "copa-america": "/teams/national/tournaments/copa-america#champions",
   "africa-cup-of-nations": "/teams/national/tournaments/afcon#champions",
   "afc-asian-cup": "/teams/national/tournaments/asian-cup#champions",
   "concacaf-championship-gold-cup": "/teams/national/tournaments/gold-cup#champions",
