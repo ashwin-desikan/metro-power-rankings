@@ -155,6 +155,10 @@ export default async function ActivityPage() {
               <Link href="/updates" className="text-[var(--accent)] hover:underline">
                 release notes
               </Link>
+              . For when each job is scheduled to run next, see the{" "}
+              <Link href="/refresh-schedule" className="text-[var(--accent)] hover:underline">
+                refresh schedule
+              </Link>
               .
             </p>
             {entries.length > 0 && (
