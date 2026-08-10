@@ -148,6 +148,29 @@ class Workbook:
             raise KeyError(f"workbook {self.path.name} has no sheet {name!r}") from exc
 
 
+def from_openpyxl(wb, xlsx_path: Path, sheets: Iterable[str] = REQUIRED_SHEETS) -> Workbook:
+    """Materialise from a workbook someone else already opened.
+
+    extract.py holds one read_only handle for the whole ETL. Opening a second
+    one just for the score would add ~12s to every run for no benefit, so the
+    engine borrows the caller's. Read-only worksheets are forward-only cursors,
+    which is why each sheet is re-fetched from `wb` before iterating.
+    """
+    wanted = list(sheets)
+    missing = [s for s in wanted if s not in wb.sheetnames]
+    if missing:
+        raise KeyError(f"{Path(xlsx_path).name}: missing sheet(s) {missing}")
+    out: Dict[str, Sheet] = {}
+    header_rows: List[Sequence[Any]] = []
+    for name in wanted:
+        first = SHEET_FIRST_ROW.get(name, 2)
+        if name == "Metro Areas":
+            header_rows = [r for r in wb[name].iter_rows(min_row=1, max_row=3, values_only=True)]
+        rows = [r for r in wb[name].iter_rows(min_row=first, values_only=True)]
+        out[name] = Sheet(name, rows)
+    return Workbook(out, Path(xlsx_path), header_rows)
+
+
 def load(xlsx_path: Path, sheets: Iterable[str] = REQUIRED_SHEETS) -> Workbook:
     wanted = list(sheets)
     wb = openpyxl.load_workbook(str(xlsx_path), read_only=True, data_only=True)

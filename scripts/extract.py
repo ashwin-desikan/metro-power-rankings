@@ -158,10 +158,61 @@ def build_country_continent_map(wb):
     return out
 
 
-def extract_metros(wb):
+def build_score_index(wb, xlsx_path):
+    """Score every metro in Python, replacing the workbook's cached column BG.
+
+    Until 2026-08-10 the score was read straight out of BG. That made Excel a
+    hard dependency of every data refresh: the ETL read a CACHED value, so any
+    input that changed without Excel opening left the site serving a score
+    computed from data it was no longer displaying. It happened on 2026-08-09
+    and went unnoticed for a day.
+
+    Now the score is computed here from the same source sheets the formula
+    reads. BG stays in the workbook as a cross-check, and check:score-parity
+    reports when the two disagree - which, until Excel next recalculates, they
+    legitimately will.
+
+    METRO_SCORE_SOURCE=workbook restores the old behaviour. It exists so the
+    cutover could be A/B'd against the previous output, and so there is a way
+    back if the engine ever misbehaves in production. Remove it once the
+    workbook's BG column is retired.
+    """
+    if os.environ.get("METRO_SCORE_SOURCE", "engine").lower() == "workbook":
+        print("  score: reading cached BG from the workbook (METRO_SCORE_SOURCE=workbook)")
+        return None
+    # extract.py is always run as a script, so scripts/ is already sys.path[0]
+    # and the package resolves. Belt and braces for anyone importing it.
+    _here = str(Path(__file__).resolve().parent)
+    if _here not in sys.path:
+        sys.path.insert(0, _here)
+    from metro_score import sources as _src, score as _score, weights as _w
+    engine = _score.Engine(_src.from_openpyxl(wb, Path(xlsx_path)), _w.load())
+    # Keyed the way extract_metros names a metro (safe_str, which strips), NOT
+    # by the engine's internal join key, which is deliberately unstripped to
+    # match Excel. Getting this wrong would silently fall back to the cached BG
+    # for the affected metro, so a miss is reported rather than swallowed.
+    index, drift = {}, []
+    for name, _k, cached, computed, _terms, _cols in engine.rows():
+        index[name.strip().lower()] = computed
+        if abs(computed - cached) > 1e-9:
+            drift.append((abs(computed - cached), name, cached, computed))
+    drift.sort(reverse=True)
+    print(f"  score: computed in Python for {len(index):,} metros")
+    if drift:
+        print(f"  score: {len(drift)} differ from the workbook's cached BG "
+              f"(stale until Excel recalculates; the computed value is the one used)")
+        for d, name, cached, computed in drift[:10]:
+            print(f"           {name:<30} BG {cached:12.6f} -> {computed:12.6f}  (+{computed - cached:.6f})")
+        if len(drift) > 10:
+            print(f"           ... and {len(drift) - 10} more")
+    return index
+
+
+def extract_metros(wb, score_index=None):
     """Extract main metro data from the Metro Areas sheet."""
     ws = wb["Metro Areas"]
     metros = []
+    unscored = []
     # Derive continent from the country join rather than trusting Metro
     # Areas col 41, which has hundreds of stale or wrong values (e.g.
     # Mangaluru / International Falls / Shima tagged 'Europe'). The
@@ -172,9 +223,17 @@ def extract_metros(wb):
     for row in ws.iter_rows(min_row=4, values_only=True):
         v = list(row)
         name = safe_str(v[5])
+        # Column BG is the workbook's cached score. The engine recomputes it
+        # from the same source sheets; see build_score_index().
         score = safe_float(v[58])
         if not name:
             continue
+        if score_index is not None:
+            computed = score_index.get(name.strip().lower())
+            if computed is None:
+                unscored.append(name)
+            else:
+                score = computed
 
         pop = safe_int(v[9])
         lat = safe_float(v[63])
@@ -237,6 +296,14 @@ def extract_metros(wb):
         if wiki_url:
             metro['wikipediaUrl'] = wiki_url
         metros.append(metro)
+
+    if unscored:
+        # A miss means the engine and this loop disagree about a metro's name,
+        # and the metro quietly kept its stale cached score. Loud on purpose.
+        raise SystemExit(
+            f"ERROR: the score engine returned no value for {len(unscored)} metro(s): "
+            f"{unscored[:5]}{' ...' if len(unscored) > 5 else ''}"
+        )
 
     # Sort by score descending and assign global rank
     metros.sort(key=lambda x: x['score'], reverse=True)
@@ -1411,7 +1478,8 @@ def main():
 
     # Extract all data
     print("Extracting metro data...")
-    metros = extract_metros(wb)
+    score_index = build_score_index(wb, xlsx_path)
+    metros = extract_metros(wb, score_index)
     print(f"  {len(metros)} metros")
 
     print("Extracting teams...")

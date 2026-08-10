@@ -20,6 +20,7 @@ report, do not assume the direction.
 from __future__ import annotations
 
 import argparse
+import json
 import math
 import sys
 import time
@@ -33,7 +34,25 @@ else:
 
 REPO = Path(__file__).resolve().parent.parent.parent
 DEFAULT_XLSX = REPO / "MetroAreas.xlsx"
+BASELINE = REPO / "scripts" / "score-drift-baseline.json"
 TOLERANCE = 1e-9
+# The baseline stores values to six places, so matching one needs a looser
+# comparison than the parity tolerance itself.
+BASELINE_TOL = 1e-5
+
+
+def load_baseline(path: Path):
+    """Metros already known to differ from the workbook's cached BG.
+
+    A ratchet, same discipline as scripts/slug-baseline.json and the
+    check:skyscrapers baseline: known drift passes, NEW drift fails, and the
+    list only ever shrinks. Every entry carries the reason it is there, because
+    a baseline without a reason is just a suppressed test.
+    """
+    if not path.exists():
+        return {}
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    return {e["metro"]: e for e in raw.get("entries", [])}
 
 
 # --------------------------------------------------------------------- self-test
@@ -180,21 +199,36 @@ def run_parity(xlsx: Path, tolerance: float, limit: int, explain: str) -> int:
         print(f"parity: no metro named {explain!r}", file=sys.stderr)
         return 2
 
-    diffs = []
+    base = load_baseline(BASELINE)
+    diffs, known = [], []
     worst = (0.0, "")
     for name, _k, cached, got, _terms, _cols in rows:
         d = abs(got - cached)
         if d > worst[0]:
             worst = (d, name)
-        if d > tolerance:
+        if d <= tolerance:
+            continue
+        b = base.get(name)
+        if (b and abs(b.get("workbook", 1e9) - cached) < BASELINE_TOL
+                and abs(b.get("engine", 1e9) - got) < BASELINE_TOL):
+            known.append((d, name, cached, got, b.get("note", "")))
+        else:
             diffs.append((d, name, cached, got))
     diffs.sort(reverse=True)
+    known.sort(reverse=True)
 
     print(f"metro score parity  ({xlsx.name})")
     print(f"  metros          {len(rows):,}")
     print(f"  load            {load_s:5.1f}s   compute {calc_s:4.1f}s")
     print(f"  worst |diff|    {worst[0]:.3e}  ({worst[1]})")
     print(f"  over tolerance  {len(diffs):,}  (tolerance {tolerance:g})")
+    if known:
+        print(f"  known drift     {len(known):,}  (in {BASELINE.name}, allowed)")
+        for d, name, cached, got, note in known:
+            print(f"    {name:<28} workbook {cached:12.6f}  engine {got:12.6f}   {note}")
+    resolved = [m for m in base if not any(n == m for _d, n, *_ in known)]
+    if resolved:
+        print(f"  RESOLVED, remove from {BASELINE.name}: {', '.join(sorted(resolved))}")
 
     odd = sources.suspicious_keys(wb, (k for _n, k, *_ in rows))
     if odd:
@@ -211,7 +245,11 @@ def run_parity(xlsx: Path, tolerance: float, limit: int, explain: str) -> int:
             print(f"    ... and {len(diffs) - limit:,} more")
         return 1
 
-    print("\n  PASS - the engine reproduces every cached Score in the workbook.")
+    if known:
+        print(f"\n  PASS - every Score matches the workbook except {len(known)} baselined"
+              f" metro(s) above.")
+    else:
+        print("\n  PASS - the engine reproduces every cached Score in the workbook.")
     return 0
 
 
