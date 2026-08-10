@@ -11,18 +11,5 @@
     "Delete the entry then. Do not add an entry without recording why."
   ],
   "recorded": "2026-08-10",
-  "entries": [
-    {
-      "metro": "Osnabrück",
-      "workbook": 0.597280,
-      "engine": 0.847280,
-      "note": "2026-08-10 whitespace fix: one 2nd-tier club recovered"
-    },
-    {
-      "metro": "Panevežys",
-      "workbook": 0.291509,
-      "engine": 0.541509,
-      "note": "2026-08-10 whitespace fix: one 1st-tier club recovered"
-    }
-  ]
+  "entries": []
 }
