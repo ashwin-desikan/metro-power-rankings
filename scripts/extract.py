@@ -263,6 +263,7 @@ def extract_metros(wb, score_index=None):
             'region': region,
             'continent': country_continent.get(safe_str(v[0])) or safe_str(v[41]),
             'score': round(score, 1),
+            '_scoreFull': score,  # sort key only; deleted after ranking
             'lat': lat,
             'lon': lon,
             'primaryCity': safe_str(v[61]),
@@ -305,10 +306,18 @@ def extract_metros(wb, score_index=None):
             f"{unscored[:5]}{' ...' if len(unscored) > 5 else ''}"
         )
 
-    # Sort by score descending and assign global rank
-    metros.sort(key=lambda x: x['score'], reverse=True)
+    # Sort by the FULL-PRECISION score descending and assign global rank; the
+    # displayed score stays rounded to 1dp. Sorting on the rounded value made
+    # ties out of every 0.1-wide bucket, so ~3,000 metros held whatever rank
+    # the workbook's ROW ORDER gave them (stable sort), and re-sorting the
+    # sheet in Excel silently reshuffled the site. Full precision has 4,311
+    # distinct values across 4,314 metros, so rank no longer depends on row
+    # order. Measured before the change (2026-08-10): 2,993 ranks move, max
+    # displacement 892, zero slugs move, zero displayed scores change.
+    metros.sort(key=lambda x: x['_scoreFull'], reverse=True)
     for i, m in enumerate(metros):
         m['rank'] = i + 1
+        del m['_scoreFull']
 
     # Resolve slug collisions HERE, before anything downstream keys off a slug.
     # Two metros can transliterate to the same slug — Kochi/Kōchi,
