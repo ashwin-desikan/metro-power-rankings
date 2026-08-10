@@ -1,13 +1,55 @@
 {
-  "generatedAt": "2026-08-09",
-  "count": 591,
+  "generatedAt": "2026-08-10",
+  "count": 597,
   "entries": [
+    {
+      "date": "2026-08-10",
+      "category": "data",
+      "hub": null,
+      "text": "Data refreshed — Football.",
+      "commit": "4b1f4697e"
+    },
     {
       "date": "2026-08-09",
       "category": "data",
       "hub": null,
-      "text": "Data refreshed — Football.",
-      "commit": "cf8778ceb"
+      "text": "Data refreshed — Football, Basketball, Leaders, Billionaires, and 2 more.",
+      "commit": "629c54363"
+    },
+    {
+      "date": "2026-08-09",
+      "category": "hub",
+      "hub": "Rankings",
+      "text": "Show WHEN each skyline was built, not just how big it is.",
+      "commit": "3b9726e88"
+    },
+    {
+      "date": "2026-08-09",
+      "category": "hub",
+      "hub": null,
+      "text": "142 metros and 6 competitions get correct URLs, plus a drift guard.",
+      "commit": "c72d73ae6"
+    },
+    {
+      "date": "2026-08-09",
+      "category": "hub",
+      "hub": "Site Activity",
+      "text": "Gate /activity behind its own passphrase, separate from the Mission Control panel.",
+      "commit": "07c13b47f"
+    },
+    {
+      "date": "2026-08-09",
+      "category": "hub",
+      "hub": "Site Activity",
+      "text": "Link to the refresh schedule calendar.",
+      "commit": "8367f8547"
+    },
+    {
+      "date": "2026-08-09",
+      "category": "new-hub",
+      "hub": "Refresh Schedule",
+      "text": "New hub: Refresh Schedule.",
+      "commit": "7793bf12f"
     },
     {
       "date": "2026-08-08",
