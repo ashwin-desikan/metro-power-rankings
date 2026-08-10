@@ -1,24 +1,6 @@
 {
-  "generated_at": "2026-08-10T06:28:19.068602+00:00",
+  "generated_at": "2026-08-10T07:28:39.787416+00:00",
   "jobs": [
-    {
-      "id": "feed-monitor",
-      "label": "Feed shape monitor",
-      "schedule_text": "Daily at 07:20 UTC",
-      "cadence": "daily",
-      "times": [
-        "07:20"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-10T07:20:00+00:00",
-      "last_run": {
-        "date": "2026-08-09",
-        "status": "ok",
-        "slot": "2026-08-09T07:20:00+00:00"
-      }
-    },
     {
       "id": "mlb-sim",
       "label": "MLB playoff odds",
@@ -220,6 +202,24 @@
         "date": "2026-08-04",
         "status": "seeded",
         "slot": "2026-08-04T07:05:00+00:00"
+      }
+    },
+    {
+      "id": "feed-monitor",
+      "label": "Feed shape monitor",
+      "schedule_text": "Daily at 07:20 UTC",
+      "cadence": "daily",
+      "times": [
+        "07:20"
+      ],
+      "weekdays": [],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-11T07:20:00+00:00",
+      "last_run": {
+        "date": "2026-08-10",
+        "status": "ok",
+        "slot": "2026-08-10T07:20:00+00:00"
       }
     },
     {
