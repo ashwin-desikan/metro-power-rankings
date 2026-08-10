@@ -18,6 +18,14 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-10",
+    headline: "Building heights now read in feet as well as metres",
+    items: [
+      "Every supertall structure on a metro page now carries its height in feet beside metres, with feet given its own column in the table.",
+      "The thresholds read in both systems too, on metro pages and in the methodology: 150m alongside 492ft, 300m alongside 984ft.",
+    ],
+  },
+  {
     date: "2026-08-09",
     headline: "Metros with accented names get their real addresses back",
     items: [

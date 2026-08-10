@@ -143,8 +143,8 @@ export const DIMENSIONS: Dimension[] = [
     weight: "log(150m+ count) × 5.7",
     shape: "log-scaled, high weight",
     rationale:
-      "Buildings over 150m are a near-universal indicator of capital concentration and land-value pressure. The high multiplier reflects how hard this metric is to fake. Building tall requires sustained economic and political consensus.",
-    source: "Council on Tall Buildings and Urban Habitat (CTBUH) via skyscrapercenter.com. 150m+ buildings only; tier counts (150m+ / 200m+ / 300m+) preserved per metro.",
+      "Buildings over 150m (492ft) are a near-universal indicator of capital concentration and land-value pressure. The high multiplier reflects how hard this metric is to fake. Building tall requires sustained economic and political consensus.",
+    source: "Council on Tall Buildings and Urban Habitat (CTBUH) via skyscrapercenter.com. 150m+ (492ft+) buildings only; tier counts (150m / 492ft, 200m / 656ft, 300m / 984ft) preserved per metro.",
   },
   {
     id: "luxury-stars",

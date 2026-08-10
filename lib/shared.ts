@@ -76,6 +76,31 @@ export function fmtKm(km: number): string {
   return `${Math.round(km).toLocaleString()} km (${Math.round(km * 0.621371).toLocaleString()} mi)`;
 }
 
+// Building/tower heights get their own pair rather than reusing fmtElevation:
+// tower data carries one decimal (extract.py rounds to 0.1 m) and fmtElevation
+// rounds metres to whole numbers, which would silently turn 442.1 into 442.
+const FT_PER_M = 3.28084;
+
+export function fmtHeightM(m: number): string {
+  return m.toLocaleString(undefined, { maximumFractionDigits: 1 });
+}
+
+export function fmtHeightFt(m: number): string {
+  return Math.round(m * FT_PER_M).toLocaleString();
+}
+
+/** Single-string form for inline prose and mobile cards: `442.1 m (1,451 ft)`. */
+export function fmtHeight(m: number): string {
+  return `${fmtHeightM(m)} m (${fmtHeightFt(m)} ft)`;
+}
+
+/** Threshold labels such as "150m+ / 492ft+". Exact conversion, not rounded to
+ *  the nearest ten: 984 ft is the figure readers of this subject expect for
+ *  300 m, and 980 reads as sloppy. */
+export function fmtHeightThreshold(m: number): string {
+  return `${m}m+ / ${Math.round(m * FT_PER_M).toLocaleString()}ft+`;
+}
+
 // ISO 3166-1 alpha-2 -> flag emoji (regional indicator pair). Empty string for
 // codes that aren't two ASCII letters (e.g. UK home nations, disputed states).
 export function flagEmoji(iso2: string | null | undefined): string {

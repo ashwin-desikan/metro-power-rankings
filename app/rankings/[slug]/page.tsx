@@ -37,6 +37,7 @@ import {
   topTeamAnchorId,
 } from "@/lib/topTeams";
 import { computeTier } from "@/lib/tiers";
+import { fmtHeight, fmtHeightM, fmtHeightFt, fmtHeightThreshold } from "@/lib/shared";
 import { normalizeSport, sportIcon, leagueIcon } from "@/lib/sportLabels";
 import { getBaseballLeagueByName } from "@/lib/allTeams";
 import { getCwsForSchool } from "@/lib/cws";
@@ -1311,7 +1312,8 @@ export default async function MetroDetailPage({ params }: PageProps) {
                               </div>
                               <p className="text-xs text-[var(--text-muted)] mt-2">
                                 Completion decade of {sky.datedCount?.toLocaleString()} of{" "}
-                                {sky.over150m.toLocaleString()} buildings at 150m+ with a known year.
+                                {sky.over150m.toLocaleString()} buildings at {fmtHeightThreshold(150)} with a
+                                known year.
                               </p>
                             </div>
                           );
@@ -1319,7 +1321,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                         {towers.length > 0 && (
                           <details className={COLLAPSIBLE_CARD_CLASS}>
                             <summary className={COLLAPSIBLE_SUMMARY_CLASS}>
-                              <span className="font-semibold text-[var(--text)]">Supertall Structures (350m+)</span>
+                              <span className="font-semibold text-[var(--text)]">Supertall Structures ({fmtHeightThreshold(350)})</span>
                               <span className="text-sm text-[var(--text-muted)]">
                                 {towers.length} {towers.length === 1 ? "structure" : "structures"}
                               </span>
@@ -1332,7 +1334,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                                     <p className="font-medium text-[var(--text)]">{t.name}</p>
                                     <div className="mt-0.5 flex flex-wrap items-center gap-x-3 text-xs text-[var(--text-muted)] tabular-nums" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                                       <span className="font-sans">{t.city}</span>
-                                      <span>{t.heightM.toLocaleString(undefined, { maximumFractionDigits: 1 })} m</span>
+                                      <span>{fmtHeight(t.heightM)}</span>
                                       <span>{t.yearBuilt ?? "\u2014"}</span>
                                     </div>
                                   </div>
@@ -1346,6 +1348,7 @@ export default async function MetroDetailPage({ params }: PageProps) {
                                       <th className="text-left font-medium px-4 py-2">Building</th>
                                       <th className="text-left font-medium px-4 py-2">City</th>
                                       <th className="text-right font-medium px-4 py-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Height (m)</th>
+                                      <th className="text-right font-medium px-4 py-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Height (ft)</th>
                                       <th className="text-right font-medium px-4 py-2" style={{ fontFamily: "'JetBrains Mono', monospace" }}>Year</th>
                                     </tr>
                                   </thead>
@@ -1355,7 +1358,10 @@ export default async function MetroDetailPage({ params }: PageProps) {
                                         <td className="px-4 py-2 font-medium text-[var(--text)]">{t.name}</td>
                                         <td className="px-4 py-2 text-[var(--text-muted)]">{t.city}</td>
                                         <td className="px-4 py-2 text-right text-[var(--text)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-                                          {t.heightM.toLocaleString(undefined, { maximumFractionDigits: 1 })}
+                                          {fmtHeightM(t.heightM)}
+                                        </td>
+                                        <td className="px-4 py-2 text-right text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+                                          {fmtHeightFt(t.heightM)}
                                         </td>
                                         <td className="px-4 py-2 text-right text-[var(--text-muted)]" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
                                           {t.yearBuilt ?? "\u2014"}
