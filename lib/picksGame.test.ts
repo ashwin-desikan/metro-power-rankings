@@ -156,6 +156,23 @@ describe("radar", () => {
     expect(rp("model").points).toBe(25);
     expect(rp("market").points).toBe(0);
   });
+
+  it("still grades a pick whose game later dropped out of the top five", () => {
+    // Seven market-carrying games; the picked game's gap is now the smallest,
+    // so radarGames excludes it, but the stored pick must still grade.
+    const nfl = [
+      nflGame({ event_id: "picked", result: "H", model: { pH: 0.62 }, market: { pH: 0.6 } }),
+      ...Array.from({ length: 6 }, (_, i) =>
+        nflGame({ event_id: `wide${i}`, model: { pH: 0.5 }, market: { pH: 0.8 } }),
+      ),
+    ];
+    expect(radarGames(nfl).some((e) => e.event_id === "picked")).toBe(false);
+    const g = gradeRadar(
+      [{ league: "nfl", season: "2026", event_key: "picked", mode: "radar", pick: "model", confidence: null, picked_at: "2026-09-09T10:00:00Z" }],
+      nfl,
+    );
+    expect(g).toEqual({ points: 25, wins: 1, losses: 0 });
+  });
 });
 
 describe("computeLeaderboard", () => {

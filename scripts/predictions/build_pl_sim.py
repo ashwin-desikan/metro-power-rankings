@@ -500,7 +500,7 @@ def percentile(posdist, sims, q):
 
 def parse_fd_results(rows):
     """E0 rows -> played matches [(home, away, hg, ag)] + results index
-    {(fd_home, fd_away): 'H'|'D'|'A'}."""
+    {(fd_home, fd_away): ('H'|'D'|'A', hg, ag)}."""
     played, results = [], {}
     for r in rows or []:
         try:
@@ -509,7 +509,8 @@ def parse_fd_results(rows):
             continue
         h, a = r["HomeTeam"].strip(), r["AwayTeam"].strip()
         played.append((hub_name(h), hub_name(a), hg, ag))
-        results[(h, a)] = r.get("FTR") or ("H" if hg > ag else "A" if ag > hg else "D")
+        ftr = r.get("FTR") or ("H" if hg > ag else "A" if ag > hg else "D")
+        results[(h, a)] = (ftr, hg, ag)
     return played, results
 
 
@@ -597,9 +598,14 @@ def grade_and_extend(ledger, results, upcoming, rates, mu, mkt_fix, today_iso):
             continue
         if kick_by_fixture.get((e["home"], e["away"])):
             e["kickoff"] = kick_by_fixture[(e["home"], e["away"])]
-        res = results.get((fd_name(e["home"]), fd_name(e["away"])))
-        if res:
+        got = results.get((fd_name(e["home"]), fd_name(e["away"])))
+        if got:
+            # (ftr, hg, ag) since the score string shipped; bare 'H'|'D'|'A'
+            # still accepted so old call sites and tests cannot break silently
+            res, score = (got, None) if isinstance(got, str) else (got[0], "%d-%d" % (got[1], got[2]))
             e["result"] = res
+            if score:
+                e["score"] = score
             e["graded_at"] = today_iso
             e["model_brier"] = round(brier((e["model"]["pH"], e["model"]["pD"], e["model"]["pA"]), res), 4)
             if e.get("market"):
@@ -799,6 +805,13 @@ def self_test():
     check("grade-brier", abs(graded[0]["model_brier"] - (0.09 + 0.04 + 0.01)) < 1e-6)
     rec = ledger_record(graded)
     check("record", rec["graded"] == 1 and rec["pick_correct"] == 1)
+    # tuple results (the parse_fd_results shape) carry the score string through
+    led_s = [{"date": "2026-08-21", "home": "Arsenal", "away": "Coventry City",
+              "home_slug": "arsenal", "away_slug": "coventry-city",
+              "model": {"pH": 0.7, "pD": 0.2, "pA": 0.1}, "pick": "H",
+              "predicted_at": "2026-08-20"}]
+    led_s = grade_and_extend(led_s, {("Arsenal", "Coventry"): ("H", 3, 1)}, [], rates, 1.4, {}, "2026-08-22")
+    check("grade-score-string", led_s[0]["result"] == "H" and led_s[0]["score"] == "3-1")
     # kickoff: ESPN date -> ISO UTC; carried on new entries and backfilled
     # onto ungraded ones (S and W are the rates fixture's two teams)
     check("kickoff-iso", kickoff_iso("2026-08-21T19:00Z") == "2026-08-21T19:00:00Z"
@@ -817,7 +830,7 @@ def self_test():
     if fails:
         print("SELF-TEST FAIL:", ", ".join(fails))
         sys.exit(1)
-    print("self-test OK (17 cases)")
+    print("self-test OK (18 cases)")
 
 
 def verify_teams():

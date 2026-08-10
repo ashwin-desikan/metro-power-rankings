@@ -71,9 +71,12 @@ function writeLocal(items: StoredPick[]) {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function mapUser(u: any): PickUser {
   const m = (u && u.user_metadata) || {};
+  // Never fall back to the full e-mail: display_name is world-readable on the
+  // leaderboard. The local part is what the person would recognise anyway.
+  const emailName = typeof u.email === "string" && u.email.includes("@") ? u.email.split("@")[0] : null;
   return {
     id: u.id,
-    name: m.full_name ?? m.name ?? u.email ?? null,
+    name: m.full_name ?? m.name ?? emailName,
     avatar: m.avatar_url ?? m.picture ?? null,
   };
 }

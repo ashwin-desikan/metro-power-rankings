@@ -177,18 +177,23 @@ export function radarVerdict(e: LedgerEntry): RadarSide | "push" | null {
   return "push";
 }
 
+/**
+ * Grade stored radar picks against ANY market-carrying ledger entry, not the
+ * current top-5: the top-5 is recomputed from live odds every refresh, so a
+ * pick made when a game was on the radar must not stop counting because the
+ * gaps reshuffled underneath it. The UI still only offers the current top-5;
+ * this only widens grading.
+ */
 export function gradeRadar(picks: StoredPick[], nfl: LedgerEntry[]): { points: number; wins: number; losses: number } {
-  const byKey = new Map<string, StoredPick>();
-  for (const p of picks) {
-    if (p.mode === "radar" && p.league === "nfl") byKey.set(p.event_key, p);
-  }
+  const byKey = new Map<string, LedgerEntry>();
+  for (const e of nfl) byKey.set(eventKey("nfl", e), e);
   let points = 0, wins = 0, losses = 0;
-  for (const e of radarGames(nfl)) {
-    const p = byKey.get(eventKey("nfl", e));
-    if (!p || !pickIsValid(p, e)) continue;
-    const v = radarVerdict(e);
-    if (v == null) continue;
-    if (v === "push") continue;
+  for (const p of picks) {
+    if (p.mode !== "radar" || p.league !== "nfl") continue;
+    const e = byKey.get(p.event_key);
+    if (!e || !pickIsValid(p, e)) continue;
+    const v = radarVerdict(e); // null without market or result; push scores nothing
+    if (v == null || v === "push") continue;
     if (p.pick === v) { points += RADAR_POINTS; wins++; }
     else losses++;
   }
