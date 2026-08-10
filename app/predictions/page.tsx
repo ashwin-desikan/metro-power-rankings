@@ -168,8 +168,8 @@ export default async function PredictionsPage() {
           <Link href="/teams/national#wc2026" className="inline-flex items-center gap-1.5 rounded-lg font-semibold text-sm px-4 py-2" style={{ backgroundColor: "var(--accent)", color: "#08080D" }}>
             The World Cup simulator <span aria-hidden>&rarr;</span>
           </Link>
-          <Link href="/play/beat-the-model.html" className="inline-flex items-center gap-1.5 rounded-lg border font-semibold text-sm px-4 py-2 hover:border-[var(--accent)] transition-colors" style={{ borderColor: "var(--border)", color: "var(--text)" }}>
-            Play Beat the Model <span aria-hidden>&rarr;</span>
+          <Link href="/play/picks" className="inline-flex items-center gap-1.5 rounded-lg border font-semibold text-sm px-4 py-2 hover:border-[var(--accent)] transition-colors" style={{ borderColor: "var(--border)", color: "var(--text)" }}>
+            Play Citizen of Nowhere Picks <span aria-hidden>&rarr;</span>
           </Link>
         </div>
       </section>

@@ -5,20 +5,20 @@ import TodayStrip from "./TodayStrip";
 export const metadata: Metadata = {
   title: "Games",
   description:
-    "Daily and endless games built from the Citizen of Nowhere data: Beat the Model against the Premier League and NFL simulators, Metro Globle, Metro and Sports immaculate grids, Metro Higher or Lower, and the football, cricket, baseball and NFL Rules Labs.",
+    "Daily and endless games built from the Citizen of Nowhere data: Citizen of Nowhere Picks against the Premier League and NFL models, Metro Globle, Metro and Sports immaculate grids, Metro Higher or Lower, and the football, cricket, baseball and NFL Rules Labs.",
   alternates: { canonical: "/play/arcade" },
 };
 
 type Section = "model" | "daily" | "endless" | "rules";
 type Game = { href: string; title: string; emoji: string; blurb: string; section: Section; static?: boolean };
 
-// Beat-the-Model cards: one per live prediction hub on /predictions. Add the
-// next league's card here when its model ships (CFB with the preseason poll,
-// UCL after the draw). The WC2026 edition retired with the tournament —
-// /play/beat-the-model.html stays reachable for locked cards, just unlisted.
+// Citizen of Nowhere Picks replaced the per-league Beat the Model cards on
+// 2026-08-10 (PICKEM-SPEC.md). The old static editions stay reachable for
+// locked cards, just unlisted — same retirement path as the WC2026 edition
+// (/play/beat-the-model.html). New leagues (CFB, MLB postseason, UCL) appear
+// inside /play/picks itself, not as new cards here.
 const GAMES: Game[] = [
-  { href: "/play/beat-the-model-pl.html", title: "Beat the Model: Premier League", emoji: "\u{26BD}", section: "model", blurb: "Your champion, a top-five dark horse, and a favourite to fall. Locks now, resolves across the 2026-27 season.", static: true },
-  { href: "/play/beat-the-model-nfl.html", title: "Beat the Model: NFL", emoji: "\u{1F3C8}", section: "model", blurb: "Your Super Bowl LXI champion, a playoff dark horse, and a favourite to fall. Locks now, resolves through the playoffs.", static: true },
+  { href: "/play/picks", title: "Citizen of Nowhere Picks", emoji: "\u{1F3AF}", section: "model", blurb: "Call every Premier League and NFL game blind, rank your confidence, and take a side on the Upset Radar. Beat the machine, week after week." },
   { href: "/play/metro-globle.html", title: "Metro Globle", emoji: "\u{1F30D}", section: "daily", blurb: "Guess the daily mystery metro on a world map from distance and direction. Six tries.", static: true },
   { href: "/play/metro-grid.html", title: "Metro Grid", emoji: "\u{1F7E9}", section: "daily", blurb: "An immaculate grid for metros: fill each square to fit both its row and column.", static: true },
   { href: "/play/sports-grid.html", title: "Sports Grid", emoji: "\u{1F3DF}\u{FE0F}", section: "daily", blurb: "An immaculate grid for teams: name a team for each sport-and-country square.", static: true },
@@ -32,7 +32,7 @@ const GAMES: Game[] = [
 ];
 
 const SECTIONS: { id: Section; title: string; note: string }[] = [
-  { id: "model", title: "Beat the Model", note: "Season-long calls against our simulators: lock a card, then watch the refreshed model grade it as the real season plays out." },
+  { id: "model", title: "Beat the model", note: "Weekly picks against our simulators: call the games blind, then watch the refreshed ledger grade you and the machine by the same rules." },
   { id: "daily", title: "Daily challenges", note: "A fresh puzzle every day, the same for everyone. Come back tomorrow for a new one." },
   { id: "endless", title: "Endless", note: "Play as long as your streak holds." },
   { id: "rules", title: "Learn the rules", note: "Interactive labs and quizzes for football, cricket and baseball, in kids and adults modes." },

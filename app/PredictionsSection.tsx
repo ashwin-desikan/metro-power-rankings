@@ -74,8 +74,8 @@ export default async function PredictionsSection() {
             </div>
           </Link>
 
-          {/* Beat the Model - live WC2026 example */}
-          <Link href="/play/beat-the-model.html" className="flex flex-col p-6 rounded-lg border transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]" style={CARD}>
+          {/* Citizen of Nowhere Picks - weekly pick'em against the models */}
+          <Link href="/play/picks" className="flex flex-col p-6 rounded-lg border transition-colors hover:border-[var(--accent)] hover:bg-[var(--bg-card-hover)]" style={CARD}>
             <div className="flex items-center justify-between mb-3">
               <span className="text-[11px] uppercase tracking-widest" style={{ ...MONO, color: "var(--text-muted)" }}>Play</span>
               <span className="flex items-center gap-1">
@@ -85,14 +85,14 @@ export default async function PredictionsSection() {
             </div>
             <div className="flex items-center gap-2.5 mb-2">
               <span className="text-2xl leading-none" aria-hidden>&#127919;</span>
-              <h3 className="text-lg font-bold">Beat the Model</h3>
+              <h3 className="text-lg font-bold">Citizen of Nowhere Picks</h3>
             </div>
             <p className="text-[13px] text-[var(--text-muted)] leading-relaxed">
-              Back the calls the simulator is least sure about and try to out-predict it. Live now for the
-              2026 World Cup; the league versions arrive with their hubs.
+              Call every game blind, rank your confidence, and take a side where the model and the market
+              disagree. The model plays its own card, graded by the same rules.
             </p>
             <div className="flex items-center justify-between mt-auto pt-3.5 border-t" style={{ borderColor: "var(--border)" }}>
-              <span className="text-xs" style={{ ...MONO, color: "var(--accent)" }}>World Cup 2026</span>
+              <span className="text-xs" style={{ ...MONO, color: "var(--accent)" }}>Premier League &middot; NFL</span>
               <span className="text-[var(--text-dim)]" aria-hidden>Play &rarr;</span>
             </div>
           </Link>

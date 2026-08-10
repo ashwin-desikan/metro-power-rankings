@@ -5230,3 +5230,49 @@ either of you hits the same thing.
 Nothing needed from either of you -- this is entirely mini-owned
 (dispatcher.py already had everything export_schedule.py needed) and
 entirely new surface (no existing page/lib touched). Commit 7793bf12f.
+
+## 2026-08-10 -- cloud -> windows+mini (Citizen of Nowhere Picks: pick'em v1 live, Beat the Model cards retired)
+
+Ashwin approved the pick'em plan (PICKEM-SPEC.md, repo root, decision-complete)
+and asked for Phases 1+2 in one rollout. Shipped in this commit:
+
+### What shipped
+
+- **`/play/picks`** (`app/play/picks/page.tsx` + `PicksClient.tsx`): weekly
+  pick'em on the PL and NFL prediction ledgers. Three modes: blind slate picks
+  (10 pts, PL three-way with draws first-class), confidence pool (slot value as
+  bonus), Upset Radar (top-5 |model-market| NFL games, +25 for siding with the
+  lower-Brier source). The model is the house leaderboard entry, graded by
+  identical rules from the ledger's own `pick` fields.
+- **`lib/picksGame.ts`** — pure scoring/grading logic, `lib/picksGame.test.ts`
+  (12 vitest cases) covers locking, draws, ties, streaks, radar Brier verdicts,
+  leaderboard aggregation. Grading NEVER computes results: it joins stored picks
+  against ledger entries the daily predictions workflow has already graded.
+- **Supabase** (project nmprqkmymrdknffwnuur): new `picks` + `pick_profiles`
+  tables, migration `citizen_of_nowhere_picks`. RLS ON with policies WRITTEN
+  (read-all/write-own; skydb_structures lesson applied). `picked_at` is stamped
+  by a SECURITY DEFINER trigger on every insert/update, so editing a pick after
+  its game locks pushes the stamp past the lock and the grader discards it.
+  Lock = 00:00 UTC on match date (ledgers carry dates, not kickoff times).
+- **Identity**: the /me Google sign-in (same Supabase project as `follows`),
+  useFollowing's skeleton — localStorage signed out (`con-picks-v1`), merge-up
+  on first sign-in via upsert with ignoreDuplicates (never restamps rows that
+  beat the lock).
+- **Card swaps**: arcade `model` section now carries one Citizen of Nowhere
+  Picks card; PL/NFL prediction hubs and the home PredictionsSection link to
+  /play/picks. Old beat-the-model*.html stay reachable unlisted (WC2026
+  retirement path).
+
+### For the mini / next session
+
+- **Nothing new to schedule.** The game reads `pl-predictions.json` /
+  `nfl-predictions.json` from GitHub raw client-side; the existing daily
+  predictions workflow is the whole grading pipeline.
+- **Backlog** (docs/BACKLOG-OPEN.md, new "Citizen of Nowhere Picks" section):
+  CFB ledger + league entry, MLB Postseason edition (series+games, October),
+  UCL after the draw, Season Locks fold-in, social layer, per-game kickoff
+  timestamps in the ledgers (upgrades the day-granularity lock).
+- **Untracked working files at repo root** (mine, from the prototype session):
+  `pickem-prototype.html`, `PICKEM-SPEC.md`, and an ephemeral
+  `public/pickem-prototype.html` on Ashwin's Windows clone only (NOT in git —
+  do not commit that one; public/ is a build path).

@@ -19,10 +19,12 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-08-10",
-    headline: "Building heights now read in feet as well as metres",
+    headline: "Citizen of Nowhere Picks: call the games, beat the model",
     items: [
-      "Every supertall structure on a metro page now carries its height in feet beside metres, with feet given its own column in the table.",
-      "The thresholds read in both systems too, on metro pages and in the methodology: 150m alongside 492ft, 300m alongside 984ft.",
+      "A new weekly pick'em replaces Beat the Model in the arcade. Call every Premier League and NFL game blind - the model's probabilities reveal only after you commit - then watch the season grade you both by the same rules.",
+      "Rank your calls in the confidence pool for bonus points, and take a side on the Upset Radar: the games where our model and the betting market disagree most.",
+      "Sign in with Google to join the global leaderboard; the model plays as the house entry, so there is always someone to beat.",
+      "Premier League matchweek one locks August 21. The NFL joins September 10; college football, the Champions League and an MLB postseason edition follow.",
     ],
   },
   {

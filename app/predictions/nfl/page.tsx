@@ -309,19 +309,20 @@ export default async function NflPredictionsPage() {
             </div>
           </section>
 
-          {/* Beat the model */}
+          {/* Citizen of Nowhere Picks */}
           <section className="mb-10 rounded-2xl border p-5 sm:p-6" style={{ borderColor: "var(--border)" }}>
-            <h2 className="text-2xl font-bold mb-2"><span aria-hidden>&#127919;</span> Beat the Model</h2>
+            <h2 className="text-2xl font-bold mb-2"><span aria-hidden>&#127919;</span> Citizen of Nowhere Picks</h2>
             <p className="text-sm text-[var(--text-muted)] max-w-3xl mb-4">
-              Back the calls the simulator is least sure about - your Super Bowl champion, a dark horse into
-              the playoffs, and a favourite to fall - and see whether you out-predict it across the season.
+              Call every game of the week blind, rank your confidence, and take a side on the Upset Radar -
+              the games where this model and the betting market disagree most. The model plays its own card,
+              graded by the same rules.
             </p>
             <Link
-              href="/play/beat-the-model-nfl.html"
+              href="/play/picks"
               className="inline-flex items-center gap-1.5 rounded-lg font-semibold text-sm px-4 py-2"
               style={{ backgroundColor: "var(--accent)", color: "#08080D" }}
             >
-              Play Beat the Model: NFL <span aria-hidden>&rarr;</span>
+              Play Citizen of Nowhere Picks <span aria-hidden>&rarr;</span>
             </Link>
           </section>
 

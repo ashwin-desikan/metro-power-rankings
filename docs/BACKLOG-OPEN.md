@@ -482,6 +482,59 @@ inaugural thinkpiece slate ships.
 not features, and the recorded strategic stance is reach over revenue. Needed: a deliberate
 decision to reverse that stance, or not. Everything in the revenue track is downstream of it.
 
+## Citizen of Nowhere Picks — later phases (added 2026-08-10)
+
+Phases 1-2 of PICKEM-SPEC.md (repo root, untracked) shipped 2026-08-10: `/play/picks`
+(blind PL/NFL slate, confidence pool, Upset Radar), `lib/picksGame.ts` + tests, Supabase
+`picks`/`pick_profiles` with RLS and a server-stamped `picked_at` trigger, Google sign-in
+via the /me flow, global leaderboard with the model as house entry. Items below are the
+remaining phases, in rollout order.
+
+### Per-game kickoff timestamps in the prediction ledgers
+The ledgers carry match dates, not kickoff times, so picks lock at 00:00 UTC on match day —
+up to ~20 hours early for US evening games. Emit a `kickoff` ISO timestamp per entry from
+`build_nfl_sim.py` (ESPN events carry it) and `build_pl_sim.py` (football-data fixtures),
+then tighten `lockTime()` in `lib/picksGame.ts` to read it with the date fallback.
+**Priority:** P1 — improves the core game everywhere, small builder change.
+
+### CFB league entry
+When the CFB model ships with the preseason poll, emit `cfb-predictions.json` in the NFL
+ledger shape (two-way, `event_id`, market lines where posted). Frontend is a config row in
+`LEAGUE_META` in `app/play/picks/PicksClient.tsx` plus the `league` check constraint already
+covering `'cfb'` in Supabase. Curate the slate to a ranked/featured subset — a 60-game
+Saturday is not a slate anyone finishes.
+**Priority:** P1 — season underway from late August.
+
+### MLB Postseason edition (decided: series + daily game picks, October)
+No regular-season MLB game (decided 2026-08-10). At the playoffs: a playoff-only ledger from
+`build_mlb_sim.py` (per-game entries, NFL shape) plus a series layer — lock the series winner
+before Game 1 for a bigger payout, then daily game picks at the standard 10. `mlb-sim.json`
+already carries pennant/WS odds for the model's series card. Needs a `series` mode value (or
+a `series:<round>:<matchup>` event_key convention) — the `picks` table's `mode` check
+constraint allows `('slate','radar')` today and needs `'series'` added by migration.
+**Priority:** P1 — hard deadline: MLB playoffs start early October.
+
+### UCL league entry
+After the draw: `ucl-predictions.json` in the PL three-way shape with two-leg awareness
+(a leg is a game; the tie is not a pick'em unit in v1). Config row + `'ucl'` already in the
+league check constraint.
+**Priority:** P2 — model itself is the prerequisite.
+
+### Season Locks (fold the old Beat the Model season card in)
+The retired static cards (`public/play/beat-the-model-*.html`, unlisted but reachable for
+locked cards) become a fourth mode inside /play/picks: lock champion / dark horse / faller
+before the season, graded from the sim tables (`pl-sim.json` / `nfl-sim.json`). Migrate or
+retire the localStorage cards from the static editions.
+**Priority:** P2 — next natural lock moment is the 2027-28 PL preseason; CFB/UCL entries
+could carry it sooner.
+
+### Social layer (deferred until the player base justifies it)
+Share-your-card images (OG endpoint per card), head-to-head rival links, private boards.
+Global-only leaderboard was an explicit decision (2026-08-10) — do not build friends
+filtering before there are friends to filter.
+**Priority:** P3.
+
+
 ## Audit note, 2026-08-07
 
 **Tallies.** 126 `###` items examined across 17 sections. 22 already carried a SHIPPED marker
