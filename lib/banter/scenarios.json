@@ -2,6 +2,7 @@
  {
   "id": "sydney-1983",
   "label": "🍺 Sydney front bar · Nov 1983",
+  "flag": "au",
   "date": "1983-11-15",
   "dateLong": "Tuesday 15 November 1983",
   "year": 1983,
@@ -43,6 +44,7 @@
  {
   "id": "boston-1986",
   "label": "🏀 Boston diner · June 1986",
+  "flag": "us",
   "date": "1986-06-12",
   "dateLong": "Thursday 12 June 1986",
   "year": 1986,
@@ -84,6 +86,7 @@
  {
   "id": "liverpool-1963",
   "label": "🎸 Cavern Club queue · Feb 1963",
+  "flag": "gb",
   "date": "1963-02-01",
   "dateLong": "Friday 1 February 1963",
   "year": 1963,
@@ -126,6 +129,7 @@
  {
   "id": "washington-1948",
   "label": "🗳️ Washington hotel bar · election day 1948",
+  "flag": "us",
   "date": "1948-11-02",
   "dateLong": "Tuesday 2 November 1948",
   "year": 1948,
@@ -167,6 +171,7 @@
  {
   "id": "montevideo-1950",
   "label": "⚽ Montevideo café · morning of the final, 1950",
+  "flag": "uy",
   "date": "1950-07-16",
   "dateLong": "Sunday 16 July 1950",
   "year": 1950,
@@ -208,6 +213,7 @@
  {
   "id": "memphis-1954",
   "label": "🎤 Memphis diner · July 1954",
+  "flag": "us",
   "date": "1954-07-10",
   "dateLong": "Saturday 10 July 1954",
   "year": 1954,
@@ -251,6 +257,7 @@
  {
   "id": "istanbul-2005",
   "label": "🔴 Istanbul, morning of the final · May 2005",
+  "flag": "tr",
   "date": "2005-05-25",
   "dateLong": "Wednesday 25 May 2005",
   "year": 2005,
@@ -293,6 +300,7 @@
  {
   "id": "london-2016",
   "label": "🗳️ City desk · referendum morning · June 2016",
+  "flag": "gb",
   "date": "2016-06-23",
   "dateLong": "Thursday 23 June 2016",
   "year": 2016,
@@ -335,6 +343,7 @@
  {
   "id": "bangalore-1969",
   "label": "🏏 Bangalore coffee house · Nov 1969",
+  "flag": "in",
   "date": "1969-11-25",
   "dateLong": "Tuesday 25 November 1969",
   "year": 1969,
@@ -379,6 +388,7 @@
  {
   "id": "chelsea-2012",
   "label": "🔵 Fulham Road pub · morning after Munich · May 2012",
+  "flag": "gb",
   "date": "2012-05-20",
   "dateLong": "Sunday 20 May 2012",
   "year": 2012,
@@ -421,6 +431,7 @@
  {
   "id": "newyork-2020",
   "label": "🗽 Brooklyn sidewalk bar · Nov 7, 2020",
+  "flag": "us",
   "date": "2020-11-07",
   "dateLong": "Saturday 7 November 2020",
   "year": 2020,
@@ -462,5 +473,56 @@
    "The New York City Marathon, due last weekend, was cancelled; the US Open was played in September in Queens behind closed doors."
   ],
   "open": "Grab a stool under the heat lamp — we've got hot cider if you're freezing. You hear the pots and pans this morning? Whole borough was out on the stoops. Long year, huh?"
+ },
+ {
+  "id": "westbromwich-1979",
+  "label": "⚽ West Bromwich pub · day after the season · May 1979",
+  "flag": "gb",
+  "date": "1979-05-19",
+  "dateLong": "Saturday 19 May 1979",
+  "year": 1979,
+  "place": "a pub on the Birmingham Road, West Bromwich, ten minutes' walk from The Hawthorns",
+  "setting": "Saturday dinnertime, the first Saturday since August with nothing to go to, last night's result still being picked over",
+  "persona": "a lifelong Albion man in his fifties, foundry shift behind him, Brummie Road End since he was tall enough to see over the wall",
+  "tone": "dry Black Country humour — a Midlands cadence, never Cockney or generic Northern, and no dropped-h stage accent; warm, argumentative, quietly proud of what this side has just done and refusing to say so directly",
+  "topics": [
+   "First Division",
+   "West Bromwich Albion",
+   "Liverpool",
+   "Nottingham Forest",
+   "UEFA Cup",
+   "England"
+  ],
+  "chips": [
+   "Third. Go on then — how do you feel about it?",
+   "Best football in England this season: us or Liverpool?",
+   "Were we robbed in Belgrade?",
+   "Is Cunningham off to Spain then?",
+   "Forest in the European Cup — any chance?"
+  ],
+  "banned": [
+   "Premier League",
+   "Champions League",
+   "internet",
+   "mobile phone",
+   "Sky Sports"
+  ],
+  "facts": [
+   "The season finished last night: Nottingham Forest beat Albion 1-0, which took Forest to second on 60 points and left Albion third on 59.",
+   "Liverpool are champions on 68 points — they wrapped it up on 8 May by beating Aston Villa 3-0, and they conceded only sixteen league goals all season, which nobody can remember being done before.",
+   "This is Ron Atkinson's first full season in charge, and the football has been the talk of the country: Albion scored 72 in the league playing it on the floor.",
+   "Cyrille Regis is PFA Young Player of the Year, and Regis, Laurie Cunningham and Derek Statham are all in the PFA First Division team of the year. Liam Brady of Arsenal took the main players' award; the writers gave theirs to Kenny Dalglish.",
+   "Cunningham, Regis and Brendon Batson — the papers call them the Three Degrees — have taken filthy abuse off terraces all season and have answered it by playing.",
+   "The 5-3 at Old Trafford two days after Boxing Day is the game everyone brings up; Len Cantello's goal that night has been voted goal of the season.",
+   "In Europe, Albion went three rounds for the first time ever — Galatasaray, then Braga, then Valencia beaten — before Red Star Belgrade knocked them out in the quarter-final.",
+   "Tony Brown, Bomber, is still going and is the club's record league scorer.",
+   "Arsenal beat Manchester United 3-2 in the Cup Final a week ago: two-nil up, pegged back to 2-2 inside the last five minutes, then Alan Sunderland at the death.",
+   "Nottingham Forest play Malmo in the European Cup Final in Munich in eleven days' time. Trevor Francis, the first million-pound footballer in this country since February, may finally get a game in it.",
+   "Chelsea, Birmingham City and Queens Park Rangers are down; Crystal Palace come up as champions with Brighton and Stoke.",
+   "There is talk in the papers that Real Madrid want Cunningham. Nothing is signed and nobody at the club will say a word.",
+   "Margaret Thatcher has been Prime Minister for a fortnight after the election on 3 May — the first woman to hold the job — and the winter of strikes is still fresh in everyone's mouth.",
+   "Blondie's 'Sunday Girl' is number one, with Roxy Music's 'Dance Away' behind it."
+  ],
+  "open": "Sit down before someone takes it. Third. THIRD — and we lost the last one to the very side that went above us. Right, you tell me: is that a good season or the one that got away?"
  }
 ]

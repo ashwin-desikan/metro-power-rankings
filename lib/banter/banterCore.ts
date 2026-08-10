@@ -13,6 +13,11 @@
 export type Scenario = {
   id: string;
   label: string;
+  /** ISO 3166-1 alpha-2, lowercase, for the flagcdn image on the scene picker.
+   *  Decorative only: flagcdn serves present-day flags, so a 1948 scene shows
+   *  today's stars and stripes rather than the 48-star version. Absent on
+   *  "today", whose place is wherever the reader is. */
+  flag?: string;
   date: string;      // YYYY-MM-DD; scenario id "today" is resolved at runtime
   dateLong: string;
   year: number;
@@ -163,13 +168,43 @@ export function systemPrompt(s: Scenario, factLines: string[]): string {
   ].join("\n\n");
 }
 
+/** Build a word-boundary matcher for one banned term.
+ *
+ *  This used to be a plain `includes()`, which made short banned terms
+ *  unusable: a scenario banning "VAR" would fire on "various", "variety" and
+ *  "Harvard", rewinding perfectly good replies forever. Rules:
+ *   - a single space in the term matches any run of whitespace, so a banned
+ *     phrase still matches when the model wraps it across a line;
+ *   - `\b` is only applied on the sides where the term actually starts or ends
+ *     with a word character, so terms like "C++" or "'78" remain matchable;
+ *   - a trailing optional `s`/`es` is allowed, because "CDs" is as much an
+ *     anachronism as "CD".
+ */
+function bannedPattern(term: string): RegExp {
+  const t = term.trim();
+  const body = t
+    .split(/\s+/)
+    .map((w) => w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+    .join("\\s+");
+  const lead = /^\w/.test(t) ? "\\b" : "";
+  const tail = /\w$/.test(t) ? "(?:e?s)?\\b" : "";
+  return new RegExp(lead + body + tail, "i");
+}
+
+const BANNED_CACHE = new Map<string, RegExp>();
+function bannedRe(term: string): RegExp {
+  let re = BANNED_CACHE.get(term);
+  if (!re) { re = bannedPattern(term); BANNED_CACHE.set(term, re); }
+  return re;
+}
+
 export function lint(text: string, s: Scenario): string[] {
   const hits: string[] = [];
   for (const y of text.match(/\b(1[5-9]\d\d|20\d\d)\b/g) ?? []) {
     if (parseInt(y, 10) > s.year) hits.push(y);
   }
   for (const t of s.banned ?? []) {
-    if (text.toLowerCase().includes(t.toLowerCase())) hits.push(t);
+    if (bannedRe(t).test(text)) hits.push(t);
   }
   return hits;
 }
