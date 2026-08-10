@@ -1,0 +1,46 @@
+{
+  "_readme": [
+    "Every number the metro Score depends on. scripts/metro_score/score.py contains",
+    "no numeric literals: change a weight here and the ranking changes, with no code",
+    "review. Keys are validated on load — an unknown key or a missing one is a hard",
+    "error, because a silently-defaulted weight is the one failure a parity test",
+    "cannot catch.",
+    "These values are a faithful transcription of the Excel formula in Metro Areas",
+    "column BG as it stood on 2026-08-10. Do not 'tidy' them while the parity gate",
+    "is still comparing against the workbook."
+  ],
+  "version": 1,
+  "terms": {
+    "population": { "divisor": 3000000 },
+    "market_cap": { "divisor": 700000000000 },
+    "major_league_teams": { "per_team": 1.0, "cap_points": 10 },
+    "other_teams": { "per_team": 0.25, "cap_teams": 40 },
+    "culture_infra": { "per_item": 0.65 },
+    "airports": { "per_point": 0.25 },
+    "top50_universities": { "per_university": 3.5, "rank_max": 50 },
+    "other_top_institutions": { "per_institution": 2.2 },
+    "metro_stations": { "log_multiplier": 1.0 },
+    "gawc": { "numerator": 12 },
+    "suburban_rail": { "log_multiplier": 0.5 },
+    "train_hubs": { "log_multiplier": 2.0 },
+    "skyscrapers": { "log_multiplier": 5.7 },
+    "sporting_events": { "per_event": 0.2, "cap_points": 4.0 },
+    "annual_events": { "per_event": 1.0 },
+    "luxury_hospitality": { "log_multiplier": 3.0 },
+    "gdp_band": { "bands": [[500, 3.0], [200, 2.0], [50, 1.0], [10, 0.5]], "floor": 0.0 }
+  },
+  "columns": {
+    "top_university_rank_max": 500,
+    "hospital_weight": 0.5,
+    "research_weight": 0.5,
+    "football_tiers": { "first": [0, 1], "second": [1, 2], "other_above": 2 },
+    "airport_class_points": {
+      "1 - mega hub": 5,
+      "2 - major international": 3,
+      "3 - international": 2,
+      "4 - regional": 1,
+      "_unclassified": 0.5
+    },
+    "nfl_partial_share_threshold": 0.99
+  }
+}

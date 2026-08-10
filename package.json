@@ -14,12 +14,13 @@
     "check:slug-drift": "node scripts/check-slug-drift.mjs",
     "check:team-placement": "node scripts/check-team-placement.mjs",
     "check:skyscrapers": "node scripts/check-skyscrapers.mjs",
+    "check:score-parity": "node scripts/check-score-parity.mjs",
     "check:table-scroll": "node scripts/check-table-scroll.mjs",
     "check:live-data": "node scripts/check-live-data.mjs",
     "test": "vitest run",
     "test:python": "node scripts/run-pytest.mjs",
     "test:watch": "vitest",
-    "verify": "npm run typecheck && npm run check:client-imports && npm run check:public-data && npm run check:slug-drift && npm run check:team-placement && npm run check:skyscrapers && npm run check:table-scroll && npm run check:live-data && npm run test && npm run test:python && next build --webpack",
+    "verify": "npm run typecheck && npm run check:client-imports && npm run check:public-data && npm run check:slug-drift && npm run check:team-placement && npm run check:skyscrapers && npm run check:score-parity && npm run check:table-scroll && npm run check:live-data && npm run test && npm run test:python && next build --webpack",
     "deploy-status": "node scripts/deploy-status.mjs"
   },
   "dependencies": {
