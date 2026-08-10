@@ -226,10 +226,20 @@ def played_results(schedule_window_days=400):
     return out
 
 
+def kickoff_iso(raw):
+    """ESPN event date ('2026-09-11T00:20Z') -> full ISO UTC, or None."""
+    for fmt in ("%Y-%m-%dT%H:%MZ", "%Y-%m-%dT%H:%M:%SZ"):
+        try:
+            return datetime.strptime(raw or "", fmt).strftime("%Y-%m-%dT%H:%M:%SZ")
+        except ValueError:
+            pass
+    return None
+
+
 def upcoming_games(today, window_days):
     """Regular/post-season games not yet completed within the window (reaching
     ahead to the first batch when the near window is empty).
-    [(event_id, iso, home, away, market_pH or None)]."""
+    [(event_id, iso, home, away, market_pH or None, kickoff_iso or None)]."""
     def scan(days):
         d0 = today.strftime("%Y%m%d")
         d1 = (today + timedelta(days=days)).strftime("%Y%m%d")
@@ -252,7 +262,7 @@ def upcoming_games(today, window_days):
             if home not in TEAM_DIV or away not in TEAM_DIV:
                 continue
             out.append((ev["id"], ev.get("date", "")[:10], home, away,
-                        market_home_prob(comp)))
+                        market_home_prob(comp), kickoff_iso(ev.get("date"))))
         return sorted(out, key=lambda g: g[1])
     got = scan(window_days)
     if not got:
@@ -469,9 +479,14 @@ def brier2(p_home, outcome_home_win):
 
 def grade_and_extend(ledger, results_by_id, upcoming, ratings, today_iso):
     known = {e["event_id"] for e in ledger}
+    # ESPN's scoreboard is the kickoff source, so ungraded entries appended by
+    # an earlier run pick their timestamp up (or a rescheduled time) here.
+    kick_by_id = {u[0]: u[5] for u in upcoming if len(u) > 5 and u[5]}
     for e in ledger:
         if e.get("result"):
             continue
+        if kick_by_id.get(e["event_id"]):
+            e["kickoff"] = kick_by_id[e["event_id"]]
         res = results_by_id.get(e["event_id"])
         if res:
             _h, _a, hs, as_ = res
@@ -489,7 +504,9 @@ def grade_and_extend(ledger, results_by_id, upcoming, ratings, today_iso):
             b = e.get("blend") or e["model"]
             e["blend_brier"] = round(brier2(b["pH"], hw), 4)
             e["pick_correct"] = (e["pick"] == e["result"])
-    for gid, iso, h, a, mkt_ph in upcoming:
+    for u in upcoming:
+        gid, iso, h, a, mkt_ph = u[:5]
+        kick = u[5] if len(u) > 5 else None
         if gid in known:
             continue
         ph = round(home_win_prob(ratings[h], ratings[a]), 4)
@@ -498,6 +515,8 @@ def grade_and_extend(ledger, results_by_id, upcoming, ratings, today_iso):
             "home_slug": slugify(h), "away_slug": slugify(a),
             "model": {"pH": ph}, "predicted_at": today_iso,
         }
+        if kick:
+            entry["kickoff"] = kick
         if mkt_ph is not None:
             entry["market"] = {"pH": mkt_ph}
             entry["blend"] = {"pH": round(MATCH_BLEND_W * mkt_ph + (1 - MATCH_BLEND_W) * ph, 4)}
@@ -699,6 +718,23 @@ def self_test():
     check("grade-tie", tie["result"] == "T" and "model_brier" not in tie)
     rec = ledger_record(graded)
     check("record-skips-tie", rec["graded"] == 1)
+    # kickoff: ESPN date -> ISO UTC; carried on new entries and backfilled
+    # onto ungraded ones, never onto graded history
+    check("kickoff-iso", kickoff_iso("2026-09-11T00:20Z") == "2026-09-11T00:20:00Z"
+          and kickoff_iso("garbage") is None and kickoff_iso(None) is None)
+    led2 = [{"event_id": "3", "date": "2026-09-13", "home": "Green Bay Packers",
+             "away": "Minnesota Vikings", "home_slug": "green-bay-packers",
+             "away_slug": "minnesota-vikings", "model": {"pH": 0.6}, "pick": "H",
+             "predicted_at": "2026-09-10"}]
+    up2 = [("3", "2026-09-13", "Green Bay Packers", "Minnesota Vikings", None,
+            "2026-09-13T17:00:00Z"),
+           ("4", "2026-09-14", "Dallas Cowboys", "Philadelphia Eagles", None,
+            "2026-09-14T00:15:00Z")]
+    led2 = grade_and_extend(led2, {}, up2, {t: 0.0 for t in TEAMS}, "2026-09-11")
+    by_id = {e["event_id"]: e for e in led2}
+    check("kickoff-backfill", by_id["3"]["kickoff"] == "2026-09-13T17:00:00Z")
+    check("kickoff-new-entry", by_id["4"]["kickoff"] == "2026-09-14T00:15:00Z")
+    check("kickoff-graded-untouched", "kickoff" not in win and "kickoff" not in tie)
     # futures mapping helpers: line recovery + logodds clamp + a blend that
     # actually moves a market favourite up
     a, b = _fit_rating_from_logodds([(-3.0, -3.0), (-2.0, -1.0), (-1.0, 1.0), (0.0, 3.0)])
@@ -715,7 +751,7 @@ def self_test():
     if fails:
         print("SELF-TEST FAIL:", ", ".join(fails))
         sys.exit(1)
-    print("self-test OK (17 cases)")
+    print("self-test OK (21 cases)")
 
 
 def main():

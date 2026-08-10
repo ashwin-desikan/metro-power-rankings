@@ -526,8 +526,19 @@ def standings_from(played):
     return {t: tuple(v) for t, v in base.items()}
 
 
+def kickoff_iso(raw):
+    """ESPN event date ('2026-08-21T19:00Z') -> full ISO UTC, or None."""
+    for fmt in ("%Y-%m-%dT%H:%MZ", "%Y-%m-%dT%H:%M:%SZ"):
+        try:
+            return datetime.strptime(raw or "", fmt).strftime("%Y-%m-%dT%H:%M:%SZ")
+        except ValueError:
+            pass
+    return None
+
+
 def espn_fixtures(today, horizon_days):
-    """Upcoming PL fixtures within the horizon: [(iso_date, home, away)]."""
+    """Upcoming PL fixtures within the horizon:
+    [(iso_date, home, away, kickoff_iso or None)]."""
     d0 = today.strftime("%Y%m%d")
     d1 = (today + timedelta(days=horizon_days)).strftime("%Y%m%d")
     url = ("https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard"
@@ -550,8 +561,10 @@ def espn_fixtures(today, horizon_days):
             elif c.get("homeAway") == "away":
                 away = nm
         if home in TEAMS_2026_27 and away in TEAMS_2026_27:
-            out.append((ev.get("date", "")[:10], home, away))
-    return sorted(set(out))
+            out.append((ev.get("date", "")[:10], home, away, kickoff_iso(ev.get("date"))))
+    # key on the fixture, not the tuple: a None kickoff must never be compared
+    # against a str one if ESPN ever lists an event twice
+    return sorted(set(out), key=lambda f: (f[0], f[1], f[2]))
 
 
 def fixtures_market(rows):
@@ -576,9 +589,14 @@ def grade_and_extend(ledger, results, upcoming, rates, mu, mkt_fix, today_iso):
     """Grade ungraded ledger entries against results; append new predictions
     for upcoming fixtures not yet in the ledger. Mutates + returns ledger."""
     known = {(e["home"], e["away"]) for e in ledger}
+    # ESPN's scoreboard is the kickoff source, so ungraded entries appended by
+    # an earlier run pick their timestamp up (or a rescheduled time) here.
+    kick_by_fixture = {(u[1], u[2]): u[3] for u in upcoming if len(u) > 3 and u[3]}
     for e in ledger:
         if e.get("result"):
             continue
+        if kick_by_fixture.get((e["home"], e["away"])):
+            e["kickoff"] = kick_by_fixture[(e["home"], e["away"])]
         res = results.get((fd_name(e["home"]), fd_name(e["away"])))
         if res:
             e["result"] = res
@@ -589,7 +607,9 @@ def grade_and_extend(ledger, results, upcoming, rates, mu, mkt_fix, today_iso):
             b = e.get("blend") or e["model"]
             e["blend_brier"] = round(brier((b["pH"], b["pD"], b["pA"]), res), 4)
             e["pick_correct"] = (e["pick"] == res)
-    for iso, h, a in upcoming:
+    for u in upcoming:
+        iso, h, a = u[:3]
+        kick = u[3] if len(u) > 3 else None
         if (h, a) in known:
             continue
         pH, pD, pA = match_probs(rates, mu, h, a)
@@ -599,6 +619,8 @@ def grade_and_extend(ledger, results, upcoming, rates, mu, mkt_fix, today_iso):
             "model": {"pH": round(pH, 4), "pD": round(pD, 4), "pA": round(pA, 4)},
             "predicted_at": today_iso,
         }
+        if kick:
+            entry["kickoff"] = kick
         mk = mkt_fix.get((h, a))
         if mk:
             entry["market"] = {"pH": round(mk[0], 4), "pD": round(mk[1], 4), "pA": round(mk[2], 4)}
@@ -708,7 +730,7 @@ def build(sims, today=None):
         # empty - the first match date plus four days ~= one gameweek.
         far = espn_fixtures(today, 35)
         if far:
-            first = min(d for d, _, _ in far)
+            first = min(d for d, *_ in far)
             cutoff = (datetime.strptime(first, "%Y-%m-%d") + timedelta(days=4)).strftime("%Y-%m-%d")
             upcoming = [f for f in far if f[0] <= cutoff]
     mkt_fix = fixtures_market(fix_rows)
@@ -777,11 +799,25 @@ def self_test():
     check("grade-brier", abs(graded[0]["model_brier"] - (0.09 + 0.04 + 0.01)) < 1e-6)
     rec = ledger_record(graded)
     check("record", rec["graded"] == 1 and rec["pick_correct"] == 1)
+    # kickoff: ESPN date -> ISO UTC; carried on new entries and backfilled
+    # onto ungraded ones (S and W are the rates fixture's two teams)
+    check("kickoff-iso", kickoff_iso("2026-08-21T19:00Z") == "2026-08-21T19:00:00Z"
+          and kickoff_iso("garbage") is None and kickoff_iso(None) is None)
+    led2 = [{"date": "2026-08-21", "home": "S", "away": "W",
+             "home_slug": "s", "away_slug": "w",
+             "model": {"pH": 0.7, "pD": 0.2, "pA": 0.1}, "pick": "H",
+             "predicted_at": "2026-08-20"}]
+    up2 = [("2026-08-21", "S", "W", "2026-08-21T19:00:00Z"),
+           ("2026-08-22", "W", "S", "2026-08-22T14:00:00Z")]
+    led2 = grade_and_extend(led2, {}, up2, rates, 1.4, {}, "2026-08-20")
+    by_fix = {(e["home"], e["away"]): e for e in led2}
+    check("kickoff-backfill", by_fix[("S", "W")]["kickoff"] == "2026-08-21T19:00:00Z")
+    check("kickoff-new-entry", by_fix[("W", "S")]["kickoff"] == "2026-08-22T14:00:00Z")
 
     if fails:
         print("SELF-TEST FAIL:", ", ".join(fails))
         sys.exit(1)
-    print("self-test OK (14 cases)")
+    print("self-test OK (17 cases)")
 
 
 def verify_teams():

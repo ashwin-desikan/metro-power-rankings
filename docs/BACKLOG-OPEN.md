@@ -490,12 +490,12 @@ Phases 1-2 of PICKEM-SPEC.md (repo root, untracked) shipped 2026-08-10: `/play/p
 via the /me flow, global leaderboard with the model as house entry. Items below are the
 remaining phases, in rollout order.
 
-### Per-game kickoff timestamps in the prediction ledgers
-The ledgers carry match dates, not kickoff times, so picks lock at 00:00 UTC on match day —
-up to ~20 hours early for US evening games. Emit a `kickoff` ISO timestamp per entry from
-`build_nfl_sim.py` (ESPN events carry it) and `build_pl_sim.py` (football-data fixtures),
-then tighten `lockTime()` in `lib/picksGame.ts` to read it with the date fallback.
-**Priority:** P1 — improves the core game everywhere, small builder change.
+### ~~Per-game kickoff timestamps in the prediction ledgers~~ — DONE 2026-08-10
+Shipped: both builders emit a `kickoff` ISO UTC timestamp per entry (ESPN event dates are
+the source for NFL and PL alike; the upcoming-scan also backfills ungraded entries, so a
+rescheduled kickoff self-corrects on the next run). `lockTime()` in `lib/picksGame.ts`
+reads it with the 00:00 UTC date fallback for entries that predate the change or carry a
+malformed value. The ledger JSONs pick the field up on the next Tue/Fri predictions run.
 
 ### CFB league entry
 When the CFB model ships with the preseason poll, emit `cfb-predictions.json` in the NFL

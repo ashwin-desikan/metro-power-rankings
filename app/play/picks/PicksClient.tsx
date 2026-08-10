@@ -364,7 +364,7 @@ export default function PicksClient() {
           and are graded by the same rules.
         </p>
         <div className="mt-2 text-[11px] uppercase tracking-wider text-[var(--text-dim)]" style={MONO}>
-          model card {genAt} · picks lock 00:00 UTC on match day · graded from the daily ledger
+          model card {genAt} · picks lock at kickoff · graded from the prediction ledger
         </div>
       </header>
 
@@ -470,7 +470,7 @@ export default function PicksClient() {
           the same metric the prediction hubs publish).
         </p>
         <p className="mb-2">
-          Games lock at 00:00 UTC on match day. Signed out, picks live only in this browser. Sign in with Google (the same
+          Games lock at kickoff — or at 00:00 UTC on match day when the ledger carries no kickoff time. Signed out, picks live only in this browser. Sign in with Google (the same
           account that syncs your <Link href="/me" className="underline">follows</Link>) to join the global leaderboard — picks
           made in this browser merge into your account, and only picks stamped before a game locks can score.
         </p>

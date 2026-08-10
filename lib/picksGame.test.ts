@@ -55,11 +55,25 @@ describe("eventKey / locking", () => {
     expect(eventKey("pl", plGame())).toBe("2026-08-22:everton");
   });
 
-  it("locks at 00:00 UTC on match day", () => {
+  it("locks at 00:00 UTC on match day when the entry carries no kickoff", () => {
     const e = plGame();
     expect(lockTime(e)).toBe(Date.parse("2026-08-22T00:00:00Z"));
     expect(isLocked(e, Date.parse("2026-08-21T23:59:59Z"))).toBe(false);
     expect(isLocked(e, Date.parse("2026-08-22T00:00:00Z"))).toBe(true);
+  });
+
+  it("locks at kickoff when the entry carries one", () => {
+    const e = plGame({ kickoff: "2026-08-22T16:30:00Z" });
+    expect(lockTime(e)).toBe(Date.parse("2026-08-22T16:30:00Z"));
+    expect(isLocked(e, Date.parse("2026-08-22T12:00:00Z"))).toBe(false);
+    expect(isLocked(e, Date.parse("2026-08-22T16:30:00Z"))).toBe(true);
+    // a pre-kickoff, same-day pick is now valid
+    expect(pickIsValid(pick({ picked_at: "2026-08-22T09:00:00Z" }), e)).toBe(true);
+  });
+
+  it("falls back to the date when the kickoff string is malformed", () => {
+    const e = plGame({ kickoff: "not-a-time" });
+    expect(lockTime(e)).toBe(Date.parse("2026-08-22T00:00:00Z"));
   });
 
   it("discards picks stamped on or after lock", () => {

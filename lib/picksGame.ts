@@ -10,10 +10,12 @@
 //   Radar      — +25 for siding with the source (model|market) whose
 //                probability graded closer to the result (lower Brier).
 //
-// Lock rule: a game locks at 00:00 UTC on its match date (ledgers carry dates,
-// not kickoff times — per-game timestamps are a backlogged builder change).
-// picked_at is stamped server-side by a Supabase trigger, so grading simply
-// discards any pick stamped on or after the lock.
+// Lock rule: a game locks at kickoff when the ledger entry carries a kickoff
+// timestamp (ISO UTC, emitted by the builders from ESPN event dates), and
+// falls back to 00:00 UTC on its match date when it does not — old entries
+// and any source that only knows the date. picked_at is stamped server-side
+// by a Supabase trigger, so grading simply discards any pick stamped on or
+// after the lock.
 
 export type PickCode = "H" | "D" | "A";
 export type RadarSide = "model" | "market";
@@ -22,6 +24,7 @@ export type PicksLeague = "pl" | "nfl";
 export type LedgerEntry = {
   event_id?: string; // NFL (ESPN); PL entries key on date:home_slug
   date: string; // ISO yyyy-mm-dd
+  kickoff?: string; // ISO UTC datetime, when the builder knows it
   home: string;
   away: string;
   home_slug: string;
@@ -58,8 +61,12 @@ export function eventKey(league: PicksLeague, e: LedgerEntry): string {
   return league === "nfl" && e.event_id ? e.event_id : `${e.date}:${e.home_slug}`;
 }
 
-/** 00:00 UTC on match day. */
+/** Kickoff when the ledger carries it; else 00:00 UTC on match day. */
 export function lockTime(e: LedgerEntry): number {
+  if (e.kickoff) {
+    const t = Date.parse(e.kickoff);
+    if (Number.isFinite(t)) return t;
+  }
   return Date.parse(`${e.date}T00:00:00Z`);
 }
 
