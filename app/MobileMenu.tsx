@@ -41,6 +41,7 @@ function buildSections(): Section[] {
         { href: '/ground-floor', label: 'The Ground Floor' },
         { href: '/countries', label: 'Countries' },
         { href: '/states', label: 'States & Provinces' },
+        { href: '/skyscrapers', label: 'Supertall Skyscrapers' },
         { href: '/expandable-map', label: 'Expandable Map' },
         { href: '/compare', label: 'Compare metros' },
         { href: '/matchups/london-vs-new-york', label: 'Matchups' },

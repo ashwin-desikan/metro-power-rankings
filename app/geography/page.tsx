@@ -23,6 +23,7 @@ const PLACES: Card[] = [
   { emoji: "🌐", title: "Metro Power Rankings", desc: "Every metro on Earth, scored across sixteen weighted dimensions.", href: "/rankings" },
   { emoji: "🏳️", title: "Countries", desc: "Every sovereign state and territory, with leaders, economy, teams, and power.", href: "/countries" },
   { emoji: "🗺️", title: "States & Provinces", desc: "First-level subdivisions and the metro strength inside each.", href: "/states" },
+  { emoji: "🏙️", title: "Supertall Skyscrapers", desc: "The hundred tallest buildings, every structure past 350 metres, and the metros building fastest.", href: "/skyscrapers" },
   { emoji: "🧭", title: "Expandable Map", desc: "Pan and zoom the ranked world, metro by metro.", href: "/expandable-map" },
   { emoji: "⚖️", title: "Compare Metros", desc: "Put any two metros side by side, dimension by dimension.", href: "/compare" },
   { emoji: "🥊", title: "Matchups", desc: "Head-to-head metro showdowns, London versus New York and beyond.", href: "/matchups/london-vs-new-york" },

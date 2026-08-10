@@ -232,6 +232,7 @@ export default function DesktopNav({ updated }: { updated: string | null }) {
             <MenuLink href="/ground-floor" title="The Ground Floor" />
             <MenuLink href="/countries" title="Countries" />
             <MenuLink href="/states" title="States &amp; Provinces" />
+            <MenuLink href="/skyscrapers" title="Supertall Skyscrapers" />
             <MenuLink href="/expandable-map" title="Expandable Map" />
             <MenuLink href="/compare" title="Compare metros" />
             <MenuLink href="/matchups/london-vs-new-york" title="Matchups" />

@@ -18,6 +18,16 @@ export type Release = {
 
 export const RELEASES: Release[] = [
   {
+    date: "2026-08-11",
+    headline: "Supertall Skyscrapers: the vertical world, measured honestly",
+    items: [
+      "A new Geography page ranks every building over 350 metres and every standing structure past that height - television masts, chimneys and oil platforms included, filterable by type.",
+      "The two boards use different height measures, spelled out on the page: architectural height for buildings, tip-of-the-antenna pinnacle height for structures. Willis Tower is 442 metres by one and 527 by the other.",
+      "Skyline density boards show which metros actually built their towers, and when: half of Dubai's skyline has risen since 2010, against a quarter of Hong Kong's.",
+      "Every structure links to its metro page, placed by coordinates against our metro boundaries.",
+    ],
+  },
+  {
     date: "2026-08-10",
     headline: "Citizen of Nowhere Picks: call the games, beat the model",
     items: [
