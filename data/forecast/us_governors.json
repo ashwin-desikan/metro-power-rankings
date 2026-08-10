@@ -62,7 +62,7 @@
    "state": "Florida",
    "incumbentParty": "R",
    "nRatings": 7,
-   "score": -2.0,
+   "score": -2.14,
    "retiring": true
   },
   {
@@ -97,14 +97,14 @@
    "state": "Iowa",
    "incumbentParty": "R",
    "nRatings": 7,
-   "score": 0.36,
+   "score": 0.43,
    "retiring": true
   },
   {
    "state": "Kansas",
    "incumbentParty": "D",
    "nRatings": 7,
-   "score": -0.79,
+   "score": -0.86,
    "retiring": true
   },
   {
@@ -160,7 +160,7 @@
    "state": "New Hampshire",
    "incumbentParty": "R",
    "nRatings": 7,
-   "score": -1.86,
+   "score": -1.71,
    "retiring": false
   },
   {
@@ -237,7 +237,7 @@
    "state": "Texas",
    "incumbentParty": "R",
    "nRatings": 7,
-   "score": -2.43,
+   "score": -2.29,
    "retiring": false
   },
   {
@@ -251,7 +251,7 @@
    "state": "Wisconsin",
    "incumbentParty": "D",
    "nRatings": 7,
-   "score": 0.07,
+   "score": 0.0,
    "retiring": true
   },
   {
