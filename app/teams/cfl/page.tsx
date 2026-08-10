@@ -10,6 +10,7 @@ import {
   type CflFranchise,
 } from "@/lib/cfl";
 import { getLiveCflStandings } from "@/lib/cflStandings";
+import { getSeasonSim, simIsCurrent, simBySlug, fmtOdds } from "@/lib/seasonSim";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import CflAllTimeTable from "./CflAllTimeTable";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
@@ -52,9 +53,26 @@ export default async function CflPage() {
 
   // Prefer the live CFL.ca feed for the current season; fall back to the workbook
   // (latest completed season) if the season hasn't started or the fetch fails.
-  const live = await getLiveCflStandings(new Date().getFullYear());
+  const [live, sim] = await Promise.all([getLiveCflStandings(new Date().getFullYear()), getSeasonSim("cfl")]);
   const standings = live ?? getLatestCflStandings();
   const isLive = standings.source === "cfl.ca";
+  // Grey Cup odds from our own Monte Carlo (scripts/predictions/
+  // build_season_sims.py, refreshed daily); shown only on the live table.
+  const showOdds = isLive && simIsCurrent(sim);
+  const simRows = simBySlug(sim);
+  // Current playoff field with the crossover rule: top two per division are
+  // safe; the third spot goes to the other division's 4th place when it is
+  // STRICTLY ahead on points (a tie stays with the 3rd-place team).
+  const field = new Set<string>();
+  if (isLive && standings.divisions.length === 2) {
+    const ordered = standings.divisions.map(d => [...d.rows].sort((a, b) => b.pts - a.pts || b.pct - a.pct));
+    for (const [own, other] of [[ordered[0], ordered[1]], [ordered[1], ordered[0]]] as const) {
+      for (const t of own.slice(0, 2)) field.add(t.slug);
+      const third = own[2];
+      const cross = other[3];
+      if (third) field.add(cross && cross.pts > third.pts ? cross.slug : third.slug);
+    }
+  }
   const asOf = standings.fetched_at
     ? new Date(standings.fetched_at).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })
     : null;
@@ -119,7 +137,11 @@ export default async function CflPage() {
                     <div
                       key={`${r.slug}-card`}
                       className="rounded-lg border p-3"
-                      style={{ borderColor: "var(--border)", backgroundColor: r.grey_cup ? "rgba(212,175,55,0.07)" : "var(--bg-card)" }}
+                      style={{
+                        borderColor: "var(--border)",
+                        backgroundColor: r.grey_cup ? "rgba(212,175,55,0.07)" : field.has(r.slug) ? "rgba(34,197,94,0.05)" : "var(--bg-card)",
+                        ...(field.has(r.slug) ? { borderLeft: "3px solid rgba(34,197,94,0.55)" } : null),
+                      }}
                     >
                       <div className="flex items-center gap-2 min-w-0">
                         <TeamCrest name={bySlug.get(r.slug)?.name ?? r.team} size={22} fallback={<Monogram f={bySlug.get(r.slug) ?? { slug: r.slug, name: r.team }} />} />
@@ -149,6 +171,16 @@ export default async function CflPage() {
                           <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">PA</div>
                           <div className="text-[var(--text-dim)]">{r.pa}</div>
                         </div>
+                        {showOdds && (<>
+                          <div>
+                            <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">PO%</div>
+                            <div>{fmtOdds(simRows.get(r.slug)?.p_playoffs)}</div>
+                          </div>
+                          <div>
+                            <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Cup%</div>
+                            <div>{fmtOdds(simRows.get(r.slug)?.p_title)}</div>
+                          </div>
+                        </>)}
                       </div>
                     </div>
                   ))}
@@ -165,11 +197,19 @@ export default async function CflPage() {
                       <th className="text-right py-2 px-2 font-medium">PTS</th>
                       <th className="text-right py-2 px-2 font-medium hidden sm:table-cell">PF</th>
                       <th className="text-right py-2 px-3 font-medium hidden sm:table-cell">PA</th>
+                      {showOdds && <th className="text-right py-2 px-2 font-medium">PO%</th>}
+                      {showOdds && <th className="text-right py-2 px-3 font-medium">Cup%</th>}
                     </tr>
                   </thead>
                   <tbody>
                     {sortedRows.map(r => (
-                      <tr key={r.slug} className="border-b last:border-b-0" style={{ borderColor: "var(--border)", background: r.grey_cup ? "rgba(212,175,55,0.07)" : undefined }}>
+                      <tr key={r.slug} className="border-b last:border-b-0"
+                        style={{
+                          borderColor: "var(--border)",
+                          background: r.grey_cup ? "rgba(212,175,55,0.07)" : field.has(r.slug) ? "rgba(34,197,94,0.06)" : undefined,
+                          ...(field.has(r.slug) && sortedRows[sortedRows.indexOf(r) + 1] && !field.has(sortedRows[sortedRows.indexOf(r) + 1].slug) && sortedRows.slice(sortedRows.indexOf(r) + 1).every(x => !field.has(x.slug))
+                            ? { boxShadow: "inset 0 -2px 0 rgba(34,197,94,0.45)" } : null),
+                        }}>
                         <td className="py-2 px-3">
                           <div className="flex items-center gap-2">
                             <TeamCrest name={bySlug.get(r.slug)?.name ?? r.team} size={22} fallback={<Monogram f={bySlug.get(r.slug) ?? { slug: r.slug, name: r.team }} />} />
@@ -186,6 +226,8 @@ export default async function CflPage() {
                         <td className="py-2 px-2 text-right font-semibold">{r.pts}</td>
                         <td className="py-2 px-2 text-right text-[var(--text-dim)] text-xs hidden sm:table-cell">{r.pf}</td>
                         <td className="py-2 px-3 text-right text-[var(--text-dim)] text-xs hidden sm:table-cell">{r.pa}</td>
+                        {showOdds && <td className="py-2 px-2 text-right">{fmtOdds(simRows.get(r.slug)?.p_playoffs)}</td>}
+                        {showOdds && <td className="py-2 px-3 text-right">{fmtOdds(simRows.get(r.slug)?.p_title)}</td>}
                       </tr>
                     ))}
                   </tbody>
@@ -196,7 +238,9 @@ export default async function CflPage() {
         </div>
         <p className="text-[10px] text-[var(--text-dim)] mt-2">
           {isLive
-            ? "Live source: CFL.ca official standings (hourly cache). Falls back to the project workbook if unavailable."
+            ? <>Live source: CFL.ca official standings (hourly cache). Green-shaded teams hold a playoff spot (top three per division, crossover rule applied).
+              {showOdds && sim && <> Playoff and Grey Cup odds are our own simulation of the remaining schedule ({sim.meta.sims.toLocaleString()} runs, updated {sim.meta.generated_at}).</>}
+              {" "}Falls back to the project workbook if unavailable.</>
             : "Sourced from the project workbook. The live CFL.ca feed appears here automatically once the season is underway."}
         </p>
       </section>

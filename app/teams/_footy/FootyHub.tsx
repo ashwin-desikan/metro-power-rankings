@@ -4,6 +4,7 @@ import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import HubNav from "@/app/teams/HubNav";
 import { fgFor, type FootyFranchise, type FootyMeta, type FootyLadder, type FootyGFResult } from "@/lib/_footy";
 import type { FootyStandingsView } from "@/lib/_footyStandings";
+import { fmtOdds, simIsCurrent, simBySlug, type SeasonSimFile } from "@/lib/seasonSim";
 import type { FootyCopy } from "./config";
 import FootyAllTimeTable from "./FootyAllTimeTable";
 
@@ -16,15 +17,24 @@ function Badge({ color, color2, abbr, size = 26 }: { color: string; color2: stri
   );
 }
 
-export default function FootyHub({ copy, meta, ladder, franchises, gfHistory, live, extra, extraNav }: {
+export default function FootyHub({ copy, meta, ladder, franchises, gfHistory, live, sim, extra, extraNav }: {
   copy: FootyCopy; meta: FootyMeta; ladder: FootyLadder;
   franchises: FootyFranchise[]; gfHistory: FootyGFResult[]; live?: FootyStandingsView;
+  sim?: SeasonSimFile | null;
   extra?: ReactNode; extraNav?: { label: string; href: string };
 }) {
   const lg = copy.league;
   const bySlug = new Map(franchises.map((f) => [f.slug, f]));
   const reigning = gfHistory[0];
   const totalPrem = franchises.reduce((s, f) => s + f.premierships, 0);
+  // Finals odds (scripts/predictions/build_season_sims.py, refreshed daily).
+  // Columns only appear while the sim is current; the ladder is untouched
+  // otherwise. AFL 2026 takes ten clubs into September (wildcard round);
+  // the NRL keeps its top eight.
+  const showOdds = simIsCurrent(sim ?? null);
+  const simRows = simBySlug(sim ?? null);
+  const finalsSpots = lg === "afl" ? 10 : 8;
+  const inFinals = (rank: number | null | undefined, i: number) => (rank ?? i + 1) <= finalsSpots;
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -67,8 +77,13 @@ export default function FootyHub({ copy, meta, ladder, franchises, gfHistory, li
           <div className="grid grid-cols-1 gap-2 sm:hidden">
             {live.rows.map((r, i) => {
               const lf = r.slug ? bySlug.get(r.slug) : undefined;
+              const so = showOdds && r.slug ? simRows.get(r.slug) : undefined;
+              const po = inFinals(r.rank, i);
               return (
-                <div key={r.slug ?? r.name ?? i} className="rounded-lg border p-3" style={{ background: "var(--bg-card)", borderColor: "var(--border)" }}>
+                <div key={r.slug ?? r.name ?? i} className="rounded-lg border p-3"
+                  style={po
+                    ? { background: "var(--bg-card)", borderColor: "var(--border)", borderLeft: "3px solid rgba(34,197,94,0.55)" }
+                    : { background: "var(--bg-card)", borderColor: "var(--border)" }}>
                   <div className="flex items-center justify-between gap-2">
                     <div className="flex items-center gap-2 min-w-0">
                       <span className="tabular-nums text-[var(--text-muted)] text-sm flex-shrink-0">{r.rank ?? i + 1}</span>
@@ -86,6 +101,10 @@ export default function FootyHub({ copy, meta, ladder, franchises, gfHistory, li
                     <div><div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">{lg === "afl" ? "D" : "L"}</div><div className="tabular-nums text-[var(--text-muted)]">{lg === "afl" ? r.d : r.l}</div></div>
                     <div><div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">For</div><div className="tabular-nums text-[var(--text-dim)]">{r.pf}</div></div>
                     <div><div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Agst</div><div className="tabular-nums text-[var(--text-dim)]">{r.pa}</div></div>
+                    {so && (<>
+                      <div><div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Finals</div><div className="tabular-nums">{fmtOdds(so.p_playoffs)}</div></div>
+                      <div><div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Prem</div><div className="tabular-nums">{fmtOdds(so.p_title)}</div></div>
+                    </>)}
                   </div>
                 </div>
               );
@@ -105,13 +124,23 @@ export default function FootyHub({ copy, meta, ladder, franchises, gfHistory, li
                   <th className="text-right py-2 px-2 font-medium hidden sm:table-cell">For</th>
                   <th className="text-right py-2 px-2 font-medium hidden sm:table-cell">Agst</th>
                   <th className="text-right py-2 px-3 font-medium">Pts</th>
+                  {showOdds && <th className="text-right py-2 px-2 font-medium">Finals%</th>}
+                  {showOdds && <th className="text-right py-2 px-3 font-medium">Prem%</th>}
                 </tr>
               </thead>
               <tbody>
                 {live.rows.map((r, i) => {
                   const lf = r.slug ? bySlug.get(r.slug) : undefined;
+                  const so = showOdds && r.slug ? simRows.get(r.slug) : undefined;
+                  const po = inFinals(r.rank, i);
+                  const cutHere = po && !inFinals(live.rows[i + 1]?.rank, i + 1) && i < live.rows.length - 1;
                   return (
-                    <tr key={r.slug ?? r.name ?? i} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
+                    <tr key={r.slug ?? r.name ?? i} className="border-b last:border-b-0"
+                      style={{
+                        borderColor: "var(--border)",
+                        ...(po ? { background: "rgba(34,197,94,0.06)" } : null),
+                        ...(cutHere ? { boxShadow: "inset 0 -2px 0 rgba(34,197,94,0.45)" } : null),
+                      }}>
                       <td className="py-2 px-3 text-right text-[var(--text-muted)]">{r.rank ?? i + 1}</td>
                       <td className="py-2 px-2">
                         <div className="flex items-center gap-2">
@@ -126,13 +155,19 @@ export default function FootyHub({ copy, meta, ladder, franchises, gfHistory, li
                       <td className="py-2 px-2 text-right text-[var(--text-dim)] text-xs hidden sm:table-cell">{r.pf}</td>
                       <td className="py-2 px-2 text-right text-[var(--text-dim)] text-xs hidden sm:table-cell">{r.pa}</td>
                       <td className="py-2 px-2 text-right font-semibold">{r.pts}</td>
+                      {showOdds && <td className="py-2 px-2 text-right tabular-nums">{fmtOdds(so?.p_playoffs)}</td>}
+                      {showOdds && <td className="py-2 px-3 text-right tabular-nums">{fmtOdds(so?.p_title)}</td>}
                     </tr>
                   );
                 })}
               </tbody>
             </table>
           </div>
-          <p className="text-[10px] text-[var(--text-dim)] mt-2">Live source: ESPN. All-time honours and records below are from the project workbook (afltables.com), complete through {ladder.year}.</p>
+          <p className="text-[10px] text-[var(--text-dim)] mt-2">
+            Live source: ESPN. Green-shaded clubs hold a finals place ({lg === "afl" ? "top ten under the 2026 wildcard format" : "top eight"}).
+            {showOdds && sim && <> Finals and {copy.premiersWord.toLowerCase()} odds are our own simulation of the remaining fixtures ({sim.meta.sims.toLocaleString()} runs, updated {sim.meta.generated_at}).</>}
+            {" "}All-time honours and records below are from the project workbook (afltables.com), complete through {ladder.year}.
+          </p>
         </section>
       )}
       <section className="mb-12">

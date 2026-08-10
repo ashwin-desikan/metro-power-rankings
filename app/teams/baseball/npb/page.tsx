@@ -6,6 +6,7 @@ import ClubsTable from "./ClubsTable";
 import CrestIcon from "@/app/teams/_shared/CrestIcon";
 import { getAllNpbTeams, getNpbDefunct, getNpbHub } from "@/lib/npb";
 import { getNpbStandings, type NpbStandingRow } from "@/lib/npbStandings";
+import { getSeasonSim, simIsCurrent, simBySlug, fmtOdds, type SeasonSimRow } from "@/lib/seasonSim";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 
 export const dynamicParams = false;
@@ -33,12 +34,18 @@ function StandingsTable({
   title,
   rows,
   teamLink,
+  odds,
 }: {
   title: string;
   rows: NpbStandingRow[];
   teamLink: (name: string | null) => ReactNode;
+  odds?: Map<string, SeasonSimRow> | null;
 }) {
   if (rows.length === 0) return null;
+  // Top three per league reach the Climax Series; rows arrive rank-sorted,
+  // so the playoff cut sits under row three.
+  const inCs = (r: NpbStandingRow) => r.rank >= 1 && r.rank <= 3;
+  const o = (r: NpbStandingRow) => (odds && r.slug ? odds.get(r.slug) : undefined);
   return (
     <div className="rounded-xl border overflow-hidden" style={card}>
       <div className="px-3 pt-3 pb-1 text-xs font-semibold text-[var(--text-muted)]">{title}</div>
@@ -50,7 +57,11 @@ function StandingsTable({
           <div
             key={(r.slug ?? r.name) + "-card"}
             className="rounded-lg border p-3"
-            style={{ backgroundColor: "var(--bg)", borderColor: "var(--border)" }}
+            style={{
+              backgroundColor: inCs(r) ? "rgba(34,197,94,0.05)" : "var(--bg)",
+              borderColor: "var(--border)",
+              ...(inCs(r) ? { borderLeft: "3px solid rgba(34,197,94,0.55)" } : null),
+            }}
           >
             <div className="flex items-start justify-between gap-2">
               <div className="font-medium text-sm">{teamLink(r.name)}</div>
@@ -69,6 +80,16 @@ function StandingsTable({
                 <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">GB</div>
                 <div className="tabular-nums text-[var(--text-muted)]" style={mono}>{r.gamesBehind}</div>
               </div>
+              {o(r) && (<>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">CS%</div>
+                  <div className="tabular-nums" style={mono}>{fmtOdds(o(r)?.p_playoffs)}</div>
+                </div>
+                <div>
+                  <div className="text-[10px] uppercase tracking-wide text-[var(--text-dim)]">Title%</div>
+                  <div className="tabular-nums" style={mono}>{fmtOdds(o(r)?.p_title)}</div>
+                </div>
+              </>)}
             </div>
           </div>
         ))}
@@ -85,11 +106,18 @@ function StandingsTable({
               <th className="py-2 px-2 font-medium text-right">T</th>
               <th className="py-2 px-2 font-medium text-right">PCT</th>
               <th className="py-2 px-3 font-medium text-right">GB</th>
+              {odds && <th className="py-2 px-2 font-medium text-right">CS%</th>}
+              {odds && <th className="py-2 px-3 font-medium text-right">Title%</th>}
             </tr>
           </thead>
           <tbody>
             {rows.map((r) => (
-              <tr key={r.slug ?? r.name} className="border-t" style={{ borderColor: "var(--border)" }}>
+              <tr key={r.slug ?? r.name} className="border-t"
+                style={{
+                  borderColor: "var(--border)",
+                  ...(inCs(r) ? { background: "rgba(34,197,94,0.06)" } : null),
+                  ...(r.rank === 3 && rows.length > 3 ? { boxShadow: "inset 0 -2px 0 rgba(34,197,94,0.45)" } : null),
+                }}>
                 <td className="py-1.5 px-3 tabular-nums text-[var(--text-dim)]" style={mono}>{r.rank}</td>
                 <td className="py-1.5 px-3 font-medium">{teamLink(r.name)}</td>
                 <td className="py-1.5 px-2 tabular-nums text-right" style={mono}>{r.win}</td>
@@ -97,6 +125,8 @@ function StandingsTable({
                 <td className="py-1.5 px-2 tabular-nums text-right" style={mono}>{r.draw}</td>
                 <td className="py-1.5 px-2 tabular-nums text-right" style={mono}>{r.pct}</td>
                 <td className="py-1.5 px-3 tabular-nums text-right text-[var(--text-muted)]" style={mono}>{r.gamesBehind}</td>
+                {odds && <td className="py-1.5 px-2 tabular-nums text-right" style={mono}>{fmtOdds(o(r)?.p_playoffs)}</td>}
+                {odds && <td className="py-1.5 px-3 tabular-nums text-right" style={mono}>{fmtOdds(o(r)?.p_title)}</td>}
               </tr>
             ))}
           </tbody>
@@ -110,8 +140,10 @@ export default async function NpbHubPage() {
   const hub = getNpbHub();
   const teams = getAllNpbTeams();
   const defunct = getNpbDefunct();
-  const standings = await getNpbStandings();
+  const [standings, sim] = await Promise.all([getNpbStandings(), getSeasonSim("npb")]);
   const hasStandings = !!standings && (standings.central.length > 0 || standings.pacific.length > 0);
+  const showOdds = hasStandings && simIsCurrent(sim);
+  const simRows = showOdds ? simBySlug(sim) : null;
   if (!hub) return null;
 
   const slugByName = new Map(teams.map((t) => [t.name, t.slug]));
@@ -175,11 +207,12 @@ export default async function NpbHubPage() {
           </h2>
           <p className="text-xs text-[var(--text-muted)] mb-3">
             Current Central and Pacific League tables, refreshed through the season.
-            Live data from SPAIA.
+            Live data from SPAIA. Green-shaded clubs hold a Climax Series place (top three per league).
+            {showOdds && sim && <> Climax Series and Japan Series odds are our own simulation of each club&apos;s remaining games ({sim.meta.sims.toLocaleString()} runs, updated {sim.meta.generated_at}).</>}
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
-            <StandingsTable title="Central League" rows={standings!.central} teamLink={teamLink} />
-            <StandingsTable title="Pacific League" rows={standings!.pacific} teamLink={teamLink} />
+            <StandingsTable title="Central League" rows={standings!.central} teamLink={teamLink} odds={simRows} />
+            <StandingsTable title="Pacific League" rows={standings!.pacific} teamLink={teamLink} odds={simRows} />
           </div>
         </section>
       )}

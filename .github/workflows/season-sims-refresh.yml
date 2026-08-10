@@ -1,0 +1,120 @@
+name: Season sims refresh (AFL/NRL/WNBA/CFL/NPB/MLS)
+
+# Daily playoff + championship odds for the six non-MLB leagues, one script:
+# scripts/predictions/build_season_sims.py. Deliberately SEPARATE from
+# mlb-sim-refresh.yml (that job now lives on the Mac mini's dispatcher) and
+# from predictions-refresh.yml (Tue/Fri, ledger-freezing — see the note in
+# that file). This one is a NEW job and starts life on Actions; if it later
+# moves to the mini, follow the standard sequence (DRY_RUN -> live on the
+# mini -> retire this schedule) and never run both at once.
+#
+# 14:30 UTC catches the previous night's WNBA/MLS/CFL results AND the same
+# day's completed AFL/NRL/NPB games (evening AEST/JST are over by early
+# afternoon UTC). GitHub dispatches cron 1-4h late; for daily odds that
+# lateness is acceptable (unlike mlb-sim in a pennant race, which is why that
+# job moved to the mini).
+#
+# Data-only commit riding [vercel skip]; the hubs and /sports/standings read
+# *-sim.json via ISR from GitHub raw, so no Vercel build is needed.
+#
+# One broken source must not silence the other five leagues: the build step
+# continues on partial failure, the commit step ships whatever was written,
+# and the last step turns the run red so the failure is still visible.
+on:
+  schedule:
+    - cron: "30 14 * 3-11 *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: season-sims-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6
+        with:
+          python-version: "3.12"
+
+      - name: Self-test (offline parsers + bracket logic)
+        run: python3 scripts/predictions/build_season_sims.py --self-test
+
+      - name: Rebuild the season sims
+        # Each builder hard-fails when its derived records disagree with the
+        # source's own standings, so a parse break stops that league rather
+        # than publishing a plausible-looking wrong table. A failed league
+        # writes nothing; the others still write.
+        run: |
+          if ! python3 scripts/predictions/build_season_sims.py; then
+            echo "PARTIAL_FAILURE=1" >> "$GITHUB_ENV"
+          fi
+
+      - name: Commit if anything changed
+        run: |
+          git add public/data/afl-sim.json public/data/nrl-sim.json \
+                  public/data/wnba-sim.json public/data/cfl-sim.json \
+                  public/data/npb-sim.json public/data/mls-sim.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes; nothing to commit."
+            exit 0
+          fi
+          git config user.name "predictions-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "Auto: refresh season sims [vercel skip]"
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push; then
+              echo "Pushed on attempt $attempt."; exit 0
+            fi
+            sleep $((attempt * 5))
+          done
+          echo "Failed to push after retries." >&2; exit 1
+
+      - name: Revalidate site caches (on-demand ISR)
+        env:
+          REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
+        run: |
+          # Fail-open, exactly as in mlb-sim-refresh.yml: the 6h ISR window on
+          # lib/seasonSim.ts is the backstop. Wait out GitHub raw's ~5-min CDN
+          # TTL first, or the flush re-caches the previous model for 6h.
+          if [ -z "$REVALIDATE_SECRET" ]; then
+            echo "REVALIDATE_SECRET not set; skipping (6h ISR backstop applies)."
+            exit 0
+          fi
+          echo "Waiting out the GitHub raw CDN TTL before flushing..."
+          sleep 300
+          for attempt in 1 2 3; do
+            code="$(curl -s -o /tmp/reval.out -w '%{http_code}' -X POST \
+              -H "x-revalidate-secret: $REVALIDATE_SECRET" \
+              "https://rankings.citizenofnowhere.org/api/revalidate?tag=predictions-daily")" || code=000
+            if [ "$code" = "200" ]; then
+              cat /tmp/reval.out; echo
+              echo "Revalidated on attempt $attempt."
+              # revalidateTag() invalidates but does not regenerate; warm the
+              # main consumers so a real visitor doesn't eat the stale hit
+              # (same rationale as mlb-sim-refresh.yml).
+              for p in /sports/standings /teams/afl /teams/nrl /teams/wnba /teams/cfl /teams/baseball/npb; do
+                ( wcode="$(curl -s -o /dev/null -m 20 -w '%{http_code}' \
+                    "https://rankings.citizenofnowhere.org$p")" || wcode=000
+                  echo "warm $p -> HTTP $wcode" ) &
+              done
+              wait
+              break
+            fi
+            echo "revalidate ping attempt $attempt returned HTTP $code"
+            sleep $((attempt * 5))
+          done
+
+      - name: Surface partial failures
+        run: |
+          if [ "${PARTIAL_FAILURE:-}" = "1" ]; then
+            echo "One or more leagues failed to build (see the rebuild step)." >&2
+            exit 1
+          fi

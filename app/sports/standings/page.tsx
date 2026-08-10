@@ -9,6 +9,7 @@ import { getCurrentNbaStandings } from "@/lib/nba-standings";
 import { getCurrentNhlStandings } from "@/lib/nhl-standings";
 import { getCurrentMlbStandings } from "@/lib/mlb-standings";
 import { getMlbSim, playoffOddsByCanonical, fmtOdds } from "@/lib/mlbSim";
+import { getSeasonSim, simIsCurrent, simBySlug, simByName } from "@/lib/seasonSim";
 import { getCurrentMlsStandings } from "@/lib/mls-standings";
 import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
 import { getLiveCflStandings } from "@/lib/cflStandings";
@@ -59,7 +60,7 @@ const mono = { fontFamily: "'JetBrains Mono', monospace" } as const;
 // ---- shared model -------------------------------------------------------
 type Cell = string | number;
 type Mono = { text: string; bg: string; fg: string };
-type SRow = { rank: number | string | null; name: string; href?: string | null; logoUrl?: string | null; flagUrl?: string | null; crestName?: string | null; monogram?: Mono | null; cells: Cell[] };
+type SRow = { rank: number | string | null; name: string; href?: string | null; logoUrl?: string | null; flagUrl?: string | null; crestName?: string | null; monogram?: Mono | null; cells: Cell[]; po?: boolean; cut?: boolean };
 type SubTable = { title: string | null; columns: string[]; rows: SRow[] };
 type Block = { league: string; href: string | null; note: string | null; open: boolean; subTables: SubTable[]; cols?: boolean; live?: boolean };
 type SportGroup = { sport: string; blocks: Block[]; columns?: [Block[], Block[]] };
@@ -95,17 +96,45 @@ const num = (v: number | null | undefined): Cell => (v === null || v === undefin
 // paired with a calendar window, because on its own it cannot close a board:
 // a club that ends on 161 of 162 keeps min < fullSeason true forever.
 
+// Playoff-position marking, shared by every table on this page. Rows whose
+// team currently holds a playoff/finals spot get a green tint (`po`), and the
+// last row of a CONTIGUOUS leading run of playoff rows draws the cut line
+// (`cut`). Non-contiguous fields (an NFL wild card sitting below a weak
+// division leader, a CFL crossover) tint correctly and simply skip the line.
+function applyPlayoffMarks<T>(items: T[], rows: SRow[], inField: (t: T) => boolean): void {
+  let contiguous = true;
+  let lastLead = -1;
+  items.forEach((t, i) => {
+    const po = inField(t);
+    if (po) rows[i].po = true;
+    if (po && contiguous) lastLead = i;
+    if (!po) contiguous = false;
+  });
+  const anyBeyond = items.some((t, i) => i > lastLead && inField(t));
+  if (lastLead >= 0 && lastLead < rows.length - 1 && !anyBeyond) rows[lastLead].cut = true;
+}
+
 function buildBlock<T>(opts: {
   league: string; href: string; note: string | null; open: boolean;
   items: T[]; columns: string[];
   sort: (a: T, b: T) => number;
   groups: { title: string; pick: (t: T) => boolean }[];
   row: (t: T, i: number) => SRow;
+  // Current playoff field within a sorted group (or the whole sorted table
+  // when the group split does not apply). Only evaluated on live tables -
+  // callers pass undefined in the offseason.
+  playoff?: (sorted: T[]) => (t: T) => boolean;
 }): Block | null {
   if (opts.items.length === 0) return null;
-  const all = opts.items.slice().sort(opts.sort).map((t, i) => opts.row(t, i));
+  const mk = (items: T[]): SRow[] => {
+    const sorted = items.slice().sort(opts.sort);
+    const rows = sorted.map((t, i) => opts.row(t, i));
+    if (opts.playoff) applyPlayoffMarks(sorted, rows, opts.playoff(sorted));
+    return rows;
+  };
+  const all = mk(opts.items);
   const grouped: SubTable[] = opts.groups
-    .map((g) => ({ title: g.title, columns: opts.columns, rows: opts.items.filter(g.pick).slice().sort(opts.sort).map((t, i) => opts.row(t, i)) }))
+    .map((g) => ({ title: g.title, columns: opts.columns, rows: mk(opts.items.filter(g.pick)) }))
     .filter((st) => st.rows.length > 0);
   const covered = grouped.reduce((a, st) => a + st.rows.length, 0);
   const subTables = grouped.length > 0 && covered === all.length ? grouped : [{ title: null, columns: opts.columns, rows: all }];
@@ -170,7 +199,10 @@ function LeagueAccordion({ block }: { block: Block }) {
             {/* Mobile: stacked cards instead of a table forced wide by min-w */}
             <div className="grid grid-cols-1 gap-1.5 sm:hidden">
               {st.rows.map((r, i) => (
-                <div key={`${r.name}-${i}-card`} className="rounded-md border px-2.5 py-2" style={{ borderColor: "var(--border)" }}>
+                <div key={`${r.name}-${i}-card`} className="rounded-md border px-2.5 py-2"
+                  style={r.po
+                    ? { borderColor: "var(--border)", borderLeft: "3px solid rgba(34,197,94,0.55)", background: "rgba(34,197,94,0.05)" }
+                    : { borderColor: "var(--border)" }}>
                   <div className="flex items-center justify-between gap-2">
                     <div className="flex items-center gap-1.5 min-w-0 text-xs font-medium">
                       <span className="tabular-nums text-[var(--text-dim)] flex-shrink-0" style={mono}>{r.rank ?? i + 1}</span>
@@ -204,7 +236,14 @@ function LeagueAccordion({ block }: { block: Block }) {
                 </thead>
                 <tbody>
                   {st.rows.map((r, i) => (
-                    <tr key={`${r.name}-${i}`} className="border-t" style={{ borderColor: "var(--border)" }}>
+                    <tr key={`${r.name}-${i}`} className="border-t"
+                      style={{
+                        borderColor: "var(--border)",
+                        ...(r.po ? { background: "rgba(34,197,94,0.06)" } : null),
+                        // The cut line under the last playoff spot rides an inset
+                        // shadow so the next row's border-t stays intact.
+                        ...(r.cut ? { boxShadow: "inset 0 -2px 0 rgba(34,197,94,0.45)" } : null),
+                      }}>
                       <td className="py-1 px-1.5 text-right tabular-nums text-[var(--text-dim)]" style={mono}>{r.rank ?? i + 1}</td>
                       <td className="py-1 px-1.5 font-medium whitespace-nowrap"><NameCell r={r} /></td>
                       {r.cells.map((c, j) => (
@@ -243,6 +282,9 @@ async function nflBlock(): Promise<Block | null> {
     sort: live ? (a, b) => b.win_pct - a.win_pct || b.wins - a.wins : (a, b) => nameOf(a).localeCompare(nameOf(b)),
     groups: [{ title: "AFC", pick: (t) => t.conference === "AFC" }, { title: "NFC", pick: (t) => t.conference === "NFC" }],
     row,
+    // ESPN's playoffSeed already applies the real seeding rules (division
+    // winners first, then wild cards), so seed <= 7 IS the current field.
+    playoff: live ? () => (t) => t.playoff_seed !== null && t.playoff_seed <= 7 : undefined,
   });
 }
 
@@ -265,6 +307,8 @@ async function nbaBlock(): Promise<Block | null> {
     sort: live ? (a, b) => b.win_pct - a.win_pct : (a, b) => nameOf(a).localeCompare(nameOf(b)),
     groups: [{ title: "Eastern Conference", pick: (t) => t.conf === "Eastern" }, { title: "Western Conference", pick: (t) => t.conf === "Western" }],
     row,
+    // Seeds 1-10 reach the postseason bracket (7-10 via the play-in).
+    playoff: live ? () => (t) => t.playoff_seed !== null && t.playoff_seed <= 10 : undefined,
   });
 }
 
@@ -287,6 +331,9 @@ async function nhlBlock(): Promise<Block | null> {
     sort: live ? (a, b) => b.points - a.points || b.wins - a.wins || b.goal_diff - a.goal_diff : (a, b) => nameOf(a).localeCompare(nameOf(b)),
     groups: [{ title: "Eastern Conference", pick: (t) => t.conference === "E" }, { title: "Western Conference", pick: (t) => t.conference === "W" }],
     row,
+    // ESPN's playoffSeed carries the divisional top-3 + wild-card rules;
+    // 8 per conference make the field.
+    playoff: live ? () => (t) => t.playoff_seed !== null && t.playoff_seed <= 8 : undefined,
   });
 }
 
@@ -300,6 +347,8 @@ async function mlbBlock(): Promise<Block | null> {
   // as it was rather than printing a row of dashes.
   const odds = playoffOddsByCanonical(sim);
   const showOdds = odds.size >= 30 && (sim?.meta.games_played ?? 0) > 0;
+  // World Series odds ride the same file; the sim computes them already.
+  const wsOdds = new Map((sim?.table ?? []).map((r) => [r.canonical, r.p_ws]));
   const fr = new Map(mlbFranchises().map((f) => [f.canonical, f]));
   const live = isLeagueLive("mlb", teams.map((t) => t.games_played), 162);
   const nameOf = (t: (typeof teams)[number]) => fr.get(t.canonical)?.name ?? t.display_name;
@@ -327,49 +376,78 @@ async function mlbBlock(): Promise<Block | null> {
       logoUrl: f ? mlbLogo(f.slug) : null, monogram: m ? { text: m.mono, bg: m.bg, fg: m.fg } : null,
       cells: live
         ? [t.wins, t.losses, pct3(t.win_pct), gb.get(t.canonical) ?? DASH,
-           ...(showOdds ? [fmtOdds(odds.get(t.canonical))] : [])]
-        : [DASH, DASH, DASH, DASH, ...(showOdds ? [DASH] : [])] };
+           ...(showOdds ? [fmtOdds(odds.get(t.canonical)), fmtOdds(wsOdds.get(t.canonical))] : [])]
+        : [DASH, DASH, DASH, DASH, ...(showOdds ? [DASH, DASH] : [])] };
   };
   return buildBlock({
     league: "MLB", href: "/teams/mlb",
-    note: live ? (showOdds ? `${s.source_label} · playoff odds simulated` : s.source_label) : "Offseason",
+    note: live ? (showOdds ? `${s.source_label} · odds simulated` : s.source_label) : "Offseason",
     open: live,
-    items: teams, columns: ["W", "L", "PCT", "GB", ...(showOdds ? ["PO%"] : [])],
+    items: teams, columns: ["W", "L", "PCT", "GB", ...(showOdds ? ["PO%", "WS%"] : [])],
     sort: live ? (a, b) => b.win_pct - a.win_pct || b.wins - a.wins : (a, b) => nameOf(a).localeCompare(nameOf(b)),
     groups: [{ title: "American League", pick: (t) => leagueOf(t) === "AL" }, { title: "National League", pick: (t) => leagueOf(t) === "NL" }],
     row,
+    // Three division winners + three wild cards per league; ESPN's seed
+    // already encodes that, and it is null for eliminated clubs late on.
+    playoff: live ? () => (t) => t.playoff_seed !== null && t.playoff_seed <= 6 : undefined,
   });
 }
 
 async function wnbaBlock(): Promise<Block | null> {
-  const s = await getCurrentWnbaStandings();
+  const [s, sim] = await Promise.all([getCurrentWnbaStandings(), getSeasonSim("wnba")]);
   if (s.rows.length === 0) return null;
   const live = isLeagueLive("wnba", s.rows.map((t) => t.games_played), 44);
+  const showOdds = live && simIsCurrent(sim);
+  const odds = simByName(sim); // sim rows carry the same ESPN displayName as t.name
+  // WNBA seeding is overall record, conference-blind: the field is the best
+  // eight records across BOTH conferences, so compute it once globally
+  // rather than per displayed sub-table.
+  const field = new Set(
+    s.rows.slice().sort((a, b) => b.win_pct - a.win_pct || b.wins - a.wins).slice(0, 8).map((t) => t.name),
+  );
   const row = (t: (typeof s.rows)[number], i: number): SRow => {
     const f = getWnbaFranchiseByTeamName(t.name); const m = f ? wnbaMono(f) : null;
+    const o = odds.get(t.name);
     return { rank: live ? i + 1 : null, name: f?.name ?? t.name, href: f ? `/teams/wnba/${f.slug}` : null,
       crestName: f?.name ?? t.name, monogram: m ? { text: m.abbr, bg: m.color, fg: "#fff" } : null,
-      cells: live ? [t.wins, t.losses, pct3(t.win_pct)] : [DASH, DASH, DASH] };
+      cells: live
+        ? [t.wins, t.losses, pct3(t.win_pct), ...(showOdds ? [fmtOdds(o?.p_playoffs), fmtOdds(o?.p_title)] : [])]
+        : [DASH, DASH, DASH, ...(showOdds ? [DASH, DASH] : [])] };
   };
   return buildBlock({
-    league: "WNBA", href: "/teams/wnba", note: live ? s.source_label : "Offseason", open: live,
-    items: s.rows, columns: ["W", "L", "PCT"],
+    league: "WNBA", href: "/teams/wnba",
+    note: live ? (showOdds ? `${s.source_label} · odds simulated` : s.source_label) : "Offseason", open: live,
+    items: s.rows, columns: ["W", "L", "PCT", ...(showOdds ? ["PO%", "Title%"] : [])],
     sort: live ? (a, b) => b.win_pct - a.win_pct : (a, b) => a.name.localeCompare(b.name),
     groups: [{ title: "Eastern Conference", pick: (t) => t.conf === "Eastern" }, { title: "Western Conference", pick: (t) => t.conf === "Western" }],
     row,
+    playoff: live ? () => (t) => field.has(t.name) : undefined,
   });
 }
 
 // ---- everything else ----------------------------------------------------
 
 async function mlsBlock(): Promise<Block | null> {
-  const s = await getCurrentMlsStandings();
+  const [s, sim] = await Promise.all([getCurrentMlsStandings(), getSeasonSim("mls")]);
+  const live = inSeasonWindow("mls");
+  const showOdds = live && simIsCurrent(sim);
+  const odds = simByName(sim); // sim rows carry the same ESPN displayName as t.name
   return buildBlock({
-    league: "MLS", href: "/teams/football", note: s.source_label, open: inSeasonWindow("mls"),
-    items: s.rows, columns: ["P", "W", "D", "L", "GF", "GA", "GD", "Pts"],
+    league: "MLS", href: "/teams/football",
+    note: showOdds ? `${s.source_label} · odds simulated` : s.source_label, open: live,
+    items: s.rows, columns: ["P", "W", "D", "L", "GF", "GA", "GD", "Pts", ...(showOdds ? ["PO%", "Cup%"] : [])],
     sort: (a, b) => b.points - a.points || b.gd - a.gd,
     groups: [{ title: "Eastern Conference", pick: (t) => t.conf === "Eastern" }, { title: "Western Conference", pick: (t) => t.conf === "Western" }],
-    row: (t, i) => { const c = getFootballClubByName(t.name); const nm = c?.cur_name ?? t.name; return { rank: i + 1, name: nm, href: c ? `/teams/football/${c.slug}` : null, crestName: nm, cells: [t.played, t.wins, t.draws, t.losses, t.gf, t.ga, t.gd, t.points] }; },
+    row: (t, i) => {
+      const c = getFootballClubByName(t.name); const nm = c?.cur_name ?? t.name;
+      const o = odds.get(t.name);
+      return { rank: i + 1, name: nm, href: c ? `/teams/football/${c.slug}` : null, crestName: nm,
+        cells: [t.played, t.wins, t.draws, t.losses, t.gf, t.ga, t.gd, t.points,
+          ...(showOdds ? [fmtOdds(o?.p_playoffs), fmtOdds(o?.p_title)] : [])] };
+    },
+    // Nine per conference reach the postseason (seeds 8 and 9 via the
+    // wild-card game). Rows are sorted by points here, matching seeding.
+    playoff: live ? (sorted) => { const nine = new Set(sorted.slice(0, 9)); return (t) => nine.has(t); } : undefined,
   });
 }
 
@@ -422,18 +500,29 @@ function uwclBlock(c: Awaited<ReturnType<typeof getWLiveCompetition>>): Block | 
 }
 
 async function npbBlock(): Promise<Block | null> {
-  const s = await getNpbStandings();
+  const [s, sim] = await Promise.all([getNpbStandings(), getSeasonSim("npb")]);
   if (!s || (s.central.length === 0 && s.pacific.length === 0)) return null;
-  const toRows = (rows: typeof s.central): SRow[] =>
-    rows.map((r) => ({ rank: r.rank, name: r.name, href: r.slug ? `/teams/baseball/npb/${r.slug}` : null, crestName: r.name, cells: [r.win, r.lose, r.draw, r.pct, r.gamesBehind] }));
-  const subTables: SubTable[] = [
-    { title: "Central League", columns: ["W", "L", "T", "PCT", "GB"], rows: toRows(s.central) },
-    { title: "Pacific League", columns: ["W", "L", "T", "PCT", "GB"], rows: toRows(s.pacific) },
-  ].filter((st) => st.rows.length > 0);
   // Closes for the Japanese offseason. The feed keeps serving the final table
   // all winter, so without the window this sat open showing a finished season.
   const npbLive = inSeasonWindow("npb");
-  return { league: "NPB", href: "/teams/baseball/npb", note: npbLive ? `${s.year}` : `${s.year} final`, open: npbLive, live: npbLive, subTables };
+  const showOdds = npbLive && simIsCurrent(sim);
+  const odds = simBySlug(sim);
+  const toRows = (rows: typeof s.central): SRow[] => {
+    const out = rows.map((r): SRow => ({
+      rank: r.rank, name: r.name, href: r.slug ? `/teams/baseball/npb/${r.slug}` : null, crestName: r.name,
+      cells: [r.win, r.lose, r.draw, r.pct, r.gamesBehind,
+        ...(showOdds ? [fmtOdds(r.slug ? odds.get(r.slug)?.p_playoffs : null), fmtOdds(r.slug ? odds.get(r.slug)?.p_title : null)] : [])],
+    }));
+    // Top three per league reach the Climax Series; rows arrive rank-sorted.
+    if (npbLive) applyPlayoffMarks(rows, out, (r) => rows.indexOf(r) < 3);
+    return out;
+  };
+  const cols = ["W", "L", "T", "PCT", "GB", ...(showOdds ? ["CS%", "Title%"] : [])];
+  const subTables: SubTable[] = [
+    { title: "Central League", columns: cols, rows: toRows(s.central) },
+    { title: "Pacific League", columns: cols, rows: toRows(s.pacific) },
+  ].filter((st) => st.rows.length > 0);
+  return { league: "NPB", href: "/teams/baseball/npb", note: npbLive ? (showOdds ? `${s.year} · odds simulated` : `${s.year}`) : `${s.year} final`, open: npbLive, live: npbLive, subTables };
 }
 
 // ---- club football (api-football -> Supabase -> committed bundles) ------
@@ -554,41 +643,73 @@ function libertadoresBlock(comp: LiveComp | undefined): Block | null {
 }
 
 async function cflBlock(): Promise<Block | null> {
-  const s = await getLiveCflStandings(new Date().getFullYear());
+  const [s, sim] = await Promise.all([getLiveCflStandings(new Date().getFullYear()), getSeasonSim("cfl")]);
   if (!s) return null;
+  const cflLive = inSeasonWindow("cfl");
+  const showOdds = cflLive && simIsCurrent(sim);
+  const odds = simBySlug(sim);
   const order = ["East", "West"];
   const sorted = s.divisions.slice().sort((a, b) => order.indexOf(a.division) - order.indexOf(b.division));
-  const subTables = sorted.map((d): SubTable => ({
-    title: `${d.division} Division`,
-    columns: ["GP", "W", "L", "T", "Pts", "PF", "PA"],
-    rows: d.rows.map((t): SRow => ({ rank: null, name: t.name, href: t.slug ? `/teams/cfl/${t.slug}` : null, crestName: t.name, cells: [t.gp, t.w, t.l, t.t, t.pts, t.pf, t.pa] })),
-  })).filter((st) => st.rows.length > 0);
+  // Current playoff field, crossover rule included: top 3 per division, but a
+  // 4th place strictly ahead of the other division's 3rd on points crosses
+  // over and takes that spot (a tie stays with the 3rd-place team).
+  const field = new Set<string>();
+  if (cflLive && sorted.length === 2) {
+    const [d1, d2] = sorted;
+    for (const [own, other] of [[d1, d2], [d2, d1]] as const) {
+      const third = own.rows[2];
+      const cross = other.rows[3];
+      for (const t of own.rows.slice(0, 2)) field.add(t.slug);
+      if (third) field.add(cross && third && cross.pts > third.pts ? cross.slug : third.slug);
+    }
+  }
+  const subTables = sorted.map((d): SubTable => {
+    const rows = d.rows.map((t): SRow => ({
+      rank: null, name: t.name, href: t.slug ? `/teams/cfl/${t.slug}` : null, crestName: t.name,
+      cells: [t.gp, t.w, t.l, t.t, t.pts, t.pf, t.pa,
+        ...(showOdds ? [fmtOdds(odds.get(t.slug)?.p_playoffs), fmtOdds(odds.get(t.slug)?.p_title)] : [])],
+    }));
+    if (cflLive) applyPlayoffMarks(d.rows, rows, (t) => field.has(t.slug));
+    return { title: `${d.division} Division`, columns: ["GP", "W", "L", "T", "Pts", "PF", "PA", ...(showOdds ? ["PO%", "Cup%"] : [])], rows };
+  }).filter((st) => st.rows.length > 0);
   if (subTables.length === 0) return null;
-  const cflLive = inSeasonWindow("cfl");
-  return { league: "CFL", href: "/teams/cfl", note: cflLive ? `${s.year}` : `${s.year} final`, open: cflLive, live: cflLive, subTables };
+  return { league: "CFL", href: "/teams/cfl", note: cflLive ? (showOdds ? `${s.year} · odds simulated` : `${s.year}`) : `${s.year} final`, open: cflLive, live: cflLive, subTables };
 }
 
 async function footyBlock(league: "afl" | "nrl"): Promise<Block | null> {
-  const s = await getFootyLiveStandings(league);
+  const [s, sim] = await Promise.all([getFootyLiveStandings(league), getSeasonSim(league)]);
   if (!s || s.rows.length === 0) return null;
+  const footyLive = inSeasonWindow(league); // "afl" | "nrl" are both SeasonKeys
+  const showOdds = footyLive && simIsCurrent(sim);
+  const odds = simBySlug(sim);
+  // Finals spots: the AFL's 2026 format takes ten (7-10 via the wildcard
+  // round); the NRL keeps its top eight.
+  const spots = league === "afl" ? 10 : 8;
   const franchises = league === "afl" ? getAllAflFranchises() : getAllNrlFranchises();
   const bySlug = new Map(franchises.map((f) => [f.slug, f]));
-  const cols = league === "afl" ? ["P", "W", "L", "D", "For", "Agst", "Pts"] : ["P", "W", "D", "L", "For", "Agst", "Pts"];
+  const cols = [
+    ...(league === "afl" ? ["P", "W", "L", "D", "For", "Agst", "Pts"] : ["P", "W", "D", "L", "For", "Agst", "Pts"]),
+    ...(showOdds ? ["Finals%", "Prem%"] : []),
+  ];
   const rows: SRow[] = s.rows.map((t) => {
     const f = t.slug ? bySlug.get(t.slug) : undefined;
     const name = f?.name ?? t.name;
+    const o = t.slug ? odds.get(t.slug) : undefined;
     return {
       rank: t.rank, name,
       href: t.slug ? `/teams/${league}/${t.slug}` : null,
       crestName: name,
       monogram: f ? { text: f.abbr, bg: f.color, fg: "#fff" } : null,
-      cells: league === "afl"
-        ? [num(t.played), num(t.w), num(t.l), num(t.d), num(t.pf), num(t.pa), num(t.pts)]
-        : [num(t.played), num(t.w), num(t.d), num(t.l), num(t.pf), num(t.pa), num(t.pts)],
+      cells: [
+        ...(league === "afl"
+          ? [num(t.played), num(t.w), num(t.l), num(t.d), num(t.pf), num(t.pa), num(t.pts)]
+          : [num(t.played), num(t.w), num(t.d), num(t.l), num(t.pf), num(t.pa), num(t.pts)]),
+        ...(showOdds ? [fmtOdds(o?.p_playoffs), fmtOdds(o?.p_title)] : []),
+      ],
     };
   });
-  const footyLive = inSeasonWindow(league); // "afl" | "nrl" are both SeasonKeys
-  return { league: league.toUpperCase(), href: `/teams/${league}`, note: footyLive ? `${s.year}` : `${s.year} final`, open: footyLive, live: footyLive, subTables: [{ title: null, columns: cols, rows }] };
+  if (footyLive) applyPlayoffMarks(s.rows, rows, (t) => (t.rank ?? 99) <= spots);
+  return { league: league.toUpperCase(), href: `/teams/${league}`, note: footyLive ? (showOdds ? `${s.year} · odds simulated` : `${s.year}`) : `${s.year} final`, open: footyLive, live: footyLive, subTables: [{ title: null, columns: cols, rows }] };
 }
 
 async function f1Block(): Promise<Block | null> {
@@ -877,7 +998,9 @@ export default async function LiveStandingsPage() {
         <p className="mt-2 text-sm text-[var(--text-muted)] max-w-3xl">
           Every live league table the site tracks, gathered on one page and grouped by sport, each
           formatted to match its own league page. In-season leagues open expanded; leagues between
-          seasons open collapsed with records zeroed until they restart.
+          seasons open collapsed with records zeroed until they restart. Green-shaded rows sit in
+          playoff position today, with the green rule marking the cut; PO/Finals and title odds are
+          our own simulations of each remaining schedule, refreshed daily.
         </p>
       </header>
 

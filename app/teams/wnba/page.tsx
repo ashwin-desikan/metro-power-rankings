@@ -4,6 +4,7 @@ import Link from "next/link";
 import TeamCrest from "@/app/teams/_shared/TeamCrest";
 import { getWnbaMeta, getAllFranchises, getDefunctFranchises, getChampions, getLatestStandings, type WnbaFranchise } from "@/lib/wnba";
 import { getCurrentWnbaStandings } from "@/lib/wnba-standings";
+import { getSeasonSim, simIsCurrent, simByName, fmtOdds } from "@/lib/seasonSim";
 import { BASE_URL, SITE_NAME } from "@/lib/seo";
 import WnbaFranchiseTable from "./WnbaFranchiseTable";
 
@@ -25,7 +26,7 @@ function Mono({ abbr, color }: { abbr: string; color: string }) {
   return <span className="inline-flex items-center justify-center font-bold rounded flex-shrink-0" style={{ background: color, color: "#fff", width: 26, height: 16, fontSize: abbr.length > 3 ? 7 : 9 }} aria-hidden>{abbr}</span>;
 }
 
-type Row = { slug: string | null; team: string; abbr: string | null; color: string | null; w: number; l: number; win_pct: number | null; champion?: boolean; finals?: boolean };
+type Row = { slug: string | null; team: string; abbr: string | null; color: string | null; w: number; l: number; win_pct: number | null; champion?: boolean; finals?: boolean; espnName?: string; po?: boolean; cut?: boolean };
 const confLabel = (c: string) => (/^e/i.test(c) ? "Eastern Conference" : /^w/i.test(c) ? "Western Conference" : c || "League");
 const fmtPct = (p: number | null) => (p != null ? p.toFixed(3).replace(/^0/, "") : "—");
 
@@ -39,8 +40,18 @@ export default async function WnbaPage() {
 
   // Live current-season standings from ESPN; fall back to the workbook's last
   // completed season if the API is unreachable or still on the prior season.
-  const live = await getCurrentWnbaStandings();
+  const [live, sim] = await Promise.all([getCurrentWnbaStandings(), getSeasonSim("wnba")]);
   const liveActive = live.rows.length > 0 && live.season_year > meta.latest_season;
+  // Playoff odds from our own Monte Carlo (scripts/predictions/
+  // build_season_sims.py, refreshed daily); columns appear only while the
+  // season is live and the sim is current, the /teams/mlb convention.
+  const showOdds = liveActive && simIsCurrent(sim);
+  const simRows = simByName(sim);
+  // The WNBA seeds its playoff field 1-8 on overall record, conference-blind,
+  // so the current field is the best eight records across BOTH conferences.
+  const field = new Set(
+    live.rows.slice().sort((a, b) => b.win_pct - a.win_pct || b.wins - a.wins).slice(0, 8).map((r) => r.name),
+  );
   const asOf = new Date(live.fetched_at).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
 
   const nameToFr = new Map<string, WnbaFranchise>();
@@ -57,9 +68,15 @@ export default async function WnbaPage() {
       const f = nameToFr.get(r.name.toLowerCase()) ?? null;
       const key = r.conf || "League";
       if (!byConf.has(key)) byConf.set(key, []);
-      byConf.get(key)!.push({ slug: f?.slug ?? null, team: f?.name ?? r.name, abbr: f?.abbr ?? r.abbr, color: f?.color ?? null, w: r.wins, l: r.losses, win_pct: r.win_pct });
+      byConf.get(key)!.push({ slug: f?.slug ?? null, team: f?.name ?? r.name, abbr: f?.abbr ?? r.abbr, color: f?.color ?? null, w: r.wins, l: r.losses, win_pct: r.win_pct, espnName: r.name, po: field.has(r.name) });
     }
-    groups = [...byConf.entries()].sort((a, b) => a[0].localeCompare(b[0])).map(([c, rows]) => ({ conference: confLabel(c), rows: rows.sort((a, b) => (b.win_pct ?? 0) - (a.win_pct ?? 0) || b.w - a.w) }));
+    groups = [...byConf.entries()].sort((a, b) => a[0].localeCompare(b[0])).map(([c, rows]) => {
+      const sorted = rows.sort((a, b) => (b.win_pct ?? 0) - (a.win_pct ?? 0) || b.w - a.w);
+      // Cut line under the last playoff row of a contiguous leading run.
+      const lastLead = sorted.findIndex((r) => !r.po) - 1;
+      if (lastLead >= 0 && !sorted.slice(lastLead + 1).some((r) => r.po)) sorted[lastLead].cut = true;
+      return { conference: confLabel(c), rows: sorted };
+    });
     standingsLabel = live.source_label || `${live.season_year} Standings`;
   } else {
     groups = getLatestStandings().map(({ conference, rows }) => ({
@@ -117,7 +134,11 @@ export default async function WnbaPage() {
                   <div
                     key={(st.slug ?? st.team) + i + "-card"}
                     className="rounded-lg border p-2.5"
-                    style={{ borderColor: "var(--border)", background: st.champion ? "rgba(251,191,36,0.07)" : "var(--bg-card)" }}
+                    style={{
+                      borderColor: "var(--border)",
+                      background: st.champion ? "rgba(251,191,36,0.07)" : st.po ? "rgba(34,197,94,0.05)" : "var(--bg-card)",
+                      ...(st.po ? { borderLeft: "3px solid rgba(34,197,94,0.55)" } : null),
+                    }}
                   >
                     <div className="flex items-center justify-between gap-2">
                       <span className="flex items-center gap-2 min-w-0">
@@ -133,6 +154,9 @@ export default async function WnbaPage() {
                       <span className="flex items-baseline gap-2 text-xs tabular-nums flex-shrink-0">
                         <span>{st.w}-{st.l}</span>
                         <span className="text-[var(--text-muted)]">{fmtPct(st.win_pct)}</span>
+                        {showOdds && st.espnName && (
+                          <span className="text-[var(--text-muted)]">{fmtOdds(simRows.get(st.espnName)?.p_title)} title</span>
+                        )}
                       </span>
                     </div>
                   </div>
@@ -146,11 +170,18 @@ export default async function WnbaPage() {
                     <th className="text-right py-2 px-2 font-medium">W</th>
                     <th className="text-right py-2 px-2 font-medium">L</th>
                     <th className="text-right py-2 px-3 font-medium">Win%</th>
+                    {showOdds && <th className="text-right py-2 px-2 font-medium">PO%</th>}
+                    {showOdds && <th className="text-right py-2 px-3 font-medium">Title%</th>}
                   </tr>
                 </thead>
                 <tbody>
                   {rows.map((st, i) => (
-                    <tr key={(st.slug ?? st.team) + i} className="border-b last:border-b-0" style={{ borderColor: "var(--border)", background: st.champion ? "rgba(251,191,36,0.07)" : undefined }}>
+                    <tr key={(st.slug ?? st.team) + i} className="border-b last:border-b-0"
+                      style={{
+                        borderColor: "var(--border)",
+                        background: st.champion ? "rgba(251,191,36,0.07)" : st.po ? "rgba(34,197,94,0.06)" : undefined,
+                        ...(st.cut ? { boxShadow: "inset 0 -2px 0 rgba(34,197,94,0.45)" } : null),
+                      }}>
                       <td className="py-2 px-3">
                         <span className="flex items-center gap-2">
                           <TeamCrest name={st.team} size={20} fallback={st.abbr && st.color ? <Mono abbr={st.abbr} color={st.color} /> : null} />
@@ -166,6 +197,8 @@ export default async function WnbaPage() {
                       <td className="py-2 px-2 text-right">{st.w}</td>
                       <td className="py-2 px-2 text-right text-[var(--text-muted)]">{st.l}</td>
                       <td className="py-2 px-3 text-right">{fmtPct(st.win_pct)}</td>
+                      {showOdds && <td className="py-2 px-2 text-right">{fmtOdds(st.espnName ? simRows.get(st.espnName)?.p_playoffs : null)}</td>}
+                      {showOdds && <td className="py-2 px-3 text-right">{fmtOdds(st.espnName ? simRows.get(st.espnName)?.p_title : null)}</td>}
                     </tr>
                   ))}
                 </tbody>
@@ -174,7 +207,10 @@ export default async function WnbaPage() {
           ))}
         </div>
         <p className="text-[10px] text-[var(--text-dim)] mt-2">
-          {liveActive ? `Current as of ${asOf}, via ESPN (refreshed hourly).` : <>★ Champion · F Finalist · {meta.latest_season} final standings</>}
+          {liveActive ? (
+            <>Current as of {asOf}, via ESPN (refreshed hourly). Green-shaded teams hold one of the eight playoff spots, seeded on overall record across both conferences.
+            {showOdds && sim && <> Playoff and title odds are our own simulation of the remaining schedule ({sim.meta.sims.toLocaleString()} runs, updated {sim.meta.generated_at}).</>}</>
+          ) : <>★ Champion · F Finalist · {meta.latest_season} final standings</>}
         </p>
       </section>
 

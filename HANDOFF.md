@@ -5276,3 +5276,16 @@ and asked for Phases 1+2 in one rollout. Shipped in this commit:
   `pickem-prototype.html`, `PICKEM-SPEC.md`, and an ephemeral
   `public/pickem-prototype.html` on Ashwin's Windows clone only (NOT in git —
   do not commit that one; public/ is a build path).
+
+---
+
+## 2026-08-10 — windows (cloud session) → next session (season sims + playoff markers, ON DISK, UNCOMMITTED)
+
+Cowork session. Built the playoff-race feature end to end; everything sits in the WORKING TREE on the Windows clone, not yet committed (Aug 10 build budget was already spent at 3 READY; ships with the next push, one build).
+
+- **New** `scripts/predictions/build_season_sims.py`: one engine, six leagues (AFL, NRL, WNBA, CFL, NPB, MLS), playoff + championship odds -> `public/data/<league>-sim.json`. Sources: afltables fixtures + ESPN records (AFL/NRL, reconciled because afltables lags ESPN by days), ESPN standings + per-team schedules (WNBA incl. Commissioner's Cup Championship exclusion; MLS via the soccer endpoint dialect — seasontype is IGNORED there, results come default + `fixture=true` for upcoming), cfl.ca schedule/standings ("F (OT)" counts as Final), SPAIA (NPB, synthetic remaining pairings from RestGame). Every builder hard-fails on record mismatch vs its source's own table; 18-check offline `--self-test`. All six ran clean natively on this box (20k sims each); initial JSONs are in the tree.
+- **New** `.github/workflows/season-sims-refresh.yml`: daily 14:30 UTC Mar-Nov, Actions-owned (NEW job — mini not involved; if it ever moves there, standard DRY_RUN -> live -> retire sequence). Commits `[vercel skip]`, revalidates `predictions-daily`, warms the six consumer pages. Partial failure ships the healthy leagues and still turns the run red.
+- **Frontend**: `lib/seasonSim.ts` (GH-raw-first ISR reader, `simIsCurrent` 10-day freshness gate); `/sports/standings` gets green playoff-position shading + cut lines on EVERY league table (ESPN playoffSeed for NFL/NBA/NHL/MLB; computed fields for WNBA overall-top-8, MLS top-9/conf, CFL crossover, NPB top-3, AFL top-TEN — 2026 wildcard format — NRL top-8) plus odds columns for the six leagues and a WS% column for MLB. Hubs updated: FootyHub (AFL/NRL), WNBA, CFL, NPB, MlbStandings. CFB deliberately unmarked (CFP field is not a pure top-12).
+- `lib/releases.ts` gained a second 2026-08-11 block (duplicate-date precedent: 2026-05-20/24/25); the skyscrapers block from this box's local commits is untouched.
+- Verified: full `npm run verify` green in a cloud clone at origin/main; native `npx tsc --noEmit` CLEAN on this box on top of the 6 local unpushed commits; check-client-imports OK (`@/lib/seasonSim` registered); all 13 files hash-verified after transfer.
+- **Open**: nothing blocking. After the push lands, dispatch `season-sims-refresh.yml` once manually to prove the Actions leg (expect first cron 1-4h late per the usual), and expect `simIsCurrent` to hide the odds columns within 10 days if the job ever dies.

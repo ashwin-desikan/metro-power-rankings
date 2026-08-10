@@ -19,6 +19,16 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-08-11",
+    headline: "Playoff races, marked and measured, across seven leagues",
+    items: [
+      "Every table on Live Standings now shades the teams in playoff position and draws the cut line, updated daily - from the NFL to the AFL's new ten-team wildcard finals and the CFL's crossover rule.",
+      "The AFL, NRL, WNBA, CFL, NPB and MLS join MLB with daily simulated odds: chance to make the playoffs and chance to win it all, computed from each club's remaining schedule and shown on Live Standings.",
+      "The AFL, NRL, WNBA, CFL and NPB hub standings carry the same odds columns and playoff shading, with each league's real finals format simulated - wildcard rounds, Climax Series advantage and all.",
+      "MLB standings now show World Series odds alongside playoff odds, on the hub and on Live Standings.",
+    ],
+  },
+  {
+    date: "2026-08-11",
     headline: "Supertall Skyscrapers: the vertical world, measured honestly",
     items: [
       "A new Geography page ranks every building over 350 metres and every standing structure past that height - television masts, chimneys and oil platforms included, filterable by type.",

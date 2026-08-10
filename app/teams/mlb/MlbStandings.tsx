@@ -94,6 +94,8 @@ export default async function MlbStandings() {
   const odds = playoffOddsByCanonical(sim);
   const showOdds = odds.size >= 30 && (sim?.meta.games_played ?? 0) > 0;
   const oddsAsOf = showOdds ? sim!.meta.generated_at : null;
+  // World Series odds ride the same sim file and the same gate.
+  const wsOdds = new Map((sim?.table ?? []).map((r) => [r.canonical, r.p_ws]));
 
   const franchises = getAllFranchises();
   const bySlug = new Map(franchises.map((f) => [f.slug, f]));
@@ -151,9 +153,10 @@ export default async function MlbStandings() {
           <h2 className="text-lg font-bold tracking-tight">{standings.season_year} MLB Standings</h2>
           <p className="text-xs text-[var(--text-muted)]">
             Live from ESPN, refreshed hourly{fetchedDate ? `. As of ${fetchedDate}.` : "."}
+            {showOdds && <>{" "}Green-shaded teams currently hold a playoff seed.</>}
             {oddsAsOf && (
               <>
-                {" "}Playoff odds are our own simulation of the remaining schedule
+                {" "}Playoff and World Series odds are our own simulation of the remaining schedule
                 ({sim!.meta.sims.toLocaleString()} runs, {oddsAsOf}) —{" "}
                 <Link href="/predictions" className="text-[var(--accent)] hover:underline">
                   how it works
@@ -201,7 +204,12 @@ export default async function MlbStandings() {
                   const pct = t.win_pct ? t.win_pct.toFixed(3).replace(/^0/, "") : "—";
                   const gbLabel = gb === null ? "—" : gb % 1 === 0 ? gb.toFixed(0) : gb.toFixed(1);
                   const po = showOdds ? (odds.get(t.canonical) ?? null) : null;
-                  return { t, slug, logo, mono, displayShort, pct, gbLabel, po };
+                  const ws = showOdds ? (wsOdds.get(t.canonical) ?? null) : null;
+                  // A green tint marks the six current playoff seeds per
+                  // league (ESPN's playoffSeed already applies the division-
+                  // winners-then-wild-cards rules).
+                  const inField = t.playoff_seed !== null && t.playoff_seed <= 6;
+                  return { t, slug, logo, mono, displayShort, pct, gbLabel, po, ws, inField };
                 });
 
                 const TeamIdentity = ({ slug, logo, mono, displayShort }: (typeof rowsData)[number]) => (
@@ -232,7 +240,9 @@ export default async function MlbStandings() {
                         scrolling 5-column table inside an already-narrow division box. */}
                     <div className="sm:hidden divide-y" style={{ borderColor: "var(--border)" }}>
                       {rowsData.map((row) => (
-                        <div key={row.t.canonical} className="py-2 flex items-center justify-between gap-2">
+                        <div key={row.t.canonical}
+                          className="py-2 flex items-center justify-between gap-2"
+                          style={row.inField ? { background: "rgba(34,197,94,0.06)" } : undefined}>
                           <div className="min-w-0 flex-1 text-xs">
                             <TeamIdentity {...row} />
                           </div>
@@ -271,6 +281,12 @@ export default async function MlbStandings() {
                                 </span>
                               </span>
                             )}
+                            {showOdds && (
+                              <span className="text-center w-8">
+                                <span className="block text-[8px] uppercase tracking-wide text-[var(--text-dim)]">WS</span>
+                                <span className="block text-[var(--text-muted)]">{fmtOdds(row.ws)}</span>
+                              </span>
+                            )}
                           </div>
                         </div>
                       ))}
@@ -293,11 +309,20 @@ export default async function MlbStandings() {
                                 Playoff
                               </th>
                             )}
+                            {showOdds && (
+                              <th
+                                className="text-right py-1 pl-1 font-medium text-[9px] uppercase tracking-wider whitespace-nowrap"
+                                title="Our simulation's chance this team wins the World Series"
+                              >
+                                WS
+                              </th>
+                            )}
                           </tr>
                         </thead>
                         <tbody>
                           {rowsData.map((row) => (
-                            <tr key={row.t.canonical} className="border-b last:border-b-0" style={{ borderColor: "var(--border)" }}>
+                            <tr key={row.t.canonical} className="border-b last:border-b-0"
+                              style={{ borderColor: "var(--border)", ...(row.inField ? { background: "rgba(34,197,94,0.06)" } : null) }}>
                               <td className="py-2 pr-1">
                                 <TeamIdentity {...row} />
                               </td>
@@ -311,6 +336,9 @@ export default async function MlbStandings() {
                                 >
                                   {fmtOdds(row.po)}
                                 </td>
+                              )}
+                              {showOdds && (
+                                <td className="py-1 pl-1 text-right text-[var(--text-muted)]">{fmtOdds(row.ws)}</td>
                               )}
                             </tr>
                           ))}
