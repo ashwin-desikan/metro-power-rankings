@@ -156,12 +156,15 @@ export default function PicksClient() {
     [ledgers],
   );
 
-  // Auth + pick sync (useFollowing skeleton)
-  const loadFromDb = useCallback(async () => {
+  // Auth + pick sync (useFollowing skeleton). RLS makes picks world-readable
+  // for the leaderboard, so "my picks" MUST filter on user_id — without it,
+  // every other player's rows come back as yours.
+  const loadFromDb = useCallback(async (userId: string) => {
     if (!sb) return;
     const { data } = await sb
       .from("picks")
       .select("league,season,event_key,mode,pick,confidence,picked_at")
+      .eq("user_id", userId)
       .order("picked_at", { ascending: true });
     setPicks((data as StoredPick[]) || []);
   }, [sb]);
@@ -186,7 +189,7 @@ export default function PicksClient() {
             { onConflict: "user_id,league,season,event_key,mode", ignoreDuplicates: true },
           );
         }
-        await loadFromDb();
+        await loadFromDb(u.id);
       } else {
         setPicks(readLocal());
       }
