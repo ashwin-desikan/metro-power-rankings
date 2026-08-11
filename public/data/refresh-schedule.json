@@ -1,26 +1,6 @@
 {
-  "generated_at": "2026-08-11T07:28:09.320808+00:00",
+  "generated_at": "2026-08-11T09:08:44.545659+00:00",
   "jobs": [
-    {
-      "id": "cricket-weekly",
-      "label": "Cricket results + rankings",
-      "schedule_text": "Tue at 09:00 UTC",
-      "cadence": "weekly",
-      "times": [
-        "09:00"
-      ],
-      "weekdays": [
-        2
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-11T09:00:00+00:00",
-      "last_run": {
-        "date": "2026-08-04",
-        "status": "seeded",
-        "slot": "2026-08-04T09:00:00+00:00"
-      }
-    },
     {
       "id": "mlb-sim",
       "label": "MLB playoff odds",
@@ -362,6 +342,26 @@
         "date": "2026-08-11",
         "status": "ok",
         "slot": "2026-08-11T07:05:00+00:00"
+      }
+    },
+    {
+      "id": "cricket-weekly",
+      "label": "Cricket results + rankings",
+      "schedule_text": "Tue at 09:00 UTC",
+      "cadence": "weekly",
+      "times": [
+        "09:00"
+      ],
+      "weekdays": [
+        2
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-18T09:00:00+00:00",
+      "last_run": {
+        "date": "2026-08-11",
+        "status": "ok",
+        "slot": "2026-08-11T09:00:00+00:00"
       }
     },
     {
