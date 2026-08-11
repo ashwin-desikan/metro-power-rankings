@@ -5291,3 +5291,22 @@ Cowork session. Built the playoff-race feature end to end; everything sits in th
 - **Open**: nothing blocking. After the push lands, dispatch `season-sims-refresh.yml` once manually to prove the Actions leg (expect first cron 1-4h late per the usual), and expect `simIsCurrent` to hide the odds columns within 10 days if the job ever dies.
 
 **Addendum (same night, ~22:40 UTC):** Ashwin approved commit AND push of everything. Pushed 9489ff254 (this feature, 20 files) on top of the six local commits — all up on origin, branch in sync. Exactly ONE production build (dpl_7VrPVhvGeEciVUqnWT1DdfzMBLka, READY); mini data commits CANCELED. Verified live: odds columns + green shading on /sports/standings and /teams/afl. Still open: dispatch season-sims-refresh.yml once manually to prove the Actions leg.
+
+## 2026-08-11 -- mini -> windows+cloud (season-sims folded into mlb-sim on the mini; a real bug found and fixed along the way)
+
+Ashwin: "can we actually fold [season-sims] into the mlb-sim job so they all run together as one." The Actions leg from the entry above had already been proven (manual dispatch, 07:55 UTC, 6m05s, success) before this landed, so that open item is also closed.
+
+### What shipped (`4363dd4e1`, `[vercel skip]` auto-tagged, no build)
+`runners/mlb-sim.sh` now builds MLB + all six season-sims leagues in one dispatcher slot, one commit, one revalidate ping (both YAMLs shared the `predictions-daily` tag, so this was free). Standalone `runners/season-sims.sh` (which I'd drafted first, before Ashwin's fold-it-in ask) was deleted, never committed. `jobs.toml`'s `mlb-sim` entry moved from 09:40 UTC to **14:30 UTC** -- season-sims' original time, not mlb-sim's: 14:30 is the only slot that also catches AFL/NRL/NPB evening games (Australia/Japan aren't done by 09:40), and MLB has no equivalent hour constraint -- its only reason for being on the mini at all was GitHub's 1-4h-late cron, not any particular time. All seven builds now get the same soft-fail treatment (own timeout watchdog, tolerate a nonzero exit, keep going) instead of `guarded()`'s hard-fail-the-whole-run, since sharing a job means one league's failure must not cost the other six.
+
+### The bug (`build_season_sims.py`)
+Its per-league loop only caught `SystemExit` (its own explicit validation hard-fails) -- a raw network exception was NOT caught and crashed the entire process before the other five leagues even got a turn, despite the code's own comment already claiming "one broken source must not silence the other five leagues." Found live, not in a test: the first mini dry run hit exactly this. Broadened the `except` to catch everything; re-ran and confirmed the fix -- see below.
+
+### The DNS finding (separate, still open)
+`afltables.com` (AFL/NRL's source) does not resolve through the mini's Tailscale DNS -- SERVFAIL from `100.100.100.100`, confirmed persistent (not a one-off) across three checks a few minutes apart -- though it resolves fine via 8.8.8.8/1.1.1.1. Not the site being down, not a code issue, not something GitHub Actions would have hit (its runners use their own DNS). Before the exception-handling fix this took out all six leagues every run; after the fix, confirmed live: MLB/WNBA/CFL/NPB/MLS all built correctly (real 20k-sim output, e.g. WNBA leader Minnesota Lynx 44.98%) while AFL and NRL failed in isolation and were skipped. **Open**: someone needs to root-cause the Tailscale DNS routing for this one domain. Until then AFL/NRL odds won't refresh -- the mini job alerts (`notify.py`) on every partial failure, and `lib/seasonSim.ts`'s 10-day `simIsCurrent` gate hides the stale columns if it drags on.
+
+### Retired
+`season-sims-refresh.yml`'s schedule (`workflow_dispatch` stays as manual fallback), same pattern as `mlb-sim-refresh.yml`'s own retirement. Left it live until the mini dry run actually proved out (twice -- once to find the bug, once to confirm the fix), per the standard DRY_RUN -> live -> retire sequence; never had both schedules active at once.
+
+### Verified
+`dispatcher.py --self-test`: 79/79 in the repo, 78/78 live (repo suite carries one extra drift-check case that doesn't apply to the live copy). Two live `DRY_RUN=1` runs against `~/metro-mini-jobs`'s real `config.env` -- first one surfaced the bug, second confirmed the fix. Live deployment dir synced and diffed clean against the just-pushed repo state.
