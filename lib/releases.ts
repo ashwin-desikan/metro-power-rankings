@@ -19,6 +19,16 @@ export type Release = {
 export const RELEASES: Release[] = [
   {
     date: "2026-08-11",
+    headline: "A time machine for champions: any month, any year",
+    items: [
+      "The Champions board gains a Time Machine. Pick a month and year and see who held every trophy at that moment, across 108 competitions and back to 1860.",
+      "Split titles are listed in full rather than collapsed to the latest - Michigan and Nebraska both held the 1997 college football title, each shown with the date it was won.",
+      "A month containing a handover shows both holders: in July 1990 Argentina hold the World Cup until the 8th, then Germany.",
+      "Competitions retire from the board once they stop being contested, so a month only ever shows the trophies that were genuinely being held in it.",
+    ],
+  },
+  {
+    date: "2026-08-11",
     headline: "Playoff races, marked and measured, across seven leagues",
     items: [
       "Every table on Live Standings now shades the teams in playoff position and draws the cut line, updated daily - from the NFL to the AFL's new ten-team wildcard finals and the CFL's crossover rule.",
