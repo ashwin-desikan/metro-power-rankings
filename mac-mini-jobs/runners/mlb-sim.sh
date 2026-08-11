@@ -2,7 +2,7 @@
 # Combined port of .github/workflows/mlb-sim-refresh.yml (cron 40 9 * 3-11 *,
 # schedule already retired 2026-08-07) and .github/workflows/season-sims-
 # refresh.yml (cron 30 14 * 3-11 *, folded in here 2026-08-11 rather than run
-# as a second mini job). Seven leagues, two scripts, one daily slot.
+# as a second mini job). Seven leagues, two scripts, two daily slots.
 #
 # Kept DELIBERATELY separate from the predictions runner, for the same reason
 # predictions.sh is its own job: predictions runs Tue/Fri because its ledgers
@@ -10,13 +10,16 @@
 # daily would quietly freeze NFL picks earlier on less information. These seven
 # have no ledger and play/finish every day.
 #
-# Runs at 07:00 UTC (Ashwin: wants it done by 8AM BST, fixed year-round --
-# jobs.toml times are never local, see its header). This is EARLIER than both
-# mlb-sim's old 09:40 and season-sims' original 14:30, so AFL/NRL/NPB (evening
-# games, Australia/Japan) now read the PREVIOUS evening's results rather than
-# the current day's -- 07:00 UTC is well before those games even kick off.
-# Accepted tradeoff, same shape as mlb-sim's old 09:40 slot; MLB/WNBA/CFL/MLS
-# are unaffected (their games are long over by any of these times).
+# Runs twice (jobs.toml times = ["07:00", "14:30"] UTC, fixed year-round --
+# never local, see that file's header):
+#   07:00 = Ashwin wants it done by 8AM BST. Freshest for MLB/WNBA/CFL/MLS
+#           (their games are long over by then).
+#   14:30 = season-sims' original slot. AFL/NRL/NPB play evening games
+#           (Australia/Japan) that haven't kicked off yet at 07:00, so this
+#           second run is what actually gets their SAME-DAY results; the
+#           07:00 run alone would always be one day behind for those three.
+# The 14:30 run is a harmless no-op for MLB/WNBA/CFL/MLS: nothing changed for
+# them since 07:00, so it just recomputes and finds an empty diff.
 #
 # One broken source must not silence the other six leagues. All seven builds
 # below get the SAME soft-fail treatment (own timeout watchdog, tolerate a
