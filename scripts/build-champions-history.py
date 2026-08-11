@@ -11,7 +11,7 @@ is cloud-only and unreadable from the sandbox.
 
     python scripts/build-champions-history.py
 """
-import json, os, re, sys, datetime
+import json, os, re, sys, datetime, unicodedata
 from openpyxl import load_workbook
 
 SRC = os.environ.get("CHAMPS_SRC", os.path.expanduser("~/OneDrive/Excel Files/Champions_History.xlsx"))
@@ -90,7 +90,7 @@ def _norm_date(d):
         return ""
     if re.fullmatch(r"\d{4}-\d{2}-\d{2}", s):
         return s
-    for fmt in ("%Y-%m-%d %H:%M:%S", "%m/%d/%Y", "%m/%d/%y", "%Y/%m/%d"):
+    for fmt in ("%Y-%m-%d %H:%M:%S", "%m/%d/%Y", "%m/%d/%y", "%Y/%m/%d", "%m-%d-%Y", "%d/%m/%Y"):
         try:
             return datetime.datetime.strptime(s, fmt).strftime("%Y-%m-%d")
         except ValueError:
@@ -98,6 +98,13 @@ def _norm_date(d):
     return s
 
 def slugify(s: str) -> str:
+    # Fold accents FIRST. Without this, "Argentina Primera División" slugs as
+    # "argentina-primera-divisi-n" (the accented char is not [a-z0-9], so it
+    # becomes a separator) instead of "argentina-primera-division". That is a
+    # live-URL change and it also breaks the competition redirect map, which
+    # check:slug-drift gates on. Same for Brasileiro Série A and Copa América.
+    s = unicodedata.normalize("NFKD", str(s))
+    s = "".join(c for c in s if not unicodedata.combining(c))
     s = s.lower().replace("&", "and")
     s = re.sub(r"[‘’']", "", s)
     s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")

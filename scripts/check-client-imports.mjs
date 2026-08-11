@@ -39,6 +39,7 @@ const SERVER_ONLY_MODULES = [
   "@/lib/champions",
   "@/lib/championsHub",
   "@/lib/championsHistory",
+  "@/lib/championsTimeline",
   "@/lib/nfl",
   "@/lib/mlb",
   "@/lib/nba",

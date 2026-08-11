@@ -1,18 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { useSessionState } from "@/lib/useSessionState";
 import ChampionsTable, { type ChampRow } from "./ChampionsTable";
+import ChampionsTimeMachine from "./ChampionsTimeMachine";
 import { sportIcon } from "@/lib/sportLabels";
 import ChampionLogo from "@/app/teams/_shared/ChampionLogo";
 import { competitionHref } from "@/lib/competitionLinks";
 
-// Client wrapper for /sports/champions: a Current | All-Time toggle. Current is
-// the existing reigning-holders board; All-Time is a competition index ordered
-// by tier (apex first; tier itself hidden), with the same Scope / Sport /
-// Region filters as the Current board. Each row links to its honour roll.
-// Toggle + filters persist for the browser session.
+// Client wrapper for /sports/champions: a Current | Time Machine | All-Time
+// toggle. Current is the reigning-holders board; Time Machine is the same board
+// resolved to any month and year; All-Time is a competition index ordered by
+// tier (apex first; tier itself hidden), with the same Scope / Sport / Region
+// filters. Each All-Time row links to its honour roll. Toggle + filters persist
+// for the browser session.
 
 export type CompIndexEntry = {
   competition: string;
@@ -166,12 +168,44 @@ function AllTimeIndex({ index }: { index: CompIndexEntry[] }) {
   );
 }
 
+type View = "current" | "asof" | "all";
+
 export default function ChampionsView({ current, index }: { current: ChampRow[]; index: CompIndexEntry[] }) {
-  const [view, setView] = useSessionState<"current" | "all">("champions-view", "current");
-  const btn = (v: "current" | "all", label: string) => (
+  const [view, setView] = useSessionState<View>("champions-view", "current");
+
+  // Landing rule: Current is what you get when you click Champions, always. The
+  // time machine opens only when it is asked for — by clicking the tab, or by
+  // arriving on a ?asof=YYYY-MM link. It is deliberately NOT resumed from the
+  // session: it writes ?asof into the URL while it is open, so leaving it
+  // sticky meant every later visit in the same tab reopened it and rewrote the
+  // query string, and a plain /sports/champions never showed the current board.
+  // Back-navigation still works, because the restored URL carries ?asof.
+  //
+  // Done in an effect rather than in the initial state: the server has no
+  // location, and a divergent first render would break hydration.
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).has("asof")) setView("asof");
+    else setView((v) => (v === "asof" ? "current" : v));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Leaving the time machine takes ?asof with it, so the URL keeps describing
+  // what is actually on screen and a refresh lands where you are.
+  const go = (v: View) => {
+    setView(v);
+    if (v !== "asof" && typeof window !== "undefined") {
+      const u = new URL(window.location.href);
+      if (u.searchParams.has("asof")) {
+        u.searchParams.delete("asof");
+        window.history.replaceState(null, "", `${u.pathname}${u.search}${u.hash}`);
+      }
+    }
+  };
+
+  const btn = (v: View, label: string) => (
     <button
       type="button"
-      onClick={() => setView(v)}
+      onClick={() => go(v)}
       aria-pressed={view === v}
       className={`px-3 py-1.5 text-sm font-medium rounded-md transition ${
         view === v
@@ -186,9 +220,16 @@ export default function ChampionsView({ current, index }: { current: ChampRow[];
     <div>
       <div className="flex gap-2 mb-5" role="group" aria-label="Champions view">
         {btn("current", "Current")}
+        {btn("asof", "Time Machine")}
         {btn("all", "All-Time")}
       </div>
-      {view === "current" ? <ChampionsTable rows={current} /> : <AllTimeIndex index={index} />}
+      {view === "current" ? (
+        <ChampionsTable rows={current} />
+      ) : view === "asof" ? (
+        <ChampionsTimeMachine />
+      ) : (
+        <AllTimeIndex index={index} />
+      )}
     </div>
   );
 }

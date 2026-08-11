@@ -11,7 +11,7 @@ export const dynamicParams = false;
 const PATH = "/sports/champions";
 const TITLE = "Champions";
 const DESC =
-  "Champions across every competition we track: the current reigning holders on one board, plus all-time honour rolls for each competition, every champion linked to its team page and home metro.";
+  "Champions across every competition we track: the current reigning holders on one board, a time machine to see who held every trophy in any month and year, plus all-time honour rolls for each competition, every champion linked to its team page and home metro.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -100,11 +100,14 @@ export default function ChampionsHubPage() {
         </div>
         <h1 className="text-4xl font-bold tracking-tight mb-2">Champions</h1>
         <p className="text-[var(--text-muted)] max-w-3xl text-sm sm:text-base">
-          Two views, one board. <strong className="text-[var(--text)]">Current</strong> lists every
+          Three views, one board. <strong className="text-[var(--text)]">Current</strong> lists every
           reigning champion across the Gold Standard competitions and selected leagues, filterable by
-          scope, sport or region. <strong className="text-[var(--text)]">All-Time</strong> opens the
-          honour rolls: every champion of every competition we track, each linked to its team page and,
-          for club sports, the home metro that won it.
+          scope, sport or region. <strong className="text-[var(--text)]">Time Machine</strong> asks the
+          same board any date: pick a month and year to see who held every trophy that month, with both
+          holders shown when a title changed hands mid-month.{" "}
+          <strong className="text-[var(--text)]">All-Time</strong> opens the honour rolls: every champion
+          of every competition we track, each linked to its team page and, for club sports, the home
+          metro that won it.
         </p>
         <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-[var(--text-muted)] mt-3">
           <div>
