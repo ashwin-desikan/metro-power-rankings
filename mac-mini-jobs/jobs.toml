@@ -115,7 +115,7 @@ timeout_minutes = 45
 [[job]]
 id = "mlb-sim"                 # .github/workflows/mlb-sim-refresh.yml (schedule retired) + season-sims-refresh.yml (folded in 2026-08-11, schedule to be retired)
 label = "MLB + season playoff odds (7 leagues)"
-time = "14:30"                 # moved from 09:40 -- 14:30 is the only slot that also catches AFL/NRL/NPB evening games
+time = "07:00"                 # Ashwin: wants it done by 8AM BST (07:00 UTC, fixed year-round -- not 14:30's AFL/NRL/NPB same-evening freshness; those three now read the PREVIOUS evening's Australia/Japan results instead, same tradeoff mlb-sim's old 09:40 slot had)
 months = [3, 4, 5, 6, 7, 8, 9, 10, 11]   # regular season + postseason, all seven leagues
 command = "runners/mlb-sim.sh"
 catchup_hours = 14

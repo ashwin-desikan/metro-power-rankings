@@ -10,12 +10,13 @@
 # daily would quietly freeze NFL picks earlier on less information. These seven
 # have no ledger and play/finish every day.
 #
-# Runs at 14:30 UTC (season-sims' original time), NOT mlb-sim's old 09:40:
-# AFL/NRL/NPB evening games (Australia/Japan) aren't finished by 09:40 UTC, so
-# that slot would systematically miss the current day's results for those
-# three. MLB has no equivalent constraint -- its games are long over by either
-# time, and the reason it moved to the mini in the first place was GitHub's
-# 1-4h-late cron dispatch, not any particular hour.
+# Runs at 07:00 UTC (Ashwin: wants it done by 8AM BST, fixed year-round --
+# jobs.toml times are never local, see its header). This is EARLIER than both
+# mlb-sim's old 09:40 and season-sims' original 14:30, so AFL/NRL/NPB (evening
+# games, Australia/Japan) now read the PREVIOUS evening's results rather than
+# the current day's -- 07:00 UTC is well before those games even kick off.
+# Accepted tradeoff, same shape as mlb-sim's old 09:40 slot; MLB/WNBA/CFL/MLS
+# are unaffected (their games are long over by any of these times).
 #
 # One broken source must not silence the other six leagues. All seven builds
 # below get the SAME soft-fail treatment (own timeout watchdog, tolerate a
