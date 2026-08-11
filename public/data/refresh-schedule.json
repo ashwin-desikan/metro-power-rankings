@@ -1,27 +1,6 @@
 {
-  "generated_at": "2026-08-11T09:58:50.300039+00:00",
+  "generated_at": "2026-08-11T11:09:59.481159+00:00",
   "jobs": [
-    {
-      "id": "football-standings",
-      "label": "Football live standings",
-      "schedule_text": "Daily at 05:00, 11:00, 17:00, 23:00 UTC",
-      "cadence": "daily",
-      "times": [
-        "05:00",
-        "11:00",
-        "17:00",
-        "23:00"
-      ],
-      "weekdays": [],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-11T11:00:00+00:00",
-      "last_run": {
-        "date": "2026-08-11",
-        "status": "ok",
-        "slot": "2026-08-11T05:00:00+00:00"
-      }
-    },
     {
       "id": "screen-number-ones",
       "label": "US box office #1s",
@@ -47,31 +26,24 @@
       }
     },
     {
-      "id": "mlb-sim",
-      "label": "MLB + season playoff odds (7 leagues)",
-      "schedule_text": "Daily at 14:30 UTC (Mar/Apr/May/Jun/Jul/Aug/Sep/Oct/Nov)",
+      "id": "football-standings",
+      "label": "Football live standings",
+      "schedule_text": "Daily at 05:00, 11:00, 17:00, 23:00 UTC",
       "cadence": "daily",
       "times": [
-        "14:30"
+        "05:00",
+        "11:00",
+        "17:00",
+        "23:00"
       ],
       "weekdays": [],
-      "months": [
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11
-      ],
+      "months": [],
       "days_of_month": [],
-      "next_run": "2026-08-11T14:30:00+00:00",
+      "next_run": "2026-08-11T17:00:00+00:00",
       "last_run": {
         "date": "2026-08-11",
         "status": "ok",
-        "slot": "2026-08-11T09:40:00+00:00"
+        "slot": "2026-08-11T11:00:00+00:00"
       }
     },
     {
@@ -184,6 +156,34 @@
         "date": "2026-08-10",
         "status": "ok",
         "slot": "2026-08-10T06:10:00+00:00"
+      }
+    },
+    {
+      "id": "mlb-sim",
+      "label": "MLB + season playoff odds (7 leagues)",
+      "schedule_text": "Daily at 07:00 UTC (Mar/Apr/May/Jun/Jul/Aug/Sep/Oct/Nov)",
+      "cadence": "daily",
+      "times": [
+        "07:00"
+      ],
+      "weekdays": [],
+      "months": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "days_of_month": [],
+      "next_run": "2026-08-12T07:00:00+00:00",
+      "last_run": {
+        "date": "2026-08-11",
+        "status": "ok",
+        "slot": "2026-08-11T09:40:00+00:00"
       }
     },
     {
