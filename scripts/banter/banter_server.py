@@ -29,7 +29,9 @@ so the hardening lives here from day one:
     is words, never actions
 
 Reads _to_delete/banter/facts.jsonl (build_fact_atoms.py) and
-scripts/banter/scenarios.json. Stdlib only; talks to ollama on 127.0.0.1:11434.
+lib/banter/scenarios.json -- the same file the site ships, deliberately, so
+this gateway and production can never answer from different scenario lists.
+Stdlib only; talks to ollama on 127.0.0.1:11434.
 """
 import hashlib, json, math, os, re, sys, threading, time
 import urllib.request
@@ -38,7 +40,15 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 FACTS = os.path.join(ROOT, "_to_delete", "banter", "facts.jsonl")
 EMB_CACHE = os.path.join(ROOT, "_to_delete", "banter", "facts.emb.jsonl")
-SCEN = os.path.join(os.path.dirname(os.path.abspath(__file__)), "scenarios.json")
+# Read the SHIPPING scenario file, not a local copy.
+#
+# This used to point at scripts/banter/scenarios.json, a second copy of the
+# same list. By 2026-08-11 the two had silently drifted: the local copy was
+# missing westbromwich-1979 entirely and carried different `flag` values on all
+# eleven others, so this dev gateway was answering from a different world than
+# the site. That is the same failure as the two jobs.toml copies and the
+# divergent plists -- one list, one location, or it drifts.
+SCEN = os.path.join(ROOT, "lib", "banter", "scenarios.json")
 LOG = os.path.join(ROOT, "_to_delete", "banter", "gateway.log.jsonl")
 OLLAMA = "http://127.0.0.1:11434"
 PORT = 8787

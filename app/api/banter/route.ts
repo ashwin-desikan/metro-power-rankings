@@ -185,9 +185,17 @@ export async function GET(): Promise<Response> {
     { id: "today", label: "🌍 Your local · today" },
     ...SCENARIOS.map((s) => ({ id: s.id, label: s.label })),
   ];
+  // Explicit projection, not a spread: `facts` must never leave the server (the
+  // comment above says "labels only, no facts"), and the same reasoning now
+  // covers what IS sent. hook/deeperChips/epilogue are client-side presentation
+  // -- the epilogue in particular is the out-of-world reveal, so it goes to the
+  // browser but never into systemPrompt(). See the Scenario type in banterCore.
   const detail = [resolveScenario("today", SCENARIOS, now)!, ...SCENARIOS].map((s) => ({
     id: s.id, label: s.label, flag: s.flag ?? null, dateLong: s.dateLong, place: s.place,
     setting: s.setting, chips: s.chips ?? [], open: s.open,
+    hook: s.hook ?? null,
+    deeperChips: s.deeperChips ?? [],
+    epilogue: s.epilogue ?? null,
   }));
   return json(200, { ok: true, scenarios: list, detail });
 }

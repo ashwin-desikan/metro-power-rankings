@@ -27,9 +27,28 @@ export type Scenario = {
   tone: string;
   topics?: string[];
   chips?: string[];
+  /** Second-tier prompts, revealed once the conversation has started. The well
+   *  of five openers ran dry and left readers with nothing to ask; these refill
+   *  it at exactly that point. Each scene's last one deliberately probes the
+   *  edge of what the character can know, so the temporal lock reads as a joke
+   *  rather than a wall. */
+  deeperChips?: string[];
   banned?: string[];
   facts: string[];
   open: string;
+  /** One line on WHY this moment matters, shown on the scene card and the
+   *  picker. Added because a reader engaged with the scenes whose label carried
+   *  the stake ("election day 1948") and bounced off the ones that did not. */
+  hook?: string;
+  /** The out-of-world payoff: what actually happened next.
+   *
+   *  MUST NEVER REACH THE MODEL. systemPrompt() below builds its string from
+   *  persona/setting/place/dateLong/tone/facts only, and this field is
+   *  deliberately not among them: feeding it in would hand the character the
+   *  future and destroy the temporal lock, which is the whole point of the
+   *  feature. It is served to the CLIENT, which reveals it only on request,
+   *  clearly framed as the reader's own century rather than the character's. */
+  epilogue?: { headline: string; body: string; gotWrong: string };
 };
 
 export type Atom = { text: string; date: string; tags?: string[] };

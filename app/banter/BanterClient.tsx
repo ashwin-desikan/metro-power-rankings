@@ -21,6 +21,13 @@ import { useCallback, useEffect, useRef, useState } from "react";
 type ScenarioMeta = {
   id: string; label: string; flag: string | null; dateLong: string; place: string;
   setting: string; chips: string[]; open: string;
+  /** Why this moment matters. Null on "today", which has no stake to state. */
+  hook?: string | null;
+  /** Second-tier prompts, shown once the conversation has started. */
+  deeperChips?: string[];
+  /** What actually happened next. Revealed only on request, and never sent to
+   *  the model — see the Scenario type in lib/banter/banterCore.ts. */
+  epilogue?: { headline: string; body: string; gotWrong: string } | null;
 };
 
 /** Decorative country flag for a scene. flagcdn serves present-day flags, so
@@ -88,6 +95,10 @@ function clockOf(at: number | undefined): string {
 }
 
 export default function BanterClient() {
+  // Collapsed on every scene change and on "Start over": the reveal is the end
+  // of a scene, so carrying it open into a fresh one would spoil the next
+  // conversation before its first line.
+  const [showEpilogue, setShowEpilogue] = useState(false);
   const [scenarios, setScenarios] = useState<ScenarioMeta[]>([]);
   const [loadingScenes, setLoadingScenes] = useState(true);
   const [sc, setSc] = useState<ScenarioMeta | null>(null);
@@ -184,6 +195,7 @@ export default function BanterClient() {
     stopRecording();
     setSc(s);
     setErr("");
+    setShowEpilogue(false);
     setThreads((t) => (t[s.id]?.length ? t : { ...t, [s.id]: [{ role: "assistant", content: s.open }] }));
   }
 
@@ -192,6 +204,7 @@ export default function BanterClient() {
     stopRecording();
     setErr("");
     setInput("");
+    setShowEpilogue(false);
     setThreads((t) => ({ ...t, [sc.id]: [{ role: "assistant", content: sc.open }] }));
   }
 
@@ -464,17 +477,30 @@ export default function BanterClient() {
             key={s.id}
             onClick={() => pick(s)}
             aria-current={sc?.id === s.id ? "true" : undefined}
-            className={`flex items-center gap-2 rounded-lg border px-3 py-2 text-left text-sm transition-colors cursor-pointer ${
+            title={s.hook ?? undefined}
+            className={`flex max-w-[22rem] items-start gap-2 rounded-lg border px-3 py-2 text-left text-sm transition-colors cursor-pointer ${
               sc?.id === s.id
                 ? "border-[var(--accent)] text-[var(--accent)] bg-[var(--bg-card)]"
                 : "border-[var(--border)] bg-[var(--bg-card)] hover:bg-[var(--bg-card-hover)]"
             }`}
           >
-            <Flag code={s.flag} />
-            <span>{s.label}</span>
-            {(threads[s.id]?.length ?? 0) > 1 && (
-              <span className="text-[var(--text-dim)]" title="conversation in progress">·</span>
-            )}
+            <span className="mt-0.5 shrink-0"><Flag code={s.flag} /></span>
+            <span className="min-w-0">
+              <span className="flex items-center gap-1.5">
+                <span>{s.label}</span>
+                {(threads[s.id]?.length ?? 0) > 1 && (
+                  <span className="text-[var(--text-dim)]" title="conversation in progress">·</span>
+                )}
+              </span>
+              {/* The stake, on the picker itself. This is the whole of the
+                  original complaint: the label says where and when, never why,
+                  so half the scenes gave a reader nothing to open with. */}
+              {s.hook && (
+                <span className="mt-0.5 block text-xs font-normal leading-snug text-[var(--text-dim)]">
+                  {s.hook}
+                </span>
+              )}
+            </span>
           </button>
         ))}
       </div>
@@ -492,6 +518,11 @@ export default function BanterClient() {
               <p className="mt-1 text-sm text-[var(--text-muted)]">
                 {sc.setting.charAt(0).toUpperCase() + sc.setting.slice(1)}.
               </p>
+              {/* The stake. A reader who cannot tell why a moment matters does
+                  not know what to ask, and runs out after two questions. */}
+              {sc.hook && (
+                <p className="mt-1.5 text-sm text-[var(--text)]">{sc.hook}</p>
+              )}
             </div>
             {msgs.length > 1 && (
               <button
@@ -507,8 +538,12 @@ export default function BanterClient() {
             A fictional conversation with an AI character, anchored to real, dated facts. It can be
             wrong — that is half the fun.
           </p>
+          {/* Openers always; the second tier appears once the conversation has
+              actually started, which is precisely when the first five run out.
+              Concatenated rather than shown as a separate row so it reads as
+              the same well getting deeper, not a new control to learn. */}
           <div className="mt-3 flex flex-wrap gap-1.5">
-            {sc.chips.map((c) => (
+            {[...sc.chips, ...(msgs.length > 1 ? sc.deeperChips ?? [] : [])].map((c) => (
               <button
                 key={c}
                 onClick={() => void send(c)}
@@ -521,6 +556,46 @@ export default function BanterClient() {
               </button>
             ))}
           </div>
+
+          {/* What happened next.
+              The character's ignorance of the future is the point of this
+              feature and is not being loosened. The problem it created is that
+              the payoff was unreachable: you can argue with a 1948 stringer
+              about Dewey all afternoon and never get the front page. So the
+              reveal lives out here, outside the conversation, in the reader's
+              own century — and only after they have actually talked, so it
+              cannot be read before the scene has had its go. */}
+          {sc.epilogue && msgs.length > 1 && (
+            <div className="mt-4 border-t border-[var(--border)] pt-3">
+              {!showEpilogue ? (
+                <button
+                  onClick={() => setShowEpilogue(true)}
+                  className="rounded-lg border border-[var(--border)] px-3 py-1.5 text-xs text-[var(--text-muted)]
+                             hover:border-[var(--accent)] hover:text-[var(--accent)] cursor-pointer transition-colors"
+                >
+                  What happened next →
+                </button>
+              ) : (
+                <div className="min-w-0">
+                  <div className="text-[11px] uppercase tracking-wider text-[var(--text-dim)]" style={MONO}>
+                    From here, looking back
+                  </div>
+                  <p className="mt-1.5 text-sm font-semibold text-[var(--text)]">{sc.epilogue.headline}</p>
+                  <p className="mt-1.5 text-sm text-[var(--text-muted)]">{sc.epilogue.body}</p>
+                  <p className="mt-2 text-sm text-[var(--text-muted)]">
+                    <span className="text-[var(--text-dim)]">What the room had wrong: </span>
+                    {sc.epilogue.gotWrong}
+                  </p>
+                  <button
+                    onClick={() => setShowEpilogue(false)}
+                    className="mt-2.5 text-xs text-[var(--text-dim)] hover:text-[var(--accent)] cursor-pointer"
+                  >
+                    Hide
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
         </section>
       )}
 
