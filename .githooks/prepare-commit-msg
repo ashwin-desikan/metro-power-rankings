@@ -42,6 +42,40 @@ PATHS_FILE="$REPO_ROOT/scripts/vercel-build-paths.txt"
 
 BUILD_PATHS=$(grep -v '^#' "$PATHS_FILE" | grep -v '^[[:space:]]*$')
 
+# Nothing staged relative to HEAD? Then there is nothing for the test below to
+# inspect, and `git diff --cached` returning no files would be read as "touches
+# no build-relevant path" -- tagging a commit this hook has no evidence about.
+#
+# BUG CAUGHT LIVE 2026-08-11, by the layer-2 post-commit check, on the commit
+# that fixed the refresh jobs' own skip-marker bug. `git commit --amend -F msg`
+# sets SOURCE=message, NOT commit: git only says "commit" for -c/-C/--amend
+# REUSING the existing message, so the guard at the top of this file does not
+# fire when an amend supplies a new message with -F or -m. The amend had nothing
+# newly staged, the test below saw zero files, and a commit that really did touch
+# public/data silently gained the marker -- which vercel-ignore.sh rule 1 would
+# then have honoured, skipping a deploy it needed.
+#
+# Fail open, matching the posture two lines above for a missing path list: if we
+# cannot prove the commit is data-only, leave the message exactly as written. A
+# normal `git commit -m` with staged work is unaffected (its cached diff is
+# non-empty), and the first commit in a repo has no HEAD so it proceeds as before.
+#
+# RESIDUAL GAP, stated rather than papered over: this covers `--amend` with
+# nothing newly staged, which is the common shape. An `--amend` that DOES stage
+# something new still sees only the newly staged files, not the full amended
+# tree, so it can still mis-tag. There is no reliable amend signal available
+# here -- GIT_REFLOG_ACTION was probed on this repo's git and is UNSET inside
+# prepare-commit-msg, and comparing against HEAD^ instead would suppress the tag
+# on any data-only commit that merely follows an app commit, reintroducing the
+# 13-spurious-builds failure this hook exists to prevent. That residue is
+# deliberately left to layer 2: the post-commit check already flags "touches a
+# build path AND is tagged" and tells the human to fix it by hand, which is
+# exactly how it was caught on 2026-08-11. Two layers, each doing what it can
+# actually do correctly.
+if git rev-parse --verify -q HEAD >/dev/null 2>&1 && git diff --cached --quiet; then
+  exit 0
+fi
+
 # Any staged file under a build-relevant path? Leave the message alone --
 # this commit plausibly needs a real deploy, and auto-skipping it silently
 # would be the exact class of mistake this hook exists to prevent, just

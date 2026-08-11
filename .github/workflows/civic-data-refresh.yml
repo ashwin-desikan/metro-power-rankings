@@ -108,6 +108,22 @@ jobs:
         continue-on-error: true
         run: python scripts/build-valuations-data.py
 
+      - name: Team owners (from the curated seed)
+        # Writes nothing unless scripts/data/team-owners-seed.json changed. It
+        # runs weekly anyway because it re-validates the join against the
+        # valuations board in BOTH directions: if a team is renamed or added
+        # upstream, this step goes red instead of the Owner column silently
+        # going blank on /sports/valuations.
+        continue-on-error: true
+        run: python scripts/build-team-owners-data.py
+
+      - name: Owners watchlist (review dates)
+        # Deterministic dead-man's switch over the contested ownership rows: no
+        # scraping, no network, just pending_review_by against today. Fails only
+        # when a review is more than 14 days overdue.
+        continue-on-error: true
+        run: python scripts/check-owners-watchlist.py
+
       - name: World Power Rankings (top 100)
         continue-on-error: true
         run: python scripts/build-power-ranking.py
@@ -135,15 +151,27 @@ jobs:
             echo "No auto changes this run."
             exit 0
           fi
-          # A leadership change edits the per-country history (leaders/<slug>.json),
-          # which country pages read at build time, so it needs a real build. The
-          # Zone Zero Cup no longer does: lib/zoneZeroCup.ts reads it from GitHub
-          # raw with ISR, so the weekly regeneration surfaces with no deploy. Every
-          # other refresh is likewise ISR-read and rides [vercel skip].
-          if git diff --quiet -- public/data/leaders/_changes.json; then
+          # Some of what this job refreshes is read by lib/ with readFileSync at
+          # BUILD time, so a [vercel skip] commit would leave it in the repo doing
+          # nothing until an unrelated commit happened to trigger a build:
+          # vercel-ignore.sh rule 1 skips on the tag BEFORE the path test, and
+          # run-deploy-watch.sh skips past tagged subjects when choosing TARGET,
+          # so neither the guard nor the healer sees it. Those paths live in
+          # scripts/refresh-needs-build-paths.txt, shared with the mini's
+          # metro-mini-refresh.sh so the two cannot drift. Until 2026-08-11 this
+          # test was hardcoded to leaders/_changes.json alone and silently missed
+          # valuations. The Zone Zero Cup is correctly NOT in that list:
+          # lib/zoneZeroCup.ts ISR-reads it from GitHub raw, as does every other
+          # refresh here, and those keep riding [vercel skip].
+          NEEDS_BUILD_FILE="scripts/refresh-needs-build-paths.txt"
+          test -f "$NEEDS_BUILD_FILE" || { echo "missing $NEEDS_BUILD_FILE"; exit 1; }
+          NEEDS_BUILD_PATHS=$(grep -v '^#' "$NEEDS_BUILD_FILE" | grep -v '^[[:space:]]*$')
+          test -n "$NEEDS_BUILD_PATHS" || { echo "$NEEDS_BUILD_FILE has no paths"; exit 1; }
+          if git diff --quiet -- $NEEDS_BUILD_PATHS; then
             MSG="data: weekly refresh - officeholders, billionaires, valuations, World Power Rankings [vercel skip]"
           else
-            MSG="data: weekly refresh + leadership change(s) - rebuild country pages"
+            echo "build-time-read data changed: $(git diff --name-only -- $NEEDS_BUILD_PATHS | tr '\n' ' ')"
+            MSG="data: weekly refresh - build-time-read data changed, rebuild required"
           fi
           git add $DATA_PATHS
           git commit -m "$MSG"

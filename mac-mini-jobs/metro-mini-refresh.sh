@@ -138,6 +138,15 @@ run_step "house leadership"     "$PY" scripts/civic/refresh_house_leadership.py 
 run_step "billionaires fetch"   "$PY" scripts/billionaires/fetch-billionaires.py
 run_step "billionaires build"   "$PY" scripts/billionaires/build-billionaires.py
 run_step "valuations"           "$PY" scripts/build-valuations-data.py
+# Team ownership: the seed at scripts/data/team-owners-seed.json is hand-curated
+# and this step writes nothing unless it changed. It runs weekly anyway because
+# it re-validates the join against the valuations board in BOTH directions -- so
+# if a team is renamed or added upstream, this step goes red instead of the Owner
+# column silently going blank on /sports/valuations.
+run_step "team owners"          "$PY" scripts/build-team-owners-data.py
+# Deterministic staleness signal for the ownership watchlist: flags contested
+# rows whose published decision date has passed. No scraping, no network.
+run_step "owners watchlist"     "$PY" scripts/check-owners-watchlist.py
 run_step "power ranking"        "$PY" scripts/build-power-ranking.py
 # Zone Zero Cup: weekly regeneration (added 2026-07-20; the Cup had not been
 # rebuilt since 21 Jun). Preflight-guarded, so it refuses to write a hollowed-out
@@ -187,15 +196,27 @@ else
     || fail "leaders sanity gate HELD the commit -- _current.json has a vandalism/pin flag; review scripts/check-leaders-sanity.py output, do NOT auto-commit"
   git config user.name  "metro-mini[bot]"
   git config user.email "metro-mini-bot@users.noreply.github.com"
-  # A leadership change rewrites the per-country history (leaders/<slug>.json),
-  # which the country pages read at BUILD time, so that alone needs a real Vercel
-  # build to surface. Everything else here (including the Zone Zero Cup since
-  # 2026-07-20) is ISR-read from GitHub raw and rides [vercel skip], no deploy.
+  # Some refreshed files are read by lib/ with readFileSync at BUILD time, so a
+  # [vercel skip] commit leaves them sitting in the repo doing nothing until an
+  # unrelated commit happens to trigger a build -- vercel-ignore.sh rule 1 skips
+  # on the tag BEFORE the path test, and run-deploy-watch.sh skips past tagged
+  # subjects when choosing its TARGET, so neither the guard nor the healer sees
+  # them. Those paths live in scripts/refresh-needs-build-paths.txt, shared with
+  # civic-data-refresh.yml so the two cannot drift. Until 2026-08-11 this test
+  # was hardcoded to leaders/_changes.json alone and silently missed valuations.
+  # Everything else here (including the Zone Zero Cup since 2026-07-20) is
+  # ISR-read from GitHub raw and rides [vercel skip], no deploy.
   # Checked before `git add`, so this compares the unstaged working tree.
-  if git diff --quiet -- public/data/leaders/_changes.json; then
+  NEEDS_BUILD_FILE="scripts/refresh-needs-build-paths.txt"
+  [ -f "$NEEDS_BUILD_FILE" ] || fail "missing $NEEDS_BUILD_FILE -- refusing to guess whether this refresh needs a build"
+  NEEDS_BUILD_PATHS=$(grep -v '^#' "$NEEDS_BUILD_FILE" | grep -v '^[[:space:]]*$')
+  [ -n "$NEEDS_BUILD_PATHS" ] || fail "$NEEDS_BUILD_FILE has no paths -- refusing to guess"
+  if git diff --quiet -- $NEEDS_BUILD_PATHS; then
     MSG="data: mini civic/leaders/billionaires refresh [vercel skip]"
   else
-    MSG="data: mini refresh + leadership change(s) - rebuild country pages"
+    CHANGED=$(git diff --name-only -- $NEEDS_BUILD_PATHS | tr '\n' ' ')
+    note "build-time-read data changed ($CHANGED) -- committing WITHOUT [vercel skip]"
+    MSG="data: mini refresh - build-time-read data changed, rebuild required"
   fi
   git add $DATA_PATHS
   if [ "$DRY_RUN" = "1" ]; then

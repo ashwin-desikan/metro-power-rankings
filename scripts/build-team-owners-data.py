@@ -16,6 +16,9 @@ Portfolio rollups are NOT computed here. They are derived in lib/teamOwners.ts
 by joining to lib/valuations.ts, so franchise values have exactly one source of
 truth and cannot drift between the two files.
 
+`pending_review_by` is deliberately NOT emitted: it is maintenance metadata for
+scripts/check-owners-watchlist.py, which reads the seed, not the built payload.
+
 Emits public/data/owners/team-owners.json:
   { "generated": "<iso>", "rows": [ {team, league, ownerDisplay, ...}, ... ] }
 
@@ -24,7 +27,7 @@ Usage:
   python scripts/build-team-owners-data.py --self-test  # offline checks only
   python scripts/build-team-owners-data.py --dry       # validate, do not write
 """
-import json, os, sys, datetime
+import datetime, json, os, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SEED = os.path.join(ROOT, "scripts", "data", "team-owners-seed.json")
@@ -77,6 +80,17 @@ def validate(rows, board_keys):
             for f in ("pending_summary", "pending_when", "pending_kind"):
                 if not r.get(f):
                     problems.append(f"{where}: confidence 'contested' but no '{f}' for the watchlist")
+            # scripts/check-owners-watchlist.py compares this to today's date.
+            # An unparseable value there is silently treated as "no date", so
+            # catch it here where it is still a build failure.
+            by = r.get("pending_review_by")
+            if not by:
+                problems.append(f"{where}: confidence 'contested' but no 'pending_review_by' date")
+            else:
+                try:
+                    datetime.date.fromisoformat(str(by))
+                except ValueError:
+                    problems.append(f"{where}: pending_review_by '{by}' is not an ISO date (YYYY-MM-DD)")
         key = (r.get("team"), r.get("league"))
         if key in seen:
             problems.append(f"{where}: duplicate (team, league)")
@@ -128,12 +142,14 @@ def self_test():
     check("sourced without source_url rejected",
           len(validate([dict(base, confidence="sourced")], None)), 1)
     check("contested without note rejected",
-          len(validate([dict(base, confidence="contested")], None)), 4)
+          len(validate([dict(base, confidence="contested")], None)), 5)
     check("contested with a note but no watchlist fields rejected",
-          len(validate([dict(base, confidence="contested", note="Sale pending.")], None)), 3)
+          len(validate([dict(base, confidence="contested", note="Sale pending.")], None)), 4)
     contested_ok = dict(base, confidence="contested", note="Sale pending.",
                         pending_summary="Buyer named", pending_when="Vote Aug 2026",
-                        pending_kind="control sale")
+                        pending_kind="control sale", pending_review_by="2026-09-01")
+    check("contested with a non-ISO review date rejected",
+          len(validate([dict(contested_ok, pending_review_by="soon")], None)), 1)
     check("contested with note and watchlist fields passes",
           validate([contested_ok], None), [])
     check("duplicate (team, league) rejected",

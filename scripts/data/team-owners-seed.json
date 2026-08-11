@@ -107,7 +107,8 @@
    "source_date": "2025-06-30",
    "pending_summary": "Josh Harris and David Blitzer exploring a sale of their 30% via Raine Group",
    "pending_when": "Exploratory, no agreed buyer",
-   "pending_kind": "contested control"
+   "pending_kind": "contested control",
+   "pending_review_by": "2026-11-01"
   },
   {
    "team": "Everton",
@@ -260,7 +261,8 @@
    "source_date": "2026-08-01",
    "pending_summary": "Amanda Staveley-led consortium agreed to buy the Gold family's 25.1%; Staveley then bid for Sullivan's 38.8%",
    "pending_when": "Two-month pre-emption window from 1 Aug 2026",
-   "pending_kind": "contested control"
+   "pending_kind": "contested control",
+   "pending_review_by": "2026-10-02"
   },
   {
    "team": "Olympique Lyonnais",
@@ -803,7 +805,8 @@
    "source_date": "2026-08-06",
    "pending_summary": "Group led by Jose E. Feliciano (Clearlake) and Kwanza Jones, ~$3.9bn",
    "pending_when": "Full 30-owner vote, Aug 2026",
-   "pending_kind": "control sale"
+   "pending_kind": "control sale",
+   "pending_review_by": "2026-09-01"
   },
   {
    "team": "San Francisco Giants",
@@ -1841,7 +1844,8 @@
    "source_date": "2026-07-11",
    "pending_summary": "Khosla family group led by Vinod Khosla, ~$9.61bn",
    "pending_when": "NFL owners' vote 26 Aug 2026",
-   "pending_kind": "control sale"
+   "pending_kind": "control sale",
+   "pending_review_by": "2026-08-27"
   },
   {
    "team": "Tampa Bay Buccaneers",
@@ -2279,7 +2283,8 @@
    "source_date": "2024-10-24",
    "pending_summary": "Doug Ostrover-led group already holds the majority economic stake; Vinik keeps control and the governorship",
    "pending_when": "Control expected to pass around 2027",
-   "pending_kind": "control transfer scheduled"
+   "pending_kind": "control transfer scheduled",
+   "pending_review_by": "2027-01-15"
   },
   {
    "team": "Toronto Maple Leafs",
@@ -2477,7 +2482,8 @@
    "source_date": "2025-03-27",
    "pending_summary": "Unnamed Western investment fund, letter of intent for ~85% of capital",
    "pending_when": "Targeted early Aug 2026, not confirmed closed",
-   "pending_kind": "contested control"
+   "pending_kind": "contested control",
+   "pending_review_by": "2026-09-01"
   },
   {
    "team": "Atlanta United",
@@ -2555,7 +2561,8 @@
    "source_date": "2026-05-29",
    "pending_summary": "Nationwide to buy 37% at a ~$900m valuation; Haslams retain control",
    "pending_when": "MLS Board of Governors approval pending",
-   "pending_kind": "minority sale"
+   "pending_kind": "minority sale",
+   "pending_review_by": "2026-10-01"
   },
   {
    "team": "DC United",
@@ -2768,7 +2775,8 @@
    "source_date": "2026-08-11",
    "pending_summary": "No buyer named; Moelis running the process for John Fisher's controlling interest",
    "pending_when": "Open, no MLS approval announced",
-   "pending_kind": "control sale"
+   "pending_kind": "control sale",
+   "pending_review_by": "2026-11-01"
   },
   {
    "team": "Seattle Sounders FC",
@@ -2786,7 +2794,8 @@
    "source_date": "2026-07-15",
    "pending_summary": "Minority capital raise via Moelis; the Paul G. Allen estate's ~25% also for sale",
    "pending_when": "No closing confirmed",
-   "pending_kind": "minority sale"
+   "pending_kind": "minority sale",
+   "pending_review_by": "2026-11-01"
   },
   {
    "team": "Sporting Kansas City",
