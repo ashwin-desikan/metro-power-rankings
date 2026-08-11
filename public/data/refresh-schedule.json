@@ -1,26 +1,6 @@
 {
-  "generated_at": "2026-08-11T06:17:27.206102+00:00",
+  "generated_at": "2026-08-11T06:57:36.589526+00:00",
   "jobs": [
-    {
-      "id": "predictions-tue",
-      "label": "PL + NFL predictions (grade the weekend)",
-      "schedule_text": "Tue at 06:40 UTC",
-      "cadence": "weekly",
-      "times": [
-        "06:40"
-      ],
-      "weekdays": [
-        2
-      ],
-      "months": [],
-      "days_of_month": [],
-      "next_run": "2026-08-11T06:40:00+00:00",
-      "last_run": {
-        "date": "2026-08-04",
-        "status": "seeded",
-        "slot": "2026-08-04T06:40:00+00:00"
-      }
-    },
     {
       "id": "rugby-weekly",
       "label": "Rugby union rankings",
@@ -362,6 +342,26 @@
         "date": "2026-08-09",
         "status": "ok",
         "slot": "2026-08-09T09:00:00+00:00"
+      }
+    },
+    {
+      "id": "predictions-tue",
+      "label": "PL + NFL predictions (grade the weekend)",
+      "schedule_text": "Tue at 06:40 UTC",
+      "cadence": "weekly",
+      "times": [
+        "06:40"
+      ],
+      "weekdays": [
+        2
+      ],
+      "months": [],
+      "days_of_month": [],
+      "next_run": "2026-08-18T06:40:00+00:00",
+      "last_run": {
+        "date": "2026-08-11",
+        "status": "ok",
+        "slot": "2026-08-11T06:40:00+00:00"
       }
     },
     {
